@@ -2,87 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4AE87BBFB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 10:42:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 754E47BBFE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 10:42:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V+PVtfQK7xeeZnKjJfPC+Xo6laEsct0NUcxkTACPfoQ=; b=DOmHkxC6ZPZYgc
-	icuGulymFFg3paJ+3GtHljQZDgRlzLIK46vWSbLv+BK0gau4pAN1YiMQ9in64vcplj3a2tdsMTJpt
-	st8TaWiVw8l8g+lmquNK/KjPyf9zKPqE19YLS4p+7OjZd2nqLYPAjj4IqaqfSp6tkweLpiTEa2SJe
-	qNx/B91nyeYktGe75HBll1v4iixAiZmEdF4dPCGrH+fApKjWQ3xeJN4y4eg5ZvdykUGS0Lekv1C20
-	x41Y2Y8ysSHaczeSB9PsVkc5Irx3FS2tPhBo3S7CUJJvteSxcx579F/J9/L94UuKQySt0WS4BEHV6
-	I9Nd9nvGnA/3NgjsrioQ==;
+	List-Owner; bh=ZLdDb6XUAEesCx04SWMyJhj/S3HcnYSgnl3kxLLddm4=; b=NZiX5SY+Cec0u9
+	NeA3TFmsbnOeJN6oh50yQyvjrl4fSOQCldXIQawgIaDgH9Wj1NEX8DCwd4PWiu2rH4seNUJOENr1m
+	R5VtTa8yw6WxCOfDzqGB0VnfpKpxipe8lgkKqKS6dFSExyuBOqRtg7BlFzZReEWrTjCDlMIcd0On/
+	P1TK04uwRGvSlv1QCeB3/E/xjv2Y00wN8chXx5qVzqXvncBIBG0J0W93OdWMO6a36S+Sbd/PsYtn0
+	JWtDXS0/z2HVMpmpsJl80MpheyVA/YQGVwB4ZC4DjbDIjYUQoGsJ8Ybqf3AAvS7snCtzGhXIpn+eW
+	BSFrnh8uBwW7Lktg5EFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hskBE-000713-12; Wed, 31 Jul 2019 08:41:52 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hskBr-0007Zm-1s; Wed, 31 Jul 2019 08:42:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsk9r-000623-Dr
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 08:40:30 +0000
-Received: by mail-wr1-x444.google.com with SMTP id x1so18783092wrr.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 01:40:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=75XNmhFNb9+dcVa4YPmR0y+UGapfOVB2uryDAdPU4o4=;
- b=mQ/GItiV/jIekXUfQF4MaKyeF2xxU5ZvV65tC6WZtOplsowpKXAcaU2ed76arFJ2HF
- FRrWiFna/EnHvHxzgRZqv/+XpaJ27aSEQLNVHv0fTRsStQlfzxlUE31f7kYDoDoGEM2+
- LR1I6fEfN+WigiRr1yzP2X2YunGiuAh4/Ya265Ada7lN82hSuP0n9z8pIs/wPGx3F5AV
- AcivDHZutEmkStVMWqMtfAEqbMTZG0dN9LyQ7aoN3T4h3BlZSMLDbguHvRT3ydv2nQSU
- Uaf4bN0q+oQm12t0bypww0qe//veBeJZ9glvWslrbP1JBZQIW7BrI4CZULyhUkGiY0xF
- EiwQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=75XNmhFNb9+dcVa4YPmR0y+UGapfOVB2uryDAdPU4o4=;
- b=HBlZl7VLvhztIgjUDY7CyyjKtWA3jtZ0T/Yf3FC01tkRBuLWFT6qlViOQTMchJekf0
- /R8vr4XjViJ2m5/bXptdk93RF68WB4ufUQU5ufgSzeQpFjqCbtrRgw+6Y/p4d8/y6yVe
- N7AfgHpRQR21S+PKtLvUd5tkB7l+oY+YJUIRZCEEQP9uIQSoLWZq18mrclafmp32uS+E
- qFeN/Ns3B9054Nw1XOkyzNVNZjdsM6DJeLSI+Tecpma1jbSxhhePjeiQ73v3+Hii3vSy
- ikp4x0H6c4uybHirnMXz5YtC9nUyFkwPanr69P9mFaeVr4NyUSjrQonEB7Nhfhrl2nc3
- 0oZw==
-X-Gm-Message-State: APjAAAXUHUEgqmrG5SZ+03rcchTqRBwtZPPCBfs/pCwlwVDuH1WJ6V5n
- gFajJatlc7Ub5Ojrnt30L2pozQ==
-X-Google-Smtp-Source: APXvYqyi4k1XS4obufEQe9GPrtTQh4Ldosu/Cj3LUEjIEn/ydGYaGOvK4niO7KpZnRyZkkeRGMiirg==
-X-Received: by 2002:adf:f04d:: with SMTP id t13mr17572698wro.133.1564562426143; 
- Wed, 31 Jul 2019 01:40:26 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id 18sm56049308wmg.43.2019.07.31.01.40.25
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 31 Jul 2019 01:40:25 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: jbrunet@baylibre.com
-Subject: [PATCH v2 4/4] clk: meson: g12a: expose CPUB clock ID for G12B
-Date: Wed, 31 Jul 2019 10:40:19 +0200
-Message-Id: <20190731084019.8451-5-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190731084019.8451-1-narmstrong@baylibre.com>
-References: <20190731084019.8451-1-narmstrong@baylibre.com>
+ id 1hskAQ-0006Wl-64
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 08:41:03 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7EE10206A3;
+ Wed, 31 Jul 2019 08:41:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564562461;
+ bh=2AMJKQAIYqySJFCOFXeanD8LAYVz2PapeYUAn5OrGkI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=NDE0y2eOIYjWbDWePVfwitFojS9MPeBsJm25h/c3+zwl0eA1qD9r6COZ051ELCiVY
+ zyx36m+6yoaFMLQWdHYxsyt8ggEIGfSjsd7nXVvNbTBgOOoubxg/SysOp5ppQ5pBtt
+ dy7bffEyvEb8Ir2h05tMbUiE70X2y7jd8Ii58IsA=
+Date: Wed, 31 Jul 2019 09:40:57 +0100
+From: Will Deacon <will@kernel.org>
+To: Stephen Boyd <swboyd@chromium.org>
+Subject: Re: [PATCH v6 32/57] perf: Remove dev_err() usage after
+ platform_get_irq()
+Message-ID: <20190731084056.jd7p5lrvyun6ynlf@willie-the-truck>
+References: <20190730181557.90391-1-swboyd@chromium.org>
+ <20190730181557.90391-33-swboyd@chromium.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190730181557.90391-33-swboyd@chromium.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_014027_473679_7C49D190 
-X-CRM114-Status: GOOD (  11.34  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_014102_405046_9031D720 
+X-CRM114-Status: GOOD (  11.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,51 +78,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Expose the CPUB clock id to add DVFS to the second CPU cluster of
-the Amlogic G12B SoC.
+On Tue, Jul 30, 2019 at 11:15:32AM -0700, Stephen Boyd wrote:
+> We don't need dev_err() messages when platform_get_irq() fails now that
+> platform_get_irq() prints an error message itself when something goes
+> wrong. Let's remove these prints with a simple semantic patch.
+> 
+> // <smpl>
+> @@
+> expression ret;
+> struct platform_device *E;
+> @@
+> 
+> ret =
+> (
+> platform_get_irq(E, ...)
+> |
+> platform_get_irq_byname(E, ...)
+> );
+> 
+> if ( \( ret < 0 \| ret <= 0 \) )
+> {
+> (
+> -if (ret != -EPROBE_DEFER)
+> -{ ...
+> -dev_err(...);
+> -... }
+> |
+> ...
+> -dev_err(...);
+> )
+> ...
+> }
+> // </smpl>
+> 
+> While we're here, remove braces on if statements that only have one
+> statement (manually).
+> 
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Signed-off-by: Stephen Boyd <swboyd@chromium.org>
 
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/clk/meson/g12a.h              | 1 -
- include/dt-bindings/clock/g12a-clkc.h | 1 +
- 2 files changed, 1 insertion(+), 1 deletion(-)
+Acked-by: Will Deacon <will@kernel.org>
 
-diff --git a/drivers/clk/meson/g12a.h b/drivers/clk/meson/g12a.h
-index c8aed31fbe17..559a34cfdfeb 100644
---- a/drivers/clk/meson/g12a.h
-+++ b/drivers/clk/meson/g12a.h
-@@ -216,7 +216,6 @@
- #define CLKID_CPUB_CLK_DYN1_DIV			221
- #define CLKID_CPUB_CLK_DYN1			222
- #define CLKID_CPUB_CLK_DYN			223
--#define CLKID_CPUB_CLK				224
- #define CLKID_CPUB_CLK_DIV16_EN			225
- #define CLKID_CPUB_CLK_DIV16			226
- #define CLKID_CPUB_CLK_DIV2			227
-diff --git a/include/dt-bindings/clock/g12a-clkc.h b/include/dt-bindings/clock/g12a-clkc.h
-index b6b127e45634..8ccc29ac7a72 100644
---- a/include/dt-bindings/clock/g12a-clkc.h
-+++ b/include/dt-bindings/clock/g12a-clkc.h
-@@ -137,5 +137,6 @@
- #define CLKID_VDEC_HEVC				207
- #define CLKID_VDEC_HEVCF			210
- #define CLKID_TS				212
-+#define CLKID_CPUB_CLK				224
- 
- #endif /* __G12A_CLKC_H */
--- 
-2.22.0
+Please let me know if you'd rather I route this via the arm-perf tree.
 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
