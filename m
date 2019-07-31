@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1B867C6DD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 17:36:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE5AA7C6E3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 17:37:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HDbNM/0u0T+U27cmIUYBiK1wB3my71sKUVNZ5uIjSKY=; b=HUsKqHL/bWInYaXBdFZp+mdVOO
-	8DH6XvBdD9NMmK8+TTgkFcjX/MffYWfJstXqaU6Jjp2GFsUNydvo7fvfiNoUuOuNTPE8fMR9UJzex
-	gK9fOg88UzcmzATZOKS6I8sDNzsznnxF19CorA0J2a4/nFUZHftQ3mxYSqgecFGKciMolM+k5KMzW
-	lpwgWmxEPRIIWiPExEH+A4JP94Jao8zQl5m4jGSmzKpLKjIXQT5ALxVFKNi0ud9a7whGMYUS/LV1m
-	JpBaFuNbiR+RrJ8AGmuEj9EVkER48d66+kFuD+rEhC2O2U08izx3/lktDt1HP3ujWM/t/QMhdX7IZ
-	uTFK5Pqw==;
+	bh=OUAVJHzP0INkb03ShKRkbmujfmaGzFpmO9kgHyfYPhA=; b=VEGaHtfBmsdpOLH0MbCw9V/G4I
+	ZpMgJWKFWxEMl+Pnkvu8EAxNxCjzDL1w8kcN3+qEUUK/rzo3O3K2L5kp/kkE6BEqdbfXNT7GJ6dqL
+	dGq6XPtrDIxatAjy5SveNTgHk4NeaDHh6xa8qrD8NhPkt2ziO1LfXVTrqor7nuIXgAUrpIb90W8AT
+	leNlkPMA1EnwM/+ecrOYmIOiJMjPzWgPfcdnuddAnQ50uepODyLy5303V8zw48PxeXqMkt0VaBv8h
+	ZoXEqE4A2bAMk7ZCRvExeEQ3spkmFTB0EH9gT0bZvnhvA3xP9AjHWC0ptLm3KSSTNKri0W4a78AfY
+	wjMcJXzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsqeb-0006VS-8e; Wed, 31 Jul 2019 15:36:37 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hsqf2-00076h-45; Wed, 31 Jul 2019 15:37:04 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsqdd-0005PL-3e
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 15:35:39 +0000
-Received: by mail-wm1-x342.google.com with SMTP id s3so61279218wms.2
+ id 1hsqde-0005Qu-QQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 15:35:41 +0000
+Received: by mail-wr1-x444.google.com with SMTP id c2so66970524wrm.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 08:35:36 -0700 (PDT)
+ Wed, 31 Jul 2019 08:35:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=+6gJ8AQ+8bL1C5uonG6TfemRUot9hgKsCIvxaaOHaM0=;
- b=bpMaWmEB0gYIdBRiCkZ0Njf50rEB/8dTwJKP8YnC2iKk5DZgQ4+wDGjKSBizhNT5mX
- 5GxGglVZYHkf88xrTqV8T/3QUt1mywoY6JqqDc/OKAJqSwtvZ1StvCgO9WI0vG9Kxs3A
- pECJgUpFI+b/qMezVjG8piiGEminumNEOX7DAd0cIWFhtI8azf2cZ10uBUfyDiaKnfun
- 8EoKqZhkC+SrY1GkwKqvhnujO/2XsiMSfQxhLC1QEP+jDtVmKO5MkjQob+3GpcofwES2
- Pgl19CK+52aBci57jDSOaFoYw6kvlG0doYNoCs3+h9/SYq5UF2DFkd3KsXEXrYMrIPDk
- x4ag==
+ bh=C6EJL/51AHNPmVJCC71cSQAo/Uql1LEExYduU9tlj54=;
+ b=USefCljrpz1yRsoIXF2w4xg9VXh4QbDSRfoyiXoY6jTBa7FxJT/7Due8LQ+/bxUmFp
+ WAnAouc1YOFfmGGlkNGldaFXIxCzuzfN2zJb8T2LWO6y0KSY9g+ThTrcEkjgJRrQypui
+ TsALxmEM6dEQtySXllvS/VgeRnzL0tr4TE/tKkqBl2gomPbnpVwkSJM34y8hi4C+tq00
+ nUML5hcGDz/hAz/bYVpHD4tw1+z/2tRy2XSrR0p9nOkH2XwzrkSf15x7n1UTHj+JEKVf
+ DBXXcERhZyinR8yH4dhsmdtXxIqaSW5Xl367BjgxRe//gosv9vVQECKBtdVspL1td+tS
+ BVcg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=+6gJ8AQ+8bL1C5uonG6TfemRUot9hgKsCIvxaaOHaM0=;
- b=o8rimBgCxPW/JmEz8IXZ9Xse+8boSCtM1QgJOiiV/JLIjNnJRXy8EvHT2HLtvLIaeX
- dt9gYvyeHLq40Hj8rvwMZCYe3zeP5OaXqXvr+8IxXqxIxxx4v/rOFuoN9tNZN1B39nnJ
- ewoGj6xEUPP+u7+jpOhrmNanPBjW99m4rc/kqKXLRU3l5LwaL407jkpwIzYVulOWmfGr
- PVW5hYgWWv/0GSrB1dAdy+Wj9W5GINhWDf5sCWavfp8Drs8uAa/P8lbej6ze6npAvwkQ
- 1dIRgYZOlsXd7TUHPw1ZzWDC7g2qXBC4DHPu1RGldBknsR/a22bjr+bug+09vXbaHA9A
- SQqw==
-X-Gm-Message-State: APjAAAXc6G7sN/TRdMDp0+05XcHR+3t7F7fawu/eHQ+RMS4WmexZc86O
- pfeokY3Er+fCKUMYAoHritT/fw==
-X-Google-Smtp-Source: APXvYqyYRH+0jfs9jqLCSAGYzhF4F4uTSWpyjE70mkciabVgvyHCM1+INRysUBYEzO59vgmjq2qfAQ==
-X-Received: by 2002:a7b:c081:: with SMTP id r1mr62192131wmh.76.1564587335879; 
- Wed, 31 Jul 2019 08:35:35 -0700 (PDT)
+ bh=C6EJL/51AHNPmVJCC71cSQAo/Uql1LEExYduU9tlj54=;
+ b=pIVL4RkfRCDMYK+7YZphPCXOlGtls4XpqOc4ypZ97yEtv5LGRMmZnlZMxz26UrhG1w
+ QcrDO3RL5+Wjl9rVP7ClKC73jWePkXJLszSNtQy3gtMkt6LsA5MmDed67gi/K7CDUBSu
+ OskGNCiulvyujhWMrILPjPJvLOiABoKBmCvUKv9XP4Doh6YphLnFVVTLyd3onvcoX7NH
+ 1iku779T3YwuwYfP4ZmZi1B9x1npI0/sEyiFMXvucLO9pl/nwMk7IzBJThdO6sl1rhga
+ JDPWVqYaQRy+vkK43vAlV39eMHOGzQWeHflWmyqAQvOlOWDLDN4Y+LcDclbLhbcG0TiB
+ S2Sg==
+X-Gm-Message-State: APjAAAXz/8eg/9JQ30iB+9wp6LaQkX98lJq4qA8N9lyiduR7EG4GHwaD
+ B/CjiNjpfEV9AKKQRf41p8qDbQ==
+X-Google-Smtp-Source: APXvYqxYIBXbtzSuPK9eyz7FC0ILxtSo7AVLrSGfVDmK39RujTf/qMGWu4sryl3IMIl6xvWfe1kg/w==
+X-Received: by 2002:a5d:4a4e:: with SMTP id v14mr44406641wrs.200.1564587336894; 
+ Wed, 31 Jul 2019 08:35:36 -0700 (PDT)
 Received: from glaroque-ThinkPad-T480.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id i13sm62834396wrr.73.2019.07.31.08.35.34
+ by smtp.gmail.com with ESMTPSA id i13sm62834396wrr.73.2019.07.31.08.35.35
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 31 Jul 2019 08:35:35 -0700 (PDT)
+ Wed, 31 Jul 2019 08:35:36 -0700 (PDT)
 From: Guillaume La Roque <glaroque@baylibre.com>
 To: daniel.lezcano@linaro.org,
 	khilman@baylibre.com
-Subject: [PATCH v2 4/6] arm64: dts: meson: sei510: Add minimal thermal zone
-Date: Wed, 31 Jul 2019 17:35:27 +0200
-Message-Id: <20190731153529.30159-5-glaroque@baylibre.com>
+Subject: [PATCH v2 5/6] arm64: dts: amlogic: odroid-n2: add minimal thermal
+ zone
+Date: Wed, 31 Jul 2019 17:35:28 +0200
+Message-Id: <20190731153529.30159-6-glaroque@baylibre.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190731153529.30159-1-glaroque@baylibre.com>
 References: <20190731153529.30159-1-glaroque@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_083537_193498_786F24CA 
-X-CRM114-Status: GOOD (  11.44  )
+X-CRM114-CacheID: sfid-20190731_083539_030001_EB904E7D 
+X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,13 +108,13 @@ Add minimal thermal zone for DDR and CPU sensor
 
 Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
 ---
- .../boot/dts/amlogic/meson-g12a-sei510.dts    | 56 +++++++++++++++++++
- 1 file changed, 56 insertions(+)
+ .../boot/dts/amlogic/meson-g12b-odroid-n2.dts | 60 +++++++++++++++++++
+ 1 file changed, 60 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-index 979449968a5f..2c16a2cba0a3 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+index 75ff8a7e373d..a7d73c0c8447 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
 @@ -10,6 +10,7 @@
  #include <dt-bindings/input/input.h>
  #include <dt-bindings/gpio/meson-g12a-gpio.h>
@@ -121,8 +122,8 @@ index 979449968a5f..2c16a2cba0a3 100644
 +#include <dt-bindings/thermal/thermal.h>
  
  / {
- 	compatible = "seirobotics,sei510", "amlogic,g12a";
-@@ -33,6 +34,53 @@
+ 	compatible = "hardkernel,odroid-n2", "amlogic,g12b";
+@@ -20,6 +21,55 @@
  		ethernet0 = &ethmac;
  	};
  
@@ -145,8 +146,10 @@ index 979449968a5f..2c16a2cba0a3 100644
 +					trip = <&cpu_critical>;
 +					cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
 +							 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++							 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++							 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++							 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++							 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
 +				};
 +			};
 +		};
@@ -173,43 +176,59 @@ index 979449968a5f..2c16a2cba0a3 100644
 +		};
 +	};
 +
- 	mono_dac: audio-codec-0 {
- 		compatible = "maxim,max98357a";
- 		#sound-dai-cells = <0>;
-@@ -321,6 +369,7 @@
- 	operating-points-v2 = <&cpu_opp_table>;
+ 	chosen {
+ 		stdout-path = "serial0:115200n8";
+ 	};
+@@ -288,6 +338,7 @@
+ 	operating-points-v2 = <&cpu_opp_table_0>;
  	clocks = <&clkc CLKID_CPU_CLK>;
  	clock-latency = <50000>;
 +	#cooling-cells = <2>;
  };
  
  &cpu1 {
-@@ -328,6 +377,7 @@
- 	operating-points-v2 = <&cpu_opp_table>;
+@@ -295,6 +346,7 @@
+ 	operating-points-v2 = <&cpu_opp_table_0>;
  	clocks = <&clkc CLKID_CPU_CLK>;
  	clock-latency = <50000>;
 +	#cooling-cells = <2>;
  };
  
- &cpu2 {
-@@ -335,6 +385,7 @@
- 	operating-points-v2 = <&cpu_opp_table>;
- 	clocks = <&clkc CLKID_CPU_CLK>;
+ &cpu100 {
+@@ -302,6 +354,7 @@
+ 	operating-points-v2 = <&cpub_opp_table_1>;
+ 	clocks = <&clkc CLKID_CPUB_CLK>;
  	clock-latency = <50000>;
 +	#cooling-cells = <2>;
  };
  
- &cpu3 {
-@@ -342,6 +393,7 @@
- 	operating-points-v2 = <&cpu_opp_table>;
- 	clocks = <&clkc CLKID_CPU_CLK>;
+ &cpu101 {
+@@ -309,6 +362,7 @@
+ 	operating-points-v2 = <&cpub_opp_table_1>;
+ 	clocks = <&clkc CLKID_CPUB_CLK>;
  	clock-latency = <50000>;
 +	#cooling-cells = <2>;
  };
  
- &cvbs_vdac_port {
-@@ -368,6 +420,10 @@
- 	status = "okay";
+ &cpu102 {
+@@ -316,6 +370,7 @@
+ 	operating-points-v2 = <&cpub_opp_table_1>;
+ 	clocks = <&clkc CLKID_CPUB_CLK>;
+ 	clock-latency = <50000>;
++	#cooling-cells = <2>;
+ };
+ 
+ &cpu103 {
+@@ -323,6 +378,7 @@
+ 	operating-points-v2 = <&cpub_opp_table_1>;
+ 	clocks = <&clkc CLKID_CPUB_CLK>;
+ 	clock-latency = <50000>;
++	#cooling-cells = <2>;
+ };
+ 
+ &ext_mdio {
+@@ -377,6 +433,10 @@
+ 	};
  };
  
 +&mali {
