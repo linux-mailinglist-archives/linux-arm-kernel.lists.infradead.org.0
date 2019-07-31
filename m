@@ -2,64 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4727C7B974
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 08:06:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79C637B99D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 08:25:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Lljf7O4kvbJ+uCDFohAXcgiWuEWTUAG74KPnIWdmaKM=; b=jXM
-	NYXJ8qY0Gf7cWIgLcwiRrk7x/Zt+Oz43FUadGWBeYF+QIexW2IChSIUh9st62bIuWsHyTHYeQxG6E
-	1Tz/k0kjt8FLAZDBvYzeBWzpqeJNzKSjQ/aRmVw3CA/uNymkaLmUL5ITq33PzCx9t8wRhQltqcTNo
-	xkszIp0k0jWg2+bN1wWx//TTB0vm320uXzQFpSrbvYJ7UMCzk5HCK2G9qCR3W0RF+OheQIiNv/LHX
-	IBmkB4TU+Uasi9Xm5a7weULmNfRNzxzjA/Y/D6xBkVSZuTm1jyN7YwZM+gIUmlc415DzeVaYjG6v7
-	aGzV8ScjZyDq/oBZG7AYJRkvxhnBUCw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/mHEuenLfmHek377gndZMIgQHnWPzfvRAiaYa5ZyHes=; b=GR7KcDBLwmYBfs
+	A8CTFAzJC1AlJcg4jNGo3pXYY+6tulk6mZym0Wzas1rscyhT+AfC4sJ/OzUsTIZ9N5kpjktBMhFjn
+	0lCnqag7YyVLMwdAAN/+ptsY+cf+0lqXOuZqd/x77mTg1TAdnyANJa53iGnPl2oHJ8Gv18ANMbm3N
+	hwgMf2YDgWyf6hzl84XFNF3Dwe1xW6hvtckdSoJrrF7nCa0LCodlO99cnUdkOKHCMkoGmwB3TGJAG
+	kcpio4HHAw0AxjWmkZvW5+GC1EBvzmACrEOKJf6lPFxtIzDSEtUrJC456+fQk4bS+5g/aiLrTViuf
+	8x+BOrtz2Yyt1t7DsZrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hshkq-0004zz-DK; Wed, 31 Jul 2019 06:06:28 +0000
-Received: from ozlabs.org ([203.11.71.1])
+	id 1hsi2m-0002B6-4H; Wed, 31 Jul 2019 06:25:00 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hshkS-0004mr-Kk
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 06:06:06 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 45z2wk3Zllz9sBF;
- Wed, 31 Jul 2019 16:05:58 +1000 (AEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
- s=201702; t=1564553158;
- bh=G789WvqxZoZpdQOOwYke+JrWvQfQevv9ZWAFnS+sSZA=;
- h=Date:From:To:Cc:Subject:From;
- b=ULZcEMP1hbsL5PEMQRd9ipkccZJUqRzkZp64i6ZQ5vtXe2QcvKUtekLFQPvAolbo9
- oJvGVBUic1MX6EU2caJ4j9lymGFyd9dAcu+3zr64qlojxOe+0uTj4dVyzsAKC7LZ5p
- DLwhp+HJS6GxDvZUOMzIlII0ZqBkf9wB/M1WYj66OIilpxUxip10vbZrXrK5Ld4RS/
- myT81Db2yteC5mvo+gSefQYdNh1Q7ZLNrqY93qw8gt//QKVreCMM7g8DL3u/BhFxWd
- Gd2Rrq1lFAWoD36Kg18Iqp3GJ2ejlNRwNA/AQKJz3bxsRuKhy3fOHXFtuFeeSVjo9p
- bOhNMiTTv6mOQ==
-Date: Wed, 31 Jul 2019 16:05:57 +1000
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: xilinx_uartps.c: suppress "may be used uninitialised" warning
-Message-ID: <20190731160557.6a09c3e1@canb.auug.org.au>
+ id 1hsi2P-0002A8-9C
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 06:24:39 +0000
+Received: from pps.filterd (m0098419.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6V6NEHs025527
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 31 Jul 2019 02:24:35 -0400
+Received: from e06smtp02.uk.ibm.com (e06smtp02.uk.ibm.com [195.75.94.98])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2u340qbpnd-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 31 Jul 2019 02:24:35 -0400
+Received: from localhost
+ by e06smtp02.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
+ Wed, 31 Jul 2019 07:24:33 +0100
+Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
+ by e06smtp02.uk.ibm.com (192.168.101.132) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Wed, 31 Jul 2019 07:24:26 +0100
+Received: from d06av25.portsmouth.uk.ibm.com (d06av25.portsmouth.uk.ibm.com
+ [9.149.105.61])
+ by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x6V6OOGr54919308
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 31 Jul 2019 06:24:24 GMT
+Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id B099C11C058;
+ Wed, 31 Jul 2019 06:24:24 +0000 (GMT)
+Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id AA3CE11C04C;
+ Wed, 31 Jul 2019 06:24:22 +0000 (GMT)
+Received: from rapoport-lnx (unknown [9.148.8.168])
+ by d06av25.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Wed, 31 Jul 2019 06:24:22 +0000 (GMT)
+Date: Wed, 31 Jul 2019 09:24:21 +0300
+From: Mike Rapoport <rppt@linux.ibm.com>
+To: Michal Hocko <mhocko@kernel.org>
+Subject: Re: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
+ default for NUMA
+References: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
+ <20190712070247.GM29483@dhcp22.suse.cz>
+ <586ae736-a429-cf94-1520-1a94ffadad88@os.amperecomputing.com>
+ <20190712121223.GR29483@dhcp22.suse.cz>
+ <20190712143730.au3662g4ua2tjudu@willie-the-truck>
+ <20190712150007.GU29483@dhcp22.suse.cz>
+ <730368c5-1711-89ae-e3ef-65418b17ddc9@os.amperecomputing.com>
+ <20190730081415.GN9330@dhcp22.suse.cz>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190730081415.GN9330@dhcp22.suse.cz>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-TM-AS-GCONF: 00
+x-cbid: 19073106-0008-0000-0000-000003027A16
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19073106-0009-0000-0000-000022701E30
+Message-Id: <20190731062420.GC21422@rapoport-lnx>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-31_03:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=755 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1906280000 definitions=main-1907310066
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_230605_146675_D003155A 
-X-CRM114-Status: GOOD (  13.11  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190730_232437_442309_EC755966 
+X-CRM114-Status: GOOD (  28.00  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,116 +110,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Simek <michal.simek@xilinx.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- Linux Serial List <linux-serial@vger.kernel.org>, Jiri Slaby <jslaby@suse.com>,
- Linux PPC Development List <linuxppc-dev@lists.ozlabs.org>,
- Linus ARM List <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============4611273115020271232=="
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
+ "willy@infradead.org" <willy@infradead.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Hoan Tran OS <hoan@os.amperecomputing.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Open Source Submission <patches@amperecomputing.com>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>,
+ Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ Vlastimil Babka <vbabka@suse.cz>, Oscar Salvador <osalvador@suse.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "David S . Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============4611273115020271232==
-Content-Type: multipart/signed; boundary="Sig_/oMq6rKwzq4yIYumawKzTc/R";
- protocol="application/pgp-signature"; micalg=pgp-sha256
+[ sorry for a late reply too, somehow I missed this thread before ]
 
---Sig_/oMq6rKwzq4yIYumawKzTc/R
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
+On Tue, Jul 30, 2019 at 10:14:15AM +0200, Michal Hocko wrote:
+> [Sorry for a late reply]
+> 
+> On Mon 15-07-19 17:55:07, Hoan Tran OS wrote:
+> > Hi,
+> > 
+> > On 7/12/19 10:00 PM, Michal Hocko wrote:
+> [...]
+> > > Hmm, I thought this was selectable. But I am obviously wrong here.
+> > > Looking more closely, it seems that this is indeed only about
+> > > __early_pfn_to_nid and as such not something that should add a config
+> > > symbol. This should have been called out in the changelog though.
+> > 
+> > Yes, do you have any other comments about my patch?
+> 
+> Not really. Just make sure to explicitly state that
+> CONFIG_NODES_SPAN_OTHER_NODES is only about __early_pfn_to_nid and that
+> doesn't really deserve it's own config and can be pulled under NUMA.
+> 
+> > > Also while at it, does HAVE_MEMBLOCK_NODE_MAP fall into a similar
+> > > bucket? Do we have any NUMA architecture that doesn't enable it?
+> > > 
 
-=46rom 31753a44c62c4fdf6e8a72994ae6861dbde49c11 Mon Sep 17 00:00:00 2001
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-Date: Wed, 31 Jul 2019 16:00:52 +1000
-Subject: [PATCH] xilinx_uartps.c: suppress "may be used uninitialised" warn=
-ing
+HAVE_MEMBLOCK_NODE_MAP makes huge difference in node/zone initialization
+sequence so it's not only about a singe function.
 
-A powerpc allyesconfig build produces this warning:
+> > As I checked with arch Kconfig files, there are 2 architectures, riscv 
+> > and microblaze, do not support NUMA but enable this config.
 
-In file included from include/linux/radix-tree.h:16,
-                 from include/linux/idr.h:15,
-                 from include/linux/kernfs.h:13,
-                 from include/linux/sysfs.h:16,
-                 from include/linux/kobject.h:20,
-                 from include/linux/device.h:16,
-                 from include/linux/platform_device.h:13,
-                 from drivers/tty/serial/xilinx_uartps.c:16:
-drivers/tty/serial/xilinx_uartps.c: In function 'cdns_uart_console_write':
-include/linux/spinlock.h:288:3: warning: 'flags' may be used uninitialized =
-in this function [-Wmaybe-uninitialized]
-   _raw_spin_unlock_irqrestore(lock, flags); \
-   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-drivers/tty/serial/xilinx_uartps.c:1197:16: note: 'flags' was declared here
-  unsigned long flags;
-                ^~~~~
+My take would be that riscv will support NUMA some day.
+ 
+> > And 1 architecture, alpha, supports NUMA but does not enable this config.
 
-It looks like gcc just can't track the relationship between "locked"
-and "flags", and it is obvious that "flags" won't be used when "locked"
-is zero, so the simplest thing is to initialise flags.
+alpha's NUMA support is BROKEN for more than a decade now, I doubt it'll
+ever get fixed.
+ 
+> Care to have a look and clean this up please?
+> 
+> -- 
+> Michal Hocko
+> SUSE Labs
+> 
 
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Jiri Slaby <jslaby@suse.com>
-Cc: Michal Simek <michal.simek@xilinx.com>
-Signed-off-by: Stephen Rothwell <sfr@canb.auug.org.au>
----
- drivers/tty/serial/xilinx_uartps.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+-- 
+Sincerely yours,
+Mike.
 
-This has been like this for a very long time, but this is now one of
-the few remaining warnings produced by the powerpc allyesconfig build,
-so it would be good to get rid of it.
-
-diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx=
-_uartps.c
-index f145946f659b..da4563aaaf5c 100644
---- a/drivers/tty/serial/xilinx_uartps.c
-+++ b/drivers/tty/serial/xilinx_uartps.c
-@@ -1194,7 +1194,7 @@ static void cdns_uart_console_write(struct console *c=
-o, const char *s,
- 				unsigned int count)
- {
- 	struct uart_port *port =3D console_port;
--	unsigned long flags;
-+	unsigned long flags =3D 0;
- 	unsigned int imr, ctrl;
- 	int locked =3D 1;
-=20
---=20
-2.22.0
-
---=20
-Cheers,
-Stephen Rothwell
-
---Sig_/oMq6rKwzq4yIYumawKzTc/R
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl1BL8UACgkQAVBC80lX
-0Gx3MAf+NgUfGWvdNoyBkiRwgAqA7uddSSYmPi/mZ/JfJp7uN+yVTM4AAaDJmkaI
-lu52irRBVHp6J20zZjIrF0Nm1taHmDxNoyJacpkM1Za5klHa8DOxvLx01xLUGd7G
-91gq2/j2oJYC+pJ3CBkRgt9Vj5GpOwiH+Sirmt71H+Hyno3pyQhQKasUXByHiMtr
-RHLewYnj6OgEiU7aVh1Zy+w4JBpnycEETfeONFrI/WWDBsMupTBgeyhqilPsTh9C
-hqZx4uJmKwmVsuxOc8We0+HTNCGPEbDV6GrX4hHCzn0EguoAyMjKNOCY11ZSy6SV
-esnxLc4sHMDqCMAE4EWD5niCLtNxuQ==
-=M6BN
------END PGP SIGNATURE-----
-
---Sig_/oMq6rKwzq4yIYumawKzTc/R--
-
-
---===============4611273115020271232==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4611273115020271232==--
-
