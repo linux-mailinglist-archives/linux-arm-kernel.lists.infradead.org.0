@@ -2,55 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0F037C13D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 14:25:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FE9B7C147
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 14:27:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zzo4oM+FRqxv/bV4lpy/iVKZZXMfsowU7lqp4vyTK4c=; b=EOM/S6FXnlwU9B
-	zdAh9sHIlNMq/rog/0d46jlg2Jo3hEDWxnJgJDNv0hw3SDwLOAI2HdVgalc7DrPL5FVCxrmfXkk37
-	PBuDNVi94Dy66aIaLNLwrp/sex39uZOmCoY7NhWeai1Z8TFSOhNTEHECkg3mBnPApbWRlsTRISSsL
-	2D+KC313GobwDiRJMhVfbcgWBY+KzifzXfZGSAGCgfqC+x8deKFvizHQDHhCHKuHEBWW1nbPatGw8
-	vUcab3Qdn8qBheHxQ+DPB+yVH3SkQ54urSlI6LyjCAL4Wjkx85Nb5jPPASZjJ/GS2hD/Q+0b3G1Jm
-	r7gPOvBFY8JQgDLGujbg==;
+	List-Owner; bh=wI0sax7TQo4e075Fx03aSRZOBwcWqqD69eiKzHZ6s7Y=; b=TD591J7/vFUGa6
+	LEJJZ66z2ptYNbtX4nxOU+eVyNvDq/sq1Y6cwXMGj3u/n+pji4TYPQNkMG7M/QUny5iZtHa69VXC/
+	E2RksetOLX2A+VhRQ9RcQAzQ2Akr044IyMdknMEJ/Zxmxga1zUnc/hr4WlJRX3s4R3C4p7lV+w8WK
+	L7rjqwi3QetWsjWbQa1aPx9Xqy65G/U7w9RaEPW02yw2m1bVXAyYSfIshfd5KqYKaQgbEPhQRgxb2
+	p2YmDp8bQM8ra1pa8XBnz5ZS+6YcvE9dBu27a5TExkgui2OQ/NeDN7KkkkpubzyENvCY3c6c4DGhP
+	sTXDye4u06yq3CQURCQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsnfe-0008DA-DK; Wed, 31 Jul 2019 12:25:30 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1hsnh5-0000YA-S4; Wed, 31 Jul 2019 12:26:59 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsncD-0002mn-RQ
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 12:21:59 +0000
-X-Originating-IP: 86.250.200.211
-Received: from localhost.localdomain (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id D9208FF815;
- Wed, 31 Jul 2019 12:21:54 +0000 (UTC)
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Gregory Clement <gregory.clement@bootlin.com>,
- Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>
-Subject: [PATCH v3 19/19] arm64: dts: marvell: Convert 7k/8k usb-phy
- properties to phy-supply
-Date: Wed, 31 Jul 2019 14:21:26 +0200
-Message-Id: <20190731122126.3049-20-miquel.raynal@bootlin.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190731122126.3049-1-miquel.raynal@bootlin.com>
-References: <20190731122126.3049-1-miquel.raynal@bootlin.com>
+ id 1hsngu-0000Xp-Hj
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 12:26:50 +0000
+Received: from pps.filterd (m0098420.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6VCNV5U018996
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 31 Jul 2019 08:26:47 -0400
+Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2u39q9byy3-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 31 Jul 2019 08:26:47 -0400
+Received: from localhost
+ by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
+ Wed, 31 Jul 2019 13:26:45 +0100
+Received: from b06cxnps4075.portsmouth.uk.ibm.com (9.149.109.197)
+ by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Wed, 31 Jul 2019 13:26:37 +0100
+Received: from d06av25.portsmouth.uk.ibm.com (d06av25.portsmouth.uk.ibm.com
+ [9.149.105.61])
+ by b06cxnps4075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x6VCQZF059244618
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 31 Jul 2019 12:26:36 GMT
+Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id DB81511C05B;
+ Wed, 31 Jul 2019 12:26:35 +0000 (GMT)
+Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id D43D911C04A;
+ Wed, 31 Jul 2019 12:26:33 +0000 (GMT)
+Received: from rapoport-lnx (unknown [9.148.8.168])
+ by d06av25.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Wed, 31 Jul 2019 12:26:33 +0000 (GMT)
+Date: Wed, 31 Jul 2019 15:26:32 +0300
+From: Mike Rapoport <rppt@linux.ibm.com>
+To: Michal Hocko <mhocko@kernel.org>
+Subject: Re: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
+ default for NUMA
+References: <586ae736-a429-cf94-1520-1a94ffadad88@os.amperecomputing.com>
+ <20190712121223.GR29483@dhcp22.suse.cz>
+ <20190712143730.au3662g4ua2tjudu@willie-the-truck>
+ <20190712150007.GU29483@dhcp22.suse.cz>
+ <730368c5-1711-89ae-e3ef-65418b17ddc9@os.amperecomputing.com>
+ <20190730081415.GN9330@dhcp22.suse.cz>
+ <20190731062420.GC21422@rapoport-lnx>
+ <20190731080309.GZ9330@dhcp22.suse.cz>
+ <20190731111422.GA14538@rapoport-lnx>
+ <20190731114016.GI9330@dhcp22.suse.cz>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190731114016.GI9330@dhcp22.suse.cz>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-TM-AS-GCONF: 00
+x-cbid: 19073112-0028-0000-0000-00000389A2B7
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19073112-0029-0000-0000-00002449F381
+Message-Id: <20190731122631.GB14538@rapoport-lnx>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-31_05:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=754 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1906280000 definitions=main-1907310126
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_052158_247298_661EFE9A 
-X-CRM114-Status: GOOD (  13.78  )
+X-CRM114-CacheID: sfid-20190731_052648_708577_866721C3 
+X-CRM114-Status: GOOD (  33.04  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ low trust [148.163.158.5 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,189 +112,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Antoine Tenart <antoine.tenart@bootlin.com>,
- Grzegorz Jaszczyk <jaz@semihalf.com>, Russell King <linux@armlinux.org.uk>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
+ "willy@infradead.org" <willy@infradead.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Hoan Tran OS <hoan@os.amperecomputing.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Open Source Submission <patches@amperecomputing.com>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>,
+ Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ Vlastimil Babka <vbabka@suse.cz>, Oscar Salvador <osalvador@suse.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "David S . Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update Aramda 7k/8k DTs to use the phy-supply property of the (recent)
-generic PHY framework instead of the (legacy) usb-phy preperty. Both
-enable the supply when the PHY is enabled.
+On Wed, Jul 31, 2019 at 01:40:16PM +0200, Michal Hocko wrote:
+> On Wed 31-07-19 14:14:22, Mike Rapoport wrote:
+> > On Wed, Jul 31, 2019 at 10:03:09AM +0200, Michal Hocko wrote:
+> > > On Wed 31-07-19 09:24:21, Mike Rapoport wrote:
+> > > > [ sorry for a late reply too, somehow I missed this thread before ]
+> > > > 
+> > > > On Tue, Jul 30, 2019 at 10:14:15AM +0200, Michal Hocko wrote:
+> > > > > [Sorry for a late reply]
+> > > > > 
+> > > > > On Mon 15-07-19 17:55:07, Hoan Tran OS wrote:
+> > > > > > Hi,
+> > > > > > 
+> > > > > > On 7/12/19 10:00 PM, Michal Hocko wrote:
+> > > > > [...]
+> > > > > > > Hmm, I thought this was selectable. But I am obviously wrong here.
+> > > > > > > Looking more closely, it seems that this is indeed only about
+> > > > > > > __early_pfn_to_nid and as such not something that should add a config
+> > > > > > > symbol. This should have been called out in the changelog though.
+> > > > > > 
+> > > > > > Yes, do you have any other comments about my patch?
+> > > > > 
+> > > > > Not really. Just make sure to explicitly state that
+> > > > > CONFIG_NODES_SPAN_OTHER_NODES is only about __early_pfn_to_nid and that
+> > > > > doesn't really deserve it's own config and can be pulled under NUMA.
+> > > > > 
+> > > > > > > Also while at it, does HAVE_MEMBLOCK_NODE_MAP fall into a similar
+> > > > > > > bucket? Do we have any NUMA architecture that doesn't enable it?
+> > > > > > > 
+> > > > 
+> > > > HAVE_MEMBLOCK_NODE_MAP makes huge difference in node/zone initialization
+> > > > sequence so it's not only about a singe function.
+> > > 
+> > > The question is whether we want to have this a config option or enable
+> > > it unconditionally for each NUMA system.
+> > 
+> > We can make it 'default NUMA', but we can't drop it completely because
+> > microblaze uses sparse_memory_present_with_active_regions() which is
+> > unavailable when HAVE_MEMBLOCK_NODE_MAP=n.
+> 
+> I suppose you mean that microblaze is using
+> sparse_memory_present_with_active_regions even without CONFIG_NUMA,
+> right?
 
-The COMPHY nodes only provide SERDES lanes configuration. The power
-supply that is represented by the phy-supply property is just a
-regulator wired to the USB connector, hence the creation of connector
-nodes as child of the COMPHY nodes and the supply attached to it.
+Yes.
 
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
----
- .../arm64/boot/dts/marvell/armada-7040-db.dts | 26 ++++++++++---------
- .../marvell/armada-8040-clearfog-gt-8k.dts    | 13 +++++-----
- .../arm64/boot/dts/marvell/armada-8040-db.dts | 13 +++++-----
- .../boot/dts/marvell/armada-8040-mcbin.dtsi   | 13 +++++-----
- 4 files changed, 35 insertions(+), 30 deletions(-)
+> I have to confess I do not understand that code. What is the deal
+> with setting node id there?
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-7040-db.dts b/arch/arm64/boot/dts/marvell/armada-7040-db.dts
-index d1160edf57e0..a7eb4e7697a2 100644
---- a/arch/arm64/boot/dts/marvell/armada-7040-db.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-7040-db.dts
-@@ -73,16 +73,6 @@
- 		gpio = <&expander0 1 GPIO_ACTIVE_HIGH>;
- 		vin-supply = <&cp0_exp_usb3_1_current_regulator>;
- 	};
--
--	cp0_usb3_0_phy: cp0-usb3-0-phy {
--		compatible = "usb-nop-xceiv";
--		vcc-supply = <&cp0_reg_usb3_0_vbus>;
--	};
--
--	cp0_usb3_1_phy: cp0-usb3-1-phy {
--		compatible = "usb-nop-xceiv";
--		vcc-supply = <&cp0_reg_usb3_1_vbus>;
--	};
- };
- 
- &i2c0 {
-@@ -228,15 +218,27 @@
- 	};
- };
- 
-+&cp0_comphy1 {
-+	cp0_usbh0_con: connector {
-+		compatible = "usb-a-connector";
-+		phy-supply = <&cp0_reg_usb3_0_vbus>;
-+	};
-+};
-+
- &cp0_usb3_0 {
--	usb-phy = <&cp0_usb3_0_phy>;
- 	phys = <&cp0_comphy1 0>;
- 	phy-names = "cp0-usb3h0-comphy";
- 	status = "okay";
- };
- 
-+&cp0_comphy4 {
-+	cp0_usbh1_con: connector {
-+		compatible = "usb-a-connector";
-+		phy-supply = <&cp0_reg_usb3_1_vbus>;
-+	};
-+};
-+
- &cp0_usb3_1 {
--	usb-phy = <&cp0_usb3_1_phy>;
- 	phys = <&cp0_comphy4 1>;
- 	phy-names = "cp0-usb3h1-comphy";
- 	status = "okay";
-diff --git a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-index bcb0421c7ac0..bd881497b872 100644
---- a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-@@ -51,11 +51,6 @@
- 		status = "okay";
- 	};
- 
--	usb3h0_phy: usb3_phy0 {
--		compatible = "usb-nop-xceiv";
--		vcc-supply = <&v_5v0_usb3_hst_vbus>;
--	};
--
- 	sfp_cp0_eth0: sfp-cp0-eth0 {
- 		compatible = "sff,sfp";
- 		i2c-bus = <&cp0_i2c1>;
-@@ -474,8 +469,14 @@
- 	};
- };
- 
-+&cp1_comphy2 {
-+	cp1_usbh0_con: connector {
-+		compatible = "usb-a-connector";
-+		phy-supply = <&v_5v0_usb3_hst_vbus>;
-+	};
-+};
-+
- &cp1_usb3_0 {
--	usb-phy = <&usb3h0_phy>;
- 	phys = <&cp1_comphy2 0>;
- 	phy-names = "cp1-usb3h0-comphy";
- 	status = "okay";
-diff --git a/arch/arm64/boot/dts/marvell/armada-8040-db.dts b/arch/arm64/boot/dts/marvell/armada-8040-db.dts
-index 9746969e8da9..09fb5256f1db 100644
---- a/arch/arm64/boot/dts/marvell/armada-8040-db.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-8040-db.dts
-@@ -54,11 +54,6 @@
- 		vcc-supply = <&cp0_reg_usb3_0_vbus>;
- 	};
- 
--	cp0_usb3_1_phy: cp0-usb3-1-phy {
--		compatible = "usb-nop-xceiv";
--		vcc-supply = <&cp0_reg_usb3_1_vbus>;
--	};
--
- 	cp1_reg_usb3_0_vbus: cp1-usb3-0-vbus {
- 		compatible = "regulator-fixed";
- 		regulator-name = "cp1-usb3h0-vbus";
-@@ -164,9 +159,15 @@
- 	status = "okay";
- };
- 
-+&cp0_comphy4 {
-+	cp0_usbh1_con: connector {
-+		compatible = "usb-a-connector";
-+		phy-supply = <&cp0_reg_usb3_1_vbus>;
-+	};
-+};
-+
- /* CON10 on CP0 expansion */
- &cp0_usb3_1 {
--	usb-phy = <&cp0_usb3_1_phy>;
- 	phys = <&cp0_comphy4 1>;
- 	phy-names = "cp0-usb3h1-comphy";
- 	status = "okay";
-diff --git a/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dtsi b/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dtsi
-index a2c099a12e55..d250f4b2bfed 100644
---- a/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dtsi
-+++ b/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dtsi
-@@ -61,11 +61,6 @@
- 		status = "okay";
- 	};
- 
--	usb3h0_phy: usb3_phy0 {
--		compatible = "usb-nop-xceiv";
--		vcc-supply = <&v_5v0_usb3_hst_vbus>;
--	};
--
- 	sfp_eth0: sfp-eth0 {
- 		/* CON15,16 - CPM lane 4 */
- 		compatible = "sff,sfp";
-@@ -360,9 +355,15 @@
- 	};
- };
- 
-+&cp1_comphy2 {
-+	cp1_usbh0_con: connector {
-+		compatible = "usb-a-connector";
-+		phy-supply = <&v_5v0_usb3_hst_vbus>;
-+	};
-+};
-+
- &cp1_usb3_0 {
- 	/* CPS Lane 2 - CON7 */
--	usb-phy = <&usb3h0_phy>;
- 	phys = <&cp1_comphy2 0>;
- 	phy-names = "cp1-usb3h0-comphy";
- 	status = "okay";
+The sparse_memory_present_with_active_regions() iterates over
+memblock.memory regions and uses the node id of each region as the
+parameter to memory_present(). The assumption here is that sometime before
+each region was assigned a proper non-negative node id. 
+
+microblaze uses device tree for memory enumeration and the current FDT code
+does memblock_add() that implicitly sets nid in memblock.memory regions to -1.
+
+So in order to have proper node id passed to memory_present() microblaze
+has to call memblock_set_node() before it can use
+sparse_memory_present_with_active_regions().
+
+> -- 
+> Michal Hocko
+> SUSE Labs
+
 -- 
-2.20.1
+Sincerely yours,
+Mike.
 
 
 _______________________________________________
