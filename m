@@ -2,71 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E1BF7C839
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:11:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FF5E7C849
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:13:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6OuHible/4q9PQCEY4sMbKPUMX8uYRaYGoK6P4pI4qQ=; b=bBlFBAOFePlt6q
-	PHBmxlJ/HZAg8MA/YVZoVX21ItqC8GJw9GGf6XRqsuYAOoyLAOcI7r+OnyzYUT2nyHYq1M2u9rvoe
-	AQJNAc3oUaGqBEfaKEvS5csmsH86CPHaPsj3LEVOVOYUp1pvLYhxShBXYf+9wMR4pr8HpR8OQqJG3
-	3KUb4JsMcNhKb/oNCU0x3SMycOK9t1EV1E76ZDP93MEycJ6hNk21e7J+8MpJ70xw9wDytA49EHmh8
-	lqd5EVPiR98esnr2Q8T9tTO1QZKH9F4YTfS/2QPKyanqMUgBVjm7gXEpe1REvPCrlQmv2FWrpn+eq
-	W+s1KiTiwTc+vQTXZI4A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BhMcqJWxAJszSLozA9Gp4vfUlyhivyjbyu/tLRiB2DA=; b=DNG+Qa300LA/U4
+	eIAAfTPy+pWUaZda/N6GpTbKGD22PhqSaWTedVmeuCIEIgTPu5DhOjE0a/JinJ+unLl7wuNxZyRIq
+	wbL/9lFCFQu3P5ivDrAlpQOb+4yk5fUXRFihNkCduOVpVDYTF4VSE6Qes4sEiHrTsbA/Ck0RRwy7Z
+	BKt/3kpjjq/dG8xKfF/b4ar/8zGhEP3q2a/txyVU3uMHoYIZ1C2Df0oYZO9cJKewNpr4WHUNSA2N2
+	zigV3Q92MKtWtCpFXEL5i2DzhM8+G3SKIJWeyxsnuFWA/ERvzWhkSEGogdFVBSUqysSFzKZk5WqDd
+	LLL030ZPAK3RYNGMmenA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrCA-0007bQ-QJ; Wed, 31 Jul 2019 16:11:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrC0-0007Zi-K5
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:11:10 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 11533206A3;
- Wed, 31 Jul 2019 16:11:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564589468;
- bh=wMw/vfv7591v5B2lTvWN47RNjbkh0FPCOeS3UTprHLk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=JWwb9h/LpO93Nj+dCkoUS/EpGOhXEKuyHtRHXJC6igJNZAwfQn0IYkY7GipJK9fRJ
- XReuRfvbRYRviqtwDUSADC6rOMJeYCvzl9f5WmQnPcH5pZvZXdZE4wp3fSsmA+9VBr
- U+kZr3/F/RT8+HUjng0iS0Bm/HZsFhsyWU9sfaag=
-Date: Wed, 31 Jul 2019 17:11:04 +0100
-From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [RFC 2/2] arm64/mm: Enable device memory allocation and free for
- vmemmap mapping
-Message-ID: <20190731161103.kqv3v2xlq4vnyjhp@willie-the-truck>
-References: <1561697083-7329-1-git-send-email-anshuman.khandual@arm.com>
- <1561697083-7329-3-git-send-email-anshuman.khandual@arm.com>
+	id 1hsrEE-0008J2-KZ; Wed, 31 Jul 2019 16:13:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsrDv-00084a-5o
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 16:13:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 401FC344;
+ Wed, 31 Jul 2019 09:13:05 -0700 (PDT)
+Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ACB7D3F71F;
+ Wed, 31 Jul 2019 09:13:03 -0700 (PDT)
+From: Andrew Murray <andrew.murray@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Ard.Biesheuvel@arm.com
+Subject: [PATCH v2 0/5] arm64: avoid out-of-line ll/sc atomics
+Date: Wed, 31 Jul 2019 17:12:51 +0100
+Message-Id: <20190731161256.22210-1-andrew.murray@arm.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1561697083-7329-3-git-send-email-anshuman.khandual@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_091108_688202_FAED52AA 
-X-CRM114-Status: GOOD (  17.79  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190731_091307_309027_EDB273A0 
+X-CRM114-Status: GOOD (  15.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,79 +59,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 28, 2019 at 10:14:43AM +0530, Anshuman Khandual wrote:
-> This enables vmemmap_populate() and vmemmap_free() functions to incorporate
-> struct vmem_altmap based device memory allocation and free requests. With
-> this device memory with specific atlmap configuration can be hot plugged
-> and hot removed as ZONE_DEVICE memory on arm64 platforms.
-> 
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> 
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> ---
->  arch/arm64/mm/mmu.c | 57 ++++++++++++++++++++++++++++++++++-------------------
->  1 file changed, 37 insertions(+), 20 deletions(-)
-> 
-> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-> index 39e18d1..8867bbd 100644
-> --- a/arch/arm64/mm/mmu.c
-> +++ b/arch/arm64/mm/mmu.c
-> @@ -735,15 +735,26 @@ int kern_addr_valid(unsigned long addr)
->  }
->  
->  #ifdef CONFIG_MEMORY_HOTPLUG
-> -static void free_hotplug_page_range(struct page *page, size_t size)
-> +static void free_hotplug_page_range(struct page *page, size_t size,
-> +				    struct vmem_altmap *altmap)
->  {
-> -	WARN_ON(!page || PageReserved(page));
-> -	free_pages((unsigned long)page_address(page), get_order(size));
-> +	if (altmap) {
-> +		/*
-> +		 * vmemmap_populate() creates vmemmap mapping either at pte
-> +		 * or pmd level. Unmapping request at any other level would
-> +		 * be a problem.
-> +		 */
-> +		WARN_ON((size != PAGE_SIZE) && (size != PMD_SIZE));
-> +		vmem_altmap_free(altmap, size >> PAGE_SHIFT);
-> +	} else {
-> +		WARN_ON(!page || PageReserved(page));
-> +		free_pages((unsigned long)page_address(page), get_order(size));
-> +	}
->  }
->  
->  static void free_hotplug_pgtable_page(struct page *page)
->  {
-> -	free_hotplug_page_range(page, PAGE_SIZE);
-> +	free_hotplug_page_range(page, PAGE_SIZE, NULL);
->  }
->  
->  static void free_pte_table(pmd_t *pmdp, unsigned long addr)
-> @@ -807,7 +818,8 @@ static void free_pud_table(pgd_t *pgdp, unsigned long addr)
->  }
->  
->  static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
-> -				    unsigned long end, bool sparse_vmap)
-> +				    unsigned long end, bool sparse_vmap,
-> +				    struct vmem_altmap *altmap)
+When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
+or toolchain doesn't support it the existing code will fallback to ll/sc
+atomics. It achieves this by branching from inline assembly to a function
+that is built with specical compile flags. Further this results in the
+clobbering of registers even when the fallback isn't used increasing
+register pressure.
 
-Do you still need the sparse_vmap parameter, or can you just pass a NULL
-altmap pointer when sparse_vmap is false?
+Let's improve this by providing inline implementatins of both LSE and
+ll/sc and use a static key to select between them. This allows for the
+compiler to generate better atomics code.
 
-Will
+Whilst it may be difficult to understand the performance impact, we gain
+improved code readability, ability to use Clang, and improved backtrace
+reliability.
+
+Build and boot tested, along with atomic_64_test.
+
+Following is the assembly of a function that has three consecutive
+atomic_add calls when built with LSE and this patchset:
+
+Dump of assembler code for function atomics_test:
+   0xffff000010084338 <+0>:     b       0xffff000010084388 <atomics_test+80>
+   0xffff00001008433c <+4>:     b       0xffff000010084388 <atomics_test+80>
+   0xffff000010084340 <+8>:     adrp    x0, 0xffff0000118d5000 <reset_devices>
+   0xffff000010084344 <+12>:    add     x2, x0, #0x0
+   0xffff000010084348 <+16>:    mov     w1, #0x1                        // #1
+   0xffff00001008434c <+20>:    add     x3, x2, #0x28
+   0xffff000010084350 <+24>:    stadd   w1, [x3]
+   0xffff000010084354 <+28>:    b       0xffff00001008439c <atomics_test+100>
+   0xffff000010084358 <+32>:    b       0xffff00001008439c <atomics_test+100>
+   0xffff00001008435c <+36>:    add     x1, x0, #0x0
+   0xffff000010084360 <+40>:    mov     w2, #0x1                        // #1
+   0xffff000010084364 <+44>:    add     x3, x1, #0x28
+   0xffff000010084368 <+48>:    stadd   w2, [x3]
+   0xffff00001008436c <+52>:    b       0xffff0000100843ac <atomics_test+116>
+   0xffff000010084370 <+56>:    b       0xffff0000100843ac <atomics_test+116>
+   0xffff000010084374 <+60>:    add     x0, x0, #0x0
+   0xffff000010084378 <+64>:    mov     w1, #0x1                        // #1
+   0xffff00001008437c <+68>:    add     x2, x0, #0x28
+   0xffff000010084380 <+72>:    stadd   w1, [x2]
+   0xffff000010084384 <+76>:    ret
+   0xffff000010084388 <+80>:    adrp    x0, 0xffff0000118d5000 <reset_devices>
+   0xffff00001008438c <+84>:    add     x1, x0, #0x0
+   0xffff000010084390 <+88>:    add     x1, x1, #0x28
+   0xffff000010084394 <+92>:    b       0xffff000010084570
+   0xffff000010084398 <+96>:    b       0xffff000010084354 <atomics_test+28>
+   0xffff00001008439c <+100>:   add     x1, x0, #0x0
+   0xffff0000100843a0 <+104>:   add     x1, x1, #0x28
+   0xffff0000100843a4 <+108>:   b       0xffff000010084588
+   0xffff0000100843a8 <+112>:   b       0xffff00001008436c <atomics_test+52>
+   0xffff0000100843ac <+116>:   add     x0, x0, #0x0
+   0xffff0000100843b0 <+120>:   add     x0, x0, #0x28
+   0xffff0000100843b4 <+124>:   b       0xffff0000100845a0
+   0xffff0000100843b8 <+128>:   ret
+End of assembler dump.
+
+ffff000010084570:       f9800031        prfm    pstl1strm, [x1]
+ffff000010084574:       885f7c22        ldxr    w2, [x1]
+ffff000010084578:       11000442        add     w2, w2, #0x1
+ffff00001008457c:       88037c22        stxr    w3, w2, [x1]
+ffff000010084580:       35ffffa3        cbnz    w3, ffff000010084574 <do_one_initcall+0x1b4>
+ffff000010084584:       17ffff85        b       ffff000010084398 <atomics_test+0x60>
+ffff000010084588:       f9800031        prfm    pstl1strm, [x1]
+ffff00001008458c:       885f7c22        ldxr    w2, [x1]
+ffff000010084590:       11000442        add     w2, w2, #0x1
+ffff000010084594:       88037c22        stxr    w3, w2, [x1]
+ffff000010084598:       35ffffa3        cbnz    w3, ffff00001008458c <do_one_initcall+0x1cc>
+ffff00001008459c:       17ffff83        b       ffff0000100843a8 <atomics_test+0x70>
+ffff0000100845a0:       f9800011        prfm    pstl1strm, [x0]
+ffff0000100845a4:       885f7c01        ldxr    w1, [x0]
+ffff0000100845a8:       11000421        add     w1, w1, #0x1
+ffff0000100845ac:       88027c01        stxr    w2, w1, [x0]
+ffff0000100845b0:       35ffffa2        cbnz    w2, ffff0000100845a4 <do_one_initcall+0x1e4>
+ffff0000100845b4:       17ffff81        b       ffff0000100843b8 <atomics_test+0x80>
+
+The two branches before each section of atomics relates to the two static
+keys which both become nop's when LSE is available. When LSE isn't
+available the branches are used to run the slowpath fallback LL/SC atomics.
+
+In v1 of this series, due to the use of likely/unlikely for the LSE code,
+the fallback code ended up in one place at the end of the function. In this
+v2 patchset we move the fallback code into its own subsection, this moves
+any atomics code to the end of each compilation unit. It is felt that this
+may improve icache performance for both LSE and LL/SC.
+
+Where CONFIG_ARM64_LSE_ATOMICS isn't enabled then the same function is as
+follows:
+
+Dump of assembler code for function atomics_test:
+   0xffff000010084338 <+0>:     adrp    x0, 0xffff000011865000 <reset_devices>
+   0xffff00001008433c <+4>:     add     x0, x0, #0x0
+   0xffff000010084340 <+8>:     add     x3, x0, #0x28
+   0xffff000010084344 <+12>:    prfm    pstl1strm, [x3]
+   0xffff000010084348 <+16>:    ldxr    w1, [x3]
+   0xffff00001008434c <+20>:    add     w1, w1, #0x1
+   0xffff000010084350 <+24>:    stxr    w2, w1, [x3]
+   0xffff000010084354 <+28>:    cbnz    w2, 0xffff000010084348 <atomics_test+16>
+   0xffff000010084358 <+32>:    prfm    pstl1strm, [x3]
+   0xffff00001008435c <+36>:    ldxr    w1, [x3]
+   0xffff000010084360 <+40>:    add     w1, w1, #0x1
+   0xffff000010084364 <+44>:    stxr    w2, w1, [x3]
+   0xffff000010084368 <+48>:    cbnz    w2, 0xffff00001008435c <atomics_test+36>
+   0xffff00001008436c <+52>:    prfm    pstl1strm, [x3]
+   0xffff000010084370 <+56>:    ldxr    w1, [x3]
+   0xffff000010084374 <+60>:    add     w1, w1, #0x1
+   0xffff000010084378 <+64>:    stxr    w2, w1, [x3]
+   0xffff00001008437c <+68>:    cbnz    w2, 0xffff000010084370 <atomics_test+56>
+   0xffff000010084380 <+72>:    ret
+End of assembler dump.
+
+These changes add some bloat on defconfig according to bloat-o-meter:
+
+For LSE build (text):
+  add/remove: 4/109 grow/shrink: 3398/67 up/down: 151556/-4940
+  Total: Before=12759457, After=12906073, chg +1.15%
+
+For LL/LSC only build (text):
+  add/remove: 2/2 grow/shrink: 1423/57 up/down: 12224/-564 (11660)
+  Total: Before=12836417, After=12848077, chg +0.09%
+
+The bloat for LSE is due to the provision of LL/SC fallback atomics no longer
+being !inline.
+
+The bloat for LL/SC seems to be due to patch 2, which changes some assembly
+constraints (i.e. moving an intermediate to a register).
+
+When comparing the number of data transfer instructions (those starting or
+ending with ld or st) in vmlinux we see a reduction from 30.8% to 30.6% when
+applying this series. And no change when CONFIG_ARM64_LSE_ATOMICS isn't
+enabled (30.9%). This was a feable attempt to measure register spilling.
+
+Changes since v1:
+
+ - Move LL/SC atomics to a subsection when being used as a fallback
+
+ - Rebased onto arm64/for-next/fixes
+
+
+Andrew Murray (5):
+  jump_label: Don't warn on __exit jump entries
+  arm64: Use correct ll/sc atomic constraints
+  arm64: atomics: avoid out-of-line ll/sc atomics
+  arm64: avoid using hard-coded registers for LSE atomics
+  arm64: atomics: remove atomic_ll_sc compilation unit
+
+ arch/arm64/include/asm/atomic.h       |  11 +-
+ arch/arm64/include/asm/atomic_arch.h  | 154 ++++++++++
+ arch/arm64/include/asm/atomic_ll_sc.h | 200 ++++++-------
+ arch/arm64/include/asm/atomic_lse.h   | 395 +++++++++-----------------
+ arch/arm64/include/asm/cmpxchg.h      |   2 +-
+ arch/arm64/include/asm/lse.h          |  11 -
+ arch/arm64/lib/Makefile               |  19 --
+ arch/arm64/lib/atomic_ll_sc.c         |   3 -
+ kernel/jump_label.c                   |   4 +-
+ 9 files changed, 398 insertions(+), 401 deletions(-)
+ create mode 100644 arch/arm64/include/asm/atomic_arch.h
+ delete mode 100644 arch/arm64/lib/atomic_ll_sc.c
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
