@@ -2,97 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5122A7B96F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 08:06:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4727C7B974
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 08:06:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5HE4HQx9pn1VV+R5M6YVOJoQL6+LtstVztI9ClfYBvQ=; b=tSYW706ef2NYZpWRFOhCwx+EW
-	tJ/kgyedcU/RTCsKvhmHu+rfCl/iCTkNxF4xiXKkm+VE881lcOnlGSANpOvLK2Ih3aBXPEfa4LyIP
-	6OaqLmuUNZoULp9gOP6pF8HE0zsjAy/3uqe5Xxmeo23NlBw7nZ11km3WZA+9rsExsFiysAKfI/wu4
-	3HhOount5rq/mbRDMdRbZMse46modmTWV1oaZUK7UkI5ZVxlIgO00XjXZ7XAKaRFEDyiOsMMq7NKX
-	1pR9RG+f07FGqyXGYpCyCd01sGnVEv0q6rLfix4oBhzwv4lvSQHbaZ58OuDbKbDRkbiIluhu12PgR
-	LAHclPe5g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Lljf7O4kvbJ+uCDFohAXcgiWuEWTUAG74KPnIWdmaKM=; b=jXM
+	NYXJ8qY0Gf7cWIgLcwiRrk7x/Zt+Oz43FUadGWBeYF+QIexW2IChSIUh9st62bIuWsHyTHYeQxG6E
+	1Tz/k0kjt8FLAZDBvYzeBWzpqeJNzKSjQ/aRmVw3CA/uNymkaLmUL5ITq33PzCx9t8wRhQltqcTNo
+	xkszIp0k0jWg2+bN1wWx//TTB0vm320uXzQFpSrbvYJ7UMCzk5HCK2G9qCR3W0RF+OheQIiNv/LHX
+	IBmkB4TU+Uasi9Xm5a7weULmNfRNzxzjA/Y/D6xBkVSZuTm1jyN7YwZM+gIUmlc415DzeVaYjG6v7
+	aGzV8ScjZyDq/oBZG7AYJRkvxhnBUCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hshkU-0004jj-V2; Wed, 31 Jul 2019 06:06:07 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hshkq-0004zz-DK; Wed, 31 Jul 2019 06:06:28 +0000
+Received: from ozlabs.org ([203.11.71.1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hshkI-0004jP-51
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 06:05:55 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id CD4E8602F1; Wed, 31 Jul 2019 06:05:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1564553153;
- bh=hEk5PTdhSlKYsF9BXBhjcZBTRehJjUX5duLT6JssgUI=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=L7QZGwJ0INkOQxR7UU4hxuC1jBHQfyR/j1TeOlzjZqMssnkNWO1poRKVn27FyBlnv
- K13xaqM+DJ1odTPKtpHVkgiu9ArMtMKkjVn2vfcHJIw6A8hXD5XOmLYRM+sTKSOz24
- oQFLXvD9Wq8eTTyRSCfCtu1DUfZJuhBk1glBKWYc=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [10.79.136.27]
- (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 37482602F1;
- Wed, 31 Jul 2019 06:05:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1564553152;
- bh=hEk5PTdhSlKYsF9BXBhjcZBTRehJjUX5duLT6JssgUI=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=ioDPYOhc1zZYTYKDQYsrRAN8bInbnXb4qZ95Frt66pd/Z4f7I3Cn8+RB3dXiDXMZ5
- qxrqORFaXA/XnmfRdMoEb5atqtBHbwwCEUIWrTl1k/+mSFQlKsChhkVHOqqRA7NUFk
- aahtVZzAqwLrnD3bZySkzv62zhy4DwWoSurO2Ec4=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 37482602F1
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-Subject: Re: [PATCHv9 1/3] arm64: dts: qcom: sdm845: Add Coresight support
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Leo Yan <leo.yan@linaro.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Andy Gross <agross@kernel.org>, David Brown <david.brown@linaro.org>,
- Mark Rutland <mark.rutland@arm.com>
-References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <be6d77eb6c7498df09d04e0a369d4d65b38f4b8e.1564550873.git.saiprakash.ranjan@codeaurora.org>
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Message-ID: <b50c06d4-8298-7abe-4442-2aff336509f5@codeaurora.org>
-Date: Wed, 31 Jul 2019 11:35:46 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hshkS-0004mr-Kk
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 06:06:06 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 45z2wk3Zllz9sBF;
+ Wed, 31 Jul 2019 16:05:58 +1000 (AEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1564553158;
+ bh=G789WvqxZoZpdQOOwYke+JrWvQfQevv9ZWAFnS+sSZA=;
+ h=Date:From:To:Cc:Subject:From;
+ b=ULZcEMP1hbsL5PEMQRd9ipkccZJUqRzkZp64i6ZQ5vtXe2QcvKUtekLFQPvAolbo9
+ oJvGVBUic1MX6EU2caJ4j9lymGFyd9dAcu+3zr64qlojxOe+0uTj4dVyzsAKC7LZ5p
+ DLwhp+HJS6GxDvZUOMzIlII0ZqBkf9wB/M1WYj66OIilpxUxip10vbZrXrK5Ld4RS/
+ myT81Db2yteC5mvo+gSefQYdNh1Q7ZLNrqY93qw8gt//QKVreCMM7g8DL3u/BhFxWd
+ Gd2Rrq1lFAWoD36Kg18Iqp3GJ2ejlNRwNA/AQKJz3bxsRuKhy3fOHXFtuFeeSVjo9p
+ bOhNMiTTv6mOQ==
+Date: Wed, 31 Jul 2019 16:05:57 +1000
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: xilinx_uartps.c: suppress "may be used uninitialised" warning
+Message-ID: <20190731160557.6a09c3e1@canb.auug.org.au>
 MIME-Version: 1.0
-In-Reply-To: <be6d77eb6c7498df09d04e0a369d4d65b38f4b8e.1564550873.git.saiprakash.ranjan@codeaurora.org>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_230554_237673_E00A6746 
-X-CRM114-Status: GOOD (  13.99  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190730_230605_146675_D003155A 
+X-CRM114-Status: GOOD (  13.11  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,50 +71,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rajendra Nayak <rnayak@codeaurora.org>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Sibi Sankar <sibis@codeaurora.org>,
- Vivek Gautam <vivek.gautam@codeaurora.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Michal Simek <michal.simek@xilinx.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Linux Serial List <linux-serial@vger.kernel.org>, Jiri Slaby <jslaby@suse.com>,
+ Linux PPC Development List <linuxppc-dev@lists.ozlabs.org>,
+ Linus ARM List <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============4611273115020271232=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
+--===============4611273115020271232==
+Content-Type: multipart/signed; boundary="Sig_/oMq6rKwzq4yIYumawKzTc/R";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
 
-On 7/31/2019 11:28 AM, Sai Prakash Ranjan wrote:
-> Add coresight components found on Qualcomm SDM845 SoC.
-> 
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> ---
->   arch/arm64/boot/dts/qcom/sdm845.dtsi | 451 +++++++++++++++++++++++++++
->   1 file changed, 451 insertions(+)
+--Sig_/oMq6rKwzq4yIYumawKzTc/R
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-I have tested coresight with scatter gather on SDM845 MTP and MSM8996
-based DB820c board and posted the results in
+=46rom 31753a44c62c4fdf6e8a72994ae6861dbde49c11 Mon Sep 17 00:00:00 2001
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+Date: Wed, 31 Jul 2019 16:00:52 +1000
+Subject: [PATCH] xilinx_uartps.c: suppress "may be used uninitialised" warn=
+ing
 
-- https://github.com/saiprakash-ranjan/coresight-test-results
+A powerpc allyesconfig build produces this warning:
 
-Please let me know if you need some additional testing done.
+In file included from include/linux/radix-tree.h:16,
+                 from include/linux/idr.h:15,
+                 from include/linux/kernfs.h:13,
+                 from include/linux/sysfs.h:16,
+                 from include/linux/kobject.h:20,
+                 from include/linux/device.h:16,
+                 from include/linux/platform_device.h:13,
+                 from drivers/tty/serial/xilinx_uartps.c:16:
+drivers/tty/serial/xilinx_uartps.c: In function 'cdns_uart_console_write':
+include/linux/spinlock.h:288:3: warning: 'flags' may be used uninitialized =
+in this function [-Wmaybe-uninitialized]
+   _raw_spin_unlock_irqrestore(lock, flags); \
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+drivers/tty/serial/xilinx_uartps.c:1197:16: note: 'flags' was declared here
+  unsigned long flags;
+                ^~~~~
 
-I could not perform coresight tests on MSM8998 MTP with latest build
-as it was resulting in crash due to some AHB timeouts. This was not
-due to scatter-gather and mostly likely the problem with the build.
-Maybe we can keep msm8998-coresight on hold?
+It looks like gcc just can't track the relationship between "locked"
+and "flags", and it is obvious that "flags" won't be used when "locked"
+is zero, so the simplest thing is to initialise flags.
 
-BTW, patches are based on linux-next.
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Jiri Slaby <jslaby@suse.com>
+Cc: Michal Simek <michal.simek@xilinx.com>
+Signed-off-by: Stephen Rothwell <sfr@canb.auug.org.au>
+---
+ drivers/tty/serial/xilinx_uartps.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Thanks,
-Sai
+This has been like this for a very long time, but this is now one of
+the few remaining warnings produced by the powerpc allyesconfig build,
+so it would be good to get rid of it.
 
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-of Code Aurora Forum, hosted by The Linux Foundation
+diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx=
+_uartps.c
+index f145946f659b..da4563aaaf5c 100644
+--- a/drivers/tty/serial/xilinx_uartps.c
++++ b/drivers/tty/serial/xilinx_uartps.c
+@@ -1194,7 +1194,7 @@ static void cdns_uart_console_write(struct console *c=
+o, const char *s,
+ 				unsigned int count)
+ {
+ 	struct uart_port *port =3D console_port;
+-	unsigned long flags;
++	unsigned long flags =3D 0;
+ 	unsigned int imr, ctrl;
+ 	int locked =3D 1;
+=20
+--=20
+2.22.0
+
+--=20
+Cheers,
+Stephen Rothwell
+
+--Sig_/oMq6rKwzq4yIYumawKzTc/R
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl1BL8UACgkQAVBC80lX
+0Gx3MAf+NgUfGWvdNoyBkiRwgAqA7uddSSYmPi/mZ/JfJp7uN+yVTM4AAaDJmkaI
+lu52irRBVHp6J20zZjIrF0Nm1taHmDxNoyJacpkM1Za5klHa8DOxvLx01xLUGd7G
+91gq2/j2oJYC+pJ3CBkRgt9Vj5GpOwiH+Sirmt71H+Hyno3pyQhQKasUXByHiMtr
+RHLewYnj6OgEiU7aVh1Zy+w4JBpnycEETfeONFrI/WWDBsMupTBgeyhqilPsTh9C
+hqZx4uJmKwmVsuxOc8We0+HTNCGPEbDV6GrX4hHCzn0EguoAyMjKNOCY11ZSy6SV
+esnxLc4sHMDqCMAE4EWD5niCLtNxuQ==
+=M6BN
+-----END PGP SIGNATURE-----
+
+--Sig_/oMq6rKwzq4yIYumawKzTc/R--
+
+
+--===============4611273115020271232==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4611273115020271232==--
+
