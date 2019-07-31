@@ -2,59 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7FF17CF2B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 22:55:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C26297D007
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 23:27:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=acXBX6z5+Q/uuSbaRTl9Y4C2/Cl91TFceD0G03f5DOs=; b=MVp
-	QbL3FFIz3ra/RglupDmbgjJjiIbxlq0Hp96whX3hn028Jrr9HhLePaHVjpjF8qbMYL/Ark+EKqKcK
-	eU+UhFltuNPTgEA6+fJ9Chbcp0bhleflh5lm3cqaHL9UzxFOEECqnRvXxrKnVEmzkYTWcbpylKurF
-	mH5U4ZHmDcU+RIHzXnly55i/GmZomJAhzHdMwvJhLw+9jI3MDDqDO9luBOM3mW+3I91wUtoVxKY13
-	NvyKzESzWGkIsZrrnOIqwe08kzDkY77hPlgKNtW6/TsZd3yo+LGPaxIDeLWAGH5fFOWRLcu85+OCT
-	FwbgPdEAvRNOgSE42Nc8TZBwpgrQYew==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6hxWXLCtiBaSW5W46BZuoBeE1o8P8GKJ8Ea048RnEJ0=; b=CDo2Vuo0MS0g9A
+	1reOlW/nOexZZ02tUG9jd/fZC5R04/RxVIg7j5uZ2LEEiudSuuNI8nnxr3ClxPOGoht0c6fuNCqex
+	Di07Xhylgj5+DMOMnJy0gg0qHcTnanQHVRUrI8g+LdRfQkXr7FKaVDTVB9J8v/81yLXEUYXzsJF56
+	ueVSX/l+bLvlSmvv6TVv3roUdbcDG/aQ72fGTuaLh0ejx+KlBdB12hTNSmngtN1CPaATRwHRXQ28U
+	YlDRkTqGZc/uRtVf9jOvI/bAPCQOF5/IIDbOsLq77WvFHFC29L6bFfFrOC/Oy2Cli+aV/e7tZr8df
+	QrsaMeGmC2EaK8ifaWyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsvdX-00081v-W4; Wed, 31 Jul 2019 20:55:51 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsvdR-00081F-KA
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 20:55:47 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DE40B200AD1;
- Wed, 31 Jul 2019 22:55:41 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D1020200065;
- Wed, 31 Jul 2019 22:55:41 +0200 (CEST)
-Received: from fsr-ub1864-103.ea.freescale.net
- (fsr-ub1864-103.ea.freescale.net [10.171.82.17])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 60B13205F3;
- Wed, 31 Jul 2019 22:55:41 +0200 (CEST)
-From: Daniel Baluta <daniel.baluta@nxp.com>
-To: shawnguo@kernel.org,
-	jassisinghbrar@gmail.com
-Subject: [PATCH] mailbox: imx: Fix Tx doorbell shutdown path
-Date: Wed, 31 Jul 2019 23:55:39 +0300
-Message-Id: <20190731205539.13997-1-daniel.baluta@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_135545_801677_FEA49277 
-X-CRM114-Status: UNSURE (   9.15  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+	id 1hsw8T-0001TW-Az; Wed, 31 Jul 2019 21:27:49 +0000
+Received: from [191.33.152.89] (helo=coco.lan)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hsw8I-0001T3-HP; Wed, 31 Jul 2019 21:27:38 +0000
+Date: Wed, 31 Jul 2019 18:27:29 -0300
+From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH 0/6] ReST conversion patches not applied yet
+Message-ID: <20190731182729.01c98cd3@coco.lan>
+In-Reply-To: <20190731203712.GJ4369@sirena.org.uk>
+References: <cover.1564603513.git.mchehab+samsung@kernel.org>
+ <20190731141734.1fa9ce64@lwn.net>
+ <20190731202007.GI4369@sirena.org.uk>
+ <20190731172613.32d65ad8@coco.lan>
+ <20190731203712.GJ4369@sirena.org.uk>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,83 +46,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Baluta <daniel.baluta@nxp.com>, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, o.rempel@pengutronix.de, linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Dave Kleikamp <shaggy@kernel.org>,
+ alsa-devel@alsa-project.org,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Evgeniy Polyakov <zbr@ioremap.net>,
+ linux-cifs@vger.kernel.org, Lars-Peter Clausen <lars@metafoo.de>,
+ Jonathan Corbet <corbet@lwn.net>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Chen-Yu Tsai <wens@csie.org>, devicetree@vger.kernel.org,
+ Evgeniy Dushistov <dushistov@mail.ru>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Mauro Carvalho Chehab <mchehab@infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>, samba-technical@lists.samba.org,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-iio@vger.kernel.org,
+ linux-spi@vger.kernel.org, Steve French <sfrench@samba.org>,
+ Hartmut Knaack <knaack.h@gmx.de>, Jonathan Cameron <jic23@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tx doorbell is handled by txdb_tasklet and doesn't
-have an associated IRQ.
+Em Wed, 31 Jul 2019 21:37:12 +0100
+Mark Brown <broonie@kernel.org> escreveu:
 
-Anyhow, imx_mu_shutdown ignores this and tries to
-free an IRQ that wasn't requested for Tx DB resulting
-in the following warning:
+> On Wed, Jul 31, 2019 at 05:26:13PM -0300, Mauro Carvalho Chehab wrote:
+> > Mark Brown <broonie@kernel.org> escreveu:  
+> 
+> > > There were outstanding questions about where it was going to get moved
+> > > to but if I read the diff correctly it looks like it didn't actually get
+> > > moved in the end?  
+> 
+> > Yeah, it doesn't have the move. My understanding from our discussions
+> > is that we didn't reach a conclusion.  
+> 
+> Yes, that was my understanding too which was why I was surprised to see
+> this going in.  This is OK then, I'd have acked it.
+> 
+> > In any case, I can send a separate patch with the move part once
+> > we reach an agreement about what's the best way to proceed (or you
+> > can do it directly, if you prefer so).  
+> 
+> I'm not likely to do anything without someone sending patches, I'm not
+> clear on the utility of the move with the current division of the
+> manuals.
 
-[    1.967644] Trying to free already-free IRQ 26
-[    1.972108] WARNING: CPU: 2 PID: 157 at kernel/irq/manage.c:1708 __free_irq+0xc0/0x358
-[    1.980024] Modules linked in:
-[    1.983088] CPU: 2 PID: 157 Comm: kworker/2:1 Tainted: G
-[    1.993524] Hardware name: Freescale i.MX8QXP MEK (DT)
-[    1.998668] Workqueue: events deferred_probe_work_func
-[    2.003812] pstate: 60000085 (nZCv daIf -PAN -UAO)
-[    2.008607] pc : __free_irq+0xc0/0x358
-[    2.012364] lr : __free_irq+0xc0/0x358
-[    2.016111] sp : ffff00001179b7e0
-[    2.019422] x29: ffff00001179b7e0 x28: 0000000000000018
-[    2.024736] x27: ffff000011233000 x26: 0000000000000004
-[    2.030053] x25: 000000000000001a x24: ffff80083bec74d4
-[    2.035369] x23: 0000000000000000 x22: ffff80083bec7588
-[    2.040686] x21: ffff80083b1fe8d8 x20: ffff80083bec7400
-[    2.046003] x19: 0000000000000000 x18: ffffffffffffffff
-[    2.051320] x17: 0000000000000000 x16: 0000000000000000
-[    2.056637] x15: ffff0000111296c8 x14: ffff00009179b517
-[    2.061953] x13: ffff00001179b525 x12: ffff000011142000
-[    2.067270] x11: ffff000011129f20 x10: ffff0000105da970
-[    2.072587] x9 : 00000000ffffffd0 x8 : 0000000000000194
-[    2.077903] x7 : 612065657266206f x6 : ffff0000111e7b09
-[    2.083220] x5 : 0000000000000003 x4 : 0000000000000000
-[    2.088537] x3 : 0000000000000000 x2 : 00000000ffffffff
-[    2.093854] x1 : 28b70f0a2b60a500 x0 : 0000000000000000
-[    2.099173] Call trace:
-[    2.101618]  __free_irq+0xc0/0x358
-[    2.105021]  free_irq+0x38/0x98
-[    2.108170]  imx_mu_shutdown+0x90/0xb0
-[    2.111921]  mbox_free_channel.part.2+0x24/0xb8
-[    2.116453]  mbox_free_channel+0x18/0x28
+Same here: I do see value on having docs focused on their audience.
 
-This bug is present from the beginning of times.
+Yet, I'm not so sure how worth is to break some subsystem documentation 
+into books, as, on some cases, this would mean huge efforts.
 
-Cc: Oleksij Rempel <o.rempel@pengutronix.de>
-Fixes:  2bb7005696e2246 ("mailbox: Add support for i.MX messaging unit")
-Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
----
- drivers/mailbox/imx-mailbox.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+I'd prefer to see the big picture first, finishing the conversion and
+then looking at the resulting docs.
 
-diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
-index 9f74dee1a58c..957c10c4e674 100644
---- a/drivers/mailbox/imx-mailbox.c
-+++ b/drivers/mailbox/imx-mailbox.c
-@@ -214,8 +214,10 @@ static void imx_mu_shutdown(struct mbox_chan *chan)
- 	struct imx_mu_priv *priv = to_imx_mu_priv(chan->mbox);
- 	struct imx_mu_con_priv *cp = chan->con_priv;
- 
--	if (cp->type == IMX_MU_TYPE_TXDB)
-+	if (cp->type == IMX_MU_TYPE_TXDB) {
- 		tasklet_kill(&cp->txdb_tasklet);
-+		return;
-+	}
- 
- 	imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx) |
- 		       IMX_MU_xCR_RIEn(cp->idx) | IMX_MU_xCR_GIEn(cp->idx));
--- 
-2.17.1
+Meanwhile, if someone needs something that it is at the wrong book, he
+can just use some search tool to seek what he needs, no matter on
+what book the relevant information is stored.
 
+> I don't know if it makes sense to have an embedded developer's
+> manual as well?
+
+Yeah, that's a good question. 
+
+Jon is planning todo a documentation track at LPC. One of the things
+that should be discussed, IMO, is how we'll organize the books.
+
+I suspect that, once we finish the conversion of the remaining ~300
+files to ReST, the next logical step is to check what are the gaps
+and have a list of pending tasks.
+
+Thanks,
+Mauro
 
 _______________________________________________
 linux-arm-kernel mailing list
