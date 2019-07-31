@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C94C67C946
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:56:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADAF67C949
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:56:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YLanlBnCjhtaFWLykCcKslvE7oBMZumWuJOs5Bv4nHA=; b=J/VtX8kwoqUVoP
-	FH8/YWrapNM3mYYB+6gRaIif3m9yHBF0DEQUEipjLXEOfYoiOf9G1jDvmnBskcgEPnG18MrKgz/BD
-	vvKQuMp5FGLzekVQzkZAKSf5zjBKopfmRTrij86jSMypZkfnqaRGK1Pq1CMBgxhTq+nzG2MWIEAIv
-	8C5UG98w+NrP0TWXAiN8AlmSs9Gtv90oxsZV9fAKMnKgarJRiO2l1UUhHpIpIkuaP8UdoZaRUjCvs
-	xchivMSPoa3QBk7m0WKdZhxEPog3vAuFvbEaT3SHE0y9DYOrHDsjLy1YXvRQtpCQ8PbOrTebLb+4w
-	GUhY1ovQfaK+beDceGkw==;
+	List-Owner; bh=UC8KLWvyZj0mNuOwEoQmwjuf0i6yI7DB8YZkkXd+q/Y=; b=hrQFhvaM5ySGxa
+	ESu8evPHVx2V4eTp61ZzcMzasjREEu6yQhTM0iQV2QkZpLqwwr66MIpCjHDkQXKQahJr+BjyX6DjB
+	/j49oN5S/Rg5dFSYx217AVPCylQIqtsAkRa7DXfiMxcLlRyY7tES8A9gka6eYBdVwGpAnEwWYkKPp
+	Wax2z65BFCnaV9GCQwG0fAnCct4fsIAv3usSXA63RGEw3YdAtf8pG4Ct/lwbheOop+jOTS6/svqbh
+	Y1Nsu6B2hqQ3BCCgvENCeBaEvdxbPc0Nt9d6GYmdR0unSNigMDdqG0yPTZ8kgstvlGbFYKwPttaeA
+	pRkoEj1Jy6PGRp54Xhig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrtb-0006Qi-38; Wed, 31 Jul 2019 16:56:11 +0000
+	id 1hsrtn-0006et-J6; Wed, 31 Jul 2019 16:56:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrtL-0006Or-9M; Wed, 31 Jul 2019 16:56:03 +0000
-Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
- [209.85.160.170])
+ id 1hsrtb-0006ZS-N9; Wed, 31 Jul 2019 16:56:13 +0000
+Received: from mail-qt1-f171.google.com (mail-qt1-f171.google.com
+ [209.85.160.171])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D3EAD208E4;
- Wed, 31 Jul 2019 16:55:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1F72C20C01;
+ Wed, 31 Jul 2019 16:56:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564592155;
- bh=bu2/IzitZpcqBSeCvVLwvyS9Pg3PnwR+a5FlsLqKfwI=;
+ s=default; t=1564592171;
+ bh=Cic2JrM+YjcNDGZKD8kvKDZrx7id5Fahrh8aT8NyBT0=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=o/YgXu/1eTjtGCGzZ/OwQR5HDIIAYPv1s4Ry9B/VG0+8TbBTE9xc/OXQM/EHcYcZ3
- X6RpcDqanN9nOJhH5PO31520ZAzINdR7OqDxxCWR8dU1jSDIrRI0dU9GoiFRPk++8Y
- ynZqXfGcruJQ0nDV6aK5D5raa2FrgKfkWnKPg2iU=
-Received: by mail-qt1-f170.google.com with SMTP id y26so67295508qto.4;
- Wed, 31 Jul 2019 09:55:54 -0700 (PDT)
-X-Gm-Message-State: APjAAAUaai8J8CKi6Kxff2UDBMvCJGDDbgPONJl+L2n6u/i/Zw9u69b8
- pzxb2yNjoKqtVR3AIdmIt9f3BUbqCSlSjuxmOQ==
-X-Google-Smtp-Source: APXvYqyvNP50u9cI3UCf6+YAQwdF9Av65FYOMp2vrFwHw2oLly8ZNSDLF7JYdlfrkafL15qyfM8KXu+yB6C5vKjJVqw=
-X-Received: by 2002:ac8:368a:: with SMTP id a10mr86824910qtc.143.1564592154073; 
- Wed, 31 Jul 2019 09:55:54 -0700 (PDT)
+ b=OSG11j0ovXBywu0fX2l8W0z5qMeemjGHn+yizDeOCR2IWH+d/iXJtJ4IK0/KdsbiJ
+ tkgSY3sEjP0BzN3NIDeknh+o1MxDvRgoruqQgvFUUBuSPN8DDZFqijJpS52YAdN+Ej
+ sT49EcBWZ2gxc/nz/PzFCsjRdfSsQhWbSIWkp1uQ=
+Received: by mail-qt1-f171.google.com with SMTP id d23so67319401qto.2;
+ Wed, 31 Jul 2019 09:56:11 -0700 (PDT)
+X-Gm-Message-State: APjAAAW4N5Ihx2pEKtsUAlGnyZHJtc6kxGBACEkEB1oq7Lf2uGN3SrLj
+ LSkR/kRZzWmDLJ6uDv+Bi52zCDNYR7NDzGi+Cw==
+X-Google-Smtp-Source: APXvYqyq5aSqkMkY1jRWObJcHd+QJppxe0Gfq8GLINw2AdMyUd2oGDpfDfAN517bLe0isUjhnIa9VYbJPYtguO8ywn8=
+X-Received: by 2002:ac8:3908:: with SMTP id s8mr41133202qtb.224.1564592170319; 
+ Wed, 31 Jul 2019 09:56:10 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190731124000.22072-1-narmstrong@baylibre.com>
- <20190731124000.22072-4-narmstrong@baylibre.com>
-In-Reply-To: <20190731124000.22072-4-narmstrong@baylibre.com>
+ <20190731124000.22072-5-narmstrong@baylibre.com>
+In-Reply-To: <20190731124000.22072-5-narmstrong@baylibre.com>
 From: Rob Herring <robh@kernel.org>
-Date: Wed, 31 Jul 2019 10:55:42 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKFacYY06keqny2RTvCd1R6eDmZmVG5WdjoDHdfwAObgg@mail.gmail.com>
-Message-ID: <CAL_JsqKFacYY06keqny2RTvCd1R6eDmZmVG5WdjoDHdfwAObgg@mail.gmail.com>
-Subject: Re: [PATCH 3/6] dt-bindings: arm: amlogic: add bindings for the
- Amlogic G12B based A311D SoC
+Date: Wed, 31 Jul 2019 10:55:58 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJ=RtSxw8m687X_zWKY_V5X9zqt3xrq5gjF8WcEZspg-g@mail.gmail.com>
+Message-ID: <CAL_JsqJ=RtSxw8m687X_zWKY_V5X9zqt3xrq5gjF8WcEZspg-g@mail.gmail.com>
+Subject: Re: [PATCH 4/6] dt-bindings: arm: amlogic: add support for the Khadas
+ VIM3
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_095559_114985_2F73E3BA 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20190731_095611_802153_B3A7CA98 
+X-CRM114-Status: GOOD (  12.54  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -97,13 +97,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed, Jul 31, 2019 at 6:40 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
-> Add a specific compatible for the Amlogic G12B bases A311D SoC used
-> in the Khadas VIM3.
+> From: Christian Hewitt <christianshewitt@gmail.com>
 >
+> The Khadas VIM3 uses the Amlogic S922X or A311S SoC, both based on the
+> Amlogic G12B SoC family, on a board with the same form factor as the
+> VIM/VIM2 models. It ships in two variants; basic and
+> pro which differ in RAM and eMMC size:
+>
+> - 2GB (basic) or 4GB (pro) LPDDR4 RAM
+> - 16GB (basic) or 32GB (pro) eMMC 5.1 storage
+> - 16MB SPI flash
+> - 10/100/1000 Base-T Ethernet
+> - AP6398S Wireless (802.11 a/b/g/n/ac, BT5.0)
+> - HDMI 2.1 video
+> - 1x USB 2.0 + 1x USB 3.0 ports
+> - 1x USB-C (power) with USB 2.0 OTG
+> - 3x LED's (1x red, 1x blue, 1x white)
+> - 3x buttons (power, function, reset)
+> - IR receiver
+> - M2 socket with PCIe, USB, ADC & I2C
+> - 40pin GPIO Header
+> - 1x micro SD card slot
+>
+> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 > ---
->  Documentation/devicetree/bindings/arm/amlogic.yaml | 5 +++++
->  1 file changed, 5 insertions(+)
+>  Documentation/devicetree/bindings/arm/amlogic.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
