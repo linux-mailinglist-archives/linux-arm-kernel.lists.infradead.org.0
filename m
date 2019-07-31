@@ -2,62 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B5367BB22
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 10:06:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57BBC7BB4E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 10:13:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/nKFtqPJCUItR/WQWIlpMChVo6USUDRdNpnw0F3PRNQ=; b=s4QHX6S67H/Llv
-	DKnpY61D8l3cg9nyhVmUP+TjipJ3B6PBOqjpIJMmMDvFnj0jGlYQwsZudmH5We3Liiu52B11md9Oq
-	Ci6BsVMkoAimHuVob5Fn9G0hoHxnHoWk2IA8XUH8/KfWLoMiSmUF1fOzw+og+bJRs78/OcrEYP2wB
-	Og0b6i6uZgII7k1cebhy2tBozfJagyljk4iUKP68pHYNwWLTHwtAvqbOG8j5cwCkuGMWgx3eQ6fq2
-	IwCnE/xK9kkv1zlwq4iEZNVIguAgF9bMT8NlpgPSx71ppy8nxuEXTrkgTU2Bn0uOrn1l3gWZIDN6T
-	5OzhpCd14EVLbmV5wQ9A==;
+	List-Owner; bh=ZbR3CUv5ZZyLKcCuP/6Nvf3UFsMrgdsoJaeWvS7BKBk=; b=cKgPHP123nIL9f
+	xKbG7rCfm9EOSZikoOCpc9S4wS1ELIhL8fdAhLshP/I92RQ9m5/vfTXUXKRSEnTSB+5Jgx4EfMzfh
+	mwH06JdH8LnovDeQ3DztsbTzsI/SMGtdAsjpE6Wl9l4JBbZ0wTmiEf2yD57ub85Ia8f0hAYflD1I+
+	fx+A0bh4IJzkS9Sl304XFMqVZ/UXN+qvkM3O6m99a4HmEDJSjsPk5kcq0pQcK+7b0uXAouuS3i4oI
+	IyJeCPx2VTgzCJJFFeNOcreDMH+BDvUaXDhC7Y/TKJhmmjILIT8HO51RnCIEzFBb7ouKv9EnuB5Gd
+	ByyFj2ZQNpp72VFgnR+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsjcV-0005vZ-6E; Wed, 31 Jul 2019 08:06:00 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hsjk0-0000vF-3D; Wed, 31 Jul 2019 08:13:44 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsjZr-0005tu-8q
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 08:03:36 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 8CE3BAEAE;
- Wed, 31 Jul 2019 08:03:10 +0000 (UTC)
-Date: Wed, 31 Jul 2019 10:03:09 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: Mike Rapoport <rppt@linux.ibm.com>
-Subject: Re: [PATCH v2 0/5] mm: Enable CONFIG_NODES_SPAN_OTHER_NODES by
- default for NUMA
-Message-ID: <20190731080309.GZ9330@dhcp22.suse.cz>
-References: <1562887528-5896-1-git-send-email-Hoan@os.amperecomputing.com>
- <20190712070247.GM29483@dhcp22.suse.cz>
- <586ae736-a429-cf94-1520-1a94ffadad88@os.amperecomputing.com>
- <20190712121223.GR29483@dhcp22.suse.cz>
- <20190712143730.au3662g4ua2tjudu@willie-the-truck>
- <20190712150007.GU29483@dhcp22.suse.cz>
- <730368c5-1711-89ae-e3ef-65418b17ddc9@os.amperecomputing.com>
- <20190730081415.GN9330@dhcp22.suse.cz>
- <20190731062420.GC21422@rapoport-lnx>
+ id 1hsjj1-0000rZ-6w
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 08:12:45 +0000
+Received: from pendragon.ideasonboard.com (unknown [38.98.37.141])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 1C5C6CC;
+ Wed, 31 Jul 2019 10:12:21 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1564560743;
+ bh=H/uPA4ZlVMkzj5l4yx9FTdj0RSpGn/s0K3dOVUpsTQw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=oDiA8FD1lCpQyskVId/r2Pj6m2K5SeSp0X+okXzhcdxBVayhZDrG/layeH0ikHMSu
+ cEpceHxnE8Qs2AS8bvG3jVlzE5FvUTO0DY67VnDKee8S38DtSES3RfpZ2tLsZelHxP
+ VYuxxtSCtDN3UPLwYdSTURr2gnVkPn1RC4pKx4Pw=
+Date: Wed, 31 Jul 2019 11:12:09 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: Re: [PATCH] arm64: dts: renesas: r8a77995: draak: Fix backlight
+ regulator name
+Message-ID: <20190731081209.GA5080@pendragon.ideasonboard.com>
+References: <20190731073744.13963-1-geert+renesas@glider.be>
+ <20190731074801.5706-1-geert+renesas@glider.be>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190731062420.GC21422@rapoport-lnx>
+In-Reply-To: <20190731074801.5706-1-geert+renesas@glider.be>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_010318_600914_189C847F 
-X-CRM114-Status: GOOD (  20.93  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190731_011243_480403_65BC1CDC 
+X-CRM114-Status: GOOD (  16.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,82 +74,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
- "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>,
- Will Deacon <will@kernel.org>,
- "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
- Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
- "willy@infradead.org" <willy@infradead.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Hoan Tran OS <hoan@os.amperecomputing.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Open Source Submission <patches@amperecomputing.com>,
- Pavel Tatashin <pavel.tatashin@microsoft.com>,
- Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
- Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- Vlastimil Babka <vbabka@suse.cz>, Oscar Salvador <osalvador@suse.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "David S . Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-renesas-soc@vger.kernel.org,
+ Simon Horman <horms@verge.net.au>, linux-arm-kernel@lists.infradead.org,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 31-07-19 09:24:21, Mike Rapoport wrote:
-> [ sorry for a late reply too, somehow I missed this thread before ]
-> 
-> On Tue, Jul 30, 2019 at 10:14:15AM +0200, Michal Hocko wrote:
-> > [Sorry for a late reply]
-> > 
-> > On Mon 15-07-19 17:55:07, Hoan Tran OS wrote:
-> > > Hi,
-> > > 
-> > > On 7/12/19 10:00 PM, Michal Hocko wrote:
-> > [...]
-> > > > Hmm, I thought this was selectable. But I am obviously wrong here.
-> > > > Looking more closely, it seems that this is indeed only about
-> > > > __early_pfn_to_nid and as such not something that should add a config
-> > > > symbol. This should have been called out in the changelog though.
-> > > 
-> > > Yes, do you have any other comments about my patch?
-> > 
-> > Not really. Just make sure to explicitly state that
-> > CONFIG_NODES_SPAN_OTHER_NODES is only about __early_pfn_to_nid and that
-> > doesn't really deserve it's own config and can be pulled under NUMA.
-> > 
-> > > > Also while at it, does HAVE_MEMBLOCK_NODE_MAP fall into a similar
-> > > > bucket? Do we have any NUMA architecture that doesn't enable it?
-> > > > 
-> 
-> HAVE_MEMBLOCK_NODE_MAP makes huge difference in node/zone initialization
-> sequence so it's not only about a singe function.
+Hi Geert,
 
-The question is whether we want to have this a config option or enable
-it unconditionally for each NUMA system.
+(CC'ing the device tree mailing list)
 
-> > > As I checked with arch Kconfig files, there are 2 architectures, riscv 
-> > > and microblaze, do not support NUMA but enable this config.
+Thank you for the patch.
+
+On Wed, Jul 31, 2019 at 09:48:01AM +0200, Geert Uytterhoeven wrote:
+> Currently there are two nodes named "regulator1" in the Draak DTS: a
+> 3.3V regulator for the eMMC and the LVDS decoder, and a 12V regulator
+> for the backlight.  This causes the former to be overwritten by the
+> latter.
 > 
-> My take would be that riscv will support NUMA some day.
+> Fix this by renaming all regulators with numerical suffixes to use named
+> suffixes, which are less likely to conflict.
+
+Aren't DT node names supposed to describe the device type, not a
+particular instance of the device ? This is something that has bothered
+me too, but I believe the naming scheme should be decided globally, not
+per board. Is there precedent for using this scheme that has been
+explicitly approved by the DT maintainers ?
+
+> Fixes: 4fbd4158fe8967e9 ("arm64: dts: renesas: r8a77995: draak: Add backlight")
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> ---
+> I guess this is a fix for v5.3?
+> 
+> This fix takes a slightly different approach than commit
+> 12105cec654cf906 ("arm64: dts: renesas: r8a77990: ebisu: Fix backlight
+> regulator numbering"), which just fixed the conflicting numerical
+> suffix.
+> ---
+>  arch/arm64/boot/dts/renesas/r8a77995-draak.dts | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/renesas/r8a77995-draak.dts b/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
+> index 0711170b26b1fe1c..3aa2564dfdc25fff 100644
+> --- a/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
+> +++ b/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
+> @@ -97,7 +97,7 @@
+>  		reg = <0x0 0x48000000 0x0 0x18000000>;
+>  	};
 >  
-> > > And 1 architecture, alpha, supports NUMA but does not enable this config.
-> 
-> alpha's NUMA support is BROKEN for more than a decade now, I doubt it'll
-> ever get fixed.
+> -	reg_1p8v: regulator0 {
+> +	reg_1p8v: regulator-1p8v {
+>  		compatible = "regulator-fixed";
+>  		regulator-name = "fixed-1.8V";
+>  		regulator-min-microvolt = <1800000>;
+> @@ -106,7 +106,7 @@
+>  		regulator-always-on;
+>  	};
+>  
+> -	reg_3p3v: regulator1 {
+> +	reg_3p3v: regulator-3p3v {
+>  		compatible = "regulator-fixed";
+>  		regulator-name = "fixed-3.3V";
+>  		regulator-min-microvolt = <3300000>;
+> @@ -115,7 +115,7 @@
+>  		regulator-always-on;
+>  	};
+>  
+> -	reg_12p0v: regulator1 {
+> +	reg_12p0v: regulator-12p0v {
+>  		compatible = "regulator-fixed";
+>  		regulator-name = "D12.0V";
+>  		regulator-min-microvolt = <12000000>;
 
-I can see Al has marked it BROKEN in 2005. Maybe time to rip it out?
-Although it doesn't seem to be a lot of code in arch/alpha at first
-glance so maybe not worth an effort.
 -- 
-Michal Hocko
-SUSE Labs
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
