@@ -2,70 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2E4A7D13F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 00:40:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A8937D140
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 00:40:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v8Bu7Z2zXTG6vBi96YoyDbzO2m03x5PwtKGbmifPrjk=; b=QwqgFB78E8M8kh
-	h8TTS/0Gha9qZ2YvltEgmR0Rr+MpHI8xNAFGqTClCDinNXPcCbhWANYGAfgzWoaFEXmEgLmwgjLjP
-	72NzjGBgaswNEbPvEnF2mMzR6T7S2sTJfYRtlC7s/rD2+7IqdpdxvhETGAXurb4SxWeGLOP5zrXJj
-	jRWYoc3zarx1rlX1ipryuQhrqr8iEg+oG0Oz4ixRe0BoeL6RwsNC87J+ydQ4+Gu3OXO2p/jGioqvD
-	OSfawSqJpaSayfOvtN5r1+zNMb9C/Tfc+P+JnOvEfumGiLCHsqDwyGw3EGmP1GuYklnsmJdMgjzO9
-	1Y3IPhkuAfAs2B9xmbqg==;
+	List-Owner; bh=aMkNbu25E5XG5AyiAAYzuJ3VlIsI5VyDIdKM7Imvu1E=; b=DW6dLfbINdZqwL
+	0wxqG9jcrFIInAyCJwIhU3jdcU35+LnxHrxuKtvO8tcGa13hKKc7YN0V/I4boCT/0s7q1Tv6Dh9Ve
+	zgJLEkiLVAgyqoFFO4PYWcqwVS527LrUtRMdmCS4oSipXQI+pTFmu5yZuZPvBMTX8D3aqYTcQgMSd
+	2Nm5N5p/1BvnwSRCTromx+0/RQrLxYLwf/9MhXEFOWXmDHN06iU221z3QNuCEOLaOhDCaBbiU+5gk
+	AKp3QtN2tom7ZNGONsHVm+E6bh6ZKQHjCLxw/Bcf9+cY7pcN84cdsECe9ZLtvnXxlh5LmKXyKW2Gv
+	8g9nUh6c5kJ0HNlInfrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsxGq-0002vF-Kn; Wed, 31 Jul 2019 22:40:32 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hsxH5-00039S-NX; Wed, 31 Jul 2019 22:40:47 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsxGk-0002uq-0C
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 22:40:27 +0000
-Received: by mail-lj1-x241.google.com with SMTP id m8so33699722lji.7
+ id 1hsxGv-00036R-ST
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 22:40:39 +0000
+Received: by mail-io1-xd44.google.com with SMTP id e20so7017886iob.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 15:40:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5HNMAizo1MDGSZw7JIwDqYk31Wb10QHDQmyQRyMX4zg=;
- b=PpsMQT6ap8+lWa9EgPNy733P/g52et7aVqY3Nqb8PUY9xsRsMCjijwa15wuGB49g1s
- 4wOwjngXv+gYCNEeIA1XO77yWFdpifl8L3pfLNgQ/u07MNBUEbrDkYykOD60NRxLfLeq
- AtUB9FTMUq6uqWXMvTs78/+yd5fh4k6P345783bcK3gOPZ1+qCmlH2bQMEoce24jh8eE
- WjvVN56+N2QHhRABtpzcKV0jL29U5IRO2LJ2K0ra9N5pPRm1QTfeAJTv2Dzd2q0OeFYf
- SD+u8IjiiwulEZO5ZAlHWVJYXWP85qveTcDECN+FyNuWNJmKt+wdfJeRLJkn1JJpD74G
- amrA==
+ Wed, 31 Jul 2019 15:40:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :user-agent:mime-version;
+ bh=egRpxJBa9oK7OchDbNGXXbbAvoOMUOmZrCvbt5gO8zI=;
+ b=QvM5gURgmBtYYb5ewAA6jGZY4ljdEgJDQkLHHqVikVD66zPlOj6SuWDfLaZFvi4LUF
+ FQdJPeaP2xBSfu5VhEpovno9nnLQOcyhglyYB0pRP4JDwGr0eAqZbpbagc3uUt7s9USv
+ Mpj2IzZzl+bJl5mUIlw221ntI2T0Gd3i5626L0lZpF3NQf2YbT9pIlRRSe+aFdedyfsu
+ M2J7DASUn+cy4TT7B8G64SBFNLwKRalGaUFXLhzgYJLwUMSwiCHsd5R54xYkxPti/wZi
+ C3bY3XL25Z5iZQrpq93tCxIGxwS4lBIYfZ/mctkv1io4wB2KYJZz7fo2JWv6xUDgj8Db
+ lqfQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5HNMAizo1MDGSZw7JIwDqYk31Wb10QHDQmyQRyMX4zg=;
- b=jkNHy0evWl35aBIsh8Ghtbrpx0L/AEn3gQak4Gj+nYTQPiRGcNp2gD2NaV3ZcN272/
- 1moNePS52HqPpVv3BPFT0HBbdO19+6eozUcB/ZNahZQKY4fqxxXqe9Fr6DR2gVGbJQNg
- Cy9p+RKM+c7nlUCEs9hC+ebRCsDuLw9Y857bez8XuSVwLVcrHhQTTgNdONTlY/Q9SxJG
- QPiZCoZJ6MQCdVde483BkjHQe9UHm6tCXFZXq2Gul4kaz44XYVLXeVGuyY5rr4U8UUhx
- aGEgdLnl5SAv7v2XeID5N+fPpM6RwjsCLQ1Q8oS++6OsvgJmWaTkVI11b+Yxymryapv2
- bX1g==
-X-Gm-Message-State: APjAAAVpThY6LtHk6GTZ+wLbgaud3kTKQE6PgAwMx/ejgZfJ2hWhaNxN
- zxDrue/JBGob01ZIziF3uT3amPbNn60UrFvtuOXb4w==
-X-Google-Smtp-Source: APXvYqxIzEh2d0oibu1mPj2dccpkGDjEL429V/6M3XKsJ7ystGzvZqmXo1+gchWC3ScfsekqdSz6S5FQL/U7mziEO2M=
-X-Received: by 2002:a2e:8195:: with SMTP id e21mr62637463ljg.62.1564612824202; 
- Wed, 31 Jul 2019 15:40:24 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:user-agent:mime-version;
+ bh=egRpxJBa9oK7OchDbNGXXbbAvoOMUOmZrCvbt5gO8zI=;
+ b=YePecXpWURr9uyNj/ncOruwOSjsdsZpJPDhSfXYBNgnJA6J1yR5d5NnMfApjSvYSWW
+ nkOa57QXV7ZxyimhYJm0/1r/tSZVttN+YWZRt9X3Pmg04N8GE2T3Z2w6/UTvpyrMxzZg
+ 62xa/9R87p2wG10nUv58amWtKMZ+lUoS6BPK5flwgnhZeH8aXdN+CJYg6aO2RlD+I5MA
+ OZ8/VKMPDTyFnyQLVApEDaan4B5ww+1HGqp18tzzYZjhZ49C4DH6g7MOfKsM88otmeqS
+ mTDnCoH+Y4wi8PPkNhsuH/FgHXa7Yg/bPWyyrcE67tU4b60DtToQh1aojHLjfJmlDDXN
+ 0MIA==
+X-Gm-Message-State: APjAAAWn4QDAhqgpq1CLmxW0+azy8u/fY1z2SC/zjIiKG0O0nR8NnPkv
+ rPLMJUT3bR+t9r8rYW5qPCq4Kw==
+X-Google-Smtp-Source: APXvYqwrG00LBhTpDLsR7IvSvLbPRzUfGNUjyuov0y6Pr5JYCZwHs6hWm99dQiGbrjWMUvsaR2nw9Q==
+X-Received: by 2002:a6b:f406:: with SMTP id i6mr44093290iog.110.1564612836637; 
+ Wed, 31 Jul 2019 15:40:36 -0700 (PDT)
+Received: from localhost ([170.10.65.222])
+ by smtp.gmail.com with ESMTPSA id a7sm56245658iok.19.2019.07.31.15.40.35
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 31 Jul 2019 15:40:35 -0700 (PDT)
+Date: Wed, 31 Jul 2019 15:40:35 -0700 (PDT)
+From: Paul Walmsley <paul.walmsley@sifive.com>
+X-X-Sender: paulw@viisi.sifive.com
+To: Alexandre Ghiti <alex@ghiti.fr>
+Subject: Re: [PATCH v5 14/14] riscv: Make mmap allocation top-down by default
+In-Reply-To: <20190730055113.23635-15-alex@ghiti.fr>
+Message-ID: <alpine.DEB.2.21.9999.1907311538460.22372@viisi.sifive.com>
+References: <20190730055113.23635-1-alex@ghiti.fr>
+ <20190730055113.23635-15-alex@ghiti.fr>
+User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
 MIME-Version: 1.0
-References: <5d403574.1c69fb81.14163.65d3@mx.google.com>
- <20190730134115.GE4264@sirena.org.uk>
- <CACRpkdYevQiwW8iED8_qBo5yCcj5yCGrM76Lu3MyrU6Vy4HoNg@mail.gmail.com>
- <5d41b01a.1c69fb81.84578.a0bc@mx.google.com>
-In-Reply-To: <5d41b01a.1c69fb81.84578.a0bc@mx.google.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 1 Aug 2019 00:40:12 +0200
-Message-ID: <CACRpkdb+O6vhpQ_Hx+UQOOVqS7wSdRmKGW-Dkem5nUv6p_fgsg@mail.gmail.com>
-Subject: Re: next/master boot: 265 boots: 17 failed, 184 passed with 64
- offline (next-20190730)
-To: Stephen Boyd <swboyd@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_154026_075972_4B10CBA6 
-X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-CacheID: sfid-20190731_154037_953301_BA2AD70C 
+X-CRM114-Status: UNSURE (   9.68  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -73,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,30 +99,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kernel Build Reports Mailman List <kernel-build-reports@lists.linaro.org>,
- Timur Tabi <timur@codeaurora.org>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Mark Brown <broonie@kernel.org>,
- Lee Jones <lee.jones@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Luis Chamberlain <mcgrof@kernel.org>,
+ Paul Burton <paul.burton@mips.com>, James Hogan <jhogan@kernel.org>,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ linux-mips@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
+ linux-riscv@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Alexander Viro <viro@zeniv.linux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 5:13 PM Stephen Boyd <swboyd@chromium.org> wrote:
+On Tue, 30 Jul 2019, Alexandre Ghiti wrote:
 
-> -       if (IS_ENABLED(CONFIG_OF_GPIO))
-> -               gc->need_valid_mask = of_gpio_need_valid_mask(gc);
-> +       if (of_gpio_need_valid_mask(gc))
-> +               gc->need_valid_mask = true;
+> In order to avoid wasting user address space by using bottom-up mmap
+> allocation scheme, prefer top-down scheme when possible.
+> 
+> Before:
+> root@qemuriscv64:~# cat /proc/self/maps
+> 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
+> 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
+> 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
+> 00018000-00039000 rw-p 00000000 00:00 0          [heap]
+> 1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
+> 155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
+> 155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
+> 155556f000-1555570000 rw-p 00000000 00:00 0
+> 1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
+> 1555574000-1555576000 rw-p 00000000 00:00 0
+> 1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
+> 1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
+> 1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
+> 155567a000-15556a0000 rw-p 00000000 00:00 0
+> 3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
+> 
+> After:
+> root@qemuriscv64:~# cat /proc/self/maps
+> 00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
+> 00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
+> 00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
+> 2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
+> 3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
+> 3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
+> 3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
+> 3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
+> 3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
+> 3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
+> 3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
+> 3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
+> 3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
+> 3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
+> 3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
+> 
+> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
+> Reviewed-by: Christoph Hellwig <hch@lst.de>
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
 
-This looks like the silver bullet, thanks for your sharp eyes for this!
+Acked-by: Paul Walmsley <paul.walmsley@sifive.com> # for arch/riscv
 
-I'll send this out with your authorship and apply to next so Mark can see
-if it fixes the issue.
+As Alex notes, this patch depends on "[PATCH] riscv: kbuild: add virtual 
+memory system selection":
 
-Yours,
-Linus Walleij
+https://lore.kernel.org/linux-riscv/alpine.DEB.2.21.9999.1907301218560.3486@viisi.sifive.com/T/#t
+
+which will likely go up during v5.3-rc.
+
+
+- Paul
 
 _______________________________________________
 linux-arm-kernel mailing list
