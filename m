@@ -2,120 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B8BF7CC0A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 20:36:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F06B7CC28
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 20:41:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3V0T4J12A/1ug6S3NPFC/Goi38uKbJqrx79SfsSH8+c=; b=ZldP1iRcB3+fgT
-	wcA4+SFagUQmz8S/9Fjt5MDSD6fvo8Kv+zDfRTxaaxJsUJf/SkDmicTA6WVHv9NAhW+uzKScmOlHd
-	cAl1aFHgkiI2E827HlY25mOtqgJLXcJ2enEm+owNNbKSl489q3cnuaABSbhd8NIFN1it2C/EFdndJ
-	kshN2magGvDjC7MYkcS79r/kkZn7lSUKCR7cmWuJSwp9879zs5Ec4Nt+Ad244KAG+/XrDS8w4o/uN
-	PL1a8IRVXDlM2BQ5dJH+S3SxqS10nOtNgXymRzbs440ZGB8jmlOUBtWoxM1f4M7xoYzRoD7Iz9YzZ
-	BxRYS7BPOk1FbBaX+BtA==;
+	List-Owner; bh=Vt5ngS+zlwR5lGyxEaXiXsCVO441od9VniaPKE9j2mY=; b=LwsIEP7JhUZ6bf
+	mAp+yXCOEQREuMRuOJgxrgmW5bxY9smuntxlOJ5w738KD8Ajru0cNOrvYcCRJCVOW59bUK8BKptid
+	p4J8seC1TCW+uCVV4Lmo8a23D46O5zstJu2KpLBxb2Xn0kgNvaI04BoIw38h9+w2VyDiD2E/f3IJN
+	++cH7diyB2fNohjO53nVgkLD/wUn6v44WVG/5RpdCgUhJIALrLm2FWd7A+knofblHnCsCUBOvoD/J
+	EO/qf32f3Ky8dLWT8jfE9c1CPYvmoIw8kTibj6oI8TyovP5WuBr+1yaM24QzfvkubEougTGd5cCWT
+	ZLy9bmtXGEwtTHSaJ30Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hstSI-0004sX-8D; Wed, 31 Jul 2019 18:36:06 +0000
-Received: from mail-eopbgr750098.outbound.protection.outlook.com
- ([40.107.75.98] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
+	id 1hstXn-00070c-WD; Wed, 31 Jul 2019 18:41:48 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hstSB-0004rm-CF
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 18:36:00 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ErnyXIxFRHgzR6meCxotIVOjfLfbAPO9pLb0j7iNvAoLRT9AwgFrRPpAUvluY02Thi45CqWyLVkz5NWgm+Ld238zHv5RSksMr1bYfW6Z/LEqLWSz9PJNSfaersMXklr5JkRa58dpi+Zwv2ewSH1ND5lSppqTdDmX/FxaX706jGAvoDBcuE3B03s4RqecVezwY0cnw5jnlMTKgj7siLuGeEcEKqwo2YGQ2OcJx1cypNJR8625GqJc4iHjHl2jevl2jhN5oSQBnoLiIGaqqxkC6JXufJ9wU8+ebjm4RMB5Ass8mWSvyotUV5iLIDa8tmL5RYIC7aIXFlIXwpGYH37+Vw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8dNQpS/Jg0Nw3/hlZ1jZGketQBWFL/7YPXyZgDiZiWs=;
- b=lSH2mEMbNhZUVWOZJI7Bvz6297NwjGJ2tM2MVBYnwAE/j8xbi9cSw8xjBWMiXv5xHmgNLHtDVWsItPfs1UKnE4LSdv/LXLlVt0jgtGnVoX2wiBMzAD3ADPv/9nWgF03jmlzLhx7TTYBt8Zvwz6d/Jp+PZPewMy6APMcznKveYJqLB89/opAl57tSkiQFiU3dqdYO1nI4AErx4lF5n6Att4plkPujZOLrrmmIWE+01XUKxmntMp1lS7lX0aXgxRQNlNGO2Nv7uvR7+NpseDcIlo8pjZJ8KK1Sime1aXwRf3WfuYAEPDEla1QCMOyDOX94jZoqEePY3yMUUrKYB9jOoQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=wavecomp.com;dmarc=pass action=none
- header.from=mips.com;dkim=pass header.d=mips.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wavecomp.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8dNQpS/Jg0Nw3/hlZ1jZGketQBWFL/7YPXyZgDiZiWs=;
- b=HXEavXJju8T5eXyV6meS6Pz8rey5vqwJ4INtcKYWqlAtWjZR+dB9penVqj3pSOiFACOzLYz0j6VH2AK8rg82chUXZvjhckKvXEI/ldDiObuaEKErTRkGKh6hb5zjkPoPh5hs/Tgc1wPJIKeaujUO0WDLUlaNZH20Ge/917D/Zkc=
-Received: from CY4PR2201MB1272.namprd22.prod.outlook.com (10.171.214.23) by
- CY4PR2201MB1750.namprd22.prod.outlook.com (10.165.89.37) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2115.15; Wed, 31 Jul 2019 18:35:54 +0000
-Received: from CY4PR2201MB1272.namprd22.prod.outlook.com
- ([fe80::c99b:131e:aaf3:bd81]) by CY4PR2201MB1272.namprd22.prod.outlook.com
- ([fe80::c99b:131e:aaf3:bd81%4]) with mapi id 15.20.2115.005; Wed, 31 Jul 2019
- 18:35:54 +0000
-From: Paul Burton <paul.burton@mips.com>
-To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH v10 05/22] mips: mm: Add p?d_leaf() definitions
-Thread-Topic: [PATCH v10 05/22] mips: mm: Add p?d_leaf() definitions
-Thread-Index: AQHVR87Ju77hWp4AA06O29fl9/EI+w==
-Date: Wed, 31 Jul 2019 18:35:54 +0000
-Message-ID: <20190731183553.klqcwrvannde5vd7@pburton-laptop>
-References: <20190731154603.41797-1-steven.price@arm.com>
- <20190731154603.41797-6-steven.price@arm.com>
-In-Reply-To: <20190731154603.41797-6-steven.price@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: MWHPR04CA0069.namprd04.prod.outlook.com
- (2603:10b6:300:6c::31) To CY4PR2201MB1272.namprd22.prod.outlook.com
- (2603:10b6:910:6e::23)
-user-agent: NeoMutt/20180716
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pburton@wavecomp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [12.94.197.246]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 4e5d9b92-2934-4a14-393e-08d715e5ebb1
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:CY4PR2201MB1750; 
-x-ms-traffictypediagnostic: CY4PR2201MB1750:
-x-microsoft-antispam-prvs: <CY4PR2201MB175052BAC195319EF3E14C18C1DF0@CY4PR2201MB1750.namprd22.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 011579F31F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(7916004)(39850400004)(136003)(366004)(396003)(376002)(346002)(189003)(199004)(6512007)(9686003)(33716001)(6116002)(14454004)(3846002)(6246003)(66556008)(64756008)(66446008)(66946007)(66476007)(53936002)(81166006)(81156014)(8936002)(58126008)(478600001)(54906003)(316002)(5660300002)(256004)(11346002)(305945005)(102836004)(71190400001)(7416002)(71200400001)(44832011)(99286004)(7736002)(25786009)(6436002)(486006)(4326008)(229853002)(66066001)(476003)(446003)(26005)(6486002)(6916009)(68736007)(42882007)(386003)(2906002)(76176011)(6506007)(52116002)(1076003)(8676002)(186003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:CY4PR2201MB1750;
- H:CY4PR2201MB1272.namprd22.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: wavecomp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Ghlbs9lPlEfe+MQp8JFnIINZAfY79XqwfNm1xy9Yhak9chG0qpcC/yO6g9QO3aFag6mM8j0QLfYekb99M4ULWonkF4jJfotRBRCyqkslG2NBDI1aPdZEP3r1PVvuHSXWyEiv1c3I0Z8ONCcgFgt8SzRcEBKEas210OmJz96VwKqIhuDj1MMfIxOhdO+i+gRTBOEgTtbvP3wj1+3ReiihOILzplmjYtf812pzNPxAHS3pqEo+Ra+aaeoexvF0GUMamHV6EmT+E2vd5hO75X5AM7k279Jaj8kLw+17DfBGTcGK/GAy5g4616HF3wHzxpsmqD6CIJ12CKOCPFcRgk4kMkFExX+EwWSVUAxtBASwbNqlZ2h8jICp6P19tyW8KwDAxZ+tf1Tn8Ox70vVtrVo3NcCpritK7HpmBZKUqOrObbs=
-Content-ID: <5488D8D5D3898647984FD526517E363C@namprd22.prod.outlook.com>
+ id 1hstXg-0006zu-7u
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 18:41:42 +0000
+Received: by mail-io1-xd44.google.com with SMTP id f4so138553380ioh.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 31 Jul 2019 11:41:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=3AsLIdRn1/s/ajhZAFGpfmDm8iyB8h5HN7OzbntAvwU=;
+ b=PxOfkjT7L+Hwdws3JZ6LI7RIiZnSFD26K9lcMVVxc7bdsCSr6UJeCFlxR2ViMJRVgZ
+ kKcCXB97d79J4mBEjnLyj18g9tQyLOnRgxTkJ1nN/qkHZ8DkRWoinzBu16Zow0FHmIpz
+ HVoScJTEr7/TuqQu0dTMDxJariUa7FqrVwyGs=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=3AsLIdRn1/s/ajhZAFGpfmDm8iyB8h5HN7OzbntAvwU=;
+ b=Chpu/j21nFLkXZACPPiZYFR7Axuw8eFe5zOcxyqoSuPgaton+gRyPniijlgjjOKeLw
+ VQChygZAWwgd8NI8GdSo6/5eKF1t9Nc53KIkBqbIOJ299ueFMxbIMtmXd+IlaTYXWq8H
+ DqcrSK5iBc1E4DjYJHFJRYFRsXhNjrRiu7y3xqq/smVB3AZML1o4SLryarGu5XQjwGGQ
+ 5U7I3U16iqEPE+bOMW8F0yvVC2hxPHJhzQFxIdMprIWuDd+uZ/Wm8YdYQDAOQwg9v+GJ
+ B4LWOJWRVgV7Thba1of6Te/SOvsXsd5lsWSPxTapHiSnLvb1N4aNEyevCVXYlIqnZ/ir
+ llWg==
+X-Gm-Message-State: APjAAAXAkHqera5I9sF6Td8j22AreigI03thcoaA/97lRLFZ4Bqz1aaB
+ lsAfRXMJy7u/ykDPNKrHAaiqbqSptvA=
+X-Google-Smtp-Source: APXvYqzXxRHqqVbS74XAp/mM39fnK4haAnmFrRi7tObTWYKHMZMvb3qL1K96q3moBbYWQ9y9NVY0RA==
+X-Received: by 2002:a5d:9711:: with SMTP id h17mr41363653iol.280.1564598498001; 
+ Wed, 31 Jul 2019 11:41:38 -0700 (PDT)
+Received: from mail-io1-f54.google.com (mail-io1-f54.google.com.
+ [209.85.166.54])
+ by smtp.gmail.com with ESMTPSA id d25sm56032981iom.52.2019.07.31.11.41.37
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Wed, 31 Jul 2019 11:41:37 -0700 (PDT)
+Received: by mail-io1-f54.google.com with SMTP id q22so18725690iog.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 31 Jul 2019 11:41:37 -0700 (PDT)
+X-Received: by 2002:a02:a1c7:: with SMTP id o7mr131531038jah.26.1564598496739; 
+ Wed, 31 Jul 2019 11:41:36 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: mips.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4e5d9b92-2934-4a14-393e-08d715e5ebb1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 31 Jul 2019 18:35:54.4557 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 463607d3-1db3-40a0-8a29-970c56230104
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: pburton@wavecomp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR2201MB1750
+References: <20190730221800.28326-1-dianders@chromium.org>
+ <20190731125733.op3y5j5psuj6pet3@willie-the-truck>
+In-Reply-To: <20190731125733.op3y5j5psuj6pet3@willie-the-truck>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 31 Jul 2019 11:41:20 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=WYC4x7MCfkHbB=Mm-6NJywbXs4zAGfz0t+5OdXFOmE7g@mail.gmail.com>
+Message-ID: <CAD=FV=WYC4x7MCfkHbB=Mm-6NJywbXs4zAGfz0t+5OdXFOmE7g@mail.gmail.com>
+Subject: Re: [PATCH] arm64: debug: Make 'btc' and similar work in kdb
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_113559_424717_76A5FCEE 
-X-CRM114-Status: GOOD (  17.13  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190731_114140_289505_470F8607 
+X-CRM114-Status: GOOD (  26.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.75.98 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,74 +101,208 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ kgdb-bugreport@lists.sourceforge.net,
+ Jason Wessel <jason.wessel@windriver.com>, LKML <linux-kernel@vger.kernel.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>, "H. Peter Anvin" <hpa@zytor.com>,
- Will Deacon <will@kernel.org>, "Liang, 
- Kan" <kan.liang@linux.intel.com>, "x86@kernel.org" <x86@kernel.org>,
- Ingo Molnar <mingo@redhat.com>, James Hogan <jhogan@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>,
- =?iso-8859-1?Q?J=E9r=F4me_Glisse?= <jglisse@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
  Thomas Gleixner <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, James Morse <james.morse@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Steven,
+Hi,
 
-On Wed, Jul 31, 2019 at 04:45:46PM +0100, Steven Price wrote:
-> walk_page_range() is going to be allowed to walk page tables other than
-> those of user space. For this it needs to know when it has reached a
-> 'leaf' entry in the page tables. This information is provided by the
-> p?d_leaf() functions/macros.
-> 
-> If _PAGE_HUGE is defined we can simply look for it. When not defined we
-> can be confident that there are no leaf pages in existence and fall back
-> on the generic implementation (added in a later patch) which returns 0.
-> 
-> CC: Ralf Baechle <ralf@linux-mips.org>
-> CC: Paul Burton <paul.burton@mips.com>
-> CC: James Hogan <jhogan@kernel.org>
-> CC: linux-mips@vger.kernel.org
-> Signed-off-by: Steven Price <steven.price@arm.com>
+On Wed, Jul 31, 2019 at 5:57 AM Will Deacon <will@kernel.org> wrote:
+>
+> Hi Doug,
+>
+> On Tue, Jul 30, 2019 at 03:18:00PM -0700, Douglas Anderson wrote:
+> > diff --git a/arch/arm64/kernel/kgdb.c b/arch/arm64/kernel/kgdb.c
+> > index 43119922341f..b666210fbc75 100644
+> > --- a/arch/arm64/kernel/kgdb.c
+> > +++ b/arch/arm64/kernel/kgdb.c
+> > @@ -148,6 +148,45 @@ sleeping_thread_to_gdb_regs(unsigned long *gdb_regs, struct task_struct *task)
+> >       gdb_regs[32] = cpu_context->pc;
+> >  }
+> >
+> > +void kgdb_call_nmi_hook(void *ignored)
+> > +{
+> > +     struct pt_regs *regs;
+> > +
+> > +     /*
+> > +      * NOTE: get_irq_regs() is supposed to get the registers from
+> > +      * before the IPI interrupt happened and so is supposed to
+> > +      * show where the processor was.  In some situations it's
+> > +      * possible we might be called without an IPI, so it might be
+> > +      * safer to figure out how to make kgdb_breakpoint() work
+> > +      * properly here.
+> > +      */
+> > +     regs = get_irq_regs();
+> > +
+> > +     /*
+> > +      * Some commands (like 'btc') assume that they can find info about
+> > +      * a task in the 'cpu_context'.  Unfortunately that's only valid
+> > +      * for sleeping tasks.  ...but let's make it work anyway by just
+> > +      * writing the registers to the right place.  This is safe because
+> > +      * nobody else is using the 'cpu_context' for a running task.
+> > +      */
+> > +     current->thread.cpu_context.x19 = regs->regs[19];
+> > +     current->thread.cpu_context.x20 = regs->regs[20];
+> > +     current->thread.cpu_context.x21 = regs->regs[21];
+> > +     current->thread.cpu_context.x22 = regs->regs[22];
+> > +     current->thread.cpu_context.x23 = regs->regs[23];
+> > +     current->thread.cpu_context.x24 = regs->regs[24];
+> > +     current->thread.cpu_context.x25 = regs->regs[25];
+> > +     current->thread.cpu_context.x26 = regs->regs[26];
+> > +     current->thread.cpu_context.x27 = regs->regs[27];
+> > +     current->thread.cpu_context.x28 = regs->regs[28];
+> > +     current->thread.cpu_context.fp = regs->regs[29];
+> > +
+> > +     current->thread.cpu_context.sp = regs->sp;
+> > +     current->thread.cpu_context.pc = regs->pc;
+> > +
+> > +     kgdb_nmicallback(raw_smp_processor_id(), regs);
+> > +}
+>
+> This is really gross... :/
 
-Acked-by: Paul Burton <paul.burton@mips.com>
+Well, sort of.  At first I definitely thought of it as a hack.  ...but
+then I realized that it's actually not so terrible.  Although the
+other processors (the ones that are not the kgdb master) are
+technically "running" as far as Linux is concerned, you can also think
+of them as "stopped" in the debugger.  It's convenient to think of
+them the same way you'd think of sleeping tasks.
 
-Thanks,
-    Paul
+Said another way: normally for a "running" task you couldn't put
+anything in the "cpu_context" because it'd be wrong the moment you put
+it there.  ...but when a CPU is stopped in kgdb then there's actually
+something quite sane to put there.
 
-> ---
->  arch/mips/include/asm/pgtable.h | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/arch/mips/include/asm/pgtable.h b/arch/mips/include/asm/pgtable.h
-> index 7d27194e3b45..238ca243ad31 100644
-> --- a/arch/mips/include/asm/pgtable.h
-> +++ b/arch/mips/include/asm/pgtable.h
-> @@ -627,6 +627,11 @@ static inline pmd_t pmdp_huge_get_and_clear(struct mm_struct *mm,
->  
->  #endif /* CONFIG_TRANSPARENT_HUGEPAGE */
->  
-> +#ifdef _PAGE_HUGE
-> +#define pmd_leaf(pmd)	((pmd_val(pmd) & _PAGE_HUGE) != 0)
-> +#define pud_leaf(pud)	((pud_val(pud) & _PAGE_HUGE) != 0)
-> +#endif
-> +
->  #define gup_fast_permitted(start, end)	(!cpu_has_dc_aliases)
->  
->  #include <asm-generic/pgtable.h>
-> -- 
-> 2.20.1
-> 
+So with just a small shift in the concept of what "cpu_context" is for
+then it becomes not so gross.
+
+
+> Can you IPI the other CPUs instead and have them backtrace locally, like we
+> do for things like magic sysrq (sysrq_handle_showallcpus())?
+
+No, unfortunately.  All the other CPUs are in a tight loop (with
+interrupts off) waiting to be released by the kgdb master.  Amusingly,
+it's possible to simulate this.  You can run a sysrq from the kdb
+prompt.  When I do "sr l" from kdb:
+
+A) The CPU running the kgdb master provides a stack crawl but it's not
+really what you want.  Presumably this doesn't matter (we wouldn't
+want to send the IPI to the calling CPU), but it's interesting to look
+at.  We end up in the fallback workqueue case in
+sysrq_handle_showallcpus().  Then we will backtrace based on the regs
+returned by "get_irq_regs()".  Thus instead of:
+
+[0]kdb> bt
+Stack traceback for pid 0
+0xffffff801101a9c0        0        0  1    0   R  0xffffff801101b3b0 *swapper/0
+Call trace:
+ dump_backtrace+0x0/0x138
+ show_stack+0x20/0x2c
+ kdb_show_stack+0x60/0x84
+ kdb_bt1+0xb8/0x100
+ kdb_bt+0x24c/0x408
+ kdb_parse+0x53c/0x664
+ kdb_main_loop+0x7fc/0x888
+ kdb_stub+0x2b0/0x3d0
+ kgdb_cpu_enter+0x27c/0x5c4
+ kgdb_handle_exception+0x198/0x1f4
+ kgdb_compiled_brk_fn+0x34/0x44
+ brk_handler+0x88/0xd0
+ do_debug_exception+0xe0/0x128
+ el1_dbg+0x18/0x8c
+ kgdb_breakpoint+0x20/0x3c
+ sysrq_handle_dbg+0x34/0x5c
+ __handle_sysrq+0x14c/0x170
+ handle_sysrq+0x38/0x44
+ serial8250_handle_irq+0xe8/0xfc
+ dw8250_handle_irq+0x94/0xd0
+ serial8250_interrupt+0x48/0xa4
+ __handle_irq_event_percpu+0x134/0x25c
+ handle_irq_event_percpu+0x34/0x8c
+ handle_irq_event+0x48/0x78
+ handle_fasteoi_irq+0xd0/0x1a0
+ __handle_domain_irq+0x84/0xc4
+ gic_handle_irq+0x10c/0x180
+ el1_irq+0xb8/0x180
+ cpuidle_enter_state+0x284/0x428
+ cpuidle_enter+0x38/0x4c
+ do_idle+0x168/0x29c
+ cpu_startup_entry+0x24/0x28
+ rest_init+0xd4/0xe0
+ arch_call_rest_init+0x10/0x18
+ start_kernel+0x320/0x3a4
+
+I get:
+
+[0]kdb> sr l
+sysrq: Show backtrace of all active CPUs
+sysrq: CPU0:
+CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.3.0-rc2+ #28
+Hardware name: Google Kevin (DT)
+pstate: 20000005 (nzCv daif -PAN -UAO)
+pc : cpuidle_enter_state+0x284/0x428
+lr : cpuidle_enter_state+0x274/0x428
+sp : ffffff8011003e60
+x29: ffffff8011003eb0 x28: ffffff8010f366b8
+x27: ffffff8011010000 x26: 0000000000000001
+x25: ffffff80110eb000 x24: 0000000000000000
+x23: 00000024232e8f0a x22: 0000002420501a35
+x21: 0000000000000002 x20: ffffffc0ee86e080
+x19: ffffffc0f65426c0 x18: 0000000000000000
+x17: 000000000000003e x16: 000000000000003f
+x15: 0000000000000000 x14: ffffff801101a9c0
+x13: 0000000000013320 x12: 0000000000000020
+x11: 000000000624dd2f x10: 00000000ffffffff
+x9 : 0000000100000001 x8 : 00000000000000c0
+x7 : 00000032b5593519 x6 : 0000000000300000
+x5 : 0000000000000000 x4 : 0000000000000101
+x3 : 00000000ffffffff x2 : 0000000000000001
+x1 : ffffffc0f6548d80 x0 : 0000000000000000
+Call trace:
+ cpuidle_enter_state+0x284/0x428
+ cpuidle_enter+0x38/0x4c
+ do_idle+0x168/0x29c
+ cpu_startup_entry+0x24/0x28
+ rest_init+0xd4/0xe0
+ arch_call_rest_init+0x10/0x18
+ start_kernel+0x320/0x3a4
+
+
+B) All the other CPUs don't respond.  ...until you exit the debugger
+and then they all print their stacks, a little too late.
+
+---
+
+The weird crawl for the master CPU made me think that maybe I could
+use "show_regs()" to show the stacks of the other CPUs, but that
+didn't work.  The arm64 stack crawling code really only works for a
+sleeping task or for the current running task.
+
+...this again gets back to the fact that we can really think of those
+other CPUs stopped in the debugger as "sleeping".
+
+=====
+
+OK, so I think I managed to get something that maybe you're happy with:
+
+https://lkml.kernel.org/r/20190731183732.178134-1-dianders@chromium.org
+
+...I still think it's not such a hack to stash the state in the
+"cpu_context" and I could imagine it might have other benefits when
+debugging, but my new patch does have the advantage that it's more
+platform agnostic.  ;-)  Let me know what you think...
+
+-Doug
 
 _______________________________________________
 linux-arm-kernel mailing list
