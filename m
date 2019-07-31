@@ -2,61 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07E7A7C941
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:55:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C94C67C946
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 18:56:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6MN4VeUy5cJClz/WdaOt/YXwxz2F4kIJR/XEAcNWdZg=; b=DB538aObzFnq70
-	EyTAYYIdp1AKrYiSMm8cGn4Vr1DzUMrXsuLZQAKn0+lAKFCWnjtG/yEBSckcd9PcNpKt1nzZnmHb4
-	gg4G/HbYNg4nD17IIhPCgwSGXWm59oZtH35BG4vUh3uSiAUAH4ZQjcxDcnuNY2FplOnbldBlHp+0V
-	Xq5arhdyDVF6sxKsUi5FQ3SuiB/U69NtTzzkGD8h+qKtbuVQjeoJS4QajX/53BCdKnWifT84LsPXe
-	yVvX+pEcQfwoYr4KGtLgpQf7dPvrCbHop3p9NIvNBvmXyRcoYYtalH1kv5HPkavW8Vd1FYStUi+zT
-	JKFjusZtS6OqEe5FKqWA==;
+	List-Owner; bh=YLanlBnCjhtaFWLykCcKslvE7oBMZumWuJOs5Bv4nHA=; b=J/VtX8kwoqUVoP
+	FH8/YWrapNM3mYYB+6gRaIif3m9yHBF0DEQUEipjLXEOfYoiOf9G1jDvmnBskcgEPnG18MrKgz/BD
+	vvKQuMp5FGLzekVQzkZAKSf5zjBKopfmRTrij86jSMypZkfnqaRGK1Pq1CMBgxhTq+nzG2MWIEAIv
+	8C5UG98w+NrP0TWXAiN8AlmSs9Gtv90oxsZV9fAKMnKgarJRiO2l1UUhHpIpIkuaP8UdoZaRUjCvs
+	xchivMSPoa3QBk7m0WKdZhxEPog3vAuFvbEaT3SHE0y9DYOrHDsjLy1YXvRQtpCQ8PbOrTebLb+4w
+	GUhY1ovQfaK+beDceGkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsrsm-0005xu-8Q; Wed, 31 Jul 2019 16:55:20 +0000
+	id 1hsrtb-0006Qi-38; Wed, 31 Jul 2019 16:56:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsrsd-0005wd-DO; Wed, 31 Jul 2019 16:55:12 +0000
-Received: from mail-qk1-f179.google.com (mail-qk1-f179.google.com
- [209.85.222.179])
+ id 1hsrtL-0006Or-9M; Wed, 31 Jul 2019 16:56:03 +0000
+Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
+ [209.85.160.170])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DBC46208E4;
- Wed, 31 Jul 2019 16:55:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D3EAD208E4;
+ Wed, 31 Jul 2019 16:55:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564592111;
- bh=JDEMB0zREMLmLrMHdC+useYBlGljcUC+uo1OriFFjzw=;
+ s=default; t=1564592155;
+ bh=bu2/IzitZpcqBSeCvVLwvyS9Pg3PnwR+a5FlsLqKfwI=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=cAImF8l+MTX5ADdOiJKH/QneD3b8zhh4NS+aA1NAyHVfIxsAaqLYpsv7WWoB0TtwC
- 2c+ItTFSXRfvJm8NLwOGBwC1tdL2l53EDDw8O2zAvqikMvMFvGEZ4ep8NiaBCipCVO
- J/gR1tv6gsEb3B4cn2OBbd6Mpyprif+nWU17dCsY=
-Received: by mail-qk1-f179.google.com with SMTP id m14so24080097qka.10;
- Wed, 31 Jul 2019 09:55:10 -0700 (PDT)
-X-Gm-Message-State: APjAAAUXsBgaIpHdx9QEN1BgOXBqqzIQE7/EjEpfBaIjzV2hLCQFqM82
- c/NkNJ1ZGofB+cp1P5S4Fo3HQORHmNQaB6P53A==
-X-Google-Smtp-Source: APXvYqyL4gjIwP3FgCPMgYyaj67zGUm/qznjmZ2P2Af+LHVuDZ8XmiPXVioHVdq5jApCgeXPOXaATEbkx/ux3T/Eogs=
-X-Received: by 2002:a37:a48e:: with SMTP id
- n136mr83759357qke.223.1564592110116; 
- Wed, 31 Jul 2019 09:55:10 -0700 (PDT)
+ b=o/YgXu/1eTjtGCGzZ/OwQR5HDIIAYPv1s4Ry9B/VG0+8TbBTE9xc/OXQM/EHcYcZ3
+ X6RpcDqanN9nOJhH5PO31520ZAzINdR7OqDxxCWR8dU1jSDIrRI0dU9GoiFRPk++8Y
+ ynZqXfGcruJQ0nDV6aK5D5raa2FrgKfkWnKPg2iU=
+Received: by mail-qt1-f170.google.com with SMTP id y26so67295508qto.4;
+ Wed, 31 Jul 2019 09:55:54 -0700 (PDT)
+X-Gm-Message-State: APjAAAUaai8J8CKi6Kxff2UDBMvCJGDDbgPONJl+L2n6u/i/Zw9u69b8
+ pzxb2yNjoKqtVR3AIdmIt9f3BUbqCSlSjuxmOQ==
+X-Google-Smtp-Source: APXvYqyvNP50u9cI3UCf6+YAQwdF9Av65FYOMp2vrFwHw2oLly8ZNSDLF7JYdlfrkafL15qyfM8KXu+yB6C5vKjJVqw=
+X-Received: by 2002:ac8:368a:: with SMTP id a10mr86824910qtc.143.1564592154073; 
+ Wed, 31 Jul 2019 09:55:54 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190731124000.22072-1-narmstrong@baylibre.com>
- <20190731124000.22072-3-narmstrong@baylibre.com>
-In-Reply-To: <20190731124000.22072-3-narmstrong@baylibre.com>
+ <20190731124000.22072-4-narmstrong@baylibre.com>
+In-Reply-To: <20190731124000.22072-4-narmstrong@baylibre.com>
 From: Rob Herring <robh@kernel.org>
-Date: Wed, 31 Jul 2019 10:54:58 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJh0VJpRQtjEv4B9Zhw4vYPbx8spJtoR0Pmx3Mier5gjg@mail.gmail.com>
-Message-ID: <CAL_JsqJh0VJpRQtjEv4B9Zhw4vYPbx8spJtoR0Pmx3Mier5gjg@mail.gmail.com>
-Subject: Re: [PATCH 2/6] dt-bindings: arm: amlogic: add bindings for G12B
- based S922X SoC
+Date: Wed, 31 Jul 2019 10:55:42 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKFacYY06keqny2RTvCd1R6eDmZmVG5WdjoDHdfwAObgg@mail.gmail.com>
+Message-ID: <CAL_JsqKFacYY06keqny2RTvCd1R6eDmZmVG5WdjoDHdfwAObgg@mail.gmail.com>
+Subject: Re: [PATCH 3/6] dt-bindings: arm: amlogic: add bindings for the
+ Amlogic G12B based A311D SoC
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_095511_468819_6E1F5B42 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20190731_095559_114985_2F73E3BA 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -98,13 +97,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed, Jul 31, 2019 at 6:40 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
-> Add a specific compatible for the Amlogic G12B family based S922X SoC
-> to differentiate with the A311D SoC from the same family.
+> Add a specific compatible for the Amlogic G12B bases A311D SoC used
+> in the Khadas VIM3.
 >
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 > ---
->  Documentation/devicetree/bindings/arm/amlogic.yaml | 1 +
->  1 file changed, 1 insertion(+)
+>  Documentation/devicetree/bindings/arm/amlogic.yaml | 5 +++++
+>  1 file changed, 5 insertions(+)
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
