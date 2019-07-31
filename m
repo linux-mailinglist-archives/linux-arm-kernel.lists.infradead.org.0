@@ -2,79 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 080567BE5C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 12:26:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39B277BE79
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 31 Jul 2019 12:39:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5+/x9xE9Z4DVJanGOzEJKOUdFTiF717SvXGj0VmqF0A=; b=FUJZm392GjJXOq
-	mOf5pLjvduGz5EELrutMxH1AZYAuBuaV0iljTya20948dZiTtuSkbA1T1vmwA8IWuprQQavGcPyrM
-	F4Rca2UEhiPFl/fjjSYPDKpxUi6btQdZjwCZMj9xnvHwt9bSlgBGmq09Y8C7k7IVHfH1NNyM4gMrK
-	8XkQYONpUHnxKaNJwCxT/B2sN48B+ARfo5hTXZzQv/4/d0H3biYF8gEqEy6lw9FuHha7jtqIXEq4M
-	4HxcALWqZBUoq9nJluO5kBzEKniXYq9dM8LeaxW6mMm/ZUqbbRwxeZ/sOM/TD7a0GzMLGNQk+FNGn
-	VR1WbfZ4Um1xebRCF82w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zaYTzB6Y0MKexfitpbBzC0FGYRlgfOr0gHSTWXMIhGw=; b=gv8JXO5UevF/qr7fDWDr73kNq
+	DcMY+H0r6FD3BFwy5JX/u4IG6aAVxR1++rnEGZoHOfEbg6X4j93jhLhf9fLholwKSZ4KLPL+W77MX
+	NUJvjETXJosMqY9Kuwrs6HHwf71vDP7etOfn+u7tEAtL+j+4VZdv53M61uNOPYSBCuAOkkJQD0Y/6
+	/B1upWjGcC0StbHHnTCh6C8274RHmSIp/nSbLAfX5XfN6uaS6phFUNWtQ1KL8qtEqebJPQ1JpNU4m
+	wF195/iaimqHqGbB6Xcanygj3CPzhy0eO+aYLHJUovpuVWTdlipgEU0AwWVN61c75cDu2gUmT7XsA
+	BWfSx6mVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hslob-0002P5-Vi; Wed, 31 Jul 2019 10:26:38 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hsm1L-0007UE-4t; Wed, 31 Jul 2019 10:39:47 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsloP-0002Oh-QS
- for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 10:26:27 +0000
-Received: by mail-lj1-x244.google.com with SMTP id x25so65126776ljh.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 03:26:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=JUZSHlOC2NsvHH+oiYgXd/P9aGC7hBdS8UD65AtoMp4=;
- b=MQiLGOAWAeeOz7OvhR0Srak34dyDFzwv68hLoy3nUVLq1Ok4QKDOGspGoCLiCYmrsl
- X53gwv/rai5eej0QK73mKUVb9t737/JnqyNFTDy3ud2eorwscZF/qVEhn/BI0oZfsUMX
- NoICCfPOb5jeWu0aA1R5XdP93vlkhILcxoIL6Bf+Pme7yWed9VVKTeOxvaXLm3EViblG
- bGCBElPhzYPNZVjOgapbV1/DZKl2AMMCaspfmKtCBYkTr7liVQ4IXthOr4B74aJynBUX
- 0mIzuX+PD1vORUscdCQ8kS1BDpsmqzR8d5B0vqB5KEyhGRuDcTR+C0CId8saWMKP4v4l
- 0GOA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=JUZSHlOC2NsvHH+oiYgXd/P9aGC7hBdS8UD65AtoMp4=;
- b=aCzBW+tFCcEvKMS+Q9kpkgrhFEL+HLhdZdp+biOEq8Mkc6XZr67714lFCDj085xzZB
- FKSnDx9GKuzxpiIk9wxJwVKMoDhnvSaoM76Uix/Og0oIDAk44fC9G9IP3C+zabuJnIHr
- X6c6GNrvQAi3MezV+drY8JJ1Z7WlRRwtJwxGBQEyPBZbNKubushjPmdCjbVLB5Q5vTRx
- JF+1yRdzTJ1i8/qYd0k4RjvhA1PO21ojVxAopua9SFr3AWISouNnd2bIcCe5eR+xSi5m
- 3BvEQKQOrJvPmEk5r/tYB5wqygLsfkz4yGRL1vnVbKHeL5c3gLU7xa9Ozw+btyTjUNXw
- IL+g==
-X-Gm-Message-State: APjAAAW4S9jMDPo/hAfZJ0kpV+jl9HgsXxF8pIB+Q2B0x+OjrsuipX8S
- mZt9PliK1ca8ylvItm1rRBbSC1CPyBn7SLPWpCa+4Q==
-X-Google-Smtp-Source: APXvYqzK9w7NfgMq23mlEeHWtRc1vd+SdbVRqgKv0YbwMlIYSzawLj8RuR4WbpJLpxKS9HshxfPzK8im8DJXEMjL6UY=
-X-Received: by 2002:a2e:85d4:: with SMTP id h20mr6120835ljj.142.1564568783805; 
- Wed, 31 Jul 2019 03:26:23 -0700 (PDT)
+ id 1hsm1E-0007Tt-U3
+ for linux-arm-kernel@lists.infradead.org; Wed, 31 Jul 2019 10:39:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=C/KT1hT4oXpqxVh5zbKW+GHQjIlT7bZxH5ote1WIcA4=; b=efzP6b1srZQm82oYZZYuGdpoh
+ i0Xt4rWNTeQy9uGuVZBzxjgBCPlBc1pednQz2GhlreqWgcM9nAkmGOpl0zB9aKwHImN2bRu+luAJi
+ +1XW5K5Om06dPWc+FQ9UcytGd9G4cK+lvohEL+eAk9kf/UJievZjOMSXXld9nXY7Bo5Lk=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hsm19-0001fk-Rn; Wed, 31 Jul 2019 10:39:35 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id E39762742C99; Wed, 31 Jul 2019 11:39:34 +0100 (BST)
+Date: Wed, 31 Jul 2019 11:39:34 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: next/master boot: 265 boots: 17 failed, 184 passed with 64
+ offline (next-20190730)
+Message-ID: <20190731103934.GA4369@sirena.org.uk>
+References: <5d403574.1c69fb81.14163.65d3@mx.google.com>
+ <20190730134115.GE4264@sirena.org.uk>
+ <CACRpkdYevQiwW8iED8_qBo5yCcj5yCGrM76Lu3MyrU6Vy4HoNg@mail.gmail.com>
 MIME-Version: 1.0
-References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
- <CAE=Ncrb63dQLe-nDQyO9OPv7XjwM_9mzL9SrcLiUi2Dr10cD4A@mail.gmail.com>
-In-Reply-To: <CAE=Ncrb63dQLe-nDQyO9OPv7XjwM_9mzL9SrcLiUi2Dr10cD4A@mail.gmail.com>
-From: Sumit Garg <sumit.garg@linaro.org>
-Date: Wed, 31 Jul 2019 15:56:12 +0530
-Message-ID: <CAFA6WYPJAzbPdcpBqioxjY=T8RLw-73B_hpzX4cGnwVvm5zpJw@mail.gmail.com>
-Subject: Re: [RFC v2 0/6] Introduce TEE based Trusted Keys support
-To: Janne Karhunen <janne.karhunen@gmail.com>
+In-Reply-To: <CACRpkdYevQiwW8iED8_qBo5yCcj5yCGrM76Lu3MyrU6Vy4HoNg@mail.gmail.com>
+X-Cookie: FEELINGS are cascading over me!!!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_032625_866842_6AF714A6 
-X-CRM114-Status: GOOD (  23.59  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_033940_974352_F545D9A0 
+X-CRM114-Status: GOOD (  15.83  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -91,119 +81,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
- Daniel Thompson <daniel.thompson@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
- jejb@linux.ibm.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- James Morris <jmorris@namei.org>,
- Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
- linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
- Mimi Zohar <zohar@linux.ibm.com>, Casey Schaufler <casey@schaufler-ca.com>,
- linux-integrity@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "Serge E. Hallyn" <serge@hallyn.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Kernel Build Reports Mailman List <kernel-build-reports@lists.linaro.org>,
+ Timur Tabi <timur@codeaurora.org>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Stephen Boyd <swboyd@chromium.org>, Lee Jones <lee.jones@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============2171868610566695077=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Janne,
 
-On Wed, 31 Jul 2019 at 12:41, Janne Karhunen <janne.karhunen@gmail.com> wrote:
->
-> Hi,
->
-> Interesting, I wrote something similar and posted it to the lists a while back:
-> https://github.com/jkrh/linux/commit/d77ea03afedcb5fd42234cd834da8f8a0809f6a6
->
-> Since there are no generic 'TEEs' available,
+--===============2171868610566695077==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="xHFwDpU9dbj6ez1V"
+Content-Disposition: inline
 
-There is already a generic TEE interface driver available in kernel.
-Have a look here: "Documentation/tee.txt".
 
-> I implemented the same
-> thing as a generic protocol translator. The shared memory binding for
-> instance already assumes fair amount about the TEE and how that is
-> physically present in the system. Besides, the help from usage of shm
-> is pretty limited due to the size of the keydata.
->
+--xHFwDpU9dbj6ez1V
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-If you look at patch #1 and #2, they add support to register kernel
-memory buffer (keydata buffer in this case) with TEE to operate on. So
-there isn't any limitation due to the size of the keydata.
+On Wed, Jul 31, 2019 at 10:48:38AM +0200, Linus Walleij wrote:
+> On Tue, Jul 30, 2019 at 3:41 PM Mark Brown <broonie@kernel.org> wrote:
 
--Sumit
+> > Today's -next fails to boot on QDF2400 systems:
 
->
-> --
-> Janne
->
->
->
->
-> On Tue, Jul 30, 2019 at 3:26 PM Sumit Garg <sumit.garg@linaro.org> wrote:
-> >
-> > Add support for TEE based trusted keys where TEE provides the functionality
-> > to seal and unseal trusted keys using hardware unique key. Also, this is
-> > an alternative in case platform doesn't possess a TPM device.
-> >
-> > This series also adds some TEE features like:
-> >
-> > Patch #1, #2 enables support for registered kernel shared memory with TEE.
-> >
-> > Patch #3 enables support for private kernel login method required for
-> > cases like trusted keys where we don't wan't user-space to directly access
-> > TEE service to retrieve trusted key contents.
-> >
-> > Rest of the patches from #4 to #6 adds support for TEE based trusted keys.
-> >
-> > This patch-set has been tested with OP-TEE based pseudo TA which can be
-> > found here [1].
-> >
-> > Also, this patch-set is dependent on generic Trusted Keys framework
-> > patch-set [2].
-> >
-> > [1] https://github.com/OP-TEE/optee_os/pull/3082
-> > [2] https://lkml.org/lkml/2019/7/18/284
-> >
-> > Changes in v2:
-> > 1. Add reviewed-by tags for patch #1 and #2.
-> > 2. Incorporate comments from Jens for patch #3.
-> > 3. Switch to use generic trusted keys framework.
-> >
-> > Sumit Garg (6):
-> >   tee: optee: allow kernel pages to register as shm
-> >   tee: enable support to register kernel memory
-> >   tee: add private login method for kernel clients
-> >   KEYS: trusted: Introduce TEE based Trusted Keys
-> >   doc: keys: Document usage of TEE based Trusted Keys
-> >   MAINTAINERS: Add entry for TEE based Trusted Keys
-> >
-> >  Documentation/security/keys/index.rst       |   1 +
-> >  Documentation/security/keys/tee-trusted.rst |  93 +++++++++
-> >  MAINTAINERS                                 |   9 +
-> >  drivers/tee/optee/call.c                    |   7 +
-> >  drivers/tee/tee_core.c                      |   6 +
-> >  drivers/tee/tee_shm.c                       |  16 +-
-> >  include/keys/trusted-type.h                 |   3 +
-> >  include/keys/trusted_tee.h                  |  66 +++++++
-> >  include/linux/tee_drv.h                     |   1 +
-> >  include/uapi/linux/tee.h                    |   8 +
-> >  security/keys/Kconfig                       |   3 +
-> >  security/keys/trusted-keys/Makefile         |   3 +-
-> >  security/keys/trusted-keys/trusted-tee.c    | 282 ++++++++++++++++++++++++++++
-> >  security/keys/trusted-keys/trusted.c        |   3 +
-> >  14 files changed, 498 insertions(+), 3 deletions(-)
-> >  create mode 100644 Documentation/security/keys/tee-trusted.rst
-> >  create mode 100644 include/keys/trusted_tee.h
-> >  create mode 100644 security/keys/trusted-keys/trusted-tee.c
-> >
-> > --
-> > 2.7.4
-> >
+> Is this a devicetree or ACPI system? Which devicetree in that case?
+> If it is ACPI I assume one had to look into DSDTs?
+
+You can see from the linked logs it's an ACPI system, the ACPI code
+announces it during boot.
+
+> Aha. I think this only worked out of chance before.
+
+> What the Qualcomm driver does is exploit that .init_valid_mask() gets called
+> even if .need_valid_mask in gpio_chip is not set to true,
+> and this is why the bug appears in
+> msm_gpio_init_valid_mask(), I'm pretty much sure it is the
+> bitmap_zero(chip->valid_mask, max_gpios);
+> call towards the end of the function that gets turned
+> into:
+> 08:56:36.114798  [    4.433713]  __memset+0x80/0x188
+
+> And this causes the crash.
+
+Should init_valid_mask() be being called if need_valid_mask() is false?
+
+> Apparently this only happens on ACPI systems because I tested it
+> myself on a DT system.
+
+Might also depend on the particular DT the system has?
+
+> So if OF and ACPI is activated at the same time (can that happen?)
+
+Not really.  There is a stub DT used to pass ACPI to the kernel.
+
+--xHFwDpU9dbj6ez1V
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1Bb+MACgkQJNaLcl1U
+h9ByIgf8DHz6iRIX05wFzvia+rX0aOecktzNJkxEnDYqoBOKzoJhcLkp/QxqcpuJ
+QagvAq7fbOayBEVjobfVwSXEbP70CipP/UGnbu7tX4rT9aOYaazfT193dIheaRvS
+6swduftOOK1kOej0UqFVg9bzjwPa6b9gMkez0YIB4W3qt7cOMyzo5LgtcKEX/Xym
+D62bNWzoh5crKjL7e8e/DxPpOL66VH88kHd8p57Z0ZZpWqHPknk6R6o2meivvL/i
+Pi+F1GTdgbmaRy3XDFgPwPkO2zgtOKC9WmKKniyXuSas9zSSWVSimapeVjiDRGR4
+6s0bMCxoexMQJodsILIUOwo0rYr9+Q==
+=fz3c
+-----END PGP SIGNATURE-----
+
+--xHFwDpU9dbj6ez1V--
+
+
+--===============2171868610566695077==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2171868610566695077==--
+
