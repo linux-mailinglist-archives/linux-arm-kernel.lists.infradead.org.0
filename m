@@ -2,67 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3F667DB43
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:21:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B88497DB51
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:22:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SACdFN1JuI6iJnkMrXFjVEOmeDWxP4C7T+8EnON4ok0=; b=WpEG5EgfFZjiAl
-	IL72EugO4BBGDew6YGj5QETLMdQKWu8HulP4dwXXX7FLZ3HE2b8QzAckfFZKbZWMXU/eIIujCqdsN
-	MW0qBjLy+Jjx05lhRObSC4IvToqhF++JCBA9Vvaa98Wa3CcHCkUKXWnlCKgewFzMmE54nekTjp8BZ
-	T6pqoFY9MbqIbMygIA1Qd5qad53MRshM9eqIbsmeIcr3yXFrVatbP1KErJW2YYY0wOPhH3yjpD9ns
-	7rQ+J/tqqFxBAmZWK0njQPSBUvfXUFo0b6ZcAiBbpz7E42dr7nVB6+PFme8Piy9JOjVehjL6spsLv
-	hE60DtKjLYTZ4FN79bwA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yL3MTijBsOgeez5LEB8ELXSCW75EiHMxoUD8rLOXx4A=; b=L/CPYIwTH2PJSi
+	HjF1rYrjWfvKa+Hk1e9vrHDccEwp0FqDlOcdcK5UrBCe0DbLt09FNBhGhH8zKKGicLSYmd+P0/qXi
+	1k7MXnvVYV1K7u3wXinSF21aPA968PNIcQkDNPcSekMUUZTrB1Mk5cGrNW8Gpuqm+y6aZkcwaDKjt
+	cAtYOzhVhN59II5VcA6HGnLf3/o7A7Pn3c0VxcgmbmrsJejm/LP9GyVe8zoYaVHEuwji4SyndafjJ
+	eh5D0nZKyhdnip7E3UtpzNJFQTpddBAdAXHqlsd/OInxsKMvfv4nzeZXnf5NfIYVOYaO0jZPBHA0l
+	52/jLpB5qbIrxoRfBabQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htA5C-0000EN-8f; Thu, 01 Aug 2019 12:21:22 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1htA6V-0000qC-19; Thu, 01 Aug 2019 12:22:43 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htA52-0000E0-7j
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:21:13 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 01 Aug 2019 05:21:11 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,334,1559545200"; d="scan'208";a="172896234"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.145])
- by fmsmga008.fm.intel.com with ESMTP; 01 Aug 2019 05:21:08 -0700
-Received: from andy by smile with local (Exim 4.92)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1htA4w-0003Cp-F3; Thu, 01 Aug 2019 15:21:06 +0300
-Date: Thu, 1 Aug 2019 15:21:06 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Wolfram Sang <wsa@the-dreams.de>
-Subject: Re: [PATCH v3 5/7] drivers: Introduce device lookup variants by
- ACPI_COMPANION device
-Message-ID: <20190801122106.GU23480@smile.fi.intel.com>
-References: <20190723221838.12024-1-suzuki.poulose@arm.com>
- <20190723221838.12024-6-suzuki.poulose@arm.com>
- <20190726202353.GA963@kunai>
- <20190801115856.GS23480@smile.fi.intel.com>
- <20190801120830.GA1659@ninjato>
+ id 1htA6I-0000p4-FP
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:22:31 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 00C158748E0FA7FF6A83;
+ Thu,  1 Aug 2019 20:22:27 +0800 (CST)
+Received: from HGHY4L002753561.china.huawei.com (10.133.215.186) by
+ DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
+ 14.3.439.0; Thu, 1 Aug 2019 20:22:16 +0800
+From: Zhen Lei <thunder.leizhen@huawei.com>
+To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>, John Garry
+ <john.garry@huawei.com>, Robin Murphy <robin.murphy@arm.com>, Will Deacon
+ <will@kernel.org>, Joerg Roedel <joro@8bytes.org>, linux-arm-kernel
+ <linux-arm-kernel@lists.infradead.org>, iommu
+ <iommu@lists.linux-foundation.org>, linux-kernel
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH 1/2] iommu/iova: introduce iova_magazine_compact_pfns()
+Date: Thu, 1 Aug 2019 20:21:53 +0800
+Message-ID: <20190801122154.18820-1-thunder.leizhen@huawei.com>
+X-Mailer: git-send-email 2.21.0.windows.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190801120830.GA1659@ninjato>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.133.215.186]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_052112_323692_99F35E55 
-X-CRM114-Status: GOOD (  16.81  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190801_052230_671859_9F136942 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,59 +67,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rafael@kernel.org, gregkh@linuxfoundation.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-acpi@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Jarkko Nikula <jarkko.nikula@linux.intel.com>,
- linux-i2c@vger.kernel.org, Mika Westerberg <mika.westerberg@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
+Cc: Zhen Lei <thunder.leizhen@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 01, 2019 at 02:08:30PM +0200, Wolfram Sang wrote:
-> On Thu, Aug 01, 2019 at 02:58:56PM +0300, Andy Shevchenko wrote:
-> > On Fri, Jul 26, 2019 at 10:23:54PM +0200, Wolfram Sang wrote:
-> > > On Tue, Jul 23, 2019 at 11:18:36PM +0100, Suzuki K Poulose wrote:
-> > > > Add a generic helper to match a device by the ACPI_COMPANION device
-> > > > and provide wrappers for the device lookup APIs.
-> > > > 
-> > > > Cc: Len Brown <lenb@kernel.org>
-> > > > Cc: linux-acpi@vger.kernel.org
-> > > > Cc: linux-spi@vger.kernel.org
-> > > > Cc: Mark Brown <broonie@kernel.org>
-> > > > Cc: Mika Westerberg <mika.westerberg@linux.intel.com>
-> > > > Cc: Wolfram Sang <wsa@the-dreams.de>
-> > > > Cc: linux-i2c@vger.kernel.org
-> > > > Cc: Mark Brown <broonie@kernel.org>
-> > > > Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> > > > Cc: "Rafael J. Wysocki" <rafael@kernel.org>
-> > > > Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > > 
-> > > From my side, OK:
-> > > 
-> > > Acked-by: Wolfram Sang <wsa@the-dreams.de> # I2C parts
-> > > 
-> > > yet you missed to cc the I2C ACPI maintainers. Done so now.
-> > 
-> > Acked-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-> > 
-> > Thanks, Wolfram, for notifying.
-> 
-> Sure. There seems to be a problem, though? Please check:
-> 
-> [PATCH 1/3] i2c: Revert incorrect conversion to use generic helper
-> 
-> which came in today.
+iova_magazine_free_pfns() can only free the whole magazine buffer, add
+iova_magazine_compact_pfns() to support free part of it.
 
-It's again not Cc'ed to all parties.
-But OK, looks good to me.
-Tough may be Jarkko can test all this.
+Signed-off-by: Zhen Lei <thunder.leizhen@huawei.com>
+---
+ drivers/iommu/iova.c | 17 ++++++++++++-----
+ 1 file changed, 12 insertions(+), 5 deletions(-)
 
+diff --git a/drivers/iommu/iova.c b/drivers/iommu/iova.c
+index 3e1a8a6755723a9..4b7a9efa0ef40af 100644
+--- a/drivers/iommu/iova.c
++++ b/drivers/iommu/iova.c
+@@ -795,18 +795,19 @@ static void iova_magazine_free(struct iova_magazine *mag)
+ 	kfree(mag);
+ }
+ 
+-static void
+-iova_magazine_free_pfns(struct iova_magazine *mag, struct iova_domain *iovad)
++static void iova_magazine_compact_pfns(struct iova_magazine *mag,
++				       struct iova_domain *iovad,
++				       unsigned long newsize)
+ {
+ 	unsigned long flags;
+ 	int i;
+ 
+-	if (!mag)
++	if (!mag || mag->size <= newsize)
+ 		return;
+ 
+ 	spin_lock_irqsave(&iovad->iova_rbtree_lock, flags);
+ 
+-	for (i = 0 ; i < mag->size; ++i) {
++	for (i = newsize; i < mag->size; ++i) {
+ 		struct iova *iova = private_find_iova(iovad, mag->pfns[i]);
+ 
+ 		BUG_ON(!iova);
+@@ -815,7 +816,13 @@ static void iova_magazine_free(struct iova_magazine *mag)
+ 
+ 	spin_unlock_irqrestore(&iovad->iova_rbtree_lock, flags);
+ 
+-	mag->size = 0;
++	mag->size = newsize;
++}
++
++static void
++iova_magazine_free_pfns(struct iova_magazine *mag, struct iova_domain *iovad)
++{
++	iova_magazine_compact_pfns(mag, iovad, 0);
+ }
+ 
+ static bool iova_magazine_full(struct iova_magazine *mag)
 -- 
-With Best Regards,
-Andy Shevchenko
+1.8.3
 
 
 
