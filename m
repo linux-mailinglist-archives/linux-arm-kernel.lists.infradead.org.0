@@ -2,71 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C01C07DC42
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 15:11:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3E137DC5B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 15:15:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=sB4U502eWvsufgokpnsUsEdtmZt1XKVE822rbRlBTjQ=; b=Hg0
-	GbrGH2zt9Zrfv36VOzNCCqWGFE1NNeuT1S4wuhY7hwpHNtQfhBsmQWx2WjF623hX6G8Vd0uOIeiYF
-	ju17CFmt2Ha5imsOV12uBZ6omM8JJS45l8ioBVu+CK9FdRCLyzkAmEfeBE+Ln+H9YjxHqrS3PTqkC
-	EPHb0C59KDvm2eIu4NYy8lfegj2q97EirfQarEgGxdoiwIZ/Oy/Mix9YF4L6366guC/u+nKpLGSja
-	ubNbbVggI/7ZYMoDX5RWqgCCD9Up+YriotxxUPWBJlQfWfBJkO4oyUDzl8YuulXdTCboUXJMrK0cS
-	2npkGqBZSH9CgJHxKW43yD+AXWpJpCw==;
+	List-Owner; bh=Mim7PGNi+kVN43b6DahOZ8FAvLGdJYRluv8EAs8mHFA=; b=dAb9OqUAaLa8P3
+	9NmFLbvtLpPHlNQLVCerTZJ042mBktt7JjdcDgD66kfRDQWwUZCikWqI/vzaoqrrnLA2UBTH166/i
+	AHTKD1otiXlMFx3PAyfiV5W6P+b5qzzF1RaLmQmX18UeDFVau/7Dyjm2ZRYeYqaxmMaJuCS5ai5uu
+	1DwN2TXYZ+4RVznfkhARbn0+/Gs2WtTNTJXBU41lgNyjm1xVwZuFoIV9I9EDdsN57HKQ55pzUANPi
+	qPNP3enrJZMfwbHim64VGut45h6pXTLpxAW+vZiN4oqnHjMPTLx8LrzMYqqpiHGQWJT88JjEaFc1V
+	+VG0LT4Zy6Y5yS75HD/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htArE-0008QR-4M; Thu, 01 Aug 2019 13:11:00 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1htAvK-0001lh-NS; Thu, 01 Aug 2019 13:15:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htAr0-0008MK-VH
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 13:10:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=1XTmM3uejsE/Bu0l2+bTtFtXWG9tBVr4XVnGjE0EpVE=; b=hkvWHyr6Pj2k
- RQFahO4YtkOwThiLQVpOJBOYw7UDIk+oplNRl/mXz9C/mPmNUcACRB/zkqRk86tyWWtndtJLZHLGU
- oqniujsOKD6Ce7PZpoc9LL2UeE+/WYtd6QibDoaExLBV1EL7aaJOrsHWI/kd5prYjj41H8IC32nel
- 6aIMs=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1htAqu-0004im-FJ; Thu, 01 Aug 2019 13:10:40 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 3CC712742C48; Thu,  1 Aug 2019 14:10:39 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Colin Ian King <colin.king@canonical.com>
-Subject: Applied "ASoC: zx-tdm: remove redundant assignment to ts_width on
- error return path" to the asoc tree
-In-Reply-To: <20190731223234.16153-1-colin.king@canonical.com>
-X-Patchwork-Hint: ignore
-Message-Id: <20190801131039.3CC712742C48@ypsilon.sirena.org.uk>
-Date: Thu,  1 Aug 2019 14:10:39 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1htAvB-00017z-JJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 13:15:07 +0000
+Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
+ [66.24.58.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BEA05206B8;
+ Thu,  1 Aug 2019 13:15:03 +0000 (UTC)
+Date: Thu, 1 Aug 2019 09:15:02 -0400
+From: Steven Rostedt <rostedt@goodmis.org>
+To: Jiping Ma <jiping.ma2@windriver.com>
+Subject: Re: [PATCH v2] tracing: Function stack size and its name mismatch
+ in arm64
+Message-ID: <20190801091502.4efdbcae@gandalf.local.home>
+In-Reply-To: <20190801083340.57075-1-jiping.ma2@windriver.com>
+References: <20190801083340.57075-1-jiping.ma2@windriver.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_061047_003891_D6E72925 
-X-CRM114-Status: GOOD (  13.84  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190801_061505_665350_732AFD4C 
+X-CRM114-Status: GOOD (  10.93  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,76 +64,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- Takashi Iwai <tiwai@suse.com>, kernel-janitors@vger.kernel.org,
- Liam Girdwood <lgirdwood@gmail.com>, Jaroslav Kysela <perex@perex.cz>,
- Mark Brown <broonie@kernel.org>, Jun Nie <jun.nie@linaro.org>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ mingo@redhat.com, joel@joelfernandes.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Thu, 1 Aug 2019 16:33:40 +0800
+Jiping Ma <jiping.ma2@windriver.com> wrote:
 
-   ASoC: zx-tdm: remove redundant assignment to ts_width on error return path
+> diff --git a/kernel/trace/trace_stack.c b/kernel/trace/trace_stack.c
+> index 5d16f73898db..ed80b95abf06 100644
+> --- a/kernel/trace/trace_stack.c
+> +++ b/kernel/trace/trace_stack.c
+> @@ -40,16 +40,28 @@ static void print_max_stack(void)
+>  
+>  	pr_emerg("        Depth    Size   Location    (%d entries)\n"
+>  			   "        -----    ----   --------\n",
+> +#ifdef CONFIG_ARM64
+> +			   stack_trace_nr_entries - 1);
+> +#else
+>  			   stack_trace_nr_entries);
+> -
 
-has been applied to the asoc tree at
+NACK! I do not allow arch specific code in generic code like this.
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.4
+The stack saving should be the same across all archs. If it is not, it
+is a bug with the arch that is different.
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From f24e41d3d04f326613d8a7ebecf72c3019826f71 Mon Sep 17 00:00:00 2001
-From: Colin Ian King <colin.king@canonical.com>
-Date: Wed, 31 Jul 2019 23:32:34 +0100
-Subject: [PATCH] ASoC: zx-tdm: remove redundant assignment to ts_width on
- error return path
-
-The value assigned to ts_width is never read on the error return path
-so the assignment is redundant and can be removed.  Remove it.
-
-Addresses-Coverity: ("Unused value")
-Signed-off-by: Colin Ian King <colin.king@canonical.com>
-Link: https://lore.kernel.org/r/20190731223234.16153-1-colin.king@canonical.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- sound/soc/zte/zx-tdm.c | 1 -
- 1 file changed, 1 deletion(-)
-
-diff --git a/sound/soc/zte/zx-tdm.c b/sound/soc/zte/zx-tdm.c
-index 5e877fe9ba7b..0e5a05b25a77 100644
---- a/sound/soc/zte/zx-tdm.c
-+++ b/sound/soc/zte/zx-tdm.c
-@@ -211,7 +211,6 @@ static int zx_tdm_hw_params(struct snd_pcm_substream *substream,
- 		ts_width = 1;
- 		break;
- 	default:
--		ts_width = 0;
- 		dev_err(socdai->dev, "Unknown data format\n");
- 		return -EINVAL;
- 	}
--- 
-2.20.1
-
+-- Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
