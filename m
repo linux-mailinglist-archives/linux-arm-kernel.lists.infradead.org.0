@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C3207D7DC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:40:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF3D97D7DE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:41:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=xmI9zx0CqkLRHLqebz59Uo/4xy5YpSFrQdyCYbVQv1A=; b=B6l
-	uq3b7iU6p+TwRvv2beUo9oRp0KiYOWDSGST0fd00PpE339rHiyC19SObbEwsTZGcqypo3XSeKM2Ob
-	r6fgs3PqClm+Ba0X6aXqIzKrLyq2A4SUbVE1eCZH4+FlTs9sImmzJZBeELVJk6LWnyiZE4L3jV1bf
-	Mmp58bMDZ6XZ7OLMwn+fJTz86cpUR5LN5rCbpW3bF2neRXwNHDWtDU61TPur0j6A8SdGOvqbHSGoh
-	RcfxeVSv9rQkdrmGo4jUQ5FKKKAuiww2q1OyJ6VKiycC4KdypLRd0W6Z/LUPPWjT7CufMMyrEktMj
-	UdEG0mZpYJBHUw0L4RAjW9iaNvjd16A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=6drdktELk8+Ozz0gEiOeq6/pc1eMbu2DEglBKgR/B0w=; b=jNQ4YaA2BFSji3ceXI3LFY8ODj
+	tQ33mfzJPH9ZQN8nheilxlTabyE9a1GtnYEoFVduB/9YEWwl5EYYEIDGpBQdfe4Le+YSBMNtoVlaz
+	xvBoQrO4d9eRO/aJGea1pNmIZn2X8aPKmD7DJ/8xQKbOm+93qnAn/hUNHAUyX71bqAdXNp70a0eMC
+	bcFPqXf22Jf08O+fl6ZuyNTrVrPF7n9uLck2VAxmOIBWItPU8UPGVpHzS20fLylp3i8gyW2bWXZsB
+	yfVxLEMZXDuxI10p8tEMUdxTJWuK2RZ+OW2EIuMgsY85vfQFtI66cfh5aTOHmlxGmV62r/3vJrgiM
+	lWzDB0sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6do-00044e-T2; Thu, 01 Aug 2019 08:40:52 +0000
+	id 1ht6dw-0004AI-5x; Thu, 01 Aug 2019 08:41:00 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6di-00043G-L3
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:40:48 +0000
+ id 1ht6di-00043H-Ls
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:40:49 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 33B701A0B33;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id CBC9C1A0306;
  Thu,  1 Aug 2019 10:40:42 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id CBA511A0B3E;
- Thu,  1 Aug 2019 10:40:36 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6F4F41A029F;
+ Thu,  1 Aug 2019 10:40:37 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id F3A5D402C9;
- Thu,  1 Aug 2019 16:40:29 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 131D4402D7;
+ Thu,  1 Aug 2019 16:40:31 +0800 (SGT)
 From: Chuanhua Han <chuanhua.han@nxp.com>
 To: broonie@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
  shawnguo@kernel.org, leoyang.li@nxp.com
-Subject: [PATCH 1/3] dt-bindings: fsl: dspi: Add fsl,
- ls1088a-dspi compatible string
-Date: Thu,  1 Aug 2019 16:31:03 +0800
-Message-Id: <20190801083105.30102-1-chuanhua.han@nxp.com>
+Subject: [PATCH 2/3] arm64: dts: ls1088a: Add the DSPI controller node
+Date: Thu,  1 Aug 2019 16:31:04 +0800
+Message-Id: <20190801083105.30102-2-chuanhua.han@nxp.com>
 X-Mailer: git-send-email 2.9.5
+In-Reply-To: <20190801083105.30102-1-chuanhua.han@nxp.com>
+References: <20190801083105.30102-1-chuanhua.han@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_014046_827229_52DC35F1 
-X-CRM114-Status: UNSURE (   6.73  )
+X-CRM114-CacheID: sfid-20190801_014046_850888_E8D0B0E9 
+X-CRM114-Status: UNSURE (   6.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,25 +77,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-new compatible string: "fsl,ls1088a-dspi".
+This patch adds the DSPI controller node for ls1088a boards.
 
 Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
 ---
- Documentation/devicetree/bindings/spi/spi-fsl-dspi.txt | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/spi/spi-fsl-dspi.txt b/Documentation/devicetree/bindings/spi/spi-fsl-dspi.txt
-index dcc7eaa..162e024 100644
---- a/Documentation/devicetree/bindings/spi/spi-fsl-dspi.txt
-+++ b/Documentation/devicetree/bindings/spi/spi-fsl-dspi.txt
-@@ -6,6 +6,7 @@ Required properties:
- 		or
- 		"fsl,ls2080a-dspi" followed by "fsl,ls2085a-dspi"
- 		"fsl,ls1012a-dspi" followed by "fsl,ls1021a-v1.0-dspi"
-+		"fsl,ls1088a-dspi" followed by "fsl,ls1021a-v1.0-dspi"
- - reg : Offset and length of the register set for the device
- - interrupts : Should contain SPI controller interrupt
- - clocks: from common clock binding: handle to dspi clock.
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+index dacd8cf..fe8f1bd 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+@@ -252,6 +252,19 @@
+ 			#thermal-sensor-cells = <1>;
+ 		};
+ 
++		dspi: spi@2100000 {
++			compatible = "fsl,ls1088a-dspi",
++						"fsl,ls1021a-v1.0-dspi";
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0x0 0x2100000 0x0 0x10000>;
++			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
++			clock-names = "dspi";
++			clocks = <&clockgen 4 1>;
++			spi-num-chipselects = <6>;
++			status = "disabled";
++		};
++
+ 		duart0: serial@21c0500 {
+ 			compatible = "fsl,ns16550", "ns16550a";
+ 			reg = <0x0 0x21c0500 0x0 0x100>;
 -- 
 2.9.5
 
