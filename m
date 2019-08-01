@@ -2,88 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 376417D576
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 08:22:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67A6D7D581
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 08:30:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fiv8ptO/luNVYXEVQDAbv1fHGCcsPFClXZgZ2S3ccw4=; b=NyrsL/RbTh0fid
-	2SWjK3jIjBZO1JAjgLdcuesew4zewQjy5WNgm5JgLblKN1AgWAFlsEfwv+L9FHw4IupbXEKQKklVK
-	8dFsfEwk37I2USP1QymXe64duKlfXC0wuyN5VQ2gAa+zD2HdlVwSfyVu1aTp8ADrUlc2YyavalgXU
-	73n6LIZ2i4b7Pg7ruwqWq14F5MTAoVRT+tFOuIGwARIsgA6DEn/hj7vFKvl3zN+xaMvNbu4ElBGXI
-	Nf/F6AcEtmB6Orgax7AcQ7tXhLzgNjDdrX4CJ6FOX30BG9din8HOVSB94iZJV6fG2tvvqlGSsKt5g
-	+yN+vHx1SZtM/onQLBag==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VnBZguKlcO0QyRdqa5D1JV7kbDS4MKoXusot2CWH7IM=; b=LgKyISQyhQ7V23
+	PkYbiQAxnnbpG1pSYmvbX2x0qDjhkpTdrtIeE4qcvs5l62X+Vwqa1CekwXeSa8B8Q3P2n1KeMepXR
+	hANySZbyDITDuRd8sBqakrcuv8CkHIaDIoWrsNMzY5AClRwMVUPguj1Tb/zZLE5Smbom6G8VxdRRn
+	uS5EL2CPYdU9tB2QSSVsvuw0pcUq+1WSC9VsKuw/QHVEUHnpW04nvejCbDUU8M/YZvLU7ozlOj+so
+	zf0SO/qWdiFqdhVHfsEChWimxlv6qRDO8eVMyy5ENen1PP32e0nkMds2AiZB3Cd7nREN0nNwDlwub
+	W97YbklAU8fyVW0bA77g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht4TQ-0003uH-Dx; Thu, 01 Aug 2019 06:22:00 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht4TJ-0003tg-Gs
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 06:21:54 +0000
-Received: by mail-lf1-x141.google.com with SMTP id v85so49273528lfa.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 23:21:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1vSZqJMnvEYK79BuKh6WUgr+O0wW6TMjJ9YpHKa1USU=;
- b=Arm8SbO3zGrCc5avNA7dsMeg85DbeTjU5zzCj7quGtHPNxa8/SQT6F5BxoH/oW9lU+
- rxTr+oQxxUsihwCoaxsTIyiDxgny9BvFH1L8WxV3tlw2KRSZPI+I16EN+PzHL0wEaHUC
- +wk5CNLeGxCaTXsaXuQW46Zml1KG+s2Q/hXX165ScX10Rhvf74bOIcX4NlnjS54S8AHI
- xxbUlheuiKF7RwuNv+h83UPOZrSFZ33E+Xxk7rMCrOZA2taAypqDXjNgZlx09PmqGlUu
- hhWb44TjnRf0xQuebHwAMIC2EBjamD7JbUM+fNSQmxuS4VBghCU1+21vEVInMcUZd824
- MIiA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1vSZqJMnvEYK79BuKh6WUgr+O0wW6TMjJ9YpHKa1USU=;
- b=ucnkaQVJdVtRbHSKQmRd8mg2dp8FZ901MO0NFfgg8iNJtW/j3DO40rEqJwTp9va9+p
- kf3XBUEel3XER7eQ4EFSkh5wqE9gp9ORPkRqGaK4r1C+IGtH5jyKOPOF/6OsRZQ1CTYr
- k59F3SOjuByMYyEMkOu2IjMsugVQJzAg+pWD/c96jacukrpsd5B54AZDi+cj/ybvgnp2
- cFEEg2Gc1s5ZYT4aEQVXZmxlvyI7b/wifGM/TsZhoMSI366KTEvf6ELPD1alVQTZjImB
- PSNRyGwnnyk45ytNZ8cC/D2QnO0+Sl7K3bAnwZ1J9iV+bxkdzFBLGLfD0p5mPmmDTY5v
- AOIA==
-X-Gm-Message-State: APjAAAVi1y8SsHIwxaLeNnb33/dIB6V4RlQxUVadFEWIiYQXd1UJGwIa
- 5e8e2OywjMgHxL1A1W8OtbBTpDiMTy7KpQIhPP0=
-X-Google-Smtp-Source: APXvYqwHSeFpB9tSV0Ei5U+HuQh1iF1dV3lxekEtE3WsWY2xkt0Unm2jUg3lSom7xaUo+nfynVkJjq4uUMXG5qYU6Jk=
-X-Received: by 2002:a19:641a:: with SMTP id y26mr58261160lfb.29.1564640511451; 
- Wed, 31 Jul 2019 23:21:51 -0700 (PDT)
+	id 1ht4bi-00083K-0J; Thu, 01 Aug 2019 06:30:34 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1ht4ba-00082c-H1
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 06:30:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A7C6C337;
+ Wed, 31 Jul 2019 23:30:25 -0700 (PDT)
+Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9CBC13F694;
+ Wed, 31 Jul 2019 23:32:31 -0700 (PDT)
+Subject: Re: [PATCH v4.4 V2 25/43] arm64: Move BP hardening to
+ check_and_switch_context
+To: Viresh Kumar <viresh.kumar@linaro.org>
+References: <cover.1562908074.git.viresh.kumar@linaro.org>
+ <f655aaa158af070d45a2bd4965852b0c97a08838.1562908075.git.viresh.kumar@linaro.org>
+ <59b252cf-9cb7-128b-4887-c21a8b9b92a9@arm.com>
+ <20190801050940.h65crfawrdifsrgg@vireshk-i7>
+From: Julien Thierry <julien.thierry@arm.com>
+Message-ID: <86354576-fc54-a8b7-4dc9-bc613d59fb17@arm.com>
+Date: Thu, 1 Aug 2019 07:30:23 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
- <CAE=Ncrb63dQLe-nDQyO9OPv7XjwM_9mzL9SrcLiUi2Dr10cD4A@mail.gmail.com>
- <CAE=NcrY7b8eTTovOszBhGhVbjfJAXoAYehiUJyPENGfwWoVcPw@mail.gmail.com>
- <CAFA6WYOEqe1a1DCyVYKA+oZaZ0n5hnjxdubstUnrwdUW1-4xHw@mail.gmail.com>
-In-Reply-To: <CAFA6WYOEqe1a1DCyVYKA+oZaZ0n5hnjxdubstUnrwdUW1-4xHw@mail.gmail.com>
-From: Janne Karhunen <janne.karhunen@gmail.com>
-Date: Thu, 1 Aug 2019 09:21:39 +0300
-Message-ID: <CAE=NcraDkm5cxE=ceq_9XkQz=NZ6KdVXkNUsdD4G2LrWz-bpDw@mail.gmail.com>
-Subject: Re: [RFC v2 0/6] Introduce TEE based Trusted Keys support
-To: Sumit Garg <sumit.garg@linaro.org>
+In-Reply-To: <20190801050940.h65crfawrdifsrgg@vireshk-i7>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_232153_589680_D9ED6E94 
-X-CRM114-Status: GOOD (  14.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_233026_647312_8E45A0A6 
+X-CRM114-Status: GOOD (  25.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (janne.karhunen[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,65 +65,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
- Daniel Thompson <daniel.thompson@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
- jejb@linux.ibm.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- James Morris <jmorris@namei.org>,
- Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
- linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
- Mimi Zohar <zohar@linux.ibm.com>, Casey Schaufler <casey@schaufler-ca.com>,
- linux-integrity@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "Serge E. Hallyn" <serge@hallyn.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ stable@vger.kernel.org, mark.brown@arm.com, julien.thierry.kdev@gmail.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 4:58 PM Sumit Garg <sumit.garg@linaro.org> wrote:
-
-> > To clarify a bit further - my thought was to support any type of trust
-> > source.
->
-> That could be very well accomplished via Trusted Keys abstraction
-> framework [1]. A trust source just need to implement following APIs:
->
-> struct trusted_key_ops ts_trusted_key_ops = {
->        .migratable = 0, /* non-migratable */
->        .init = init_ts_trusted,
->        .seal = ts_key_seal,
->        .unseal = ts_key_unseal,
->        .get_random = ts_get_random,
->        .cleanup = cleanup_ts_trusted,
-> };
-
-Which is basically the same as implementing a new keytype in the
-kernel; abstraction is not raised in any considerable manner this way?
-
-I chose the userspace plugin due to this, you can use userspace aids
-to provide any type of service. Use the crypto library you desire to
-do the magic you want.
 
 
-> > With the
-> > user mode helper in between anyone can easily add their own thing in
-> > there.
->
-> Isn't actual purpose to have trusted keys is to protect user-space
-> from access to kernel keys in plain format? Doesn't user mode helper
-> defeat that purpose in one way or another?
+On 01/08/2019 06:09, Viresh Kumar wrote:
+> On 31-07-19, 14:09, Julien Thierry wrote:
+>>
+>>
+>> On 12/07/2019 06:28, Viresh Kumar wrote:
+>>> From: Marc Zyngier <marc.zyngier@arm.com>
+>>>
+>>> commit a8e4c0a919ae310944ed2c9ace11cf3ccd8a609b upstream.
+>>>
+>>> We call arm64_apply_bp_hardening() from post_ttbr_update_workaround,
+>>> which has the unexpected consequence of being triggered on every
+>>> exception return to userspace when ARM64_SW_TTBR0_PAN is selected,
+>>> even if no context switch actually occured.
+>>>
+>>> This is a bit suboptimal, and it would be more logical to only
+>>> invalidate the branch predictor when we actually switch to
+>>> a different mm.
+>>>
+>>> In order to solve this, move the call to arm64_apply_bp_hardening()
+>>> into check_and_switch_context(), where we're guaranteed to pick
+>>> a different mm context.
+>>>
+>>> Acked-by: Will Deacon <will.deacon@arm.com>
+>>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>>> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+>>> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+>>> ---
+>>>  arch/arm64/mm/context.c | 4 ++--
+>>>  1 file changed, 2 insertions(+), 2 deletions(-)
+>>>
+>>> diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
+>>> index be42bd3dca5c..de5afc27b4e6 100644
+>>> --- a/arch/arm64/mm/context.c
+>>> +++ b/arch/arm64/mm/context.c
+>>> @@ -183,6 +183,8 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
+>>>  	raw_spin_unlock_irqrestore(&cpu_asid_lock, flags);
+>>>  
+>>>  switch_mm_fastpath:
+>>> +	arm64_apply_bp_hardening();
+>>> +
+>>>  	cpu_switch_mm(mm->pgd, mm);
+>>>  }
+>>>  
+>>> @@ -193,8 +195,6 @@ asmlinkage void post_ttbr_update_workaround(void)
+>>>  			"ic iallu; dsb nsh; isb",
+>>>  			ARM64_WORKAROUND_CAVIUM_27456,
+>>>  			CONFIG_CAVIUM_ERRATUM_27456));
+>>> -
+>>> -	arm64_apply_bp_hardening();
+>>
+>> Patches 22 and 23 factorize the post_ttbr_update_workaround() and move
+>> it to C code just so we would and a call to arm64_apply_bp_hardening()
+>> in patch 24 that now gets moved elsewhere?
+>>
+>> Is it really worth backporting patches 22 and 23?
+> 
+> If I can merge patch 24 and 25 into a single patch while backporting,
+> then patch 22 and 23 won't be required. I am not sure how should the
+> commit log look like in that case though :)
+> 
+> Is mentioning both the upstream commit ids along with log of the first
+> patch (which was more important) enough, like this ?
+> 
 
-Not really. CPU is in the user mode while running the code, but the
-code or the secure keydata being is not available to the 'normal'
-userspace. It's like microkernel service/driver this way. The usermode
-driver is part of the kernel image and it runs on top of a invisible
-rootfs.
+I must admit I am not familiar with backport/stable process enough. But
+personally I think the your suggestion seems more sensible than
+backporting 4 patches.
 
+Or you can maybe ignore patch 25 and say in patch 24 that among the
+changes made for the 4.4 codebase, the call arm64_apply_bp_hardening()
+was moved from post_ttbr_update_workaround as it doesn't exist and
+placed in check_and_switch_context() as it is its final destination.
 
---
-Janne
+However, I really don't know what's the best way to proceed according to
+existing practices. So input from someone else would be welcome.
+
+Thanks,
+
+Julien
+
+> Author: Will Deacon <will.deacon@arm.com>
+> Date:   Wed Jan 3 11:17:58 2018 +0000
+> 
+>     arm64: Add skeleton to harden the branch predictor against aliasing attacks
+>     
+>     commit 0f15adbb2861ce6f75ccfc5a92b19eae0ef327d0 upstream.
+>     commit a8e4c0a919ae310944ed2c9ace11cf3ccd8a609b upstream.
+>     
+>     Aliasing attacks against CPU branch predictors can allow an attacker to
+>     redirect speculative control flow on some CPUs and potentially divulge
+>     information from one context to another.
+>     
+>     This patch adds initial skeleton code behind a new Kconfig option to
+>     enable implementation-specific mitigations against these attacks for
+>     CPUs that are affected.
+>     
+>     Co-developed-by: Marc Zyngier <marc.zyngier@arm.com>
+>     Signed-off-by: Will Deacon <will.deacon@arm.com>
+>     Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+>     [ v4.4: Changes made according to 4.4 codebase ]
+>     Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+> 
+
+-- 
+Julien Thierry
 
 _______________________________________________
 linux-arm-kernel mailing list
