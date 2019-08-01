@@ -2,55 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87FB67D803
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:48:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EF347D809
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:50:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vsoc2+zDHevDFtarOwWZOIhDQgyptC/ZoW04sI3E7Pc=; b=VmsFKlEHu/rdYK
-	VND2xcGxLp2eaJH9Z6bFjT9gBwY8NQjfW1K5uMgPhcsFzZwHKmT8arLvdCb64xxuAJS4KThOOU9pl
-	Rrrq20EU8I5SzuHRw41D2xA1q4aLepyidClsc+syAYnEmWDJxWZLFczs3KK9X5BzlVdCuYx3Vp73Z
-	WvcfhemYeZy+rXwqRAyUWwGOW4fY9iHpE54CGdjK7A1R2LTRsIjj/Nan+GfxRmlCDMe8tLu+aqkTx
-	LX/fFsC5pgnKrSwSn+Ra3y0W91X7+74VshDj8iMebg36Ll46dzBhiuTcY7w0w7jDoe0VO8mKuJ+3b
-	zb5ziTI4zE24LtIoKAiA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iGkqU9ezSPD90IjGlK1ucbYxfzzbocVehhGlNcdBlow=; b=WCBmY7ArDZWlly
+	nG0gyxGLv7ZrU7nsNE+oNE+sgrRxJNKgvO5DOyo3GKssZBJxOJRzflXlrW7TJhSNaDLHdTqbyV0HG
+	cniSutwjtr0/+SrEwQsR/3diW7aDfEXiyH1DrWLB8SOS11IpJTBFQJGmIzA3mbu3h7yDYjDz64x5R
+	lkl93NTK77q7JS5ZGLQcsByEpUlbhQOwZceUV0vDgpE6EvTgDB66YGrw37+ZZieyHOK2D8F3TmVaf
+	1EGrYGPb1MTpd62UN5S3QM7WWW8e/L6p3d/cB6JdvSYd0E/7s+Pp7LHjOYHfeDgqetHVXgcwyeBvF
+	L4obgqI584C1rSoK+Ujw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6lL-0007ob-MX; Thu, 01 Aug 2019 08:48:39 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6lF-0007oC-Vt
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:48:35 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1ht6lA-00033w-Vq; Thu, 01 Aug 2019 10:48:28 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1ht6l9-00042c-2F; Thu, 01 Aug 2019 10:48:27 +0200
-Date: Thu, 1 Aug 2019 10:48:27 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Schrempf Frieder <frieder.schrempf@kontron.de>
-Subject: Re: [PATCH] serial: imx: Avoid probe failure in case of missing
- gpiolib
-Message-ID: <20190801084827.m42ci3amo37hmesi@pengutronix.de>
-References: <20190801081524.22577-1-frieder.schrempf@kontron.de>
+	id 1ht6mj-0008FR-D2; Thu, 01 Aug 2019 08:50:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1ht6mb-0008F6-Qo
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:49:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 19CAD337;
+ Thu,  1 Aug 2019 01:49:57 -0700 (PDT)
+Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3938A3F694;
+ Thu,  1 Aug 2019 01:49:55 -0700 (PDT)
+Subject: Re: [PATCH v4.4 V2 25/43] arm64: Move BP hardening to
+ check_and_switch_context
+To: Greg KH <greg@kroah.com>, Will Deacon <will@kernel.org>
+References: <cover.1562908074.git.viresh.kumar@linaro.org>
+ <f655aaa158af070d45a2bd4965852b0c97a08838.1562908075.git.viresh.kumar@linaro.org>
+ <59b252cf-9cb7-128b-4887-c21a8b9b92a9@arm.com>
+ <20190801050940.h65crfawrdifsrgg@vireshk-i7>
+ <86354576-fc54-a8b7-4dc9-bc613d59fb17@arm.com>
+ <20190801063544.ruw444isj5uojjdx@vireshk-i7>
+ <20190801065700.GA17391@kroah.com>
+ <20190801070541.hpmadulgp45txfem@vireshk-i7>
+ <20190801073444.4n45h6kcbmejvzte@willie-the-truck>
+ <20190801084354.GA1085@kroah.com>
+From: Julien Thierry <julien.thierry@arm.com>
+Message-ID: <bfa41364-6e98-2b1a-6584-6d956c99cfcc@arm.com>
+Date: Thu, 1 Aug 2019 09:49:54 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190801081524.22577-1-frieder.schrempf@kontron.de>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20190801084354.GA1085@kroah.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_014834_029808_2B16DE3A 
-X-CRM114-Status: UNSURE (   9.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190801_014957_994742_632D8740 
+X-CRM114-Status: GOOD (  15.03  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,40 +71,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, Jiri Slaby <jslaby@suse.com>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ stable@vger.kernel.org, mark.brown@arm.com,
+ linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Russell King <rmk+kernel@arm.linux.org.uk>, julien.thierry.kdev@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 01, 2019 at 08:18:05AM +0000, Schrempf Frieder wrote:
-> From: Frieder Schrempf <frieder.schrempf@kontron.de>
-> =
 
-> If CONFIG_GPIOLIB is not enabled, mctrl_gpio_init() will return
-> -ENOSYS and cause the probing of the imx UART to fail. As the
-> GPIOs are optional, we should continue probing in this case.
 
-Is this really still the case? On which version did you hit this
-problem?
+On 01/08/2019 09:43, Greg KH wrote:
+> On Thu, Aug 01, 2019 at 08:34:45AM +0100, Will Deacon wrote:
+>> On Thu, Aug 01, 2019 at 12:35:41PM +0530, Viresh Kumar wrote:
+>>> On 01-08-19, 08:57, Greg KH wrote:
+>>>> On Thu, Aug 01, 2019 at 12:05:44PM +0530, Viresh Kumar wrote:
+>>>>> On 01-08-19, 07:30, Julien Thierry wrote:
+>>>>>> I must admit I am not familiar with backport/stable process enough. But
+>>>>>> personally I think the your suggestion seems more sensible than
+>>>>>> backporting 4 patches.
+>>>>>>
+>>>>>> Or you can maybe ignore patch 25 and say in patch 24 that among the
+>>>>>> changes made for the 4.4 codebase, the call arm64_apply_bp_hardening()
+>>>>>> was moved from post_ttbr_update_workaround as it doesn't exist and
+>>>>>> placed in check_and_switch_context() as it is its final destination.
+>>>>>
+>>>>> Done that and dropped the other two patches.
+>>>>>
+>>>>>> However, I really don't know what's the best way to proceed according to
+>>>>>> existing practices. So input from someone else would be welcome.
+>>>>>
+>>>>> Lets see if someone comes up and ask me to do something else :)
+>>>>
+>>>> Keeping the same patches that upstream has is almost always the better
+>>>> thing to do in the long-run.
+>>>
+>>> That would require two additional patches to be backported, 22 and 23
+>>> from this series. From your suggestion it seems that keeping them is
+>>> better here ?
+>>
+>> Yes. Backporting individual patches as they appear upstream is definitely
+>> the preferred method for -stable. It makes the relationship to mainline
+>> crystal clear, as well as any dependencies between patches that have been
+>> backported. Everytime we tweak something unecessarily in a stable backport,
+>> it just creates the potential for confusion and additional conflicts in
+>> future backports, so it's best to follow the shape of upstream as closely as
+>> possible, even if it results in additional patches.
+>>
+>> So I wouldn't worry about total number of patches. I'd worry more about
+>> things like conflicts, deviation from mainline and overall testing coverage.
+> 
+> That is exactly correct, thanks for saying it better than I could :)
+> 
 
-I would expect that is gone with
-d99482673f950817b30caf3fcdfb31179b050ce1 if not earlier.
+Thanks, I'll try to keep those guidelines in mind for my future comments
+on backports.
 
-Best regards
-Uwe
+Cheers,
 
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+-- 
+Julien Thierry
 
 _______________________________________________
 linux-arm-kernel mailing list
