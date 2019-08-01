@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D59797DDBC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 16:22:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03A197DDC4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 16:23:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9TbcyD21d6NRos+g0T/JGry797Eg5QbdmoI32eQxTPc=; b=ZAr
-	wj9cUh0rBgMg/fy3G2hkpue/KQuYtRI5oFD6ngmBYO0n+WXm6N9PuIJerPY9enagqepK27w7a72qf
-	VpFJvFL/QZExSDFVoMGXrtxLgGo5OBQ1QHN0LGez0s2v2DYOfVHZDwcymy7oTJIUbLbrk6t1kHDTX
-	Ns/UqI1n2VgrSq3Oz+49MXdw+KHYl+Rt3Mi9oYsmPfKTAXunDF5qS/mevkDLKIUMUpvof0GkJfz+o
-	PJoRkmhn2UB2YJQFLZDkBvsAPTo6wBGxT6Em+vIrhxotLqjkf/Wq60lrS/BdskfO+T6bLmQ3wMFyv
-	iqUvH4Bw/GGvf/hygK0fAxbG/aXwLlQ==;
+	References:List-Owner; bh=LGjGkJxwZnqeOt1tyB/dbp8NUPAwhurlBRh3MKkeOz8=; b=P54
+	YEX9xGZpdtDcOT728EtlqLHaRWDDyibiQmKsbaJcj3mw76vI1js3LqS5R+E/4x/BoNQYiGTKJ19ym
+	CTZaw2gA0pmS30VzZBk9I7xJc4KWR9drPR52b7ewzyQjL037uJ707ynr4J1ACTHj3XY49StKDy1Ee
+	PS2lJhnYaYx/8M1McGtva8YtiQBl26h8jPVMMqnD97GAfbRrQ6vYDUcKWkYTOx6xfOP2DIfB2GiOz
+	+uvyuJm8h7YXQeplBeoGaYbtUXlTQ/vqxyUKai6y/TT8Ac9E5NjKfBvyNCAEzIktQRFHXUqHjNTvL
+	gXDIax5zkNJa0cJwDsyhs6Hslfyy/mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htByH-0006oA-Ey; Thu, 01 Aug 2019 14:22:21 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1htBzV-00076w-2q; Thu, 01 Aug 2019 14:23:37 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htBy7-0006ne-Q4
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 14:22:13 +0000
-Received: by mail-pg1-x541.google.com with SMTP id s1so28001296pgr.2
+ id 1htBzK-00076S-Jo
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 14:23:27 +0000
+Received: by mail-pl1-x643.google.com with SMTP id t14so32276526plr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 07:22:10 -0700 (PDT)
+ Thu, 01 Aug 2019 07:23:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=4P6w/HAiSYzis3+J0RO7QH8f2Acmw1YWPcQOvjFv0Yc=;
- b=QofVvSa7TtEB8BhX5um9VpHixJvJhUd/LTNRpAjrTnl3P/e2GFSrGCbrXpr0ea/eF3
- VcXUkq57kNR70a5MP4oknIKlrbsJLeg8HZFSeFMsHYsHg+vyGGrk4TcqzwO647P4tbel
- n6+fs3DW1j8EpPBASUlb0i6ts2pRilDP4quGOelGhFrLWsuwU+8ARoeyvqxNseYkr/N0
- uIw9oEjf4qmU+P7WhlQ870FphalSQBhb5IYAL9xm5yqw5ZEHf6GEXu8q5kqT+ePUepsK
- Ljai8J9xpe9Eb+wzSTTp5wP4nM6a2ghlT4rfr2D1p/iFKhqP9peU0OulM3LDm+mRaLHG
- iodw==
+ bh=d8QqAnaRG9B19aLd/6x1SuCSFj0V3dQnYyNBg9eKsxs=;
+ b=FJiMJoQkijSbS7Hw3FvNwGh4jrejEQk1R2ODJ4arB99XCKFl69EUalt+3H6y9IQ0Sh
+ do8Hbg6lu5RGw1WEPFX5bYe4hmqBZsxJ05ZO78RPPduWCivOElcI62KojrepLkdEKlvI
+ 5uDVY+nBBCQDehjzs7qRymxrl4HgsL+Op3BgHtk8+vMv/9nNLxtK8ZTerQW8rFljKt7X
+ NXTKM/0ETZERIa06ltgJJApRzjwEilPf/7DrcHc5WLiH5JvikOyJdnveN8XlLVHt3hAN
+ 2SaYj65GSRMsDYMgIQb7Cax2Mvrv+VXu30eZvhzOpHqJXJuD80RvQZOJs7HXwwlxvdMq
+ 0t+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=4P6w/HAiSYzis3+J0RO7QH8f2Acmw1YWPcQOvjFv0Yc=;
- b=jaxpfqW8/wmcAJ764CrbWHBy2YV/MBQ2TOpyuZY+P7mg6LAaCEcJoGny0G2b9mqdj1
- nostMS8V97Tn1rpAHiXeaVGI0x9NWqwpnmpJjLW9cTBWNyNrKhq7dIOVVTmEsJCbAyYi
- cIBzCvooOuvFeWylMcgEQ1LrDbmSg/upbmreWEgfCMwFgBlRJGk8IC54qCaPl+qGt8KQ
- FH73My/F5UJBP2HDKMdBXjxmGOSPRXVC44URCRibnidyRWYP+wlQUYU6B70Yxzj1hiHs
- YVOBNU2P1f1NPtFzxdCDwjXdbVM2m9naI0OiZXKg8PswLQsxbxdGuuueWY/J0V/Sfdcy
- qxcg==
-X-Gm-Message-State: APjAAAWT2lUIHRaje49cjf2yCSek/W3BJzFg/TlEprFhoH5ST8vdzcWN
- bx+AWBtm7idTozMoFrr+O3aB5h+m
-X-Google-Smtp-Source: APXvYqzZHUZpXrj2Blx14uvBufafvCrXFrqMbmrfjJP+wELzGyDqW5k1dcIusOFC+XkVnVN9M8I5KQ==
-X-Received: by 2002:a63:7d05:: with SMTP id y5mr120909106pgc.425.1564669330113; 
- Thu, 01 Aug 2019 07:22:10 -0700 (PDT)
+ bh=d8QqAnaRG9B19aLd/6x1SuCSFj0V3dQnYyNBg9eKsxs=;
+ b=Q0esSUrGh8vNay8Ql1pqgkchoo54EPMngXNZvzw9AwUEoR+B2obuV3WJeS2jPgF0aY
+ vNA8JYCuhc5fax29s4ZXjo5xqsauk9yxHAMGmNuMkByMlVpYQROdmkhDH9R4lAKlpx0r
+ W9WibJ7a7hNSZs0cuhHk/O75qn5CF/jBNrXdq7io53vJCypIK4BPQXW+jhDoJPFOs2Lq
+ hVGeqB6FncgBkEQX+nf6oIb3SE7mCUXEV60Ddv9Nid79RTMDYAzyA0iHHnSYN2x7dAy+
+ i7F2pvxOMDsyV6obUJiD2EcQG3tqr/PELgFtFQc/rAu+oXNK8P1xmGAdTiyJiXcIR/c0
+ qxog==
+X-Gm-Message-State: APjAAAUZSW+778k5L4zPYjiMJTHpWLvc5si2l2qyaIqUdMqo11MkGCh4
+ QJ5BXuUobbJOB4bGt9jhLYE=
+X-Google-Smtp-Source: APXvYqzchMZ7vwg5+ycc1a3SAgOrqHTC46m69X5XZ5JEfK1atEKZtrEFuq/gOO86ntXKFLHViz/S+g==
+X-Received: by 2002:a17:902:2f84:: with SMTP id
+ t4mr123020876plb.57.1564669405491; 
+ Thu, 01 Aug 2019 07:23:25 -0700 (PDT)
 Received: from localhost.localdomain
  (p6796086-ipngn28101marunouchi.tokyo.ocn.ne.jp. [114.165.92.86])
- by smtp.gmail.com with ESMTPSA id w18sm91406294pfj.37.2019.08.01.07.22.08
+ by smtp.gmail.com with ESMTPSA id k3sm55628686pgq.92.2019.08.01.07.23.23
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 01 Aug 2019 07:22:09 -0700 (PDT)
+ Thu, 01 Aug 2019 07:23:24 -0700 (PDT)
 From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH] arm64: dts: renesas: r8a77970-eagle: sort nodes
-Date: Thu,  1 Aug 2019 23:21:53 +0900
-Message-Id: <1564669313-22427-1-git-send-email-ykaneko0929@gmail.com>
+Subject: [PATCH] arm64: dts: renesas: r8a77970-v3msk: sort nodes
+Date: Thu,  1 Aug 2019 23:23:17 +0900
+Message-Id: <1564669397-22515-1-git-send-email-ykaneko0929@gmail.com>
 X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_072211_868066_82F84960 
-X-CRM114-Status: GOOD (  13.38  )
+X-CRM114-CacheID: sfid-20190801_072326_648565_3AFBD737 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (ykaneko0929[at]gmail.com)
@@ -121,110 +122,157 @@ Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 This patch is based on the master branch of Geert Uytterhoeven's renesas-devel
 tree.
 
- arch/arm64/boot/dts/renesas/r8a77970-eagle.dts | 58 +++++++++++++-------------
- 1 file changed, 29 insertions(+), 29 deletions(-)
+ arch/arm64/boot/dts/renesas/r8a77970-v3msk.dts | 116 ++++++++++++-------------
+ 1 file changed, 58 insertions(+), 58 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a77970-eagle.dts b/arch/arm64/boot/dts/renesas/r8a77970-eagle.dts
-index 233f26f..2afb91e 100644
---- a/arch/arm64/boot/dts/renesas/r8a77970-eagle.dts
-+++ b/arch/arm64/boot/dts/renesas/r8a77970-eagle.dts
-@@ -23,10 +23,13 @@
+diff --git a/arch/arm64/boot/dts/renesas/r8a77970-v3msk.dts b/arch/arm64/boot/dts/renesas/r8a77970-v3msk.dts
+index 15cc9fe..d7c7b91 100644
+--- a/arch/arm64/boot/dts/renesas/r8a77970-v3msk.dts
++++ b/arch/arm64/boot/dts/renesas/r8a77970-v3msk.dts
+@@ -21,6 +21,41 @@
  		stdout-path = "serial0:115200n8";
  	};
  
--	memory@48000000 {
--		device_type = "memory";
--		/* first 128MB is reserved for secure area. */
--		reg = <0x0 0x48000000 0x0 0x38000000>;
-+	d3p3: regulator-fixed {
-+		compatible = "regulator-fixed";
-+		regulator-name = "fixed-3.3V";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-boot-on;
-+		regulator-always-on;
- 	};
- 
- 	hdmi-out {
-@@ -40,15 +43,6 @@
- 		};
- 	};
- 
--	d3p3: regulator-fixed {
--		compatible = "regulator-fixed";
--		regulator-name = "fixed-3.3V";
--		regulator-min-microvolt = <3300000>;
--		regulator-max-microvolt = <3300000>;
--		regulator-boot-on;
--		regulator-always-on;
--	};
--
- 	lvds-decoder {
- 		compatible = "thine,thc63lvd1024";
- 
-@@ -73,6 +67,12 @@
- 			};
- 		};
- 	};
++	hdmi-out {
++		compatible = "hdmi-connector";
++		type = "a";
 +
-+	memory@48000000 {
-+		device_type = "memory";
-+		/* first 128MB is reserved for secure area. */
-+		reg = <0x0 0x48000000 0x0 0x38000000>;
-+	};
- };
- 
- &avb {
-@@ -102,6 +102,10 @@
- 	};
- };
- 
-+&du {
-+	status = "okay";
-+};
-+
- &extal_clk {
- 	clock-frequency = <16666666>;
- };
-@@ -157,6 +161,18 @@
- 	};
- };
- 
-+&lvds0 {
-+	status = "okay";
-+
-+	ports {
-+		port@1 {
-+			lvds0_out: endpoint {
-+				remote-endpoint = <&thc63lvd1024_in>;
++		port {
++			hdmi_con: endpoint {
++				remote-endpoint = <&adv7511_out>;
 +			};
 +		};
 +	};
-+};
 +
- &pfc {
- 	avb_pins: avb0 {
- 		groups = "avb0_mdio", "avb0_rgmii", "avb0_txcrefclk";
-@@ -190,19 +206,3 @@
- 
- 	status = "okay";
- };
++	lvds-decoder {
++		compatible = "thine,thc63lvd1024";
++		vcc-supply = <&vcc_d3_3v>;
++
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			port@0 {
++				reg = <0>;
++				thc63lvd1024_in: endpoint {
++					remote-endpoint = <&lvds0_out>;
++				};
++			};
++
++			port@2 {
++				reg = <2>;
++				thc63lvd1024_out: endpoint {
++					remote-endpoint = <&adv7511_in>;
++				};
++			};
++		};
++	};
++
+ 	memory@48000000 {
+ 		device_type = "memory";
+ 		/* first 128MB is reserved for secure area. */
+@@ -59,41 +94,6 @@
+ 		regulator-boot-on;
+ 		regulator-always-on;
+ 	};
 -
--&du {
--	status = "okay";
--};
+-	lvds-decoder {
+-		compatible = "thine,thc63lvd1024";
+-		vcc-supply = <&vcc_d3_3v>;
 -
--&lvds0 {
--	status = "okay";
+-		ports {
+-			#address-cells = <1>;
+-			#size-cells = <0>;
 -
--	ports {
--		port@1 {
--			lvds0_out: endpoint {
--				remote-endpoint = <&thc63lvd1024_in>;
+-			port@0 {
+-				reg = <0>;
+-				thc63lvd1024_in: endpoint {
+-					remote-endpoint = <&lvds0_out>;
+-				};
+-			};
+-
+-			port@2 {
+-				reg = <2>;
+-				thc63lvd1024_out: endpoint {
+-					remote-endpoint = <&adv7511_in>;
+-				};
 -			};
 -		};
 -	};
+-
+-	hdmi-out {
+-		compatible = "hdmi-connector";
+-		type = "a";
+-
+-		port {
+-			hdmi_con: endpoint {
+-				remote-endpoint = <&adv7511_out>;
+-			};
+-		};
+-	};
+ };
+ 
+ &avb {
+@@ -128,29 +128,6 @@
+ 	clock-frequency = <32768>;
+ };
+ 
+-&pfc {
+-	avb_pins: avb0 {
+-		groups = "avb0_mdio", "avb0_rgmii", "avb0_txcrefclk";
+-		function = "avb0";
+-	};
+-
+-	i2c0_pins: i2c0 {
+-		groups = "i2c0";
+-		function = "i2c0";
+-	};
+-
+-	mmc_pins: mmc_3_3v {
+-		groups = "mmc_data8", "mmc_ctrl";
+-		function = "mmc";
+-		power-source = <3300>;
+-	};
+-
+-	scif0_pins: scif0 {
+-		groups = "scif0_data";
+-		function = "scif0";
+-	};
 -};
+-
+ &i2c0 {
+ 	pinctrl-0 = <&i2c0_pins>;
+ 	pinctrl-names = "default";
+@@ -220,6 +197,29 @@
+ 	status = "okay";
+ };
+ 
++&pfc {
++	avb_pins: avb0 {
++		groups = "avb0_mdio", "avb0_rgmii", "avb0_txcrefclk";
++		function = "avb0";
++	};
++
++	i2c0_pins: i2c0 {
++		groups = "i2c0";
++		function = "i2c0";
++	};
++
++	mmc_pins: mmc_3_3v {
++		groups = "mmc_data8", "mmc_ctrl";
++		function = "mmc";
++		power-source = <3300>;
++	};
++
++	scif0_pins: scif0 {
++		groups = "scif0_data";
++		function = "scif0";
++	};
++};
++
+ &scif0 {
+ 	pinctrl-0 = <&scif0_pins>;
+ 	pinctrl-names = "default";
 -- 
 1.9.1
 
