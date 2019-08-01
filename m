@@ -2,86 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B8687DF70
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:50:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66E627DF7A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:52:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=hbShw9lEeZDhlqTwqu6mqGo3UQ0t8+nNkJLksL8IaNk=; b=ehfpTRjUVaun7+0BkmptI+5QSi
-	sJMDAZ6gGXgIpKcRucAfcySOfCraPTyRi/GJb0adRP8E4ndj9cN9JSTt9oB1EYnrnrxMEKTH976tY
-	HGj1fpfkIpHQWZZiM4Ph6VJfEpAQhI4jeQ7lo7ZNWQe4tu8CM4Bqn8ZHHhthxg60BE2rqtm+7TLdB
-	vp/zKfW/e4rksmMO5a9sTaqGrlA7PfZhI1XsTtB2SYAjfqQWQQYOm1LwyldY6nOA8btxIK66qkV8S
-	rYsw50QyXotJMJ5TnZttKfCpIRBdH79/8r+lxKtLWYR8Jkrn3AJEx1Fh91Eoy24GgBlvJ35U5YBwI
-	rTZR5RdA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0de+dCU5t5vShjpx7kChU1eVS06qMSd2HruIwXDx4Z8=; b=BxOlIPJPtyDNpT
+	2s4bK7dC3sJCyqDBUWgnTdYb7SUrs/oCYKHTJnTgmYeBFxG/8CDqyoKgNEqfUOa8y7hcjqirOCNpg
+	jg1Hlij1ydPr4Y5xHMEBjJCc0T9JMcZGdDwrg73KlKTWL+FWQfWmtQwiM67xBIo5G6lyUDKD7NXMo
+	f3FTBsIOzXi/Afvjddp/yZFN4zjt0BR15yfl/OeZ7jhaswWuNh2t6x81WFu5ipfyDq2IzU9tZmV3d
+	QcfrnR/eAi5aMTAGkDVGP86VVfH67oEb01TeaRGeVm17YnYKom15v38kFADqATiXFdO17guiX54hE
+	QXM5PX138esorwa5qchA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htDLf-0006Ul-EN; Thu, 01 Aug 2019 15:50:35 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1htDNa-0006pc-U2; Thu, 01 Aug 2019 15:52:35 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htDLX-0006U9-BP
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 15:50:28 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n9so49058721wrr.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 08:50:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version:content-transfer-encoding;
- bh=MdD3yVftBwNWkd7YK5mpx8hpnNaO44neO5nfkst92qA=;
- b=nTR0aPMcbDKv5QlZWvAmqmaRyIxcWeuPi5tVIgtY1YtjK5VNl4wwvtwdZqBvnJE3NX
- AC7s3L2HM4AMXaL4qbTRAkhdDNzpbOj/ufbcAbAN+ieycxTQF8U+SltTeQTIRYSewwrW
- Ux5YRDoeugjvk3dn7bgKhaou4N3Ka/DnX7Ne5wyxHdKWT96a9epVraOkS1NuTJeDOBhS
- NzxxWEwJns9NHtPbTfNues19ke7+bGj91zmAQ9xVcyoA1vunpJQghgZHhLiFsy58aYv9
- soFz4694czeiLZvOREbM1wA1WKqKD+jG5tg6XWP/+RVxtTIgmUSUk3Pmxju1QZp4c12d
- vIRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version:content-transfer-encoding;
- bh=MdD3yVftBwNWkd7YK5mpx8hpnNaO44neO5nfkst92qA=;
- b=N/Di0ob3SohTK1kkMi35Z4o0/U8YtLhwZeyAyAM3cfxEvd8FdVwSffNR8j5Vxg5Rlx
- pVGgOrQ1ajIYfT2tSewQaUTYJY716JiqwuSJoKEVWYzu+foesTGWF9FjbnvnUJV3izRC
- /NPREvfa5LFXUF49bf8ZKLhfx9sf05tB22T/0nGyUdIKweWoO9EFYEqPn/KhwlVFXSEU
- 4/Ss5joIoxrGHcTKdN0NtEy5EH5rexgpsTxPT4MTJV3pSALX0yVlvqxw23WWIhnHOyc1
- 75h/5Dh2B17xao2UUxtsjnO/omAgWIb7DQDV2YyRnDHD4QFWhf1eR49Xwv5AoM2Fr5AD
- EKGA==
-X-Gm-Message-State: APjAAAVuHCgGe8y1mYxCPWB4fVEUnKaYfQD5BUR2O4HLwkYLzEbbUZfD
- 1HGRbdMiiMQ76D1VzqLukGc=
-X-Google-Smtp-Source: APXvYqwfes83IZco8VCmVHkM+VIu8RJ68J3JBXtZmqlQFPT28fxlRhF9j3I0aZfyzMoxrCr0UHJQsQ==
-X-Received: by 2002:adf:f204:: with SMTP id p4mr22834294wro.317.1564674624623; 
- Thu, 01 Aug 2019 08:50:24 -0700 (PDT)
-Received: from arch-late (a109-49-46-234.cpe.netcabo.pt. [109.49.46.234])
- by smtp.gmail.com with ESMTPSA id y12sm66278221wrm.79.2019.08.01.08.50.22
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 01 Aug 2019 08:50:23 -0700 (PDT)
-References: <20190731163330.32532-1-sebastien.szymanski@armadeus.com>
-User-agent: mu4e 1.2.0; emacs 27.0.50
-From: Rui Miguel Silva <rmfrfs@gmail.com>
-To: =?utf-8?Q?S=C3=A9bastien?= Szymanski <sebastien.szymanski@armadeus.com>
-Subject: Re: [PATCH v3 2/3] media: imx7-media-csi: add i.MX6UL support
-In-reply-to: <20190731163330.32532-1-sebastien.szymanski@armadeus.com>
-Date: Thu, 01 Aug 2019 16:50:22 +0100
-Message-ID: <m31ry4c2bl.fsf@gmail.com>
+ id 1htDNR-0006ov-02
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 15:52:27 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x71FpM9M097603;
+ Thu, 1 Aug 2019 10:51:22 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1564674682;
+ bh=Piaf0yNg+MjDYASvDsZ47qt8n5CJXkN1ewP4GPFdIF4=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=nxJa66bak8aOx+Uemy+A1RpS7wwmfBQP00CjptcKs/wA7ULt4c15ytPtci4Gw5+Si
+ dmIFAh5ywcJJjcsqCnZFTxIhJ/JDMii7HfAhLK/IkWuGy+AhNam9n2Rt+yBqy2IObM
+ mcDqJV5q2z0BAhmn45gFOXaWt/NsY8M6NvorLQ9M=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x71FpMBD037539
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 1 Aug 2019 10:51:22 -0500
+Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 1 Aug
+ 2019 10:51:21 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 1 Aug 2019 10:51:21 -0500
+Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x71FpL6p090525;
+ Thu, 1 Aug 2019 10:51:21 -0500
+Subject: Re: [PATCH v2 2/6] irqchip/irq-pruss-intc: Add a PRUSS irqchip driver
+ for PRUSS interrupts
+To: Marc Zyngier <maz@kernel.org>, Thomas Gleixner <tglx@linutronix.de>, Jason
+ Cooper <jason@lakedaemon.net>
+References: <20190731224149.11153-1-s-anna@ti.com>
+ <20190731224149.11153-3-s-anna@ti.com>
+ <d0d539c2-4247-d74e-3bb2-ddb98e0bafb5@kernel.org>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <b58f0faf-f099-da0b-9451-8262df0f683e@ti.com>
+Date: Thu, 1 Aug 2019 10:51:21 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <d0d539c2-4247-d74e-3bb2-ddb98e0bafb5@kernel.org>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_085027_396167_2FCA0140 
-X-CRM114-Status: GOOD (  21.95  )
-X-Spam-Score: 1.4 (+)
+X-CRM114-CacheID: sfid-20190801_085225_128843_036119FE 
+X-CRM114-Status: GOOD (  31.57  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.4 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
- 1.0 HK_RANDOM_FROM         From username looks random
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rmfrfs[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -90,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,91 +95,534 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- devel@driverdev.osuosl.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Steve Longerbeam <slongerbeam@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
+ David Lechner <david@lechnology.com>, Tony Lindgren <tony@atomide.com>,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+ "Andrew F. Davis" <afd@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Murali Karicheri <m-karicheri2@ti.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgU2ViYXN0aWVuLApUaGFua3MgZm9yIHRoZSBwYXRjaC4KCk9uIFdlZCAzMSBKdWwgMjAxOSBh
-dCAxNzozMywgU8OpYmFzdGllbiBTenltYW5za2kgd3JvdGU6Cj4gaS5NWDcgYW5kIGkuTVg2VUwv
-TCBoYXZlIHRoZSBzYW1lIENTSSBjb250cm9sbGVyLiBTbyBhZGQgaS5NWDZVTC9MIHN1cHBvcnQK
-PiB0byBpbXg3LW1lZGlhLWNzaSBkcml2ZXIuCj4KPiBTaWduZWQtb2ZmLWJ5OiBTw6liYXN0aWVu
-IFN6eW1hbnNraSA8c2ViYXN0aWVuLnN6eW1hbnNraUBhcm1hZGV1cy5jb20+Cj4KCkxHVE0uIFRo
-YW5rcyBmb3IgYWRkaW5nIHRoZSBzdXBwb3J0IHRvIHRoaXMgaW14NnVsL2wgc29jLgoKUmV2aWV3
-ZWQtYnk6IFJ1aSBNaWd1ZWwgU2lsdmEgPHJtZnJmc0BnbWFpbC5jb20+CgotLS0KQ2hlZXJzLAoJ
-UnVpCgo+IC0tLQo+Cj4gQ2hhbmdlcyBmb3IgdjM6Cj4gLSByZWJhc2Ugb24gTGludXggdjUuMy1y
-YzIKPiAtIHJlbW92ZSBjc2lfc29jX2lkIHZhciBhcyBpdCdzIG5vdCBuZWVkZWQgYW55bW9yZSB0
-aGFua3MgdG8gY29tbWl0Cj4gICBlMGM3NmE3ZDM0MjggKCJtZWRpYTogaW14Ny1tZWRpYS1jc2k6
-IGdldCBjc2kgdXBzdHJlYW0gZW5kcG9pbnQiKQo+Cj4gQ2hhbmdlcyBmb3IgdjI6Cj4gIC0gcmVi
-YXNlIG9uIHRvcCBvZiBsaW51eHR2L21hc3Rlcgo+ICAtIG1lbnRpb24gaS5NWDZVTC9MIGluIGhl
-YWRlciBhbmQgS2NvbmZpZyBoZWxwIHRleHQKPiAgLSByZW5hbWUgY3NpX3R5cGUgdG8gY3NpX3Nv
-Y19pZAo+Cj4gIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9pbXgvS2NvbmZpZyAgICAgICAgICB8ICA0
-ICstLQo+ICBkcml2ZXJzL3N0YWdpbmcvbWVkaWEvaW14L2lteDctbWVkaWEtY3NpLmMgfCAzMCAr
-KysrKysrKysrKysrKystLS0tLS0tCj4gIDIgZmlsZXMgY2hhbmdlZCwgMjMgaW5zZXJ0aW9ucygr
-KSwgMTEgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9zdGFnaW5nL21lZGlh
-L2lteC9LY29uZmlnIGIvZHJpdmVycy9zdGFnaW5nL21lZGlhL2lteC9LY29uZmlnCj4gaW5kZXgg
-NGM3MjYzNDVkYzI1Li5mNTE0NzYyNDMwMTYgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9zdGFnaW5n
-L21lZGlhL2lteC9LY29uZmlnCj4gKysrIGIvZHJpdmVycy9zdGFnaW5nL21lZGlhL2lteC9LY29u
-ZmlnCj4gQEAgLTIyLDExICsyMiwxMSBAQCBjb25maWcgVklERU9fSU1YX0NTSQo+ICAJICBBIHZp
-ZGVvNGxpbnV4IGNhbWVyYSBzZW5zb3IgaW50ZXJmYWNlIGRyaXZlciBmb3IgaS5NWDUvNi4KPgo+
-ICBjb25maWcgVklERU9fSU1YN19DU0kKPiAtCXRyaXN0YXRlICJpLk1YNyBDYW1lcmEgU2Vuc29y
-IEludGVyZmFjZSBkcml2ZXIiCj4gKwl0cmlzdGF0ZSAiaS5NWDZVTC9MIC8gaS5NWDcgQ2FtZXJh
-IFNlbnNvciBJbnRlcmZhY2UgZHJpdmVyIgo+ICAJZGVwZW5kcyBvbiBWSURFT19JTVhfTUVESUEg
-JiYgVklERU9fREVWICYmIEkyQwo+ICAJZGVmYXVsdCB5Cj4gIAloZWxwCj4gIAkgIEVuYWJsZSBz
-dXBwb3J0IGZvciB2aWRlbzRsaW51eCBjYW1lcmEgc2Vuc29yIGludGVyZmFjZSBkcml2ZXIgZm9y
-Cj4gLQkgIGkuTVg3Lgo+ICsJICBpLk1YNlVML0wgb3IgaS5NWDcuCj4gIGVuZG1lbnUKPiAgZW5k
-aWYKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9zdGFnaW5nL21lZGlhL2lteC9pbXg3LW1lZGlhLWNz
-aS5jIGIvZHJpdmVycy9zdGFnaW5nL21lZGlhL2lteC9pbXg3LW1lZGlhLWNzaS5jCj4gaW5kZXgg
-NTAwYjRjMDhkOTY3Li40Y2E3OWZmNGM5YjMgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9zdGFnaW5n
-L21lZGlhL2lteC9pbXg3LW1lZGlhLWNzaS5jCj4gKysrIGIvZHJpdmVycy9zdGFnaW5nL21lZGlh
-L2lteC9pbXg3LW1lZGlhLWNzaS5jCj4gQEAgLTEsNiArMSw2IEBACj4gIC8vIFNQRFgtTGljZW5z
-ZS1JZGVudGlmaWVyOiBHUEwtMi4wCj4gIC8qCj4gLSAqIFY0TDIgQ2FwdHVyZSBDU0kgU3ViZGV2
-IGZvciBGcmVlc2NhbGUgaS5NWDcgU09DCj4gKyAqIFY0TDIgQ2FwdHVyZSBDU0kgU3ViZGV2IGZv
-ciBGcmVlc2NhbGUgaS5NWDZVTC9MIC8gaS5NWDcgU09DCj4gICAqCj4gICAqIENvcHlyaWdodCAo
-YykgMjAxOSBMaW5hcm8gTHRkCj4gICAqCj4gQEAgLTc2NSw2ICs3NjUsNyBAQCBzdGF0aWMgaW50
-IGlteDdfY3NpX2NvbmZpZ3VyZShzdHJ1Y3QgaW14N19jc2kgKmNzaSkKPiAgCXN0cnVjdCB2NGwy
-X3BpeF9mb3JtYXQgKm91dF9waXggPSAmdmRldi0+Zm10LmZtdC5waXg7Cj4gIAlfX3UzMiBpbl9j
-b2RlID0gY3NpLT5mb3JtYXRfbWJ1c1tJTVg3X0NTSV9QQURfU0lOS10uY29kZTsKPiAgCXUzMiBj
-cjEsIGNyMTg7Cj4gKwlpbnQgd2lkdGggPSBvdXRfcGl4LT53aWR0aDsKPgo+ICAJaWYgKG91dF9w
-aXgtPmZpZWxkID09IFY0TDJfRklFTERfSU5URVJMQUNFRCkgewo+ICAJCWlteDdfY3NpX2RlaW50
-ZXJsYWNlX2VuYWJsZShjc2ksIHRydWUpOwo+IEBAIC03NzQsMTUgKzc3NSwyNyBAQCBzdGF0aWMg
-aW50IGlteDdfY3NpX2NvbmZpZ3VyZShzdHJ1Y3QgaW14N19jc2kgKmNzaSkKPiAgCQlpbXg3X2Nz
-aV9idWZfc3RyaWRlX3NldChjc2ksIDApOwo+ICAJfQo+Cj4gLQlpbXg3X2NzaV9zZXRfaW1hZ3Bh
-cmEoY3NpLCBvdXRfcGl4LT53aWR0aCwgb3V0X3BpeC0+aGVpZ2h0KTsKPiArCWNyMTggPSBpbXg3
-X2NzaV9yZWdfcmVhZChjc2ksIENTSV9DU0lDUjE4KTsKPiArCj4gKwlpZiAoIWNzaS0+aXNfY3Np
-Mikgewo+ICsJCWlmIChvdXRfcGl4LT5waXhlbGZvcm1hdCA9PSBWNEwyX1BJWF9GTVRfVVlWWSB8
-fAo+ICsJCSAgICBvdXRfcGl4LT5waXhlbGZvcm1hdCA9PSBWNEwyX1BJWF9GTVRfWVVZVikKPiAr
-CQkJd2lkdGggKj0gMjsKPiArCj4gKwkJaW14N19jc2lfc2V0X2ltYWdwYXJhKGNzaSwgd2lkdGgs
-IG91dF9waXgtPmhlaWdodCk7Cj4gKwo+ICsJCWNyMTggfD0gKEJJVF9CQVNFQUREUl9TV0lUQ0hf
-RU4gfCBCSVRfQkFTRUFERFJfU1dJVENIX1NFTCB8Cj4gKwkJCUJJVF9CQVNFQUREUl9DSEdfRVJS
-X0VOKTsKPiArCQlpbXg3X2NzaV9yZWdfd3JpdGUoY3NpLCBjcjE4LCBDU0lfQ1NJQ1IxOCk7Cj4K
-PiAtCWlmICghY3NpLT5pc19jc2kyKQo+ICAJCXJldHVybiAwOwo+ICsJfQo+ICsKPiArCWlteDdf
-Y3NpX3NldF9pbWFncGFyYShjc2ksIHdpZHRoLCBvdXRfcGl4LT5oZWlnaHQpOwo+Cj4gIAljcjEg
-PSBpbXg3X2NzaV9yZWdfcmVhZChjc2ksIENTSV9DU0lDUjEpOwo+ICAJY3IxICY9IH5CSVRfR0NM
-S19NT0RFOwo+Cj4gLQljcjE4ID0gaW14N19jc2lfcmVnX3JlYWQoY3NpLCBDU0lfQ1NJQ1IxOCk7
-Cj4gIAljcjE4ICY9IEJJVF9NSVBJX0RBVEFfRk9STUFUX01BU0s7Cj4gIAljcjE4IHw9IEJJVF9E
-QVRBX0ZST01fTUlQSTsKPgo+IEBAIC04MTcsMTEgKzgzMCw5IEBAIHN0YXRpYyB2b2lkIGlteDdf
-Y3NpX2VuYWJsZShzdHJ1Y3QgaW14N19jc2kgKmNzaSkKPiAgewo+ICAJaW14N19jc2lfc3dfcmVz
-ZXQoY3NpKTsKPgo+IC0JaWYgKGNzaS0+aXNfY3NpMikgewo+IC0JCWlteDdfY3NpX2RtYXJlcV9y
-ZmZfZW5hYmxlKGNzaSk7Cj4gLQkJaW14N19jc2lfaHdfZW5hYmxlX2lycShjc2kpOwo+IC0JCWlt
-eDdfY3NpX2h3X2VuYWJsZShjc2kpOwo+IC0JfQo+ICsJaW14N19jc2lfZG1hcmVxX3JmZl9lbmFi
-bGUoY3NpKTsKPiArCWlteDdfY3NpX2h3X2VuYWJsZV9pcnEoY3NpKTsKPiArCWlteDdfY3NpX2h3
-X2VuYWJsZShjc2kpOwo+ICB9Cj4KPiAgc3RhdGljIHZvaWQgaW14N19jc2lfZGlzYWJsZShzdHJ1
-Y3QgaW14N19jc2kgKmNzaSkKPiBAQCAtMTMwMiw2ICsxMzEzLDcgQEAgc3RhdGljIGludCBpbXg3
-X2NzaV9yZW1vdmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPgo+ICBzdGF0aWMgY29u
-c3Qgc3RydWN0IG9mX2RldmljZV9pZCBpbXg3X2NzaV9vZl9tYXRjaFtdID0gewo+ICAJeyAuY29t
-cGF0aWJsZSA9ICJmc2wsaW14Ny1jc2kiIH0sCj4gKwl7IC5jb21wYXRpYmxlID0gImZzbCxpbXg2
-dWwtY3NpIiB9LAo+ICAJeyB9LAo+ICB9Owo+ICBNT0RVTEVfREVWSUNFX1RBQkxFKG9mLCBpbXg3
-X2NzaV9vZl9tYXRjaCk7CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Marc,
+
+On 8/1/19 4:42 AM, Marc Zyngier wrote:
+> On 31/07/2019 23:41, Suman Anna wrote:
+>> From: "Andrew F. Davis" <afd@ti.com>
+>>
+>> The Programmable Real-Time Unit Subsystem (PRUSS) contains a local
+>> interrupt controller (INTC) that can handle various system input events
+>> and post interrupts back to the device-level initiators. The INTC can
+>> support upto 64 input events with individual control configuration and
+>> hardware prioritization. These events are mapped onto 10 output interrupt
+>> lines through two levels of many-to-one mapping support. Different
+>> interrupt lines are routed to the individual PRU cores or to the host
+>> CPU, or to other devices on the SoC. Some of these events are sourced
+>> from peripherals or other sub-modules within that PRUSS, while a few
+>> others are sourced from SoC-level peripherals/devices.
+>>
+>> The PRUSS INTC platform driver manages this PRUSS interrupt controller
+>> and implements an irqchip driver to provide a Linux standard way for
+>> the PRU client users to enable/disable/ack/re-trigger a PRUSS system
+>> event. The system events to interrupt channels and output interrupts
+>> relies on the mapping configuration provided either through the PRU
+>> firmware blob or via the PRU application's device tree node. The
+>> mappings will be programmed during the boot/shutdown of a PRU core.
+>>
+>> The PRUSS INTC module is reference counted during the interrupt
+>> setup phase through the irqchip's irq_request_resources() and
+>> irq_release_resources() ops. This restricts the module from being
+>> removed as long as there are active interrupt users.
+>>
+>> The driver currently supports and can be built for OMAP architecture
+>> based AM335x, AM437x and AM57xx SoCs; Keystone2 architecture based
+>> 66AK2G SoCs and Davinci architecture based OMAP-L13x/AM18x/DA850 SoCs.
+>> All of these SoCs support 64 system events, 10 interrupt channels and
+>> 10 output interrupt lines per PRUSS INTC with a few SoC integration
+>> differences.
+>>
+>> NOTE:
+>> Each PRU-ICSS's INTC on AM57xx SoCs is preceded by a Crossbar that
+>> enables multiple external events to be routed to a specific number
+>> of input interrupt events. Any non-default external interrupt event
+>> directed towards PRUSS needs this crossbar to be setup properly.
+>>
+>> Signed-off-by: Andrew F. Davis <afd@ti.com>
+>> Signed-off-by: Suman Anna <s-anna@ti.com>
+>> Signed-off-by: Roger Quadros <rogerq@ti.com>
+>> ---
+>> v2: 
+>>  - Addressed all of David Lechner's comments
+>>  - Dropped irq_retrigger callback
+>>  - Updated interrupt names from "hostX" to "host_intrX"
+>>  - Moved host_mask variable to patch 4
+>> v1: https://patchwork.kernel.org/patch/11034545/
+>> v0: https://patchwork.kernel.org/patch/10795761/
+>>
+>>  drivers/irqchip/Kconfig          |  10 +
+>>  drivers/irqchip/Makefile         |   1 +
+>>  drivers/irqchip/irq-pruss-intc.c | 338 +++++++++++++++++++++++++++++++
+>>  3 files changed, 349 insertions(+)
+>>  create mode 100644 drivers/irqchip/irq-pruss-intc.c
+>>
+>> diff --git a/drivers/irqchip/Kconfig b/drivers/irqchip/Kconfig
+>> index 80e10f4e213a..dc6b5aa77a5d 100644
+>> --- a/drivers/irqchip/Kconfig
+>> +++ b/drivers/irqchip/Kconfig
+>> @@ -471,6 +471,16 @@ config TI_SCI_INTA_IRQCHIP
+>>  	  If you wish to use interrupt aggregator irq resources managed by the
+>>  	  TI System Controller, say Y here. Otherwise, say N.
+>>  
+>> +config TI_PRUSS_INTC
+>> +	tristate "TI PRU-ICSS Interrupt Controller"
+>> +	depends on ARCH_DAVINCI || SOC_AM33XX || SOC_AM437X || SOC_DRA7XX || ARCH_KEYSTONE
+>> +	select IRQ_DOMAIN
+>> +	help
+>> +	   This enables support for the PRU-ICSS Local Interrupt Controller
+>> +	   present within a PRU-ICSS subsystem present on various TI SoCs.
+>> +	   The PRUSS INTC enables various interrupts to be routed to multiple
+>> +	   different processors within the SoC.
+>> +
+>>  endmenu
+>>  
+>>  config SIFIVE_PLIC
+>> diff --git a/drivers/irqchip/Makefile b/drivers/irqchip/Makefile
+>> index 8d0fcec6ab23..a02e652ca805 100644
+>> --- a/drivers/irqchip/Makefile
+>> +++ b/drivers/irqchip/Makefile
+>> @@ -102,3 +102,4 @@ obj-$(CONFIG_MADERA_IRQ)		+= irq-madera.o
+>>  obj-$(CONFIG_LS1X_IRQ)			+= irq-ls1x.o
+>>  obj-$(CONFIG_TI_SCI_INTR_IRQCHIP)	+= irq-ti-sci-intr.o
+>>  obj-$(CONFIG_TI_SCI_INTA_IRQCHIP)	+= irq-ti-sci-inta.o
+>> +obj-$(CONFIG_TI_PRUSS_INTC)		+= irq-pruss-intc.o
+>> diff --git a/drivers/irqchip/irq-pruss-intc.c b/drivers/irqchip/irq-pruss-intc.c
+>> new file mode 100644
+>> index 000000000000..4a9456544fd0
+>> --- /dev/null
+>> +++ b/drivers/irqchip/irq-pruss-intc.c
+>> @@ -0,0 +1,338 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * PRU-ICSS INTC IRQChip driver for various TI SoCs
+>> + *
+>> + * Copyright (C) 2016-2019 Texas Instruments Incorporated - http://www.ti.com/
+>> + *	Andrew F. Davis <afd@ti.com>
+>> + *	Suman Anna <s-anna@ti.com>
+>> + */
+>> +
+>> +#include <linux/irq.h>
+>> +#include <linux/irqchip/chained_irq.h>
+>> +#include <linux/irqdomain.h>
+>> +#include <linux/module.h>
+>> +#include <linux/of_device.h>
+>> +#include <linux/platform_device.h>
+>> +
+>> +/*
+>> + * Number of host interrupts reaching the main MPU sub-system. Note that this
+>> + * is not the same as the total number of host interrupts supported by the PRUSS
+>> + * INTC instance
+>> + */
+>> +#define MAX_NUM_HOST_IRQS	8
+>> +
+>> +/* minimum starting host interrupt number for MPU */
+>> +#define MIN_PRU_HOST_INT	2
+>> +
+>> +/* maximum number of system events */
+>> +#define MAX_PRU_SYS_EVENTS	64
+>> +
+>> +/* PRU_ICSS_INTC registers */
+>> +#define PRU_INTC_REVID		0x0000
+>> +#define PRU_INTC_CR		0x0004
+>> +#define PRU_INTC_GER		0x0010
+>> +#define PRU_INTC_GNLR		0x001c
+>> +#define PRU_INTC_SISR		0x0020
+>> +#define PRU_INTC_SICR		0x0024
+>> +#define PRU_INTC_EISR		0x0028
+>> +#define PRU_INTC_EICR		0x002c
+>> +#define PRU_INTC_HIEISR		0x0034
+>> +#define PRU_INTC_HIDISR		0x0038
+>> +#define PRU_INTC_GPIR		0x0080
+>> +#define PRU_INTC_SRSR0		0x0200
+>> +#define PRU_INTC_SRSR1		0x0204
+>> +#define PRU_INTC_SECR0		0x0280
+>> +#define PRU_INTC_SECR1		0x0284
+>> +#define PRU_INTC_ESR0		0x0300
+>> +#define PRU_INTC_ESR1		0x0304
+>> +#define PRU_INTC_ECR0		0x0380
+>> +#define PRU_INTC_ECR1		0x0384
+>> +#define PRU_INTC_CMR(x)		(0x0400 + (x) * 4)
+>> +#define PRU_INTC_HMR(x)		(0x0800 + (x) * 4)
+>> +#define PRU_INTC_HIPIR(x)	(0x0900 + (x) * 4)
+>> +#define PRU_INTC_SIPR0		0x0d00
+>> +#define PRU_INTC_SIPR1		0x0d04
+>> +#define PRU_INTC_SITR0		0x0d80
+>> +#define PRU_INTC_SITR1		0x0d84
+>> +#define PRU_INTC_HINLR(x)	(0x1100 + (x) * 4)
+>> +#define PRU_INTC_HIER		0x1500
+>> +
+>> +/* HIPIR register bit-fields */
+>> +#define INTC_HIPIR_NONE_HINT	0x80000000
+>> +
+>> +/**
+>> + * struct pruss_intc - PRUSS interrupt controller structure
+>> + * @irqs: kernel irq numbers corresponding to PRUSS host interrupts
+>> + * @base: base virtual address of INTC register space
+>> + * @irqchip: irq chip for this interrupt controller
+>> + * @domain: irq domain for this interrupt controller
+>> + * @lock: mutex to serialize access to INTC
+>> + */
+>> +struct pruss_intc {
+>> +	unsigned int irqs[MAX_NUM_HOST_IRQS];
+>> +	void __iomem *base;
+>> +	struct irq_chip *irqchip;
+>> +	struct irq_domain *domain;
+>> +	struct mutex lock; /* PRUSS INTC lock */
+> 
+> Nothing seem to use that lock in this patch (other than to initialize it).
+
+Correct, will move this to patch 4 where the actual usage is similar to
+the host_mask move done in this version.
+
+> 
+>> +};
+>> +
+>> +static inline u32 pruss_intc_read_reg(struct pruss_intc *intc, unsigned int reg)
+>> +{
+>> +	return readl_relaxed(intc->base + reg);
+>> +}
+>> +
+>> +static inline void pruss_intc_write_reg(struct pruss_intc *intc,
+>> +					unsigned int reg, u32 val)
+>> +{
+>> +	writel_relaxed(val, intc->base + reg);
+>> +}
+>> +
+>> +static int pruss_intc_check_write(struct pruss_intc *intc, unsigned int reg,
+>> +				  unsigned int sysevent)
+>> +{
+>> +	if (!intc)
+>> +		return -EINVAL;
+>> +
+>> +	if (sysevent >= MAX_PRU_SYS_EVENTS)
+>> +		return -EINVAL;
+> 
+> How can any of these happen?  That'd be a bug in the driver surely.
+> Also, nothing ever checks the return value.
+
+Yeah, I think I can drop this. The ack/mask/unmask callbacks are all
+void returning functions, but we do return the value in
+irq_set_irqchip_state() callback added in patch 5 (will reorder that
+patch for the next version). This is similar to the check in
+gic_irq_set_irqchip_state().
+
+> 
+>> +
+>> +	pruss_intc_write_reg(intc, reg, sysevent);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void pruss_intc_init(struct pruss_intc *intc)
+>> +{
+>> +	int i;
+>> +
+>> +	/* configure polarity to active high for all system interrupts */
+>> +	pruss_intc_write_reg(intc, PRU_INTC_SIPR0, 0xffffffff);
+>> +	pruss_intc_write_reg(intc, PRU_INTC_SIPR1, 0xffffffff);
+>> +
+>> +	/* configure type to pulse interrupt for all system interrupts */
+>> +	pruss_intc_write_reg(intc, PRU_INTC_SITR0, 0);
+>> +	pruss_intc_write_reg(intc, PRU_INTC_SITR1, 0);
+>> +
+>> +	/* clear all 16 interrupt channel map registers */
+>> +	for (i = 0; i < 16; i++)
+>> +		pruss_intc_write_reg(intc, PRU_INTC_CMR(i), 0);
+>> +
+>> +	/* clear all 3 host interrupt map registers */
+>> +	for (i = 0; i < 3; i++)
+>> +		pruss_intc_write_reg(intc, PRU_INTC_HMR(i), 0);
+>> +}
+>> +
+>> +static void pruss_intc_irq_ack(struct irq_data *data)
+>> +{
+>> +	struct pruss_intc *intc = irq_data_get_irq_chip_data(data);
+>> +	unsigned int hwirq = data->hwirq;
+>> +
+>> +	pruss_intc_check_write(intc, PRU_INTC_SICR, hwirq);
+>> +}
+>> +
+>> +static void pruss_intc_irq_mask(struct irq_data *data)
+>> +{
+>> +	struct pruss_intc *intc = irq_data_get_irq_chip_data(data);
+>> +	unsigned int hwirq = data->hwirq;
+>> +
+>> +	pruss_intc_check_write(intc, PRU_INTC_EICR, hwirq);
+>> +}
+>> +
+>> +static void pruss_intc_irq_unmask(struct irq_data *data)
+>> +{
+>> +	struct pruss_intc *intc = irq_data_get_irq_chip_data(data);
+>> +	unsigned int hwirq = data->hwirq;
+>> +
+>> +	pruss_intc_check_write(intc, PRU_INTC_EISR, hwirq);
+>> +}
+>> +
+>> +static int pruss_intc_irq_reqres(struct irq_data *data)
+>> +{
+>> +	if (!try_module_get(THIS_MODULE))
+>> +		return -ENODEV;
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void pruss_intc_irq_relres(struct irq_data *data)
+>> +{
+>> +	module_put(THIS_MODULE);
+>> +}
+>> +
+>> +static int pruss_intc_irq_domain_map(struct irq_domain *d, unsigned int virq,
+>> +				     irq_hw_number_t hw)
+>> +{
+>> +	struct pruss_intc *intc = d->host_data;
+>> +
+>> +	irq_set_chip_data(virq, intc);
+>> +	irq_set_chip_and_handler(virq, intc->irqchip, handle_level_irq);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void pruss_intc_irq_domain_unmap(struct irq_domain *d, unsigned int virq)
+>> +{
+>> +	irq_set_chip_and_handler(virq, NULL, NULL);
+>> +	irq_set_chip_data(virq, NULL);
+>> +}
+>> +
+>> +static const struct irq_domain_ops pruss_intc_irq_domain_ops = {
+>> +	.xlate	= irq_domain_xlate_onecell,
+>> +	.map	= pruss_intc_irq_domain_map,
+>> +	.unmap	= pruss_intc_irq_domain_unmap,
+>> +};
+>> +
+>> +static void pruss_intc_irq_handler(struct irq_desc *desc)
+>> +{
+>> +	unsigned int irq = irq_desc_get_irq(desc);
+>> +	struct irq_chip *chip = irq_desc_get_chip(desc);
+>> +	struct pruss_intc *intc = irq_get_handler_data(irq);
+>> +	u32 hipir;
+>> +	unsigned int virq;
+>> +	int i, hwirq;
+>> +
+>> +	chained_irq_enter(chip, desc);
+>> +
+>> +	/* find our host irq number */
+>> +	for (i = 0; i < MAX_NUM_HOST_IRQS; i++)
+>> +		if (intc->irqs[i] == irq)
+>> +			break;
+>> +	if (i == MAX_NUM_HOST_IRQS)
+>> +		goto err;
+>> +
+>> +	i += MIN_PRU_HOST_INT;
+>> +
+>> +	/* get highest priority pending PRUSS system event */
+>> +	hipir = pruss_intc_read_reg(intc, PRU_INTC_HIPIR(i));
+>> +	while (!(hipir & INTC_HIPIR_NONE_HINT)) {
+>> +		hwirq = hipir & GENMASK(9, 0);
+>> +		virq = irq_linear_revmap(intc->domain, hwirq);
+>> +
+>> +		/*
+>> +		 * NOTE: manually ACK any system events that do not have a
+>> +		 * handler mapped yet
+>> +		 */
+>> +		if (unlikely(!virq))
+>> +			pruss_intc_check_write(intc, PRU_INTC_SICR, hwirq);
+> 
+> How were they configured the first place?
+
+Ideally, this should not occur, I probably should add a WARN_ON here
+catching any misuse. The PRUSS INTC is touched by multiple processors,
+and each of them have to use some of the same registers to ack the
+internal event. The current design is limited to only acking and
+triggering the interrupts from PRU firmwares while the mappings are all
+done by Linux. We are forced to do this to save some instruction space
+in the tiny Instruction RAM that the PRUs (smallest is 4K and largest is
+12K) have.
+
+> 
+>> +		else
+>> +			generic_handle_irq(virq);
+>> +
+>> +		/* get next system event */
+>> +		hipir = pruss_intc_read_reg(intc, PRU_INTC_HIPIR(i));
+>> +	}
+>> +err:
+>> +	chained_irq_exit(chip, desc);
+>> +}
+>> +
+>> +static int pruss_intc_probe(struct platform_device *pdev)
+>> +{
+>> +	static const char * const irq_names[] = {
+> 
+> Should this be sized with MAX_NUM_HOST_IRQS, given that this is how you
+> parse it?
+
+Yes, will update in the next version.
+
+> 
+>> +		"host_intr0", "host_intr1", "host_intr2", "host_intr3",
+>> +		"host_intr4", "host_intr5", "host_intr6", "host_intr7", };
+>> +	struct device *dev = &pdev->dev;
+>> +	struct pruss_intc *intc;
+>> +	struct resource *res;
+>> +	struct irq_chip *irqchip;
+>> +	int i, irq;
+>> +
+>> +	intc = devm_kzalloc(dev, sizeof(*intc), GFP_KERNEL);
+>> +	if (!intc)
+>> +		return -ENOMEM;
+>> +	platform_set_drvdata(pdev, intc);
+>> +
+>> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>> +	intc->base = devm_ioremap_resource(dev, res);
+>> +	if (IS_ERR(intc->base)) {
+>> +		dev_err(dev, "failed to parse and map intc memory resource\n");
+>> +		return PTR_ERR(intc->base);
+>> +	}
+>> +
+>> +	dev_dbg(dev, "intc memory: pa %pa size 0x%zx va %pK\n", &res->start,
+>> +		(size_t)resource_size(res), intc->base);
+>> +
+>> +	mutex_init(&intc->lock);
+>> +
+>> +	pruss_intc_init(intc);
+>> +
+>> +	irqchip = devm_kzalloc(dev, sizeof(*irqchip), GFP_KERNEL);
+>> +	if (!irqchip)
+>> +		return -ENOMEM;
+>> +
+>> +	irqchip->irq_ack = pruss_intc_irq_ack;
+>> +	irqchip->irq_mask = pruss_intc_irq_mask;
+>> +	irqchip->irq_unmask = pruss_intc_irq_unmask;
+>> +	irqchip->irq_request_resources = pruss_intc_irq_reqres;
+>> +	irqchip->irq_release_resources = pruss_intc_irq_relres;
+>> +	irqchip->name = dev_name(dev);
+>> +	intc->irqchip = irqchip;
+> 
+> Given that each and every pruss_intc ends up with a pointer to its own
+> irqchip, why is it a separate allocation instead of directly embedding
+> the structure?
+> 
+> Alternatively, have a single 'static const struct irq_chip' and lose the
+> slightly pointless dev_name as the irqchip name.
+
+Agreed, this can be optimized.
+
+> 
+>> +
+>> +	/* always 64 events */
+>> +	intc->domain = irq_domain_add_linear(dev->of_node, MAX_PRU_SYS_EVENTS,
+>> +					     &pruss_intc_irq_domain_ops, intc);
+>> +	if (!intc->domain)
+>> +		return -ENOMEM;
+>> +
+>> +	for (i = 0; i < MAX_NUM_HOST_IRQS; i++) {
+>> +		irq = platform_get_irq_byname(pdev, irq_names[i]);
+>> +		if (irq < 0) {
+> 
+> irq == 0 is also an error.
+
+OK, will fix.
+
+> 
+>> +			dev_err(dev, "platform_get_irq_byname failed for %s : %d\n",
+>> +				irq_names[i], irq);
+>> +			goto fail_irq;
+>> +		}
+>> +
+>> +		intc->irqs[i] = irq;
+>> +		irq_set_handler_data(irq, intc);
+>> +		irq_set_chained_handler(irq, pruss_intc_irq_handler);
+>> +	}
+>> +
+>> +	return 0;
+>> +
+>> +fail_irq:
+>> +	while (--i >= 0) {
+>> +		if (intc->irqs[i])
+> 
+> This 'if' seems supperfluous.
+
+So, some interrupts among the MAX_NUM_HOST_IRQS are not connected to the
+Arm processor on some SoCs. I will move this check to the next patch
+which introduces the skipping of interrupts.
+
+> 
+>> +			irq_set_chained_handler_and_data(intc->irqs[i], NULL,
+>> +							 NULL);
+>> +	}
+>> +	irq_domain_remove(intc->domain);
+>> +	return irq;
+>> +}
+>> +
+>> +static int pruss_intc_remove(struct platform_device *pdev)
+>> +{
+>> +	struct pruss_intc *intc = platform_get_drvdata(pdev);
+>> +	unsigned int hwirq;
+>> +	int i;
+>> +
+>> +	for (i = 0; i < MAX_NUM_HOST_IRQS; i++) {
+>> +		if (intc->irqs[i])
+> 
+> Same here.
+
+Will move this as well.
+
+> 
+>> +			irq_set_chained_handler_and_data(intc->irqs[i], NULL,
+>> +							 NULL);
+>> +	}
+>> +
+>> +	for (hwirq = 0; hwirq < MAX_PRU_SYS_EVENTS; hwirq++)
+>> +		irq_dispose_mapping(irq_find_mapping(intc->domain, hwirq));
+>> +	irq_domain_remove(intc->domain);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static const struct of_device_id pruss_intc_of_match[] = {
+>> +	{ .compatible = "ti,pruss-intc", },
+>> +	{ /* sentinel */ },
+>> +};
+>> +MODULE_DEVICE_TABLE(of, pruss_intc_of_match);
+>> +
+>> +static struct platform_driver pruss_intc_driver = {
+>> +	.driver = {
+>> +		.name = "pruss-intc",
+>> +		.of_match_table = pruss_intc_of_match,
+>> +	},
+>> +	.probe  = pruss_intc_probe,
+>> +	.remove = pruss_intc_remove,
+>> +};
+>> +module_platform_driver(pruss_intc_driver);
+>> +
+>> +MODULE_AUTHOR("Andrew F. Davis <afd@ti.com>");
+>> +MODULE_AUTHOR("Suman Anna <s-anna@ti.com>");
+>> +MODULE_DESCRIPTION("TI PRU-ICSS INTC Driver");
+>> +MODULE_LICENSE("GPL v2");
+>>
+> 
+> Thanks,
+> 	
+
+Thank you for all the review comments.
+
+regards
+Suman
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
