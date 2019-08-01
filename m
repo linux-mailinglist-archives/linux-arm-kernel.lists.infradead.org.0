@@ -2,88 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 520167D58B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 08:35:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 247927D58D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 08:37:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TqENdDeDrSDfXQWdyOrzL0gBUYXVPX7fu+DstFHloS8=; b=qBuZARxpxJuUMQ
-	d3YIwcnTaGUmeushdyWHKWj4VUGBsTqVwqkGmmL+tw8XRUf7otsqDsaU3lZkH+LWd9vjugqt+GYyw
-	kW1cdayoJsuMlbJBvTdLSb6W1+JbiaLdlIzEWQbzsSyf6VsZalCqTLO9ULDr2WPnyZFQVBKT6KsMf
-	Sfmd+biLqkkHkQh5Z9KZNhWjY/e6iGdpKRSiS+5E66Jbs18Ttd4EZ0GeNeMDEHbx8MDjdX9dgviBb
-	m8e7kzcyqCPb975WpixnN27TJtufOUrM5sdPys5eJafMcz09PyBzMNTq/x30iH3uLv+4Bb2M/8EWr
-	GKEpYnk4zc2zHHYbKvbQ==;
+	List-Owner; bh=z452o5SkCsk/A12CS30UPCWOd6NZZuu0+4rOk9ZAgw4=; b=PZ4GCyWm9368kD
+	DDzwyprzhP5Avz2nmVqe93GYHJrdYRKaVggPuNuO55ujyvjMcuWQDoCUhSu67vooDTxBwmE5mofhN
+	xshzMcx424G+OxtkURWmsz9kBxJHfGRARqpPtsMldAOnDbvh2YTBLnjPpxLfa3/LBSr2+2tCYhk0h
+	7VF/WJXXOIhctdY2ygcJrWOGzO0wOh8NqVpONa5WZo4iNSXM4TGW1Y4LkvVhaNcCOVWl2Jw7ZgALp
+	0f8iR+QHJ78RqKA6W5IRJ7IgdsX3ASLqhSWr8rjcZMioa/cGXKDOCO2N/FQtbknJdt6XhYJMnwBpr
+	78RS53TkxgfVzK7/rk1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht4gt-0001Za-BT; Thu, 01 Aug 2019 06:35:55 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1ht4i1-0001q7-KI; Thu, 01 Aug 2019 06:37:05 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht4gm-0001ZD-9P
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 06:35:49 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t14so31684664plr.11
+ id 1ht4ht-0001pO-PA
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 06:36:59 +0000
+Received: by mail-lj1-x241.google.com with SMTP id d24so68178330ljg.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 23:35:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Vy7fiSVgkFbOoM9oVuh/IZ30LQ8S9jpUhyBj3j5WAYE=;
- b=ae8KMe7vtw9CbOVo5NW8OvD+W3A0H5gmbjw08lE21V5g/XHpJKjPHpZ/4oz1312HMR
- gNLZHyAOxxb8maEL9vCVgtaRtYNEQPx24fbVagwL6bKGPWrqDPCYHxXrKM+LFxKSLyXv
- dFo+a9IZYyXAOcp8Vsiv4c3YJh9HHtXgSllMpNFr8PAGLOUpzWaBd6pZ6B+zJ6+yRkyk
- K6uldheuuNBHLqB3mgE42PqNe8v/fHXlwV3zJPVQ2inDSw0XhDAg2GNrwsN/g0mzWrdO
- rvej6sD9a41ViP7+3hsYS+G+QhCGpzNQ/bdeqlPzVtwzND5mVrRD0tSHN3hroO+PvfGh
- /lYg==
+ Wed, 31 Jul 2019 23:36:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=X9ZQbHrGzFtjEODVBGVi3gOgXCwBSDCk0xPlVmAv39c=;
+ b=Irrr23fMhTG6al2CUIKvRGL5QX0PhtRLcRnbsblPKgEqQOxD8SJoM0uIVm3vH8a07y
+ sps88K+hpaaGuRLYTRBAE727L6SCNxZHl98YcWCGE2nZBlrKZCFqhQYnFQa3O46eY8lL
+ /DxLFOpm2FTCNqNU9snTg9au+8PRn02r+vYkQ8uFHGAqYPis0WcrgzH4YS4+SDBfQEoV
+ 7J4/uuOHdv42lZlMfAfkuWhF1r6IfctmUnPGE8QearmzNB3FBL+pVJ7DCBccFWYyYHn4
+ IiZQ1ElUjB3Z1LOP9E4MADCJzJeaPW8qtNE1bgA7zqga8L4CC95+lpKWT1r1gq4voAWE
+ 6ZVQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Vy7fiSVgkFbOoM9oVuh/IZ30LQ8S9jpUhyBj3j5WAYE=;
- b=pQkcpYAkbosgfGKZZQeAFD1LJzI6IiyrsKpJOTloG8Yzk7iXcNw/xsFuMFLFneOYoN
- /DnFPdktB2u5+o74VJZf1P7Lll/csIfsKMiKO1u8nhNwlsvJWg0Uvct6MhcchNWc68r2
- kHcePOoPNxbicRH1zpK41Jx7dvjaa1A39whf40amzSmkL8VNb4Dredqanm83UZMKNie8
- uAMM8+I+PlMMokXjYKGQDWVwiKUo6uVqC5SUq8285WIftWyLXHLBytiu8DkbwRyrUH4b
- sWSLlZqRRLxARNYE64MIvpg+0wmyQ867T17p/ApPOXm1ezNiXqtrVJvsDEya4RuTmyI7
- PYXg==
-X-Gm-Message-State: APjAAAXvQcTp8Z7qkDwCgeLWSmhm+r4+DT6isnMP48AIPVz/Fl6sZJ7k
- Tc6zwKaFIMBi75U4QWRZNj6W1DI7Y18=
-X-Google-Smtp-Source: APXvYqxzLt9itVfefRAkcodWXvJsyh1SKFRKmzWXDdVEME2BmOSrNLsKad//WkasBmqGS2/yrA2+SA==
-X-Received: by 2002:a17:902:820c:: with SMTP id
- x12mr125486939pln.216.1564641347199; 
- Wed, 31 Jul 2019 23:35:47 -0700 (PDT)
-Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id f15sm4067463pje.17.2019.07.31.23.35.46
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 23:35:46 -0700 (PDT)
-Date: Thu, 1 Aug 2019 12:05:44 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Julien Thierry <julien.thierry@arm.com>
-Subject: Re: [PATCH v4.4 V2 25/43] arm64: Move BP hardening to
- check_and_switch_context
-Message-ID: <20190801063544.ruw444isj5uojjdx@vireshk-i7>
-References: <cover.1562908074.git.viresh.kumar@linaro.org>
- <f655aaa158af070d45a2bd4965852b0c97a08838.1562908075.git.viresh.kumar@linaro.org>
- <59b252cf-9cb7-128b-4887-c21a8b9b92a9@arm.com>
- <20190801050940.h65crfawrdifsrgg@vireshk-i7>
- <86354576-fc54-a8b7-4dc9-bc613d59fb17@arm.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=X9ZQbHrGzFtjEODVBGVi3gOgXCwBSDCk0xPlVmAv39c=;
+ b=WrQF7CQ8IEohfGFUWvh1Q6pUmaKQKDZ27PbOZyvppnTU12RtOJy9Nyp6A9hKrda343
+ B0YhyIOVztjXIflKqUIxdcbiuRQEiqzP4xJpkIE5XdhRYkJclD08pttNXLccuq+i0Qdn
+ Aqj9nOTa89KF+vh018Rr8QV4BaHV8JzHK6ZJHyg9cYTF9xIum0nHKhlMD5c+g+YQ2n3r
+ GRsppB5Cr1E2O/VgS+G7ZIN/VaZ6Cjs1VV8rpSU5g34wM3aiRNX/kAmteWOeej8+VmgS
+ 8OJrf9YASxdtb1XOtKtNYfEJbBVfC9+F9NFEL3Gyyk9INKLTtO44MYGIAjLgyuwy72jp
+ Kayw==
+X-Gm-Message-State: APjAAAVUmV2G5Ve8gjNQyMTNKc6R6KZBJXezym8R5oDE71X9rLpwwavu
+ 3IZH7uXU+BPcHYG9yocPL38parN2joWq5/PXVfo=
+X-Google-Smtp-Source: APXvYqxL/s6TY+Lcm9PtMPnltGMxl9EapEj/9hC3l7HRYjwRx4X4cLUEHb7EUd4m82x93CeGKns2H6cCLt/hUSnHVmU=
+X-Received: by 2002:a2e:b1c1:: with SMTP id e1mr31450663lja.228.1564641416029; 
+ Wed, 31 Jul 2019 23:36:56 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <86354576-fc54-a8b7-4dc9-bc613d59fb17@arm.com>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
+ <CAE=Ncrb63dQLe-nDQyO9OPv7XjwM_9mzL9SrcLiUi2Dr10cD4A@mail.gmail.com>
+ <CAFA6WYPJAzbPdcpBqioxjY=T8RLw-73B_hpzX4cGnwVvm5zpJw@mail.gmail.com>
+ <CAE=Ncrb23q++z8R8UMbjDE2epEq4YVcNGzrRD31eH3JAooYejg@mail.gmail.com>
+ <CAFA6WYOKcOzSwakHhgshZcebD8ZBMSi7xQdjWYFS79=Xc+odOg@mail.gmail.com>
+In-Reply-To: <CAFA6WYOKcOzSwakHhgshZcebD8ZBMSi7xQdjWYFS79=Xc+odOg@mail.gmail.com>
+From: Janne Karhunen <janne.karhunen@gmail.com>
+Date: Thu, 1 Aug 2019 09:36:44 +0300
+Message-ID: <CAE=NcrYz8bT9zDhS_ZcvY84fpeTDxZ-KhJKeQGGyf=o4pG2J-Q@mail.gmail.com>
+Subject: Re: [RFC v2 0/6] Introduce TEE based Trusted Keys support
+To: Sumit Garg <sumit.garg@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_233548_362305_1AC7A67F 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20190731_233657_842601_A3F6F1EF 
+X-CRM114-Status: GOOD (  11.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (janne.karhunen[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -103,35 +96,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- stable@vger.kernel.org, mark.brown@arm.com, julien.thierry.kdev@gmail.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
+ jejb@linux.ibm.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ James Morris <jmorris@namei.org>,
+ Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
+ linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
+ Mimi Zohar <zohar@linux.ibm.com>, Casey Schaufler <casey@schaufler-ca.com>,
+ linux-integrity@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Serge E. Hallyn" <serge@hallyn.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01-08-19, 07:30, Julien Thierry wrote:
-> I must admit I am not familiar with backport/stable process enough. But
-> personally I think the your suggestion seems more sensible than
-> backporting 4 patches.
-> 
-> Or you can maybe ignore patch 25 and say in patch 24 that among the
-> changes made for the 4.4 codebase, the call arm64_apply_bp_hardening()
-> was moved from post_ttbr_update_workaround as it doesn't exist and
-> placed in check_and_switch_context() as it is its final destination.
+On Wed, Jul 31, 2019 at 5:23 PM Sumit Garg <sumit.garg@linaro.org> wrote:
 
-Done that and dropped the other two patches.
+> > I guess my wording was wrong, tried to say that physical TEEs in the
+> > wild vary massively hardware wise. Generalizing these things is rough.
+> >
+>
+> There are already well defined GlobalPlatform Standards to generalize
+> the TEE interface. One of them is GlobalPlatform TEE Client API [1]
+> which provides the basis for this TEE interface.
 
-> However, I really don't know what's the best way to proceed according to
-> existing practices. So input from someone else would be welcome.
+I'm aware of it - I have implemented a large part of the GP TEE APIs
+earlier (primarily the crypto functions). Does the TEE you work with
+actually support GP properly? Can I take a look at the code?
 
-Lets see if someone comes up and ask me to do something else :)
+Normally the TEE implementations are well-guarded secrets and the
+state of the implementation is quite random. In many cases keeping
+things secret is fine from my point of view, given that it is a RoT
+after all. The secrecy is the core business here. So, this is why I
+opted the userspace 'secret' route - no secrets in the kernel, but
+it's fine for the userspace. Umh was a logical fit to implement it.
 
--- 
-viresh
+
+--
+Janne
 
 _______________________________________________
 linux-arm-kernel mailing list
