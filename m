@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39F887D77C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:25:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA1777D77E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:25:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n8Rh2IjMRNBLdaFleibWrz+RFEnst/UFAlD6Cwe9ba0=; b=OZW/g6XZi6Qqtn
-	piTTETFpPq9AISas1SiG/LGtv7fNk6XQC+fuiy9Fgm5M3pyY0AHD7z6K8T0Eemv9DJ67q7sgrPiBQ
-	C8TI14Vt1aKZ7r2I9nEXwQ05lOvDePEtv/DbJaUozQaFbNEd88RvoOAKsJh7COqp9ljz62JOvNVlS
-	hRc8sN/itT/4lZOGON2HJTVGJKaazW5PKxkwYjRqRwBL7yvAy4+DzjsqTK5h8y5YKugqO/1fhhiKS
-	B0jFWL2a9za7tivzTUpP26ktKhWFx4DWqInzlTDi+VaZ+WLPANqQ5SOuXL98lD1ropfrnLrY4pOzQ
-	HGEskVbqrc1SNR0PRWhg==;
+	List-Owner; bh=3Lt8ko4SWwSUErhIUvts/ntS56hHrOSWXG5r4MDGjS8=; b=ONN8kN0s/WifRz
+	V66oK2vHIRNhM9v/c24vSeUKPvo95JpKQi74aCMiFnboi9EKsdiBKgr/RmYuLsTJ9Oh9UROyVjRLI
+	q6Yfx+Sa2yszGxo2YK6DnQo7b0O/81l9KvKOJ/NFx1TAZwTV4dt+UXMlYxyXo/zQFBvI8aSmHZFif
+	eex8Et6AJx/X8w4O00550SshckpD0YjoRvtJqlZDL9ITZRLJU8PNDF9iPBrUip/Ke3x6VLT4e4NAW
+	Pt5gAjoAgFY/xPjn7r4FdDhCltsAGISgeXZlLdqns1RRg+zxTKHgy3Db1EPBOp7iHDN5voUGk4pbD
+	3XzTS/fTTiDyCBVuJqsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6OS-0008E6-EL; Thu, 01 Aug 2019 08:25:00 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ht6On-0001Gf-Li; Thu, 01 Aug 2019 08:25:21 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6KM-0002io-78
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:47 +0000
-Received: by mail-pf1-x442.google.com with SMTP id p184so33599812pfp.7
+ id 1ht6KP-0002mQ-0v
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:50 +0000
+Received: by mail-pl1-x644.google.com with SMTP id t14so31834681plr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 01:20:46 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=q3Hwoo9R0gf8T8wycN6BweSX3iAbrjmdi48iA1QA7vM=;
- b=v8tPuBm6a8N9wJvJ6WAtxxYn28Qs2iZZ+IRbRYjgYx4IpcRLyS8mfcmqz0ytzoCpos
- jv/ffuYFA83lpwHniP5fhlZ/kXp4M11tAuygaRg5myeIMrI0qD/rxAxB27MRhzupZe+M
- ztLh+JDQ8NvxiNwGo4nApbsJ7fy4V8q8kKKPaKdaoGsGu/zjSHMfybem2XwIWx7RPEKg
- 54NjDRDdLSpZw1taU2sXbgFmkRC/GEk0bCDtAIIXIb4BUwKjQYprsIXx9A6faIcBhh01
- LX4ZbPwaUAG4xSFQoW/swck/IwVK0wLaGDiUB0fZN0idxlNoOdpYJqsxB8SjDJV4oO5t
- QY4g==
+ bh=MgdKvQC/PG/qzasZyBmDzAkccfxFwFqJHdwmPruVads=;
+ b=M/W0Na2Zy7+HBEvHxxb6P/FPKdVkMATRN4C9Zb77vqKqQhL6z7bpMb1EeSx6PCKSXP
+ WIpm09ydesGuVwKMj+W1yik9OCyQfN6plQEwk4acdSnuulENxPHSU0NaxsqQRRX0OI7Q
+ CJ0tqIjPLDjnBIOWX5BruNZGIu9Qcme1K2e3M+sHqvXxw5u8OHzx11C0FhOuZ3LDh7OG
+ Chz2+U3DN9zgQWBVGzmzxpJA5H8T8XIB//yeb10FYl9FV1Dimc13X4LokQdTvFyqY6vp
+ ivz+ZoapG/08jHgX0zsH7JhOVAEay8pOIsb6pQiJUTzbVriQoqreFrBxWT58hO5m/UO3
+ cJbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=q3Hwoo9R0gf8T8wycN6BweSX3iAbrjmdi48iA1QA7vM=;
- b=EvUzGsqBDjUOHsSRkylF0HrQc5du0ap81fxqae7az5VFw/YKvsrrEkuGdWNtA9/y3A
- GPMMvcH4B3D8Cqw2mMoIDfCvI0L39S7Y33FvfdeOBV5lTKQOIKL696ck9F6E3hSK+hZ5
- AKzyO6D7lUyJ52e3FdrCo1BH8Ip8khzv53pqrjYbb0DHgzGLWRkhyRzPnSswKlAmHSQq
- Lf8VApbOSJRrVzMSwrVbvCOuD3PzpcVWz9Y9eBYo1EWULhU0a3lnDC6r8Rn6hyV3WMeW
- dTncT7Xpw0ThUHhcxbs/hyM/r2gl3ikA0w+tUcNBR0DNmznSIcnF9dKCI8PQec640AYm
- +DtA==
-X-Gm-Message-State: APjAAAUUT+Xv1Kfh2otK91k4Om6ZALrdwSd7aX7ITjj0fLdArbAdi+oB
- RwXUS3Sdwo1XyUgk+dnPmS5+eA==
-X-Google-Smtp-Source: APXvYqw8AMtygXdme66bHjkErIZoCNT+9NxIrlMt51jVywqWqjAheNw422/KO4VB26xRqouz4epcaA==
-X-Received: by 2002:a62:f20b:: with SMTP id m11mr52253396pfh.125.1564647645675; 
- Thu, 01 Aug 2019 01:20:45 -0700 (PDT)
+ bh=MgdKvQC/PG/qzasZyBmDzAkccfxFwFqJHdwmPruVads=;
+ b=V9wVc32eJv4hY5813mky7/p1WCuKydrJTWxYAlKuFN5LN9Qwsa+DAtAqxJ3x62zmiv
+ 6QfTrFxEztJAGQn3xm5+4F/Xi6Y0WTD8+Otg6wlyDG0loqExNeNb56t/VJzOQHzBd0iw
+ /Z2uQWxw5c6HP5YV/5kZFRdvLUJOFPFEeCXFIjPQDbGqYFnq8hoHQCGeWsQvtth2SqJB
+ ykyPJFrBFGitbZDSK+P4GxJOAa0RY8VPNyENILe66Oty8gAS3CV0g3nVA+wNU3+pafpC
+ p3HaUGdH/JhjrBtshp126qI2v9+c5LUT71Mlm4gwKyYsRwdFh+jkmjYI913OwdyZKZ81
+ uM5Q==
+X-Gm-Message-State: APjAAAV7PRudXoB22TZlib2GMMjubHuaBci8JnL52AA0ZyOxC1Wtf6cZ
+ O9IQbwQNyGjIBweFZggg2DB/3w==
+X-Google-Smtp-Source: APXvYqwtnX5haa3mjsJZEuPJitXn8/aU61HgK/ZxG2IVG2xywq2bD6FMIeoJyjny8aFcR2dHWhALVw==
+X-Received: by 2002:a17:902:f095:: with SMTP id
+ go21mr126863136plb.58.1564647648095; 
+ Thu, 01 Aug 2019 01:20:48 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id n98sm4013483pjc.26.2019.08.01.01.20.44
+ by smtp.gmail.com with ESMTPSA id z12sm52519280pfn.29.2019.08.01.01.20.47
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 01:20:45 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:47 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org
-Subject: [PATCH ARM32 v4.4 V2 27/47] ARM: spectre-v1: mitigate user accesses
-Date: Thu,  1 Aug 2019 13:46:11 +0530
-Message-Id: <86231c8cbaacc44285a235db704e1029ae8ec64a.1564646727.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM32 v4.4 V2 28/47] ARM: 8789/1: signal: copy registers using
+ __copy_to_user()
+Date: Thu,  1 Aug 2019 13:46:12 +0530
+Message-Id: <cbbdded762d4e1547f3574a56e3ae78a35c82ba6.1564646727.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1564646727.git.viresh.kumar@linaro.org>
 References: <cover.1564646727.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_012046_287291_173A84DE 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20190801_012049_077024_98ED3FDC 
+X-CRM114-Status: GOOD (  11.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,79 +110,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Russell King <rmk+kernel@armlinux.org.uk>
+From: Julien Thierry <julien.thierry@arm.com>
 
-Commit a3c0f84765bb429ba0fd23de1c57b5e1591c9389 upstream.
+Commit 5ca451cf6ed04443774bbb7ee45332dafa42e99f upstream.
 
-Spectre variant 1 attacks are about this sequence of pseudo-code:
+When saving the ARM integer registers, use __copy_to_user() to
+copy them into user signal frame, rather than __put_user_error().
+This has the benefit of disabling/enabling PAN once for the whole copy
+intead of once per write.
 
-	index = load(user-manipulated pointer);
-	access(base + index * stride);
-
-In order for the cache side-channel to work, the access() must me made
-to memory which userspace can detect whether cache lines have been
-loaded.  On 32-bit ARM, this must be either user accessible memory, or
-a kernel mapping of that same user accessible memory.
-
-The problem occurs when the load() speculatively loads privileged data,
-and the subsequent access() is made to user accessible memory.
-
-Any load() which makes use of a user-maniplated pointer is a potential
-problem if the data it has loaded is used in a subsequent access.  This
-also applies for the access() if the data loaded by that access is used
-by a subsequent access.
-
-Harden the get_user() accessors against Spectre attacks by forcing out
-of bounds addresses to a NULL pointer.  This prevents get_user() being
-used as the load() step above.  As a side effect, put_user() will also
-be affected even though it isn't implicated.
-
-Also harden copy_from_user() by redoing the bounds check within the
-arm_copy_from_user() code, and NULLing the pointer if out of bounds.
-
-Acked-by: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Julien Thierry <julien.thierry@arm.com>
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-Signed-off-by: David A. Long <dave.long@linaro.org>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm/include/asm/assembler.h | 4 ++++
- arch/arm/lib/copy_from_user.S    | 9 +++++++++
- 2 files changed, 13 insertions(+)
+ arch/arm/kernel/signal.c | 49 ++++++++++++++++++++++------------------
+ 1 file changed, 27 insertions(+), 22 deletions(-)
 
-diff --git a/arch/arm/include/asm/assembler.h b/arch/arm/include/asm/assembler.h
-index 307901f88a1e..483481c6937e 100644
---- a/arch/arm/include/asm/assembler.h
-+++ b/arch/arm/include/asm/assembler.h
-@@ -454,6 +454,10 @@ THUMB(	orr	\reg , \reg , #PSR_T_BIT	)
- 	adds	\tmp, \addr, #\size - 1
- 	sbcccs	\tmp, \tmp, \limit
- 	bcs	\bad
-+#ifdef CONFIG_CPU_SPECTRE
-+	movcs	\addr, #0
-+	csdb
-+#endif
- #endif
- 	.endm
+diff --git a/arch/arm/kernel/signal.c b/arch/arm/kernel/signal.c
+index 76f85c38f2b8..98685e2523bf 100644
+--- a/arch/arm/kernel/signal.c
++++ b/arch/arm/kernel/signal.c
+@@ -255,30 +255,35 @@ static int
+ setup_sigframe(struct sigframe __user *sf, struct pt_regs *regs, sigset_t *set)
+ {
+ 	struct aux_sigframe __user *aux;
++	struct sigcontext context;
+ 	int err = 0;
  
-diff --git a/arch/arm/lib/copy_from_user.S b/arch/arm/lib/copy_from_user.S
-index 1512bebfbf1b..d36329cefedc 100644
---- a/arch/arm/lib/copy_from_user.S
-+++ b/arch/arm/lib/copy_from_user.S
-@@ -90,6 +90,15 @@
- 	.text
+-	__put_user_error(regs->ARM_r0, &sf->uc.uc_mcontext.arm_r0, err);
+-	__put_user_error(regs->ARM_r1, &sf->uc.uc_mcontext.arm_r1, err);
+-	__put_user_error(regs->ARM_r2, &sf->uc.uc_mcontext.arm_r2, err);
+-	__put_user_error(regs->ARM_r3, &sf->uc.uc_mcontext.arm_r3, err);
+-	__put_user_error(regs->ARM_r4, &sf->uc.uc_mcontext.arm_r4, err);
+-	__put_user_error(regs->ARM_r5, &sf->uc.uc_mcontext.arm_r5, err);
+-	__put_user_error(regs->ARM_r6, &sf->uc.uc_mcontext.arm_r6, err);
+-	__put_user_error(regs->ARM_r7, &sf->uc.uc_mcontext.arm_r7, err);
+-	__put_user_error(regs->ARM_r8, &sf->uc.uc_mcontext.arm_r8, err);
+-	__put_user_error(regs->ARM_r9, &sf->uc.uc_mcontext.arm_r9, err);
+-	__put_user_error(regs->ARM_r10, &sf->uc.uc_mcontext.arm_r10, err);
+-	__put_user_error(regs->ARM_fp, &sf->uc.uc_mcontext.arm_fp, err);
+-	__put_user_error(regs->ARM_ip, &sf->uc.uc_mcontext.arm_ip, err);
+-	__put_user_error(regs->ARM_sp, &sf->uc.uc_mcontext.arm_sp, err);
+-	__put_user_error(regs->ARM_lr, &sf->uc.uc_mcontext.arm_lr, err);
+-	__put_user_error(regs->ARM_pc, &sf->uc.uc_mcontext.arm_pc, err);
+-	__put_user_error(regs->ARM_cpsr, &sf->uc.uc_mcontext.arm_cpsr, err);
+-
+-	__put_user_error(current->thread.trap_no, &sf->uc.uc_mcontext.trap_no, err);
+-	__put_user_error(current->thread.error_code, &sf->uc.uc_mcontext.error_code, err);
+-	__put_user_error(current->thread.address, &sf->uc.uc_mcontext.fault_address, err);
+-	__put_user_error(set->sig[0], &sf->uc.uc_mcontext.oldmask, err);
++	context = (struct sigcontext) {
++		.arm_r0        = regs->ARM_r0,
++		.arm_r1        = regs->ARM_r1,
++		.arm_r2        = regs->ARM_r2,
++		.arm_r3        = regs->ARM_r3,
++		.arm_r4        = regs->ARM_r4,
++		.arm_r5        = regs->ARM_r5,
++		.arm_r6        = regs->ARM_r6,
++		.arm_r7        = regs->ARM_r7,
++		.arm_r8        = regs->ARM_r8,
++		.arm_r9        = regs->ARM_r9,
++		.arm_r10       = regs->ARM_r10,
++		.arm_fp        = regs->ARM_fp,
++		.arm_ip        = regs->ARM_ip,
++		.arm_sp        = regs->ARM_sp,
++		.arm_lr        = regs->ARM_lr,
++		.arm_pc        = regs->ARM_pc,
++		.arm_cpsr      = regs->ARM_cpsr,
++
++		.trap_no       = current->thread.trap_no,
++		.error_code    = current->thread.error_code,
++		.fault_address = current->thread.address,
++		.oldmask       = set->sig[0],
++	};
++
++	err |= __copy_to_user(&sf->uc.uc_mcontext, &context, sizeof(context));
  
- ENTRY(arm_copy_from_user)
-+#ifdef CONFIG_CPU_SPECTRE
-+	get_thread_info r3
-+	ldr	r3, [r3, #TI_ADDR_LIMIT]
-+	adds	ip, r1, r2	@ ip=addr+size
-+	sub	r3, r3, #1	@ addr_limit - 1
-+	cmpcc	ip, r3		@ if (addr+size > addr_limit - 1)
-+	movcs	r1, #0		@ addr = NULL
-+	csdb
-+#endif
- 
- #include "copy_template.S"
+ 	err |= __copy_to_user(&sf->uc.uc_sigmask, set, sizeof(*set));
  
 -- 
 2.21.0.rc0.269.g1a574e7a288b
