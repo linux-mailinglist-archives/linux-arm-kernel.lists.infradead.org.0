@@ -2,77 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 262F87DEAC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:20:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50D877DEB1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:23:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CAR75aEzBsev5sDovCC92tWAUUZpFqTvLhWzJN7uf10=; b=Cj5Fi/yoyKyIA4
-	+xfLhTGTWttZkjMGHBPlmK+PEiY49zWOnhiakY7vo11pKfK1/0n/10tcOb4PT1UTFrYxeXfOO1vsC
-	p6wkD5rAS/Begn8Hah4ztqlDaOS2ADqMvVHFpcIGu9ubz9Xo+YgM1hnxmrpcp0mLOs0S0rzYbgQwf
-	jqheWvrj7Y6PiNpxCUvm0G+vimB3t+aCzbkjjDstaXTDZ/A3ct0svsR9VUD7dp9IqtLmzVrd0Su/d
-	7CnGXfK1JaYKbG1/iKL4aDJghJA3pZpsL9FWcWTGOoFUGVlBl3B4X/O/cEy6h/gqzNImfw0CyzCSk
-	Ubt3dLBXAgHge2cu9Zmw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vil5pXOwXeeyjjr89jTE6GGC8x+AwfQMoEpGbAa9ygw=; b=CEzy7FrRAzHt6a
+	Wtk/3QcnCWXAbKy15wpG3FFY4lORaPa0mPZ17As8E9B2Pqbbx6BEasa/gRWdmJuFP+Ax2jueRl4KK
+	XalQd83Ztja8sALCDCameM/yexG58G/mLNN0iFhYoY+jV+PBkENNI29podPhwv0B9c7X7690l8nge
+	GncaAzKHlIZTgBCILm7c9lmQRu82sjqn1WHnMV0cynuyJsDy6Ny4Dx2e8oBZhuIuJAp7/YSsLhj2D
+	6NauIgd0bUqhefWhj2eTlCnK0t4BXnPXZHXGAH9TimsJbqoraJKuf3JBnTCR7yu9pA5xOmmtrFxJa
+	5NtH0vEDKZ8C3hFK/cVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htCsW-0007wx-PC; Thu, 01 Aug 2019 15:20:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htCsL-0007vX-MO; Thu, 01 Aug 2019 15:20:18 +0000
-Received: from mail-qk1-f174.google.com (mail-qk1-f174.google.com
- [209.85.222.174])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2CB0821726;
- Thu,  1 Aug 2019 15:20:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564672817;
- bh=A5WVsf7G2kFJI6lI2lC6kb+wdtK4qcYkyJefqOmwKnE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=iPvinyI9HCcagqoyjJOmSXdt/1odOuDy24qOv1sHtO2tFYo60EpDtdKR/vJkNTLxQ
- p1YslmBdSI7GE9rHshrM3LJXBthjFmaRgRZ9sLnG6U5C+jCVIzUBAcJCSQjEKodcOE
- 71A/4oGB0Wb1P3jtkbdnyfpUrr3DzyZXYWLie7KI=
-Received: by mail-qk1-f174.google.com with SMTP id s22so52357047qkj.12;
- Thu, 01 Aug 2019 08:20:17 -0700 (PDT)
-X-Gm-Message-State: APjAAAWGmiJsK1u3+6SINQkA038sOYyWuNYWzyBfyoWi5pyCrw89/zqW
- x6vcp2L1x7yGqq9AySddYG2zNqoMy/PPwh8TzQ==
-X-Google-Smtp-Source: APXvYqyOTDfIkp0PiGP+4XgmfZUgR81KtILQm6TcrNNBpWndNc5glbXR+cfHFaU1qak5P984zIWlLDST+tVjYpRqtxI=
-X-Received: by 2002:a37:a44a:: with SMTP id n71mr21061481qke.393.1564672816295; 
- Thu, 01 Aug 2019 08:20:16 -0700 (PDT)
+	id 1htCv2-0008Ft-Du; Thu, 01 Aug 2019 15:23:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1htCus-0008Er-RU
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 15:22:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 84BD9337;
+ Thu,  1 Aug 2019 08:22:52 -0700 (PDT)
+Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
+ [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CF5D63F694;
+ Thu,  1 Aug 2019 08:22:51 -0700 (PDT)
+From: Robin Murphy <robin.murphy@arm.com>
+To: will.deacon@arm.com,
+	mark.rutland@arm.com
+Subject: [PATCH v2 1/2] perf/smmuv3: Validate group size
+Date: Thu,  1 Aug 2019 16:22:44 +0100
+Message-Id: <85f2db579f90f0a89d6c6bb4e53191e9ad172805.1564672242.git.robin.murphy@arm.com>
+X-Mailer: git-send-email 2.21.0.dirty
 MIME-Version: 1.0
-References: <20190801135644.12843-1-narmstrong@baylibre.com>
-In-Reply-To: <20190801135644.12843-1-narmstrong@baylibre.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 1 Aug 2019 09:20:03 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqL7FEAJ9S5j9JSwfj+t8434KsEOcxKEMWNFnG00b07JMA@mail.gmail.com>
-Message-ID: <CAL_JsqL7FEAJ9S5j9JSwfj+t8434KsEOcxKEMWNFnG00b07JMA@mail.gmail.com>
-Subject: Re: [RFC 0/9] dt-bindings: first tentative of conversion to yaml
- format
-To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_082017_755016_80101EDF 
-X-CRM114-Status: UNSURE (   8.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190801_082254_933237_417245BE 
+X-CRM114-Status: GOOD (  15.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,31 +59,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, devicetree@vger.kernel.org,
- LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-spi <linux-spi@vger.kernel.org>,
- "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- linux-amlogic@lists.infradead.org, Kishon Vijay Abraham I <kishon@ti.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org, shameerali.kolothum.thodi@huawei.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 1, 2019 at 7:56 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> This is a first tentative to convert some of the simplest Amlogic
-> dt-bindings to the yaml format.
+Ensure that a group will actually fit into the available counters.
 
-Great to see this.
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+---
+v2:
+ - fix condition that thought we were only counting siblings
+ - don't inadvertently count software events
+ - and don't forget the group leader isn't a sibling, grr...
 
-I've gone thru all of the patches. Some of the same minor comments I
-made also apply to the patches I didn't comment on.
+ drivers/perf/arm_smmuv3_pmu.c | 22 ++++++++++++++--------
+ 1 file changed, 14 insertions(+), 8 deletions(-)
 
-Rob
+diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
+index da71c741cb46..c65c197b52a7 100644
+--- a/drivers/perf/arm_smmuv3_pmu.c
++++ b/drivers/perf/arm_smmuv3_pmu.c
+@@ -323,6 +323,7 @@ static int smmu_pmu_event_init(struct perf_event *event)
+ 	struct smmu_pmu *smmu_pmu = to_smmu_pmu(event->pmu);
+ 	struct device *dev = smmu_pmu->dev;
+ 	struct perf_event *sibling;
++	int group_num_events = 1;
+ 	u16 event_id;
+ 
+ 	if (event->attr.type != event->pmu->type)
+@@ -347,18 +348,23 @@ static int smmu_pmu_event_init(struct perf_event *event)
+ 	}
+ 
+ 	/* Don't allow groups with mixed PMUs, except for s/w events */
+-	if (event->group_leader->pmu != event->pmu &&
+-	    !is_software_event(event->group_leader)) {
+-		dev_dbg(dev, "Can't create mixed PMU group\n");
+-		return -EINVAL;
++	if (!is_software_event(event->group_leader)) {
++		if (event->group_leader->pmu != event->pmu)
++			return -EINVAL;
++
++		if (++group_num_events > smmu_pmu->num_counters)
++			return -EINVAL;
+ 	}
+ 
+ 	for_each_sibling_event(sibling, event->group_leader) {
+-		if (sibling->pmu != event->pmu &&
+-		    !is_software_event(sibling)) {
+-			dev_dbg(dev, "Can't create mixed PMU group\n");
++		if (is_software_event(sibling))
++			continue;
++
++		if (sibling->pmu != event->pmu)
++			return -EINVAL;
++
++		if (++group_num_events > smmu_pmu->num_counters)
+ 			return -EINVAL;
+-		}
+ 	}
+ 
+ 	hwc->idx = -1;
+-- 
+2.21.0.dirty
+
 
 _______________________________________________
 linux-arm-kernel mailing list
