@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBB887D519
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 07:58:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EFC87D520
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 07:58:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dt30MAlhyDSlr8chOAsemu3tdb0dy78plsGbA4b5rqQ=; b=Cn1tXYiFzzNm3z
-	ncWK1YOn9l122O/fKyKV8Gf9GKQkpp7OJRYrDI+3vfFXkNy23aVQ20vM73UqHT89llBNjtHXxv5ww
-	RPyd7Yb3jbhekMz27uwM5KOkXpxTt+WSx1bZ3f+K3rL3I++ri99HBO1XlNB8/3H1N2xAhcLAw+Ep7
-	/DKQBS9xhoXFufLcfnvYUBCSRTJ3gi/8RxvK68Y/yd5NNts7Lej2lEhDZx1SQn6hugjJ/0tDXGXpv
-	yCl+twf4Sp7gdE9qDeSxG4IeSeb4azGvjOGCJjP0R1ZENd7XZjFKG5f8lHrcwpqx1VaRWVFMx661B
-	fQnBoSaMB+lv6hQO4JcA==;
+	List-Owner; bh=wJOKNo1t7xU+y11B/i791Baf9iSDmOsmfCx3zCQaUEI=; b=ojHzsTH8v2usEY
+	VRYnRy93cch8ec+mM4jxueQDhv50ONBe3sxZx1fqDxx2cjmi1b6h2Z/ciFk87xLGwN+h8dzbWb+ro
+	r7UT5KEg9mEp9FT+WeE79NpQ9WYdEJm2nD4/nEtCEqWG2H1O3ad/YvbbC5Q9+bUauCC0QrHW7f8Um
+	il7txj6Kh0b+IovB8XGOW1ez7pcIuJkhPlXBLoUUJhjg3U8uza3sSZj1prqoHgQ3XOLFwzgdGq6YP
+	/JlboL7WNv+QDwjwE9Wbysk9VUhR5scWoAFm2ZCmX2XUTXwYRqE/urQ6ZQPLWESZY5BSWZH4cD8D/
+	E02I3/8Jxr90rdgR50Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht46V-0002We-0I; Thu, 01 Aug 2019 05:58:19 +0000
+	id 1ht46k-0002kJ-2Z; Thu, 01 Aug 2019 05:58:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht46O-0002WC-Ks
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 05:58:13 +0000
+ id 1ht46Z-0002iB-W8
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 05:58:25 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9C931206A2;
- Thu,  1 Aug 2019 05:58:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E2E122089E;
+ Thu,  1 Aug 2019 05:58:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564639092;
- bh=18M1+P9KesdsimSQfSqq898kk6BSKJDA151IrpFkfuU=;
+ s=default; t=1564639103;
+ bh=tPLQMa9INtNp24krrrmSdyM8aYEOtt5HnLd6iOMeg/E=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=IhuIctS7MqfUiQKncJHIjrxZSF+/Dx0klY386/15CcNttSPWK/WXc16jf9+HVeMTG
- DUuwqZp4ieY7O1fs2S6Qg8S2JJ8fIE0vcE0xmzV3JU6znCfn1ZqVWviIJeyISiAgVn
- JXI5g2aEP0Vx7p3kRieznWXbKV8+Dekxfd4y1660=
-Date: Thu, 1 Aug 2019 07:58:09 +0200
+ b=QVazc23f/a1NUp8GF3qUN3kRmuL5tiD1kgX+uukmkVF6ZrKsj9JUS0VyKFCoWO48U
+ aBykRklY1xbV2PfKq+/Aa/Cf2eugpCXY9V1MV3/piPu0jKSsPMj8bYMfuweKBgVV2H
+ MEmRmKeNtQ/jxA7QNhPVD70PZd0xUE+51bDt+cqE=
+Date: Thu, 1 Aug 2019 07:58:21 +0200
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 01/14] usb: ohci-nxp: enable compile-testing
-Message-ID: <20190801055809.GA24607@kroah.com>
+Subject: Re: [PATCH 02/14] usb: udc: lpc32xx: allow compile-testing
+Message-ID: <20190801055821.GB24607@kroah.com>
 References: <20190731195713.3150463-1-arnd@arndb.de>
- <20190731195713.3150463-2-arnd@arndb.de>
+ <20190731195713.3150463-3-arnd@arndb.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190731195713.3150463-2-arnd@arndb.de>
+In-Reply-To: <20190731195713.3150463-3-arnd@arndb.de>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_225812_710954_272E25B2 
-X-CRM114-Status: GOOD (  14.80  )
+X-CRM114-CacheID: sfid-20190731_225824_060574_A7D2FD42 
+X-CRM114-Status: GOOD (  12.99  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -74,12 +74,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, linux-watchdog@vger.kernel.org,
+Cc: Felipe Balbi <balbi@kernel.org>, linux-watchdog@vger.kernel.org,
  linux-kernel@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
- "David S. Miller" <davem@davemloft.net>, netdev@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Andrew Lunn <andrew@lunn.ch>, netdev@vger.kernel.org,
  Gregory Clement <gregory.clement@bootlin.com>, linux-usb@vger.kernel.org,
  Russell King <linux@armlinux.org.uk>, Vladimir Zapolskiy <vz@mleia.com>,
  linux-gpio@vger.kernel.org, soc@kernel.org,
+ "David S. Miller" <davem@davemloft.net>,
  Alan Stern <stern@rowland.harvard.edu>, Guenter Roeck <linux@roeck-us.net>,
  linux-serial@vger.kernel.org, Sylvain Lemieux <slemieux.tyco@gmail.com>,
  Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org,
@@ -89,20 +91,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 09:56:43PM +0200, Arnd Bergmann wrote:
-> The driver hardcodes a hardware I/O address the way one should
-> generally not do, and this prevents both compile-testing, and
-> moving the platform to CONFIG_ARCH_MULTIPLATFORM.
-> 
-> Change the code to be independent of the machine headers
-> to allow those two. Removing the hardcoded address would
-> be hard and is not necessary, so leave that in place for now.
+On Wed, Jul 31, 2019 at 09:56:44PM +0200, Arnd Bergmann wrote:
+> The only thing that prevents building this driver on other
+> platforms is the mach/hardware.h include, which is not actually
+> used here at all, so remove the line and allow CONFIG_COMPILE_TEST.
 > 
 > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 > ---
->  drivers/usb/host/Kconfig    |  3 ++-
->  drivers/usb/host/ohci-nxp.c | 25 ++++++++++++++++++-------
->  2 files changed, 20 insertions(+), 8 deletions(-)
+>  drivers/usb/gadget/udc/Kconfig       | 3 ++-
+>  drivers/usb/gadget/udc/lpc32xx_udc.c | 2 --
+>  2 files changed, 2 insertions(+), 3 deletions(-)
 
 Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
