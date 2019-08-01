@@ -2,92 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF2B37DBE1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:49:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C01327DBEE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:50:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vswDcITEHhjRSDCN4hjXnQgMbZBmgWZ3mNmv0WJ/8Dw=; b=NOwumPx6M4l4rJ
-	gdQpYw7KJw8bHJSQgwbLdmUL2TxCEVrmDlX/3jBc5o54bLr1M+bEobeex2sE97222Eayt3cy/d/kQ
-	fc7dhg8ASGSmLXs6DV+uLePKwiJkbIXLfuKCJlVivVY+t6ms32E4xklyqzPGIpE8zZUDHfAr1d7tA
-	bfKaALzwBaW6iNgxOWMd4WUlG3h6hNyFVPKy/8bpJ1wCh6vqK2xIewpL7Y/DeiUkV7wGv6Qwji9vp
-	cWlOI626jgh+0xWRwMqK6DzuDBLuMTTRErCgbZGTNGae+fn0H3uZ7DbZ6z53t3zr0smacb3MNeClg
-	IChBFe1zT5xh7FbiGV8A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=W3h048YfojffYp3sXsmoisfjzWMIQa8ceLqhTIGrVT4=; b=uUV1JjnRmBNrS8aaK9jB8eVuV
+	Yx+aFTREQB4IhC/NvvS0h0VaKts5RRD1dVYzgXFlN/60nKq8nKsSXAIYimU9unY1XLG1YP/wsHOny
+	hijI58piX9U/WfqG2Kl6XdinkfvKFp+AkLvG2mMdeIDqYmldTNq9yNH+y17pP0HpSiO2z+GodESQO
+	0IdHrYlm7X6xm06f+Y9k9C/J01FeoeGV0+0Kt5l3w5PP4bSzapO+Ut+wUwJY0qTCaHZ9cF0XKCM+h
+	j1ruM8rEJNinvqE6ieFrBXdCupwbXSZKmtLyPIIxaY0pFb8JqvQUSva0cbAD2TaRvNatOrj2sHMpO
+	ChvUnPmyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htAVz-0005Ub-9N; Thu, 01 Aug 2019 12:49:03 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htAVo-0005TT-Ca
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:48:53 +0000
-Received: by mail-pg1-x543.google.com with SMTP id l21so34150374pgm.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 05:48:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ATAFhJly7oayn4QwVxAmF/cKx18eZXYIEq5cLXvpdzg=;
- b=mjC+j0aaEEkkMHnLNHs9TEJqIdScFWRlkAZG8TbiBl3AyUZ8l5nLaU29ZLHSb7WvwH
- X3OlQDdgsBZjncfM3ONy8Dqcuih1q2WnbLztoEOKMtf5vefqmMIHHwchJuo+ue+DCVka
- b9rui+0AvY5PeeX+qJY2jvBZQab/NzRkSsMupCgkTdlEDxE6K7Nu5zDKiMeGfnD3hicf
- 2VPYUTHD9bJKAQWesHnbiPWY9rwW/eF7WIHmcnvL9DkrJEokfA1mnjx39I+4RQdt1WLM
- ieuyPRr8iw6XMHiEGmpinxm+wGAydMTsA6N4zI0Tg/WWtENcJ84NKdjINucR3C9EQWXN
- EQGw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ATAFhJly7oayn4QwVxAmF/cKx18eZXYIEq5cLXvpdzg=;
- b=Bj9pR+lpudUdS+rDrDcP4jjc64QCP7jZHiuOSW4S4+jM11Q0zh9MO4gu9ekhDhndpV
- wiJQtA1WhZnGQh5TY58UsheXvGmjiQ+GsBh7PJl2e217AtLoCn4nECS+xyQlKMIwwMFi
- nS6nC0HN7vrIjEBLvW4v1shDH89qTrdrpG1akco81qOuTZ2P8gx2A6SvYpyDfHyAspBC
- Y0yt7di6ev33d8ycO8sO0Wnsn+P70fhJ11Zn+pLQWWp9drL7E9Y0AnnuHDT98oX+yQ7x
- npDY8B1cU0brWEj+KpbbRvvAHhNnt6AkVqqS3eillVvXHkIDdLaVmKMbctOF0VpQUoQ5
- 63dg==
-X-Gm-Message-State: APjAAAV4/nbOQqCXPnMuuvIzLF+Bx98HeP9BMAyow7mA/md0k6yrhbB3
- DL0nzSBMFbtkFqxZwOabTRfCaJaOJVwtpwABoBmbyMhSUco=
-X-Google-Smtp-Source: APXvYqyuYmWo+CP2FzNWYkHFT0ZLT3W5Y5OJQeMQdVh76HiNmdD4jPQ2fznL3kD7gDek9Cqsx8/zBcK9HOnHQgVpStE=
-X-Received: by 2002:a65:4b8b:: with SMTP id
- t11mr118476394pgq.130.1564663728917; 
- Thu, 01 Aug 2019 05:48:48 -0700 (PDT)
+	id 1htAXU-00071J-GH; Thu, 01 Aug 2019 12:50:36 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1htAXJ-00070p-6S
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:50:26 +0000
+Received: from localhost (p54B333D2.dip0.t-ipconnect.de [84.179.51.210])
+ by pokefinder.org (Postfix) with ESMTPSA id 62C102C2817;
+ Thu,  1 Aug 2019 14:50:24 +0200 (CEST)
+Date: Thu, 1 Aug 2019 14:50:24 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH 1/2] i2c: mxs: use devm_platform_ioremap_resource() to
+ simplify code
+Message-ID: <20190801125023.GH1659@ninjato>
+References: <20190717084017.30987-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-References: <cover.1563904656.git.andreyknvl@google.com>
- <8c618cc9-ae68-9769-c5bb-67f1295abc4e@intel.com>
- <13b4cf53-3ecb-f7e7-b504-d77af15d77aa@arm.com>
-In-Reply-To: <13b4cf53-3ecb-f7e7-b504-d77af15d77aa@arm.com>
-From: Andrey Konovalov <andreyknvl@google.com>
-Date: Thu, 1 Aug 2019 14:48:37 +0200
-Message-ID: <CAAeHK+zTFqsLiB3Wf0bAi5A8ukQX5ZuvfUg4td-=r5UhBsUBOQ@mail.gmail.com>
-Subject: Re: [PATCH v19 00/15] arm64: untag user pointers passed to the kernel
-To: Kevin Brodsky <kevin.brodsky@arm.com>
+In-Reply-To: <20190717084017.30987-1-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_054852_447652_7A40EEE5 
-X-CRM114-Status: GOOD (  14.75  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190801_055025_383117_315D3AD4 
+X-CRM114-Status: UNSURE (   7.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,61 +60,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>, Dave Hansen <dave.hansen@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: aisheng.dong@nxp.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, wsa+renesas@sang-engineering.com,
+ linux-i2c@vger.kernel.org, kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org, Linux-imx@nxp.com
+Content-Type: multipart/mixed; boundary="===============8614506101359413462=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 1, 2019 at 2:11 PM Kevin Brodsky <kevin.brodsky@arm.com> wrote:
->
-> On 31/07/2019 17:50, Dave Hansen wrote:
-> > On 7/23/19 10:58 AM, Andrey Konovalov wrote:
-> >> The mmap and mremap (only new_addr) syscalls do not currently accept
-> >> tagged addresses. Architectures may interpret the tag as a background
-> >> colour for the corresponding vma.
-> > What the heck is a "background colour"? :)
->
-> Good point, this is some jargon that we started using for MTE, the idea being that
-> the kernel could set a tag value (specified during mmap()) as "background colour" for
-> anonymous pages allocated in that range.
->
-> Anyway, this patch series is not about MTE. Andrey, for v20 (if any), I think it's
-> best to drop this last sentence to avoid any confusion.
 
-Sure, thanks!
+--===============8614506101359413462==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="cfJ13FhsvNR/yOpm"
+Content-Disposition: inline
 
->
-> Kevin
+
+--cfJ13FhsvNR/yOpm
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Jul 17, 2019 at 04:40:16PM +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
+>=20
+> Use the new helper devm_platform_ioremap_resource() which wraps the
+> platform_get_resource() and devm_ioremap_resource() together, to
+> simplify the code.
+>=20
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+
+Applied to for-next, thanks!
+
+
+--cfJ13FhsvNR/yOpm
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1C4A8ACgkQFA3kzBSg
+KbbuCQ/+Jh3jQy7mSWoI1drhM0j9+MC/Kq5i599BC0Fr4mV3KNiHW9aKVRPpNKnm
+PPe6xTh0GiT8TetvzKh0k8snQi0xhZOB4NagfqVK3sZ1zKgQFLX2420Gf1V6rF9+
+e7OqfHEkIbJDfn4649lJCjpjfkDFBrOgItFISc7in0APZjhlFVFeNyErUe4xIaqu
+XdBZ3s5hJNdvF8l759DZEf8Ue77+RkjOFjjM5elGRz3qCEjCsSXVgs2x0toozBd4
+mAxgRx3r7eBWSeuhyWqJSNEVo24rwS7Aw1UUR5vPWLWfVkJLqdxPEdirywXtIW3d
+3GPu/D6W8YK63Mg7ncs+ryD3giFfNz5IFhGFKm7kFPvwju7IR2kzIjZTrMo92vTO
+O780yEYiDnnqLTJrVBBYEXMu7xJB6U+IbiCC+2r1eJg4mgJo1eHYxIK7PxBSCZs4
+pdwFNeSzJJRXJgM4+bMb253AJVtVmkkxFbsv+UXc//8hFqvIWnqg2Jn7NKncFkjh
+wZK1gRASN1uEE79J1Z3P7RdMElW2a6LRSqErfOduznRQUlo5bdSX/u4bxJdv3qLY
+Y37hMgqJnrP5Nf4yktdfTXJIa76Z+eNkfhRihK23Nr4mXxYey06lRvRsqjsO8Fam
+kP9TB/6L5ENQ4zn9MASaLP9MhA6dekax5msNYj97Ww0oXG8Fy0U=
+=niRb
+-----END PGP SIGNATURE-----
+
+--cfJ13FhsvNR/yOpm--
+
+
+--===============8614506101359413462==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8614506101359413462==--
+
