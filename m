@@ -2,68 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B3CC7DDC7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 16:24:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A9C47DDCE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 16:24:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=7CI9JXONkB+gjFBBs937RFU6gdGNZU9Dkjmu46DnvAk=; b=Wqw
-	bFT9YbyeTj3UlYDE7Fmi+sJWIr4GoXnL7SnARkbx+AickA4SOOYM+Nn5Ez9SKvkFAuCMOnIfGcMXe
-	hOdUZfmgCCcZrR0l9VZ6MUm23PMbgnBf48bJ1uIubEhZuW9W3y5qtiHPLWhPibMT6B80+Aq+CbJlW
-	lgZAlT7iTSMD1MhSE13sBlpc42vdr6lRx5whfaZ5hHXvYzKHLkwDJSNc4YuSPVx/+rEi0ro1JRFKw
-	ogJ6zKFwRVV+zPE1jLVLxb88BDZOWI8PZtiIg7fgIeFacw0ndUGyi38vKz4ZpuIuP16s1T0k3JyFL
-	YVQhIZbAxxHNQJmwrZ7eIwEUmn/mZUg==;
+	References:List-Owner; bh=G0otvH2sXE0XrZgExLv+081YDCJEN3wbqh0F5rxueBk=; b=pxp
+	Ptkngq9W488kXK98W3GQazV4Y1gQCRkGWlZRQ8H9r0Pn/IeS4cFyWAaagi5wNHoAj0dzLfa7txO/i
+	V8+uMAXjiTs4lo0lYAsFvxzVp02scWlg+2AwoYRpE2O/G30ZWshgfAPgD8kfPbxS6ZqJsigpoG3Jz
+	/IlxhN8y4lwFg58t9ug1uUcoV2iEYHCliEeaJTwKQ1dz+UISBthOPiP5gslR1NNkrgkCw051EvwfN
+	tK2GtRp9/+ok4+bU+DLaJITnpj5LeAl7S0RD8e0oSchXF3N6jQWFrI99j0NHip47zlZo0DhKsUa4v
+	gn4Qd605HU7iBrsKFGM1fh96rJc+aaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htC02-0007ll-0m; Thu, 01 Aug 2019 14:24:10 +0000
+	id 1htC0I-000841-O6; Thu, 01 Aug 2019 14:24:26 +0000
 Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htBzb-0007Xn-4p
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 14:23:45 +0000
-Received: by mail-pg1-x541.google.com with SMTP id k189so15258120pgk.13
+ id 1htBzw-0007sF-6b
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 14:24:05 +0000
+Received: by mail-pg1-x541.google.com with SMTP id f5so25486671pgu.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 07:23:43 -0700 (PDT)
+ Thu, 01 Aug 2019 07:24:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=gEHkLVhFpaWyVkOWtSOnh5cikq+qzc45obgcO+XHLmI=;
- b=S9pbw3QLBQrAGR1FPGl4+HGr+DUGn/RFUHFTpeMdQ3sQs73nnvlcG82KrdI9/EEBYz
- Zq/8ugI7UdsJll7Avws1B2d/sLbI/ie89wuUQqouqLBYrM/c6x6u+WN4vGvQVipK/214
- VJfAHP2jAeAN/iGReraGLvC3O4IMNydK02ZxJ0TlzYxuy8TUJCPnllwF+RhoPkFhdxtI
- WeUe08RCT8YwJzgzQ7TnjZPNWsgn95WhtOtBcJKgJUvQB1c38MgF8BnnzfnumBhMsLeb
- tRVbAf1GBlj35cZXcb10a7wDLhraDUg1Q8aK+pAbwl0aYkJsjeoHx6GWQ44e4GfFGfHP
- 21PQ==
+ bh=Awhox3F4tQJJinnTUNEkNON8yyKLtYgh7agQgfIyeSY=;
+ b=m41sf8Zg1/5ng3zQdwOqm+l4ssScRYyoqgFETtL298ZQnfrACVAx6DgWO9B+ORdn5L
+ tIh+6OgdplqNwS1Rmwx9jjvt6iUlJ+ef4ATq0ItrfLR0VKFIHC9snTEKz6DgjDvPAvBF
+ MBr98s/b8pDB9XK9D245HpOJ2zav6WPEgNlqt2LHU6GUgJPpw3QNxAljdMwTenOT/+B3
+ 7TlQJTBXS4PGr0N0O8XE4oC5+apA0JbKLSEHLQcOhqpyelbKZPu6MVi9n/+oAaxHMraP
+ q6PRK/8FAyI2Af73z2mN2EhpzM962cqeWs5QJu22H5vR1VBrEAUzJg81qfLLNqKedNzA
+ YmVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=gEHkLVhFpaWyVkOWtSOnh5cikq+qzc45obgcO+XHLmI=;
- b=DekjN9ItpsU2BTMLZjqo/ZXlv0TSDKYZ6DEKCvQQvosCHor9QSmlDceWyJ9UzwFkdY
- yiIxR08RrLPxeyeunQwMtEf65RWfmemj+59t4VpYX4LBpQAH9gcJKfyci8EVVNk6d0I6
- CttiJJIlecAcwbOu3iV1nlFWMdrMrIvNKBUU2kGlspmGnwpeB0NkohOdGZlncwrOa254
- o/Ja8RLIAn5+DJ8EKV088L2OwVzp1Rnq6uk+79Wt2npSPMKPDF8rLG3KuE2fEjmuhlrW
- tRzXFF7RIQgtTFXduArvT1luBbDWc7jFxOeoG5Tne13wr41EXM+9zYIZSYbYnWR8Yvue
- me/w==
-X-Gm-Message-State: APjAAAXOoND7ah3Ki8l5tLbTKXIzhNjal/er7no7aC409pmO8rAcBb73
- d6A1ydSWZZjbhKoxNKbFlAo=
-X-Google-Smtp-Source: APXvYqwzFLQLK93RztXK1efleqDv65R10XUo4b8mRBiYQQNyRFopUWRdlAyX8rpFzlRV77f0hiP1nQ==
-X-Received: by 2002:a63:561b:: with SMTP id k27mr19892459pgb.380.1564669422641; 
- Thu, 01 Aug 2019 07:23:42 -0700 (PDT)
+ bh=Awhox3F4tQJJinnTUNEkNON8yyKLtYgh7agQgfIyeSY=;
+ b=TytCxoo9QbRBW6+ebXhSsLhKDFhozfFzDjxk5dvbpWpqSzo9GMBqxlaShk3HlbXoc1
+ N0fc+i7DBzo+uG5xza6tnRgVkgNi386NWyHOGCDW+m6f7A0Bb90RzMxQQSrjOxwLgHey
+ ZxshOGIPAM8Rie9P11+F2MtnrTpTDPD7M9YW1pFowqs7ftQvlH9X8z75diwHYWQuXaMR
+ 07hoQWtnGYqGS1Nc3C+Ngx3C2/okCG7i0IjLe5c7lTRyrY2FLnTnPGkX4iCH8sdCIc4G
+ 2PHTUR+iuvCSkr/Pr6L3N+NGKmKseyYvaAACY5LVy3wZObCceT1YnN0J17cmG5fuirH+
+ +cuQ==
+X-Gm-Message-State: APjAAAV7TA50pYaHCwggx8gRXK0DeoMWfEjM7Bjh0d9zD3jvu9i5Po5y
+ kjFfAkgeffN6gET2ekd/pmQ=
+X-Google-Smtp-Source: APXvYqzCHPtdX90V6bs3zx92DwLgxloFoOqGz7sMZeyqiE7sibp9ET/bf7tFBXPW4ALvZrsV6jClfg==
+X-Received: by 2002:a17:90a:5884:: with SMTP id
+ j4mr9381708pji.142.1564669443767; 
+ Thu, 01 Aug 2019 07:24:03 -0700 (PDT)
 Received: from localhost.localdomain
  (p6796086-ipngn28101marunouchi.tokyo.ocn.ne.jp. [114.165.92.86])
- by smtp.gmail.com with ESMTPSA id s7sm4217689pjn.28.2019.08.01.07.23.40
+ by smtp.gmail.com with ESMTPSA id 201sm86387592pfz.24.2019.08.01.07.24.02
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 01 Aug 2019 07:23:41 -0700 (PDT)
+ Thu, 01 Aug 2019 07:24:03 -0700 (PDT)
 From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH] arm64: dts: renesas: r8a77980-condor: sort nodes
-Date: Thu,  1 Aug 2019 23:23:34 +0900
-Message-Id: <1564669414-22553-1-git-send-email-ykaneko0929@gmail.com>
+Subject: [PATCH] arm64: dts: renesas: r8a77980-v3hsk: sort nodes
+Date: Thu,  1 Aug 2019 23:23:52 +0900
+Message-Id: <1564669432-22593-1-git-send-email-ykaneko0929@gmail.com>
 X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_072343_626780_58741311 
-X-CRM114-Status: GOOD (  13.40  )
+X-CRM114-CacheID: sfid-20190801_072404_319706_BD1815DD 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -121,14 +122,14 @@ Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 This patch is based on the master branch of Geert Uytterhoeven's renesas-devel
 tree.
 
- arch/arm64/boot/dts/renesas/r8a77980-condor.dts | 42 ++++++++++++-------------
- 1 file changed, 21 insertions(+), 21 deletions(-)
+ arch/arm64/boot/dts/renesas/r8a77980-v3hsk.dts | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a77980-condor.dts b/arch/arm64/boot/dts/renesas/r8a77980-condor.dts
-index 5a7012b..3dde028 100644
---- a/arch/arm64/boot/dts/renesas/r8a77980-condor.dts
-+++ b/arch/arm64/boot/dts/renesas/r8a77980-condor.dts
-@@ -22,35 +22,20 @@
+diff --git a/arch/arm64/boot/dts/renesas/r8a77980-v3hsk.dts b/arch/arm64/boot/dts/renesas/r8a77980-v3hsk.dts
+index dd14a41..adbfd8f 100644
+--- a/arch/arm64/boot/dts/renesas/r8a77980-v3hsk.dts
++++ b/arch/arm64/boot/dts/renesas/r8a77980-v3hsk.dts
+@@ -22,12 +22,6 @@
  		stdout-path = "serial0:115200n8";
  	};
  
@@ -138,39 +139,10 @@ index 5a7012b..3dde028 100644
 -		reg = <0 0x48000000 0 0x78000000>;
 -	};
 -
--	d3_3v: regulator-0 {
--		compatible = "regulator-fixed";
--		regulator-name = "D3.3V";
--		regulator-min-microvolt = <3300000>;
--		regulator-max-microvolt = <3300000>;
--		regulator-boot-on;
--		regulator-always-on;
--	};
--
--	vddq_vin01: regulator-1 {
-+	d1_8v: regulator-2 {
- 		compatible = "regulator-fixed";
--		regulator-name = "VDDQ_VIN01";
-+		regulator-name = "D1.8V";
- 		regulator-min-microvolt = <1800000>;
- 		regulator-max-microvolt = <1800000>;
- 		regulator-boot-on;
- 		regulator-always-on;
- 	};
- 
--	d1_8v: regulator-2 {
-+	d3_3v: regulator-0 {
- 		compatible = "regulator-fixed";
--		regulator-name = "D1.8V";
--		regulator-min-microvolt = <1800000>;
--		regulator-max-microvolt = <1800000>;
-+		regulator-name = "D3.3V";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
- 		regulator-boot-on;
- 		regulator-always-on;
- 	};
-@@ -90,6 +75,21 @@
+ 	hdmi-out {
+ 		compatible = "hdmi-connector";
+ 		type = "a";
+@@ -63,6 +57,12 @@
  		};
  	};
  
@@ -180,16 +152,7 @@ index 5a7012b..3dde028 100644
 +		reg = <0 0x48000000 0 0x78000000>;
 +	};
 +
-+	vddq_vin01: regulator-1 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VDDQ_VIN01";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+
- 	x1_clk: x1-clock {
+ 	osc1_clk: osc1-clock {
  		compatible = "fixed-clock";
  		#clock-cells = <0>;
 -- 
