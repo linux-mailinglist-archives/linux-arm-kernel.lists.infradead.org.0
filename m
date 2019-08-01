@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1B1D7DD0D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 15:58:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DB377DD17
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 15:59:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gNJuUO4k8Bn4U1410HCS1pigWktF4bt9PjCoFwMiA2s=; b=bFQBEoJqw0zcs6
-	iy1AkNV7xpR5Ed80+7yFXq0+OvOHYCP9UfkBIG3Beb5EK685JyefkfAXJI4+d15WRV8wSddvQLBa2
-	a6PWVVtCb28xBQ9C08GG3Cf8LVu5Mf+ixXrjitz5dieaYfZfUjTYgLlIG35kobZYUch/wC5yUrfiK
-	Bm8qyj41fid1puyOq6hX6DieOo/j5n1SnOFFuof+LsXc/ti9a12qYy9NSr6LHH7GCCfuZLsyLKUPB
-	h2e3fIXW13FmZrH8MyhRzDfAuhq1+OsoovkgQn59TqFxTjKV4swdEWQ+jaSl2Qd1XBdE1trQrfZHO
-	QLkDmXA9hMgYZEKlf3mw==;
+	List-Owner; bh=1p1eeVBcnl8qbgc10uI0CuoSiYwCay6LyWmoKFmFnrc=; b=Yav+U7Zfl4C4ha
+	dAg9Jfe8pjajXqVCdvZxg7nNaUNndV0alBViCJfScE9lxRhuMG+GRlLis+U/xwiLsFpyEAUA6+TVz
+	xTHi0iJxOqYT2xG5LMDLZeWLu+wAsHowSwQ3rjdzBlb1OwYAnf/S8yyABi7XwcchgAnNPCZPe/m5a
+	Sxq0PHro8gBT2N8dF1IsU+WNTic2/dTMowURfm1yUylKA5P/MoXy3/S2UyF0J+9+erjcSn1DBzwBI
+	ghExM0lvJIgE/LyjnpVJstV0kYeMH30t0olpkV2+0HblLTZ0j0KRHjhFKKAAj/7JdSBRJxsSuAWUB
+	HyqVa41albUnijSrqoMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htBbI-0002pA-9b; Thu, 01 Aug 2019 13:58:36 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1htBc2-0003p2-TT; Thu, 01 Aug 2019 13:59:23 +0000
+Received: from mail-wm1-f45.google.com ([209.85.128.45])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htBZe-00012b-By
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 13:56:59 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id x15so64786243wmj.3
+ id 1htBZf-00014C-SX
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 13:57:02 +0000
+Received: by mail-wm1-f45.google.com with SMTP id p74so64737932wme.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 06:56:54 -0700 (PDT)
+ Thu, 01 Aug 2019 06:56:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=IzLVWfUckV6sv4P8WEDAzk1hQ32B7pi/wYsEqMlj44g=;
- b=Xvgc/ocv4Pc3xQCYUrTRgd1+VNE1dfmhH0iQNfMu6puCmTb6dASrUfHhqudDQ/l6vZ
- PUAEHP6UerwDyADMmjnS5gqHhEFfV35Hcls3hEpTVuLbhZK2E08MzCSdaCGYZ/emn+jv
- 5uinTwHTr62F9KdNODy31IgU0aUtyls6tyluZWVjFwW4685WvwpYghMjjwIR0Xq8kqkQ
- aA6RM9Vtz2/Nt/3IDnEoUuBEb9OULYTDXZ3AzKnBMFN7wORSJY0Zv7ixjLSh/oUSc8vH
- Oug2qc/WKuqzu+abb3yh1H8BJNzwlqJQi/NtS0CDRnuyGY7lfAisjhfpwN79Ku9Det70
- b+4g==
+ bh=ymY8XlLqzYRmadRnjQDQGkphqr2luGmasuFPo7DhH7o=;
+ b=2LjASj6ZPXjM8a9/RD1a+jt2qhNgbUyYXA43vR/pOq+SYl+8vAObXL8DdJHHoGv9eh
+ RJcRRYEc7bvRoK19liEx2kSMCyCRRu50sCEuq/HKidq3pRCevXWCuiHdKNCobvSDwC9N
+ HG3sx8VbMxAQX6BE3+CIZDt4+OTW8/PgZtouLcX/j+cKecFLJEjm5QJviyhPi7hh1/rN
+ ejGLManItUH53hoilc/3hrSDvTJ6pOYMSPMfp1yejhLaSkEsS9bJgJ0ejf8Tq9+vPDG4
+ PxWIzdEJaivLAJ9Lq73Nn7q40daRJl04f8wNyJULmmfHhsY1/qP+EVuc/QRXeLVL9w5D
+ bgEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=IzLVWfUckV6sv4P8WEDAzk1hQ32B7pi/wYsEqMlj44g=;
- b=SW6ErwmBXwrnOw69KqtHby6TcsfWkUUMQUi9nUBSsN01t4mm7xy07OZjHhx3t6lWEh
- DKM5Vk8N7DmJEmt54oYxfhVcOmLo5CjE8bwjggvu+epoOH5tByVZT+em+D/K5V4ufTDN
- KMv+FYsVYLgvpbGfgfVTc405kU8xpPQSWEEhgrU3rcxei7ZdHUDRNhxq0DyRLNVyEV6m
- 5QGZtamfffH668jIV/p37+RMWlhdSNJ6jZs/dFI8IqgzmjsWrQ9jGvkv7/URJgLxkQbU
- /J/a5FqkTfurFvvIbi1NLvvXGPJLDphs5KcItDTkUTbBGXCsyygWS5faRNx9iIv5Mjwj
- 06Wg==
-X-Gm-Message-State: APjAAAWrG6AuDANpWdZg2Uzqg3HmHOoEifE6B8hwkwkDWICYtcdVsud8
- IICPzRpSfbXCwL0SI3/UPBqNkg==
-X-Google-Smtp-Source: APXvYqwpYdU7FKKmCrsk0lBieaLk0ALgoNb8lcKOLGBc4eBXZCl0je/gVXaFOUnT7ZqjnwT5ZaUBCg==
-X-Received: by 2002:a1c:b706:: with SMTP id h6mr113270956wmf.119.1564667812883; 
- Thu, 01 Aug 2019 06:56:52 -0700 (PDT)
+ bh=ymY8XlLqzYRmadRnjQDQGkphqr2luGmasuFPo7DhH7o=;
+ b=oSF1zFX1MYHx1whwA4KUMQC0gqKPADVOJ7Torw+2zjMEOyh24hW6+AttlnvZcAfCT6
+ 4HdXG+jLxl4cAc82+CHrhao/bIVOQULUi7pu02Qhxhl2pDh2XQk/r+mtnGh+DWpvDJpP
+ 8eZiy97vzHR3xZRuwYrwsCnnEIWyYRovPfsJ1maqh5313sOpNSeNiv6LgyYwV+L7bc7A
+ pKzvufFo5qKc9AVIPLd4yswJGdLtk4nc10TcKNPvPFgzBOrMDdkWvSTnWnF/JoHCZrt1
+ T3wpcv8ufmsScvC4xQkZ0R6mK6dQeO3pD3IaVQ9eXi0c9y5Fjx2R3h6m2jeEBj1iU0hc
+ P6GQ==
+X-Gm-Message-State: APjAAAVBTf7t9xvMyyLZfw+7CKUB7r2Vr7vnxt2HqKsO/GX8BxDAp93U
+ GOXopHwgw4Es8MkPEkcqxRTO4A==
+X-Google-Smtp-Source: APXvYqxBAZ2cQA5w/qoOXEWsvZuTuwT0jygHMDWFMeK5+sGZ8syXYWkBnCpAIL4Z9nwTkdUWjbSQ+w==
+X-Received: by 2002:a05:600c:214c:: with SMTP id
+ v12mr116662699wml.28.1564667813658; 
+ Thu, 01 Aug 2019 06:56:53 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
  by smtp.gmail.com with ESMTPSA id u6sm69659952wml.9.2019.08.01.06.56.52
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 01 Aug 2019 06:56:52 -0700 (PDT)
+ Thu, 01 Aug 2019 06:56:53 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: robh+dt@kernel.org
-Subject: [RFC 7/9] dt-bindings: phy: meson-g12a-usb3-pcie-phy: convert to yaml
-Date: Thu,  1 Aug 2019 15:56:42 +0200
-Message-Id: <20190801135644.12843-8-narmstrong@baylibre.com>
+Subject: [RFC 8/9] dt-bindings: serial: meson-uart: convert to yaml
+Date: Thu,  1 Aug 2019 15:56:43 +0200
+Message-Id: <20190801135644.12843-9-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190801135644.12843-1-narmstrong@baylibre.com>
 References: <20190801135644.12843-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_065654_423832_A8BB26D1 
-X-CRM114-Status: GOOD (  13.80  )
+X-CRM114-CacheID: sfid-20190801_065655_936562_2073D486 
+X-CRM114-Status: GOOD (  15.69  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32b listed in]
- [list.dnswl.org]
+ no trust [209.85.128.45 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -95,7 +95,7 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org,
- kishon@ti.com, linux-arm-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
  Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -104,106 +104,136 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- .../bindings/phy/meson-g12a-usb3-pcie-phy.txt | 22 -------
- .../phy/meson-g12a-usb3-pcie-phy.yaml         | 61 +++++++++++++++++++
- 2 files changed, 61 insertions(+), 22 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/meson-g12a-usb3-pcie-phy.txt
- create mode 100644 Documentation/devicetree/bindings/phy/meson-g12a-usb3-pcie-phy.yaml
+ .../bindings/serial/amlogic,meson-uart.txt    | 38 ----------
+ .../bindings/serial/amlogic,meson-uart.yaml   | 75 +++++++++++++++++++
+ 2 files changed, 75 insertions(+), 38 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/serial/amlogic,meson-uart.txt
+ create mode 100644 Documentation/devicetree/bindings/serial/amlogic,meson-uart.yaml
 
-diff --git a/Documentation/devicetree/bindings/phy/meson-g12a-usb3-pcie-phy.txt b/Documentation/devicetree/bindings/phy/meson-g12a-usb3-pcie-phy.txt
+diff --git a/Documentation/devicetree/bindings/serial/amlogic,meson-uart.txt b/Documentation/devicetree/bindings/serial/amlogic,meson-uart.txt
 deleted file mode 100644
-index 7cfc17e2df31..000000000000
---- a/Documentation/devicetree/bindings/phy/meson-g12a-usb3-pcie-phy.txt
+index c06c045126fc..000000000000
+--- a/Documentation/devicetree/bindings/serial/amlogic,meson-uart.txt
 +++ /dev/null
-@@ -1,22 +0,0 @@
--* Amlogic G12A USB3 + PCIE Combo PHY binding
+@@ -1,38 +0,0 @@
+-Amlogic Meson SoC UART Serial Interface
+-=======================================
+-
+-The Amlogic Meson SoC UART Serial Interface is present on a large range
+-of SoCs, and can be present either in the "Always-On" power domain or the
+-"Everything-Else" power domain.
+-
+-The particularity of the "Always-On" Serial Interface is that the hardware
+-is active since power-on and does not need any clock gating and is usable
+-as very early serial console.
 -
 -Required properties:
--- compatible:	Should be "amlogic,meson-g12a-usb3-pcie-phy"
--- #phys-cells:	must be 1. The cell number is used to select the phy mode
--  as defined in <dt-bindings/phy/phy.h> between PHY_TYPE_USB3 and PHY_TYPE_PCIE
--- reg:		The base address and length of the registers
--- clocks:	a phandle to the 100MHz reference clock of this PHY
--- clock-names:	must be "ref_clk"
--- resets:	phandle to the reset lines for the PHY control
--- reset-names:	must be "phy"
+-- compatible : compatible: value should be different for each SoC family as :
+-	- Meson6 : "amlogic,meson6-uart"
+-	- Meson8 : "amlogic,meson8-uart"
+-	- Meson8b : "amlogic,meson8b-uart"
+-	- GX (GXBB, GXL, GXM) : "amlogic,meson-gx-uart"
+-	eventually followed by : "amlogic,meson-ao-uart" if this UART interface
+-	is in the "Always-On" power domain.
+-- reg : offset and length of the register set for the device.
+-- interrupts : identifier to the device interrupt
+-- clocks : a list of phandle + clock-specifier pairs, one for each
+-	   entry in clock names.
+-- clock-names :
+-   * "xtal" for external xtal clock identifier
+-   * "pclk" for the bus core clock, either the clk81 clock or the gate clock
+-   * "baud" for the source of the baudrate generator, can be either the xtal
+-	or the pclk.
 -
--Example:
--	usb3_pcie_phy: phy@46000 {
--		compatible = "amlogic,g12a-usb3-pcie-phy";
--		reg = <0x0 0x46000 0x0 0x2000>;
--		clocks = <&clkc CLKID_PCIE_PLL>;
--		clock-names = "ref_clk";
--		resets = <&reset RESET_PCIE_PHY>;
--		reset-names = "phy";
--		#phy-cells = <1>;
--	};
-diff --git a/Documentation/devicetree/bindings/phy/meson-g12a-usb3-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/meson-g12a-usb3-pcie-phy.yaml
+-e.g.
+-uart_A: serial@84c0 {
+-	compatible = "amlogic,meson-gx-uart";
+-	reg = <0x0 0x84c0 0x0 0x14>;
+-	interrupts = <GIC_SPI 26 IRQ_TYPE_EDGE_RISING>;
+-	/* Use xtal as baud rate clock source */
+-	clocks = <&xtal>, <&clkc CLKID_UART0>, <&xtal>;
+-	clock-names = "xtal", "pclk", "baud";
+-};
+diff --git a/Documentation/devicetree/bindings/serial/amlogic,meson-uart.yaml b/Documentation/devicetree/bindings/serial/amlogic,meson-uart.yaml
 new file mode 100644
-index 000000000000..fe4df6bd51b2
+index 000000000000..e150e3504fa0
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/meson-g12a-usb3-pcie-phy.yaml
-@@ -0,0 +1,61 @@
++++ b/Documentation/devicetree/bindings/serial/amlogic,meson-uart.yaml
+@@ -0,0 +1,75 @@
 +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
 +# Copyright 2019 BayLibre, SAS
 +%YAML 1.2
 +---
-+$id: "http://devicetree.org/schemas/phy/meson-g12a-usb3-pcie-phy.yaml#"
++$id: "http://devicetree.org/schemas/serial/amlogic,meson-uart.yaml#"
 +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
 +
-+title: Amlogic G12A USB3 + PCIE Combo PHY
++title: Amlogic Meson SoC UART Serial Interface
 +
 +maintainers:
 +  - Neil Armstrong <narmstrong@baylibre.com>
 +
++description: |
++  The Amlogic Meson SoC UART Serial Interface is present on a large range
++  of SoCs, and can be present either in the "Always-On" power domain or the
++  "Everything-Else" power domain.
++
++  The particularity of the "Always-On" Serial Interface is that the hardware
++  is active since power-on and does not need any clock gating and is usable
++  as very early serial console.
++
 +properties:
 +  compatible:
-+    enum:
-+      - amlogic,g12a-usb3-pcie-phy
++    oneOf:
++      - description: Allways-on power domain UART controller
++        items:
++        - enum:
++          - amlogic,meson6-uart
++          - amlogic,meson8-uart
++          - amlogic,meson8b-uart
++          - amlogic,meson-gx-uart
++        - const: amlogic,meson-ao-uart
++      - description: Everything-Else power domain UART controller
++        enum:
++        - amlogic,meson6-uart
++        - amlogic,meson8-uart
++        - amlogic,meson8b-uart
++        - amlogic,meson-gx-uart
 +
 +  reg:
 +    maxItems: 1
 +
-+  clocks:
++  interrupts:
 +    maxItems: 1
-+    description:
-+      A phandle to the clock of this PHY
++
++  clocks:
++    minItems: 3
++    maxItems: 3
 +
 +  clock-names:
++    description: |
++      "xtal" for external xtal clock identifier
++      "pclk" for the bus core clock, either the clk81 clock or the gate clock
++      "baud" for the source of the baudrate generator, can be either the xtal
++      or the pclk.
 +    items:
-+      - const: ref_clk
-+
-+  resets:
-+    maxItems: 1
-+    description:
-+      A phandle to the reset line of this PHY
-+
-+  reset-names:
-+    items:
-+      - const: phy
-+
-+  "#phy-cells":
-+    const: 1
++      - const: xtal
++      - const: pclk
++      - const: baud
 +
 +required:
 +  - compatible
 +  - reg
 +  - clocks
 +  - clock-names
-+  - resets
-+  - reset-names
-+  - "#phy-cells"
 +
 +examples:
 +  - |
-+    phy@46000 {
-+          compatible = "amlogic,meson-g12a-usb3-pcie-phy";
-+          reg = <0x46000 0x2000>;
-+          clocks = <&ref_clk>;
-+          clock-names = "ref_clk";
-+          resets = <&phy_reset>;
-+          reset-names = "phy";
-+          #phy-cells = <1>;
++    serial@84c0 {
++          compatible = "amlogic,meson-gx-uart";
++          reg = <0x84c0 0x14>;
++          interrupts = <26>;
++          clocks = <&xtal>, <&pclk>, <&xtal>;
++          clock-names = "xtal", "pclk", "baud";
 +    };
 -- 
 2.22.0
