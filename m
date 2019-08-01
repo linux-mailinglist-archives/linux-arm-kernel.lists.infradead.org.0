@@ -2,58 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67A6D7D581
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 08:30:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 520167D58B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 08:35:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VnBZguKlcO0QyRdqa5D1JV7kbDS4MKoXusot2CWH7IM=; b=LgKyISQyhQ7V23
-	PkYbiQAxnnbpG1pSYmvbX2x0qDjhkpTdrtIeE4qcvs5l62X+Vwqa1CekwXeSa8B8Q3P2n1KeMepXR
-	hANySZbyDITDuRd8sBqakrcuv8CkHIaDIoWrsNMzY5AClRwMVUPguj1Tb/zZLE5Smbom6G8VxdRRn
-	uS5EL2CPYdU9tB2QSSVsvuw0pcUq+1WSC9VsKuw/QHVEUHnpW04nvejCbDUU8M/YZvLU7ozlOj+so
-	zf0SO/qWdiFqdhVHfsEChWimxlv6qRDO8eVMyy5ENen1PP32e0nkMds2AiZB3Cd7nREN0nNwDlwub
-	W97YbklAU8fyVW0bA77g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TqENdDeDrSDfXQWdyOrzL0gBUYXVPX7fu+DstFHloS8=; b=qBuZARxpxJuUMQ
+	d3YIwcnTaGUmeushdyWHKWj4VUGBsTqVwqkGmmL+tw8XRUf7otsqDsaU3lZkH+LWd9vjugqt+GYyw
+	kW1cdayoJsuMlbJBvTdLSb6W1+JbiaLdlIzEWQbzsSyf6VsZalCqTLO9ULDr2WPnyZFQVBKT6KsMf
+	Sfmd+biLqkkHkQh5Z9KZNhWjY/e6iGdpKRSiS+5E66Jbs18Ttd4EZ0GeNeMDEHbx8MDjdX9dgviBb
+	m8e7kzcyqCPb975WpixnN27TJtufOUrM5sdPys5eJafMcz09PyBzMNTq/x30iH3uLv+4Bb2M/8EWr
+	GKEpYnk4zc2zHHYbKvbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht4bi-00083K-0J; Thu, 01 Aug 2019 06:30:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1ht4ba-00082c-H1
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 06:30:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A7C6C337;
- Wed, 31 Jul 2019 23:30:25 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9CBC13F694;
- Wed, 31 Jul 2019 23:32:31 -0700 (PDT)
+	id 1ht4gt-0001Za-BT; Thu, 01 Aug 2019 06:35:55 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1ht4gm-0001ZD-9P
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 06:35:49 +0000
+Received: by mail-pl1-x643.google.com with SMTP id t14so31684664plr.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 31 Jul 2019 23:35:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Vy7fiSVgkFbOoM9oVuh/IZ30LQ8S9jpUhyBj3j5WAYE=;
+ b=ae8KMe7vtw9CbOVo5NW8OvD+W3A0H5gmbjw08lE21V5g/XHpJKjPHpZ/4oz1312HMR
+ gNLZHyAOxxb8maEL9vCVgtaRtYNEQPx24fbVagwL6bKGPWrqDPCYHxXrKM+LFxKSLyXv
+ dFo+a9IZYyXAOcp8Vsiv4c3YJh9HHtXgSllMpNFr8PAGLOUpzWaBd6pZ6B+zJ6+yRkyk
+ K6uldheuuNBHLqB3mgE42PqNe8v/fHXlwV3zJPVQ2inDSw0XhDAg2GNrwsN/g0mzWrdO
+ rvej6sD9a41ViP7+3hsYS+G+QhCGpzNQ/bdeqlPzVtwzND5mVrRD0tSHN3hroO+PvfGh
+ /lYg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Vy7fiSVgkFbOoM9oVuh/IZ30LQ8S9jpUhyBj3j5WAYE=;
+ b=pQkcpYAkbosgfGKZZQeAFD1LJzI6IiyrsKpJOTloG8Yzk7iXcNw/xsFuMFLFneOYoN
+ /DnFPdktB2u5+o74VJZf1P7Lll/csIfsKMiKO1u8nhNwlsvJWg0Uvct6MhcchNWc68r2
+ kHcePOoPNxbicRH1zpK41Jx7dvjaa1A39whf40amzSmkL8VNb4Dredqanm83UZMKNie8
+ uAMM8+I+PlMMokXjYKGQDWVwiKUo6uVqC5SUq8285WIftWyLXHLBytiu8DkbwRyrUH4b
+ sWSLlZqRRLxARNYE64MIvpg+0wmyQ867T17p/ApPOXm1ezNiXqtrVJvsDEya4RuTmyI7
+ PYXg==
+X-Gm-Message-State: APjAAAXvQcTp8Z7qkDwCgeLWSmhm+r4+DT6isnMP48AIPVz/Fl6sZJ7k
+ Tc6zwKaFIMBi75U4QWRZNj6W1DI7Y18=
+X-Google-Smtp-Source: APXvYqxzLt9itVfefRAkcodWXvJsyh1SKFRKmzWXDdVEME2BmOSrNLsKad//WkasBmqGS2/yrA2+SA==
+X-Received: by 2002:a17:902:820c:: with SMTP id
+ x12mr125486939pln.216.1564641347199; 
+ Wed, 31 Jul 2019 23:35:47 -0700 (PDT)
+Received: from localhost ([122.172.28.117])
+ by smtp.gmail.com with ESMTPSA id f15sm4067463pje.17.2019.07.31.23.35.46
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 31 Jul 2019 23:35:46 -0700 (PDT)
+Date: Thu, 1 Aug 2019 12:05:44 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Julien Thierry <julien.thierry@arm.com>
 Subject: Re: [PATCH v4.4 V2 25/43] arm64: Move BP hardening to
  check_and_switch_context
-To: Viresh Kumar <viresh.kumar@linaro.org>
+Message-ID: <20190801063544.ruw444isj5uojjdx@vireshk-i7>
 References: <cover.1562908074.git.viresh.kumar@linaro.org>
  <f655aaa158af070d45a2bd4965852b0c97a08838.1562908075.git.viresh.kumar@linaro.org>
  <59b252cf-9cb7-128b-4887-c21a8b9b92a9@arm.com>
  <20190801050940.h65crfawrdifsrgg@vireshk-i7>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <86354576-fc54-a8b7-4dc9-bc613d59fb17@arm.com>
-Date: Thu, 1 Aug 2019 07:30:23 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ <86354576-fc54-a8b7-4dc9-bc613d59fb17@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190801050940.h65crfawrdifsrgg@vireshk-i7>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <86354576-fc54-a8b7-4dc9-bc613d59fb17@arm.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_233026_647312_8E45A0A6 
-X-CRM114-Status: GOOD (  25.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_233548_362305_1AC7A67F 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,113 +113,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 01/08/2019 06:09, Viresh Kumar wrote:
-> On 31-07-19, 14:09, Julien Thierry wrote:
->>
->>
->> On 12/07/2019 06:28, Viresh Kumar wrote:
->>> From: Marc Zyngier <marc.zyngier@arm.com>
->>>
->>> commit a8e4c0a919ae310944ed2c9ace11cf3ccd8a609b upstream.
->>>
->>> We call arm64_apply_bp_hardening() from post_ttbr_update_workaround,
->>> which has the unexpected consequence of being triggered on every
->>> exception return to userspace when ARM64_SW_TTBR0_PAN is selected,
->>> even if no context switch actually occured.
->>>
->>> This is a bit suboptimal, and it would be more logical to only
->>> invalidate the branch predictor when we actually switch to
->>> a different mm.
->>>
->>> In order to solve this, move the call to arm64_apply_bp_hardening()
->>> into check_and_switch_context(), where we're guaranteed to pick
->>> a different mm context.
->>>
->>> Acked-by: Will Deacon <will.deacon@arm.com>
->>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->>> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
->>> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
->>> ---
->>>  arch/arm64/mm/context.c | 4 ++--
->>>  1 file changed, 2 insertions(+), 2 deletions(-)
->>>
->>> diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
->>> index be42bd3dca5c..de5afc27b4e6 100644
->>> --- a/arch/arm64/mm/context.c
->>> +++ b/arch/arm64/mm/context.c
->>> @@ -183,6 +183,8 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
->>>  	raw_spin_unlock_irqrestore(&cpu_asid_lock, flags);
->>>  
->>>  switch_mm_fastpath:
->>> +	arm64_apply_bp_hardening();
->>> +
->>>  	cpu_switch_mm(mm->pgd, mm);
->>>  }
->>>  
->>> @@ -193,8 +195,6 @@ asmlinkage void post_ttbr_update_workaround(void)
->>>  			"ic iallu; dsb nsh; isb",
->>>  			ARM64_WORKAROUND_CAVIUM_27456,
->>>  			CONFIG_CAVIUM_ERRATUM_27456));
->>> -
->>> -	arm64_apply_bp_hardening();
->>
->> Patches 22 and 23 factorize the post_ttbr_update_workaround() and move
->> it to C code just so we would and a call to arm64_apply_bp_hardening()
->> in patch 24 that now gets moved elsewhere?
->>
->> Is it really worth backporting patches 22 and 23?
+On 01-08-19, 07:30, Julien Thierry wrote:
+> I must admit I am not familiar with backport/stable process enough. But
+> personally I think the your suggestion seems more sensible than
+> backporting 4 patches.
 > 
-> If I can merge patch 24 and 25 into a single patch while backporting,
-> then patch 22 and 23 won't be required. I am not sure how should the
-> commit log look like in that case though :)
-> 
-> Is mentioning both the upstream commit ids along with log of the first
-> patch (which was more important) enough, like this ?
-> 
+> Or you can maybe ignore patch 25 and say in patch 24 that among the
+> changes made for the 4.4 codebase, the call arm64_apply_bp_hardening()
+> was moved from post_ttbr_update_workaround as it doesn't exist and
+> placed in check_and_switch_context() as it is its final destination.
 
-I must admit I am not familiar with backport/stable process enough. But
-personally I think the your suggestion seems more sensible than
-backporting 4 patches.
+Done that and dropped the other two patches.
 
-Or you can maybe ignore patch 25 and say in patch 24 that among the
-changes made for the 4.4 codebase, the call arm64_apply_bp_hardening()
-was moved from post_ttbr_update_workaround as it doesn't exist and
-placed in check_and_switch_context() as it is its final destination.
+> However, I really don't know what's the best way to proceed according to
+> existing practices. So input from someone else would be welcome.
 
-However, I really don't know what's the best way to proceed according to
-existing practices. So input from someone else would be welcome.
-
-Thanks,
-
-Julien
-
-> Author: Will Deacon <will.deacon@arm.com>
-> Date:   Wed Jan 3 11:17:58 2018 +0000
-> 
->     arm64: Add skeleton to harden the branch predictor against aliasing attacks
->     
->     commit 0f15adbb2861ce6f75ccfc5a92b19eae0ef327d0 upstream.
->     commit a8e4c0a919ae310944ed2c9ace11cf3ccd8a609b upstream.
->     
->     Aliasing attacks against CPU branch predictors can allow an attacker to
->     redirect speculative control flow on some CPUs and potentially divulge
->     information from one context to another.
->     
->     This patch adds initial skeleton code behind a new Kconfig option to
->     enable implementation-specific mitigations against these attacks for
->     CPUs that are affected.
->     
->     Co-developed-by: Marc Zyngier <marc.zyngier@arm.com>
->     Signed-off-by: Will Deacon <will.deacon@arm.com>
->     Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
->     [ v4.4: Changes made according to 4.4 codebase ]
->     Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> 
+Lets see if someone comes up and ask me to do something else :)
 
 -- 
-Julien Thierry
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
