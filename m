@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0C037D2C0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 03:19:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 549127D2D9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 03:28:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HmCfNQDSlvmT68VH7cyL9JHGBknqol65veLmahiacBo=; b=skEhcgspUtkjpS
-	AB68TKDPrh0344FxccfkQq+g2eeS5TvaPqt0kyAR8roEZXVkVHVnxOWOv23uVA71K0Fm+UNhQClQo
-	F5JtvN5/qb0Aft7jWtLz6Rp+D0a/LL59YVg6jZHLsMyX7J9btuaUR9uDqjmnwyyufk8MCRJLqv66i
-	eLDQOPAfm1J6fcQeEscd090Vr4qh5+/KzT+vrUBgWLk+2cvSLznlv9nOUtG5Gqf/U8qMHEnYf/ikn
-	CP3337xrj3GglsrzOa3NxTos6N/3lak0kbU4qENCkYAsREuV9CMCI9LuaJ+lm9a+Z6OwwBL5ZzcNw
-	HaAP35+LOWrsOMLPmdIw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=1qXtr2zqiyt+DiM19NakFxxC13E57jqIJ4Wxdm2638c=; b=oI75U7PZrQxM5jHgm6QwkrQUmO
+	JEm9WhHotKEnS9qY7bUrdwD6iRSKPydtkpwpWjfa/MPLROz1XQqqXJgw8KLBNvRqzeOpWgr2adpwk
+	RhS+QSXh7cJAAzexpvS3DEvtrnRc35pDYCDutEPbSy7fydwEKVhMsSVICWi/Vi7AdHnasIpTNG+t7
+	zx6lEOxEqgXw0wDhfhSjKUHiUXHcm44peoaU+5mdnydBFpBMsjYriL2IsGg1Bj1vqupV1t6QQzDAA
+	fn0dnuBhCb/a2Wy7LLBFSRM5t8mYPslnet4dfBxudfSV5d/DegC+INslezARhQ/5Tm2ZFNwVTquXP
+	OCUSQuBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hszkr-0008QO-In; Thu, 01 Aug 2019 01:19:41 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1hsztf-00046z-Uo; Thu, 01 Aug 2019 01:28:47 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hszkj-0008FZ-9a
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 01:19:34 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id y16so47662633vsc.3
+ id 1hsztY-00046J-C0
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 01:28:41 +0000
+Received: by mail-qt1-x841.google.com with SMTP id h18so68578348qtm.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 18:19:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=13TUXhRMp3FAWj7cl2ooNj24+BeTIKfGauogLqkOLOo=;
- b=BIabTuIURlnazJx47VnIx9ebu5ZLsFf/42Kw28foq6a4O1MqfFDdXUmuXl5bOTzNTo
- c73SwUsLt+l0kJ1xwkufbtMpFhLjLMhvQg3lYTvehg0Op0rpF2GgeCFZ8uv9wjxg04Pp
- olM/nMcYLH2YWWO4zAhX9bfpr52P03hhXUPW7aWM2tItIHCjGDJo/Qz0n/sUj4XAkSKL
- EId+tiTXJFf+YIa1PuVjNE0EBBIjyaJ0fkWw66wjByiyWE1EFDZb0Rsd72e1nBVRoeM9
- d/Zz+3cQbvViAHyuNghDy/3K2gJ0sHL2iWOL6Ge4o808jyhzrorTi4rMtJmmItPhAhPv
- kArQ==
+ Wed, 31 Jul 2019 18:28:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=vkqM9EeVWWbKA5vw3EmFiWRlvOGZd/rCtzh5bKIOEKs=;
+ b=TtXwCp1OmcqGOrZ/c5whDtNcVaG6swgTRzPBUJuiRzCXTtzSxUzHusXVvfOz7SDDZS
+ E4eatwtbNzvNIF6WOkkZR99pEImwQMK0X/g/SrkKym0S8XrOtXBjzDtKEDaO4f41BALw
+ 61PBSxKwwb5YEqNhcuN2/oyXLNixhjavktSfy6uyCY6KwoyBbVdqIt5G/9hmY/hwZCqb
+ VltYx6kvHnnQgloIBw3Ult42PYspiiw30JRcXagTL6Nh+023bw2ZNWkxUDji7N8SLsTF
+ wMr7AtEcnKZhCuYSzZkufDGhvCvpRCN9bhY5ZUIoWmCdhCJY8ya9CSfHB+RAk7enEVu4
+ 0Zsg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=13TUXhRMp3FAWj7cl2ooNj24+BeTIKfGauogLqkOLOo=;
- b=UlIF7Mgi+1HQZvMx54SdVH13vC+2MHTJudc1dWqqvnE/w7bx2NvUX4mLxmE92IFFDu
- dBPWkFlc7txuTOqhyVNYrEczbZUWrbSOzO7buhZi8BIa+MIb56caKxzz0yTn6GI2dadW
- jA7/EOf65NZmA1NtHnEHOlqLC0K6yPdt06BVrF2i/f1N2ii6/anuaQvoFMvSX94jbvfL
- rjyY1uNB1Sq0b+SLf5xdXU4ggC2+sXNwkKbEZpIBHryzr5MEmYaPtc+0s942Lqt1RDGu
- CrYKwOWW0QedTxUOL0+SWVvsG/WduucPLo1f7iAJtq7Uj75yjwqzQBvZ8TbrakPq1kBP
- H7cQ==
-X-Gm-Message-State: APjAAAUKJuDbxHv3IZcXAQuWpXKTTjyu39uF4Tlwn5UdjYGNDqo41kuj
- xBCqqEVTqCrRu9oyQV7fVIMX/OAU1Qvwhl9XT5UXCw==
-X-Google-Smtp-Source: APXvYqz7JwjN0CekQ/43wMyQXbHgfz3y9aePLubTv4LPS5W0Flo3K0LVkKv0dmpkKDEQfes+y+C2dhitqv7S+3ZqA10=
-X-Received: by 2002:a67:e906:: with SMTP id c6mr32908601vso.82.1564622368701; 
- Wed, 31 Jul 2019 18:19:28 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190705080231.123522-1-pcc@google.com>
- <20190712193846.174893-1-pcc@google.com>
- <20190731164818.m2und6msyhlbf5oi@willie-the-truck>
-In-Reply-To: <20190731164818.m2und6msyhlbf5oi@willie-the-truck>
-From: Peter Collingbourne <pcc@google.com>
-Date: Wed, 31 Jul 2019 18:19:17 -0700
-Message-ID: <CAMn1gO51aDnLLMNkr36T3UFVEN48QczOa46YriznYrSqaJF=wA@mail.gmail.com>
-Subject: Re: [PATCH v2] arm64: Add support for relocating the kernel with RELR
- relocations
-To: Will Deacon <will@kernel.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=vkqM9EeVWWbKA5vw3EmFiWRlvOGZd/rCtzh5bKIOEKs=;
+ b=h/XKJU1ydT+htBL1BoL/wX40Gis6ycaV0BYgbN7yQbIxvqCSbO+fIbTeeqeygfYZ/k
+ 427I3/TrpWuykPaet8V6nQmYa3IqjV6La3/I77ckEGms5lOWvPhfrM6AUala7NnDi57h
+ VhPIarh0XGxu9bwnq1GQ9zblIHZ3gU/Lx0+X+8jU3vsns6Mw1OG9Vcf+2900AQKHzfDg
+ qkUZgfPsbtuHepXuFkGrfCphumA9+oFr4zgC0VtTAdJfSWG6I0eQJRGDB5qupSqNhsXN
+ ouIzkxXJCtMt/2NSUTjrS6ALeTi3oPaSE/C9RptPe2NvLI9MSrI8yEEQnlq/F53Q0DiL
+ Gsdg==
+X-Gm-Message-State: APjAAAWWthPImodZGdZvkMqN1luSocK8bRVWfYkt01Vzv4sRnVQ+gpqi
+ P4yfp3nPzU/TiSyGltNJplM=
+X-Google-Smtp-Source: APXvYqzrdYFVajCv/ELm7UeBTS84YqJ+gPNjTEeZ9kzMyJCajmN9OwLd9Xw5Ih1cdeCeEn15zw3Ycw==
+X-Received: by 2002:ac8:2535:: with SMTP id 50mr87216438qtm.373.1564622919238; 
+ Wed, 31 Jul 2019 18:28:39 -0700 (PDT)
+Received: from lepton.domain.name ([191.243.232.18])
+ by smtp.gmail.com with ESMTPSA id x205sm32130536qka.56.2019.07.31.18.28.36
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 31 Jul 2019 18:28:38 -0700 (PDT)
+From: =?UTF-8?q?Andr=C3=A9=20Roth?= <neolynx@gmail.com>
+To: linux-omap@vger.kernel.org
+Subject: [PATCH 1/3] OMAP3: PM: Set/clear T2 bit for Smartreflex on TWL
+Date: Thu,  1 Aug 2019 03:28:21 +0200
+Message-Id: <20190801012823.28730-2-neolynx@gmail.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190801012823.28730-1-neolynx@gmail.com>
+References: <20190801012823.28730-1-neolynx@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_181933_337439_61ACDC11 
-X-CRM114-Status: GOOD (  29.48  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190731_182840_438517_0739FA58 
+X-CRM114-Status: GOOD (  17.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (neolynx[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -86,8 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,160 +97,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Nick Desaulniers <ndesaulniers@google.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Nishanth Menon <nm@ti.com>, Kevin Hilman <khilman@ti.com>,
+ Thara Gopinath <thara@ti.com>, Shweta Gulati <shweta.gulati@ti.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 9:48 AM Will Deacon <will@kernel.org> wrote:
->
-> On Fri, Jul 12, 2019 at 12:38:46PM -0700, Peter Collingbourne wrote:
-> > RELR is a relocation packing format for relative relocations.
-> > The format is described in a generic-abi proposal:
-> > https://groups.google.com/d/topic/generic-abi/bX460iggiKg/discussion
-> >
-> > The LLD linker can be instructed to pack relocations in the RELR
-> > format by passing the flag --pack-dyn-relocs=relr.
-> >
-> > This patch adds a new config option, CONFIG_RELR. Enabling this option
-> > instructs the linker to pack vmlinux's relative relocations in the RELR
-> > format, and causes the kernel to apply the relocations at startup along
-> > with the RELA relocations. RELA relocations still need to be applied
-> > because the linker will emit RELA relative relocations if they are
-> > unrepresentable in the RELR format (i.e. address not a multiple of 2).
-> >
-> > Enabling CONFIG_RELR reduces the size of a defconfig kernel image
-> > with CONFIG_RANDOMIZE_BASE by 3.5MB/16% uncompressed, or 550KB/5%
-> > compressed (lz4).
-> >
-> > Signed-off-by: Peter Collingbourne <pcc@google.com>
-> > Tested-by: Nick Desaulniers <ndesaulniers@google.com>
-> > Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-> > ---
-> > Changes in v2:
-> > - Reverted change to RELA processing
-> > - Added more comments, as requested by Nick and Will
-> > - Added a feature test for NM and OBJCOPY
-> > - Made CONFIG_RELR=y the default if the tools support it
-> >
-> >  arch/arm64/Kconfig              | 10 ++++
-> >  arch/arm64/Makefile             |  4 ++
-> >  arch/arm64/kernel/head.S        | 96 ++++++++++++++++++++++++++++++---
-> >  arch/arm64/kernel/vmlinux.lds.S |  9 ++++
-> >  init/Kconfig                    |  3 ++
-> >  scripts/tools-support-relr.sh   | 16 ++++++
-> >  6 files changed, 132 insertions(+), 6 deletions(-)
-> >  create mode 100755 scripts/tools-support-relr.sh
-> >
-> > diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> > index 7442edbcabfc3..cf3907d21d097 100644
-> > --- a/arch/arm64/Kconfig
-> > +++ b/arch/arm64/Kconfig
-> > @@ -1476,6 +1476,16 @@ config RELOCATABLE
-> >         relocation pass at runtime even if the kernel is loaded at the
-> >         same address it was linked at.
-> >
-> > +config RELR
-> > +     bool "Use RELR relocation packing"
-> > +     depends on RELOCATABLE && TOOLS_SUPPORT_RELR
-> > +     default y
-> > +     help
-> > +       Store the kernel's dynamic relocations in the RELR relocation packing
-> > +       format. Requires a compatible linker (currently only LLD supports
->
-> Drop "currently" because it will just rot
+From: Thara Gopinath <thara@ti.com>
 
-Done in v3.
+Voltage control on TWL can be done using VMODE/I2C1/I2C_SR.
+Since almost all platforms use I2C_SR on omap3, omap3_twl_init by
+default expects that OMAP's I2C_SR is plugged in to TWL's I2C
+and calls omap3_twl_set_sr_bit. On platforms where I2C_SR is not connected,
+the board files are expected to call omap3_twl_set_sr_bit(false) to
+ensure that I2C_SR path is not set for voltage control and prevent
+the default behavior of omap3_twl_init.
 
-> > +       this feature), as well as compatible NM and OBJCOPY utilities
-> > +       (llvm-nm and llvm-objcopy are compatible).
-> > +
-> >  config RANDOMIZE_BASE
-> >       bool "Randomize the address of the kernel image"
-> >       select ARM64_MODULE_PLTS if MODULES
-> > diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-> > index bb1f1dbb34e8f..11f84450c7784 100644
-> > --- a/arch/arm64/Makefile
-> > +++ b/arch/arm64/Makefile
-> > @@ -22,6 +22,10 @@ LDFLAGS_vmlinux            += -shared -Bsymbolic -z notext -z norelro \
-> >                       $(call ld-option, --no-apply-dynamic-relocs)
-> >  endif
-> >
-> > +ifeq ($(CONFIG_RELR),y)
-> > +  LDFLAGS_vmlinux += --pack-dyn-relocs=relr
-> > +endif
->
-> RELR isn't arm64-specific, right? So we could put this in the top-level
-> Makefile and have arm64 select ARCH_HAS_RELR if relocatable, so that other
-> architecture can easily support this in future.
+Signed-off-by: Nishanth Menon <nm@ti.com>
+Signed-off-by: Thara Gopinath <thara@ti.com>
+Signed-off-by: Shweta Gulati <shweta.gulati@ti.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Signed-off-by: Kevin Hilman <khilman@ti.com>
+---
+ arch/arm/mach-omap2/omap_twl.c | 60 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
 
-Makes sense, done in v3.
+diff --git a/arch/arm/mach-omap2/omap_twl.c b/arch/arm/mach-omap2/omap_twl.c
+index 6787f1e72c6b..1dae906128c2 100644
+--- a/arch/arm/mach-omap2/omap_twl.c
++++ b/arch/arm/mach-omap2/omap_twl.c
+@@ -43,8 +43,15 @@
+ 
+ static bool is_offset_valid;
+ static u8 smps_offset;
++/*
++ * Flag to ensure Smartreflex bit in TWL
++ * being cleared in board file is not overwritten.
++ */
++static bool __initdata twl_sr_enable_autoinit;
+ 
++#define TWL4030_DCDC_GLOBAL_CFG        0x06
+ #define REG_SMPS_OFFSET         0xE0
++#define SMARTREFLEX_ENABLE     BIT(3)
+ 
+ static unsigned long twl4030_vsel_to_uv(const u8 vsel)
+ {
+@@ -241,6 +248,18 @@ int __init omap3_twl_init(void)
+ 	if (!cpu_is_omap34xx())
+ 		return -ENODEV;
+ 
++	/*
++	 * The smartreflex bit on twl4030 specifies if the setting of voltage
++	 * is done over the I2C_SR path. Since this setting is independent of
++	 * the actual usage of smartreflex AVS module, we enable TWL SR bit
++	 * by default irrespective of whether smartreflex AVS module is enabled
++	 * on the OMAP side or not. This is because without this bit enabled,
++	 * the voltage scaling through vp forceupdate/bypass mechanism of
++	 * voltage scaling will not function on TWL over I2C_SR.
++	 */
++	if (!twl_sr_enable_autoinit)
++		omap3_twl_set_sr_bit(true);
++
+ 	voltdm = voltdm_lookup("mpu_iva");
+ 	omap_voltage_register_pmic(voltdm, &omap3_mpu_pmic);
+ 
+@@ -249,3 +268,44 @@ int __init omap3_twl_init(void)
+ 
+ 	return 0;
+ }
++
++/**
++ * omap3_twl_set_sr_bit() - Set/Clear SR bit on TWL
++ * @enable: enable SR mode in twl or not
++ *
++ * If 'enable' is true, enables Smartreflex bit on TWL 4030 to make sure
++ * voltage scaling through OMAP SR works. Else, the smartreflex bit
++ * on twl4030 is cleared as there are platforms which use OMAP3 and T2 but
++ * use Synchronized Scaling Hardware Strategy (ENABLE_VMODE=1) and Direct
++ * Strategy Software Scaling Mode (ENABLE_VMODE=0), for setting the voltages,
++ * in those scenarios this bit is to be cleared (enable = false).
++ *
++ * Returns 0 on sucess, error is returned if I2C read/write fails.
++ */
++int __init omap3_twl_set_sr_bit(bool enable)
++{
++	u8 temp;
++	int ret;
++	if (twl_sr_enable_autoinit)
++		pr_warning("%s: unexpected multiple calls\n", __func__);
++
++	ret = twl_i2c_read_u8(TWL_MODULE_PM_RECEIVER, &temp,
++					TWL4030_DCDC_GLOBAL_CFG);
++	if (ret)
++		goto err;
++
++	if (enable)
++		temp |= SMARTREFLEX_ENABLE;
++	else
++		temp &= ~SMARTREFLEX_ENABLE;
++
++	ret = twl_i2c_write_u8(TWL_MODULE_PM_RECEIVER, temp,
++				TWL4030_DCDC_GLOBAL_CFG);
++	if (!ret) {
++		twl_sr_enable_autoinit = true;
++		return 0;
++	}
++err:
++	pr_err("%s: Error access to TWL4030 (%d)\n", __func__, ret);
++	return ret;
++}
+-- 
+2.17.1
 
-> >  ifeq ($(CONFIG_ARM64_ERRATUM_843419),y)
-> >    ifeq ($(call ld-option, --fix-cortex-a53-843419),)
-> >  $(warning ld does not support --fix-cortex-a53-843419; kernel may be susceptible to erratum)
-> > diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-> > index 2cdacd1c141b9..cc23302e9d95e 100644
-> > --- a/arch/arm64/kernel/head.S
-> > +++ b/arch/arm64/kernel/head.S
-> > @@ -102,6 +102,8 @@ pe_header:
-> >        *  x23        stext() .. start_kernel()  physical misalignment/KASLR offset
-> >        *  x28        __create_page_tables()     callee preserved temp register
-> >        *  x19/x20    __primary_switch()         callee preserved temp registers
-> > +      *  x24        __primary_switch() .. relocate_kernel()
-> > +      *                                        current RELR displacement
-> >        */
-> >  ENTRY(stext)
-> >       bl      preserve_boot_args
-> > @@ -834,14 +836,93 @@ __relocate_kernel:
-> >
-> >  0:   cmp     x9, x10
-> >       b.hs    1f
-> > -     ldp     x11, x12, [x9], #24
-> > -     ldr     x13, [x9, #-8]
-> > -     cmp     w12, #R_AARCH64_RELATIVE
-> > +     ldp     x12, x13, [x9], #24
-> > +     ldr     x14, [x9, #-8]
-> > +     cmp     w13, #R_AARCH64_RELATIVE
-> >       b.ne    0b
-> > -     add     x13, x13, x23                   // relocate
-> > -     str     x13, [x11, x23]
-> > +     add     x14, x14, x23                   // relocate
-> > +     str     x14, [x12, x23]
-> >       b       0b
-> > -1:   ret
-> > +
-> > +1:
-> > +#ifdef CONFIG_RELR
-> > +     /*
-> > +      * Apply RELR relocations.
-> > +      *
-> > +      * RELR is a compressed format for storing relative relocations. The
-> > +      * encoded sequence of entries looks like:
-> > +      * [ AAAAAAAA BBBBBBB1 BBBBBBB1 ... AAAAAAAA BBBBBB1 ... ]
->
-> I assume these are treated as an array of u64 types for the purposes of
-> endianness?
-
-Yes, the element type is defined as an integer whose endianness
-matches the ELF endianness and whose size matches the ELF bitness.
-This may be one of the many things that would need to be adjusted for
-a hypothetical ILP32 kernel however because ILP32 on aarch64 uses
-32-bit ELF according to the latest spec.
-
-> (have you tested with a big-endian kernel?).
-
-Unfortunately I have no easy way to test that because LLD doesn't
-currently support big-endian aarch64.
-
-Peter
 
 _______________________________________________
 linux-arm-kernel mailing list
