@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CB367DF44
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:42:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF91E7DF45
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:42:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J9M1bt+ZxxKieoEVJ7npl/mIGWh4B1MiCnZDDQnS4Do=; b=ScBiDeUzpKCyEJ
-	pIs8obYHhekTcvfr4ip+uu2+A3LmLw6RcZ+F3urMJJpK6Cb8r1x0rzIV85klR7oVFJtX9G0NNyuU0
-	EX5VJUFQ8+NGQBe5ZlhmED0RQoW05v+a1Y+XIVP9BIftUqh9pIL5EekT4KTQVd4j7ZTA7HuBmqW7a
-	QEi/DL/P3ge45xRRZ8ppUM62uKuiCvynzDIKpypteRHNyQOkXewsIKhfYpwWqkaFZwiF9WN3bUMVr
-	x9Yx5LLsT19xRgp1hIhZ7UU1W8DGxk5wgp5qKnZpIaNU6c6+pczqyRvOK/5MYl/GNS7s0Z6Dj2/Ni
-	mN733/NMF9dukzhi94wg==;
+	List-Owner; bh=CyAnZZwIGtdROFlZ+TVyESUNYE/Mv0B5HrcXbhrPQoU=; b=ufnjWeAeuEDo+e
+	ge3tNHxVE9HSaJpDgy7dkaHK5HOA6rCbKl/MLLxSoDB+girkfvnJsIzWITh5wrCNR8u7jXMckSf5R
+	XAJ9lpVWxzQM8+8h1kfRJ1T8wfA54v3tvK+tLSk4fdJornDe16ZpRszIewUTMGc//jduHf5uWzsVU
+	34TADyFZPZ9bywlCIdTD2NF6a/TNVxapmuX3lJPSZoc0xUPQw188SEsIga/q7UtBcM4YXYbvUehOF
+	uNJ5NYh8Lhp/at0JyOmjDfczb9utUlW3nCFEM5CKmAFNj/KuPJoV4oevkdTX63/GbV0nSwQtG2hJg
+	Sem2eAOE6ZGQaa7guBzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htDDr-0002hx-33; Thu, 01 Aug 2019 15:42:31 +0000
+	id 1htDE0-0002yc-Fn; Thu, 01 Aug 2019 15:42:40 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1htDDY-0002a0-FA
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 15:42:13 +0000
+ id 1htDDa-0002aX-Gv
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 15:42:15 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39D5F1597;
- Thu,  1 Aug 2019 08:42:12 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CFCB3337;
+ Thu,  1 Aug 2019 08:42:13 -0700 (PDT)
 Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6D1A63F694;
- Thu,  1 Aug 2019 08:42:11 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0F6553F694;
+ Thu,  1 Aug 2019 08:42:12 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] arm64: entry: Move ct_user_exit before any user of RCU
-Date: Thu,  1 Aug 2019 16:41:49 +0100
-Message-Id: <20190801154150.195959-2-james.morse@arm.com>
+Subject: [PATCH 2/2] arm64: entry: Move ct_user_exit before we can take
+ another exception
+Date: Thu,  1 Aug 2019 16:41:50 +0100
+Message-Id: <20190801154150.195959-3-james.morse@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190801154150.195959-1-james.morse@arm.com>
 References: <20190801154150.195959-1-james.morse@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_084212_546311_72222FFF 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20190801_084214_654278_A68713D0 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,90 +68,146 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When taking an SError or Debug exception from EL0, we run the C
-handler for these exceptions before updating the context tracking
-code and unmasking lower priority interrupts.
+When taking an exception from EL0 we unmask exceptions before calling
+ct_user_exit. This means we could take an interrupt or be single-stepped
+in the gap. The entry from EL1 code sees that we took an exception from
+the kernel, whereas the context_tracking code believes we are still in
+user-space.
 
-When booting with nohz_full lockdep tells us we got this wrong:
-| =============================
-| WARNING: suspicious RCU usage
-| 5.3.0-rc2-00010-gb4b5e9dcb11b-dirty #11271 Not tainted
-| -----------------------------
-| include/linux/rcupdate.h:643 rcu_read_unlock() used illegally wh!
-|
-| other info that might help us debug this:
-|
-|
-| RCU used illegally from idle CPU!
-| rcu_scheduler_active = 2, debug_locks = 1
-| RCU used illegally from extended quiescent state!
-| 1 lock held by a.out/432:
-|  #0: 00000000c7a79515 (rcu_read_lock){....}, at: brk_handler+0x00
-|
-| stack backtrace:
-| CPU: 1 PID: 432 Comm: a.out Not tainted 5.3.0-rc2-00010-gb4b5e9d1
-| Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno De8
-| Call trace:
-|  dump_backtrace+0x0/0x140
-|  show_stack+0x14/0x20
-|  dump_stack+0xbc/0x104
-|  lockdep_rcu_suspicious+0xf8/0x108
-|  brk_handler+0x164/0x1b0
-|  do_debug_exception+0x11c/0x278
-|  el0_dbg+0x14/0x20
+To keep these things consistent, move the ct_user_exit calls before
+any unmask of exceptions.
 
-Move the ct_user_exit calls to be before do_debug_exception()
-and do_serror() respectively.
-
-Cc: Masami Hiramatsu <mhiramat@kernel.org>
 Fixes: 6c81fe7925cc4c42 ("arm64: enable context tracking")
 Signed-off-by: James Morse <james.morse@arm.com>
 ---
-The context to this is Masami Hiramatsu's patch adding sanity checks
-for this:
-Link: https://lore.kernel.org/r/156466954920.8995.14798868044005509434.stgit@devnote2
----
- arch/arm64/kernel/entry.S | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+ arch/arm64/kernel/entry.S | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
 diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 320a30dbe35e..28681034d599 100644
+index 28681034d599..88f4ab21cb66 100644
 --- a/arch/arm64/kernel/entry.S
 +++ b/arch/arm64/kernel/entry.S
-@@ -902,13 +902,14 @@ el0_dbg:
- 	 * Debug exception handling
+@@ -792,8 +792,8 @@ el0_cp15:
+ 	/*
+ 	 * Trapped CP15 (MRC, MCR, MRRC, MCRR) instructions
  	 */
- 	tbnz	x24, #0, el0_inv		// EL0 only
-+	mrs	x24, far_el1
- 	gic_prio_kentry_setup tmp=x3
--	mrs	x0, far_el1
-+	ct_user_exit
-+	mov	x0, x24
+-	enable_daif
+ 	ct_user_exit
++	enable_daif
+ 	mov	x0, x25
+ 	mov	x1, sp
+ 	bl	do_cp15instr
+@@ -805,8 +805,8 @@ el0_da:
+ 	 * Data abort handling
+ 	 */
+ 	mrs	x26, far_el1
+-	enable_daif
+ 	ct_user_exit
++	enable_daif
+ 	clear_address_tag x0, x26
  	mov	x1, x25
  	mov	x2, sp
- 	bl	do_debug_exception
+@@ -818,11 +818,11 @@ el0_ia:
+ 	 */
+ 	mrs	x26, far_el1
+ 	gic_prio_kentry_setup tmp=x0
++	ct_user_exit
  	enable_da_f
+ #ifdef CONFIG_TRACE_IRQFLAGS
+ 	bl	trace_hardirqs_off
+ #endif
 -	ct_user_exit
+ 	mov	x0, x26
+ 	mov	x1, x25
+ 	mov	x2, sp
+@@ -832,8 +832,8 @@ el0_fpsimd_acc:
+ 	/*
+ 	 * Floating Point or Advanced SIMD access
+ 	 */
+-	enable_daif
+ 	ct_user_exit
++	enable_daif
+ 	mov	x0, x25
+ 	mov	x1, sp
+ 	bl	do_fpsimd_acc
+@@ -842,8 +842,8 @@ el0_sve_acc:
+ 	/*
+ 	 * Scalable Vector Extension access
+ 	 */
+-	enable_daif
+ 	ct_user_exit
++	enable_daif
+ 	mov	x0, x25
+ 	mov	x1, sp
+ 	bl	do_sve_acc
+@@ -852,8 +852,8 @@ el0_fpsimd_exc:
+ 	/*
+ 	 * Floating Point, Advanced SIMD or SVE exception
+ 	 */
+-	enable_daif
+ 	ct_user_exit
++	enable_daif
+ 	mov	x0, x25
+ 	mov	x1, sp
+ 	bl	do_fpsimd_exc
+@@ -868,11 +868,11 @@ el0_sp_pc:
+ 	 * Stack or PC alignment exception handling
+ 	 */
+ 	gic_prio_kentry_setup tmp=x0
++	ct_user_exit
+ 	enable_da_f
+ #ifdef CONFIG_TRACE_IRQFLAGS
+ 	bl	trace_hardirqs_off
+ #endif
+-	ct_user_exit
+ 	mov	x0, x26
+ 	mov	x1, x25
+ 	mov	x2, sp
+@@ -882,8 +882,8 @@ el0_undef:
+ 	/*
+ 	 * Undefined instruction
+ 	 */
+-	enable_daif
+ 	ct_user_exit
++	enable_daif
+ 	mov	x0, sp
+ 	bl	do_undefinstr
+ 	b	ret_to_user
+@@ -891,8 +891,8 @@ el0_sys:
+ 	/*
+ 	 * System instructions, for trapped cache maintenance instructions
+ 	 */
+-	enable_daif
+ 	ct_user_exit
++	enable_daif
+ 	mov	x0, x25
+ 	mov	x1, sp
+ 	bl	do_sysinstr
+@@ -912,8 +912,8 @@ el0_dbg:
+ 	enable_da_f
  	b	ret_to_user
  el0_inv:
- 	enable_daif
-@@ -958,13 +959,14 @@ ENDPROC(el1_error)
- el0_error:
- 	kernel_entry 0
- el0_error_naked:
--	mrs	x1, esr_el1
-+	mrs	x25, esr_el1
- 	gic_prio_kentry_setup tmp=x2
-+	ct_user_exit
- 	enable_dbg
+-	enable_daif
+ 	ct_user_exit
++	enable_daif
  	mov	x0, sp
-+	mov	x1, x25
- 	bl	do_serror
+ 	mov	x1, #BAD_SYNC
+ 	mov	x2, x25
+@@ -926,13 +926,13 @@ el0_irq:
+ 	kernel_entry 0
+ el0_irq_naked:
+ 	gic_prio_irq_setup pmr=x20, tmp=x0
++	ct_user_exit
  	enable_da_f
--	ct_user_exit
- 	b	ret_to_user
- ENDPROC(el0_error)
  
+ #ifdef CONFIG_TRACE_IRQFLAGS
+ 	bl	trace_hardirqs_off
+ #endif
+ 
+-	ct_user_exit
+ #ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
+ 	tbz	x22, #55, 1f
+ 	bl	do_el0_irq_bp_hardening
 -- 
 2.20.1
 
