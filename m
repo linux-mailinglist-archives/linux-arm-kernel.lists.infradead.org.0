@@ -2,52 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84B0F7DC10
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 15:02:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 494C27DC25
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 15:06:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bp0roeKH9Gwo1cqCjhTLlSaV7ElJdmMHHeOSHu5xh1s=; b=r9YCGsdM1vc20WRtHupjzcYyz
-	S0wwK5ikDhosxpVA9hrii2NLAfNdgpQFXN573UaqpQxkATYolGg4Y80bs8/SrOX0fPGEu60zNyZb4
-	d/HAOiArQ6tFA02vyVCt7HfZs7HaA1QRk8u/bJZ9x4sl6jAq5NYf3OJxSqN9rgp18a1x4dvoRHR3L
-	NO7CFD+7VSlHu75J2zqHxR8YWhzXmUYcXjTgMABIPu3be3jaV/rw8XYWOn0K5IFGtAAjCSeC6Su3j
-	Wh/2Zwc0djoynxwiCrCUOjqmHmd4soTWZ9pCkBsBgkiD5QX6jsQ0sHA6150wGaAYpMZFfEdgUQUlD
-	4Cgkye+Mg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eTW/ssGf/qK/orawOOH4I2xh7Xv9vyTsisRY+5wF3GI=; b=TqCkqKyZ7/Mo7i
+	JsC2xwnvXEZBzQNTls0n8eCU+vLorF0ZzLE5+LXlm5MWHqV6SfWAR7+vfg+FqJzyl3brZCXoWfD6X
+	s63Y682DBz8mGmO2ppSWbakcKmvf4hW4paBIWXsZ52cG/fD9Z1alwOlzOVWGXblSB3nzWGDer7EJ9
+	Cs88MoaH5NIH/cB8Jagr47d3TASDZb4e869wDeQ08+DuC2AuB21mNMaABmoCtfk9dAd+05SIG+KTa
+	8QEJHMQQwVxy+ocAu1VwLjK7AXfvC66HhnTn3MQxRpaMdN33FJpbWGuxNs8do/DfGR22mItsFb3t1
+	G9WL2kqqtq1yTtADQssQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htAiT-0003gV-8k; Thu, 01 Aug 2019 13:01:57 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1htAiF-0003ck-9G
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 13:01:45 +0000
-Received: from localhost (p54B333D2.dip0.t-ipconnect.de [84.179.51.210])
- by pokefinder.org (Postfix) with ESMTPSA id 633B42C2817;
- Thu,  1 Aug 2019 15:01:42 +0200 (CEST)
-Date: Thu, 1 Aug 2019 15:01:42 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-Subject: Re: [PATCH] i2c: s3c2410: Mark expected switch fall-through
-Message-ID: <20190801130141.GO1659@ninjato>
-References: <20190728235138.GA23429@embeddedor>
+	id 1htAmn-0006SU-NT; Thu, 01 Aug 2019 13:06:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1htAmf-0006S9-BV
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 13:06:18 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CA5CF20838;
+ Thu,  1 Aug 2019 13:06:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564664776;
+ bh=/wmQAkHpGftYRIL/DgFGvaSTH4GFrVy/ROApPnsBvns=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=h+pttSxXr2fM9kp7qF5kSXPqlKadMq4gO4w4y3QWZuDhAyhtlMCcnuxU+bVwhY3QY
+ i92Dfiezpj1C6nQBjI3ITTU5zTUILCksjOJUiQoQU1XpxrhvMGuSh5u2bd1/RTHmd7
+ 33MD2m7/1+hwmjxmRWUjrMloYzLSsAPx9mV9wSaY=
+Date: Thu, 1 Aug 2019 14:06:12 +0100
+From: Will Deacon <will@kernel.org>
+To: Julien Thierry <julien.thierry@arm.com>
+Subject: Re: [PATCH v4 6/9] arm64: perf: Do not call irq_work_run in NMI
+ context
+Message-ID: <20190801130611.n2xij2242ihxa5pr@willie-the-truck>
+References: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
+ <1563351432-55652-7-git-send-email-julien.thierry@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190728235138.GA23429@embeddedor>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <1563351432-55652-7-git-send-email-julien.thierry@arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_060143_590711_21C6283E 
-X-CRM114-Status: UNSURE (   9.26  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190801_060617_419245_9662781B 
+X-CRM114-Status: GOOD (  17.07  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,82 +78,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>, linux-samsung-soc@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4913933406007060465=="
+Cc: mark.rutland@arm.com, peterz@infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>, will.deacon@arm.com,
+ acme@kernel.org, alexander.shishkin@linux.intel.com, mingo@redhat.com,
+ namhyung@kernel.org, sthotton@marvell.com, jolsa@redhat.com,
+ linux-arm-kernel@lists.infradead.org, liwei391@huawei.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Jul 17, 2019 at 09:17:09AM +0100, Julien Thierry wrote:
+> Function irq_work_run is not NMI safe and should not be called from NMI
+> context.
+> 
+> When PMU interrupt is an NMI do not call irq_work_run. Instead rely on the
+> IRQ work IPI to run the irq_work queue once NMI/IRQ contexts have been
+> exited.
+> 
+> Signed-off-by: Julien Thierry <julien.thierry@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Peter Zijlstra <peterz@infradead.org>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
+> Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+> Cc: Jiri Olsa <jolsa@redhat.com>
+> Cc: Namhyung Kim <namhyung@kernel.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+>  arch/arm64/kernel/perf_event.c | 14 +++++---------
+>  1 file changed, 5 insertions(+), 9 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+> index 0e2cf5d..9c959ad 100644
+> --- a/arch/arm64/kernel/perf_event.c
+> +++ b/arch/arm64/kernel/perf_event.c
+> @@ -776,20 +776,16 @@ static irqreturn_t armv8pmu_handle_irq(struct arm_pmu *cpu_pmu)
+>  		if (!armpmu_event_set_period(event))
+>  			continue;
+>  
+> +		/*
+> +		 * Perf event overflow will queue the processing of the event as
+> +		 * an irq_work which will be taken care of in the handling of
+> +		 * IPI_IRQ_WORK.
+> +		 */
+>  		if (perf_event_overflow(event, &data, regs))
+>  			cpu_pmu->disable(event);
+>  	}
+>  	armv8pmu_start(cpu_pmu);
+>  
+> -	/*
+> -	 * Handle the pending perf events.
+> -	 *
+> -	 * Note: this call *must* be run with interrupts disabled. For
+> -	 * platforms that can have the PMU interrupts raised as an NMI, this
+> -	 * will not work.
+> -	 */
+> -	irq_work_run();
 
---===============4913933406007060465==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="sGwo475CiIwWEjLI"
-Content-Disposition: inline
+What about the case where NMIs are not being used (e.g. GICv2)?
 
-
---sGwo475CiIwWEjLI
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Sun, Jul 28, 2019 at 06:51:38PM -0500, Gustavo A. R. Silva wrote:
-> Mark switch cases where we are expecting to fall through.
->=20
-> This patch fixes the following warning:
->=20
-> drivers/i2c/busses/i2c-s3c2410.c: In function 'i2c_s3c_irq_nextbyte':
-> drivers/i2c/busses/i2c-s3c2410.c:431:6: warning: this statement may fall =
-through [-Wimplicit-fallthrough=3D]
->    if (i2c->state =3D=3D STATE_READ)
->       ^
-> drivers/i2c/busses/i2c-s3c2410.c:439:2: note: here
->   case STATE_WRITE:
->   ^~~~
->=20
-> Notice that, in this particular case, the code comment is
-> modified in accordance with what GCC is expecting to find.
->=20
-> Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
-> Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
-
-Applied to for-current, thanks!
-
-
---sGwo475CiIwWEjLI
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1C4rUACgkQFA3kzBSg
-Kba28RAApiI7u/wDnAuTCpteayRX5I68w5cXuFTG+gDegwQ3YOswZdkoM9v4W9pd
-rfQ84jLH0clY/G4g7qapeZltQIF9QUrknnCPjHQ0x7sp3pwg1QHVnaq58x6BasaP
-cQC/UAWpxY9Q0FqWE8g0Q4rCwsCtxRqLR1k+3gqzHpt6elXnApvsm0gfX6wHVZps
-7hWXbs49+RR8FEmGJr6CMR8tbkObH9RjS5HnIFlgG+jsxhuIABRRK3b70elZFBXx
-rGC+J5uUN9OgJn8qxSJ+6JlxVPRm4oimxJtiH6IkYCMYgINOXQUClLvkXFv4/Dzs
-ErS/Kk1EQoZ5jS9T44iZBh1LfY/NrR8gclTIrpmqjiPnrmx7RziaKplg/26VjuDN
-rkrCF8HOqC+aD1e3dGhBzxSLxs2PNQQcojjthdmXTFipHhteg3d2iMEjBXHG45yw
-I6dyfQpT+n0tjyWoh+DWOIxqD3NlXyyunym/gSEjir0bgnC7TaUQiKQ+xg3pspGd
-EnCcXA0TRuNncT7HElrt6wXMi7bnHOh1Fwlkb8cOhR2fxfL6EuSfsNhud3eDgLzU
-ow2sNRMl0wpJTYk50ypFHo2l8Bei1/4hRJUH6NYmmJAKaZ1Bakp/cMsY3v2XAj91
-3VNl2U3/o5snGmU3Rzjh5x1DMdzL5G+7Xl5dDGfe4aPfvZW+Rhg=
-=WUQP
------END PGP SIGNATURE-----
-
---sGwo475CiIwWEjLI--
-
-
---===============4913933406007060465==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4913933406007060465==--
-
