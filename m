@@ -2,91 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67A8A7D682
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 09:41:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F2927D698
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 09:47:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0yC8tCHKT7JfldKEGRw/twun7khvKSxGr+oTpwf4gxU=; b=jl6dpehsxCxFDd
-	9mhsbAHsk+mVK+y7ckIBn7fa7z6thWgp1Ii83pcMF1uCMofWaYocoMTYMOYVpRRAWQb2TX4X5TVK2
-	kJjV8KzGUU6uRGlikDKzvc3ecZJXk6QnXAXE2TIK+O15cXBV/pHywA/dgCmNlBYfWYn6wQgyYJePB
-	G7mRHJv2KalqLulUoFc2o50WevDce4vpfOfpS890BpLR1sFDJF/FQQE/XdQslNcLsPGhCFsLR/Xyf
-	XAB0l1hBjDJDYMWAyvmyHDvhNGl2AtGSMXijOvhz+50vYlsVUmQAMaWeadRKlK/RHscPNDv18GeeE
-	p2/rfTve8UzD7K2BgqHw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=k1FpMcP1TEhquWeeP3z0lY+Dss0OOFnZjWgq5hJVmwo=; b=fGFNEyNYBKZDoA
+	GaN9uz8BNsc8hGPaT4h+KehAIb4dTSu/qZO40eGMy4Q+UeIo2ys43JuSUEg8g+8gYDxYnhDWzjTvU
+	iHoinRZr5zjbbY3+0Zd2hob+pHd6CzcXD8jgaM7LYh1AFOjQ2cZly99RGhJxPcbPY1RCn8oTudgkT
+	WQf/qATx8CCHyXUKk1dMkea0mV8crhH2pLf7wLrLOci1AHsvTCnu2eRYl7GzsySfTQJYrTywEz7zX
+	YSOGaayNsB014iIHX4yl4+fYA1OJDwDqIhVlAPvH5fU1KLPco6YJ5kdKt7Zyn22UcsGBpr0b+gLAA
+	Q2vf5oNXXD3p4z5htpOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht5ia-0005Gx-9c; Thu, 01 Aug 2019 07:41:44 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1ht5nr-0007Sj-EK; Thu, 01 Aug 2019 07:47:11 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht5iQ-0005GR-Ek
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 07:41:38 +0000
-Received: by mail-pg1-x543.google.com with SMTP id f5so24849890pgu.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 00:41:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=stRY7i1GZrfY6D+PTgs0D4UrvfUCsK1idtnpqO9v05A=;
- b=FIzQTHdYyzbSF4UXVeIZHy3ZAwIm6WNjJ/7SFU/GqKhukmbYUPc5uoLrynWLyUBJVb
- fRHC5adeqiJFVkCnJcahOseTMZ7e2ZkBrgl6yzcXksAwGWJhQu+I8pPcCuRU+gQJMZrt
- 6zWlCDe679nJhA/Frtiufn5nm9bM8CDM32JZOhtmzzcvNFyU0tW2INMvtpZKKuJlNGB1
- Z05sWFHKHngzHjtuXq+dCNMtQE/y0N5oT7ENpWnZjy2HUF3NgPHY0YsXwrYwcAhAhbfK
- BwVZloDwEUKpWfOLiuawIFKfuHlNJKEVWD08Fy5DVw55YcQkMA1MTyaNgn+YACVYM24+
- I9QA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=stRY7i1GZrfY6D+PTgs0D4UrvfUCsK1idtnpqO9v05A=;
- b=VYnjSERdqhdDXVB5iJDJF5REnGFVJ28rysWW9mA/rICJysgk2fQ57lFTRixn0bUdgy
- I5QRLZWtc1XLR2apkw7m+4jPGfGEfYIIGRP1O2xaqfBwljfFJWhuOFxQOWwySrzD246t
- J1/JBWxr4Z0ZQxw4VIfXvXWndvKgpbOQstOwIe6wVj1RA24IkET+HUkciP4C4tC3pWQL
- WJC+wpBVDZKzC3gHP8bEyTkIfvQS/mQMD+aQUX28nOu1NJRDIeKdiSAORsu6JhVGN09V
- SAru3BrpOpi4RyTB7WqC0hnRpkyF3OAUqu1yEbB+bLqHaKqZvkl6La4yLK3OnFGgC5ZY
- w+4Q==
-X-Gm-Message-State: APjAAAWt9WknOconpT4VuBn4O4hqcDVFfuh5c0+aSljnzmpG2IaaTyqS
- hcNloFawisgoetIg9gRA2LhwOg==
-X-Google-Smtp-Source: APXvYqyjrB9ZTQXX8An99agwlE3etMrgkqcBgU4z6N9t7CiNe210eVe0fuU/nEZOBJMkJFfzCzTgfw==
-X-Received: by 2002:a17:90a:228b:: with SMTP id
- s11mr6888100pjc.23.1564645293756; 
- Thu, 01 Aug 2019 00:41:33 -0700 (PDT)
-Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id u97sm4101405pjb.26.2019.08.01.00.41.32
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 00:41:32 -0700 (PDT)
-Date: Thu, 1 Aug 2019 13:11:31 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v4.4 V2 25/43] arm64: Move BP hardening to
- check_and_switch_context
-Message-ID: <20190801074131.526h5d4hwpxutlq2@vireshk-i7>
-References: <cover.1562908074.git.viresh.kumar@linaro.org>
- <f655aaa158af070d45a2bd4965852b0c97a08838.1562908075.git.viresh.kumar@linaro.org>
- <59b252cf-9cb7-128b-4887-c21a8b9b92a9@arm.com>
- <20190801050940.h65crfawrdifsrgg@vireshk-i7>
- <86354576-fc54-a8b7-4dc9-bc613d59fb17@arm.com>
- <20190801063544.ruw444isj5uojjdx@vireshk-i7>
- <20190801065700.GA17391@kroah.com>
- <20190801070541.hpmadulgp45txfem@vireshk-i7>
- <20190801073444.4n45h6kcbmejvzte@willie-the-truck>
+ id 1ht5nl-0007Rj-C6
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 07:47:07 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x717kCJb019571; Thu, 1 Aug 2019 09:46:41 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : subject :
+ date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=zzC3uAed5A7dYU4IrlXdMoYN39GbIOLsffQotC5fMd8=;
+ b=M8BdWzYZnMQYkSfcoFZtJrebjGiRAYOh2MHKEsmXkyVFsjVuq9lBSG2yzBklvajlkV2a
+ ZFLLZqIHDVjrXApEi2gMZMWtB9/zBV7qjghyg+hvp38JGV++V62oy2pDUEmduJY+Uqo0
+ 4bkxk/JofI2kv2tnnvdHF2QCEZSADSuJuQlIkkldN4YzhY5rrh1Uctkek3gxVNOn4xko
+ BHTMEdIwXU7fGJ0i64ogZEc4eogpmFqF3530IyGYbEVIdXKgIrZdRpLeqa4Isx3NjF9P
+ iR0pClbF0o6DcZLtg0w8qK5yzcIsvNYN7J1RMKDjlT+fcbu4tmi30D2QE1FWPgLE7ArT Fw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2u0c2yn1m2-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Thu, 01 Aug 2019 09:46:41 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CCE1238;
+ Thu,  1 Aug 2019 07:46:38 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 939C5CEA35;
+ Thu,  1 Aug 2019 09:46:38 +0200 (CEST)
+Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 1 Aug 2019
+ 09:46:38 +0200
+Received: from localhost (10.201.23.16) by Webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 1 Aug 2019 09:46:38
+ +0200
+From: Olivier Moysan <olivier.moysan@st.com>
+To: <linux-stm32@st-md-mailman.stormreply.com>, <alexandre.torgue@st.com>,
+ <robh@kernel.org>, <mark.rutland@arm.com>,
+ <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>, <olivier.moysan@st.com>
+Subject: [PATCH] ARM: dts: stm32: add DFSDM pins to stm32mp157c
+Date: Thu, 1 Aug 2019 09:46:07 +0200
+Message-ID: <1564645567-13156-1-git-send-email-olivier.moysan@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190801073444.4n45h6kcbmejvzte@willie-the-truck>
-User-Agent: NeoMutt/20180716-391-311a52
+X-Originating-IP: [10.201.23.16]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-08-01_04:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_004137_272891_59F61C7C 
-X-CRM114-Status: GOOD (  19.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190801_004705_882953_7A1E45B4 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -107,61 +94,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Julien Thierry <julien.thierry@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Greg KH <greg@kroah.com>, Will Deacon <will.deacon@arm.com>,
- stable@vger.kernel.org, mark.brown@arm.com,
- linux-arm-kernel@lists.infradead.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <rmk+kernel@arm.linux.org.uk>, julien.thierry.kdev@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01-08-19, 08:34, Will Deacon wrote:
-> On Thu, Aug 01, 2019 at 12:35:41PM +0530, Viresh Kumar wrote:
-> > On 01-08-19, 08:57, Greg KH wrote:
-> > > On Thu, Aug 01, 2019 at 12:05:44PM +0530, Viresh Kumar wrote:
-> > > > On 01-08-19, 07:30, Julien Thierry wrote:
-> > > > > I must admit I am not familiar with backport/stable process enough. But
-> > > > > personally I think the your suggestion seems more sensible than
-> > > > > backporting 4 patches.
-> > > > > 
-> > > > > Or you can maybe ignore patch 25 and say in patch 24 that among the
-> > > > > changes made for the 4.4 codebase, the call arm64_apply_bp_hardening()
-> > > > > was moved from post_ttbr_update_workaround as it doesn't exist and
-> > > > > placed in check_and_switch_context() as it is its final destination.
-> > > > 
-> > > > Done that and dropped the other two patches.
-> > > > 
-> > > > > However, I really don't know what's the best way to proceed according to
-> > > > > existing practices. So input from someone else would be welcome.
-> > > > 
-> > > > Lets see if someone comes up and ask me to do something else :)
-> > > 
-> > > Keeping the same patches that upstream has is almost always the better
-> > > thing to do in the long-run.
-> > 
-> > That would require two additional patches to be backported, 22 and 23
-> > from this series. From your suggestion it seems that keeping them is
-> > better here ?
-> 
-> Yes. Backporting individual patches as they appear upstream is definitely
-> the preferred method for -stable. It makes the relationship to mainline
-> crystal clear, as well as any dependencies between patches that have been
-> backported. Everytime we tweak something unecessarily in a stable backport,
-> it just creates the potential for confusion and additional conflicts in
-> future backports, so it's best to follow the shape of upstream as closely as
-> possible, even if it results in additional patches.
-> 
-> So I wouldn't worry about total number of patches. I'd worry more about
-> things like conflicts, deviation from mainline and overall testing coverage.
+Add DFSDM pins to stm32mp157c.
 
-Okay, I won't make these changes then. Thanks.
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+---
+ arch/arm/boot/dts/stm32mp157-pinctrl.dtsi | 39 +++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
 
+diff --git a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+index 9eaec9bf8cb8..f96a928cbc49 100644
+--- a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+@@ -230,6 +230,45 @@
+ 				};
+ 			};
+ 
++			dfsdm_clkout_pins_a: dfsdm-clkout-pins-0 {
++				pins {
++					pinmux = <STM32_PINMUX('B', 13, AF3)>; /* DFSDM_CKOUT */
++					bias-disable;
++					drive-push-pull;
++					slew-rate = <0>;
++				};
++			};
++
++			dfsdm_clkout_sleep_pins_a: dfsdm-clkout-sleep-pins-0 {
++				pins {
++					pinmux = <STM32_PINMUX('B', 13, ANALOG)>; /* DFSDM_CKOUT */
++				};
++			};
++
++			dfsdm_data1_pins_a: dfsdm-data1-pins-0 {
++				pins {
++					pinmux = <STM32_PINMUX('C', 3, AF3)>; /* DFSDM_DATA1 */
++				};
++			};
++
++			dfsdm_data1_sleep_pins_a: dfsdm-data1-sleep-pins-0 {
++				pins {
++					pinmux = <STM32_PINMUX('C', 3, ANALOG)>; /* DFSDM_DATA1 */
++				};
++			};
++
++			dfsdm_data3_pins_a: dfsdm-data3-pins-0 {
++				pins {
++					pinmux = <STM32_PINMUX('F', 13, AF6)>; /* DFSDM_DATA3 */
++				};
++			};
++
++			dfsdm_data3_sleep_pins_a: dfsdm-data3-sleep-pins-0 {
++				pins {
++					pinmux = <STM32_PINMUX('F', 13, ANALOG)>; /* DFSDM_DATA3 */
++				};
++			};
++
+ 			ethernet0_rgmii_pins_a: rgmii-0 {
+ 				pins1 {
+ 					pinmux = <STM32_PINMUX('G', 5, AF11)>, /* ETH_RGMII_CLK125 */
 -- 
-viresh
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
