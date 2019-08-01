@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C01327DBEE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:50:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 094F37DBF2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:50:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=W3h048YfojffYp3sXsmoisfjzWMIQa8ceLqhTIGrVT4=; b=uUV1JjnRmBNrS8aaK9jB8eVuV
-	Yx+aFTREQB4IhC/NvvS0h0VaKts5RRD1dVYzgXFlN/60nKq8nKsSXAIYimU9unY1XLG1YP/wsHOny
-	hijI58piX9U/WfqG2Kl6XdinkfvKFp+AkLvG2mMdeIDqYmldTNq9yNH+y17pP0HpSiO2z+GodESQO
-	0IdHrYlm7X6xm06f+Y9k9C/J01FeoeGV0+0Kt5l3w5PP4bSzapO+Ut+wUwJY0qTCaHZ9cF0XKCM+h
-	j1ruM8rEJNinvqE6ieFrBXdCupwbXSZKmtLyPIIxaY0pFb8JqvQUSva0cbAD2TaRvNatOrj2sHMpO
-	ChvUnPmyA==;
+	 bh=Zwl0NVGFM9MOwIP57SB/GPZup+SzgAhewNKNmEHpcmI=; b=ZUdh8JW6P7CuqT/wyPmOb6WGz
+	DIYL0qOhyDQ+V3A7HZza4ZYemI7YrcQJvT0I8W+HecCUJYeR+a2O1wZcSX5t8maDkYg25J5Sa8kVn
+	XEI1hU85PKRtfiORi6LmamwCfi/6Zd3W8Q2ITXVs+xFAtR8SyLqRfaDNGSq0qdBip8cfD4VOMEj44
+	Bn0t8Q+zs4IrBd4VG37GsorviAWG8UwHtjbP0euYPM130wP4mO8NmYr66qfWy+mq7YzuuUFobLiZI
+	s77s8uN1ZhPy3VCQy9ygAKqTzUtKTQaizww2qW/trXSYAlzWhOxYiWffj0KImOU7rhzg0N7FBq04i
+	z4EcJR4XA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htAXU-00071J-GH; Thu, 01 Aug 2019 12:50:36 +0000
+	id 1htAXn-0007FS-DE; Thu, 01 Aug 2019 12:50:55 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1htAXJ-00070p-6S
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:50:26 +0000
+ id 1htAXO-00073n-2Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:50:31 +0000
 Received: from localhost (p54B333D2.dip0.t-ipconnect.de [84.179.51.210])
- by pokefinder.org (Postfix) with ESMTPSA id 62C102C2817;
- Thu,  1 Aug 2019 14:50:24 +0200 (CEST)
-Date: Thu, 1 Aug 2019 14:50:24 +0200
+ by pokefinder.org (Postfix) with ESMTPSA id 5A5F52C2817;
+ Thu,  1 Aug 2019 14:50:29 +0200 (CEST)
+Date: Thu, 1 Aug 2019 14:50:29 +0200
 From: Wolfram Sang <wsa@the-dreams.de>
 To: Anson.Huang@nxp.com
-Subject: Re: [PATCH 1/2] i2c: mxs: use devm_platform_ioremap_resource() to
- simplify code
-Message-ID: <20190801125023.GH1659@ninjato>
+Subject: Re: [PATCH 2/2] i2c: imx-lpi2c: use devm_platform_ioremap_resource()
+ to simplify code
+Message-ID: <20190801125028.GI1659@ninjato>
 References: <20190717084017.30987-1-Anson.Huang@nxp.com>
+ <20190717084017.30987-2-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20190717084017.30987-1-Anson.Huang@nxp.com>
+In-Reply-To: <20190717084017.30987-2-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_055025_383117_315D3AD4 
-X-CRM114-Status: UNSURE (   7.27  )
+X-CRM114-CacheID: sfid-20190801_055030_351620_9B1A3580 
+X-CRM114-Status: UNSURE (   7.10  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -64,23 +65,23 @@ Cc: aisheng.dong@nxp.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
  linux-kernel@vger.kernel.org, wsa+renesas@sang-engineering.com,
  linux-i2c@vger.kernel.org, kernel@pengutronix.de, festevam@gmail.com,
  linux-arm-kernel@lists.infradead.org, Linux-imx@nxp.com
-Content-Type: multipart/mixed; boundary="===============8614506101359413462=="
+Content-Type: multipart/mixed; boundary="===============0025030989231715396=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8614506101359413462==
+--===============0025030989231715396==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="cfJ13FhsvNR/yOpm"
+	protocol="application/pgp-signature"; boundary="mXDO3udm/xYWQeMQ"
 Content-Disposition: inline
 
 
---cfJ13FhsvNR/yOpm
+--mXDO3udm/xYWQeMQ
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Jul 17, 2019 at 04:40:16PM +0800, Anson.Huang@nxp.com wrote:
+On Wed, Jul 17, 2019 at 04:40:17PM +0800, Anson.Huang@nxp.com wrote:
 > From: Anson Huang <Anson.Huang@nxp.com>
 >=20
 > Use the new helper devm_platform_ioremap_resource() which wraps the
@@ -92,30 +93,30 @@ On Wed, Jul 17, 2019 at 04:40:16PM +0800, Anson.Huang@nxp.com wrote:
 Applied to for-next, thanks!
 
 
---cfJ13FhsvNR/yOpm
+--mXDO3udm/xYWQeMQ
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1C4A8ACgkQFA3kzBSg
-KbbuCQ/+Jh3jQy7mSWoI1drhM0j9+MC/Kq5i599BC0Fr4mV3KNiHW9aKVRPpNKnm
-PPe6xTh0GiT8TetvzKh0k8snQi0xhZOB4NagfqVK3sZ1zKgQFLX2420Gf1V6rF9+
-e7OqfHEkIbJDfn4649lJCjpjfkDFBrOgItFISc7in0APZjhlFVFeNyErUe4xIaqu
-XdBZ3s5hJNdvF8l759DZEf8Ue77+RkjOFjjM5elGRz3qCEjCsSXVgs2x0toozBd4
-mAxgRx3r7eBWSeuhyWqJSNEVo24rwS7Aw1UUR5vPWLWfVkJLqdxPEdirywXtIW3d
-3GPu/D6W8YK63Mg7ncs+ryD3giFfNz5IFhGFKm7kFPvwju7IR2kzIjZTrMo92vTO
-O780yEYiDnnqLTJrVBBYEXMu7xJB6U+IbiCC+2r1eJg4mgJo1eHYxIK7PxBSCZs4
-pdwFNeSzJJRXJgM4+bMb253AJVtVmkkxFbsv+UXc//8hFqvIWnqg2Jn7NKncFkjh
-wZK1gRASN1uEE79J1Z3P7RdMElW2a6LRSqErfOduznRQUlo5bdSX/u4bxJdv3qLY
-Y37hMgqJnrP5Nf4yktdfTXJIa76Z+eNkfhRihK23Nr4mXxYey06lRvRsqjsO8Fam
-kP9TB/6L5ENQ4zn9MASaLP9MhA6dekax5msNYj97Ww0oXG8Fy0U=
-=niRb
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1C4BQACgkQFA3kzBSg
+Kbar1hAAquWHe0O3sEuqpFSEu1yKoyDSLzPeFYmaYzdz+Snz7NxsssYKw9wudKh4
+9+j0FsIKOQFzlDfXviOwYBsl94ixNziBtVPPFoWEtCSXKlAMCRfIVXT8SsIrY3SE
+/lIZY7jBKi9oRvBxWMImxP0iLS2HC6uIg/3fs5sAy4Hy1VKcn2mvMy7WZES8gFTR
+/Bc2v4Y2Y4cdTjzjy8MpRUthrYbYU06XHXp5RF3/UkEg2I7NU6bYDt+5OUTpv36c
+B/9vR/zk2kg9lhzrWRZqu3n91VY9KJB5ykfGBRHez+qJ3uFqnMGJn1zW9C73S6q/
+KKpkXcSJ14otSb3iq7KGlCjuQ7l18mEjFlYmemRtUTivOSmVIuCg57aGvhgduNfu
+kENj8whpMZo7M01121HGCtjo8r8aFKEQBoQ2mRqnakxyvzjmTu4Ljr0E4yZab52p
+RNOHUjbtZL/R0Dp/aWugfsiwqZiD0c4/rsubRSnJN5gHlk9ze1vD+zauF+DeIFqb
+oMRGa8mFtmPdaeNb9nSmbEBNzngBbiatr+DCMYogeRM6+AOjycAn86TOdxOvEPiB
+Xy7XllFoUuQvTXXeI79M7fZE2zH/NCcvqAtPYu2/Adt0bz+AW5InsRhG7pgdusAN
+u6rb/QzX13xSs5s/NsYDDGUll1KGrOoIcTDpmSghgsTpIwLzW7I=
+=S2Wq
 -----END PGP SIGNATURE-----
 
---cfJ13FhsvNR/yOpm--
+--mXDO3udm/xYWQeMQ--
 
 
---===============8614506101359413462==
+--===============0025030989231715396==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -126,5 +127,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8614506101359413462==--
+--===============0025030989231715396==--
 
