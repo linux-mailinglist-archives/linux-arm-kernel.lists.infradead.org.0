@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C66A7D767
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:23:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44CD97D768
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:23:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d8UywgPiAoh8fumx15td8UY4r4pZT9poGdtlHeCyQjk=; b=h/MjXMb1sggEGe
-	AFVsJKbLyq3pOjZoJgaz1UTGAe2awwyqx5ZtQrpeODTCDj20kA09MWhiubrJqbVgUGpLfSiD5WGLR
-	I2CX6Jmd7ZELrq5bkbV+hkv72qgnBWrvjZ54XSPH2IoPCEWQI3i1QTTuIu/x6pbt/HE8pN3+Z3950
-	OSX/qp1LWvoFlL+wZZ9rsMuEJG+A7um0+clslGTkpaL8uAZCx3Doanq+bBM4q//lFcr6pkpAl7hrZ
-	SNduLX1MTHH/yqo6o2pxHAkwVCg1w+OpLntSiskguAzHdZtSAF5nn3xZ0W9hBUGhra9X7OUjAsSE0
-	pFXaCWSbtQJc7lRMfK8A==;
+	List-Owner; bh=LmqyFnmIw+JGpTkJn+hx6TmEufbugWhDO0uENFM32Do=; b=YGPGHCI9BVWfRl
+	tM+ygPO+9u/AVeOpO/OzfaOM9s42eMwQPpGNsbaUlqrFXqsGwtTaM4QN4Kbnt+hPLeX7ScKUDb1AQ
+	Gt3lfttEKArqCPBG+T+2RzR/E7wmc6q3+kBDarO5lWQkWNe2L8m1P+mxeoSQC5W2Vgo9gWITUVKeC
+	8+M7V7rZt3sdSUTUPUXT/yyFH3yJtu+InxfEKW3ifOGukq6rOK7E9T/q3Ed474hDgl58wCLg67a13
+	wWkL3ffYE394DMm+OY4uhFYdDAWFGb/Be+CNz71tvmbKh4m8x1n6VQzhRssQ8Whvc4qNt7DylrTg3
+	M1LmOO8/5AJiLlBIMqSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6MS-0005aS-MH; Thu, 01 Aug 2019 08:22:56 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ht6Ma-0005pz-Sj; Thu, 01 Aug 2019 08:23:04 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6Ju-00023a-3b
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:20 +0000
-Received: by mail-pf1-x442.google.com with SMTP id q10so33592106pff.9
+ id 1ht6Jw-00027W-QR
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:22 +0000
+Received: by mail-pl1-x644.google.com with SMTP id t14so31834054plr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 01:20:18 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=GWBuoPEcurWKDak0e2m8FiUiWeWYmr8zikb3n4XMh3U=;
- b=q7HiAZVZ6w5XCi6JSITNXUus7qf13R3ZdtvYRfcXZcnyLiUbMa19jlxI+YQsssbQnp
- dTSvKRuCi+Tj09bq1F9qTFCXl81fsijJJ7N1pq02NN5s/rQIhPKVtXdlhGGEuuQgDv2z
- rMwg9oNemkqd5GDkC3rGmX8Z09VgYs4QjyHL13/AUnpgmcuhOCC0kMCl9TT/wQ3Vl8Pw
- lZc6ThzJ/QKqYZ0P5viIspI3Z1XT1SuUy9ZrBAk5OgSL5u8lqem2enkByuCLX+aRf5nj
- sj1rXj/CTfB9ex5rzvzWOFBuaYHdRi7IhozL3jsKrYve0lC8PeNBaQ7UbfuUUltJ+okf
- qk6Q==
+ bh=T4YEDbPBCBlX8lcfFrAFFzcqkBiIDW1BWpR/22wpzUw=;
+ b=j+wIxaf24e0CpzIKK/5HFWFDaO9nWV4kFtijIqRGeIL2oUs1CUsdiqkS5A/yCZlznp
+ FBWXMrdDWPL9t6x5kGS+637YjSCJIFmH2M72EazCBWjyx8chTwT7jj3ddbDQ8xoytiap
+ Xyixz9QuVGvPDPLbaW1FkXwVDuJntjk6ZKja8N9BLyW//7ds0FSvKwUU8GrlQod9JtCd
+ V2FPQDGImA2xcsiMbnY+qvK98JbLFurgS2qomwRcBgbnvyeKNObnco6sauHu+jDF9KWs
+ ZkVqY0ZwfH9K9Rlt+sWgf2ri0qT3m+PebuXwU8wXimcvBHKDa8+C8rfE0c3IxdVXmjk2
+ vADg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=GWBuoPEcurWKDak0e2m8FiUiWeWYmr8zikb3n4XMh3U=;
- b=YucPNbmMjNRbicEj4AqGF6WT2F8RFvC366znYV28hw9X7Q7j8OB41enTwigGInrYmY
- mNzMfGzvgnk2CW9OmF0cpkLE4/k9LWTcF7Kaw8VbDlIVag9JuaFHwAHyr7ujZ+Qreme0
- 1GfcPEXKeqWj1SKuv6lHV8nPQqzYLi1gqn5CNbNGsZZiLiKUQ2Yi3hibLYGc4B0X2J5l
- ME2H2FupSzg31kRr9XOpJ7XYYxBzrFhksJ/sBPItBxXq/SevK3Uj+bzyeoiDAcGRRYVv
- hZ+U2cfLB8y6ODEeUX07hM/kEhgI3Y8tkAZyNPNZuKk80JH3IqVqgbpPq6v5fk0iyPig
- GAsQ==
-X-Gm-Message-State: APjAAAV6A/q9f9Dk+fDuf4GbZWg67hbU/3nN+B+NGamCikm2KcU4U7FH
- l11sVZZiBsddoHyKMSwDDolzsw==
-X-Google-Smtp-Source: APXvYqzUs6xXAR8vli7Y6u/duOBSv+NXtmY1ZNerLWGK1KQ3lzsmuL+hJxb/eg8xSZb4AkZnl877/w==
-X-Received: by 2002:a62:1ac8:: with SMTP id
- a191mr51954060pfa.164.1564647617513; 
- Thu, 01 Aug 2019 01:20:17 -0700 (PDT)
+ bh=T4YEDbPBCBlX8lcfFrAFFzcqkBiIDW1BWpR/22wpzUw=;
+ b=MtHlf3MTnjtWxnLxPrhba6kTvoFan97rBpTBTyMzG2Mw/RAFx+zeCVqny7NlfXnwp4
+ Uc+ndmfvnsXEBWFiLBA+GHiopLxcXyztfppXRD1JCy4y8/swxq7MZ/1ksL4HVsLBPrlx
+ /Zz0IHx7H4NyQs40lNEHu82SiEvJmZuIUGQF5bnQr3wGtCLKQYLx2XYpScCDUfaE5oai
+ lU15LUmzHjwjcRlFNoFr2DgztDd8cqlcTZsmsRpzGj1KErZiPsyfgIRCTSev2wlIePRR
+ uNSujTSTE8vKeM+1UyMnfD8gDrGF4Iu2KGnh0DVvStbXv+NmJ36O5pz+qiFhsRx8xI/A
+ ct8w==
+X-Gm-Message-State: APjAAAV7AbYKnaexsKiN/eK1e0XFp1lRudID0NntaCArp69Bl8QklrWP
+ VIuSnZz/Jlzp7XvIuO4P2uR8fw==
+X-Google-Smtp-Source: APXvYqyaDMWnJL02FD2X1zz40Bno2tCIMohJgbzKMFoWBZQF5MuGor1DLTLPD9pXq/pUZnEilZYUyQ==
+X-Received: by 2002:a17:902:4222:: with SMTP id
+ g31mr50424956pld.41.1564647620067; 
+ Thu, 01 Aug 2019 01:20:20 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id i7sm3393542pjk.24.2019.08.01.01.20.16
+ by smtp.gmail.com with ESMTPSA id 135sm73497554pfb.137.2019.08.01.01.20.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 01:20:17 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:19 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org
-Subject: [PATCH ARM32 v4.4 V2 16/47] ARM: spectre-v2: harden user aborts in
- kernel space
-Date: Thu,  1 Aug 2019 13:46:00 +0530
-Message-Id: <2c11c43187dae2179ccb3bb4cf9e1b8040a01bc5.1564646727.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM32 v4.4 V2 17/47] ARM: spectre-v2: add firmware based
+ hardening
+Date: Thu,  1 Aug 2019 13:46:01 +0530
+Message-Id: <b5f0eee5d3e81f75f7c4f71b3126f18884aaa55a.1564646727.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1564646727.git.viresh.kumar@linaro.org>
 References: <cover.1564646727.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_012018_181989_71F01E56 
-X-CRM114-Status: GOOD (  17.67  )
+X-CRM114-CacheID: sfid-20190801_012020_948692_5C8E8FD5 
+X-CRM114-Status: GOOD (  13.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,250 +112,155 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit f5fe12b1eaee220ce62ff9afb8b90929c396595f upstream.
+Commit 10115105cb3aa17b5da1cb726ae8dd5f6854bd93 upstream.
 
-This required some additional defines be brought back.
-
-In order to prevent aliasing attacks on the branch predictor,
-invalidate the BTB or instruction cache on CPUs that are known to be
-affected when taking an abort on a address that is outside of a user
-task limit:
-
-Cortex A8, A9, A12, A17, A73, A75: flush BTB.
-Cortex A15, Brahma B15: invalidate icache.
-
-If the IBE bit is not set, then there is little point to enabling the
-workaround.
+Add firmware based hardening for cores that require more complex
+handling in firmware.
 
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Boot-tested-by: Tony Lindgren <tony@atomide.com>
 Reviewed-by: Tony Lindgren <tony@atomide.com>
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Reviewed-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: David A. Long <dave.long@linaro.org>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm/include/asm/cp15.h        | 18 ++++++++
- arch/arm/include/asm/system_misc.h | 15 ++++++
- arch/arm/mm/fault.c                |  3 ++
- arch/arm/mm/proc-v7-bugs.c         | 73 ++++++++++++++++++++++++++++--
- arch/arm/mm/proc-v7.S              |  8 ++--
- 5 files changed, 109 insertions(+), 8 deletions(-)
+ arch/arm/mm/proc-v7-bugs.c | 60 ++++++++++++++++++++++++++++++++++++++
+ arch/arm/mm/proc-v7.S      | 21 +++++++++++++
+ 2 files changed, 81 insertions(+)
 
-diff --git a/arch/arm/include/asm/cp15.h b/arch/arm/include/asm/cp15.h
-index c3f11524f10c..b74b174ac9fc 100644
---- a/arch/arm/include/asm/cp15.h
-+++ b/arch/arm/include/asm/cp15.h
-@@ -49,6 +49,24 @@
- 
- #ifdef CONFIG_CPU_CP15
- 
-+#define __ACCESS_CP15(CRn, Op1, CRm, Op2)	\
-+	"mrc", "mcr", __stringify(p15, Op1, %0, CRn, CRm, Op2), u32
-+#define __ACCESS_CP15_64(Op1, CRm)		\
-+	"mrrc", "mcrr", __stringify(p15, Op1, %Q0, %R0, CRm), u64
-+
-+#define __read_sysreg(r, w, c, t) ({				\
-+	t __val;						\
-+	asm volatile(r " " c : "=r" (__val));			\
-+	__val;							\
-+})
-+#define read_sysreg(...)		__read_sysreg(__VA_ARGS__)
-+
-+#define __write_sysreg(v, r, w, c, t)	asm volatile(w " " c : : "r" ((t)(v)))
-+#define write_sysreg(v, ...)		__write_sysreg(v, __VA_ARGS__)
-+
-+#define BPIALL				__ACCESS_CP15(c7, 0, c5, 6)
-+#define ICIALLU				__ACCESS_CP15(c7, 0, c5, 0)
-+
- extern unsigned long cr_alignment;	/* defined in entry-armv.S */
- 
- static inline unsigned long get_cr(void)
-diff --git a/arch/arm/include/asm/system_misc.h b/arch/arm/include/asm/system_misc.h
-index a3d61ad984af..1fed41440af9 100644
---- a/arch/arm/include/asm/system_misc.h
-+++ b/arch/arm/include/asm/system_misc.h
-@@ -7,6 +7,7 @@
- #include <linux/linkage.h>
- #include <linux/irqflags.h>
- #include <linux/reboot.h>
-+#include <linux/percpu.h>
- 
- extern void cpu_init(void);
- 
-@@ -14,6 +15,20 @@ void soft_restart(unsigned long);
- extern void (*arm_pm_restart)(enum reboot_mode reboot_mode, const char *cmd);
- extern void (*arm_pm_idle)(void);
- 
-+#ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
-+typedef void (*harden_branch_predictor_fn_t)(void);
-+DECLARE_PER_CPU(harden_branch_predictor_fn_t, harden_branch_predictor_fn);
-+static inline void harden_branch_predictor(void)
-+{
-+	harden_branch_predictor_fn_t fn = per_cpu(harden_branch_predictor_fn,
-+						  smp_processor_id());
-+	if (fn)
-+		fn();
-+}
-+#else
-+#define harden_branch_predictor() do { } while (0)
-+#endif
-+
- #define UDBG_UNDEFINED	(1 << 0)
- #define UDBG_SYSCALL	(1 << 1)
- #define UDBG_BADABORT	(1 << 2)
-diff --git a/arch/arm/mm/fault.c b/arch/arm/mm/fault.c
-index 0d20cd594017..afc8d7cf7625 100644
---- a/arch/arm/mm/fault.c
-+++ b/arch/arm/mm/fault.c
-@@ -163,6 +163,9 @@ __do_user_fault(struct task_struct *tsk, unsigned long addr,
- {
- 	struct siginfo si;
- 
-+	if (addr > TASK_SIZE)
-+		harden_branch_predictor();
-+
- #ifdef CONFIG_DEBUG_USER
- 	if (((user_debug & UDBG_SEGV) && (sig == SIGSEGV)) ||
- 	    ((user_debug & UDBG_BUS)  && (sig == SIGBUS))) {
 diff --git a/arch/arm/mm/proc-v7-bugs.c b/arch/arm/mm/proc-v7-bugs.c
-index e46557db6446..85a2e3d6263c 100644
+index 85a2e3d6263c..da25a38e1897 100644
 --- a/arch/arm/mm/proc-v7-bugs.c
 +++ b/arch/arm/mm/proc-v7-bugs.c
-@@ -2,7 +2,61 @@
+@@ -1,14 +1,20 @@
+ // SPDX-License-Identifier: GPL-2.0
++#include <linux/arm-smccc.h>
  #include <linux/kernel.h>
++#include <linux/psci.h>
  #include <linux/smp.h>
  
--static __maybe_unused void cpu_v7_check_auxcr_set(bool *warned,
-+#include <asm/cp15.h>
-+#include <asm/cputype.h>
-+#include <asm/system_misc.h>
-+
-+#ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
-+DEFINE_PER_CPU(harden_branch_predictor_fn_t, harden_branch_predictor_fn);
-+
-+static void harden_branch_predictor_bpiall(void)
-+{
-+	write_sysreg(0, BPIALL);
-+}
-+
-+static void harden_branch_predictor_iciallu(void)
-+{
-+	write_sysreg(0, ICIALLU);
-+}
-+
-+static void cpu_v7_spectre_init(void)
-+{
-+	const char *spectre_v2_method = NULL;
-+	int cpu = smp_processor_id();
-+
-+	if (per_cpu(harden_branch_predictor_fn, cpu))
-+		return;
-+
-+	switch (read_cpuid_part()) {
-+	case ARM_CPU_PART_CORTEX_A8:
-+	case ARM_CPU_PART_CORTEX_A9:
-+	case ARM_CPU_PART_CORTEX_A12:
-+	case ARM_CPU_PART_CORTEX_A17:
-+	case ARM_CPU_PART_CORTEX_A73:
-+	case ARM_CPU_PART_CORTEX_A75:
-+		per_cpu(harden_branch_predictor_fn, cpu) =
-+			harden_branch_predictor_bpiall;
-+		spectre_v2_method = "BPIALL";
-+		break;
-+
-+	case ARM_CPU_PART_CORTEX_A15:
-+	case ARM_CPU_PART_BRAHMA_B15:
-+		per_cpu(harden_branch_predictor_fn, cpu) =
-+			harden_branch_predictor_iciallu;
-+		spectre_v2_method = "ICIALLU";
-+		break;
-+	}
-+	if (spectre_v2_method)
-+		pr_info("CPU%u: Spectre v2: using %s workaround\n",
-+			smp_processor_id(), spectre_v2_method);
-+}
-+#else
-+static void cpu_v7_spectre_init(void)
-+{
-+}
-+#endif
-+
-+static __maybe_unused bool cpu_v7_check_auxcr_set(bool *warned,
- 						  u32 mask, const char *msg)
- {
- 	u32 aux_cr;
-@@ -13,24 +67,33 @@ static __maybe_unused void cpu_v7_check_auxcr_set(bool *warned,
- 		if (!*warned)
- 			pr_err("CPU%u: %s", smp_processor_id(), msg);
- 		*warned = true;
-+		return false;
- 	}
-+	return true;
- }
- 
- static DEFINE_PER_CPU(bool, spectre_warned);
- 
--static void check_spectre_auxcr(bool *warned, u32 bit)
-+static bool check_spectre_auxcr(bool *warned, u32 bit)
- {
--	if (IS_ENABLED(CONFIG_HARDEN_BRANCH_PREDICTOR) &&
-+	return IS_ENABLED(CONFIG_HARDEN_BRANCH_PREDICTOR) &&
- 		cpu_v7_check_auxcr_set(warned, bit,
- 				       "Spectre v2: firmware did not set auxiliary control register IBE bit, system vulnerable\n");
- }
- 
- void cpu_v7_ca8_ibe(void)
- {
--	check_spectre_auxcr(this_cpu_ptr(&spectre_warned), BIT(6));
-+	if (check_spectre_auxcr(this_cpu_ptr(&spectre_warned), BIT(6)))
-+		cpu_v7_spectre_init();
- }
- 
- void cpu_v7_ca15_ibe(void)
- {
--	check_spectre_auxcr(this_cpu_ptr(&spectre_warned), BIT(0));
-+	if (check_spectre_auxcr(this_cpu_ptr(&spectre_warned), BIT(0)))
-+		cpu_v7_spectre_init();
-+}
-+
-+void cpu_v7_bugs_init(void)
-+{
-+	cpu_v7_spectre_init();
- }
-diff --git a/arch/arm/mm/proc-v7.S b/arch/arm/mm/proc-v7.S
-index 1436ad424f2a..f6a4589b4fd2 100644
---- a/arch/arm/mm/proc-v7.S
-+++ b/arch/arm/mm/proc-v7.S
-@@ -474,8 +474,10 @@ ENDPROC(__v7_setup)
- 
- 	__INITDATA
- 
-+	.weak cpu_v7_bugs_init
-+
- 	@ define struct processor (see <asm/proc-fns.h> and proc-macros.S)
--	define_processor_functions v7, dabort=v7_early_abort, pabort=v7_pabort, suspend=1
-+	define_processor_functions v7, dabort=v7_early_abort, pabort=v7_pabort, suspend=1, bugs=cpu_v7_bugs_init
+ #include <asm/cp15.h>
+ #include <asm/cputype.h>
++#include <asm/proc-fns.h>
+ #include <asm/system_misc.h>
  
  #ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
- 	@ generic v7 bpiall on context switch
-@@ -490,7 +492,7 @@ ENDPROC(__v7_setup)
- 	globl_equ	cpu_v7_bpiall_do_suspend,	cpu_v7_do_suspend
- 	globl_equ	cpu_v7_bpiall_do_resume,	cpu_v7_do_resume
- #endif
--	define_processor_functions v7_bpiall, dabort=v7_early_abort, pabort=v7_pabort, suspend=1
-+	define_processor_functions v7_bpiall, dabort=v7_early_abort, pabort=v7_pabort, suspend=1, bugs=cpu_v7_bugs_init
+ DEFINE_PER_CPU(harden_branch_predictor_fn_t, harden_branch_predictor_fn);
  
- #define HARDENED_BPIALL_PROCESSOR_FUNCTIONS v7_bpiall_processor_functions
- #else
-@@ -526,7 +528,7 @@ ENDPROC(__v7_setup)
- 	globl_equ	cpu_ca9mp_switch_mm,	cpu_v7_switch_mm
- #endif
- 	globl_equ	cpu_ca9mp_set_pte_ext,	cpu_v7_set_pte_ext
--	define_processor_functions ca9mp, dabort=v7_early_abort, pabort=v7_pabort, suspend=1
-+	define_processor_functions ca9mp, dabort=v7_early_abort, pabort=v7_pabort, suspend=1, bugs=cpu_v7_bugs_init
- #endif
++extern void cpu_v7_smc_switch_mm(phys_addr_t pgd_phys, struct mm_struct *mm);
++extern void cpu_v7_hvc_switch_mm(phys_addr_t pgd_phys, struct mm_struct *mm);
++
+ static void harden_branch_predictor_bpiall(void)
+ {
+ 	write_sysreg(0, BPIALL);
+@@ -19,6 +25,16 @@ static void harden_branch_predictor_iciallu(void)
+ 	write_sysreg(0, ICIALLU);
+ }
  
- 	@ Cortex-A15 - needs iciallu switch_mm for hardening
++static void __maybe_unused call_smc_arch_workaround_1(void)
++{
++	arm_smccc_1_1_smc(ARM_SMCCC_ARCH_WORKAROUND_1, NULL);
++}
++
++static void __maybe_unused call_hvc_arch_workaround_1(void)
++{
++	arm_smccc_1_1_hvc(ARM_SMCCC_ARCH_WORKAROUND_1, NULL);
++}
++
+ static void cpu_v7_spectre_init(void)
+ {
+ 	const char *spectre_v2_method = NULL;
+@@ -45,7 +61,51 @@ static void cpu_v7_spectre_init(void)
+ 			harden_branch_predictor_iciallu;
+ 		spectre_v2_method = "ICIALLU";
+ 		break;
++
++#ifdef CONFIG_ARM_PSCI
++	default:
++		/* Other ARM CPUs require no workaround */
++		if (read_cpuid_implementor() == ARM_CPU_IMP_ARM)
++			break;
++		/* fallthrough */
++		/* Cortex A57/A72 require firmware workaround */
++	case ARM_CPU_PART_CORTEX_A57:
++	case ARM_CPU_PART_CORTEX_A72: {
++		struct arm_smccc_res res;
++
++		if (psci_ops.smccc_version == SMCCC_VERSION_1_0)
++			break;
++
++		switch (psci_ops.conduit) {
++		case PSCI_CONDUIT_HVC:
++			arm_smccc_1_1_hvc(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
++					  ARM_SMCCC_ARCH_WORKAROUND_1, &res);
++			if ((int)res.a0 != 0)
++				break;
++			per_cpu(harden_branch_predictor_fn, cpu) =
++				call_hvc_arch_workaround_1;
++			processor.switch_mm = cpu_v7_hvc_switch_mm;
++			spectre_v2_method = "hypervisor";
++			break;
++
++		case PSCI_CONDUIT_SMC:
++			arm_smccc_1_1_smc(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
++					  ARM_SMCCC_ARCH_WORKAROUND_1, &res);
++			if ((int)res.a0 != 0)
++				break;
++			per_cpu(harden_branch_predictor_fn, cpu) =
++				call_smc_arch_workaround_1;
++			processor.switch_mm = cpu_v7_smc_switch_mm;
++			spectre_v2_method = "firmware";
++			break;
++
++		default:
++			break;
++		}
+ 	}
++#endif
++	}
++
+ 	if (spectre_v2_method)
+ 		pr_info("CPU%u: Spectre v2: using %s workaround\n",
+ 			smp_processor_id(), spectre_v2_method);
+diff --git a/arch/arm/mm/proc-v7.S b/arch/arm/mm/proc-v7.S
+index f6a4589b4fd2..b6359ce39fa7 100644
+--- a/arch/arm/mm/proc-v7.S
++++ b/arch/arm/mm/proc-v7.S
+@@ -9,6 +9,7 @@
+  *
+  *  This is the "shell" of the ARMv7 processor support.
+  */
++#include <linux/arm-smccc.h>
+ #include <linux/init.h>
+ #include <linux/linkage.h>
+ #include <asm/assembler.h>
+@@ -87,6 +88,26 @@ ENTRY(cpu_v7_dcache_clean_area)
+ 	ret	lr
+ ENDPROC(cpu_v7_dcache_clean_area)
+ 
++#ifdef CONFIG_ARM_PSCI
++	.arch_extension sec
++ENTRY(cpu_v7_smc_switch_mm)
++	stmfd	sp!, {r0 - r3}
++	movw	r0, #:lower16:ARM_SMCCC_ARCH_WORKAROUND_1
++	movt	r0, #:upper16:ARM_SMCCC_ARCH_WORKAROUND_1
++	smc	#0
++	ldmfd	sp!, {r0 - r3}
++	b	cpu_v7_switch_mm
++ENDPROC(cpu_v7_smc_switch_mm)
++	.arch_extension virt
++ENTRY(cpu_v7_hvc_switch_mm)
++	stmfd	sp!, {r0 - r3}
++	movw	r0, #:lower16:ARM_SMCCC_ARCH_WORKAROUND_1
++	movt	r0, #:upper16:ARM_SMCCC_ARCH_WORKAROUND_1
++	hvc	#0
++	ldmfd	sp!, {r0 - r3}
++	b	cpu_v7_switch_mm
++ENDPROC(cpu_v7_smc_switch_mm)
++#endif
+ ENTRY(cpu_v7_iciallu_switch_mm)
+ 	mov	r3, #0
+ 	mcr	p15, 0, r3, c7, c5, 0		@ ICIALLU
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
