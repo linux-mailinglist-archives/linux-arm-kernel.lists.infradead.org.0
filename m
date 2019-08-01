@@ -2,85 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27EE07D4E9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 07:32:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F35937D4EC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 07:32:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hbhkexI/W3az1Mfq0859KvRukPeEbB2H06W/Hm/tvcs=; b=pP4C33rtW1NZoT
-	7XMANaFjBH14FMBg45aE0NvPoQy2LrM8ry2yToXInT5gZGs0B6xEj3p9zLHbnGkBKMZcgLZT5zUet
-	Oe4evAj/zCoQejvdZxizmQzs376bRW6r1oXxlHOduvSJCArccRmKB0gu1HwEDdofaPwo7q13Z8wwq
-	Q9e9I7o3uGnFJfx7uu1I7qyhrmy4zLhAdlqjpnDIIxjWUjQuEwNy3D/5pPUJ2Z5jkB6VMXgCy/s1f
-	zEFRgzRJHeZewhbGV3TTt0Eye7NOBTxdf93E0I557gVJA5QrIaH/OvS29Z7LplTlv7VpoYzJw1Sc1
-	yl0uVbCSfwrUqcPdmH3A==;
+	List-Owner; bh=tnJbC6lSnt0jN/LiAA9pT4AMscUjWb5dRuw/9dLKjAE=; b=KmcMLhYuzyZ4mH
+	viUN1nePft6hmD5pAF0i+XPEw0e58ud4eQ4rKI0FpmMPI+x1iYdwx+uovkquauXyplq8lXztfLVCb
+	mJ3EiV0TiZZRWzC436G7PYgv+FezYAStPcrf7cU5pBxHSoAbbHadOWDGIvJyUqK5Ly7Kw+QVpkUip
+	Oq7+pTVFNG2nGT+1StrFHLdA9E3WDdLL21KH7lk2ic4Z8kC5PrmSI5ZvSAJNLK/Xhm401xEiwj+cx
+	Y9ckNcIcP1lxLECyf9m54CejvdUUeu4o9/wuSKWudhvqEnHd3jWSwLJFSxK34yUMtGF0bf3RLvntY
+	BLe8tAhkRi+momEiBbmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht3h8-0001do-Gf; Thu, 01 Aug 2019 05:32:06 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1ht3hi-0001t1-76; Thu, 01 Aug 2019 05:32:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht3h1-0001dS-UD
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 05:32:01 +0000
-Received: by mail-wr1-x443.google.com with SMTP id g17so72097252wrr.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 22:31:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=huNfAOKjl+kk+4Jtq0u6/qi6NLR+RYJid7AxvJTx6iY=;
- b=FWFYV5rxxlAYxAyoz/kKo31BDIaLqpIqBrNWI0UIl/b7/S4FYjmih8RX2OMahtJZ0P
- 8su1AOW2vd6neyowrzCnQzv1dFWesGMLkemIjw/yETxa1X/2DXRPUr9JtSnSFMfgBsuU
- wlsEtfODcgAQ079oIj/sHHVU+6k3s9j8Lur5KGllD1lDFPmDO+MYO4ZojPr3gQq+GQtX
- NNy8zD4WNZO8+9Os0mlEw4IbovjIfQ6NoXG1JsVxiyNau5fs86qT8Ff8eJe034BW10Yz
- QldOQUWCevUbtw1eUE3LU83A8qzYOi1/rjPJ78QJDQUHbtOVRN2nlhS9pdGjO2ps+Ncg
- bLuQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=huNfAOKjl+kk+4Jtq0u6/qi6NLR+RYJid7AxvJTx6iY=;
- b=fJRNoOTFMEgF8cCwpVvZUKKGobMCy58B9777uDqoBO9FLpFVcYyD/XV+f6OWcphUhU
- O6ei22a75PurtnwtXXAWNuu1yTFKkPtiPHIAQDiYbOVYBjbPejBKJdwiIX1Spumo/4jG
- gp+I0vnmf/u0O6o0cL+EEKIa+3Bmn5yZTeuLIPWzKzxu1mUCWEtyCJPLEWDcAzRHQ5i6
- VSqwlNNgIy00mcGYKUje85s9TdlXOL8+/l3+ISxaxTJVDfkGu74I+/zbukxVvsdR5CsI
- oPy2o9foKENwMH7v52BLiApRWZUaLKNEcPIiEuLtXhdFbHH3NSO0Y0pIMA8MevGGcmbJ
- 7YHQ==
-X-Gm-Message-State: APjAAAVbpbaQWoQHfs3akw8sjdozJ6tM179+DYRQcTZ60VB1lGWkBlB1
- K22oVLejxjFBLYnRCxX4q5I=
-X-Google-Smtp-Source: APXvYqzGfkEtAIaSRDZ/5FHdZBBGE9LyWinhe6pQxrmSPYLcwZ/eZiDN2S5PQ04+spdYxBWXDX0+Kw==
-X-Received: by 2002:a5d:4085:: with SMTP id o5mr136182150wrp.101.1564637518192; 
- Wed, 31 Jul 2019 22:31:58 -0700 (PDT)
-Received: from jernej-laptop.localnet (cpe-194-152-11-237.cable.triera.net.
- [194.152.11.237])
- by smtp.gmail.com with ESMTPSA id o7sm61277403wmf.43.2019.07.31.22.31.56
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 31 Jul 2019 22:31:57 -0700 (PDT)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
-To: linux-sunxi@googlegroups.com, maxime.ripard@bootlin.com
-Subject: Re: [linux-sunxi] Re: [PATCH v4 6/9] ASoC: sun4i-i2s: Add multi-lane
- functionality
-Date: Thu, 01 Aug 2019 07:31:55 +0200
-Message-ID: <1589203.0AjJVEASy3@jernej-laptop>
-In-Reply-To: <20190731122953.2u3iabd6gkn7jv7k@flea>
-References: <20190603174735.21002-1-codekipper@gmail.com>
- <2092329.vleAuWJ0xl@jernej-laptop> <20190731122953.2u3iabd6gkn7jv7k@flea>
-MIME-Version: 1.0
+ id 1ht3hZ-0001sJ-3c
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 05:32:36 +0000
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7A9EC206A3;
+ Thu,  1 Aug 2019 05:32:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564637551;
+ bh=QLmvjH5tbhGx/6o/ScL4re6wjm5zhxZw6SGUDPBxV4Q=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=iYXXL8qCH1h7VUK+sx+0j9I5vg5cluYfgzkDF7VPdmiShGaJLBTZgR6ATdhl4EqBE
+ hhIrnyB5t8CiJ92MUlPKi1cCoTwmvtUAg88YYA0xMDMSG0x7cO2+KjZeUAVoAvhvO+
+ OB3jRXcULO+gWOFtL+7SZpK4Oy7zXlG7oodXmABc=
+Date: Thu, 1 Aug 2019 14:32:25 +0900
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v3 3/4] arm64: Make debug exception handlers visible
+ from RCU
+Message-Id: <20190801143225.e61e38ce7a701407b19f8008@kernel.org>
+In-Reply-To: <20190731172602.36hdk3yb3w6uihbu@willie-the-truck>
+References: <156404254387.2020.886452004489353899.stgit@devnote2>
+ <156404257493.2020.7940525305482369976.stgit@devnote2>
+ <20190731172602.36hdk3yb3w6uihbu@willie-the-truck>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_223159_993940_9F36D47F 
-X-CRM114-Status: GOOD (  30.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_223235_101944_A9627F7C 
+X-CRM114-Status: GOOD (  23.70  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jernej.skrabec[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -89,7 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,109 +78,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
- "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
- Christopher Obbard <chris@64studio.com>, Liam Girdwood <lgirdwood@gmail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, codekipper@gmail.com,
- Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
+ Anders Roxell <anders.roxell@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Matt Hart <matthew.hart@linaro.org>,
+ "Paul E . McKenney" <paulmck@linux.ibm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RG5lIHNyZWRhLCAzMS4ganVsaWogMjAxOSBvYiAxNDoyOTo1MyBDRVNUIGplIE1heGltZSBSaXBh
-cmQgbmFwaXNhbChhKToKPiBPbiBUdWUsIEp1bCAzMCwgMjAxOSBhdCAwNzo1NzoxMFBNICswMjAw
-LCBKZXJuZWogxaBrcmFiZWMgd3JvdGU6Cj4gPiBEbmUgdG9yZWssIDA0LiBqdW5paiAyMDE5IG9i
-IDExOjM4OjQ0IENFU1QgamUgQ29kZSBLaXBwZXIgbmFwaXNhbChhKToKPiA+ID4gT24gVHVlLCA0
-IEp1biAyMDE5IGF0IDExOjAyLCBDaHJpc3RvcGhlciBPYmJhcmQgPGNocmlzQDY0c3R1ZGlvLmNv
-bT4gCndyb3RlOgo+ID4gPiA+IE9uIFR1ZSwgNCBKdW4gMjAxOSBhdCAwOTo0MywgQ29kZSBLaXBw
-ZXIgPGNvZGVraXBwZXJAZ21haWwuY29tPiB3cm90ZToKPiA+ID4gPiA+IE9uIFR1ZSwgNCBKdW4g
-MjAxOSBhdCAwOTo1OCwgTWF4aW1lIFJpcGFyZAo+ID4gPiA+ID4gPG1heGltZS5yaXBhcmRAYm9v
-dGxpbi5jb20+Cj4gPiAKPiA+IHdyb3RlOgo+ID4gPiA+ID4gPiBPbiBNb24sIEp1biAwMywgMjAx
-OSBhdCAwNzo0NzozMlBNICswMjAwLCBjb2Rla2lwcGVyQGdtYWlsLmNvbSAKd3JvdGU6Cj4gPiA+
-ID4gPiA+ID4gRnJvbTogTWFyY3VzIENvb3BlciA8Y29kZWtpcHBlckBnbWFpbC5jb20+Cj4gPiA+
-ID4gPiA+ID4gCj4gPiA+ID4gPiA+ID4gVGhlIGkycyBibG9jayBzdXBwb3J0cyBtdWx0aS1sYW5l
-IGkycyBvdXRwdXQgaG93ZXZlciB0aGlzCj4gPiA+ID4gPiA+ID4gZnVuY3Rpb25hbGl0eQo+ID4g
-PiA+ID4gPiA+IGlzIG9ubHkgcG9zc2libGUgaW4gZWFybGllciBTb0NzIHdoZXJlIHRoZSBwaW5z
-IGFyZSBleHBvc2VkIGFuZAo+ID4gPiA+ID4gPiA+IGZvcgo+ID4gPiA+ID4gPiA+IHRoZSBpMnMg
-YmxvY2sgdXNlZCBmb3IgSERNSSBhdWRpbyBvbiB0aGUgbGF0ZXIgU29Dcy4KPiA+ID4gPiA+ID4g
-PiAKPiA+ID4gPiA+ID4gPiBUbyBlbmFibGUgdGhpcyBmdW5jdGlvbmFsaXR5LCBhbiBvcHRpb25h
-bCBwcm9wZXJ0eSBoYXMgYmVlbgo+ID4gPiA+ID4gPiA+IGFkZGVkIHRvCj4gPiA+ID4gPiA+ID4g
-dGhlIGJpbmRpbmdzLgo+ID4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiA+IFNpZ25lZC1vZmYtYnk6
-IE1hcmN1cyBDb29wZXIgPGNvZGVraXBwZXJAZ21haWwuY29tPgo+ID4gPiA+ID4gPiAKPiA+ID4g
-PiA+ID4gSSdkIGxpa2UgdG8gaGF2ZSBNYXJrJ3MgaW5wdXQgb24gdGhpcywgYnV0IEknbSByZWFs
-bHkgd29ycmllZAo+ID4gPiA+ID4gPiBhYm91dAo+ID4gPiA+ID4gPiB0aGUgaW50ZXJhY3Rpb24g
-d2l0aCB0aGUgcHJvcGVyIFRETSBzdXBwb3J0Lgo+ID4gPiA+ID4gPiAKPiA+ID4gPiA+ID4gT3Vy
-IGZ1bmRhbWVudGFsIGlzc3VlIGlzIHRoYXQgdGhlIGNvbnRyb2xsZXIgY2FuIGhhdmUgdXAgdG8g
-OAo+ID4gPiA+ID4gPiBjaGFubmVscywgYnV0IGVpdGhlciBvbiA0IGxpbmVzIChpbnN0ZWFkIG9m
-IDEpLCBvciA4IGNoYW5uZWxzIG9uIDEKPiA+ID4gPiA+ID4gKGxpa2UgcHJvcGVyIFRETSkgKG9y
-IGFueSBjb21iaW5hdGlvbiBiZXR3ZWVuIHRoZSB0d28sIGJ1dCB0aGF0Cj4gPiA+ID4gPiA+IHNo
-b3VsZAo+ID4gPiA+ID4gPiBiZSBwcmV0dHkgcmFyZSkuCj4gPiA+ID4gPiAKPiA+ID4gPiA+IEkg
-dW5kZXJzdGFuZC4uLm1heWJlIHRoZSBURE0gbmVlZHMgdG8gYmUgZXh0ZW5kZWQgdG8gc3VwcG9y
-dCB0aGlzIHRvCj4gPiA+ID4gPiBjb25zaWRlciBjaGFubmVsIG1hcHBpbmcgYW5kIG11bHRpcGxl
-IHRyYW5zZmVyIGxpbmVzLiBJIHdhcyB0aGlua2luZwo+ID4gPiA+ID4gYWJvdXQgdGhlIGxhdGVy
-IHdoZW4gc29tZW9uZSB3YXMgcmVxdWVzdGluZyBzdXBwb3J0IG9uIElJUkMgYSB3aGlsZQo+ID4g
-PiA+ID4gYWdvLCBJIHRob3VnaHQgbWFza2luZyBtaWdodCBvZiBiZWVuIGEgc29sdXRpb24uIFRo
-ZXNlIGNhbiB3YWl0IGFzCj4gPiA+ID4gPiB0aGUKPiA+ID4gPiA+IG9ubHkgY29uc3VtZXIgYXQg
-dGhlIG1vbWVudCBpcyBMaWJyZUVMRUMgYW5kIHdlIGNhbiBwYXRjaCBpdCB0aGVyZS4KPiA+ID4g
-PiAKPiA+ID4gPiBIaSBNYXJjdXMsCj4gPiA+ID4gCj4gPiA+ID4gRldJVywgdGhlIFRJIE1jQVNQ
-IGRyaXZlciBoYXMgc3VwcG9ydCBmb3IgVERNICYgKGkgdGhpbms/KSBtdWx0aXBsZQo+ID4gPiA+
-IHRyYW5zZmVyIGxpbmVzIHdoaWNoIGFyZSBjYWxsZWQgc2VyaWFsaXplcnMuCj4gPiA+ID4gTWF5
-YmUgdGhpcyBjYW4gaGVscCB3aXRoIGluc3BpcmF0aW9uPwo+ID4gPiA+IHNlZQo+ID4gPiA+IGh0
-dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZhbGRzL2xp
-bnV4LmdpdC90cmUKPiA+ID4gPiBlL3MKPiA+ID4gPiBvdW5kL3NvYy90aS9kYXZpbmNpLW1jYXNw
-LmMgc2FtcGxlIERUUzoKPiA+ID4gPiAKPiA+ID4gPiAmbWNhc3AwIHsKPiA+ID4gPiAKPiA+ID4g
-PiAgICAgI3NvdW5kLWRhaS1jZWxscyA9IDwwPjsKPiA+ID4gPiAgICAgc3RhdHVzID0gIm9rYXki
-Owo+ID4gPiA+ICAgICBwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+ID4gPiA+ICAgICBwaW5j
-dHJsLTAgPSA8Jm1jYXNwMF9waW5zPjsKPiA+ID4gPiAgICAgCj4gPiA+ID4gICAgIG9wLW1vZGUg
-PSA8MD47Cj4gPiA+ID4gICAgIHRkbS1zbG90cyA9IDw4PjsKPiA+ID4gPiAgICAgc2VyaWFsLWRp
-ciA9IDwKPiA+ID4gPiAgICAgCj4gPiA+ID4gICAgICAgICAyIDAgMSAwCj4gPiA+ID4gICAgICAg
-ICAwIDAgMCAwCj4gPiA+ID4gICAgICAgICAwIDAgMCAwCj4gPiA+ID4gICAgICAgICAwIDAgMCAw
-Cj4gPiA+ID4gICAgID4KPiA+ID4gPiAgICAgPjsKPiA+ID4gPiAgICAgCj4gPiA+ID4gICAgIHR4
-LW51bS1ldnQgPSA8MT47Cj4gPiA+ID4gICAgIHJ4LW51bS1ldnQgPSA8MT47Cj4gPiA+ID4gCj4g
-PiA+ID4gfTsKPiA+ID4gPiAKPiA+ID4gPiBDaGVlcnMhCj4gPiA+IAo+ID4gPiBUaGFua3MsIHRo
-aXMgbG9va3MgZ29vZC4KPiA+IAo+ID4gSSB3b3VsZCByZWFsbHkgbGlrZSB0byBzZWUgdGhpcyBp
-c3N1ZSByZXNvbHZlZCwgYmVjYXVzZSBIRE1JIGF1ZGlvIHN1cHBvcnQKPiA+IGluIG1haW5saW5l
-IExpbnV4IGZvciB0aG9zZSBTb0NzIGlzIGxvbmcgb3ZlcmR1ZS4KPiA+IAo+ID4gSG93ZXZlciwg
-dGhlcmUgaXMgYSBwb3NzaWJpbGl0eSB0byBzdGlsbCBhZGQgSERNSSBhdWRpbyBzdXBvcnQgKHN0
-ZXJlbwo+ID4gb25seSkgZXZlbiBpZiB0aGlzIGlzc3VlIGlzIG5vdCBjb21wbGV0ZWx5IHNvbHZl
-ZC4gSWYgd2UgYWdyZWUgdGhhdAo+ID4gY29uZmlndXJhdGlvbiBvZiBjaGFubmVscyB3b3VsZCBi
-ZSBzb2x2ZWQgd2l0aCBhZGRpdGlvbmFsIHByb3BlcnR5IGFzCj4gPiBDaHJpc3RvcGhlciBzdWdn
-ZXN0ZWQsIHN1cHBvcnQgZm9yID4yIGNoYW5uZWxzIGNhbiBiZSBsZWZ0IGZvciBhIGxhdGVyCj4g
-PiB0aW1lIHdoZW4gc3VwcG9ydCBmb3IgdGhhdCBwcm9wZXJ0eSB3b3VsZCBiZSBpbXBsZW1lbnRl
-ZC4gQ3VycmVudGx5LAo+ID4gc3RlcmVvIEhETUkgYXVkaW8gc3VwcG9ydCBjYW4gYmUgYWRkZWQg
-d2l0aCBhIGZldyBwYXRjaGVzLgo+ID4gCj4gPiBJIHRoaW5rIGFsbCBJMlMgY29yZXMgYXJlIHJl
-YWxseSB0aGUgc2FtZSwgbm8gbWF0dGVyIGlmIGludGVybmFsbHkKPiA+IGNvbm5lY3RlZCB0byBI
-RE1JIGNvbnRyb2xsZXIgb3Igcm91dGVkIHRvIHBpbnMsIHNvIGl0IHdvdWxkIG1ha2Ugc2Vuc2Ug
-dG8KPiA+IHVzZSBzYW1lIGNvbXBhdGlibGUgZm9yIGFsbCBvZiB0aGVtLiBJdCdzIGp1c3QgdGhh
-dCB0aG9zZSBJMlMgY29yZXMgd2hpY2gKPiA+IGFyZSByb3V0ZWQgdG8gcGlucyBjYW4gdXNlIG9u
-bHkgb25lIGxhbmUgYW5kID4yIGNoYW5uZWxzIGNhbiBiZSB1c2VkIG9ubHkKPiA+IGluIFRETSBt
-b2RlIG9mIG9wZXJhdGlvbiwgaWYgSSB1bmRlcnN0YW5kIHRoaXMgY29ycmVjdGx5Lgo+ID4gCj4g
-PiBOZXcgcHJvcGVydHkgd291bGQgaGF2ZSB0byBiZSBvcHRpb25hbCwgc28gaXQncyBvbWlzc2lv
-biB3b3VsZCByZXN1bHQgaW4KPiA+IHNhbWUgY2hhbm5lbCBjb25maWd1cmF0aW9uIGFzIGl0IGlz
-IGFscmVhZHkgcHJlc2VudCwgdG8gcHJlc2VydmUKPiA+IGNvbXBhdGliaWxpdHkgd2l0aCBvbGQg
-ZGV2aWNlIHRyZWVzLiBBbmQgdGhpcyBtb2RlIGlzIGFscmVhZHkgc3VmZmljaWVudAo+ID4gZm9y
-IHN0ZXJlbyBIRE1JIGF1ZGlvIHN1cHBvcnQuCj4gCj4gWWVhaCwgaXQgbG9va3MgbGlrZSBhIGdv
-b2QgcGxhbi4KPiAKPiA+IFNpZGUgbm90ZTogSERNSSBhdWRpbyB3aXRoIGN1cnJlbnQgc3VuNGkt
-aTJzIGRyaXZlciBoYXMgYSBkZWxheSAoYWJvdXQgYQo+ID4gc2Vjb25kKSwgc3VwcG9zZWRseSBi
-ZWNhdXNlIERXIEhETUkgY29udHJvbGxlciBhdXRvbWF0aWNhbGx5IGdlbmVyYXRlcyBDVFMKPiA+
-IHZhbHVlIGJhc2VkIG9uIEkyUyBjbG9jayAoYXV0byBDVFMgdmFsdWUgZ2VuZXJhdGlvbiBpcyBl
-bmFibGVkIHBlcgo+ID4gRGVzaWduV2FyZSByZWNvbWVuZGF0aW9uIGZvciBEVyBIRE1JIEkyUyBp
-bnRlcmZhY2UpLgo+IAo+IElzIHRoYXQgYSBjb25zdGFudCBkZWxheSBkdXJpbmcgdGhlIGF1ZGlv
-IHBsYXliYWNrLCBvciBvbmx5IGF0IHN0YXJ0dXA/CgpJIHRoaW5rIGl0J3MganVzdCBhdCBzdGFy
-dHVwLCBlLmcuIGlmIHlvdSdyZSB3YXRjaGluZyBtb3ZpZSwgYXVkaW8gaXMgaW4gc3luYywgCml0
-J3MganVzdCB0aGF0IGZpcnN0IHNlY29uZCBvciBzbyBpcyBzaWxlbnQuCgo+IAo+ID4gSTJTIGRy
-aXZlciBmcm9tIEJTUCBMaW51eCBzb2x2ZXMgdGhhdCBieSBoYXZpbmcgSTJTIGNsb2NrIG91dHB1
-dAo+ID4gZW5hYmxlZCBhbGwgdGhlIHRpbWUuIFNob3VsZCB0aGlzIGJlIGZsYWdnZWQgd2l0aCBz
-b21lIGFkZGl0aW9uYWwKPiA+IHByb3BlcnR5IGluIERUPwo+IAo+IEknZCBzYXkgdGhhdCBpZiB0
-aGUgY29kZWMgaGFzIHRoYXQgcmVxdWlyZW1lbnQsIHRoZW4gaXQgc2hvdWxkIGJlCj4gYmV0d2Vl
-biB0aGUgY29kZWMgYW5kIHRoZSBEQUksIHRoZSBEVCBkb2Vzbid0IHJlYWxseSBoYXZlIGFueXRo
-aW5nIHRvCj4gZG8gd2l0aCB0aGlzLgoKT2ssIGJ1dCBob3cgdG8gY29tbXVuaWNhdGUgdGhhdCBm
-YWN0IHRvIEkyUyBkcml2ZXIgdGhlbj8gQlNQIGRyaXZlciBzb2x2ZXMgCnRoYXQgYnkgdXNpbmcg
-ZGlmZmVyZW50IGNvbXBhdGlibGUsIGJ1dCBhcyBJIHNhaWQgYmVmb3JlLCBJMlMgY29yZXMgYXJl
-IG5vdCAKcmVhbGx5IGRpZmZlcmVudCwgc28gdGhpcyBzZWVtcyB3cm9uZy4KCkJlc3QgcmVnYXJk
-cywKSmVybmVqCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwK
+Hi Will,
+
+On Wed, 31 Jul 2019 18:26:03 +0100
+Will Deacon <will@kernel.org> wrote:
+
+> On Thu, Jul 25, 2019 at 05:16:15PM +0900, Masami Hiramatsu wrote:
+> > Make debug exceptions visible from RCU so that synchronize_rcu()
+> > correctly track the debug exception handler.
+> > 
+> > This also introduces sanity checks for user-mode exceptions as same
+> > as x86's ist_enter()/ist_exit().
+> > 
+> > The debug exception can interrupt in idle task. For example, it warns
+> > if we put a kprobe on a function called from idle task as below.
+> > The warning message showed that the rcu_read_lock() caused this
+> > problem. But actually, this means the RCU is lost the context which
+> > is already in NMI/IRQ.
+> > 
+> >   /sys/kernel/debug/tracing # echo p default_idle_call >> kprobe_events
+> >   /sys/kernel/debug/tracing # echo 1 > events/kprobes/enable
+> >   /sys/kernel/debug/tracing # [  135.122237]
+> >   [  135.125035] =============================
+> >   [  135.125310] WARNING: suspicious RCU usage
+> >   [  135.125581] 5.2.0-08445-g9187c508bdc7 #20 Not tainted
+> >   [  135.125904] -----------------------------
+> >   [  135.126205] include/linux/rcupdate.h:594 rcu_read_lock() used illegally while idle!
+> >   [  135.126839]
+> >   [  135.126839] other info that might help us debug this:
+> >   [  135.126839]
+> >   [  135.127410]
+> >   [  135.127410] RCU used illegally from idle CPU!
+> >   [  135.127410] rcu_scheduler_active = 2, debug_locks = 1
+> >   [  135.128114] RCU used illegally from extended quiescent state!
+> >   [  135.128555] 1 lock held by swapper/0/0:
+> >   [  135.128944]  #0: (____ptrval____) (rcu_read_lock){....}, at: call_break_hook+0x0/0x178
+> >   [  135.130499]
+> >   [  135.130499] stack backtrace:
+> >   [  135.131192] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.2.0-08445-g9187c508bdc7 #20
+> >   [  135.131841] Hardware name: linux,dummy-virt (DT)
+> >   [  135.132224] Call trace:
+> >   [  135.132491]  dump_backtrace+0x0/0x140
+> >   [  135.132806]  show_stack+0x24/0x30
+> >   [  135.133133]  dump_stack+0xc4/0x10c
+> >   [  135.133726]  lockdep_rcu_suspicious+0xf8/0x108
+> >   [  135.134171]  call_break_hook+0x170/0x178
+> >   [  135.134486]  brk_handler+0x28/0x68
+> >   [  135.134792]  do_debug_exception+0x90/0x150
+> >   [  135.135051]  el1_dbg+0x18/0x8c
+> >   [  135.135260]  default_idle_call+0x0/0x44
+> >   [  135.135516]  cpu_startup_entry+0x2c/0x30
+> >   [  135.135815]  rest_init+0x1b0/0x280
+> >   [  135.136044]  arch_call_rest_init+0x14/0x1c
+> >   [  135.136305]  start_kernel+0x4d4/0x500
+> >   [  135.136597]
+> > 
+> > So make debug exception visible to RCU can fix this warning.
+> > 
+> > Reported-by: Naresh Kamboju <naresh.kamboju@linaro.org>
+> > Acked-by: Paul E. McKenney <paulmck@linux.ibm.com>
+> > Signed-off-by: Masami Hiramatsu <mhiramat@kernel.org>
+> > ---
+> >  Changes in v3:
+> >   - Make a comment for debug_exception_enter() clearer.
+> > ---
+> >  arch/arm64/mm/fault.c |   40 ++++++++++++++++++++++++++++++++++++++++
+> >  1 file changed, 40 insertions(+)
+> > 
+> > diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+> > index 9568c116ac7f..ed6c55c87fdc 100644
+> > --- a/arch/arm64/mm/fault.c
+> > +++ b/arch/arm64/mm/fault.c
+> > @@ -777,6 +777,42 @@ void __init hook_debug_fault_code(int nr,
+> >  	debug_fault_info[nr].name	= name;
+> >  }
+> >  
+> > +/*
+> > + * In debug exception context, we explicitly disable preemption.
+> 
+> Maybe add "despite having interrupts disabled"?
+
+OK, I'll add it.
+
+> > + * This serves two purposes: it makes it much less likely that we would
+> > + * accidentally schedule in exception context and it will force a warning
+> > + * if we somehow manage to schedule by accident.
+> > + */
+> > +static void debug_exception_enter(struct pt_regs *regs)
+> > +{
+> > +	if (user_mode(regs)) {
+> > +		RCU_LOCKDEP_WARN(!rcu_is_watching(), "entry code didn't wake RCU");
+> > +	} else {
+> > +		/*
+> > +		 * We might have interrupted pretty much anything.  In
+> > +		 * fact, if we're a debug exception, we can even interrupt
+> > +		 * NMI processing. We don't want this code makes in_nmi()
+> > +		 * to return true, but we need to notify RCU.
+> > +		 */
+> > +		rcu_nmi_enter();
+> > +	}
+> > +
+> > +	preempt_disable();
+> 
+> If you're addingt new functions for entry/exit, maybe move the
+> trace_hardirqs_{on,off}() calls in here too?
+
+OK, let's move it in these functions.
+
+Thank you!
+
+> 
+> Will
+
+
+-- 
+Masami Hiramatsu <mhiramat@kernel.org>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
