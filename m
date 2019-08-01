@@ -2,63 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F35937D4EC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 07:32:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B4277D502
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 07:45:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tnJbC6lSnt0jN/LiAA9pT4AMscUjWb5dRuw/9dLKjAE=; b=KmcMLhYuzyZ4mH
-	viUN1nePft6hmD5pAF0i+XPEw0e58ud4eQ4rKI0FpmMPI+x1iYdwx+uovkquauXyplq8lXztfLVCb
-	mJ3EiV0TiZZRWzC436G7PYgv+FezYAStPcrf7cU5pBxHSoAbbHadOWDGIvJyUqK5Ly7Kw+QVpkUip
-	Oq7+pTVFNG2nGT+1StrFHLdA9E3WDdLL21KH7lk2ic4Z8kC5PrmSI5ZvSAJNLK/Xhm401xEiwj+cx
-	Y9ckNcIcP1lxLECyf9m54CejvdUUeu4o9/wuSKWudhvqEnHd3jWSwLJFSxK34yUMtGF0bf3RLvntY
-	BLe8tAhkRi+momEiBbmw==;
+	List-Owner; bh=Ybbcix2j3h3BQSkqjxHwe3vlaqK1mqg/8fJ7swRzxEs=; b=lS+NBvqP73umfg
+	sstqUEQE4vJVl5wex3ig0bYP8k0fkMje4HVTw/7IEedMbw8rlmAkZngSWQevX0+0WAorqeQqY5Vt9
+	tTwCuPMx7KFwvaqhPdlw/n16mwNpYv6iI3Wx2DzCKYmzzmTI4gDeqSoJlbi4o+hgjF0J3xoIEx4q/
+	+udM/EEsZzVRcSPvjdtY+BHk050JANjvDd7/uGawbgmjv7vV0dFapLkkZHr05z09zGQGkKjsAQjAC
+	NqYk2BJvzEwXtDZBXUJjdOxbKMu0Zyoquu5mimI5dKdovaFQ9F+2wWyv+Ox88eVbSJ0jiXgPVO+G4
+	zIaD6d0hYZXwavyUe7ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht3hi-0001t1-76; Thu, 01 Aug 2019 05:32:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ht3u7-0006tt-Oo; Thu, 01 Aug 2019 05:45:31 +0000
+Received: from out4-smtp.messagingengine.com ([66.111.4.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht3hZ-0001sJ-3c
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 05:32:36 +0000
-Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7A9EC206A3;
- Thu,  1 Aug 2019 05:32:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564637551;
- bh=QLmvjH5tbhGx/6o/ScL4re6wjm5zhxZw6SGUDPBxV4Q=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=iYXXL8qCH1h7VUK+sx+0j9I5vg5cluYfgzkDF7VPdmiShGaJLBTZgR6ATdhl4EqBE
- hhIrnyB5t8CiJ92MUlPKi1cCoTwmvtUAg88YYA0xMDMSG0x7cO2+KjZeUAVoAvhvO+
- OB3jRXcULO+gWOFtL+7SZpK4Oy7zXlG7oodXmABc=
-Date: Thu, 1 Aug 2019 14:32:25 +0900
-From: Masami Hiramatsu <mhiramat@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v3 3/4] arm64: Make debug exception handlers visible
- from RCU
-Message-Id: <20190801143225.e61e38ce7a701407b19f8008@kernel.org>
-In-Reply-To: <20190731172602.36hdk3yb3w6uihbu@willie-the-truck>
-References: <156404254387.2020.886452004489353899.stgit@devnote2>
- <156404257493.2020.7940525305482369976.stgit@devnote2>
- <20190731172602.36hdk3yb3w6uihbu@willie-the-truck>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1ht3u0-0006tP-Sm
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 05:45:26 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id A69C0207E1;
+ Thu,  1 Aug 2019 01:45:23 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Thu, 01 Aug 2019 01:45:23 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm3; bh=ikk9XWI/PaloHpfzYfJtJOTFwmWnC+0
+ JCdYs26D7ubs=; b=c3dr1lWkMo5FSBT8lrLsCneT0ER9KaOWAen1lPJ/wlWkYD+
+ F3Kmfml5a07j1yCb4s8Viy1CUWnpejg8CDu0KA5iTw0nSF3qC7NQqTV657E5hVap
+ pSQR1Pf8Wgou7XoLYuZ4qudaorYvMy2xrptaEvXmVTht1kW1w+Mlojv60ywB12bb
+ fG3Ty3Chl/dMWLtjwoB60usxxKlck9JuHYL/HAknm5ol2jNCRQ5QTYFofGMDSADH
+ Ac94iEGVdzLwoG2YqlB6AaaGfl2OrzOspnvLtYBwBnn6hLF/M4ka+HvB4iDZ747J
+ zM/CB4CEMMtecKqqIkfgoBojRQWHoJpIvIbgVzA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=ikk9XW
+ I/PaloHpfzYfJtJOTFwmWnC+0JCdYs26D7ubs=; b=JsKzzgmpM0pAwDfOFWmIwy
+ e/gkpP11y8xh4J5E+5Un3MJJvj6+kBcaPZP6NDENM20ed/dJYPGZFeLMRjC9jV9X
+ Dqrzgn1S25oXgX+lx3hf9cO9axVEH4ivwRWfGifTyqdwomgpZaCAnnG4eYzh6scC
+ WIpjXLemDL50BI5V42NeIsfdrFSHHHPKA0FMw9/q9JMWSnVRRIJDTq/vTUWsrFkc
+ YV0dqm+NLi3r7DQRmDFYyBAl9XobaJM7ZdBMhEBMGsy7REetXwiVStDKkEooTKHq
+ ChEcckQ+d2OGXGZEJoz//Q4vQqVL5ncl0+2LNP122XoQgPiLUHWgzSIMRn873jkw
+ ==
+X-ME-Sender: <xms:cnxCXZVcGZ-455p_bs-LgSCuUcxEUsQjAFwH5XFLyD8cPPPD-UFwCw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrleeigdeliecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
+ hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
+ ufhiiigvpedt
+X-ME-Proxy: <xmx:cnxCXVQZ-SI3cyKIbEqkpWS00qvrgEQGxGZ91gMOKDy0EMzP2EVh8Q>
+ <xmx:cnxCXQGaiX7f4V_3p0_o7VOwBTVPNBIzU41xNJjUBySxz-berHYqVQ>
+ <xmx:cnxCXdS_CSb-UN8ZrY2Xcmzsmy8hJzu_ASfyRT9L9fSYSMOPNs8M3A>
+ <xmx:c3xCXYeXDra6wsCCxx5QzKiSgLq2LCV_21ukNLHu4uHAyrtgDo0zLA>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id 67318E00A1; Thu,  1 Aug 2019 01:45:22 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-799-g925e343-fmstable-20190729v1
 Mime-Version: 1.0
+Message-Id: <3691f6cb-2451-43f7-9f00-d5693071ba59@www.fastmail.com>
+In-Reply-To: <9d0f2b20-e6f6-419c-a866-c4a0dd92aa63@www.fastmail.com>
+References: <20190724081313.12934-1-andrew@aj.id.au>
+ <CACRpkdapypySGPrLgSMSNy1fzkca2BfMUGzf3koFWQZ-M5VOvg@mail.gmail.com>
+ <9d0f2b20-e6f6-419c-a866-c4a0dd92aa63@www.fastmail.com>
+Date: Thu, 01 Aug 2019 15:15:42 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Linus Walleij" <linus.walleij@linaro.org>
+Subject: Re: [PATCH 0/3] ARM: dts: aspeed: Deprecate g[45]-style compatibles
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_223235_101944_A9627F7C 
-X-CRM114-Status: GOOD (  23.70  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190731_224525_215309_A34A7B6A 
+X-CRM114-Status: GOOD (  13.29  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -66,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,133 +104,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dan Rue <dan.rue@linaro.org>, Daniel Diaz <daniel.diaz@linaro.org>,
- Anders Roxell <anders.roxell@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Naresh Kamboju <naresh.kamboju@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Matt Hart <matthew.hart@linaro.org>,
- "Paul E . McKenney" <paulmck@linux.ibm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Lee Jones <lee.jones@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
 
-On Wed, 31 Jul 2019 18:26:03 +0100
-Will Deacon <will@kernel.org> wrote:
 
-> On Thu, Jul 25, 2019 at 05:16:15PM +0900, Masami Hiramatsu wrote:
-> > Make debug exceptions visible from RCU so that synchronize_rcu()
-> > correctly track the debug exception handler.
-> > 
-> > This also introduces sanity checks for user-mode exceptions as same
-> > as x86's ist_enter()/ist_exit().
-> > 
-> > The debug exception can interrupt in idle task. For example, it warns
-> > if we put a kprobe on a function called from idle task as below.
-> > The warning message showed that the rcu_read_lock() caused this
-> > problem. But actually, this means the RCU is lost the context which
-> > is already in NMI/IRQ.
-> > 
-> >   /sys/kernel/debug/tracing # echo p default_idle_call >> kprobe_events
-> >   /sys/kernel/debug/tracing # echo 1 > events/kprobes/enable
-> >   /sys/kernel/debug/tracing # [  135.122237]
-> >   [  135.125035] =============================
-> >   [  135.125310] WARNING: suspicious RCU usage
-> >   [  135.125581] 5.2.0-08445-g9187c508bdc7 #20 Not tainted
-> >   [  135.125904] -----------------------------
-> >   [  135.126205] include/linux/rcupdate.h:594 rcu_read_lock() used illegally while idle!
-> >   [  135.126839]
-> >   [  135.126839] other info that might help us debug this:
-> >   [  135.126839]
-> >   [  135.127410]
-> >   [  135.127410] RCU used illegally from idle CPU!
-> >   [  135.127410] rcu_scheduler_active = 2, debug_locks = 1
-> >   [  135.128114] RCU used illegally from extended quiescent state!
-> >   [  135.128555] 1 lock held by swapper/0/0:
-> >   [  135.128944]  #0: (____ptrval____) (rcu_read_lock){....}, at: call_break_hook+0x0/0x178
-> >   [  135.130499]
-> >   [  135.130499] stack backtrace:
-> >   [  135.131192] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.2.0-08445-g9187c508bdc7 #20
-> >   [  135.131841] Hardware name: linux,dummy-virt (DT)
-> >   [  135.132224] Call trace:
-> >   [  135.132491]  dump_backtrace+0x0/0x140
-> >   [  135.132806]  show_stack+0x24/0x30
-> >   [  135.133133]  dump_stack+0xc4/0x10c
-> >   [  135.133726]  lockdep_rcu_suspicious+0xf8/0x108
-> >   [  135.134171]  call_break_hook+0x170/0x178
-> >   [  135.134486]  brk_handler+0x28/0x68
-> >   [  135.134792]  do_debug_exception+0x90/0x150
-> >   [  135.135051]  el1_dbg+0x18/0x8c
-> >   [  135.135260]  default_idle_call+0x0/0x44
-> >   [  135.135516]  cpu_startup_entry+0x2c/0x30
-> >   [  135.135815]  rest_init+0x1b0/0x280
-> >   [  135.136044]  arch_call_rest_init+0x14/0x1c
-> >   [  135.136305]  start_kernel+0x4d4/0x500
-> >   [  135.136597]
-> > 
-> > So make debug exception visible to RCU can fix this warning.
-> > 
-> > Reported-by: Naresh Kamboju <naresh.kamboju@linaro.org>
-> > Acked-by: Paul E. McKenney <paulmck@linux.ibm.com>
-> > Signed-off-by: Masami Hiramatsu <mhiramat@kernel.org>
-> > ---
-> >  Changes in v3:
-> >   - Make a comment for debug_exception_enter() clearer.
-> > ---
-> >  arch/arm64/mm/fault.c |   40 ++++++++++++++++++++++++++++++++++++++++
-> >  1 file changed, 40 insertions(+)
-> > 
-> > diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-> > index 9568c116ac7f..ed6c55c87fdc 100644
-> > --- a/arch/arm64/mm/fault.c
-> > +++ b/arch/arm64/mm/fault.c
-> > @@ -777,6 +777,42 @@ void __init hook_debug_fault_code(int nr,
-> >  	debug_fault_info[nr].name	= name;
-> >  }
-> >  
-> > +/*
-> > + * In debug exception context, we explicitly disable preemption.
+On Tue, 30 Jul 2019, at 10:27, Andrew Jeffery wrote:
 > 
-> Maybe add "despite having interrupts disabled"?
-
-OK, I'll add it.
-
-> > + * This serves two purposes: it makes it much less likely that we would
-> > + * accidentally schedule in exception context and it will force a warning
-> > + * if we somehow manage to schedule by accident.
-> > + */
-> > +static void debug_exception_enter(struct pt_regs *regs)
-> > +{
-> > +	if (user_mode(regs)) {
-> > +		RCU_LOCKDEP_WARN(!rcu_is_watching(), "entry code didn't wake RCU");
-> > +	} else {
-> > +		/*
-> > +		 * We might have interrupted pretty much anything.  In
-> > +		 * fact, if we're a debug exception, we can even interrupt
-> > +		 * NMI processing. We don't want this code makes in_nmi()
-> > +		 * to return true, but we need to notify RCU.
-> > +		 */
-> > +		rcu_nmi_enter();
-> > +	}
-> > +
-> > +	preempt_disable();
 > 
-> If you're addingt new functions for entry/exit, maybe move the
-> trace_hardirqs_{on,off}() calls in here too?
-
-OK, let's move it in these functions.
-
-Thank you!
-
+> On Tue, 30 Jul 2019, at 07:23, Linus Walleij wrote:
+> > On Wed, Jul 24, 2019 at 10:13 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+> > 
+> > > It's probably best if we push the three patches all through one tree rather
+> > > than fragmenting. Is everyone happy if Joel applies them to the aspeed tree?
+> > 
+> > If you are sure it will not collide with parallell work in the
+> > pinctrl tree, yes.
+> > Acked-by: Linus Walleij <linus.walleij@linaro.org>
+> > 
+> > (If it does collide I'd prefer to take the pinctrl patches and fix the
+> > conflicts in my tree.)
 > 
-> Will
+> Fair enough, I don't know the answer so I'll poke around. I don't 
+> really mind
+> where the series goes in, I just want to avoid landing only part of it 
+> if I split it up.
 
+Okay, it currently conflicts with my cleanup-devicetree-warnings series.
 
--- 
-Masami Hiramatsu <mhiramat@kernel.org>
+Joel, do you mind if Linus takes this series through the pinctrl tree, given
+the fix to the devicetrees is patch 1/3?
+
+Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
