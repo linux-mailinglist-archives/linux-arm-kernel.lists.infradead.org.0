@@ -2,54 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 094F37DBF2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:50:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54B937DC01
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:58:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Zwl0NVGFM9MOwIP57SB/GPZup+SzgAhewNKNmEHpcmI=; b=ZUdh8JW6P7CuqT/wyPmOb6WGz
-	DIYL0qOhyDQ+V3A7HZza4ZYemI7YrcQJvT0I8W+HecCUJYeR+a2O1wZcSX5t8maDkYg25J5Sa8kVn
-	XEI1hU85PKRtfiORi6LmamwCfi/6Zd3W8Q2ITXVs+xFAtR8SyLqRfaDNGSq0qdBip8cfD4VOMEj44
-	Bn0t8Q+zs4IrBd4VG37GsorviAWG8UwHtjbP0euYPM130wP4mO8NmYr66qfWy+mq7YzuuUFobLiZI
-	s77s8uN1ZhPy3VCQy9ygAKqTzUtKTQaizww2qW/trXSYAlzWhOxYiWffj0KImOU7rhzg0N7FBq04i
-	z4EcJR4XA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FT8PJEv40wDJMQMRU8vWdAWFhNWkuLf7Nwmwb1o0F78=; b=k2E3ufWc5FDc9N
+	LMVbnkFNNZEoxL1n2W/WOww0+D0BUBuFiyn3H+CXnZ8qWlgx/L4hhDdEqUe35R/7UXkMT+oy+BWkm
+	XJXXC67euYiAss5O1QuH8OOc49XrzE5cYx+zP2Rn7XRhdTOWrqDLReQ2f6gSeHjcrEW/fHdeB067w
+	lpwkMH7AZBm58sDnpPsCF0ke45zBdKmqaIhOW9bLsBx3Em9eZB2Fnqm8KA08iRxvaeF6Jb/RurfK/
+	bH6UfXJFxBb8qAHtMpawMTLNaRoBdpQKtpp4PfDxgSO5kpGG8y0oqki/vHA2rIbs8AnmpzhrFHlp/
+	VUGAgm6LMmPxskz32rKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htAXn-0007FS-DE; Thu, 01 Aug 2019 12:50:55 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1htAXO-00073n-2Q
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:50:31 +0000
-Received: from localhost (p54B333D2.dip0.t-ipconnect.de [84.179.51.210])
- by pokefinder.org (Postfix) with ESMTPSA id 5A5F52C2817;
- Thu,  1 Aug 2019 14:50:29 +0200 (CEST)
-Date: Thu, 1 Aug 2019 14:50:29 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH 2/2] i2c: imx-lpi2c: use devm_platform_ioremap_resource()
- to simplify code
-Message-ID: <20190801125028.GI1659@ninjato>
-References: <20190717084017.30987-1-Anson.Huang@nxp.com>
- <20190717084017.30987-2-Anson.Huang@nxp.com>
+	id 1htAfH-0001Y0-4t; Thu, 01 Aug 2019 12:58:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1htAf6-0001Xb-FD
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:58:29 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9D9E820838;
+ Thu,  1 Aug 2019 12:58:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564664307;
+ bh=XTsMS7uozR+j7HmIFwMbi6XKyylv3rV3IxgrTSqwYiE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=nvNlOjoJYXNCECFuavzzbdSOyOLE3Q25THF7uC5AlGJnePzCIffsCOCuT5VCxwIUH
+ rlUPYj9fB0vLLwPOw9w28pjl26DdhHUZhY0FKy1fTspLvL7mD8snl3Qd5af38ekJs+
+ saPtuyymNVKg+qWwbaEk7dqcSBz1+K+8JnhG4SUU=
+Date: Thu, 1 Aug 2019 13:58:22 +0100
+From: Will Deacon <will@kernel.org>
+To: Julien Thierry <julien.thierry@arm.com>
+Subject: Re: [PATCH v4 2/9] arm64: perf: Remove PMU locking
+Message-ID: <20190801125821.23wt657bfs2k536f@willie-the-truck>
+References: <1563351432-55652-1-git-send-email-julien.thierry@arm.com>
+ <1563351432-55652-3-git-send-email-julien.thierry@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190717084017.30987-2-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <1563351432-55652-3-git-send-email-julien.thierry@arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_055030_351620_9B1A3580 
-X-CRM114-Status: UNSURE (   7.10  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190801_055828_550268_212E71A4 
+X-CRM114-Status: GOOD (  18.42  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,71 +77,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, wsa+renesas@sang-engineering.com,
- linux-i2c@vger.kernel.org, kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org, Linux-imx@nxp.com
-Content-Type: multipart/mixed; boundary="===============0025030989231715396=="
+Cc: mark.rutland@arm.com, peterz@infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>, will.deacon@arm.com,
+ acme@kernel.org, alexander.shishkin@linux.intel.com, mingo@redhat.com,
+ namhyung@kernel.org, sthotton@marvell.com, jolsa@redhat.com,
+ linux-arm-kernel@lists.infradead.org, liwei391@huawei.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Jul 17, 2019 at 09:17:05AM +0100, Julien Thierry wrote:
+> Since the PMU driver uses direct registers for counter
+> setup/manipulation, locking around these operations is no longer needed.
+> 
+> For operations that can be called with interrupts enabled, preemption
+> still needs to be disabled to ensure the programming of the PMU is
+> done on the expected CPU and not migrated mid-programming.
+> 
+> Signed-off-by: Julien Thierry <julien.thierry@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Peter Zijlstra <peterz@infradead.org>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
+> Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+> Cc: Jiri Olsa <jolsa@redhat.com>
+> Cc: Namhyung Kim <namhyung@kernel.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+>  arch/arm64/kernel/perf_event.c | 30 ++----------------------------
+>  1 file changed, 2 insertions(+), 28 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+> index 838758f..0e2cf5d 100644
+> --- a/arch/arm64/kernel/perf_event.c
+> +++ b/arch/arm64/kernel/perf_event.c
+> @@ -673,15 +673,10 @@ static inline u32 armv8pmu_getreset_flags(void)
+> 
+>  static void armv8pmu_enable_event(struct perf_event *event)
+>  {
+> -	unsigned long flags;
+> -	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+> -	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+> -
+>  	/*
+>  	 * Enable counter and interrupt, and set the counter to count
+>  	 * the event that we're interested in.
+>  	 */
+> -	raw_spin_lock_irqsave(&events->pmu_lock, flags);
+> 
+>  	/*
+>  	 * Disable counter
+> @@ -702,21 +697,10 @@ static void armv8pmu_enable_event(struct perf_event *event)
+>  	 * Enable counter
+>  	 */
+>  	armv8pmu_enable_event_counter(event);
+> -
+> -	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
+>  }
 
---===============0025030989231715396==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="mXDO3udm/xYWQeMQ"
-Content-Disposition: inline
+With the implicit ISBs now removed by virtue of addressing the counter
+register directly, what prevents the programming of the evtype being
+reordered with respect to disabling/enabling the counter?
 
+>  static void armv8pmu_disable_event(struct perf_event *event)
+>  {
+> -	unsigned long flags;
+> -	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+> -	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+> -
+> -	/*
+> -	 * Disable counter and interrupt
+> -	 */
+> -	raw_spin_lock_irqsave(&events->pmu_lock, flags);
+> -
+>  	/*
+>  	 * Disable counter
+>  	 */
+> @@ -726,30 +710,20 @@ static void armv8pmu_disable_event(struct perf_event *event)
+>  	 * Disable interrupt for this counter
+>  	 */
+>  	armv8pmu_disable_event_irq(event);
+> -
+> -	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
+>  }
+> 
+>  static void armv8pmu_start(struct arm_pmu *cpu_pmu)
+>  {
+> -	unsigned long flags;
+> -	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+> -
+> -	raw_spin_lock_irqsave(&events->pmu_lock, flags);
+> +	WARN_ON_ONCE(preemptible());
+>  	/* Enable all counters */
+>  	armv8pmu_pmcr_write(armv8pmu_pmcr_read() | ARMV8_PMU_PMCR_E);
+> -	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
+>  }
+> 
+>  static void armv8pmu_stop(struct arm_pmu *cpu_pmu)
+>  {
+> -	unsigned long flags;
+> -	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+> -
+> -	raw_spin_lock_irqsave(&events->pmu_lock, flags);
+> +	WARN_ON_ONCE(preemptible());
 
---mXDO3udm/xYWQeMQ
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+I don't think we need these WARN_ONs -- these are very much per-CPU
+operations from the context of the perf core, so we'll be ok.
 
-On Wed, Jul 17, 2019 at 04:40:17PM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
->=20
-> Use the new helper devm_platform_ioremap_resource() which wraps the
-> platform_get_resource() and devm_ioremap_resource() together, to
-> simplify the code.
->=20
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-
-Applied to for-next, thanks!
-
-
---mXDO3udm/xYWQeMQ
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1C4BQACgkQFA3kzBSg
-Kbar1hAAquWHe0O3sEuqpFSEu1yKoyDSLzPeFYmaYzdz+Snz7NxsssYKw9wudKh4
-9+j0FsIKOQFzlDfXviOwYBsl94ixNziBtVPPFoWEtCSXKlAMCRfIVXT8SsIrY3SE
-/lIZY7jBKi9oRvBxWMImxP0iLS2HC6uIg/3fs5sAy4Hy1VKcn2mvMy7WZES8gFTR
-/Bc2v4Y2Y4cdTjzjy8MpRUthrYbYU06XHXp5RF3/UkEg2I7NU6bYDt+5OUTpv36c
-B/9vR/zk2kg9lhzrWRZqu3n91VY9KJB5ykfGBRHez+qJ3uFqnMGJn1zW9C73S6q/
-KKpkXcSJ14otSb3iq7KGlCjuQ7l18mEjFlYmemRtUTivOSmVIuCg57aGvhgduNfu
-kENj8whpMZo7M01121HGCtjo8r8aFKEQBoQ2mRqnakxyvzjmTu4Ljr0E4yZab52p
-RNOHUjbtZL/R0Dp/aWugfsiwqZiD0c4/rsubRSnJN5gHlk9ze1vD+zauF+DeIFqb
-oMRGa8mFtmPdaeNb9nSmbEBNzngBbiatr+DCMYogeRM6+AOjycAn86TOdxOvEPiB
-Xy7XllFoUuQvTXXeI79M7fZE2zH/NCcvqAtPYu2/Adt0bz+AW5InsRhG7pgdusAN
-u6rb/QzX13xSs5s/NsYDDGUll1KGrOoIcTDpmSghgsTpIwLzW7I=
-=S2Wq
------END PGP SIGNATURE-----
-
---mXDO3udm/xYWQeMQ--
-
-
---===============0025030989231715396==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0025030989231715396==--
-
