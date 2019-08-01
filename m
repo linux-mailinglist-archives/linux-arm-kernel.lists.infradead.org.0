@@ -2,97 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B81897D375
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 04:59:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B61C57D37B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 05:02:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jtA3+WlZEcBCBt0LYB6Injuq6EYgfTRHkGSvwcPXLKM=; b=MOtlND/kTKc6LE
-	r2J38lJEMSED3MIkYP9UpmI/Lns77fANFrMZ9CFNWmSkt5tthZXvOgjR2QrkHArowQcm3OP3mGKO0
-	qS5jnWqKYDb/e1pp/qL/grCGQkGhYrThs5psYCipxurTPZ7mvlevArvTiXR3pbGP1OxxWZzyvghii
-	bNvuyCFYUyp7lQug1C2j7EIw/BYTkx55jnSDr6pjNzGhdUN7NnZUumnq9smLWOL4LwWLwFRkS2iTU
-	HV/+OQXDtPK+sQ7/T+GKwlHichBVan84uDf8ngSl0xMOGJkK73U8qd85ZaBXPI0970NESgoierhdK
-	gdyq8IHzh/BfJ6TENcAQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z05AQyju476E3tLK0pLeQdfm6c1CPoUukwniF52k8H0=; b=TcUH1UdM8N6bNr
+	DNqJt5n2IdVfV1xSZsB6m1lbAXx0PHgp65siNNOC7dUE95Fi2sK7hg1q22mZszHhnho0LaxmAZcln
+	5FU4QVqryoFDKFnE8QeHFWce9QTFWHpvxnt4giumwpsjMramwBsPaQlSMg7OP0VD0WtERRr+CaPEg
+	bzuMPeUl8bexcmD1G9fSAgQ8bQnJEGOjBnJ52wfsaEc0j5/vswIKf5Xla6Kj1H7rgWTbkpckMzciE
+	cckeca0a5VNBU5pP/NacHo4QleHTTiaGrnsL9nhpSVGjInSvctv66DTpsPVm549E1Atk46c0GHdIH
+	ZRcAA08KBQi6SR7ehEEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht1J2-0007fZ-Tz; Thu, 01 Aug 2019 02:59:04 +0000
-Received: from out5-smtp.messagingengine.com ([66.111.4.29])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht1It-0007ej-C9
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 02:58:57 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 8DBF822267;
- Wed, 31 Jul 2019 22:58:49 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 31 Jul 2019 22:58:49 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=BLmbCyw0W0SqDYjYMUE2uXkyvG1vxNO
- TkwrAw+At9Y4=; b=gLUIj00izeRnZ+8ihSDIdccmps8gTG+2pBusbBtfnBE5MLy
- TrILi1eIwktN0AGu+7q+JCKa2/OMAie7BF4aF7g2tmdUz1pfmVpyca05cAA9ClxX
- 1zGGqwfnEi9uNZREOj1EgUa8PWJIRVVPmgSsA19uXAmtZyfzFQwH48uRjF8qjo4q
- 7GhRGLtkPVHm2QUq/w51qg5wERYCXJufLViHk7gdK/SXNEKX8vFxS+I/uAK12zVc
- MUhy4A28DKkBZSX9DqJnmWp/PsnXirnJW/Gjc58mE6L9je4nMhyhm9NFOpX/50Pr
- ITeYpSeFiHOlI0ytwY00i0BzFd0E/IAW6GtHc+w==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=BLmbCy
- w0W0SqDYjYMUE2uXkyvG1vxNOTkwrAw+At9Y4=; b=qLm9SrlQOyB3Jok9kqYwGy
- 5Jr3FvXcFK6aJKos+eHPzpUzkWgAxdWYHE+t/KV2epVtnLuThvaLdNG3KCE4WNOO
- K7Lv10EdBcMeaoydCJWH6YC0xFevTGTfYzUqrRfmYJyFPXlwwJg5HgCVQHsUod+M
- WfKcpHbfL/baX3PLJcxp5plyZJAOYx0Q4ZSeJoQUXUmUJL0d/Q+4OlA1qF2iOSus
- /Vbb5bWmSL/sLY/JlWZRopTbX7T5qWM0py9Q5HGEJrEFvdyll3sNaRZsojolXl8v
- +t+6jUlhamLK6+oK9/I5NvIDnDlZ/1whKBebMIdL2GWHE1PVBbToOWyczLa+x4Ng
- ==
-X-ME-Sender: <xms:aFVCXcmrCFe3yG1YG7-QSFEsHVE9x4-V6nZ_-0zOSbGpOEWnlt5T2Q>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrleeigdeifecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
- hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
- ufhiiigvpedt
-X-ME-Proxy: <xmx:aFVCXSkLFwepLcUym_L4YhtmJYpSr9cdLHEks7IAlBlHx-GB0TSaaw>
- <xmx:aFVCXcZ2VsNaDgmTiL4cA5mCpJ04pSrEkzTBYEC1mMRMt9c6jqvLkQ>
- <xmx:aFVCXURLLJTx_zOHcHPDYklkQNrK6baNbLMGbLzR-gF9qy0dMUwQfg>
- <xmx:aVVCXdl2yS8MsMl0h_Fuf5K2HpdctKVEiv6BRZKfoGVLEL13Ewti9w>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 38029E00A2; Wed, 31 Jul 2019 22:58:48 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-799-g925e343-fmstable-20190729v1
-Mime-Version: 1.0
-Message-Id: <421bad26-6a77-458d-aca1-155d120c8155@www.fastmail.com>
-In-Reply-To: <1564603297-1391-3-git-send-email-hongweiz@ami.com>
-References: <1564603297-1391-1-git-send-email-hongweiz@ami.com>
- <1564603297-1391-3-git-send-email-hongweiz@ami.com>
-Date: Thu, 01 Aug 2019 12:29:08 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Hongwei Zhang" <hongweiz@ami.com>,
- "Linus Walleij" <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org
-Subject: Re: [v7 2/2] gpio: aspeed: Add SGPIO driver
+	id 1ht1Mf-0000mp-VJ; Thu, 01 Aug 2019 03:02:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1ht1MZ-0000m5-4V
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 03:02:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 36AED344;
+ Wed, 31 Jul 2019 20:02:37 -0700 (PDT)
+Received: from [10.163.1.81] (unknown [10.163.1.81])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A2A7B3F575;
+ Wed, 31 Jul 2019 20:02:33 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [RFC 2/2] arm64/mm: Enable device memory allocation and free for
+ vmemmap mapping
+To: Will Deacon <will@kernel.org>
+References: <1561697083-7329-1-git-send-email-anshuman.khandual@arm.com>
+ <1561697083-7329-3-git-send-email-anshuman.khandual@arm.com>
+ <20190731161103.kqv3v2xlq4vnyjhp@willie-the-truck>
+Message-ID: <349fb6e2-f9f1-c45a-e512-4ac253e2fd3d@arm.com>
+Date: Thu, 1 Aug 2019 08:33:09 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
+MIME-Version: 1.0
+In-Reply-To: <20190731161103.kqv3v2xlq4vnyjhp@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_195855_640169_B2F6CE4D 
-X-CRM114-Status: GOOD (  20.29  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190731_200243_268059_1B37FA07 
+X-CRM114-Status: GOOD (  17.42  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.29 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,582 +64,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Joel Stanley <joel@jms.id.au>,
- linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On Thu, 1 Aug 2019, at 05:32, Hongwei Zhang wrote:
-> Add SGPIO driver support for Aspeed AST2500 SoC.
+On 07/31/2019 09:41 PM, Will Deacon wrote:
+> On Fri, Jun 28, 2019 at 10:14:43AM +0530, Anshuman Khandual wrote:
+>> This enables vmemmap_populate() and vmemmap_free() functions to incorporate
+>> struct vmem_altmap based device memory allocation and free requests. With
+>> this device memory with specific atlmap configuration can be hot plugged
+>> and hot removed as ZONE_DEVICE memory on arm64 platforms.
+>>
+>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> Cc: Will Deacon <will.deacon@arm.com>
+>> Cc: Mark Rutland <mark.rutland@arm.com>
+>> Cc: linux-arm-kernel@lists.infradead.org
+>> Cc: linux-kernel@vger.kernel.org
+>>
+>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+>> ---
+>>  arch/arm64/mm/mmu.c | 57 ++++++++++++++++++++++++++++++++++-------------------
+>>  1 file changed, 37 insertions(+), 20 deletions(-)
+>>
+>> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+>> index 39e18d1..8867bbd 100644
+>> --- a/arch/arm64/mm/mmu.c
+>> +++ b/arch/arm64/mm/mmu.c
+>> @@ -735,15 +735,26 @@ int kern_addr_valid(unsigned long addr)
+>>  }
+>>  
+>>  #ifdef CONFIG_MEMORY_HOTPLUG
+>> -static void free_hotplug_page_range(struct page *page, size_t size)
+>> +static void free_hotplug_page_range(struct page *page, size_t size,
+>> +				    struct vmem_altmap *altmap)
+>>  {
+>> -	WARN_ON(!page || PageReserved(page));
+>> -	free_pages((unsigned long)page_address(page), get_order(size));
+>> +	if (altmap) {
+>> +		/*
+>> +		 * vmemmap_populate() creates vmemmap mapping either at pte
+>> +		 * or pmd level. Unmapping request at any other level would
+>> +		 * be a problem.
+>> +		 */
+>> +		WARN_ON((size != PAGE_SIZE) && (size != PMD_SIZE));
+>> +		vmem_altmap_free(altmap, size >> PAGE_SHIFT);
+>> +	} else {
+>> +		WARN_ON(!page || PageReserved(page));
+>> +		free_pages((unsigned long)page_address(page), get_order(size));
+>> +	}
+>>  }
+>>  
+>>  static void free_hotplug_pgtable_page(struct page *page)
+>>  {
+>> -	free_hotplug_page_range(page, PAGE_SIZE);
+>> +	free_hotplug_page_range(page, PAGE_SIZE, NULL);
+>>  }
+>>  
+>>  static void free_pte_table(pmd_t *pmdp, unsigned long addr)
+>> @@ -807,7 +818,8 @@ static void free_pud_table(pgd_t *pgdp, unsigned long addr)
+>>  }
+>>  
+>>  static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
+>> -				    unsigned long end, bool sparse_vmap)
+>> +				    unsigned long end, bool sparse_vmap,
+>> +				    struct vmem_altmap *altmap)
 > 
-> Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
-> Reviewed-by:   Andrew Jeffery <andrew@aj.id.au>
+> Do you still need the sparse_vmap parameter, or can you just pass a NULL
+> altmap pointer when sparse_vmap is false?
 
-Adding my Reviewed-by tag is a bit keen, I only gave it for the bindings on v6.
-
-However, having looked over the patch you've addressed all of the issues I've
-found, so you can keep it.
-
-Andrew
-
-> ---
->  drivers/gpio/sgpio-aspeed.c | 530 ++++++++++++++++++++++++++++++++++++++++++++
->  1 file changed, 530 insertions(+)
->  create mode 100644 drivers/gpio/sgpio-aspeed.c
-> 
-> diff --git a/drivers/gpio/sgpio-aspeed.c b/drivers/gpio/sgpio-aspeed.c
-> new file mode 100644
-> index 0000000..752efea
-> --- /dev/null
-> +++ b/drivers/gpio/sgpio-aspeed.c
-> @@ -0,0 +1,530 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later
-> +/*
-> + * Copyright 2019 American Megatrends International LLC.
-> + *
-> + * Author: Karthikeyan Mani <karthikeyanm@amiindia.co.in>
-> + */
-> +
-> +#include <linux/bitfield.h>
-> +#include <linux/clk.h>
-> +#include <linux/gpio/driver.h>
-> +#include <linux/hashtable.h>
-> +#include <linux/init.h>
-> +#include <linux/io.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/spinlock.h>
-> +#include <linux/string.h>
-> +
-> +#define MAX_NR_SGPIO			80
-> +
-> +#define ASPEED_SGPIO_CTRL		0x54
-> +
-> +#define ASPEED_SGPIO_PINS_MASK		GENMASK(9, 6)
-> +#define ASPEED_SGPIO_CLK_DIV_MASK	GENMASK(31, 16)
-> +#define ASPEED_SGPIO_ENABLE		BIT(0)
-> +
-> +struct aspeed_sgpio {
-> +	struct gpio_chip chip;
-> +	struct clk *pclk;
-> +	spinlock_t lock;
-> +	void __iomem *base;
-> +	uint32_t dir_in[3];
-> +	int irq;
-> +};
-> +
-> +struct aspeed_sgpio_bank {
-> +	uint16_t    val_regs;
-> +	uint16_t    rdata_reg;
-> +	uint16_t    irq_regs;
-> +	const char  names[4][3];
-> +};
-> +
-> +/*
-> + * Note: The "value" register returns the input value when the GPIO is
-> + *	 configured as an input.
-> + *
-> + *	 The "rdata" register returns the output value when the GPIO is
-> + *	 configured as an output.
-> + */
-> +static const struct aspeed_sgpio_bank aspeed_sgpio_banks[] = {
-> +	{
-> +		.val_regs = 0x0000,
-> +		.rdata_reg = 0x0070,
-> +		.irq_regs = 0x0004,
-> +		.names = { "A", "B", "C", "D" },
-> +	},
-> +	{
-> +		.val_regs = 0x001C,
-> +		.rdata_reg = 0x0074,
-> +		.irq_regs = 0x0020,
-> +		.names = { "E", "F", "G", "H" },
-> +	},
-> +	{
-> +		.val_regs = 0x0038,
-> +		.rdata_reg = 0x0078,
-> +		.irq_regs = 0x003C,
-> +		.names = { "I", "J" },
-> +	},
-> +};
-> +
-> +enum aspeed_sgpio_reg {
-> +	reg_val,
-> +	reg_rdata,
-> +	reg_irq_enable,
-> +	reg_irq_type0,
-> +	reg_irq_type1,
-> +	reg_irq_type2,
-> +	reg_irq_status,
-> +};
-> +
-> +#define GPIO_VAL_VALUE      0x00
-> +#define GPIO_IRQ_ENABLE     0x00
-> +#define GPIO_IRQ_TYPE0      0x04
-> +#define GPIO_IRQ_TYPE1      0x08
-> +#define GPIO_IRQ_TYPE2      0x0C
-> +#define GPIO_IRQ_STATUS     0x10
-> +
-> +static void __iomem *bank_reg(struct aspeed_sgpio *gpio,
-> +				     const struct aspeed_sgpio_bank *bank,
-> +				     const enum aspeed_sgpio_reg reg)
-> +{
-> +	switch (reg) {
-> +	case reg_val:
-> +		return gpio->base + bank->val_regs + GPIO_VAL_VALUE;
-> +	case reg_rdata:
-> +		return gpio->base + bank->rdata_reg;
-> +	case reg_irq_enable:
-> +		return gpio->base + bank->irq_regs + GPIO_IRQ_ENABLE;
-> +	case reg_irq_type0:
-> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE0;
-> +	case reg_irq_type1:
-> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE1;
-> +	case reg_irq_type2:
-> +		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE2;
-> +	case reg_irq_status:
-> +		return gpio->base + bank->irq_regs + GPIO_IRQ_STATUS;
-> +	default:
-> +		/* acturally if code runs to here, it's an error case */
-> +		BUG_ON(1);
-> +	}
-> +}
-> +
-> +#define GPIO_BANK(x)    ((x) >> 5)
-> +#define GPIO_OFFSET(x)  ((x) & 0x1f)
-> +#define GPIO_BIT(x)     BIT(GPIO_OFFSET(x))
-> +
-> +static const struct aspeed_sgpio_bank *to_bank(unsigned int offset)
-> +{
-> +	unsigned int bank = GPIO_BANK(offset);
-> +
-> +	WARN_ON(bank >= ARRAY_SIZE(aspeed_sgpio_banks));
-> +	return &aspeed_sgpio_banks[bank];
-> +}
-> +
-> +static int aspeed_sgpio_get(struct gpio_chip *gc, unsigned int offset)
-> +{
-> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
-> +	const struct aspeed_sgpio_bank *bank = to_bank(offset);
-> +	unsigned long flags;
-> +	enum aspeed_sgpio_reg reg;
-> +	bool is_input;
-> +	int rc = 0;
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +
-> +	is_input = gpio->dir_in[GPIO_BANK(offset)] & GPIO_BIT(offset);
-> +	reg = is_input ? reg_val : reg_rdata;
-> +	rc = !!(ioread32(bank_reg(gpio, bank, reg)) & GPIO_BIT(offset));
-> +
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +
-> +	return rc;
-> +}
-> +
-> +static void __aspeed_sgpio_set(struct gpio_chip *gc, unsigned int 
-> offset, int val)
-> +{
-> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
-> +	const struct aspeed_sgpio_bank *bank = to_bank(offset);
-> +	void __iomem *addr;
-> +	u32 reg = 0;
-> +
-> +	addr = bank_reg(gpio, bank, reg_val);
-> +	reg = ioread32(addr);
-> +
-> +	if (val)
-> +		reg |= GPIO_BIT(offset);
-> +	else
-> +		reg &= ~GPIO_BIT(offset);
-> +
-> +	iowrite32(reg, addr);
-> +}
-> +
-> +static void aspeed_sgpio_set(struct gpio_chip *gc, unsigned int 
-> offset, int val)
-> +{
-> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
-> +	unsigned long flags;
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +
-> +	__aspeed_sgpio_set(gc, offset, val);
-> +
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +}
-> +
-> +static int aspeed_sgpio_dir_in(struct gpio_chip *gc, unsigned int 
-> offset)
-> +{
-> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
-> +	unsigned long flags;
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +	gpio->dir_in[GPIO_BANK(offset)] |= GPIO_BIT(offset);
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +
-> +	return 0;
-> +}
-> +
-> +static int aspeed_sgpio_dir_out(struct gpio_chip *gc, unsigned int 
-> offset, int val)
-> +{
-> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
-> +	unsigned long flags;
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +
-> +	gpio->dir_in[GPIO_BANK(offset)] &= ~GPIO_BIT(offset);
-> +	__aspeed_sgpio_set(gc, offset, val);
-> +
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +
-> +	return 0;
-> +}
-> +
-> +static int aspeed_sgpio_get_direction(struct gpio_chip *gc, unsigned 
-> int offset)
-> +{
-> +	int dir_status;
-> +	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
-> +	unsigned long flags;
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +	dir_status = gpio->dir_in[GPIO_BANK(offset)] & GPIO_BIT(offset);
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +
-> +	return dir_status;
-> +
-> +}
-> +
-> +static void irqd_to_aspeed_sgpio_data(struct irq_data *d,
-> +					struct aspeed_sgpio **gpio,
-> +					const struct aspeed_sgpio_bank **bank,
-> +					u32 *bit, int *offset)
-> +{
-> +	struct aspeed_sgpio *internal;
-> +
-> +	*offset = irqd_to_hwirq(d);
-> +	internal = irq_data_get_irq_chip_data(d);
-> +	WARN_ON(!internal);
-> +
-> +	*gpio = internal;
-> +	*bank = to_bank(*offset);
-> +	*bit = GPIO_BIT(*offset);
-> +}
-> +
-> +static void aspeed_sgpio_irq_ack(struct irq_data *d)
-> +{
-> +	const struct aspeed_sgpio_bank *bank;
-> +	struct aspeed_sgpio *gpio;
-> +	unsigned long flags;
-> +	void __iomem *status_addr;
-> +	int offset;
-> +	u32 bit;
-> +
-> +	irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
-> +
-> +	status_addr = bank_reg(gpio, bank, reg_irq_status);
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +
-> +	iowrite32(bit, status_addr);
-> +
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +}
-> +
-> +static void aspeed_sgpio_irq_set_mask(struct irq_data *d, bool set)
-> +{
-> +	const struct aspeed_sgpio_bank *bank;
-> +	struct aspeed_sgpio *gpio;
-> +	unsigned long flags;
-> +	u32 reg, bit;
-> +	void __iomem *addr;
-> +	int offset;
-> +
-> +	irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
-> +	addr = bank_reg(gpio, bank, reg_irq_enable);
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +
-> +	reg = ioread32(addr);
-> +	if (set)
-> +		reg |= bit;
-> +	else
-> +		reg &= ~bit;
-> +
-> +	iowrite32(reg, addr);
-> +
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +}
-> +
-> +static void aspeed_sgpio_irq_mask(struct irq_data *d)
-> +{
-> +	aspeed_sgpio_irq_set_mask(d, false);
-> +}
-> +
-> +static void aspeed_sgpio_irq_unmask(struct irq_data *d)
-> +{
-> +	aspeed_sgpio_irq_set_mask(d, true);
-> +}
-> +
-> +static int aspeed_sgpio_set_type(struct irq_data *d, unsigned int type)
-> +{
-> +	u32 type0 = 0;
-> +	u32 type1 = 0;
-> +	u32 type2 = 0;
-> +	u32 bit, reg;
-> +	const struct aspeed_sgpio_bank *bank;
-> +	irq_flow_handler_t handler;
-> +	struct aspeed_sgpio *gpio;
-> +	unsigned long flags;
-> +	void __iomem *addr;
-> +	int offset;
-> +
-> +	irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
-> +
-> +	switch (type & IRQ_TYPE_SENSE_MASK) {
-> +	case IRQ_TYPE_EDGE_BOTH:
-> +		type2 |= bit;
-> +		/* fall through */
-> +	case IRQ_TYPE_EDGE_RISING:
-> +		type0 |= bit;
-> +		/* fall through */
-> +	case IRQ_TYPE_EDGE_FALLING:
-> +		handler = handle_edge_irq;
-> +		break;
-> +	case IRQ_TYPE_LEVEL_HIGH:
-> +		type0 |= bit;
-> +		/* fall through */
-> +	case IRQ_TYPE_LEVEL_LOW:
-> +		type1 |= bit;
-> +		handler = handle_level_irq;
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	spin_lock_irqsave(&gpio->lock, flags);
-> +
-> +	addr = bank_reg(gpio, bank, reg_irq_type0);
-> +	reg = ioread32(addr);
-> +	reg = (reg & ~bit) | type0;
-> +	iowrite32(reg, addr);
-> +
-> +	addr = bank_reg(gpio, bank, reg_irq_type1);
-> +	reg = ioread32(addr);
-> +	reg = (reg & ~bit) | type1;
-> +	iowrite32(reg, addr);
-> +
-> +	addr = bank_reg(gpio, bank, reg_irq_type2);
-> +	reg = ioread32(addr);
-> +	reg = (reg & ~bit) | type2;
-> +	iowrite32(reg, addr);
-> +
-> +	spin_unlock_irqrestore(&gpio->lock, flags);
-> +
-> +	irq_set_handler_locked(d, handler);
-> +
-> +	return 0;
-> +}
-> +
-> +static void aspeed_sgpio_irq_handler(struct irq_desc *desc)
-> +{
-> +	struct gpio_chip *gc = irq_desc_get_handler_data(desc);
-> +	struct irq_chip *ic = irq_desc_get_chip(desc);
-> +	struct aspeed_sgpio *data = gpiochip_get_data(gc);
-> +	unsigned int i, p, girq;
-> +	unsigned long reg;
-> +
-> +	chained_irq_enter(ic, desc);
-> +
-> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
-> +		const struct aspeed_sgpio_bank *bank = &aspeed_sgpio_banks[i];
-> +
-> +		reg = ioread32(bank_reg(data, bank, reg_irq_status));
-> +
-> +		for_each_set_bit(p, &reg, 32) {
-> +			girq = irq_find_mapping(gc->irq.domain, i * 32 + p);
-> +			generic_handle_irq(girq);
-> +		}
-> +
-> +	}
-> +
-> +	chained_irq_exit(ic, desc);
-> +}
-> +
-> +static struct irq_chip aspeed_sgpio_irqchip = {
-> +	.name       = "aspeed-sgpio",
-> +	.irq_ack    = aspeed_sgpio_irq_ack,
-> +	.irq_mask   = aspeed_sgpio_irq_mask,
-> +	.irq_unmask = aspeed_sgpio_irq_unmask,
-> +	.irq_set_type   = aspeed_sgpio_set_type,
-> +};
-> +
-> +static int aspeed_sgpio_setup_irqs(struct aspeed_sgpio *gpio,
-> +				   struct platform_device *pdev)
-> +{
-> +	int rc, i;
-> +	const struct aspeed_sgpio_bank *bank;
-> +
-> +	rc = platform_get_irq(pdev, 0);
-> +	if (rc < 0)
-> +		return rc;
-> +
-> +	gpio->irq = rc;
-> +
-> +	/* Disable IRQ and clear Interrupt status registers for all SPGIO 
-> Pins. */
-> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
-> +		bank =  &aspeed_sgpio_banks[i];
-> +		/* disable irq enable bits */
-> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_enable));
-> +		/* clear status bits */
-> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_status));
-> +	}
-> +
-> +	rc = gpiochip_irqchip_add(&gpio->chip, &aspeed_sgpio_irqchip,
-> +				  0, handle_bad_irq, IRQ_TYPE_NONE);
-> +	if (rc) {
-> +		dev_info(&pdev->dev, "Could not add irqchip\n");
-> +		return rc;
-> +	}
-> +
-> +	gpiochip_set_chained_irqchip(&gpio->chip, &aspeed_sgpio_irqchip,
-> +				     gpio->irq, aspeed_sgpio_irq_handler);
-> +
-> +	/* set IRQ settings and Enable Interrupt */
-> +	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
-> +		bank = &aspeed_sgpio_banks[i];
-> +		/* set falling or level-low irq */
-> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type0));
-> +		/* trigger type is edge */
-> +		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type1));
-> +		/* dual edge trigger mode. */
-> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_type2));
-> +		/* enable irq */
-> +		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_enable));
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id aspeed_sgpio_of_table[] = {
-> +	{ .compatible = "aspeed,ast2400-sgpio" },
-> +	{ .compatible = "aspeed,ast2500-sgpio" },
-> +	{}
-> +};
-> +MODULE_DEVICE_TABLE(of, aspeed_sgpio_of_table);
-> +
-> +static int __init aspeed_sgpio_probe(struct platform_device *pdev)
-> +{
-> +	struct aspeed_sgpio *gpio;
-> +	u32 nr_gpios, sgpio_freq, sgpio_clk_div;
-> +	int rc;
-> +	unsigned long apb_freq;
-> +
-> +	gpio = devm_kzalloc(&pdev->dev, sizeof(*gpio), GFP_KERNEL);
-> +	if (!gpio)
-> +		return -ENOMEM;
-> +
-> +	gpio->base = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(gpio->base))
-> +		return PTR_ERR(gpio->base);
-> +
-> +	rc = of_property_read_u32(pdev->dev.of_node, "ngpios", &nr_gpios);
-> +	if (rc < 0) {
-> +		dev_err(&pdev->dev, "Could not read ngpios property\n");
-> +		return -EINVAL;
-> +	} else if (nr_gpios > MAX_NR_SGPIO) {
-> +		dev_err(&pdev->dev, "Number of GPIOs exceeds the maximum of %d: 
-> %d\n",
-> +			MAX_NR_SGPIO, nr_gpios);
-> +		return -EINVAL;
-> +	}
-> +
-> +	rc = of_property_read_u32(pdev->dev.of_node, "bus-frequency", 
-> &sgpio_freq);
-> +	if (rc < 0) {
-> +		dev_err(&pdev->dev, "Could not read bus-frequency property\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	gpio->pclk = devm_clk_get(&pdev->dev, NULL);
-> +	if (IS_ERR(gpio->pclk)) {
-> +		dev_err(&pdev->dev, "devm_clk_get failed\n");
-> +		return PTR_ERR(gpio->pclk);
-> +	}
-> +
-> +	apb_freq = clk_get_rate(gpio->pclk);
-> +
-> +	/*
-> +	 * From the datasheet,
-> +	 *	SGPIO period = 1/PCLK * 2 * (GPIO254[31:16] + 1)
-> +	 *	period = 2 * (GPIO254[31:16] + 1) / PCLK
-> +	 *	frequency = 1 / (2 * (GPIO254[31:16] + 1) / PCLK)
-> +	 *	frequency = PCLK / (2 * (GPIO254[31:16] + 1))
-> +	 *	frequency * 2 * (GPIO254[31:16] + 1) = PCLK
-> +	 *	GPIO254[31:16] = PCLK / (frequency * 2) - 1
-> +	 */
-> +	if (sgpio_freq == 0)
-> +		return -EINVAL;
-> +
-> +	sgpio_clk_div = (apb_freq / (sgpio_freq * 2)) - 1;
-> +
-> +	if (sgpio_clk_div > (1 << 16) - 1)
-> +		return -EINVAL;
-> +
-> +	iowrite32(FIELD_PREP(ASPEED_SGPIO_CLK_DIV_MASK, sgpio_clk_div) |
-> +		  FIELD_PREP(ASPEED_SGPIO_PINS_MASK, (nr_gpios / 8)) |
-> +		  ASPEED_SGPIO_ENABLE,
-> +		  gpio->base + ASPEED_SGPIO_CTRL);
-> +
-> +	spin_lock_init(&gpio->lock);
-> +
-> +	gpio->chip.parent = &pdev->dev;
-> +	gpio->chip.ngpio = nr_gpios;
-> +	gpio->chip.direction_input = aspeed_sgpio_dir_in;
-> +	gpio->chip.direction_output = aspeed_sgpio_dir_out;
-> +	gpio->chip.get_direction = aspeed_sgpio_get_direction;
-> +	gpio->chip.request = NULL;
-> +	gpio->chip.free = NULL;
-> +	gpio->chip.get = aspeed_sgpio_get;
-> +	gpio->chip.set = aspeed_sgpio_set;
-> +	gpio->chip.set_config = NULL;
-> +	gpio->chip.label = dev_name(&pdev->dev);
-> +	gpio->chip.base = -1;
-> +
-> +	/* set all SGPIO pins as input (1). */
-> +	memset(gpio->dir_in, 0xff, sizeof(gpio->dir_in));
-> +
-> +	rc = devm_gpiochip_add_data(&pdev->dev, &gpio->chip, gpio);
-> +	if (rc < 0)
-> +		return rc;
-> +
-> +	return aspeed_sgpio_setup_irqs(gpio, pdev);
-> +}
-> +
-> +static struct platform_driver aspeed_sgpio_driver = {
-> +	.driver = {
-> +		.name = KBUILD_MODNAME,
-> +		.of_match_table = aspeed_sgpio_of_table,
-> +	},
-> +};
-> +
-> +module_platform_driver_probe(aspeed_sgpio_driver, aspeed_sgpio_probe);
-> +MODULE_DESCRIPTION("Aspeed Serial GPIO Driver");
-> +MODULE_LICENSE("GPL");
-> -- 
-> 2.7.4
-> 
->
+Yes, we will still require sparse_vmap parameter because vmemmap mapping
+does not necessarily be created only for ZONE_DEVICE range with an altmap.
+vmemmap can still be present with altmap as NULL (regular memory and device
+memory without altmap) in which cases it will not be possible to
+differentiate between linear and vmemmap mapping.
 
 _______________________________________________
 linux-arm-kernel mailing list
