@@ -2,88 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D0037E524
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 00:04:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A85C17E5CC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 00:39:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GAbwpWCmKECxwhYeeDbtx57RsGc91yKu70ha9xdyw98=; b=UuESdrHsrr4dCy
-	av0ylQiMriYtaOcpj+dit3SqEJm1imZwSJ4zN4ygN1QeB3KosEu4RBJL1vmGn0Dprw0OCpvvKhieg
-	Afhy44/3S+ze/7VsKSZMuep9sJwkszdINr7Id5//DOnosq6yOL8Pxpz1MY+PeD5wypwSmSxvBVTEy
-	dudDWsi4bRQTOAsNW9uzKXVyeNUPGePkB5TiiLq6OEGkPXx6XzpILwenE2gupp9Lhk7dwjOuD1BOE
-	8dT00LkEBffA0pVHoH//xht6uVA+zEcHCbpU1aJZS3yTib6XxXyB9bHHuHYUqXs0WOhcY4hGmODid
-	Sk+szoBVqVQEbn2089KQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=nQ4OYdNky+mweWi0HCvWYnXIuBkJISIOpsvDjpWroKI=; b=rg1NwJgMXlpV8uqLKG6SEEOVAu
+	cBaDcduceYb43ZQGhYwMKIt5CNMOSGnFdgRHKoUaHUrxOXZ7RCqkclggt8Rl2pjvHIAC5RKw5G0fy
+	eoYT132heubLM3QSI9GwIuktJl3yWXUw3sI/ZGNGLAgyZJBXbZXagjhxhJ06Y/CfkFJtCi/XVl8BP
+	RUQCcOdfLU5Ybfhe9bi23flwmFSiovH+gSrY8MdTAjFlzmhxfavogObrdZQSe2A+FSz2+ikxJ5JN+
+	MpdNWhy/6/pCht2Yp2KaSI5xJDfjnMkbH91EQSByHZMSV3naA9wfOySxYYM5AIMoFWl3Ecv8Adi0Q
+	QS9vpvKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htJB9-0000Ru-N4; Thu, 01 Aug 2019 22:04:07 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1htJim-0002mU-Od; Thu, 01 Aug 2019 22:38:52 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htJB2-0000Qo-Tk
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 22:04:02 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t14so32766582plr.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 15:04:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=O7hLnC+GOiCgk4z8TAevBK2YUS9V2gISweOdp52qemw=;
- b=PS86srXDaP4fTTf+RUB3qrKPYKv5VVImbD5sr2kp3apOfNZ0eWIzFc0Mv0njZFxFih
- kIDPoa29TcWLjeGb1zylTG9tEJhsGTACwRaj6SaDNKYuk/UKYaAaiJJjHkiQvrgHK+lH
- RHGzZEyajD813os98uy8cLCgzhZFoWeYOIKZE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=O7hLnC+GOiCgk4z8TAevBK2YUS9V2gISweOdp52qemw=;
- b=oS4wgSe2wDgfeleYjLetXz4WEgM2zIpiYl4SUixQSJxTnik5dXlbRnEcvh5WDuM+F8
- O4c2mQv4XpcRQCV85Mw0OEeve25fUFl/NZebNSmEtR4P8zBpt5XUzfjQUC6jkXYf1Pms
- 2+OiwP4KNlKECpiV+U/bhhfSiLLEvDL4APpgPZTY0N655I7tezezUj15AROWNzBqNM6J
- FKX0Pw87vBAppF4ugousqcRYp8qdr/dWsyqqWjgED3tQXnAUESVLjq8jhfQ2aIE7y2ar
- Yaxm1VEKQGCFon93QTDdb3KdtS3kB5TjKiJicA62Pmexo7gFn4k35oxB5A3FKV7gFJb6
- F+7A==
-X-Gm-Message-State: APjAAAXM6YaJpoNoFgYlBPGhBQVGOtmuja6WuTnB8yxGmMwajLo2oju9
- pYt7Tjt/l8wZUVkYJJ+GiAAHKA==
-X-Google-Smtp-Source: APXvYqxQ7cTZ2SN8igestlUX5ILuYgeNHRyShGDtkVrlsOwVJu4l7U3wDMFfsEDwuJT3bLOSz/Aj3Q==
-X-Received: by 2002:a17:902:7288:: with SMTP id
- d8mr44455167pll.133.1564697039800; 
- Thu, 01 Aug 2019 15:03:59 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id g2sm89824740pfb.95.2019.08.01.15.03.58
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 15:03:59 -0700 (PDT)
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] ARM: dts: rockchip: Add pin names for rk3288-veyron fievel
-Date: Thu,  1 Aug 2019 15:03:54 -0700
-Message-Id: <20190801220354.142933-1-mka@chromium.org>
-X-Mailer: git-send-email 2.22.0.770.g0f2c4a37fd-goog
-MIME-Version: 1.0
+ id 1htJif-0002lV-RV
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 22:38:47 +0000
+Received: from pps.filterd (m0098420.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x71Mb6du057650; Thu, 1 Aug 2019 18:37:50 -0400
+Received: from pps.reinject (localhost [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2u488k9fp4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 01 Aug 2019 18:37:49 -0400
+Received: from m0098420.ppops.net (m0098420.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.27/8.16.0.27) with SMTP id x71MbBR8057876;
+ Thu, 1 Aug 2019 18:37:49 -0400
+Received: from ppma02dal.us.ibm.com (a.bd.3ea9.ip4.static.sl-reverse.com
+ [169.62.189.10])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2u488k9fnr-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 01 Aug 2019 18:37:49 -0400
+Received: from pps.filterd (ppma02dal.us.ibm.com [127.0.0.1])
+ by ppma02dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id x71MZO8G019583;
+ Thu, 1 Aug 2019 22:37:48 GMT
+Received: from b01cxnp22035.gho.pok.ibm.com (b01cxnp22035.gho.pok.ibm.com
+ [9.57.198.25]) by ppma02dal.us.ibm.com with ESMTP id 2u0e85xfur-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 01 Aug 2019 22:37:48 +0000
+Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
+ [9.57.199.108])
+ by b01cxnp22035.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x71MblB444564956
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 1 Aug 2019 22:37:47 GMT
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 73ABDB207F;
+ Thu,  1 Aug 2019 22:37:47 +0000 (GMT)
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 5E92AB207B;
+ Thu,  1 Aug 2019 22:37:47 +0000 (GMT)
+Received: from paulmck-ThinkPad-W541 (unknown [9.70.82.154])
+ by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTP;
+ Thu,  1 Aug 2019 22:37:47 +0000 (GMT)
+Received: by paulmck-ThinkPad-W541 (Postfix, from userid 1000)
+ id 7887B16C9A53; Thu,  1 Aug 2019 15:37:48 -0700 (PDT)
+From: "Paul E. McKenney" <paulmck@linux.ibm.com>
+To: rcu@vger.kernel.org
+Subject: [PATCH tip/core/rcu 11/12] arm: Use common outgoing-CPU-notification
+ code
+Date: Thu,  1 Aug 2019 15:37:46 -0700
+Message-Id: <20190801223747.15560-11-paulmck@linux.ibm.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190801223708.GA14862@linux.ibm.com>
+References: <20190801223708.GA14862@linux.ibm.com>
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-08-01_09:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=13 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1906280000 definitions=main-1908010238
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_150400_957139_A0EF05D5 
-X-CRM114-Status: GOOD (  11.74  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20190801_153846_019428_F7B063F9 
+X-CRM114-Status: GOOD (  17.72  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,250 +105,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, tglx@linutronix.de,
+ peterz@infradead.org, fweisbec@gmail.com,
+ Dietmar Eggemann <dietmar.eggemann@arm.com>, jiangshanlai@gmail.com,
+ linux-kernel@vger.kernel.org, rostedt@goodmis.org, josh@joshtriplett.org,
+ dhowells@redhat.com, edumazet@google.com, mathieu.desnoyers@efficios.com,
+ oleg@redhat.com, dipankar@in.ibm.com, joel@joelfernandes.org,
+ Russell King <linux@arm.linux.org.uk>, akpm@linux-foundation.org,
+ "Paul E. McKenney" <paulmck@linux.vnet.ibm.com>, mingo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is like commit 0ca87bd5baa6 ("ARM: dts: rockchip: Add pin names
-for rk3288-veyron-jerry") and other similar commits, but for the
-veyron fievel board (and tiger, which includes the fievel .dtsi).
+From: "Paul E. McKenney" <paulmck@linux.vnet.ibm.com>
 
-Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+This commit removes the open-coded CPU-offline notification with new
+common code.  In particular, this change avoids calling scheduler code
+using RCU from an offline CPU that RCU is ignoring.  This is a minimal
+change.  A more intrusive change might invoke the cpu_check_up_prepare()
+and cpu_set_state_online() functions at CPU-online time, which would
+allow onlining throw an error if the CPU did not go offline properly.
+
+Signed-off-by: Paul E. McKenney <paulmck@linux.vnet.ibm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: Russell King <linux@arm.linux.org.uk>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Dietmar Eggemann <dietmar.eggemann@arm.com>
 ---
- arch/arm/boot/dts/rk3288-veyron-fievel.dts | 214 +++++++++++++++++++++
- 1 file changed, 214 insertions(+)
+ arch/arm/kernel/smp.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-fievel.dts b/arch/arm/boot/dts/rk3288-veyron-fievel.dts
-index 696566f72d30..5c14a8fa6574 100644
---- a/arch/arm/boot/dts/rk3288-veyron-fievel.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-fievel.dts
-@@ -198,6 +198,220 @@
- 	pinctrl-0 = <&drv_5v>;
- };
+diff --git a/arch/arm/kernel/smp.c b/arch/arm/kernel/smp.c
+index aab8ba40ce38..4b0bab2607e4 100644
+--- a/arch/arm/kernel/smp.c
++++ b/arch/arm/kernel/smp.c
+@@ -264,15 +264,13 @@ int __cpu_disable(void)
+ 	return 0;
+ }
  
-+&gpio0 {
-+	gpio-line-names = "PMIC_SLEEP_AP",
-+			  "DDRIO_PWROFF",
-+			  "DDRIO_RETEN",
-+			  "TS3A227E_INT_L",
-+			  "PMIC_INT_L",
-+			  "PWR_KEY_L",
-+			  "HUB_USB1_nFALUT",
-+			  "PHY_PMEB",
-+
-+			  "PHY_INT",
-+			  "REC_MODE_L",
-+			  "OTP_OUT",
-+			  "",
-+			  "USB_OTG_POWER_EN",
-+			  "AP_WARM_RESET_H",
-+			  "USB_OTG_nFALUT",
-+			  "I2C0_SDA_PMIC",
-+
-+			  "I2C0_SCL_PMIC",
-+			  "DEVMODE_L",
-+			  "USB_INT";
-+};
-+
-+&gpio2 {
-+	gpio-line-names = "CONFIG0",
-+			  "CONFIG1",
-+			  "CONFIG2",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "CONFIG3",
-+
-+			  "",
-+			  "EMMC_RST_L",
-+			  "",
-+			  "",
-+			  "BL_PWR_EN",
-+			  "",
-+			  "TOUCH_INT",
-+			  "TOUCH_RST",
-+
-+			  "I2C3_SCL_TP",
-+			  "I2C3_SDA_TP";
-+};
-+
-+&gpio3 {
-+	gpio-line-names = "FLASH0_D0",
-+			  "FLASH0_D1",
-+			  "FLASH0_D2",
-+			  "FLASH0_D3",
-+			  "FLASH0_D4",
-+			  "FLASH0_D5",
-+			  "FLASH0_D6",
-+			  "FLASH0_D7",
-+
-+			  "VCC5V_GOOD_H",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "FLASH0_CS2/EMMC_CMD",
-+			  "",
-+			  "FLASH0_DQS/EMMC_CLKO",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "PHY_TXD2",
-+			  "PHY_TXD3",
-+			  "MAC_RXD2",
-+			  "MAC_RXD3",
-+			  "PHY_TXD0",
-+			  "PHY_TXD1",
-+			  "MAC_RXD0",
-+			  "MAC_RXD1";
-+};
-+
-+&gpio4 {
-+	gpio-line-names = "MAC_MDC",
-+			  "MAC_RXDV",
-+			  "MAC_RXER",
-+			  "MAC_CLK",
-+			  "PHY_TXEN",
-+			  "MAC_MDIO",
-+			  "MAC_RXCLK",
-+			  "",
-+
-+			  "PHY_RST",
-+			  "PHY_TXCLK",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "UART0_RXD",
-+			  "UART0_TXD",
-+			  "UART0_CTS_L",
-+			  "UART0_RTS_L",
-+			  "SDIO0_D0",
-+			  "SDIO0_D1",
-+			  "SDIO0_D2",
-+			  "SDIO0_D3",
-+
-+			  "SDIO0_CMD",
-+			  "SDIO0_CLK",
-+			  "BT_DEV_WAKE",
-+			  "",
-+			  "WIFI_ENABLE_H",
-+			  "BT_ENABLE_L",
-+			  "WIFI_HOST_WAKE",
-+			  "BT_HOST_WAKE";
-+};
-+
-+&gpio5 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "USB_OTG_CTL1",
-+			  "HUB_USB2_CTL1",
-+			  "HUB_USB2_PWR_EN",
-+			  "HUB_USB_ILIM_SEL",
-+
-+			  "USB_OTG_STATUS_L",
-+			  "HUB_USB1_CTL1",
-+			  "HUB_USB1_PWR_EN",
-+			  "VCC50_HDMI_EN";
-+};
-+
-+&gpio6 {
-+	gpio-line-names = "I2S0_SCLK",
-+			  "I2S0_LRCK_RX",
-+			  "I2S0_LRCK_TX",
-+			  "I2S0_SDI",
-+			  "I2S0_SDO0",
-+			  "HP_DET_H",
-+			  "",
-+			  "INT_CODEC",
-+
-+			  "I2S0_CLK",
-+			  "I2C2_SDA",
-+			  "I2C2_SCL",
-+			  "MICDET",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "HUB_USB2_nFALUT",
-+			  "USB_OTG_ILIM_SEL";
-+};
-+
-+&gpio7 {
-+	gpio-line-names = "LCD_BL_PWM",
-+			  "PWM_LOG",
-+			  "BL_EN",
-+			  "PWR_LED1",
-+			  "TPM_INT_H",
-+			  "SPK_ON",
-+			  "FW_WP_AP",
-+			  "",
-+
-+			  "CPU_NMI",
-+			  "DVSOK",
-+			  "",
-+			  "EDP_HPD",
-+			  "DVS1",
-+			  "",
-+			  "LCD_EN",
-+			  "DVS2",
-+
-+			  "HDMI_CEC",
-+			  "I2C4_SDA",
-+			  "I2C4_SCL",
-+			  "I2C5_SDA_HDMI",
-+			  "I2C5_SCL_HDMI",
-+			  "5V_DRV",
-+			  "UART2_RXD",
-+			  "UART2_TXD";
-+};
-+
-+&gpio8 {
-+	gpio-line-names = "RAM_ID0",
-+			  "RAM_ID1",
-+			  "RAM_ID2",
-+			  "RAM_ID3",
-+			  "I2C1_SDA_TPM",
-+			  "I2C1_SCL_TPM",
-+			  "SPI2_CLK",
-+			  "SPI2_CS0",
-+
-+			  "SPI2_RXD",
-+			  "SPI2_TXD";
-+};
-+
- &pinctrl {
- 	pinctrl-names = "default", "sleep";
- 	pinctrl-0 = <
+-static DECLARE_COMPLETION(cpu_died);
+-
+ /*
+  * called on the thread which is asking for a CPU to be shutdown -
+  * waits until shutdown has completed, or it is timed out.
+  */
+ void __cpu_die(unsigned int cpu)
+ {
+-	if (!wait_for_completion_timeout(&cpu_died, msecs_to_jiffies(5000))) {
++	if (!cpu_wait_death(cpu, 5)) {
+ 		pr_err("CPU%u: cpu didn't die\n", cpu);
+ 		return;
+ 	}
+@@ -319,7 +317,7 @@ void arch_cpu_idle_dead(void)
+ 	 * this returns, power and/or clocks can be removed at any point
+ 	 * from this CPU and its cache by platform_cpu_kill().
+ 	 */
+-	complete(&cpu_died);
++	(void)cpu_report_death();
+ 
+ 	/*
+ 	 * Ensure that the cache lines associated with that completion are
 -- 
-2.22.0.770.g0f2c4a37fd-goog
+2.17.1
 
 
 _______________________________________________
