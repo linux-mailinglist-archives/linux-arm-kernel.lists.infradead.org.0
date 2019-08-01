@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5BDD7D3BE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 05:36:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94D337D3C0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 05:38:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ao51DDhfHgOGAlTDsRsZG91InjR/okPt0ErrESDEuqs=; b=FcTRfj0tirR7Gu
-	kIZIvfcRBwHhPb3SpNXu0p03pTwtDgYy93f7iMv4VYl3Z+d1kfEDBkQoNgnrMhi9cPmKps+xu3shZ
-	r3rhqdLfoZF0AYCQzbGtdbeWRgt2cxjK+lWwCHb/GcUcdXw9ZuVaEI6tUEf/3NPvyoDcKvUOXk3Aq
-	Jpj4E6MvfhcAmndZLFa2+CDkR+rtbpkBiV8gHILDGDxKpa86vTcM1psFJk0SRlLbSRyZC+64UTKG/
-	Ile8L3cB6kK4aqGZuGEF/Qa0YMsMuOeu2IZhqMFW2hDkO0KdVTe35Ia+uEMZj7fbzHux+9HdON1cF
-	+V2ejEA2bP+J2cLKzGfg==;
+	List-Owner; bh=x6VWLVB2l+nWb3BtuZ2P7TJnyDEXLmyyvlF0SJSE4f4=; b=XhRzpI/WptF4iR
+	jKn66nj7e0uAyLB1ioQg5Tab8jskROYjuj91JjsHbvJlakLrJtneQb3Na8tL2KPaa+kDC6RmqLxnR
+	A/kyeNE+6td/rIPu6xb/gzuC6PNt2pCgQ9l/75qywYBMde4H75udzo2fg2FbO+8t0H7axwV0Ac/5Y
+	vtn1c2hVWxirz9gV7fRYRgZ/vrwMud0TjD2jbTXN88mPvgr6rHUvlfroep2V+SSj4F5b4DAR95Cqp
+	pkamBXhV+yEWu5OwkkZ6eyo943iMXX6/hAKpBKASiC50mfa/qlIbpKDS7SHDi2mq8cDZix7H7K/KW
+	ts0soaweXQ4YNBG402ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht1sy-0004zB-HT; Thu, 01 Aug 2019 03:36:12 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1ht1vK-0005GR-T0; Thu, 01 Aug 2019 03:38:38 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht1sq-0004yP-0M
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 03:36:06 +0000
-Received: by mail-pl1-x641.google.com with SMTP id t14so31463942plr.11
+ id 1ht1vD-0005G8-Kr
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 03:38:33 +0000
+Received: by mail-pf1-x442.google.com with SMTP id g2so33150793pfq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 20:36:03 -0700 (PDT)
+ Wed, 31 Jul 2019 20:38:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=agxFsVFMrS4Uv8rkJ6+rXdsAOnVlA+SAVw+IjLOkFdU=;
- b=bUf4iEgLchiFXfhT1xmjReg6vuHTTMMnUTB4Y363ruCfk0w5x6lY6EiWkCv1iQTvfw
- X4YWjfgyPWpIFC9rKn++rTubN0mkZR7brGnZLLm2s+1NYTM/E4BE55nu+YQ6Ab3Ly9pQ
- WMCZRPQffPZuHyhc99gwM4wFkUavVG3TvyU5MrKjdLzbHQ/Z37n2YZ6adBpj7rYuzPl8
- SfvxW646djXWNNfxHFQNbHRnxaWIVYa6SqB1oRmS2QW/XuJ26OUoYUZJRwo6TnaiSX4A
- W0pjKGYGTaGKFJXX6RZelAdlYFloa7BQiqsDoU84SG8vMZxY7+lXWmf1n8GmXk379TTf
- wX1Q==
+ bh=HUAGFQAnsK0ltuLrxJcYqZcxSumtJzlQvJKJd2VykRE=;
+ b=f2+FeexuMHIVFz7J1KgaYN2PSAEsfxAGCZHQtPsRXqy8nkBFa/1JRk4lUuh5Sh8HwM
+ KTrXZoJfxbnVIbK+2dKF925fE0bOUCbp4T8VHQbnpiyHAvkROzJCzzsTkomdVsGJzZy2
+ JbrfU17ZhC6hw3Z/LsHKMav+48o1RMiyFCem90Ax9AAz24Hue2iaNDZbvQFv7/i1YWCg
+ ZKtOexqIW6AYvMRd9CfoWkMuBOeZqZRrHXN7txBwnGWQawE2PMRZPp2eQ8l5ON/Rzuhf
+ 8oQGRRCLBntWU5nVUac9FGgNmw3HIBb4jJY9KRs/vP/OV0UHizBz9XPoUVYsR5z65nMa
+ uJ+w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=agxFsVFMrS4Uv8rkJ6+rXdsAOnVlA+SAVw+IjLOkFdU=;
- b=ZDRWkK6/kr2KkQJT7lNLqcZPDHtpBSXSwkhN7YKmE+5WiLTACKIkPRT6gv0jtBcE56
- QgV/FG3/kGZPPF+QfzfeEE53XRmBABh0Bw8NDyDUTZyxgGDFjZHRbTBmhK5xRhUsycg2
- gn73sLKLxsB3O0X4Tkl7MRcvy01cZM8f8cvMbQVYZ2lQT5RCzUgpwjohyX7/rfbEOw8y
- dbsxePZYTSE9L7c/kHY5zzBtCJj/0zQA8xukrONd2Yjq18o32cRHaFWZEigKsgPD9b1o
- MXCIjfPZL3r48JlZxke9/pqgxZI7Abi+jkljZIpDQqAzCJKly9OkwJT0l0mCkV5YrpQ8
- os/A==
-X-Gm-Message-State: APjAAAU60BR0dhRJ4y8RiYS0egn6RoY/jKC/yglg0vz8Y5V37Pdd4swp
- zo5Lh3xjQKBoYwtYZdhtGM1zIA==
-X-Google-Smtp-Source: APXvYqyn64QqVAUXJUwPqvzYRKfETlhmOG6RXrqu4jKI3gLhnUT665IpkZH5AA2VrzxpqDptVQy8fA==
-X-Received: by 2002:a17:902:9f8e:: with SMTP id
- g14mr77875171plq.67.1564630562466; 
- Wed, 31 Jul 2019 20:36:02 -0700 (PDT)
+ bh=HUAGFQAnsK0ltuLrxJcYqZcxSumtJzlQvJKJd2VykRE=;
+ b=De8n2s3E59M2CPpQgZGNZ4mo40/cTFpWI957RVqHk50i2opAJckgoB7C/GXh4xNWfp
+ CpyIQU54BrAN/EwqegNPLhCnUi4r0ci0jvIT8S7pX/iH5TBmfYxRGlwHlm0j/mQkOduL
+ zq7HSobP3cyT1BF6qcBz8Z1tCmeSkiRhDU+buH6I28u+Vpfyp+aXmziOGfoMyPWTsz9+
+ 2E8/RC8i4Thv7dhoGZw9j2xj/sElx9xRxQAijT2EZMCrqRkV/+Vbiphx0FbKe/JDVbrI
+ ltEFVwuAiw9JdhGUcW9OMdcvTl1+jprB1RYJxpzmbU25q4UjcnuU47lkbWF9gH+SKrj7
+ VSJA==
+X-Gm-Message-State: APjAAAVlxbU7iuwGyjcYw3x6kSnxKygpaosRGuXM9kYtLnM4B/z/AhKe
+ o1q7Y/SN4znJDs9PbSWftn/DWXobXmM=
+X-Google-Smtp-Source: APXvYqxMmvgctv9eNr1FoxklWI9fGHj76piuwk2dDyVLqt2aXh89oHLmf0Y98yP3mORrvE84RBWLjw==
+X-Received: by 2002:a17:90a:d996:: with SMTP id
+ d22mr6271335pjv.86.1564630710863; 
+ Wed, 31 Jul 2019 20:38:30 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id j15sm69478055pfr.146.2019.07.31.20.36.00
+ by smtp.gmail.com with ESMTPSA id f19sm102004331pfk.180.2019.07.31.20.38.29
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 20:36:01 -0700 (PDT)
-Date: Thu, 1 Aug 2019 09:05:59 +0530
+ Wed, 31 Jul 2019 20:38:30 -0700 (PDT)
+Date: Thu, 1 Aug 2019 09:08:28 +0530
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v4.4 V2 15/43] arm64: Move cpu_die_early to smp.c
-Message-ID: <20190801033559.23bovxwguppb7bbr@vireshk-i7>
+Subject: Re: [PATCH v4.4 V2 11/43] arm64: uaccess: Mask __user pointers for
+ __arch_{clear, copy_*}_user
+Message-ID: <20190801033828.bfec6k2pln5dva26@vireshk-i7>
 References: <cover.1562908074.git.viresh.kumar@linaro.org>
- <dd031e0851c01a0cfe275c05dc24935580d2fd78.1562908075.git.viresh.kumar@linaro.org>
- <20190731123532.GA39768@lakrids.cambridge.arm.com>
+ <7d56c56af2f883958d5e74fa3178a1f774b9fd94.1562908075.git.viresh.kumar@linaro.org>
+ <20190731123711.GB39768@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190731123532.GA39768@lakrids.cambridge.arm.com>
+In-Reply-To: <20190731123711.GB39768@lakrids.cambridge.arm.com>
 User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_203605_690790_DC0A6A78 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20190731_203831_703338_C0AF06E1 
+X-CRM114-Status: GOOD (  11.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,39 +111,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 31-07-19, 13:35, Mark Rutland wrote:
-> On Fri, Jul 12, 2019 at 10:58:03AM +0530, Viresh Kumar wrote:
-> > From: Suzuki K Poulose <suzuki.poulose@arm.com>
+On 31-07-19, 13:37, Mark Rutland wrote:
+> On Fri, Jul 12, 2019 at 10:57:59AM +0530, Viresh Kumar wrote:
+> > From: Will Deacon <will.deacon@arm.com>
 > > 
-> > commit fce6361fe9b0caeba0c05b7d72ceda406f8780df upstream.
+> > commit f71c2ffcb20dd8626880747557014bb9a61eb90e upstream.
 > > 
-> > This patch moves cpu_die_early to smp.c, where it fits better.
-> > No functional changes, except for adding the necessary checks
-> > for CONFIG_HOTPLUG_CPU.
+> > Like we've done for get_user and put_user, ensure that user pointers
+> > are masked before invoking the underlying __arch_{clear,copy_*}_user
+> > operations.
 > > 
-> > Cc: Mark Rutland <mark.rutland@arm.com>
-> > Acked-by: Will Deacon <will.deacon@arm.com>
-> > Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> > Signed-off-by: Will Deacon <will.deacon@arm.com>
 > > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> > [ Viresh: Resolved rebase conflict ]
+> > [ v4.4: fixup for v4.4 style uaccess primitives ]
 > > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 > 
-> > +void cpu_die_early(void)
+> [...]
 > 
-> > +	asm(
-> > +	"1:	wfe\n"
-> > +	"	wfi\n"
-> > +	"	b	1b");
-> > +}
+> >  static inline unsigned long __must_check __copy_from_user(void *to, const void __user *from, unsigned long n)
+> >  {
+> >  	kasan_check_write(to, n);
+> > -	return  __arch_copy_from_user(to, from, n);
+> > +	return __arch_copy_from_user(to, __uaccess_mask_ptr(from), n);
+> > +
+> >  }
+> >  
+> >  static inline unsigned long __must_check __copy_to_user(void __user *to, const void *from, unsigned long n)
+> >  {
+> >  	kasan_check_read(from, n);
+> > -	return  __arch_copy_to_user(to, from, n);
+> > +	return __arch_copy_to_user(__uaccess_mask_ptr(to), from, n);
+> > +
+> >  }
 > 
-> Rather than open-coding this loop differently from upstream and the
-> v4.9.y backport, please backport commit:
-> 
->   c4bc34d20273db69 ("arm64: Add a helper for parking CPUs in a loop")
-> 
-> ... as a prerequisite of this patch.
+> Can we please drop the trailing whitespace from each of these? That
+> wasn't in the upstreadm commit or v4.9.y.
 
-Done, thanks.
+That was a mistake on my end it seems. Fixed now. Thanks.
 
 -- 
 viresh
