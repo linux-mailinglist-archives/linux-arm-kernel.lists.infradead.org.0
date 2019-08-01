@@ -2,113 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E28207E076
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 18:45:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 566947E082
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 18:47:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cDyGWGhGcYQ7EIfyTOzG1Qhpm9eGv6MMqRDcBJ3MOeo=; b=LsAX9on/GGt7BT
-	lhtdDATYt6s+vp/W0vd6dCC9KBscZWL3ICdlLqiGtrW8c3eltnKTqeH+J8L+wZzLvydqD03E6aJvL
-	DPp2z7m+FSxk31b6wLWCRtW7nvenmJyuSmPChR2CZ7ojdCYt3JN1IY3Pw75K7ArrK1R1BXDxeZ5vZ
-	U8lIaUgtQCc+K0zht9IsA7ZuKlrx7wgeYeDqH6PNFD73Y+HI3zlMMlrnWaHeKed+zmt6QvV6+rN3N
-	biZcCvVJhGVzygDINaroYcsaCPWEalXSssbBfkVSkhMtGv5rxb7r+TwiHBKH1J+w135evIv1tF+4n
-	9Wi8XemTFl7nWIHsw5lg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0M7dLzlHh310tqypyWWPAUvJaHshCCvnukwiHs1CqfU=; b=B4GMzPjhz3X/0S
+	LpsGRYemYXI7KFJ2DzUyQu+RtEXm7TxeR3RlzCKDGobFU8wBk1/HakZJhc/oDW2cNRgonQJtcXBF3
+	6B6DcNbIsJo+8/9Rq9ygzWGEaQeAh3y/R1FmVsqt9WzLxqHD6pQ5UMn6qWZ7aLvcnPBfOT3L/bspC
+	LiCVSR8dcstfImOlbJb7/Ymt+VzmPRrhPNwp0qrk4KNJ3milVq601xvfJjKWamDc84bFJOCRruAeS
+	/4PCptRcZ126Lz0E0doOSac+Em1i/xKRQ54GtHZvr+0YKUE5Sa/2ds/cGOP1Qbz3hQsrP95v26BsX
+	fEFGY4ASmrq75UuOPqSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htECm-00089Z-DR; Thu, 01 Aug 2019 16:45:28 +0000
-Received: from mga11.intel.com ([192.55.52.93])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htECf-00088c-Lr
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 16:45:22 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga003.jf.intel.com ([10.7.209.27])
- by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 01 Aug 2019 09:45:06 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,334,1559545200"; d="scan'208";a="175307534"
-Received: from ray.jf.intel.com (HELO [10.7.201.140]) ([10.7.201.140])
- by orsmga003.jf.intel.com with ESMTP; 01 Aug 2019 09:45:06 -0700
-Subject: Re: [PATCH v19 02/15] arm64: Introduce prctl() options to control the
- tagged user addresses ABI
-To: Kevin Brodsky <kevin.brodsky@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- dri-devel@lists.freedesktop.org, linux-rdma@vger.kernel.org,
- linux-media@vger.kernel.org, kvm@vger.kernel.org,
- linux-kselftest@vger.kernel.org
-References: <cover.1563904656.git.andreyknvl@google.com>
- <1c05651c53f90d07e98ee4973c2786ccf315db12.1563904656.git.andreyknvl@google.com>
- <7a34470c-73f0-26ac-e63d-161191d4b1e4@intel.com>
- <2b274c6f-6023-8eb8-5a86-507e6000e13d@arm.com>
-From: Dave Hansen <dave.hansen@intel.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=dave.hansen@intel.com; keydata=
- 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
-Message-ID: <88c59d1e-eda9-fcfe-5ee3-64a331f34313@intel.com>
-Date: Thu, 1 Aug 2019 09:45:05 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1htEEa-00008B-L2; Thu, 01 Aug 2019 16:47:20 +0000
+Received: from [195.167.85.94] (helo=localhost)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1htEER-00007z-TL; Thu, 01 Aug 2019 16:47:12 +0000
+Date: Thu, 1 Aug 2019 19:47:02 +0300
+From: Christoph Hellwig <hch@infradead.org>
+To: Linus Torvalds <torvalds@linux-foundation.org>,
+ Russell King <linux@armlinux.org.uk>
+Subject: [GIT PULL] arm highmem block I/O regression fix for 5.3
+Message-ID: <20190801164702.GA26365@infradead.org>
 MIME-Version: 1.0
-In-Reply-To: <2b274c6f-6023-8eb8-5a86-507e6000e13d@arm.com>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_094521_735354_4D8F5B54 
-X-CRM114-Status: GOOD (  15.57  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,45 +42,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kostya Serebryany <kcc@google.com>, Khalid Aziz <khalid.aziz@oracle.com>,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/1/19 5:38 AM, Kevin Brodsky wrote:
-> This patch series only changes what is allowed or not at the syscall
-> interface. It does not change the address space size. On arm64, TBI (Top
-> Byte Ignore) has always been enabled for userspace, so it has never been
-> possible to use the upper 8 bits of user pointers for addressing.
+And here is another somewhat unusual pull request, mostly because it
+touches almost entirely arch/arm, but to fix a block regression.
 
-Oh, so does the address space that's available already chop that out?
+I would have preferred to feed this through the arm tree, but after
+the original thread in reply to the bug report I haven't heard anything
+back from Russell.
 
-> If other architectures were to support a similar functionality, then I
-> agree that a common and more generic interface (if needed) would be
-> helpful, but as it stands this is an arm64-specific prctl, and on arm64
-> the address tag is defined by the architecture as bits [63:56].
 
-It should then be an arch_prctl(), no?
+The following changes since commit 06532750010e06dd4b6d69983773677df7fc5291:
+
+  dma-mapping: use dma_get_mask in dma_addressing_limited (2019-07-23 17:43:58 +0200)
+
+are available in the Git repository at:
+
+  git://git.infradead.org/users/hch/dma-mapping.git tags/arm-swiotlb-5.3
+
+for you to fetch changes up to ad3c7b18c5b362be5dbd0f2c0bcf1fd5fd659315:
+
+  arm: use swiotlb for bounce buffering on LPAE configs (2019-07-24 17:29:01 +0200)
+
+----------------------------------------------------------------
+add swiotlb support to arm
+
+This fixes a cascade of regressions that originally started with
+the addition of the ia64 port, but only got fatal once we removed
+most uses of block layer bounce buffering in Linux 4.18.
+
+The reason is that while the original i386/PAE code that was the first
+architecture that supported > 4GB of memory without an iommu decided to
+leave bounce buffering to the subsystems, which in those days just mean
+block and networking as no one else consumer arbitrary userspace memory.
+
+Later with ia64, x86_64 and other ports we assumed that either an iommu
+or something that fakes it up ("software IOTLB" in beautiful Intel
+speak) is present and that subsystems can rely on that for dealing with
+addressing limitations in devices.   Except that the ARM LPAE scheme
+that added larger physical address to 32-bit ARM did not follow that
+scheme and thus only worked by chance and only for block and networking
+I/O directly to highmem.
+
+Long story, short fix - add swiotlb support to arm when build for LPAE
+platforms, which actuallys turns out to be pretty trivial with the
+modern dma-direct / swiotlb code to fix the Linux 4.18-ish regression.
+
+----------------------------------------------------------------
+Christoph Hellwig (2):
+      dma-mapping: check pfn validity in dma_common_{mmap,get_sgtable}
+      arm: use swiotlb for bounce buffering on LPAE configs
+
+ arch/arm/include/asm/dma-mapping.h |  4 ++-
+ arch/arm/mm/Kconfig                |  5 ++++
+ arch/arm/mm/dma-mapping.c          | 61 ++++++++++++++++++++++++++++++++++++++
+ arch/arm/mm/init.c                 |  5 ++++
+ kernel/dma/mapping.c               | 13 ++++++--
+ 5 files changed, 85 insertions(+), 3 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
