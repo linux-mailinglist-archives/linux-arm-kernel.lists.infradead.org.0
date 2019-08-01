@@ -2,79 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1623E7DFE5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 18:15:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7360B7DFEE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 18:18:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H9Mi9QGtQR/fTPPBrjjdoojp3jGPBRkM2iTmJ4UMwWQ=; b=bBCgxD5eqn0EtY
-	FuaUGqVuyjCpAcl9gfhSd6UMDwdFeHA+1rxdLL4rdaHxPxVDHYl9a/D/lTUU1GPdxqI/a/a0H+VGR
-	5yyPh7/rAlJu2SiTTy73x5i7TiUD1pugaAC3lU1C3RE+6DPhIOxZ+AmyhPvUD4xx9Ts/OKUCEuXpr
-	XuM370Ozqje/+9TsQEmbqG7A09xI2AcxT3VgB2ndRNFHcB4fJyordZzNw8zBmp/NqL6nPcjXipu8W
-	Hnxyeq2+hyk/ZgF4sgFc+ka1VjiIyEJNpsq7H/sERQxf6l9/9eLbTQ5iDkhtM+aI/EL9fjbufbzJp
-	QVpzAiH3rtzdLyqNNwmg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FWJqFfi6XUYamlZe4SY2kg2AZOm3u5Yi2tcmngFCrKo=; b=Fnnulgk/WW5V4EBBsu0zsQNTb
+	Ja30QyS5UZgi2QV3v7bfb7xQUgDdLwKghvcxAJ1T3czl+QkFU2B9VxfaYxjRyK4Tm0JKNVshF6N2r
+	mQGVyLE7QyjlvG7GM/Oy1Y2+/CGTV+hTjcsd+94k3J/lxou6hJcGAv0A5L5p9V1njYxb4rLvhx9JK
+	xtw03bmQLvr2i6tHCDBYxeXY/6k0nEmCqR6vBdL8yMjMC9/JeXOjzz3sfsChtQyucVI0moGgnYHaf
+	+jc9RrQhlt/oKH47IRdWJFrDqc2XFkW47gq3x2oZAhCGYfcosNmhhZUz6IlAIHRPtqT6gfaR2yXI5
+	uCNpMXiYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htDjg-0001ZJ-Pz; Thu, 01 Aug 2019 16:15:24 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1htDmK-0002FA-Jg; Thu, 01 Aug 2019 16:18:08 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htDjX-0001Yg-PA
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 16:15:16 +0000
-Received: by mail-lf1-x141.google.com with SMTP id x3so50790834lfc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 09:15:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=fzTcCU8DmiEfu3KOpz+zNVDtmEzQUG6MLn72PQe0yd0=;
- b=lR7SLV8tBosSuoZxn7SAB6sPGvH+WPf1E4MioS1ezN+r9IS3K3xjze4bze9tzXQFOe
- 3CcP65yrQ4fBmXSJjNX0b91v5eQ+/I+/3GzeKru0jF79p9wLmvsFZUgsTRTXq9YEHECX
- nRmguLIWQSJLQmPLcyIgu+TgbBNts8/1TpeK5mDK8FcUnJKh1ltOVzUmVjSI/lRj+V2j
- kKDel2o4k4Gxy5XRmPUW0JdEfQX0NsVcdYQ89xV9+OZUe7oO72lCHNC/CRS/BuM0sGd9
- QkcSgfVKf6FZeJD1R/NrB01plBIYwGg+tPi6j6cScGTBGOQm7zqkhZj5+VLa9aTaXGsN
- zHbA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=fzTcCU8DmiEfu3KOpz+zNVDtmEzQUG6MLn72PQe0yd0=;
- b=JRtCzGXN4SSXvYI9mf1HaOcLDetNnoZpLb5FMNS54hSRgY0zc5FGbadNUxCrrDfkyg
- cQ9a4ZHPSowMrRm/+r4+JOQD+v0ryqbwuGX96OLmDOe8nQio1MMWzlc8LWQpIPEFe89p
- AJdNCJlmhunLOnuH+YzbcKOfE/j7A2XVNAyCZqAT99V4ohfxrdzAjSnjczQRwrYEh2X8
- lDYKJErw6IekCpt0YpzM6sskLREys1dOmZ05d1yNmAWbFY2Aqz4Q8iZjl8Xj9PJ/Ym4P
- nuHQisK4hbmqKmBpChwpvcUDdk0SY/kBjRxwdqkaYsTzMm6VVtuEFxhX4Ex6YE0WeA1o
- Phkw==
-X-Gm-Message-State: APjAAAUDKGDJ4cSIEzysweJCl9FWINSSyCUZghprFbR1VkYnJj+cKZbv
- /rHLBNPrOTU2QfJA2ERfpp22Qf2b3os+QsaUhTE=
-X-Google-Smtp-Source: APXvYqwNJxjcu2xuSyLo7PU4FvCCkXLvk9CQQaJBa+MRaFtEi3yjxNzKMFYskhzEERhc9bLgb9kY/z9FW7cowNHmpLw=
-X-Received: by 2002:a19:6e41:: with SMTP id q1mr52031933lfk.20.1564676113934; 
- Thu, 01 Aug 2019 09:15:13 -0700 (PDT)
+ id 1htDm6-00029u-Qd
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 16:17:56 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 2F86A60790; Thu,  1 Aug 2019 16:17:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1564676274;
+ bh=9f4HQjscs5/Ehb2Crl8DCKPjm+oT5IGUO5fSHVOJagg=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=h3LyqepF6GOPXKybGJnIBQ/BdAQIdw7YBp/0w3vDEWxTZMfw5TDsb1vEK4A8rr553
+ eNozKvNqmgjVNWd3iWVx2ep0AyUMpjL29csAv5k9FlPEW0WSXgUvDr5w/r/ywwaDfe
+ V5qjWzuhyDvxDSzcQZU3A1BPKBQHTtrSKys7vDN8=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [10.226.58.28] (i-global254.qualcomm.com [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: jhugo@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 2F4816043F;
+ Thu,  1 Aug 2019 16:17:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1564676273;
+ bh=9f4HQjscs5/Ehb2Crl8DCKPjm+oT5IGUO5fSHVOJagg=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=oD7uX7Ks4g+cpUqM147VW+9bKwblimFpPWCbQpRXsB7ExPO19S87y1xE/KsoY+JRv
+ XwLhHTS9pIk9ZHkU8ITuZaF0m9yAwOtZESNzXtSLnIJFjqswyHmivP/MOuqXxw+wTy
+ AB5j7taz8a8bab6g7ZYAUaP0XHVHz3LbjFKK8+4w=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 2F4816043F
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=jhugo@codeaurora.org
+Subject: Re: next/master boot: 265 boots: 17 failed, 184 passed with 64
+ offline (next-20190730)
+To: Linus Walleij <linus.walleij@linaro.org>, Timur Tabi <timur@kernel.org>
+References: <5d403574.1c69fb81.14163.65d3@mx.google.com>
+ <20190730134115.GE4264@sirena.org.uk>
+ <CACRpkdYevQiwW8iED8_qBo5yCcj5yCGrM76Lu3MyrU6Vy4HoNg@mail.gmail.com>
+ <5d41b01a.1c69fb81.84578.a0bc@mx.google.com>
+ <cbbe381e-a154-ced1-fbcb-9db2135e4e5b@codeaurora.org>
+ <c2e5cd69-2f95-fc47-4541-17a1d744f003@kernel.org>
+ <CACRpkdbpBnO4KgpjYReafWKKoq0AX5kAb99tCC9LXE0_7sW7Jg@mail.gmail.com>
+From: Jeffrey Hugo <jhugo@codeaurora.org>
+Message-ID: <561027aa-a0fc-61eb-2a06-595a9e6f59d3@codeaurora.org>
+Date: Thu, 1 Aug 2019 10:17:52 -0600
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <20190731163358.32622-1-sebastien.szymanski@armadeus.com>
-In-Reply-To: <20190731163358.32622-1-sebastien.szymanski@armadeus.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 1 Aug 2019 13:15:26 -0300
-Message-ID: <CAOMZO5Ct1r_3HLzdEPGyk3pDZsVWhmiRgB436bb-NwGuLnzYKg@mail.gmail.com>
-Subject: Re: [PATCH v3 3/3] media: dt-bindings: imx7-csi: add i.MX6UL/L support
-To: =?UTF-8?Q?S=C3=A9bastien_Szymanski?= <sebastien.szymanski@armadeus.com>
+In-Reply-To: <CACRpkdbpBnO4KgpjYReafWKKoq0AX5kAb99tCC9LXE0_7sW7Jg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_091515_816285_0F78230C 
-X-CRM114-Status: UNSURE (   8.78  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190801_091754_904542_CBC9DDC6 
+X-CRM114-Status: GOOD (  15.48  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -94,31 +104,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, Rob Herring <robh@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Rui Miguel Silva <rmfrfs@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Steve Longerbeam <slongerbeam@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Kernel Build Reports Mailman List <kernel-build-reports@lists.linaro.org>,
+ Lina Iyer <ilina@codeaurora.org>, Stephen Boyd <swboyd@chromium.org>,
+ Mark Brown <broonie@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Lee Jones <lee.jones@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBKdWwgMzEsIDIwMTkgYXQgMTozNCBQTSBTw6liYXN0aWVuIFN6eW1hbnNraQo8c2Vi
-YXN0aWVuLnN6eW1hbnNraUBhcm1hZGV1cy5jb20+IHdyb3RlOgo+Cj4gRG9jdW1lbnQgImZzbCxp
-bXg2dWwtY3NpIiBlbnRyeS4KPgo+IFJldmlld2VkLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBrZXJu
-ZWwub3JnPgo+IFNpZ25lZC1vZmYtYnk6IFPDqWJhc3RpZW4gU3p5bWFuc2tpIDxzZWJhc3RpZW4u
-c3p5bWFuc2tpQGFybWFkZXVzLmNvbT4KClJldmlld2VkLWJ5OiBGYWJpbyBFc3RldmFtIDxmZXN0
-ZXZhbUBnbWFpbC5jb20+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 8/1/2019 1:09 AM, Linus Walleij wrote:
+> On Thu, Aug 1, 2019 at 5:49 AM Timur Tabi <timur@kernel.org> wrote:
+>> On 7/31/19 12:58 PM, Jeffrey Hugo wrote:
+>>>>>
+>>>>> Timur/Stephen: any ideas?
+>>>
+>>> Timur's CAF account is no longer valid, I added his @kernel one.
+>>
+>> Delete everything specific to the QDF2400.
+> 
+> It appears Mark is still using it in his test farm, and now its sole
+> role is finding bugs in my code. Which it did! With so much elegance
+> that we could fix it up quickly.
+> 
+>> Qualcomm has made it very clear that they have no interest in developing
+>> ARM server chips.  No QDF2400 system ever made it to official production.
+> 
+> That's sad. I remember we had lots of discussions around this at the
+> time. The ACPI code base and quirks we added is however used in
+> other Qualcomm-based machines now (what Lee is doing), so the effort
+> is not wasted at all.
+
+There are a few QDF2400 systems around that are being supported. 
+Certainly not to the scale that was intended/envisioned, but they do exist.
+
+Feel free to poke me for questions/issues, although its not my primary 
+job so responses may be a bit slow.
+
+
+-- 
+Jeffrey Hugo
+Qualcomm Technologies, Inc. is a member of the
+Code Aurora Forum, a Linux Foundation Collaborative Project.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
