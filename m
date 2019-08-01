@@ -2,54 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 214557DF90
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:59:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E94B7DF9C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 18:00:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JTPniRXfC3H2Xbcorp3EmMkCPeNm2JU4hKH3V5psPG0=; b=Q5oQZbZSaq0L7T
-	yTzLYvJcs4lAx6gte3WGrQYWK1Wp6/cGZLpS2v+pUpoxmy+CRIrIZXJzALOH65WjQogIJnc2xtKhI
-	15/HQjGpWaRDWsi8ML7C/mhpa3oKo8u37XDgYHD23ajg+TkJaBDmct09D8f/CaC6wmgAQD5iIZDy0
-	dUjHbOPdpRYaxpE7HhC2E5yANj/pR1Z5d9RZjLd/7Xus31B9FJFgT5ynx6WaVVNS+K2S80pwP6kPi
-	e3e+80iYhZdGAE3CI68q1dzAL7TNTorNdq3T266vtiFkM6LLpB9io+MjGdzZF5A9/r1Z9KdBXwwqW
-	EQAQi6ytZv/HipLCXpBQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=y0ikKvc/Rn2HrEXC5JxUDBGzUZFsFQOeQWONSCKcDng=; b=fwKGU41GT2DHnaM48psmfOpBw
+	5tfzgA4nvkION10o0bUEUS6jszajNoMOgJ1KyDYylDxHv78bdNGHf6QJCr8A33g2PprL89RKOWWvf
+	lpACiH+/mhWPqNo91HgFiPe0ARski0hH8ol2+TIqebDv1UawBlFZmIjiD7vof69rWSCWajwAoXeki
+	WP5qGSef6vvdnOUCGmj+QwguHC9CxpouVTHoQQbZp9MmUskhnwFsHshVWuJ8c/SEYnK+9XiE/z2V7
+	OXBW48PCdztTcNWgyHWctkFcG6nhGev2EfnbPPQB0Ur5quL+2EXGAWW9cKWJD6Lxi6rh/kxy8loQi
+	/HXO4UgFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htDTg-0000YV-SC; Thu, 01 Aug 2019 15:58:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1htDTV-0000Y9-Po
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 15:58:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 63AE61597;
- Thu,  1 Aug 2019 08:58:41 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2B3393F694;
- Thu,  1 Aug 2019 08:58:40 -0700 (PDT)
-Date: Thu, 1 Aug 2019 16:58:38 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Jeremy Linton <jeremy.linton@arm.com>
-Subject: Re: [PATCH v4 2/2] arm64: topology: Use PPTT to determine if PE is a
- thread
-Message-ID: <20190801155838.GE23424@e107155-lin>
-References: <20190801034634.26913-1-jeremy.linton@arm.com>
- <20190801034634.26913-3-jeremy.linton@arm.com>
+	id 1htDVU-0002Rf-TB; Thu, 01 Aug 2019 16:00:45 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1htDVH-0002KE-49; Thu, 01 Aug 2019 16:00:32 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 7FF1DAC2E;
+ Thu,  1 Aug 2019 16:00:27 +0000 (UTC)
+Message-ID: <ed5388412df78ad0a9ed69cdf3ac716eac075141.camel@suse.de>
+Subject: Re: [PATCH 6/8] dma-direct: turn ARCH_ZONE_DMA_BITS into a variable
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Christoph Hellwig <hch@lst.de>
+Date: Thu, 01 Aug 2019 17:59:34 +0200
+In-Reply-To: <20190801140452.GB23435@lst.de>
+References: <20190731154752.16557-1-nsaenzjulienne@suse.de>
+ <20190731154752.16557-7-nsaenzjulienne@suse.de>
+ <20190801140452.GB23435@lst.de>
+User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190801034634.26913-3-jeremy.linton@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_085844_256152_F0A340DD 
-X-CRM114-Status: UNSURE (   8.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190801_090031_593934_39ADA54B 
+X-CRM114-Status: GOOD (  19.89  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,28 +60,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lorenzo.pieralisi@arm.com, catalin.marinas@arm.com, rjw@rjwysocki.net,
- linux-acpi@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- will@kernel.org, linux-arm-kernel@lists.infradead.org, lenb@kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, eric@anholt.net,
+ Paul Mackerras <paulus@samba.org>, will@kernel.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>, phill@raspberryi.org,
+ linux-s390@vger.kernel.org, f.fainelli@gmail.com, frowand.list@gmail.com,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, catalin.marinas@arm.com,
+ devicetree@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
+ marc.zyngier@arm.com, robh+dt@kernel.org, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, mbrugger@suse.com, linux-mm@kvack.org,
+ linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, wahrenst@gmx.net, akpm@linux-foundation.org,
+ Robin Murphy <robin.murphy@arm.com>
+Content-Type: multipart/mixed; boundary="===============5492017327787931104=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 10:46:34PM -0500, Jeremy Linton wrote:
-> ACPI 6.3 adds a thread flag to represent if a CPU/PE is
-> actually a thread. Given that the MPIDR_MT bit may not
-> represent this information consistently on homogeneous machines
-> we should prefer the PPTT flag if its available.
->
 
-Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+--===============5492017327787931104==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-1xpVXG9aO5tI8LW1PkIr"
 
---
-Regards,
-Sudeep
+
+--=-1xpVXG9aO5tI8LW1PkIr
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Christoph, thanks for the review.
+
+On Thu, 2019-08-01 at 16:04 +0200, Christoph Hellwig wrote:
+> A few nitpicks, otherwise this looks great:
+>=20
+> > @@ -201,7 +202,7 @@ static int __init mark_nonram_nosave(void)
+> >   * everything else. GFP_DMA32 page allocations automatically fall back=
+ to
+> >   * ZONE_DMA.
+> >   *
+> > - * By using 31-bit unconditionally, we can exploit ARCH_ZONE_DMA_BITS =
+to
+> > + * By using 31-bit unconditionally, we can exploit arch_zone_dma_bits =
+to
+> >   * inform the generic DMA mapping code.  32-bit only devices (if not
+> > handled
+> >   * by an IOMMU anyway) will take a first dip into ZONE_NORMAL and get
+> >   * otherwise served by ZONE_DMA.
+> > @@ -237,9 +238,18 @@ void __init paging_init(void)
+> >  	printk(KERN_DEBUG "Memory hole size: %ldMB\n",
+> >  	       (long int)((top_of_ram - total_ram) >> 20));
+> > =20
+> > +	/*
+> > +	 * Allow 30-bit DMA for very limited Broadcom wifi chips on many
+> > +	 * powerbooks.
+> > +	 */
+> > +	if (IS_ENABLED(CONFIG_PPC32))
+> > +		arch_zone_dma_bits =3D 30;
+> > +	else
+> > +		arch_zone_dma_bits =3D 31;
+> > +
+>=20
+> So the above unconditionally comment obviously isn't true any more, and
+> Ben also said for the recent ppc32 hack he'd prefer dynamic detection.
+>=20
+> Maybe Ben and or other ppc folks can chime in an add a patch to the serie=
+s
+> to sort this out now that we have a dynamic ZONE_DMA threshold?
+
+Noted, for now I'll remove the comment.
+
+> > diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
+> > index 59bdceea3737..40dfc9b4ee4c 100644
+> > --- a/kernel/dma/direct.c
+> > +++ b/kernel/dma/direct.c
+> > @@ -19,9 +19,7 @@
+> >   * Most architectures use ZONE_DMA for the first 16 Megabytes, but
+> >   * some use it for entirely different regions:
+> >   */
+> > -#ifndef ARCH_ZONE_DMA_BITS
+> > -#define ARCH_ZONE_DMA_BITS 24
+> > -#endif
+> > +unsigned int arch_zone_dma_bits __ro_after_init =3D 24;
+>=20
+> I'd prefer to drop the arch_ prefix and just calls this zone_dma_bits.
+> In the long run we really need to find a way to just automatically set
+> this from the meminit code, but that is out of scope for this series.
+> For now can you please just update the comment above to say something
+> like:
+>=20
+> /*
+>  * Most architectures use ZONE_DMA for the first 16 Megabytes, but some u=
+se it
+>  * it for entirely different regions.  In that case the arch code needs t=
+o
+>  * override the variable below for dma-direct to work properly.
+>  */
+
+Ok perfect.
+
+
+--=-1xpVXG9aO5tI8LW1PkIr
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl1DDGYACgkQlfZmHno8
+x/7w9wgAsuuhgVK1nlC7WgrB2sfSYqL6HTJlDfkLJ2RMgzu/WSw4RJsje86on5R9
+NmRSTVntXnCdpTNiKcSEKP7MnrVtMh2TtopfTOCvgho/uDJsc4DPAqZaLHO4quzo
+ZfimsWkcpC6n/E8ybEcew+6U7BIyqJPtqxgdkXz98gLQ1NK1wJU2x0Gt+KXT5a/0
+hR3hA3whz8yIe4hwQTEiAzX/LnSP8+Yp+g1LLFjYveqt2RUbfC/udykYkLS7LdoO
+SJ6j5S/1jRpvusBjENkY3PQiRGrhfRnT4qxVSdpkK/rMG6pLMW4l9YjfbQCLOFhn
+8qxZKNifDs1KxpZjExjd4Lisum4nhw==
+=nw8i
+-----END PGP SIGNATURE-----
+
+--=-1xpVXG9aO5tI8LW1PkIr--
+
+
+
+--===============5492017327787931104==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5492017327787931104==--
+
+
