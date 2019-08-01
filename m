@@ -2,77 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C1757D67B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 09:41:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67A8A7D682
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 09:41:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kJH49yIKBRA6BRmC32L/A5jj3cs20EvpXgJT3fIe/t8=; b=M7xphzKwF93WKI
-	3Uhud5fW6hEQaQ9UCkuLdcqm7NxN+jOkNHtfjJfOKIJUjFC8kgk8xt75RS/e8dC9jLpqFReB3/7kj
-	SHxqSs27OQYz0qt8DR7a3HodEKYbsdLb1B+TsoGs0+bVGrIYuYqdbyYEkbgQGe0tgeOmjez3XxCY2
-	iJJsNuvPWJ3Zw4+H9l4xRYBNc2uS8NlYuGzdPKo8e1A1Xkze7luOh1zqqa7TeO4q4EUWLzpk0VMTc
-	X9mGSirJB9mdn3ZcRNgpyt5Rsceg76kSMmZd9olFTGCZoGyvmDHv2BaAbneZAzaCb4Jw0kmF/FY+W
-	9AN/3GQkk8xPBmhOHLnw==;
+	List-Owner; bh=0yC8tCHKT7JfldKEGRw/twun7khvKSxGr+oTpwf4gxU=; b=jl6dpehsxCxFDd
+	9mhsbAHsk+mVK+y7ckIBn7fa7z6thWgp1Ii83pcMF1uCMofWaYocoMTYMOYVpRRAWQb2TX4X5TVK2
+	kJjV8KzGUU6uRGlikDKzvc3ecZJXk6QnXAXE2TIK+O15cXBV/pHywA/dgCmNlBYfWYn6wQgyYJePB
+	G7mRHJv2KalqLulUoFc2o50WevDce4vpfOfpS890BpLR1sFDJF/FQQE/XdQslNcLsPGhCFsLR/Xyf
+	XAB0l1hBjDJDYMWAyvmyHDvhNGl2AtGSMXijOvhz+50vYlsVUmQAMaWeadRKlK/RHscPNDv18GeeE
+	p2/rfTve8UzD7K2BgqHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht5hq-0004xE-8K; Thu, 01 Aug 2019 07:40:58 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1ht5ia-0005Gx-9c; Thu, 01 Aug 2019 07:41:44 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht5hk-0004wQ-0Q
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 07:40:53 +0000
-Received: by mail-lj1-x241.google.com with SMTP id m8so34757131lji.7
+ id 1ht5iQ-0005GR-Ek
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 07:41:38 +0000
+Received: by mail-pg1-x543.google.com with SMTP id f5so24849890pgu.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 00:40:51 -0700 (PDT)
+ Thu, 01 Aug 2019 00:41:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=H2DnLeysC51Jmq+BwRcdvsefRXSYiI2YJl6s9A/zlto=;
- b=qrMT7PcgSqQaPkhDNxMbADKheyhBnSC+xpb7kKF54VBYkSMPossLqpaZCuNtF0lDMK
- qXMEZEB3PZU5mAOOK9m7rgG41ScrZQmYocuw/IlarqJeVGqi35sAmjysYfxFyzDpdwrE
- q0o1/fC76kq7sPI1X42ApVVwfrkAaLdqAWBgpE4pkfS5OjtTTBWyOF0eCL4MZjZx1E5O
- hL8RRxrqjhZmDoasT8A3YGGN8527eUUnk+H3CroOjZQa0hqO8N1YZkTAY116z0aFZIV/
- b8i6FslmwUzzoFlRmDqExDGN92AQOqj3haKzc3fHcFHkDuqot0ElZe4/3d+LWlRDtHx3
- 44jQ==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=stRY7i1GZrfY6D+PTgs0D4UrvfUCsK1idtnpqO9v05A=;
+ b=FIzQTHdYyzbSF4UXVeIZHy3ZAwIm6WNjJ/7SFU/GqKhukmbYUPc5uoLrynWLyUBJVb
+ fRHC5adeqiJFVkCnJcahOseTMZ7e2ZkBrgl6yzcXksAwGWJhQu+I8pPcCuRU+gQJMZrt
+ 6zWlCDe679nJhA/Frtiufn5nm9bM8CDM32JZOhtmzzcvNFyU0tW2INMvtpZKKuJlNGB1
+ Z05sWFHKHngzHjtuXq+dCNMtQE/y0N5oT7ENpWnZjy2HUF3NgPHY0YsXwrYwcAhAhbfK
+ BwVZloDwEUKpWfOLiuawIFKfuHlNJKEVWD08Fy5DVw55YcQkMA1MTyaNgn+YACVYM24+
+ I9QA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=H2DnLeysC51Jmq+BwRcdvsefRXSYiI2YJl6s9A/zlto=;
- b=nu50knHZJ0MjdtFMZhaAr8RUqPWPTJfJRy+M9rBseY19QW278twU1LgSdr3RH8PFK+
- czXAAfEX8U0HMYEw0qPtvySpE+UwXa/1sbAOnu5L32ig85oP5Jc49QbsKE9MuJ/tkY19
- qovuiWoyn5IyInMkTQfjJcfnb54sc3fS7Ii8Pe22yE0pFTrcNSB0YnyUB4Z66xuaN2N4
- RygIpy0IuoqPnm4fNn0oJXkhfdbhm+wyE0IojkSlVEX2p1VIr0ajTBWTATVqhEPURQR+
- ae/S3X4I/ldEzmoR60xuhcsheOSgWAfV4O1QX54fuLeDwuOgLGOHFu+VzA6224XucmE+
- 7uQw==
-X-Gm-Message-State: APjAAAUZ53LY4xAEetdihDno86rq0w5Rnz6IvHuwcNC3YJ6GKMfEmCfP
- LLXFSss0pb7OiemsE5smoblpfngpRjwjRNx3iKa6pw==
-X-Google-Smtp-Source: APXvYqzq0IJ9GtmcxYuyJWtDtzNwkmT4P2unALVLFpkxdrititI5GvPVtJgr09S2tzYu63OXgUbjTzql4hcILCNGdOk=
-X-Received: by 2002:a2e:970a:: with SMTP id r10mr63101245lji.115.1564645250122; 
- Thu, 01 Aug 2019 00:40:50 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=stRY7i1GZrfY6D+PTgs0D4UrvfUCsK1idtnpqO9v05A=;
+ b=VYnjSERdqhdDXVB5iJDJF5REnGFVJ28rysWW9mA/rICJysgk2fQ57lFTRixn0bUdgy
+ I5QRLZWtc1XLR2apkw7m+4jPGfGEfYIIGRP1O2xaqfBwljfFJWhuOFxQOWwySrzD246t
+ J1/JBWxr4Z0ZQxw4VIfXvXWndvKgpbOQstOwIe6wVj1RA24IkET+HUkciP4C4tC3pWQL
+ WJC+wpBVDZKzC3gHP8bEyTkIfvQS/mQMD+aQUX28nOu1NJRDIeKdiSAORsu6JhVGN09V
+ SAru3BrpOpi4RyTB7WqC0hnRpkyF3OAUqu1yEbB+bLqHaKqZvkl6La4yLK3OnFGgC5ZY
+ w+4Q==
+X-Gm-Message-State: APjAAAWt9WknOconpT4VuBn4O4hqcDVFfuh5c0+aSljnzmpG2IaaTyqS
+ hcNloFawisgoetIg9gRA2LhwOg==
+X-Google-Smtp-Source: APXvYqyjrB9ZTQXX8An99agwlE3etMrgkqcBgU4z6N9t7CiNe210eVe0fuU/nEZOBJMkJFfzCzTgfw==
+X-Received: by 2002:a17:90a:228b:: with SMTP id
+ s11mr6888100pjc.23.1564645293756; 
+ Thu, 01 Aug 2019 00:41:33 -0700 (PDT)
+Received: from localhost ([122.172.28.117])
+ by smtp.gmail.com with ESMTPSA id u97sm4101405pjb.26.2019.08.01.00.41.32
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 01 Aug 2019 00:41:32 -0700 (PDT)
+Date: Thu, 1 Aug 2019 13:11:31 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v4.4 V2 25/43] arm64: Move BP hardening to
+ check_and_switch_context
+Message-ID: <20190801074131.526h5d4hwpxutlq2@vireshk-i7>
+References: <cover.1562908074.git.viresh.kumar@linaro.org>
+ <f655aaa158af070d45a2bd4965852b0c97a08838.1562908075.git.viresh.kumar@linaro.org>
+ <59b252cf-9cb7-128b-4887-c21a8b9b92a9@arm.com>
+ <20190801050940.h65crfawrdifsrgg@vireshk-i7>
+ <86354576-fc54-a8b7-4dc9-bc613d59fb17@arm.com>
+ <20190801063544.ruw444isj5uojjdx@vireshk-i7>
+ <20190801065700.GA17391@kroah.com>
+ <20190801070541.hpmadulgp45txfem@vireshk-i7>
+ <20190801073444.4n45h6kcbmejvzte@willie-the-truck>
 MIME-Version: 1.0
-References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
- <CAE=Ncrb63dQLe-nDQyO9OPv7XjwM_9mzL9SrcLiUi2Dr10cD4A@mail.gmail.com>
- <CAE=NcrY7b8eTTovOszBhGhVbjfJAXoAYehiUJyPENGfwWoVcPw@mail.gmail.com>
- <CAFA6WYOEqe1a1DCyVYKA+oZaZ0n5hnjxdubstUnrwdUW1-4xHw@mail.gmail.com>
- <CAE=NcraDkm5cxE=ceq_9XkQz=NZ6KdVXkNUsdD4G2LrWz-bpDw@mail.gmail.com>
-In-Reply-To: <CAE=NcraDkm5cxE=ceq_9XkQz=NZ6KdVXkNUsdD4G2LrWz-bpDw@mail.gmail.com>
-From: Sumit Garg <sumit.garg@linaro.org>
-Date: Thu, 1 Aug 2019 13:10:38 +0530
-Message-ID: <CAFA6WYMOXQbL5OeheFUFpTr8gte8XHHr-71-h8+qX0+R_sekDQ@mail.gmail.com>
-Subject: Re: [RFC v2 0/6] Introduce TEE based Trusted Keys support
-To: Janne Karhunen <janne.karhunen@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20190801073444.4n45h6kcbmejvzte@willie-the-truck>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_004052_116846_B460AFFB 
-X-CRM114-Status: GOOD (  18.62  )
+X-CRM114-CacheID: sfid-20190801_004137_272891_59F61C7C 
+X-CRM114-Status: GOOD (  19.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -94,86 +107,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
- Daniel Thompson <daniel.thompson@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
- jejb@linux.ibm.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- James Morris <jmorris@namei.org>,
- Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
- linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
- Mimi Zohar <zohar@linux.ibm.com>, Casey Schaufler <casey@schaufler-ca.com>,
- linux-integrity@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "Serge E. Hallyn" <serge@hallyn.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Greg KH <greg@kroah.com>, Will Deacon <will.deacon@arm.com>,
+ stable@vger.kernel.org, mark.brown@arm.com,
+ linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Russell King <rmk+kernel@arm.linux.org.uk>, julien.thierry.kdev@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 1 Aug 2019 at 11:51, Janne Karhunen <janne.karhunen@gmail.com> wrote:
->
-> On Wed, Jul 31, 2019 at 4:58 PM Sumit Garg <sumit.garg@linaro.org> wrote:
->
-> > > To clarify a bit further - my thought was to support any type of trust
-> > > source.
-> >
-> > That could be very well accomplished via Trusted Keys abstraction
-> > framework [1]. A trust source just need to implement following APIs:
-> >
-> > struct trusted_key_ops ts_trusted_key_ops = {
-> >        .migratable = 0, /* non-migratable */
-> >        .init = init_ts_trusted,
-> >        .seal = ts_key_seal,
-> >        .unseal = ts_key_unseal,
-> >        .get_random = ts_get_random,
-> >        .cleanup = cleanup_ts_trusted,
-> > };
->
-> Which is basically the same as implementing a new keytype in the
-> kernel; abstraction is not raised in any considerable manner this way?
->
+On 01-08-19, 08:34, Will Deacon wrote:
+> On Thu, Aug 01, 2019 at 12:35:41PM +0530, Viresh Kumar wrote:
+> > On 01-08-19, 08:57, Greg KH wrote:
+> > > On Thu, Aug 01, 2019 at 12:05:44PM +0530, Viresh Kumar wrote:
+> > > > On 01-08-19, 07:30, Julien Thierry wrote:
+> > > > > I must admit I am not familiar with backport/stable process enough. But
+> > > > > personally I think the your suggestion seems more sensible than
+> > > > > backporting 4 patches.
+> > > > > 
+> > > > > Or you can maybe ignore patch 25 and say in patch 24 that among the
+> > > > > changes made for the 4.4 codebase, the call arm64_apply_bp_hardening()
+> > > > > was moved from post_ttbr_update_workaround as it doesn't exist and
+> > > > > placed in check_and_switch_context() as it is its final destination.
+> > > > 
+> > > > Done that and dropped the other two patches.
+> > > > 
+> > > > > However, I really don't know what's the best way to proceed according to
+> > > > > existing practices. So input from someone else would be welcome.
+> > > > 
+> > > > Lets see if someone comes up and ask me to do something else :)
+> > > 
+> > > Keeping the same patches that upstream has is almost always the better
+> > > thing to do in the long-run.
+> > 
+> > That would require two additional patches to be backported, 22 and 23
+> > from this series. From your suggestion it seems that keeping them is
+> > better here ?
+> 
+> Yes. Backporting individual patches as they appear upstream is definitely
+> the preferred method for -stable. It makes the relationship to mainline
+> crystal clear, as well as any dependencies between patches that have been
+> backported. Everytime we tweak something unecessarily in a stable backport,
+> it just creates the potential for confusion and additional conflicts in
+> future backports, so it's best to follow the shape of upstream as closely as
+> possible, even if it results in additional patches.
+> 
+> So I wouldn't worry about total number of patches. I'd worry more about
+> things like conflicts, deviation from mainline and overall testing coverage.
 
-It doesn't create a new keytype. There is only single keytype:
-"trusted" which could be implemented via one of the trust source
-available in the system like TPM, TEE etc.
+Okay, I won't make these changes then. Thanks.
 
-> I chose the userspace plugin due to this, you can use userspace aids
-> to provide any type of service. Use the crypto library you desire to
-> do the magic you want.
-
-Here TEE isn't similar to a user-space crypto library. In our case TEE
-is based on ARM TrustZone which only allows TEE communications to be
-initiated from privileged mode. So why would you like to route
-communications via user-mode (which is less secure) when we have
-standardised TEE interface available in kernel?
-
->
->
-> > > With the
-> > > user mode helper in between anyone can easily add their own thing in
-> > > there.
-> >
-> > Isn't actual purpose to have trusted keys is to protect user-space
-> > from access to kernel keys in plain format? Doesn't user mode helper
-> > defeat that purpose in one way or another?
->
-> Not really. CPU is in the user mode while running the code, but the
-> code or the secure keydata being is not available to the 'normal'
-> userspace. It's like microkernel service/driver this way. The usermode
-> driver is part of the kernel image and it runs on top of a invisible
-> rootfs.
->
-
-Can you elaborate here with an example regarding how this user-mode
-helper will securely communicate with a hardware based trust source
-with other user-space processes denied access to that trust source?
-
--Sumit
-
->
-> --
-> Janne
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
