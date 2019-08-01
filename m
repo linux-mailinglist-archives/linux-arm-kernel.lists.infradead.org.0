@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46F987E284
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 20:45:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72ABE7E285
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 20:45:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nzeZC+Fm2IW6jp5Ao/XTFCeN443GQiZQCaXageKdGwU=; b=leD5YN3KQvUPba
-	yCG8QWzdxREIa1qPWJlPevjAWKPKo+PZpaqhtFnRc5W/rQH4AtaWV14hMPgAOF7wc3PLez3Vexejm
-	dHWQh3vFzU6ZCV+gfwDf7G6cbTThF8dIj5N3loV9OHtgNZh7kDKWXcJpY6iQ3qKtVyxAq1vzGlEVR
-	svY/Q3FPAYvEp+AXTMVNr++9Daf+Y2LrltkujNMmkHTa/Jr2uBd+4Xy26LGnwhTR/9LwE459vfCSM
-	gKbtIdnXo581fD9zZQFL4tNGmIH92r+00XT/UpvcRnRiKldhwqBPWOk/XCCW90dM9OI4uxVfZg9ur
-	HxB/UvIUXFbAr8cBHs+g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WKjlprq93+XLKd1KsnVoXFApcmVP/7aBDK8mM100Bjs=; b=plSd4C7oHenKC8
+	iA+YxnAkL2hFf1RdA61//8JogilCTn5nYBOc3q8qnTBUChjwkEkJNosh8uwAgCh7z+3//yGL/0mwb
+	xinwhTaURRZAVIY4glefvRGDsVBPgouzjqold9jW7npbj4/negwD9sDzlWcUGDU8sAQ6bfQiqVThK
+	n/mhA7brBzyeHJ9VlwF6hH3gzWij9Q4AaX+7j6bYM2C0AM+KxluEVPcdQe1ED9DpWcZ/JLd+mP6PM
+	pjb3q7kdzec5+2DYfSi/yevfOv6mPkhEg/E8Es4CS5H2uI/4/JaOnq829NidYmREPhIaU5Z5Fu2Sn
+	pq0bDwiOzEZQHS5qTThA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htG50-0001Ct-Ms; Thu, 01 Aug 2019 18:45:34 +0000
+	id 1htG5A-0001Mm-40; Thu, 01 Aug 2019 18:45:44 +0000
 Received: from skedge04.snt-world.com ([91.208.41.69])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htG4r-0001Bs-Or
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 18:45:27 +0000
-Received: from sntmail14r.snt-is.com (unknown [10.203.32.184])
+ id 1htG4t-0001CA-Fo
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 18:45:28 +0000
+Received: from sntmail10s.snt-is.com (unknown [10.203.32.183])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by skedge04.snt-world.com (Postfix) with ESMTPS id ED90367A7B0;
- Thu,  1 Aug 2019 20:45:21 +0200 (CEST)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail14r.snt-is.com
- (10.203.32.184) with Microsoft SMTP Server (version=TLS1_2,
+ by skedge04.snt-world.com (Postfix) with ESMTPS id 84B6467A88B;
+ Thu,  1 Aug 2019 20:45:25 +0200 (CEST)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail10s.snt-is.com
+ (10.203.32.183) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Thu, 1 Aug 2019
- 20:45:21 +0200
+ 20:45:25 +0200
 Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
  sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1713.004; Thu, 1 Aug 2019 20:45:21 +0200
+ 15.01.1713.004; Thu, 1 Aug 2019 20:45:25 +0200
 From: Schrempf Frieder <frieder.schrempf@kontron.de>
 To: "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
  "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
  <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
  "festevam@gmail.com" <festevam@gmail.com>, "linux-imx@nxp.com"
  <linux-imx@nxp.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: [PATCH v2 1/3] serial: mctrl_gpio: Avoid probe failures in case of
- missing gpiolib
-Thread-Topic: [PATCH v2 1/3] serial: mctrl_gpio: Avoid probe failures in case
- of missing gpiolib
-Thread-Index: AQHVSJlF+cJCIhOOZEmFG6rcowK4DA==
-Date: Thu, 1 Aug 2019 18:45:21 +0000
-Message-ID: <20190801184505.17239-1-frieder.schrempf@kontron.de>
+Subject: [PATCH v2 2/3] serial: sh-sci: Remove check for specific
+ mctrl_gpio_init() return value
+Thread-Topic: [PATCH v2 2/3] serial: sh-sci: Remove check for specific
+ mctrl_gpio_init() return value
+Thread-Index: AQHVSJlHEoc0h/HtdUeNtLGwgfHXXA==
+Date: Thu, 1 Aug 2019 18:45:24 +0000
+Message-ID: <20190801184505.17239-2-frieder.schrempf@kontron.de>
+References: <20190801184505.17239-1-frieder.schrempf@kontron.de>
+In-Reply-To: <20190801184505.17239-1-frieder.schrempf@kontron.de>
 Accept-Language: de-DE, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -57,7 +59,7 @@ x-originating-ip: [172.25.9.193]
 x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
 MIME-Version: 1.0
 X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: ED90367A7B0.AF516
+X-SnT-MailScanner-ID: 84B6467A88B.AF016
 X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
  Provider for details
 X-SnT-MailScanner-SpamCheck: 
@@ -70,8 +72,8 @@ X-SnT-MailScanner-To: festevam@gmail.com, geert+renesas@glider.be,
  u.kleine-koenig@pengutronix.de
 X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_114526_154392_ABBA68D8 
-X-CRM114-Status: GOOD (  11.43  )
+X-CRM114-CacheID: sfid-20190801_114527_701475_121631D0 
+X-CRM114-Status: GOOD (  11.24  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -105,69 +107,28 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Frieder Schrempf <frieder.schrempf@kontron.de>
 
-If CONFIG_GPIOLIB is not enabled, mctrl_gpio_init() and
-mctrl_gpio_init_noauto() will currently return an error pointer with
--ENOSYS. As the mctrl GPIOs are usually optional, drivers need to
-check for this condition to allow continue probing.
-
-To avoid the need for this check in each driver, we return NULL
-instead, as all the mctrl_gpio_*() functions are skipped anyway.
-We also adapt mctrl_gpio_to_gpiod() to be in line with this change.
+Now that the mctrl_gpio code returns NULL instead of ERR_PTR(-ENOSYS)
+in cases when CONFIG_GPIOLIB is disabled, we can safely remove this
+check.
 
 Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
 ---
-Changes in v2
-=============
-* Move the sh_sci changes to a separate patch
-* Add a patch for the 8250 driver
-* Add Fabio's R-b tag
----
- drivers/tty/serial/serial_mctrl_gpio.c | 3 +++
- drivers/tty/serial/serial_mctrl_gpio.h | 6 +++---
- 2 files changed, 6 insertions(+), 3 deletions(-)
+ drivers/tty/serial/sh-sci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/tty/serial/serial_mctrl_gpio.c b/drivers/tty/serial/serial_mctrl_gpio.c
-index 2b400189be91..54c43e02e375 100644
---- a/drivers/tty/serial/serial_mctrl_gpio.c
-+++ b/drivers/tty/serial/serial_mctrl_gpio.c
-@@ -61,6 +61,9 @@ EXPORT_SYMBOL_GPL(mctrl_gpio_set);
- struct gpio_desc *mctrl_gpio_to_gpiod(struct mctrl_gpios *gpios,
- 				      enum mctrl_gpio_idx gidx)
- {
-+	if (gpios == NULL)
-+		return NULL;
-+
- 	return gpios->gpio[gidx];
- }
- EXPORT_SYMBOL_GPL(mctrl_gpio_to_gpiod);
-diff --git a/drivers/tty/serial/serial_mctrl_gpio.h b/drivers/tty/serial/serial_mctrl_gpio.h
-index b7d3cca48ede..1b2ff503b2c2 100644
---- a/drivers/tty/serial/serial_mctrl_gpio.h
-+++ b/drivers/tty/serial/serial_mctrl_gpio.h
-@@ -114,19 +114,19 @@ static inline
- struct gpio_desc *mctrl_gpio_to_gpiod(struct mctrl_gpios *gpios,
- 				      enum mctrl_gpio_idx gidx)
- {
--	return ERR_PTR(-ENOSYS);
-+	return NULL;
- }
+diff --git a/drivers/tty/serial/sh-sci.c b/drivers/tty/serial/sh-sci.c
+index d18c680aa64b..249325b65ee0 100644
+--- a/drivers/tty/serial/sh-sci.c
++++ b/drivers/tty/serial/sh-sci.c
+@@ -3287,7 +3287,7 @@ static int sci_probe_single(struct platform_device *dev,
+ 		return ret;
  
- static inline
- struct mctrl_gpios *mctrl_gpio_init(struct uart_port *port, unsigned int idx)
- {
--	return ERR_PTR(-ENOSYS);
-+	return NULL;
- }
+ 	sciport->gpios = mctrl_gpio_init(&sciport->port, 0);
+-	if (IS_ERR(sciport->gpios) && PTR_ERR(sciport->gpios) != -ENOSYS)
++	if (IS_ERR(sciport->gpios))
+ 		return PTR_ERR(sciport->gpios);
  
- static inline
- struct mctrl_gpios *mctrl_gpio_init_noauto(struct device *dev, unsigned int idx)
- {
--	return ERR_PTR(-ENOSYS);
-+	return NULL;
- }
- 
- static inline
+ 	if (sciport->has_rtscts) {
 -- 
 2.17.1
 
