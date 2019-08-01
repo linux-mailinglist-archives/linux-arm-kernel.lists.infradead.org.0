@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4549F7D790
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:27:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CD7C7D791
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:27:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kaCblxqdU0sULRQCbX5rPYVN7dG6cNNKO3A8tFLDDhE=; b=ck5/Bigjubzp+z
-	HxW89FX/VJP8fclxmcM+0YFhFd7znThKPtoHoEZT1Lf4hLvQUOh/5uviRNP4eMAiBclXapA4+HCO2
-	RfkyQ2XPC4R7t/TT0qhDSP6G3EHw+vyw/eOqcTOg160mpN6x5pS3Y0pSX6KDF29JASWLUviZxw55R
-	Lh10GrVJfd4RBC6mSqrDiYLJ5XQZWej0P6O1MpLjQGhWJO3a6tVUN7U+HLUuGc3gW1NMshyQOYfrr
-	eSOKD2NrWuGjJE2BYcYmowlpRConlQza+ZMPNhO23vrkxaeBub49bZX4yO3eFy9k4zk8qq8IRfKsp
-	509eJFGwBWz8JQfHNX0w==;
+	List-Owner; bh=8h71XgfEtioumP1fHMToVE4ff4IYhWfRvTuamjCj2l0=; b=RBe5FrzIjmrNLt
+	AJUf/1iugAN6Q0S/wHSNpWZVE7PLwOFLiXYwRk428PlG3xN0QShsPF6wjqrI1fD7b0YcAFaZMpCuu
+	cjGj61A/Y1vLDwhvG/k3EhYUolOhu8Ae3HEff+E0xze5SnksPl2HXJo/3WwkoS/2ty1TmgEnFR8xD
+	8qqbKT/rqLIGYFiKVKwunZCUKomZv4Nb3hf9rXEZKjatUehSZEvQ9tuStWksxjAk+kpopLz/Jv0zp
+	tuhpXv3K/4McpCnL4SKOBAl35zli95TmZPs/gbADIvjoEd4KvaugBxNkONeJu779eNVP3ScXuzR7d
+	ZYXnwJWI66rgmm/Rr+GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6Qm-00040X-Pq; Thu, 01 Aug 2019 08:27:24 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1ht6Qw-0004Ey-Oi; Thu, 01 Aug 2019 08:27:34 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6Kl-0003Hn-Gh
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:21:13 +0000
-Received: by mail-pg1-x544.google.com with SMTP id k189so14686966pgk.13
+ id 1ht6Ko-0003ME-4T
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:21:16 +0000
+Received: by mail-pg1-x542.google.com with SMTP id f5so24916213pgu.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 01:21:11 -0700 (PDT)
+ Thu, 01 Aug 2019 01:21:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=jbpvQKJEQu6FughKaepmre4Ek2Fg9qHsXyEHlW2kC7A=;
- b=nuPAxY96iM+XwKlBy8anITOo/610vyvWeiY88oH4WhEaRNHJ+4FpcKfNUOq6sORC1n
- bognKJBIWgQngLwGMhYvzwuGBzT4WIu2MfMf8wZwWkZari+WuthCl6e/xY85XPk1O9WS
- W4HJ2d3jp408eScQ9rXt/Og1AIxEp3+gEHIQ+m0RWksDj+hoyuWm7cqTTOVQdSMaDRnh
- QQbblfammaCkWIWdwB9jSxF/XD7zfcPy8fmeA0b3nXznGmJW8355BJcQ4Yb3fU+RSBtP
- xyQgP/CWI3bq3rP9YfrrackmXpNijHi+BWViX2RDCKnE+QVy/UZBD8wV3GkSzbEsMW+v
- EPUg==
+ bh=/rNw3tnBxgbMcdBdzBneQcQUsRPBm5GaeGzxs7tkgFw=;
+ b=oN+aQ42TkqS/ZeSiy3PDVQMFYJwaMygZDYjh2qN8hDnDvIcJXJV2xpqOJsfr2J87Vb
+ HeXPSEp5GcxRtJuCXOKlcDE0H84nRUB/twMJAH4jd/ZRQ2XVQgi3URaW62kWUFpPqhvx
+ VWkcO50KK0MHGygwXTdMFgPeTJlYbSSFLDzu1sgoU/zfeXdgQg51br4OgEkEcdJH7Lzk
+ 5i4gx5frWTr2aRqQyJrFvT/4HICocdqzcTYe2qbKmjtEUEJkGpNm+nulY/vpSEPHBKFq
+ F6bqs230Y4TzLP/JVePgx7etwDRWQKZEMwVpsDX3zL1VhLFRyfY4sqoDKQ1VqFNTrw1w
+ JK+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=jbpvQKJEQu6FughKaepmre4Ek2Fg9qHsXyEHlW2kC7A=;
- b=duBAf/T8E6ST6Xu7MJdl5gnWJG8pvH/G7k0HvvqkGYHLbxw/balsOgASFXcq7EimlP
- zqBhi7PKWSuktCFeoojt3fiYJ6yW10QJ95mR5KVw5E84xwaXzkNLQTzpqytaHhfV2Zuf
- lBOEvTj2hmY198R/ZlnQj3/oiyxbAyRS5Ze6lro1ppI4rh5Miub8i9i3Er/W2YEpfwEe
- YizTC80mqkJjpYKftYCTlToDPePGNviqh0K+5gDV559o7l/dzM6hAC9IO/iCROfMuOZQ
- 4G/JAaF/76WY1GLHnzcipVjrHU1dSn3ukaK4QhozBYf1Yl7m3qBek/ZPTZTm6j1DebCk
- 6ZJg==
-X-Gm-Message-State: APjAAAWHCP8SLC71Z5Krs85jd6dYz1Vmc5tYGxeR9ASLdwkKD939nsTg
- X7GeaPhrkvfdFjLejtzIYJKwoQ==
-X-Google-Smtp-Source: APXvYqzzclOnJ7hW5Cy9TmZm9TaesjMC0utzsTgWcOSVCJD9TpzTUtFt96KW/izuU1HOlYfsmURQtw==
-X-Received: by 2002:a65:53cb:: with SMTP id z11mr1365272pgr.200.1564647670832; 
- Thu, 01 Aug 2019 01:21:10 -0700 (PDT)
+ bh=/rNw3tnBxgbMcdBdzBneQcQUsRPBm5GaeGzxs7tkgFw=;
+ b=rccieL4uhP27aVlZIh+KG6ZW7Xm6V7jHhX6HgE4pS13aNH0kOpLCeTaL6vCetGBNsS
+ OSx5FlhX9rAJU0LsQ9ItMg5B/Z8mpAYgrNXf6yCWF9R30hf/6g2M/as67GVzbUPS9Wea
+ hH6G/adJKr/DhhE2Ej9JcY5ncJmX/0g8z7gBCXIyslQtn8wgWQN9zj1o3yqZEe/qyGTU
+ HPkzM4z69mLPIxBDJDfofMJ70CruhkEm9Pi5ZBAsP3r183oXGd9SIra7Mauccz0Mtjf7
+ 2yRt8PLcROg8YxBWAy1xG90GNCFG9pCIGcCtSs6C3LBqPalbeNwkX9JP2YmlrcloQ1Qs
+ o4cA==
+X-Gm-Message-State: APjAAAWQ2tD45dDtc29khEyE0PE8/cXYhZQ0F0VWswAmjD/AQ+87++jE
+ dSzaxCAbeVPBeQE3sLfL1R5zMQ==
+X-Google-Smtp-Source: APXvYqyaed19XnqHQXWpNSnB4vgpCpEBf18uaExgzvHFuu8wKI9CVeBs5nx9R212iN+ptzJnz/i5ww==
+X-Received: by 2002:a63:c006:: with SMTP id h6mr83873722pgg.290.1564647673509; 
+ Thu, 01 Aug 2019 01:21:13 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id w4sm90742508pfn.144.2019.08.01.01.21.10
+ by smtp.gmail.com with ESMTPSA id f7sm69426237pfd.43.2019.08.01.01.21.12
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 01:21:10 -0700 (PDT)
+ Thu, 01 Aug 2019 01:21:13 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org
-Subject: [PATCH ARM32 v4.4 V2 37/47] ARM: 8809/1: proc-v7: fix Thumb
- annotation of cpu_v7_hvc_switch_mm
-Date: Thu,  1 Aug 2019 13:46:21 +0530
-Message-Id: <41ffeadd36b1640c285d4d7b633696cd5ae4f03c.1564646727.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM32 v4.4 V2 38/47] ARM: 8810/1: vfp: Fix wrong assignement
+ to ufp_exc
+Date: Thu,  1 Aug 2019 13:46:22 +0530
+Message-Id: <17ef1620483a77f70c7c27e64cba3ad1684626c7.1564646727.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1564646727.git.viresh.kumar@linaro.org>
 References: <cover.1564646727.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_012111_573172_4101D75C 
-X-CRM114-Status: GOOD (  15.01  )
+X-CRM114-CacheID: sfid-20190801_012114_693052_0D79CB6A 
+X-CRM114-Status: GOOD (  12.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,59 +109,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+From: Julien Thierry <julien.thierry@arm.com>
 
-Commit 6282e916f774e37845c65d1eae9f8c649004f033 upstream.
+Commit 5df7a99bdd0de4a0480320264c44c04543c29d5a upstream.
 
-Due to what appears to be a copy/paste error, the opening ENTRY()
-of cpu_v7_hvc_switch_mm() lacks a matching ENDPROC(), and instead,
-the one for cpu_v7_smc_switch_mm() is duplicated.
+In vfp_preserve_user_clear_hwstate, ufp_exc->fpinst2 gets assigned to
+itself. It should actually be hwstate->fpinst2 that gets assigned to the
+ufp_exc field.
 
-Given that it is ENDPROC() that emits the Thumb annotation, the
-cpu_v7_hvc_switch_mm() routine will be called in ARM mode on a
-Thumb2 kernel, resulting in the following splat:
+Fixes commit 3aa2df6ec2ca6bc143a65351cca4266d03a8bc41 ("ARM: 8791/1:
+vfp: use __copy_to_user() when saving VFP state").
 
-  Internal error: Oops - undefined instruction: 0 [#1] SMP THUMB2
-  Modules linked in:
-  CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.18.0-rc1-00030-g4d28ad89189d-dirty #488
-  Hardware name: QEMU KVM Virtual Machine, BIOS 0.0.0 02/06/2015
-  PC is at cpu_v7_hvc_switch_mm+0x12/0x18
-  LR is at flush_old_exec+0x31b/0x570
-  pc : [<c0316efe>]    lr : [<c04117c7>]    psr: 00000013
-  sp : ee899e50  ip : 00000000  fp : 00000001
-  r10: eda28f34  r9 : eda31800  r8 : c12470e0
-  r7 : eda1fc00  r6 : eda53000  r5 : 00000000  r4 : ee88c000
-  r3 : c0316eec  r2 : 00000001  r1 : eda53000  r0 : 6da6c000
-  Flags: nzcv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment none
-
-Note the 'ISA ARM' in the last line.
-
-Fix this by using the correct name in ENDPROC().
-
-Cc: <stable@vger.kernel.org>
-Fixes: 10115105cb3a ("ARM: spectre-v2: add firmware based hardening")
-Reviewed-by: Dave Martin <Dave.Martin@arm.com>
-Acked-by: Marc Zyngier <marc.zyngier@arm.com>
-Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Reported-by: David Binderman <dcb314@hotmail.com>
+Signed-off-by: Julien Thierry <julien.thierry@arm.com>
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm/mm/proc-v7.S | 2 +-
+ arch/arm/vfp/vfpmodule.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/mm/proc-v7.S b/arch/arm/mm/proc-v7.S
-index b6359ce39fa7..90cddff176f6 100644
---- a/arch/arm/mm/proc-v7.S
-+++ b/arch/arm/mm/proc-v7.S
-@@ -106,7 +106,7 @@ ENTRY(cpu_v7_hvc_switch_mm)
- 	hvc	#0
- 	ldmfd	sp!, {r0 - r3}
- 	b	cpu_v7_switch_mm
--ENDPROC(cpu_v7_smc_switch_mm)
-+ENDPROC(cpu_v7_hvc_switch_mm)
- #endif
- ENTRY(cpu_v7_iciallu_switch_mm)
- 	mov	r3, #0
+diff --git a/arch/arm/vfp/vfpmodule.c b/arch/arm/vfp/vfpmodule.c
+index f07567eedd82..f9392fb060ea 100644
+--- a/arch/arm/vfp/vfpmodule.c
++++ b/arch/arm/vfp/vfpmodule.c
+@@ -583,7 +583,7 @@ int vfp_preserve_user_clear_hwstate(struct user_vfp *ufp,
+ 	 */
+ 	ufp_exc->fpexc = hwstate->fpexc;
+ 	ufp_exc->fpinst = hwstate->fpinst;
+-	ufp_exc->fpinst2 = ufp_exc->fpinst2;
++	ufp_exc->fpinst2 = hwstate->fpinst2;
+ 
+ 	/* Ensure that VFP is disabled. */
+ 	vfp_flush_hwstate(thread);
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
