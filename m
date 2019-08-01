@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 382447DDD9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 16:25:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 334EC7DDDA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 16:25:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=aXjM1SO+lUDafbTQvUQSzaKoZyEbjZ7YeHjiNhAoJSg=; b=ac/
-	NzbpQXVEojEIxyGjE47jhCiaJX7n/xS5a2WgdzIVc1OoKj4N30vLlWXWNvAM209dlXxNbMS+8d4Gm
-	TUKv2FYjMVsXYQVijse82Zii4WEioQ0VhSDXKgdEG8qbwHSjDgusnnp6uMTnWzBLkagEV1VC8CI9w
-	jVdl/9iLhuvV7z1Z3VdJv6G2WVMuL9ELKvPW6xpHFbXvmTqsucYg1Z1NRpn5AwSQFQbjR+cScIQkq
-	WvhAIzkDQ4xXc2Z2eJdCD3tuaFtzV4aqNdB3KsLXUhym1/xNsIbz7fr4RtNmqFLvrKXt38ERDxAyQ
-	uQe26dRM3UPFFotKS2qGeY+1Inptl2Q==;
+	References:List-Owner; bh=XRqDfV9QHn6k+1UHX2irLDeChAZe4nccl0vnToi/8YM=; b=e2K
+	nG3eVEopig54Sehup/PlOENeoQgg1gXrRFD2vE5IW1di9ACmXp3W2DgJ8hAaFTbGchYRcvBXexs6U
+	5rCAm6LIW4UtcQchzZTaewPlJW/2wdj2CIVkekLdTy0sZWDBPpU1UmRle18R0bK+ELxp7PJNGdIhb
+	jAEE0O82msiCjpkaa2za36fwI6GaU85UscaIRZVNdvTHEz+pjrXZOyAYk6LH5H10oCvtgZJRYdfB3
+	zZ177+madJ/aah0lWoLZkcGAr8S4v2VKfETEMS8vKB5WhWsOomuC8yCXRoBCAvW7ThESLttquasLl
+	ihtbDUk9zV+HmuI96VbhT5asfe8deuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htC18-0001cJ-IE; Thu, 01 Aug 2019 14:25:18 +0000
+	id 1htC1N-0001qU-Pb; Thu, 01 Aug 2019 14:25:33 +0000
 Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htC0w-000116-29
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 14:25:09 +0000
-Received: by mail-pf1-x444.google.com with SMTP id t16so34141488pfe.11
+ id 1htC1B-0001oY-TG
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 14:25:23 +0000
+Received: by mail-pf1-x444.google.com with SMTP id m30so34183548pff.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 07:25:05 -0700 (PDT)
+ Thu, 01 Aug 2019 07:25:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=wqdfjCZelzqWnJPwgzst08AWytXH7in0noJ3iCuvlR4=;
- b=fhAdM1Lrq+9VF57MW/JL8GC6oIwqzLt7cARJMFqNwFnSYTvBmR5NTq7PO4XMRnsmDR
- bfQleWl0BQKmtb8m/TNOqK48GvEOMkNSUd01vYzfCcnNBglVYFNGgadwx876ze8xkw7l
- sCM47Xszyb20tHZV1rJ2RDW7EYTp0vMHH2kYEQRzQQY5GQEemxDziAgxWPjm4kN20z4X
- Oe0cDHxS8K2zLyevMw8acB0ZDBY4Nd0wjFQuyw/Sxz2QNHQrk5dgQqMvunGxKhHnN25P
- 1V7UuqlPpQxohJ6g5ynKCvegG2BjpTWh+DWSoYde1gUtVM4AIgi9zSc2M+Mq4zVykPiY
- 2ALA==
+ bh=eawaJmlmdDHURoGKBRWYUt94TqnnyTuVqmRFGluvMdw=;
+ b=GXHFrZSQ/x87ASlCkbnVK2XtNHcMTdoqDQ34w8vIwnexdEdoOFYYfNr/QTA5HotTzk
+ I7RUcyuhBrG9swmx3MEz2IhPnfNe43XwbOwZHB4AKRHzYuscrsUlYRBQxEakTqWbA937
+ rNH1OQb5vtPDJgrPSnnvQYpsNsbJyjBLd6SAJZsi7B9WbKAfZK8HP+5mM5eW3Rm9GNyk
+ Z8Zw1UgwrPkWhHYcnn6s8rnIGV7QdHzLftXF8CP9XyeabhHDq9Pnf5CuR/TvTkIQRDK0
+ zZzaJLUqFw7lNHozh3cyzS21vQwPvIX3/QHYgJ7L5uqbeuqD/bENuEM4Nu7zbX3++tWa
+ nNqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=wqdfjCZelzqWnJPwgzst08AWytXH7in0noJ3iCuvlR4=;
- b=EzAaxbg0Q6AHNPX4V0yKLyXd+MjHJLY+OFUfo7RSl2CAV9qTiB14pyo/28XNVEZk9p
- XKcV+UfbCHgDdAkFO2wxM1552HjKN9CMpegFKV8sEcJGBCxC7Llqk1kIioGrIZDqBch4
- N69XtCBXDqSseAx8Yl9I68SZGqvK6RqGfZR4SL9z9GhKI3HHkZgJ1hiDWF3W8bK3ss1d
- TLo4cYVWH2M+diNXxPM5T5n2qQvQX7BeC6iAkeIDveT1WuJF45vg6NsYNo6zza8PDHwZ
- aXRzsftuM3Ilgj3h8REb7PL1KpXDk4Z2HJ8RKqUn/936V6n8+mHPN2i4spXDLu4lVVrc
- yWNw==
-X-Gm-Message-State: APjAAAXza1Em9bCBfvEfSdh7D0LYRci/hrIOMlxa/8Qvk4HVv8voHWJq
- dNcfDdBZSElSgSUKjL4lysvrxeYw
-X-Google-Smtp-Source: APXvYqxU2dGXfve+crnOEIX6KiXRUJlhkFmVEG5DRFZ5q/sJHuo6OWY0gZstO3EuHMWN1OKU1f7NoA==
-X-Received: by 2002:aa7:8202:: with SMTP id k2mr54818466pfi.31.1564669504972; 
- Thu, 01 Aug 2019 07:25:04 -0700 (PDT)
+ bh=eawaJmlmdDHURoGKBRWYUt94TqnnyTuVqmRFGluvMdw=;
+ b=Lc4FNA6b/pYVmH8wPgHzGdvYbtPloiyCEZuO0ibKytRK3VUkiaaXwevL7h5BlRwafF
+ ZzkXnNMkqgK4gHmRAMPBhlb+N+khV6nARdfWa6e0LT8DU7TaKYtRYrUUO5eVEBJJmnq9
+ DPXBhUq23ffzrrQ4hFu5eU9WRQzHfFBGqNu5mMZ0BalUmnceU88/eRhU72Os9rTyY8+c
+ 1n1XTFHEiMsk+reRZZH4k2QnXOpa2FkEJub7V5RLwawNdVt14f3zA3YGh/CwuQNV3b79
+ 2hmxzWPIUHdv6gt3ZfavOlXB1XmWYsTRP98ch5/usZGfeBHXOKPTvU1j/UX9dYOAQUG6
+ Ibuw==
+X-Gm-Message-State: APjAAAUSGX+PjWaIdhHFedwysJOr4P9SAJKoVopht4J58upcIe6MQ1DH
+ moMiRv2t0Epjnpg0bN+YyPs=
+X-Google-Smtp-Source: APXvYqz/zl/HOQ3KWjDcDXRPmGAGYIdKDuiYamDdsJho904JPyRdqObLf6F4Qh1+o2y1n9aEvrVHuQ==
+X-Received: by 2002:a63:b102:: with SMTP id r2mr48732100pgf.370.1564669521432; 
+ Thu, 01 Aug 2019 07:25:21 -0700 (PDT)
 Received: from localhost.localdomain
  (p6796086-ipngn28101marunouchi.tokyo.ocn.ne.jp. [114.165.92.86])
- by smtp.gmail.com with ESMTPSA id f8sm39456311pgd.58.2019.08.01.07.25.02
+ by smtp.gmail.com with ESMTPSA id o24sm137026149pfp.135.2019.08.01.07.25.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 01 Aug 2019 07:25:04 -0700 (PDT)
+ Thu, 01 Aug 2019 07:25:20 -0700 (PDT)
 From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH] arm64: dts: renesas: r8a77995-draak: sort nodes
-Date: Thu,  1 Aug 2019 23:24:55 +0900
-Message-Id: <1564669495-22718-1-git-send-email-ykaneko0929@gmail.com>
+Subject: [PATCH] arm64: dts: renesas: r8a77995: sort nodes
+Date: Thu,  1 Aug 2019 23:25:13 +0900
+Message-Id: <1564669513-22756-1-git-send-email-ykaneko0929@gmail.com>
 X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_072506_109992_A69361DB 
-X-CRM114-Status: GOOD (  13.93  )
+X-CRM114-CacheID: sfid-20190801_072521_978358_E27ED1C4 
+X-CRM114-Status: GOOD (  14.33  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -121,36 +121,116 @@ Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 This patch is based on the master branch of Geert Uytterhoeven's renesas-devel
 tree.
 
- arch/arm64/boot/dts/renesas/r8a77995-draak.dts | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ arch/arm64/boot/dts/renesas/r8a77995.dtsi | 76 +++++++++++++++----------------
+ 1 file changed, 38 insertions(+), 38 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a77995-draak.dts b/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
-index 0711170..fe14792 100644
---- a/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
-+++ b/arch/arm64/boot/dts/renesas/r8a77995-draak.dts
-@@ -19,11 +19,6 @@
- 		ethernet0 = &avb;
- 	};
+diff --git a/arch/arm64/boot/dts/renesas/r8a77995.dtsi b/arch/arm64/boot/dts/renesas/r8a77995.dtsi
+index bcd5442..b3dbf55 100644
+--- a/arch/arm64/boot/dts/renesas/r8a77995.dtsi
++++ b/arch/arm64/boot/dts/renesas/r8a77995.dtsi
+@@ -242,41 +242,6 @@
+ 			resets = <&cpg 407>;
+ 		};
  
--	chosen {
--		bootargs = "ignore_loglevel rw root=/dev/nfs ip=on";
--		stdout-path = "serial0:115200n8";
--	};
+-		hscif0: serial@e6540000 {
+-			compatible = "renesas,hscif-r8a77995",
+-				     "renesas,rcar-gen3-hscif",
+-				     "renesas,hscif";
+-			reg = <0 0xe6540000 0 0x60>;
+-			interrupts = <GIC_SPI 154 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&cpg CPG_MOD 520>,
+-				 <&cpg CPG_CORE R8A77995_CLK_S3D1C>,
+-				 <&scif_clk>;
+-			clock-names = "fck", "brg_int", "scif_clk";
+-			dmas = <&dmac1 0x31>, <&dmac1 0x30>,
+-			       <&dmac2 0x31>, <&dmac2 0x30>;
+-			dma-names = "tx", "rx", "tx", "rx";
+-			power-domains = <&sysc R8A77995_PD_ALWAYS_ON>;
+-			resets = <&cpg 520>;
+-			status = "disabled";
+-		};
 -
- 	backlight: backlight {
- 		compatible = "pwm-backlight";
- 		pwms = <&pwm1 0 50000>;
-@@ -35,6 +30,11 @@
- 		enable-gpios = <&gpio4 0 GPIO_ACTIVE_HIGH>;
- 	};
+-		hscif3: serial@e66a0000 {
+-			compatible = "renesas,hscif-r8a77995",
+-				     "renesas,rcar-gen3-hscif",
+-				     "renesas,hscif";
+-			reg = <0 0xe66a0000 0 0x60>;
+-			interrupts = <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&cpg CPG_MOD 517>,
+-				 <&cpg CPG_CORE R8A77995_CLK_S3D1C>,
+-				 <&scif_clk>;
+-			clock-names = "fck", "brg_int", "scif_clk";
+-			dmas = <&dmac0 0x37>, <&dmac0 0x36>;
+-			dma-names = "tx", "rx";
+-			power-domains = <&sysc R8A77995_PD_ALWAYS_ON>;
+-			resets = <&cpg 517>;
+-			status = "disabled";
+-		};
+-
+ 		i2c0: i2c@e6500000 {
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
+@@ -344,6 +309,41 @@
+ 			status = "disabled";
+ 		};
  
-+	chosen {
-+		bootargs = "ignore_loglevel rw root=/dev/nfs ip=on";
-+		stdout-path = "serial0:115200n8";
-+	};
++		hscif0: serial@e6540000 {
++			compatible = "renesas,hscif-r8a77995",
++				     "renesas,rcar-gen3-hscif",
++				     "renesas,hscif";
++			reg = <0 0xe6540000 0 0x60>;
++			interrupts = <GIC_SPI 154 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cpg CPG_MOD 520>,
++				 <&cpg CPG_CORE R8A77995_CLK_S3D1C>,
++				 <&scif_clk>;
++			clock-names = "fck", "brg_int", "scif_clk";
++			dmas = <&dmac1 0x31>, <&dmac1 0x30>,
++			       <&dmac2 0x31>, <&dmac2 0x30>;
++			dma-names = "tx", "rx", "tx", "rx";
++			power-domains = <&sysc R8A77995_PD_ALWAYS_ON>;
++			resets = <&cpg 520>;
++			status = "disabled";
++		};
 +
- 	composite-in {
- 		compatible = "composite-video-connector";
++		hscif3: serial@e66a0000 {
++			compatible = "renesas,hscif-r8a77995",
++				     "renesas,rcar-gen3-hscif",
++				     "renesas,hscif";
++			reg = <0 0xe66a0000 0 0x60>;
++			interrupts = <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cpg CPG_MOD 517>,
++				 <&cpg CPG_CORE R8A77995_CLK_S3D1C>,
++				 <&scif_clk>;
++			clock-names = "fck", "brg_int", "scif_clk";
++			dmas = <&dmac0 0x37>, <&dmac0 0x36>;
++			dma-names = "tx", "rx";
++			power-domains = <&sysc R8A77995_PD_ALWAYS_ON>;
++			resets = <&cpg 517>;
++			status = "disabled";
++		};
++
+ 		hsusb: usb@e6590000 {
+ 			compatible = "renesas,usbhs-r8a77995",
+ 				     "renesas,rcar-gen3-usbhs";
+@@ -1100,6 +1100,9 @@
+ 			polling-delay = <1000>;
+ 			thermal-sensors = <&thermal>;
+ 
++			cooling-maps {
++			};
++
+ 			trips {
+ 				cpu-crit {
+ 					temperature = <120000>;
+@@ -1107,9 +1110,6 @@
+ 					type = "critical";
+ 				};
+ 			};
+-
+-			cooling-maps {
+-			};
+ 		};
+ 	};
  
 -- 
 1.9.1
