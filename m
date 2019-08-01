@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D91CA7D415
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 05:53:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 188F57D418
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 05:56:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JLXHY6WMa1cgSm64XNppp0+hfESL0eJcwsEZI6uUOBU=; b=cjsLahOHpSvvPN
-	qpqWU+SYfo2dYElJcFPjDJ4k8KhSuFmvYWqleajvox9HZtDE23Be5WvcBr56kSxAaonfEHaBxSaCj
-	RKhfPCyzclpWghuBsaB54NZ8A8MYzNpJbFMGZXcCCDHLUE8RL5ZBRvijaYW0NgLqFsHSMXKBGuQkK
-	JmHtbQYXz61A4ESejwieEtNd0SwJaO6AS+S5gyH0yWS5jhlW6eYNL3ayIIRaQ2imSQMUgdmu3t7mT
-	AC4xBG6P2VqnEA6h6B1AvEZqnuymzW9WoZOXNpcivkKbauySSa1TF/jOTlTwLKuwmf7eRvyTxfAGj
-	6U/IDd+MGl6g6o2ZStww==;
+	List-Owner; bh=LC++lQHl5SMlnS2WoAk5dSxye5k+XyTsXpJt6dTTTZU=; b=gjx0zRnYa9ZWf6
+	L8c2KyoNHWtkXWt7CjWGP6GA7YU2hD4i5QtR+xjOo3AnVcSB/7+Pf8tzJlb8Yp945R5h9vgId/pLs
+	4OVKESW4dGqRR32qVHsA7l1XYBrCO31/k39qxKY9eyiH/5aRrXk/LuwnlCYNMaiirRNBRdPVTVY3d
+	5tDINdCOrHr+5IIQDp9oQHqnO2IJxb/xgvwG6obNKhElUrw821gQ9+faqbKVIwODChPp461UIJFcA
+	7rJHtc03IqkD6kCX/Zb+MdIIJ44RyITekPpNvgi39mXXNIHiqiYsgWACAO97AsAiagrCfh7DeLR6S
+	aFqpu8tEuo1pP3OFAyWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht29l-0002QP-4M; Thu, 01 Aug 2019 03:53:33 +0000
+	id 1ht2CB-000424-DI; Thu, 01 Aug 2019 03:56:03 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht29e-0002Pu-Bo
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 03:53:27 +0000
+ id 1ht2C3-00041j-Vl
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 03:55:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=i+xiGwhXdJqGFKHqNYypzsb8d9FKCTcmAUxJJlCFCNI=; b=CIUuwPXn0RK28+cotr87ARLIvL
- mS9mHR9aQTtLi8bLMfnrNg3BENvxGbcSp8+LRgyLGeQ67jlmHoXSvu2U7pDZCsvEA44gqmGIoj0Fu
- 1RhUrkitFjyGylmeRoH8fuwuppTxVQk7Y3NKHwhDKdMK4qEtH5bndaS58/EQ0DiznRTI=;
+ bh=Y1QlX2yE7yvhO9Y6IQdrLu7V2tiqtVgXwBkJSh4jYHg=; b=yNJoXUHia1doAfiLkZ7DnjfnK2
+ DlsR52pVLSHbKp0s/pjmV6L1gaWDbQ6nlSfwl47jeGtYrwsMa5QfRALq7DLdZpyzf4zab2Fw/KOPb
+ Lo0lyATAVgDSUowhIZ9zC7yAt0IT7zszT23ki4epttXDyxDLlDZQaJAl9ouyLcDfL5BE=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
  (envelope-from <andrew@lunn.ch>)
- id 1ht29T-0001Lk-96; Thu, 01 Aug 2019 05:53:15 +0200
-Date: Thu, 1 Aug 2019 05:53:15 +0200
+ id 1ht2Bx-0001OG-16; Thu, 01 Aug 2019 05:55:49 +0200
+Date: Thu, 1 Aug 2019 05:55:49 +0200
 From: Andrew Lunn <andrew@lunn.ch>
 To: Andrew Jeffery <andrew@aj.id.au>
-Subject: Re: [PATCH net-next v2 2/4] net: phy: Add mdio-aspeed
-Message-ID: <20190801035315.GG2713@lunn.ch>
+Subject: Re: [PATCH net-next v2 3/4] net: ftgmac100: Add support for DT
+ phy-handle property
+Message-ID: <20190801035549.GH2713@lunn.ch>
 References: <20190731053959.16293-1-andrew@aj.id.au>
- <20190731053959.16293-3-andrew@aj.id.au>
+ <20190731053959.16293-4-andrew@aj.id.au>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190731053959.16293-3-andrew@aj.id.au>
+In-Reply-To: <20190731053959.16293-4-andrew@aj.id.au>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_205326_553745_C045BE59 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20190731_205556_171786_CEC59529 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -86,16 +87,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 03:09:57PM +0930, Andrew Jeffery wrote:
-> The AST2600 design separates the MDIO controllers from the MAC, which is
-> where they were placed in the AST2400 and AST2500. Further, the register
-> interface is reworked again, so now we have three possible different
-> interface implementations, however this driver only supports the
-> interface provided by the AST2600. The AST2400 and AST2500 will continue
-> to be supported by the MDIO support embedded in the FTGMAC100 driver.
+On Wed, Jul 31, 2019 at 03:09:58PM +0930, Andrew Jeffery wrote:
+> phy-handle is necessary for the AST2600 which separates the MDIO
+> controllers from the MAC.
 > 
-> The hardware supports both C22 and C45 mode, but for the moment only C22
-> support is implemented.
+> I've tried to minimise the intrusion of supporting the AST2600 to the
+> FTGMAC100 by leaving in place the existing MDIO support for the embedded
+> MDIO interface. The AST2400 and AST2500 continue to be supported this
+> way, as it avoids breaking/reworking existing devicetrees.
+> 
+> The AST2600 support by contrast requires the presence of the phy-handle
+> property in the MAC devicetree node to specify the appropriate PHY to
+> associate with the MAC. In the event that someone wants to specify the
+> MDIO bus topology under the MAC node on an AST2400 or AST2500, the
+> current auto-probe approach is done conditional on the absence of an
+> "mdio" child node of the MAC.
 > 
 > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 
