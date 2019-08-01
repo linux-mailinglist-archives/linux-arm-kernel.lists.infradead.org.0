@@ -2,62 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 723D07DB9F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:38:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEF857DBAB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:40:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OwhBFlXTn0QZsRMRrtOOOtx66YO6cNpspC3OIP8LYtI=; b=mXWnYtqFPmTiOz3fqSlxJEADZ
-	9coXst5P+SQFloqN6buhc7jp2EVKPTPfPikXNGiUH7V98oX0UPco3fvcB7wN5OD48GFtIh2du8IKA
-	NYAbdxHeClDMrXYSNmM6OAXTTQG/xoJZ+JxQaUEi9xqE9+mYI9vI4gveNk9CP1IaDsUoehiYdjFV6
-	XcYg8V5qZD+W/cHEMbUErVqnMnchVGEaU4jB2gHQyW+PKyNc5mrbrpqX0gI+Ws9SlgpiMMZvoZpXp
-	M+CE2cT3IwFDbBKrbyr/fRbMODee8FwXBwl/kyIZ1PVkirCFff+UqtcS3TvS+UaBCU85PZfVVW+Q0
-	M99Ak9kRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=14h0X5dfNaEqZsiaNt0YxWrHx1aTcOG+PQGhkq8vl5c=; b=fWGMjtAMkglZrl
+	zMKu46MhthOVkX3TapCPWZaO8LYiVH5CGOSsLwCMEHY2cqGveUzsxqhDavpZQPrXkhLT/XhLSnD49
+	cqn+RGMzyinWqG7fm1offimb6F+j4KtXUOQ5sbhkwiZ3gT/jzBhp7P0rD3Yo4KdwyGnPBPKmIJ9+5
+	a0z2kzQUB0D/JsU6aY5o36yjTBxlu8mMgyv6LuruVQBEi42y8eSPPjdyEk6odcD/xdf9l9UXisJae
+	b6WWbfXSsUuqUoJxesSV8D55CNZL+2VkVZ4A5KUeJvRdHjmhv5ZBp2Yyks0Cs4D//wTudEduZqLht
+	bisv9ycWb7fCrlMGS71Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htALh-0000Is-51; Thu, 01 Aug 2019 12:38:25 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1htALV-0000I4-Or
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:38:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EA8AC1570;
- Thu,  1 Aug 2019 05:38:12 -0700 (PDT)
-Received: from [10.1.194.48] (e123572-lin.cambridge.arm.com [10.1.194.48])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E84103F575;
- Thu,  1 Aug 2019 05:38:07 -0700 (PDT)
-Subject: Re: [PATCH v19 02/15] arm64: Introduce prctl() options to control the
- tagged user addresses ABI
-To: Dave Hansen <dave.hansen@intel.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- dri-devel@lists.freedesktop.org, linux-rdma@vger.kernel.org,
- linux-media@vger.kernel.org, kvm@vger.kernel.org,
- linux-kselftest@vger.kernel.org
-References: <cover.1563904656.git.andreyknvl@google.com>
- <1c05651c53f90d07e98ee4973c2786ccf315db12.1563904656.git.andreyknvl@google.com>
- <7a34470c-73f0-26ac-e63d-161191d4b1e4@intel.com>
-From: Kevin Brodsky <kevin.brodsky@arm.com>
-Message-ID: <2b274c6f-6023-8eb8-5a86-507e6000e13d@arm.com>
-Date: Thu, 1 Aug 2019 13:38:06 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1htANu-00020d-Dk; Thu, 01 Aug 2019 12:40:42 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1htANk-00020E-4K
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:40:33 +0000
+Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id A512C8B9F84EAAE75344;
+ Thu,  1 Aug 2019 20:40:30 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS411-HUB.china.huawei.com
+ (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0; Thu, 1 Aug 2019
+ 20:40:22 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <davem@davemloft.net>, <f.fainelli@gmail.com>,
+ <bcm-kernel-feedback-list@broadcom.com>, <andrew@lunn.ch>,
+ <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH net-next] bcm63xx_enet: use devm_platform_ioremap_resource()
+ to simplify code
+Date: Thu, 1 Aug 2019 20:39:08 +0800
+Message-ID: <20190801123908.62396-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
-In-Reply-To: <7a34470c-73f0-26ac-e63d-161191d4b1e4@intel.com>
-Content-Language: en-GB
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_053813_898634_BAF60D13 
-X-CRM114-Status: GOOD (  17.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190801_054032_771236_17D8435C 
+X-CRM114-Status: GOOD (  10.50  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -70,68 +64,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kostya Serebryany <kcc@google.com>, Khalid Aziz <khalid.aziz@oracle.com>,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: netdev@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 31/07/2019 18:05, Dave Hansen wrote:
-> On 7/23/19 10:58 AM, Andrey Konovalov wrote:
->> +long set_tagged_addr_ctrl(unsigned long arg)
->> +{
->> +	if (!tagged_addr_prctl_allowed)
->> +		return -EINVAL;
->> +	if (is_compat_task())
->> +		return -EINVAL;
->> +	if (arg & ~PR_TAGGED_ADDR_ENABLE)
->> +		return -EINVAL;
->> +
->> +	update_thread_flag(TIF_TAGGED_ADDR, arg & PR_TAGGED_ADDR_ENABLE);
->> +
->> +	return 0;
->> +}
-> Instead of a plain enable/disable, a more flexible ABI would be to have
-> the tag mask be passed in.  That way, an implementation that has a
-> flexible tag size can select it.  It also ensures that userspace
-> actually knows what the tag size is and isn't surprised if a hardware
-> implementation changes the tag size or position.
->
-> Also, this whole set deals with tagging/untagging, but there's an
-> effective loss of address space when you do this.  Is that dealt with
-> anywhere?  How do we ensure that allocations don't get placed at a
-> tagged address before this gets turned on?  Where's that checking?
+Use devm_platform_ioremap_resource() to simplify the code a bit.
+This is detected by coccinelle.
 
-This patch series only changes what is allowed or not at the syscall interface. It 
-does not change the address space size. On arm64, TBI (Top Byte Ignore) has always 
-been enabled for userspace, so it has never been possible to use the upper 8 bits of 
-user pointers for addressing.
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+---
+ drivers/net/ethernet/broadcom/bcm63xx_enet.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
 
-If other architectures were to support a similar functionality, then I agree that a 
-common and more generic interface (if needed) would be helpful, but as it stands this 
-is an arm64-specific prctl, and on arm64 the address tag is defined by the 
-architecture as bits [63:56].
+diff --git a/drivers/net/ethernet/broadcom/bcm63xx_enet.c b/drivers/net/ethernet/broadcom/bcm63xx_enet.c
+index 291e4af..620cd3f 100644
+--- a/drivers/net/ethernet/broadcom/bcm63xx_enet.c
++++ b/drivers/net/ethernet/broadcom/bcm63xx_enet.c
+@@ -1693,7 +1693,7 @@ static int bcm_enet_probe(struct platform_device *pdev)
+ 	struct bcm_enet_priv *priv;
+ 	struct net_device *dev;
+ 	struct bcm63xx_enet_platform_data *pd;
+-	struct resource *res_mem, *res_irq, *res_irq_rx, *res_irq_tx;
++	struct resource *res_irq, *res_irq_rx, *res_irq_tx;
+ 	struct mii_bus *bus;
+ 	int i, ret;
+ 
+@@ -1719,8 +1719,7 @@ static int bcm_enet_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		goto out;
+ 
+-	res_mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	priv->base = devm_ioremap_resource(&pdev->dev, res_mem);
++	priv->base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(priv->base)) {
+ 		ret = PTR_ERR(priv->base);
+ 		goto out;
+@@ -2762,15 +2761,13 @@ struct platform_driver bcm63xx_enetsw_driver = {
+ /* reserve & remap memory space shared between all macs */
+ static int bcm_enet_shared_probe(struct platform_device *pdev)
+ {
+-	struct resource *res;
+ 	void __iomem *p[3];
+ 	unsigned int i;
+ 
+ 	memset(bcm_enet_shared_base, 0, sizeof(bcm_enet_shared_base));
+ 
+ 	for (i = 0; i < 3; i++) {
+-		res = platform_get_resource(pdev, IORESOURCE_MEM, i);
+-		p[i] = devm_ioremap_resource(&pdev->dev, res);
++		p[i] = devm_platform_ioremap_resource(pdev, i);
+ 		if (IS_ERR(p[i]))
+ 			return PTR_ERR(p[i]);
+ 	}
+-- 
+2.7.4
 
-Kevin
+
 
 _______________________________________________
 linux-arm-kernel mailing list
