@@ -2,51 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D64747DD4F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 16:05:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C14507DD5B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 16:05:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v5zY8+RYvVAGaXV9xm0wW5b1RyNl/Bu/x53tZscuoes=; b=DjQHXYz4kFR4Ob
-	iUUsOMs/gzjnEsx81rU6P1pp/FMsspMfHrSNSqmA5D6lpWU5+ieYVJqgi7b56Ri3aet0aaZ6wVniM
-	a2AxVSEBwje4DRRKaH1GmgRvT2lSBWjn1O/e5Gst7XE81cCTdd+KYXUZ491He4XXxa5G1zDHU12b/
-	SuHieWO8cO5mPDfCz+J00326eqw2rS+V5tkQjAPJXEMgn0ctly/s9S3DmSrwTiMK+NmWvt630BUUu
-	srNGCcUT02IPdeGACNr1Rs9NWZJjYGoL6kSXVnbxLSmClFow0WfSx5FT+pZyyxAk+Z0VfoamJvc+6
-	uK2bUHW2+kC8AI8sO8RA==;
+	List-Owner; bh=Qh/7JLEpvXsc/Ow3Bbln/W04N9i6GUoSBvvN/kPWsNU=; b=jIIYZLlEf/E3YP
+	LpSXzGjo4tmAZlbvLyDVuuyB/B38As5cyIFb/eq5k4kkIukCo7O/+31JCbz+fbKxuhyNwtk5+HumG
+	CD9MsEDPbn3QHuuVdegbslpYEanCGO7aR5gFvdcBnTi0QGlCEnFp9wmMikjdMLgVQgv+Rh2fq3ZK4
+	j9b5W3L9iKB5eB+XbMi7tCEcNjHbXfAsvxsgDtGHvzJrV7JOKfuihb/wA5yWv+HiYq3lssKAe+y4z
+	//s5XAArSq+4C+5cCgu+B81KupiuSKFITo31PUP7vMrlD498tNkoRFEqiTxpFk5uqfkID7w9rokOo
+	T8X1YvtfzMZ7VRHJmS4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htBhf-0006T0-DO; Thu, 01 Aug 2019 14:05:11 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1htBiN-0007Su-69; Thu, 01 Aug 2019 14:05:55 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htBhU-0005yK-Ft; Thu, 01 Aug 2019 14:05:02 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 5620168AFE; Thu,  1 Aug 2019 16:04:52 +0200 (CEST)
-Date: Thu, 1 Aug 2019 16:04:52 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH 6/8] dma-direct: turn ARCH_ZONE_DMA_BITS into a variable
-Message-ID: <20190801140452.GB23435@lst.de>
-References: <20190731154752.16557-1-nsaenzjulienne@suse.de>
- <20190731154752.16557-7-nsaenzjulienne@suse.de>
+ id 1htBiD-0007SZ-KS
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 14:05:47 +0000
+Received: by mail-qt1-x843.google.com with SMTP id x22so65382484qtp.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 01 Aug 2019 07:05:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:references:in-reply-to:subject:date:message-id
+ :mime-version:content-transfer-encoding:thread-index;
+ bh=B0HpJfA+L0im+NOz6C8Ku5rEryHPOLsgW5YkYUCRdrE=;
+ b=iPIWxBnpmNGTcvPXCQB26geHPgxcvzesy5vMmnP0MifrlGYAFwb2E4LLuqFMXLxs4N
+ ckwxbmktHTok5HI7yPnXaf1iuxSrkeoCIAEluRk6Njb0MYL4JJbtPwn/vTozRjDMhBQB
+ YmT7nxZww2PpWirGfHmdgAKLGKAezkDZXDs+9F7YO7h8h1x7mB3Zzs7CJ/wdfNFLvTSA
+ aUYY7ij45aE2jUykm9nxGtn8thbJ87g4Wt8wah5TT/ZkEkr8nhDIFultB0lD+wogSF0F
+ xQoORDlqQ+NbpZG7JJZZRwsKKZpsncMVrvr8v8NztwyTT5v+mahJZTO3QlXHAmWRipHV
+ D5UQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:references:in-reply-to:subject:date
+ :message-id:mime-version:content-transfer-encoding:thread-index;
+ bh=B0HpJfA+L0im+NOz6C8Ku5rEryHPOLsgW5YkYUCRdrE=;
+ b=fXJX3gCfm+i7APiigo6Va9mI934ua3jea8d+9pXXUwAQh6KNzLXcb1i96hCdll5k37
+ jTdRt2Zzpf97pGghfXP3CopHEbCbbDl+u88N/RvO6jwIOdhy6aYDyl9QqFrG6mJsz56g
+ 8cWtBPi3IlK2QDleIsScJAfold/JvZHrdwSVGIvxfUfdv0gplq5xHCO0SNFxz6a6e30G
+ 1RqjPlHswqKWXSJKPEwqHcBiZE9xFr5WQQ1sdkLxsl4oXRwJDazswuzEmOnrccmJgFxX
+ XXn88GphRP9yO2d8hscwDz8e2Obqy1LkSN39RCpPW6T8yxHQoWx9YB7WL5XIKAdO7/Df
+ RfSw==
+X-Gm-Message-State: APjAAAWHaocBkrtGpOIkl99qJYStmC2P6zgupev1nB6PLoHzpdehDSgC
+ cXLwwnCYZGC++FCJNzDAcY7GUzjv
+X-Google-Smtp-Source: APXvYqxEmRzH4gWZvlZ2vdjoG6WAsSxwjWzd0Q1A6OCXWM0mo157QludxrvT2l5vQ9TRmnJojfXUhw==
+X-Received: by 2002:a0c:d0fc:: with SMTP id b57mr92560209qvh.78.1564668343894; 
+ Thu, 01 Aug 2019 07:05:43 -0700 (PDT)
+Received: from GirolesWin7 (magopq1505w-lp140-01-70-26-203-177.dsl.bell.ca.
+ [70.26.203.177])
+ by smtp.gmail.com with ESMTPSA id b4sm28649361qtp.77.2019.08.01.07.05.41
+ (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Thu, 01 Aug 2019 07:05:42 -0700 (PDT)
+From: "Martin Ayotte" <martinayotte@gmail.com>
+To: "'Chen-Yu Tsai'" <wens@csie.org>, "'Sunil Mohan Adapa'" <sunil@medhas.org>
+References: <20190727210307.17607-1-sunil@medhas.org>
+ <CAGb2v66S1+CSn=CYwZQOP8V+ZL+D9ayf6cvidzK5ENXOqKRGew@mail.gmail.com>
+In-Reply-To: <CAGb2v66S1+CSn=CYwZQOP8V+ZL+D9ayf6cvidzK5ENXOqKRGew@mail.gmail.com>
+Subject: RE: [PATCH v2] arm64: dts: allwinner: a64: Enable eMMC on
+ A64-OLinuXino
+Date: Thu, 1 Aug 2019 10:05:40 -0400
+Message-ID: <E9391E7989BB4725BCE9BA74449EA8A5@GirolesWin7>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190731154752.16557-7-nsaenzjulienne@suse.de>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+X-Mailer: Microsoft Office Outlook 11
+Thread-Index: AdVIEsk75UVkikK+StOHJZJS6WhggwAX13XQ
+X-MIMEOLE: Produced By Microsoft MimeOLE V6.1.7601.24158
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_070500_683309_468404EF 
-X-CRM114-Status: GOOD (  14.15  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190801_070545_674265_F2EA06C2 
+X-CRM114-Status: GOOD (  10.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martinayotte[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,79 +103,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, eric@anholt.net,
- Paul Mackerras <paulus@samba.org>, will@kernel.org, hch@lst.de,
- Marek Szyprowski <m.szyprowski@samsung.com>, phill@raspberryi.org,
- linux-s390@vger.kernel.org, f.fainelli@gmail.com, frowand.list@gmail.com,
- Christian Borntraeger <borntraeger@de.ibm.com>, catalin.marinas@arm.com,
- devicetree@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
- marc.zyngier@arm.com, robh+dt@kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, mbrugger@suse.com, linux-mm@kvack.org,
- linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, wahrenst@gmx.net,
- Michael Ellerman <mpe@ellerman.id.au>, akpm@linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: 'Maxime Ripard' <maxime.ripard@bootlin.com>,
+ 'linux-arm-kernel' <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A few nitpicks, otherwise this looks great:
+If my SOB could help here, I don't mind since I've done the commit more than
+a year ago for Armbian ...
 
-> @@ -201,7 +202,7 @@ static int __init mark_nonram_nosave(void)
->   * everything else. GFP_DMA32 page allocations automatically fall back to
->   * ZONE_DMA.
->   *
-> - * By using 31-bit unconditionally, we can exploit ARCH_ZONE_DMA_BITS to
-> + * By using 31-bit unconditionally, we can exploit arch_zone_dma_bits to
->   * inform the generic DMA mapping code.  32-bit only devices (if not handled
->   * by an IOMMU anyway) will take a first dip into ZONE_NORMAL and get
->   * otherwise served by ZONE_DMA.
-> @@ -237,9 +238,18 @@ void __init paging_init(void)
->  	printk(KERN_DEBUG "Memory hole size: %ldMB\n",
->  	       (long int)((top_of_ram - total_ram) >> 20));
->  
-> +	/*
-> +	 * Allow 30-bit DMA for very limited Broadcom wifi chips on many
-> +	 * powerbooks.
-> +	 */
-> +	if (IS_ENABLED(CONFIG_PPC32))
-> +		arch_zone_dma_bits = 30;
-> +	else
-> +		arch_zone_dma_bits = 31;
-> +
 
-So the above unconditionally comment obviously isn't true any more, and
-Ben also said for the recent ppc32 hack he'd prefer dynamic detection.
+Signed-off-by: Martin Ayotte <martinayotte@gmai.com>
+Tested-by: Martin Ayotte <martinayotte@gmai.com>
 
-Maybe Ben and or other ppc folks can chime in an add a patch to the series
-to sort this out now that we have a dynamic ZONE_DMA threshold?
 
-> diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-> index 59bdceea3737..40dfc9b4ee4c 100644
-> --- a/kernel/dma/direct.c
-> +++ b/kernel/dma/direct.c
-> @@ -19,9 +19,7 @@
->   * Most architectures use ZONE_DMA for the first 16 Megabytes, but
->   * some use it for entirely different regions:
->   */
-> -#ifndef ARCH_ZONE_DMA_BITS
-> -#define ARCH_ZONE_DMA_BITS 24
-> -#endif
-> +unsigned int arch_zone_dma_bits __ro_after_init = 24;
+-----Message d'origine-----
+De=A0: Chen-Yu Tsai [mailto:wens@csie.org] =
 
-I'd prefer to drop the arch_ prefix and just calls this zone_dma_bits.
-In the long run we really need to find a way to just automatically set
-this from the meminit code, but that is out of scope for this series.
-For now can you please just update the comment above to say something
-like:
+Envoy=E9=A0: Wednesday, July 31, 2019 10:42 PM
+=C0=A0: Sunil Mohan Adapa
+Cc=A0: linux-arm-kernel; Maxime Ripard; Martin Ayotte
+Objet=A0: Re: [PATCH v2] arm64: dts: allwinner: a64: Enable eMMC on
+A64-OLinuXino
 
-/*
- * Most architectures use ZONE_DMA for the first 16 Megabytes, but some use it
- * it for entirely different regions.  In that case the arch code needs to
- * override the variable below for dma-direct to work properly.
- */
+On Sun, Jul 28, 2019 at 5:03 AM Sunil Mohan Adapa <sunil@medhas.org> wrote:
+>
+> A64-OLinuXino board has three variants that have eMMC support. Add support
+for
+> eMMC on boards that have it.
+>
+> This patch has been tested on A64-OLinuXino-1Ge16GW with Linux 5.0 from
+Debain.
+> Basic benchmarks using Flexible IO Tester show reasonable performance from
+the
+> eMMC.
+>
+> eMMC - Random Write: 23.1MiB/s
+> eMMC - Sequential Write: 74.5MiB/s
+> SD Card - Random Write: 1690KiB/s
+> SD Card - Sequential Write: 11.0MiB/s
+>
+> v2: Fix descriptions for VCC and VCCQ.
+>
+> [sunil@medhas.org Fix descriptions for VCC and VCCQ]
+> Signed-off-by: Sunil Mohan Adapa <sunil@medhas.org>
+> Tested-by: Sunil Mohan Adapa <sunil@medhas.org>
+>
+> From: Martin Ayotte <martinayotte@gmail.com>
+> Link:
+https://github.com/armbian/build/commit/174953de1eb09e6aa1ef7075066b573dba62
+5398
+
+Thanks. The patch looks good overall. The authorship is a little confusing
+though. If it was initially done by Martin (CC-ed), then he should be the
+author, and we should get his Signed-off-by if possible.
+
+ChenYu
+
 
 _______________________________________________
 linux-arm-kernel mailing list
