@@ -2,61 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 565767D8E0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 11:55:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3241E7D8E3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 11:57:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xtlXOJqnzCub5mFAsXAgxOi8RwmZPwzcky3nBjcelxA=; b=Y+cAmzVF6bQQso
-	gXNGQxtRJFa1aVWa9ohA9SrxFuCLtZ+r4GyCkZsL5Z4EPqWm5ECbvEb4IA2zWBmdJ+GkXs87QQEuy
-	Ld5lFa93Qwu2JIPT/GOIvjowyI29Ac7GuKOs7CXLNq2HUNtZfUnNtZTp33WM9b2FUfeOKQ3bjPR0F
-	nUh3SebrxomYtx99LKqWq8Ntq4U4sSUST+9MH/e3FFA5FebexP2+W6eLSZW10TgeB6m1xyoLPr/sk
-	pPCdy9YDTlzDrP1/1C+9JksEf5z6fRa8v3JV0P1GRkzCmvStxaP4nIaVM4tnme7KeRag3SDZeQsbI
-	DFyEgUqC2d5CTNoq1VgA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=MrWaK8r0/CdZci2/envK7tKdfmMlSPTp7BILBDCi5Ug=; b=fV9
+	9LFGDP3Fz9+ZCihK5s437sZd3MHQHL1l6jd60l4KEWicTfRE41OiEdXyVQpPHtM+rjm694gmUVoBg
+	FAQLNCnJbPFPRMRGLOI03SvKUWY+FC3cfXRXe9DMzjgUd5iN4vbyt0uqzqodq3xmtiL/zL83HzSt7
+	HQ78jjKtpRuJC2jMr//B4CoupPXbxdG7Wolt1Y1HWriBo7rh4mCSYkOUvQx1/Ap++jvcWx7OpYqet
+	1tBUsvlz3EOh2RwezEVUPbp9HSfRH6d0LeHCO7+u1Mpc9vcWpgEBGVjSYoqP5gpCTBlxko32HKLcQ
+	0fFwIgrdSCB4jvCCtmheYGFeu0hnHYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht7oC-00061I-Nc; Thu, 01 Aug 2019 09:55:40 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1ht7pX-0006HP-Tj; Thu, 01 Aug 2019 09:57:03 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht7o7-00060s-57
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 09:55:36 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1ht7o3-0000nO-Dh; Thu, 01 Aug 2019 11:55:31 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1ht7o1-0006Fm-FK; Thu, 01 Aug 2019 11:55:29 +0200
-Date: Thu, 1 Aug 2019 11:55:29 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Schrempf Frieder <frieder.schrempf@kontron.de>
-Subject: Re: [PATCH] serial: imx: Avoid probe failure in case of missing
- gpiolib
-Message-ID: <20190801095529.dm3pvgts6cy6mbiq@pengutronix.de>
-References: <20190801081524.22577-1-frieder.schrempf@kontron.de>
- <20190801084827.m42ci3amo37hmesi@pengutronix.de>
- <0674d68b-99fa-3408-1dd1-22dc84144b43@kontron.de>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <0674d68b-99fa-3408-1dd1-22dc84144b43@kontron.de>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1ht7pR-0006Gb-0U
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 09:56:58 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F30271A01F5;
+ Thu,  1 Aug 2019 11:56:54 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E5BDB1A00BA;
+ Thu,  1 Aug 2019 11:56:54 +0200 (CEST)
+Received: from fsr-ub1864-103.ea.freescale.net
+ (fsr-ub1864-103.ea.freescale.net [10.171.82.17])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 5B845205E3;
+ Thu,  1 Aug 2019 11:56:54 +0200 (CEST)
+From: Daniel Baluta <daniel.baluta@nxp.com>
+To: shawnguo@kernel.org
+Subject: [PATCH v4] firmware: imx: Add DSP IPC protocol interface
+Date: Thu,  1 Aug 2019 12:56:36 +0300
+Message-Id: <20190801095636.22944-1-daniel.baluta@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_025535_199810_2EC1EAB7 
-X-CRM114-Status: GOOD (  17.60  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190801_025657_335450_4291C2AF 
+X-CRM114-Status: GOOD (  18.23  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,85 +64,339 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, Jiri Slaby <jslaby@suse.com>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: aisheng.dong@nxp.com, anson.huang@nxp.com, gregkh@linuxfoundation.org,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ Daniel Baluta <daniel.baluta@nxp.com>, o.rempel@pengutronix.de,
+ linux-imx@nxp.com, kernel@pengutronix.de, tglx@linutronix.de,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 01, 2019 at 09:28:33AM +0000, Schrempf Frieder wrote:
-> Hi Uwe,
-> =
+Some of i.MX8 processors (e.g i.MX8QM, i.MX8QXP) contain
+the Tensilica HiFi4 DSP for advanced pre- and post-audio
+processing.
 
-> On 01.08.19 10:48, Uwe Kleine-K=F6nig wrote:
-> > On Thu, Aug 01, 2019 at 08:18:05AM +0000, Schrempf Frieder wrote:
-> >> From: Frieder Schrempf <frieder.schrempf@kontron.de>
-> >>
-> >> If CONFIG_GPIOLIB is not enabled, mctrl_gpio_init() will return
-> >> -ENOSYS and cause the probing of the imx UART to fail. As the
-> >> GPIOs are optional, we should continue probing in this case.
-> > =
+The communication between Host CPU and DSP firmware is
+taking place using a shared memory area for message passing
+and a dedicated Messaging Unit for notifications.
 
-> > Is this really still the case? On which version did you hit this
-> > problem?
-> =
+DSP IPC protocol offers a doorbell interface using
+imx-mailbox API.
 
-> Yes, I think it is. I used v5.2.5, that already has d99482673f95.
-> =
+We use 4 MU channels (2 x TXDB, 2 x RXDB) to implement a
+request-reply protocol.
 
-> > =
+Connection 0 (txdb0, rxdb0):
+        - Host writes messasge to shared memory [SHMEM]
+	- Host sends a request [MU]
+	- DSP handles request [SHMEM]
+	- DSP sends reply [MU]
 
-> > I would expect that is gone with
-> > d99482673f950817b30caf3fcdfb31179b050ce1 if not earlier.
-> =
+Connection 1 (txdb1, rxdb1):
+	- DSP writes a message to shared memory [SHMEM]
+	- DSP sends a request [MU]
+	- Host handles request [SHMEM]
+	- Host sends reply [MU]
 
-> I think this is a different problem. If CONFIG_GPIOLIB is disabled, =
+The protocol interface will be used by a Host client to
+communicate with the DSP. First client will be the i.MX8
+part from Sound Open Firmware infrastructure.
 
-> mctrl_gpio_init() returns -ENOSYS unconditionally here: [1]. The =
+The protocol offers the following interface:
 
-> existing patch (d99482673f95) seems to handle the case when =
+On Tx:
+   - imx_dsp_ring_doorbell, will be called to notify the DSP
+   that it needs to handle a request.
 
-> CONFIG_GPIOLIB is enabled, but no or not all GPIOs are given in the dtb.
+On Rx:
+   - clients need to provide two callbacks:
+	.handle_reply
+	.handle_request
+  - the callbacks will be used by the protocol on
+    notification arrival from DSP.
 
-Ah, I see.
+Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+---
+Changes since v3:
+	- Added remove function
 
-I don't think we should handle this on a per-driver basis. So my
-suggestion is to drop the dummy implementation for mctrl_gpio if GPIOLIB
-is disabled. Then the behaviour should be consistant with the gpio stuff
-returning NULL in this case. (Or alternatively adapt the dummy
-implementation to shortcut and behave identically.)
+ drivers/firmware/imx/Kconfig     |  11 +++
+ drivers/firmware/imx/Makefile    |   1 +
+ drivers/firmware/imx/imx-dsp.c   | 155 +++++++++++++++++++++++++++++++
+ include/linux/firmware/imx/dsp.h |  67 +++++++++++++
+ 4 files changed, 234 insertions(+)
+ create mode 100644 drivers/firmware/imx/imx-dsp.c
+ create mode 100644 include/linux/firmware/imx/dsp.h
 
-(Having said that I don't like gpiolib's behaviour of returning NULL for
-the optional calls if it's disabled, but having mctrl_gpio behave
-differently is worse.)
+diff --git a/drivers/firmware/imx/Kconfig b/drivers/firmware/imx/Kconfig
+index 42b566f8903f..0dbee32da4c6 100644
+--- a/drivers/firmware/imx/Kconfig
++++ b/drivers/firmware/imx/Kconfig
+@@ -1,4 +1,15 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++config IMX_DSP
++	bool "IMX DSP Protocol driver"
++	depends on IMX_MBOX
++	help
++	  This enables DSP IPC protocol between host AP (Linux)
++	  and the firmware running on DSP.
++	  DSP exists on some i.MX8 processors (e.g i.MX8QM, i.MX8QXP).
++
++	  It acts like a doorbell. Client might use shared memory to
++	  exchange information with DSP side.
++
+ config IMX_SCU
+ 	bool "IMX SCU Protocol driver"
+ 	depends on IMX_MBOX
+diff --git a/drivers/firmware/imx/Makefile b/drivers/firmware/imx/Makefile
+index 802c4ad8e8f9..08bc9ddfbdfb 100644
+--- a/drivers/firmware/imx/Makefile
++++ b/drivers/firmware/imx/Makefile
+@@ -1,3 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0
++obj-$(CONFIG_IMX_DSP)		+= imx-dsp.o
+ obj-$(CONFIG_IMX_SCU)		+= imx-scu.o misc.o imx-scu-irq.o
+ obj-$(CONFIG_IMX_SCU_PD)	+= scu-pd.o
+diff --git a/drivers/firmware/imx/imx-dsp.c b/drivers/firmware/imx/imx-dsp.c
+new file mode 100644
+index 000000000000..a43d2db5cbdb
+--- /dev/null
++++ b/drivers/firmware/imx/imx-dsp.c
+@@ -0,0 +1,155 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright 2019 NXP
++ *  Author: Daniel Baluta <daniel.baluta@nxp.com>
++ *
++ * Implementation of the DSP IPC interface (host side)
++ */
++
++#include <linux/firmware/imx/dsp.h>
++#include <linux/kernel.h>
++#include <linux/mailbox_client.h>
++#include <linux/module.h>
++#include <linux/of_platform.h>
++#include <linux/platform_device.h>
++#include <linux/slab.h>
++
++/*
++ * imx_dsp_ring_doorbell - triggers an interrupt on the other side (DSP)
++ *
++ * @dsp: DSP IPC handle
++ * @chan_idx: index of the channel where to trigger the interrupt
++ *
++ * Returns non-negative value for success, negative value for error
++ */
++int imx_dsp_ring_doorbell(struct imx_dsp_ipc *ipc, unsigned int idx)
++{
++	int ret;
++	struct imx_dsp_chan *dsp_chan;
++
++	if (idx >= DSP_MU_CHAN_NUM)
++		return -EINVAL;
++
++	dsp_chan = &ipc->chans[idx];
++	ret = mbox_send_message(dsp_chan->ch, NULL);
++	if (ret < 0)
++		return ret;
++
++	return 0;
++}
++EXPORT_SYMBOL(imx_dsp_ring_doorbell);
++
++/*
++ * imx_dsp_handle_rx - rx callback used by imx mailbox
++ *
++ * @c: mbox client
++ * @msg: message received
++ *
++ * Users of DSP IPC will need to privde handle_reply and handle_request
++ * callbacks.
++ */
++static void imx_dsp_handle_rx(struct mbox_client *c, void *msg)
++{
++	struct imx_dsp_chan *chan = container_of(c, struct imx_dsp_chan, cl);
++
++	if (chan->idx == 0) {
++		chan->ipc->ops->handle_reply(chan->ipc);
++	} else {
++		chan->ipc->ops->handle_request(chan->ipc);
++		imx_dsp_ring_doorbell(chan->ipc, 1);
++	}
++}
++
++static int imx_dsp_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct imx_dsp_ipc *dsp_ipc;
++	struct imx_dsp_chan *dsp_chan;
++	struct mbox_client *cl;
++	char *chan_name;
++	int ret;
++	int i, j;
++
++	device_set_of_node_from_dev(&pdev->dev, pdev->dev.parent);
++
++	dsp_ipc = devm_kzalloc(dev, sizeof(*dsp_ipc), GFP_KERNEL);
++	if (!dsp_ipc)
++		return -ENOMEM;
++
++	for (i = 0; i < DSP_MU_CHAN_NUM; i++) {
++		if (i < 2)
++			chan_name = kasprintf(GFP_KERNEL, "txdb%d", i);
++		else
++			chan_name = kasprintf(GFP_KERNEL, "rxdb%d", i - 2);
++
++		if (!chan_name)
++			return -ENOMEM;
++
++		dsp_chan = &dsp_ipc->chans[i];
++		cl = &dsp_chan->cl;
++		cl->dev = dev;
++		cl->tx_block = false;
++		cl->knows_txdone = true;
++		cl->rx_callback = imx_dsp_handle_rx;
++
++		dsp_chan->ipc = dsp_ipc;
++		dsp_chan->idx = i % 2;
++		dsp_chan->ch = mbox_request_channel_byname(cl, chan_name);
++		if (IS_ERR(dsp_chan->ch)) {
++			ret = PTR_ERR(dsp_chan->ch);
++			if (ret != -EPROBE_DEFER)
++				dev_err(dev, "Failed to request mbox chan %s ret %d\n",
++					chan_name, ret);
++			goto out;
++		}
++
++		dev_dbg(dev, "request mbox chan %s\n", chan_name);
++		/* chan_name is not used anymore by framework */
++		kfree(chan_name);
++	}
++
++	dsp_ipc->dev = dev;
++
++	dev_set_drvdata(dev, dsp_ipc);
++
++	dev_info(dev, "NXP i.MX DSP IPC initialized\n");
++
++	return devm_of_platform_populate(dev);
++out:
++	kfree(chan_name);
++	for (j = 0; j < i; j++) {
++		dsp_chan = &dsp_ipc->chans[j];
++		mbox_free_channel(dsp_chan->ch);
++	}
++
++	return ret;
++}
++
++static int imx_dsp_remove(struct platform_device *pdev)
++{
++	struct imx_dsp_chan *dsp_chan;
++	struct imx_dsp_ipc *dsp_ipc;
++	int i;
++
++	dsp_ipc = dev_get_drvdata(&pdev->dev);
++
++	for (i = 0; i < DSP_MU_CHAN_NUM; i++) {
++		dsp_chan = &dsp_ipc->chans[i];
++		mbox_free_channel(dsp_chan->ch);
++	}
++
++	return 0;
++}
++
++static struct platform_driver imx_dsp_driver = {
++	.driver = {
++		.name = "imx-dsp",
++	},
++	.probe = imx_dsp_probe,
++	.remove = imx_dsp_remove,
++};
++builtin_platform_driver(imx_dsp_driver);
++
++MODULE_AUTHOR("Daniel Baluta <daniel.baluta@nxp.com>");
++MODULE_DESCRIPTION("IMX DSP IPC protocol driver");
++MODULE_LICENSE("GPL v2");
+diff --git a/include/linux/firmware/imx/dsp.h b/include/linux/firmware/imx/dsp.h
+new file mode 100644
+index 000000000000..7562099c9e46
+--- /dev/null
++++ b/include/linux/firmware/imx/dsp.h
+@@ -0,0 +1,67 @@
++/* SPDX-License-Identifier: GPL-2.0+ */
++/*
++ * Copyright 2019 NXP
++ *
++ * Header file for the DSP IPC implementation
++ */
++
++#ifndef _IMX_DSP_IPC_H
++#define _IMX_DSP_IPC_H
++
++#include <linux/device.h>
++#include <linux/types.h>
++#include <linux/mailbox_client.h>
++
++#define DSP_MU_CHAN_NUM		4
++
++struct imx_dsp_chan {
++	struct imx_dsp_ipc *ipc;
++	struct mbox_client cl;
++	struct mbox_chan *ch;
++	char *name;
++	int idx;
++};
++
++struct imx_dsp_ops {
++	void (*handle_reply)(struct imx_dsp_ipc *ipc);
++	void (*handle_request)(struct imx_dsp_ipc *ipc);
++};
++
++struct imx_dsp_ipc {
++	/* Host <-> DSP communication uses 2 txdb and 2 rxdb channels */
++	struct imx_dsp_chan chans[DSP_MU_CHAN_NUM];
++	struct device *dev;
++	struct imx_dsp_ops *ops;
++	void *private_data;
++};
++
++static inline void imx_dsp_set_data(struct imx_dsp_ipc *ipc, void *data)
++{
++	if (!ipc)
++		return;
++
++	ipc->private_data = data;
++}
++
++static inline void *imx_dsp_get_data(struct imx_dsp_ipc *ipc)
++{
++	if (!ipc)
++		return NULL;
++
++	return ipc->private_data;
++}
++
++#if IS_ENABLED(CONFIG_IMX_DSP)
++
++int imx_dsp_ring_doorbell(struct imx_dsp_ipc *dsp, unsigned int chan_idx);
++
++#else
++
++static inline int imx_dsp_ring_doorbell(struct imx_dsp_ipc *ipc,
++					unsigned int chan_idx)
++{
++	return -ENOTSUPP;
++}
++
++#endif
++#endif /* _IMX_DSP_IPC_H */
+-- 
+2.17.1
 
-> The sh-sci.c driver has a similar check to skip this case: [2].
-
-This should than be dropped, too.
-
-Best regards
-Uwe
-
-> [1] =
-
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/d=
-rivers/tty/serial/serial_mctrl_gpio.h#n121
-> [2] =
-
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/d=
-rivers/tty/serial/sh-sci.c#n3290
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
