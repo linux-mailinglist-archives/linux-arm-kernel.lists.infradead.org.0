@@ -2,91 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFC337D604
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 09:05:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FBF57D60E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 09:09:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wXhoVQImedopwZBE+vfpXcfXrBDr9/EDY79xd60FHVc=; b=J4a1yNq9U6CQbt
-	dwAa3lDxH+6CMZsqi5GanEiLL+5w5FOVCKC+/i2B0/A9Gezl4L6b7cTy23ao2xtet0595HylFKgeH
-	fWHkx7UMwWL2Bw8tPjEOMYNcIFSDtpQNQXR9AtCZElmpLmJGh4kHxBfUkh/B7eAwIQRCVblpSxd/w
-	nbwa2tyI3ILm4dVKZ02gECnbvWsLeh7JbN5pFxIaD/PZrHhUho1Qg68g2rR1No8UEXaORtE/4SFb8
-	RqOJ9w6AZaoUlRmWuKXb4TP6KIsDswKzyFpX4f4ZPqsOdP4k1YaWhNcEwlg0l/v31kjXJ+Azu2idN
-	JYp73T/9thlt3rimQmjA==;
+	List-Owner; bh=EzHYSBL4nwfI4XOA/5x4268zFGIjVnLTWuZG1b2FI0g=; b=deACRYMknja0UC
+	pXMV0fkFkrwABBS/fgJ79VRT6ZMbeU7CHDrC2ygOmYmbYBDVwvXehODlbz006nWz9givM7YKyqWH8
+	+on3OKRLe0M00HQd/RViLtnSVgm+DL9KAiNNbhTg1xdcMh7h+nCx5LllRVnAbyp2KYSdnYai1BOqN
+	ACyOU+wljYtW0rOrk8JZoAsn+es14Q5/P5Li/nzT4bg+JC8htMXd63jjcIVVHkJMpuq8PGPw39fc9
+	i69wBIxHe/Zleuuk9z+Nx3EfGecpLTWA4fZRyGe6ci78D7/MksuA3O5bSjh5MsieCzO6kvNi+0kdB
+	ELkOdVmhoAFVl6f0B//Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht59w-0005rT-RP; Thu, 01 Aug 2019 07:05:56 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1ht5DH-0006KC-Py; Thu, 01 Aug 2019 07:09:23 +0000
+Received: from mail-eopbgr130083.outbound.protection.outlook.com
+ ([40.107.13.83] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht59k-0005r7-GG
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 07:05:46 +0000
-Received: by mail-pl1-x643.google.com with SMTP id m9so31632822pls.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 00:05:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=5xEE7OE40acja6HTHPbTsIAF5qXRLsg5qviZS++h4sk=;
- b=Ps1y/Xaz3lwzyYCr5700QuCSNYG1xF1T41Ww1t7m/9jGdfHvnukxkLw5a87d13PFJS
- uk//PQSnx3f8tAzRGhGmlHUZC/+o45lvPGRePqRqPMIuXojnMrmdtDuchFuAqqguGi32
- Rrf4E7/4YBQMgTs7Jw3ROruJl+UkZzjOlpsRIxbL7d+1T3XVu+Jsw5KUtB1IaTSD6MaS
- ywmWRC+zgTspVsGy5Io631w/1rqfihcdqwzV6IRIZ3e0yjobo+NaV36WKradIWi9l6qR
- Uxftp/XvEl8Si9qD5JXtmBEqya2ijb43oQMM3BumaU407REp+xoQI0v7aMdWY9t7gcsa
- PMww==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=5xEE7OE40acja6HTHPbTsIAF5qXRLsg5qviZS++h4sk=;
- b=Usv7Bv5Rd2uvL4botRfALHHJG5KeyNyENOsnSSxiYUwAdRRYiJyA8bACItGUWybP94
- /KAzUhC/M9kl5WhR8qi3Bg37dd5c/Whs2YnxPKdYqHb9gssIOLTWvPk2reEWExvfbBnc
- 12JoaHIm9hoQMqyczQ1MKJh/SAGFjsokdwySySzOFFtKXnXkPc+n0Z39h5COE09EaRSh
- Nak0ejUSCbL4XNnRRThuOmGNJGmwooag8eiDKSt09oy18IbruH8xdp/zn0kKRY32yH4C
- i4Oof0CuK+5HLj/5NjU503Q6WYmzB58w6nSzTwgzKLDD0nIdxMhCk633FA3lFqNskXs3
- IfPA==
-X-Gm-Message-State: APjAAAVk/XE3IVuA7/IF2BymhSpSkqz7eEJCFmnRm4c7fVbgatrjOaFt
- qeZMjYOXNOtne5/VQ/2Q5z1ldw==
-X-Google-Smtp-Source: APXvYqzvPJetAaPvVWV5Rh/dqIgG6HC1vo3c28lA11uW4stNKIWem710/6/D393JbPr632qzGwWEIg==
-X-Received: by 2002:a17:902:788f:: with SMTP id
- q15mr126398605pll.236.1564643143876; 
- Thu, 01 Aug 2019 00:05:43 -0700 (PDT)
-Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id u1sm66483005pgi.28.2019.08.01.00.05.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 00:05:43 -0700 (PDT)
-Date: Thu, 1 Aug 2019 12:35:41 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Greg KH <greg@kroah.com>
-Subject: Re: [PATCH v4.4 V2 25/43] arm64: Move BP hardening to
- check_and_switch_context
-Message-ID: <20190801070541.hpmadulgp45txfem@vireshk-i7>
-References: <cover.1562908074.git.viresh.kumar@linaro.org>
- <f655aaa158af070d45a2bd4965852b0c97a08838.1562908075.git.viresh.kumar@linaro.org>
- <59b252cf-9cb7-128b-4887-c21a8b9b92a9@arm.com>
- <20190801050940.h65crfawrdifsrgg@vireshk-i7>
- <86354576-fc54-a8b7-4dc9-bc613d59fb17@arm.com>
- <20190801063544.ruw444isj5uojjdx@vireshk-i7>
- <20190801065700.GA17391@kroah.com>
+ id 1ht5D0-0006Iv-G2; Thu, 01 Aug 2019 07:09:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=R9McT2ws17CB//DDavlvW5c+7/5p/sPuj1UorVqecm42++jydDSbe8xuKyH2OvlI2gmmSDKK2Ut2MyeE5Obsa4gJM+t37Wbda3INiHiGF0kc01mEbqJ476iADadYMDLOMhp4FwiAz/BAutaHJUP16Ob8ZUpDoXcbEg/Uxug3Zsk+z0TY2R+Bb4+2FE5UgHd5JnN54OcbAnCyuAqEGRpiWQYWrT3EQsfPQC+ggP79RQs683QFxGT+vIIhW2ElIoB0m+kTJs98WFSs5qqSQQ2b1ULuM//bHiZOiuEBtqVbyj/LH5E6PKj51qDMcHewr/0a+hvYe/MNOwTaTqZmBCYjow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Rx8/dj4WNFRMGgFf9mc5C77AqmGyV/iRFTKcVp5VOCA=;
+ b=YA3mYkneVRNFAfAq0Fc9jVvz+ur6CcZRWItuUqqXHZBOGA2cpKCCC4ZvZqsF3azExmaEHhbaNnJDWtDC7a99iQLKKvgx2Edr+rThZ9xAP5EE7KN+T4dNniDKnLn1i7KgnfTPmoyBFLy1vRdv5W/GgTc1wPu7Hl6WxGSlIxVuOFglUwNl1ZsLdLa/6AKQIKrZ5tLZWcpMSzJbLuf4E62Dqa3q1xBWy7Y7D9extjX6tc5sDzepiBCN2c8Cix4g2YhecSIj7PCsyczNZebXpbPe9PbQT9YW5CH/31rVY5r+6eAtehlAllU+JCw2NlMMmDoNZDEJd2wmvMb78BmlzwVQzA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
+ header.d=nxp.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Rx8/dj4WNFRMGgFf9mc5C77AqmGyV/iRFTKcVp5VOCA=;
+ b=oKcNCcEclCrUUybVMLTpD99YJP3NI5osKSgmyAuQPaXCgwZJ+i+ys3RxyqoqdT6ubj1LimcbvS+NCi6KPNGKlv5pdoFJ9dr3J1uaSg9SNGw1YOY8HfQJiUclW5a6azD4yT7vndE1uS0s3Hbtb6+25GggcKGDAmpsmOUE7R4PHDs=
+Received: from VI1PR04MB4015.eurprd04.prod.outlook.com (10.171.182.24) by
+ VI1PR04MB5663.eurprd04.prod.outlook.com (20.178.126.24) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2115.15; Thu, 1 Aug 2019 07:09:01 +0000
+Received: from VI1PR04MB4015.eurprd04.prod.outlook.com
+ ([fe80::9c4f:262d:db31:e339]) by VI1PR04MB4015.eurprd04.prod.outlook.com
+ ([fe80::9c4f:262d:db31:e339%4]) with mapi id 15.20.2136.010; Thu, 1 Aug 2019
+ 07:09:01 +0000
+From: Ashish Kumar <ashish.kumar@nxp.com>
+To: Rob Herring <robh@kernel.org>, Han Xu <han.xu@nxp.com>,
+ "broonie@kernel.org" <broonie@kernel.org>
+Subject: RE: [EXT] Re: [Patch v3 2/2] dt-bindings: spi: spi-fsl-qspi: Add
+ bindings of ls1088a and ls1012a
+Thread-Topic: [EXT] Re: [Patch v3 2/2] dt-bindings: spi: spi-fsl-qspi: Add
+ bindings of ls1088a and ls1012a
+Thread-Index: AQHVJo/WR5aDyJa0DkeJCggmqW/DRqbC1yeAgB61yWCABBUxwIAAf8yA
+Date: Thu, 1 Aug 2019 07:09:01 +0000
+Message-ID: <VI1PR04MB40151616D6ECF55BA0A8C23F95DE0@VI1PR04MB4015.eurprd04.prod.outlook.com>
+References: <1560942714-13330-1-git-send-email-Ashish.Kumar@nxp.com>
+ <1560942714-13330-3-git-send-email-Ashish.Kumar@nxp.com>
+ <20190709200857.GA8477@bogus>
+ <VI1PR04MB4015206CD4AAA1E54C5978DA95DD0@VI1PR04MB4015.eurprd04.prod.outlook.com>
+ <VE1PR04MB66879C5045A813E7311534D68FDF0@VE1PR04MB6687.eurprd04.prod.outlook.com>
+In-Reply-To: <VE1PR04MB66879C5045A813E7311534D68FDF0@VE1PR04MB6687.eurprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=ashish.kumar@nxp.com; 
+x-originating-ip: [92.120.0.6]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7fb285c3-8049-45b0-1677-08d7164f2166
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:VI1PR04MB5663; 
+x-ms-traffictypediagnostic: VI1PR04MB5663:
+x-microsoft-antispam-prvs: <VI1PR04MB5663CE3FAA2C3622608B967F95DE0@VI1PR04MB5663.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2657;
+x-forefront-prvs: 01165471DB
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(979002)(4636009)(376002)(346002)(396003)(39860400002)(136003)(366004)(13464003)(189003)(199004)(305945005)(66946007)(53936002)(55016002)(66446008)(64756008)(66556008)(66476007)(4326008)(6436002)(8936002)(26005)(7736002)(316002)(7696005)(52536014)(6116002)(76116006)(81156014)(186003)(3846002)(5660300002)(9686003)(53546011)(256004)(86362001)(74316002)(8676002)(66066001)(81166006)(14454004)(6506007)(102836004)(476003)(44832011)(6246003)(76176011)(229853002)(68736007)(99286004)(110136005)(2501003)(25786009)(54906003)(2906002)(446003)(11346002)(33656002)(478600001)(71200400001)(71190400001)(486006)(969003)(989001)(999001)(1009001)(1019001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5663;
+ H:VI1PR04MB4015.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: k81qdUYQa9dZC6LSSAnl0/XTTegVCtwCG6PIJtXN3P8fEehvUHdgtoBdNXeUaB5maes9bcWoZ4vN7kDOJ7TKGkzEk0wV1gatiqEVM+Oh16+Eo69rblN+LlxKmJcOWWs+3ob7K/G4/1Ss+Ixw8crLmfedCMxZ3GfMeiPId2zyZK20Qbee6mF5V5fk565UDfp6KK9u+mwbE8TT4rkUsqH59CKiQWcWxzlaJptaQW/QbSlISEq6cDZQCKR7CYrt/4XO5GxFlfp3KU/kmA1WcKfxzU+faLQOtkFNVPNpAUAMAzhkUK1jEEz/W5JhcAUNQj+ZrnJ2B2DSyLdo2PYCyuqaHouqz7LK2pecJwIZTBAiCuzt0EOPgD/JzYNHPEs2DIhe9zYr5dcdZ9DVqRv3SnNi0ppLfY7uPQkA1PxrWXnRH+s=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190801065700.GA17391@kroah.com>
-User-Agent: NeoMutt/20180716-391-311a52
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7fb285c3-8049-45b0-1677-08d7164f2166
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Aug 2019 07:09:01.3521 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ashish.kumar@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5663
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_000544_697817_27F37227 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20190801_000906_761257_78C10204 
+X-CRM114-Status: GOOD (  13.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ no trust [40.107.13.83 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -105,45 +126,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Julien Thierry <julien.thierry@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- stable@vger.kernel.org, mark.brown@arm.com, julien.thierry.kdev@gmail.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "bbrezillon@kernel.org" <bbrezillon@kernel.org>,
+ Kuldeep Singh <kuldeep.singh@nxp.com>, Leo Li <leoyang.li@nxp.com>,
+ "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01-08-19, 08:57, Greg KH wrote:
-> On Thu, Aug 01, 2019 at 12:05:44PM +0530, Viresh Kumar wrote:
-> > On 01-08-19, 07:30, Julien Thierry wrote:
-> > > I must admit I am not familiar with backport/stable process enough. But
-> > > personally I think the your suggestion seems more sensible than
-> > > backporting 4 patches.
-> > > 
-> > > Or you can maybe ignore patch 25 and say in patch 24 that among the
-> > > changes made for the 4.4 codebase, the call arm64_apply_bp_hardening()
-> > > was moved from post_ttbr_update_workaround as it doesn't exist and
-> > > placed in check_and_switch_context() as it is its final destination.
-> > 
-> > Done that and dropped the other two patches.
-> > 
-> > > However, I really don't know what's the best way to proceed according to
-> > > existing practices. So input from someone else would be welcome.
-> > 
-> > Lets see if someone comes up and ask me to do something else :)
+
+
+> -----Original Message-----
+> From: Leo Li
+> Sent: Thursday, August 1, 2019 4:59 AM
+> To: Ashish Kumar <ashish.kumar@nxp.com>; Rob Herring
+> <robh@kernel.org>; Han Xu <han.xu@nxp.com>
+> Cc: devicetree@vger.kernel.org; bbrezillon@kernel.org; broonie@kernel.org;
+> linux-arm-kernel@lists.infradead.org; linux-mtd@lists.infradead.org; Kuldeep
+> Singh <kuldeep.singh@nxp.com>
+> Subject: RE: [EXT] Re: [Patch v3 2/2] dt-bindings: spi: spi-fsl-qspi: Add
+> bindings of ls1088a and ls1012a
 > 
-> Keeping the same patches that upstream has is almost always the better
-> thing to do in the long-run.
+> 
+> 
+> > -----Original Message-----
+> > From: Ashish Kumar
+> > Sent: Monday, July 29, 2019 4:09 AM
+> > To: Rob Herring <robh@kernel.org>; Leo Li <leoyang.li@nxp.com>
+> > Cc: devicetree@vger.kernel.org; bbrezillon@kernel.org;
+> > broonie@kernel.org; linux-arm-kernel@lists.infradead.org;
+> > linux-mtd@lists.infradead.org; Kuldeep Singh <kuldeep.singh@nxp.com>
+> > Subject: RE: [EXT] Re: [Patch v3 2/2] dt-bindings: spi: spi-fsl-qspi:
+> > Add bindings of ls1088a and ls1012a
+> >
+> >
+> >
+> > > -----Original Message-----
+> > > From: Rob Herring <robh@kernel.org>
+> > > Sent: Wednesday, July 10, 2019 1:39 AM
+> > > To: Ashish Kumar <ashish.kumar@nxp.com>
+> > > Cc: devicetree@vger.kernel.org; bbrezillon@kernel.org;
+> > > broonie@kernel.org; linux-arm-kernel@lists.infradead.org;
+> > > linux-mtd@lists.infradead.org; Ashish Kumar <ashish.kumar@nxp.com>;
+> > > Kuldeep Singh <kuldeep.singh@nxp.com>; Ashish Kumar
+> > > <ashish.kumar@nxp.com>
+> > > Subject: [EXT] Re: [Patch v3 2/2] dt-bindings: spi: spi-fsl-qspi:
+> > > Add bindings of ls1088a and ls1012a
+> > >
+> > > Caution: EXT Email
+> > >
+> > > On Wed, 19 Jun 2019 16:41:54 +0530, Ashish Kumar wrote:
+> > > > Signed-off-by: Kuldeep Singh <kuldeep.singh@nxp.com>
+> > > > Signed-off-by: Ashish Kumar <ashish.kumar@nxp.com>
+> > > > ---
+> > > > v3:
+> > > > Rebase to top
+> > > > v2:
+> > > > Convert to patch series and rebasing done on top of tree
+> > > >
+> > > >  Documentation/devicetree/bindings/spi/spi-fsl-qspi.txt | 2 ++
+> > > >  1 file changed, 2 insertions(+)
+> > > >
+> > >
+> > > Reviewed-by: Rob Herring <robh@kernel.org>
+> >
+> > Hi Leo,
+> >
+> > I think Rob, is waiting for you ack.
+> 
+> Binding patches usually go through subsystem tree.  So I think this actually
+> need ack from qspi maintainer Han Xu and be picked up by SPI maintainer.
+Ok.
+Hello Han Xu, 
 
-That would require two additional patches to be backported, 22 and 23
-from this series. From your suggestion it seems that keeping them is
-better here ?
+Could you please ack this few of my dts patches are dependent on this, waiting to be pushed from Shawn's tree.
 
--- 
-viresh
+Regards 
+Ashish 
+
+
+> 
+> Regards,
+> Leo
 
 _______________________________________________
 linux-arm-kernel mailing list
