@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1C7B7DADF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:05:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 425B87DB04
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:12:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5QGsHl2TYd7yexmBQ9sN1Iwx+eUVx0ZG8LN6oNoliDc=; b=EUk5TlGJ2T1fSA
-	pt5E4Y4Y3h7u0JmcitcJ3qVCP1NHRvBVcQjAkd5L7pjgW5TxwfkN/wagHs2YOi0e6GU1WakrjVn5O
-	5vGy8P85zgPfNgHRcAcwFpCyOxnt1kvMBbZXuYXDxnyyuKTCuWOm4kmLTrxIDvmRbAgTwMmsbjRXy
-	g7PXWFL0gUrsCtCqm20n9THxN40v3i8r4SZlbPG7RBiYfYFNdWUN9AScKkfAxftH0TRrKFXOq0GF5
-	acIEm6ghjYTAhe0V+81RDvMWASvQ3dcYlNj6Jcd5hbTA8W6OIrRCQ6a0riEL5wFchz/JuPmZuhCOn
-	XLD3wVkMQFyoOXKHstjA==;
+	List-Owner; bh=feO1TQ+LQumJo6Q0LcJ9XGTSfHylzCuOQXqyZZkWWsQ=; b=qWOl5rwBnwoL6s
+	J44YmGi/UicZ25sfUqbaxGi6Mds4UBILTJ8/dGZs1UU2pO3hg94x0unXOd876fbBpvbTZyrZbWXu+
+	otC6vO56Hg0HLtKCBC2MADPRJsWoYVNd7myyQ4veOvGQ435HXmPToUtraq0sTRcQUMyZN1ta8EubS
+	MF22+Xp1Y7FlUlP1yl4crmDnT+XS4IHYJLqMcjnD5CKzFkhw2lUBnpG1i4iRGwxDSNfaW6hCCsy7j
+	c2MmobIZzc49b2f0ZNuhvpZVRqZs3Ga5bwRGM/o5KSMlQSH4v46+9dsia2kjZ9On4UDqpp1jQ1hPi
+	ZqSbqhQ6uKE203cXFUJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht9qF-0004Z6-DA; Thu, 01 Aug 2019 12:05:55 +0000
+	id 1ht9wF-0002Ov-Lg; Thu, 01 Aug 2019 12:12:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht9lu-0000Im-Q4
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:01:28 +0000
+ id 1ht9oY-000210-1r
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:04:12 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2202E20644;
- Thu,  1 Aug 2019 12:01:24 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E12C120644;
+ Thu,  1 Aug 2019 12:04:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564660886;
- bh=D5new/YYn3kPcHh7di/Fven4S2ktVYG0OmdgPvAh4PQ=;
+ s=default; t=1564661049;
+ bh=ot5STRM/B8yVvrzcOXAfmZCEFTH93aXQATe1UlXglC0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=IE6mLKyYjztotryxL/tOSZEH2cYaxcN7ViYug7D8wjScOTcPomkuNZHqr/8jCnLW6
- bTgmlMcfqYjfIeldb1Y7t9tpmc81NrLEkP1pPZrs6mp9fo8KJlf6T2TpY6zhsbFo8E
- bbSrtyff0KUD+Hy8tCu67p+NewAjDYSazxoV+WFg=
-Date: Thu, 1 Aug 2019 13:01:22 +0100
+ b=Ump+elZokFz78+k37rDcEG7nfi1dDvmKbqAeSv1dkaE3Ov2/1+SnJIXX1R1W+cSxa
+ O0RuI9LBKE0yehewPDkc5gOdgAreDpZx/sG0vTBm7OZ0VJAEeb5HVFeUKM64PGcRp5
+ rhzNY3H22XhvjjFl256OwMtUxxsm7N0vyYdEmZ9E=
+Date: Thu, 1 Aug 2019 13:04:06 +0100
 From: Will Deacon <will@kernel.org>
 To: Qian Cai <cai@lca.pw>
-Subject: Re: [PATCH] arm64/mm: fix variable 'tag' set but not used
-Message-ID: <20190801120121.6cmtho3wd32nzfoz@willie-the-truck>
-References: <1564605498-17629-1-git-send-email-cai@lca.pw>
+Subject: Re: [PATCH] arm64/mm: fix variable 'pud' set but not used
+Message-ID: <20190801120405.tnrjs4iyg2ujy6ed@willie-the-truck>
+References: <1564603545-14776-1-git-send-email-cai@lca.pw>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1564605498-17629-1-git-send-email-cai@lca.pw>
+In-Reply-To: <1564603545-14776-1-git-send-email-cai@lca.pw>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_050126_895166_58AC4AFE 
-X-CRM114-Status: GOOD (  14.86  )
+X-CRM114-CacheID: sfid-20190801_050410_193476_3BB1F5E0 
+X-CRM114-Status: GOOD (  14.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,45 +77,50 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, andreyknvl@google.com
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 04:38:18PM -0400, Qian Cai wrote:
-> When CONFIG_KASAN_SW_TAGS=n, set_tag() is compiled away. GCC throws a
-> warning,
+On Wed, Jul 31, 2019 at 04:05:45PM -0400, Qian Cai wrote:
+> GCC throws a warning,
 > 
-> mm/kasan/common.c: In function '__kasan_kmalloc':
-> mm/kasan/common.c:464:5: warning: variable 'tag' set but not used
+> arch/arm64/mm/mmu.c: In function 'pud_free_pmd_page':
+> arch/arm64/mm/mmu.c:1033:8: warning: variable 'pud' set but not used
 > [-Wunused-but-set-variable]
->   u8 tag = 0xff;
->      ^~~
+>   pud_t pud;
+>         ^~~
 > 
-> Fix it by making __tag_set() a static inline function.
+> because pud_table() is a macro and compiled away. Fix it by making it a
+> static inline function and for pud_sect() as well.
 > 
 > Signed-off-by: Qian Cai <cai@lca.pw>
 > ---
->  arch/arm64/include/asm/memory.h | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
+>  arch/arm64/include/asm/pgtable.h | 11 +++++++++--
+>  1 file changed, 9 insertions(+), 2 deletions(-)
 > 
-> diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-> index b7ba75809751..9645b1340afe 100644
-> --- a/arch/arm64/include/asm/memory.h
-> +++ b/arch/arm64/include/asm/memory.h
-> @@ -210,7 +210,11 @@ static inline unsigned long kaslr_offset(void)
->  #define __tag_reset(addr)	untagged_addr(addr)
->  #define __tag_get(addr)		(__u8)((u64)(addr) >> 56)
->  #else
-> -#define __tag_set(addr, tag)	(addr)
-> +static inline const void *__tag_set(const void *addr, u8 tag)
+> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+> index 3f5461f7b560..541cb4a15341 100644
+> --- a/arch/arm64/include/asm/pgtable.h
+> +++ b/arch/arm64/include/asm/pgtable.h
+> @@ -447,8 +447,15 @@ extern pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
+>  				 PMD_TYPE_SECT)
+>  
+>  #if defined(CONFIG_ARM64_64K_PAGES) || CONFIG_PGTABLE_LEVELS < 3
+> -#define pud_sect(pud)		(0)
+> -#define pud_table(pud)		(1)
+> +static inline bool pud_sect(pud_t pud)
 > +{
-> +	return addr;
+> +	return false;
+> +}
+> +
+> +static inline bool pud_table(pud_t pud)
+> +{
+> +	return true;
 > +}
 
-Why doesn't this trigger a warning in page_to_virt(), which passes an
-unsigned long for the address parameter?
+Applied for 5.3.
 
 Will
 
