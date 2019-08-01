@@ -2,58 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D348C7D552
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 08:13:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 376417D576
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 08:22:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VLcqmQ/G8fKRgEnZ/OWG5uAZgbtgLqgmrCiLWzfADGU=; b=UUHH3ntZBp+MAe
-	J180YjfDENr7GyW5VliXD4S6yytOrvC2fYhXF+a7goIv19COFfZJrBx5Ovq79/3XVjp26X9HKf/26
-	q07ZolEh/NzUY3CWayyTyT9BHmwuc6vu7cHNvn4yOD/ur0VJim9FQL/HEj5SG2k2+F0Vwpi0dR2e4
-	5UWGibaluLk1E/Lu4ov8B61WtmqjQDO99NnLQN+Kj137BIZnQNQLKxJILoXvvTiJYqoCzxhqAl4vh
-	AzqENOIaCAVI1liH/pswj8nv12ZMMbeNsPo8G6z6oK7Ce88Rw126NUiTXNXVGegAaEbqA+uGHYRt3
-	dlvDx2AU+6RPXfBPyTiA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Fiv8ptO/luNVYXEVQDAbv1fHGCcsPFClXZgZ2S3ccw4=; b=NyrsL/RbTh0fid
+	2SWjK3jIjBZO1JAjgLdcuesew4zewQjy5WNgm5JgLblKN1AgWAFlsEfwv+L9FHw4IupbXEKQKklVK
+	8dFsfEwk37I2USP1QymXe64duKlfXC0wuyN5VQ2gAa+zD2HdlVwSfyVu1aTp8ADrUlc2YyavalgXU
+	73n6LIZ2i4b7Pg7ruwqWq14F5MTAoVRT+tFOuIGwARIsgA6DEn/hj7vFKvl3zN+xaMvNbu4ElBGXI
+	Nf/F6AcEtmB6Orgax7AcQ7tXhLzgNjDdrX4CJ6FOX30BG9din8HOVSB94iZJV6fG2tvvqlGSsKt5g
+	+yN+vHx1SZtM/onQLBag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht4L4-0000Qh-4y; Thu, 01 Aug 2019 06:13:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1ht4Ky-0000Px-17
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 06:13:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 10555337;
- Wed, 31 Jul 2019 23:13:14 -0700 (PDT)
-Received: from [10.163.1.81] (unknown [10.163.1.81])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E7AE53F694;
- Wed, 31 Jul 2019 23:15:06 -0700 (PDT)
-Subject: Re: [PATCH v9 10/21] mm: Add generic p?d_leaf() macros
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20190722154210.42799-1-steven.price@arm.com>
- <20190722154210.42799-11-steven.price@arm.com>
- <20190723094113.GA8085@lakrids.cambridge.arm.com>
- <ce4e21f2-020f-6677-d79c-5432e3061d6e@arm.com>
- <20190729125013.GA33794@lakrids.cambridge.arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <d427ccad-e64f-82f4-588b-816376e3cadb@arm.com>
-Date: Thu, 1 Aug 2019 11:43:38 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1ht4TQ-0003uH-Dx; Thu, 01 Aug 2019 06:22:00 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1ht4TJ-0003tg-Gs
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 06:21:54 +0000
+Received: by mail-lf1-x141.google.com with SMTP id v85so49273528lfa.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 31 Jul 2019 23:21:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=1vSZqJMnvEYK79BuKh6WUgr+O0wW6TMjJ9YpHKa1USU=;
+ b=Arm8SbO3zGrCc5avNA7dsMeg85DbeTjU5zzCj7quGtHPNxa8/SQT6F5BxoH/oW9lU+
+ rxTr+oQxxUsihwCoaxsTIyiDxgny9BvFH1L8WxV3tlw2KRSZPI+I16EN+PzHL0wEaHUC
+ +wk5CNLeGxCaTXsaXuQW46Zml1KG+s2Q/hXX165ScX10Rhvf74bOIcX4NlnjS54S8AHI
+ xxbUlheuiKF7RwuNv+h83UPOZrSFZ33E+Xxk7rMCrOZA2taAypqDXjNgZlx09PmqGlUu
+ hhWb44TjnRf0xQuebHwAMIC2EBjamD7JbUM+fNSQmxuS4VBghCU1+21vEVInMcUZd824
+ MIiA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1vSZqJMnvEYK79BuKh6WUgr+O0wW6TMjJ9YpHKa1USU=;
+ b=ucnkaQVJdVtRbHSKQmRd8mg2dp8FZ901MO0NFfgg8iNJtW/j3DO40rEqJwTp9va9+p
+ kf3XBUEel3XER7eQ4EFSkh5wqE9gp9ORPkRqGaK4r1C+IGtH5jyKOPOF/6OsRZQ1CTYr
+ k59F3SOjuByMYyEMkOu2IjMsugVQJzAg+pWD/c96jacukrpsd5B54AZDi+cj/ybvgnp2
+ cFEEg2Gc1s5ZYT4aEQVXZmxlvyI7b/wifGM/TsZhoMSI366KTEvf6ELPD1alVQTZjImB
+ PSNRyGwnnyk45ytNZ8cC/D2QnO0+Sl7K3bAnwZ1J9iV+bxkdzFBLGLfD0p5mPmmDTY5v
+ AOIA==
+X-Gm-Message-State: APjAAAVi1y8SsHIwxaLeNnb33/dIB6V4RlQxUVadFEWIiYQXd1UJGwIa
+ 5e8e2OywjMgHxL1A1W8OtbBTpDiMTy7KpQIhPP0=
+X-Google-Smtp-Source: APXvYqwHSeFpB9tSV0Ei5U+HuQh1iF1dV3lxekEtE3WsWY2xkt0Unm2jUg3lSom7xaUo+nfynVkJjq4uUMXG5qYU6Jk=
+X-Received: by 2002:a19:641a:: with SMTP id y26mr58261160lfb.29.1564640511451; 
+ Wed, 31 Jul 2019 23:21:51 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190729125013.GA33794@lakrids.cambridge.arm.com>
-Content-Language: en-US
+References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
+ <CAE=Ncrb63dQLe-nDQyO9OPv7XjwM_9mzL9SrcLiUi2Dr10cD4A@mail.gmail.com>
+ <CAE=NcrY7b8eTTovOszBhGhVbjfJAXoAYehiUJyPENGfwWoVcPw@mail.gmail.com>
+ <CAFA6WYOEqe1a1DCyVYKA+oZaZ0n5hnjxdubstUnrwdUW1-4xHw@mail.gmail.com>
+In-Reply-To: <CAFA6WYOEqe1a1DCyVYKA+oZaZ0n5hnjxdubstUnrwdUW1-4xHw@mail.gmail.com>
+From: Janne Karhunen <janne.karhunen@gmail.com>
+Date: Thu, 1 Aug 2019 09:21:39 +0300
+Message-ID: <CAE=NcraDkm5cxE=ceq_9XkQz=NZ6KdVXkNUsdD4G2LrWz-bpDw@mail.gmail.com>
+Subject: Re: [RFC v2 0/6] Introduce TEE based Trusted Keys support
+To: Sumit Garg <sumit.garg@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_231316_119591_3E63B7E8 
-X-CRM114-Status: GOOD (  12.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190731_232153_589680_D9ED6E94 
+X-CRM114-Status: GOOD (  14.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (janne.karhunen[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,40 +95,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>, linux-mm@kvack.org,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
+Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
+ jejb@linux.ibm.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ James Morris <jmorris@namei.org>,
+ Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
+ linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
+ Mimi Zohar <zohar@linux.ibm.com>, Casey Schaufler <casey@schaufler-ca.com>,
+ linux-integrity@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Serge E. Hallyn" <serge@hallyn.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Jul 31, 2019 at 4:58 PM Sumit Garg <sumit.garg@linaro.org> wrote:
+
+> > To clarify a bit further - my thought was to support any type of trust
+> > source.
+>
+> That could be very well accomplished via Trusted Keys abstraction
+> framework [1]. A trust source just need to implement following APIs:
+>
+> struct trusted_key_ops ts_trusted_key_ops = {
+>        .migratable = 0, /* non-migratable */
+>        .init = init_ts_trusted,
+>        .seal = ts_key_seal,
+>        .unseal = ts_key_unseal,
+>        .get_random = ts_get_random,
+>        .cleanup = cleanup_ts_trusted,
+> };
+
+Which is basically the same as implementing a new keytype in the
+kernel; abstraction is not raised in any considerable manner this way?
+
+I chose the userspace plugin due to this, you can use userspace aids
+to provide any type of service. Use the crypto library you desire to
+do the magic you want.
 
 
-On 07/29/2019 06:20 PM, Mark Rutland wrote:
-> On Sun, Jul 28, 2019 at 05:14:31PM +0530, Anshuman Khandual wrote:
->> On 07/23/2019 03:11 PM, Mark Rutland wrote:
->>> It might also be worth pointing out the reasons for this naming, e.g.
->>> p?d_large() aren't currently generic, and this name minimizes potential
->>> confusion between p?d_{large,huge}().
->>
->> Agreed. But these fallback also need to first check non-availability of large
->> pages. 
-> 
-> We're deliberately not making the p?d_large() helpers generic, so this
-> shouldn't fall back on those.
+> > With the
+> > user mode helper in between anyone can easily add their own thing in
+> > there.
+>
+> Isn't actual purpose to have trusted keys is to protect user-space
+> from access to kernel keys in plain format? Doesn't user mode helper
+> defeat that purpose in one way or another?
 
-I meant non-availability of large page support in the MMU HW not just the
-presence of p?d_large() helpers.
+Not really. CPU is in the user mode while running the code, but the
+code or the secure keydata being is not available to the 'normal'
+userspace. It's like microkernel service/driver this way. The usermode
+driver is part of the kernel image and it runs on top of a invisible
+rootfs.
+
+
+--
+Janne
 
 _______________________________________________
 linux-arm-kernel mailing list
