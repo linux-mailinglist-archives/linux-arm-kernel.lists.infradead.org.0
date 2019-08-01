@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E8EF7D764
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:22:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D07527D763
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:22:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k4sdb3m3YsPvZhgvzKrb1gzLiZsysdL1ftEiJLvwzok=; b=OaaJ2E/YSGNJQy
-	4geplMCBcKH+6JbqbruLtxlcwhVorvKtMnBfR/lrb316r78OvNajAT84pLxybPtfLo+Xl6ftVKAEp
-	MGWWemX6Fh3KMmL+kMkdDoaw20//TnQ7UT7KdeiZ/E3OGOadBN9LPMWdUq/EPV6fVbh5uGW/F4d5Y
-	8ZxCLuXFz1MrZvM8+T8o/knD5LP5gT/bJTGKqEQL+XMgYRWum2aubMdxzjWbqm1/fETptvtFVn8p8
-	DeFBWjKxnixle2wXpPZe+bHa5mxjjXwJwXLq3hVhkWNB4u+sSGlv0O7eKg9Fl0D+8UeY2JfP2U2Ia
-	18x4BvPDDoHIPJylDBxQ==;
+	List-Owner; bh=mrXlPMMC0YCO1JNjj7t0Tmebgc1CAzyPUwoueOdWxOk=; b=i6XoOspzkj6VE0
+	fxGOsD8XTUr9kUOiJ6rhzBeGeOs7DiBuhXTVfWiEwMp4uNULl7czWccG++j6/l9hlzvuTZ/wYDhxI
+	+FQvz67zz2QMhagMBNscRA1Rvf+NWqc4w8VK7YbLiNGZV8oPMU4UT7TlvaAuWgT9XxidSDnrfQbMu
+	hRGz7ufQQcxr5qc1rvUIcpZgjX131uXy/FnjFS7FjbXm7EPJuU214EvXTJm0cPppCesMkUpCH6ElP
+	H9dRD+YcHhKKn5sAim1/xaMeIKKaGVPIyeI6W+2DLcr3J0t7GnsseXwj+h/ZuBv4wSZnimnRE2UJv
+	GCulnIC0i4KKWnGNVSnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6Lu-0004oQ-O6; Thu, 01 Aug 2019 08:22:22 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1ht6Lk-0004ZY-Fa; Thu, 01 Aug 2019 08:22:12 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6Jl-0001Cm-5v
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:10 +0000
-Received: by mail-pf1-x444.google.com with SMTP id r1so33597258pfq.12
+ id 1ht6Jm-0001XT-Nb
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:12 +0000
+Received: by mail-pf1-x442.google.com with SMTP id u14so33623130pfn.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 01:20:07 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=TdEXa/ACn7xvRmbVhm+K3Nf7xZB7iBxOAU/Z5YPY+9w=;
- b=Yc1AA1CJGqSJYLBpPb6+g8zXpFF097IJpE/ujUlSotcolHoh6Y10BNwwJfWdTdJKMs
- /Dlw2wfdWh9TVJ7mGv2zsjbrtaGgR+O375wcrQ5HyBRwIuUBJQf4xfWEonF0z8yGsZ1U
- HzxbcfvgC6DxgjV9aRwgvrwmlM49P4J92MjZ1wPS/8wlr5s+nfyFCM2g+ZLaRbWIjYtE
- txZOPZGuFVQsutVx5gwoLFl/60jilYmI/fOWrIiD7kMj6BT9jRZV2mlzAGt43nPdY85c
- IDRrxRIGx84kE4fcqmVqCPx2MicByt81b5TcVBrsEIWo+MqvzZrp578iEhPlN0HpxEsw
- f0jA==
+ bh=QZrcuQ9yf2dvoM/LK+86CRpxpDI5KmyMnFr+EN3SZok=;
+ b=JQrn7jF9JWShYAafGE5jWBSK5tUub+i5d0k3JeBjKeEx25TQaSaJbJslZkhkHNb+bK
+ QKBOKxd3TZf8QMlTT4Qt5XYcG6u0gxoFzgJwT9QQslAj+EWH0213vShsW2zuWb6VnBN2
+ H5nqpJQeFu8GwiuN5I9rEppi/LrPVQJLiPhzqWaMCg/XjRiHSzSHb+auX92vT2NvMfSj
+ MBoOodjo+7SKXPMXm4C0zwbxomguH+XuMK4Ymqb3IImOa3xZSQsAVjfb1NvQn7qr7Flb
+ UZDtChpZwh8Tl7v7Epe01QEqJaX1ymTnLN21DjAv3mfSq78I++NgjpoX8yq7M2x/pldO
+ gZIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=TdEXa/ACn7xvRmbVhm+K3Nf7xZB7iBxOAU/Z5YPY+9w=;
- b=YIPAAC3m0iqdPXNNEckOGl501tkA28ZSc4DU/3NA2HUkhPSm3AHgR8ZgvbkdQwCEY/
- 5ShlCaI1hc/GooewNWWETTrqngLPh/IwahQKl9nsOeYxDt+2M9GmDqJAxab4IXpxwfoc
- JJdCDvmUOnLVgujgSc0cbmgj3HHrD6zhCe2cgm9k0Fi+D7dObKy2Av6aZk9R4Lxqh2pL
- BDV0nLF0OdpS9O1IIPs87eggP7J8NZzI91UPTiOL8YBajk09WXGD618jgorsNj6/Adg2
- T4x5gZM+bLCmkYK6IcrZembP6DxSv2zN14psi8MQHeMiE+Mqe+48Yh8kJxppVYwOUbZV
- OFTg==
-X-Gm-Message-State: APjAAAWunMAOx9bsvq8k+wDxa1ECur0oRxJuOOf94eWT9WmtJmG8cYFr
- rjyt7rOrlK9C4W4HgStBlYFPAHyB8t4=
-X-Google-Smtp-Source: APXvYqzg+k1IMsuY/0YlKSVfy0FSYlyP0aAAvifk3LfPZy6nOREz9peYXx0wqLLpaox0jbRn5W145Q==
-X-Received: by 2002:a17:90a:2ec1:: with SMTP id
- h1mr7231563pjs.119.1564647606812; 
- Thu, 01 Aug 2019 01:20:06 -0700 (PDT)
+ bh=QZrcuQ9yf2dvoM/LK+86CRpxpDI5KmyMnFr+EN3SZok=;
+ b=lU0qCGUDQGWU2jwejP3VnlulOLU09xWBGKjyCyytU4C5OoPQksiH3yYwjAT0Y1NrYI
+ jg18ZuNBnHwxFyZGjDqCgkpzgpioZkofrjL4R/iuczerqKDE55AfkMRA+f/DVGaVd4wy
+ rP6fhnA5Sn7s+36pnVeMOyB7xXSO0bEl0frZCOL93xl/7aiWCXPQbbC98FGE5QoYNPFd
+ vc0GzpT6pmgtpvS2+TP7Ak/2wai7mVdOKxPJhDCTBhLt3VGdypEIy6Hpo7L3sct7cocE
+ dvP2RPw22u/HCP7CjxdmOXgvLZwty88MHfmbW2hZhQPi0E9Ym8k4lHG+jm9B0OdEci8U
+ 1BRg==
+X-Gm-Message-State: APjAAAWOJfJqn/z1KImKo+ndhZ+zGUn4wIyMyyUxPwNPx1tXFX1A3DgL
+ C9UDdp1SLh8dEXXP7oRUpiC3Aw==
+X-Google-Smtp-Source: APXvYqyrGUQC1ZAWht9Zoam/7t7fuGAI9uez8mB6s7RyA4jBJrQHQZxRXtFNqsg6bkVFghKXE90Eug==
+X-Received: by 2002:a65:518a:: with SMTP id
+ h10mr116068175pgq.117.1564647609294; 
+ Thu, 01 Aug 2019 01:20:09 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id a15sm94846475pfg.102.2019.08.01.01.20.06
+ by smtp.gmail.com with ESMTPSA id u16sm4035318pgm.83.2019.08.01.01.20.08
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 01:20:06 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:08 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org
-Subject: [PATCH ARM32 v4.4 V2 12/47] ARM: bugs: add support for per-processor
- bug checking
-Date: Thu,  1 Aug 2019 13:45:56 +0530
-Message-Id: <812038dccaf90fed1b1331878beb0354e7e4c1d1.1564646727.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM32 v4.4 V2 13/47] ARM: spectre: add Kconfig symbol for CPUs
+ vulnerable to Spectre
+Date: Thu,  1 Aug 2019 13:45:57 +0530
+Message-Id: <f894ea52cb1cc2e7bc2a791741b912387cb4c8e7.1564646727.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1564646727.git.viresh.kumar@linaro.org>
 References: <cover.1564646727.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_012009_252412_4FD40EF2 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20190801_012010_794065_0CCA9321 
+X-CRM114-Status: GOOD (  10.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,16 +112,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit 9d3a04925deeabb97c8e26d940b501a2873e8af3 upstream.
+Commit c58d237d0852a57fde9bc2c310972e8f4e3d155d upstream.
 
-Add support for per-processor bug checking - each processor function
-descriptor gains a function pointer for this check, which must not be
-an __init function.  If non-NULL, this will be called whenever a CPU
-enters the kernel via which ever path (boot CPU, secondary CPU startup,
-CPU resuming, etc.)
-
-This allows processor specific bug checks to validate that workaround
-bits are properly enabled by firmware via all entry paths to the kernel.
+Add a Kconfig symbol for CPUs which are vulnerable to the Spectre
+attacks.
 
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
@@ -131,61 +125,31 @@ Acked-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: David A. Long <dave.long@linaro.org>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm/include/asm/proc-fns.h | 4 ++++
- arch/arm/kernel/bugs.c          | 4 ++++
- arch/arm/mm/proc-macros.S       | 3 ++-
- 3 files changed, 10 insertions(+), 1 deletion(-)
+ arch/arm/mm/Kconfig | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm/include/asm/proc-fns.h b/arch/arm/include/asm/proc-fns.h
-index 8877ad5ffe10..f379f5f849a9 100644
---- a/arch/arm/include/asm/proc-fns.h
-+++ b/arch/arm/include/asm/proc-fns.h
-@@ -36,6 +36,10 @@ extern struct processor {
- 	 * Set up any processor specifics
- 	 */
- 	void (*_proc_init)(void);
-+	/*
-+	 * Check for processor bugs
-+	 */
-+	void (*check_bugs)(void);
- 	/*
- 	 * Disable any processor specifics
- 	 */
-diff --git a/arch/arm/kernel/bugs.c b/arch/arm/kernel/bugs.c
-index 16e7ba2a9cc4..7be511310191 100644
---- a/arch/arm/kernel/bugs.c
-+++ b/arch/arm/kernel/bugs.c
-@@ -5,6 +5,10 @@
+diff --git a/arch/arm/mm/Kconfig b/arch/arm/mm/Kconfig
+index 41218867a9a6..7ef92e6692ab 100644
+--- a/arch/arm/mm/Kconfig
++++ b/arch/arm/mm/Kconfig
+@@ -396,6 +396,7 @@ config CPU_V7
+ 	select CPU_CP15_MPU if !MMU
+ 	select CPU_HAS_ASID if MMU
+ 	select CPU_PABRT_V7
++	select CPU_SPECTRE if MMU
+ 	select CPU_TLB_V7 if MMU
  
- void check_other_bugs(void)
- {
-+#ifdef MULTI_CPU
-+	if (processor.check_bugs)
-+		processor.check_bugs();
-+#endif
- }
+ # ARMv7M
+@@ -793,6 +794,9 @@ config CPU_BPREDICT_DISABLE
+ 	help
+ 	  Say Y here to disable branch prediction.  If unsure, say N.
  
- void __init check_bugs(void)
-diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
-index c671f345266a..212147c78f4b 100644
---- a/arch/arm/mm/proc-macros.S
-+++ b/arch/arm/mm/proc-macros.S
-@@ -258,13 +258,14 @@
- 	mcr	p15, 0, ip, c7, c10, 4		@ data write barrier
- 	.endm
- 
--.macro define_processor_functions name:req, dabort:req, pabort:req, nommu=0, suspend=0
-+.macro define_processor_functions name:req, dabort:req, pabort:req, nommu=0, suspend=0, bugs=0
- 	.type	\name\()_processor_functions, #object
- 	.align 2
- ENTRY(\name\()_processor_functions)
- 	.word	\dabort
- 	.word	\pabort
- 	.word	cpu_\name\()_proc_init
-+	.word	\bugs
- 	.word	cpu_\name\()_proc_fin
- 	.word	cpu_\name\()_reset
- 	.word	cpu_\name\()_do_idle
++config CPU_SPECTRE
++	bool
++
+ config TLS_REG_EMUL
+ 	bool
+ 	select NEED_KUSER_HELPERS
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
