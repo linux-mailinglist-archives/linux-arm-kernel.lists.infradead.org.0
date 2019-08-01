@@ -2,55 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30FD57DF24
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:31:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 211777DF37
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:37:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=62ybPIO+VUSPtocYo81T5HKXZFzFcNtb8AXvC6t+faA=; b=qS/fNc/uFrEVnM
-	9f/r0JQGMI15otyzFg+8jkrZm15WkCYFgmt3gyl4+EEQm6qaUVXV8QyXeoXfmnfmg+zT/QZTrmdnw
-	skWs+VxzSDPHOKHV4zfxSEWUGcBbPwoyGb4WuLou92u2az+xYm8QjORtyFqqdrjVRS98/vndRI7s9
-	Imjoj2Yj+OHt3w6XdZYvkns3iaGiWZgQYu0SThna3GMzjWVQFdFIHWvtgEs8kmrGbkPtIj3sA6yoC
-	xyaa/ubOZTy9nEymIFAZdfLsJOe4eElKzK/krCXc7tPwzmFsDynXMjW4GB/UVJNk2VOZGJKwrBPkR
-	ZsmVMIM5vknkHXc3YBMA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=51pcWiTnk9JKKO6YvKeo1NeGsOUe4D2DJ8t9NuKuBQk=; b=HG7jgGA29Wgfff
+	WURP6FEDgWaP5MNvUeo3gQzlWU12q5IIncV7g9iQSYxPhLgF6jfY9ObTv5SDs4pVYRK9Z4esqhkvc
+	1JcWZheBYrq+tSWfYRFIpHJhjO4Nycpebi+s8tkYRyxLm7U1ec/REY9obFj4xLkldxODNH9t8fwFp
+	TCh5lz8Jp14eORxeL4L2Rj+ZZwRbFHP0FKxRkhyQjeeG4e0X2o28qDhcn3RtjB6lbT7D9G3+6fDZ+
+	xYJSHjRbDnP5I0cDs8TOeqp2SKpdQn5pXvlOhGpmAaxTiaw2An82nR82LtvJeU7b/HaEFKgh62OW6
+	QydUL++S+flhqg3uSDZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htD2u-0007V5-6b; Thu, 01 Aug 2019 15:31:12 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1htD8U-0000qj-2h; Thu, 01 Aug 2019 15:36:58 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htD2k-0007Ud-1G
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 15:31:03 +0000
-X-Originating-IP: 193.154.195.40
-Received: from jirafa.cyrius.com (193-154-195-40.adsl.highway.telekom.at
- [193.154.195.40]) (Authenticated sender: tbm@cyrius.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id F2E1A24000C;
- Thu,  1 Aug 2019 15:30:45 +0000 (UTC)
-Received: by jirafa.cyrius.com (Postfix, from userid 1000)
- id EF92FA3F73; Thu,  1 Aug 2019 17:30:44 +0200 (CEST)
-Date: Thu, 1 Aug 2019 17:30:44 +0200
-From: Martin Michlmayr <tbm@cyrius.com>
-To: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <uwe@kleine-koenig.org>
-Subject: Re: [PATCH v2] ARM: kirkwood: ts219: disable the SoC's RTC
-Message-ID: <20190801153044.GH1843@jirafa.cyrius.com>
-References: <20190731223233.GA15900@taurus.defre.kleine-koenig.org>
+ id 1htD8K-0000q6-7K
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 15:36:49 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 01 Aug 2019 08:36:47 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,334,1559545200"; d="scan'208";a="184278760"
+Received: from unknown (HELO [10.7.201.140]) ([10.7.201.140])
+ by orsmga002.jf.intel.com with ESMTP; 01 Aug 2019 08:36:47 -0700
+Subject: Re: [PATCH v19 00/15] arm64: untag user pointers passed to the kernel
+To: Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>
+References: <cover.1563904656.git.andreyknvl@google.com>
+ <8c618cc9-ae68-9769-c5bb-67f1295abc4e@intel.com>
+ <13b4cf53-3ecb-f7e7-b504-d77af15d77aa@arm.com>
+ <CAAeHK+zTFqsLiB3Wf0bAi5A8ukQX5ZuvfUg4td-=r5UhBsUBOQ@mail.gmail.com>
+From: Dave Hansen <dave.hansen@intel.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=dave.hansen@intel.com; keydata=
+ mQINBE6HMP0BEADIMA3XYkQfF3dwHlj58Yjsc4E5y5G67cfbt8dvaUq2fx1lR0K9h1bOI6fC
+ oAiUXvGAOxPDsB/P6UEOISPpLl5IuYsSwAeZGkdQ5g6m1xq7AlDJQZddhr/1DC/nMVa/2BoY
+ 2UnKuZuSBu7lgOE193+7Uks3416N2hTkyKUSNkduyoZ9F5twiBhxPJwPtn/wnch6n5RsoXsb
+ ygOEDxLEsSk/7eyFycjE+btUtAWZtx+HseyaGfqkZK0Z9bT1lsaHecmB203xShwCPT49Blxz
+ VOab8668QpaEOdLGhtvrVYVK7x4skyT3nGWcgDCl5/Vp3TWA4K+IofwvXzX2ON/Mj7aQwf5W
+ iC+3nWC7q0uxKwwsddJ0Nu+dpA/UORQWa1NiAftEoSpk5+nUUi0WE+5DRm0H+TXKBWMGNCFn
+ c6+EKg5zQaa8KqymHcOrSXNPmzJuXvDQ8uj2J8XuzCZfK4uy1+YdIr0yyEMI7mdh4KX50LO1
+ pmowEqDh7dLShTOif/7UtQYrzYq9cPnjU2ZW4qd5Qz2joSGTG9eCXLz5PRe5SqHxv6ljk8mb
+ ApNuY7bOXO/A7T2j5RwXIlcmssqIjBcxsRRoIbpCwWWGjkYjzYCjgsNFL6rt4OL11OUF37wL
+ QcTl7fbCGv53KfKPdYD5hcbguLKi/aCccJK18ZwNjFhqr4MliQARAQABtEVEYXZpZCBDaHJp
+ c3RvcGhlciBIYW5zZW4gKEludGVsIFdvcmsgQWRkcmVzcykgPGRhdmUuaGFuc2VuQGludGVs
+ LmNvbT6JAjgEEwECACIFAlQ+9J0CGwMGCwkIBwMCBhUIAgkKCwQWAgMBAh4BAheAAAoJEGg1
+ lTBwyZKwLZUP/0dnbhDc229u2u6WtK1s1cSd9WsflGXGagkR6liJ4um3XCfYWDHvIdkHYC1t
+ MNcVHFBwmQkawxsYvgO8kXT3SaFZe4ISfB4K4CL2qp4JO+nJdlFUbZI7cz/Td9z8nHjMcWYF
+ IQuTsWOLs/LBMTs+ANumibtw6UkiGVD3dfHJAOPNApjVr+M0P/lVmTeP8w0uVcd2syiaU5jB
+ aht9CYATn+ytFGWZnBEEQFnqcibIaOrmoBLu2b3fKJEd8Jp7NHDSIdrvrMjYynmc6sZKUqH2
+ I1qOevaa8jUg7wlLJAWGfIqnu85kkqrVOkbNbk4TPub7VOqA6qG5GCNEIv6ZY7HLYd/vAkVY
+ E8Plzq/NwLAuOWxvGrOl7OPuwVeR4hBDfcrNb990MFPpjGgACzAZyjdmYoMu8j3/MAEW4P0z
+ F5+EYJAOZ+z212y1pchNNauehORXgjrNKsZwxwKpPY9qb84E3O9KYpwfATsqOoQ6tTgr+1BR
+ CCwP712H+E9U5HJ0iibN/CDZFVPL1bRerHziuwuQuvE0qWg0+0SChFe9oq0KAwEkVs6ZDMB2
+ P16MieEEQ6StQRlvy2YBv80L1TMl3T90Bo1UUn6ARXEpcbFE0/aORH/jEXcRteb+vuik5UGY
+ 5TsyLYdPur3TXm7XDBdmmyQVJjnJKYK9AQxj95KlXLVO38lcuQINBFRjzmoBEACyAxbvUEhd
+ GDGNg0JhDdezyTdN8C9BFsdxyTLnSH31NRiyp1QtuxvcqGZjb2trDVuCbIzRrgMZLVgo3upr
+ MIOx1CXEgmn23Zhh0EpdVHM8IKx9Z7V0r+rrpRWFE8/wQZngKYVi49PGoZj50ZEifEJ5qn/H
+ Nsp2+Y+bTUjDdgWMATg9DiFMyv8fvoqgNsNyrrZTnSgoLzdxr89FGHZCoSoAK8gfgFHuO54B
+ lI8QOfPDG9WDPJ66HCodjTlBEr/Cwq6GruxS5i2Y33YVqxvFvDa1tUtl+iJ2SWKS9kCai2DR
+ 3BwVONJEYSDQaven/EHMlY1q8Vln3lGPsS11vSUK3QcNJjmrgYxH5KsVsf6PNRj9mp8Z1kIG
+ qjRx08+nnyStWC0gZH6NrYyS9rpqH3j+hA2WcI7De51L4Rv9pFwzp161mvtc6eC/GxaiUGuH
+ BNAVP0PY0fqvIC68p3rLIAW3f97uv4ce2RSQ7LbsPsimOeCo/5vgS6YQsj83E+AipPr09Caj
+ 0hloj+hFoqiticNpmsxdWKoOsV0PftcQvBCCYuhKbZV9s5hjt9qn8CE86A5g5KqDf83Fxqm/
+ vXKgHNFHE5zgXGZnrmaf6resQzbvJHO0Fb0CcIohzrpPaL3YepcLDoCCgElGMGQjdCcSQ+Ci
+ FCRl0Bvyj1YZUql+ZkptgGjikQARAQABiQIfBBgBAgAJBQJUY85qAhsMAAoJEGg1lTBwyZKw
+ l4IQAIKHs/9po4spZDFyfDjunimEhVHqlUt7ggR1Hsl/tkvTSze8pI1P6dGp2XW6AnH1iayn
+ yRcoyT0ZJ+Zmm4xAH1zqKjWplzqdb/dO28qk0bPso8+1oPO8oDhLm1+tY+cOvufXkBTm+whm
+ +AyNTjaCRt6aSMnA/QHVGSJ8grrTJCoACVNhnXg/R0g90g8iV8Q+IBZyDkG0tBThaDdw1B2l
+ asInUTeb9EiVfL/Zjdg5VWiF9LL7iS+9hTeVdR09vThQ/DhVbCNxVk+DtyBHsjOKifrVsYep
+ WpRGBIAu3bK8eXtyvrw1igWTNs2wazJ71+0z2jMzbclKAyRHKU9JdN6Hkkgr2nPb561yjcB8
+ sIq1pFXKyO+nKy6SZYxOvHxCcjk2fkw6UmPU6/j/nQlj2lfOAgNVKuDLothIxzi8pndB8Jju
+ KktE5HJqUUMXePkAYIxEQ0mMc8Po7tuXdejgPMwgP7x65xtfEqI0RuzbUioFltsp1jUaRwQZ
+ MTsCeQDdjpgHsj+P2ZDeEKCbma4m6Ez/YWs4+zDm1X8uZDkZcfQlD9NldbKDJEXLIjYWo1PH
+ hYepSffIWPyvBMBTW2W5FRjJ4vLRrJSUoEfJuPQ3vW9Y73foyo/qFoURHO48AinGPZ7PC7TF
+ vUaNOTjKedrqHkaOcqB185ahG2had0xnFsDPlx5y
+Message-ID: <96fd8da4-a912-f6cc-2b32-5791027dbbd5@intel.com>
+Date: Thu, 1 Aug 2019 08:36:47 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190731223233.GA15900@taurus.defre.kleine-koenig.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAAeHK+zTFqsLiB3Wf0bAi5A8ukQX5ZuvfUg4td-=r5UhBsUBOQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_083102_230338_63C97A01 
-X-CRM114-Status: UNSURE (   8.68  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190801_083648_317638_38408F9F 
+X-CRM114-Status: GOOD (  14.06  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,44 +114,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Jason Cooper <jason@lakedaemon.net>, Oliver Hartkopp <socketcan@hartkopp.net>,
- Gregory Clement <gregory.clement@bootlin.com>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Uwe Kleine-K=F6nig <uwe@kleine-koenig.org> [2019-08-01 00:32]:
-> The internal RTC doesn't work, loading the driver only yields
-> =
+On 8/1/19 5:48 AM, Andrey Konovalov wrote:
+> On Thu, Aug 1, 2019 at 2:11 PM Kevin Brodsky <kevin.brodsky@arm.com> wrote:
+>> On 31/07/2019 17:50, Dave Hansen wrote:
+>>> On 7/23/19 10:58 AM, Andrey Konovalov wrote:
+>>>> The mmap and mremap (only new_addr) syscalls do not currently accept
+>>>> tagged addresses. Architectures may interpret the tag as a background
+>>>> colour for the corresponding vma.
+>>> What the heck is a "background colour"? :)
+>> Good point, this is some jargon that we started using for MTE, the idea being that
+>> the kernel could set a tag value (specified during mmap()) as "background colour" for
+>> anonymous pages allocated in that range.
+>>
+>> Anyway, this patch series is not about MTE. Andrey, for v20 (if any), I think it's
+>> best to drop this last sentence to avoid any confusion.
+> Sure, thanks!
 
-> 	rtc-mv f1010300.rtc: internal RTC not ticking
-> =
+OK, but what does that mean for tagged addresses getting passed to
+mmap/mremap?  That sentence read to me like "architectures might allow
+tags for ...something...".  So do we accept tagged addresses into those
+syscalls?
 
-> . So disable it.
-> =
-
-> Reviewed-by: Andrew Lunn <andrew@lunn.ch>
-> Signed-off-by: Uwe Kleine-K=F6nig <uwe@kleine-koenig.org>
-
-Acked-by: Martin Michlmayr <tbm@cyrius.com>
-
-This solves an issue I reported back in 2009, as Oliver Hartkopp
-pointed out to my privately:
-https://linux-arm-kernel.infradead.narkive.com/jySn4Wsw/patch-kirkwood-don-=
-t-initialize-marvell-rtc-for-all-boards
-
-(I contributed to the QNAP board support file in past but that was
-replaced by the DT files.)
-
--- =
-
-Martin Michlmayr
-https://www.cyrius.com/
 
 _______________________________________________
 linux-arm-kernel mailing list
