@@ -2,56 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 009377DFCB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 18:10:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 943A37DFE1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 18:14:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CVdaPfEkWiZRiBguqA6PrVLiD+JoA7yf5WQUiHW0Nh8=; b=oDwhQZz/J1epW4o3/Qb1zR+Om
-	1sX2ksYkAjj4SxkH5031+qJpsxHaL4J4PrPD6a5B+I7IPQlcP02qfi92FbuhIe+GofEjGRK2U8Eya
-	6B7KffXA2z6Zvx5uizaTcjD/8r1qaw5IkiBtMU5+kjs7U3NyujKLOe2iITojLdIOf6fKp1neaa/Gd
-	CwnuQXxmEKu5Q5pjoeqM8WKYF5+yFEmdfjg+AF1Q+jxdN8ymgsYmHc3CIDa1owGA3P+2cwmjBrwRv
-	oABWdZNWILhu4JxOustrGA3jK9+vweERWH198MQrMYUll7MFUKAju3OJo/ezo8x2h4Hm1a40uCnbA
-	KGN9xYZ4w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oRwr64qsZsf64toPdis0b4xedNhK20W0rUe2BsgcnYw=; b=PncAm/OqqQL5Es
+	ytCJfygcs97vr25ZRgDmcynh7C+hsC4iOYOOhqZ9WMLgre7FiTU8ApYrf+uY1zQXlsNtj+R7IuCI4
+	UmLoaMznM6baebkBl+gRPtD3EK3O8IhPxN9imulnYF/aGjMo+4thpNx1I/35TSu1eYBONpyLDNO4K
+	1e9QcDs27kWuJI1HtY4Yzoje8/DkO1NC9mYyO6PFbcVZnUs77/QITWgai3NJGJG3TtPR9myPb8B7X
+	9gvGeUVnZQLGPLzB27F91ieuNjrghdO75hEGtCxz46e+YvMcGlivyWII+d2RrIG8EC7WwY2xJJbjn
+	SY2FFRieuTcYIikVo7eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htDfB-0007tL-No; Thu, 01 Aug 2019 16:10:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1htDf3-0007t0-5F
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 16:10:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D029337;
- Thu,  1 Aug 2019 09:10:36 -0700 (PDT)
-Received: from [192.168.122.164] (u201426.austin.arm.com [10.118.28.59])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 31E693F694;
- Thu,  1 Aug 2019 09:10:36 -0700 (PDT)
-Subject: Re: [PATCH v4 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
-To: Sudeep Holla <sudeep.holla@arm.com>
-References: <20190801034634.26913-1-jeremy.linton@arm.com>
- <20190801034634.26913-2-jeremy.linton@arm.com>
- <20190801155736.GD23424@e107155-lin>
-From: Jeremy Linton <jeremy.linton@arm.com>
-Message-ID: <959c5297-a563-21b6-c38b-0cc50ffbce8b@arm.com>
-Date: Thu, 1 Aug 2019 11:10:35 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1htDj9-0008VU-7Y; Thu, 01 Aug 2019 16:14:51 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1htDj1-0008V1-18
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 16:14:44 +0000
+Received: by mail-lj1-x244.google.com with SMTP id m23so69899750lje.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 01 Aug 2019 09:14:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=t+mJh2gE4B8ztRCbGNmN1VpOh+YJUGLCZLfK7th1+30=;
+ b=vG6nYzlkY+HZk89od2/NnrIZ/ItJC5M8rfwtN6ZI+z+NDAaOTtGaanj9TXbkn7DvKd
+ ByLDHmtnGeZPzOMcd5poXPRViPJFD7lqD4EYN9Czd/AGzGJcnZhHEyZ4YWxe+R6RNHD5
+ /9+JHqSEtQYJ+qdBan4xsQFm+QmqVikLcf2NvsNxDO0Zcjw7pb4UeTAd6ooFEzE/7oVO
+ ZShZWs+hnK/gflB7EdVxglG72CC9uluARqftDa4xHrVxAThpNCBj5+9ZO5MdS2KlMZIK
+ 16X7eRIOsR+xF8oq66DPpDKLRLFGsmXlJP2lLfhTOP/jBxG2plhGtFdxTZJdh1J2gZpy
+ Pqmg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=t+mJh2gE4B8ztRCbGNmN1VpOh+YJUGLCZLfK7th1+30=;
+ b=NcJliWgVt9R7g+HBxgWWoodzFH8pa/6hR7LYAsX5TuMm9Y/stuKNzKEAdzCEJg617T
+ 1YDv/i/OP4wWt9h3gQxIbzMDckHzgkbUMD0rb/kayf48VPquQWOYmWv0Yjcv4oqEOJtx
+ tU5nDu9D6eCKJdwPirQhya8bBWPXI+H8ILnNIfpCmMyXQnB8yaDT6mHbLBP4KBf8rCG6
+ 0vey0GtV1JVptl2RV1ka/1N4ttYjHyKPzQwRSfU2icImsbSrRv37PLjEpGZW72sBwhen
+ 9NtBXAxGfoy+6V0hgKhU9An+k8iHI1Nx6p7L9K63VgXjDKcDy+DsfH3NLzJit+ghdAvW
+ J3dg==
+X-Gm-Message-State: APjAAAU0atkY9CoM3Yf2q+721hVdHwbsJdMklKY6TZwCuiY1NfK8jNRQ
+ hOBqL96pr4vDpE3FJ1aK+zyExHzP3ns8izdX2+I=
+X-Google-Smtp-Source: APXvYqxBlptLyw+p5zzhagnNEAZ0fiBRoYdvUVlpzRecUG6TqeZwuXCeDc3ihPyjkJ3URQkHMXE+c0YKixFeb6gBAIY=
+X-Received: by 2002:a2e:970a:: with SMTP id r10mr64728348lji.115.1564676081171; 
+ Thu, 01 Aug 2019 09:14:41 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190801155736.GD23424@e107155-lin>
-Content-Language: en-US
+References: <20190731163330.32532-1-sebastien.szymanski@armadeus.com>
+In-Reply-To: <20190731163330.32532-1-sebastien.szymanski@armadeus.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Thu, 1 Aug 2019 13:14:52 -0300
+Message-ID: <CAOMZO5Aq5WEGZ0uR5VS0A+UO_3LpGMxp9Y_agQSx1dTshATVEQ@mail.gmail.com>
+Subject: Re: [PATCH v3 2/3] media: imx7-media-csi: add i.MX6UL support
+To: =?UTF-8?Q?S=C3=A9bastien_Szymanski?= <sebastien.szymanski@armadeus.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_091037_290165_9EF222B1 
-X-CRM114-Status: GOOD (  23.22  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190801_091443_129604_96773CA8 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,123 +94,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lorenzo.pieralisi@arm.com, catalin.marinas@arm.com, rjw@rjwysocki.net,
- linux-acpi@vger.kernel.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, lenb@kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Rui Miguel Silva <rmfrfs@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Steve Longerbeam <slongerbeam@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-
-Thanks for looking at this.
-
-On 8/1/19 10:57 AM, Sudeep Holla wrote:
-> 
-> Hi Jeremy,
-> 
-> On Wed, Jul 31, 2019 at 10:46:33PM -0500, Jeremy Linton wrote:
->> ACPI 6.3 adds a flag to the CPU node to indicate whether
->> the given PE is a thread. Add a function to return that
->> information for a given linux logical CPU.
->>
-> 
-> Apart from few minor nits,
-> 
-> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-> 
->> Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
->> ---
->>   drivers/acpi/pptt.c  | 54 +++++++++++++++++++++++++++++++++++++++++++-
->>   include/linux/acpi.h |  5 ++++
->>   2 files changed, 58 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/acpi/pptt.c b/drivers/acpi/pptt.c
->> index 1e7ac0bd0d3a..84718f6cb741 100644
->> --- a/drivers/acpi/pptt.c
->> +++ b/drivers/acpi/pptt.c
->> @@ -540,6 +540,44 @@ static int find_acpi_cpu_topology_tag(unsigned int cpu, int level, int flag)
->>   	return retval;
->>   }
->>
->> +/**
->> + * check_acpi_cpu_flag() - Determine if CPU node has a flag set
->> + * @cpu: Kernel logical CPU number
->> + * @rev: The PPTT revision defining the flag
-> 
-> [nit] I would rather put it as minimum PPTT revision that supports the
-> flag. It aligns with the code too as we are not looking for exact match.
-
-Ok, sure.
-
-
-> 
->> + * @flag: The flag itself
->> + *
->> + * Check the node representing a CPU for a given flag.
->> + *
->> + * Return: -ENOENT if the PPTT doesn't exist, the CPU cannot be found or
->> + *	   the table revision isn't new enough.
->> + *	   1, any passed flag set
->> + *	   0, flag unset
->> + */
->> +static int check_acpi_cpu_flag(unsigned int cpu, int rev, u32 flag)
->> +{
->> +	struct acpi_table_header *table;
->> +	acpi_status status;
->> +	u32 acpi_cpu_id = get_acpi_id_for_cpu(cpu);
->> +	struct acpi_pptt_processor *cpu_node = NULL;
->> +	int ret = -ENOENT;
->> +
->> +	status = acpi_get_table(ACPI_SIG_PPTT, 0, &table);
->> +	if (ACPI_FAILURE(status)) {
->> +		acpi_pptt_warn_missing();
->> +		return ret;
->> +	}
->> +
->> +	if (table->revision >= rev)
->> +		cpu_node = acpi_find_processor_node(table, acpi_cpu_id);
->> +
->> +	if (cpu_node)
->> +		ret = (cpu_node->flags & flag) != 0;
->> +
->> +	acpi_put_table(table);
->> +
->> +	return ret;
->> +}
->> +
->>   /**
->>    * acpi_find_last_cache_level() - Determines the number of cache levels for a PE
->>    * @cpu: Kernel logical CPU number
->> @@ -604,6 +642,21 @@ int cache_setup_acpi(unsigned int cpu)
->>   	return status;
->>   }
->>
->> +/**
->> + * acpi_pptt_cpu_is_thread() - Determine if CPU is a thread
->> + * @cpu: Kernel logical CPU number
->> + *
-> 
-> [nit] If you spin the patch again, you can drop extra line space here.
-
-Sure..
-
-
-> 
-> --
-> Regards,
-> Sudeep
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCBKdWwgMzEsIDIwMTkgYXQgMTozMyBQTSBTw6liYXN0aWVuIFN6eW1hbnNraQo8c2Vi
+YXN0aWVuLnN6eW1hbnNraUBhcm1hZGV1cy5jb20+IHdyb3RlOgo+Cj4gaS5NWDcgYW5kIGkuTVg2
+VUwvTCBoYXZlIHRoZSBzYW1lIENTSSBjb250cm9sbGVyLiBTbyBhZGQgaS5NWDZVTC9MIHN1cHBv
+cnQKPiB0byBpbXg3LW1lZGlhLWNzaSBkcml2ZXIuCj4KPiBTaWduZWQtb2ZmLWJ5OiBTw6liYXN0
+aWVuIFN6eW1hbnNraSA8c2ViYXN0aWVuLnN6eW1hbnNraUBhcm1hZGV1cy5jb20+CgpSZXZpZXdl
+ZC1ieTogRmFiaW8gRXN0ZXZhbSA8ZmVzdGV2YW1AZ21haWwuY29tPgoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
