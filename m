@@ -2,61 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4253A7D9B4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 12:56:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 127647D9BC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 12:57:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mmd0lfqp1jQQOPgQA5+ZJwSEMPC8pcwws8+swDO8Gos=; b=PnwDsfFRS346RE
-	N9wMhIXAzZq0BRiI9JzPsnSJDeN2XRb3BQk7R1HB7lc+OtvbiRnT2jlMkpQCqCk+kGnFecRaqfQAh
-	o+N9/eY6R+A0eYTuUerIOlu0QZ3ffXvsn8JszKe+E1InO2orLVWpNWm72/qb5j0Mum2QKR0ZBfEql
-	XDTi/X5g0ALrUUwqVYJp1XrKZGyVmWqR3JbFIOu2ThxTIcbAHY2LWqtNixINWsyphCpsDYEyAzIhZ
-	NFhra3DJZbN7Zxc/jH4zkDTP1nJBU8fhV2UpGt5T6HoYhOYYd72eZPinYa3ZIYl/PqJShV3sCF++i
-	rUt2zBhF7LO5eHy4xknQ==;
+	List-Owner; bh=niJAaVZl7cw9V25nyZw9AZckgt+fV6mG/xvOpWG1xQc=; b=elU9Er0soU3hUr
+	8nxlq23vxi3mlb7IEHMFL8S9IPQkNdy5DRpvzquYRKj3oddO1JdY6rPJ3GEgYYrCod6j90Vq8W4/W
+	lW0Jzw+CDOKOmt8zegguzs+0eVouWMK7UAi10WhDw1B7HRWnZS8i6oFJPnGLlJxOU6cueuI3NYORr
+	8n7YrTwuy9uinhD1R5dweA9X6DcmX0BiSPlbqEoDvB9PTlYMhRKSYYIXTICsYb6k5qo//EWiEpvNo
+	nJeSrr8AS4R31kRFeky7MisL6Vo6wGbLsFXSyHQ1wOj+r7tejmB7fZhPK88DRTPoXX2Iy5iPU+ioX
+	lrllyTTsjHYHsTtxwemg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht8l0-000581-R3; Thu, 01 Aug 2019 10:56:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ht8ls-0005O6-FL; Thu, 01 Aug 2019 10:57:20 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht8kn-00057b-0o
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 10:56:14 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5A3C5206A2;
- Thu,  1 Aug 2019 10:56:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564656972;
- bh=hEWPoHC2u0L2OQ602Rt9JYecpNq6rT2D5lRNOV6EJFU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=k8ZHUmgL4RiR72aF/r/NfwdIub0yuNpmyfxvq9K80F9dNakP0v9ogn65gm9p3ANyQ
- hDGJYgTMuUsN0TKgklbv6+YKOtzNnhLaOZnAA34X4ELIs50q2iRgf/nQPS2sqmvVED
- YUaQeD9fIk98KQ2f1nHgh8l9yom3INB26JLKiK/U=
-Date: Thu, 1 Aug 2019 11:56:08 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 2/2] perf/smmuv3: Validate groups for global filtering
-Message-ID: <20190801105607.aizjw4l7rvi7vnpw@willie-the-truck>
-References: <7108cdcc6fdce8dd1cfd869849bd78d05bac870f.1564580090.git.robin.murphy@arm.com>
- <1921604dc4cd820363ccf728ade6508e0987e082.1564580090.git.robin.murphy@arm.com>
+ id 1ht8lf-0005Nc-BZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 10:57:08 +0000
+Received: by mail-ot1-x343.google.com with SMTP id q20so73674489otl.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 01 Aug 2019 03:57:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hd7las5WHwGzz6GvQjADo5I++sDkSf5nviorVGtyQcE=;
+ b=PqfKbEnWXKkq3eNulLto7yi9lSI+Cu1qqKGtfNMTMolybjCJNKx/EfjVoaa4dzEGpe
+ YN5mv6/cQhN/sKjjOnK5pFdXetL2YRFqZpuqIYdgvjkKNCR+UTzu/gn90WE/SNVKm8u8
+ FvwCGE+Sb/H7dbTK0+5bwKgZcI5V/obbh166PRCvpbJbMNaTPG4DHmUn6KkIxIEnC4e+
+ InAovzKaXJ+IPbWlSXOPPOzq8POG8n+NVaMkzC1B3BAGJLpyNCc4lVDi6AhIj1WKfsvu
+ hfKoSSGvwv4onkbESQ1eX70eno+XRnTq30mkyCRhaja9f/VKH8sMUsL8zfjNgRyZeDeZ
+ jT9Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hd7las5WHwGzz6GvQjADo5I++sDkSf5nviorVGtyQcE=;
+ b=L+Sn17hF7862SoqfRogZXFLRSXjo9T0RvW7HYNBBdl1nGU27jyRBlYl3X1rvQDpsHY
+ CwygGEhDihQlJjNxX6JpydS4531KG2Yc5wz+Kk55Z7m6wsfOTvJCi6ufQBNZOLtyEAoi
+ 1+zU5J7LRHbYdF8C+ADIiIeCf9zzoTIKKVKLlqUGEV9QRXEC0c+xYEqwthfu/4MbTE55
+ 7QRy0doWUzCA+f9Ch3WmDL8Bgn1pGQuLtHB0Pp+LlQn+HQ+pwDHyBGZIZwKnFAzSFsuR
+ 7jisPgMeeQVJovxID0d6DzjG46mZlWiRgVO/A8Fja5aTJ+t7RML0PH7u8rhaAFKtea7x
+ 489w==
+X-Gm-Message-State: APjAAAWJ4tGR/36BPZpGmzl1S5YwgYHMNCa866uIC0SDnr2zZO3NDjOb
+ XT9y3Q09w+0bc7+Fh6g8AKEF6HjG+vTEbyLLhx8=
+X-Google-Smtp-Source: APXvYqyfKXbvFDjh+JM1X/Bzt1lb6R0qg33DyHIKSyUk2XkUHj6iUg50/bykkOLXHf80fVEm/Bs9KbSkCV52fdn0HYI=
+X-Received: by 2002:a9d:6b96:: with SMTP id b22mr26658655otq.262.1564657025810; 
+ Thu, 01 Aug 2019 03:57:05 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1921604dc4cd820363ccf728ade6508e0987e082.1564580090.git.robin.murphy@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <1564496445-53486-1-git-send-email-julien.thierry.kdev@gmail.com>
+ <20190801104119.quzlr5artm4s2sbc@willie-the-truck>
+ <a7aaf75d-af41-e162-8b78-84342be36907@arm.com>
+In-Reply-To: <a7aaf75d-af41-e162-8b78-84342be36907@arm.com>
+From: Julien Thierry <julien.thierry.kdev@gmail.com>
+Date: Thu, 1 Aug 2019 11:56:54 +0100
+Message-ID: <CAA3o8kyYnek=7boO_szVoNvQks8DFGN5s37ROQKqwyWZQZiXZw@mail.gmail.com>
+Subject: Re: [PATCH] arm64: Relax ICC_PMR_EL1 accesses when ICC_CTLR_EL1.PMHE
+ is clear
+To: Marc Zyngier <marc.zyngier@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_035613_089207_A7A11B9A 
-X-CRM114-Status: GOOD (  17.43  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190801_035707_394135_911F0B3B 
+X-CRM114-Status: GOOD (  16.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (julien.thierry.kdev[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -65,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,69 +95,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, linux-arm-kernel@lists.infradead.org,
- shameerali.kolothum.thodi@huawei.com
+Cc: Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ huawei.libin@huawei.com, guohanjun@huawei.com, liwei391@huawei.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 02:37:42PM +0100, Robin Murphy wrote:
-> With global filtering, it becomes possible for users to construct
-> self-contradictory groups with conflicting filters. Make sure we
-> cover that when initially validating events.
-> 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
->  drivers/perf/arm_smmuv3_pmu.c | 16 ++++++++++++++++
->  1 file changed, 16 insertions(+)
-> 
-> diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
-> index dd40df2ac895..e1e41d2fea94 100644
-> --- a/drivers/perf/arm_smmuv3_pmu.c
-> +++ b/drivers/perf/arm_smmuv3_pmu.c
-> @@ -324,6 +324,8 @@ static int smmu_pmu_event_init(struct perf_event *event)
->  	struct device *dev = smmu_pmu->dev;
->  	struct perf_event *sibling;
->  	int group_num_events = 1;
-> +	bool has_filter;
-> +	u32 filter_span, filter_sid;
->  	u16 event_id;
->  
->  	if (event->attr.type != event->pmu->type)
-> @@ -354,6 +356,10 @@ static int smmu_pmu_event_init(struct perf_event *event)
->  		return -EINVAL;
->  	}
->  
-> +	has_filter = get_filter_enable(event);
-> +	filter_span = get_filter_span(event);
-> +	filter_sid = get_filter_stream_id(event);
-> +
->  	for_each_sibling_event(sibling, event->group_leader) {
->  		if (sibling->pmu != event->pmu &&
->  		    !is_software_event(sibling)) {
-> @@ -363,6 +369,16 @@ static int smmu_pmu_event_init(struct perf_event *event)
->  
->  		if (++group_num_events >= smmu_pmu->num_counters)
->  			return -EINVAL;
-> +
-> +		if (smmu_pmu->global_filter) {
-> +			if (has_filter != (bool)get_filter_enable(sibling))
-> +				return -EINVAL;
-> +
-> +			if (has_filter &&
-> +			    (filter_span != get_filter_span(sibling) ||
-> +			    filter_sid != get_filter_stream_id (sibling)))
-> +				return -EINVAL;
-> +		}
+On Thu, 1 Aug 2019 at 11:51, Marc Zyngier <marc.zyngier@arm.com> wrote:
+>
+> On 01/08/2019 11:41, Will Deacon wrote:
+> > On Tue, Jul 30, 2019 at 03:20:45PM +0100, Julien Thierry wrote:
+> >> From: Marc Zyngier <marc.zyngier@arm.com>
+> >>
+> >> The GICv3 architecture specification is incredibly misleading when it
+> >> comes to PMR and the requirement for a DSB. It turns out that this DSB
+> >> is only required if the CPU interface sends an Upstream Control
+> >> message to the redistributor in order to update the RD's view of PMR.
+> >>
+> >> This message is only sent when ICC_CTLR_EL1.PMHE is set, which isn't
+> >> the case in Linux. It can still be set from EL3, so some special care
+> >> is required. But the upshot is that in the (hopefuly large) majority
+> >> of the cases, we can drop the DSB altogether.
+> >>
+> >> This requires yet another capability and some more runtime patching.
+> >
+> > Hmm, does this actually require explicit runtime patching, or can we make
+> > things a bit simpler with a static key?
+>
+> The hunk in entry.S is the blocker, AFAICS. Do we have a way to express
+> static keys in asm?
+>
 
-Can we avoid duplicating the validation logic from
-smmu_pmu_apply_event_filter() by adding the group to a fake PMU, like we
-do for the CPU PMU and the DSU PMU? You'll probably need to do a bit
-of surgery on 'struct smmu_pmu' to move out the bits you need, but I
-think it would be better that way.
+Not that I'm aware of. I could leave the alternative in entry.S and
+use a static_key for the pmr_sync() macro.
 
-Will
+Does it change much over all? I don't see the static key simplifying
+things too much, but I don't mind using that instead.
+
+Cheers,
+
+-- 
+Julien Thierry
 
 _______________________________________________
 linux-arm-kernel mailing list
