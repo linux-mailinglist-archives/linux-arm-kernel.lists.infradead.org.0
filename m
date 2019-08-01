@@ -2,89 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 522677D6BC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 09:55:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B331F7D6C9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 09:58:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aycq7OoC5zzlt+lVZwqii4WJv1xCXZed5Fr7uHTSERI=; b=kGJkIXT1jRITW/
-	cpts2q+4dAI+Bcl0iYOH57zMNGqCfy7WChRn6MJRVXppAsmbHfsH6xwAWVy5Cd8GsdR4M8nnQzzNW
-	ndiDTWQ5ZNiWtt7UIHjdGJesr1vNRK5VqUlzfmwPj7cLLfM4ck06qxGE9TH+DNP55a/iOQ5BsZry1
-	MDyihtjWNZZaCYSidZR3pOB00iN28tXxEFfA8OM4ewukRS87svCZqagYac3M8QaZ0Nsam7A8xTkKz
-	rueSTL7h583sp8VBtTBwuZ55uRi4IaoDc8BuJ0uIKq5I8MixYy3b87X1kCAxzemVB2PnEdd/KhrNG
-	1s6komo4E9/IaueyM5xw==;
+	List-Owner; bh=Up3nt1j68Coxp/FPbGe4Zt0RV3N6xtKmihG4SmL0Nk4=; b=CTLbdRlAJQ0IXu
+	pZb5MbvAtmACslOLqzkmbI5Oxg2u57tXO5xV9/mK+fJCSo5Uztknt7+6pbKjYTl67/E/xvbx7MT9A
+	RvJObUU4qKil/Ah0jMpXxc9k2V4JsbTUVTiL/exmt/mQRtzbKIvC9C742ob5zmN6iaIjNYY2ehzf/
+	0uhjmzN1fOdNKsiNSH1EzTz/MAXgWHCSX8zW6HscikJqIizGNx0IWa3vgQwqZKAsQRVJv4UWrTif4
+	hnfAHroYUetlHOQABTbqFRNuwajaTGCtgh5NpYT9qTr3/dIsDrJDbPVswvyBeaDQ8VND8YxrQ7GTH
+	rOKIJEo1Wl9FksG0gTfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht5vx-0002k1-La; Thu, 01 Aug 2019 07:55:33 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1ht5zB-00046P-Dv; Thu, 01 Aug 2019 07:58:53 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht5vU-000176-2c
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 07:55:08 +0000
-Received: by mail-wm1-x341.google.com with SMTP id x15so63566890wmj.3
+ id 1ht5z5-00045R-23
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 07:58:48 +0000
+Received: by mail-lf1-x144.google.com with SMTP id x3so49612871lfc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 00:55:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=S/U2vfr6KpQVUGk7LGivXBjTe3cQxbkb3JGHh9Y0Z5g=;
- b=GVM7VG1fhWn1thASAa3dEu1eaGoxMvUZKilOXRoZnyn5VPQTS8oN3mtNLX1TSuHFHu
- TLyEvanhuCJR7IlVKEusnMRkhmu8iA9hYUHH+HPeJgIw4s6CZdSGNQfA7i+CkFfkok86
- RORWtqYMWlgaBN0Zm/3weiXE28vfWRwS8Uf6WvUQ8ytDbv/240yNK1IFBoMArjiUyj2x
- pATmZz2YuFfYgItWgnafvVKgU80AMkIoiKJpb7Nies3ccLwGPEjhaxGrFBh3NaJDlZfD
- eXgQjsMyYZ5ZIlSObmFtLJOu+2REVIEOQl8bkjoiLdrpl7kXhBzlsvXfwrSJ4SkiyHbu
- rC9Q==
+ Thu, 01 Aug 2019 00:58:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7KXLQpVfkqV0NkCYw8UjiB+5rejcfZgxPXsUmGm7V/0=;
+ b=sSXfHrLbSWYOGs8KaK1hqPPLlLXMXxIBBJstsrMzQsi+667jQGLbwjDjxh3KfCrW0z
+ UaDglwbPR5kBydRmx7Ii16KtUJWRC0S8laKgopb2JG0n6aqt8i3JIG26mCejzCDl/D5Q
+ B8HBpZcM7oyex3pImWnL147wdh9OVEOWakkHgZPqJoW7iAipZyJqptfoDXg5Dwz8rLYN
+ ibL9nInRk4c2y7VpkUWY/YaLrpk7NtZKIkmwoi5GVJymVpIzl3VLb21mY01uTBkNoINk
+ Q9Eme1ddkFKjtiAvIQfyEDFFLuyYbm2t9cMc5NY9ZBFoUjWOeT2pVmazB3NNhsDnkP6l
+ ifXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=S/U2vfr6KpQVUGk7LGivXBjTe3cQxbkb3JGHh9Y0Z5g=;
- b=YdoysS765sBmWqc/0aB7H5H4EgNK+dahc427twRh/aTLW4w5FYHW1wy8TVm12Wady0
- Ps2/MUm1io3QRhBEFHGbaqL+o7zs+P1TyOBrcayXw4Y0I8QngFW5p6e5VStizKFPYlU9
- KpQvioL9xm3Yp1kOp8Acmg1I82dMa3mN3KojnQxk2nOXQLjMs7QhEsdF44GmK43UmYAx
- WiaxDAXxaCW/X2PoMNcoCZxBs4vzg99Bah6RBWBFNskdA0IwvuQtzGJoJ/4hdQsauO8g
- N571vGrT8N9RLGtgC9iizeTkoVZI1z30S69H8+IZtxxEWc3KdbSlkpeOupAKcK5J4Te3
- cJUA==
-X-Gm-Message-State: APjAAAVYWkZWddhvT6w5uDTRbFPVwJizc5YseHJfKSiHH4cMgPk5Erxl
- ueCk/8n5S+SV912gtvLQOopUEA==
-X-Google-Smtp-Source: APXvYqx63hzIPJbnoKcosXltEPLqar2N+McXWG9ADJG7p3a1qb2nNDFC3hnrT0W0g1JeoKNM6mhzmA==
-X-Received: by 2002:a1c:1a87:: with SMTP id
- a129mr112944890wma.21.1564646102195; 
- Thu, 01 Aug 2019 00:55:02 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id y12sm64199221wrm.79.2019.08.01.00.55.01
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 01 Aug 2019 00:55:01 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: p.zabel@pengutronix.de
-Subject: [PATCH 3/3] dt-bindings: reset: amlogic,
- meson8b-reset: update with SPDX Licence identifier
-Date: Thu,  1 Aug 2019 09:54:54 +0200
-Message-Id: <20190801075454.23547-4-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190801075454.23547-1-narmstrong@baylibre.com>
-References: <20190801075454.23547-1-narmstrong@baylibre.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7KXLQpVfkqV0NkCYw8UjiB+5rejcfZgxPXsUmGm7V/0=;
+ b=V622sFxeiMvUXhoa/CjienoGez5LAfMFNUQ79x+4VEGBMl0XJbpPu5jfgEBepCzTsz
+ WLPqG8Iz5HTEZMSiu1NqM2IKdI9CmU9ALVqvNfFrETzTdOBwD9C6g9ZrrhTx2gpo1yDO
+ 53/d/ksN+j4XLLjnSFTcSWo40MlXhP0pHuZ3I03UvnZNdXhZ3D0SN6P2mHaMFis5Sx96
+ ypd2kdTEEvfaLFwnPOV+drJLMwywfjtKZ4wtwjjjUuWiXF8lHM9GaeICBUY9CRY9nkij
+ rAfrFbt6HTY8fylgq1fz37xTTSHAZUaMzYQLTumScZDw96u02hjM/R0dJ2X/D8utmKYw
+ ux3Q==
+X-Gm-Message-State: APjAAAVEVNQaV1hJisTntwnGbH07exxHEbQJygYMNmjyQoiMV849Rvob
+ aP/9YBp/p8rL0lvMw1DJBqYI/QlHEpGlOFCO5I6l4A==
+X-Google-Smtp-Source: APXvYqzXm1XrjRokfpgWPkB/SOz1fbBVy/r2Ctmt6xsQbSbqX8deM0MJ9AqgiLXstbE+nc9ZfgBbvIGVnLwZBWUdEY0=
+X-Received: by 2002:ac2:5337:: with SMTP id f23mr61398922lfh.15.1564646323439; 
+ Thu, 01 Aug 2019 00:58:43 -0700 (PDT)
 MIME-Version: 1.0
+References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
+ <CAE=Ncrb63dQLe-nDQyO9OPv7XjwM_9mzL9SrcLiUi2Dr10cD4A@mail.gmail.com>
+ <CAFA6WYPJAzbPdcpBqioxjY=T8RLw-73B_hpzX4cGnwVvm5zpJw@mail.gmail.com>
+ <CAE=Ncrb23q++z8R8UMbjDE2epEq4YVcNGzrRD31eH3JAooYejg@mail.gmail.com>
+ <CAFA6WYOKcOzSwakHhgshZcebD8ZBMSi7xQdjWYFS79=Xc+odOg@mail.gmail.com>
+ <CAE=NcrYz8bT9zDhS_ZcvY84fpeTDxZ-KhJKeQGGyf=o4pG2J-Q@mail.gmail.com>
+ <19d9be198619e951750dedeb4d0a7f372083b42c.camel@pengutronix.de>
+ <CAE=NcraqD9FNM0Gk9UGhPGi3heVzZrAKGc1gNZxoe1OnDaQ=pA@mail.gmail.com>
+In-Reply-To: <CAE=NcraqD9FNM0Gk9UGhPGi3heVzZrAKGc1gNZxoe1OnDaQ=pA@mail.gmail.com>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Thu, 1 Aug 2019 13:28:32 +0530
+Message-ID: <CAFA6WYPt4q+jaJbaoauXKr2qKgBHvtQ663s4t=W3nuPJPe2xpw@mail.gmail.com>
+Subject: Re: [Tee-dev] [RFC v2 0/6] Introduce TEE based Trusted Keys support
+To: Janne Karhunen <janne.karhunen@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_005504_120907_3D874672 
-X-CRM114-Status: GOOD (  17.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190801_005847_107044_9AE9B8EE 
+X-CRM114-Status: GOOD (  18.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,83 +97,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Cc: dhowells@redhat.com, Daniel Thompson <daniel.thompson@linaro.org>,
+ Rouven Czerwinski <r.czerwinski@pengutronix.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, jejb@linux.ibm.com,
+ Jonathan Corbet <corbet@lwn.net>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
+ "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
+ linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
+ Mimi Zohar <zohar@linux.ibm.com>, Casey Schaufler <casey@schaufler-ca.com>,
+ linux-integrity@vger.kernel.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Serge E. Hallyn" <serge@hallyn.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- .../dt-bindings/reset/amlogic,meson8b-reset.h | 51 +------------------
- 1 file changed, 1 insertion(+), 50 deletions(-)
+On Thu, 1 Aug 2019 at 13:00, Janne Karhunen <janne.karhunen@gmail.com> wrote:
+>
+> On Thu, Aug 1, 2019 at 9:50 AM Rouven Czerwinski
+> <r.czerwinski@pengutronix.de> wrote:
+>
+> > > I'm aware of it - I have implemented a large part of the GP TEE APIs
+> > > earlier (primarily the crypto functions). Does the TEE you work with
+> > > actually support GP properly? Can I take a look at the code?
+> >
+> > AFAIK Sumit is working with the OP-TEE implementation, which can be
+> > found on github: https://github.com/op-tee/optee_os
+>
+> Thanks, I will take a look.
 
-diff --git a/include/dt-bindings/reset/amlogic,meson8b-reset.h b/include/dt-bindings/reset/amlogic,meson8b-reset.h
-index 614aff2c7aff..c614438bcbdb 100644
---- a/include/dt-bindings/reset/amlogic,meson8b-reset.h
-+++ b/include/dt-bindings/reset/amlogic,meson8b-reset.h
-@@ -1,56 +1,7 @@
-+/* SPDX-License-Identifier: GPL-2.0 OR BSD-3-Clause */
- /*
-- * This file is provided under a dual BSD/GPLv2 license.  When using or
-- * redistributing this file, you may do so under either license.
-- *
-- * GPL LICENSE SUMMARY
-- *
-  * Copyright (c) 2016 BayLibre, SAS.
-  * Author: Neil Armstrong <narmstrong@baylibre.com>
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of version 2 of the GNU General Public License as
-- * published by the Free Software Foundation.
-- *
-- * This program is distributed in the hope that it will be useful, but
-- * WITHOUT ANY WARRANTY; without even the implied warranty of
-- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-- * General Public License for more details.
-- *
-- * You should have received a copy of the GNU General Public License
-- * along with this program; if not, see <http://www.gnu.org/licenses/>.
-- * The full GNU General Public License is included in this distribution
-- * in the file called COPYING.
-- *
-- * BSD LICENSE
-- *
-- * Copyright (c) 2016 BayLibre, SAS.
-- * Author: Neil Armstrong <narmstrong@baylibre.com>
-- *
-- * Redistribution and use in source and binary forms, with or without
-- * modification, are permitted provided that the following conditions
-- * are met:
-- *
-- *   * Redistributions of source code must retain the above copyright
-- *     notice, this list of conditions and the following disclaimer.
-- *   * Redistributions in binary form must reproduce the above copyright
-- *     notice, this list of conditions and the following disclaimer in
-- *     the documentation and/or other materials provided with the
-- *     distribution.
-- *   * Neither the name of Intel Corporation nor the names of its
-- *     contributors may be used to endorse or promote products derived
-- *     from this software without specific prior written permission.
-- *
-- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  */
- #ifndef _DT_BINDINGS_AMLOGIC_MESON8B_RESET_H
- #define _DT_BINDINGS_AMLOGIC_MESON8B_RESET_H
--- 
-2.22.0
+For documentation, refer to: https://optee.readthedocs.io/
 
+> The fundamental problem with these things
+> is that there are infinite amount of ways how TEEs and ROTs can be
+> done in terms of the hardware and software. I really doubt there are 2
+> implementations in existence that are even remotely compatible in real
+> life.
+
+I agree with you regarding implementation specific nature of TEE but
+having a standardized client interface does solves the problem.
+
+> As such, all things TEE/ROT would logically really belong in the
+> userland and thanks to the bpfilter folks now the umh logic really
+> makes that possible ... I think. The key implementation I did was just
+> an RFC on the concept, what if we start to move the stuff that really
+> belongs in the userspace to this pseudo-userland. It's not kernel, but
+> it's not commonly accessible userland either. The shared memory would
+> also work without any modifications between the umh based TEE/ROT
+> driver and the userland if needed.
+>
+> Anyway, just my .02c. I guess having any new support in the kernel for
+> new trust sources is good and improvement from the current state. I
+> can certainly make my stuff work with your setup as well, what ever
+> people think is the best.
+
+Yes your implementation can very well fit under trusted keys
+abstraction framework without creating a new keytype: "ext-trusted".
+
+-Sumit
+
+>
+>
+> --
+> Janne
 
 _______________________________________________
 linux-arm-kernel mailing list
