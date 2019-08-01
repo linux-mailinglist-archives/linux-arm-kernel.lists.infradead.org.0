@@ -2,57 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEF857DBAB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:40:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE80D7DBC2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 14:46:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=14h0X5dfNaEqZsiaNt0YxWrHx1aTcOG+PQGhkq8vl5c=; b=fWGMjtAMkglZrl
-	zMKu46MhthOVkX3TapCPWZaO8LYiVH5CGOSsLwCMEHY2cqGveUzsxqhDavpZQPrXkhLT/XhLSnD49
-	cqn+RGMzyinWqG7fm1offimb6F+j4KtXUOQ5sbhkwiZ3gT/jzBhp7P0rD3Yo4KdwyGnPBPKmIJ9+5
-	a0z2kzQUB0D/JsU6aY5o36yjTBxlu8mMgyv6LuruVQBEi42y8eSPPjdyEk6odcD/xdf9l9UXisJae
-	b6WWbfXSsUuqUoJxesSV8D55CNZL+2VkVZ4A5KUeJvRdHjmhv5ZBp2Yyks0Cs4D//wTudEduZqLht
-	bisv9ycWb7fCrlMGS71Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xIU3h9RI3OXcODAjo0cfsSO10aIZE+usrxspx3QaObs=; b=MCT9bMBKKGqelG
+	ypg/s+KYQH/OEfEzNAyQZ0c9SMRg/Tr2kr3hZeKEPLe3JCj/UsUspS8P3f5uBl53QCYJFkMMo0F/r
+	tLxF3JThIr+TUXLXnCODIxwpfRNWUTAHaqZ2Z8wLqOqDd82ToLFNQKipIjRUWHaIwo/aUZNYnYT11
+	dsyGQ2v/i2Ae5VtlrK6ZmhWqE0p5PNkM+nXmkY49MiF4ZszoD+10i8h5FxgnIkeCWdQmS3+QTRAo7
+	NoiNaptVPczoUlEYjJxtdMyAepDsI0bxbpoP/EX5CWF5CQHOkvapYIVjaCfbzNTX0oc9cFcuZtRXG
+	+UJ/R+v2hMQRWxjw6GqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htANu-00020d-Dk; Thu, 01 Aug 2019 12:40:42 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1htATb-0003nH-Nx; Thu, 01 Aug 2019 12:46:35 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htANk-00020E-4K
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:40:33 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id A512C8B9F84EAAE75344;
- Thu,  1 Aug 2019 20:40:30 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS411-HUB.china.huawei.com
- (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0; Thu, 1 Aug 2019
- 20:40:22 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <davem@davemloft.net>, <f.fainelli@gmail.com>,
- <bcm-kernel-feedback-list@broadcom.com>, <andrew@lunn.ch>,
- <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH net-next] bcm63xx_enet: use devm_platform_ioremap_resource()
- to simplify code
-Date: Thu, 1 Aug 2019 20:39:08 +0800
-Message-ID: <20190801123908.62396-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
+ id 1htATQ-0003mF-Ow
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 12:46:26 +0000
+Received: by mail-wm1-x343.google.com with SMTP id s3so64495361wms.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 01 Aug 2019 05:46:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=cZCY92RMfghZJsFP1Vz0w4UO7UoxBKe+hI+aMfOaKM8=;
+ b=vUXnXx5kNtIFZ0huFPiV/HxhJIbQdYlkFxXwCPijUEreVyNC/1pxQMald0tr6/5oU+
+ Ku4JTGZOhL69MmV/Q5dbk4vWDah5/JPXEMYMNks43DojB8zmCbVBMLURc1fImEZ3YdI2
+ doKD9u7bejJ/UhT/GPcMTjZ3kZuOJbdM7J2rwAqwTZGpSbztlqyjT6hvwS7ltXOWjcBk
+ TrrLVnQKDRIuXxZS6tfQvsGHNDhV8M+CJGdf4t3WAuO9zvRHvrl20GzPHvRRlfXh2a0J
+ Ljef/yOoYB7o1JF7ZWTjXgMEN9MOgFo75dmzLwOg0n27FcmGHiQyvs9PyZVPgyw/6NZ0
+ KxRA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=cZCY92RMfghZJsFP1Vz0w4UO7UoxBKe+hI+aMfOaKM8=;
+ b=TIYC81CxW4r6aDafyuft5ROug2wC49jCTM1dP0Nks34kD9aN3sCDFP4I72NQQUMVug
+ 7+INx7+aaBX4+EbncEMsvjQC7CRBigVpA7GxNrZu8nNJiUlp9uhGrumbu/zlq6rP0IKC
+ NZVcs518XiuyjjgbccXUmKq15rL0AB12aRP+k4x6JKBkCosg/50MhDNufv0BkKOAG9Yx
+ eG2j2CEoOt9YWr0dkqmNEXhToTjuUl20DYVas8+WgEC02y2zAiRxsjXBEIL6YbgJ8k/Y
+ 3Frxgqfl45HiGlQNMGNEzC2jNWMEiH3INEftNOa8QlIC4q0eMXRd94FAvzLmKlhAUeuk
+ Uo2g==
+X-Gm-Message-State: APjAAAV1Yh4eGRwEpBWAaDcNngZlWgd+RATj+bpTbOQxkkZtIc7oaXuv
+ ogaE1FsNJ0mb4ka8odD3JrUGKA==
+X-Google-Smtp-Source: APXvYqx/EB+krQbuHfDMiwKikaXaFO+7qwPqB2cAqkBDAaRdrKTmsFkpl+/WGtL6bOLXv0IkeDY/3A==
+X-Received: by 2002:a1c:3cc4:: with SMTP id
+ j187mr110992050wma.36.1564663582722; 
+ Thu, 01 Aug 2019 05:46:22 -0700 (PDT)
+Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id f70sm96317715wme.22.2019.08.01.05.46.20
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 01 Aug 2019 05:46:21 -0700 (PDT)
+Date: Thu, 1 Aug 2019 14:46:18 +0200
+From: LABBE Corentin <clabbe@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH 2/4] crypto: amlogic: Add crypto accelerator for amlogic
+ GXL
+Message-ID: <20190801124618.GA30316@Red>
+References: <1564083776-20540-1-git-send-email-clabbe@baylibre.com>
+ <1564083776-20540-3-git-send-email-clabbe@baylibre.com>
+ <CAFBinCD7pgUaBJgeGHTOu-uZRA9a6K2kxPsu+huKe23wcnKPoA@mail.gmail.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <CAFBinCD7pgUaBJgeGHTOu-uZRA9a6K2kxPsu+huKe23wcnKPoA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_054032_771236_17D8435C 
-X-CRM114-Status: GOOD (  10.50  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190801_054624_808198_41DB0B60 
+X-CRM114-Status: GOOD (  19.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,65 +98,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
- linux-kernel@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, baylibre-upstreaming@groups.io,
+ khilman@baylibre.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-crypto@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify the code a bit.
-This is detected by coccinelle.
+On Sat, Jul 27, 2019 at 02:17:38PM +0200, Martin Blumenstingl wrote:
+> Hi Corentin,
+> 
+> it's great to see you working on this :)
+> 
+> On Thu, Jul 25, 2019 at 9:45 PM Corentin Labbe <clabbe@baylibre.com> wrote:
+> >
+> > This patch adds support for the amlogic GXL cryptographic offloader present
+> > on GXL SoCs.
+> >
+> > This driver supports AES cipher in CBC/ECB mode.
+> >
+> > Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
+> > ---
+> >  drivers/crypto/Kconfig                  |   2 +
+> >  drivers/crypto/Makefile                 |   1 +
+> >  drivers/crypto/amlogic/Kconfig          |  24 ++
+> >  drivers/crypto/amlogic/Makefile         |   2 +
+> >  drivers/crypto/amlogic/amlogic-cipher.c | 358 ++++++++++++++++++++++++
+> >  drivers/crypto/amlogic/amlogic-core.c   | 326 +++++++++++++++++++++
+> >  drivers/crypto/amlogic/amlogic.h        | 172 ++++++++++++
+> >  7 files changed, 885 insertions(+)
+> >  create mode 100644 drivers/crypto/amlogic/Kconfig
+> >  create mode 100644 drivers/crypto/amlogic/Makefile
+> >  create mode 100644 drivers/crypto/amlogic/amlogic-cipher.c
+> >  create mode 100644 drivers/crypto/amlogic/amlogic-core.c
+> >  create mode 100644 drivers/crypto/amlogic/amlogic.h
+> there are two different crypto IPs on Amlogic SoCs:
+> - GXL and newer use the "BLKMV" crypto IP
+> - GXBB, Meson8/Meson8b/Meson8m2 (and probably older SoCs) use the
+> "NDMA" crypto IP
+> 
 
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
----
- drivers/net/ethernet/broadcom/bcm63xx_enet.c | 9 +++------
- 1 file changed, 3 insertions(+), 6 deletions(-)
+I believed it was the opposite. (BLKMV the older, NDMA the newer)
+Anyway, on the datasheet I found (s905d), neither NDMA or BLKMV is mentioned, it is just called Crypto Engine.
+So I think GXL is the best choice.
 
-diff --git a/drivers/net/ethernet/broadcom/bcm63xx_enet.c b/drivers/net/ethernet/broadcom/bcm63xx_enet.c
-index 291e4af..620cd3f 100644
---- a/drivers/net/ethernet/broadcom/bcm63xx_enet.c
-+++ b/drivers/net/ethernet/broadcom/bcm63xx_enet.c
-@@ -1693,7 +1693,7 @@ static int bcm_enet_probe(struct platform_device *pdev)
- 	struct bcm_enet_priv *priv;
- 	struct net_device *dev;
- 	struct bcm63xx_enet_platform_data *pd;
--	struct resource *res_mem, *res_irq, *res_irq_rx, *res_irq_tx;
-+	struct resource *res_irq, *res_irq_rx, *res_irq_tx;
- 	struct mii_bus *bus;
- 	int i, ret;
- 
-@@ -1719,8 +1719,7 @@ static int bcm_enet_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto out;
- 
--	res_mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	priv->base = devm_ioremap_resource(&pdev->dev, res_mem);
-+	priv->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(priv->base)) {
- 		ret = PTR_ERR(priv->base);
- 		goto out;
-@@ -2762,15 +2761,13 @@ struct platform_driver bcm63xx_enetsw_driver = {
- /* reserve & remap memory space shared between all macs */
- static int bcm_enet_shared_probe(struct platform_device *pdev)
- {
--	struct resource *res;
- 	void __iomem *p[3];
- 	unsigned int i;
- 
- 	memset(bcm_enet_shared_base, 0, sizeof(bcm_enet_shared_base));
- 
- 	for (i = 0; i < 3; i++) {
--		res = platform_get_resource(pdev, IORESOURCE_MEM, i);
--		p[i] = devm_ioremap_resource(&pdev->dev, res);
-+		p[i] = devm_platform_ioremap_resource(pdev, i);
- 		if (IS_ERR(p[i]))
- 			return PTR_ERR(p[i]);
- 	}
--- 
-2.7.4
+> personally I think it makes sense to either have the IP name (blkmv)
+> or SoC name (GXL) in the file or directory names as well as being
+> consistent with that in the Kconfig option names
 
+Ok I will rename files to amlogic-gxl-xxx
+
+Thanks
 
 
 _______________________________________________
