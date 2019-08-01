@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37EDE7D73B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:20:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7895B7D743
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:20:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T7e+eJi4s9KVLZ8DuWfzK4MJ1almm9M0BRCRnGc95xw=; b=lOhZ2uFI5Rr6xt
-	DM6OsUdso3b1aUbE9K24r7KxF5KjzaHizz+s4n3g8Ywm23XoV2lJZz5H5RxyadxIKk0nq6Yendux6
-	Xwr/aM308Nc+hr0qzByv8yOIB2t7RQsxkIEV4aSYB5uKgg1JInQ3f3NiJriJO+nO0cJinEFZK5iIS
-	qHSLMBhWceZR1G1Ws1vEsomDONyV13CO0cHzqwGnrDda4/TVwajZvbKC4+ozucgJIQqk9Z/8WM4gc
-	zOk/OaeMOBs639Vp1Ib4bP+HEucGmZpTdhwktfgtLaeb0M9WbkAl1qPTudwI9bxZAo7pvvcV0q+1f
-	pcyUhMkEJp8fsp+dHbGg==;
+	List-Owner; bh=4Tb6lLJaz2ZVakSy4Knqmqaad25btOTIJa6H1Qs7XH4=; b=rJc/UZVHN8Z6JS
+	yF1122lGO2baGXWPWATlcPWIguB/yc3pOwINqrVqOoHl2xNmIf055pgSwWIl1419hreuZ7NsKOZCi
+	IzYTUpqlF9kjJu/FPXczbPvAd6GEyWP0MoswiRm4VMHUBvkgeogLsAiKtEd/spd8pcGRewzLYNfTU
+	woK0mU4LFVbQaI7OUoeqRjO0jb8EX0/q+9mpuvCQKXr/rEGnEXjasaDtcnMdbQ4hnNv5SH3FYE4YI
+	eUvJrzucJo+F3taIdtHTzvUtb6CpuPaTOAgEMJ8IDoZEiOyvBXWq5OmPkdDCRJyIOJnW7+4I8YDnr
+	XriZlIt9Egco35jEjYLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6KE-0002Lz-Hr; Thu, 01 Aug 2019 08:20:38 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1ht6KT-0002av-WE; Thu, 01 Aug 2019 08:20:54 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6JO-0000HO-II
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:19:48 +0000
-Received: by mail-pg1-x541.google.com with SMTP id u17so33734993pgi.6
+ id 1ht6JR-0000Ke-TV
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:19:51 +0000
+Received: by mail-pf1-x441.google.com with SMTP id i189so33607155pfg.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 01:19:46 -0700 (PDT)
+ Thu, 01 Aug 2019 01:19:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=tUK8ETga6k61l9Q+/z8rY6SIV6XG+DcjRuCd/1NWAIQ=;
- b=Y4Z6CBElGedbCLchp/1U5zm7RwIzsZW7sSPLelgGoB0UAR3fmAUIaWPRqbBzItY+SU
- dFonmxxfBMwagZLJREXeHezpHMh1Y3Qa90lYmEqpzmwy29/QR4lMPJUVtQqcTlzsoblx
- YvUQeTrTR+Rrgn6wBdIS/56xvJGBvX6qMt3nWeY6Yf+7kSNhghxr4XIm9GLXOVwOTBSx
- bMwSdkvjuTyiv2KCbxqdBmearRidRn1z3nSssV2qaK3kQU+stZQ6DIV2/gHkdIaGZ1iJ
- d0MueB6aYPyB3wiVuCenso27YAaY7cBchl80Fj6Qc729nXHTSmJRi2P+ieiXaWhAkbNl
- +6jQ==
+ bh=lhetsf/v1WHqsODDPiuS8lCaAlBwJqZTnWnIuf4OhuE=;
+ b=IeSrybNXM1FIuaHjdY8UGbg00YzSWruFMn1J7qNAW3drOxKc0UR8dxZDM5PD/UwY9x
+ crfCdf8Q/xTPuaVROFU/r8eIsG9JXSdJGbjUk2DQH+rIPUUK8C3VNg2wcYriMmtqGNJT
+ 7j4NI63W+dSuf3NJWh0T7mG2Cw8wSakGtzWws8D97SnvRP6mpWDaG62Q8ukYZh3xNWAS
+ bHT+s5u0WQ5XjcbNpFziJfAkntmqjT2wtaDVQ0RzER6/blMnFCrZhvS1x/2b6IzqPe2o
+ t8qPEVYRxsRguSB7/QUcvmTdeatQF8Of3ll29ZRRZ4t3FmlNSiDoNElGjxoS23J1Irhp
+ k1wQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=tUK8ETga6k61l9Q+/z8rY6SIV6XG+DcjRuCd/1NWAIQ=;
- b=mJ7Sk1V1AkKOBl7idAOZdVTHX7Wn79LC9vj4hCAn1gc4SonHSSWXDSsv3E/lJfAjJX
- Z0Ju730gyDre0jM0X1N0CfDVSa8fA3YZAPblGOQz208nvjUnhRwOXzSx3va7iCVh+IBu
- uARCY/Cn6/TuUGIEsIDR9Qt8yLNGUk0C6i+1o4GNHqkwHHzDntoyy2HUI8BQIvvT1y5h
- YxpmoUuC8qUNr2UzicvOGoUSu9ojVZibPJuCedj4UTrQkyEpFIoI/JAkJ2B/z73/wgT3
- 3U8NxKTiuBotsb4IfXPbEJ4l2wx7qAp1u/4AZoccOjT3WIuT8YNEBDE9Lfwcmpf7Q1ZC
- 6aBA==
-X-Gm-Message-State: APjAAAV9CEEd/NIa8NzMKM1IBUpxMoG128rAzCS2E8OubWxWd0h4F9J7
- y0RjDuLMQxfHV27ZuWLCrKSbgQ==
-X-Google-Smtp-Source: APXvYqwBGdeJip4Cl0RM0Gp+T+ODw9bU7Zw9CWW60KiajPbXAE1SchPFqPiYgxpHdrwW0IJ2FkUxCQ==
-X-Received: by 2002:a63:d34c:: with SMTP id
- u12mr103456545pgi.114.1564647585962; 
- Thu, 01 Aug 2019 01:19:45 -0700 (PDT)
+ bh=lhetsf/v1WHqsODDPiuS8lCaAlBwJqZTnWnIuf4OhuE=;
+ b=FQPli0i3BCATbkih1PIsKeF6TMM32qHYXCbH4HRwliXgZGA4WlZeuWZlo2vp/bXAdm
+ oIXNOzCaUtdrYHXzmcCXVKgajQdmgE69viLIrkSrOaQqF76ozrj2Rfxrnbl3eu48iGL/
+ tWgYjJUvFBCS02PhRByuwQPsJdetPOk30cpG4t5lkyvdrYbTg6uqBAzktCKVreO+KBAY
+ IrAffUd9mWtIlW62CX2mS8p5q3ZFwOP/3Z+HzccOZ/eNFWP6WjuGjEJClAgQx3wN+nZH
+ 2+P+X2I8PEKkP3tWp2WKfPhZNrYA/kczSs7GmtWAvvbYFmw1yrUGETuRmo9rXr/hhRe7
+ KSbA==
+X-Gm-Message-State: APjAAAVqFivsARn/dHr+Q6mbY2VnU2JA5wBiaBUAXr7QQVJ+Lc8DG5w0
+ tQn12QVZkF5KVysPTvZQJ5OdYw==
+X-Google-Smtp-Source: APXvYqzwaezWIvdwv0H5ugpgJ6JrKb46pj+oO7T+aNheVkzhLn/9E35sO38a1NI/m7ezUfYyfu5Mhw==
+X-Received: by 2002:a17:90a:1ac5:: with SMTP id
+ p63mr7090797pjp.25.1564647588607; 
+ Thu, 01 Aug 2019 01:19:48 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id y23sm72885680pfo.106.2019.08.01.01.19.45
+ by smtp.gmail.com with ESMTPSA id f64sm74385803pfa.115.2019.08.01.01.19.47
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 01:19:45 -0700 (PDT)
+ Thu, 01 Aug 2019 01:19:48 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org
-Subject: [PATCH ARM32 v4.4 V2 04/47] drivers/firmware: Expose psci_get_version
- through psci_ops structure
-Date: Thu,  1 Aug 2019 13:45:48 +0530
-Message-Id: <64c1d3d45f10e811674aad1f583b346fcf3a8707.1564646727.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM32 v4.4 V2 05/47] firmware/psci: Expose PSCI conduit
+Date: Thu,  1 Aug 2019 13:45:49 +0530
+Message-Id: <9af0ed2a4a54549532931e98643daa5ed274ac8f.1564646727.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1564646727.git.viresh.kumar@linaro.org>
 References: <cover.1564646727.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_011946_620338_176B25D1 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20190801_011950_000333_8C736BFA 
+X-CRM114-Status: GOOD (  13.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,50 +109,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will.deacon@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
 
-commit d68e3ba5303f7e1099f51fdcd155f5263da8569b upstream.
+commit 09a8d6d48499f93e2abde691f5800081cd858726 upstream.
 
-Entry into recent versions of ARM Trusted Firmware will invalidate the CPU
-branch predictor state in order to protect against aliasing attacks.
-
-This patch exposes the PSCI "VERSION" function via psci_ops, so that it
-can be invoked outside of the PSCI driver where necessary.
+In order to call into the firmware to apply workarounds, it is
+useful to find out whether we're using HVC or SMC. Let's expose
+this through the psci_ops.
 
 Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Signed-off-by: Will Deacon <will.deacon@arm.com>
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+Tested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- drivers/firmware/psci.c | 2 ++
- include/linux/psci.h    | 1 +
- 2 files changed, 3 insertions(+)
+ drivers/firmware/psci.c | 28 +++++++++++++++++++++++-----
+ include/linux/psci.h    |  7 +++++++
+ 2 files changed, 30 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/firmware/psci.c b/drivers/firmware/psci.c
-index ae70d2485ca1..290f8982e7b3 100644
+index 290f8982e7b3..7b2665f6b38d 100644
 --- a/drivers/firmware/psci.c
 +++ b/drivers/firmware/psci.c
-@@ -305,6 +305,8 @@ static void __init psci_init_migrate(void)
- static void __init psci_0_2_set_functions(void)
- {
- 	pr_info("Using standard PSCI v0.2 function IDs\n");
-+	psci_ops.get_version = psci_get_version;
+@@ -54,7 +54,9 @@ bool psci_tos_resident_on(int cpu)
+ 	return cpu == resident_cpu;
+ }
+ 
+-struct psci_operations psci_ops;
++struct psci_operations psci_ops = {
++	.conduit = PSCI_CONDUIT_NONE,
++};
+ 
+ typedef unsigned long (psci_fn)(unsigned long, unsigned long,
+ 				unsigned long, unsigned long);
+@@ -187,6 +189,22 @@ static unsigned long psci_migrate_info_up_cpu(void)
+ 			      0, 0, 0);
+ }
+ 
++static void set_conduit(enum psci_conduit conduit)
++{
++	switch (conduit) {
++	case PSCI_CONDUIT_HVC:
++		invoke_psci_fn = __invoke_psci_fn_hvc;
++		break;
++	case PSCI_CONDUIT_SMC:
++		invoke_psci_fn = __invoke_psci_fn_smc;
++		break;
++	default:
++		WARN(1, "Unexpected PSCI conduit %d\n", conduit);
++	}
 +
- 	psci_function_id[PSCI_FN_CPU_SUSPEND] =
- 					PSCI_FN_NATIVE(0_2, CPU_SUSPEND);
- 	psci_ops.cpu_suspend = psci_cpu_suspend;
++	psci_ops.conduit = conduit;
++}
++
+ static int get_set_conduit_method(struct device_node *np)
+ {
+ 	const char *method;
+@@ -199,9 +217,9 @@ static int get_set_conduit_method(struct device_node *np)
+ 	}
+ 
+ 	if (!strcmp("hvc", method)) {
+-		invoke_psci_fn = __invoke_psci_fn_hvc;
++		set_conduit(PSCI_CONDUIT_HVC);
+ 	} else if (!strcmp("smc", method)) {
+-		invoke_psci_fn = __invoke_psci_fn_smc;
++		set_conduit(PSCI_CONDUIT_SMC);
+ 	} else {
+ 		pr_warn("invalid \"method\" property: %s\n", method);
+ 		return -EINVAL;
+@@ -463,9 +481,9 @@ int __init psci_acpi_init(void)
+ 	pr_info("probing for conduit method from ACPI.\n");
+ 
+ 	if (acpi_psci_use_hvc())
+-		invoke_psci_fn = __invoke_psci_fn_hvc;
++		set_conduit(PSCI_CONDUIT_HVC);
+ 	else
+-		invoke_psci_fn = __invoke_psci_fn_smc;
++		set_conduit(PSCI_CONDUIT_SMC);
+ 
+ 	return psci_probe();
+ }
 diff --git a/include/linux/psci.h b/include/linux/psci.h
-index 12c4865457ad..04b4d92c7791 100644
+index 04b4d92c7791..e071a1b8ddb5 100644
 --- a/include/linux/psci.h
 +++ b/include/linux/psci.h
-@@ -25,6 +25,7 @@ bool psci_power_state_loses_context(u32 state);
+@@ -24,6 +24,12 @@ bool psci_tos_resident_on(int cpu);
+ bool psci_power_state_loses_context(u32 state);
  bool psci_power_state_is_valid(u32 state);
  
++enum psci_conduit {
++	PSCI_CONDUIT_NONE,
++	PSCI_CONDUIT_SMC,
++	PSCI_CONDUIT_HVC,
++};
++
  struct psci_operations {
-+	u32 (*get_version)(void);
+ 	u32 (*get_version)(void);
  	int (*cpu_suspend)(u32 state, unsigned long entry_point);
- 	int (*cpu_off)(u32 state);
- 	int (*cpu_on)(unsigned long cpuid, unsigned long entry_point);
+@@ -33,6 +39,7 @@ struct psci_operations {
+ 	int (*affinity_info)(unsigned long target_affinity,
+ 			unsigned long lowest_affinity_level);
+ 	int (*migrate_info_type)(void);
++	enum psci_conduit conduit;
+ };
+ 
+ extern struct psci_operations psci_ops;
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
