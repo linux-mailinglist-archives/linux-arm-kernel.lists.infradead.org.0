@@ -2,79 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E8F97DEBD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:24:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D09F7DEC2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 17:25:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z3f38zd7ti66UFlYAA9M43VDOq3fXWQApCCcX8UQNoc=; b=pQq0iTB0wTCXEp
-	iRSOUB+CiS+0Mbn8cCQVDqp+CketrRl4GeivVpa0p6hdQMlGG3sjnpQSfZ+uaqfvj8b/d1tCW5+CI
-	mI31mWVqFx6MUSXf3gcRyvLQM/oxqmcURqMrgdPo7xvGqoeBmYuojyz/1VdfQhr1MhWPrixc3TWZY
-	jA4jOSnGPXmd+XHiKc903pEM1KIwvo0FOjGh8HIl/8sd0OEFrrPLD/3Sph04BpzksfPiLVkCkBTF+
-	UHLL97SvfeAMYD0xAfXOtc0/h4je1VTapYPzFUMk4pzDVBpgHs9DFCUUxzesDhP4vIr10SxLwq9G1
-	hniJuIRJbap9pKOpcqwg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=M/wufIPHq+bC4Xux4ZkfqIFHDeTbqVPx3QfXh1849Tg=; b=RrsyeHugW2rBDJ
+	qdzCYVMO8izf/DFarmsxWwL8nn2uhj4f/XJUyTm+tkcpIX4AsDNLbeXq402UXms7uI3l6dHnDYN/h
+	jQC08drPXt6p7npItSjkhEiWy7vGbgucNy/qPtpoeLALHcEyqBtklcbSUpmKXADwRXUSm8/rblYuI
+	n1wV7bUQuiUl98V0BfO3nwmN1DPm/2tRMeNN52TNldZhJOf716tRwD6q7TpT2+jgFBB9P0dnrMJeK
+	Uihj1yEA4kZUolGz7MZ/YyxXDgPqWQRTxddRCUhGGGC008/HMb6zMtHRLfCO1/40dZoS5avVuCkpU
+	j2ZdwPfmLYOdkMBptJMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htCwT-00015W-Kz; Thu, 01 Aug 2019 15:24:33 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1htCwx-0001S5-32; Thu, 01 Aug 2019 15:25:03 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htCwA-0000vN-Mq; Thu, 01 Aug 2019 15:24:17 +0000
-Received: by mail-io1-xd42.google.com with SMTP id s7so145050323iob.11;
- Thu, 01 Aug 2019 08:24:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=MBiW41NqW4TAnHAH02ISFrYBi40GZVKimkx9qKPuwA4=;
- b=I4/fSki/ZDrS6t7bxww5FkiNPP2v+Wto9BSBGL3O8+1uX0mJYcLuDX9I5jr6F7Vo2F
- RVdBOEz9IE8EgNq14z9ZkR5Ab/zYBF6nELYdYTXnVW/1zOmAKi+XJDMjr9fEkjdVq94C
- Q4T5EOR/uFZmmt2HU6d+B1lOkrDlksNvJMoH1DSmCX8gQy7rebL3Wl43K0EdtxIL48Aq
- DyyonSFKF0HO8VIRLQ1RD4cM4Mz6RDrYsGPJ9osBOspZLkFykPhjikc/mO8jATnLcCug
- KdO2mkv9Tgv/mSw58s9mgTpSvGCfA3J8s8fMadt8Exwq5BnB25/J7+ANWwc1yzKC1n9T
- /phw==
+ id 1htCwd-0001NF-BT
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 15:24:47 +0000
+Received: by mail-qk1-x741.google.com with SMTP id t8so52324830qkt.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 01 Aug 2019 08:24:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Tv/fOnD6YC9u+5WmWm5gwywTsIsmHeTM0Q1GSWNKYUk=;
+ b=atLlsRo/HsLlYJHkAHesgcO9qfPaQjZk+gYOvxKZpX5zmCTxt7zu8tiCRhoteNN7dd
+ 6HAmzBsFnGGSMNK2C1/2c095tMDLJ4ZXLXLn7i+ZEgdYwpo1qYHK/Q1xRHZwxOfakJw6
+ /7ct9TY6fVLVY5D3c86/4ePweUPMk5TKNh2ZI97gVVKUkfE3dvmvGGH5WFhqRYhDDdNj
+ MN0U1s86suOZc/o8BsUsL3OJ8/tYd9JgVijBxGQUq2ZZTq5MshwLKDUEHOPwOnM0CjpD
+ UlAySrOA8+Uey1c7x2oPbu2GeSyZevsm2xsSMvkzV3E2NKwjBTx9zLYFJGZQjyw6+Y/3
+ BOhA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=MBiW41NqW4TAnHAH02ISFrYBi40GZVKimkx9qKPuwA4=;
- b=qhleTqBwkvo152/gFXctdCUqUolDNMQ+L6fw1TGRy8deSYqXumni+ltUTAPQ1IpBSZ
- Jle7f5nx8j/cOKWx9WU4w/Wtjn4L1vCbOlk/fIKmhWAdtj1zL6KVWzjk8xLLSvdJ+8mc
- NZ1ppJW8KNOU3RZFkt9O9NX0Y2GB6ks54sYf2NltAXHAG1eYG2DnXiWpW1HKfGDSls5B
- 0NkfWZvFp0m31kZZ5OWj3kUesREGh5FkGhFBPAi1obwoLLvcHqalWxFXPixmg3NiaGT5
- DtamgNUYDOHg4kuVV25gBoC59EAeK6O0cp55uYBAC+pOy3Yh/yWgwbux08EIRTnrLX3F
- JM/g==
-X-Gm-Message-State: APjAAAWYLgHk4yCoptw/vhH2805TeUDEf+11SRc3hVNr9maFfCQefiOu
- HhJmSOwD7iYuj9aAW7rcSB3NAY7Z1KdP0jeVoo0=
-X-Google-Smtp-Source: APXvYqwzE2acoA4+wz4386LeXXCfJdLnqPuKvYgJFDux4lZmG/U1xFLAmvWFRo2QrkPNbI1+x3/JUs5uKgzYilBc8zU=
-X-Received: by 2002:a6b:f406:: with SMTP id i6mr48192506iog.110.1564673053693; 
- Thu, 01 Aug 2019 08:24:13 -0700 (PDT)
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Tv/fOnD6YC9u+5WmWm5gwywTsIsmHeTM0Q1GSWNKYUk=;
+ b=IGsBXYvEs795F95gxA/WwxsAa3mvg4jqmf8FV+q1bvcUslDQAbE9CAyBFlfL/WCpju
+ u/xZ3pebzwR/91fVaHctBBmoBVmooJu7ZscPH1sXOuVA/fszK+13rVu+JvY+sZwcYuKB
+ Vu81PXv7fc1Kxbq62CUV6LmZexJa+ahyYJxZlNpWm+x9Lum333Onq/qck5h2dCgzOxrI
+ dHiU5+y0IvL39zLuu2gpUTKoQQdWCVvHGSCxoleyOHsw0GzL3arxiDgGREg5Rxiaq8JS
+ lzH51DPNKsgH6FRjKN/FvwuVyL9d0AfHjjZgxG9Q22OVFRZKvkHvo0SANzSD4j1E4Fj8
+ fAMg==
+X-Gm-Message-State: APjAAAW/zGaXXfH9NTXb/5cY++H6vMt0VxwWCAahmfrJMy/QZN1xEWLq
+ Y/miVXzy089jHXzS/KTB3/0=
+X-Google-Smtp-Source: APXvYqzZD3a7tT1okA0boG+U3Hsp3SOLhKzDGE1jT3CDvSGW9wPow4/sMDwhXS8im+A6DBmuvHqQWA==
+X-Received: by 2002:a37:4dc6:: with SMTP id a189mr84646858qkb.41.1564673081928; 
+ Thu, 01 Aug 2019 08:24:41 -0700 (PDT)
+Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id o5sm30899952qkf.10.2019.08.01.08.24.40
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 01 Aug 2019 08:24:41 -0700 (PDT)
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ ebiederm@xmission.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org,
+ marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
+ matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org
+Subject: [PATCH v1 0/8] arm64: MMU enabled kexec relocation
+Date: Thu,  1 Aug 2019 11:24:31 -0400
+Message-Id: <20190801152439.11363-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-References: <1560942714-13330-1-git-send-email-Ashish.Kumar@nxp.com>
- <1560942714-13330-3-git-send-email-Ashish.Kumar@nxp.com>
- <20190709200857.GA8477@bogus>
-In-Reply-To: <20190709200857.GA8477@bogus>
-From: Han Xu <xhnjupt@gmail.com>
-Date: Thu, 1 Aug 2019 10:24:02 -0500
-Message-ID: <CA+EcR20ui8Liot+PtzdU6CJb5WzLDHS0Xc7VR7qGAOpD5=ArNQ@mail.gmail.com>
-Subject: Re: [Patch v3 2/2] dt-bindings: spi: spi-fsl-qspi: Add bindings of
- ls1088a and ls1012a
-To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_082415_943977_C1282C9E 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190801_082443_556753_C495695B 
+X-CRM114-Status: GOOD (  11.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (xhnjupt[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -94,45 +100,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, bbrezillon@kernel.org,
- Kuldeep Singh <kuldeep.singh@nxp.com>, Ashish Kumar <Ashish.Kumar@nxp.com>,
- broonie@kernel.org, linux-mtd@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 9, 2019 at 3:09 PM Rob Herring <robh@kernel.org> wrote:
->
-> On Wed, 19 Jun 2019 16:41:54 +0530, Ashish Kumar wrote:
-> > Signed-off-by: Kuldeep Singh <kuldeep.singh@nxp.com>
-> > Signed-off-by: Ashish Kumar <ashish.kumar@nxp.com>
-> > ---
-> > v3:
-> > Rebase to top
-> > v2:
-> > Convert to patch series and rebasing done on top of tree
-> >
-> >  Documentation/devicetree/bindings/spi/spi-fsl-qspi.txt | 2 ++
-> >  1 file changed, 2 insertions(+)
-> >
->
-> Reviewed-by: Rob Herring <robh@kernel.org>
+Enable MMU during kexec relocation in order to improve reboot performance.
 
-Acked-by: Han Xu <han.xu@nxp.com>
+If kexec functionality is used for a fast system update, with a minimal
+downtime, the relocation of kernel + initramfs takes a significant portion
+of reboot.
 
->
-> ______________________________________________________
-> Linux MTD discussion mailing list
-> http://lists.infradead.org/mailman/listinfo/linux-mtd/
+The reason for slow relocation is because it is done without MMU, and thus
+not benefiting from D-Cache.
 
+Performance data
+----------------
+For this experiment, the size of kernel plus initramfs is small, only 25M.
+If initramfs was larger, than the improvements would be greater, as time
+spent in relocation is proportional to the size of relocation.
 
+Previously:
+kernel shutdown	0.022131328s
+relocation	0.440510736s
+kernel startup	0.294706768s
+
+Relocation was taking: 58.2% of reboot time
+
+Now:
+kernel shutdown	0.032066576s
+relocation	0.022158152s
+kernel startup	0.296055880s
+
+Now: Relocation takes 6.3% of reboot time
+
+Total reboot is x2.16 times faster.
+
+Previous approaches and discussions
+-----------------------------------
+https://lore.kernel.org/lkml/20190709182014.16052-1-pasha.tatashin@soleen.com
+reserve space for kexec to avoid relocation, involves changes to generic code
+to optimize a problem that exists on arm64 only:
+
+https://lore.kernel.org/lkml/20190716165641.6990-1-pasha.tatashin@soleen.com
+The first attempt to enable MMU, some bugs that prevented performance
+improvement. The page tables unnecessary configured idmap for the whole
+physical space.
+
+https://lore.kernel.org/lkml/20190731153857.4045-1-pasha.tatashin@soleen.com
+No linear copy, bug with EL2 reboots.
+
+Pavel Tatashin (8):
+  kexec: quiet down kexec reboot
+  arm64, mm: transitional tables
+  arm64: hibernate: switch to transtional page tables.
+  kexec: add machine_kexec_post_load()
+  arm64, kexec: move relocation function setup and clean up
+  arm64, kexec: add expandable argument to relocation function
+  arm64, kexec: configure transitional page table for kexec
+  arm64, kexec: enable MMU during kexec relocation
+
+ arch/arm64/Kconfig                     |   4 +
+ arch/arm64/include/asm/kexec.h         |  51 ++++-
+ arch/arm64/include/asm/pgtable-hwdef.h |   1 +
+ arch/arm64/include/asm/trans_table.h   |  68 ++++++
+ arch/arm64/kernel/asm-offsets.c        |  14 ++
+ arch/arm64/kernel/cpu-reset.S          |   4 +-
+ arch/arm64/kernel/cpu-reset.h          |   8 +-
+ arch/arm64/kernel/hibernate.c          | 261 ++++++-----------------
+ arch/arm64/kernel/machine_kexec.c      | 199 ++++++++++++++----
+ arch/arm64/kernel/relocate_kernel.S    | 196 +++++++++---------
+ arch/arm64/mm/Makefile                 |   1 +
+ arch/arm64/mm/trans_table.c            | 273 +++++++++++++++++++++++++
+ kernel/kexec.c                         |   4 +
+ kernel/kexec_core.c                    |   8 +-
+ kernel/kexec_file.c                    |   4 +
+ kernel/kexec_internal.h                |   2 +
+ 16 files changed, 758 insertions(+), 340 deletions(-)
+ create mode 100644 arch/arm64/include/asm/trans_table.h
+ create mode 100644 arch/arm64/mm/trans_table.c
 
 -- 
-Sincerely,
+2.22.0
 
-Han XU
 
 _______________________________________________
 linux-arm-kernel mailing list
