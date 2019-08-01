@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B06C7D4BE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 07:09:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79AB57D4D3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 07:20:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oZ14eXbz20Gc8pu05GU7+hhzwpCVm1KlU8dDCdbqaD4=; b=WqAYkGorAGtx7d
-	4Ey98BV/mcAtkJMjX/+/apN9/fxBALRKOEjZAESj0xfjaq1hYynWumkbnJc52ek/Zp6RX9iQWK/hN
-	aP2gfN2NjDeivWAZusxupcRPpVl/kmLTDqyGX33oHM6/YlAvDHySFNDVJOMRuEdK1UtySaUq+iUI+
-	8s/XB9nIKAco/yz0FEfNRw2RitCB24ld++2ZFUpQT4BCAMIYybwoCQWEdsa69InAia2uXLfja385O
-	udlRn+8UCCMTAwSfh7xB8uYz4mgtkVQQSCKukwINlS2tvt7d2mt7eSGCyh4CDnIaFgRhutk2n1BpI
-	2TKMPUec4xAYzsxAdlbQ==;
+	List-Owner; bh=szjg3WtYo+3I4xOQjdp2J63R1G292McGaIs3JhYGcxA=; b=A5nU/yXVBq8oeA
+	CfwBxm4nw7rqixhVlpHnp6pmmfmHpt83iquCTVgfEPM+tYBYrJJGPpS76ZMr2aoqNt7+kWMzOAomS
+	P2nXpmU4J/FmXv1dc8/rcd2zv1r4lhRPOCFNt6MyxIkVExagf2JjGig36Nng6OtNTIB7dKKlIyFUs
+	nZqv9sVLmFHygutG1G897Sodw9OjahmJNZHwuvDuX/opr2F6Bpbj3QcnYEticlHpFU7Z/g/T3NLOI
+	2ZscIHVhPc0MUJ8JWa1eJPTPIPD7cd6T3wjPKfPSNslrYVG3aylFxvbUGHem0T5YwEvp7/klrlaGZ
+	HGRlsDMYXRjzQpL8VmvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht3Ld-0001iw-Rs; Thu, 01 Aug 2019 05:09:53 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1ht3Vm-0006H7-Nh; Thu, 01 Aug 2019 05:20:22 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht3LW-0001ic-9i
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 05:09:47 +0000
-Received: by mail-pf1-x441.google.com with SMTP id g2so33292237pfq.0
+ id 1ht3Vf-0006GS-KF
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 05:20:16 +0000
+Received: by mail-pg1-x544.google.com with SMTP id i18so33422003pgl.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 31 Jul 2019 22:09:45 -0700 (PDT)
+ Wed, 31 Jul 2019 22:20:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=aLdgdj1EfeMVZ7XgY351LcWiVocr39+rpYFuoMHIDzQ=;
- b=J6WKPdKG6lEuXUsEYdwSy+xXv0V2TB0Z8XnXVWGAfSI03/7hdQibTWHOxe716G5xhM
- lVw4xNWem6Fu7CuOsEUUqxP0oofy0T9E7pdyW78vVRYVb6M3DltijB08Tx8l3WTIGWU3
- vEU/pgi59ZsJ1Y+LtclQ0nplNgRIgqpAFQjN3JN3ZtHZOv5JeBuzprH5oyt0vsWZXj8U
- QEi/vGMjIUIkXMo8G7x9XQ4ea6SVxYCDp9WTv98D7rhlPEE3YMqmufiwwuQ4hXj+EiCV
- yqQynWBPfF/aWGk3pQ2loi+B0jcSZy67pmd9Gp9LwPx29htlwRJH9ez/MdeiVc8KCXnC
- U5nw==
+ bh=ByilU0oHOLjKLDAdcNFMrrRyGOR7w5s2w9IJUNLzc/Q=;
+ b=TM1wwx99Yv8fB9IJPm1UXWFNGGOC0TweHVPmdsTIlI/yvJ2ElLvfQsmO+TZzISOqPo
+ GIDdHMBkaRsgHN/m3BWiv9ZNU8YG3ZPMESEWB7VxaazWDK6YChN7mVWERKuwqPKR3/o9
+ cCNTVq5AgTJVNHdQovjcMTrAL8XcHMQQStVbau9jgTNVMtDmJiCz8G4SvPS9Mn/+8DG/
+ RwNRfllVFdVkbBw2F6wM4UpKl1mYyvjeNa8+ues2fbx+vtFN7QJ9ej+lrkRfCnz1Cr5i
+ 3bQhPaRxLvaifPJERA1cTcM57Mtvun2e8AMLY+OmlmT3pWFNX7ngiiD+luI7w0T4UqAM
+ K+0Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=aLdgdj1EfeMVZ7XgY351LcWiVocr39+rpYFuoMHIDzQ=;
- b=o6yWnfT/R64DEori8KRWtJGL/hMy1EMVW9QLdulaGUR22RVjOJacEPW3UrIXOb/PJn
- 18pZvP+xwlmbdanKAIFLTST93dz5Dw04AILlil59nlP26ffnNgomHH9UbdolK7TZP6qz
- GFhRLiV+h0JYALGLgP8YJyHL96R12UnV6WKZNW/tutVQuRDfAv5kQ/vQEcvnD1ZwDtMv
- v0BWsSj6EFCPUeqpC/Bo8uM+ipsOtyS3uunw6P0VDZ+CH797rxLiMZVVuOBF3XmG610I
- yuj5gVpqtld0bjSQZcKPFXMWnTCMIamWomQrfUgrbFw/50AQaox722nXZbBCWA8eoa0L
- pAYw==
-X-Gm-Message-State: APjAAAV1lhQYG7X3+35aaBwwLWjwbYTUSEQvU6DCrQxtmDyBy8ht1bXO
- hR1Z33XYQtrRXe1LCGoxl+616A==
-X-Google-Smtp-Source: APXvYqyqM+VVslQdFWG491bGgkdXzFwyEniKtN5NsnBUBiF85SJ7Qanfs0z+9szSSwZNTIBayOyBaw==
-X-Received: by 2002:a17:90a:4806:: with SMTP id
- a6mr6543128pjh.38.1564636185001; 
- Wed, 31 Jul 2019 22:09:45 -0700 (PDT)
+ bh=ByilU0oHOLjKLDAdcNFMrrRyGOR7w5s2w9IJUNLzc/Q=;
+ b=FDP7FWcfinf6aj28gVKFHX7r+OGPDr6Rz71npnaJVSxCnEYY1vromL2vgL4g5f3iqk
+ aND6KzKO9iqQH4OcMia6ZQpsYSgDTY5M8sP5JHByFwMqSAbwKphPnRGm/vjwEHoMTarA
+ ru1vW2bpJ5De16QBCw+KQrkFQNcyVCOzt5kGuvOjxWUMYLBRUWjB5w155Fzitmrpo1J+
+ 8gTneV+l06Ay3eHT4+AgqYqULMi0Qe2Ptk2HvEz1TeNOsnnVWLI+aIpEdzhIXLOUtTbx
+ HkovvsQKRtXe3miYyV8YQP9vHUYuLAHl+YQTZhrRiZix4ZiiUtlKMHdGZ2tP3bn6UMBU
+ 15Bw==
+X-Gm-Message-State: APjAAAX/HoOsizWQeVLGlfZc3iRKTuv5Ttrtx9hw+N3dNLKmiHURfkpk
+ WYimouYl7wu4ve/VHaBbzQ2YwTc0lOo=
+X-Google-Smtp-Source: APXvYqx+yL0UJaSz+q9AN3LrrV43T11zeoEPEKnpQ9C6/VjWRF61rdKAr4tBlUF2gIlwAswV0U/SOw==
+X-Received: by 2002:a65:64cf:: with SMTP id t15mr113670369pgv.88.1564636813755; 
+ Wed, 31 Jul 2019 22:20:13 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id t96sm3320891pjb.1.2019.07.31.22.09.43
+ by smtp.gmail.com with ESMTPSA id r13sm98686393pfr.25.2019.07.31.22.20.12
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 31 Jul 2019 22:09:43 -0700 (PDT)
-Date: Thu, 1 Aug 2019 10:39:40 +0530
+ Wed, 31 Jul 2019 22:20:12 -0700 (PDT)
+Date: Thu, 1 Aug 2019 10:50:11 +0530
 From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Julien Thierry <julien.thierry@arm.com>
-Subject: Re: [PATCH v4.4 V2 25/43] arm64: Move BP hardening to
- check_and_switch_context
-Message-ID: <20190801050940.h65crfawrdifsrgg@vireshk-i7>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v4.4 V2 24/43] arm64: Add skeleton to harden the branch
+ predictor against aliasing attacks
+Message-ID: <20190801052011.2hrei36v4zntyfn5@vireshk-i7>
 References: <cover.1562908074.git.viresh.kumar@linaro.org>
- <f655aaa158af070d45a2bd4965852b0c97a08838.1562908075.git.viresh.kumar@linaro.org>
- <59b252cf-9cb7-128b-4887-c21a8b9b92a9@arm.com>
+ <4349161f0ed572bbc6bff64bad94aa96d07b27ff.1562908075.git.viresh.kumar@linaro.org>
+ <20190731164556.GI39768@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <59b252cf-9cb7-128b-4887-c21a8b9b92a9@arm.com>
+In-Reply-To: <20190731164556.GI39768@lakrids.cambridge.arm.com>
 User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_220946_402328_7AB01C7C 
-X-CRM114-Status: GOOD (  25.02  )
+X-CRM114-CacheID: sfid-20190731_222015_673842_20FB0D28 
+X-CRM114-Status: GOOD (  18.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,9 +100,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- stable@vger.kernel.org, mark.brown@arm.com, julien.thierry.kdev@gmail.com,
+Cc: Julien Thierry <Julien.Thierry@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
  Russell King <rmk+kernel@arm.linux.org.uk>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -111,89 +110,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 31-07-19, 14:09, Julien Thierry wrote:
-> 
-> 
-> On 12/07/2019 06:28, Viresh Kumar wrote:
-> > From: Marc Zyngier <marc.zyngier@arm.com>
+On 31-07-19, 17:45, Mark Rutland wrote:
+> On Fri, Jul 12, 2019 at 10:58:12AM +0530, Viresh Kumar wrote:
+> > From: Will Deacon <will.deacon@arm.com>
 > > 
-> > commit a8e4c0a919ae310944ed2c9ace11cf3ccd8a609b upstream.
+> > commit 0f15adbb2861ce6f75ccfc5a92b19eae0ef327d0 upstream.
 > > 
-> > We call arm64_apply_bp_hardening() from post_ttbr_update_workaround,
-> > which has the unexpected consequence of being triggered on every
-> > exception return to userspace when ARM64_SW_TTBR0_PAN is selected,
-> > even if no context switch actually occured.
+> > Aliasing attacks against CPU branch predictors can allow an attacker to
+> > redirect speculative control flow on some CPUs and potentially divulge
+> > information from one context to another.
 > > 
-> > This is a bit suboptimal, and it would be more logical to only
-> > invalidate the branch predictor when we actually switch to
-> > a different mm.
+> > This patch adds initial skeleton code behind a new Kconfig option to
+> > enable implementation-specific mitigations against these attacks for
+> > CPUs that are affected.
 > > 
-> > In order to solve this, move the call to arm64_apply_bp_hardening()
-> > into check_and_switch_context(), where we're guaranteed to pick
-> > a different mm context.
-> > 
-> > Acked-by: Will Deacon <will.deacon@arm.com>
-> > Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+> > Co-developed-by: Marc Zyngier <marc.zyngier@arm.com>
+> > Signed-off-by: Will Deacon <will.deacon@arm.com>
 > > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> > [ v4.4: Changes made according to 4.4 codebase ]
 > > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> > ---
-> >  arch/arm64/mm/context.c | 4 ++--
-> >  1 file changed, 2 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
-> > index be42bd3dca5c..de5afc27b4e6 100644
-> > --- a/arch/arm64/mm/context.c
-> > +++ b/arch/arm64/mm/context.c
-> > @@ -183,6 +183,8 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
-> >  	raw_spin_unlock_irqrestore(&cpu_asid_lock, flags);
-> >  
-> >  switch_mm_fastpath:
-> > +	arm64_apply_bp_hardening();
-> > +
-> >  	cpu_switch_mm(mm->pgd, mm);
-> >  }
-> >  
-> > @@ -193,8 +195,6 @@ asmlinkage void post_ttbr_update_workaround(void)
-> >  			"ic iallu; dsb nsh; isb",
-> >  			ARM64_WORKAROUND_CAVIUM_27456,
-> >  			CONFIG_CAVIUM_ERRATUM_27456));
-> > -
-> > -	arm64_apply_bp_hardening();
 > 
-> Patches 22 and 23 factorize the post_ttbr_update_workaround() and move
-> it to C code just so we would and a call to arm64_apply_bp_hardening()
-> in patch 24 that now gets moved elsewhere?
+> [...]
 > 
-> Is it really worth backporting patches 22 and 23?
+> >  /* id_aa64pfr0 */
+> > +#define ID_AA64PFR0_CSV2_SHIFT		56
+> 
+> Note: CSV3 is bits 63-60, 
+> 
+> > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> > index 474b34243521..040a42d79990 100644
+> > --- a/arch/arm64/kernel/cpufeature.c
+> > +++ b/arch/arm64/kernel/cpufeature.c
+> > @@ -83,7 +83,8 @@ static struct arm64_ftr_bits ftr_id_aa64isar0[] = {
+> >  };
+> >  
+> >  static struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
+> > -	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 32, 0),
+> > +	ARM64_FTR_BITS(FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_CSV2_SHIFT, 4, 0),
+> > +	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 28, 0),
+> 
+> This line should be:
+> 
+> 	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 24, 0),
+> 
+> ... as it was in the v4.9 backbort, making it cover bits 55:32. As in
+> this patch, it covers 59:32, overlapping with CSV2.
 
-If I can merge patch 24 and 25 into a single patch while backporting,
-then patch 22 and 23 won't be required. I am not sure how should the
-commit log look like in that case though :)
+Fixed thanks.
 
-Is mentioning both the upstream commit ids along with log of the first
-patch (which was more important) enough, like this ?
+> We also need to cater for bits 63:60. In the v4.9 backport, the meltdown
+> bits were applied first, so nothing special was necessary.
+> 
+> What's the plan w.r.t. meltdown mitigations and v4.4?
 
-Author: Will Deacon <will.deacon@arm.com>
-Date:   Wed Jan 3 11:17:58 2018 +0000
-
-    arm64: Add skeleton to harden the branch predictor against aliasing attacks
-    
-    commit 0f15adbb2861ce6f75ccfc5a92b19eae0ef327d0 upstream.
-    commit a8e4c0a919ae310944ed2c9ace11cf3ccd8a609b upstream.
-    
-    Aliasing attacks against CPU branch predictors can allow an attacker to
-    redirect speculative control flow on some CPUs and potentially divulge
-    information from one context to another.
-    
-    This patch adds initial skeleton code behind a new Kconfig option to
-    enable implementation-specific mitigations against these attacks for
-    CPUs that are affected.
-    
-    Co-developed-by: Marc Zyngier <marc.zyngier@arm.com>
-    Signed-off-by: Will Deacon <will.deacon@arm.com>
-    Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-    [ v4.4: Changes made according to 4.4 codebase ]
-    Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+I haven't started looking at meltdown patches yet and so that will be
+done at a later point of time, if at all done by me. I have been asked
+to backport both Spectre and Meltdown though to 4.4.
 
 -- 
 viresh
