@@ -2,74 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8F307DA12
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 13:13:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35D327DA19
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 13:17:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qNnUhlG9xXggOmFka/EDrm1mmW9x8oqbZ8/vf+qnMEg=; b=emwN9vucseKm4m
-	HIqYeeHE/otNoMZ5CpB1aR1xa6iaDJsu2FATHrNlagcdwtaxXXqRdnezM/E1or5wuxDhUKuJD8NwF
-	/LiGMDyO+GEGjuUkkNrDqVk4vG7FncvgwH85tt4pujE8cvv8lQhq7f1ypqxAt2pSXQYx4vpuxXF46
-	GaphD/uOSAa2tZuWNALw633PUAa0Nv7ZIvYI9kamceBCsGWbkwFFK0r3nKrP94m3IF+V5jwC+Y0XC
-	8ldvYNWlihBXOVzeP1NbF7nTtVYru0v10897AWr6q8IvIxdZOgzcRTAJswdHipznoMIiv/FgdqtjE
-	y3eHnXsCwtKlqnJyFmPw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jfgSx5wDLZPMx57K9sr9D24wlqr1Vb6Hk5+i/K8SZ1I=; b=bGSS0xDzCI5kYxbc40k2VJeOT
+	OPMGvPNoK0P7zkCO223HkzvJu+6BlV5PCHDxrfpZJnESlHWMcMDBxrei0VKWs1BaVeNwFbCMtQYJI
+	jvSdZUWvV4OLPL2majuSeGi3slUPiHu3E63zNMIO/4EBO2xlW2tUSdfLc5hqApgWCd1m2BBZeg0wH
+	C/PpAW+ADAYt6g58WqeoQgNPJPeM9KPoNJCm9+pTnAjNEmtusgt39foVZxRGeQBYIQCcSKZvWLVY1
+	OJc43nu3C8DO83J5Iw0uF8bORcHRvDeG3zRTypMhegGr0fC7P/9S1xBcf5uJlHyeqHsvyNtfD9ub0
+	dq5uAER0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht91o-0004My-Nx; Thu, 01 Aug 2019 11:13:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht91c-0004LO-IL
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 11:13:37 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 53C5F2087E;
- Thu,  1 Aug 2019 11:13:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564658016;
- bh=sOLRAivqQwhcDkoJBFqCBOYcZGi9dD2g8UuB/uMMpoM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=rllvDfi6xnnfPd27s3e+K364W6Aapusk5z0JY2V+Cf14I6ckzxBKKtDflwrygCw/A
- E3KVcjvnuTOsLN8FYqsHAsvFHArfQHJCnyhqotS6QHv0mzEhdn3UTn/IGpwaf9ETWJ
- 3boJnP3Tjk7dcexmPkCoT/zSFUplZb0iRo/3QvC4=
-Date: Thu, 1 Aug 2019 12:13:31 +0100
-From: Will Deacon <will@kernel.org>
-To: Marc Zyngier <marc.zyngier@arm.com>
-Subject: Re: [PATCH] arm64: Relax ICC_PMR_EL1 accesses when ICC_CTLR_EL1.PMHE
- is clear
-Message-ID: <20190801111330.42mebbdwnsbkglf6@willie-the-truck>
-References: <1564496445-53486-1-git-send-email-julien.thierry.kdev@gmail.com>
- <20190801104119.quzlr5artm4s2sbc@willie-the-truck>
- <a7aaf75d-af41-e162-8b78-84342be36907@arm.com>
- <CAA3o8kyYnek=7boO_szVoNvQks8DFGN5s37ROQKqwyWZQZiXZw@mail.gmail.com>
- <166cd7e1-4a4c-021b-eca6-f3f11fc4993d@arm.com>
+	id 1ht95U-0006F5-F5; Thu, 01 Aug 2019 11:17:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1ht95H-0006El-M3
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 11:17:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2C2791570;
+ Thu,  1 Aug 2019 04:17:23 -0700 (PDT)
+Received: from [10.32.8.205] (unknown [10.32.8.205])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DAD013F575;
+ Thu,  1 Aug 2019 04:17:21 -0700 (PDT)
+Subject: Re: [PATCH 2/2] perf/smmuv3: Validate groups for global filtering
+To: Will Deacon <will@kernel.org>
+References: <7108cdcc6fdce8dd1cfd869849bd78d05bac870f.1564580090.git.robin.murphy@arm.com>
+ <1921604dc4cd820363ccf728ade6508e0987e082.1564580090.git.robin.murphy@arm.com>
+ <20190801105607.aizjw4l7rvi7vnpw@willie-the-truck>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <e7584ab2-275a-98ce-d2d4-248815d6451c@arm.com>
+Date: Thu, 1 Aug 2019 12:17:20 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <166cd7e1-4a4c-021b-eca6-f3f11fc4993d@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190801105607.aizjw4l7rvi7vnpw@willie-the-truck>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_041336_631176_8A9D1535 
-X-CRM114-Status: GOOD (  23.31  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190801_041723_766496_13202065 
+X-CRM114-Status: GOOD (  20.19  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,64 +63,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, huawei.libin@huawei.com,
- guohanjun@huawei.com, liwei391@huawei.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, linux-arm-kernel@lists.infradead.org,
+ shameerali.kolothum.thodi@huawei.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 01, 2019 at 12:07:58PM +0100, Marc Zyngier wrote:
-> On 01/08/2019 11:56, Julien Thierry wrote:
-> > On Thu, 1 Aug 2019 at 11:51, Marc Zyngier <marc.zyngier@arm.com> wrote:
-> >>
-> >> On 01/08/2019 11:41, Will Deacon wrote:
-> >>> On Tue, Jul 30, 2019 at 03:20:45PM +0100, Julien Thierry wrote:
-> >>>> From: Marc Zyngier <marc.zyngier@arm.com>
-> >>>>
-> >>>> The GICv3 architecture specification is incredibly misleading when it
-> >>>> comes to PMR and the requirement for a DSB. It turns out that this DSB
-> >>>> is only required if the CPU interface sends an Upstream Control
-> >>>> message to the redistributor in order to update the RD's view of PMR.
-> >>>>
-> >>>> This message is only sent when ICC_CTLR_EL1.PMHE is set, which isn't
-> >>>> the case in Linux. It can still be set from EL3, so some special care
-> >>>> is required. But the upshot is that in the (hopefuly large) majority
-> >>>> of the cases, we can drop the DSB altogether.
-> >>>>
-> >>>> This requires yet another capability and some more runtime patching.
-> >>>
-> >>> Hmm, does this actually require explicit runtime patching, or can we make
-> >>> things a bit simpler with a static key?
-> >>
-> >> The hunk in entry.S is the blocker, AFAICS. Do we have a way to express
-> >> static keys in asm?
-> >>
-> > 
-> > Not that I'm aware of. I could leave the alternative in entry.S and
-> > use a static_key for the pmr_sync() macro.
+On 2019-08-01 11:56 am, Will Deacon wrote:
+> On Wed, Jul 31, 2019 at 02:37:42PM +0100, Robin Murphy wrote:
+>> With global filtering, it becomes possible for users to construct
+>> self-contradictory groups with conflicting filters. Make sure we
+>> cover that when initially validating events.
+>>
+>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+>> ---
+>>   drivers/perf/arm_smmuv3_pmu.c | 16 ++++++++++++++++
+>>   1 file changed, 16 insertions(+)
+>>
+>> diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
+>> index dd40df2ac895..e1e41d2fea94 100644
+>> --- a/drivers/perf/arm_smmuv3_pmu.c
+>> +++ b/drivers/perf/arm_smmuv3_pmu.c
+>> @@ -324,6 +324,8 @@ static int smmu_pmu_event_init(struct perf_event *event)
+>>   	struct device *dev = smmu_pmu->dev;
+>>   	struct perf_event *sibling;
+>>   	int group_num_events = 1;
+>> +	bool has_filter;
+>> +	u32 filter_span, filter_sid;
+>>   	u16 event_id;
+>>   
+>>   	if (event->attr.type != event->pmu->type)
+>> @@ -354,6 +356,10 @@ static int smmu_pmu_event_init(struct perf_event *event)
+>>   		return -EINVAL;
+>>   	}
+>>   
+>> +	has_filter = get_filter_enable(event);
+>> +	filter_span = get_filter_span(event);
+>> +	filter_sid = get_filter_stream_id(event);
+>> +
+>>   	for_each_sibling_event(sibling, event->group_leader) {
+>>   		if (sibling->pmu != event->pmu &&
+>>   		    !is_software_event(sibling)) {
+>> @@ -363,6 +369,16 @@ static int smmu_pmu_event_init(struct perf_event *event)
+>>   
+>>   		if (++group_num_events >= smmu_pmu->num_counters)
+>>   			return -EINVAL;
+>> +
+>> +		if (smmu_pmu->global_filter) {
+>> +			if (has_filter != (bool)get_filter_enable(sibling))
+>> +				return -EINVAL;
+>> +
+>> +			if (has_filter &&
+>> +			    (filter_span != get_filter_span(sibling) ||
+>> +			    filter_sid != get_filter_stream_id (sibling)))
+>> +				return -EINVAL;
+>> +		}
 > 
-> I'm not sure that helps. It means we end-up with two mechanisms to keep
-> in sync instead of a single one.
+> Can we avoid duplicating the validation logic from
+> smmu_pmu_apply_event_filter() by adding the group to a fake PMU, like we
+> do for the CPU PMU and the DSU PMU? You'll probably need to do a bit
+> of surgery on 'struct smmu_pmu' to move out the bits you need, but I
+> think it would be better that way.
 
-Yes, I missed the entry.S part initially.
+Given that apply_event_filter() includes the actual register writes, I 
+have a strong feeling that down that road lies madness. However, on a 
+second look, I see no reason not to factor out the global filter 
+validation part for reuse, and in fact I think we can even save 
+explicitly tracking global_filter_{span,sid} that way. I'll give it a try.
 
-> > Does it change much over all? I don't see the static key simplifying
-> > things too much, but I don't mind using that instead.
-> 
-> The complexity is the same. The added benefit is that we can control it
-> from the GIC code rather than the architecture code. But that's assuming
-> we can do it all using a static key...
+Robin.
 
-Well I think we should look at the numbers for static key + conditional
-branch in entry.S. If entry is being hammered, the predictor should do
-its job (ignoring Spectre-V2). If entry isn't being hammered, then it
-shouldn't matter.
-
-Will
+(and hopefully the promise of a respin will let us all overlook the 
+obvious "forgot to update the condition when I changed my mind about the 
+count" error in patch #1...)
 
 _______________________________________________
 linux-arm-kernel mailing list
