@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2E837D798
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:28:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C35D47D799
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:28:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7JG5MOn2ar6h+5Ybp6DNE/2ucuS8lf/lV9MwczrJYGw=; b=S2z24tllOvqSnb
-	dgNHtxD3N4td5U9JpW7QF0NEzkERHMwFh554aD0LSTjl645kVbVwl7wD3lCWIjnnXnQisjWcjsGiE
-	geuLTVM3wIGuND15q4LD2fndubwEhw/JSdIsJuKoessiD0w/kMonuLdSO4mNBL2ZknaUX3NzjQGb3
-	WNlJMq4gGtJG8Qns3MXvYgIpiXyVNtjyyRhGukPvGUEwgAvokOvvaV0k37+KfGGjh0C7SIWnjLxwX
-	qjReJlZfUbUMv/yt7cMfaoe+E9bsoOsUMY35Ku4V1nU0bWHM9C8NLmKvnbd7PHH2yTJvydKlky+g0
-	6vlosxnaF+p7JJBPoR5w==;
+	List-Owner; bh=ZIt3z1TWjfcLtH7IhCQroDGm4JEEDe1Q6UQSouafT7Y=; b=SgTVhCSZbEhBsZ
+	NZhe8JU0KYDPVV9KXIcI5K4rl6UBnYENC41LGITJC7iqtOqZSWgKIekFIdrb1JZs2xP77+laYYXRv
+	/jmtqJu6QohA8do0IV1u68lxgUkXKgLtYD+SxmQVVeKHYznj8BSjPqC6FvqdMncCeSksDM3lI/n7y
+	Vkh4sPb54DySsec80PJm4xRf/xCZDjwEWfnxg2kI8jRYGh4nOlYzBWwToSEv7NAx7mUQgDA71NFO9
+	DbQVCOx+yp4Ho9Xx3s3c+hup1LZISg4Bpe5JoequsIlxDmH/mwM6HQCcyVfeM71JsYTgYzoDpEx+9
+	TEriHM3HsitUq8w0CkpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6Rm-0005jM-TR; Thu, 01 Aug 2019 08:28:26 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1ht6S0-0005yd-HY; Thu, 01 Aug 2019 08:28:40 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6L1-0003kb-33
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:21:29 +0000
-Received: by mail-pf1-x444.google.com with SMTP id m30so33618221pff.8
+ id 1ht6L3-0003oF-NC
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:21:31 +0000
+Received: by mail-pg1-x542.google.com with SMTP id l21so33731455pgm.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 01:21:27 -0700 (PDT)
+ Thu, 01 Aug 2019 01:21:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=q2P7nbVondTzzEiUufavLpCtXHz6lnekor7t8KaG36c=;
- b=pTRCSsFiNu8OBieM4n9EH1oBWaf9DxqQrE8qfxItoRa9cD/Spg5spSoIPphBVmAIai
- rokTXzv97smMqkOdkzzyKoEUTdP3B+H++HwiH9+qNX60puKsd6dpA61w4Dn6n2GhvmH7
- cVxFAgwWjdW1QLRyXVrIBUPaKR73xXXmvr5m7gAwvGcGLbJ39BMne+Xfj7MVv0Bh6mQj
- KcbBBnVOhhBhVRn/Ry9JiNyiQfHvZeqhXZzhDIblc8b020MRzcQ8Z+yxtBM52JqBNwYh
- HZWPgcTne1OqI6kvSgxDABJIJzN9Kahd5jeUObH6yW4QM1CbXdAxwjYLazDrslXSI564
- gDnw==
+ bh=OQQ7xLa0wSJEVHtnIJUBQOen48CMIup3yNRZI8hCHQM=;
+ b=oUYvAhHhaGgQYxb7bVSRF/4PxV5nyflrpPmlxaW+Z0f9y4sbb5KYVLE2zZNCcCI8QC
+ k6vhSEVq7El7m5wPYxjtWN+N50RBaxgAi75+esakTPx2EM8j8CsaHi6hbRpqZWS8QO6X
+ J/25wYqXIe7p4IkEL1rWhx9nKPlX1oVIUTjPCtmlEV2i3zrah/Ba0a7jcMgt+O94BV1M
+ NgDePvBcBEtfGbQpdElGyGpl/swofqLnHMPuTtPSERWiJys4+7sFcMZz9PCRPbozZ6/y
+ jzqznP9NbpYao0nojWycpAH5xwx+8WyFQnqAJyO/3kxfDNdI4cMMVNIL96CVc6vhGyz3
+ +eYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=q2P7nbVondTzzEiUufavLpCtXHz6lnekor7t8KaG36c=;
- b=VRfkmOzHYjHaDfsz+6Vqz/HMQj6TTD40K+zk+ulxSfIp9t467pbLfzVZbtfbV2WgmF
- hbmwwX+BPCnPGNPAMWznx4A6rYDiZCfqGtYDZJeE84WoRzoq1aSIKvTs2L3L0ZROroMD
- 3e73vYU2VKc7mMKhpJwDvIJDq9a3lWaXNF5SxWSsiQwgtYPcwNo2YoOvVPXgRwITUak+
- r2u8eHeFS8JSYSVOGjffLqKh1Gu9mPm53JnUoxiCxfhTdmaXto0W+ZCFZafhyqXJuUcZ
- J+2EQdi3okhkORlaAi7NDvbEbGw3+7Dkqhonub2NUkBixR2S/yh1jYwJ7X3IsHUr38NY
- VC/Q==
-X-Gm-Message-State: APjAAAW/wgJh8rEkhr6wPEvEpM/jPjYOWAqXDRVYgyVC24cPVxNY7wth
- O/j5jC2ywm8fc5WoecuntBxtVQ==
-X-Google-Smtp-Source: APXvYqyinL72Ad1WC23YEaPJqW0xWZohjAv/ucPmvqt5ElYyOzPq0U5gBpJHjgVmPygyojXAbQoijA==
-X-Received: by 2002:a63:6206:: with SMTP id w6mr1819946pgb.428.1564647686306; 
- Thu, 01 Aug 2019 01:21:26 -0700 (PDT)
+ bh=OQQ7xLa0wSJEVHtnIJUBQOen48CMIup3yNRZI8hCHQM=;
+ b=pcQvQ3wg4m1vsGnPITPK1qcs0S0TMIPCb2oVnswkYEsNixMPFBQwjfAhIEld5wDNkW
+ CNte3dUWP7GZyYbsu3VEZ0Ao+8xoFSTuFNUYULXEfT4D5efn+6JDnB4LpPl0ujoZ+MD0
+ xZwXrgUsXEGVYxOa7JduCM7/a47SeB+ofIVf2/e3OWS/P3LoE6e8u2xDx/kpVW8/w4F/
+ vNtSGLA/E9scaw0dDvIVhUQk+pUDCCC5myYMsJ5ZEygIGxVysccLjTDxlTLDvfFXHLe9
+ 6a7wMof7WqLkdWe+eydzRvahKsrMuuSL4uQng6MksfQZJ8MiH4T4eYTCknvdG82yg/z2
+ pRTw==
+X-Gm-Message-State: APjAAAWGbi96/mpYp7qeZeJtwt5FCeisF/qtU0jXuhTrbD9ryEz90hSX
+ mTfnb9S/krNg9DtopUElMQ8nFw==
+X-Google-Smtp-Source: APXvYqya+t/VhD0GIZflUZQ26GkCty6MeltN7KGb6H/Xahi+frxD8hl8EQVaSEgY0SyvPt7cNJxFUw==
+X-Received: by 2002:a63:5b23:: with SMTP id p35mr5755254pgb.366.1564647688896; 
+ Thu, 01 Aug 2019 01:21:28 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id u7sm64635107pfm.96.2019.08.01.01.21.25
+ by smtp.gmail.com with ESMTPSA id t9sm65393089pgj.89.2019.08.01.01.21.28
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 01:21:25 -0700 (PDT)
+ Thu, 01 Aug 2019 01:21:28 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org
-Subject: [PATCH ARM32 v4.4 V2 43/47] arch: Introduce post-init read-only memory
-Date: Thu,  1 Aug 2019 13:46:27 +0530
-Message-Id: <e67e17015952a4c4b1cca19756d3c5c14153b33c.1564646727.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM32 v4.4 V2 44/47] ARM: 8595/2: apply more __ro_after_init
+Date: Thu,  1 Aug 2019 13:46:28 +0530
+Message-Id: <dcfb5f1678049c607535772519edd3ab8cf38dfb.1564646727.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1564646727.git.viresh.kumar@linaro.org>
 References: <cover.1564646727.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_012127_155590_44440AF1 
-X-CRM114-Status: GOOD (  16.97  )
+X-CRM114-CacheID: sfid-20190801_012129_784292_3EB931BD 
+X-CRM114-Status: GOOD (  12.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,109 +110,104 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Kees Cook <keescook@chromium.org>
 
-Commit c74ba8b3480da6ddaea17df2263ec09b869ac496 upstream.
+Commit 7619751f8c900fa5fdd76db06f4caf095c56de8e upstream.
 
-One of the easiest ways to protect the kernel from attack is to reduce
-the internal attack surface exposed when a "write" flaw is available. By
-making as much of the kernel read-only as possible, we reduce the
-attack surface.
-
-Many things are written to only during __init, and never changed
-again. These cannot be made "const" since the compiler will do the wrong
-thing (we do actually need to write to them). Instead, move these items
-into a memory region that will be made read-only during mark_rodata_ro()
-which happens after all kernel __init code has finished.
-
-This introduces __ro_after_init as a way to mark such memory, and adds
-some documentation about the existing __read_mostly marking.
-
-This improves the security of the Linux kernel by marking formerly
-read-write memory regions as read-only on a fully booted up system.
-
-Based on work by PaX Team and Brad Spengler.
+Guided by grsecurity's analogous __read_only markings in arch/arm,
+this applies several uses of __ro_after_init to structures that are
+only updated during __init.
 
 Signed-off-by: Kees Cook <keescook@chromium.org>
-Cc: Andy Lutomirski <luto@amacapital.net>
-Cc: Arnd Bergmann <arnd@arndb.de>
-Cc: Borislav Petkov <bp@alien8.de>
-Cc: Brad Spengler <spender@grsecurity.net>
-Cc: Brian Gerst <brgerst@gmail.com>
-Cc: David Brown <david.brown@linaro.org>
-Cc: Denys Vlasenko <dvlasenk@redhat.com>
-Cc: Emese Revfy <re.emese@gmail.com>
-Cc: H. Peter Anvin <hpa@zytor.com>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: Mathias Krause <minipli@googlemail.com>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: PaX Team <pageexec@freemail.hu>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: kernel-hardening@lists.openwall.com
-Cc: linux-arch <linux-arch@vger.kernel.org>
-Link: http://lkml.kernel.org/r/1455748879-21872-5-git-send-email-keescook@chromium.org
-Signed-off-by: Ingo Molnar <mingo@kernel.org>
+Signed-off-by: Russell King <rmk+kernel@arm.linux.org.uk>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/parisc/include/asm/cache.h   |  3 +++
- include/asm-generic/vmlinux.lds.h |  1 +
- include/linux/cache.h             | 14 ++++++++++++++
- 3 files changed, 18 insertions(+)
+ arch/arm/kernel/cpuidle.c |  2 +-
+ arch/arm/kernel/setup.c   | 10 +++++-----
+ arch/arm/kernel/smp.c     |  2 +-
+ arch/arm/lib/delay.c      |  2 +-
+ arch/arm/mm/mmu.c         |  2 +-
+ 5 files changed, 9 insertions(+), 9 deletions(-)
 
-diff --git a/arch/parisc/include/asm/cache.h b/arch/parisc/include/asm/cache.h
-index 3d0e17bcc8e9..df0f52bd18b4 100644
---- a/arch/parisc/include/asm/cache.h
-+++ b/arch/parisc/include/asm/cache.h
-@@ -22,6 +22,9 @@
+diff --git a/arch/arm/kernel/cpuidle.c b/arch/arm/kernel/cpuidle.c
+index 318da33465f4..68be7d89141d 100644
+--- a/arch/arm/kernel/cpuidle.c
++++ b/arch/arm/kernel/cpuidle.c
+@@ -19,7 +19,7 @@ extern struct of_cpuidle_method __cpuidle_method_of_table[];
+ static const struct of_cpuidle_method __cpuidle_method_of_table_sentinel
+ 	__used __section(__cpuidle_method_of_table_end);
  
- #define __read_mostly __attribute__((__section__(".data..read_mostly")))
+-static struct cpuidle_ops cpuidle_ops[NR_CPUS];
++static struct cpuidle_ops cpuidle_ops[NR_CPUS] __ro_after_init;
  
-+/* Read-only memory is marked before mark_rodata_ro() is called. */
-+#define __ro_after_init	__read_mostly
-+
- void parisc_cache_init(void);	/* initializes cache-flushing */
- void disable_sr_hashing_asm(int); /* low level support for above */
- void disable_sr_hashing(void);   /* turns off space register hashing */
-diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
-index a461b6604fd9..c63f92150eda 100644
---- a/include/asm-generic/vmlinux.lds.h
-+++ b/include/asm-generic/vmlinux.lds.h
-@@ -256,6 +256,7 @@
- 	.rodata           : AT(ADDR(.rodata) - LOAD_OFFSET) {		\
- 		VMLINUX_SYMBOL(__start_rodata) = .;			\
- 		*(.rodata) *(.rodata.*)					\
-+		*(.data..ro_after_init)	/* Read only after init */	\
- 		*(__vermagic)		/* Kernel version magic */	\
- 		. = ALIGN(8);						\
- 		VMLINUX_SYMBOL(__start___tracepoints_ptrs) = .;		\
-diff --git a/include/linux/cache.h b/include/linux/cache.h
-index 17e7e82d2aa7..1be04f8c563a 100644
---- a/include/linux/cache.h
-+++ b/include/linux/cache.h
-@@ -12,10 +12,24 @@
- #define SMP_CACHE_BYTES L1_CACHE_BYTES
+ /**
+  * arm_cpuidle_simple_enter() - a wrapper to cpu_do_idle()
+diff --git a/arch/arm/kernel/setup.c b/arch/arm/kernel/setup.c
+index 13bda9574e18..8081f88bf636 100644
+--- a/arch/arm/kernel/setup.c
++++ b/arch/arm/kernel/setup.c
+@@ -112,19 +112,19 @@ EXPORT_SYMBOL(elf_hwcap2);
+ 
+ 
+ #ifdef MULTI_CPU
+-struct processor processor __read_mostly;
++struct processor processor __ro_after_init;
+ #endif
+ #ifdef MULTI_TLB
+-struct cpu_tlb_fns cpu_tlb __read_mostly;
++struct cpu_tlb_fns cpu_tlb __ro_after_init;
+ #endif
+ #ifdef MULTI_USER
+-struct cpu_user_fns cpu_user __read_mostly;
++struct cpu_user_fns cpu_user __ro_after_init;
+ #endif
+ #ifdef MULTI_CACHE
+-struct cpu_cache_fns cpu_cache __read_mostly;
++struct cpu_cache_fns cpu_cache __ro_after_init;
+ #endif
+ #ifdef CONFIG_OUTER_CACHE
+-struct outer_cache_fns outer_cache __read_mostly;
++struct outer_cache_fns outer_cache __ro_after_init;
+ EXPORT_SYMBOL(outer_cache);
  #endif
  
-+/*
-+ * __read_mostly is used to keep rarely changing variables out of frequently
-+ * updated cachelines. If an architecture doesn't support it, ignore the
-+ * hint.
-+ */
- #ifndef __read_mostly
- #define __read_mostly
- #endif
+diff --git a/arch/arm/kernel/smp.c b/arch/arm/kernel/smp.c
+index bafbd29c6e64..c92abf791aed 100644
+--- a/arch/arm/kernel/smp.c
++++ b/arch/arm/kernel/smp.c
+@@ -79,7 +79,7 @@ enum ipi_msg_type {
  
-+/*
-+ * __ro_after_init is used to mark things that are read-only after init (i.e.
-+ * after mark_rodata_ro() has been called). These are effectively read-only,
-+ * but may get written to during init, so can't live in .rodata (via "const").
-+ */
-+#ifndef __ro_after_init
-+#define __ro_after_init __attribute__((__section__(".data..ro_after_init")))
-+#endif
-+
- #ifndef ____cacheline_aligned
- #define ____cacheline_aligned __attribute__((__aligned__(SMP_CACHE_BYTES)))
- #endif
+ static DECLARE_COMPLETION(cpu_running);
+ 
+-static struct smp_operations smp_ops;
++static struct smp_operations smp_ops __ro_after_init;
+ 
+ void __init smp_set_ops(const struct smp_operations *ops)
+ {
+diff --git a/arch/arm/lib/delay.c b/arch/arm/lib/delay.c
+index 8044591dca72..2cef11884857 100644
+--- a/arch/arm/lib/delay.c
++++ b/arch/arm/lib/delay.c
+@@ -29,7 +29,7 @@
+ /*
+  * Default to the loop-based delay implementation.
+  */
+-struct arm_delay_ops arm_delay_ops = {
++struct arm_delay_ops arm_delay_ops __ro_after_init = {
+ 	.delay		= __loop_delay,
+ 	.const_udelay	= __loop_const_udelay,
+ 	.udelay		= __loop_udelay,
+diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
+index aead23f15213..36f8c033714f 100644
+--- a/arch/arm/mm/mmu.c
++++ b/arch/arm/mm/mmu.c
+@@ -243,7 +243,7 @@ __setup("noalign", noalign_setup);
+ #define PROT_PTE_S2_DEVICE	PROT_PTE_DEVICE
+ #define PROT_SECT_DEVICE	PMD_TYPE_SECT|PMD_SECT_AP_WRITE
+ 
+-static struct mem_type mem_types[] = {
++static struct mem_type mem_types[] __ro_after_init = {
+ 	[MT_DEVICE] = {		  /* Strongly ordered / ARMv6 shared device */
+ 		.prot_pte	= PROT_PTE_DEVICE | L_PTE_MT_DEV_SHARED |
+ 				  L_PTE_SHARED,
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
