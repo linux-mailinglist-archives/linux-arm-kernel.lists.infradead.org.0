@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76E317D773
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:24:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CD187D774
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:24:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ByAGHA+wxBuzKQfHyhx0pEbb03rWtx65anCFcgkOjUI=; b=UPw/ZBZP8/AfS2
-	ygUc5UmZ8zv9lgaPCHz4o3uFLif5BJomiIxjz9V9PL6VikCClNKF2NfMN/gfCp44U//czIv/C/cG3
-	TBgg4XDiZdc8YFK4OxzZtIw3d/OcGj0G+dwiYBZ29dPLUvH0b5zoN2+H8F5OqG9lGMjK3O5WoXFLL
-	vR63DkogpCeSRlOAf9bkYKvgzbASuy7bR8ieSGGUELstCD24uR3pZSBbHZH6SFj/+QAYAn2NLwNaJ
-	wAnzLQPmPd2APIB5CKLb5YqTseUMlozn6fk8FUMFTuTvLoYn1hZQ0X0rAvgMwdaJw8a4gOe/MI3Bv
-	/o1ZZl9UQUyKp9OOq39w==;
+	List-Owner; bh=PquvtoTqs5PA+fFvboo3kmw97cVXyrScFtGCLLdiRKw=; b=hHNNasULoFrkfV
+	v7jF2X3hTF6+aGdSpGa7V/1oILdQZsUs70jad/vcGTiC+xHWxyrrvkGW+VRLCKBfv3rAWURKCZ+wU
+	L/Yt9tRpYHtEvTAyE9rehAcFm5BJqgG20iF6qNFcHi6mnc//OsenBPtHOowVsGGRYo4MJcE9EmEsi
+	H5Gt3MGQviRBW5OKTmM9lgIAegbz6sBWVdsk44frzSHItbkq8iTF8ksbTc1lUUhTBOv3Njo2Skv5L
+	dk4qd8X3SHDO9SmxSdq2ir5ZoLAZcAa5A+S/j7yf7br4uGCCmnZiTjEdFezMv704LDHU3xcPkSWdt
+	GQNUYTvqLJdmXbEW2fCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6NL-0006nB-Bk; Thu, 01 Aug 2019 08:23:51 +0000
+	id 1ht6NX-000713-H2; Thu, 01 Aug 2019 08:24:03 +0000
 Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6K6-0002Mu-VE
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:32 +0000
-Received: by mail-pf1-x441.google.com with SMTP id b13so33608445pfo.1
+ id 1ht6K9-0002Rp-QA
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:35 +0000
+Received: by mail-pf1-x441.google.com with SMTP id r1so33597944pfq.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 01:20:30 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=kLSGaDTr3EMSfGVKyIoCGH7cLmpO8I4it2r2qsg5/0U=;
- b=S4Wz6HsrBZ4tFip1H1Xoh71BhAkngC7SSsG3Z60MGcWvZ1nYmLBFkZTCNc/gGBmYqp
- IvV13zZFKByRQ8qi8CH0XXNBfuFpCJIJLwbTMKFqjgMGKK/Q4D/xvBcx878dgpzncKb2
- I0T8P4TIuMTI9CQMhnwtBZulf8EcnVFJrTMqHvdD90TUaF6WWzyoL6U9mkF7srlQQjFa
- jrrGAfvzswQqiIE12EfSt7xGgA6uDsQhoKBwYmwaCADnasmiqQOzxOV2+9PQBa/QRjk8
- skcU3J2/Dw8xQoAvBxZXQBYWI3VkPxRydxL9jSpqww1lQY8LN2GiMi62LdIm56nUincD
- Senw==
+ bh=8Q63Doa+cYNUasTyoI6bAijjzbaGR6LEUpU/vkgXczo=;
+ b=OnsdO7izQSNVnwcP+XktL4K50wNOnqx0WIs3j/4fZwBlbC1vL8Vgb2fIiI3F0DZ352
+ hDXCHjiY36jcTMB5mAKJuG2ykd6K+l269e6V9AuhxQJ+QwNN46c9FcYNT2PRs7Ux8dyw
+ dawW6e6Gip/Dh+pab1P/lzDYfZeOBGdM9VDiD9nFqowBMCClAN46ML417pHVVHLcAImZ
+ Jj1R+5+//GzwB447sGneYtYUYUM0RaREDKbuGh9+mZWdlnt3ILrFgEszu/ioySwcYlul
+ hEMRvjyIbc7eIJdA/WwhNrZjD3lSGwnOGnRPtMo3p3ayQkKuAkwMog4XZK9aT4zdelH4
+ k/LQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=kLSGaDTr3EMSfGVKyIoCGH7cLmpO8I4it2r2qsg5/0U=;
- b=HvtzOMI9Td3aHmySQI1q5kVFGwQR8/90mzBXAiZKzyiDqr0dN6uoXepJkuiTNNbxR+
- cyFMDLoIscAubdADYJ+IzsTC5rEC4JrbWVj1IgTKQStw8UXa7jJZ4ffomXLVwW+ZHgo8
- uXwSPPPS0LWVo+igHcy2togaVfUWm5+D++tL4fWeq7x0GStmczixTWYXHbHp6sIL5W/P
- JXdF5H3B7BRAtBsqDuhGP/VOcizk39+tffXu741ykuDoed1fFmGVqyUePxH2sWUSYVLz
- K6ZlDh5UOXD3mhnBIr3Egaw42OcdDH4dj+uPeiUI2rJEdcPiVpqgIV058LZm4uZ8mpZy
- B3lA==
-X-Gm-Message-State: APjAAAWqvppx1BPkG5740oJPfBmgX6u8on8/15xmjOdelv/yXD57pEzK
- RgIlmu2pq5FvcA4nw16qw4GM2FfT6Vw=
-X-Google-Smtp-Source: APXvYqyE9scLeqfx5PxPM5uNMJWNAFC88KUToiImqlb+NU/VvG6/SwuL9DS//GEOKNt+2/e831kPFA==
-X-Received: by 2002:a63:db47:: with SMTP id x7mr117148117pgi.375.1564647630247; 
- Thu, 01 Aug 2019 01:20:30 -0700 (PDT)
+ bh=8Q63Doa+cYNUasTyoI6bAijjzbaGR6LEUpU/vkgXczo=;
+ b=CEjJ9vZeFzX+5xxh2JNXIsC0YqcD2FcW/24r+Jj+xy4vZ/gUUkvfqJn8cApNQ8Zy9Q
+ 8uy0zqXFjRyG8J9XVyKTgNGpSWVk35HEmn3q0jycTMdJNRnpdh4OIyCob+Tu9KhZxzDq
+ wzX5zF423jus/wFEPxyWa0NQPK/Do0Vd/lA5krOYeWhXM6KIx6cGDP4pBavuMU4HomcJ
+ uHKKk0JAeloXR4jq8x7lnJ1tbIJcMDFVhKm3jMB9pgelQLq94j3cte7gEXZaGJ14EK/o
+ bXScWgTZ3SUFAbEyNq4Ctb2MoCFTuQ3fgVRe4o3Nzq8V2omW2LOfcwCn84PDc1+AzUHi
+ vX5A==
+X-Gm-Message-State: APjAAAVGLmyEyNJfmhRUHC2NNMLOupR3UbC6M7BiY9B4ZwyCk52YOYRg
+ 5CNS0BDppbOsv/fetoQS5jzviA==
+X-Google-Smtp-Source: APXvYqwvOhOWgRG5Ry6TKP2Km/uijYOKs0rlPuA0mCCWOxKbLEYDS5Z6VWPpRcaMDl4E8jVLeWoZuQ==
+X-Received: by 2002:a63:ee08:: with SMTP id e8mr64308403pgi.70.1564647633016; 
+ Thu, 01 Aug 2019 01:20:33 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id v185sm80565687pfb.14.2019.08.01.01.20.29
+ by smtp.gmail.com with ESMTPSA id o24sm135619457pfp.135.2019.08.01.01.20.32
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 01:20:29 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:32 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org
-Subject: [PATCH ARM32 v4.4 V2 21/47] ARM: spectre-v1: fix syscall entry
-Date: Thu,  1 Aug 2019 13:46:05 +0530
-Message-Id: <64408fb0ea37930f27bb2135b8c7f11a3d16fe7a.1564646727.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM32 v4.4 V2 22/47] ARM: signal: copy registers using
+ __copy_from_user()
+Date: Thu,  1 Aug 2019 13:46:06 +0530
+Message-Id: <cd300105252ac227310a4f700bec67745ec1ef46.1564646727.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1564646727.git.viresh.kumar@linaro.org>
 References: <cover.1564646727.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_012031_008164_0688AD6A 
-X-CRM114-Status: GOOD (  13.30  )
+X-CRM114-CacheID: sfid-20190801_012033_936954_BAB62281 
+X-CRM114-Status: GOOD (  13.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -110,102 +111,84 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit 10573ae547c85b2c61417ff1a106cffbfceada35 upstream.
+Commit c32cd419d6650e42b9cdebb83c672ec945e6bd7e upstream.
 
-Prevent speculation at the syscall table decoding by clamping the index
-used to zero on invalid system call numbers, and using the csdb
-speculative barrier.
+__get_user_error() is used as a fast accessor to make copying structure
+members in the signal handling path as efficient as possible.  However,
+with software PAN and the recent Spectre variant 1, the efficiency is
+reduced as these are no longer fast accessors.
 
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+In the case of software PAN, it has to switch the domain register around
+each access, and with Spectre variant 1, it would have to repeat the
+access_ok() check for each access.
+
+It becomes much more efficient to use __copy_from_user() instead, so
+let's use this for the ARM integer registers.
+
 Acked-by: Mark Rutland <mark.rutland@arm.com>
-Boot-tested-by: Tony Lindgren <tony@atomide.com>
-Reviewed-by: Tony Lindgren <tony@atomide.com>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: David A. Long <dave.long@linaro.org>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm/kernel/entry-common.S | 18 +++++++-----------
- arch/arm/kernel/entry-header.S | 25 +++++++++++++++++++++++++
- 2 files changed, 32 insertions(+), 11 deletions(-)
+ arch/arm/kernel/signal.c | 38 +++++++++++++++++++++-----------------
+ 1 file changed, 21 insertions(+), 17 deletions(-)
 
-diff --git a/arch/arm/kernel/entry-common.S b/arch/arm/kernel/entry-common.S
-index 30a7228eaceb..e969b18d9ff9 100644
---- a/arch/arm/kernel/entry-common.S
-+++ b/arch/arm/kernel/entry-common.S
-@@ -223,9 +223,7 @@ ENTRY(vector_swi)
- 	tst	r10, #_TIF_SYSCALL_WORK		@ are we tracing syscalls?
- 	bne	__sys_trace
+diff --git a/arch/arm/kernel/signal.c b/arch/arm/kernel/signal.c
+index 7b8f2141427b..a592bc0287f8 100644
+--- a/arch/arm/kernel/signal.c
++++ b/arch/arm/kernel/signal.c
+@@ -141,6 +141,7 @@ struct rt_sigframe {
  
--	cmp	scno, #NR_syscalls		@ check upper syscall limit
--	badr	lr, ret_fast_syscall		@ return address
--	ldrcc	pc, [tbl, scno, lsl #2]		@ call sys_* routine
-+	invoke_syscall tbl, scno, r10, ret_fast_syscall
+ static int restore_sigframe(struct pt_regs *regs, struct sigframe __user *sf)
+ {
++	struct sigcontext context;
+ 	struct aux_sigframe __user *aux;
+ 	sigset_t set;
+ 	int err;
+@@ -149,23 +150,26 @@ static int restore_sigframe(struct pt_regs *regs, struct sigframe __user *sf)
+ 	if (err == 0)
+ 		set_current_blocked(&set);
  
- 	add	r1, sp, #S_OFF
- 2:	cmp	scno, #(__ARM_NR_BASE - __NR_SYSCALL_BASE)
-@@ -258,14 +256,8 @@ ENDPROC(vector_swi)
- 	mov	r1, scno
- 	add	r0, sp, #S_OFF
- 	bl	syscall_trace_enter
--
--	badr	lr, __sys_trace_return		@ return address
--	mov	scno, r0			@ syscall number (possibly new)
--	add	r1, sp, #S_R0 + S_OFF		@ pointer to regs
--	cmp	scno, #NR_syscalls		@ check upper syscall limit
--	ldmccia	r1, {r0 - r6}			@ have to reload r0 - r6
--	stmccia	sp, {r4, r5}			@ and update the stack args
--	ldrcc	pc, [tbl, scno, lsl #2]		@ call sys_* routine
-+	mov	scno, r0
-+	invoke_syscall tbl, scno, r10, __sys_trace_return, reload=1
- 	cmp	scno, #-1			@ skip the syscall?
- 	bne	2b
- 	add	sp, sp, #S_OFF			@ restore stack
-@@ -317,6 +309,10 @@ ENTRY(sys_call_table)
- 		bic	scno, r0, #__NR_OABI_SYSCALL_BASE
- 		cmp	scno, #__NR_syscall - __NR_SYSCALL_BASE
- 		cmpne	scno, #NR_syscalls	@ check range
-+#ifdef CONFIG_CPU_SPECTRE
-+		movhs	scno, #0
-+		csdb
-+#endif
- 		stmloia	sp, {r5, r6}		@ shuffle args
- 		movlo	r0, r1
- 		movlo	r1, r2
-diff --git a/arch/arm/kernel/entry-header.S b/arch/arm/kernel/entry-header.S
-index 6d243e830516..86dfee487e24 100644
---- a/arch/arm/kernel/entry-header.S
-+++ b/arch/arm/kernel/entry-header.S
-@@ -373,6 +373,31 @@
- #endif
- 	.endm
+-	__get_user_error(regs->ARM_r0, &sf->uc.uc_mcontext.arm_r0, err);
+-	__get_user_error(regs->ARM_r1, &sf->uc.uc_mcontext.arm_r1, err);
+-	__get_user_error(regs->ARM_r2, &sf->uc.uc_mcontext.arm_r2, err);
+-	__get_user_error(regs->ARM_r3, &sf->uc.uc_mcontext.arm_r3, err);
+-	__get_user_error(regs->ARM_r4, &sf->uc.uc_mcontext.arm_r4, err);
+-	__get_user_error(regs->ARM_r5, &sf->uc.uc_mcontext.arm_r5, err);
+-	__get_user_error(regs->ARM_r6, &sf->uc.uc_mcontext.arm_r6, err);
+-	__get_user_error(regs->ARM_r7, &sf->uc.uc_mcontext.arm_r7, err);
+-	__get_user_error(regs->ARM_r8, &sf->uc.uc_mcontext.arm_r8, err);
+-	__get_user_error(regs->ARM_r9, &sf->uc.uc_mcontext.arm_r9, err);
+-	__get_user_error(regs->ARM_r10, &sf->uc.uc_mcontext.arm_r10, err);
+-	__get_user_error(regs->ARM_fp, &sf->uc.uc_mcontext.arm_fp, err);
+-	__get_user_error(regs->ARM_ip, &sf->uc.uc_mcontext.arm_ip, err);
+-	__get_user_error(regs->ARM_sp, &sf->uc.uc_mcontext.arm_sp, err);
+-	__get_user_error(regs->ARM_lr, &sf->uc.uc_mcontext.arm_lr, err);
+-	__get_user_error(regs->ARM_pc, &sf->uc.uc_mcontext.arm_pc, err);
+-	__get_user_error(regs->ARM_cpsr, &sf->uc.uc_mcontext.arm_cpsr, err);
++	err |= __copy_from_user(&context, &sf->uc.uc_mcontext, sizeof(context));
++	if (err == 0) {
++		regs->ARM_r0 = context.arm_r0;
++		regs->ARM_r1 = context.arm_r1;
++		regs->ARM_r2 = context.arm_r2;
++		regs->ARM_r3 = context.arm_r3;
++		regs->ARM_r4 = context.arm_r4;
++		regs->ARM_r5 = context.arm_r5;
++		regs->ARM_r6 = context.arm_r6;
++		regs->ARM_r7 = context.arm_r7;
++		regs->ARM_r8 = context.arm_r8;
++		regs->ARM_r9 = context.arm_r9;
++		regs->ARM_r10 = context.arm_r10;
++		regs->ARM_fp = context.arm_fp;
++		regs->ARM_ip = context.arm_ip;
++		regs->ARM_sp = context.arm_sp;
++		regs->ARM_lr = context.arm_lr;
++		regs->ARM_pc = context.arm_pc;
++		regs->ARM_cpsr = context.arm_cpsr;
++	}
  
-+	.macro	invoke_syscall, table, nr, tmp, ret, reload=0
-+#ifdef CONFIG_CPU_SPECTRE
-+	mov	\tmp, \nr
-+	cmp	\tmp, #NR_syscalls		@ check upper syscall limit
-+	movcs	\tmp, #0
-+	csdb
-+	badr	lr, \ret			@ return address
-+	.if	\reload
-+	add	r1, sp, #S_R0 + S_OFF		@ pointer to regs
-+	ldmccia	r1, {r0 - r6}			@ reload r0-r6
-+	stmccia	sp, {r4, r5}			@ update stack arguments
-+	.endif
-+	ldrcc	pc, [\table, \tmp, lsl #2]	@ call sys_* routine
-+#else
-+	cmp	\nr, #NR_syscalls		@ check upper syscall limit
-+	badr	lr, \ret			@ return address
-+	.if	\reload
-+	add	r1, sp, #S_R0 + S_OFF		@ pointer to regs
-+	ldmccia	r1, {r0 - r6}			@ reload r0-r6
-+	stmccia	sp, {r4, r5}			@ update stack arguments
-+	.endif
-+	ldrcc	pc, [\table, \nr, lsl #2]	@ call sys_* routine
-+#endif
-+	.endm
-+
- /*
-  * These are the registers used in the syscall handler, and allow us to
-  * have in theory up to 7 arguments to a function - r0 to r6.
+ 	err |= !valid_user_regs(regs);
+ 
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
