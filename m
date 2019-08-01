@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28F717D775
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:24:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AA857D776
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:24:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HjLPW3Afb5N85W9EhBpofx9bjTwcNmFH0Hv9JWyH8y0=; b=Mo/fBq2sf0ajyL
-	QbVdc7XLlBlmZx0gBt+GvDzMUFhc1dRZqekZjCzgee4YJXDRNj/whdNhuOFz6Ma5HTTYgcnHoxPjU
-	H64OwzENxevgShB5TvkZftLi/6PdxYOsAjm+T41i4RvTHsTMgEH59Gn8jAf/yhriVj7jFNhdbnFDe
-	6lJd0g0XuxaXn8Rp0Nsx/g3pVTxpGBncXYsB6GidlZiWZSC5AqLWcnoTgijmIUoJzn6AlE4nGb3kS
-	fKfRV0TuS9aj6sBp57MNarTh/DxDQ+AKAhqsCX/+/Nxo5uMeoYZCvlqNMCil0UxeqNRgm02IcZ5ri
-	s5NSc7TyW359NYCMSR9w==;
+	List-Owner; bh=rVnfQvCWYfdtib91pCW9lo9JKOAndyznDwNS87BSLLo=; b=tD3n5efzvrYmTS
+	A3LEREcGwpfulyl0THUoUANxhuWv6oFEyDu56hBtxSsbOhzPzJLn0H0rO3fkge6/BHf+WQJ9L8Iij
+	OUoNKYnNoCoZETHP4xV8hSZcpI2kJBWPOFtkRK4UMY3piMGQx634JEQWy9AUDG1yGJAY6qnDANFG0
+	/oMSG8onD8UDVoNnGiSYYagG4oM+BepT9xPZIbQZAX0HV7Apq16bLQOSn/XIf8pd5+qBYaHW9tjQk
+	Rx+mDv0wBlfXr2HPpV/1X+CkDRxpgjVcjp4xyWqwc3KDWX8HamMUBBit+dSDZqGGRuqityLjM68r4
+	1UrswaW1MfsPfHRoAh3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6No-0007Mb-G7; Thu, 01 Aug 2019 08:24:20 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ht6Nx-0007Zb-AR; Thu, 01 Aug 2019 08:24:29 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6KD-0002X3-5m
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:38 +0000
-Received: by mail-pf1-x442.google.com with SMTP id u14so33623822pfn.2
+ id 1ht6KE-0002ZY-Ly
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:40 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q10so33592627pff.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 01:20:37 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=uRyk3zcBxn+kArv7clzkKBJGfRbp0pIX9juxiKGvE2U=;
- b=b2McCC/WCcGBPzkhtxUUkoJMeMcdJguyRODCBJ0WTu/VoS9DEEque4sOadkrF9Nbft
- lPCrVhWn8e8vlLv2WWnVQZJRuv3ttph1yCzYhXrPNBvES/oMHX2J1WpCdT1oG9MQMP+D
- Jt/0F9x460JOvtbf5koGqj6pES0Ec3SdobEldPLHFvYJvGZET5aHonfh2gMfP5ZT/VLg
- EJFEuXzxVGFfmlErLRbS0l/WPAPQuTGoCIH/i0Z5vanbDpw4ZjXJQREgsoYvtVVpVzbM
- eVc3rMqWzX0hfKrrk3QsXMlXzD6NdG5EZbR19l0oj43J9RBgyjDLk2+iB6/q7m5FMEvc
- 9xtA==
+ bh=cd+CJgxpyw48wYexEQLN0Ryuy346dGX9j+MO3rZWGCA=;
+ b=Z2hoeeYKddLvWgzkdCUEz+2ekNkZhKgcRMApcaKIJ7G2CIMAm1cubhuNLH0vwcT8P8
+ DmxIMWPwhRX603RJVjktdRBeAM4BzKt+1c16yhRSV52OElcwQ2L6MNZDgJZKJ2XoR/Vr
+ qgiyoHQNvVUb7Nc+j7L1Iqm1RRpCH+xuPcVYNz1OUQYngmWAZuAlPcPICZa557bjJoeQ
+ 30kRgnzcmBqKpvWjBhMv9oMvtu6dj7gKLZofh36CdRU9/n0nfWQvp2xA3iJPXLxub6cc
+ 3Db/fga6lj3CgKI85yaJQhvd5i4Z9vn/+aPJLHb392RWMyFDVdH5e/2+Gp5+p1LbBpvR
+ 4qMQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=uRyk3zcBxn+kArv7clzkKBJGfRbp0pIX9juxiKGvE2U=;
- b=sfPnC+ignTfNsOX3aOtFgyqgPbrpRujouSvqf0SuYVAJ3WEmxrpFuOIlSr1Wb2xEtT
- Y5I/gfo+WCJRKNoRjsmallzTg3BGnkKJNUBb7wJF2lhSUTjBkdVd3eCpl2J3QvUsbPzb
- f6Ql5u9kyeOnlSzyfZ0/hvv0lJ+AKJNuHpRHcWTbTY9z70qeekI/yQrAeqpYPwN36UUT
- qYDCPfc1TjHHsERK9FhH3z1cCsAvodgi5hBbo3pVNVrWVtsLieIXh5GWZhJWtyew5PTl
- vbB3jes0FxCgt4PcwIt1veuYuVFeenUzLCdE0AdMegTu041I3ubzr4D0Nh8vVIigezFQ
- Ibfg==
-X-Gm-Message-State: APjAAAXIH26EYkxVCnTvJmLKXrc52lH/z3sKIfMP+YPzVOdbNiwLGpUU
- LvUikXomlhLhVgEYGDTB6/8qjQ==
-X-Google-Smtp-Source: APXvYqxL4re/D71PbEnnmwmOeprKRJUhUxiAc8Bj8thOBjsQS5N86j2M8Po5fkRwLg7hw8Lweus4EA==
-X-Received: by 2002:aa7:9dcd:: with SMTP id g13mr53047380pfq.204.1564647635649; 
- Thu, 01 Aug 2019 01:20:35 -0700 (PDT)
+ bh=cd+CJgxpyw48wYexEQLN0Ryuy346dGX9j+MO3rZWGCA=;
+ b=ZaevSJpGpybIbbiN5VSOktr6Pl5R0Nr78awu1oFZLEh0bddiqDeARYGjicedq2LVGP
+ NSdTvQC457YajvS51AWEH/Gr73G64QvGT1dwI5Bv/B0Gzt7d0IOqJBOEd1xzS6E5mYqf
+ yaPqHu0v2fbkSphIL0eLSnNlSyDYyo14vd5cMrJA0D3WKNKT5tMLtf1s7kABLId2+XTJ
+ 6+n5x8Cgv4MNE4nHhkw3yoJUQyMHjt5RQDyYRoLGNHUogx1NlxDn4I1ZRsHPre8UrCqy
+ ScMj/aKVsjw4TMmslvtWlxCQxcf6x14IMqMdwp4Y86yJgZY5e2HTA4Zd6H2mBWPBUJqW
+ KvJw==
+X-Gm-Message-State: APjAAAWgjIeJ5Vtivv/dOjTwROuU5UvT3xGdmadD7cL8NtPHD52U1ZLN
+ 8WHGb6dyR1heIPKU9qLufPZ8lw==
+X-Google-Smtp-Source: APXvYqwtcDCmIxl5mkdh/47SacWqkNbX1MQ0IltsOO1s27+NiUNuJFRU7Slh4TpJoMf4kw0ZVjpeAw==
+X-Received: by 2002:a63:1046:: with SMTP id 6mr120820447pgq.111.1564647638075; 
+ Thu, 01 Aug 2019 01:20:38 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id n17sm74761757pfq.182.2019.08.01.01.20.34
+ by smtp.gmail.com with ESMTPSA id e189sm56924368pgc.15.2019.08.01.01.20.37
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 01:20:35 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:37 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org
-Subject: [PATCH ARM32 v4.4 V2 23/47] ARM: vfp: use __copy_from_user() when
- restoring VFP state
-Date: Thu,  1 Aug 2019 13:46:07 +0530
-Message-Id: <8476fc23988444fda761ae9d99563cea0b21c191.1564646727.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM32 v4.4 V2 24/47] ARM: oabi-compat: copy semops using
+ __copy_from_user()
+Date: Thu,  1 Aug 2019 13:46:08 +0530
+Message-Id: <bb0db44ea44afc9defa2aefa3b1ecf6e4c81d988.1564646727.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1564646727.git.viresh.kumar@linaro.org>
 References: <cover.1564646727.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_012037_243261_4E8F98AD 
-X-CRM114-Status: GOOD (  17.40  )
+X-CRM114-CacheID: sfid-20190801_012038_788384_AAD4F722 
+X-CRM114-Status: GOOD (  13.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,133 +111,47 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit 42019fc50dfadb219f9e6ddf4c354f3837057d80 upstream.
+Commit 8c8484a1c18e3231648f5ba7cc5ffb7fd70b3ca4 upstream.
 
 __get_user_error() is used as a fast accessor to make copying structure
-members in the signal handling path as efficient as possible.  However,
-with software PAN and the recent Spectre variant 1, the efficiency is
-reduced as these are no longer fast accessors.
+members as efficient as possible.  However, with software PAN and the
+recent Spectre variant 1, the efficiency is reduced as these are no
+longer fast accessors.
 
 In the case of software PAN, it has to switch the domain register around
 each access, and with Spectre variant 1, it would have to repeat the
 access_ok() check for each access.
 
-Use __copy_from_user() rather than __get_user_err() for individual
-members when restoring VFP state.
+Rather than using __get_user_error() to copy each semops element member,
+copy each semops element in full using __copy_from_user().
 
 Acked-by: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: David A. Long <dave.long@linaro.org>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm/include/asm/thread_info.h |  4 ++--
- arch/arm/kernel/signal.c           | 18 ++++++++----------
- arch/arm/vfp/vfpmodule.c           | 17 +++++++----------
- 3 files changed, 17 insertions(+), 22 deletions(-)
+ arch/arm/kernel/sys_oabi-compat.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/include/asm/thread_info.h b/arch/arm/include/asm/thread_info.h
-index 776757d1604a..57d2ad9c75ca 100644
---- a/arch/arm/include/asm/thread_info.h
-+++ b/arch/arm/include/asm/thread_info.h
-@@ -126,8 +126,8 @@ struct user_vfp_exc;
- 
- extern int vfp_preserve_user_clear_hwstate(struct user_vfp __user *,
- 					   struct user_vfp_exc __user *);
--extern int vfp_restore_user_hwstate(struct user_vfp __user *,
--				    struct user_vfp_exc __user *);
-+extern int vfp_restore_user_hwstate(struct user_vfp *,
-+				    struct user_vfp_exc *);
- #endif
- 
- /*
-diff --git a/arch/arm/kernel/signal.c b/arch/arm/kernel/signal.c
-index a592bc0287f8..76f85c38f2b8 100644
---- a/arch/arm/kernel/signal.c
-+++ b/arch/arm/kernel/signal.c
-@@ -107,21 +107,19 @@ static int preserve_vfp_context(struct vfp_sigframe __user *frame)
- 	return vfp_preserve_user_clear_hwstate(&frame->ufp, &frame->ufp_exc);
- }
- 
--static int restore_vfp_context(struct vfp_sigframe __user *frame)
-+static int restore_vfp_context(struct vfp_sigframe __user *auxp)
- {
--	unsigned long magic;
--	unsigned long size;
--	int err = 0;
--
--	__get_user_error(magic, &frame->magic, err);
--	__get_user_error(size, &frame->size, err);
-+	struct vfp_sigframe frame;
-+	int err;
- 
-+	err = __copy_from_user(&frame, (char __user *) auxp, sizeof(frame));
- 	if (err)
--		return -EFAULT;
--	if (magic != VFP_MAGIC || size != VFP_STORAGE_SIZE)
-+		return err;
-+
-+	if (frame.magic != VFP_MAGIC || frame.size != VFP_STORAGE_SIZE)
- 		return -EINVAL;
- 
--	return vfp_restore_user_hwstate(&frame->ufp, &frame->ufp_exc);
-+	return vfp_restore_user_hwstate(&frame.ufp, &frame.ufp_exc);
- }
- 
- #endif
-diff --git a/arch/arm/vfp/vfpmodule.c b/arch/arm/vfp/vfpmodule.c
-index 2a61e4b04600..7aa6366b2a8d 100644
---- a/arch/arm/vfp/vfpmodule.c
-+++ b/arch/arm/vfp/vfpmodule.c
-@@ -601,13 +601,11 @@ int vfp_preserve_user_clear_hwstate(struct user_vfp __user *ufp,
- }
- 
- /* Sanitise and restore the current VFP state from the provided structures. */
--int vfp_restore_user_hwstate(struct user_vfp __user *ufp,
--			     struct user_vfp_exc __user *ufp_exc)
-+int vfp_restore_user_hwstate(struct user_vfp *ufp, struct user_vfp_exc *ufp_exc)
- {
- 	struct thread_info *thread = current_thread_info();
- 	struct vfp_hard_struct *hwstate = &thread->vfpstate.hard;
- 	unsigned long fpexc;
--	int err = 0;
- 
- 	/* Disable VFP to avoid corrupting the new thread state. */
- 	vfp_flush_hwstate(thread);
-@@ -616,17 +614,16 @@ int vfp_restore_user_hwstate(struct user_vfp __user *ufp,
- 	 * Copy the floating point registers. There can be unused
- 	 * registers see asm/hwcap.h for details.
- 	 */
--	err |= __copy_from_user(&hwstate->fpregs, &ufp->fpregs,
--				sizeof(hwstate->fpregs));
-+	memcpy(&hwstate->fpregs, &ufp->fpregs, sizeof(hwstate->fpregs));
- 	/*
- 	 * Copy the status and control register.
- 	 */
--	__get_user_error(hwstate->fpscr, &ufp->fpscr, err);
-+	hwstate->fpscr = ufp->fpscr;
- 
- 	/*
- 	 * Sanitise and restore the exception registers.
- 	 */
--	__get_user_error(fpexc, &ufp_exc->fpexc, err);
-+	fpexc = ufp_exc->fpexc;
- 
- 	/* Ensure the VFP is enabled. */
- 	fpexc |= FPEXC_EN;
-@@ -635,10 +632,10 @@ int vfp_restore_user_hwstate(struct user_vfp __user *ufp,
- 	fpexc &= ~(FPEXC_EX | FPEXC_FP2V);
- 	hwstate->fpexc = fpexc;
- 
--	__get_user_error(hwstate->fpinst, &ufp_exc->fpinst, err);
--	__get_user_error(hwstate->fpinst2, &ufp_exc->fpinst2, err);
-+	hwstate->fpinst = ufp_exc->fpinst;
-+	hwstate->fpinst2 = ufp_exc->fpinst2;
- 
--	return err ? -EFAULT : 0;
-+	return 0;
- }
- 
- /*
+diff --git a/arch/arm/kernel/sys_oabi-compat.c b/arch/arm/kernel/sys_oabi-compat.c
+index 5f221acd21ae..640748e27035 100644
+--- a/arch/arm/kernel/sys_oabi-compat.c
++++ b/arch/arm/kernel/sys_oabi-compat.c
+@@ -328,9 +328,11 @@ asmlinkage long sys_oabi_semtimedop(int semid,
+ 		return -ENOMEM;
+ 	err = 0;
+ 	for (i = 0; i < nsops; i++) {
+-		__get_user_error(sops[i].sem_num, &tsops->sem_num, err);
+-		__get_user_error(sops[i].sem_op,  &tsops->sem_op,  err);
+-		__get_user_error(sops[i].sem_flg, &tsops->sem_flg, err);
++		struct oabi_sembuf osb;
++		err |= __copy_from_user(&osb, tsops, sizeof(osb));
++		sops[i].sem_num = osb.sem_num;
++		sops[i].sem_op = osb.sem_op;
++		sops[i].sem_flg = osb.sem_flg;
+ 		tsops++;
+ 	}
+ 	if (timeout) {
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
