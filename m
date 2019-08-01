@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 365B97D782
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:25:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCA1E7D783
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  1 Aug 2019 10:26:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=maqIrOrzBhoLpo+JdH6pRvSTUSnuPHvn5eYJbs/nNEo=; b=WWcs96TmtJmdEA
-	9Q5UMDk37B2rtQ+cwIDmiRgqyG3dVB6YwfqlelMAnKwJxArnwric2RXVV0tkLCw/9NvzZAgRtgdWd
-	mDfe3KIMJTxU0hbEzEVPV9HE80IOO1mzQt77Ophu9od4/lr2xc2J3JvIdMrBLxSi3CEeiukSH2yxa
-	OzUS+/Ynxz8xcFDHyxJ1t7EncXwasBEvZBdA/K2IHd8StXrd9uNDrlOjOK5nSpTwTxtA70QsU1ign
-	bqn079fRlLQwJKD0+EPdDsldzGrtHidUbs9/ff/dkLiNMFsR2SuLUV+JwNSVBEt5BuU0J+MT+FM1a
-	c0YYb9IpdfFeUvFi+G8g==;
+	List-Owner; bh=XvduuFibURvXSSVz5CXmEiI7sSqas1PjCRMjRIM+K/0=; b=Gy6XGGwQwKrKwA
+	fr1SupGmqX4DX1CRPeskSR8RK9uNjXZ/s8SE0efY6com8MdwxwtMw8viTFbxz6hbF2fS+XNDba6aK
+	nzyRoVtBUBnRFw8EF+l4FPj5gpmrXwStm60l9yKXMFYoLFRhxKz5Q19uxEPYdZ/z7STDXo1UkbtsP
+	pqeY512jDxVUk8VQyFyyJxq7QAHnroUsDRGXVuDf/KBcFx2H+9tEP0fxAlKdhxCXEJi2xGhay/o4I
+	dXOWhcLKPrWkzf/Q/k71zVYRkQDfGMvxYeU2sfajNl8gkrnvqBWprAEL6Qb0QWMjxolyPKNu9lLfa
+	QBT3ZpCH7xbdIydDYsdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ht6PC-0001mS-QT; Thu, 01 Aug 2019 08:25:46 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1ht6PL-0001yr-FT; Thu, 01 Aug 2019 08:25:55 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ht6KT-0002sK-KU
- for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:55 +0000
-Received: by mail-pf1-x444.google.com with SMTP id q10so33593011pff.9
+ id 1ht6KW-0002vh-6f
+ for linux-arm-kernel@lists.infradead.org; Thu, 01 Aug 2019 08:20:57 +0000
+Received: by mail-pg1-x544.google.com with SMTP id w10so33739811pgj.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 01 Aug 2019 01:20:53 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=PM+p9F/paBphnvI0O8YGjV0kMD9bw/jop01RC1tBzqU=;
- b=o0bXhyKqYt8kp2xyqrJN+d5+L6zWOZoysvGTEc4rppHnRpkoPu+T4rnS3m4Jm+aRvI
- sQXJ7oKpn5ETzHEMDgshVmw84/LTRr+AG+d5lPhYx3vl/8kjEcoUyTb+f9Z/tE7ck1xs
- 7gTkMJKkIt5Gx64KSQCHK+McwRAZN35KWlv8Vp1mb2L75q5NBI1Dan3JB+63h+6B54iV
- 4ZSBYc8+5DRo4yXMnBg4TH9/kpVbi9ZyAJwa3DEeIQ25dhha1DKlODyU2IetZUpvOG+n
- DfzIRtDFj4vaEK47flZLyQXsqnbGm9K47CBqs2fPmZj8wswO1/GL3Dn4eFaSjhCw6PAR
- y49Q==
+ bh=+tEIHvT2/jri72b3g9sp066ia6oUWHcxPpBllqXMUPw=;
+ b=zstarAAhY7wWmMaGY6D6L8D4JUjQWl1LpQDoGnw+W3hdCIJFeJzHRMBiPHafBsJN9l
+ eZzvWMX/PZj6qV0aTkXMvuu43Wh3x673EnQCOEqPk197LcpNJFabikbGb65LoN4kOhsx
+ WP8ba6yc2hAueRfZnHaWcCbYiVJiL13J4NUyBdoWUvmrtKDhtXrlXNWbiiOfVNIyZM1y
+ /vNp/Yte3Jw4v6bpd1KDd53erL5yT9SmyfuxiqQAeLn/V5g/OTR1qSREfhWIZH/aBV/k
+ qU8xqXAtcEchEEN/j5oB4C/dILnMiiNADOiXy9RhZkxWQGvOMs8ISwdONHMl0lypJqzS
+ V+Sg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=PM+p9F/paBphnvI0O8YGjV0kMD9bw/jop01RC1tBzqU=;
- b=m1TopebXncqxyjKxQw1vl8dA6AaV547P01I19G5QuYKYfVotxbbmY62KHvuXwcwxAU
- Uf1r3lJj0ruaUg8qMrJ6w1utb6gvsZ5jv4vtfKvytmnIjOhfEEald7GO2gEoTr1Gkold
- n/diGr56hRrWaq7XfFNMvgpP+X6XylbPztg4bN54WfxbVb9ClXkLAyUiaFfRErtg8oqu
- A9H5WiKCk2qjW0MJ3pY5UAnqfbQ8JM3QRzMGriYXrSKB+QaKlHqfmUxQAeAT0txYY83I
- A/rploSx9T7D4SGa9bScKabXx3y0SgXkRqHlR+HGEKiyECD7THurYN1F+GsMjrsf+Urh
- 1z6Q==
-X-Gm-Message-State: APjAAAX9eFKNExo91C2OJ1FoT2I9n4EUkhmY/4dIDpE8UToCoE9/oB8N
- 35ebAUuOgxFrlF5FSHEIwnQFmw==
-X-Google-Smtp-Source: APXvYqz3GWx2N/m/nhcWkCouY4H1qYVElKKIkdNdyN42eDSqTyXd8YO3BZzcYLEcjj5aC3TXCQvy/A==
-X-Received: by 2002:a62:7552:: with SMTP id q79mr52190761pfc.71.1564647652996; 
- Thu, 01 Aug 2019 01:20:52 -0700 (PDT)
+ bh=+tEIHvT2/jri72b3g9sp066ia6oUWHcxPpBllqXMUPw=;
+ b=VZafZr8n0iNxFon1WzqRnHeXVKXLMg/cU3t8a0l9NuBSOcnY4V8A8QSGLq9N1nWP/Y
+ eH/wZ10U7y5YSuhzD7NT+o547viXkzeP9eoNP35n0TjD9TAMOE4GMwsb7kLr6dI9U9ZF
+ SwHePFXs5/dmFw2UH4rGAL6wHiiSHyzcnxaM1C9pC2zqF8pjnhdNjQrRT5VrFGbdBEc9
+ feQMcQe4KxfrEqQhFdwrNhihDbmDz/DBdouGdswNTbVG0iNEqPtf5dvy88tUJYamT57w
+ zCBK0oi/kxoW7euvpLIB3QMNNL6V3rKhk7aYqrMazCDqNarK71B2kDihdl0Vzir+hde+
+ sDuQ==
+X-Gm-Message-State: APjAAAW1sSj6oAcYDAG7yKVxXBJsG66I/5T/nuVmONw544rG0kv1iSju
+ nn7Qbu5HRLzIQHTvKIDE/pqpyg==
+X-Google-Smtp-Source: APXvYqxf8BTnCquHpLYCvNUaNkn8x4u4LXcuJcRGMZOEAmDPdYlWD3TQ4h+IWrvNS6AN8KeE4afqWw==
+X-Received: by 2002:a17:90a:8c06:: with SMTP id
+ a6mr7401352pjo.45.1564647655514; 
+ Thu, 01 Aug 2019 01:20:55 -0700 (PDT)
 Received: from localhost ([122.172.28.117])
- by smtp.gmail.com with ESMTPSA id o14sm4069908pjp.29.2019.08.01.01.20.52
+ by smtp.gmail.com with ESMTPSA id 5sm2004064pgh.93.2019.08.01.01.20.54
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 01:20:52 -0700 (PDT)
+ Thu, 01 Aug 2019 01:20:55 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org
-Subject: [PATCH ARM32 v4.4 V2 30/47] ARM: 8792/1: oabi-compat: copy oabi
- events using __copy_to_user()
-Date: Thu,  1 Aug 2019 13:46:14 +0530
-Message-Id: <ea31022b55593a34417b2045fef8bf474fc80e16.1564646727.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM32 v4.4 V2 31/47] ARM: 8793/1: signal: replace
+ __put_user_error with __put_user
+Date: Thu,  1 Aug 2019 13:46:15 +0530
+Message-Id: <8aaea1bd07c7c54db7efc732ac3a041c32d3bb4a.1564646727.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1564646727.git.viresh.kumar@linaro.org>
 References: <cover.1564646727.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_012053_882950_0E2C0AEE 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20190801_012056_371808_89134DDD 
+X-CRM114-Status: GOOD (  10.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,46 +112,51 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Julien Thierry <julien.thierry@arm.com>
 
-Commit 319508902600c2688e057750148487996396e9ca upstream.
+Commit 18ea66bd6e7a95bdc598223d72757190916af28b upstream.
 
-Copy events to user using __copy_to_user() rather than copy members of
-individually with __put_user_error().
-This has the benefit of disabling/enabling PAN once per event intead of
-once per event member.
+With Spectre-v1.1 mitigations, __put_user_error is pointless. In an attempt
+to remove it, replace its references in frame setups with __put_user.
 
 Signed-off-by: Julien Thierry <julien.thierry@arm.com>
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm/kernel/sys_oabi-compat.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ arch/arm/kernel/signal.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/kernel/sys_oabi-compat.c b/arch/arm/kernel/sys_oabi-compat.c
-index 640748e27035..d844c5c9364b 100644
---- a/arch/arm/kernel/sys_oabi-compat.c
-+++ b/arch/arm/kernel/sys_oabi-compat.c
-@@ -276,6 +276,7 @@ asmlinkage long sys_oabi_epoll_wait(int epfd,
- 				    int maxevents, int timeout)
- {
- 	struct epoll_event *kbuf;
-+	struct oabi_epoll_event e;
- 	mm_segment_t fs;
- 	long ret, err, i;
+diff --git a/arch/arm/kernel/signal.c b/arch/arm/kernel/signal.c
+index 6f0bd90f6d93..4a4ab72d27ba 100644
+--- a/arch/arm/kernel/signal.c
++++ b/arch/arm/kernel/signal.c
+@@ -301,7 +301,7 @@ setup_sigframe(struct sigframe __user *sf, struct pt_regs *regs, sigset_t *set)
+ 	if (err == 0)
+ 		err |= preserve_vfp_context(&aux->vfp);
+ #endif
+-	__put_user_error(0, &aux->end_magic, err);
++	err |= __put_user(0, &aux->end_magic);
  
-@@ -294,8 +295,11 @@ asmlinkage long sys_oabi_epoll_wait(int epfd,
- 	set_fs(fs);
- 	err = 0;
- 	for (i = 0; i < ret; i++) {
--		__put_user_error(kbuf[i].events, &events->events, err);
--		__put_user_error(kbuf[i].data,   &events->data,   err);
-+		e.events = kbuf[i].events;
-+		e.data = kbuf[i].data;
-+		err = __copy_to_user(events, &e, sizeof(e));
-+		if (err)
-+			break;
- 		events++;
- 	}
- 	kfree(kbuf);
+ 	return err;
+ }
+@@ -433,7 +433,7 @@ setup_frame(struct ksignal *ksig, sigset_t *set, struct pt_regs *regs)
+ 	/*
+ 	 * Set uc.uc_flags to a value which sc.trap_no would never have.
+ 	 */
+-	__put_user_error(0x5ac3c35a, &frame->uc.uc_flags, err);
++	err = __put_user(0x5ac3c35a, &frame->uc.uc_flags);
+ 
+ 	err |= setup_sigframe(frame, regs, set);
+ 	if (err == 0)
+@@ -453,8 +453,8 @@ setup_rt_frame(struct ksignal *ksig, sigset_t *set, struct pt_regs *regs)
+ 
+ 	err |= copy_siginfo_to_user(&frame->info, &ksig->info);
+ 
+-	__put_user_error(0, &frame->sig.uc.uc_flags, err);
+-	__put_user_error(NULL, &frame->sig.uc.uc_link, err);
++	err |= __put_user(0, &frame->sig.uc.uc_flags);
++	err |= __put_user(NULL, &frame->sig.uc.uc_link);
+ 
+ 	err |= __save_altstack(&frame->sig.uc.uc_stack, regs->ARM_sp);
+ 	err |= setup_sigframe(&frame->sig, regs, set);
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
