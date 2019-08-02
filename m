@@ -2,92 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A65457FBC8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 16:09:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B7E77FBCE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 16:10:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LszdyRfVB0SU591qPwbcVsTkEwGy6q/uBpxuzNCY0ug=; b=M9ppgIPmgr8sPp
-	Azw1k/mijC2jrX9Et2CEBjXPBqxwmNCQv6GC+HrCPaM5DVL7yXK20199gFVT6sQ9goAFKxRMWLdeB
-	zn8l8Tpk34oN6LZ72tu6jxCq3UddcQM9IQGBF9GjVMkU2tYGQQIUDTvtvHWtFh22mUUomdkKZm5od
-	Rx9jxINb1eabkk4VBxA/bvuH15fp/KU0Lwi1CxYoROGnWeCHjaC1KlTqnBXIXoA0CAQBbc2KovYTY
-	VZctABXWFXNb0LuwO7h1NLu9qhOFZkoSD28vac4y2xqOp6P0GO0ns3YjQm6z+AHX7YW5nIPbedvrs
-	ETvnX74wURBoGawLkicA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fnzxgAFfDY5DBRrta/8Gvl8QGoRRi18RRYLyNfX+H28=; b=Xu8tkNxTKE4xyv
+	vLdcbralpwXeDnZ4YfHlNHucu081fRkdBOjLxChbss8mQ9rngIcwMjysI5UvCGikOnUT0PR29B+yR
+	mdKMZSRKPEN1HoOXm+PyM4H2T0LvUo1r18Nksck2Ahen5WlL8e/BJB5s9d2DXWdBNXN9s9WAkDcfm
+	P1Dk1VHBKwJ3ELxLmmPz3R/YbVhWyvZG5ih7DxcITtHwE4D7cPNPefOz4Hmnag+5WHZ6pnBJTLy/d
+	72qS23Q3M481mNnGfdRahX73PqExa4+2hFtGLbVDZMhbFL79j3OGmKq6wJblEeNDZLZltTzNMakg/
+	3jT8eL1VkYnr/5cc//Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htYF8-0000mR-MB; Fri, 02 Aug 2019 14:09:14 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1htYGC-0002Lp-3Q; Fri, 02 Aug 2019 14:10:20 +0000
+Received: from mail-wm1-f67.google.com ([209.85.128.67])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htYF1-0000hh-Ha
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 14:09:09 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x72E6uLF014555; Fri, 2 Aug 2019 16:09:00 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : mime-version : content-type :
- content-transfer-encoding; s=STMicroelectronics;
- bh=V4Oy0E5gbwyi1cbiRiVoGW45+5zWyza++ydGz4D477E=;
- b=Z8BqG/0ydEYKorRq6uN7BstyvNz9rvTzsNTLIiUk0O/KLzdXaVrhf3fKJhOL+XEeruk1
- dGUUYZ4gXS3ohGtP7MiUizl4oLWZ+3EVWP2e5syGLv5FHVEzscdE5QRYsQOizAfJ3arT
- If/qqA0CWJFToyr79Oo1fW+TyDtXUPqoCjCri19Zu2UKJOzafaDMbPx4oM+cc3YbTcgq
- FdYxSHDdY1A1zlMjTW4MURJTjducO/Wg9zL1r6gc++okNND+3dMKEHtGkOU+dfm4N5OJ
- vrzrvZf/IH6fEAqSaggQGi8n5GCeCFmQ5c9+eKAk8Q7L+qYSDlwvbGiC2Hggumm9od11 vQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2u0c2yvs6w-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 02 Aug 2019 16:09:00 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 537F634;
- Fri,  2 Aug 2019 14:09:00 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3CEE72C4581;
- Fri,  2 Aug 2019 16:09:00 +0200 (CEST)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 2 Aug 2019
- 16:09:00 +0200
-Received: from localhost (10.201.23.97) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 2 Aug 2019 16:08:59
- +0200
-From: =?UTF-8?q?Yannick=20Fertr=C3=A9?= <yannick.fertre@st.com>
-To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
- <alexandre.torgue@st.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>,
- Benjamin Gaignard <benjamin.gaignard@st.com>,
- Yannick Fertre <yannick.fertre@st.com>, Philippe Cornu
- <philippe.cornu@st.com>, Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: [PATCH] ARM: dts: stm32: move ltdc pinctrl on stm32mp157a dk1 board
-Date: Fri, 2 Aug 2019 16:08:51 +0200
-Message-ID: <1564754931-13861-1-git-send-email-yannick.fertre@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1htYG5-0002LO-LW
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 14:10:15 +0000
+Received: by mail-wm1-f67.google.com with SMTP id 207so68123393wma.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 02 Aug 2019 07:10:11 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=t/j+eIuVn8yfBsD/4njpgrl63xtXK7Uo/Aq0daTrXic=;
+ b=ZgStEgghpOpczTPa0pe/HkBrMUQP3h+GKbFs22FMBjQELaJ5E0fQKdUmHQ0d+YfubP
+ Wezm2NP5yGxlABcjM/iKF5gTKlITszS7Y3yoPAbrch76Vz9cprHPI8LwHmGXjBXaoulw
+ 7aJO/K1BhcJflCoiEBPjYnFnQtQFqt+jKbMLw8iDSPvdBiJzQRhGx4rF/U50xPvvIaS5
+ LXIb5V0U9MMULWOn32ZiveDcSspCbh9bEmzqvZvSVe+aVMfQ/YxWKF5yXJNgfg/O/5LB
+ 3Ec+6MFukqj/lCO4ah5FfDn3vWYEZDrFpahLwJGaFtMPsnJlpny1acy23BsyxyNxmjH8
+ yRgA==
+X-Gm-Message-State: APjAAAUMhCb4J5NjrTiEfeAfHhPJv1WaTZtXN/gyIFpfK2CdUrGNQKSd
+ o/8Nu8C7YLNV1PH2094e7qFbRChgV/ZgzWycly8=
+X-Google-Smtp-Source: APXvYqz2eKCyQo52aRlSc3KupJbE199EJ97I8+oJuDGbrvsEElSPJ3KlzJknpLlKZ3kv3rVDSSnHocp6+G+Jv3ohb9k=
+X-Received: by 2002:a1c:a7c6:: with SMTP id q189mr4822811wme.146.1564755010126; 
+ Fri, 02 Aug 2019 07:10:10 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.97]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-02_06:, , signatures=0
+References: <20190802120355.1430-1-geert+renesas@glider.be>
+ <20190802120355.1430-2-geert+renesas@glider.be>
+In-Reply-To: <20190802120355.1430-2-geert+renesas@glider.be>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 2 Aug 2019 16:09:58 +0200
+Message-ID: <CAMuHMdUndFnvpxHG6NUkw6L_B1Oetc_EZuQh4aNiidiCH+4wjw@mail.gmail.com>
+Subject: Re: [PULL 1/3] Renesas ARM64 DT updates for v5.4
+To: Geert Uytterhoeven <geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_070908_061217_21B77141 
-X-CRM114-Status: GOOD (  13.18  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190802_071013_700683_82045E8E 
+X-CRM114-Status: GOOD (  12.85  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.67 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.67 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,28 +82,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>, arm-soc <soc@kernel.org>,
+ arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlIGx0ZGMgcGluY3RybCBtdXN0IGJlIGluIHRoZSBkaXNwbGF5IGNvbnRyb2xsZXIgbm9kZSBh
-bmQKbm90IGluIHRoZSBwZXJpcGhlcmFsIG5vZGUgKGhkbWkgYnJpZGdlKS4KClNpZ25lZC1vZmYt
-Ynk6IFlhbm5pY2sgRmVydHLDqSA8eWFubmljay5mZXJ0cmVAc3QuY29tPgotLS0KIGFyY2gvYXJt
-L2Jvb3QvZHRzL3N0bTMybXAxNTdhLWRrMS5kdHMgfCA2ICsrKy0tLQogMSBmaWxlIGNoYW5nZWQs
-IDMgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9hcmNoL2FybS9i
-b290L2R0cy9zdG0zMm1wMTU3YS1kazEuZHRzIGIvYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1
-N2EtZGsxLmR0cwppbmRleCBmM2YwZTM3Li4xMjg1Y2ZjIDEwMDY0NAotLS0gYS9hcmNoL2FybS9i
-b290L2R0cy9zdG0zMm1wMTU3YS1kazEuZHRzCisrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N0bTMy
-bXAxNTdhLWRrMS5kdHMKQEAgLTk5LDkgKzk5LDYgQEAKIAkJcmVzZXQtZ3Bpb3MgPSA8JmdwaW9h
-IDEwIEdQSU9fQUNUSVZFX0xPVz47CiAJCWludGVycnVwdHMgPSA8MSBJUlFfVFlQRV9FREdFX0ZB
-TExJTkc+OwogCQlpbnRlcnJ1cHQtcGFyZW50ID0gPCZncGlvZz47Ci0JCXBpbmN0cmwtbmFtZXMg
-PSAiZGVmYXVsdCIsICJzbGVlcCI7Ci0JCXBpbmN0cmwtMCA9IDwmbHRkY19waW5zX2E+OwotCQlw
-aW5jdHJsLTEgPSA8Jmx0ZGNfcGluc19zbGVlcF9hPjsKIAkJc3RhdHVzID0gIm9rYXkiOwogCiAJ
-CXBvcnRzIHsKQEAgLTI3Niw2ICsyNzMsOSBAQAogfTsKIAogJmx0ZGMgeworCXBpbmN0cmwtbmFt
-ZXMgPSAiZGVmYXVsdCIsICJzbGVlcCI7CisJcGluY3RybC0wID0gPCZsdGRjX3BpbnNfYT47CisJ
-cGluY3RybC0xID0gPCZsdGRjX3BpbnNfc2xlZXBfYT47CiAJc3RhdHVzID0gIm9rYXkiOwogCiAJ
-cG9ydCB7Ci0tIAoyLjcuNAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, Aug 2, 2019 at 2:04 PM Geert Uytterhoeven
+<geert+renesas@glider.be> wrote:
+> The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+>
+>   Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+>
+> are available in the Git repository at:
+>
+>   git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm64-dt-for-v5.4-tag1
+>
+> for you to fetch changes up to 0a05b3d7fee511de8a1c9dffc3d86f1df55e1737:
+>
+>   arm64: dts: renesas: ulcb: Sort nodes (2019-07-30 11:25:35 +0200)
+>
+> ----------------------------------------------------------------
+> Renesas ARM64 DT updates for v5.4
+>
+>   - CAN support for the HiHope RZ/G2E board,
+
+As pointed out by Chris Paterson in PM, this is for RZ/G2[MN].
+I've recreated the (signed) tag accordingly.
+
+>   - BT and WLAN support for the HiHope RZ/G2[MN] boards,
+>   - Sound support for RZ/G2M,
+>   - Sort nodes in various SoC and board DTSes,
+>   - Small fixes and improvements.
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
