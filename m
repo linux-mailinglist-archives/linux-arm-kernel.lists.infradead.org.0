@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C6D47E8F5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 04:23:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B71ED7E915
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 04:23:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oGfyAF/y3dsiXB4/v5Ee1uAx2VhqHSyqBMdI2NzYVNU=; b=ZkDsACMXZO6b9i
-	uQRUKhWzaB9qWjulEyu6KRMTm9czb5inyyAFYuxeBYLr4BibDZVX92At5UC7Z6P1ebmkP18u1gnlr
-	6PyvdqsKw+7iQY15Jo8f1nm9zGqLoxC5LEknnk9Eycw7BVvqym+zlcm2UDJ+sqpxkeMc2m1Z8ntzP
-	T7zpINKsud4YbOIM1zbgpMHaRXHUR59ZA+0UIz1IxKJWdguZ3kvt07VuH7p7VYKV7QuIZSSN0Rf8O
-	AAy21Jv2RfOlC5m+PyeZudV+OJ1Ce07ZHjx6fW7nFe1qu+sowZwMwHZrsVcH4x/CedYSiwHK4mUu1
-	wu/CuwWsWPyBokkoePmg==;
+	List-Owner; bh=qrux2inH/WMc+dZCDoVRStFJuWgbO4S95p7FJj2Ti1M=; b=Q/v6mqH8AeHSb6
+	+Kei3b1N9wOtokB8zcQ9T6DTmNsTQCTaRD49cSezKeD+4+3FJrgIfpVOht0WnRhvS6sppptfiKnp/
+	UMNnjJlzpkt0dRRGcF3FMKi6vyPm+Bu4zcPXlj1glBCbSbz1ccdQG5GlyxuwOClURdjtkWXq3q/LT
+	TX2CiCJ6MfW2qQui0PWs6MpoGXL2KxVNmdQzos0b8Ku9tcOjWawHC077Y3Sfak4Is/seK5ackOxfe
+	kBoPLH5fXLT7I4k5L5i3gpvXdiSc5QnODO+DksCuP+sM2g9H+RZKzq9tye0xMMgC32yGPhQloA1f2
+	kMbfUprrAJHVkHILvaMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htNDq-0004TV-HD; Fri, 02 Aug 2019 02:23:10 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1htNEB-0004o6-Gk; Fri, 02 Aug 2019 02:23:31 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htNBA-0001kX-Rj; Fri, 02 Aug 2019 02:20:26 +0000
-Received: by mail-pl1-x642.google.com with SMTP id w24so33011789plp.2;
- Thu, 01 Aug 2019 19:20:24 -0700 (PDT)
+ id 1htNBC-0001ma-2q; Fri, 02 Aug 2019 02:20:27 +0000
+Received: by mail-pl1-x643.google.com with SMTP id y8so33025009plr.12;
+ Thu, 01 Aug 2019 19:20:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qLhYs8BKsJD26dkkDQW7qDqDKRQ6ceEysj+E+zVe/Zg=;
- b=mO2EsXInu3VlKA104JEnfgx6jDjnSEwvGouzsXnnB6AUhB4nvA/xUkFDDFSnp0kAVb
- uzJcZIfv98AAj+k04bO7VhQK6uHpuI27M0R+JJmNHqmsuBRinpXiyXzVO3vG2KOnwG10
- 9wLLSCL2f4bGbhp3gn22p2RGwRVC/ywoZ78m+PYeQh5xx0q2EjBUJcL8fGu/7GpGYNTC
- uoBxihJiCgimiOEov856ivIQlm2ZtbCKKeyCad06O9lOqE5uy2qRmSTr2cNmPxvRt3hH
- pW5v3ngGfAjNbaRjAeL1vDJ+MdUfb90y74Jjb2kpsnBznTRKzfySI1iA5+bGvCblKYHE
- C88Q==
+ bh=5vxuyadJL7U7uLaLdbmi0wM48++CcjfxvCZKqh2vh4A=;
+ b=IPnKJ+t+ZuscR+9jkZCr9SYsDod9H1pKxsH7GEiMUhOWm9vGlL+eTdFKhv7CAbJqfW
+ uU/KQltFOReuOI2Tb15OkXQ52DWMqedLb39cjCQmyiEWLJR87wjugh79Hhbg0qc6zuHg
+ MYJzaAbjIW3STqDPj5Lq2JXvJEE6XELaroV158AptkQMUJ7o1/IZqEXjs4JGgfMi9wWi
+ x8L4AJBxrRgeZMqNQthxmzZvgld8OAsmXF7S7qthmuL3HABTVNmwDglQdeK4bcdDS+le
+ GYNA0EDvk+skaAjBLW5tt19+LuDGuf6feAdMRYQaTc3LrWG+I4hPzx8Lwm1aQRwe4UW2
+ hk+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qLhYs8BKsJD26dkkDQW7qDqDKRQ6ceEysj+E+zVe/Zg=;
- b=bJHmj3pEoHpMJ4JynA5rq3DR5x3gSg3G/+GEQ6fOTh3uTLntaB8cExF/as6HsnZjjU
- D3lQsxUw7fgszuGm13RVC+yFucWwyVe8fxX8yoHkIQXhVhgWZZyGbeukHBXFS9HIueKi
- WQ33tcoah57QDU8Pe8dQ6FCSGl8HBhTDhj+s3hrd4+RBkFrgBzlHLuXU4N/XdEBMDBan
- KJWPoi5W+4hUeL3UFcpp4zg2w/Hz2QWwMAGX3rBJrzWWVbf2nu6CSQmxfM9Wmr7+jxfs
- 9OqK/e81Em5E9KHoWM2Tyg+nAPEUnAqBJKe9sMcL7kPqxaLWhGEkxN4el8GTDrVvtKpV
- tSKA==
-X-Gm-Message-State: APjAAAW2wC9JoCoRUTfJe58lG/oA8mB8Jq8ilAre6pWnVi4QKORkwMPo
- hSqCv6DdQlsPNdgoHGx2MFs=
-X-Google-Smtp-Source: APXvYqzyCRty8QPAc9XoTrRagrp/y/95vNaIlWT3LNdx/ZaWWXrbiDzYki+gcyf8LhQXoed6UV6NgQ==
-X-Received: by 2002:a17:902:6b0c:: with SMTP id
- o12mr26388046plk.113.1564712424200; 
- Thu, 01 Aug 2019 19:20:24 -0700 (PDT)
+ bh=5vxuyadJL7U7uLaLdbmi0wM48++CcjfxvCZKqh2vh4A=;
+ b=PNnmfFX2X54x27TQbl55n871LI72g7Wu/iM4utPAoCWXu4EW9IL7i+HhfdoyYrlLSQ
+ TkSJnFmXuGzMT12SoXncVqbJXdYnWeHlNGMl1/1HdlqqCnoqehGlyDFPvN30hbSSqTth
+ 6aHBczPGYfsvJGMyLXH9/G2ThGZBe56HhW/PCjkR+N1edblDkSIwHFb1wgYna1ajtOrL
+ c+Oeqah2vVxhu/klN+xmbsazvyRBUhIFocZk2qhy/atJs9r228+47VNGw6dIsjtHXMuG
+ q+n1b9lWwPGAE945jkM+Gz89TLl7oYmJoT2rNizYw0lCiR6NTeEV6zPMiNn0h23/bcW7
+ x1oA==
+X-Gm-Message-State: APjAAAVPmyN73pFuZ49IL6IlzKXrQRWzWJuBwFhNsuXya6r5k691RuJk
+ Ve3m+DabW9aq05W4qLV/yRg=
+X-Google-Smtp-Source: APXvYqx4n4e9g9/ly0KjHqDWX94uIzBzDxMQOC1nP9LzDlFTNiWIDkQ4j/aY6KUtiphGoFtrA+EDzw==
+X-Received: by 2002:a17:902:f301:: with SMTP id
+ gb1mr126844849plb.292.1564712425718; 
+ Thu, 01 Aug 2019 19:20:25 -0700 (PDT)
 Received: from blueforge.nvidia.com (searspoint.nvidia.com. [216.228.112.21])
  by smtp.gmail.com with ESMTPSA id
- u9sm38179744pgc.5.2019.08.01.19.20.22
+ u9sm38179744pgc.5.2019.08.01.19.20.24
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 01 Aug 2019 19:20:23 -0700 (PDT)
+ Thu, 01 Aug 2019 19:20:25 -0700 (PDT)
 From: john.hubbard@gmail.com
 X-Google-Original-From: jhubbard@nvidia.com
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH 08/34] media/ivtv: convert put_page() to put_user_page*()
-Date: Thu,  1 Aug 2019 19:19:39 -0700
-Message-Id: <20190802022005.5117-9-jhubbard@nvidia.com>
+Subject: [PATCH 09/34] media/v4l2-core/mm: convert put_page() to
+ put_user_page*()
+Date: Thu,  1 Aug 2019 19:19:40 -0700
+Message-Id: <20190802022005.5117-10-jhubbard@nvidia.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190802022005.5117-1-jhubbard@nvidia.com>
 References: <20190802022005.5117-1-jhubbard@nvidia.com>
 MIME-Version: 1.0
 X-NVConfidentiality: public
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_192024_989355_59FB1227 
-X-CRM114-Status: GOOD (  12.89  )
+X-CRM114-CacheID: sfid-20190801_192026_307864_DF2AF308 
+X-CRM114-Status: GOOD (  12.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -107,17 +108,19 @@ Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
  ceph-devel@vger.kernel.org, devel@driverdev.osuosl.org,
  rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
  amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
- devel@lists.orangefs.org, linux-media@vger.kernel.org,
+ Jason Gunthorpe <jgg@ziepe.ca>, Hans Verkuil <hans.verkuil@cisco.com>,
+ xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
+ linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
  John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
  linux-block@vger.kernel.org,
  =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
  linux-rpi-kernel@lists.infradead.org, Dan Williams <dan.j.williams@intel.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
- Andy Walls <awalls@md.metrocast.net>, netdev@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>, linux-xfs@vger.kernel.org,
- linux-crypto@vger.kernel.org, linux-fsdevel@vger.kernel.org
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ Souptick Joarder <jrdr.linux@gmail.com>, linux-xfs@vger.kernel.org,
+ linux-crypto@vger.kernel.org, Sakari Ailus <sakari.ailus@linux.intel.com>,
+ linux-fsdevel@vger.kernel.org, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -132,102 +135,33 @@ release_pages().
 This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
 ("mm: introduce put_user_page*(), placeholder versions").
 
-Cc: Andy Walls <awalls@md.metrocast.net>
 Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
+Cc: Kees Cook <keescook@chromium.org>
+Cc: Hans Verkuil <hans.verkuil@cisco.com>
+Cc: Sakari Ailus <sakari.ailus@linux.intel.com>
+Cc: Jan Kara <jack@suse.cz>
+Cc: Robin Murphy <robin.murphy@arm.com>
+Cc: Souptick Joarder <jrdr.linux@gmail.com>
+Cc: Dan Williams <dan.j.williams@intel.com>
 Cc: linux-media@vger.kernel.org
 Signed-off-by: John Hubbard <jhubbard@nvidia.com>
 ---
- drivers/media/pci/ivtv/ivtv-udma.c | 14 ++++----------
- drivers/media/pci/ivtv/ivtv-yuv.c  | 10 +++-------
- 2 files changed, 7 insertions(+), 17 deletions(-)
+ drivers/media/v4l2-core/videobuf-dma-sg.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/drivers/media/pci/ivtv/ivtv-udma.c b/drivers/media/pci/ivtv/ivtv-udma.c
-index 5f8883031c9c..7c7f33c2412b 100644
---- a/drivers/media/pci/ivtv/ivtv-udma.c
-+++ b/drivers/media/pci/ivtv/ivtv-udma.c
-@@ -92,7 +92,7 @@ int ivtv_udma_setup(struct ivtv *itv, unsigned long ivtv_dest_addr,
- {
- 	struct ivtv_dma_page_info user_dma;
- 	struct ivtv_user_dma *dma = &itv->udma;
--	int i, err;
-+	int err;
+diff --git a/drivers/media/v4l2-core/videobuf-dma-sg.c b/drivers/media/v4l2-core/videobuf-dma-sg.c
+index 66a6c6c236a7..d6eeb437ec19 100644
+--- a/drivers/media/v4l2-core/videobuf-dma-sg.c
++++ b/drivers/media/v4l2-core/videobuf-dma-sg.c
+@@ -349,8 +349,7 @@ int videobuf_dma_free(struct videobuf_dmabuf *dma)
+ 	BUG_ON(dma->sglen);
  
- 	IVTV_DEBUG_DMA("ivtv_udma_setup, dst: 0x%08x\n", (unsigned int)ivtv_dest_addr);
- 
-@@ -119,8 +119,7 @@ int ivtv_udma_setup(struct ivtv *itv, unsigned long ivtv_dest_addr,
- 		IVTV_DEBUG_WARN("failed to map user pages, returned %d instead of %d\n",
- 			   err, user_dma.page_count);
- 		if (err >= 0) {
--			for (i = 0; i < err; i++)
--				put_page(dma->map[i]);
-+			put_user_pages(dma->map, err);
- 			return -EINVAL;
- 		}
- 		return err;
-@@ -130,9 +129,7 @@ int ivtv_udma_setup(struct ivtv *itv, unsigned long ivtv_dest_addr,
- 
- 	/* Fill SG List with new values */
- 	if (ivtv_udma_fill_sg_list(dma, &user_dma, 0) < 0) {
--		for (i = 0; i < dma->page_count; i++) {
--			put_page(dma->map[i]);
--		}
-+		put_user_pages(dma->map, dma->page_count);
- 		dma->page_count = 0;
- 		return -ENOMEM;
- 	}
-@@ -153,7 +150,6 @@ int ivtv_udma_setup(struct ivtv *itv, unsigned long ivtv_dest_addr,
- void ivtv_udma_unmap(struct ivtv *itv)
- {
- 	struct ivtv_user_dma *dma = &itv->udma;
--	int i;
- 
- 	IVTV_DEBUG_INFO("ivtv_unmap_user_dma\n");
- 
-@@ -170,9 +166,7 @@ void ivtv_udma_unmap(struct ivtv *itv)
- 	ivtv_udma_sync_for_cpu(itv);
- 
- 	/* Release User Pages */
--	for (i = 0; i < dma->page_count; i++) {
--		put_page(dma->map[i]);
--	}
-+	put_user_pages(dma->map, dma->page_count);
- 	dma->page_count = 0;
- }
- 
-diff --git a/drivers/media/pci/ivtv/ivtv-yuv.c b/drivers/media/pci/ivtv/ivtv-yuv.c
-index cd2fe2d444c0..9465a7d450b6 100644
---- a/drivers/media/pci/ivtv/ivtv-yuv.c
-+++ b/drivers/media/pci/ivtv/ivtv-yuv.c
-@@ -81,8 +81,7 @@ static int ivtv_yuv_prep_user_dma(struct ivtv *itv, struct ivtv_user_dma *dma,
- 				 uv_pages, uv_dma.page_count);
- 
- 			if (uv_pages >= 0) {
--				for (i = 0; i < uv_pages; i++)
--					put_page(dma->map[y_pages + i]);
-+				put_user_pages(&dma->map[y_pages], uv_pages);
- 				rc = -EFAULT;
- 			} else {
- 				rc = uv_pages;
-@@ -93,8 +92,7 @@ static int ivtv_yuv_prep_user_dma(struct ivtv *itv, struct ivtv_user_dma *dma,
- 				 y_pages, y_dma.page_count);
- 		}
- 		if (y_pages >= 0) {
--			for (i = 0; i < y_pages; i++)
--				put_page(dma->map[i]);
-+			put_user_pages(dma->map, y_pages);
- 			/*
- 			 * Inherit the -EFAULT from rc's
- 			 * initialization, but allow it to be
-@@ -112,9 +110,7 @@ static int ivtv_yuv_prep_user_dma(struct ivtv *itv, struct ivtv_user_dma *dma,
- 	/* Fill & map SG List */
- 	if (ivtv_udma_fill_sg_list (dma, &uv_dma, ivtv_udma_fill_sg_list (dma, &y_dma, 0)) < 0) {
- 		IVTV_DEBUG_WARN("could not allocate bounce buffers for highmem userspace buffers\n");
--		for (i = 0; i < dma->page_count; i++) {
--			put_page(dma->map[i]);
--		}
-+		put_user_pages(dma->map, dma->page_count);
- 		dma->page_count = 0;
- 		return -ENOMEM;
+ 	if (dma->pages) {
+-		for (i = 0; i < dma->nr_pages; i++)
+-			put_page(dma->pages[i]);
++		put_user_pages(dma->pages, dma->nr_pages);
+ 		kfree(dma->pages);
+ 		dma->pages = NULL;
  	}
 -- 
 2.22.0
