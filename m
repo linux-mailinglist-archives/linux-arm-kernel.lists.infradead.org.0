@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 752FF7F40B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:04:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C68607F40C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:04:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LmgQ62mDEV5rP3/RSUJdK2r3/1maGuKMfT1ISuV6CBs=; b=K1C28T5dGQXbXN
-	+D3ZQ1NPNiRo4oeHwD4PvNSWAEjcFBl0BOQyeAi0WQFzEAB+fDrjiUgSskRrBi363N5to7JIOTbOW
-	ZYdxC/j1nBhzNaE7q+Sa8PFA0CWiwX0eK7PbLM/hj8TBPhEwsq8dQ4NZiSlQtIzek2XTr1yqgHRZe
-	gZuJobsN/d8s66o7IeXkXKe/63Hlf3/o2k4wIzEghWJxQMxlisL9ZDOlTzIoCIl7PB5LCfVv5db0x
-	nO+egmJnqsqCRUYYRyw2TOVyK30x6/29WsxrRgcWK2Mc06tSy2rjyhoZ/rCMX4xzG1yFIWHT2hCrI
-	mTvk6nCCQ95FKxg1AxMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=O2Us1aPr8BJzQ0ebqfKc9DcNPUGsBWmktBrWwpoDTqA=; b=gJRPR1a3XLqOEx
+	ENL0iYmlL0vN7FBQQ6XYy+LSoEvOn7OHosGnCG+3iyt1dLzR5BytZkVnzSbvsmCbCOWf3qnmbje3r
+	MDi4b/BTTj4ZBAJ/iaa1IbnGbeiwts3M5/1AS6R7cmyiqN8SWRbAfn0KU7ctJxIRWS8K2gE757gGi
+	xuCnK8NcM45ZQNx/gt9krV+ndRox50aAsaOaJM1aXi0SkplVLIFctQCPuzVkwGxF9ywBa8QwPQ0X5
+	WZi5j+8wOPjpoHzovCZNOrKBVOqQa6PKngSNXz4OxqM58xmmoGM6f7D4ivrQ4T1QeZ0pZI7GgNMjP
+	AfWw33NuK5Ce2hbo2jqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htUQG-00069t-My; Fri, 02 Aug 2019 10:04:28 +0000
+	id 1htUQb-0006Kt-Ec; Fri, 02 Aug 2019 10:04:49 +0000
 Received: from skedge03.snt-world.com ([91.208.41.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htUQ3-00067h-Et
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:04:17 +0000
-Received: from sntmail11s.snt-is.com (unknown [10.203.32.181])
+ id 1htUQ5-000685-0K
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:04:18 +0000
+Received: from sntmail12r.snt-is.com (unknown [10.203.32.182])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by skedge03.snt-world.com (Postfix) with ESMTPS id 7EEE7603D28;
- Fri,  2 Aug 2019 12:04:10 +0200 (CEST)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail11s.snt-is.com
- (10.203.32.181) with Microsoft SMTP Server (version=TLS1_2,
+ by skedge03.snt-world.com (Postfix) with ESMTPS id 5D316603D2C;
+ Fri,  2 Aug 2019 12:04:11 +0200 (CEST)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail12r.snt-is.com
+ (10.203.32.182) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Fri, 2 Aug 2019
  12:04:10 +0200
 Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
@@ -41,13 +41,15 @@ To: "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
  <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
  "festevam@gmail.com" <festevam@gmail.com>, "linux-imx@nxp.com"
  <linux-imx@nxp.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: [PATCH v3 1/4] serial: mctrl_gpio: Avoid probe failures in case of
- missing gpiolib
-Thread-Topic: [PATCH v3 1/4] serial: mctrl_gpio: Avoid probe failures in case
- of missing gpiolib
-Thread-Index: AQHVSRmgIMto6YABN0CHGANRcY/fqA==
-Date: Fri, 2 Aug 2019 10:04:09 +0000
-Message-ID: <20190802100349.8659-1-frieder.schrempf@kontron.de>
+Subject: [PATCH v3 3/4] serial: sh-sci: Don't check for mctrl_gpio_init()
+ returning -ENOSYS
+Thread-Topic: [PATCH v3 3/4] serial: sh-sci: Don't check for mctrl_gpio_init()
+ returning -ENOSYS
+Thread-Index: AQHVSRmhYdomcjxyRk6mFHbvvepk8Q==
+Date: Fri, 2 Aug 2019 10:04:10 +0000
+Message-ID: <20190802100349.8659-3-frieder.schrempf@kontron.de>
+References: <20190802100349.8659-1-frieder.schrempf@kontron.de>
+In-Reply-To: <20190802100349.8659-1-frieder.schrempf@kontron.de>
 Accept-Language: de-DE, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -57,7 +59,7 @@ x-originating-ip: [172.25.9.193]
 x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
 MIME-Version: 1.0
 X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: 7EEE7603D28.AEAF5
+X-SnT-MailScanner-ID: 5D316603D2C.ACFB8
 X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
  Provider for details
 X-SnT-MailScanner-SpamCheck: 
@@ -70,8 +72,8 @@ X-SnT-MailScanner-To: festevam@gmail.com, geert+renesas@glider.be,
  u.kleine-koenig@pengutronix.de
 X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_030415_833605_DF4036E7 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20190802_030417_208984_0DDDD2BF 
+X-CRM114-Status: GOOD (  11.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -105,58 +107,35 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Frieder Schrempf <frieder.schrempf@kontron.de>
 
-If CONFIG_GPIOLIB is not enabled, mctrl_gpio_init() and
-mctrl_gpio_init_noauto() will currently return an error pointer with
--ENOSYS. As the mctrl GPIOs are usually optional, drivers need to
-check for this condition to allow continue probing.
+Now that the mctrl_gpio code returns NULL instead of ERR_PTR(-ENOSYS)
+if CONFIG_GPIOLIB is disabled, we can safely remove this check.
 
-To avoid the need for this check in each driver, we return NULL
-instead, as all the mctrl_gpio_*() functions are skipped anyway.
-We also adapt mctrl_gpio_to_gpiod() to be in line with this change.
-
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
 Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
 ---
 Changes in v3
 =============
-* Move the changes in mctrl_gpio_to_gpiod() to a separate patch
-* Reorder tags
+* Adjust the commit message and subject line
 
 Changes in v2
 =============
 * Move the sh_sci changes to a separate patch
-* Add Fabio's R-b tag
 ---
- drivers/tty/serial/serial_mctrl_gpio.h | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/tty/serial/sh-sci.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/tty/serial/serial_mctrl_gpio.h b/drivers/tty/serial/serial_mctrl_gpio.h
-index b7d3cca48ede..1b2ff503b2c2 100644
---- a/drivers/tty/serial/serial_mctrl_gpio.h
-+++ b/drivers/tty/serial/serial_mctrl_gpio.h
-@@ -114,19 +114,19 @@ static inline
- struct gpio_desc *mctrl_gpio_to_gpiod(struct mctrl_gpios *gpios,
- 				      enum mctrl_gpio_idx gidx)
- {
--	return ERR_PTR(-ENOSYS);
-+	return NULL;
- }
+diff --git a/drivers/tty/serial/sh-sci.c b/drivers/tty/serial/sh-sci.c
+index d18c680aa64b..249325b65ee0 100644
+--- a/drivers/tty/serial/sh-sci.c
++++ b/drivers/tty/serial/sh-sci.c
+@@ -3287,7 +3287,7 @@ static int sci_probe_single(struct platform_device *dev,
+ 		return ret;
  
- static inline
- struct mctrl_gpios *mctrl_gpio_init(struct uart_port *port, unsigned int idx)
- {
--	return ERR_PTR(-ENOSYS);
-+	return NULL;
- }
+ 	sciport->gpios = mctrl_gpio_init(&sciport->port, 0);
+-	if (IS_ERR(sciport->gpios) && PTR_ERR(sciport->gpios) != -ENOSYS)
++	if (IS_ERR(sciport->gpios))
+ 		return PTR_ERR(sciport->gpios);
  
- static inline
- struct mctrl_gpios *mctrl_gpio_init_noauto(struct device *dev, unsigned int idx)
- {
--	return ERR_PTR(-ENOSYS);
-+	return NULL;
- }
- 
- static inline
+ 	if (sciport->has_rtscts) {
 -- 
 2.17.1
 
