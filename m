@@ -2,85 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9DD07FC10
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 16:23:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FB257FC16
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 16:24:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=IE4azI7MGzgvPLzaJHrzw6NgpPTG9spP+O3FvoAjtQ8=; b=GpE
-	Ai0XUHpQoGxL1ZutRURqWjr+lUpdmdlLGDzoyMznCJ37QrndfYV9B6YBWu/kLqBl5C382pq+l0d3Q
-	wQJTLZNelEbXGbwDBnuevAW907vMxNf5G7chsKo3BXJtyFpSG73DqOhwN9Ur1ouCwpECxfuh5dYn8
-	GRHDMU93POmsB/g7CHxuW/qgyWNOpkUKm5wObU6iN2hb/kPmLUc/+V3FZgNGaXG9oIYGRdZ1sFKxt
-	bZXMojRJ6KM6rJYzZdpHfII20MGygoJCRi8n8ajIpmXoaW1fIdpAeoQitsea5cyIL1y2/WvRQxraI
-	yKDwGsN5b5hdysN4GikzWJPa/bBPtGQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3XaotlrzuzBTA88iZSxAdEOQVsVMRqrYlprmmExJ2VQ=; b=N89w9N4fHr8jspWwJVUBm/8Bp
+	DKLMPFMD4KFj+eg/0nX4bJfb+2Eg5Aoejumyj5zN+8R4K58E4OOFuQIkyLtYAs6WCN+g4r8rjIgPx
+	aY83WM7yaCNRn2eMqId+2ZL5nE6xNZuEin1qSMtXLStiWXknpx29CkrJjYbmGViUaYCwV3gTWrLym
+	mjYAvAoLTjy/Msqsmf3wBZpjji+KGPtfSd7Rih9qJjGBBOQKtQkMq0J3K4/suqMdBFopdHkW/QD0A
+	k/BGlECdMCrsxi0+cLHb5KZEirvy8w1bouAhoRzpM6QVZn6rUvONv9/GXUY5pRsc+pdqICJvVFXNt
+	0CDr3ET8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htYTE-0006qr-BF; Fri, 02 Aug 2019 14:23:48 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htYT8-0006qA-17
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 14:23:43 +0000
-Received: by mail-qk1-x743.google.com with SMTP id s145so54903670qke.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 02 Aug 2019 07:23:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=CWdgiiN/Z+VeLUxPy5NDLjA/glfsWptWvE0Hk0bA4Qc=;
- b=ClkjwnuAjyQX4RFGsqAZhTjqGMDy7ocP/0TCroEDlhL07SsQmlRYVGn8aIHaHRwUCf
- utzbV9Rw0J2YHV76T0ve3706m4aR1IZDfRam5C9funveugiRgC8FUpWqlxtq2tFKy7Hd
- VfsToKr4T96EcEkZOa1EYCPGLYzko/sCPdVXxdcyEjThSesEn1Yukp4qAFEBL8pv9AD7
- cQ+rtCtxrN7cT7v5yWDPwKLFyjF7Rnrrjf2zLhORo1f2RRy4znki0byJia/elQpyLyRH
- W9Kr1qkd/1ceoeZGcwQI6LhEwYkuiNtZoZc8nOVzH9lX4xcZnaGp0ETvzemP5soQs71N
- fvgw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=CWdgiiN/Z+VeLUxPy5NDLjA/glfsWptWvE0Hk0bA4Qc=;
- b=h2ZCijjdt2spr+eNYBgLck2lJnoFIowOMpZM2UkkRgWwZ/yJXn6NyGhTUxhSJhxTft
- CCeYXqZlLO9ddTtKkgTrfkW69N4TuYNGyr5S2TW4arY7D9bkSVc+6sn4OYkAeuL8w9G2
- 0Zi7ZhdjQUxgWCovS+OaGFAIblS+0hL2OsnmnU/Hebd9BcMn/PXVtV2zYcKNbO2SW1pz
- 5RFzvUONZPQlDMBULS2kUPKbJ7j4t7EvDrMs8/UPCTSGziRL9NylhEyzaFAm3jtJ55r8
- NTBVyIZbzrFsCwF1xX2ebUbaQRl+5dchcWYwDtEo55Zb3DwTRnqjvA2QqBKYP1VLzJ5d
- GQyg==
-X-Gm-Message-State: APjAAAXYWGiEUvn6phch734GEKYuKhK2WFwtKxsJRjgN+RCfnZP+XC8f
- JlREaK6MkVxrogFhhjlP+zw+Hw==
-X-Google-Smtp-Source: APXvYqz+KxEnFgHjSy1G4Be0JgFETmApxP1tkP5flW/+UvCcQ+n9HdUVJ9MvLVxmfppI//mnB3tdag==
-X-Received: by 2002:a37:2c46:: with SMTP id s67mr92776362qkh.396.1564755818363; 
- Fri, 02 Aug 2019 07:23:38 -0700 (PDT)
-Received: from qcai.nay.com (nat-pool-bos-t.redhat.com. [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id v84sm33042439qkb.0.2019.08.02.07.23.36
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 02 Aug 2019 07:23:37 -0700 (PDT)
-From: Qian Cai <cai@lca.pw>
-To: maz@kernel.org
-Subject: [PATCH] arm64/kvm: fix -Wimplicit-fallthrough warnings
-Date: Fri,  2 Aug 2019 10:23:08 -0400
-Message-Id: <1564755788-28485-1-git-send-email-cai@lca.pw>
-X-Mailer: git-send-email 1.8.3.1
+	id 1htYTe-00076M-T3; Fri, 02 Aug 2019 14:24:14 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1htYTY-00075H-IU
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 14:24:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B06481570;
+ Fri,  2 Aug 2019 07:24:06 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CE5443F575;
+ Fri,  2 Aug 2019 07:24:05 -0700 (PDT)
+Subject: Re: [RFC PATCH] ARM: UNWINDER_FRAME_POINTER implementation for Clang
+To: Nathan Huckleberry <nhuck@google.com>, linux@armlinux.org.uk
+References: <20190801231046.105022-1-nhuck@google.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <01222982-4206-9925-0482-639a79384451@arm.com>
+Date: Fri, 2 Aug 2019 15:24:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <20190801231046.105022-1-nhuck@google.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_072342_095636_D8A1A596 
-X-CRM114-Status: UNSURE (   8.56  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190802_072408_696790_4478102A 
+X-CRM114-Status: GOOD (  31.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,141 +61,251 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drjones@redhat.com, suzuki.poulose@arm.com, linux-kernel@vger.kernel.org,
- james.morse@arm.com, christoffer.dall@linaro.org, Qian Cai <cai@lca.pw>,
- julien.thierry.kdev@gmail.com, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: clang-built-linux@googlegroups.com, Tri Vo <trong@google.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The commit a892819560c4 ("KVM: arm64: Prepare to handle deferred
-save/restore of 32-bit registers") introduced vcpu_write_spsr32() but
-seems forgot to add "break" between the switch statements and generates
-compilation warnings below. Also, adding a default statement as in
-vcpu_read_spsr32().
+On 02/08/2019 00:10, Nathan Huckleberry wrote:
+> The stackframe setup when compiled with clang is different.
+> Since the stack unwinder expects the gcc stackframe setup it
+> fails to print backtraces. This patch adds support for the
+> clang stackframe setup.
+> 
+> Cc: clang-built-linux@googlegroups.com
+> Suggested-by: Tri Vo <trong@google.com>
+> Signed-off-by: Nathan Huckleberry <nhuck@google.com>
+> ---
+>   arch/arm/Kconfig.debug   |   4 +-
+>   arch/arm/Makefile        |   2 +-
+>   arch/arm/lib/backtrace.S | 134 ++++++++++++++++++++++++++++++++++++---
+>   3 files changed, 128 insertions(+), 12 deletions(-)
+> 
+> diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
+> index 85710e078afb..92fca7463e21 100644
+> --- a/arch/arm/Kconfig.debug
+> +++ b/arch/arm/Kconfig.debug
+> @@ -56,7 +56,7 @@ choice
+>   
+>   config UNWINDER_FRAME_POINTER
+>   	bool "Frame pointer unwinder"
+> -	depends on !THUMB2_KERNEL && !CC_IS_CLANG
+> +	depends on !THUMB2_KERNEL
+>   	select ARCH_WANT_FRAME_POINTERS
+>   	select FRAME_POINTER
+>   	help
+> @@ -1872,7 +1872,7 @@ config DEBUG_UNCOMPRESS
+>   	  When this option is set, the selected DEBUG_LL output method
+>   	  will be re-used for normal decompressor output on multiplatform
+>   	  kernels.
+> -	
+> +
+>   
+>   config UNCOMPRESS_INCLUDE
+>   	string
+> diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+> index c3624ca6c0bc..a593d9c4e18a 100644
+> --- a/arch/arm/Makefile
+> +++ b/arch/arm/Makefile
+> @@ -36,7 +36,7 @@ KBUILD_CFLAGS	+= $(call cc-option,-mno-unaligned-access)
+>   endif
+>   
+>   ifeq ($(CONFIG_FRAME_POINTER),y)
+> -KBUILD_CFLAGS	+=-fno-omit-frame-pointer -mapcs -mno-sched-prolog
+> +KBUILD_CFLAGS	+=-fno-omit-frame-pointer $(call cc-option,-mapcs,) $(call cc-option,-mno-sched-prolog,)
+>   endif
+>   
+>   ifeq ($(CONFIG_CPU_BIG_ENDIAN),y)
+> diff --git a/arch/arm/lib/backtrace.S b/arch/arm/lib/backtrace.S
+> index 1d5210eb4776..fd64eec9f6ae 100644
+> --- a/arch/arm/lib/backtrace.S
+> +++ b/arch/arm/lib/backtrace.S
+> @@ -14,10 +14,7 @@
+>   @ fp is 0 or stack frame
+>   
+>   #define frame	r4
+> -#define sv_fp	r5
+> -#define sv_pc	r6
+>   #define mask	r7
+> -#define offset	r8
+>   
+>   ENTRY(c_backtrace)
+>   
+> @@ -25,7 +22,8 @@ ENTRY(c_backtrace)
+>   		ret	lr
+>   ENDPROC(c_backtrace)
+>   #else
+> -		stmfd	sp!, {r4 - r8, lr}	@ Save an extra register so we have a location...
+> +		stmfd   sp!, {r4 - r8, fp, lr}	@ Save an extra register
 
-In file included from ./arch/arm64/include/asm/kvm_emulate.h:19,
-                 from arch/arm64/kvm/regmap.c:13:
-arch/arm64/kvm/regmap.c: In function 'vcpu_write_spsr32':
-./arch/arm64/include/asm/kvm_hyp.h:31:3: warning: this statement may
-fall through [-Wimplicit-fallthrough=]
-   asm volatile(ALTERNATIVE(__msr_s(r##nvh, "%x0"), \
-   ^~~
-./arch/arm64/include/asm/kvm_hyp.h:46:31: note: in expansion of macro
-'write_sysreg_elx'
- #define write_sysreg_el1(v,r) write_sysreg_elx(v, r, _EL1, _EL12)
-                               ^~~~~~~~~~~~~~~~
-arch/arm64/kvm/regmap.c:180:3: note: in expansion of macro
-'write_sysreg_el1'
-   write_sysreg_el1(v, SYS_SPSR);
-   ^~~~~~~~~~~~~~~~
-arch/arm64/kvm/regmap.c:181:2: note: here
-  case KVM_SPSR_ABT:
-  ^~~~
-In file included from ./arch/arm64/include/asm/cputype.h:132,
-                 from ./arch/arm64/include/asm/cache.h:8,
-                 from ./include/linux/cache.h:6,
-                 from ./include/linux/printk.h:9,
-                 from ./include/linux/kernel.h:15,
-                 from ./include/asm-generic/bug.h:18,
-                 from ./arch/arm64/include/asm/bug.h:26,
-                 from ./include/linux/bug.h:5,
-                 from ./include/linux/mmdebug.h:5,
-                 from ./include/linux/mm.h:9,
-                 from arch/arm64/kvm/regmap.c:11:
-./arch/arm64/include/asm/sysreg.h:837:2: warning: this statement may
-fall through [-Wimplicit-fallthrough=]
-  asm volatile("msr " __stringify(r) ", %x0"  \
-  ^~~
-arch/arm64/kvm/regmap.c:182:3: note: in expansion of macro
-'write_sysreg'
-   write_sysreg(v, spsr_abt);
-   ^~~~~~~~~~~~
-arch/arm64/kvm/regmap.c:183:2: note: here
-  case KVM_SPSR_UND:
-  ^~~~
-In file included from ./arch/arm64/include/asm/cputype.h:132,
-                 from ./arch/arm64/include/asm/cache.h:8,
-                 from ./include/linux/cache.h:6,
-                 from ./include/linux/printk.h:9,
-                 from ./include/linux/kernel.h:15,
-                 from ./include/asm-generic/bug.h:18,
-                 from ./arch/arm64/include/asm/bug.h:26,
-                 from ./include/linux/bug.h:5,
-                 from ./include/linux/mmdebug.h:5,
-                 from ./include/linux/mm.h:9,
-                 from arch/arm64/kvm/regmap.c:11:
-./arch/arm64/include/asm/sysreg.h:837:2: warning: this statement may
-fall through [-Wimplicit-fallthrough=]
-  asm volatile("msr " __stringify(r) ", %x0"  \
-  ^~~
-arch/arm64/kvm/regmap.c:184:3: note: in expansion of macro
-'write_sysreg'
-   write_sysreg(v, spsr_und);
-   ^~~~~~~~~~~~
-arch/arm64/kvm/regmap.c:185:2: note: here
-  case KVM_SPSR_IRQ:
-  ^~~~
-In file included from ./arch/arm64/include/asm/cputype.h:132,
-                 from ./arch/arm64/include/asm/cache.h:8,
-                 from ./include/linux/cache.h:6,
-                 from ./include/linux/printk.h:9,
-                 from ./include/linux/kernel.h:15,
-                 from ./include/asm-generic/bug.h:18,
-                 from ./arch/arm64/include/asm/bug.h:26,
-                 from ./include/linux/bug.h:5,
-                 from ./include/linux/mmdebug.h:5,
-                 from ./include/linux/mm.h:9,
-                 from arch/arm64/kvm/regmap.c:11:
-./arch/arm64/include/asm/sysreg.h:837:2: warning: this statement may
-fall through [-Wimplicit-fallthrough=]
-  asm volatile("msr " __stringify(r) ", %x0"  \
-  ^~~
-arch/arm64/kvm/regmap.c:186:3: note: in expansion of macro
-'write_sysreg'
-   write_sysreg(v, spsr_irq);
-   ^~~~~~~~~~~~
-arch/arm64/kvm/regmap.c:187:2: note: here
-  case KVM_SPSR_FIQ:
-  ^~~~
+Note that the Procedure Call Standard for EABI requires that SP be 
+8-byte-aligned at a public interface. Pushing an odd number of registers 
+here looks like it will make the subsequent calls to dump_backtrace_* 
+and printk violate that condition.
 
-Fixes: a892819560c4 ("KVM: arm64: Prepare to handle deferred save/restore of 32-bit registers")
-Signed-off-by: Qian Cai <cai@lca.pw>
----
- arch/arm64/kvm/regmap.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+Robin.
 
-diff --git a/arch/arm64/kvm/regmap.c b/arch/arm64/kvm/regmap.c
-index 0d60e4f0af66..c94e9bc3e8eb 100644
---- a/arch/arm64/kvm/regmap.c
-+++ b/arch/arm64/kvm/regmap.c
-@@ -178,13 +178,20 @@ void vcpu_write_spsr32(struct kvm_vcpu *vcpu, unsigned long v)
- 	switch (spsr_idx) {
- 	case KVM_SPSR_SVC:
- 		write_sysreg_el1(v, SYS_SPSR);
-+		break;
- 	case KVM_SPSR_ABT:
- 		write_sysreg(v, spsr_abt);
-+		break;
- 	case KVM_SPSR_UND:
- 		write_sysreg(v, spsr_und);
-+		break;
- 	case KVM_SPSR_IRQ:
- 		write_sysreg(v, spsr_irq);
-+		break;
- 	case KVM_SPSR_FIQ:
- 		write_sysreg(v, spsr_fiq);
-+		break;
-+	default:
-+		BUG();
- 	}
- }
--- 
-1.8.3.1
-
+> +						@ so we have a location..
+>   		movs	frame, r0		@ if frame pointer is zero
+>   		beq	no_frame		@ we have no stack frames
+>   
+> @@ -35,11 +33,119 @@ ENDPROC(c_backtrace)
+>    THUMB(		orreq	mask, #0x03		)
+>   		movne	mask, #0		@ mask for 32-bit
+>   
+> -1:		stmfd	sp!, {pc}		@ calculate offset of PC stored
+> -		ldr	r0, [sp], #4		@ by stmfd for this CPU
+> -		adr	r1, 1b
+> -		sub	offset, r0, r1
+>   
+> +#if defined(CONFIG_CC_IS_CLANG)
+> +/*
+> + * Clang does not store pc or sp in function prologues
+> + * 		so we don't know exactly where the function
+> + * 		starts.
+> + * We can treat the current frame's lr as the saved pc and the
+> + * 		preceding frame's lr as the lr, but we can't
+> + * 		trace the most recent call.
+> + * Inserting a false stack frame allows us to reference the
+> + * 		function called last in the stacktrace.
+> + * If the call instruction was a bl we can look at the callers
+> + * 		branch instruction to calculate the saved pc.
+> + * We can recover the pc in most cases, but in cases such as
+> + * 		calling function pointers we cannot. In this
+> + * 		case, default to using the lr. This will be
+> + * 		some address in the function, but will not
+> + * 		be the function start.
+> + * Unfortunately due to the stack frame layout we can't dump
+> + *              r0 - r3, but these are less frequently saved.
+> + *
+> + * Stack frame layout:
+> + *             <larger addresses>
+> + *             saved lr
+> + *    frame => saved fp
+> + *             optionally saved caller registers (r4 - r10)
+> + *             optionally saved arguments (r0 - r3)
+> + *             <top of stack frame>
+> + *             <smaller addressses>
+> + *
+> + * Functions start with the following code sequence:
+> + * corrected pc =>  stmfd sp!, {..., fp, lr}
+> + *		    add fp, sp, #x
+> + *		    stmfd sp!, {r0 - r3} (optional)
+> + */
+> +#define sv_fp	r5
+> +#define sv_pc	r6
+> +#define sv_lr   r8
+> +		add     frame, sp, #20          @ switch to false frame
+> +for_each_frame:	tst	frame, mask		@ Check for address exceptions
+> +		bne	no_frame
+> +
+> +1001:		ldr	sv_pc, [frame, #4]	@ get saved 'pc'
+> +1002:		ldr	sv_fp, [frame, #0]	@ get saved fp
+> +
+> +		teq     sv_fp, #0               @ make sure next frame exists
+> +		beq     no_frame
+> +
+> +1003:		ldr     sv_lr, [sv_fp, #4]      @ get saved lr from next frame
+> +
+> +		//try to find function start
+> +		ldr     r0, [sv_lr, #-4]        @ get call instruction
+> +		ldr     r3, .Ldsi+8
+> +		and     r2, r3, r0              @ is this a bl call
+> +		teq     r2, r3
+> +		bne     finished_setup          @ give up if it's not
+> +		and     r0, #0xffffff           @ get call offset 24-bit int
+> +		lsl     r0, r0, #8              @ sign extend offset
+> +		asr     r0, r0, #8
+> +		ldr     sv_pc, [sv_fp, #4]      @ get lr address
+> +		add     sv_pc, sv_pc, #-4	@ get call instruction address
+> +		add     sv_pc, sv_pc, #8        @ take care of prefetch
+> +		add     sv_pc, sv_pc, r0, lsl #2 @ find function start
+> +		b       finished_setup
+> +
+> +finished_setup:
+> +
+> +		bic	sv_pc, sv_pc, mask	@ mask PC/LR for the mode
+> +
+> +1004:		mov     r0, sv_pc
+> +
+> +		mov     r1, sv_lr
+> +		mov	r2, frame
+> +		bic	r1, r1, mask		@ mask PC/LR for the mode
+> +		bl	dump_backtrace_entry
+> +
+> +1005:		ldr	r1, [sv_pc, #0]		@ if stmfd sp!, {..., fp, lr}
+> +		ldr	r3, .Ldsi		@ instruction exists,
+> +		teq	r3, r1, lsr #11
+> +		ldr     r0, [frame]             @ locals are stored in
+> +						@ the preceding frame
+> +		subeq	r0, r0, #4
+> +		bleq	dump_backtrace_stm	@ dump saved registers
+> +
+> +		teq	sv_fp, #0		@ zero saved fp means
+> +		beq	no_frame		@ no further frames
+> +
+> +		cmp	sv_fp, frame		@ next frame must be
+> +		mov	frame, sv_fp		@ above the current frame
+> +		bhi	for_each_frame
+> +
+> +1006:		adr	r0, .Lbad
+> +		mov	r1, frame
+> +		bl	printk
+> +no_frame:	ldmfd	sp!, {r4 - r8, fp, pc}
+> +ENDPROC(c_backtrace)
+> +		.pushsection __ex_table,"a"
+> +		.align	3
+> +		.long	1001b, 1006b
+> +		.long	1002b, 1006b
+> +		.long	1003b, 1006b
+> +		.long	1004b, 1006b
+> +		.popsection
+> +
+> +.Lbad:		.asciz	"Backtrace aborted due to bad frame pointer <%p>\n"
+> +		.align
+> +.Ldsi:		.word	0xe92d4800 >> 11	@ stmfd sp!, {... fp, lr}
+> +		.word	0xe92d0000 >> 11	@ stmfd sp!, {}
+> +		.word   0x0b000000              @ bl if these bits are set
+> +
+> +ENDPROC(c_backtrace)
+> +
+> +#else
+>   /*
+>    * Stack frame layout:
+>    *             optionally saved caller registers (r4 - r10)
+> @@ -55,6 +161,15 @@ ENDPROC(c_backtrace)
+>    *                  stmfd sp!, {r0 - r3} (optional)
+>    * corrected pc =>  stmfd sp!, {..., fp, ip, lr, pc}
+>    */
+> +#define sv_fp	r5
+> +#define sv_pc	r6
+> +#define offset	r8
+> +
+> +1:		stmfd	sp!, {pc}		@ calculate offset of PC stored
+> +		ldr	r0, [sp], #4		@ by stmfd for this CPU
+> +		adr	r1, 1b
+> +		sub	offset, r0, r1
+> +
+>   for_each_frame:	tst	frame, mask		@ Check for address exceptions
+>   		bne	no_frame
+>   
+> @@ -98,7 +213,7 @@ for_each_frame:	tst	frame, mask		@ Check for address exceptions
+>   1006:		adr	r0, .Lbad
+>   		mov	r1, frame
+>   		bl	printk
+> -no_frame:	ldmfd	sp!, {r4 - r8, pc}
+> +no_frame:	ldmfd	sp!, {r4 - r8, fp, pc}
+>   ENDPROC(c_backtrace)
+>   		
+>   		.pushsection __ex_table,"a"
+> @@ -115,3 +230,4 @@ ENDPROC(c_backtrace)
+>   		.word	0xe92d0000 >> 11	@ stmfd sp!, {}
+>   
+>   #endif
+> +#endif
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
