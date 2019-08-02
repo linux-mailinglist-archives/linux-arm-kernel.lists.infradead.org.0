@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 933547F519
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C5EF7F518
 	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:34:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Z9ShyzwciFihl72XD82nn9BwOteNUlgoWX+mUaXAdTQ=; b=h9lWfDuxx6r3ce
-	ob5R43WaybP3sM4krME+Qzts4NLHbNaEU41zf42pS84mWDJ2SJTHVDPOraf9bSYys5HHEi+8oTWLT
-	eXcFRCgVylDuxW4pUH6uQ8VDYoHIPP+wMkx5Jg+R7T4Pi1UmWlA8RZcBJkIsK/K+vXQGrwUlkIR/M
-	ouAykvxHL4YCNLi+M/+oV/MSZ8OyKXC5P172jL5PPEmMiSI8YFfASjT5k58sL7ocVMRv5qs0KoS6x
-	wMAzi+Ey6Y3hHH9ZFBEFSl+F+cYzCKEcPmBElWB4Me3jlosOgZYy88CneoEiy2lnX80ioB8O47ATO
-	WTa9IpTHVJyyP1jNIdFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Dobp05i7ufNkJiZnsliZnistbWzslX4lVOLacCIjSEM=; b=kaloWYDZdoRfch
+	AhNG8ZhhG52bz9erKimv4kWWXbzLoD2RKBkYXBA6CKtRne/5Y6+ZvrGylEO0M0lpWK4ml9Ji3H6QP
+	6zh/BwzNxPmH6iTHh8BNjzzrPsC+V/iV/tYtmUBtfw1gzbbfaSaoxBTBHRMWWWS4WSHLG5BdqTYot
+	xm8S7JpLD+KqXktnoDSkZTNBTlxVTCl/KxGuMZ11Bg++rtpBga5NbHxf+fBgsxFdiNL35iRdSh8BO
+	HtjSPdozQ/RmjAMG1g+fbVY7rrZCqIbQwsLJMGvHypOy4+9VtMD8+v3mt3XXhGYp8g3xGzHGx6jbf
+	cPpvxDSX3u+vO2YCGeZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htUt1-0001E3-KS; Fri, 02 Aug 2019 10:34:11 +0000
+	id 1htUst-00015I-JI; Fri, 02 Aug 2019 10:34:03 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htUsm-00011i-3Y
+ id 1htUsl-00011q-Pn
  for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:33:57 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 8D9B58053A;
- Fri,  2 Aug 2019 12:33:48 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id B71E18053B;
+ Fri,  2 Aug 2019 12:33:49 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id QdFiGkq-z2yF; Fri,  2 Aug 2019 12:33:39 +0200 (CEST)
+ with ESMTP id Qj26uncj_VDW; Fri,  2 Aug 2019 12:33:40 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 596588053F;
- Fri,  2 Aug 2019 12:33:38 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 10CD180541;
+ Fri,  2 Aug 2019 12:33:39 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id Q92BHGZg1TFD; Fri,  2 Aug 2019 12:33:35 +0200 (CEST)
+ with ESMTP id mK-mJL9V8DJO; Fri,  2 Aug 2019 12:33:36 +0200 (CEST)
 Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
  [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 5F73080536;
+ by zimbra.v3.sk (Postfix) with ESMTPSA id B0D4D80538;
  Fri,  2 Aug 2019 12:33:35 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH v2 0/6] ARM: dts: mmp2: devicetree updates
-Date: Fri,  2 Aug 2019 12:33:20 +0200
-Message-Id: <20190802103326.531250-1-lkundrak@v3.sk>
+Subject: [PATCH v2 1/6] ARM: dts: mmp2: trivial whitespace fix
+Date: Fri,  2 Aug 2019 12:33:21 +0200
+Message-Id: <20190802103326.531250-2-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190802103326.531250-1-lkundrak@v3.sk>
+References: <20190802103326.531250-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_033356_297077_1761C8DA 
-X-CRM114-Status: UNSURE (   5.11  )
+X-CRM114-CacheID: sfid-20190802_033355_992869_1B43828D 
+X-CRM114-Status: UNSURE (   8.93  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,25 +72,36 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Pavel Machek <pavel@ucw.cz>, linux-arm-kernel@lists.infradead.org
+ linux-kernel@vger.kernel.org, Lubomir Rintel <lkundrak@v3.sk>,
+ Rob Herring <robh+dt@kernel.org>, Pavel Machek <pavel@ucw.cz>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+A missing space before a curly brace.
 
-Here's a couple of updates for the MMP2 SoC devicetree files.
+Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
+---
+ arch/arm/boot/dts/mmp2.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-The only change from the last submission is the addition of the
-OLPC XO 1.75 dts file. Apart from that one, the patches are
-independent of each other, can be applied in any order.
-
-Hopefully I'm sending the patch set in the correct direction.
-
-Lubo
-
+diff --git a/arch/arm/boot/dts/mmp2.dtsi b/arch/arm/boot/dts/mmp2.dtsi
+index b6f40743e07b0..50b6c38b39cc3 100644
+--- a/arch/arm/boot/dts/mmp2.dtsi
++++ b/arch/arm/boot/dts/mmp2.dtsi
+@@ -379,7 +379,7 @@
+ 			};
+ 		};
+ 
+-		soc_clocks: clocks{
++		soc_clocks: clocks {
+ 			compatible = "marvell,mmp2-clock";
+ 			reg = <0xd4050000 0x1000>,
+ 			      <0xd4282800 0x400>,
+-- 
+2.21.0
 
 
 _______________________________________________
