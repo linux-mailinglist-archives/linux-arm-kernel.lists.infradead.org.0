@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4A357ED60
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 09:24:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 864757ED61
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 09:24:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HjWW4KrLpF1JpdqWITydLTSVn7VEGWNsfKZzccyr2Uk=; b=uZN
-	8/HZkwu5Jso2eDVs4+mzNPbOzw/9ZkbN8F4TrOGtnsd8oXR3ZDOLbjjERqdl1Kmub2emcWB6W738g
-	7Ca27ukPFgk9CNtkMgR8Xnf0oXaH4nehfo/sMkT7afOXe6rLSHTqkep0V1PTvFvFByxQSzFAqP5cP
-	H6TWsRTVj+1lyriLFUN6XqF/cD1wmroJnNGp7oeT7tuTxJ1HLu7wOsRF3zmh99iulX53XNfCNzePT
-	uxFjXiiwDQMfVb/BsfhVMJnO4XTt2JcA9qDxcM/67UHg33cprVTa20nldvzA1BdXysM5LfRE6J5A9
-	o8dZyRgEptVK49N8EdD3i91X7Pyl2xA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=wqgV/vykV0AngcrqKYCRSDS9Ys2akoPYXcV2rkffk6w=; b=a6nMANiTTyg88wOdNtdbDD1anl
+	ks+Gfefy7vBmPdswqsDeJ2GQlzCE2sLagZs2hJvPXcb3pi2JqZ6nkoisRkiKNH2Tp7Q5hV35cwn90
+	tP7CEDOrgUGM8xX4aWOdgxnBriJSqk4+reEKe9B8f8EAXDEcxGcPB7wv9vxbGDGX9r8enJnGXk67U
+	7qW6NoE2d7buC2aSG1xp8EBxHyUy39M16ZtifaLkFMBtWUQJroJ0ZDE555H5dWNzqIvgsrW5a6u+w
+	/5WW2MBuHfCVrruI9NjdroNRh81PT58NMuPz6PhZOKJnLnB/XF9FTGwiQSeOXogq7yBLoDSqBem+g
+	g12Yoxsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htRvQ-00020g-Ln; Fri, 02 Aug 2019 07:24:28 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1htRvd-0002Ax-Ph; Fri, 02 Aug 2019 07:24:42 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htRvE-0001zU-8x
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 07:24:17 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 77FFF2000B4;
- Fri,  2 Aug 2019 09:24:14 +0200 (CEST)
+ id 1htRvF-0001zV-Q4
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 07:24:19 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4D9301A00E0;
+ Fri,  2 Aug 2019 09:24:15 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 805ED200097;
- Fri,  2 Aug 2019 09:24:10 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 575C81A0112;
+ Fri,  2 Aug 2019 09:24:11 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 5525E402C9;
- Fri,  2 Aug 2019 15:24:05 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2CDB3402EE;
+ Fri,  2 Aug 2019 15:24:06 +0800 (SGT)
 From: Richard Zhu <hongxing.zhu@nxp.com>
 To: jassisinghbrar@gmail.com,
 	o.rempel@pengutronix.de,
 	aisheng.dong@nxp.com
-Subject: [PATCH v4 0/2] mailbox: imx: add support for imx v1 mu
-Date: Fri,  2 Aug 2019 15:01:38 +0800
-Message-Id: <1564729300-30374-1-git-send-email-hongxing.zhu@nxp.com>
+Subject: [PATCH v4 1/2] dt-bindings: mailbox: imx-mu: add imx7ulp MU support
+Date: Fri,  2 Aug 2019 15:01:39 +0800
+Message-Id: <1564729300-30374-2-git-send-email-hongxing.zhu@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1564729300-30374-1-git-send-email-hongxing.zhu@nxp.com>
+References: <1564729300-30374-1-git-send-email-hongxing.zhu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_002416_456504_98E9FAA3 
-X-CRM114-Status: UNSURE (   5.72  )
+X-CRM114-CacheID: sfid-20190802_002417_980155_88A508B3 
+X-CRM114-Status: UNSURE (   6.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -53,7 +56,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,33 +78,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Change logs:
+There is a version 1.0 MU on imx7ulp, use "fsl,imx7ulp-mu" compatible
+to support it.
 
-v3 --> v4:
-  - Change "version1.0" to "version 1.0" in the commit log.
-  - Update the devicetree binding document to support the imx7ulp mu.
-  - Rebase the patch refer to the following bug-fixs patch-set issued
-  by Daniel Baluta <daniel.baluta@gmail.com>.
-  "https://patchwork.kernel.org/patch/11069479/"
+Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
+---
+ Documentation/devicetree/bindings/mailbox/fsl,mu.txt | 2 ++
+ 1 file changed, 2 insertions(+)
 
-v2 --> v3:
-  - Format the patch-set refer to Oleksij's guidance.
-  - Init the register array by a simple way recommended by Oleksij.
-  - Add Reviewed-by: Oleksij Rempel <o.rempel@pengutronix.de> tag.
-
-v1 --> v2:
-  - Use to have the register layout linked on probe, suggested by
-  Oleksij Rempel <o.rempel@pengutronix.de>.
-  - Add Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com> tag.
-
-Richard Zhu (2):
-  dt-bindings: mailbox: imx-mu: add imx7ulp MU support
-  mailbox: imx: add support for imx v1 mu
-
- .../devicetree/bindings/mailbox/fsl,mu.txt         |  2 +
- drivers/mailbox/imx-mailbox.c                      | 55 +++++++++++++++-------
- 2 files changed, 40 insertions(+), 17 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/mailbox/fsl,mu.txt b/Documentation/devicetree/bindings/mailbox/fsl,mu.txt
+index f3cf77e..9c43357 100644
+--- a/Documentation/devicetree/bindings/mailbox/fsl,mu.txt
++++ b/Documentation/devicetree/bindings/mailbox/fsl,mu.txt
+@@ -21,6 +21,8 @@ Required properties:
+ 		imx6sx, imx7s, imx8qxp, imx8qm.
+ 		The "fsl,imx6sx-mu" compatible is seen as generic and should
+ 		be included together with SoC specific compatible.
++		There is a version 1.0 MU on imx7ulp, use "fsl,imx7ulp-mu"
++		compatible to support it.
+ - reg :		Should contain the registers location and length
+ - interrupts :	Interrupt number. The interrupt specifier format depends
+ 		on the interrupt controller parent.
 -- 
 2.7.4
 
