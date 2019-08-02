@@ -2,63 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D09997F528
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:35:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D138E7F533
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:38:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YVCnXbdNFWjrI2YeLMkOmmXTZtnil+XioM/O9ECbCkY=; b=Mg6YLPA6Yz7kb5
-	WVlwj9bW9UcEcA/AVTX73F75RKyAetRXltU2QV/SKIGEKZFbuMVgAykJbDsrHdX9rZjE3Fq8olqwD
-	oqGin/ha5UnQnM4TuBzf6dHapBqTziC76nWq9w+kM3F1DxoDCTbDkGZKa9jRAHt9FMg8B6jNnUzKe
-	LhtxFBCsQ3O7tnU3Wcr64F53GSjg4Fxd/GcUtH9GEiumhgg/ozz5r1b51YOHqRnjs/mDHwy1Gp931
-	2QKzg2sr3uwDhkA8l9KaXBd46njiV9PiSc62fWZNxpEGbd9AcQT5Wxgjfn86T1ktnot+w1ReOFv/q
-	JWHk3QqT0ZDHxaJwyVDw==;
+	List-Owner; bh=uT8aOxGQH/lzlWVEYj8Imyy6qtemUiD5kE5kjRf8VAs=; b=dVm0tb1ELQWiC6
+	FCVxuall/pFSdVPbWwZuWg92zzqpmji06DDNEwqqkaKXABbbkEWGYc+pYwB5DPNAouZklvUFoG/zD
+	/42hQ+1ViYL7lU5ptsieJR2Q/IbiKAY2VgRQpLZNVZFcrqZt+Di0nHXp6NPEN/jHPuCsI9R/ZJ4hT
+	nbbDNOdr9tM6eRlbUceg2vJXeqMT1ZVB7D+Dvc5F5EJqSNGeoUxhf3OHh2q42NUN6VvoSK+kOvROn
+	0E99gr/HVDK/1eN205UdOokM1aWqyl62ES7slMOsHRYAZR88f4Oz3EOtV4IMb4Axkh9D/ZJyC9Zxx
+	RGPzApBxiKsImzOKnwmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htUts-0002X9-Ld; Fri, 02 Aug 2019 10:35:04 +0000
-Received: from shell.v3.sk ([90.176.6.54])
+	id 1htUwx-0004VR-Vw; Fri, 02 Aug 2019 10:38:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htUsw-0001HH-I2
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:34:08 +0000
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 0E73280536;
- Fri,  2 Aug 2019 12:34:05 +0200 (CEST)
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id XVuQ5ilwv7tj; Fri,  2 Aug 2019 12:33:49 +0200 (CEST)
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 0DF8180538;
- Fri,  2 Aug 2019 12:33:44 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at zimbra.v3.sk
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id mjuXp4jJ5lMD; Fri,  2 Aug 2019 12:33:40 +0200 (CEST)
-Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
- [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id C72EB8053E;
- Fri,  2 Aug 2019 12:33:36 +0200 (CEST)
-From: Lubomir Rintel <lkundrak@v3.sk>
-To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH v2 6/6] ARM: dts: mmp2: add OLPC XO 1.75 machine
-Date: Fri,  2 Aug 2019 12:33:26 +0200
-Message-Id: <20190802103326.531250-7-lkundrak@v3.sk>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190802103326.531250-1-lkundrak@v3.sk>
-References: <20190802103326.531250-1-lkundrak@v3.sk>
+ id 1htUwr-0004V5-5p
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:38:10 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D13942086A;
+ Fri,  2 Aug 2019 10:38:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564742288;
+ bh=IYNwTW73rLYyMyjD9BJMjODjl0NeiQXEjNWG7ynwQFE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=qVCPNdH/6+F3JEUwjc5ECdeVvv2rxFW/YIsSdLtdhUSAecBHvE/aZD9g4yMo2gZSj
+ 2yoBLIUP0QYtsd9bkMqXcwYzxDAGO2T7/GL9cxrLT0Ys0KRqsv6Oult274XWCLaght
+ wblNSh7hCme4l3pG2uJghbpPO6jnYgJmHgYdUE7s=
+Date: Fri, 2 Aug 2019 11:38:03 +0100
+From: Will Deacon <will@kernel.org>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH] dma-mapping: fix page attributes for dma_mmap_*
+Message-ID: <20190802103803.3qrbhqwxlasojsco@willie-the-truck>
+References: <20190801142118.21225-1-hch@lst.de>
+ <20190801142118.21225-2-hch@lst.de>
+ <20190801162305.3m32chycsdjmdejk@willie-the-truck>
+ <20190801163457.GB26588@lst.de>
+ <20190801164411.kmsl4japtfkgvzxe@willie-the-truck>
+ <20190802081441.GA9725@lst.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190802081441.GA9725@lst.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_033406_931228_D8B04609 
-X-CRM114-Status: GOOD (  14.10  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190802_033809_260839_7C06D871 
+X-CRM114-Status: GOOD (  21.27  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,300 +81,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Lubomir Rintel <lkundrak@v3.sk>,
- Rob Herring <robh+dt@kernel.org>, Pavel Machek <pavel@ucw.cz>,
+Cc: Shawn Anastasio <shawn@anastas.io>, Michael Ellerman <mpe@ellerman.id.au>,
+ linuxppc-dev@lists.ozlabs.org, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Robin Murphy <robin.murphy@arm.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is a fairly complete description of an OLPC XO 1.75 laptop.
-What's missing for now is the GPU, LCD controller, DCON, the panel and
-audio.
+On Fri, Aug 02, 2019 at 10:14:41AM +0200, Christoph Hellwig wrote:
+> On Thu, Aug 01, 2019 at 05:44:12PM +0100, Will Deacon wrote:
+> > > > Although arch_dma_mmap_pgprot() is a bit of a misnomer now that it only
+> > > > gets involved in the non-coherent case.
+> > > 
+> > > A better name is welcome.
+> > 
+> > How about arch_dma_noncoherent_mmap_pgprot() ? Too long?
+> 
+> Sounds a little long yes.  And doesn't fix the additional problem that
+> we don't just it for mmap but also for the in-kernel remapping these
+> days.
 
-The machine is booted with OpenFirmware and thus has a devicetree.
-However, older versions are unable to create a valid FDT and don't
-follow the Linux bindings. Having an device tree in the kernel tree
-makes it easier to use mainline kernels on such machines, test changes
-with CONFIG_ARM_APPENDED_DTB and give a good reference on what bindings
-are used on the machine without an access to one.
+Hmm. Maybe just arch_dma_noncoherent_pgprot() then.
 
-Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
----
- arch/arm/boot/dts/Makefile              |   3 +-
- arch/arm/boot/dts/mmp2-olpc-xo-1-75.dts | 244 ++++++++++++++++++++++++
- 2 files changed, 246 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/mmp2-olpc-xo-1-75.dts
+> > > But my worry is how this interacts with architectures that have an
+> > > uncached segment (mips, nios2, microblaze, extensa) where we'd have
+> > > the kernel access DMA_ATTR_WRITE_COMBINE mappigns using the uncached
+> > > segment, and userspace mmaps using pgprot_writecombine, which could
+> > > lead to aliasing issues.  But then again mips already supports
+> > > DMA_ATTR_WRITE_COMBINE, so this must be ok somehow.  I guess I'll
+> > > need to field that question to the relevant parties.
+> > 
+> > Or it's always been busted and happens to work out in practice...
+> 
+> I've sent a ping to the mips folks.  While we'are at it:  arm64
+> and arm32 (optionally) map dma coherent allocations as write combine.
+> I suspect this hasn't always just been busted but intentional (of course!),
+> but is there any chance to get a quote from the arm architecture spec
+> on why this is fine as it looks rather confusion?
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 9159fa2cea90c..65213b5265187 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -336,7 +336,8 @@ dtb-$(CONFIG_MACH_MESON8) += \
- dtb-$(CONFIG_ARCH_MMP) += \
- 	pxa168-aspenite.dtb \
- 	pxa910-dkb.dtb \
--	mmp2-brownstone.dtb
-+	mmp2-brownstone.dtb \
-+	mmp2-olpc-xo-1-75.dtb
- dtb-$(CONFIG_ARCH_MPS2) += \
- 	mps2-an385.dtb \
- 	mps2-an399.dtb
-diff --git a/arch/arm/boot/dts/mmp2-olpc-xo-1-75.dts b/arch/arm/boot/dts/mmp2-olpc-xo-1-75.dts
-new file mode 100644
-index 0000000000000..6cfa0d4a18845
---- /dev/null
-+++ b/arch/arm/boot/dts/mmp2-olpc-xo-1-75.dts
-@@ -0,0 +1,244 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/*
-+ * OLPC XO 1.75 Laptop.
-+ *
-+ * Copyright (C) 2018,2019 Lubomir Rintel <lkundrak@v3.sk>
-+ */
-+
-+/dts-v1/;
-+#include "mmp2.dtsi"
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/linux-event-codes.h>
-+#include <dt-bindings/interrupt-controller/irq.h>
-+
-+/ {
-+	model = "OLPC XO-1.75";
-+	compatible = "olpc,xo-1.75", "mrvl,mmp2";
-+
-+	chosen {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges;
-+
-+		framebuffer@1fc00000 {
-+			compatible = "simple-framebuffer";
-+			reg = <0x1fc00000 (1200 * 900 * 2)>;
-+			width = <1200>;
-+			height = <900>;
-+			stride = <(1200 * 2)>;
-+			format = "r5g6b5";
-+			clocks = <&soc_clocks MMP2_CLK_DISP0_LCDC>,
-+				 <&soc_clocks MMP2_CLK_DISP0>;
-+		};
-+	};
-+
-+	memory {
-+		linux,usable-memory = <0x0 0x1f800000>;
-+		available = <0xcf000 0x1ef31000 0x1000 0xbf000>;
-+		reg = <0x0 0x20000000>;
-+		device_type = "memory";
-+	};
-+
-+	gpio-keys {
-+		compatible = "gpio-keys";
-+
-+		lid {
-+			label = "Lid";
-+			gpios = <&gpio 129 GPIO_ACTIVE_LOW>;
-+			linux,input-type = <EV_SW>;
-+			linux,code = <SW_LID>;
-+			wakeup-source;
-+		};
-+
-+		tablet_mode {
-+			label = "E-Book Mode";
-+			gpios = <&gpio 128 GPIO_ACTIVE_LOW>;
-+			linux,input-type = <EV_SW>;
-+			linux,code = <SW_TABLET_MODE>;
-+			wakeup-source;
-+		};
-+
-+		microphone_insert {
-+			label = "Microphone Plug";
-+			gpios = <&gpio 96 GPIO_ACTIVE_HIGH>;
-+			linux,input-type = <EV_SW>;
-+			linux,code = <SW_MICROPHONE_INSERT>;
-+			debounce-interval = <100>;
-+			wakeup-source;
-+		};
-+
-+		headphone_insert {
-+			label = "Headphone Plug";
-+			gpios = <&gpio 97 GPIO_ACTIVE_HIGH>;
-+			linux,input-type = <EV_SW>;
-+			linux,code = <SW_HEADPHONE_INSERT>;
-+			debounce-interval = <100>;
-+			wakeup-source;
-+		};
-+	};
-+
-+	camera_i2c {
-+		compatible = "i2c-gpio";
-+		gpios = <&gpio 109 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>,
-+			<&gpio 108 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		i2c-gpio,timeout-ms = <1000>;
-+		status = "okay";
-+
-+		camera@21 {
-+			compatible = "ovti,ov7670";
-+			reg = <0x21>;
-+			reset-gpios = <&gpio 102 GPIO_ACTIVE_LOW>;
-+			powerdown-gpios = <&gpio 150 GPIO_ACTIVE_LOW>;
-+			clocks = <&camera0>;
-+			clock-names = "xclk";
-+
-+			port {
-+				ov7670_0: endpoint {
-+					hsync-active = <1>;
-+					vsync-active = <1>;
-+					remote-endpoint = <&camera0_0>;
-+				};
-+			};
-+		};
-+	};
-+
-+	battery {
-+		compatible = "olpc,xo1.5-battery", "olpc,xo1-battery";
-+	};
-+
-+	wlan_reg: fixedregulator0 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "wlan";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		gpio = <&gpio 34 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
-+
-+	wlan_pwrseq: pwrseq0 {
-+		compatible = "mmc-pwrseq-sd8787";
-+		powerdown-gpios = <&gpio 57 GPIO_ACTIVE_HIGH>;
-+		reset-gpios = <&gpio 58 GPIO_ACTIVE_HIGH>;
-+	};
-+
-+	soc {
-+		axi@d4200000 {
-+			ap-sp@d4290000 {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				compatible = "olpc,ap-sp";
-+				interrupts = <40>;
-+				reg = <0xd4290000 0x1000>;
-+				data-gpios = <&gpio 72 GPIO_ACTIVE_HIGH>;
-+				clk-gpios = <&gpio 71 GPIO_ACTIVE_HIGH>;
-+				status = "okay";
-+			};
-+		};
-+	};
-+};
-+
-+&uart3 {
-+	status = "okay";
-+};
-+
-+&uart4 {
-+	status = "okay";
-+};
-+
-+&rtc {
-+	status = "okay";
-+};
-+
-+&usb_phy0 {
-+	status = "okay";
-+};
-+
-+&usb_otg0 {
-+	status = "okay";
-+};
-+
-+&mmc1 {
-+	clock-frequency = <50000000>;
-+	no-1-8-v;
-+	mrvl,clk-delay-cycles = <31>;
-+	broken-cd;
-+	status = "okay";
-+};
-+
-+&mmc2 {
-+	clock-frequency = <50000000>;
-+	no-1-8-v;
-+	bus-width = <4>;
-+	non-removable;
-+	broken-cd;
-+	wakeup-source;
-+	keep-power-in-suspend;
-+	mmc-pwrseq = <&wlan_pwrseq>;
-+	vmmc-supply = <&wlan_reg>;
-+	status = "okay";
-+};
-+
-+&mmc3 {
-+	clock-frequency = <50000000>;
-+	no-1-8-v;
-+	bus-width = <8>;
-+	non-removable;
-+	broken-cd;
-+	mrvl,clk-delay-cycles = <31>;
-+	status = "okay";
-+};
-+
-+&twsi1 {
-+	status = "okay";
-+
-+	audio-codec@1a {
-+		compatible = "realtek,alc5631";
-+		reg = <0x1a>;
-+		status = "okay";
-+	};
-+};
-+
-+&twsi2 {
-+	status = "okay";
-+
-+	rtc@68 {
-+		compatible = "dallas,ds1338";
-+		reg = <0x68>;
-+		status = "okay";
-+	};
-+};
-+
-+&twsi6 {
-+	status = "okay";
-+
-+	accelerometer@1d {
-+		compatible = "st,lis331dlh", "st,lis3lv02d";
-+		reg = <0x1d>;
-+		status = "okay";
-+	};
-+};
-+
-+&ssp3 {
-+	#address-cells = <0>;
-+	spi-slave;
-+	status = "okay";
-+	ready-gpio = <&gpio 125 GPIO_ACTIVE_HIGH>;
-+
-+	slave {
-+		compatible = "olpc,xo1.75-ec";
-+		spi-cpha;
-+		cmd-gpio = <&gpio 155 GPIO_ACTIVE_HIGH>;
-+	};
-+};
-+
-+&camera0 {
-+	status = "okay";
-+
-+	port {
-+		camera0_0: endpoint {
-+			remote-endpoint = <&ov7670_0>;
-+		};
-+	};
-+};
--- 
-2.21.0
+So this boils down to a terminology mismatch. The Arm architecture doesn't have
+anything called "write combine", so in Linux we instead provide what the Arm
+architecture calls "Normal non-cacheable" memory for pgprot_writecombine().
+Amongst other things, this memory type permits speculation, unaligned accesses
+and merging of writes. I found something in the architecture spec about
+non-cachable memory, but it's written in Armglish[1].
 
+pgprot_noncached(), on the other hand, provides what the architecture calls
+Strongly Ordered or Device-nGnRnE memory. This is intended for mapping MMIO
+(i.e. PCI config space) and therefore forbids speculation, preserves access
+size, requires strict alignment and also forces write responses to come from
+the endpoint.
+
+I think the naming mismatch is historical, but on arm64 we wanted to use the
+same names as arm32 so that any drivers using these things directly would get
+the same behaviour.
+
+Will
+
+[1]
+
+B2.4.4 Implication of caches for the application programmer
+
+[...]
+
+Data coherency issues
+
+Software can ensure the data coherency of caches in the following ways:
+
+  * By not using the caches in situations where coherency issues can arise.
+    This can be achieved by:
+
+    - Using Non-cacheable or, in some cases, Write-Through Cacheable memory.
+
+    - Not enabling caches in the system.
+
+  * By using cache maintenance instructions to manage the coherency issues
+    in software.
+
+  * By using hardware coherency mechanisms to ensure the coherency of data
+    accesses to memory for cacheable locations by observers within the
+    different shareability domains.
 
 _______________________________________________
 linux-arm-kernel mailing list
