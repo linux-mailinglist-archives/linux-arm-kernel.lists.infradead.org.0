@@ -2,87 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71DAF7EC47
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 07:50:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8188D7EC58
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 07:51:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rym/oQJExb99G/f9rbED+rL10Gme9SwtnyXDcMo25bg=; b=o8U8qdkPfLKpOLkiGgHOkYLxG
-	6fIUWzxgHjomrGhW+6zvRirOU9trpqMSQk/TZ70OnimMRDnpW8o4BJmbeySF71EkEGRR8pGa9pW8v
-	l7HAqUiTL13tYzUNu28oTUvZ0EjZTSlmHLJEoh3wuzNYEuyY5KOdIcLu6UEimzgzNYPtuZb4+gfFm
-	uOZV1ouc8foLwOWRzNOuhMk4cwYmcZkeTV6il77VItuDB68lmmKQf28x2M1I3znqSjz8n2jX0jQ+e
-	1EvbGOz+4vAtfTL5RqU/vm4Dglwhc+MYaQTrETCvr2+ucQXvsVoV/VxJDkzJVupWgECZjq/hGe3K/
-	/F+zb4uzQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HpoZLJ9lzALyF+6jyNUBMGGlmfmKY8Ni7vYm/1bvDXI=; b=T78TmHTCZt0vDx
+	yjI/TRwG1l6xNkF9OejdouZJq9soXX75bAY9gH7Qq2Hu+Q3bc2J03AshDueG8i3Rlvhclyi2On8Ps
+	3h/3IsVifv9zR1yKJXl5piByeHvSmJH9G0oObDPkeUBCnywMgrJGhB47GXYrUuWDf8gVzwkHsl6oh
+	jxmprwxJtCa1bxxysYg/apjbB1BR7yA6jo6X4VJMzuYdwqPRrj6xgPCI23PvJ9c0pMnLb2utchEGw
+	1F9WY5uVo7M04nfnGFjV1Y5+Ph4xpoSX2QXZ4yFnJY8oqooZAd8let+OM9JtszZWtqA1smLZ5mS3s
+	/IiSWe0kWWuiWfClsrBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htQS7-00053y-4L; Fri, 02 Aug 2019 05:50:07 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
+	id 1htQTj-0006Xu-2G; Fri, 02 Aug 2019 05:51:47 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htQRw-00053U-4L; Fri, 02 Aug 2019 05:49:57 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d43cf030000>; Thu, 01 Aug 2019 22:49:55 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Thu, 01 Aug 2019 22:49:54 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Thu, 01 Aug 2019 22:49:54 -0700
-Received: from [10.2.171.217] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 2 Aug
- 2019 05:49:53 +0000
-Subject: Re: [PATCH 20/34] xen: convert put_page() to put_user_page*()
-To: Juergen Gross <jgross@suse.com>, <john.hubbard@gmail.com>, Andrew Morton
- <akpm@linux-foundation.org>
-References: <20190802022005.5117-1-jhubbard@nvidia.com>
- <20190802022005.5117-21-jhubbard@nvidia.com>
- <4471e9dc-a315-42c1-0c3c-55ba4eeeb106@suse.com>
-X-Nvconfidentiality: public
-From: John Hubbard <jhubbard@nvidia.com>
-Message-ID: <d5140833-e9ee-beb5-ff0a-2d13a4fe819f@nvidia.com>
-Date: Thu, 1 Aug 2019 22:48:15 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1htQTX-0006XX-Uo
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 05:51:37 +0000
+Received: by mail-qt1-x843.google.com with SMTP id d17so72656597qtj.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 01 Aug 2019 22:51:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=5ITQyJRBl7ht1TYk00a4jNJ9PbzaX8Bwy7nVWaA9ibU=;
+ b=ZlXyZ6ztAsHkWX/gNtW3rbHVMXIy8YlD4tZkfmEg2K2GZWwrJbhbsffFVc4OaXLrg9
+ 4tTqk4gATmYjzkZBvV6sH+07OauO8iQOl7F9IrPpZzBS6Z/6Juf2gv2baaqlQJdyWdqq
+ U2PcA4vf7asSgaO+0RaIZUlir57+Jn+ToB2VE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=5ITQyJRBl7ht1TYk00a4jNJ9PbzaX8Bwy7nVWaA9ibU=;
+ b=NBqPR37OdgQ0cCW6Y+8akMOj5//RMkABvvUUBSMJExQf/9Y1H4p9ezWO8pumjABa6a
+ 6PpZbgWM5bXjP1kZcexDL0ILfyRtsz1UYfVUKdwMdyip8Wm0wzzdrI9/6IemoRr34ulJ
+ KLXWcScpDMDNt+AJRmgWOs7mXd5ipbA1L5Z5tIexXmWyGtnVBfJyRNEq2b5dHqFV7gaV
+ T47KZ400aJoWst05couT0tFqr6xQMGZrLycN3HWFxrTpgRJWYUlgSqKj/h83IfUA/1Tf
+ mfCnkJrcKuFaaHl79EeUE1UCSs6xWERTPrj0/zsLRl3ogr5zzJet4TzPCPAfIv/6Zn1z
+ 5UqA==
+X-Gm-Message-State: APjAAAUGCyLZNsNphzFRJ6/9slTDLh7qje/8H359ukIRAZpi64VOzkkQ
+ rlCTu0+2vr9d4bp0p7zYkD++TCNEjnCs4PycOrU=
+X-Google-Smtp-Source: APXvYqxO7iXCAjOTakLYUnlXhbQV3QpIiWAYTjbetNNaVVixnu8M5TKpFH8tA3QT0jtpa2v4Vzycy56QBDbI0RnB0tU=
+X-Received: by 2002:a05:6214:1306:: with SMTP id
+ a6mr97854130qvv.38.1564725094592; 
+ Thu, 01 Aug 2019 22:51:34 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <4471e9dc-a315-42c1-0c3c-55ba4eeeb106@suse.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL104.nvidia.com (172.18.146.11) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1564724995; bh=OWvjPY2RJnSXiNaT1G8Eyahp8MUAsm98cTkExQmaDUY=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=g4+wbBM5eRNl11+v4FSAl8PrvEnWACjbjTJMUv4Ewv3g+h7PgD8hueH5dPeoF8sW5
- c20eFrVi38BUjWugKSUxA2GH7CM3A3OrXQMppFfNCHg/NTgln/g1EuAeIEfsheR70J
- 47ajhTYRdBziMz0qVCHRjvKDjLN869T+rpjyKMqZQbhfLl80UOF5a6wxQMkyYeuu5C
- +SnQBQbOJUSigTfdZ2ZjmuC0GsGJhOMqTD72slI2rg2m1d7LKmLad2tBrS2UUN+9aI
- ixGXEdOyIH0YMQhEWsNGgp8xCyCNq0cOZ0EzzfGMekaZZJReXbXnLe2japHjsnQzSN
- gxuwPmkfTC8TQ==
+References: <20190726053959.2003-1-andrew@aj.id.au>
+ <CAL_JsqJ+sFDG8eKbV3gvmqVHx+otWbki4dY213apzXgfhbXXEw@mail.gmail.com>
+ <fd8e57f0-aee2-403e-b6fb-76d0c18fe306@www.fastmail.com>
+In-Reply-To: <fd8e57f0-aee2-403e-b6fb-76d0c18fe306@www.fastmail.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Fri, 2 Aug 2019 05:51:23 +0000
+Message-ID: <CACPK8Xc4Vigeu1B1Su5392BSCSKfoEDqt_tiDtgKmNH5ucAvAg@mail.gmail.com>
+Subject: Re: [RFC-ish PATCH 00/17] Clean up ASPEED devicetree warnings
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_224956_190048_B97FFE24 
-X-CRM114-Status: GOOD (  13.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190801_225135_997571_3D58ECAB 
+X-CRM114-Status: GOOD (  20.86  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,66 +94,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
- Boris Ostrovsky <boris.ostrovsky@oracle.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
- Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
- amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
- devel@lists.orangefs.org, linux-media@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, linux-block@vger.kernel.org,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
- netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-fsdevel@vger.kernel.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-aspeed@lists.ozlabs.org,
+ Linus Walleij <linus.walleij@linaro.org>, Corey Minyard <minyard@acm.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ devicetree <devicetree@vger.kernel.org>, Xo Wang <xow@google.com>,
+ Arnd Bergmann <arnd@arndb.de>, Ken Chen <chen.kenyy@inventec.com>,
+ Adriana Kobylak <anoo@us.ibm.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ =?UTF-8?B?WWFuZ0JyaWFuQy5XIOaliuWYieWBiSBUQU8=?= <yang.brianc.w@inventec.com>,
+ openipmi-developer@lists.sourceforge.net,
+ "Alexander A. Filippov" <a.filippov@yadro.com>, Tao Ren <taoren@fb.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ yao.yuan@linaro.org, Patrick Venture <venture@google.com>,
+ John Wang <wangzqbj@inspur.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Stefan M Schaeckeler <sschaeck@cisco.com>,
+ Haiyue Wang <haiyue.wang@linux.intel.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gOC8xLzE5IDk6MzYgUE0sIEp1ZXJnZW4gR3Jvc3Mgd3JvdGU6Cj4gT24gMDIuMDguMTkgMDQ6
-MTksIGpvaG4uaHViYmFyZEBnbWFpbC5jb20gd3JvdGU6Cj4+IEZyb206IEpvaG4gSHViYmFyZCA8
-amh1YmJhcmRAbnZpZGlhLmNvbT4KLi4uCj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3hlbi9wcml2
-Y21kLmMgYi9kcml2ZXJzL3hlbi9wcml2Y21kLmMKPj4gaW5kZXggMmY1Y2U3MjMwYTQzLi4yOWU0
-NjFkYmVlMmQgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMveGVuL3ByaXZjbWQuYwo+PiArKysgYi9k
-cml2ZXJzL3hlbi9wcml2Y21kLmMKPj4gQEAgLTYxMSwxNSArNjExLDEwIEBAIHN0YXRpYyBpbnQg
-bG9ja19wYWdlcygKPj4gwqAgc3RhdGljIHZvaWQgdW5sb2NrX3BhZ2VzKHN0cnVjdCBwYWdlICpw
-YWdlc1tdLCB1bnNpZ25lZCBpbnQgbnJfcGFnZXMpCj4+IMKgIHsKPj4gLcKgwqDCoCB1bnNpZ25l
-ZCBpbnQgaTsKPj4gLQo+PiDCoMKgwqDCoMKgIGlmICghcGFnZXMpCj4+IMKgwqDCoMKgwqDCoMKg
-wqDCoCByZXR1cm47Cj4+IC3CoMKgwqAgZm9yIChpID0gMDsgaSA8IG5yX3BhZ2VzOyBpKyspIHsK
-Pj4gLcKgwqDCoMKgwqDCoMKgIGlmIChwYWdlc1tpXSkKPj4gLcKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgcHV0X3BhZ2UocGFnZXNbaV0pOwo+PiAtwqDCoMKgIH0KPj4gK8KgwqDCoCBwdXRfdXNlcl9w
-YWdlcyhwYWdlcywgbnJfcGFnZXMpOwo+IAo+IFlvdSBhcmUgbm90IGhhbmRsaW5nIHRoZSBjYXNl
-IHdoZXJlIHBhZ2VzW2ldIGlzIE5VTEwgaGVyZS4gT3IgYW0gSQo+IG1pc3NpbmcgYSBwZW5kaW5n
-IHBhdGNoIHRvIHB1dF91c2VyX3BhZ2VzKCkgaGVyZT8KPiAKCkhpIEp1ZXJnZW4sCgpZb3UgYXJl
-IGNvcnJlY3QtLXRoaXMgbm8gbG9uZ2VyIGhhbmRsZXMgdGhlIGNhc2VzIHdoZXJlIHBhZ2VzW2ld
-CmlzIE5VTEwuIEl0J3MgaW50ZW50aW9uYWwsIHRob3VnaCBwb3NzaWJseSB3cm9uZy4gOikKCkkg
-c2VlIHRoYXQgSSBzaG91bGQgaGF2ZSBhZGRlZCBteSBzdGFuZGFyZCBibHVyYiB0byB0aGlzCmNv
-bW1pdCBkZXNjcmlwdGlvbi4gSSBtaXNzZWQgdGhpcyBvbmUsIGJ1dCBzb21lIG9mIHRoZSBvdGhl
-ciBwYXRjaGVzCmhhdmUgaXQuIEl0IG1ha2VzIHRoZSBmb2xsb3dpbmcsIHBvc3NpYmx5IGluY29y
-cmVjdCBjbGFpbToKCiJUaGlzIGNoYW5nZXMgdGhlIHJlbGVhc2UgY29kZSBzbGlnaHRseSwgYmVj
-YXVzZSBlYWNoIHBhZ2Ugc2xvdCBpbiB0aGUKcGFnZV9saXN0W10gYXJyYXkgaXMgbm8gbG9uZ2Vy
-IGNoZWNrZWQgZm9yIE5VTEwuIEhvd2V2ZXIsIHRoYXQgY2hlY2sKd2FzIHdyb25nIGFueXdheSwg
-YmVjYXVzZSB0aGUgZ2V0X3VzZXJfcGFnZXMoKSBwYXR0ZXJuIG9mIHVzYWdlIGhlcmUKbmV2ZXIg
-YWxsb3dlZCBmb3IgTlVMTCBlbnRyaWVzIHdpdGhpbiBhIHJhbmdlIG9mIHBpbm5lZCBwYWdlcy4i
-CgpUaGUgd2F5IEkndmUgc2VlbiB0aGVzZSBwYWdlIGFycmF5cyB1c2VkIHdpdGggZ2V0X3VzZXJf
-cGFnZXMoKSwKdGhpbmdzIGFyZSBlaXRoZXIgZG9uZSBzaW5nbGUgcGFnZSwgb3Igd2l0aCBhIGNv
-bnRpZ3VvdXMgcmFuZ2UuIFNvCnVubGVzcyBJJ20gbWlzc2luZyBhIGNhc2Ugd2hlcmUgc29tZW9u
-ZSBpcyBlaXRoZXIKCmEpIHJlbGVhc2luZyBpbmRpdmlkdWFsIHBhZ2VzIHdpdGhpbiBhIHJhbmdl
-IChhbmQgdGh1cyBsaWtlbHkgbWVzc2luZwp1cCB0aGVpciBjb3VudCBvZiBwYWdlcyB0aGV5IGhh
-dmUpLCBvcgoKYikgYWxsb2NhdGluZyB0d28gZ3VwIHJhbmdlcyB3aXRoaW4gdGhlIHNhbWUgcGFn
-ZXNbXSBhcnJheSwgd2l0aCBhCmdhcCBiZXR3ZWVuIHRoZSBhbGxvY2F0aW9ucywKCi4uLnRoZW4g
-aXQgc2hvdWxkIGJlIGNvcnJlY3QuIElmIHNvLCB0aGVuIEknbGwgYWRkIHRoZSBhYm92ZSBibHVy
-Ygp0byB0aGlzIHBhdGNoJ3MgY29tbWl0IGRlc2NyaXB0aW9uLgoKSWYgdGhhdCdzIG5vdCB0aGUg
-Y2FzZSAoYm90aCBoZXJlLCBhbmQgaW4gMyBvciA0IG90aGVyIHBhdGNoZXMgaW4gdGhpcwpzZXJp
-ZXMsIHRoZW4gYXMgeW91IHNhaWQsIEkgc2hvdWxkIGFkZCBOVUxMIGNoZWNrcyB0byBwdXRfdXNl
-cl9wYWdlcygpCmFuZCBwdXRfdXNlcl9wYWdlc19kaXJ0eV9sb2NrKCkuCgoKdGhhbmtzLAotLSAK
-Sm9obiBIdWJiYXJkCk5WSURJQQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Tue, 30 Jul 2019 at 01:09, Andrew Jeffery <andrew@aj.id.au> wrote:
+
+> > > The bang-for-buck is in fixing up the KCS bindings which removes all-but-two of
+> > > the remaining warnings (which we can't feasibly remove), but doing so forces
+> > > code changes (which I'd avoided up until this point).
+> > >
+> > > Reflecting broadly on the fixes, I think I've made a mistake way back by using
+> > > syscon/simple-mfds to expose the innards of the SCU and LPC controllers in the
+> > > devicetree. This series cleans up what's currently there, but I have half a
+> > > mind to rev the SCU and LPC bindings to not use simple-mfd and instead have a
+> > > driver implementation that uses `platform_device_register_full()` or similar to
+> > > deal with the mess.
+> > >
+> > > Rob - I'm looking for your thoughts here and on the series, I've never felt
+> > > entirely comfortable with what I cooked up. Your advice would be appreciated.
+> >
+> > The series generally looks fine to me from a quick scan. As far as
+> > dropping 'simple-mfd', having less fine grained description in DT is
+> > generally my preference. It comes down to whether what you have
+> > defined is maintainable. As most of it is just additions, I think what
+> > you have is fine. Maybe keep all this in mind for the next chip
+> > depending how the SCU and LPC change.
+>
+> Okay, I think the timing of that suggestion is good given where things are with
+> the AST2600. I'll keep that in mind.
+>
+> Consensus so far seems to be that the series is fine. I'll split it up and send out
+> the sub-series to the relevant lists with the acks accumulated here.
+
+The series look good. I suggest posting the KCS bindings and driver
+changes as their own series to go through the IPMI tree.
+
+Please add my tag to all the patches except the OCC one, which I need
+to do some investigation in to.
+
+Reviewed-by: Joel Stanley <joel@jms.id.au>
+
+The others can go via the aspeed tree. Perhaps post them as their own
+series too so I don't get confused and apply the wrong ones. That way
+if Rob wants to send his reviewed-by he can.
+
+Cheers,
+
+Joel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
