@@ -2,67 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C76827F56F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:46:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF6527F57E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:51:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p/MeOdfY12668Z39gHT1Lv2JwOpT/IglVCFBIKgjCug=; b=PV7eYQskA4ez9D
-	93VdvdOr5rGk50llWvs1Lk7pVH4PtLoR9stMyyAd+1aAEyQdnOh5p30IGYq2OEV286HFU8NJ6rJJ/
-	M04+mU7650VdaGu49U5hr1Tx10IoE/pC3gYDrVmKjHyRAvQmsQXQR5vAwsCXjG/5tFFwTs8yZbGfK
-	7z7Ptg2yXbg9hzO2AbZmuO53rQ1JizU4EMhFFuoqI6wJKsKG9QLVIX1ceus31ltNKtDtf4AaS7bsF
-	2CylvhqiDjCu8rWRXH5UPOXDo2AA88bxn3GpEOQp2cqhz9j00PnJycOO3NaWVTDdDAKS7oGRT2AOH
-	FIdyNw4dOhv2RaY/ymHA==;
+	List-Owner; bh=Fk03WToepdTpABruT9baH+0un9Wjc/w1mazh/7RDx+Y=; b=FNqQ42jQM7kN3Z
+	Rg5HhsVZBRU50cvhZh1tTOl8rikQUoqVYZLM4dug+KeWolaNxpEeV095pFv9TlNZjYkpH3uXas1QZ
+	wyzyPhRJGyK2S7ZhkJuuGPq0225+2VYL/VG+2AtIdU4xaRrWML4luLpi9JNG4XgjaB/RJOberXeMs
+	xi9+uUvjSDFLXpBfYK8+bh3b10uHqrdsaSeybIaFY1g5K++tEUkZ4Wgl/FvFOrMOE5D9OZ0NUE1e5
+	QqYCImrydGBGavjgkUxt4Mfqp6oFD70ZFVgVTwJiOpHnAEbgKq59zNpvnyUu9TO3hQnpW2MCX7mF2
+	mjFMOOdXRr9JZCx4Bl1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htV58-0007zJ-Ru; Fri, 02 Aug 2019 10:46:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htV52-0007yV-FY
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:46:38 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 412262087E;
- Fri,  2 Aug 2019 10:46:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564742795;
- bh=/Xo8pj+jLNFZr+k58OkpgJ6361PxmCXwjaJe76ZgvQ4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=bguPlqmbZheY1d41/TUOJypiEzni5SdqGWSfXCyvcy+41ffeFMZs7DlxzidPFbVDg
- lNEM1JV5n0kaBfZ8Zk5BlH+xkYzf5X28x7CKgTqlP93I0FsxJiuqB/EPEYyxOrWnFb
- eaYAOGHAUm+aLPpqIKkhug+DzWGzJ2ImmL2AUZyc=
-Date: Fri, 2 Aug 2019 12:46:33 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Subject: Re: [PATCH v2 00/10] drivers, provide a way to add sysfs groups easily
-Message-ID: <20190802104633.GA14823@kroah.com>
-References: <20190731124349.4474-1-gregkh@linuxfoundation.org>
- <20190731131045.GB147138@dtor-ws>
+	id 1htV9A-0001Fl-BD; Fri, 02 Aug 2019 10:50:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1htV94-0001FO-18
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:50:47 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6CBE3344;
+ Fri,  2 Aug 2019 03:50:45 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 9FF973F71F; Fri,  2 Aug 2019 03:50:40 -0700 (PDT)
+Date: Fri, 2 Aug 2019 11:50:38 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Hansen <dave.hansen@intel.com>
+Subject: Re: [PATCH v19 02/15] arm64: Introduce prctl() options to control
+ the tagged user addresses ABI
+Message-ID: <20190802105038.GC4175@arrakis.emea.arm.com>
+References: <cover.1563904656.git.andreyknvl@google.com>
+ <1c05651c53f90d07e98ee4973c2786ccf315db12.1563904656.git.andreyknvl@google.com>
+ <7a34470c-73f0-26ac-e63d-161191d4b1e4@intel.com>
+ <2b274c6f-6023-8eb8-5a86-507e6000e13d@arm.com>
+ <88c59d1e-eda9-fcfe-5ee3-64a331f34313@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190731131045.GB147138@dtor-ws>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <88c59d1e-eda9-fcfe-5ee3-64a331f34313@intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_034636_564473_5434A9A1 
-X-CRM114-Status: GOOD (  28.71  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190802_035046_111650_AA78CF04 
+X-CRM114-Status: GOOD (  18.13  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,106 +65,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, linux-input@vger.kernel.org, linux-fbdev@vger.kernel.org,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Sudeep Holla <sudeep.holla@arm.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, platform-driver-x86@vger.kernel.org,
- Tony Prisk <linux@prisktech.co.nz>,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Borislav Petkov <bp@alien8.de>,
- "H. Peter Anvin" <hpa@zytor.com>, Darren Hart <dvhart@infradead.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Richard Gong <richard.gong@linux.intel.com>, Ingo Molnar <mingo@redhat.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 06:10:45AM -0700, Dmitry Torokhov wrote:
-> On Wed, Jul 31, 2019 at 02:43:39PM +0200, Greg Kroah-Hartman wrote:
-> > This patch originally started out just as a way for platform drivers to
-> > easily add a sysfs group in a race-free way, but thanks to Dmitry's
-> > patch, this series now is for all drivers in the kernel (hey, a unified
-> > driver model works!!!)
-> > 
-> > I've only converted a few platform drivers here in this series to show
-> > how it works, but other busses can be converted after the first patch
-> > goes into the tree.
-> > 
-> > Here's the original 00 message, for people to get an idea of what is
-> > going on here:
-> > 
-> > If a platform driver wants to add a sysfs group, it has to do so in a
-> > racy way, adding it after the driver is bound.  To resolve this issue,
-> > have the platform driver core do this for the driver, making the
-> > individual drivers logic smaller and simpler, and solving the race at
-> > the same time.
-> > 
-> > All of these patches depend on the first patch.  I'll take the first one
-> > through my driver-core tree, and any subsystem maintainer can either ack
-> > their individul patch and I will be glad to also merge it, or they can
-> > wait until after 5.4-rc1 when the core patch hits Linus's tree and then
-> > take it, it's up to them.
+On Thu, Aug 01, 2019 at 09:45:05AM -0700, Dave Hansen wrote:
+> On 8/1/19 5:38 AM, Kevin Brodsky wrote:
+> > This patch series only changes what is allowed or not at the syscall
+> > interface. It does not change the address space size. On arm64, TBI (Top
+> > Byte Ignore) has always been enabled for userspace, so it has never been
+> > possible to use the upper 8 bits of user pointers for addressing.
 > 
-> Maybe make an immutable branch off 5.2 with just patch 1/10 so that
-> subsystems (and the driver core tree itself) could pull it in at their
-> leisure into their "*-next" branches and did not have to wait till 5.4
-> or risk merge clashes?
+> Oh, so does the address space that's available already chop that out?
 
-I have now done this with patch 1/10.  Here's the pull info if any
-subsystem maintainer wants to suck this into their tree to provide the
-ability for drivers to add/remove attribute groups easily.
+Yes. Currently the hardware only supports 52-bit virtual addresses. It
+could be expanded (though it needs a 5th page table level) to 56-bit VA
+but it's not currently on our (hardware) plans. Beyond 56-bit, it cannot
+be done without breaking the software expectations (and hopefully I'll
+retire before we need this ;)).
 
-This is part of my driver-core tree now, and will go to Linus for
-5.4-rc1, along with a few platform drivers that have been acked by their
-various subsystem maintainers that convert them to use this new
-functionality.
+> > If other architectures were to support a similar functionality, then I
+> > agree that a common and more generic interface (if needed) would be
+> > helpful, but as it stands this is an arm64-specific prctl, and on arm64
+> > the address tag is defined by the architecture as bits [63:56].
+> 
+> It should then be an arch_prctl(), no?
 
-If anyone has any questions about this, please let me know.
+I guess you just want renaming SET_TAGGED_ADDR_CTRL() to
+arch_prctl_tagged_addr_ctrl_set()? (similarly for 'get')
 
-thanks,
-
-greg k-h
-
--------------------
-
-The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
-
-  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/gregkh/driver-core.git tags/dev_groups_all_drivers
-
-for you to fetch changes up to 23b6904442d08b7dbed7622ed33b236d41a3aa8b:
-
-  driver core: add dev_groups to all drivers (2019-08-02 12:37:53 +0200)
-
-----------------------------------------------------------------
-dev_groups added to struct driver
-
-Persistent tag for others to pull this branch from
-
-This is the first patch in a longer series that adds the ability for the
-driver core to create and remove a list of attribute groups
-automatically when the device is bound/unbound from a specific driver.
-
-See:
-	https://lore.kernel.org/r/20190731124349.4474-2-gregkh@linuxfoundation.org
-for details on this patch, and examples of how to use it in other
-drivers.
-
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-
-----------------------------------------------------------------
-Dmitry Torokhov (1):
-      driver core: add dev_groups to all drivers
-
- drivers/base/dd.c      | 14 ++++++++++++++
- include/linux/device.h |  3 +++
- 2 files changed, 17 insertions(+)
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
