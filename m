@@ -2,76 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A69927FC84
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 16:48:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 185DF7FC88
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 16:49:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9RcB5moBXBCOQNbPPPVy/0YHinHfz0MkXywX4afY3FA=; b=MDA3EicYThOl6n
-	J0W9lAz/oCbKVbE1IVV2HFnAwy55IDdVi5Zk2RDyOraEioYJ3F+yOm4rBj4vRXq0DkWjxq1RO6ae9
-	adbeKPJl3SYofoxvpjjbtESCiyERmG4t8rveraY7HhEvr7qe7si4DXC8/vhq3P7oR2gtIzHsJJkec
-	7eVcNRPMOVqXZP82QYfW3lq97gzBlsetzSj0n+jkXXFX2uMgD7UppCzajwJmi0jiRGM8PkQgswMNe
-	2h3LN8ls+oP3Eosf4uyBqWpb6W+RciRogvDGvy+7i7m8eDiK9eFbDkVfNT6sBd/iLp2fdiBZ6yyci
-	wb0xVQcfOc00GWoABqEw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=EnrJCJftYZRvZlHv36q4pUkRcJsWM0jhIGSmzXAkNmk=; b=oqrZMo/rYjb5Qcc4GCmpsBTrYI
+	mJpvHeIWU9VLyv2JL4W9TB/4J0JN0JfoBMR1hV5zxuehjBm28+OqEptL1wU9GI/O5MOLj0dXuk6pN
+	P5oCIUWKR7jEHo91m/wjMuqFtUrBTgFSEq0GCv7bJMDZeq8wmWVodKJ2zGJzx8tm7Qez0ECnfa5qb
+	9QJ1oCo/COp8I4qWNfZ85y+TAinbYBEMb6SNUcciSYJZOYyFvEYh5hYpIfpuXpDEmTZrDgUPGAFwa
+	DK1/aSWvhZIuTgHArnlbj+xJHa/EQRc3YPBFIptbUxY+F2jMjKyjH3ecpXfImNSJ4RTPYrLEqCCrT
+	AevTYPIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htYqh-00013d-Ne; Fri, 02 Aug 2019 14:48:03 +0000
+	id 1htYsB-0001Kx-OL; Fri, 02 Aug 2019 14:49:35 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htYqb-00013G-95
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 14:47:59 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ id 1htYs5-0001KY-Vj
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 14:49:31 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x72EaJNq005392; Fri, 2 Aug 2019 16:47:50 +0200
+ x72Ea2h2004459; Fri, 2 Aug 2019 16:49:24 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : mime-version : content-type :
+ h=to : cc : from : subject
+ : message-id : date : mime-version : content-type :
  content-transfer-encoding; s=STMicroelectronics;
- bh=N8rgZWIZfOw81q7QuM18Tttp0ZdrCfm1/QUNIZC/5bM=;
- b=KqUvXDckPZyMTnjcTF4guAysii2fBpfThquE/WOr+K6iec9ZCasTAjCaVoHBc694o/nA
- IocwSQWQ9NiMwq5QF2oY40wO4jJZ7mbzbLYAWz/44U3O1kyYXaYCRfMWN/+Gnmyhqq3h
- koYoCPpSZSAcBPN1XfGoiyVTdRSW3RczZnlNDgfimraWV9IbHNMpWHyQ32ETRf7TjLOz
- Nv011AIcA7qb3HtK6DQ5Dni+YbVRPbP93ZxJsI+XBR/bhohdv0MpgMB5hQVAIKNWFGDT
- Icw0ZbXBFx2Vh4HxzOnXGWvBS9k1cMl8n4lpWWsZLtx0nZq2v20lut9fEJfjyGBPoTE+ 6A== 
+ bh=V3+cI5o7kZXBzcyzThq2Yqo/2qEZH1xtI2hfc+s5mBs=;
+ b=i3IPESvDhTCk8BpbytBeHJj/GWBGqHCdVDsdZ9+zFCfLpDby/2Pvu2T6rcKI+trkXvMT
+ vD3rSnvJK4En0PTj5Jwwccko99rnrcgAY7ZQdGU62stqOdkkZMVCA0jrQh59NLBUu6bs
+ MbwW0xobYCW87WMekJLXSu0JZxJJhnWL/0GHRS5SJyEyw7K6eiXMNCbQygXUIwJe2mxW
+ 9QBqZUAOkwuKxOo/DFbE+03dQDV8RbbcYH923F9qhzexdYFLQg9vxme8ayIqp2ZTbJlo
+ 6uBbGr04czDchNeXZmyae+l2EOdtJTStzz9OSbf9WYhFax6bSeBfMIXnDR80OhceEUG8 kw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2u3vd07vqr-1
+ by mx07-00178001.pphosted.com with ESMTP id 2u0c2yvyb5-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 02 Aug 2019 16:47:50 +0200
+ Fri, 02 Aug 2019 16:49:24 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EA83231;
- Fri,  2 Aug 2019 14:47:49 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D68092C54E2;
- Fri,  2 Aug 2019 16:47:49 +0200 (CEST)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 2 Aug 2019
- 16:47:49 +0200
-Received: from localhost (10.201.23.97) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 2 Aug 2019 16:47:49
- +0200
-From: =?UTF-8?q?Yannick=20Fertr=C3=A9?= <yannick.fertre@st.com>
-To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
- <alexandre.torgue@st.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>,
- Benjamin Gaignard <benjamin.gaignard@st.com>,
- Yannick Fertre <yannick.fertre@st.com>, Philippe Cornu
- <philippe.cornu@st.com>, Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: [PATCH] drm/stm: ltdc: add pinctrl for DPI encoder mode
-Date: Fri, 2 Aug 2019 16:47:42 +0200
-Message-ID: <1564757262-6166-1-git-send-email-yannick.fertre@st.com>
-X-Mailer: git-send-email 2.7.4
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E38F53A;
+ Fri,  2 Aug 2019 14:49:23 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D0D4C2C54EA;
+ Fri,  2 Aug 2019 16:49:23 +0200 (CEST)
+Received: from lmecxl0912.lme.st.com (10.75.127.45) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 2 Aug
+ 2019 16:49:23 +0200
+To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>, Kevin
+ Hilman <khilman@baylibre.com>, arm-soc <arm@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, <soc@kernel.org>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Subject: [GIT PULL] STM32 defconfig changes for v5.4 #1
+Message-ID: <b164eaa8-4553-9c0f-0729-2ecc96fbae7a@st.com>
+Date: Fri, 2 Aug 2019 16:49:22 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.97]
+Content-Language: en-US
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-08-02_06:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_074757_699911_4445D529 
-X-CRM114-Status: GOOD (  14.92  )
+X-CRM114-CacheID: sfid-20190802_074930_327254_2B03FCCE 
+X-CRM114-Status: GOOD (  12.25  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -99,56 +96,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlIGltcGxlbWVudGF0aW9uIG9mIGZ1bmN0aW9ucyBlbmNvZGVyX2VuYWJsZSBhbmQgZW5jb2Rl
-cl9kaXNhYmxlCm1ha2UgcG9zc2libGUgdG8gY29udHJvbCB0aGUgcGluY3RybCBhY2NvcmRpbmcg
-dG8gdGhlIGVuY29kZXIgdHlwZS4KVGhlIHBpbmN0cmwgbXVzdCBiZSBhY3RpdmF0ZWQgb25seSBp
-ZiB0aGUgZW5jb2RlciB0eXBlIGlzIERQSS4KVGhpcyBoZWxwcyB0byBtb3ZlIHRoZSBEUEktcmVs
-YXRlZCBwaW5jdHJsIGNvbmZpZ3VyYXRpb24gZnJvbQphbGwgdGhlIHBhbmVsIG9yIGJyaWRnZSB0
-byB0aGUgTFREQyBkdCBub2RlLgoKU2lnbmVkLW9mZi1ieTogWWFubmljayBGZXJ0csOpIDx5YW5u
-aWNrLmZlcnRyZUBzdC5jb20+Ci0tLQogZHJpdmVycy9ncHUvZHJtL3N0bS9sdGRjLmMgfCAzNSAr
-KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDM1IGlu
-c2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vc3RtL2x0ZGMuYyBiL2Ry
-aXZlcnMvZ3B1L2RybS9zdG0vbHRkYy5jCmluZGV4IDNhYjRmYmYuLjFjNGZkZTAgMTAwNjQ0Ci0t
-LSBhL2RyaXZlcnMvZ3B1L2RybS9zdG0vbHRkYy5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS9zdG0v
-bHRkYy5jCkBAIC0xNSw2ICsxNSw3IEBACiAjaW5jbHVkZSA8bGludXgvbW9kdWxlLmg+CiAjaW5j
-bHVkZSA8bGludXgvb2ZfYWRkcmVzcy5oPgogI2luY2x1ZGUgPGxpbnV4L29mX2dyYXBoLmg+Cisj
-aW5jbHVkZSA8bGludXgvcGluY3RybC9jb25zdW1lci5oPgogI2luY2x1ZGUgPGxpbnV4L3BsYXRm
-b3JtX2RldmljZS5oPgogI2luY2x1ZGUgPGxpbnV4L3BtX3J1bnRpbWUuaD4KICNpbmNsdWRlIDxs
-aW51eC9yZXNldC5oPgpAQCAtMTA0MCw2ICsxMDQxLDM2IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3Qg
-ZHJtX2VuY29kZXJfZnVuY3MgbHRkY19lbmNvZGVyX2Z1bmNzID0gewogCS5kZXN0cm95ID0gZHJt
-X2VuY29kZXJfY2xlYW51cCwKIH07CiAKK3N0YXRpYyB2b2lkIGx0ZGNfZW5jb2Rlcl9kaXNhYmxl
-KHN0cnVjdCBkcm1fZW5jb2RlciAqZW5jb2RlcikKK3sKKwlzdHJ1Y3QgZHJtX2RldmljZSAqZGRl
-diA9IGVuY29kZXItPmRldjsKKworCURSTV9ERUJVR19EUklWRVIoIlxuIik7CisKKwkvKiBTZXQg
-dG8gc2xlZXAgc3RhdGUgdGhlIHBpbmN0cmwgd2hhdGV2ZXIgdHlwZSBvZiBlbmNvZGVyICovCisJ
-cGluY3RybF9wbV9zZWxlY3Rfc2xlZXBfc3RhdGUoZGRldi0+ZGV2KTsKK30KKworc3RhdGljIHZv
-aWQgbHRkY19lbmNvZGVyX2VuYWJsZShzdHJ1Y3QgZHJtX2VuY29kZXIgKmVuY29kZXIpCit7CisJ
-c3RydWN0IGRybV9kZXZpY2UgKmRkZXYgPSBlbmNvZGVyLT5kZXY7CisKKwlEUk1fREVCVUdfRFJJ
-VkVSKCJcbiIpOworCisJLyoKKwkgKiBTZXQgdG8gZGVmYXVsdCBzdGF0ZSB0aGUgcGluY3RybCBv
-bmx5IHdpdGggRFBJIHR5cGUuCisJICogT3RoZXJzIHR5cGVzIGxpa2UgRFNJLCBkb24ndCBuZWVk
-IHBpbmN0cmwgZHVlIHRvCisJICogaW50ZXJuYWwgYnJpZGdlICh0aGUgc2lnbmFscyBkbyBub3Qg
-Y29tZSBvdXQgb2YgdGhlIGNoaXBzZXQpLgorCSAqLworCWlmIChlbmNvZGVyLT5lbmNvZGVyX3R5
-cGUgPT0gRFJNX01PREVfRU5DT0RFUl9EUEkpCisJCXBpbmN0cmxfcG1fc2VsZWN0X2RlZmF1bHRf
-c3RhdGUoZGRldi0+ZGV2KTsKK30KKworc3RhdGljIGNvbnN0IHN0cnVjdCBkcm1fZW5jb2Rlcl9o
-ZWxwZXJfZnVuY3MgbHRkY19lbmNvZGVyX2hlbHBlcl9mdW5jcyA9IHsKKwkuZGlzYWJsZSA9IGx0
-ZGNfZW5jb2Rlcl9kaXNhYmxlLAorCS5lbmFibGUgPSBsdGRjX2VuY29kZXJfZW5hYmxlLAorfTsK
-Kwogc3RhdGljIGludCBsdGRjX2VuY29kZXJfaW5pdChzdHJ1Y3QgZHJtX2RldmljZSAqZGRldiwg
-c3RydWN0IGRybV9icmlkZ2UgKmJyaWRnZSkKIHsKIAlzdHJ1Y3QgZHJtX2VuY29kZXIgKmVuY29k
-ZXI7CkBAIC0xMDU1LDYgKzEwODYsOCBAQCBzdGF0aWMgaW50IGx0ZGNfZW5jb2Rlcl9pbml0KHN0
-cnVjdCBkcm1fZGV2aWNlICpkZGV2LCBzdHJ1Y3QgZHJtX2JyaWRnZSAqYnJpZGdlKQogCWRybV9l
-bmNvZGVyX2luaXQoZGRldiwgZW5jb2RlciwgJmx0ZGNfZW5jb2Rlcl9mdW5jcywKIAkJCSBEUk1f
-TU9ERV9FTkNPREVSX0RQSSwgTlVMTCk7CiAKKwlkcm1fZW5jb2Rlcl9oZWxwZXJfYWRkKGVuY29k
-ZXIsICZsdGRjX2VuY29kZXJfaGVscGVyX2Z1bmNzKTsKKwogCXJldCA9IGRybV9icmlkZ2VfYXR0
-YWNoKGVuY29kZXIsIGJyaWRnZSwgTlVMTCk7CiAJaWYgKHJldCkgewogCQlkcm1fZW5jb2Rlcl9j
-bGVhbnVwKGVuY29kZXIpOwpAQCAtMTI4MCw2ICsxMzEzLDggQEAgaW50IGx0ZGNfbG9hZChzdHJ1
-Y3QgZHJtX2RldmljZSAqZGRldikKIAogCWNsa19kaXNhYmxlX3VucHJlcGFyZShsZGV2LT5waXhl
-bF9jbGspOwogCisJcGluY3RybF9wbV9zZWxlY3Rfc2xlZXBfc3RhdGUoZGRldi0+ZGV2KTsKKwog
-CXBtX3J1bnRpbWVfZW5hYmxlKGRkZXYtPmRldik7CiAKIAlyZXR1cm4gMDsKLS0gCjIuNy40CgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+Hi Arnd, Olof and Kevin,
+
+Please consider this first round of STM32 defconfig updates for v5.4.
+
+Thanks
+Alex
+
+The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+
+   Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+
+are available in the Git repository at:
+
+   git://git.kernel.org/pub/scm/linux/kernel/git/atorgue/stm32.git 
+tags/stm32-defconfig-for-v5.4-1
+
+for you to fetch changes up to b5deabd439ed644c7e22e3217883550d86791851:
+
+   ARM: multi_v7_defconfig: Enable SPI_STM32_QSPI support (2019-08-02 
+16:24:23 +0200)
+
+----------------------------------------------------------------
+STM32 defconfig updates for v5.4, round 1
+
+Highlights:
+----------
+
+-Enable FMC2 NAND (used for STM32MP socs)
+-Enable STM32 booster regulator as module
+-Enable STM32 QSPI as module
+
+----------------------------------------------------------------
+Christophe Kerello (1):
+       ARM: multi_v7_defconfig: add FMC2 NAND controller support
+
+Fabrice Gasnier (1):
+       ARM: multi_v7_defconfig: enable STM32 booster regulator
+
+Patrice Chotard (1):
+       ARM: multi_v7_defconfig: Enable SPI_STM32_QSPI support
+
+  arch/arm/configs/multi_v7_defconfig | 3 +++
+  1 file changed, 3 insertions(+)
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
