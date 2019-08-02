@@ -2,112 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13F567EFD9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 11:05:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86A4B7F004
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 11:11:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4mm/pXWgl34aI4r70TRN0UdjjR3XyfCIi9+jhzi8Hq0=; b=My/dMXuQPhPntl
-	ni16O06PQDKGriTczt2HfnsfGih3ehI6doVa771ARFalzC4+B6VBVeitu1GtHLLB6lhZ9F1shihIs
-	8o6TXPcAoOYchSOiy7kRZRniKH0MoeyHp8810UT5DlFwfBt12Pf+qPBt8r73Wnm8J4MOwxLjqYkLg
-	0HgMDXjV+JLJxj8A5Xn7H0Vdwq8PT7TVF8FyKZkgA4vGfoA7f/oJ2ruhKP0LMhIxT2rIOqS731+xc
-	+vSYlA1mTbYmox+50HeagRKN91EE3ek+icOURUadFS6XjF4KCVIgf2uiwKLFmZLOGFKkl1/nCGchz
-	i2oQB0JOnrf/bjF20hug==;
+	List-Owner; bh=568c+Ejz9/iCIv3cfgKbod8n9zqR0HGIy4ugbVja7So=; b=aGAcjhn4veCocq
+	YL3Y5xwiCknAfFXLE8ih4Ju03kDaQXH5CWwt939r/49ne3i/H0Zq9MlmhIwfX4NtG7rLLoZjNd1xA
+	xAba8Jyd6/pRnxi1aoEB7A3hjMh8634MA8KknF9i0G0aYz2mGt2DhN1xuQ2WYrGdmfnJEudalSTbm
+	g7TH/6J2xc2UBtDH8y5evzlvb6toSlykAxB0cKMMvFauRcIWlarvFc8Dk7t7RHYKNrF9DZQw8kbRC
+	ZBKbwNqVEQTAKIOdFxw4Z6XgaqEgIBzq4N4qbSmhu5wzuji+/5Y2GeJI32lEG29GfaKtt+B47oCWC
+	E2cZGn21H1llBDKAQt2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htTUk-0007P8-DV; Fri, 02 Aug 2019 09:05:02 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1htTaT-00024d-UB; Fri, 02 Aug 2019 09:10:57 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htTTP-00077V-Su
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 09:03:41 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x728vM3B018928; Fri, 2 Aug 2019 11:03:31 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : references : in-reply-to : content-type : content-id :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=C0m8VOSuji3KX8hrNViWDPsFJD/vhzuK4BKhEhxzv3U=;
- b=KyjNicjskzH4krtA0JDwg6IgaiV1pfOfcYgWD88pmlAS7c2wDfWBim/pyFkjzlfLvKRQ
- wxx/OawyZyv6SWHEdvSyOaQ3yUBzeKnhm8CO4d4aOYfxE/t+50EvhW48vCBAZDIn6mG5
- ++SGCMFsU2CGGTn5nD/D9NSb4QjnD78WiZCCTs22xoZ9ppEGLi20j63t9WBgHEd8+xOg
- Y5KRFnAs2a+Wfyz+muARZcmGgJKfLTGzOMQNZinozGFfMr6X45mCxWul9uhAjRju+Qdl
- XXWlxjSZCf9u9O33Ix2bERc4bj+0n4kwLXI/gzmPBMRAOmfwSiA6uk7FckWP2nj609CV Bg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2u2jp4tg5t-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 02 Aug 2019 11:03:31 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CB20E31;
- Fri,  2 Aug 2019 09:02:32 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BD126207592;
- Fri,  2 Aug 2019 11:02:32 +0200 (CEST)
-Received: from SFHDAG6NODE1.st.com (10.75.127.16) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 2 Aug
- 2019 11:02:32 +0200
-Received: from SFHDAG6NODE1.st.com ([fe80::8d96:4406:44e3:eb27]) by
- SFHDAG6NODE1.st.com ([fe80::8d96:4406:44e3:eb27%20]) with mapi id
- 15.00.1473.003; Fri, 2 Aug 2019 11:02:32 +0200
-From: Yannick FERTRE <yannick.fertre@st.com>
-To: Philippe CORNU <philippe.cornu@st.com>, Benjamin GAIGNARD
- <benjamin.gaignard@st.com>, Vincent ABRIOU <vincent.abriou@st.com>, "David
- Airlie" <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Alexandre TORGUE <alexandre.torgue@st.com>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v2 5/5] ARM: dts: stm32: remove phy-dsi-supply property on
- stm32mp157c-dk2 board
-Thread-Topic: [PATCH v2 5/5] ARM: dts: stm32: remove phy-dsi-supply property
- on stm32mp157c-dk2 board
-Thread-Index: AQHVBzuIMmPsAzot0Uq2UP5LkBXpTqbn8gqA
-Date: Fri, 2 Aug 2019 09:02:31 +0000
-Message-ID: <3a0f3e01-3c02-c28b-a6ca-0114a84358fb@st.com>
-References: <1557498023-10766-1-git-send-email-yannick.fertre@st.com>
- <1557498023-10766-6-git-send-email-yannick.fertre@st.com>
-In-Reply-To: <1557498023-10766-6-git-send-email-yannick.fertre@st.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.46]
-Content-ID: <B5D0500FA370C842AC6FEF97802FF46B@st.com>
+ id 1htTa5-00024J-Cf
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 09:10:35 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AA3E821783;
+ Fri,  2 Aug 2019 09:10:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564737031;
+ bh=en2oSylP6cRO7O7KFL0SwRSisE8H9qAKYUfpBjF1n+4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=zYvVPi0SSIRMPjGVWWPJtxTQnKi4QzmcXKusWrJ7Gl7XZVmmA4KIg92jCVLs8XYPk
+ HUS+OEb0xsJ9OiMDxb581nc30HOP08C9GM9/4b5sAI5Ds3r3KfAwotBsyLRFzLPvS6
+ VMOpwbUPbGKvQ3EMc5J9UDXawYwN+fvwSvHjpRQs=
+Date: Fri, 2 Aug 2019 11:10:28 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH 0/1] coresight: Fix for v5.3-rc3
+Message-ID: <20190802091028.GA14004@kroah.com>
+References: <20190801172323.18359-1-mathieu.poirier@linaro.org>
+ <20190801181739.GB5048@kroah.com>
+ <CANLsYky1vC-=zNPvOmWt1wLd5A4jcD+sh=Hwdq0rwhW=b1cdwQ@mail.gmail.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-02_04:, , signatures=0
+Content-Disposition: inline
+In-Reply-To: <CANLsYky1vC-=zNPvOmWt1wLd5A4jcD+sh=Hwdq0rwhW=b1cdwQ@mail.gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_020340_286433_71F5862E 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190802_021033_507284_903FCAFC 
+X-CRM114-Status: GOOD (  21.96  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,27 +75,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQWxleGFuZHJlLA0KDQp0aGlzIHBhdGNoIGNhbiBiZSBhYmFuZG9uZWQuDQoNCkJSDQoNCi0t
-IA0KWWFubmljayBGZXJ0csOpIHwgVElOQTogMTY2IDcxNTIgfCBUZWw6ICszMyAyNDQwMjcxNTIg
-fCBNb2JpbGU6ICszMyA2MjA2MDAyNzANCk1pY3JvY29udHJvbGxlcnMgYW5kIERpZ2l0YWwgSUNz
-IEdyb3VwIHwgTWljcm9jb250cm9sbGV1cnMgRGl2aXNpb24NCk9uIDUvMTAvMTkgNDoyMCBQTSwg
-WWFubmljayBGZXJ0csOpIHdyb3RlOg0KPiBUaGlzIHByb3BlcnR5IGlzIGFscmVhZHkgZGVmaW5l
-ZCBpbnRvIHN0bTMybXAxNTdjLmR0c2kgZmlsZS4NCj4NCj4gU2lnbmVkLW9mZi1ieTogWWFubmlj
-ayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRyZUBzdC5jb20+DQo+IC0tLQ0KPiAgIGFyY2gvYXJtL2Jv
-b3QvZHRzL3N0bTMybXAxNTdjLWRrMi5kdHMgfCAxIC0NCj4gICAxIGZpbGUgY2hhbmdlZCwgMSBk
-ZWxldGlvbigtKQ0KPg0KPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1
-N2MtZGsyLmR0cyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNTdjLWRrMi5kdHMNCj4gaW5k
-ZXggMDIwZWEwZi4uMDlmNmU3YiAxMDA2NDQNCj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvc3Rt
-MzJtcDE1N2MtZGsyLmR0cw0KPiArKysgYi9hcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTU3Yy1k
-azIuZHRzDQo+IEBAIC0xNyw3ICsxNyw2IEBADQo+ICAgCSNhZGRyZXNzLWNlbGxzID0gPDE+Ow0K
-PiAgIAkjc2l6ZS1jZWxscyA9IDwwPjsNCj4gICAJc3RhdHVzID0gIm9rYXkiOw0KPiAtCXBoeS1k
-c2ktc3VwcGx5ID0gPCZyZWcxOD47DQo+ICAgDQo+ICAgCXBvcnRzIHsNCj4gICAJCSNhZGRyZXNz
-LWNlbGxzID0gPDE+OwpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+On Thu, Aug 01, 2019 at 02:16:46PM -0600, Mathieu Poirier wrote:
+> On Thu, 1 Aug 2019 at 12:17, Greg KH <gregkh@linuxfoundation.org> wrote:
+> >
+> > On Thu, Aug 01, 2019 at 11:23:22AM -0600, Mathieu Poirier wrote:
+> > > Good morning Greg,
+> > >
+> > > Here is a fix I'd like you to consider for this cycle.  Do you think you
+> > > could apply it to driver-core-next rather than char-misc-next?
+> >
+> > All of my -next branches are for 5.4-rc1, not 5.3 (i.e. the "next"
+> > kernel).
+> >
+> > So either one of them isn't going to matter to you for 5.3-final.
+> >
+> > > My current
+> > > coresight branch is based on driver-core-next to pick up Suzuki's
+> > > generic device lookup helpers patchset [1]. Applying it to char-misc-next
+> > > will create two different signature for the same patch, something that
+> > > gives Stephen a hard time when building the linux-next tree.
+> >
+> > Why would Suzuki's patch matter for 5.3-final?
+> 
+> There was a similar situation during the 5.2 cycle [1].  Here too we
+> can fix a problem that is present in 5.3 rather than wait for 5.4.
+> 
+> [1]. https://www.spinics.net/lists/arm-kernel/msg736274.html
+
+But that has nothing to do with Suzuki's patch that is in my driver core
+tree.  I still fail to see the dependency here.
+
+> > > I also think this patch should go in stable but haven't marked it as such since
+> > > it doesn't apply to any of the stable trees.  Once it is part of v5.3 I intend
+> > > to send a new version of the patch that does apply cleanly to those trees.  Let
+> > > me know if you want me to proceed differently.
+> > >
+> > > Thanks,
+> > > Mathieu
+> > >
+> > > [1]. https://www.spinics.net/lists/dri-devel/msg219674.html
+> > >
+> > >
+> > > Suzuki K Poulose (1):
+> > >   coresight: Fix DEBUG_LOCKS_WARN_ON for uninitialized attribute
+> > >
+> > >  drivers/hwtracing/coresight/coresight-etm-perf.c | 1 +
+> > >  1 file changed, 1 insertion(+)
+> >
+> > Why would this patch depend on anything in any of my trees?
+> 
+> I send you patches for inclusion in the next cycle and as such I
+> thought it should be the same for fixes in the current cycle.  If that
+> is not the case, should I send them directly to Linus?
+
+You can send me fixes to forward on to Linus for this current cycle, if
+they are not depending on patches that are only for the -next release.
+
+I always keep 2 branches in my git trees:
+	-linus : patches for Linus this release cycle
+	-next  : patches for Linus the next release cycle
+
+If you have bugfixes, make them against my -linus branch and send them
+on.  Odds are they don't have dependancies other than what is in Linus's
+tree, so that's fine.
+
+If you have patches for the next cycle, send them against my -next
+branch.
+
+thanks,
+
+greg k-h
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
