@@ -2,59 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D8577F663
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 14:04:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DD417F66A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 14:04:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zXR0MnezcWOEwnSf5DTatKDhXSBBN96estcBJDs655g=; b=PdOJSdkOj187BT
-	cNFRcvMkYL1fRn2DH3j7TABNZUr4M9mMEJeAFdVnx5DmJbv0A1xtulN3ypBJ1N0Onf8yAEJNUXA06
-	ZmMn7V39bRqBRc8BLFTX4iRtwzCc8EyqUGAyFRHYr5jNIaaW+9SJ4P4cMa/N0GX7yxJYlBy1eM+nQ
-	RIC/Z1gG/2szu+puJxPWqryq5/hxq6GUQ+g8PNb4VxD15MBVeEf0sq0YRYoUNvECUAzcOjRaCN3Dr
-	aFuxCLc5hYgeauCcSXrBZHwupNTf5KB49DbGBnWQSGXkCm76ALT43JhJz+qqvCOjSE0WjPlIyJ2az
-	esjc2aP2OMXaWcBTukvA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=6PArDPVaBtaw6ZTebWdIziaa3P4D2xZ5pBtcJaJlUa0=; b=bgF
+	9WmeC0utINUECGwP76iw4UPS+Wue3ZmWtgTdGTlevQWB2o28YqMyLvfIPX4cf5o2UgLUhliR5VLri
+	HYfD4PL5cG57xDejDIbss5D081Kc7w0Tc1/amoNGtMd8fCljoCLKoJSA4qbh25iTOqmQ5FmeRIXXE
+	jl/0YqgTiFh5jP1nLu5fQqdgmldOXbEidX2ZIPv1AL7ArOVNDqDgE9UntK+y52cRu/U6jJ8/IOi9A
+	REG6KYTfYwTzyhA6LIlzC0AXuC2pVJGtP7mo5k6HRRLMx9u+KiCBc0IpYar3l+jV2CgirU77RkVza
+	uI7hi9qYkU9XCac+w/KlLQ4XpGzH17w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htWHy-0007G8-7T; Fri, 02 Aug 2019 12:04:02 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1htWIJ-0007Vm-OJ; Fri, 02 Aug 2019 12:04:23 +0000
+Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htWHr-0007Fp-U5
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 12:03:57 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1htWHk-0006HX-Oz; Fri, 02 Aug 2019 14:03:48 +0200
-Message-ID: <1564747425.3090.1.camel@pengutronix.de>
-Subject: Re: [PATCH] drm/imx: Drop unused imx-ipuv3-crtc.o build
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Fabio Estevam <festevam@gmail.com>, Guido =?ISO-8859-1?Q?G=FCnther?=
- <agx@sigxcpu.org>
-Date: Fri, 02 Aug 2019 14:03:45 +0200
-In-Reply-To: <CAOMZO5BipmSPR1jz3ov8ESSJPsHMViMw42di-WKOdqhyONLK6Q@mail.gmail.com>
-References: <e5484fa33bffec220fd0590b502a962da17c9c72.1564743270.git.agx@sigxcpu.org>
- <CAOMZO5BipmSPR1jz3ov8ESSJPsHMViMw42di-WKOdqhyONLK6Q@mail.gmail.com>
-X-Mailer: Evolution 3.22.6-1+deb9u2 
-Mime-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1htWIB-0007Sz-VN
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 12:04:18 +0000
+Received: from ramsan ([84.194.98.4]) by laurent.telenet-ops.be with bizsmtp
+ id kC462000205gfCL01C46MU; Fri, 02 Aug 2019 14:04:08 +0200
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1htWI1-0002hK-Tm; Fri, 02 Aug 2019 14:04:05 +0200
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1htWI1-0000P5-RU; Fri, 02 Aug 2019 14:04:05 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: arm-soc <arm@kernel.org>,
+	arm-soc <soc@kernel.org>
+Subject: [PULL 0/3] Renesas SoC updates for v5.4
+Date: Fri,  2 Aug 2019 14:03:52 +0200
+Message-Id: <20190802120355.1430-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_050355_974847_E2BD1A84 
-X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-CacheID: sfid-20190802_050416_165756_D7707DE3 
+X-CRM114-Status: UNSURE (   7.42  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:1800:110:4:0:0:f00:19 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,45 +65,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-renesas-soc@vger.kernel.org, Simon Horman <horms@verge.net.au>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgR3VpZG8sIEZhYmlvLAoKT24gRnJpLCAyMDE5LTA4LTAyIGF0IDA4OjAzIC0wMzAwLCBGYWJp
-byBFc3RldmFtIHdyb3RlOgo+IEhpIEd1aWRvLAo+IAo+IEdvb2QgY2F0Y2ghCj4gCj4gT24gRnJp
-LCBBdWcgMiwgMjAxOSBhdCA3OjU1IEFNIEd1aWRvIEfDvG50aGVyIDxhZ3hAc2lneGNwdS5vcmc+
-IHdyb3RlOgo+ID4gCj4gPiBTaW5jZQo+ID4gCj4gPiBjb21taXQgM2QxZGY5NmFkNDY4ICgiZHJt
-L2lteDogbWVyZ2UgaW14LWRybS1jb3JlIGFuZCBpcHV2My1jcnRjIGluIG9uZSBtb2R1bGUiKQo+
-ID4gCj4gPiBpbXgtaXB1djMtY3J0Yy5vIGlzIGJ1aWx0IHZpYSBpbXhkcm0tb2Jqcy4gU28gdGhl
-cmUncyBubyBuZWVkIHRvIGtlZXAgYW4KPiAKPiBBY3R1YWxseSwgaXQgaXMgaXB1djMtY3J0Yy5v
-IHRoYXQgaXMgYnVpbHQgdmlhIGlteGRybS1vYmpzLCBub3QKPiBpbXgtaXB1djMtY3J0Yy5vLgo+
-IAo+IEFwYXJ0IGZyb20gdGhhdDoKPiAKPiBSZXZpZXdlZC1ieTogRmFiaW8gRXN0ZXZhbSA8ZmVz
-dGV2YW1AZ21haWwuY29tPgoKVGhhbmsgeW91LCBhcHBsaWVkIHRvIGlteC1kcm0vbmV4dCB3aXRo
-IEZhYmlvJ3MgUi1iLCBhbmQgYWRkZWQgRml4ZXM6CnRhZywgYW5kIHRoZSBjb21taXQgbWVzc2Fn
-ZSBjaGFuZ2VkIGFzIGZvbGxvd3M6CgrCoMKgwqDCoGRybS9pbXg6IERyb3AgdW51c2VkIGlteC1p
-cHV2My1jcnRjLm8gYnVpbGQKwqDCoMKgwqAKwqDCoMKgwqBTaW5jZQrCoMKgwqDCoArCoMKgwqDC
-oGNvbW1pdCAzZDFkZjk2YWQ0NjggKCJkcm0vaW14OiBtZXJnZSBpbXgtZHJtLWNvcmUgYW5kIGlw
-dXYzLWNydGMgaW4gb25lIG1vZHVsZSIpCsKgwqDCoMKgCsKgwqDCoMKgdGhlIGZvcm1lciBjb250
-ZW50cyBvZiBpbXgtaXB1djMtY3J0Yy5vIGFyZSBidWlsdCB2aWEgaW14ZHJtLW9ianMuIFNvCsKg
-wqDCoMKgdGhlcmUncyBubyBuZWVkIHRvIGtlZXAgYW4gZXh0cmEgZW50cnkgd2l0aCBhIG5vbiBl
-eGlzdGluZyBjb25maWcgdmFsdWUKwqDCoMKgwqAoQ09ORklHX0RSTV9JTVhfSVBVVjMpLgrCoMKg
-wqDCoArCoMKgwqDCoEZpeGVzOiAzZDFkZjk2YWQ0NjggKCJkcm0vaW14OiBtZXJnZSBpbXgtZHJt
-LWNvcmUgYW5kIGlwdXYzLWNydGMgaW4gb25lIG1vZHVsZSIpCsKgwqDCoMKgU2lnbmVkLW9mZi1i
-eTogR3VpZG8gR8O8bnRoZXIgPGFneEBzaWd4Y3B1Lm9yZz4KwqDCoMKgwqBSZXZpZXdlZC1ieTog
-RmFiaW8gRXN0ZXZhbSA8ZmVzdGV2YW1AZ21haWwuY29tPgrCoMKgwqDCoFNpZ25lZC1vZmYtYnk6
-IFBoaWxpcHAgWmFiZWwgPHAuemFiZWxAcGVuZ3V0cm9uaXguZGU+CgpubyBhY3Rpb24gbmVjZXNz
-YXJ5IGlmIHlvdSBhZ3JlZSwgb3RoZXJ3aXNlIGp1c3Qgc2VuZCBhIHYyIGFuZCBJJ2xsCnJlcGxh
-Y2UgaXQuCgpyZWdhcmRzClBoaWxpcHAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
-ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+	Hi arm-soc folks,
+
+This is my first pull request for the inclusion of Renesas SoC updates
+for v5.4.  As this is also my first pull request for arm-soc, I wanted
+to start with something small.  You can expect more later.
+
+It consists of 3 parts:
+
+  [PULL 1/3] Renesas ARM64 DT updates for v5.4
+
+    - CAN support for the HiHope RZ/G2E board,
+    - BT and WLAN support for the HiHope RZ/G2[MN] boards,
+    - Sound support for RZ/G2M,
+    - Sort nodes in various SoC and board DTSes,
+    - Small fixes and improvements.
+
+  [PULL 2/3] Renesas driver updates for v5.4
+
+    - Fix a flexible array member definition in the R-Car SYSC driver.
+
+  [PULL 3/3] Renesas DT binding updates for v5.4
+
+    - RZ/G2 updates for the R-Car CAN and CANFD DT bindings.
+
+For now I more or less followed Simon's way of structuring the branches,
+but I'm open for change.  Hence if you have any comments, or suggestions
+for improving the workflow, please let me know.
+
+Thanks for pulling, and for your comments!
+
+Gr{oetje,eeting}s,
+
+						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+							    -- Linus Torvalds
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
