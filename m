@@ -2,147 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 204167EBDF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 07:21:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1D5E7EC15
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 07:24:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C7to08KKoa5Hpkxt+ga2iaj9uCZkuFZcYgK1nKMLYG8=; b=Am/7IDh1EdIBQM
-	61zdP5aZt6hCwD0PoCwQipFrAFPJFZLC7bO68b42V/3cxofIUlA2z4ce2XJrKYkX+AKk4m5gEVTbf
-	4GtSxqw8ojp7nR23QarjKZPbjhbpevMudEY1reANV22FfrMn6h1QCLKmoPgl06gEg5H2J5V7jNf7T
-	65hMecbojeKXSo1dnT2K58hvOeGawdswD8OFBphKAlMa00z6jUtWxlU17xemJ23l3MzOcHVCpPQFz
-	Qvj7mdg8bYB9oYz6psCfA7n6oi71oNTtgU7Q4UX9iPGuu/fzHHc+4Vxibzu3XyQ2FPKWl9aVRi414
-	f3cZM/AwQCHo3EO8+6yA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e7K0RwtBMSuwRT6GOHT+Chxz655JRTdqI6fqzkz8HXg=; b=F6DPJpQN/oiVdn
+	uIqHKvYp/0L2FhbuQY6PNu1cinB9roAB4pOgqcYPDefooxxv1EhLB/R7N0V7gegCSs8aEoDdj48Xj
+	qaU0MPZQh1uSOGluyFJZGa9qHLqTFyDcrSJyq4HHceLxHAywLD9pUx9Lg1eUqAsqg3/uCoqKuk1cL
+	iz1SjmYhaxgSd3svqPQapYYu/UiAVuPnlE91GW8lrA8Lf2bLuAXKqL8tyxA/D8d53SrcRlBkQuePR
+	q6A2B1rjRYG+aR3AC0a1k/JdpInjuiSbgq0smXjrAI4g8THL0MQYx8W96/dsYxfofsLG8WgIadP3O
+	t0UGTzQ3y7+I5tpBLZ4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htQ01-0005Yg-4Z; Fri, 02 Aug 2019 05:21:05 +0000
-Received: from mx0b-00082601.pphosted.com ([67.231.153.30]
- helo=mx0a-00082601.pphosted.com)
+	id 1htQ3B-0005wD-F5; Fri, 02 Aug 2019 05:24:21 +0000
+Received: from mail-eopbgr730082.outbound.protection.outlook.com
+ ([40.107.73.82] helo=NAM05-DM3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htPzq-0005YI-OO
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 05:20:56 +0000
-Received: from pps.filterd (m0001303.ppops.net [127.0.0.1])
- by m0001303.ppops.net (8.16.0.27/8.16.0.27) with SMTP id x725Hw3a004680;
- Thu, 1 Aug 2019 22:20:44 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=facebook;
- bh=7YRtrjjEZQx1hFHzZ7Rzbx68eQ50VUzRxqGu1B3Fwas=;
- b=Rp25KIx3eqZQ12clgKPLWtVZZZfI5GUdIISB3Q9P2tmh2TWw+zQmCOVAYFGwZZQwdrXC
- OwWBCYvmqCGViO+ZxlxzuWmPzL1nT/toldys7JxBhQAjEE4Ejvfa0nv6Sftq8x/tbxBg
- Ur0UfGR/U+SwDwYioUT4OqX0KvKI5CpiIJo= 
-Received: from maileast.thefacebook.com ([163.114.130.16])
- by m0001303.ppops.net with ESMTP id 2u449gj30c-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
- Thu, 01 Aug 2019 22:20:44 -0700
-Received: from ash-exhub103.TheFacebook.com (2620:10d:c0a8:82::c) by
- ash-exhub203.TheFacebook.com (2620:10d:c0a8:83::5) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 1 Aug 2019 22:20:43 -0700
-Received: from NAM03-CO1-obe.outbound.protection.outlook.com (100.104.31.183)
- by o365-in.thefacebook.com (100.104.35.174) with Microsoft SMTP
- Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Thu, 1 Aug 2019 22:20:43 -0700
+ id 1htQ2y-0005vl-Sc
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 05:24:10 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kx5KGRhjI75s7tqh4jELuvf6XniWcfbFsTA3DAgHs0QNd3xmNk8zAIcjXd+i2JZ+yKyVtHn+PkvX3AoR2WgtgNsFy5eHlol17DQJDFRpP2NRB215N5OLIO3uQzAZ7pCw5u8JTiD7izpgEVq5aHtM2N7JBRRksNK7ta2SHiVZn552+PLu2KgOC3qUkZPeGdvWVdYAR8fgkbgxrmmxyYlJzFvSQ3b+EMRDpsaBWdT6Q+k0C1OPne2aWPTuiFNs7xaWqCnEPGhED5XxqqaVT72HO3iYpVmgAMInaafuZSqhX8mQNglsBAn5sUOrji29+A2YhzBgybXt9YiE0vni4HaEFA==
+ b=F9yM/LOr8l5Ff6/aWWC69otqE/YszYxhkz4srd+1g/wmN4ZONymrzJzdEb55dHfD0Kl01y5q/gscfmgFeRGEB4OcF10YnGn5JfUt32dMp00T3KRskD2PAN2EjKWu8VXotTplPWqe51JgI6HfVVcL+kP0D9EJP3F8uooCuQfO5g8q9AH9AqBwouqvhJ6iyxvsg2QhsU4dFbhEnwraU3yeUaQ9q14LHMQ7l1SiT+mtpEI8inekKjOTbvHUssSpxtCee7/t2DMxHpWag45uZhGxqYX/CVbZWLxB60YjD9uMoZL9x5HxfRIj4Kzv0VrhW00hXfCwUYp6bMWGhZYS7n/2mA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7YRtrjjEZQx1hFHzZ7Rzbx68eQ50VUzRxqGu1B3Fwas=;
- b=GanocCAop9em2dAxvKFvsDIex+Yo9xV0wMlSi2/wwb00qO2OhXyTAYH61v/NNPrMGo4mLkd/dX0B896fmRZCHKkxww3R3dVjcE3RXcks3wSyr7pw00/Mt58oRnCzJ8+ks6nJhwRAgACc/OrtvI9YKdb6eOZoK4mX41K6jxjayv8T48/C0PNiSLrSXUNvRVRZ5HNlFKdroUbfXHpMJb/EjlLLPYOeHeVv5Bm+1laYgZyEmt3HkFMNQyjMf0Dkg9SuCqj+5ErjZ+DcWEm8I28UyPMY7qkcCYl+HIE6XnV4jwgyPxnnkTT4gwI/3atdsO8WBfK03LktmHu+2RZPPYE+Fw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=fb.com;dmarc=pass action=none header.from=fb.com;dkim=pass
- header.d=fb.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.onmicrosoft.com;
- s=selector2-fb-onmicrosoft-com;
+ bh=3bcvNvZjt/wRqRd0sFSG4AuQYftabFJDdpZ7Ni5xyuk=;
+ b=X2jdPFKAvtviAzzBG0/e79y2ycF6gD7Up1ddFRkXXM30SJXTMb6UOvAzWY59uTYi5xxzrWvwGmvMG/eKITFiVsUunz3x3mrkMSRJPL+EVCleEhkC0iOXyPUpOlU5ICM9i+qbXUhDrBZ5QGH+TQLz3MJVhzyifRATLPZPeYfJtLi6SLwPh3oUWa407vjZ1AyKAvncuxdGlZO9VBERYJrPtJHR8difBjZVDw2BDMXgo3YafENnI3ghdlIDwQYMWhVc/SdOJHEspkZh6BsQmzFwsBsY7GORjnBJxPnwAnaK5Bgc2sCIZY5eEBi8xIvpAM/cfhgvKjtoik7wDNw2VzTkkQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org
+ smtp.mailfrom=xilinx.com;dmarc=bestguesspass action=none
+ header.from=xilinx.com;dkim=none (message not signed);arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7YRtrjjEZQx1hFHzZ7Rzbx68eQ50VUzRxqGu1B3Fwas=;
- b=cfHNTQPaKy+iyCmP9MW3wppJcBOL97I0fTf8ovOJvHClIIudNgWk+RjpGwkdbKU5pc2SLTON+Tt539yvb1CFrlyqmDLA4LasdQU9SvwZO9pTLkv70sR2e0u33xd58lBKsz431vG2X26k8bG3EVj5H2sVY3Ow2gQZmWeWJKioyEw=
-Received: from MWHPR15MB1216.namprd15.prod.outlook.com (10.175.2.17) by
- MWHPR15MB1197.namprd15.prod.outlook.com (10.175.7.16) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2136.16; Fri, 2 Aug 2019 05:20:42 +0000
-Received: from MWHPR15MB1216.namprd15.prod.outlook.com
- ([fe80::c66:6d60:f6e5:773c]) by MWHPR15MB1216.namprd15.prod.outlook.com
- ([fe80::c66:6d60:f6e5:773c%8]) with mapi id 15.20.2136.010; Fri, 2 Aug 2019
- 05:20:42 +0000
-From: Tao Ren <taoren@fb.com>
-To: Joel Stanley <joel@jms.id.au>
-Subject: Re: [PATCH v2] ARM: dts: aspeed: Add Facebook Wedge100 BMC
-Thread-Topic: [PATCH v2] ARM: dts: aspeed: Add Facebook Wedge100 BMC
-Thread-Index: AQHVSOg2lZoVHrZ29U2XlvDXnsufaKbnQZOA//+bUYA=
-Date: Fri, 2 Aug 2019 05:20:41 +0000
-Message-ID: <606273F4-E021-4AAF-9F59-F363E4FFF92A@fb.com>
-References: <20190802041010.1234178-1-taoren@fb.com>
- <CACPK8XcuwNE3aBrsgn-paTZt-EtF6pc6WwYBQef5xc7157bk2g@mail.gmail.com>
-In-Reply-To: <CACPK8XcuwNE3aBrsgn-paTZt-EtF6pc6WwYBQef5xc7157bk2g@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Microsoft-MacOutlook/10.1a.0.190609
-x-originating-ip: [2620:10d:c090:180::1:94d1]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7d9f0837-79c0-47a0-c8d2-08d7170929de
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:MWHPR15MB1197; 
-x-ms-traffictypediagnostic: MWHPR15MB1197:
-x-microsoft-antispam-prvs: <MWHPR15MB1197AD2CD9BE3D4676210120B2D90@MWHPR15MB1197.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 011787B9DD
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(376002)(346002)(136003)(396003)(39860400002)(366004)(47680400002)(43544003)(199004)(189003)(6506007)(33656002)(5660300002)(76116006)(14454004)(66476007)(66556008)(64756008)(53936002)(66946007)(66446008)(478600001)(81166006)(486006)(68736007)(4326008)(36756003)(11346002)(476003)(446003)(46003)(81156014)(2616005)(71190400001)(6512007)(71200400001)(25786009)(8676002)(305945005)(316002)(186003)(54906003)(86362001)(8936002)(7736002)(6116002)(256004)(2906002)(229853002)(58126008)(6436002)(53546011)(76176011)(6486002)(6916009)(102836004)(6246003)(99286004);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR15MB1197;
- H:MWHPR15MB1216.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: fb.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: qu2vQKv/PweLZWEe/h/0DGEeIRhLt9jTD6F+1UM3YtYZjjw5pR/uC4cXF1HYbD9cODX8AnyA3S1cRc1fcXEL0ZYWIP1VLMb4GTRO3FtRm4LFOk7TxBONqteGug2wVN5HIvRA9MisWNgruWyPrp2QMhoyjaJinEiv5dcFLVcj6g4xnUvVj+YgOlYPVEQcy98KNOf8oJIuyiQRE8j5QaXrzKQ8sYuoY/txWjrJWweXJTCNRF2ymEthCy0Ah1rGNdnQbwk6ndsQs7mcSmSTYMEPkas9UAc1rprPYrxtJTVinp9B2Hpe5ZKKcJ3Mxxojnt/nMpdkJptvHUIgBrbb+AvOH5y94v+FNtZ/99P75YOkWhcdrDUE/FsbhKuL/I2QRAf7jGiiTgguLwKvcCkKj7acceJqw2zkYbByYZFdArFZcQs=
-Content-ID: <FA155B7D2FF44B408295ED3794A270FC@namprd15.prod.outlook.com>
+ bh=3bcvNvZjt/wRqRd0sFSG4AuQYftabFJDdpZ7Ni5xyuk=;
+ b=jtm0AJnlreNMTh4mDiF7J3DJ6rAaAlx7ttgO7s6z/+H+tsCr2dp3Sy3zLiOQbbmGQanat19BWt8dAAQdGRXANLPrFv0p+sbq78gEurvf+CKiOrhyMLvFyVCFNGyySpStfei4iI6+Ot9ym9fWutbbH2iTKImWJxLC5TW1/7aWthQ=
+Received: from MWHPR0201CA0028.namprd02.prod.outlook.com
+ (2603:10b6:301:74::41) by DM5PR02MB3783.namprd02.prod.outlook.com
+ (2603:10b6:4:b0::18) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2136.16; Fri, 2 Aug
+ 2019 05:24:06 +0000
+Received: from SN1NAM02FT064.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::209) by MWHPR0201CA0028.outlook.office365.com
+ (2603:10b6:301:74::41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2136.14 via Frontend
+ Transport; Fri, 2 Aug 2019 05:24:06 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ SN1NAM02FT064.mail.protection.outlook.com (10.152.72.143) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2136.14
+ via Frontend Transport; Fri, 2 Aug 2019 05:24:05 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1htQ2v-0001Ye-2q; Thu, 01 Aug 2019 22:24:05 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1htQ2p-0002Q0-VC; Thu, 01 Aug 2019 22:24:00 -0700
+Received: from [172.30.17.116] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1htQ2l-0002PL-JF; Thu, 01 Aug 2019 22:23:55 -0700
+Subject: Re: [PATCH v2] arm64: zynqmp: Add ZynqMP SDHCI compatible string
+To: Manish Narani <manish.narani@xilinx.com>, robh+dt@kernel.org,
+ michal.simek@xilinx.com, mark.rutland@arm.com, sudeep.holla@arm.com,
+ rrichter@cavium.com, gregory.clement@bootlin.com, amit.kucheria@linaro.org
+References: <1561959452-22915-1-git-send-email-manish.narani@xilinx.com>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <51225f83-ea4e-74d7-840f-35a44659d0e2@xilinx.com>
+Date: Fri, 2 Aug 2019 07:23:52 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7d9f0837-79c0-47a0-c8d2-08d7170929de
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Aug 2019 05:20:41.9574 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 8ae927fe-1255-47a7-a2af-5f3a069daaa2
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: taoren@fb.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR15MB1197
-X-OriginatorOrg: fb.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-02_03:, , signatures=0
-X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1908020056
-X-FB-Internal: deliver
+In-Reply-To: <1561959452-22915-1-git-send-email-manish.narani@xilinx.com>
+Content-Language: en-US
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(396003)(346002)(136003)(39860400002)(2980300002)(189003)(199004)(5660300002)(186003)(36756003)(26005)(8676002)(64126003)(63266004)(8936002)(81166006)(476003)(50466002)(2906002)(336012)(81156014)(52146003)(23676004)(4744005)(2486003)(31686004)(316002)(446003)(356004)(305945005)(426003)(106002)(31696002)(230700001)(6666004)(76176011)(70206006)(229853002)(478600001)(65826007)(58126008)(36386004)(486006)(9786002)(4326008)(65956001)(65806001)(70586007)(966005)(126002)(47776003)(44832011)(6306002)(2616005)(11346002)(6246003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR02MB3783; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 28cd2897-e54a-4972-880a-08d71709a355
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
+ SRVR:DM5PR02MB3783; 
+X-MS-TrafficTypeDiagnostic: DM5PR02MB3783:
+X-MS-Exchange-PUrlCount: 1
+X-Microsoft-Antispam-PRVS: <DM5PR02MB37836C94B47C1B6FFD7F1415C6D90@DM5PR02MB3783.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:4502;
+X-Forefront-PRVS: 011787B9DD
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: 6rtn4DV6Cpwk63CoH+UtbtXir30aS7y/OLEdocVtnvlQKIgLlrLyxDDBOuq9xsg+4UaQWzQ0e3mDx6vUR8NNBGgdi5nUr52scf/HgBqAouLDnjwNJXxJatmxQvwoaSU5sDCmK8f64wo9AVi3lm/nQffo+jrMdpAlEGv7t+o3//X0vn/pZFlD+NXqLxFpWnl+DA34ZL+ayXMtZvv9FqB8uy+yXLN+diqDOEWdvmtwNK3WBK2b8umv1zKTWBh/alURPr1bAXXvskotIgt6oSdCNCv46JFu6pH2l1nCZC6ccJuCV29jzcesLyeLOx/3zCaQqcCi5UvN0b+IP3pCQ4Zz49A+btaht8qO1itnrWVvGr5VXigs1oGs3PMs8S4qIsrnDka9XQ4NRUw+j+WpJt2jPubzrLuDAwigLoy3CLlex0U=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Aug 2019 05:24:05.5037 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 28cd2897-e54a-4972-880a-08d71709a355
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR02MB3783
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_222054_968565_CFAA533C 
-X-CRM114-Status: GOOD (  23.36  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190801_222408_991992_85059CC3 
+X-CRM114-Status: GOOD (  11.38  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.153.30 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.73.82 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -154,63 +141,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- Andrew Jeffery <andrew@aj.id.au>, OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/1/19, 9:21 PM, "Joel Stanley" <joel@jms.id.au> wrote:
+On 01. 07. 19 7:37, Manish Narani wrote:
+> Add the new compatible string for ZynqMP SD Host Controller for its use
+> in the Arasan SDHCI driver for some of the ZynqMP specific operations.
+> Add required properties for the same.
+> 
+> Signed-off-by: Manish Narani <manish.narani@xilinx.com>
+> ---
+> This patch depends on the below series of patches:
+> https://lkml.org/lkml/2019/7/1/25
+> 
+> Changes in v2:
+> 	- Added clock-names for SD card clocks for getting clocks in the driver
 
->  On Fri, 2 Aug 2019 at 04:10, Tao Ren <taoren@fb.com> wrote:
->>
->> Add initial version of device tree for Facebook Wedge100 AST2400 BMC
->> platform.
->>
->> Signed-off-by: Tao Ren <taoren@fb.com>
->> Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
->> ---
->>  Changes in v2:
->>  - remove "debug" from bootargs.
->    
-> Thanks. I applied wedge40 and then this one fails to apply due to
-> conflicts in the Makefile. Next time you have two patches, send them
-> as a series they apply one atop the other.
+Just for a record. I am waiting till binding is Acked.
 
-I thought about asking you if I should send them as a series although they are logically independent patches..
-Sorry about that and I will do so for future patches.
-
->  The naming of these two files suggests they come from a family. I
->  noticed there's very minor differences, a pca9548 switch and the use
->  of a watchdog.
->  
->  Are these device trees complete? If yes, do you think it's worthwhile
->  to have a common wedge description in eg.
->  aspeed-bmc-facebook-wedge.dtsi, and put the unique description in
->  respective dts board files?
->   
->  The upside of this is reduced duplication.
->  
->  If you have a reason not to, then that is okay and we can leave it as
->  you submitted them.
-
-Thank you for the suggestion. I'm also considering moving common stuff into "dtsi" file, but let me take care of it in a separate patch, mainly because:
-  1) I have one more BMC platform (galaxy100) which is also similar to wedge.
-      I haven't started the platform, but once I have galaxy100 device tree ready, it would be easier for me to extract common part.
-  2) the device tree is not complete yet.
-      For example, all the i2c devices are still created from userspace.
-      I'm trying to move the logic from userspace to device tree but I haven't decided what to do with those cpld/fpga devices.
-
-
-Cheers,
-
-Tao
+M
 
 _______________________________________________
 linux-arm-kernel mailing list
