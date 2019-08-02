@@ -2,62 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21F707F593
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:55:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8182A7F5A2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 13:00:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bXEX3cyfhzpStqfEgW1brjVYgvK52IlbnkHEbVBnknU=; b=sC74ukrybaOX97
-	dwHZSEEJh3IUY9PEbimCc2U9OU+f+SympRb3pFAoGX2Jn6IQjPOVwOukQZOdEXa7vIVyRJ3L+FqLf
-	v7p7OygthoCwsGzNpWhkUl8i59ILZLRQ5sdkY931cRaNUjRKy3xJ2IoYoTJs9J+jib69MWxm+M+8V
-	BZ+nlrtMDZpznynZEorwSAHhsXDwZz8XR65hvfpHjA7LGD5UHPPecyUt5w93qZwunuMPiAs+5JXdx
-	7h4xDpI7RshXugp05mbTbLQBWAQ+WL9xYhot1onkAs0PYkZu+yhPlkEMKIpdFVimFShfLYSk+MYTg
-	jKvlDCtoIj/kyKM9DhKA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=r8QVXoeqHNywSmuZqRenUvG29xY1D4GdoSbOHBZdMPk=; b=t+W9dsBGkMoevImVargAqIaCQZ
+	bMJf5mTmHT41XJhv5n5jY+Gf8sPcKTEKHdkndkrh+7dkn+acRuEw4G1URHqHIm5c+9rE5P6XYkwQq
+	syyPyPBlXTeJgwMT0YjDbwitgZesBPxepXUxylrQJ+TOUX9Gb6z8CluiHDKCi7Z+osmFwyxM8uwl5
+	SXIGI4YQpNwVq4lZWviHk5/XJiJC+qkNKZxg0GKiPrSDn50MGCCbAYLVblMfTLbiFg6HHS8bl1yOF
+	Tn+epSw7TM26CDeDC3B3ajizcUdELcAp04KNsfeH//u6zleSRb30BbHIRcmjQZiT0gCF2/6CshWTH
+	dHoZ4/Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htVDm-0003QG-74; Fri, 02 Aug 2019 10:55:38 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1htVIM-0005Q8-HC; Fri, 02 Aug 2019 11:00:22 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htVDf-0003P5-Mn
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:55:33 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 9ED5EFB03;
- Fri,  2 Aug 2019 12:55:19 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 8ugkm27Dqmsp; Fri,  2 Aug 2019 12:55:18 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id 4DE9A47246; Fri,  2 Aug 2019 12:55:18 +0200 (CEST)
-From: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
-To: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel@ffwll.ch>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] drm/imx: Drop unused imx-ipuv3-crtc.o build
-Date: Fri,  2 Aug 2019 12:55:18 +0200
-Message-Id: <e5484fa33bffec220fd0590b502a962da17c9c72.1564743270.git.agx@sigxcpu.org>
-X-Mailer: git-send-email 2.20.1
+ id 1htVIG-0005Po-1v
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 11:00:17 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 0CA50E7A5A43691467DE;
+ Fri,  2 Aug 2019 19:00:03 +0800 (CST)
+Received: from [127.0.0.1] (10.184.12.158) by DGGEMS410-HUB.china.huawei.com
+ (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0; Fri, 2 Aug 2019
+ 18:59:56 +0800
+From: Zenghui Yu <yuzenghui@huawei.com>
+Subject: kvm-unit-tests: psci_cpu_on_test FAILed
+To: Marc Zyngier <maz@kernel.org>, <drjones@redhat.com>, James Morse
+ <james.morse@arm.com>, <julien.thierry.kdev@gmail.com>,
+ <suzuki.poulose@arm.com>
+Message-ID: <3ddf8766-6f02-b655-1b80-d8a7fd016509@huawei.com>
+Date: Fri, 2 Aug 2019 18:56:51 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101
+ Thunderbird/64.0
 MIME-Version: 1.0
+Content-Language: en-US
+X-Originating-IP: [10.184.12.158]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_035531_905311_7A1EFAE5 
-X-CRM114-Status: UNSURE (   8.46  )
+X-CRM114-CacheID: sfid-20190802_040016_261783_E5C0D6F7 
+X-CRM114-Status: UNSURE (   5.02  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,26 +66,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-kernel@lists.infradead.org,
+ "Wanghaibin \(D\)" <wanghaibin.wang@huawei.com>, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U2luY2UKCmNvbW1pdCAzZDFkZjk2YWQ0NjggKCJkcm0vaW14OiBtZXJnZSBpbXgtZHJtLWNvcmUg
-YW5kIGlwdXYzLWNydGMgaW4gb25lIG1vZHVsZSIpCgppbXgtaXB1djMtY3J0Yy5vIGlzIGJ1aWx0
-IHZpYSBpbXhkcm0tb2Jqcy4gU28gdGhlcmUncyBubyBuZWVkIHRvIGtlZXAgYW4KZXh0cmEgZW50
-cnkgd2l0aCBhIG5vbiBleGlzdGluZyBjb25maWcgdmFsdWUgKENPTkZJR19EUk1fSU1YX0lQVVYz
-KS4KClNpZ25lZC1vZmYtYnk6IEd1aWRvIEfDvG50aGVyIDxhZ3hAc2lneGNwdS5vcmc+Ci0tLQog
-ZHJpdmVycy9ncHUvZHJtL2lteC9NYWtlZmlsZSB8IDEgLQogMSBmaWxlIGNoYW5nZWQsIDEgZGVs
-ZXRpb24oLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vaW14L01ha2VmaWxlIGIvZHJp
-dmVycy9ncHUvZHJtL2lteC9NYWtlZmlsZQppbmRleCBhYjZjODNjYWNlYjcuLjIxY2RjYzJmYWFi
-YyAxMDA2NDQKLS0tIGEvZHJpdmVycy9ncHUvZHJtL2lteC9NYWtlZmlsZQorKysgYi9kcml2ZXJz
-L2dwdS9kcm0vaW14L01ha2VmaWxlCkBAIC04LDUgKzgsNCBAQCBvYmotJChDT05GSUdfRFJNX0lN
-WF9QQVJBTExFTF9ESVNQTEFZKSArPSBwYXJhbGxlbC1kaXNwbGF5Lm8KIG9iai0kKENPTkZJR19E
-Uk1fSU1YX1RWRSkgKz0gaW14LXR2ZS5vCiBvYmotJChDT05GSUdfRFJNX0lNWF9MREIpICs9IGlt
-eC1sZGIubwogCi1vYmotJChDT05GSUdfRFJNX0lNWF9JUFVWMykJKz0gaW14LWlwdXYzLWNydGMu
-bwogb2JqLSQoQ09ORklHX0RSTV9JTVhfSERNSSkgKz0gZHdfaGRtaS1pbXgubwotLSAKMi4yMC4x
-CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+Hi folks,
+
+Running kvm-unit-tests with Linux 5.3.0-rc2 on Kunpeng 920, we will get
+the following fail info:
+
+	[...]
+	FAIL psci (4 tests, 1 unexpected failures)
+	[...]
+and
+	[...]
+	INFO: unexpected cpu_on return value: caller=CPU9, ret=-2
+	FAIL: cpu-on
+	SUMMARY: 4 tests, 1 unexpected failures
+
+
+I think this is an issue had been fixed once by commit 6c7a5dce22b3
+("KVM: arm/arm64: fix races in kvm_psci_vcpu_on"), which makes use of
+kvm->lock mutex to fix the race between two PSCI_CPU_ON calls - one
+does reset on the MPIDR register whilst another reads it.
+
+But commit 358b28f09f0 ("arm/arm64: KVM: Allow a VCPU to fully reset
+itself") later moves the reset work into check_vcpu_requests(), by
+making a KVM_REQ_VCPU_RESET request in PSCI code. Thus the reset work
+has not been protected by kvm->lock mutex anymore, and the race shows up
+again...
+
+Do we need a fix for this issue? At least achieve a mutex execution
+between the reset of MPIDR and kvm_mpidr_to_vcpu()?
+
+
+Thanks,
+zenghui
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
