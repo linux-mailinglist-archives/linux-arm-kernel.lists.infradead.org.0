@@ -2,73 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE8ED7F8DF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 15:24:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F6677F975
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 15:28:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7BVSNDWGYDGd7/xBXI3U0GoPLBmvYCJ+e6MadZq5nx0=; b=jrrZ6qJccKxA6O
-	5j+WOQ/KMmZjzhw/sPb5CqCscDJtWi8pCxrRLK2CtTG5UvJ5+7o+AMUyW8KYga+/KcFJTF6/vGSPW
-	bxA45eLClGn4KAbJ9hyuAUxKKwSW0YXyNd4IM9LB9aWdIWmv7zVPLNXt14q0Z4duUSI+vPNvLav2t
-	Jijc/9cKg+TwUrqE6jecob6TFHnXeD7rZXT7reedvWWIiT77fZWJoT+Fu/RIozGg/lrqaENaji0SH
-	2lKFXWCy4k0guEC9IzDfpr9DFfEDo2HntKuQgIXKJFzpnlNu582xvFBLkddJqz/cYtJCSOH6hSwK4
-	2ZvRB1wEBJQRIYjdmppg==;
+	List-Owner; bh=54PODEfeKeBjsVyuWJ96DXBX/9xHf0isOLghqMWD664=; b=czFKUBMwzO27GZ
+	p8eNonW71Z3lKS7FTjjuTr/x4t7xiH9GkVq/H8wHvSh/S0m/2vq0568UYJloKEMwT8CFih2tLd1Z4
+	yr8UuoBbr3P+cG+0PHrrnW5SZZgo82AMZ/FdR4Cy7fJoa4oYdZxtCUuiGWQw3HchkQbgG3DILbIRs
+	+jAKOG6pL+DnkIa83U9HyVwO9lywDddW+KjyEbThZsoSskkw0b/irMpJsPdzKtm3nhXXels5CCI/c
+	vDiQ5AhBoY8HhPmUyCDt9m/ILBZxRj7MVUHfcVKrKdHd5IE9pzPPZ5W4jmTxrNflw2UFJNInl599O
+	UXmUjnALj23Z6XTEBuxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htXXc-00058p-Hf; Fri, 02 Aug 2019 13:24:16 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1htXc2-0007M1-D6; Fri, 02 Aug 2019 13:28:50 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htXXO-00053u-FD
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 13:24:03 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6EFE621773;
- Fri,  2 Aug 2019 13:24:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564752242;
- bh=J/c2lN83G3C0M26qnZBF3MO8yw9JzY3KeF7k6i+XeFE=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=QNTGYDLZ3dYWHvLTdFOBfDb64hRx9ROHhK+OJRXbLLpciwGKfbr4VtQ1Mj6SVSB7Y
- S8+/fIwIVkjdulYsNQjktdtOdxazVO0sKDHSMt5D3KZP4A5d/4enAG96YSekyE1WW5
- KDctmLYGFtRg5Fp4CjYSJAhvSio00B27k+A/b5uE=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 33/42] ARM: dts: bcm: bcm47094: add missing
- #cells for mdio-bus-mux
-Date: Fri,  2 Aug 2019 09:22:53 -0400
-Message-Id: <20190802132302.13537-33-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190802132302.13537-1-sashal@kernel.org>
-References: <20190802132302.13537-1-sashal@kernel.org>
+ id 1htXbw-0007LD-As; Fri, 02 Aug 2019 13:28:45 +0000
+X-UUID: 42b0b0ddfba747ab885c26b06a33dda0-20190802
+X-UUID: 42b0b0ddfba747ab885c26b06a33dda0-20190802
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <hsin-hsiung.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 861737549; Fri, 02 Aug 2019 05:28:34 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 2 Aug 2019 06:28:33 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 2 Aug 2019 21:28:31 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 2 Aug 2019 21:28:31 +0800
+Message-ID: <1564752511.1587.5.camel@mtksdaap41>
+Subject: Re: [PATCH v3 04/10] dt-bindings: mfd: Add compatible for the
+ MediaTek MT6358 PMIC
+From: Hsin-hsiung Wang <hsin-hsiung.wang@mediatek.com>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Date: Fri, 2 Aug 2019 21:28:31 +0800
+In-Reply-To: <CANMq1KCiK69kXkpagccqd1=pKOs7qOOVuJUaCe5JfoGVmPt7mg@mail.gmail.com>
+References: <20190503093117.54830-1-hsin-hsiung.wang@mediatek.com>
+ <20190503093117.54830-5-hsin-hsiung.wang@mediatek.com>
+ <CANMq1KCiK69kXkpagccqd1=pKOs7qOOVuJUaCe5JfoGVmPt7mg@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_062402_525037_A589A153 
-X-CRM114-Status: GOOD (  10.91  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190802_062844_376079_4826EC57 
+X-CRM114-Status: GOOD (  16.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,55 +75,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>, Sasha Levin <sashal@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Arnd Bergmann <arnd@arndb.de>,
- devicetree@vger.kernel.org
+Cc: Mark
+ Rutland <mark.rutland@arm.com>, Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>, devicetree@vger.kernel.org,
+ Sean Wang <sean.wang@mediatek.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, lkml <linux-kernel@vger.kernel.org>, Mark
+ Brown <broonie@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Eddie Huang <eddie.huang@mediatek.com>, Lee Jones <lee.jones@linaro.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Arnd Bergmann <arnd@arndb.de>
+Hi Nicolas,
 
-[ Upstream commit 3a9d2569e45cb02769cda26fee4a02126867c934 ]
+On Tue, 2019-05-07 at 14:24 +0900, Nicolas Boichat wrote:
+> On Fri, May 3, 2019 at 6:34 PM Hsin-Hsiung Wang
+> <hsin-hsiung.wang@mediatek.com> wrote:
+> >
+...
+> > This adds compatible for the MediaTek MT6358 PMIC.
+> >
+> > Acked-for-MFD-by: Lee Jones <lee.jones@linaro.org>
+> > Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+> > ---
+> >  Documentation/devicetree/bindings/mfd/mt6397.txt | 11 ++++++++---
+> >  1 file changed, 8 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/Documentation/devicetree/bindings/mfd/mt6397.txt b/Documentation/devicetree/bindings/mfd/mt6397.txt
+> > index 0ebd08af777d..62f1c17c7738 100644
+> > --- a/Documentation/devicetree/bindings/mfd/mt6397.txt
+> > +++ b/Documentation/devicetree/bindings/mfd/mt6397.txt
+> > @@ -17,22 +17,27 @@ Documentation/devicetree/bindings/soc/mediatek/pwrap.txt
+> >  This document describes the binding for MFD device and its sub module.
+> >
+> >  Required properties:
+> > -compatible: "mediatek,mt6397" or "mediatek,mt6323"
+> > +compatible:
+> > +       "mediatek,mt6323" for PMIC MT6323
+> > +       "mediatek,mt6358" for PMIC MT6358
+> > +       "mediatek,mt6397" for PMIC MT6397
+> >
+> >  Optional subnodes:
+> >
+> >  - rtc
+> >         Required properties:
+> > -               - compatible: "mediatek,mt6397-rtc"
+> > +               - compatible: "mediatek,mt6397-rtc" or "mediatek,mt6358-rtc"
+> >  - regulators
+> >         Required properties:
+> >                 - compatible: "mediatek,mt6397-regulator"
+> >         see Documentation/devicetree/bindings/regulator/mt6397-regulator.txt
+> > +               - compatible: "mediatek,mt6358-regulator"
+> > +       see Documentation/devicetree/bindings/regulator/mt6358-regulator.txt
+> >                 - compatible: "mediatek,mt6323-regulator"
+> >         see Documentation/devicetree/bindings/regulator/mt6323-regulator.txt
+> >  - codec
+> >         Required properties:
+> > -               - compatible: "mediatek,mt6397-codec"
+> > +               - compatible: "mediatek,mt6397-codec" or "mediatek,mt6358-sound"
+> 
+> Sean had a question about this
+> (https://patchwork.kernel.org/patch/10846669/#22524299):
+> "why didn't we use a more consistent naming as mt6358-codec?"
+> 
+The compatible name, "mediatek,mt6358-sound", is already in mt6358 audio
+driver which is already in the upstream codebase.
+After discussing with audio owner, we will submit another patch to fix
+it.
 
-The mdio-bus-mux has no #address-cells/#size-cells property,
-which causes a few dtc warnings:
+Thanks.
+> >  - clk
+> >         Required properties:
+> >                 - compatible: "mediatek,mt6397-clk"
+> > --
+> > 2.18.0
+> >
+> >
+> > _______________________________________________
+> > Linux-mediatek mailing list
+> > Linux-mediatek@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
-arch/arm/boot/dts/bcm47094-linksys-panamera.dts:129.4-18: Warning (reg_format): /mdio-bus-mux/mdio@200:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
-arch/arm/boot/dts/bcm47094-linksys-panamera.dtb: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
-arch/arm/boot/dts/bcm47094-linksys-panamera.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
-arch/arm/boot/dts/bcm47094-linksys-panamera.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
-arch/arm/boot/dts/bcm47094-linksys-panamera.dts:128.22-132.5: Warning (avoid_default_addr_size): /mdio-bus-mux/mdio@200: Relying on default #address-cells value
-arch/arm/boot/dts/bcm47094-linksys-panamera.dts:128.22-132.5: Warning (avoid_default_addr_size): /mdio-bus-mux/mdio@200: Relying on default #size-cells value
-
-Add the normal cell numbers.
-
-Link: https://lore.kernel.org/r/20190722145618.1155492-1-arnd@arndb.de
-Fixes: 2bebdfcdcd0f ("ARM: dts: BCM5301X: Add support for Linksys EA9500")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-Signed-off-by: Olof Johansson <olof@lixom.net>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/boot/dts/bcm47094-linksys-panamera.dts | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/arch/arm/boot/dts/bcm47094-linksys-panamera.dts b/arch/arm/boot/dts/bcm47094-linksys-panamera.dts
-index 36efe410dcd71..9e33c41f54112 100644
---- a/arch/arm/boot/dts/bcm47094-linksys-panamera.dts
-+++ b/arch/arm/boot/dts/bcm47094-linksys-panamera.dts
-@@ -125,6 +125,9 @@
- 	};
- 
- 	mdio-bus-mux {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
- 		/* BIT(9) = 1 => external mdio */
- 		mdio_ext: mdio@200 {
- 			reg = <0x200>;
--- 
-2.20.1
 
 
 _______________________________________________
