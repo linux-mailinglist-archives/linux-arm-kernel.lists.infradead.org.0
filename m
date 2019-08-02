@@ -2,55 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16A417F741
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 14:52:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A46DD7F7BB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 15:03:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x1juaOBbORkjFVj7Xy2lQLuZym3C6p8DeF8AklMa+Ik=; b=amaz7KHSzDgy0q
-	HFApJPU7z0qCLT185zJOpnpabi1ouavysFQUMAIcARcTqM3N0hr3+cIkojgxA5cYBOEiUnhi2Wu8Q
-	Bo6YnnTCDiq1IPk8h+dBmTdQUFUBuzql4VuGjAjF16JyUdkJp3bCzSiNNU5sb0YmFsGgThJ9M4ufh
-	E2uTtNDrVhGxCl1zRHvroHe6GVLJWvdkPYaZtXLMJQBmTSwKq+keGLIFA5zOPPQfzj7Torz0QIf1M
-	Wq7pqUQ8MF++9hBaCBUAg1nPQSr9kIgxcHnWja263S12HOoMuSZWsl2WB6n/UtKiOEjjj+zp764mr
-	2u3IrKaOjsm88vVj2sTQ==;
+	List-Owner; bh=4VZqqYMGuNkuqFEFeNsldmJejcdfDD+09othbzhAwxc=; b=RMq6b1ifeIqOT1
+	6mnfBdlitcEhve5GYUsoTne6AlMMO4w84L0sWcfFkOOGTDd8KN+STY7R64rGrIhrPnyQgzv9Y8dBK
+	KB4sDzh4pok2GEAV5HYGcp9e2zriRDnz2lr4bHzWLQNMpiQ1p6JLh067ID3bBmKND4TXUUyI/Huy7
+	tKOeWeY8Stilxa1iuGPMnpSiOWia5RLls4TVnLY1yuE/CsBw3etOvENWPP1PgT8MiXLXksp/sW+Bn
+	NJCrZHg6nT5H2OGunigBuLlNeWBR0suc6H7TN3cGUtLsIrpA5hNxl8JQgqc0TQAtUf3fV6jNCGHPM
+	ccVDdnuvTY04rntveBzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htX3G-000141-Jb; Fri, 02 Aug 2019 12:52:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1htX2s-0000ck-GX
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 12:52:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0D7CA1597;
- Fri,  2 Aug 2019 05:52:30 -0700 (PDT)
-Received: from filthy-habits.cambridge.arm.com
- (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ABA4F3F71F;
- Fri,  2 Aug 2019 05:52:28 -0700 (PDT)
-From: Marc Zyngier <maz@kernel.org>
-To: Will Deacon <will.deacon@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v2 2/2] arm64: Document ICC_CTLR_EL3.PMHE setting requirements
-Date: Fri,  2 Aug 2019 13:52:08 +0100
-Message-Id: <20190802125208.73162-3-maz@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190802125208.73162-1-maz@kernel.org>
-References: <20190802125208.73162-1-maz@kernel.org>
+	id 1htXDX-0005pE-SE; Fri, 02 Aug 2019 13:03:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1htXDR-0005oY-8E
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 13:03:26 +0000
+Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
+ [66.24.58.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D1A4D20657;
+ Fri,  2 Aug 2019 13:03:22 +0000 (UTC)
+Date: Fri, 2 Aug 2019 09:03:20 -0400
+From: Steven Rostedt <rostedt@goodmis.org>
+To: Jiping Ma <Jiping.Ma2@windriver.com>
+Subject: Re: [PATCH v2] tracing: Function stack size and its name mismatch
+ in arm64
+Message-ID: <20190802090320.728f133b@gandalf.local.home>
+In-Reply-To: <47e90170-e971-c2f5-b6c9-d3c6a694a4a7@windriver.com>
+References: <20190801083340.57075-1-jiping.ma2@windriver.com>
+ <20190801094156.emo36ekvrm74nndl@willie-the-truck>
+ <47e90170-e971-c2f5-b6c9-d3c6a694a4a7@windriver.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_055230_589840_2D5C568D 
-X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-CacheID: sfid-20190802_060325_313669_D2AD2587 
+X-CRM114-Status: UNSURE (   9.47  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,43 +67,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, maz@kernel.org,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- huawei.libin@huawei.com, guohanjun@huawei.com, liwei391@huawei.com,
- Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ mingo@redhat.com, joel@joelfernandes.org, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It goes without saying, but better saying it: the kernel expects
-ICC_CTLR_EL3.PMHE to have the same value across all CPUs, and
-for that setting not to change during the lifetime of the kernel.
-
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
- Documentation/arm64/booting.rst | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/Documentation/arm64/booting.rst b/Documentation/arm64/booting.rst
-index d3f3a60fbf25..5d78a6f5b0ae 100644
---- a/Documentation/arm64/booting.rst
-+++ b/Documentation/arm64/booting.rst
-@@ -213,6 +213,9 @@ Before jumping into the kernel, the following conditions must be met:
- 
-       - ICC_SRE_EL3.Enable (bit 3) must be initialiased to 0b1.
-       - ICC_SRE_EL3.SRE (bit 0) must be initialised to 0b1.
-+      - ICC_CTLR_EL3.PMHE (bit 6) must be set to the same value across
-+        all CPUs the kernel is executing on, and must stay constant
-+        for the lifetime of the kernel.
- 
-   - If the kernel is entered at EL1:
- 
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCAyIEF1ZyAyMDE5IDEwOjQzOjAzICswODAwCkppcGluZyBNYSA8SmlwaW5nLk1hMkB3
+aW5kcml2ZXIuY29tPiB3cm90ZToKCj4gPiAqV2h5KiBkb2VzIHRoZSBmcmFtZSBhcHBlYXIgdG8g
+YmUgb2ZmLWJ5LW9uZT8gIAo+IEJlY2F1c2UgdGhlIFBDIGlzIExSIGluIEFSTTY0IHN0YWNrIGFj
+dHVhbGx5LsKgIEZvbGxvd2luZyBpcyBBUk02NCBzdGFjayAKPiBsYXlvdXQuIFBsZWFzZSByZWZl
+ciB0byB0aGUgZmlndXJlIDMgaW4gCj4gaHR0cDovL2luZm9jZW50ZXIuYXJtLmNvbS9oZWxwL3Rv
+cGljL2NvbS5hcm0uZG9jLmloaTAwNTViL0lISTAwNTVCX2FhcGNzNjQucGRmCj4gIMKgwqDCoCDC
+oMKgwqAgwqDCoMKgIExSCj4gIMKgwqDCoCDCoMKgwqAgwqDCoMKgIEZQCj4gIMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgLi4uLi4uCj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgTFIKPiAgwqDCoMKg
+IMKgwqDCoCDCoMKgwqAgRlAKCkFuZCB0aGUgTFIgaG9sZHMgdGhlIHJldHVybiBhZGRyZXNzLCBy
+aWdodD8gV2hpY2ggd291bGQgYmUgaWRlbnRpY2FsIHRvCng4NiBhbmQgZXZlcnkgb3RoZXIgYXJj
+aCBJIGtub3cgYWJvdXQuCgotLSBTdGV2ZQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
+LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
