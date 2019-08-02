@@ -2,58 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F30B27F5BA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 13:07:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AB667F5E0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 13:20:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZXvpMWL/pCOO31dZvShDM7J6Qi7obSlxPLBHuXuVqzo=; b=gGC0OMIrnoVRV7KkzrSqlvOAd
-	MAEvDVVhSypr5jOjT6BfQ/IpNlBDqRiKXKh5ELS1kIUOt2LW+Z0q+3UFf26RSiYdtMvcSaXrLNPOL
-	YspZx8Q+ahJF/WbbUm2r9a/jOSMTXLge/CtcRW72aGBYNyEn7KgPuJhcMcS2XkUQ1BXGMrZ7cTV3o
-	e8Tnb8as5DXlJWgaJdDBNIwQKgo7uPIn/MPTH2wy4yOtJbByLizcC5ag2i+jYt5ivDfAYdcD6jVfA
-	+pdeTgW37uyhhp9ohTNpiJf5MoqCwO3yu1w6ypL+PymmZRCMPPdCdQIdIzVXsjrTytdWSGW2Arip6
-	mkIHnXr2A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Sn5DUjPGYPZ9+oh7+697d7IwrEO2QkPYuQ2RKRwGPA4=; b=pejKkxFJaH6bca
+	vgJEJbFd4soGk2bJXAjRVauIdfSFhpvAZGSmWXkCXcbPIdCHSwxZBoAivmroIE0d07uxdhnxTObD6
+	mZ64+mFf7lsCus+XZMxyXbb/oX4QF53pRYgtF9oWRluwfDaG/e/oWZdOCY+oetgJaxZrt/qwg4g16
+	GAuxHEuBLx4ElTpN5svxPB00Wbl5kJsxDQOgBY95a94v7F92pV6vApi8Mic97K9qhW0qVJUz0qilJ
+	unFzqRIs7BdE1/i6jLQS22YN+FWCAMrYIrA0bri4iSlEkLVOLnvEfzGeiAWSG1bbjPIR0Wvx+3hIi
+	uXXIW9yrL5kj2ddw+RFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htVOs-0007Xu-5f; Fri, 02 Aug 2019 11:07:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1htVOl-0007XR-SH
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 11:07:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7D939344;
- Fri,  2 Aug 2019 04:06:56 -0700 (PDT)
-Received: from [10.1.196.50] (e108454-lin.cambridge.arm.com [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 534D33F71F;
- Fri,  2 Aug 2019 04:06:55 -0700 (PDT)
-Subject: Re: [RFC PATCH v2 7/8] arm64/sve: Don't disable SVE on syscalls return
-To: Catalin Marinas <catalin.marinas@arm.com>,
- Dave Martin <Dave.Martin@arm.com>
-References: <20190613161656.20765-1-julien.grall@arm.com>
- <20190613161656.20765-8-julien.grall@arm.com>
- <20190621153316.GC2790@e103592.cambridge.arm.com>
- <20190704141559.GA51773@arrakis.emea.arm.com>
-From: Julien Grall <julien.grall@arm.com>
-Message-ID: <b40a2499-945f-c49d-1681-0027d0aa1269@arm.com>
-Date: Fri, 2 Aug 2019 12:06:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1htVbf-0003eN-OM; Fri, 02 Aug 2019 11:20:19 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1htVbZ-0003e0-N6
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 11:20:15 +0000
+Received: by mail-qt1-f196.google.com with SMTP id h21so73402008qtn.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 02 Aug 2019 04:20:12 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=6svSKUB8W/2vAHAY5YVCqR8+83bHvMbbXUyJ8GuWHhs=;
+ b=Hk3x8U8c3At0x1jjCQCwelJFXDdLBZlYw8E84RxcKVxTgtDKnVcoe+5yJhxoMxNpk0
+ N58MAjNvcsqgCj+b4zjWICN5zrvMk6P2+V1pH0214YXcDuVPDchKtYY3WeHpF75Vjlzx
+ h2emn3esQfSFhmnlhczuf14v9varG2srNv3GfDd2sgMNaYaXyGKgGSrWF4srjKaJd8CX
+ dhFDunuIdLDcG/HP5HqsX4VsV2j6+A+jKCEBl7SWV0p2RF5ep27N+zQezKy/MWNybISP
+ fQz2kcQa4CWaC2uT+GFqWL7gl0F4cLFp6e3W5/0S2z1vhB/CZXcp+Zgw5uJvHNfiLA2r
+ lkzg==
+X-Gm-Message-State: APjAAAW2eGPxwZ5EBXIb+UsXJJYCwGDqG3+Vgy5jXUwJHVncrcfrvgmI
+ Ohf6ypmTes5PrTG4jFaGXE/2p+1O+L8R1ghW/uk=
+X-Google-Smtp-Source: APXvYqzzEMPL706zJeruFWjyPx3W7qLTYqQ+nPflILZAKmqIvcLEpD7XRJHi8zMXFo3sUO3koJwU4XNqk+rw0f5qJV4=
+X-Received: by 2002:aed:3e7c:: with SMTP id m57mr95077214qtf.204.1564744811845; 
+ Fri, 02 Aug 2019 04:20:11 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190704141559.GA51773@arrakis.emea.arm.com>
-Content-Language: en-US
+References: <20190731195713.3150463-1-arnd@arndb.de>
+ <20190731195713.3150463-6-arnd@arndb.de>
+ <CAMpxmJWFfT_vrDas2fzW5tnxskk9kmgHQpGnGQ-_C20UaS_jhA@mail.gmail.com>
+In-Reply-To: <CAMpxmJWFfT_vrDas2fzW5tnxskk9kmgHQpGnGQ-_C20UaS_jhA@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 2 Aug 2019 13:19:55 +0200
+Message-ID: <CAK8P3a3KpKvRKXY72toE_5eAp4ER_Mre0GX3guwGeQgsY2HX+g@mail.gmail.com>
+Subject: Re: [PATCH 05/14] gpio: lpc32xx: allow building on non-lpc32xx targets
+To: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_040700_006276_C4FA0C75 
-X-CRM114-Status: GOOD (  31.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190802_042013_755473_F9B15F6F 
+X-CRM114-Status: GOOD (  13.36  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.196 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,112 +84,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anton.Kirilov@arm.com, will.deacon@arm.com, oleg@redhat.com,
- zhang.lei@jp.fujitsu.com, alex.bennee@linaro.org,
- linux-arm-kernel@lists.infradead.org, Daniel.Kiss@arm.com
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Jason Cooper <jason@lakedaemon.net>,
+ "David S. Miller" <davem@davemloft.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ USB list <linux-usb@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Vladimir Zapolskiy <vz@mleia.com>, linux-gpio <linux-gpio@vger.kernel.org>,
+ soc@kernel.org, netdev <netdev@vger.kernel.org>,
+ Alan Stern <stern@rowland.harvard.edu>, Guenter Roeck <linux@roeck-us.net>,
+ linux-serial@vger.kernel.org, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Lee Jones <lee.jones@linaro.org>, Linus Walleij <linus.walleij@linaro.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Catalin,
+On Fri, Aug 2, 2019 at 9:10 AM Bartosz Golaszewski
+<bgolaszewski@baylibre.com> wrote:
+> > -#include <mach/hardware.h>
+> > -#include <mach/platform.h>
+> > +#define _GPREG(x)                              (x)
+>
+> What purpose does this macro serve?
+>
+> >
+> >  #define LPC32XX_GPIO_P3_INP_STATE              _GPREG(0x000)
+> >  #define LPC32XX_GPIO_P3_OUTP_SET               _GPREG(0x004)
 
-On 04/07/2019 15:15, Catalin Marinas wrote:
-> On Fri, Jun 21, 2019 at 04:33:16PM +0100, Dave P Martin wrote:
->> On Thu, Jun 13, 2019 at 05:16:55PM +0100, Julien Grall wrote:
->>> Per the syscalls ABI, SVE registers will be unknown after a syscalls. In
->>
->> This patch is quite hard to understand, though this is more down to the
->> code being modified than the patch itself.  So, I may ask some stupid
->> questions...
->>
->> In particular, we now have up to 8 task states (all the combinations of
->> TIF_FOREIGN_FPSTATE, TIF_SVE and TIF_SVE_NEEDS_FLUSH).  Sketching out
->> the state machine and highlighting any states that we consider invalid
->> may be a useful exercise, but I've not attempted that yes.
-> 
-> We definitely need a state machine sketched out (and a formal model as I
-> can't really get all of it in my head at once). I don't fully understand
-> the need for a new TIF_SVE_NEEDS_FLUSH. Maybe it becomes obvious if we
-> had a state machine description.
-Dave and I drafted a state machine on a whiteboard recently. I will clean it up 
-and send it on the ML. But I am not sure the state machine will help to 
-understand the approach :/.
+In the existing code base, this macro converts a register offset to
+an __iomem pointer for a gpio register. I changed the definition of the
+macro here to keep the number of changes down, but I it's just
+as easy to remove it if you prefer.
 
-I realize that I didn't explain why I chose this approach over another one. See 
-more below.
+> > @@ -167,14 +166,26 @@ struct lpc32xx_gpio_chip {
+> >         struct gpio_regs        *gpio_grp;
+> >  };
+> >
+> > +void __iomem *gpio_reg_base;
+>
+> Any reason why this can't be made part of struct lpc32xx_gpio_chip?
 
-> 
-> So, we currently have (IIUC):
-> 
-> TIF_SVE - tells us whether the user space can access SVE registers
-> without a fault (doesn't CPACR_EL1 tell us this already on kernel entry?
-> I guess we'd need to store it in a TIF flag anyway for switch_to). The
+It could be, but it's the same for each instance, and not known until
+probe() time, so the same pointer would need to be copied into each
+instance that is otherwise read-only.
 
-That's correct CPACR_EL1 will tell us on entry whether SVE has been enabled or 
-not. But as you pointed out we need to save on context switch but we may also 
-disable/enable it via ptrace.
+Let me know if you'd prefer me to rework these two things or leave
+them as they are.
 
-> implications of TIF_SVE on kernel entry is that the SVE state could have
-> been touched by the user. If entering via syscall, we discard this state
-> in sve_user_discard().
-> 
-> TIF_FOREIGN_FPSTATE - tells us whether the hardware state is out of sync
-> with the current thread.
-Note that in this case, TIF_SVE will indicate where the context has been saved 
-(fpsimd_state vs sve_state).
+> > +static inline u32 gpreg_read(unsigned long offset)
+>
+> Here and elsewhere: could you please keep the lpc32xx_gpio prefix for
+> all symbols?
 
-> 
-> For flushing the SVE state on return from syscall, can we not handle
-> this entirely in el0_svc_handler while enabling the SVE access at the
-> same time to avoid a subsequent trap? We need to know whether the SVE
-> state is valid when we do the context switching but we have TIF_SVE for
-> this, cleared on syscall entry but can be set again on return from
-> syscall if we enable access in CPACR_EL1 (sve_user_enable()).
+Sure.
 
-If we were to handle it in el0_svc_handler(), we would need to do a similar job 
-as fpsimd_restore_current_state().
-
-Indeed, the task may have been switched out (when using PREEMPT and PREEMPT_RT). 
-Above you suggested to clear TIF_SVE on syscall entry, so the state would be 
-saved in fpsimd_state. We would need to convert the state back to SVE. Ideally, 
-this should be done in hardware (see patch #6) as this is likely going to be 
-faster than the software version (see fpsimd_to_sve()). This means the state 
-would need to be loaded by el0_svc_handler().
-
-Furthermore, handling everything in el0_svc_handler() means that you are mostly 
-optimizing for fully preemptible kernel (PREEMPT_RT) and preemptible kernel 
-(PREEMPT). Although, you have the risk to get the kernel preempted after you 
-return from the el0_svc_handler() and before you return to userspace. So you 
-would end up to save the full SVE context (even the zeroed bits) which takes 
-longer than just saving the first 128-bits. I will admit, I haven't really 
-looked how often this condition can happen.
-
-For voluntary preemptible kernel, they will suffer the same problem when as the 
-PREEMPT_RT and PREEMPT when rescheduled in do_notify_resume().
-
-So it feels to me that do_notify_resume() is a better fit to handle the flush 
-(i.e zeroing all SVE state but the first 128-bits of each vector). This would 
-have the advantage to use the optimize other places (such as the trap to enable 
-SVE as done by patch #8).
-
-Handling in do_notify_resume() will require an extra flag because we need to 
-know when to flush the SVE state.
-
-To summarize, el0_svc_handler() is a possibility but result to leave some cases 
-unoptimized. I don't have any numbers to back this yet, so I don't know whether 
-this is a major concerns.
-
-> 
-> It probably needs some more thinking on signal handling.
-
-The signal handling is quite tricky in all the cases :). We need to ensure the 
-SVE state is not flushed.
-
-Cheers,
-
--- 
-Julien Grall
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
