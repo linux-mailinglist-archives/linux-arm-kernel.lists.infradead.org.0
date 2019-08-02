@@ -2,62 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D30F47EFA7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 10:51:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 458A07EFC7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 11:02:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
-	Subject:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k9JYxYF6keHJ8VW+NrHRp6AZrK5X2vVA6drz7Hd2iUI=; b=SUtcxivmTJSD39
-	ZaG1FXSHMnjstljbO1QZzE2jPke5Z3LV1wBbPhWPXFIK8JnvL0Ge8W4L9jcEHkj0ek7/6OrbmkLr1
-	NjS6OxKyVGcoFpLjyY3Ru1nXLci7sJDnE+pe+LkWKU2O89b6ybUP3hct+0WcrYb/6EbmiacGLKY2F
-	dgLauK4jJ+QSJUdX81pnqB2HndLSxeojlAIkBAMy5Ojl4Shy7HeAzX8VpciORqd6F+V1fHIX7RrqT
-	SkjviwqmaU1+0/Liruz8rUJHmNdpTxXwZoTjIhO9/S9dPCWGtBE/bBlOu9N4rYhneLxxL4EYDt4FX
-	/HlyVOkwbCBiK6+kTl6A==;
+	List-Owner; bh=Ko39ohKHGfPeczgsZfqxPnYCEpIzRT780AviC806CvU=; b=A6DVgCK2tBNqzm
+	dhrgWwtHrmwZ4byP6tftbZkAwgtrw48SwCl1lSI3WS0sRIdodzxELDcrKYX7E8FhzJs+alc8meV6q
+	lH5Z+linGwy42v4JaDguluJU+6UWPxi38VJsWf/q4M9qb28s+pkOOzNcOy/IQqYku61H0xBmVm/fj
+	yLoQ7kwbDoUX4y5lNBqFlbx9T52YjrT5DFzRZDwniEWPyoBzQDR60uRl74dpkSVlb44Ezp99XBaJL
+	WsTcKar1opGbI9AdF6fOeYp130xukptfQ91ec0dU0g6H7uSxup62DP2npGCf2UvDZf43wsaYqTlAM
+	87hRTHqzrzVj2oxK17Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htTHr-0003jL-SY; Fri, 02 Aug 2019 08:51:44 +0000
-Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
+	id 1htTRn-0006gt-AR; Fri, 02 Aug 2019 09:01:59 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htTHd-0003iW-T3
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 08:51:31 +0000
-Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
- by mail.kmu-office.ch (Postfix) with ESMTPSA id 397875C004F;
- Fri,  2 Aug 2019 10:51:25 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
- t=1564735885;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=ViFlUbZIH2j98+ivvpISqsxLBF3nyNE80C/Y7Lye+Lo=;
- b=bhv7PrpZGNeJpxcSV8U7HrJBJjE+RstPAgkir7If8M/JOcUoCmodOqFKKwLPdU2CqGqmdA
- 2p5XggEf7tQZAZAEAZAC9QuoYmX0x5VNWJbaKQA7/mkg7YkjzZqtPxzGSdCDuOdO+7/dWp
- gxQfUYOjUEL4NMo5yA0o/R+Y9A9+rC8=
+ id 1htTRa-0006g9-Uk
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 09:01:48 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x728uPH7020972; Fri, 2 Aug 2019 11:01:38 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : subject :
+ date : message-id : references : in-reply-to : content-type : content-id :
+ content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=7Ej80Sr2nn1J/pVdAmFrBTdwivNSAGDRJ4LALs/pRAs=;
+ b=l0u03LtRL7CpucxVBeTS3YFUYZQGLytOdi8EdVq6foN/tQEYIvUfC3pjHxo/bGWuRBrB
+ Q/WNb1Nht4/tfu/jce/IqebD1BFZLHmjAXMK0Tx0lj2IUbC4IE1y8fPMFrPVl/r1f/dx
+ 9d3lSrSa+lDHJyqbglyHC2qFY9sMo6ELxrhMNE2uH2Qyf1cIN3LJVsheH3+GSbbLHgTQ
+ cpx5w65R42yLlKLtRVqeDgOfRuALrm6mhciP3rLWFYzTEuENIREC7KmkIhR0Tq10fLCT
+ BvEXVYYS3Ed9goUF+JsoFGRYUOdo+uzb4ZKV2fYWkhXng1o5L7AM9KWwAlAqhheMXo1+ dQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2u3vd066y2-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Fri, 02 Aug 2019 11:01:38 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3543B9E;
+ Fri,  2 Aug 2019 09:01:33 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 0897820758E;
+ Fri,  2 Aug 2019 11:01:33 +0200 (CEST)
+Received: from SFHDAG6NODE1.st.com (10.75.127.16) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 2 Aug
+ 2019 11:01:32 +0200
+Received: from SFHDAG6NODE1.st.com ([fe80::8d96:4406:44e3:eb27]) by
+ SFHDAG6NODE1.st.com ([fe80::8d96:4406:44e3:eb27%20]) with mapi id
+ 15.00.1473.003; Fri, 2 Aug 2019 11:01:32 +0200
+From: Yannick FERTRE <yannick.fertre@st.com>
+To: Philippe CORNU <philippe.cornu@st.com>, Benjamin GAIGNARD
+ <benjamin.gaignard@st.com>, Vincent ABRIOU <vincent.abriou@st.com>, "David
+ Airlie" <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>, Rob Herring
+ <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, Alexandre TORGUE <alexandre.torgue@st.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v2 3/5] ARM: dts: stm32: add phy-dsi-supply property on
+ stm32mp157c
+Thread-Topic: [PATCH v2 3/5] ARM: dts: stm32: add phy-dsi-supply property on
+ stm32mp157c
+Thread-Index: AQHVBzuHnoXkFoKaJ0KNORzeHQAWuKbn8cMA
+Date: Fri, 2 Aug 2019 09:01:32 +0000
+Message-ID: <e381b766-c576-828b-49a5-f13990b9d49f@st.com>
+References: <1557498023-10766-1-git-send-email-yannick.fertre@st.com>
+ <1557498023-10766-4-git-send-email-yannick.fertre@st.com>
+In-Reply-To: <1557498023-10766-4-git-send-email-yannick.fertre@st.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.46]
+Content-ID: <F7623D89E5834A4A9837C0DAEEC4B353@st.com>
 MIME-Version: 1.0
-Date: Fri, 02 Aug 2019 10:51:25 +0200
-From: Stefan Agner <stefan@agner.ch>
-To: Philippe Schenker <philippe.schenker@toradex.com>
-Subject: Re: [PATCH v2 07/20] ARM: dts: imx7-colibri: fix 1.8V/UHS support
-In-Reply-To: <723f191c5893984c8fbe711163524dc7ebf09a5b.camel@toradex.com>
-References: <20190731123750.25670-1-philippe.schenker@toradex.com>
- <20190731123750.25670-8-philippe.schenker@toradex.com>
- <CAOMZO5B5HnqpLrDjyGtqSQpVXmcoZuGLvCzKVUhwLb-_ZO_Xog@mail.gmail.com>
- <723f191c5893984c8fbe711163524dc7ebf09a5b.camel@toradex.com>
-Message-ID: <de6bec64012876c07267024cd4b2d2d5@agner.ch>
-X-Sender: stefan@agner.ch
-User-Agent: Roundcube Webmail/1.3.9
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-08-02_04:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_015130_388067_7D3A1580 
-X-CRM114-Status: GOOD (  19.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190802_020147_298296_0B26CE10 
+X-CRM114-Status: GOOD (  18.69  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -77,101 +118,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, michal.vokac@ysoft.com,
- kernel@pengutronix.de, Stefan Agner <stefan.agner@toradex.com>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>, shawnguo@kernel.org,
- s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-imx@nxp.com, Max Krummenacher <max.krummenacher@toradex.com>,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-07-31 16:52, Philippe Schenker wrote:
-> On Wed, 2019-07-31 at 09:56 -0300, Fabio Estevam wrote:
->> On Wed, Jul 31, 2019 at 9:38 AM Philippe Schenker
->> <philippe.schenker@toradex.com> wrote:
->> > From: Stefan Agner <stefan.agner@toradex.com>
->> >
->> > Add pinmuxing and do not specify voltage restrictions in the
->> > module level device tree.
->>
->> It would be nice to explain the reason for doing this.
-> 
-> This commit is in preparation of another patch that didn't made into this
-> patchset (downstream stuff in there). But I will do another patch on top that
-> will use this patch here. That should anyway be in mainline.
-
-I guess what Fabio meant here is explain this patch.
-
-The commit message really could be improved, e.g.:
-
-Add pinmuxing and do not specify voltage restrictions for the usdhc
-instance
-available on the modules edge connector. This allows to use SD-cards
-with
-higher transfer modes if supported by the carrier board.
-
---
-Stefan
-
-> 
-> Philippe
-> 
->>
->> > Signed-off-by: Stefan Agner <stefan.agner@toradex.com>
->> > Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
->> > ---
->> >
->> > Changes in v2: None
->> >
->> >  arch/arm/boot/dts/imx7-colibri.dtsi | 23 ++++++++++++++++++++++-
->> >  1 file changed, 22 insertions(+), 1 deletion(-)
->> >
->> > diff --git a/arch/arm/boot/dts/imx7-colibri.dtsi b/arch/arm/boot/dts/imx7-
->> > colibri.dtsi
->> > index 16d1a1ed1aff..67f5e0c87fdc 100644
->> > --- a/arch/arm/boot/dts/imx7-colibri.dtsi
->> > +++ b/arch/arm/boot/dts/imx7-colibri.dtsi
->> > @@ -326,7 +326,6 @@
->> >  &usdhc1 {
->> >         pinctrl-names = "default";
->> >         pinctrl-0 = <&pinctrl_usdhc1 &pinctrl_cd_usdhc1>;
->> > -       no-1-8-v;
->> >         cd-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
->> >         disable-wp;
->> >         vqmmc-supply = <&reg_LDO2>;
->> > @@ -671,6 +670,28 @@
->> >                 >;
->> >         };
->> >
->> > +       pinctrl_usdhc1_100mhz: usdhc1grp_100mhz {
->> > +               fsl,pins = <
->> > +                       MX7D_PAD_SD1_CMD__SD1_CMD       0x5a
->> > +                       MX7D_PAD_SD1_CLK__SD1_CLK       0x1a
->> > +                       MX7D_PAD_SD1_DATA0__SD1_DATA0   0x5a
->> > +                       MX7D_PAD_SD1_DATA1__SD1_DATA1   0x5a
->> > +                       MX7D_PAD_SD1_DATA2__SD1_DATA2   0x5a
->> > +                       MX7D_PAD_SD1_DATA3__SD1_DATA3   0x5a
->> > +               >;
->> > +       };
->> > +
->> > +       pinctrl_usdhc1_200mhz: usdhc1grp_200mhz {
->> > +               fsl,pins = <
->> > +                       MX7D_PAD_SD1_CMD__SD1_CMD       0x5b
->> > +                       MX7D_PAD_SD1_CLK__SD1_CLK       0x1b
->> > +                       MX7D_PAD_SD1_DATA0__SD1_DATA0   0x5b
->> > +                       MX7D_PAD_SD1_DATA1__SD1_DATA1   0x5b
->> > +                       MX7D_PAD_SD1_DATA2__SD1_DATA2   0x5b
->> > +                       MX7D_PAD_SD1_DATA3__SD1_DATA3   0x5b
->> > +               >;
->> > +       };
->>
->> You add the entries for 100MHz and 200MHz, but I don't see them being
->> referenced anywhere.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQWxleGFuZHJlLA0KDQp0aGlzIHBhdGNoIGNhbiBiZSBhYmFuZG9uZWQuDQoNCkJSDQoNCi0t
+IA0KWWFubmljayBGZXJ0csOpIHwgVElOQTogMTY2IDcxNTIgfCBUZWw6ICszMyAyNDQwMjcxNTIg
+fCBNb2JpbGU6ICszMyA2MjA2MDAyNzANCk1pY3JvY29udHJvbGxlcnMgYW5kIERpZ2l0YWwgSUNz
+IEdyb3VwIHwgTWljcm9jb250cm9sbGV1cnMgRGl2aXNpb24NCg0KDQpPbiA1LzEwLzE5IDQ6MjAg
+UE0sIFlhbm5pY2sgRmVydHLDqSB3cm90ZToNCg0KPiBUaGUgZHNpIHBoeXNpY2FsIGxheWVyIGlz
+IHBvd2VyZWQgYnkgdGhlIDF2OCBwb3dlciBjb250cm9sbGVyIHN1cHBseS4NCj4NCj4gU2lnbmVk
+LW9mZi1ieTogWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRyZUBzdC5jb20+DQo+IC0tLQ0K
+PiAgIGFyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNTdjLmR0c2kgfCAxICsNCj4gICAxIGZpbGUg
+Y2hhbmdlZCwgMSBpbnNlcnRpb24oKykNCj4NCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3Qv
+ZHRzL3N0bTMybXAxNTdjLmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTU3Yy5kdHNp
+DQo+IGluZGV4IDJhZmVlZTYuLjZiMTRmMWUgMTAwNjQ0DQo+IC0tLSBhL2FyY2gvYXJtL2Jvb3Qv
+ZHRzL3N0bTMybXAxNTdjLmR0c2kNCj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1
+N2MuZHRzaQ0KPiBAQCAtMTE1Niw2ICsxMTU2LDcgQEANCj4gICAJCQljbG9jay1uYW1lcyA9ICJw
+Y2xrIiwgInJlZiIsICJweF9jbGsiOw0KPiAgIAkJCXJlc2V0cyA9IDwmcmNjIERTSV9SPjsNCj4g
+ICAJCQlyZXNldC1uYW1lcyA9ICJhcGIiOw0KPiArCQkJcGh5LWRzaS1zdXBwbHkgPSA8JnJlZzE4
+PjsNCj4gICAJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOw0KPiAgIAkJfTsNCj4gICANCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
