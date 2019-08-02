@@ -2,61 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEA9D7EF71
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 10:38:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 675A37EF78
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 10:39:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VuMwUqPrXXq62MhJyiP/Ry3v6FYkKP12b6mJQmfYV+E=; b=EQRR6diSBnU0CZ
-	JkqRgO2zHMyZ1Yyd5JRjb5/C4gZyb3smLlmrlWNmISFRZ9ACJedkRXqJ74yW5fdV1LJbjQFY3yHoy
-	TlqcyPW4V9STPJ4REHmrpAnRwvK87cHTw1bWd8baF1j4ngfYQJcsWeg6iJ9KsGQA/TivAtmT3psxT
-	qX9aqCQvrj8FSNdizZlpMya9aohBpwiL1aK2n3KJYanC4ove21FRteNMHFpe215+l8NeXGvE2EKtX
-	JZ0djZC9NpTjOlD8gDo6rojI1iGmVFhMCnQfrpwxLc8dvALpCQ8whLpzx+57lBGXZsFGbVHeSLxI2
-	nLpJ43XzMq9kw5vjqvag==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f8QRBGwo1zfNX97uEbYBojxVkfq4ORDouEHCcRd0czw=; b=oCqs0qHkP0fvGw
+	7r2MFfcsNfXSwGydPxRW0mkpcXDP4TPZEkh4TNnRthUY35YyROrzzOtfAD/A4noaByA5aAJzTLHm8
+	n0yJRfZ8ES4Gqr8mb2qRCUXmaEYFH1HbghEiE50Vs7h4AciHjpyxmrQEmTLRXNmoJOKzf8Efhuu9a
+	xHQP0fN9dZ3CP/VBZfgpVJDktx58PWnOUmK0XEFCqoOHFd0SYbBZu8GJ2j1Lf/SYPBkLuSM2192uW
+	opal066eB0LS47JRzQHwL9pV68Fh/qkgVpTCcOyWYwQ19zjmU55bsXK/WDzvKsLLL4m9F7412p9lN
+	kpgrkaep3Zw47CSLr7sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htT4p-0005ze-JY; Fri, 02 Aug 2019 08:38:15 +0000
-Received: from segapp02.wistron.com ([103.200.3.19] helo=segapp01.wistron.com)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1htT4V-0005yw-66
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 08:37:58 +0000
-Received: from EXCHAPP02.whq.wistron (unverified [10.37.38.25]) by 
- TWNHUMSW2.wistron.com (Clearswift SMTPRS 5.6.0) with ESMTP id 
- <Td95f9a67f1c0a8167019ec@TWNHUMSW2.wistron.com>; Fri, 2 Aug 2019 
- 16:37:37 +0800
-Received: from EXCHAPP02.whq.wistron (10.37.38.25) by EXCHAPP02.whq.wistron 
- (10.37.38.25) with Microsoft SMTP Server 
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 
- 15.1.1713.5; Fri, 2 Aug 2019 16:37:37 +0800
-Received: from gitserver.wistron.com (10.37.38.233) by EXCHAPP02.whq.wistron 
- (10.37.38.25) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Fri, 2 Aug 2019 16:37:37 +0800
-From: Ben Pai <Ben_Pai@wistron.com>
-To: <robh+dt@kernel.org>, <mark.rutland@arm.com>, <joel@jms.id.au>, 
- <andrew@aj.id.au>, <devicetree@vger.kernel.org>, 
- <linux-arm-kernel@lists.infradead.org>, 
- <linux-aspeed@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v4 4/4] ARM: dts: aspeed: Add Mihawk BMC platform
-Date: Fri, 2 Aug 2019 16:37:36 +0800
-Message-ID: <20190802083736.26783-1-Ben_Pai@wistron.com>
-X-Mailer: git-send-email 2.17.1
+	id 1htT5j-0006Fc-Le; Fri, 02 Aug 2019 08:39:11 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1htT5T-0006EF-1m
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 08:38:57 +0000
+Received: by mail-wr1-x444.google.com with SMTP id f9so76260258wre.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 02 Aug 2019 01:38:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+iXBn34HynqrHicAiwBa6v98yy2VQgCDtn1EBQNd1fE=;
+ b=lDaGPq2aIDC3X6y0L4RlVBc9UtQzyaCH7c4RyIw4+kQ3CeROdzOd1ALnm+8Wl2ImMA
+ LuUoWqB6hawiSQ9+28zvk1/4aytgqVeQ+EoFGVzlp8oshTK6P7s2EkVP2w2DpC8YLTGJ
+ tHvwNjgv8Hq0QI2QRsLR/tMidQ7KiCYfzNx5A=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+iXBn34HynqrHicAiwBa6v98yy2VQgCDtn1EBQNd1fE=;
+ b=tj9m9eOUjIT1R1muR0qqdg6v5vg+qbsGz4JCjvrru2dezPgKlv9TBzeXhY6d0Cqoyx
+ Sj0VgWAQ1elhuxUZIBKH4OrXB+wFlZ0M38fTSqm9M5MpM9zaWSFty1A3ZyfctSlJmG0f
+ +rarUQw4w1XL10ILHIVAIjfhba0FDZMJiW0/cXM7rKfDI3TlPn3lb54fPf6+qynTWUhB
+ w0vh3PAniSmrNW8iAgBtGZBlhBguuO7+Y0fgrbxJKnOCAS2MoTQxXQKwGty9sPMmlNNF
+ Hzl0p74dX/0NsfvwTS90nq0pkazkwNa7amtLo0zxcVw7UDiW7si3zfs3qa3LLQAhoBDO
+ ZxSQ==
+X-Gm-Message-State: APjAAAX/TZKjkyGJ3jT7d/OOcUiDcVbMFmqXh+nb+i+SlKAQB8rxrtLt
+ 8Mhgai0ewS7kB3zTYELaq0RjXQ3ZG1jvVj7BcNwCpw==
+X-Google-Smtp-Source: APXvYqzPTfFfr4+PBZpi0wN6zYi3eiaD5NksRlFCZ759oq+VHHsiaYTeww6nlG/OMMGpLv/2X6CZWqDhh6i4/Dk99e4=
+X-Received: by 2002:adf:f050:: with SMTP id t16mr137018637wro.99.1564735132710; 
+ Fri, 02 Aug 2019 01:38:52 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 73961D4D5DCCFBCB0C08ADEB4FBBF62D61200ECD08412BFCD63B584D9DF9CF762000:8
+References: <20190625144930.5hegt6bkzqzykjid@flea>
+ <CAMty3ZCmj0Rz7MMhLqihsvLQi+1CHf0fAoJQ4QN65xB-bwxaJw@mail.gmail.com>
+ <20190703114933.u3x4ej3v7ocewvif@flea>
+ <CAOf5uw=ZEvMV1hFQE986rNG_ctpReGbjbZzv0m=OzKPdBh57uQ@mail.gmail.com>
+ <20190711100100.cty3s6rs3w27low6@flea>
+ <CAOf5uw=3fiMuhcj3kDtCaGNTsxHKRrYb79MXZ+yUZtmf0jU10A@mail.gmail.com>
+ <20190720065830.zn3txpyduakywcva@flea>
+ <CAMty3ZDE1xiNgHVLihH378dY5szzkr14V-fwLZdvPs12tY+G1A@mail.gmail.com>
+ <20190720093202.6fn6xmhvsgawscnu@flea>
+ <CAMty3ZDpOA1mD77t3RB6hEG7o3+ws8y64m1DU8=3HdZ4zy4AUw@mail.gmail.com>
+ <20190724090513.vqnlmya3nqkl6pmu@flea>
+ <CAOf5uwkvCs62zHcUoFuJwau_ZZFdnVf8ua6JY_wzUb9m8rLTTw@mail.gmail.com>
+In-Reply-To: <CAOf5uwkvCs62zHcUoFuJwau_ZZFdnVf8ua6JY_wzUb9m8rLTTw@mail.gmail.com>
+From: Michael Nazzareno Trimarchi <michael@amarulasolutions.com>
+Date: Fri, 2 Aug 2019 10:38:40 +0200
+Message-ID: <CAOf5uwmOQx-GX1p_R+kj6BsZsiEBnqiaDYEBw4oD2c74XT0vDQ@mail.gmail.com>
+Subject: Re: [PATCH v6 11/22] clk: sunxi-ng: a64: Add minimum rate for PLL_MIPI
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_013755_806002_6E4B030E 
-X-CRM114-Status: GOOD (  13.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190802_013855_531020_165550E1 
+X-CRM114-Status: GOOD (  49.11  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [103.200.3.19 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,967 +99,304 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ben Pai <Ben_Pai@wistron.com>, wangat@tw.ibm.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ Michael Turquette <mturquette@baylibre.com>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Mihawk BMC is an ASPEED ast2500 based BMC that is part of an
-OpenPower Power9 server.
+Hi Maxime
 
-Signed-off-by: Ben Pai <Ben_Pai@wistron.com>
----
- arch/arm/boot/dts/Makefile                  |   1 +
- arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts | 918 ++++++++++++++++++++
- 2 files changed, 919 insertions(+)
- create mode 100755 arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
+On Mon, Jul 29, 2019 at 8:59 AM Michael Nazzareno Trimarchi
+<michael@amarulasolutions.com> wrote:
+>
+> Hi
+>
+> On Wed, Jul 24, 2019 at 11:05 AM Maxime Ripard
+> <maxime.ripard@bootlin.com> wrote:
+> >
+> > On Mon, Jul 22, 2019 at 03:51:04PM +0530, Jagan Teki wrote:
+> > > Hi Maxime,
+> > >
+> > > On Sat, Jul 20, 2019 at 3:02 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > >
+> > > > On Sat, Jul 20, 2019 at 12:46:27PM +0530, Jagan Teki wrote:
+> > > > > On Sat, Jul 20, 2019 at 12:28 PM Maxime Ripard
+> > > > > <maxime.ripard@bootlin.com> wrote:
+> > > > > >
+> > > > > > On Thu, Jul 11, 2019 at 07:43:16PM +0200, Michael Nazzareno Trimarchi wrote:
+> > > > > > > > > tcon-pixel clock is the rate that you want to achive on display side
+> > > > > > > > > and if you have 4 lanes 32bit or lanes and different bit number that
+> > > > > > > > > you need to have a clock that is able to put outside bits and speed
+> > > > > > > > > equal to pixel-clock * bits / lanes. so If you want a pixel-clock of
+> > > > > > > > > 40 mhz and you have 32bits and 4 lanes you need to have a clock of
+> > > > > > > > > 40 * 32 / 4 in no-burst mode. I think that this is done but most of
+> > > > > > > > > the display.
+> > > > > > > >
+> > > > > > > > So this is what the issue is then?
+> > > > > > > >
+> > > > > > > > This one does make sense, and you should just change the rate in the
+> > > > > > > > call to clk_set_rate in sun4i_tcon0_mode_set_cpu.
+> > > > > > > >
+> > > > > > > > I'm still wondering why that hasn't been brought up in either the
+> > > > > > > > discussion or the commit log before though.
+> > > > > > > >
+> > > > > > > Something like this?
+> > > > > > >
+> > > > > > > drivers/gpu/drm/sun4i/sun4i_tcon.c     | 20 +++++++++++---------
+> > > > > > >  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h |  2 --
+> > > > > > >  2 files changed, 11 insertions(+), 11 deletions(-)
+> > > > > > >
+> > > > > > > diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > > b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > > index 64c43ee6bd92..42560d5c327c 100644
+> > > > > > > --- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > > +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > > @@ -263,10 +263,11 @@ static int sun4i_tcon_get_clk_delay(const struct
+> > > > > > > drm_display_mode *mode,
+> > > > > > >  }
+> > > > > > >
+> > > > > > >  static void sun4i_tcon0_mode_set_common(struct sun4i_tcon *tcon,
+> > > > > > > -                                       const struct drm_display_mode *mode)
+> > > > > > > +                                       const struct drm_display_mode *mode,
+> > > > > > > +                                       u32 tcon_mul)
+> > > > > > >  {
+> > > > > > >         /* Configure the dot clock */
+> > > > > > > -       clk_set_rate(tcon->dclk, mode->crtc_clock * 1000);
+> > > > > > > +       clk_set_rate(tcon->dclk, mode->crtc_clock * tcon_mul * 1000);
+> > > > > > >
+> > > > > > >         /* Set the resolution */
+> > > > > > >         regmap_write(tcon->regs, SUN4I_TCON0_BASIC0_REG,
+> > > > > > > @@ -335,12 +336,13 @@ static void sun4i_tcon0_mode_set_cpu(struct
+> > > > > > > sun4i_tcon *tcon,
+> > > > > > >         u8 bpp = mipi_dsi_pixel_format_to_bpp(device->format);
+> > > > > > >         u8 lanes = device->lanes;
+> > > > > > >         u32 block_space, start_delay;
+> > > > > > > -       u32 tcon_div;
+> > > > > > > +       u32 tcon_div, tcon_mul;
+> > > > > > >
+> > > > > > > -       tcon->dclk_min_div = SUN6I_DSI_TCON_DIV;
+> > > > > > > -       tcon->dclk_max_div = SUN6I_DSI_TCON_DIV;
+> > > > > > > +       tcon->dclk_min_div = 4;
+> > > > > > > +       tcon->dclk_max_div = 127;
+> > > > > > >
+> > > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
+> > > > > > > +       tcon_mul = bpp / lanes;
+> > > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, tcon_mul);
+> > > > > > >
+> > > > > > >         /* Set dithering if needed */
+> > > > > > >         sun4i_tcon0_mode_set_dithering(tcon, sun4i_tcon_get_connector(encoder));
+> > > > > > > @@ -366,7 +368,7 @@ static void sun4i_tcon0_mode_set_cpu(struct
+> > > > > > > sun4i_tcon *tcon,
+> > > > > > >          */
+> > > > > > >         regmap_read(tcon->regs, SUN4I_TCON0_DCLK_REG, &tcon_div);
+> > > > > > >         tcon_div &= GENMASK(6, 0);
+> > > > > > > -       block_space = mode->htotal * bpp / (tcon_div * lanes);
+> > > > > > > +       block_space = mode->htotal * tcon_div * tcon_mul;
+> > > > > > >         block_space -= mode->hdisplay + 40;
+> > > > > > >
+> > > > > > >         regmap_write(tcon->regs, SUN4I_TCON0_CPU_TRI0_REG,
+> > > > > > > @@ -408,7 +410,7 @@ static void sun4i_tcon0_mode_set_lvds(struct
+> > > > > > > sun4i_tcon *tcon,
+> > > > > > >
+> > > > > > >         tcon->dclk_min_div = 7;
+> > > > > > >         tcon->dclk_max_div = 7;
+> > > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
+> > > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, 1);
+> > > > > > >
+> > > > > > >         /* Set dithering if needed */
+> > > > > > >         sun4i_tcon0_mode_set_dithering(tcon, sun4i_tcon_get_connector(encoder));
+> > > > > > > @@ -487,7 +489,7 @@ static void sun4i_tcon0_mode_set_rgb(struct
+> > > > > > > sun4i_tcon *tcon,
+> > > > > > >
+> > > > > > >         tcon->dclk_min_div = 6;
+> > > > > > >         tcon->dclk_max_div = 127;
+> > > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
+> > > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, 1);
+> > > > > > >
+> > > > > > >         /* Set dithering if needed */
+> > > > > > >         sun4i_tcon0_mode_set_dithering(tcon, connector);
+> > > > > > > diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > > b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > > index 5c3ad5be0690..a07090579f84 100644
+> > > > > > > --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > > +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > > @@ -13,8 +13,6 @@
+> > > > > > >  #include <drm/drm_encoder.h>
+> > > > > > >  #include <drm/drm_mipi_dsi.h>
+> > > > > > >
+> > > > > > > -#define SUN6I_DSI_TCON_DIV     4
+> > > > > > > -
+> > > > > > >  struct sun6i_dsi {
+> > > > > > >         struct drm_connector    connector;
+> > > > > > >         struct drm_encoder      encoder;
+> > > > > >
+> > > > > > I had more something like this in mind:
+> > > > > > http://code.bulix.org/nlp5a4-803511
+> > > > >
+> > > > > Worth to look at it. was it working on your panel? meanwhile I will check it.
+> > > >
+> > > > I haven't tested it.
+> > > >
+> > > > > We have updated with below change [1], seems working on but is
+> > > > > actually checking the each divider as before start with 4... till 127.
+> > > > >
+> > > > > This new approach, is start looking the best divider from 4.. based on
+> > > > > the idea vs rounded it will ended up best divider like [2]
+> > > >
+> > > > But why?
+> > > >
+> > > > I mean, it's not like it's the first time I'm asking this...
+> > > >
+> > > > If the issue is what Micheal described, then the divider has nothing
+> > > > to do with it. We've had that discussion over and over again.
+> > >
+> > > This is what Michael is mentioned in above mail "tcon-pixel clock is
+> > > the rate that you want to achive on display side and if you have 4
+> > > lanes 32bit or lanes and different bit number that you need to have
+> > > a clock that is able to put outside bits and speed equal to
+> > > pixel-clock * bits / lanes. so If you want a pixel-clock of 40 mhz
+> > > and you have 32bits and 4 lanes you need to have a clock of 40 * 32
+> > > / 4 in no-burst mode. "
+> >
+> > Yeah, so we need to change the clock rate.
+> >
+> > > He is trying to manage the bpp/lanes into dclk_mul (in last mail)
+> > > and it can multiply with pixel clock which is rate argument in
+> > > sun4i_dclk_round_rate.
+> > >
+> > > The solution I have mentioned in dclk_min, max is bpp/lanes also
+> > > multiple rate in dotclock sun4i_dclk_round_rate.
+> > >
+> > > In both cases the overall pll_rate depends on dividers, the one that I
+> > > have on this patch is based on BSP and the Michael one is more generic
+> > > way so-that it can not to touch other functionalities and looping
+> > > dividers to find the best one.
+> > >
+> > > If dclk_min/max is bpp/lanes then dotclock directly using divider 6
+> > > (assuming 24-bit and 4 lanes) and return the pll_rate and divider 6
+> > > associated.
+> > >
+> > > if dclk_mul is bpp/lanes, on Michael new change, the dividers start
+> > > with 4 and end with 127 but the constant ideal rate which rate *
+> > > bpp/lanes but the loop from sun4i_dclk_round_rate computed the divider
+> > > as 6 only, ie what I'm mentioned on the above mail.
+> >
+> > We've been over this a couple of times already.
+> >
+> > The clock is generated like this:
+> >
+> > PLL -> TCON Module Clock -> TCON DCLK
+> >
+> > You want the TCON DCLK to be at the pixel clock rate * bpp /
+> > lanes. Fine, that makes sense.
+> >
+> > Except that the patch you've sent, instead of changing the rate
+> > itself, changes the ratio between the module clock and DCLK.
+> >
+> > And this is where the issue lies. First, from a logical viewpoint, it
+> > doesn't make sense. If you want to change the clock rate, then just do
+> > it. Don't hack around the multipliers trying to fall back to something
+> > that works for you.
+> >
+> > Then, the ratio itself needs to be set to 4. This is the part that
+> > we've discussed way too many times already, but in the Allwinner BSP,
+> > that ratio is hardcoded to 4, and we've had panels that need it at
+> > that value.
+> >
+> > So, what you want to do is to have:
+> >
+> > TCON DCLK = pixel clock * bpp / lanes
+> > TCON Module Clock = DCLK * 4
+> > PLL = Module Clock * Module Clock Divider (which I believe is 1 in most cases)
+>
+>   pll-mipi                       1        1        1   178200000
+>    0     0  50000
+>           tcon0                       2        2        1   178200000
+>         0     0  50000
+>              tcon-pixel-clock         1        1        1    29700000
+>         0     0  50000
+>
+> This is an english problem from my side:
+> tcon-pixel-clock is DCLK
+> tcon0 must be tcon-pixel-clock * bpp / lanes because the logic need to
+> put a bit every cycle.
+>
+> One solution can be:
+> - set_rate_exclusive to tcon0 and calculate as display pixel clock *
+> bpp  / lanes
+> - calculate the tcon-pixel-clock using all divider
+>
+> Problem is that the function that calculate tcon-pixel-clock does not
+> have any constrain on the ideal value. What you are
+> suggesting is not correct in my opinion or I'm not following your
+> suggesstion. What I know is that if we have a pixel-clock
+> of dvi display of 50Mhz and we have 4 lanes 32bit we need a clock in
+> the logic of 400Mhz (this is the ideal throughtput).
+> So tcon-pixel-clock is 50mhz and tcon0 is 400Mhz.
+>
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index eb6de52c1936..cdfe0f43ffd3 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -1275,6 +1275,7 @@ dtb-$(CONFIG_ARCH_ASPEED) += \
- 	aspeed-bmc-lenovo-hr630.dtb \
- 	aspeed-bmc-microsoft-olympus.dtb \
- 	aspeed-bmc-opp-lanyang.dtb \
-+	aspeed-bmc-opp-mihawk.dtb \
- 	aspeed-bmc-opp-palmetto.dtb \
- 	aspeed-bmc-opp-romulus.dtb \
- 	aspeed-bmc-opp-swift.dtb \
-diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts b/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
-new file mode 100755
-index 000000000000..bbf4a4671421
---- /dev/null
-+++ b/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
-@@ -0,0 +1,918 @@
-+/dts-v1/;
-+
-+#include "aspeed-g5.dtsi"
-+#include <dt-bindings/gpio/aspeed-gpio.h>
-+#include <dt-bindings/leds/leds-pca955x.h>
-+
-+/ {
-+	model = "Mihawk BMC";
-+	compatible = "ibm,mihawk-bmc", "aspeed,ast2500";
-+
-+
-+	chosen {
-+		stdout-path = &uart5;
-+		bootargs = "console=ttyS4,115200 earlyprintk";
-+	};
-+
-+	memory@80000000 {
-+		reg = <0x80000000 0x20000000>; /* address and size of RAM(512MB) */
-+	};
-+
-+	reserved-memory {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		ranges;
-+
-+		flash_memory: region@98000000 {
-+			no-map;
-+			reg = <0x98000000 0x04000000>; /* 64M */
-+		};
-+
-+		gfx_memory: framebuffer {
-+			size = <0x01000000>;
-+			alignment = <0x01000000>;
-+			compatible = "shared-dma-pool";
-+			reusable;
-+		};
-+
-+		video_engine_memory: jpegbuffer {
-+			size = <0x02000000>;	/* 32MM */
-+			alignment = <0x01000000>;
-+			compatible = "shared-dma-pool";
-+			reusable;
-+		};
-+	};
-+
-+	gpio-keys {
-+		compatible = "gpio-keys";
-+
-+		air-water {
-+			label = "air-water";
-+			gpios = <&gpio ASPEED_GPIO(F, 6) GPIO_ACTIVE_LOW>;
-+			linux,code = <ASPEED_GPIO(F, 6)>;
-+		};
-+
-+		checkstop {
-+			label = "checkstop";
-+			gpios = <&gpio ASPEED_GPIO(J, 2) GPIO_ACTIVE_LOW>;
-+			linux,code = <ASPEED_GPIO(J, 2)>;
-+		};
-+
-+		ps0-presence {
-+			label = "ps0-presence";
-+			gpios = <&gpio ASPEED_GPIO(Z, 2) GPIO_ACTIVE_LOW>;
-+			linux,code = <ASPEED_GPIO(Z, 2)>;
-+		};
-+
-+		ps1-presence {
-+			label = "ps1-presence";
-+			gpios = <&gpio ASPEED_GPIO(Z, 0) GPIO_ACTIVE_LOW>;
-+			linux,code = <ASPEED_GPIO(Z, 0)>;
-+		};
-+		id-button {
-+			label = "id-button";
-+			gpios = <&gpio ASPEED_GPIO(F, 1) GPIO_ACTIVE_LOW>;
-+			linux,code = <ASPEED_GPIO(F, 1)>;
-+		};
-+	};
-+
-+	gpio-keys-polled {
-+		compatible = "gpio-keys-polled";
-+		poll-interval = <1000>;
-+
-+		fan0-presence {
-+			label = "fan0-presence";
-+			gpios = <&pca9552 9 GPIO_ACTIVE_LOW>;
-+			linux,code = <9>;
-+		};
-+
-+		fan1-presence {
-+			label = "fan1-presence";
-+			gpios = <&pca9552 10 GPIO_ACTIVE_LOW>;
-+			linux,code = <10>;
-+		};
-+
-+		fan2-presence {
-+			label = "fan2-presence";
-+			gpios = <&pca9552 11 GPIO_ACTIVE_LOW>;
-+			linux,code = <11>;
-+		};
-+
-+		fan3-presence {
-+			label = "fan3-presence";
-+			gpios = <&pca9552 12 GPIO_ACTIVE_LOW>;
-+			linux,code = <12>;
-+		};
-+
-+		fan4-presence {
-+			label = "fan4-presence";
-+			gpios = <&pca9552 13 GPIO_ACTIVE_LOW>;
-+			linux,code = <13>;
-+		};
-+
-+		fan5-presence {
-+			label = "fan5-presence";
-+			gpios = <&pca9552 14 GPIO_ACTIVE_LOW>;
-+			linux,code = <14>;
-+		};
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		fault {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&gpio ASPEED_GPIO(AA, 0) GPIO_ACTIVE_LOW>;
-+		};
-+
-+		power {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&gpio ASPEED_GPIO(AA, 1) GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rear-id {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&gpio ASPEED_GPIO(AA, 2) GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rear-g {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&gpio ASPEED_GPIO(AA, 4) GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rear-ok {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&gpio ASPEED_GPIO(Y, 0) GPIO_ACTIVE_LOW>;
-+		};
-+
-+		fan0 {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&pca9552 0 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		fan1 {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&pca9552 1 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		fan2 {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&pca9552 2 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		fan3 {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&pca9552 3 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		fan4 {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&pca9552 4 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		fan5 {
-+			retain-state-shutdown;
-+			default-state = "keep";
-+			gpios = <&pca9552 5 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+
-+	fsi: gpio-fsi {
-+		compatible = "fsi-master-gpio", "fsi-master";
-+		#address-cells = <2>;
-+		#size-cells = <0>;
-+		no-gpio-delays;
-+
-+		clock-gpios = <&gpio ASPEED_GPIO(E, 6) GPIO_ACTIVE_HIGH>;
-+		data-gpios = <&gpio ASPEED_GPIO(E, 7) GPIO_ACTIVE_HIGH>;
-+		mux-gpios = <&gpio ASPEED_GPIO(E, 5) GPIO_ACTIVE_HIGH>;
-+		enable-gpios = <&gpio ASPEED_GPIO(D, 0) GPIO_ACTIVE_HIGH>;
-+		trans-gpios = <&gpio ASPEED_GPIO(R, 2) GPIO_ACTIVE_HIGH>;
-+	};
-+	iio-hwmon-12v {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 0>;
-+	};
-+	
-+	iio-hwmon-5v {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 1>;
-+	};
-+	
-+	iio-hwmon-3v {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 2>;
-+	};
-+		
-+	iio-hwmon-vdd0 {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 3>;
-+	};
-+	
-+	iio-hwmon-vdd1 {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 4>;
-+	};
-+	
-+	iio-hwmon-vcs0 {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 5>;
-+	};
-+	
-+	iio-hwmon-vcs1 {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 6>;
-+	};
-+
-+	iio-hwmon-vdn0 {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 7>;
-+	};
-+	
-+	iio-hwmon-vdn1 {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 8>;
-+	};
-+	
-+	iio-hwmon-vio0 {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 9>;
-+	};
-+	
-+	iio-hwmon-vio1 {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 10>;
-+	};
-+	
-+	iio-hwmon-vddra {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 11>;
-+	};
-+
-+        iio-hwmon-battery {
-+                compatible = "iio-hwmon";
-+                io-channels = <&adc 12>;
-+        };
-+	
-+	iio-hwmon-vddrb {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 13>;
-+	};
-+	
-+	iio-hwmon-vddrc {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 14>;
-+	};
-+	
-+	iio-hwmon-vddrd {
-+		compatible = "iio-hwmon";
-+		io-channels = <&adc 15>;
-+	};
-+};
-+
-+&pwm_tacho {
-+	status = "okay";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pwm0_default &pinctrl_pwm1_default
-+		&pinctrl_pwm2_default &pinctrl_pwm3_default
-+		&pinctrl_pwm4_default &pinctrl_pwm5_default>;
-+
-+	fan@0 {
-+		reg = <0x00>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x00>;
-+	};
-+
-+	fan@1 {
-+		reg = <0x01>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x01>;
-+	};
-+
-+	fan@2 {
-+		reg = <0x02>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x02>;
-+	};
-+
-+	fan@3 {
-+		reg = <0x03>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x03>;
-+	};
-+
-+	fan@4 {
-+		reg = <0x04>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x04>;
-+	};
-+
-+	fan@5 {
-+		reg = <0x05>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x05>;
-+	};
-+
-+	fan@6 {
-+		reg = <0x00>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x06>;
-+	};
-+
-+	fan@7 {
-+		reg = <0x01>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x07>;
-+	};
-+
-+	fan@8 {
-+		reg = <0x02>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x08>;
-+	};
-+
-+	fan@9 {
-+		reg = <0x03>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x09>;
-+	};
-+
-+	fan@10 {
-+		reg = <0x04>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x0a>;
-+	};
-+
-+	fan@11 {
-+		reg = <0x05>;
-+		aspeed,fan-tach-ch = /bits/ 8 <0x0b>;
-+	};
-+};
-+
-+&fmc {
-+	status = "okay";
-+	flash@0 {
-+		status = "okay";
-+		label = "bmc";
-+		m25p,fast-read;
-+		spi-max-frequency = <50000000>;
-+		partitions {
-+			#address-cells = < 1 >;
-+			#size-cells = < 1 >;
-+			compatible = "fixed-partitions";
-+			u-boot@0 {
-+				reg = < 0 0x60000 >;
-+				label = "u-boot";
-+			};
-+			u-boot-env@60000 {
-+				reg = < 0x60000 0x20000 >;
-+				label = "u-boot-env";
-+			};
-+			obmc-ubi@80000 {
-+				reg = < 0x80000 0x1F80000 >;
-+				label = "obmc-ubi";
-+			};
-+		};
-+	};
-+	flash@1 {
-+		status = "okay";
-+		label = "alt-bmc";
-+		m25p,fast-read;
-+		spi-max-frequency = <50000000>;
-+		partitions {
-+			#address-cells = < 1 >;
-+			#size-cells = < 1 >;
-+			compatible = "fixed-partitions";
-+			u-boot@0 {
-+				reg = < 0 0x60000 >;
-+				label = "alt-u-boot";
-+			};
-+			u-boot-env@60000 {
-+				reg = < 0x60000 0x20000 >;
-+				label = "alt-u-boot-env";
-+			};
-+			obmc-ubi@80000 {
-+				reg = < 0x80000 0x1F80000 >;
-+				label = "alt-obmc-ubi";
-+			};
-+		};
-+	};
-+};
-+
-+&spi1 {
-+	status = "okay";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_spi1_default>;
-+
-+	flash@0 {
-+		status = "okay";
-+		label = "pnor";
-+		m25p,fast-read;
-+		spi-max-frequency = <100000000>;
-+	};
-+};
-+
-+&lpc_ctrl {
-+	status = "okay";
-+	memory-region = <&flash_memory>;
-+	flash = <&spi1>;
-+};
-+
-+&uart1 {
-+	/* Rear RS-232 connector */
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_txd1_default
-+			&pinctrl_rxd1_default
-+			&pinctrl_nrts1_default
-+			&pinctrl_ndtr1_default
-+			&pinctrl_ndsr1_default
-+			&pinctrl_ncts1_default
-+			&pinctrl_ndcd1_default
-+			&pinctrl_nri1_default>;
-+};
-+
-+&uart2 {
-+	/* APSS */
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_txd2_default &pinctrl_rxd2_default>;
-+};
-+
-+&uart5 {
-+	status = "okay";
-+};
-+
-+&mac0 {
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_rmii1_default>;
-+	use-ncsi;
-+};
-+
-+&mac1 {
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
-+};
-+
-+&i2c0 {
-+	status = "disabled";
-+};
-+
-+&i2c1 {
-+	status = "disabled";
-+};
-+
-+&i2c2 {
-+	status = "okay";
-+
-+	/* SAMTEC P0 */
-+	/* SAMTEC P1 */
-+	
-+};
-+
-+&i2c3 {
-+	status = "okay";
-+
-+	/* APSS */
-+	/* CPLD */
-+
-+	/* PCA9516 (repeater) ->
-+	 *    CLK Buffer 9FGS9092
-+	 *    CLK Buffer 9DBL0651BKILFT
-+	 *    CLK Buffer 9DBL0651BKILFT
-+	 *    Power Supply 0
-+	 *    Power Supply 1
-+	 *    PCA 9552 LED
-+	 */
-+	 
-+	power-supply@58 {
-+		compatible = "ibm,cffps1";
-+		reg = <0x58>;
-+	};
-+
-+	power-supply@5b {
-+		compatible = "ibm,cffps1";
-+		reg = <0x5b>;
-+	};
-+
-+	pca9552: pca9552@60 {
-+		compatible = "nxp,pca9552";
-+		reg = <0x60>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		gpio-controller;
-+		#gpio-cells = <2>;
-+
-+		gpio@0 {
-+			reg = <0>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@1 {
-+			reg = <1>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@2 {
-+			reg = <2>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@3 {
-+			reg = <3>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@4 {
-+			reg = <4>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@5 {
-+			reg = <5>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@6 {
-+			reg = <6>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@7 {
-+			reg = <7>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@8 {
-+			reg = <8>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@9 {
-+			reg = <9>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@10 {
-+			reg = <10>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@11 {
-+			reg = <11>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@12 {
-+			reg = <12>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@13 {
-+			reg = <13>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@14 {
-+			reg = <14>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+		gpio@15 {
-+			reg = <15>;
-+			type = <PCA955X_TYPE_GPIO>;
-+		};
-+
-+	};
-+
-+};
-+
-+&i2c4 {
-+	status = "okay";
-+
-+	/* CP0 VDD & VCS : IR35221 */
-+	/* CP0 VDN : IR35221 */
-+	/* CP0 VIO : IR38064 */
-+        /* CP0 VDDR : PXM1330 */
-+
-+	ir35221@70 {
-+		compatible = "infineon,ir35221";
-+		reg = <0x70>;
-+	};
-+
-+	ir35221@72 {
-+		compatible = "infineon,ir35221";
-+		reg = <0x72>;
-+	};
-+
-+};
-+
-+&i2c5 {
-+	status = "okay";
-+	
-+	/* CP0 VDD & VCS : IR35221 */
-+	/* CP0 VDN : IR35221 */
-+	/* CP0 VIO : IR38064 */
-+        /* CP0 VDDR : PXM1330 */
-+
-+	ir35221@70 {
-+		compatible = "infineon,ir35221";
-+		reg = <0x70>;
-+	};
-+
-+	ir35221@72 {
-+		compatible = "infineon,ir35221";
-+		reg = <0x72>;
-+	};
-+	
-+};
-+
-+&i2c6 {
-+	status = "okay";
-+	
-+	/* pca9548 -> NVMe1 to 8 */
-+	
-+	pca9548@70 {
-+		compatible = "nxp,pca9548";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <0x70>;
-+	};
-+	
-+};
-+
-+&i2c7 {
-+	status = "okay";
-+	
-+	/* pca9548 -> NVMe9 to 16 */
-+	
-+	pca9548@70 {
-+		compatible = "nxp,pca9548";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <0x70>;
-+	};
-+	
-+};
-+
-+&i2c8 {
-+	status = "okay";
-+
-+	eeprom@50 {
-+		compatible = "atmel,24c64";
-+		reg = <0x50>;
-+	};
-+};
-+
-+&i2c9 {
-+	status = "okay";
-+	
-+	/* pca9545 Riser -> 
-+	* 	PCIe x8  Slot3 
-+	* 	PCIe x16 slot4 
-+	* 	PCIe x8  slot5 
-+	* 	I2C BMC RISER PCA9554
-+	* 	BMC SCL/SDA PCA9554 
-+	* 	PCA9554
-+	*/
-+	
-+	/* pca9545 -> 
-+	* 	PCIe x16 Slot1 
-+	* 	PCIe x8  slot2 
-+	* 	PEX8748 
-+	*/
-+
-+	pca9545riser@70 {
-+		compatible = "nxp,pca9545";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <0x70>;
-+
-+		i2c-mux-idle-disconnect;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+	};
-+	
-+	pca9545@71 {
-+		compatible = "nxp,pca9545";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <0x71>;
-+
-+		i2c-mux-idle-disconnect;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;	
-+	};
-+};
-+
-+&i2c10 {
-+	status = "okay";
-+	
-+	/* pca9545 Riser -> 
-+	* 	PCIe x8  Slot8 
-+	* 	PCIe x16 slot9 
-+	* 	PCIe x8  slot10 
-+	* 	I2C BMC RISER PCA9554
-+	* 	BMC SCL/SDA PCA9554 
-+	* 	PCA9554
-+	*/
-+	
-+	/* pca9545 -> 
-+	* 	PCIe x16 Slot1 
-+	* 	PCIe x8  slot2 
-+	* 	PEX8748 
-+	*/
-+	
-+	pca9545riser@70 {
-+		compatible = "nxp,pca9545";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <0x70>;
-+
-+		i2c-mux-idle-disconnect;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+	};
-+	
-+	pca9545@71 {
-+		compatible = "nxp,pca9545";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <0x71>;
-+
-+		i2c-mux-idle-disconnect;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;	
-+	};
-+};
-+
-+&i2c11 {
-+	status = "okay";
-+	
-+	/* TPM */
-+	/* RTC RX8900CE */
-+	/* FPGA for power sequence */
-+	/* TMP275A */
-+	/* TMP275A */
-+	/* EMC1462 */
-+
-+	tpm@57 {
-+		compatible = "infineon,slb9645tt";
-+		reg = <0x57>;
-+	};
-+	
-+	rtc@32 {
-+		compatible = "epson,rx8900";
-+		reg = <0x32>;
-+	};
-+	
-+	tmp275@48 {
-+		compatible = "ti,tmp275";
-+		reg = <0x48>;
-+	};
-+	
-+	tmp275@49 {
-+		compatible = "ti,tmp275";
-+		reg = <0x49>;
-+	};
-+
-+	/* chip emc1462 use emc1403 driver */
-+	emc1403@4c {
-+        	compatible = "smsc,emc1403";
-+        	reg = <0x4c>;
-+    	};
-+
-+};
-+
-+&i2c12 {
-+	status = "okay";
-+
-+	/* pca9545 ->
-+	*	SAS BP1
-+	*	SAS BP2
-+	*	NVMe BP
-+	*	M.2 riser
-+	*/
-+	
-+	pca9545@70 {
-+		compatible = "nxp,pca9545";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <0x70>;
-+
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+		
-+		i2c@0 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			reg = <0>;
-+			
-+			eeprom@50 {
-+				compatible = "atmel,24c64";
-+				reg = <0x50>;
-+			};
-+		};
-+		
-+		i2c@1 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			reg = <1>;
-+			
-+			eeprom@50 {
-+				compatible = "atmel,24c64";
-+				reg = <0x50>;
-+			};
-+		};
-+		
-+		i2c@2 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			reg = <2>;
-+			
-+			eeprom@50 {
-+				compatible = "atmel,24c64";
-+				reg = <0x50>;
-+			};
-+		};
-+		
-+		i2c@3 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			reg = <3>;
-+			
-+			tmp275@48 {
-+				compatible = "ti,tmp275";
-+				reg = <0x48>;
-+			};
-+		};
-+		
-+	};
-+	
-+};
-+
-+&i2c13 {
-+	status = "okay";
-+	
-+	/* pca9548 ->
-+	*	NVMe BP
-+	*	NVMe HDD17 to 24
-+	*/
-+	
-+	pca9548@70 {
-+		compatible = "nxp,pca9548";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <0x70>;
-+	};	
-+};
-+
-+&vuart {
-+	status = "okay";
-+};
-+
-+&gfx {
-+	status = "okay";
-+	memory-region = <&gfx_memory>;
-+};
-+
-+&adc {
-+	status = "okay";
-+	pinctrl-names = "default";
-+        pinctrl-0 = <&pinctrl_adc0_default
-+                        &pinctrl_adc1_default
-+                        &pinctrl_adc2_default
-+                        &pinctrl_adc3_default
-+                        &pinctrl_adc4_default
-+                        &pinctrl_adc5_default
-+                        &pinctrl_adc6_default
-+                        &pinctrl_adc7_default
-+                        &pinctrl_adc8_default
-+                        &pinctrl_adc9_default
-+                        &pinctrl_adc10_default
-+                        &pinctrl_adc11_default
-+                        &pinctrl_adc12_default
-+                        &pinctrl_adc13_default
-+                        &pinctrl_adc14_default
-+                        &pinctrl_adc15_default>;
-+};
-+
-+&wdt1 {
-+	aspeed,reset-type = "none";
-+	aspeed,external-signal;
-+	aspeed,ext-push-pull;
-+	aspeed,ext-active-high;
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_wdtrst1_default>;
-+};
-+
-+&wdt2 {
-+	aspeed,alt-boot;
-+};
-+
-+&ibt {
-+	status = "okay";
-+};
-+
-+&vhub {
-+	status = "okay";
-+};
-+
-+&video {
-+	status = "okay";
-+	memory-region = <&video_engine_memory>;
-+};
-+
-+#include "ibm-power9-dual.dtsi"
-+
+diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c
+b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+index 94f24c5e2dc5..ffb7906054e5 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
++++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+@@ -338,8 +338,9 @@ static void sun4i_tcon0_mode_set_cpu(struct
+sun4i_tcon *tcon,
+u32 block_space, start_delay;
+u32 tcon_div;
+
+- tcon->dclk_min_div = bpp/lanes;
+- tcon->dclk_max_div = bpp/lanes;
++ tcon->dclk_min_div = 4;
++ tcon->dclk_max_div = 127;
++ clk_set_rate_exclusive(tcon->sclk0, mode->crtc_clock * 1000 * bpp / lanes);
+
+sun4i_tcon0_mode_set_common(tcon, mode);
+
+Something like this on top of jagan proposal
+
+Michael
+
+> Michael
+>
+>
+> >
+> > So you want to increase the PLL. Fortunately for use, this is exactly
+> > what a call to clk_set_rate will end up doing.
+> >
+> > Maxime
+> >
+> > --
+> > Maxime Ripard, Bootlin
+> > Embedded Linux and Kernel engineering
+> > https://bootlin.com
+>
+>
+>
+> --
+> | Michael Nazzareno Trimarchi                     Amarula Solutions BV |
+> | COO  -  Founder                                      Cruquiuskade 47 |
+> | +31(0)851119172                                 Amsterdam 1018 AM NL |
+> |                  [`as] http://www.amarulasolutions.com               |
+
+
+
 -- 
-2.17.1
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------
-This email contains confidential or legally privileged information and is for the sole use of its intended recipient. 
-Any unauthorized review, use, copying or distribution of this email or the content of this email is strictly prohibited.
-If you are not the intended recipient, you may reply to the sender and should delete this e-mail immediately.
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Michael Nazzareno Trimarchi                     Amarula Solutions BV |
+| COO  -  Founder                                      Cruquiuskade 47 |
+| +31(0)851119172                                 Amsterdam 1018 AM NL |
+|                  [`as] http://www.amarulasolutions.com               |
 
 _______________________________________________
 linux-arm-kernel mailing list
