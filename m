@@ -2,45 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DD417F66A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 14:04:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51C107F66E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 14:04:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6PArDPVaBtaw6ZTebWdIziaa3P4D2xZ5pBtcJaJlUa0=; b=bgF
-	9WmeC0utINUECGwP76iw4UPS+Wue3ZmWtgTdGTlevQWB2o28YqMyLvfIPX4cf5o2UgLUhliR5VLri
-	HYfD4PL5cG57xDejDIbss5D081Kc7w0Tc1/amoNGtMd8fCljoCLKoJSA4qbh25iTOqmQ5FmeRIXXE
-	jl/0YqgTiFh5jP1nLu5fQqdgmldOXbEidX2ZIPv1AL7ArOVNDqDgE9UntK+y52cRu/U6jJ8/IOi9A
-	REG6KYTfYwTzyhA6LIlzC0AXuC2pVJGtP7mo5k6HRRLMx9u+KiCBc0IpYar3l+jV2CgirU77RkVza
-	uI7hi9qYkU9XCac+w/KlLQ4XpGzH17w==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=38IyyctwVs3Ee+w4NKxiWWJkcvyEbHm7yzjY9jnuGUo=; b=tJaE/zjRTLshX3rAzO5pmGG/V5
+	rQ4zFiPw8RJJHZfWkypQGlmAglvp0qEImiH/CZbZQePNczU7BZ+wCzMPSvJdWBvT8zJzlIVKtfaKf
+	e6KcARdDLwcm9Su/nodROeWB39Om2RiTQJpm14yp7L6scd6DDyUkHzgBSRfe77Rtt6Kn6BL6iflzL
+	idD/hsLVzBtPI3JFO53Tw9sUEgzoRuTrHexsaaslOOIVU7irCIoSkEeSQxCG60gaRaTIkZdP8CE84
+	/bXuCdSz9cqTO4jmlKS3a2Y3qcB30nZTE0cRYCv4BcJt6SeBrFadDBUe06LwYj3VLjq/Qd3MOjaoU
+	BmQoSewQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htWIJ-0007Vm-OJ; Fri, 02 Aug 2019 12:04:23 +0000
+	id 1htWIa-0007qT-6k; Fri, 02 Aug 2019 12:04:40 +0000
 Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htWIB-0007Sz-VN
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 12:04:18 +0000
+ id 1htWIC-0007TB-Gm
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 12:04:19 +0000
 Received: from ramsan ([84.194.98.4]) by laurent.telenet-ops.be with bizsmtp
- id kC462000205gfCL01C46MU; Fri, 02 Aug 2019 14:04:08 +0200
+ id kC4B2000505gfCL01C4BNB; Fri, 02 Aug 2019 14:04:11 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1htWI1-0002hK-Tm; Fri, 02 Aug 2019 14:04:05 +0200
+ id 1htWI7-0002hR-4B; Fri, 02 Aug 2019 14:04:11 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1htWI1-0000P5-RU; Fri, 02 Aug 2019 14:04:05 +0200
+ id 1htWI7-0000PA-1i; Fri, 02 Aug 2019 14:04:11 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: arm-soc <arm@kernel.org>,
 	arm-soc <soc@kernel.org>
-Subject: [PULL 0/3] Renesas SoC updates for v5.4
-Date: Fri,  2 Aug 2019 14:03:52 +0200
-Message-Id: <20190802120355.1430-1-geert+renesas@glider.be>
+Subject: [PULL 1/3] Renesas ARM64 DT updates for v5.4
+Date: Fri,  2 Aug 2019 14:03:53 +0200
+Message-Id: <20190802120355.1430-2-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190802120355.1430-1-geert+renesas@glider.be>
+References: <20190802120355.1430-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_050416_165756_D7707DE3 
-X-CRM114-Status: UNSURE (   7.42  )
+X-CRM114-CacheID: sfid-20190802_050416_717331_D91902A5 
+X-CRM114-Status: UNSURE (   9.47  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,46 +78,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-	Hi arm-soc folks,
+The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 
-This is my first pull request for the inclusion of Renesas SoC updates
-for v5.4.  As this is also my first pull request for arm-soc, I wanted
-to start with something small.  You can expect more later.
+  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
 
-It consists of 3 parts:
+are available in the Git repository at:
 
-  [PULL 1/3] Renesas ARM64 DT updates for v5.4
+  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm64-dt-for-v5.4-tag1
 
-    - CAN support for the HiHope RZ/G2E board,
-    - BT and WLAN support for the HiHope RZ/G2[MN] boards,
-    - Sound support for RZ/G2M,
-    - Sort nodes in various SoC and board DTSes,
-    - Small fixes and improvements.
+for you to fetch changes up to 0a05b3d7fee511de8a1c9dffc3d86f1df55e1737:
 
-  [PULL 2/3] Renesas driver updates for v5.4
+  arm64: dts: renesas: ulcb: Sort nodes (2019-07-30 11:25:35 +0200)
 
-    - Fix a flexible array member definition in the R-Car SYSC driver.
+----------------------------------------------------------------
+Renesas ARM64 DT updates for v5.4
 
-  [PULL 3/3] Renesas DT binding updates for v5.4
+  - CAN support for the HiHope RZ/G2E board,
+  - BT and WLAN support for the HiHope RZ/G2[MN] boards,
+  - Sound support for RZ/G2M,
+  - Sort nodes in various SoC and board DTSes,
+  - Small fixes and improvements.
 
-    - RZ/G2 updates for the R-Car CAN and CANFD DT bindings.
+----------------------------------------------------------------
+Biju Das (3):
+      arm64: dts: renesas: hihope-common: Add PCA9654 I/O expander
+      arm64: dts: renesas: hihope-common: Add BT support
+      arm64: dts: renesas: hihope-common: Add WLAN support
 
-For now I more or less followed Simon's way of structuring the branches,
-but I'm open for change.  Hence if you have any comments, or suggestions
-for improving the workflow, please let me know.
+Fabrizio Castro (6):
+      arm64: dts: renesas: r8a774c0: Add missing assigned-clocks for CAN[01]
+      arm64: dts: renesas: r8a774a1: Add missing assigned-clocks for CAN[01]
+      arm64: dts: renesas: r8a774a1: Add CANFD support
+      arm64: dts: renesas: hihope-rzg2-ex: Enable CAN interfaces
+      arm64: dts: renesas: r8a774a1: Use extended audio dmac registers
+      arm64: dts: renesas: r8a774a1: Add SSIU support for sound
 
-Thanks for pulling, and for your comments!
+Takeshi Kihara (1):
+      arm64: dts: renesas: r8a77990: Add cpg reset for DU
 
-Gr{oetje,eeting}s,
+Yoshihiro Kaneko (13):
+      arm64: dts: renesas: r8a77995: Add cpg reset for DU
+      arm64: dts: renesas: r8a77995: Fix register range of display node
+      arm64: dts: renesas: r8a7795: Sort nodes
+      arm64: dts: renesas: r8a7795-es1: Sort nodes
+      arm64: dts: renesas: r8a77965: Sort nodes
+      arm64: dts: renesas: r8a7795-es1: salvator-x: Sort nodes
+      arm64: dts: renesas: r8a7795: salvator-x: Sort nodes
+      arm64: dts: renesas: r8a7795: salvator-xs: Sort nodes
+      arm64: dts: renesas: r8a7796: salvator-x: Sort nodes
+      arm64: dts: renesas: r8a7796: salvator-xs: Sort nodes
+      arm64: dts: renesas: salvator-common: Sort nodes
+      arm64: dts: renesas: ulcb-kf: Sort nodes
+      arm64: dts: renesas: ulcb: Sort nodes
 
-						Geert
-
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-							    -- Linus Torvalds
+ arch/arm64/boot/dts/renesas/hihope-common.dtsi     |  78 ++++++
+ arch/arm64/boot/dts/renesas/hihope-rzg2-ex.dtsi    |  22 ++
+ arch/arm64/boot/dts/renesas/r8a774a1.dtsi          | 282 +++++++++++++++++++--
+ arch/arm64/boot/dts/renesas/r8a774c0.dtsi          |   4 +
+ .../boot/dts/renesas/r8a7795-es1-salvator-x.dts    |  26 +-
+ arch/arm64/boot/dts/renesas/r8a7795-es1.dtsi       | 223 ++++++++--------
+ arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts |  26 +-
+ .../arm64/boot/dts/renesas/r8a7795-salvator-xs.dts |  82 +++---
+ arch/arm64/boot/dts/renesas/r8a7795.dtsi           | 154 +++++------
+ arch/arm64/boot/dts/renesas/r8a7796-salvator-x.dts |  10 +-
+ .../arm64/boot/dts/renesas/r8a7796-salvator-xs.dts |  10 +-
+ arch/arm64/boot/dts/renesas/r8a77965.dtsi          |  48 ++--
+ arch/arm64/boot/dts/renesas/r8a77990.dtsi          |   2 +
+ arch/arm64/boot/dts/renesas/r8a77995.dtsi          |   4 +-
+ arch/arm64/boot/dts/renesas/salvator-common.dtsi   |  72 +++---
+ arch/arm64/boot/dts/renesas/ulcb-kf.dtsi           | 226 ++++++++---------
+ arch/arm64/boot/dts/renesas/ulcb.dtsi              |  10 +-
+ 17 files changed, 814 insertions(+), 465 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
