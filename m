@@ -2,52 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC9437F020
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 11:13:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D0B77F04A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 11:19:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-ID:References:
+	In-Reply-To:From:To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EKW/XUJI+7MAFI6nV8n1e9IKe1ZcTVkTpmQvnhN5YaQ=; b=n/VKrfZ4PwToKe
-	5+DiVbax+9qZu50/4X9w14xJAGDDshxExbdZhWiYGWOnqJeHYnnGb7cEcX7lUybLNxZ+oFHYpwinK
-	Q4iI9NJMSsnW/ZxpiChtZ6huXm/KgIz2TI6yU6/6h5wUnUlC+/GqaxHJtRzE3nzVx34Xmin+jGXNP
-	5UzlK97C3YatWdEgzeBbaMZoD8dSN/8a09IIEpDAWbiZxPuhOTUkHRDL3g3Kj/px4qALxc0NxLWlv
-	GuMpXW5TS8ujgX+8dazmK/NE16pFRd/C4syKuJhYi1IX/wzE54IM9DrqCnKDm4q+2/B9ul538TV98
-	C2As7SeNCFOad/NgAYsg==;
+	List-Owner; bh=cLznR5t1a4HxpG5m5oDc8HiqPPypyR2Bk7Bzu/0jAuk=; b=AmGZZuGitjmI4T
+	AZDg/ivAnGZ+CV3vKzoz5wx4iqkehzPF7q597TF6MGp/dg9jt9bTXdhmCDiTYYSsS9zIAePCWwwhL
+	3dNzPKfd2DdufJVTy7DKK1j5vBhkLn6xLOGSD/ZNgx+lyfGGcJlTtAsWGIrlSVEujYgHFlJ4CYhht
+	mor087M0x9dx0Hgm7C8kpTS3MAab7Hc3q4HOgYn6u+365XOBfgce3rXjFjuRp+vWPxEQ0ETb/h3ox
+	GQxrw5oAfUPqEookQwIWQTAfMJ4N5YiOqahSBBPPVEZJRl/Lpo8W5q7/nA48j5BRj9uKANSFCKy1H
+	5E7ugDRJnBEhY/kbQykQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htTcY-0002PH-1s; Fri, 02 Aug 2019 09:13:06 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1htTj3-0004gk-L1; Fri, 02 Aug 2019 09:19:49 +0000
+Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htTcH-0002Op-Bp; Fri, 02 Aug 2019 09:12:50 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 4990DAFE2;
- Fri,  2 Aug 2019 09:12:47 +0000 (UTC)
-Date: Fri, 2 Aug 2019 11:12:44 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: john.hubbard@gmail.com
-Subject: Re: [PATCH 00/34] put_user_pages(): miscellaneous call sites
-Message-ID: <20190802091244.GD6461@dhcp22.suse.cz>
-References: <20190802022005.5117-1-jhubbard@nvidia.com>
+ id 1htTio-0004eu-Nr; Fri, 02 Aug 2019 09:19:35 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 02 Aug 2019 02:19:33 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,337,1559545200"; d="scan'208";a="178105348"
+Received: from jlahtine-desk.ger.corp.intel.com (HELO localhost)
+ ([10.252.3.11])
+ by orsmga006.jf.intel.com with ESMTP; 02 Aug 2019 02:19:23 -0700
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190802022005.5117-1-jhubbard@nvidia.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+To: Andrew Morton <akpm@linux-foundation.org>, john.hubbard@gmail.com
+From: Joonas Lahtinen <joonas.lahtinen@linux.intel.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+In-Reply-To: <20190802022005.5117-7-jhubbard@nvidia.com>
+References: <20190802022005.5117-1-jhubbard@nvidia.com>
+ <20190802022005.5117-7-jhubbard@nvidia.com>
+Message-ID: <156473756254.19842.12384378926183716632@jlahtine-desk.ger.corp.intel.com>
+User-Agent: alot/0.7
+Subject: Re: [PATCH 06/34] drm/i915: convert put_page() to put_user_page*()
+Date: Fri, 02 Aug 2019 12:19:22 +0300
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_021249_549399_6201CDA8 
-X-CRM114-Status: GOOD (  10.01  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190802_021934_820270_BBA8E60B 
+X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ medium trust [134.134.136.20 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,44 +68,50 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
- Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
- Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
- amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
- devel@lists.orangefs.org, linux-media@vger.kernel.org,
- John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
+ David Airlie <airlied@linux.ie>, Dave Hansen <dave.hansen@linux.intel.com>,
+ Dave Chinner <david@fromorbit.com>, dri-devel@lists.freedesktop.org,
+ linux-mm@kvack.org, sparclinux@vger.kernel.org,
+ Ira Weiny <ira.weiny@intel.com>, ceph-devel@vger.kernel.org,
+ devel@driverdev.osuosl.org, rds-devel@oss.oracle.com,
+ linux-rdma@vger.kernel.org, x86@kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
+ linux-media@vger.kernel.org, John Hubbard <jhubbard@nvidia.com>,
+ intel-gfx@lists.freedesktop.org, Jani Nikula <jani.nikula@linux.intel.com>,
  linux-block@vger.kernel.org,
- =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
- linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
- netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>
+ =?utf-8?b?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ linux-nfs@vger.kernel.org, netdev@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>, linux-xfs@vger.kernel.org,
+ linux-crypto@vger.kernel.org, linux-fsdevel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu 01-08-19 19:19:31, john.hubbard@gmail.com wrote:
-[...]
-> 2) Convert all of the call sites for get_user_pages*(), to
-> invoke put_user_page*(), instead of put_page(). This involves dozens of
-> call sites, and will take some time.
+Quoting john.hubbard@gmail.com (2019-08-02 05:19:37)
+> From: John Hubbard <jhubbard@nvidia.com>
+> 
+> For pages that were retained via get_user_pages*(), release those pages
+> via the new put_user_page*() routines, instead of via put_page() or
+> release_pages().
+> 
+> This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
+> ("mm: introduce put_user_page*(), placeholder versions").
+> 
+> Note that this effectively changes the code's behavior in
+> i915_gem_userptr_put_pages(): it now calls set_page_dirty_lock(),
+> instead of set_page_dirty(). This is probably more accurate.
 
-How do we make sure this is the case and it will remain the case in the
-future? There must be some automagic to enforce/check that. It is simply
-not manageable to do it every now and then because then 3) will simply
-be never safe.
+We've already fixed this in drm-tip where the current code uses
+set_page_dirty_lock().
 
-Have you considered coccinele or some other scripted way to do the
-transition? I have no idea how to deal with future changes that would
-break the balance though.
--- 
-Michal Hocko
-SUSE Labs
+This would conflict with our tree. Rodrigo is handling
+drm-intel-next for 5.4, so you guys want to coordinate how
+to merge.
+
+Regards, Joonas
 
 _______________________________________________
 linux-arm-kernel mailing list
