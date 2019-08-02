@@ -2,82 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5621800E6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 21:26:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFD1380101
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 21:35:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tDfqrbsqbNeny4eFUjmCbUa3ikKE+tsUILO1UM9l6o4=; b=na2fY2shC9n1Mh
-	vNXMUOFfHa1xPKOWly2u7f2h8iBCJGmy1+AAH0wo3TZzJp72bUKek/y9D5zeZ+B2PTIaSteBLUh6K
-	yLkSC8cXqmYu5q4JUipmlTvkqDENY8L4i0K6oGczTG+1thsEd6cSwLpM13PTnxm89A1/HCBmTvKzQ
-	Aznak50Hi85ktEx81uZ7bl6mL38Jt9liaK2yMpjJKeuZ1Fny45YiKbd4W8LRdzhrLcRWkVdOb6V3u
-	o2AxN1loskg2Ais/8beU47ZWEiP///WKTQIWDfbPk+tpW4Dj509DK0cO8qgUzX4KgIJ8sasg2tk1O
-	PxtfXF4qtLB/ci5534Pg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3tku2+Q8k+07T4C3NYvDT/EmmAbvkuktYlC/BVnT25A=; b=Wtpuwi1jmzYbPnqDVQB/VsLTz
+	9keL04Z+4lF6HQjMT3FXJfcshsX5nALa2NVWxjZOaKWzdLTPx1+AgMW+ncvLMWsvtGCcP5ICSM8iV
+	/UFVvU4+MvvqtQelKqm4j4Rx7oG1Hk5KACaOrvlb4r+rC8+na233Fgb4NC2aipAjHTyyKDVDI5nLz
+	I9Gbpij8HObOVKjq72fW+bLPydZHxaBxtVt0i1Ja70Q0lSl1qx8SBbJNlZj8rSCW7zUGJkhqNIBn3
+	ehygKBPRkEHXqbEZ9O16tUka8EIhIJMtAzTkhq4UodBkXilIGtae8JcWK43fq9UrNDPRTSyMIWaEo
+	5fFV9nbjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htdCT-0005vr-1B; Fri, 02 Aug 2019 19:26:49 +0000
-Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
+	id 1htdKT-00085G-5x; Fri, 02 Aug 2019 19:35:05 +0000
+Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htdCD-0005uJ-DD
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 19:26:34 +0000
-Received: by mail-yb1-xb44.google.com with SMTP id s41so5075923ybe.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 02 Aug 2019 12:26:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=oolSjnNy8o69qEXumrcNervgTiZ+0C/a0z2WrugF1/U=;
- b=aobcd8eDORReviFPdWXwJ+owjz07tUDlmFTI8N2UVHjRvHreP3t+H60+aVprbNizpN
- DVp9kUtL4tHn9qZ1XKPX2XWMn2+X7vva5tuYoKXNJIvUQE8qgVSBtEEc+9BLd77TgAle
- 9ugd4NRMK+0DTYvGMi8PGMKCXL62gEqNiCxYBbvWVGEvd85Bk1yR58GuU2AK+YI3/j4T
- Ya7uA2+jqRuqLBOtDwGQj/oXyvmwAIsWbYU++bAVC7r1PUqCnQzZ+//dqKBBp/aGjoRN
- R7AJmQDz+uVBx9kBwjBALruxa0mpEMTTGWoxf63Z/Czq9klDBcDv9sA+JKzqtWnKyicb
- nJRw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=oolSjnNy8o69qEXumrcNervgTiZ+0C/a0z2WrugF1/U=;
- b=JlVLLQRW6WW+UtFkSBWWlFVadXdbz7ln6MlWNLuUgcZhYeueqWxpHBQIEi3T7s7HdK
- nfqroNAvRzkLP4N69nFyUULqR0NEdrSVAe8XUbUzZmM9q7s7SlFR5hcNWvHkAcjtiR8Q
- xu7DnrdIHcnGpg1tAmPNLxklkjPfa0Frj5Goz5dR8dV3HNuiROWfR7OVWQetTvXMIzaf
- iOVPWzzKHIt3ZehItJ9koz/h6ND2+f2eXhy27tTXSMP9H11aVS7A7Qzki7lG+TT2FuTj
- hZPjwV8LamT1IAbhc4KAtRenJpyJOPo56sPgquBCm7P3TlaLn3ZGfScWO8z0g0k8Rdbi
- LREg==
-X-Gm-Message-State: APjAAAUYhfRrwoswHa7rZasIQpHti9rr5dfe7RNQ5oMuDucmE5krtzQX
- OrsIMo9NOh27KoBTauz0JCUbMA==
-X-Google-Smtp-Source: APXvYqyzp76n9T+wWTNjzFV6D8CqVkpC4vTtN8rYlshUPMNLk6fs5ugiybl1QqkrOcbaUwfiGlN7aQ==
-X-Received: by 2002:a25:9209:: with SMTP id b9mr74080808ybo.271.1564773990707; 
- Fri, 02 Aug 2019 12:26:30 -0700 (PDT)
-Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id p141sm17544110ywg.78.2019.08.02.12.26.30
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 02 Aug 2019 12:26:30 -0700 (PDT)
-Date: Fri, 2 Aug 2019 15:26:29 -0400
-From: Sean Paul <sean@poorly.run>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] drm/rockchip: Suspend DP late
-Message-ID: <20190802192629.GX104440@art_vandelay>
-References: <20190802184616.44822-1-dianders@chromium.org>
+ id 1htdKF-00084q-EJ; Fri, 02 Aug 2019 19:34:52 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d44905c0000>; Fri, 02 Aug 2019 12:34:52 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Fri, 02 Aug 2019 12:34:51 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Fri, 02 Aug 2019 12:34:51 -0700
+Received: from [10.2.171.217] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 2 Aug
+ 2019 19:34:50 +0000
+Subject: Re: [PATCH 00/34] put_user_pages(): miscellaneous call sites
+To: Peter Zijlstra <peterz@infradead.org>, <john.hubbard@gmail.com>
+References: <20190802021653.4882-1-jhubbard@nvidia.com>
+ <20190802080554.GD2332@hirez.programming.kicks-ass.net>
+X-Nvconfidentiality: public
+From: John Hubbard <jhubbard@nvidia.com>
+Message-ID: <8968c928-5712-03a9-68df-051f5b58fdbc@nvidia.com>
+Date: Fri, 2 Aug 2019 12:33:13 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190802184616.44822-1-dianders@chromium.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190802080554.GD2332@hirez.programming.kicks-ass.net>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL104.nvidia.com (172.18.146.11) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1564774492; bh=+4YFr8hVqt3rnBZzpE/CDXaE3u2NtyGgeA2+CHyqUUg=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=pA8QugcwnL1HNNctuTXTMAa7CrBYZtv2cc2QzVDHg2S/Xz0x5cf9O8eGtP0C46aN6
+ a197cn16D9E9xYsYwbovYwvjP0hTnTIrSK10+fiYfbToCUN0I9g4iXpjbE6kGTwrAp
+ ncKdQLJTA/SOQtWLtiZt5vxeEAtfkDytTOFqyC79V99rQnUwNH1zBFEyzb+BV4yCcg
+ 0Lb+HCJur/Jv3WTiflqOcCteevFh1AJi/C8c1Ka1hIgLd+uE9NAbY1wcjbuQJmv03/
+ F2ke8dbjLXpL5/tEd8euZ6kSYJfMWxVRqMIbW34EAHrZytttzmbzNNCLzf8Qy6VEOi
+ 6Ny99XF1JiDWQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_122633_501230_58FB40BB 
-X-CRM114-Status: GOOD (  18.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190802_123451_492490_BD90A7D9 
+X-CRM114-Status: GOOD (  11.28  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.143 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -86,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,64 +92,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
- David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, mka@chromium.org, seanpaul@chromium.org,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
+ Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
+ devel@lists.orangefs.org, linux-media@vger.kernel.org,
+ intel-gfx@lists.freedesktop.org, linux-block@vger.kernel.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 02, 2019 at 11:46:16AM -0700, Douglas Anderson wrote:
-> In commit fe64ba5c6323 ("drm/rockchip: Resume DP early") we moved
-> resume to be early but left suspend at its normal time.  This seems
-> like it could be OK, but casues problems if a suspend gets interrupted
-> partway through.  The OS only balances matching suspend/resume levels.
-> ...so if suspend was called then resume will be called.  If suspend
-> late was called then resume early will be called.  ...but if suspend
-> was called resume early might not get called.  This leads to an
-> unbalance in the clock enables / disables.
+On 8/2/19 1:05 AM, Peter Zijlstra wrote:
+> On Thu, Aug 01, 2019 at 07:16:19PM -0700, john.hubbard@gmail.com wrote:
 > 
-> Lets take the simple fix and just move suspend to be late to match.
-> This makes the PM core take proper care in keeping things balanced.
+>> This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
+>> ("mm: introduce put_user_page*(), placeholder versions"). That commit
+>> has an extensive description of the problem and the planned steps to
+>> solve it, but the highlites are:
 > 
-> Fixes: fe64ba5c6323 ("drm/rockchip: Resume DP early")
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+> That is one horridly mangled Changelog there :-/ It looks like it's
+> partially duplicated.
 
-Reviewed-by: Sean Paul <sean@poorly.run>
+Yeah. It took so long to merge that I think I was no longer able to
+actually see the commit description, after N readings. sigh
 
-This should go in -misc-fixes and due to some... administrative reasons... I
-will leave it on the list until Maarten has a chance to ff to -rc4 on Monday.
-I'll apply it then so as to not require a backmerge.
-
-Sean
-
-> ---
 > 
->  drivers/gpu/drm/rockchip/analogix_dp-rockchip.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> Anyway; no objections to any of that, but I just wanted to mention that
+> there are other problems with long term pinning that haven't been
+> mentioned, notably they inhibit compaction.
 > 
-> diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
-> index 7d7cb57410fc..f38f5e113c6b 100644
-> --- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
-> +++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
-> @@ -436,7 +436,7 @@ static int rockchip_dp_resume(struct device *dev)
->  
->  static const struct dev_pm_ops rockchip_dp_pm_ops = {
->  #ifdef CONFIG_PM_SLEEP
-> -	.suspend = rockchip_dp_suspend,
-> +	.suspend_late = rockchip_dp_suspend,
->  	.resume_early = rockchip_dp_resume,
->  #endif
->  };
-> -- 
-> 2.22.0.770.g0f2c4a37fd-goog
+> A long time ago I proposed an interface to mark pages as pinned, such
+> that we could run compaction before we actually did the pinning.
 > 
 
+This is all heading toward marking pages as pinned, so we should finally
+get there.  I'll post the RFC for tracking pinned pages shortly.
+
+
+thanks,
 -- 
-Sean Paul, Software Engineer, Google / Chromium OS
+John Hubbard
+NVIDIA
 
 _______________________________________________
 linux-arm-kernel mailing list
