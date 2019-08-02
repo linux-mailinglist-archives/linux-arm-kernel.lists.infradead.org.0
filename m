@@ -2,65 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 941877EB7C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 06:30:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAF6D7EB8C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 06:37:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3f5/Cy40C9PK2LzGfaKc2RTZbK9n7mul3BR6f4YH2cY=; b=nrTy8gVHnTv052
-	fv9kE3Zw7td1hEGW4iutR+rSKIdkeaGW+OIyO8IlkVpDJDwskeYbV9ctUq4dTRPCq82gGsdKNR4Ls
-	lw6+SWs+iDas8ThvaWK+HJY5qZOdzz2Q6V3YsXp8BVK4Kup8yXYxkdXIJ9rGr3tQ+TwXofM3q1fS5
-	n8BVflYMv0lI6kvv5oMAFQC6KxHL4b1V3S3BCJ25h8KH4KXXuAX/NQlVQdzEpa5aHTqzN0TFqs1iN
-	Jdfdg3q5yFgbsp/YVp/q3GZfhYqv1IbRJxygylCQGfC0qIZKxWryN7w54cSgtQKKuy/zW0P9/HIlM
-	gF8bobhVMgoYiZBgCTCg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/cD9HKHZ8rBf+f1TVutsM90fXkpG9/nHXWObUhmcne8=; b=BjLZYJhk5sRnpV2O07imxGiyu
+	aXD0mtiGywt8XhzjW/h3FvXJukARblQ2L7s+53ZbyVdWTDb32KQ9/jgXstbi+RfzguMfH1xdg4Pw2
+	o4rL09y38C2s1kZFxlxNo6wxjJkhBQFSsx085q5Moo8zxzc2/UhRwbyZbwlouFIulaxiZKZzdf/yo
+	P6cyI4FzZdw4YezUCckYt62dr6xwTjWmkU3If5GHeXQYGA4HI0gnhlEjYB+LaarkaqvhWWd5T+lW4
+	M2RxoecMAFouVlDSfXwvtLmucuUzT/cgBFN3nSxj01vfYciKcUJCIzZzGKW4WQHeB6Vuyp/YvroRL
+	t3M73Dx4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htPCY-0005nF-Ar; Fri, 02 Aug 2019 04:29:58 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1htPJq-000095-Bz; Fri, 02 Aug 2019 04:37:30 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htPCO-0005mu-Hb
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 04:29:50 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ore@pengutronix.de>)
- id 1htPCI-0004kg-U4; Fri, 02 Aug 2019 06:29:42 +0200
-Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ore@pengutronix.de>)
- id 1htPCG-0000hC-To; Fri, 02 Aug 2019 06:29:40 +0200
-Date: Fri, 2 Aug 2019 06:29:40 +0200
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-To: Daniel Baluta <daniel.baluta@gmail.com>
-Subject: Re: [PATCH v3] mailbox: imx: add support for imx v1 mu
-Message-ID: <20190802042940.5rhmrwr3dxona4kr@pengutronix.de>
-References: <1564563107-23736-1-git-send-email-hongxing.zhu@nxp.com>
- <CAEnQRZBJTCMYXwBz9pDVGD+7-gE_Jba-5kwXYC8qOPkEBiVT=g@mail.gmail.com>
+ id 1htPJf-00005e-78; Fri, 02 Aug 2019 04:37:20 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 56E85AD2B;
+ Fri,  2 Aug 2019 04:36:53 +0000 (UTC)
+Subject: Re: [PATCH 20/34] xen: convert put_page() to put_user_page*()
+To: john.hubbard@gmail.com, Andrew Morton <akpm@linux-foundation.org>
+References: <20190802022005.5117-1-jhubbard@nvidia.com>
+ <20190802022005.5117-21-jhubbard@nvidia.com>
+From: Juergen Gross <jgross@suse.com>
+Message-ID: <4471e9dc-a315-42c1-0c3c-55ba4eeeb106@suse.com>
+Date: Fri, 2 Aug 2019 06:36:51 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAEnQRZBJTCMYXwBz9pDVGD+7-gE_Jba-5kwXYC8qOPkEBiVT=g@mail.gmail.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 06:27:45 up 76 days, 10:45, 46 users,  load average: 0.05, 0.03, 0.03
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ore@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20190802022005.5117-21-jhubbard@nvidia.com>
+Content-Language: de-DE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_212948_588075_AF1E6481 
-X-CRM114-Status: GOOD (  11.24  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190801_213719_406004_C7A32744 
+X-CRM114-Status: GOOD (  18.17  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,50 +61,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, jassisinghbrar@gmail.com,
- Richard Zhu <hongxing.zhu@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Boris Ostrovsky <boris.ostrovsky@oracle.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
+ Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
+ devel@lists.orangefs.org, linux-media@vger.kernel.org,
+ John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
+ linux-block@vger.kernel.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 02, 2019 at 06:54:27AM +0300, Daniel Baluta wrote:
-> One more thing. See below:
+On 02.08.19 04:19, john.hubbard@gmail.com wrote:
+> From: John Hubbard <jhubbard@nvidia.com>
 > 
-> On Wed, Jul 31, 2019 at 12:14 PM Richard Zhu <hongxing.zhu@nxp.com> wrote:
+> For pages that were retained via get_user_pages*(), release those pages
+> via the new put_user_page*() routines, instead of via put_page() or
+> release_pages().
 > 
-> <snip>
+> This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
+> ("mm: introduce put_user_page*(), placeholder versions").
 > 
-> > -/* Control Register */
-> > -#define IMX_MU_xCR             0x24
-> >  /* General Purpose Interrupt Enable */
-> >  #define IMX_MU_xCR_GIEn(x)     BIT(28 + (3 - (x)))
-> >  /* Receive Interrupt Enable */
-> > @@ -44,6 +36,13 @@ enum imx_mu_chan_type {
-> >         IMX_MU_TYPE_RXDB,       /* Rx doorbell */
-> >  };
-> >
-> > +struct imx_mu_dcfg {
+> Cc: Boris Ostrovsky <boris.ostrovsky@oracle.com>
+> Cc: Juergen Gross <jgross@suse.com>
+> Cc: xen-devel@lists.xenproject.org
+> Signed-off-by: John Hubbard <jhubbard@nvidia.com>
+> ---
+>   drivers/xen/gntdev.c  | 5 +----
+>   drivers/xen/privcmd.c | 7 +------
+>   2 files changed, 2 insertions(+), 10 deletions(-)
 > 
-> Can you rename this into imx_mu_regs ?
+> diff --git a/drivers/xen/gntdev.c b/drivers/xen/gntdev.c
+> index 4c339c7e66e5..2586b3df2bb6 100644
+> --- a/drivers/xen/gntdev.c
+> +++ b/drivers/xen/gntdev.c
+> @@ -864,10 +864,7 @@ static int gntdev_get_page(struct gntdev_copy_batch *batch, void __user *virt,
+>   
+>   static void gntdev_put_pages(struct gntdev_copy_batch *batch)
+>   {
+> -	unsigned int i;
+> -
+> -	for (i = 0; i < batch->nr_pages; i++)
+> -		put_page(batch->pages[i]);
+> +	put_user_pages(batch->pages, batch->nr_pages);
+>   	batch->nr_pages = 0;
+>   }
+>   
+> diff --git a/drivers/xen/privcmd.c b/drivers/xen/privcmd.c
+> index 2f5ce7230a43..29e461dbee2d 100644
+> --- a/drivers/xen/privcmd.c
+> +++ b/drivers/xen/privcmd.c
+> @@ -611,15 +611,10 @@ static int lock_pages(
+>   
+>   static void unlock_pages(struct page *pages[], unsigned int nr_pages)
+>   {
+> -	unsigned int i;
+> -
+>   	if (!pages)
+>   		return;
+>   
+> -	for (i = 0; i < nr_pages; i++) {
+> -		if (pages[i])
+> -			put_page(pages[i]);
+> -	}
+> +	put_user_pages(pages, nr_pages);
 
-I decided not blame this part. Otherwise adding other type of quirks
-will lead to more refactoring work.
+You are not handling the case where pages[i] is NULL here. Or am I
+missing a pending patch to put_user_pages() here?
 
-> > +       u32     xTR[4];         /* Transmit Registers */
-> > +       u32     xRR[4];         /* Receive Registers */
-> > +       u32     xSR;            /* Status Register */
-> > +       u32     xCR;            /* Control Register */
-> > +};
-> 
 
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Juergen
 
 _______________________________________________
 linux-arm-kernel mailing list
