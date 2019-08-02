@@ -2,148 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 874CF7EC22
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 07:31:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89F787EC2C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 07:40:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MHtyul5G/hGm+ZG67P8U2OJiAy2+BILpQ8DtM/4daTM=; b=fCK+dwlRR0R/ux
-	RVQ+AmrvNHzJUqhin5nnTKOLhI0cKW7zV050VNU44HL+veC7raTrGVc64/0hoJMA6tt+s2dvcVWxp
-	EGbuF8AdD2qB7DY8UzSv2afGbPZ25ORBkiyy6Td1tcSWRXLzaGRwT4DM/pV7qfDLos8vtColn4uMW
-	4vimluoYZLTQRaMfpsYHpfAXMeTSYgQktg52UZfIKWWfh1eJi/CYNNjeOAY9+YTVY8bz7QlLhFMxA
-	QlYVJwzKaR7Uy+RbbLxw4i/STSlwTOg90r3RglAhF6pBpsIWvPu8k08mW2hwk8RPRyYogS3G1H7qG
-	VttZIi4W50X5fdHimyUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VU8suEZsPrZJoF3Jd1dLzMO0m+PC5qtDcFTwXHYvQ88=; b=QFnv/oFNa85vLQ
+	N64c77nZEFwPYRxWmidLLT5S3UIYVukcXmHquJ0KvQBzlzW7dWDyQg/NBfxqyd+FgWIx/oUdo/66N
+	XDNXLdgEXGEnfhA0uTUFM0e8r1r4Gx6RIl19kcqFJxC0Mv+RyfXP7WpB+D9ugWkF64dXC19IyvgBZ
+	mZnMckwroLD+k+dB5nfgss9rm4wzndt0lm2KN03rS59uPTaH6cTji5Ec5NLUBepNxXeYuRkeg996X
+	TD9wLOFD8PuNABewLALaPl8jii5dZDivFlcclZ2OTDZ4UURQAYMHr1dEWkrZ6bqstWb6pqtVy37nJ
+	71Rr3o3K/8hvt9wZ3VcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htQAK-0000S1-Az; Fri, 02 Aug 2019 05:31:44 +0000
-Received: from mx0b-00082601.pphosted.com ([67.231.153.30])
+	id 1htQIz-0003Iw-Ow; Fri, 02 Aug 2019 05:40:41 +0000
+Received: from m9a0002g.houston.softwaregrp.com ([15.124.64.67])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htQA9-0000Re-7S
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 05:31:34 +0000
-Received: from pps.filterd (m0109332.ppops.net [127.0.0.1])
- by mx0a-00082601.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x725TL1C013898; Thu, 1 Aug 2019 22:31:22 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=facebook;
- bh=sWIQ1SpFfTmZzfQT7m1mBmfrN+GCM589kfix2Gg7IJE=;
- b=lRLdnFaO+peEzvPzSehL3BaPNDU9T3BvyPdMmO9sXJu47+0pRp2Kpl7p62/+izDu1Xsb
- U2TnNnFpmkNXZz4irdKr1Hne3iGnTzcZfThYosu3MXa4UxRB4WPzAM4XHjJEmBr4fpoW
- bjr5KFT++W/qEcXevIStV1Fj8Jm00aNVWkY= 
-Received: from maileast.thefacebook.com ([163.114.130.16])
- by mx0a-00082601.pphosted.com with ESMTP id 2u4dfr087j-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
- Thu, 01 Aug 2019 22:31:22 -0700
-Received: from ash-exhub203.TheFacebook.com (2620:10d:c0a8:83::5) by
- ash-exhub104.TheFacebook.com (2620:10d:c0a8:82::d) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 1 Aug 2019 22:31:22 -0700
-Received: from NAM04-BN3-obe.outbound.protection.outlook.com (100.104.31.183)
- by o365-in.thefacebook.com (100.104.36.102) with Microsoft SMTP
- Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Thu, 1 Aug 2019 22:31:21 -0700
+ id 1htQIn-0003Id-RE
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 05:40:31 +0000
+Received: FROM m9a0002g.houston.softwaregrp.com (15.121.0.191) BY
+ m9a0002g.houston.softwaregrp.com WITH ESMTP; 
+ Fri,  2 Aug 2019 05:40:26 +0000
+Received: from M4W0334.microfocus.com (2002:f78:1192::f78:1192) by
+ M9W0068.microfocus.com (2002:f79:bf::f79:bf) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
+ 15.1.1591.10; Fri, 2 Aug 2019 05:38:57 +0000
+Received: from NAM05-BY2-obe.outbound.protection.outlook.com (15.124.8.12) by
+ M4W0334.microfocus.com (15.120.17.146) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
+ 15.1.1591.10 via Frontend Transport; Fri, 2 Aug 2019 05:38:58 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XdzbfjLqzBvG9ijYXKzQXAPbylhC+WKvJDIlBWAYKra2Ol8JoFihsQf/dS4vdZEepzjPa7Ev1MXZgQ1D/X1FzaSrrL8Rv9lEgmGZ7KqU7EiNA5pMXaV+nU/yAlGMco6eKi312s9Jwe8oAIlwxWQYqOz7IEdewkh7thXMztPcadA7fS0ljFDlZSPMi2G30x1JNPydsKriIoB8RDkK0nmFu7RIKylp63UowUd8sO77aOTwlFp520ggQDhGiSKvIRR4rJTUqsIxn5fZsHcOuAmuY8cdL37/hziXSx3flEwqUpzyiZiUn/lCpzbO9EwMUFzWlUDLJmKHo6igmApXl+qBXw==
+ b=nPwSaWkb89TnldbJzamri34EfJ2flnipu86YVpLH4Kc6pvsb2xYHPlkRhYbGNIfuYkhaIlWG6XHvAVLia7gO4pD7mV2QCyEbYBBAEGI9Q1ocVkuUhZfhQIk9LdTMXqKRC89SV8Mmouieg+9TbQGQD0Gpbr90bW1ZCztYQNrf2i4GIis4uhGqWbE+uXBk0rFPjWRpJD0OMIp0i5ikLGzCFaRuHGUfOnwKq5iGrIWmIfC7FmTQn6opcIPkv+vSbXAr6a7WMFNnEXSHDIDDQkzOT55XxSFNOOO08wPTwGqhM1NSbGsirGxhZIkOHnf+1vkLCcwUawN4RPN+9WLljO7iSQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sWIQ1SpFfTmZzfQT7m1mBmfrN+GCM589kfix2Gg7IJE=;
- b=PDAqlmi/ROBVrVFl21s4ptiaWjiac8C/8Co6pD8MBjOAJfVPXsPxlOwPYurl/+Zda40vViZAu5GX2mBrmmgrzoH7gejVplj9/sjNcszcpSntYdTAgDCBTruR8DMjkENtaFLevWO2ypYf7860LHt1cwS17WTSBytkvM2eSlM56+iYHqqhgYtgvnnl3AbnGYfo4qzmODI/JWl8wPEPEd5+h927ya/ODHYRhtMpcJ2rpcVIcze0avuE9JYrqVJUGPuHZQmgX3WHX+8a/lM3thak0o0M6DftKswP2+0zTfcyTLOx2Cb7QHTgj1J3SyWB1YJjvjolVgsMaEqJwLdO2FvueA==
+ bh=Si4+r8o+rP+N8BbH3mwBlBHg1ApzRq7/AOUl2iP1IBU=;
+ b=Js1UWA+LwzosYwtsLYTBWpDVAhtum2ejWsPGmNGpaB4GSZ17KZGJ1xAxwGTNnNv4gbZh33o6K6cD/HjQiw57IHxMFv8Jz/VRENFb9cVmXZhCJhbvozs7CYTfMO1saoNipqNxgcEGnSVFslH1tEHp7tZHDTpo7KeuK2jVfPuntr/qlfNWcog39adgsMLVdjYNnGiRzm4t5cawW1b6oY0XMFsMhAxKuua5i/1sZHT8f7U8lc98I94C8XEN0qjPqgtLAv59jJ8JcdK9FKp8ZuSjV3WsDLAu6XyDcsTsw/h4RpbqJnW+MO0wMcUl2jbhGeGWqOPW35Bg5ClJG6f4l3lXUw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=fb.com;dmarc=pass action=none header.from=fb.com;dkim=pass
- header.d=fb.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.onmicrosoft.com;
- s=selector2-fb-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sWIQ1SpFfTmZzfQT7m1mBmfrN+GCM589kfix2Gg7IJE=;
- b=R/YeC1qJ3fnev+u+TER1aymiocj9R8/qu+ZMntgeR7h4AgiaKZcOR9WDlgXhrr+cSZ1WKu9DNeNspnL8l2cCcYg2zne2EGdWaQZrmc1EoNRS0ExLRr31fLQQjeE4yymymX8yvU5NUDs4z6PKqeqtJXB4qL1gRDP1BtwLnUokJiE=
-Received: from MWHPR15MB1216.namprd15.prod.outlook.com (10.175.2.17) by
- MWHPR15MB1360.namprd15.prod.outlook.com (10.173.228.148) with Microsoft SMTP
+ smtp.mailfrom=suse.com;dmarc=pass action=none header.from=suse.com;dkim=pass
+ header.d=suse.com;arc=none
+Received: from BY5PR18MB3283.namprd18.prod.outlook.com (10.255.139.203) by
+ BY5PR18MB3348.namprd18.prod.outlook.com (10.255.136.15) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2136.17; Fri, 2 Aug 2019 05:31:21 +0000
-Received: from MWHPR15MB1216.namprd15.prod.outlook.com
- ([fe80::c66:6d60:f6e5:773c]) by MWHPR15MB1216.namprd15.prod.outlook.com
- ([fe80::c66:6d60:f6e5:773c%8]) with mapi id 15.20.2136.010; Fri, 2 Aug 2019
- 05:31:21 +0000
-From: Tao Ren <taoren@fb.com>
-To: Joel Stanley <joel@jms.id.au>
-Subject: Re: [PATCH v2] ARM: dts: aspeed: Add Facebook Wedge100 BMC
-Thread-Topic: [PATCH v2] ARM: dts: aspeed: Add Facebook Wedge100 BMC
-Thread-Index: AQHVSOg2lZoVHrZ29U2XlvDXnsufaKbnQZOA//+bUYCAAHbBgP//jDkA
-Date: Fri, 2 Aug 2019 05:31:20 +0000
-Message-ID: <46BFAFC9-4E4B-4974-9381-8A442497529F@fb.com>
-References: <20190802041010.1234178-1-taoren@fb.com>
- <CACPK8XcuwNE3aBrsgn-paTZt-EtF6pc6WwYBQef5xc7157bk2g@mail.gmail.com>
- <606273F4-E021-4AAF-9F59-F363E4FFF92A@fb.com>
- <CACPK8Xc-vjJJ_kbe_KGss+RDMdhRVw-YDj9Cdux8iERSvE0_GQ@mail.gmail.com>
-In-Reply-To: <CACPK8Xc-vjJJ_kbe_KGss+RDMdhRVw-YDj9Cdux8iERSvE0_GQ@mail.gmail.com>
-Accept-Language: en-US
+ 15.20.2136.12; Fri, 2 Aug 2019 05:38:55 +0000
+Received: from BY5PR18MB3283.namprd18.prod.outlook.com
+ ([fe80::b587:8197:fcb2:bcd8]) by BY5PR18MB3283.namprd18.prod.outlook.com
+ ([fe80::b587:8197:fcb2:bcd8%6]) with mapi id 15.20.2136.010; Fri, 2 Aug 2019
+ 05:38:54 +0000
+From: Chester Lin <clin@suse.com>
+To: "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ "akpm@linux-foundation.org" <akpm@linux-foundation.org>, "rppt@linux.ibm.com"
+ <rppt@linux.ibm.com>, "ren_guo@c-sky.com" <ren_guo@c-sky.com>, Juergen Gross
+ <JGross@suse.com>, "geert@linux-m68k.org" <geert@linux-m68k.org>,
+ "mingo@kernel.org" <mingo@kernel.org>
+Subject: [PATCH] efi/arm: fix allocation failure when reserving the kernel base
+Thread-Topic: [PATCH] efi/arm: fix allocation failure when reserving the
+ kernel base
+Thread-Index: AQHVSPSS9nx4lee000qskpi0lgLxmA==
+Date: Fri, 2 Aug 2019 05:38:54 +0000
+Message-ID: <20190802053744.5519-1-clin@suse.com>
+Accept-Language: zh-TW, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-user-agent: Microsoft-MacOutlook/10.1a.0.190609
-x-originating-ip: [2620:10d:c090:180::1:94d1]
+x-clientproxiedby: DB6PR1001CA0016.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:4:b7::26) To BY5PR18MB3283.namprd18.prod.outlook.com
+ (2603:10b6:a03:196::11)
+authentication-results: spf=none (sender IP is ) smtp.mailfrom=clin@suse.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.22.0
+x-originating-ip: [202.47.205.198]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 37fa3f33-d4b8-4fff-c7d4-08d7170aa6d3
+x-ms-office365-filtering-correlation-id: 2c4329d6-772e-40f8-00ab-08d7170bb4f0
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:MWHPR15MB1360; 
-x-ms-traffictypediagnostic: MWHPR15MB1360:
-x-microsoft-antispam-prvs: <MWHPR15MB13606F9365264D308B1EE53EB2D90@MWHPR15MB1360.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
+ SRVR:BY5PR18MB3348; 
+x-ms-traffictypediagnostic: BY5PR18MB3348:
+x-microsoft-antispam-prvs: <BY5PR18MB3348CA15D936C66D68C653C3ADD90@BY5PR18MB3348.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 011787B9DD
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(346002)(396003)(39860400002)(376002)(366004)(136003)(47680400002)(199004)(189003)(99286004)(7736002)(305945005)(5660300002)(54906003)(316002)(66446008)(558084003)(6506007)(186003)(64756008)(66556008)(66476007)(53546011)(86362001)(446003)(11346002)(46003)(8936002)(2616005)(476003)(486006)(58126008)(76176011)(66946007)(81156014)(102836004)(81166006)(8676002)(33656002)(256004)(6246003)(68736007)(4326008)(53936002)(71190400001)(71200400001)(6916009)(6512007)(36756003)(6116002)(6486002)(6436002)(76116006)(14454004)(229853002)(478600001)(25786009)(2906002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR15MB1360;
- H:MWHPR15MB1216.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10019020)(4636009)(376002)(396003)(136003)(366004)(39860400002)(346002)(199004)(189003)(1076003)(110136005)(316002)(54906003)(71200400001)(71190400001)(14444005)(256004)(7416002)(2616005)(476003)(486006)(2501003)(99286004)(107886003)(52116002)(6116002)(3846002)(2201001)(53936002)(5660300002)(6436002)(6512007)(66946007)(66476007)(66446008)(2906002)(26005)(64756008)(386003)(4326008)(6506007)(25786009)(102836004)(68736007)(66556008)(6486002)(66066001)(186003)(8936002)(14454004)(8676002)(81166006)(36756003)(81156014)(478600001)(86362001)(305945005)(7736002)(50226002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BY5PR18MB3348;
+ H:BY5PR18MB3283.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: fb.com does not designate
+received-spf: None (protection.outlook.com: suse.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: ALrAZf0IUbVF9MsTR6U8ckx7OR55iz6N1bz/8kBq0rqpksauY52oBCNYxzNMdzPFU0zPX2LvLy+bfutKKSmTKUhmm8l2WOfdSRhrBdYlIwJNVcgQChh5WG7DU48bxps0wc9wwHG1d0+7CK/OVKaxSqNZrk2NUl3OPcDxBfkb0fipDmDp1iE3BmQ9gEbK79/UM/Ckmtn3uF8mUf57YIjRCSSz+0WzvGM4KG2lVOdSzpf+IdP1pNTrujOB3JX/z6TVIY/sJ3i+mIt8/pIz+28f3HOZc6O8R5Y2ecTCgRP1YBZ0yYdVEjPgvHIdaO3wwXq09/tVgZDiaWr87tYyEzLTn2XJ93Oet+SPIW1mmNBAhVhFdWnx7SFs32Ub1hHPD+9qvIRdSMCTc3V5iDQIWxv/cSWQcXq21vctjv4n44y+9/0=
-Content-ID: <F20E613B6D68AE4BBE4A8AA585868813@namprd15.prod.outlook.com>
+x-microsoft-antispam-message-info: 0fZkyP2e/qQuskWnLqlulfMsrGtMbYBdpe9c5aA1IOKBmwuZSXQManj7afFaIkT8D4NyAfG4zmKCtuDId/tSgqJBXbABrVC+sCQ8tAYhA0rK4D2vTW7VISG2G3nPqet8HSXB4T2Zc/Gb6LM5QOyHsVpF4bZABoAwmDyYbbzmxGtsauod0R6DdirIOu+ie6Kw6NbuJgNXDrRCQI0bxT1iLQIKbxal75LK7c0OwKiIAoPq95P5/Im6ij2wkvgYAgwB6SZvCMv4tGajASHpCNrUq+obnuIQO4Jj2m5BisfCurnQ/6D/YuOt1DmEdzBcq99A8sGaNPex3kZ2RE6fEvO0Y/ZY0FlNcm2xl4GNZ/6TB03Kd6nHrg9sDM+zwkUSJwzCzQfenuL4BLdUYsaexmsCL12YOj9h+uM34NW3Xmzup1w=
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 37fa3f33-d4b8-4fff-c7d4-08d7170aa6d3
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Aug 2019 05:31:20.9561 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2c4329d6-772e-40f8-00ab-08d7170bb4f0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Aug 2019 05:38:54.8378 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 8ae927fe-1255-47a7-a2af-5f3a069daaa2
+X-MS-Exchange-CrossTenant-id: 856b813c-16e5-49a5-85ec-6f081e13b527
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: taoren@fb.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR15MB1360
-X-OriginatorOrg: fb.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-02_03:, , signatures=0
-X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=765 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1908020058
-X-FB-Internal: deliver
+X-MS-Exchange-CrossTenant-userprincipalname: clin@suse.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR18MB3348
+X-OriginatorOrg: suse.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_223133_396288_95786F91 
-X-CRM114-Status: GOOD (  12.06  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190801_224029_987197_7A66B052 
+X-CRM114-Status: GOOD (  18.75  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.153.30 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [15.124.64.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -155,27 +128,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- Andrew Jeffery <andrew@aj.id.au>, OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Joey Lee <JLee@suse.com>,
+ "linux-efi@vger.kernel.org" <linux-efi@vger.kernel.org>,
+ "guillaume.gardet@arm.com" <guillaume.gardet@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Chester Lin <clin@suse.com>, Gary Lin <GLin@suse.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/1/19, 10:26 PM, "Joel Stanley" <joel@jms.id.au> wrote:
+In some cases the arm32 efistub could fail to allocate memory for
+uncompressed kernel. For example, we got the following error message when
+verifying EFI stub on Raspberry Pi-2 [kernel-5.2.1 + grub-2.04] :
 
->  I've applied both of these to the aspeed tree for 5.4.
+  EFI stub: Booting Linux Kernel...
+  EFI stub: ERROR: Unable to allocate memory for uncompressed kernel.
+  EFI stub: ERROR: Failed to relocate kernel
 
-Thank you Joel.
+After checking the EFI memory map we found that the first page [0 - 0xfff]
+had been reserved by Raspberry Pi-2's firmware, and the efistub tried to
+set the dram base at 0, which was actually in a reserved region.
 
-Cheers,
+  grub> lsefimmap
+  Type      Physical start  - end             #Pages        Size Attributes
+  reserved  0000000000000000-0000000000000fff 00000001      4KiB WB
+  conv-mem  0000000000001000-0000000007ef5fff 00007ef5 130004KiB WB
+  RT-data   0000000007ef6000-0000000007f09fff 00000014     80KiB RT WB
+  conv-mem  0000000007f0a000-000000002d871fff 00025968 615840KiB WB
+  .....
 
-Tao
+To avoid a reserved address, we have to ignore the memory regions which are
+marked as EFI_RESERVED_TYPE, and only conventional memory regions can be
+chosen. If the region before the kernel base is unaligned, it will be
+marked as EFI_RESERVED_TYPE and let kernel ignore it so that memblock_limit
+will not be sticked with a very low address such as 0x1000.
+
+Signed-off-by: Chester Lin <clin@suse.com>
+---
+ arch/arm/mm/mmu.c                         |  3 ++
+ drivers/firmware/efi/libstub/arm32-stub.c | 43 ++++++++++++++++++-----
+ 2 files changed, 37 insertions(+), 9 deletions(-)
+
+diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
+index f3ce34113f89..909b11ba48d8 100644
+--- a/arch/arm/mm/mmu.c
++++ b/arch/arm/mm/mmu.c
+@@ -1184,6 +1184,9 @@ void __init adjust_lowmem_bounds(void)
+ 		phys_addr_t block_start = reg->base;
+ 		phys_addr_t block_end = reg->base + reg->size;
+ 
++		if (memblock_is_nomap(reg))
++			continue;
++
+ 		if (reg->base < vmalloc_limit) {
+ 			if (block_end > lowmem_limit)
+ 				/*
+diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
+index e8f7aefb6813..10d33d36df00 100644
+--- a/drivers/firmware/efi/libstub/arm32-stub.c
++++ b/drivers/firmware/efi/libstub/arm32-stub.c
+@@ -128,7 +128,7 @@ static efi_status_t reserve_kernel_base(efi_system_table_t *sys_table_arg,
+ 
+ 	for (l = 0; l < map_size; l += desc_size) {
+ 		efi_memory_desc_t *desc;
+-		u64 start, end;
++		u64 start, end, spare, kernel_base;
+ 
+ 		desc = (void *)memory_map + l;
+ 		start = desc->phys_addr;
+@@ -144,27 +144,52 @@ static efi_status_t reserve_kernel_base(efi_system_table_t *sys_table_arg,
+ 		case EFI_BOOT_SERVICES_DATA:
+ 			/* Ignore types that are released to the OS anyway */
+ 			continue;
+-
++		case EFI_RESERVED_TYPE:
++			/* Ignore reserved regions */
++			continue;
+ 		case EFI_CONVENTIONAL_MEMORY:
+ 			/*
+ 			 * Reserve the intersection between this entry and the
+ 			 * region.
+ 			 */
+ 			start = max(start, (u64)dram_base);
+-			end = min(end, (u64)dram_base + MAX_UNCOMP_KERNEL_SIZE);
++			kernel_base = round_up(start, PMD_SIZE);
++			spare = kernel_base - start;
++			end = min(end, kernel_base + MAX_UNCOMP_KERNEL_SIZE);
++
++			status = efi_call_early(allocate_pages,
++					EFI_ALLOCATE_ADDRESS,
++					EFI_LOADER_DATA,
++					MAX_UNCOMP_KERNEL_SIZE / EFI_PAGE_SIZE,
++					&kernel_base);
++			if (status != EFI_SUCCESS) {
++				pr_efi_err(sys_table_arg,
++					"reserve_kernel_base: alloc failed.\n");
++				goto out;
++			}
++			*reserve_addr = kernel_base;
+ 
++			if (!spare)
++				break;
++			/*
++			 * If there's a gap between start and kernel_base,
++			 * it needs be reserved so that the memblock_limit
++			 * will not fall on a very low address when running
++			 * adjust_lowmem_bounds(), wchich could eventually
++			 * cause CMA reservation issue.
++			 */
+ 			status = efi_call_early(allocate_pages,
+ 						EFI_ALLOCATE_ADDRESS,
+-						EFI_LOADER_DATA,
+-						(end - start) / EFI_PAGE_SIZE,
++						EFI_RESERVED_TYPE,
++						spare / EFI_PAGE_SIZE,
+ 						&start);
+ 			if (status != EFI_SUCCESS) {
+ 				pr_efi_err(sys_table_arg,
+-					"reserve_kernel_base(): alloc failed.\n");
++					"reserve spare-region failed\n");
+ 				goto out;
+ 			}
+-			break;
+ 
++			break;
+ 		case EFI_LOADER_CODE:
+ 		case EFI_LOADER_DATA:
+ 			/*
+@@ -220,7 +245,7 @@ efi_status_t handle_kernel_image(efi_system_table_t *sys_table,
+ 	*image_size = image->image_size;
+ 	status = efi_relocate_kernel(sys_table, image_addr, *image_size,
+ 				     *image_size,
+-				     dram_base + MAX_UNCOMP_KERNEL_SIZE, 0);
++				     *reserve_addr + MAX_UNCOMP_KERNEL_SIZE, 0);
+ 	if (status != EFI_SUCCESS) {
+ 		pr_efi_err(sys_table, "Failed to relocate kernel.\n");
+ 		efi_free(sys_table, *reserve_size, *reserve_addr);
+@@ -233,7 +258,7 @@ efi_status_t handle_kernel_image(efi_system_table_t *sys_table,
+ 	 * in memory. The kernel determines the base of DRAM from the
+ 	 * address at which the zImage is loaded.
+ 	 */
+-	if (*image_addr + *image_size > dram_base + ZIMAGE_OFFSET_LIMIT) {
++	if (*image_addr + *image_size > *reserve_addr + ZIMAGE_OFFSET_LIMIT) {
+ 		pr_efi_err(sys_table, "Failed to relocate kernel, no low memory available.\n");
+ 		efi_free(sys_table, *reserve_size, *reserve_addr);
+ 		*reserve_size = 0;
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
