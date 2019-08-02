@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28E1E7FA60
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 15:32:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78A847FA67
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 15:33:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TET8NtvBeNVRwizMIkoWX+8C9B7El2ZnVmVqgErE4ro=; b=sNg8ytr0JxnCoo
-	Novt4reFCJfwLE/eiyAbpr/PCYEY3cmizM1VHYoMayjDjDxQi6SCpvbZdtqm+Bfz9qfvmZNQEoLLO
-	L8wuR3f+aq+B4pPgl5Ika12nBVy2Vv8aNybcU+4hjMKjv+eMkMIVdRfrhY77GBmASsb8gL/rA8bGF
-	5F7/RnQVujFukgpcIlDTrJRBWaGzKhZJf4nqjY7XsK5hPm8QoDbJJsDpeKX5XQTHzTc5F6eA7rYF1
-	8ynM2+ctxKdc4IoNHm6fJmtLQsi7atzjWChyBdVY0is/ie2zobetrsh4xDadpSdvuyAKqhOvVJy4B
-	f9ufAGq3GFMRUfAqFAJw==;
+	List-Owner; bh=AwfzL6KHhxIGFSN0Yb1UGX7FYYPGJy83OQOH7njML9E=; b=awa7Dvy+/JgwnD
+	YgdC2VEQhKd1rj68hKdEsL+S2lZY5U1ucG5eOgKn1POIzi4/ihMsF6Xa7wc7tMgLecJ0e4vRdSSWP
+	JmkYA7U1fGt9ntIXsAuVoYgxOwEfOV4MAgD+545PzeNs9vvLd5wL8XeJaTlo9oEbsERGdBxvRejxn
+	UXxaHaZY2NeIG4+xsgP57D/eTTAdwc/tlgRL79Pi+5SuCOpRydaBEtU2gCg7QtIMOw2glqSehjZvX
+	9XLMn3W0BIBsInqqZdOVYBQH6/c8rtne1em1hFbnu7pdJi1UloaAoE2XF3CveKrM7a7/I5GBfIFaF
+	5LttYMI5cA/0nemPSqUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htXg0-00030W-A2; Fri, 02 Aug 2019 13:32:56 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1htXgG-0003S8-7f; Fri, 02 Aug 2019 13:33:12 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htXeZ-0000uP-4K; Fri, 02 Aug 2019 13:31:29 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 8921D36A4EFDC54AC5A2;
- Fri,  2 Aug 2019 21:31:25 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Fri, 2 Aug 2019
- 21:31:19 +0800
+ id 1htXee-00011C-Af; Fri, 02 Aug 2019 13:31:33 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id B88493E7E23E4170A517;
+ Fri,  2 Aug 2019 21:31:30 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS410-HUB.china.huawei.com
+ (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0; Fri, 2 Aug 2019
+ 21:31:21 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <herbert@gondor.apana.org.au>, <lars.persson@axis.com>,
  <jesper.nilsson@axis.com>, <davem@davemloft.net>, <thomas.lendacky@amd.com>,
@@ -36,10 +36,10 @@ To: <herbert@gondor.apana.org.au>, <lars.persson@axis.com>,
  <jamie@jamieiles.com>, <agross@kernel.org>, <heiko@sntech.de>,
  <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
  <clabbe.montjoie@gmail.com>, <mripard@kernel.org>, <wens@csie.org>
-Subject: [PATCH -next 08/12] crypto: sunxi-ss - use
+Subject: [PATCH -next 09/12] crypto: rockchip - use
  devm_platform_ioremap_resource() to simplify code
-Date: Fri, 2 Aug 2019 21:28:05 +0800
-Message-ID: <20190802132809.8116-9-yuehaibing@huawei.com>
+Date: Fri, 2 Aug 2019 21:28:06 +0800
+Message-ID: <20190802132809.8116-10-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20190802132809.8116-1-yuehaibing@huawei.com>
 References: <20190802132809.8116-1-yuehaibing@huawei.com>
@@ -47,8 +47,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_063127_926001_C76B10DF 
-X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-CacheID: sfid-20190802_063132_552279_B08782BA 
+X-CRM114-Status: UNSURE (   8.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -56,7 +56,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -86,31 +86,31 @@ This is detected by coccinelle.
 Reported-by: Hulk Robot <hulkci@huawei.com>
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/crypto/sunxi-ss/sun4i-ss-core.c | 4 +---
+ drivers/crypto/rockchip/rk3288_crypto.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-core.c b/drivers/crypto/sunxi-ss/sun4i-ss-core.c
-index 2e87042..9aa6fe0 100644
---- a/drivers/crypto/sunxi-ss/sun4i-ss-core.c
-+++ b/drivers/crypto/sunxi-ss/sun4i-ss-core.c
-@@ -225,7 +225,6 @@ static struct sun4i_ss_alg_template ss_algs[] = {
+diff --git a/drivers/crypto/rockchip/rk3288_crypto.c b/drivers/crypto/rockchip/rk3288_crypto.c
+index 8d7e254..e5714ef 100644
+--- a/drivers/crypto/rockchip/rk3288_crypto.c
++++ b/drivers/crypto/rockchip/rk3288_crypto.c
+@@ -311,7 +311,6 @@ MODULE_DEVICE_TABLE(of, crypto_of_id_table);
  
- static int sun4i_ss_probe(struct platform_device *pdev)
+ static int rk_crypto_probe(struct platform_device *pdev)
  {
 -	struct resource *res;
- 	u32 v;
- 	int err, i;
- 	unsigned long cr;
-@@ -240,8 +239,7 @@ static int sun4i_ss_probe(struct platform_device *pdev)
- 	if (!ss)
- 		return -ENOMEM;
+ 	struct device *dev = &pdev->dev;
+ 	struct rk_crypto_info *crypto_info;
+ 	int err = 0;
+@@ -339,8 +338,7 @@ static int rk_crypto_probe(struct platform_device *pdev)
+ 
+ 	spin_lock_init(&crypto_info->lock);
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	ss->base = devm_ioremap_resource(&pdev->dev, res);
-+	ss->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(ss->base)) {
- 		dev_err(&pdev->dev, "Cannot request MMIO\n");
- 		return PTR_ERR(ss->base);
+-	crypto_info->reg = devm_ioremap_resource(&pdev->dev, res);
++	crypto_info->reg = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(crypto_info->reg)) {
+ 		err = PTR_ERR(crypto_info->reg);
+ 		goto err_crypto;
 -- 
 2.7.4
 
