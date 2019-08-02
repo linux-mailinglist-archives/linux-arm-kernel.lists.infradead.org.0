@@ -2,78 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B5067FD9A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 17:33:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4743C7FDA9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 17:36:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xnxjvH5GZY60X5EPOzX13X8kx++CLQCK/oC3/nJ1PCg=; b=cDKQRoioLjo81o
-	HEEzntA1PKd3xqaU3Npal9zj5tM4vGHlVTjbQ1jIlZYaUhIgenhjtrd4N7maXUFij1HXK/mBp4LGc
-	7visOwmESsJQG9dCH45AooKaeAk5xmpspZDcsZ/5OD8XV9fwyEvLuNFEDJoE0/rE/WieSqiBhlrDz
-	q2SxwhhAujngnYbGCU4sjMxCuchv/nvBxRaktMUX4dD/SaPAEPEPQ+szsYPTV3qDQMMQ7JT9G7Yyc
-	b0PbBQDxFDOYIeT/s2s33DmADZl/Yz13je8kEb9bxm17qClXM2IsB7Xn4biHg5jUwhxmSpLiOhsfT
-	Fk+GXMeENcJaHiB0vktA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=s10wfvNPCH4FgN3c2wCfg1AfHRHvpF1LM1xZi/7YwvA=; b=slX81uv4OdkauHeDVNUq7+mIx
+	veyCwAoiuqz44pQ+Gkdox2vNgLkjRgCEjOpdgDYOMxcp1Iz5ACziBj7O8TGdM2Fh8Wp6UvZ/IhcG0
+	kPl9Qbq/fbC0rGGy8k6CMrYlAQR7NaSDZIEcWxucurEZ+QFhwm9a9POWCxMYJTENVyn/b6V2OBcaB
+	UXMC4/XtznlPJ7mOvvFCTr+q8y39vYUxnPxwZCa05SJm2por4kbBFlm5ZV7ZGe2p/XCuPud1uus++
+	gFWiL3Ki5fInrM/DiaXRifB+ujo9r4wZyZ3F8bcN9fBV92b/wKYFx/RBV1VRCQhRAUAtfe2vXTGir
+	FBdvnTDYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htZYA-000363-Rk; Fri, 02 Aug 2019 15:32:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htZY1-00031v-KU; Fri, 02 Aug 2019 15:32:50 +0000
-Received: from mail-qt1-f171.google.com (mail-qt1-f171.google.com
- [209.85.160.171])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 27E772171F;
- Fri,  2 Aug 2019 15:32:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564759969;
- bh=SqXczMVqgeEkDVlqy5kglJj8uL1oAGnsDkEhoHPszCE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=pCLuRj/WOOZYb+u1fjmIKd4E3EYbifvnH3q+ZYi57kOWlgyO9gJcsA+sJGmHT0mDJ
- PS4fijeM6cSxG3PhbrzKW6q5rpDKvQ0yQvHbtiNH59IGy6G1FOb6p31VneUJV8ZEdt
- FtyTVtOOMm8GCHvLv/SbgTE9YsIcPQldYjIyqQoQ=
-Received: by mail-qt1-f171.google.com with SMTP id x22so905675qtp.12;
- Fri, 02 Aug 2019 08:32:49 -0700 (PDT)
-X-Gm-Message-State: APjAAAWhYiwciw7acQp0KdgoXintnChRp8lx0WfMS6KyEAn5F41vQSGk
- NHimRjLUn6SIW44CFBocnfEprSq+h9DHpzsXFw==
-X-Google-Smtp-Source: APXvYqz5KFxckUeN3jLg6ZkyxzzkOZ6/De6227CJyUXimVAlaImzJTd4BNXCiN4DhIhzmmkx6p/UvVuwUn0NBDGuyKA=
-X-Received: by 2002:a0c:acef:: with SMTP id n44mr100010313qvc.39.1564759968361; 
- Fri, 02 Aug 2019 08:32:48 -0700 (PDT)
+	id 1htZbz-0004mC-7P; Fri, 02 Aug 2019 15:36:55 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1htZbt-0004lQ-OO
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 15:36:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E8FEB1596;
+ Fri,  2 Aug 2019 08:36:46 -0700 (PDT)
+Received: from [192.168.122.164] (U201426.austin.arm.com [10.118.28.59])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A27293F575;
+ Fri,  2 Aug 2019 08:36:46 -0700 (PDT)
+Subject: Re: [PATCH v4 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
+To: Robert Richter <rric@kernel.org>
+References: <20190801034634.26913-1-jeremy.linton@arm.com>
+ <20190801034634.26913-2-jeremy.linton@arm.com>
+ <20190802130510.rd4uyndtqlcfdhtm@rric.localdomain>
+From: Jeremy Linton <jeremy.linton@arm.com>
+Message-ID: <488e9444-d01e-6bf4-770c-34091a8a8244@arm.com>
+Date: Fri, 2 Aug 2019 10:36:45 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190801135644.12843-1-narmstrong@baylibre.com>
- <20190801135644.12843-6-narmstrong@baylibre.com>
- <90dbcb33-74a2-68de-eb1a-ce84040298b8@baylibre.com>
-In-Reply-To: <90dbcb33-74a2-68de-eb1a-ce84040298b8@baylibre.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 2 Aug 2019 09:32:36 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+gtauOzrRRtTqbowUSOMi5Rs_GQVt7e7gYHa7TtjOhOA@mail.gmail.com>
-Message-ID: <CAL_Jsq+gtauOzrRRtTqbowUSOMi5Rs_GQVt7e7gYHa7TtjOhOA@mail.gmail.com>
-Subject: Re: [RFC 5/9] dt-bindings: arm: amlogic: amlogic, meson-gx-ao-secure:
- convert to yaml
-To: Neil Armstrong <narmstrong@baylibre.com>
+In-Reply-To: <20190802130510.rd4uyndtqlcfdhtm@rric.localdomain>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_083249_712243_BD45D156 
-X-CRM114-Status: GOOD (  15.58  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190802_083649_842041_47209BB7 
+X-CRM114-Status: GOOD (  18.37  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,53 +63,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, devicetree@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: lorenzo.pieralisi@arm.com, catalin.marinas@arm.com, rjw@rjwysocki.net,
+ linux-acpi@vger.kernel.org, sudeep.holla@arm.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org, lenb@kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 2, 2019 at 8:37 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> Hi Rob,
->
-> Thanks for reviews.
->
-> On 01/08/2019 15:56, Neil Armstrong wrote:
-> > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> > ---
-> >  .../amlogic/amlogic,meson-gx-ao-secure.txt    | 28 -------------
-> >  .../amlogic/amlogic,meson-gx-ao-secure.yaml   | 42 +++++++++++++++++++
-> >  2 files changed, 42 insertions(+), 28 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/arm/amlogic/amlogic,meson-gx-ao-secure.txt
-> >  create mode 100644 Documentation/devicetree/bindings/arm/amlogic/amlogic,meson-gx-ao-secure.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/arm/amlogic/amlogic,meson-gx-ao-secure.txt b/Documentation/devicetree/bindings/arm/amlogic/amlogic,meson-gx-ao-secure.txt
-> > deleted file mode 100644
-> > index c67d9f48fb91..000000000000
-> > --- a/Documentation/devicetree/bindings/arm/amlogic/amlogic,meson-gx-ao-secure.txt
-> > +++ /dev/null
-> > @@ -1,28 +0,0 @@
-> > -Amlogic Meson Firmware registers Interface
-> > -------------------------------------------
-> > -
-> > -The Meson SoCs have a register bank with status and data shared with the
-> > -secure firmware.
-> > -
-> > -Required properties:
-> > - - compatible: For Meson GX SoCs, must be "amlogic,meson-gx-ao-secure", "syscon"
->
-> I have a hard time find how to define "syscon" here, if I put syscon in the compatible
-> it gets matched on other bindings and I get lot of warnings.
->
-> How should I model it ?
+Hi,
 
-You have to add a custom 'select' key that doesn't include 'syscon'.
-There should be a few examples in the tree.
+Thanks for taking a look at this.
 
-Rob
+On 8/2/19 8:05 AM, Robert Richter wrote:
+> On 31.07.19 22:46:33, Jeremy Linton wrote:
+> 
+>> diff --git a/include/linux/acpi.h b/include/linux/acpi.h
+>> index 9426b9aaed86..9d0e20a2ac83 100644
+>> --- a/include/linux/acpi.h
+>> +++ b/include/linux/acpi.h
+>> @@ -1302,11 +1302,16 @@ static inline int lpit_read_residency_count_address(u64 *address)
+>>   #endif
+>>   
+>>   #ifdef CONFIG_ACPI_PPTT
+>> +int acpi_pptt_cpu_is_thread(unsigned int cpu);
+>>   int find_acpi_cpu_topology(unsigned int cpu, int level);
+>>   int find_acpi_cpu_topology_package(unsigned int cpu);
+>>   int find_acpi_cpu_topology_hetero_id(unsigned int cpu);
+>>   int find_acpi_cpu_cache_topology(unsigned int cpu, int level);
+> 
+> All those functions (exept hetero_id) are used only in
+> parse_acpi_topology(). So how about creating a struct with thread_id,
+> core_id, and cache_id (and hetero_id (?)) and have a single pptt table
+> parsing function that fills in all of this into that struct? This
+> simplifies the api and also the code.
+> 
+> This also shows that hetid (see arm_pmu_acpi.c) better should be
+> stored in cpu_topology[] too and thus being parsed with the other
+> parameters as well and made accessible from there by a helper.
+
+
+I think the idea here was to avoid an additional set of intermediate 
+data structures between the PPTT table/structure and the final arch 
+specific data structures (which themselves are used to feed other 
+things, like the scheduler, note the llc parsing). Rather the attempt is 
+to provide a set of tools to retrieve information and let the policy for 
+how that information is used be dictated by the consumer.
+
+In the future, if we can further unify the arch specific cpu_topology 
+structures it would make sense to parse directly into them, but until 
+that happens I don't think we should try. The existing code does parse 
+directly into the cache structures, but the cpu topology is subtly arm64 
+at the moment. If another arch decided to use this, i'm not sure they 
+would want or need it parsed in exactly the same way.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
