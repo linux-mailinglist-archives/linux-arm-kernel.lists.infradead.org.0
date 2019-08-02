@@ -2,97 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 090687EFA1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 10:50:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D30F47EFA7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 10:51:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
+	Subject:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ejEh9NtHVrdTTg2SZBHy/Zm9FQx/hkDO8zKGkmPe2U4=; b=WqRCfDoZKMoI6M
-	xzNSixJsuhndB5xKtyCu1GHmw95dBc15MZ2XlFFN+6cieftqoHF33L501wnFK5o01otm9XZLmSG0o
-	W4YbJgw8cS3Oam+Fkq2e+xzAHQFNZZZfodKrUjxG2fxpTwZK/onwapBQ2OajltcJaF0eR+dejw3tW
-	VzkMryxFS1vEOPCJQKpBI8dvCFFlZMg+0HBmNsIlx3/3BddA8c1fT0xWlBXNE8mkiBn3H34IvNmjZ
-	x9MLomX8SCEdkz+7qFehUZc1nK3llQfq17QfQbs4WhOthh3PRY2PVS201BR3xD96ARvEmtsoGfh+1
-	cWXfQZsJCf8Vspp65lBw==;
+	List-Owner; bh=k9JYxYF6keHJ8VW+NrHRp6AZrK5X2vVA6drz7Hd2iUI=; b=SUtcxivmTJSD39
+	ZaG1FXSHMnjstljbO1QZzE2jPke5Z3LV1wBbPhWPXFIK8JnvL0Ge8W4L9jcEHkj0ek7/6OrbmkLr1
+	NjS6OxKyVGcoFpLjyY3Ru1nXLci7sJDnE+pe+LkWKU2O89b6ybUP3hct+0WcrYb/6EbmiacGLKY2F
+	dgLauK4jJ+QSJUdX81pnqB2HndLSxeojlAIkBAMy5Ojl4Shy7HeAzX8VpciORqd6F+V1fHIX7RrqT
+	SkjviwqmaU1+0/Liruz8rUJHmNdpTxXwZoTjIhO9/S9dPCWGtBE/bBlOu9N4rYhneLxxL4EYDt4FX
+	/HlyVOkwbCBiK6+kTl6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htTGP-0002KY-UY; Fri, 02 Aug 2019 08:50:14 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1htTHr-0003jL-SY; Fri, 02 Aug 2019 08:51:44 +0000
+Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htTGB-0002BC-1O
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 08:50:00 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x728kgEI025069; Fri, 2 Aug 2019 10:49:49 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : references : in-reply-to : content-type : content-id :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=7oP2TLk/bh7ktiksulnUxikTpCmAWCoZAQWzbFRiYiI=;
- b=HWeHHE6szTeWTy7KRD9hXztk/dcwcjroscp14WCDjeynCAKs1YtJuV93C8R24aMH6X2/
- EfLpdAaLcPk2hJ0XTBKZcahfqNhMntQYofovPgkbscSe3UCn1GB3iwaLJ9KPcGRoW2i9
- Eap4KVSTpobAcweeLSqLNRvZJp2G2j+MfMMrmV4xRL8z1MqL8S9gGAJoIyyqxnwc4xUP
- DsYHilkOT1wVfxEa7FmRJcskW3oKcIDTSA4OVeYkAQa4nmQ89m8apJ24fTVdBruvY+24
- pEF03c1VjSlplo+hTVBIO3CvFq1v4DJtzNwKppgJgkIWFQ6ppdM3JpNKn5KN9WXwIikC Tg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2u0c2yu8yk-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 02 Aug 2019 10:49:49 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2823E41;
- Fri,  2 Aug 2019 08:49:48 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E7AEB20754E;
- Fri,  2 Aug 2019 10:49:48 +0200 (CEST)
-Received: from SFHDAG6NODE2.st.com (10.75.127.17) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 2 Aug
- 2019 10:49:48 +0200
-Received: from SFHDAG6NODE2.st.com ([fe80::a56f:c186:bab7:13d6]) by
- SFHDAG6NODE2.st.com ([fe80::a56f:c186:bab7:13d6%20]) with mapi id
- 15.00.1347.000; Fri, 2 Aug 2019 10:49:48 +0200
-From: Olivier MOYSAN <olivier.moysan@st.com>
-To: Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, "robh@kernel.org"
- <robh@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] ARM: dts: stm32: add DFSDM pins to stm32mp157c
-Thread-Topic: [PATCH] ARM: dts: stm32: add DFSDM pins to stm32mp157c
-Thread-Index: AQHVSQmlOW7lqPM0IEWEE+OpQQXuJKbnat+A
-Date: Fri, 2 Aug 2019 08:49:48 +0000
-Message-ID: <0e9689a6-0636-b1f2-22f7-009180709891@st.com>
-References: <1564645567-13156-1-git-send-email-olivier.moysan@st.com>
- <a95e5d74-c8e3-42f9-cabf-f42623aee255@st.com>
-In-Reply-To: <a95e5d74-c8e3-42f9-cabf-f42623aee255@st.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.46]
-Content-ID: <9043CAB016B58A46BA78A79224654C44@st.com>
+ id 1htTHd-0003iW-T3
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 08:51:31 +0000
+Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id 397875C004F;
+ Fri,  2 Aug 2019 10:51:25 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
+ t=1564735885;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=ViFlUbZIH2j98+ivvpISqsxLBF3nyNE80C/Y7Lye+Lo=;
+ b=bhv7PrpZGNeJpxcSV8U7HrJBJjE+RstPAgkir7If8M/JOcUoCmodOqFKKwLPdU2CqGqmdA
+ 2p5XggEf7tQZAZAEAZAC9QuoYmX0x5VNWJbaKQA7/mkg7YkjzZqtPxzGSdCDuOdO+7/dWp
+ gxQfUYOjUEL4NMo5yA0o/R+Y9A9+rC8=
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-02_04:, , signatures=0
+Date: Fri, 02 Aug 2019 10:51:25 +0200
+From: Stefan Agner <stefan@agner.ch>
+To: Philippe Schenker <philippe.schenker@toradex.com>
+Subject: Re: [PATCH v2 07/20] ARM: dts: imx7-colibri: fix 1.8V/UHS support
+In-Reply-To: <723f191c5893984c8fbe711163524dc7ebf09a5b.camel@toradex.com>
+References: <20190731123750.25670-1-philippe.schenker@toradex.com>
+ <20190731123750.25670-8-philippe.schenker@toradex.com>
+ <CAOMZO5B5HnqpLrDjyGtqSQpVXmcoZuGLvCzKVUhwLb-_ZO_Xog@mail.gmail.com>
+ <723f191c5893984c8fbe711163524dc7ebf09a5b.camel@toradex.com>
+Message-ID: <de6bec64012876c07267024cd4b2d2d5@agner.ch>
+X-Sender: stefan@agner.ch
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_014959_453048_403106F4 
-X-CRM114-Status: GOOD (  19.69  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190802_015130_388067_7D3A1580 
+X-CRM114-Status: GOOD (  19.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -112,93 +77,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, michal.vokac@ysoft.com,
+ kernel@pengutronix.de, Stefan Agner <stefan.agner@toradex.com>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-imx@nxp.com, Max Krummenacher <max.krummenacher@toradex.com>,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ALex,
-
-On 8/2/19 10:09 AM, Alexandre Torgue wrote:
-> Hi Olivier
-> 
-> On 8/1/19 9:46 AM, Olivier Moysan wrote:
->> Add DFSDM pins to stm32mp157c.
+On 2019-07-31 16:52, Philippe Schenker wrote:
+> On Wed, 2019-07-31 at 09:56 -0300, Fabio Estevam wrote:
+>> On Wed, Jul 31, 2019 at 9:38 AM Philippe Schenker
+>> <philippe.schenker@toradex.com> wrote:
+>> > From: Stefan Agner <stefan.agner@toradex.com>
+>> >
+>> > Add pinmuxing and do not specify voltage restrictions in the
+>> > module level device tree.
 >>
->> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
->> ---
->>    arch/arm/boot/dts/stm32mp157-pinctrl.dtsi | 39 +++++++++++++++++++++++++++++++
->>    1 file changed, 39 insertions(+)
+>> It would be nice to explain the reason for doing this.
+> 
+> This commit is in preparation of another patch that didn't made into this
+> patchset (downstream stuff in there). But I will do another patch on top that
+> will use this patch here. That should anyway be in mainline.
+
+I guess what Fabio meant here is explain this patch.
+
+The commit message really could be improved, e.g.:
+
+Add pinmuxing and do not specify voltage restrictions for the usdhc
+instance
+available on the modules edge connector. This allows to use SD-cards
+with
+higher transfer modes if supported by the carrier board.
+
+--
+Stefan
+
+> 
+> Philippe
+> 
 >>
->> diff --git a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
->> index 9eaec9bf8cb8..f96a928cbc49 100644
->> --- a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
->> +++ b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
->> @@ -230,6 +230,45 @@
->>    				};
->>    			};
->>    
-> 
-> I use to only take pinconfig which are used in board. So please resend
-> with the "board patch".
-> 
-
-The DFSDM is one of the interface used in the STM32MP15 soundcard.
-This soundcard also uses the Wolfson wm8994 audio codec.
-The wm8994 codec driver requires adaptations, and the upstream of
-these changes is not planned today.
-So, the related board patches cannot be sent.
-
-BRs
-Olivier
-
-> regards
-> Alex
-> 
-> 
->> +			dfsdm_clkout_pins_a: dfsdm-clkout-pins-0 {
->> +				pins {
->> +					pinmux = <STM32_PINMUX('B', 13, AF3)>; /* DFSDM_CKOUT */
->> +					bias-disable;
->> +					drive-push-pull;
->> +					slew-rate = <0>;
->> +				};
->> +			};
->> +
->> +			dfsdm_clkout_sleep_pins_a: dfsdm-clkout-sleep-pins-0 {
->> +				pins {
->> +					pinmux = <STM32_PINMUX('B', 13, ANALOG)>; /* DFSDM_CKOUT */
->> +				};
->> +			};
->> +
->> +			dfsdm_data1_pins_a: dfsdm-data1-pins-0 {
->> +				pins {
->> +					pinmux = <STM32_PINMUX('C', 3, AF3)>; /* DFSDM_DATA1 */
->> +				};
->> +			};
->> +
->> +			dfsdm_data1_sleep_pins_a: dfsdm-data1-sleep-pins-0 {
->> +				pins {
->> +					pinmux = <STM32_PINMUX('C', 3, ANALOG)>; /* DFSDM_DATA1 */
->> +				};
->> +			};
->> +
->> +			dfsdm_data3_pins_a: dfsdm-data3-pins-0 {
->> +				pins {
->> +					pinmux = <STM32_PINMUX('F', 13, AF6)>; /* DFSDM_DATA3 */
->> +				};
->> +			};
->> +
->> +			dfsdm_data3_sleep_pins_a: dfsdm-data3-sleep-pins-0 {
->> +				pins {
->> +					pinmux = <STM32_PINMUX('F', 13, ANALOG)>; /* DFSDM_DATA3 */
->> +				};
->> +			};
->> +
->>    			ethernet0_rgmii_pins_a: rgmii-0 {
->>    				pins1 {
->>    					pinmux = <STM32_PINMUX('G', 5, AF11)>, /* ETH_RGMII_CLK125 */
+>> > Signed-off-by: Stefan Agner <stefan.agner@toradex.com>
+>> > Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
+>> > ---
+>> >
+>> > Changes in v2: None
+>> >
+>> >  arch/arm/boot/dts/imx7-colibri.dtsi | 23 ++++++++++++++++++++++-
+>> >  1 file changed, 22 insertions(+), 1 deletion(-)
+>> >
+>> > diff --git a/arch/arm/boot/dts/imx7-colibri.dtsi b/arch/arm/boot/dts/imx7-
+>> > colibri.dtsi
+>> > index 16d1a1ed1aff..67f5e0c87fdc 100644
+>> > --- a/arch/arm/boot/dts/imx7-colibri.dtsi
+>> > +++ b/arch/arm/boot/dts/imx7-colibri.dtsi
+>> > @@ -326,7 +326,6 @@
+>> >  &usdhc1 {
+>> >         pinctrl-names = "default";
+>> >         pinctrl-0 = <&pinctrl_usdhc1 &pinctrl_cd_usdhc1>;
+>> > -       no-1-8-v;
+>> >         cd-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
+>> >         disable-wp;
+>> >         vqmmc-supply = <&reg_LDO2>;
+>> > @@ -671,6 +670,28 @@
+>> >                 >;
+>> >         };
+>> >
+>> > +       pinctrl_usdhc1_100mhz: usdhc1grp_100mhz {
+>> > +               fsl,pins = <
+>> > +                       MX7D_PAD_SD1_CMD__SD1_CMD       0x5a
+>> > +                       MX7D_PAD_SD1_CLK__SD1_CLK       0x1a
+>> > +                       MX7D_PAD_SD1_DATA0__SD1_DATA0   0x5a
+>> > +                       MX7D_PAD_SD1_DATA1__SD1_DATA1   0x5a
+>> > +                       MX7D_PAD_SD1_DATA2__SD1_DATA2   0x5a
+>> > +                       MX7D_PAD_SD1_DATA3__SD1_DATA3   0x5a
+>> > +               >;
+>> > +       };
+>> > +
+>> > +       pinctrl_usdhc1_200mhz: usdhc1grp_200mhz {
+>> > +               fsl,pins = <
+>> > +                       MX7D_PAD_SD1_CMD__SD1_CMD       0x5b
+>> > +                       MX7D_PAD_SD1_CLK__SD1_CLK       0x1b
+>> > +                       MX7D_PAD_SD1_DATA0__SD1_DATA0   0x5b
+>> > +                       MX7D_PAD_SD1_DATA1__SD1_DATA1   0x5b
+>> > +                       MX7D_PAD_SD1_DATA2__SD1_DATA2   0x5b
+>> > +                       MX7D_PAD_SD1_DATA3__SD1_DATA3   0x5b
+>> > +               >;
+>> > +       };
 >>
+>> You add the entries for 100MHz and 200MHz, but I don't see them being
+>> referenced anywhere.
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
