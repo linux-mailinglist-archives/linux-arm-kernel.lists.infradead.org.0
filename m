@@ -2,74 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D138E7F533
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:38:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E66AF7F543
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:41:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uT8aOxGQH/lzlWVEYj8Imyy6qtemUiD5kE5kjRf8VAs=; b=dVm0tb1ELQWiC6
-	FCVxuall/pFSdVPbWwZuWg92zzqpmji06DDNEwqqkaKXABbbkEWGYc+pYwB5DPNAouZklvUFoG/zD
-	/42hQ+1ViYL7lU5ptsieJR2Q/IbiKAY2VgRQpLZNVZFcrqZt+Di0nHXp6NPEN/jHPuCsI9R/ZJ4hT
-	nbbDNOdr9tM6eRlbUceg2vJXeqMT1ZVB7D+Dvc5F5EJqSNGeoUxhf3OHh2q42NUN6VvoSK+kOvROn
-	0E99gr/HVDK/1eN205UdOokM1aWqyl62ES7slMOsHRYAZR88f4Oz3EOtV4IMb4Axkh9D/ZJyC9Zxx
-	RGPzApBxiKsImzOKnwmA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EYOeAnqyYphQdQreZK+eX0nn0fWC2gC35PQip1Wa0FM=; b=lha5cs2vWnVksfDWOq8Pzs0n+
+	hSE/wMYGCYICzdk8GoZIOVixOiZZwCm2idU8v/1u/6XAAvCcH95YLoL5H+gUOv3lxcLfX5jDlBgVT
+	MXrhUkC3gJqx2zophDegyAgTevjZkdCV+TIvYZsoGZqwFgbTfHg9XpHE/LUYkcS/rr9C4mfmX2Ul8
+	cLkOS3/UD/5NVmAaU/6qCnDAjo7BkE7ZnDkjlvkQ+dSSwJKsIkE5QXUUNDRZdiYiURzQyoUWy7aTT
+	5sCh0X6eYHXdamX7dNuxzGY9v4CI5HaXRDlOHkD4iyBpWhOUlcuX2sX3or2adWaTpjcXJ4qW/W1c4
+	M01enyhjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htUwx-0004VR-Vw; Fri, 02 Aug 2019 10:38:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htUwr-0004V5-5p
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:38:10 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D13942086A;
- Fri,  2 Aug 2019 10:38:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564742288;
- bh=IYNwTW73rLYyMyjD9BJMjODjl0NeiQXEjNWG7ynwQFE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=qVCPNdH/6+F3JEUwjc5ECdeVvv2rxFW/YIsSdLtdhUSAecBHvE/aZD9g4yMo2gZSj
- 2yoBLIUP0QYtsd9bkMqXcwYzxDAGO2T7/GL9cxrLT0Ys0KRqsv6Oult274XWCLaght
- wblNSh7hCme4l3pG2uJghbpPO6jnYgJmHgYdUE7s=
-Date: Fri, 2 Aug 2019 11:38:03 +0100
-From: Will Deacon <will@kernel.org>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH] dma-mapping: fix page attributes for dma_mmap_*
-Message-ID: <20190802103803.3qrbhqwxlasojsco@willie-the-truck>
-References: <20190801142118.21225-1-hch@lst.de>
- <20190801142118.21225-2-hch@lst.de>
- <20190801162305.3m32chycsdjmdejk@willie-the-truck>
- <20190801163457.GB26588@lst.de>
- <20190801164411.kmsl4japtfkgvzxe@willie-the-truck>
- <20190802081441.GA9725@lst.de>
+	id 1htUzi-0006Eg-1v; Fri, 02 Aug 2019 10:41:06 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1htUzZ-0006E7-Oo
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:41:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C9AA7344;
+ Fri,  2 Aug 2019 03:40:56 -0700 (PDT)
+Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 957C33F71F;
+ Fri,  2 Aug 2019 03:40:55 -0700 (PDT)
+Subject: Re: [PATCH v4 6/6] dt-bindings: arm: coresight: Add support for
+ coresight-needs-save-restore
+To: andrew.murray@arm.com, mathieu.poirier@linaro.org,
+ alexander.shishkin@linux.intel.com
+References: <20190730125157.884-1-andrew.murray@arm.com>
+ <20190730125157.884-7-andrew.murray@arm.com>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <9df0eea2-a9bd-3a93-ca51-9c3d2391a1cf@arm.com>
+Date: Fri, 2 Aug 2019 11:40:54 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190802081441.GA9725@lst.de>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190730125157.884-7-andrew.murray@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_033809_260839_7C06D871 
-X-CRM114-Status: GOOD (  21.27  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190802_034058_347154_9BA10FE8 
+X-CRM114-Status: GOOD (  19.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,89 +64,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Anastasio <shawn@anastas.io>, Michael Ellerman <mpe@ellerman.id.au>,
- linuxppc-dev@lists.ozlabs.org, Russell King <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- Catalin Marinas <catalin.marinas@arm.com>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Al.Grant@arm.com, coresight@lists.linaro.org, leo.yan@linaro.org,
+ Sudeep.Holla@arm.com, linux-arm-kernel@lists.infradead.org,
+ mike.leach@linaro.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 02, 2019 at 10:14:41AM +0200, Christoph Hellwig wrote:
-> On Thu, Aug 01, 2019 at 05:44:12PM +0100, Will Deacon wrote:
-> > > > Although arch_dma_mmap_pgprot() is a bit of a misnomer now that it only
-> > > > gets involved in the non-coherent case.
-> > > 
-> > > A better name is welcome.
-> > 
-> > How about arch_dma_noncoherent_mmap_pgprot() ? Too long?
+Hi Andrew,
+
+On 30/07/2019 13:51, Andrew Murray wrote:
+> Some coresight components, because of choices made during hardware
+> integration, require their state to be saved and restored across CPU low
+> power states.
 > 
-> Sounds a little long yes.  And doesn't fix the additional problem that
-> we don't just it for mmap but also for the in-kernel remapping these
-> days.
-
-Hmm. Maybe just arch_dma_noncoherent_pgprot() then.
-
-> > > But my worry is how this interacts with architectures that have an
-> > > uncached segment (mips, nios2, microblaze, extensa) where we'd have
-> > > the kernel access DMA_ATTR_WRITE_COMBINE mappigns using the uncached
-> > > segment, and userspace mmaps using pgprot_writecombine, which could
-> > > lead to aliasing issues.  But then again mips already supports
-> > > DMA_ATTR_WRITE_COMBINE, so this must be ok somehow.  I guess I'll
-> > > need to field that question to the relevant parties.
-> > 
-> > Or it's always been busted and happens to work out in practice...
+> The software has no reliable method of detecting when save/restore is
+> required thus let's add a binding to inform the kernel.
 > 
-> I've sent a ping to the mips folks.  While we'are at it:  arm64
-> and arm32 (optionally) map dma coherent allocations as write combine.
-> I suspect this hasn't always just been busted but intentional (of course!),
-> but is there any chance to get a quote from the arm architecture spec
-> on why this is fine as it looks rather confusion?
+> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> ---
+>   Documentation/devicetree/bindings/arm/coresight.txt | 3 +++
+>   1 file changed, 3 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
+> index fcc3bacfd8bc..7cbdb7893af8 100644
+> --- a/Documentation/devicetree/bindings/arm/coresight.txt
+> +++ b/Documentation/devicetree/bindings/arm/coresight.txt
+> @@ -92,6 +92,9 @@ its hardware characteristcs.
+>   	* arm,cp14: must be present if the system accesses ETM/PTM management
+>   	  registers via co-processor 14.
+>   
+> +	* arm,coresight-needs-save-restore: boolean. Indicates that software
+> +	  should save/restore state across power down.
+> +
 
-So this boils down to a terminology mismatch. The Arm architecture doesn't have
-anything called "write combine", so in Linux we instead provide what the Arm
-architecture calls "Normal non-cacheable" memory for pgprot_writecombine().
-Amongst other things, this memory type permits speculation, unaligned accesses
-and merging of writes. I found something in the architecture spec about
-non-cachable memory, but it's written in Armglish[1].
+Do you think we could be a bit more descriptive here about when people could add
+it to the DT ? Here we don't mention when someone should use this property and
+it may be added to platforms where it may be absolutely unnecessary. How about :
 
-pgprot_noncached(), on the other hand, provides what the architecture calls
-Strongly Ordered or Device-nGnRnE memory. This is intended for mapping MMIO
-(i.e. PCI config space) and therefore forbids speculation, preserves access
-size, requires strict alignment and also forces write responses to come from
-the endpoint.
+"Indicates that the hardware implementation may not honor the Powerup request
+from the software and thus might loose the register context on CPU power down 
+(e.g, during CPUIdle). Software must save/restore the context during a CPU power 
+transition cycle."
 
-I think the naming mismatch is historical, but on arm64 we wanted to use the
-same names as arm32 so that any drivers using these things directly would get
-the same behaviour.
-
-Will
-
-[1]
-
-B2.4.4 Implication of caches for the application programmer
-
-[...]
-
-Data coherency issues
-
-Software can ensure the data coherency of caches in the following ways:
-
-  * By not using the caches in situations where coherency issues can arise.
-    This can be achieved by:
-
-    - Using Non-cacheable or, in some cases, Write-Through Cacheable memory.
-
-    - Not enabling caches in the system.
-
-  * By using cache maintenance instructions to manage the coherency issues
-    in software.
-
-  * By using hardware coherency mechanisms to ensure the coherency of data
-    accesses to memory for cacheable locations by observers within the
-    different shareability domains.
+Cheers
+Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
