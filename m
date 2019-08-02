@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2644C80299
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 00:12:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 989CD802A7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 00:20:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R+t49LeAy83Uw+jqF4ez1NGaI+B3hAakD1MX4P74Ubs=; b=mHicC3u4D8Opw4
-	TflKyfLLZ/Ix1aMyit270AG/ZhROKqd7DQ6w/CseE2A6Yr1tBw8PCTiathI5vrNXglk1BpSuxD932
-	wfxUYCRDSXgq8NzJwKijjVInlu/Znh2ddyBb6/fQnmSVrxQWvqMkZT4ZrtemKsEcIZZNPjm5A/StB
-	9juA6vzTtRBtLuCnBEyEK/+XEcNTcUuaVQpzbpgQQ9chMMK/kytLR75WXIkaizBB6YcvlILGtls0J
-	rZGtQpZVKewapNM+sJf6CQw3zKwODUAF7UwTTAVFQgza9sk32mfjyCOmEzL1B9MR7n5AgDP469nI8
-	LyQSMP/cLexEfQjCelGA==;
+	List-Owner; bh=8/chUTU7f3lHXLbKs1icVv6Yww0PVjgDofvffJ9T/98=; b=ZFD7YRMPA0dB8B
+	/c+3LqTHaJRbGdhjq2u2RyMCkv0ZOZ4ycCJCFmfhtAMVxK9T88DXGToootYK7mE+1g4/d6oJWxOkb
+	6VhIkjEhEVWnUX4DwIbtIGjMC6v2XJJBdxffKe7qkcP86pN5g3RrVbU7ONGqwj8J/IPFS9uFLsrpn
+	l9ipoQB/FKo3TH648B6Yq910w9hRlumtLDWgtSO5pVkTJWbw+Bel6KkVQZhe5WoPYNAsM+iU3ge0i
+	fnTPGLdMHg4zZdEXLARSClAhciMUK0+RxmKevKl2v70k8JVr0IUtpMQ1Mh3nkiUD55EVAimPuu9TH
+	MyZPFF/RRryppnQlA1PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htfmq-0006za-Bl; Fri, 02 Aug 2019 22:12:32 +0000
+	id 1htfuS-0001NI-0w; Fri, 02 Aug 2019 22:20:24 +0000
 Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htfmf-0006yO-0q
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 22:12:22 +0000
-Received: by mail-lj1-x241.google.com with SMTP id d24so74186115ljg.8
+ id 1htfuG-0001Mz-5I
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 22:20:13 +0000
+Received: by mail-lj1-x241.google.com with SMTP id d24so74198641ljg.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 02 Aug 2019 15:12:19 -0700 (PDT)
+ Fri, 02 Aug 2019 15:20:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+UTa4hS+EXj/U99uNyyPqk1MVnPhgyi57dH76aybmKQ=;
- b=pXLWU6o2Ovk3U6DVFUVW1p6qkCDFE57igqoa0u3mCDqZuS1rTVmHHdUx2BQtAeoW+R
- h4B1nsDvEqgJyw0cwq3REWuMekXDDsQEh/7qmi+SWxBRCiY7Asw0famd/I8G9j55bI6B
- J0VZWYJvtkxZxBKsQ9CJfoeDlpmPoUz1z1ej0VcQaFTT+0qfhYTyIx5cjt0ROnimczcb
- uTzFA86ixpCev86ZJtqJD7eUARjkKM67WFn5fXuoBD7a19TsaZ31ZgEi3S78yR3wIzhg
- UdbFAedgnK2UFAg1Fpie7nBoHdgtJfEKJ5/Fa3M/pom86bBOGdg3e1dbKH2xvUSaLRcS
- wGKg==
+ :cc; bh=IZ48FMZQTs4uLcOa+ewd+uatrSZkDn8qdysdEWbOPPM=;
+ b=c11DsE6xhXFUkGZOKxS0st145dWqvewhcd3fQlz6reUM8JMeFAhgV6u4i+TozRJvOo
+ sKH5UKHncsWaB2Xjfz8zRmJm8YpIFS1WpghI8V66dbRbM/YCMrbRdoOOGFjkAw2VUDd4
+ XeMVfXUsMg2le9LZ2rOUIV+hapnOY1oM85zlQapDge4ELyVgXchMO4Mc74KZbF1gXQRw
+ CqbrPqC0Tx7XdvggiEfEoGga6UZEwaZsbj3bN4hJ7QMGjvdm5rhbcl77SyloCyw7b5BN
+ SODi1TlVZcC/IVLwZydxi5Vx7TJZ2gKURa+2D9HfIPnftiW4ftpjrvsCVhZinnnEtmf8
+ s7OQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=+UTa4hS+EXj/U99uNyyPqk1MVnPhgyi57dH76aybmKQ=;
- b=VLgXtwV78UKmd4O9a2Hktj7B9ZF6tUIhSCqiBS3UNklvwPx+hPHqpTaSFhj8u5CZ0I
- BgKP2vW/5YPwL1u8O5S0MX2/i+XMUJv+nWT4S8yL7KFd9BYsWyx4Q0fTA1KHxOLkG94c
- oc7woQO21TPnmamuugz53fxrIR7TmWbjoWrqQkEZLfycLUEZKZQTwbgiLUZRNud1uS8h
- 1OnbPP0cq6lYPiPre2bZSj7C/YojfXRpMsFWZCB6JB3Qdcg7ykx/lGDEnpsLjG9Fgwvn
- sToSqgut3rmlyoGSSO4CPE3xz03d6nrn5m8XxYMtJ0W7PLAPid9LdBuzqNCWZSp/pzyR
- 4w2w==
-X-Gm-Message-State: APjAAAXp4RzBgMHeECLMbWygijPq5vqeO7p5OzsOvBnE1kgfh4baDAGS
- ZTEEx6Dan2uZgy8Cz3RGwSxubS7VbBNXaHMMEsdY6A==
-X-Google-Smtp-Source: APXvYqzZIyjd/WByfLX30s1F5wa0IgLODONWYyAQiHrY+OAceXxnYS3eMSKW4bw8sQdw9FSkXwvWHhJ6Bu8mzglQucM=
-X-Received: by 2002:a2e:781a:: with SMTP id t26mr23942436ljc.28.1564783938269; 
- Fri, 02 Aug 2019 15:12:18 -0700 (PDT)
+ bh=IZ48FMZQTs4uLcOa+ewd+uatrSZkDn8qdysdEWbOPPM=;
+ b=gkL92icFXNSQ5AI6vIxElwDpy0bZUySoO8a+HTaSURRd9F/O2geWIFpMPOXGaoaIx9
+ YO+Rmtn4x2xAwwAcHqkR7ZaWGJd+aiekXWl26WkyQgmwBrgNakgCsAXObQ6+sSAFW53E
+ E+omSjlM0f3hE5aWVP6AmMncKIH+m+8PZ5S6RPrrAGPcjSln7kw9dwaPXcCwgtcTuzD1
+ QaeQI8b2sq3WAXU+xcXa+Jnswq6Zx1uqa1sgyGTHyo03JgcnUnNXJ2EjJu62MpgyBTEI
+ B56DH/gZb1ncwOpJTFxDQvvxNfYKsux4QLr2wuznkvH3OKYuxFO7qm7kqxIIOQhvqOoG
+ M/gg==
+X-Gm-Message-State: APjAAAVm4S/HC1zw+bK9X0Z6QFZ2dgrKwUzyVUh3lqg/I/LXepg0hu8n
+ 0rVHWsCFHzqQb1j0WLaW12udYfsnwj7uG2UtRVlZXw==
+X-Google-Smtp-Source: APXvYqzlGf0tKCzKwDLVMNReMvQcDY2AOLHnYQ7fYCG4kMKmoHKNejXmOFBQGqIQflfBg5mRKfTF8g1MtfHSnrhNYSs=
+X-Received: by 2002:a2e:8756:: with SMTP id q22mr73630699ljj.108.1564784410398; 
+ Fri, 02 Aug 2019 15:20:10 -0700 (PDT)
 MIME-Version: 1.0
-References: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
-In-Reply-To: <1563398164-2679-1-git-send-email-wahrenst@gmx.net>
+References: <20190718094902.15562-1-hui.song_1@nxp.com>
+ <20190718094902.15562-2-hui.song_1@nxp.com>
+In-Reply-To: <20190718094902.15562-2-hui.song_1@nxp.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Sat, 3 Aug 2019 00:12:05 +0200
-Message-ID: <CACRpkdZeidAcHS9f1PFAQ46QGwkKrC7pv8mtUXE_0aHRWNHFiQ@mail.gmail.com>
-Subject: Re: [PATCH RFC 14/18] HACK: pinctrl: bcm2835: Implement legacy pull
- for BCM7211
-To: Stefan Wahren <wahrenst@gmx.net>
+Date: Sat, 3 Aug 2019 00:19:59 +0200
+Message-ID: <CACRpkdYRg8mMe5yxu=+tC1uz_usyNyVjn7NFobSUZi0rR5uGjw@mail.gmail.com>
+Subject: Re: [PATCH 2/2] gpio: mpc8xxx: Add ls1028a device specify function.
+To: Hui Song <hui.song_1@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_151221_061715_1D03FE17 
-X-CRM114-Status: GOOD (  13.51  )
+X-CRM114-CacheID: sfid-20190802_152012_207581_1EC8645B 
+X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -91,36 +92,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Adrian Hunter <adrian.hunter@intel.com>, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Mark Brown <broonie@kernel.org>,
- linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 17, 2019 at 11:16 PM Stefan Wahren <wahrenst@gmx.net> wrote:
+On Thu, Jul 18, 2019 at 11:58 AM Hui Song <hui.song_1@nxp.com> wrote:
 
-> This temporay hack is necessary to make the BCM2838/7211 work with the legacy
-> pull configuration. The better approach is to convert all affected DTS files
-> to the generic bias control.
+> From: Song Hui <hui.song_1@nxp.com>
 >
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+> There is a device specify register(named GPIO_IBE)
+> on ls1028a need to enable in initial stage.
+>
+> Signed-off-by: Song Hui <hui.song_1@nxp.com>
 
-I don't understand this: why do you even need to make a *new* SoC work
-with *legacy* bias control? Just use the generic pin configs and be happy.
+Patch applied.
 
-Or did someone produce a lot of DTS file using the "hack" seen in earlier
-patches that you would now have to fix? (Sigh.) That is why they should
-discuss with community first I guess.
+As noted on patch 1/2, send a separate patch to add the
+device tree bindings in Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt
 
 Yours,
 Linus Walleij
