@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48C017F525
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:34:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDB687F522
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  2 Aug 2019 12:34:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rRD0CHV67Y0gOPWL2OFfCJSzc6Ke2mB/M2d+vYDv/Gc=; b=rhAc6NeLZQCd48
-	T9BqTJnMCYHbUPtH7zi9xnfzU6aa5z3dd4LupUYmBrV3TMVpUAKGEpr/Agr8sm5kvfxNZsvZ0DVpr
-	DS4u0/dyBV1X0dJaMidvgKFXWxuCrupuQSQTZhPVEFK/aDcpnCtgsX5m0fTTO8IcXBKGj5EqCDY2V
-	W8tCISn/zhE+cRL0qD3sWwjUPPeW7+OAZovnEZOpgXIn+Domv4JzaSfnGmxnp0I27JhaLOZhZlnJC
-	w8IBgSHVygtZzwUlkOJSu3Av2xxmFN1Eo7vUeQHLIYYITbhjQkxSNqYrGPvkooKqww2eNQ/9M2be5
-	PI0cfghmT4Z5G+2gaOYA==;
+	List-Owner; bh=zhVT2e6xGccc+DaiOKTx3i2HfOSZSH+QdHqhC9MIc8A=; b=c9hagq0+9JkSm+
+	2NkKTW1b6FFf1xnKFjNwQ06/v5k8tEBAO/f60TkaUq+vGumMh+9jnxyMD6lua2bldhmDKUvYDFmsR
+	SyvgwgxR42qgLm3k2+acFEB2JkkhcazFilcPF1j0XqA7iNILGVxJgE1pCOhETMCxxCB5f9yfWG9/G
+	XixFM2BBe9mg6ko1vKqFsw/n4fkP1n8QkqdO4C90pFNvoBMDVdJOMC/eFUH/QsPyc31WzYfe2SPcs
+	ML9rv0LbGF3P1HH/yvk/vsBQGA81NNYLGcZnJsJFW51tADNwFwTZdQWPOcI48u5CynhirCxlC/bdC
+	OSV/QALB5SxfpUQQ3Dcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htUtT-0001z4-L2; Fri, 02 Aug 2019 10:34:39 +0000
+	id 1htUtL-0001iE-2J; Fri, 02 Aug 2019 10:34:31 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htUsn-000127-N4
- for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:33:59 +0000
+ id 1htUsn-00011y-HC
+ for linux-arm-kernel@lists.infradead.org; Fri, 02 Aug 2019 10:33:58 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 088E98053C;
- Fri,  2 Aug 2019 12:33:54 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id F3B588053D;
+ Fri,  2 Aug 2019 12:33:50 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id QN9O9-YxYJJv; Fri,  2 Aug 2019 12:33:40 +0200 (CEST)
+ with ESMTP id iJJngSIQ_H3y; Fri,  2 Aug 2019 12:33:40 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id CEFA080540;
- Fri,  2 Aug 2019 12:33:38 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id AAE34804BE;
+ Fri,  2 Aug 2019 12:33:39 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id UR4aRb2y413V; Fri,  2 Aug 2019 12:33:36 +0200 (CEST)
+ with ESMTP id DO9FlBCXBNN1; Fri,  2 Aug 2019 12:33:37 +0200 (CEST)
 Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
  [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id ECFE98053A;
- Fri,  2 Aug 2019 12:33:35 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 2B2C58053B;
+ Fri,  2 Aug 2019 12:33:36 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH v2 2/6] ARM: dts: mmp2: fix the SPI nodes
-Date: Fri,  2 Aug 2019 12:33:22 +0200
-Message-Id: <20190802103326.531250-3-lkundrak@v3.sk>
+Subject: [PATCH v2 3/6] ARM: dts: mmp2: rename the USB PHY node
+Date: Fri,  2 Aug 2019 12:33:23 +0200
+Message-Id: <20190802103326.531250-4-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190802103326.531250-1-lkundrak@v3.sk>
 References: <20190802103326.531250-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_033357_903432_B84E2993 
-X-CRM114-Status: UNSURE (   8.44  )
+X-CRM114-CacheID: sfid-20190802_033357_734269_5228A989 
+X-CRM114-Status: UNSURE (   9.06  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,68 +80,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SPI bus has a single address cell and not size cells.
-
-Also, dtc thinks the SPI nodes are preferrably called "spi" and it is
-right to think so.
+This device is not an OTG phy, it's a regular USB HS phy. Follow the
+generic node name recommendation, and rename it to "usb-phy".
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- arch/arm/boot/dts/mmp2.dtsi | 16 ++++++++++++----
- 1 file changed, 12 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/mmp2.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm/boot/dts/mmp2.dtsi b/arch/arm/boot/dts/mmp2.dtsi
-index 50b6c38b39cc3..e64639ce57a91 100644
+index e64639ce57a91..21432cb9143f7 100644
 --- a/arch/arm/boot/dts/mmp2.dtsi
 +++ b/arch/arm/boot/dts/mmp2.dtsi
-@@ -346,35 +346,43 @@
- 				status = "disabled";
+@@ -117,7 +117,7 @@
+ 				mrvl,intc-nr-irqs = <2>;
  			};
  
--			ssp1: ssp@d4035000 {
-+			ssp1: spi@d4035000 {
- 				compatible = "marvell,mmp2-ssp";
- 				reg = <0xd4035000 0x1000>;
- 				clocks = <&soc_clocks MMP2_CLK_SSP0>;
- 				interrupts = <0>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
+-			usb_otg_phy0: usb-otg-phy@d4207000 {
++			usb_phy0: usb-phy@d4207000 {
+ 				compatible = "marvell,mmp2-usb-phy";
+ 				reg = <0xd4207000 0x40>;
+ 				#phy-cells = <0>;
+@@ -130,7 +130,7 @@
+ 				interrupts = <44>;
+ 				clocks = <&soc_clocks MMP2_CLK_USB>;
+ 				clock-names = "USBCLK";
+-				phys = <&usb_otg_phy0>;
++				phys = <&usb_phy0>;
+ 				phy-names = "usb";
  				status = "disabled";
  			};
- 
--			ssp2: ssp@d4036000 {
-+			ssp2: spi@d4036000 {
- 				compatible = "marvell,mmp2-ssp";
- 				reg = <0xd4036000 0x1000>;
- 				clocks = <&soc_clocks MMP2_CLK_SSP1>;
- 				interrupts = <1>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
- 				status = "disabled";
- 			};
- 
--			ssp3: ssp@d4037000 {
-+			ssp3: spi@d4037000 {
- 				compatible = "marvell,mmp2-ssp";
- 				reg = <0xd4037000 0x1000>;
- 				clocks = <&soc_clocks MMP2_CLK_SSP2>;
- 				interrupts = <20>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
- 				status = "disabled";
- 			};
- 
--			ssp4: ssp@d4039000 {
-+			ssp4: spi@d4039000 {
- 				compatible = "marvell,mmp2-ssp";
- 				reg = <0xd4039000 0x1000>;
- 				clocks = <&soc_clocks MMP2_CLK_SSP3>;
- 				interrupts = <21>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
- 				status = "disabled";
- 			};
- 		};
 -- 
 2.21.0
 
