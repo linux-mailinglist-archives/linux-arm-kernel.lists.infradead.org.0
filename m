@@ -2,52 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 784C4805BC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 12:30:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 114E4805EB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 13:14:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jrtxYykTOwSnVxSoRWOghLivx2rjUzz/U4eMI1c6uJo=; b=f5tiOR/ZtXKBIy
-	rRr2NXWuuDXY0QRfgvqVkxiacNkCuhTNYdtFIDWdF0sjdvimIzLtkLMI/xIV0uG6SPCyx25TlwSK+
-	x9VVySDQLM3gYx4GjKFqx++2x999+gbWmYh7Oegi/PZRhwFf7oqOjuIzzskvvurF5Qxai9opMtSUP
-	3vYWpHscYII7UILNklIX7yLWMmYULwHxZqhbgB6/BHXU4SdMBs/OT4NTB7BaD6N+A6EzD8Af6Evyh
-	CaOBd467+Ugy591XNtJwC+q19n/pczQ+XVafGFO5gGdra2h46gsvAm/mdVcdmH8IpbTtRmr3NjYK7
-	lWm/h9Z4TSvYsFr26RZQ==;
+	List-Owner; bh=yOEQLWD2lbmoh/HqFzKih8XMhMqEQ7YnJgx4aMAOjNk=; b=DfbcFz48T/LXp/
+	fTPTlhU7BkVYn2WCjRQRDKqkLpPtGDhjV8JZEgwgGpzXQUFWNhE54pCCi9mOrsZZxrPLbnV2tE7VZ
+	8TAhdR51wUPfVFgPuGi8yGkTyEgjRKlMeAhw19uscKeLolV/9q8iFodpom1xIZpC6CZiwq/FD/etC
+	dlJmhK4XUuDB56qV5QMIPeRXoMMoWIcuVoVY/uKbzQFyt00CSOYBl3QIOu8xpXWCGy41jOMyNrwGe
+	z/jG9yrVywTQclGqKoxtgtYk+BUWkgg4EBKXHTB+zdhN52dipsv6H6qe+QWrOT3stUa3M246MCjpY
+	47hYMSpyxkTlyN1iqP+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htrJ7-0002Gp-St; Sat, 03 Aug 2019 10:30:37 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1htrzB-0004pw-Cv; Sat, 03 Aug 2019 11:14:05 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htrIz-0002GW-7o
- for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 10:30:30 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 4321A227A81; Sat,  3 Aug 2019 12:30:24 +0200 (CEST)
-Date: Sat, 3 Aug 2019 12:30:24 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Takashi Iwai <tiwai@suse.de>
-Subject: Re: [PATCH 5/5] dma-mapping: remove ARCH_NO_COHERENT_DMA_MMAP
-Message-ID: <20190803103024.GA32624@lst.de>
-References: <20190725063401.29904-1-hch@lst.de>
- <20190725063401.29904-6-hch@lst.de> <20190802070354.GA8280@lst.de>
- <s5hh870rn4t.wl-tiwai@suse.de>
+ id 1htrz5-0004pT-4u
+ for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 11:14:01 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1htrys-00079D-8V; Sat, 03 Aug 2019 13:13:46 +0200
+Date: Sat, 3 Aug 2019 12:13:43 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH 1/9] KVM: arm64: Document PV-time interface
+Message-ID: <20190803121343.2f482200@why>
+In-Reply-To: <20190802145017.42543-2-steven.price@arm.com>
+References: <20190802145017.42543-1-steven.price@arm.com>
+ <20190802145017.42543-2-steven.price@arm.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <s5hh870rn4t.wl-tiwai@suse.de>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: steven.price@arm.com, catalin.marinas@arm.com,
+ pbonzini@redhat.com, rkrcmar@redhat.com, linux@armlinux.org.uk,
+ will@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, peter.maydell@linaro.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190803_033029_427960_B934BD20 
-X-CRM114-Status: GOOD (  12.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190803_041359_392515_DEA8E51D 
+X-CRM114-Status: GOOD (  28.94  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -60,36 +70,201 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-xtensa@linux-xtensa.org, Michal Simek <monstr@monstr.eu>,
- linux-parisc@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-m68k@lists.linux-m68k.org, Robin Murphy <robin.murphy@arm.com>,
- x86@kernel.org, linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- linuxppc-dev@lists.ozlabs.org, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: peter.maydell@linaro.org, kvm@vger.kernel.org,
+ Radim =?UTF-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 02, 2019 at 10:24:02AM +0200, Takashi Iwai wrote:
-> I wasn't careful enough to look at that change, sorry.
-> 
-> The code there tries to check whether dma_mmap_coherent() would always
-> fail on some platforms.  Then the driver clears the mmap capability
-> flag at the device open time and notifies user-space to fall back to
-> the dumb read/write mode.
-> 
-> So I'm afraid that simply dropping the check would cause the behavior
-> regression, e.g. on PARISC.
-> 
-> Is there any simple way to test whether dma_mmap_coherent() would work
-> or not in general on the target platform?  It's not necessarily in an
-> ifdef at all.
+On Fri,  2 Aug 2019 15:50:09 +0100
+Steven Price <steven.price@arm.com> wrote:
 
-This isn't really a platform, but a per-device question.  I can add a
-"bool dma_can_mmap(struct device *dev)" helper to check that.  But how
-do I get at a suitable struct device in hw_support_mmap()?
+[+Peter for the userspace aspect of things]
+
+Hi Steve,
+
+> Introduce a paravirtualization interface for KVM/arm64 based on the
+> "Arm Paravirtualized Time for Arm-Base Systems" specification DEN 0057A.
+> 
+> This only adds the details about "Stolen Time" as the details of "Live
+> Physical Time" have not been fully agreed.
+> 
+> User space can specify a reserved area of memory for the guest and
+> inform KVM to populate the memory with information on time that the host
+> kernel has stolen from the guest.
+> 
+> A hypercall interface is provided for the guest to interrogate the
+> hypervisor's support for this interface and the location of the shared
+> memory structures.
+> 
+> Signed-off-by: Steven Price <steven.price@arm.com>
+> ---
+>  Documentation/virtual/kvm/arm/pvtime.txt | 107 +++++++++++++++++++++++
+>  1 file changed, 107 insertions(+)
+>  create mode 100644 Documentation/virtual/kvm/arm/pvtime.txt
+> 
+> diff --git a/Documentation/virtual/kvm/arm/pvtime.txt b/Documentation/virtual/kvm/arm/pvtime.txt
+> new file mode 100644
+> index 000000000000..e6ae9799e1d5
+> --- /dev/null
+> +++ b/Documentation/virtual/kvm/arm/pvtime.txt
+> @@ -0,0 +1,107 @@
+> +Paravirtualized time support for arm64
+> +======================================
+> +
+> +Arm specification DEN0057/A defined a standard for paravirtualised time
+> +support for Aarch64 guests:
+
+nit: AArch64
+
+> +
+> +https://developer.arm.com/docs/den0057/a
+
+Between this file and the above document, which one is authoritative?
+
+> +
+> +KVM/Arm64 implements the stolen time part of this specification by providing
+
+nit: KVM/arm64
+
+> +some hypervisor service calls to support a paravirtualized guest obtaining a
+> +view of the amount of time stolen from its execution.
+> +
+> +Two new SMCCC compatible hypercalls are defined:
+> +
+> +PV_FEATURES 0xC5000020
+> +PV_TIME_ST  0xC5000022
+> +
+> +These are only available in the SMC64/HVC64 calling convention as
+> +paravirtualized time is not available to 32 bit Arm guests.
+> +
+> +PV_FEATURES
+> +    Function ID:  (uint32)  : 0xC5000020
+> +    PV_func_id:   (uint32)  : Either PV_TIME_LPT or PV_TIME_ST
+> +    Return value: (int32)   : NOT_SUPPORTED (-1) or SUCCESS (0) if the relevant
+> +                              PV-time feature is supported by the hypervisor.
+
+How is PV_FEATURES discovered? Is the intention to make it a generic
+ARM-wide PV discovery mechanism, not specific to PV time?
+
+> +
+> +PV_TIME_ST
+> +    Function ID:  (uint32)  : 0xC5000022
+> +    Return value: (int64)   : IPA of the stolen time data structure for this
+> +                              (V)CPU. On failure:
+> +                              NOT_SUPPORTED (-1)
+> +
+
+Is the size implicit? What are the memory attributes? This either needs
+documenting here, or point to the right bit to the spec.
+
+> +Stolen Time
+> +-----------
+> +
+> +The structure pointed to by the PV_TIME_ST hypercall is as follows:
+> +
+> +  Field       | Byte Length | Byte Offset | Description
+> +  ----------- | ----------- | ----------- | --------------------------
+> +  Revision    |      4      |      0      | Must be 0 for version 0.1
+> +  Attributes  |      4      |      4      | Must be 0
+> +  Stolen time |      8      |      8      | Stolen time in unsigned
+> +              |             |             | nanoseconds indicating how
+> +              |             |             | much time this VCPU thread
+> +              |             |             | was involuntarily not
+> +              |             |             | running on a physical CPU.
+> +
+> +The structure will be updated by the hypervisor periodically as time is stolen
+
+Is it really periodic? If so, when is the update frequency?
+
+> +from the VCPU. It will be present within a reserved region of the normal
+> +memory given to the guest. The guest should not attempt to write into this
+> +memory. There is a structure by VCPU of the guest.
+
+What if the vcpu writes to it? Does it get a fault? If there is a
+structure per vcpu, what is the layout in memory? How does a vcpu find
+its own data structure? Is that the address returned by PV_TIME_ST?
+
+> +
+> +User space interface
+> +====================
+> +
+> +User space can request that KVM provide the paravirtualized time interface to
+> +a guest by creating a KVM_DEV_TYPE_ARM_PV_TIME device, for example:
+> +
+> +    struct kvm_create_device pvtime_device = {
+> +            .type = KVM_DEV_TYPE_ARM_PV_TIME,
+> +            .attr = 0,
+> +            .flags = 0,
+> +    };
+> +
+> +    pvtime_fd = ioctl(vm_fd, KVM_CREATE_DEVICE, &pvtime_device);
+> +
+> +The guest IPA of the structures must be given to KVM. This is the base address
+
+nit: s/guest //
+
+> +of an array of stolen time structures (one for each VCPU). For example:
+> +
+> +    struct kvm_device_attr st_base = {
+> +            .group = KVM_DEV_ARM_PV_TIME_PADDR,
+> +            .attr = KVM_DEV_ARM_PV_TIME_ST,
+> +            .addr = (u64)(unsigned long)&st_paddr
+> +    };
+> +
+> +    ioctl(pvtime_fd, KVM_SET_DEVICE_ATTR, &st_base);
+
+So the allocation itself is performed by the kernel? What are the
+ordering requirements between creating vcpus and the device? What are
+the alignment requirements for the base address?
+
+> +
+> +For migration (or save/restore) of a guest it is necessary to save the contents
+> +of the shared page(s) and later restore them. KVM_DEV_ARM_PV_TIME_STATE_SIZE
+> +provides the size of this data and KVM_DEV_ARM_PV_TIME_STATE allows the state
+> +to be read/written.
+
+Is the size variable depending on the number of vcpus?
+
+> +
+> +It is also necessary for the physical address to be set identically when
+> +restoring.
+> +
+> +    void *save_state(int fd, u64 attr, u32 *size) {
+> +        struct kvm_device_attr get_size = {
+> +                .group = KVM_DEV_ARM_PV_TIME_STATE_SIZE,
+> +                .attr = attr,
+> +                .addr = (u64)(unsigned long)size
+> +        };
+> +
+> +        ioctl(fd, KVM_GET_DEVICE_ATTR, get_size);
+> +
+> +        void *buffer = malloc(*size);
+> +
+> +        struct kvm_device_attr get_state = {
+> +                .group = KVM_DEV_ARM_PV_TIME_STATE,
+> +                .attr = attr,
+> +                .addr = (u64)(unsigned long)size
+> +        };
+> +
+> +        ioctl(fd, KVM_GET_DEVICE_ATTR, buffer);
+> +    }
+> +
+> +    void *st_state = save_state(pvtime_fd, KVM_DEV_ARM_PV_TIME_ST, &st_size);
+> +
+
+Thanks,
+
+	M.
+-- 
+Without deviation from the norm, progress is not possible.
 
 _______________________________________________
 linux-arm-kernel mailing list
