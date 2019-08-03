@@ -2,42 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B81080574
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 10:58:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E937780577
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 10:59:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TbJVd8qCdlwgGdnq8BMOpsY/3Ml+UEgvfT0EB4X8QlY=; b=ZAaRk9PzHCK4n14pRRo0+5Wrq
-	xktIJbWVHYsms4geUBz5L/5tk3uI4+JxkcFv2KJWSImge1gVHT2SMN/jC6eh74ZKsXCulR7R9ZE8A
-	WZReBcPTODuxG4gIz+pO1wI0e/aTynF+daRsDWCsTsQrUZMFfDxiUrmrl/ZRHHqpaJ+a2LTxoUb3U
-	Y5mJCdPJkxUzg7bBR4PuYkOqp88LVea+D6dCoiA5d0fgHqHTUbyNHyauQpxVZ73yY7Ly6ePnpnnk1
-	yoZP1mkMweDVdE3rDzgAedT9mcizhJyHEZq6nuV5QdKAvTkOhaHyb156tJ5ccXHUFNeQhv+N3vg4m
-	prLZ82HEw==;
+	 bh=NeWZmdqc7DZ4Py0mmPUpavGU/BjZdXJsVX7J/yf0Iqc=; b=V366oKmeDsxfOn62fdqwU15wS
+	VFs6q2hQEcPXpG8PS4R3h4yBGOsqo/HC9pR/oY4RSLe2Ls5IQNe8svfrVnk6p8FJLdVCVQqrX4W1e
+	WykkZNAoc7B7EOrxiRF/onu3vdQEbwBAyzr8/FQ0LEWRB4OaUaCpXC/pSBst935aKhD5QmeFQFRKy
+	J0lIeeLugsnOIFlnHKVJPZ75nf4322M32Wt4rL0NH0gfOu4tU+2eZfqFM0N9UT47sJUDjJEE9t3an
+	JUOBRn7IaM2zrt/45e1LbLrEiPgGWGbZjB3l/6eJULob9G/HqGbigqQhbJ+pMOxWITcKi2pqJHBkS
+	87JwWqmZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htpsC-0008TS-ES; Sat, 03 Aug 2019 08:58:44 +0000
+	id 1htpt9-0000MJ-88; Sat, 03 Aug 2019 08:59:43 +0000
 Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htpry-0008KN-A2
- for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 08:58:32 +0000
+ id 1htpsy-0000KV-DA
+ for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 08:59:33 +0000
 Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
- id A89F38031B; Sat,  3 Aug 2019 10:58:13 +0200 (CEST)
-Date: Sat, 3 Aug 2019 10:58:24 +0200
+ id F3EE68031B; Sat,  3 Aug 2019 10:59:18 +0200 (CEST)
+Date: Sat, 3 Aug 2019 10:59:30 +0200
 From: Pavel Machek <pavel@ucw.cz>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Subject: Re: [PATCH v2 6/6] ARM: dts: mmp2: add OLPC XO 1.75 machine
-Message-ID: <20190803085824.GB8224@amd>
+Subject: Re: [PATCH v2 0/6] ARM: dts: mmp2: devicetree updates
+Message-ID: <20190803085930.GC8224@amd>
 References: <20190802103326.531250-1-lkundrak@v3.sk>
- <20190802103326.531250-7-lkundrak@v3.sk>
 MIME-Version: 1.0
-In-Reply-To: <20190802103326.531250-7-lkundrak@v3.sk>
+In-Reply-To: <20190802103326.531250-1-lkundrak@v3.sk>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190803_015830_519091_8252A4BD 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20190803_015932_591340_CDE9A6F9 
+X-CRM114-Status: GOOD (  13.27  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -61,56 +60,59 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
  Olof Johansson <olof@lixom.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0823085947118175225=="
+Content-Type: multipart/mixed; boundary="===============8987568623427623533=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0823085947118175225==
+--===============8987568623427623533==
 Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="bCsyhTFzCvuiizWE"
+	protocol="application/pgp-signature"; boundary="zCKi3GIZzVBPywwA"
 Content-Disposition: inline
 
 
---bCsyhTFzCvuiizWE
+--zCKi3GIZzVBPywwA
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri 2019-08-02 12:33:26, Lubomir Rintel wrote:
-> This is a fairly complete description of an OLPC XO 1.75 laptop.
-> What's missing for now is the GPU, LCD controller, DCON, the panel and
-> audio.
+On Fri 2019-08-02 12:33:20, Lubomir Rintel wrote:
+> Hi,
+>=20
+> Here's a couple of updates for the MMP2 SoC devicetree files.
+>=20
+> The only change from the last submission is the addition of the
+> OLPC XO 1.75 dts file. Apart from that one, the patches are
+> independent of each other, can be applied in any order.
+>=20
+> Hopefully I'm sending the patch set in the correct direction.
 
-Ok, but I need GPU/LCD/panel... that's my only output. Is video
-expected to work in 5.2? Does the firmware pass right device tree,
-including the GPU/LCD/DCON?
+For the series:
 
-Is there config somewhere I could use?
+Acked-by: Pavel Machek <pavel@ucw.cz>
 
-Thanks a lot,
-								Pavel
+									Pavel
 --=20
 (english) http://www.livejournal.com/~pavelmachek
 (cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
 g.html
 
---bCsyhTFzCvuiizWE
+--zCKi3GIZzVBPywwA
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: Digital signature
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iEYEARECAAYFAl1FTLAACgkQMOfwapXb+vKvhwCfRiwZa8E3fNBqMi6b0KGpOPIQ
-EL0AnjUujlV3bPaUb0uSNTtgJ13k53kC
-=DqjA
+iEYEARECAAYFAl1FTPIACgkQMOfwapXb+vJSEgCeP8R8/yqqOx9NWsQBypBVhpTv
+A4sAmQGoqEsj1khqUsIR0sjkyEqGdQfG
+=LO3O
 -----END PGP SIGNATURE-----
 
---bCsyhTFzCvuiizWE--
+--zCKi3GIZzVBPywwA--
 
 
---===============0823085947118175225==
+--===============8987568623427623533==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -121,5 +123,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0823085947118175225==--
+--===============8987568623427623533==--
 
