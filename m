@@ -2,58 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF63080527
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 10:01:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2172080535
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 10:12:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=doe1PtijOBUMB0lAAukhnmiWicS1RY4lLTuLq2HFIzU=; b=B0CZ5PlnWy8KD7
-	Dm1LlRznYi+jJW0UzADE18biNPzd5WORmkO5HKPeA0hJMYuEmaScqmiTkGs2YGMN4ECxJdBcMoMDQ
-	acyiMA6hf1U/firHNbf4hqQ+ybvq2OY2dyTi3ZP8xgD+V2hqXBDhC8kM1/702BNK/H8KTN2zKp69X
-	62kGMcUSVfp6p86mJxlPU73CGZI1NhakMg0Qq5upIZpnmzdLpB0Wenam6CINdkgeGza65svTUbznV
-	/0aIGhW3mkvpEAI1WUwa7QsAQDIfpnxzY7pYrzAZ4G1M5DXn5MKmxCvByrOgSSkS7yzHmCzzS5iz/
-	ncF6XKcMNFEg5YM66VWg==;
+	List-Owner; bh=4ZnT5tb3OP8bpA5YI3SUZzYvtcFLOfppTxAa7oYw0ww=; b=pddZpjGw0Btax+
+	LtXcXou2uoa5YuawNI2AKibfTiJIRGFsuNAd1fB/2qp/msLjnZMcNekQ6CbJgy4xxcEgKYamfVj/4
+	BQqhgCFq/TWemNUXmrQvpaauvzvgYdYVT+GWafdT+apImQcQ+ErKiAXimiXkrE8IP5dux68YCmJLj
+	Bj084GDa+41DFq9BLlZiGcMkcf2wW9anNba/Qb2tOneEX5nEPazTnA1kzEIJzz6SoAVgVNPiZcbh4
+	T3tB8luHCORpKgQqOcua7QJJVpRYK+k8p391Ag7EzXizj7BMGcBPZsMLuaQtlA88Nk/Fc8JTCdUtD
+	KuQZj/GLxHazLcnIjqSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htoyO-00079k-CO; Sat, 03 Aug 2019 08:01:04 +0000
+	id 1htp9V-0001iu-8J; Sat, 03 Aug 2019 08:12:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htoy7-00076H-N9
- for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 08:00:48 +0000
+ id 1htp9J-0001hJ-7y
+ for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 08:12:22 +0000
 Received: from X250.getinternet.no (98.142.130.235.16clouds.com
  [98.142.130.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3E22820665;
- Sat,  3 Aug 2019 08:00:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6A33D21726;
+ Sat,  3 Aug 2019 08:12:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564819247;
- bh=0D9LEf7wHMiPCCMe2BEWfRqCtH8Tiw3F45yuca8eAxw=;
+ s=default; t=1564819939;
+ bh=48aWMdCMkjYO+TIY+je07w+cK/deQF45Y7RMj+QIouo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1CO1UKEx8X4QQjbU9R0btlfxlNvFUwPCoCtfAPl4OauxWJa800ETYFVp6P5uVUNOJ
- gvdYvZNGC5AXKICU7dv+KdaZ7eFC03WB3cYI4bm0nULOl3/C4F5apTWTE5o8zTQNB4
- iLpHYLnmOZx5FnU5tnzk8gUY2utQdmJv9QYAjyz8=
-Date: Sat, 3 Aug 2019 10:00:40 +0200
+ b=pV0Uoa3/a3Riy4c+yQtXWVkCtm1A2YJ18TfIDr8mmd4J/+Z2ksX/ijYwTKekSstPh
+ XImanuCxwCysJLwakWH7twmKJmrc0+aIGc2jlFvPxznu9616ffVKnWOTQen6Tj4wm7
+ y55vd7YQVjaTBFKZ3aeXoBXB1c2Uz+RGLrSBjLFg=
+Date: Sat, 3 Aug 2019 10:12:10 +0200
 From: Shawn Guo <shawnguo@kernel.org>
-To: Daniel Baluta <daniel.baluta@gmail.com>
-Subject: Re: [PATCH] clk: imx8mq: Mark AHB clock as critical
-Message-ID: <20190803080038.GA8870@X250.getinternet.no>
-References: <1561453316-11481-1-git-send-email-abel.vesa@nxp.com>
- <20190625223223.3B8EC2053B@mail.kernel.org>
- <20190705085218.lvvqnqx6nfph2era@fsr-ub1664-175>
- <20190722212537.41C9121900@mail.kernel.org>
- <CAEnQRZAFdvSzh-pDJ-rsyaEJw83ymSVW0CC2+QZyWwAPeTOyBw@mail.gmail.com>
- <20190803072723.GB7597@X250>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH V2 3/4] arm64: dts: imx8mq: Add opp-suspend property to
+ OPP table
+Message-ID: <20190803081209.GB8870@X250.getinternet.no>
+References: <20190709080015.43442-1-Anson.Huang@nxp.com>
+ <20190709080015.43442-3-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190803072723.GB7597@X250>
+In-Reply-To: <20190709080015.43442-3-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190803_010047_803921_901C626B 
-X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-CacheID: sfid-20190803_011221_311705_64C5E25D 
+X-CRM114-Status: UNSURE (   8.92  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -83,26 +80,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: nm@ti.com, mark.rutland@arm.com, ping.bai@nxp.com, ccaione@baylibre.com,
+ agx@sigxcpu.org, angus@akkea.ca, leonard.crestez@nxp.com, festevam@gmail.com,
+ abel.vesa@nxp.com, andrew.smirnov@gmail.com, vireshk@kernel.org,
+ Linux-imx@nxp.com, devicetree@vger.kernel.org, kernel@pengutronix.de,
+ linux-pm@vger.kernel.org, s.hauer@pengutronix.de, robh+dt@kernel.org,
+ daniel.baluta@nxp.com, linux-arm-kernel@lists.infradead.org, sboyd@kernel.org,
+ linux-kernel@vger.kernel.org, p.zabel@pengutronix.de, l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Aug 03, 2019 at 09:27:25AM +0200, Shawn Guo wrote:
-> > Also, without this patch linux-next hangs on imx8mq.
+On Tue, Jul 09, 2019 at 04:00:14PM +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> How does that happen?  Mainline is fine there?
+> Add opp-suspend property to each OPP, the of opp core will
+> select the OPP HW supported and with highest rate to be
+> suspend opp, it will speed up the suspend/resume process.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Okay, understood it by reading more threads.
-
-Shawn
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
