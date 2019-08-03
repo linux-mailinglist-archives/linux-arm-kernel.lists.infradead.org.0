@@ -2,40 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 114E4805EB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 13:14:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE453805F7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 13:21:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yOEQLWD2lbmoh/HqFzKih8XMhMqEQ7YnJgx4aMAOjNk=; b=DfbcFz48T/LXp/
-	fTPTlhU7BkVYn2WCjRQRDKqkLpPtGDhjV8JZEgwgGpzXQUFWNhE54pCCi9mOrsZZxrPLbnV2tE7VZ
-	8TAhdR51wUPfVFgPuGi8yGkTyEgjRKlMeAhw19uscKeLolV/9q8iFodpom1xIZpC6CZiwq/FD/etC
-	dlJmhK4XUuDB56qV5QMIPeRXoMMoWIcuVoVY/uKbzQFyt00CSOYBl3QIOu8xpXWCGy41jOMyNrwGe
-	z/jG9yrVywTQclGqKoxtgtYk+BUWkgg4EBKXHTB+zdhN52dipsv6H6qe+QWrOT3stUa3M246MCjpY
-	47hYMSpyxkTlyN1iqP+w==;
+	List-Owner; bh=9xjvYvF08KH0D8K99CBl/FZjXmk0vDf+rRmGwKp1Ing=; b=an3fxJne7l1zel
+	N6x6bvlaaAHn+Q9BrsG9P31lrqAK+nEZOakbwfnvT/q+uF6gnQOUvaT+tC31lUDK36kMmORcu2sKu
+	hhNEDLB0K/R15yV1dCxMI6ACibPe8nPAlOT8RZBdVskL0Le+XPg6Ms4Oq8x2HM3VC8f/t4FBbtpyV
+	WVT2OWb8j1ywMmmlIj5ewXFTgijW4wZEDmlsVmXJf38Xxcc+iMX2ZCzYKw7SHFzpHtL9+yUZm+XJd
+	aRcmJcMj/EBBsLzUOZEXirGm7Ht42DNDCJEQSklv4aujlaUiaGxlfCvbcNyNXue/hHRSIndNRSZlZ
+	2jXXKdOpEdRYhGo2D8nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htrzB-0004pw-Cv; Sat, 03 Aug 2019 11:14:05 +0000
+	id 1hts6W-0007d1-Hv; Sat, 03 Aug 2019 11:21:40 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htrz5-0004pT-4u
- for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 11:14:01 +0000
+ id 1hts6P-0007cX-Tj
+ for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 11:21:35 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why)
  by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
  (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1htrys-00079D-8V; Sat, 03 Aug 2019 13:13:46 +0200
-Date: Sat, 3 Aug 2019 12:13:43 +0100
+ id 1hts6I-0007Dy-TI; Sat, 03 Aug 2019 13:21:27 +0200
+Date: Sat, 3 Aug 2019 12:21:24 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH 1/9] KVM: arm64: Document PV-time interface
-Message-ID: <20190803121343.2f482200@why>
-In-Reply-To: <20190802145017.42543-2-steven.price@arm.com>
+Subject: Re: [PATCH 3/9] KVM: arm64: Implement PV_FEATURES call
+Message-ID: <20190803122124.7700f700@why>
+In-Reply-To: <20190802145017.42543-4-steven.price@arm.com>
 References: <20190802145017.42543-1-steven.price@arm.com>
- <20190802145017.42543-2-steven.price@arm.com>
+ <20190802145017.42543-4-steven.price@arm.com>
 Organization: Approximate
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
@@ -45,13 +45,13 @@ X-SA-Exim-Rcpt-To: steven.price@arm.com, catalin.marinas@arm.com,
  will@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
  suzuki.poulose@arm.com, kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
  linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, peter.maydell@linaro.org
+ linux-kernel@vger.kernel.org
 X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190803_041359_392515_DEA8E51D 
-X-CRM114-Status: GOOD (  28.94  )
+X-CRM114-CacheID: sfid-20190803_042134_107173_DB4102B6 
+X-CRM114-Status: GOOD (  17.77  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -70,8 +70,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peter.maydell@linaro.org, kvm@vger.kernel.org,
- Radim =?UTF-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+Cc: kvm@vger.kernel.org, Radim =?UTF-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
  Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
@@ -83,182 +82,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri,  2 Aug 2019 15:50:09 +0100
+On Fri,  2 Aug 2019 15:50:11 +0100
 Steven Price <steven.price@arm.com> wrote:
 
-[+Peter for the userspace aspect of things]
-
-Hi Steve,
-
-> Introduce a paravirtualization interface for KVM/arm64 based on the
-> "Arm Paravirtualized Time for Arm-Base Systems" specification DEN 0057A.
+> This provides a mechanism for querying which paravirtualized features
+> are available in this hypervisor.
 > 
-> This only adds the details about "Stolen Time" as the details of "Live
-> Physical Time" have not been fully agreed.
-> 
-> User space can specify a reserved area of memory for the guest and
-> inform KVM to populate the memory with information on time that the host
-> kernel has stolen from the guest.
-> 
-> A hypercall interface is provided for the guest to interrogate the
-> hypervisor's support for this interface and the location of the shared
-> memory structures.
+> Also add the header file which defines the ABI for the paravirtualized
+> clock features we're about to add.
 > 
 > Signed-off-by: Steven Price <steven.price@arm.com>
 > ---
->  Documentation/virtual/kvm/arm/pvtime.txt | 107 +++++++++++++++++++++++
->  1 file changed, 107 insertions(+)
->  create mode 100644 Documentation/virtual/kvm/arm/pvtime.txt
+>  arch/arm64/include/asm/pvclock-abi.h | 20 ++++++++++++++++++++
+>  include/linux/arm-smccc.h            | 14 ++++++++++++++
+>  virt/kvm/arm/hypercalls.c            |  9 +++++++++
+>  3 files changed, 43 insertions(+)
+>  create mode 100644 arch/arm64/include/asm/pvclock-abi.h
 > 
-> diff --git a/Documentation/virtual/kvm/arm/pvtime.txt b/Documentation/virtual/kvm/arm/pvtime.txt
+> diff --git a/arch/arm64/include/asm/pvclock-abi.h b/arch/arm64/include/asm/pvclock-abi.h
 > new file mode 100644
-> index 000000000000..e6ae9799e1d5
+> index 000000000000..1f7cdc102691
 > --- /dev/null
-> +++ b/Documentation/virtual/kvm/arm/pvtime.txt
-> @@ -0,0 +1,107 @@
-> +Paravirtualized time support for arm64
-> +======================================
+> +++ b/arch/arm64/include/asm/pvclock-abi.h
+> @@ -0,0 +1,20 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/* Copyright (C) 2019 Arm Ltd. */
 > +
-> +Arm specification DEN0057/A defined a standard for paravirtualised time
-> +support for Aarch64 guests:
-
-nit: AArch64
-
+> +#ifndef __ASM_PVCLOCK_ABI_H
+> +#define __ASM_PVCLOCK_ABI_H
 > +
-> +https://developer.arm.com/docs/den0057/a
-
-Between this file and the above document, which one is authoritative?
-
+> +/* The below structures and constants are defined in ARM DEN0057A */
 > +
-> +KVM/Arm64 implements the stolen time part of this specification by providing
+> +struct pvclock_vcpu_stolen_time_info {
+> +	__le32 revision;
+> +	__le32 attributes;
+> +	__le64 stolen_time;
+> +	/* Structure must be 64 byte aligned, pad to that size */
+> +	u8 padding[48];
+> +} __packed;
+> +
+> +#define PV_VM_TIME_NOT_SUPPORTED	-1
 
-nit: KVM/arm64
+Isn't the intent for this to be the same value as
+SMCCC_RET_NOT_SUPPORTED?
 
-> +some hypervisor service calls to support a paravirtualized guest obtaining a
-> +view of the amount of time stolen from its execution.
-> +
-> +Two new SMCCC compatible hypercalls are defined:
-> +
-> +PV_FEATURES 0xC5000020
-> +PV_TIME_ST  0xC5000022
-> +
-> +These are only available in the SMC64/HVC64 calling convention as
-> +paravirtualized time is not available to 32 bit Arm guests.
-> +
-> +PV_FEATURES
-> +    Function ID:  (uint32)  : 0xC5000020
-> +    PV_func_id:   (uint32)  : Either PV_TIME_LPT or PV_TIME_ST
-> +    Return value: (int32)   : NOT_SUPPORTED (-1) or SUCCESS (0) if the relevant
-> +                              PV-time feature is supported by the hypervisor.
+> +#define PV_VM_TIME_INVALID_PARAMETERS	-2
 
-How is PV_FEATURES discovered? Is the intention to make it a generic
-ARM-wide PV discovery mechanism, not specific to PV time?
+It overlaps with SMCCC_RET_NOT_REQUIRED. Is that a problem? Should we
+consider a spec change for this?
 
 > +
-> +PV_TIME_ST
-> +    Function ID:  (uint32)  : 0xC5000022
-> +    Return value: (int64)   : IPA of the stolen time data structure for this
-> +                              (V)CPU. On failure:
-> +                              NOT_SUPPORTED (-1)
+> +#endif
+> diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+> index 080012a6f025..e7f129f26ebd 100644
+> --- a/include/linux/arm-smccc.h
+> +++ b/include/linux/arm-smccc.h
+> @@ -45,6 +45,7 @@
+>  #define ARM_SMCCC_OWNER_SIP		2
+>  #define ARM_SMCCC_OWNER_OEM		3
+>  #define ARM_SMCCC_OWNER_STANDARD	4
+> +#define ARM_SMCCC_OWNER_STANDARD_HYP	5
+>  #define ARM_SMCCC_OWNER_TRUSTED_APP	48
+>  #define ARM_SMCCC_OWNER_TRUSTED_APP_END	49
+>  #define ARM_SMCCC_OWNER_TRUSTED_OS	50
+> @@ -302,5 +303,18 @@ asmlinkage void __arm_smccc_hvc(unsigned long a0, unsigned long a1,
+>  #define SMCCC_RET_NOT_SUPPORTED			-1
+>  #define SMCCC_RET_NOT_REQUIRED			-2
+>  
+> +/* Paravirtualised time calls (defined by ARM DEN0057A) */
+> +#define ARM_SMCCC_HV_PV_FEATURES				\
+> +	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,			\
+> +			   ARM_SMCCC_SMC_64,			\
+> +			   ARM_SMCCC_OWNER_STANDARD_HYP,	\
+> +			   0x20)
 > +
+> +#define ARM_SMCCC_HV_PV_TIME_ST					\
+> +	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,			\
+> +			   ARM_SMCCC_SMC_64,			\
+> +			   ARM_SMCCC_OWNER_STANDARD_HYP,	\
+> +			   0x22)
+> +
+>  #endif /*__ASSEMBLY__*/
+>  #endif /*__LINUX_ARM_SMCCC_H*/
+> diff --git a/virt/kvm/arm/hypercalls.c b/virt/kvm/arm/hypercalls.c
+> index f875241bd030..2906b2df99df 100644
+> --- a/virt/kvm/arm/hypercalls.c
+> +++ b/virt/kvm/arm/hypercalls.c
+> @@ -5,6 +5,7 @@
+>  #include <linux/kvm_host.h>
+>  
+>  #include <asm/kvm_emulate.h>
+> +#include <asm/pvclock-abi.h>
+>  
+>  #include <kvm/arm_hypercalls.h>
+>  #include <kvm/arm_psci.h>
+> @@ -48,6 +49,14 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+>  				break;
+>  			}
+>  			break;
+> +		case ARM_SMCCC_HV_PV_FEATURES:
+> +			val = SMCCC_RET_SUCCESS;
+> +			break;
+> +		}
+> +		break;
+> +	case ARM_SMCCC_HV_PV_FEATURES:
+> +		feature = smccc_get_arg1(vcpu);
+> +		switch (feature) {
+>  		}
+>  		break;
+>  	default:
 
-Is the size implicit? What are the memory attributes? This either needs
-documenting here, or point to the right bit to the spec.
-
-> +Stolen Time
-> +-----------
-> +
-> +The structure pointed to by the PV_TIME_ST hypercall is as follows:
-> +
-> +  Field       | Byte Length | Byte Offset | Description
-> +  ----------- | ----------- | ----------- | --------------------------
-> +  Revision    |      4      |      0      | Must be 0 for version 0.1
-> +  Attributes  |      4      |      4      | Must be 0
-> +  Stolen time |      8      |      8      | Stolen time in unsigned
-> +              |             |             | nanoseconds indicating how
-> +              |             |             | much time this VCPU thread
-> +              |             |             | was involuntarily not
-> +              |             |             | running on a physical CPU.
-> +
-> +The structure will be updated by the hypervisor periodically as time is stolen
-
-Is it really periodic? If so, when is the update frequency?
-
-> +from the VCPU. It will be present within a reserved region of the normal
-> +memory given to the guest. The guest should not attempt to write into this
-> +memory. There is a structure by VCPU of the guest.
-
-What if the vcpu writes to it? Does it get a fault? If there is a
-structure per vcpu, what is the layout in memory? How does a vcpu find
-its own data structure? Is that the address returned by PV_TIME_ST?
-
-> +
-> +User space interface
-> +====================
-> +
-> +User space can request that KVM provide the paravirtualized time interface to
-> +a guest by creating a KVM_DEV_TYPE_ARM_PV_TIME device, for example:
-> +
-> +    struct kvm_create_device pvtime_device = {
-> +            .type = KVM_DEV_TYPE_ARM_PV_TIME,
-> +            .attr = 0,
-> +            .flags = 0,
-> +    };
-> +
-> +    pvtime_fd = ioctl(vm_fd, KVM_CREATE_DEVICE, &pvtime_device);
-> +
-> +The guest IPA of the structures must be given to KVM. This is the base address
-
-nit: s/guest //
-
-> +of an array of stolen time structures (one for each VCPU). For example:
-> +
-> +    struct kvm_device_attr st_base = {
-> +            .group = KVM_DEV_ARM_PV_TIME_PADDR,
-> +            .attr = KVM_DEV_ARM_PV_TIME_ST,
-> +            .addr = (u64)(unsigned long)&st_paddr
-> +    };
-> +
-> +    ioctl(pvtime_fd, KVM_SET_DEVICE_ATTR, &st_base);
-
-So the allocation itself is performed by the kernel? What are the
-ordering requirements between creating vcpus and the device? What are
-the alignment requirements for the base address?
-
-> +
-> +For migration (or save/restore) of a guest it is necessary to save the contents
-> +of the shared page(s) and later restore them. KVM_DEV_ARM_PV_TIME_STATE_SIZE
-> +provides the size of this data and KVM_DEV_ARM_PV_TIME_STATE allows the state
-> +to be read/written.
-
-Is the size variable depending on the number of vcpus?
-
-> +
-> +It is also necessary for the physical address to be set identically when
-> +restoring.
-> +
-> +    void *save_state(int fd, u64 attr, u32 *size) {
-> +        struct kvm_device_attr get_size = {
-> +                .group = KVM_DEV_ARM_PV_TIME_STATE_SIZE,
-> +                .attr = attr,
-> +                .addr = (u64)(unsigned long)size
-> +        };
-> +
-> +        ioctl(fd, KVM_GET_DEVICE_ATTR, get_size);
-> +
-> +        void *buffer = malloc(*size);
-> +
-> +        struct kvm_device_attr get_state = {
-> +                .group = KVM_DEV_ARM_PV_TIME_STATE,
-> +                .attr = attr,
-> +                .addr = (u64)(unsigned long)size
-> +        };
-> +
-> +        ioctl(fd, KVM_GET_DEVICE_ATTR, buffer);
-> +    }
-> +
-> +    void *st_state = save_state(pvtime_fd, KVM_DEV_ARM_PV_TIME_ST, &st_size);
-> +
 
 Thanks,
 
