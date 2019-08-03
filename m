@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D764806D5
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 16:50:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D645806D9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 16:57:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AUQmBjz3+3dnF4HqU85NnK8bwlE8eBkgxGwy8fPH2Vk=; b=sRkYr2DxFwCj5P
-	2vIrKtH9tpOgP5/xXaa4zakrJlpIZkaecoxDr5NVVBXX7RTlgJ3e6t8u4n+rOqDN4r5HL4pfjRdl+
-	MrZAU3pwKcv+151dG3eHqzsAyNIEgmU/PCGACYvOV1Pr5l1365fGvLa9rbj/4ElqoQfoSUu8Pejse
-	b/1Tk35ZeejKvIjpWa6n5fOeR7kv8UENvP+maqvSjWfPLYCNd8//4Gni568ssxBzPchjE9toxiGBR
-	fNtn8AtPs0HgBWpi/pE89CyA0rGMllhrYd6M1QEyNW2hZ03X2uOiE56ooy8v2fyKaQk2LxkxiMhPD
-	JjP8vpjaGlzwrBYwYw1A==;
+	List-Owner; bh=tnRO8ekbCyBFEoRYOnvfOIZFl6jDuuE18glJEB7ER+M=; b=akR+JvStKG2Q+1
+	Lexk/LREQBgcutLViqeLXe/VeB2/FHm+GCUgODc/Z1DuHWAOhp3U2rg9FYKyLhalj7In0GKaj4pkp
+	6jtZhqjg0QpLchIR52O6BbXDK+5UALry6SWXtMyw24XnuNUjk+5PhRYy5OLOhBVN/lEdLH/mSjW6F
+	j9bL+F+ktQDljW4ct37cbU9Cb0uA7bjwt1S+oW3q5c+TTSuWN/S6Exf3bPSFq6g7tFdF8HlMpagP8
+	o8ZatwWCJctgugXCEX0oqVz4yHxDBiQeR4JKVUDZN2sW4AnPDXInfxKHP+D78mBC6jJdHYOFim9Be
+	Ki9+nFgP7ONY/MXJw9rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htvN2-0005z7-0y; Sat, 03 Aug 2019 14:50:56 +0000
+	id 1htvT0-0007fe-5j; Sat, 03 Aug 2019 14:57:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htvMp-0005yo-3J
- for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 14:50:44 +0000
+ id 1htvSo-0007fN-2b
+ for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 14:56:55 +0000
 Received: from X250.getinternet.no (98.142.130.235.16clouds.com
  [98.142.130.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D8CAC2075C;
- Sat,  3 Aug 2019 14:50:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 69D49206C1;
+ Sat,  3 Aug 2019 14:56:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564843842;
- bh=tkbSt5pmygtiBGqZMbLo4ne68Qstn/gKRYx/hNz9Sq0=;
+ s=default; t=1564844212;
+ bh=Un3lXCixRMwp1nYc0wJmK5BTO4HJ7DqaPwgspkZjIvI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=erVw3Ky60yjOL8fYvF+Qb0OQdYZUWDMbvEuTNB4Yu2+vQpRjhqv7i3aEnkhUUHVw1
- pT8ZIW72bxRGV4ea+UTrW7TE5O0kXzv+zhArx8VGtznlU+wPDpm1a+k4yNgNHGaUKc
- DTSUPAyPB2B0bVZBfadMSFt/o84SIC//qkvgKv2s=
-Date: Sat, 3 Aug 2019 16:50:36 +0200
+ b=wYxnaqUjohc/m81AGe1GVHAGECDZu8ownqOJvpQYHKh6SRlc6T6inVZ4AIf/zyfL0
+ bcWKVUXnaKrlIQbUP+rgFDnnLlZhCUa2c6aVvxU2SFK/4U4DUL2mBtRZoSpGR6beyv
+ ZIztYSYaVALiADVYxnFLZgjVoot8Lxl1kO8aV0eI=
+Date: Sat, 3 Aug 2019 16:56:45 +0200
 From: Shawn Guo <shawnguo@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH] ARM: dts: imx: Cleanup style around assignment operator
-Message-ID: <20190803145035.GN8870@X250.getinternet.no>
-References: <20190727142640.23014-1-krzk@kernel.org>
+To: Daniel Baluta <daniel.baluta@nxp.com>
+Subject: Re: [PATCH] arm64: dts: imx8mq-evk: Unbypass audio_pll1
+Message-ID: <20190803145644.GO8870@X250.getinternet.no>
+References: <20190728140817.12509-1-daniel.baluta@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190727142640.23014-1-krzk@kernel.org>
+In-Reply-To: <20190728140817.12509-1-daniel.baluta@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190803_075043_162472_4567E78A 
-X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-CacheID: sfid-20190803_075654_142702_75ED4BD2 
+X-CRM114-Status: UNSURE (   8.00  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,20 +78,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, baruch@tkos.co.il, abel.vesa@nxp.com,
+ ccaione@baylibre.com, andrew.smirnov@gmail.com, s.hauer@pengutronix.de,
+ angus@akkea.ca, linux-kernel@vger.kernel.org, linux-imx@nxp.com,
+ festevam@gmail.com, shengjiu.wang@nxp.com,
+ linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jul 27, 2019 at 04:26:40PM +0200, Krzysztof Kozlowski wrote:
-> Use a space before and after assignment operator to have consistent
-> style.
+On Sun, Jul 28, 2019 at 05:08:17PM +0300, Daniel Baluta wrote:
+> Making audio_pll1 parent of audio_pll1_bypass, will allow
+> setting rates multiple of 8000 for children.
 > 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> After unbypass clk hierarchy looks like this:
+>  * osc_25m
+>    * audio_pll1
+>      * audio_pll1_bypass
+>        * audio_pll1_out
+>          * sai2
+>            * sai2_root_clk
+> 
+> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
 
 Applied, thanks.
 
