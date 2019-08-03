@@ -2,84 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84DE68060E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 13:47:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2652980619
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 13:55:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=M2ZzhCpuGr68dOJgZhAf9CfKTceKl4Xu0KOhtMv3g6E=; b=rNF
-	JGOC3vcl5yPThnIfTaRTG0J5Mzl7ldl513+DNhYNL6X2x4V6gb4WHZ5pHFQG/A/xfissUYfKATsuo
-	W/05Py+u7dHsdha9R3mAntRYQLqReGVXRCsNodzh7mgdodlcziYNnwBXwfr6snrka2FAKVHrjLFHW
-	Z2U99yTs7wNrN1T12kcxQBP2Q9SqMWEOe39QGTn2yfpWdKmRSKHrT2Hfd917raxPmjGggB9QqGO58
-	P7BscKN+VyIpGxUKp5bHZXwQ9anwatTJi7b5Ik/0gKGI9Fow6kM+S37wz0O/U3GgTZkWjwxLleX0G
-	0ZlCPcq+pzMx3L5Zcz9msSi5Ex3diTw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=43JOs/2vZLBK0iB5YJX9lS7XehwZOgCVWlLlicJar58=; b=FSrcIkLAjeFbhe
+	Ec7uxpgbYm8W3IR76WHr7TRsTgrZrPSu4qwoqNuIIJsY91dXtIZT5043QAcQOQeQcTtcf2zVZZskS
+	EDTS97ULIKUk1LdGarCIfYxjt3wivfqg9Odbn3CedR/HK2tW15b0KBRtrGhi9R5Si61qmJhDsm6vO
+	qn+duDM7dG8Hw4udCMBIJV/FM/VO3SHt4OF4OdBneXamoFt4MhDM7wmBqnv8s8dFJiu7MLyW49e6w
+	3hCz014L502ZYDzi+uVlzS61I8QZNfjQ+QfOwuz7qGiEU46z2z6jIqH8JzS1wePVy1meBgmefTQqX
+	Pzh5DWmixd3NSAuYCLdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htsV0-0006iI-Rx; Sat, 03 Aug 2019 11:46:59 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1htsdR-0001eu-KZ; Sat, 03 Aug 2019 11:55:41 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htsUe-0006hW-LN; Sat, 03 Aug 2019 11:46:39 +0000
-Received: by mail-pg1-x541.google.com with SMTP id n4so2094236pgv.2;
- Sat, 03 Aug 2019 04:46:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=HVnE+zj2EKlpNGrlm+/DWfWoLQykmRhXf2LWE69Fsfg=;
- b=c7YcsyroheIuhYKJ8yEPegd3e2J28f03lVWFWD6QT6eY6wKy0+ENVwBjMWq0nEvFDF
- 6q/G8mzLM25bePRjeqqlz5YoBOF4q0UU4qJgYaBInscdzk3QE7b1pXNi0QhkPpcv2S0b
- 6xL+LEwwV0AC3SaVb0pjbC9YRBnfEhPUMyPbndVbczDfJi2BAmqixmGjUVGCCbL0DrdW
- YP6HV9vpF4UcfT2+XpARSoYoWVXuk3NOEAr0Ikh9latwa4fksWd9Xi0e+/66QocY7kii
- 9EplDGY6seOGTnR7Q7in/fxoZMOO2qU8ez4hv86exBbQ1vWDV7Bg4pUFThaJBOW/hJXS
- +oLA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=HVnE+zj2EKlpNGrlm+/DWfWoLQykmRhXf2LWE69Fsfg=;
- b=lNer/Fg/yx4GuawTEq1dvr2xHkWNx3S0PCNbmF6vrazriaQvJUlJ8QmqwBjJyPKk4i
- B4kbmeHzzLtwzgV+ro6DkBhjVU/fd85TAuKJ6UBRwH7FxsZF5fVR84f1PdEUaLJQLbXB
- aJGnNoXRopDGrN6mnQYkwk16apWHL//NuMVOL/DRZUk0htjAH6HTgU4qd4IVCuC67EYy
- cnKdq1ycXDRYy9uVw7mUDqDzR0cD3w9Zw1VWC0e1TmV+7ITJp+5pazXIsIqBpPIC+Ygf
- aULBQ/SNRx2jxEtQtz17My6csMvxZviGfHLnq30Ut8i5H89tL4UhS61V1aZ8u28+9l2D
- +NNg==
-X-Gm-Message-State: APjAAAUB92ZFK2dqzN9WA7bGLo0QNxvcZEUKEIpGyoGUHcoENNTHvkTU
- v3kGgoWEn6JXWMOEzCn/NOM=
-X-Google-Smtp-Source: APXvYqw6dYaFx6lmUI+iWgOh1yC2O8AGo/RlaaEr9rwV9AScza+tUdWFWniCU2FQJCe0mesXkfoPcg==
-X-Received: by 2002:a63:2c8:: with SMTP id 191mr126403576pgc.139.1564832794985; 
- Sat, 03 Aug 2019 04:46:34 -0700 (PDT)
-Received: from localhost.localdomain ([103.29.142.67])
- by smtp.gmail.com with ESMTPSA id y23sm80210096pfo.106.2019.08.03.04.46.32
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 03 Aug 2019 04:46:34 -0700 (PDT)
-From: Andy Yan <andyshrk@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH] arm64: dts: rockchip: Add dts for Leez RK3399 P710 SBC
-Date: Sat,  3 Aug 2019 19:46:12 +0800
-Message-Id: <20190803114612.4830-1-andyshrk@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1htsdC-0001ea-Or
+ for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 11:55:28 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1htsd4-0007Y3-3V; Sat, 03 Aug 2019 13:55:19 +0200
+Date: Sat, 3 Aug 2019 12:55:15 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH 4/9] KVM: arm64: Support stolen time reporting via
+ shared structure
+Message-ID: <20190803125515.6aa50084@why>
+In-Reply-To: <20190802145017.42543-5-steven.price@arm.com>
+References: <20190802145017.42543-1-steven.price@arm.com>
+ <20190802145017.42543-5-steven.price@arm.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: steven.price@arm.com, catalin.marinas@arm.com,
+ pbonzini@redhat.com, rkrcmar@redhat.com, linux@armlinux.org.uk,
+ will@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190803_044636_733278_34CE0CEF 
-X-CRM114-Status: GOOD (  14.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190803_045526_954953_EDCC8BAA 
+X-CRM114-Status: GOOD (  25.61  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andyshrk[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,712 +71,307 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Andy Yan <andyshrk@gmail.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: kvm@vger.kernel.org, Radim =?UTF-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Leez P710 is a RK3399 based SBC, designed by Leez team
-from lenovo [0].
+On Fri,  2 Aug 2019 15:50:12 +0100
+Steven Price <steven.price@arm.com> wrote:
 
-Specification
-- Rockchip RK3399
-- 4/2GB LPDDR4
-- TF sd scard slot
-- eMMC
-- M.2 B-Key for 4G LTE
-- AP6256 for WiFi + BT
-- Gigabit ethernet
-- HDMI out
-- 40 pin header
-- TYPE-C Power supply
+> Implement the service call for configuring a shared structre between a
 
-[0] https://leez.lenovo.com
+structure
 
-Signed-off-by: Andy Yan <andyshrk@gmail.com>
----
- .../devicetree/bindings/arm/rockchip.yaml     |   5 +
- arch/arm64/boot/dts/rockchip/Makefile         |   1 +
- .../boot/dts/rockchip/rk3399-leez-p710.dts    | 635 ++++++++++++++++++
- 3 files changed, 641 insertions(+)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
+> VCPU and the hypervisor in which the hypervisor can write the time
+> stolen from the VCPU's execution time by other tasks on the host.
+> 
+> The hypervisor allocates memory which is placed at an IPA chosen by user
+> space. The hypervisor then uses WRITE_ONCE() to update the shared
+> structre ensuring single copy atomicity of the 64-bit unsigned value
 
-diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-index 34865042f4e4..da9cd947abfa 100644
---- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-+++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-@@ -329,6 +329,11 @@ properties:
-               - khadas,edge-v
-           - const: rockchip,rk3399
- 
-+      - description: Leez RK3399 P710
-+        items:
-+          - const: leez,p710
-+          - const: rockchip,rk3399
-+
-       - description: mqmaker MiQi
-         items:
-           - const: mqmaker,miqi
-diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
-index daa2c78e22c3..1f18a9392d15 100644
---- a/arch/arm64/boot/dts/rockchip/Makefile
-+++ b/arch/arm64/boot/dts/rockchip/Makefile
-@@ -20,6 +20,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-hugsun-x99.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-khadas-edge.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-khadas-edge-captain.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-khadas-edge-v.dtb
-+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-leez-p710.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-nanopc-t4.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-nanopi-m4.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-nanopi-neo4.dtb
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
-new file mode 100644
-index 000000000000..b342f5e8692b
---- /dev/null
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
-@@ -0,0 +1,635 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Andy Yan <andy.yan@gmail.com>
-+ */
-+
-+/dts-v1/;
-+#include <dt-bindings/input/linux-event-codes.h>
-+#include <dt-bindings/pwm/pwm.h>
-+#include "rk3399.dtsi"
-+#include "rk3399-opp.dtsi"
-+
-+/ {
-+	model = "Leez RK3399 P710";
-+	compatible = "leez,p710", "rockchip,rk3399";
-+
-+	chosen {
-+		stdout-path = "serial2:1500000n8";
-+	};
-+
-+	clkin_gmac: external-gmac-clock {
-+		compatible = "fixed-clock";
-+		clock-frequency = <125000000>;
-+		clock-output-names = "clkin_gmac";
-+		#clock-cells = <0>;
-+	};
-+
-+	sdio_pwrseq: sdio-pwrseq {
-+		compatible = "mmc-pwrseq-simple";
-+		clocks = <&rk808 1>;
-+		clock-names = "ext_clock";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&wifi_enable_h>;
-+		reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
-+	};
-+
-+	dc5v_adp: dc-5v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "dc5v_adapter";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+	};
-+
-+	vcc5v0_sys: vcc-sys {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc5v0_sys";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&dc5v_adp>;
-+	};
-+
-+	vcc3v3_sys: vcc3v3-sys {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc3v3_sys";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+
-+	vcc5v0_host: vcc5v0-host-regulator {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio2 RK_PA2 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&vcc5v0_host_en>;
-+		regulator-name = "vcc5v0_host";
-+		regulator-always-on;
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+
-+	vcc_lan: vcc3v3-phy-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc_lan";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+
-+		regulator-state-mem {
-+			regulator-off-in-suspend;
-+		};
-+	};
-+
-+	vdd_log: vdd-log {
-+		compatible = "pwm-regulator";
-+		pwms = <&pwm2 0 25000 1>;
-+		regulator-name = "vdd_log";
-+		regulator-always-on;
-+		regulator-boot-on;
-+		regulator-min-microvolt = <800000>;
-+		regulator-max-microvolt = <1400000>;
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+};
-+
-+&cpu_l0 {
-+	cpu-supply = <&vdd_cpu_l>;
-+};
-+
-+&cpu_l1 {
-+	cpu-supply = <&vdd_cpu_l>;
-+};
-+
-+&cpu_l2 {
-+	cpu-supply = <&vdd_cpu_l>;
-+};
-+
-+&cpu_l3 {
-+	cpu-supply = <&vdd_cpu_l>;
-+};
-+
-+&cpu_b0 {
-+	cpu-supply = <&vdd_cpu_b>;
-+};
-+
-+&cpu_b1 {
-+	cpu-supply = <&vdd_cpu_b>;
-+};
-+
-+&emmc_phy {
-+	status = "okay";
-+};
-+
-+&gmac {
-+	assigned-clocks = <&cru SCLK_RMII_SRC>;
-+	assigned-clock-parents = <&clkin_gmac>;
-+	clock_in_out = "input";
-+	phy-supply = <&vcc_lan>;
-+	phy-mode = "rgmii";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&rgmii_pins>;
-+	snps,reset-gpio = <&gpio3 RK_PB7 GPIO_ACTIVE_LOW>;
-+	snps,reset-active-low;
-+	snps,reset-delays-us = <0 10000 50000>;
-+	tx_delay = <0x28>;
-+	rx_delay = <0x11>;
-+	status = "okay";
-+};
-+
-+&gpu {
-+	mali-supply = <&vdd_gpu>;
-+	status = "okay";
-+};
-+
-+&hdmi {
-+	ddc-i2c-bus = <&i2c3>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&hdmi_cec>;
-+	status = "okay";
-+};
-+
-+&hdmi_sound {
-+	status = "okay";
-+};
-+
-+&i2c0 {
-+	clock-frequency = <400000>;
-+	i2c-scl-rising-time-ns = <168>;
-+	i2c-scl-falling-time-ns = <4>;
-+	status = "okay";
-+
-+	rk808: pmic@1b {
-+		compatible = "rockchip,rk808";
-+		reg = <0x1b>;
-+		interrupt-parent = <&gpio1>;
-+		interrupts = <21 IRQ_TYPE_LEVEL_LOW>;
-+		#clock-cells = <1>;
-+		clock-output-names = "xin32k", "rk808-clkout2";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pmic_int_l>;
-+		rockchip,system-power-controller;
-+		wakeup-source;
-+
-+		vcc1-supply = <&vcc5v0_sys>;
-+		vcc2-supply = <&vcc5v0_sys>;
-+		vcc3-supply = <&vcc5v0_sys>;
-+		vcc4-supply = <&vcc5v0_sys>;
-+		vcc6-supply = <&vcc5v0_sys>;
-+		vcc7-supply = <&vcc5v0_sys>;
-+		vcc8-supply = <&vcc3v3_sys>;
-+		vcc9-supply = <&vcc5v0_sys>;
-+		vcc10-supply = <&vcc5v0_sys>;
-+		vcc11-supply = <&vcc5v0_sys>;
-+		vcc12-supply = <&vcc3v3_sys>;
-+		vddio-supply = <&vcc_1v8>;
-+
-+		regulators {
-+			vdd_center: DCDC_REG1 {
-+				regulator-name = "vdd_center";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <750000>;
-+				regulator-max-microvolt = <1350000>;
-+				regulator-ramp-delay = <6001>;
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vdd_cpu_l: DCDC_REG2 {
-+				regulator-name = "vdd_cpu_l";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <750000>;
-+				regulator-max-microvolt = <1350000>;
-+				regulator-ramp-delay = <6001>;
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_ddr: DCDC_REG3 {
-+				regulator-name = "vcc_ddr";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+				};
-+			};
-+
-+			vcc_1v8: DCDC_REG4 {
-+				regulator-name = "vcc_1v8";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <1800000>;
-+				};
-+			};
-+
-+			vcc1v8_dvp: LDO_REG1 {
-+				regulator-name = "vcc1v8_dvp";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc1v8_hdmi: LDO_REG2 {
-+				regulator-name = "vcc1v8_hdmi";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcca_1v8: LDO_REG3 {
-+				regulator-name = "vcca_1v8";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <1800000>;
-+				};
-+			};
-+
-+			vccio_sd: LDO_REG4 {
-+				regulator-name = "vccio_sd";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <3000000>;
-+				regulator-max-microvolt = <3000000>;
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <3000000>;
-+				};
-+			};
-+
-+			vcca3v0_codec: LDO_REG5 {
-+				regulator-name = "vcca3v0_codec";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <3000000>;
-+				regulator-max-microvolt = <3000000>;
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_1v5: LDO_REG6 {
-+				regulator-name = "vcc_1v5";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <1500000>;
-+				regulator-max-microvolt = <1500000>;
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <1500000>;
-+				};
-+			};
-+
-+			vcc0v9_hdmi: LDO_REG7 {
-+				regulator-name = "vcc0v9_hdmi";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <900000>;
-+				regulator-max-microvolt = <900000>;
-+				regulator-state-mem {
-+					regulator-off-in-suspend;
-+				};
-+			};
-+
-+			vcc_3v0: LDO_REG8 {
-+				regulator-name = "vcc_3v0";
-+				regulator-always-on;
-+				regulator-boot-on;
-+				regulator-min-microvolt = <3000000>;
-+				regulator-max-microvolt = <3000000>;
-+				regulator-state-mem {
-+					regulator-on-in-suspend;
-+					regulator-suspend-microvolt = <3000000>;
-+				};
-+			};
-+
-+		};
-+	};
-+
-+	vdd_cpu_b: regulator@40 {
-+		compatible = "silergy,syr827";
-+		reg = <0x40>;
-+		fcs,suspend-voltage-selector = <1>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&vsel1_gpio>;
-+		regulator-name = "vdd_cpu_b";
-+		regulator-min-microvolt = <712500>;
-+		regulator-max-microvolt = <1500000>;
-+		regulator-ramp-delay = <1000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vcc5v0_sys>;
-+
-+		regulator-state-mem {
-+			regulator-off-in-suspend;
-+		};
-+	};
-+
-+	vdd_gpu: regulator@41 {
-+		compatible = "silergy,syr828";
-+		reg = <0x41>;
-+		fcs,suspend-voltage-selector = <1>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&vsel2_gpio>;
-+		regulator-name = "vdd_gpu";
-+		regulator-min-microvolt = <712500>;
-+		regulator-max-microvolt = <1500000>;
-+		regulator-ramp-delay = <1000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+		vin-supply = <&vcc5v0_sys>;
-+
-+		regulator-state-mem {
-+			regulator-off-in-suspend;
-+		};
-+	};
-+};
-+
-+&i2c1 {
-+	i2c-scl-rising-time-ns = <300>;
-+	i2c-scl-falling-time-ns = <15>;
-+	status = "okay";
-+};
-+
-+&i2c3 {
-+	i2c-scl-rising-time-ns = <450>;
-+	i2c-scl-falling-time-ns = <15>;
-+	status = "okay";
-+};
-+
-+&i2c4 {
-+	i2c-scl-rising-time-ns = <600>;
-+	i2c-scl-falling-time-ns = <20>;
-+	status = "okay";
-+};
-+
-+&i2s0 {
-+	rockchip,playback-channels = <8>;
-+	rockchip,capture-channels = <8>;
-+	status = "okay";
-+};
-+
-+&i2s1 {
-+	rockchip,playback-channels = <2>;
-+	rockchip,capture-channels = <2>;
-+	status = "okay";
-+};
-+
-+&i2s2 {
-+	status = "okay";
-+};
-+
-+&io_domains {
-+	status = "okay";
-+
-+	bt656-supply = <&vcc1v8_dvp>;
-+	audio-supply = <&vcc_1v8>;
-+	sdmmc-supply = <&vccio_sd>;
-+	gpio1830-supply = <&vcc_3v0>;
-+};
-+
-+&pmu_io_domains {
-+	status = "okay";
-+	pmu1830-supply = <&vcc_3v0>;
-+};
-+
-+&pinctrl {
-+	bt {
-+		bt_enable_h: bt-enable-h {
-+			rockchip,pins = <0 RK_PB1 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
-+		bt_host_wake_l: bt-host-wake-l {
-+			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
-+		bt_wake_l: bt-wake-l {
-+			rockchip,pins = <2 RK_PD2 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
-+	pmic {
-+		pmic_int_l: pmic-int-l {
-+			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
-+
-+		vsel1_gpio: vsel1-gpio {
-+			rockchip,pins = <1 RK_PC1 RK_FUNC_GPIO &pcfg_pull_down>;
-+		};
-+
-+		vsel2_gpio: vsel2-gpio {
-+			rockchip,pins = <1 RK_PB6 RK_FUNC_GPIO &pcfg_pull_down>;
-+		};
-+	};
-+
-+	usb2 {
-+		vcc5v0_host_en: vcc5v0-host-en {
-+			rockchip,pins = <2 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
-+	wifi {
-+		wifi_enable_h: wifi-enable-h {
-+			rockchip,pins =
-+				<0 RK_PB2 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
-+		wifi_host_wake_l: wifi-host-wake-l {
-+			rockchip,pins = <0 RK_PA3 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+};
-+
-+&pwm2 {
-+	status = "okay";
-+};
-+
-+&saradc {
-+	status = "okay";
-+
-+	vref-supply = <&vcc_1v8>;
-+};
-+
-+&sdio0 {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	bus-width = <4>;
-+	clock-frequency = <50000000>;
-+	cap-sdio-irq;
-+	cap-sd-highspeed;
-+	keep-power-in-suspend;
-+	mmc-pwrseq = <&sdio_pwrseq>;
-+	non-removable;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
-+	sd-uhs-sdr104;
-+	status = "okay";
-+
-+	brcmf: wifi@1 {
-+		compatible = "brcm,bcm4329-fmac";
-+		reg = <1>;
-+		interrupt-parent = <&gpio0>;
-+		interrupts = <RK_PA3 GPIO_ACTIVE_HIGH>;
-+		interrupt-names = "host-wake";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&wifi_host_wake_l>;
-+	};
-+};
-+
-+&sdmmc {
-+	bus-width = <4>;
-+	cap-mmc-highspeed;
-+	cap-sd-highspeed;
-+	cd-gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_LOW>;
-+	disable-wp;
-+	max-frequency = <150000000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdmmc_clk &sdmmc_cd &sdmmc_cmd &sdmmc_bus4>;
-+	status = "okay";
-+};
-+
-+&sdhci {
-+	bus-width = <8>;
-+	mmc-hs400-1_8v;
-+	mmc-hs400-enhanced-strobe;
-+	non-removable;
-+	status = "okay";
-+};
-+
-+&tcphy0 {
-+	status = "okay";
-+};
-+
-+&tcphy1 {
-+	status = "okay";
-+};
-+
-+&tsadc {
-+	status = "okay";
-+
-+	/* tshut mode 0:CRU 1:GPIO */
-+	rockchip,hw-tshut-mode = <1>;
-+	/* tshut polarity 0:LOW 1:HIGH */
-+	rockchip,hw-tshut-polarity = <1>;
-+};
-+
-+&u2phy0 {
-+	status = "okay";
-+
-+	u2phy0_otg: otg-port {
-+		status = "okay";
-+	};
-+
-+	u2phy0_host: host-port {
-+		phy-supply = <&vcc5v0_host>;
-+		status = "okay";
-+	};
-+};
-+
-+&u2phy1 {
-+	status = "okay";
-+
-+	u2phy1_otg: otg-port {
-+		status = "okay";
-+	};
-+
-+	u2phy1_host: host-port {
-+		phy-supply = <&vcc5v0_host>;
-+		status = "okay";
-+	};
-+};
-+
-+&uart0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
-+	status = "okay";
-+
-+	bluetooth {
-+		compatible = "brcm,bcm43438-bt";
-+		clocks = <&rk808 1>;
-+		clock-names = "ext_clock";
-+		device-wakeup-gpios = <&gpio2 RK_PD2 GPIO_ACTIVE_HIGH>;
-+		host-wakeup-gpios = <&gpio0 RK_PA4 GPIO_ACTIVE_HIGH>;
-+		shutdown-gpios = <&gpio0 RK_PB1 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&bt_host_wake_l &bt_wake_l &bt_enable_h>;
-+	};
-+};
-+
-+&uart2 {
-+	status = "okay";
-+};
-+
-+&usb_host0_ehci {
-+	status = "okay";
-+};
-+
-+&usb_host0_ohci {
-+	status = "okay";
-+};
-+
-+&usb_host1_ehci {
-+	status = "okay";
-+};
-+
-+&usb_host1_ohci {
-+	status = "okay";
-+};
-+
-+&usbdrd3_0 {
-+	status = "okay";
-+};
-+
-+&usbdrd_dwc3_0 {
-+	status = "okay";
-+	dr_mode = "otg";
-+};
-+
-+&usbdrd3_1 {
-+	status = "okay";
-+};
-+
-+&usbdrd_dwc3_1 {
-+	status = "okay";
-+	dr_mode = "host";
-+};
-+
-+&vopb {
-+	status = "okay";
-+};
-+
-+&vopb_mmu {
-+	status = "okay";
-+};
-+
-+&vopl {
-+	status = "okay";
-+};
-+
-+&vopl_mmu {
-+	status = "okay";
-+};
+structure
+
+> that reports stolen time in nanoseconds.
+> 
+> Whenever stolen time is enabled by the guest, the stolen time counter is
+> reset.
+> 
+> The stolen time itself is retrieved from the sched_info structure
+> maintained by the Linux scheduler code. We enable SCHEDSTATS when
+> selecting KVM Kconfig to ensure this value is meaningful.
+> 
+> Signed-off-by: Steven Price <steven.price@arm.com>
+> ---
+>  arch/arm64/include/asm/kvm_host.h | 13 +++++-
+>  arch/arm64/kvm/Kconfig            |  1 +
+>  include/kvm/arm_hypercalls.h      |  1 +
+>  include/linux/kvm_types.h         |  2 +
+>  virt/kvm/arm/arm.c                | 18 ++++++++
+>  virt/kvm/arm/hypercalls.c         | 70 +++++++++++++++++++++++++++++++
+>  6 files changed, 104 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> index f656169db8c3..78f270190d43 100644
+> --- a/arch/arm64/include/asm/kvm_host.h
+> +++ b/arch/arm64/include/asm/kvm_host.h
+> @@ -44,6 +44,7 @@
+>  	KVM_ARCH_REQ_FLAGS(0, KVM_REQUEST_WAIT | KVM_REQUEST_NO_WAKEUP)
+>  #define KVM_REQ_IRQ_PENDING	KVM_ARCH_REQ(1)
+>  #define KVM_REQ_VCPU_RESET	KVM_ARCH_REQ(2)
+> +#define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
+>  
+>  DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+>  
+> @@ -83,6 +84,11 @@ struct kvm_arch {
+>  
+>  	/* Mandated version of PSCI */
+>  	u32 psci_version;
+> +
+> +	struct kvm_arch_pvtime {
+> +		void *st;
+
+Is it really a void *? I'm sure you can use a proper type here...
+
+> +		gpa_t st_base;
+> +	} pvtime;
+>  };
+>  
+>  #define KVM_NR_MEM_OBJS     40
+> @@ -338,8 +344,13 @@ struct kvm_vcpu_arch {
+>  	/* True when deferrable sysregs are loaded on the physical CPU,
+>  	 * see kvm_vcpu_load_sysregs and kvm_vcpu_put_sysregs. */
+>  	bool sysregs_loaded_on_cpu;
+> -};
+>  
+> +	/* Guest PV state */
+> +	struct {
+> +		u64 steal;
+> +		u64 last_steal;
+> +	} steal;
+> +};
+>  /* Pointer to the vcpu's SVE FFR for sve_{save,load}_state() */
+>  #define vcpu_sve_pffr(vcpu) ((void *)((char *)((vcpu)->arch.sve_state) + \
+>  				      sve_ffr_offset((vcpu)->arch.sve_max_vl)))
+> diff --git a/arch/arm64/kvm/Kconfig b/arch/arm64/kvm/Kconfig
+> index a67121d419a2..d8b88e40d223 100644
+> --- a/arch/arm64/kvm/Kconfig
+> +++ b/arch/arm64/kvm/Kconfig
+> @@ -39,6 +39,7 @@ config KVM
+>  	select IRQ_BYPASS_MANAGER
+>  	select HAVE_KVM_IRQ_BYPASS
+>  	select HAVE_KVM_VCPU_RUN_PID_CHANGE
+> +	select SCHEDSTATS
+>  	---help---
+>  	  Support hosting virtualized guest machines.
+>  	  We don't support KVM with 16K page tables yet, due to the multiple
+> diff --git a/include/kvm/arm_hypercalls.h b/include/kvm/arm_hypercalls.h
+> index 35a5abcc4ca3..9f0710ab4292 100644
+> --- a/include/kvm/arm_hypercalls.h
+> +++ b/include/kvm/arm_hypercalls.h
+> @@ -7,6 +7,7 @@
+>  #include <asm/kvm_emulate.h>
+>  
+>  int kvm_hvc_call_handler(struct kvm_vcpu *vcpu);
+> +int kvm_update_stolen_time(struct kvm_vcpu *vcpu);
+>  
+>  static inline u32 smccc_get_function(struct kvm_vcpu *vcpu)
+>  {
+> diff --git a/include/linux/kvm_types.h b/include/linux/kvm_types.h
+> index bde5374ae021..1c88e69db3d9 100644
+> --- a/include/linux/kvm_types.h
+> +++ b/include/linux/kvm_types.h
+> @@ -35,6 +35,8 @@ typedef unsigned long  gva_t;
+>  typedef u64            gpa_t;
+>  typedef u64            gfn_t;
+>  
+> +#define GPA_INVALID	(~(gpa_t)0)
+> +
+>  typedef unsigned long  hva_t;
+>  typedef u64            hpa_t;
+>  typedef u64            hfn_t;
+> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+> index f645c0fbf7ec..ebd963d2580b 100644
+> --- a/virt/kvm/arm/arm.c
+> +++ b/virt/kvm/arm/arm.c
+> @@ -40,6 +40,10 @@
+>  #include <asm/kvm_coproc.h>
+>  #include <asm/sections.h>
+>  
+> +#include <kvm/arm_hypercalls.h>
+> +#include <kvm/arm_pmu.h>
+> +#include <kvm/arm_psci.h>
+> +
+>  #ifdef REQUIRES_VIRT
+>  __asm__(".arch_extension	virt");
+>  #endif
+> @@ -135,6 +139,7 @@ int kvm_arch_init_vm(struct kvm *kvm, unsigned long type)
+>  	kvm->arch.max_vcpus = vgic_present ?
+>  				kvm_vgic_get_max_vcpus() : KVM_MAX_VCPUS;
+>  
+> +	kvm->arch.pvtime.st_base = GPA_INVALID;
+>  	return ret;
+>  out_free_stage2_pgd:
+>  	kvm_free_stage2_pgd(kvm);
+> @@ -371,6 +376,7 @@ void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
+>  	kvm_vcpu_load_sysregs(vcpu);
+>  	kvm_arch_vcpu_load_fp(vcpu);
+>  	kvm_vcpu_pmu_restore_guest(vcpu);
+> +	kvm_make_request(KVM_REQ_RECORD_STEAL, vcpu);
+>  
+>  	if (single_task_running())
+>  		vcpu_clear_wfe_traps(vcpu);
+> @@ -617,6 +623,15 @@ static void vcpu_req_sleep(struct kvm_vcpu *vcpu)
+>  	smp_rmb();
+>  }
+>  
+> +static void vcpu_req_record_steal(struct kvm_vcpu *vcpu)
+> +{
+> +	int idx;
+> +
+> +	idx = srcu_read_lock(&vcpu->kvm->srcu);
+> +	kvm_update_stolen_time(vcpu);
+> +	srcu_read_unlock(&vcpu->kvm->srcu, idx);
+> +}
+> +
+>  static int kvm_vcpu_initialized(struct kvm_vcpu *vcpu)
+>  {
+>  	return vcpu->arch.target >= 0;
+> @@ -636,6 +651,9 @@ static void check_vcpu_requests(struct kvm_vcpu *vcpu)
+>  		 * that a VCPU sees new virtual interrupts.
+>  		 */
+>  		kvm_check_request(KVM_REQ_IRQ_PENDING, vcpu);
+> +
+> +		if (kvm_check_request(KVM_REQ_RECORD_STEAL, vcpu))
+> +			vcpu_req_record_steal(vcpu);
+>  	}
+>  }
+>  
+> diff --git a/virt/kvm/arm/hypercalls.c b/virt/kvm/arm/hypercalls.c
+> index 2906b2df99df..196c71c8dd87 100644
+> --- a/virt/kvm/arm/hypercalls.c
+> +++ b/virt/kvm/arm/hypercalls.c
+> @@ -10,6 +10,70 @@
+>  #include <kvm/arm_hypercalls.h>
+>  #include <kvm/arm_psci.h>
+>  
+> +
+> +static struct pvclock_vcpu_stolen_time_info *pvtime_get_st(
+> +		struct kvm_vcpu *vcpu)
+
+nit: on a single line.
+
+> +{
+> +	struct pvclock_vcpu_stolen_time_info *st = vcpu->kvm->arch.pvtime.st;
+> +
+> +	if (!st)
+> +		return NULL;
+> +
+> +	return &st[kvm_vcpu_get_idx(vcpu)];
+> +}
+> +
+> +int kvm_update_stolen_time(struct kvm_vcpu *vcpu)
+> +{
+> +	u64 steal;
+> +	struct pvclock_vcpu_stolen_time_info *kaddr;
+> +
+> +	if (vcpu->kvm->arch.pvtime.st_base == GPA_INVALID)
+> +		return -ENOTSUPP;
+
+So for a guest that doesn't have stolen time support (which is 100% of
+them for the foreseeable future), we still set a request, take the srcu
+lock and end-up here for nothing. I'd rather we test this st_base
+early, as it should never change once the guest has started.
+
+> +
+> +	kaddr = pvtime_get_st(vcpu);
+> +
+> +	if (!kaddr)
+> +		return -ENOTSUPP;
+
+How can this happen?
+
+> +
+> +	kaddr->revision = 0;
+> +	kaddr->attributes = 0;
+
+Why does this need to be written each time we update the stolen time? I
+have the feeling this would be better moved to the hypercall
+initializing the data structure.
+
+> +
+> +	/* Let's do the local bookkeeping */
+> +	steal = vcpu->arch.steal.steal;
+> +	steal += current->sched_info.run_delay - vcpu->arch.steal.last_steal;
+> +	vcpu->arch.steal.last_steal = current->sched_info.run_delay;
+> +	vcpu->arch.steal.steal = steal;
+> +
+> +	/* Now write out the value to the shared page */
+> +	WRITE_ONCE(kaddr->stolen_time, cpu_to_le64(steal));
+
+Is there any requirement for this to be visible to another CPU than the
+one this is being written from?
+
+> +
+> +	return 0;
+> +}
+> +
+> +static int kvm_hypercall_stolen_time(struct kvm_vcpu *vcpu)
+> +{
+> +	u64 ret;
+> +	int err;
+> +
+> +	/*
+> +	 * Start counting stolen time from the time the guest requests
+> +	 * the feature enabled.
+> +	 */
+> +	vcpu->arch.steal.steal = 0;
+> +	vcpu->arch.steal.last_steal = current->sched_info.run_delay;
+> +
+> +	err = kvm_update_stolen_time(vcpu);
+> +
+> +	if (err)
+> +		ret = SMCCC_RET_NOT_SUPPORTED;
+> +	else
+> +		ret = vcpu->kvm->arch.pvtime.st_base +
+> +			(sizeof(struct pvclock_vcpu_stolen_time_info) *
+> +			 kvm_vcpu_get_idx(vcpu));
+> +
+> +	smccc_set_retval(vcpu, ret, 0, 0, 0);
+> +	return 1;
+> +}
+>  int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+>  {
+>  	u32 func_id = smccc_get_function(vcpu);
+> @@ -57,8 +121,14 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+>  	case ARM_SMCCC_HV_PV_FEATURES:
+>  		feature = smccc_get_arg1(vcpu);
+>  		switch (feature) {
+> +		case ARM_SMCCC_HV_PV_FEATURES:
+> +		case ARM_SMCCC_HV_PV_TIME_ST:
+> +			val = SMCCC_RET_SUCCESS;
+> +			break;
+>  		}
+>  		break;
+> +	case ARM_SMCCC_HV_PV_TIME_ST:
+> +		return kvm_hypercall_stolen_time(vcpu);
+>  	default:
+>  		return kvm_psci_call(vcpu);
+>  	}
+
+
+Thanks,
+
+	M.
 -- 
-2.17.1
-
+Without deviation from the norm, progress is not possible.
 
 _______________________________________________
 linux-arm-kernel mailing list
