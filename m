@@ -2,54 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89E9C807C5
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 20:34:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98E4D807D2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 20:50:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OZNMedpf12RRNZmRbXmPl+NID5DZZuLPRVdPQXJbfow=; b=IGcMtBN+FVSMTg
-	Ejla0sQhUV02RH0HPdd4EoO8NCQq06+V5dO6hyPNGtGKYFWDJgdmNKmjd5bkjHXPy3ohJVnwhAXWk
-	FekaKFu2arNvmFXfZmX5UeJ1UVOCr+g8qBHJQw9fj6oiWzIvZRPkCYEN9O5AqK9D5A5ycK3v48Iod
-	1Hi1LcQjWVykWb4DiW+drDpz63VEHQOnYiWyE9U1immgofZGfW6/W3wa38EX3lgdvmo6cWklWzZqc
-	rtqV48Boo7nYw0NZN8outWT2dSbdXRm/NcgAKHeze0rsOd3rheuYeQpuHqgrD+Xblb4WmUayHrBAm
-	Cze+HWd5/c7jsu8/kRhQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TJGVPvJEcAhBDE7zdWS5epSwL11pg6XWBnwQNg9cQms=; b=KWWNWMKtWZK4Li
+	ODVolx0BVSYOL1dMP3zbnHPDXpuPIZAvUhC/MtFTn32Hpn27y8qbvCZhgn7Y8OJd6j14OgzY6MtSu
+	vg64lZDC/TaPt0ijKnKExjZrpx1auzSkx841qdEnGtxcv2/Eq0zrF2xwpZ1foC5NpCrLafW9ZdDDd
+	Kv+1rM18d9kgNRR86SNzwrZaDdxCGmlCPowJ77fsYl0HggaG0RZkVNS9nq19XW90sne1pBRPQvjGq
+	Nwtau1M99TfbVD1oxY2B5QV13kMiS/LZWggUkbTFVilc53/Trnh8FiX43XsCPY8AkxriFf+KJxMcg
+	AOUx8dGku9ZJHUNokWFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htyrp-00066v-G6; Sat, 03 Aug 2019 18:34:57 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1htz79-0008Gc-KF; Sat, 03 Aug 2019 18:50:47 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htyrN-0005tI-P6; Sat, 03 Aug 2019 18:34:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=9M2MLeUnlkFI+r7V5jW757xqZ1JZIPJo/ExJUeqgiJ0=; b=dhCjxP1ZD5hspyeRKNOBJahqAN
- SyZcXf2GlXCQZpho8ysccaeEPWQ9BQArXRLlFmSMaa7rJhAqFRaOMunEBlqkxe0NfCsB4rIB9r5C/
- 6bOuh6s4Foanl+nGjiKbrsvtLdxpXs3RrUVHQ/W1PL2OAHi8NrkrGv9xaOplzAVz25dUFE1TNMWlE
- D5JhvdOaEEzCiOBuaJkpWkVpzeYSRxgiKyz23ijfHuA8i7tnn95UxIogpRybJqFzm0ncEPtLW9rcc
- Wg8dsq1Y1qQueayrEyWt/ZftqASLsN1wbCUlhBqWuzTtskV/sS2zVLuBwLvtwpQaJGv50sdk5Rtp4
- hSaqRpwA==;
-Received: from static-50-53-52-16.bvtn.or.frontiernet.net ([50.53.52.16]
- helo=[192.168.1.17])
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1htyrE-00072c-JW; Sat, 03 Aug 2019 18:34:20 +0000
-Subject: Re: [PATCH v2] net: mdio-octeon: Fix Kconfig warnings and build errors
-To: Nathan Chancellor <natechancellor@gmail.com>
-References: <20190731185023.20954-1-natechancellor@gmail.com>
- <20190803060155.89548-1-natechancellor@gmail.com>
-From: Randy Dunlap <rdunlap@infradead.org>
-Message-ID: <11bf2f76-1487-7831-e6df-dbec632b3f34@infradead.org>
-Date: Sat, 3 Aug 2019 11:34:16 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1htz6u-00085O-Kx; Sat, 03 Aug 2019 18:50:33 +0000
+Received: by mail-ot1-x342.google.com with SMTP id z23so53136904ote.13;
+ Sat, 03 Aug 2019 11:50:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=b9mbEKIVTR3rX3ubtzGIZrWOdTZFbd/rUfMNEZjb2L8=;
+ b=VntitNls0mHbGzOMlt+i+UvbChblh92q/PPvM5C6UgtsjPJ8PRDMq+eIomOgT0xR2I
+ V1l+xCSc1i4EkT3IBbhuerju6/UyCbjQXggP5UJNcLAFcFVdFP+kv0ClgrJrO9hn/2JP
+ jh8+r1WQq2yIrUVBQx17AuRbW+5Sf99tj3gA72p0dfAOv2EXkOfuvfdjtFusopnu214S
+ RH8SKnvENBLxdk3iAH2G3YvVGZ9kzAwTqZx2/jHl4LV9pB9TNOIeqxefRR2Sy4Q1mHof
+ hvlL5sHDJV8z4AFTHpBuHNWga0BPUuz9elNC4E5pblZoFMxUL3u/DGdN2FrDmEvIZYmm
+ bwSw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=b9mbEKIVTR3rX3ubtzGIZrWOdTZFbd/rUfMNEZjb2L8=;
+ b=TrmEYBUHPwhQwu043yz3LFakzfH/JxE2m7OlYwou3xxCSYcbm9edYLcIGc1VE86Px7
+ o76onUl9Z640WcssGp3ybzwy33NI9P5AHhWGdTsdkwGt/bSKE6SEc+CucXgx/3PKRUJE
+ ZoQflMhw1xNqLMwpY0ue3aDW2OZh6BKGlZnY+i2K+Z2damLYwEPgoj/JFesp9jygqa5e
+ 9rRECPuWF0WO/2M5SVxWSL6yK78q98RzkmD4dJxXMMnHHXHJ5eiiam6abTgIMktgRRWQ
+ VYSlXFu8VLWJblBdeXqxyGrbolnw52FMgJ3qwuzivnm40xq2hQaGDeWpuyu6JJc9Ipdz
+ 703Q==
+X-Gm-Message-State: APjAAAV1u+pBhsFRjl8aAf3Wgj+uT3tvH550vIce/g9n7FxKD7/uhMkI
+ nqMcFJDD9sZmeRK7XlN5TmzVQoFgtKEy3XTLgZs=
+X-Google-Smtp-Source: APXvYqx87Oonv7Txg2sa97Z+ShM9V1yVGyAf6/UIiu/oSv9ZcRopmssHB10WSoofKJKze3Y1SED6u/5b/hbNxXNNOnM=
+X-Received: by 2002:a9d:6d8d:: with SMTP id x13mr36845346otp.6.1564858231216; 
+ Sat, 03 Aug 2019 11:50:31 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190803060155.89548-1-natechancellor@gmail.com>
-Content-Language: en-US
+References: <20190731124000.22072-1-narmstrong@baylibre.com>
+ <20190731124000.22072-7-narmstrong@baylibre.com>
+In-Reply-To: <20190731124000.22072-7-narmstrong@baylibre.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Sat, 3 Aug 2019 20:50:20 +0200
+Message-ID: <CAFBinCAD6F=bEE8Z2MvNZLJVKZ3siPqdJ36GuCYkp=DuY3AecQ@mail.gmail.com>
+Subject: Re: [PATCH 6/6] arm64: dts: meson-g12b-khadas-vim3: add initial
+ device-tree
+To: Neil Armstrong <narmstrong@baylibre.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190803_115032_715843_E0C503B0 
+X-CRM114-Status: UNSURE (   8.05  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,73 +94,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, andrew@lunn.ch, f.fainelli@gmail.com,
- lkp@intel.com, kernel-build-reports@lists.linaro.org,
- gregkh@linuxfoundation.org, willy@infradead.org, broonie@kernel.org,
- linux-next@vger.kernel.org, netdev@vger.kernel.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: khilman@baylibre.com, Christian Hewitt <christianshewitt@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gOC8yLzE5IDExOjAxIFBNLCBOYXRoYW4gQ2hhbmNlbGxvciB3cm90ZToKPiBBZnRlciBjb21t
-aXQgMTcxYTliYWU2OGM3ICgic3RhZ2luZy9vY3Rlb246IEFsbG93IHRlc3QgYnVpbGQgb24KPiAh
-TUlQUyIpLCB0aGUgZm9sbG93aW5nIGNvbWJpbmF0aW9uIG9mIGNvbmZpZ3MgY2F1c2UgYSBmZXcg
-S2NvbmZpZwo+IHdhcm5pbmdzIGFuZCBidWlsZCBlcnJvcnMgKGRpc3RpbGxlZCBmcm9tIGFybSBh
-bGx5ZXNjb25maWcgYW5kIFJhbmR5J3MKPiByYW5kY29uZmlnIGJ1aWxkcyk6Cj4gCj4gICAgIENP
-TkZJR19ORVRERVZJQ0VTPXkKPiAgICAgQ09ORklHX1NUQUdJTkc9eQo+ICAgICBDT05GSUdfQ09N
-UElMRV9URVNUPXkKPiAKPiBhbmQgQ09ORklHX09DVEVPTl9FVEhFUk5FVCBhcyBlaXRoZXIgYSBt
-b2R1bGUgb3IgYnVpbHQtaW4uCj4gCj4gV0FSTklORzogdW5tZXQgZGlyZWN0IGRlcGVuZGVuY2ll
-cyBkZXRlY3RlZCBmb3IgTURJT19PQ1RFT04KPiAgIERlcGVuZHMgb24gW25dOiBORVRERVZJQ0VT
-IFs9eV0gJiYgTURJT19ERVZJQ0UgWz15XSAmJiBNRElPX0JVUyBbPXldCj4gJiYgNjRCSVQgWz1u
-XSAmJiBIQVNfSU9NRU0gWz15XSAmJiBPRl9NRElPIFs9bl0KPiAgIFNlbGVjdGVkIGJ5IFt5XToK
-PiAgIC0gT0NURU9OX0VUSEVSTkVUIFs9eV0gJiYgU1RBR0lORyBbPXldICYmIChDQVZJVU1fT0NU
-RU9OX1NPQyB8fAo+IENPTVBJTEVfVEVTVCBbPXldKSAmJiBORVRERVZJQ0VTIFs9eV0KPiAKPiBJ
-biBmaWxlIGluY2x1ZGVkIGZyb20gLi4vZHJpdmVycy9uZXQvcGh5L21kaW8tb2N0ZW9uLmM6MTQ6
-Cj4gLi4vZHJpdmVycy9uZXQvcGh5L21kaW8tY2F2aXVtLmg6MTExOjM2OiBlcnJvcjogaW1wbGlj
-aXQgZGVjbGFyYXRpb24gb2YKPiBmdW5jdGlvbiDigJh3cml0ZXHigJk7IGRpZCB5b3UgbWVhbiDi
-gJh3cml0ZWzigJk/Cj4gWy1XZXJyb3I9aW1wbGljaXQtZnVuY3Rpb24tZGVjbGFyYXRpb25dCj4g
-ICAxMTEgfCAjZGVmaW5lIG9jdF9tZGlvX3dyaXRlcSh2YWwsIGFkZHIpIHdyaXRlcSh2YWwsICh2
-b2lkICopYWRkcikKPiAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-Xn5+fn5+Cj4gCj4gQ09ORklHXzY0QklUIGlzIG5vdCBzdHJpY3RseSBuZWNlc3NhcnkgaWYgdGhl
-IHByb3BlciByZWFkcS93cml0ZXEKPiBkZWZpbml0aW9ucyBhcmUgaW5jbHVkZWQgZnJvbSBpby02
-NC1ub25hdG9taWMtbG8taGkuaC4KPiAKPiBDT05GSUdfT0ZfTURJTyBpcyBub3QgbmVlZGVkIHdo
-ZW4gQ09ORklHX0NPTVBJTEVfVEVTVCBpcyBlbmFibGVkIGJlY2F1c2UKPiBvZiBjb21taXQgZjlk
-YzlhYzUxNjEwICgib2YvbWRpbzogQWRkIGR1bW15IGZ1bmN0aW9ucyBpbiBvZl9tZGlvLmguIiku
-Cj4gCj4gRml4ZXM6IDE3MWE5YmFlNjhjNyAoInN0YWdpbmcvb2N0ZW9uOiBBbGxvdyB0ZXN0IGJ1
-aWxkIG9uICFNSVBTIikKPiBSZXBvcnRlZC1ieToga2J1aWxkIHRlc3Qgcm9ib3QgPGxrcEBpbnRl
-bC5jb20+Cj4gUmVwb3J0ZWQtYnk6IE1hcmsgQnJvd24gPGJyb29uaWVAa2VybmVsLm9yZz4KPiBS
-ZXBvcnRlZC1ieTogUmFuZHkgRHVubGFwIDxyZHVubGFwQGluZnJhZGVhZC5vcmc+Cj4gU2lnbmVk
-LW9mZi1ieTogTmF0aGFuIENoYW5jZWxsb3IgPG5hdGVjaGFuY2VsbG9yQGdtYWlsLmNvbT4KCldv
-cmtzIGZvciBtZS4gRml4ZXMgdGhlIHJlcG9ydGVkIGJ1aWxkIGVycm9ycy4gIFRoYW5rcy4KCkFj
-a2VkLWJ5OiBSYW5keSBEdW5sYXAgPHJkdW5sYXBAaW5mcmFkZWFkLm9yZz4gIyBidWlsZC10ZXN0
-ZWQKCj4gLS0tCj4gCj4gdjEgLT4gdjI6Cj4gCj4gKiBBZGRyZXNzIFJhbmR5J3MgcmVwb3J0ZWQg
-ZmFpbHVyZSBoZXJlOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9uZXRkZXYvYjM0NDQyODMtN2E3
-Ny1lY2U4LTdhYzYtNDE3NTZhYTdkYzYwQGluZnJhZGVhZC5vcmcvCj4gICBieSBub3QgcmVxdWly
-aW5nIENPTkZJR19PRl9NRElPIHdoZW4gQ09ORklHX0NPTVBJTEVfVEVTVCBpcyBzZXQuCj4gCj4g
-KiBJbXByb3ZlIGNvbW1pdCBtZXNzYWdlCj4gCj4gIGRyaXZlcnMvbmV0L3BoeS9LY29uZmlnICAg
-ICAgIHwgNCArKy0tCj4gIGRyaXZlcnMvbmV0L3BoeS9tZGlvLWNhdml1bS5oIHwgMiArKwo+ICAy
-IGZpbGVzIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKPiAKPiBkaWZm
-IC0tZ2l0IGEvZHJpdmVycy9uZXQvcGh5L0tjb25maWcgYi9kcml2ZXJzL25ldC9waHkvS2NvbmZp
-Zwo+IGluZGV4IDIwZjE0YzVmYmI3ZS4uMGUzZDllM2QzNTMzIDEwMDY0NAo+IC0tLSBhL2RyaXZl
-cnMvbmV0L3BoeS9LY29uZmlnCj4gKysrIGIvZHJpdmVycy9uZXQvcGh5L0tjb25maWcKPiBAQCAt
-MTU5LDggKzE1OSw4IEBAIGNvbmZpZyBNRElPX01TQ0NfTUlJTQo+ICAKPiAgY29uZmlnIE1ESU9f
-T0NURU9OCj4gIAl0cmlzdGF0ZSAiT2N0ZW9uIGFuZCBzb21lIFRodW5kZXJYIFNPQ3MgTURJTyBi
-dXNlcyIKPiAtCWRlcGVuZHMgb24gNjRCSVQKPiAtCWRlcGVuZHMgb24gSEFTX0lPTUVNICYmIE9G
-X01ESU8KPiArCWRlcGVuZHMgb24gKDY0QklUICYmIE9GX01ESU8pIHx8IENPTVBJTEVfVEVTVAo+
-ICsJZGVwZW5kcyBvbiBIQVNfSU9NRU0KPiAgCXNlbGVjdCBNRElPX0NBVklVTQo+ICAJaGVscAo+
-ICAJICBUaGlzIG1vZHVsZSBwcm92aWRlcyBhIGRyaXZlciBmb3IgdGhlIE9jdGVvbiBhbmQgVGh1
-bmRlclggTURJTwo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL25ldC9waHkvbWRpby1jYXZpdW0uaCBi
-L2RyaXZlcnMvbmV0L3BoeS9tZGlvLWNhdml1bS5oCj4gaW5kZXggZWQ1ZjliYjU0NDhkLi5iN2Y4
-OWFkMjc0NjUgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9uZXQvcGh5L21kaW8tY2F2aXVtLmgKPiAr
-KysgYi9kcml2ZXJzL25ldC9waHkvbWRpby1jYXZpdW0uaAo+IEBAIC0xMDgsNiArMTA4LDggQEAg
-c3RhdGljIGlubGluZSB1NjQgb2N0X21kaW9fcmVhZHEodTY0IGFkZHIpCj4gIAlyZXR1cm4gY3Zt
-eF9yZWFkX2NzcihhZGRyKTsKPiAgfQo+ICAjZWxzZQo+ICsjaW5jbHVkZSA8bGludXgvaW8tNjQt
-bm9uYXRvbWljLWxvLWhpLmg+Cj4gKwo+ICAjZGVmaW5lIG9jdF9tZGlvX3dyaXRlcSh2YWwsIGFk
-ZHIpCXdyaXRlcSh2YWwsICh2b2lkICopYWRkcikKPiAgI2RlZmluZSBvY3RfbWRpb19yZWFkcShh
-ZGRyKQkJcmVhZHEoKHZvaWQgKilhZGRyKQo+ICAjZW5kaWYKPiAKCgotLSAKflJhbmR5CgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+On Wed, Jul 31, 2019 at 2:44 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+[...]
+> +       memory@0 {
+> +               device_type = "memory";
+> +               reg = <0x0 0x0 0x0 0x40000000>;
+nit-pick: we typically use the memory size used in the board size with
+the lowest amount of RAM - 2GiB in this case. so I would change it to
+0x80000000
+
+[...]
+> +       leds {
+> +               compatible = "gpio-leds";
+> +
+> +               white {
+> +                       label = "vim3:white";
+downstream sources use label="sys_led"
+should we call it vim3:white:sys?
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
