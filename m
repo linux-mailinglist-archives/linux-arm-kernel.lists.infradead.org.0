@@ -2,71 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35659805B7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 12:29:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 784C4805BC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 12:30:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hJHNVGSuUhuqFZc5GVKTet+mjbNHL3KcCgMoyy6vabQ=; b=Keu03lIuqFUqoJ
-	R4e97+A7+iEQ4jM8TOhJn2rdI8xX7lp5t3Cbd4fqYxOmZjZzRUTK15Nnp+RdGSNqTrVzGXBG1gBnX
-	CzFNxtKLp3JRAwYFutj9CkI0L/in8xlQldRK/N83/sBiFGwi8GFHkHkbxv0sM493et/ZbSIRlh9cP
-	dZLhYYUdsQmjHgTZnpjVyFOnz+4lTTJYLkyRyrJfS8QNsE6xg50zr5k1YrttKogQJcIObEhO47Y5E
-	bcpbR+53JQagdSAGv7u/sP3+Cll/MqqMV3q4ce1KK+/hyX4Gdq0F/H86lWpVUofL9R4qvzuPpfN3S
-	Y4dqH8Z9qbBUFn4memXA==;
+	List-Owner; bh=jrtxYykTOwSnVxSoRWOghLivx2rjUzz/U4eMI1c6uJo=; b=f5tiOR/ZtXKBIy
+	rRr2NXWuuDXY0QRfgvqVkxiacNkCuhTNYdtFIDWdF0sjdvimIzLtkLMI/xIV0uG6SPCyx25TlwSK+
+	x9VVySDQLM3gYx4GjKFqx++2x999+gbWmYh7Oegi/PZRhwFf7oqOjuIzzskvvurF5Qxai9opMtSUP
+	3vYWpHscYII7UILNklIX7yLWMmYULwHxZqhbgB6/BHXU4SdMBs/OT4NTB7BaD6N+A6EzD8Af6Evyh
+	CaOBd467+Ugy591XNtJwC+q19n/pczQ+XVafGFO5gGdra2h46gsvAm/mdVcdmH8IpbTtRmr3NjYK7
+	lWm/h9Z4TSvYsFr26RZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htrHu-0000pZ-Ll; Sat, 03 Aug 2019 10:29:22 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1htrJ7-0002Gp-St; Sat, 03 Aug 2019 10:30:37 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htrHl-0000pE-8j
- for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 10:29:14 +0000
-Received: from X250.getinternet.no (98.142.130.235.16clouds.com
- [98.142.130.235])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B30AD2166E;
- Sat,  3 Aug 2019 10:29:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1564828152;
- bh=Hxnc5GyLr0im/KCz9iGwtaayj36GKPyIDYYJ7KeLgzo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=b6psH8+CzeQ1Md0YRG5KEv+/hiUGWVyVZfnfpXGYPsveee27yXMMHQvmCTJyME84C
- /Me78je3xPfkkqdyGbL4BtCp+zTpRocnDuIXdemeDJcdEDUX9Vw9sTGJz7E/zbKeGi
- bEGYqvPnwTKiXK9w+yQiTaibdB7qM3LV/55hnSPg=
-Date: Sat, 3 Aug 2019 12:29:05 +0200
-From: Shawn Guo <shawnguo@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH] arm64: dts: imx8mm: Fix boot hang at clk init
-Message-ID: <20190803102855.GJ8870@X250.getinternet.no>
-References: <718c781b77081d6974fd91d5dff7b0f8737757b0.1564048197.git.leonard.crestez@nxp.com>
+ id 1htrIz-0002GW-7o
+ for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 10:30:30 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 4321A227A81; Sat,  3 Aug 2019 12:30:24 +0200 (CEST)
+Date: Sat, 3 Aug 2019 12:30:24 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Takashi Iwai <tiwai@suse.de>
+Subject: Re: [PATCH 5/5] dma-mapping: remove ARCH_NO_COHERENT_DMA_MMAP
+Message-ID: <20190803103024.GA32624@lst.de>
+References: <20190725063401.29904-1-hch@lst.de>
+ <20190725063401.29904-6-hch@lst.de> <20190802070354.GA8280@lst.de>
+ <s5hh870rn4t.wl-tiwai@suse.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <718c781b77081d6974fd91d5dff7b0f8737757b0.1564048197.git.leonard.crestez@nxp.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <s5hh870rn4t.wl-tiwai@suse.de>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190803_032913_328982_25D4662D 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190803_033029_427960_B934BD20 
+X-CRM114-Status: GOOD (  12.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,37 +60,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Jacky Bai <ping.bai@nxp.com>, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Li Jun <jun.li@nxp.com>
+Cc: linux-xtensa@linux-xtensa.org, Michal Simek <monstr@monstr.eu>,
+ linux-parisc@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-m68k@lists.linux-m68k.org, Robin Murphy <robin.murphy@arm.com>,
+ x86@kernel.org, linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ linuxppc-dev@lists.ozlabs.org, Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 25, 2019 at 12:50:53PM +0300, Leonard Crestez wrote:
-> The assigned-clock-rates property is incorrect (4 elements while
-> assigned-clocks has length 5) and boot hangs while assigning some
-> unexpected rates.
+On Fri, Aug 02, 2019 at 10:24:02AM +0200, Takashi Iwai wrote:
+> I wasn't careful enough to look at that change, sorry.
 > 
-> Fix by inserting another <400000000>, the intention is to assign both
-> IMX8MM_CLK_AUDIO_AHB and IMX8MM_CLK_IPG_AUDIO_ROOT 400mhz.
+> The code there tries to check whether dma_mmap_coherent() would always
+> fail on some platforms.  Then the driver clears the mmap capability
+> flag at the device open time and notifies user-space to fall back to
+> the dumb read/write mode.
 > 
-> Fixes: df1703896a17 ("arm64: dts: imx8mm: Init rates and parents configs for clocks")
+> So I'm afraid that simply dropping the check would cause the behavior
+> regression, e.g. on PARISC.
 > 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> 
-> ---
-> Changes since v1:
-> * Insert and 400mhz instead of <0>
-> Link to v1: https://patchwork.kernel.org/patch/11057515/
-> 
-> Should probably be squashed into df1703896a17
+> Is there any simple way to test whether dma_mmap_coherent() would work
+> or not in general on the target platform?  It's not necessarily in an
+> ifdef at all.
 
-Done, thanks.
+This isn't really a platform, but a per-device question.  I can add a
+"bool dma_can_mmap(struct device *dev)" helper to check that.  But how
+do I get at a suitable struct device in hw_support_mmap()?
 
 _______________________________________________
 linux-arm-kernel mailing list
