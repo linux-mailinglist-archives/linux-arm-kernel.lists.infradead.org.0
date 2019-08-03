@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 860F7807A1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 20:05:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D47F4807A7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 20:13:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e/QPYuAMsNR7IZM05FPWAxeu8+EtDgHLF36Kv9B18G0=; b=f3kFqQr5Wmwe2q
-	kwzfkirZ1nCVZCO33BGbpOt3Rm6iJaMMM1B2I7FagqcVzSj4iA14tZOoai1MtsAM9XEqRjR50nw8Q
-	WADJcV1RBKwo7O7hDaC6HMjHkSLDUrvTyDkOskejYCWzRwDr2j6tEVzKUh+89eMkZRRcyZ0NS0sxC
-	F39n/kjFtlr1V2PMNpDgrBTxfEbV2CL5la5sRo/GSHLnx1YwmpPq1qiLD0tvOVkT+lUukL9gfamXc
-	poCdAUPk0ElZJgA+o5yz53qX0E+ONLi2coGokxm8JqY5k1wB84fmvFh/+ijBwU54hOFb7hOPqIwaU
-	pbYVjZ+60hoRle668Vmg==;
+	List-Owner; bh=Zf79HeZfjhqXt95O804sh8/VuNEzceoVicl9H+q2cdE=; b=WMvcyPplPVAdpl
+	4bfxaEpD1hEO7/Rwe9/wZ9FlYmFjsNWBml9vRH5R0xqmeBoHftmXnB367B3/4r6WAjOwTFGAcLj6q
+	vi6wO1Tm2oV5UtbV7/Ar+U7X+uj3vAF5A0FV84DuZB5TWa2B+5yywW6QfDRVblE9p9cK3fQErfv69
+	UHJWB9KUVaSlIwhbPhaFa1aPtrRuFhsjMvT2XgEYFNOaxVf8R6i8oqHRhDXN7DBSaZI3HalZsIxaP
+	jU0/wh6KUC7yRbobJdxzUMoR1QRstl71lMma0uQIjgYlqBO4ARUlGEYlycAAx/ZlbNQ5muhwCy/7U
+	0jqmndrD1SXdT7hOs7EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htyPX-0006EL-7e; Sat, 03 Aug 2019 18:05:43 +0000
+	id 1htyXE-0007tX-28; Sat, 03 Aug 2019 18:13:40 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htyPL-0006E1-Qj
- for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 18:05:33 +0000
+ id 1htyX1-0007t4-9C
+ for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 18:13:29 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why)
  by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
  (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1htyPF-0002A1-0t; Sat, 03 Aug 2019 20:05:25 +0200
-Date: Sat, 3 Aug 2019 19:05:22 +0100
+ id 1htyWw-0002Em-AQ; Sat, 03 Aug 2019 20:13:22 +0200
+Date: Sat, 3 Aug 2019 19:13:19 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH 0/9] arm64: Stolen time support
-Message-ID: <20190803190522.5fec8f7d@why>
-In-Reply-To: <20190802145017.42543-1-steven.price@arm.com>
+Subject: Re: [PATCH 4/9] KVM: arm64: Support stolen time reporting via
+ shared structure
+Message-ID: <20190803191303.02e9bcc9@why>
+In-Reply-To: <20190803185817.11285b2a@why>
 References: <20190802145017.42543-1-steven.price@arm.com>
+ <20190802145017.42543-5-steven.price@arm.com>
+ <20190803185817.11285b2a@why>
 Organization: Approximate
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: steven.price@arm.com, catalin.marinas@arm.com,
- pbonzini@redhat.com, rkrcmar@redhat.com, linux@armlinux.org.uk,
- will@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org
+X-SA-Exim-Rcpt-To: steven.price@arm.com, kvm@vger.kernel.org,
+ catalin.marinas@arm.com, linux-doc@vger.kernel.org, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ pbonzini@redhat.com, will@kernel.org, kvmarm@lists.cs.columbia.edu
 X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190803_110532_013890_CEAB0CA8 
-X-CRM114-Status: GOOD (  12.08  )
+X-CRM114-CacheID: sfid-20190803_111327_469587_B5307BF4 
+X-CRM114-Status: GOOD (  24.94  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -69,49 +70,191 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Radim =?UTF-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, Paolo Bonzini <pbonzini@redhat.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri,  2 Aug 2019 15:50:08 +0100
-Steven Price <steven.price@arm.com> wrote:
+On Sat, 3 Aug 2019 18:58:17 +0100
+Marc Zyngier <maz@kernel.org> wrote:
 
-Hi Steven,
-
-> This series add support for paravirtualized time for arm64 guests and
-> KVM hosts following the specification in Arm's document DEN 0057A:
+> On Fri,  2 Aug 2019 15:50:12 +0100
+> Steven Price <steven.price@arm.com> wrote:
 > 
-> https://developer.arm.com/docs/den0057/a
+> > Implement the service call for configuring a shared structre between a
+> > VCPU and the hypervisor in which the hypervisor can write the time
+> > stolen from the VCPU's execution time by other tasks on the host.
+> > 
+> > The hypervisor allocates memory which is placed at an IPA chosen by user
+> > space. The hypervisor then uses WRITE_ONCE() to update the shared
+> > structre ensuring single copy atomicity of the 64-bit unsigned value
+> > that reports stolen time in nanoseconds.
+> > 
+> > Whenever stolen time is enabled by the guest, the stolen time counter is
+> > reset.
+> > 
+> > The stolen time itself is retrieved from the sched_info structure
+> > maintained by the Linux scheduler code. We enable SCHEDSTATS when
+> > selecting KVM Kconfig to ensure this value is meaningful.
+> > 
+> > Signed-off-by: Steven Price <steven.price@arm.com>
+> > ---
+> >  arch/arm64/include/asm/kvm_host.h | 13 +++++-
+> >  arch/arm64/kvm/Kconfig            |  1 +
+> >  include/kvm/arm_hypercalls.h      |  1 +
+> >  include/linux/kvm_types.h         |  2 +
+> >  virt/kvm/arm/arm.c                | 18 ++++++++
+> >  virt/kvm/arm/hypercalls.c         | 70 +++++++++++++++++++++++++++++++
+> >  6 files changed, 104 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> > index f656169db8c3..78f270190d43 100644
+> > --- a/arch/arm64/include/asm/kvm_host.h
+> > +++ b/arch/arm64/include/asm/kvm_host.h
+> > @@ -44,6 +44,7 @@
+> >  	KVM_ARCH_REQ_FLAGS(0, KVM_REQUEST_WAIT | KVM_REQUEST_NO_WAKEUP)
+> >  #define KVM_REQ_IRQ_PENDING	KVM_ARCH_REQ(1)
+> >  #define KVM_REQ_VCPU_RESET	KVM_ARCH_REQ(2)
+> > +#define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
+> >  
+> >  DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
+> >  
+> > @@ -83,6 +84,11 @@ struct kvm_arch {
+> >  
+> >  	/* Mandated version of PSCI */
+> >  	u32 psci_version;
+> > +
+> > +	struct kvm_arch_pvtime {
+> > +		void *st;
+> > +		gpa_t st_base;
+> > +	} pvtime;
+> >  };
+> >  
+> >  #define KVM_NR_MEM_OBJS     40
+> > @@ -338,8 +344,13 @@ struct kvm_vcpu_arch {
+> >  	/* True when deferrable sysregs are loaded on the physical CPU,
+> >  	 * see kvm_vcpu_load_sysregs and kvm_vcpu_put_sysregs. */
+> >  	bool sysregs_loaded_on_cpu;
+> > -};
+> >  
+> > +	/* Guest PV state */
+> > +	struct {
+> > +		u64 steal;
+> > +		u64 last_steal;
+> > +	} steal;
+> > +};
+> >  /* Pointer to the vcpu's SVE FFR for sve_{save,load}_state() */
+> >  #define vcpu_sve_pffr(vcpu) ((void *)((char *)((vcpu)->arch.sve_state) + \
+> >  				      sve_ffr_offset((vcpu)->arch.sve_max_vl)))
+> > diff --git a/arch/arm64/kvm/Kconfig b/arch/arm64/kvm/Kconfig
+> > index a67121d419a2..d8b88e40d223 100644
+> > --- a/arch/arm64/kvm/Kconfig
+> > +++ b/arch/arm64/kvm/Kconfig
+> > @@ -39,6 +39,7 @@ config KVM
+> >  	select IRQ_BYPASS_MANAGER
+> >  	select HAVE_KVM_IRQ_BYPASS
+> >  	select HAVE_KVM_VCPU_RUN_PID_CHANGE
+> > +	select SCHEDSTATS
+> >  	---help---
+> >  	  Support hosting virtualized guest machines.
+> >  	  We don't support KVM with 16K page tables yet, due to the multiple
+> > diff --git a/include/kvm/arm_hypercalls.h b/include/kvm/arm_hypercalls.h
+> > index 35a5abcc4ca3..9f0710ab4292 100644
+> > --- a/include/kvm/arm_hypercalls.h
+> > +++ b/include/kvm/arm_hypercalls.h
+> > @@ -7,6 +7,7 @@
+> >  #include <asm/kvm_emulate.h>
+> >  
+> >  int kvm_hvc_call_handler(struct kvm_vcpu *vcpu);
+> > +int kvm_update_stolen_time(struct kvm_vcpu *vcpu);
+> >  
+> >  static inline u32 smccc_get_function(struct kvm_vcpu *vcpu)
+> >  {
+> > diff --git a/include/linux/kvm_types.h b/include/linux/kvm_types.h
+> > index bde5374ae021..1c88e69db3d9 100644
+> > --- a/include/linux/kvm_types.h
+> > +++ b/include/linux/kvm_types.h
+> > @@ -35,6 +35,8 @@ typedef unsigned long  gva_t;
+> >  typedef u64            gpa_t;
+> >  typedef u64            gfn_t;
+> >  
+> > +#define GPA_INVALID	(~(gpa_t)0)
+> > +
+> >  typedef unsigned long  hva_t;
+> >  typedef u64            hpa_t;
+> >  typedef u64            hfn_t;
+> > diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+> > index f645c0fbf7ec..ebd963d2580b 100644
+> > --- a/virt/kvm/arm/arm.c
+> > +++ b/virt/kvm/arm/arm.c
+> > @@ -40,6 +40,10 @@
+> >  #include <asm/kvm_coproc.h>
+> >  #include <asm/sections.h>
+> >  
+> > +#include <kvm/arm_hypercalls.h>
+> > +#include <kvm/arm_pmu.h>
+> > +#include <kvm/arm_psci.h>
+> > +
+> >  #ifdef REQUIRES_VIRT
+> >  __asm__(".arch_extension	virt");
+> >  #endif
+> > @@ -135,6 +139,7 @@ int kvm_arch_init_vm(struct kvm *kvm, unsigned long type)
+> >  	kvm->arch.max_vcpus = vgic_present ?
+> >  				kvm_vgic_get_max_vcpus() : KVM_MAX_VCPUS;
+> >  
+> > +	kvm->arch.pvtime.st_base = GPA_INVALID;
+> >  	return ret;
+> >  out_free_stage2_pgd:
+> >  	kvm_free_stage2_pgd(kvm);
+> > @@ -371,6 +376,7 @@ void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
+> >  	kvm_vcpu_load_sysregs(vcpu);
+> >  	kvm_arch_vcpu_load_fp(vcpu);
+> >  	kvm_vcpu_pmu_restore_guest(vcpu);
+> > +	kvm_make_request(KVM_REQ_RECORD_STEAL, vcpu);
+> >  
+> >  	if (single_task_running())
+> >  		vcpu_clear_wfe_traps(vcpu);
+> > @@ -617,6 +623,15 @@ static void vcpu_req_sleep(struct kvm_vcpu *vcpu)
+> >  	smp_rmb();
+> >  }
+> >  
+> > +static void vcpu_req_record_steal(struct kvm_vcpu *vcpu)
+> > +{
+> > +	int idx;
+> > +
+> > +	idx = srcu_read_lock(&vcpu->kvm->srcu);
+> > +	kvm_update_stolen_time(vcpu);
+> > +	srcu_read_unlock(&vcpu->kvm->srcu, idx);
+> > +}
+> > +
+> >  static int kvm_vcpu_initialized(struct kvm_vcpu *vcpu)
+> >  {
+> >  	return vcpu->arch.target >= 0;
+> > @@ -636,6 +651,9 @@ static void check_vcpu_requests(struct kvm_vcpu *vcpu)
+> >  		 * that a VCPU sees new virtual interrupts.
+> >  		 */
+> >  		kvm_check_request(KVM_REQ_IRQ_PENDING, vcpu);
+> > +
+> > +		if (kvm_check_request(KVM_REQ_RECORD_STEAL, vcpu))
+> > +			vcpu_req_record_steal(vcpu);  
 > 
-> It implements support for stolen time, allowing the guest to
-> identify time when it is forcibly not executing.
+> Something troubles me. Here, you've set the request on load. But you
+> can be preempted at any time (preemption gets disabled just after).
 > 
-> It doesn't implement support for Live Physical Time (LPT) as there are
-> some concerns about the overheads and approach in the above
-> specification, and I expect an updated version of the specification to
-> be released soon with just the stolen time parts.
+> I have the feeling that should you get preempted right here, you'll
+> end-up having accumulated the wrong amount of steal time, as the
+> request put via load when you'll get scheduled back in will only get
+> processed after a full round of entry/exit/entry, which doesn't look
+> great.
 
-Thanks for posting this.
-
-My current concern with this series is around the fact that we allocate
-memory from the kernel on behalf of the guest. It is the first example
-of such thing in the ARM port, and I can't really say I'm fond of it.
-
-x86 seems to get away with it by having the memory allocated from
-userspace, why I tend to like more. Yes, put_user is more
-expensive than a straight store, but this isn't done too often either.
-
-What is the rational for your current approach?
-
-Thanks,
+Ah, no. We're saved by the check for pending requests right before we
+jump in the guest, causing an early exit and the whole shebang to be
+restarted.
 
 	M.
 -- 
