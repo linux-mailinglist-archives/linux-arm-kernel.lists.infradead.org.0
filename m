@@ -2,95 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A8EA803BB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 03:32:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C97D2803B9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  3 Aug 2019 03:30:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+cirGLb3YMWdiSe7Hj3Tpihw69ZOKKuDHnU+1Or0y0k=; b=kU2hzQZBhZTE2bxhMP/j/HfEO
-	9Qg/4qmaVK/a3X3x7quDNW+LcxbL4G2hIzFUYMkTc3MxOo01mDj+xt4oiQIbQLYASvwOvLOdR7/p5
-	cRLcBmU7iq9bqR590sTIosDvNwth1DhlBuL4CgTBrDoyYU911W7ovkDWpyF1PpsBmk6KtPAZgvlG4
-	qVmZwwofLQduNVVsNTcCAKEnTAPwmkFgPZ5wTe7W7KXRPtkSfxQLurvlfEnW/AlDboknWwqQNUFdQ
-	pduYn+DVkU+Gcj9wR4dZYHtIw1FjEUdnrgS8HelMIUXdT1aUo3RB/gUbwBspQcmNbVwNxEvxaU45R
-	GqBQPGgaA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KLO+/NlcmyDZG/1JWQ32Wv2+iOPKKAWLDoBU6JK3J1w=; b=lY4Ymd1dHw441a
+	SI2pcpf32nfD+7kEJB4D5TxNPJNvSCJ0KhLG70+vxuZwm2GAaCSLMZyVpu+FqXcU7g8tjbIxzdDsN
+	fiimp3ylKGsTuQ9PK2kHT+07+EiSPyJ59+0IR8jdT9vI1Zr8JF2qjBs/Z520fU/zeXS48osvM+pBN
+	SDsUW15wLfzwLbTUFn3DzgGWNbsrEw11q5OVB0az0dQKisrTuFC5K7MU6z3C5f1WHOJbtp1JU6MPJ
+	fvvv75FmBd844YAlfIpBKLYmIJ230lWgXo2geqUVX09yDVxZ6Xa0r6trzB5b4fv3ceWOgwdo+g2of
+	QFaYqW/a9hDCLFnv0qbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htiui-0005ay-NO; Sat, 03 Aug 2019 01:32:52 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1htisg-0005F4-A3; Sat, 03 Aug 2019 01:30:46 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htiuW-0005F2-TW; Sat, 03 Aug 2019 01:32:42 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x731TjiM041024;
- Sat, 3 Aug 2019 01:30:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=cc : subject : to :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2018-07-02;
- bh=PzG5W+xMCPCqX5V/WwOxL0iZTAvQCXHlqgOKkoOg1MQ=;
- b=2UsMaGPWcwZDgPtPG4vvO4o2+XprVDs5YewZlGJ99NG/oeu5neHqgRolXDdQUDZF8YMI
- IxYI2JZfBcSTSH5fID80qQTk2RWiC2i2+JKhPWGaFknkpOXtRCnVCla7UCXQjDJ07TcC
- Y8zIof10PGpETzEquU4Ep6o2lM98f1fWi0d++c5eyIcbTbo8lM/F3e4I2lqnL2U/DsCA
- 8mUjAebH6kYb0xf2V8EwArlSIvwpZUBAi4UxsNctBmeyR2rpJRijKuOrdEc0RMfPWfzX
- anPCkdDrm0pEBpPwYOnfJAsFmVDpXvcG9fkUEJAY/0LPZMTheZ3JVp0D915Q7k5fKIRC kQ== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 2u0f8rn4cg-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Sat, 03 Aug 2019 01:30:13 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x731SCbQ177888;
- Sat, 3 Aug 2019 01:28:12 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
- by aserp3030.oracle.com with ESMTP id 2u50aa8apf-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Sat, 03 Aug 2019 01:28:12 +0000
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [127.0.0.1])
- by pps.reinject (8.16.0.27/8.16.0.27) with SMTP id x731SC7W177834;
- Sat, 3 Aug 2019 01:28:12 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3030.oracle.com with ESMTP id 2u50aa8ap0-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Sat, 03 Aug 2019 01:28:12 +0000
-Received: from abhmp0017.oracle.com (abhmp0017.oracle.com [141.146.116.23])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x731S6LT032689;
- Sat, 3 Aug 2019 01:28:06 GMT
-Received: from mbp2018.cdmnet.org (/82.27.120.181)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 02 Aug 2019 18:28:05 -0700
-Subject: Re: [PATCH 31/34] nfs: convert put_page() to put_user_page*()
-To: john.hubbard@gmail.com, Andrew Morton <akpm@linux-foundation.org>
-References: <20190802022005.5117-1-jhubbard@nvidia.com>
- <20190802022005.5117-32-jhubbard@nvidia.com>
-From: Calum Mackay <calum.mackay@oracle.com>
-Organization: Oracle
-Message-ID: <1738cb1e-15d8-0bbe-5362-341664f6efc8@oracle.com>
-Date: Sat, 3 Aug 2019 02:27:55 +0100
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:70.0)
- Gecko/20100101 Thunderbird/70.0a1
+ id 1htisW-0005Eb-9C
+ for linux-arm-kernel@lists.infradead.org; Sat, 03 Aug 2019 01:30:37 +0000
+Received: by mail-wm1-x344.google.com with SMTP id s15so46577988wmj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 02 Aug 2019 18:30:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Ogf+QVoHZtK9iZfwgzb4P/UWGbW9VrBZvDIl55S3hPY=;
+ b=KGkroKFjol78GrJj8Z3aHbKWLMrcSiwfex8ESVqf5pCyjcNBYG+ZPXlzN5iCRO4k4S
+ j+kWSLfRx1gW9uTsbVilRV/mKw5vnJRnyRovCESrqPj485QPsEXeHmM1ohRfevsYjhl+
+ bVqgoWYlnrNbPYUfDRYgNeFptq0zUwF8iaVEaW6Y91hTzIKVEhttusPL7xNJjagJgfPx
+ Qmm+hhLcyFpZUGNoAb7uaqmLy2yvIu/dqrpx4BAoA8q5ZPCHBLZqpQBELIiFi0jGG2Yl
+ HbTxR+5W2mtoj7+ef493cG+HiMMsq/Ot47bUXyCg3DdLbc7lKcrFA4E477Jh3bin1LxM
+ lI3Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Ogf+QVoHZtK9iZfwgzb4P/UWGbW9VrBZvDIl55S3hPY=;
+ b=gUrq2l4mXQuogf41vwNQIgwqriyX9hRRYeB5ErxUmltOJbxHI6aJ8Wj2Jiho3pIS9s
+ Z7uUjuPsj/qp/LI160BsUpwv/w8T+ciKifL2JDVyx18uUvfJecJ1CIjrWsnVDY5eNUFS
+ 3BdcVuxuAHnVaFdRe9FE/2ipl3vQJfxo1c9HaUIneC+5QDYXXx3NJMCGLaRXYjI9nzUd
+ mfCH/5r2kB/wdgT0PpL0Q44snlbeVQuErV2V1uZ7Upn2e4RCV/sGOO9XyylfvQ2mI4kn
+ lGHuM746o007SEeQq2joxishZlX1GFrXnqH4pymucxfRP0mk67DcnOPyxM58We3f/Nyn
+ Y/5g==
+X-Gm-Message-State: APjAAAUH2pIepz7M30yO+zfQhC//V+drpo+aBFIJ+fVdgS4oQHgCqEav
+ t9O1qkbWIIgh7lODDPdcc9A=
+X-Google-Smtp-Source: APXvYqxqjFQJ9s+K2nHgDoEAg28+wlCsmvPhcNE3ueZNH5NsBPgHWuzjZM3lffnaX7s2DnS6f/1HMQ==
+X-Received: by 2002:a1c:e108:: with SMTP id y8mr6269283wmg.65.1564795833805;
+ Fri, 02 Aug 2019 18:30:33 -0700 (PDT)
+Received: from archlinux-threadripper ([2a01:4f8:222:2f1b::2])
+ by smtp.gmail.com with ESMTPSA id c4sm62233010wrt.86.2019.08.02.18.30.32
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 02 Aug 2019 18:30:33 -0700 (PDT)
+Date: Fri, 2 Aug 2019 18:30:31 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: David Miller <davem@davemloft.net>
+Subject: Re: [PATCH] net: mdio-octeon: Fix build error and Kconfig warning
+Message-ID: <20190803013031.GA76252@archlinux-threadripper>
+References: <20190731.094150.851749535529247096.davem@davemloft.net>
+ <20190731185023.20954-1-natechancellor@gmail.com>
+ <20190802.181132.1425585873361511856.davem@davemloft.net>
 MIME-Version: 1.0
-In-Reply-To: <20190802022005.5117-32-jhubbard@nvidia.com>
-Content-Language: en-GB
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9337
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1906280000
- definitions=main-1908030013
+Content-Disposition: inline
+In-Reply-To: <20190802.181132.1425585873361511856.davem@davemloft.net>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_183241_084325_A678BC74 
-X-CRM114-Status: GOOD (  21.26  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190802_183036_350053_422D33A8 
+X-CRM114-Status: GOOD (  13.31  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (natechancellor[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -99,9 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,72 +101,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
- Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
- calum.mackay@oracle.com, devel@driverdev.osuosl.org, rds-devel@oss.oracle.com,
- linux-rdma@vger.kernel.org, x86@kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
- linux-media@vger.kernel.org, John Hubbard <jhubbard@nvidia.com>,
- intel-gfx@lists.freedesktop.org, Dan Williams <dan.j.williams@intel.com>,
- linux-block@vger.kernel.org,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
- Trond Myklebust <trond.myklebust@hammerspace.com>,
- linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
- netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Anna Schumaker <anna.schumaker@netapp.com>
+Cc: devel@driverdev.osuosl.org, andrew@lunn.ch, f.fainelli@gmail.com,
+ lkp@intel.com, kernel-build-reports@lists.linaro.org,
+ gregkh@linuxfoundation.org, rdunlap@infradead.org, willy@infradead.org,
+ broonie@kernel.org, linux-next@vger.kernel.org, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/08/2019 3:20 am, john.hubbard@gmail.com wrote:
-> From: John Hubbard <jhubbard@nvidia.com>
+On Fri, Aug 02, 2019 at 06:11:32PM -0700, David Miller wrote:
+> From: Nathan Chancellor <natechancellor@gmail.com>
+> Date: Wed, 31 Jul 2019 11:50:24 -0700
 > 
-> For pages that were retained via get_user_pages*(), release those pages
-> via the new put_user_page*() routines, instead of via put_page() or
-> release_pages().
+> > arm allyesconfig warns:
+> > 
+> > WARNING: unmet direct dependencies detected for MDIO_OCTEON
+> >   Depends on [n]: NETDEVICES [=y] && MDIO_DEVICE [=y] && MDIO_BUS [=y]
+> > && 64BIT && HAS_IOMEM [=y] && OF_MDIO [=y]
+> >   Selected by [y]:
+> >   - OCTEON_ETHERNET [=y] && STAGING [=y] && (CAVIUM_OCTEON_SOC &&
+> > NETDEVICES [=y] || COMPILE_TEST [=y])
+> > 
+> > and errors:
+> > 
+> > In file included from ../drivers/net/phy/mdio-octeon.c:14:
+> > ../drivers/net/phy/mdio-octeon.c: In function 'octeon_mdiobus_probe':
+> > ../drivers/net/phy/mdio-cavium.h:111:36: error: implicit declaration of
+> > function 'writeq'; did you mean 'writeb'?
 > 
-> This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
-> ("mm: introduce put_user_page*(), placeholder versions").
+> The proper way to fix this is to include either
 > 
-> Cc: Trond Myklebust <trond.myklebust@hammerspace.com>
-> Cc: Anna Schumaker <anna.schumaker@netapp.com>
-> Cc: linux-nfs@vger.kernel.org
-> Signed-off-by: John Hubbard <jhubbard@nvidia.com>
-> ---
->   fs/nfs/direct.c | 4 +---
->   1 file changed, 1 insertion(+), 3 deletions(-)
+> 	linux/io-64-nonatomic-hi-lo.h
 > 
-> diff --git a/fs/nfs/direct.c b/fs/nfs/direct.c
-> index 0cb442406168..b00b89dda3c5 100644
-> --- a/fs/nfs/direct.c
-> +++ b/fs/nfs/direct.c
-> @@ -278,9 +278,7 @@ ssize_t nfs_direct_IO(struct kiocb *iocb, struct iov_iter *iter)
->   
->   static void nfs_direct_release_pages(struct page **pages, unsigned int npages)
->   {
-> -	unsigned int i;
-> -	for (i = 0; i < npages; i++)
-> -		put_page(pages[i]);
-> +	put_user_pages(pages, npages);
->   }
+> or
+> 
+> 	linux/io-64-nonatomic-lo-hi.h
+> 
+> whichever is appropriate.
 
-Since it's static, and only called twice, might it be better to change 
-its two callers [nfs_direct_{read,write}_schedule_iovec()] to call 
-put_user_pages() directly, and remove nfs_direct_release_pages() entirely?
+Hmmmm, is that not what I did?
 
-thanks,
-calum.
+Although I did not know about io-64-nonatomic-hi-lo.h. What is the
+difference and which one is needed here?
 
+There is apparently another failure when OF_MDIO is not set, I guess I
+can try to look into that as well and respin into a series if
+necessary.
 
->   
->   void nfs_init_cinfo_from_dreq(struct nfs_commit_info *cinfo,
-> 
+Cheers,
+Nathan
 
 _______________________________________________
 linux-arm-kernel mailing list
