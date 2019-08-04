@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB12780C7F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 22:17:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39EE580C83
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 22:17:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=leiicJ+qcpxYeaQvrZuKccxc+jsRaS+54TrrsmVxMDk=; b=LxI0kKI5ciBqgv
-	hWxwRAyEAyUcmvW66k+rAgl+63Qb1LHqpnPNlkpa8Z6KIGF7VaqRDEpqlePuyiijdktjSom7Tu0mA
-	RGTPmb8lo8KRC5yqeDu2mE6FROUqxacjPpmeatAZnSJg/q8HqcspXVCvovlVRzDr8nIINTqbJs1V+
-	D5OHdbRq4fPdEbSSF4kEzi3lkOmuVmHM9VEpFWUvremosFLqnaSVajYK/yMxw35htzyd7/8pvgNQJ
-	vqeLy1opZT0x57fNfH1grzsms7B03hTGb3A0X7Ugu5qCF94EWyZ9dYXsQgb/3wUAq8ZXXiW04InpK
-	QYl8YZb7rgf1ukn+b/yA==;
+	List-Owner; bh=rsjpuRo573cHre3x9JeZP8mmeeQ8+gvKrYRxzW4iSz8=; b=rOCpozdmOXKTXo
+	bMM4U/ItKOF0jvbE8ipP4GGfMWqcwAOX7mjEJHPeGEPq1Qo2BZMfm7raRWgN22hmUCogPBPk17PKx
+	NyENLHZZAv6C/7kxwuxSksAwFn5lN/ezuNdJwrZujXCt2O7G8QfHsWyog/ZALb4s8ZRazk46pBOld
+	8Ix7VITsvEmfyDCoyh5/LZm8mBSCXJVQonPNbnD+bcLEh+Q0PL5q2ajk0d8qeeeYA+3F+JO70l4O6
+	r7+z63HAL3e1Wmjmp4/xvBD2bSI03AVQ+bBkGsTnJ/4soxp3STtd8eGeUk0nSrCBK88zUR8DkkiFg
+	jmXoj0akq8nYru8Qtb8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huMwt-0000SM-42; Sun, 04 Aug 2019 20:17:47 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1huMx2-0000ho-AJ; Sun, 04 Aug 2019 20:17:56 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huMwI-0008Jm-8z
- for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 20:17:11 +0000
-Received: by mail-lj1-x241.google.com with SMTP id m23so77345213lje.12
+ id 1huMwM-0008Q0-74
+ for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 20:17:16 +0000
+Received: by mail-lj1-x243.google.com with SMTP id i21so77437351ljj.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 04 Aug 2019 13:17:10 -0700 (PDT)
+ Sun, 04 Aug 2019 13:17:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=1TEXaZ1KpdAoiO85boEPTBxnq8MPM5bbeG78Znsg1kk=;
- b=UY9E/BN/VsoWEhEtkdN8SUZ6JHfj/MBgZgo1KwFNcuBN2pN7TOGU5AbsZbBMQBBMp/
- +KPl14S0+PYrY1NlQyBlfArZikLv53LGe2G/hMahk+c88DAkGoN1qgt0F0pIFL6MlC69
- Lcg7RTaWFBAx4PfmCtkLgYHY73b8PSgMP9+nEJT1uYEv3otLP4iBzlNGlEbAcG98zDQZ
- E6yypKdyIS1mOqIB1qbZbUit/9wBYgZ6PRdzJSzvLpvas00dvht3i0+tzIDnbOuyzH3p
- RAn2m/o5JiW0VANG9Eoc7to6esERy5lprBeYjTpFb798pyI2UJNt8Ef9POkUjSlMe9BK
- Z98A==
+ bh=OqhXxXwy9Hr3xWItmkC0WnCOZqEhN5kTgjtJyN6Z+CY=;
+ b=NLLRFWKzJmEIu9OTOt7Ai8tctMWnGdjeyEFU+bfOuWd3AgIJwVV5bg33IJmsvBZup+
+ JybThz+nVWyyLhyxpWRvRVqVGJqJtDYU59QsXSfu+zCyvbOcabGJOut4KqbsMVWxIH4Z
+ tW+Tv7tICzEJDkmjcIBJSlRM1z6IOKUpkGKIAU/4Ybs703WZbR3nNjvMr3m+CkOHkc17
+ Rb4XRehU55J1G+MqL6y4FTAHHomaoEOikxlyWWWJtnnFAqOmZ710XFHX0eWXQQL7lRT1
+ f/jZm/vh9FmhUey+YmveVXZdx/reIWL8VTKKHRLpUUQZGISW6Eyybhr/rBDd1ODzkPPO
+ 8Y7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=1TEXaZ1KpdAoiO85boEPTBxnq8MPM5bbeG78Znsg1kk=;
- b=nMeh26U8Lr4ppT2r7qGphiTpYdxSi7l6IRWIkfktU9GFyx6bQ8k1fMwjQsdNhRHmo2
- NYkaM34+c6Xl4D0vvOGd9XFT1LtwMC9FhMU0wbMhSFq/rPniUDQxLsFW+aJQ47c20N1B
- KQ6xi9yiIu6AfvmtvHJlAZSEVuRelL/6ADN9KbTI02n/VTFAEH/SYTvp4Q6kmftXsNgB
- ewrbh5VXhSPMe2xtwQkrjLP5EI+4bOD/WxECFKAr9IzPKs+y0Rk4ZSyKzewN45p70WBq
- RFK2u7xZzuPJ4C3qkEMnxIqGAUDzmBkbrCgsYoiZe02wiJY06L8bWlwzs4m8MTMlOZg4
- ygSw==
-X-Gm-Message-State: APjAAAWp3oM922zTlB9SAklY7nUPOJntaya2M95uiIj1uyxBbon+2f6E
- 4/xf66THjP8giva3z9tGKvQ=
-X-Google-Smtp-Source: APXvYqyX2DV4pg4STFder0QLYZxjB3cRp7z66cR5BIB23ZVo0ZMYOEKaRseLqKMG0kPOviSdCK01aQ==
-X-Received: by 2002:a2e:3211:: with SMTP id y17mr38833847ljy.86.1564949828875; 
- Sun, 04 Aug 2019 13:17:08 -0700 (PDT)
+ bh=OqhXxXwy9Hr3xWItmkC0WnCOZqEhN5kTgjtJyN6Z+CY=;
+ b=l1F9/Dbd/6rX1YDcZdlHJSqxx/Fe5beIx/B9dJyZM6c8C5Z09FVwDOwcec3ZH9yeew
+ kRsc//6cYIMMG89bs2+23qQs/9irD5nyJ5YASsATDkrSAoNcLvFtMCKm7a6lZcICeZsJ
+ bCaWAYMiJXl3g5soXl01CsimVZlxDdEYHbvTLg0luECiPN5zVPWwx2H6yVsNGMqCebAI
+ iuplr6rhE2y4+5Ht8fIrYbLYR4sRsRireemCqnvzzL9J1G2dzIsBRSf52yCsEAIXYWSY
+ vRBq4MfBC8wwc5mlbgDGBfZzRTjlpCCBm1LLjtB4EAVsrU2HVeS4W8rSLnfp9MGhYnQL
+ jgWA==
+X-Gm-Message-State: APjAAAWRJCdbdZ0zFVMV/jwdB8A1YPTilH3z39oJmkwEO8GP3LfrhAwL
+ QOnIwFo2eTZY2EBaRm7FqWI=
+X-Google-Smtp-Source: APXvYqwr7YURU5x5uQX4eMotoB3lQEWzubIKRtOF0qGU+ymuvCnRLcgiy7sxe5BsFuWKIZGt+qJn3A==
+X-Received: by 2002:a2e:86c3:: with SMTP id n3mr35048878ljj.129.1564949832447; 
+ Sun, 04 Aug 2019 13:17:12 -0700 (PDT)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- p87sm16540794ljp.50.2019.08.04.13.17.06
+ p87sm16540794ljp.50.2019.08.04.13.17.10
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 04 Aug 2019 13:17:08 -0700 (PDT)
+ Sun, 04 Aug 2019 13:17:11 -0700 (PDT)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH v1 03/16] drm/exynos: fix opencoded use of drm_panel_*
-Date: Sun,  4 Aug 2019 22:16:24 +0200
-Message-Id: <20190804201637.1240-4-sam@ravnborg.org>
+Subject: [PATCH v1 04/16] drm/imx: fix opencoded use of drm_panel_*
+Date: Sun,  4 Aug 2019 22:16:25 +0200
+Message-Id: <20190804201637.1240-5-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190804201637.1240-1-sam@ravnborg.org>
 References: <20190804201637.1240-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_131710_350781_F8B7A9EF 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20190804_131714_341490_AC00C684 
+X-CRM114-Status: GOOD (  17.42  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -130,34 +130,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Call via drm_panel_get_modes().
+Use the drm_panel_get_modes() function to get the modes.
+
+This patch leave one test for the function pointer:
+    panel->funcs->get_modes
+
+This is used to check if the panel may have any modes.
+There is no direct replacement.
+We may be able to just check that drm_panel_get_modes() return > 0,
+but as this is not the same functionality it is left for later.
 
 Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-Cc: Inki Dae <inki.dae@samsung.com>
-Cc: Joonyoung Shim <jy0922.shim@samsung.com>
-Cc: Seung-Woo Kim <sw0312.kim@samsung.com>
-Cc: Kyungmin Park <kyungmin.park@samsung.com>
-Cc: Kukjin Kim <kgene@kernel.org>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Sascha Hauer <s.hauer@pengutronix.de>
+Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: NXP Linux Team <linux-imx@nxp.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-samsung-soc@vger.kernel.org
 ---
- drivers/gpu/drm/exynos/exynos_drm_dsi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/gpu/drm/imx/imx-ldb.c          | 11 ++++-------
+ drivers/gpu/drm/imx/parallel-display.c | 11 ++++-------
+ 2 files changed, 8 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/gpu/drm/exynos/exynos_drm_dsi.c b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-index 6926cee91b36..36b02b456d9c 100644
---- a/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-+++ b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-@@ -1460,7 +1460,7 @@ static int exynos_dsi_get_modes(struct drm_connector *connector)
- 	struct exynos_dsi *dsi = connector_to_dsi(connector);
+diff --git a/drivers/gpu/drm/imx/imx-ldb.c b/drivers/gpu/drm/imx/imx-ldb.c
+index db461b6a257f..695f307f36b2 100644
+--- a/drivers/gpu/drm/imx/imx-ldb.c
++++ b/drivers/gpu/drm/imx/imx-ldb.c
+@@ -124,14 +124,11 @@ static void imx_ldb_ch_set_bus_format(struct imx_ldb_channel *imx_ldb_ch,
+ static int imx_ldb_connector_get_modes(struct drm_connector *connector)
+ {
+ 	struct imx_ldb_channel *imx_ldb_ch = con_to_imx_ldb_ch(connector);
+-	int num_modes = 0;
++	int num_modes;
  
- 	if (dsi->panel)
--		return dsi->panel->funcs->get_modes(dsi->panel);
-+		return drm_panel_get_modes(dsi->panel);
+-	if (imx_ldb_ch->panel && imx_ldb_ch->panel->funcs &&
+-	    imx_ldb_ch->panel->funcs->get_modes) {
+-		num_modes = imx_ldb_ch->panel->funcs->get_modes(imx_ldb_ch->panel);
+-		if (num_modes > 0)
+-			return num_modes;
+-	}
++	num_modes = drm_panel_get_modes(imx_ldb_ch->panel);
++	if (num_modes > 0)
++		return num_modes;
  
- 	return 0;
- }
+ 	if (!imx_ldb_ch->edid && imx_ldb_ch->ddc)
+ 		imx_ldb_ch->edid = drm_get_edid(connector, imx_ldb_ch->ddc);
+diff --git a/drivers/gpu/drm/imx/parallel-display.c b/drivers/gpu/drm/imx/parallel-display.c
+index 2e51b2fade75..e7ce17503ae1 100644
+--- a/drivers/gpu/drm/imx/parallel-display.c
++++ b/drivers/gpu/drm/imx/parallel-display.c
+@@ -47,14 +47,11 @@ static int imx_pd_connector_get_modes(struct drm_connector *connector)
+ {
+ 	struct imx_parallel_display *imxpd = con_to_imxpd(connector);
+ 	struct device_node *np = imxpd->dev->of_node;
+-	int num_modes = 0;
++	int num_modes;
+ 
+-	if (imxpd->panel && imxpd->panel->funcs &&
+-	    imxpd->panel->funcs->get_modes) {
+-		num_modes = imxpd->panel->funcs->get_modes(imxpd->panel);
+-		if (num_modes > 0)
+-			return num_modes;
+-	}
++	num_modes = drm_panel_get_modes(imxpd->panel);
++	if (num_modes > 0)
++		return num_modes;
+ 
+ 	if (imxpd->edid) {
+ 		drm_connector_update_edid_property(connector, imxpd->edid);
 -- 
 2.20.1
 
