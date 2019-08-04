@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4254B80F02
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 00:56:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2BEB80F18
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 00:56:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ke1IX6taOvex841mJwkKEpyAyFnJs/hcqXz8nYVmqnM=; b=O2VneU9CStlhBC
-	nQaBRJJgWVf/Ax/mDRpvdBX8PHxZDIOwgyDzs7BFQSB5TuGZEUNN/OSuGyan9olq1LzPYBh1IBGay
-	k+DpTRuaIIfRjx1b1VoEQWhbA9A4oFHIp0ApsyVE8Hp7iyZMP4AGNlw5XODKDyZ8GdUjhvSIeCuzG
-	bOXYIgS31WyW7r5wxHQqh4O463MqOYfn9+LAgPGj/pNPjAiRBe4XCb+TGMu/5RyA3j+OC/gjHV+fW
-	1FXmaBcEJdltry5LkxKV5h6MUnZCGbMGK9/mMPjJWEPUdrKyEVyxOXurkOdNmQLMnHi5JzqRE+SOR
-	Hr8/NtHpIBmaYfZF/W3w==;
+	List-Owner; bh=UKA1LGERdlEAn2YgbZ31Bojt4glBrNFTiLmBrF4ocUg=; b=eu0N8D3HBtqIVQ
+	yrThr7sQnFMLwyYgBlVxGQL4B5LN0rREbLfV29qc75nw7ZwiePHKCeXA9jko3iuYiKdbyTvn06j9W
+	V5UDsGhEoicN24Uxt1/dKn72OYds9UkjlYK7UFMDyH97NfrQforyPafxWd0WZtXuNzKwrmHJp9Wub
+	FWkFiS4hgJzNnGR0vvrS8nmX6Q1Af5NG3d62i/2l/2/p97eLHNtjG+BdEO2xFloHddZvL/k0ui4Tx
+	N9JxSNVkTmtylGqLzlynlTS/eJwKgCMsOPRaGO+GqHGZhC4myp7+ROCFZqfAk7Q1zxljZbbYtGjKx
+	mO6tCUeoMl46lAhvSsdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huPQL-0005QT-QG; Sun, 04 Aug 2019 22:56:21 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1huPQe-0005iF-9B; Sun, 04 Aug 2019 22:56:40 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huPK1-0005Q3-Ry; Sun, 04 Aug 2019 22:49:51 +0000
-Received: by mail-pf1-x444.google.com with SMTP id 19so38589746pfa.4;
- Sun, 04 Aug 2019 15:49:49 -0700 (PDT)
+ id 1huPK3-0005TB-Ee; Sun, 04 Aug 2019 22:49:53 +0000
+Received: by mail-pg1-x542.google.com with SMTP id d1so5848500pgp.4;
+ Sun, 04 Aug 2019 15:49:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=py067aGaFWqYQnWW3CrL2Yk9VWIyNl4WEpwUsrZ7LgI=;
- b=P8+hbDz6iDdAtFosRygKfZrawOprY/RqOz+jkdBR9/iAK9lQTDaHpPD0YVzeAsadTA
- 6buCCtQt6FcRN+b9XggnJ5bqnrb15u93xXHo/kWkRIj/AEZJAg96rbyj3hSasGDU5QMN
- kLomBnFCn//tdm3UAsqLPAHdx4izNhPtZ1DR2n/EeVgTygzhGs4N/AXfq0vWNV5wg6OG
- nDjWxo9WfIwu4zNuVNFOgCWRwLE7DfTE0h0+OhqrWzWxBngYRK81NL6ifxTbjwc0Tsbz
- dA0CzQ264QnjubFwn/fuuREzrVo+nBB4mnVLQqsZ8A+pWd/WcxXuqwIjuSU30F6iEjCB
- X4GA==
+ bh=AuJQGBUMCI3UccHUazXwp/b3Q3tZUYyhW4Da3QIy1yc=;
+ b=DGwCGc6XDVUwXaE45gbbQy6fhhO+2zHlJorg8NcW6argb8euBbhs0pQfwz4p3wmYGr
+ nE4Tqc1S5TSCGn3z79bluHB8kOP9URQ6GDk8Ag8nOY+Zwx7t9ZzdbkCdvZMxHFv73WPf
+ yFrTejZLylWrlE9UzmSxnSGub+p3uIuGa+QwFG1rIqaL2jFj/TWeF75UBCckNw/JWLPd
+ Hk2vfaOt8Y8GmAEec78Ag4Fdx8td9DJVeEYJYZvv4nQW4t60cvCAgLcPPzOrCX7IP55D
+ 7nJuSqZwA2LhbQQi1IP2+3jA4kCrhPeh22tmmVy2bqH2f2tTU9mzsW8VQ8AU7oTjorNW
+ HTKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=py067aGaFWqYQnWW3CrL2Yk9VWIyNl4WEpwUsrZ7LgI=;
- b=VuxQHMQPqMgtlw+0jHCzPe4HIVmgiYiuDpOpy+iFw5/ko/tApQUTzytMMCb+CHfZwZ
- 4TOROqhPGEe/aPG1pgENLLtOiBjv5xPIeU3//1yjNzA3qO0LOl4jYNmSlWPd/4qja/IW
- kVtBIKjwdHNP4oOSGSik9fK7YCT+A+WOmi9qkMI1R0HTgdFPukbUWMF3o6fyF/RKok8h
- YK72vP9f83rw6YzNKEc63z8sd7pf15druxEp1Mgp737Eg0hIQdtkyLJVShkrOlmLOEdG
- LZFYXeHQYStn4Q8Tmhtw+Gk4tk4pXwRz8AfIoURA4Kpts0R8Jxd9NM8eNbGJBkupdqxk
- vgyQ==
-X-Gm-Message-State: APjAAAUQ9z2Y93WvPOzUsOZsjX3T+/mzUWIduBBDxRVsXwuMcd3Pn0jF
- lJdDA/vFNlUKMzraSUSIAw4=
-X-Google-Smtp-Source: APXvYqyegNlmLCsE27HWcwEQVob39MHAl+cimFnsXUYquTno1Yk7+aU+Agg2DBt67SqnkuavcPllBQ==
-X-Received: by 2002:a63:29c4:: with SMTP id
- p187mr82820390pgp.330.1564958989494; 
- Sun, 04 Aug 2019 15:49:49 -0700 (PDT)
+ bh=AuJQGBUMCI3UccHUazXwp/b3Q3tZUYyhW4Da3QIy1yc=;
+ b=mo3mFdZL/DQLFBodQMlzsx6+Bd4rLcxfXMZWugKu8ETxgk0rOZ1hlVt+hsvXqjbV5G
+ estvvqaFQQJnI7FV513nCLvma0n/ko3SaTS3hT02iD3XIHO8fLeP/E1bUB4jf/h2ChD7
+ IBpJY4XMPUTsQ1qJh8f+l4wif0R10aiJKyH3cRFsr5OVLKy8eQD8CX0UrZ17B4VjnYs2
+ AS18WjRcxuReRaIjTN0KM9FrAt143j80TAEMiEn8pC16wVK7pg9fjSJRuZYzumM5Uwq0
+ AXJ42QrBNGYoVDzcnntK+coSPoIgIAE9yPy+UjC0griy9u+xPfkelxwmnvbhzPwQpR3h
+ 2Dfg==
+X-Gm-Message-State: APjAAAWLqG/oeC01rVypuyrFUHH+OaVbRGY8VTJoO/Hqbqk65DiUZ8do
+ HEB8lBmRbRWcC3RGLzuGZno=
+X-Google-Smtp-Source: APXvYqzeg0CaPIMsZN4B1HhyHGpth3yiq29pMJbbq07Rs0YdWkJ20xSQ2I1Fc/jcHmyqwiJczRrqSg==
+X-Received: by 2002:a63:c006:: with SMTP id h6mr3370638pgg.290.1564958991047; 
+ Sun, 04 Aug 2019 15:49:51 -0700 (PDT)
 Received: from blueforge.nvidia.com (searspoint.nvidia.com. [216.228.112.21])
  by smtp.gmail.com with ESMTPSA id
- r6sm35946836pjb.22.2019.08.04.15.49.48
+ r6sm35946836pjb.22.2019.08.04.15.49.49
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 04 Aug 2019 15:49:49 -0700 (PDT)
+ Sun, 04 Aug 2019 15:49:50 -0700 (PDT)
 From: john.hubbard@gmail.com
 X-Google-Original-From: jhubbard@nvidia.com
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH v2 19/34] fsl_hypervisor: convert put_page() to
- put_user_page*()
-Date: Sun,  4 Aug 2019 15:49:00 -0700
-Message-Id: <20190804224915.28669-20-jhubbard@nvidia.com>
+Subject: [PATCH v2 20/34] xen: convert put_page() to put_user_page*()
+Date: Sun,  4 Aug 2019 15:49:01 -0700
+Message-Id: <20190804224915.28669-21-jhubbard@nvidia.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190804224915.28669-1-jhubbard@nvidia.com>
 References: <20190804224915.28669-1-jhubbard@nvidia.com>
 MIME-Version: 1.0
 X-NVConfidentiality: public
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_154950_144370_EC865725 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20190804_154951_886816_291E4FE3 
+X-CRM114-Status: GOOD (  14.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -102,23 +100,23 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Boris Ostrovsky <boris.ostrovsky@oracle.com>,
  Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
  dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
  sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
  ceph-devel@vger.kernel.org, devel@driverdev.osuosl.org,
- Rob Herring <robh@kernel.org>, rds-devel@oss.oracle.com,
- linux-rdma@vger.kernel.org, x86@kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
- linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
+ devel@lists.orangefs.org, linux-media@vger.kernel.org,
  John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
  linux-block@vger.kernel.org,
  =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
  linux-rpi-kernel@lists.infradead.org, Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
- netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Al Viro <viro@zeniv.linux.org.uk>
+ linux-arm-kernel@lists.infradead.org, Juergen Gross <jgross@suse.com>,
+ linux-nfs@vger.kernel.org, netdev@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>, linux-xfs@vger.kernel.org,
+ linux-crypto@vger.kernel.org, linux-fsdevel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -133,37 +131,111 @@ release_pages().
 This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
 ("mm: introduce put_user_page*(), placeholder versions").
 
-This changes the release code slightly, because each page slot in the
-page_list[] array is no longer checked for NULL. However, that check
-was wrong anyway, because the get_user_pages() pattern of usage here
-never allowed for NULL entries within a range of pinned pages.
+This also handles pages[i] == NULL cases, thanks to an approach
+that is actually written by Juergen Gross.
 
-Cc: Al Viro <viro@zeniv.linux.org.uk>
-Cc: Kees Cook <keescook@chromium.org>
-Cc: Rob Herring <robh@kernel.org>
+Signed-off-by: Juergen Gross <jgross@suse.com>
 Signed-off-by: John Hubbard <jhubbard@nvidia.com>
----
- drivers/virt/fsl_hypervisor.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/virt/fsl_hypervisor.c b/drivers/virt/fsl_hypervisor.c
-index 93d5bebf9572..a8f78d572c45 100644
---- a/drivers/virt/fsl_hypervisor.c
-+++ b/drivers/virt/fsl_hypervisor.c
-@@ -292,11 +292,8 @@ static long ioctl_memcpy(struct fsl_hv_ioctl_memcpy __user *p)
- 		virt_to_phys(sg_list), num_pages);
+Cc: Boris Ostrovsky <boris.ostrovsky@oracle.com>
+Cc: xen-devel@lists.xenproject.org
+---
+
+Hi Juergen,
+
+Say, this is *exactly* what you proposed in your gup.patch, so
+I've speculatively added your Signed-off-by above, but need your
+approval before that's final. Let me know please...
+
+thanks,
+John Hubbard
+
+
+ drivers/xen/privcmd.c | 32 +++++++++++---------------------
+ 1 file changed, 11 insertions(+), 21 deletions(-)
+
+diff --git a/drivers/xen/privcmd.c b/drivers/xen/privcmd.c
+index c6070e70dd73..c7d0763ca8c2 100644
+--- a/drivers/xen/privcmd.c
++++ b/drivers/xen/privcmd.c
+@@ -582,10 +582,11 @@ static long privcmd_ioctl_mmap_batch(
  
- exit:
--	if (pages) {
--		for (i = 0; i < num_pages; i++)
--			if (pages[i])
--				put_page(pages[i]);
+ static int lock_pages(
+ 	struct privcmd_dm_op_buf kbufs[], unsigned int num,
+-	struct page *pages[], unsigned int nr_pages)
++	struct page *pages[], unsigned int *nr_pages)
+ {
+-	unsigned int i;
++	unsigned int i, free = *nr_pages;
+ 
++	*nr_pages = 0;
+ 	for (i = 0; i < num; i++) {
+ 		unsigned int requested;
+ 		int pinned;
+@@ -593,35 +594,22 @@ static int lock_pages(
+ 		requested = DIV_ROUND_UP(
+ 			offset_in_page(kbufs[i].uptr) + kbufs[i].size,
+ 			PAGE_SIZE);
+-		if (requested > nr_pages)
++		if (requested > free)
+ 			return -ENOSPC;
+ 
+ 		pinned = get_user_pages_fast(
+ 			(unsigned long) kbufs[i].uptr,
+-			requested, FOLL_WRITE, pages);
++			requested, FOLL_WRITE, pages + *nr_pages);
+ 		if (pinned < 0)
+ 			return pinned;
+ 
+-		nr_pages -= pinned;
+-		pages += pinned;
++		free -= pinned;
++		*nr_pages += pinned;
+ 	}
+ 
+ 	return 0;
+ }
+ 
+-static void unlock_pages(struct page *pages[], unsigned int nr_pages)
+-{
+-	unsigned int i;
+-
+-	if (!pages)
+-		return;
+-
+-	for (i = 0; i < nr_pages; i++) {
+-		if (pages[i])
+-			put_page(pages[i]);
 -	}
-+	if (pages)
-+		put_user_pages(pages, num_pages);
+-}
+-
+ static long privcmd_ioctl_dm_op(struct file *file, void __user *udata)
+ {
+ 	struct privcmd_data *data = file->private_data;
+@@ -681,11 +669,12 @@ static long privcmd_ioctl_dm_op(struct file *file, void __user *udata)
  
- 	kfree(sg_list_unaligned);
+ 	xbufs = kcalloc(kdata.num, sizeof(*xbufs), GFP_KERNEL);
+ 	if (!xbufs) {
++		nr_pages = 0;
+ 		rc = -ENOMEM;
+ 		goto out;
+ 	}
+ 
+-	rc = lock_pages(kbufs, kdata.num, pages, nr_pages);
++	rc = lock_pages(kbufs, kdata.num, pages, &nr_pages);
+ 	if (rc)
+ 		goto out;
+ 
+@@ -699,7 +688,8 @@ static long privcmd_ioctl_dm_op(struct file *file, void __user *udata)
+ 	xen_preemptible_hcall_end();
+ 
+ out:
+-	unlock_pages(pages, nr_pages);
++	if (pages)
++		put_user_pages(pages, nr_pages);
+ 	kfree(xbufs);
  	kfree(pages);
+ 	kfree(kbufs);
 -- 
 2.22.0
 
