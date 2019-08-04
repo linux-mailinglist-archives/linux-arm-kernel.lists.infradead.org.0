@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A308E80D93
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 00:51:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1452680D62
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 00:50:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KFMdp0Vhgn0mTVawtvoIku38lAT4uyC+siw3Ku4dWxM=; b=POElsvOGLIPDkk
-	eevegFmrI//A7l0eiB4FwMu3eNRXXu2ElE0fneEQhhK58j18IyydCLkhZkC/N/koF2NgdRXK8wmpP
-	gtMylKeTlydFFpb/DAtSbSTHFtwW8soeeeFx1zEMN6EwBHRJyidgCpLejnsRdv6KAYDHUrgQR7j6o
-	8kvIJUgqMP80Phrt3HK7GeQXX7RbX0+lyDZekLiSVvVeZEbd/tUSoS5btQ4qV/3PhYDQTk3B5nWmH
-	sFRBlBQXbQZhkEwjZC2GDCbieLMUZGr0PNzIyzu6H5lGoPO7WT8w10Nl5vHrxW9/I5dPtqSFwNecl
-	j+cbfepYqvy4coJwSHYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8LK8+KIZBbEocyE+aUinQyj1yg3+N7Jf7JQ+bX7BPI8=; b=AFxlCVAmaFcDE+
+	EdAoBTeaNAN27chz2XVex76xlpJzNe6kvp46B6HmQc0WEUNf+w21UyEVRHy9G7n3b4cRsIDbZM/B4
+	1VdBIXdYLXMpJyNjgs2XMVGzn1qd/hVUlDKAjn92dAzs/99CHJxwYMxGCdQ1CaZBwKGGeINvGlsB5
+	uJ0IOPxIscQD/Yq7b4Tp5dzI8k3XiMGVwUgqX1q8Q53pJ+S/So4LLWN33we2uo0yesSDxwRsaiAWj
+	qQE+3kfo17XSDeMnl+/4ZHlqJv6XfMNrRf9rhOX4UOjOpQw0MyIfXzhJvwNx4xFCmvLKnfokUEv8R
+	FqDlQ0OIHr2dFgC3zbpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huPL5-0007OM-Ae; Sun, 04 Aug 2019 22:50:55 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1huPKj-0006El-IS; Sun, 04 Aug 2019 22:50:33 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huPJb-00050E-Eq; Sun, 04 Aug 2019 22:49:26 +0000
-Received: by mail-pl1-x643.google.com with SMTP id ay6so35727067plb.9;
- Sun, 04 Aug 2019 15:49:19 -0700 (PDT)
+ id 1huPJb-00050I-A8; Sun, 04 Aug 2019 22:49:25 +0000
+Received: by mail-pg1-x542.google.com with SMTP id u17so38666828pgi.6;
+ Sun, 04 Aug 2019 15:49:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YZWsn+x3jxp8fDI44kijDFRG/svqEg676iUchgN7QlQ=;
- b=B1sMPAcstI1puFk4w0cpCwyzsYpSCgnvkOWm4iaJnV8UBmRJR0FrVO7eeE2XgV7/DO
- DR3tgluGLB1/vbyPlZSBhbH+uo9CrzBJ1Q1rSPrUCEwEtdEEdHEsEYUhdaEO6ERTThp5
- mEExF0x3pWqACoKcpQ4jZSYPKI1ZJek74ypeshcY0SnsNOjJI1e96tP2zvVBSu1jKr+e
- Ym/g1QeiNeLfwG1YUwV1crKOGP7UibjO/7uqLpqDUr9tSTViDlNhIsYnzcFJ7cH459WG
- UptxQms1lJSvYFzHsJjq9KZpFUhZyY+WV1c+r9r6Bw6gMAdbrBCCcRHzjatxpXqpGNbN
- SemQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=AIONVD1ibu9lCnP7gBI5NeGvxxgvVJwLeJRH750Gszo=;
+ b=gJZZQQvmwAPTKnrJBe+ly3fvjfaXUI9ig+EFFukhMT3EgWNu7MIfa2Xzv4wNTIBYye
+ NFJ0dtKSbQJ3MvgPOaANox+0PexWsWwun47HNmnaW64hQ1NJK+gdSzFnsU8ifz8NBkIr
+ aSa5/5lwJ0gzybFkpRxwlqrkvRElsoPkruabuI7OZLYl9GPATcWTn1GgddkEaQmRPfqv
+ Z3Tg2wfua6Z9GfEdNatHRJ4+PcYaht6L9WFhhQ03OkN4K2gxdxDhjCAbZPTWveg0faSy
+ fAJxDkAHd9r8mct4Il8/tP2K+Hmjdf++oXjwtZFm13dDXT5ZjA706JV5qknjjglBcxuw
+ +vWw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YZWsn+x3jxp8fDI44kijDFRG/svqEg676iUchgN7QlQ=;
- b=npdXeGRUMeuxhri+kACWMj5/wHronMMmnpvoAJXoC1Gebj21hKjmqcgEpPHpH96m8g
- 1Bqm2Un/yvIw1g9QmDpuBB8+iDJOdXccVMp3kuf+n8KNxUPWz0gl2D3BHLdFXN7jPqtn
- tEqeCnrzkFcnCyPmsz6zsBLsTO3KjVpi64BtYX4wFKK6ANYEoQTOpxMBb+9hGoOj5Mf9
- YlqyJoPXAntTfCGKr1RCdgMkU7quD3eBGO+1SbJU+sdeGhV0Z/32x/z7XSntSVPZK/Ma
- pAyXE0W6z/bfrEpjyFygrrrkEZKdXsA7nWq5jz6GK8vZUjMAIwjewQ1rj9rhEJGERQwZ
- UNSA==
-X-Gm-Message-State: APjAAAUlJRQ6iHf3dYwFVWUT2LO0eanE/RA35SdXwboXUSx+AV00SMgB
- c5M8tte+zUXrPrSKXNS1GY8=
-X-Google-Smtp-Source: APXvYqxKaZcQUZ6UkPpcjP3XTdHmlP5C8HsDSLXmXJQis54EHd1b2U7WGwbPzUzQrFqhwr6YKPwdiw==
-X-Received: by 2002:a17:902:a413:: with SMTP id
- p19mr142672660plq.134.1564958958984; 
- Sun, 04 Aug 2019 15:49:18 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=AIONVD1ibu9lCnP7gBI5NeGvxxgvVJwLeJRH750Gszo=;
+ b=LIYogIWc8tDi7ef4IdQ4CgpsdGsbaeG5L3HzG2gXMaK2fgk6cd0epPmgjVhV18nz/m
+ qOfqrLMknjxLETAeiyG5dqkygrXCkixrFqjI7km0R/73XbrQF1PC3kfDe11L2zmwp3Wa
+ ybaCvLTFF1RfTQaxGrBr4fV8cr+UtWmwmcRl4GCxEhCFNI9h9cEgzOmmCGuoKqX+FmCR
+ xy23EUv85Jyl9UDg8BeqWyfzTpKOK0jcA1dW+6PXlthvT+ympxHDfdTjGKrTNQIh97tW
+ 4VzAEf1YugnkObDoz17qXN5HcXPvvavRxhDcfY6fPqCjU5NW2CoEZViXU+NetcX91z60
+ Mr/g==
+X-Gm-Message-State: APjAAAUDcZEwSDFtXnr5CrHRA/8baTHRmRArv+h0doioQxIdvcCuLU8r
+ 7HCztye4RdKfXlsYoZy5OkE=
+X-Google-Smtp-Source: APXvYqw+Gs8uCFGZ/xGn3M492gK3yhtVQ4yJrqubZlSSb+W+S6ocNyF/MC9tWdBhydO3x2a3gSthgw==
+X-Received: by 2002:a62:5c01:: with SMTP id q1mr48066780pfb.53.1564958960521; 
+ Sun, 04 Aug 2019 15:49:20 -0700 (PDT)
 Received: from blueforge.nvidia.com (searspoint.nvidia.com. [216.228.112.21])
  by smtp.gmail.com with ESMTPSA id
- r6sm35946836pjb.22.2019.08.04.15.49.16
+ r6sm35946836pjb.22.2019.08.04.15.49.19
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 04 Aug 2019 15:49:18 -0700 (PDT)
+ Sun, 04 Aug 2019 15:49:19 -0700 (PDT)
 From: john.hubbard@gmail.com
 X-Google-Original-From: jhubbard@nvidia.com
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH v2 00/34] put_user_pages(): miscellaneous call sites
-Date: Sun,  4 Aug 2019 15:48:41 -0700
-Message-Id: <20190804224915.28669-1-jhubbard@nvidia.com>
+Subject: [PATCH v2 01/34] mm/gup: add make_dirty arg to
+ put_user_pages_dirty_lock()
+Date: Sun,  4 Aug 2019 15:48:42 -0700
+Message-Id: <20190804224915.28669-2-jhubbard@nvidia.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190804224915.28669-1-jhubbard@nvidia.com>
+References: <20190804224915.28669-1-jhubbard@nvidia.com>
 MIME-Version: 1.0
 X-NVConfidentiality: public
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_154923_502685_B7487D10 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20190804_154923_381147_13D09723 
+X-CRM114-Status: GOOD (  25.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -101,10 +103,11 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
  Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
  dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
- ceph-devel@vger.kernel.org, devel@driverdev.osuosl.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
- amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Matthew Wilcox <willy@infradead.org>, sparclinux@vger.kernel.org,
+ Ira Weiny <ira.weiny@intel.com>, ceph-devel@vger.kernel.org,
+ devel@driverdev.osuosl.org, rds-devel@oss.oracle.com,
+ linux-rdma@vger.kernel.org, x86@kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@lst.de>, Christoph Hellwig <hch@infradead.org>,
  Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
  devel@lists.orangefs.org, linux-media@vger.kernel.org,
  John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
@@ -122,163 +125,322 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: John Hubbard <jhubbard@nvidia.com>
 
-Changes since v1:
+Provide a more capable variation of put_user_pages_dirty_lock(),
+and delete put_user_pages_dirty(). This is based on the
+following:
 
-* 9 out of 34 patches have been reviewed or ack'd or changed:
-    * Picked up Keith's Reviewed-by for patch 26 (gup_benchmark).
-    * Picked up ACKs for patches 3, 10, 15, 16 (ceph, genwqe,
-      staging/vc04_services, drivers/tee).
+1. Lots of call sites become simpler if a bool is passed
+into put_user_page*(), instead of making the call site
+choose which put_user_page*() variant to call.
 
-* Patch 6 (i915): adjusted drivers/gpu/drm/i915/gem/i915_gem_userptr.c to
-  match the latest linux.git: the code has already been fixed in linux.git,
-  as of the latest -rc, to do a set_page_dirty_lock(), instead of
-  set_page_dirty(). So all that it needs now is a conversion to
-  put_user_page(). I've done that in a way (avoiding the changed API call)
-  that allows patch 6 to go up via either Andrew's -mm tree, or the drm
-  tree, just in case. See that patch's comments for slightly more detail.
+2. Christoph Hellwig's observation that set_page_dirty_lock()
+is usually correct, and set_page_dirty() is usually a
+bug, or at least questionable, within a put_user_page*()
+calling chain.
 
-* Patch 20 (xen): applied Juergen's recommended fix, and speculatively
-  (pending his approval) added his Signed-off-by (also noted in the patch
-  comments).
+This leads to the following API choices:
 
-* Improved patch 31 (NFS) as recommended by Calum Mackay.
+    * put_user_pages_dirty_lock(page, npages, make_dirty)
 
-* Includes the latest version of patch 1. (Patch 1 has been separately
-  reposted [3], with those updates. And it's included here in order to
-  make this series apply directly to linux.git, as noted in the original
-  cover letter below.)
+    * There is no put_user_pages_dirty(). You have to
+      hand code that, in the rare case that it's
+      required.
 
-Cover letter from v1:
+Reviewed-by: Christoph Hellwig <hch@lst.de>
+Cc: Matthew Wilcox <willy@infradead.org>
+Cc: Jan Kara <jack@suse.cz>
+Cc: Ira Weiny <ira.weiny@intel.com>
+Cc: Jason Gunthorpe <jgg@ziepe.ca>
+Signed-off-by: John Hubbard <jhubbard@nvidia.com>
+---
+ drivers/infiniband/core/umem.c             |   5 +-
+ drivers/infiniband/hw/hfi1/user_pages.c    |   5 +-
+ drivers/infiniband/hw/qib/qib_user_pages.c |  13 +--
+ drivers/infiniband/hw/usnic/usnic_uiom.c   |   5 +-
+ drivers/infiniband/sw/siw/siw_mem.c        |  19 +---
+ include/linux/mm.h                         |   5 +-
+ mm/gup.c                                   | 115 +++++++++------------
+ 7 files changed, 61 insertions(+), 106 deletions(-)
 
-These are best characterized as miscellaneous conversions: many (not all)
-call sites that don't involve biovec or iov_iter, nor mm/. It also leaves
-out a few call sites that require some more work. These are mostly pretty
-simple ones.
-
-It's probably best to send all of these via Andrew's -mm tree, assuming
-that there are no significant merge conflicts with ongoing work in other
-trees (which I doubt, given that these are small changes).
-
-These patches apply to the latest linux.git. Patch #1 is also already in
-Andrew's tree, but given the broad non-linux-mm Cc list, I thought it
-would be more convenient to just include that patch here, so that people
-can use linux.git as the base--even though these are probably destined
-for linux-mm.
-
-This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
-("mm: introduce put_user_page*(), placeholder versions"). That commit
-has an extensive description of the problem and the planned steps to
-solve it, but the highlites are:
-
-1) Provide put_user_page*() routines, intended to be used
-for releasing pages that were pinned via get_user_pages*().
-
-2) Convert all of the call sites for get_user_pages*(), to
-invoke put_user_page*(), instead of put_page(). This involves dozens of
-call sites, and will take some time.
-
-3) After (2) is complete, use get_user_pages*() and put_user_page*() to
-implement tracking of these pages. This tracking will be separate from
-the existing struct page refcounting.
-
-4) Use the tracking and identification of these pages, to implement
-special handling (especially in writeback paths) when the pages are
-backed by a filesystem.
-
-And a few references, also from that commit:
-
-[1] https://lwn.net/Articles/774411/ : "DMA and get_user_pages()"
-[2] https://lwn.net/Articles/753027/ : "The Trouble with get_user_pages()"
-
-[3] "mm/gup: add make_dirty arg to put_user_pages_dirty_lock()"
-    https://lore.kernel.org/r/20190804214042.4564-1-jhubbard@nvidia.com
-
-Ira Weiny (1):
-  fs/binfmt_elf: convert put_page() to put_user_page*()
-
-John Hubbard (33):
-  mm/gup: add make_dirty arg to put_user_pages_dirty_lock()
-  net/rds: convert put_page() to put_user_page*()
-  net/ceph: convert put_page() to put_user_page*()
-  x86/kvm: convert put_page() to put_user_page*()
-  drm/etnaviv: convert release_pages() to put_user_pages()
-  drm/i915: convert put_page() to put_user_page*()
-  drm/radeon: convert put_page() to put_user_page*()
-  media/ivtv: convert put_page() to put_user_page*()
-  media/v4l2-core/mm: convert put_page() to put_user_page*()
-  genwqe: convert put_page() to put_user_page*()
-  scif: convert put_page() to put_user_page*()
-  vmci: convert put_page() to put_user_page*()
-  rapidio: convert put_page() to put_user_page*()
-  oradax: convert put_page() to put_user_page*()
-  staging/vc04_services: convert put_page() to put_user_page*()
-  drivers/tee: convert put_page() to put_user_page*()
-  vfio: convert put_page() to put_user_page*()
-  fbdev/pvr2fb: convert put_page() to put_user_page*()
-  fsl_hypervisor: convert put_page() to put_user_page*()
-  fs/exec.c: convert put_page() to put_user_page*()
-  xen: convert put_page() to put_user_page*()
-  orangefs: convert put_page() to put_user_page*()
-  uprobes: convert put_page() to put_user_page*()
-  futex: convert put_page() to put_user_page*()
-  mm/frame_vector.c: convert put_page() to put_user_page*()
-  mm/gup_benchmark.c: convert put_page() to put_user_page*()
-  mm/memory.c: convert put_page() to put_user_page*()
-  mm/madvise.c: convert put_page() to put_user_page*()
-  mm/process_vm_access.c: convert put_page() to put_user_page*()
-  crypt: convert put_page() to put_user_page*()
-  fs/nfs: convert put_page() to put_user_page*()
-  goldfish_pipe: convert put_page() to put_user_page*()
-  kernel/events/core.c: convert put_page() to put_user_page*()
-
- arch/x86/kvm/svm.c                            |   4 +-
- crypto/af_alg.c                               |   7 +-
- drivers/gpu/drm/etnaviv/etnaviv_gem.c         |   4 +-
- drivers/gpu/drm/i915/gem/i915_gem_userptr.c   |   6 +-
- drivers/gpu/drm/radeon/radeon_ttm.c           |   2 +-
- drivers/infiniband/core/umem.c                |   5 +-
- drivers/infiniband/hw/hfi1/user_pages.c       |   5 +-
- drivers/infiniband/hw/qib/qib_user_pages.c    |  13 +-
- drivers/infiniband/hw/usnic/usnic_uiom.c      |   5 +-
- drivers/infiniband/sw/siw/siw_mem.c           |  19 +--
- drivers/media/pci/ivtv/ivtv-udma.c            |  14 +--
- drivers/media/pci/ivtv/ivtv-yuv.c             |  11 +-
- drivers/media/v4l2-core/videobuf-dma-sg.c     |   3 +-
- drivers/misc/genwqe/card_utils.c              |  17 +--
- drivers/misc/mic/scif/scif_rma.c              |  17 ++-
- drivers/misc/vmw_vmci/vmci_context.c          |   2 +-
- drivers/misc/vmw_vmci/vmci_queue_pair.c       |  11 +-
- drivers/platform/goldfish/goldfish_pipe.c     |   9 +-
- drivers/rapidio/devices/rio_mport_cdev.c      |   9 +-
- drivers/sbus/char/oradax.c                    |   2 +-
- .../interface/vchiq_arm/vchiq_2835_arm.c      |  10 +-
- drivers/tee/tee_shm.c                         |  10 +-
- drivers/vfio/vfio_iommu_type1.c               |   8 +-
- drivers/video/fbdev/pvr2fb.c                  |   3 +-
- drivers/virt/fsl_hypervisor.c                 |   7 +-
- drivers/xen/privcmd.c                         |  32 ++---
- fs/binfmt_elf.c                               |   2 +-
- fs/binfmt_elf_fdpic.c                         |   2 +-
- fs/exec.c                                     |   2 +-
- fs/nfs/direct.c                               |  11 +-
- fs/orangefs/orangefs-bufmap.c                 |   7 +-
- include/linux/mm.h                            |   5 +-
- kernel/events/core.c                          |   2 +-
- kernel/events/uprobes.c                       |   6 +-
- kernel/futex.c                                |  10 +-
- mm/frame_vector.c                             |   4 +-
- mm/gup.c                                      | 115 ++++++++----------
- mm/gup_benchmark.c                            |   2 +-
- mm/madvise.c                                  |   2 +-
- mm/memory.c                                   |   2 +-
- mm/process_vm_access.c                        |  18 +--
- net/ceph/pagevec.c                            |   8 +-
- net/rds/info.c                                |   5 +-
- net/rds/message.c                             |   2 +-
- net/rds/rdma.c                                |  15 ++-
- virt/kvm/kvm_main.c                           |   4 +-
- 46 files changed, 164 insertions(+), 295 deletions(-)
-
+diff --git a/drivers/infiniband/core/umem.c b/drivers/infiniband/core/umem.c
+index 08da840ed7ee..965cf9dea71a 100644
+--- a/drivers/infiniband/core/umem.c
++++ b/drivers/infiniband/core/umem.c
+@@ -54,10 +54,7 @@ static void __ib_umem_release(struct ib_device *dev, struct ib_umem *umem, int d
+ 
+ 	for_each_sg_page(umem->sg_head.sgl, &sg_iter, umem->sg_nents, 0) {
+ 		page = sg_page_iter_page(&sg_iter);
+-		if (umem->writable && dirty)
+-			put_user_pages_dirty_lock(&page, 1);
+-		else
+-			put_user_page(page);
++		put_user_pages_dirty_lock(&page, 1, umem->writable && dirty);
+ 	}
+ 
+ 	sg_free_table(&umem->sg_head);
+diff --git a/drivers/infiniband/hw/hfi1/user_pages.c b/drivers/infiniband/hw/hfi1/user_pages.c
+index b89a9b9aef7a..469acb961fbd 100644
+--- a/drivers/infiniband/hw/hfi1/user_pages.c
++++ b/drivers/infiniband/hw/hfi1/user_pages.c
+@@ -118,10 +118,7 @@ int hfi1_acquire_user_pages(struct mm_struct *mm, unsigned long vaddr, size_t np
+ void hfi1_release_user_pages(struct mm_struct *mm, struct page **p,
+ 			     size_t npages, bool dirty)
+ {
+-	if (dirty)
+-		put_user_pages_dirty_lock(p, npages);
+-	else
+-		put_user_pages(p, npages);
++	put_user_pages_dirty_lock(p, npages, dirty);
+ 
+ 	if (mm) { /* during close after signal, mm can be NULL */
+ 		atomic64_sub(npages, &mm->pinned_vm);
+diff --git a/drivers/infiniband/hw/qib/qib_user_pages.c b/drivers/infiniband/hw/qib/qib_user_pages.c
+index bfbfbb7e0ff4..26c1fb8d45cc 100644
+--- a/drivers/infiniband/hw/qib/qib_user_pages.c
++++ b/drivers/infiniband/hw/qib/qib_user_pages.c
+@@ -37,15 +37,6 @@
+ 
+ #include "qib.h"
+ 
+-static void __qib_release_user_pages(struct page **p, size_t num_pages,
+-				     int dirty)
+-{
+-	if (dirty)
+-		put_user_pages_dirty_lock(p, num_pages);
+-	else
+-		put_user_pages(p, num_pages);
+-}
+-
+ /**
+  * qib_map_page - a safety wrapper around pci_map_page()
+  *
+@@ -124,7 +115,7 @@ int qib_get_user_pages(unsigned long start_page, size_t num_pages,
+ 
+ 	return 0;
+ bail_release:
+-	__qib_release_user_pages(p, got, 0);
++	put_user_pages_dirty_lock(p, got, false);
+ bail:
+ 	atomic64_sub(num_pages, &current->mm->pinned_vm);
+ 	return ret;
+@@ -132,7 +123,7 @@ int qib_get_user_pages(unsigned long start_page, size_t num_pages,
+ 
+ void qib_release_user_pages(struct page **p, size_t num_pages)
+ {
+-	__qib_release_user_pages(p, num_pages, 1);
++	put_user_pages_dirty_lock(p, num_pages, true);
+ 
+ 	/* during close after signal, mm can be NULL */
+ 	if (current->mm)
+diff --git a/drivers/infiniband/hw/usnic/usnic_uiom.c b/drivers/infiniband/hw/usnic/usnic_uiom.c
+index 0b0237d41613..62e6ffa9ad78 100644
+--- a/drivers/infiniband/hw/usnic/usnic_uiom.c
++++ b/drivers/infiniband/hw/usnic/usnic_uiom.c
+@@ -75,10 +75,7 @@ static void usnic_uiom_put_pages(struct list_head *chunk_list, int dirty)
+ 		for_each_sg(chunk->page_list, sg, chunk->nents, i) {
+ 			page = sg_page(sg);
+ 			pa = sg_phys(sg);
+-			if (dirty)
+-				put_user_pages_dirty_lock(&page, 1);
+-			else
+-				put_user_page(page);
++			put_user_pages_dirty_lock(&page, 1, dirty);
+ 			usnic_dbg("pa: %pa\n", &pa);
+ 		}
+ 		kfree(chunk);
+diff --git a/drivers/infiniband/sw/siw/siw_mem.c b/drivers/infiniband/sw/siw/siw_mem.c
+index 67171c82b0c4..1e197753bf2f 100644
+--- a/drivers/infiniband/sw/siw/siw_mem.c
++++ b/drivers/infiniband/sw/siw/siw_mem.c
+@@ -60,20 +60,6 @@ struct siw_mem *siw_mem_id2obj(struct siw_device *sdev, int stag_index)
+ 	return NULL;
+ }
+ 
+-static void siw_free_plist(struct siw_page_chunk *chunk, int num_pages,
+-			   bool dirty)
+-{
+-	struct page **p = chunk->plist;
+-
+-	while (num_pages--) {
+-		if (!PageDirty(*p) && dirty)
+-			put_user_pages_dirty_lock(p, 1);
+-		else
+-			put_user_page(*p);
+-		p++;
+-	}
+-}
+-
+ void siw_umem_release(struct siw_umem *umem, bool dirty)
+ {
+ 	struct mm_struct *mm_s = umem->owning_mm;
+@@ -82,8 +68,9 @@ void siw_umem_release(struct siw_umem *umem, bool dirty)
+ 	for (i = 0; num_pages; i++) {
+ 		int to_free = min_t(int, PAGES_PER_CHUNK, num_pages);
+ 
+-		siw_free_plist(&umem->page_chunk[i], to_free,
+-			       umem->writable && dirty);
++		put_user_pages_dirty_lock(umem->page_chunk[i].plist,
++					  to_free,
++					  umem->writable && dirty);
+ 		kfree(umem->page_chunk[i].plist);
+ 		num_pages -= to_free;
+ 	}
+diff --git a/include/linux/mm.h b/include/linux/mm.h
+index 0334ca97c584..9759b6a24420 100644
+--- a/include/linux/mm.h
++++ b/include/linux/mm.h
+@@ -1057,8 +1057,9 @@ static inline void put_user_page(struct page *page)
+ 	put_page(page);
+ }
+ 
+-void put_user_pages_dirty(struct page **pages, unsigned long npages);
+-void put_user_pages_dirty_lock(struct page **pages, unsigned long npages);
++void put_user_pages_dirty_lock(struct page **pages, unsigned long npages,
++			       bool make_dirty);
++
+ void put_user_pages(struct page **pages, unsigned long npages);
+ 
+ #if defined(CONFIG_SPARSEMEM) && !defined(CONFIG_SPARSEMEM_VMEMMAP)
+diff --git a/mm/gup.c b/mm/gup.c
+index 98f13ab37bac..7fefd7ab02c4 100644
+--- a/mm/gup.c
++++ b/mm/gup.c
+@@ -29,85 +29,70 @@ struct follow_page_context {
+ 	unsigned int page_mask;
+ };
+ 
+-typedef int (*set_dirty_func_t)(struct page *page);
+-
+-static void __put_user_pages_dirty(struct page **pages,
+-				   unsigned long npages,
+-				   set_dirty_func_t sdf)
+-{
+-	unsigned long index;
+-
+-	for (index = 0; index < npages; index++) {
+-		struct page *page = compound_head(pages[index]);
+-
+-		/*
+-		 * Checking PageDirty at this point may race with
+-		 * clear_page_dirty_for_io(), but that's OK. Two key cases:
+-		 *
+-		 * 1) This code sees the page as already dirty, so it skips
+-		 * the call to sdf(). That could happen because
+-		 * clear_page_dirty_for_io() called page_mkclean(),
+-		 * followed by set_page_dirty(). However, now the page is
+-		 * going to get written back, which meets the original
+-		 * intention of setting it dirty, so all is well:
+-		 * clear_page_dirty_for_io() goes on to call
+-		 * TestClearPageDirty(), and write the page back.
+-		 *
+-		 * 2) This code sees the page as clean, so it calls sdf().
+-		 * The page stays dirty, despite being written back, so it
+-		 * gets written back again in the next writeback cycle.
+-		 * This is harmless.
+-		 */
+-		if (!PageDirty(page))
+-			sdf(page);
+-
+-		put_user_page(page);
+-	}
+-}
+-
+ /**
+- * put_user_pages_dirty() - release and dirty an array of gup-pinned pages
+- * @pages:  array of pages to be marked dirty and released.
++ * put_user_pages_dirty_lock() - release and optionally dirty gup-pinned pages
++ * @pages:  array of pages to be maybe marked dirty, and definitely released.
+  * @npages: number of pages in the @pages array.
++ * @make_dirty: whether to mark the pages dirty
+  *
+  * "gup-pinned page" refers to a page that has had one of the get_user_pages()
+  * variants called on that page.
+  *
+  * For each page in the @pages array, make that page (or its head page, if a
+- * compound page) dirty, if it was previously listed as clean. Then, release
+- * the page using put_user_page().
++ * compound page) dirty, if @make_dirty is true, and if the page was previously
++ * listed as clean. In any case, releases all pages using put_user_page(),
++ * possibly via put_user_pages(), for the non-dirty case.
+  *
+  * Please see the put_user_page() documentation for details.
+  *
+- * set_page_dirty(), which does not lock the page, is used here.
+- * Therefore, it is the caller's responsibility to ensure that this is
+- * safe. If not, then put_user_pages_dirty_lock() should be called instead.
++ * set_page_dirty_lock() is used internally. If instead, set_page_dirty() is
++ * required, then the caller should a) verify that this is really correct,
++ * because _lock() is usually required, and b) hand code it:
++ * set_page_dirty_lock(), put_user_page().
+  *
+  */
+-void put_user_pages_dirty(struct page **pages, unsigned long npages)
++void put_user_pages_dirty_lock(struct page **pages, unsigned long npages,
++			       bool make_dirty)
+ {
+-	__put_user_pages_dirty(pages, npages, set_page_dirty);
+-}
+-EXPORT_SYMBOL(put_user_pages_dirty);
++	unsigned long index;
+ 
+-/**
+- * put_user_pages_dirty_lock() - release and dirty an array of gup-pinned pages
+- * @pages:  array of pages to be marked dirty and released.
+- * @npages: number of pages in the @pages array.
+- *
+- * For each page in the @pages array, make that page (or its head page, if a
+- * compound page) dirty, if it was previously listed as clean. Then, release
+- * the page using put_user_page().
+- *
+- * Please see the put_user_page() documentation for details.
+- *
+- * This is just like put_user_pages_dirty(), except that it invokes
+- * set_page_dirty_lock(), instead of set_page_dirty().
+- *
+- */
+-void put_user_pages_dirty_lock(struct page **pages, unsigned long npages)
+-{
+-	__put_user_pages_dirty(pages, npages, set_page_dirty_lock);
++	/*
++	 * TODO: this can be optimized for huge pages: if a series of pages is
++	 * physically contiguous and part of the same compound page, then a
++	 * single operation to the head page should suffice.
++	 */
++
++	if (!make_dirty) {
++		put_user_pages(pages, npages);
++		return;
++	}
++
++	for (index = 0; index < npages; index++) {
++		struct page *page = compound_head(pages[index]);
++		/*
++		 * Checking PageDirty at this point may race with
++		 * clear_page_dirty_for_io(), but that's OK. Two key
++		 * cases:
++		 *
++		 * 1) This code sees the page as already dirty, so it
++		 * skips the call to set_page_dirty(). That could happen
++		 * because clear_page_dirty_for_io() called
++		 * page_mkclean(), followed by set_page_dirty().
++		 * However, now the page is going to get written back,
++		 * which meets the original intention of setting it
++		 * dirty, so all is well: clear_page_dirty_for_io() goes
++		 * on to call TestClearPageDirty(), and write the page
++		 * back.
++		 *
++		 * 2) This code sees the page as clean, so it calls
++		 * set_page_dirty(). The page stays dirty, despite being
++		 * written back, so it gets written back again in the
++		 * next writeback cycle. This is harmless.
++		 */
++		if (!PageDirty(page))
++			set_page_dirty_lock(page);
++		put_user_page(page);
++	}
+ }
+ EXPORT_SYMBOL(put_user_pages_dirty_lock);
+ 
 -- 
 2.22.0
 
