@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 411A880F3F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 00:57:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE42580F40
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 00:57:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sSoV3khWq+xuDm11tlaWByTf9IGzBvSHkq6tzba4axo=; b=IwgFgVnnKroYPK
-	SfCS9S7wt5hnhiK7p6mrGfCNFIdPzvhlnER4IJjuA6lRDfJhoUo6tVuPp0dWLcSRX1DkUKYASCazr
-	ldwkOq9PTuHiMJWVz14YdIOX9anxm3O89LccpxIHECeXUxXlut1kXZ8Hc6YZB/nax2/nCupCH0LcY
-	zcKvmNwUGjHURUO3A6iChxVSjTKAN8vtweCjtWPHvmV8AFyEo/sBuNHwslpyDnyY6QF2dk+etlLLc
-	Ze2cEcWcedgW5fgdVUTsdyVZoO671NkPv6no6/I8Npdc7V6S80SZw0C8CkBEngZGxqygpEg9s/cp9
-	FiA4ol0uEjDgiUFYKCag==;
+	List-Owner; bh=9ytzCKTRO2ncpbKBqKlxPHNP8sd3tS7cOJPz+YUJs8k=; b=MVSSBHo+S6jchQ
+	54BlwlZtNf493+GY0TBqOKEHIUwndinD5wKIDXFK6wX8BGEOynQJsfSAnLFGAs5DXByif1+Np5x7q
+	MgtjHpaVaeEEDeNogqxDdwONC+HfXP82MYx7idoMa9M0PBgaI+bkur3EcttkApwkXlbCbnLlAWFrH
+	a6QO4oYnprIDFsIqtp8VM4PjRwkwIkIx29wgH1+McLkVq8T0dc9Ma/n9IvItCsLaybCvAvsWYGoGp
+	2guXgy4CrGK9e/RICU7Hze6GZBKpcU0WRgGrYYOEPrtd+ANzY9Edx33GRo68Xh+K/qfRWFv7/gJ32
+	qND8KhtWKo1v4AksjaZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huPRV-0006jE-G3; Sun, 04 Aug 2019 22:57:33 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1huPRn-00071a-HN; Sun, 04 Aug 2019 22:57:51 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huPK7-0005XC-SP; Sun, 04 Aug 2019 22:49:58 +0000
-Received: by mail-pl1-x642.google.com with SMTP id t14so35655459plr.11;
- Sun, 04 Aug 2019 15:49:55 -0700 (PDT)
+ id 1huPK9-0005Yo-Lc; Sun, 04 Aug 2019 22:50:00 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x15so28316472pgg.8;
+ Sun, 04 Aug 2019 15:49:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=lKIFYbXGeRFczJ7GPuSawhtMV9YIx2+MYUTps7oOTAE=;
- b=TDggbkgRiGIAFGZg+jjgHpzcEiYccMBQ6jptVLtuAINCBCAa7tBLSYJdtzRqQAkVQq
- tQ08R+kd1zAphQz9pkaaBX/hg9RvlkTaePPnO2E1bu2f/76JhzKynqi5fDXQgm3u+sje
- C80KY3nOvFeOz/PfxhVfGvol35idNxGJp30wpqdrZCtYSNKWJHD3OZzPkmpz9TZ2iydK
- zGtAdXJa7uyuK2GhTVtmCk46eJaIXB31IST9V3s1VEcpQHy9Y1uuVubQ/wNf6EoCYZeE
- iY7ztWwDS8B1eHyY4QnXS4dvWcICmGOtU1XZ3uVoXugfKVLMqqSM2fvbIrY7TrJ6h/xd
- OTrg==
+ bh=rRiJNzkH0bRoPJKYXoQcsROADD9YH4USeXVLEsmAa1E=;
+ b=AV7uFQE9YUuDd+D7n/raE3+Vd4+M3WfHMpSGBy7Po/eVbcIBoj8uNAj9DUgT5bKiPy
+ NOFpz/m3dZOdwDIxZQeVlxsCTnZ92dZxKMNJ/rR2X1bMUek0j8TGq+u0eAdIPX6nv7Xg
+ 3xla0EEXNbB0lWncn+d/ABroqlg3T2U7E2b5B9Xg8cDDZKP8nXSMimiXqXtFe+tBDXhV
+ ARezJERjiP3GeR4zOW6+cUq9Pz5Hkpr43jELcaC0lfmmiiWVj3OueADfK4ODHerMWl3x
+ WKZ0WyFn5raZ50oDfnPOKa2jV6SJBQSgxKSa9LR9P0FGYWA2KC5auYEx1XvMz/0dUJhq
+ D/Mg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=lKIFYbXGeRFczJ7GPuSawhtMV9YIx2+MYUTps7oOTAE=;
- b=iX9Oi6G1sUDPvRQotmX2uLeGRddWw2YkLeQbz7o72NU7lJZM605lcuZ5aOq2V75a+r
- MlI5AQNUl8ZsnLmknSPnjcaRktp7O2gH5YXWPb5N21dVXhKedvwdc5wZoYIH+iFuus6u
- N/ftaC3PkOwJKA6PUD+5SI5G2lePTGxIvq8wMMIjj4MT8W14K1U1ehNQNLA3Uh1gt88o
- Z46BaStC2bzKfcTMfXeX2OcddSDW5chMOrUKc53uy0nZp5uA2FN/020u5b/KE9f0uG3t
- HB3iLW5T0ABccrIydtSnINr0/UPc3XKXiVKgIJZUfAnuLL5yyAcpDmjxP9O2ialmz0Av
- WeMg==
-X-Gm-Message-State: APjAAAVho398mLLXtC/N2S/vL5k94ZbyP+4TAVM5inofe2bQXCApcCVY
- DWKLwoMgILj5lV1SbFywQA0=
-X-Google-Smtp-Source: APXvYqxpyFBswVwCpmbWWUYW5zokWhx2pCk/sdTQw8977867DfmKTOqoiHBx6Glc/HUCem3kZHec6Q==
-X-Received: by 2002:a17:902:8689:: with SMTP id
- g9mr131877551plo.252.1564958995585; 
- Sun, 04 Aug 2019 15:49:55 -0700 (PDT)
+ bh=rRiJNzkH0bRoPJKYXoQcsROADD9YH4USeXVLEsmAa1E=;
+ b=TZQlQ8lRY7itVMWw1/ny0LlRwdAM8hfALv0QirjP/6vCMIwjcHEkPoexdVhotzIGQd
+ ncFwAo2noVbwC/CsLQVKyKvjO06ezVmGavuWol6cqGeTlRxuoqgTSXMPmHX5DRV1m8T2
+ 5iRcdUPY0V6J95dwm0PYsVz83K2hZ3k3XB+P9pOcdi7v94UtL91kZhnzR99ncsoCEjTO
+ i2XXOH0ZPirMZfQFaFPQZh7DbwV0HmnduLgjKIiI0vUyqcz3vfb3AY/pbmhV2auymq0p
+ 0RmVREA6lq5ggmDaR9l+bhBJD6bjPA53hwUT8UjNXrVIyNtKsnO+9ADY7nmlXJoIPQC/
+ KtrQ==
+X-Gm-Message-State: APjAAAVn/yUQU3aF3a9xtmM6uAPExUVJ2LzO58JrrLOm1LriF3mVhYjP
+ PkPacjCgXCa6c+qWO+az7hc=
+X-Google-Smtp-Source: APXvYqxM1jqqH644LscYZh1fOmR6SQroZ5U0oF421RZK6m1nNZ1H1tDwWIOHK+9da6OAru/hIya3FA==
+X-Received: by 2002:a63:61cf:: with SMTP id
+ v198mr17505607pgb.217.1564958997274; 
+ Sun, 04 Aug 2019 15:49:57 -0700 (PDT)
 Received: from blueforge.nvidia.com (searspoint.nvidia.com. [216.228.112.21])
  by smtp.gmail.com with ESMTPSA id
- r6sm35946836pjb.22.2019.08.04.15.49.53
+ r6sm35946836pjb.22.2019.08.04.15.49.55
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 04 Aug 2019 15:49:55 -0700 (PDT)
+ Sun, 04 Aug 2019 15:49:56 -0700 (PDT)
 From: john.hubbard@gmail.com
 X-Google-Original-From: jhubbard@nvidia.com
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH v2 23/34] uprobes: convert put_page() to put_user_page*()
-Date: Sun,  4 Aug 2019 15:49:04 -0700
-Message-Id: <20190804224915.28669-24-jhubbard@nvidia.com>
+Subject: [PATCH v2 24/34] futex: convert put_page() to put_user_page*()
+Date: Sun,  4 Aug 2019 15:49:05 -0700
+Message-Id: <20190804224915.28669-25-jhubbard@nvidia.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190804224915.28669-1-jhubbard@nvidia.com>
 References: <20190804224915.28669-1-jhubbard@nvidia.com>
 MIME-Version: 1.0
 X-NVConfidentiality: public
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_154956_778951_426ACA93 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20190804_154958_716324_481DA900 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -106,20 +106,18 @@ Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
  dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
  sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
  ceph-devel@vger.kernel.org, devel@driverdev.osuosl.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org,
- Jiri Olsa <jolsa@redhat.com>, x86@kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Ingo Molnar <mingo@redhat.com>, xen-devel@lists.xenproject.org,
- devel@lists.orangefs.org, linux-media@vger.kernel.org,
- John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
- Arnaldo Carvalho de Melo <acme@kernel.org>, linux-block@vger.kernel.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Ingo Molnar <mingo@redhat.com>,
+ xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
+ linux-media@vger.kernel.org, John Hubbard <jhubbard@nvidia.com>,
+ intel-gfx@lists.freedesktop.org, linux-block@vger.kernel.org,
  =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
- linux-rpi-kernel@lists.infradead.org, Namhyung Kim <namhyung@kernel.org>,
+ linux-rpi-kernel@lists.infradead.org, Darren Hart <dvhart@infradead.org>,
  Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
  linux-nfs@vger.kernel.org, netdev@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>, linux-xfs@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-crypto@vger.kernel.org,
  linux-fsdevel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -135,48 +133,64 @@ release_pages().
 This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
 ("mm: introduce put_user_page*(), placeholder versions").
 
-Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Thomas Gleixner <tglx@linutronix.de>
 Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Darren Hart <dvhart@infradead.org>
 Signed-off-by: John Hubbard <jhubbard@nvidia.com>
 ---
- kernel/events/uprobes.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ kernel/futex.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/kernel/events/uprobes.c b/kernel/events/uprobes.c
-index 84fa00497c49..4a575de8cec8 100644
---- a/kernel/events/uprobes.c
-+++ b/kernel/events/uprobes.c
-@@ -397,7 +397,7 @@ __update_ref_ctr(struct mm_struct *mm, unsigned long vaddr, short d)
- 	ret = 0;
+diff --git a/kernel/futex.c b/kernel/futex.c
+index 6d50728ef2e7..4b4cae58ec57 100644
+--- a/kernel/futex.c
++++ b/kernel/futex.c
+@@ -623,7 +623,7 @@ get_futex_key(u32 __user *uaddr, int fshared, union futex_key *key, enum futex_a
+ 		lock_page(page);
+ 		shmem_swizzled = PageSwapCache(page) || page->mapping;
+ 		unlock_page(page);
+-		put_page(page);
++		put_user_page(page);
+ 
+ 		if (shmem_swizzled)
+ 			goto again;
+@@ -675,7 +675,7 @@ get_futex_key(u32 __user *uaddr, int fshared, union futex_key *key, enum futex_a
+ 
+ 		if (READ_ONCE(page->mapping) != mapping) {
+ 			rcu_read_unlock();
+-			put_page(page);
++			put_user_page(page);
+ 
+ 			goto again;
+ 		}
+@@ -683,7 +683,7 @@ get_futex_key(u32 __user *uaddr, int fshared, union futex_key *key, enum futex_a
+ 		inode = READ_ONCE(mapping->host);
+ 		if (!inode) {
+ 			rcu_read_unlock();
+-			put_page(page);
++			put_user_page(page);
+ 
+ 			goto again;
+ 		}
+@@ -702,7 +702,7 @@ get_futex_key(u32 __user *uaddr, int fshared, union futex_key *key, enum futex_a
+ 		 */
+ 		if (!atomic_inc_not_zero(&inode->i_count)) {
+ 			rcu_read_unlock();
+-			put_page(page);
++			put_user_page(page);
+ 
+ 			goto again;
+ 		}
+@@ -723,7 +723,7 @@ get_futex_key(u32 __user *uaddr, int fshared, union futex_key *key, enum futex_a
+ 	}
+ 
  out:
- 	kunmap_atomic(kaddr);
 -	put_page(page);
 +	put_user_page(page);
- 	return ret;
+ 	return err;
  }
  
-@@ -504,7 +504,7 @@ int uprobe_write_opcode(struct arch_uprobe *auprobe, struct mm_struct *mm,
- 	ret = __replace_page(vma, vaddr, old_page, new_page);
- 	put_page(new_page);
- put_old:
--	put_page(old_page);
-+	put_user_page(old_page);
- 
- 	if (unlikely(ret == -EAGAIN))
- 		goto retry;
-@@ -1981,7 +1981,7 @@ static int is_trap_at_addr(struct mm_struct *mm, unsigned long vaddr)
- 		return result;
- 
- 	copy_from_page(page, vaddr, &opcode, UPROBE_SWBP_INSN_SIZE);
--	put_page(page);
-+	put_user_page(page);
-  out:
- 	/* This needs to return true for any variant of the trap insn */
- 	return is_trap_insn(&opcode);
 -- 
 2.22.0
 
