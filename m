@@ -2,74 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19CE580B96
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 18:04:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6F4F80BB9
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 18:35:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Jl7McrdAUGMDj37xLBNNxGHIEZsYLacCkEuPM40M8qQ=; b=Ns3VE6nT/RwioR
-	RG7ebiTISYeJgE04WCiaQJKwgU3yVz3ecGOhaqIWFilG7mJQ/uB5tz8uTCJEB6jZ/nrYBW/2wMHDc
-	G54dbG6LK+b8AVLIt3MI8pHvfP2XWOoLkN5E3yPAqtgC334yGvV1h7N1uuI4H/uhW/8ElswLJXSEd
-	jLzJI8Gb0fFsPHG5rBVghvP4BLTzJLB3PSWwCuWWZoZlQ1nYO2uNOQuHdUIlsMOFoB8aeP32KrYGS
-	Aq02nn4bIUAtQ7/6i312ZObvoT3CfwbcPOmhAzfRm5nJEq6TUbU+vtL9bkPs7aCAZudx9uZA1JH2v
-	MA2yz2qhaDyEMMvhss6A==;
+	List-Owner; bh=pV58AGuRmwl3Di6cP5gRokbzY6BS96lrIgfdghiPAFw=; b=ZoZyg5Kf49Xq0O
+	oKm95QMHwy/9pglH07xtx5iM8K0fgQ7vgZ9Tlw4WLivUg1Vkhv/cpmGPglezTxQyME6Jr22/j88Ay
+	UL/e7dJmBuLft/1lncTGBuQqcAmlqtWf2lXbIbCoXT2fDhZx4fkmMgJ+gzBr2+OSRWNbO0/8tSqE6
+	PiSra0mnsbLLfaRHmTjoZHOVida1Nm+xOIJkp7weCUnsE5JRHvybVOBWIWIJWT7nFktQr/oqZDMpv
+	f1ju/O3s5GtHRp2rkCUYdSoB27CfvGuEOx/B3I3oDUX9bo8d1WoQi12JEOjIrio82M47/YI2q1XBz
+	zQvb4/JudU44S9wot6xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huIzx-000050-33; Sun, 04 Aug 2019 16:04:41 +0000
+	id 1huJTM-0008Ku-Jc; Sun, 04 Aug 2019 16:35:04 +0000
 Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huIzq-0008Vy-UI
- for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 16:04:36 +0000
-Received: by mail-pg1-x541.google.com with SMTP id n190so3283310pgn.0
+ id 1huJTF-0008Ka-QP
+ for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 16:34:59 +0000
+Received: by mail-pg1-x541.google.com with SMTP id i18so38430582pgl.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 04 Aug 2019 09:04:34 -0700 (PDT)
+ Sun, 04 Aug 2019 09:34:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=43+wBAA2pYCZyIeE6dblgNpeldlqw4UsjWWmEq3JFkQ=;
- b=MNB/Mc92mGLyuhVsZap7ySAwBC6u9/2UU+v246vUn8jld4GTJtPBdEK/sS4jqDUALx
- ASGO3QxSSTMfen5a4818hqHKc6dGWuxarFx4xVAR37oOi3z8C6DwKf3cpZXKhDzcZzDT
- ARu26iZVW+gzOfNZZ9Id3tcZBBzBwANnqVKwf8VzC5/yECvRSodP2CfPxpjUyEwuSPxC
- qH90LTTJ6KOYUienovhJSPBFDDWqgKPSz1JCYRZq/rovUJDq6RyBecXXng5tZP2ocKyN
- hfLDw1Dxmy84XUppiFSG/z4ANSf/CaaFsXaIFTK2flreppmFfwGRRCzJxKNQuDlWqeJP
- okjg==
+ bh=RMNZF6KtAhN+Gy6BEZNu5CSdVLgGJb/v0I5vpK538AU=;
+ b=lyTErawfTJoMJqfE8HkSCDA8rN+sB6eXWpSvvbRnPRj4XddswSwG4eKflR5VgJg9wE
+ X5oYDehddYJjdMzDimNru2HH6v/2H/LJfFJEAihVoshqwClSNoCUT9u7XaFdhoEicsAK
+ +iRyzP7KXmcHgNymdH23UH4fczWS0DnImq5SntepN4LL9SF5NP1jooO/GYoHNFyvltTN
+ Elg76GRtO0ej16csnkWcqnW+ss68TE2JXz3k+yf+jF9wYhkpX5AP214GMb+tGAYvQ2Zz
+ 6osUFy5sgJKLp0jw218rjeyxq8Xq+j6xgf/AefiYfq/ISNGh3+pmR5GoN8+MlUgvAYtJ
+ bLKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=43+wBAA2pYCZyIeE6dblgNpeldlqw4UsjWWmEq3JFkQ=;
- b=l+eHa5YgE02wcDA8AmQYoK50atKirolAiqd9I/Hz0ntCyIcOPLsqe/gaOsMiR1lbdO
- DeENE7DhqQIGX5zkdZTZSrXXDBteLqcahIJ+wEef7DEvv1goYngYwTX2+TJNKh7GxV7Y
- r7RR61wFVBtJo1CnsmvGoxwNsITC69YrT5Fpqeg0ZZKq/KLpP+LuIb3JxI+UNmmBlrLq
- OStBoDzKbklbk1pTT+3ZXL5m1HFNPkM0rxRXBK34DFnJJt9iXvlz8x0WPonHx+OWmIEH
- ntf8BSCkjzRANIapedtOrOhGOLcsgn8LNAIawXJ62RXpjrlftlGPgS8mOXpuTyihVwPH
- GzJQ==
-X-Gm-Message-State: APjAAAULNh8pGRnmWL1ZcbbAg9myiLA3DSdJDtzXE9YGtLOCFuno54ZS
- 7DZ+d53QE7cSCulpBB4dBL/2zpo/MCM=
-X-Google-Smtp-Source: APXvYqyoNpL7JNr6fzQGvbgLfKgJsIZcPfbrRAGknNTrjrqkxFtSsE80PHNU91LWByI9gkjdaETv6w==
-X-Received: by 2002:a17:90a:fa12:: with SMTP id
- cm18mr13985647pjb.137.1564934674142; 
- Sun, 04 Aug 2019 09:04:34 -0700 (PDT)
+ bh=RMNZF6KtAhN+Gy6BEZNu5CSdVLgGJb/v0I5vpK538AU=;
+ b=qPOO3JCkz/DHSi8F0pTA49uLSgIOwoRnWS8aaJGpbWg15cXihT/goXqcBYoyg0Q2Cf
+ pIFvuY3QQdWOqYxJYKachwRltgWOk0Fp5oaNc1o8nPOwL6pHiQfWkw/tdEchqq72hYwU
+ uvzAJ6IJCx73QukS47dUj7ZJWI0ypP4IEvXVx7xDEG/ULRkPu95hTRoh8L0Jya2Rc3n3
+ BbzLFI6BnxQg4J8dG1ivZEh5uOR5QR7+mDrzhLW/WqaC627/Y5qaxB4gkLgUwDXTYb/V
+ WSfXNEtTF+4qLfi6eUZQU3uvS+SLIWzkylCkiHAix3cIF83OF97h8UerK/Pl4wbXx6Dx
+ O1tQ==
+X-Gm-Message-State: APjAAAWAdFyark8RaOuit59+CM+wWfuNn5iGAZct3zeSP3MZbgWY+uZY
+ GLhYpd5Vc7PJL/l72bjsZPQ=
+X-Google-Smtp-Source: APXvYqwPoWuNw9I9Cs1c3kM0bkcz2Tck+syFhD3GywXmw+F40iMATsaw5FfLo6ot9vLlER45vbQhhw==
+X-Received: by 2002:a63:c118:: with SMTP id
+ w24mr131695706pgf.347.1564936497094; 
+ Sun, 04 Aug 2019 09:34:57 -0700 (PDT)
 Received: from localhost.localdomain ([122.163.105.8])
- by smtp.gmail.com with ESMTPSA id c8sm9505686pjq.2.2019.08.04.09.04.30
+ by smtp.gmail.com with ESMTPSA id i124sm148519507pfe.61.2019.08.04.09.34.54
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 04 Aug 2019 09:04:33 -0700 (PDT)
+ Sun, 04 Aug 2019 09:34:56 -0700 (PDT)
 From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: linus.walleij@linaro.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org, linux-imx@nxp.com, s.hauer@pengutronix.de,
- kernel@pengutronix.de, stefan@agner.ch, shawnguo@kernel.org,
- festevam@gmail.com, aisheng.dong@nxp.com
-Subject: [PATCH] pinctrl: freescale: mxs: Add of_node_put() before return
-Date: Sun,  4 Aug 2019 21:34:20 +0530
-Message-Id: <20190804160420.5309-1-nishkadg.linux@gmail.com>
+To: mturquette@baylibre.com, sboyd@kernel.org, linux-clk@vger.kernel.org,
+ linus.walleij@linaro.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] clk: versatile: Add of_node_put() in cm_osc_setup()
+Date: Sun,  4 Aug 2019 22:04:44 +0530
+Message-Id: <20190804163445.6862-1-nishkadg.linux@gmail.com>
 X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_090434_976636_6439107A 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20190804_093457_884462_667DB61D 
+X-CRM114-Status: GOOD (  10.42  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -108,55 +106,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Each iteration of for_each_child_of_node puts the previous node, but in
-the case of a return from the middle of the loop, there is no put, thus
-causing a memory leak. Hence add an of_node_put before the return in
-three places.
+In function cm_osc_setup, variable parent takes the value returned by
+of_get_parent, which gets a node but does not put it. If parent is not
+put before it goes out of scope, it may cause a memory leak.
+Hence put parent before the function terminates.
 Issue found with Coccinelle.
 
 Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- drivers/pinctrl/freescale/pinctrl-mxs.c | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
+ drivers/clk/versatile/clk-versatile.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/pinctrl/freescale/pinctrl-mxs.c b/drivers/pinctrl/freescale/pinctrl-mxs.c
-index 641b3088876f..735cedd0958a 100644
---- a/drivers/pinctrl/freescale/pinctrl-mxs.c
-+++ b/drivers/pinctrl/freescale/pinctrl-mxs.c
-@@ -488,8 +488,10 @@ static int mxs_pinctrl_probe_dt(struct platform_device *pdev,
- 		if (of_property_read_u32(child, "reg", &val)) {
- 			ret = mxs_pinctrl_parse_group(pdev, child,
- 						      idxg++, NULL);
--			if (ret)
-+			if (ret) {
-+				of_node_put(child);
- 				return ret;
-+			}
- 			continue;
+diff --git a/drivers/clk/versatile/clk-versatile.c b/drivers/clk/versatile/clk-versatile.c
+index 90bb0b041b7a..fd54d5c0251c 100644
+--- a/drivers/clk/versatile/clk-versatile.c
++++ b/drivers/clk/versatile/clk-versatile.c
+@@ -70,6 +70,7 @@ static void __init cm_osc_setup(struct device_node *np,
+ 			return;
  		}
- 
-@@ -499,15 +501,19 @@ static int mxs_pinctrl_probe_dt(struct platform_device *pdev,
- 						 f->ngroups,
- 						 sizeof(*f->groups),
- 						 GFP_KERNEL);
--			if (!f->groups)
-+			if (!f->groups) {
-+				of_node_put(child);
- 				return -ENOMEM;
-+			}
- 			fn = child->name;
- 			i = 0;
- 		}
- 		ret = mxs_pinctrl_parse_group(pdev, child, idxg++,
- 					      &f->groups[i++]);
--		if (ret)
-+		if (ret) {
-+			of_node_put(child);
- 			return ret;
-+		}
- 	}
- 
- 	return 0;
+ 		cm_base = of_iomap(parent, 0);
++		of_node_put(parent);
+ 		if (!cm_base) {
+ 			pr_err("could not remap core module base\n");
+ 			return;
 -- 
 2.19.1
 
