@@ -2,85 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A43D8809E6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 09:57:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 973EE80A34
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 11:54:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dNCOBtpL/86BE8jXIei7n12M3kFrjok+SUCV/8X/G1A=; b=A7Hqtcx4QR6mw4
-	wFFAAlQQGnU0rfDmHCueg/yATQ6SVYOGawoX7bvV5v6MfLAghUBwoJWbfEZSCz79rjcsDeelhL4QH
-	rzN1y7b+KYU1DsWjKC/lD6tNvi+3oEK/koyruzbq4Tpgh7PbMRltn7WDT7EkATBPuc+sgOTL2TtCK
-	D81ynkLRLfc+In6M89lIRgU145lXufV2XkbwYpxB3fDZFJJChmxKsnlfamW0YpI9YRf2c0jAZDYam
-	KMVB0/iUZPzFt2//wrzn1J7qyiNgXkow93g2965GKa1gyrRAqOGTI9w/m/7vExZp2SkouBT5k1I7U
-	mV+bh1n1X//WllHZpiFg==;
+	List-Owner; bh=HD/tzMnnRe2S0A6mOhiDFD13KZ6yEbeYKUN+s8KgLBA=; b=UAuNQVL6evP9T7
+	dHOf7TDeoQoGokW5K/x9XEMlc4F/x1HEebd0l/XYmrLR9e6Vw2sZaojEgWqq/uYVBDtMNq81gV//Y
+	KVotzjtxFAtOtk+VCiGyQwGWZODRm5wPa+xYinPOVhbZxihk2nz4JOJFDyNhd2wYp6MPuf2ooh4hY
+	qk3k88FZLeMS9h9HhTfEtV6yqTJK10aoiuo2QHv0u7UgE1Fs2x5rSOK7/jA1mXiHS02R43XUZGh6I
+	WuCmPr0+EIDn0JfqpyGsxZGput8Myu2fY/GEuOyagJUSwmTKdCzwYX+z4ZqO79AowC8+PVmMaZvTw
+	sMntl8wTQ4nKFiW3WyzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huBOc-0004iN-1l; Sun, 04 Aug 2019 07:57:38 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1huDDl-0001cQ-Ro; Sun, 04 Aug 2019 09:54:34 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huBOD-0004ho-Sz
- for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 07:57:15 +0000
-Received: by mail-wr1-x443.google.com with SMTP id n9so81411475wru.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 04 Aug 2019 00:57:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uS/tyRA1HhQtO4ADL8hEZuizK1iCv9RoDdaac2v1yH4=;
- b=wfn1Gu3adFwv/Pk2kRj3UTJmJZciTaF/YOPEy8jffyJ6C8rni4AR9s/45gTYPa4Fgo
- c8HCaV0w2SCcZyRvZa3q/QVk2/nJwpH/EMR8g2OE0FuxOI7E5y56XQ6ON1bTeSw5BJtx
- 6KecsUH3eriYLDSv8Ha2NnjtI28lVLTItqw4qi8LhEyXkYkMmEsTuxQjHvN1bbD1t6/T
- R0pIgH80JovPWuRwxvL9IK361aQRfKdyQ7IJI0G8ROdKufqa2rhSlx5COllc21RZ3wuX
- rpJ4LbJega5ppVLH5z0p9pDsobiqao0LkFTOc5WQDc0n43xWmyUdg1lprdEzvBW4Dl6i
- 6N2g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uS/tyRA1HhQtO4ADL8hEZuizK1iCv9RoDdaac2v1yH4=;
- b=Ez4IVtkEVeTd4hrgGdz/uzj5W1wmQVrP0g88gzqyhLRyb8ueDFuGmHuWG06Em0oOKR
- pXkhCCDfLMLbFpG6StkAUoG6ZHTXIuFcuOdfAO1cyUjWwivPPnEW8goiWdJoTyzabZs2
- HAK09KBJoCfzbGlmf3gab4eHTz3h9IgUUdezqnVjvKpwkHrAOeqDc19dPrhd6qX3fPNY
- FAhf9/21synFUk7a11JjSeVkTW7iT6Fe5fJB0xGiUXv69iM0FWa+B/IiZBeRd1/bxaJY
- MHQtDcCU3XT2wj9aB8iOhHP/p23lQTyVjUeIp8WfrcXORXsURfn6eQuULIQQ0yzt+3Uy
- P2oA==
-X-Gm-Message-State: APjAAAW3zAlTSyqQ7Isfltswt3dR6xi5ybWdc5mpaqlCkdBHWujR+2h4
- J6AOg3cFlYgJpktrTHvOyo4Duie4SriTCQdpElTmSA==
-X-Google-Smtp-Source: APXvYqzORxDgrgKNb+/sBjejLMdg1ru++3B89ONmSHwqHruiVTgPaefLyZbe4UzVKnJbIfAwYhqwt58DVddwGi0AKks=
-X-Received: by 2002:adf:9ccf:: with SMTP id h15mr14389399wre.241.1564905431661; 
- Sun, 04 Aug 2019 00:57:11 -0700 (PDT)
+ id 1huDDQ-0001bY-Oz
+ for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 09:54:14 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1huDDA-0003Vy-Mt; Sun, 04 Aug 2019 11:53:59 +0200
+Date: Sun, 4 Aug 2019 10:53:53 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH 9/9] arm64: Retrieve stolen time as paravirtualized guest
+Message-ID: <20190804105353.5e9824dc@why>
+In-Reply-To: <20190802145017.42543-10-steven.price@arm.com>
+References: <20190802145017.42543-1-steven.price@arm.com>
+ <20190802145017.42543-10-steven.price@arm.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-References: <20190802053744.5519-1-clin@suse.com>
-In-Reply-To: <20190802053744.5519-1-clin@suse.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Sun, 4 Aug 2019 10:57:00 +0300
-Message-ID: <CAKv+Gu-yaNYsLQOOcr8srW91-nt-w0e+RBqxXGOagiGGT69n1Q@mail.gmail.com>
-Subject: Re: [PATCH] efi/arm: fix allocation failure when reserving the kernel
- base
-To: Chester Lin <clin@suse.com>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: steven.price@arm.com, catalin.marinas@arm.com,
+ pbonzini@redhat.com, rkrcmar@redhat.com, linux@armlinux.org.uk,
+ will@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_005713_995923_58D4AFDE 
-X-CRM114-Status: GOOD (  29.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190804_025412_958027_DF7BDFB5 
+X-CRM114-Status: GOOD (  21.82  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,179 +70,247 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Juergen Gross <JGross@suse.com>,
- "linux-efi@vger.kernel.org" <linux-efi@vger.kernel.org>,
- "guillaume.gardet@arm.com" <guillaume.gardet@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "rppt@linux.ibm.com" <rppt@linux.ibm.com>, Joey Lee <JLee@suse.com>,
- "geert@linux-m68k.org" <geert@linux-m68k.org>,
- "ren_guo@c-sky.com" <ren_guo@c-sky.com>, Gary Lin <GLin@suse.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "mingo@kernel.org" <mingo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: kvm@vger.kernel.org, Radim =?UTF-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Chester,
+On Fri,  2 Aug 2019 15:50:17 +0100
+Steven Price <steven.price@arm.com> wrote:
 
-On Fri, 2 Aug 2019 at 08:40, Chester Lin <clin@suse.com> wrote:
->
-> In some cases the arm32 efistub could fail to allocate memory for
-> uncompressed kernel. For example, we got the following error message when
-> verifying EFI stub on Raspberry Pi-2 [kernel-5.2.1 + grub-2.04] :
->
->   EFI stub: Booting Linux Kernel...
->   EFI stub: ERROR: Unable to allocate memory for uncompressed kernel.
->   EFI stub: ERROR: Failed to relocate kernel
->
-> After checking the EFI memory map we found that the first page [0 - 0xfff]
-> had been reserved by Raspberry Pi-2's firmware, and the efistub tried to
-> set the dram base at 0, which was actually in a reserved region.
->
-
-This by itself is a violation of the Linux boot protocol for 32-bit
-ARM when using the decompressor. The decompressor rounds down its own
-base address to a multiple of 128 MB, and assumes the whole area is
-available for the decompressed kernel and related data structures.
-(The first TEXT_OFFSET bytes are no longer used in practice, which is
-why putting a reserved region of 4 KB bytes works at the moment, but
-this is fragile). Note that the decompressor does not look at any DT
-or EFI provided memory maps *at all*.
-
-So unfortunately, this is not something we can fix in the kernel, but
-we should fix it in the bootloader or in GRUB, so it does not put any
-reserved regions in the first 128 MB of memory,
-
-
->   grub> lsefimmap
->   Type      Physical start  - end             #Pages        Size Attributes
->   reserved  0000000000000000-0000000000000fff 00000001      4KiB WB
->   conv-mem  0000000000001000-0000000007ef5fff 00007ef5 130004KiB WB
->   RT-data   0000000007ef6000-0000000007f09fff 00000014     80KiB RT WB
->   conv-mem  0000000007f0a000-000000002d871fff 00025968 615840KiB WB
->   .....
->
-> To avoid a reserved address, we have to ignore the memory regions which are
-> marked as EFI_RESERVED_TYPE, and only conventional memory regions can be
-> chosen. If the region before the kernel base is unaligned, it will be
-> marked as EFI_RESERVED_TYPE and let kernel ignore it so that memblock_limit
-> will not be sticked with a very low address such as 0x1000.
->
-> Signed-off-by: Chester Lin <clin@suse.com>
+> Enable paravirtualization features when running under a hypervisor
+> supporting the PV_TIME_ST hypercall.
+> 
+> For each (v)CPU, we ask the hypervisor for the location of a shared
+> page which the hypervisor will use to report stolen time to us. We set
+> pv_time_ops to the stolen time function which simply reads the stolen
+> value from the shared page for a VCPU. We guarantee single-copy
+> atomicity using READ_ONCE which means we can also read the stolen
+> time for another VCPU than the currently running one while it is
+> potentially being updated by the hypervisor.
+> 
+> Signed-off-by: Steven Price <steven.price@arm.com>
 > ---
->  arch/arm/mm/mmu.c                         |  3 ++
->  drivers/firmware/efi/libstub/arm32-stub.c | 43 ++++++++++++++++++-----
->  2 files changed, 37 insertions(+), 9 deletions(-)
->
-> diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
-> index f3ce34113f89..909b11ba48d8 100644
-> --- a/arch/arm/mm/mmu.c
-> +++ b/arch/arm/mm/mmu.c
-> @@ -1184,6 +1184,9 @@ void __init adjust_lowmem_bounds(void)
->                 phys_addr_t block_start = reg->base;
->                 phys_addr_t block_end = reg->base + reg->size;
->
-> +               if (memblock_is_nomap(reg))
-> +                       continue;
+>  arch/arm64/kernel/Makefile |   1 +
+>  arch/arm64/kernel/kvm.c    | 155 +++++++++++++++++++++++++++++++++++++
+
+nit: Why not using paravirt.c, which clearly states what it does? The
+alternative would be to name it kvm-pv.c.
+
+>  include/linux/cpuhotplug.h |   1 +
+>  3 files changed, 157 insertions(+)
+>  create mode 100644 arch/arm64/kernel/kvm.c
+> 
+> diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
+> index 478491f07b4f..eb36edf9b930 100644
+> --- a/arch/arm64/kernel/Makefile
+> +++ b/arch/arm64/kernel/Makefile
+> @@ -63,6 +63,7 @@ obj-$(CONFIG_CRASH_CORE)		+= crash_core.o
+>  obj-$(CONFIG_ARM_SDE_INTERFACE)		+= sdei.o
+>  obj-$(CONFIG_ARM64_SSBD)		+= ssbd.o
+>  obj-$(CONFIG_ARM64_PTR_AUTH)		+= pointer_auth.o
+> +obj-$(CONFIG_PARAVIRT)			+= kvm.o
+>  
+>  obj-y					+= vdso/ probes/
+>  obj-$(CONFIG_COMPAT_VDSO)		+= vdso32/
+> diff --git a/arch/arm64/kernel/kvm.c b/arch/arm64/kernel/kvm.c
+> new file mode 100644
+> index 000000000000..245398c79dae
+> --- /dev/null
+> +++ b/arch/arm64/kernel/kvm.c
+> @@ -0,0 +1,155 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +// Copyright (C) 2019 Arm Ltd.
 > +
->                 if (reg->base < vmalloc_limit) {
->                         if (block_end > lowmem_limit)
->                                 /*
-> diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
-> index e8f7aefb6813..10d33d36df00 100644
-> --- a/drivers/firmware/efi/libstub/arm32-stub.c
-> +++ b/drivers/firmware/efi/libstub/arm32-stub.c
-> @@ -128,7 +128,7 @@ static efi_status_t reserve_kernel_base(efi_system_table_t *sys_table_arg,
->
->         for (l = 0; l < map_size; l += desc_size) {
->                 efi_memory_desc_t *desc;
-> -               u64 start, end;
-> +               u64 start, end, spare, kernel_base;
->
->                 desc = (void *)memory_map + l;
->                 start = desc->phys_addr;
-> @@ -144,27 +144,52 @@ static efi_status_t reserve_kernel_base(efi_system_table_t *sys_table_arg,
->                 case EFI_BOOT_SERVICES_DATA:
->                         /* Ignore types that are released to the OS anyway */
->                         continue;
-> -
-> +               case EFI_RESERVED_TYPE:
-> +                       /* Ignore reserved regions */
-> +                       continue;
->                 case EFI_CONVENTIONAL_MEMORY:
->                         /*
->                          * Reserve the intersection between this entry and the
->                          * region.
->                          */
->                         start = max(start, (u64)dram_base);
-> -                       end = min(end, (u64)dram_base + MAX_UNCOMP_KERNEL_SIZE);
-> +                       kernel_base = round_up(start, PMD_SIZE);
-> +                       spare = kernel_base - start;
-> +                       end = min(end, kernel_base + MAX_UNCOMP_KERNEL_SIZE);
+> +#define pr_fmt(fmt) "kvmarm-pv: " fmt
 > +
-> +                       status = efi_call_early(allocate_pages,
-> +                                       EFI_ALLOCATE_ADDRESS,
-> +                                       EFI_LOADER_DATA,
-> +                                       MAX_UNCOMP_KERNEL_SIZE / EFI_PAGE_SIZE,
-> +                                       &kernel_base);
-> +                       if (status != EFI_SUCCESS) {
-> +                               pr_efi_err(sys_table_arg,
-> +                                       "reserve_kernel_base: alloc failed.\n");
-> +                               goto out;
-> +                       }
-> +                       *reserve_addr = kernel_base;
->
-> +                       if (!spare)
-> +                               break;
-> +                       /*
-> +                        * If there's a gap between start and kernel_base,
-> +                        * it needs be reserved so that the memblock_limit
-> +                        * will not fall on a very low address when running
-> +                        * adjust_lowmem_bounds(), wchich could eventually
-> +                        * cause CMA reservation issue.
-> +                        */
->                         status = efi_call_early(allocate_pages,
->                                                 EFI_ALLOCATE_ADDRESS,
-> -                                               EFI_LOADER_DATA,
-> -                                               (end - start) / EFI_PAGE_SIZE,
-> +                                               EFI_RESERVED_TYPE,
-> +                                               spare / EFI_PAGE_SIZE,
->                                                 &start);
->                         if (status != EFI_SUCCESS) {
->                                 pr_efi_err(sys_table_arg,
-> -                                       "reserve_kernel_base(): alloc failed.\n");
-> +                                       "reserve spare-region failed\n");
->                                 goto out;
->                         }
-> -                       break;
->
-> +                       break;
->                 case EFI_LOADER_CODE:
->                 case EFI_LOADER_DATA:
->                         /*
-> @@ -220,7 +245,7 @@ efi_status_t handle_kernel_image(efi_system_table_t *sys_table,
->         *image_size = image->image_size;
->         status = efi_relocate_kernel(sys_table, image_addr, *image_size,
->                                      *image_size,
-> -                                    dram_base + MAX_UNCOMP_KERNEL_SIZE, 0);
-> +                                    *reserve_addr + MAX_UNCOMP_KERNEL_SIZE, 0);
->         if (status != EFI_SUCCESS) {
->                 pr_efi_err(sys_table, "Failed to relocate kernel.\n");
->                 efi_free(sys_table, *reserve_size, *reserve_addr);
-> @@ -233,7 +258,7 @@ efi_status_t handle_kernel_image(efi_system_table_t *sys_table,
->          * in memory. The kernel determines the base of DRAM from the
->          * address at which the zImage is loaded.
->          */
-> -       if (*image_addr + *image_size > dram_base + ZIMAGE_OFFSET_LIMIT) {
-> +       if (*image_addr + *image_size > *reserve_addr + ZIMAGE_OFFSET_LIMIT) {
->                 pr_efi_err(sys_table, "Failed to relocate kernel, no low memory available.\n");
->                 efi_free(sys_table, *reserve_size, *reserve_addr);
->                 *reserve_size = 0;
-> --
-> 2.22.0
->
+> +#include <linux/arm-smccc.h>
+> +#include <linux/cpuhotplug.h>
+> +#include <linux/io.h>
+> +#include <linux/printk.h>
+> +#include <linux/psci.h>
+> +#include <linux/reboot.h>
+> +#include <linux/slab.h>
+> +
+> +#include <asm/paravirt.h>
+> +#include <asm/pvclock-abi.h>
+> +#include <asm/smp_plat.h>
+> +
+> +struct kvmarm_stolen_time_region {
+> +	struct pvclock_vcpu_stolen_time_info *kaddr;
+> +};
+> +
+> +static DEFINE_PER_CPU(struct kvmarm_stolen_time_region, stolen_time_region);
+> +
+> +static bool steal_acc = true;
+> +static int __init parse_no_stealacc(char *arg)
+> +{
+> +	steal_acc = false;
+> +	return 0;
+> +}
+> +early_param("no-steal-acc", parse_no_stealacc);
+> +
+> +/* return stolen time in ns by asking the hypervisor */
+> +static u64 kvm_steal_clock(int cpu)
+> +{
+> +	struct kvmarm_stolen_time_region *reg;
+> +
+> +	reg = per_cpu_ptr(&stolen_time_region, cpu);
+> +	if (!reg->kaddr) {
+> +		pr_warn_once("stolen time enabled but not configured for cpu %d\n",
+> +			     cpu);
+> +		return 0;
+> +	}
+> +
+> +	return le64_to_cpu(READ_ONCE(reg->kaddr->stolen_time));
+> +}
+> +
+> +static int disable_stolen_time_current_cpu(void)
+> +{
+> +	struct kvmarm_stolen_time_region *reg;
+> +
+> +	reg = this_cpu_ptr(&stolen_time_region);
+> +	if (!reg->kaddr)
+> +		return 0;
+> +
+> +	memunmap(reg->kaddr);
+> +	memset(reg, 0, sizeof(*reg));
+> +
+> +	return 0;
+> +}
+> +
+> +static int stolen_time_dying_cpu(unsigned int cpu)
+> +{
+> +	return disable_stolen_time_current_cpu();
+> +}
+> +
+> +static int init_stolen_time_cpu(unsigned int cpu)
+> +{
+> +	struct kvmarm_stolen_time_region *reg;
+> +	struct arm_smccc_res res;
+> +
+> +	reg = this_cpu_ptr(&stolen_time_region);
+> +
+> +	if (reg->kaddr)
+> +		return 0;
+
+Can this actually happen? It'd take two CPU_UP calls from the HP
+notifiers to get in that situation...
+
+> +
+> +	arm_smccc_1_1_invoke(ARM_SMCCC_HV_PV_TIME_ST, &res);
+> +
+> +	if ((long)res.a0 < 0)
+> +		return -EINVAL;
+> +
+> +	reg->kaddr = memremap(res.a0,
+> +			sizeof(struct pvclock_vcpu_stolen_time_info),
+> +			MEMREMAP_WB);
+> +
+> +	if (reg->kaddr == NULL) {
+> +		pr_warn("Failed to map stolen time data structure\n");
+> +		return -EINVAL;
+
+-ENOMEM is the expected return code.
+
+> +	}
+> +
+> +	if (le32_to_cpu(reg->kaddr->revision) != 0 ||
+> +			le32_to_cpu(reg->kaddr->attributes) != 0) {
+> +		pr_warn("Unexpected revision or attributes in stolen time data\n");
+> +		return -ENXIO;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int kvm_arm_init_stolen_time(void)
+> +{
+> +	int ret;
+> +
+> +	ret = cpuhp_setup_state(CPUHP_AP_ARM_KVMPV_STARTING,
+> +				"hypervisor/kvmarm/pv:starting",
+> +				init_stolen_time_cpu, stolen_time_dying_cpu);
+> +	if (ret < 0)
+> +		return ret;
+> +	return 0;
+> +}
+> +
+> +static bool has_kvm_steal_clock(void)
+> +{
+> +	struct arm_smccc_res res;
+> +
+> +	/* To detect the presence of PV time support we require SMCCC 1.1+ */
+> +	if (psci_ops.smccc_version < SMCCC_VERSION_1_1)
+> +		return false;
+> +
+> +	arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
+> +			     ARM_SMCCC_HV_PV_FEATURES, &res);
+> +
+> +	if (res.a0 != SMCCC_RET_SUCCESS)
+> +		return false;
+> +
+> +	arm_smccc_1_1_invoke(ARM_SMCCC_HV_PV_FEATURES,
+> +			     ARM_SMCCC_HV_PV_TIME_ST, &res);
+> +
+> +	if (res.a0 != SMCCC_RET_SUCCESS)
+> +		return false;
+> +
+> +	return true;
+> +}
+> +
+> +static int __init kvm_guest_init(void)
+> +{
+> +	int ret = 0;
+> +
+> +	if (!has_kvm_steal_clock())
+> +		return 0;
+> +
+> +	ret = kvm_arm_init_stolen_time();
+> +	if (ret)
+> +		return ret;
+> +
+> +	pv_ops.time.steal_clock = kvm_steal_clock;
+> +
+> +	static_key_slow_inc(&paravirt_steal_enabled);
+> +	if (steal_acc)
+> +		static_key_slow_inc(&paravirt_steal_rq_enabled);
+> +
+> +	pr_info("using stolen time PV\n");
+> +
+> +	return 0;
+> +}
+> +early_initcall(kvm_guest_init);
+
+Is there any reason why we wouldn't directly call into this rather than
+using an initcall?
+
+> diff --git a/include/linux/cpuhotplug.h b/include/linux/cpuhotplug.h
+> index 068793a619ca..89d75edb5750 100644
+> --- a/include/linux/cpuhotplug.h
+> +++ b/include/linux/cpuhotplug.h
+> @@ -136,6 +136,7 @@ enum cpuhp_state {
+>  	/* Must be the last timer callback */
+>  	CPUHP_AP_DUMMY_TIMER_STARTING,
+>  	CPUHP_AP_ARM_XEN_STARTING,
+> +	CPUHP_AP_ARM_KVMPV_STARTING,
+>  	CPUHP_AP_ARM_CORESIGHT_STARTING,
+>  	CPUHP_AP_ARM64_ISNDEP_STARTING,
+>  	CPUHP_AP_SMPCFD_DYING,
+
+
+Thanks,
+
+	M.
+-- 
+Without deviation from the norm, progress is not possible.
 
 _______________________________________________
 linux-arm-kernel mailing list
