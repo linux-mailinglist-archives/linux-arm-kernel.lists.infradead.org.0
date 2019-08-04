@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBA2980B94
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 18:02:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19CE580B96
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 18:04:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yTqjslAtHU7BESsDncZ6rApcncg0Tcmko6o4ql+o6Ms=; b=qp05D4nXvKCezc
-	pR3U/avesQ9k8rE9fgNjYge9DD+6cuW12HweY5pzr5FzeCjD5rKHVQ5FRudyd2jt7VKL3tGqZfENR
-	0/q//0N4mBQHngIc7oK9hCPFrMfcTCTJSHqiZMc/V0aXVDB/GrAfu+xY6A1gmvQnYCOims9sSefVZ
-	43Z1o4dbsRS0tdoDdBPg2oKCXzo1S2e5e92NhBcEd3a3kYabgzKM8wbPAZnbdSnIGx/um/K/UKrNM
-	M5gPyrcLvoAWFczykbsNqp9Af04IERSaBT+XcmW1QbQtukjAOsyqIqvD4bW+8vTu3KasMkitYWd26
-	ryWp+38GHYglFygiqyew==;
+	List-Owner; bh=Jl7McrdAUGMDj37xLBNNxGHIEZsYLacCkEuPM40M8qQ=; b=Ns3VE6nT/RwioR
+	RG7ebiTISYeJgE04WCiaQJKwgU3yVz3ecGOhaqIWFilG7mJQ/uB5tz8uTCJEB6jZ/nrYBW/2wMHDc
+	G54dbG6LK+b8AVLIt3MI8pHvfP2XWOoLkN5E3yPAqtgC334yGvV1h7N1uuI4H/uhW/8ElswLJXSEd
+	jLzJI8Gb0fFsPHG5rBVghvP4BLTzJLB3PSWwCuWWZoZlQ1nYO2uNOQuHdUIlsMOFoB8aeP32KrYGS
+	Aq02nn4bIUAtQ7/6i312ZObvoT3CfwbcPOmhAzfRm5nJEq6TUbU+vtL9bkPs7aCAZudx9uZA1JH2v
+	MA2yz2qhaDyEMMvhss6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huIxi-0008Dk-Th; Sun, 04 Aug 2019 16:02:22 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1huIzx-000050-33; Sun, 04 Aug 2019 16:04:41 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huIxc-0008DR-NX
- for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 16:02:17 +0000
-Received: by mail-pf1-x442.google.com with SMTP id m30so38360730pff.8
+ id 1huIzq-0008Vy-UI
+ for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 16:04:36 +0000
+Received: by mail-pg1-x541.google.com with SMTP id n190so3283310pgn.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 04 Aug 2019 09:02:16 -0700 (PDT)
+ Sun, 04 Aug 2019 09:04:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=LeGjYEzEnNd+LP7E7X1hGpTj7PNVozz8mf2RHENRFPs=;
- b=LQytGn6C2tlkbNTMXkKZ2UyVakSPWDuBvnr2zYpndh4VptsQvTykzeffX86XeALTgk
- u8V7q4xuIO4nY1eainybsqRRCkUU9UZlaffx/Mex4LR1mcNDxNllViZbEwkZoTaK522W
- wNmbSEB1xFONhovQ+m5fvb60LMQaLRZo0Rr3nclUoBwKBFLotbBQx8P+D4Hk6VSSomcf
- uAFJYT+MpMD/OhRYnG2IH5A9GbIq8Y8dH6GuknoM6u4uPRzsp2pZ8WQGQtUqzKdk/t6M
- QjVvRlovZa8Le8dedeV0qILbbCFLc6E1OaiO2i3+6DMhS2WVshgPVhzxMovkkd/M6ZvF
- JLRQ==
+ bh=43+wBAA2pYCZyIeE6dblgNpeldlqw4UsjWWmEq3JFkQ=;
+ b=MNB/Mc92mGLyuhVsZap7ySAwBC6u9/2UU+v246vUn8jld4GTJtPBdEK/sS4jqDUALx
+ ASGO3QxSSTMfen5a4818hqHKc6dGWuxarFx4xVAR37oOi3z8C6DwKf3cpZXKhDzcZzDT
+ ARu26iZVW+gzOfNZZ9Id3tcZBBzBwANnqVKwf8VzC5/yECvRSodP2CfPxpjUyEwuSPxC
+ qH90LTTJ6KOYUienovhJSPBFDDWqgKPSz1JCYRZq/rovUJDq6RyBecXXng5tZP2ocKyN
+ hfLDw1Dxmy84XUppiFSG/z4ANSf/CaaFsXaIFTK2flreppmFfwGRRCzJxKNQuDlWqeJP
+ okjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=LeGjYEzEnNd+LP7E7X1hGpTj7PNVozz8mf2RHENRFPs=;
- b=bUPcpz1qdGXsp8CyJh22poVZnlKdOth5chAflyxJukBuRRNjoAypt0Xl45CHqBA+C1
- WIQU6WUx51PnieaE6Z+JAVhiXhkbVFeG/cEwpkJCG1OCmnj+JqaZvwYDe8t/MLMAttrQ
- piPxxAoP6K3x+U0dQ+MzTzwvHMpDSlcGGhTUur8xSasrcQjjEaBtkG3B1yTRIOicVdJz
- vwqHBfXpAwo9ad/6A+5FlLFXsc8lgrucNbdbEaeEqJJkiQB7p8BKXROEb1xi/fFEW1TQ
- Mu4cGX2Y0bAv2FuMFKsBxGj1FX1CJX++wpAuwOXF9YRhum4Z7Q/LE0Aocb3TTN276RlM
- VU2A==
-X-Gm-Message-State: APjAAAUtC5lPWGcDt6ZMnmvxF+c5sD5vPdpyze+XEz7JLv0k88zrEts2
- LYeTSxwt6nqWl1xGn1J8aLc=
-X-Google-Smtp-Source: APXvYqyW3HshrRKiqWhhL7Xm0gBHnBObsgshWMul17uZfpv0UekHsFJKsZHv4yQsC3HGKCgiksvnzA==
-X-Received: by 2002:a63:89c2:: with SMTP id
- v185mr27001405pgd.241.1564934535868; 
- Sun, 04 Aug 2019 09:02:15 -0700 (PDT)
+ bh=43+wBAA2pYCZyIeE6dblgNpeldlqw4UsjWWmEq3JFkQ=;
+ b=l+eHa5YgE02wcDA8AmQYoK50atKirolAiqd9I/Hz0ntCyIcOPLsqe/gaOsMiR1lbdO
+ DeENE7DhqQIGX5zkdZTZSrXXDBteLqcahIJ+wEef7DEvv1goYngYwTX2+TJNKh7GxV7Y
+ r7RR61wFVBtJo1CnsmvGoxwNsITC69YrT5Fpqeg0ZZKq/KLpP+LuIb3JxI+UNmmBlrLq
+ OStBoDzKbklbk1pTT+3ZXL5m1HFNPkM0rxRXBK34DFnJJt9iXvlz8x0WPonHx+OWmIEH
+ ntf8BSCkjzRANIapedtOrOhGOLcsgn8LNAIawXJ62RXpjrlftlGPgS8mOXpuTyihVwPH
+ GzJQ==
+X-Gm-Message-State: APjAAAULNh8pGRnmWL1ZcbbAg9myiLA3DSdJDtzXE9YGtLOCFuno54ZS
+ 7DZ+d53QE7cSCulpBB4dBL/2zpo/MCM=
+X-Google-Smtp-Source: APXvYqyoNpL7JNr6fzQGvbgLfKgJsIZcPfbrRAGknNTrjrqkxFtSsE80PHNU91LWByI9gkjdaETv6w==
+X-Received: by 2002:a17:90a:fa12:: with SMTP id
+ cm18mr13985647pjb.137.1564934674142; 
+ Sun, 04 Aug 2019 09:04:34 -0700 (PDT)
 Received: from localhost.localdomain ([122.163.105.8])
- by smtp.gmail.com with ESMTPSA id v22sm80865042pgk.69.2019.08.04.09.02.12
+ by smtp.gmail.com with ESMTPSA id c8sm9505686pjq.2.2019.08.04.09.04.30
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 04 Aug 2019 09:02:15 -0700 (PDT)
+ Sun, 04 Aug 2019 09:04:33 -0700 (PDT)
 From: Nishka Dasgupta <nishkadg.linux@gmail.com>
 To: linus.walleij@linaro.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org, tomasz.figa@gmail.com, krzk@kernel.org,
- s.nawrocki@samsung.com, kgene@kernel.org, linux-samsung-soc@vger.kernel.org
-Subject: [PATCH] pinctrl: samsung: exynos: Add of_node_put() before return
-Date: Sun,  4 Aug 2019 21:32:00 +0530
-Message-Id: <20190804160200.5139-1-nishkadg.linux@gmail.com>
+ linux-gpio@vger.kernel.org, linux-imx@nxp.com, s.hauer@pengutronix.de,
+ kernel@pengutronix.de, stefan@agner.ch, shawnguo@kernel.org,
+ festevam@gmail.com, aisheng.dong@nxp.com
+Subject: [PATCH] pinctrl: freescale: mxs: Add of_node_put() before return
+Date: Sun,  4 Aug 2019 21:34:20 +0530
+Message-Id: <20190804160420.5309-1-nishkadg.linux@gmail.com>
 X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_090216_770268_56E9E4EC 
-X-CRM114-Status: UNSURE (   9.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190804_090434_976636_6439107A 
+X-CRM114-Status: GOOD (  10.16  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -78,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [122.163.105.8 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -110,30 +110,53 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Each iteration of for_each_child_of_node puts the previous node, but in
 the case of a return from the middle of the loop, there is no put, thus
-causing a memory leak. Hence add an of_node_put before the return.
+causing a memory leak. Hence add an of_node_put before the return in
+three places.
 Issue found with Coccinelle.
 
 Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- drivers/pinctrl/samsung/pinctrl-exynos.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/pinctrl/freescale/pinctrl-mxs.c | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/pinctrl/samsung/pinctrl-exynos.c b/drivers/pinctrl/samsung/pinctrl-exynos.c
-index ebc27b06718c..e7f4cbad2c92 100644
---- a/drivers/pinctrl/samsung/pinctrl-exynos.c
-+++ b/drivers/pinctrl/samsung/pinctrl-exynos.c
-@@ -486,8 +486,10 @@ int exynos_eint_wkup_init(struct samsung_pinctrl_drv_data *d)
- 		if (match) {
- 			irq_chip = kmemdup(match->data,
- 				sizeof(*irq_chip), GFP_KERNEL);
--			if (!irq_chip)
-+			if (!irq_chip) {
-+				of_node_put(np);
+diff --git a/drivers/pinctrl/freescale/pinctrl-mxs.c b/drivers/pinctrl/freescale/pinctrl-mxs.c
+index 641b3088876f..735cedd0958a 100644
+--- a/drivers/pinctrl/freescale/pinctrl-mxs.c
++++ b/drivers/pinctrl/freescale/pinctrl-mxs.c
+@@ -488,8 +488,10 @@ static int mxs_pinctrl_probe_dt(struct platform_device *pdev,
+ 		if (of_property_read_u32(child, "reg", &val)) {
+ 			ret = mxs_pinctrl_parse_group(pdev, child,
+ 						      idxg++, NULL);
+-			if (ret)
++			if (ret) {
++				of_node_put(child);
+ 				return ret;
++			}
+ 			continue;
+ 		}
+ 
+@@ -499,15 +501,19 @@ static int mxs_pinctrl_probe_dt(struct platform_device *pdev,
+ 						 f->ngroups,
+ 						 sizeof(*f->groups),
+ 						 GFP_KERNEL);
+-			if (!f->groups)
++			if (!f->groups) {
++				of_node_put(child);
  				return -ENOMEM;
 +			}
- 			wkup_np = np;
- 			break;
+ 			fn = child->name;
+ 			i = 0;
  		}
+ 		ret = mxs_pinctrl_parse_group(pdev, child, idxg++,
+ 					      &f->groups[i++]);
+-		if (ret)
++		if (ret) {
++			of_node_put(child);
+ 			return ret;
++		}
+ 	}
+ 
+ 	return 0;
 -- 
 2.19.1
 
