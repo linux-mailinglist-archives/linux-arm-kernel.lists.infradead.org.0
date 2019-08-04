@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77EB180C6B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 22:17:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB12780C7F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 22:17:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Ao23Gax8e896grD866C9ZQSpFfkPlXaEiYg1okvBsM=; b=Vkl4OlcGXspHQw
-	VuNijGcA5GlfVclTB21UUjW53vm1noiOcPSFaK6zETj2cwfYz8maT8iYJSMAdIFwiuZLjEkKcJP5M
-	IKvNkoBrQMeyekMn9XRjBz7o45r3v13324a00ofjtXH6dtwut6geb2l3JhrvAsGtXz4gFMv5lxG+U
-	R1yAyYBUd8dlS/KEsrIbrtYn1MA0phRyw0yO5Yt45F6VEvktc/Updfm/E8uIRE5KV8sHgL6q9mZYB
-	OI+enfeToQAKPhUDT++cO3PvQmiOpIKA5RvYMaoST1JJPXXQ2+r+B9XsYy0ChP08tXlGpmDKdc0TK
-	gb26Dd3sSAl1u+C9CPDA==;
+	List-Owner; bh=leiicJ+qcpxYeaQvrZuKccxc+jsRaS+54TrrsmVxMDk=; b=LxI0kKI5ciBqgv
+	hWxwRAyEAyUcmvW66k+rAgl+63Qb1LHqpnPNlkpa8Z6KIGF7VaqRDEpqlePuyiijdktjSom7Tu0mA
+	RGTPmb8lo8KRC5yqeDu2mE6FROUqxacjPpmeatAZnSJg/q8HqcspXVCvovlVRzDr8nIINTqbJs1V+
+	D5OHdbRq4fPdEbSSF4kEzi3lkOmuVmHM9VEpFWUvremosFLqnaSVajYK/yMxw35htzyd7/8pvgNQJ
+	vqeLy1opZT0x57fNfH1grzsms7B03hTGb3A0X7Ugu5qCF94EWyZ9dYXsQgb/3wUAq8ZXXiW04InpK
+	QYl8YZb7rgf1ukn+b/yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huMwb-00006W-Um; Sun, 04 Aug 2019 20:17:29 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1huMwt-0000SM-42; Sun, 04 Aug 2019 20:17:47 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huMwE-0008DC-La
- for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 20:17:08 +0000
-Received: by mail-lf1-x144.google.com with SMTP id b17so56365400lff.7
+ id 1huMwI-0008Jm-8z
+ for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 20:17:11 +0000
+Received: by mail-lj1-x241.google.com with SMTP id m23so77345213lje.12
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 04 Aug 2019 13:17:06 -0700 (PDT)
+ Sun, 04 Aug 2019 13:17:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ZQy9HfEbGA1ab0VIPAqW/5LFlvvMfM3YtKt25w5akQg=;
- b=kU2m0+RBLUeqJOTqmN7wdIW5oOoJZk4mOVt8g2Pj9LBw8owAvIqfINDwzOdJ8fG3vY
- TmasVFXMgD9rbalVp2CRfKLF2xAY6JU4RpR/URtcsWX5hO4W1AcMMyl7KxM0EwKntN+X
- s0PmeKEE1zCtIcWZZbPwdxjRU5nYL6lOJnt+7SVLtKXAqsl18OyMoAewTdWmVuRodIhM
- KERP/ppypDVfWGQGYyvXKM9f9XAJghQ8AgeG2s18H4kOr9xhKEUbFmFZ5sLSnbcTPPgg
- zbfqIEc3h652BTSzj7i7m2PWJWdp865ZGwAZPpyW4xSJXt92fzG/ahvoGyE7oIx+IrkH
- t9mA==
+ bh=1TEXaZ1KpdAoiO85boEPTBxnq8MPM5bbeG78Znsg1kk=;
+ b=UY9E/BN/VsoWEhEtkdN8SUZ6JHfj/MBgZgo1KwFNcuBN2pN7TOGU5AbsZbBMQBBMp/
+ +KPl14S0+PYrY1NlQyBlfArZikLv53LGe2G/hMahk+c88DAkGoN1qgt0F0pIFL6MlC69
+ Lcg7RTaWFBAx4PfmCtkLgYHY73b8PSgMP9+nEJT1uYEv3otLP4iBzlNGlEbAcG98zDQZ
+ E6yypKdyIS1mOqIB1qbZbUit/9wBYgZ6PRdzJSzvLpvas00dvht3i0+tzIDnbOuyzH3p
+ RAn2m/o5JiW0VANG9Eoc7to6esERy5lprBeYjTpFb798pyI2UJNt8Ef9POkUjSlMe9BK
+ Z98A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=ZQy9HfEbGA1ab0VIPAqW/5LFlvvMfM3YtKt25w5akQg=;
- b=YApQcluDdoBWk6C18dAInv0ra+GMvR167r3hU0C22SKoKHIyAMgBoHxKcEbwVKgQcd
- V9WCXXYjBrqQ7O5FxHqUzN5k+tUvGdOqndxwFnTlPQghGNKQNjz07J4EqpkgBNlSNnju
- seTXW8EJYzDk/S4PtUK9Ejki54MP/8AagD4TDITzIGMiRTZhUtzJmFj4L8LqH+7JFwQR
- FM/kJ+c9+iGWIrmY1KctKWR2iUH1rvbjvTHytLG6Mnl6g2kctmEdUEcMLwe5hNDHStDR
- VYQrZSpCnuQ138e/vHkOvZwW6bHtKQdnRQ8O83Xu380cb2de3CZCiQVcKRpvQBnZtXxU
- CT9A==
-X-Gm-Message-State: APjAAAW+lpGW7ZJprEFn2rvjS2a8sW0lI5oMqTPxrRph6w2mpq0Sc92D
- Nw/SDxwFCnykGF2nU8GFaMU=
-X-Google-Smtp-Source: APXvYqxrxJ6f5gcwOvxklU9HO4h4OF+p5nSRTWaf0Mi726mZOEO7tha0ZCSglPRdKYDVM/d5m/f2qg==
-X-Received: by 2002:a05:6512:146:: with SMTP id
- m6mr5406980lfo.90.1564949824886; 
- Sun, 04 Aug 2019 13:17:04 -0700 (PDT)
+ bh=1TEXaZ1KpdAoiO85boEPTBxnq8MPM5bbeG78Znsg1kk=;
+ b=nMeh26U8Lr4ppT2r7qGphiTpYdxSi7l6IRWIkfktU9GFyx6bQ8k1fMwjQsdNhRHmo2
+ NYkaM34+c6Xl4D0vvOGd9XFT1LtwMC9FhMU0wbMhSFq/rPniUDQxLsFW+aJQ47c20N1B
+ KQ6xi9yiIu6AfvmtvHJlAZSEVuRelL/6ADN9KbTI02n/VTFAEH/SYTvp4Q6kmftXsNgB
+ ewrbh5VXhSPMe2xtwQkrjLP5EI+4bOD/WxECFKAr9IzPKs+y0Rk4ZSyKzewN45p70WBq
+ RFK2u7xZzuPJ4C3qkEMnxIqGAUDzmBkbrCgsYoiZe02wiJY06L8bWlwzs4m8MTMlOZg4
+ ygSw==
+X-Gm-Message-State: APjAAAWp3oM922zTlB9SAklY7nUPOJntaya2M95uiIj1uyxBbon+2f6E
+ 4/xf66THjP8giva3z9tGKvQ=
+X-Google-Smtp-Source: APXvYqyX2DV4pg4STFder0QLYZxjB3cRp7z66cR5BIB23ZVo0ZMYOEKaRseLqKMG0kPOviSdCK01aQ==
+X-Received: by 2002:a2e:3211:: with SMTP id y17mr38833847ljy.86.1564949828875; 
+ Sun, 04 Aug 2019 13:17:08 -0700 (PDT)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- p87sm16540794ljp.50.2019.08.04.13.17.02
+ p87sm16540794ljp.50.2019.08.04.13.17.06
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 04 Aug 2019 13:17:04 -0700 (PDT)
+ Sun, 04 Aug 2019 13:17:08 -0700 (PDT)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH v1 02/16] drm/exynos: fix opencoded use of drm_panel_*
-Date: Sun,  4 Aug 2019 22:16:23 +0200
-Message-Id: <20190804201637.1240-3-sam@ravnborg.org>
+Subject: [PATCH v1 03/16] drm/exynos: fix opencoded use of drm_panel_*
+Date: Sun,  4 Aug 2019 22:16:24 +0200
+Message-Id: <20190804201637.1240-4-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190804201637.1240-1-sam@ravnborg.org>
 References: <20190804201637.1240-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_131706_716553_45B53621 
-X-CRM114-Status: GOOD (  15.95  )
+X-CRM114-CacheID: sfid-20190804_131710_350781_F8B7A9EF 
+X-CRM114-Status: GOOD (  15.26  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -131,11 +130,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-drm_panel_attach() will check if there is a controller
-already attached - drop the check in the driver.
-
-Use drm_panel_get_modes() so the driver no longer uses the function
-pointer.
+Call via drm_panel_get_modes().
 
 Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
 Cc: Inki Dae <inki.dae@samsung.com>
@@ -147,28 +142,19 @@ Cc: Krzysztof Kozlowski <krzk@kernel.org>
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-samsung-soc@vger.kernel.org
 ---
- drivers/gpu/drm/exynos/exynos_drm_dpi.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/gpu/drm/exynos/exynos_drm_dsi.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/exynos/exynos_drm_dpi.c b/drivers/gpu/drm/exynos/exynos_drm_dpi.c
-index 3cebb19ec1c4..5479ff71cbc6 100644
---- a/drivers/gpu/drm/exynos/exynos_drm_dpi.c
-+++ b/drivers/gpu/drm/exynos/exynos_drm_dpi.c
-@@ -43,7 +43,7 @@ exynos_dpi_detect(struct drm_connector *connector, bool force)
- {
- 	struct exynos_dpi *ctx = connector_to_dpi(connector);
+diff --git a/drivers/gpu/drm/exynos/exynos_drm_dsi.c b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
+index 6926cee91b36..36b02b456d9c 100644
+--- a/drivers/gpu/drm/exynos/exynos_drm_dsi.c
++++ b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
+@@ -1460,7 +1460,7 @@ static int exynos_dsi_get_modes(struct drm_connector *connector)
+ 	struct exynos_dsi *dsi = connector_to_dsi(connector);
  
--	if (ctx->panel && !ctx->panel->connector)
-+	if (ctx->panel)
- 		drm_panel_attach(ctx->panel, &ctx->connector);
- 
- 	return connector_status_connected;
-@@ -85,7 +85,7 @@ static int exynos_dpi_get_modes(struct drm_connector *connector)
- 	}
- 
- 	if (ctx->panel)
--		return ctx->panel->funcs->get_modes(ctx->panel);
-+		return drm_panel_get_modes(ctx->panel);
+ 	if (dsi->panel)
+-		return dsi->panel->funcs->get_modes(dsi->panel);
++		return drm_panel_get_modes(dsi->panel);
  
  	return 0;
  }
