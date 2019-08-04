@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65F9380C8E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 22:19:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD67980C8F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 22:19:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gi0QGBtUdSHUV5q3cCkIT4ects6qjCpnqr/wlPyZIyo=; b=LbH3OaV6o4fMYN
-	fvSdPRKRmMdknY8jfFPPVSgIevOleU+0iOteiN89UKAzW9nY5VHXVFCqwxFOyTTt4S695K3FQXTbl
-	PqkZvYZeKQ+N498EbZAGGrjiL2U6GqWFrAQiCfS00BI9BH3cqv0K9U9k+PCah/GuQD2zlBNWtrQW2
-	KHPszCx+f92xKQ73zS6+GU1KlFCrHRnmHJ/cACSQgOqB/SJpA1puBCC6mHX0jypaGqc65J5+/QGWP
-	39ho+hCLcgL2zXgBCjLxUJu78ChmP6Dsji5LFvKCQudhjgmDR1zkJ3fSQzUw14K4ut86WbGwz3Ex0
-	PD8jqkXdqmED2qOizB1g==;
+	List-Owner; bh=sqv1FA1YHdCmcDFSgs9j1sa4Z/aF/O71e4proRAXc0Q=; b=ISewgaz1DeIse8
+	mICfMqLGoKRfsLzyjKjPMnp9Vf0IBhKyS8OSGaBRJwKxM0OK+YyDieAKBEfAvQodf1CLprClaI1VA
+	qpetWPj40Iiv+IMCiL3S7h18jhbxQUiyQZAf7c9pdQ0ATo8WmREwyKWXmYLUOMjgghYsGiU8s8gxW
+	OQX56bT++x09ei7vhITVL9OYkKWGomu6LGFsoGJEywKFqogYuaVRuc/2tFnD4vLawSzBANWSclbfM
+	lB3agIZs1fyBldNFcdkkWtFjt3AHHN3ewajEFIUodb7m+G7DU1jE9k8ShRWwR3s9H8HoZ4qhgval9
+	+mCMVrQ6Ncv0c5YiqpyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huMyn-00037m-8i; Sun, 04 Aug 2019 20:19:45 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1huMyz-0003Oq-6w; Sun, 04 Aug 2019 20:19:57 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huMwn-0000a0-QC
- for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 20:17:44 +0000
-Received: by mail-lj1-x243.google.com with SMTP id p17so77443501ljg.1
+ id 1huMwq-0000dL-RY
+ for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 20:17:47 +0000
+Received: by mail-lf1-x143.google.com with SMTP id h28so56312621lfj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 04 Aug 2019 13:17:41 -0700 (PDT)
+ Sun, 04 Aug 2019 13:17:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=hrCo/4/IXJ1Yj7iZxjXNzvDGpEFw4E2sYzii2ko4Lpc=;
- b=H21lvLH6tpUmdeSL+ZX13j4skteYo8F27F85lXg12JKWPkHdL9eQI/B0aLzSqteuZF
- JyDo1GkMya2KG2lCA+5ozRHKZoM8bI0aMUsUg5BtlHAYP91P4BmM0zzLa4mWzMlSnA7I
- qyT/LzC1eJL/P11buVSMfZh7ZhWipjYNxIRhgMf4ylvnGbNNefyfl7yHxVBGN2ZHpQ22
- gUEEURWNc9F1uLD9qoAxlTK9z2PhqI2SkEfqyfuaRea3WQ1BR88k6Hn6mhvY6MQmx/oD
- Xi16syJcz/Ah5wLJDfB/ZZj2FJP5FKD8/fQopj0w00bxP4/2GIq+x6Nwr2fkLDpTy4ym
- dl6w==
+ bh=aobqP46odx3tunBAtyyrec00lPA6Ep/KC6NYpNeo17U=;
+ b=SFyUwEVzQiN+6Jh9U4W+Ou+eODKjyMW+KpMuYRXjME46CmaH8aJsl/dRMIn9p2zWZO
+ G8C9gUmunvvNAfQnltvpwvvr6SZKIBTXon/9pdHoYF2OEAzg4X0T7udsIbCPJZOJcMaK
+ bF7VAH94hYH9HecpdWX9NjSM2fOUXMY4DPHYOXKH4dCA1oQVpxwV9gghaBGzSrUJGnCf
+ gnWSfFzy8l0vUQExN4iXCesBUcBGkrx41lBJ9v6i6fEVRhrOLfUtHJOvNoWinLnBY6Yd
+ cJ8A0XDKQ6zvW2868e4DsxOCHxTkdTI4F7DukDhV0NOo+sRz6pV/i5BymdeavxXTvWwJ
+ XOag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=hrCo/4/IXJ1Yj7iZxjXNzvDGpEFw4E2sYzii2ko4Lpc=;
- b=IqJIWHSLgCHWmAjKqdesD/SFKdOW3A76S1+4Eu4NKOfVXPZ8S7sKZbgDvdIHPe6ya1
- +E5dSBP/gacpBjdRBEXui3eR3fVNmPgTdZSlT0jeibmhPhz/xO73bDhPwp3G8xg6GoYd
- Bgtflwa9diaqdna5YVfTgpE+RfhQeJRDRwbScr9NIefz6iXDEjg4FJrfPe8DX64mvGnS
- cxeiW2oCyFI5CNj0zbgvlR+4MayeQzBm7znN0WMQoNqdq0GpVXpj4aHIYuHwYZ09gXcw
- 7BT6pHOibui+EvvhQOilMIsVcAco9f9U7ZmetzJcmTZp351AWwXddmR5ML6N+i5AFAqt
- MkTg==
-X-Gm-Message-State: APjAAAX6e7jTuFTFuN4ShcNOcOSivLkkwFFQXQSncq1tmNwDQzpg0O+v
- 1CxGUot7TdKPCzvaW+1rWUE=
-X-Google-Smtp-Source: APXvYqyTjMcUeH7cKtM9ez8brS0M2L7PogMF1Pn26x5fiPtQY2s/TzFZyoXXnejWHprywDHCWV88IA==
-X-Received: by 2002:a2e:9213:: with SMTP id k19mr73854900ljg.237.1564949860364; 
- Sun, 04 Aug 2019 13:17:40 -0700 (PDT)
+ bh=aobqP46odx3tunBAtyyrec00lPA6Ep/KC6NYpNeo17U=;
+ b=DBDQtCEtQ3HvwUprTeyY4bf4kcW5Bi5gDBgI26ZI/k9NBSpIq7O8h4V0Qgqb0eOjm1
+ 2C6Q4nNtEm+Pr9q5tyMlxMRn8+6GcSM4l1dE5xSW71O6zTYwbLeSAyoT4ryzpeRGLQGd
+ avddXIb2xKlNg1ykqP4lmxgF7xjzmtRT7UNaoMevtnBQFTsK/z0dtHXpV/v5D+TIfooC
+ H9zbor3hR+c7DvhrVvFD1PCivXZMIytmjpDmwwCMoakUfVu5WD/zxLQp07HWgz0oxzZv
+ 5tP1mFOH5Vpitvi9pFLDWCSN1NXslIiLINb96cvan6qeTFmudqSZPrzkBFfoEjoTltYc
+ +sLQ==
+X-Gm-Message-State: APjAAAVZHGHMgm6RV63PhXbVdMRzTdH/uTVZIDFtQTdasj4v+xZA08ob
+ X0T0X1u+ZUeYYlWVmEFDQNs=
+X-Google-Smtp-Source: APXvYqzTqaOH/E4yWYEObO2R5wACA7U9nuaIZddLKnxycMIdLIM6Ra7WWa7AU5/RHuBYEwNpuEELQA==
+X-Received: by 2002:ac2:4289:: with SMTP id m9mr5299981lfh.49.1564949863271;
+ Sun, 04 Aug 2019 13:17:43 -0700 (PDT)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- p87sm16540794ljp.50.2019.08.04.13.17.38
+ p87sm16540794ljp.50.2019.08.04.13.17.41
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 04 Aug 2019 13:17:39 -0700 (PDT)
+ Sun, 04 Aug 2019 13:17:42 -0700 (PDT)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH v1 14/16] drm/panel: call prepare/enable only once
-Date: Sun,  4 Aug 2019 22:16:35 +0200
-Message-Id: <20190804201637.1240-15-sam@ravnborg.org>
+Subject: [PATCH v1 15/16] drm/panel: add backlight support
+Date: Sun,  4 Aug 2019 22:16:36 +0200
+Message-Id: <20190804201637.1240-16-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190804201637.1240-1-sam@ravnborg.org>
 References: <20190804201637.1240-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_131742_015551_F1E886F5 
-X-CRM114-Status: GOOD (  17.54  )
+X-CRM114-CacheID: sfid-20190804_131744_954548_24A5A10B 
+X-CRM114-Status: GOOD (  20.88  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -130,19 +130,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Many panel drivers duplicate logic to prevent prepare to be called
-for a panel that is already prepared.
-Likewise for enable.
+Panels often supports backlight as specified in a device tree.
+Update the drm_panel infrastructure to support this to
+simplify the drivers.
 
-Implement this logic in drm_panel so the individual drivers
-no longer needs this.
-A panel is considered prepared/enabled only if the prepare/enable call
-succeeds.
-For disable/unprepare it is unconditionally considered
-disabled/unprepared.
+With this the panel driver just needs to add the following to the
+probe() function:
 
-This allows calls to prepare/enable again, even if there were
-some issue disabling a regulator or similar during disable/unprepare.
+    err = drm_panel_of_backlight(panel);
+    if (err)
+            return err;
+
+Then drm_panel will handle all the rest.
 
 Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
 Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
@@ -153,172 +152,136 @@ Cc: Sam Ravnborg <sam@ravnborg.org>
 Cc: David Airlie <airlied@linux.ie>
 Cc: Daniel Vetter <daniel@ffwll.ch>
 ---
- drivers/gpu/drm/drm_panel.c | 66 ++++++++++++++++++++++++++++++-------
- include/drm/drm_panel.h     | 21 ++++++++++++
- 2 files changed, 75 insertions(+), 12 deletions(-)
+ drivers/gpu/drm/drm_panel.c | 41 +++++++++++++++++++++++++++++++++++++
+ include/drm/drm_panel.h     | 23 +++++++++++++++++++++
+ 2 files changed, 64 insertions(+)
 
 diff --git a/drivers/gpu/drm/drm_panel.c b/drivers/gpu/drm/drm_panel.c
-index da19d5b4a2f4..0853764040de 100644
+index 0853764040de..d8139674b883 100644
 --- a/drivers/gpu/drm/drm_panel.c
 +++ b/drivers/gpu/drm/drm_panel.c
-@@ -66,10 +66,21 @@ EXPORT_SYMBOL(drm_panel_init);
+@@ -21,6 +21,7 @@
+  * DEALINGS IN THE SOFTWARE.
   */
- int drm_panel_prepare(struct drm_panel *panel)
- {
--	if (panel && panel->funcs && panel->funcs->prepare)
--		return panel->funcs->prepare(panel);
-+	int ret = -ENOSYS;
  
--	return panel ? -ENOSYS : -EINVAL;
-+	if (!panel)
-+		return -EINVAL;
-+
-+	if (panel->prepared)
-+		return 0;
-+
-+	if (panel->funcs && panel->funcs->prepare)
-+		ret = panel->funcs->prepare(panel);
-+
-+	if (ret >= 0)
-+		panel->prepared = true;
-+
-+	return ret;
- }
- EXPORT_SYMBOL(drm_panel_prepare);
++#include <linux/backlight.h>
+ #include <linux/err.h>
+ #include <linux/module.h>
  
-@@ -85,10 +96,21 @@ EXPORT_SYMBOL(drm_panel_prepare);
-  */
- int drm_panel_enable(struct drm_panel *panel)
- {
--	if (panel && panel->funcs && panel->funcs->enable)
--		return panel->funcs->enable(panel);
-+	int ret = -ENOSYS;
+@@ -110,6 +111,7 @@ int drm_panel_enable(struct drm_panel *panel)
+ 	if (ret >= 0)
+ 		panel->enabled = true;
  
--	return panel ? -ENOSYS : -EINVAL;
-+	if (!panel)
-+		return -EINVAL;
-+
-+	if (panel->enabled)
-+		return 0;
-+
-+	if (panel->funcs && panel->funcs->enable)
-+		ret = panel->funcs->enable(panel);
-+
-+	if (ret >= 0)
-+		panel->enabled = true;
-+
-+	return ret;
++	backlight_enable(panel->backlight);
+ 	return ret;
  }
  EXPORT_SYMBOL(drm_panel_enable);
+@@ -134,6 +136,8 @@ int drm_panel_disable(struct drm_panel *panel)
+ 	if (!panel->enabled)
+ 		return 0;
  
-@@ -104,10 +126,20 @@ EXPORT_SYMBOL(drm_panel_enable);
-  */
- int drm_panel_disable(struct drm_panel *panel)
- {
--	if (panel && panel->funcs && panel->funcs->disable)
--		return panel->funcs->disable(panel);
-+	int ret = -ENOSYS;
++	backlight_disable(panel->backlight);
++
+ 	if (panel->funcs && panel->funcs->disable)
+ 		ret = panel->funcs->disable(panel);
  
--	return panel ? -ENOSYS : -EINVAL;
-+	if (!panel)
+@@ -308,6 +312,43 @@ struct drm_panel *of_drm_find_panel(const struct device_node *np)
+ EXPORT_SYMBOL(of_drm_find_panel);
+ #endif
+ 
++#ifdef CONFIG_BACKLIGHT_CLASS_DEVICE
++/**
++ * drm_panel_of_backlight - use backlight device node for backlight
++ * @panel: DRM panel
++ *
++ * Use this function to enable backlight handling if your panel
++ * uses device tree and has a backlight handle.
++ *
++ * When panel is enabled backlight will be enabled after a
++ * successfull call to &drm_panel_funcs.enable()
++ *
++ * When panel is disabled backlight will be disabled before the
++ * call to &drm_panel_funcs.disable().
++ *
++ * A typical implementation for a panel driver supporting device tree
++ * will call this function and then backlight just works.
++ *
++ * Return: 0 on success or a negative error code on failure.
++ */
++int drm_panel_of_backlight(struct drm_panel *panel)
++{
++	struct backlight_device *backlight;
++
++	if (!panel || !panel->dev)
 +		return -EINVAL;
 +
-+	if (!panel->enabled)
-+		return 0;
++	backlight = devm_of_find_backlight(panel->dev);
 +
-+	if (panel->funcs && panel->funcs->disable)
-+		ret = panel->funcs->disable(panel);
++	if (IS_ERR(backlight))
++                return PTR_ERR(backlight);
 +
-+	panel->enabled = false;
++	panel->backlight = backlight;
++	return 0;
++}
++EXPORT_SYMBOL(drm_panel_of_backlight);
++#endif
 +
-+	return ret;
- }
- EXPORT_SYMBOL(drm_panel_disable);
- 
-@@ -124,10 +156,20 @@ EXPORT_SYMBOL(drm_panel_disable);
-  */
- int drm_panel_unprepare(struct drm_panel *panel)
- {
--	if (panel && panel->funcs && panel->funcs->unprepare)
--		return panel->funcs->unprepare(panel);
-+	int ret = -ENOSYS;
- 
--	return panel ? -ENOSYS : -EINVAL;
-+	if (!panel)
-+		return -EINVAL;
-+
-+	if (!panel->prepared)
-+		return 0;
-+
-+	if (panel->funcs && panel->funcs->unprepare)
-+		ret = panel->funcs->unprepare(panel);
-+
-+	panel->prepared = false;
-+
-+	return ret;
- }
- EXPORT_SYMBOL(drm_panel_unprepare);
- 
+ MODULE_AUTHOR("Thierry Reding <treding@nvidia.com>");
+ MODULE_DESCRIPTION("DRM panel infrastructure");
+ MODULE_LICENSE("GPL and additional rights");
 diff --git a/include/drm/drm_panel.h b/include/drm/drm_panel.h
-index 624bd15ecfab..7493500fc9bd 100644
+index 7493500fc9bd..31349c2393b7 100644
 --- a/include/drm/drm_panel.h
 +++ b/include/drm/drm_panel.h
-@@ -65,6 +65,9 @@ struct drm_panel_funcs {
- 	 * @prepare:
- 	 *
- 	 * Turn on panel and perform set up.
-+	 * When the panel is successfully prepared the prepare() function
-+	 * will not be called again until the panel has been unprepared.
-+	 *
- 	 */
- 	int (*prepare)(struct drm_panel *panel);
+@@ -28,6 +28,7 @@
+ #include <linux/errno.h>
+ #include <linux/list.h>
  
-@@ -72,6 +75,8 @@ struct drm_panel_funcs {
- 	 * @enable:
- 	 *
- 	 * Enable panel (turn on back light, etc.).
-+	 * When the panel is successfully enabled the enable() function
-+	 * will not be called again until the panel has been disabled.
++struct backlight_device;
+ struct device_node;
+ struct drm_connector;
+ struct drm_device;
+@@ -59,6 +60,10 @@ struct display_timing;
+  *
+  * To save power when no video data is transmitted, a driver can power down
+  * the panel. This is the job of the .unprepare() function.
++ *
++ * Backlight can be handled automatically if configured using
++ * drm_panel_of_backlight(). Then the driver do not need to implement the
++ * functionality to enable/disable backlight.
+  */
+ struct drm_panel_funcs {
+ 	/**
+@@ -139,6 +144,15 @@ struct drm_panel {
  	 */
- 	int (*enable)(struct drm_panel *panel);
+ 	struct device *dev;
  
-@@ -79,6 +84,7 @@ struct drm_panel_funcs {
- 	 * @disable:
- 	 *
- 	 * Disable panel (turn off back light, etc.).
-+	 * If the panel is already disabled the disable() function is not called.
- 	 */
- 	int (*disable)(struct drm_panel *panel);
- 
-@@ -86,6 +92,7 @@ struct drm_panel_funcs {
- 	 * @unprepare:
- 	 *
- 	 * Turn off panel.
-+	 * If the panel is already unprepared the unprepare() function is not called.
- 	 */
- 	int (*unprepare)(struct drm_panel *panel);
- 
-@@ -145,6 +152,20 @@ struct drm_panel {
- 	 * Panel entry in registry.
- 	 */
- 	struct list_head list;
-+
 +	/**
-+	 * @prepared:
++	 * @backlight:
 +	 *
-+	 * Set to true when the panel is successfully prepared.
++	 * Backlight device, used to turn on backlight after
++	 * the call to enable(), and to turn off
++	 * backlight before call to disable().
 +	 */
-+	bool prepared;
++	struct backlight_device *backlight;
 +
-+	/**
-+	 * @enabled:
-+	 *
-+	 * Set to true when the panel is successfully enabled.
-+	 */
-+	bool enabled;
- };
+ 	/**
+ 	 * @funcs:
+ 	 *
+@@ -193,4 +207,13 @@ static inline struct drm_panel *of_drm_find_panel(const struct device_node *np)
+ }
+ #endif
  
- void drm_panel_init(struct drm_panel *panel);
++#if defined(CONFIG_BACKLIGHT_CLASS_DEVICE) && defined(CONFIG_DRM_PANEL)
++int drm_panel_of_backlight(struct drm_panel *panel);
++#else
++static inline int drm_panel_of_backlight(struct drm_panel *panel)
++{
++	return -EINVAL;
++}
++#endif
++
+ #endif
 -- 
 2.20.1
 
