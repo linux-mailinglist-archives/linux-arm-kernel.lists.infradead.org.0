@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33DB880B8C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 17:52:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBA2980B94
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 18:02:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=52mu62gqgVXW+BCxFvYkaUUYfA0lxIvi+89SCZUh8XI=; b=ocUr1ARYFNlyXv
-	ppyKP9HIvUWiCNGZJ0usdN9AjQKJpPTIRPFNJwQAH0OOC9KdBxLjMYx2grm4HJYFUvvBH0jKozQ/E
-	oedwJpy7Vg4vt3WWYZQ7OTwBp+auCUJm8dMSMJ7LZf6I9sJMZPWFO/5gWekByBAD7lyhjqx1VSQj1
-	6UXTbv/S9y6QHLzKFRF8yICEckBxuzoMZTa8Ko24hMIf2PtjiqvC834Ak2UGKLvefiWnzmElaFgvp
-	jLOuN3M3VgoJUGEQlUOnJ5sCTZwlyYaRWTfqW3TjvWNDTfhxWt5n6fP98VFLm5xZYbrHMpZyrjxYS
-	kjP865t0IAjqMVdipWaQ==;
+	List-Owner; bh=yTqjslAtHU7BESsDncZ6rApcncg0Tcmko6o4ql+o6Ms=; b=qp05D4nXvKCezc
+	pR3U/avesQ9k8rE9fgNjYge9DD+6cuW12HweY5pzr5FzeCjD5rKHVQ5FRudyd2jt7VKL3tGqZfENR
+	0/q//0N4mBQHngIc7oK9hCPFrMfcTCTJSHqiZMc/V0aXVDB/GrAfu+xY6A1gmvQnYCOims9sSefVZ
+	43Z1o4dbsRS0tdoDdBPg2oKCXzo1S2e5e92NhBcEd3a3kYabgzKM8wbPAZnbdSnIGx/um/K/UKrNM
+	M5gPyrcLvoAWFczykbsNqp9Af04IERSaBT+XcmW1QbQtukjAOsyqIqvD4bW+8vTu3KasMkitYWd26
+	ryWp+38GHYglFygiqyew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huInr-0005Ay-SJ; Sun, 04 Aug 2019 15:52:11 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1huIxi-0008Dk-Th; Sun, 04 Aug 2019 16:02:22 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huInm-0005AU-Km
- for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 15:52:07 +0000
-Received: by mail-pg1-x542.google.com with SMTP id z14so1170820pga.5
+ id 1huIxc-0008DR-NX
+ for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 16:02:17 +0000
+Received: by mail-pf1-x442.google.com with SMTP id m30so38360730pff.8
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 04 Aug 2019 08:52:06 -0700 (PDT)
+ Sun, 04 Aug 2019 09:02:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=3ooigmBUNXeViX1CED6/aN3RgJTiHQf1ueDyPW+vnG4=;
- b=kCbfVhosZXDYeKKIYzF+E8hmsz5gJO6/CUi1zEOrgK4/2/cSLuEUS+rVgueQns8DKW
- 8JIMQM4lP0nYSZT16pIzwDXVqa/bgjy8+Y+vjfebV1JGrv4722kxKJjGZ+rIPaZbb8bE
- iZFnQKNw8I1FUR/xpzhSOHrTZnF6fSVNWimM3m/ta5bA2v8/Z3hCR6+PR6FFc8Lv0/sp
- 9hh7CV6RPkB6LtEqkCVeT/ILTPcgLWeU/IS06pvqNbYwUdFrqB3FVsHEcIFrdXV2Bjjs
- vCGThWrlm04Z41REPTlKP+nor2Szj0YFi02Hfh4Gjanq/zRXN/2JbbVgAP6/7bxbCds9
- JA3Q==
+ bh=LeGjYEzEnNd+LP7E7X1hGpTj7PNVozz8mf2RHENRFPs=;
+ b=LQytGn6C2tlkbNTMXkKZ2UyVakSPWDuBvnr2zYpndh4VptsQvTykzeffX86XeALTgk
+ u8V7q4xuIO4nY1eainybsqRRCkUU9UZlaffx/Mex4LR1mcNDxNllViZbEwkZoTaK522W
+ wNmbSEB1xFONhovQ+m5fvb60LMQaLRZo0Rr3nclUoBwKBFLotbBQx8P+D4Hk6VSSomcf
+ uAFJYT+MpMD/OhRYnG2IH5A9GbIq8Y8dH6GuknoM6u4uPRzsp2pZ8WQGQtUqzKdk/t6M
+ QjVvRlovZa8Le8dedeV0qILbbCFLc6E1OaiO2i3+6DMhS2WVshgPVhzxMovkkd/M6ZvF
+ JLRQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=3ooigmBUNXeViX1CED6/aN3RgJTiHQf1ueDyPW+vnG4=;
- b=LROvi7FuYamL360wR9VTuEbZoGzRGgeRmHwhCCTEzHL0uVANHDMF80cjGOeOGvrVxy
- /JnsZHj5OS63P+HmDXJzwOO5wCx0YNtqQ41xxNA3PTbkD+Ekh87+J0UCfB3KWlh5IenT
- j+sqw3aDQ+EC7vSlZ+zYIPd6iR2dSPawTCSNTXzy2BUBfczr28Eg1kTP14Q2rwcQ0mar
- 1HdQImQliic3qPaN6dBoUhIjSfx372UITTae+u1N/Gf70kU9bLw7LcLuzrSuMVC7LU+g
- 2pDMK1QUKEyyiJzOWK7YwTe6FZD47pHqlj5c/U4G5LGtTMc4Swjf3HOr5JF0rBpfQtz5
- GhJQ==
-X-Gm-Message-State: APjAAAUMpuR6gyYnqj7Fv1pFGY6FLRwlqdpuxhUM77eJnpS7sHU4CcpJ
- S0CbzIq691MZ5T4lIyhtEVc=
-X-Google-Smtp-Source: APXvYqypLtPwZWYXKROQYBGOXS0sdWqNpDQP9LloWbKQEcefx8fIM8m6X6/T88nZ4FbrH0W7dZkU3A==
-X-Received: by 2002:a17:90a:376f:: with SMTP id
- u102mr14236145pjb.5.1564933925920; 
- Sun, 04 Aug 2019 08:52:05 -0700 (PDT)
+ bh=LeGjYEzEnNd+LP7E7X1hGpTj7PNVozz8mf2RHENRFPs=;
+ b=bUPcpz1qdGXsp8CyJh22poVZnlKdOth5chAflyxJukBuRRNjoAypt0Xl45CHqBA+C1
+ WIQU6WUx51PnieaE6Z+JAVhiXhkbVFeG/cEwpkJCG1OCmnj+JqaZvwYDe8t/MLMAttrQ
+ piPxxAoP6K3x+U0dQ+MzTzwvHMpDSlcGGhTUur8xSasrcQjjEaBtkG3B1yTRIOicVdJz
+ vwqHBfXpAwo9ad/6A+5FlLFXsc8lgrucNbdbEaeEqJJkiQB7p8BKXROEb1xi/fFEW1TQ
+ Mu4cGX2Y0bAv2FuMFKsBxGj1FX1CJX++wpAuwOXF9YRhum4Z7Q/LE0Aocb3TTN276RlM
+ VU2A==
+X-Gm-Message-State: APjAAAUtC5lPWGcDt6ZMnmvxF+c5sD5vPdpyze+XEz7JLv0k88zrEts2
+ LYeTSxwt6nqWl1xGn1J8aLc=
+X-Google-Smtp-Source: APXvYqyW3HshrRKiqWhhL7Xm0gBHnBObsgshWMul17uZfpv0UekHsFJKsZHv4yQsC3HGKCgiksvnzA==
+X-Received: by 2002:a63:89c2:: with SMTP id
+ v185mr27001405pgd.241.1564934535868; 
+ Sun, 04 Aug 2019 09:02:15 -0700 (PDT)
 Received: from localhost.localdomain ([122.163.105.8])
- by smtp.gmail.com with ESMTPSA id 10sm96504004pfb.30.2019.08.04.08.52.03
+ by smtp.gmail.com with ESMTPSA id v22sm80865042pgk.69.2019.08.04.09.02.12
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 04 Aug 2019 08:52:05 -0700 (PDT)
+ Sun, 04 Aug 2019 09:02:15 -0700 (PDT)
 From: Nishka Dasgupta <nishkadg.linux@gmail.com>
 To: linus.walleij@linaro.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org
-Subject: [PATCH] pinctrl: nomadik: abx500: Add of_node_put() before return
-Date: Sun,  4 Aug 2019 21:21:54 +0530
-Message-Id: <20190804155154.4916-1-nishkadg.linux@gmail.com>
+ linux-gpio@vger.kernel.org, tomasz.figa@gmail.com, krzk@kernel.org,
+ s.nawrocki@samsung.com, kgene@kernel.org, linux-samsung-soc@vger.kernel.org
+Subject: [PATCH] pinctrl: samsung: exynos: Add of_node_put() before return
+Date: Sun,  4 Aug 2019 21:32:00 +0530
+Message-Id: <20190804160200.5139-1-nishkadg.linux@gmail.com>
 X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_085206_679585_62715357 
-X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-CacheID: sfid-20190804_090216_770268_56E9E4EC 
+X-CRM114-Status: UNSURE (   9.65  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [122.163.105.8 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -114,21 +115,25 @@ Issue found with Coccinelle.
 
 Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- drivers/pinctrl/nomadik/pinctrl-abx500.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/pinctrl/samsung/pinctrl-exynos.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/pinctrl/nomadik/pinctrl-abx500.c b/drivers/pinctrl/nomadik/pinctrl-abx500.c
-index c3595200e1e6..7aa534576a45 100644
---- a/drivers/pinctrl/nomadik/pinctrl-abx500.c
-+++ b/drivers/pinctrl/nomadik/pinctrl-abx500.c
-@@ -815,6 +815,7 @@ static int abx500_dt_node_to_map(struct pinctrl_dev *pctldev,
- 				&reserved_maps, num_maps);
- 		if (ret < 0) {
- 			pinctrl_utils_free_map(pctldev, *map, *num_maps);
-+			of_node_put(np);
- 			return ret;
+diff --git a/drivers/pinctrl/samsung/pinctrl-exynos.c b/drivers/pinctrl/samsung/pinctrl-exynos.c
+index ebc27b06718c..e7f4cbad2c92 100644
+--- a/drivers/pinctrl/samsung/pinctrl-exynos.c
++++ b/drivers/pinctrl/samsung/pinctrl-exynos.c
+@@ -486,8 +486,10 @@ int exynos_eint_wkup_init(struct samsung_pinctrl_drv_data *d)
+ 		if (match) {
+ 			irq_chip = kmemdup(match->data,
+ 				sizeof(*irq_chip), GFP_KERNEL);
+-			if (!irq_chip)
++			if (!irq_chip) {
++				of_node_put(np);
+ 				return -ENOMEM;
++			}
+ 			wkup_np = np;
+ 			break;
  		}
- 	}
 -- 
 2.19.1
 
