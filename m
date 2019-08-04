@@ -2,75 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C764A80B14
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 15:14:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5357B80B2A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  4 Aug 2019 15:27:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ojO2PunuCmIu8vSXiGTk2l7S8zmLKShBCkb815yMP0A=; b=oT+YnSh2VvsHrq
-	/93+LoLjIBjxUUkXZ+aLg+fT8ems2zyohaxrIbIOkEOBl7T3AUi9FRqDIBjJETOTrNXD3L4QSOkLh
-	NZkrGLhwgABXaMFRhTIu1x8lROg/qPrwHp8jLBKTV9WcW2epA6pdmBJVtDvzKf1fWzEIorGrZii6G
-	iVK0b8pChX174juh4M6v2AqZZa3qHuAWdtTgm3Ty9hQshjk4+hC7Ql5owEqQBbJt7ibbQ+1z5qcWi
-	3m13Y6oJfpCLMVPGIU5TeQKOKD1c/xparuFzaBZARaFcA8XjPsuUjqo4KcXZ4iGZs8saGJ01nrTaQ
-	u6qJBbyBBdUx76HQQRbw==;
+	List-Owner; bh=n7sPBqbHxP9n9yTeSW54EwpHCxz/9qADqJGf5MwxBJk=; b=QPsFaW2ATv3tOa
+	2fUY0nhFQQ30q7+b5Nb0NT2upFA5PtKaTx88jKLaK37iByYLzcNmIl+GMKZPsn6+44/tTUCsyYYJg
+	U1TEnuzloqU0kzzIhTsBSJDmQIcyJjuybpH62SqpX5iHKHwWWQ/oqhPC0xLdL53T1ur4L1fFy0L80
+	uTGF1R6qYWKYxB0pzZMSlLINhwVKPGsQqvZnXjTR+9YL7JVtSWyc8/6lgBTp32ZgYNdJYclIHAuT4
+	UdP3tHWPEfUImi9lfJ2lT51GmzhXuskHEqR5H7SwR10XdCCo4zbN5kXoDytGariIPs8vJGt+Z+8iZ
+	+XxT+TQqx5LemvX6RnqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huGKu-00020N-H9; Sun, 04 Aug 2019 13:14:08 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1huGXb-0006VR-Hp; Sun, 04 Aug 2019 13:27:15 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huGKn-0001zz-LB
- for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 13:14:03 +0000
-Received: by mail-io1-xd42.google.com with SMTP id e20so29019397iob.9
+ id 1huGXV-0006V4-Hr
+ for linux-arm-kernel@lists.infradead.org; Sun, 04 Aug 2019 13:27:11 +0000
+Received: by mail-io1-xd41.google.com with SMTP id h6so36825476iom.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 04 Aug 2019 06:13:58 -0700 (PDT)
+ Sun, 04 Aug 2019 06:27:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=saSzK0dvs8XEQEZsxQgLsa/jfT6Yv+ibyJWmYYiklBA=;
- b=geWo14fYYllSOneTLqBErKdiK7ERvlPHlGjC5CNhd6ZItZ3k1kvp9ngEW3u2vRPtJ3
- WGw0T6+kiq/5R5+EMVVd1z4wufIgBazGDkBBA3TOHEQrzefWR7V26gGXLbBDiXbLUueA
- xHPNBnHwqsR4XMpW8becJW8W2U34CjdumRkC5/4zZRbR6VPk7TwTcsliTW2arblMWQpP
- AeWTGZ6xByGTSp9lyPlnzC1ox/S0C10Si50FsY0bzU9oPHTsfLP69X5D/AFyqgyv4UW9
- WLSWa41/Mrfk17ceIOF0nJA7gO0g3OwPCteypTAx8Ns+1a+AXWAWUeviQD+HCLewGQxX
- D3rw==
+ :cc; bh=tS5uvmiliz1mU/YmGkGJRsd/ytkogwy6sWjqAzuDITU=;
+ b=T9fW8geSmUnaNHCs9fhYEqK5Azpc3UYAGmAXkDoZywVmLa79kJRiO647pYzQfkgNQB
+ 4V3Xy3Y/lRfxIyKT9teno/e5FELhKdxad7cAdSinqjvI301fXau/+MHx2IjYg1k8sLWS
+ YMaUj69jN7pZMkKROSHzTT5xCQBhzvNS/8fLz/I1Sf0dr/hAlC2qfjEgfkyM849kkGqE
+ 9O4VeAUjkDs8ygUoy8S1Sa55q1hYmeULf/gU7JQKHu8ktKZ2WVnRTGpsFPR0SFpGngBk
+ HjkcHtlFtljs53ddyNnPfKPThUbIEFplESG4W63AGCXZiJwj9DXjAO3mpTAQ/e8jh09P
+ uF6Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=saSzK0dvs8XEQEZsxQgLsa/jfT6Yv+ibyJWmYYiklBA=;
- b=CH5isRVkS+UW+pTMS7NOGZeYWz4x0AKEMI9ARE7sbvkLPIeehUQeCye4aYBvDoHM+E
- z0vrrKJPbVujcDzAAj5jUAPDqAqsPHkWeyGCv2Vy/hBRtLgK/7t8+uVy1XqFYrVTEKRn
- FhR/D52/ItCloPaUnKUTo7TFq0kYtTS9iUSRPHGxGoop8oL8PwJa34Al19yfL+8+QhB5
- 7Dm9DL5zX5INO1dBEPBV0M7j1XspVhD5rO/Wi+XNTKZbekdb2kt/dOvNNDvQZF7tte2i
- 8ufYD37/0YP4w9flhTQbLFKVyfPsiZ0fl12VvsqL55GrY3fIoXgYmhSBCS+gW/14x8TT
- 8BPA==
-X-Gm-Message-State: APjAAAVi3CLLUmKeRHBdsvBn2rsmQH4hfAzxWNzw46ov6D8N4tNf7p71
- OCMNJRvCfgffDPRrMki1uK2CUYNCfVZtXPoSMNygIw==
-X-Google-Smtp-Source: APXvYqzEYr77iikFeNno1hrmPbqZg/KxGzo98SGm01ZcJJlHumIfe99EUO6Oekdfe3TQ4CmxpvBw9XwRjdjCCaw+WYs=
-X-Received: by 2002:a5d:9dc7:: with SMTP id 7mr980416ioo.237.1564924437341;
- Sun, 04 Aug 2019 06:13:57 -0700 (PDT)
+ bh=tS5uvmiliz1mU/YmGkGJRsd/ytkogwy6sWjqAzuDITU=;
+ b=D8k+NFsa5UQpmvfPovz43Xcd3FrX7xO95Da//jb2ML2clJFRaq0GyRsO8dE6CB01M8
+ FMyTZET69aexv9Fy+c45jytrKzL3IDFQUPhqQw6Sl6S3WVXaFLnBOXbf8M3woUAH0tp0
+ rJtXRkiWsoiKvPMMID8U+W5/PTFJEbAeBl0HZZxL0xgZyS3olXqLcbrE+d3fcw+hC3Cq
+ XzlzCfnZbPEbcirwIjD46Cwo6DgwTnT2sdH2Wu9aKsigfwo+jBRzuL2WOH4dgb6nXVil
+ 2FVSLu32nmuJErhdPhr2uH4tx+yFB7BxK63qX2bJQozCHxefk/GC8Mla1UJBmWrKjr9u
+ 0O0Q==
+X-Gm-Message-State: APjAAAXem3II1go+IBk3MxRwvzcFUwqsw6HAwTazRXfTHxO8kRKb5BHA
+ 7Ft+kMr94UfeF3kopE7Z+EicUKex5RQCsDqe75IpDg==
+X-Google-Smtp-Source: APXvYqwJnRj3hHt8hX06Ikz59LOkws5DSeOgslPj5QNS8XUCXqbEDqez78l1Qpt7Le1n17q/mOBWTihi2CE1lC8KCt4=
+X-Received: by 2002:a5d:9613:: with SMTP id w19mr3099380iol.140.1564925228288; 
+ Sun, 04 Aug 2019 06:27:08 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190730125157.884-1-andrew.murray@arm.com>
- <20190730125157.884-7-andrew.murray@arm.com>
- <9df0eea2-a9bd-3a93-ca51-9c3d2391a1cf@arm.com>
- <20190802143751.GP56241@e119886-lin.cambridge.arm.com>
-In-Reply-To: <20190802143751.GP56241@e119886-lin.cambridge.arm.com>
+References: <20190801172323.18359-1-mathieu.poirier@linaro.org>
+ <20190801181739.GB5048@kroah.com>
+ <CANLsYky1vC-=zNPvOmWt1wLd5A4jcD+sh=Hwdq0rwhW=b1cdwQ@mail.gmail.com>
+ <20190802091028.GA14004@kroah.com>
+In-Reply-To: <20190802091028.GA14004@kroah.com>
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Sun, 4 Aug 2019 07:13:45 -0600
-Message-ID: <CANLsYkyVMRh_L5BfwWk=s-obh+xiZfjwqXUJkwgaZYWmc6Kuww@mail.gmail.com>
-Subject: Re: [PATCH v4 6/6] dt-bindings: arm: coresight: Add support for
- coresight-needs-save-restore
-To: Andrew Murray <andrew.murray@arm.com>
+Date: Sun, 4 Aug 2019 07:26:57 -0600
+Message-ID: <CANLsYkzc3zvTUwH2smiJmMtif6hToOXddA2r0csgYrzdBfkvRw@mail.gmail.com>
+Subject: Re: [PATCH 0/1] coresight: Fix for v5.3-rc3
+To: Greg KH <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_061401_724789_EC688868 
-X-CRM114-Status: GOOD (  25.52  )
+X-CRM114-CacheID: sfid-20190804_062709_610815_7BF88BCE 
+X-CRM114-Status: GOOD (  25.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -80,9 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,82 +93,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al Grant <Al.Grant@arm.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Coresight ML <coresight@lists.linaro.org>, Sudeep Holla <Sudeep.Holla@arm.com>,
- Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Mike Leach <mike.leach@linaro.org>
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2 Aug 2019 at 08:37, Andrew Murray <andrew.murray@arm.com> wrote:
+On Fri, 2 Aug 2019 at 03:10, Greg KH <gregkh@linuxfoundation.org> wrote:
 >
-> On Fri, Aug 02, 2019 at 11:40:54AM +0100, Suzuki K Poulose wrote:
-> > Hi Andrew,
-> >
-> > On 30/07/2019 13:51, Andrew Murray wrote:
-> > > Some coresight components, because of choices made during hardware
-> > > integration, require their state to be saved and restored across CPU low
-> > > power states.
+> On Thu, Aug 01, 2019 at 02:16:46PM -0600, Mathieu Poirier wrote:
+> > On Thu, 1 Aug 2019 at 12:17, Greg KH <gregkh@linuxfoundation.org> wrote:
 > > >
-> > > The software has no reliable method of detecting when save/restore is
-> > > required thus let's add a binding to inform the kernel.
+> > > On Thu, Aug 01, 2019 at 11:23:22AM -0600, Mathieu Poirier wrote:
+> > > > Good morning Greg,
+> > > >
+> > > > Here is a fix I'd like you to consider for this cycle.  Do you think you
+> > > > could apply it to driver-core-next rather than char-misc-next?
 > > >
-> > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > > ---
-> > >   Documentation/devicetree/bindings/arm/coresight.txt | 3 +++
-> > >   1 file changed, 3 insertions(+)
+> > > All of my -next branches are for 5.4-rc1, not 5.3 (i.e. the "next"
+> > > kernel).
 > > >
-> > > diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
-> > > index fcc3bacfd8bc..7cbdb7893af8 100644
-> > > --- a/Documentation/devicetree/bindings/arm/coresight.txt
-> > > +++ b/Documentation/devicetree/bindings/arm/coresight.txt
-> > > @@ -92,6 +92,9 @@ its hardware characteristcs.
-> > >     * arm,cp14: must be present if the system accesses ETM/PTM management
-> > >       registers via co-processor 14.
-> > > +   * arm,coresight-needs-save-restore: boolean. Indicates that software
-> > > +     should save/restore state across power down.
-> > > +
+> > > So either one of them isn't going to matter to you for 5.3-final.
+> > >
+> > > > My current
+> > > > coresight branch is based on driver-core-next to pick up Suzuki's
+> > > > generic device lookup helpers patchset [1]. Applying it to char-misc-next
+> > > > will create two different signature for the same patch, something that
+> > > > gives Stephen a hard time when building the linux-next tree.
+> > >
+> > > Why would Suzuki's patch matter for 5.3-final?
 > >
-> > Do you think we could be a bit more descriptive here about when people could add
-> > it to the DT ? Here we don't mention when someone should use this property and
-> > it may be added to platforms where it may be absolutely unnecessary. How about :
+> > There was a similar situation during the 5.2 cycle [1].  Here too we
+> > can fix a problem that is present in 5.3 rather than wait for 5.4.
 > >
-> > "Indicates that the hardware implementation may not honor the Powerup request
-> > from the software and thus might loose the register context on CPU power
-> > down (e.g, during CPUIdle). Software must save/restore the context during a
-> > CPU power transition cycle."
+> > [1]. https://www.spinics.net/lists/arm-kernel/msg736274.html
 >
-> How about the following:
->
-> "Indicates that the hardware will loose register context on CPU power down (e.g.
-> CPUIdle), despite the TRCPDCR.PU bit being set."
->
-> I'm keen to avoid making suggestions about what the kernel will do when it sees
-> this flag and thus prefer to focus on describing what the hardware does. So I
-> dropped your last sentence. However the name of the flag still implies policy
-> which I don't like.
->
-> I also changed the 'may not honor' wording, I'm not sure if this is really the
-> case or if the spec is open to interpretation.
->
-> It would great for this wording to also apply to other CS components though I
-> haven't investigated if these have a PU bit or something different.
+> But that has nothing to do with Suzuki's patch that is in my driver core
+> tree.  I still fail to see the dependency here.
 
-Exactly - the definition needs to be broad enough to apply to other CS
-components.  Mike what do you think would be appropriate for CTIs?
+There is indeed no correlation between the fix and the patches in the
+core tree.  When writing the original email I didn't know in what tree
+you would end up applying the patch and feared we'd end up having the
+same patch in two different tree.  Thanks to your explanation below
+this won't happen.
 
 >
-> Thanks,
->
-> Andrew Murray
->
+> > > > I also think this patch should go in stable but haven't marked it as such since
+> > > > it doesn't apply to any of the stable trees.  Once it is part of v5.3 I intend
+> > > > to send a new version of the patch that does apply cleanly to those trees.  Let
+> > > > me know if you want me to proceed differently.
+> > > >
+> > > > Thanks,
+> > > > Mathieu
+> > > >
+> > > > [1]. https://www.spinics.net/lists/dri-devel/msg219674.html
+> > > >
+> > > >
+> > > > Suzuki K Poulose (1):
+> > > >   coresight: Fix DEBUG_LOCKS_WARN_ON for uninitialized attribute
+> > > >
+> > > >  drivers/hwtracing/coresight/coresight-etm-perf.c | 1 +
+> > > >  1 file changed, 1 insertion(+)
+> > >
+> > > Why would this patch depend on anything in any of my trees?
 > >
-> > Cheers
-> > Suzuki
+> > I send you patches for inclusion in the next cycle and as such I
+> > thought it should be the same for fixes in the current cycle.  If that
+> > is not the case, should I send them directly to Linus?
+>
+> You can send me fixes to forward on to Linus for this current cycle, if
+> they are not depending on patches that are only for the -next release.
+>
+> I always keep 2 branches in my git trees:
+>         -linus : patches for Linus this release cycle
+>         -next  : patches for Linus the next release cycle
+>
+> If you have bugfixes, make them against my -linus branch and send them
+> on.  Odds are they don't have dependancies other than what is in Linus's
+> tree, so that's fine.
+
+Perfect, that's the link I was missing.
+
+Thanks,
+Mathieu
+
+>
+> If you have patches for the next cycle, send them against my -next
+> branch.
+>
+> thanks,
+>
+> greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
