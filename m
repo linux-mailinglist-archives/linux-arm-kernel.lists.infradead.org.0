@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3600814BF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 11:08:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CDDF814C2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 11:09:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0cmUr9gLep8r4gXi1USg/O+5OsGin9Q+EuwMwYyRiAs=; b=hpFeCXkbX1t/Iy
-	k1H76lDQA01CM+EsMt62w/HbBZpiYbHhRXOT5Jc+M6XE6rNaCneNtnZ805vuGWk6jQtGTtuQQMebf
-	J7DpPCSxZuJ4+D3querVfqxzsQo8VufVT29JwJ1GViH3UuO0zjEjDeC9eFtBC21bBByBvPJIIER2J
-	cQMKIIqki+dPl587nGUQPRWZpveJ6AWyazZ0IjYVPbtYqrs1Vz/keofQdDooIpVcKliGW4RU/9wzG
-	rEIfYAb02VLAKhw2zF5xgU90Rbw1tb2W7HWGN0yw04BQxqaA+htdPAA3FDc0/1NXBTeXfnHpidngi
-	mvvyea35j/TbNqwL5l5w==;
+	List-Owner; bh=lzKYmp32D4OhTNBL4v4RPYEjslImofZa7pkHiTLvtdE=; b=RCN5xcSZvxERLO
+	l3i8WlYfDipyeF+Wqn9melKZg5+F9a5zy06D7KpuJ4Mix74ns1IVUw9HDT1uaBFBbcalHwpblr3S4
+	c/nZZ/rAK2V5v393o/hetKPEM+s4lj5EtiVh+xVv53AnqgolpP1LdMpqpWvll6pwmNKMLvBFYuW0Z
+	K7+/8b548mKdBxxkzhpgh3cXY5lzzjkN5f2tT9KVNFGCplcLfTYjOCnWvH8eVZ6D/iGDInZ11wv6E
+	e2iBi6IanN7mGAarKi3tHAUT6PTO6xg9cVKHiTd243wZMsKBj/JPVJelqZSPZhgKYrJXxQ3WtDJGO
+	g48DQuvrM/B2+KgzYo0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huYys-0002MS-9m; Mon, 05 Aug 2019 09:08:38 +0000
-Received: from mail-eopbgr40048.outbound.protection.outlook.com ([40.107.4.48]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1huYzS-0002og-7h; Mon, 05 Aug 2019 09:09:14 +0000
+Received: from mail-eopbgr20087.outbound.protection.outlook.com ([40.107.2.87]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huYy9-0002Ak-Mt; Mon, 05 Aug 2019 09:07:57 +0000
+ id 1huYya-0002Pi-TG; Mon, 05 Aug 2019 09:08:23 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=IpEoRyvJR7nJ+3y2bsKvKDvSRsSFlAJ8soVpJ8Zp6BQ89WUDBwL9ePEKAbyM9JFfc7k6k7fauQ8F+vRl43cYTjiQQ/tJxhis5ZeTlju9RxymEfy7tmGBPSzKj7qxoeMbkQs/s5oqT1/rNh4u8NeHyE+JdcJHIOBpOUL6tXwf/Cn6PqhoxMp/0devDwOdFBr/WPTgpVGc6I3JhMExaUARZMfOXX6rlBYMamYWm5kbLAAG3xPRgrBb7lIJD/p6FWVW8Q30nymixJ51b23eVdDLsEFsYTRg6zXmIlKpT9IM5iNGZIXgNFe8A3lX7IBwlAd0U7qmI0l3G0uXH6gPRbQH7w==
+ b=DWQl43zYt+mve+mcxVoJPD9dPl3lOnNaSiwEaj/Ow+3J7koi+YAsDDmfjW5xyzp4fVJvrzeSx3s1bsD1r6APxlFnyvQrRYh9WFUhJwOUbN86vf+AQexgybEsSSCnOBwRQ8d71mV4Wje+tRU0+4O/TxMcf8QFlotbEEJ9i5FEtRV4hBPuOhVKMlVKMBP/ZuiMbNHOQeIlp2d5t4MbQB7eF4udPBl0MSYNe3KqvSYnpm7d+Utoyv1+vZVySixBf05r0fptbqC82iwBpu21LIrgEU4Lqmx7rWeC+9N64UvJXK+U80M6pvMuFSHkDjo10VxBf1n5TJQl4ia+vpxIbcwsng==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ST7/tNOExl5QepKRDYERuH0TrFxmy23vThhLhdWNeuY=;
- b=Qm+RQMqVkbrUeL+b6n0yv5YiLeEjPpR58XikyYNY1kGlcnIXtlMhj4z9rF+Cenrmm+djGkMi4aqm49ZNx7dNaVCzzXYbj7Odg42TbenwnP9dLvK7TgEhOJMsnibdnBQeaEJ8Ff+kv43M49JEi3H9ZH8gRtw/tQTUih1ieP155cCGAibsJ/38a3ZFU0eIg2zrz7JAYzBGylG7jRlXetr4TqbZtmGYVLjivNfH6JnlC4Z6LZGBQ0z25TxbRaL0D3XahJ4jDUMG0aETDVHhB00b8INwbSS4KU/FyaT34sXYO1D+FD0VIbULEUZO0vi1FJGXudAvaZNxsUcdjOk7aFBDrg==
+ bh=lOzIiE4x1sQ+fFeYmzaB54pnDWh7/NHS25RmKk8deVw=;
+ b=n0Dvw4YyrTKeA/ctFeBmdOnlMAk43M6OPi630907dEkncV1ZaXT3GdVuMyJXF5TM2GrbAIUtRb96v41vW3DBdJrlLtOlx7Vl80mBcyj5ojNIAn7BrCFkMi0p6IdQv/35TqJ4IZoyw/ChA7fuiyoBCxjY2eUnfiW62Gs0S3DPbC68NDp5OODcPpCsOkESjY4wcGffM/eaAozUrny0Ssxn4frVWw8o/rDCy2y+rcMdqmRqqlgvAk5OCSWc6kfsF8alkTp+SxzBF5Rhf6BOsXOb6ypE0R0tp16zcRtRlQFcxI+051iVrnQBvxLnoC67JAckfCNzggEpzLHpGMiLo6vgvw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
  smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
  header.d=nxp.com;arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ST7/tNOExl5QepKRDYERuH0TrFxmy23vThhLhdWNeuY=;
- b=nG5cEQStPiY6U4TjBeBv47arweOMuod7uyfs17et3B0hUdFGrvtDygRn72JPTez9KuK/ZAZGTdBCIZEDOGAewNc+lcBooj54VXjrGF31zTNz3AEERyFLX86NUgi5lvuaLS0/rbds1jgprj71IZps8CbTYaKVaspJgG8ySiHDh8U=
+ bh=lOzIiE4x1sQ+fFeYmzaB54pnDWh7/NHS25RmKk8deVw=;
+ b=hpX4lyHUyItkJ8kbf/i9jLDhEXo7u1nIqBlppzS81LU5luJCmCtArRjidkqY5R0l9zxB0DaJThLG21R4AcyVEuy5oEkWrKqt8HmUeB2smGDp16wBp+Q38QiQgmKjZ3jZe1QEmC1/LKW272XxEalyCf1pvpFq+/AubjjbBs6f/zY=
 Received: from VI1PR04MB4015.eurprd04.prod.outlook.com (10.171.182.24) by
- VI1PR04MB6191.eurprd04.prod.outlook.com (20.179.28.81) with Microsoft SMTP
+ VI1PR04MB4288.eurprd04.prod.outlook.com (52.134.31.155) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2136.17; Mon, 5 Aug 2019 09:07:47 +0000
+ 15.20.2136.14; Mon, 5 Aug 2019 09:08:18 +0000
 Received: from VI1PR04MB4015.eurprd04.prod.outlook.com
  ([fe80::9c4f:262d:db31:e339]) by VI1PR04MB4015.eurprd04.prod.outlook.com
  ([fe80::9c4f:262d:db31:e339%4]) with mapi id 15.20.2136.018; Mon, 5 Aug 2019
- 09:07:47 +0000
+ 09:08:17 +0000
 From: Ashish Kumar <ashish.kumar@nxp.com>
 To: "broonie@kernel.org" <broonie@kernel.org>
-Subject: RE: [EXT] Re: [Patch v3 2/2] dt-bindings: spi: spi-fsl-qspi: Add
- bindings of ls1088a and ls1012a
-Thread-Topic: [EXT] Re: [Patch v3 2/2] dt-bindings: spi: spi-fsl-qspi: Add
- bindings of ls1088a and ls1012a
-Thread-Index: AQHVJo/WR5aDyJa0DkeJCggmqW/DRqbC1yeAgCPWBACABdtZoA==
-Date: Mon, 5 Aug 2019 09:07:47 +0000
-Message-ID: <VI1PR04MB401579932CF0E7D4AE80E0C995DA0@VI1PR04MB4015.eurprd04.prod.outlook.com>
+Subject: RE: [EXT] Re: [Patch v3 1/2] dt-bindings: spi: spi-fsl-qspi: Add
+ ls2080a compatibility string to bindings
+Thread-Topic: [EXT] Re: [Patch v3 1/2] dt-bindings: spi: spi-fsl-qspi: Add
+ ls2080a compatibility string to bindings
+Thread-Index: AQHVJo/VeuuMDsBciEWXxGwYBY/pIqbC1w+AgCPVywCABeCGcA==
+Date: Mon, 5 Aug 2019 09:08:17 +0000
+Message-ID: <VI1PR04MB4015C2C9407598EFEEB4CB2D95DA0@VI1PR04MB4015.eurprd04.prod.outlook.com>
 References: <1560942714-13330-1-git-send-email-Ashish.Kumar@nxp.com>
- <1560942714-13330-3-git-send-email-Ashish.Kumar@nxp.com>
- <20190709200857.GA8477@bogus>
- <CA+EcR20ui8Liot+PtzdU6CJb5WzLDHS0Xc7VR7qGAOpD5=ArNQ@mail.gmail.com>
-In-Reply-To: <CA+EcR20ui8Liot+PtzdU6CJb5WzLDHS0Xc7VR7qGAOpD5=ArNQ@mail.gmail.com>
+ <1560942714-13330-2-git-send-email-Ashish.Kumar@nxp.com>
+ <20190709200837.GA7806@bogus>
+ <CA+EcR23hhD2=abMtNGDoW1LtXSE4qfjTy1uzU7sgrbi7W=KSbw@mail.gmail.com>
+In-Reply-To: <CA+EcR23hhD2=abMtNGDoW1LtXSE4qfjTy1uzU7sgrbi7W=KSbw@mail.gmail.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -67,44 +67,44 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=ashish.kumar@nxp.com; 
 x-originating-ip: [92.120.0.6]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 0c65bca6-7cec-4454-6c94-08d71984625d
+x-ms-office365-filtering-correlation-id: f2f201b3-d14c-4fe6-e49a-08d7198474a3
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB6191; 
-x-ms-traffictypediagnostic: VI1PR04MB6191:
+ SRVR:VI1PR04MB4288; 
+x-ms-traffictypediagnostic: VI1PR04MB4288:
 x-ms-exchange-purlcount: 3
-x-microsoft-antispam-prvs: <VI1PR04MB6191621040BFC676F6E6A16795DA0@VI1PR04MB6191.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2000;
+x-microsoft-antispam-prvs: <VI1PR04MB42888D61404B39C208AF427895DA0@VI1PR04MB4288.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:421;
 x-forefront-prvs: 01208B1E18
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(136003)(376002)(346002)(396003)(39860400002)(189003)(199004)(13464003)(86362001)(5660300002)(76176011)(66066001)(2501003)(44832011)(71190400001)(71200400001)(74316002)(2906002)(26005)(229853002)(186003)(7696005)(81166006)(81156014)(256004)(102836004)(33656002)(1730700003)(8676002)(99286004)(6506007)(316002)(305945005)(7736002)(6246003)(14454004)(52536014)(11346002)(45080400002)(486006)(9686003)(478600001)(25786009)(5640700003)(966005)(8936002)(54906003)(6116002)(53546011)(3846002)(2351001)(76116006)(476003)(66476007)(66556008)(64756008)(53936002)(6916009)(6436002)(4326008)(446003)(66946007)(55016002)(6306002)(68736007)(66446008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6191;
+ SFS:(10009020)(4636009)(136003)(39860400002)(396003)(346002)(376002)(366004)(13464003)(189003)(199004)(74316002)(7696005)(66066001)(4326008)(486006)(186003)(71200400001)(71190400001)(476003)(33656002)(7736002)(2351001)(2501003)(54906003)(53546011)(53936002)(25786009)(6506007)(26005)(446003)(305945005)(11346002)(6246003)(5660300002)(44832011)(102836004)(68736007)(76176011)(81166006)(9686003)(81156014)(14454004)(52536014)(1730700003)(6306002)(66946007)(66556008)(66476007)(76116006)(8676002)(55016002)(86362001)(6916009)(45080400002)(316002)(2906002)(229853002)(5640700003)(966005)(8936002)(256004)(6436002)(478600001)(64756008)(66446008)(99286004)(6116002)(3846002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4288;
  H:VI1PR04MB4015.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 5H6TyHwrLENmhBpLW2GWlj+gxxB8xPQK3+oQJz1sy3POvc2Azw5XcQGJ2ujjS51SsTHjOymfob/2+WIZr9jFOfvbbogAGrtEMfORX7rt0HXAlRqC+RgKc88EK7URu5T1m9OJupmt+LUsVRSDrRoZgrX2KVtr3cBWnn8T5K9oL0wegyM1SOpCQkp8zT4appG0JUgn1nxRFq8rJWV8g8HVsWojohAoCU7mh/YMAdfBaT+hwEuUmnA7DgyZGr47LELx5BPdvxILZcfYAUtW5BXU1p6Iobw/tK6ZiS4B/zz6U/kfGtib7vXl+G8XEtyBRY0an8ujQRushVeRrW1O+K1jEvDEDyi9QpdAmSlsl3PjfXdiqfkL/ORW1xbJYvehF/hB1oabou0HTA9bpmL+3hzaCe0Kq9O8pWgjUhfsKXacGrk=
+x-microsoft-antispam-message-info: Hq6g3mkDo8SB31TSUfn9YNfFwjJAQSB+tel9pofX+rodRUTGZTKzRXFdPF+2M0Zhmo3SziiSNg1S4fy/V3fCsEQSM1xxY4BhcUiFwHQ8ZRk6GZL7aL2IDINE0Jn4dJDQwlCEL8Rgzoh+ciwbT2bLembZrMHAi2eDnkkXr8qSihVVHyUAIHmW1QkajumLAG8cF7HCU3uvEDapVBcy2txjIcwMFMrhfuR1U1YrgxyCPRppJYmCiaa450tgmbgsmqxqWnNi5STllhotUl5dwHJ/OnwQM/cnQSK5kAU0ES1buqteH+oq9kuOu6Mut3SJzwFOs7gSVw4Hxexz1Al4F+QrQO3io8rPPxdqaealGtLKRZhiui1MZNlcBC1d4MD+s+26URmiytYeW/4VycDb53NYYaOYNcm4Z10byt0VJvMJlAE=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0c65bca6-7cec-4454-6c94-08d71984625d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Aug 2019 09:07:47.1672 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f2f201b3-d14c-4fe6-e49a-08d7198474a3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Aug 2019 09:08:17.8300 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: ashish.kumar@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6191
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4288
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_020753_749017_DAC40FA8 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20190805_020821_603690_0B23543D 
+X-CRM114-Status: GOOD (  14.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.48 listed in list.dnswl.org]
+ no trust [40.107.2.87 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -140,20 +140,27 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 > -----Original Message-----
 > From: Han Xu <xhnjupt@gmail.com>
-> Sent: Thursday, August 1, 2019 8:54 PM
+> Sent: Thursday, August 1, 2019 8:53 PM
 > To: Rob Herring <robh@kernel.org>
 > Cc: Ashish Kumar <ashish.kumar@nxp.com>; devicetree@vger.kernel.org;
 > bbrezillon@kernel.org; Kuldeep Singh <kuldeep.singh@nxp.com>;
 > broonie@kernel.org; linux-mtd@lists.infradead.org; linux-arm-
 > kernel@lists.infradead.org
-> Subject: [EXT] Re: [Patch v3 2/2] dt-bindings: spi: spi-fsl-qspi: Add bindings of
-> ls1088a and ls1012a
+> Subject: [EXT] Re: [Patch v3 1/2] dt-bindings: spi: spi-fsl-qspi: Add ls2080a
+> compatibility string to bindings
 > 
 > Caution: EXT Email
 > 
 > On Tue, Jul 9, 2019 at 3:09 PM Rob Herring <robh@kernel.org> wrote:
 > >
-> > On Wed, 19 Jun 2019 16:41:54 +0530, Ashish Kumar wrote:
+> > On Wed, 19 Jun 2019 16:41:53 +0530, Ashish Kumar wrote:
+> > > There are 2 version of QSPI-IP, according to which controller
+> > > registers sets can be big endian or little endian.There are some
+> > > other minor changes like RX fifo depth etc.
+> > >
+> > > The big endian version uses driver compatible "fsl,ls1021a-qspi" and
+> > > little endian version uses driver compatible "fsl,ls2080a-qspi"
+> > >
 > > > Signed-off-by: Kuldeep Singh <kuldeep.singh@nxp.com>
 > > > Signed-off-by: Ashish Kumar <ashish.kumar@nxp.com>
 > > > ---
@@ -162,8 +169,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 > > > v2:
 > > > Convert to patch series and rebasing done on top of tree
 > > >
-> > >  Documentation/devicetree/bindings/spi/spi-fsl-qspi.txt | 2 ++
-> > >  1 file changed, 2 insertions(+)
+> > >  Documentation/devicetree/bindings/spi/spi-fsl-qspi.txt | 3 +--
+> > >  1 file changed, 1 insertion(+), 2 deletions(-)
 > > >
 > >
 > > Reviewed-by: Rob Herring <robh@kernel.org>
@@ -175,30 +182,24 @@ Hello Mark,
 Could you please send this patch[1] from your spi tree, It applies seamlessly on
 https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git/
 
-[1]: http://patchwork.ozlabs.org/patch/1118637/
+[1]: http://patchwork.ozlabs.org/patch/1118636/
 
 Regards 
-Ashish 
-
-
+Ashish
 > 
 > >
 > > ______________________________________________________
 > > Linux MTD discussion mailing list
+> > https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Flists
+> > .infradead.org%2Fmailman%2Flistinfo%2Flinux-
+> mtd%2F&amp;data=02%7C01%7C
 > >
-> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Flists.inf
-> radead.org%2Fmailman%2Flistinfo%2Flinux-
-> mtd%2F&amp;data=02%7C01%7CAshish.Kumar%40nxp.com%7C243dc21894
-> ad4c2a651808d716945016%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7
-> C1%7C637002698562132108&amp;sdata=6YZyZ6D6DywgLYlp%2BWZfkvyaDr
-> TKvR56JkOxy0XSD9k%3D&amp;reserved=0
-> 
-> 
-> 
-> --
-> Sincerely,
-> 
-> Han XU
+> Ashish.Kumar%40nxp.com%7Ca172f045af714e408d0a08d716942751%7C686
+> ea1d3bc
+> >
+> 2b4c6fa92cd99c5c301635%7C0%7C1%7C637002697881500159&amp;sdata=f
+> 8i1y4aa
+> > k3gPnuXM3fD1xFPp4RB7GEWZ45%2BeWPOoNSA%3D&amp;reserved=0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
