@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D964822CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 18:46:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 437BE8230A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 18:48:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=XDtSU1cRchRaG5tTXL9F25lf9x8uG7yxfKRSvxIvXMI=; b=R6jBrhpiWvvARHYyIQKR56hHl+
-	+vMkv2NxDe6xVUup+AMF7nd5XjyAI2wDWaSmMz8CkPZABmrztebttVQc7Inv38NfLhKP49Zt/uMjT
-	pn/BrEVG4Ty87NbvRwJHHnD9vIXmlmeaWT+PsgTsOEswm45xX1cEBpveGV9py9f3+OA82YnHUIxZV
-	AcjrYfyev0BKRBc8d77wQraE0hgAw/n20iuD2Lc9BDIrW+lwKIFIZaF3/BQ2dhLuzuXQyScxJVN9E
-	rB+SsZq1M298V2IvWWaRTWdua4eEVZjYhZo+LmEphLACzPtbluZll7sNB4qIJtm0wHDdqwMa1aMA3
-	hhqtvojg==;
+	bh=8n+0+eTDhrA93QKAZlA/N7upjSaejmcIhPid5gUOP+0=; b=WBaB1UzVyxIn0pNuPg/aY8ipBE
+	2f4nDx05La8JiJ/6kYLzf/CYmkVinuH5QrZSADLUL3/eFy+h6okWfZ8LrqnX6pyPDLs3v52Mt9mJ4
+	8u7vtYTNAz21IVtd+M0MHq4vy4Z/kNOa3gNM/eRzgGsPmaYEe2Bq6As57uXYm6NeKV0IcIJClCaBb
+	gFHzIf/bPl1yxN4tNG/c+u1T2YTID1FcQriyMH4r9lhYHEvke8elzn9bDWQzxNsYiHn1EcH2ZsX3G
+	1FCSo3PvH4icLGgwoScq1FveCblWJjHYk0nPKUqxMJl1I2A2XHNgCkXWcBGLJwypk/gzHKakZ12w/
+	emrn/ORg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hug7Z-0004UB-0w; Mon, 05 Aug 2019 16:46:05 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+	id 1hug9u-0006h5-Lf; Mon, 05 Aug 2019 16:48:30 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hug70-0004D4-SC
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 16:45:34 +0000
+ id 1hug72-0004G8-BY
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 16:45:37 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 6E7B3C0265;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id C6296C01D4;
  Mon,  5 Aug 2019 16:45:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1565023529; bh=yyNtvtwnX+hdMr+b42YSYiKifO+GzqUr20MJH1mLdYo=;
+ t=1565023530; bh=0qzfDib/TkS1Pnuz9bteOYFmisi1Lcw2FF4Y8DcAjZ4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=FVOeFUiPyOO5PVg77zX1AbSBPvUDAY60N6gwVvwxwku77LjeRh91/KWbcZf27YXg5
- XFiNGX7VIrM/ZIzxJCzV1gL5C43GSfmvaIgOEb8WZ6D57TJWKM1AXz6AB1lwo8HSJZ
- g1J3is/WU8l7DfxDjVE5CRtTU+yHN58RxVbAilB3GCy86L7ucWLAhD45HtRsxJV1Z3
- ulq2Z8uKel2ARtfewxRp7TlxpP0z/ybmAQKLA4h6iPB30C7d4OVbuknQjaHgT05h+J
- 50pe39/qezB5gfR+/+RvqXibcmitnVpwxOnEnxH/V4iRtGZ43vDmFGG/FVN2QDY6lf
- dHShqf12Aw5tA==
+ b=eGqmVbSVDPu8ckUX66NOA/imFFRXZXoJigFiVbXz/MrszQONEBxo0MeUC/gRixpnO
+ /I904RsggX/COfA8K0jazy2QwyGYdFsAVNbLU5zpiiDbrVDxx9jRxWTpvWDDOe9s/0
+ X3dt9eI/kbpzu92yODMdped6BXQAejKgy2jGNPEAE1Q/poFrx84I9EVL0rrstvd9p0
+ pPNd6D1ozP65mDouL+Wo+9QtVYT0GpGnPhzMjMYJ+IkyYphpi1lSK7ylU9GJEf/Rxt
+ HlKvazufyE/jmMBv4XzCv+aU6Stq8lLGckeDd6P3lYycBCUI/pQIron4BKxcrWya8Z
+ rK7l07GN5EgPQ==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 25A1EA009B;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 90193A00AC;
  Mon,  5 Aug 2019 16:45:28 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 20/26] net: stmmac: Add a counter for Split Header
- packets
-Date: Mon,  5 Aug 2019 18:44:47 +0200
-Message-Id: <6b33c1ca13f94a4514154a543a74ba28dbd2e820.1565022597.git.joabreu@synopsys.com>
+Subject: [PATCH net-next 26/26] net: stmmac: selftests: Return proper error
+ code to userspace
+Date: Mon,  5 Aug 2019 18:44:53 +0200
+Message-Id: <5b217c7b110eb32183fd81c81b516d42228ac406.1565022597.git.joabreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1565022597.git.joabreu@synopsys.com>
 References: <cover.1565022597.git.joabreu@synopsys.com>
 In-Reply-To: <cover.1565022597.git.joabreu@synopsys.com>
 References: <cover.1565022597.git.joabreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_094530_944329_C93DCF02 
-X-CRM114-Status: GOOD (  12.18  )
+X-CRM114-CacheID: sfid-20190805_094532_423829_98A184CE 
+X-CRM114-Status: GOOD (  12.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,8 +96,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a counter that increments each time a packet with split header is
-received.
+We can do better than just return 1 to userspace. Lets return a proper
+Linux error code.
 
 Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 ---
@@ -111,48 +111,104 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/common.h         | 1 +
- drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c | 1 +
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c    | 2 ++
- 3 files changed, 4 insertions(+)
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
-index 527f961579f4..1303ec81fd3d 100644
---- a/drivers/net/ethernet/stmicro/stmmac/common.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/common.h
-@@ -75,6 +75,7 @@ struct stmmac_extra_stats {
- 	unsigned long rx_missed_cntr;
- 	unsigned long rx_overflow_cntr;
- 	unsigned long rx_vlan;
-+	unsigned long rx_split_hdr_pkt_n;
- 	/* Tx/Rx IRQ error info */
- 	unsigned long tx_undeflow_irq;
- 	unsigned long tx_process_stopped_irq;
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
-index 0ea3844ae329..8828a5481f61 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
-@@ -67,6 +67,7 @@ static const struct stmmac_stats stmmac_gstrings_stats[] = {
- 	STMMAC_STAT(rx_missed_cntr),
- 	STMMAC_STAT(rx_overflow_cntr),
- 	STMMAC_STAT(rx_vlan),
-+	STMMAC_STAT(rx_split_hdr_pkt_n),
- 	/* Tx/Rx IRQ error info */
- 	STMMAC_STAT(tx_undeflow_irq),
- 	STMMAC_STAT(tx_process_stopped_irq),
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index fef64e415447..34b6b8227b92 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -3504,6 +3504,8 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
- 				if (!(status & rx_not_ls))
- 					sec_len = sec_len - hlen;
- 				len = hlen;
-+
-+				priv->xstats.rx_split_hdr_pkt_n++;
- 			}
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+index a0da35b2b4c2..d40f6a109633 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+@@ -316,7 +316,7 @@ static int __stmmac_test_loopback(struct stmmac_priv *priv,
+ 		attr->timeout = STMMAC_LB_TIMEOUT;
  
- 			skb = netdev_alloc_skb_ip_align(priv->dev, len);
+ 	wait_for_completion_timeout(&tpriv->comp, attr->timeout);
+-	ret = !tpriv->ok;
++	ret = tpriv->ok ? 0 : -ETIMEDOUT;
+ 
+ cleanup:
+ 	dev_remove_pack(&tpriv->pt);
+@@ -477,7 +477,7 @@ static int stmmac_test_hfilt(struct stmmac_priv *priv)
+ 
+ 	/* Shall NOT receive packet */
+ 	ret = __stmmac_test_loopback(priv, &attr);
+-	ret = !ret;
++	ret = ret ? 0 : -EINVAL;
+ 
+ cleanup:
+ 	dev_mc_del(priv->dev, gd_addr);
+@@ -509,7 +509,7 @@ static int stmmac_test_pfilt(struct stmmac_priv *priv)
+ 
+ 	/* Shall NOT receive packet */
+ 	ret = __stmmac_test_loopback(priv, &attr);
+-	ret = !ret;
++	ret = ret ? 0 : -EINVAL;
+ 
+ cleanup:
+ 	dev_uc_del(priv->dev, gd_addr);
+@@ -559,7 +559,7 @@ static int stmmac_test_mcfilt(struct stmmac_priv *priv)
+ 
+ 	/* Shall NOT receive packet */
+ 	ret = __stmmac_test_loopback(priv, &attr);
+-	ret = !ret;
++	ret = ret ? 0 : -EINVAL;
+ 
+ cleanup:
+ 	dev_uc_del(priv->dev, uc_addr);
+@@ -597,7 +597,7 @@ static int stmmac_test_ucfilt(struct stmmac_priv *priv)
+ 
+ 	/* Shall NOT receive packet */
+ 	ret = __stmmac_test_loopback(priv, &attr);
+-	ret = !ret;
++	ret = ret ? 0 : -EINVAL;
+ 
+ cleanup:
+ 	dev_mc_del(priv->dev, mc_addr);
+@@ -696,7 +696,7 @@ static int stmmac_test_flowctrl(struct stmmac_priv *priv)
+ 	}
+ 
+ 	wait_for_completion_timeout(&tpriv->comp, STMMAC_LB_TIMEOUT);
+-	ret = !tpriv->ok;
++	ret = tpriv->ok ? 0 : -ETIMEDOUT;
+ 
+ cleanup:
+ 	dev_mc_del(priv->dev, paddr);
+@@ -830,11 +830,11 @@ static int stmmac_test_vlanfilt(struct stmmac_priv *priv)
+ 			goto vlan_del;
+ 
+ 		wait_for_completion_timeout(&tpriv->comp, STMMAC_LB_TIMEOUT);
+-		ret = !tpriv->ok;
++		ret = tpriv->ok ? 0 : -ETIMEDOUT;
+ 		if (ret && !i) {
+ 			goto vlan_del;
+ 		} else if (!ret && i) {
+-			ret = -1;
++			ret = -EINVAL;
+ 			goto vlan_del;
+ 		} else {
+ 			ret = 0;
+@@ -906,11 +906,11 @@ static int stmmac_test_dvlanfilt(struct stmmac_priv *priv)
+ 			goto vlan_del;
+ 
+ 		wait_for_completion_timeout(&tpriv->comp, STMMAC_LB_TIMEOUT);
+-		ret = !tpriv->ok;
++		ret = tpriv->ok ? 0 : -ETIMEDOUT;
+ 		if (ret && !i) {
+ 			goto vlan_del;
+ 		} else if (!ret && i) {
+-			ret = -1;
++			ret = -EINVAL;
+ 			goto vlan_del;
+ 		} else {
+ 			ret = 0;
+@@ -995,7 +995,7 @@ static int stmmac_test_rxp(struct stmmac_priv *priv)
+ 	attr.src = addr;
+ 
+ 	ret = __stmmac_test_loopback(priv, &attr);
+-	ret = !ret; /* Shall NOT receive packet */
++	ret = ret ? 0 : -EINVAL; /* Shall NOT receive packet */
+ 
+ 	cls_u32.command = TC_CLSU32_DELETE_KNODE;
+ 	stmmac_tc_setup_cls_u32(priv, priv, &cls_u32);
 -- 
 2.7.4
 
