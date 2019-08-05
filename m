@@ -2,77 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9482F81997
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 14:43:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7359819D8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 14:44:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vW5KC5QK9z0h17RhziV3gXYsVeU3RdVLLEnQ+vI+5Xo=; b=C8fmlLImRC9xp1
-	xSdKcJUsMYkEW21HUF/4mhtcpqJykOPPZkPQlFAJT62/1snu91RDOKKjwiiJs8sYrG8277W1rK5AR
-	h9s+Q23BlEoaeuBrb245i/08iTb2vZBT5dHyOaHs92KG2glL1G+2h+B4F1UqMffgkQhkIBqTt5MyS
-	vOtQ0zU6tTUh+TI1L07h1WOCSqkxE2byUq1ThJ8UJ2KwtpyRkPW1c2wnqeHpOWgM7LHZSE8gvG4B/
-	R0xslZSGPRa9DoQknF0fLq8tX7Lm/DGZKVvDiUl29VTc3iO4i5tbw15P6Z16jO4+BPTGJDrq+fRHK
-	TAPBrsfRyPG3LM4qMQ5g==;
+	List-Owner; bh=vHTLCfo3IsX8YY4RMadchym6Spd4Arj5yDL8EHPtaq4=; b=sloNqLmQ03ZdaU
+	FhmNDjfbUKS0gitqOhSv+JEE+RwdhYh8L+hLQ6WMvw0q8RX0OiLeFtgRkwXiDBb5iYxNOuiQ9imSJ
+	ADusKHnhyRutuYaHjZ9d9ooblz7jMbLiYtULmsI8+7dTKWkK3+gSmRZWFRFNxDGEvqrEYxbZwUgA9
+	o1LB6NeBP2dutrjottahq9/xRaIIWdT4hbSLk2u4CWjElhvh1Tr/iKFV6bYNdAxlBfs3l5EazW1z2
+	TJkrtPQxNBtzEdrST1ZloK3FWp2J5jAxyo3e/t9QrzXLGZIWhmXNedYVewSpO115EOeECQFTDh422
+	hRd0OxKQU9cqkfghWQKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hucKh-0005mu-Lg; Mon, 05 Aug 2019 12:43:23 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hucLS-0006Ey-Pp; Mon, 05 Aug 2019 12:44:10 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hucKV-0005mT-JA
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 12:43:12 +0000
-Received: by mail-io1-xd42.google.com with SMTP id o9so63355093iom.3
+ id 1hucLE-0006E4-Js
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 12:43:57 +0000
+Received: by mail-io1-xd41.google.com with SMTP id k8so167007002iot.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 05:43:10 -0700 (PDT)
+ Mon, 05 Aug 2019 05:43:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KQm9NPghtf2wFJQFdwyuoe6G2q10wFofTqLGNt8zEfc=;
- b=Jm9lN989x1LL1wAGmtgQW1PbFf7i6ALddtYVvYUT3D0ZuifbqBe7vXuKRfHJ1DVFyf
- 5E6ia0qFc+YxzkWLdGYvRSD2zIYvdSQi7desBh6dPVYOxX5FGHe8MZTcpO7SoBv2T+fx
- rM6HGgCOlS1+Mq1T7ZsjoN47gJmVIc8qASDJbmnblb51sxAIIH83d2PNguaUH54zd0Pd
- g8BJGwj/2VWcZL1lekXwBWPoMwwDfwE/1wbv8+ARLVMYNN37zc7ARSt2a3DyNCxJMg8n
- X9boR31zKzMZP2i4KZCBZU3pIFAZQ4KVkLrRQcNoPYIaJXKm1UqQkctLH6lsqK5JS0DO
- uLqQ==
+ :cc; bh=BtM+NWj25oYvpSibgXFWcN7a4g9p0DLdhW/V4xt2eBU=;
+ b=ZhKaC5MruwlHhhxMdPFwBhdPOYfP4wRyyL5N9ujJ84SwNjtO73htrkFtOMztfiavLw
+ 3mjniDoCJ3Bdo87uYPsyaTU8Vac2oGmkLqJQ/CYeXZqR3vFSExkCyiri3ODkTnfBhcV4
+ C7zWaU+uEvyzRO88l6CgCi/Yl8EFpBECsqiW+0n1EXu43WHzCFRCCdfAtPypn8PcHw77
+ VAR8QE8n+f8Bp/TmoDduiOZUWOXS8FME9HJgFscbc1zhEG9ESLdbyJtpPWJzSYOK839a
+ blC7htlqER39fmEduUJ5KTjvmZEO/NXXYrGht3l6l8ygJo+W7iWPDcJrCkDfe962tjVN
+ w5SQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=KQm9NPghtf2wFJQFdwyuoe6G2q10wFofTqLGNt8zEfc=;
- b=BFhNIY8a30hJjUYOkx3EfHCi6zLxsSH3+ZTbVu2MhDfsvwUB3sPCVmJMTANUR2YCYg
- XRxt7wPxtbaDRri9YTDRPkfMzi3VoqpaGkAyAsUPdyn8k1gQaUlQrSzIbK8ncajDbfzx
- lK7viaGYPuQYJSzS6UjL6Y6dnXt3RBtxxhV7sN7/H1c8pz5OwU85odbSaX5ypwTvSRFs
- +aDYts5WVss2YLmhU5H8AH9tkBoizESwJWueJh3W3SfYCVs2OJ28cPXAnmpFWgF+028o
- OFEFs243oRc35HekYYrO7+GrRc/g/UiArv+oPQ9Hgj0lsI7PGDOrlJKIJrClYAVCFkS+
- 4a2A==
-X-Gm-Message-State: APjAAAWkkqDoLNW+n8byM5Fdu9VHXYcm5bx5PEYqSrmmQrfrGGR082jp
- bxmxZHJ+88Cx/TW88t7Yf3LMeI5r4U5UT/16qmU=
-X-Google-Smtp-Source: APXvYqz396zlNXAqcaOCvcqObVMswatfB+f2uh+zsXE7YIFo6iaQRklzHrm0RcU5f66HRRMmb5shLa66REY85aMxJmc=
-X-Received: by 2002:a6b:f114:: with SMTP id e20mr11104225iog.169.1565008990378; 
- Mon, 05 Aug 2019 05:43:10 -0700 (PDT)
+ bh=BtM+NWj25oYvpSibgXFWcN7a4g9p0DLdhW/V4xt2eBU=;
+ b=ZfOCkWJwRflUOJ/MPNwri0zRA9hkB+asSDKB9X6O/tACh4adbBlM8dowb8saFFga4K
+ 6ui4djarNKVj0pNBkVQ4vQ1t/ZIsDzcLk4iy+ASdl3YJD7w0+HXZ93pik18gU9NQbc5I
+ w2IyaGHkXQgQsY7HA3AnbQ8cpC20JAOgZbhdmnbyQhqUAmV9NAG1YpaqteQ44IGP0oeE
+ 2avb+hwdbirixLPgCT7J31lKh4EsvUKiolInGCcEJ0TtHzYQnYHDmKiTJA6wrghbKhvW
+ WHQnq6yopIx5BlGJtjoGBqkfMGTM7X62+DdqcLxjgiO/meYzt/uCAbRnP/jQCag4ZCh1
+ aAcA==
+X-Gm-Message-State: APjAAAV58b7eCuAcIz+n2j2si9f3TKTkABFHRqLDDaB7MQiASsQwEtTL
+ 5UD1VC3Xv+MlE+Elz92p0hm/3CK2iMyG0T6swok=
+X-Google-Smtp-Source: APXvYqwqQSPW397kqrW3kGv0GRCbHES+vT5UGpfo7ZHfq/1Bj6VjaFS3ZRkwHG0PLi1+eyqFIVooHFs/Ke2fu12pfIU=
+X-Received: by 2002:a5e:8c11:: with SMTP id n17mr69032096ioj.64.1565009035665; 
+ Mon, 05 Aug 2019 05:43:55 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190731195713.3150463-1-arnd@arndb.de>
- <20190731195713.3150463-4-arnd@arndb.de>
- <20190731202343.GA14817@roeck-us.net>
- <CAK8P3a2=gqeCMtdzdqg4d1n6v1-cdaHObeUoVXeB+=Okwd1rqA@mail.gmail.com>
- <20190731203646.GB14817@roeck-us.net>
-In-Reply-To: <20190731203646.GB14817@roeck-us.net>
+ <20190731195713.3150463-5-arnd@arndb.de>
+ <20190801055840.GC24607@kroah.com>
+In-Reply-To: <20190801055840.GC24607@kroah.com>
 From: Sylvain Lemieux <slemieux.tyco@gmail.com>
-Date: Mon, 5 Aug 2019 08:42:58 -0400
-Message-ID: <CA+rxa6oOxHH20Oiw1BKqa+9QF+J+M2cnQgMRKkLuxjcm9Ux2uQ@mail.gmail.com>
-Subject: Re: [PATCH 03/14] watchdog: pnx4008_wdt: allow compile-testing
-To: Guenter Roeck <linux@roeck-us.net>
+Date: Mon, 5 Aug 2019 08:43:44 -0400
+Message-ID: <CA+rxa6oU65QeEDaROdz1v=5R6m4YKTd7rRNEBx41d5uixyoz=g@mail.gmail.com>
+Subject: Re: [PATCH 04/14] serial: lpc32xx_hs: allow compile-testing
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_054311_630132_125FADD3 
-X-CRM114-Status: GOOD (  15.52  )
+X-CRM114-CacheID: sfid-20190805_054356_654070_D08BBA19 
+X-CRM114-Status: GOOD (  14.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,16 +98,15 @@ Cc: Andrew Lunn <andrew@lunn.ch>,
  LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Jason Cooper <jason@lakedaemon.net>, Arnd Bergmann <arnd@arndb.de>,
- "David S. Miller" <davem@davemloft.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "David S. Miller" <davem@davemloft.net>, Networking <netdev@vger.kernel.org>,
  Gregory Clement <gregory.clement@bootlin.com>,
  USB list <linux-usb@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
  Vladimir Zapolskiy <vz@mleia.com>,
  "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>, soc@kernel.org,
- Alan Stern <stern@rowland.harvard.edu>, linux-serial@vger.kernel.org,
- Networking <netdev@vger.kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Alan Stern <stern@rowland.harvard.edu>, Guenter Roeck <linux@roeck-us.net>,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
  Linus Walleij <linus.walleij@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
  Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -118,29 +115,21 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Acked-by: Sylvain Lemieux <slemieux.tyco@gmail.com>
 
-On Wed, Jul 31, 2019 at 4:36 PM Guenter Roeck <linux@roeck-us.net> wrote:
+On Thu, Aug 1, 2019 at 1:58 AM Greg Kroah-Hartman
+<gregkh@linuxfoundation.org> wrote:
 >
-> On Wed, Jul 31, 2019 at 10:26:35PM +0200, Arnd Bergmann wrote:
-> > On Wed, Jul 31, 2019 at 10:23 PM Guenter Roeck <linux@roeck-us.net> wrote:
-> > >
-> > > On Wed, Jul 31, 2019 at 09:56:45PM +0200, Arnd Bergmann wrote:
-> > > > The only thing that prevents building this driver on other
-> > > > platforms is the mach/hardware.h include, which is not actually
-> > > > used here at all, so remove the line and allow CONFIG_COMPILE_TEST.
-> > > >
-> > > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> > >
-> > > Reviewed-by: Guenter Roeck <linux@roeck-us.net>
-> > >
-> > > What is the plan for this patch ? Push through watchdog
-> > > or through your branch ?
+> On Wed, Jul 31, 2019 at 09:56:46PM +0200, Arnd Bergmann wrote:
+> > The only thing that prevents building this driver on other
+> > platforms is the mach/hardware.h include, which is not actually
+> > used here at all, so remove the line and allow CONFIG_COMPILE_TEST.
 > >
-> > I would prefer my branch so I can apply the final patch without waiting
-> > for another release. Not in a hurry though, so if some other maintainer
+> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> > ---
+> >  drivers/tty/serial/Kconfig      | 3 ++-
+> >  drivers/tty/serial/lpc32xx_hs.c | 2 --
+> >  2 files changed, 2 insertions(+), 3 deletions(-)
 >
-> Ok with me.
->
-> Guenter
+> Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
