@@ -2,58 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23BE0816F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:24:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24CB781718
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:32:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=upjr4Vlm3RJspvi1q095BPZq6Smwxjvczb0PMb5cIyo=; b=kNn
-	H0LXt0S/JxKVU6FcOpKNow6Y4tDMoDyZLBNblDuEI8KsIXENlKMosHij+owobrtpwiytlEjNRJz9c
-	N9ehxRhmDuTn9ITvN76JgfBrn65xtC2XE++BSU2QVKRCrSJ+WVtpYYt63OAUEsBiW8534X9iwXy9Z
-	1oVRSXoJ1JAgatEkYXTvZFHUEUP17XUjBt9rldhy6Tk3tO52Qrn8V3P791FZLycwMGFVVd6AM3WWW
-	+0QSlpY2+DSywCdCBt4sPXuMaBuS7t6rtbr9G7Z4LW4tMFy+HGspMy/ExAywuT0ohExtLiq57BBkm
-	auAAJzN4A3sDLRV51xhIPAQf1MzHajg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BpWwAXwuTUM/AMcI7qehLNe0+C1M3qfPBPkbLHUzzFE=; b=dHHixN2D+4Nlhd
+	g27KLMMTrO7OT49aIg6ZOCg7RZQWWmT6YqftygWFUSHM2TEKfgIgLLbZT/0lHfqLHLN8fRa3nYBWo
+	fu8AKK4kjOxICofW/2ffw3zfqE0Knxe40wg4TYfNRIVxIBcD+Y7U2Pynce6OFoyolXJkRdOq2oRGp
+	P47UhG1Ukoa6b82Gwn2zWkBUDhuP2cPZCn8wt+cr14cdAaoVvkthdM+HR/TQDNm55QKJYQKI2gAZM
+	DqowT7EihbkdmzfnT7Tv7Q7rd7ZAVdGT5xZXyhk64aMIm37VzC27PBdR4ZZICgMe4RdEVfFCP3vAz
+	Dbzq0Q/a5FBI0o+oua5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huaA2-0007Xj-RY; Mon, 05 Aug 2019 10:24:15 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1huaHq-00030t-2i; Mon, 05 Aug 2019 10:32:18 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hua9q-0007Wa-Iv
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:24:04 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2D2D11A00F6;
- Mon,  5 Aug 2019 12:23:59 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7250E1A00F5;
- Mon,  5 Aug 2019 12:23:52 +0200 (CEST)
-Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1B366402B5;
- Mon,  5 Aug 2019 18:23:44 +0800 (SGT)
-From: Yinbo Zhu <yinbo.zhu@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v4] arm64: dts: ls1028a: Add esdhc node in dts
-Date: Mon,  5 Aug 2019 18:26:41 +0800
-Message-Id: <20190805102641.3732-1-yinbo.zhu@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1huaHd-0002zV-Bk
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:32:06 +0000
+Received: by mail-ed1-x541.google.com with SMTP id k8so78127865edr.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 05 Aug 2019 03:32:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2t8NpBMFz+vZWj7uMv0mNnSRA2UuSvBBLYkX3l+9iFg=;
+ b=OlUQn9n1XfLu7teP0KKGlghRXxE6YfdgOYBt+po0ODAQAZtrX33RsFC7JrwnExa8cL
+ MSNWxapbzgtY/jV/tmPXt03VuurAMp7FYIh6dN5w7vOK4bqXapuRztsQMw4XbnFxCq5j
+ qi6USnwHuwJmQK4LdK0w4JDAEpdOA4Bo7Sw3s=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2t8NpBMFz+vZWj7uMv0mNnSRA2UuSvBBLYkX3l+9iFg=;
+ b=qIlzsK4NGbAL8H1owxub3cqc0m0lcuMccs4emXgepWD3pKau4M6nwfovTjd2+mV7ET
+ D+1XK2LaevxqE9H5U2Ga2thEfNrP9qx+Y900spIoyfs23mEjb5kcO+EO//1hWprIIqY+
+ FBZoVinToGt75F4PtsjPVJJKeGwrC2yMmLhzUMTetY549BrB8RH+irq+Cvfy22YfoPbM
+ XhjnMqITucVPCxogc24NMs+z5lDR+mhJj+vvVBBO+gm2qupMMf5SVKVklqi26pv9qIp6
+ Pfzf3CZUnU/Xo7/IOBi6Z1qEU1F1CVzuehUIcQiuMCTwlXdvqVkWidKcBG27M+tWXrUs
+ xohg==
+X-Gm-Message-State: APjAAAXoS0ZqkbVhNp7rwUdcyF4vMA1nw26FWI8hoom6JqKW/CWKDq1/
+ JWCErG3mBQCwQCCKEH0foleyHNfx6pvM4hrxsFq+nA==
+X-Google-Smtp-Source: APXvYqzAn+oC3iie4UJoTUwTGxe/UPUNm7dP1YnY1Jv/HqewkbGk9qXU4qTnKQnQjKvN1dc2A2il3n7AnKDHmWIRPmg=
+X-Received: by 2002:a17:906:644c:: with SMTP id
+ l12mr112559234ejn.142.1565001123236; 
+ Mon, 05 Aug 2019 03:32:03 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190709072547.217957-1-pihsun@chromium.org>
+ <20190709072547.217957-3-pihsun@chromium.org>
+ <CAPBb6MUsKYsG2qYFsj8DhtAWipRw887nk_gi68Gt+DcuHzApgw@mail.gmail.com>
+In-Reply-To: <CAPBb6MUsKYsG2qYFsj8DhtAWipRw887nk_gi68Gt+DcuHzApgw@mail.gmail.com>
+From: Pi-Hsun Shih <pihsun@chromium.org>
+Date: Mon, 5 Aug 2019 18:31:26 +0800
+Message-ID: <CANdKZ0cb8OZVjOb9j7ivCCs3afXgshFWgrYkkZJOrGkHNWcEPg@mail.gmail.com>
+Subject: Re: [PATCH v13 2/5] remoteproc/mediatek: add SCP support for mt8183
+To: Alexandre Courbot <acourbot@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_032402_902733_D8DD806C 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190805_033205_426794_48E3585F 
+X-CRM114-Status: GOOD (  18.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,119 +91,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ashish Kumar <Ashish.Kumar@nxp.com>, linux-mmc@vger.kernel.org,
- xiaobo.xie@nxp.com, linux-kernel@vger.kernel.org, yangbo.lu@nxp.com,
- jiafei.pan@nxp.com, yinbo.zhu@nxp.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Nicolas Boichat <drinkcat@chromium.org>,
+ Erin Lo <erin.lo@mediatek.com>,
+ "open list:REMOTE PROCESSOR REMOTEPROC SUBSYSTEM"
+ <linux-remoteproc@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ashish Kumar <Ashish.Kumar@nxp.com>
+Thanks for the review. I'll address most of the comments in the next version.
 
-This patch is to add esdhc node and enable SD UHS-I,
-eMMC HS200 for ls1028ardb/ls1028aqds board.
+On Mon, Jul 22, 2019 at 5:37 PM Alexandre Courbot <acourbot@chromium.org> wrote:
+>
+> Hi Pi-Hsun,
+>
+> On Tue, Jul 9, 2019 at 4:27 PM Pi-Hsun Shih <pihsun@chromium.org> wrote:
+> > +static void *scp_da_to_va(struct rproc *rproc, u64 da, int len)
+> > +{
+> > +       struct mtk_scp *scp = (struct mtk_scp *)rproc->priv;
+> > +       int offset;
+> > +
+> > +       if (da < scp->sram_size) {
+> > +               offset = da;
+> > +               if (offset >= 0 && ((offset + len) < scp->sram_size))
+> > +                       return (__force void *)(scp->sram_base + offset);
+> > +       } else if (da >= scp->sram_size &&
+> > +                  da < (scp->sram_size + MAX_CODE_SIZE)) {
+> > +               offset = da;
+>
+> This line looks suspicious. Shouldn't it be
+>
+>     offset = da - scp->sram_size?
+>
 
-Signed-off-by: Ashish Kumar <Ashish.Kumar@nxp.com>
-Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
-Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
----
-Change in v4:
-		put esdhc 'status' at end of property list.
-		sort the nodes in unit-address
-		Use IRQ_TYPE_LEVEL_HIGH represent 0x4 in "interrupts = <0 28 0x4>"
+Actually the whole "else if (...)" is not used. Would remove this in
+next version.
 
- arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts |  8 +++++++
- arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts | 13 +++++++++++
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi    | 27 +++++++++++++++++++++++
- 3 files changed, 48 insertions(+)
+> > +
+> > +/*
+> > + * Copy src to dst, where dst is in SCP SRAM region.
+> > + * Since AP access of SCP SRAM don't support byte write, this always write a
+> > + * full word at a time, and may cause some extra bytes to be written at the
+> > + * beginning & ending of dst.
+> > + */
+> > +void scp_memcpy_aligned(void *dst, const void *src, unsigned int len)
+> > +{
+> > +       void *ptr;
+> > +       u32 val;
+> > +       unsigned int i = 0;
+> > +
+> > +       if (!IS_ALIGNED((unsigned long)dst, 4)) {
+> > +               ptr = (void *)ALIGN_DOWN((unsigned long)dst, 4);
+> > +               i = 4 - (dst - ptr);
+> > +               val = readl_relaxed(ptr);
+> > +               memcpy((u8 *)&val + (4 - i), src, i);
+> > +               writel_relaxed(val, ptr);
+> > +       }
+> > +
+> > +       while (i + 4 <= len) {
+> > +               val = *((u32 *)(src + i));
+> > +               writel_relaxed(val, dst + i);
+>
+> If dst is not aligned to 4, this is going to write to an address that
+> is not a multiple of 4, even though it writes a long. Is this ok?
+> Typically limitations in write size come with alignment limitations.
+>
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-index de6ef39..5e14e5a 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-@@ -95,6 +95,14 @@
- 	status = "okay";
- };
- 
-+&esdhc {
-+	status = "okay";
-+};
-+
-+&esdhc1 {
-+	status = "okay";
-+};
-+
- &i2c0 {
- 	status = "okay";
- 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-index 9fb9113..12c9cd3 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-@@ -83,6 +83,19 @@
- 	};
- };
- 
-+&esdhc {
-+	sd-uhs-sdr104;
-+	sd-uhs-sdr50;
-+	sd-uhs-sdr25;
-+	sd-uhs-sdr12;
-+	status = "okay";
-+	};
-+
-+&esdhc1 {
-+	mmc-hs200-1_8v;
-+	status = "okay";
-+	};
-+
- &i2c0 {
- 	status = "okay";
- 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 7975519..f299075 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -245,6 +245,33 @@
- 			status = "disabled";
- 		};
- 
-+		esdhc: mmc@2140000 {
-+			compatible = "fsl,ls1028a-esdhc", "fsl,esdhc";
-+			reg = <0x0 0x2140000 0x0 0x10000>;
-+			interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
-+			clock-frequency = <0>; /* fixed up by bootloader */
-+			clocks = <&clockgen 2 1>;
-+			voltage-ranges = <1800 1800 3300 3300>;
-+			sdhci,auto-cmd12;
-+			little-endian;
-+			bus-width = <4>;
-+			status = "disabled";
-+		};
-+
-+		esdhc1: mmc@2150000 {
-+			compatible = "fsl,ls1028a-esdhc", "fsl,esdhc";
-+			reg = <0x0 0x2150000 0x0 0x10000>;
-+			interrupts = <GIC_SPI 63 IRQ_TYPE_LEVEL_HIGH>;
-+			clock-frequency = <0>; /* fixed up by bootloader */
-+			clocks = <&clockgen 2 1>;
-+			voltage-ranges = <1800 1800 3300 3300>;
-+			sdhci,auto-cmd12;
-+			broken-cd;
-+			little-endian;
-+			bus-width = <4>;
-+			status = "disabled";
-+		};
-+
- 		duart0: serial@21c0500 {
- 			compatible = "fsl,ns16550", "ns16550a";
- 			reg = <0x00 0x21c0500 0x0 0x100>;
--- 
-2.9.5
+If dst is not aligned to 4, the first if (!IS_ALIGNED(...)) block
+should make that the (dst + i) is a multiple of 4, so the write here
+is aligned.
 
+> > +               i += 4;
+> > +       }
+> > +       if (i < len) {
+> > +               val = readl_relaxed(dst + i);
+> > +               memcpy(&val, src + i, len - i);
+> > +               writel_relaxed(val, dst + i);
+> > +       }
+> > +}
+> > +EXPORT_SYMBOL_GPL(scp_memcpy_aligned);
+>
+> IIUC this function's symbol does not need to be exported since it is
+> only used in the current kernel module.
+>
+
+I've tried to remove this EXPORT line, but then there would be error
+while compiling:
+ERROR: "scp_memcpy_aligned" [drivers/remoteproc/mtk_scp.ko] undefined!
+I think it's because the mtk_scp.c and mtk_scp_ipi.c both use the
+scp_memcpy_aligned, but is compiled as separate .o files. So the
+EXPORT_SYMBOL is needed.
 
 _______________________________________________
 linux-arm-kernel mailing list
