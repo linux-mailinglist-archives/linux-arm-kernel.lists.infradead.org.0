@@ -2,35 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A9BE813DD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 10:02:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52C7B813EF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 10:06:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TQv9mS2DH/jyusGxnrRNkhmY24fqEfn1mChBZjx7x1U=; b=d/5bBso8bv314P
-	JFz5o6Xsko58J6V/pkDdHIqJug/1egmE6bW0TNJWYJ2370fAu9cNTYnDJ4DFdnNuCF//vAbVTbLdc
-	+6cl0filnDQGIMbIt9e3psNdEhhxbQNzEd1nCwxK8Dz7ZQxSbUPGRrF6wMdM8dxKK3Unpbm+iulm8
-	M+i+bOfsBzgyPu1QlgRPyG06q07ohal+8ojcAgNm8m+S+N1SfXoluo8yXOzPmNwffuDftglzkEna3
-	OPJfTwgx1FtNdKnUVQCn+ETaqHylPqspU0bNEpf9YeKEqh3iAnHrBn5o+R11LUh2U5mv+uJQGr0H6
-	9G+FWeR1zzK4CG57jyyQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=m7FC9G/bzEkbkAgjJCKveZQOlKmC6B+l+3jMeV90TxU=; b=Q/z+VuUM2Q9+zIvfFpSfDitwr
+	dV0THDsFBdtDTXBPU2MszLIwwAlo+kTvrPWZ4wHusJUWSIJT+3GyxspPc3BuoePIvPQaU4vUEBtjt
+	XujD9Es3rFcJRug/L+RZn9fBCfuoZlQPR6pTQAG2g4bmCBNI7aoZmHsdhYv25KPwktErqBhrq4fd4
+	2a7KG/+b/1X/INvAMjofsedMyV/VT1Rt0QGj8OK1CmZ9tUToeR+7E+muFG4rWq81IneUZrBB8FIqq
+	wqmFVEN6agV6p/MAXqvh2dlBQnM0dcU0850CpiGoeV98+dORJOmIDvRAaPbzOpokUKzFZc9CZJGZ3
+	W7KBWACmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huXx9-0003sG-61; Mon, 05 Aug 2019 08:02:47 +0000
-Received: from [195.167.85.94] (helo=localhost)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1huXwK-0003OX-Je; Mon, 05 Aug 2019 08:01:57 +0000
-From: Christoph Hellwig <hch@lst.de>
-To: iommu@lists.linux-foundation.org
-Subject: [PATCH 2/2] MIPS: remove support for DMA_ATTR_WRITE_COMBINE
-Date: Mon,  5 Aug 2019 11:01:45 +0300
-Message-Id: <20190805080145.5694-3-hch@lst.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190805080145.5694-1-hch@lst.de>
+	id 1huY13-0006YB-3Y; Mon, 05 Aug 2019 08:06:49 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1huY0o-0006Ar-8u
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 08:06:36 +0000
+Received: by mail-lj1-x242.google.com with SMTP id z28so24276170ljn.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 05 Aug 2019 01:06:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=4jotGUYX3HDjIjrPWkq93S31gJkGTLLQx5i8QIerKxE=;
+ b=OKXu80bhtKFjmm2MpkIDYVWmXqi7Y+Xjky/uEczjP2Zl5b7vO97lSZ4GxsSOJjZduQ
+ VgPXNXexmCAKG6Z+637VhMExKFfEjxuDw3H3mRcIbO3qLRCxF1TJiOxHnvXkyL1xl5hz
+ 9tSzcuFZEaM47GjqXTJ6n5YnEqhbYAzKlpVrDHKCy9VeCfnp53elgyy+VMv+lz31Ers7
+ Eic301vKwslj47MtbPz81DyzufZoA3sVB/fmBoMeBi2wwb65qyfXQctIncrR9gNzSMvv
+ ew3Ty0ZvYjqCUhy9kY7gTZ+iW4B61AZpbS675ligIs/I+dyRKPx83vFtsSrTsvbz0lFJ
+ WX4w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=4jotGUYX3HDjIjrPWkq93S31gJkGTLLQx5i8QIerKxE=;
+ b=K7fZ5VtzPZmzja+UcbyGoGZOjNt3xLbDUa5IMBdzodR0bhFyqI2tynxCMhtGhNiHu/
+ gDsR4IejdgWa4nJ5QBQP0AQoDNncG3Z/MSstQNVCqaO7WK88E5CN/C+cr2IFvSxIX40M
+ B/pUrdNKwh0nrvG3xpDo5vZyZQxGc+14+XE+MtLlBk7opHysglJtY2NuD34OO0SOAunl
+ 7bsEIv/Zc5SfsCbmfwp/nSBEWWfXVlMFK2gCvCm5iD+oeT4OW9Tf4tMrO/QOQwqnog9E
+ FsWxgpHHG0QFeuBbNYyDPC5onHWDEUlj1WHO68H/rAefzWss5iVMNMYw3cLdgGjE/r2t
+ /IqA==
+X-Gm-Message-State: APjAAAVumwLYIxVdJzDzdfneDav9wBTLzxvr1lXc0thA7L8VZ0/xO4hF
+ gkBFTr8lmXiZMtW1OmCHq8vD/w==
+X-Google-Smtp-Source: APXvYqyZpQSVk777vhC2lpS6B8C38YOlvgzOQV2vQdpdrwUMZBvpR5l2r7dZg3bY6N4q4hVA/QRa0Q==
+X-Received: by 2002:a2e:9b48:: with SMTP id o8mr78054712ljj.122.1564992392086; 
+ Mon, 05 Aug 2019 01:06:32 -0700 (PDT)
+Received: from ?IPv6:2a00:1fa0:44f5:2f9a:806:ec14:8a98:a30c?
+ ([2a00:1fa0:44f5:2f9a:806:ec14:8a98:a30c])
+ by smtp.gmail.com with ESMTPSA id l24sm17213019lji.78.2019.08.05.01.06.30
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 05 Aug 2019 01:06:31 -0700 (PDT)
+Subject: Re: [PATCH 2/2] MIPS: remove support for DMA_ATTR_WRITE_COMBINE
+To: Christoph Hellwig <hch@lst.de>, iommu@lists.linux-foundation.org
 References: <20190805080145.5694-1-hch@lst.de>
+ <20190805080145.5694-3-hch@lst.de>
+From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
+Message-ID: <f02604c5-dbea-e64e-cfb7-3a002b0da9a6@cogentembedded.com>
+Date: Mon, 5 Aug 2019 11:06:24 +0300
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190805080145.5694-3-hch@lst.de>
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190805_010634_735551_CFC7B389 
+X-CRM114-Status: GOOD (  12.39  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -48,58 +104,34 @@ Cc: Shawn Anastasio <shawn@anastas.io>, Will Deacon <will@kernel.org>,
  linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
  Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
  Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Mips uses the KSEG1 kernel memory segment do map dma coherent
-allocations for non-coherent devices as uncachable, and does not have
-any kind of special support for DMA_ATTR_WRITE_COMBINE in the allocation
-path.  Thus supporting DMA_ATTR_WRITE_COMBINE in dma_mmap_attrs will
-lead to multiple mappings with different caching attributes.
+Hello!
 
-Fixes: 8c172467be36 ("MIPS: Add implementation of dma_map_ops.mmap()")
-Signed-off-by: Christoph Hellwig <hch@lst.de>
----
- arch/mips/Kconfig              | 1 -
- arch/mips/mm/dma-noncoherent.c | 8 --------
- 2 files changed, 9 deletions(-)
+On 05.08.2019 11:01, Christoph Hellwig wrote:
 
-diff --git a/arch/mips/Kconfig b/arch/mips/Kconfig
-index d50fafd7bf3a..86e6760ef0d0 100644
---- a/arch/mips/Kconfig
-+++ b/arch/mips/Kconfig
-@@ -1119,7 +1119,6 @@ config DMA_PERDEV_COHERENT
- 
- config DMA_NONCOHERENT
- 	bool
--	select ARCH_HAS_DMA_MMAP_PGPROT
- 	select ARCH_HAS_SYNC_DMA_FOR_DEVICE
- 	select ARCH_HAS_UNCACHED_SEGMENT
- 	select NEED_DMA_MAP_STATE
-diff --git a/arch/mips/mm/dma-noncoherent.c b/arch/mips/mm/dma-noncoherent.c
-index ed56c6fa7be2..1d4d57dd9acf 100644
---- a/arch/mips/mm/dma-noncoherent.c
-+++ b/arch/mips/mm/dma-noncoherent.c
-@@ -65,14 +65,6 @@ long arch_dma_coherent_to_pfn(struct device *dev, void *cpu_addr,
- 	return page_to_pfn(virt_to_page(cached_kernel_address(cpu_addr)));
- }
- 
--pgprot_t arch_dma_mmap_pgprot(struct device *dev, pgprot_t prot,
--		unsigned long attrs)
--{
--	if (attrs & DMA_ATTR_WRITE_COMBINE)
--		return pgprot_writecombine(prot);
--	return pgprot_noncached(prot);
--}
--
- static inline void dma_sync_virt(void *addr, size_t size,
- 		enum dma_data_direction dir)
- {
--- 
-2.20.1
+> Mips uses the KSEG1 kernel memory segment do map dma coherent
 
+     MIPS. s/do/to/?
+
+> allocations for n
+
+on-coherent devices as uncachable, and does not have
+
+    Uncacheable?
+
+> any kind of special support for DMA_ATTR_WRITE_COMBINE in the allocation
+> path.  Thus supporting DMA_ATTR_WRITE_COMBINE in dma_mmap_attrs will
+> lead to multiple mappings with different caching attributes.
+> 
+> Fixes: 8c172467be36 ("MIPS: Add implementation of dma_map_ops.mmap()")
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+[...]
+
+MBR, Sergei
 
 _______________________________________________
 linux-arm-kernel mailing list
