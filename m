@@ -2,76 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F99381A1D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 14:59:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2F3F81A2A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 15:02:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CxrOoh8QQ6QKwxu1BTgT6GkxqLminapDWlxiUxeCLh4=; b=bH1jZq5RCEP+wa
-	T6AturDeUHbluQSeja+IiBC+I59Vc28C4Y15k2Ltj3k7+pHAlSloQgJJJ8TbL9Uh3darFMG4gU+Yj
-	z7GmcOENlKBqTaG673Z0wqupAbWTeMmH29VLvJVKjeG7gJANZ+rMJ+Bd+c89k/VscgArKkIw6O6LG
-	rPc1HeTy/X1b2Cv6kU6MMxFjibWxS1/k4hokzPHywg8GvLHTpWPutJYk2ZlAUf2RLkxFDgqW31qy0
-	EjBUfBqj3FrUOANMAEcFmftDOzy1qcf1VqDJaRJINaJ8TAVXTiIBRIPzutdhN+5Cleh6O6fEdlxyi
-	7KFJiFRZtd4Hq2E9NC6A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ykq1ewY7x3kBn6sC6OMW3q6wgl8/ndQ/f8efqIfcpsw=; b=EA97Jo94IffZ5c
+	fm/BZhewMd5yWT/1viAeLE5rB1uAWUyrxyf62x79YZyqx2JZpgR6Cof7BBxa0Y2cVscx2Y6de4EsX
+	FkNGAEql32f8bfebL49kC5vMFUMsgAF7MzVoYUFg9gM9zR1pzscH9mrrKdbq5QfL7MzWRp0REFTAK
+	2/xjsfvseQB6NZLh4G6/H2YsES1yIC6KrVe7kkGB57O6V21R3kJJSyGjiOc3B7QSkUgDu4BYmE0Me
+	yC2gALHOJjWUuoAh7nq5G1F1HJKIFjLfqUbtDsFzd4Zonq4QuMfSrt0nQXfaF8re4fZS+UjT3qm/8
+	RchhuAuZnGAey03FlYHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hucaG-0004W7-Ai; Mon, 05 Aug 2019 12:59:28 +0000
+	id 1hucdF-0006Io-9h; Mon, 05 Aug 2019 13:02:33 +0000
 Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hucZk-00045G-By
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 12:59:00 +0000
-Received: by mail-wm1-x344.google.com with SMTP id v19so72936174wmj.5
+ id 1hucd3-0006IG-Ob
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 13:02:23 +0000
+Received: by mail-wm1-x344.google.com with SMTP id s3so74638486wms.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 05:58:53 -0700 (PDT)
+ Mon, 05 Aug 2019 06:02:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=98lh3VhEJYcNP4cO6bfAWLsXJomqXzKBLTJKfb0rfuY=;
- b=tMnBMEYxd6Lk47wVxq8np1s07LPbtohRCD9xifUu+u/mzgsVZzai5W9om02Rx3+Nb1
- tv62V9YKJ2x9GGQSuyYppVpgKlfNYYE9mhFKylGM4whvoeB5s2wWMLc+W4EmXTbO0gXB
- oLjGlL8FWWWdesfvwBYBq4LJ0Vi3usyG9KhMN/2TLtcowEOakLiV8qSWKkzmCeDfxKG3
- qRtvMzkDWgc63UQxW79fR00LSbu9OWNG0btdqFgsNig9WykCCzGhqwgfs0YLE6eL0ohl
- JWXR8vRNpcJR0AGTyBKmbK1NXKrbojwL7TVJmgmCvj8GHPKFPfPXoWH9f3Nk+MRf2jzJ
- qLpQ==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VD+kO2freT4druqcnh49hR6u8OkuGawcql9pBt221gM=;
+ b=mjk8vH9McUPXmutExi9LK5ex7zl16u6Y1A29MLJPWpdqRchOSAGR8yhmK2fOTAo0rR
+ 0sDiFCY/K4jh+admqvlB/o99ab6xeNCWhc+kpHUH51vRLHk1iEDDajMTVrPVdzhGXOez
+ b+MOpvwyHe3E8z4ck7Lc0JsxTJblE1HTqoVBH2bnCZr3MsUkmySVvX+rpBLWbpbktUmu
+ hP/XHt8UiQrWbTdDNDhsijdtesI8b0m8A9EZshbEb+4cGVeTBIWdn2VjubV1sCDeTZXR
+ sMr8q3TOfj4wjtw/b/DQ2XLzpqs0aaxo9LDtJ1wfglDOLg/WFdPVPnB9ccDGeJ8Az1yz
+ MGtw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=98lh3VhEJYcNP4cO6bfAWLsXJomqXzKBLTJKfb0rfuY=;
- b=G16ThEv2qFKZwOEbZ9gJNHetSchrWyqXQyBZ5FDGT7cxVori1h2J2vjPAYtbPXTbCo
- gvI6NT0OcpHcJtiGOeEZnoB2bnpD31Ac3OVlnm2Er3bv3ARp5GYJyd3/ne097JmgQZfh
- pVZjqjFW+qy39hJmYU8LC7sz+OGRby2Pk9ZDXJvglyOnkoUriLru3scAvjMZn/JbRODi
- JRG/LAXBOE62oxwvYMpYsf6JYAJVqv6MVaJQUbeXF/wnvi4bC2FE1RQFtHK22xXxhPPV
- c1gk8xL7s5t0DREHKDCaRsXCy8mngwXVC4teUuhW2DVJurQZHERVnflKsLTjCPeFuU2G
- k0wg==
-X-Gm-Message-State: APjAAAVOYBRm4B3pfocsEwdpgcaibKPZn7ZzzGT+30OQZJCng99fQxc4
- KoOgsrCfu/NN3yejgCHBIW72Fw==
-X-Google-Smtp-Source: APXvYqzsqQmdgJj3jeIDVq76HPcJpxfluPpf19/xxhP3uizn5JqLt/VNLa8L7aHlrqKs6BQBR3c4qA==
-X-Received: by 2002:a1c:e108:: with SMTP id y8mr18411997wmg.65.1565009932852; 
- Mon, 05 Aug 2019 05:58:52 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VD+kO2freT4druqcnh49hR6u8OkuGawcql9pBt221gM=;
+ b=H53DuaD5dAuDz+kdB4zc726WPqBbQH9m6EZLwFd9cM0qdj3NqFer9nhme2jOPadT2B
+ 9Q8lco5tzkraSnp4PQ2dS4hQ3bgf7u3ZDYc7Fx1Ht+oHhgXjhpY29a4VGtbD7mapbyGP
+ kWW5H+ls/cGx39iMl5eQTu7swosA3+Pojd9W9p/46JKkSf806sApkuzJr6IlnyPum8EO
+ nYL0YdlAAgxPNG+LaKIMGYD3VXQXwl01Qm3jxqWobViFvjvDKbpZODalPR8hjazqSNs3
+ xt0Wp8x5VCiW4wum8AWCo+GRSTLWIWH0ZnPtIs0zxoCKekLPJE+tihJYKwi/l9kBc9wD
+ hikA==
+X-Gm-Message-State: APjAAAVeLhY38n1dvwAxk8u+Rm889qNfk2P484uf/pToROTvBACxp4NF
+ Kg403ksfKq92OGAHgRxrlwb/FQ==
+X-Google-Smtp-Source: APXvYqwxgFax/fM7iqjP2wFpKMs36pqx4aCRyV/P5qvPCozjg2IOFjiFHWnYt60j8Qx7Ktjguvx6VQ==
+X-Received: by 2002:a1c:4e14:: with SMTP id g20mr18419431wmh.3.1565010140443; 
+ Mon, 05 Aug 2019 06:02:20 -0700 (PDT)
 Received: from radium.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id k9sm15582779wrd.46.2019.08.05.05.58.51
+ by smtp.gmail.com with ESMTPSA id v23sm74950359wmj.32.2019.08.05.06.02.19
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 05 Aug 2019 05:58:52 -0700 (PDT)
+ Mon, 05 Aug 2019 06:02:19 -0700 (PDT)
 From: Fabien Parent <fparent@baylibre.com>
-To: thierry.reding@gmail.com,
-	robh+dt@kernel.org,
+To: robh+dt@kernel.org,
 	matthias.bgg@gmail.com
-Subject: [PATCH 2/2] pwm: pwm-mediatek: Add MT8516 SoC support
-Date: Mon,  5 Aug 2019 14:58:48 +0200
-Message-Id: <20190805125848.15751-2-fparent@baylibre.com>
+Subject: [PATCH] dt-bindings: rng: mtk-rng: Add documentation for MT8516
+Date: Mon,  5 Aug 2019 15:02:15 +0200
+Message-Id: <20190805130215.20499-1-fparent@baylibre.com>
 X-Mailer: git-send-email 2.23.0.rc1
-In-Reply-To: <20190805125848.15751-1-fparent@baylibre.com>
-References: <20190805125848.15751-1-fparent@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_055857_669143_842F0746 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20190805_060221_801479_6F0B5167 
+X-CRM114-Status: UNSURE (   9.19  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -96,45 +94,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, linux-pwm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Fabien Parent <fparent@baylibre.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Fabien Parent <fparent@baylibre.com>, linux-mediatek@lists.infradead.org,
+ linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the compatible and the platform data to support PWM on the MT8516
-SoC.
+This commit adds the device-tree documentation for the RNG IP on the
+MediaTek MT8516 SoC.
 
 Signed-off-by: Fabien Parent <fparent@baylibre.com>
 ---
- drivers/pwm/pwm-mediatek.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+ Documentation/devicetree/bindings/rng/mtk-rng.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/pwm/pwm-mediatek.c b/drivers/pwm/pwm-mediatek.c
-index eb6674ce995f..6697e30811e7 100644
---- a/drivers/pwm/pwm-mediatek.c
-+++ b/drivers/pwm/pwm-mediatek.c
-@@ -302,11 +302,18 @@ static const struct mtk_pwm_platform_data mt7628_pwm_data = {
- 	.has_clks = false,
- };
- 
-+static const struct mtk_pwm_platform_data mt8516_pwm_data = {
-+	.num_pwms = 5,
-+	.pwm45_fixup = false,
-+	.has_clks = true,
-+};
-+
- static const struct of_device_id mtk_pwm_of_match[] = {
- 	{ .compatible = "mediatek,mt2712-pwm", .data = &mt2712_pwm_data },
- 	{ .compatible = "mediatek,mt7622-pwm", .data = &mt7622_pwm_data },
- 	{ .compatible = "mediatek,mt7623-pwm", .data = &mt7623_pwm_data },
- 	{ .compatible = "mediatek,mt7628-pwm", .data = &mt7628_pwm_data },
-+	{ .compatible = "mediatek,mt8516-pwm", .data = &mt8516_pwm_data },
- 	{ },
- };
- MODULE_DEVICE_TABLE(of, mtk_pwm_of_match);
+diff --git a/Documentation/devicetree/bindings/rng/mtk-rng.txt b/Documentation/devicetree/bindings/rng/mtk-rng.txt
+index 2bc89f133701..dfdcb5cd2ea8 100644
+--- a/Documentation/devicetree/bindings/rng/mtk-rng.txt
++++ b/Documentation/devicetree/bindings/rng/mtk-rng.txt
+@@ -6,6 +6,7 @@ Required properties:
+ 			"mediatek,mt7622-rng", 	"mediatek,mt7623-rng" : for MT7622
+ 			"mediatek,mt7629-rng",  "mediatek,mt7623-rng" : for MT7629
+ 			"mediatek,mt7623-rng" : for MT7623
++			"mediatek,mt8516-rng", "mediatek,mt7623-rng" : for MT8516
+ - clocks	    : list of clock specifiers, corresponding to
+ 		      entries in clock-names property;
+ - clock-names	    : Should contain "rng" entries;
 -- 
 2.23.0.rc1
 
