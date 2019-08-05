@@ -2,89 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2A9E8206A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 17:37:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A156082074
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 17:39:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9rMFYhuOpat53lGDNNBEyf02+WnpLMrJjXSXXnZnQ0E=; b=QfuoGE42kKYqJw
-	dqeSbgQ1kMLNs+NWjiXs4xs2Sbn7SyXbKrb3Z76awfzrPh/cDzyxrNUwRFVp9ZV48rmM5l+y0+mW7
-	xF+/NUMePIbJD065Uf0qXUEl2gjwvdugmOTka0kRmzfSE/gpWqH+M02yCcBoRSbS0K+9tu4svlyK6
-	XjebTjOX1Dwvc14dUjHTlAcOxfO99R5ziEEmdpotRPIJm6j4ym2wBzZduBa1arzFFxc3/wUdv8xHJ
-	eIOUz84Jp9DipKx1CRZ8iEjSgD7IGPkxabW0lQCcLRn8J5kaf/C5Ja/zCqglA9ODOWxzcab5PpqK0
-	5WN58pMZXzC2Ze1F+vig==;
+	List-Owner; bh=8S4faRuOHrTMDOY8dFBs+lMljRQe75+kJ8RLQ6eFoR4=; b=cHo7xvFaE3X3jZ
+	fpNqWh/d6KWUs5CF0WiXwOiJW7m98oHcBz8Npjd+1LDEjH25mc+4iGQcRlbD8PELRnm1m4YRSQA+e
+	MNAfAFOC7pR032P3ZTnVTIFbLVc0xy89eAWDNaLzpzwx41d0TdZfWDXsIZAjK1MOlsgFCk0nHvFCP
+	0+B2GOdwV1Rd1uJxV1eRJNt9rgWS1b/3XHiJp0RAlq4PKGw66Kynv4iKEfvevbF7QISqXZ3Klu92V
+	q1EIGXhLAXRGBhLgSQHTZ7CdBhHhb2xRy3o0VQg/kVX2oV5OO+3/eHIJ2mpQoPuVpHR98WlN3uWPn
+	fI49G5n/WCE0Ql0pEapg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huf3G-00052E-Os; Mon, 05 Aug 2019 15:37:34 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huf35-0004xn-0J
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 15:37:24 +0000
-Received: by mail-pg1-x543.google.com with SMTP id w10so39936655pgj.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 08:37:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BRP6laDcYsaagqowX6PM5vV1ql9YojC3f98ieQbfibw=;
- b=aZHdw82yWFty3hQVAzsHs2fUhyQvuwpZlVYSYWBLTB/8rupDAl0wKOFCYdmT2AVyM3
- bU4fhnvSzDKnLtiQ3rS7cijZ1Vv3IIZe4rRpc4rEibhv0ZDXZ9WOzma5OQlcS+kYc8Mt
- 3aq2tOS5hdDp99Y8bIwoTjEQB80+ErgcnzBts/1QhdymZ2BjAdCta1VZ5xzoMpm6V2x1
- DZCYNyCjuRGW+uCHqJqV4KCP0MbZCeI9Yg5elIeOIapd0UtWSDxj7AOKYYjvTfNTK9V9
- yb22NKB3Py0XgnjBPYBGPZ2hy6herMOmpnsmUtGcyAepI5Z7zt4WR2w/bewU8Zp5+oIw
- 3psA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BRP6laDcYsaagqowX6PM5vV1ql9YojC3f98ieQbfibw=;
- b=NToSs++8LHDnWgV7jGLh3SMF5U7bElDpvPWbLKl7Bp032VaHjbfDC6LXs1syrhqFjF
- KKsCT/4c5phaXFbUKQUPgMigpjcQp3bRS7fUO0U0JIBFVC3HdNZkbqr75GS23L5N3d3k
- jun+cj3ktpyB2YAuk5U0dSiiZiIhGGiF6vnz5aSMU1zzlafWajfr9sGQguXJRwaxqIod
- 6baSnFp8C0Ud4gtm//KlP/mlFeL2rPcSMuZ/S9vB4itBDjwrlVWpkiTVQSvqdNI/h3jG
- kBrvsOrif/mTMNeMsBb5OxE6cV+M9yh26qRblcpdxcpgjQM6R4ElqAll7/qrkB20S3Mn
- vcCA==
-X-Gm-Message-State: APjAAAU0mOPf+rcKss4Be5hZybBOQiKkYDbv8TOAePt/5xb7mBR12/Z/
- CiE/HF9dlbxMP2E1hae1tYdHjoT4LQAbTMM439hAvjrLPeM=
-X-Google-Smtp-Source: APXvYqyQR0D20P/mnpoLOPlzIBaHmjQ7w8XW8u+YMSrUQUo8L+f9shx/FCzhOS5dVIpqRT8luECGQsvMeWq4moJNLGA=
-X-Received: by 2002:aa7:97bb:: with SMTP id d27mr73075178pfq.93.1565019438226; 
- Mon, 05 Aug 2019 08:37:18 -0700 (PDT)
+	id 1huf5Q-000643-QO; Mon, 05 Aug 2019 15:39:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1huf5I-00063f-60
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 15:39:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5BD82344;
+ Mon,  5 Aug 2019 08:39:38 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A8B6C3F694;
+ Mon,  5 Aug 2019 08:39:37 -0700 (PDT)
+Date: Mon, 5 Aug 2019 16:39:35 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: io: Relax implicit barriers in default I/O
+ accessors
+Message-ID: <20190805153935.GC10425@arm.com>
+References: <20190729170518.14271-1-will@kernel.org>
+ <20190805103905.GC59981@iMac.local>
+ <20190805113503.tdjkuqsjm7j3e5vx@willie-the-truck>
 MIME-Version: 1.0
-References: <1564670825-4050-1-git-send-email-cai@lca.pw>
-In-Reply-To: <1564670825-4050-1-git-send-email-cai@lca.pw>
-From: Andrey Konovalov <andreyknvl@google.com>
-Date: Mon, 5 Aug 2019 17:37:06 +0200
-Message-ID: <CAAeHK+xMQ5m-_eeQUPM2DoN=6OV-1uC6NX3dVnSKcmEqwSM5ZA@mail.gmail.com>
-Subject: Re: [PATCH v2] arm64/mm: fix variable 'tag' set but not used
-To: Qian Cai <cai@lca.pw>
+Content-Disposition: inline
+In-Reply-To: <20190805113503.tdjkuqsjm7j3e5vx@willie-the-truck>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_083723_045150_C7D3B1FA 
-X-CRM114-Status: GOOD (  17.80  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190805_083940_326008_D6F56F30 
+X-CRM114-Status: GOOD (  27.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,80 +64,90 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Catalin Marinas <catalin.marinas@arm.com>,
- LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Alexander Potapenko <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 1, 2019 at 4:47 PM Qian Cai <cai@lca.pw> wrote:
->
-> When CONFIG_KASAN_SW_TAGS=n, set_tag() is compiled away. GCC throws a
-> warning,
->
-> mm/kasan/common.c: In function '__kasan_kmalloc':
-> mm/kasan/common.c:464:5: warning: variable 'tag' set but not used
-> [-Wunused-but-set-variable]
->   u8 tag = 0xff;
->      ^~~
->
-> Fix it by making __tag_set() a static inline function the same as
-> arch_kasan_set_tag() in mm/kasan/kasan.h for consistency because there
-> is a macro in arch/arm64/include/asm/kasan.h,
->
->  #define arch_kasan_set_tag(addr, tag) __tag_set(addr, tag)
->
-> However, when CONFIG_DEBUG_VIRTUAL=n and CONFIG_SPARSEMEM_VMEMMAP=y,
-> page_to_virt() will call __tag_set() with incorrect type of a
-> parameter, so fix that as well. Also, still let page_to_virt() return
-> "void *" instead of "const void *", so will not need to add a similar
-> cast in lowmem_page_address().
->
-> Signed-off-by: Qian Cai <cai@lca.pw>
-> ---
->
-> v2: Fix compilation warnings of CONFIG_DEBUG_VIRTUAL=n spotted by Will.
->
->  arch/arm64/include/asm/memory.h | 10 +++++++---
->  1 file changed, 7 insertions(+), 3 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-> index b7ba75809751..fb04f10a78ab 100644
-> --- a/arch/arm64/include/asm/memory.h
-> +++ b/arch/arm64/include/asm/memory.h
-> @@ -210,7 +210,11 @@ static inline unsigned long kaslr_offset(void)
->  #define __tag_reset(addr)      untagged_addr(addr)
->  #define __tag_get(addr)                (__u8)((u64)(addr) >> 56)
->  #else
-> -#define __tag_set(addr, tag)   (addr)
-> +static inline const void *__tag_set(const void *addr, u8 tag)
-> +{
-> +       return addr;
-> +}
-> +
->  #define __tag_reset(addr)      (addr)
->  #define __tag_get(addr)                0
->  #endif
-> @@ -301,8 +305,8 @@ static inline void *phys_to_virt(phys_addr_t x)
->  #define page_to_virt(page)     ({                                      \
->         unsigned long __addr =                                          \
->                 ((__page_to_voff(page)) | PAGE_OFFSET);                 \
-> -       unsigned long __addr_tag =                                      \
-> -                __tag_set(__addr, page_kasan_tag(page));               \
-> +       const void *__addr_tag =                                        \
-> +               __tag_set((void *)__addr, page_kasan_tag(page));        \
->         ((void *)__addr_tag);                                           \
->  })
->
-> --
-> 1.8.3.1
->
+On Mon, Aug 05, 2019 at 12:35:04PM +0100, Will Deacon wrote:
+> On Mon, Aug 05, 2019 at 11:39:05AM +0100, Catalin Marinas wrote:
+> > On Mon, Jul 29, 2019 at 06:05:18PM +0100, Will Deacon wrote:
+> > > As a concrete example, consider the following:
+> > > 
+> > > 	memcpy(dma_buffer, data, bufsz);
+> > > 	writel(DMA_START, dev->ctrl_reg);
+> > > 
+> > > A DMB ST instruction between the final write to the DMA buffer and the
+> > > write to the control register will ensure that the writes to the DMA
+> > > buffer are observed before the write to the control register by all
+> > > observers. Put another way, if an observer can see the write to the
+> > > control register, it can also see the writes to memory.
+> > 
+> > I think one of the counter arguments here were that a device does not
+> > "observe" the write to the control register as that's not a master
+> > access (by the device). Do you mean that if another CPU (not the device)
+> > can observe the writel(), it would have also observed the write to the
+> > DMA buffer (assuming the DMB)? Since the device is also an observer of
+> > the DMA buffer accesses, the multi-copy atomicity ensures that the
+> > device is also seeing the buffer updates following a DMB.
+> 
+> Yes, that's right.
+> 
+> > > This has always
+> > > been the case and is not sufficient to provide the ordering required by
+> > > Linux, since there is no guarantee that the master interface of the
+> > > DMA-capable device has observed either of the accesses. However, in an
+> > > other-multi-copy atomic world, we can infer two things:
+> > > 
+> > >   1. A write arriving at an endpoint shared between multiple CPUs is
+> > >      visible to all CPUs
+> > > 
+> > >   2. A write that is visible to all CPUs is also visible to all other
+> > >      observers in the shareability domain
+> > > 
+> > > Pieced together, this allows us to use DMB OSHST for our default I/O
+> > > write accessors and DMB OSHLD for our default I/O read accessors (the
+> > > outer-shareability is for handling non-cacheable mappings) for shared
+> > > devices. Memory-mapped, DMA-capable peripherals that are private to a
+> > > CPU (i.e. inaccessible to other CPUs) still require the DSB, however
+> > > these are few and far between and typically require special treatment
+> > > anyway which is outside of the scope of the portable driver API (e.g.
+> > > GIC, page-table walker, SPE profiler).
 
-Reviewed-by: Andrey Konovalov <andreyknvl@google.com>
+[...]
+
+I think there may be something missing from the argument:
+
+One supposes some kind of causal dependency between the writel() and
+any dependent read done by "the device".  This is entirely up to the
+device implementation, but sanity seems to require that this depencency
+is at least as strong as an address dependency, so that the device
+mustn't speculatively read dma_buffer in advance of receiving the
+DMA_START command etc.  If not, you probably have a badly-designed or
+broken device and you deserve to have to carry ugly workarounds in
+your drivers.
+
+The multi-copy-atomicity requirement effectively rules out some
+bus topologies: if a device masters directly onto a bus that doesn't
+share a common ancestor and shareability domain with the bus its slave
+interface is connected to, there would be no single place to resolve
+the DMB (unless some explicit logic were added to handle that somehow).
+
+It's reasonable to assume that the hardware is somewhat sane for the
+default I/O accessors: for weird hardware, drivers would have to work
+around it explicitly with extra synchronisation but we wouldn't expect
+this to be common.
+
+The per-CPU device case is one where there may be an explicitly weird
+topology, but this only applies to a few specific devices and we can
+work around those as appropriate.
+
+Does that makes sense?  This might be "obvious", so I'm not sure we
+need to write anything.  Just checking my understanding.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
