@@ -2,32 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70295813BD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 09:57:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEB07813BE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 09:58:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XfwNJTDL8nCidwedZPt1NetG8/dT6to++9dXxrwM4ew=; b=GW9hRLps9UPn3Q
-	If3UKiC4f62JSge0u/YJHggEcj+BRnrqL1vv7m3T+kYBSyRa4/qCPxu2P1sy9lgabx5plwvLvXN/B
-	aMPeeNuq7G2d/4nyH2bqHdrKjtKD6rfodD3pHrDSyWNcuhn4z4NIFPkE9FktJ8jVOLd48dcxsxKwL
-	r41D/7QY41lXrDJ3ESOF43lApOzLGjdEXWyRkpeCjlN9bJfjq/6xAz+/HfUL9UEZNHGWPbogStMnG
-	AhLWAHBaBvDOFKqbxU4o9HCgeIpY1Ab9ak8gwyLUuSSXQ+bgOODlPN2ThgpsHWErIeQuiCnJhsMzs
-	q4vuuiQhuwMCnTJ+uO8w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lna3FB7oec60civLwiYhp+zmAu+9kMsbmLfF5E0Uh5Y=; b=KXJqjVhqS0pkFr
+	4IoRhSRTKM43Va2nDh3vFVlxPX8RnF30msNoV3WNVLSykaNnpQ5SU0emD6KAE6mNN2rkVmajmIGln
+	iVHQ6kZo6dgns67vdX4lEtKcg5cL1ekUzVnuoopNR+C1taDWdo/7NfW4O3e/kjeCo8Y2Xu3ulrJcA
+	na0D7OFWw1SjHzG79pN/Rb1Ng5/zGryBIEJPItL31hxBrVq8xaDCdIUXBREqIY7qpMF5stNfquPcc
+	3N7Ks7eiPPyz4jpK/wxNXSxbedOH4eeOL+i4tY+kWd3c1JHgIo/3LjSjj536L86Z/hbpUhfhdJO/R
+	/CG6fz9fKZmxYXoo2NVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huXs6-0000xW-Iw; Mon, 05 Aug 2019 07:57:34 +0000
+	id 1huXsV-0001BI-Ev; Mon, 05 Aug 2019 07:57:59 +0000
 Received: from [195.167.85.94] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1huXrF-0000xJ-5I; Mon, 05 Aug 2019 07:56:42 +0000
+ id 1huXrK-0000xQ-Dy; Mon, 05 Aug 2019 07:56:47 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: arm swiotlb fix
-Date: Mon,  5 Aug 2019 10:56:36 +0300
-Message-Id: <20190805075637.5373-1-hch@lst.de>
+Subject: [PATCH] arm: initialize the dma-remap atomic pool for LPAE configs
+Date: Mon,  5 Aug 2019 10:56:37 +0300
+Message-Id: <20190805075637.5373-2-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190805075637.5373-1-hch@lst.de>
+References: <20190805075637.5373-1-hch@lst.de>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -49,13 +51,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+When we use the generic dma-direct + remap code we also need to
+initialize the atomic pool that is used for GFP_ATOMIC allocations on
+non-coherent devices.
 
-my commit to add swiotlb to arm failed to initialize the atomic pool,
-which is needed for GFP_ATOMIC allocations on non-coherent devices.
-These are fairly rare, but exist so we should wire it up.  For 5.4
-I plan to move the initilization to the common dma-remap code so it
-won't be missed for other architectures.
+Fixes: ad3c7b18c5b3 ("arm: use swiotlb for bounce buffering on LPAE configs")
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ arch/arm/mm/dma-mapping.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
+index 6774b03aa405..e509365cc9ca 100644
+--- a/arch/arm/mm/dma-mapping.c
++++ b/arch/arm/mm/dma-mapping.c
+@@ -2423,4 +2423,10 @@ void arch_dma_free(struct device *dev, size_t size, void *cpu_addr,
+ {
+ 	__arm_dma_free(dev, size, cpu_addr, dma_handle, attrs, false);
+ }
++
++static int __init atomic_pool_init(void)
++{
++	return dma_atomic_pool_init(GFP_DMA, pgprot_noncached(PAGE_KERNEL));
++}
++postcore_initcall(atomic_pool_init);
+ #endif /* CONFIG_SWIOTLB */
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
