@@ -2,75 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 863C68119D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 07:32:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFF6D811BE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 07:45:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=QUoRp3FfCN68KZH+0M89Yw+RNU1ffx/Jngh53LCxZ7o=; b=XDW
-	SmVHUmiMpZ22H+bUzYkKmyLURZNSgGBAyIBE7J/VcBzuciAfcO8WEB4KadnK8F9Idf++0ss7TNrcU
-	guLKFLaML68+3k5UeNl+7tuxxqeJzghHafUXyRFnRMahBMHq6ceIf72uZ1uspZAUoY/oMTM6xB5U0
-	8mbrTrhCVl+gBfZWbOgAluM48W4xExIeB+LJJBsLghgMde2bOmqu54Va8hEsXZLkauUmQ2h2XJIvC
-	KKZcZPYXVQLNnJKxAvD8WMDtIUWHDIQmwx6Vb/WPwrA8FomvsA482uX9gaCzy/nIPkFnTPFTHYr1s
-	10tN4wDbhjfPuKKdqaCYePfNGR6kQ5w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=m4LxEH5fhgi2sQty5s6DP1oAc4oi1aMma39rlh3ZDRA=; b=hut6FnjCZCsZoW
+	gvbtvaCCVqmTGbSYLdocXa7wyndtSwuu1cn3GrGkLxJW/6o/hXwCWnFnwPolMvKiLMj3H0ywaVV6k
+	7ucCfmtYcSI/Eo3vns/NN6SVLCiKXwPFlz+qQX2htIrggpC57E5YmQlDZ9S7FYP+Woj7yHNI0g8P4
+	8QyDIU6J60QhZvgU6DrMoh95Z8B/pFn7xcdbOZ7AJQevV6Wxb28KK9JjkoUorlqSmtZp8bmhbLLD4
+	/YuAHwAe9Xds3neJGXyyuCjcq0fLU8ziRhQdLxBNW2RsHC/nQ/OqDbyAE33bkHQnJAszmTwo7CKIF
+	kR5ysk6jihLgcUhYfDcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huVbF-0004j4-0E; Mon, 05 Aug 2019 05:32:01 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1huVod-0001NL-PT; Mon, 05 Aug 2019 05:45:51 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huVb4-0004bL-4v
- for linux-arm-kernel@bombadil.infradead.org; Mon, 05 Aug 2019 05:31:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
- Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7LiaLOzx+foi3jcc6PNulV/WbO8HwuDd7q1csY3vws4=; b=Lu7/7cfzFdn/FAbNOK/dXEB1i
- +Oupjosw6Hi7Tzuq2KsfqZ2Ay4XfgCNjJ6HiDzlmJhjac1adz5eJTvqklPnyzzMMzc3N/2qBejzfT
- WT+kf5+0cmX861ILceRCr9CYLToav1DIzYEaAx9CddDpa705v3toBMcyq6q0K/jrj+NqBvS9pY1G4
- RcrlAqaQf+21VhqiKU9+kgZkTT6f6ruBbrIEu37ozT/jMDiv16//yoN5rLT4dUM6TF3o+I22aX9kJ
- ms5szb9T24FZQC+rSSrtQsKdMhSiKDASqySQPNuiADsIpnyZj4HkuUaGWGL/qXF7/EFF+RZvBOoDV
- 2Zanmev/g==;
-Received: from inva021.nxp.com ([92.121.34.21])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huVLA-000518-TP
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 05:15:27 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C26DE2004A3;
- Mon,  5 Aug 2019 07:15:06 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5EFB920045E;
- Mon,  5 Aug 2019 07:15:02 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A5B94402DD;
- Mon,  5 Aug 2019 13:14:56 +0800 (SGT)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: jassisinghbrar@gmail.com, o.rempel@pengutronix.de, daniel.baluta@nxp.com,
- aisheng.dong@nxp.com
-Subject: [PATCH v5 0/4] mailbox: imx: bug fix and add support for imx v1 mu
-Date: Mon,  5 Aug 2019 12:52:18 +0800
-Message-Id: <1564980742-19124-1-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1huVoR-0001Mp-PV
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 05:45:41 +0000
+Received: by mail-ot1-x343.google.com with SMTP id r21so78077358otq.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 04 Aug 2019 22:45:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=qsfKjYjCsf5pGaKB27gLmom1CRQ53Y2eR9DqAuao1go=;
+ b=WVWleQQGj7idNGkcLWguKl+6s7c9GSJR9Peu1JHRQU1SG0mgaqIgyTthtSMf4Jk4MB
+ 4zJ0c4qDcqlSmq6yf6Hjlg9nnBa+zohiHYt/DUTpOALEWr5NPVhUD7QpVxAvPPk3CByb
+ hjiy+HEn2al9OonxuFaAYvFr+eSprCNZ93R6L8a7UGkNjzNvgO+yMBul6cITiV19EMu/
+ P9M8YX+4EFmtC5R0gj5vesO/GH6l0ry/OsadBwEXF82z5zwN589en16FyxjfbKZTi2sJ
+ on6n8ozaoK9aPh2pv5AksJyypa2+35YV5XPIkRh8AfDDYtfkYg6cz2eyezjbMOtox8md
+ 57QQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qsfKjYjCsf5pGaKB27gLmom1CRQ53Y2eR9DqAuao1go=;
+ b=eskEefSD+OpDJmELfyPNtb5cy7vj2W8tDcX5TaoOb0+vpQwRCdzpaBT1ZnttKHnxhf
+ wuxgQHgjPyfNc7apipxbBJ57UnM3tHPLSCcUP0XWlSV82rjIAEZtaQjD5/9Hgb2FQQaA
+ T+0Qzl3D01MjJHyLGtyI+q0gWF4GJEyIx5VCrqfxucVSBSTuh38cNhtYKxVf4hZgPN1P
+ 1Fif4EJDK1twEdrpkN7PgaSglFvPpfgpWYIV/vs88+KLtVtXD20pjnfm+eq0NXODQXVt
+ Cw9DZY01MBHDIZWNxi7FFCiMVZDZFaawjGAQz2Lef87YRcCSpj8/pf4Vm2U3Ag6wk504
+ mxcg==
+X-Gm-Message-State: APjAAAVu/X2A/0sBsV6ocnTn3Glj4+b9oj49weQF1yG/yYSWLDJiK/2M
+ XtHcVNrl/zcsEysvhJy/9AgloXJIjZxMrp/OaTZfmg==
+X-Google-Smtp-Source: APXvYqynsimY/6Dqk84ghAu9wj0Oshr0r+P73GlacIpKT0W1PHkBUMRBx5KYGo8JN1hrV2qFA92p1qT0zF29I/6VC7Q=
+X-Received: by 2002:a9d:7a8b:: with SMTP id l11mr76937428otn.247.1564983938417; 
+ Sun, 04 Aug 2019 22:45:38 -0700 (PDT)
+MIME-Version: 1.0
+References: <74a6462743e3d73a630d2634880d8866daee333e.1564022625.git.baolin.wang@linaro.org>
+ <CAPDyKFoNGZRdY3VVf6G9eNBfCyJbN5SUU2+fK24U-mHDX13oFQ@mail.gmail.com>
+ <CAMz4kuKOGmGHoYNELG38qYOw71=AaSk33=johskUtOs0KZ0z-g@mail.gmail.com>
+ <CAPDyKFrUxTzMr+aJ=mXcVJeiP8f4-8+wAxkbA9n8mJaAn=ftVA@mail.gmail.com>
+In-Reply-To: <CAPDyKFrUxTzMr+aJ=mXcVJeiP8f4-8+wAxkbA9n8mJaAn=ftVA@mail.gmail.com>
+From: Baolin Wang <baolin.wang@linaro.org>
+Date: Mon, 5 Aug 2019 13:45:27 +0800
+Message-ID: <CAMz4ku+appDGrAe9yLwzLunUy4K90O1ej2bvA5A=fMbVu_u7Xg@mail.gmail.com>
+Subject: Re: [PATCH v5] mmc: host: sdhci: Fix the incorrect soft reset
+ operation when runtime resuming
+To: Ulf Hansson <ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_061525_021247_9DE04818 
-X-CRM114-Status: UNSURE (   7.67  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-2.3 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190804_224539_840558_37B82BB2 
+X-CRM114-Status: GOOD (  18.25  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,50 +94,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Zhu <hongxing.zhu@nxp.com>, linux-imx@nxp.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Chunyan Zhang <zhang.lyra@gmail.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Change logs:
-v4 --> v5:
-  - Include Daniel's patch-set into this one.
+On Fri, 2 Aug 2019 at 23:17, Ulf Hansson <ulf.hansson@linaro.org> wrote:
+>
+> On Fri, 26 Jul 2019 at 03:41, Baolin Wang <baolin.wang@linaro.org> wrote:
+> >
+> > On Thu, 25 Jul 2019 at 21:15, Ulf Hansson <ulf.hansson@linaro.org> wrote:
+> > >
+> > > - Trimmed cc list
+> > >
+> > > On Thu, 25 Jul 2019 at 05:14, Baolin Wang <baolin.wang@linaro.org> wrote:
+> > > >
+> > > > The SD host controller specification defines 3 types software reset:
+> > > > software reset for data line, software reset for command line and
+> > > > software reset for all. Software reset for all means this reset affects
+> > > > the entire Host controller except for the card detection circuit.
+> > > >
+> > > > In sdhci_runtime_resume_host() function, now we will always do software
+> > > > reset for all, which will cause Spreadtrum host controller work abnormally
+> > > > after resuming. For Spreadtrum platform that will not power down the SD/eMMC
+> > > > card during runtime suspend, we should just do software reset for data
+> > > > and command instead doing reset for all.
+> > > >
+> > > > To fix this issue, this patch introduces a new parameter of
+> > > > sdhci_runtime_resume_host() to let it decide if a 'reset for all' shall
+> > > > be done or not. Meanwhile changes other host drivers to issue a software
+> > > > reset for all to keep the original logic.
+> > > >
+> > > > Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
+> > >
+> > > Applied for next, with a little change (renaming the "soft"
+> > > in-parameter to soft_reset), thanks!
+> >
+> > Thanks Ulf :)
+> >
+> > >
+> > > Adrian, if there is anything you want to change, please tell.
+> > >
+> > > BTW, perhaps this should be applied for fixes and tagged for stable?
+> > > Baolin, if so, can point me the commit (or stable tag) the patch
+> > > fixes?
+> >
+> > Yes, since we fixed the PM runtime issue, which will reveal this
+> > issue. And I think it still fixes:
+> > Fixes: fb8bd90f83c4 ("mmc: sdhci-sprd: Add Spreadtrum's initial host
+> > controller")
+>
+> Make sense. I moved this to the fixes branch and also to took the
+> opportunity to clarify the changelog a bit.
 
-v3 --> v4:
-  - Change "version1.0" to "version 1.0" in the commit log.
-  - Update the devicetree binding document to support the imx7ulp mu.
-  - Rebase the patch refer to the following bug-fixs patch-set issued
-  by Daniel Baluta <daniel.baluta@gmail.com>.
-  "https://patchwork.kernel.org/patch/11069479/"
-
-v2 --> v3:
-  - Format the patch-set refer to Oleksij's guidance.
-  - Init the register array by a simple way recommended by Oleksij.
-  - Add Reviewed-by: Oleksij Rempel <o.rempel@pengutronix.de> tag.
-
-v1 --> v2:
-  - Use to have the register layout linked on probe, suggested by
-  Oleksij Rempel <o.rempel@pengutronix.de>.
-  - Add Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com> tag.
-
-Daniel Baluta (2):
-  mailbox: imx: Fix Tx doorbell shutdown path
-  mailbox: imx: Clear the right interrupts at shutdown
-
-Richard Zhu (2):
-  dt-bindings: mailbox: imx-mu: add imx7ulp MU support
-  mailbox: imx: add support for imx v1 mu
-
- .../devicetree/bindings/mailbox/fsl,mu.txt         |  2 +
- drivers/mailbox/imx-mailbox.c                      | 74 ++++++++++++++++------
- 2 files changed, 56 insertions(+), 20 deletions(-)
+Thanks Ulf.
 
 -- 
-2.7.4
-
+Baolin Wang
+Best Regards
 
 _______________________________________________
 linux-arm-kernel mailing list
