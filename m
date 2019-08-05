@@ -2,73 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6539C8166B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:07:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96FAB81677
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:08:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=24mq9/qYpo3EKzVQ7hxjhiu/wCTl4FqhoUaRy3zr3OA=; b=D87sG2IEY9qcDA
-	C968pTnIS/pkHZhquERdTq4AIQeD8Q/isnyEkWgfaPre98ZoYd88/gUiQ04/O0vF85mr3e0hT/fcH
-	5VP3nC89bLFvV+/QEhM0InrRVe7IP0kgeWK6ZMcgX34PVK9VWm936sxX4CKFQYSFYj303A5llWeg2
-	iCn8HvP87DzLBNk7HERkdjRk4wLRcLDYsXY2v4TdsNVHvHKcUP+gOk9XgcwSmsdPnsj/m8Ee+G2e4
-	SiTqIWLxzwLjXalSCmmqG4JgWEPVpXM5/aNjMLnE9jVCsuGVy4xToJz0ajMyljXI4fEacUH7uGT5E
-	bfgSYAvGvOCy9sj+ZuTw==;
+	List-Owner; bh=R4JECTWD3zzhNnFRZM1WPhylxLFaZMJa9XcSwDV0yPU=; b=C9tNL0qvicidmY
+	Q50/7UccZhsDZe9ZhQRkuM9jBbYky9+NYQOKNFNg0RHCGpXW4WSRbMgwBOpksalSGLHwmK0av+CH3
+	X/hWOZCapsSN+Yt6UweI/lmacd5bkdo9DFMBhLfiFtcJcfDJFCx28Z4qQhF3usBFmDlkUbJK7naLB
+	TqGAFk95iGBMwwjG48CEFDfXnwqtnTOIBJfAwJqGscdGlcZZjEJQRL+A7LwudOfOakGIsG+GEDHwl
+	csCrXcEPqOUkWpGf0glxhwvKp2NdYBlE3+Dv0SbbMsH5ctka5AUqCy8X2fvj0hwkcFZco/vYEZdCN
+	N/AkkFj5aXm25ygsTgqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huZtj-0007Xy-5F; Mon, 05 Aug 2019 10:07:23 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1huZum-0008Bw-4f; Mon, 05 Aug 2019 10:08:28 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huZtV-0007WB-SK
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:07:12 +0000
-Received: by mail-lf1-x144.google.com with SMTP id u10so18696733lfm.12
+ id 1huZua-0008BD-0H
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:08:17 +0000
+Received: by mail-lf1-x143.google.com with SMTP id x3so57571203lfc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 03:07:09 -0700 (PDT)
+ Mon, 05 Aug 2019 03:08:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=nVUZMecSchHo3ov4XgyeqBe+ricOQYDOHuC+qKYyro0=;
- b=bhdM2UlaB2K8iOROiArDFJXYmMBmI0NM6/LKx7/XPm3GqnbIb/bPPiA9Pz8k6nIBF1
- a9wtyCtkgQ0ZgwGYPUfVAbL+577Jz5tF8GafZQB9sMfUv4Nlj4rYl3Er6wl9+QH8Nxhy
- FtkwAUSMAAQBSGeGVlWgZpDNyLCvoPBhP0pcgK2/BjumMbrw+T0pnm5VkmBeHWZ3nO4I
- GPuHg6bPKKt6ASXdwolYWYyjGdwR+7o06PTxLel00izXGOs6Vp7hj8S46bBF1UOQ3xx7
- 4WFYidUocdAHqGiNAXEwabc3LLabLm4K7NaBqzO0dTJ+pDE/gdAlCjuDbCMU7TKWXxNK
- QsKw==
+ :cc; bh=VmJocWvsymOdQ7NU7/6yMlP4/6K5DwEx+usK89GVi9s=;
+ b=kyJZW7fZfdLgtDs2aKngH2TyuWTJjTeVTLZyRgxZRY9MQ56FWUw3A52lCdt4c4YJ+1
+ 3TgWOde1fzdSqgTWIgbjzvsDeaFtKgXf6SuYKrrM9YK82qK7s6dWcsjao4CGSwv8Ahlt
+ Crwmv8+ySmVuExNcK9irfRd7xd4YEh9epWXPM2OVxpgaQ8bRFBbu/lNMcWXb245BCABI
+ /yNpf25WGiE15uDcA+a++0LXluCfysTo88g0q7Hcvunkj67HSTRYbpqtQilt8t8aWCuR
+ NoBItyc2gaayKuIzBJdFKFHEpFkdC+iXQWdc8it3UQcFXi36FqTMsdYN8t8x8xKnWrM8
+ 44vw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=nVUZMecSchHo3ov4XgyeqBe+ricOQYDOHuC+qKYyro0=;
- b=pTi86qbmyGsIiyZ6HNepZuR3Iq96Fbgdvm3YFon4cZZQ8DJmcbaxv06XiQtjCkR8+8
- fRJGehoUhd8Gwt+TumyAtjFdbg+Qu7a16+/uShElxUlZ0VfsbhMtjrcItagbZzi7KtK4
- gdk/R7+G4BFsHjwqaMglAVzYCMi145VAdWzm9m3jv7loXqQND/phoHUuuJl71ez9G937
- zRqZ1s+o9QBJDbEP30OPSMynMnxigzmcTTvHCKWhgCk3/0lBGPwPQp7C1Hv8y/UClZoS
- 3gg1BTze5CJV7z0mFTmT7uz/RR3tOxE/rIBMm3jLcUHD3c7X2nOP3HR5Fh/ucc6HpfEh
- 4mRQ==
-X-Gm-Message-State: APjAAAXWzmR1ypbtphKWDLVp4MuSpwZsRN1xTszTP4OkO4og2uHGdm3R
- /OqNUp4rsnl9pvJXsXYkdRutu8xeAtTSh8GmsjwqYg==
-X-Google-Smtp-Source: APXvYqzbr3N8Sty4/n+PKBjjuxasyEkPZbJo4c/cdLdH2JC6OzKmDCkMaV5/W8Fpx4+sg/pPghnAd39wNmbfOj5KmtU=
-X-Received: by 2002:ac2:5939:: with SMTP id v25mr1356862lfi.115.1564999628161; 
- Mon, 05 Aug 2019 03:07:08 -0700 (PDT)
+ bh=VmJocWvsymOdQ7NU7/6yMlP4/6K5DwEx+usK89GVi9s=;
+ b=FOcBEiQY+Ftia4cu55xHOLOug92cAHRe9PSXnHM5K8/QP1vv5deYLZuTV8PsGsb1j1
+ eU/IiYhn1kDWBZD8q60LMmJy85+se+bhspgbEpzYgCAf7+QMY2dfxNAYRytdyrabu8Pv
+ 3PXWnQprLG2XdCKXMH2hx4gnMT5hZ6r1rDdqsXxdJtVvY/nx2m0ARbw6BwHfffFyCsLd
+ e3fSaDGxXk+TDnLVeFIgDshnIaTUdOeosw3NEUWpxtQG3C8KTaDezQo1uhyPmF7AXAeI
+ 65HaiQuks+nlj9tbY5vLAgXpDetyPHDVUgjeE8oxLSnlHoQRsjPJjznmtlN+HxOiZSNp
+ rjAw==
+X-Gm-Message-State: APjAAAUC4mqVYi4JCf2/gz2l/SiHtVEAlnGrSqgALTYPDff30Uj09Agv
+ 51JGjvVD3+K50IczWdvq9Lr8nw9PIkgK6Fz0IeUZxw==
+X-Google-Smtp-Source: APXvYqxpqm0yndDdT3beIa5MGWi8lTPoZhzSa/lWFiqq6Dn3b88/pHlyJgXWVtBOlC/fjyLdOtrrqUOtG4JGHdovYiM=
+X-Received: by 2002:ac2:5c42:: with SMTP id s2mr60787048lfp.61.1564999694066; 
+ Mon, 05 Aug 2019 03:08:14 -0700 (PDT)
 MIME-Version: 1.0
 References: <1563958245-6321-1-git-send-email-chunfeng.yun@mediatek.com>
-In-Reply-To: <1563958245-6321-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1563958245-6321-4-git-send-email-chunfeng.yun@mediatek.com>
+In-Reply-To: <1563958245-6321-4-git-send-email-chunfeng.yun@mediatek.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 5 Aug 2019 12:06:56 +0200
-Message-ID: <CACRpkdaBT24JPH_VsKtgp6fjWtVuqM50rXkDVYKmLHgR5hdJzA@mail.gmail.com>
-Subject: Re: [PATCH v8 00/11] add USB GPIO based connection detection driver
+Date: Mon, 5 Aug 2019 12:08:02 +0200
+Message-ID: <CACRpkda5OUEfZRSMA-8H5jnhSan+VJ_3KB5CvOaRdZP1NeJQ+w@mail.gmail.com>
+Subject: Re: [PATCH v8 03/11] dt-bindings: usb: add binding for USB GPIO based
+ connection detection driver
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_030709_951890_91E6485E 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20190805_030816_073000_1D5B22A7 
+X-CRM114-Status: GOOD (  10.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,26 +113,16 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed, Jul 24, 2019 at 10:51 AM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
 
-> Because the USB Connector is introduced and the requirement of
-> usb-connector.txt binding, the old way using extcon to support
-> USB Dual-Role switch is now deprecated, meanwhile there is no
-> available common driver when use Type-B connector, typically
-> using an input GPIO to detect USB ID pin.
+> It's used to support dual role switch via GPIO when use Type-B
+> receptacle, typically the USB ID pin is connected to an input
+> GPIO, and also used to enable/disable device when the USB Vbus
+> pin is connected to an input GPIO.
+>
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+> v8 changes:
 
-However while this was going on,
-drivers/extcon/extcon-fsa9480.c was merged and that detects
-not only GPIO on the USB port but multiplexed usecases such
-as UART over the USB micro PHY (and no that UART is not
-a USB UART, but an actual RX/TX over D-/D+).
-
-That driver also measure a whole slew of funny resistance
-values on the ID pin, that is how it does its job.
-
-But for just "hey I'm plugged in" we can surely keep this
-ID on GPIO detection in the USB subsystem.
-
-I just get a bit insecure about how we should ideally
-handle these "funny-PHY's".
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
 Yours,
 Linus Walleij
