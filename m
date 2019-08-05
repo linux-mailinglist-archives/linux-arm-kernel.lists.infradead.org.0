@@ -2,97 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 708E881037
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 04:10:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDF0181051
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 04:39:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uKvmPN6H46hI5gIwdgoeqWuwOfGLXBm8wZYQW1iTA3g=; b=BBlre/OWjmB/7G
-	4aqhOsZ5AA0FBzhePmKD1X4UszQRs5trEbPemijKEl9TIeL2H0Sd1XpCDHWjf5NF4m+7KhW5uq97k
-	tG2u7d6/NutJf9fommrgXToXE6VEcTQn0z8+EtJxePoMwbIeV/sSsmNOmxarRBQ/G3AnnWJvKL4cl
-	wLQX3qw30pnhCiu/KKuvqAHDIF2imF7CG2w9l+VHOtGOd8cSMBcuOFaK7wDnM5AAXMHBMwX1zyJ1+
-	4MbddzNIYBAs9Z00RzM7qieENQL5Lv0e2Z/MPwOjBvjcBwLJufPxtvJs/dD7YiscKWvghNfHXnhcd
-	6vhBheV6WQ1mRA8YAHiw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=k3Sa+UqGXgavK7kZnurlBSYcrzlwXAPOiDi+cYOnR9I=; b=dwBaksaAzdfk1cpNPsyR7IgUr
+	+l4JHT+h2fUcQbSdsGgXOZDR9feZRCEf6Q6GDllXfjwBEz9vi6eOazR7ENZBDZiYHNdqIZ1/mTBTo
+	elSIbJpngBJEGezVmOLs25RvYBD/fi6SufRoIrIcgDO1L7HiUJtqSwgWSHOAinkastWqdzwq5V53K
+	WsBc5BQPQotgoBUhMr/8Uj/TPGy5n7rKIVIBhji6vf0F9l3tfasV5tmduyIlLSnE9RjjIyfra10jQ
+	fPGNJM9J8yCmTNr/94Y0at2dv9JcYx6VOPvT2BsVl+qG9QMQwoJ9ClHA5JNRBroOfGbGb0pQcgQ3M
+	lkun+7R6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huSRu-0005CX-29; Mon, 05 Aug 2019 02:10:10 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1huSuP-0005iN-JB; Mon, 05 Aug 2019 02:39:37 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huSRg-0005C6-Co
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 02:09:58 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 252C41A49;
- Sun,  4 Aug 2019 22:09:55 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Sun, 04 Aug 2019 22:09:55 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=XBfRrOQ28Bn+dCVbtL/ZXEglGYrMofD
- 3T7NHTUbCGus=; b=mcNcSbS3jqoT+fARV0rhU/KYGsg1XoJzD6O0EzyD0fEeohG
- Qn0ybiF/rgmUvgYm7rx9hLHJutnSr/dlBpTAo1mkdEIgE9oPY17ZOXiCanAwHx8V
- FdHtCRu++VLAqm+TXZJC/GsddLiWKHMByiMMnXzDUNHrO6AKLGlXJV+UNWq+cQ75
- FjTgsYe65CM+tZ+RytZpaudBtKVxNc1XSmuZwRSfTHdxuA7qhvwC+1M03HwwfukU
- FDGYvN0w9u/VO5JtBFc7/p0P7WbmDm3Muz1XC77HM+lHVtRJ0tW1IfkGq0znccik
- +ZowCe3p948n9SNIeURdEik60jg+syqn5x5Rh6Q==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=XBfRrO
- Q28Bn+dCVbtL/ZXEglGYrMofD3T7NHTUbCGus=; b=XAhkIWjraQDNfj8Ln4XOn0
- krfY0KMrL/WoxaX9h4DdGNeOTMkx9/nOV8LpP9AvcJmwGmPbsxevW+b+5pFhM8ND
- +P00XNZvUiFNiGqffV2UcEUAje9ZoSkX8Ibp2pC63SWA1w4gycTGGAQPjegidwHL
- 3FH5dctwQldUwCpHc0aEdgh+auckc/yjDv083un0IODk8uq9+HvlPRknPVRmGwl6
- 34BzJl5B1nC5vQMSS7ooU8goSyhbYztyrGgfXKzTx5W5Cfhxcwfy/oRuO+XiGwh0
- +oSc3rrGYSS2ybFnPgjCX4AgoxvoY/PvGXWW1rVvkoFO1gJFJiRjd6c3f3qY/stg
- ==
-X-ME-Sender: <xms:8Y9HXYb7l6c3PoV6udmqdX-5qwVreBaDUpLuz8ujd_gORaw7hx1LXQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddruddtiedgheefucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
- rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecuffhomh
- grihhnpeguvghvihgtvghtrhgvvgdrohhrghenucfrrghrrghmpehmrghilhhfrhhomhep
- rghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:8Y9HXcdxp1TCjdVnT84ZgR3Q6xoxj1Oosqj2ja9cMoSFnIpQrGwJQw>
- <xmx:8Y9HXcCYZPX61iQHG4psCd9kqFlGT53FhzDxWp3NjlnlkNo5WnCzdQ>
- <xmx:8Y9HXeYI9E4bCPmueGXR8dy2XGmodPJW_NoTAm6qS5pjqTdN8SnsZw>
- <xmx:849HXdgizRiGKNWOzJOr02dYh8SsEubJJJ5mgGfYO-9us33ezf2t7A>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 9D405E00A2; Sun,  4 Aug 2019 22:09:53 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-799-g925e343-fmstable-20190729v1
-Mime-Version: 1.0
-Message-Id: <35aaa5a4-1e0d-4f64-8985-36e2c01ccc05@www.fastmail.com>
-In-Reply-To: <CAL_Jsq+oZRREV=VjYUxT3WphOa5tBaF1pvS_JKSphBY=3XB5MA@mail.gmail.com>
-References: <20190730062316.32037-1-andrew@aj.id.au>
- <20190730062316.32037-2-andrew@aj.id.au>
- <CAL_Jsq+oZRREV=VjYUxT3WphOa5tBaF1pvS_JKSphBY=3XB5MA@mail.gmail.com>
-Date: Mon, 05 Aug 2019 11:40:17 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Rob Herring" <robh+dt@kernel.org>
-Subject: Re: [PATCH v3 1/2] dt-bindings: mmc: Document Aspeed SD controller
+ id 1huSuD-0005hg-Ea
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 02:39:27 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 0FD94F7136EB34DA2E07;
+ Mon,  5 Aug 2019 10:39:18 +0800 (CST)
+Received: from [127.0.0.1] (10.184.12.158) by DGGEMS413-HUB.china.huawei.com
+ (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Mon, 5 Aug 2019
+ 10:39:07 +0800
+Subject: Re: kvm-unit-tests: psci_cpu_on_test FAILed
+To: Marc Zyngier <maz@kernel.org>
+References: <3ddf8766-6f02-b655-1b80-d8a7fd016509@huawei.com>
+ <48a18685-ee81-83a7-9eea-63fe26690903@kernel.org>
+ <f58de1d7-a6ca-bd6d-8423-01d27326e078@huawei.com>
+ <20190803111047.11493907@why>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <5cad62ed-a119-e6b8-8e68-839fd2cd1f1f@huawei.com>
+Date: Mon, 5 Aug 2019 10:38:33 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101
+ Thunderbird/64.0
+MIME-Version: 1.0
+In-Reply-To: <20190803111047.11493907@why>
+Content-Language: en-US
+X-Originating-IP: [10.184.12.158]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_190956_677190_37BA9B81 
-X-CRM114-Status: GOOD (  16.39  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190804_193925_644564_BEB1DAE7 
+X-CRM114-Status: GOOD (  22.23  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,154 +68,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
- Ryan Chen <ryanchen.aspeed@gmail.com>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: drjones@redhat.com, kvm@vger.kernel.org, suzuki.poulose@arm.com,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ "Wanghaibin \(D\)" <wanghaibin.wang@huawei.com>, kvmarm@lists.cs.columbia.edu,
+ julien.thierry.kdev@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Marc,
 
-
-On Fri, 2 Aug 2019, at 08:29, Rob Herring wrote:
-> On Tue, Jul 30, 2019 at 12:23 AM Andrew Jeffery <andrew@aj.id.au> wrote:
-> >
-> > The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the
-> > SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
-> > data bus if only a single slot is enabled.
-> >
-> > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> >
-> > ---
-> > v3:
-> > * Fix compatible enums
-> > * Add AST2600 compatibles
-> > * Describe #address-cells / #size-cells
-> > ---
-> >  .../devicetree/bindings/mmc/aspeed,sdhci.yaml | 100 ++++++++++++++++++
-> >  1 file changed, 100 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
-> > new file mode 100644
-> > index 000000000000..dd2a00c59641
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
-> > @@ -0,0 +1,100 @@
-> > +# SPDX-License-Identifier: GPL-2.0-or-later
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/mmc/aspeed,sdhci.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: ASPEED SD/SDIO/eMMC Controller
-> > +
-> > +maintainers:
-> > +  - Andrew Jeffery <andrew@aj.id.au>
-> > +  - Ryan Chen <ryanchen.aspeed@gmail.com>
-> > +
-> > +description: |+
-> > +  The ASPEED SD/SDIO/eMMC controller exposes two slots implementing the SDIO
-> > +  Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit data bus if
-> > +  only a single slot is enabled.
-> > +
-> > +  The two slots are supported by a common configuration area. As the SDHCIs for
-> > +  the slots are dependent on the common configuration area, they are described
-> > +  as child nodes.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - aspeed,ast2400-sd-controller
-> > +      - aspeed,ast2500-sd-controller
-> > +      - aspeed,ast2600-sd-controller
-> > +  reg:
-> > +    maxItems: 1
-> > +    description: Common configuration registers
-> > +  "#address-cells":
-> > +    const: 1
-> > +  "#size-cells":
-> > +    const: 1
-> > +  ranges: true
-> > +  clocks:
-> > +    maxItems: 1
-> > +    description: The SD/SDIO controller clock gate
-> > +
-> > +patternProperties:
-> > +  "^sdhci@[0-9a-f]+$":
+On 2019/8/3 18:10, Marc Zyngier wrote:
+> On Sat, 3 Aug 2019 17:27:41 +0800
+> Zenghui Yu <yuzenghui@huawei.com> wrote:
 > 
-> This should probably have:
+>> Hi Marc,
+>>
+>> On 2019/8/2 23:56, Marc Zyngier wrote:
+>>> On 02/08/2019 11:56, Zenghui Yu wrote:
+>>>> Hi folks,
+>>>>
+>>>> Running kvm-unit-tests with Linux 5.3.0-rc2 on Kunpeng 920, we will get
+>>>> the following fail info:
+>>>>
+>>>> 	[...]
+>>>> 	FAIL psci (4 tests, 1 unexpected failures)
+>>>> 	[...]
+>>>> and
+>>>> 	[...]
+>>>> 	INFO: unexpected cpu_on return value: caller=CPU9, ret=-2
+>>>> 	FAIL: cpu-on
+>>>> 	SUMMARY: 4 tests, 1 unexpected failures
+>>>>
+>>>>
+>>>> I think this is an issue had been fixed once by commit 6c7a5dce22b3
+>>>> ("KVM: arm/arm64: fix races in kvm_psci_vcpu_on"), which makes use of
+>>>> kvm->lock mutex to fix the race between two PSCI_CPU_ON calls - one
+>>>> does reset on the MPIDR register whilst another reads it.
+>>>>
+>>>> But commit 358b28f09f0 ("arm/arm64: KVM: Allow a VCPU to fully reset
+>>>> itself") later moves the reset work into check_vcpu_requests(), by
+>>>> making a KVM_REQ_VCPU_RESET request in PSCI code. Thus the reset work
+>>>> has not been protected by kvm->lock mutex anymore, and the race shows up
+>>>> again...
+>>>>
+>>>> Do we need a fix for this issue? At least achieve a mutex execution
+>>>> between the reset of MPIDR and kvm_mpidr_to_vcpu()?
+>>>
+>>> The thing is that the way we reset registers is marginally insane.
+>>> Yes, it catches most reset bugs. It also introduces many more in
+>>> the rest of the paths.
+>>>
+>>> The fun part is that there is hardly a need for resetting MPIDR.
+>>> It has already been set when we've created the vcpu. It is the
+>>
+>> (That means we can let reset_mpidr() do nothing?)
 > 
-> allOf:
->   - $ref: mmc-controller.yaml
+> It should ever be only written once, as MPIDR is a constant from the
+> guest perspective. So it is not that it can do nothing. It is just that
+> there should never be any other value written to it.
+
+Thanks for this explanation.
+
+>>
+>>> poisoning of the sysreg array that creates a situation where
+>>> the MPIDR is temporarily invalid.
+>>>
+>>> So instead of poisoning the array, how about we just keep
+>>> track of the registers for which we've called a reset function?
+>>> It should be enough to track the most obvious bugs... I've
+>>
+>> The reset of DBG{BCR,BVR,WVR,WCR}n_EL1 registers will also be tracked.
+>> It may affect our judgment?
 > 
-> Another new thing in 5.3. :)
+> How so?
 
-Ack.
+bmap[0..15] will be set multiple times. But it also will not affect
+anything now (it's safe).
+
+>>
+>>> cobbled the following patch together, which seems to fix the
+>>> issue on my TX2 with 64 vcpus.
+>>>
+>>> Thoughts?
+>>>
+>>> 	M.
+>>>
+>>> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+>>> index f26e181d881c..17f46ee7dc83 100644
+>>> --- a/arch/arm64/kvm/sys_regs.c
+>>> +++ b/arch/arm64/kvm/sys_regs.c
+>>> @@ -2254,13 +2254,17 @@ static int emulate_sys_reg(struct kvm_vcpu *vcpu,
+>>>    }
+>>>    >   static void reset_sys_reg_descs(struct kvm_vcpu *vcpu,
+>>> -			      const struct sys_reg_desc *table, size_t num)
+>>> +				const struct sys_reg_desc *table, size_t num,
+>>> +				unsigned long *bmap)
+>>>    {
+>>>    	unsigned long i;
+>>>    >   	for (i = 0; i < num; i++)
+>>> -		if (table[i].reset)
+>>> +		if (table[i].reset) {
+>>>    			table[i].reset(vcpu, &table[i]);
+>>> +			if (bmap)
+>>> +				set_bit(i, bmap);
+>>
+>> I think this should be:
+>> 	set_bit(table[i].reg, bmap);
+>>
+>> Am I wrong?
+> 
+> No, you're absolutely right.
+> 
+>>
+>>> +		}
+>>>    }
+>>>    >   /**
+>>> @@ -2772,21 +2776,23 @@ void kvm_sys_reg_table_init(void)
+>>>     */
+>>>    void kvm_reset_sys_regs(struct kvm_vcpu *vcpu)
+>>>    {
+>>> +	unsigned long *bmap;
+>>>    	size_t num;
+>>>    	const struct sys_reg_desc *table;
+>>>    > -	/* Catch someone adding a register without putting in reset entry. */
+>>> -	memset(&vcpu->arch.ctxt.sys_regs, 0x42, sizeof(vcpu->arch.ctxt.sys_regs));
+>>> +	bmap = bitmap_alloc(NR_SYS_REGS, GFP_KERNEL);
+>>
+>> LOCKDEP kernel will be not happy with this bitmap_alloc:
+>>
+>> " BUG: sleeping function called from invalid context at mm/slab.h:501
+>>     in_atomic(): 1, irqs_disabled(): 0, pid: 8710, name: qemu-system-aar "
+> 
+> Well spotted. I guess GFP_ATOMIC is in order.
+> 
+>>
+>>>    >   	/* Generic chip reset first (so target could override). */
+>>> -	reset_sys_reg_descs(vcpu, sys_reg_descs, ARRAY_SIZE(sys_reg_descs));
+>>> +	reset_sys_reg_descs(vcpu, sys_reg_descs, ARRAY_SIZE(sys_reg_descs), bmap);
+>>>    >   	table = get_target_table(vcpu->arch.target, true, &num);
+>>> -	reset_sys_reg_descs(vcpu, table, num);
+>>> +	reset_sys_reg_descs(vcpu, table, num, bmap);
+>>>    >   	for (num = 1; num < NR_SYS_REGS; num++) {
+>>> -		if (WARN(__vcpu_sys_reg(vcpu, num) == 0x4242424242424242,
+>>> +		if (WARN(bmap && !test_bit(num, bmap),
+>>>    			 "Didn't reset __vcpu_sys_reg(%zi)\n", num))
+>>>    			break;
+>>>    	}
+>>> +
+>>> +	kfree(bmap);
+>>>    }
+>>>
+>>>    
+>>
+>> Some other minor questions about the sys reg resetting:
+>> 1. Pointer Authentication Registers haven't have reset entry yet,
+>>      do they need? The same for ACTLR_EL1.
+> 
+> Pointer auth registers definitely have a reset function, set to
+> reset_unknown. So does ACTLR_EL1, which resets to the host's value.
+
+I find them now :-)
 
 > 
-> > +    type: object
-> > +    properties:
-> > +      compatible:
-> > +        enum:
-> > +          - aspeed,ast2400-sdhci
-> > +          - aspeed,ast2500-sdhci
-> > +          - aspeed,ast2600-sdhci
-> > +      reg:
-> > +        maxItems: 1
-> > +        description: The SDHCI registers
-> > +      clocks:
-> > +        maxItems: 1
-> > +        description: The SD bus clock
-> > +      interrupts:
-> > +        maxItems: 1
-> > +        description: The SD interrupt shared between both slots
-> > +    required:
-> > +      - compatible
-> > +      - reg
-> > +      - clocks
-> > +      - interrupts
-> > +
-> > +additionalProperties: false
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - "#address-cells"
-> > +  - "#size-cells"
-> > +  - ranges
-> > +  - clocks
-> > +
-> > +examples:
-> > +  - |
-> > +    #include <dt-bindings/clock/aspeed-clock.h>
-> > +    sdc@1e740000 {
-> > +            compatible = "aspeed,ast2500-sd-controller";
-> > +            reg = <0x1e740000 0x100>;
-> > +            #address-cells = <1>;
-> > +            #size-cells = <1>;
-> > +            ranges = <0 0x1e740000 0x10000>;
-> > +            clocks = <&syscon ASPEED_CLK_GATE_SDCLK>;
-> > +
-> > +            sdhci0: sdhci@100 {
-> > +                    compatible = "aspeed,ast2500-sdhci";
-> > +                    reg = <0x100 0x100>;
-> > +                    interrupts = <26>;
-> > +                    sdhci,auto-cmd12;
+>> 2. Why does PMCR_EL0 register have no "reg" field, in sys_reg_descs[]?
 > 
-> Not documented. Maybe should be common, but there's only a few users.
+> This looks like a (very minor) bug. reset_pmcr writes directly to the
+> PMCR_EL0 shadow register without using r->reg as the register number.
+> But in the light of the reset tracking we want to add, this needs
+> fixing.
+> 
+>> I will test this patch with kvm-unit-tests next week!
+> 
+> Well, wait until I repost something a bit less buggy...
 
-I'll document it locally for the moment.
+Thanks,
+zenghui
 
-Cheers,
 
-Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
