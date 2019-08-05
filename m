@@ -2,63 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C959825FB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 22:20:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 608A3826B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 23:17:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nW7cJ2raMOhfI4ecRNtMasgOvC5lOMXcueN1meIg89o=; b=YPfZO36ZfKaBb9
-	2cyC65H9XEn6AhS4/5FhAbWanM2FvlYoGrw1BdPz3dRc2kLAc3tzjFPTeATMiC68eyRyIrMtteyNK
-	v9HdK/Ide7+y7Uactcac49uY8JjuQwUD4uAsYYQvDWAdmyQoPGvKs6H23cmXOOzCpI9yO5VOdZAeB
-	Vuyce0sCIIzMfnDM7Q9gmeUmB/wP4tW9ALtLf4zQoNl965tRPSiMMrKlA2ofmpf32ZZf+m1U4DVh6
-	Fd2Sx0/trookfmHnVf5ldeArYYx1yMmm5iugkVFZeZGA+Pq+9Dxh329yzFoAv/250jYm/DiFGjrpS
-	uu+nwhQ0J8eCHP+rYnhg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=liK0D7u+ZqSCuiGPZrNcfTOfn78U16FvDu9nbENeEsI=; b=HT4X86KQt7YDJQ
+	hOadV5EPH/PEwh9j0b86fHj/SZcrbfij4hpHVoap6eP1THWDgf2Xs/YFaxVMvIiCosID4uv7vKz6L
+	0WTUFaQJviZ/hKwFBEoymZm/kfzhB8ozas4NgANGR5vH5HWKyx3tioFXXhq7ic6zVutKa36yBAc3Z
+	n/l6IS3L6f9vBk0qXTrF33oN8ZnoplG0Bm7x0mdj1o+AJfSv6HAZRmnU0c6q9hZYYzi+Ed33bLWls
+	bN9wjxYGaEJXSZJEhTIgWgmayGu4zeEkS1hJAylljnjZCu/PV/fnA5OtTDU3Y2pXLbjDZi917UNeQ
+	QF/CbqI1lRwZYE0dzkaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hujSy-00010B-Cc; Mon, 05 Aug 2019 20:20:24 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1hukM3-0003Ts-0s; Mon, 05 Aug 2019 21:17:19 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hujSp-0000zo-0a
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 20:20:17 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id 6C84980407;
- Mon,  5 Aug 2019 22:20:09 +0200 (CEST)
-Date: Mon, 5 Aug 2019 22:20:08 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH 3/4 v2] drm/panel: simple: Support TI nspire panels
-Message-ID: <20190805202008.GA3984@ravnborg.org>
-References: <20190805085847.25554-1-linus.walleij@linaro.org>
- <20190805085847.25554-4-linus.walleij@linaro.org>
+ id 1hukLq-0003RM-KX
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 21:17:08 +0000
+Received: by mail-pf1-x444.google.com with SMTP id m30so40276447pff.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 05 Aug 2019 14:17:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=btriHWYQu73nHxyRj0uULDI0WFupXKYE8nFpqRhUi5E=;
+ b=a62gzBHN8zDS50OBhnDV1V4x7nXoRywHSroTQoVByDczAGXV3BipxjPTq01SrkbTub
+ agEwfMmn44cmWjaxwPjM6J6JZpjx8WmyJxEXRnDXjNclOKeWLXUkdJVEX/MQCLvJBqtC
+ K1ZxpmOSHoJ9dVfT1c362g+35YgZNJ24X+8fEyjxPJRcu8l+xY8PVNESw9BGEXx1nU94
+ wqiQun9OUEuGzEM7cth+AU5ej7W/2Q3sElHfUdFCQU068818rs5agvFXmicnwPaMJR6t
+ 5IAlapgFz9ED0//3XPA1KmOrrKMINrpJTfgOu4sGbvQe4C1K91C5/vchqTWaSGlR7ZtT
+ i/gw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=btriHWYQu73nHxyRj0uULDI0WFupXKYE8nFpqRhUi5E=;
+ b=ujGXDyX9+RFLizOq4WkIZ9TwlkvQ0Yda1EKbrFq1uwiTYR+sxaVMU/Gg5I5rM1GHKw
+ WCJYyKo9mNNOpdJw47Jd308u+9vEsqqwWNDrzOJ5ZatckcsEnGJbezrfn0ZY2cI1/KWX
+ t9tUJOednZOPDO4p76Tvqtj5UjSnHKTPy8/CrwP3h6SIzpf25DSxFohfzK+a4O1W2MG5
+ XhwAK2RDQEeX8miaEjlmhPSsqXUfra4rtECzkdtaOtTXReVmpJ6YQlpVzjNAjzJzs3P5
+ xWWUbggxeRy0yx2UlH37T+eW6nLKPFyd3R9i1LP8Rsh+F5k8urXNVaejGYygWDbogVqh
+ 5SVA==
+X-Gm-Message-State: APjAAAXw/716pL/CyfUOnU7h5pxOSNvgCgk9b/l3c5inU9BiUlMYdxCl
+ QYXPPgVFjH47j2TP8lJMEEk=
+X-Google-Smtp-Source: APXvYqyoYl+h7ZIawCU+3W64OfYJakM+Xfc++m5kBgD7zKEdWhgVKG1NxI4zroBuK4W+iWzBAmRtUg==
+X-Received: by 2002:a17:90b:8c8:: with SMTP id
+ ds8mr20553606pjb.89.1565039825384; 
+ Mon, 05 Aug 2019 14:17:05 -0700 (PDT)
+Received: from localhost ([100.118.89.196])
+ by smtp.gmail.com with ESMTPSA id j15sm97068547pfe.3.2019.08.05.14.17.04
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 05 Aug 2019 14:17:04 -0700 (PDT)
+From: Rob Clark <robdclark@gmail.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH 1/2] drm: add cache support for arm64
+Date: Mon,  5 Aug 2019 14:14:33 -0700
+Message-Id: <20190805211451.20176-1-robdclark@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190805085847.25554-4-linus.walleij@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=VcLZwmh9 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=pGLkceISAAAA:8
- a=KKAkSRfTAAAA:8 a=7gkXJVJtAAAA:8 a=e5mUnYsNAAAA:8 a=MlHxxIA_3piCZjP8AjAA:9
- a=2FTAOhErDaQBMf8p:21 a=rnw9exMtts0kOuDd:21 a=CjuIK1q_8ugA:10
- a=cvBusfyB2V15izCimMoJ:22 a=E9Po1WZjFZOl8hwRPBS3:22
- a=Vxmtnl_E_bksehYqCbjh:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_132015_425508_945FF7E9 
-X-CRM114-Status: GOOD (  20.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190805_141706_711235_756DBE56 
+X-CRM114-Status: GOOD (  13.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robdclark[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,134 +97,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabian Vogt <fabian@ritter-vogt.de>, Daniel Tang <dt.tangr@gmail.com>,
- linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org
+Cc: Rob Clark <robdclark@chromium.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ linux-kernel@vger.kernel.org, Sean Paul <sean@poorly.run>,
+ linux-arm-kernel@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ Christoph Hellwig <hch@lst.de>, Allison Randal <allison@lohutok.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+From: Rob Clark <robdclark@chromium.org>
 
-On Mon, Aug 05, 2019 at 10:58:46AM +0200, Linus Walleij wrote:
-> This adds support for the TI nspire panels to the simple panel
-> roster. This code is based on arch/arm/mach-nspire/clcd.c.
-> This includes likely the first grayscale panel supported.
-> 
-> These panels will be used with the PL11x DRM driver.
-> 
-> Cc: Daniel Tang <dt.tangr@gmail.com>
-> Cc: Fabian Vogt <fabian@ritter-vogt.de>
-> Tested-by: Fabian Vogt <fabian@ritter-vogt.de>
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+This will let drm/msm stop abusing DMA API for cache ops, at least for
+arm64.
 
-You can now add my:
-Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
+Signed-off-by: Rob Clark <robdclark@chromium.org>
+---
+ arch/arm64/mm/flush.c       |  2 ++
+ drivers/gpu/drm/drm_cache.c | 20 +++++++++++++++++---
+ include/drm/drm_cache.h     |  4 ++++
+ 3 files changed, 23 insertions(+), 3 deletions(-)
 
-I assume this will be applied as one series and you will do it when
-ready.
+diff --git a/arch/arm64/mm/flush.c b/arch/arm64/mm/flush.c
+index dc19300309d2..f0eb6320c979 100644
+--- a/arch/arm64/mm/flush.c
++++ b/arch/arm64/mm/flush.c
+@@ -93,3 +93,5 @@ void arch_invalidate_pmem(void *addr, size_t size)
+ }
+ EXPORT_SYMBOL_GPL(arch_invalidate_pmem);
+ #endif
++
++EXPORT_SYMBOL_GPL(__flush_dcache_area);
+diff --git a/drivers/gpu/drm/drm_cache.c b/drivers/gpu/drm/drm_cache.c
+index 3bd76e918b5d..90105c637797 100644
+--- a/drivers/gpu/drm/drm_cache.c
++++ b/drivers/gpu/drm/drm_cache.c
+@@ -69,6 +69,14 @@ static void drm_cache_flush_clflush(struct page *pages[],
+ }
+ #endif
+ 
++#if defined(__powerpc__)
++static void __flush_dcache_area(void *addr, size_t len)
++{
++	flush_dcache_range((unsigned long)addr,
++			   (unsigned long)addr + PAGE_SIZE);
++}
++#endif
++
+ /**
+  * drm_clflush_pages - Flush dcache lines of a set of pages.
+  * @pages: List of pages to be flushed.
+@@ -90,7 +98,7 @@ drm_clflush_pages(struct page *pages[], unsigned long num_pages)
+ 	if (wbinvd_on_all_cpus())
+ 		pr_err("Timed out waiting for cache flush\n");
+ 
+-#elif defined(__powerpc__)
++#elif defined(__powerpc__) || defined(CONFIG_ARM64)
+ 	unsigned long i;
+ 	for (i = 0; i < num_pages; i++) {
+ 		struct page *page = pages[i];
+@@ -100,8 +108,7 @@ drm_clflush_pages(struct page *pages[], unsigned long num_pages)
+ 			continue;
+ 
+ 		page_virtual = kmap_atomic(page);
+-		flush_dcache_range((unsigned long)page_virtual,
+-				   (unsigned long)page_virtual + PAGE_SIZE);
++		__flush_dcache_area(page_virtual, PAGE_SIZE);
+ 		kunmap_atomic(page_virtual);
+ 	}
+ #else
+@@ -135,6 +142,13 @@ drm_clflush_sg(struct sg_table *st)
+ 
+ 	if (wbinvd_on_all_cpus())
+ 		pr_err("Timed out waiting for cache flush\n");
++#elif defined(CONFIG_ARM64)
++	struct sg_page_iter sg_iter;
++
++	for_each_sg_page(st->sgl, &sg_iter, st->nents, 0) {
++		struct page *p = sg_page_iter_page(&sg_iter);
++		drm_clflush_pages(&p, 1);
++	}
+ #else
+ 	pr_err("Architecture has no drm_cache.c support\n");
+ 	WARN_ON_ONCE(1);
+diff --git a/include/drm/drm_cache.h b/include/drm/drm_cache.h
+index 987ff16b9420..f94e7bd3eca4 100644
+--- a/include/drm/drm_cache.h
++++ b/include/drm/drm_cache.h
+@@ -40,6 +40,10 @@ void drm_clflush_sg(struct sg_table *st);
+ void drm_clflush_virt_range(void *addr, unsigned long length);
+ bool drm_need_swiotlb(int dma_bits);
+ 
++#if defined(CONFIG_X86) || defined(__powerpc__) || defined(CONFIG_ARM64)
++#define HAS_DRM_CACHE 1
++#endif
++
+ 
+ static inline bool drm_arch_can_wc_memory(void)
+ {
+-- 
+2.21.0
 
-	Sam
-
-> ---
-> ChangeLog v1->v2:
-> - Bump clock frequency to 10 MHz after Fabian's trial-and-error
-> - Changed vsymbol names to ti_nspire_*
-> - Sorted alphabetically
-> - Specify positive edge on the classic display bus
-> ---
->  drivers/gpu/drm/panel/panel-simple.c | 64 ++++++++++++++++++++++++++++
->  1 file changed, 64 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
-> index 5a93c4edf1e4..96f894b44313 100644
-> --- a/drivers/gpu/drm/panel/panel-simple.c
-> +++ b/drivers/gpu/drm/panel/panel-simple.c
-> @@ -2578,6 +2578,64 @@ static const struct panel_desc tianma_tm070rvhg71 = {
->  	.bus_format = MEDIA_BUS_FMT_RGB888_1X7X4_SPWG,
->  };
->  
-> +static const struct drm_display_mode ti_nspire_cx_lcd_mode[] = {
-> +	{
-> +		.clock = 10000,
-> +		.hdisplay = 320,
-> +		.hsync_start = 320 + 50,
-> +		.hsync_end = 320 + 50 + 6,
-> +		.htotal = 320 + 50 + 6 + 38,
-> +		.vdisplay = 240,
-> +		.vsync_start = 240 + 3,
-> +		.vsync_end = 240 + 3 + 1,
-> +		.vtotal = 240 + 3 + 1 + 17,
-> +		.vrefresh = 60,
-> +		.flags = DRM_MODE_FLAG_NVSYNC | DRM_MODE_FLAG_NHSYNC,
-> +	},
-> +};
-> +
-> +static const struct panel_desc ti_nspire_cx_lcd_panel = {
-> +	.modes = ti_nspire_cx_lcd_mode,
-> +	.num_modes = 1,
-> +	.bpc = 8,
-> +	.size = {
-> +		.width = 65,
-> +		.height = 49,
-> +	},
-> +	.bus_format = MEDIA_BUS_FMT_RGB888_1X24,
-> +	.bus_flags = DRM_BUS_FLAG_PIXDATA_NEGEDGE,
-> +};
-> +
-> +static const struct drm_display_mode ti_nspire_classic_lcd_mode[] = {
-> +	{
-> +		.clock = 10000,
-> +		.hdisplay = 320,
-> +		.hsync_start = 320 + 6,
-> +		.hsync_end = 320 + 6 + 6,
-> +		.htotal = 320 + 6 + 6 + 6,
-> +		.vdisplay = 240,
-> +		.vsync_start = 240 + 0,
-> +		.vsync_end = 240 + 0 + 1,
-> +		.vtotal = 240 + 0 + 1 + 0,
-> +		.vrefresh = 60,
-> +		.flags = DRM_MODE_FLAG_PHSYNC | DRM_MODE_FLAG_PVSYNC,
-> +	},
-> +};
-> +
-> +static const struct panel_desc ti_nspire_classic_lcd_panel = {
-> +	.modes = ti_nspire_classic_lcd_mode,
-> +	.num_modes = 1,
-> +	/* The grayscale panel has 8 bit for the color .. Y (black) */
-> +	.bpc = 8,
-> +	.size = {
-> +		.width = 71,
-> +		.height = 53,
-> +	},
-> +	/* This is the grayscale bus format */
-> +	.bus_format = MEDIA_BUS_FMT_Y8_1X8,
-> +	.bus_flags = DRM_BUS_FLAG_PIXDATA_POSEDGE,
-> +};
-> +
->  static const struct drm_display_mode toshiba_lt089ac29000_mode = {
->  	.clock = 79500,
->  	.hdisplay = 1280,
-> @@ -3029,6 +3087,12 @@ static const struct of_device_id platform_of_match[] = {
->  	}, {
->  		.compatible = "tianma,tm070rvhg71",
->  		.data = &tianma_tm070rvhg71,
-> +	}, {
-> +		.compatible = "ti,nspire-cx-lcd-panel",
-> +		.data = &ti_nspire_cx_lcd_panel,
-> +	}, {
-> +		.compatible = "ti,nspire-classic-lcd-panel",
-> +		.data = &ti_nspire_classic_lcd_panel,
->  	}, {
->  		.compatible = "toshiba,lt089ac29000",
->  		.data = &toshiba_lt089ac29000,
-> -- 
-> 2.21.0
-> 
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
 _______________________________________________
 linux-arm-kernel mailing list
