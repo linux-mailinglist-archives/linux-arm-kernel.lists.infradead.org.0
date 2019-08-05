@@ -2,74 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0F7682096
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 17:43:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 493AA8212A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 18:04:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=da0znSNvaQT8fauTvnsoy2EZ92Go5K1wC/0GqOvtCVQ=; b=TfarevsSR6SJsO
-	WxvNxAtRe/lygdFPqbjpk/6o6OPfqH1DvT2moIo+3ND6R7ACuIfe9kfYpyxKT0xanqJDft/IjPfcE
-	o12+yWkBzU4HD9E527vYHBx0uB8W76sYFlXQ9UlVyyNBLO0Gnt5diIocUpM4i+7daFleNPDbjHZCA
-	cHFRrrH6XbieNMyvlCytrzxICs+JiAv8VfNaALI7pkRoXNSREHsyibP1en/sVgpwpQDf77mFFUUFu
-	IMtRQH3KfWngRxo0BSjTU2BWLZ9tzk9UtWI+EI5l+npcwhqE74ZcPi4+XlUpqoQzO8razqp3wUkAF
-	CzUOgwIFj8aGPlvO6Egg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xGNdGsbWI7OhFBpp1Myjr67rXsyyzWrR11QPbslAGMU=; b=i2+XBsLxy+ObHxSxklISWwJRm
+	75hLea6JPd5x0GURTu0Lj7jeK+jZTGYSs3DNYmKoZspSMkDSroWZxsKDlGRHllfHOGK0Eu/Awz/Wm
+	yTETPNloRmicy1iQjSkKveiskY/qGxoPmdwewRXaNyUemuJ2gnUUzbruP2bkI7TE+Wf6Ny2EcFWxZ
+	eXGlqXgPWxFcArnfyCG2/TrHsA+dTieAHfI2o7/7lFULaYm0NsSkfTWAzhSk2acpV1PT/chfZ3rSS
+	UB7bTHK5NFkDo7wsAdD9X+tvRHygp5FMne/kPplWBIz96ymwEuTaK0li7S/8XoHtqjY8rVwQKi9IV
+	gAUZiW6wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huf8n-0000FG-3f; Mon, 05 Aug 2019 15:43:17 +0000
-Received: from mail-wr1-f67.google.com ([209.85.221.67])
+	id 1hufTH-0006sX-H1; Mon, 05 Aug 2019 16:04:27 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huf7y-0007y2-4h
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 15:42:27 +0000
-Received: by mail-wr1-f67.google.com with SMTP id p13so10326815wru.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 08:42:26 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=UOOyGykR4exrts5mLOsqpvR/FvgLN8IQrdwmn4eiOZA=;
- b=pKuLBH2e9vJ0FtpHpWOZitR1ZcMH1TX9wHKHcxG8vvQvWjAc3L4vVcom03Vznr/idy
- 2MBbFkvtA4AStuDMmkGYSGf7PMEtDkN/wWthI4plxjPME+OmDj5Fl+rpHwLOBNLNjRN7
- ctnCvole/7WYUdDxN5XyrCM9PaB+wt6jj3paeCb78aHOBGD6mZQT0ENgQ//dSPjD1qoO
- e9RVjCWREaGdNntBO4Te6MtU34g4PSC/a//PeiVpQ9TOG/ssBYnwE4BoNBKkWq9AYyiB
- A/KubuwtBWI6QacEYOBVbRpvYijSzK96TPvV8RYyd59ZmIQP09QpRRbcURqTjsXqhpvL
- OcpQ==
-X-Gm-Message-State: APjAAAU0/xtNgn/ep0IJ6cBRG55drBlU1Qx9rA6Gfo0X1XNOAR8YcggC
- AqUyIfVzidwi5N9F3KYioackvmsdMsmscOhqqnQ=
-X-Google-Smtp-Source: APXvYqyBggpKQBQTtKbD8kpA9IvhKu4dLpSWRVkaXps9OGX8/cHF5+iMHiNo/AvUM1LhsdpvW/in4OnEBYOlvV4iKLo=
-X-Received: by 2002:adf:cd81:: with SMTP id q1mr162624759wrj.16.1565019744920; 
- Mon, 05 Aug 2019 08:42:24 -0700 (PDT)
+ id 1hufSq-0006n8-4c; Mon, 05 Aug 2019 16:04:01 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id C834AAEFB;
+ Mon,  5 Aug 2019 16:03:56 +0000 (UTC)
+Message-ID: <2050374ac07e0330e505c4a1637256428adb10c4.camel@suse.de>
+Subject: Re: [PATCH 3/8] of/fdt: add function to get the SoC wide DMA
+ addressable memory size
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Rob Herring <robh+dt@kernel.org>, Catalin Marinas
+ <catalin.marinas@arm.com>,  Will Deacon <will@kernel.org>
+Date: Mon, 05 Aug 2019 18:03:53 +0200
+In-Reply-To: <CAL_JsqKF5nh3hcdLTG5+6RU3_TnFrNX08vD6qZ8wawoA3WSRpA@mail.gmail.com>
+References: <20190731154752.16557-1-nsaenzjulienne@suse.de>
+ <20190731154752.16557-4-nsaenzjulienne@suse.de>
+ <CAL_JsqKF5nh3hcdLTG5+6RU3_TnFrNX08vD6qZ8wawoA3WSRpA@mail.gmail.com>
+User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
-References: <1564669452-22631-1-git-send-email-ykaneko0929@gmail.com>
-In-Reply-To: <1564669452-22631-1-git-send-email-ykaneko0929@gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 5 Aug 2019 17:42:12 +0200
-Message-ID: <CAMuHMdVkn1wq1xcLhU0GWujrmu492utmAAV2KKgiqsaersGt-Q@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: renesas: r8a77990-ebisu: sort nodes
-To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_084226_193460_0756D3B5 
-X-CRM114-Status: GOOD (  13.66  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190805_090400_475358_C8C28D70 
+X-CRM114-Status: GOOD (  22.90  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.67 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.67 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,98 +62,170 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: phill@raspberryi.org, devicetree@vger.kernel.org, "moderated list:BROADCOM
+ BCM2835 ARM ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Eric Anholt <eric@anholt.net>,
+ Marc Zyngier <marc.zyngier@arm.com>, Frank Rowand <frowand.list@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-mm@kvack.org, Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Matthias Brugger <mbrugger@suse.com>, wahrenst@gmx.net,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christoph Hellwig <hch@lst.de>, "moderated
+ list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: multipart/mixed; boundary="===============4349280562514301993=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Kaneko-san,
 
-On Thu, Aug 1, 2019 at 4:24 PM Yoshihiro Kaneko <ykaneko0929@gmail.com> wrote:
-> Sort nodes.
->
-> If node address is present
->    * Sort by node address, grouping all nodes with the same compat string
->      and sorting the group alphabetically.
-> Else
->    * Sort alphabetically
->
-> This should not have any run-time effect.
->
-> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
-
-Thanks for your patch!
-
-> --- a/arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts
-> +++ b/arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts
-
-> @@ -157,15 +125,13 @@
->                 regulator-always-on;
->         };
->
-> -       vbus0_usb2: regulator-vbus0-usb2 {
-> +       reg_12p0v: regulator2 {
->                 compatible = "regulator-fixed";
-> -
-> -               regulator-name = "USB20_VBUS_CN";
-> -               regulator-min-microvolt = <5000000>;
-> -               regulator-max-microvolt = <5000000>;
-> -
-> -               gpio = <&gpio6 4 GPIO_ACTIVE_HIGH>;
-> -               enable-active-high;
-> +               regulator-name = "D12.0V";
-> +               regulator-min-microvolt = <12000000>;
-> +               regulator-max-microvolt = <12000000>;
-> +               regulator-boot-on;
-> +               regulator-always-on;
->         };
->
->         rsnd_ak4613: sound {
-
-You forgot to sort the sound subnodes.
-
-@@ -142,13 +142,13 @@
-                simple-audio-card,bitclock-master = <&sndcpu>;
-                simple-audio-card,frame-master = <&sndcpu>;
-
--               sndcpu: simple-audio-card,cpu {
--                       sound-dai = <&rcar_sound>;
--               };
--
-                sndcodec: simple-audio-card,codec {
-                        sound-dai = <&ak4613>;
-                };
-+
-+               sndcpu: simple-audio-card,cpu {
-+                       sound-dai = <&rcar_sound>;
-+               };
-        };
-
-        vbus0_usb2: regulator-vbus0-usb2 {
-
-As this kind of patches is a hell to rebase/rework, I'll fix that up myself
-while appying.
-
-Apart from that:
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-i.e. will queue in renesas-devel for v5.4.
-
-Gr{oetje,eeting}s,
-
-                        Geert
+--===============4349280562514301993==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-bHwRoCAB9PanvfyTc8AQ"
 
 
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+--=-bHwRoCAB9PanvfyTc8AQ
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Hi Rob,
+Thanks for the review!
+
+On Fri, 2019-08-02 at 11:17 -0600, Rob Herring wrote:
+> On Wed, Jul 31, 2019 at 9:48 AM Nicolas Saenz Julienne
+> <nsaenzjulienne@suse.de> wrote:
+> > Some SoCs might have multiple interconnects each with their own DMA
+> > addressing limitations. This function parses the 'dma-ranges' on each o=
+f
+> > them and tries to guess the maximum SoC wide DMA addressable memory
+> > size.
+> >=20
+> > This is specially useful for arch code in order to properly setup CMA
+> > and memory zones.
+>=20
+> We already have a way to setup CMA in reserved-memory, so why is this
+> needed for that?
+
+Correct me if I'm wrong but I got the feeling you got the point of the patc=
+h
+later on.
+
+> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > ---
+> >=20
+> >  drivers/of/fdt.c       | 72 ++++++++++++++++++++++++++++++++++++++++++
+> >  include/linux/of_fdt.h |  2 ++
+> >  2 files changed, 74 insertions(+)
+> >=20
+> > diff --git a/drivers/of/fdt.c b/drivers/of/fdt.c
+> > index 9cdf14b9aaab..f2444c61a136 100644
+> > --- a/drivers/of/fdt.c
+> > +++ b/drivers/of/fdt.c
+> > @@ -953,6 +953,78 @@ int __init early_init_dt_scan_chosen_stdout(void)
+> >  }
+> >  #endif
+> >=20
+> > +/**
+> > + * early_init_dt_dma_zone_size - Look at all 'dma-ranges' and provide =
+the
+> > + * maximum common dmable memory size.
+> > + *
+> > + * Some devices might have multiple interconnects each with their own =
+DMA
+> > + * addressing limitations. For example the Raspberry Pi 4 has the
+> > following:
+> > + *
+> > + * soc {
+> > + *     dma-ranges =3D <0xc0000000  0x0 0x00000000  0x3c000000>;
+> > + *     [...]
+> > + * }
+> > + *
+> > + * v3dbus {
+> > + *     dma-ranges =3D <0x00000000  0x0 0x00000000  0x3c000000>;
+> > + *     [...]
+> > + * }
+> > + *
+> > + * scb {
+> > + *     dma-ranges =3D <0x0 0x00000000  0x0 0x00000000  0xfc000000>;
+> > + *     [...]
+> > + * }
+> > + *
+> > + * Here the area addressable by all devices is [0x00000000-0x3bffffff]=
+.
+> > Hence
+> > + * the function will write in 'data' a size of 0x3c000000.
+> > + *
+> > + * Note that the implementation assumes all interconnects have the sam=
+e
+> > physical
+> > + * memory view and that the mapping always start at the beginning of R=
+AM.
+>=20
+> Not really a valid assumption for general code.
+
+Fair enough. On my defence I settled on that assumption after grepping all =
+dts
+and being unable to find a board that behaved otherwise.
+
+[...]
+
+> It's possible to have multiple levels of nodes and dma-ranges. You need t=
+o
+> handle that case too. Doing that and handling differing address translati=
+ons
+> will be complicated.
+
+Understood.
+
+> IMO, I'd just do:
+>=20
+> if (of_fdt_machine_is_compatible(blob, "brcm,bcm2711"))
+>     dma_zone_size =3D XX;
+>=20
+> 2 lines of code is much easier to maintain than 10s of incomplete code
+> and is clearer who needs this. Maybe if we have dozens of SoCs with
+> this problem we should start parsing dma-ranges.
+
+FYI that's what arm32 is doing at the moment and was my first instinct. But=
+ it
+seems that arm64 has been able to survive so far without any machine specif=
+ic
+code and I have the feeling Catalin and Will will not be happy about this
+solution. Am I wrong?
+
+
+--=-bHwRoCAB9PanvfyTc8AQ
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl1IU2kACgkQlfZmHno8
+x/4vnwf/XE8+V9mimMzYNeVSaTESn/AL3orSEJeMoeUZ1CPBVspMiV34YhnJFTs+
+P3QiXvdigSX/vj+I8400qhGBhIj/+34A+wdKwEYb80kh2OExM56tuKuptWLPuyPd
+u9T3FLJ+NdnV8p6zloY7xYBtI62Hr618kOX/ku1lBC5sJX1y8bRjTpvKqOPnrcC/
+lcwjF0tU+HjPtYVDvhm6Joe0DryRATvNyVHzFrzpmcnznP+/6JCSPcaeDzDgY5jK
+6/oS4fQQuzbAasQYkJDdOtEbRkE6W933vTGU3+kBwMdMybPYJW47CWedJulvKZvJ
+6UP+li0Bb59N44VHgsTjI8pB8bey3g==
+=gqcX
+-----END PGP SIGNATURE-----
+
+--=-bHwRoCAB9PanvfyTc8AQ--
+
+
+
+--===============4349280562514301993==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4349280562514301993==--
+
+
