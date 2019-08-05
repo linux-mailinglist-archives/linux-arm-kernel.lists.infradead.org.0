@@ -2,84 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84EBD816C9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:18:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 297A4816CA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:18:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A+wK+fTF7MV8a69T4JMEhcW+n7fPMwXFUbszVDgS0/o=; b=LcOmgYqPD/Nxzm
-	P14yOioAF9O4A3VMMEsdyXAoNDThwI2768q/RkHFm0Z6hud/CNGHrGPYRWcY5Qnw9tDGbbTZnyX9d
-	ASc0jJg27OC0WHwfgXWKjiWiP1ExPWwFo2yu9s8sy5ZsBbTdZ92CaP4Xd4pu8Ul2rqf85vdicTFSm
-	6qs96W0Nud5aYd/jQ1V4N72x498DXuIwvLGhltUCaSdYxFz7YeTaq/V/LM9IfBBDhCuukhGBmFs/7
-	oKmDn040YaGR0jx4rorz2PTiMhkkD9ncAkXmkM6AblPXZFTz6yq9YkekJuxdG+IOLjdd6eYAtU1vD
-	6BG8HH2ZdjrHDR58n2BA==;
+	List-Owner; bh=JkemWYokVYcArpYbAnvb93Y9yYF+dNHz8Q6Rwn7wmNg=; b=gdRnDLTnHvtgGd
+	u2rTgcQqiE+71p0KeOvC+S/fhVrK60n2j5HGSeMYYeS+xm2cpr7sIQ4NKcdg1lPeKkGepQnnbkChZ
+	ekcgkGUz2OwQbCJuVQ3VAnqb5qBREanGxQh+gagafgmrK/65YRqITpMXjxqcVlBnJQBR4AFJrg/eM
+	1AaY00ThEi43f82fZA4UnxVSWBl2kDPDCYY5pljNcbNFRvjNQE0uGQgmAi0txTxFOnqhawC/UgtCD
+	lSlr33bU3sfVJLj8uszKofMvhIxbVjV2HS5uJrVjI5Ceq5FKr+dPD5r4yKjTWZBd0M7BFG3+An5D1
+	OsC880wZJ1s4ETCvYBAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hua3t-0004yN-Uq; Mon, 05 Aug 2019 10:17:53 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hua4A-0005GF-T2; Mon, 05 Aug 2019 10:18:11 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hua2f-0003y2-Ef
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:16:39 +0000
-Received: by mail-lf1-x143.google.com with SMTP id j17so3457405lfp.3
+ id 1hua36-0004OQ-E8
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:17:08 +0000
+Received: by mail-ed1-f65.google.com with SMTP id r12so43352752edo.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 03:16:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=SrbJD1vEfE60HVKjYoBmFtGgNGgrOIdfFoPt4X6Q+2M=;
- b=CEpf7s4k5oxGDjJNaYqs3rNyMc08fXeAZr7+86sI4zxQ09hLwEgCj/ZTWv270igZUA
- MBnuxP52z+gVvbpCqKNyoY/rVW2zFwZ1dBho3naVESdTps3/PYebbyvptTrbEy0FoD7u
- F4b61y3FBnom8OagnIdGxalPnqdxXn5wtX6dhu+iFbx9p5RuFlAOt1/5Dn1HlQ5JbGZX
- wzDRVmOCjoF2gyOlZKWNfNvoPKyFRyB6X0Y9s5eEwSfcCLRLwT7DijoYst5XrAvrcFIR
- yXzqQ28Y9KXDIGGjcy93VHBgEtefP/zmwNeshyNooHMfGTh4M2r2ormcG94/UfhxaQsF
- pHow==
+ Mon, 05 Aug 2019 03:17:04 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=SrbJD1vEfE60HVKjYoBmFtGgNGgrOIdfFoPt4X6Q+2M=;
- b=rpyT6qqtcXihMzhIJVBa0dV3DtB5pXkXl9geXI8fsp9o06DZyz3lQEZNmhJn9ruuUt
- XwwiheidzA9izQ9Ub3odd+nlR0gjfbmh0JZYw2MAD/EpNgQDGqXYqAWU+OiPJF0hSuFH
- 8+mxXjyIhc8xzetsEm8mreah/0eSYUFgE3eh3FPKi4zKCRA24yi3kx3p5hVhQEbWA5F8
- 6Z3LsKEn5qT4hMQiqNvQJePJ/8laOubtKS5VKw+5HSDYwZvc5WH0PHv4SAn7I+uVVAmK
- LGEZ2vkvvkMAUc1WBzsu/S/A0+INXejeI7U6vLld9ZyfM4sPPzR2InELK8DeIEDBs1qH
- Ndbg==
-X-Gm-Message-State: APjAAAUWOUSrfWCLV7Fu72JDWJK3bbDw5jnstFYLbK48ShpBb1uhMzIM
- fyK+Z/kc1S2broDB7x23Um+sdxI82RGinGIAkyuIYA==
-X-Google-Smtp-Source: APXvYqyOosV8sv/TZHhVjwj5Q16nJaAbVg2+Q5BdPmAvWKsycRacpctNaCXuf4VkQIw648gtA3ql91UGmSXtMQwMmXU=
-X-Received: by 2002:ac2:5382:: with SMTP id g2mr68773554lfh.92.1565000196094; 
- Mon, 05 Aug 2019 03:16:36 -0700 (PDT)
+ bh=x7vzN+j+SCe+XCO/mDoZK//BIz8w5B9jkGbWhEZ2u9o=;
+ b=MMdJrndW9uoFgpGSvnBS/mkQsVDqXMCXh1mfk+4gJEaZJFJ9MH5WOF2QxitddwxmWm
+ U14vXdLbAn9fRcj+5M0KdTI7jhm3HOViELbRVATEq3gOkkqoZFMvmU/OPGjP8gRK2MbE
+ IOTmDZlmnuTKq2ZCJG6pTuqzcJYPY8GPDIO+bu8rcFxHU7RZaTHFBNH2LyeNgHshCOAF
+ N/6sHfiOfT+yUAZ9DKeSRIJ/727+IjXNc9HB/nxgouahpxsArWuUZ9fchw+ec+2FpLak
+ 6Pd+QfwAn2PpZqoFg4W15g7VFSz9lHT5MeGvkiNVTUnrXf6PugzdmzcbId6WUzM1UpUN
+ aReA==
+X-Gm-Message-State: APjAAAXqr4bGxChpK1E3UKwYHw8pXBDszVKxsdpUe875CR+d+kZ2Pfqa
+ D+s0hXviI+LetxhV9hLhBDjTKC2WT7I=
+X-Google-Smtp-Source: APXvYqx0TT+2xOzgZTSg4VnxEm0Qd8RxHnTzipN/aUfHlHuK8+Ox9fqMw9rMqsqi1unNsBSnCITu0g==
+X-Received: by 2002:a17:906:27d5:: with SMTP id
+ k21mr117776907ejc.101.1565000222546; 
+ Mon, 05 Aug 2019 03:17:02 -0700 (PDT)
+Received: from mail-wr1-f53.google.com (mail-wr1-f53.google.com.
+ [209.85.221.53])
+ by smtp.gmail.com with ESMTPSA id h2sm18971557edq.33.2019.08.05.03.17.02
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Mon, 05 Aug 2019 03:17:02 -0700 (PDT)
+Received: by mail-wr1-f53.google.com with SMTP id n9so58738530wrr.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 05 Aug 2019 03:17:02 -0700 (PDT)
+X-Received: by 2002:adf:e941:: with SMTP id m1mr11300922wrn.279.1565000221906; 
+ Mon, 05 Aug 2019 03:17:01 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190725142419.29892-1-yuehaibing@huawei.com>
-In-Reply-To: <20190725142419.29892-1-yuehaibing@huawei.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 5 Aug 2019 12:16:24 +0200
-Message-ID: <CACRpkdZ+fBDKB3i8D=YKK-iVUeBN23b=2YdhnOY-dwR1tyQnYQ@mail.gmail.com>
-Subject: Re: [PATCH] pinctrl: oxnas: remove set but not used variable 'arg'
-To: YueHaibing <yuehaibing@huawei.com>
+References: <20190412120730.473-1-megous@megous.com>
+ <20190412120730.473-2-megous@megous.com>
+In-Reply-To: <20190412120730.473-2-megous@megous.com>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Mon, 5 Aug 2019 18:16:48 +0800
+X-Gmail-Original-Message-ID: <CAGb2v65d=yXPEiyTv0X3m25mzd2J5DnrWvyxz0zjLiq997BbZg@mail.gmail.com>
+Message-ID: <CAGb2v65d=yXPEiyTv0X3m25mzd2J5DnrWvyxz0zjLiq997BbZg@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH 1/3] dt-bindings: Add compatible for H6 RTC
+To: =?UTF-8?Q?Ond=C5=99ej_Jirman?= <megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_031637_727427_0D8CE8B8 
-X-CRM114-Status: UNSURE (   8.26  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190805_031704_512809_7248575D 
+X-CRM114-Status: GOOD (  11.76  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,35 +97,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- linux-oxnas@groups.io,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 25, 2019 at 4:24 PM YueHaibing <yuehaibing@huawei.com> wrote:
-
-> Fixes gcc '-Wunused-but-set-variable' warning:
+On Fri, Apr 12, 2019 at 8:07 PM megous via linux-sunxi
+<linux-sunxi@googlegroups.com> wrote:
 >
-> drivers/pinctrl/pinctrl-oxnas.c: In function oxnas_ox810se_pinconf_set:
-> drivers/pinctrl/pinctrl-oxnas.c:905:6: warning: variable arg set but not used [-Wunused-but-set-variable]
-> drivers/pinctrl/pinctrl-oxnas.c: In function oxnas_ox820_pinconf_set:
-> drivers/pinctrl/pinctrl-oxnas.c:944:6: warning: variable arg set but not used [-Wunused-but-set-variable]
+> From: Ondrej Jirman <megous@megous.com>
 >
-> It is never used since commit 4b0c0c25fa79 ("pinctrl:
-> oxnas: Add support for OX820"), so can be removed.
+> RTC on H6 is similar to the one on H5 SoC, but incompatible in small
+> details. See the driver for description of differences. For example
+> H6 RTC needs to enable the external low speed oscillator. Add new
+> compatible for this RTC.
 >
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
 
-Patch applied.
-
-Yours,
-Linus Walleij
+Acked-by: Chen-Yu Tsai <wens@csie.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
