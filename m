@@ -2,63 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC43B817EC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 13:12:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B399817F1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 13:13:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=21AZVeAw2wDlihIbsqcVDgnL/SYxQw+Ptqd81ptnlm4=; b=UvBeNDnSiScVKw
-	memPrscPbJgxzaAQAk/46zTbW8U7ziuIUU/e+Vcxw8mDgk51wDDFRLeFv3gcrwDKW0DGLPcbxobQg
-	RW1hcwx39JE48vbO1q1Tp52PJMfk0SnTuosK1UXuUbwsRAnMSv7iRVSyU1ONZwklFidRA0wnseTP7
-	rRG4+74lXxKRZN1PzTUZ8uZI7Zv5L3mP0yqYfbIOlqAp4+/Os1f8Uxgt31h277AAf4F8Cqp3jrOef
-	TRidlp/ltV4wbvBcURY3EoeFZUEZW3jgnvBmbXMhAFmHzvOCoAg9AHlXYwnKRje+OWtpQ2ZsRMrAF
-	wvQOYX2B+YNVLrlbUaEA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kfxuYR3EoPNB1luK5MsUZuc2J3Ix2J8CSdhW86BEoyg=; b=EBf+sPpvtbwc6SZ+Ku0WoNBYb
+	hibVn9cbtbr3cI1JdQ60ElYcOt2EJwQbKN1Afa+K0M1s/LWaTaRSrnhRUCJnALIBChWTwQRewHceg
+	19OAxv+AbdffrGcDAOH2Sd6AuvLa9sVs3efvjldCSqcFMrXJk3OUYH8Z4h01cKu5sQ9c0FePPAMMS
+	TA7VA1wsst1Ah06juSz2i02xLTdZAro8Wgm9mUfS3jlNaWEntEnnvlMq27v/TVaey4YhKN3p/t0Ec
+	uHXzvl3UR8sNQBnCufLpuHgbHCX+SBiQ9A6jDDJeEWtd8up7+2yY10zAOUC9jqRCUvrN1jdNoUhoH
+	fGBQFMfJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huaug-0004y2-Qb; Mon, 05 Aug 2019 11:12:26 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1huavd-0005VT-6g; Mon, 05 Aug 2019 11:13:25 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huauS-0004xO-Re
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 11:12:14 +0000
-Received: from pendragon.ideasonboard.com
- (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
- [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 9EEB72F9;
- Mon,  5 Aug 2019 13:12:10 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1565003530;
- bh=9oRsbzluvIx+scgB0q5nmoh2+Hfrsu1ybp+awEmQZY8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=eoYncRKfcImPqIfTcPR1dT5vdOL9hemgqDnF24i/ui4gdfshnvu+4mqRcdAQe0n66
- c6X81UopU3KaY5I1pvjJmbar1s/WPxSaCImYooIaM2zSFk7hmI0izXPZcQMNPwuty+
- jqej5nQxn4BVSxLv3Gcsv+pHn+fbVjvwXB4yWn1Y=
-Date: Mon, 5 Aug 2019 14:12:08 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Sam Ravnborg <sam@ravnborg.org>
-Subject: Re: [PATCH v1 16/16] drm/panel: simple: use drm_panel infrastructure
-Message-ID: <20190805111208.GK29747@pendragon.ideasonboard.com>
-References: <20190804201637.1240-1-sam@ravnborg.org>
- <20190804201637.1240-17-sam@ravnborg.org>
+ id 1huavM-0005V7-B1; Mon, 05 Aug 2019 11:13:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=utB0r1atmnVwa7CY1NTWgbkaYDxQ5etSjcoSuqlLbMk=; b=NgjEVd/0WOtO+B3zJm+gOUBRU
+ yHilyhEsbqPZrpPixoQnumwIxj6RwvF24GISfjL79c79VykIZNce79+G7UlQ6SBrEtr4lnsEy1TmD
+ RgifsQ74ii9R0OYcOpPTLmwOYjhFIU3mXnHneKwAErY2Ll+STpvxoG6W/CTLAAyzFbrIM=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1huavJ-0008IY-L9; Mon, 05 Aug 2019 11:13:05 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 132672742D06; Mon,  5 Aug 2019 12:13:05 +0100 (BST)
+Date: Mon, 5 Aug 2019 12:13:05 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Ashish Kumar <ashish.kumar@nxp.com>
+Subject: Re: [EXT] Re: [Patch v3 2/2] dt-bindings: spi: spi-fsl-qspi: Add
+ bindings of ls1088a and ls1012a
+Message-ID: <20190805111304.GC6432@sirena.org.uk>
+References: <1560942714-13330-1-git-send-email-Ashish.Kumar@nxp.com>
+ <1560942714-13330-3-git-send-email-Ashish.Kumar@nxp.com>
+ <20190709200857.GA8477@bogus>
+ <CA+EcR20ui8Liot+PtzdU6CJb5WzLDHS0Xc7VR7qGAOpD5=ArNQ@mail.gmail.com>
+ <VI1PR04MB401579932CF0E7D4AE80E0C995DA0@VI1PR04MB4015.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190804201637.1240-17-sam@ravnborg.org>
+In-Reply-To: <VI1PR04MB401579932CF0E7D4AE80E0C995DA0@VI1PR04MB4015.eurprd04.prod.outlook.com>
+X-Cookie: Place stamp here.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_041213_198159_29D531D3 
-X-CRM114-Status: GOOD (  24.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190805_041308_376059_4BA31595 
+X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -75,279 +83,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Fabio Estevam <festevam@gmail.com>, Marek Vasut <marex@denx.de>,
- Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
- Joonyoung Shim <jy0922.shim@samsung.com>,
- Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, Sascha Hauer <s.hauer@pengutronix.de>,
- Alison Wang <alison.wang@nxp.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Gwan-gyeong Mun <gwan-gyeong.mun@intel.com>, Inki Dae <inki.dae@samsung.com>,
- Alexios Zavras <alexios.zavras@intel.com>, linux-samsung-soc@vger.kernel.org,
- Stefan Agner <stefan@agner.ch>, linux-tegra@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- Allison Randal <allison@lohutok.net>, Jernej Skrabec <jernej.skrabec@siol.net>,
- Shawn Guo <shawnguo@kernel.org>, Seung-Woo Kim <sw0312.kim@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Daniel Vetter <daniel@ffwll.ch>,
- Enrico Weigelt <info@metux.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Han Xu <xhnjupt@gmail.com>, "bbrezillon@kernel.org" <bbrezillon@kernel.org>,
+ Kuldeep Singh <kuldeep.singh@nxp.com>,
+ "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
+ Rob Herring <robh@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============5955798333283021734=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sam,
 
-Thank you for the patch.
+--===============5955798333283021734==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="i7F3eY7HS/tUJxUd"
+Content-Disposition: inline
 
-On Sun, Aug 04, 2019 at 10:16:37PM +0200, Sam Ravnborg wrote:
-> Use drm_panel infrastrucute:
-> - drm_panel has guards for calling disable/enable twice
 
-As stated in the review of the corresponding patch, I think those checks
-should be dropped, but not moved to the panel core.
+--i7F3eY7HS/tUJxUd
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> - drm_panel has backlight support
+On Mon, Aug 05, 2019 at 09:07:47AM +0000, Ashish Kumar wrote:
 
-This answers my first question in the review of 15/16 :-)
+> Could you please send this patch[1] from your spi tree, It applies seamle=
+ssly on
+> https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git/
+>=20
+> [1]: http://patchwork.ozlabs.org/patch/1118637/
 
-> To use the drm_panel infrastructure use the drm_panel_*
-> variants for prepare/enable/disable/unprepare.
-> 
-> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-> Cc: Thierry Reding <thierry.reding@gmail.com>
-> Cc: Sam Ravnborg <sam@ravnborg.org>
+Please don't send content free pings and please allow a reasonable time
+for review.  People get busy, go on holiday, attend conferences and so=20
+on so unless there is some reason for urgency (like critical bug fixes)
+please allow at least a couple of weeks for review.  If there have been
+review comments then people may be waiting for those to be addressed.
 
-The change looks good overall,
+Sending content free pings adds to the mail volume (if they are seen at
+all) which is often the problem and since they can't be reviewed
+directly if something has gone wrong you'll have to resend the patches
+anyway, so sending again is generally a better approach though there are
+some other maintainers who like them - if in doubt look at how patches
+for the subsystem are normally handled.
 
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+--i7F3eY7HS/tUJxUd
+Content-Type: application/pgp-signature; name="signature.asc"
 
-but this is pending an agreement on what to do with the multiple
-prepare/enable guards.
+-----BEGIN PGP SIGNATURE-----
 
-> ---
->  drivers/gpu/drm/panel/panel-simple.c | 73 +++++-----------------------
->  1 file changed, 11 insertions(+), 62 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
-> index bff7578f84dd..c7eed34f2c9c 100644
-> --- a/drivers/gpu/drm/panel/panel-simple.c
-> +++ b/drivers/gpu/drm/panel/panel-simple.c
-> @@ -21,7 +21,6 @@
->   * DEALINGS IN THE SOFTWARE.
->   */
->  
-> -#include <linux/backlight.h>
->  #include <linux/delay.h>
->  #include <linux/gpio/consumer.h>
->  #include <linux/module.h>
-> @@ -98,13 +97,10 @@ struct panel_desc {
->  
->  struct panel_simple {
->  	struct drm_panel base;
-> -	bool prepared;
-> -	bool enabled;
->  	bool no_hpd;
->  
->  	const struct panel_desc *desc;
->  
-> -	struct backlight_device *backlight;
->  	struct regulator *supply;
->  	struct i2c_adapter *ddc;
->  
-> @@ -232,20 +228,9 @@ static int panel_simple_disable(struct drm_panel *panel)
->  {
->  	struct panel_simple *p = to_panel_simple(panel);
->  
-> -	if (!p->enabled)
-> -		return 0;
-> -
-> -	if (p->backlight) {
-> -		p->backlight->props.power = FB_BLANK_POWERDOWN;
-> -		p->backlight->props.state |= BL_CORE_FBBLANK;
-> -		backlight_update_status(p->backlight);
-> -	}
-> -
->  	if (p->desc->delay.disable)
->  		msleep(p->desc->delay.disable);
->  
-> -	p->enabled = false;
-> -
->  	return 0;
->  }
->  
-> @@ -253,9 +238,6 @@ static int panel_simple_unprepare(struct drm_panel *panel)
->  {
->  	struct panel_simple *p = to_panel_simple(panel);
->  
-> -	if (!p->prepared)
-> -		return 0;
-> -
->  	gpiod_set_value_cansleep(p->enable_gpio, 0);
->  
->  	regulator_disable(p->supply);
-> @@ -263,8 +245,6 @@ static int panel_simple_unprepare(struct drm_panel *panel)
->  	if (p->desc->delay.unprepare)
->  		msleep(p->desc->delay.unprepare);
->  
-> -	p->prepared = false;
-> -
->  	return 0;
->  }
->  
-> @@ -274,9 +254,6 @@ static int panel_simple_prepare(struct drm_panel *panel)
->  	unsigned int delay;
->  	int err;
->  
-> -	if (p->prepared)
-> -		return 0;
-> -
->  	err = regulator_enable(p->supply);
->  	if (err < 0) {
->  		dev_err(panel->dev, "failed to enable supply: %d\n", err);
-> @@ -291,8 +268,6 @@ static int panel_simple_prepare(struct drm_panel *panel)
->  	if (delay)
->  		msleep(delay);
->  
-> -	p->prepared = true;
-> -
->  	return 0;
->  }
->  
-> @@ -300,20 +275,9 @@ static int panel_simple_enable(struct drm_panel *panel)
->  {
->  	struct panel_simple *p = to_panel_simple(panel);
->  
-> -	if (p->enabled)
-> -		return 0;
-> -
->  	if (p->desc->delay.enable)
->  		msleep(p->desc->delay.enable);
->  
-> -	if (p->backlight) {
-> -		p->backlight->props.state &= ~BL_CORE_FBBLANK;
-> -		p->backlight->props.power = FB_BLANK_UNBLANK;
-> -		backlight_update_status(p->backlight);
-> -	}
-> -
-> -	p->enabled = true;
-> -
->  	return 0;
->  }
->  
-> @@ -413,7 +377,7 @@ static void panel_simple_parse_panel_timing_node(struct device *dev,
->  
->  static int panel_simple_probe(struct device *dev, const struct panel_desc *desc)
->  {
-> -	struct device_node *backlight, *ddc;
-> +	struct device_node *ddc;
->  	struct panel_simple *panel;
->  	struct display_timing dt;
->  	int err;
-> @@ -422,8 +386,6 @@ static int panel_simple_probe(struct device *dev, const struct panel_desc *desc)
->  	if (!panel)
->  		return -ENOMEM;
->  
-> -	panel->enabled = false;
-> -	panel->prepared = false;
->  	panel->desc = desc;
->  
->  	panel->no_hpd = of_property_read_bool(dev->of_node, "no-hpd");
-> @@ -441,24 +403,13 @@ static int panel_simple_probe(struct device *dev, const struct panel_desc *desc)
->  		return err;
->  	}
->  
-> -	backlight = of_parse_phandle(dev->of_node, "backlight", 0);
-> -	if (backlight) {
-> -		panel->backlight = of_find_backlight_by_node(backlight);
-> -		of_node_put(backlight);
-> -
-> -		if (!panel->backlight)
-> -			return -EPROBE_DEFER;
-> -	}
-> -
->  	ddc = of_parse_phandle(dev->of_node, "ddc-i2c-bus", 0);
->  	if (ddc) {
->  		panel->ddc = of_find_i2c_adapter_by_node(ddc);
->  		of_node_put(ddc);
->  
-> -		if (!panel->ddc) {
-> -			err = -EPROBE_DEFER;
-> -			goto free_backlight;
-> -		}
-> +		if (!panel->ddc)
-> +			return -EPROBE_DEFER;
->  	}
->  
->  	if (!of_get_display_timing(dev->of_node, "panel-timing", &dt))
-> @@ -468,6 +419,10 @@ static int panel_simple_probe(struct device *dev, const struct panel_desc *desc)
->  	panel->base.dev = dev;
->  	panel->base.funcs = &panel_simple_funcs;
->  
-> +	err = drm_panel_of_backlight(&panel->base);
-> +	if (err)
-> +		goto free_ddc;
-> +
->  	err = drm_panel_add(&panel->base);
->  	if (err < 0)
->  		goto free_ddc;
-> @@ -479,9 +434,6 @@ static int panel_simple_probe(struct device *dev, const struct panel_desc *desc)
->  free_ddc:
->  	if (panel->ddc)
->  		put_device(&panel->ddc->dev);
-> -free_backlight:
-> -	if (panel->backlight)
-> -		put_device(&panel->backlight->dev);
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1ID0AACgkQJNaLcl1U
+h9CqaAf/ZHR3MbVzooalCiifNEU+1YHfwNNTTBUF8HJWr2BM2HQbpYWCuQcm9iyQ
+FtnKDWPx6ouSI1lYCORQJyqkrZo36kPYN33OegMbzeNJRQb3uw94zVyVlOXAFl3h
+/gl+o0+hrEQ2Ttnm/Nj9gZFiGxV6IFHE53HPFcpYBmPj6ME1i3XswYFrpxx6PoQK
+GqqbirJm/v47fzXXIhKI6c0PFAKS6mPgFp68krzFXFGgPvvePJ+T5YP0lkImtfhK
+BL2GSL9tMrf3InZ+/yOauhunSp7pqr1vF04udoLo5eh5sQqlo+/zCTqUqWN3Pqn8
+N4keQhb+N29o99Bx2UV7SBd1YOBC+w==
+=FyJ3
+-----END PGP SIGNATURE-----
 
-This looks weird, where
+--i7F3eY7HS/tUJxUd--
 
->  
->  	return err;
->  }
-> @@ -492,15 +444,12 @@ static int panel_simple_remove(struct device *dev)
->  
->  	drm_panel_remove(&panel->base);
->  
-> -	panel_simple_disable(&panel->base);
-> -	panel_simple_unprepare(&panel->base);
-> +	drm_panel_disable(&panel->base);
-> +	drm_panel_unprepare(&panel->base);
->  
->  	if (panel->ddc)
->  		put_device(&panel->ddc->dev);
->  
-> -	if (panel->backlight)
-> -		put_device(&panel->backlight->dev);
-> -
->  	return 0;
->  }
->  
-> @@ -508,8 +457,8 @@ static void panel_simple_shutdown(struct device *dev)
->  {
->  	struct panel_simple *panel = dev_get_drvdata(dev);
->  
-> -	panel_simple_disable(&panel->base);
-> -	panel_simple_unprepare(&panel->base);
-> +	drm_panel_disable(&panel->base);
-> +	drm_panel_unprepare(&panel->base);
->  }
->  
->  static const struct drm_display_mode ampire_am_480272h3tmqw_t01h_mode = {
 
--- 
-Regards,
-
-Laurent Pinchart
+--===============5955798333283021734==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5955798333283021734==--
+
