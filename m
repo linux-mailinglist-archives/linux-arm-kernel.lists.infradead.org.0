@@ -2,83 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 904D4815A4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 11:39:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD204815B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 11:42:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jc0RYdmtmyMG9WSsnr+MjB/loJ5+Rjejy8NUma35eO0=; b=R4+4KvObKsG4T7
-	yoTI9TyUFYjfJ2eTzFKWq3Q1YX+6u3FXJG7d5DRINj4CrWY1wRRod0rxWBucnspAtm9dGV3ZWInld
-	SX+tIrA2olb6MCiHgsCRlQiRYu49AcwB8DzKOqDwFl0pFOfUK5YAN5E+wurdl3VqvWzO8I7stUGMs
-	kJ7MyydOgSsQ0bfUV5+5WN2jkeEbFYZtmYD+IVcmE3nYRoVoWfcIkn9MpjiVztGRfanbrqJHCe3zl
-	NKv0wX6bJ/49EejOKRyBUcJdJz3ryWtbRaQUl5KHB+sjHzie5TlP+G9LvOIkVN0pkwKdnTs+haZEC
-	ugE4X0T39S2E/ID9TFUQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XjqfAOqIuPHSlxPCMR7n8NeZ6vW/0Wv5wShcXak0o/4=; b=gvdQHiXjM8hi1E
+	dJZ3h4Bwb4cczKXAjWkB6vy63zRuXDko/cGViCLOkJDajFSmiX5o3nsWrJcZe/PTCI16zkK4iL/19
+	oRiLrNNE+S0gFtQm4BDA0O8Y+njUQAom5qFEvgY5aY2m25JgHdKmq0tCgqtkf3PnhbxGFijcamNZS
+	7Fm/0U0zf8mpPSpYMMExArmrLmDADezpj0uA4Isr4eyDbYwHSHP6zQWLosJJiE2zKg5U+laNjhGgC
+	iPp5Smr5JDa9v6s/9cCAlAn7lYy3DbDK+ORXy6H98CZ7+ZRvKBp9DnX93dCQZrpd8Qo6vbGjbR0IW
+	1VxYn5JlE8Ca8JGEFl9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huZSX-000318-Ij; Mon, 05 Aug 2019 09:39:17 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1huZVB-0004kA-Hv; Mon, 05 Aug 2019 09:42:01 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huZSK-00030C-O8
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 09:39:06 +0000
-Received: by mail-lj1-x244.google.com with SMTP id t28so78719777lje.9
+ id 1huZUu-0004iJ-3G
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 09:41:45 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a15so74044811wmj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 02:39:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4OPoeAcP1A5mqwy6qFd8vLmNAKWAe1p53hw6o+WqWT4=;
- b=OV1qyXMiWvVc/Vac6X0UmU3u8pprzj0rSq71hMjBU8xtb05Rtzxm4DWYynedYvPo7J
- 4miDsvZc2iXNvnNzPkj979CaCqoNBgjybVRpWaUjnqcf4rDpH4j6h8XJqPODq4v4KEke
- hLL0elo/qlCz4TbNLtrZS26VAruHlPS0uAXMg2pG3DniVVjKfdkdVDSR0X417dJOaPnD
- PVr1+tSoCjAJzs5CIkykoN8PnZ+CryZEfTdAQc9KAifXH29eXDMH/nyF/jOxqUFqN35c
- FPVopu9gZhPADM5b67fqzwrcvD5u/kCplB6hNQ04kCnyzsguwvJ/q5J7h6+coMWLrqed
- 2d4A==
+ Mon, 05 Aug 2019 02:41:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=zwVFHt+48HDHPxY5b54ZFa7xoeFEjvHa3khRmzD7FKU=;
+ b=uemqmpa5kVFXiavwLe6yqYrDmEZZV7Fcfsv21+JFTYqvKAtB5dvFEWIr4grJOpmSRp
+ denJH6xQUZDRMwrqyhoKWcKx0lvzboWIwlSDmy82BgpPOXrpCKAxdpqxVSKSRipCOh7s
+ pqGeT1q/7andPM62LzouFLClYDxeAW+3CDCE5wWZakpPw1H0n1TCp398yGA/dFMJ2T0S
+ I3uOcmxbIsoZudjPF9sJzz8l55xuAM7Wb6TgrxVG7WuwkXdtusMHMerDRBUXnVZpPVOA
+ RCE8ecEsdXVrfBZech4vOgi8/sgNY60ua7JQ/cuqCB0kbeyI2qT2Z5HQrvdQndmit9Mq
+ 2diA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4OPoeAcP1A5mqwy6qFd8vLmNAKWAe1p53hw6o+WqWT4=;
- b=d7e+BxdlAgq1c7wjcjgp7eFpm2VLOw2xR+Q0Zgh6OhdZTDg6BvSFn3C4SRF96yMh1Y
- ozLQ3yTEb6DQFGPbJRB6DElymQuqFHBTlqltFMn2NjuGDvJIvUhotXy88m+Hxnw5KgcO
- V7JOYgOoG1oRqQqY/dV3K8ZGzvaWhW2GnXyR9o2j/NJJKWqN+n/rqRMQStlggJ7zLhpY
- 3HVN1Vpwd220adRt5Edk39qoNzxY1wWeXm/ntOFk6rBVLwrX5KskLoah/DZIod4k2whu
- 6KMwdReA2NxfdM9KZX8EXL4dFZetQOg678rseP/SQ/90mDBLL0rNxF3ObGwDLU++cvvC
- NkUw==
-X-Gm-Message-State: APjAAAUZG1QJde+gjfpVRGIIiZyjtoDiwoBmwk+RjkYM0OJes2FquRjh
- 6m89j3kvtOrvJb/3UFGBVelXzQJs3m912rMpNfQMZA==
-X-Google-Smtp-Source: APXvYqxLKF9i6t/614MmaviWtNy0DDQNZAvHLaTkOyZ635eFHTQY+3LCGLOTkAmzB9cPvRTg/nqwrQ2WBwcpMBU06F0=
-X-Received: by 2002:a2e:2c14:: with SMTP id s20mr16346425ljs.54.1564997942805; 
- Mon, 05 Aug 2019 02:39:02 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=zwVFHt+48HDHPxY5b54ZFa7xoeFEjvHa3khRmzD7FKU=;
+ b=EbSVj2U4Xoq2EJiNvOs5PGXDd55Xazkcz3gx0Cm6CVQJ9+rwddWW6TNzphm3iwTExy
+ soqRomG9dixMP4LbqqhynMZW9VaSatwwHsJPbtlh8lhv8iMDF8TZvVFV9mWezXEFYnNe
+ 5ahg39Cdo58VnZcS0d/DkCibQ84WbLHs299WpAmzrUjXNbLnPUgC87c4VeaeCVjBWcpO
+ f+3BZU5ADnmnOir0Dta4g+Lblmtr6DDd8H+ksSkwS6H5B079JXczRVJRoP+xk7She1tg
+ bi0R2zDgSeY8JO75bkpbEBz81C0d5JWXug1YcVAeJCUIpjkUFd26r6wETl298BYjeTcX
+ L/5A==
+X-Gm-Message-State: APjAAAWxPLQ97eeZl8b1FiFXTMk4IG4i0SIA7JKxiwoL5WWmWqb+ogaA
+ MmO6plJK+kDo0ZlriuktSgyY3A==
+X-Google-Smtp-Source: APXvYqxUqLSyKoX3kBT5LqfmayHxL8IsZIurFOcWjSA/ZAELqlanwnjiTdxfqjeBVGrR1f0Qv4G6Aw==
+X-Received: by 2002:a1c:1a87:: with SMTP id a129mr17580112wma.21.1564998101244; 
+ Mon, 05 Aug 2019 02:41:41 -0700 (PDT)
+Received: from [10.1.4.98] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id a81sm90371174wmh.3.2019.08.05.02.41.40
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 05 Aug 2019 02:41:40 -0700 (PDT)
+Subject: Re: [PATCH v2 3/6] arm64: dts: amlogic: g12: add temperature sensor
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+References: <20190731153529.30159-1-glaroque@baylibre.com>
+ <20190731153529.30159-4-glaroque@baylibre.com>
+ <CAFBinCBYPiLgmTNk+7Db3EPSPePwbnAshCbomYPXWdse8i0oJw@mail.gmail.com>
+From: guillaume La Roque <glaroque@baylibre.com>
+Message-ID: <d702eb8b-f0b7-0b3b-9a17-1d158d7c072f@baylibre.com>
+Date: Mon, 5 Aug 2019 11:41:39 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <1563776607-8368-1-git-send-email-wahrenst@gmx.net>
- <1563776607-8368-3-git-send-email-wahrenst@gmx.net>
-In-Reply-To: <1563776607-8368-3-git-send-email-wahrenst@gmx.net>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 5 Aug 2019 11:38:51 +0200
-Message-ID: <CACRpkdabfiDbGmAQciAUSThY-KfTsVq3tHz0bBszs2j_ej18Nw@mail.gmail.com>
-Subject: Re: [PATCH 12/18] pinctrl: bcm2835: Add support for BCM2711 pull-up
- functionality
-To: Stefan Wahren <wahrenst@gmx.net>
+In-Reply-To: <CAFBinCBYPiLgmTNk+7Db3EPSPePwbnAshCbomYPXWdse8i0oJw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_023904_789593_EB58B413 
-X-CRM114-Status: GOOD (  18.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190805_024144_275546_40550737 
+X-CRM114-Status: GOOD (  14.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,49 +99,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Matthias Brugger <mbrugger@suse.com>, Scott Branden <sbranden@broadcom.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-mmc <linux-mmc@vger.kernel.org>, Adrian Hunter <adrian.hunter@intel.com>,
- Rob Herring <robh+dt@kernel.org>, Eric Anholt <eric@anholt.net>,
- Florian Fainelli <f.fainelli@gmail.com>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org, khilman@baylibre.com,
+ daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 8:24 AM Stefan Wahren <wahrenst@gmx.net> wrote:
+hi Martin,
 
-> The BCM2711 has a new way of selecting the pull-up/pull-down setting
-> for a GPIO pin. The registers used for the BCM2835, GP_PUD and
-> GP_PUDCLKn0, are no longer connected. A new set of registers,
-> GP_GPIO_PUP_PDN_CNTRL_REGx must be used. This commit will add
-> a new compatible string "brcm,bcm2711-gpio" and the kernel
-> driver will use it to select which method is used to select
-> pull-up/pull-down.
+
+thanks for comments i will fix in v3.
+
+
+guillaume
+
+On 8/3/19 7:52 PM, Martin Blumenstingl wrote:
+> Hi Guillaume,
 >
-> This patch based on a patch by Al Cooper which was intended for the
-> BCM7211. This is a bugfixed and improved version.
+> On Wed, Jul 31, 2019 at 5:36 PM Guillaume La Roque
+> <glaroque@baylibre.com> wrote:
+>> Add cpu and ddr temperature sensors for G12 Socs
+>>
+>> Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
+> with the nit-pick below addressed:
+> Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 >
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-
-Patch applied.
-
-I think I complained about some other version of this patch, this one
-looks entirely acceptable.
-
-Can we get rid of custom pull settings etc from the upstream device
-trees so we don't set bad examples? I have a strong urge to
-throw in a pr_warn() about any use of it.
-
-Yours,
-Linus Walleij
+>> ---
+>>  .../boot/dts/amlogic/meson-g12-common.dtsi    | 22 +++++++++++++++++++
+>>  1 file changed, 22 insertions(+)
+>>
+>> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+>> index 06e186ca41e3..7f862a3490fb 100644
+>> --- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+>> +++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+>> @@ -1353,6 +1353,28 @@
+>>                                 };
+>>                         };
+>>
+>> +                       cpu_temp: temperature-sensor@34800 {
+>> +                               compatible = "amlogic,g12-cpu-thermal",
+>> +                                            "amlogic,g12-thermal";
+>> +                               reg = <0x0 0x34800 0x0 0x50>;
+>> +                               interrupts = <GIC_SPI 35 IRQ_TYPE_EDGE_RISING>;
+>> +                               clocks = <&clkc CLKID_TS>;
+>> +                               status = "okay";
+> I believe nodes are enabled automatically if they don't have a status property
+>
+>> +                               #thermal-sensor-cells = <0>;
+>> +                               amlogic,ao-secure = <&sec_AO>;
+>> +                       };
+>> +
+>> +                       ddr_temp: temperature-sensor@34c00 {
+>> +                               compatible = "amlogic,g12-ddr-thermal",
+>> +                                            "amlogic,g12-thermal";
+>> +                               reg = <0x0 0x34c00 0x0 0x50>;
+>> +                               interrupts = <GIC_SPI 36 IRQ_TYPE_EDGE_RISING>;
+>> +                               clocks = <&clkc CLKID_TS>;
+>> +                               status = "okay";
+> same here
+>
+>
+> Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
