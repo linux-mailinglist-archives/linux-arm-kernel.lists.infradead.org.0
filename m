@@ -2,61 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81F13817B9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 13:00:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CA9F817C5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 13:02:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XVMLtPRU/18zZYh9AKm8LB3Jhm2TelfV4fGXzI/7xO0=; b=ajIjKfSvUPYSwV
-	oOAIFULd7DfekJZUs+IrBFzWPCbO+RXtN+bf3oooegCmcPJCid4Tn0ApU9BSYb5xT85qBmnnnLW0o
-	EGMgdEkkOr5VbgH2vRZv37Vg8KHYgNyaMFmWW0iPDYiCe2xotJOnf5FNInw9Ysc0Sm2QnyyLGZvl7
-	9rzwD97yd75pCM+VOcacWkuIiNvhpWefiFy27elCOBKXT2Y93ll6Ntm7S6REXsb5+WURlzCe2xpgd
-	zLltWQWymVjyTD7b0k8wdtToMrQi3FvkCqJyuxsx1eW1bN5b6v9KwoFnbGfpXoxkQUZBtbjtxo9NW
-	8hoLngYX5PCSHSukzC0A==;
+	List-Owner; bh=q1X6O8/X3rzSqP6TBHPjOZqj3JDmJ3Cdb5MKlWlS7zs=; b=Ht/ZZDraSdnBVP
+	VQUUn5oaRasuoHObgQ0eLs9FZ6qXSX41RJylVsK4QQTh4N6VvmqQ9hJFaG60X1XW5RS8W+y+Rioxk
+	R+TT+CEeEypsWYKpvhFuOB9u8FWq+dbLIwpYkIcKnzolIppfgUEF76pc+BJdjW+a9vTZ6TCJILIJt
+	xKXNxCcXwXhzN3BmNWryhP7Dn/Wdo4FvmtjvdluCScWSWz/Vq5UltF7YOXhOlBHWxTdLHff7EViwh
+	GEgFGetE2/dMpDrB56RHpM8Kva6DzFIYWMuy4vKv+gnEwZxaGy8ZU5tIVDBGf9lVVgDrGOERyjS7d
+	JvEq/HY3gpFQXTqsxqyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huaik-0007X1-RH; Mon, 05 Aug 2019 11:00:07 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1huakW-0000po-Bp; Mon, 05 Aug 2019 11:01:56 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huaiB-0007WW-S9
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:59:34 +0000
-Received: from pendragon.ideasonboard.com
- (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
- [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id A5EF02F9;
- Mon,  5 Aug 2019 12:59:29 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1565002769;
- bh=ARbvDmu/mBI7c7RZcT5zH3TBI3qsqJ0Vjc6Kj8MQeEc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=bzG0gADiIV8BDeHLoa9Kj9zUWn2mS5xhEnGk8ww5Zw5YmaTPgbxnpI/mRbrnCerJI
- QvPFax2dQhbSESR8dqmTYt0v0EA3QS3neJcCJF3XQ1ha+Ozf4yS3hCmqCCdlL/C1Og
- XQQIK/ulpNLVSMxGTf5Eu5gPH4tD47qshkiq8R9g=
-Date: Mon, 5 Aug 2019 13:59:28 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Sam Ravnborg <sam@ravnborg.org>
-Subject: Re: [PATCH v1 14/16] drm/panel: call prepare/enable only once
-Message-ID: <20190805105928.GI29747@pendragon.ideasonboard.com>
-References: <20190804201637.1240-1-sam@ravnborg.org>
- <20190804201637.1240-15-sam@ravnborg.org>
+ id 1huak7-0000n9-3n
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 11:01:32 +0000
+Received: by mail-lj1-x242.google.com with SMTP id v24so79065621ljg.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 05 Aug 2019 04:01:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Fm/51dNbtT1AoRASq2ygNjUysJb63GrKj4DIaeO9Ghs=;
+ b=Z8iG/NmUwQ9i+AFPGL0ddsR7h9HdoT1Ttt4aAmnHZDClf+igwc+gtbzhT1Nba6laaz
+ 4v+lLXov3kcW44IiefLKXkqGZ0yuj65ZaoQH1xsIDTxVVx6PdeRPrb0G23ULaT1s3B73
+ FnbYivp3DueW6KWrElW2wZyrCEZNoE17ZGX+l0Xgqb+T6uyuMxBLjAVT1EhECFyykqMP
+ 4hMexKxJyF51cRbhjwTJUHNkSOY7XU+9Rtg3U6C8Ue+jfe9xi+seEkWqvxpg82U568yD
+ yrwwkO3XsZ2ZcWNNAOyRt3Qkjym0FpXuwC2i0NE4N6FMY10+Xzi71jIhC5Lugb6EYXpJ
+ H/uQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Fm/51dNbtT1AoRASq2ygNjUysJb63GrKj4DIaeO9Ghs=;
+ b=W17axU4WPCDusPpjBr12Yzlyvs6sPWJb+fZJjvd8TygERUNlUPBHx2sa9NNu0NNVbj
+ QaIrqeD5wVW5AcsvA4Zqh3IRr0hU7pcra9PPtHraR/OYLx30meF1Z00MKEuDPhd7MqSn
+ HdkOZHT8JBnZHIAYf1KftuAU14nTW74pj3DSriq5yqV/DCnJTw8pf0VJuGHkw1PDoIqT
+ 4m/7OhcEiFHtDc+k4OfFI3sIFgNcFhCcrlDcaVoscKdTNVC36V4u7uJvOXOlbk5AQ0kQ
+ wy/UdCjqCwOQ4JW6lY/npPD5JieMhxYN0h7wt/8n3m/O/PRwJMOcRvkOA5pELYecovDR
+ yYGQ==
+X-Gm-Message-State: APjAAAV4edDxZ1VvFxhqT0dd3WTin56N8mV/2oJiXQ57n1P+qLH0K6vQ
+ GAjBW8fiMYnKmB1MmolZof60zh4MLNyy7AZMJ/uXKg==
+X-Google-Smtp-Source: APXvYqztNgDE8wQq95uC5fqxtY6tG66NjiEC9RCu4ZI6X3zlaBRtnAgyXqI7tkIKROGOxKhKMeXnW2M6REnOxYZlfSY=
+X-Received: by 2002:a2e:2c14:: with SMTP id s20mr16524273ljs.54.1565002889640; 
+ Mon, 05 Aug 2019 04:01:29 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190804201637.1240-15-sam@ravnborg.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190729125838.6498-1-narmstrong@baylibre.com>
+In-Reply-To: <20190729125838.6498-1-narmstrong@baylibre.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 5 Aug 2019 13:01:18 +0200
+Message-ID: <CACRpkdbssrCrs3n1tejA3iLnUvCbv95xt_ip1Y8gdCi1RkJgXg@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: meson-g12a: add pwm_a on GPIOE_2 pinmux
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_035932_433958_3367D50A 
-X-CRM114-Status: GOOD (  26.07  )
+X-CRM114-CacheID: sfid-20190805_040131_186309_68240DA9 
+X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -75,241 +91,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Fabio Estevam <festevam@gmail.com>, Marek Vasut <marex@denx.de>,
- Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
- Joonyoung Shim <jy0922.shim@samsung.com>,
- Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, Sascha Hauer <s.hauer@pengutronix.de>,
- Alison Wang <alison.wang@nxp.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Gwan-gyeong Mun <gwan-gyeong.mun@intel.com>, Inki Dae <inki.dae@samsung.com>,
- Alexios Zavras <alexios.zavras@intel.com>, linux-samsung-soc@vger.kernel.org,
- Stefan Agner <stefan@agner.ch>, linux-tegra@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- Allison Randal <allison@lohutok.net>, Jernej Skrabec <jernej.skrabec@siol.net>,
- Shawn Guo <shawnguo@kernel.org>, Seung-Woo Kim <sw0312.kim@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Daniel Vetter <daniel@ffwll.ch>,
- Enrico Weigelt <info@metux.net>
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sam,
+On Mon, Jul 29, 2019 at 2:58 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 
-Thank you for the patch.
+> Add the missing pinmux for the pwm_a function on the GPIOE_2 pin.
+>
+> Reviewed-by: Kevin Hilman <khilman@baylibre.com>
+> Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 
-On Sun, Aug 04, 2019 at 10:16:35PM +0200, Sam Ravnborg wrote:
-> Many panel drivers duplicate logic to prevent prepare to be called
-> for a panel that is already prepared.
-> Likewise for enable.
-> 
-> Implement this logic in drm_panel so the individual drivers
-> no longer needs this.
-> A panel is considered prepared/enabled only if the prepare/enable call
-> succeeds.
-> For disable/unprepare it is unconditionally considered
-> disabled/unprepared.
-> 
-> This allows calls to prepare/enable again, even if there were
-> some issue disabling a regulator or similar during disable/unprepare.
+Patch applied.
 
-Is this the right place to handle this ? Shouldn't the upper layers
-ensure than enable/disable and prepare/unprepare are correcty balanced,
-and not called multiple times ? Adding enabled and prepared state to
-drm_panel not only doesn't align well with atomic state handling, but
-also would hide issues in upper layers that should really be fixed
-there.
-
-> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
-> Cc: Maxime Ripard <maxime.ripard@bootlin.com>
-> Cc: Sean Paul <sean@poorly.run>
-> Cc: Thierry Reding <thierry.reding@gmail.com>
-> Cc: Sam Ravnborg <sam@ravnborg.org>
-> Cc: David Airlie <airlied@linux.ie>
-> Cc: Daniel Vetter <daniel@ffwll.ch>
-> ---
->  drivers/gpu/drm/drm_panel.c | 66 ++++++++++++++++++++++++++++++-------
->  include/drm/drm_panel.h     | 21 ++++++++++++
->  2 files changed, 75 insertions(+), 12 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/drm_panel.c b/drivers/gpu/drm/drm_panel.c
-> index da19d5b4a2f4..0853764040de 100644
-> --- a/drivers/gpu/drm/drm_panel.c
-> +++ b/drivers/gpu/drm/drm_panel.c
-> @@ -66,10 +66,21 @@ EXPORT_SYMBOL(drm_panel_init);
->   */
->  int drm_panel_prepare(struct drm_panel *panel)
->  {
-> -	if (panel && panel->funcs && panel->funcs->prepare)
-> -		return panel->funcs->prepare(panel);
-> +	int ret = -ENOSYS;
->  
-> -	return panel ? -ENOSYS : -EINVAL;
-> +	if (!panel)
-> +		return -EINVAL;
-> +
-> +	if (panel->prepared)
-> +		return 0;
-> +
-> +	if (panel->funcs && panel->funcs->prepare)
-> +		ret = panel->funcs->prepare(panel);
-> +
-> +	if (ret >= 0)
-> +		panel->prepared = true;
-> +
-> +	return ret;
->  }
->  EXPORT_SYMBOL(drm_panel_prepare);
->  
-> @@ -85,10 +96,21 @@ EXPORT_SYMBOL(drm_panel_prepare);
->   */
->  int drm_panel_enable(struct drm_panel *panel)
->  {
-> -	if (panel && panel->funcs && panel->funcs->enable)
-> -		return panel->funcs->enable(panel);
-> +	int ret = -ENOSYS;
->  
-> -	return panel ? -ENOSYS : -EINVAL;
-> +	if (!panel)
-> +		return -EINVAL;
-> +
-> +	if (panel->enabled)
-> +		return 0;
-> +
-> +	if (panel->funcs && panel->funcs->enable)
-> +		ret = panel->funcs->enable(panel);
-> +
-> +	if (ret >= 0)
-> +		panel->enabled = true;
-> +
-> +	return ret;
->  }
->  EXPORT_SYMBOL(drm_panel_enable);
->  
-> @@ -104,10 +126,20 @@ EXPORT_SYMBOL(drm_panel_enable);
->   */
->  int drm_panel_disable(struct drm_panel *panel)
->  {
-> -	if (panel && panel->funcs && panel->funcs->disable)
-> -		return panel->funcs->disable(panel);
-> +	int ret = -ENOSYS;
->  
-> -	return panel ? -ENOSYS : -EINVAL;
-> +	if (!panel)
-> +		return -EINVAL;
-> +
-> +	if (!panel->enabled)
-> +		return 0;
-> +
-> +	if (panel->funcs && panel->funcs->disable)
-> +		ret = panel->funcs->disable(panel);
-> +
-> +	panel->enabled = false;
-> +
-> +	return ret;
->  }
->  EXPORT_SYMBOL(drm_panel_disable);
->  
-> @@ -124,10 +156,20 @@ EXPORT_SYMBOL(drm_panel_disable);
->   */
->  int drm_panel_unprepare(struct drm_panel *panel)
->  {
-> -	if (panel && panel->funcs && panel->funcs->unprepare)
-> -		return panel->funcs->unprepare(panel);
-> +	int ret = -ENOSYS;
->  
-> -	return panel ? -ENOSYS : -EINVAL;
-> +	if (!panel)
-> +		return -EINVAL;
-> +
-> +	if (!panel->prepared)
-> +		return 0;
-> +
-> +	if (panel->funcs && panel->funcs->unprepare)
-> +		ret = panel->funcs->unprepare(panel);
-> +
-> +	panel->prepared = false;
-> +
-> +	return ret;
->  }
->  EXPORT_SYMBOL(drm_panel_unprepare);
->  
-> diff --git a/include/drm/drm_panel.h b/include/drm/drm_panel.h
-> index 624bd15ecfab..7493500fc9bd 100644
-> --- a/include/drm/drm_panel.h
-> +++ b/include/drm/drm_panel.h
-> @@ -65,6 +65,9 @@ struct drm_panel_funcs {
->  	 * @prepare:
->  	 *
->  	 * Turn on panel and perform set up.
-> +	 * When the panel is successfully prepared the prepare() function
-> +	 * will not be called again until the panel has been unprepared.
-> +	 *
->  	 */
->  	int (*prepare)(struct drm_panel *panel);
->  
-> @@ -72,6 +75,8 @@ struct drm_panel_funcs {
->  	 * @enable:
->  	 *
->  	 * Enable panel (turn on back light, etc.).
-> +	 * When the panel is successfully enabled the enable() function
-> +	 * will not be called again until the panel has been disabled.
->  	 */
->  	int (*enable)(struct drm_panel *panel);
->  
-> @@ -79,6 +84,7 @@ struct drm_panel_funcs {
->  	 * @disable:
->  	 *
->  	 * Disable panel (turn off back light, etc.).
-> +	 * If the panel is already disabled the disable() function is not called.
->  	 */
->  	int (*disable)(struct drm_panel *panel);
->  
-> @@ -86,6 +92,7 @@ struct drm_panel_funcs {
->  	 * @unprepare:
->  	 *
->  	 * Turn off panel.
-> +	 * If the panel is already unprepared the unprepare() function is not called.
->  	 */
->  	int (*unprepare)(struct drm_panel *panel);
->  
-> @@ -145,6 +152,20 @@ struct drm_panel {
->  	 * Panel entry in registry.
->  	 */
->  	struct list_head list;
-> +
-> +	/**
-> +	 * @prepared:
-> +	 *
-> +	 * Set to true when the panel is successfully prepared.
-> +	 */
-> +	bool prepared;
-> +
-> +	/**
-> +	 * @enabled:
-> +	 *
-> +	 * Set to true when the panel is successfully enabled.
-> +	 */
-> +	bool enabled;
->  };
->  
->  void drm_panel_init(struct drm_panel *panel);
-
--- 
-Regards,
-
-Laurent Pinchart
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
