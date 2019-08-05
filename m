@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13E5B82822
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 01:36:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2247882823
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 01:36:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qZDOWDqT0g6AcrZKX2kYQjCrVAOXi1clX/fmethhzuY=; b=Yw2aasygr+RIfbYCU5EoGgYeIt
-	DPXL7odVPJnYgNf96Yq0EOtTHdWP60+rjhlq9svHIjHwMrBAOkWQj+tJMjl1MA3XrLoBILGGftrmQ
-	y9Gatcm2hYfoTXdBk+G4Az0q5gr62hfmIOhWFOOj7oAmKrun0YVoSFPOiuX07pvD8XStk8m3lDcky
-	xPnIVdxR+ARG3OOgg8u4fbAWU8E1NzuONekDIvnfs/Lwd8QTCyCMQTFjxe7OVb4hFqvbtS1VbDAEy
-	TNyhbubWOIlJr0KT1/8XVZZye8m9LNde4MD09XW8HWdMGIV2t/wLDahOJp4s2Mkvun3p8mRxZbB9q
-	eWWbgf7g==;
+	bh=9NmCRkTGdJPve/Fu1OEh0L+WbARH53bJI8jiBgvNieg=; b=nmMDUz1b6eNKBxnnrMZBnRFOZu
+	Zd2HCTL/j+cK8HRn/j7B+UpAP65LynrHFIp+2TMupdBkKinp3SPssjYkyL0ijffCajwiIHAAgpiP6
+	ToBA4v9bqm0kvNzQzcga7+oKdGpB2UE6iE0+Qlot3OQOILiABzSbbkveWGTjagznqwm6zcnARXIjK
+	k7E64XJsMpmW5W1rhQezXWm7gM/GKXRCpkA/5Yk50+7a2rvR23JPRVZArI4EexCm0/R9b6v768jAu
+	lytGqz2kmnJZOQS/xHOzQJrXOVSJhLltG9jMU+2AOT6jdOcdhkcwhCYNSBiT0hHtaPLyl0vMixDTZ
+	IiqmauDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1humWk-0005me-Io; Mon, 05 Aug 2019 23:36:30 +0000
+	id 1humWw-00061p-Pq; Mon, 05 Aug 2019 23:36:42 +0000
 Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1humVo-0004sH-21
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 23:35:33 +0000
-Received: by mail-pg1-x542.google.com with SMTP id x15so30169757pgg.8
+ id 1humVp-0004u7-9W
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 23:35:34 +0000
+Received: by mail-pg1-x542.google.com with SMTP id l21so40512187pgm.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 16:35:31 -0700 (PDT)
+ Mon, 05 Aug 2019 16:35:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Fbs1mFAvJTATM6fIvB9UCHmR0ykE58CEjMWw0CNcKVw=;
- b=J3zvZBPbrHmjS6LZta22eIsImAqYXiEzcBjlGvfa482lW8RjJx4Akc0Ae3QmAzH2GO
- h0LOzT6sPTs/PEl8B7wYP3VutzzoymShyzc7QKqD/z/fAxou3Ejno26qhQWzTw9ZbvoX
- s7CM7TZYWM4m8Mm10u8JGrDRrw1V21hEUkPPSbplPewwOJ2nAcvDkID94cqB8PC87Pb8
- vfxjBV11vQ5JhzuWPxQ/5hvbjhBvvhnci3txlljSsa0yTGdtVQksNsnCcfLM8pAgpluZ
- TwfQZi+2cQTMR9/zLZB2EAsHJaW1U7vUPTntLgrdSicwrUJKpr7z6mcPQ1RurdeOh4Wn
- 2Ndg==
+ bh=80zZuvj+LjB7muc1lRSag1oD8GSQkupjbn/Cdl2Z1us=;
+ b=m9+1Z16t7VCOSQhnktxeXV9tpgKBUk4i4dqvz1AUM2uLciXya2YHvUdXKQPg0nahrp
+ Ls2DL2gNH8qovIXjYf3Ou4K404eivEwkhL8C+H1EjVAuTSOaDqxBoT63k1fy4l7adTzQ
+ A8FZAf4UVV73lJCmwuyKdNwn+s/AHZiFq+Lfy7cgnR0uOjHpcX4BXip0NbwJaeDsALPC
+ POF+Gbq9VZLBATGU2wh30Jfth38krYE1Tlw/3A1u8v02JkC6ye9uz57r4S+AHmfDMw/Q
+ Sy8FW41P88uHNyoSkU+TtXlmHiDG1qLCBe2VO7hgLpTe/I1MZqUKNtKVgKmQSdu5Q+x8
+ 6Prw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Fbs1mFAvJTATM6fIvB9UCHmR0ykE58CEjMWw0CNcKVw=;
- b=M9mOMwYv/jKJ4k8kQWi4DWJAd04NYoc28gL/1PY2+TaaqTHr+pP4ky9EGKc44PiI1m
- Xpjzm1CmQfnSC4V1U1+Z/ILMEP7Go23nyn9/RYY4tULQgja413xjqaSLqyA3U+5+zC97
- F2NaD6Q/qUuE/9RA5MJqk8UNvkkWfA8mwRAaPjy+nFQv04i8xkiXTrSzL1TuKIBZvjqm
- dXKASOSJE1gN31Pc4z0IQNkJ27mwjBD6E+slmffElGL3xdr/daD3C33L8AGat5nDyT2K
- JMLcMnBoF9K236jlOlOagkkWeGm35pLw0CIr7iRPBfpNjOYeBsOHYGs9yS0pm9f/9VcW
- pGBg==
-X-Gm-Message-State: APjAAAWIpf0ciWJrzt9nW2u3Jsg2+PNnA54V7UkVE1xFw4KugvNBJ717
- 8O4Acn+ECXdLTAsWRdt7XeU=
-X-Google-Smtp-Source: APXvYqxMcB13LsIEJrOTuGY/j/XtK9RITES5UnefU9LWRAVWxAW33EUR/o2Ph3AMnZGny6/J1lcIww==
-X-Received: by 2002:a62:ce07:: with SMTP id y7mr548956pfg.12.1565048131431;
- Mon, 05 Aug 2019 16:35:31 -0700 (PDT)
+ bh=80zZuvj+LjB7muc1lRSag1oD8GSQkupjbn/Cdl2Z1us=;
+ b=Jm2QvmjakAY1PNEXDpxSZwGN3vY2YUdvnNIN9w2ax26naEGxhCSlqO0vtUcVftgsWk
+ jfNbGaiKC3lweI8P0koORTDn9DSkHBAqYk6hUHR/3O3NPOSiA1Y6giwKLrs1GMGLzAKT
+ U8cpRlhjZXU3Tnb33tfvE/nRd5dQzzYHH9WCZvmklsOs3CSyP2FBYlzqqYWVci1RI6Fv
+ W8UjoYiVfCJ4xOEpvL92V3uCSyRNxrK66PNymNjocKb0JdP/6+ZrpadCdevXV4rqAejO
+ upqkfHD51bFDgzO0/Dv3qJXewrzoXDUiFruF9QSdBwWzbyQ9LYKfb1s40/G7AVkTPbJ2
+ Ca/Q==
+X-Gm-Message-State: APjAAAUeEU/KzoGf58rX/u/ey9OZZmoT4OXyz7tbsohQTxhLB6FfYnMV
+ YgZ5itcEcP9J6b4ZEY/avnw=
+X-Google-Smtp-Source: APXvYqynuc9WSN7P4iFLSAjU9euUo/l2aSIhsQXrCHSGZFYLHfCOnZ0+BnlOVd8HxGgj63ZeqPGtRw==
+X-Received: by 2002:aa7:9481:: with SMTP id z1mr560979pfk.92.1565048132680;
+ Mon, 05 Aug 2019 16:35:32 -0700 (PDT)
 Received: from majic.sklembedded.com (c-73-202-231-77.hsd1.ca.comcast.net.
  [73.202.231.77])
- by smtp.googlemail.com with ESMTPSA id 30sm31296349pjk.17.2019.08.05.16.35.30
+ by smtp.googlemail.com with ESMTPSA id 30sm31296349pjk.17.2019.08.05.16.35.31
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 05 Aug 2019 16:35:30 -0700 (PDT)
+ Mon, 05 Aug 2019 16:35:32 -0700 (PDT)
 From: Steve Longerbeam <slongerbeam@gmail.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH 14/22] media: imx7-mipi-csis: Create media links in bound
+Subject: [PATCH 15/22] media: imx7-media-csi: Create media links in bound
  notifier
-Date: Mon,  5 Aug 2019 16:34:57 -0700
-Message-Id: <20190805233505.21167-15-slongerbeam@gmail.com>
+Date: Mon,  5 Aug 2019 16:34:58 -0700
+Message-Id: <20190805233505.21167-16-slongerbeam@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190805233505.21167-1-slongerbeam@gmail.com>
 References: <20190805233505.21167-1-slongerbeam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_163532_124985_F31DD25D 
-X-CRM114-Status: GOOD (  12.28  )
+X-CRM114-CacheID: sfid-20190805_163533_435198_A9764E99 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -117,63 +117,62 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Implement a notifier bound op to register media links from the remote
-sub-device's source pad(s) to the mipi csi-2 receiver sink pad.
+sub-device's source pad(s) to the CSI sink pad.
 
 Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
 ---
- drivers/staging/media/imx/imx7-mipi-csis.c | 25 ++++++++++++++++++++++
- 1 file changed, 25 insertions(+)
+ drivers/staging/media/imx/imx7-media-csi.c | 24 ++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
-diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
-index f71d9183cad2..e03b2317a1ac 100644
---- a/drivers/staging/media/imx/imx7-mipi-csis.c
-+++ b/drivers/staging/media/imx/imx7-mipi-csis.c
-@@ -259,6 +259,12 @@ struct csi_state {
- 	bool sink_linked;
+diff --git a/drivers/staging/media/imx/imx7-media-csi.c b/drivers/staging/media/imx/imx7-media-csi.c
+index a1c96c52a606..f71ac485f780 100644
+--- a/drivers/staging/media/imx/imx7-media-csi.c
++++ b/drivers/staging/media/imx/imx7-media-csi.c
+@@ -196,6 +196,11 @@ struct imx7_csi {
+ 	struct completion last_eof_completion;
  };
  
-+static inline struct csi_state *
-+notifier_to_csis_state(struct v4l2_async_notifier *n)
++static inline struct imx7_csi *notifier_to_dev(struct v4l2_async_notifier *n)
 +{
-+	return container_of(n, struct csi_state, notifier);
++	return container_of(n, struct imx7_csi, notifier);
 +}
 +
- struct csis_pix_format {
- 	unsigned int pix_width_alignment;
- 	u32 code;
-@@ -863,6 +869,23 @@ static int mipi_csis_parse_endpoint(struct device *dev,
- 	return 0;
+ static u32 imx7_csi_reg_read(struct imx7_csi *csi, unsigned int offset)
+ {
+ 	return readl(csi->regbase + offset);
+@@ -1173,6 +1178,23 @@ static int imx7_csi_parse_endpoint(struct device *dev,
+ 	return fwnode_device_is_available(asd->match.fwnode) ? 0 : -EINVAL;
  }
  
-+static int mipi_csis_notify_bound(struct v4l2_async_notifier *notifier,
-+				  struct v4l2_subdev *sd,
-+				  struct v4l2_async_subdev *asd)
++static int imx7_csi_notify_bound(struct v4l2_async_notifier *notifier,
++				 struct v4l2_subdev *sd,
++				 struct v4l2_async_subdev *asd)
 +{
-+	struct csi_state *state = notifier_to_csis_state(notifier);
-+	struct media_pad *sink = &state->mipi_sd.entity.pads[CSIS_PAD_SINK];
++	struct imx7_csi *csi = notifier_to_dev(notifier);
++	struct media_pad *sink = &csi->sd.entity.pads[IMX7_CSI_PAD_SINK];
 +
 +	return media_create_fwnode_pad_links(sink,
-+					     dev_fwnode(state->mipi_sd.dev),
++					     dev_fwnode(csi->sd.dev),
 +					     &sd->entity,
 +					     dev_fwnode(sd->dev), 0);
 +}
 +
-+static const struct v4l2_async_notifier_operations mipi_csis_notify_ops = {
-+	.bound = mipi_csis_notify_bound,
++static const struct v4l2_async_notifier_operations imx7_csi_notify_ops = {
++	.bound = imx7_csi_notify_bound,
 +};
 +
- static int mipi_csis_subdev_init(struct v4l2_subdev *mipi_sd,
- 				 struct platform_device *pdev,
- 				 const struct v4l2_subdev_ops *ops)
-@@ -895,6 +918,8 @@ static int mipi_csis_subdev_init(struct v4l2_subdev *mipi_sd,
+ static int imx7_csi_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -1253,6 +1275,8 @@ static int imx7_csi_probe(struct platform_device *pdev)
  
- 	v4l2_async_notifier_init(&state->notifier);
+ 	v4l2_async_notifier_init(&csi->notifier);
  
-+	state->notifier.ops = &mipi_csis_notify_ops;
++	csi->notifier.ops = &imx7_csi_notify_ops;
 +
- 	ret = v4l2_async_register_fwnode_subdev(mipi_sd, &state->notifier,
+ 	ret = v4l2_async_register_fwnode_subdev(&csi->sd, &csi->notifier,
  						sizeof(struct v4l2_async_subdev),
- 						&sink_port, 1,
+ 						NULL, 0,
 -- 
 2.17.1
 
