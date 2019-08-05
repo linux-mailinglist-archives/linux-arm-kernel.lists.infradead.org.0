@@ -2,54 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B1278173A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:39:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3105D81749
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:44:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DJ6C954qEBH8wfhJ1TNYUwTdy9dsYKD09WlG8/EG/eU=; b=rWbe3JVa+AlrJ0
-	MeH5EXP8xolMEmrLpqqlhJ2uOozA16T/Eed8Jh/A0UQpy0rQRW8VO7vLILVpeP/7qE9K3gKaI3Fv/
-	BgsEJMkzIMfawcpKllUy4OoAmlYomZuYR0lsVzct4FR+UEK4GAbCUwpklLjrCaDpDivLzwgEGReHd
-	6TthI7H3lehbleW3Wc7YD/7KDExhSPvo+nOyMBwnDclupVyokgSqaL5plBjO34jrrJFinjxsOiRf7
-	2MO7ea2clrbK8F/EvN9T3exxZsYzYW204lh33Shy9Me4VY+UxMz5y3K6UH7bSE786DrofVeqVPCIl
-	uaAmLtt1eYxRUa1CnZTA==;
+	List-Owner; bh=lr51ltLEl6ddKr537+4cKhdQBpsK6URus1Wc6qXlqBs=; b=hsITbO/BPSQ7t0
+	OPxwCVoRM5301FoMuBkgMR5q8Sqp5qtGxTV+iDcJ6HWRnIlvGQG3ck+8Ylkdr2NaSgcQHGs/IElA+
+	XjUsBXe25Onl3ACKlZwvJbDnBAwZGCBtYKkbkQxJxjUezUKLvg60L1pX/vcfe1TQERlxMP8FcRRWa
+	4Qf2k2i7iQVLqIadqIxlIxJkiFQruZV/U2ZgBjoBTCxiesaUSLWv3Tnqye7oUQ3iDr3WeiAq0ZqOl
+	uHOsXnjgh6SVeb9ZxKu+8k8Y9wT7ylBn2ot45lGa+/MVSZH1SM42im3+w70q0QVUTYjryoF1Oc8bB
+	px6fI0EH13WElNRiL0wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huaOf-0005zs-Mr; Mon, 05 Aug 2019 10:39:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1huaOU-0005zY-1k
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:39:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8FD1344;
- Mon,  5 Aug 2019 03:39:08 -0700 (PDT)
-Received: from iMac.local (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0F7453F694;
- Mon,  5 Aug 2019 03:39:07 -0700 (PDT)
-Date: Mon, 5 Aug 2019 11:39:05 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: io: Relax implicit barriers in default I/O
- accessors
-Message-ID: <20190805103905.GC59981@iMac.local>
-References: <20190729170518.14271-1-will@kernel.org>
+	id 1huaSu-0007ko-PB; Mon, 05 Aug 2019 10:43:45 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1huaSH-0007kR-3a
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:43:06 +0000
+Received: by mail-lf1-x144.google.com with SMTP id b29so50306956lfq.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 05 Aug 2019 03:43:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FNuA6/9fhDtZ2LA/XhT5TM5n9GcO4T42zHctSuCq+QE=;
+ b=ZqKWS/7PAIhTkrjtw+GzHRAkD9966ILvMv4i8DSD/p0C0m6oeCBA5UKCB22elJeNfJ
+ zWiKm8UHSaQlH8pUZ3AZbvyx4ZBqw6BkeYLgJireYNPJmj0q2uqDnTzJCp/jQxiaax89
+ XCh32PWzJhWMXrG0JnXQJjWeNR65juG44BK9cUuZ2gKq8V14CF8zLoJyE3HcYK+XMi2Q
+ DQtRf+3O3nR21FO5G/p3IrM7QSNRG15P4rv6CZEdT3mTViEGqgzNB+Lz65tM2cCIbL/b
+ Mdp/TrttDV5dSNyEqTNV3L8pbAvkos2UKTsF8pX+/GaSCsnWP0IqyW1tDstJWH/iA/sw
+ MBQQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FNuA6/9fhDtZ2LA/XhT5TM5n9GcO4T42zHctSuCq+QE=;
+ b=rJkcv/PA1HTehKYBGKMvbB908219BPkWzcZqwgtqpvqXlkSOeeUHOlkXCYz3okyedo
+ begdxkW5675irWu0MWXUv9PbrEp2abN4TKe20+G7TY1jUhGZY1MFlrZjiwBkQKwWYmCG
+ Gii5ph0cSeM+psKQZXIxxEqQ+69xC1kyfYW9R7gP2w2UxUVCFSyeOgT1MzLctDByhoBk
+ ykMxHnhsh0U5f2rKoVGgJyn7TnfboLdBaFbkr2Lz9bCIpPexJ7N7CHd9Ogqutd4kWRx9
+ OQhYKvU75kL6UcteewlhnPwWKgk7u6yvelpgwusTDppXxBCNdorhRbdWV7Y5K+F6PB4H
+ qR2w==
+X-Gm-Message-State: APjAAAWfmtz1cp4K+J4VaAKPRutmsW4Vf+LK5Uwb0QA1d+xjaFdsiymX
+ VEA+CKohiReCq7HJvtemMNyAG+Y3XYhNgceCNq17rQ==
+X-Google-Smtp-Source: APXvYqzUEX+wRaUh5h+0CMDXrhYbMXJyYq5FgUc0gxHkybrHmYXBX420COs0UI1eqAlKWrcY6dDdA4a4Mno7k+9cWAE=
+X-Received: by 2002:ac2:4c07:: with SMTP id t7mr1415879lfq.152.1565001783694; 
+ Mon, 05 Aug 2019 03:43:03 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190729170518.14271-1-will@kernel.org>
-User-Agent: Mutt/1.11.1 (2018-12-01)
+References: <20190711041942.23202-1-andrew@aj.id.au>
+In-Reply-To: <20190711041942.23202-1-andrew@aj.id.au>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 5 Aug 2019 12:42:52 +0200
+Message-ID: <CACRpkdac+yqO9BEJ67UMD=uQVfMzE=s9oHqaSOB20-OboBMVVw@mail.gmail.com>
+Subject: Re: [PATCH 0/6] pinctrl: aspeed: Add AST2600 pinmux support
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_033910_135919_CAC207C6 
-X-CRM114-Status: GOOD (  18.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190805_034305_157271_70255A81 
+X-CRM114-Status: UNSURE (   6.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,64 +91,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, johnny_huang@aspeedtech.com,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>, ryanchen.aspeed@gmail.com,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 29, 2019 at 06:05:18PM +0100, Will Deacon wrote:
-> As a concrete example, consider the following:
-> 
-> 	memcpy(dma_buffer, data, bufsz);
-> 	writel(DMA_START, dev->ctrl_reg);
-> 
-> A DMB ST instruction between the final write to the DMA buffer and the
-> write to the control register will ensure that the writes to the DMA
-> buffer are observed before the write to the control register by all
-> observers. Put another way, if an observer can see the write to the
-> control register, it can also see the writes to memory.
+I applied this series now!
 
-I think one of the counter arguments here were that a device does not
-"observe" the write to the control register as that's not a master
-access (by the device). Do you mean that if another CPU (not the device)
-can observe the writel(), it would have also observed the write to the
-DMA buffer (assuming the DMB)? Since the device is also an observer of
-the DMA buffer accesses, the multi-copy atomicity ensures that the
-device is also seeing the buffer updates following a DMB.
+Thanks Andrew.
 
-If I got this right, I'm fine with the patch ;).
-
-> This has always
-> been the case and is not sufficient to provide the ordering required by
-> Linux, since there is no guarantee that the master interface of the
-> DMA-capable device has observed either of the accesses. However, in an
-> other-multi-copy atomic world, we can infer two things:
-> 
->   1. A write arriving at an endpoint shared between multiple CPUs is
->      visible to all CPUs
-> 
->   2. A write that is visible to all CPUs is also visible to all other
->      observers in the shareability domain
-> 
-> Pieced together, this allows us to use DMB OSHST for our default I/O
-> write accessors and DMB OSHLD for our default I/O read accessors (the
-> outer-shareability is for handling non-cacheable mappings) for shared
-> devices. Memory-mapped, DMA-capable peripherals that are private to a
-> CPU (i.e. inaccessible to other CPUs) still require the DSB, however
-> these are few and far between and typically require special treatment
-> anyway which is outside of the scope of the portable driver API (e.g.
-> GIC, page-table walker, SPE profiler).
-
-I think there is another class of devices which are not CPU private
-(USB, network). The buffer here is on-chip and the CPU can't do much
-other than issuing a DSB (and even this may not be sufficient). The
-multi-copy atomicity rule would work between CPUs here but not
-necessarily for the device. Not sure they rely on the barrier in
-writel(), I guess we can wait and fix them with the mandatory barriers
-afterwards. In the meantime:
-
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
