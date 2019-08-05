@@ -2,77 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 808E5816CF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:18:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75A9F816E2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:20:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K5zRH104zXkb6RngGT4kc3yrDBtVAxazBlGUA+n/RZQ=; b=I4uFd8CeTkO2zi
-	Wt96ygBOueO0GmM5V6khZJG1fE75AP7ma3aMBFmzoYtIOeykKdZeZVs/A/SFGGxAuNu0NtX2RW2OD
-	xO+b7UdCKeQ98ujbIWPGnGpN4c4v06ifCBgXYH5GscYxLqdfFQrjznRHe8/SHfkyUez3LxcgdMQwr
-	GpkMuhBbH+bwjYkpW2cBH5vGdSdYYolqw3NsB3zyQ55np5kR2BFKNQWZBCY24AVjgfMuL6P9xPpy3
-	YJhwfuc5sAWyxFkNtnOqQdRQ/SC4uT7CIQ0KUn3pgmppsH4juuJ/gwAYMX07cYLt/X4gkmSq5GHel
-	7tFHse83T4VR8z44XKwg==;
+	List-Owner; bh=8b7OvL7rQ3cJno9UGhZJwAqqTXmYofK056DSOf9edS8=; b=aJun/iqmm/SgNG
+	CaSfDeEjVQTl1ekeblMykrdBnrqcPe4XkWeZdi5vISqPh9Sk0Vksf2BiTAo2yRZBQCALdWl+UDGiZ
+	DaiUUWwbysQnUhsXDZWGiH6GSp2qATMmcWOZhax3LjNmEuQG4Ws8fUNaR/c4KH94ry3lSRfzSWr14
+	DTT4BqEKyQ4pDFPwm4vDFfisJwf0LUEOmSnjgonBkwhwcJvzu76L0O/yB+t8UNLqNswBXyubTtFHs
+	4u4+uTvl6i7IsmZAmjwhv3eNeCChRLeAbupp+OGG3JUggmtfOib4UOErgtOVeP3qlbHrPWQAzLAWr
+	ZFRAbAWhQcGeMmUV6PVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hua4Y-0005dh-FB; Mon, 05 Aug 2019 10:18:34 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hua6D-000793-UI; Mon, 05 Aug 2019 10:20:18 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hua4K-0005bl-D7
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:18:21 +0000
-Received: by mail-lj1-x241.google.com with SMTP id t28so78816810lje.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 03:18:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+OidWRK0NxQrN09q+H0Lz4wCrhTqBVNanJIQIVy/gII=;
- b=lg9VOKzw2db4frYUxtdqEfbgWkOvq9p9FMJSWhGilAgUkM1A/cuExt3oECmeK5QKT6
- t5Uh1vcuMjWQDCEH2XWwYYrGgnCaHakuBuPZr7IZ74XtRBQZ4mTkhnafC8TgX/okuR+l
- ERsy1o8RzDxio5fauDNDhsZ3/Hs5I7gbIqZtIl8P3LOKWCPB7LonUWnBG487BvJqoIEv
- Wtphcmcr/28nxzQPeSvW1GzZogMY4wfQNOdqOLIb5SA6T1UvLt29Guy+svKOhPj0y/j/
- kT+jMS7sypmnQsa64XAOBnEmpKpk0FcEROskM39/RUXBRHfCnWVd7Ys0NGGZZecRgpcF
- N7hw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=+OidWRK0NxQrN09q+H0Lz4wCrhTqBVNanJIQIVy/gII=;
- b=drIrWCmWp0IRF8b3oCqB2hmAUzs/hYXXmwSFXn6g66Ch/4Ki5CgyvW19JSS5MJY5B3
- 06/JMZylQ/eXui/nos6zasU4IlDuir4EILKHtkqE6HahWV7QgRcSWzd8PHlgNcWZAsO2
- dziAJiGWUBaaYfrN3GCDP11sCE63VAcHw+oXEn8xFErGX9m2CjqbBAJD8jq1qNwBKPPK
- 2fJMtnmmsO9ih89BdmP2hQt0OatIzRlgHBmg1F/GXz84XFYaX/xztxZZHiDMZ87OXHez
- NoOaSVKYTzbdHpjvzEn554c1FNgzt+NxdvaZvGXXgzA2xF6eHJmcOMfUumfy2vEtYojL
- FY0A==
-X-Gm-Message-State: APjAAAWT4vxQesywRhuo+4pYQ9moiDZ01+Yy7hW+Eqo+6WQpcGmZ93MJ
- zwWEY5/N2Nb4npKXJhOyBvA1At3UqEnxNXUZuIukPw==
-X-Google-Smtp-Source: APXvYqx/47plwVQoKfOxPFRbz9uFPNTC89i2gTxTm/2vOWF4WlpGegp3L3NCwltCpv/ud4yUTO+QjSZAiKhvzrIe6xY=
-X-Received: by 2002:a2e:8756:: with SMTP id q22mr79254317ljj.108.1565000298784; 
- Mon, 05 Aug 2019 03:18:18 -0700 (PDT)
+ id 1hua62-00062K-2Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:20:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1565000401; bh=UbKSHNJhmMN1hbm43YULL0GmnUkGg9ph8ySUEjcpnw0=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=gsRiiR+hnT1hK6iZz/qjoDRZZUwcrGRhpW7vfRTN2k5xKzRytohkBdYtwuthstZt2
+ GShvGFYLVp7Due3TLXPxA5DD084qKPe0jdHh72dNNW1aFWkq0LPgoS8+R69qLgP1ZH
+ 0bSenMR3uUaxxtBVF+UvvsOSPh7jTqXHluzeQFEc=
+Date: Mon, 5 Aug 2019 12:20:01 +0200
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Re: [linux-sunxi] [PATCH 2/3] rtc: sun6i: Add support for H6 RTC
+Message-ID: <20190805102001.guo7e52bl5agp2w4@core.my.home>
+Mail-Followup-To: Chen-Yu Tsai <wens@csie.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-rtc@vger.kernel.org, devicetree <devicetree@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>
+References: <20190412120730.473-1-megous@megous.com>
+ <20190412120730.473-3-megous@megous.com>
+ <CAGb2v675j-aCLMgPJOzr9yx1XxsUvHRr_K7VnL=p8mSdwpu2jw@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190725145040.42182-1-kevin.brodsky@arm.com>
- <042d5c3d-96fe-5466-3869-a0a3a08b964d@arm.com>
-In-Reply-To: <042d5c3d-96fe-5466-3869-a0a3a08b964d@arm.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 5 Aug 2019 12:18:06 +0200
-Message-ID: <CACRpkdbPhxW2-vDhPDz-KpD-AxPJL+Px_ZH8cWVVbCiYpJh3PA@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: fast models: Increase clcd's
- max-memory-bandwidth
-To: Robin Murphy <robin.murphy@arm.com>
+Content-Disposition: inline
+In-Reply-To: <CAGb2v675j-aCLMgPJOzr9yx1XxsUvHRr_K7VnL=p8mSdwpu2jw@mail.gmail.com>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_031820_480370_51E68653 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190805_032006_431100_AF353B1A 
+X-CRM114-Status: GOOD (  20.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,29 +80,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Pawel Moll <pawel.moll@arm.com>,
- Ruben Ayrapetyan <ruben.ayrapetyan@arm.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Brian Starkey <brian.starkey@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 25, 2019 at 5:15 PM Robin Murphy <robin.murphy@arm.com> wrote:
+On Mon, Aug 05, 2019 at 06:16:14PM +0800, Chen-Yu Tsai wrote:
+> On Fri, Apr 12, 2019 at 8:07 PM megous via linux-sunxi
+> <linux-sunxi@googlegroups.com> wrote:
+> >
+> > From: Ondrej Jirman <megous@megous.com>
+> >
+> > RTC on H6 is mostly the same as on H5 and H3. It has slight differences
+> > mostly in features that are not yet supported by this driver.
+> >
+> > Some differences are already stated in the comments in existing code.
+> > One other difference is that H6 has extra bit in LOSC_CTRL_REG, called
+> > EXT_LOSC_EN to enable/disable external low speed crystal oscillator.
+> >
+> > It also has bit EXT_LOSC_STA in LOSC_AUTO_SWT_STA_REG, to check whether
+> > external low speed oscillator is working correctly.
+> >
+> > This patch adds support for enabling LOSC when necessary:
+> >
+> > - during reparenting
+> > - when probing the clock
+> >
+> > H6 also has capacbility to automatically reparent RTC clock from
+> > external crystal oscillator, to internal RC oscillator, if external
+> > oscillator fails. This is enabled by default. Disable it during
+> > probe.
+> >
+> > Signed-off-by: Ondrej Jirman <megous@megous.com>
+> > ---
+> >  drivers/rtc/rtc-sun6i.c | 40 ++++++++++++++++++++++++++++++++++++++--
+> >  1 file changed, 38 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/drivers/rtc/rtc-sun6i.c b/drivers/rtc/rtc-sun6i.c
+> > index 11f56de52179..7375a530c565 100644
+> > --- a/drivers/rtc/rtc-sun6i.c
+> > +++ b/drivers/rtc/rtc-sun6i.c
+> > @@ -41,9 +41,11 @@
+> >  /* Control register */
+> >  #define SUN6I_LOSC_CTRL                                0x0000
+> >  #define SUN6I_LOSC_CTRL_KEY                    (0x16aa << 16)
+> > +#define SUN6I_LOSC_CTRL_AUTO_SWT_BYPASS                BIT(15)
+> 
+> Manual says bit 14? Or is this different from LOSC_AUTO_SWT_EN?
+> 
+> The rest looks ok.
 
-> Given that the property is optional anyway, would it hurt to just remove
-> it? After trying to dig up any relevant internal email history, it's
-> still far from clear how and why it got here in the first place.
+Yes, see H6 BSP:
 
-Isn't it just my sloppy copy-paste when fixing up the device trees
-for the DRM transition? I agree it should just be removed.
+drivers/rtc/rtc-sunxi.h
 
-Yours,
-Linus Walleij
+ 20 #define REG_CLK32K_AUTO_SWT_EN                  BIT(14)
+ 21 #define REG_CLK32K_AUTO_SWT_BYPASS              BIT(15)
+
+regards,
+	Ondrej
+
+> ChenYu
 
 _______________________________________________
 linux-arm-kernel mailing list
