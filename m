@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0125C81807
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 13:19:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB8B68180B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 13:20:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yej2pHrquuQEFqM19C4p3F3x7j0Wxa+fgJzwNFkpoUA=; b=RyK5td/2uyT29i
-	+Kh2VLMb5+qPbec7dDKzhGs32ePnw49nOZLuC24s8d2txheqOBYeR4Tn2NmbnGrhR6/J7zZV81YbO
-	QhcP0QZMhbLMU/XEu7IjeilNW9Nj8RSqMmDh51r/+yw8vIi6yeirRDjU4HNUFfd0S043rLoMNzdrJ
-	HmRqKbOY4Fb2Nr9C1qYlNrF+UJdsMtOtZvKj/4+86jUDQUfC7n+WXcztZNZvJSQ1oFagvLOJk1i+C
-	3B6byILJztiAp3W6+59AwdU5dus8qIES/KE7sbHpkH05zw6u6KmlCWb4/LPWl980hWM0LlNNqSZA5
-	PZDUMscwbXW2zIJNxl/A==;
+	List-Owner; bh=qnua6ohx+dKNtwPNknv2o0ReWxVlvATcKB0G9AD2nd8=; b=FGOaLpweBDMAnv
+	AZ7f5OBxumM6FgJ1HmkJ7OZxpPMFvNN6SGb68sOqY6S8uCHmpp1CpNo1p1Re7AfdMbhtVlS7Mdz4d
+	X/YR3aJP90rPSY5Qnxd3jR4zjSldeSzgqygzqHUMxICoYNr/RwhQ0IPJl6yJE/Uenx5Lq2G2LAfOK
+	jMtNVlsrVZEoX9vv+pKrHYjDu6gVuwsIe5L48NqL5KzBaa7yQGHnAAbGo4PMyqqKjCczmkm11WZI3
+	9sDjzILgtsW/v5eB8y0SJfdJyeUkKPwJzZzfOAISAwzjXZOLJNn0TcEhfmefLucfE2N920Mdvyg3/
+	NbBedZtnjpwENzSHYbnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hub1g-0008Iq-Of; Mon, 05 Aug 2019 11:19:40 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hub2Q-0001M2-AQ; Mon, 05 Aug 2019 11:20:26 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hub1S-0008Hr-Pu
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 11:19:27 +0000
-Received: by mail-lf1-x141.google.com with SMTP id j17so3606052lfp.3
+ id 1hub2D-0001Lj-Jt
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 11:20:14 +0000
+Received: by mail-lj1-x242.google.com with SMTP id v18so78905199ljh.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 04:19:25 -0700 (PDT)
+ Mon, 05 Aug 2019 04:20:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=If2p5MuMUgWrpA5iJZhIZ1wfyNa+k0/qK9QG1U50VmA=;
- b=zYcNBvOER7QkOzaZlD5YxYF00/Rtk5gIixj755hN9Pa8PENH1orP4d6NbSMAfr2E1e
- hkVLaoLERziQ0B2dtVD/yIOByDsXQRCoyRcNCggfpm/yT9tpDp26F8bPOcydeY4SVsf1
- EEKJgr8ObbogXKe/+9rzRscnPoZBPWF6HFHa+aiP9TmLLtYI2v8GxKvFDRK9BakbyZ6t
- 8cCiNqBgiFT52eNbSCYYGuJLlxVpnKLhM5nQmIaoyylgsplUm9/1oGv9GF6G6VCL32y5
- JVtg8HCpgVrsBuxGQyw5WBG7x3WgEY/S7ZXh8BUd7KYzyc66AahKtyHL//L2ErYuDsHj
- rt+w==
+ :cc; bh=00opSjOUCt0nvHWrKUPJCC41uhCnbdAiE9Dvugabrgg=;
+ b=bKtNIrao0IXWWGBcvE4CzCrr4sVoZERR4ON2NQ9OUZd3DlWEt0fbTvltfQc1fMItqO
+ dsQMVhVznXe3BOPo/GY76BB+5MNqtZkga02sTaQ1B9i+FDp2i8IVn3oylXOL0YnNg/Xx
+ kXJTbNyAfPcmDFWDUK+uXMPNY57GC1r8KIvEV9S4hJeXwQntlX9Gnc/yt0P3ZyAAyTM4
+ EjnF26ghh5wVcfspBsS5Nx1tkhSHjb9v0fLoe6I1eAIPHzcb9esskISaj29AdtLbs96n
+ bZXyOLAt6BOM/GcX02aJ7dOZ4K3EWGLWaZqArERR5HDprK7lppQ3olXrPFh6KSoN1lOd
+ 4nDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=If2p5MuMUgWrpA5iJZhIZ1wfyNa+k0/qK9QG1U50VmA=;
- b=NmklsTtz2raiIqBw86aBkLGj6uFxHjp1/NZk90Pactr5rgf47S9nQdEzm3sucuNBat
- kDxULiERZUrH9/3SeCBt9sq8IzMBbXIXg20ty7RiBOPz7MGy+uLYQtOrg5Kn5TyPKRQu
- QTl4f9MBl5ixhPgnmhL2DAU9Oze4BnRO6SOf4eIk78vsGvPv6ixBzbM+RXHpwOsI3ErV
- W79Wm7XNIQYNVtCRQWYcNhENU2LmreRCpWepjHHQYp08uDHyQnz0wbBuzBYf5y97d+mP
- zJghRxBahMeFr1pf785iPPliDPTceqYinNMbwcEwhYvTBix/4qYezNNN5mPvbHJrufVk
- myRw==
-X-Gm-Message-State: APjAAAUq/lEwqGa5azU0Kma+ykhujOjyvW77dE4Sbh52aq7GK0r4rwPM
- zejOglN7LcqXPeNjTs11GqadHJ/2cf+ArYloJi1HVg==
-X-Google-Smtp-Source: APXvYqxHgbLLB4QzzgK73ltagK7gUx7fz6MICytm9/FkLAF84pKeZp2qo9z7oTMZ3EQfBRWhVJIiLc0VENYNGP67YAg=
-X-Received: by 2002:ac2:4c07:: with SMTP id t7mr1510773lfq.152.1565003964027; 
- Mon, 05 Aug 2019 04:19:24 -0700 (PDT)
+ bh=00opSjOUCt0nvHWrKUPJCC41uhCnbdAiE9Dvugabrgg=;
+ b=e749nzuJx1PnoikE1JUDbercz5nB/ze5Tj/ot8DKI7sAc6NgmJ92Jt1YAeindn10Aa
+ PY2RUI5kWRMSuL8ZJcGiGXlEKpLDJOS/7vo/SdWWAZ+fNA5d7nP84dM656rezTXofT5o
+ 5S1mwdMbj8FDCncc+/bpKkgsBDo/BiAlMBQMzSlKiHgXBAFCGefSXZ6iFtN+lGi10Xlo
+ 8/8cXjE7Izt3dE+MRfJ43E/VxSZIWPCsBhCe4CQ5muctUb7FbEJrhtyqVamS8pdkBGP3
+ 913t/YWT23hq4Au16MS6B4x8saD5v+KMrS5dTIpk9D8eMvmc1OAwt8ur8RsOo6BR/AIB
+ GtpA==
+X-Gm-Message-State: APjAAAVhqz+VukZn3YF4lDexvfE4A6hCUWSTgwzzdYF+GS4FpYH3Ggj0
+ qpgBKZw0aW7TQUzqQTJ18NZtAHIYnfdJIPGYb5xGGpzl
+X-Google-Smtp-Source: APXvYqxNKcddtNY/mJyk1N0KVe71/UAx4m9nnhShPcFo6aRkA1Y7BWTouzWMllsjsG48s3b89d8KGfW8kMTL85j8Ycc=
+X-Received: by 2002:a2e:9048:: with SMTP id n8mr47728ljg.37.1565004011463;
+ Mon, 05 Aug 2019 04:20:11 -0700 (PDT)
 MIME-Version: 1.0
 References: <1564465410-9165-1-git-send-email-hayashi.kunihiko@socionext.com>
- <1564465410-9165-3-git-send-email-hayashi.kunihiko@socionext.com>
-In-Reply-To: <1564465410-9165-3-git-send-email-hayashi.kunihiko@socionext.com>
+ <1564465410-9165-4-git-send-email-hayashi.kunihiko@socionext.com>
+In-Reply-To: <1564465410-9165-4-git-send-email-hayashi.kunihiko@socionext.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 5 Aug 2019 13:19:12 +0200
-Message-ID: <CACRpkdaNFz_S0MV1SSr_yiC3gAAQ3vsT0KQY1BgJ1riyFhxrOA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/5] pinctrl: uniphier: Add another audio I/O pin-mux
- settings for LD20
+Date: Mon, 5 Aug 2019 13:20:00 +0200
+Message-ID: <CACRpkdb4xvUROYncrF4b+8t26A_8q3OEH9XD_tS51B6Z9Yc+tg@mail.gmail.com>
+Subject: Re: [PATCH v2 3/5] pinctrl: uniphier: Add 5th LD20 MPEG2-TS input
+ pin-mux setting
 To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_041926_842121_A77C0ED7 
-X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-CacheID: sfid-20190805_042013_653722_DBA60E54 
+X-CRM114-Status: UNSURE (   9.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,13 +107,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Tue, Jul 30, 2019 at 7:43 AM Kunihiko Hayashi
 <hayashi.kunihiko@socionext.com> wrote:
 
-> This adds support for pinmux settings of aout1b group. This group includes
-> audio I/O signals derived from xirq pins, and it is equivalent to "aout1"
-> in functionality.
+> The 5th serial TS interface uses the following pins:
+>   hscin4_s: PCA[11-14]
 >
 > Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 
-Patch applied with Masahiro's ACK.
+Patch applied.
 
 Yours,
 Linus Walleij
