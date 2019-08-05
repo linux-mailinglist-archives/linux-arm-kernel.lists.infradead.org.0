@@ -2,61 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A8EC81111
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 06:34:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B42B881119
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 06:38:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GtJhmkBoRfmwYN2ioIEkD6Y5sbYBJtSHkp3a4LPtys4=; b=ji/jIKH19p1Nbj
-	VsKKUwTCkK1xSTYtmSl9YmSRE79xQDdlWtrRDXGXErYpFm8Pm1/TFlEBw+Ca98RNTilOMN4Wbrjj7
-	Ie2Zu5tw4CsItd/ZckTOECoETSCRNrqjEl2gg/QZLg9NUusD1MAs+p3/vj0JjIYGPfpju/kab5sHE
-	lHL2qbLe+W4u6aAb11g63QfRJ4ON7d7iy3xxJ8f3IYFI0QTpcqbdW8f7KMRRZYigsnURx46C8rv+o
-	cazCxbDvxkc+3Ev9BYddSQJOW6NEPKdtWnKPEpksuM08hM5hmId+mXtSg5xT7PSewb8uM4E7EC8IF
-	kAaPNLXwxFyZEY0r3VBg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bME5fwgBoTA6H7HAHLZ9WB8uqwLEsW7XlAZPqSFyIBM=; b=KWZ0//RsGRb0AQ
+	n8SpyHldhGp6Euqvd6FufIAZn5M6ntkeA3j9C+DSbBMyJhhtN9tqdjSSdJClKJElP0OlU1TOrs8Ip
+	6QPZy6TDIV9vpmteDhusxDHmFKgP0wdFrrFG5tvnTUPVybi+1CJ5782fooFdxigq1yOan47psvvJ7
+	mf7xZGGVy727zrnIxSz/aadUs3/dnlUxZVqar/DnAndNCdc8gxKFs3RXkQ0vw2YmMIqC8FaAFUBI6
+	RmHD6E/nO2qA1bSnVONtDNt4ynU/b2k64+VAUo5xbLhd18yXqcvgkYcGAtxAou/qreaD0HBHS4hCa
+	u+5+lCqucWo9eCch0ggA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huUhs-0007q2-Mg; Mon, 05 Aug 2019 04:34:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1huUhh-0007p2-8A
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 04:34:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CF5F5337;
- Sun,  4 Aug 2019 21:34:30 -0700 (PDT)
-Received: from [10.163.1.69] (unknown [10.163.1.69])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 620723F706;
- Sun,  4 Aug 2019 21:34:22 -0700 (PDT)
-Subject: Re: [RFC] mm/pgtable/debug: Add test validating architecture page
- table helpers
-To: Matthew Wilcox <willy@infradead.org>
-References: <1564037723-26676-1-git-send-email-anshuman.khandual@arm.com>
- <1564037723-26676-2-git-send-email-anshuman.khandual@arm.com>
- <20190725143920.GW363@bombadil.infradead.org>
- <c3bb0420-584c-de3b-2439-8702bc09595e@arm.com>
- <20190726195457.GI30641@bombadil.infradead.org>
- <10ed1022-a5c0-c80c-c0c9-025bb2307666@arm.com>
- <20190730170323.GA4700@bombadil.infradead.org>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <64beed43-7f8f-25de-e2e4-1dc07742dc7c@arm.com>
-Date: Mon, 5 Aug 2019 10:05:05 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <20190730170323.GA4700@bombadil.infradead.org>
+	id 1huUlU-0000tG-Ab; Mon, 05 Aug 2019 04:38:32 +0000
+Received: from mail-eopbgr10055.outbound.protection.outlook.com ([40.107.1.55]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1huUl6-0000s3-GW
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 04:38:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=fd23NVKx7cDbYRak1zbr7KEEh/3maliFQuTyjQLmZib4HlmEVVsWKFztjfspvSqUIFaQMC0ZtK02Ph+ka/lzxugEh7rlOozTuhAEdSc1sMi9UDoLdNEaWWGMzVK1CuvkK0GIbaCsM2d2KNFlwDVAqJIdwxbA+9CVfw73XmJVwIQBwU2CeU33eCAeS/8QjoMbzsraTbbUe2MK8d5eC9aBHc7CFUbNOrHZY+n4KfPd/XC4E+qFYz3h+rOUvoOLNrGNYj3LoJlcb6xqpmWjGo50NGig1yPbIw3XILLS++MxheEzpB0xs+Ug/eQM8vK/Vp6oT+ZlpnEAW9rH/Ri9bei8Hw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=VGm9qwKxbWy/x8EK8OcH3SFTISCiKNwgT0VpluwbUOU=;
+ b=TU58vhZzealtubDbAdz0TYLbkjIWyzfBu30VTfB+0hIS6RbZbjUyaR8HBP4hWVnlOeTWPRNprhbJWVI9NPFRvzcrGsgyCDwnVMf/+pZQh8iVB0kZvp1qNKVuLQmJS9fz7kVVVwBlQ2X12PrNagYmna2P3Z/6HPlZW7McwNNxN7qFgbF6tj/XHUacQiuBmAkJDx2gk6QGzERz68IpUGqUtP8SZvx6tHDz/Bzk7FB16STOL6D7oWclDT3GGBNB/F26OcPZL5wlNdbYxVXk6aqxWmmqcwbEtGFnB7RVOmZmXSOZAYTzfDH8OzK5f3dHMy00FPixFecrHz9jws01qX9O6A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
+ header.d=nxp.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=VGm9qwKxbWy/x8EK8OcH3SFTISCiKNwgT0VpluwbUOU=;
+ b=eGTrtY+VvanAfOZfPeUjBMC655eqhgUN0wygsMT3MWR+ji73S6L1fw8HeG9eR3wRcKR5LaGt4Zoa9YXAnG4SMMT0kY751ecU6La/vt4gATtiudgSeDwXCX8qOSsDgj+NUQ9UaCMJAgPxeSsT28wIvta3PUkAIxw709oNtX5AqR4=
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
+ AM0PR04MB4708.eurprd04.prod.outlook.com (20.177.41.90) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2115.14; Mon, 5 Aug 2019 04:38:02 +0000
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::5553:29b6:d66c:6afe]) by AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::5553:29b6:d66c:6afe%5]) with mapi id 15.20.2136.018; Mon, 5 Aug 2019
+ 04:38:01 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Richard Zhu <hongxing.zhu@nxp.com>, "jassisinghbrar@gmail.com"
+ <jassisinghbrar@gmail.com>, "o.rempel@pengutronix.de"
+ <o.rempel@pengutronix.de>, Daniel Baluta <daniel.baluta@nxp.com>
+Subject: RE: [PATCH v5 1/4] mailbox: imx: Fix Tx doorbell shutdown path
+Thread-Topic: [PATCH v5 1/4] mailbox: imx: Fix Tx doorbell shutdown path
+Thread-Index: AQHVSzvezKWv3EJXXkmBW/lAhGcXzabr9jwg
+Date: Mon, 5 Aug 2019 04:38:01 +0000
+Message-ID: <AM0PR04MB42110CA7AD41C91EF763808B80DA0@AM0PR04MB4211.eurprd04.prod.outlook.com>
+References: <1564973491-18286-1-git-send-email-hongxing.zhu@nxp.com>
+ <1564973491-18286-2-git-send-email-hongxing.zhu@nxp.com>
+In-Reply-To: <1564973491-18286-2-git-send-email-hongxing.zhu@nxp.com>
+Accept-Language: zh-CN, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=aisheng.dong@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 559cfe55-22bb-4beb-6e2d-08d7195eb32d
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4708; 
+x-ms-traffictypediagnostic: AM0PR04MB4708:
+x-microsoft-antispam-prvs: <AM0PR04MB4708CCA41973650DCE9B7E7B80DA0@AM0PR04MB4708.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2449;
+x-forefront-prvs: 01208B1E18
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(979002)(4636009)(396003)(376002)(136003)(346002)(39860400002)(366004)(199004)(189003)(51234002)(6436002)(5660300002)(9686003)(2501003)(81166006)(44832011)(26005)(486006)(14454004)(11346002)(186003)(6506007)(52536014)(66446008)(8676002)(110136005)(66946007)(53936002)(6636002)(55016002)(305945005)(4326008)(71190400001)(45080400002)(66476007)(76116006)(64756008)(8936002)(54906003)(66556008)(99286004)(86362001)(256004)(66066001)(229853002)(25786009)(68736007)(71200400001)(6246003)(2906002)(102836004)(316002)(446003)(7696005)(81156014)(74316002)(2201001)(14444005)(7736002)(33656002)(76176011)(478600001)(6116002)(3846002)(476003)(969003)(989001)(999001)(1009001)(1019001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4708;
+ H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: APi9qBQaA/cRK14SD9xqHhaFOzrcGpI1+wEFklSORn9YILkkD5F4yM0q1XMTv3L/HPmfaB9L59Z5NWRvgFAe/SHw7Jcby+FCMTSsrZYP3W9xL1EUSea/gktVz8aSyyDWDsvTboZ26In1XvJPcb6KKUcCDzf76M7q1ffvQ1MLLQgDeFLntHvT2GQXkSmuCvhZxh29u7NvJQfGgl5ZlEoHUwwcADGpFYGeHcU/0jnR5JLslb+Sb700w16l2ttO3L6oCRQ+RG2+bDNbiVjZqCpuNWrz6JyRXNNzKF14PUj2CKgnOLZmWFoM7o2YMKLI/aD4gmBSjmRx6OJT5W5yI3kaBsWnHKsbQLpMToJ8v74Z6fq67vhsJnqgsplMt+RRpHSTAXY2oQyriai1OTM1qziWLiwnzod575SpmPQSkLWDCdE=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 559cfe55-22bb-4beb-6e2d-08d7195eb32d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Aug 2019 04:38:01.8604 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: aisheng.dong@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4708
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_213437_383037_AE19B295 
-X-CRM114-Status: GOOD (  24.80  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190804_213808_636719_C4C16DC4 
+X-CRM114-Status: GOOD (  11.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.55 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,120 +123,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>, x86@kernel.org,
- Dave Hansen <dave.hansen@intel.com>, linux-kernel@vger.kernel.org,
- Steven Price <Steven.Price@arm.com>, linux-mm@kvack.org,
- Mark Brown <Mark.Brown@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
- Michal Hocko <mhocko@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Richard Zhu <hongxing.zhu@nxp.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 07/30/2019 10:33 PM, Matthew Wilcox wrote:
-> On Mon, Jul 29, 2019 at 02:02:52PM +0530, Anshuman Khandual wrote:
->> On 07/27/2019 01:24 AM, Matthew Wilcox wrote:
->>> On Fri, Jul 26, 2019 at 10:17:11AM +0530, Anshuman Khandual wrote:
->>>>> But 'page' isn't necessarily PMD-aligned.  I don't think we can rely on
->>>>> architectures doing the right thing if asked to make a PMD for a randomly
->>>>> aligned page.
->>>>>
->>>>> How about finding the physical address of something like kernel_init(),
->>>>
->>>> Physical address corresponding to the symbol in the kernel text segment ?
->>>
->>> Yes.  We need the address of something that's definitely memory.
->>> The stack might be in vmalloc space.  We can't allocate memory from the
->>> allocator that's PUD-aligned.  This seems like a reasonable approximation
->>> to something that might work.
->>
->> Okay sure. What is about vmalloc space being PUD aligned and how that is
->> problematic here ? Could you please give some details. Just being curious.
+> From: Richard Zhu <hongxing.zhu@nxp.com>
+> Sent: Monday, August 5, 2019 10:51 AM
 > 
-> Those were two different sentences.
+> Tx doorbell is handled by txdb_tasklet and doesn't have an associated IRQ.
 > 
-> We can't use the address of something on the stack, because we don't
-> know whether the stack is in vmalloc space or in the direct map.
-
-Okay because kernel stack might be on vmalloc() space.
-
+> Anyhow, imx_mu_shutdown ignores this and tries to free an IRQ that wasn't
+> requested for Tx DB resulting in the following warning:
 > 
-> We can't use the address of something we've allocated from the page
-> allocator, because the page allocator can't give us PUD-aligned memory.
-
-Because this test will be executed early during boot, alloc_contig_range()
-makes sense for this purpose. Something like alloc_gigantic_page() which other
-than getting the order from huge_page_order(h) is sort of a generic allocator.
-Shall we make core part of the function a generic allocator for broader usage
-in kernel in case the page allocator would not be sufficient like in this case
-which requires a PUD size and a PUD aligned memory.
-
-In case PUD aligned memory block cannot be allocated, pud_basic_tests() must
-be skipped and a PMD aligned memory block should be used instead as fallback
-for other tests.
-
->
->>> I think that's a mistake.  As Russell said, the ARM p*d manipulation
->>> functions expect to operate on tables, not on individual entries
->>> constructed on the stack.
->>
->> Hmm. I assume that it will take care of dual 32 bit entry updates on arm
->> platform through various helper functions as Russel had mentioned earlier.
->> After we create page table with p?d_alloc() functions and pick an entry at
->> each page table level.
+> [    1.967644] Trying to free already-free IRQ 26
+> [    1.972108] WARNING: CPU: 2 PID: 157 at kernel/irq/manage.c:1708
+> __free_irq+0xc0/0x358
+> [    1.980024] Modules linked in:
+> [    1.983088] CPU: 2 PID: 157 Comm: kworker/2:1 Tainted: G
+> [    1.993524] Hardware name: Freescale i.MX8QXP MEK (DT)
+> [    1.998668] Workqueue: events deferred_probe_work_func
+> [    2.003812] pstate: 60000085 (nZCv daIf -PAN -UAO)
+> [    2.008607] pc : __free_irq+0xc0/0x358
+> [    2.012364] lr : __free_irq+0xc0/0x358
+> [    2.016111] sp : ffff00001179b7e0
+> [    2.019422] x29: ffff00001179b7e0 x28: 0000000000000018
+> [    2.024736] x27: ffff000011233000 x26: 0000000000000004
+> [    2.030053] x25: 000000000000001a x24: ffff80083bec74d4
+> [    2.035369] x23: 0000000000000000 x22: ffff80083bec7588
+> [    2.040686] x21: ffff80083b1fe8d8 x20: ffff80083bec7400
+> [    2.046003] x19: 0000000000000000 x18: ffffffffffffffff
+> [    2.051320] x17: 0000000000000000 x16: 0000000000000000
+> [    2.056637] x15: ffff0000111296c8 x14: ffff00009179b517
+> [    2.061953] x13: ffff00001179b525 x12: ffff000011142000
+> [    2.067270] x11: ffff000011129f20 x10: ffff0000105da970
+> [    2.072587] x9 : 00000000ffffffd0 x8 : 0000000000000194
+> [    2.077903] x7 : 612065657266206f x6 : ffff0000111e7b09
+> [    2.083220] x5 : 0000000000000003 x4 : 0000000000000000
+> [    2.088537] x3 : 0000000000000000 x2 : 00000000ffffffff
+> [    2.093854] x1 : 28b70f0a2b60a500 x0 : 0000000000000000
+> [    2.099173] Call trace:
+> [    2.101618]  __free_irq+0xc0/0x358
+> [    2.105021]  free_irq+0x38/0x98
+> [    2.108170]  imx_mu_shutdown+0x90/0xb0
+> [    2.111921]  mbox_free_channel.part.2+0x24/0xb8
+> [    2.116453]  mbox_free_channel+0x18/0x28
 > 
-> Right.
+> This bug is present from the beginning of times.
 > 
->>> So I think the right thing to do here is allocate an mm, then do the
->>> pgd_alloc / p4d_alloc / pud_alloc / pmd_alloc / pte_alloc() steps giving
->>> you real page tables that you can manipulate.
->>>
->>> Then destroy them, of course.  And don't access through them.
->>
->> mm_alloc() seems like a comprehensive helper to allocate and initialize a
->> mm_struct. But could we use mm_init() with 'current' in the driver context or we
->> need to create a dummy task_struct for this purpose. Some initial tests show that
->> p?d_alloc() and p?d_free() at each level with a fixed virtual address gives p?d_t
->> entries required at various page table level to test upon.
-> 
-> I think it's wise to start a new mm.  I'm not sure exactly what calls
-> to make to get one going.> 
->>>>>> +#ifdef CONFIG_HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
->>>>>> +static void pud_basic_tests(void)
->>>>>
->>>>> Is this the right ifdef?
->>>>
->>>> IIUC THP at PUD is where the pud_t entries are directly operated upon and the
->>>> corresponding accessors are present only when HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
->>>> is enabled. Am I missing something here ?
->>>
->>> Maybe I am.  I thought we could end up operating on PUDs for kernel mappings,
->>> even without transparent hugepages turned on.
->>
->> In generic MM ? IIUC except ioremap mapping all other PUD handling for kernel virtual
->> range is platform specific. All the helpers used in the function pud_basic_tests() are
->> part of THP and used in mm/huge_memory.c
-> 
-> But what about hugetlbfs?  And vmalloc can also use larger pages these days.
-> I don't think these tests should be conditional on transparent hugepages.
+> Cc: Oleksij Rempel <o.rempel@pengutronix.de>
+> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
 
-The current proposal restricts itself to very basic operations at each page
-table level for now. I have subsequent patches which adds various MM feature
-related specific helpers with respect to SPECIAL, DEVMAP, HugeTLB entries
-etc. We can also explore platform specific helpers for ioremap and vmalloc.
-But that is for subsequent patches and scope for current proposal is limited.
+I think you should keep the original author and Fixes tag.
+Otherwise:
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
 
-THP (or PUD THP) config wrappers are here because these helpers mentioned in
-the current proposal are present only when THP (or PUD THP) is enabled but
-are absent otherwise. Without these wrappers, we will have build failures.
-Hence these wrappers are necessary.
-
+Regards
+Aisheng
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
