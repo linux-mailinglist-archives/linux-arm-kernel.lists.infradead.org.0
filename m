@@ -2,65 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C43DF810B6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 06:15:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCD4F810C9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 06:16:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=NFrVyLJmMVdc+h3pq+dvQGQetFuQ9A5pVfs8+GS/qSs=; b=ccK5+xcxLQ+2eYURD3gdMZyo3C
-	mwy/28f5pSqCDGFZHfzZaWzEuugbsSGLetEm25BaG69CWKxIpW0IIBp3awk/yF3OSNS72ZzUbGK5A
-	mQHT7EXHgKEJ7rcxtEesnjTMYkGJx70wuAYoaDsEdCNxpswB4eqiCWidiBkkybdDhdEPhBVHQFqxG
-	hJ2aW/WWEbSmGe6sdaUe4cGxELlnQ4fi1Do3dDv1I2/QejIn4QLUeR3ESTpw3JYTWBNz3z9UVpHOG
-	GIhtL8xI8dRFI591rhm50C8jqMMu/XCDBuJnQRPfi2Jb39CJtUCdmftUOuCYqxZcPwYqaGAoZWzzm
-	wEG7uyEA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tyjVy4ivGDpUJhDqvqvJ0PqNHOoz1VnKYBmfumwoZPA=; b=QHaalOYYbEJ8/jJI5s+iFbiJ7
+	ZGLiBis8G79v8maRQJMkdiB+2a7ymZxfkdDH1Iv55Rh54Dl5GcE8P8bpmp54NlzXZ3DdjVbOdOQzp
+	Jzt95mO1HWPHcsGEZ7/5vG7bQybS2PSun4mFqg0/OETVlnvJebFxdbQlXhFU8FqWQLVwCx15rEvU7
+	2Ki3GWMMdOHXN0d56PGVl3cSGIPOtxdbW/B+XgoGgFv2lg1RHz1zX6DVQp53H+rmWVnWWIZ2L4NrV
+	DOe5xhgjngshFCs2gcjlBqDCGQhQHU3kDnLje8oL3MPejg6RUMU8Cv+JpobjH00SrSt+yQi7LGyA0
+	1xIGBWxkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huUOz-0001Ng-4V; Mon, 05 Aug 2019 04:15:17 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1huUPo-0003Bm-59; Mon, 05 Aug 2019 04:16:08 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huUOZ-0001A9-15
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 04:14:52 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id CBC3F1A0084;
- Mon,  5 Aug 2019 06:14:49 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B71521A00A9;
- Mon,  5 Aug 2019 06:14:38 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 923CE402DD;
- Mon,  5 Aug 2019 12:14:25 +0800 (SGT)
-From: Xiaowei Bao <xiaowei.bao@nxp.com>
-To: bhelgaas@google.com, robh+dt@kernel.org, mark.rutland@arm.com,
- shawnguo@kernel.org, leoyang.li@nxp.com, kishon@ti.com,
- lorenzo.pieralisi@arm.com, arnd@arndb.de, gregkh@linuxfoundation.org,
- minghuan.Lian@nxp.com, mingkai.hu@nxp.com, zhiqiang.hou@nxp.com,
- roy.zang@nxp.com, kstewart@linuxfoundation.org, pombredanne@nexb.com,
- shawn.lin@rock-chips.com, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org
-Subject: [PATCHv2 3/3] PCI: layerscape: Add LS1028a support
-Date: Mon,  5 Aug 2019 12:04:53 +0800
-Message-Id: <20190805040453.48009-3-xiaowei.bao@nxp.com>
-X-Mailer: git-send-email 2.9.5
-In-Reply-To: <20190805040453.48009-1-xiaowei.bao@nxp.com>
-References: <20190805040453.48009-1-xiaowei.bao@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1huUPb-000338-CW; Mon, 05 Aug 2019 04:15:56 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 56732ACC1;
+ Mon,  5 Aug 2019 04:15:29 +0000 (UTC)
+Subject: Re: [PATCH v2 20/34] xen: convert put_page() to put_user_page*()
+To: john.hubbard@gmail.com, Andrew Morton <akpm@linux-foundation.org>
+References: <20190804224915.28669-1-jhubbard@nvidia.com>
+ <20190804224915.28669-21-jhubbard@nvidia.com>
+From: Juergen Gross <jgross@suse.com>
+Message-ID: <82afb221-52a2-b399-46f5-0ee1f21c3417@suse.com>
+Date: Mon, 5 Aug 2019 06:15:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <20190804224915.28669-21-jhubbard@nvidia.com>
+Content-Language: de-DE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_211451_206256_F18E294D 
-X-CRM114-Status: UNSURE (   6.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190804_211555_566254_811C7917 
+X-CRM114-Status: GOOD (  12.32  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,53 +61,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Xiaowei Bao <xiaowei.bao@nxp.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Boris Ostrovsky <boris.ostrovsky@oracle.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
+ Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
+ devel@lists.orangefs.org, linux-media@vger.kernel.org,
+ John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
+ linux-block@vger.kernel.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for the LS1028a PCIe controller.
+On 05.08.19 00:49, john.hubbard@gmail.com wrote:
+> From: John Hubbard <jhubbard@nvidia.com>
+> 
+> For pages that were retained via get_user_pages*(), release those pages
+> via the new put_user_page*() routines, instead of via put_page() or
+> release_pages().
+> 
+> This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
+> ("mm: introduce put_user_page*(), placeholder versions").
+> 
+> This also handles pages[i] == NULL cases, thanks to an approach
+> that is actually written by Juergen Gross.
+> 
+> Signed-off-by: Juergen Gross <jgross@suse.com>
+> Signed-off-by: John Hubbard <jhubbard@nvidia.com>
+> 
+> Cc: Boris Ostrovsky <boris.ostrovsky@oracle.com>
+> Cc: xen-devel@lists.xenproject.org
+> ---
+> 
+> Hi Juergen,
+> 
+> Say, this is *exactly* what you proposed in your gup.patch, so
+> I've speculatively added your Signed-off-by above, but need your
+> approval before that's final. Let me know please...
 
-Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
----
-v2:
- - no change.
+Yes, that's fine with me.
 
- drivers/pci/controller/dwc/pci-layerscape.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
 
-diff --git a/drivers/pci/controller/dwc/pci-layerscape.c b/drivers/pci/controller/dwc/pci-layerscape.c
-index 3a5fa26..8c556e1 100644
---- a/drivers/pci/controller/dwc/pci-layerscape.c
-+++ b/drivers/pci/controller/dwc/pci-layerscape.c
-@@ -236,6 +236,14 @@ static const struct ls_pcie_drvdata ls1043_drvdata = {
- 	.dw_pcie_ops = &dw_ls_pcie_ops,
- };
- 
-+static const struct ls_pcie_drvdata ls1028a_drvdata = {
-+	.lut_offset = 0x80000,
-+	.ltssm_shift = 0,
-+	.lut_dbg = 0x407fc,
-+	.ops = &ls_pcie_host_ops,
-+	.dw_pcie_ops = &dw_ls_pcie_ops,
-+};
-+
- static const struct ls_pcie_drvdata ls1046_drvdata = {
- 	.lut_offset = 0x80000,
- 	.ltssm_shift = 24,
-@@ -263,6 +271,7 @@ static const struct ls_pcie_drvdata ls2088_drvdata = {
- static const struct of_device_id ls_pcie_of_match[] = {
- 	{ .compatible = "fsl,ls1012a-pcie", .data = &ls1046_drvdata },
- 	{ .compatible = "fsl,ls1021a-pcie", .data = &ls1021_drvdata },
-+	{ .compatible = "fsl,ls1028a-pcie", .data = &ls1028a_drvdata },
- 	{ .compatible = "fsl,ls1043a-pcie", .data = &ls1043_drvdata },
- 	{ .compatible = "fsl,ls1046a-pcie", .data = &ls1046_drvdata },
- 	{ .compatible = "fsl,ls2080a-pcie", .data = &ls2080_drvdata },
--- 
-2.9.5
-
+Juergen
 
 _______________________________________________
 linux-arm-kernel mailing list
