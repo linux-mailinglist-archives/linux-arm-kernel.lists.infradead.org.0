@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30BC681A83
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 15:07:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABBA481A81
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 15:06:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=offZKONgdMuazUU7XS2GL/wcNhi6OjrkfWPYVA1FUF8=; b=tP0aSu6MT2NFjK
-	w2ZdE7G0RdM2lp2hcNA5yo2Ne0tUISqp9AlcVv3tFuFnXkG3STIqdMKZldwHn/FIPRUeuDbWQUsVY
-	7GvJw9dwD/INILSQJDY1sizmQwgEAKpX0FvRXLN3s+iHS5r+mmbAbdrJTNaOenJibSaFHhe3SreMj
-	xKsnhNFlLbtVA41wapn3TykQcP95aLGIAnIsat4k2RoKoaohoFCBLdjm1KcDUvnNEvPnHqPWWsjNI
-	QQ+3M+wSodPLaRVluoywoyDItVUiKJllTIhMbnfsV5wbNl/QOi4KhV3QxNgwmk6A1WoWnXmTicBdD
-	Wx/UcRjwG6RVHxfqTCvg==;
+	List-Owner; bh=ODife4ymYfcK6rNGyxnxXBsqQQoSDuw3xjcjDWbQw0g=; b=F3sFrtYUPzKA3C
+	sFYnN5yN0P3umpsbx176LZTEWIKyNyxaqQ+yk14HvA7SgKlR788rBdJwBsiE1/yWUvsu6Hk8wSmqK
+	WvKj6yahYrluVYo2KD4N8e3ZgXUrfZqTvKxMeuAoO/zGAOr7UndHg30ySElvvKtP3y+gb3XlRiD7i
+	NpBpmzyCAnvXvxMAhb9nTLntE3coWrMRyhUsyXQntbC2ojHMQjekyTBBXEqmXnbjzBczA7fqG+Dgw
+	sTN/J4GsE4FLbsOQdFdJjAuOknzaVmn+/d+HpUCFiPwSJB7yt92N8X+yXxDb8B/phNrMwifjchhJ0
+	91dEuz/O1Dmdqwk0oqXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huchY-0001yU-5G; Mon, 05 Aug 2019 13:07:00 +0000
+	id 1huch9-0001l7-7d; Mon, 05 Aug 2019 13:06:35 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hucgm-0001jU-19
+ id 1hucgm-0001jW-1N
  for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 13:06:13 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 06BD41570;
- Mon,  5 Aug 2019 06:06:09 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E280D337;
+ Mon,  5 Aug 2019 06:06:08 -0700 (PDT)
 Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 15F153F706;
- Mon,  5 Aug 2019 06:06:06 -0700 (PDT)
-Subject: Re: [PATCH 0/9] arm64: Stolen time support
-To: Marc Zyngier <maz@kernel.org>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4FEBA3F77D;
+ Mon,  5 Aug 2019 06:06:07 -0700 (PDT)
+Subject: Re: [PATCH 1/9] KVM: arm64: Document PV-time interface
+To: Zenghui Yu <yuzenghui@huawei.com>
 References: <20190802145017.42543-1-steven.price@arm.com>
- <20190803190522.5fec8f7d@why>
+ <20190802145017.42543-2-steven.price@arm.com>
+ <3bdd764a-b6f5-d17e-a703-d8eb13838efc@huawei.com>
 From: Steven Price <steven.price@arm.com>
-Message-ID: <6789f477-8ab5-cc54-1ad2-8627917b07c9@arm.com>
-Date: Mon, 5 Aug 2019 14:06:05 +0100
+Message-ID: <fd8b0c8d-79d1-1501-cee0-d3f6bc1c3487@arm.com>
+Date: Mon, 5 Aug 2019 14:06:06 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190803190522.5fec8f7d@why>
+In-Reply-To: <3bdd764a-b6f5-d17e-a703-d8eb13838efc@huawei.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_060612_155705_256EC8B3 
-X-CRM114-Status: GOOD (  22.19  )
+X-CRM114-CacheID: sfid-20190805_060612_125925_E236C389 
+X-CRM114-Status: GOOD (  14.99  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,91 +63,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?= <rkrcmar@redhat.com>, kvm@vger.kernel.org,
- Suzuki K Pouloze <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-doc@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org,
+ Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/08/2019 19:05, Marc Zyngier wrote:
-> On Fri,  2 Aug 2019 15:50:08 +0100
-> Steven Price <steven.price@arm.com> wrote:
-> 
-> Hi Steven,
-> 
->> This series add support for paravirtualized time for arm64 guests and
->> KVM hosts following the specification in Arm's document DEN 0057A:
->>
->> https://developer.arm.com/docs/den0057/a
->>
->> It implements support for stolen time, allowing the guest to
->> identify time when it is forcibly not executing.
->>
->> It doesn't implement support for Live Physical Time (LPT) as there are
->> some concerns about the overheads and approach in the above
->> specification, and I expect an updated version of the specification to
->> be released soon with just the stolen time parts.
-> 
-> Thanks for posting this.
-> 
-> My current concern with this series is around the fact that we allocate
-> memory from the kernel on behalf of the guest. It is the first example
-> of such thing in the ARM port, and I can't really say I'm fond of it.
-> 
-> x86 seems to get away with it by having the memory allocated from
-> userspace, why I tend to like more. Yes, put_user is more
-> expensive than a straight store, but this isn't done too often either.
-> 
-> What is the rational for your current approach?
-
-As I see it there are 3 approaches that can be taken here:
-
-1. Hypervisor allocates memory and adds it to the virtual machine. This
-means that everything to do with the 'device' is encapsulated behind the
-KVM_CREATE_DEVICE / KVM_[GS]ET_DEVICE_ATTR ioctls. But since we want the
-stolen time structure to be fast it cannot be a trapping region and has
-to be backed by real memory - in this case allocated by the host kernel.
-
-2. Host user space allocates memory. Similar to above, but this time
-user space needs to manage the memory region as well as the usual
-KVM_CREATE_DEVICE dance. I've no objection to this, but it means
-kvmtool/QEMU needs to be much more aware of what is going on (e.g. how
-to size the memory region).
-
-3. Guest kernel "donates" the memory to the hypervisor for the
-structure. As far as I'm aware this is what x86 does. The problems I see
-this approach are:
-
- a) kexec becomes much more tricky - there needs to be a disabling
-mechanism for the guest to stop the hypervisor scribbling on memory
-before starting the new kernel.
-
- b) If there is more than one entity that is interested in the
-information (e.g. firmware and kernel) then this requires some form of
-arbitration in the guest because the hypervisor doesn't want to have to
-track an arbitrary number of regions to update.
-
- c) Performance can suffer if the host kernel doesn't have a suitably
-aligned/sized area to use. As you say - put_user() is more expensive.
-The structure is updated on every return to the VM.
-
-
-Of course x86 does prove the third approach can work, but I'm not sure
-which is actually better. Avoid the kexec cancellation requirements was
-the main driver of the current approach. Although many of the
-conversations about this were also tied up with Live Physical Time which
-adds its own complications.
-
-Steve
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDUvMDgvMjAxOSAwNDoyMywgWmVuZ2h1aSBZdSB3cm90ZToKPiBIaSBTdGV2ZW4sCj4gCj4g
+T24gMjAxOS84LzIgMjI6NTAsIFN0ZXZlbiBQcmljZSB3cm90ZToKPj4gSW50cm9kdWNlIGEgcGFy
+YXZpcnR1YWxpemF0aW9uIGludGVyZmFjZSBmb3IgS1ZNL2FybTY0IGJhc2VkIG9uIHRoZQo+PiAi
+QXJtIFBhcmF2aXJ0dWFsaXplZCBUaW1lIGZvciBBcm0tQmFzZSBTeXN0ZW1zIiBzcGVjaWZpY2F0
+aW9uIERFTiAwMDU3QS4KPj4KPj4gVGhpcyBvbmx5IGFkZHMgdGhlIGRldGFpbHMgYWJvdXQgIlN0
+b2xlbiBUaW1lIiBhcyB0aGUgZGV0YWlscyBvZiAiTGl2ZQo+PiBQaHlzaWNhbCBUaW1lIiBoYXZl
+IG5vdCBiZWVuIGZ1bGx5IGFncmVlZC4KPj4KPj4gVXNlciBzcGFjZSBjYW4gc3BlY2lmeSBhIHJl
+c2VydmVkIGFyZWEgb2YgbWVtb3J5IGZvciB0aGUgZ3Vlc3QgYW5kCj4+IGluZm9ybSBLVk0gdG8g
+cG9wdWxhdGUgdGhlIG1lbW9yeSB3aXRoIGluZm9ybWF0aW9uIG9uIHRpbWUgdGhhdCB0aGUgaG9z
+dAo+PiBrZXJuZWwgaGFzIHN0b2xlbiBmcm9tIHRoZSBndWVzdC4KPj4KPj4gQSBoeXBlcmNhbGwg
+aW50ZXJmYWNlIGlzIHByb3ZpZGVkIGZvciB0aGUgZ3Vlc3QgdG8gaW50ZXJyb2dhdGUgdGhlCj4+
+IGh5cGVydmlzb3IncyBzdXBwb3J0IGZvciB0aGlzIGludGVyZmFjZSBhbmQgdGhlIGxvY2F0aW9u
+IG9mIHRoZSBzaGFyZWQKPj4gbWVtb3J5IHN0cnVjdHVyZXMuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6
+IFN0ZXZlbiBQcmljZSA8c3RldmVuLnByaWNlQGFybS5jb20+Cj4+IC0tLQo+PiDCoCBEb2N1bWVu
+dGF0aW9uL3ZpcnR1YWwva3ZtL2FybS9wdnRpbWUudHh0IHwgMTA3ICsrKysrKysrKysrKysrKysr
+KysrKysrCj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCAxMDcgaW5zZXJ0aW9ucygrKQo+PiDCoCBjcmVh
+dGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi92aXJ0dWFsL2t2bS9hcm0vcHZ0aW1lLnR4dAo+
+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqAgXl5eXl5eXgo+IFRoaXMgZGlyZWN0b3J5IGhhcyBiZWVuIHJlbmFtZWQg
+cmVjZW50bHksIHNlZToKPiAKPiBodHRwczovL3BhdGNod29yay5vemxhYnMub3JnL3BhdGNoLzEx
+MzYxMDQvCgpUaGFua3MgZm9yIHBvaW50aW5nIHRoYXQgb3V0IC0gSSdsbCBtb3ZlIGl0IGluIHRo
+ZSBuZXh0IHZlcnNpb24uCgpTdGV2ZQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
