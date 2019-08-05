@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DED381DD3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 15:48:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22E6F81DDB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 15:49:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5mKuq/gFezjMO8wOj7AFaJks+2ae6taRCQZxUE9o9ek=; b=rGqEshYOEkgtyr
-	ltoQXt1XWCcZZQ2hKsb5PgeeekF1WiRl+q0U5RA5kYDlNBtz1ZVsQX2sVCYMCWcBDal6aOPow5SUB
-	nrLUd7HSXezimFiaR9/EfWhnH3gd/aXIBgo5E+qYjPfRHcEe1xcch01mgFJf+EkMZeE/iaFM3R5j5
-	Ar+MaI25CgmGzhqvWAvUzoJqEm0ijUDSDJILO67IypqRIIX6ogaESQniahmRBtauFfBTB1LGRNe5P
-	Ae8SSw0LyxEUYuJ47WmMy53atR9/lsvCu+/DJbLthAuVardihGqZ3Gz+ei3brpcxfnTWo/ObkZpK2
-	KhBwa3Ivb/GNl9Yju+UQ==;
+	List-Owner; bh=hoxDoLJeSnOTx80m0Li3SWBIz2zoO1aFx0kmsCW7pDc=; b=JabZRVFFQ6i0sI
+	9bfcdX2f+ocwOiUD5orEtmJLkkN+h0dPUBgKiJU9kCrSNB1nj+8C3PgH3kWLAZcBDtu2LSvDWDz/m
+	0C4PLwhPPAjQsS6+mxfXHB6+xblRoG8yexj6+GDiVZJJCc6+JYtcVIw08up1+vzdIy6wKRDD9vSfi
+	P3v4QrDuHn4Rc/SiB6b0mfgtB638N9YOS1IDuW+HbsgDTabRlRoXTvzX/KD35LQkkFS2exyNRrcOF
+	A5eVJfEPLwowoYiVIvkCbmEQv8P2l7aJZa+mTFX63pnxfmjx8TZf+XPuvn2ZLGceQ3vCMku/5xnfy
+	DLbppdCZDZv6AZZ8thEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hudLX-0004C0-NU; Mon, 05 Aug 2019 13:48:19 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1hudMR-0004zO-8L; Mon, 05 Aug 2019 13:49:15 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hudLL-0004B5-TP; Mon, 05 Aug 2019 13:48:10 +0000
+ id 1hudM8-0004q0-7s; Mon, 05 Aug 2019 13:48:59 +0000
 X-Originating-IP: 82.246.155.60
 Received: from localhost (hy283-1-82-246-155-60.fbx.proxad.net [82.246.155.60])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id B7E7F1BF20B;
- Mon,  5 Aug 2019 13:47:55 +0000 (UTC)
-Date: Mon, 5 Aug 2019 15:47:53 +0200
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 7169F240015;
+ Mon,  5 Aug 2019 13:48:43 +0000 (UTC)
+Date: Mon, 5 Aug 2019 15:48:42 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Frank Wunderlich <frank-w@public-files.de>
-Subject: Re: [PATCH v3 02/10] dt-bindings: add missing mt6397 rtc
-Message-ID: <20190805134753.GF3600@piout.net>
+Subject: Re: [PATCH v3 03/10] rtc: mt6397: move some common definitions into
+ rtc.h
+Message-ID: <20190805134842.GG3600@piout.net>
 References: <20190729174154.4335-1-frank-w@public-files.de>
- <20190729174154.4335-3-frank-w@public-files.de>
+ <20190729174154.4335-4-frank-w@public-files.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190729174154.4335-3-frank-w@public-files.de>
+In-Reply-To: <20190729174154.4335-4-frank-w@public-files.de>
 User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_064808_108092_D9252FB8 
-X-CRM114-Status: GOOD (  18.22  )
+X-CRM114-CacheID: sfid-20190805_064857_109412_C06E4FAE 
+X-CRM114-Status: GOOD (  18.23  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ low trust [217.70.183.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,62 +83,168 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/07/2019 19:41:46+0200, Frank Wunderlich wrote:
+On 29/07/2019 19:41:47+0200, Frank Wunderlich wrote:
 > From: Josef Friedl <josef.friedl@speed.at>
 > 
-> add missing devicetree-binding document for mt6397 rtc
-> in later patch driver is extended with mt6323 chip
+> move code to separate header-file to reuse definitions later
+> in poweroff-driver (drivers/power/reset/mt6323-poweroff.c)
 > 
-> changes since v2: splitted rtc-mt6397.txt from first patch
+> changes since v2: add missing commit-message
 
-This line should be after the --- marker.
+The changelog should be after the --- marker.
 > 
-> Suggested-By: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-
-Your SoB should appear last.
-
+> Suggested-by: Frank Wunderlich <frank-w@public-files.de>
 > Signed-off-by: Josef Friedl <josef.friedl@speed.at>
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
 > ---
->  .../devicetree/bindings/rtc/rtc-mt6397.txt    | 29 +++++++++++++++++++
->  1 file changed, 29 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
+>  drivers/rtc/rtc-mt6397.c       | 55 +-------------------------
+>  include/linux/mfd/mt6397/rtc.h | 71 ++++++++++++++++++++++++++++++++++
+>  2 files changed, 72 insertions(+), 54 deletions(-)
+>  create mode 100644 include/linux/mfd/mt6397/rtc.h
 > 
-> diff --git a/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt b/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
+> diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
+> index b46ed4dc7015..c08ee5edf865 100644
+> --- a/drivers/rtc/rtc-mt6397.c
+> +++ b/drivers/rtc/rtc-mt6397.c
+> @@ -9,60 +9,7 @@
+>  #include <linux/module.h>
+>  #include <linux/regmap.h>
+>  #include <linux/rtc.h>
+> -#include <linux/irqdomain.h>
+> -#include <linux/platform_device.h>
+> -#include <linux/of_address.h>
+> -#include <linux/of_irq.h>
+> -#include <linux/io.h>
+> -#include <linux/mfd/mt6397/core.h>
+> -
+> -#define RTC_BBPU		0x0000
+> -#define RTC_BBPU_CBUSY		BIT(6)
+> -
+> -#define RTC_WRTGR		0x003c
+> -
+> -#define RTC_IRQ_STA		0x0002
+> -#define RTC_IRQ_STA_AL		BIT(0)
+> -#define RTC_IRQ_STA_LP		BIT(3)
+> -
+> -#define RTC_IRQ_EN		0x0004
+> -#define RTC_IRQ_EN_AL		BIT(0)
+> -#define RTC_IRQ_EN_ONESHOT	BIT(2)
+> -#define RTC_IRQ_EN_LP		BIT(3)
+> -#define RTC_IRQ_EN_ONESHOT_AL	(RTC_IRQ_EN_ONESHOT | RTC_IRQ_EN_AL)
+> -
+> -#define RTC_AL_MASK		0x0008
+> -#define RTC_AL_MASK_DOW		BIT(4)
+> -
+> -#define RTC_TC_SEC		0x000a
+> -/* Min, Hour, Dom... register offset to RTC_TC_SEC */
+> -#define RTC_OFFSET_SEC		0
+> -#define RTC_OFFSET_MIN		1
+> -#define RTC_OFFSET_HOUR		2
+> -#define RTC_OFFSET_DOM		3
+> -#define RTC_OFFSET_DOW		4
+> -#define RTC_OFFSET_MTH		5
+> -#define RTC_OFFSET_YEAR		6
+> -#define RTC_OFFSET_COUNT	7
+> -
+> -#define RTC_AL_SEC		0x0018
+> -
+> -#define RTC_PDN2		0x002e
+> -#define RTC_PDN2_PWRON_ALARM	BIT(4)
+> -
+> -#define RTC_MIN_YEAR		1968
+> -#define RTC_BASE_YEAR		1900
+> -#define RTC_NUM_YEARS		128
+> -#define RTC_MIN_YEAR_OFFSET	(RTC_MIN_YEAR - RTC_BASE_YEAR)
+> -
+> -struct mt6397_rtc {
+> -	struct device		*dev;
+> -	struct rtc_device	*rtc_dev;
+> -	struct mutex		lock;
+> -	struct regmap		*regmap;
+> -	int			irq;
+> -	u32			addr_base;
+> -};
+> +#include <linux/mfd/mt6397/rtc.h>
+> 
+>  static int mtk_rtc_write_trigger(struct mt6397_rtc *rtc)
+>  {
+> diff --git a/include/linux/mfd/mt6397/rtc.h b/include/linux/mfd/mt6397/rtc.h
 > new file mode 100644
-> index 000000000000..ebd1cf80dcc8
+> index 000000000000..b702c29e8c74
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
-> @@ -0,0 +1,29 @@
-> +Device-Tree bindings for MediaTek PMIC based RTC
+> +++ b/include/linux/mfd/mt6397/rtc.h
+> @@ -0,0 +1,71 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright (C) 2014-2018 MediaTek Inc.
+> + *
+> + * Author: Tianping.Fang <tianping.fang@mediatek.com>
+> + *        Sean Wang <sean.wang@mediatek.com>
+> + */
 > +
-> +MediaTek PMIC based RTC is an independent function of MediaTek PMIC that works
-> +as a type of multi-function device (MFD). The RTC can be configured and set up
-> +with PMIC wrapper bus which is a common resource shared with the other
-> +functions found on the same PMIC.
+> +#ifndef _LINUX_MFD_MT6397_RTC_H_
+> +#define _LINUX_MFD_MT6397_RTC_H_
 > +
-> +For MediaTek PMIC MFD bindings, see:
-> +Documentation/devicetree/bindings/mfd/mt6397.txt
+> +#include <linux/jiffies.h>
+> +#include <linux/mutex.h>
+> +#include <linux/regmap.h>
+> +#include <linux/rtc.h>
 > +
-> +For MediaTek PMIC wrapper bus bindings, see:
-> +Documentation/devicetree/bindings/soc/mediatek/pwrap.txt
+> +#define RTC_BBPU               0x0000
+> +#define RTC_BBPU_CBUSY         BIT(6)
+> +#define RTC_BBPU_KEY            (0x43 << 8)
 > +
-> +Required properties:
-> +- compatible: Should be one of follows
-> +       "mediatek,mt6323-rtc": for MT6323 PMIC
-> +       "mediatek,mt6397-rtc": for MT6397 PMIC
+> +#define RTC_WRTGR              0x003c
 > +
-> +Example:
+> +#define RTC_IRQ_STA            0x0002
+> +#define RTC_IRQ_STA_AL         BIT(0)
+> +#define RTC_IRQ_STA_LP         BIT(3)
 > +
-> +       pmic {
-> +               compatible = "mediatek,mt6323";
+> +#define RTC_IRQ_EN             0x0004
+> +#define RTC_IRQ_EN_AL          BIT(0)
+> +#define RTC_IRQ_EN_ONESHOT     BIT(2)
+> +#define RTC_IRQ_EN_LP          BIT(3)
+> +#define RTC_IRQ_EN_ONESHOT_AL  (RTC_IRQ_EN_ONESHOT | RTC_IRQ_EN_AL)
 > +
-> +               ...
+> +#define RTC_AL_MASK            0x0008
+> +#define RTC_AL_MASK_DOW                BIT(4)
 > +
-> +               rtc {
-> +                       compatible = "mediatek,mt6323-rtc";
-> +               };
-> +       };
+> +#define RTC_TC_SEC             0x000a
+> +/* Min, Hour, Dom... register offset to RTC_TC_SEC */
+> +#define RTC_OFFSET_SEC         0
+> +#define RTC_OFFSET_MIN         1
+> +#define RTC_OFFSET_HOUR                2
+> +#define RTC_OFFSET_DOM         3
+> +#define RTC_OFFSET_DOW         4
+> +#define RTC_OFFSET_MTH         5
+> +#define RTC_OFFSET_YEAR                6
+> +#define RTC_OFFSET_COUNT       7
+> +
+> +#define RTC_AL_SEC             0x0018
+> +
+> +#define RTC_PDN2               0x002e
+> +#define RTC_PDN2_PWRON_ALARM   BIT(4)
+> +
+> +#define RTC_MIN_YEAR           1968
+> +#define RTC_BASE_YEAR          1900
+> +#define RTC_NUM_YEARS          128
+> +#define RTC_MIN_YEAR_OFFSET    (RTC_MIN_YEAR - RTC_BASE_YEAR)
+> +
+> +#define MTK_RTC_POLL_DELAY_US  10
+> +#define MTK_RTC_POLL_TIMEOUT   (jiffies_to_usecs(HZ))
+> +
+> +struct mt6397_rtc {
+> +	struct device           *dev;
+> +	struct rtc_device       *rtc_dev;
+> +
+> +	/* Protect register access from multiple tasks */
+> +	struct mutex            lock;
+> +	struct regmap           *regmap;
+> +	int                     irq;
+> +	u32                     addr_base;
+> +};
+> +
+> +#endif /* _LINUX_MFD_MT6397_RTC_H_ */
 > --
 > 2.17.1
 > 
