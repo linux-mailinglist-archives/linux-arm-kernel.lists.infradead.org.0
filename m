@@ -2,95 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E289F82343
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 18:55:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 584118237F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 19:02:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WIpj+M0Z5B5tEkdrEwwBQAJw39MEqgM10mAwEYDnaJw=; b=uO4Bd/lAAG4+PmmALnYln1D3B
-	oNdVuqq7fF6AO3Byo0BcXxqVVzB55g4NeGz3SGcRJUR0qkP+N5rSqjF38ftt6KzhN+vUTy37P3XcM
-	UfcwCVcRGloegq58dmL0mrVAgN4opA4uP1Z/q3t0RBE+xbW4UiQELqxSRO6pshY2lOoKyZLWoYr5N
-	FmMST2EEHrwJFUaMqb3btOCrLBl+7Y6Z7O/xICxbDjdnoJlYsoTA4jeeeSPJRpeTfUOVpwAjV9l3e
-	xmfgZsw4+7rUhURRSoloYq1OQQ+Mo2Zh+nuABq5AkiWzi2zZ1NCGx9lfsIo5YeABTLZLa8QeX4vFK
-	4JqgWspDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=erjivr2IiuXCg2vufxaS8hyAuB+sAbFL0LtSeSaXz0A=; b=evj
+	Y9mzITeAhqYPZUg/Tu22Sb3Isz3d+DN3A+Hx1BTSetLku7F64j6z+YANpgeORNtmzpv2OWb449Fvb
+	yI3QOHpG97UxBOMf78JktotRTKrC8fVpeiMjCY6sW6BvU71uNGSAvVII8yyvrWxj5VuXz8L6HhuKW
+	tYR13X7pUqB+uVIk7bQz4wyqKYj3xd8VnvGkTmtKhACAjjYEfebWz2wtWKpSdJl7/RnC3Xqc6cyaj
+	Y25vhk9/sEqMmytAnwA/M8tuHtWv3yEWt45kiQtO4NpjEWfl9bJbC3oC9mvUWrjwtG+oeInXFkCF+
+	n2plziUxc4QmiMcX4EgozSrLmfZ9FSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hugGL-0001C1-HB; Mon, 05 Aug 2019 16:55:09 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
+	id 1hugNe-0005eB-6a; Mon, 05 Aug 2019 17:02:42 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hugG7-0001BU-1z
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 16:54:57 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d485f5e0000>; Mon, 05 Aug 2019 09:54:54 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Mon, 05 Aug 2019 09:54:53 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Mon, 05 Aug 2019 09:54:53 -0700
-Received: from [10.25.73.209] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 5 Aug
- 2019 16:54:46 +0000
-Subject: Re: [PATCH V13 12/12] PCI: tegra: Add Tegra194 PCIe support
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20190710062212.1745-1-vidyas@nvidia.com>
- <20190710062212.1745-13-vidyas@nvidia.com>
- <20190711125433.GB26088@e121166-lin.cambridge.arm.com>
- <986d0b1a-666a-7b05-a9f3-e761518bdc92@nvidia.com>
- <20190712160754.GA24285@e121166-lin.cambridge.arm.com>
- <a5f8689b-1358-dd2d-4f54-7e68a6ab158b@nvidia.com>
- <20190716112225.GA24335@e121166-lin.cambridge.arm.com>
- <be6367bc-08a0-762a-aae8-b3f0376d0e9a@nvidia.com>
- <20190730154939.GA367@e121166-lin.cambridge.arm.com>
- <f09c79fc-c724-5290-d630-cac3fdd7a996@nvidia.com>
- <20190805140107.GA3850@e121166-lin.cambridge.arm.com>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <a25bf401-3bbc-ff6d-a493-f454b311dc47@nvidia.com>
-Date: Mon, 5 Aug 2019 22:24:42 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190805140107.GA3850@e121166-lin.cambridge.arm.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1565024094; bh=wDYLxJu98zHwzLFDTO9WkwkvE2H9LhH2UDF3LriAa6I=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=pDzWbCh9D5LRfSnY52T8Y4KPiL/sIkftmcgi3c1LYWm7evR6JF8us+96Ps1/JYb7S
- PzwfsS+xvsz+lyggVksi0j3/kl7kbfyW/P5/KyvJ9CkEQ6LTmGV2RG+i5LoFzDknYD
- f2isMvaMXX39WYyPXGkxsfD3MAlu2BomTXpjZ5ymQLITO0mkV6Ss0qHGnlc35xGPRV
- Z9xibP32PlTD70wyE5Nhz4qJDBx0mT6t9vE1jQmndFuwlCsfOs1QCWRUnyDG5wyX2L
- y+v2PLrXVPwBGvu3oI7tUyCLfEnmw+KRxvLqkJdfgiUGBHw+Te6sqpzGPJdUNE5ZOK
- 3GcDZEW7pckuw==
+ id 1hugMQ-0004RD-5j
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 05 Aug 2019 17:01:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=HcLabTYyDLmBUrB34RxjVwvZZWph8KWNolBtsqq9WGQ=; b=c9NIzzMUep3kJlz5KE+Cb+/W4
+ x5bLxGcSnpKOCjyixBCNjnYXtglgGZ4O5ZIZkSwzd88MOXleqmcNi9VRlwvuJm5TdVyOIjq2jx/Bg
+ ErWxuodRrJK3LcFeD8ZmfvB/TxHNi2S9DD4Ccm/flkwpaplnQT5N/iqQOeEDl3byXmVHdttoAmG6C
+ HvuFU5XUROOxnyYMPF4oD70vSz5hD9IsSymmEPqubG0HdPUh9WwQS9X0uunhncOkXy8TvjwFuL59p
+ SUxg47AWt7r8fHty3DOp2RYj+9JJi4tCJi2gQLr5DZyKp9nUyjPUy+iLTaO7/3f3C9XEVkOgQRzLf
+ 5/9hDYHug==;
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hug7L-0005Oj-SI
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 16:45:58 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 67A76C015B;
+ Mon,  5 Aug 2019 16:45:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1565023530; bh=0LbPrLAJZPL+E0+EEkTDfdECwXLyTc0PWcn5jnubUI8=;
+ h=From:To:Cc:Subject:Date:From;
+ b=fwhulZuLa3ryglwiiwLjF4/2ithvclLv+FstYbrMDuZUUzbasLHK6bKffdBkzXJbw
+ Bze7ohv14AR+/LgKzBrDhlrZ922jio5ql9f+PUa5FEcwYYyeAXs+QkqwOQr3/UQUBb
+ hywH00ci3zmVycCrIu0L1pOeotaSjKBgV9l864aNVk2LgVEOzpRcrwGKi1EhLmzoUP
+ qure26YhNg7npw16CSBy72d8V4vyNnmbY9G/beRv3rnFEipdd05UGN+VH2rafPGzT+
+ WT9LOXYfKY/xU+TzcfDjPLJmNSAVOu/7dGib4K7dwl+sJoZTIaBIj94VkSxpryQzzU
+ TG0wIbOb+vBpA==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id CD08FA005D;
+ Mon,  5 Aug 2019 16:45:25 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net-next 00/26] net: stmmac: Misc improvements for XGMAC
+Date: Mon,  5 Aug 2019 18:44:27 +0200
+Message-Id: <cover.1565022597.git.joabreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_095455_124719_4FFEFDCB 
-X-CRM114-Status: GOOD (  26.25  )
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+X-CRM114-CacheID: sfid-20190805_174552_233330_4ADFA45C 
+X-CRM114-Status: GOOD (  13.07  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,345 +93,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, mperttunen@nvidia.com,
- mmaddireddy@nvidia.com, linux-pci@vger.kernel.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, kthota@nvidia.com,
- kishon@ti.com, linux-tegra@vger.kernel.org, robh+dt@kernel.org,
- thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/5/2019 7:31 PM, Lorenzo Pieralisi wrote:
-> On Fri, Aug 02, 2019 at 05:36:43PM +0530, Vidya Sagar wrote:
->> On 7/30/2019 9:19 PM, Lorenzo Pieralisi wrote:
->>> On Tue, Jul 23, 2019 at 08:14:08PM +0530, Vidya Sagar wrote:
->>>> On 7/16/2019 4:52 PM, Lorenzo Pieralisi wrote:
->>>>> On Sat, Jul 13, 2019 at 12:34:34PM +0530, Vidya Sagar wrote:
->>>>>
->>>>> [...]
->>>>>
->>>>>>>>>> +static int tegra_pcie_bpmp_set_ctrl_state(struct tegra_pcie_dw *pcie,
->>>>>>>>>> +					  bool enable)
->>>>>>>>>> +{
->>>>>>>>>> +	struct mrq_uphy_response resp;
->>>>>>>>>> +	struct tegra_bpmp_message msg;
->>>>>>>>>> +	struct mrq_uphy_request req;
->>>>>>>>>> +	int err;
->>>>>>>>>> +
->>>>>>>>>> +	if (pcie->cid == 5)
->>>>>>>>>> +		return 0;
->>>>>>>>>
->>>>>>>>> What's wrong with cid == 5 ? Explain please.
->>>>>>>> Controller with ID=5 doesn't need any programming to enable it which is
->>>>>>>> done here through calling firmware API.
->>>>>>>>
->>>>>>>>>
->>>>>>>>>> +	memset(&req, 0, sizeof(req));
->>>>>>>>>> +	memset(&resp, 0, sizeof(resp));
->>>>>>>>>> +
->>>>>>>>>> +	req.cmd = CMD_UPHY_PCIE_CONTROLLER_STATE;
->>>>>>>>>> +	req.controller_state.pcie_controller = pcie->cid;
->>>>>>>>>> +	req.controller_state.enable = enable;
->>>>>>>>>> +
->>>>>>>>>> +	memset(&msg, 0, sizeof(msg));
->>>>>>>>>> +	msg.mrq = MRQ_UPHY;
->>>>>>>>>> +	msg.tx.data = &req;
->>>>>>>>>> +	msg.tx.size = sizeof(req);
->>>>>>>>>> +	msg.rx.data = &resp;
->>>>>>>>>> +	msg.rx.size = sizeof(resp);
->>>>>>>>>> +
->>>>>>>>>> +	if (irqs_disabled())
->>>>>>>>>
->>>>>>>>> Can you explain to me what this check is meant to achieve please ?
->>>>>>>> Firmware interface provides different APIs to be called when there are
->>>>>>>> no interrupts enabled in the system (noirq context) and otherwise
->>>>>>>> hence checking that situation here and calling appropriate API.
->>>>>>>
->>>>>>> That's what I am questioning. Being called from {suspend/resume}_noirq()
->>>>>>> callbacks (if that's the code path this check caters for) does not mean
->>>>>>> irqs_disabled() == true.
->>>>>> Agree.
->>>>>> Actually, I got a hint of having this check from the following.
->>>>>> Both tegra_bpmp_transfer_atomic() and tegra_bpmp_transfer() are indirectly
->>>>>> called by APIs registered with .master_xfer() and .master_xfer_atomic() hooks of
->>>>>> struct i2c_algorithm and the decision to call which one of these is made using the
->>>>>> following check in i2c-core.h file.
->>>>>> static inline bool i2c_in_atomic_xfer_mode(void)
->>>>>> {
->>>>>> 	return system_state > SYSTEM_RUNNING && irqs_disabled();
->>>>>> }
->>>>>> I think I should use this condition as is IIUC.
->>>>>> Please let me know if there are any concerns with this.
->>>>>
->>>>> It is not a concern, it is just that I don't understand how this code
->>>>> can be called with IRQs disabled, if you can give me an execution path I
->>>>> am happy to leave the check there. On top of that, when called from
->>>>> suspend NOIRQ context, it is likely to use the blocking API (because
->>>>> IRQs aren't disabled at CPU level) behind which there is most certainly
->>>>> an IRQ required to wake the thread up and if the IRQ in question was
->>>>> disabled in the suspend NOIRQ phase this code is likely to deadlock.
->>>>>
->>>>> I want to make sure we can justify adding this check, I do not
->>>>> want to add it because we think it can be needed when it may not
->>>>> be needed at all (and it gets copy and pasted over and over again
->>>>> in other drivers).
->>>> I had a discussion internally about this and the prescribed usage of these APIs
->>>> seem to be that
->>>> use tegra_bpmp_transfer() in .probe() and other paths where interrupts are
->>>> enabled as this API needs interrupts to be enabled for its working.
->>>> Use tegra_bpmp_transfer_atomic() surrounded by local_irq_save()/local_irq_restore()
->>>> in other paths where interrupt servicing is disabled.
->>>
->>> Why tegra_bpmp_transfer_atomic() needs IRQs to be disabled ? And why
->>> is it needed in this piece of code where IRQs are _never_ disabled
->>> at CPU level ?
->>>
->>> IRQs are enabled when you call a suspend_noirq() callback, so the
->>> blocking API can be used as long as the IRQ descriptor backing
->>> the IRQ that will wake-up the blocked call is marked as
->>> IRQF_NO_SUSPEND.
->>>
->>> The problem is not IRQs enabled/disabled at CPU level, the problem is
->>> the IRQ descriptor of the IRQ required to handle the blocking BPMP call,
->>> mark it as IRQF_NO_SUSPEND and remove the tegra_bpmp_transfer_atomic()
->>> call from this code (or please give me a concrete example pinpointing
->>> why it is needed).
->> Ideally, using tegra_bpmp_transfer() alone in all paths (.probe() as
->> well as .resume_noirq()) should have worked as the corresponding IRQ
->> is already flagged as IRQF_NO_SUSPEND, but, because of the way BPMP-FW
->> driver in kernel making its interface available through
->> .resume_early(), tegra_bpmp_transfer() wasn't working as expected and
->> I pushed a patch (CC'ing you) at
->> http://patchwork.ozlabs.org/patch/1140973/ to make it .resume_noirq()
->> from .resume_early().  With that in place, we can just use
->> tegra_bpmp_trasnfer().  I'll push a new patch with this change once my
->> BPMP-FW driver patch is approved.
-> 
-> Does this leave you with a resume_noirq() callbacks ordering issue to
-> sort out ?
-Not really.
+[ This series depend on 3caa61c20875 ("net: stmmac: Sync RX Buffer upon allocation")
+which is already in -net but not -next ]
 
-> 
-> a.k.a How will you guarantee that the BPMP will resume before the host
-> bridge ?
-It is already taken care of in the following way.
-PCIe controller's device-tree node has an entry with a phandle of BPMP-FW's node
-to get a handle of it and PCIe driver uses tegra_bpmp_get() API for that.
-This API returns -EPROBE_DEFER if BPMP-FW's driver is not ready yet, which guarantees
-that PCIe driver gets loaded only after BPMP-FW's driver and this order is followed
-during noirq phase also.
+Misc improvements for -next which adds new features in XGMAC cores.
 
-> 
-> Thanks,
-> Lorenzo
-> 
->> Thanks,
->> Vidya Sagar
->>>
->>> Thanks,
->>> Lorenzo
->>>
->>>> I'll go ahead and make next patch series with this if this looks fine to you.
->>>>
->>>>>
->>>>>>> Actually, if tegra_bpmp_transfer() requires IRQs to be enabled you may
->>>>>>> even end up in a situation where that blocking call does not wake up
->>>>>>> because the IRQ in question was disabled in the NOIRQ suspend/resume
->>>>>>> phase.
->>>>>>>
->>>>>>> [...]
->>>>>>>
->>>>>>>>>> +static int tegra_pcie_dw_probe(struct platform_device *pdev)
->>>>>>>>>> +{
->>>>>>>>>> +	const struct tegra_pcie_soc *data;
->>>>>>>>>> +	struct device *dev = &pdev->dev;
->>>>>>>>>> +	struct resource *atu_dma_res;
->>>>>>>>>> +	struct tegra_pcie_dw *pcie;
->>>>>>>>>> +	struct resource *dbi_res;
->>>>>>>>>> +	struct pcie_port *pp;
->>>>>>>>>> +	struct dw_pcie *pci;
->>>>>>>>>> +	struct phy **phys;
->>>>>>>>>> +	char *name;
->>>>>>>>>> +	int ret;
->>>>>>>>>> +	u32 i;
->>>>>>>>>> +
->>>>>>>>>> +	pcie = devm_kzalloc(dev, sizeof(*pcie), GFP_KERNEL);
->>>>>>>>>> +	if (!pcie)
->>>>>>>>>> +		return -ENOMEM;
->>>>>>>>>> +
->>>>>>>>>> +	pci = &pcie->pci;
->>>>>>>>>> +	pci->dev = &pdev->dev;
->>>>>>>>>> +	pci->ops = &tegra_dw_pcie_ops;
->>>>>>>>>> +	pp = &pci->pp;
->>>>>>>>>> +	pcie->dev = &pdev->dev;
->>>>>>>>>> +
->>>>>>>>>> +	data = (struct tegra_pcie_soc *)of_device_get_match_data(dev);
->>>>>>>>>> +	if (!data)
->>>>>>>>>> +		return -EINVAL;
->>>>>>>>>> +	pcie->mode = (enum dw_pcie_device_mode)data->mode;
->>>>>>>>>> +
->>>>>>>>>> +	ret = tegra_pcie_dw_parse_dt(pcie);
->>>>>>>>>> +	if (ret < 0) {
->>>>>>>>>> +		dev_err(dev, "Failed to parse device tree: %d\n", ret);
->>>>>>>>>> +		return ret;
->>>>>>>>>> +	}
->>>>>>>>>> +
->>>>>>>>>> +	pcie->pex_ctl_supply = devm_regulator_get(dev, "vddio-pex-ctl");
->>>>>>>>>> +	if (IS_ERR(pcie->pex_ctl_supply)) {
->>>>>>>>>> +		dev_err(dev, "Failed to get regulator: %ld\n",
->>>>>>>>>> +			PTR_ERR(pcie->pex_ctl_supply));
->>>>>>>>>> +		return PTR_ERR(pcie->pex_ctl_supply);
->>>>>>>>>> +	}
->>>>>>>>>> +
->>>>>>>>>> +	pcie->core_clk = devm_clk_get(dev, "core");
->>>>>>>>>> +	if (IS_ERR(pcie->core_clk)) {
->>>>>>>>>> +		dev_err(dev, "Failed to get core clock: %ld\n",
->>>>>>>>>> +			PTR_ERR(pcie->core_clk));
->>>>>>>>>> +		return PTR_ERR(pcie->core_clk);
->>>>>>>>>> +	}
->>>>>>>>>> +
->>>>>>>>>> +	pcie->appl_res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
->>>>>>>>>> +						      "appl");
->>>>>>>>>> +	if (!pcie->appl_res) {
->>>>>>>>>> +		dev_err(dev, "Failed to find \"appl\" region\n");
->>>>>>>>>> +		return PTR_ERR(pcie->appl_res);
->>>>>>>>>> +	}
->>>>>>>>>> +	pcie->appl_base = devm_ioremap_resource(dev, pcie->appl_res);
->>>>>>>>>> +	if (IS_ERR(pcie->appl_base))
->>>>>>>>>> +		return PTR_ERR(pcie->appl_base);
->>>>>>>>>> +
->>>>>>>>>> +	pcie->core_apb_rst = devm_reset_control_get(dev, "apb");
->>>>>>>>>> +	if (IS_ERR(pcie->core_apb_rst)) {
->>>>>>>>>> +		dev_err(dev, "Failed to get APB reset: %ld\n",
->>>>>>>>>> +			PTR_ERR(pcie->core_apb_rst));
->>>>>>>>>> +		return PTR_ERR(pcie->core_apb_rst);
->>>>>>>>>> +	}
->>>>>>>>>> +
->>>>>>>>>> +	phys = devm_kcalloc(dev, pcie->phy_count, sizeof(*phys), GFP_KERNEL);
->>>>>>>>>> +	if (!phys)
->>>>>>>>>> +		return PTR_ERR(phys);
->>>>>>>>>> +
->>>>>>>>>> +	for (i = 0; i < pcie->phy_count; i++) {
->>>>>>>>>> +		name = kasprintf(GFP_KERNEL, "p2u-%u", i);
->>>>>>>>>> +		if (!name) {
->>>>>>>>>> +			dev_err(dev, "Failed to create P2U string\n");
->>>>>>>>>> +			return -ENOMEM;
->>>>>>>>>> +		}
->>>>>>>>>> +		phys[i] = devm_phy_get(dev, name);
->>>>>>>>>> +		kfree(name);
->>>>>>>>>> +		if (IS_ERR(phys[i])) {
->>>>>>>>>> +			ret = PTR_ERR(phys[i]);
->>>>>>>>>> +			dev_err(dev, "Failed to get PHY: %d\n", ret);
->>>>>>>>>> +			return ret;
->>>>>>>>>> +		}
->>>>>>>>>> +	}
->>>>>>>>>> +
->>>>>>>>>> +	pcie->phys = phys;
->>>>>>>>>> +
->>>>>>>>>> +	dbi_res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dbi");
->>>>>>>>>> +	if (!dbi_res) {
->>>>>>>>>> +		dev_err(dev, "Failed to find \"dbi\" region\n");
->>>>>>>>>> +		return PTR_ERR(dbi_res);
->>>>>>>>>> +	}
->>>>>>>>>> +	pcie->dbi_res = dbi_res;
->>>>>>>>>> +
->>>>>>>>>> +	pci->dbi_base = devm_ioremap_resource(dev, dbi_res);
->>>>>>>>>> +	if (IS_ERR(pci->dbi_base))
->>>>>>>>>> +		return PTR_ERR(pci->dbi_base);
->>>>>>>>>> +
->>>>>>>>>> +	/* Tegra HW locates DBI2 at a fixed offset from DBI */
->>>>>>>>>> +	pci->dbi_base2 = pci->dbi_base + 0x1000;
->>>>>>>>>> +
->>>>>>>>>> +	atu_dma_res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
->>>>>>>>>> +						   "atu_dma");
->>>>>>>>>> +	if (!atu_dma_res) {
->>>>>>>>>> +		dev_err(dev, "Failed to find \"atu_dma\" region\n");
->>>>>>>>>> +		return PTR_ERR(atu_dma_res);
->>>>>>>>>> +	}
->>>>>>>>>> +	pcie->atu_dma_res = atu_dma_res;
->>>>>>>>>> +	pci->atu_base = devm_ioremap_resource(dev, atu_dma_res);
->>>>>>>>>> +	if (IS_ERR(pci->atu_base))
->>>>>>>>>> +		return PTR_ERR(pci->atu_base);
->>>>>>>>>> +
->>>>>>>>>> +	pcie->core_rst = devm_reset_control_get(dev, "core");
->>>>>>>>>> +	if (IS_ERR(pcie->core_rst)) {
->>>>>>>>>> +		dev_err(dev, "Failed to get core reset: %ld\n",
->>>>>>>>>> +			PTR_ERR(pcie->core_rst));
->>>>>>>>>> +		return PTR_ERR(pcie->core_rst);
->>>>>>>>>> +	}
->>>>>>>>>> +
->>>>>>>>>> +	pp->irq = platform_get_irq_byname(pdev, "intr");
->>>>>>>>>> +	if (!pp->irq) {
->>>>>>>>>> +		dev_err(dev, "Failed to get \"intr\" interrupt\n");
->>>>>>>>>> +		return -ENODEV;
->>>>>>>>>> +	}
->>>>>>>>>> +
->>>>>>>>>> +	ret = devm_request_irq(dev, pp->irq, tegra_pcie_irq_handler,
->>>>>>>>>> +			       IRQF_SHARED, "tegra-pcie-intr", pcie);
->>>>>>>>>> +	if (ret) {
->>>>>>>>>> +		dev_err(dev, "Failed to request IRQ %d: %d\n", pp->irq, ret);
->>>>>>>>>> +		return ret;
->>>>>>>>>> +	}
->>>>>>>>>> +
->>>>>>>>>> +	pcie->bpmp = tegra_bpmp_get(dev);
->>>>>>>>>> +	if (IS_ERR(pcie->bpmp))
->>>>>>>>>> +		return PTR_ERR(pcie->bpmp);
->>>>>>>>>> +
->>>>>>>>>> +	platform_set_drvdata(pdev, pcie);
->>>>>>>>>> +
->>>>>>>>>> +	if (pcie->mode == DW_PCIE_RC_TYPE) {
->>>>>>>>>> +		ret = tegra_pcie_config_rp(pcie);
->>>>>>>>>> +		if (ret && ret != -ENOMEDIUM)
->>>>>>>>>> +			goto fail;
->>>>>>>>>> +		else
->>>>>>>>>> +			return 0;
->>>>>>>>>
->>>>>>>>> So if the link is not up we still go ahead and make probe
->>>>>>>>> succeed. What for ?
->>>>>>>> We may need root port to be available to support hot-plugging of
->>>>>>>> endpoint devices, so, we don't fail the probe.
->>>>>>>
->>>>>>> We need it or we don't. If you do support hotplugging of endpoint
->>>>>>> devices point me at the code, otherwise link up failure means
->>>>>>> failure to probe.
->>>>>> Currently hotplugging of endpoint is not supported, but it is one of
->>>>>> the use cases that we may add support for in future.
->>>>>
->>>>> You should elaborate on this, I do not understand what you mean,
->>>>> either the root port(s) supports hotplug or it does not.
->>>>>
->>>>>> But, why should we fail probe if link up doesn't happen? As such,
->>>>>> nothing went wrong in terms of root port initialization right?  I
->>>>>> checked other DWC based implementations and following are not failing
->>>>>> the probe pci-dra7xx.c, pcie-armada8k.c, pcie-artpec6.c, pcie-histb.c,
->>>>>> pcie-kirin.c, pcie-spear13xx.c, pci-exynos.c, pci-imx6.c,
->>>>>> pci-keystone.c, pci-layerscape.c
->>>>>>
->>>>>> Although following do fail the probe if link is not up.  pcie-qcom.c,
->>>>>> pcie-uniphier.c, pci-meson.c
->>>>>>
->>>>>> So, to me, it looks more like a choice we can make whether to fail the
->>>>>> probe or not and in this case we are choosing not to fail.
->>>>>
->>>>> I disagree. I had an offline chat with Bjorn and whether link-up should
->>>>> fail the probe or not depends on whether the root port(s) is hotplug
->>>>> capable or not and this in turn relies on the root port "Slot
->>>>> implemented" bit in the PCI Express capabilities register.
->>>>>
->>>>> It is a choice but it should be based on evidence.
->>>>>
->>>>> Lorenzo
->>>> With Bjorn's latest comment on top of this, I think we are good not to fail
->>>> the probe here.
->>>>
->>>> - Vidya Sagar
->>>>>
->>>>
->>
+More info in commit logs.
+
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+
+Jose Abreu (26):
+  net: stmmac: xgmac: Fix XGMAC selftests
+  net: stmmac: xgmac: Implement MMC counters
+  net: stmmac: Fix issues when number of Queues >= 4
+  net: stmmac: xgmac: Implement set_mtl_tx_queue_weight()
+  net: stmmac: xgmac: Implement tx_queue_prio()
+  net: stmmac: Implement RSS and enable it in XGMAC core
+  net: stmmac: selftests: Add RSS test
+  net: stmmac: Implement VLAN Hash Filtering in XGMAC
+  net: stmmac: selftests: Add test for VLAN and Double VLAN Filtering
+  net: stmmac: Implement Safety Features in XGMAC core
+  net: stmmac: Add Flexible RX Parser support in XGMAC
+  net: stmmac: tc: Do not return a fragment entry
+  net: stmmac: selftests: Add a selftest for Flexible RX Parser
+  net: stmmac: Get correct timestamp values from XGMAC
+  net: stmmac: Prepare to add Split Header support
+  net: stmmac: xgmac: Correctly return that RX descriptor is not last
+    one
+  net: stmmac: Add Split Header support and enable it in XGMAC cores
+  net: stmmac: dwxgmac: Add Flexible PPS support
+  net: stmmac: Add ethtool register dump for XGMAC cores
+  net: stmmac: Add a counter for Split Header packets
+  net: stmmac: Add support for SA Insertion/Replacement in XGMAC cores
+  net: stmmac: selftests: Add tests for SA Insertion/Replacement
+  net: stmmac: xgmac: Add EEE support
+  net: stmmac: Add support for VLAN Insertion Offload
+  net: stmmac: selftests: Add selftest for VLAN TX Offload
+  net: stmmac: selftests: Return proper error code to userspace
+
+ drivers/net/ethernet/stmicro/stmmac/common.h       |  16 +
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c  |   4 +
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     | 135 +++-
+ .../net/ethernet/stmicro/stmmac/dwxgmac2_core.c    | 880 ++++++++++++++++++++-
+ .../net/ethernet/stmicro/stmmac/dwxgmac2_descs.c   | 118 ++-
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c |  41 +-
+ drivers/net/ethernet/stmicro/stmmac/hwif.c         |   4 +-
+ drivers/net/ethernet/stmicro/stmmac/hwif.h         |  47 ++
+ drivers/net/ethernet/stmicro/stmmac/mmc.h          |   9 +
+ drivers/net/ethernet/stmicro/stmmac/mmc_core.c     | 192 +++++
+ drivers/net/ethernet/stmicro/stmmac/stmmac.h       |  21 +
+ .../net/ethernet/stmicro/stmmac/stmmac_ethtool.c   | 106 ++-
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  | 380 +++++++--
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 513 +++++++++++-
+ drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c    |   2 +-
+ include/linux/stmmac.h                             |   1 +
+ 16 files changed, 2361 insertions(+), 108 deletions(-)
+
+-- 
+2.7.4
 
 
 _______________________________________________
