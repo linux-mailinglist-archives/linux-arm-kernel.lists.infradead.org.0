@@ -2,81 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AB1582196
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 18:22:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D466D821B8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 18:27:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JgzMVYavPzsQiQ3W2PhjNkwgOfIvw0pUFj4aXoTzad0=; b=LBlC6f9iVSu5cV
-	4dlt/+3KgWAeP7RGB0xV6U72hK1ayJNNjpHFInD2b1EKOjpG5sX078l5N0bdIef8tUEGd+/8G6aAS
-	3/Q/7k0WjgAAUkl9RGL6ybDa3xmai8Jy9jZjp8kglzt5EvS3if87EHZ0mrL0FszzFsXdRb0+SeRPk
-	UgSKrkAfM/GLrRel/Ht2HSCbFeK4T2nDcEAR+ClTYsP2jhAUKfGkEOc2xJ0ZQmequk5GALo+RqfW1
-	z3Ml6Wn/4EEANdsqIPGF01OWzioiUX0Vj3QRgz3EGm+sm+xOjljHNmivNGUMgvcyvUFU8nTvsdsWh
-	arWv7jXWUh0yzwXztiJw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5JLjmTjEBo3L00UBcYVy0cZpgDVJ+/uczk/6iPSfVMs=; b=IAU
+	qFc0hmxAQ75dHXQDQZbCysRN2M/E9jjUeUNmovc9ACJu6OzdxNI7YV2fgBUDmK9hb2valJcSkJ1GS
+	lYzm8p4tq/gvIbOEr4rHgtNSNQiIZbOGzuvj9QCdlyz6PDzzKjAGUZl9j91kzjva6MzixnMmrQuiD
+	lyec9DAVpgkXXZmZxlv5kG5mDw9GZGSFMDKaVs2cSCONJvnuKffBp5fAoXgMN9NHeq6rdCx21i832
+	ZgD3XZjevETLbQE5dsWRZCQltsp+kpHi5d5ITvBCjAPDr+HmmCDiwQsvq8lsv0+ZJZVVHig6bh9uX
+	ES5v7KmbU/qWS912NJa0zNnA3QScEsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hufkS-0005lG-4p; Mon, 05 Aug 2019 16:22:12 +0000
-Received: from mail-wr1-f68.google.com ([209.85.221.68])
+	id 1hufpg-0007QM-B5; Mon, 05 Aug 2019 16:27:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hufkF-0005kx-Fk
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 16:22:00 +0000
-Received: by mail-wr1-f68.google.com with SMTP id c2so81794140wrm.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 09:21:58 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=jal0TcotIi9KxsqXfi98IU+PYGjY1Ea3c2mtMMhhCOg=;
- b=TAeXD5A3Sb/nfHiD8A8zBHoAXRzH46uuhtNq3i3MNIMJZIXzVGe2FfFvKgjG9csdZr
- 7ZEiE4CU6qhv65/1VZD2S1QCLip8VgPC1n0/hdos3moEcjE/TH9zfe7VMhCZXtLoQ9z1
- Wlj7fp860vGm2rgIEliSyDtf5i2+sSxwb8MgBEn+HPQXh9HHzOGVlIrf4InRejUvNmy8
- YOSPa63Pwzg3/j9CGUPXQI0i+usGZ5Os4Zg0uPnGgJ8CtgQ3kqa5s2UMuFcx4VoD9/3K
- MjQ8/WfqK5Y1pSJsGkIh05OkzmZmiR7u4scavUv0YFtqVZ6edkUmxwhSD1DYKWWdM9/C
- DJRw==
-X-Gm-Message-State: APjAAAWaIoWU9Tffzm/cWty1VnhSM00e0SUbOggOLUnngKrCYyFhw71j
- PleGlUv3fR7+/zwmvVqFS14=
-X-Google-Smtp-Source: APXvYqzqjlVLiKS5Ec3RFHkLS+GK0gh7fzmAOkFLgVA3+iIqRJre8uMWYuogV4JcxYwj/gUHU8fNrQ==
-X-Received: by 2002:a5d:4f01:: with SMTP id c1mr81969945wru.43.1565022117327; 
- Mon, 05 Aug 2019 09:21:57 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.124])
- by smtp.googlemail.com with ESMTPSA id
- f192sm86229595wmg.30.2019.08.05.09.21.56
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 05 Aug 2019 09:21:56 -0700 (PDT)
-Date: Mon, 5 Aug 2019 18:21:54 +0200
+ id 1hufpR-0007Q0-Uz
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 16:27:23 +0000
+Received: from localhost.localdomain (unknown [194.230.155.124])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DE5372086D;
+ Mon,  5 Aug 2019 16:27:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565022441;
+ bh=BF81nBIoEOTLmRx1WDuhjfa7Ltb4DYluwOsPRykfpe4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=jC2iVxlu92APDr0+Xi8gKJPJMwjsI4nzUSXhX7rjZNPBBUEuZCL+uqiZZHU/zrapa
+ CmYSSzImurT99vghvoPbHDhxEZyv2OhqxtIt1Y4wYg2p7D/w3KZnujhVK8LNEqCGpP
+ qIQ49Bge/Hw1fNdsXHFwGY7x1v7m9RVOMP9s4nB8=
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Nishka Dasgupta <nishkadg.linux@gmail.com>
-Subject: Re: [PATCH] pinctrl: samsung: exynos: Add of_node_put() before return
-Message-ID: <20190805162154.GA24769@kozik-lap>
-References: <20190804160200.5139-1-nishkadg.linux@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190804160200.5139-1-nishkadg.linux@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+To: Tomasz Figa <tomasz.figa@gmail.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/4] pinctrl: samsung: Fix device node refcount leaks in
+ Exynos wakeup controller init
+Date: Mon,  5 Aug 2019 18:27:07 +0200
+Message-Id: <20190805162710.7789-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_092159_529831_A992091B 
-X-CRM114-Status: GOOD (  10.79  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190805_092722_026877_76407BF1 
+X-CRM114-Status: GOOD (  12.59  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.68 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,28 +77,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linus.walleij@linaro.org,
- tomasz.figa@gmail.com, linux-gpio@vger.kernel.org, kgene@kernel.org,
- s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org
+Cc: Chanwoo Choi <cw00.choi@samsung.com>, notify@kernel.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 04, 2019 at 09:32:00PM +0530, Nishka Dasgupta wrote:
-> Each iteration of for_each_child_of_node puts the previous node, but in
-> the case of a return from the middle of the loop, there is no put, thus
-> causing a memory leak. Hence add an of_node_put before the return.
-> Issue found with Coccinelle.
-> 
-> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
-> ---
->  drivers/pinctrl/samsung/pinctrl-exynos.c | 4 +++-
+In exynos_eint_wkup_init() the for_each_child_of_node() loop is used
+with a break to find a matching child node.  Although each iteration of
+for_each_child_of_node puts the previous node, but early exit from loop
+misses it.  This leads to leak of device node.
 
-Thanks, applied.
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+---
+ drivers/pinctrl/samsung/pinctrl-exynos.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-Best regards,
-Krzysztof
+diff --git a/drivers/pinctrl/samsung/pinctrl-exynos.c b/drivers/pinctrl/samsung/pinctrl-exynos.c
+index ebc27b06718c..8d2c33bba13e 100644
+--- a/drivers/pinctrl/samsung/pinctrl-exynos.c
++++ b/drivers/pinctrl/samsung/pinctrl-exynos.c
+@@ -504,6 +504,7 @@ int exynos_eint_wkup_init(struct samsung_pinctrl_drv_data *d)
+ 				bank->nr_pins, &exynos_eint_irqd_ops, bank);
+ 		if (!bank->irq_domain) {
+ 			dev_err(dev, "wkup irq domain add failed\n");
++			of_node_put(wkup_np);
+ 			return -ENXIO;
+ 		}
+ 
+@@ -518,8 +519,10 @@ int exynos_eint_wkup_init(struct samsung_pinctrl_drv_data *d)
+ 		weint_data = devm_kcalloc(dev,
+ 					  bank->nr_pins, sizeof(*weint_data),
+ 					  GFP_KERNEL);
+-		if (!weint_data)
++		if (!weint_data) {
++			of_node_put(wkup_np);
+ 			return -ENOMEM;
++		}
+ 
+ 		for (idx = 0; idx < bank->nr_pins; ++idx) {
+ 			irq = irq_of_parse_and_map(bank->of_node, idx);
+@@ -536,10 +539,13 @@ int exynos_eint_wkup_init(struct samsung_pinctrl_drv_data *d)
+ 		}
+ 	}
+ 
+-	if (!muxed_banks)
++	if (!muxed_banks) {
++		of_node_put(wkup_np);
+ 		return 0;
++	}
+ 
+ 	irq = irq_of_parse_and_map(wkup_np, 0);
++	of_node_put(wkup_np);
+ 	if (!irq) {
+ 		dev_err(dev, "irq number for muxed EINTs not found\n");
+ 		return 0;
+-- 
+2.17.1
 
 
 _______________________________________________
