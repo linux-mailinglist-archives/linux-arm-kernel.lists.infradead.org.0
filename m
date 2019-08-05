@@ -2,100 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6565D817A3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:55:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24199817A1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:55:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=iPBOgKtYjFuJDQCY1szZQlCugAyt1ma54SDqNyiTxFY=; b=qgJm/yN4pKrDFaMzJcVy6Hq07r
-	iQgXNLnioGYN9lCFkpTmoK+FXRIetRJ7/WhiKGYaSZ5T3fQHvgnJpV6KujybZBuN2QXSZSJu7yCXE
-	zbYhXHIIjmHNa0Rp+G5DNq/XxESDlQpp0zF6AcQI6dsHiGjq/TTr3t2N6/xHaK6eBnOdnQ1H/kf1i
-	phOBVpKl2qSjP6NUdEyGb/GE2Bw1wcEyVS3ZAOII9XRJarcI9PHtnO0HlKNkQbeWKoyIz3RZDzxeG
-	8T5leQYSkNqPD1YSnnDdz+qfKMNIRl6Sj+9waeNb3Sz7cag5TLttwp35rIjGkw3Eq1PumVUupO1VC
-	KuteAatw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yhb3UuXga9u/KAPsHx/yl8I8x78Nzo3lNkcXg3aSneY=; b=Ft8ZsFRr+oADHU
+	bmUSTb73gavGlspwt1wsl3+BPNtQVwcMbnpYqlcOXwc1fRLrmbNgJmZmRznd1G8gu+idLB5cDSmKf
+	3ZwA8T41wYen8Kz+SGjM+bfh8RaqcqGDfaZnccHwmfMsPvsrXf8LwXNLRUm3Yx0Sb68SDPAvuuYSz
+	LtV6PCm1oocL5b4sMSbxfWm/4r64f8Fx+N6tDJcx+otw3T5KVXebbpwsLQKgFiqW/rIEanmTYIMxp
+	+VeoQRGT5/xkih1jfDkTOV6EHOb0gx4kfLutuB8YFYlcwo+z2508Llhf0NStR2ZSC7uUp1tYZ8qBY
+	LCDSH2cIKXFzKZ0DcvXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huaeU-0006e3-Cl; Mon, 05 Aug 2019 10:55:42 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
+	id 1huadz-0005HO-BP; Mon, 05 Aug 2019 10:55:12 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huadO-0005HP-AI
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:54:36 +0000
-Received: by mail-ed1-f67.google.com with SMTP id k8so78194373eds.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 03:54:33 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:content-transfer-encoding;
- bh=Sv8pVXgrrDrbIAonY+C88fg7ixy9vYBYQXBP0fHLLv8=;
- b=rSq6wNf04JeVXAYPy5hVS9xldO9tfT4+9V8yDC/bB0k4ktfBGYCn6aI5M+T/X/tRv8
- z9JsIsyjTHc2gnEsKqOazc5RzSXIjEN76P9YL+bMR0lrSUzKm5CN7sDUNIJmizHiYS/o
- gzlqn/bYgGZlChQ2eMK/iCiCPhKeL21f2aG1eBy6NrSeWqkLTOEDz9IK6sIyfjzihUbq
- 7JcPdsJ0VbNv05v1sa4bCeQxU7Ds84z+ApgdESyNuY18OcTetEaP7itLoqSsI2Uv2Qsj
- K/rSOYJnq2wPgvvatfgX0V7DP/D5PcU6e5VrFRYTbPXGFP2CbctllIP7/myZrD8pTSeU
- vYdA==
-X-Gm-Message-State: APjAAAUCLM95pODEMBtHFy04nQ7CPTRoaAua1nJL5MCQeY+G+w70ce2h
- 6y22zpL24nhCKkrqd+sdTxchB0RFwGY=
-X-Google-Smtp-Source: APXvYqzMQGv8cPjTGuHVzGt/UZt+SdS+Jts+VaZUi+DIcf5pbI+6viSG592bDhANt6+gaEUieclw5Q==
-X-Received: by 2002:a50:fa83:: with SMTP id w3mr132957626edr.47.1565002471644; 
- Mon, 05 Aug 2019 03:54:31 -0700 (PDT)
-Received: from mail-wm1-f43.google.com (mail-wm1-f43.google.com.
- [209.85.128.43])
- by smtp.gmail.com with ESMTPSA id y22sm19011095edw.94.2019.08.05.03.54.30
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Mon, 05 Aug 2019 03:54:31 -0700 (PDT)
-Received: by mail-wm1-f43.google.com with SMTP id g67so68427489wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 03:54:30 -0700 (PDT)
-X-Received: by 2002:a1c:c545:: with SMTP id v66mr18768923wmf.51.1565002470670; 
- Mon, 05 Aug 2019 03:54:30 -0700 (PDT)
+ id 1huadJ-0005Gx-EB
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:54:31 +0000
+Received: from pendragon.ideasonboard.com
+ (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
+ [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id C82CF2F9;
+ Mon,  5 Aug 2019 12:54:26 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1565002467;
+ bh=RwQ5mnU7RUBzTgtf9QVDKC/TD/uPXzpxPEkwiDIp9go=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=o1GVXvYZTbKujwlbSWjhyKHPW4owM5I0zlEmcs35W5UJBLn/uX9Y1tgQEVNlHfCbu
+ /nMXTotTJmqYaQ8CHoaAUSMqptXHOSOgKzy2jlzBudupzdlL+rtr7/MD3KkjGOYseq
+ vW5cLPFJmFIz7+5Iycxf8kVVcCzLg1Lzyt0SrqHE=
+Date: Mon, 5 Aug 2019 13:54:25 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Sam Ravnborg <sam@ravnborg.org>
+Subject: Re: [PATCH v1 12/16] drm/panel: use inline comments in drm_panel.h
+Message-ID: <20190805105425.GG29747@pendragon.ideasonboard.com>
+References: <20190804201637.1240-1-sam@ravnborg.org>
+ <20190804201637.1240-13-sam@ravnborg.org>
 MIME-Version: 1.0
-References: <20190412120730.473-1-megous@megous.com>
- <20190412120730.473-3-megous@megous.com>
- <CAGb2v675j-aCLMgPJOzr9yx1XxsUvHRr_K7VnL=p8mSdwpu2jw@mail.gmail.com>
- <20190805104529.z3mex3m2tss7lzlr@core.my.home>
-In-Reply-To: <20190805104529.z3mex3m2tss7lzlr@core.my.home>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Mon, 5 Aug 2019 18:54:17 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67pcxdxjdRX_HN4133A32eA566DDtUJUKV7pqzxDtOaeg@mail.gmail.com>
-Message-ID: <CAGb2v67pcxdxjdRX_HN4133A32eA566DDtUJUKV7pqzxDtOaeg@mail.gmail.com>
-Subject: Re: [linux-sunxi] [PATCH 2/3] rtc: sun6i: Add support for H6 RTC
-To: =?UTF-8?Q?Ond=C5=99ej_Jirman?= <megous@megous.com>, 
- Chen-Yu Tsai <wens@csie.org>, Alessandro Zummo <a.zummo@towertech.it>, 
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, 
- Mark Rutland <mark.rutland@arm.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-rtc@vger.kernel.org, devicetree <devicetree@vger.kernel.org>, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>
+Content-Disposition: inline
+In-Reply-To: <20190804201637.1240-13-sam@ravnborg.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_035434_467630_94D30E15 
-X-CRM114-Status: GOOD (  31.65  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190805_035429_858425_016ECC59 
+X-CRM114-Status: GOOD (  24.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,93 +75,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Fabio Estevam <festevam@gmail.com>, Marek Vasut <marex@denx.de>,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Joonyoung Shim <jy0922.shim@samsung.com>,
+ Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Alison Wang <alison.wang@nxp.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Gwan-gyeong Mun <gwan-gyeong.mun@intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, linux-samsung-soc@vger.kernel.org,
+ Stefan Agner <stefan@agner.ch>, linux-tegra@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
+ Allison Randal <allison@lohutok.net>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Shawn Guo <shawnguo@kernel.org>, Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Enrico Weigelt <info@metux.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBBdWcgNSwgMjAxOSBhdCA2OjQ1IFBNIE9uZMWZZWogSmlybWFuIDxtZWdvdXNAbWVn
-b3VzLmNvbT4gd3JvdGU6Cj4KPiBPbiBNb24sIEF1ZyAwNSwgMjAxOSBhdCAwNjoxNjoxNFBNICsw
-ODAwLCBDaGVuLVl1IFRzYWkgd3JvdGU6Cj4gPiBPbiBGcmksIEFwciAxMiwgMjAxOSBhdCA4OjA3
-IFBNIG1lZ291cyB2aWEgbGludXgtc3VueGkKPiA+IDxsaW51eC1zdW54aUBnb29nbGVncm91cHMu
-Y29tPiB3cm90ZToKPiA+ID4KPiA+ID4gRnJvbTogT25kcmVqIEppcm1hbiA8bWVnb3VzQG1lZ291
-cy5jb20+Cj4gPiA+Cj4gPiA+IFJUQyBvbiBINiBpcyBtb3N0bHkgdGhlIHNhbWUgYXMgb24gSDUg
-YW5kIEgzLiBJdCBoYXMgc2xpZ2h0IGRpZmZlcmVuY2VzCj4gPiA+IG1vc3RseSBpbiBmZWF0dXJl
-cyB0aGF0IGFyZSBub3QgeWV0IHN1cHBvcnRlZCBieSB0aGlzIGRyaXZlci4KPiA+ID4KPiA+ID4g
-U29tZSBkaWZmZXJlbmNlcyBhcmUgYWxyZWFkeSBzdGF0ZWQgaW4gdGhlIGNvbW1lbnRzIGluIGV4
-aXN0aW5nIGNvZGUuCj4gPiA+IE9uZSBvdGhlciBkaWZmZXJlbmNlIGlzIHRoYXQgSDYgaGFzIGV4
-dHJhIGJpdCBpbiBMT1NDX0NUUkxfUkVHLCBjYWxsZWQKPiA+ID4gRVhUX0xPU0NfRU4gdG8gZW5h
-YmxlL2Rpc2FibGUgZXh0ZXJuYWwgbG93IHNwZWVkIGNyeXN0YWwgb3NjaWxsYXRvci4KPiA+ID4K
-PiA+ID4gSXQgYWxzbyBoYXMgYml0IEVYVF9MT1NDX1NUQSBpbiBMT1NDX0FVVE9fU1dUX1NUQV9S
-RUcsIHRvIGNoZWNrIHdoZXRoZXIKPiA+ID4gZXh0ZXJuYWwgbG93IHNwZWVkIG9zY2lsbGF0b3Ig
-aXMgd29ya2luZyBjb3JyZWN0bHkuCj4gPiA+Cj4gPiA+IFRoaXMgcGF0Y2ggYWRkcyBzdXBwb3J0
-IGZvciBlbmFibGluZyBMT1NDIHdoZW4gbmVjZXNzYXJ5Ogo+ID4gPgo+ID4gPiAtIGR1cmluZyBy
-ZXBhcmVudGluZwo+ID4gPiAtIHdoZW4gcHJvYmluZyB0aGUgY2xvY2sKPiA+ID4KPiA+ID4gSDYg
-YWxzbyBoYXMgY2FwYWNiaWxpdHkgdG8gYXV0b21hdGljYWxseSByZXBhcmVudCBSVEMgY2xvY2sg
-ZnJvbQo+ID4gPiBleHRlcm5hbCBjcnlzdGFsIG9zY2lsbGF0b3IsIHRvIGludGVybmFsIFJDIG9z
-Y2lsbGF0b3IsIGlmIGV4dGVybmFsCj4gPiA+IG9zY2lsbGF0b3IgZmFpbHMuIFRoaXMgaXMgZW5h
-YmxlZCBieSBkZWZhdWx0LiBEaXNhYmxlIGl0IGR1cmluZwo+ID4gPiBwcm9iZS4KPiA+ID4KPiA+
-ID4gU2lnbmVkLW9mZi1ieTogT25kcmVqIEppcm1hbiA8bWVnb3VzQG1lZ291cy5jb20+Cj4gPiA+
-IC0tLQo+ID4gPiAgZHJpdmVycy9ydGMvcnRjLXN1bjZpLmMgfCA0MCArKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKysrKysrKysrKy0tCj4gPiA+ICAxIGZpbGUgY2hhbmdlZCwgMzggaW5zZXJ0
-aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKPiA+ID4KPiA+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-cnRjL3J0Yy1zdW42aS5jIGIvZHJpdmVycy9ydGMvcnRjLXN1bjZpLmMKPiA+ID4gaW5kZXggMTFm
-NTZkZTUyMTc5Li43Mzc1YTUzMGM1NjUgMTAwNjQ0Cj4gPiA+IC0tLSBhL2RyaXZlcnMvcnRjL3J0
-Yy1zdW42aS5jCj4gPiA+ICsrKyBiL2RyaXZlcnMvcnRjL3J0Yy1zdW42aS5jCj4gPiA+IEBAIC00
-MSw5ICs0MSwxMSBAQAo+ID4gPiAgLyogQ29udHJvbCByZWdpc3RlciAqLwo+ID4gPiAgI2RlZmlu
-ZSBTVU42SV9MT1NDX0NUUkwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDB4MDAwMAo+
-ID4gPiAgI2RlZmluZSBTVU42SV9MT1NDX0NUUkxfS0VZICAgICAgICAgICAgICAgICAgICAoMHgx
-NmFhIDw8IDE2KQo+ID4gPiArI2RlZmluZSBTVU42SV9MT1NDX0NUUkxfQVVUT19TV1RfQllQQVNT
-ICAgICAgICAgICAgICAgIEJJVCgxNSkKPiA+Cj4gPiBNYW51YWwgc2F5cyBiaXQgMTQ/IE9yIGlz
-IHRoaXMgZGlmZmVyZW50IGZyb20gTE9TQ19BVVRPX1NXVF9FTj8KPiA+Cj4gPiBUaGUgcmVzdCBs
-b29rcyBvay4KPgo+IFRvIGdpdmUgeW91IG1vcmUgaW5mb3JtYXRpb24uIFRoaXMgaXMgYSBuZXcg
-dGhpbmcgaW4gSDYgQlNQLCBjb21wYXJlZAo+IHRvIEJTUHMgZm9yIHByZXZpb3VzIFNvQ3MgKEg1
-L0gzKS4KPgo+ICAyMCAjZGVmaW5lIFJFR19DTEszMktfQVVUT19TV1RfRU4gICAgICAgICAgICAg
-ICAgICBCSVQoMTQpCj4gIDIxICNkZWZpbmUgUkVHX0NMSzMyS19BVVRPX1NXVF9CWVBBU1MgICAg
-ICAgICAgICAgIEJJVCgxNSkKPgo+IEluaXQgc2VxdWVuY2UgY2hhbmdlZCBpbiBINiBCU1AgdG86
-Cj4KPiA2NDYgICAgICAgICAvKgo+IDY0NyAgICAgICAgICAqIFN0ZXAxOiBzZWxlY3QgUlRDIGNs
-b2NrIHNvdXJjZQo+IDY0OCAgICAgICAgICAqLwo+IDY0OSAgICAgICAgIHRtcF9kYXRhID0gcmVh
-ZGwoY2hpcC0+YmFzZSArIFNVTlhJX0xPU0NfQ1RSTCk7Cj4gNjUwICAgICAgICAgdG1wX2RhdGEg
-Jj0gKH5SRUdfQ0xLMzJLX0FVVE9fU1dUX0VOKTsKPiA2NTEKPiA2NTIgICAgICAgICAvKiBEaXNh
-YmxlIGF1dG8gc3dpdGNoIGZ1bmN0aW9uICovCj4gNjUzICAgICAgICAgdG1wX2RhdGEgfD0gUkVH
-X0NMSzMyS19BVVRPX1NXVF9CWVBBU1M7Cj4gNjU0ICAgICAgICAgd3JpdGVsKHRtcF9kYXRhLCBj
-aGlwLT5iYXNlICsgU1VOWElfTE9TQ19DVFJMKTsKPiA2NTUKPiA2NTYgICAgICAgICB0bXBfZGF0
-YSA9IHJlYWRsKGNoaXAtPmJhc2UgKyBTVU5YSV9MT1NDX0NUUkwpOwo+IDY1NyAgICAgICAgIHRt
-cF9kYXRhIHw9IChSVENfU09VUkNFX0VYVEVSTkFMIHwgUkVHX0xPU0NDVFJMX01BR0lDKTsKPiA2
-NTggICAgICAgICB3cml0ZWwodG1wX2RhdGEsIGNoaXAtPmJhc2UgKyBTVU5YSV9MT1NDX0NUUkwp
-Owo+IDY1OQo+IDY2MCAgICAgICAgIC8qIFdlIG5lZWQgdG8gc2V0IEdTTSBhZnRlciBjaGFuZ2Ug
-Y2xvY2sgc291cmNlICovCj4gNjYxICAgICAgICAgdWRlbGF5KDEwKTsKPiA2NjIgICAgICAgICB0
-bXBfZGF0YSA9IHJlYWRsKGNoaXAtPmJhc2UgKyBTVU5YSV9MT1NDX0NUUkwpOwo+IDY2MyAgICAg
-ICAgIHRtcF9kYXRhIHw9IChFWFRfTE9TQ19HU00gfCBSRUdfTE9TQ0NUUkxfTUFHSUMpOwo+IDY2
-NCAgICAgICAgIHdyaXRlbCh0bXBfZGF0YSwgY2hpcC0+YmFzZSArIFNVTlhJX0xPU0NfQ1RSTCk7
-Cj4gNjY1CgpJIGRvbid0IGhhdmUgdGhpcyBpbiBteSBINiBCU1BzLiBPbmUgaXMgSDYgTGljaGVl
-IHYxLjEgZG93bmxvYWRlZCBmcm9tIFBpbmU2NC4KVGhlIGxpbmsgd2FzIGZyb20gbGludXgtc3Vu
-eGkgd2lraSdzIEg2IHBhZ2UuCgpUaGUgb3RoZXIgaXMgYSA0Ljkga2VybmVsIHRyZWUsIHdoaWNo
-IEkgYmVsaWV2ZSBpcyBmcm9tIEFsbHdpbm5lcidzIGdpdGh1YjoKCiAgICBodHRwczovL2dpdGh1
-Yi5jb20vQWxsd2lubmVyLUhvbWxldC9INi1CU1A0LjktbGludXgKCj4gRm9yIG9sZGVyIEJTUHMs
-IHRoZSBpbml0IHNlcXVlbmNlIGxvb2tlZCBsaWtlIHRoaXM6Cj4KPiA0ODIgICAgICAgICAvKgo+
-IDQ4MyAgICAgICAgICAqIFN0ZXAxOiBzZWxlY3QgUlRDIGNsb2NrIHNvdXJjZQo+IDQ4NCAgICAg
-ICAgICAqLwo+IDQ4NSAgICAgICAgIHRtcF9kYXRhID0gc3VueGlfcnRjX3JlYWQoU1VOWElfTE9T
-Q19DVFJMX1JFRyk7Cj4gNDg2ICAgICAgICAgdG1wX2RhdGEgJj0gKH5SRUdfQ0xLMzJLX0FVVE9f
-U1dUX0VOKTsKPiA0ODcgICAgICAgICB0bXBfZGF0YSB8PSAoUlRDX1NPVVJDRV9FWFRFUk5BTCB8
-IFJFR19MT1NDQ1RSTF9NQUdJQyk7Cj4gNDg4ICAgICAgICAgdG1wX2RhdGEgfD0gKEVYVF9MT1ND
-X0dTTSk7Cj4gNDg5ICAgICAgICAgc3VueGlfcnRjX3dyaXRlKHRtcF9kYXRhLCBTVU5YSV9MT1ND
-X0NUUkxfUkVHKTsKPiA0OTAKPgo+IEVYVF9MT1NDX0dTTSBoYXMgdmFsdWVzIDQgdmFsdWVzIGZy
-b20gbG93IHRvIGhpZ2gsIGFuZCBJIGd1ZXNzIGl0IGNvbmZpZ3VyZXMKPiBnYWluIGZvciB0aGUg
-b3NjaWxsYXRvcidzIGFtcGxpZmllciBpbiB0aGUgZmVlZGJhY2sgbG9vcCBvZiB0aGUgY2lyY3Vp
-dC4KPgo+IFNvIHRoZSBuZXcgY29kZSwgZm9yIHNvbWUgcmVhc29uIGNoYW5nZWQgZnJvbSBzaW5n
-bGUgd3JpdGUgdG8gc2VxdWVuY2UKPiBvZiBpbmRpdmlkdWFsIHdyaXRlcy9jb25maWcgc3RlcHM6
-Cj4KPiAxKSBkaXNhYmxlIGF1dG8tc3dpdGNoIGFuZCBlbmFibGUgYXV0by1zd2l0Y2ggYnlwYXNz
-Cj4gMikgc2VsZWN0IFJUQyBjbG9jayBzb3VyY2UgKHRvIExPU0MpCj4gICAod2FpdCkKCk1heWJl
-IGl0J3MgcG9zc2libGUgdG8gZ2xpdGNoIGlmIHRoZXNlIHR3byBhcmUgY29tYmluZWQ/Cgo+IDMp
-IGNvbmZpZ3VyZSBnYWluIG9uIHRoZSBMT1NDCj4KPiByZWdhcmRzLAo+ICAgICAgICAgby4KPgo+
-ID4gQ2hlbll1Cj4KPiAtLQo+IFlvdSByZWNlaXZlZCB0aGlzIG1lc3NhZ2UgYmVjYXVzZSB5b3Ug
-YXJlIHN1YnNjcmliZWQgdG8gdGhlIEdvb2dsZSBHcm91cHMgImxpbnV4LXN1bnhpIiBncm91cC4K
-PiBUbyB1bnN1YnNjcmliZSBmcm9tIHRoaXMgZ3JvdXAgYW5kIHN0b3AgcmVjZWl2aW5nIGVtYWls
-cyBmcm9tIGl0LCBzZW5kIGFuIGVtYWlsIHRvIGxpbnV4LXN1bnhpK3Vuc3Vic2NyaWJlQGdvb2ds
-ZWdyb3Vwcy5jb20uCj4gVG8gdmlldyB0aGlzIGRpc2N1c3Npb24gb24gdGhlIHdlYiwgdmlzaXQg
-aHR0cHM6Ly9ncm91cHMuZ29vZ2xlLmNvbS9kL21zZ2lkL2xpbnV4LXN1bnhpLzIwMTkwODA1MTA0
-NTI5LnozbWV4M20ydHNzN2x6bHIlNDBjb3JlLm15LmhvbWUuCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Sam,
+
+Thank you for the patch.
+
+On Sun, Aug 04, 2019 at 10:16:33PM +0200, Sam Ravnborg wrote:
+> Inline comments provide better space for additional comments.
+> Comments was slightly edited to follow the normal style,
+> but no change to actual content.
+> Used the opportuniy to change the order in drm_panel_funcs
+> to follow the order they will be used by a panel.
+> 
+> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> Cc: Maxime Ripard <maxime.ripard@bootlin.com>
+> Cc: Sean Paul <sean@poorly.run>
+> Cc: Thierry Reding <thierry.reding@gmail.com>
+> Cc: Sam Ravnborg <sam@ravnborg.org>
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+
+> ---
+>  include/drm/drm_panel.h | 82 +++++++++++++++++++++++++++++++++--------
+>  1 file changed, 66 insertions(+), 16 deletions(-)
+> 
+> diff --git a/include/drm/drm_panel.h b/include/drm/drm_panel.h
+> index 053d611656b9..5e62deea49ba 100644
+> --- a/include/drm/drm_panel.h
+> +++ b/include/drm/drm_panel.h
+> @@ -36,14 +36,6 @@ struct display_timing;
+>  
+>  /**
+>   * struct drm_panel_funcs - perform operations on a given panel
+> - * @disable: disable panel (turn off back light, etc.)
+> - * @unprepare: turn off panel
+> - * @prepare: turn on panel and perform set up
+> - * @enable: enable panel (turn on back light, etc.)
+> - * @get_modes: add modes to the connector that the panel is attached to and
+> - * return the number of modes added
+> - * @get_timings: copy display timings into the provided array and return
+> - * the number of display timings available
+>   *
+>   * The .prepare() function is typically called before the display controller
+>   * starts to transmit video data. Panel drivers can use this to turn the panel
+> @@ -69,31 +61,89 @@ struct display_timing;
+>   * the panel. This is the job of the .unprepare() function.
+>   */
+>  struct drm_panel_funcs {
+> -	int (*disable)(struct drm_panel *panel);
+> -	int (*unprepare)(struct drm_panel *panel);
+> +	/**
+> +	 * @prepare:
+> +	 *
+> +	 * Turn on panel and perform set up.
+> +	 */
+>  	int (*prepare)(struct drm_panel *panel);
+> +
+> +	/**
+> +	 * @enable:
+> +	 *
+> +	 * Enable panel (turn on back light, etc.).
+> +	 */
+>  	int (*enable)(struct drm_panel *panel);
+> +
+> +	/**
+> +	 * @disable:
+> +	 *
+> +	 * Disable panel (turn off back light, etc.).
+> +	 */
+> +	int (*disable)(struct drm_panel *panel);
+> +
+> +	/**
+> +	 * @unprepare:
+> +	 *
+> +	 * Turn off panel.
+> +	 */
+> +	int (*unprepare)(struct drm_panel *panel);
+> +
+> +	/**
+> +	 * @get_modes:
+> +	 *
+> +	 * Add modes to the connector that the panel is attached to and
+> +	 * return the number of modes added.
+> +	 */
+>  	int (*get_modes)(struct drm_panel *panel);
+> +
+> +	/**
+> +	 * @get_timings:
+> +	 *
+> +	 * Copy display timings into the provided array and return
+> +	 * the number of display timings available.
+> +	 */
+>  	int (*get_timings)(struct drm_panel *panel, unsigned int num_timings,
+>  			   struct display_timing *timings);
+>  };
+>  
+>  /**
+>   * struct drm_panel - DRM panel object
+> - * @drm: DRM device owning the panel
+> - * @connector: DRM connector that the panel is attached to
+> - * @dev: parent device of the panel
+> - * @link: link from panel device (supplier) to DRM device (consumer)
+> - * @funcs: operations that can be performed on the panel
+> - * @list: panel entry in registry
+>   */
+>  struct drm_panel {
+> +	/**
+> +	 * @drm:
+> +	 *
+> +	 * DRM device owning the panel.
+> +	 */
+>  	struct drm_device *drm;
+> +
+> +	/**
+> +	 * @connector:
+> +	 *
+> +	 * DRM connector that the panel is attached to.
+> +	 */
+>  	struct drm_connector *connector;
+> +
+> +	/**
+> +	 * @dev:
+> +	 *
+> +	 * Parent device of the panel.
+> +	 */
+>  	struct device *dev;
+>  
+> +	/**
+> +	 * @funcs:
+> +	 *
+> +	 * Operations that can be performed on the panel.
+> +	 */
+>  	const struct drm_panel_funcs *funcs;
+>  
+> +	/**
+> +	 * @list:
+> +	 *
+> +	 * Panel entry in registry.
+> +	 */
+>  	struct list_head list;
+>  };
+>  
+
+-- 
+Regards,
+
+Laurent Pinchart
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
