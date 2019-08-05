@@ -2,63 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 809EC8187F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 13:55:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6E46818B0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 14:03:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SjSnA47Hn6VD9tNo5ImasA8QSS9/oQjuAV1Leb582iY=; b=sMgRvSya3PjUO5
-	zG4O9A7kcg1i9rgqFjJlYN0lTVY4FyXnzFImse1rxngE9JLbqDeiVoNMKbxgofqoKlOgZTL1IWqQK
-	OgEHxjaSNmFWRriT67hzZJadmcHRjsvR7/4rVGWIpCDFzNUZErTOXSA/j4JBrOp3Hk7nxzxcCT0uC
-	nNdR6Ood6VthyJCYJoEv3n1pFmrS1Qu5LwwKWSq88XcVHJ5SaL0nQ+hH1sEP5u2o8xLC3MCrZ9GWh
-	Pxl+LPiVpJ7J9eFdXdO8/JRqIt+xSUWM7XB21LI2ENdz5QnnQeGKSP+shg9VQ24aW43d0saEPpSso
-	0hhcMQTo9aj74H7Sh0iA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZCZLXkYXez90+n0fST88pucJrBXPnq7+13wZFEullvE=; b=sZxBdKyV/PA6pl
+	B24mFzWf/j/PqSNpVTp8xK1nHUMVAmysKr//nus7Zr1XJRogLRl/QjzGzn844OLUEgqN8qb1Lttpd
+	NGu0grDhzd3iZYMn1lJj4QYfQ+2gPsaMRYPi7HT5SWQhAjbJv9WXEYuQeFaFOcGtJhmhBScOvTsYK
+	ZrQSuyKu18hBuLF4jI+DzE+Jj58y220doxl74c6Yx7s61oZcKDKO9I9mz/1X7xek4DUh0io6OVuzq
+	OlD0lBr6dLvg7U91dHVNFTynclFw5Nidh8bbtH2RgREvMyOeqeI0JjQgHcNjm5TGcdATWJk8L+2d4
+	Erv+2AgoRuTyBg2Z8fxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huba2-0006QE-HZ; Mon, 05 Aug 2019 11:55:10 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hubZo-0006Pp-R2
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 11:54:58 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id F12E320039;
- Mon,  5 Aug 2019 13:54:51 +0200 (CEST)
-Date: Mon, 5 Aug 2019 13:54:50 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Stefan Agner <stefan@agner.ch>
-Subject: Re: [PATCH v1 05/16] drm/fsl-dcu: fix opencoded use of drm_panel_*
-Message-ID: <20190805115450.GB16513@ravnborg.org>
-References: <20190804201637.1240-1-sam@ravnborg.org>
- <20190804201637.1240-6-sam@ravnborg.org>
- <8567eb4c916a0b1d134bd62112a11903@agner.ch>
+	id 1hubhu-0002rR-Jj; Mon, 05 Aug 2019 12:03:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hubhh-0002mL-Gl
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 12:03:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 32E221570;
+ Mon,  5 Aug 2019 05:03:04 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ EB0723F694; Mon,  5 Aug 2019 05:03:02 -0700 (PDT)
+Subject: Re: [PATCH v2 1/2] arm64: Relax ICC_PMR_EL1 accesses when
+ ICC_CTLR_EL1.PMHE is clear
+To: Will Deacon <will.deacon@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>
+References: <20190802125208.73162-1-maz@kernel.org>
+ <20190802125208.73162-2-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+Organization: Approximate
+Message-ID: <97b2d8bd-427a-ace0-cb5e-903ea58bd4a0@kernel.org>
+Date: Mon, 5 Aug 2019 13:03:01 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8567eb4c916a0b1d134bd62112a11903@agner.ch>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
- a=8AirrxEcAAAA:8 a=PwaXosQhBBzGxnEnWWMA:9 a=AW-sozriLiJjIiio:21
- a=XmQ5ioN8wHDAHHl3:21 a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22
- a=ST-jHhOKWsTCqRlWije3:22
+In-Reply-To: <20190802125208.73162-2-maz@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_045457_228106_50E68B0F 
-X-CRM114-Status: GOOD (  20.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190805_050305_652349_82CFE9A4 
+X-CRM114-Status: GOOD (  27.69  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.14 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,77 +65,238 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Marek Vasut <marex@denx.de>, linux-samsung-soc@vger.kernel.org,
- Sean Paul <sean@poorly.run>, Allison Randal <allison@lohutok.net>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Sam Ravnborg <sam.ravnborg@gmail.com>,
- Jonas Karlman <jonas@kwiboo.se>, Alison Wang <alison.wang@nxp.com>,
- Gwan-gyeong Mun <gwan-gyeong.mun@intel.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
- Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
- linux-tegra@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- Vincent Abriou <vincent.abriou@st.com>, linux-arm-kernel@lists.infradead.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, Enrico Weigelt <info@metux.net>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, liwei391@huawei.com,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, huawei.libin@huawei.com,
+ guohanjun@huawei.com, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stefan.
-
-Thanks for the feedback.
-
-On Mon, Aug 05, 2019 at 11:16:26AM +0200, Stefan Agner wrote:
-> On 2019-08-04 22:16, Sam Ravnborg wrote:
-> > Use drm_panel_get_modes() to access modes.
-> > This has a nice side effect to simplify the code.
-> > 
-> > Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-> > Cc: Stefan Agner <stefan@agner.ch>
-> > Cc: Alison Wang <alison.wang@nxp.com>
-> > ---
-> >  drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c | 10 +---------
-> >  1 file changed, 1 insertion(+), 9 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c
-> > b/drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c
-> > index 279d83eaffc0..a92fd6c70b09 100644
-> > --- a/drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c
-> > +++ b/drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c
-> > @@ -65,17 +65,9 @@ static const struct drm_connector_funcs
-> > fsl_dcu_drm_connector_funcs = {
-> >  static int fsl_dcu_drm_connector_get_modes(struct drm_connector *connector)
-> >  {
-> >  	struct fsl_dcu_drm_connector *fsl_connector;
-> > -	int (*get_modes)(struct drm_panel *panel);
-> > -	int num_modes = 0;
-> >  
-> >  	fsl_connector = to_fsl_dcu_connector(connector);
-> > -	if (fsl_connector->panel && fsl_connector->panel->funcs &&
-> > -	    fsl_connector->panel->funcs->get_modes) {
-> > -		get_modes = fsl_connector->panel->funcs->get_modes;
-> > -		num_modes = get_modes(fsl_connector->panel);
-> > -	}
-> > -
-> > -	return num_modes;
-> > +	return drm_panel_get_modes(fsl_connector->panel);
+On 02/08/2019 13:52, Marc Zyngier wrote:
+> From: Marc Zyngier <marc.zyngier@arm.com>
 > 
-> Oh, that old code looks rather messy. Thanks for the simplification!
+> The GICv3 architecture specification is incredibly misleading when it
+> comes to PMR and the requirement for a DSB. It turns out that this DSB
+> is only required if the CPU interface sends an Upstream Control
+> message to the redistributor in order to update the RD's view of PMR.
 > 
-> This behaves slightly different since it now returns -EINVAL or -ENOSYS,
-> but that is what we want.
+> This message is only sent when ICC_CTLR_EL1.PMHE is set, which isn't
+> the case in Linux. It can still be set from EL3, so some special care
+> is required. But the upshot is that in the (hopefuly large) majority
+> of the cases, we can drop the DSB altogether.
+> 
+> This relies on a new static key being set if the boot CPU has PMHE
+> set. The drawback is that this static key has to be exported to
+> modules.
+> 
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Marc Zyngier <maz@kernel.org>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
+> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+> ---
+>  arch/arm64/include/asm/barrier.h   | 12 ++++++++++++
+>  arch/arm64/include/asm/daifflags.h |  3 ++-
+>  arch/arm64/include/asm/irqflags.h  | 19 ++++++++++---------
+>  arch/arm64/include/asm/kvm_host.h  |  3 +--
+>  arch/arm64/kernel/entry.S          |  6 ++++--
+>  arch/arm64/kvm/hyp/switch.c        |  4 ++--
+>  drivers/irqchip/irq-gic-v3.c       | 17 +++++++++++++++++
+>  include/linux/irqchip/arm-gic-v3.h |  2 ++
+>  8 files changed, 50 insertions(+), 16 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/barrier.h b/arch/arm64/include/asm/barrier.h
+> index e0e2b1946f42..7d9cc5ec4971 100644
+> --- a/arch/arm64/include/asm/barrier.h
+> +++ b/arch/arm64/include/asm/barrier.h
+> @@ -29,6 +29,18 @@
+>  						 SB_BARRIER_INSN"nop\n",	\
+>  						 ARM64_HAS_SB))
+>  
+> +#ifdef CONFIG_ARM64_PSEUDO_NMI
+> +#define pmr_sync()						\
+> +	do {							\
+> +		extern struct static_key_false gic_pmr_sync;	\
+> +								\
+> +		if (static_branch_unlikely(&gic_pmr_sync))	\
+> +			dsb(sy);				\
+> +	} while(0)
+> +#else
+> +#define pmr_sync()	do {} while (0)
+> +#endif
+> +
+>  #define mb()		dsb(sy)
+>  #define rmb()		dsb(ld)
+>  #define wmb()		dsb(st)
+> diff --git a/arch/arm64/include/asm/daifflags.h b/arch/arm64/include/asm/daifflags.h
+> index 987926ed535e..00b16793505a 100644
+> --- a/arch/arm64/include/asm/daifflags.h
+> +++ b/arch/arm64/include/asm/daifflags.h
+> @@ -8,6 +8,7 @@
+>  #include <linux/irqflags.h>
+>  
+>  #include <asm/arch_gicv3.h>
+> +#include <asm/barrier.h>
+>  #include <asm/cpufeature.h>
+>  
+>  #define DAIF_PROCCTX		0
+> @@ -63,7 +64,7 @@ static inline void local_daif_restore(unsigned long flags)
+>  
+>  		if (system_uses_irq_prio_masking()) {
+>  			gic_write_pmr(GIC_PRIO_IRQON);
+> -			dsb(sy);
+> +			pmr_sync();
+>  		}
+>  	} else if (system_uses_irq_prio_masking()) {
+>  		u64 pmr;
+> diff --git a/arch/arm64/include/asm/irqflags.h b/arch/arm64/include/asm/irqflags.h
+> index 7872f260c9ee..a5e7115d2f93 100644
+> --- a/arch/arm64/include/asm/irqflags.h
+> +++ b/arch/arm64/include/asm/irqflags.h
+> @@ -8,6 +8,7 @@
+>  #ifdef __KERNEL__
+>  
+>  #include <asm/alternative.h>
+> +#include <asm/barrier.h>
+>  #include <asm/ptrace.h>
+>  #include <asm/sysreg.h>
+>  
+> @@ -36,14 +37,14 @@ static inline void arch_local_irq_enable(void)
+>  	}
+>  
+>  	asm volatile(ALTERNATIVE(
+> -		"msr	daifclr, #2		// arch_local_irq_enable\n"
+> -		"nop",
+> -		__msr_s(SYS_ICC_PMR_EL1, "%0")
+> -		"dsb	sy",
+> +		"msr	daifclr, #2		// arch_local_irq_enable",
+> +		__msr_s(SYS_ICC_PMR_EL1, "%0"),
+>  		ARM64_HAS_IRQ_PRIO_MASKING)
+>  		:
+>  		: "r" ((unsigned long) GIC_PRIO_IRQON)
+>  		: "memory");
+> +
+> +	pmr_sync();
+>  }
+>  
+>  static inline void arch_local_irq_disable(void)
+> @@ -118,14 +119,14 @@ static inline unsigned long arch_local_irq_save(void)
+>  static inline void arch_local_irq_restore(unsigned long flags)
+>  {
+>  	asm volatile(ALTERNATIVE(
+> -			"msr	daif, %0\n"
+> -			"nop",
+> -			__msr_s(SYS_ICC_PMR_EL1, "%0")
+> -			"dsb	sy",
+> -			ARM64_HAS_IRQ_PRIO_MASKING)
+> +		"msr	daif, %0",
+> +		__msr_s(SYS_ICC_PMR_EL1, "%0"),
+> +		ARM64_HAS_IRQ_PRIO_MASKING)
+>  		:
+>  		: "r" (flags)
+>  		: "memory");
+> +
+> +	pmr_sync();
+>  }
+>  
+>  #endif
+> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> index f656169db8c3..5ecb091c8576 100644
+> --- a/arch/arm64/include/asm/kvm_host.h
+> +++ b/arch/arm64/include/asm/kvm_host.h
+> @@ -600,8 +600,7 @@ static inline void kvm_arm_vhe_guest_enter(void)
+>  	 * local_daif_mask() already sets GIC_PRIO_PSR_I_SET, we just need a
+>  	 * dsb to ensure the redistributor is forwards EL2 IRQs to the CPU.
+>  	 */
+> -	if (system_uses_irq_prio_masking())
+> -		dsb(sy);
+> +	pmr_sync();
+>  }
+>  
+>  static inline void kvm_arm_vhe_guest_exit(void)
+> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+> index 9cdc4592da3e..6803dd5b4256 100644
+> --- a/arch/arm64/kernel/entry.S
+> +++ b/arch/arm64/kernel/entry.S
+> @@ -269,8 +269,10 @@ alternative_else_nop_endif
+>  alternative_if ARM64_HAS_IRQ_PRIO_MASKING
+>  	ldr	x20, [sp, #S_PMR_SAVE]
+>  	msr_s	SYS_ICC_PMR_EL1, x20
+> -	/* Ensure priority change is seen by redistributor */
+> -	dsb	sy
+> +	mrs_s	x21, SYS_ICC_CTLR_EL1
+> +	tbz	x21, #6, .L__skip_pmr_sync\@	// Check for ICC_CTLR_EL1.PMHE
+> +	dsb	sy				// Ensure priority change is seen by redistributor
+> +.L__skip_pmr_sync\@:
+>  alternative_else_nop_endif
+>  
+>  	ldp	x21, x22, [sp, #S_PC]		// load ELR, SPSR
+> diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+> index adaf266d8de8..eb131e09d207 100644
+> --- a/arch/arm64/kvm/hyp/switch.c
+> +++ b/arch/arm64/kvm/hyp/switch.c
+> @@ -12,7 +12,7 @@
+>  
+>  #include <kvm/arm_psci.h>
+>  
+> -#include <asm/arch_gicv3.h>
+> +#include <asm/barrier.h>
+>  #include <asm/cpufeature.h>
+>  #include <asm/kprobes.h>
+>  #include <asm/kvm_asm.h>
+> @@ -605,7 +605,7 @@ int __hyp_text __kvm_vcpu_run_nvhe(struct kvm_vcpu *vcpu)
+>  	 */
+>  	if (system_uses_irq_prio_masking()) {
+>  		gic_write_pmr(GIC_PRIO_IRQON | GIC_PRIO_PSR_I_SET);
+> -		dsb(sy);
+> +		pmr_sync();
+>  	}
+>  
+>  	vcpu = kern_hyp_va(vcpu);
+> diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
+> index 005b70e398b8..38fcb7eebdde 100644
+> --- a/drivers/irqchip/irq-gic-v3.c
+> +++ b/drivers/irqchip/irq-gic-v3.c
+> @@ -87,6 +87,15 @@ static DEFINE_STATIC_KEY_TRUE(supports_deactivate_key);
+>   */
+>  static DEFINE_STATIC_KEY_FALSE(supports_pseudo_nmis);
+>  
+> +/*
+> + * Global static key controlling whether an update to PMR allowing more
+> + * interrupts requires to be propagated to the redistributor (DSB SY).
+> + * And this needs to be exported for modules to be able to enable
+> + * interrupts...
+> + */
+> +DEFINE_STATIC_KEY_FALSE(gic_pmr_sync);
+> +EXPORT_SYMBOL(gic_pmr_sync);
+> +
+>  /* ppi_nmi_refs[n] == number of cpus having ppi[n + 16] set as NMI */
+>  static refcount_t *ppi_nmi_refs;
+>  
+> @@ -1494,6 +1503,14 @@ static void gic_enable_nmi_support(void)
+>  	for (i = 0; i < gic_data.ppi_nr; i++)
+>  		refcount_set(&ppi_nmi_refs[i], 0);
+>  
+> +	/*
+> +	 * Linux itself doesn't use 1:N distribution, so has no need to
+> +	 * set PMHE. The only reason to have it set is if EL3 requires it
+> +	 * (and we can't change it).
+> +	 */
+> +	if (read_sysreg_s(SYS_ICC_CTLR_EL1) & ICC_CTLR_EL1_PMHE_MASK)
 
-You are right, and I will add this to the changelog when I apply.
+This raw sysreg access breaks 32bit, and should be replaced with
+gic_read_ctrl() instead. I'll post an updated version later in the week.
 
-	Sam
+Thanks,
+
+	M.
+-- 
+Jazz is not dead, it just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
