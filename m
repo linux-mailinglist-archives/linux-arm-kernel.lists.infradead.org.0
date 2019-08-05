@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 544308193F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 14:26:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DC0F8195C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 14:34:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DN3V3VhfUVPwao22TLA+MiYoTXQDDHdd3UxtgtUMQoM=; b=UzWP5n9yu0Spln
-	hySAhJn+0SvEyVeyAHZ6HRRlr35HIDmLkQ/dI5d1xnbODkoaNXl0KUCIrLAiMxepLWVmm9fWv4IG6
-	s2P201okJCE4QoS6l13oCWSKe7tXby05vgBGw/qWJvXy/KOU3EtuLWgfc6hPDkuDiFu9BxTPLLGmV
-	Il8tvAATyPXcXjQjM9XN8MPICP7UqOPssg2XHYZKhUAAQjZLc7UUuv/HDFAh8f2VUI6TxnDUOxCr+
-	v5nFWsUuSwYQr70HM5d5gCzcQjk7+HvB6GBU5zUooboEcP6X3USbLb9CgaYnqli51CPqM3/1+OmTD
-	4IrynJ4jUvKXIjAZ+XOQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x0lnG0BrVvruU+NK7ssE2cPZJ5jLICm0iYhxl9UMY4E=; b=RUHIWqEpQC70Z+
+	F8vL8f+3QDNM+8XHHHbbKOhTgbp+DcbHvjpgDbelBnS2VaiJVdOGiegWOh24vjFzh/PkLoGvGDVxG
+	bAhi+k8Wzwnx0q+HCp7fg+QwknrgUV9y5cgZJbZmkA0CpPOMpssOcoJzpUrP9qLpaIiWW8nj4qpdf
+	Kw8p7NfLXTvUqiB+mt2IKc/c99tmcldMSEAR4xtGxIvsoSry35kpt4syXCEVeNaICsBf33SFltTNq
+	lZEYj+i97/XeWb2UnsSXHWcnGOMqrxd6dIMiu5TKT58+oJG1aRvFml8yPs+btA8FuP8Z6n4m8HNhp
+	WJ2bCNpolDtv6vnn4GCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huc47-0007fh-Ib; Mon, 05 Aug 2019 12:26:15 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hucBs-0001Ob-CZ; Mon, 05 Aug 2019 12:34:16 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huc3u-0007eo-C5
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 12:26:04 +0000
-Received: by mail-wr1-x444.google.com with SMTP id n4so84294368wrs.3
+ id 1hucBi-0001OI-3p
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 12:34:07 +0000
+Received: by mail-lf1-x141.google.com with SMTP id c9so57760665lfh.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 05:26:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=oWDikhbWmDPIzHQPw7NBV+lELUhdD4KoLaJEZ3W7XPA=;
- b=ilexiR7QMVdt7h2Ih9EJPZn/h5R81FbqMUiEqEIXc1qXUDgyHvxtQCkA8UhRgVyXQa
- RpTw+62ard3K6ELZM70d4hwWP7RY87dNSNN5uGNae7vz5SWA7ZgHAyvFOHxRazBGlrzp
- r9iSBVY71qgVVDv0Maz+oWzlJtz53uwD/TdTLGncwtKo3erkc9U/6nlno3f9fEjYVC5Q
- Kg8VIlve+gFTKWu40wfZZ9lAovnUkJbqk4rgudbHfKrIVaftgINczVsL/XPY0Je4gfp4
- aITl5HeZ4XJuzn3cpGv4So5ygmWw2QzmTdnqrV/VwgSF0bTfS28MB/m2pAdaf4y9ql2G
- gLJQ==
+ Mon, 05 Aug 2019 05:34:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=PFq8Cl73tLG4+pSCio9gqyV6ILbsyB08y8V4KloCMss=;
+ b=qb8ENpxDn1mCWZhT54r9bq1+0CIKvSbaMm0QFAX6pxht+cd7JaOGJydVCItL3UHRgb
+ yB30aeWpB9+iekLe+s6wXqpwZuWRzCIDohg6tyRUOp45/E8t9KvTQpSiVALAeNoVjufI
+ AbwHWChR/0wu4yepBB4BQpWal8tVU4Ce5mlGPHD7fY9y4WeaqFGhCjwmYP+HYSfpOt7s
+ jl0e0Rz5FekBob9Hmp82mJ6ZTs6D41AX5dV1CGTEOzthTSQd05Yi1CVQe5lhZPDemSYj
+ hCW8Lr9BV0hCZBbFU4EhVhe+Bim2DCzTubCWo70dko8uujlkowJqzLH8XWRTg8ELeECO
+ c2qg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=oWDikhbWmDPIzHQPw7NBV+lELUhdD4KoLaJEZ3W7XPA=;
- b=lpfBkOwTqvOUiY4HDsyWXEjaxAaFQM9b0J9G5HVPYn6yglyM+37n0KXgowsC9ihjh/
- 1lxo9paVsMdwwCf04Nkg1s7J7+okCC2wj4lCRHIiJscKd88uXYRJgXkHNQBQqwDIKnnK
- Su7h+iyFfXJb7IdPAT0ti/245/3M7uaYkYlHDyvLCMJUnscI9erO6A6cfAmxbYJIR1O/
- LE7vM0HxA06PBNhwRu5XgDeAygdztuGVlxV8+A8lLkQJ1GOOb2JIQN0/ef1/tE4JX14q
- qgsnzPGzTsUBti+Xb9M54nHJ25DIEKTUrPMCHr0s7pYhAk9gaJqKoaWHZn/Qd9NIuGqz
- IR4Q==
-X-Gm-Message-State: APjAAAVNvPq2dWsl1BVXKQHeofeJukmPhTOXRdyKx2xaZTDl2YiJxXYm
- wQHj2Bo/MGevTdbdI1yW65eqcw==
-X-Google-Smtp-Source: APXvYqyCO5yEbUFaEdNB0dykZgEdWSc8TF4y2SacBXTbCEh/v4JahAdgr07NTeyYXpESoZaZ1QGo8w==
-X-Received: by 2002:adf:f088:: with SMTP id n8mr1632051wro.58.1565007960540;
- Mon, 05 Aug 2019 05:26:00 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id i66sm151536351wmi.11.2019.08.05.05.25.59
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 05 Aug 2019 05:25:59 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: robh+dt@kernel.org
-Subject: [PATCH] dt-bindings: net: meson-dwmac: convert to yaml
-Date: Mon,  5 Aug 2019 14:25:58 +0200
-Message-Id: <20190805122558.5130-1-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PFq8Cl73tLG4+pSCio9gqyV6ILbsyB08y8V4KloCMss=;
+ b=WuDyn3SOCwEk/3oNU7uC+UfP9Kwf/XwFOYkfSk6VrBQhvJ9JCpJ1UiozmQQjzRDzE3
+ 04Esi3yi/8d2fPmk1QXCzgDyNWByFiIuH/1tjb7Mt9ehu+BQEybeabHmPggoizJfMHzW
+ JAoNey07j04ncl81YUJHgM/yoA5YJ7PQuKyAwh8FYahwAuyBXlkmDYkrZ6RyKCmnkhcT
+ 7DduSUeriLuAsHLZc5pSKBs65KoHnpuWnuvT5/D7wLw91fLAMlg5j594XM/SjvfW+Q+k
+ mCI0/Ia4ZsNVeSaB/gJhSIv3gjFkf22LKt9aQa8smimdYkaYKbrevcFR9XdjCiC2sz7o
+ qFqQ==
+X-Gm-Message-State: APjAAAWulxbBAaIgJw/B7ocx053OefiGRG7VTnDZfPFhx6Bq0Y1BtLzJ
+ /XB1yXGFjQyIGAKHMNXUucomXC1Y34AB/cB5f9KtOg==
+X-Google-Smtp-Source: APXvYqymitYgepyvOK+JBZy7GrH60GHKLfiwb1GSsoco0V37RW1vdVWTSekr1srhCc8x8sy1Ia5WB5n1Q1D0K0/ub9k=
+X-Received: by 2002:ac2:5976:: with SMTP id h22mr3729701lfp.79.1565008443805; 
+ Mon, 05 Aug 2019 05:34:03 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190726134531.8928-1-sudeep.holla@arm.com>
+ <20190726134531.8928-7-sudeep.holla@arm.com>
+In-Reply-To: <20190726134531.8928-7-sudeep.holla@arm.com>
+From: Etienne Carriere <etienne.carriere@linaro.org>
+Date: Mon, 5 Aug 2019 14:33:53 +0200
+Message-ID: <CAN5uoS_TA5ELTLtHnUbWhaOHyUDjoKZz0S8SfmXBfR+n-=_M3w@mail.gmail.com>
+Subject: Re: [PATCH v2 6/6] firmware: arm_scmi: Check if platform has released
+ shmem before using
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_052602_413817_4F88204A 
-X-CRM114-Status: GOOD (  20.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190805_053406_220776_9AA6D6B3 
+X-CRM114-Status: GOOD (  17.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,259 +92,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
- martin.blumenstingl@googlemail.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
+Cc: Peng Fan <peng.fan@nxp.com>, linux-kernel@vger.kernel.org,
+ Bo Zhang <bozhang.zhang@broadcom.com>,
+ Jim Quinlan <james.quinlan@broadcom.com>,
+ Gaku Inami <gaku.inami.xh@renesas.com>,
+ Volodymyr Babchuk <volodymyr_babchuk@epam.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we have the DT validation in place, let's convert the device tree
-bindings for the Synopsys DWMAC Glue for Amlogic SoCs over to a YAML schemas.
+Hello Sudeep,
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
-Rob, 
+On Fri, 26 Jul 2019 at 15:46, Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> Sometimes platfom may take too long to respond to the command and OS
+> might timeout before platform transfer the ownership of the shared
+> memory region to the OS with the response.
+>
+> Since the mailbox channel associated with the channel is freed and new
+> commands are dispatch on the same channel, OS needs to wait until it
+> gets back the ownership. If not, either OS may end up overwriting the
+> platform response for the last command(which is fine as OS timed out
+> that command) or platform might overwrite the payload for the next
+> command with the response for the old.
+>
+> The latter is problematic as platform may end up interpretting the
+> response as the payload. In order to avoid such race, let's wait until
+> the OS gets back the ownership before we prepare the shared memory with
+> the payload for the next command.
+>
+> Reported-by: Jim Quinlan <james.quinlan@broadcom.com>
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> ---
+>  drivers/firmware/arm_scmi/driver.c | 8 ++++++++
+>  1 file changed, 8 insertions(+)
+>
+> diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+> index 69bf85fea967..765573756987 100644
+> --- a/drivers/firmware/arm_scmi/driver.c
+> +++ b/drivers/firmware/arm_scmi/driver.c
+> @@ -265,6 +265,14 @@ static void scmi_tx_prepare(struct mbox_client *cl, void *m)
+>         struct scmi_chan_info *cinfo = client_to_scmi_chan_info(cl);
+>         struct scmi_shared_mem __iomem *mem = cinfo->payload;
+>
+> +       /*
+> +        * Ideally channel must be free by now unless OS timeout last
+> +        * request and platform continued to process the same, wait
+> +        * until it releases the shared memory, otherwise we may endup
+> +        * overwriting it's response with new command payload or vice-versa
 
-I keep getting :
-.../devicetree/bindings/net/amlogic,meson-dwmac.example.dt.yaml: ethernet@c9410000: reg: [[3376480256, 65536], [3364046144, 8]] is too long
+minor typo: s/it's/its/
+maybe also s/command/message/
 
-for the example DT
+regards,
+etienne
 
-and for the board DT :
-../amlogic/meson-gxl-s905x-libretech-cc.dt.yaml: ethernet@c9410000: reg: [[0, 3376480256, 0, 65536, 0, 3364046144, 0, 4]] is too short
-../amlogic/meson-gxl-s905x-nexbox-a95x.dt.yaml: soc: ethernet@c9410000:reg:0: [0, 3376480256, 0, 65536, 0, 3364046144, 0, 4] is too long
 
-and I don't know how to get rid of it.
-
-What should I do for reg ?
-
-Neil
-
- .../bindings/net/amlogic,meson-dwmac.yaml     | 113 ++++++++++++++++++
- .../devicetree/bindings/net/meson-dwmac.txt   |  71 -----------
- .../devicetree/bindings/net/snps,dwmac.yaml   |   5 +
- 3 files changed, 118 insertions(+), 71 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/net/amlogic,meson-dwmac.yaml
- delete mode 100644 Documentation/devicetree/bindings/net/meson-dwmac.txt
-
-diff --git a/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.yaml b/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.yaml
-new file mode 100644
-index 000000000000..ae91aa9d8616
---- /dev/null
-+++ b/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.yaml
-@@ -0,0 +1,113 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+# Copyright 2019 BayLibre, SAS
-+%YAML 1.2
-+---
-+$id: "http://devicetree.org/schemas/net/amlogic,meson-dwmac.yaml#"
-+$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-+
-+title: Amlogic Meson DWMAC Ethernet controller
-+
-+maintainers:
-+  - Neil Armstrong <narmstrong@baylibre.com>
-+  - Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-+
-+# We need a select here so we don't match all nodes with 'snps,dwmac'
-+select:
-+  properties:
-+    compatible:
-+      contains:
-+        enum:
-+          - amlogic,meson6-dwmac
-+          - amlogic,meson8b-dwmac
-+          - amlogic,meson8m2-dwmac
-+          - amlogic,meson-gxbb-dwmac
-+          - amlogic,meson-axg-dwmac
-+  required:
-+    - compatible
-+
-+allOf:
-+  - $ref: "snps,dwmac.yaml#"
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - amlogic,meson8b-dwmac
-+              - amlogic,meson8m2-dwmac
-+              - amlogic,meson-gxbb-dwmac
-+              - amlogic,meson-axg-dwmac
-+
-+    then:
-+      properties:
-+        clocks:
-+          items:
-+            - description: GMAC main clock
-+            - description: First parent clock of the internal mux
-+            - description: Second parent clock of the internal mux
-+
-+        clock-names:
-+          minItems: 3
-+          maxItems: 3
-+          items:
-+            - const: stmmaceth
-+            - const: clkin0
-+            - const: clkin1
-+
-+        amlogic,tx-delay-ns:
-+          $ref: /schemas/types.yaml#definitions/uint32
-+          description:
-+            The internal RGMII TX clock delay (provided by this driver) in
-+            nanoseconds. Allowed values are 0ns, 2ns, 4ns, 6ns.
-+            When phy-mode is set to "rgmii" then the TX delay should be
-+            explicitly configured. When not configured a fallback of 2ns is
-+            used. When the phy-mode is set to either "rgmii-id" or "rgmii-txid"
-+            the TX clock delay is already provided by the PHY. In that case
-+            this property should be set to 0ns (which disables the TX clock
-+            delay in the MAC to prevent the clock from going off because both
-+            PHY and MAC are adding a delay).
-+            Any configuration is ignored when the phy-mode is set to "rmii".
-+
-+properties:
-+  compatible:
-+    additionalItems: true
-+    maxItems: 3
-+    items:
-+      - enum:
-+          - amlogic,meson6-dwmac
-+          - amlogic,meson8b-dwmac
-+          - amlogic,meson8m2-dwmac
-+          - amlogic,meson-gxbb-dwmac
-+          - amlogic,meson-axg-dwmac
-+    contains:
-+      enum:
-+        - snps,dwmac-3.70a
-+        - snps,dwmac
-+
-+  reg:
-+    items:
-+      - description:
-+          The first register range should be the one of the DWMAC controller
-+      - description:
-+          The second range is is for the Amlogic specific configuration
-+          (for example the PRG_ETHERNET register range on Meson8b and newer)
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - interrupt-names
-+  - clocks
-+  - clock-names
-+  - phy-mode
-+
-+examples:
-+  - |
-+    ethmac: ethernet@c9410000 {
-+         compatible = "amlogic,meson-gxbb-dwmac", "snps,dwmac";
-+         reg = <0xc9410000 0x10000>, <0xc8834540 0x8>;
-+         interrupts = <8>;
-+         interrupt-names = "macirq";
-+         clocks = <&clk_eth>, <&clkc_fclk_div2>, <&clk_mpll2>;
-+         clock-names = "stmmaceth", "clkin0", "clkin1";
-+         phy-mode = "rgmii";
-+    };
-diff --git a/Documentation/devicetree/bindings/net/meson-dwmac.txt b/Documentation/devicetree/bindings/net/meson-dwmac.txt
-deleted file mode 100644
-index 1321bb194ed9..000000000000
---- a/Documentation/devicetree/bindings/net/meson-dwmac.txt
-+++ /dev/null
-@@ -1,71 +0,0 @@
--* Amlogic Meson DWMAC Ethernet controller
--
--The device inherits all the properties of the dwmac/stmmac devices
--described in the file stmmac.txt in the current directory with the
--following changes.
--
--Required properties on all platforms:
--
--- compatible:	Depending on the platform this should be one of:
--			- "amlogic,meson6-dwmac"
--			- "amlogic,meson8b-dwmac"
--			- "amlogic,meson8m2-dwmac"
--			- "amlogic,meson-gxbb-dwmac"
--			- "amlogic,meson-axg-dwmac"
--		Additionally "snps,dwmac" and any applicable more
--		detailed version number described in net/stmmac.txt
--		should be used.
--
--- reg:	The first register range should be the one of the DWMAC
--	controller. The second range is is for the Amlogic specific
--	configuration (for example the PRG_ETHERNET register range
--	on Meson8b and newer)
--
--Required properties on Meson8b, Meson8m2, GXBB and newer:
--- clock-names:	Should contain the following:
--		- "stmmaceth" - see stmmac.txt
--		- "clkin0" - first parent clock of the internal mux
--		- "clkin1" - second parent clock of the internal mux
--
--Optional properties on Meson8b, Meson8m2, GXBB and newer:
--- amlogic,tx-delay-ns:	The internal RGMII TX clock delay (provided
--			by this driver) in nanoseconds. Allowed values
--			are: 0ns, 2ns, 4ns, 6ns.
--			When phy-mode is set to "rgmii" then the TX
--			delay should be explicitly configured. When
--			not configured a fallback of 2ns is used.
--			When the phy-mode is set to either "rgmii-id"
--			or "rgmii-txid" the TX clock delay is already
--			provided by the PHY. In that case this
--			property should be set to 0ns (which disables
--			the TX clock delay in the MAC to prevent the
--			clock from going off because both PHY and MAC
--			are adding a delay).
--			Any configuration is ignored when the phy-mode
--			is set to "rmii".
--
--Example for Meson6:
--
--	ethmac: ethernet@c9410000 {
--		compatible = "amlogic,meson6-dwmac", "snps,dwmac";
--		reg = <0xc9410000 0x10000
--		       0xc1108108 0x4>;
--		interrupts = <0 8 1>;
--		interrupt-names = "macirq";
--		clocks = <&clk81>;
--		clock-names = "stmmaceth";
--	}
--
--Example for GXBB:
--	ethmac: ethernet@c9410000 {
--		compatible = "amlogic,meson-gxbb-dwmac", "snps,dwmac";
--		reg = <0x0 0xc9410000 0x0 0x10000>,
--			<0x0 0xc8834540 0x0 0x8>;
--		interrupts = <0 8 1>;
--		interrupt-names = "macirq";
--		clocks = <&clkc CLKID_ETH>,
--				<&clkc CLKID_FCLK_DIV2>,
--				<&clkc CLKID_MPLL2>;
--		clock-names = "stmmaceth", "clkin0", "clkin1";
--		phy-mode = "rgmii";
--	};
-diff --git a/Documentation/devicetree/bindings/net/snps,dwmac.yaml b/Documentation/devicetree/bindings/net/snps,dwmac.yaml
-index 76fea2be66ac..ff1dc662a4e3 100644
---- a/Documentation/devicetree/bindings/net/snps,dwmac.yaml
-+++ b/Documentation/devicetree/bindings/net/snps,dwmac.yaml
-@@ -50,6 +50,11 @@ properties:
-         - allwinner,sun8i-r40-emac
-         - allwinner,sun8i-v3s-emac
-         - allwinner,sun50i-a64-emac
-+        - amlogic,meson6-dwmac
-+        - amlogic,meson8b-dwmac
-+        - amlogic,meson8m2-dwmac
-+        - amlogic,meson-gxbb-dwmac
-+        - amlogic,meson-axg-dwmac
-         - snps,dwmac
-         - snps,dwmac-3.50a
-         - snps,dwmac-3.610
--- 
-2.22.0
-
+> +        */
+> +       spin_until_cond(ioread32(&mem->channel_status) &
+> +                       SCMI_SHMEM_CHAN_STAT_CHANNEL_FREE);
+>         /* Mark channel busy + clear error */
+>         iowrite32(0x0, &mem->channel_status);
+>         iowrite32(t->hdr.poll_completion ? 0 : SCMI_SHMEM_FLAG_INTR_ENABLED,
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
