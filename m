@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BBC482834
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 01:38:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 641B482836
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 01:38:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=8Ae3ObngKhPcSAzXi0lyyZFvlUVq1Lgq1H3sALjDDPM=; b=Sc5jtC3hYwmcEh9c2JjNWPEvP5
-	ya2XHDl9Qh7ZtkiukNgn+ahVKWPMzTZB/jEkizG7eWZ2q1b5M+F7EypBKCGnF7EUHyAg5K/8RFzV8
-	om8xmQbsj1crt/pW9VoeESxhYZPE/IJ20X9zZIqoQ2UhiwndHc/IzAMKrFJCvcQgw5gaNi1XNu++v
-	QutAQ3DVp78lU1yTgFoHHV4gJn47FH0iSeQkvmZrjtB2HXNiKupYvJGNG1PqU+6HqBWPqreVOtJmd
-	j3VBUcZKdiRvZr4IIUYMBcIUMbkMyc/mm5ySokTJ3dWnm0QqpuEnfRVpQsMl2lx7Oud+W2yW/GfkC
-	VgUoBDFA==;
+	bh=i2FQZsLX9j07xOQA8i0BvbC/dtzSEbM/4VH7unARZD0=; b=OAhSm6l7eCCbp1+gOgLSYddws9
+	pD7+dhWgSKOyDRu+cYjVOblhAi0TqWJZUU7kol00gj9YgKh3zCAU+ZavaJLSvxWCZVD0egxwUel2a
+	I/5XwNDDJbrPUeNM3t4JwJqlX/LogIwqjnJXoKfbK/Sp+3bfobJJa4Am/51/J7lMsGwuNs7ektNxi
+	q9PVCJtd1gbDdRnFqWfIcBJipuxzSSb6qat9LJWp6Xv5PGNDRldyU2RGQYkX8lbdBj9u8foX1u8ti
+	e11J0uGYDW6b2Dsov6z9Lc62S5GEz61d+d83wUUFUCD0bGeritgbWGbalRLhxPwZV9Y2yo9l4MAQc
+	pD4fAKAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1humYB-0007Vn-PN; Mon, 05 Aug 2019 23:37:59 +0000
+	id 1humYP-0007lB-Au; Mon, 05 Aug 2019 23:38:13 +0000
 Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1humVx-00055q-BN
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 23:35:44 +0000
-Received: by mail-pl1-x644.google.com with SMTP id b3so37084969plr.4
+ id 1humVy-00057C-Rz
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 23:35:46 +0000
+Received: by mail-pl1-x644.google.com with SMTP id t14so37029975plr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 16:35:40 -0700 (PDT)
+ Mon, 05 Aug 2019 16:35:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=0S1ar2fMdERTJzIO99lo9VyZc288UAn1DrH6O+6xG3A=;
- b=Tg9MUibHxcwDQfGvRWXjw3IaHbqAI3CNSNU94W3GDMVrNbYxaWalkgmaZG9xLSdcdC
- RWB/02yluRHJjyCd9jgp/t4tUYWHrBj/Y4Tj3e/05X+9GMEoJwuKvu3ZI6BnbQzoZ6sX
- 0Ha64RCnDaDxQ5Mn4igGvJn+cvDlfx9BFinUjymmVINucui/sV9MJopRFBwGsFGAdgOv
- BsSNrturNVt+kJdz96eJTgOyVs86jIDpmHeBY7IyrKP8tC7sVnmaIRI964/ktYq4hoI5
- QH196OBdiu9Lr7dD8F0HUv86fYgx7+E8zI9F472sQo7jzhoNtp1ULH5Fj1gYWEUnIbEE
- 0ACA==
+ bh=2TmLGvTN3FaWVeRsZPV3e4KNsmV2AReP7cWUVSqpqFQ=;
+ b=YW2JbBhT1KOAfZKebBO9NM/G5Db95SUaRLnTey3pDLof4EeuR2oudZUxy8zi3ksHrp
+ n/rM4Ga7htyDE97Ns+wPj+3Z8PhgQ/mkooxrj+Oj+RLx4/nnq0bUD+aDUnVf1LBrq9xF
+ dY0j2ZVZAyPgtxwlAKR9qwP4wj/h48HGi4ffXdnH8gu8bIzxJ8uHY2W+u7NH0GnqxTD8
+ dRHgc922vuRBkdb5WRupFzWcgYSpGtu+hSoihVTRk9nHn6Zo5xvrqkBk6f2tAOvr6c0G
+ mFXWCA9xq+KMxQdYSaIZjMOJSVwdiGQuFvo1KeBfdkD79sC1CTS7ef5vvvfOPlyvigqS
+ IVNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=0S1ar2fMdERTJzIO99lo9VyZc288UAn1DrH6O+6xG3A=;
- b=M7EoTfTJF0gt2Bjmg7s0NhnDxAEPJ1+AzAoh8ZSLUhdncT+oH7XY9qIZ4N/hhSBVi2
- XFY19EEP7QNnCYbR8uRVP5F4lG5IG9+L7ffQq0flilBbR85hWIfhZD7emnwvbVpp7BGd
- ExSN+JS8S5oO9exDeNgewWvZHvp/Qy/6aVpyO6Ibrj0ulqDG7UGepSJu6mwodWvUYXKj
- 56ABadnoy8IbkiAr8sZNYMrcMEzFpnAhnyIi82ze5bS8vU/CMhv01fGwg5C/e/VVtnY/
- 1aNzHe+jfVWaevDG5BDiRXHIdZWcXOUbkX05hoByM8bi71wHz+XnPufejRfbmnSM6G9R
- HHKA==
-X-Gm-Message-State: APjAAAUS4K7q90gKXAASke1ZZt8v9DxtsYe3HOJ6vNvmNrDCOEpb4XKT
- cScWlfTh21IiwNGEYN4md1s=
-X-Google-Smtp-Source: APXvYqxarRCZVmeKkHTq+3l7c5xuS2KTn9u0u55xlL4X1ShwB8l5jm4IbrYWk7boV6jD2FtQt8b7oA==
-X-Received: by 2002:a17:902:bd06:: with SMTP id
- p6mr243778pls.189.1565048140051; 
- Mon, 05 Aug 2019 16:35:40 -0700 (PDT)
+ bh=2TmLGvTN3FaWVeRsZPV3e4KNsmV2AReP7cWUVSqpqFQ=;
+ b=h7XUuadO2412l3mhu34X/coDDgLPvM/s4uczMkSphu+ghMMIwNK9s2l/n4gra5L+Bx
+ BFt1pkNIA324Z1frI2oM7IsGfV1lU/ffokPP1kros3ocxhw/1NMQG/xwRJYJyU/7F0dC
+ 6HEnOpXdAMLy+5/k25+sPamnBlXXxa6Xyc05RUaXDWYmbYtEIkrC6ZOplP8t5RAiyDNu
+ Mz3JA3cKrl7sCqVUN8gX2krWKkCzoE1y1FnWjVsjT7rZjCmUGHViuI9sJLUNS+vkZNQP
+ /fu8V4XZN6jdGLyZGl/vLvS/x+Ckkk7vPTVtrX3b1OYCKoknggswsrm1RH1JNWFJaRKG
+ 8Bdw==
+X-Gm-Message-State: APjAAAXSezsBWsisSAWU/uW83XHxjQ0VN6v/d3P58IEUooo/a4NimncK
+ E+3Xu67v4wCpwwX8N+fUHwQ=
+X-Google-Smtp-Source: APXvYqzJbrsuJ3HwTZ98E/Apw4jZA8VmFc9SY7qiYBjg/8j77ZDblKl2/AqIbDwaFPx6pAGuizw+Iw==
+X-Received: by 2002:a17:902:6a87:: with SMTP id
+ n7mr251709plk.336.1565048141256; 
+ Mon, 05 Aug 2019 16:35:41 -0700 (PDT)
 Received: from majic.sklembedded.com (c-73-202-231-77.hsd1.ca.comcast.net.
  [73.202.231.77])
- by smtp.googlemail.com with ESMTPSA id 30sm31296349pjk.17.2019.08.05.16.35.38
+ by smtp.googlemail.com with ESMTPSA id 30sm31296349pjk.17.2019.08.05.16.35.40
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 05 Aug 2019 16:35:39 -0700 (PDT)
+ Mon, 05 Aug 2019 16:35:40 -0700 (PDT)
 From: Steve Longerbeam <slongerbeam@gmail.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH 21/22] media: imx: Use media_create_fwnode_links for external
- links
-Date: Mon,  5 Aug 2019 16:35:04 -0700
-Message-Id: <20190805233505.21167-22-slongerbeam@gmail.com>
+Subject: [PATCH 22/22] media: imx: TODO: Remove issues regarding media link
+ creation
+Date: Mon,  5 Aug 2019 16:35:05 -0700
+Message-Id: <20190805233505.21167-23-slongerbeam@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190805233505.21167-1-slongerbeam@gmail.com>
 References: <20190805233505.21167-1-slongerbeam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_163541_603934_C842664D 
-X-CRM114-Status: GOOD (  18.71  )
+X-CRM114-CacheID: sfid-20190805_163542_952974_3C84456C 
+X-CRM114-Status: GOOD (  13.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -117,233 +117,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The entities external to the i.MX6 IPU and i.MX7 now create the links
-to their fwnode-endpoint connected entities in their notifier bound
-callbacks.
-
-This should mean that there is no longer a need for the imx-media driver
-to create these external fwnode-endpoint based links. But the v4l2-async
-framework does not allow multiple subdevice notifiers to contain a
-duplicate subdevice in their asd_list. Only the first subdev notifier that
-discovers and adds that one subdevice to its asd_list will receive a bound
-callback for it. Other subdevices that also have firmware endpoint
-connections to this duplicate subdevice will not have it in their asd_list,
-and thus will never receive a bound callback for it.
-
-Until there is a solution to that problem, imx_media_create_links() is
-still needed to create media links for subdevices that never received a
-bound callback.
-
-But media_create_fwnode_links() can now be used to do that work, so
-imx_media_create_of_links() and imx_media_create_csi_of_links() are
-removed.
+Remove the TODO items regarding media link creation, these issues are
+resolved after exporting media link creation to individual entity bound
+callbacks and the use of media_create_fwnode_links(),
+media_create_fwnode_pad_links(), and media_entity_get_fwnode_pad().
 
 Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
 ---
- .../staging/media/imx/imx-media-dev-common.c  |  49 ++++----
- drivers/staging/media/imx/imx-media-of.c      | 113 ------------------
- drivers/staging/media/imx/imx-media.h         |   4 -
- 3 files changed, 27 insertions(+), 139 deletions(-)
+ drivers/staging/media/imx/TODO | 29 -----------------------------
+ 1 file changed, 29 deletions(-)
 
-diff --git a/drivers/staging/media/imx/imx-media-dev-common.c b/drivers/staging/media/imx/imx-media-dev-common.c
-index 66b505f7e8df..4dbe983af030 100644
---- a/drivers/staging/media/imx/imx-media-dev-common.c
-+++ b/drivers/staging/media/imx/imx-media-dev-common.c
-@@ -36,31 +36,36 @@ static int imx_media_subdev_bound(struct v4l2_async_notifier *notifier,
- static int imx_media_create_links(struct v4l2_async_notifier *notifier)
- {
- 	struct imx_media_dev *imxmd = notifier2dev(notifier);
--	struct v4l2_subdev *sd;
-+	struct fwnode_handle *sda_fwnode, *sdb_fwnode;
-+	struct v4l2_subdev *sda, *sdb;
-+
-+	list_for_each_entry(sda, &imxmd->v4l2_dev.subdevs, list) {
-+		/* links have already been created for the IPU subdevs */
-+		if (is_ipu_internal_subdev(sda))
-+			continue;
-+
-+		sda_fwnode = (sda->grp_id & IMX_MEDIA_GRP_ID_IPU_CSI) ?
-+			dev_fwnode(sda->dev->parent) :
-+			dev_fwnode(sda->dev);
-+
-+		list_for_each_entry(sdb, &imxmd->v4l2_dev.subdevs, list) {
-+			if (sda == sdb)
-+				continue;
-+			if (is_ipu_internal_subdev(sdb))
-+				continue;
-+
-+			sdb_fwnode = (sdb->grp_id & IMX_MEDIA_GRP_ID_IPU_CSI) ?
-+				dev_fwnode(sdb->dev->parent) :
-+				dev_fwnode(sdb->dev);
+diff --git a/drivers/staging/media/imx/TODO b/drivers/staging/media/imx/TODO
+index 6f29b5ca5324..a371cdedcdb0 100644
+--- a/drivers/staging/media/imx/TODO
++++ b/drivers/staging/media/imx/TODO
+@@ -17,35 +17,6 @@
+   decided whether this feature is useful enough to make it generally
+   available by exporting to v4l2-core.
  
--	list_for_each_entry(sd, &imxmd->v4l2_dev.subdevs, list) {
--		switch (sd->grp_id) {
--		case IMX_MEDIA_GRP_ID_IPU_VDIC:
--		case IMX_MEDIA_GRP_ID_IPU_IC_PRP:
--		case IMX_MEDIA_GRP_ID_IPU_IC_PRPENC:
--		case IMX_MEDIA_GRP_ID_IPU_IC_PRPVF:
--			/*
--			 * links have already been created for the
--			 * sync-registered subdevs.
--			 */
--			break;
--		case IMX_MEDIA_GRP_ID_IPU_CSI0:
--		case IMX_MEDIA_GRP_ID_IPU_CSI1:
--		case IMX_MEDIA_GRP_ID_CSI:
--			imx_media_create_csi_of_links(imxmd, sd);
--			break;
--		default:
- 			/*
--			 * if this subdev has fwnode links, create media
--			 * links for them.
-+			 * if there are fwnode endpoint connections between
-+			 * these subdevs, create media links for them.
- 			 */
--			imx_media_create_of_links(imxmd, sd);
--			break;
-+			__media_create_fwnode_links(&sda->entity,
-+						    sda_fwnode,
-+						    &sdb->entity,
-+						    sdb_fwnode, 0);
- 		}
- 	}
+-- After all async subdevices have been bound, v4l2_fwnode_parse_link()
+-  is used to form the media links between the devices discovered in
+-  the OF graph.
+-
+-  While this approach allows support for arbitrary OF graphs, there
+-  are some assumptions for this to work:
+-
+-  1. If a port owned by a device in the graph has endpoint nodes, the
+-     port is treated as a media pad.
+-
+-     This presents problems for devices that don't make this port = pad
+-     assumption. Examples are SMIAPP compatible cameras which define only
+-     a single output port node, but which define multiple pads owned
+-     by multiple subdevices (pixel-array, binner, scaler). Or video
+-     decoders (entity function MEDIA_ENT_F_ATV_DECODER), which also define
+-     only a single output port node, but define multiple pads for video,
+-     VBI, and audio out.
+-
+-     A workaround at present is to set the port reg properties to
+-     correspond to the media pad index that the port represents. A
+-     possible long-term solution is to implement a subdev API that
+-     maps a port id to a media pad index.
+-
+-  2. Every endpoint of a port owned by a device in the graph is treated
+-     as a media link.
+-
+-     Which means a port must not contain mixed-use endpoints, they
+-     must all refer to media links between V4L2 subdevices.
+-
+ - i.MX7: all of the above, since it uses the imx media core
  
-diff --git a/drivers/staging/media/imx/imx-media-of.c b/drivers/staging/media/imx/imx-media-of.c
-index 736c954a8ff5..82e13e972e23 100644
---- a/drivers/staging/media/imx/imx-media-of.c
-+++ b/drivers/staging/media/imx/imx-media-of.c
-@@ -74,116 +74,3 @@ int imx_media_add_of_subdevs(struct imx_media_dev *imxmd,
- 	return ret;
- }
- EXPORT_SYMBOL_GPL(imx_media_add_of_subdevs);
--
--/*
-- * Create a single media link to/from sd using a fwnode link.
-- *
-- * NOTE: this function assumes an OF port node is equivalent to
-- * a media pad (port id equal to media pad index), and that an
-- * OF endpoint node is equivalent to a media link.
-- */
--static int create_of_link(struct imx_media_dev *imxmd,
--			  struct v4l2_subdev *sd,
--			  struct fwnode_link *link)
--{
--	struct v4l2_subdev *remote, *src, *sink;
--	int src_pad, sink_pad;
--
--	if (link->local.port >= sd->entity.num_pads)
--		return -EINVAL;
--
--	remote = imx_media_find_subdev_by_fwnode(imxmd,
--						 link->remote_port_parent);
--	if (!remote)
--		return 0;
--
--	if (sd->entity.pads[link->local.port].flags & MEDIA_PAD_FL_SINK) {
--		src = remote;
--		src_pad = link->remote.port;
--		sink = sd;
--		sink_pad = link->local.port;
--	} else {
--		src = sd;
--		src_pad = link->local.port;
--		sink = remote;
--		sink_pad = link->remote.port;
--	}
--
--	/* make sure link doesn't already exist before creating */
--	if (media_entity_find_link(&src->entity.pads[src_pad],
--				   &sink->entity.pads[sink_pad]))
--		return 0;
--
--	v4l2_info(sd->v4l2_dev, "%s:%d -> %s:%d\n",
--		  src->name, src_pad, sink->name, sink_pad);
--
--	return media_create_pad_link(&src->entity, src_pad,
--				     &sink->entity, sink_pad, 0);
--}
--
--/*
-- * Create media links to/from sd using its device-tree endpoints.
-- */
--int imx_media_create_of_links(struct imx_media_dev *imxmd,
--			      struct v4l2_subdev *sd)
--{
--	struct fwnode_handle *endpoint;
--	struct fwnode_link link;
--	int ret;
--
--	fwnode_graph_for_each_endpoint(dev_fwnode(sd->dev), endpoint) {
--		ret = fwnode_graph_parse_link(endpoint, &link);
--		if (ret)
--			continue;
--
--		ret = create_of_link(imxmd, sd, &link);
--		fwnode_graph_put_link(&link);
--		if (ret)
--			return ret;
--	}
--
--	return 0;
--}
--EXPORT_SYMBOL_GPL(imx_media_create_of_links);
--
--/*
-- * Create media links to the given CSI subdevice's sink pads,
-- * using its device-tree endpoints.
-- */
--int imx_media_create_csi_of_links(struct imx_media_dev *imxmd,
--				  struct v4l2_subdev *csi)
--{
--	struct fwnode_handle *csi_np = dev_fwnode(csi->dev);
--	struct fwnode_handle *csi_ep;
--
--	fwnode_for_each_child_node(csi_np, csi_ep) {
--		struct fwnode_handle *fwnode;
--		struct fwnode_link link;
--		int ret;
--
--		memset(&link, 0, sizeof(link));
--
--		link.local_port_parent = csi_np;
--		link.local.port = CSI_SINK_PAD;
--
--		fwnode = fwnode_graph_get_remote_endpoint(csi_ep);
--		if (!fwnode)
--			continue;
--
--		fwnode = fwnode_get_parent(fwnode);
--		fwnode_property_read_u32(fwnode, "reg", &link.remote.port);
--		fwnode = fwnode_get_next_parent(fwnode);
--		if (is_of_node(fwnode) &&
--		    of_node_name_eq(to_of_node(fwnode), "ports"))
--			fwnode = fwnode_get_next_parent(fwnode);
--		link.remote_port_parent = fwnode;
--
--		ret = create_of_link(imxmd, csi, &link);
--		fwnode_handle_put(link.remote_port_parent);
--		if (ret)
--			return ret;
--	}
--
--	return 0;
--}
--EXPORT_SYMBOL_GPL(imx_media_create_csi_of_links);
-diff --git a/drivers/staging/media/imx/imx-media.h b/drivers/staging/media/imx/imx-media.h
-index c42a2cafb8fb..7bdeecd29248 100644
---- a/drivers/staging/media/imx/imx-media.h
-+++ b/drivers/staging/media/imx/imx-media.h
-@@ -238,10 +238,6 @@ void imx_media_unregister_ipu_internal_subdevs(struct imx_media_dev *imxmd);
- /* imx-media-of.c */
- int imx_media_add_of_subdevs(struct imx_media_dev *dev,
- 			     struct device_node *np);
--int imx_media_create_of_links(struct imx_media_dev *imxmd,
--			      struct v4l2_subdev *sd);
--int imx_media_create_csi_of_links(struct imx_media_dev *imxmd,
--				  struct v4l2_subdev *csi);
- int imx_media_of_add_csi(struct imx_media_dev *imxmd,
- 			 struct device_node *csi_np);
- 
+ - i.MX7: use Frame Interval Monitor
 -- 
 2.17.1
 
