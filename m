@@ -2,66 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1678181605
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 11:56:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6571181608
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 11:56:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ozKtE2LBXxg36y9GZHjAnf5dSPcpXj35ZjYtBnNRu0=; b=TBk7PK7qZ3DgXK
-	SI4PTrD0OJSpVvRHCH+1tJ9FyduGAbTetjXrfaoNEH5z+RrHgAzMXF8h/XnX60ojMK3X3Wz0kueIO
-	oJqxVSEFCN9di31Jsec4mhHYRncTM7l6QJyGih7dKsuTiNCpx1scJyE8oo7R6+WguN/ZLpAtCwORh
-	2ZEQKOz5OCE8Eovlx2DrY7SqMbc5UGxAu2TiM3Ws+oFj2jNY9jy/gKetkY5uyUiPuu2KkDmVa9mYL
-	RaSOZX968/HhyWWNT3NwMY8E9G0Y7dDNXtT0Ev8/L+n6/wnEQ7eimHfcR7YYq3JfRaczZW+qFGTkS
-	XfPhyMYF+WUvbYUbnp9Q==;
+	List-Owner; bh=Yeqddo/vJEj5jfPnC8eGugNcsGG3EkOyEwTmQW1BsOY=; b=WjlcyhDdlf7wbp
+	9zvjdPgUAaZuSaAknOD9+KqPQ0BvDSAuhMG3YFBU0BbLJJHH3wKtFcJqi+s7QCu7ovlNOQWjx/xnX
+	+erZW679w5/TP/ePKnTcMkparrRjzhQFg8iAsEhrk6JS49tHC7HiIKcb6nRiMuQKstNi0Pw1PdIvE
+	b5Pe60xYhOwTiFl4AWhQk+iTGqz2FgluFIEi1uyVSw300HhPND5Ce+kCgNfQzkU/uCDZD60LTTvIQ
+	gHwb9y4sQ1dTmmiRbIFlReClReec810Gnlq35FLIQVirRXihIpArPNJnTLCUOHVs95OKZNt+IYLCs
+	U9lnvTV42wRZTQII8ThA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huZjC-0001ym-9l; Mon, 05 Aug 2019 09:56:30 +0000
-Received: from shell.v3.sk ([90.176.6.54])
+	id 1huZjR-00029y-5a; Mon, 05 Aug 2019 09:56:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huZiy-0001xw-Ck
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 09:56:18 +0000
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 0AEE0D5DDB;
- Mon,  5 Aug 2019 11:56:10 +0200 (CEST)
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id Q-7FVgH1G8-P; Mon,  5 Aug 2019 11:56:03 +0200 (CEST)
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id E7E5CD5DD8;
- Mon,  5 Aug 2019 11:56:02 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at zimbra.v3.sk
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id lqHkZW8HlhTz; Mon,  5 Aug 2019 11:56:01 +0200 (CEST)
-Received: from zimbra.v3.sk (zimbra.v3.sk [10.13.37.31])
- by zimbra.v3.sk (Postfix) with ESMTP id 346F0D5DDB;
- Mon,  5 Aug 2019 11:56:01 +0200 (CEST)
-Date: Mon, 5 Aug 2019 11:56:00 +0200 (CEST)
-From: Lubomir Rintel <lkundrak@v3.sk>
-To: Pavel Machek <pavel@ucw.cz>
-Message-ID: <1387772868.4330.1564998960018.JavaMail.zimbra@v3.sk>
-In-Reply-To: <20190803085824.GB8224@amd>
-References: <20190802103326.531250-1-lkundrak@v3.sk>
- <20190802103326.531250-7-lkundrak@v3.sk> <20190803085824.GB8224@amd>
-Subject: Re: [PATCH v2 6/6] ARM: dts: mmp2: add OLPC XO 1.75 machine
+ id 1huZj8-000257-4G
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 09:56:27 +0000
+Received: from mail-lj1-f174.google.com (mail-lj1-f174.google.com
+ [209.85.208.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6FF5F2184D
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon,  5 Aug 2019 09:56:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1564998985;
+ bh=c/eJMd7h8iMY7g3oBcO09Ax6tNi/85j/LkvMdm+2LJ0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=kCUfwhYAxdatWJQsoVRP5kF25HVcRa1aMqKUgUJMss9brgbECYUQmepSWt2tGm/RQ
+ umRuOgvoPUKkt+A7Papljrijh6QQVCW0gkYfOsbJ6bM3ez1Rp3W8VOVzCufeKWykP2
+ SI9yu/NkrsRLYzfI5dB6G+qzLhW/6hIfeGIf620k=
+Received: by mail-lj1-f174.google.com with SMTP id y17so54213013ljk.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 05 Aug 2019 02:56:25 -0700 (PDT)
+X-Gm-Message-State: APjAAAXeCqJyDn5qCxhK92Tr92G6wg3Pfrg4GSjq2090BRmtn/nNGk53
+ R9H5qKsSi/tpmxTa9ziJCMjXAO/csgCbFtk0C60=
+X-Google-Smtp-Source: APXvYqxzVKAd5TMLzlif6yoBQ/7YS/sKvvkA9uKhcxY/lMn1ISB5YMDZXNJeRxIeHY+6zPufLi4WkrEALvt2npvWd0M=
+X-Received: by 2002:a2e:8155:: with SMTP id t21mr21170060ljg.80.1564998983563; 
+ Mon, 05 Aug 2019 02:56:23 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.13.37.1]
-X-Mailer: Zimbra 8.6.0_GA_1153 (ZimbraWebClient - FF68 (Linux)/8.6.0_GA_1153)
-Thread-Topic: mmp2: add OLPC XO 1.75 machine
-Thread-Index: tSI++o0iWICeZ1TARJ86vAWcjaSjHw==
+References: <20190723122016.30279-1-a.swigon@partner.samsung.com>
+ <CGME20190723122022eucas1p1266d90873d564894bd852c20140f8474@eucas1p1.samsung.com>
+ <20190723122016.30279-2-a.swigon@partner.samsung.com>
+ <20190724190741.GD14346@kozik-lap>
+ <bda10bcc66aae96355e74c4739229d72bcc95b0d.camel@partner.samsung.com>
+In-Reply-To: <bda10bcc66aae96355e74c4739229d72bcc95b0d.camel@partner.samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Mon, 5 Aug 2019 11:56:12 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPdAhyAE96LmzV7TB1YTyNcN7Eh65Xb9caanXA-52Gskvg@mail.gmail.com>
+Message-ID: <CAJKOXPdAhyAE96LmzV7TB1YTyNcN7Eh65Xb9caanXA-52Gskvg@mail.gmail.com>
+Subject: Re: [RFC PATCH 01/11] devfreq: exynos-bus: Extract
+ exynos_bus_profile_init()
+To: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_025616_586237_CB1D4D50 
-X-CRM114-Status: GOOD (  10.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190805_025626_240369_05F9BC53 
+X-CRM114-Status: GOOD (  21.53  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,55 +90,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Olof Johansson <olof@lixom.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linux-pm@vger.kernel.org,
+ =?UTF-8?B?QmFydMWCb21pZWogxbtvxYJuaWVya2lld2ljeg==?=
+ <b.zolnierkie@samsung.com>, Seung Woo Kim <sw0312.kim@samsung.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dri-devel@lists.freedesktop.org, Inki Dae <inki.dae@samsung.com>,
+ Chanwoo Choi <cw00.choi@samsung.com>, myungjoo.ham@samsung.com,
+ georgi.djakov@linaro.org, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
------ On Aug 3, 2019, at 10:58 AM, Pavel Machek pavel@ucw.cz wrote:
-
-> On Fri 2019-08-02 12:33:26, Lubomir Rintel wrote:
->> This is a fairly complete description of an OLPC XO 1.75 laptop.
->> What's missing for now is the GPU, LCD controller, DCON, the panel and
->> audio.
-> 
-> Ok, but I need GPU/LCD/panel... that's my only output. Is video
-> expected to work in 5.2? Does the firmware pass right device tree,
-> including the GPU/LCD/DCON?
-
-The firmware (and the dts) uses a simple-framebuffer. You won't get
-any nifty features, but you'll get a framebuffer.
-
-Hopefully we'll get a proper DRM video soon. The status is roughly
-as follows:
-
-LCDC: potentially supported by the Armada DRM driver. Patches sent to
-Russell King some months ago, not there yet. I'd prefer not to nag him.
-
-DCON: Russell dislikes the idea of a DRM bridge, DRM maintainers prefer
-if the driver was not a DRM encoder driver. This seems to require
-quite some work to fix [1].
-
-[1] https://www.spinics.net/lists/dri-devel/msg201927.html
-
-GPU: supported by the etnaviv driver, good enough for 2D acceleration
-to work with xorg-x11-video-armada driver. 3D (weston and mutter alike)
-is broken. To add this to the device tree, the clock and power needs
-to be figured out.
-
-> Is there config somewhere I could use?
-> 
-> Thanks a lot,
->								Pavel
-> --
-> (english) http://www.livejournal.com/~pavelmachek
-> (cesky, pictures)
-> http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blog.html
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAzMSBKdWwgMjAxOSBhdCAxNTowMCwgQXJ0dXIgxZp3aWdvxYQgPGEuc3dpZ29uQHBh
+cnRuZXIuc2Ftc3VuZy5jb20+IHdyb3RlOgo+Cj4gSGksCj4KPiBPbiBXZWQsIDIwMTktMDctMjQg
+YXQgMjE6MDcgKzAyMDAsIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4gPiBPbiBUdWUsIEp1
+bCAyMywgMjAxOSBhdCAwMjoyMDowNlBNICswMjAwLCBBcnR1ciDFmndpZ2/FhCB3cm90ZToKPiA+
+ID4gVGhpcyBwYXRjaCBhZGRzIGEgbmV3IHN0YXRpYyBmdW5jdGlvbiwgZXh5bm9zX2J1c19wcm9m
+aWxlX2luaXQoKSwgZXh0cmFjdGVkCj4gPiA+IGZyb20gZXh5bm9zX2J1c19wcm9iZSgpLgo+ID4g
+Pgo+ID4gPiBTaWduZWQtb2ZmLWJ5OiBBcnR1ciDFmndpZ2/FhCA8YS5zd2lnb25AcGFydG5lci5z
+YW1zdW5nLmNvbT4KPiA+ID4gLS0tCj4gPiA+ICBkcml2ZXJzL2RldmZyZXEvZXh5bm9zLWJ1cy5j
+IHwgMTA2ICsrKysrKysrKysrKysrKysrKysrLS0tLS0tLS0tLS0tLS0tCj4gPiA+ICAxIGZpbGUg
+Y2hhbmdlZCwgNjAgaW5zZXJ0aW9ucygrKSwgNDYgZGVsZXRpb25zKC0pCj4gPiA+Cj4gPiA+IGRp
+ZmYgLS1naXQgYS9kcml2ZXJzL2RldmZyZXEvZXh5bm9zLWJ1cy5jIGIvZHJpdmVycy9kZXZmcmVx
+L2V4eW5vcy1idXMuYwo+ID4gPiBpbmRleCBkOWYzNzc5MTJjMTAuLmQ4ZjFlZmFmMmQ0OSAxMDA2
+NDQKPiA+ID4gLS0tIGEvZHJpdmVycy9kZXZmcmVxL2V4eW5vcy1idXMuYwo+ID4gPiArKysgYi9k
+cml2ZXJzL2RldmZyZXEvZXh5bm9zLWJ1cy5jCj4gPiA+IEBAIC0zNzIsMTIgKzM3Miw2OSBAQCBz
+dGF0aWMgaW50IGV4eW5vc19idXNfcGFyc2Vfb2Yoc3RydWN0IGRldmljZV9ub2RlICpucCwKPiA+
+ID4gICAgIHJldHVybiByZXQ7Cj4gPiA+ICB9Cj4gPiA+Cj4gPiA+ICtzdGF0aWMgaW50IGV4eW5v
+c19idXNfcHJvZmlsZV9pbml0KHN0cnVjdCBleHlub3NfYnVzICpidXMsCj4gPiA+ICsgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICBzdHJ1Y3QgZGV2ZnJlcV9kZXZfcHJvZmlsZSAqcHJvZmls
+ZSkKPiA+ID4gK3sKPiA+ID4gKyAgIHN0cnVjdCBkZXZpY2UgKmRldiA9IGJ1cy0+ZGV2Owo+ID4g
+PiArICAgc3RydWN0IGRldmZyZXFfc2ltcGxlX29uZGVtYW5kX2RhdGEgKm9uZGVtYW5kX2RhdGE7
+Cj4gPiA+ICsgICBpbnQgcmV0Owo+ID4gPiArCj4gPiA+ICsgICAvKiBJbml0aWFsaXplIHRoZSBz
+dHJ1Y3QgcHJvZmlsZSBhbmQgZ292ZXJub3IgZGF0YSBmb3IgcGFyZW50IGRldmljZSAqLwo+ID4g
+PiArICAgcHJvZmlsZS0+cG9sbGluZ19tcyA9IDUwOwo+ID4gPiArICAgcHJvZmlsZS0+dGFyZ2V0
+ID0gZXh5bm9zX2J1c190YXJnZXQ7Cj4gPiA+ICsgICBwcm9maWxlLT5nZXRfZGV2X3N0YXR1cyA9
+IGV4eW5vc19idXNfZ2V0X2Rldl9zdGF0dXM7Cj4gPiA+ICsgICBwcm9maWxlLT5leGl0ID0gZXh5
+bm9zX2J1c19leGl0Owo+ID4gPiArCj4gPiA+ICsgICBvbmRlbWFuZF9kYXRhID0gZGV2bV9remFs
+bG9jKGRldiwgc2l6ZW9mKCpvbmRlbWFuZF9kYXRhKSwgR0ZQX0tFUk5FTCk7Cj4gPiA+ICsgICBp
+ZiAoIW9uZGVtYW5kX2RhdGEpIHsKPiA+ID4gKyAgICAgICAgICAgcmV0ID0gLUVOT01FTTsKPiA+
+ID4gKyAgICAgICAgICAgZ290byBlcnI7Cj4gPgo+ID4gSnVzdCByZXR1cm4gcHJvcGVyIGVycm9y
+IGNvZGUuIExlc3MgbGluZXMsIG9idmlvdXMgY29kZSBzaW5jZSB5b3UgZG8gbm90Cj4gPiBoYXZl
+IGFueSBjbGVhbnVwIGluIGVycm9yIHBhdGguCj4KPiBJIHdhcyBhZHZpc2VkIHRvIGF2b2lkIG1v
+ZGlmeWluZyBjb2RlIGJlaW5nIG1vdmVkIChpbiBvbmUgcGF0Y2gpLiBJIGRvIG1ha2UKPiBjaGFu
+Z2VzIGluIHRoZXNlIHBsYWNlcyBpbiBwYXRjaCAwNC8xMSwgaS5lLiBjaGFuZ2UgdGhlIG9yaWdp
+bmFsIGxhYmVsICdlcnInIHRvCj4gJ291dCcuIFdoYXQncyB5b3VyIG9waW5pb24gb24gbWFraW5n
+IHRoZSBwcm9wb3NlZCBjaGFuZ2VzIHRvIHBhdGNoZXMgMDEgYW5kIDAyCj4gKHMvZ290byBlcnIv
+cmV0dXJuIHJldC8pIGluIHBhdGNoIDA0IGluc3RlYWQ/CgpZZXMsIHlvdSdyZSByaWdodC4gSSBh
+bHNvIHByZWZlciBub3QgdG8gdG91Y2ggbW92ZWQgY29kZS4KCkJlc3QgcmVnYXJkcywKS3J6eXN6
+dG9mCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
