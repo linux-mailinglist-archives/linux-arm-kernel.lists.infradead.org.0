@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 772F282492
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 20:03:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64CC38247F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 20:02:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=O1XmewQ68Dew9R/U9tSgRVXefIA856JRtA+lmnXLGNU=; b=mQW1BGpYvmIS3k8MVngLlhpTLk
-	UMNlb6NZE9Z9unkJUicgTAySoSEELNclDqG3hztzXi/8ZyrsOx0ZQw2+Or/Won4FOnOOH3pWVmZ/4
-	2NCqFMmA2nee6aI+p7olp5mk9ebD5GNz9P8DCJIrtnHDVq5B+Grqiths43mBsp3MSznZIxg+Rzg+J
-	/oEkW4qtHEhImU86cDyxIIzS4xu2dD3GpHX0RekJe8Sadq3M2g2cFvVomF4GEhpSGi1CB5L/qveZM
-	lIQ5ruXdzgJszPOItHz8Xo5oflfEHml3gtBYbLiH24PuLi16AjJIK4Ms34ojqDJaCkDaOL7Puu6k8
-	Pp/fiLAQ==;
+	bh=pJ2lEX1crZT4eiE1Zr6Lr5Ps3gDkRPkql36O4nJxy2U=; b=InvfCgEVkCfcyj6B0t2jqtZvB9
+	xMLmSGZPvHKIu3SJaPfZPCpTleriAuPudIk5eW6wmytR6XyVtPne8dtX0F56vtCI9xeIjMm5hpaBR
+	a5ITcKomrylDdqY/nOF1cXu/sph37m5gC5R8pttON/PUydV/uwzkx5eBAUuahS7pzzbl2sJ2pWf5O
+	kAYmqcN/rfDHzif/WvVqmrLITdbN33yBBqd9zDo6P7qQJuDWPODRxoRztC+qRIdu+oUIjSGtxF+od
+	q3HMFyoccNmq7MzbRYxIFTdqOAFlRL4mdshfeSdpMU78Sbn+DubOjptRTh+pI9IZmZyR/mbHYtzp/
+	qLJnwt3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huhKr-0006Q2-3X; Mon, 05 Aug 2019 18:03:53 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
+	id 1huhJG-0004lO-UZ; Mon, 05 Aug 2019 18:02:15 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huhId-0004Io-5Z
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 18:01:41 +0000
+ id 1huhIc-0004IF-W8
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 18:01:37 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D7186C0265;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id DEDE5C0A69;
  Mon,  5 Aug 2019 18:01:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1565028094; bh=ZScKZj7qhntAYFMoXsRRZOHL848j6J8v8glAt9eiNxw=;
+ t=1565028094; bh=0tXrBzavpJ30SObdk4JISSwIOZOnt+7gyCH6maN+jEo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=Dn8DPGN1OCa8WNnQkWtrPdv+ZACicrefj3DbESG7ujTNz4IjPjQzNukB9ZPAVOVah
- o9JDGjJTJNLb7IJPHgT7aCK9/RIZqTGlIr/Rdy36Dk1JcFkzRNnhRDoi3bHAC1XiH/
- h0GxxvVKyALNGFu/1gDuRuKHHf8f8tGdosIMhtsULbGvv1iJaWXI95kSH6AKqTWq8g
- ELRS6DF9DkBXQBwN2CJplh/Y0memI+P+nBO09XdIgw3CGaH3faHT+i0fxX4UErQJEb
- vfanhk52WGdNzri0nXu6TTG5/YbtM7TiBze5G6BGB1HFgep+mNe4ShRBafpnd2hJdF
- EWNtX3eI7wojQ==
+ b=Hy+1gQdwRmP7AR2ROWw0ejrFMfuJcyoPf4BM04d5yXH6Nk0knMnSBXT8VZLv7nWyh
+ BidllMaJRqbAZl2VUg0/gCgOxqbXM+nN7GTkisGDDKzO1u1/kVmyejHDYA8tnSNJ7Q
+ FeNkoanAupcAYvjkKqZ79f6LRr7w94kFGhdXEljwUdU6uIGNS5rnZliViW+LVWQKlb
+ bjFx9kXCMjFiD+R+ZirhZzkKkzxh3PESa9/PA3BOt0iyKvhBGaMQ4M2LIpzU/YeY9r
+ KkKptMbvT8Q4zZ/g6p0P8wp2qumSGPQbdUyS7Hvcfn3mmMghn/+wHQbyXs81JUIFRK
+ 8NjXnv/hSSSZg==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 84323A0064;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 971A5A0067;
  Mon,  5 Aug 2019 18:01:32 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 02/10] net: stmmac: xgmac: Implement MMC counters
-Date: Mon,  5 Aug 2019 20:01:15 +0200
-Message-Id: <eb143f2abc5c7a1a22e13b14d7572821864f08ec.1565027782.git.joabreu@synopsys.com>
+Subject: [PATCH net-next 03/10] net: stmmac: Fix issues when number of Queues
+ >= 4
+Date: Mon,  5 Aug 2019 20:01:16 +0200
+Message-Id: <5e95bb1761f9438361f198d744640685a34790ea.1565027782.git.joabreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1565027782.git.joabreu@synopsys.com>
 References: <cover.1565027782.git.joabreu@synopsys.com>
 In-Reply-To: <cover.1565027782.git.joabreu@synopsys.com>
 References: <cover.1565027782.git.joabreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_110135_220636_92D500BB 
-X-CRM114-Status: GOOD (  16.92  )
+X-CRM114-CacheID: sfid-20190805_110135_044288_803E47C9 
+X-CRM114-Status: GOOD (  10.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -94,7 +96,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Implement the MMC counters feature in XGMAC core.
+When queues >= 4 we use different registers but we were not subtracting
+the offset of 4. Fix this.
+
+Found out by Coverity.
 
 Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 ---
@@ -108,324 +113,54 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     |   1 +
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c |   1 +
- drivers/net/ethernet/stmicro/stmmac/hwif.c         |   4 +-
- drivers/net/ethernet/stmicro/stmmac/hwif.h         |   1 +
- drivers/net/ethernet/stmicro/stmmac/mmc.h          |   9 +
- drivers/net/ethernet/stmicro/stmmac/mmc_core.c     | 192 +++++++++++++++++++++
- .../net/ethernet/stmicro/stmmac/stmmac_ethtool.c   |   6 +
- 7 files changed, 212 insertions(+), 2 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c   | 4 ++++
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c | 4 ++++
+ 2 files changed, 8 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
-index 3174b701aa90..86a42bc39d21 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
-@@ -84,6 +84,7 @@
- #define XGMAC_HWFEAT_AVSEL		BIT(11)
- #define XGMAC_HWFEAT_RAVSEL		BIT(10)
- #define XGMAC_HWFEAT_ARPOFFSEL		BIT(9)
-+#define XGMAC_HWFEAT_MMCSEL		BIT(8)
- #define XGMAC_HWFEAT_MGKSEL		BIT(7)
- #define XGMAC_HWFEAT_RWKSEL		BIT(6)
- #define XGMAC_HWFEAT_GMIISEL		BIT(1)
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-index a4f236e3593e..0f1c772e892a 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-@@ -356,6 +356,7 @@ static void dwxgmac2_get_hw_feature(void __iomem *ioaddr,
- 	dma_cap->atime_stamp = (hw_cap & XGMAC_HWFEAT_TSSEL) >> 12;
- 	dma_cap->av = (hw_cap & XGMAC_HWFEAT_AVSEL) >> 11;
- 	dma_cap->av &= (hw_cap & XGMAC_HWFEAT_RAVSEL) >> 10;
-+	dma_cap->rmon = (hw_cap & XGMAC_HWFEAT_MMCSEL) >> 8;
- 	dma_cap->pmt_magic_frame = (hw_cap & XGMAC_HWFEAT_MGKSEL) >> 7;
- 	dma_cap->pmt_remote_wake_up = (hw_cap & XGMAC_HWFEAT_RWKSEL) >> 6;
- 	dma_cap->mbps_1000 = (hw_cap & XGMAC_HWFEAT_GMIISEL) >> 1;
-diff --git a/drivers/net/ethernet/stmicro/stmmac/hwif.c b/drivers/net/ethernet/stmicro/stmmac/hwif.c
-index 6c61b753b55e..3af2e5015245 100644
---- a/drivers/net/ethernet/stmicro/stmmac/hwif.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/hwif.c
-@@ -201,7 +201,7 @@ static const struct stmmac_hwif_entry {
- 		.min_id = DWXGMAC_CORE_2_10,
- 		.regs = {
- 			.ptp_off = PTP_XGMAC_OFFSET,
--			.mmc_off = 0,
-+			.mmc_off = MMC_XGMAC_OFFSET,
- 		},
- 		.desc = &dwxgmac210_desc_ops,
- 		.dma = &dwxgmac210_dma_ops,
-@@ -209,7 +209,7 @@ static const struct stmmac_hwif_entry {
- 		.hwtimestamp = &stmmac_ptp,
- 		.mode = NULL,
- 		.tc = &dwmac510_tc_ops,
--		.mmc = NULL,
-+		.mmc = &dwxgmac_mmc_ops,
- 		.setup = dwxgmac2_setup,
- 		.quirks = NULL,
- 	},
-diff --git a/drivers/net/ethernet/stmicro/stmmac/hwif.h b/drivers/net/ethernet/stmicro/stmmac/hwif.h
-index 278c0dbec9d9..00539a09d1db 100644
---- a/drivers/net/ethernet/stmicro/stmmac/hwif.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/hwif.h
-@@ -503,6 +503,7 @@ extern const struct stmmac_ops dwxgmac210_ops;
- extern const struct stmmac_dma_ops dwxgmac210_dma_ops;
- extern const struct stmmac_desc_ops dwxgmac210_desc_ops;
- extern const struct stmmac_mmc_ops dwmac_mmc_ops;
-+extern const struct stmmac_mmc_ops dwxgmac_mmc_ops;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+index 01c2e2d83e76..fc9954e4a772 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+@@ -85,6 +85,8 @@ static void dwmac4_rx_queue_priority(struct mac_device_info *hw,
+ 	u32 value;
  
- #define GMAC_VERSION		0x00000020	/* GMAC CORE Version */
- #define GMAC4_VERSION		0x00000110	/* GMAC4+ CORE Version */
-diff --git a/drivers/net/ethernet/stmicro/stmmac/mmc.h b/drivers/net/ethernet/stmicro/stmmac/mmc.h
-index 3587ceb9faf5..a0c05925883e 100644
---- a/drivers/net/ethernet/stmicro/stmmac/mmc.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/mmc.h
-@@ -24,6 +24,7 @@
+ 	base_register = (queue < 4) ? GMAC_RXQ_CTRL2 : GMAC_RXQ_CTRL3;
++	if (queue >= 4)
++		queue -= 4;
  
- #define MMC_GMAC4_OFFSET		0x700
- #define MMC_GMAC3_X_OFFSET		0x100
-+#define MMC_XGMAC_OFFSET		0x800
+ 	value = readl(ioaddr + base_register);
  
- struct stmmac_counters {
- 	unsigned int mmc_tx_octetcount_gb;
-@@ -116,6 +117,14 @@ struct stmmac_counters {
- 	unsigned int mmc_rx_tcp_err_octets;
- 	unsigned int mmc_rx_icmp_gd_octets;
- 	unsigned int mmc_rx_icmp_err_octets;
-+
-+	/* FPE */
-+	unsigned int mmc_tx_fpe_fragment_cntr;
-+	unsigned int mmc_tx_hold_req_cntr;
-+	unsigned int mmc_rx_packet_assembly_err_cntr;
-+	unsigned int mmc_rx_packet_smd_err_cntr;
-+	unsigned int mmc_rx_packet_assembly_ok_cntr;
-+	unsigned int mmc_rx_fpe_fragment_cntr;
- };
+@@ -102,6 +104,8 @@ static void dwmac4_tx_queue_priority(struct mac_device_info *hw,
+ 	u32 value;
  
- #endif /* __MMC_H__ */
-diff --git a/drivers/net/ethernet/stmicro/stmmac/mmc_core.c b/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
-index a471db6d7b11..a223584f5f9a 100644
---- a/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
-@@ -119,6 +119,64 @@
- #define MMC_RX_ICMP_GD_OCTETS		0x180
- #define MMC_RX_ICMP_ERR_OCTETS		0x184
+ 	base_register = (queue < 4) ? GMAC_TXQ_PRTY_MAP0 : GMAC_TXQ_PRTY_MAP1;
++	if (queue >= 4)
++		queue -= 4;
  
-+/* XGMAC MMC Registers */
-+#define MMC_XGMAC_TX_OCTET_GB		0x14
-+#define MMC_XGMAC_TX_PKT_GB		0x1c
-+#define MMC_XGMAC_TX_BROAD_PKT_G	0x24
-+#define MMC_XGMAC_TX_MULTI_PKT_G	0x2c
-+#define MMC_XGMAC_TX_64OCT_GB		0x34
-+#define MMC_XGMAC_TX_65OCT_GB		0x3c
-+#define MMC_XGMAC_TX_128OCT_GB		0x44
-+#define MMC_XGMAC_TX_256OCT_GB		0x4c
-+#define MMC_XGMAC_TX_512OCT_GB		0x54
-+#define MMC_XGMAC_TX_1024OCT_GB		0x5c
-+#define MMC_XGMAC_TX_UNI_PKT_GB		0x64
-+#define MMC_XGMAC_TX_MULTI_PKT_GB	0x6c
-+#define MMC_XGMAC_TX_BROAD_PKT_GB	0x74
-+#define MMC_XGMAC_TX_UNDER		0x7c
-+#define MMC_XGMAC_TX_OCTET_G		0x84
-+#define MMC_XGMAC_TX_PKT_G		0x8c
-+#define MMC_XGMAC_TX_PAUSE		0x94
-+#define MMC_XGMAC_TX_VLAN_PKT_G		0x9c
-+#define MMC_XGMAC_TX_LPI_USEC		0xa4
-+#define MMC_XGMAC_TX_LPI_TRAN		0xa8
-+
-+#define MMC_XGMAC_RX_PKT_GB		0x100
-+#define MMC_XGMAC_RX_OCTET_GB		0x108
-+#define MMC_XGMAC_RX_OCTET_G		0x110
-+#define MMC_XGMAC_RX_BROAD_PKT_G	0x118
-+#define MMC_XGMAC_RX_MULTI_PKT_G	0x120
-+#define MMC_XGMAC_RX_CRC_ERR		0x128
-+#define MMC_XGMAC_RX_RUNT_ERR		0x130
-+#define MMC_XGMAC_RX_JABBER_ERR		0x134
-+#define MMC_XGMAC_RX_UNDER		0x138
-+#define MMC_XGMAC_RX_OVER		0x13c
-+#define MMC_XGMAC_RX_64OCT_GB		0x140
-+#define MMC_XGMAC_RX_65OCT_GB		0x148
-+#define MMC_XGMAC_RX_128OCT_GB		0x150
-+#define MMC_XGMAC_RX_256OCT_GB		0x158
-+#define MMC_XGMAC_RX_512OCT_GB		0x160
-+#define MMC_XGMAC_RX_1024OCT_GB		0x168
-+#define MMC_XGMAC_RX_UNI_PKT_G		0x170
-+#define MMC_XGMAC_RX_LENGTH_ERR		0x178
-+#define MMC_XGMAC_RX_RANGE		0x180
-+#define MMC_XGMAC_RX_PAUSE		0x188
-+#define MMC_XGMAC_RX_FIFOOVER_PKT	0x190
-+#define MMC_XGMAC_RX_VLAN_PKT_GB	0x198
-+#define MMC_XGMAC_RX_WATCHDOG_ERR	0x1a0
-+#define MMC_XGMAC_RX_LPI_USEC		0x1a4
-+#define MMC_XGMAC_RX_LPI_TRAN		0x1a8
-+#define MMC_XGMAC_RX_DISCARD_PKT_GB	0x1ac
-+#define MMC_XGMAC_RX_DISCARD_OCT_GB	0x1b4
-+#define MMC_XGMAC_RX_ALIGN_ERR_PKT	0x1bc
-+
-+#define MMC_XGMAC_TX_FPE_FRAG		0x208
-+#define MMC_XGMAC_TX_HOLD_REQ		0x20c
-+#define MMC_XGMAC_RX_PKT_ASSEMBLY_ERR	0x228
-+#define MMC_XGMAC_RX_PKT_SMD_ERR	0x22c
-+#define MMC_XGMAC_RX_PKT_ASSEMBLY_OK	0x230
-+#define MMC_XGMAC_RX_FPE_FRAG		0x234
-+
- static void dwmac_mmc_ctrl(void __iomem *mmcaddr, unsigned int mode)
- {
- 	u32 value = readl(mmcaddr + MMC_CNTRL);
-@@ -263,3 +321,137 @@ const struct stmmac_mmc_ops dwmac_mmc_ops = {
- 	.intr_all_mask = dwmac_mmc_intr_all_mask,
- 	.read = dwmac_mmc_read,
- };
-+
-+static void dwxgmac_mmc_ctrl(void __iomem *mmcaddr, unsigned int mode)
-+{
-+	u32 value = readl(mmcaddr + MMC_CNTRL);
-+
-+	value |= (mode & 0x3F);
-+
-+	writel(value, mmcaddr + MMC_CNTRL);
-+}
-+
-+static void dwxgmac_mmc_intr_all_mask(void __iomem *mmcaddr)
-+{
-+	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_RX_INTR_MASK);
-+	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_TX_INTR_MASK);
-+}
-+
-+static void dwxgmac_read_mmc_reg(void __iomem *addr, u32 reg, u32 *dest)
-+{
-+	u64 tmp = 0;
-+
-+	tmp += readl(addr + reg);
-+	tmp += ((u64 )readl(addr + reg + 0x4)) << 32;
-+	if (tmp > GENMASK(31, 0))
-+		*dest = ~0x0;
-+	else
-+		*dest = *dest + tmp;
-+}
-+
-+/* This reads the MAC core counters (if actaully supported).
-+ * by default the MMC core is programmed to reset each
-+ * counter after a read. So all the field of the mmc struct
-+ * have to be incremented.
-+ */
-+static void dwxgmac_mmc_read(void __iomem *mmcaddr, struct stmmac_counters *mmc)
-+{
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_OCTET_GB,
-+			     &mmc->mmc_tx_octetcount_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_PKT_GB,
-+			     &mmc->mmc_tx_framecount_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_BROAD_PKT_G,
-+			     &mmc->mmc_tx_broadcastframe_g);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_MULTI_PKT_G,
-+			     &mmc->mmc_tx_multicastframe_g);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_64OCT_GB,
-+			     &mmc->mmc_tx_64_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_65OCT_GB,
-+			     &mmc->mmc_tx_65_to_127_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_128OCT_GB,
-+			     &mmc->mmc_tx_128_to_255_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_256OCT_GB,
-+			     &mmc->mmc_tx_256_to_511_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_512OCT_GB,
-+			     &mmc->mmc_tx_512_to_1023_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_1024OCT_GB,
-+			     &mmc->mmc_tx_1024_to_max_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_UNI_PKT_GB,
-+			     &mmc->mmc_tx_unicast_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_MULTI_PKT_GB,
-+			     &mmc->mmc_tx_multicast_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_BROAD_PKT_GB,
-+			     &mmc->mmc_tx_broadcast_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_UNDER,
-+			     &mmc->mmc_tx_underflow_error);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_OCTET_G,
-+			     &mmc->mmc_tx_octetcount_g);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_PKT_G,
-+			     &mmc->mmc_tx_framecount_g);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_PAUSE,
-+			     &mmc->mmc_tx_pause_frame);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_TX_VLAN_PKT_G,
-+			     &mmc->mmc_tx_vlan_frame_g);
-+
-+	/* MMC RX counter registers */
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_PKT_GB,
-+			     &mmc->mmc_rx_framecount_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_OCTET_GB,
-+			     &mmc->mmc_rx_octetcount_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_OCTET_G,
-+			     &mmc->mmc_rx_octetcount_g);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_BROAD_PKT_G,
-+			     &mmc->mmc_rx_broadcastframe_g);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_MULTI_PKT_G,
-+			     &mmc->mmc_rx_multicastframe_g);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_CRC_ERR,
-+			     &mmc->mmc_rx_crc_error);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_CRC_ERR,
-+			     &mmc->mmc_rx_crc_error);
-+	mmc->mmc_rx_run_error += readl(mmcaddr + MMC_XGMAC_RX_RUNT_ERR);
-+	mmc->mmc_rx_jabber_error += readl(mmcaddr + MMC_XGMAC_RX_JABBER_ERR);
-+	mmc->mmc_rx_undersize_g += readl(mmcaddr + MMC_XGMAC_RX_UNDER);
-+	mmc->mmc_rx_oversize_g += readl(mmcaddr + MMC_XGMAC_RX_OVER);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_64OCT_GB,
-+			     &mmc->mmc_rx_64_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_65OCT_GB,
-+			     &mmc->mmc_rx_65_to_127_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_128OCT_GB,
-+			     &mmc->mmc_rx_128_to_255_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_256OCT_GB,
-+			     &mmc->mmc_rx_256_to_511_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_512OCT_GB,
-+			     &mmc->mmc_rx_512_to_1023_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_1024OCT_GB,
-+			     &mmc->mmc_rx_1024_to_max_octets_gb);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_UNI_PKT_G,
-+			     &mmc->mmc_rx_unicast_g);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_LENGTH_ERR,
-+			     &mmc->mmc_rx_length_error);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_RANGE,
-+			     &mmc->mmc_rx_autofrangetype);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_PAUSE,
-+			     &mmc->mmc_rx_pause_frames);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_FIFOOVER_PKT,
-+			     &mmc->mmc_rx_fifo_overflow);
-+	dwxgmac_read_mmc_reg(mmcaddr, MMC_XGMAC_RX_VLAN_PKT_GB,
-+			     &mmc->mmc_rx_vlan_frames_gb);
-+	mmc->mmc_rx_watchdog_error += readl(mmcaddr + MMC_XGMAC_RX_WATCHDOG_ERR);
-+
-+	mmc->mmc_tx_fpe_fragment_cntr += readl(mmcaddr + MMC_XGMAC_TX_FPE_FRAG);
-+	mmc->mmc_tx_hold_req_cntr += readl(mmcaddr + MMC_XGMAC_TX_HOLD_REQ);
-+	mmc->mmc_rx_packet_assembly_err_cntr +=
-+		readl(mmcaddr + MMC_XGMAC_RX_PKT_ASSEMBLY_ERR);
-+	mmc->mmc_rx_packet_smd_err_cntr +=
-+		readl(mmcaddr + MMC_XGMAC_RX_PKT_SMD_ERR);
-+	mmc->mmc_rx_packet_assembly_ok_cntr +=
-+		readl(mmcaddr + MMC_XGMAC_RX_PKT_ASSEMBLY_OK);
-+	mmc->mmc_rx_fpe_fragment_cntr +=
-+		readl(mmcaddr + MMC_XGMAC_RX_FPE_FRAG);
-+}
-+
-+const struct stmmac_mmc_ops dwxgmac_mmc_ops = {
-+	.ctrl = dwxgmac_mmc_ctrl,
-+	.intr_all_mask = dwxgmac_mmc_intr_all_mask,
-+	.read = dwxgmac_mmc_read,
-+};
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
-index 6efb66820d4c..d294590cba27 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
-@@ -243,6 +243,12 @@ static const struct stmmac_stats stmmac_mmc[] = {
- 	STMMAC_MMC_STAT(mmc_rx_tcp_err_octets),
- 	STMMAC_MMC_STAT(mmc_rx_icmp_gd_octets),
- 	STMMAC_MMC_STAT(mmc_rx_icmp_err_octets),
-+	STMMAC_MMC_STAT(mmc_tx_fpe_fragment_cntr),
-+	STMMAC_MMC_STAT(mmc_tx_hold_req_cntr),
-+	STMMAC_MMC_STAT(mmc_rx_packet_assembly_err_cntr),
-+	STMMAC_MMC_STAT(mmc_rx_packet_smd_err_cntr),
-+	STMMAC_MMC_STAT(mmc_rx_packet_assembly_ok_cntr),
-+	STMMAC_MMC_STAT(mmc_rx_fpe_fragment_cntr),
- };
- #define STMMAC_MMC_STATS_LEN ARRAY_SIZE(stmmac_mmc)
+ 	value = readl(ioaddr + base_register);
  
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+index 03a6a59650ca..85c68b7ee8c6 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+@@ -108,6 +108,8 @@ static void dwxgmac2_rx_queue_prio(struct mac_device_info *hw, u32 prio,
+ 	u32 value, reg;
+ 
+ 	reg = (queue < 4) ? XGMAC_RXQ_CTRL2 : XGMAC_RXQ_CTRL3;
++	if (queue >= 4)
++		queue -= 4;
+ 
+ 	value = readl(ioaddr + reg);
+ 	value &= ~XGMAC_PSRQ(queue);
+@@ -171,6 +173,8 @@ static void dwxgmac2_map_mtl_to_dma(struct mac_device_info *hw, u32 queue,
+ 	u32 value, reg;
+ 
+ 	reg = (queue < 4) ? XGMAC_MTL_RXQ_DMA_MAP0 : XGMAC_MTL_RXQ_DMA_MAP1;
++	if (queue >= 4)
++		queue -= 4;
+ 
+ 	value = readl(ioaddr + reg);
+ 	value &= ~XGMAC_QxMDMACH(queue);
 -- 
 2.7.4
 
