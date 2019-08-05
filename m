@@ -2,58 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EA2782758
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 00:10:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5476F8278D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 00:21:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v1V5wxaoKdo00OCeViv/W3rkW17ZllQc8Eyd22pc3cE=; b=a7mAAVFIeBJtTZ
-	t+H+xdwh0ojI1c4Gbe7Jt/4VLdFGKQ3fxyw3tbkmoTuxmt0I9n2Q0rTW5N6xSJ+08x+8BJf77BKnf
-	RuuyRql95Gv3B9jbduIhRdnLRltPfD4uY+/tySsDd1EvyYWicYxUml7JKLmbv5RwtIi27n8NnQYk6
-	tb7NRKqJTHthyFm7w/cj/tdSpgqrqktu6xQLTrTLqlSSVqucfkvuYUH5aZRkl6s4hI//0gmNDCK3/
-	FCIs1AzsBAXWJO+7WoIZJ1CbCxOUFxO3GvgQGSex3/DIvwUaAuCB9oyzveYXGV+7Ur3fX8tmjuojn
-	i9QZAwzM+0KYnsWaGVEA==;
+	List-Owner; bh=cAL/epUIn8WIgh3TuwVm3cNZwnNHVbZrpqg4iUjg2FU=; b=LXmqB9v9CKTFiN
+	cvmVa4m4OiPJgwDLDtcQHUxh2SoG8jYVBCUbE2E7Kagp9DIZlnF74hpdEOwLGo/9umz6l6QVV+sGz
+	pPfe13gP5LecPCFm2UB6Wyuyrq6ojpf4VBENHmV6+QW48mDsak9v2zCCloXh2HWByCf9I++tPBR69
+	aV7Y3+WUORh6ILkZBIEOl/jca0LAgsSlhworwJR0CGOORWlWLSiRZ2/i+CFcWeWpB/biwycbhkSTT
+	Fbp+KECWGuGHtzi+GtvkPrypy3ZLfr6tRveJyG2vErf1qDCmAJ9mGwtmeHEWcFCA46PAdgcnaPn9i
+	I3LRZNMiu6ONb2+PWKTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hulBA-0003bT-0m; Mon, 05 Aug 2019 22:10:08 +0000
+	id 1hulM7-00086i-O7; Mon, 05 Aug 2019 22:21:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hulAy-0003aT-6V; Mon, 05 Aug 2019 22:09:57 +0000
+ id 1hulLy-00085K-4r; Mon, 05 Aug 2019 22:21:19 +0000
 Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
  [209.85.160.169])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A32D52147A;
- Mon,  5 Aug 2019 22:09:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9CDA0216F4;
+ Mon,  5 Aug 2019 22:21:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565042995;
- bh=NAJ16jvh/qchypdVowjtbzNr9+9foVnE+vd1uUZQC7g=;
+ s=default; t=1565043677;
+ bh=Y+a5+dRoi0YVw6gPz9RVozw6iDMpBq9OZh+AXfZi5Is=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=UdlsxMT9wxnPg84czTc53XMAznVmd7n8JRcYPxB0Fu7FGgY6Vf9s/Dqc+UR+3IfO7
- LPXWB3QDqCrtcNwuUxU7BaE/2hGz/E0e0XBJLo7Q5km8dkVP/ybkS82B3bEJoI21rs
- XBRKjIh4YtimZeQp5Or12nvID6o1ifjlu7V5KIpU=
-Received: by mail-qt1-f169.google.com with SMTP id a15so82549465qtn.7;
- Mon, 05 Aug 2019 15:09:55 -0700 (PDT)
-X-Gm-Message-State: APjAAAX95EYgxJRef0y4cf/4D72pgBFvaJfoNK5+wlQKBdD0h085Lohv
- ftMUCX/pyuTD4C9qkqryWtt3Aujb+P1K7bOzIw==
-X-Google-Smtp-Source: APXvYqzN7Oaow/mdIokjxZIROhfoq29oWOHhIQUUHynApmz52dA7L6a16lTZR93u1Os4RUyoD7Omw1XiDFtlZBNZ4Fw=
-X-Received: by 2002:a0c:acef:: with SMTP id n44mr215262qvc.39.1565042994893;
- Mon, 05 Aug 2019 15:09:54 -0700 (PDT)
+ b=z/afeF4DRV9zUHEkPb+3qW3XLRei+MecL3vBZUcAqIZnRVD3TzEdFABt9R7Gyx8+2
+ mC4ULdgCWDa0KHGMotuto6AT7glPsJk8Gi4J1S9XTjokZW1S8RGbjpGIhEFQH2mQAx
+ 3owQagg6CtWhorEXMf6owMkDj/bpNJ8iOYzIe//g=
+Received: by mail-qt1-f169.google.com with SMTP id 44so51560327qtg.11;
+ Mon, 05 Aug 2019 15:21:17 -0700 (PDT)
+X-Gm-Message-State: APjAAAUZFG2/FaUHjvPO7uOsjLNKzu9CF+I5wOtA0bc1r2ScFIgqQdAK
+ DrdJHxD+pF7Vbb8hROTF/MHrFkedKx6zaDK6Gg==
+X-Google-Smtp-Source: APXvYqyG5ow10xlO87/4O5/N0US5x/vWmMvRNW7227/h0HIqSzUYZ0L7Wk/nO+vhCYUgRIXKhM/9We9oSL2w6AZTwf8=
+X-Received: by 2002:a0c:8a43:: with SMTP id 3mr283692qvu.138.1565043676810;
+ Mon, 05 Aug 2019 15:21:16 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190805122558.5130-1-narmstrong@baylibre.com>
-In-Reply-To: <20190805122558.5130-1-narmstrong@baylibre.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 5 Aug 2019 16:09:43 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+efvvb1UK-Nas0G5XefLWwN7ebnqoevi+W=jj4r3E2dg@mail.gmail.com>
-Message-ID: <CAL_Jsq+efvvb1UK-Nas0G5XefLWwN7ebnqoevi+W=jj4r3E2dg@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: net: meson-dwmac: convert to yaml
-To: Neil Armstrong <narmstrong@baylibre.com>
+References: <20190731124000.22072-1-narmstrong@baylibre.com>
+ <20190731124000.22072-3-narmstrong@baylibre.com> <7hblx3gua3.fsf@baylibre.com>
+In-Reply-To: <7hblx3gua3.fsf@baylibre.com>
+From: Rob Herring <robh@kernel.org>
+Date: Mon, 5 Aug 2019 16:21:05 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqL_L2qHe334sB57hR_coRhawKiqXYjKAQDJt_DHfBamBQ@mail.gmail.com>
+Message-ID: <CAL_JsqL_L2qHe334sB57hR_coRhawKiqXYjKAQDJt_DHfBamBQ@mail.gmail.com>
+Subject: Re: [PATCH 2/6] dt-bindings: arm: amlogic: add bindings for G12B
+ based S922X SoC
+To: Kevin Hilman <khilman@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_150956_265263_BDFE0C8F 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20190805_152118_211624_1C259D76 
+X-CRM114-Status: GOOD (  15.64  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,9 +84,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- netdev <netdev@vger.kernel.org>,
+Cc: devicetree@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
+ Christian Hewitt <christianshewitt@gmail.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  linux-amlogic@lists.infradead.org,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
@@ -94,48 +95,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 5, 2019 at 6:26 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
+On Mon, Aug 5, 2019 at 3:46 PM Kevin Hilman <khilman@baylibre.com> wrote:
 >
-> Now that we have the DT validation in place, let's convert the device tree
-> bindings for the Synopsys DWMAC Glue for Amlogic SoCs over to a YAML schemas.
+> Neil Armstrong <narmstrong@baylibre.com> writes:
 >
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> ---
-> Rob,
+> > Add a specific compatible for the Amlogic G12B family based S922X SoC
+> > to differentiate with the A311D SoC from the same family.
+> >
+> > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> > ---
+> >  Documentation/devicetree/bindings/arm/amlogic.yaml | 1 +
+> >  1 file changed, 1 insertion(+)
+> >
+> > diff --git a/Documentation/devicetree/bindings/arm/amlogic.yaml b/Documentation/devicetree/bindings/arm/amlogic.yaml
+> > index 325c6fd3566d..3c3bc806cd23 100644
+> > --- a/Documentation/devicetree/bindings/arm/amlogic.yaml
+> > +++ b/Documentation/devicetree/bindings/arm/amlogic.yaml
+> > @@ -139,6 +139,7 @@ properties:
+> >          items:
+> >            - enum:
+> >                - hardkernel,odroid-n2
+> > +          - const: amlogic,s922x
+> >            - const: amlogic,g12b
 >
-> I keep getting :
-> .../devicetree/bindings/net/amlogic,meson-dwmac.example.dt.yaml: ethernet@c9410000: reg: [[3376480256, 65536], [3364046144, 8]] is too long
+> nit: in previous binding docs, we were trying to keep these sorted
+> alphabetically.  I'll reorder the new "s922x" after "g12b" when
+> applying.
 
-Because snps,dwmac.yaml has:
-
-  reg:
-    maxItems: 1
-
-The schemas are applied separately and all have to be valid. You'll
-need to change snps,dwmac.yaml to:
-
-reg:
-  minItems: 1
-  maxItems: 2
-
-
-The schema error messages leave something to be desired. I wish the
-error messages said which schema is throwing the error.
-
-> for the example DT
->
-> and for the board DT :
-> ../amlogic/meson-gxl-s905x-libretech-cc.dt.yaml: ethernet@c9410000: reg: [[0, 3376480256, 0, 65536, 0, 3364046144, 0, 4]] is too short
-> ../amlogic/meson-gxl-s905x-nexbox-a95x.dt.yaml: soc: ethernet@c9410000:reg:0: [0, 3376480256, 0, 65536, 0, 3364046144, 0, 4] is too long
->
-> and I don't know how to get rid of it.
-
-The first issue is the same as the above. The 2nd issue is the use of
-<> in dts files becomes stricter with the schema. Each entry in an
-array needs to be bracketed:
-
-reg = <0x0 0xc9410000 0x0 0x10000>,
-          <0x0 0xc8834540 0x0 0x4>;
+No, this is not documentation ordering. It's the order compatible
+strings must be in.
 
 Rob
 
