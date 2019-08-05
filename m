@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24199817A1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:55:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2AD0817B1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 12:57:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yhb3UuXga9u/KAPsHx/yl8I8x78Nzo3lNkcXg3aSneY=; b=Ft8ZsFRr+oADHU
-	bmUSTb73gavGlspwt1wsl3+BPNtQVwcMbnpYqlcOXwc1fRLrmbNgJmZmRznd1G8gu+idLB5cDSmKf
-	3ZwA8T41wYen8Kz+SGjM+bfh8RaqcqGDfaZnccHwmfMsPvsrXf8LwXNLRUm3Yx0Sb68SDPAvuuYSz
-	LtV6PCm1oocL5b4sMSbxfWm/4r64f8Fx+N6tDJcx+otw3T5KVXebbpwsLQKgFiqW/rIEanmTYIMxp
-	+VeoQRGT5/xkih1jfDkTOV6EHOb0gx4kfLutuB8YFYlcwo+z2508Llhf0NStR2ZSC7uUp1tYZ8qBY
-	LCDSH2cIKXFzKZ0DcvXw==;
+	List-Owner; bh=dd6WjKp03Xy2G9HLmdm4LQPyxVJiIqk8IYoFhjYvLkk=; b=HKHpavHu7Bu7kp
+	rhsjoBdTtcFFAvCTRfgi6teoEeRauDNHtezfXPRPvmSMmPULMzmUX48n388scGxmld7S09pGDem1W
+	xKUUCD7bkqspD+fATrTwoCDlkAPHu89/kG1N0eBxnXbq26NNpejHP8VA1AGdkfPjPTv3foZIny7dZ
+	+tnL+m0GxQRvE6KCa6+GR/SC1X7H8uC7EHyRq2LbYtZW8Qimt/ZK1fm0L1t5na+QiGDqwOhKJFBL7
+	15h0e9idd8FgduDpx7TpiaB+XaJfOdhrv/aLLS5zf/kJLROwu5z6fJaa2n9NcDpWnbRzI6RPOzmvu
+	Jvn/erfudHKIBavawSIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huadz-0005HO-BP; Mon, 05 Aug 2019 10:55:12 +0000
+	id 1huafq-00071l-Mc; Mon, 05 Aug 2019 10:57:06 +0000
 Received: from perceval.ideasonboard.com
  ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huadJ-0005Gx-EB
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:54:31 +0000
+ id 1huafb-00071K-6Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 10:56:53 +0000
 Received: from pendragon.ideasonboard.com
  (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
  [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id C82CF2F9;
- Mon,  5 Aug 2019 12:54:26 +0200 (CEST)
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id E5F032F9;
+ Mon,  5 Aug 2019 12:56:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1565002467;
- bh=RwQ5mnU7RUBzTgtf9QVDKC/TD/uPXzpxPEkwiDIp9go=;
+ s=mail; t=1565002609;
+ bh=nisUIk5L2tjJD15aLfwBsmDwP/QvwsSaKKmQVHAH03Y=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=o1GVXvYZTbKujwlbSWjhyKHPW4owM5I0zlEmcs35W5UJBLn/uX9Y1tgQEVNlHfCbu
- /nMXTotTJmqYaQ8CHoaAUSMqptXHOSOgKzy2jlzBudupzdlL+rtr7/MD3KkjGOYseq
- vW5cLPFJmFIz7+5Iycxf8kVVcCzLg1Lzyt0SrqHE=
-Date: Mon, 5 Aug 2019 13:54:25 +0300
+ b=DvfNSMsq9Iz0RSwd24A/p89jCmKQ/1WhEHui6UQFf0FmiuolkRgjJT1onBjHZcSvh
+ oflCXD0nj+c/zQiVLayDOq4tm6eIeDOMhUCaJ1X7HVDwJsVexhwYAZeYr20JNNZny7
+ Fc+8ZcDaBMGp3zyq7PONluW7eDNtNgQbtDMYivjY=
+Date: Mon, 5 Aug 2019 13:56:47 +0300
 From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 To: Sam Ravnborg <sam@ravnborg.org>
-Subject: Re: [PATCH v1 12/16] drm/panel: use inline comments in drm_panel.h
-Message-ID: <20190805105425.GG29747@pendragon.ideasonboard.com>
+Subject: Re: [PATCH v1 13/16] drm/panel: drop return code from
+ drm_panel_detach()
+Message-ID: <20190805105647.GH29747@pendragon.ideasonboard.com>
 References: <20190804201637.1240-1-sam@ravnborg.org>
- <20190804201637.1240-13-sam@ravnborg.org>
+ <20190804201637.1240-14-sam@ravnborg.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190804201637.1240-13-sam@ravnborg.org>
+In-Reply-To: <20190804201637.1240-14-sam@ravnborg.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_035429_858425_016ECC59 
-X-CRM114-Status: GOOD (  24.32  )
+X-CRM114-CacheID: sfid-20190805_035651_533055_B1546F00 
+X-CRM114-Status: GOOD (  22.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -108,145 +109,81 @@ Hi Sam,
 
 Thank you for the patch.
 
-On Sun, Aug 04, 2019 at 10:16:33PM +0200, Sam Ravnborg wrote:
-> Inline comments provide better space for additional comments.
-> Comments was slightly edited to follow the normal style,
-> but no change to actual content.
-> Used the opportuniy to change the order in drm_panel_funcs
-> to follow the order they will be used by a panel.
+On Sun, Aug 04, 2019 at 10:16:34PM +0200, Sam Ravnborg wrote:
+> There are no errors that can be reported by this function,
+> so drop the return code.
+> Fix the only bridge driver that checked the return result.
 > 
 > Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Thierry Reding <thierry.reding@gmail.com>
+> Cc: Sam Ravnborg <sam@ravnborg.org>
 > Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
 > Cc: Maxime Ripard <maxime.ripard@bootlin.com>
 > Cc: Sean Paul <sean@poorly.run>
-> Cc: Thierry Reding <thierry.reding@gmail.com>
-> Cc: Sam Ravnborg <sam@ravnborg.org>
 > Cc: David Airlie <airlied@linux.ie>
 > Cc: Daniel Vetter <daniel@ffwll.ch>
+> Cc: Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>
+> Cc: Andrzej Hajda <a.hajda@samsung.com>
+> Cc: Gwan-gyeong Mun <gwan-gyeong.mun@intel.com>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
 
 Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 
 > ---
->  include/drm/drm_panel.h | 82 +++++++++++++++++++++++++++++++++--------
->  1 file changed, 66 insertions(+), 16 deletions(-)
+>  drivers/gpu/drm/bridge/analogix/analogix_dp_core.c | 3 +--
+>  drivers/gpu/drm/drm_panel.c                        | 6 +-----
+>  include/drm/drm_panel.h                            | 2 +-
+>  3 files changed, 3 insertions(+), 8 deletions(-)
 > 
+> diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
+> index f2f7f69d6cc3..22885dceaa17 100644
+> --- a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
+> +++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
+> @@ -1780,8 +1780,7 @@ void analogix_dp_unbind(struct analogix_dp_device *dp)
+>  	if (dp->plat_data->panel) {
+>  		if (drm_panel_unprepare(dp->plat_data->panel))
+>  			DRM_ERROR("failed to turnoff the panel\n");
+> -		if (drm_panel_detach(dp->plat_data->panel))
+> -			DRM_ERROR("failed to detach the panel\n");
+> +		drm_panel_detach(dp->plat_data->panel);
+>  	}
+>  
+>  	drm_dp_aux_unregister(&dp->aux);
+> diff --git a/drivers/gpu/drm/drm_panel.c b/drivers/gpu/drm/drm_panel.c
+> index 9946b8d9bacc..da19d5b4a2f4 100644
+> --- a/drivers/gpu/drm/drm_panel.c
+> +++ b/drivers/gpu/drm/drm_panel.c
+> @@ -219,15 +219,11 @@ EXPORT_SYMBOL(drm_panel_attach);
+>   *
+>   * This function should not be called by the panel device itself. It
+>   * is only for the drm device that called drm_panel_attach().
+> - *
+> - * Return: 0 on success or a negative error code on failure.
+>   */
+> -int drm_panel_detach(struct drm_panel *panel)
+> +void drm_panel_detach(struct drm_panel *panel)
+>  {
+>  	panel->connector = NULL;
+>  	panel->drm = NULL;
+> -
+> -	return 0;
+>  }
+>  EXPORT_SYMBOL(drm_panel_detach);
+>  
 > diff --git a/include/drm/drm_panel.h b/include/drm/drm_panel.h
-> index 053d611656b9..5e62deea49ba 100644
+> index 5e62deea49ba..624bd15ecfab 100644
 > --- a/include/drm/drm_panel.h
 > +++ b/include/drm/drm_panel.h
-> @@ -36,14 +36,6 @@ struct display_timing;
+> @@ -153,7 +153,7 @@ int drm_panel_add(struct drm_panel *panel);
+>  void drm_panel_remove(struct drm_panel *panel);
 >  
->  /**
->   * struct drm_panel_funcs - perform operations on a given panel
-> - * @disable: disable panel (turn off back light, etc.)
-> - * @unprepare: turn off panel
-> - * @prepare: turn on panel and perform set up
-> - * @enable: enable panel (turn on back light, etc.)
-> - * @get_modes: add modes to the connector that the panel is attached to and
-> - * return the number of modes added
-> - * @get_timings: copy display timings into the provided array and return
-> - * the number of display timings available
->   *
->   * The .prepare() function is typically called before the display controller
->   * starts to transmit video data. Panel drivers can use this to turn the panel
-> @@ -69,31 +61,89 @@ struct display_timing;
->   * the panel. This is the job of the .unprepare() function.
->   */
->  struct drm_panel_funcs {
-> -	int (*disable)(struct drm_panel *panel);
-> -	int (*unprepare)(struct drm_panel *panel);
-> +	/**
-> +	 * @prepare:
-> +	 *
-> +	 * Turn on panel and perform set up.
-> +	 */
->  	int (*prepare)(struct drm_panel *panel);
-> +
-> +	/**
-> +	 * @enable:
-> +	 *
-> +	 * Enable panel (turn on back light, etc.).
-> +	 */
->  	int (*enable)(struct drm_panel *panel);
-> +
-> +	/**
-> +	 * @disable:
-> +	 *
-> +	 * Disable panel (turn off back light, etc.).
-> +	 */
-> +	int (*disable)(struct drm_panel *panel);
-> +
-> +	/**
-> +	 * @unprepare:
-> +	 *
-> +	 * Turn off panel.
-> +	 */
-> +	int (*unprepare)(struct drm_panel *panel);
-> +
-> +	/**
-> +	 * @get_modes:
-> +	 *
-> +	 * Add modes to the connector that the panel is attached to and
-> +	 * return the number of modes added.
-> +	 */
->  	int (*get_modes)(struct drm_panel *panel);
-> +
-> +	/**
-> +	 * @get_timings:
-> +	 *
-> +	 * Copy display timings into the provided array and return
-> +	 * the number of display timings available.
-> +	 */
->  	int (*get_timings)(struct drm_panel *panel, unsigned int num_timings,
->  			   struct display_timing *timings);
->  };
+>  int drm_panel_attach(struct drm_panel *panel, struct drm_connector *connector);
+> -int drm_panel_detach(struct drm_panel *panel);
+> +void drm_panel_detach(struct drm_panel *panel);
 >  
->  /**
->   * struct drm_panel - DRM panel object
-> - * @drm: DRM device owning the panel
-> - * @connector: DRM connector that the panel is attached to
-> - * @dev: parent device of the panel
-> - * @link: link from panel device (supplier) to DRM device (consumer)
-> - * @funcs: operations that can be performed on the panel
-> - * @list: panel entry in registry
->   */
->  struct drm_panel {
-> +	/**
-> +	 * @drm:
-> +	 *
-> +	 * DRM device owning the panel.
-> +	 */
->  	struct drm_device *drm;
-> +
-> +	/**
-> +	 * @connector:
-> +	 *
-> +	 * DRM connector that the panel is attached to.
-> +	 */
->  	struct drm_connector *connector;
-> +
-> +	/**
-> +	 * @dev:
-> +	 *
-> +	 * Parent device of the panel.
-> +	 */
->  	struct device *dev;
->  
-> +	/**
-> +	 * @funcs:
-> +	 *
-> +	 * Operations that can be performed on the panel.
-> +	 */
->  	const struct drm_panel_funcs *funcs;
->  
-> +	/**
-> +	 * @list:
-> +	 *
-> +	 * Panel entry in registry.
-> +	 */
->  	struct list_head list;
->  };
->  
+>  int drm_panel_prepare(struct drm_panel *panel);
+>  int drm_panel_unprepare(struct drm_panel *panel);
 
 -- 
 Regards,
