@@ -2,56 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A156082074
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 17:39:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BB688208D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  5 Aug 2019 17:42:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8S4faRuOHrTMDOY8dFBs+lMljRQe75+kJ8RLQ6eFoR4=; b=cHo7xvFaE3X3jZ
-	fpNqWh/d6KWUs5CF0WiXwOiJW7m98oHcBz8Npjd+1LDEjH25mc+4iGQcRlbD8PELRnm1m4YRSQA+e
-	MNAfAFOC7pR032P3ZTnVTIFbLVc0xy89eAWDNaLzpzwx41d0TdZfWDXsIZAjK1MOlsgFCk0nHvFCP
-	0+B2GOdwV1Rd1uJxV1eRJNt9rgWS1b/3XHiJp0RAlq4PKGw66Kynv4iKEfvevbF7QISqXZ3Klu92V
-	q1EIGXhLAXRGBhLgSQHTZ7CdBhHhb2xRy3o0VQg/kVX2oV5OO+3/eHIJ2mpQoPuVpHR98WlN3uWPn
-	fI49G5n/WCE0Ql0pEapg==;
+	List-Owner; bh=wGZKKJ/sVYBrWW+OF29U5PlBbumytqARtZfIy1YhKgg=; b=R0aAqhqy5rQoCC
+	blaHsHiwf6Qr5r372RegGD7j1pWLiib2+oRc83Nm3AYxQUZwEmNAO1fpES6VDsOM1wK2vJh7CZuBe
+	wdx7kFNWF65LWT4M6UnelHcizGbp9tBFEOdmivkNIfJfueAkasBqPPoNJkAcOK/cdUVfus/kxur6+
+	e5BSG/Y9kJ4uImZr08cpaon1619W9dhv6CjCU3keYKRNjzUMVrLQoX5aDPAwMMsmUwAal7TyewoIk
+	ce9W4W1QbBIhw3ZP3gX5WyWZ4A+rIaNdyLh0sDxOmRnvfoyjkCin/sUbTiQkp4k7oNgxgYB20s7rI
+	k32FL3wvL7iXwoza+wYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huf5Q-000643-QO; Mon, 05 Aug 2019 15:39:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1huf5I-00063f-60
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 15:39:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5BD82344;
- Mon,  5 Aug 2019 08:39:38 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A8B6C3F694;
- Mon,  5 Aug 2019 08:39:37 -0700 (PDT)
-Date: Mon, 5 Aug 2019 16:39:35 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: io: Relax implicit barriers in default I/O
- accessors
-Message-ID: <20190805153935.GC10425@arm.com>
-References: <20190729170518.14271-1-will@kernel.org>
- <20190805103905.GC59981@iMac.local>
- <20190805113503.tdjkuqsjm7j3e5vx@willie-the-truck>
+	id 1huf7k-0007YO-L4; Mon, 05 Aug 2019 15:42:12 +0000
+Received: from mail-wr1-f67.google.com ([209.85.221.67])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1huf7a-0007Y0-Ln
+ for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 15:42:03 +0000
+Received: by mail-wr1-f67.google.com with SMTP id p17so84882734wrf.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 05 Aug 2019 08:42:02 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=o9oTH3lrc9gbGQU8qF2CLsNoD8rh24pMm5pLzB4ne7U=;
+ b=XNeiMjCZu2H+zhp5Jg7ND1dK2aj88VKOvVdqXLet3Cb7qdrdzcDrpU2U3oLAIRVXk+
+ OCNKgRURn4JySJGIsHXsI91ViofFHL5ra7tXqY4LMbl+2bdFdxm/ukbj6QJgu4mtZ8+T
+ Bk9Li30zPqsP86A/eG3J2+VolmL2rtSnmDNRTl7EWZfuLvFNskXxmfGaEYYocsrj8SL/
+ rpm2q+fIrcxuBMnaXya2TaQ2foWd4KKR7vRXpAF4wrQCpcqAK3Y68gtGB8307A5rAoCF
+ NafkRexvo5XuMuNntIidXm26scrN0LlU5OfMERyR7dd6BGd3r8CGWsqS+FE3UdH8DdX2
+ pErA==
+X-Gm-Message-State: APjAAAXyLfiwuhZudt0xbsIfxnw9PFQ+ybOWxRpENDRqCOFCY0yt5Wt8
+ KMP6guvcx0RAOtF6t+QIGd/24G6Ff48ae2E6Cb8=
+X-Google-Smtp-Source: APXvYqwnHv0v6dHYx6C94YFR+bjof897FfAM3+5r4a0vg1xBdeFYsxcg3XPpxKdzozbsvQocTZbdrYebSadyXnvHt1k=
+X-Received: by 2002:a5d:4b91:: with SMTP id b17mr23848079wrt.57.1565019721013; 
+ Mon, 05 Aug 2019 08:42:01 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190805113503.tdjkuqsjm7j3e5vx@willie-the-truck>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+References: <1564669513-22756-1-git-send-email-ykaneko0929@gmail.com>
+In-Reply-To: <1564669513-22756-1-git-send-email-ykaneko0929@gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 5 Aug 2019 17:41:48 +0200
+Message-ID: <CAMuHMdUKOoxGaRdNLnmKkuYpm_UaiV4b4deDfj81WVu7t94_fQ@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: renesas: r8a77995: sort nodes
+To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_083940_326008_D6F56F30 
-X-CRM114-Status: GOOD (  27.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190805_084202_711343_4536590D 
+X-CRM114-Status: GOOD (  10.22  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.221.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,91 +81,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 05, 2019 at 12:35:04PM +0100, Will Deacon wrote:
-> On Mon, Aug 05, 2019 at 11:39:05AM +0100, Catalin Marinas wrote:
-> > On Mon, Jul 29, 2019 at 06:05:18PM +0100, Will Deacon wrote:
-> > > As a concrete example, consider the following:
-> > > 
-> > > 	memcpy(dma_buffer, data, bufsz);
-> > > 	writel(DMA_START, dev->ctrl_reg);
-> > > 
-> > > A DMB ST instruction between the final write to the DMA buffer and the
-> > > write to the control register will ensure that the writes to the DMA
-> > > buffer are observed before the write to the control register by all
-> > > observers. Put another way, if an observer can see the write to the
-> > > control register, it can also see the writes to memory.
-> > 
-> > I think one of the counter arguments here were that a device does not
-> > "observe" the write to the control register as that's not a master
-> > access (by the device). Do you mean that if another CPU (not the device)
-> > can observe the writel(), it would have also observed the write to the
-> > DMA buffer (assuming the DMB)? Since the device is also an observer of
-> > the DMA buffer accesses, the multi-copy atomicity ensures that the
-> > device is also seeing the buffer updates following a DMB.
-> 
-> Yes, that's right.
-> 
-> > > This has always
-> > > been the case and is not sufficient to provide the ordering required by
-> > > Linux, since there is no guarantee that the master interface of the
-> > > DMA-capable device has observed either of the accesses. However, in an
-> > > other-multi-copy atomic world, we can infer two things:
-> > > 
-> > >   1. A write arriving at an endpoint shared between multiple CPUs is
-> > >      visible to all CPUs
-> > > 
-> > >   2. A write that is visible to all CPUs is also visible to all other
-> > >      observers in the shareability domain
-> > > 
-> > > Pieced together, this allows us to use DMB OSHST for our default I/O
-> > > write accessors and DMB OSHLD for our default I/O read accessors (the
-> > > outer-shareability is for handling non-cacheable mappings) for shared
-> > > devices. Memory-mapped, DMA-capable peripherals that are private to a
-> > > CPU (i.e. inaccessible to other CPUs) still require the DSB, however
-> > > these are few and far between and typically require special treatment
-> > > anyway which is outside of the scope of the portable driver API (e.g.
-> > > GIC, page-table walker, SPE profiler).
+On Thu, Aug 1, 2019 at 4:25 PM Yoshihiro Kaneko <ykaneko0929@gmail.com> wrote:
+> If node address is present
+>    * Sort by node address, grouping all nodes with the same compat string
+>      and sorting the group alphabetically.
+> Else
+>    * Sort alphabetically
+>
+> This should not have any run-time effect.
+>
+> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 
-[...]
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+i.e. will queue in renesas-devel for v5.4.
 
-I think there may be something missing from the argument:
+Gr{oetje,eeting}s,
 
-One supposes some kind of causal dependency between the writel() and
-any dependent read done by "the device".  This is entirely up to the
-device implementation, but sanity seems to require that this depencency
-is at least as strong as an address dependency, so that the device
-mustn't speculatively read dma_buffer in advance of receiving the
-DMA_START command etc.  If not, you probably have a badly-designed or
-broken device and you deserve to have to carry ugly workarounds in
-your drivers.
+                        Geert
 
-The multi-copy-atomicity requirement effectively rules out some
-bus topologies: if a device masters directly onto a bus that doesn't
-share a common ancestor and shareability domain with the bus its slave
-interface is connected to, there would be no single place to resolve
-the DMB (unless some explicit logic were added to handle that somehow).
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-It's reasonable to assume that the hardware is somewhat sane for the
-default I/O accessors: for weird hardware, drivers would have to work
-around it explicitly with extra synchronisation but we wouldn't expect
-this to be common.
-
-The per-CPU device case is one where there may be an explicitly weird
-topology, but this only applies to a few specific devices and we can
-work around those as appropriate.
-
-Does that makes sense?  This might be "obvious", so I'm not sure we
-need to write anything.  Just checking my understanding.
-
-Cheers
----Dave
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
