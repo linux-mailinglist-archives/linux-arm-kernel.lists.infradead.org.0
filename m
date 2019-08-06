@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E769E82AC5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 07:17:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07BB782ACA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 07:17:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CYMrkMv9qzbJRPaUG9QmnUAOjEbcYiDvhGkNAmSidbw=; b=aBxXd1OitL0VI8
-	9EqnOc8z7w14lFZzS0KPHexQ8DyiUdcKJyK8xIxFb4AC7kSerib75eTtpmLyMBLCzzU3XlpoQHaH/
-	ESoozwjVl44NqFkOkZm0LJ8ZAcr2Z1Ov6XYFJ8IdTzejsMxThgdFMEKizxVgtMNDsnieSpR6R2+mJ
-	ab6psiIcmx3S2t+21g/nL36+x6uMYCyQM3NZoTKE7jKB4puri9izM3xqdSwdp/+ROuDUDoClJX7xt
-	qEJBAolZFRIkS/ABl4eTnRzTr/BFvqq7TggbusyOdeMH/Op8CIWxN8KBvstbvvY2dRqDaG0DUFKj9
-	nWlR/eauQOrsUUCqGVzg==;
+	List-Owner; bh=yVoM07icSmOA+lnt6Zf6EbtrN95a8WU6Mtcgh+cJ95I=; b=J/vnu++L89do1M
+	zD3B83+DqhXUPc65wNXMoOf//Gzo/5/wlZp/0Pt9CDtnObiYDDIkHpXxL96pBw/pjPnG5zoLr47mQ
+	BkK21qzsZAoYcGWh38rGXtvUS1KYFuuGkZIkZ0vxQRtW2VU4a8Yq3kTnqyuGNgUTyZk0Ph1cGdEW8
+	mvySw5YKkiZTeYs5M9vymDOZLO68cPiOPFIXZ5lbb/T5je/0dGX1/O3/DqCKYBjmZocuT7oXa5d4r
+	N+O+SJIWEnls8jA/H7/7H9kB8R+A1GVUSRb25/cfwoGXi2yx05a+3VHpOVrGZZT/9zmw6bCQHXG3t
+	RLXO9W0Rb4Clj+aPUiXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hurqa-0001wo-MV; Tue, 06 Aug 2019 05:17:20 +0000
+	id 1hurqo-0002A3-CZ; Tue, 06 Aug 2019 05:17:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hurqT-0001vo-Bc
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 05:17:14 +0000
+ id 1hurqa-00023S-6N
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 05:17:21 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BBA372147A;
- Tue,  6 Aug 2019 05:17:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5D97F2147A;
+ Tue,  6 Aug 2019 05:17:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565068631;
- bh=t9g0NyRteN+/Mf2Nk1jPL7u+czYsHH5GImLgIJ3adbc=;
+ s=default; t=1565068639;
+ bh=Gx5uSt/sYnvCcyG+tEybLFzNUAO0M+4D5ABXPzmpRVw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=REKNBgzQpPCbxpbo4T21CE1eMyMHOCzn9jaQ2Xo4KAbz97+ynmh1dszHKM6G+PTsH
- gsCI8GiOfrsTRxk6enfIO3NUGKfkCHDEySlEoUbtaKNBOp106UGClxR5RLzSItd0PD
- TurbFmNWsMsJWXNN2Oi1NVyEoH7ZFspomnKxW3EQ=
-Date: Tue, 6 Aug 2019 07:17:08 +0200
+ b=I9sf3PA9DTJc+/mPn59TBlyh8/QisNcIYi8MNQmYQU1qXx43Kl9lAs6u9PTr5LYkA
+ 2YLFnng4ERnv4NggJKt6jslhD5t0247zy4UD8bNn8EzyZNPo6FVDixAJ21o5+d/c5O
+ 3wIOT2cTf6H9gilQHKt9uQNMWm372CuQIROuB2HA=
+Date: Tue, 6 Aug 2019 07:17:17 +0200
 From: Greg KH <gregkh@linuxfoundation.org>
 To: Luis Araneda <luaraneda@gmail.com>
-Subject: Re: [PATCH 0/2] ARM: zynq: smp improvements
-Message-ID: <20190806051708.GB8525@kroah.com>
+Subject: Re: [PATCH 2/2] ARM: zynq: Use memcpy_toio instead of memcpy on smp
+ bring-up
+Message-ID: <20190806051717.GC8525@kroah.com>
 References: <20190806030718.29048-1-luaraneda@gmail.com>
+ <20190806030718.29048-3-luaraneda@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190806030718.29048-1-luaraneda@gmail.com>
+In-Reply-To: <20190806030718.29048-3-luaraneda@gmail.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_221713_423468_8F06F4C7 
-X-CRM114-Status: GOOD (  16.16  )
+X-CRM114-CacheID: sfid-20190805_221720_342467_8AEAC4AA 
+X-CRM114-Status: GOOD (  14.97  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -80,28 +82,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 05, 2019 at 11:07:16PM -0400, Luis Araneda wrote:
-> This series adds support for kernel compiled in Thumb mode
-> and fixes a kernel panic on smp bring-up when FORTIFY_SOURCE
-> is enabled.
+On Mon, Aug 05, 2019 at 11:07:18PM -0400, Luis Araneda wrote:
+> This fixes a kernel panic (read overflow) on memcpy when
+> FORTIFY_SOURCE is enabled.
 > 
-> The series started with the second patch as an RFC, and
-> the first patch were suggested on the review to complement
-> the fix.
+> The computed size of memcpy args are:
+> - p_size (dst): 4294967295 = (size_t) -1
+> - q_size (src): 1
+> - size (len): 8
 > 
-> The changes were run-tested on a Digilent Zybo Z7 board
+> Additionally, the memory is marked as __iomem, so one of
+> the memcpy_* functions should be used for read/write
 > 
-> Luis Araneda (2):
->   ARM: zynq: support smp in thumb mode
->   ARM: zynq: Use memcpy_toio instead of memcpy on smp bring-up
-> 
->  arch/arm/mach-zynq/headsmp.S | 2 ++
->  arch/arm/mach-zynq/platsmp.c | 4 ++--
->  2 files changed, 4 insertions(+), 2 deletions(-)
-> 
-> -- 
-> 2.22.0
-> 
+> Signed-off-by: Luis Araneda <luaraneda@gmail.com>
+> ---
+>  arch/arm/mach-zynq/platsmp.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 
 <formletter>
 
