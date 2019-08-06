@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0598283790
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 19:02:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B266083792
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 19:03:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=+T3o8Y8ae+AgtWuqqqXkvTQ/FWXAxn68qrm/ZygFLfU=; b=ugGRepORBc3EFaeCdTT+yzxLu/
-	E2kFAVxgoLlI6zTHTUbyKLncbWOnyCICnv5REUzH6AU3pzMYSLo8zCw7E9vRywtWZ2FHpRE6RSP8q
-	mZb8jbbuqPkjw6MqNEH9X+1G+S5v1vukoqH6TU728rBE1a0DNM+YWCVR/0DXwM8gpffuLO9AqEZ1w
-	iLt8eOUjcsPnP7hZ0DOm8s63s9mxDZ4wNmx/9HwQrVBy2/CXIkKKmQomq82mJn/m9dwS+2V1iLnF8
-	iIyDrmxtZK/FG1KMVer8NPvlzLbhu8qSh0q2OdZQy54m5C0zaW1IUlenyetCIp9YrHtg9al0yXbZ0
-	/Q2XmmxQ==;
+	bh=dHJxtbLDaFN2g5KR1AQ7JYiI31J3BROQn0bdtoe37XI=; b=ONqzIpITh76u9vo0ewJNGPIqu/
+	We4Xmvi20qnAcNPg/6nzl5J9K3SP2sB4kJ7AxCRjpvM1O343tx519jYIWmbKwkkZxiqNu8g2AbwvY
+	qVO0riLGjMes4+vcz41f9BH1j/Soxml+boB8hzt9hRlLt2OwxnLcOWzjGMyrvIGinRDUL8/BJP1Oj
+	KMKtc6YVzmQTFbqFl084LDbnpAUDbbO0j2RxukGf3s758qt2AuUIayf1UzAdyT01zuvt+Hita3bax
+	0QN/irPXXAvXzEKkxWwmw5AiVEigop9bPN2OIVx+mIwJrijrCw2+4fa3BrF9+EPFUeDDu2H0oT+R8
+	zkP0M7qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv2r8-0002ZY-Mp; Tue, 06 Aug 2019 17:02:38 +0000
+	id 1hv2rN-0002t8-7q; Tue, 06 Aug 2019 17:02:53 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hv2qq-0002Op-0L
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 17:02:21 +0000
+ id 1hv2qr-0002PO-CL
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 17:02:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC88A1570;
- Tue,  6 Aug 2019 10:02:18 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 252A0344;
+ Tue,  6 Aug 2019 10:02:21 -0700 (PDT)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 73FFA3F575;
- Tue,  6 Aug 2019 10:02:16 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E265F3F575;
+ Tue,  6 Aug 2019 10:02:18 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 1/5] firmware: arm_scmi: Add discovery of SCMI v2.0
- performance fastchannels
-Date: Tue,  6 Aug 2019 18:02:04 +0100
-Message-Id: <20190806170208.6787-2-sudeep.holla@arm.com>
+Subject: [PATCH v2 2/5] firmware: arm_scmi: Make use SCMI v2.0 fastchannel for
+ performance protocol
+Date: Tue,  6 Aug 2019 18:02:05 +0100
+Message-Id: <20190806170208.6787-3-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190806170208.6787-1-sudeep.holla@arm.com>
 References: <20190806170208.6787-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_100220_141696_8DAAF1B0 
-X-CRM114-Status: GOOD (  14.85  )
+X-CRM114-CacheID: sfid-20190806_100221_507872_C19C8F65 
+X-CRM114-Status: GOOD (  13.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,272 +76,177 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SCMI v2.0 adds support for "FastChannel", a lightweight unidirectional
-channel that is dedicated to a single SCMI message type for controlling
-a specific platform resource. They do not use a message header as they
-are specialized for a single message.
+SCMI v2.0 adds support for "FastChannel" which do not use a message
+header as they are specialized for a single message.
 
 Only PERFORMANCE_LIMITS_{SET,GET} and PERFORMANCE_LEVEL_{SET,GET}
 commands are supported over fastchannels. As they are optional, they
 need to be discovered by PERFORMANCE_DESCRIBE_FASTCHANNEL command.
 Further {LIMIT,LEVEL}_SET commands can have optional doorbell support.
 
-Add support for discovery of these fastchannels.
+Add support for making use of these fastchannels.
 
 Cc: Ionela Voinescu <Ionela.Voinescu@arm.com>
 Cc: Chris Redpath <Chris.Redpath@arm.com>
 Cc: Quentin Perret <Quentin.Perret@arm.com>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/perf.c | 153 ++++++++++++++++++++++++++++++-
- 1 file changed, 149 insertions(+), 4 deletions(-)
+ drivers/firmware/arm_scmi/perf.c | 104 +++++++++++++++++++++++++++++--
+ 1 file changed, 100 insertions(+), 4 deletions(-)
+
+v1->v2:
+	- Changed the macro SCMI_PERF_FC_RING_DB to use do {} while(0)
 
 diff --git a/drivers/firmware/arm_scmi/perf.c b/drivers/firmware/arm_scmi/perf.c
-index 3c8ae7cc35de..6cce3e82e81e 100644
+index 6cce3e82e81e..fb7f6cab2c11 100644
 --- a/drivers/firmware/arm_scmi/perf.c
 +++ b/drivers/firmware/arm_scmi/perf.c
-@@ -5,7 +5,9 @@
-  * Copyright (C) 2018 ARM Ltd.
-  */
- 
-+#include <linux/bits.h>
+@@ -8,6 +8,7 @@
+ #include <linux/bits.h>
  #include <linux/of.h>
-+#include <linux/io.h>
+ #include <linux/io.h>
++#include <linux/io-64-nonatomic-hi-lo.h>
  #include <linux/platform_device.h>
  #include <linux/pm_opp.h>
  #include <linux/sort.h>
-@@ -21,6 +23,7 @@ enum scmi_performance_protocol_cmd {
- 	PERF_LEVEL_GET = 0x8,
- 	PERF_NOTIFY_LIMITS = 0x9,
- 	PERF_NOTIFY_LEVEL = 0xa,
-+	PERF_DESCRIBE_FASTCHANNEL = 0xb,
- };
- 
- struct scmi_opp {
-@@ -44,6 +47,7 @@ struct scmi_msg_resp_perf_domain_attributes {
- #define SUPPORTS_SET_PERF_LVL(x)	((x) & BIT(30))
- #define SUPPORTS_PERF_LIMIT_NOTIFY(x)	((x) & BIT(29))
- #define SUPPORTS_PERF_LEVEL_NOTIFY(x)	((x) & BIT(28))
-+#define SUPPORTS_PERF_FASTCHANNELS(x)	((x) & BIT(27))
- 	__le32 rate_limit_us;
- 	__le32 sustained_freq_khz;
- 	__le32 sustained_perf_level;
-@@ -87,17 +91,56 @@ struct scmi_msg_resp_perf_describe_levels {
- 	} opp[0];
- };
- 
-+struct scmi_perf_get_fc_info {
-+	__le32 domain;
-+	__le32 message_id;
-+};
-+
-+struct scmi_msg_resp_perf_desc_fc {
-+	__le32 attr;
-+#define SUPPORTS_DOORBELL(x)		((x) & BIT(0))
-+#define DOORBELL_REG_WIDTH(x)		FIELD_GET(GENMASK(2, 1), (x))
-+	__le32 rate_limit;
-+	__le32 chan_addr_low;
-+	__le32 chan_addr_high;
-+	__le32 chan_size;
-+	__le32 db_addr_low;
-+	__le32 db_addr_high;
-+	__le32 db_set_lmask;
-+	__le32 db_set_hmask;
-+	__le32 db_preserve_lmask;
-+	__le32 db_preserve_hmask;
-+};
-+
-+struct scmi_fc_db_info {
-+	int width;
-+	u64 set;
-+	u64 mask;
-+	void __iomem *addr;
-+};
-+
-+struct scmi_fc_info {
-+	void __iomem *level_set_addr;
-+	void __iomem *limit_set_addr;
-+	void __iomem *level_get_addr;
-+	void __iomem *limit_get_addr;
-+	struct scmi_fc_db_info *level_set_db;
-+	struct scmi_fc_db_info *limit_set_db;
-+};
-+
- struct perf_dom_info {
- 	bool set_limits;
- 	bool set_perf;
- 	bool perf_limit_notify;
- 	bool perf_level_notify;
-+	bool perf_fastchannels;
- 	u32 opp_count;
- 	u32 sustained_freq_khz;
- 	u32 sustained_perf_level;
- 	u32 mult_factor;
- 	char name[SCMI_MAX_STR_SIZE];
- 	struct scmi_opp opp[MAX_OPPS];
-+	struct scmi_fc_info *fc_info;
- };
- 
- struct scmi_perf_info {
-@@ -162,6 +205,7 @@ scmi_perf_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
- 		dom_info->set_perf = SUPPORTS_SET_PERF_LVL(flags);
- 		dom_info->perf_limit_notify = SUPPORTS_PERF_LIMIT_NOTIFY(flags);
- 		dom_info->perf_level_notify = SUPPORTS_PERF_LEVEL_NOTIFY(flags);
-+		dom_info->perf_fastchannels = SUPPORTS_PERF_FASTCHANNELS(flags);
- 		dom_info->sustained_freq_khz =
- 					le32_to_cpu(attr->sustained_freq_khz);
- 		dom_info->sustained_perf_level =
-@@ -250,7 +294,7 @@ scmi_perf_describe_levels_get(const struct scmi_handle *handle, u32 domain,
- }
- 
- static int scmi_perf_limits_set(const struct scmi_handle *handle, u32 domain,
--				u32 max_perf, u32 min_perf)
-+				   u32 max_perf, u32 min_perf)
- {
- 	int ret;
- 	struct scmi_xfer *t;
-@@ -273,7 +317,7 @@ static int scmi_perf_limits_set(const struct scmi_handle *handle, u32 domain,
- }
- 
- static int scmi_perf_limits_get(const struct scmi_handle *handle, u32 domain,
--				u32 *max_perf, u32 *min_perf)
-+				   u32 *max_perf, u32 *min_perf)
- {
- 	int ret;
- 	struct scmi_xfer *t;
-@@ -299,7 +343,7 @@ static int scmi_perf_limits_get(const struct scmi_handle *handle, u32 domain,
- }
- 
- static int scmi_perf_level_set(const struct scmi_handle *handle, u32 domain,
--			       u32 level, bool poll)
-+				  u32 level, bool poll)
- {
- 	int ret;
- 	struct scmi_xfer *t;
-@@ -322,7 +366,7 @@ static int scmi_perf_level_set(const struct scmi_handle *handle, u32 domain,
- }
- 
- static int scmi_perf_level_get(const struct scmi_handle *handle, u32 domain,
--			       u32 *level, bool poll)
-+				  u32 *level, bool poll)
- {
- 	int ret;
- 	struct scmi_xfer *t;
-@@ -343,6 +387,104 @@ static int scmi_perf_level_get(const struct scmi_handle *handle, u32 domain,
+@@ -293,7 +294,42 @@ scmi_perf_describe_levels_get(const struct scmi_handle *handle, u32 domain,
  	return ret;
  }
  
-+static bool scmi_perf_fc_size_is_valid(u32 msg, u32 size)
-+{
-+	if ((msg == PERF_LEVEL_GET || msg == PERF_LEVEL_SET) && size == 4)
-+		return true;
-+	if ((msg == PERF_LIMITS_GET || msg == PERF_LIMITS_SET) && size == 8)
-+		return true;
-+	return false;
-+}
+-static int scmi_perf_limits_set(const struct scmi_handle *handle, u32 domain,
++#define SCMI_PERF_FC_RING_DB(doorbell, w)		\
++do {							\
++	u##w val = 0;					\
++	struct scmi_fc_db_info *db = doorbell;		\
++							\
++	if (db->mask)					\
++		val = ioread##w(db->addr) & db->mask;	\
++	iowrite##w((u##w)db->set | val, db->addr);	\
++} while(0)
 +
-+static void
-+scmi_perf_domain_desc_fc(const struct scmi_handle *handle, u32 domain,
-+			 u32 message_id, void __iomem **p_addr,
-+			 struct scmi_fc_db_info **p_db)
++static void scmi_perf_fc_ring_db(struct scmi_fc_db_info *db)
 +{
-+	int ret;
-+	u32 flags;
-+	u64 phys_addr;
-+	u8 size;
-+	void __iomem *addr;
-+	struct scmi_xfer *t;
-+	struct scmi_fc_db_info *db;
-+	struct scmi_perf_get_fc_info *info;
-+	struct scmi_msg_resp_perf_desc_fc *resp;
-+
-+	if (!p_addr)
++	if (!db || !db->addr)
 +		return;
 +
-+	ret = scmi_xfer_get_init(handle, PERF_DESCRIBE_FASTCHANNEL,
-+				 SCMI_PROTOCOL_PERF,
-+				 sizeof(*info), sizeof(*resp), &t);
-+	if (ret)
-+		return;
++	if (db->width == 1)
++		SCMI_PERF_FC_RING_DB(db, 8);
++	else if (db->width == 2)
++		SCMI_PERF_FC_RING_DB(db, 16);
++	else if (db->width == 4)
++		SCMI_PERF_FC_RING_DB(db, 32);
++	else /* db->width == 8 */
++#ifdef CONFIG_64BIT
++		SCMI_PERF_FC_RING_DB(db, 64);
++#else
++	{
++		u64 val = 0;
 +
-+	info = t->tx.buf;
-+	info->domain = cpu_to_le32(domain);
-+	info->message_id = cpu_to_le32(message_id);
-+
-+	ret = scmi_do_xfer(handle, t);
-+	if (ret)
-+		goto err_xfer;
-+
-+	resp = t->rx.buf;
-+	flags = le32_to_cpu(resp->attr);
-+	size = le32_to_cpu(resp->chan_size);
-+	if (!scmi_perf_fc_size_is_valid(message_id, size))
-+		goto err_xfer;
-+
-+	phys_addr = le32_to_cpu(resp->chan_addr_low);
-+	phys_addr |= (u64)le32_to_cpu(resp->chan_addr_high) << 32;
-+	addr = devm_ioremap(handle->dev, phys_addr, size);
-+	if (!addr)
-+		goto err_xfer;
-+	*p_addr = addr;
-+
-+	if (p_db && SUPPORTS_DOORBELL(flags)) {
-+		db = devm_kzalloc(handle->dev, sizeof(*db), GFP_KERNEL);
-+		if (!db)
-+			goto err_xfer;
-+
-+		size = 1 << DOORBELL_REG_WIDTH(flags);
-+		phys_addr = le32_to_cpu(resp->db_addr_low);
-+		phys_addr |= (u64)le32_to_cpu(resp->db_addr_high) << 32;
-+		addr = devm_ioremap(handle->dev, phys_addr, size);
-+		if (!addr)
-+			goto err_xfer;
-+
-+		db->addr = addr;
-+		db->width = size;
-+		db->set = le32_to_cpu(resp->db_set_lmask);
-+		db->set |= (u64)le32_to_cpu(resp->db_set_hmask) << 32;
-+		db->mask = le32_to_cpu(resp->db_preserve_lmask);
-+		db->mask |= (u64)le32_to_cpu(resp->db_preserve_hmask) << 32;
-+		*p_db = db;
++		if (db->mask)
++			val = ioread64_hi_lo(db->addr) & db->mask;
++		iowrite64_hi_lo(db->set, db->addr);
 +	}
-+err_xfer:
-+	scmi_xfer_put(handle, t);
++#endif
 +}
 +
-+static void scmi_perf_domain_init_fc(const struct scmi_handle *handle,
-+				     u32 domain, struct scmi_fc_info **p_fc)
-+{
-+	struct scmi_fc_info *fc;
-+
-+	fc = devm_kzalloc(handle->dev, sizeof(*fc), GFP_KERNEL);
-+	if (!fc)
-+		return;
-+
-+	scmi_perf_domain_desc_fc(handle, domain, PERF_LEVEL_SET,
-+				 &fc->level_set_addr, &fc->level_set_db);
-+	scmi_perf_domain_desc_fc(handle, domain, PERF_LEVEL_GET,
-+				 &fc->level_get_addr, NULL);
-+	scmi_perf_domain_desc_fc(handle, domain, PERF_LIMITS_SET,
-+				 &fc->limit_set_addr, &fc->limit_set_db);
-+	scmi_perf_domain_desc_fc(handle, domain, PERF_LIMITS_GET,
-+				 &fc->limit_get_addr, NULL);
-+	*p_fc = fc;
-+}
-+
- /* Device specific ops */
- static int scmi_dev_domain_id(struct device *dev)
++static int scmi_perf_mb_limits_set(const struct scmi_handle *handle, u32 domain,
+ 				   u32 max_perf, u32 min_perf)
  {
-@@ -494,6 +636,9 @@ static int scmi_perf_protocol_init(struct scmi_handle *handle)
+ 	int ret;
+@@ -316,7 +352,23 @@ static int scmi_perf_limits_set(const struct scmi_handle *handle, u32 domain,
+ 	return ret;
+ }
  
- 		scmi_perf_domain_attributes_get(handle, domain, dom);
- 		scmi_perf_describe_levels_get(handle, domain, dom);
+-static int scmi_perf_limits_get(const struct scmi_handle *handle, u32 domain,
++static int scmi_perf_limits_set(const struct scmi_handle *handle, u32 domain,
++				u32 max_perf, u32 min_perf)
++{
++	struct scmi_perf_info *pi = handle->perf_priv;
++	struct perf_dom_info *dom = pi->dom_info + domain;
 +
-+		if (dom->perf_fastchannels)
-+			scmi_perf_domain_init_fc(handle, domain, &dom->fc_info);
- 	}
++	if (dom->fc_info && dom->fc_info->limit_set_addr) {
++		iowrite32(max_perf, dom->fc_info->limit_set_addr);
++		iowrite32(min_perf, dom->fc_info->limit_set_addr + 4);
++		scmi_perf_fc_ring_db(dom->fc_info->limit_set_db);
++		return 0;
++	}
++
++	return scmi_perf_mb_limits_set(handle, domain, max_perf, min_perf);
++}
++
++static int scmi_perf_mb_limits_get(const struct scmi_handle *handle, u32 domain,
+ 				   u32 *max_perf, u32 *min_perf)
+ {
+ 	int ret;
+@@ -342,7 +394,22 @@ static int scmi_perf_limits_get(const struct scmi_handle *handle, u32 domain,
+ 	return ret;
+ }
  
- 	handle->perf_ops = &perf_ops;
+-static int scmi_perf_level_set(const struct scmi_handle *handle, u32 domain,
++static int scmi_perf_limits_get(const struct scmi_handle *handle, u32 domain,
++				u32 *max_perf, u32 *min_perf)
++{
++	struct scmi_perf_info *pi = handle->perf_priv;
++	struct perf_dom_info *dom = pi->dom_info + domain;
++
++	if (dom->fc_info && dom->fc_info->limit_get_addr) {
++		*max_perf = ioread32(dom->fc_info->limit_get_addr);
++		*min_perf = ioread32(dom->fc_info->limit_get_addr + 4);
++		return 0;
++	}
++
++	return scmi_perf_mb_limits_get(handle, domain, max_perf, min_perf);
++}
++
++static int scmi_perf_mb_level_set(const struct scmi_handle *handle, u32 domain,
+ 				  u32 level, bool poll)
+ {
+ 	int ret;
+@@ -365,7 +432,22 @@ static int scmi_perf_level_set(const struct scmi_handle *handle, u32 domain,
+ 	return ret;
+ }
+ 
+-static int scmi_perf_level_get(const struct scmi_handle *handle, u32 domain,
++static int scmi_perf_level_set(const struct scmi_handle *handle, u32 domain,
++			       u32 level, bool poll)
++{
++	struct scmi_perf_info *pi = handle->perf_priv;
++	struct perf_dom_info *dom = pi->dom_info + domain;
++
++	if (dom->fc_info && dom->fc_info->level_set_addr) {
++		iowrite32(level, dom->fc_info->level_set_addr);
++		scmi_perf_fc_ring_db(dom->fc_info->level_set_db);
++		return 0;
++	}
++
++	return scmi_perf_mb_level_set(handle, domain, level, poll);
++}
++
++static int scmi_perf_mb_level_get(const struct scmi_handle *handle, u32 domain,
+ 				  u32 *level, bool poll)
+ {
+ 	int ret;
+@@ -387,6 +469,20 @@ static int scmi_perf_level_get(const struct scmi_handle *handle, u32 domain,
+ 	return ret;
+ }
+ 
++static int scmi_perf_level_get(const struct scmi_handle *handle, u32 domain,
++			       u32 *level, bool poll)
++{
++	struct scmi_perf_info *pi = handle->perf_priv;
++	struct perf_dom_info *dom = pi->dom_info + domain;
++
++	if (dom->fc_info && dom->fc_info->level_get_addr) {
++		*level = ioread32(dom->fc_info->level_get_addr);
++		return 0;
++	}
++
++	return scmi_perf_mb_level_get(handle, domain, level, poll);
++}
++
+ static bool scmi_perf_fc_size_is_valid(u32 msg, u32 size)
+ {
+ 	if ((msg == PERF_LEVEL_GET || msg == PERF_LEVEL_SET) && size == 4)
 -- 
 2.17.1
 
