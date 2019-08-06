@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1E69836CE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 18:29:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D309836CF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 18:29:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=CrXztliKoLVcGH53KQqUImHMcsjikofGMWD2tXILub0=; b=W8yqz1545PU6DXN0JBpUSknSL5
-	/Kxtjsb0pSQy1/kViF01o3OByBaa44RXDPtic9wbCGxH0f1rd9fgAuEYGTtCBLHqpQ23KNnJHR0Ag
-	dWUSXS4AWIhwwMW12DNHgMOFYfvL4AOx9sBxWuPCm6myDrv2DZshiBjVoJpgPcR+Vkx/umnjKXw1Q
-	S5GEa1QGNGQZHTSUn7BIdGExqzXZe4vsOo93F/jAetcQtJyZ7xm6mMYD/NzIkRmy3bZ24sYpib0SC
-	y5NgvUZq5Iw/WXQ+t4GJNj4aGwdJ4x2d5OllKuYajmkC9ntCe/o180NFI6pZ55h7KVYt7I5ErZLym
-	+uu3FK2g==;
+	bh=YtEfnyT/RXRBiUNBpRrYMoNRl2wjUfGfuAiZe4L9qSI=; b=E4CGcd3HA5G5HPzMJpDSqUc9uj
+	6v/jJq3Pcdhccncg4rou7YElXb5oxgAtRQzBMCgAt59bjDcULe3qKO6ozJiJXF3GiZ+4pElhdYziz
+	4o0tYwF0q3RTf1fXJi+e2eN5xiplwm81TjRIK9M4AEcwVyk79CBgnAdqNOgrnrHYPb6YK2IwfQaYJ
+	SJROxLwjANzFDq6/P8tSrFz7w0wdJUUWl8Psb72z7H/CWueBJegrqbR1p5Ojv4uWjbLzsn7esgdzU
+	zCC/hwt8oDQpCMP5VcFeY9TIo4Gv/AXF2uve1qZGes9icGAWLdaiOFiAdToGS0j21IzXLu6Iy82T6
+	AFYM2J2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv2Ky-0000qX-EI; Tue, 06 Aug 2019 16:29:24 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1hv2LA-00016v-J5; Tue, 06 Aug 2019 16:29:36 +0000
+Received: from mout.gmx.net ([212.227.17.22])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv2KT-0000Ta-Ia; Tue, 06 Aug 2019 16:28:55 +0000
+ id 1hv2KT-0000TN-IS; Tue, 06 Aug 2019 16:28:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1565108888;
- bh=HzEHIxIKYm6KPLL0JPFew9mFnKGyvVsgusVw6nRHTTw=;
+ s=badeba3b8450; t=1565108892;
+ bh=3PISsFhP2p4tj5ULA7y6xFGMEsiPJROECIygBRA4/zw=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=S+FiRh76N9kjTLJHbv400S0ijDXh2zkWxH5w5CLk030WIBkRI06GV8ukh3RO0ol64
- YBYy/K7BYNGLXIk4f6J802F9eai4Y6/ikli5H8+0yxkUxmQTSWK2buGWhmUSEpVIU3
- qb32jY7S6ebeUhWIXNfwOsWgIsO1m8GTapkJI3Ig=
+ b=T0iVRuoT39ebTrgaB4OPmg8iKCMVi7occ3T/FDP4lznR919TIUhhex3qNkfFO/XJD
+ JB6x5QXGcc2Z6dMM/2LvbOOXTTMb4Cf/Dt0uU3pTZBAWBzxa2c+kwIn/aHF02ERY+i
+ RXrbehwbzB2PTGqqOMRELCEwuNmrVkUTeHdIiz1s=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([217.61.153.94]) by mail.gmx.com
  (mrgmx103 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 0MMkgl-1hycgK36Ct-008YWc; Tue, 06 Aug 2019 18:28:08 +0200
+ 0M1nOg-1iAuD01Mxm-00tlSl; Tue, 06 Aug 2019 18:28:12 +0200
 From: Frank Wunderlich <frank-w@public-files.de>
 To: Alessandro Zummo <a.zummo@towertech.it>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
@@ -54,44 +54,44 @@ To: Alessandro Zummo <a.zummo@towertech.it>,
  Sean Wang <sean.wang@mediatek.com>, Sebastian Reichel <sre@kernel.org>,
  Thomas Gleixner <tglx@linutronix.de>,
  "Tianping . Fang" <tianping.fang@mediatek.com>
-Subject: [PATCH v4 03/10] rtc: mt6397: move some common definitions into rtc.h
-Date: Tue,  6 Aug 2019 18:27:38 +0200
-Message-Id: <20190806162745.8414-4-frank-w@public-files.de>
+Subject: [PATCH v4 06/10] rtc: mt6397: add compatible for mt6323
+Date: Tue,  6 Aug 2019 18:27:41 +0200
+Message-Id: <20190806162745.8414-7-frank-w@public-files.de>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190806162745.8414-1-frank-w@public-files.de>
 References: <20190806162745.8414-1-frank-w@public-files.de>
-X-Provags-ID: V03:K1:u9hdvNiTHJABtB4jUq16WoTMdaMAfx9o4ccbdvchDpyvkEG5xf/
- RNkuAZBPOx/Ddf7gtrBUcv2FiFU+MmFN46QBEnpkNfei3idXzfMaDVp0L17g/wQdJuCx5ix
- hzU2kWnFpbiwgiDDa8F9HIgDKbxWWpB9nY0pDRoPPrfRo+EFiih5VPQ+LNxL96k8/AryIra
- BuE+fOnKU++LTNRtQfUtA==
+X-Provags-ID: V03:K1:DIhRHK2hht0aS3gGjUBdMit/fe5lr9+ny2VtU0f6VLpF4RgJt8C
+ Ny5zDjYzK3kf7a1hq2zGlC6rBLjIORmId4UnzIKKaj3aDh+S033M7zD5wxBBv7c9usz0me8
+ lAPNLVND/HByjaQNmrq7dlxPC/nk3seTF7rC6T4zZWTZoX3Myf0SkR6QS/2uCrRC8FqNBIj
+ RpFLUf40mm8Ixb9lHkRaA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:cMUz6x+Gsec=:eEPPRAYpOPjYGPdy4lEqJg
- YKfxGrOEh+0c/i4LKTG6X3aiqybpgwtA1h7e9rp2uP3Wd3mK3XNAVmlzF0oqL2IVGBGfVCs41
- /kEWgjmAyxaZbP+KCUP5NhsWhyMysyTdeTaRDRy3RrB/pCy4hUSeerb21H8wi2/8eLJCxD0Wd
- QKdi6P5YLA5E16EY3ReI3i3EJ7pffskC9iCnCUZCnHqqma20B/VgonSyLeEEEvBafKhw+U+OR
- +NPyg7YzrjXTN/5Xx8aL047QaUAlxwfbYsiXApyZEtqTuSRA6VJ8dA0a2OM97PJUdCEJ8mP1B
- NUdTJ7IdqAWHy/vdFpHE2Si0V885aHceu6R5edSHQ+FpqKuzR/Y4xbhTctTwOu1D6n5mnYpXx
- j+XoBqJGGLQfOzxns1nM8V+MYMtGjeq3yWn1rzXyACrqaMm3Eq0SYUvErsJbVfJfGmXzTifiz
- ueUB/HTsMzkOkfCYN5WJDuZhPl7WNg/bqQd2cxeR5w1bZSfBR1E4W6ZDfIKVsRvXWjH+8QtoN
- vaou6TupBywkEDMXGLg+46gOOniLxZBjCA+Y0g42D5sUcqb0XvOjvwkFKn4Z6o0T3mwmQhU6d
- 1fv4/SMxvmiTvQ6tPBa/TdX0sNsQtLGWRcmxm0GaQnGY/pGim/AtFVirjObFXPz007oNe9sqW
- UOSDDjACW5EMiiwLYyW3CnORQ3BfEhrlLAZDkf7DY9mhhjYspr1k4XvX4YGtzJMk9s4/gW4ro
- Ws5hWSMKYo+Ofj6mu1hMLjQrO6eA5DTGleh1N1PnpyiXXCwFvJEJ0Gs3uuPMlT6t6TBH1rZzQ
- UdYysD7xZ2jCE05v3oITyhxoFVxIByYsLWzWspKiu7x55BD+PBps65he/4nuB/1KBH04VDMGM
- xGJ5CcEGogagIse3Agzw7Cubv2TqY0c2LY38vX/0/bZrpRgaVEaE/7uYodsX3TLWo29XQukKo
- BxAe3FDp7ZW5OGjLDZhH5ROWMA5LSingpR/45TylfuA/R88cfv8HVSvx7Uh7Zd6rYyEuN2FXT
- FAlyO2Qymn/B51JAM8+byz6qN9xW6Ee8+eGc625/E0Cd8DejuinuSHwlonGTa1q9e0f5t/0dQ
- slNfV5m+FZL9gere6jpwZDdeCDuhrjjsT2G3mXfTJ2mGNp+EXOps1wYjQ==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:E2LKdkfghHA=:FNem/ARHXV0uE2yKyiYHq5
+ gY2PBWiTOl70HXT2nYwno+ily3sUA4zF6RH2X6jPdcezoNtDW0fpVgTll1zlwPeq6Tw2ub8Rh
+ 2DLriMUfIv4XlI/ncDzyEsiBAjtRLwzGfzPsHMwUj/Wl9ZfBUgZHNcwMGRrKMWpEBZDMQe3MA
+ 40RANSqPGoLq8gRDOILBjzXQ/2BuDR9gCOEuupkUc2lXuDRHXHbD4ThS6RYnu5Z0cn+Gi1KFD
+ LYMHR+GzdSqPtFAy+XhcGSA/I5KpbH6J8GLn/LOJNfWQz9SyQDrY5PmNbYwWthglBYrE9hiBM
+ 2dyibsQZIos8kXbtwoYjpC6xQ6zuaoOc+LNJtSELPkyn0a6YoHAvapE+enMJ13xzXqFry9Sm+
+ jaIWjOOJwJX5oBn9vmD8xD16S9Vdpo5TF1uWeDcgLFnF5nqrqPKksW/Br+h6/AC/8T3k7LwnV
+ DPspmn7LgPYxWTYu5gm7BGQcz2xh0/CIi0I9rRMC/QwJUBsPv1NOpINrzBQ5cscHM1/JeX4yg
+ UddkmfaCEOZK5J64UCYbahuJVmvyr0GJL9eYhVMaYgH6U8sBnr2ffYzBRLTTafV5mBqhO3dy+
+ Bx2Rs8b3QG44khaV9pZ7wcGjl7cGKUHzsS/3tF6MD54cRvPBGrlzTPMOG/L7QsoVqhJwJjxyK
+ 1bcmddHtIQEVPdd0UbPJz7Rb9dQqwd509SQEE9EHOob1v4Lc75sXYIF5Dy+s+7PTvEg9ExrTU
+ oUknbl01i9Ro0FT+8HcYIWXwFBfOPRxq+TPqkl7RE+dKTAkYt9J2dqt4Ti3jTxyspfevS2dVi
+ wAVKFf+bEijKxm4qvqTNLNz6iZUYVETBgVCFh1pry7t7Xl4t+muKh+YdDmFBEKUJB5QzVN9nL
+ 2KXBIRoKtZONJ5pFopJyRjfPjLnrqICzU5ZD2Th8JDqeVjJOWddlHsNtYyT2jbr6sGshe/Ak/
+ fnRiizWw3kUvQ6xUX/Mit6facC85cft/l/ziBX6Ozlhz9dND526CTsRN4Ym56T5SAjC7O9/LM
+ zqpKrMeRZNwABkCelzWUxfKrTOI/7YumvfaTL55UMibw9pwOMmkMo7HI24Mxb5UJZHgVCCFn4
+ JukOcDmXXHQvKfHc4/TxuTbdyIKcKMo8Xcg/uHjyZE9VlfLbTbE66IFDw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_092853_926071_90F73ADB 
-X-CRM114-Status: GOOD (  12.43  )
+X-CRM114-CacheID: sfid-20190806_092853_927718_1960C6B7 
+X-CRM114-Status: GOOD (  10.40  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.20 listed in list.dnswl.org]
+ low trust [212.227.17.22 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -118,164 +118,30 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Josef Friedl <josef.friedl@speed.at>
 
-move code to separate header-file to reuse definitions later
-in poweroff-driver (drivers/power/reset/mt6323-poweroff.c)
+use mt6397 rtc driver also for mt6323 but with different
+base/size see "mfd: mt6323: add mt6323 rtc+pwrc"
 
-Suggested-by: Frank Wunderlich <frank-w@public-files.de>
 Signed-off-by: Josef Friedl <josef.friedl@speed.at>
 Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
 ---
-changes since v3: none
-changes since v2: add missing commit-message
+changes since v3: moved (was part 5)
+changes since v2: splitted this from v2.3 suggested-by Alexandre Belloni
 
- drivers/rtc/rtc-mt6397.c       | 55 +-------------------------
- include/linux/mfd/mt6397/rtc.h | 71 ++++++++++++++++++++++++++++++++++
- 2 files changed, 72 insertions(+), 54 deletions(-)
- create mode 100644 include/linux/mfd/mt6397/rtc.h
+ drivers/rtc/rtc-mt6397.c | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
-index b46ed4dc7015..c08ee5edf865 100644
+index 9370b7fc9f81..21cd9cc8b4c7 100644
 --- a/drivers/rtc/rtc-mt6397.c
 +++ b/drivers/rtc/rtc-mt6397.c
-@@ -9,60 +9,7 @@
- #include <linux/module.h>
- #include <linux/regmap.h>
- #include <linux/rtc.h>
--#include <linux/irqdomain.h>
--#include <linux/platform_device.h>
--#include <linux/of_address.h>
--#include <linux/of_irq.h>
--#include <linux/io.h>
--#include <linux/mfd/mt6397/core.h>
--
--#define RTC_BBPU		0x0000
--#define RTC_BBPU_CBUSY		BIT(6)
--
--#define RTC_WRTGR		0x003c
--
--#define RTC_IRQ_STA		0x0002
--#define RTC_IRQ_STA_AL		BIT(0)
--#define RTC_IRQ_STA_LP		BIT(3)
--
--#define RTC_IRQ_EN		0x0004
--#define RTC_IRQ_EN_AL		BIT(0)
--#define RTC_IRQ_EN_ONESHOT	BIT(2)
--#define RTC_IRQ_EN_LP		BIT(3)
--#define RTC_IRQ_EN_ONESHOT_AL	(RTC_IRQ_EN_ONESHOT | RTC_IRQ_EN_AL)
--
--#define RTC_AL_MASK		0x0008
--#define RTC_AL_MASK_DOW		BIT(4)
--
--#define RTC_TC_SEC		0x000a
--/* Min, Hour, Dom... register offset to RTC_TC_SEC */
--#define RTC_OFFSET_SEC		0
--#define RTC_OFFSET_MIN		1
--#define RTC_OFFSET_HOUR		2
--#define RTC_OFFSET_DOM		3
--#define RTC_OFFSET_DOW		4
--#define RTC_OFFSET_MTH		5
--#define RTC_OFFSET_YEAR		6
--#define RTC_OFFSET_COUNT	7
--
--#define RTC_AL_SEC		0x0018
--
--#define RTC_PDN2		0x002e
--#define RTC_PDN2_PWRON_ALARM	BIT(4)
--
--#define RTC_MIN_YEAR		1968
--#define RTC_BASE_YEAR		1900
--#define RTC_NUM_YEARS		128
--#define RTC_MIN_YEAR_OFFSET	(RTC_MIN_YEAR - RTC_BASE_YEAR)
--
--struct mt6397_rtc {
--	struct device		*dev;
--	struct rtc_device	*rtc_dev;
--	struct mutex		lock;
--	struct regmap		*regmap;
--	int			irq;
--	u32			addr_base;
--};
-+#include <linux/mfd/mt6397/rtc.h>
+@@ -325,6 +325,7 @@ static SIMPLE_DEV_PM_OPS(mt6397_pm_ops, mt6397_rtc_suspend,
+ 			mt6397_rtc_resume);
 
- static int mtk_rtc_write_trigger(struct mt6397_rtc *rtc)
- {
-diff --git a/include/linux/mfd/mt6397/rtc.h b/include/linux/mfd/mt6397/rtc.h
-new file mode 100644
-index 000000000000..b702c29e8c74
---- /dev/null
-+++ b/include/linux/mfd/mt6397/rtc.h
-@@ -0,0 +1,71 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (C) 2014-2018 MediaTek Inc.
-+ *
-+ * Author: Tianping.Fang <tianping.fang@mediatek.com>
-+ *        Sean Wang <sean.wang@mediatek.com>
-+ */
-+
-+#ifndef _LINUX_MFD_MT6397_RTC_H_
-+#define _LINUX_MFD_MT6397_RTC_H_
-+
-+#include <linux/jiffies.h>
-+#include <linux/mutex.h>
-+#include <linux/regmap.h>
-+#include <linux/rtc.h>
-+
-+#define RTC_BBPU               0x0000
-+#define RTC_BBPU_CBUSY         BIT(6)
-+#define RTC_BBPU_KEY            (0x43 << 8)
-+
-+#define RTC_WRTGR              0x003c
-+
-+#define RTC_IRQ_STA            0x0002
-+#define RTC_IRQ_STA_AL         BIT(0)
-+#define RTC_IRQ_STA_LP         BIT(3)
-+
-+#define RTC_IRQ_EN             0x0004
-+#define RTC_IRQ_EN_AL          BIT(0)
-+#define RTC_IRQ_EN_ONESHOT     BIT(2)
-+#define RTC_IRQ_EN_LP          BIT(3)
-+#define RTC_IRQ_EN_ONESHOT_AL  (RTC_IRQ_EN_ONESHOT | RTC_IRQ_EN_AL)
-+
-+#define RTC_AL_MASK            0x0008
-+#define RTC_AL_MASK_DOW                BIT(4)
-+
-+#define RTC_TC_SEC             0x000a
-+/* Min, Hour, Dom... register offset to RTC_TC_SEC */
-+#define RTC_OFFSET_SEC         0
-+#define RTC_OFFSET_MIN         1
-+#define RTC_OFFSET_HOUR                2
-+#define RTC_OFFSET_DOM         3
-+#define RTC_OFFSET_DOW         4
-+#define RTC_OFFSET_MTH         5
-+#define RTC_OFFSET_YEAR                6
-+#define RTC_OFFSET_COUNT       7
-+
-+#define RTC_AL_SEC             0x0018
-+
-+#define RTC_PDN2               0x002e
-+#define RTC_PDN2_PWRON_ALARM   BIT(4)
-+
-+#define RTC_MIN_YEAR           1968
-+#define RTC_BASE_YEAR          1900
-+#define RTC_NUM_YEARS          128
-+#define RTC_MIN_YEAR_OFFSET    (RTC_MIN_YEAR - RTC_BASE_YEAR)
-+
-+#define MTK_RTC_POLL_DELAY_US  10
-+#define MTK_RTC_POLL_TIMEOUT   (jiffies_to_usecs(HZ))
-+
-+struct mt6397_rtc {
-+	struct device           *dev;
-+	struct rtc_device       *rtc_dev;
-+
-+	/* Protect register access from multiple tasks */
-+	struct mutex            lock;
-+	struct regmap           *regmap;
-+	int                     irq;
-+	u32                     addr_base;
-+};
-+
-+#endif /* _LINUX_MFD_MT6397_RTC_H_ */
+ static const struct of_device_id mt6397_rtc_of_match[] = {
++	{ .compatible = "mediatek,mt6323-rtc", },
+ 	{ .compatible = "mediatek,mt6397-rtc", },
+ 	{ }
+ };
 --
 2.17.1
 
