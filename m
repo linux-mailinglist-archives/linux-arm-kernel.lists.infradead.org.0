@@ -2,85 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB2BB837D3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 19:25:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD23C837F8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 19:38:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lIS/GOCxW+h4cMpAsgTTX224CLAHG4As2V2EMq0r4+g=; b=OB0w47GhDlkxXD
-	5enBYV+Q31kcd4Pr3/lhY1W3h1K/uuHW7GVIj2XpXkgmtw9VNmuu5kt6eC+bcwXJQUoZAenZ05qfE
-	XzICaZ2o1tOqZbhKPj8xjpzuXopK0hMyvCkACFu3CqNh6KZBn0XQux5P6nzkxxQMkrNSFOCo8v9lw
-	Xi/aZcNANIdqzgxiO2xJt1BSeGGKd34b7USICmZdVy7s9Y9Ve79fqvi4O16m9q8ipWo90T0+AXNtd
-	3qGhhXgmWYDahcb70fnSqia6+BwcRQN+kF6QHRhgC1dTZcgHDdymveGvP7gyTHyrh8U3r/vdSueYE
-	CelixbUGX26J7gEaaQHw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K9DpWQMw9odVRqxcxCfedPBJnZtivKw4LsLU2C8UX7o=; b=S6szk5Cr7bfzB3
+	xwIAXiek0GWMXvrfxuFlb8fxtQ8MNPZM5xutFC3vv7bM7DIHeTLg3D7RHRE7hl6V4KRnpJoIVN464
+	1X/CqbIjBMNvfEDWXrpUTCec2VUmT8TImmlCUFH39YGNnT5bpihIOpGDwoTpA/6UUZixy7567JMyV
+	ALumul5l4Kf6NgAYc3Z2+4emLyruxpdZ15hz0CpjMCr6v0KpQwb3GrjTeD++xdsIfLuPuEasvl+xJ
+	wL5DbiRzqCwhuBSrIR0j6oghORpSH0kwpEqThHMPu9jeLMKJeloTfInRcH0vUBZYDmDu4WcAgYusB
+	9WBRRFIYzlMhB758WGhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv3DG-00031S-UN; Tue, 06 Aug 2019 17:25:30 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hv3Q5-0006MM-15; Tue, 06 Aug 2019 17:38:45 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv3D9-00030y-11
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 17:25:24 +0000
-Received: by mail-pf1-x442.google.com with SMTP id t16so41838350pfe.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 10:25:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=joelfernandes.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=++FX/M76MkJ77Wmy6ZQS0b99NlwKRsO0LdWt36B9bDo=;
- b=eWzzE7nuUqqomzdRaZM4fbGQAsQ9CcWdhoShx2noBZxcc1DJ+7oJERIsTVprpW6Ium
- WrK9ML+WKEOGF8KZ2XARf7QTUspWfLJiYS6PVQNpGSTeE2Gy74nWuBYVKF4ILLL5h2Qz
- aJRG4k9Ueidxzse3Rx0HUDSIgNWEYBB6UbOMc=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=++FX/M76MkJ77Wmy6ZQS0b99NlwKRsO0LdWt36B9bDo=;
- b=I3TeZr8cUJn3VFoVo/WvUID6KYdASwE9xnsdbUY2iFRTdwzRDhs7qtKx1WOvYQu7po
- ep0fvkU0r32bYF7YpdkygOrlTMNkPXHNGDptjaDQ88DYRM+bDapmseKlmiZO+hTJMjG0
- d3bQXr9wDBW+cbwqbNB8Wve+89LxMjGDydJQoBY1GOGJ3pWOpUWpSfEbGpKrk7ErNzJ+
- AHcP1sLbSVReRRrNb+gjkFc0lcpkxxPxHW5U3cxs+PJ2APMpDp1Ae904CMloBlB10Xbd
- HgMSbP/GXc69mUq0WtN+vuUXkBHXIWpbyyw+IUB3+ZOu5llvYuacWugqCCrlo1GrneMw
- wU5Q==
-X-Gm-Message-State: APjAAAWDmza9QD8ogX0L97vZ3x/FUYRw0eH/aOo/X2Oskqh4ug4zJvYC
- JwIxDH/kE7rpe+ViQOrxuSc/Aw==
-X-Google-Smtp-Source: APXvYqw7Yw+KCFeiI9FmWSl0UyWUYpyMNgU2fLsmddKSC41C0ESHrwbVq/zDVWULTJrLPuI9SAg/jA==
-X-Received: by 2002:a63:6fc9:: with SMTP id k192mr3981375pgc.20.1565112321645; 
- Tue, 06 Aug 2019 10:25:21 -0700 (PDT)
-Received: from localhost ([2620:15c:6:12:9c46:e0da:efbf:69cc])
- by smtp.gmail.com with ESMTPSA id r75sm112195247pfc.18.2019.08.06.10.25.20
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 06 Aug 2019 10:25:20 -0700 (PDT)
-Date: Tue, 6 Aug 2019 13:25:19 -0400
-From: Joel Fernandes <joel@joelfernandes.org>
-To: Steven Rostedt <rostedt@goodmis.org>
-Subject: Re: [PATCH v3] tracing: Function stack size and its name mismatch in
- arm64
-Message-ID: <20190806172519.GD39951@google.com>
-References: <20190802094103.163576-1-jiping.ma2@windriver.com>
- <20190802112259.0530a648@gandalf.local.home>
- <20190802120920.3b1f4351@gandalf.local.home>
- <20190802121124.6b41f26a@gandalf.local.home>
- <20190806154811.GB39951@google.com>
- <20190806123455.487ac02b@gandalf.local.home>
+ id 1hv3Pw-0006LR-IV
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 17:38:38 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x76HcKok007671;
+ Tue, 6 Aug 2019 12:38:20 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1565113100;
+ bh=rJsG4X64+05xGE5m7rzAm+zLsHKU8QbIpns9wHygRi8=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=JTGcrXJxmNXfgFaTAASCC8SBU0IJYQKQ9sqs1KXIxaYUufOHQoFVSZnbd2BvK5njh
+ fZDQwADBbTvkxFkt4XnG0TMlvWO9YT7XMiXlARvBBWS9RhxLIADyRSPZ4qRVjNxKi0
+ gL+fxOYLnghoOyTN4v2RUhKvKlg4GCqEtToiwFrg=
+Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x76HcKZA075961
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 6 Aug 2019 12:38:20 -0500
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 6 Aug
+ 2019 12:38:19 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 6 Aug 2019 12:38:19 -0500
+Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x76HcJ61094917;
+ Tue, 6 Aug 2019 12:38:19 -0500
+Subject: Re: [PATCH 0/6] hwspinlock: allow sharing of hwspinlocks
+To: Bjorn Andersson <bjorn.andersson@linaro.org>, Fabien DESSENNE
+ <fabien.dessenne@st.com>
+References: <1552492237-28810-1-git-send-email-fabien.dessenne@st.com>
+ <20190801191403.GA7234@tuxbook-pro>
+ <1a057176-81ab-e302-4375-2717ceef6924@st.com>
+ <20190805174659.GA23928@tuxbook-pro>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <dcd1aeea-cffe-d5fb-af5a-e52efcc2e046@ti.com>
+Date: Tue, 6 Aug 2019 12:38:19 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190806123455.487ac02b@gandalf.local.home>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190805174659.GA23928@tuxbook-pro>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_102523_077760_CF5D443A 
-X-CRM114-Status: GOOD (  36.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190806_103836_720358_CC515F64 
+X-CRM114-Status: GOOD (  38.83  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -90,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,206 +95,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jiping Ma <jiping.ma2@windriver.com>, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, mingo@redhat.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Mark Rutland <mark.rutland@arm.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>, Jonathan Corbet <corbet@lwn.net>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 06, 2019 at 12:34:55PM -0400, Steven Rostedt wrote:
-> On Tue, 6 Aug 2019 11:48:11 -0400
-> Joel Fernandes <joel@joelfernandes.org> wrote:
-> 
-> 
-> > > diff --git a/arch/arm64/include/asm/ftrace.h b/arch/arm64/include/asm/ftrace.h
-> > > index 5ab5200b2bdc..13a4832cfb00 100644
-> > > --- a/arch/arm64/include/asm/ftrace.h
-> > > +++ b/arch/arm64/include/asm/ftrace.h
-> > > @@ -13,6 +13,7 @@
-> > >  #define HAVE_FUNCTION_GRAPH_FP_TEST
-> > >  #define MCOUNT_ADDR		((unsigned long)_mcount)
-> > >  #define MCOUNT_INSN_SIZE	AARCH64_INSN_SIZE
-> > > +#define ARCH_RET_ADDR_AFTER_LOCAL_VARS 1
-> > >  
-> > >  #ifndef __ASSEMBLY__
-> > >  #include <linux/compat.h>
-> > > diff --git a/kernel/trace/trace_stack.c b/kernel/trace/trace_stack.c
-> > > index 5d16f73898db..050c6bd9beac 100644
-> > > --- a/kernel/trace/trace_stack.c
-> > > +++ b/kernel/trace/trace_stack.c
-> > > @@ -158,6 +158,18 @@ static void check_stack(unsigned long ip, unsigned long *stack)
-> > >  			i++;
-> > >  	}
-> > >  
-> > > +#ifdef ARCH_RET_ADDR_AFTER_LOCAL_VARS
-> > > +	/*
-> > > +	 * Most archs store the return address before storing the
-> > > +	 * function's local variables. But some archs do this backwards.
-> > > +	 */
-> > > +	if (x > 1) {
-> > > +		memmove(&stack_trace_index[0], &stack_trace_index[1],
-> > > +			sizeof(stack_trace_index[0]) * (x - 1));
-> > > +		x--;
-> > > +	}
-> > > +#endif
-> > > +
-> > >  	stack_trace_nr_entries = x;
-> > >  
-> > >  	if (task_stack_end_corrupted(current)) {  
-> > 
-> > 
-> > I am not fully understanding the fix :(. If the positions of the data and
-> > FP/LR are swapped, then there should be a loop of some sort where the FP/LR
-> > are copied repeatedly to undo the mess we are discussing. But in this patch
-> > I see only one copy happening. May be I just don't understand this code well
-> > enough. Are there any more clues for helping understand the fix?
-> 
-> Here's the best way to explain this. The code is using the stack trace
-> to figure out which function is the stack hog. Or perhaps a serious of
-> stack hogs. On x86, a call stores the return address as it calls the
-> next function. Then that function allocates its stack frame for its
-> local variables and saving of registers.
-
-This makes perfect sense, (probably also makes sense to push this whole
-explanation into either the changelog or the kernel documentation)
-
-Thanks a lot, Steve!
-
- - Joel
-
-
-
-> on x86:
-> 
-> [ top of stack ]
->  0: sys call entry frame
-> 10: return addr to entry code
-> 11: start of sys_foo frame
-> 20: return addr to sys_foo
-> 21: start of kernel_func_bar frame
-> 30: return addr to kernel_func_bar
-> 31: [ do trace stack here ]
-> 
-> 
-> Then we do a save_stack_trace which returns the addresses of the
-> functions it finds. Which would be (from the bottom of the stack to the
-> top)
-> 
->   return addr to kernel_func_bar
->   return addr to sys_foo
->   return addr to entry code
-> 
-> What we do here is try to figure out how much stack each of theses
-> functions have. So we loop through the stack looking for the addresses
-> returned by the save_stack trace, and see where on the stack this is.
-> This gives us:
-> 
->   return addr to kernel_func_bar [ 30 ]
->   return addr to sys_foo         [ 20 ]
->   return addr to entry frame     [ 10 ]
-> 
-> From this, we can conclude (on x86) that the size of the stack used for
-> kernel_func_bar is 30 - 20 = 10. Because on the stack we have:
-> 
-> 20: return addr to sys_foo
-> 21: start of kernel_func_bar frame  <<-- kernel_func_bar stack frame
-> 30: return addr to kernel_func_bar
-> 
-> 
-> Now, what Jiping reported, is that on arm64, it saves the link register
-> (the return address) when it is needed to, which is after the stack
-> frame for the current function has been saved. That means we have
-> something that looks like this:
-> 
-> on arm64:
-> 
-> [ top of stack ]
->  0: sys call entry frame
-> 10: start of sys_foo_frame
-> 19: return addr to entry code << lr saved before calling kern_func_bar
-> 20: start of kernel_func_bar frame
-> 29: return addr to sys_foo_frame << lr saved before calling next function
-> 30: [ do trace stack here ]
-> 
-> Now, I have a question. To call the mcount code (ftrace and the stack
-> tracing), you need to save the return address of kern_func_bar
-> somewhere, otherwise the call to mcount will overwrite the lr. But
-> let's say it does and then forgets it, so we have:
-> 
-> 30: return addr of kernel_func_bar frame
-> 31: [ do trace stack here ]
-> 
-> Now save_stack_trace gives us the same result:
-> 
->  return addr to kernel_func bar
->  return addr to sys_foo
->  return addr to entry frame
-> 
-> But we get a different result when finding them in the location of the
-> stack.
-> 
->  return addr to kernel_func_bar [ 30 ]
->  return addr to sys foo         [ 29 ]
->  return addr to entry frame     [ 19 ]
-> 
-> The simple subtractions will be off:
-> 
-> kernel_func_bar stack size = 30 - 29 = 1
-> Or even, sys_foo 29 - 19 = 10, but if we look at the stack:
-> 
-> 10: start of sys_foo_frame
-> 19: return addr to entry_code
-> 20: start of kernel_func_bar frame
-> 29: return addr to sys_foo
-> 
-> We are measuring the kernel_func_bar frame for sys_foo!
-> 
-> We are off by one here.
-> 
-> stack_trace_index[] is an array of the offsets mapping to the function
-> return addresses found. If we shift it by one, then we then sync the
-> functions found with their frames:
-> 
-> stack_trace_index[0] = 30
-> stack_trace_index[1] = 29
-> stack_trace_index[2] = 19
-> 
-> 		memmove((&stack_trace_index[0], &stack_trace_index[1],
-> 			sizeof(stack_trace_index[0]) * (x - 1));
-> 
-> Makes that:
-> 
-> stack_trace_index[0] = 29
-> stack_trace_index[1] = 19
-> 
-> And we do x-- to lose the last frame.
-> 
-> With the stack_dump_trace being:
-> 
-> stack_dump_trace[0] = return addr kernel_func_bar
-> stack_dump_trace[1] = return addr sys_foo
-> 
-> we then match which frame size belongs to which function better.
-> 
-> 
-> > 
-> > Also, this stack trace loop (original code) is a bit hairy :) It appears
-> > there is a call to stack_trace_save() followed by another loop that goes
-> > through the returned entries from there and tries to generate a set of
-> > indexes. Isn't the real issue that the entries returned by stack_trace_save()
-> > are a out of whack? I am curious also if other users of stack_trace_save()
-> > will suffer from the same issue.
-> 
-> No, the order is fine. The issue is that we are using the location of
-> the return address in the stack to find out what function has the
-> biggest stack usage, and our assumption for arm64 is incorrect in that
-> location.
-> 
-> -- Steve
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgRmFiaWVuLAoKT24gOC81LzE5IDEyOjQ2IFBNLCBCam9ybiBBbmRlcnNzb24gd3JvdGU6Cj4g
+T24gTW9uIDA1IEF1ZyAwMTo0OCBQRFQgMjAxOSwgRmFiaWVuIERFU1NFTk5FIHdyb3RlOgo+IAo+
+Pgo+PiBPbiAwMS8wOC8yMDE5IDk6MTQgUE0sIEJqb3JuIEFuZGVyc3NvbiB3cm90ZToKPj4+IE9u
+IFdlZCAxMyBNYXIgMDg6NTAgUERUIDIwMTksIEZhYmllbiBEZXNzZW5uZSB3cm90ZToKPj4+Cj4+
+Pj4gVGhlIGN1cnJlbnQgaW1wbGVtZW50YXRpb24gZG9lcyBub3QgYWxsb3cgdHdvIGRpZmZlcmVu
+dCBkZXZpY2VzIHRvIHVzZQo+Pj4+IGEgY29tbW9uIGh3c3BpbmxvY2suIFRoaXMgcGF0Y2ggc2V0
+IHByb3Bvc2VzIHRvIGhhdmUsIGFzIGFuIG9wdGlvbiwgc29tZQo+Pj4+IGh3c3BpbmxvY2tzIHNo
+YXJlZCBiZXR3ZWVuIHNldmVyYWwgdXNlcnMuCj4+Pj4KPj4+PiBCZWxvdyBpcyBhbiBleGFtcGxl
+IHRoYXQgZXhwbGFpbiB0aGUgbmVlZCBmb3IgdGhpczoKPj4+PiAJZXh0aTogaW50ZXJydXB0LWNv
+bnRyb2xsZXJANTAwMGQwMDAgewo+Pj4+IAkJY29tcGF0aWJsZSA9ICJzdCxzdG0zMm1wMS1leHRp
+IiwgInN5c2NvbiI7Cj4+Pj4gCQlpbnRlcnJ1cHQtY29udHJvbGxlcjsKPj4+PiAJCSNpbnRlcnJ1
+cHQtY2VsbHMgPSA8Mj47Cj4+Pj4gCQlyZWcgPSA8MHg1MDAwZDAwMCAweDQwMD47Cj4+Pj4gCQlo
+d2xvY2tzID0gPCZoc2VtIDE+Owo+Pj4+IAl9Owo+Pj4+IFRoZSB0d28gZHJpdmVycyAoc3RtMzJt
+cDEtZXh0aSBhbmQgc3lzY29uKSByZWZlciB0byB0aGUgc2FtZSBod2xvY2suCj4+Pj4gV2l0aCB0
+aGUgY3VycmVudCBod3NwaW5sb2NrIGltcGxlbWVudGF0aW9uLCBvbmx5IHRoZSBmaXJzdCBkcml2
+ZXIgc3VjY2VlZHMKPj4+PiBpbiByZXF1ZXN0aW5nIChod3NwaW5fbG9ja19yZXF1ZXN0X3NwZWNp
+ZmljKSB0aGUgaHdsb2NrLiBUaGUgc2Vjb25kIHJlcXVlc3QKPj4+PiBmYWlscy4KCkhlbHAgbWUg
+dW5kZXJzdGFuZCB0aGUgcHJvYmxlbSB0aGF0IHlvdSBhcmUgdHJ5aW5nIHRvIHNvbHZlIGhlcmUu
+IElzCnRoaXMgYSBjYXNlIG9mIHlvdSBoYXZpbmcgdHdvIGNsaWVudHMgb24gTGludXgtc2lkZSBu
+ZWVkaW5nIHRvIHVzZSB0aGUKc2FtZSBsb2NrIGJ1dCBzdGlsbCByZXF1aXJpbmcgdGhlIGFyYml0
+cmF0aW9uIHdpdGggc29mdHdhcmUgcnVubmluZyBvbgpzb21lIG90aGVyIHJlbW90ZSBwcm9jZXNz
+b3I/IEFyZSB0aGV5IHRhbGtpbmcgdG8gdGhlIHNhbWUgZW50aXR5IG9uIHRoZQpyZW1vdGUtc2lk
+ZSBvciBkaWZmZXJlbnQgcGVlcnMuCgpJIHNlZSB0aGUgc2VyaWVzIGlzIGFsbCBhYm91dCBnZXR0
+aW5nIGEgaGFuZGxlIHNvIHRoYXQgdGhleSBjYW4gdXNlIHRoZQpBUEksIGFuZCBpcyB0aGUgZXhw
+ZWN0ZWQgdXNhZ2UgdGhhdCB0aGUgc2FtZSBlbnRpdHkgd2lsbCBsb2NrIGFuZCB1bmxvY2sKYmVm
+b3JlIHRoZSBvdGhlciBkcml2ZXIgY2FuIGxvY2sgaXQuCgo+Pj4+Cj4+Pj4KPj4+PiBUaGUgcHJv
+cG9zZWQgYXBwcm9hY2ggZG9lcyBub3QgbW9kaWZ5IHRoZSBBUEksIGJ1dCBleHRlbmRzIHRoZSBE
+VCAnaHdsb2NrcycKPj4+PiBwcm9wZXJ0eSB3aXRoIGEgc2Vjb25kIG9wdGlvbmFsIHBhcmFtZXRl
+ciAodGhlIGZpcnN0IG9uZSBpZGVudGlmaWVzIGFuCj4+Pj4gaHdsb2NrKSB0aGF0IHNwZWNpZmll
+cyB3aGV0aGVyIGFuIGh3bG9jayBpcyByZXF1ZXN0ZWQgZm9yIGV4Y2x1c2l2ZSB1c2FnZQo+Pj4+
+IChjdXJyZW50IGJlaGF2aW9yKSBvciBjYW4gYmUgc2hhcmVkIGJldHdlZW4gc2V2ZXJhbCB1c2Vy
+cy4KPj4+PiBFeGFtcGxlczoKPj4+PiAJaHdsb2NrcyA9IDwmaHNlbSA4PjsJUmVmIHRvIGh3bG9j
+ayAjOCBmb3IgZXhjbHVzaXZlIHVzYWdlCj4+Pj4gCWh3bG9ja3MgPSA8JmhzZW0gOCAwPjsJUmVm
+IHRvIGh3bG9jayAjOCBmb3IgZXhjbHVzaXZlICgwKSB1c2FnZQo+Pj4+IAlod2xvY2tzID0gPCZo
+c2VtIDggMT47CVJlZiB0byBod2xvY2sgIzggZm9yIHNoYXJlZCAoMSkgdXNhZ2UKPj4+Pgo+Pj4+
+IEFzIGEgY29uc3RyYWludCwgdGhlICNod2xvY2stY2VsbHMgdmFsdWUgbXVzdCBiZSAxIG9yIDIu
+Cj4+Pj4gSW4gdGhlIGN1cnJlbnQgaW1wbGVtZW50YXRpb24sIHRoaXMgY2FuIGhhdmUgdGhlb3Jp
+Y2FsbHkgYW55IHZhbHVlIGJ1dDoKPj4+PiAtIGFsbCBvZiB0aGUgZXhpc2l0aW5nIGRyaXZlcnMg
+dXNlIHRoZSBzYW1lIHZhbHVlIDogMS4KPj4+PiAtIHRoZSBmcmFtZXdvcmsgc3VwcG9ydHMgb25s
+eSBvbmUgdmFsdWUgOiAxIChzZWUgaW1wbGVtZW50YXRpb24gb2YKPj4+PiAgICBvZl9od3NwaW5f
+bG9ja19zaW1wbGVfeGxhdGUoKSkKPj4+PiBIZW5jZSwgaXQgc2hhbGwgbm90IGJlIGEgcHJvYmxl
+bSB0byByZXN0cmljdCB0aGlzIHZhbHVlIHRvIDEgb3IgMiBzaW5jZQo+Pj4+IGl0IHdvbid0IGJy
+ZWFrIGFueSBkcml2ZXIuCj4+Pj4KPj4+IEhpIEZhYmllbiwKPj4+Cj4+PiBZb3VyIHNlcmllcyBs
+b29rcyBnb29kLCBidXQgaXQgbWFrZXMgbWUgd29uZGVyIHdoeSB0aGUgaGFyZHdhcmUgbG9ja3MK
+Pj4+IHNob3VsZCBiZSBhbiBleGNsdXNpdmUgcmVzb3VyY2UuCj4+Pgo+Pj4gSG93IGFib3V0IGp1
+c3QgbWFraW5nIGFsbCAoc3BlY2lmaWMpIGxvY2tzIHNoYXJlZD8KPj4KPj4gSGkgQmpvcm4sCj4+
+Cj4+IE1ha2luZyBhbGwgbG9ja3Mgc2hhcmVkIGlzIGEgcG9zc2libGUgaW1wbGVtZW50YXRpb24g
+KG15IGZpcnN0IAo+PiBpbXBsZW1lbnRhdGlvbgo+PiB3YXMgZ29pbmcgdGhpcyB3YXkpIGJ1dCB0
+aGVyZSBhcmUgc29tZSBkcmF3YmFja3Mgd2UgbXVzdCBiZSBhd2FyZSBvZjoKPj4KPj4gQS8gVGhp
+cyB0aGVvcmV0aWNhbGx5IGJyZWFrIHRoZSBsZWdhY3kgYmVoYXZpb3IgKHRoZSBsZWdhY3kgd29y
+a3Mgd2l0aAo+PiBleGNsdXNpdmUgKFVOVVNFRCByYWRpeCB0YWcpIHVzYWdlKS4gQXMgYSBjb25z
+ZXF1ZW5jZSwgYW4gZXhpc3RpbmcgZHJpdmVyCj4+IHRoYXQgaXMgY3VycmVudGx5IGZhaWxpbmcg
+dG8gcmVxdWVzdCBhIGxvY2sgKGFscmVhZHkgY2xhaW1lZCBieSBhbm90aGVyCj4+IHVzZXIpIHdv
+dWxkIG5vdyB3b3JrIGZpbmUuIE5vdCBzdXJlIHRoYXQgdGhlcmUgYXJlIHN1Y2ggZHJpdmVycywg
+c28gdGhpcwo+PiBwb2ludCBpcyBwcm9iYWJseSBub3QgYSByZWFsIGlzc3VlLgo+Pgo+IAo+IFJp
+Z2h0LCBpdCdzIHBvc3NpYmxlIHRoYXQgYSBwcmV2aW91c2x5IG1pc2NvbmZpZ3VyZWQgc3lzdGVt
+IG5vdwo+IHN1Y2Nlc3NmdWxseSBwcm9iZXMgbW9yZSB0aGFuIG9uZSBkZXZpY2UgdGhhdCB1c2Vz
+IGEgcGFydGljdWxhcgo+IHNwaW5sb2NrLiBCdXQgc3VjaCBzeXN0ZW0gd291bGQgYmUgc3VmZmVy
+aW5nIGZyb20gaXNzdWVzIHJlbGF0ZWQgdG8gZS5nLgo+IHByb2JlIG9yZGVyaW5nLgo+IAo+IFNv
+IEkgdGhpbmsgd2Ugc2hvdWxkIGlnbm9yZSB0aGlzIGlzc3VlLgo+IAo+PiBCLyBUaGlzIHdvdWxk
+IGludHJvZHVjZSBzb21lIGluY29uc2lzdGVuY3kgYmV0d2VlbiB0aGUgdHdvICdyZXF1ZXN0JyBB
+UEkKPj4gd2hpY2ggYXJlIGh3c3Bpbl9sb2NrX3JlcXVlc3QoKSBhbmQgaHdzcGluX2xvY2tfcmVx
+dWVzdF9zcGVjaWZpYygpLgo+PiBod3NwaW5fbG9ja19yZXF1ZXN0KCkgbG9va3MgZm9yIGFuIHVu
+dXNlZCBsb2NrLCBzbyByZXF1ZXN0cyBmb3IgYW4gZXhjbHVzaXZlCj4+IHVzYWdlLiBPbiB0aGUg
+b3RoZXIgc2lkZSwgcmVxdWVzdF9zcGVjaWZpYygpIHdvdWxkIHJlcXVlc3Qgc2hhcmVkIGxvY2tz
+Lgo+PiBXb3JzdCB0aGUgZm9sbG93aW5nIHNlcXVlbmNlIGNhbiB0cmFuc2Zvcm0gYW4gZXhjbHVz
+aXZlIHVzYWdlIGludG8gYSBzaGFyZWQKPj4KPiAKPiBUaGVyZSBpcyBhbHJlYWR5IGFuIGluY29u
+c2lzdGVuY3kgaW4gYmV0d2VlbiB0aGVzZTsgYXMgd2l0aCBhYm92ZSBhbnkKPiBzeXN0ZW0gdGhh
+dCB1c2VzIGJvdGggcmVxdWVzdCgpIGFuZCByZXF1ZXN0X3NwZWNpZmljKCkgd2lsbCBiZSBzdWZm
+ZXJpbmcKPiBmcm9tIGludGVybWl0dGVudCBmYWlsdXJlcyBkdWUgdG8gcHJvYmUgb3JkZXJpbmcu
+Cj4gCj4+IG9uZToKPj4gIMKgIC1od3NwaW5fbG9ja19yZXF1ZXN0KCkgLT4gcmV0dXJucyBJZCMw
+IChleGNsdXNpdmUpCj4+ICDCoCAtaHdzcGluX2xvY2tfcmVxdWVzdCgpIC0+IHJldHVybnMgSWQj
+MSAoZXhjbHVzaXZlKQo+PiAgwqAgLWh3c3Bpbl9sb2NrX3JlcXVlc3Rfc3BlY2lmaWMoMCkgLT4g
+cmV0dXJucyBJZCMwIGFuZCBtYWtlcyBJZCMwIHNoYXJlZAo+PiBIb25lc3RseSBJIGFtIG5vdCBz
+dXJlIHRoYXQgdGhpcyBpcyBhIHJlYWwgaXNzdWUsIGJ1dCBpdCdzIGJldHRlciB0byBoYXZlIGl0
+Cj4+IGluIG1pbmQgYmVmb3JlIHdlIHRha2UgYXkgZGVjaXNpb24KCldvdWxkbid0IGl0IGJlIGFj
+dHVhbGx5IHNpbXBsZXIgdG8ganVzdCBpbnRyb2R1Y2UgYSBuZXcgc3BlY2lmaWMgQVBJCnZhcmlh
+bnQgZm9yIHRoaXMsIHNpbWlsYXIgdG8gdGhlIHJlc2V0IGNvcmUgZm9yIGV4YW1wbGUgKGl0IHVz
+ZXMgYQpzZXBhcmF0ZSBleGNsdXNpdmUgQVBJKSwgd2l0aG91dCBoYXZpbmcgdG8gbW9kaWZ5IHRo
+ZSBiaW5kaW5ncyBhdCBhbGwuCkl0IGlzIGp1c3QgYSBjYXNlIG9mIHlvdXIgZHJpdmVyIHVzaW5n
+IHRoZSByaWdodCBBUEksIGFuZCB0aGUgY29yZSBjYW4KYmUgbW9kaWZpZWQgdG8gdXNlIHRoZSBh
+ZGRpdGlvbmFsIHRhZyBzZW1hbnRpY3MgYmFzZWQgb24gdGhlIEFQSS4gSXQKc2hvdWxkIGF2b2lk
+IGFueSBjb25mdXNpb24gd2l0aCBzYXkgdXNpbmcgYSBkaWZmZXJlbnQgc2Vjb25kIGNlbGwgdmFs
+dWUKZm9yIHRoZSBzYW1lIGxvY2sgaW4gdHdvIGRpZmZlcmVudCBub2Rlcy4KCklmIHlvdSBhcmUg
+c2hhcmluZyBhIGh3bG9jayBvbiB0aGUgTGludXggc2lkZSwgc3VyZWx5IHlvdXIgZHJpdmVyIHNo
+b3VsZApiZSBhd2FyZSB0aGF0IGl0IGlzIGEgc2hhcmVkIGxvY2suIFRoZSB0YWcgY2FuIGJlIHNl
+dCBkdXJpbmcgdGhlIGZpcnN0CnJlcXVlc3QgQVBJLCBhbmQgeW91IGxvb2sgdGhyb3VnaCBib3Ro
+IHRhZ3Mgd2hlbiBnaXZpbmcgb3V0IGEgaGFuZGxlLgoKT2J2aW91c2x5LCB0aGUgaHdzcGluX2xv
+Y2tfcmVxdWVzdCgpIEFQSSB1c2FnZSBzZW1hbnRpY3MgYWx3YXlzIGhhZCB0aGUKaW1wbGllZCBh
+ZGRpdGlvbmFsIG5lZWQgZm9yIGNvbW11bmljYXRpbmcgdGhlIGxvY2sgaWQgdG8gdGhlIG90aGVy
+IHBlZXIKZW50aXR5LCBzbyBhIHJlYWxpc3RpYyB1c2FnZSBpcyBtb3N0IGFsd2F5cyB0aGUgc3Bl
+Y2lmaWMgQVBJIHZhcmlhbnQuIEkKZG91YnQgdGhpcyBBUEkgd291bGQgYmUgb2YgbXVjaCB1c2Ug
+Zm9yIHRoZSBzaGFyZWQgZHJpdmVyIHVzYWdlLiBUaGlzCmFsc28gaW1wbGllcyB0aGF0IHRoZSBj
+bGllbnQgdXNlciBkb2VzIG5vdCBjYXJlIGFib3V0IHNwZWNpZnlpbmcgYSBsb2NrCmluIERULgoK
+cmVnYXJkcwpTdW1hbgoKPiAKPiBUaGUgY2FzZSB3aGVyZSBJIGNhbiBzZWUgYQo+IHByb2JsZW0g
+d2l0aCB0aGlzIHdvdWxkIGJlIGlmIHRoZSB0d28gY2xpZW50cyBzb21laG93IHdvdWxkIG5lc3Qg
+dGhlaXIKPiBsb2NraW5nIHJlZ2lvbnMuCj4gCj4gQnV0IGdlbmVyYWxseSBJIHRoaW5rIHRoaXMg
+Y291bGQgY29uc2lkZXIgdGhpcyBhbiBpbXByb3ZlbWVudCwgYmVjYXVzZQo+IHRoZSByZXF1ZXN0
+X3NwZWNpZmljKCkgd291bGQgbm93IGJlIGFibGUgdG8gYWNxdWlyZSBpdHMgaHdsb2NrLCB3aXRo
+Cj4gc29tZSBhZGRpdGlvbmFsIGNvbnRlbnRpb24gZHVlIHRvIHRoZSBtdWx0aXBsZSB1c2UuCj4g
+Cj4+IEkgY291bGQgbm90IGZpbmQgYW55IGRyaXZlciB1c2luZyB0aGUgaHdzcGluX2xvY2tfcmVx
+dWVzdCgpIEFQSSwgd2UKPj4gbWF5IGRlY2lkZSB0byByZW1vdmUgKG9yIHRvIG1ha2UgZGVwcmVj
+YXRlZCkgdGhpcyBBUEksIGhhdmluZwo+PiBldmVyeXRoaW5nICdzaGFyZWQgd2l0aG91dCBhbnkg
+Y29uZGl0aW9ucycuCj4+Cj4gCj4gSXQgd291bGQgYmUgbmljZSB0byBoYXZlIGFuIHVwc3RyZWFt
+IHVzZXIgb2YgdGhpcyBBUEkuCj4gCj4+Cj4+IEkgY2FuIHNlZSB0aHJlZSBvcHRpb25zOgo+PiAx
+LSBLZWVwIG15IGluaXRpYWwgcHJvcG9zaXRpb24KPj4gMi0gSGF2ZSBod3NwaW5fbG9ja19yZXF1
+ZXN0X3NwZWNpZmljKCkgdXNpbmcgc2hhcmVkIGxvY2tzIGFuZAo+PiAgwqDCoCBod3NwaW5fbG9j
+a19yZXF1ZXN0KCkgdXNpbmcgdW51c2VkIChzbyAnaW5pdGlhbGx5JyBleGNsdXNpdmUpIGxvY2tz
+Lgo+PiAzLSBIYXZlIGh3c3Bpbl9sb2NrX3JlcXVlc3Rfc3BlY2lmaWMoKSB1c2luZyBzaGFyZWQg
+bG9ja3MgYW5kCj4+ICDCoMKgIHJlbW92ZS9tYWtlIGRlcHJlY2F0ZWQgaHdzcGluX2xvY2tfcmVx
+dWVzdCgpLgo+Pgo+PiBKdXN0IGxldCBtZSBrbm93IHdoYXQgaXMgeW91ciBwcmVmZXJlbmNlLgo+
+Pgo+IAo+IEkgdGhpbmsgd2Ugc2hvdWxkIHN0YXJ0IHdpdGggIzIgYW5kIHdvdWxkIGxpa2UgaW5w
+dXQgZnJvbSBlLmcuIFN1bWFuCj4gcmVnYXJkaW5nICMzLgo+IAo+IFJlZ2FyZHMsCj4gQmpvcm4K
+PiAKPj4gQlIKPj4KPj4gRmFiaWVuCj4+Cj4+Pgo+Pj4gUmVnYXJkcywKPj4+IEJqb3JuCj4+Pgo+
+Pj4+IEZhYmllbiBEZXNzZW5uZSAoNik6Cj4+Pj4gICAgZHQtYmluZGluZ3M6IGh3bG9jazogYWRk
+IHN1cHBvcnQgb2Ygc2hhcmVkIGxvY2tzCj4+Pj4gICAgaHdzcGlubG9jazogYWxsb3cgc2hhcmlu
+ZyBvZiBod3NwaW5sb2Nrcwo+Pj4+ICAgIGR0LWJpbmRpbmdzOiBod2xvY2s6IHVwZGF0ZSBTVE0z
+MiAjaHdsb2NrLWNlbGxzIHZhbHVlCj4+Pj4gICAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgaHdzcGlu
+bG9jayBub2RlIGZvciBzdG0zMm1wMTU3IFNvQwo+Pj4+ICAgIEFSTTogZHRzOiBzdG0zMjogQWRk
+IGh3bG9jayBmb3IgaXJxY2hpcCBvbiBzdG0zMm1wMTU3Cj4+Pj4gICAgQVJNOiBkdHM6IHN0bTMy
+OiBod2xvY2tzIGZvciBHUElPIGZvciBzdG0zMm1wMTU3Cj4+Pj4KPj4+PiAgIC4uLi9kZXZpY2V0
+cmVlL2JpbmRpbmdzL2h3bG9jay9od2xvY2sudHh0ICAgICAgICAgIHwgMjcgKysrKystLQo+Pj4+
+ICAgLi4uL2JpbmRpbmdzL2h3bG9jay9zdCxzdG0zMi1od3NwaW5sb2NrLnR4dCAgICAgICAgfCAg
+NiArLQo+Pj4+ICAgRG9jdW1lbnRhdGlvbi9od3NwaW5sb2NrLnR4dCAgICAgICAgICAgICAgICAg
+ICAgICAgfCAxMCArKy0KPj4+PiAgIGFyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNTctcGluY3Ry
+bC5kdHNpICAgICAgICAgIHwgIDIgKwo+Pj4+ICAgYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1
+N2MuZHRzaSAgICAgICAgICAgICAgICAgfCAxMCArKysKPj4+PiAgIGRyaXZlcnMvaHdzcGlubG9j
+ay9od3NwaW5sb2NrX2NvcmUuYyAgICAgICAgICAgICAgIHwgODIgKysrKysrKysrKysrKysrKyst
+LS0tLQo+Pj4+ICAgZHJpdmVycy9od3NwaW5sb2NrL2h3c3BpbmxvY2tfaW50ZXJuYWwuaCAgICAg
+ICAgICAgfCAgMiArCj4+Pj4gICA3IGZpbGVzIGNoYW5nZWQsIDEwOCBpbnNlcnRpb25zKCspLCAz
+MSBkZWxldGlvbnMoLSkKPj4+Pgo+Pj4+IC0tIAo+Pj4+IDIuNy40Cj4+Pj4KCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
