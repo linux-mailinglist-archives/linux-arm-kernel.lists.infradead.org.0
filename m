@@ -2,84 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C7F1831EE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 14:56:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 101DD8320F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 15:01:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ECodSUEE18mDYqdXwkPxBRcrkKX32PaZCrBy31BhCfs=; b=OseCE3ksds8Cxw
-	nNDTE2lCzqlHUXwaLcbJDjKQHJ2hv2EAJfeXzbJlEtVuQ5pGZp2FDRWEUN4XBOCCXwxqZM7lnPToU
-	8x8eAzXqHJkhf4CwO83DGyg3Dg9IKuQvDS4USvTPQggbtZHduD3wG/k1JoE0BbSe1vXbTn90ilrf+
-	0SXKMwCfSZlCcfvucgAWOahscYBfi86hENb3LqpFYT+RvvbvTjX80RXEvGqJVYfAJUPbvZBqAEzEv
-	QPrbK4HWatkAp5N7Zr02M4glVC1cQEQRztezDBJ8AwTcUelqYjHn28XZNr13yDi6Q0fzIS6kihPoo
-	0ZVgjcGY1Hi7SQcg3d+A==;
+	List-Owner; bh=S/vvP+O+jJfQexw8yoltwtVcUroAsUsLZEF1D78gAZA=; b=kpzkUS27FxKY0z
+	chy99V2CNeAGWZYTMgxAX5+H71/OM8tMYU0qc/iQlcuQbyj/TyzDgklzN6fthUWLAzBAAUAjt6YVf
+	jvLpQq0AmeTCd4hQulC2dPIfqQ6oxCPSY2ZmKcv3PY9jWh8PKEpUIAs+46fEGyiiGD5qX6zf/z2ca
+	xHcu5UzhhrjhUYFhJ+araQGg6Wc2Y+r+XXO9L5XiSmDEJG2O+ikJ3sGdmZy+EYAvuAKgWDTFuixUO
+	Ycw4b46htCaVrS6S2GGrlXHbEVkFc6tzZnu+vtiQzRZAWsTl+EzKPpuf4X8sABnHfJOg4KUsERX6F
+	Vzm0Fmzh6SG7rJn803Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huz17-0004os-H8; Tue, 06 Aug 2019 12:56:41 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1huz5Z-0006cb-Ka; Tue, 06 Aug 2019 13:01:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huz0w-0004oS-Hz
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 12:56:31 +0000
-Received: by mail-lj1-x241.google.com with SMTP id v18so82097859ljh.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 05:56:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hWkwxSekOFjOJkkiUvNS6vk1XTlC8GglcO/MoVG5QiU=;
- b=sHDErg1nel+qWZ6ii4Ow3da3HFj48RR7397s2QyeksX1iOni6fqeQTB3BqjhvnXymg
- iDZ9/asuSdIwLEQ5+ASOgIwa3KaYHYgffPLUz0DjarhoqXArAdSLVuCeimHCPEmQL82E
- estLVQyp/jfbd0YCA4DksvLMUL4+LXAC4feuCS6kGtz1OOY2ZNT0FLZ+LPKAkssy0/pu
- Lfv3LV7ZLljskBd/xxsMOK9/JcDO0QbOgrA9r4p7x1osSVLm64d75lQd7dEkiUbPCFWU
- Dm6ChuZWYqbu4VavYKXXv5UWiFoLLFsK1wv1UblaGU+WQIYDezjt/pURraKW1BTA3+if
- 87kw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hWkwxSekOFjOJkkiUvNS6vk1XTlC8GglcO/MoVG5QiU=;
- b=B8SymMtMv6r5H7EK46XiIaH+vkbXbRSdKwW2SzK/Uvl5Nb8QaYFEK+0ISHS57702TU
- ItUEsm9TvY4uibHapgV9auFIQBlUA5jbyuBSQbsTFqoL7G1o2+ZPb5OFx+E8I4UHOxt0
- pd4ctyrlTGnfSMmV9sNH6VYXkgKpykwr1WChrdwqg5KA9NBurIbJeq6NiiL9sGVeqHU8
- xzDG10gR4Xl1ombbLOp2XiN1XWY3ccmu2ikM19IoQFxvVJ6ZLEOXG3d6C/Eh+tT72sQk
- sdMaBXdW6sx189pNt/Nb8jXeu0OtZ4tFAb6Z3N5KG2MVNcmE9vTomBeaOV9zsKbub0zC
- XJ4w==
-X-Gm-Message-State: APjAAAWEy1HPI7RiLgE4k1pWT9YbQkS62RDgiGfv+cDhyTovj8imxZOa
- sC3or8oSm9N37Mp0N7x6RYsQbLtdnDWfA8TEDvDuqw==
-X-Google-Smtp-Source: APXvYqyubXEyA8qA2bp+bFUDFeaZYa6vFIsx3pnY8ux450GbZ0ztgW/G/BCVR2DhdbCt29loENRPoYWQh344coTndK4=
-X-Received: by 2002:a2e:9048:: with SMTP id n8mr1742815ljg.37.1565096189174;
- Tue, 06 Aug 2019 05:56:29 -0700 (PDT)
+ id 1huz5O-0006bd-Ng
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 13:01:08 +0000
+Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
+ [66.24.58.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9CFB120C01;
+ Tue,  6 Aug 2019 13:01:00 +0000 (UTC)
+Date: Tue, 6 Aug 2019 09:00:59 -0400
+From: Steven Rostedt <rostedt@goodmis.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v3] tracing: Function stack size and its name mismatch
+ in arm64
+Message-ID: <20190806090059.3c106d41@gandalf.local.home>
+In-Reply-To: <20190805112524.ajlmouutqckwpqyd@willie-the-truck>
+References: <20190802094103.163576-1-jiping.ma2@windriver.com>
+ <20190802112259.0530a648@gandalf.local.home>
+ <20190803082642.GA224541@google.com>
+ <20190805112524.ajlmouutqckwpqyd@willie-the-truck>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-References: <20190804201637.1240-1-sam@ravnborg.org>
- <20190804201637.1240-11-sam@ravnborg.org>
-In-Reply-To: <20190804201637.1240-11-sam@ravnborg.org>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 6 Aug 2019 14:56:16 +0200
-Message-ID: <CACRpkdYTaaxqhSSPx8KToVaiRJtzNmNynGCoGTMeJVgDUCsTnQ@mail.gmail.com>
-Subject: Re: [PATCH v1 10/16] drm/panel: ili9322: move bus_flags to get_modes()
-To: Sam Ravnborg <sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_055630_601790_00624789 
-X-CRM114-Status: GOOD (  12.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190806_060106_815821_83D393EB 
+X-CRM114-Status: GOOD (  21.68  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,51 +67,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Fabio Estevam <festevam@gmail.com>, Marek Vasut <marex@denx.de>,
- Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
- Joonyoung Shim <jy0922.shim@samsung.com>,
- Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Kukjin Kim <kgene@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, Sascha Hauer <s.hauer@pengutronix.de>,
- Alison Wang <alison.wang@nxp.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Gwan-gyeong Mun <gwan-gyeong.mun@intel.com>, Inki Dae <inki.dae@samsung.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Stefan Agner <stefan@agner.ch>, linux-tegra@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- Allison Randal <allison@lohutok.net>, Jernej Skrabec <jernej.skrabec@siol.net>,
- Shawn Guo <shawnguo@kernel.org>, Seung-Woo Kim <sw0312.kim@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Daniel Vetter <daniel@ffwll.ch>,
- Enrico Weigelt <info@metux.net>
+Cc: Jiping Ma <jiping.ma2@windriver.com>, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, takahiro.akashi@linaro.org,
+ mingo@redhat.com, Joel Fernandes <joel@joelfernandes.org>,
+ kernel-team@android.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 4, 2019 at 10:17 PM Sam Ravnborg <sam@ravnborg.org> wrote:
+On Mon, 5 Aug 2019 12:25:25 +0100
+Will Deacon <will@kernel.org> wrote:
 
-> To prepare the driver to receive drm_connector only in the get_modes()
-> callback, move bus_flags handling to ili9322_get_modes().
->
-> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-> Cc: Thierry Reding <thierry.reding@gmail.com>
-> Cc: Sam Ravnborg <sam@ravnborg.org>
+> This can be read as "subtract 144 bytes (32*4 + 16) from the stack pointer,
+> write the frame record there and then update the stack pointer to point at the
+> bottom of the newly allocated stack", which means that the array 'a[32]' sits
+> directly /above/ the frame record on the stack. However, this is just what my
+> GCC happened to do today. When we looked at this back in 2015, there were other
+> cases we ended up having to identify with heuristics based on what had been
+> observed under various compilers:
+> 
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/393721.html
 
-OK I don't see where this is going but I trust you so:
-Acked-by: Linus Walleij <linus.walleij@linaro.org>
+That's a bit more involved than what I came up with.
 
-Yours,
-Linus Walleij
+> 
+> This was deemed to be far too fragile, so we didn't merge it in the end.
+> 
+> If this is to work reliably, then we need support from the tools. This was
+> raised when we first merged support for ftrace, but I'm not sure it went
+> anywhere:
+> 
+> https://gcc.gnu.org/ml/gcc/2016-01/msg00035.html
+> 
+> So, I completely agree with Steve that we shouldn't be littering the core code
+> with #ifdef CONFIG_ARM64, but we probably do need something in the arch backend
+> if we're going to do this properly, and that in turn is likely to need a very
+> different algorithm from the one currently in use.
+
+So basically it seems that on arm64, gcc only saves the lr when needed
+(leaf functions don't need it). And I can even see that if you have
+several paths that don't call other functions, why save the lr?
+
+It does seem that doing the slight change makes the current code more
+accurate without need for any heuristics.
+
+Here's my patch again, slightly tweaked and Jiping said it solved the
+issue for him.
+
+Are you OK with this change?
+
+-- Steve
+
+diff --git a/arch/arm64/include/asm/ftrace.h b/arch/arm64/include/asm/ftrace.h
+index 5ab5200b2bdc..13a4832cfb00 100644
+--- a/arch/arm64/include/asm/ftrace.h
++++ b/arch/arm64/include/asm/ftrace.h
+@@ -13,6 +13,7 @@
+ #define HAVE_FUNCTION_GRAPH_FP_TEST
+ #define MCOUNT_ADDR		((unsigned long)_mcount)
+ #define MCOUNT_INSN_SIZE	AARCH64_INSN_SIZE
++#define ARCH_RET_ADDR_AFTER_LOCAL_VARS 1
+ 
+ #ifndef __ASSEMBLY__
+ #include <linux/compat.h>
+diff --git a/kernel/trace/trace_stack.c b/kernel/trace/trace_stack.c
+index 5d16f73898db..40e4a88eea8f 100644
+--- a/kernel/trace/trace_stack.c
++++ b/kernel/trace/trace_stack.c
+@@ -158,6 +158,20 @@ static void check_stack(unsigned long ip, unsigned long *stack)
+ 			i++;
+ 	}
+ 
++#ifdef ARCH_RET_ADDR_AFTER_LOCAL_VARS
++	/*
++	 * Some archs will store the link register before calling
++	 * nested functions. This means the saved return address
++	 * comes after the local storage, and we need to shift
++	 * for that.
++	 */
++	if (x > 1) {
++		memmove(&stack_trace_index[0], &stack_trace_index[1],
++			sizeof(stack_trace_index[0]) * (x - 1));
++		x--;
++	}
++#endif
++
+ 	stack_trace_nr_entries = x;
+ 
+ 	if (task_stack_end_corrupted(current)) {
 
 _______________________________________________
 linux-arm-kernel mailing list
