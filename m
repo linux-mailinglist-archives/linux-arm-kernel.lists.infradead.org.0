@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5350835AF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 17:51:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47DA9835B7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 17:51:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5JyTVch6+JYBleEVfBMPDtb7cA5fizwAaGX7HL0D024=; b=Tf1nQkzq/m41jy
-	z8VqsRCtCW3XpHihhGrTkx4r97kZefNqur62yCq3tupdrh4q5GIxWWZGlQ2Sq56izUYFLhwduCUaY
-	oNENtDpfqBYrPYDTBLdBSDWdMDye3QPQ0sSMQTDB8wxzjz5SgOm5qokg9sxhKj+qSfwQ17KJ4jyd2
-	xnYhyRlJvPEAkTBPH0KAf3+viKp6t3Xvv2Etz48jEWqkNWSd8G6H5oMZKJgUjFeZ5nYBNIu+7Ay8x
-	9Syd+y1xm9tNCh+IV24BgEFsTYDV98X/nhP/dYE8eeetcwmOc9d9XwPOVrpQ73puIHfr+a9YW+JUp
-	YP8ey7/zYO//ZbL3bMxw==;
+	List-Owner; bh=GwTb689xufBOCLmTuqHfH4XPGdcoyVN43tCUouTZUjA=; b=PBYc9F61w3Wzez
+	zKUu/V84fMuXgbxI/aig/yvY6KYMguBwMTkSQm99Qhwu9DI8TwB7NEmnHTcTU9WGezPrSCI5Z/H3N
+	sCtDWLlloGimMmKlXfYl48p1M2rd1oFdroRGbErnHf8cIc1euyMA+Q2F9xOhfTsd9966aIxMya02F
+	J5wj75I6HafczeSKKRF7oRymKQbyft4FTgTtCWWdPFEFHkyoNL2BzUT4jPKigJX81EhG3ew/Lnuq5
+	vBIXP/sBbR01kNAxStUzopHUc6MW2ukH/5AyppxGjPNBXeCsACnatCyEZTPHgQtK1GcAyWczyMca3
+	fIbWI9mdqhLm2BoMSuhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv1jq-0001ss-Sy; Tue, 06 Aug 2019 15:51:02 +0000
-Received: from verein.lst.de ([213.95.11.211])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv1je-0001oa-2W
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 15:50:51 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 125CC227A81; Tue,  6 Aug 2019 17:50:45 +0200 (CEST)
-Date: Tue, 6 Aug 2019 17:50:44 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Rob Clark <robdclark@chromium.org>
-Subject: Re: [PATCH 1/2] drm: add cache support for arm64
-Message-ID: <20190806155044.GC25050@lst.de>
-References: <20190805211451.20176-1-robdclark@gmail.com>
- <20190806084821.GA17129@lst.de>
- <CAJs_Fx6eh1w7c=crMoD5XyEOMzP6orLhqUewErE51cPGYmObBQ@mail.gmail.com>
+	id 1hv1kN-0002RE-TO; Tue, 06 Aug 2019 15:51:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hv1kC-0002OA-RA
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 15:51:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DE19B344;
+ Tue,  6 Aug 2019 08:51:21 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8AF213F575;
+ Tue,  6 Aug 2019 08:51:20 -0700 (PDT)
+Date: Tue, 6 Aug 2019 16:51:15 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: Re: [PATCH 1/6] ARM: cpuidle: Remove useless header include
+Message-ID: <20190806155115.GA16546@e107155-lin>
+References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
+ <20190722153745.32446-2-lorenzo.pieralisi@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJs_Fx6eh1w7c=crMoD5XyEOMzP6orLhqUewErE51cPGYmObBQ@mail.gmail.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+In-Reply-To: <20190722153745.32446-2-lorenzo.pieralisi@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_085050_296536_5EA5CC88 
-X-CRM114-Status: GOOD (  13.02  )
+X-CRM114-CacheID: sfid-20190806_085124_940031_B4C17758 
+X-CRM114-Status: UNSURE (   8.95  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -60,50 +62,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sean Paul <sean@poorly.run>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- LKML <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- Rob Clark <robdclark@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Christoph Hellwig <hch@lst.de>, Allison Randal <allison@lohutok.net>
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ linux-pm@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
+ Will Deacon <will@kernel.org>, LAKML <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 06, 2019 at 07:11:41AM -0700, Rob Clark wrote:
-> Agreed that drm_cflush_* isn't a great API.  In this particular case
-> (IIUC), I need wb+inv so that there aren't dirty cache lines that drop
-> out to memory later, and so that I don't get a cache hit on
-> uncached/wc mmap'ing.
+On Mon, Jul 22, 2019 at 04:37:40PM +0100, Lorenzo Pieralisi wrote:
+> The generic ARM CPUidle driver includes <linux/topology.h> by mistake.
+> 
+> Remove the topology header include.
+> 
+> Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> Cc: Ulf Hansson <ulf.hansson@linaro.org>
+> Cc: Sudeep Holla <sudeep.holla@arm.com>
 
-So what is the use case here?  Allocate pages using the page allocator
-(or CMA for that matter), and then mmaping them to userspace and never
-touching them again from the kernel?
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 
-> Tying it in w/ iommu seems a bit weird to me.. but maybe that is just
-> me, I'm certainly willing to consider proposals or to try things and
-> see how they work out.
-
-This was just my through as the fit seems easy.  But maybe you'll
-need to explain your use case(s) a bit more so that we can figure out
-what a good high level API is.
-
-> Exposing the arch_sync_* API and using that directly (bypassing
-> drm_cflush_*) actually seems pretty reasonable and pragmatic.  I did
-> have one doubt, as phys_to_virt() is only valid for kernel direct
-> mapped memory (AFAIU), what happens for pages that are not in kernel
-> linear map?  Maybe it is ok to ignore those pages, since they won't
-> have an aliased mapping?
-
-They could have an aliased mapping in vmalloc/vmap space for example,
-if you created one.  We have the flush_kernel_vmap_range /
-invalidate_kernel_vmap_range APIs for those, that are implement
-on architectures with VIVT caches.
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
