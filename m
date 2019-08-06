@@ -2,58 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90B4F83801
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 19:39:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B84D83875
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 20:12:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cGMxKMNN5ZOrVcCEp1EBO3Va1A9L2DKrCcXJaJ1d8IQ=; b=ETdubFdBACWe1S
-	R6r+4DHVTpuHUxmX7THYCt7+gXCn46neOAXFSn/Vt/m1t6OVBLdD3pgJjs8Uk59fWDFiSvmv+sgqi
-	gQJwrt8xtxPJw/rRiXmZ9oVgymj5qQvID/bdQWUUm1c2GcYpE/Ua3uuWG9d6ueTJgXSFlBUqM4X2H
-	oot4cs0I5euJ8yAr0NEAwCwefsDV+wBMNEEFPCjzLhbXJLdL87RhXdnu5bltAnPJQDjwJ4JlGdmIk
-	rFbVJrkK9GHMGo7K3/YeSFAhbwBkV087KSRdG5ju9EayoUH0VXk8pFHG9KDSCyFDxQ1v9j5kWqW9j
-	qzqFZyXBEu8Pv2c/Zy1Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NcWcU5HbamT9rj04wcQjgsywKf105jJmmpDHG+potOE=; b=PXQxg6JX4IWC8jpI5i3mX4lxY
+	K79Bvw/dcR2NKVq2CaCA+TJEeFkhGFnKL9ANd5fM2I+NOFaOcm3Q9V+sPbvEe8U33laIJgl2es+ud
+	6QOz9kRUK+cxgLw1GckHm1EIyGbxhYwRGDo/rKN84aPzaaP4lHQe9Ne9rd/t9o30Xb2r/X9B8ObPS
+	k5JdfXu2ibPYKXVAzVbFNCnYp65vBd5xSJcrX03SpEP93dLcURL50BDtE++8XE4dl7U4566IHHuic
+	jS663jI3IXQL3ZGPeZSQ90ldUkXpNCMAgi3JggdllI/YPrChIdDme8ITJWOKjKhrbBZl1+ZTd2Tig
+	r3IMB8GDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv3RG-0006ma-8Q; Tue, 06 Aug 2019 17:39:58 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1hv3wk-0000B6-0H; Tue, 06 Aug 2019 18:12:30 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv3R7-0006hl-3s; Tue, 06 Aug 2019 17:39:51 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 06 Aug 2019 10:39:46 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,353,1559545200"; d="scan'208";a="174242846"
-Received: from iweiny-desk2.sc.intel.com ([10.3.52.157])
- by fmsmga008.fm.intel.com with ESMTP; 06 Aug 2019 10:39:46 -0700
-Date: Tue, 6 Aug 2019 10:39:46 -0700
-From: Ira Weiny <ira.weiny@intel.com>
-To: john.hubbard@gmail.com
-Subject: Re: [PATCH v2 01/34] mm/gup: add make_dirty arg to
- put_user_pages_dirty_lock()
-Message-ID: <20190806173945.GA4748@iweiny-DESK2.sc.intel.com>
-References: <20190804224915.28669-1-jhubbard@nvidia.com>
- <20190804224915.28669-2-jhubbard@nvidia.com>
+ id 1hv3wc-00009L-R3; Tue, 06 Aug 2019 18:12:24 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id A6E40AEF6;
+ Tue,  6 Aug 2019 18:12:17 +0000 (UTC)
+Message-ID: <12eb3aba207c552e5eb727535e7c4f08673c4c80.camel@suse.de>
+Subject: Re: [PATCH 3/8] of/fdt: add function to get the SoC wide DMA
+ addressable memory size
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 06 Aug 2019 20:12:10 +0200
+In-Reply-To: <CAL_Jsq+LjsRmFg-xaLgpVx3miXN3hid3aD+mgTW__j0SbEFYjQ@mail.gmail.com>
+References: <20190731154752.16557-1-nsaenzjulienne@suse.de>
+ <20190731154752.16557-4-nsaenzjulienne@suse.de>
+ <CAL_JsqKF5nh3hcdLTG5+6RU3_TnFrNX08vD6qZ8wawoA3WSRpA@mail.gmail.com>
+ <2050374ac07e0330e505c4a1637256428adb10c4.camel@suse.de>
+ <CAL_Jsq+LjsRmFg-xaLgpVx3miXN3hid3aD+mgTW__j0SbEFYjQ@mail.gmail.com>
+User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190804224915.28669-2-jhubbard@nvidia.com>
-User-Agent: Mutt/1.11.1 (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_103949_179202_DF557C6F 
-X-CRM114-Status: GOOD (  37.08  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190806_111223_169929_5F35CDD0 
+X-CRM114-Status: GOOD (  29.93  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,376 +63,221 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
- Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Matthew Wilcox <willy@infradead.org>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
- amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@lst.de>,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
- linux-media@vger.kernel.org, John Hubbard <jhubbard@nvidia.com>,
- intel-gfx@lists.freedesktop.org, linux-block@vger.kernel.org,
- =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
- linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
- netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: phill@raspberryi.org, devicetree@vger.kernel.org, "moderated list:BROADCOM
+ BCM2835 ARM ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Will Deacon <will@kernel.org>,
+ Eric Anholt <eric@anholt.net>, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-mm@kvack.org, Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Matthias Brugger <mbrugger@suse.com>, wahrenst@gmx.net,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christoph Hellwig <hch@lst.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: multipart/mixed; boundary="===============1948862156932385252=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 04, 2019 at 03:48:42PM -0700, john.hubbard@gmail.com wrote:
-> From: John Hubbard <jhubbard@nvidia.com>
-> 
-> Provide a more capable variation of put_user_pages_dirty_lock(),
-> and delete put_user_pages_dirty(). This is based on the
-> following:
-> 
-> 1. Lots of call sites become simpler if a bool is passed
-> into put_user_page*(), instead of making the call site
-> choose which put_user_page*() variant to call.
-> 
-> 2. Christoph Hellwig's observation that set_page_dirty_lock()
-> is usually correct, and set_page_dirty() is usually a
-> bug, or at least questionable, within a put_user_page*()
-> calling chain.
-> 
-> This leads to the following API choices:
-> 
->     * put_user_pages_dirty_lock(page, npages, make_dirty)
-> 
->     * There is no put_user_pages_dirty(). You have to
->       hand code that, in the rare case that it's
->       required.
-> 
-> Reviewed-by: Christoph Hellwig <hch@lst.de>
-> Cc: Matthew Wilcox <willy@infradead.org>
-> Cc: Jan Kara <jack@suse.cz>
-> Cc: Ira Weiny <ira.weiny@intel.com>
-> Cc: Jason Gunthorpe <jgg@ziepe.ca>
-> Signed-off-by: John Hubbard <jhubbard@nvidia.com>
-> ---
->  drivers/infiniband/core/umem.c             |   5 +-
->  drivers/infiniband/hw/hfi1/user_pages.c    |   5 +-
->  drivers/infiniband/hw/qib/qib_user_pages.c |  13 +--
->  drivers/infiniband/hw/usnic/usnic_uiom.c   |   5 +-
->  drivers/infiniband/sw/siw/siw_mem.c        |  19 +---
->  include/linux/mm.h                         |   5 +-
->  mm/gup.c                                   | 115 +++++++++------------
->  7 files changed, 61 insertions(+), 106 deletions(-)
-> 
-> diff --git a/drivers/infiniband/core/umem.c b/drivers/infiniband/core/umem.c
-> index 08da840ed7ee..965cf9dea71a 100644
-> --- a/drivers/infiniband/core/umem.c
-> +++ b/drivers/infiniband/core/umem.c
-> @@ -54,10 +54,7 @@ static void __ib_umem_release(struct ib_device *dev, struct ib_umem *umem, int d
->  
->  	for_each_sg_page(umem->sg_head.sgl, &sg_iter, umem->sg_nents, 0) {
->  		page = sg_page_iter_page(&sg_iter);
-> -		if (umem->writable && dirty)
-> -			put_user_pages_dirty_lock(&page, 1);
-> -		else
-> -			put_user_page(page);
-> +		put_user_pages_dirty_lock(&page, 1, umem->writable && dirty);
->  	}
->  
->  	sg_free_table(&umem->sg_head);
-> diff --git a/drivers/infiniband/hw/hfi1/user_pages.c b/drivers/infiniband/hw/hfi1/user_pages.c
-> index b89a9b9aef7a..469acb961fbd 100644
-> --- a/drivers/infiniband/hw/hfi1/user_pages.c
-> +++ b/drivers/infiniband/hw/hfi1/user_pages.c
-> @@ -118,10 +118,7 @@ int hfi1_acquire_user_pages(struct mm_struct *mm, unsigned long vaddr, size_t np
->  void hfi1_release_user_pages(struct mm_struct *mm, struct page **p,
->  			     size_t npages, bool dirty)
->  {
-> -	if (dirty)
-> -		put_user_pages_dirty_lock(p, npages);
-> -	else
-> -		put_user_pages(p, npages);
-> +	put_user_pages_dirty_lock(p, npages, dirty);
->  
->  	if (mm) { /* during close after signal, mm can be NULL */
->  		atomic64_sub(npages, &mm->pinned_vm);
-> diff --git a/drivers/infiniband/hw/qib/qib_user_pages.c b/drivers/infiniband/hw/qib/qib_user_pages.c
-> index bfbfbb7e0ff4..26c1fb8d45cc 100644
-> --- a/drivers/infiniband/hw/qib/qib_user_pages.c
-> +++ b/drivers/infiniband/hw/qib/qib_user_pages.c
-> @@ -37,15 +37,6 @@
->  
->  #include "qib.h"
->  
-> -static void __qib_release_user_pages(struct page **p, size_t num_pages,
-> -				     int dirty)
-> -{
-> -	if (dirty)
-> -		put_user_pages_dirty_lock(p, num_pages);
-> -	else
-> -		put_user_pages(p, num_pages);
-> -}
-> -
->  /**
->   * qib_map_page - a safety wrapper around pci_map_page()
->   *
-> @@ -124,7 +115,7 @@ int qib_get_user_pages(unsigned long start_page, size_t num_pages,
->  
->  	return 0;
->  bail_release:
-> -	__qib_release_user_pages(p, got, 0);
-> +	put_user_pages_dirty_lock(p, got, false);
->  bail:
->  	atomic64_sub(num_pages, &current->mm->pinned_vm);
->  	return ret;
-> @@ -132,7 +123,7 @@ int qib_get_user_pages(unsigned long start_page, size_t num_pages,
->  
->  void qib_release_user_pages(struct page **p, size_t num_pages)
->  {
-> -	__qib_release_user_pages(p, num_pages, 1);
-> +	put_user_pages_dirty_lock(p, num_pages, true);
->  
->  	/* during close after signal, mm can be NULL */
->  	if (current->mm)
-> diff --git a/drivers/infiniband/hw/usnic/usnic_uiom.c b/drivers/infiniband/hw/usnic/usnic_uiom.c
-> index 0b0237d41613..62e6ffa9ad78 100644
-> --- a/drivers/infiniband/hw/usnic/usnic_uiom.c
-> +++ b/drivers/infiniband/hw/usnic/usnic_uiom.c
-> @@ -75,10 +75,7 @@ static void usnic_uiom_put_pages(struct list_head *chunk_list, int dirty)
->  		for_each_sg(chunk->page_list, sg, chunk->nents, i) {
->  			page = sg_page(sg);
->  			pa = sg_phys(sg);
-> -			if (dirty)
-> -				put_user_pages_dirty_lock(&page, 1);
-> -			else
-> -				put_user_page(page);
-> +			put_user_pages_dirty_lock(&page, 1, dirty);
->  			usnic_dbg("pa: %pa\n", &pa);
->  		}
->  		kfree(chunk);
-> diff --git a/drivers/infiniband/sw/siw/siw_mem.c b/drivers/infiniband/sw/siw/siw_mem.c
-> index 67171c82b0c4..1e197753bf2f 100644
-> --- a/drivers/infiniband/sw/siw/siw_mem.c
-> +++ b/drivers/infiniband/sw/siw/siw_mem.c
-> @@ -60,20 +60,6 @@ struct siw_mem *siw_mem_id2obj(struct siw_device *sdev, int stag_index)
->  	return NULL;
->  }
->  
-> -static void siw_free_plist(struct siw_page_chunk *chunk, int num_pages,
-> -			   bool dirty)
-> -{
-> -	struct page **p = chunk->plist;
-> -
-> -	while (num_pages--) {
-> -		if (!PageDirty(*p) && dirty)
-> -			put_user_pages_dirty_lock(p, 1);
-> -		else
-> -			put_user_page(*p);
-> -		p++;
-> -	}
-> -}
-> -
->  void siw_umem_release(struct siw_umem *umem, bool dirty)
->  {
->  	struct mm_struct *mm_s = umem->owning_mm;
-> @@ -82,8 +68,9 @@ void siw_umem_release(struct siw_umem *umem, bool dirty)
->  	for (i = 0; num_pages; i++) {
->  		int to_free = min_t(int, PAGES_PER_CHUNK, num_pages);
->  
-> -		siw_free_plist(&umem->page_chunk[i], to_free,
-> -			       umem->writable && dirty);
-> +		put_user_pages_dirty_lock(umem->page_chunk[i].plist,
-> +					  to_free,
-> +					  umem->writable && dirty);
->  		kfree(umem->page_chunk[i].plist);
->  		num_pages -= to_free;
->  	}
-> diff --git a/include/linux/mm.h b/include/linux/mm.h
-> index 0334ca97c584..9759b6a24420 100644
-> --- a/include/linux/mm.h
-> +++ b/include/linux/mm.h
-> @@ -1057,8 +1057,9 @@ static inline void put_user_page(struct page *page)
->  	put_page(page);
->  }
->  
-> -void put_user_pages_dirty(struct page **pages, unsigned long npages);
-> -void put_user_pages_dirty_lock(struct page **pages, unsigned long npages);
-> +void put_user_pages_dirty_lock(struct page **pages, unsigned long npages,
-> +			       bool make_dirty);
-> +
->  void put_user_pages(struct page **pages, unsigned long npages);
->  
->  #if defined(CONFIG_SPARSEMEM) && !defined(CONFIG_SPARSEMEM_VMEMMAP)
-> diff --git a/mm/gup.c b/mm/gup.c
-> index 98f13ab37bac..7fefd7ab02c4 100644
-> --- a/mm/gup.c
-> +++ b/mm/gup.c
-> @@ -29,85 +29,70 @@ struct follow_page_context {
->  	unsigned int page_mask;
->  };
->  
-> -typedef int (*set_dirty_func_t)(struct page *page);
-> -
-> -static void __put_user_pages_dirty(struct page **pages,
-> -				   unsigned long npages,
-> -				   set_dirty_func_t sdf)
-> -{
-> -	unsigned long index;
-> -
-> -	for (index = 0; index < npages; index++) {
-> -		struct page *page = compound_head(pages[index]);
-> -
-> -		/*
-> -		 * Checking PageDirty at this point may race with
-> -		 * clear_page_dirty_for_io(), but that's OK. Two key cases:
-> -		 *
-> -		 * 1) This code sees the page as already dirty, so it skips
-> -		 * the call to sdf(). That could happen because
-> -		 * clear_page_dirty_for_io() called page_mkclean(),
-> -		 * followed by set_page_dirty(). However, now the page is
-> -		 * going to get written back, which meets the original
-> -		 * intention of setting it dirty, so all is well:
-> -		 * clear_page_dirty_for_io() goes on to call
-> -		 * TestClearPageDirty(), and write the page back.
-> -		 *
-> -		 * 2) This code sees the page as clean, so it calls sdf().
-> -		 * The page stays dirty, despite being written back, so it
-> -		 * gets written back again in the next writeback cycle.
-> -		 * This is harmless.
-> -		 */
-> -		if (!PageDirty(page))
-> -			sdf(page);
-> -
-> -		put_user_page(page);
-> -	}
-> -}
-> -
->  /**
-> - * put_user_pages_dirty() - release and dirty an array of gup-pinned pages
-> - * @pages:  array of pages to be marked dirty and released.
-> + * put_user_pages_dirty_lock() - release and optionally dirty gup-pinned pages
-> + * @pages:  array of pages to be maybe marked dirty, and definitely released.
 
-Better would be.
-
-@pages:  array of pages to be put
-
->   * @npages: number of pages in the @pages array.
-> + * @make_dirty: whether to mark the pages dirty
->   *
->   * "gup-pinned page" refers to a page that has had one of the get_user_pages()
->   * variants called on that page.
->   *
->   * For each page in the @pages array, make that page (or its head page, if a
-> - * compound page) dirty, if it was previously listed as clean. Then, release
-> - * the page using put_user_page().
-> + * compound page) dirty, if @make_dirty is true, and if the page was previously
-> + * listed as clean. In any case, releases all pages using put_user_page(),
-> + * possibly via put_user_pages(), for the non-dirty case.
-
-I don't think users of this interface need this level of detail.  I think
-something like.
-
- * For each page in the @pages array, release the page.  If @make_dirty is
- * true, mark the page dirty prior to release.
+--===============1948862156932385252==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-BWDWLSX5DbZPpBq0FAfV"
 
 
->   *
->   * Please see the put_user_page() documentation for details.
->   *
-> - * set_page_dirty(), which does not lock the page, is used here.
-> - * Therefore, it is the caller's responsibility to ensure that this is
-> - * safe. If not, then put_user_pages_dirty_lock() should be called instead.
-> + * set_page_dirty_lock() is used internally. If instead, set_page_dirty() is
-> + * required, then the caller should a) verify that this is really correct,
-> + * because _lock() is usually required, and b) hand code it:
-> + * set_page_dirty_lock(), put_user_page().
->   *
->   */
-> -void put_user_pages_dirty(struct page **pages, unsigned long npages)
-> +void put_user_pages_dirty_lock(struct page **pages, unsigned long npages,
-> +			       bool make_dirty)
->  {
-> -	__put_user_pages_dirty(pages, npages, set_page_dirty);
-> -}
-> -EXPORT_SYMBOL(put_user_pages_dirty);
-> +	unsigned long index;
->  
-> -/**
-> - * put_user_pages_dirty_lock() - release and dirty an array of gup-pinned pages
-> - * @pages:  array of pages to be marked dirty and released.
-> - * @npages: number of pages in the @pages array.
-> - *
-> - * For each page in the @pages array, make that page (or its head page, if a
-> - * compound page) dirty, if it was previously listed as clean. Then, release
-> - * the page using put_user_page().
-> - *
-> - * Please see the put_user_page() documentation for details.
-> - *
-> - * This is just like put_user_pages_dirty(), except that it invokes
-> - * set_page_dirty_lock(), instead of set_page_dirty().
-> - *
-> - */
-> -void put_user_pages_dirty_lock(struct page **pages, unsigned long npages)
-> -{
-> -	__put_user_pages_dirty(pages, npages, set_page_dirty_lock);
-> +	/*
-> +	 * TODO: this can be optimized for huge pages: if a series of pages is
-> +	 * physically contiguous and part of the same compound page, then a
-> +	 * single operation to the head page should suffice.
-> +	 */
+--=-BWDWLSX5DbZPpBq0FAfV
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-I think this comment belongs to the for loop below...  or just something about
-how to make this and put_user_pages() more efficient.  It is odd, that this is
-the same comment as in put_user_pages()...
+Hi Rob,
 
-The code is good.  So... Other than the comments.
+On Mon, 2019-08-05 at 13:23 -0600, Rob Herring wrote:
+> On Mon, Aug 5, 2019 at 10:03 AM Nicolas Saenz Julienne
+> <nsaenzjulienne@suse.de> wrote:
+> > Hi Rob,
+> > Thanks for the review!
+> >=20
+> > On Fri, 2019-08-02 at 11:17 -0600, Rob Herring wrote:
+> > > On Wed, Jul 31, 2019 at 9:48 AM Nicolas Saenz Julienne
+> > > <nsaenzjulienne@suse.de> wrote:
+> > > > Some SoCs might have multiple interconnects each with their own DMA
+> > > > addressing limitations. This function parses the 'dma-ranges' on ea=
+ch of
+> > > > them and tries to guess the maximum SoC wide DMA addressable memory
+> > > > size.
+> > > >=20
+> > > > This is specially useful for arch code in order to properly setup C=
+MA
+> > > > and memory zones.
+> > >=20
+> > > We already have a way to setup CMA in reserved-memory, so why is this
+> > > needed for that?
+> >=20
+> > Correct me if I'm wrong but I got the feeling you got the point of the =
+patch
+> > later on.
+>=20
+> No, for CMA I don't. Can't we already pass a size and location for CMA
+> region under /reserved-memory. The only advantage here is perhaps the
+> CMA range could be anywhere in the DMA zone vs. a fixed location.
 
-Reviewed-by: Ira Weiny <ira.weiny@intel.com>
+Now I get it, sorry I wasn't aware of that interface.
 
-Ira
+Still, I'm not convinced it matches RPi's use case as this would hard-code
+CMA's size. Most people won't care, but for the ones that do, it's nicer to
+change the value from the kernel command line than editing the dtb. I get t=
+hat
+if you need to, for example, reserve some memory for the video to work, it'=
+s
+silly not to hard-code it. Yet due to the board's nature and users base I s=
+ay
+it's important to favor flexibility. It would also break compatibility with
+earlier versions of the board and diverge from the downstream kernel behavi=
+our.
+Which is a bigger issue than it seems as most users don't always understand
+which kernel they are running and unknowingly copy configuration options fr=
+om
+forums.
 
-> +
-> +	if (!make_dirty) {
-> +		put_user_pages(pages, npages);
-> +		return;
-> +	}
-> +
-> +	for (index = 0; index < npages; index++) {
-> +		struct page *page = compound_head(pages[index]);
-> +		/*
-> +		 * Checking PageDirty at this point may race with
-> +		 * clear_page_dirty_for_io(), but that's OK. Two key
-> +		 * cases:
-> +		 *
-> +		 * 1) This code sees the page as already dirty, so it
-> +		 * skips the call to set_page_dirty(). That could happen
-> +		 * because clear_page_dirty_for_io() called
-> +		 * page_mkclean(), followed by set_page_dirty().
-> +		 * However, now the page is going to get written back,
-> +		 * which meets the original intention of setting it
-> +		 * dirty, so all is well: clear_page_dirty_for_io() goes
-> +		 * on to call TestClearPageDirty(), and write the page
-> +		 * back.
-> +		 *
-> +		 * 2) This code sees the page as clean, so it calls
-> +		 * set_page_dirty(). The page stays dirty, despite being
-> +		 * written back, so it gets written back again in the
-> +		 * next writeback cycle. This is harmless.
-> +		 */
-> +		if (!PageDirty(page))
-> +			set_page_dirty_lock(page);
-> +		put_user_page(page);
-> +	}
->  }
->  EXPORT_SYMBOL(put_user_pages_dirty_lock);
->  
-> -- 
-> 2.22.0
-> 
+As I also need to know the DMA addressing limitations to properly configure
+memory zones and dma-direct. Setting up the proper CMA constraints during t=
+he
+arch's init will be trivial anyway.
+
+> > > IMO, I'd just do:
+> > >=20
+> > > if (of_fdt_machine_is_compatible(blob, "brcm,bcm2711"))
+> > >     dma_zone_size =3D XX;
+> > >=20
+> > > 2 lines of code is much easier to maintain than 10s of incomplete cod=
+e
+> > > and is clearer who needs this. Maybe if we have dozens of SoCs with
+> > > this problem we should start parsing dma-ranges.
+> >=20
+> > FYI that's what arm32 is doing at the moment and was my first instinct.=
+ But
+> > it
+> > seems that arm64 has been able to survive so far without any machine
+> > specific
+> > code and I have the feeling Catalin and Will will not be happy about th=
+is
+> > solution. Am I wrong?
+>=20
+> No doubt. I'm fine if the 2 lines live in drivers/of/.
+>=20
+> Note that I'm trying to reduce the number of early_init_dt_scan_*
+> calls from arch code into the DT code so there's more commonality
+> across architectures in the early DT scans. So ideally, this can all
+> be handled under early_init_dt_scan() call.
+
+How does this look? (I'll split it in two patches and add a comment explain=
+ing
+why dt_dma_zone_size is needed)
+
+diff --git a/drivers/of/fdt.c b/drivers/of/fdt.c
+index f2444c61a136..1395be40b722 100644
+--- a/drivers/of/fdt.c
++++ b/drivers/of/fdt.c
+@@ -30,6 +30,8 @@
+=20
+ #include "of_private.h"
+=20
++u64 dt_dma_zone_size __ro_after_init;
++
+ /*
+  * of_fdt_limit_memory - limit the number of regions in the /memory node
+  * @limit: maximum entries
+@@ -802,6 +805,11 @@ const char * __init of_flat_dt_get_machine_name(void)
+        return name;
+ }
+=20
++static const int __init of_fdt_machine_is_compatible(char *name)
++{
++       return of_compat_cmp(of_flat_dt_get_machine_name(), name, strlen(na=
+me));
++}
++
+ /**
+  * of_flat_dt_match_machine - Iterate match tables to find matching machin=
+e.
+  *
+@@ -1260,6 +1268,14 @@ void __init early_init_dt_scan_nodes(void)
+        of_scan_flat_dt(early_init_dt_scan_memory, NULL);
+ }
+=20
++void __init early_init_dt_get_dma_zone_size(void)
++{
++       dt_dma_zone_size =3D 0;
++
++       if (of_fdt_machine_is_compatible("brcm,bcm2711"))
++               dt_dma_zone_size =3D 0x3c000000;
++}
++
+ bool __init early_init_dt_scan(void *params)
+ {
+        bool status;
+@@ -1269,6 +1285,7 @@ bool __init early_init_dt_scan(void *params)
+                return false;
+=20
+        early_init_dt_scan_nodes();
++       early_init_dt_get_dma_zone_size();
+        return true;
+ }
+diff --git a/include/linux/of_fdt.h b/include/linux/of_fdt.h
+index 2ad36b7bd4fa..b5a9f685de14 100644
+--- a/include/linux/of_fdt.h
++++ b/include/linux/of_fdt.h
+@@ -27,6 +27,8 @@ extern void *of_fdt_unflatten_tree(const unsigned long *b=
+lob,
+                                   struct device_node *dad,
+                                   struct device_node **mynodes);
+=20
++extern u64 dt_dma_zone_size __ro_after_init;
++
+ /* TBD: Temporary export of fdt globals - remove when code fully merged */
+ extern int __initdata dt_root_addr_cells;
+ extern int __initdata dt_root_size_cells;
+
+=20
+Regards,
+Nicolas
+
+
+
+--=-BWDWLSX5DbZPpBq0FAfV
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl1JwvoACgkQlfZmHno8
+x/5f/QgAsruOFQ8PvpoSHvG6DlzmdqSfRJK2v/9MyF59tpuvGoJUQggc4SObGIz8
+/Nk2Md0j7gXdLjr+t1elpo6xBmJxLWhZPw7HfIx1ejSHv2QK+gJopm/BJ54gV8cl
+oUh+Ed8eD1FBlYszwI3YRaKY/HXcQaZn97el4/AaCbztxkkAg1xEH/1L6XPwf2FC
+j9/TMxpFyE6aWdQ5GtOzxL1RVmzOEYgpvsr+mKxOFHX9V5+8UXNnLDRDjR36Ms78
+NVgFECrTr4rxiU2UJalTgyyPtch73aj8xMNKwHkOyiagITz9PhesPdVYy9sLWTM+
+KTFFdX5XzhKpZAHyjtBWPWEKO34aqg==
+=JTdS
+-----END PGP SIGNATURE-----
+
+--=-BWDWLSX5DbZPpBq0FAfV--
+
+
+
+--===============1948862156932385252==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1948862156932385252==--
+
+
