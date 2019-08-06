@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A486083360
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 15:55:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB49583374
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:01:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=b35f8TPYkIBoqadOFikPJVPRq3HGTYBWtZ5rP9tYo4M=; b=rYhpAnmPBHhg95
-	7csRf7gqjhPB8O+jGV27LUNE+dw0JVetKBPvVA/BL1YVgnGJtcJmdRDG8M0HVABqwqTxhgGBjQVuo
-	PkM6AmignvTP75zmHyUpGMawTsvSpE/oDQA7/mTZ8IXWOqFsonN6ubCONB1qtVaMYP6/N+bNkDh7E
-	+2GHpT0MHy+hpAdBKAWvBZ7pP0l62bKxW99RpBYBtyFyGhLrCMfw8pkxqjym5V80ZqAmeLkvFjmQb
-	hBcgIV53PNbsKfPwUSrsoxUnTwOex1Cr5kR6foQ2yGYYt7LzhwVmypEpXSPICZZtxhX+Jf1nyy9AM
-	OmreuHK3v2P4wgBSdKaA==;
+	List-Owner; bh=vzNzHPe7h8cUcoO6PFVKOJ1AyOSv4FGk5/4eamwUrsM=; b=T8o0yXAiqL050l
+	+la9BVSH9KP/YDzUg4CjmxlHxJuVGPN4JnoLqPXkjGKSjhUFs7Rix+3v+TyByYEk2OHhkWhlxiWK/
+	9JKemozYvtyAKXGUbqUo66RBpjjzLWPyp1rDWRreKP+Kfsd7MeIBTaDKWvEiMjVSb9Bkqin7u3psY
+	toZdCDQ/KlQEoD1gbQ3hOWk8s/qdAJGdkiGS03x29qBhPHhKLkz4BC61L7F9yWqK84HVZZip5VXIT
+	WU6CeR0F+Cu8MZNCzOkkDkkx6RGls+J/Wza/3RTSmRpzxzoDm0TczovxNo8G1WY3c8G4vMFSkeb6X
+	oKpw5ekQ0LaN7mCko3Ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huzvk-0006eT-6c; Tue, 06 Aug 2019 13:55:12 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hv026-0000hE-BQ; Tue, 06 Aug 2019 14:01:46 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huzva-00063f-1s
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 13:55:03 +0000
-Received: by mail-lj1-x241.google.com with SMTP id v18so82261628ljh.6
+ id 1hv01u-0000gi-KA
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:01:36 +0000
+Received: by mail-lf1-x141.google.com with SMTP id h28so61178534lfj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 06:55:01 -0700 (PDT)
+ Tue, 06 Aug 2019 07:01:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=IJ12Dy3JfyZ0l7CageHav/zHZkBqP0OCWfzKRPvmdoc=;
- b=p40EAZqxGwsk7cv76bOJBxNqqa0AeZzd3w3C2VYzbT8LY1ssw9DC7sCkwirZoazfZq
- BU5IMdW/tQtlFGdsGju93CFQ56bexUWSN13iJEImGWjA1aWQAPr/CX2AkBkiMuoRuV/M
- jplktamrvZRG/kWsC9EmW6QUaHibt/6YNQor+3USjTVm627JdrzSCt/S4LneRh0kervw
- qKfVB8b1pVbhIT5aiO1GCUSl9EYUa0AQ85wMqRRi6uCk9agFjrH5gDxoGFHzLR2FJ7Rk
- qo+mpMzKUQXjli74QUS9KnxIt50OYX+b/EY49TuDplwuT6HJuC5aTzw3OjM80NcsQdZG
- z7tg==
+ bh=5esru0uCni8NV8HorsDakkLcQIu1uQ8yQIjapwAYkyM=;
+ b=Mmy8OMncvk/Ec++RspRVyO0Nh/F2fIAeqI7RX1gMNuGMF9dZU09820JzWiUP8O5nEK
+ Hk7zCAjGOvGdl4MfxpLb+mp/uQTpsr6Qg5AwHRmlLQHUUKF9UjAly8jY+h1eKKgZMFO0
+ i7lSRfqU7vhf9kh6vixF7O1ymHfdwHLLwVvuivcNRgqAgo98YIGKiBn9rz896+U2F9Nl
+ vuDEmraYyf5rWZRdKGnD7EOlcArC74e3ZaTAWnxaTpFMk0VeOD0CEWgs+SqYCF+A4+0f
+ TFy8iMNDGbFar6WHZ8lq8t0O2+7H127AScNT1N5eKKzuBsjItxqnu1FNlt/W9/zzGyd0
+ PtlQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=IJ12Dy3JfyZ0l7CageHav/zHZkBqP0OCWfzKRPvmdoc=;
- b=VkxRBXG9q4TGwKLdVOZk8JRIuHinaYeZ1MHUJoia8ck6AiWkbg/uk2F3mCPEbiXLMC
- JDmEMtv+NgCMRvinbqQ0Q6UCtgxuUJCDayB+o//HIlUs6CS7bzuCfZg5CZDq4LyJD22L
- 9C8yy+nPIB0NQqPe8sh7Rd5x59CMsVdGSIryJy2PcRcWJRJB30oVYWFjGPcylvkbeyuE
- s1EpHg3helFJVwD2hRVCai9mOZ3ZIjS+W6SIj8sMbfkNiksLCmlOdIyv3OO8GLCpQf0Y
- CDMnngHrthb8sahpfGTnDeJcexzBYJ/K6AqNJqHiy6kRduhWIy2bm8qT3B9OFxt4SlKB
- IWCg==
-X-Gm-Message-State: APjAAAVPCTftrlZ5CV23oeyF/GcV8OVwNifpEF21HWQd7uRFlHP8Zftn
- 7CkGuI8GxnBUPMO3lXOms5b0ag==
-X-Google-Smtp-Source: APXvYqxv8qeBsyp4+j8+tEUZfsnPoqeK+HtBmP4WRrTSf4gzVQpnVHOuB+aJZHmFKhJdaRZiGmjR4A==
-X-Received: by 2002:a2e:7614:: with SMTP id r20mr1896078ljc.42.1565099700349; 
- Tue, 06 Aug 2019 06:55:00 -0700 (PDT)
+ bh=5esru0uCni8NV8HorsDakkLcQIu1uQ8yQIjapwAYkyM=;
+ b=FYrl1jagxCtkx9yOYn5603junSyjN6j7b7WyKU1O50kFuAMXwGcyXLpxtMWarpI744
+ TpmqwGjxKVPU/5MY+2b6a2a1/+UQz9S2gTBazbp7a7D3vKUZHGNunSez3FEWHkxUIEN0
+ TqfH1Znvv5oGQIsG1okK5X6viJPz7gfYok+/Uh5Dm5+sIWmsxaVGuextvOcNwlIAgOlq
+ a6So/PYfd+Th5dUQU8z7+G9FzbGXmZyMatMa7FRh6HZZLGr11nrkOdUxG5ybwSbmBfAx
+ gDNC5I8EexfaBOSSxsrRWPW70Pf7h/D9MexW4p73+EhQopUN+NhFoZyjy2YAzVqFNs4k
+ RMzA==
+X-Gm-Message-State: APjAAAUhVKADxprJbkdjRJMRxmTz8BNLqZEXO5psxvKVjzr4dnUWZXFt
+ 2LEW4iOvESh5GCJ7yqDZPHJJFA==
+X-Google-Smtp-Source: APXvYqwaHHwitjtxICGM5hOvHl4zzhRHKSQIHu+Kx895N6+z7GWOs95MUQF8hAkDxCq6lorohKzvPg==
+X-Received: by 2002:ac2:44cb:: with SMTP id d11mr2468390lfm.59.1565100092637; 
+ Tue, 06 Aug 2019 07:01:32 -0700 (PDT)
 Received: from genomnajs.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id u22sm20071875ljd.18.2019.08.06.06.54.57
+ by smtp.gmail.com with ESMTPSA id z30sm17788723lfj.63.2019.08.06.07.01.30
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 06 Aug 2019 06:54:59 -0700 (PDT)
+ Tue, 06 Aug 2019 07:01:32 -0700 (PDT)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: dri-devel@lists.freedesktop.org,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
-Subject: [PATCH 2/4 v3] drm/panel: simple: Add TI nspire panel bindings
-Date: Tue,  6 Aug 2019 15:54:37 +0200
-Message-Id: <20190806135437.7451-1-linus.walleij@linaro.org>
+Subject: [PATCH 4/4 v3] ARM: nspire: Move CLCD set-up to device tree
+Date: Tue,  6 Aug 2019 16:01:25 +0200
+Message-Id: <20190806140125.8570-1-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_065502_112376_49A48FD4 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190806_070134_671281_FBCEA4CD 
+X-CRM114-Status: GOOD (  19.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,73 +96,331 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+Cc: Fabian Vogt <fabian@ritter-vogt.de>, Daniel Tang <dt.tangr@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Sam Ravnborg <sam@ravnborg.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add bindings for the TI NSPIRE simple display panels.
+This moves the nspire over to using the device tree to
+set-up and probe the PL111 DRM driver and use the panels
+from the simple-panel drivers.
 
-Cc: devicetree@vger.kernel.org
+Cc: Daniel Tang <dt.tangr@gmail.com>
+Cc: Fabian Vogt <fabian@ritter-vogt.de>
+Tested-by: Fabian Vogt <fabian@ritter-vogt.de>
+Acked-by: Sam Ravnborg <sam@ravnborg.org>
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
-ChanegLog v2->v3:
-- Switch to GPL-2.0-only OR BSD-2-Clause license
-- Use a simple enum for the compatible
-- Use the new nifty panel-common.yaml, tested on
-  linux-next
+ChangeLog v2->v3:
+- Use single port instead of ports with port
 ChangeLog v1->v2:
-- New patch as bindings are required
-- Let's use YAML
+- Now tested
+- This will be sent separately to ARM SoC after the rest
+  of the patches land.
 ---
- .../bindings/display/panel/ti,nspire.yaml     | 36 +++++++++++++++++++
- 1 file changed, 36 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/panel/ti,nspire.yaml
+ arch/arm/boot/dts/nspire-classic.dtsi |  17 +++-
+ arch/arm/boot/dts/nspire-cx.dts       |  16 +++-
+ arch/arm/boot/dts/nspire.dtsi         |  10 ++-
+ arch/arm/mach-nspire/Makefile         |   1 -
+ arch/arm/mach-nspire/clcd.c           | 114 --------------------------
+ arch/arm/mach-nspire/clcd.h           |  10 ---
+ arch/arm/mach-nspire/nspire.c         |  25 ------
+ 7 files changed, 39 insertions(+), 154 deletions(-)
+ delete mode 100644 arch/arm/mach-nspire/clcd.c
+ delete mode 100644 arch/arm/mach-nspire/clcd.h
 
-diff --git a/Documentation/devicetree/bindings/display/panel/ti,nspire.yaml b/Documentation/devicetree/bindings/display/panel/ti,nspire.yaml
-new file mode 100644
-index 000000000000..5c5a3b519e31
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/panel/ti,nspire.yaml
-@@ -0,0 +1,36 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/panel/ti,nspire.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/arch/arm/boot/dts/nspire-classic.dtsi b/arch/arm/boot/dts/nspire-classic.dtsi
+index c53f42777851..1edb37005862 100644
+--- a/arch/arm/boot/dts/nspire-classic.dtsi
++++ b/arch/arm/boot/dts/nspire-classic.dtsi
+@@ -8,7 +8,13 @@
+ /include/ "nspire.dtsi"
+ 
+ &lcd {
+-	lcd-type = "classic";
++	port {
++		clcd_pads: endpoint {
++			remote-endpoint = <&panel_in>;
++			/* Dummy values, since we are grayscale */
++			arm,pl11x,tft-r0g0b0-pads = <0 8 16>;
++		};
++	};
+ };
+ 
+ &fast_timer {
+@@ -69,6 +75,15 @@
+ 			#interrupt-cells = <1>;
+ 		};
+ 	};
 +
-+title: Texas Instruments NSPIRE Display Panels
++	panel {
++		compatible = "ti,nspire-classic-lcd-panel";
++		port {
++			panel_in: endpoint {
++				remote-endpoint = <&clcd_pads>;
++			};
++		};
++	};
+ 	chosen {
+ 		bootargs = "debug earlyprintk console=tty0 console=ttyS0,115200n8 root=/dev/ram0";
+ 	};
+diff --git a/arch/arm/boot/dts/nspire-cx.dts b/arch/arm/boot/dts/nspire-cx.dts
+index da95c3736651..8c9c6b739a9e 100644
+--- a/arch/arm/boot/dts/nspire-cx.dts
++++ b/arch/arm/boot/dts/nspire-cx.dts
+@@ -9,7 +9,12 @@
+ /include/ "nspire.dtsi"
+ 
+ &lcd {
+-	lcd-type = "cx";
++	port {
++		clcd_pads: endpoint {
++			remote-endpoint = <&panel_in>;
++			arm,pl11x,tft-r0g0b0-pads = <0 8 16>;
++		};
++	};
+ };
+ 
+ &fast_timer {
+@@ -106,6 +111,15 @@
+ 			};
+ 		};
+ 	};
 +
-+maintainers:
-+  - Linus Walleij <linus.walleij@linaro.org>
-+
-+allOf:
-+  - $ref: panel-common.yaml#
-+
-+properties:
-+  compatible:
-+    enum:
-+      - ti,nspire-cx-lcd-panel
-+      - ti,nspire-classic-lcd-panel
-+  port: true
-+
-+required:
-+  - compatible
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    panel {
-+        compatible = "ti,nspire-cx-lcd-panel";
-+        port {
-+            panel_in: endpoint {
-+                remote-endpoint = <&pads>;
-+            };
-+        };
-+    };
++	panel {
++		compatible = "ti,nspire-cx-lcd-panel";
++		port {
++			panel_in: endpoint {
++				remote-endpoint = <&clcd_pads>;
++			};
++		};
++	};
+ 	chosen {
+ 		bootargs = "debug earlyprintk console=tty0 console=ttyAMA0,115200n8 root=/dev/ram0";
+ 	};
+diff --git a/arch/arm/boot/dts/nspire.dtsi b/arch/arm/boot/dts/nspire.dtsi
+index c35fd6667716..d9a0fd7524dc 100644
+--- a/arch/arm/boot/dts/nspire.dtsi
++++ b/arch/arm/boot/dts/nspire.dtsi
+@@ -95,8 +95,14 @@
+ 			reg = <0xC0000000 0x1000>;
+ 			interrupts = <21>;
+ 
+-			clocks = <&apb_pclk>;
+-			clock-names = "apb_pclk";
++			/*
++			 * We assume the same clock is fed to APB and CLCDCLK.
++			 * There is some code to scale the clock down by a factor
++			 * 48 for the display so likely the frequency to the
++			 * display is 1MHz and the CLCDCLK is 48 MHz.
++			 */
++			clocks = <&apb_pclk>, <&apb_pclk>;
++			clock-names = "clcdclk", "apb_pclk";
+ 		};
+ 
+ 		adc: adc@C4000000 {
+diff --git a/arch/arm/mach-nspire/Makefile b/arch/arm/mach-nspire/Makefile
+index 1d568c600452..4716b9b9aa7b 100644
+--- a/arch/arm/mach-nspire/Makefile
++++ b/arch/arm/mach-nspire/Makefile
+@@ -1,3 +1,2 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ obj-y				+= nspire.o
+-obj-y				+= clcd.o
+diff --git a/arch/arm/mach-nspire/clcd.c b/arch/arm/mach-nspire/clcd.c
+deleted file mode 100644
+index 44738dcb391d..000000000000
+--- a/arch/arm/mach-nspire/clcd.c
++++ /dev/null
+@@ -1,114 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- *	linux/arch/arm/mach-nspire/clcd.c
+- *
+- *	Copyright (C) 2013 Daniel Tang <tangrs@tangrs.id.au>
+- */
+-
+-#include <linux/init.h>
+-#include <linux/of.h>
+-#include <linux/amba/bus.h>
+-#include <linux/amba/clcd.h>
+-#include <linux/dma-mapping.h>
+-
+-static struct clcd_panel nspire_cx_lcd_panel = {
+-	.mode		= {
+-		.name		= "Color LCD",
+-		.refresh	= 60,
+-		.xres		= 320,
+-		.yres		= 240,
+-		.sync		= 0,
+-		.vmode		= FB_VMODE_NONINTERLACED,
+-		.pixclock	= 1,
+-		.hsync_len	= 6,
+-		.vsync_len	= 1,
+-		.right_margin	= 50,
+-		.left_margin	= 38,
+-		.lower_margin	= 3,
+-		.upper_margin	= 17,
+-	},
+-	.width		= 65, /* ~6.50 cm */
+-	.height		= 49, /* ~4.87 cm */
+-	.tim2		= TIM2_IPC,
+-	.cntl		= CNTL_LCDTFT | CNTL_LCDVCOMP(1),
+-	.bpp		= 16,
+-	.caps		= CLCD_CAP_565,
+-};
+-
+-static struct clcd_panel nspire_classic_lcd_panel = {
+-	.mode		= {
+-		.name		= "Grayscale LCD",
+-		.refresh	= 60,
+-		.xres		= 320,
+-		.yres		= 240,
+-		.sync		= FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+-		.vmode		= FB_VMODE_NONINTERLACED,
+-		.pixclock	= 1,
+-		.hsync_len	= 6,
+-		.vsync_len	= 1,
+-		.right_margin	= 6,
+-		.left_margin	= 6,
+-	},
+-	.width		= 71, /* 7.11cm */
+-	.height		= 53, /* 5.33cm */
+-	.tim2		= 0x80007d0,
+-	.cntl		= CNTL_LCDMONO8,
+-	.bpp		= 8,
+-	.grayscale	= 1,
+-	.caps		= CLCD_CAP_5551,
+-};
+-
+-int nspire_clcd_setup(struct clcd_fb *fb)
+-{
+-	struct clcd_panel *panel;
+-	size_t panel_size;
+-	const char *type;
+-	dma_addr_t dma;
+-	int err;
+-
+-	BUG_ON(!fb->dev->dev.of_node);
+-
+-	err = of_property_read_string(fb->dev->dev.of_node, "lcd-type", &type);
+-	if (err) {
+-		pr_err("CLCD: Could not find lcd-type property\n");
+-		return err;
+-	}
+-
+-	if (!strcmp(type, "cx")) {
+-		panel = &nspire_cx_lcd_panel;
+-	} else if (!strcmp(type, "classic")) {
+-		panel = &nspire_classic_lcd_panel;
+-	} else {
+-		pr_err("CLCD: Unknown lcd-type %s\n", type);
+-		return -EINVAL;
+-	}
+-
+-	panel_size = ((panel->mode.xres * panel->mode.yres) * panel->bpp) / 8;
+-	panel_size = ALIGN(panel_size, PAGE_SIZE);
+-
+-	fb->fb.screen_base = dma_alloc_wc(&fb->dev->dev, panel_size, &dma,
+-					  GFP_KERNEL);
+-
+-	if (!fb->fb.screen_base) {
+-		pr_err("CLCD: unable to map framebuffer\n");
+-		return -ENOMEM;
+-	}
+-
+-	fb->fb.fix.smem_start = dma;
+-	fb->fb.fix.smem_len = panel_size;
+-	fb->panel = panel;
+-
+-	return 0;
+-}
+-
+-int nspire_clcd_mmap(struct clcd_fb *fb, struct vm_area_struct *vma)
+-{
+-	return dma_mmap_wc(&fb->dev->dev, vma, fb->fb.screen_base,
+-			   fb->fb.fix.smem_start, fb->fb.fix.smem_len);
+-}
+-
+-void nspire_clcd_remove(struct clcd_fb *fb)
+-{
+-	dma_free_wc(&fb->dev->dev, fb->fb.fix.smem_len, fb->fb.screen_base,
+-		    fb->fb.fix.smem_start);
+-}
+diff --git a/arch/arm/mach-nspire/clcd.h b/arch/arm/mach-nspire/clcd.h
+deleted file mode 100644
+index 7f36bd8511c5..000000000000
+--- a/arch/arm/mach-nspire/clcd.h
++++ /dev/null
+@@ -1,10 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- *	linux/arch/arm/mach-nspire/clcd.h
+- *
+- *	Copyright (C) 2013 Daniel Tang <tangrs@tangrs.id.au>
+- */
+-
+-int nspire_clcd_setup(struct clcd_fb *fb);
+-int nspire_clcd_mmap(struct clcd_fb *fb, struct vm_area_struct *vma);
+-void nspire_clcd_remove(struct clcd_fb *fb);
+diff --git a/arch/arm/mach-nspire/nspire.c b/arch/arm/mach-nspire/nspire.c
+index 957bd0c0fbd5..2d4abb0288b9 100644
+--- a/arch/arm/mach-nspire/nspire.c
++++ b/arch/arm/mach-nspire/nspire.c
+@@ -12,14 +12,12 @@
+ #include <linux/irqchip/arm-vic.h>
+ #include <linux/clkdev.h>
+ #include <linux/amba/bus.h>
+-#include <linux/amba/clcd.h>
+ 
+ #include <asm/mach/arch.h>
+ #include <asm/mach-types.h>
+ #include <asm/mach/map.h>
+ 
+ #include "mmio.h"
+-#include "clcd.h"
+ 
+ static const char *const nspire_dt_match[] __initconst = {
+ 	"ti,nspire",
+@@ -29,28 +27,6 @@ static const char *const nspire_dt_match[] __initconst = {
+ 	NULL,
+ };
+ 
+-static struct clcd_board nspire_clcd_data = {
+-	.name		= "LCD",
+-	.caps		= CLCD_CAP_5551 | CLCD_CAP_565,
+-	.check		= clcdfb_check,
+-	.decode		= clcdfb_decode,
+-	.setup		= nspire_clcd_setup,
+-	.mmap		= nspire_clcd_mmap,
+-	.remove		= nspire_clcd_remove,
+-};
+-
+-
+-static struct of_dev_auxdata nspire_auxdata[] __initdata = {
+-	OF_DEV_AUXDATA("arm,pl111", NSPIRE_LCD_PHYS_BASE,
+-			NULL, &nspire_clcd_data),
+-	{ }
+-};
+-
+-static void __init nspire_init(void)
+-{
+-	of_platform_default_populate(NULL, nspire_auxdata, NULL);
+-}
+-
+ static void nspire_restart(enum reboot_mode mode, const char *cmd)
+ {
+ 	void __iomem *base = ioremap(NSPIRE_MISC_PHYS_BASE, SZ_4K);
+@@ -62,6 +38,5 @@ static void nspire_restart(enum reboot_mode mode, const char *cmd)
+ 
+ DT_MACHINE_START(NSPIRE, "TI-NSPIRE")
+ 	.dt_compat	= nspire_dt_match,
+-	.init_machine	= nspire_init,
+ 	.restart	= nspire_restart,
+ MACHINE_END
 -- 
 2.21.0
 
