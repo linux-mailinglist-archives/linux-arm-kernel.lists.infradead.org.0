@@ -2,60 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAC69829D6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 04:59:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9F04829CB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 04:56:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/J1UMZ6u9xDo31aIxuGcjyVx6Zgxt6luURsz+V5Bxp0=; b=SZz
-	UVikqA3+d+ONPx/kSd77apfEAHTK2OyeLm+ynrYMxCR0RygTMJqbpKt1FJwMIZDuS/1R/D9hpSL8K
-	u8O41+j38SipOI8v1ZQdTLjzy1OvRq67NkQxsjZ3phzlJyYwmWr53d6rUb3Zsw0mzzg0x+S9/I4cc
-	8E9ZKPRzNY/y/Qlua+TjTPrC8utuRnjcwgNePUeshE22SJlJzmaEuyHTOOcmcXSC/x02LMoodQZX4
-	aLOTD8zvX2uANXoKvoRExSPkV6DXdenIVoAK0RtjY4WSCKF3rrIB6Ii8YZaO0X8i7aXT2IwLXqIIg
-	aKSdv/xk0KNkq2weW9am9P+gqF8z8hw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jPg0uk/WBS9J+Ia838JL+RcQ2NdqwebeCe6SNDic2yA=; b=eTtn1SZnwavNBe
+	xYkcGv0LR5QJli3X9Rs/gtNpz/BePvkeAvXM8tKK6Stq5msiUglLawAuOa9n5Jvjsfl9bM2EG9Kyn
+	+I1wNpZTJGt88FtqwN0Olmu9ZhQORzGl56CnFJjbzkw0z/Pzp5lkMXgvWrjgGEXlp1YMa7incW3PM
+	q/Uk6GoftuZ+z7DUjBKUcuhCFkfXAOnE+Q4FYPz0KlardtQ07gfLe2PqBHo+QNekM51F+/O9HfNnV
+	3m/1tmzHv1s1Wtw/FWM6iR4tII6TUFvHclUSM9WssaGViN7ovB88u4tRRZs7/9oAYX7DdY5ycUyXd
+	pZ1JJBbKRk881jWDHqEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hupgz-0000kF-35; Tue, 06 Aug 2019 02:59:17 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hupdz-0000Ri-8j; Tue, 06 Aug 2019 02:56:11 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hupgq-0000jg-6r
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 02:59:09 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7DECF1A009A;
- Tue,  6 Aug 2019 04:59:06 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B0CA41A0043;
- Tue,  6 Aug 2019 04:59:00 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 5FC6E402B5;
- Tue,  6 Aug 2019 10:58:53 +0800 (SGT)
-From: Hui Song <hui.song_1@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: [PATCH v2] gpio: mpc8xxx: Add new platforms GPIO DT node description
-Date: Tue,  6 Aug 2019 10:49:23 +0800
-Message-Id: <20190806024923.34355-1-hui.song_1@nxp.com>
-X-Mailer: git-send-email 2.9.5
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hupds-0000RP-12
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 02:56:05 +0000
+Received: by mail-ed1-x542.google.com with SMTP id p15so80873041eds.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 05 Aug 2019 19:55:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=thegavinli.com; s=google;
+ h=sender:mime-version:references:in-reply-to:from:date:message-id
+ :subject:to:cc;
+ bh=ymynYvUaAJ/fSsk8dTF47gjXr8CYua8YobOOSKegPcM=;
+ b=UanfDFFyXJgYSA7QqCuSdaCf5p+I3v2GUlvbhA8+2qe6l86pJKL0lTlbCFnTx3gBOk
+ jjw0CPJdEKovLTwXtm6Go48h8/Y8NunT8oKKFGaMd9OyBH8HT4SxYQbIV6jerO9zgRB+
+ DhQfv6wnIBUjLqio5JTWuVL4Tjft7woEGwUdE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:mime-version:references:in-reply-to:from
+ :date:message-id:subject:to:cc;
+ bh=ymynYvUaAJ/fSsk8dTF47gjXr8CYua8YobOOSKegPcM=;
+ b=VQ2FX/uX44SqL091cai8vemJO0OVyhgZB7D4gSAc02vGtRm7DEWy2fjslFz5AML3El
+ WU4TypbNtrGmeBT3YULr3Jek2oPA121IYIACbDDnv/edoNqF8Xx8N0zfsUvIC+7c0WyG
+ Icxe0Z5We3uObqung41FkHB9eTIwZLkGtA4nHg6iba0x+YXGsn1dKBJO34Pqd3HfsFJH
+ DvwJ73PYA/M8sQi+gPBxYkn9t11TpgMnUGSFH9asv+2xdSc8sTZDJ1KMCO0/M5VWE8Dj
+ qxOftl/VetTOI5bsOJ+lTounGgRGNl8QV7XXgadw4++IBgnt2aq5i21bEV2lRdlcOXp9
+ Py4g==
+X-Gm-Message-State: APjAAAUUzwuFJBz1LfaGsfES52hBNG0mTIIPkIcwUsdBfOcg0eCln+nJ
+ Ug3UWv1JrtOrGWR0Nt3iDihnDElkpaknQA==
+X-Google-Smtp-Source: APXvYqzLScNcuvvfI31aw4Qb/U39mPwYE5TBSzlTgCKSjetNXRYC69J6Pd3YUHMQVMVeNphkm19sIA==
+X-Received: by 2002:a05:6402:8cc:: with SMTP id
+ d12mr1528717edz.60.1565060158159; 
+ Mon, 05 Aug 2019 19:55:58 -0700 (PDT)
+Received: from mail-ed1-f52.google.com (mail-ed1-f52.google.com.
+ [209.85.208.52])
+ by smtp.gmail.com with ESMTPSA id g22sm10064918eje.84.2019.08.05.19.55.55
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Mon, 05 Aug 2019 19:55:57 -0700 (PDT)
+Received: by mail-ed1-f52.google.com with SMTP id k21so80932222edq.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 05 Aug 2019 19:55:55 -0700 (PDT)
+X-Received: by 2002:a17:906:b315:: with SMTP id
+ n21mr1014103ejz.312.1565060155502; 
+ Mon, 05 Aug 2019 19:55:55 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190805080145.5694-1-hch@lst.de>
+ <20190805080145.5694-2-hch@lst.de>
+ <CAP_+7SzPdNCMKuuXMjHjpCzxsey2YWR_e6mTAWtNSZ6kKBvKFw@mail.gmail.com>
+In-Reply-To: <CAP_+7SzPdNCMKuuXMjHjpCzxsey2YWR_e6mTAWtNSZ6kKBvKFw@mail.gmail.com>
+From: Gavin Li <gavinli@thegavinli.com>
+Date: Mon, 5 Aug 2019 19:55:44 -0700
+X-Gmail-Original-Message-ID: <CA+GxvY5C_rrukCzC5K-h72bePyW8PS_Rfj3uxh-K6UrcAextUQ@mail.gmail.com>
+Message-ID: <CA+GxvY5C_rrukCzC5K-h72bePyW8PS_Rfj3uxh-K6UrcAextUQ@mail.gmail.com>
+Subject: Re: [PATCH 1/2] dma-mapping: fix page attributes for dma_mmap_*
+To: Christoph Hellwig <hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_195908_391418_FB5CF077 
-X-CRM114-Status: UNSURE (   5.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190805_195604_095314_967CCC0A 
+X-CRM114-Status: GOOD (  10.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,51 +105,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org
-MIME-Version: 1.0
+Cc: Gavin Li <git@thegavinli.com>, Shawn Anastasio <shawn@anastas.io>,
+ Will Deacon <will@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-mips@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ James Hogan <jhogan@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Song Hui <hui.song_1@nxp.com>
+>         /* create a coherent mapping */
+>         ret = dma_common_contiguous_remap(page, size, VM_USERMAP,
+> -                       arch_dma_mmap_pgprot(dev, PAGE_KERNEL, attrs),
+> +                       dma_pgprot(dev, PAGE_KERNEL, attrs),
+>                         __builtin_return_address(0));
+>         if (!ret) {
+>                 __dma_direct_free_pages(dev, size, page);
 
-Update the NXP GPIO node dt-binding file for QorIQ and
-Layerscape platforms, and add one more example with
-ls1028a GPIO node.
-
-Signed-off-by: Song Hui <hui.song_1@nxp.com>
----
- Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
-
-diff --git a/Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt b/Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt
-index 69d4616..2df5fc0 100644
---- a/Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt
-+++ b/Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt
-@@ -37,3 +37,17 @@ gpio0: gpio@2300000 {
- 	interrupt-controller;
- 	#interrupt-cells = <2>;
- };
-+
-+
-+Example of gpio-controller node for a ls1028a SoC:
-+
-+gpio1: gpio@2300000 {
-+	compatible = "fsl,ls1028a-gpio","fsl,qoriq-gpio";
-+	reg = <0x0 0x2300000 0x0 0x10000>;
-+	interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
-+	gpio-controller;
-+	#gpio-cells = <2>;
-+	interrupt-controller;
-+	#interrupt-cells = <2>;
-+	little-endian;
-+};
--- 
-2.9.5
-
+Is dma_common_contiguous_remap() still necessary in the
+DMA_ATTR_NON_CONSISTENT case? I would presume it would be fine to just
+return a linearly mapped address in that case.
 
 _______________________________________________
 linux-arm-kernel mailing list
