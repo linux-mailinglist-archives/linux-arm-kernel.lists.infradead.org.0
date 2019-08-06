@@ -2,56 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14A0D8313D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 14:18:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 660FB83160
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 14:33:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qgIMKqFLY4Nzvv/zVrnAimI2s7lzCqSvK2ZLXJGVi50=; b=RlySacOv+S/AFE
-	Is43Zy6I8CaJV6U7WvJkpIhDS0BJpfZaC+Vfx55LvkUO8q4EPXtO31cqKk4tIg3p8zT3uPs5owRy5
-	9lPXIEafrj2jLmRnD5ww6KNdcg7G3z6NGctP7WapQjX3KTsqShWQglFXPEZUCbwTMn/XZCknY8OYr
-	idhcsVGh5LRT3wX2bpvuxlhExhFCo/NCUuHFTjnrlUgoShbt34mr/gjoZmGQ+Pbn4crkbZNmbn2FB
-	Kh13bbKSSXao+B5GBdSgREwJcue+6igpnz4+PQpD8mzaGYs0rMljkNIWu1+ytdzZBFXdeMGEO/Drm
-	DwpHtpzXF4DOqWkySE6g==;
+	List-Owner; bh=cWkkbLBhTjJBDYRIhJxNLRJDNfj0dds9S8mh3TLMplU=; b=e1n5xn9CcGdg9P
+	N1fjTZi4nENDaJa1pA+Lc/nP6S+6gSXOrqLNXnRJcQiuT8B5lPtA4e+RvcsUE94xgUkcC0PTrxT9Q
+	n02o4UG+8ZJAZL7+nEDLBP9MLvlrEG3SoOf5YXX0jEp2+5YI2jgZ/RpWJNZONMGao4h1/LNQ7qmmA
+	z3GtKKR/RrMBrFxtCTm/8S3wHiVMrD/mcBHELc29Ktk3EZr2L2aT38iVKPtOPJAleKcAVgTDom7xX
+	rRelFbeaIe7lMh0fxEml1YvUyNFbOSTQrRcr7p7xGL2kv9K8P7mRaijMA+mpOpItlDG9C4uhwaUW3
+	gtj0coZf2GiU+lxma4gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huyQE-0006Al-HV; Tue, 06 Aug 2019 12:18:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1huyQ1-0006AS-5P
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 12:18:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 29E7028;
- Tue,  6 Aug 2019 05:18:20 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CA6EE3F694;
- Tue,  6 Aug 2019 05:18:18 -0700 (PDT)
-Date: Tue, 6 Aug 2019 13:18:16 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH v4.4 V2 24/43] arm64: Add skeleton to harden the branch
- predictor against aliasing attacks
-Message-ID: <20190806121816.GD475@lakrids.cambridge.arm.com>
-References: <cover.1562908074.git.viresh.kumar@linaro.org>
- <4349161f0ed572bbc6bff64bad94aa96d07b27ff.1562908075.git.viresh.kumar@linaro.org>
- <20190731164556.GI39768@lakrids.cambridge.arm.com>
- <20190801052011.2hrei36v4zntyfn5@vireshk-i7>
+	id 1huyen-0002Ae-O5; Tue, 06 Aug 2019 12:33:37 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1huyea-0002AF-Kn
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 12:33:26 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id C383CB05E;
+ Tue,  6 Aug 2019 12:33:22 +0000 (UTC)
+From: Andreas Schwab <schwab@suse.de>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: 5.2: arm-smmu e0600000.smmu: Unexpected global fault,
+ this could be serious
+References: <mvmlfw6354j.fsf@suse.de>
+ <5036fcb8-131e-9ffe-4bfe-dc8cbae71bc4@arm.com>
+X-Yow: Then, it's off to RED CHINA!!
+Date: Tue, 06 Aug 2019 14:33:22 +0200
+In-Reply-To: <5036fcb8-131e-9ffe-4bfe-dc8cbae71bc4@arm.com> (Robin Murphy's
+ message of "Tue, 6 Aug 2019 13:17:12 +0100")
+Message-ID: <mvmh86u323x.fsf@suse.de>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.2.90 (gnu/linux)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190801052011.2hrei36v4zntyfn5@vireshk-i7>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_051821_287566_EC3ECC66 
-X-CRM114-Status: GOOD (  20.30  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190806_053324_826899_C7E2852F 
+X-CRM114-Status: GOOD (  12.23  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,84 +63,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <Julien.Thierry@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 01, 2019 at 10:50:11AM +0530, Viresh Kumar wrote:
-> On 31-07-19, 17:45, Mark Rutland wrote:
-> > On Fri, Jul 12, 2019 at 10:58:12AM +0530, Viresh Kumar wrote:
-> > > From: Will Deacon <will.deacon@arm.com>
-> > > 
-> > > commit 0f15adbb2861ce6f75ccfc5a92b19eae0ef327d0 upstream.
-> > > 
-> > > Aliasing attacks against CPU branch predictors can allow an attacker to
-> > > redirect speculative control flow on some CPUs and potentially divulge
-> > > information from one context to another.
-> > > 
-> > > This patch adds initial skeleton code behind a new Kconfig option to
-> > > enable implementation-specific mitigations against these attacks for
-> > > CPUs that are affected.
-> > > 
-> > > Co-developed-by: Marc Zyngier <marc.zyngier@arm.com>
-> > > Signed-off-by: Will Deacon <will.deacon@arm.com>
-> > > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> > > [ v4.4: Changes made according to 4.4 codebase ]
-> > > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> > 
-> > [...]
-> > 
-> > >  /* id_aa64pfr0 */
-> > > +#define ID_AA64PFR0_CSV2_SHIFT		56
-> > 
-> > Note: CSV3 is bits 63-60, 
-> > 
-> > > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> > > index 474b34243521..040a42d79990 100644
-> > > --- a/arch/arm64/kernel/cpufeature.c
-> > > +++ b/arch/arm64/kernel/cpufeature.c
-> > > @@ -83,7 +83,8 @@ static struct arm64_ftr_bits ftr_id_aa64isar0[] = {
-> > >  };
-> > >  
-> > >  static struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
-> > > -	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 32, 0),
-> > > +	ARM64_FTR_BITS(FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_CSV2_SHIFT, 4, 0),
-> > > +	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 28, 0),
-> > 
-> > This line should be:
-> > 
-> > 	ARM64_FTR_BITS(FTR_STRICT, FTR_EXACT, 32, 24, 0),
-> > 
-> > ... as it was in the v4.9 backbort, making it cover bits 55:32. As in
-> > this patch, it covers 59:32, overlapping with CSV2.
-> 
-> Fixed thanks.
-> 
-> > We also need to cater for bits 63:60. In the v4.9 backport, the meltdown
-> > bits were applied first, so nothing special was necessary.
-> > 
-> > What's the plan w.r.t. meltdown mitigations and v4.4?
-> 
-> I haven't started looking at meltdown patches yet and so that will be
-> done at a later point of time, if at all done by me. I have been asked
-> to backport both Spectre and Meltdown though to 4.4.
+On Aug 06 2019, Robin Murphy <robin.murphy@arm.com> wrote:
 
-Upstream and in v4.9, the meltdown patches came before the spectre
-patches, and doing this in the opposite order causes context problems
-like the above.
+> I take it you have firmware still using the old "mmu-masters" DT binding
+> on that machine?
 
-Given that, I think it would be less surprising to do the meltdown
-backport first, though I apprecaite that's more work to get these
-patches in. :/
+Yes.
 
-Thanks,
-Mark.
+> The way the legacy binding is handled turns out to interact badly with the
+> disable_bypass option, so CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT is
+> presumably now tripping you up. The immediate workaround would be to turn
+> that off and/or boot with "arm-smmu.disable_bypass=0" to ensure it's
+> overridden.
+
+I will try the command line parameter.
+
+> If you can update the firmware to something newer using either
+> the generic "iommus" binding or ACPI (I believe Seattle is supported in
+> EDK2 these days) that would remove the problem entirely.
+
+AMD won't be releasing any new firmware for their seattle platform.
+
+Andreas.
+
+-- 
+Andreas Schwab, SUSE Labs, schwab@suse.de
+GPG Key fingerprint = 0196 BAD8 1CE9 1970 F4BE  1748 E4D4 88E3 0EEA B9D7
+"And now for something completely different."
 
 _______________________________________________
 linux-arm-kernel mailing list
