@@ -2,101 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 356A6836CD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 18:29:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A67BF836B6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 18:28:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=DU0mOBvphSoHWEdDWwARA+hdxLQJzozrj11A1N8S2IM=; b=IzmXGVcloXwsRXVE9X6EHhT38R
-	EOPG7Mo3hdUWGT0DGgstepUFtLHfJOnS0e4Mw3ul38eGL0UkGAWNxUww0XDmzhF45yErUGderTzC8
-	43xGSBt+DTNvAyqIbpmAhgVemUkQKd1dVdTsVPn6dd6mo2IImaab7fXLRPyAbIOBOAewTioJYaS9z
-	lpcAqDWob4dnjMzjb8eFb6/szV2CFN3jgR/FVSRbqV2TimsA/GSRPl2vMVYFxhXTVmInagv0lojpi
-	JxGQEH/PxDWtOgXWWsSP9tLLLLLRs5gs6A1f9WP7fYTHFafhbn9CjUrdABw91RFVhUbkXhNRT3UwS
-	Kr9dTwJQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KUDmqYKcEA/QS9+OItG73M+38JhRnRswidwThWT1K6s=; b=EI2EBfpl/dQYFX
+	dDTOR4S5XDLjgZqqsG5gXfUCY/MK75tmT6NRXMwWaYB7LdS54BIc8QOIVXQUPCufKUegfRRV1RH4G
+	JRGYVJrxlgmN2ZS4x+QDzA7GrG2/5dfys+ic4qNPpXUe/X270uRNSTtQni7MYzo/ezCn6PYAFhgFd
+	3/j9YKzE/DscCCJ8EL6WL1+2hodj43saQ2lfho+erIaGFRcSFiVQIbViGB3HI+ugV1CGaC2cDaTx8
+	kDl8bYjc/ZiPSNr+ux2NpDjB8E9GYfhTJKzC26TfK8hlKAgfJZjg0D9HFBvMxYhtlaOFryZIcov6n
+	uwZ+jXgcfE5tWyNlBIog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv2Ke-0000W7-H9; Tue, 06 Aug 2019 16:29:04 +0000
-Received: from mout.gmx.net ([212.227.17.22])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv2KT-0000TM-Hz; Tue, 06 Aug 2019 16:28:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1565108894;
- bh=pEU670PIz00v8crp3rxuN1fi0Dt458xswIDV8ulcPJg=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=Qvg07LNJbzW/kNS1rCrgTigz45K9KSekRUIrJZT/LhvYe5xQw0lW292FTSqXDwwg5
- /9aPnhc29E7nDm1+hHt2p0ysX9GzXsm9xbcfo+bcl7jtqbR8pjHT+MsgycEgJUVAMg
- ibW4whT79YFw/WvpMUVO3G/9cKlkTV+JLqFHMBgI=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from localhost.localdomain ([217.61.153.94]) by mail.gmx.com
- (mrgmx103 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 0MOOJl-1i0Hdo3EOb-005nMq; Tue, 06 Aug 2019 18:28:13 +0200
-From: Frank Wunderlich <frank-w@public-files.de>
-To: Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Allison Randal <allison@lohutok.net>,
- "David S. Miller" <davem@davemloft.net>, devicetree@vger.kernel.org,
- Eddie Huang <eddie.huang@mediatek.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-pm@vger.kernel.org, linux-rtc@vger.kernel.org,
- Mark Rutland <mark.rutland@arm.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Richard Fontana <rfontana@redhat.com>, Rob Herring <robh+dt@kernel.org>,
- Sean Wang <sean.wang@mediatek.com>, Sebastian Reichel <sre@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- "Tianping . Fang" <tianping.fang@mediatek.com>
-Subject: [PATCH v4 07/10] mfd: mt6323: add mt6323 rtc+pwrc
-Date: Tue,  6 Aug 2019 18:27:42 +0200
-Message-Id: <20190806162745.8414-8-frank-w@public-files.de>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190806162745.8414-1-frank-w@public-files.de>
-References: <20190806162745.8414-1-frank-w@public-files.de>
-X-Provags-ID: V03:K1:Os+hN2QnhF0iBkyzWFfYWOZ/foZamI6qBMXAngptIHU47UjTWnb
- 1G1VH82f39MDlQhnXgpKOJyjBNr3cmU78rclGXnwKIQW6g7a/ZGORHUDbkwut3VEwAkyDS1
- uV87Tw7Hnynpa0Sztv2ReCtXOGa8S/mpUC4N9+MD+X2YDUYCNig/7weu4o7bM/c5/hLlE6g
- PmlrRq4wKlyzdd1A/QpeA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:C6S9T1mcc3w=:wZ1vAXXk0wjMf9cSlhYbKL
- NAT6kDU7oL1dS5Z/3WjhBBNyLifPnUCO6R5/hQAdVopCn+1nZdUgXx+GHFpE5xtl0SVTXyhKa
- /NfE2QUAVHG1Yy4Esi346cZuXmbAFkfb03du+dXFaahSC7ntJonyQd790/ok/3nWRG2e+P+n+
- 5BaCS0BUZzVZpcKxhW0WjWIz7Y7EPWUZF9e9pVZaf0hiMapyY8eMqOOVtcB7J0Ftsmk58aQRa
- vQBsevAAy9CRWLPg/yKAK6CPABax5v7Cj4Nkcx6z+2BKYPCVFrAQQ0x4HWGsgnMKskDnm+Wwy
- y44We2ws06/rAm0H+XJ/4kuAaOPVZr8C7q9ySoBA6M5I/zUvrxgdM1z5EciDQVKo6DaRgYFqd
- e/e7hO6ccVCElb/lZ7py/AfU5W8FkMylsVEfiGQEcNeNeQGwM5Yeum+cJ+974CB23klw1QG3B
- FXP6+FRuBCwRfF4LGOIO1PCZW7jNsuYQBfcs2Rt9yE9YuZzhZkMZAKmGP9WZ7RQqG3EcYjaM4
- fjD0zqDHHan3o24UxtnSe+imJvpAGvxgV8TV8zkMN4xbwK3VOE0ls0oUWfyadOSH7bTjL/uyb
- 9+F4Wud/AigsDiMeOUq6EAwMoms+YdPqblkFgY0k3ZBRba1QupT/pk/Q8AsS6E0Er+ikndnRR
- 4uxym6L+7cIXNGCQwNnJcNpz4xxvUzD1fAL6gFMt1CakxzQEHZkEsdj6IUWs18c2jdrEX+jXa
- dN1QXX2nvNjmNEAvT6vjuclfLxNkbIovRiKiPS/Dh0bp/gEhhmp5iZlRADg3iHs/o+J0POcfW
- 8qPAswbIzLBF0n8lVBKTprR81QGg2TK6aUNAps1v9vSRl+d/8P/2EFy59JwxhX75IDfXjp/EW
- rlMMwLCVgWQQxaACdI1ISu1IgW3C/RPCiZIOtlDx3KaKYck4rZnaE+L0Eto4dWxMS/tJ5wr2z
- rT7jySsXH4dnrEkjEfIv65kvyFisdXJt+3uS9s5gwr5pNUFD7hCf+eliNXTrg8zGvVaPTzJW7
- x/YUosrZYVV8Om1+GCPpLXGOkjs9kVZZ99+RgeSj7Tq4IbNBHIjfG2XQqQadAnBSA8UjfUP/w
- neKBKOtEKcYHct6EEqov/GkxFRABtX7S0a+/SreowZxEpB+tFqOOcWrOA==
+	id 1hv2Jz-0000E5-AS; Tue, 06 Aug 2019 16:28:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hv2Jr-0000DX-Ey
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 16:28:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5C489344;
+ Tue,  6 Aug 2019 09:28:14 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A1443F575;
+ Tue,  6 Aug 2019 09:28:13 -0700 (PDT)
+Date: Tue, 6 Aug 2019 17:28:11 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Remi Pommarel <repk@triplefau.lt>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [PATCH v3] PCI: aardvark: Fix PCI_EXP_RTCTL register configuration
+Message-ID: <20190806162811.GB15498@e121166-lin.cambridge.arm.com>
+References: <20190614101059.1664-1-repk@triplefau.lt>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190614101059.1664-1-repk@triplefau.lt>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_092853_926401_1EFB6E14 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190806_092815_547529_19EAE746 
+X-CRM114-Status: GOOD (  17.15  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,89 +61,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Josef Friedl <josef.friedl@speed.at>,
- Frank Wunderlich <frank-w@public-files.de>
-MIME-Version: 1.0
+Cc: linux-pci@vger.kernel.org, Ellie Reeves <ellierevves@gmail.com>,
+ Bjorn Helgaas <helgaas@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Josef Friedl <josef.friedl@speed.at>
+On Fri, Jun 14, 2019 at 12:10:59PM +0200, Remi Pommarel wrote:
+> PCI_EXP_RTCTL is used to activate PME interrupt only, so writing into it
+> should not modify other interrupts' mask. The ISR mask polarity was also
+> inverted, when PCI_EXP_RTCTL_PMEIE is set PCIE_MSG_PM_PME_MASK mask bit
+> should actually be cleared.
+> 
+> Fixes: 8a3ebd8de328 ("PCI: aardvark: Implement emulated root PCI bridge config space")
+> Signed-off-by: Remi Pommarel <repk@triplefau.lt>
+> ---
+> Changes since v1:
+>  * Improve code readability
+>  * Fix mask polarity
+>  * PME_MASK shift was off by one
+> Changes since v2:
+>  * Modify patch title
+>  * Change Fixes tag to commit that actually introduces the bug
+> ---
+>  drivers/pci/controller/pci-aardvark.c | 13 +++++++++----
+>  1 file changed, 9 insertions(+), 4 deletions(-)
 
-add entry for rtc and power-controller to mt6323
+Thomas, are you OK with this patch ?
 
-Signed-off-by: Josef Friedl <josef.friedl@speed.at>
-Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
----
-changes since v3: none
-changes since v2: only splitting, second part of v2 part 4
+Thanks,
+Lorenzo
 
- drivers/mfd/mt6397-core.c | 25 +++++++++++++++++++++++++
- 1 file changed, 25 insertions(+)
-
-diff --git a/drivers/mfd/mt6397-core.c b/drivers/mfd/mt6397-core.c
-index 5f7070267c9a..a4abce00f156 100644
---- a/drivers/mfd/mt6397-core.c
-+++ b/drivers/mfd/mt6397-core.c
-@@ -16,13 +16,24 @@
- #include <linux/mfd/mt6397/registers.h>
- #include <linux/mfd/mt6323/registers.h>
-
-+#define MT6323_RTC_BASE		0x8000
-+#define MT6323_RTC_SIZE		0x40
-+
- #define MT6397_RTC_BASE		0xe000
- #define MT6397_RTC_SIZE		0x3e
-
-+#define MT6323_PWRC_BASE	0x8000
-+#define MT6323_PWRC_SIZE	0x40
-+
- #define MT6323_CID_CODE		0x23
- #define MT6391_CID_CODE		0x91
- #define MT6397_CID_CODE		0x97
-
-+static const struct resource mt6323_rtc_resources[] = {
-+	DEFINE_RES_MEM(MT6323_RTC_BASE, MT6323_RTC_SIZE),
-+	DEFINE_RES_IRQ(MT6323_IRQ_STATUS_RTC),
-+};
-+
- static const struct resource mt6397_rtc_resources[] = {
- 	DEFINE_RES_MEM(MT6397_RTC_BASE, MT6397_RTC_SIZE),
- 	DEFINE_RES_IRQ(MT6397_IRQ_RTC),
-@@ -38,8 +49,17 @@ static const struct resource mt6397_keys_resources[] = {
- 	DEFINE_RES_IRQ(MT6397_IRQ_HOMEKEY),
- };
-
-+static const struct resource mt6323_pwrc_resources[] = {
-+	DEFINE_RES_MEM(MT6323_PWRC_BASE, MT6323_PWRC_SIZE),
-+};
-+
- static const struct mfd_cell mt6323_devs[] = {
- 	{
-+		.name = "mt6323-rtc",
-+		.num_resources = ARRAY_SIZE(mt6323_rtc_resources),
-+		.resources = mt6323_rtc_resources,
-+		.of_compatible = "mediatek,mt6323-rtc",
-+	}, {
- 		.name = "mt6323-regulator",
- 		.of_compatible = "mediatek,mt6323-regulator"
- 	}, {
-@@ -50,6 +70,11 @@ static const struct mfd_cell mt6323_devs[] = {
- 		.num_resources = ARRAY_SIZE(mt6323_keys_resources),
- 		.resources = mt6323_keys_resources,
- 		.of_compatible = "mediatek,mt6323-keys"
-+	}, {
-+		.name = "mt6323-pwrc",
-+		.num_resources = ARRAY_SIZE(mt6323_pwrc_resources),
-+		.resources = mt6323_pwrc_resources,
-+		.of_compatible = "mediatek,mt6323-pwrc"
- 	},
- };
-
---
-2.17.1
-
+> diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
+> index 134e0306ff00..f6e55c4597b1 100644
+> --- a/drivers/pci/controller/pci-aardvark.c
+> +++ b/drivers/pci/controller/pci-aardvark.c
+> @@ -415,7 +415,7 @@ advk_pci_bridge_emul_pcie_conf_read(struct pci_bridge_emul *bridge,
+>  
+>  	case PCI_EXP_RTCTL: {
+>  		u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG);
+> -		*value = (val & PCIE_MSG_PM_PME_MASK) ? PCI_EXP_RTCTL_PMEIE : 0;
+> +		*value = (val & PCIE_MSG_PM_PME_MASK) ? 0 : PCI_EXP_RTCTL_PMEIE;
+>  		return PCI_BRIDGE_EMUL_HANDLED;
+>  	}
+>  
+> @@ -451,10 +451,15 @@ advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
+>  		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
+>  		break;
+>  
+> -	case PCI_EXP_RTCTL:
+> -		new = (new & PCI_EXP_RTCTL_PMEIE) << 3;
+> -		advk_writel(pcie, new, PCIE_ISR0_MASK_REG);
+> +	case PCI_EXP_RTCTL: {
+> +		/* Only mask/unmask PME interrupt */
+> +		u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG) &
+> +			~PCIE_MSG_PM_PME_MASK;
+> +		if ((new & PCI_EXP_RTCTL_PMEIE) == 0)
+> +			val |= PCIE_MSG_PM_PME_MASK;
+> +		advk_writel(pcie, val, PCIE_ISR0_MASK_REG);
+>  		break;
+> +	}
+>  
+>  	case PCI_EXP_RTSTA:
+>  		new = (new & PCI_EXP_RTSTA_PME) >> 9;
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
