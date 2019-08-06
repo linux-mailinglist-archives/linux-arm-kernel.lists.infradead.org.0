@@ -2,82 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AADC839DF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 21:53:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A552839FD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 22:03:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aSkqjYp6v+wkF+ibMpOOJPzgLwTCa5SHd0a1RrM1rCU=; b=GebpAps6wSyoIf
-	TK9oftGNnGQt+Dt8HLqqwOkW0snVrhLk5q3Z4mmbYhuUK0uT6JTYWuFuhXcJg5CqycyDcXlb5ZQHc
-	rr7ewuOWIYWFUQC1WPseQswe4grjuxeHRwVLsePowULstwp3/aAWtWVJ7HXt4/HCIpLLOAQ9iaGjN
-	IykqK+DnEXDsmjTwz8lOv7GdKxWdAj5Rjyc0j7udPCL6xsZL6oy0+Ja4COGjzUETZuJDYqGWxoB9H
-	A9E9BJ+KcYtVP4Wm2guQARQAdioDmmFtVcnYCtYf3yIXUnMD5oAhCb60XGKH2J/Esgip5Oe6NE2FG
-	eFzay7XxUyXHQ4Y8siEg==;
+	List-Owner; bh=RQhEDiaMiO1PdVf73MFmXN4Gxf23YJEuo4mTosFZweE=; b=VCg6FKij3DCgud
+	CdHz1aag5rGWT7WIdosenNAWWUsw4OnlWoXLVwy6wDNwi1rRLlmw0/LhEAICiTW0IZ/f/1YtY8lk1
+	nZUvjhvlT+z0sCFIYJCLGKi7jd0Ute8Y3OycRmsmcd0aA9qR6xNsFzQmiY76hWNlWzeeJvrB1lMXu
+	Rcw2kzMTHYc/z3ZxZQeNBcgk3TEp4y7xQTBXhBajD4kCMDsMdANHI2FvCsQ9XPLnemhrhhj7fIHuo
+	t5ABcrXZ23DTGuXQzgH9SeilgoVYro8jYZpH7stfQKrAxyz61O3GxVGAOprO1vDNZrX+e9E5biXKJ
+	kDFTyRzLeUcQpmNfDJBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv5Vy-0001d1-3k; Tue, 06 Aug 2019 19:52:58 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1hv5ff-0004XT-3i; Tue, 06 Aug 2019 20:02:59 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv5Vl-0001bb-6M; Tue, 06 Aug 2019 19:52:46 +0000
-Received: by mail-oi1-x242.google.com with SMTP id c15so13007690oic.3;
- Tue, 06 Aug 2019 12:52:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
+ id 1hv5fN-0004X1-Tw
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 20:02:43 +0000
+Received: by mail-ot1-x343.google.com with SMTP id r21so89637422otq.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 06 Aug 2019 13:02:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4E/kye31gm/TUQMINOCXfCGV9Lfx0lm6nnvhyTx90lw=;
- b=Yzk47bOJktflINEYudmIXcRskp+l8U5BovlNaqWp2akIE2xwTuHvoX3zT22MAUDuJ3
- XO8JCNSJ39+r3FvB83PSqvCOdBb6dA453gqBq5UjxYm/x939xxHrUQzGEjpWMeDkbg7C
- PU9R1vq6BARJBbD+Qx8FegPLsD/BA+rrPXewHWSRN9ukZN2EId0grtB068+Xr6vbxVvs
- fJ9+rJiecg5Jn3pzoqdn4FJOtqfEIua19AftTYsNEwolx2VFWVCN7f0cwiIYqdjfj2ew
- nwgw6Avn3h9aL2w/i5R+J0oEt6Ie4TjULWWKGT8FbgpuY1Nd4cVcGk7HfaKsTVYhV7NB
- aslA==
+ :cc; bh=gqjViCXObN2WgC0+IhrtTb7Ll35AmMVzauFcMWGTI3Y=;
+ b=g6geZrRSw1Dk72HeV3MeqgqDiCymOKGzorDS9kcJv2KYasDx9IRJzWdUCQ5iz/Ck/a
+ sMOqtrYcPYFkeOtOkh3EZ6BQOFZFtjfX4FeNaR7psKg3xzJZZT2HZI2UO45VHTO99KCa
+ 5DJfIPEVo7ChrD9UA9ksvW4WKmWAYqfMY6fVOBsARhj6ITM/Y954KCB64DT/86RovKv+
+ v3izTjlAuvKv3KGD3bthq9dyPH36SX8i7m0+F89SRk5FQznew6pgkuE+/KIjfgWA0K30
+ KRvE8YQ5YyG26Sgb8bPl/FmaHp9h4HQXgX6WZJSlRti8akUyiqMHCDslkE+F9DWvSgMq
+ +SWA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=4E/kye31gm/TUQMINOCXfCGV9Lfx0lm6nnvhyTx90lw=;
- b=OJdgfweOZbCKFyYuecfp9BcHYOGqq0l24Ig2G3+xVMP1JNRwFyN64OXstc3YBuzppx
- HvCNWMteU7yjF8Ww4eZP2VV708MUG6BFudRJYegzJ/ZcrsUfScj/FX6+sXawOWlKSaT1
- 3GjX7C6oKqlA5+kADF8saay0jzmWApWaeDD8iM56t5A7yG1bMmFs2mG4TdjWQq4X6mDS
- LLJWBBq+iSHzxk15rNIoRw7EkOGvj6SFAiv5ww/ZmGMfsjoGg0n9boj5anDBKiiU8BSt
- kWaW9xT5vub7inI6Ho+fEqjHSt2vrFejHfIeXvOx1KKahK2U29iAPJoVS4iHRuQu3tnI
- uc5Q==
-X-Gm-Message-State: APjAAAWYyZqwS+52YDVcJIInpw9JCoBnlu8g2C7lqvhz9wyHSPNgHgek
- yajK0iRwQObKFD0kSYO5Upri5zTopikXYICNqByn3obh
-X-Google-Smtp-Source: APXvYqw1ATDKzq4Ht5dmq0BSO1jAsgEOQjI9m/cdHrI7S9kc9h6PS8yJ28neuhhhpzIY2bUqGqV7RB4pF2K8DWgt1V0=
-X-Received: by 2002:a05:6808:3d6:: with SMTP id
- o22mr3801512oie.140.1565121163808; 
- Tue, 06 Aug 2019 12:52:43 -0700 (PDT)
+ bh=gqjViCXObN2WgC0+IhrtTb7Ll35AmMVzauFcMWGTI3Y=;
+ b=hFAIf0fiyuQa7JHzbmi6HX690sKAnCodpyR27etzyzXkVHBIzJr0I8rSIZTBfmJphB
+ KVINo0UQbvdET4nquCYLEKoQcKynlXNENP8H3KnXUhlBczfe3JTrv1aIdYOdmUPN719i
+ H5XT3l0P3FY9ARryGEgXumcTn0LWgOzJt4NB0hI3ZNbpGhZdKpYo6Jeqc4JDkETdQKzx
+ 81LeOtgbXyCFq+ONYYd4KgSd488OGdWAs6napdGxJHmGRsXMadkSq9zlqT/uXymrN9pe
+ aUL6LUPupPBkswpbfViuhZW2uhORaZA122rHyj/zeoimVPpcfsW1AAL3NYH8giXHCYkO
+ f8AQ==
+X-Gm-Message-State: APjAAAXRaKCmg8LVzsuGe0KzrTDz65D0TQ8iBH/2+CNiBaIQrGwgaA0u
+ nDo0tuz1jSbX9pWv5ltaCFLF1yXyz9CA8hf9X3I=
+X-Google-Smtp-Source: APXvYqxUZRrA60vyMd0kzSQ4htAnblGQWHtpdj5jgj0q6G1y1gZxQTbe74lzuUCM09PKJHet7o8XCRwQJqJO6Q95G/0=
+X-Received: by 2002:a5d:9942:: with SMTP id v2mr5555846ios.177.1565121759065; 
+ Tue, 06 Aug 2019 13:02:39 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190731153529.30159-1-glaroque@baylibre.com>
- <20190731153529.30159-3-glaroque@baylibre.com>
- <CAFBinCDGSJABnS1L1ULueyeXZaV38qrxEA0a12gB-uyRC_TvPQ@mail.gmail.com>
- <14e14cd9-46bd-0d43-654c-6db64397f5c7@baylibre.com>
-In-Reply-To: <14e14cd9-46bd-0d43-654c-6db64397f5c7@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 6 Aug 2019 21:52:32 +0200
-Message-ID: <CAFBinCB3ZBPVEJKV2Rfh_w-zWrhoToYdoYE6Wox+JeB-YH+Khw@mail.gmail.com>
-Subject: Re: [PATCH v2 2/6] thermal: amlogic: Add thermal driver to support
- G12 SoCs
-To: guillaume La Roque <glaroque@baylibre.com>
+References: <20190731195713.3150463-1-arnd@arndb.de>
+ <20190731195713.3150463-6-arnd@arndb.de>
+In-Reply-To: <20190731195713.3150463-6-arnd@arndb.de>
+From: Sylvain Lemieux <slemieux.tyco@gmail.com>
+Date: Tue, 6 Aug 2019 16:02:27 -0400
+Message-ID: <CA+rxa6p4gD7+6-aRyd4-V4TvkyMiUh9ueMLc6ggBaDC=LG7fQg@mail.gmail.com>
+Subject: Re: [PATCH 05/14] gpio: lpc32xx: allow building on non-lpc32xx targets
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_125245_268932_E9231334 
-X-CRM114-Status: GOOD (  22.93  )
+X-CRM114-CacheID: sfid-20190806_130241_964331_66F5ABC1 
+X-CRM114-Status: GOOD (  19.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ provider (slemieux.tyco[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,110 +93,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org, khilman@baylibre.com,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jason Cooper <jason@lakedaemon.net>, "David S. Miller" <davem@davemloft.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ USB list <linux-usb@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Vladimir Zapolskiy <vz@mleia.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, soc@kernel.org,
+ Alan Stern <stern@rowland.harvard.edu>, Guenter Roeck <linux@roeck-us.net>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Networking <netdev@vger.kernel.org>, Lee Jones <lee.jones@linaro.org>,
+ linux-serial@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Guillaume,
+Hi Arnd,
 
-On Mon, Aug 5, 2019 at 2:48 PM guillaume La Roque <glaroque@baylibre.com> wrote:
+On Wed, Jul 31, 2019 at 4:00 PM Arnd Bergmann <arnd@arndb.de> wrote:
 >
-> Hi Martin,
+> The driver uses hardwire MMIO addresses instead of the data
+> that is passed in device tree. Change it over to only
+> hardcode the register offset values and allow compile-testing.
 >
-> again thanks for your review.
-you're welcome - thank you for working on the driver :-)
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+>  drivers/gpio/Kconfig        |  8 +++++
+>  drivers/gpio/Makefile       |  2 +-
+>  drivers/gpio/gpio-lpc32xx.c | 63 ++++++++++++++++++++++++-------------
+>  3 files changed, 50 insertions(+), 23 deletions(-)
+>
+[...]
+
+> diff --git a/drivers/gpio/gpio-lpc32xx.c b/drivers/gpio/gpio-lpc32xx.c
+> index 24885b3db3d5..548f7cb69386 100644
+> --- a/drivers/gpio/gpio-lpc32xx.c
+> +++ b/drivers/gpio/gpio-lpc32xx.c
 
 [...]
-> > The IP block has more functionality, which may be added to this driver
-> > in the future:
-> > - reading up to 16 stored temperature samples
+
+> @@ -498,6 +509,10 @@ static int lpc32xx_gpio_probe(struct platform_device *pdev)
+>  {
+>         int i;
 >
-> it's not working, you can verify it if you check the regmap define in the driver. in fact temp is only write in one register, it's confirmed by amlogic.
-I missed that - so please skip this part
+> +       gpio_reg_base = devm_platform_ioremap_resource(pdev, 0);
+> +       if (gpio_reg_base)
+> +               return -ENXIO;
 
-[...]
-> >> +config AMLOGIC_THERMAL
-> > we typically use "MESON" in the Kconfig symbols:
-> > $ grep -c AMLOGIC .config
-> > 1
-> > $ grep -c MESON .config
-> > 33
-> >
-> > I also wonder if we should add G12 or G12A so we don't conflict with
-> > upcoming thermal sensors with a different design (assuming that this
-> > will be a thing).
-> > for example we already have three different USB2 PHY drivers
-> >
-> > [...]
+The probe function will always return an error.
+Please replace the previous 2 lines with:
+    if (IS_ERR(gpio_reg_base))
+        return PTR_ERR(gpio_reg_base);
+
+You can add my acked-by and tested-by in the v2 patch.
+Acked-by: Sylvain Lemieux <slemieux.tyco@gmail.com>
+Tested-by: Sylvain Lemieux <slemieux.tyco@gmail.com>
+
+> +
+>         for (i = 0; i < ARRAY_SIZE(lpc32xx_gpiochip); i++) {
+>                 if (pdev->dev.of_node) {
+>                         lpc32xx_gpiochip[i].chip.of_xlate = lpc32xx_of_xlate;
+> @@ -527,3 +542,7 @@ static struct platform_driver lpc32xx_gpio_driver = {
+>  };
 >
-> i check with Neil and for new family it's better to use Amlogic instead of meson.
-can you please share the considerations behind this decision?
-if new drivers should use AMLOGIC_* Kconfig symbols instead of MESON_*
-then we all should know about it
-
-> i don't add G12 because we already know it's same sensors for SM1 SoC family [0].
-my idea behind this was to avoid conflicts in the future
-in case of the thermal driver we may be fine with using a generic name
-assuming that Amlogic will not switch to a new IP block in the next
-years
-I'm not saying you have to change the name - I'm bringing this up so
-you can decide for yourself based on examples from the past
-
-here are a few examples:
-- when Kevin upstreamed the MMC driver for GX he decided to use
-MMC_MESON_GX for the Kconfig symbol name. it turns out that this is
-smart because there are at least two other MMC controller IPs on the
-32-bit SoCs. due to him including GX in the name the drivers are easy
-to differentiate (MMC_MESON_MX_SDIO and MMC_MESON_MX_SDHC being the
-other ones, while the latter is not upstream yet)
-- when Carlo upstreamed the eFuse driver he decided to use MESON_EFUSE
-for the Kconfig symbol name. I found out much later that the 32-bit
-SoCs use a different IP (or at least direct register access instead of
-going through Secure Monitor). the driver for the 32-bit SoCs now uses
-MESON_MX_EFUSE. if you don't know which driver applies where then it's
-easy to mix up MESON_EFUSE and MESON_MX_EFUSE
-- when Jerome upstreamed the ALSA driver for AXG (which is also used
-on G12A and G12B) he decided to use the SND_MESON_AXG_* prefix for the
-Kconfig symbol names. in my opinion this was a good choice because GXM
-and everything earlier (including the 32-bit SoCs) use a different
-audio IP block. we won't have a Kconfig symbol name clash when a
-driver for the "older" SoCs is upstreamed
-- (there are more examples, Meson8b USB PHY driver, Meson8b DWMAC
-glue, ... - just like there's many examples where the IP block is
-mostly compatible with older generations: SAR ADC, RNG, SPI, ...)
-
-I'm not sure what driver naming rules other mainline SoC teams use
-to me it seems that the rule for Allwinner driver names is to use the
-"code-name of the first SoC the IP block appeared in"
-
-[...]
-> >> +static int amlogic_thermal_get_temp(void *data, int *temp)
-> >> +{
-> >> +       unsigned int tvalue;
-> >> +       struct amlogic_thermal *pdata = data;
-> >> +
-> >> +       if (!data)
-> >> +               return -EINVAL;
-> >> +
-> >> +       regmap_read(pdata->regmap, TSENSOR_STAT0, &tvalue);
-> >> +       *temp = code_to_temp(pdata,
-> >> +                            tvalue & TSENSOR_READ_TEMP_MASK);
-> > maybe simply move the implementation from code_to_temp here?
+>  module_platform_driver(lpc32xx_gpio_driver);
+> +
+> +MODULE_AUTHOR("Kevin Wells <kevin.wells@nxp.com>");
+> +MODULE_LICENSE("GPL");
+> +MODULE_DESCRIPTION("GPIO driver for LPC32xx SoC");
+> --
+> 2.20.0
 >
-> for the optional function it could be a problem if i move all in code_to_temp.
->
-> i prefer to have a function which are just do the conversion.
-I didn't consider this before but you are right
-if the other temperature registers (like IRQ thresholds) also use a
-"temperature code" then it should be a dedicated function (so it'll be
-easier to add more functionality to the driver)
-
-
-Martin
+Sylvain
 
 _______________________________________________
 linux-arm-kernel mailing list
