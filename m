@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBB5D8316C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 14:36:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A80783192
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 14:41:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iWalXme18lgCO26tFYJkGIEWzQyG6MT+xfclC7jCkW4=; b=qhl8O5Lgcgb1UT
-	6foPJnThbtImRAy7ZuuSXZEA5jc3O4AEiphCiESFXi2euLOqrudL3WlnYXvjiCnqrQK0Zel5OmWI5
-	mqwR6yGA02p2oSmCYvEw6ITzAHLbbeEHpuKhVXjmuVVbzcScGC7oUKNtVUvaYRjcewvmE4y7yoQvC
-	VlCO3OrJ0qgMbLFbVmjhR1riwrbp30u9UT84c+XM314IYVpGInEJCIkl3KjWdrcTS2ZGsvtwEGHbY
-	h9IuCZOpaXe1VNA30YZ76ymr6+VyirPEIXI+F3z9Hh4zVXNTWRBrqCpq+jVRvABR5kGOoCbowJQSw
-	rDjhRmCcYgQUJs8zC8oA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DppIrTidKb7sVHoxE5vfZ9+/V7C1nt1PBn73QwC5ydQ=; b=JdCGcRKaL4TcqL
+	jNBe1ij0/IRMEAJnYerPGnQqXOua4pdJoLC61uoYoy5uuXgjgpe/z+XXi8hfjJ1lYz8ZvmjWDh07F
+	psuUzg86Gj/r+GdM6Mh2/tOd3pANTgC0303FJfz7k4B8FN06CNeBfB1E3lnfCvEQmgpPPpZwj6bSR
+	oEzzcwPEB2PRiVXZKCYnHe3uFPqRagYI4oJN6K4/c3VOYiPiR4VVZ5WG/AzRHLA/VOFOAap/3BUcO
+	KDx5TcPrixzSPyrzctEnqKwW3ZLJZmAqxNAOEqbJUN9CWKf/vWnMDaHTXf7J5XdvAX5L/lnUFH5Ra
+	V/V+VGlY+L7WT6ooEBEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huyhB-0003wI-60; Tue, 06 Aug 2019 12:36:05 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1huymd-0005fY-RA; Tue, 06 Aug 2019 12:41:43 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huygy-0003vQ-7P; Tue, 06 Aug 2019 12:35:53 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 7C9BD609CD; Tue,  6 Aug 2019 12:35:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1565094949;
- bh=NZDwtrQI4U0ABkUADvCTivKQDmwAGr82qO/iVNbsfxM=;
- h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
- b=Rv5GcULgTlXB33lddtwnOiJysbUkExlENO5AvJ8A2llTgPI8wKjpuZh4YleI4z6gf
- SbxtOOHKpHc8Hb10Fad+WohaAgudBTgGrQ6ANRV/BGEuBkw7/ua1AjpbBSgdrKMKbn
- Tzq9aWU4LSRZ1soIPJADVVe+fR0Cq8Egt9QA+208=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.8 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,MISSING_DATE,MISSING_MID,SPF_NONE autolearn=no
- autolearn_force=no version=3.4.0
-Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
- [88.114.240.156])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: kvalo@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id DB2B56090E;
- Tue,  6 Aug 2019 12:35:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1565094948;
- bh=NZDwtrQI4U0ABkUADvCTivKQDmwAGr82qO/iVNbsfxM=;
- h=Subject:From:In-Reply-To:References:To:Cc:From;
- b=XIRSpFrtyrkt1YScYWkoXYydse7nqZ+gBnOvX7Id2f9juOLnmFeFr/tzH1PURrJyQ
- p3Clla8U6EAAeFOq8YK1N/HjS6iejAMQJM2Nz1wFOufmZ+YJMHJHZWSPKXRcCwx5iD
- PUU5EDFETNy8UexZBeActnB04Gkl3dH1BbfnbWT0=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org DB2B56090E
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
+ id 1huymS-0005em-G5
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 12:41:33 +0000
+Received: by mail-qk1-x743.google.com with SMTP id s145so62713079qke.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 06 Aug 2019 05:41:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=u3j7GHBDsYZqcSC8c4X3v5Uqt8dzZQfTUO2AFNMReDw=;
+ b=FQiOlIKSS0eD3TNtMvXsXdQcFHSPt4S2/O13HOgIQF3BBpPJEmNhphRaVESxB+/v5C
+ 5qBKNPqAnIj4ckp9pVzB+X1YH4IRmRsnQakvc4frqPJDe7skXyviwbRSZdePcurXFtit
+ oxjolhSUD1cakBBxKrDx9RBqbke20Mi49ynO9U1QqWWooGBS+MUZ4xFkbDqU2yxb3HO7
+ BW5iBjS+8k/QajGvHuy8V6TrXCrTBwVpUmgqImFyVQbjhHfT0WTImxnJ9vTxADZIzNNq
+ Cy7g42vqtxjAzrmfVgDuIjTO2G7d0JJDjSEgJkcLFpRLqwPKzhWyLFG20xWlOKi1pa5M
+ Y+1Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=u3j7GHBDsYZqcSC8c4X3v5Uqt8dzZQfTUO2AFNMReDw=;
+ b=Ito0oLbm1bm+fodmrImaft9FD1C92d5miegoQ+Vr36frvPr2+KwFrP8rURsGkrZygF
+ XCPjIUSEXur41dXve2HmAGC2S+/t8i9zTn8Edkv3BRTthMVixGigTi56n4dX+X9pWNl+
+ wupMOszrZ9/c8/dmbEFyNvhrniZMsHEamgqkQtPbh7AS53IgvGgpd5wXo9ayG+oBQJfs
+ 3EhJUs39m4txAKi6FwWj6aorOMAmnVzDjwdbCl9EWjyzVU+BhnviVofdtG2PcfMAPlUG
+ oR6l25OfMBd5XSTUbQk8mDBeGCQ2PxEx4ocDtVxP3yjO7O9CEYd7Jy9nBRQ+ocuQE6tE
+ 3tAA==
+X-Gm-Message-State: APjAAAXElJthpOGgMPYwcVttbhO/n0juJyeVDUp7nYVLGUEwe6C8m337
+ 0RZ9gvd+eWFFkO8s2h2PWia17kId44EdbeidpRQMSSQN
+X-Google-Smtp-Source: APXvYqwzNqb9edIQMJJtQ4zXYoFI3EmafHysUGgbYIqu6baWRHFYOyvHMS2DcqHFT1zgAp/i0ioY67vWj8f9l/lAoJM=
+X-Received: by 2002:a37:9a0b:: with SMTP id c11mr3085312qke.204.1565095290395; 
+ Tue, 06 Aug 2019 05:41:30 -0700 (PDT)
 MIME-Version: 1.0
-Subject: Re: [PATCH] mt7601u: null check the allocation
-From: Kalle Valo <kvalo@codeaurora.org>
-In-Reply-To: <20190724141736.29994-1-navid.emamdoost@gmail.com>
-References: <20190724141736.29994-1-navid.emamdoost@gmail.com>
-To: Navid Emamdoost <navid.emamdoost@gmail.com>
-User-Agent: pwcli/0.0.0-git (https://github.com/kvalo/pwcli/) Python/2.7.12
-Message-Id: <20190806123549.7C9BD609CD@smtp.codeaurora.org>
-Date: Tue,  6 Aug 2019 12:35:48 +0000 (UTC)
+References: <20190806030718.29048-1-luaraneda@gmail.com>
+ <20190806030718.29048-2-luaraneda@gmail.com>
+ <17a45e21-8362-e888-d222-812c879a38a8@xilinx.com>
+In-Reply-To: <17a45e21-8362-e888-d222-812c879a38a8@xilinx.com>
+From: Luis Araneda <luaraneda@gmail.com>
+Date: Tue, 6 Aug 2019 08:40:37 -0400
+Message-ID: <CAHbBuxosAnWdpee8jS7feR06+KF_PjOiTF2+PsiMnMAjwfUFKw@mail.gmail.com>
+Subject: Re: [PATCH 1/2] ARM: zynq: support smp in thumb mode
+To: Michal Simek <michal.simek@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_053552_286662_1215CFEB 
-X-CRM114-Status: UNSURE (   7.04  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190806_054132_586919_6C995AD0 
+X-CRM114-Status: GOOD (  14.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (luaraneda[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,33 +94,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: secalert@redhat.com, Jakub Kicinski <kubakici@wp.pl>,
- linux-wireless@vger.kernel.org, kjlu@umn.edu, linux-kernel@vger.kernel.org,
- emamd001@umn.edu, linux-mediatek@lists.infradead.org, smccaman@umn.edu,
- Matthias Brugger <matthias.bgg@gmail.com>, netdev@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Navid Emamdoost <navid.emamdoost@gmail.com>
+Cc: Russell King <linux@armlinux.org.uk>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Navid Emamdoost <navid.emamdoost@gmail.com> wrote:
+Hi,
 
-> devm_kzalloc may fail and return NULL. So the null check is needed.
-> 
-> Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
-> Acked-by: Jakub Kicinski <kubakici@wp.pl>
+On Tue, Aug 6, 2019 at 2:39 AM Michal Simek <michal.simek@xilinx.com> wrote:
+>
+> On 06. 08. 19 5:07, Luis Araneda wrote:
+> > Add .arm directive to headsmp.S to ensure that the
+> > CPU starts in 32-bit ARM mode and the correct code
+> > size is copied on smp bring-up
+> >
+> > Additionally, start secondary CPUs on secondary_startup_arm
+> > to automatically switch from ARM to thumb on a thumb kernel
+[...]
+>
+> It is really a question if this should go to stable tree. It is pretty
+> much new feature.
+> Will be good to also add link to similar patch for example this one
+> 5616f36713ea77f57ae908bf2fef641364403c9f.
 
-Patch applied to wireless-drivers-next.git, thanks.
+Ok, I'm dropping stable from CC. From the previous comments, I thought
+that the two patches were part of the same fix, but now I realized
+this is a feature rather than a fix.
 
-b95c732234fa mt7601u: null check the allocation
+Michal, do you want a new version with the link to the similar patch
+or would you take it in its current form?
 
--- 
-https://patchwork.kernel.org/patch/11057013/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
+Thanks,
+Luis Araneda.
 
 _______________________________________________
 linux-arm-kernel mailing list
