@@ -2,87 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 560DF82D57
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 10:02:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E17182D8C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 10:09:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FtE1z83ULljOEgGFdyl/Wj6r6oKcyGUbxqkLHLMRU7o=; b=ioMaxqSnKBfogD
-	M8TeAKY7heRFnYqjpWhKAjezVImx7vxoFsaz9EDao8Nen6wOz5NTDE4i95hDJXjPm4hNzpCoKS0D/
-	aDcuozDGLlv3NKbnPOlz7Fcy7UukiR60tP33enMQoctY/gtyNOwPlfzFWZmeIWtlglBsuTcbDD2QK
-	8TJNuf/zgdZ/3lW2mKKYW/wEH3FnDEJ0/kG9Ej+0wLtOl6Px/6vQ6+HFEOvpk/6WIEP+1AFqTeNd3
-	HonkgKHQPBbdRlNlQWNpUh4rsV8ujAtghDNojtEHwfsbt53uxYl8H09LspqQpW2BPVcu5s7CEuo3s
-	P57RrXIChoSSXaRBExCA==;
+	List-Owner; bh=dags0lh+XLj0FFUYPNu0hAEx/VgCHqmu3My1+adUtfc=; b=i3QKscTlyp0Bdo
+	qOOtXZoKZClf334IXiYarPk7DkiqbxoDJE+Ey6SLAJFPD4DmIFqBdBgjvaAqCYDSPJCGqxcmTIDkw
+	0QNe/bk5TYsh0sOVZzBeGU8Z8kEp1hyUeJ8phvES6QPgJncnlLr8iHeycf/wEQHgn+dzXTdnMyJ0Y
+	qYClR1qVkd/V1yi0SO/mkxy+I0rFnmzgNPEXJtSoXdwHLsMtnHIeXjkALYx9/3oTjtfz/6vZ2uxqk
+	gpMkzn6wLIpy6QVkjaToMOCmyJkcs7z8AHzVOXqlUxgK6O0/v+z5zGp+MSU/397oZKZtfANyN/seH
+	Q9esIzfa9Cw0UlQbOZVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huuQX-0000x2-CR; Tue, 06 Aug 2019 08:02:37 +0000
-Received: from skedge03.snt-world.com ([91.208.41.68])
+	id 1huuXQ-00030H-Nw; Tue, 06 Aug 2019 08:09:44 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huuQC-0000vg-JN
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 08:02:18 +0000
-Received: from sntmail11s.snt-is.com (unknown [10.203.32.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by skedge03.snt-world.com (Postfix) with ESMTPS id BCCFC626313;
- Tue,  6 Aug 2019 10:02:04 +0200 (CEST)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail11s.snt-is.com
- (10.203.32.181) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 6 Aug 2019
- 10:02:04 +0200
-Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
- sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1713.004; Tue, 6 Aug 2019 10:02:04 +0200
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: =?utf-8?B?VXdlIEtsZWluZS1Lw7ZuaWc=?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH v3 2/4] serial: mctrl_gpio: Add a NULL check to
- mctrl_gpio_to_gpiod()
-Thread-Topic: [PATCH v3 2/4] serial: mctrl_gpio: Add a NULL check to
- mctrl_gpio_to_gpiod()
-Thread-Index: AQHVSRmhj6XM1Buz9UqFmvYk2hHNCKbno2OAgASBqgCAAX0UAIAABJuA
-Date: Tue, 6 Aug 2019 08:02:04 +0000
-Message-ID: <3672939d-183d-f844-c44c-c70a77931c72@kontron.de>
-References: <20190802100349.8659-1-frieder.schrempf@kontron.de>
- <20190802100349.8659-2-frieder.schrempf@kontron.de>
- <20190802121231.wk6yg5mkyivs3rni@pengutronix.de>
- <f866213b-fd3b-8602-6c11-56cb65a1ea05@kontron.de>
- <20190806074534.5w773nltywxyiljz@pengutronix.de>
-In-Reply-To: <20190806074534.5w773nltywxyiljz@pengutronix.de>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
-Content-ID: <44F6FF28ECA0604BAC78178DAA15EB46@snt-world.com>
+ id 1huuXD-0002za-DX
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 08:09:32 +0000
+Received: by mail-ot1-f65.google.com with SMTP id j11so33048823otp.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 06 Aug 2019 01:09:28 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=xqMzHVpDgAOeonwqolEAexQrNRkRWUmsMZx6uc5Di+U=;
+ b=FI41HtdD/7Dc2ZQ7NBdA/yqPzwrc8wxAe+hOXN4pvLoa3zRrAYW90KkGvA5FkLrgX0
+ 1CGQLrUoQwC/x3pFLRJxS4gRqXRsIzx10vHMcU1g3wSwzZRBIJgXfQhvs1vuzd9JchjB
+ 9axwDTvPWtsGxK8L6wJATXXEpwt3aRtHhs8obPhelOl6j1wSN+lptjJZvomVO7JyiE3l
+ iIlYJuYaftVcFpuOMNoyMmCjvOqi5kpKI3Dk4lg1T7tVx97MkitZpuJ3XrKb/oJmDFb0
+ 7gYJiZrnJeAUWdfhZn/SLtpHgrZvV2g2JcuDqc14mrO+UetQ4Tdbb7NjSnPvQLN1JK/Q
+ sPQQ==
+X-Gm-Message-State: APjAAAXVxJgeoGlR/QBIIAxNoUF/JFGp5YCl0ecxh3DdXKGi+rwua3Eu
+ cmJkFUHrjp0Lu35WGxGa2KIl/0GGLxXO18g1UZc=
+X-Google-Smtp-Source: APXvYqyxyt+Zm9XpZFQ3yabtEsQoWuW6uuAYo0QQEQY3CgXVLXrqXiHwww1RAwfouKG1y4E2IuOgL/omHPxmr9xrqjg=
+X-Received: by 2002:a9d:5c11:: with SMTP id o17mr1832302otk.107.1565078968223; 
+ Tue, 06 Aug 2019 01:09:28 -0700 (PDT)
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: BCCFC626313.A0B69
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: festevam@gmail.com, geert+renesas@glider.be,
- gregkh@linuxfoundation.org, jslaby@suse.com, kernel@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- linux-kernel@vger.kernel.org, linux-serial@vger.kernel.org,
- s.hauer@pengutronix.de, shawnguo@kernel.org,
- u.kleine-koenig@pengutronix.de
-X-Spam-Status: No
+References: <20190802100349.8659-1-frieder.schrempf@kontron.de>
+In-Reply-To: <20190802100349.8659-1-frieder.schrempf@kontron.de>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 6 Aug 2019 10:09:17 +0200
+Message-ID: <CAMuHMdXp9GAgWE7Ea_oA08PdPc8+J_wGVhM7L5B466OSbr7D_A@mail.gmail.com>
+Subject: Re: [PATCH v3 1/4] serial: mctrl_gpio: Avoid probe failures in case
+ of missing gpiolib
+To: Schrempf Frieder <frieder.schrempf@kontron.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_010217_086304_95B97927 
-X-CRM114-Status: GOOD (  12.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190806_010931_459990_55EE3908 
+X-CRM114-Status: GOOD (  10.73  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.68 listed in list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,43 +82,51 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
  "geert+renesas@glider.be" <geert+renesas@glider.be>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  Jiri Slaby <jslaby@suse.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "linux-imx@nxp.com" <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
  "festevam@gmail.com" <festevam@gmail.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDYuMDguMTkgMDk6NDUsIFV3ZSBLbGVpbmUtS8O2bmlnIHdyb3RlOg0KPiBIZWxsbyBGcmll
-ZGVyLA0KPiANCj4gT24gTW9uLCBBdWcgMDUsIDIwMTkgYXQgMDk6MDE6MzlBTSArMDAwMCwgU2No
-cmVtcGYgRnJpZWRlciB3cm90ZToNCj4+IE9uIDAyLjA4LjE5IDE0OjEyLCBVd2UgS2xlaW5lLUvD
-tm5pZyB3cm90ZToNCj4+PiBPbiBGcmksIEF1ZyAwMiwgMjAxOSBhdCAxMDowNDoxMEFNICswMDAw
-LCBTY2hyZW1wZiBGcmllZGVyIHdyb3RlOg0KPj4+PiBGcm9tOiBGcmllZGVyIFNjaHJlbXBmIDxm
-cmllZGVyLnNjaHJlbXBmQGtvbnRyb24uZGU+DQo+Pj4+DQo+Pj4+IEFzIGl0IGlzIGFsbG93ZWQg
-dG8gdXNlIHRoZSBtY3RybF9ncGlvXyogZnVuY3Rpb25zIGJlZm9yZQ0KPj4+PiBpbml0aWFsaXph
-dGlvbiAoYXMgdGhlIDgyNTAgZHJpdmVyIGRvZXMgYWNjb3JkaW5nIHRvIDQzNGJlMGFlN2FhNyks
-DQo+Pj4NCj4+PiBBY3R1YWxseSBJIHdhcyBzdXJwcmlzZWQgc29tZSB0aW1lIGFnbyB0aGF0IDgy
-NTAgdXNlZCBzZXJpYWxfbWN0cmwNCj4+PiB3aXRob3V0IGZpcnN0IGluaXRpYWxpemluZyBpdCBh
-bmQgZXhwZWN0aW5nIGl0IHRvIHdvcmsuIEkgZGlkbid0IGxvb2sgaW4NCj4+PiBkZXRhaWwsIGJ1
-dCBJIHdvdWxkbid0IGdvIHNvIGZhciB0byBjYWxsIHRoaXMgImFsbG93ZWQiLiBUaGUgY29tbWl0
-DQo+Pj4gaXRzZWxmIGNhbGxzIGl0ICJ3b3JrYXJvdW5kIiB3aGljaCBzZWVtcyBhIGJldHRlciBt
-YXRjaC4NCj4+DQo+PiBPaywgYnV0IGlmIHRoaXMgaXMgY29uc2lkZXJlZCB0byBiZSBhIHdvcmth
-cm91bmQgYW5kIGFzIHRoZSA4MjUwIGRyaXZlcg0KPj4gZG9lcyBub3QgdXNlIG1jdHJsX2dwaW9f
-dG9fZ3Bpb2QoKSwgd2Ugc2hvdWxkIG1heWJlIGp1c3QgZHJvcCB0aGlzIHBhdGNoDQo+PiBpbnN0
-ZWFkIG9mIGVuY291cmFnaW5nIG90aGVycyB0byB1c2UgbWN0cmxfZ3BpbyBiZWZvcmUgaW5pdGlh
-bGl6YXRpb24uDQo+Pg0KPj4gSSdtIHJlYWxseSBub3Qgc3VyZSB3aGF0J3MgYmVzdCwgc28gZGVw
-ZW5kaW5nIG9uIHdoYXQgeW91IHdpbGwgcHJvcG9zZSwNCj4+IEknbGwgc2VuZCBhIG5ldyB2ZXJz
-aW9uIG9mIHRoaXMgcGF0Y2ggd2l0aCBhZGp1c3RlZCBjb21taXQgbWVzc2FnZSBvciBub3QuDQo+
-IA0KPiBJIHdvdWxkbid0IGVuY291cmFnZSB1c2FnZSBvZiBtY3RybC1ncGlvIGJlZm9yZSBpdCdz
-IGluaXRpYWxpemVkLiBTbyBJDQo+IHN1Z2dlc3QgdG8gZHJvcCB0aGlzIHBhdGNoLg0KDQpPaywg
-dGhhbmtzLgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1hcm0ta2VybmVsCg==
+On Fri, Aug 2, 2019 at 12:04 PM Schrempf Frieder
+<frieder.schrempf@kontron.de> wrote:
+> From: Frieder Schrempf <frieder.schrempf@kontron.de>
+>
+> If CONFIG_GPIOLIB is not enabled, mctrl_gpio_init() and
+> mctrl_gpio_init_noauto() will currently return an error pointer with
+> -ENOSYS. As the mctrl GPIOs are usually optional, drivers need to
+> check for this condition to allow continue probing.
+>
+> To avoid the need for this check in each driver, we return NULL
+> instead, as all the mctrl_gpio_*() functions are skipped anyway.
+> We also adapt mctrl_gpio_to_gpiod() to be in line with this change.
+>
+> Reviewed-by: Fabio Estevam <festevam@gmail.com>
+> Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
