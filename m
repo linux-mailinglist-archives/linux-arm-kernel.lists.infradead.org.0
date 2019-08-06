@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 304BD8399C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 21:25:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFD578399D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 21:25:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BIuxSIWPi/YiuyPKxKQBXKQVNwNVPGh0Dce8Z92DyxM=; b=LaHIU99OR4842U
-	rpT44dIY5RmBPU2X5lW5xFdiO6IF/KPckl1shOE3Ac/o1AU/5n1xuUL46MKHiPV9lxxDJrbVzijJp
-	JogSte4YKdiscNDPxkutueNM8FLszvSNMbPuCK1OQZXrtN0w2n+HHayeRhuFezSS5vKkSjGC3Ena6
-	dKbb6vUqDP8am11pRxLBmIc3S773w7VJl8BVWM3bDSS3xAWoIT51pIeuM3143WaSgCa/1Ny41HuHs
-	78NcIIjFFOBMZSNRtxmvMNhQZaVdxctsOZb6m4qLueqXQ2XTkjwZg+oMjrGzr+4jgx/4SXduu5Tfq
-	JKtRYGHg0MzC7Q5X/fkg==;
+	List-Owner; bh=BIuxSIWPi/YiuyPKxKQBXKQVNwNVPGh0Dce8Z92DyxM=; b=ukOZwx15tBug+t
+	tjJlBogwkCsXZaozWWtBWPt5gY+N3oXsvCfNAszK/ADGSCMvzm6Ue5EY0WLG40AUBBskWwsM6MxaE
+	Mp4blFUSykJ+aiq0m1bpfaQiZuFzwKtHu5gTEtC9TKkjiTp8xpw37LxHOXNb05R2dBd3P8gmS9tss
+	FgmLsbqinlm43WRhE2+pCilhyafyZuhUEANSGbcx9GsXuZKlT21LUMUElGSBJ6rbRsaV0Ym0bnSFG
+	yi6cm1F8Bxxdkdecmu+8KjefCjXcmHK2Xjw8Nyp2I8WiQOIwc4ZaQjkr1YDVZc7Ns/Y+got7xpRbp
+	tP80jPYlExnpOdRPyCOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv556-0000YR-VH; Tue, 06 Aug 2019 19:25:12 +0000
+	id 1hv55K-0000vq-Vf; Tue, 06 Aug 2019 19:25:27 +0000
 Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv54y-0008F9-25; Tue, 06 Aug 2019 19:25:05 +0000
-Received: by mail-oi1-x241.google.com with SMTP id m206so68298522oib.12;
- Tue, 06 Aug 2019 12:25:03 -0700 (PDT)
+ id 1hv558-0000q1-Le; Tue, 06 Aug 2019 19:25:15 +0000
+Received: by mail-oi1-x241.google.com with SMTP id t76so68315410oih.4;
+ Tue, 06 Aug 2019 12:25:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
  :cc; bh=r400Du+BdhcnVb2kJzBt3FbA/D2Jmeeyq4b8DmzoTuE=;
- b=DqFxHRGxeE89aj7Qk9S9u07itMR2N59xYxVR0F+sAU1LmSLFrJiN5HAHMwrNQ7ct/K
- v/Ol7T2q+hmaYWo/v48u89lPjO0+affKUKx9WKGXAZC24PwmbvsLZoIya7p5fbOLAJ2n
- Vfjh1pYQtqFV9bPQZV3NzTUSWkyGQVqTuN/t+aTTX0L110+DIMg7MCDXx9aODVslSRu7
- RW336Yu4K8W4yAjoSIY798FPBJ/9yYeSQE+nmNFR0dvGLms4arFI7cI6CtDcv084cWgN
- B6PicJp3uO+PPhozN3GtrB4EvahPkew5AqhRv9De+Lo6PYBRI1Ey2lR7vitHuRFnrFXf
- jWlw==
+ b=mD/z0LTmYu+WiqSkvRq3LLNujYAd8HlJFwozWt4552r1/zczO8LbiytL3e/MDZPv93
+ tKx2hPMqdZNJy4AZEtSf1xYNmFi9cTQ0pg/e1V2e9LTpcKZL2x+lIaiQsQXoXYAfsjNF
+ MswbQTt1PmNXl/ZdWsUgdcCG54PR1yGVHLAo1DzYg231IGuaZYdXpqMocD6Lorye/0Ii
+ wxqgPZY4+DO5OKhBhuujKEGKCh+I94hhv+5PYRhqxR8LTf/p+JDW57C97tpbCY5SuUg4
+ sre2BahrbnzfpUPj+zKkiKXpU4R62NHuLps/qXZyzUkDpsHPwYeMjcPsJ2DniB/2h5Fy
+ xAfA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
  bh=r400Du+BdhcnVb2kJzBt3FbA/D2Jmeeyq4b8DmzoTuE=;
- b=RjpT5WcaPJ//ps0K2NhlbKaSXNw7sjjn7jYFfJbIy4f6vDMoJHN6uakOeXP0ltRpKx
- FlODDfeDcEl05nccyllI6lU3UQpQZo0yqViBNcWT/XMlK30iVowtyCch1UyigB4kyuRu
- IBjYNXTCjj13v/wau1+MpDi2MGdlkWQyzTtTXjrsBRtTb/ZY2elHrkftcWnwYPRyTnQd
- uAxTK2BMYEeqZRizSA131mSH+51bJHOOI0tprGflF8i2ABAZN/pI8PVZXMnHBDu/RWrJ
- FWUgSG0+LpSrFTaaWcIZ5V91BPJKPIBng8pUrcKHYCKKsLwpupUEH5EdV9Vx/2kk+B2v
- NlRw==
-X-Gm-Message-State: APjAAAWU7dYis5CQNu/CaCLAHidBUPf0WofVIY/71u9Kjk2L0OkyyYL1
- ip8FVLGSFwPMZCFgAXiqMpIhKNiLSXwQuHb/ulA=
-X-Google-Smtp-Source: APXvYqwewYkUVdiv1FBOEZMeibK2YzRko0jtbtspzjUrql75NVp+buCLmwAHPvJS6h0/N8GPAo9FKa2th99cIPmU6t8=
-X-Received: by 2002:aca:4306:: with SMTP id q6mr3731470oia.39.1565119502665;
- Tue, 06 Aug 2019 12:25:02 -0700 (PDT)
+ b=kasrkkIyQ8Nck44boe3vGU7GgfezF3mLeS0oP66uwGgKzKhZWrqfmMlmXR0YbTGx/r
+ qAByYxmZ0qGgCqCo4lWIipOgcT/AtSKayDYPaj6euIVaWoyJ1HwedQVwDz8q7q8aStK0
+ EW0MSWZqVOGfMasi7oGuh6F5Uyj2fW5mM0sad7z71pSCcJp9VRdLuU73FA25gqcsw+9y
+ LzVxs78YXn5OAWhPx/Iu7CQUCdPGEj7k5U20MWGb/9vyDxNAku1bt46FdfWuGu6IoGz5
+ xeFLbuugk1uWFU02z1foBVcxp9Zb66v4IbbCrSOasWMhjuY6QfsHRNGlMMV3E5AyW6Rb
+ w28w==
+X-Gm-Message-State: APjAAAU5VgNW4SCSwrDt2FBAQC3SZKYeMbHlsXRGn/tbcWCLhLqTbapM
+ qr8hwBZvX+9sigXlC1MDOZQRLzn9WrdgksZzRWw=
+X-Google-Smtp-Source: APXvYqycqxwAz4ajkkyCaUP9+StDKHGffRIZJGY2i531ZcuklTJ3ImWMc0UgBRuQREKN2HBys+2LheHpq2cOHQCsqK0=
+X-Received: by 2002:aca:5c55:: with SMTP id q82mr2887362oib.15.1565119513938; 
+ Tue, 06 Aug 2019 12:25:13 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190806130506.8753-1-glaroque@baylibre.com>
- <20190806130506.8753-5-glaroque@baylibre.com>
-In-Reply-To: <20190806130506.8753-5-glaroque@baylibre.com>
+ <20190806130506.8753-6-glaroque@baylibre.com>
+In-Reply-To: <20190806130506.8753-6-glaroque@baylibre.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 6 Aug 2019 21:24:51 +0200
-Message-ID: <CAFBinCBMk=OZH3L0mWL=Wk95MeGey2O+xXD19T1PbYXz2CmuWw@mail.gmail.com>
-Subject: Re: [PATCH v3 4/6] arm64: dts: meson: sei510: Add minimal thermal zone
+Date: Tue, 6 Aug 2019 21:25:03 +0200
+Message-ID: <CAFBinCCtuL_3TcYJS625ZdJQE_9Lt0n_nNVtxKoY-Nyoz2wSDQ@mail.gmail.com>
+Subject: Re: [PATCH v3 5/6] arm64: dts: amlogic: odroid-n2: add minimal
+ thermal zone
 To: Guillaume La Roque <glaroque@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_122504_133946_1DA65967 
+X-CRM114-CacheID: sfid-20190806_122514_724050_51DF197C 
 X-CRM114-Status: UNSURE (   8.58  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
