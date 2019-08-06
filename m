@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8C20839D9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 21:50:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AADC839DF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 21:53:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r/IL7Nl963cSsxLMcIUrgFTC/090MKRCi0pFI2c5lwA=; b=dbzLDj7fe/JKMz
-	ATJp6MlCz4++w5gpEfaDcmfXKTWdGL1tRUhm3D8g2gcS/9qhOE7hTClbxis/Z61sJO74d+yls9OJl
-	9/6OOA8N2XxDk1ue5BE9SdE251VDsgJDkJQosIruTf1ECZdRBxUimWulSY94bJ2TSutG8nTTjgQpu
-	7GAbmJyue5aduXIUXldwc1wNZuk9u+aa9EZxwhiwhvxO8o8EzuQf/wVbZ+YudVKQu8vAp9E+hSppC
-	jbOxsnR/DqPkEPIEgXqycP4E8tlFrFdDeqf9k8nLNDFCydA8QHjY8Xpt4VzbHWjxjr/tDe7wMQ03g
-	cjQSHLOYBV7PxrPdEvHw==;
+	List-Owner; bh=aSkqjYp6v+wkF+ibMpOOJPzgLwTCa5SHd0a1RrM1rCU=; b=GebpAps6wSyoIf
+	TK9oftGNnGQt+Dt8HLqqwOkW0snVrhLk5q3Z4mmbYhuUK0uT6JTYWuFuhXcJg5CqycyDcXlb5ZQHc
+	rr7ewuOWIYWFUQC1WPseQswe4grjuxeHRwVLsePowULstwp3/aAWtWVJ7HXt4/HCIpLLOAQ9iaGjN
+	IykqK+DnEXDsmjTwz8lOv7GdKxWdAj5Rjyc0j7udPCL6xsZL6oy0+Ja4COGjzUETZuJDYqGWxoB9H
+	A9E9BJ+KcYtVP4Wm2guQARQAdioDmmFtVcnYCtYf3yIXUnMD5oAhCb60XGKH2J/Esgip5Oe6NE2FG
+	eFzay7XxUyXHQ4Y8siEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv5Tr-0001FX-VX; Tue, 06 Aug 2019 19:50:48 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hv5Vy-0001d1-3k; Tue, 06 Aug 2019 19:52:58 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv5Th-0001DV-Tr
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 19:50:40 +0000
-Received: by mail-wr1-x444.google.com with SMTP id n1so2759291wrw.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 12:50:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ id 1hv5Vl-0001bb-6M; Tue, 06 Aug 2019 19:52:46 +0000
+Received: by mail-oi1-x242.google.com with SMTP id c15so13007690oic.3;
+ Tue, 06 Aug 2019 12:52:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kGaKvQFsZgZRc0gqerogxzfGiThuXifNLB2OEC0cIoY=;
- b=KcpdUETMBYuJyx4JKxpCZkDiJd9PgHCJ+KVUsKbiK69I/uNOk1diB7NGlPKuUTgu03
- 5bvA0tDzp9uxmVSvU3Lv5Kpo7zoW4UH6UPRVZc6txr//tC1JsGtF6JpWd1zZHIskDlEb
- TiRFuGrOZGzTrirywRRsM6BJdkmLwC1GzPQDKM/xujPh5hjKsBo+NZHsVRyUVRK6xBU2
- vJqGL0IWeQCMCKJQRh7DG0Ngjau29xL3YjVRvzBQoh73f4JOplrpPqhkR0G094ZbQUaY
- Grq5Qh03BfsG/86N1AeD7/6qVYclfLMGsRTp4j/jG1NhjPNzUa1Pc3kMLtmlv43w7HEU
- F9gw==
+ :cc; bh=4E/kye31gm/TUQMINOCXfCGV9Lfx0lm6nnvhyTx90lw=;
+ b=Yzk47bOJktflINEYudmIXcRskp+l8U5BovlNaqWp2akIE2xwTuHvoX3zT22MAUDuJ3
+ XO8JCNSJ39+r3FvB83PSqvCOdBb6dA453gqBq5UjxYm/x939xxHrUQzGEjpWMeDkbg7C
+ PU9R1vq6BARJBbD+Qx8FegPLsD/BA+rrPXewHWSRN9ukZN2EId0grtB068+Xr6vbxVvs
+ fJ9+rJiecg5Jn3pzoqdn4FJOtqfEIua19AftTYsNEwolx2VFWVCN7f0cwiIYqdjfj2ew
+ nwgw6Avn3h9aL2w/i5R+J0oEt6Ie4TjULWWKGT8FbgpuY1Nd4cVcGk7HfaKsTVYhV7NB
+ aslA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=kGaKvQFsZgZRc0gqerogxzfGiThuXifNLB2OEC0cIoY=;
- b=EfTcSF6kXoCvyG0foENq/Xjt6gQaCcxSRJ4uyNcsd/1V/P4qR9IyomSVgelmh7VHjc
- WQTp7swCuqYk+SIvzJytdx/mVJW2AZCT1xRBJ2Akz+deyPXrCMEEj9s/vVsWn91DMiHZ
- EVX52p+3zrhuWe+wmhsnWyBmghA6cNffkuoEEm634gDJ0R0G0+H/yPR4XaoKdOdjj9+G
- 3iEvhsDXbA/LwOcUEnc6LMXSy2rjAuUPiXSHIK5WgspbE6+VqahxLzhmucXpwL289G/g
- CtK8G0zRRpLdIH1HB4V0WrM7hG8xi0ZCmdGT9VYlMlyHwa8WP3otDiuthm01SIZz8FMo
- 321w==
-X-Gm-Message-State: APjAAAVG7KTTcx+Mn7VsNJH17/BZuf7Va1nmN2ZKbazkdAspj9a+CSqh
- gnC/CIaHqFyiYXrlpd8I1kHqjQy/88D+uNLKVb4a
-X-Google-Smtp-Source: APXvYqyDnhoa/uCrTWnPgUp2jKiHChoqXQq+xQxY9yMjyk5SXnWI/bXZHLptGN4xGZpSOxpD0VQaSeeW0iGW7hI8NOM=
-X-Received: by 2002:a5d:6650:: with SMTP id f16mr6385465wrw.89.1565121033666; 
- Tue, 06 Aug 2019 12:50:33 -0700 (PDT)
+ bh=4E/kye31gm/TUQMINOCXfCGV9Lfx0lm6nnvhyTx90lw=;
+ b=OJdgfweOZbCKFyYuecfp9BcHYOGqq0l24Ig2G3+xVMP1JNRwFyN64OXstc3YBuzppx
+ HvCNWMteU7yjF8Ww4eZP2VV708MUG6BFudRJYegzJ/ZcrsUfScj/FX6+sXawOWlKSaT1
+ 3GjX7C6oKqlA5+kADF8saay0jzmWApWaeDD8iM56t5A7yG1bMmFs2mG4TdjWQq4X6mDS
+ LLJWBBq+iSHzxk15rNIoRw7EkOGvj6SFAiv5ww/ZmGMfsjoGg0n9boj5anDBKiiU8BSt
+ kWaW9xT5vub7inI6Ho+fEqjHSt2vrFejHfIeXvOx1KKahK2U29iAPJoVS4iHRuQu3tnI
+ uc5Q==
+X-Gm-Message-State: APjAAAWYyZqwS+52YDVcJIInpw9JCoBnlu8g2C7lqvhz9wyHSPNgHgek
+ yajK0iRwQObKFD0kSYO5Upri5zTopikXYICNqByn3obh
+X-Google-Smtp-Source: APXvYqw1ATDKzq4Ht5dmq0BSO1jAsgEOQjI9m/cdHrI7S9kc9h6PS8yJ28neuhhhpzIY2bUqGqV7RB4pF2K8DWgt1V0=
+X-Received: by 2002:a05:6808:3d6:: with SMTP id
+ o22mr3801512oie.140.1565121163808; 
+ Tue, 06 Aug 2019 12:52:43 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190628073425.25165-1-jianjun.wang@mediatek.com>
- <20190628073425.25165-3-jianjun.wang@mediatek.com>
- <1564385918.17211.6.camel@mhfsdcap03>
- <20190806162432.GA15498@e121166-lin.cambridge.arm.com>
-In-Reply-To: <20190806162432.GA15498@e121166-lin.cambridge.arm.com>
-From: Bjorn Helgaas <bhelgaas@google.com>
-Date: Tue, 6 Aug 2019 14:50:20 -0500
-Message-ID: <CAErSpo5AVXekj8hWxDbf+zTwv9WmQessdBppNrVtOWOkuTREtA@mail.gmail.com>
-Subject: Re: [v2,2/2] PCI: mediatek: Add controller support for MT7629
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+References: <20190731153529.30159-1-glaroque@baylibre.com>
+ <20190731153529.30159-3-glaroque@baylibre.com>
+ <CAFBinCDGSJABnS1L1ULueyeXZaV38qrxEA0a12gB-uyRC_TvPQ@mail.gmail.com>
+ <14e14cd9-46bd-0d43-654c-6db64397f5c7@baylibre.com>
+In-Reply-To: <14e14cd9-46bd-0d43-654c-6db64397f5c7@baylibre.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Tue, 6 Aug 2019 21:52:32 +0200
+Message-ID: <CAFBinCB3ZBPVEJKV2Rfh_w-zWrhoToYdoYE6Wox+JeB-YH+Khw@mail.gmail.com>
+Subject: Re: [PATCH v2 2/6] thermal: amlogic: Add thermal driver to support
+ G12 SoCs
+To: guillaume La Roque <glaroque@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_125037_994638_1CAF6F29 
-X-CRM114-Status: GOOD (  24.94  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190806_125245_268932_E9231334 
+X-CRM114-Status: GOOD (  22.93  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -86,8 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,121 +96,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ryder Lee <ryder.lee@mediatek.com>, Linux PCI <linux-pci@vger.kernel.org>,
- youlin.pei@mediatek.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Jianjun Wang <jianjun.wang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org, khilman@baylibre.com,
+ daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 6, 2019 at 11:24 AM Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
->
-> [trim the CC list please to keep only required maintainers]
->
-> On Mon, Jul 29, 2019 at 03:38:38PM +0800, Jianjun Wang wrote:
-> > On Fri, 2019-06-28 at 15:34 +0800, Jianjun Wang wrote:
-> > > MT7629 is an ARM platform SoC which has the same PCIe IP with MT7622.
-> > >
-> > > The HW default value of its Device ID is invalid, fix its Device ID to
-> > > match the hardware implementation.
-> > >
-> > > Acked-by: Ryder Lee <ryder.lee@mediatek.com>
-> > > Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
-> > > ---
-> > >  drivers/pci/controller/pcie-mediatek.c | 18 ++++++++++++++++++
-> > >  include/linux/pci_ids.h                |  1 +
-> > >  2 files changed, 19 insertions(+)
-> > >
-> > > diff --git a/drivers/pci/controller/pcie-mediatek.c b/drivers/pci/controller/pcie-mediatek.c
-> > > index 80601e1b939e..e5e6740b635d 100644
-> > > --- a/drivers/pci/controller/pcie-mediatek.c
-> > > +++ b/drivers/pci/controller/pcie-mediatek.c
-> > > @@ -73,6 +73,7 @@
-> > >  #define PCIE_MSI_VECTOR            0x0c0
-> > >
-> > >  #define PCIE_CONF_VEND_ID  0x100
-> > > +#define PCIE_CONF_DEVICE_ID        0x102
-> > >  #define PCIE_CONF_CLASS_ID 0x106
-> > >
-> > >  #define PCIE_INT_MASK              0x420
-> > > @@ -141,12 +142,16 @@ struct mtk_pcie_port;
-> > >  /**
-> > >   * struct mtk_pcie_soc - differentiate between host generations
-> > >   * @need_fix_class_id: whether this host's class ID needed to be fixed or not
-> > > + * @need_fix_device_id: whether this host's Device ID needed to be fixed or not
-> > > + * @device_id: Device ID which this host need to be fixed
-> > >   * @ops: pointer to configuration access functions
-> > >   * @startup: pointer to controller setting functions
-> > >   * @setup_irq: pointer to initialize IRQ functions
-> > >   */
-> > >  struct mtk_pcie_soc {
-> > >     bool need_fix_class_id;
-> > > +   bool need_fix_device_id;
-> > > +   unsigned int device_id;
-> > >     struct pci_ops *ops;
-> > >     int (*startup)(struct mtk_pcie_port *port);
-> > >     int (*setup_irq)(struct mtk_pcie_port *port, struct device_node *node);
-> > > @@ -696,6 +701,9 @@ static int mtk_pcie_startup_port_v2(struct mtk_pcie_port *port)
-> > >             writew(val, port->base + PCIE_CONF_CLASS_ID);
-> > >     }
-> > >
-> > > +   if (soc->need_fix_device_id)
-> > > +           writew(soc->device_id, port->base + PCIE_CONF_DEVICE_ID);
-> > > +
-> > >     /* 100ms timeout value should be enough for Gen1/2 training */
-> > >     err = readl_poll_timeout(port->base + PCIE_LINK_STATUS_V2, val,
-> > >                              !!(val & PCIE_PORT_LINKUP_V2), 20,
-> > > @@ -1216,11 +1224,21 @@ static const struct mtk_pcie_soc mtk_pcie_soc_mt7622 = {
-> > >     .setup_irq = mtk_pcie_setup_irq,
-> > >  };
-> > >
-> > > +static const struct mtk_pcie_soc mtk_pcie_soc_mt7629 = {
-> > > +   .need_fix_class_id = true,
-> > > +   .need_fix_device_id = true,
-> > > +   .device_id = PCI_DEVICE_ID_MEDIATEK_7629,
-> > > +   .ops = &mtk_pcie_ops_v2,
-> > > +   .startup = mtk_pcie_startup_port_v2,
-> > > +   .setup_irq = mtk_pcie_setup_irq,
-> > > +};
-> > > +
-> > >  static const struct of_device_id mtk_pcie_ids[] = {
-> > >     { .compatible = "mediatek,mt2701-pcie", .data = &mtk_pcie_soc_v1 },
-> > >     { .compatible = "mediatek,mt7623-pcie", .data = &mtk_pcie_soc_v1 },
-> > >     { .compatible = "mediatek,mt2712-pcie", .data = &mtk_pcie_soc_mt2712 },
-> > >     { .compatible = "mediatek,mt7622-pcie", .data = &mtk_pcie_soc_mt7622 },
-> > > +   { .compatible = "mediatek,mt7629-pcie", .data = &mtk_pcie_soc_mt7629 },
-> > >     {},
-> > >  };
-> > >
-> > > diff --git a/include/linux/pci_ids.h b/include/linux/pci_ids.h
-> > > index 70e86148cb1e..aa32962759b2 100644
-> > > --- a/include/linux/pci_ids.h
-> > > +++ b/include/linux/pci_ids.h
-> > > @@ -2131,6 +2131,7 @@
-> > >  #define PCI_VENDOR_ID_MYRICOM              0x14c1
-> > >
-> > >  #define PCI_VENDOR_ID_MEDIATEK             0x14c3
-> > > +#define PCI_DEVICE_ID_MEDIATEK_7629        0x7629
-> > >
-> > >  #define PCI_VENDOR_ID_TITAN                0x14D2
-> > >  #define PCI_DEVICE_ID_TITAN_010L   0x8001
-> >
-> > Hi Bjorn & Lorenzo,
-> >
-> > Is this patch ok or is there anything I need to fixed?
->
-> The commit log need to be fixed and I will do it, the code if
-> Bjorn is OK with it I can merge it.
+Hi Guillaume,
 
-Sure, I'm fine with this.  I don't think there's a need to add
-PCI_DEVICE_ID_MEDIATEK_7629, since it's only used in one place, but
-I'm fine with the code.
+On Mon, Aug 5, 2019 at 2:48 PM guillaume La Roque <glaroque@baylibre.com> wrote:
+>
+> Hi Martin,
+>
+> again thanks for your review.
+you're welcome - thank you for working on the driver :-)
+
+[...]
+> > The IP block has more functionality, which may be added to this driver
+> > in the future:
+> > - reading up to 16 stored temperature samples
+>
+> it's not working, you can verify it if you check the regmap define in the driver. in fact temp is only write in one register, it's confirmed by amlogic.
+I missed that - so please skip this part
+
+[...]
+> >> +config AMLOGIC_THERMAL
+> > we typically use "MESON" in the Kconfig symbols:
+> > $ grep -c AMLOGIC .config
+> > 1
+> > $ grep -c MESON .config
+> > 33
+> >
+> > I also wonder if we should add G12 or G12A so we don't conflict with
+> > upcoming thermal sensors with a different design (assuming that this
+> > will be a thing).
+> > for example we already have three different USB2 PHY drivers
+> >
+> > [...]
+>
+> i check with Neil and for new family it's better to use Amlogic instead of meson.
+can you please share the considerations behind this decision?
+if new drivers should use AMLOGIC_* Kconfig symbols instead of MESON_*
+then we all should know about it
+
+> i don't add G12 because we already know it's same sensors for SM1 SoC family [0].
+my idea behind this was to avoid conflicts in the future
+in case of the thermal driver we may be fine with using a generic name
+assuming that Amlogic will not switch to a new IP block in the next
+years
+I'm not saying you have to change the name - I'm bringing this up so
+you can decide for yourself based on examples from the past
+
+here are a few examples:
+- when Kevin upstreamed the MMC driver for GX he decided to use
+MMC_MESON_GX for the Kconfig symbol name. it turns out that this is
+smart because there are at least two other MMC controller IPs on the
+32-bit SoCs. due to him including GX in the name the drivers are easy
+to differentiate (MMC_MESON_MX_SDIO and MMC_MESON_MX_SDHC being the
+other ones, while the latter is not upstream yet)
+- when Carlo upstreamed the eFuse driver he decided to use MESON_EFUSE
+for the Kconfig symbol name. I found out much later that the 32-bit
+SoCs use a different IP (or at least direct register access instead of
+going through Secure Monitor). the driver for the 32-bit SoCs now uses
+MESON_MX_EFUSE. if you don't know which driver applies where then it's
+easy to mix up MESON_EFUSE and MESON_MX_EFUSE
+- when Jerome upstreamed the ALSA driver for AXG (which is also used
+on G12A and G12B) he decided to use the SND_MESON_AXG_* prefix for the
+Kconfig symbol names. in my opinion this was a good choice because GXM
+and everything earlier (including the 32-bit SoCs) use a different
+audio IP block. we won't have a Kconfig symbol name clash when a
+driver for the "older" SoCs is upstreamed
+- (there are more examples, Meson8b USB PHY driver, Meson8b DWMAC
+glue, ... - just like there's many examples where the IP block is
+mostly compatible with older generations: SAR ADC, RNG, SPI, ...)
+
+I'm not sure what driver naming rules other mainline SoC teams use
+to me it seems that the rule for Allwinner driver names is to use the
+"code-name of the first SoC the IP block appeared in"
+
+[...]
+> >> +static int amlogic_thermal_get_temp(void *data, int *temp)
+> >> +{
+> >> +       unsigned int tvalue;
+> >> +       struct amlogic_thermal *pdata = data;
+> >> +
+> >> +       if (!data)
+> >> +               return -EINVAL;
+> >> +
+> >> +       regmap_read(pdata->regmap, TSENSOR_STAT0, &tvalue);
+> >> +       *temp = code_to_temp(pdata,
+> >> +                            tvalue & TSENSOR_READ_TEMP_MASK);
+> > maybe simply move the implementation from code_to_temp here?
+>
+> for the optional function it could be a problem if i move all in code_to_temp.
+>
+> i prefer to have a function which are just do the conversion.
+I didn't consider this before but you are right
+if the other temperature registers (like IRQ thresholds) also use a
+"temperature code" then it should be a dedicated function (so it'll be
+easier to add more functionality to the driver)
+
+
+Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
