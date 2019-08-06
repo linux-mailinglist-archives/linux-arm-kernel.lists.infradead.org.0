@@ -2,60 +2,137 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1680982BAE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 08:32:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8F6A82BC9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 08:39:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rQBQH/8tNNlq67IY+pobenUltzzr8c96XTU31HuW59k=; b=TdCsa0IDCGFrA/mWJI1+bejFr
-	SUngFXGmG+uGhltDsyarXqtOl/R++jwzr3drPuO/yNjmCyAY+3+48pa0N2rhib4Dvs5oojVAPj3hH
-	3zsp4z0Dxl3XE+5zgFxh6HDLtqW6z8WjzCwTJT4Fyq3KBQhWzxi/d+Q4LaNQ+zpB+bqMAtxVSJ/cm
-	Xrhf0jniETDdyWh/CveaPUlo9V4XRfaAgJ/H2cIsNu85hvd5HwhrBtxF7Gy2do9y2jFuKFUmRNRqJ
-	FybcnKPeakgfG83LdsbEdwUoS/4/Jk6w6LajbwA9qv7sgdnFMaiQmyJ9baNwf2MM66O+9W46XcsKO
-	kJac4xqog==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YIsNpAmUASpGbqrxNJb3GmeC5Ee3eRfFCZOuR+pEz5U=; b=T/9exbS9atD90n
+	rsTMUMgl9HZPVTgRi1TA3Qu2yBLdf/joMGEvCf6JmJyKDhw/t8jlQc1fzXnnum+DjZ4AuDv8cdLiA
+	vtL/15lRlnUVxZPHNFuoypwbiDSh3WFd2xXaY+foCyfgE0AEf4hl59gk+e3Ukypa5WcTu2oTwSWcr
+	gp8iRsUMdgRLBxW+tlvoOcUW0ZfdMYmoU9yf0fNziHkVxn0AO/mvL6Nw0t+YEoVASeZw7DUqAgXIb
+	0/xviw6Jyf0m+ifA5YmBg2lr9UbXgbNaaU6tCGSdv6IRWggU6ov8mVjRt5jU4ZPLTStlisVXCy4aj
+	3zJobbuu08LxP9qX+o5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hut19-0004c6-OA; Tue, 06 Aug 2019 06:32:19 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1hut8O-0006sw-EI; Tue, 06 Aug 2019 06:39:48 +0000
+Received: from mail-eopbgr700058.outbound.protection.outlook.com
+ ([40.107.70.58] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hut0z-0004b7-5x
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 06:32:11 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id E3131677EF7A9412FF53;
- Tue,  6 Aug 2019 14:31:56 +0800 (CST)
-Received: from [127.0.0.1] (10.184.12.158) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Tue, 6 Aug 2019
- 14:31:46 +0800
-Subject: Re: [PATCH 1/2] KVM: arm64: Don't write junk to sysregs on reset
-To: Marc Zyngier <maz@kernel.org>, <kvm@vger.kernel.org>,
- <kvmarm@lists.cs.columbia.edu>, <linux-arm-kernel@lists.infradead.org>
-References: <20190805121555.130897-1-maz@kernel.org>
- <20190805121555.130897-2-maz@kernel.org>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <01b74492-c59f-dfd9-e439-752e6b1c53dc@huawei.com>
-Date: Tue, 6 Aug 2019 14:29:20 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101
- Thunderbird/64.0
+ id 1hut8F-0006sY-F0
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 06:39:40 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=M8TOySbdc1lkSSulCyMAXL7llDF/Vzt9DSsFtF0ZuIJCfiPG/hbfgoAy+xDF563EsXPkUrxmh4lpccbio16eSifLKT4COgPZAHxV9iYPqyhxGDDTlg6sRJGLPwiBXb3GW6HXI1w8mhYYRUiNK1CKPkIK9WKy+sL9ogudVZgk21v+YyjyDpwP4kGG4k6UmJJzuaQPgfD/8a8L3Kaf/39WSmQTVTCLEo66SASH8acBKdGbpbkGNoXBBfpAwkDZ9YHQLd8HAquW5e/aWpphhexc45h0acc5osFarOKI4yilwlTR+jcbiHeq+1V6Gcofw2/9hHcRHyX6qaIF2S8bAk7k3A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lAUBN+EwUvc6JrNlM9On9zHfRBdbBrWObw1xC1j4goM=;
+ b=QkXJbAANVD93GoSdXM/7kGs8IRoZq4v7Of4qJplDjg3CC/XWGWnA59sfnhJ76gat7TQ2/u4NUDD4iRiP+jgQAXeVeeQ3izFNd7/NcUWPy92KxAoadgShjSZeeEQhSnvKR2G5V48BtlVtGeD6JVUVnk0POR19+xB69/LEDmgdiRVqQSh5jo7IQCMHOErzhFLevScGlj0BXO0u5r46W1kMHL7cIaig/FdBGifWcTZccR8cEcf1Dz6+95p13/P4+1/kUZz2TxhAFcaxNauSSruLO9UpEWG71o1aX6pHAH/JrS46WoPBpqdwc8lEAvMQog0LBs3lx0OwYEBuU3DEM8899g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass (sender ip is
+ 149.199.60.100) smtp.rcpttodomain=gmail.com
+ smtp.mailfrom=xilinx.com;dmarc=bestguesspass action=none
+ header.from=xilinx.com;dkim=none (message not signed);arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lAUBN+EwUvc6JrNlM9On9zHfRBdbBrWObw1xC1j4goM=;
+ b=d2cdHAOV+FzN7mOG5qfCn1i58V+tTaPvlgdqOmY2sxUlSKb/YaTJBv44wsy+TGqNseDeaG+/dJn+dAVRpyBZ+YIVLoiWziYlIpczppTbMe11XuLXgT6N4Tsi/9bRzACWOJ1jYZemKeLrf3ce2EzKw0Sv/8B7z1Qk3aYpbUz4dho=
+Received: from MWHPR0201CA0080.namprd02.prod.outlook.com
+ (2603:10b6:301:75::21) by SN1PR02MB3696.namprd02.prod.outlook.com
+ (2603:10b6:802:2d::25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2136.13; Tue, 6 Aug
+ 2019 06:39:36 +0000
+Received: from SN1NAM02FT044.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::202) by MWHPR0201CA0080.outlook.office365.com
+ (2603:10b6:301:75::21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2136.15 via Frontend
+ Transport; Tue, 6 Aug 2019 06:39:35 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.100)
+ smtp.mailfrom=xilinx.com; gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
+Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
+ SN1NAM02FT044.mail.protection.outlook.com (10.152.72.173) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2136.14
+ via Frontend Transport; Tue, 6 Aug 2019 06:39:35 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66]:60651
+ helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1hut89-0008Qg-C1; Mon, 05 Aug 2019 23:39:33 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1hut84-0006sM-8Z; Mon, 05 Aug 2019 23:39:28 -0700
+Received: from xsj-pvapsmtp01 (smtp2.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x766dMLM001169; 
+ Mon, 5 Aug 2019 23:39:22 -0700
+Received: from [172.30.17.116] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1hut7y-0006rA-4v; Mon, 05 Aug 2019 23:39:22 -0700
+Subject: Re: [PATCH 1/2] ARM: zynq: support smp in thumb mode
+To: Luis Araneda <luaraneda@gmail.com>, linux@armlinux.org.uk,
+ michal.simek@xilinx.com
+References: <20190806030718.29048-1-luaraneda@gmail.com>
+ <20190806030718.29048-2-luaraneda@gmail.com>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <17a45e21-8362-e888-d222-812c879a38a8@xilinx.com>
+Date: Tue, 6 Aug 2019 08:39:20 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190805121555.130897-2-maz@kernel.org>
+In-Reply-To: <20190806030718.29048-2-luaraneda@gmail.com>
 Content-Language: en-US
-X-Originating-IP: [10.184.12.158]
-X-CFilter-Loop: Reflected
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(396003)(376002)(346002)(39860400002)(2980300002)(189003)(199004)(26005)(426003)(476003)(5660300002)(63266004)(106002)(478600001)(65826007)(9786002)(31686004)(186003)(14444005)(31696002)(50466002)(44832011)(336012)(230700001)(356004)(486006)(11346002)(2616005)(126002)(6246003)(70586007)(8676002)(316002)(64126003)(58126008)(2486003)(52146003)(23676004)(2906002)(305945005)(446003)(76176011)(70206006)(65956001)(81166006)(8936002)(229853002)(4326008)(36386004)(47776003)(65806001)(81156014)(36756003)(5001870100001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:SN1PR02MB3696; H:xsj-pvapsmtpgw02; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-100.xilinx.com,xapps1.xilinx.com; MX:1; A:1;
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: a833b9ca-5cde-4d52-bcb4-08d71a38d8b9
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
+ SRVR:SN1PR02MB3696; 
+X-MS-TrafficTypeDiagnostic: SN1PR02MB3696:
+X-Microsoft-Antispam-PRVS: <SN1PR02MB3696D410CE0D39653B446E1BC6D50@SN1PR02MB3696.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
+X-Forefront-PRVS: 0121F24F22
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: VNs2a3X5ASHT+bfPdAzQOEMbshkx5yeQquhNx77lAOG54i4otG4/Mzgxojln94H+zDsUxV7GbgjY7JpSr/ZU5Kr4B/TFaNVFUVFWdNSQ+1RNmYL7Wd7pw/XMALUAIojUUMyfVj0Vu9KtToHkCiPjiDg39VBJOFCVuT16sCCeM+hk35PyYyFPrBRai+0g1s/0HQ/AdYm6nuvL8L7nKttsUovptNkTzVh2m1gI/MywNOoSPKyuWrkQKkzoQ/nrUXXHw4zhlwaDZCg0vhRcAlQphBSVWg/txss8y2xLZkLjgWLyvgPgzHKkHBcOM0XQVA87seo2cl4BSqoht4GNV93hhztUi05isT5uRG1TjvYA7jeDY0VcBfjJJQJo3Mt0zQYjwM+RF3NDE27lLHK4NkUVKX5AF4FCCVEzDRSdLpTwru4=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Aug 2019 06:39:35.0134 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a833b9ca-5cde-4d52-bcb4-08d71a38d8b9
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
+ Helo=[xsj-pvapsmtpgw02]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN1PR02MB3696
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_233209_412797_541D40FE 
-X-CRM114-Status: GOOD (  12.53  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190805_233939_507842_56936FF7 
+X-CRM114-Status: GOOD (  19.38  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.70.58 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,47 +144,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Jones <drjones@redhat.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-On 2019/8/5 20:15, Marc Zyngier wrote:
-> At the moment, the way we reset system registers is mildly insane:
-> We write junk to them, call the reset functions, and then check that
-> we have something else in them.
+On 06. 08. 19 5:07, Luis Araneda wrote:
+> Add .arm directive to headsmp.S to ensure that the
+> CPU starts in 32-bit ARM mode and the correct code
+> size is copied on smp bring-up
 > 
-> The "fun" thing is that this can happen while the guest is running
-> (PSCI, for example). If anything in KVM has to evaluate the state
-> of a system register while junk is in there, bad thing may happen.
+> Additionally, start secondary CPUs on secondary_startup_arm
+> to automatically switch from ARM to thumb on a thumb kernel
 > 
-> Let's stop doing that. Instead, we track that we have called a
-> reset function for that register, and assume that the reset
-> function has done something. This requires fixing a couple of
-> sysreg refinition in the trap table.
+> Suggested-by: Michal Simek <michal.simek@xilinx.com>
+> Signed-off-by: Luis Araneda <luaraneda@gmail.com>
+> ---
+>  arch/arm/mach-zynq/headsmp.S | 2 ++
+>  arch/arm/mach-zynq/platsmp.c | 2 +-
+>  2 files changed, 3 insertions(+), 1 deletion(-)
 > 
-> In the end, the very need of this reset check is pretty dubious,
-> as it doesn't check everything (a lot of the sysregs leave outside of
-> the sys_regs[] array). It may well be axed in the near future.
+> diff --git a/arch/arm/mach-zynq/headsmp.S b/arch/arm/mach-zynq/headsmp.S
+> index ab85003cf9ad..3449e0d1f990 100644
+> --- a/arch/arm/mach-zynq/headsmp.S
+> +++ b/arch/arm/mach-zynq/headsmp.S
+> @@ -7,6 +7,8 @@
+>  #include <linux/init.h>
+>  #include <asm/assembler.h>
+>  
+> +	.arm
+> +
+>  ENTRY(zynq_secondary_trampoline)
+>  ARM_BE8(setend	be)				@ ensure we are in BE8 mode
+>  	ldr	r0, zynq_secondary_trampoline_jump
+> diff --git a/arch/arm/mach-zynq/platsmp.c b/arch/arm/mach-zynq/platsmp.c
+> index a7cfe07156f4..38728badabd4 100644
+> --- a/arch/arm/mach-zynq/platsmp.c
+> +++ b/arch/arm/mach-zynq/platsmp.c
+> @@ -81,7 +81,7 @@ EXPORT_SYMBOL(zynq_cpun_start);
+>  
+>  static int zynq_boot_secondary(unsigned int cpu, struct task_struct *idle)
+>  {
+> -	return zynq_cpun_start(__pa_symbol(secondary_startup), cpu);
+> +	return zynq_cpun_start(__pa_symbol(secondary_startup_arm), cpu);
+>  }
+>  
+>  /*
 > 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
 
-(Regardless of whether this check is needed or not,) I tested this patch
-with kvm-unit-tests:
+It is really a question if this should go to stable tree. It is pretty
+much new feature.
+Will be good to also add link to similar patch for example this one
+5616f36713ea77f57ae908bf2fef641364403c9f.
 
-for i in {1..100}; do QEMU=/path/to/qemu-system-aarch64 accel=kvm 
-arch=arm64 ./run_tests.sh; done
-
-And all the tests passed!
-
-
-Thanks,
-zenghui
+M
 
 
 _______________________________________________
