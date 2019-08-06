@@ -2,85 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B70782837
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 01:38:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 524C5828C4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 02:39:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KJnAUq0JfMJx/aMa0nuPasKdGOXDGuKNezfW42AQSTg=; b=uOFdOBnQVdU2cK
-	e2xMl6d+Dr9bK1C1ZMWvCPVTltbQnOFNBBvJHAesJ8ymu1tpjt3Gvsi0CEAsxf3YZxpxP1YUYPx++
-	UoAbb9CBSBDwUAjKBw4wtzS4bKslFs+oJsFHkyVJYTcm6c4v2dItEkioGDFblqxg+Ui+vQT6iSQ97
-	0WZluAI/UXmvwZeJWw2nPY/bkVpvljJZ1/UsPGqFIjqYdYVIzmN++UYgClddgGQTtFPAJD53P62uD
-	FqBa9vaY9eLzI+RjGlrDiRmVnxE62d6ipu+frp2wCf18GADuWlnUZJuc1WIlO3C+8/cFAv/aPTwgJ
-	X+YSj3mNiNM/p6+Cmgqw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3phIjpFVqKjdMOJUAKy8o+sh9SZZbFS4XNtQCq+qmVo=; b=a7Nj/i/FLPgb8l
+	sMBXsXBsy1RXREzGL8pYtzZ1K9AMpb/Sz9r71JFofGkdr5VtxOlG28vbeWEcw67Wa8AhLcVv2S7Hg
+	0z1ZnwlZL0CZfxk5icXR3/uTSi82+ivRAYch/RWcIvxcAFQi6cRYDvVCGbHphL5Q5zxByLuKBcFHx
+	mZ5n5WXBb/q6F6EnyGr6zly849jvAOzxGb1MVb8zM7wXWOaCir4rGzD5dTngxWC9yptSaDwJBrAdM
+	ChFLw+hz0ij2gOzYDAxsM2XdE1npLFqv8fyGn+T0qk2/oeyb0rEY0YrTeTJxj5h0KwMCycBJJepmB
+	kQcsTYpKLwVEFcarayZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1humYa-000801-F9; Mon, 05 Aug 2019 23:38:24 +0000
-Received: from mail-pf1-x44a.google.com ([2607:f8b0:4864:20::44a])
+	id 1hunVF-0001dY-9Z; Tue, 06 Aug 2019 00:39:01 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1humY5-0007a4-5j
- for linux-arm-kernel@lists.infradead.org; Mon, 05 Aug 2019 23:37:54 +0000
-Received: by mail-pf1-x44a.google.com with SMTP id g21so54540554pfb.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 05 Aug 2019 16:37:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=fBjJNFjoK1CAcW2n/5qAZBcAEg4a650LiNHBPnT1bA8=;
- b=teLFSQzdFhTree3GuH3s2GuOa3/Qab921rb+2lHcsNF3Q36mmpwBTCwosqfJMXKhRF
- ehSuAk72xI064YEL3vjbaFafFs9TTuIwStWRcNBJl0PITAgIhImi5Hte9gT6Z6JVA5QU
- GCdGwMMTfclbzqcWnR+tmYtxu2dBqp053GvGc2DHX76PMWaPsDX43n5BWxgfeHfjfv94
- ajnNeldBRDSHzNLzKuChwzT2zFyoIXqBPYgaxOmmSipvwGNsEC2SFwQR61tHNK+/L4V8
- 8BQjqzD/GqzUxPY9AloyABiNCCpOUNuO+m0D/Wn+JpgVohng7LkFJGjmC6J3t3/kdtZU
- UMQg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=fBjJNFjoK1CAcW2n/5qAZBcAEg4a650LiNHBPnT1bA8=;
- b=NZ+rB0chmfTDnejMVyEoIxjAXTTt9fFz2BDwAImkgj2ZvJ+gp4MfdFzX3rSdoEI28f
- R2iq8cjKRnDuC0OGLMJgpssCgM1Ems+kA6TjqYQB+7ScdT1W9HpLSk0gQA0A2bFp06SH
- cdm58E29El8XGHQ40EvhatzeMTAp/2yr+VilbhhiUsZYub1t4DMObNwztEZQNQ6+kvCj
- mHKb9W8zveOHJg8W8rOS8oihIZWKwy9lE5YRK7QdX3dwcjgw00Ea9slYW+an7TrltN7K
- 7SqJO6GnGIjnKvi67tSc9UA1qDDddtBRXVDzufKuKCl1l62G7/P0kMgWoAYaL439GKQb
- Qwow==
-X-Gm-Message-State: APjAAAU5IuFBCLdtm06FbyjoCTxfQC1Q4yI+JVyNmyTRV/85wml4MPyR
- IETaSY7XLdoXLPqwRUWV+lER4gyuwg==
-X-Google-Smtp-Source: APXvYqzElEKumTXzdjS5AKxhg+INSn2hflNMrkQU+AM6dd6TOj81EETimI6pwSS2tR7xd/O69Zccw7xtJRQ=
-X-Received: by 2002:a63:6eca:: with SMTP id j193mr367802pgc.74.1565048271547; 
- Mon, 05 Aug 2019 16:37:51 -0700 (PDT)
-Date: Mon,  5 Aug 2019 16:37:38 -0700
-Message-Id: <20190805233738.136357-1-yabinc@google.com>
+ id 1hunV7-0001cZ-V1
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 00:38:56 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id EB5B52307;
+ Mon,  5 Aug 2019 20:38:47 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Mon, 05 Aug 2019 20:38:47 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm3; bh=x/FmbQA70Z4mje3y7VGtwApl9xp6RTV
+ VRLXboLhs2Fk=; b=ZGfMkscqBzdJrmqsA76P07XYPKAByfmKxaJlWOgGcYyoh9M
+ sAMv+9LxEvw7F9Tc2j0VSPOAzYCeq6EYXZkt/1yqDnjTm83/9wVj2fiKfms4Do7u
+ BH66HBfVN2EQhrsAneqJUPEwOlNF9qTsdp+zPawpHkEmaMeZmJCtVg5ZJ1adT2ue
+ 2Ia7S/WYRx5Nlw14UlgZfgCO6pMPrFwb4T/MF3RZWscFMSMAM0aqImq1SPMjBubF
+ t2QgkRraeYwbCGbW+Y7xmIqbghI7ulOhhQy3pNsgd07Xrd1mpK6cE1lJJn/LpSNS
+ 1Ot9lgrKOpFmgtuSx0At/JhI2t6O7j1nb5prqMg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=x/FmbQ
+ A70Z4mje3y7VGtwApl9xp6RTVVRLXboLhs2Fk=; b=SuoNoSB0MGyMGuV9TmVmin
+ OVkbJSgM74uliWJdHaFH5pfCfEst4COYfXuaQsRNfURCvyqpcHu143/qNO3+CHa+
+ vRKLoNPniz7pQng1cj+d8MpAgl2F/HTJIhMkFtXdtmOlY3Bvsvrxn4/CHJKLeg5w
+ xto0yJATXsx8QXMQ69xdSMDqOFuHo0LEGke+5IrqQoMw0uOivZBDM67186zit2NO
+ NWg+OfvQPjFZyMVR6qyh9ZAxj+F5NFz+U/tyyROxrOXwNjrLeT3dWv+jUZqMktoE
+ GX2dgYRA2c/WS89D99wNpaD/cZFtdWYeVB1I+px/oIQKKlyGKUpvze0pd+kZ80pQ
+ ==
+X-ME-Sender: <xms:FsxIXT8wMy-ydYcbV5G-ZVOSE-QDHzUWny3Y5l8ZNrln4XSOve3ZQg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddruddtledgfeelucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
+ rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
+ grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
+ rhfuihiivgeptd
+X-ME-Proxy: <xmx:FsxIXZwvIstLosN--5ek9_dPgLXA7RM2KIeV4QaCF5PW_bCqGHMEaw>
+ <xmx:FsxIXV-5zm2SKq2_OxzcVbsmGTftaF6L8671VDaaMtixr6YzNgQCLQ>
+ <xmx:FsxIXXMqEjsNp8tvzrKNlCqD4jbHgzelhLqJO9LgFFaQYn5pEUy1iQ>
+ <xmx:F8xIXY3W9NCJ9W17PBCvX4_MUuGxFvQl-n5qb-Frqv7y-GGv9uYJQQ>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id 8E116E00A2; Mon,  5 Aug 2019 20:38:46 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-799-g925e343-fmstable-20190729v1
 Mime-Version: 1.0
-X-Mailer: git-send-email 2.22.0.770.g0f2c4a37fd-goog
-Subject: [PATCH] coresight: tmc-etr: Fix updating buffer in not-snapshot mode.
-From: Yabin Cui <yabinc@google.com>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, 
- Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Message-Id: <222b7a32-7c69-4af1-a72f-433e671604d3@www.fastmail.com>
+In-Reply-To: <497ab8d6-24aa-c505-a1fa-e71fa1560da1@intel.com>
+References: <20190805025155.9020-1-andrew@aj.id.au>
+ <20190805025155.9020-3-andrew@aj.id.au>
+ <497ab8d6-24aa-c505-a1fa-e71fa1560da1@intel.com>
+Date: Tue, 06 Aug 2019 10:09:11 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Adrian Hunter" <adrian.hunter@intel.com>,
+ linux-mmc <linux-mmc@vger.kernel.org>
+Subject: Re: [PATCH v4 2/2] mmc: Add support for the ASPEED SD controller
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_163753_261902_D1E5B31E 
-X-CRM114-Status: GOOD (  11.29  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20190805_173854_139950_01491CEB 
+X-CRM114-Status: GOOD (  29.21  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:44a listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.230 listed in list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,66 +105,432 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yabin Cui <yabinc@google.com>, linux-kernel@vger.kernel.org,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
+ Ryan Chen <ryanchen.aspeed@gmail.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TMC etr always copies all available data to perf aux buffer, which
-may exceed the available space in perf aux buffer. It isn't suitable
-for not-snapshot mode, because:
-1) It may overwrite previously written data.
-2) It may make the perf_event_mmap_page->aux_head report having more
-or less data than the reality.
 
-Signed-off-by: Yabin Cui <yabinc@google.com>
----
- drivers/hwtracing/coresight/coresight-tmc-etr.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index 17006705287a..697e68d492af 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -1410,9 +1410,10 @@ static void tmc_free_etr_buffer(void *config)
-  * tmc_etr_sync_perf_buffer: Copy the actual trace data from the hardware
-  * buffer to the perf ring buffer.
-  */
--static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf)
-+static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf,
-+				     unsigned long to_copy)
- {
--	long bytes, to_copy;
-+	long bytes;
- 	long pg_idx, pg_offset, src_offset;
- 	unsigned long head = etr_perf->head;
- 	char **dst_pages, *src_buf;
-@@ -1423,7 +1424,6 @@ static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf)
- 	pg_offset = head & (PAGE_SIZE - 1);
- 	dst_pages = (char **)etr_perf->pages;
- 	src_offset = etr_buf->offset;
--	to_copy = etr_buf->len;
- 
- 	while (to_copy > 0) {
- 		/*
-@@ -1501,7 +1501,11 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
- 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
- 
- 	size = etr_buf->len;
--	tmc_etr_sync_perf_buffer(etr_perf);
-+	if (!etr_perf->snapshot && size > handle->size) {
-+		size = handle->size;
-+		lost = true;
-+	}
-+	tmc_etr_sync_perf_buffer(etr_perf, size);
- 
- 	/*
- 	 * In snapshot mode we simply increment the head by the number of byte
--- 
-2.22.0.770.g0f2c4a37fd-goog
+On Mon, 5 Aug 2019, at 23:08, Adrian Hunter wrote:
+> On 5/08/19 5:51 AM, Andrew Jeffery wrote:
+> > Add a minimal driver for ASPEED's SD controller, which exposes two
+> > SDHCIs.
+> > 
+> > The ASPEED design implements a common register set for the SDHCIs, and
+> > moves some of the standard configuration elements out to this common
+> > area (e.g. 8-bit mode, and card detect configuration which is not
+> > currently supported).
+> > 
+> > The SD controller has a dedicated hardware interrupt that is shared
+> > between the slots. The common register set exposes information on which
+> > slot triggered the interrupt; early revisions of the patch introduced an
+> > irqchip for the register, but reality is it doesn't behave as an
+> > irqchip, and the result fits awkwardly into the irqchip APIs. Instead
+> > I've taken the simple approach of using the IRQ as a shared IRQ with
+> > some minor performance impact for the second slot.
+> > 
+> > Ryan was the original author of the patch - I've taken his work and
+> > massaged it to drop the irqchip support and rework the devicetree
+> > integration. The driver has been smoke tested under qemu against a
+> > minimal SD controller model and lightly tested on an ast2500-evb.
+> > 
+> > Signed-off-by: Ryan Chen <ryanchen.aspeed@gmail.com>
+> > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> 
+> One minor comment otherwise:
+> 
+> Acked-by: Adrian Hunter <adrian.hunter@intel.com>
+> 
+> > 
+> > ---
+> > v3: No change
+> > v2:
+> > * Add AST2600 compatible
+> > * Drop SDHCI_QUIRK2_CLOCK_DIV_ZERO_BROKEN
+> > * Ensure slot number is valid
+> > * Fix build with CONFIG_MODULES
+> > * Fix module license string
+> > * Non-PCI devices won't die
+> > * Rename aspeed_sdc_configure_8bit_mode()
+> > * Rename aspeed_sdhci_pdata
+> > * Switch to sdhci_enable_clk()
+> > * Use PTR_ERR() on the right `struct platform_device *`
+> > ---
+> >  drivers/mmc/host/Kconfig           |  12 ++
+> >  drivers/mmc/host/Makefile          |   1 +
+> >  drivers/mmc/host/sdhci-of-aspeed.c | 328 +++++++++++++++++++++++++++++
+> >  3 files changed, 341 insertions(+)
+> >  create mode 100644 drivers/mmc/host/sdhci-of-aspeed.c
+> > 
+> > diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
+> > index 14d89a108edd..0f8a230de2f3 100644
+> > --- a/drivers/mmc/host/Kconfig
+> > +++ b/drivers/mmc/host/Kconfig
+> > @@ -154,6 +154,18 @@ config MMC_SDHCI_OF_ARASAN
+> >  
+> >  	  If unsure, say N.
+> >  
+> > +config MMC_SDHCI_OF_ASPEED
+> > +	tristate "SDHCI OF support for the ASPEED SDHCI controller"
+> > +	depends on MMC_SDHCI_PLTFM
+> > +	depends on OF
+> > +	help
+> > +	  This selects the ASPEED Secure Digital Host Controller Interface.
+> > +
+> > +	  If you have a controller with this interface, say Y or M here. You
+> > +	  also need to enable an appropriate bus interface.
+> > +
+> > +	  If unsure, say N.
+> > +
+> >  config MMC_SDHCI_OF_AT91
+> >  	tristate "SDHCI OF support for the Atmel SDMMC controller"
+> >  	depends on MMC_SDHCI_PLTFM
+> > diff --git a/drivers/mmc/host/Makefile b/drivers/mmc/host/Makefile
+> > index 73578718f119..390ee162fe71 100644
+> > --- a/drivers/mmc/host/Makefile
+> > +++ b/drivers/mmc/host/Makefile
+> > @@ -84,6 +84,7 @@ obj-$(CONFIG_MMC_SDHCI_ESDHC_IMX)	+= sdhci-esdhc-imx.o
+> >  obj-$(CONFIG_MMC_SDHCI_DOVE)		+= sdhci-dove.o
+> >  obj-$(CONFIG_MMC_SDHCI_TEGRA)		+= sdhci-tegra.o
+> >  obj-$(CONFIG_MMC_SDHCI_OF_ARASAN)	+= sdhci-of-arasan.o
+> > +obj-$(CONFIG_MMC_SDHCI_OF_ASPEED)	+= sdhci-of-aspeed.o
+> >  obj-$(CONFIG_MMC_SDHCI_OF_AT91)		+= sdhci-of-at91.o
+> >  obj-$(CONFIG_MMC_SDHCI_OF_ESDHC)	+= sdhci-of-esdhc.o
+> >  obj-$(CONFIG_MMC_SDHCI_OF_HLWD)		+= sdhci-of-hlwd.o
+> > diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
+> > new file mode 100644
+> > index 000000000000..d31785ec90d7
+> > --- /dev/null
+> > +++ b/drivers/mmc/host/sdhci-of-aspeed.c
+> > @@ -0,0 +1,328 @@
+> > +// SPDX-License-Identifier: GPL-2.0-or-later
+> > +/* Copyright (C) 2019 ASPEED Technology Inc. */
+> > +/* Copyright (C) 2019 IBM Corp. */
+> > +
+> > +#include <linux/clk.h>
+> > +#include <linux/delay.h>
+> > +#include <linux/device.h>
+> > +#include <linux/io.h>
+> > +#include <linux/mmc/host.h>
+> > +#include <linux/module.h>
+> > +#include <linux/of_address.h>
+> > +#include <linux/of.h>
+> > +#include <linux/of_platform.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/spinlock.h>
+> > +
+> > +#include "sdhci-pltfm.h"
+> > +
+> > +#define ASPEED_SDC_INFO		0x00
+> > +#define   ASPEED_SDC_S1MMC8	BIT(25)
+> > +#define   ASPEED_SDC_S0MMC8	BIT(24)
+> > +
+> > +struct aspeed_sdc {
+> > +	struct clk *clk;
+> > +	struct resource *res;
+> > +
+> > +	spinlock_t lock;
+> > +	void __iomem *regs;
+> > +};
+> > +
+> > +struct aspeed_sdhci {
+> > +	struct aspeed_sdc *parent;
+> > +	u32 width_mask;
+> > +};
+> > +
+> > +static void aspeed_sdc_configure_8bit_mode(struct aspeed_sdc *sdc,
+> > +					   struct aspeed_sdhci *sdhci,
+> > +					   bool bus8)
+> > +{
+> > +	u32 info;
+> > +
+> > +	/* Set/clear 8 bit mode */
+> > +	spin_lock(&sdc->lock);
+> > +	info = readl(sdc->regs + ASPEED_SDC_INFO);
+> > +	if (bus8)
+> > +		info |= sdhci->width_mask;
+> > +	else
+> > +		info &= ~sdhci->width_mask;
+> > +	writel(info, sdc->regs + ASPEED_SDC_INFO);
+> > +	spin_unlock(&sdc->lock);
+> > +}
+> > +
+> > +static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
+> > +{
+> > +	int div;
+> > +	u16 clk;
+> > +
+> > +	if (clock == host->clock)
+> > +		return;
+> > +
+> > +	sdhci_writew(host, 0, SDHCI_CLOCK_CONTROL);
+> > +
+> > +	if (clock == 0)
+> > +		goto out;
+> > +
+> > +	for (div = 1; div < 256; div *= 2) {
+> > +		if ((host->max_clk / div) <= clock)
+> > +			break;
+> > +	}
+> > +	div >>= 1;
+> > +
+> > +	clk = div << SDHCI_DIVIDER_SHIFT;
+> > +
+> > +	sdhci_enable_clk(host, clk);
+> > +
+> > +out:
+> > +	host->clock = clock;
+> > +}
+> > +
+> > +static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
+> > +{
+> > +	struct sdhci_pltfm_host *pltfm_priv;
+> > +	struct aspeed_sdhci *aspeed_sdhci;
+> > +	struct aspeed_sdc *aspeed_sdc;
+> > +	u8 ctrl;
+> > +
+> > +	pltfm_priv = sdhci_priv(host);
+> > +	aspeed_sdhci = sdhci_pltfm_priv(pltfm_priv);
+> > +	aspeed_sdc = aspeed_sdhci->parent;
+> > +
+> > +	/* Set/clear 8-bit mode */
+> > +	aspeed_sdc_configure_8bit_mode(aspeed_sdc, aspeed_sdhci,
+> > +				       width == MMC_BUS_WIDTH_8);
+> > +
+> > +	/* Set/clear 1 or 4 bit mode */
+> > +	ctrl = sdhci_readb(host, SDHCI_HOST_CONTROL);
+> > +	if (width == MMC_BUS_WIDTH_4)
+> > +		ctrl |= SDHCI_CTRL_4BITBUS;
+> > +	else
+> > +		ctrl &= ~SDHCI_CTRL_4BITBUS;
+> > +	sdhci_writeb(host, ctrl, SDHCI_HOST_CONTROL);
+> > +}
+> > +
+> > +static const struct sdhci_ops aspeed_sdhci_ops = {
+> > +	.set_clock = aspeed_sdhci_set_clock,
+> > +	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
+> > +	.set_bus_width = aspeed_sdhci_set_bus_width,
+> > +	.get_timeout_clock = sdhci_pltfm_clk_get_max_clock,
+> > +	.reset = sdhci_reset,
+> > +	.set_uhs_signaling = sdhci_set_uhs_signaling,
+> > +};
+> > +
+> > +static const struct sdhci_pltfm_data aspeed_sdhci_pdata = {
+> > +	.ops = &aspeed_sdhci_ops,
+> > +	.quirks = SDHCI_QUIRK_CAP_CLOCK_BASE_BROKEN,
+> > +};
+> > +
+> > +static inline int aspeed_sdhci_calculate_slot(struct aspeed_sdhci *dev,
+> > +					      struct resource *res)
+> > +{
+> > +	resource_size_t delta;
+> > +
+> > +	if (!res || resource_type(res) != IORESOURCE_MEM)
+> > +		return -EINVAL;
+> > +
+> > +	if (res->start < dev->parent->res->start)
+> > +		return -EINVAL;
+> > +
+> > +	delta = res->start - dev->parent->res->start;
+> > +	if (delta & (0x100 - 1))
+> > +		return -EINVAL;
+> > +
+> > +	return (delta / 0x100) - 1;
+> > +}
+> > +
+> > +static int aspeed_sdhci_probe(struct platform_device *pdev)
+> > +{
+> > +	struct sdhci_pltfm_host *pltfm_host;
+> > +	struct aspeed_sdhci *dev;
+> > +	struct sdhci_host *host;
+> > +	struct resource *res;
+> > +	int slot;
+> > +	int ret;
+> > +
+> > +	host = sdhci_pltfm_init(pdev, &aspeed_sdhci_pdata, sizeof(*dev));
+> > +	if (IS_ERR(host))
+> > +		return PTR_ERR(host);
+> > +
+> > +	pltfm_host = sdhci_priv(host);
+> > +	dev = sdhci_pltfm_priv(pltfm_host);
+> > +	dev->parent = dev_get_drvdata(pdev->dev.parent);
+> > +
+> > +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> > +	slot = aspeed_sdhci_calculate_slot(dev, res);
+> > +
+> > +	if (slot < 0)
+> > +		return slot;
+> > +	else if (slot >= 2)
+> > +		return -EINVAL;
+> > +
+> > +	dev_info(&pdev->dev, "Configuring for slot %d\n", slot);
+> > +	dev->width_mask = !slot ? ASPEED_SDC_S0MMC8 : ASPEED_SDC_S1MMC8;
+> > +
+> > +	sdhci_get_of_property(pdev);
+> > +
+> > +	pltfm_host->clk = devm_clk_get(&pdev->dev, NULL);
+> > +	if (IS_ERR(pltfm_host->clk))
+> > +		return PTR_ERR(pltfm_host->clk);
+> > +
+> > +	ret = clk_prepare_enable(pltfm_host->clk);
+> > +	if (ret) {
+> > +		dev_err(&pdev->dev, "Unable to enable SDIO clock\n");
+> > +		goto err_pltfm_free;
+> > +	}
+> > +
+> > +	ret = mmc_of_parse(host->mmc);
+> > +	if (ret)
+> > +		goto err_sdhci_add;
+> > +
+> > +	ret = sdhci_add_host(host);
+> > +	if (ret)
+> > +		goto err_sdhci_add;
+> > +
+> > +	return 0;
+> > +
+> > +err_sdhci_add:
+> > +	clk_disable_unprepare(pltfm_host->clk);
+> > +err_pltfm_free:
+> > +	sdhci_pltfm_free(pdev);
+> > +	return ret;
+> > +}
+> > +
+> > +static int aspeed_sdhci_remove(struct platform_device *pdev)
+> > +{
+> > +	struct sdhci_pltfm_host *pltfm_host;
+> > +	struct sdhci_host *host;
+> > +	int dead = 0;
+> > +
+> > +	host = platform_get_drvdata(pdev);
+> > +	pltfm_host = sdhci_priv(host);
+> > +
+> > +	sdhci_remove_host(host, dead);
+> > +
+> > +	clk_disable_unprepare(pltfm_host->clk);
+> > +
+> > +	sdhci_pltfm_free(pdev);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static const struct of_device_id aspeed_sdhci_of_match[] = {
+> > +	{ .compatible = "aspeed,ast2400-sdhci", },
+> > +	{ .compatible = "aspeed,ast2500-sdhci", },
+> > +	{ .compatible = "aspeed,ast2600-sdhci", },
+> > +	{ }
+> > +};
+> > +
+> > +static struct platform_driver aspeed_sdhci_driver = {
+> > +	.driver		= {
+> > +		.name	= "sdhci-aspeed",
+> > +		.of_match_table = aspeed_sdhci_of_match,
+> > +	},
+> > +	.probe		= aspeed_sdhci_probe,
+> > +	.remove		= aspeed_sdhci_remove,
+> > +};
+> > +
+> > +static int aspeed_sdc_probe(struct platform_device *pdev)
+> > +
+> > +{
+> > +	struct device_node *parent, *child;
+> > +	struct aspeed_sdc *sdc;
+> > +	int ret;
+> > +
+> > +	sdc = devm_kzalloc(&pdev->dev, sizeof(*sdc), GFP_KERNEL);
+> > +	if (!sdc)
+> > +		return -ENOMEM;
+> > +
+> > +	spin_lock_init(&sdc->lock);
+> > +
+> > +	sdc->clk = devm_clk_get(&pdev->dev, NULL);
+> > +	if (IS_ERR(sdc->clk))
+> > +		return PTR_ERR(sdc->clk);
+> > +
+> > +	ret = clk_prepare_enable(sdc->clk);
+> > +	if (ret) {
+> > +		dev_err(&pdev->dev, "Unable to enable SDCLK\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	sdc->res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> > +	sdc->regs = devm_ioremap_resource(&pdev->dev, sdc->res);
+> > +	if (IS_ERR(sdc->regs)) {
+> > +		ret = PTR_ERR(sdc->regs);
+> > +		goto err_clk;
+> > +	}
+> > +
+> > +	dev_set_drvdata(&pdev->dev, sdc);
+> > +
+> > +	parent = pdev->dev.of_node;
+> > +	for_each_available_child_of_node(parent, child) {
+> > +		struct platform_device *cpdev;
+> > +
+> > +		cpdev = of_platform_device_create(child, NULL, &pdev->dev);
+> > +		if (IS_ERR(cpdev)) {
+> > +			of_node_put(child);
+> > +			ret = PTR_ERR(cpdev);
+> > +			goto err_clk;
+> > +		}
+> > +	}
+> > +
+> > +	return 0;
+> > +
+> > +err_clk:
+> > +	clk_disable_unprepare(sdc->clk);
+> > +	return ret;
+> > +}
+> > +
+> > +static int aspeed_sdc_remove(struct platform_device *pdev)
+> > +{
+> > +	struct aspeed_sdc *sdc = dev_get_drvdata(&pdev->dev);
+> > +
+> > +	clk_disable_unprepare(sdc->clk);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static const struct of_device_id aspeed_sdc_of_match[] = {
+> > +	{ .compatible = "aspeed,ast2400-sd-controller", },
+> > +	{ .compatible = "aspeed,ast2500-sd-controller", },
+> > +	{ .compatible = "aspeed,ast2600-sd-controller", },
+> > +	{ }
+> > +};
+> > +
+> > +MODULE_DEVICE_TABLE(of, aspeed_sdc_of_match);
+> > +
+> > +static struct platform_driver aspeed_sdc_driver = {
+> > +	.driver		= {
+> > +		.name	= "sd-controller-aspeed",
+> > +		.pm	= &sdhci_pltfm_pmops,
+> > +		.of_match_table = aspeed_sdc_of_match,
+> > +	},
+> > +	.probe		= aspeed_sdc_probe,
+> > +	.remove		= aspeed_sdc_remove,
+> > +};
+> > +
+> > +static int __init aspeed_sdc_init(void)
+> > +{
+> > +	int rc;
+> > +
+> > +	rc = platform_driver_register(&aspeed_sdhci_driver);
+> > +	if (rc < 0)
+> > +		return rc;
+> > +
+> > +	return platform_driver_register(&aspeed_sdc_driver);
+> 
+> Shouldn't aspeed_sdhci_driver be unregistered here if there was an error.
 
+Yeah, fair point. I'll send a v5 to fix that.
+
+Thanks for the feedback.
+
+Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
