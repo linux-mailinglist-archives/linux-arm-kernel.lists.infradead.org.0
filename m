@@ -2,88 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD23C837F8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 19:38:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90B4F83801
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 19:39:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K9DpWQMw9odVRqxcxCfedPBJnZtivKw4LsLU2C8UX7o=; b=S6szk5Cr7bfzB3
-	xwIAXiek0GWMXvrfxuFlb8fxtQ8MNPZM5xutFC3vv7bM7DIHeTLg3D7RHRE7hl6V4KRnpJoIVN464
-	1X/CqbIjBMNvfEDWXrpUTCec2VUmT8TImmlCUFH39YGNnT5bpihIOpGDwoTpA/6UUZixy7567JMyV
-	ALumul5l4Kf6NgAYc3Z2+4emLyruxpdZ15hz0CpjMCr6v0KpQwb3GrjTeD++xdsIfLuPuEasvl+xJ
-	wL5DbiRzqCwhuBSrIR0j6oghORpSH0kwpEqThHMPu9jeLMKJeloTfInRcH0vUBZYDmDu4WcAgYusB
-	9WBRRFIYzlMhB758WGhg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cGMxKMNN5ZOrVcCEp1EBO3Va1A9L2DKrCcXJaJ1d8IQ=; b=ETdubFdBACWe1S
+	R6r+4DHVTpuHUxmX7THYCt7+gXCn46neOAXFSn/Vt/m1t6OVBLdD3pgJjs8Uk59fWDFiSvmv+sgqi
+	gQJwrt8xtxPJw/rRiXmZ9oVgymj5qQvID/bdQWUUm1c2GcYpE/Ua3uuWG9d6ueTJgXSFlBUqM4X2H
+	oot4cs0I5euJ8yAr0NEAwCwefsDV+wBMNEEFPCjzLhbXJLdL87RhXdnu5bltAnPJQDjwJ4JlGdmIk
+	rFbVJrkK9GHMGo7K3/YeSFAhbwBkV087KSRdG5ju9EayoUH0VXk8pFHG9KDSCyFDxQ1v9j5kWqW9j
+	qzqFZyXBEu8Pv2c/Zy1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv3Q5-0006MM-15; Tue, 06 Aug 2019 17:38:45 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1hv3RG-0006ma-8Q; Tue, 06 Aug 2019 17:39:58 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv3Pw-0006LR-IV
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 17:38:38 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x76HcKok007671;
- Tue, 6 Aug 2019 12:38:20 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1565113100;
- bh=rJsG4X64+05xGE5m7rzAm+zLsHKU8QbIpns9wHygRi8=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=JTGcrXJxmNXfgFaTAASCC8SBU0IJYQKQ9sqs1KXIxaYUufOHQoFVSZnbd2BvK5njh
- fZDQwADBbTvkxFkt4XnG0TMlvWO9YT7XMiXlARvBBWS9RhxLIADyRSPZ4qRVjNxKi0
- gL+fxOYLnghoOyTN4v2RUhKvKlg4GCqEtToiwFrg=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x76HcKZA075961
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 6 Aug 2019 12:38:20 -0500
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 6 Aug
- 2019 12:38:19 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 6 Aug 2019 12:38:19 -0500
-Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x76HcJ61094917;
- Tue, 6 Aug 2019 12:38:19 -0500
-Subject: Re: [PATCH 0/6] hwspinlock: allow sharing of hwspinlocks
-To: Bjorn Andersson <bjorn.andersson@linaro.org>, Fabien DESSENNE
- <fabien.dessenne@st.com>
-References: <1552492237-28810-1-git-send-email-fabien.dessenne@st.com>
- <20190801191403.GA7234@tuxbook-pro>
- <1a057176-81ab-e302-4375-2717ceef6924@st.com>
- <20190805174659.GA23928@tuxbook-pro>
-From: Suman Anna <s-anna@ti.com>
-Message-ID: <dcd1aeea-cffe-d5fb-af5a-e52efcc2e046@ti.com>
-Date: Tue, 6 Aug 2019 12:38:19 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hv3R7-0006hl-3s; Tue, 06 Aug 2019 17:39:51 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 06 Aug 2019 10:39:46 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,353,1559545200"; d="scan'208";a="174242846"
+Received: from iweiny-desk2.sc.intel.com ([10.3.52.157])
+ by fmsmga008.fm.intel.com with ESMTP; 06 Aug 2019 10:39:46 -0700
+Date: Tue, 6 Aug 2019 10:39:46 -0700
+From: Ira Weiny <ira.weiny@intel.com>
+To: john.hubbard@gmail.com
+Subject: Re: [PATCH v2 01/34] mm/gup: add make_dirty arg to
+ put_user_pages_dirty_lock()
+Message-ID: <20190806173945.GA4748@iweiny-DESK2.sc.intel.com>
+References: <20190804224915.28669-1-jhubbard@nvidia.com>
+ <20190804224915.28669-2-jhubbard@nvidia.com>
 MIME-Version: 1.0
-In-Reply-To: <20190805174659.GA23928@tuxbook-pro>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20190804224915.28669-2-jhubbard@nvidia.com>
+User-Agent: Mutt/1.11.1 (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_103836_720358_CC515F64 
-X-CRM114-Status: GOOD (  38.83  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190806_103949_179202_DF557C6F 
+X-CRM114-Status: GOOD (  37.08  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,153 +67,376 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, Mark Rutland <mark.rutland@arm.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>, Jonathan Corbet <corbet@lwn.net>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Matthew Wilcox <willy@infradead.org>, sparclinux@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@lst.de>,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
+ linux-media@vger.kernel.org, John Hubbard <jhubbard@nvidia.com>,
+ intel-gfx@lists.freedesktop.org, linux-block@vger.kernel.org,
+ =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgRmFiaWVuLAoKT24gOC81LzE5IDEyOjQ2IFBNLCBCam9ybiBBbmRlcnNzb24gd3JvdGU6Cj4g
-T24gTW9uIDA1IEF1ZyAwMTo0OCBQRFQgMjAxOSwgRmFiaWVuIERFU1NFTk5FIHdyb3RlOgo+IAo+
-Pgo+PiBPbiAwMS8wOC8yMDE5IDk6MTQgUE0sIEJqb3JuIEFuZGVyc3NvbiB3cm90ZToKPj4+IE9u
-IFdlZCAxMyBNYXIgMDg6NTAgUERUIDIwMTksIEZhYmllbiBEZXNzZW5uZSB3cm90ZToKPj4+Cj4+
-Pj4gVGhlIGN1cnJlbnQgaW1wbGVtZW50YXRpb24gZG9lcyBub3QgYWxsb3cgdHdvIGRpZmZlcmVu
-dCBkZXZpY2VzIHRvIHVzZQo+Pj4+IGEgY29tbW9uIGh3c3BpbmxvY2suIFRoaXMgcGF0Y2ggc2V0
-IHByb3Bvc2VzIHRvIGhhdmUsIGFzIGFuIG9wdGlvbiwgc29tZQo+Pj4+IGh3c3BpbmxvY2tzIHNo
-YXJlZCBiZXR3ZWVuIHNldmVyYWwgdXNlcnMuCj4+Pj4KPj4+PiBCZWxvdyBpcyBhbiBleGFtcGxl
-IHRoYXQgZXhwbGFpbiB0aGUgbmVlZCBmb3IgdGhpczoKPj4+PiAJZXh0aTogaW50ZXJydXB0LWNv
-bnRyb2xsZXJANTAwMGQwMDAgewo+Pj4+IAkJY29tcGF0aWJsZSA9ICJzdCxzdG0zMm1wMS1leHRp
-IiwgInN5c2NvbiI7Cj4+Pj4gCQlpbnRlcnJ1cHQtY29udHJvbGxlcjsKPj4+PiAJCSNpbnRlcnJ1
-cHQtY2VsbHMgPSA8Mj47Cj4+Pj4gCQlyZWcgPSA8MHg1MDAwZDAwMCAweDQwMD47Cj4+Pj4gCQlo
-d2xvY2tzID0gPCZoc2VtIDE+Owo+Pj4+IAl9Owo+Pj4+IFRoZSB0d28gZHJpdmVycyAoc3RtMzJt
-cDEtZXh0aSBhbmQgc3lzY29uKSByZWZlciB0byB0aGUgc2FtZSBod2xvY2suCj4+Pj4gV2l0aCB0
-aGUgY3VycmVudCBod3NwaW5sb2NrIGltcGxlbWVudGF0aW9uLCBvbmx5IHRoZSBmaXJzdCBkcml2
-ZXIgc3VjY2VlZHMKPj4+PiBpbiByZXF1ZXN0aW5nIChod3NwaW5fbG9ja19yZXF1ZXN0X3NwZWNp
-ZmljKSB0aGUgaHdsb2NrLiBUaGUgc2Vjb25kIHJlcXVlc3QKPj4+PiBmYWlscy4KCkhlbHAgbWUg
-dW5kZXJzdGFuZCB0aGUgcHJvYmxlbSB0aGF0IHlvdSBhcmUgdHJ5aW5nIHRvIHNvbHZlIGhlcmUu
-IElzCnRoaXMgYSBjYXNlIG9mIHlvdSBoYXZpbmcgdHdvIGNsaWVudHMgb24gTGludXgtc2lkZSBu
-ZWVkaW5nIHRvIHVzZSB0aGUKc2FtZSBsb2NrIGJ1dCBzdGlsbCByZXF1aXJpbmcgdGhlIGFyYml0
-cmF0aW9uIHdpdGggc29mdHdhcmUgcnVubmluZyBvbgpzb21lIG90aGVyIHJlbW90ZSBwcm9jZXNz
-b3I/IEFyZSB0aGV5IHRhbGtpbmcgdG8gdGhlIHNhbWUgZW50aXR5IG9uIHRoZQpyZW1vdGUtc2lk
-ZSBvciBkaWZmZXJlbnQgcGVlcnMuCgpJIHNlZSB0aGUgc2VyaWVzIGlzIGFsbCBhYm91dCBnZXR0
-aW5nIGEgaGFuZGxlIHNvIHRoYXQgdGhleSBjYW4gdXNlIHRoZQpBUEksIGFuZCBpcyB0aGUgZXhw
-ZWN0ZWQgdXNhZ2UgdGhhdCB0aGUgc2FtZSBlbnRpdHkgd2lsbCBsb2NrIGFuZCB1bmxvY2sKYmVm
-b3JlIHRoZSBvdGhlciBkcml2ZXIgY2FuIGxvY2sgaXQuCgo+Pj4+Cj4+Pj4KPj4+PiBUaGUgcHJv
-cG9zZWQgYXBwcm9hY2ggZG9lcyBub3QgbW9kaWZ5IHRoZSBBUEksIGJ1dCBleHRlbmRzIHRoZSBE
-VCAnaHdsb2NrcycKPj4+PiBwcm9wZXJ0eSB3aXRoIGEgc2Vjb25kIG9wdGlvbmFsIHBhcmFtZXRl
-ciAodGhlIGZpcnN0IG9uZSBpZGVudGlmaWVzIGFuCj4+Pj4gaHdsb2NrKSB0aGF0IHNwZWNpZmll
-cyB3aGV0aGVyIGFuIGh3bG9jayBpcyByZXF1ZXN0ZWQgZm9yIGV4Y2x1c2l2ZSB1c2FnZQo+Pj4+
-IChjdXJyZW50IGJlaGF2aW9yKSBvciBjYW4gYmUgc2hhcmVkIGJldHdlZW4gc2V2ZXJhbCB1c2Vy
-cy4KPj4+PiBFeGFtcGxlczoKPj4+PiAJaHdsb2NrcyA9IDwmaHNlbSA4PjsJUmVmIHRvIGh3bG9j
-ayAjOCBmb3IgZXhjbHVzaXZlIHVzYWdlCj4+Pj4gCWh3bG9ja3MgPSA8JmhzZW0gOCAwPjsJUmVm
-IHRvIGh3bG9jayAjOCBmb3IgZXhjbHVzaXZlICgwKSB1c2FnZQo+Pj4+IAlod2xvY2tzID0gPCZo
-c2VtIDggMT47CVJlZiB0byBod2xvY2sgIzggZm9yIHNoYXJlZCAoMSkgdXNhZ2UKPj4+Pgo+Pj4+
-IEFzIGEgY29uc3RyYWludCwgdGhlICNod2xvY2stY2VsbHMgdmFsdWUgbXVzdCBiZSAxIG9yIDIu
-Cj4+Pj4gSW4gdGhlIGN1cnJlbnQgaW1wbGVtZW50YXRpb24sIHRoaXMgY2FuIGhhdmUgdGhlb3Jp
-Y2FsbHkgYW55IHZhbHVlIGJ1dDoKPj4+PiAtIGFsbCBvZiB0aGUgZXhpc2l0aW5nIGRyaXZlcnMg
-dXNlIHRoZSBzYW1lIHZhbHVlIDogMS4KPj4+PiAtIHRoZSBmcmFtZXdvcmsgc3VwcG9ydHMgb25s
-eSBvbmUgdmFsdWUgOiAxIChzZWUgaW1wbGVtZW50YXRpb24gb2YKPj4+PiAgICBvZl9od3NwaW5f
-bG9ja19zaW1wbGVfeGxhdGUoKSkKPj4+PiBIZW5jZSwgaXQgc2hhbGwgbm90IGJlIGEgcHJvYmxl
-bSB0byByZXN0cmljdCB0aGlzIHZhbHVlIHRvIDEgb3IgMiBzaW5jZQo+Pj4+IGl0IHdvbid0IGJy
-ZWFrIGFueSBkcml2ZXIuCj4+Pj4KPj4+IEhpIEZhYmllbiwKPj4+Cj4+PiBZb3VyIHNlcmllcyBs
-b29rcyBnb29kLCBidXQgaXQgbWFrZXMgbWUgd29uZGVyIHdoeSB0aGUgaGFyZHdhcmUgbG9ja3MK
-Pj4+IHNob3VsZCBiZSBhbiBleGNsdXNpdmUgcmVzb3VyY2UuCj4+Pgo+Pj4gSG93IGFib3V0IGp1
-c3QgbWFraW5nIGFsbCAoc3BlY2lmaWMpIGxvY2tzIHNoYXJlZD8KPj4KPj4gSGkgQmpvcm4sCj4+
-Cj4+IE1ha2luZyBhbGwgbG9ja3Mgc2hhcmVkIGlzIGEgcG9zc2libGUgaW1wbGVtZW50YXRpb24g
-KG15IGZpcnN0IAo+PiBpbXBsZW1lbnRhdGlvbgo+PiB3YXMgZ29pbmcgdGhpcyB3YXkpIGJ1dCB0
-aGVyZSBhcmUgc29tZSBkcmF3YmFja3Mgd2UgbXVzdCBiZSBhd2FyZSBvZjoKPj4KPj4gQS8gVGhp
-cyB0aGVvcmV0aWNhbGx5IGJyZWFrIHRoZSBsZWdhY3kgYmVoYXZpb3IgKHRoZSBsZWdhY3kgd29y
-a3Mgd2l0aAo+PiBleGNsdXNpdmUgKFVOVVNFRCByYWRpeCB0YWcpIHVzYWdlKS4gQXMgYSBjb25z
-ZXF1ZW5jZSwgYW4gZXhpc3RpbmcgZHJpdmVyCj4+IHRoYXQgaXMgY3VycmVudGx5IGZhaWxpbmcg
-dG8gcmVxdWVzdCBhIGxvY2sgKGFscmVhZHkgY2xhaW1lZCBieSBhbm90aGVyCj4+IHVzZXIpIHdv
-dWxkIG5vdyB3b3JrIGZpbmUuIE5vdCBzdXJlIHRoYXQgdGhlcmUgYXJlIHN1Y2ggZHJpdmVycywg
-c28gdGhpcwo+PiBwb2ludCBpcyBwcm9iYWJseSBub3QgYSByZWFsIGlzc3VlLgo+Pgo+IAo+IFJp
-Z2h0LCBpdCdzIHBvc3NpYmxlIHRoYXQgYSBwcmV2aW91c2x5IG1pc2NvbmZpZ3VyZWQgc3lzdGVt
-IG5vdwo+IHN1Y2Nlc3NmdWxseSBwcm9iZXMgbW9yZSB0aGFuIG9uZSBkZXZpY2UgdGhhdCB1c2Vz
-IGEgcGFydGljdWxhcgo+IHNwaW5sb2NrLiBCdXQgc3VjaCBzeXN0ZW0gd291bGQgYmUgc3VmZmVy
-aW5nIGZyb20gaXNzdWVzIHJlbGF0ZWQgdG8gZS5nLgo+IHByb2JlIG9yZGVyaW5nLgo+IAo+IFNv
-IEkgdGhpbmsgd2Ugc2hvdWxkIGlnbm9yZSB0aGlzIGlzc3VlLgo+IAo+PiBCLyBUaGlzIHdvdWxk
-IGludHJvZHVjZSBzb21lIGluY29uc2lzdGVuY3kgYmV0d2VlbiB0aGUgdHdvICdyZXF1ZXN0JyBB
-UEkKPj4gd2hpY2ggYXJlIGh3c3Bpbl9sb2NrX3JlcXVlc3QoKSBhbmQgaHdzcGluX2xvY2tfcmVx
-dWVzdF9zcGVjaWZpYygpLgo+PiBod3NwaW5fbG9ja19yZXF1ZXN0KCkgbG9va3MgZm9yIGFuIHVu
-dXNlZCBsb2NrLCBzbyByZXF1ZXN0cyBmb3IgYW4gZXhjbHVzaXZlCj4+IHVzYWdlLiBPbiB0aGUg
-b3RoZXIgc2lkZSwgcmVxdWVzdF9zcGVjaWZpYygpIHdvdWxkIHJlcXVlc3Qgc2hhcmVkIGxvY2tz
-Lgo+PiBXb3JzdCB0aGUgZm9sbG93aW5nIHNlcXVlbmNlIGNhbiB0cmFuc2Zvcm0gYW4gZXhjbHVz
-aXZlIHVzYWdlIGludG8gYSBzaGFyZWQKPj4KPiAKPiBUaGVyZSBpcyBhbHJlYWR5IGFuIGluY29u
-c2lzdGVuY3kgaW4gYmV0d2VlbiB0aGVzZTsgYXMgd2l0aCBhYm92ZSBhbnkKPiBzeXN0ZW0gdGhh
-dCB1c2VzIGJvdGggcmVxdWVzdCgpIGFuZCByZXF1ZXN0X3NwZWNpZmljKCkgd2lsbCBiZSBzdWZm
-ZXJpbmcKPiBmcm9tIGludGVybWl0dGVudCBmYWlsdXJlcyBkdWUgdG8gcHJvYmUgb3JkZXJpbmcu
-Cj4gCj4+IG9uZToKPj4gIMKgIC1od3NwaW5fbG9ja19yZXF1ZXN0KCkgLT4gcmV0dXJucyBJZCMw
-IChleGNsdXNpdmUpCj4+ICDCoCAtaHdzcGluX2xvY2tfcmVxdWVzdCgpIC0+IHJldHVybnMgSWQj
-MSAoZXhjbHVzaXZlKQo+PiAgwqAgLWh3c3Bpbl9sb2NrX3JlcXVlc3Rfc3BlY2lmaWMoMCkgLT4g
-cmV0dXJucyBJZCMwIGFuZCBtYWtlcyBJZCMwIHNoYXJlZAo+PiBIb25lc3RseSBJIGFtIG5vdCBz
-dXJlIHRoYXQgdGhpcyBpcyBhIHJlYWwgaXNzdWUsIGJ1dCBpdCdzIGJldHRlciB0byBoYXZlIGl0
-Cj4+IGluIG1pbmQgYmVmb3JlIHdlIHRha2UgYXkgZGVjaXNpb24KCldvdWxkbid0IGl0IGJlIGFj
-dHVhbGx5IHNpbXBsZXIgdG8ganVzdCBpbnRyb2R1Y2UgYSBuZXcgc3BlY2lmaWMgQVBJCnZhcmlh
-bnQgZm9yIHRoaXMsIHNpbWlsYXIgdG8gdGhlIHJlc2V0IGNvcmUgZm9yIGV4YW1wbGUgKGl0IHVz
-ZXMgYQpzZXBhcmF0ZSBleGNsdXNpdmUgQVBJKSwgd2l0aG91dCBoYXZpbmcgdG8gbW9kaWZ5IHRo
-ZSBiaW5kaW5ncyBhdCBhbGwuCkl0IGlzIGp1c3QgYSBjYXNlIG9mIHlvdXIgZHJpdmVyIHVzaW5n
-IHRoZSByaWdodCBBUEksIGFuZCB0aGUgY29yZSBjYW4KYmUgbW9kaWZpZWQgdG8gdXNlIHRoZSBh
-ZGRpdGlvbmFsIHRhZyBzZW1hbnRpY3MgYmFzZWQgb24gdGhlIEFQSS4gSXQKc2hvdWxkIGF2b2lk
-IGFueSBjb25mdXNpb24gd2l0aCBzYXkgdXNpbmcgYSBkaWZmZXJlbnQgc2Vjb25kIGNlbGwgdmFs
-dWUKZm9yIHRoZSBzYW1lIGxvY2sgaW4gdHdvIGRpZmZlcmVudCBub2Rlcy4KCklmIHlvdSBhcmUg
-c2hhcmluZyBhIGh3bG9jayBvbiB0aGUgTGludXggc2lkZSwgc3VyZWx5IHlvdXIgZHJpdmVyIHNo
-b3VsZApiZSBhd2FyZSB0aGF0IGl0IGlzIGEgc2hhcmVkIGxvY2suIFRoZSB0YWcgY2FuIGJlIHNl
-dCBkdXJpbmcgdGhlIGZpcnN0CnJlcXVlc3QgQVBJLCBhbmQgeW91IGxvb2sgdGhyb3VnaCBib3Ro
-IHRhZ3Mgd2hlbiBnaXZpbmcgb3V0IGEgaGFuZGxlLgoKT2J2aW91c2x5LCB0aGUgaHdzcGluX2xv
-Y2tfcmVxdWVzdCgpIEFQSSB1c2FnZSBzZW1hbnRpY3MgYWx3YXlzIGhhZCB0aGUKaW1wbGllZCBh
-ZGRpdGlvbmFsIG5lZWQgZm9yIGNvbW11bmljYXRpbmcgdGhlIGxvY2sgaWQgdG8gdGhlIG90aGVy
-IHBlZXIKZW50aXR5LCBzbyBhIHJlYWxpc3RpYyB1c2FnZSBpcyBtb3N0IGFsd2F5cyB0aGUgc3Bl
-Y2lmaWMgQVBJIHZhcmlhbnQuIEkKZG91YnQgdGhpcyBBUEkgd291bGQgYmUgb2YgbXVjaCB1c2Ug
-Zm9yIHRoZSBzaGFyZWQgZHJpdmVyIHVzYWdlLiBUaGlzCmFsc28gaW1wbGllcyB0aGF0IHRoZSBj
-bGllbnQgdXNlciBkb2VzIG5vdCBjYXJlIGFib3V0IHNwZWNpZnlpbmcgYSBsb2NrCmluIERULgoK
-cmVnYXJkcwpTdW1hbgoKPiAKPiBUaGUgY2FzZSB3aGVyZSBJIGNhbiBzZWUgYQo+IHByb2JsZW0g
-d2l0aCB0aGlzIHdvdWxkIGJlIGlmIHRoZSB0d28gY2xpZW50cyBzb21laG93IHdvdWxkIG5lc3Qg
-dGhlaXIKPiBsb2NraW5nIHJlZ2lvbnMuCj4gCj4gQnV0IGdlbmVyYWxseSBJIHRoaW5rIHRoaXMg
-Y291bGQgY29uc2lkZXIgdGhpcyBhbiBpbXByb3ZlbWVudCwgYmVjYXVzZQo+IHRoZSByZXF1ZXN0
-X3NwZWNpZmljKCkgd291bGQgbm93IGJlIGFibGUgdG8gYWNxdWlyZSBpdHMgaHdsb2NrLCB3aXRo
-Cj4gc29tZSBhZGRpdGlvbmFsIGNvbnRlbnRpb24gZHVlIHRvIHRoZSBtdWx0aXBsZSB1c2UuCj4g
-Cj4+IEkgY291bGQgbm90IGZpbmQgYW55IGRyaXZlciB1c2luZyB0aGUgaHdzcGluX2xvY2tfcmVx
-dWVzdCgpIEFQSSwgd2UKPj4gbWF5IGRlY2lkZSB0byByZW1vdmUgKG9yIHRvIG1ha2UgZGVwcmVj
-YXRlZCkgdGhpcyBBUEksIGhhdmluZwo+PiBldmVyeXRoaW5nICdzaGFyZWQgd2l0aG91dCBhbnkg
-Y29uZGl0aW9ucycuCj4+Cj4gCj4gSXQgd291bGQgYmUgbmljZSB0byBoYXZlIGFuIHVwc3RyZWFt
-IHVzZXIgb2YgdGhpcyBBUEkuCj4gCj4+Cj4+IEkgY2FuIHNlZSB0aHJlZSBvcHRpb25zOgo+PiAx
-LSBLZWVwIG15IGluaXRpYWwgcHJvcG9zaXRpb24KPj4gMi0gSGF2ZSBod3NwaW5fbG9ja19yZXF1
-ZXN0X3NwZWNpZmljKCkgdXNpbmcgc2hhcmVkIGxvY2tzIGFuZAo+PiAgwqDCoCBod3NwaW5fbG9j
-a19yZXF1ZXN0KCkgdXNpbmcgdW51c2VkIChzbyAnaW5pdGlhbGx5JyBleGNsdXNpdmUpIGxvY2tz
-Lgo+PiAzLSBIYXZlIGh3c3Bpbl9sb2NrX3JlcXVlc3Rfc3BlY2lmaWMoKSB1c2luZyBzaGFyZWQg
-bG9ja3MgYW5kCj4+ICDCoMKgIHJlbW92ZS9tYWtlIGRlcHJlY2F0ZWQgaHdzcGluX2xvY2tfcmVx
-dWVzdCgpLgo+Pgo+PiBKdXN0IGxldCBtZSBrbm93IHdoYXQgaXMgeW91ciBwcmVmZXJlbmNlLgo+
-Pgo+IAo+IEkgdGhpbmsgd2Ugc2hvdWxkIHN0YXJ0IHdpdGggIzIgYW5kIHdvdWxkIGxpa2UgaW5w
-dXQgZnJvbSBlLmcuIFN1bWFuCj4gcmVnYXJkaW5nICMzLgo+IAo+IFJlZ2FyZHMsCj4gQmpvcm4K
-PiAKPj4gQlIKPj4KPj4gRmFiaWVuCj4+Cj4+Pgo+Pj4gUmVnYXJkcywKPj4+IEJqb3JuCj4+Pgo+
-Pj4+IEZhYmllbiBEZXNzZW5uZSAoNik6Cj4+Pj4gICAgZHQtYmluZGluZ3M6IGh3bG9jazogYWRk
-IHN1cHBvcnQgb2Ygc2hhcmVkIGxvY2tzCj4+Pj4gICAgaHdzcGlubG9jazogYWxsb3cgc2hhcmlu
-ZyBvZiBod3NwaW5sb2Nrcwo+Pj4+ICAgIGR0LWJpbmRpbmdzOiBod2xvY2s6IHVwZGF0ZSBTVE0z
-MiAjaHdsb2NrLWNlbGxzIHZhbHVlCj4+Pj4gICAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgaHdzcGlu
-bG9jayBub2RlIGZvciBzdG0zMm1wMTU3IFNvQwo+Pj4+ICAgIEFSTTogZHRzOiBzdG0zMjogQWRk
-IGh3bG9jayBmb3IgaXJxY2hpcCBvbiBzdG0zMm1wMTU3Cj4+Pj4gICAgQVJNOiBkdHM6IHN0bTMy
-OiBod2xvY2tzIGZvciBHUElPIGZvciBzdG0zMm1wMTU3Cj4+Pj4KPj4+PiAgIC4uLi9kZXZpY2V0
-cmVlL2JpbmRpbmdzL2h3bG9jay9od2xvY2sudHh0ICAgICAgICAgIHwgMjcgKysrKystLQo+Pj4+
-ICAgLi4uL2JpbmRpbmdzL2h3bG9jay9zdCxzdG0zMi1od3NwaW5sb2NrLnR4dCAgICAgICAgfCAg
-NiArLQo+Pj4+ICAgRG9jdW1lbnRhdGlvbi9od3NwaW5sb2NrLnR4dCAgICAgICAgICAgICAgICAg
-ICAgICAgfCAxMCArKy0KPj4+PiAgIGFyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNTctcGluY3Ry
-bC5kdHNpICAgICAgICAgIHwgIDIgKwo+Pj4+ICAgYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1
-N2MuZHRzaSAgICAgICAgICAgICAgICAgfCAxMCArKysKPj4+PiAgIGRyaXZlcnMvaHdzcGlubG9j
-ay9od3NwaW5sb2NrX2NvcmUuYyAgICAgICAgICAgICAgIHwgODIgKysrKysrKysrKysrKysrKyst
-LS0tLQo+Pj4+ICAgZHJpdmVycy9od3NwaW5sb2NrL2h3c3BpbmxvY2tfaW50ZXJuYWwuaCAgICAg
-ICAgICAgfCAgMiArCj4+Pj4gICA3IGZpbGVzIGNoYW5nZWQsIDEwOCBpbnNlcnRpb25zKCspLCAz
-MSBkZWxldGlvbnMoLSkKPj4+Pgo+Pj4+IC0tIAo+Pj4+IDIuNy40Cj4+Pj4KCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Sun, Aug 04, 2019 at 03:48:42PM -0700, john.hubbard@gmail.com wrote:
+> From: John Hubbard <jhubbard@nvidia.com>
+> 
+> Provide a more capable variation of put_user_pages_dirty_lock(),
+> and delete put_user_pages_dirty(). This is based on the
+> following:
+> 
+> 1. Lots of call sites become simpler if a bool is passed
+> into put_user_page*(), instead of making the call site
+> choose which put_user_page*() variant to call.
+> 
+> 2. Christoph Hellwig's observation that set_page_dirty_lock()
+> is usually correct, and set_page_dirty() is usually a
+> bug, or at least questionable, within a put_user_page*()
+> calling chain.
+> 
+> This leads to the following API choices:
+> 
+>     * put_user_pages_dirty_lock(page, npages, make_dirty)
+> 
+>     * There is no put_user_pages_dirty(). You have to
+>       hand code that, in the rare case that it's
+>       required.
+> 
+> Reviewed-by: Christoph Hellwig <hch@lst.de>
+> Cc: Matthew Wilcox <willy@infradead.org>
+> Cc: Jan Kara <jack@suse.cz>
+> Cc: Ira Weiny <ira.weiny@intel.com>
+> Cc: Jason Gunthorpe <jgg@ziepe.ca>
+> Signed-off-by: John Hubbard <jhubbard@nvidia.com>
+> ---
+>  drivers/infiniband/core/umem.c             |   5 +-
+>  drivers/infiniband/hw/hfi1/user_pages.c    |   5 +-
+>  drivers/infiniband/hw/qib/qib_user_pages.c |  13 +--
+>  drivers/infiniband/hw/usnic/usnic_uiom.c   |   5 +-
+>  drivers/infiniband/sw/siw/siw_mem.c        |  19 +---
+>  include/linux/mm.h                         |   5 +-
+>  mm/gup.c                                   | 115 +++++++++------------
+>  7 files changed, 61 insertions(+), 106 deletions(-)
+> 
+> diff --git a/drivers/infiniband/core/umem.c b/drivers/infiniband/core/umem.c
+> index 08da840ed7ee..965cf9dea71a 100644
+> --- a/drivers/infiniband/core/umem.c
+> +++ b/drivers/infiniband/core/umem.c
+> @@ -54,10 +54,7 @@ static void __ib_umem_release(struct ib_device *dev, struct ib_umem *umem, int d
+>  
+>  	for_each_sg_page(umem->sg_head.sgl, &sg_iter, umem->sg_nents, 0) {
+>  		page = sg_page_iter_page(&sg_iter);
+> -		if (umem->writable && dirty)
+> -			put_user_pages_dirty_lock(&page, 1);
+> -		else
+> -			put_user_page(page);
+> +		put_user_pages_dirty_lock(&page, 1, umem->writable && dirty);
+>  	}
+>  
+>  	sg_free_table(&umem->sg_head);
+> diff --git a/drivers/infiniband/hw/hfi1/user_pages.c b/drivers/infiniband/hw/hfi1/user_pages.c
+> index b89a9b9aef7a..469acb961fbd 100644
+> --- a/drivers/infiniband/hw/hfi1/user_pages.c
+> +++ b/drivers/infiniband/hw/hfi1/user_pages.c
+> @@ -118,10 +118,7 @@ int hfi1_acquire_user_pages(struct mm_struct *mm, unsigned long vaddr, size_t np
+>  void hfi1_release_user_pages(struct mm_struct *mm, struct page **p,
+>  			     size_t npages, bool dirty)
+>  {
+> -	if (dirty)
+> -		put_user_pages_dirty_lock(p, npages);
+> -	else
+> -		put_user_pages(p, npages);
+> +	put_user_pages_dirty_lock(p, npages, dirty);
+>  
+>  	if (mm) { /* during close after signal, mm can be NULL */
+>  		atomic64_sub(npages, &mm->pinned_vm);
+> diff --git a/drivers/infiniband/hw/qib/qib_user_pages.c b/drivers/infiniband/hw/qib/qib_user_pages.c
+> index bfbfbb7e0ff4..26c1fb8d45cc 100644
+> --- a/drivers/infiniband/hw/qib/qib_user_pages.c
+> +++ b/drivers/infiniband/hw/qib/qib_user_pages.c
+> @@ -37,15 +37,6 @@
+>  
+>  #include "qib.h"
+>  
+> -static void __qib_release_user_pages(struct page **p, size_t num_pages,
+> -				     int dirty)
+> -{
+> -	if (dirty)
+> -		put_user_pages_dirty_lock(p, num_pages);
+> -	else
+> -		put_user_pages(p, num_pages);
+> -}
+> -
+>  /**
+>   * qib_map_page - a safety wrapper around pci_map_page()
+>   *
+> @@ -124,7 +115,7 @@ int qib_get_user_pages(unsigned long start_page, size_t num_pages,
+>  
+>  	return 0;
+>  bail_release:
+> -	__qib_release_user_pages(p, got, 0);
+> +	put_user_pages_dirty_lock(p, got, false);
+>  bail:
+>  	atomic64_sub(num_pages, &current->mm->pinned_vm);
+>  	return ret;
+> @@ -132,7 +123,7 @@ int qib_get_user_pages(unsigned long start_page, size_t num_pages,
+>  
+>  void qib_release_user_pages(struct page **p, size_t num_pages)
+>  {
+> -	__qib_release_user_pages(p, num_pages, 1);
+> +	put_user_pages_dirty_lock(p, num_pages, true);
+>  
+>  	/* during close after signal, mm can be NULL */
+>  	if (current->mm)
+> diff --git a/drivers/infiniband/hw/usnic/usnic_uiom.c b/drivers/infiniband/hw/usnic/usnic_uiom.c
+> index 0b0237d41613..62e6ffa9ad78 100644
+> --- a/drivers/infiniband/hw/usnic/usnic_uiom.c
+> +++ b/drivers/infiniband/hw/usnic/usnic_uiom.c
+> @@ -75,10 +75,7 @@ static void usnic_uiom_put_pages(struct list_head *chunk_list, int dirty)
+>  		for_each_sg(chunk->page_list, sg, chunk->nents, i) {
+>  			page = sg_page(sg);
+>  			pa = sg_phys(sg);
+> -			if (dirty)
+> -				put_user_pages_dirty_lock(&page, 1);
+> -			else
+> -				put_user_page(page);
+> +			put_user_pages_dirty_lock(&page, 1, dirty);
+>  			usnic_dbg("pa: %pa\n", &pa);
+>  		}
+>  		kfree(chunk);
+> diff --git a/drivers/infiniband/sw/siw/siw_mem.c b/drivers/infiniband/sw/siw/siw_mem.c
+> index 67171c82b0c4..1e197753bf2f 100644
+> --- a/drivers/infiniband/sw/siw/siw_mem.c
+> +++ b/drivers/infiniband/sw/siw/siw_mem.c
+> @@ -60,20 +60,6 @@ struct siw_mem *siw_mem_id2obj(struct siw_device *sdev, int stag_index)
+>  	return NULL;
+>  }
+>  
+> -static void siw_free_plist(struct siw_page_chunk *chunk, int num_pages,
+> -			   bool dirty)
+> -{
+> -	struct page **p = chunk->plist;
+> -
+> -	while (num_pages--) {
+> -		if (!PageDirty(*p) && dirty)
+> -			put_user_pages_dirty_lock(p, 1);
+> -		else
+> -			put_user_page(*p);
+> -		p++;
+> -	}
+> -}
+> -
+>  void siw_umem_release(struct siw_umem *umem, bool dirty)
+>  {
+>  	struct mm_struct *mm_s = umem->owning_mm;
+> @@ -82,8 +68,9 @@ void siw_umem_release(struct siw_umem *umem, bool dirty)
+>  	for (i = 0; num_pages; i++) {
+>  		int to_free = min_t(int, PAGES_PER_CHUNK, num_pages);
+>  
+> -		siw_free_plist(&umem->page_chunk[i], to_free,
+> -			       umem->writable && dirty);
+> +		put_user_pages_dirty_lock(umem->page_chunk[i].plist,
+> +					  to_free,
+> +					  umem->writable && dirty);
+>  		kfree(umem->page_chunk[i].plist);
+>  		num_pages -= to_free;
+>  	}
+> diff --git a/include/linux/mm.h b/include/linux/mm.h
+> index 0334ca97c584..9759b6a24420 100644
+> --- a/include/linux/mm.h
+> +++ b/include/linux/mm.h
+> @@ -1057,8 +1057,9 @@ static inline void put_user_page(struct page *page)
+>  	put_page(page);
+>  }
+>  
+> -void put_user_pages_dirty(struct page **pages, unsigned long npages);
+> -void put_user_pages_dirty_lock(struct page **pages, unsigned long npages);
+> +void put_user_pages_dirty_lock(struct page **pages, unsigned long npages,
+> +			       bool make_dirty);
+> +
+>  void put_user_pages(struct page **pages, unsigned long npages);
+>  
+>  #if defined(CONFIG_SPARSEMEM) && !defined(CONFIG_SPARSEMEM_VMEMMAP)
+> diff --git a/mm/gup.c b/mm/gup.c
+> index 98f13ab37bac..7fefd7ab02c4 100644
+> --- a/mm/gup.c
+> +++ b/mm/gup.c
+> @@ -29,85 +29,70 @@ struct follow_page_context {
+>  	unsigned int page_mask;
+>  };
+>  
+> -typedef int (*set_dirty_func_t)(struct page *page);
+> -
+> -static void __put_user_pages_dirty(struct page **pages,
+> -				   unsigned long npages,
+> -				   set_dirty_func_t sdf)
+> -{
+> -	unsigned long index;
+> -
+> -	for (index = 0; index < npages; index++) {
+> -		struct page *page = compound_head(pages[index]);
+> -
+> -		/*
+> -		 * Checking PageDirty at this point may race with
+> -		 * clear_page_dirty_for_io(), but that's OK. Two key cases:
+> -		 *
+> -		 * 1) This code sees the page as already dirty, so it skips
+> -		 * the call to sdf(). That could happen because
+> -		 * clear_page_dirty_for_io() called page_mkclean(),
+> -		 * followed by set_page_dirty(). However, now the page is
+> -		 * going to get written back, which meets the original
+> -		 * intention of setting it dirty, so all is well:
+> -		 * clear_page_dirty_for_io() goes on to call
+> -		 * TestClearPageDirty(), and write the page back.
+> -		 *
+> -		 * 2) This code sees the page as clean, so it calls sdf().
+> -		 * The page stays dirty, despite being written back, so it
+> -		 * gets written back again in the next writeback cycle.
+> -		 * This is harmless.
+> -		 */
+> -		if (!PageDirty(page))
+> -			sdf(page);
+> -
+> -		put_user_page(page);
+> -	}
+> -}
+> -
+>  /**
+> - * put_user_pages_dirty() - release and dirty an array of gup-pinned pages
+> - * @pages:  array of pages to be marked dirty and released.
+> + * put_user_pages_dirty_lock() - release and optionally dirty gup-pinned pages
+> + * @pages:  array of pages to be maybe marked dirty, and definitely released.
+
+Better would be.
+
+@pages:  array of pages to be put
+
+>   * @npages: number of pages in the @pages array.
+> + * @make_dirty: whether to mark the pages dirty
+>   *
+>   * "gup-pinned page" refers to a page that has had one of the get_user_pages()
+>   * variants called on that page.
+>   *
+>   * For each page in the @pages array, make that page (or its head page, if a
+> - * compound page) dirty, if it was previously listed as clean. Then, release
+> - * the page using put_user_page().
+> + * compound page) dirty, if @make_dirty is true, and if the page was previously
+> + * listed as clean. In any case, releases all pages using put_user_page(),
+> + * possibly via put_user_pages(), for the non-dirty case.
+
+I don't think users of this interface need this level of detail.  I think
+something like.
+
+ * For each page in the @pages array, release the page.  If @make_dirty is
+ * true, mark the page dirty prior to release.
+
+
+>   *
+>   * Please see the put_user_page() documentation for details.
+>   *
+> - * set_page_dirty(), which does not lock the page, is used here.
+> - * Therefore, it is the caller's responsibility to ensure that this is
+> - * safe. If not, then put_user_pages_dirty_lock() should be called instead.
+> + * set_page_dirty_lock() is used internally. If instead, set_page_dirty() is
+> + * required, then the caller should a) verify that this is really correct,
+> + * because _lock() is usually required, and b) hand code it:
+> + * set_page_dirty_lock(), put_user_page().
+>   *
+>   */
+> -void put_user_pages_dirty(struct page **pages, unsigned long npages)
+> +void put_user_pages_dirty_lock(struct page **pages, unsigned long npages,
+> +			       bool make_dirty)
+>  {
+> -	__put_user_pages_dirty(pages, npages, set_page_dirty);
+> -}
+> -EXPORT_SYMBOL(put_user_pages_dirty);
+> +	unsigned long index;
+>  
+> -/**
+> - * put_user_pages_dirty_lock() - release and dirty an array of gup-pinned pages
+> - * @pages:  array of pages to be marked dirty and released.
+> - * @npages: number of pages in the @pages array.
+> - *
+> - * For each page in the @pages array, make that page (or its head page, if a
+> - * compound page) dirty, if it was previously listed as clean. Then, release
+> - * the page using put_user_page().
+> - *
+> - * Please see the put_user_page() documentation for details.
+> - *
+> - * This is just like put_user_pages_dirty(), except that it invokes
+> - * set_page_dirty_lock(), instead of set_page_dirty().
+> - *
+> - */
+> -void put_user_pages_dirty_lock(struct page **pages, unsigned long npages)
+> -{
+> -	__put_user_pages_dirty(pages, npages, set_page_dirty_lock);
+> +	/*
+> +	 * TODO: this can be optimized for huge pages: if a series of pages is
+> +	 * physically contiguous and part of the same compound page, then a
+> +	 * single operation to the head page should suffice.
+> +	 */
+
+I think this comment belongs to the for loop below...  or just something about
+how to make this and put_user_pages() more efficient.  It is odd, that this is
+the same comment as in put_user_pages()...
+
+The code is good.  So... Other than the comments.
+
+Reviewed-by: Ira Weiny <ira.weiny@intel.com>
+
+Ira
+
+> +
+> +	if (!make_dirty) {
+> +		put_user_pages(pages, npages);
+> +		return;
+> +	}
+> +
+> +	for (index = 0; index < npages; index++) {
+> +		struct page *page = compound_head(pages[index]);
+> +		/*
+> +		 * Checking PageDirty at this point may race with
+> +		 * clear_page_dirty_for_io(), but that's OK. Two key
+> +		 * cases:
+> +		 *
+> +		 * 1) This code sees the page as already dirty, so it
+> +		 * skips the call to set_page_dirty(). That could happen
+> +		 * because clear_page_dirty_for_io() called
+> +		 * page_mkclean(), followed by set_page_dirty().
+> +		 * However, now the page is going to get written back,
+> +		 * which meets the original intention of setting it
+> +		 * dirty, so all is well: clear_page_dirty_for_io() goes
+> +		 * on to call TestClearPageDirty(), and write the page
+> +		 * back.
+> +		 *
+> +		 * 2) This code sees the page as clean, so it calls
+> +		 * set_page_dirty(). The page stays dirty, despite being
+> +		 * written back, so it gets written back again in the
+> +		 * next writeback cycle. This is harmless.
+> +		 */
+> +		if (!PageDirty(page))
+> +			set_page_dirty_lock(page);
+> +		put_user_page(page);
+> +	}
+>  }
+>  EXPORT_SYMBOL(put_user_pages_dirty_lock);
+>  
+> -- 
+> 2.22.0
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
