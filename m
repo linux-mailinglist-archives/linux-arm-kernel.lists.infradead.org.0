@@ -2,69 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81C8F82CE2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 09:36:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72B5582CF2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 09:41:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XfrV1DmSpokWX5pfi+r9KA2MBcyGNnvoizEuh3fbjR0=; b=RZ4YkPJaNmA7Qh
-	kgH6nDmK+CcG/aNEwK5xRDQIbVgwChUgfYofEuPdWTY5tu5xpXyvIQesgmyo07IrRkZmMDVT5o+Vj
-	idoOZqaVL+BxJD28wW5mi18d74BFpFTUAaUl2+p0PGJmkrSM8SOoujmQlocSncnGcnTiPcRkYU09w
-	0w6LMYkpQ+3+pKpNDkzVbe/KWtW0Mk3bC29P5w/3GUd2tDM+TP/i25wUtavrYppPIb1qfvhq/eR1H
-	f7/uXLIEen8O2ctHNymmS7SYyS3HRPv/BzyJVdMpcBhtxok+rnz/3UcFC6R6UMTmvb/SgjGVoYcPi
-	z4FcvO425zA5LYYg13WA==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0pZtxibhdiF3flHWknYmMae8MLUWybGjGlxL8wftF/c=; b=NGtktw3AQNRGxy
+	C/6ZgGyUMlYjEbp6KgfPZTfwNtqw6w5maAzCq6Gc4PoBV7570zsFhwn0vBW62CqWXIdObVneJpW/G
+	P6vLc9etWUDhl2UzoqV3wWlNnX0T81Dg0fNYpoFIQTQ6+pd2OzgF9La6hhmSY8/1RFS0RyNFth+QR
+	fND9/nOasMcTxeRvLVi4s4uVRNTEKRnYjdnfpTQrrXXNsI7Np4keLi3xm2dNFg+ibSAnr/CxlNq5t
+	FnWrhmoaXDHsP39FN+JnKayvjb0nlyJOw1tHvyYA2rTNoMAgYXH95I5Tr3m2xPJz0AUUDkaYXzCKJ
+	XGS7EunxPWq06Ue7RRLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huu0u-0000A8-67; Tue, 06 Aug 2019 07:36:08 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1huu61-0001ty-6I; Tue, 06 Aug 2019 07:41:25 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huu0g-00009L-1M
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 07:35:55 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2728A2189F;
- Tue,  6 Aug 2019 07:35:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565076949;
- bh=fZBRJKmjxvcp/mQzzUacJDHRPt54CTE5Q/sgx3Ed5sE=;
- h=From:To:Cc:Subject:Date:From;
- b=ot83vAf2vvFym5JdA92jT4XYOtvT3mNdwKTE4UHLl+TBHcisvQfnag0/rr1tjZmSr
- fcHLl5FoV8+r7lDIFeOhmJq791dM697zoERPimM4agMxjV1/RnQM7rWbfjTN5Ctiyk
- 0AMAtFqd2tla77qIXU0E+tTpNfSjicIZsRRKtLfA=
-Received: by wens.tw (Postfix, from userid 1000)
- id 5FACD5FC97; Tue,  6 Aug 2019 15:35:46 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: "David S. Miller" <davem@davemloft.net>, Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH net] net: ethernet: sun4i-emac: Support phy-handle property
- for finding PHYs
-Date: Tue,  6 Aug 2019 15:35:39 +0800
-Message-Id: <20190806073539.32519-1-wens@kernel.org>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
+ id 1huu5k-0001sf-4V
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 07:41:09 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1huu5g-0003fC-7P; Tue, 06 Aug 2019 09:41:04 +0200
+Message-ID: <1565077264.4951.4.camel@pengutronix.de>
+Subject: Re: [RFCv2 4/9] dt-bindings: reset: amlogic,meson-reset: convert to
+ yaml
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Neil Armstrong <narmstrong@baylibre.com>, robh+dt@kernel.org
+Date: Tue, 06 Aug 2019 09:41:04 +0200
+In-Reply-To: <20190805120320.32282-5-narmstrong@baylibre.com>
+References: <20190805120320.32282-1-narmstrong@baylibre.com>
+ <20190805120320.32282-5-narmstrong@baylibre.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_003554_256646_3449CCDC 
-X-CRM114-Status: GOOD (  14.24  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190806_004108_174254_BCAEADD0 
+X-CRM114-Status: GOOD (  15.27  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,53 +65,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
+On Mon, 2019-08-05 at 14:03 +0200, Neil Armstrong wrote:
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for the Amlogic Reset controller over to a YAML schemas.
+> 
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 
-The sun4i-emac uses the "phy" property to find the PHY it's supposed to
-use. This property was deprecated in favor of "phy-handle" in commit
-8c5b09447625 ("dt-bindings: net: sun4i-emac: Convert the binding to a
-schemas").
+Let me know if you want me to pick up this patch, otherwise
 
-Add support for this new property name, and fall back to the old one in
-case the device tree hasn't been updated.
+Acked-by: Philipp Zabel <p.zabel@pengutronix.de>
 
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
+to merge with the rest of the series.
 
-The aforementioned commit is in v5.3-rc1. It would be nice to have the
-driver fix in the same release. In addition, an update for the device
-tree has been queued up for v5.4, which made us realize the driver needs
-an update.
+regards
+Philipp
 
----
- drivers/net/ethernet/allwinner/sun4i-emac.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/ethernet/allwinner/sun4i-emac.c b/drivers/net/ethernet/allwinner/sun4i-emac.c
-index 3434730a7699..0537df06a9b5 100644
---- a/drivers/net/ethernet/allwinner/sun4i-emac.c
-+++ b/drivers/net/ethernet/allwinner/sun4i-emac.c
-@@ -860,7 +860,9 @@ static int emac_probe(struct platform_device *pdev)
- 		goto out_clk_disable_unprepare;
- 	}
- 
--	db->phy_node = of_parse_phandle(np, "phy", 0);
-+	db->phy_node = of_parse_phandle(np, "phy-handle", 0);
-+	if (!db->phy_node)
-+		db->phy_node = of_parse_phandle(np, "phy", 0);
- 	if (!db->phy_node) {
- 		dev_err(&pdev->dev, "no associated PHY\n");
- 		ret = -ENODEV;
--- 
-2.20.1
-
+> ---
+>  .../bindings/reset/amlogic,meson-reset.txt    | 19 ----------
+>  .../bindings/reset/amlogic,meson-reset.yaml   | 37 +++++++++++++++++++
+>  2 files changed, 37 insertions(+), 19 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt
+>  create mode 100644 Documentation/devicetree/bindings/reset/amlogic,meson-reset.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt b/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt
+> deleted file mode 100644
+> index 28ef6c295c76..000000000000
+> --- a/Documentation/devicetree/bindings/reset/amlogic,meson-reset.txt
+> +++ /dev/null
+> @@ -1,19 +0,0 @@
+> -Amlogic Meson SoC Reset Controller
+> -=======================================
+> -
+> -Please also refer to reset.txt in this directory for common reset
+> -controller binding usage.
+> -
+> -Required properties:
+> -- compatible: Should be "amlogic,meson8b-reset", "amlogic,meson-gxbb-reset" or
+> -	"amlogic,meson-axg-reset".
+> -- reg: should contain the register address base
+> -- #reset-cells: 1, see below
+> -
+> -example:
+> -
+> -reset: reset-controller {
+> -	compatible = "amlogic,meson-gxbb-reset";
+> -	reg = <0x0 0x04404 0x0 0x20>;
+> -	#reset-cells = <1>;
+> -};
+> diff --git a/Documentation/devicetree/bindings/reset/amlogic,meson-reset.yaml b/Documentation/devicetree/bindings/reset/amlogic,meson-reset.yaml
+> new file mode 100644
+> index 000000000000..00917d868d58
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/reset/amlogic,meson-reset.yaml
+> @@ -0,0 +1,37 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +# Copyright 2019 BayLibre, SAS
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/reset/amlogic,meson-reset.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Amlogic Meson SoC Reset Controller
+> +
+> +maintainers:
+> +  - Neil Armstrong <narmstrong@baylibre.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - amlogic,meson8b-reset # Reset Controller on Meson8b and compatible SoCs
+> +      - amlogic,meson-gxbb-reset # Reset Controller on GXBB and compatible SoCs
+> +      - amlogic,meson-axg-reset # Reset Controller on AXG and compatible SoCs
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#reset-cells":
+> +    const: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#reset-cells"
+> +
+> +examples:
+> +  - |
+> +    reset-controller@c884404 {
+> +          compatible = "amlogic,meson-gxbb-reset";
+> +          reg = <0xc884404 0x20>;
+> +          #reset-cells = <1>;
+> +    };
 
 _______________________________________________
 linux-arm-kernel mailing list
