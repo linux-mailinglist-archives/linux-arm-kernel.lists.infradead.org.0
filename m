@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 440B0835C0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 17:52:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DAA2835DA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 17:54:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PzHYn/nRUkHbPkSdApf2oICsqaplv6XHAF+TLUr9IBM=; b=FsKjNJcpBgbERd
-	uKAPnUQnV3EWGCuV220sazS05L1H5Djp7WRbiRA5fZoRyPyf/2uoJWWDM7IYJAI87tIuSGRGxslvz
-	UBsLxk7OQxiEJSXcSpDD77St8Or23Qyrelowd+x3UmWPUkOjk1Efh008osa1kSZTgkcgmo/K0QhgA
-	I9swDXLfglcNtrhSi8x0cJZPto+b718HKzqRx88hEGA9xp/okLIbeiHvAAdCESML0wYIBAPUxkQPK
-	ajy5hr0U3cYnkXO+FVjmrzs7vJUrinjwJSYxq3DA6tHJYIh+Xh2PJPW/0vVptCGjn5AMnrl2Fi1yD
-	PYval1BFjeK217q1eFow==;
+	List-Owner; bh=O1A2yHHbduiWtcJOR/TFo55BX7rlWFR/J4GuoEnKCOM=; b=atazQKLBKIm8YT
+	8BudNrrzR8QdjsQKHhe90dGrKz8XL+/oxSLA2WfiRxYVAZV1u9bx3W83RKYJf0sz4PLpeh/lzniry
+	fZ1iRnI/UN7HNrsJ/f18HCTQn2GgzQyP3HvNlCS33jluTt/Uis9A7+gNR3VuT3JjuuopSvWyocHp1
+	hGIgZdxLR6XSWVaqjfM0AqfL+Rf/KlYmNt27SlBWOWqZka+eXtIdSWEoEwH6C71ZqQd3ThtdyivCK
+	dj66xogDfdYg2nLw1oOj4HuCDxHG1eC4Ff0Jlq0g7ikMWxWKfewIOroLRtHmdrlFJ1WrifCqSizVD
+	9jz/UELyLy4tJZj6RVag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv1kw-0002i1-VW; Tue, 06 Aug 2019 15:52:10 +0000
+	id 1hv1n1-00032x-9O; Tue, 06 Aug 2019 15:54:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hv1kn-0002hb-Q5
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 15:52:03 +0000
+ id 1hv1mt-000325-3Q
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 15:54:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 77FE3344;
- Tue,  6 Aug 2019 08:52:01 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 88C01344;
+ Tue,  6 Aug 2019 08:54:10 -0700 (PDT)
 Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2516B3F575;
- Tue,  6 Aug 2019 08:52:00 -0700 (PDT)
-Date: Tue, 6 Aug 2019 16:51:58 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 351913F575;
+ Tue,  6 Aug 2019 08:54:09 -0700 (PDT)
+Date: Tue, 6 Aug 2019 16:54:07 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: Re: [PATCH 2/6] ARM: cpuidle: Remove overzealous error logging
-Message-ID: <20190806155158.GB16546@e107155-lin>
+Subject: Re: [PATCH 3/6] drivers: firmware: psci: Decouple checker from
+ generic ARM CPUidle
+Message-ID: <20190806155407.GC16546@e107155-lin>
 References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
- <20190722153745.32446-3-lorenzo.pieralisi@arm.com>
+ <20190722153745.32446-4-lorenzo.pieralisi@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190722153745.32446-3-lorenzo.pieralisi@arm.com>
+In-Reply-To: <20190722153745.32446-4-lorenzo.pieralisi@arm.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_085201_890796_07E4545B 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20190806_085411_187825_3E2F0580 
+X-CRM114-Status: GOOD (  12.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,16 +72,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 04:37:41PM +0100, Lorenzo Pieralisi wrote:
-> CPUidle back-end operations are not implemented in some platforms
-> but this should not be considered an error serious enough to be
-> logged. Check the arm_cpuidle_init() return value to detect whether
-> the failure must be reported or not in the kernel log and do
-> not log it if the platform does not support CPUidle operations.
+On Mon, Jul 22, 2019 at 04:37:42PM +0100, Lorenzo Pieralisi wrote:
+> The PSCI checker currently relies on the generic ARM CPUidle
+> infrastructure to enter an idle state, which in turn creates
+> a dependency that is not really needed.
+> 
+> The PSCI checker code to test PSCI CPU suspend is built on
+> top of the CPUidle framework and can easily reuse the
+> struct cpuidle_state.enter() function (previously initialized
+> by an idle driver, with a PSCI back-end) to trigger an entry
+> into an idle state, decoupling the PSCI checker from the
+> generic ARM CPUidle infrastructure and simplyfing the code
+> in the process.
+> 
+> Convert the PSCI checker suspend entry function to use
+> the struct cpuidle_state.enter() function callback.
 > 
 > Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Ulf Hansson <ulf.hansson@linaro.org>
 > Cc: Sudeep Holla <sudeep.holla@arm.com>
+
+Not sure why we didn't take this path from the beginning.
+Anyways make sense and much needed for later patches in the series.
 
 Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 
