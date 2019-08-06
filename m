@@ -2,59 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 636F383714
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 18:35:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B84BB83726
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 18:40:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Nc6yZfWgIb/2r8hOX9yXlEbaKLV1owqMBsQlhFqD5A=; b=iS9cF7maty7BLa
-	3TA46SPR4XtzAY8arysqdmpTbLjpfuabfT0ZsPIZZEWPW8NzC6NJBDsQLbw/NH+/ZOPTBUvYap9P9
-	tz8BreXFTIcS8pXgG/0+aAh5sGB4iT4DX2Ul+K0JHDTjM9H2WP7To68Q6MFUTJ1fu3Com7H/wtB9q
-	TPaxkFQ8qhdUbYfwC4uKcyQszqm+piOAw9+Sn/BoyW237OkXZ0iitFwmW7sqZT+na/KIdl9MI1+cp
-	XYQ139M2kowx0843kuAehPCnEKG5jLa9LhM9WKoVO3DOjyhdR3l6kTsjAB40SNta+6oxLFxmfAMdx
-	kWw2LC7xsH168XyrnjqQ==;
+	List-Owner; bh=4HfoQRdv674+O6NeWDaE7N0DtS+s+8ZTAZSz0+vVzYY=; b=RSQ0V9DWB6noj5
+	LpKIvbj4M0TqJ5Uf81qESSez/q1rzPxvnJ3Wv20eyY8mzKQ6Il4hcmYzhN1yAlrCLINoM+Vqfim6B
+	+Q3+tFv4rbhGshdp/f7CLVIZOwVoVFaTElrae2zJoado6d+F5hqqP88e7oQuBIY4mx9OGz12oRiCE
+	9sQVo8dnpcoMt1NeBQ44CPQDicXRVPusRhKaaOlAObSnb10qP5ShQmTCRurnXFj4qSc8WbHGSjwyF
+	skNXdke1whn57YaPx0XYy22fB758F5d1OVYK2K8o4Q8A2lZqUxPI8KnfDEybeqa4yRnvj7a/aplQA
+	is/gZ8lRpr49I3BwJ3rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv2QX-0005ri-Pu; Tue, 06 Aug 2019 16:35:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv2QM-0005rN-Ak
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 16:35:00 +0000
-Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
- [66.24.58.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 40590208C3;
- Tue,  6 Aug 2019 16:34:57 +0000 (UTC)
-Date: Tue, 6 Aug 2019 12:34:55 -0400
-From: Steven Rostedt <rostedt@goodmis.org>
-To: Joel Fernandes <joel@joelfernandes.org>
-Subject: Re: [PATCH v3] tracing: Function stack size and its name mismatch
- in arm64
-Message-ID: <20190806123455.487ac02b@gandalf.local.home>
-In-Reply-To: <20190806154811.GB39951@google.com>
-References: <20190802094103.163576-1-jiping.ma2@windriver.com>
- <20190802112259.0530a648@gandalf.local.home>
- <20190802120920.3b1f4351@gandalf.local.home>
- <20190802121124.6b41f26a@gandalf.local.home>
- <20190806154811.GB39951@google.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+	id 1hv2Vk-0000WY-Ij; Tue, 06 Aug 2019 16:40:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hv2Vc-0000W2-D8
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 16:40:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D9AD5344;
+ Tue,  6 Aug 2019 09:40:23 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8522B3F575;
+ Tue,  6 Aug 2019 09:40:22 -0700 (PDT)
+Date: Tue, 6 Aug 2019 17:40:20 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH 5/6] ARM: psci: cpuidle: Enable PSCI CPUidle driver
+Message-ID: <20190806164020.GD15498@e121166-lin.cambridge.arm.com>
+References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
+ <20190722153745.32446-6-lorenzo.pieralisi@arm.com>
+ <20190806161624.GE16546@e107155-lin>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190806161624.GE16546@e107155-lin>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_093458_413131_07185E67 
-X-CRM114-Status: GOOD (  26.52  )
-X-Spam-Score: -4.8 (----)
+X-CRM114-CacheID: sfid-20190806_094024_536156_73D26568 
+X-CRM114-Status: GOOD (  25.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,194 +62,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jiping Ma <jiping.ma2@windriver.com>, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, mingo@redhat.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ linux-pm@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
+ Will Deacon <will@kernel.org>, LAKML <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 6 Aug 2019 11:48:11 -0400
-Joel Fernandes <joel@joelfernandes.org> wrote:
-
-
-> > diff --git a/arch/arm64/include/asm/ftrace.h b/arch/arm64/include/asm/ftrace.h
-> > index 5ab5200b2bdc..13a4832cfb00 100644
-> > --- a/arch/arm64/include/asm/ftrace.h
-> > +++ b/arch/arm64/include/asm/ftrace.h
-> > @@ -13,6 +13,7 @@
-> >  #define HAVE_FUNCTION_GRAPH_FP_TEST
-> >  #define MCOUNT_ADDR		((unsigned long)_mcount)
-> >  #define MCOUNT_INSN_SIZE	AARCH64_INSN_SIZE
-> > +#define ARCH_RET_ADDR_AFTER_LOCAL_VARS 1
-> >  
-> >  #ifndef __ASSEMBLY__
-> >  #include <linux/compat.h>
-> > diff --git a/kernel/trace/trace_stack.c b/kernel/trace/trace_stack.c
-> > index 5d16f73898db..050c6bd9beac 100644
-> > --- a/kernel/trace/trace_stack.c
-> > +++ b/kernel/trace/trace_stack.c
-> > @@ -158,6 +158,18 @@ static void check_stack(unsigned long ip, unsigned long *stack)
-> >  			i++;
-> >  	}
-> >  
-> > +#ifdef ARCH_RET_ADDR_AFTER_LOCAL_VARS
-> > +	/*
-> > +	 * Most archs store the return address before storing the
-> > +	 * function's local variables. But some archs do this backwards.
-> > +	 */
-> > +	if (x > 1) {
-> > +		memmove(&stack_trace_index[0], &stack_trace_index[1],
-> > +			sizeof(stack_trace_index[0]) * (x - 1));
-> > +		x--;
-> > +	}
-> > +#endif
-> > +
-> >  	stack_trace_nr_entries = x;
-> >  
-> >  	if (task_stack_end_corrupted(current)) {  
+On Tue, Aug 06, 2019 at 05:16:24PM +0100, Sudeep Holla wrote:
+> On Mon, Jul 22, 2019 at 04:37:44PM +0100, Lorenzo Pieralisi wrote:
+> > Allow selection of the PSCI CPUidle in the kernel by adding
+> > the required Kconfig options.
+> > 
+> > Remove PSCI callbacks from ARM/ARM64 generic CPU ops
+> > to prevent the PSCI idle driver from clashing with the generic
+> > ARM CPUidle driver initialization, that relies on CPU ops
+> > to initialize and enter idle states.
+> > 
+> > Update the affected defconfig files to guarantee seamingless
+> > transition from the generic ARM CPUidle to the PSCI CPUidle
+> > driver on arch/platforms using it.
+> > 
+> > Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > Cc: Will Deacon <will@kernel.org>
+> > Cc: Ulf Hansson <ulf.hansson@linaro.org>
+> > Cc: Sudeep Holla <sudeep.holla@arm.com>
+> > Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
+> > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > Cc: Mark Rutland <mark.rutland@arm.com>
+> > Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+> > ---
+> >  arch/arm/configs/imx_v6_v7_defconfig | 1 +
+> >  arch/arm64/configs/defconfig         | 1 +
 > 
+> Better to keep above you as separate patch, though it may cause
+> minor issues from bisectibility. It may be needed anyway for merging.
+
+That's a good point, I will split these bits in a separate patch.
+
+> >  arch/arm64/kernel/cpuidle.c          | 7 ++++---
+> >  arch/arm64/kernel/psci.c             | 4 ----
+> >  drivers/cpuidle/Kconfig.arm          | 8 ++++++--
+> >  drivers/firmware/psci/psci.c         | 9 ---------
+> >  6 files changed, 12 insertions(+), 18 deletions(-)
+> > 
+> > diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+> > index a53b29251ed4..4174fd1b79e7 100644
+> > --- a/arch/arm/configs/imx_v6_v7_defconfig
+> > +++ b/arch/arm/configs/imx_v6_v7_defconfig
+> > @@ -60,6 +60,7 @@ CONFIG_ARM_IMX6Q_CPUFREQ=y
+> >  CONFIG_ARM_IMX_CPUFREQ_DT=y
+> >  CONFIG_CPU_IDLE=y
+> >  CONFIG_ARM_CPUIDLE=y
+> > +CONFIG_ARM_PSCI_CPUIDLE=y
+> >  CONFIG_VFP=y
+> >  CONFIG_NEON=y
+> >  CONFIG_PM_DEBUG=y
+> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > index 0e58ef02880c..c0a7cfe3aebd 100644
+> > --- a/arch/arm64/configs/defconfig
+> > +++ b/arch/arm64/configs/defconfig
+> > @@ -72,6 +72,7 @@ CONFIG_RANDOMIZE_BASE=y
+> >  CONFIG_HIBERNATION=y
+> >  CONFIG_WQ_POWER_EFFICIENT_DEFAULT=y
+> >  CONFIG_ARM_CPUIDLE=y
+> > +CONFIG_ARM_PSCI_CPUIDLE=y
+> >  CONFIG_CPU_FREQ=y
+> >  CONFIG_CPU_FREQ_STAT=y
+> >  CONFIG_CPU_FREQ_GOV_POWERSAVE=m
+> > diff --git a/arch/arm64/kernel/cpuidle.c b/arch/arm64/kernel/cpuidle.c
+> > index d1048173fd8a..4bcd1bca0dfc 100644
+> > --- a/arch/arm64/kernel/cpuidle.c
+> > +++ b/arch/arm64/kernel/cpuidle.c
+> > @@ -11,6 +11,7 @@
+> >  #include <linux/cpu_pm.h>
+> >  #include <linux/of.h>
+> >  #include <linux/of_device.h>
+> > +#include <linux/psci.h>
+> >  
+> >  #include <asm/cpuidle.h>
+> >  #include <asm/cpu_ops.h>
+> > @@ -48,15 +49,15 @@ int arm_cpuidle_suspend(int index)
+> >  
+> >  int acpi_processor_ffh_lpi_probe(unsigned int cpu)
+> >  {
+> > -	return arm_cpuidle_init(cpu);
+> > +	return psci_acpi_cpu_init_idle(cpu);
 > 
-> I am not fully understanding the fix :(. If the positions of the data and
-> FP/LR are swapped, then there should be a loop of some sort where the FP/LR
-> are copied repeatedly to undo the mess we are discussing. But in this patch
-> I see only one copy happening. May be I just don't understand this code well
-> enough. Are there any more clues for helping understand the fix?
+> This will break build as psci_acpi_cpu_init_idle is introduced in next patch.
+> You can simply move it to next patch I assume.
 
-Here's the best way to explain this. The code is using the stack trace
-to figure out which function is the stack hog. Or perhaps a serious of
-stack hogs. On x86, a call stores the return address as it calls the
-next function. Then that function allocates its stack frame for its
-local variables and saving of registers.
+Yes, it is a bisectability issue, I fixed it already but thanks
+for spotting it anyway.
 
-on x86:
-
-[ top of stack ]
- 0: sys call entry frame
-10: return addr to entry code
-11: start of sys_foo frame
-20: return addr to sys_foo
-21: start of kernel_func_bar frame
-30: return addr to kernel_func_bar
-31: [ do trace stack here ]
-
-
-Then we do a save_stack_trace which returns the addresses of the
-functions it finds. Which would be (from the bottom of the stack to the
-top)
-
-  return addr to kernel_func_bar
-  return addr to sys_foo
-  return addr to entry code
-
-What we do here is try to figure out how much stack each of theses
-functions have. So we loop through the stack looking for the addresses
-returned by the save_stack trace, and see where on the stack this is.
-This gives us:
-
-  return addr to kernel_func_bar [ 30 ]
-  return addr to sys_foo         [ 20 ]
-  return addr to entry frame     [ 10 ]
-
-From this, we can conclude (on x86) that the size of the stack used for
-kernel_func_bar is 30 - 20 = 10. Because on the stack we have:
-
-20: return addr to sys_foo
-21: start of kernel_func_bar frame  <<-- kernel_func_bar stack frame
-30: return addr to kernel_func_bar
-
-
-Now, what Jiping reported, is that on arm64, it saves the link register
-(the return address) when it is needed to, which is after the stack
-frame for the current function has been saved. That means we have
-something that looks like this:
-
-on arm64:
-
-[ top of stack ]
- 0: sys call entry frame
-10: start of sys_foo_frame
-19: return addr to entry code << lr saved before calling kern_func_bar
-20: start of kernel_func_bar frame
-29: return addr to sys_foo_frame << lr saved before calling next function
-30: [ do trace stack here ]
-
-Now, I have a question. To call the mcount code (ftrace and the stack
-tracing), you need to save the return address of kern_func_bar
-somewhere, otherwise the call to mcount will overwrite the lr. But
-let's say it does and then forgets it, so we have:
-
-30: return addr of kernel_func_bar frame
-31: [ do trace stack here ]
-
-Now save_stack_trace gives us the same result:
-
- return addr to kernel_func bar
- return addr to sys_foo
- return addr to entry frame
-
-But we get a different result when finding them in the location of the
-stack.
-
- return addr to kernel_func_bar [ 30 ]
- return addr to sys foo         [ 29 ]
- return addr to entry frame     [ 19 ]
-
-The simple subtractions will be off:
-
-kernel_func_bar stack size = 30 - 29 = 1
-Or even, sys_foo 29 - 19 = 10, but if we look at the stack:
-
-10: start of sys_foo_frame
-19: return addr to entry_code
-20: start of kernel_func_bar frame
-29: return addr to sys_foo
-
-We are measuring the kernel_func_bar frame for sys_foo!
-
-We are off by one here.
-
-stack_trace_index[] is an array of the offsets mapping to the function
-return addresses found. If we shift it by one, then we then sync the
-functions found with their frames:
-
-stack_trace_index[0] = 30
-stack_trace_index[1] = 29
-stack_trace_index[2] = 19
-
-		memmove((&stack_trace_index[0], &stack_trace_index[1],
-			sizeof(stack_trace_index[0]) * (x - 1));
-
-Makes that:
-
-stack_trace_index[0] = 29
-stack_trace_index[1] = 19
-
-And we do x-- to lose the last frame.
-
-With the stack_dump_trace being:
-
-stack_dump_trace[0] = return addr kernel_func_bar
-stack_dump_trace[1] = return addr sys_foo
-
-we then match which frame size belongs to which function better.
-
-
+> >  }
+> >  
+> >  int acpi_processor_ffh_lpi_enter(struct acpi_lpi_state *lpi)
+> >  {
+> >  	if (ARM64_LPI_IS_RETENTION_STATE(lpi->arch_flags))
+> > -		return CPU_PM_CPU_IDLE_ENTER_RETENTION(arm_cpuidle_suspend,
+> > +		return CPU_PM_CPU_IDLE_ENTER_RETENTION(psci_cpu_suspend_enter,
+> >  						lpi->index);
+> >  	else
+> > -		return CPU_PM_CPU_IDLE_ENTER(arm_cpuidle_suspend, lpi->index);
+> > +		return CPU_PM_CPU_IDLE_ENTER(psci_cpu_suspend_enter, lpi->index);
+> >  }
+> >  #endif
+> > diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
+> > index 85ee7d07889e..a543ab7e007c 100644
+> > --- a/arch/arm64/kernel/psci.c
+> > +++ b/arch/arm64/kernel/psci.c
+> > @@ -105,10 +105,6 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
+> >  
+> >  const struct cpu_operations cpu_psci_ops = {
+> >  	.name		= "psci",
+> > -#ifdef CONFIG_CPU_IDLE
+> > -	.cpu_init_idle	= psci_cpu_init_idle,
+> > -	.cpu_suspend	= psci_cpu_suspend_enter,
+> > -#endif
+> >  	.cpu_init	= cpu_psci_cpu_init,
+> >  	.cpu_prepare	= cpu_psci_cpu_prepare,
+> >  	.cpu_boot	= cpu_psci_cpu_boot,
+> > diff --git a/drivers/cpuidle/Kconfig.arm b/drivers/cpuidle/Kconfig.arm
+> > index 929b57424ea4..b9c56c60ab98 100644
+> > --- a/drivers/cpuidle/Kconfig.arm
+> > +++ b/drivers/cpuidle/Kconfig.arm
+> > @@ -14,8 +14,12 @@ config ARM_CPUIDLE
+> >            provided by architecture code.
+> >  
+> >  config ARM_PSCI_CPUIDLE
+> > -	bool
+> > -
+> > +	bool "PSCI CPU idle Driver"
 > 
-> Also, this stack trace loop (original code) is a bit hairy :) It appears
-> there is a call to stack_trace_save() followed by another loop that goes
-> through the returned entries from there and tries to generate a set of
-> indexes. Isn't the real issue that the entries returned by stack_trace_save()
-> are a out of whack? I am curious also if other users of stack_trace_save()
-> will suffer from the same issue.
+> As mentioned in previous patch, do you see issues having just above
+> change in this patch and the below ones moved to the previous.
 
-No, the order is fine. The issue is that we are using the location of
-the return address in the stack to find out what function has the
-biggest stack usage, and our assumption for arm64 is incorrect in that
-location.
+No you are right, I will make this change.
 
--- Steve
+> > +	depends on ARM_PSCI_FW
+> > +	select DT_IDLE_STATES
+> > +	select CPU_IDLE_MULTIPLE_DRIVERS
+> > +	help
+> > +	  Select this to enable PSCI firmware based CPUidle driver for ARM.
+> 
+> You need extra blank line here.
+
+OK.
+
+Thanks,
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
