@@ -2,88 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0B4A831DF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 14:52:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B6AB831D4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 14:51:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q+0RisPNt8eA11ufglqN2oZFlscogUXalM3ItQDpOfM=; b=UOndvvqeF/WvNm
-	EiYeoVp75yEwVJl9ryNh5EcYZU3HQo/UUfHQFNeJ44iXrZMgdrKqo86N75+4ZwZMXHEMzZdh67RZH
-	VHeJ00SDYKMfL/xBVh6SU0E+Cvlqov7VCCLcrY8KnzWKUsUz5UZFIwg71bLrNhUeQjAHHBmb+RHjN
-	1TPqp60pNL0OIfGxo7w1rCVmetuu+4X/A8/yMxNRZ37RAccJ/GmEhwiC5D8ViuB6JtosED18RXZAq
-	503dc3z14BduZWq0guj2THQtvySGGMSFaYqCwIauCT+IPkJnuSa6+tz/XlbMVCm9kOgwpCyZwQ9cB
-	xiCDIvxcbLgWx6eOZ5TA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DCBXmfJUu+CPO/lAOiZEt21xfc10bza2dK81YjWt+RM=; b=BLh02H4yflLtOv
+	npd/evLGDmzVvAsu6Wmq9Otyb2dhM4DEekYfKYO1WZUhcZGUzxcwy/F2Y/KAfKFzEbS5C7QI6ulpZ
+	0lCl69ellpthd0DCBuOFF5O4TnYrfQLi+XXeAKcwqOGrLiTDQSS+cs5rMfWgzOvnsQi1oO0HJ9yyu
+	+nuo7UiSUI9lS5o1UXcYvvoVmfpMk67rXS1NbuhdRST7C0KEbGNpSh0XA/gBWHPvfS5HHNKZxNTEc
+	SR7bzZXlV7SLnA50LPv1QDuIcyl+9FQg7+lEEbPTDniLyzqBtZYUPCpeG7MWE7SuaQMig7Cxm8cQ7
+	qGUAq288js/ZBAeEGaJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huywY-0002Tr-4c; Tue, 06 Aug 2019 12:51:58 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1huyvd-0001ds-OM; Tue, 06 Aug 2019 12:51:01 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huyvV-0001i7-1M
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 12:50:59 +0000
-Received: by mail-qk1-x741.google.com with SMTP id r6so62770014qkc.0
+ id 1huyvN-0001bH-F7
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 12:50:46 +0000
+Received: by mail-wm1-x342.google.com with SMTP id l2so76300925wmg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 05:50:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/P5o7bDpjWmN9ZebSBZsGlXpEvCnGcCbzXRf1g4vqlg=;
- b=skjdDU4dtUeHC+kMGTUC9fPCCNWSMbFGsd3aaAekUU7izdW2GKUeIP8Sc/7RaZ53a3
- c4WVPqMdHWjNyyW0UWhDJ0fecC+2XNYt9iZkVBq18GzQt0yMKpbUgS8dvW6mSIgHnbdh
- HgzihabMSOBMmrqfJECNcEsIof7X5520tUVHMvH5488p+gJmkSZPzVJSWkUv+6yiugI+
- dgv3Rs+IDXTYKez5jrRsEDothYUJaypa/tg0TDtMtCXOlx6daS632GYFAcAEFt4W2kE2
- cE7i2NUujJPjRXjOO6Plf8QlNLfVcl1X4iFP0PV0Dknt5Xu0vEfGta9zYRm29owweO/D
- Lcbg==
+ Tue, 06 Aug 2019 05:50:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=i8yW7mVu+nN03VbqETwhpsoLUtIU4YcLbfhs55o7BvE=;
+ b=RTZRwX5lhpwBk5ffpnQxAAYx7/cLanVfmlliMxc8iNALHbRdTPbkXa73FiQngVF4k2
+ gSR0nOfzERuCwqrzYPvSe6lQofqNqPqmAIDQYitxE/mLl6BCuiy1cQSaNQfPw+V/7ShZ
+ tnjlpMi5kgAstEAkSvRTFWs3Te4PCbUIiafni+sBHmgX7jOygkvQuhor9CBfI3jXaA+N
+ qYJFwoWghWxkSlGmDwY4Ooltorgm5bfc65AOpvepNg1wS1RCvbIZRmCj0LVKqLMy03cg
+ NPYjcOmyId0MlWnqhIp2J1V6qUTGUTpSHrJDxbxu4lRlPJ82xwQBpdT2BHMDT5IF/ItJ
+ fEOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/P5o7bDpjWmN9ZebSBZsGlXpEvCnGcCbzXRf1g4vqlg=;
- b=la22hd4BR2nJYzvBPatT5SwF2BzmtLgTLE+cyS9mMwO+9Wq1BK/fFG1QYF83bHEG6p
- 4J5NSSFMW5w78eAxkjo+iJMF2FyQMCTL86Rtt+KI4bGS2qDcg9BUkMVapN2wZ7ln9tQB
- rKnbV7kUrimGxL3OaqCezZFNSJCvmM9nd09chCNZCX3/tX1V9K378P6Kr5YGlQwtV+uZ
- eOQ1V6MXAd4DQ33NtWlm5OaDh2SEl60CkBPijtnYXwX7n8AJPVaXRtDBu4MMdhCmSwAT
- MOFjvY8AJO2sLTbrbgA0bGDd4UbFlgouqUExqhyFg1BnivGB8uqVmq7IBLxhL5tb/P7F
- CwZQ==
-X-Gm-Message-State: APjAAAXNKjd65WQ9d/KDM8oRQSyuB/Tb/7tCZhlVmQejJPX0AyLKQIu7
- hiFL4QYL1eKa3IjIyTZHH/Yqa8SW2bpq3z2Eg9jWD74LJ3c=
-X-Google-Smtp-Source: APXvYqwfWWN4YkKLQ+LRmVpH+VROfBQy2m9vp40Fsf+NNf7IJbqfFo2xpdZXFbe8bmZEplS9SM16o6+Vkfq7lHGwoQE=
-X-Received: by 2002:a37:9a0b:: with SMTP id c11mr3120476qke.204.1565095852172; 
- Tue, 06 Aug 2019 05:50:52 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=i8yW7mVu+nN03VbqETwhpsoLUtIU4YcLbfhs55o7BvE=;
+ b=IZn/vzuzpNwfVwMOFgv+lal2syv8HsuTiucCWwDJhhQ/CMQwp2msTHFXzsg5agIAJI
+ b91/rWGoBtdfTeKB2nFjE/6EsUOXwVfuROU1mrIbYnyvAd/fn6GmxVfmYJPjs1nTOyk9
+ vUBUlLg+WZz7TwF95fgg7LN4SOLe1E+zcxxlzbIFv8LoGIR1BCaq+60tkkITXiX2jeQY
+ APnvDtYw12h8Njmj6b76VrBFsUHBUzsS5AId7SWllD0EfmFCPdbjVcduOi0CGUT/Xytn
+ BHyoBtjdrpihAVP4BzNUg0Wt5PebL6MWND2OuZQZ3vihatbfd5b955jPCN/8HWAVbWGI
+ rMZg==
+X-Gm-Message-State: APjAAAU8lf2KsZVlkN3yMf3LEZiQxsTEEefo0CkcVZMJQ54UE42Pb5b/
+ KztHN07kW3voXGE4xzPe0jU98A==
+X-Google-Smtp-Source: APXvYqyO9qfySQufHv8FTPVAmHGN0v/i1YcTHeQd2dt7QxoS3vNu24XyzJhi5stC39e658qAYY58Sg==
+X-Received: by 2002:a1c:3b02:: with SMTP id i2mr4611089wma.23.1565095843565;
+ Tue, 06 Aug 2019 05:50:43 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id e3sm109049221wrs.37.2019.08.06.05.50.42
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 06 Aug 2019 05:50:43 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: robh+dt@kernel.org
+Subject: [PATCH v2 0/2] dt-bindings: net: meson-dwmac: convert to yaml
+Date: Tue,  6 Aug 2019 14:50:39 +0200
+Message-Id: <20190806125041.16105-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-References: <20190806030718.29048-1-luaraneda@gmail.com>
- <20190806030718.29048-3-luaraneda@gmail.com>
- <194fe121-151d-0b64-b83e-e4d82c02efa7@xilinx.com>
-In-Reply-To: <194fe121-151d-0b64-b83e-e4d82c02efa7@xilinx.com>
-From: Luis Araneda <luaraneda@gmail.com>
-Date: Tue, 6 Aug 2019 08:49:59 -0400
-Message-ID: <CAHbBuxpM8YKxADGJv2PAPbyS-2FZ6xiwohJwGJ1DMPuGnDV-Jg@mail.gmail.com>
-Subject: Re: [PATCH 2/2] ARM: zynq: Use memcpy_toio instead of memcpy on smp
- bring-up
-To: Michal Simek <michal.simek@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_055053_216942_DD8A3981 
-X-CRM114-Status: GOOD (  16.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190806_055045_501149_2A7E72BF 
+X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (luaraneda[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,44 +93,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <linux@armlinux.org.uk>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-kernel@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
+ martin.blumenstingl@googlemail.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Michal,
+This patchsets converts the Amlogic Meson DWMAC glue bindings over to
+YAML schemas using the already converted dwmac bindings.
 
-On Tue, Aug 6, 2019 at 2:42 AM Michal Simek <michal.simek@xilinx.com> wrote:
-> On 06. 08. 19 5:07, Luis Araneda wrote:
-> > This fixes a kernel panic (read overflow) on memcpy when
-> > FORTIFY_SOURCE is enabled.
-> >
-> > The computed size of memcpy args are:
-> > - p_size (dst): 4294967295 = (size_t) -1
-> > - q_size (src): 1
-> > - size (len): 8
-> >
-> > Additionally, the memory is marked as __iomem, so one of
-> > the memcpy_* functions should be used for read/write
-> >
-> > Signed-off-by: Luis Araneda <luaraneda@gmail.com>
-[...]
-> I would consider this one as stable material. Please also add there link
-> to the patch which this patch fixes.
+The first patch is needed because the Amlogic glue needs a supplementary
+reg cell to access the DWMAC glue registers.
 
-I'm dropping stable CC (for now), as I'm not sure I completely
-understood the process for inclusion in stable trees.
-Do I have to wait for the patch to be on Linus' tree before CCing stable?
+Neil Armstrong (2):
+  dt-bindings: net: snps,dwmac: update reg minItems maxItems
+  dt-bindings: net: meson-dwmac: convert to yaml
 
-As for the link which this patch fixes, you mean
-aa7eb2bb4e4a22e41bbe4612ff46e5885b13c33e (arm: zynq: Add smp support)?
-where you added SMP support for zynq.
+ .../bindings/net/amlogic,meson-dwmac.yaml     | 113 ++++++++++++++++++
+ .../devicetree/bindings/net/meson-dwmac.txt   |  71 -----------
+ .../devicetree/bindings/net/snps,dwmac.yaml   |   8 +-
+ 3 files changed, 120 insertions(+), 72 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/amlogic,meson-dwmac.yaml
+ delete mode 100644 Documentation/devicetree/bindings/net/meson-dwmac.txt
 
-Thanks,
-Luis Araneda.
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
