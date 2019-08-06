@@ -2,68 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0D2C83330
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 15:44:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A486083360
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 15:55:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=2gAE9j0lSTv7ezav8OIByRBKo0LlMbvYUD6W88uQh6E=; b=GXEia0nBwcmB5XNJaHJiFB4By4
-	F73rT09hZpmQkdXUVXOzyEf4zc2elEiPbwzjo4yDGhzAshFOLRKwD4vOylyp9qRc/ZLx2O0BaEgu5
-	+8SWbLf++lO+T1KYMy9o038bG1ZqtHB/hafj49SO29B7aubHlw70gNdFmmV9AcDqhwm5/K3p8d3sH
-	AinHp1C1MtYRjrf44/o8Sz+6Vu0l5kRsQFdrrzwCdEmKA+8SpiIaAHkPvJpuc9zekAnkqqAFmOrWf
-	PrVFqUuq0/uikClV8TTHKfAmMrAcddmSnYblPPDZff26csZjv1RJ9WpV0bz+Xv2b0jECZxjy3RGpl
-	+qksYG9Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=b35f8TPYkIBoqadOFikPJVPRq3HGTYBWtZ5rP9tYo4M=; b=rYhpAnmPBHhg95
+	7csRf7gqjhPB8O+jGV27LUNE+dw0JVetKBPvVA/BL1YVgnGJtcJmdRDG8M0HVABqwqTxhgGBjQVuo
+	PkM6AmignvTP75zmHyUpGMawTsvSpE/oDQA7/mTZ8IXWOqFsonN6ubCONB1qtVaMYP6/N+bNkDh7E
+	+2GHpT0MHy+hpAdBKAWvBZ7pP0l62bKxW99RpBYBtyFyGhLrCMfw8pkxqjym5V80ZqAmeLkvFjmQb
+	hBcgIV53PNbsKfPwUSrsoxUnTwOex1Cr5kR6foQ2yGYYt7LzhwVmypEpXSPICZZtxhX+Jf1nyy9AM
+	OmreuHK3v2P4wgBSdKaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huzl5-0000M7-8h; Tue, 06 Aug 2019 13:44:11 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1huzvk-0006eT-6c; Tue, 06 Aug 2019 13:55:12 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huzjt-0007ma-AX
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 13:43:00 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
- [10.225.0.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id BE706C21CC;
- Tue,  6 Aug 2019 13:42:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1565098977; bh=18B/BrYz2sxVzKeQcjktizOD0pcEwHNkm/ulnP89N5A=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=ggMGdYW7W/TdZKv7lXxaEWfjmo/y1eQGWGZl5pw5rKnHNzvSgAkLa7aV9H48M6Dfj
- lKIX0EVMX4yUCAlBh7jwyxmOHlC634Z1VtYftkc29s7Bvpn8RNtQQF6HxESPKLni5s
- ZW+qzxtYrJgxeQyV5hEDPrBwz9A0TVku2Tc3JNd+pR4jHyIFiQOf0ATNnGgWBy8nnQ
- +bbxovWKCm8KTIjK1oo+9B7VNop5V6qRUv0m+j23C5EQc0Ab+ABXFaBzCGwg30rmKV
- heps87PchFFwmNn9ZaIp5NawFjLUHTkUmU6oy+qcI0EjdAeMxiRk7eCcpgswvmhRMn
- ewiG+JvHfyZqA==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 7B0AFA007A;
- Tue,  6 Aug 2019 13:42:55 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net-next v2 10/10] net: stmmac: selftests: Add a selftest for
- Flexible RX Parser
-Date: Tue,  6 Aug 2019 15:42:51 +0200
-Message-Id: <486b11dcec03cb5a7d0dc166bf57c09627e53a8b.1565098881.git.joabreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1565098881.git.joabreu@synopsys.com>
-References: <cover.1565098881.git.joabreu@synopsys.com>
-In-Reply-To: <cover.1565098881.git.joabreu@synopsys.com>
-References: <cover.1565098881.git.joabreu@synopsys.com>
+ id 1huzva-00063f-1s
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 13:55:03 +0000
+Received: by mail-lj1-x241.google.com with SMTP id v18so82261628ljh.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 06 Aug 2019 06:55:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IJ12Dy3JfyZ0l7CageHav/zHZkBqP0OCWfzKRPvmdoc=;
+ b=p40EAZqxGwsk7cv76bOJBxNqqa0AeZzd3w3C2VYzbT8LY1ssw9DC7sCkwirZoazfZq
+ BU5IMdW/tQtlFGdsGju93CFQ56bexUWSN13iJEImGWjA1aWQAPr/CX2AkBkiMuoRuV/M
+ jplktamrvZRG/kWsC9EmW6QUaHibt/6YNQor+3USjTVm627JdrzSCt/S4LneRh0kervw
+ qKfVB8b1pVbhIT5aiO1GCUSl9EYUa0AQ85wMqRRi6uCk9agFjrH5gDxoGFHzLR2FJ7Rk
+ qo+mpMzKUQXjli74QUS9KnxIt50OYX+b/EY49TuDplwuT6HJuC5aTzw3OjM80NcsQdZG
+ z7tg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IJ12Dy3JfyZ0l7CageHav/zHZkBqP0OCWfzKRPvmdoc=;
+ b=VkxRBXG9q4TGwKLdVOZk8JRIuHinaYeZ1MHUJoia8ck6AiWkbg/uk2F3mCPEbiXLMC
+ JDmEMtv+NgCMRvinbqQ0Q6UCtgxuUJCDayB+o//HIlUs6CS7bzuCfZg5CZDq4LyJD22L
+ 9C8yy+nPIB0NQqPe8sh7Rd5x59CMsVdGSIryJy2PcRcWJRJB30oVYWFjGPcylvkbeyuE
+ s1EpHg3helFJVwD2hRVCai9mOZ3ZIjS+W6SIj8sMbfkNiksLCmlOdIyv3OO8GLCpQf0Y
+ CDMnngHrthb8sahpfGTnDeJcexzBYJ/K6AqNJqHiy6kRduhWIy2bm8qT3B9OFxt4SlKB
+ IWCg==
+X-Gm-Message-State: APjAAAVPCTftrlZ5CV23oeyF/GcV8OVwNifpEF21HWQd7uRFlHP8Zftn
+ 7CkGuI8GxnBUPMO3lXOms5b0ag==
+X-Google-Smtp-Source: APXvYqxv8qeBsyp4+j8+tEUZfsnPoqeK+HtBmP4WRrTSf4gzVQpnVHOuB+aJZHmFKhJdaRZiGmjR4A==
+X-Received: by 2002:a2e:7614:: with SMTP id r20mr1896078ljc.42.1565099700349; 
+ Tue, 06 Aug 2019 06:55:00 -0700 (PDT)
+Received: from genomnajs.ideon.se ([85.235.10.227])
+ by smtp.gmail.com with ESMTPSA id u22sm20071875ljd.18.2019.08.06.06.54.57
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 06 Aug 2019 06:54:59 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: dri-devel@lists.freedesktop.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
+Subject: [PATCH 2/4 v3] drm/panel: simple: Add TI nspire panel bindings
+Date: Tue,  6 Aug 2019 15:54:37 +0200
+Message-Id: <20190806135437.7451-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_064257_469264_460BABD5 
-X-CRM114-Status: GOOD (  15.93  )
+X-CRM114-CacheID: sfid-20190806_065502_112376_49A48FD4 
+X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,170 +97,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a selftest for the Flexible RX Parser feature.
+Add bindings for the TI NSPIRE simple display panels.
 
-Signed-off-by: Jose Abreu <joabreu@synopsys.com>
-
+Cc: devicetree@vger.kernel.org
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
+ChanegLog v2->v3:
+- Switch to GPL-2.0-only OR BSD-2-Clause license
+- Use a simple enum for the compatible
+- Use the new nifty panel-common.yaml, tested on
+  linux-next
+ChangeLog v1->v2:
+- New patch as bindings are required
+- Let's use YAML
 ---
- .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 98 +++++++++++++++++++++-
- 1 file changed, 97 insertions(+), 1 deletion(-)
+ .../bindings/display/panel/ti,nspire.yaml     | 36 +++++++++++++++++++
+ 1 file changed, 36 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/display/panel/ti,nspire.yaml
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-index 6b08bb15af15..abab84f2ef8b 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-@@ -11,8 +11,10 @@
- #include <linux/ip.h>
- #include <linux/phy.h>
- #include <linux/udp.h>
-+#include <net/pkt_cls.h>
- #include <net/tcp.h>
- #include <net/udp.h>
-+#include <net/tc_act/tc_gact.h>
- #include "stmmac.h"
- 
- struct stmmachdr {
-@@ -229,7 +231,7 @@ static int stmmac_test_loopback_validate(struct sk_buff *skb,
- 			goto out;
- 	}
- 	if (tpriv->packet->src) {
--		if (!ether_addr_equal(ehdr->h_source, orig_ndev->dev_addr))
-+		if (!ether_addr_equal(ehdr->h_source, tpriv->packet->src))
- 			goto out;
- 	}
- 
-@@ -912,6 +914,96 @@ static int stmmac_test_dvlanfilt(struct stmmac_priv *priv)
- 	return ret;
- }
- 
-+#ifdef CONFIG_NET_CLS_ACT
-+static int stmmac_test_rxp(struct stmmac_priv *priv)
-+{
-+	unsigned char addr[ETH_ALEN] = {0xde, 0xad, 0xbe, 0xef, 0x00, 0x00};
-+	struct tc_cls_u32_offload cls_u32 = { };
-+	struct stmmac_packet_attrs attr = { };
-+	struct tc_action **actions, *act;
-+	struct tc_u32_sel *sel;
-+	struct tcf_exts *exts;
-+	int ret, i, nk = 1;
+diff --git a/Documentation/devicetree/bindings/display/panel/ti,nspire.yaml b/Documentation/devicetree/bindings/display/panel/ti,nspire.yaml
+new file mode 100644
+index 000000000000..5c5a3b519e31
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/panel/ti,nspire.yaml
+@@ -0,0 +1,36 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/panel/ti,nspire.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+	if (!tc_can_offload(priv->dev))
-+		return -EOPNOTSUPP;
-+	if (!priv->dma_cap.frpsel)
-+		return -EOPNOTSUPP;
++title: Texas Instruments NSPIRE Display Panels
 +
-+	sel = kzalloc(sizeof(*sel) + nk * sizeof(struct tc_u32_key), GFP_KERNEL);
-+	if (!sel)
-+		return -ENOMEM;
++maintainers:
++  - Linus Walleij <linus.walleij@linaro.org>
 +
-+	exts = kzalloc(sizeof(*exts), GFP_KERNEL);
-+	if (!exts) {
-+		ret = -ENOMEM;
-+		goto cleanup_sel;
-+	}
++allOf:
++  - $ref: panel-common.yaml#
 +
-+	actions = kzalloc(nk * sizeof(*actions), GFP_KERNEL);
-+	if (!actions) {
-+		ret = -ENOMEM;
-+		goto cleanup_exts;
-+	}
++properties:
++  compatible:
++    enum:
++      - ti,nspire-cx-lcd-panel
++      - ti,nspire-classic-lcd-panel
++  port: true
 +
-+	act = kzalloc(nk * sizeof(*act), GFP_KERNEL);
-+	if (!act) {
-+		ret = -ENOMEM;
-+		goto cleanup_actions;
-+	}
++required:
++  - compatible
 +
-+	cls_u32.command = TC_CLSU32_NEW_KNODE;
-+	cls_u32.common.chain_index = 0;
-+	cls_u32.common.protocol = htons(ETH_P_ALL);
-+	cls_u32.knode.exts = exts;
-+	cls_u32.knode.sel = sel;
-+	cls_u32.knode.handle = 0x123;
++additionalProperties: false
 +
-+	exts->nr_actions = nk;
-+	exts->actions = actions;
-+	for (i = 0; i < nk; i++) {
-+		struct tcf_gact *gact = to_gact(&act[i]);
-+
-+		actions[i] = &act[i];
-+		gact->tcf_action = TC_ACT_SHOT;
-+	}
-+
-+	sel->nkeys = nk;
-+	sel->offshift = 0;
-+	sel->keys[0].off = 6;
-+	sel->keys[0].val = htonl(0xdeadbeef);
-+	sel->keys[0].mask = ~0x0;
-+
-+	ret = stmmac_tc_setup_cls_u32(priv, priv, &cls_u32);
-+	if (ret)
-+		goto cleanup_act;
-+
-+	attr.dst = priv->dev->dev_addr;
-+	attr.src = addr;
-+
-+	ret = __stmmac_test_loopback(priv, &attr);
-+	ret = !ret; /* Shall NOT receive packet */
-+
-+	cls_u32.command = TC_CLSU32_DELETE_KNODE;
-+	stmmac_tc_setup_cls_u32(priv, priv, &cls_u32);
-+
-+cleanup_act:
-+	kfree(act);
-+cleanup_actions:
-+	kfree(actions);
-+cleanup_exts:
-+	kfree(exts);
-+cleanup_sel:
-+	kfree(sel);
-+	return ret;
-+}
-+#else
-+static int stmmac_test_rxp(struct stmmac_priv *priv)
-+{
-+	return -EOPNOTSUPP;
-+}
-+#endif
-+
- #define STMMAC_LOOPBACK_NONE	0
- #define STMMAC_LOOPBACK_MAC	1
- #define STMMAC_LOOPBACK_PHY	2
-@@ -969,6 +1061,10 @@ static const struct stmmac_test {
- 		.name = "Double VLAN Filtering",
- 		.lb = STMMAC_LOOPBACK_PHY,
- 		.fn = stmmac_test_dvlanfilt,
-+	}, {
-+		.name = "Flexible RX Parser   ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_rxp,
- 	},
- };
- 
++examples:
++  - |
++    panel {
++        compatible = "ti,nspire-cx-lcd-panel";
++        port {
++            panel_in: endpoint {
++                remote-endpoint = <&pads>;
++            };
++        };
++    };
 -- 
-2.7.4
+2.21.0
 
 
 _______________________________________________
