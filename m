@@ -2,65 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F23B82D20
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 09:49:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 560DF82D57
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 10:02:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qBxr5S2BS/1rhWRu3TRHSGKVj5HVUHprZ1GsUOAoLkw=; b=PVU77o5m/EFoqZ
-	KWYaPsFTkM1Ci/jVGngye07hRCgEzzqiWwhIQ138L3HUakJb7fA7QXsM6Q4ydWu0FbFovPKlbuWZb
-	bBvInzwLmCNBOaRHkL600QvZnEBxHxSDuBz9akto6HYP0sorCYKI2FkCSHZth67gGR3wCjZwcobmz
-	ftNmdlCgSvwxf/d7T0M+PxYn5fwH/Np1/sPdyoquqjwCeN987pNgoMVRLUgSRNuZxJbk5RNfk45Bs
-	+COdbYdkftF2YUGzJithXLiZs1O5+t3njM4w+BibwJr8VpczlLBgENi0p59oGzy8AIcPR3Kb8qiPv
-	5D5TvPUKTFian/of5P+g==;
+	List-Owner; bh=FtE1z83ULljOEgGFdyl/Wj6r6oKcyGUbxqkLHLMRU7o=; b=ioMaxqSnKBfogD
+	M8TeAKY7heRFnYqjpWhKAjezVImx7vxoFsaz9EDao8Nen6wOz5NTDE4i95hDJXjPm4hNzpCoKS0D/
+	aDcuozDGLlv3NKbnPOlz7Fcy7UukiR60tP33enMQoctY/gtyNOwPlfzFWZmeIWtlglBsuTcbDD2QK
+	8TJNuf/zgdZ/3lW2mKKYW/wEH3FnDEJ0/kG9Ej+0wLtOl6Px/6vQ6+HFEOvpk/6WIEP+1AFqTeNd3
+	HonkgKHQPBbdRlNlQWNpUh4rsV8ujAtghDNojtEHwfsbt53uxYl8H09LspqQpW2BPVcu5s7CEuo3s
+	P57RrXIChoSSXaRBExCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huuDL-0004mk-QL; Tue, 06 Aug 2019 07:48:59 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1huuQX-0000x2-CR; Tue, 06 Aug 2019 08:02:37 +0000
+Received: from skedge03.snt-world.com ([91.208.41.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huuD8-0004lv-EF; Tue, 06 Aug 2019 07:48:47 +0000
-X-UUID: c8d2bd2768ef4def8ecdb4bbe95dcd75-20190805
-X-UUID: c8d2bd2768ef4def8ecdb4bbe95dcd75-20190805
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 737868651; Mon, 05 Aug 2019 23:48:36 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 6 Aug 2019 00:48:34 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 6 Aug 2019 15:48:31 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 6 Aug 2019 15:48:30 +0800
-Message-ID: <1565077710.23705.21.camel@mhfsdcap03>
-Subject: Re: [PATCH v8 00/11] add USB GPIO based connection detection driver
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 6 Aug 2019 15:48:30 +0800
-In-Reply-To: <CACRpkdaBT24JPH_VsKtgp6fjWtVuqM50rXkDVYKmLHgR5hdJzA@mail.gmail.com>
-References: <1563958245-6321-1-git-send-email-chunfeng.yun@mediatek.com>
- <CACRpkdaBT24JPH_VsKtgp6fjWtVuqM50rXkDVYKmLHgR5hdJzA@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1huuQC-0000vg-JN
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 08:02:18 +0000
+Received: from sntmail11s.snt-is.com (unknown [10.203.32.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge03.snt-world.com (Postfix) with ESMTPS id BCCFC626313;
+ Tue,  6 Aug 2019 10:02:04 +0200 (CEST)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail11s.snt-is.com
+ (10.203.32.181) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 6 Aug 2019
+ 10:02:04 +0200
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1713.004; Tue, 6 Aug 2019 10:02:04 +0200
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: =?utf-8?B?VXdlIEtsZWluZS1Lw7ZuaWc=?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [PATCH v3 2/4] serial: mctrl_gpio: Add a NULL check to
+ mctrl_gpio_to_gpiod()
+Thread-Topic: [PATCH v3 2/4] serial: mctrl_gpio: Add a NULL check to
+ mctrl_gpio_to_gpiod()
+Thread-Index: AQHVSRmhj6XM1Buz9UqFmvYk2hHNCKbno2OAgASBqgCAAX0UAIAABJuA
+Date: Tue, 6 Aug 2019 08:02:04 +0000
+Message-ID: <3672939d-183d-f844-c44c-c70a77931c72@kontron.de>
+References: <20190802100349.8659-1-frieder.schrempf@kontron.de>
+ <20190802100349.8659-2-frieder.schrempf@kontron.de>
+ <20190802121231.wk6yg5mkyivs3rni@pengutronix.de>
+ <f866213b-fd3b-8602-6c11-56cb65a1ea05@kontron.de>
+ <20190806074534.5w773nltywxyiljz@pengutronix.de>
+In-Reply-To: <20190806074534.5w773nltywxyiljz@pengutronix.de>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+Content-ID: <44F6FF28ECA0604BAC78178DAA15EB46@snt-world.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 5974D75886B44E4363446BA9394912791E53F3E9496FF92EBA64D74B9A80C30C2000:8
-X-MTK: N
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: BCCFC626313.A0B69
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: festevam@gmail.com, geert+renesas@glider.be,
+ gregkh@linuxfoundation.org, jslaby@suse.com, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ linux-kernel@vger.kernel.org, linux-serial@vger.kernel.org,
+ s.hauer@pengutronix.de, shawnguo@kernel.org,
+ u.kleine-koenig@pengutronix.de
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_004846_483756_8294677A 
-X-CRM114-Status: GOOD (  17.20  )
+X-CRM114-CacheID: sfid-20190806_010217_086304_95B97927 
+X-CRM114-Status: GOOD (  12.58  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [91.208.41.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,70 +94,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Hans de Goede <hdegoede@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-usb <linux-usb@vger.kernel.org>,
+Cc: "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ "geert+renesas@glider.be" <geert+renesas@glider.be>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ Jiri Slaby <jslaby@suse.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Biju Das <biju.das@bp.renesas.com>, Badhri Jagan Sridharan <badhri@google.com>,
- Andy
- Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC
- support" <linux-mediatek@lists.infradead.org>, Min Guo <min.guo@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>, Linux
- ARM <linux-arm-kernel@lists.infradead.org>, Li Jun <jun.li@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-08-05 at 12:06 +0200, Linus Walleij wrote:
-> On Wed, Jul 24, 2019 at 10:51 AM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
-> 
-> > Because the USB Connector is introduced and the requirement of
-> > usb-connector.txt binding, the old way using extcon to support
-> > USB Dual-Role switch is now deprecated, meanwhile there is no
-> > available common driver when use Type-B connector, typically
-> > using an input GPIO to detect USB ID pin.
-> 
-> However while this was going on,
-> drivers/extcon/extcon-fsa9480.c was merged and that detects
-> not only GPIO on the USB port but multiplexed usecases such
-> as UART over the USB micro PHY (and no that UART is not
-> a USB UART, but an actual RX/TX over D-/D+).
-> 
-> That driver also measure a whole slew of funny resistance
-> values on the ID pin, that is how it does its job.
-I look into the spec of fsa9480, it indeed detect many USB accessories.
-But this driver is used for simplest cases that only uses micro
-receptacle with id-pin/vbus-pin
-
-> 
-> But for just "hey I'm plugged in" we can surely keep this
-> ID on GPIO detection in the USB subsystem.
-Sorry, you mean provide a common API? could you please describe more
-clearer about your suggestion?
-
-
-Introducing a single driver using usb_role_switch will help to keep
-transparent for USB controller driver, no matter it uses type-c or micro
-
-Thanks a lot
-> 
-> I just get a bit insecure about how we should ideally
-> handle these "funny-PHY's".
-
-> 
-> Yours,
-> Linus Walleij
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDYuMDguMTkgMDk6NDUsIFV3ZSBLbGVpbmUtS8O2bmlnIHdyb3RlOg0KPiBIZWxsbyBGcmll
+ZGVyLA0KPiANCj4gT24gTW9uLCBBdWcgMDUsIDIwMTkgYXQgMDk6MDE6MzlBTSArMDAwMCwgU2No
+cmVtcGYgRnJpZWRlciB3cm90ZToNCj4+IE9uIDAyLjA4LjE5IDE0OjEyLCBVd2UgS2xlaW5lLUvD
+tm5pZyB3cm90ZToNCj4+PiBPbiBGcmksIEF1ZyAwMiwgMjAxOSBhdCAxMDowNDoxMEFNICswMDAw
+LCBTY2hyZW1wZiBGcmllZGVyIHdyb3RlOg0KPj4+PiBGcm9tOiBGcmllZGVyIFNjaHJlbXBmIDxm
+cmllZGVyLnNjaHJlbXBmQGtvbnRyb24uZGU+DQo+Pj4+DQo+Pj4+IEFzIGl0IGlzIGFsbG93ZWQg
+dG8gdXNlIHRoZSBtY3RybF9ncGlvXyogZnVuY3Rpb25zIGJlZm9yZQ0KPj4+PiBpbml0aWFsaXph
+dGlvbiAoYXMgdGhlIDgyNTAgZHJpdmVyIGRvZXMgYWNjb3JkaW5nIHRvIDQzNGJlMGFlN2FhNyks
+DQo+Pj4NCj4+PiBBY3R1YWxseSBJIHdhcyBzdXJwcmlzZWQgc29tZSB0aW1lIGFnbyB0aGF0IDgy
+NTAgdXNlZCBzZXJpYWxfbWN0cmwNCj4+PiB3aXRob3V0IGZpcnN0IGluaXRpYWxpemluZyBpdCBh
+bmQgZXhwZWN0aW5nIGl0IHRvIHdvcmsuIEkgZGlkbid0IGxvb2sgaW4NCj4+PiBkZXRhaWwsIGJ1
+dCBJIHdvdWxkbid0IGdvIHNvIGZhciB0byBjYWxsIHRoaXMgImFsbG93ZWQiLiBUaGUgY29tbWl0
+DQo+Pj4gaXRzZWxmIGNhbGxzIGl0ICJ3b3JrYXJvdW5kIiB3aGljaCBzZWVtcyBhIGJldHRlciBt
+YXRjaC4NCj4+DQo+PiBPaywgYnV0IGlmIHRoaXMgaXMgY29uc2lkZXJlZCB0byBiZSBhIHdvcmth
+cm91bmQgYW5kIGFzIHRoZSA4MjUwIGRyaXZlcg0KPj4gZG9lcyBub3QgdXNlIG1jdHJsX2dwaW9f
+dG9fZ3Bpb2QoKSwgd2Ugc2hvdWxkIG1heWJlIGp1c3QgZHJvcCB0aGlzIHBhdGNoDQo+PiBpbnN0
+ZWFkIG9mIGVuY291cmFnaW5nIG90aGVycyB0byB1c2UgbWN0cmxfZ3BpbyBiZWZvcmUgaW5pdGlh
+bGl6YXRpb24uDQo+Pg0KPj4gSSdtIHJlYWxseSBub3Qgc3VyZSB3aGF0J3MgYmVzdCwgc28gZGVw
+ZW5kaW5nIG9uIHdoYXQgeW91IHdpbGwgcHJvcG9zZSwNCj4+IEknbGwgc2VuZCBhIG5ldyB2ZXJz
+aW9uIG9mIHRoaXMgcGF0Y2ggd2l0aCBhZGp1c3RlZCBjb21taXQgbWVzc2FnZSBvciBub3QuDQo+
+IA0KPiBJIHdvdWxkbid0IGVuY291cmFnZSB1c2FnZSBvZiBtY3RybC1ncGlvIGJlZm9yZSBpdCdz
+IGluaXRpYWxpemVkLiBTbyBJDQo+IHN1Z2dlc3QgdG8gZHJvcCB0aGlzIHBhdGNoLg0KDQpPaywg
+dGhhbmtzLgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
