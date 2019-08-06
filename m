@@ -2,122 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2B4D82E86
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 11:17:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B5D182ECB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 11:38:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZozTIpOwFkGI4QqHa5SduFkFKzNLAS5DxHEenEHQEp0=; b=H8aw+lKY70QMzY
-	qGc2mwVL7iAXbWCsnY3MveCINkoogPo94PLNGuCuL+fxireBW+IhSwbQIVMZr/syYsZkA678yqE/G
-	oDQaWLlTOrt2P6t4YkksYFV6wklBuWFK9KkK0vI+BRDWJgO+QKMLZUbPwc2ee/SSH59syin/OFdhM
-	mShNUqjTfkSlDq1SO8xWSCY6qsA6PGJoJCKg69uF8XHHKROJT/4iSBvKNNdnt1zceRV8KgOyDnaUW
-	W21QlW0WJlqfwRRHtw2Iu0Dml6tGKSS4qvrKT0IosWSAZu/RfDY1XpKlTEqG6KBr4VJKxSC2EKTLI
-	6/kXepujHu4jmwoe8vyw==;
+	List-Owner; bh=mhIncC9OnTc9wLKBEXbkWuSufPsBo7yQemmhcAfG1H4=; b=WhgTXcDfo9V4RS
+	eq8Yy5iJ5NPz4pilcUBN05UjcSexe3u09+3isuZwcVsspj3U3sgWPqsVBGi60vX7pWg+UEBVmoYFY
+	AslxZJzdlqbIh7vnl+5zgPIVHEJeAePDPDymkX6F428adR5/tdcUk7e6GGmgdKPeEtB164kmdVrYa
+	6Mrb8xUpYupJUPVQ6wJz7Id5zkmvCNxUkcNam5CaPro7pTWYTSF2N/C+Ptc9ym8qUexvT9PAKjLeW
+	mvExluZMOzdCS3o/i5lavAWsUzljN6RQLWizzRdVAzdzjAkM9ruXffQxQSFzUdgm0480RNRdgm3V7
+	pxBpBHDbtOSEgk7uRl5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huvb5-00057D-2D; Tue, 06 Aug 2019 09:17:35 +0000
-Received: from mail-eopbgr130083.outbound.protection.outlook.com
- ([40.107.13.83] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1huvvO-0002ge-FC; Tue, 06 Aug 2019 09:38:34 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huvaj-00056P-5X
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 09:17:14 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=A+bOYeGQOvWtru5iTgrQjphmyV/dlvAD7aXTSz4SyDQDFGFf+t3/DHUhWMRqrDGhGLPo+1o1xzSFMFWhCZBl8poW/VYW+WZBkcmqVVhfJDC4/hlVEkismGHriA5T/uctQOsheY5YuoLT33FxU5sSNPudbe9+wsoWVFomEqyO/pCPiGvwrvA73ak/8W8mWJVdv4A/J7ro6HasZ89/Vx5zYy4JptEfkjwArsPJu0CzQS8gc0sE+uPYoNXs0gqOD3bNZLvWDKd4Je+gHUQWoxPgaVq9W/aScExO4eRKMK54p4Ndw1G8OAsAzSjbwQ0ERLHXh+V60Bwan63hvnF45jdjBg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zJsuXJRtZrnN4NxkETC75H9wdjZOR2+xl+7WvS4uADg=;
- b=cdQewf5YRLjrrXJYNmyGt7mzM5HqBYy38WbLeTcZTNzwfw8KiTjSm/mIGSOkYqKFdctSjuSAcukpSlr56vhjmspv7TD8VdySow0pOj11bW4N2o3/Z50c9FQ2xGG8ckfElFRRBU7aAdQ2ZYpfvhbDgjC/wSz5GEGH7Ah9ayJSKcZfDi4KnQQAguYszp4Lo4Je/XdrY1jjJgv6yxMTGvu57pd761XjWKhZSoHJIpP+G/MZTxo8+pi3OvfRZNJJW7RsoT3U1nDtsyeuqvcRhwfwRcWyUnYjFygjGUl7ZzY+b5GCtIs3436X8pEbgl3+rC+DpXiiRxS4LZfiVy9E93w4qw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=nxp.com;dmarc=pass action=none header.from=nxp.com;dkim=pass
- header.d=nxp.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zJsuXJRtZrnN4NxkETC75H9wdjZOR2+xl+7WvS4uADg=;
- b=B5RPb+vgiyhSP3QEyVG5ItYkeSqJ6Lx6su9I3HbsmNK/xq3rlxpSp7zPciW9+aqZOENqhILterFpizlAZgRHlUHXROTm5lWKw349rTb25iXlpLFmmvo5xPAKgSCS5K3WV29MpmVBEdp10SgNXye+U/6CIDt418usvLN1TgmgW3Q=
-Received: from VI1PR04MB4094.eurprd04.prod.outlook.com (52.133.13.160) by
- VI1PR04MB6030.eurprd04.prod.outlook.com (20.179.24.82) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2136.17; Tue, 6 Aug 2019 09:17:07 +0000
-Received: from VI1PR04MB4094.eurprd04.prod.outlook.com
- ([fe80::c85e:7409:9270:3c3c]) by VI1PR04MB4094.eurprd04.prod.outlook.com
- ([fe80::c85e:7409:9270:3c3c%7]) with mapi id 15.20.2136.018; Tue, 6 Aug 2019
- 09:17:07 +0000
-From: Daniel Baluta <daniel.baluta@nxp.com>
-To: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Fancy Fang
- <chen.fang@nxp.com>, "mturquette@baylibre.com" <mturquette@baylibre.com>, 
- "festevam@gmail.com" <festevam@gmail.com>, "sboyd@kernel.org"
- <sboyd@kernel.org>, Jacky Bai <ping.bai@nxp.com>, Jun Li <jun.li@nxp.com>,
- "agx@sigxcpu.org" <agx@sigxcpu.org>, Abel Vesa <abel.vesa@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, Anson Huang <anson.huang@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>, Peng Fan
- <peng.fan@nxp.com>, "kernel@pengutronix.de" <kernel@pengutronix.de>, Leonard
- Crestez <leonard.crestez@nxp.com>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>
-Subject: Re: [PATCH 2/2] clk: imx8mq: Unregister clks when of_clk_add_provider
- failed
-Thread-Topic: [PATCH 2/2] clk: imx8mq: Unregister clks when
- of_clk_add_provider failed
-Thread-Index: AQHVTCQFiMf7Z6GBnEmButhUFBiCbabt1yYA
-Date: Tue, 6 Aug 2019 09:17:07 +0000
-Message-ID: <01256fbd0ec5c14e30027be902e89b65ab921970.camel@nxp.com>
-References: <20190806064614.20294-1-Anson.Huang@nxp.com>
- <20190806064614.20294-2-Anson.Huang@nxp.com>
-In-Reply-To: <20190806064614.20294-2-Anson.Huang@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=daniel.baluta@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 0cca0302-0f35-47ca-b4ec-08d71a4edac7
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB6030; 
-x-ms-traffictypediagnostic: VI1PR04MB6030:
-x-microsoft-antispam-prvs: <VI1PR04MB60301B80ACB8F7F4F83E9B24F9D50@VI1PR04MB6030.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2887;
-x-forefront-prvs: 0121F24F22
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(346002)(376002)(39860400002)(366004)(136003)(199004)(189003)(26005)(6512007)(478600001)(486006)(76176011)(11346002)(476003)(446003)(14454004)(2616005)(68736007)(6486002)(6506007)(25786009)(66446008)(5660300002)(64756008)(86362001)(71200400001)(186003)(76116006)(256004)(14444005)(91956017)(4744005)(71190400001)(66476007)(66946007)(66556008)(2501003)(7736002)(50226002)(305945005)(8936002)(81166006)(81156014)(8676002)(110136005)(2906002)(102836004)(66066001)(7416002)(53936002)(2201001)(6246003)(44832011)(4326008)(99286004)(6116002)(229853002)(3846002)(118296001)(6436002)(316002)(36756003)(99106002)(921003)(32563001)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6030;
- H:VI1PR04MB4094.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: s4d+oj7CC1eHCjJKPP7t4y5gJmH3D9U+MedriCqYvbfcx2WyFtHmtElcewzqiGXboPlgshxuwznPj5bLfJCMphzlxaGkikR6XuEQF9vn2CHlZINEXHgpmHjOKwtRyDWYP0oid0TRlag7R6VAFqRHtn4A9lf09EtsCoeRobzLl+jM5wr5DDmZChubTgKn+j8xuMaM2HZyYgShgBAdT8ukX80tCQQ+i9p9yJfJVRy1jX/W+XLwvja/7WtZ12fpgsqiy+0wHYg00/WnGUekh9gG3oAHFzEYkwS9+WKwRCyl2gE+kUwWw35KqzcKIwS4pRAnPXKVj1G9z6H/U17eJQ0tI6DY68BZRH3ud5rFNJ/tqMu7hQ/nv0ftrOQPQh/AsMEPFdUFBrk9OHGJI2rae2PlqrBrBIuso0+yNocbg0es7e8=
-Content-ID: <440199482DA6994BA78BD8BEFD5D9B37@eurprd04.prod.outlook.com>
+ id 1huvvB-0002gC-Ai
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 09:38:22 +0000
+Received: by mail-ed1-x542.google.com with SMTP id k8so81663853eds.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 06 Aug 2019 02:38:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=sender:date:from:to:cc:subject:message-id:mail-followup-to
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=lXyS+3a5qcDEyEF5LisBaQWkib6lVU2+K34nQBXYqTA=;
+ b=VvVVfZAImggq+hv+uSLRfZNheEhVjvL+W5UVpgopska+tQ8Ns32KSgvyatrllNVad8
+ 8GXMBagHGD5RYCv4YfaSEOmkLu2BiH8CqUfZr0AvoqzTNY8/+hR40D4CrQXnT4khXUlf
+ mxChHJ1ZYcKjNhkwkqyFKIV2AgxEs20G4jtB4=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :in-reply-to:user-agent;
+ bh=lXyS+3a5qcDEyEF5LisBaQWkib6lVU2+K34nQBXYqTA=;
+ b=gO2FJkVM44d25ZSVVzKzlp1faNeemUjqL0JrxvNEW18tAWNWeEiuC7hWxuqZN2jyXj
+ 48/B5MEz318hrj//KqrnFvSLdvKg+9fw2zaY0MrBsTO5cl/T9LqZz/ZABjmw4dTsBnY9
+ xTMslDksiqLPt3AtkvroBPr5yiyUBvjd/2UgZyhxb02lGrFSMAJ0tQM2/BvQWO3aZXEl
+ DqVY6kxwA6+QPzyuT9GyGgCmLzcc4KDF9fgb1iESO5kbV1QmbqLokK3ySETiLv+/ZWAK
+ scy9AHfo6VTuTDNKHykBzOcP7NsYFVhhY0PfhKBHffpXhEbaYY+fQmV/BSn4raxXFfSo
+ qiFw==
+X-Gm-Message-State: APjAAAX0PfYGSF/jib4i8nDgi1Qbti/E3KvOTw69LX7Ox28RfHvvwIGQ
+ f2ZvW1i1MiG2+hVC9FOvrvoe7A==
+X-Google-Smtp-Source: APXvYqzqH6/bXZ26nVBNYTN2PzoLaN+S9OSr40dprY04zqgu8B5JxMBvPeFFL2JFhDIKf3hdZUQCxA==
+X-Received: by 2002:a50:d79b:: with SMTP id w27mr2729896edi.126.1565084299696; 
+ Tue, 06 Aug 2019 02:38:19 -0700 (PDT)
+Received: from phenom.ffwll.local ([2a02:168:569e:0:3106:d637:d723:e855])
+ by smtp.gmail.com with ESMTPSA id cw14sm14578958ejb.91.2019.08.06.02.38.18
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 06 Aug 2019 02:38:18 -0700 (PDT)
+Date: Tue, 6 Aug 2019 11:38:16 +0200
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 1/2] drm: add cache support for arm64
+Message-ID: <20190806093816.GY7444@phenom.ffwll.local>
+Mail-Followup-To: Christoph Hellwig <hch@lst.de>,
+ Rob Clark <robdclark@gmail.com>, dri-devel@lists.freedesktop.org,
+ Rob Clark <robdclark@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will@kernel.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Sean Paul <sean@poorly.run>, David Airlie <airlied@linux.ie>,
+ Allison Randal <allison@lohutok.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20190805211451.20176-1-robdclark@gmail.com>
+ <20190806084821.GA17129@lst.de>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0cca0302-0f35-47ca-b4ec-08d71a4edac7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Aug 2019 09:17:07.4807 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: daniel.baluta@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6030
+Content-Disposition: inline
+In-Reply-To: <20190806084821.GA17129@lst.de>
+X-Operating-System: Linux phenom 4.19.0-5-amd64 
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_021713_214773_FE7F5C1B 
-X-CRM114-Status: GOOD (  16.32  )
+X-CRM114-CacheID: sfid-20190806_023821_373880_AFC138F5 
+X-CRM114-Status: GOOD (  24.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.83 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -136,52 +109,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Rob Clark <robdclark@chromium.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Sean Paul <sean@poorly.run>, Rob Clark <robdclark@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ Allison Randal <allison@lohutok.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-08-06 at 14:46 +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On Tue, Aug 06, 2019 at 10:48:21AM +0200, Christoph Hellwig wrote:
+> This goes in the wrong direction.  drm_cflush_* are a bad API we need to
+> get rid of, not add use of it.  The reason for that is two-fold:
 > 
-> When of_clk_add_provider failed, all clks should be unregistered.
+>  a) it doesn't address how cache maintaince actually works in most
+>     platforms.  When talking about a cache we three fundamental operations:
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> 	1) write back - this writes the content of the cache back to the
+> 	   backing memory
+> 	2) invalidate - this remove the content of the cache
+> 	3) write back + invalidate - do both of the above
+> 
+>  b) which of the above operation you use when depends on a couple of
+>     factors of what you want to do with the range you do the cache
+>     maintainance operations
+> 
+> Take a look at the comment in arch/arc/mm/dma.c around line 30 that
+> explains how this applies to buffer ownership management.  Note that
+> "for device" applies to "for userspace" in the same way, just that
+> userspace then also needs to follow this protocol.  So the whole idea
+> that random driver code calls random low-level cache maintainance
+> operations (and use the non-specific term flush to make it all more
+> confusing) is a bad idea.  Fortunately enough we have really good
+> arch helpers for all non-coherent architectures (this excludes the
+> magic i915 won't be covered by that, but that is a separate issue
+> to be addressed later, and the fact that while arm32 did grew them
+> very recently and doesn't expose them for all configs, which is easily
+> fixable if needed) with arch_sync_dma_for_device and
+> arch_sync_dma_for_cpu.  So what we need is to figure out where we
+> have valid cases for buffer ownership transfer outside the DMA
+> API, and build proper wrappers around the above function for that.
+> My guess is it should probably be build to go with the iommu API
+> as that is the only other way to map memory for DMA access, but
+> if you have a better idea I'd be open to discussion.
 
-Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
+I just read through all the arch_sync_dma_for_device/cpu functions and
+none seem to use the struct *dev argument. Iirc you've said that's on the
+way out?
 
-> ---
->  drivers/clk/imx/clk-imx8mq.c | 10 +++++++++-
->  1 file changed, 9 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-
-> imx8mq.c
-> index 04302f2..81a0249 100644
-> --- a/drivers/clk/imx/clk-imx8mq.c
-> +++ b/drivers/clk/imx/clk-imx8mq.c
-> @@ -562,10 +562,18 @@ static int imx8mq_clocks_probe(struct
-> platform_device *pdev)
->  	clk_data.clk_num = ARRAY_SIZE(clks);
->  
->  	err = of_clk_add_provider(np, of_clk_src_onecell_get,
-> &clk_data);
-> -	WARN_ON(err);
-> +	if (err < 0) {
-> +		dev_err(dev, "failed to register clks for i.MX8MQ\n");
-> +		goto unregister_clks;
-> +	}
->  
->  	imx_register_uart_clocks(uart_clks);
->  
-> +	return 0;
-> +
-> +unregister_clks:
-> +	imx_unregister_clocks(clks, ARRAY_SIZE(clks));
-> +
->  	return err;
->  }
->  
+That dev parameter is another holdup for the places where we do not yet
+know what the new device will be (e.g. generic dma-buf exporters like
+vgem). And sprinkling a fake dev or passing NULL is a bit silly.
+
+Add a HAVE_ARCH_SYNC_DMA and the above refactor (assuming it's ok to roll
+out everywhere) and we should indeed be able to use this. We still need to
+have all the others for x86 and all that. Plus I guess we should roll out
+the split into invalidate and flush.
+
+The other bit is phys vs. virt addr confusion, but looks like standard if
+phys_addr and you kmap underneath (except from drm_clflush_virt_range,
+only used by i915).
+-Daniel
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
