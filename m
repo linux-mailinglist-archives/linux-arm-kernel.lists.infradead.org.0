@@ -2,88 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECD3F82DA4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 10:23:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB0CA82DAA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 10:25:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KE1ym/y0M5x+PdRlSLi5s47qNAkGF4dLNcO+EI0eAvk=; b=juXYUFH6tsSMi2sd99KD7PERp
-	r4IPzxwAYkVlBX4AAPFItRGS6tGhodZzsFtFRYV5HV+OsBDDIa2V0+XbTNjdsYSkDyHKxrvcgobCL
-	RzROw7zHxsO8pzB9tuJ0ap0AyfiQ3pYHO1jsRAW8gccxdcZmAm0AQby+DxNlgtl/1zf/ZTxEPihW7
-	QmjBTWILN1ZRSujnKhdn5SBjZVVuJU+BWsKVg/V1k8P0puKnxlbUjsCScg4T1a9QgYCK8o2/jhb2o
-	DdzH12FvNsJd2sDcw3ho69LXwTerZu2Gyo55rGl3paWTF4fPILJtA0iHLKzz9jXi3A7AxTDF/SVEs
-	bQu7dBSmw==;
+	 bh=1DiGXWgVZJO/e3SqqdxHYDLP7bonfPjLnP+vZsr4kto=; b=hXRZuUTsGa9MUrGtkrcBEgWPA
+	NN7/YpJXzhIq26lc0A6xQjuSiChCexqy2NkHYIfPCcQClfENfB7QBHb6jnaGnH4aaZD52I5//I4T5
+	DWpEZMnv+vrG7mbNjbhRMgsd2BWZMprsYqLcsyfl34AKetT2H6qT4oYLEZ/Tsx5sG9BP7KGsaFsZU
+	O2lcJviHFGwt7WSeZJ8vxGZraWPFQvqSehXXGOLoLmfKqAX4ewkXis6l0KGPJSJ9V1rLvoUMgajxB
+	GpgJ4Dgjl9HeLQ7lDPzacqpJo98a8USKidyBkvwzrbkkuOZVHgfw1wsun7BtEmftHaKpWOIt+cA40
+	yQDY0IIlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huukv-0007sI-Sv; Tue, 06 Aug 2019 08:23:42 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1huumg-0001ao-Mk; Tue, 06 Aug 2019 08:25:30 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huuki-0007rd-6m
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 08:23:29 +0000
-Received: by mail-wr1-x441.google.com with SMTP id n4so87026457wrs.3
+ id 1huumQ-0001YX-2i
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 08:25:16 +0000
+Received: by mail-wm1-x344.google.com with SMTP id l2so75480163wmg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 01:23:27 -0700 (PDT)
+ Tue, 06 Aug 2019 01:25:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=RD9sOS7gT6ZlegeX1a0xUUJ7DdLDwuMR+Ckv3pGMllA=;
- b=h6pXcG7oNroWrnIk3CnKhwqgBwBR4Dv1+eoadyOR5J4QSWAhMOhwSXXeTtVm0LrCZx
- SYXqTmoOWEG41ioVPQTLIgR8e0soGHWPQhaXt0KrIaNH/04LaCFeRYRgrfXmQmiZH6cy
- Rk5n3VkaZ18aYQzy3I2Yx/oY3qrowQWCYDMKD2P8wkjG4mb0z0JqthxBsQs/s11o1keh
- CccZYfl1Krr3BJqTGqusotx3coT7DG/m997Kmch4NlU3jX0HbjqIWbhpD+OnGyM2OTKY
- 06lD0qBw5hWs8QtxcxXYd7hVkOWYrEtiZnFjFXjOqEDT/uuz/KvGPggSeEXe1j91GNW/
- q5Xg==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=e0Gkgck1Aj/JyMBL/DHI4HjqwY2jjps7Dj7PaylKjl4=;
+ b=C+m5UExv1CLnNHUBzP0qDiHXGCt7r6FUO7gLxM8L+ovk6fspDimTFSn3ypylAA5NLn
+ /XrjtuQktAhoqPMMPm0vey/6MzjIFy31yC+e6MXl4O0E2ga5WBOgrf2y/Q2PcyDe1M0v
+ g1uGB22YG7sN7Bg2eFBFGgidjfZT5lyIWRPB3EG1ZoHUHUEH4KEF83qH6Iqvi2LvBMiU
+ XepIKra7DJZZc8qsdN4jJMtg6i+PQGzzWEEBLOtN8GpoRubPoJvIuv1WeoR/DAXEmOCG
+ bHHty2a6e3j0nrRKm0vMjf55hzZT1Uf+TBgj1+8lTZU10ptSLW+Cx4o5OBlVjqxWGsPb
+ IzRQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=RD9sOS7gT6ZlegeX1a0xUUJ7DdLDwuMR+Ckv3pGMllA=;
- b=h3rO4kPSg5y+eC3YWt+j4CsC19fPKchBuDNlwLFPy4QKuroo5T7BeEQz2DJlfnV6ni
- 02EdgQ47MB96+UzcFITytlxy9U4KoarHuPKe9hO4zUoGBVz9sEb6mLNn2sEWQQt2sNMB
- kpFJ20XN+cmuUHDEw6uajwtX7CW9tn/nzH7mdIUl6LzuncJilImqYPjEVF75g5s854e/
- HvrZG4H8Hq9psq6R0iWC67viQoAr9Pbnlc1giJ/MRv9girkZZJQ03Wl76ZLS9+qgc9T6
- bY3kObStcgzQPBj5vVdgMX23mhqqXe7k+R4ROt948shJGhEE18SfwwuD+5Gqduj4Nhh+
- VQ7Q==
-X-Gm-Message-State: APjAAAWq+ZrYCuYaBxCDK4z8oHuMf5BAxog8XqkVTf41Fvhu2U5JJ4Bk
- Xuqi0DTMSJKQM7lTscYbj7AFOQ==
-X-Google-Smtp-Source: APXvYqwdUng/sQOPDCg+WzY/aqTQBtLKU0Ijopke9iG1HFvl2OQSdFnJfqvRpH9W3B1gMsvLdUL86A==
-X-Received: by 2002:adf:c003:: with SMTP id z3mr3290757wre.243.1565079806121; 
- Tue, 06 Aug 2019 01:23:26 -0700 (PDT)
+ bh=e0Gkgck1Aj/JyMBL/DHI4HjqwY2jjps7Dj7PaylKjl4=;
+ b=cAQGQgPFnqNTUV4+QaPfsnqHztApXP5Y8AkuYvNUJIKuqgP97XdnVX1LEOAWGUnIss
+ PZrLZKG55F8LRnoG95E0obmd5ikgFY096aYgj2vvZMV+SrJtgsXujrVx7M6HdpPyq61Z
+ ZzaGWQCVN2mCA5VSQnxwTMpd15N/T45Xb2EVemfFbHFdaOgYU8+6eCEE711trBuHFsYy
+ TsmhynWzrKtrw3y7cVPVadKGgx43nX95RPcOBEKptY/uaP6xWaRLApjHiUbC17ViZqI/
+ Y/NPhgwCNoilO7GGGF+UkWacWaQmZBKcpD6lw1kROi3kXKxFA0Bzv364D2FOaFCT2+Gy
+ y3kw==
+X-Gm-Message-State: APjAAAVv9iZb+adlgXc8l8b1uEEgcTf7mVOgisnbNHwIm8qABo++CRPx
+ pbY0fc/WH7IHqHsTAOJBbQYvdA==
+X-Google-Smtp-Source: APXvYqwPj+fveR4n29sCPaWg0zpl+3hL2IDWGiQDPBv6JliRWfgpQmQuSZ1OgfJKQfn7jY1pRriV6g==
+X-Received: by 2002:a1c:cb0a:: with SMTP id b10mr3242533wmg.41.1565079912619; 
+ Tue, 06 Aug 2019 01:25:12 -0700 (PDT)
 Received: from [192.168.86.34]
  (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
- by smtp.googlemail.com with ESMTPSA id c1sm198509779wrh.1.2019.08.06.01.23.24
+ by smtp.googlemail.com with ESMTPSA id
+ f192sm88903896wmg.30.2019.08.06.01.25.11
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 06 Aug 2019 01:23:25 -0700 (PDT)
-Subject: Re: [PATCH v2 4/4] firmware: meson_sm: Rework driver as a proper
- platform driver
-To: Carlo Caione <ccaione@baylibre.com>, khilman@baylibre.com,
- narmstrong@baylibre.com, robh+dt@kernel.org, tglx@linutronix.de,
- jbrunet@baylibre.com, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org
+ Tue, 06 Aug 2019 01:25:11 -0700 (PDT)
+Subject: Re: [PATCH v2 0/4] Rework secure-monitor driver
+To: Kevin Hilman <khilman@baylibre.com>, Carlo Caione <ccaione@baylibre.com>
 References: <20190731082339.20163-1-ccaione@baylibre.com>
- <20190731082339.20163-5-ccaione@baylibre.com>
+ <7hftmfguug.fsf@baylibre.com>
 From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Message-ID: <0a4f48fa-0110-78b5-75d9-091849ab4691@linaro.org>
-Date: Tue, 6 Aug 2019 09:23:24 +0100
+Message-ID: <12d38512-605c-3544-a525-2c3599559391@linaro.org>
+Date: Tue, 6 Aug 2019 09:25:11 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190731082339.20163-5-ccaione@baylibre.com>
+In-Reply-To: <7hftmfguug.fsf@baylibre.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_012328_257536_3B42CB8B 
-X-CRM114-Status: GOOD (  15.51  )
+X-CRM114-CacheID: sfid-20190806_012514_119386_9EC1F113 
+X-CRM114-Status: GOOD (  14.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,35 +102,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: devicetree@vger.kernel.org, narmstrong@baylibre.com, robh+dt@kernel.org,
+ linux-amlogic@lists.infradead.org, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org, jbrunet@baylibre.com
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Kevin,
 
-
-On 31/07/2019 09:23, Carlo Caione wrote:
-> The secure monitor driver is currently a frankenstein driver which is
-> registered as a platform driver but its functionality goes through a
-> global struct accessed by the consumer drivers using exported helper
-> functions.
+On 05/08/2019 22:34, Kevin Hilman wrote:
+> Srinivas,
 > 
-> Try to tidy up the driver moving the firmware struct into the driver
-> data and make the consumer drivers referencing the secure-monitor using
-> a new property in the DT.
+> Carlo Caione <ccaione@baylibre.com> writes:
 > 
-> Currently only the nvmem driver is using this API so we can fix it in
-> the same commit.
+>> The secure-monitor driver is currently in really bad shape, not my
+>> proudest piece of code (thanks Jerome for pointing that out ;). I tried
+>> to rework it a bit to make it a bit more tolerable.
+>>
+>> I needed to change a bit the APIs and consequently adapt the only user
+>> we have, that is the nvmem/efuses driver. To not break bisectability I
+>> added one single commit to change both the drivers.
 > 
-> Reviewed-by: Jerome Brunet <jbrunet@baylibre.com>
-> Signed-off-by: Carlo Caione <ccaione@baylibre.com>
-> ---
->   drivers/firmware/meson/meson_sm.c       | 94 +++++++++++++++++--------
->   drivers/nvmem/meson-efuse.c             | 24 ++++++-
+> With your ack on the nvmem bindings and nvmem part of patch 4/4, I can
+> take the series take the rest of this series through my tree for Amlogic
+> SoCs.
+Sounds good for me!
 
-Acked-by: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+I have Acked the driver changes, bindings need ack from DT guys.
 
-
+Thanks,
+srini
+> 
+> Kevin
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
