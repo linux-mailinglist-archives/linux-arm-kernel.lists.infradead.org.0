@@ -2,60 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 101DD8320F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 15:01:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4655883220
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 15:05:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S/vvP+O+jJfQexw8yoltwtVcUroAsUsLZEF1D78gAZA=; b=kpzkUS27FxKY0z
-	chy99V2CNeAGWZYTMgxAX5+H71/OM8tMYU0qc/iQlcuQbyj/TyzDgklzN6fthUWLAzBAAUAjt6YVf
-	jvLpQq0AmeTCd4hQulC2dPIfqQ6oxCPSY2ZmKcv3PY9jWh8PKEpUIAs+46fEGyiiGD5qX6zf/z2ca
-	xHcu5UzhhrjhUYFhJ+araQGg6Wc2Y+r+XXO9L5XiSmDEJG2O+ikJ3sGdmZy+EYAvuAKgWDTFuixUO
-	Ycw4b46htCaVrS6S2GGrlXHbEVkFc6tzZnu+vtiQzRZAWsTl+EzKPpuf4X8sABnHfJOg4KUsERX6F
-	Vzm0Fmzh6SG7rJn803Uw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=K2uwY27hS05PUcBayxfVP+9yWh2RRfkyl3oHAQCy2D4=; b=nLx
+	2YBFp4x4EcBww737jvYajc/1L7ozWsJLOX4bJt9VJ7VKBvWVy4ynxX9Gm/PoQ1pONMl8zs9WQjRJ/
+	CfU+/K2VEo4qkVf4J8sN+RMSkpc/RTUbZbkKVIEHLK682hUZub02HKT8roZejQ5rXJat2UGg7jy3c
+	R63ImropvevbdzMZzdFBqlVMlZYhLCjT2RGkbOzlcowEh9vRLNhqBThYT5QlBTClkMGYdHWtIedax
+	iLMohXuia9YL7MnE2OXO+0SEp++qODHv2aR1Tci+XNH0EhPIwvFaucsNXQTOWx43UJSBAloH2YFPA
+	8A9MqSM/qhwNMi+yXaPUCCI0tWvvyPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huz5Z-0006cb-Ka; Tue, 06 Aug 2019 13:01:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1huz9f-0000Pb-Hg; Tue, 06 Aug 2019 13:05:31 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huz5O-0006bd-Ng
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 13:01:08 +0000
-Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
- [66.24.58.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9CFB120C01;
- Tue,  6 Aug 2019 13:01:00 +0000 (UTC)
-Date: Tue, 6 Aug 2019 09:00:59 -0400
-From: Steven Rostedt <rostedt@goodmis.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v3] tracing: Function stack size and its name mismatch
- in arm64
-Message-ID: <20190806090059.3c106d41@gandalf.local.home>
-In-Reply-To: <20190805112524.ajlmouutqckwpqyd@willie-the-truck>
-References: <20190802094103.163576-1-jiping.ma2@windriver.com>
- <20190802112259.0530a648@gandalf.local.home>
- <20190803082642.GA224541@google.com>
- <20190805112524.ajlmouutqckwpqyd@willie-the-truck>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
+ id 1huz9L-0000Ak-NF
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 13:05:13 +0000
+Received: by mail-wm1-x344.google.com with SMTP id v15so78143132wml.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 06 Aug 2019 06:05:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=aOEiMClLlNGKFVgF1uc0XEaaUElK/j2HAOeb7aEDvFU=;
+ b=QrHunvwKeKucFciStUYnaBDIvwjbtVpPHlnqiz3nLHv64cImQ6ZWapGOmwJODU4VLP
+ ZPiVt2SwMBihahTHWCN8XcNpI7HrQmpTJ9Nt97qmanE1n8BPpAj6nVn0N9iOrtOR0tjK
+ Xe7xUq7BxMHTpM7mc/qVw/xUG7J5a5cMVEgnDkCyi0zvvRYU4jsTYBbPEsKrHRuOrtmK
+ T76ta9UFaZaEqXcNeykmL0Mtxlem0QkosHKK/Jbaa6eUCG96kG1nCSfnulsxCeMpCW83
+ 4NxW5N1Of460J2bRdadsQd8c5hT74maA0jDsrCLx6tBs96NuNwmYViLWPg0Mn67OE90j
+ 2yBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=aOEiMClLlNGKFVgF1uc0XEaaUElK/j2HAOeb7aEDvFU=;
+ b=FnuqrvVqZJcvl1ec/ypzsuKOF97vZo87yACuAaDt6IfIQdzn4RPF+invVdovsacN4e
+ 0hkD7WDUuNZ897MkkbOf/XIgg0ifm48bQxJZQBTRCL5lCgE9U2kMavVKVRXDkRHlby7y
+ LL3pPSU/Ec9MIDG/2mJSqEebO3rMV4jmjMJ4k3gXA5FvgGm8arOyBXM8orRtVe+S2Fu0
+ lfftE9BRbUAG3HTppabJW32Ef4I8ECrlpX8YyOagSItsXwRrsr4tGc2sT4q/JM9DvI1X
+ WpBb99dxbP6Yz662MgXoSuXeV7qFBRF86wewDPvwgNkKfMiQQqJdR8LO/ex5rpu2TCFa
+ gG8w==
+X-Gm-Message-State: APjAAAW4btJeXiqW6SMsqrVQjbJDRqXTaNFrUaiEObpU1QwM48wnT88E
+ unFJhrImiWU4eVUaMQwhsCC/eg==
+X-Google-Smtp-Source: APXvYqzZdDSexSvzr2ocbt3H/8w9W8songZyclA+NoREaLstGEeN4Xmf95HAcs1eq0OWGBEqyn2/kw==
+X-Received: by 2002:a05:600c:2182:: with SMTP id
+ e2mr4842124wme.104.1565096710025; 
+ Tue, 06 Aug 2019 06:05:10 -0700 (PDT)
+Received: from glaroque-ThinkPad-T480.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id j33sm201888738wre.42.2019.08.06.06.05.07
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 06 Aug 2019 06:05:07 -0700 (PDT)
+From: Guillaume La Roque <glaroque@baylibre.com>
+To: daniel.lezcano@linaro.org,
+	khilman@baylibre.com
+Subject: [PATCH v3 0/6] Add support of New Amlogic temperature sensor for G12
+ SoCs
+Date: Tue,  6 Aug 2019 15:05:00 +0200
+Message-Id: <20190806130506.8753-1-glaroque@baylibre.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_060106_815821_83D393EB 
-X-CRM114-Status: GOOD (  21.68  )
-X-Spam-Score: -4.8 (----)
+X-CRM114-CacheID: sfid-20190806_060511_770396_64E367A5 
+X-CRM114-Status: GOOD (  11.08  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,95 +92,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jiping Ma <jiping.ma2@windriver.com>, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, takahiro.akashi@linaro.org,
- mingo@redhat.com, Joel Fernandes <joel@joelfernandes.org>,
- kernel-team@android.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 5 Aug 2019 12:25:25 +0100
-Will Deacon <will@kernel.org> wrote:
+This patchs series add support of New Amlogic temperature sensor and minimal
+thermal zone for SEI510 and ODROID-N2 boards.
 
-> This can be read as "subtract 144 bytes (32*4 + 16) from the stack pointer,
-> write the frame record there and then update the stack pointer to point at the
-> bottom of the newly allocated stack", which means that the array 'a[32]' sits
-> directly /above/ the frame record on the stack. However, this is just what my
-> GCC happened to do today. When we looked at this back in 2015, there were other
-> cases we ended up having to identify with heuristics based on what had been
-> observed under various compilers:
-> 
-> http://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/393721.html
+First implementation was doing on IIO[1] but after comments i move on thermal framework.
+Formulas and calibration values come from amlogic.
 
-That's a bit more involved than what I came up with.
+Changes since v2:
+  - fix yaml documention 
+  - remove unneeded status variable for temperature-sensor node
+  - rework driver after Martin review
+  - add some information in commit message
 
-> 
-> This was deemed to be far too fragile, so we didn't merge it in the end.
-> 
-> If this is to work reliably, then we need support from the tools. This was
-> raised when we first merged support for ftrace, but I'm not sure it went
-> anywhere:
-> 
-> https://gcc.gnu.org/ml/gcc/2016-01/msg00035.html
-> 
-> So, I completely agree with Steve that we shouldn't be littering the core code
-> with #ifdef CONFIG_ARM64, but we probably do need something in the arch backend
-> if we're going to do this properly, and that in turn is likely to need a very
-> different algorithm from the one currently in use.
+Changes since v1:
+  - fix enum vs const in documentation
+  - fix error with thermal-sensor-cells value set to 1 instead of 0
+  - add some dependencies needed to add cooling-maps
 
-So basically it seems that on arm64, gcc only saves the lr when needed
-(leaf functions don't need it). And I can even see that if you have
-several paths that don't call other functions, why save the lr?
+Dependencies :
+- patch 3,4 & 5: depends on Neil's patch and series :
+              - missing dwc2 phy-names[2]
+              - patchsets to add DVFS on G12a[3] which have deps on [4] and [5]
 
-It does seem that doing the slight change makes the current code more
-accurate without need for any heuristics.
+[1] https://lore.kernel.org/linux-amlogic/20190604144714.2009-1-glaroque@baylibre.com/
+[2] https://lore.kernel.org/linux-amlogic/20190625123647.26117-1-narmstrong@baylibre.com/
+[3] https://lore.kernel.org/linux-amlogic/20190729132622.7566-1-narmstrong@baylibre.com/
+[4] https://lore.kernel.org/linux-amlogic/20190731084019.8451-5-narmstrong@baylibre.com/
+[5] https://lore.kernel.org/linux-amlogic/20190729132622.7566-3-narmstrong@baylibre.com/
 
-Here's my patch again, slightly tweaked and Jiping said it solved the
-issue for him.
+Guillaume La Roque (6):
+  dt-bindings: thermal: Add DT bindings documentation for Amlogic
+    Thermal
+  thermal: amlogic: Add thermal driver to support G12 SoCs
+  arm64: dts: amlogic: g12: add temperature sensor
+  arm64: dts: meson: sei510: Add minimal thermal zone
+  arm64: dts: amlogic: odroid-n2: add minimal thermal zone
+  MAINTAINERS: add entry for Amlogic Thermal driver
 
-Are you OK with this change?
+ .../bindings/thermal/amlogic,thermal.yaml     |  54 +++
+ MAINTAINERS                                   |   9 +
+ .../boot/dts/amlogic/meson-g12-common.dtsi    |  20 ++
+ .../boot/dts/amlogic/meson-g12a-sei510.dts    |  56 +++
+ .../boot/dts/amlogic/meson-g12b-odroid-n2.dts |  60 ++++
+ drivers/thermal/Kconfig                       |  11 +
+ drivers/thermal/Makefile                      |   1 +
+ drivers/thermal/amlogic_thermal.c             | 336 ++++++++++++++++++
+ 8 files changed, 547 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/thermal/amlogic,thermal.yaml
+ create mode 100644 drivers/thermal/amlogic_thermal.c
 
--- Steve
+-- 
+2.17.1
 
-diff --git a/arch/arm64/include/asm/ftrace.h b/arch/arm64/include/asm/ftrace.h
-index 5ab5200b2bdc..13a4832cfb00 100644
---- a/arch/arm64/include/asm/ftrace.h
-+++ b/arch/arm64/include/asm/ftrace.h
-@@ -13,6 +13,7 @@
- #define HAVE_FUNCTION_GRAPH_FP_TEST
- #define MCOUNT_ADDR		((unsigned long)_mcount)
- #define MCOUNT_INSN_SIZE	AARCH64_INSN_SIZE
-+#define ARCH_RET_ADDR_AFTER_LOCAL_VARS 1
- 
- #ifndef __ASSEMBLY__
- #include <linux/compat.h>
-diff --git a/kernel/trace/trace_stack.c b/kernel/trace/trace_stack.c
-index 5d16f73898db..40e4a88eea8f 100644
---- a/kernel/trace/trace_stack.c
-+++ b/kernel/trace/trace_stack.c
-@@ -158,6 +158,20 @@ static void check_stack(unsigned long ip, unsigned long *stack)
- 			i++;
- 	}
- 
-+#ifdef ARCH_RET_ADDR_AFTER_LOCAL_VARS
-+	/*
-+	 * Some archs will store the link register before calling
-+	 * nested functions. This means the saved return address
-+	 * comes after the local storage, and we need to shift
-+	 * for that.
-+	 */
-+	if (x > 1) {
-+		memmove(&stack_trace_index[0], &stack_trace_index[1],
-+			sizeof(stack_trace_index[0]) * (x - 1));
-+		x--;
-+	}
-+#endif
-+
- 	stack_trace_nr_entries = x;
- 
- 	if (task_stack_end_corrupted(current)) {
 
 _______________________________________________
 linux-arm-kernel mailing list
