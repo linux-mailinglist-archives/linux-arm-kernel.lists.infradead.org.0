@@ -2,67 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A162833B9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:16:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14121833D4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:19:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MMmgin0ZydeSZ7RGSeLryKbSszAuKj316sR11UNB7YU=; b=KHwqAkpbAX8/3l
-	elUfPEUQ/chYD0sMM1s/lKHH/SEDH55TGqiTo3JVGCVCC+CM2zdLD0P7rl/fMJMtFNHaPzsQssG5Y
-	v04COxKLEY8EHBZvMeADW7lE2jO6Wmwj2KofDriRssJ2FkKEWnwGQs3fw5a4XoYoB9HAvgI1I8Xjy
-	Bzj26EvVLHKc4d4/85x5UGdTSNRfu+ccL/paFrCCqA2TEQwLoI9y9VZm1Sjq8aEsDdQRyfw8KaInY
-	+g/urKI+ubv7vS4XFfdmLI7dmcYGWic+c8jZR+ESbvuXqzd2A7Jrf4mFfJ52eCABGauU2A/sKBOP6
-	+UGVez55GUEg9bZheT4A==;
+	List-Owner; bh=QJCKRqHc53/c8E+fcAarcwtrxFbf13curR+WS3Eu0Xs=; b=PlnrpGsyOoky45
+	v6i0ySYnoHcz59cXOU/NGQ55tJj+jg+O0Rj/P6d3L6LQ8Y83zjJ+Sbj41FZUoIfESAJ8XGMCOYPC5
+	74el/WQnZ4P5DNH9wb+zdSldTdutHsSIOtjufMCPqD7oYDAHLWY5jUR18jX/Q9D3xnlX5m96MxZVm
+	873PVItNFHOZRQHOOAGeqhgD6An1tTLth86N8XT+3vgcrcbG4RRT/9ZqF0iksHUxkO53pbJF3C6su
+	n8dp0FeId4KZcctI7ETcAEFtJ4OKRL/djLCrn4HIfXtUG4n9a9Z1BwTv9c5wpZQPjzX9IsbbAMrdm
+	ML/ZRNoLCiRtwabg8neg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv0Fu-0007o7-NU; Tue, 06 Aug 2019 14:16:02 +0000
+	id 1hv0Ja-0008BY-1D; Tue, 06 Aug 2019 14:19:50 +0000
 Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv0Fl-0007no-BF
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:15:54 +0000
-Received: by mail-lf1-x142.google.com with SMTP id 62so56401708lfa.8
+ id 1hv0JQ-0008Aw-HT
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:19:41 +0000
+Received: by mail-lf1-x142.google.com with SMTP id z15so57011852lfh.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 07:15:52 -0700 (PDT)
+ Tue, 06 Aug 2019 07:19:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=sAIRh0zHCkxzUmxSyq4qdiGiTcGIDNFzc3TNynpsgqk=;
- b=E2Wc85sLfivMU4AaCneNl6LCApr1GrJtCEc8ojybQ7Z4JKOMkTX06Un7zgIDoQQb6+
- 6vGIgLwWWDOA62UzA4bpo0CrCe7PnH02iRtfPaN7kS1BhzYyDFD4Lc/w6uBmKmyepx3t
- hwdxXtIIH1ol5XXIUCjaCG9CtUKpjyQR+XqGrbI0yYK1whN/UZT7myGqfhLOzI2V7+DV
- 7LggCCWyMn9I8J1CCfg7ozwxE30C//brOpGIMtNuUaUYM3jzowZpPqd9SBI+6PpNABrF
- EZay1BlpSDwastDS1SVWap2cMmM2NjJzWQ369b7XgPCsh+xSWfkg2CaG+BvdyWXr4hY4
- UWiA==
+ :cc; bh=V5jEF7EG4PC/suq/OlXR4ZWTuw0HGXTqAzdKkVGslUk=;
+ b=ULcOMR+jww4NTNUs7NcAx18e93B5Nw/gBlqWx6xiwSBs6cs7d37AY/0at+jBAZsz9L
+ nKGakf4d3FcI66w3uSvEv2o1eYC1cGgIEeINGfJGS+NGWswAIsexCY2Qi12ZTECRlBUe
+ Xs5PxT6h/5r5zjx/xyRVp6WcvOXeAZHhHhtKQJgViFGxqshcnDNoKNZHphz9RjZ4rPG1
+ pCHl+Ur0ep1NsDIAWaesNPR9rG3NJNuVmyvy020U3GeG+2j8iN0rc/8pmV4Bl+YJ5CuY
+ 7+/YbQopJ/SEahHd2BEbvp9irA2CuIxEk7yd+3t4oDFVCLIfUxnrXiRIBBNCWiCEumud
+ B5/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=sAIRh0zHCkxzUmxSyq4qdiGiTcGIDNFzc3TNynpsgqk=;
- b=abe0uvvebZ6QYvKdVzbPM6WezicE0tmHifKTAiobf2d9NcoqXWOEyLSYtxeHJ8vpwL
- L+bFnuhlrEh19PxuWltt0OfpoI9/HOG1G9bbp1v8gkvxDtugc9nqezCCb94NFBkYngxs
- 1MNSQpxR/fXdd+M/aF6FIzUBqjE7MYAhDtYVMiYxfPtvc2hsYb0RQ/AEH0zs+CqCLGtR
- lR30HvmgvXhwyYm/vSTnToKua3XpqP+R6+OOn4ZpckfObZJvdrT2wfBcHlqULW1TZyEb
- vaP4HFArVTsoWg7sJ39O1BFKCRmjFVgFYKpTSRiZyYONxKgl+OaUki2MF+SwISfGL9pW
- Jy7Q==
-X-Gm-Message-State: APjAAAWO1ULpFWHlv8arElSi6QR+jk5tQD9Yw9q65EFC2V9PCwH9Q/Sm
- wnrTL3Z1+Al+Z+R2pS0QFsmGUkFUka8QnaBWg057FQ==
-X-Google-Smtp-Source: APXvYqwa7eUgjmF+/YyxXU15VYYv+720bBdbuzkjozsLAQLMlpvCf9Pylm6GgktGjdxlqgSSV2RTz8KoVio2DmPxnIo=
-X-Received: by 2002:ac2:4c07:: with SMTP id t7mr2453376lfq.152.1565100951048; 
- Tue, 06 Aug 2019 07:15:51 -0700 (PDT)
+ bh=V5jEF7EG4PC/suq/OlXR4ZWTuw0HGXTqAzdKkVGslUk=;
+ b=SxW6bGFV04UU2FdEzzy0bSBLoDukdATfTVxhs7+pMKH5HnxGPazY+6jvJlyUmz/2fN
+ NRCKXnkOut8vIRFoqgir4jZnKoidewrefw91a0R5ks/bxE0wMKqmMqba6IkDQddaEo/K
+ 7j/IVKhhWBlEAfb2v+QSMBsv3WK/Lp6Zn2bMf1hyqI8zsXfnaJOmcdVSfJMyRrkb3jCt
+ kt8wYfFnX5hsFECcSiYYSFa663fTHVurnPp/EFAn9tK5eEHWhsffuKFuuDA61pFOPk63
+ d/BQm5hZGaxKMEusRC1+qOROMycaEQfzPmp+UuUQ/Kf//w5zhCeiCctbAi65wT3eybHD
+ FfqQ==
+X-Gm-Message-State: APjAAAU0f17q9wrSmt9F/IaVrW39ZgogxyGuMaRoYQw7edIXAsvj9VJW
+ qE8X0J6vxNHqDs4p+VYmrC6pyZTibUbRgSnsHUKYKQ==
+X-Google-Smtp-Source: APXvYqyiScvaJDP2ekkmRlgBAXhfXHwRa26aWf4+vzG26RvGWoN0Fe0dbrrYZnADbBqjPhQeEpVSj3qURqtbrw8I10E=
+X-Received: by 2002:ac2:5939:: with SMTP id v25mr2709543lfi.115.1565101179215; 
+ Tue, 06 Aug 2019 07:19:39 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190805162710.7789-1-krzk@kernel.org>
-In-Reply-To: <20190805162710.7789-1-krzk@kernel.org>
+References: <20190804154948.4584-1-nishkadg.linux@gmail.com>
+In-Reply-To: <20190804154948.4584-1-nishkadg.linux@gmail.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 6 Aug 2019 16:15:38 +0200
-Message-ID: <CACRpkda8P522pkxctZbf2Ut13V6Rzx=mSYsRuHv0BvPyF6q1gA@mail.gmail.com>
-Subject: Re: [PATCH 1/4] pinctrl: samsung: Fix device node refcount leaks in
- Exynos wakeup controller init
-To: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Tue, 6 Aug 2019 16:19:27 +0200
+Message-ID: <CACRpkdaZs6+V1d0R+-jmukxbSgJhyRP9JXmP5oJ9L0tyfyKEHg@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: spear: spear: Add of_node_put() before return
+To: Nishka Dasgupta <nishkadg.linux@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_071553_401548_45FE2967 
-X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-CacheID: sfid-20190806_071940_586693_D7E01015 
+X-CRM114-Status: UNSURE (   8.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -92,29 +91,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, Tomasz Figa <tomasz.figa@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Kukjin Kim <kgene@kernel.org>, Sylwester Nawrocki <s.nawrocki@samsung.com>,
- notify@kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Viresh Kumar <vireshk@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 5, 2019 at 6:27 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+On Sun, Aug 4, 2019 at 5:50 PM Nishka Dasgupta <nishkadg.linux@gmail.com> wrote:
 
-> In exynos_eint_wkup_init() the for_each_child_of_node() loop is used
-> with a break to find a matching child node.  Although each iteration of
-> for_each_child_of_node puts the previous node, but early exit from loop
-> misses it.  This leads to leak of device node.
+> Each iteration of for_each_child_of_node puts the previous node, but in
+> the case of a return from the middle of the loop, there is no put, thus
+> causing a memory leak. Hence add an of_node_put before the return in
+> two places.
+> Issue found with Coccinelle.
 >
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 
-I assume you're collecting these for a pull request to me
-at some later point, all look good to me.
+Patch applied with Viresh's ACK.
 
 Yours,
 Linus Walleij
