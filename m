@@ -2,97 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3B5A8375A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 18:54:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAA2D8376A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 18:58:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hoF5fNUuyoRDbkHCOtfwZtIoKgrWaEoVZEOid0Toy7s=; b=lywtjUO1OMeRmclC3aZe09Yi7
-	uSeymkPgqs8TbAEN4+sXvy8PB2HO8SAzvQjnWlaRT9KZbptyXdmXA33uuBeMeJ20m8NlFvTpR5DeJ
-	ZYQnPneGpVh+mofGz54AVbe5YUSBKhm3/pMAw99p2extUFqeEQPry6/qKK84NkauNCK7cj4KXk+Vf
-	bPfQgwzBuRMgUAYZtRu2M4RciExtwQSN3UT6KOrkqnj9csNHY8VJ1Y9NGXdOVHRIHCSEYPdaNNCj+
-	J8W0r2jUo4LpxSYAKVwDXB1ju9FV9IvYbSm8UI+r0M6fOGvYiu3/CsH42EthgdhXvzp+kc1ZMSXMJ
-	OeqZPaR8A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dCtqKQ2RwD2/gqOS9amTzUP8Gv3t9ly8pnhW45/VQSc=; b=D2To6dtqO95iqc
+	AwbCnK5lf2SBWqugkheYFUCRzvP3KhNCk9G9+7ZIoM0AaAHoUjGlUJtvlUvq/FdRm2/AZAvMvSOHL
+	cCvbiRTuEaLbMWIUqq320ebyZ0+I40RAQPrXZR4FWe3S7bLDTjT5pozg0BVSBGIGzdyeuNX6NsO+a
+	5bKcfHz6KgJ9u5Qi7hj8xFabKzlKbQ3qZUDt8qQ2JtrMDE8gsSUuHLFccBEOPLyWGHAP0Lb8qaJQI
+	S9u0LuzosAKFz5Qwbv82c26QM5hXWDnTCaEA8m34N/x8EATpwZL+h2AIWvUqhSz38hKeT/fTm00Es
+	P4F9QdjclsfX8BL5Y8GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv2ik-00078l-IT; Tue, 06 Aug 2019 16:53:58 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hv2mo-0000IS-2p; Tue, 06 Aug 2019 16:58:10 +0000
+Received: from cyberdimension.org ([2001:910:1314:ffff::1]
+ helo=gnutoo.cyberdimension.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv2ic-00078P-UH
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 16:53:52 +0000
-Received: by mail-wr1-x444.google.com with SMTP id n1so2304838wrw.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 09:53:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=gxNkkJD3b/WJ2BCN1yM/UBEgODs/xbGIxyPlrinnovU=;
- b=YDWulAFE5M1Cj2s64V8j8s4cLZ1QNjqZ5aD10HE/qncnQNsNiWNP1srKy9Z936zPzZ
- GfLtuLfTfrrKO3l7ixtUHK6aIHkRVgaik5+aOyFeBIxlxV7xPMyeKBLP45ubBVWxqsvG
- wv/eUSKpDGVhO/g1WIJNOS0+R9Wfm8cnW8QIO5tIdAWAE7WTYI7POS3z35s1jXLnCod4
- CWXJQqx3mhYa908hr5zPh9VqNo/osxl0WXgr26ayPgSZw6kCEbUbyRkHjfamOz2yZxLr
- yYLSsxfbZ8JDyt/lxippVAe3faaTsN4WpYs1vq6t0UsM2gnR9HGI8OGgrzC6l8M2QSke
- UBOQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=gxNkkJD3b/WJ2BCN1yM/UBEgODs/xbGIxyPlrinnovU=;
- b=qKfiAcTx+1JL2US/4fH+UgEAVuRI77Q5oY+ADku1Xn4roy/n1G/SE7bVrUHlyxQbe+
- A3IyG1gsKXHLTYMlsM+CiGlojC37mj4Jku8xgcbuDX35u3qFUogIziSCbOoVnRitJymp
- /zdhmR8tzHwCFA+SvdBhpXmBEe05DFdcKJbH+/68ptnRP/YSoHQtOL6NrPgVGFaXtXdw
- 3UGV3lrcz2v8AwA3HTyr6EAFqtLY3H7LzQPBFHunIf1iDGpzoPQcHjUM2DqzYb1xEYJi
- ROuVfk36AWh5xaw+jc1+PSXDYnyrYIBlFDxE4Xw8v2UtklWwise6+SbPDy8whoJrM+DH
- AMyg==
-X-Gm-Message-State: APjAAAXfw88v+T8JykT64UbGdnTt7gQN1SMla+X9u2w/8cTum0sbic3f
- 35BSMotyowJUPVa1VpDMKWA=
-X-Google-Smtp-Source: APXvYqwkEM8/7FtU/qIz2EzqolfwDqNOFGtE+29zXZgsxLDAnchWnPtpfHMtQFGIzAti+86XMVHClQ==
-X-Received: by 2002:adf:ec49:: with SMTP id w9mr5292515wrn.303.1565110429245; 
- Tue, 06 Aug 2019 09:53:49 -0700 (PDT)
-Received: from [172.30.90.245] (sjewanfw1-nat.mentorg.com. [139.181.7.34])
- by smtp.gmail.com with ESMTPSA id l15sm2581667wrq.64.2019.08.06.09.53.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 06 Aug 2019 09:53:48 -0700 (PDT)
-Subject: Re: [PATCH 04/22] media: Move v4l2_fwnode_parse_link from v4l2 to
- driver base
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
-References: <20190805233505.21167-1-slongerbeam@gmail.com>
- <20190805233505.21167-5-slongerbeam@gmail.com>
- <CAHp75VcOh8bOf_s6t0ehwGtcYn64QFGj303SVvpHrztEOhTRgg@mail.gmail.com>
-From: Steve Longerbeam <slongerbeam@gmail.com>
-Message-ID: <4750b347-b421-6569-600f-0ced8406460e@gmail.com>
-Date: Tue, 6 Aug 2019 09:53:41 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hv2mf-0000HT-QM
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 16:58:03 +0000
+Received: from gnutoo.cyberdimension.org (localhost [127.0.0.1])
+ by cyberdimension.org (OpenSMTPD) with ESMTP id a4be3105;
+ Tue, 6 Aug 2019 16:56:05 +0000 (UTC)
+Received: from primarylaptop.localdomain (localhost.localdomain [IPv6:::1])
+ by gnutoo.cyberdimension.org (OpenSMTPD) with ESMTP id 12323c93;
+ Tue, 6 Aug 2019 16:56:05 +0000 (UTC)
+From: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] ARM: dts: add touchkey nodes for midas
+Date: Tue,  6 Aug 2019 18:57:49 +0200
+Message-Id: <20190806165749.29468-1-GNUtoo@cyberdimension.org>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <CAHp75VcOh8bOf_s6t0ehwGtcYn64QFGj303SVvpHrztEOhTRgg@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_095350_980239_4F7392F8 
-X-CRM114-Status: GOOD (  15.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190806_095802_176827_C8E22357 
+X-CRM114-Status: GOOD (  10.56  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (slongerbeam[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,60 +58,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Michal Simek <michal.simek@xilinx.com>,
- "open list:ACPI" <linux-acpi@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Len Brown <lenb@kernel.org>, Sakari Ailus <sakari.ailus@linux.intel.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- "moderated list:ARM/ZYNQ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- Hyun Kwon <hyun.kwon@xilinx.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- open list <linux-kernel@vger.kernel.org>,
- Jacopo Mondi <jacopo+renesas@jmondi.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- Enrico Weigelt <info@metux.net>
+Cc: Simon Shields <simon@lineageos.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andy,
+From: Simon Shields <simon@lineageos.org>
 
-On 8/5/19 11:41 PM, Andy Shevchenko wrote:
-> On Tue, Aug 6, 2019 at 2:37 AM Steve Longerbeam <slongerbeam@gmail.com> wrote:
->> There is nothing v4l2-specific about v4l2_fwnode_{parse|put}_link().
->> Make these functions more generally available by moving them to driver
->> base, with the appropriate name changes to the functions and struct.
->>
->> In the process embed a 'struct fwnode_endpoint' in 'struct fwnode_link'
->> for both sides of the link, and make use of fwnode_graph_parse_endpoint()
->> to fully parse both endpoints. Rename members local_node and
->> remote_node to more descriptive local_port_parent and
->> remote_port_parent.
->>
-> May I ask if it's going to be used outside of v4l2?
+this patch adds the fixed VTOUCH_3.3V regulator and configures
+the touchkey node + i2c-gpio node.
 
-It could be, I can see fwnode_graph_parse_link() being useful in DRM, 
-for example. But at this, only media core and v4l2 are making use of it.
+Signed-off-by: Simon Shields <simon@lineageos.org>
+GNUtoo@cyberdimension.org: Fixed keycodes.
+Signed-off-by: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org>
+---
+ arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi |  4 +++
+ arch/arm/boot/dts/exynos4412-midas.dtsi     | 29 +++++++++++++++++++++
+ arch/arm/boot/dts/exynos4412-n710x.dts      |  4 +++
+ 3 files changed, 37 insertions(+)
 
-This patch was created so that fwnode links can be parsed in a new media 
-core function that forms media links from fwnode links.
+diff --git a/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi b/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi
+index ce87d2ff27aa..e71f103ab940 100644
+--- a/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi
++++ b/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi
+@@ -166,5 +166,9 @@
+ &s5c73m3 {
+ 	standby-gpios = <&gpm0 1 GPIO_ACTIVE_LOW>;   /* ISP_STANDBY */
+ 	vdda-supply = <&ldo17_reg>;
++};
++
++&touchkey_reg {
++	gpio = <&gpm0 0 GPIO_ACTIVE_HIGH>;
+ 	status = "okay";
+ };
+diff --git a/arch/arm/boot/dts/exynos4412-midas.dtsi b/arch/arm/boot/dts/exynos4412-midas.dtsi
+index 83be3a797411..797e8de40580 100644
+--- a/arch/arm/boot/dts/exynos4412-midas.dtsi
++++ b/arch/arm/boot/dts/exynos4412-midas.dtsi
+@@ -13,6 +13,7 @@
+ #include "exynos4412.dtsi"
+ #include "exynos4412-ppmu-common.dtsi"
+ #include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
+ #include <dt-bindings/interrupt-controller/irq.h>
+ #include <dt-bindings/clock/maxim,max77686.h>
+ #include <dt-bindings/pinctrl/samsung.h>
+@@ -92,6 +93,15 @@
+ 		enable-active-high;
+ 	};
+ 
++	touchkey_reg: voltage-regulator-4 {
++		compatible = "regulator-fixed";
++		regulator-name = "VTOUCH_3.3V";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		enable-active-high;
++		status = "disabled";
++	};
++
+ 	gpio-keys {
+ 		compatible = "gpio-keys";
+ 		pinctrl-names = "default";
+@@ -197,6 +207,25 @@
+ 		};
+ 	};
+ 
++	i2c_touchkey: i2c-gpio-4 {
++		compatible = "i2c-gpio";
++		sda-gpios = <&gpl0 2 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		scl-gpios = <&gpl0 1 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
++		i2c-gpio,delay-us = <2>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		touchkey@20 {
++			compatible = "cypress,midas-touchkey";
++			reg = <0x20>;
++			vdd-supply = <&touchkey_reg>;
++			vcc-supply = <&ldo5_reg>;
++			interrupt-parent = <&gpj0>;
++			interrupts = <3 IRQ_TYPE_EDGE_FALLING>;
++			linux,keycodes = <KEY_BACK KEY_MENU>;
++		};
++	};
++
+ 	i2c-mhl {
+ 		compatible = "i2c-gpio";
+ 		gpios = <&gpf0 4 GPIO_ACTIVE_HIGH>, <&gpf0 6 GPIO_ACTIVE_HIGH>;
+diff --git a/arch/arm/boot/dts/exynos4412-n710x.dts b/arch/arm/boot/dts/exynos4412-n710x.dts
+index fe2bfd76cc4e..6acb19d2bae2 100644
+--- a/arch/arm/boot/dts/exynos4412-n710x.dts
++++ b/arch/arm/boot/dts/exynos4412-n710x.dts
+@@ -71,5 +71,9 @@
+ &s5c73m3 {
+ 	standby-gpios = <&gpm0 6 GPIO_ACTIVE_LOW>;   /* ISP_STANDBY */
+ 	vdda-supply = <&cam_vdda_reg>;
++};
++
++&touchkey_reg {
++	gpio = <&gpm0 5 GPIO_ACTIVE_HIGH>;
+ 	status = "okay";
+ };
+-- 
+2.22.0
 
-The full patchset doesn't seem to be up yet, but see [1] for the cover 
-letter.
-
-Steve
-
-[1] https://www.mail-archive.com/linux-media@vger.kernel.org/msg148910.html
 
 _______________________________________________
 linux-arm-kernel mailing list
