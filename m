@@ -2,88 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3C6283294
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 15:20:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C240832AF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 15:27:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1QUcG9cuUDahzAf16HDmsdzrAw6lXq6RYUlmtsMugR4=; b=OqAs5FOAZm8gAJ
-	C+aaGoxD5yXpCqGDdKI/i7r3l8GIatI8LsDmN6dtl63yUr3MvDyVl4b4eVi5q8RKu0Ti6UOtnvBs9
-	uz+EjzcmSnph2GxouYi342JLJKtTrCXzZNyu/iSXVU7Lg8h6SSfTK/gd+3DXdfX1mH4/iI2YKEvdT
-	fFvH7xl3DBdmUAcx+rar4yyPnEPe6hKS98uXwUf3HFS4sHsbaevsSosMdxuDwiovPCSqb2PnRnOfI
-	aaHQY8Zt0nIR6MhONYZY1SDIvGEelYYjDcxAPt9TnEC6xQwsixe94vVm6YoM8DsrqwPN13lQdLToI
-	CXATzSseFCy+ls4mz/MA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T0m2I4cjFVnCboDR5nqnvohu7MY0/yDVR+00hhL3n5A=; b=nkKZnNX17CxCt9
+	erLgEx5KmVE3gpwI6OIDBuAZwE9RRhvLi0fbv6ONAa5PKd2Vp/95JriJeCNKgN/XPektfga/RtgBe
+	bJczecVH/+3C6H/KCfii5u/dqR5ELUDGn+0EN9DikkDUC8Xi1oIxGXvS9+gm4v3BHWYqDB8YSQerr
+	fzRUMNHhcXIpNub2D2ql0QYIrguIPuMCZyrwFQOyzGy0M3wXdHlC/v+kuzOvRuBF35b8LfUzLBztG
+	5EY68FqAmZwnIgQOvbR+k8D8frlm+zF/VTYQ+Q1weYzJMg/ne+Am3NQqeZLzDpN1SMAZTAu6tiWsj
+	P7a0LzMbT/vxC/l8hUZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huzNr-0000KH-FK; Tue, 06 Aug 2019 13:20:11 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1huzUh-0003Aj-9S; Tue, 06 Aug 2019 13:27:15 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huzNf-0008Vq-RX
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 13:20:01 +0000
-Received: by mail-pl1-x641.google.com with SMTP id t14so37849671plr.11
+ id 1huzUW-0003A2-EL
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 13:27:05 +0000
+Received: by mail-qt1-x842.google.com with SMTP id r6so80227020qtt.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 06:19:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=techveda-org.20150623.gappssmtp.com; s=20150623;
- h=from:subject:to:cc:message-id:date:user-agent:mime-version
- :content-language:content-transfer-encoding;
- bh=IBYvx+JN3Tfby2a0Arr9iQ+FXDdmq2f9yE3G5sV6sLw=;
- b=rk8JETipFCVycaKi9C2t1/NXX6S9JXK3Kci+dufck79btVc+OPSWTY8bo4+JdQvNzs
- wc1xY+HSpCBWg/RHE54WVzhNLjtfMVV/9fWb6Gofl9zZ5Rnoc3ec5Tj1x3+tfXZYCIoJ
- 5q9fWxc/tE1GE2rHWpJU6uA4KWYY4+jqCFmbJ8WMZR6TpZluBcCuBL2AwVKzm2pejAX6
- o91L5g3Peu2pH06dFOlmxN5mVeBDBMxITfy40Qz3cFDYUp8uWOWJ87OGWdQMf9Z2+q8e
- yt2SVZpZGFSJfw7WqFr/mSqe7crd3spigbpomxSqXHHbMZTjByf2z957ggO8c0sVs7Ev
- JC4A==
+ Tue, 06 Aug 2019 06:27:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=QepbGpjxdz/Q+6YHfXtoICko0cdKUjwXX4QETCQHWj8=;
+ b=bzIMi9FXppLRWZzJ/iI9ZBXddD4PnneBE9NT/UoqebYxXA7CflUoPASr63iMdGtUBG
+ Jwrbq1C0xSH9LIN5UdVNoHQCog70zRvlWfB7azMbuC+6Jn+2u15izE38bZomNxKHYJPA
+ e8DiwPrQ+XaxM+rGs6hoXZuGMfRItnU+HM0zGMnAj7UUKF0SIAz09R+NnAKrerpSGXvo
+ Kk7yVf5KECa3Iu4C3uvBpsJTFTpzygQX5eZxFqN9d+WbjlebcyTfbAy0i1SXHYMSpD4x
+ KL3f86a0sMYIS5P9c8H8iy217oBZ4vytmlRRjpGAea0rJ5QL8OH8+CDi3octHWy+DIhO
+ biYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:subject:to:cc:message-id:date:user-agent
- :mime-version:content-language:content-transfer-encoding;
- bh=IBYvx+JN3Tfby2a0Arr9iQ+FXDdmq2f9yE3G5sV6sLw=;
- b=ixFyoJ8/rwbKhjb3frC05sazrqoF+lS1j2TCKtaqJ7QRSNGVdRkf9uBIVR1DcGRqLr
- iL09I3CVlC7yWVb9AhUGA/nk4O21YakehSEch7qR3fKmW1PhoqMiRgjJ6uDoVBizugu5
- W/oCFYPE0Z6QSBMBL2PzFY2iTB2OeeJ7VsT8nK8Y4/+cboSTBoOtQ2QfjSmClbgvHlTK
- DnRkZcN6vn/xO8bbRgqX2TsZXLbEofh9FHCyk33yePDnZdO0LGCKaXhDuGuJ0o9vtHla
- BPQBevXovX8OqZ7n8ISNAx0TMPVgQyTnFjmFdlnH4R+4D1DkjEwO9iqmbTVW2czjqsEm
- rpHw==
-X-Gm-Message-State: APjAAAWyokpjjMfaGVZRUiffq3UFxzd0ft43xYk/9y5MJyskv0A66qlE
- rIUNvUSmGpVDUONTbLJxiBGh3A==
-X-Google-Smtp-Source: APXvYqx17DAM1y2MpTGW4R9yvKYeLMnLAnm2Qpx44e6ubvVEIXtRpAvdyjcfrquxR5V+ZpCsaGThZw==
-X-Received: by 2002:a17:902:100a:: with SMTP id
- b10mr3120380pla.338.1565097597255; 
- Tue, 06 Aug 2019 06:19:57 -0700 (PDT)
-Received: from [192.168.1.3] ([49.204.224.178])
- by smtp.gmail.com with ESMTPSA id n185sm75009415pga.16.2019.08.06.06.19.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 06 Aug 2019 06:19:56 -0700 (PDT)
-From: Suniel Mahesh <sunil.m@techveda.org>
-Subject: Machine specific static mappings iotable_init(), are they required ?
-To: linux-arm-kernel@lists.infradead.org, linux@armlinux.org.uk,
- Linux kernel mailing list <linux-kernel@vger.kernel.org>
-Message-ID: <a0d03054-b583-2d6b-aa32-e0f453767b88@techveda.org>
-Date: Tue, 6 Aug 2019 18:49:52 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=QepbGpjxdz/Q+6YHfXtoICko0cdKUjwXX4QETCQHWj8=;
+ b=KfOrNkIj71uXRC8CebrgLSCSamZ1gAo13wY7J+zFRbYhsute7mUoFxLJRG9tp/eJZK
+ Z6K0yWGo1MJh0j5kViETtUweSOPXuT6MTSWcTRernNdl18QU4anGIu7rCFEageqhwFP4
+ qAZcdV5Uk40Kj8l3odtlWhiVFzkEna1GUCm1enhmWefIzZ3SrVS6MDZHF8ZfGwvBjyi6
+ 1HvMN1Yb71FpNtg6vC1pYLzN5YjHuj6gwQz0Ilu0KnzBfCKa7cEvVKjGHwFes3ObW0Gq
+ lOPLBe147DyLyJU8a+4VELA2tuMx3mSiIIIJ6ictQiXQEYP/PXKDYI9ei3atmfGAoo/T
+ dcMg==
+X-Gm-Message-State: APjAAAWUCa0x3wrWBhvaEvskD7Bu+QhHVbuDyI1m+RYKqcP5C0OCSijF
+ eFdELrlsj9ByD8tFfB2Z9GLX6xB/z/ZiNGZsm/txLQ==
+X-Google-Smtp-Source: APXvYqxjReH9a5RdVKP44/CxV4GA6MJPPJv6EhlnpRpk8YLqn8A8+xTkel+Txw9cXO0QR33NnMHiklTBqawLAq053vE=
+X-Received: by 2002:ac8:253d:: with SMTP id 58mr3074770qtm.40.1565098022510;
+ Tue, 06 Aug 2019 06:27:02 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-US
+References: <1563958245-6321-1-git-send-email-chunfeng.yun@mediatek.com>
+ <CACRpkdaBT24JPH_VsKtgp6fjWtVuqM50rXkDVYKmLHgR5hdJzA@mail.gmail.com>
+ <1565077710.23705.21.camel@mhfsdcap03>
+In-Reply-To: <1565077710.23705.21.camel@mhfsdcap03>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 6 Aug 2019 15:26:50 +0200
+Message-ID: <CACRpkdZ8LjG22QCA0tB+vMi7fPJNBiX-sL1+t0yZqcfRjMJF7Q@mail.gmail.com>
+Subject: Re: [PATCH v8 00/11] add USB GPIO based connection detection driver
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_061959_953791_FB981371 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190806_062704_489684_9F96A5C6 
+X-CRM114-Status: GOOD (  15.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,42 +92,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: thomas.petazzoni@free-electrons.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-usb <linux-usb@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Biju Das <biju.das@bp.renesas.com>, Badhri Jagan Sridharan <badhri@google.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Min Guo <min.guo@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, Li Jun <jun.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, Aug 6, 2019 at 9:48 AM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
+> On Mon, 2019-08-05 at 12:06 +0200, Linus Walleij wrote:
+> > On Wed, Jul 24, 2019 at 10:51 AM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
 
-I am trying to port a machine based on arm926 with MMU, having 64MB of RAM.  
+> > But for just "hey I'm plugged in" we can surely keep this
+> > ID on GPIO detection in the USB subsystem.
+>
+> Sorry, you mean provide a common API? could you please describe more
+> clearer about your suggestion?
 
-I am trying to understand the difference between: 
+Sorry I am not suggesting anything, this code is fine.
 
-machine specific static I/O mappings which are done via iotable_init()
-(done via callback .map_io in DT_MACHINE_START) and 
-dynamic I/O mappings done via ioremap()
+But:
 
-In the kernel docs/mailing list, I have encountered a statement which states:
+> > I just get a bit insecure about how we should ideally
+> > handle these "funny-PHY's".
 
-"with machine specific static I/O mappings which are done via iotable_init(), 
-registers can be mapped at the upper end of vmalloc area so that one can use as
-little of the VA space as possible so vmalloc and friends have a better chance of 
-getting memory"
+I am more thinking about which subsystem these things really
+belong in. But let's keep it like this for the simple GPIO case.
+Acked-by: Linus Walleij <linus.walleij@linaro.org>
 
-I am writing board initialization C file and got stuck at .map_io callback function,
-whether to define it or not. If yes, under what scenario should I do it
-
-now-a-days I think less boards are using iotable_init(). (is this defunct) ? 
-I might be wrong here
-
-Can't I use ioremap and do dynamic mappings when ever required via device tree ?
-If I do so will I encounter any problems with vmalloc area.
-
-
-Thanks & Regards
--- 
-Suniel Mahesh
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
