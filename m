@@ -2,65 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF4838301F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 12:57:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C3A583040
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 13:07:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=/iUmINnkwuqHGj/VSOPISptVvBi/c0cMB+oqRgKCTxo=; b=Yde44r5OXVu6Hli+dd+LCJn51o
-	k4yzoGqbSHo8OLBEoow4bYuiTZAS2HDRrCHGooF9TyC+C6HksBr6OA8t6xkMF+GMdhgNi2v++nD4h
-	0Pe/iDbRz8yWwIwCsJfqrmtBAisHij6jODTVoKbTZ51jQ9dSuQszWFW03MFkNCpJfHG4EyfzxV+HF
-	6Y66GbdZKf3phpPdMR9g7H9MevTPRz1vTu5GEYX+edgGKoVck6hUHDSRFEXdfe640XZV/zAl1us75
-	jg3l/W4k61J5+uNY5D0b4kUUJAUTlxWumVmJFloD9ZdynKdnl67KLddOsF163LLxQOBjYEKanUFqL
-	p1FgsQag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=i25S49nTzB3zIID6D5ebbygHYramI19YF11miDOiveI=; b=PmvKfQTb2nfJKz/R/u3IBjWVo
+	6ap+17cU5kNNvz+froMDbuJIhkIwmm1diTxORIpa7JO0bdVWoV1xl0RjNq6oDncA1W1Xl/n2G0YGO
+	hAX+zXUlo9mzc7qp9I46IKEWBS3NF1q/5z2LnfoKHRVopc7p9+ZMpoVT1AXM518VXDvqVWEOkeqHy
+	sqagziwbCsjqRkJgoBj/NBZadHYG6Ia1aWdyJ6qVjI06pfIL13dgn5gZoUbDPcd6NRsy5FfOOJY9e
+	s7xVuR1e14QfaxlPmy18WwlS/wRi8COlPRn22iqOShCBhqHZlLc0jetdMbXHIIVjDhEeBef8cWPT0
+	FRUvYsjsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hux9U-0000rJ-6F; Tue, 06 Aug 2019 10:57:12 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1huxJh-0004Gh-CR; Tue, 06 Aug 2019 11:07:45 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hux8O-0000Ps-JU
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 10:56:07 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 852F51A05D9;
- Tue,  6 Aug 2019 12:56:01 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 771801A05CE;
- Tue,  6 Aug 2019 12:56:01 +0200 (CEST)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 84250205DD;
- Tue,  6 Aug 2019 12:56:00 +0200 (CEST)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Georgi Djakov <georgi.djakov@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- Viresh Kumar <viresh.kumar@linaro.org>
-Subject: [RFCv3 3/3] interconnect: imx: Add platform driver for imx8mm
-Date: Tue,  6 Aug 2019 13:55:54 +0300
-Message-Id: <cf265add1502a75c4d6e6261ab1570c665e82c83.1565088423.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1565088423.git.leonard.crestez@nxp.com>
-References: <cover.1565088423.git.leonard.crestez@nxp.com>
-In-Reply-To: <cover.1565088423.git.leonard.crestez@nxp.com>
-References: <cover.1565088423.git.leonard.crestez@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1huxJT-0004Fl-Ey
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 11:07:33 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 5EE1996E0A4ABC13A6C9;
+ Tue,  6 Aug 2019 19:07:16 +0800 (CST)
+Received: from [127.0.0.1] (10.202.227.238) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0;
+ Tue, 6 Aug 2019 19:07:06 +0800
+Subject: Re: [PATCH v2 12/12] irqchip/gic-v3: Add quirks for HIP06/07 invalid
+ GICD_TYPER erratum 161010803
+To: Marc Zyngier <maz@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ "Jason Cooper" <jason@lakedaemon.net>, Julien Thierry
+ <julien.thierry.kdev@gmail.com>, Rob Herring <robh+dt@kernel.org>
+References: <20190806100121.240767-1-maz@kernel.org>
+ <20190806100121.240767-13-maz@kernel.org>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <5f8808f9-ca91-db68-042f-97dfcbe75508@huawei.com>
+Date: Tue, 6 Aug 2019 12:07:00 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.3.0
+MIME-Version: 1.0
+In-Reply-To: <20190806100121.240767-13-maz@kernel.org>
+X-Originating-IP: [10.202.227.238]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_035604_917992_69284EB2 
-X-CRM114-Status: GOOD (  12.93  )
+X-CRM114-CacheID: sfid-20190806_040731_665350_8201F483 
+X-CRM114-Status: GOOD (  19.35  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,233 +68,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Dong Aisheng <aisheng.dong@nxp.com>,
- Jacky Bai <ping.bai@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Anson Huang <Anson.Huang@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-pm@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, devicetree@vger.kernel.org,
+Cc: Lokesh Vutla <lokeshvutla@ti.com>, linux-kernel@vger.kernel.org,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds a platform driver for the i.MX8MM SoC.
+On 06/08/2019 11:01, Marc Zyngier wrote:
+> It looks like the HIP06/07 SoCs have extra bits in their GICD_TYPER
+> registers, which confuse the GICv3.1 code (these systems appear to
+> expose ESPIs while they actually don't).
+>
+> Detect these systems as early as possible and wipe the fields that
+> should be RES0 in the register.
+>
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-Signed-off-by: Alexandre Bailon <abailon@baylibre.com>
----
- drivers/interconnect/imx/Kconfig          |   4 +
- drivers/interconnect/imx/Makefile         |   1 +
- drivers/interconnect/imx/imx8mm.c         | 114 ++++++++++++++++++++++
- include/dt-bindings/interconnect/imx8mm.h |  49 ++++++++++
- 4 files changed, 168 insertions(+)
- create mode 100644 drivers/interconnect/imx/imx8mm.c
- create mode 100644 include/dt-bindings/interconnect/imx8mm.h
+thanks,
 
-diff --git a/drivers/interconnect/imx/Kconfig b/drivers/interconnect/imx/Kconfig
-index 45fbae7007af..2f06cb1f81c3 100644
---- a/drivers/interconnect/imx/Kconfig
-+++ b/drivers/interconnect/imx/Kconfig
-@@ -1,5 +1,9 @@
- config INTERCONNECT_IMX
- 	bool "i.MX interconnect drivers"
- 	depends on ARCH_MXC || ARCH_MXC_ARM64 || COMPILE_TEST
- 	help
- 	  Generic interconnect driver for i.MX SOCs
-+
-+config INTERCONNECT_IMX8MM
-+	def_bool y
-+	depends on INTERCONNECT_IMX
-diff --git a/drivers/interconnect/imx/Makefile b/drivers/interconnect/imx/Makefile
-index bb92fd9fe4a5..5f658c1608a6 100644
---- a/drivers/interconnect/imx/Makefile
-+++ b/drivers/interconnect/imx/Makefile
-@@ -1 +1,2 @@
- obj-$(CONFIG_INTERCONNECT_IMX) += imx.o
-+obj-$(CONFIG_INTERCONNECT_IMX8MM) += imx8mm.o
-diff --git a/drivers/interconnect/imx/imx8mm.c b/drivers/interconnect/imx/imx8mm.c
-new file mode 100644
-index 000000000000..5bed7babff96
---- /dev/null
-+++ b/drivers/interconnect/imx/imx8mm.c
-@@ -0,0 +1,114 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Interconnect framework driver for i.MX SoC
-+ *
-+ * Copyright (c) 2019, BayLibre
-+ * Copyright (c) 2019, NXP
-+ * Author: Alexandre Bailon <abailon@baylibre.com>
-+ * Author: Leonard Crestez <leonard.crestez@nxp.com>
-+ */
-+
-+#include <linux/device.h>
-+#include <linux/module.h>
-+#include <linux/of_platform.h>
-+#include <linux/platform_device.h>
-+
-+#include <dt-bindings/interconnect/imx8mm.h>
-+
-+#include "imx.h"
-+
-+static const struct imx_icc_node_adj_desc imx8mm_dram_adj = {
-+	.devfreq_name = "dram",
-+	.bw_mul = 1,
-+	.bw_div = 16,
-+};
-+
-+static const struct imx_icc_node_adj_desc imx8mm_noc_adj = {
-+	.devfreq_name = "noc",
-+	.bw_mul = 1,
-+	.bw_div = 16,
-+};
-+
-+/*
-+ * Describe bus masters, slaves and connections between them
-+ *
-+ * This is a simplified subset of the bus diagram, there are several other
-+ * PL301 nics which are skipped/merged into PL301_MAIN
-+ */
-+static struct imx_icc_node_desc nodes[] = {
-+	DEFINE_BUS_INTERCONNECT("NOC", IMX8MM_ICN_NOC, &imx8mm_noc_adj,
-+			2, IMX8MM_ICS_DRAM, IMX8MM_ICN_MAIN),
-+
-+	DEFINE_BUS_SLAVE("DRAM", IMX8MM_ICS_DRAM, &imx8mm_dram_adj),
-+	DEFINE_BUS_SLAVE("OCRAM", IMX8MM_ICS_OCRAM, NULL),
-+	DEFINE_BUS_MASTER("A53", IMX8MM_ICM_A53, IMX8MM_ICN_NOC),
-+
-+	/* VPUMIX */
-+	DEFINE_BUS_MASTER("VPU H1", IMX8MM_ICM_VPU_H1, IMX8MM_ICN_VIDEO),
-+	DEFINE_BUS_MASTER("VPU G1", IMX8MM_ICM_VPU_G1, IMX8MM_ICN_VIDEO),
-+	DEFINE_BUS_MASTER("VPU G2", IMX8MM_ICM_VPU_G2, IMX8MM_ICN_VIDEO),
-+	DEFINE_BUS_INTERCONNECT("PL301_VIDEO", IMX8MM_ICN_VIDEO, NULL, 1, IMX8MM_ICN_NOC),
-+
-+	/* GPUMIX */
-+	DEFINE_BUS_MASTER("GPU 2D", IMX8MM_ICM_GPU2D, IMX8MM_ICN_GPU),
-+	DEFINE_BUS_MASTER("GPU 3D", IMX8MM_ICM_GPU3D, IMX8MM_ICN_GPU),
-+	DEFINE_BUS_INTERCONNECT("PL301_GPU", IMX8MM_ICN_GPU, NULL, 1, IMX8MM_ICN_NOC),
-+
-+	/* DISPLAYMIX */
-+	DEFINE_BUS_MASTER("CSI", IMX8MM_ICM_CSI, IMX8MM_ICN_MIPI),
-+	DEFINE_BUS_MASTER("LCDIF", IMX8MM_ICM_LCDIF, IMX8MM_ICN_MIPI),
-+	DEFINE_BUS_INTERCONNECT("PL301_MIPI", IMX8MM_ICN_MIPI, NULL, 1, IMX8MM_ICN_NOC),
-+
-+	/* HSIO */
-+	DEFINE_BUS_MASTER("USB1", IMX8MM_ICM_USB1, IMX8MM_ICN_HSIO),
-+	DEFINE_BUS_MASTER("USB2", IMX8MM_ICM_USB2, IMX8MM_ICN_HSIO),
-+	DEFINE_BUS_MASTER("PCIE", IMX8MM_ICM_PCIE, IMX8MM_ICN_HSIO),
-+	DEFINE_BUS_INTERCONNECT("PL301_HSIO", IMX8MM_ICN_HSIO, NULL, 1, IMX8MM_ICN_NOC),
-+
-+	/* Audio */
-+	DEFINE_BUS_MASTER("SDMA2", IMX8MM_ICM_SDMA2, IMX8MM_ICN_AUDIO),
-+	DEFINE_BUS_MASTER("SDMA3", IMX8MM_ICM_SDMA3, IMX8MM_ICN_AUDIO),
-+	DEFINE_BUS_INTERCONNECT("PL301_AUDIO", IMX8MM_ICN_AUDIO, NULL, 1, IMX8MM_ICN_MAIN),
-+
-+	/* Ethernet */
-+	DEFINE_BUS_MASTER("ENET", IMX8MM_ICM_ENET, IMX8MM_ICN_ENET),
-+	DEFINE_BUS_INTERCONNECT("PL301_ENET", IMX8MM_ICN_ENET, NULL, 1, IMX8MM_ICN_MAIN),
-+
-+	/* Other */
-+	DEFINE_BUS_MASTER("SDMA1", IMX8MM_ICM_SDMA1, IMX8MM_ICN_MAIN),
-+	DEFINE_BUS_MASTER("NAND", IMX8MM_ICM_NAND, IMX8MM_ICN_MAIN),
-+	DEFINE_BUS_MASTER("USDHC1", IMX8MM_ICM_USDHC1, IMX8MM_ICN_MAIN),
-+	DEFINE_BUS_MASTER("USDHC2", IMX8MM_ICM_USDHC2, IMX8MM_ICN_MAIN),
-+	DEFINE_BUS_MASTER("USDHC3", IMX8MM_ICM_USDHC3, IMX8MM_ICN_MAIN),
-+	DEFINE_BUS_INTERCONNECT("PL301_MAIN", IMX8MM_ICN_MAIN, NULL,
-+			2, IMX8MM_ICN_NOC, IMX8MM_ICS_OCRAM),
-+};
-+
-+static int imx8mm_icc_probe(struct platform_device *pdev)
-+{
-+	return imx_icc_register(pdev, nodes, ARRAY_SIZE(nodes));
-+}
-+
-+static int imx8mm_icc_remove(struct platform_device *pdev)
-+{
-+	return imx_icc_unregister(pdev);
-+}
-+
-+static const struct of_device_id imx_icc_of_match[] = {
-+	{ .compatible = "fsl,imx8mm-interconnect" },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, imx_icc_of_match);
-+
-+static struct platform_driver imx8mm_icc_driver = {
-+	.probe = imx8mm_icc_probe,
-+	.remove = imx8mm_icc_remove,
-+	.driver = {
-+		.name = "imx8mm-interconnect",
-+		.of_match_table = imx_icc_of_match,
-+	},
-+};
-+
-+builtin_platform_driver(imx8mm_icc_driver);
-+MODULE_AUTHOR("Alexandre Bailon <abailon@baylibre.com>");
-+MODULE_LICENSE("GPL v2");
-diff --git a/include/dt-bindings/interconnect/imx8mm.h b/include/dt-bindings/interconnect/imx8mm.h
-new file mode 100644
-index 000000000000..5404f2af15c3
---- /dev/null
-+++ b/include/dt-bindings/interconnect/imx8mm.h
-@@ -0,0 +1,49 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Interconnect framework driver for i.MX SoC
-+ *
-+ * Copyright (c) 2019, BayLibre
-+ * Author: Alexandre Bailon <abailon@baylibre.com>
-+ */
-+
-+#ifndef __IMX8MM_ICM_INTERCONNECT_IDS_H
-+#define __IMX8MM_ICM_INTERCONNECT_IDS_H
-+
-+#define IMX8MM_ICN_NOC		1
-+#define IMX8MM_ICS_DRAM		2
-+#define IMX8MM_ICS_OCRAM	3
-+#define IMX8MM_ICM_A53		4
-+
-+#define IMX8MM_ICM_VPU_H1	5
-+#define IMX8MM_ICM_VPU_G1	6
-+#define IMX8MM_ICM_VPU_G2	7
-+#define IMX8MM_ICN_VIDEO	8
-+
-+#define IMX8MM_ICM_GPU2D	9
-+#define IMX8MM_ICM_GPU3D	10
-+#define IMX8MM_ICN_GPU		11
-+
-+#define IMX8MM_ICM_CSI		12
-+#define IMX8MM_ICM_LCDIF	13
-+#define IMX8MM_ICN_MIPI		14
-+
-+#define IMX8MM_ICM_USB1		15
-+#define IMX8MM_ICM_USB2		16
-+#define IMX8MM_ICM_PCIE		17
-+#define IMX8MM_ICN_HSIO		18
-+
-+#define IMX8MM_ICM_SDMA2	19
-+#define IMX8MM_ICM_SDMA3	20
-+#define IMX8MM_ICN_AUDIO	21
-+
-+#define IMX8MM_ICN_ENET		22
-+#define IMX8MM_ICM_ENET		23
-+
-+#define IMX8MM_ICN_MAIN		24
-+#define IMX8MM_ICM_NAND		25
-+#define IMX8MM_ICM_SDMA1	26
-+#define IMX8MM_ICM_USDHC1	27
-+#define IMX8MM_ICM_USDHC2	28
-+#define IMX8MM_ICM_USDHC3	29
-+
-+#endif /* __IMX8MM_ICM_INTERCONNECT_IDS_H */
--- 
-2.17.1
+Tested-by: John Garry <john.garry@huawei.com>
+
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  Documentation/arm64/silicon-errata.rst |  2 +
+>  drivers/irqchip/irq-gic-v3.c           | 54 +++++++++++++++++++++-----
+>  2 files changed, 46 insertions(+), 10 deletions(-)
+>
+> diff --git a/Documentation/arm64/silicon-errata.rst b/Documentation/arm64/silicon-errata.rst
+> index 3e57d09246e6..17ea3fecddaa 100644
+> --- a/Documentation/arm64/silicon-errata.rst
+> +++ b/Documentation/arm64/silicon-errata.rst
+> @@ -115,6 +115,8 @@ stable kernels.
+>  +----------------+-----------------+-----------------+-----------------------------+
+>  | Hisilicon      | Hip0{6,7}       | #161010701      | N/A                         |
+>  +----------------+-----------------+-----------------+-----------------------------+
+> +| Hisilicon      | Hip0{6,7}       | #161010803      | N/A                         |
+> ++----------------+-----------------+-----------------+-----------------------------+
+>  | Hisilicon      | Hip07           | #161600802      | HISILICON_ERRATUM_161600802 |
+>  +----------------+-----------------+-----------------+-----------------------------+
+>  | Hisilicon      | Hip08 SMMU PMCG | #162001800      | N/A                         |
+> diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
+> index 334a10d9dbfb..bee141613b67 100644
+> --- a/drivers/irqchip/irq-gic-v3.c
+> +++ b/drivers/irqchip/irq-gic-v3.c
+> @@ -1441,6 +1441,46 @@ static bool gic_enable_quirk_msm8996(void *data)
+>  	return true;
+>  }
+>
+> +static bool gic_enable_quirk_hip06_07(void *data)
+> +{
+> +	struct gic_chip_data *d = data;
+> +
+> +	/*
+> +	 * HIP06 GICD_IIDR clashes with GIC-600 product number (despite
+> +	 * not being an actual ARM implementation). The saving grace is
+> +	 * that GIC-600 doesn't have ESPI, so nothing to do in that case.
+> +	 * HIP07 doesn't even have a proper IIDR, and still pretends to
+> +	 * have ESPI. In both cases, put them right.
+> +	 */
+> +	if (d->rdists.gicd_typer & GICD_TYPER_ESPI) {
+> +		/* Zero both ESPI and the RES0 field next to it... */
+> +		d->rdists.gicd_typer &= ~GENMASK(9, 8);
+> +		return true;
+> +	}
+> +
+> +	return false;
+> +}
+> +
+> +static const struct gic_quirk gic_quirks[] = {
+> +	{
+> +		.desc	= "GICv3: Qualcomm MSM8996 broken firmware",
+> +		.compatible = "qcom,msm8996-gic-v3",
+> +		.init	= gic_enable_quirk_msm8996,
+> +	},
+> +	{
+> +		.desc	= "GICv3: HIP06 erratum 161010803",
+> +		.iidr	= 0x0204043b,
+> +		.init	= gic_enable_quirk_hip06_07,
+> +	},
+> +	{
+> +		.desc	= "GICv3: HIP07 erratum 161010803",
+> +		.iidr	= 0x00000000,
+> +		.init	= gic_enable_quirk_hip06_07,
+> +	},
+> +	{
+> +	}
+> +};
+> +
+>  static void gic_enable_nmi_support(void)
+>  {
+>  	int i;
+> @@ -1494,6 +1534,10 @@ static int __init gic_init_bases(void __iomem *dist_base,
+>  	 */
+>  	typer = readl_relaxed(gic_data.dist_base + GICD_TYPER);
+>  	gic_data.rdists.gicd_typer = typer;
+> +
+> +	gic_enable_quirks(readl_relaxed(gic_data.dist_base + GICD_IIDR),
+> +			  gic_quirks, &gic_data);
+> +
+>  	pr_info("%d SPIs implemented\n", GIC_LINE_NR - 32);
+>  	pr_info("%d Extended SPIs implemented\n", GIC_ESPI_NR);
+>  	gic_data.domain = irq_domain_create_tree(handle, &gic_irq_domain_ops,
+> @@ -1676,16 +1720,6 @@ static void __init gic_of_setup_kvm_info(struct device_node *node)
+>  	gic_set_kvm_info(&gic_v3_kvm_info);
+>  }
+>
+> -static const struct gic_quirk gic_quirks[] = {
+> -	{
+> -		.desc	= "GICv3: Qualcomm MSM8996 broken firmware",
+> -		.compatible = "qcom,msm8996-gic-v3",
+> -		.init	= gic_enable_quirk_msm8996,
+> -	},
+> -	{
+> -	}
+> -};
+> -
+>  static int __init gic_of_init(struct device_node *node, struct device_node *parent)
+>  {
+>  	void __iomem *dist_base;
+>
+
 
 
 _______________________________________________
