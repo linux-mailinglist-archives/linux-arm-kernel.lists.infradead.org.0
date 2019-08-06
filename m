@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B777F8348E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:59:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29F098348F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:59:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I/mh17HD4Gwaj45MPpZGG2Dao4jX5AhzPsJ2Cl56JDk=; b=g73BXHcBnWjZSg
-	a5i3rnDAQTiRbghxafx2Ed/TF3whzGWJimcL13hIOOJL9MsaS8MPx8LCJOjw49TK6LssDtkaSRqaJ
-	icMfsAp0P5dqKt93WHeSYeuqN2IjFQTLonPi7pwXh7WvJcs6WapusIPInPIGPAw4Ox2j5h4E73SB3
-	ZUdfc/WhIzx3hUzZewYWTAzRnMosplrbLukq+vP15VK2ur7t6yEKgjjBpjHT2cp5qh4feGEWfsC6G
-	1JsGB+RDozTwC6FHRymnnlleSGLQP9QhAoX7sS1sqo39Xkd5IG0s3G3X17P3nSkpDjMNhm/trOA+0
-	05LNMFI3fu1x9miJ3lGQ==;
+	List-Owner; bh=eQlnaWaUIEQZxV2anHtfQREK+B75B5B5SBATlufr48c=; b=nHnwjYGces21Cc
+	wuXM5kA8DSuAczk204ndPqnSz8i+SK3Qakxv6elAuDIqeXVtCtquomuUFW0Ug2c5qqx5/E5Pr07XB
+	xafNnP6NIhWL6427mzO3pmtDxZks/I++CA7KnQgf8yzzLRjgA87/Z2pncujlS67mlVX6jXDxVX9+o
+	U2c5nyvPUvPC48NINUtx22N6TKTFORZ2IDuk5tRJc6+OCOt87MLf/bpDz8pWJ64rva9ycPf4iVYq7
+	o16JGIsH3EfT6RekcQAHHDi2wJHU0nzTY5Sfata6PhxTZ7+4DpIVdUYUFVIOxW0mHHIIFGPRGlsCr
+	LgrZ6RiKlYQoDE5vqcLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv0ve-0003JE-9N; Tue, 06 Aug 2019 14:59:10 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv0sD-00081x-B7
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:55:39 +0000
-X-Originating-IP: 86.250.200.211
-Received: from localhost.localdomain (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 66F4BE000B;
- Tue,  6 Aug 2019 14:55:34 +0000 (UTC)
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Rob Herring <robh+dt@kernel.org>,
-	Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 20/20] arm64: dts: marvell: Add support for Marvell CN9132-DB
-Date: Tue,  6 Aug 2019 16:55:00 +0200
-Message-Id: <20190806145500.24109-21-miquel.raynal@bootlin.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190806145500.24109-1-miquel.raynal@bootlin.com>
-References: <20190806145500.24109-1-miquel.raynal@bootlin.com>
+	id 1hv0vy-0003fG-T1; Tue, 06 Aug 2019 14:59:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hv0sP-0008Go-Dk
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:55:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6DCED344;
+ Tue,  6 Aug 2019 07:55:48 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 6B1713F706; Tue,  6 Aug 2019 07:55:47 -0700 (PDT)
+Date: Tue, 6 Aug 2019 15:55:45 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Steve Capper <steve.capper@arm.com>
+Subject: Re: [PATCH V4 10/11] arm64: mm: Introduce 52-bit Kernel VAs
+Message-ID: <20190806145545.GF30716@arrakis.emea.arm.com>
+References: <20190729162117.832-1-steve.capper@arm.com>
+ <20190729162117.832-11-steve.capper@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190729162117.832-11-steve.capper@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_075537_770225_ED189A82 
-X-CRM114-Status: GOOD (  16.46  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190806_075549_579472_AA3327D4 
+X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,285 +62,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Yan Markman <ymarkman@marvell.com>,
- Antoine Tenart <antoine.tenart@bootlin.com>,
- Grzegorz Jaszczyk <jaz@semihalf.com>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, maz@kernel.org,
+ bhsharma@redhat.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Grzegorz Jaszczyk <jaz@semihalf.com>
+On Mon, Jul 29, 2019 at 05:21:16PM +0100, Steve Capper wrote:
+> @@ -759,13 +759,14 @@ config ARM64_VA_BITS_47
+>  config ARM64_VA_BITS_48
+>  	bool "48-bit"
+>  
+> -config ARM64_USER_VA_BITS_52
+> -	bool "52-bit (user)"
+> +config ARM64_VA_BITS_52
+> +	bool "52-bit"
 
-Extend the support of the CN9131 with yet another additional CP115.
+I think we should change defconfig as well to make this the default. We
+tend to make defconfig cover all the architecture features we support
+and people can disable them if they get in the way (performance).
 
-The last number indicates how many external CP115 are used.
-
-New available interfaces:
-* CP2 CRYPTO-0 (disabled)
-* CP2 ETH-0 (SFI, problem with the SFP cage, disabled)
-* CP2 GPIO-1
-* CP2 GPIO-2
-* CP2 I2C-0
-* CP2 PCIe-0 x2
-* CP2 PCIe-2 x1 (disabled)
-* CP2 SDHCI-0
-* CP2 USB3-1 (High-speed)
-
-Signed-off-by: Grzegorz Jaszczyk <jaz@semihalf.com>
-Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
----
- arch/arm64/boot/dts/marvell/Makefile      |   1 +
- arch/arm64/boot/dts/marvell/cn9132-db.dts | 221 ++++++++++++++++++++++
- 2 files changed, 222 insertions(+)
- create mode 100644 arch/arm64/boot/dts/marvell/cn9132-db.dts
-
-diff --git a/arch/arm64/boot/dts/marvell/Makefile b/arch/arm64/boot/dts/marvell/Makefile
-index 92767d5be069..2af91b78d645 100644
---- a/arch/arm64/boot/dts/marvell/Makefile
-+++ b/arch/arm64/boot/dts/marvell/Makefile
-@@ -11,3 +11,4 @@ dtb-$(CONFIG_ARCH_MVEBU) += armada-8040-mcbin-singleshot.dtb
- dtb-$(CONFIG_ARCH_MVEBU) += armada-8080-db.dtb
- dtb-$(CONFIG_ARCH_MVEBU) += cn9130-db.dtb
- dtb-$(CONFIG_ARCH_MVEBU) += cn9131-db.dtb
-+dtb-$(CONFIG_ARCH_MVEBU) += cn9132-db.dtb
-diff --git a/arch/arm64/boot/dts/marvell/cn9132-db.dts b/arch/arm64/boot/dts/marvell/cn9132-db.dts
-new file mode 100644
-index 000000000000..4ef0df3097ca
---- /dev/null
-+++ b/arch/arm64/boot/dts/marvell/cn9132-db.dts
-@@ -0,0 +1,221 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (C) 2019 Marvell International Ltd.
-+ *
-+ * Device tree for the CN9132-DB board.
-+ */
-+
-+#include "cn9131-db.dts"
-+
-+/ {
-+	model = "Marvell Armada CN9132-DB";
-+	compatible = "marvell,cn9132", "marvell,cn9131", "marvell,cn9130",
-+		     "marvell,armada-ap807-quad", "marvell,armada-ap807";
-+
-+	aliases {
-+		gpio5 = &cp2_gpio1;
-+		gpio6 = &cp2_gpio2;
-+		ethernet5 = &cp2_eth0;
-+	};
-+
-+	cp2_reg_usb3_vbus0: cp2_usb3_vbus@0 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "cp2-xhci0-vbus";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		enable-active-high;
-+		gpio = <&cp2_gpio1 2 GPIO_ACTIVE_HIGH>;
-+	};
-+
-+	cp2_usb3_0_phy0: cp2_usb3_phy0 {
-+		compatible = "usb-nop-xceiv";
-+		vcc-supply = <&cp2_reg_usb3_vbus0>;
-+	};
-+
-+	cp2_reg_usb3_vbus1: cp2_usb3_vbus@1 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "cp2-xhci1-vbus";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		enable-active-high;
-+		gpio = <&cp2_gpio1 3 GPIO_ACTIVE_HIGH>;
-+	};
-+
-+	cp2_usb3_0_phy1: cp2_usb3_phy1 {
-+		compatible = "usb-nop-xceiv";
-+		vcc-supply = <&cp2_reg_usb3_vbus1>;
-+	};
-+
-+	cp2_reg_sd_vccq: cp2_sd_vccq@0 {
-+		compatible = "regulator-gpio";
-+		regulator-name = "cp2_sd_vcc";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <3300000>;
-+		gpios = <&cp2_gpio2 17 GPIO_ACTIVE_HIGH>;
-+		states = <1800000 0x1 3300000 0x0>;
-+	};
-+
-+	cp2_sfp_eth0: sfp-eth0 {
-+		compatible = "sff,sfp";
-+		i2c-bus = <&cp2_sfpp0_i2c>;
-+		los-gpio = <&cp2_module_expander1 11 GPIO_ACTIVE_HIGH>;
-+		mod-def0-gpio = <&cp2_module_expander1 10 GPIO_ACTIVE_LOW>;
-+		tx-disable-gpio = <&cp2_module_expander1 9 GPIO_ACTIVE_HIGH>;
-+		tx-fault-gpio = <&cp2_module_expander1 8 GPIO_ACTIVE_HIGH>;
-+		/*
-+		 * SFP cages are unconnected on early PCBs because of an the I2C
-+		 * lanes not being connected. Prevent the port for being
-+		 * unusable by disabling the SFP node.
-+		 */
-+		status = "disabled";
-+	};
-+};
-+
-+/*
-+ * Instantiate the second slave CP115
-+ */
-+
-+#define CP11X_NAME		cp2
-+#define CP11X_BASE		f6000000
-+#define CP11X_PCIEx_MEM_BASE(iface) (0xe5000000 + (iface * 0x1000000))
-+#define CP11X_PCIEx_MEM_SIZE(iface) 0xf00000
-+#define CP11X_PCIE0_BASE	f6600000
-+#define CP11X_PCIE1_BASE	f6620000
-+#define CP11X_PCIE2_BASE	f6640000
-+
-+#include "armada-cp115.dtsi"
-+
-+#undef CP11X_NAME
-+#undef CP11X_BASE
-+#undef CP11X_PCIEx_MEM_BASE
-+#undef CP11X_PCIEx_MEM_SIZE
-+#undef CP11X_PCIE0_BASE
-+#undef CP11X_PCIE1_BASE
-+#undef CP11X_PCIE2_BASE
-+
-+&cp2_crypto {
-+	status = "disabled";
-+};
-+
-+&cp2_ethernet {
-+	status = "okay";
-+};
-+
-+/* SLM-1521-V2, CON9 */
-+&cp2_eth0 {
-+	status = "disabled";
-+	phy-mode = "10gbase-kr";
-+	/* Generic PHY, providing serdes lanes */
-+	phys = <&cp2_comphy4 0>;
-+	managed = "in-band-status";
-+	sfp = <&cp2_sfp_eth0>;
-+};
-+
-+&cp2_gpio1 {
-+	status = "okay";
-+};
-+
-+&cp2_gpio2 {
-+	status = "okay";
-+};
-+
-+&cp2_i2c0 {
-+	clock-frequency = <100000>;
-+
-+	/* SLM-1521-V2 - U3 */
-+	i2c-mux@72 {
-+		compatible = "nxp,pca9544";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <0x72>;
-+		cp2_sfpp0_i2c: i2c@0 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			reg = <0>;
-+		};
-+
-+		i2c@1 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			reg = <1>;
-+			/* U12 */
-+			cp2_module_expander1: pca9555@21 {
-+				compatible = "nxp,pca9555";
-+				pinctrl-names = "default";
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+				reg = <0x21>;
-+			};
-+		};
-+	};
-+};
-+
-+/* SLM-1521-V2, CON6 */
-+&cp2_pcie0 {
-+	status = "okay";
-+	num-lanes = <2>;
-+	num-viewport = <8>;
-+	/* Generic PHY, providing serdes lanes */
-+	phys = <&cp2_comphy0 0
-+		&cp2_comphy1 0>;
-+};
-+
-+/* SLM-1521-V2, CON8 */
-+&cp2_pcie2 {
-+	status = "okay";
-+	num-lanes = <1>;
-+	num-viewport = <8>;
-+	/* Generic PHY, providing serdes lanes */
-+	phys = <&cp2_comphy5 2>;
-+};
-+
-+&cp2_sata0 {
-+	status = "okay";
-+
-+	/* SLM-1521-V2, CON4 */
-+	sata-port@0 {
-+		/* Generic PHY, providing serdes lanes */
-+		phys = <&cp2_comphy2 0>;
-+	};
-+};
-+
-+/* CON 2 on SLM-1683 - microSD */
-+&cp2_sdhci0 {
-+	status = "okay";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&cp2_sdhci_pins>;
-+	bus-width = <4>;
-+	cd-gpios = <&cp2_gpio2 23 GPIO_ACTIVE_LOW>;
-+	vqmmc-supply = <&cp2_reg_sd_vccq>;
-+};
-+
-+&cp2_syscon0 {
-+	cp2_pinctrl: pinctrl {
-+		compatible = "marvell,cp115-standalone-pinctrl";
-+
-+		cp2_i2c0_pins: cp2-i2c-pins-0 {
-+			marvell,pins = "mpp37", "mpp38";
-+			marvell,function = "i2c0";
-+		};
-+		cp2_sdhci_pins: cp2-sdhi-pins-0 {
-+			marvell,pins = "mpp56", "mpp57", "mpp58",
-+				       "mpp59", "mpp60", "mpp61";
-+			marvell,function = "sdio";
-+		};
-+	};
-+};
-+
-+&cp2_usb3_0 {
-+	status = "okay";
-+	usb-phy = <&cp2_usb3_0_phy0>;
-+	phy-names = "usb";
-+};
-+
-+/* SLM-1521-V2, CON11 */
-+&cp2_usb3_1 {
-+	status = "okay";
-+	usb-phy = <&cp2_usb3_0_phy1>;
-+	phy-names = "usb";
-+	/* Generic PHY, providing serdes lanes */
-+	phys = <&cp2_comphy3 1>;
-+};
 -- 
-2.20.1
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
