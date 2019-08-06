@@ -2,68 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5D6682CBB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 09:29:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F4CF82CDA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 09:33:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XOAVu3ZJIXRrJ9og0oZCuSFBfvUgyXHFQ0Vfbp63W4I=; b=TNj0WQ3mkTzDhi
-	o5gRPDIHsKkl/js0Kz0x6WeVscXrB3fX/qIpKcH906oCwpH8nmYuA7Tb8MYx+KxviflcuJdTK1Sgm
-	11r+/70KITsrEjU8V4cyCxf286UcJwGQEwumDKRhJSWPaBMQ/4psRyzohhC9zCt/5mXMMOMt/ptyy
-	FOn564bjnJz1ZY+E+G7iA7bzK5Cy0rMk0O5hLcFY4uOYkWSG6V0RlwsRclOxvt2orsGbISJ15wccA
-	BxxaH1DPCxKSLv5BYWqsPVp9jSUFO2ioDEqGMMBeBGr9QMVu1tf6KetNGsTscOi+5mA01bJBV3cpC
-	Zc/tN2ju0UGpe9YB1GIg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eBuABrPbFE5ss2DPvyoUBPgcwO3RlxVs2Bc3Bqft318=; b=nQIuivYjAaWePP
+	W5TJLJ3rKMf09gG8IO1zMU31+toCqTExtsPIolt4cHc8ZoB7iqMn3t1Dv+UZ2pMBuUzLmPDwswMvU
+	yG9qfYWu/yjVQ66rfQJ5ieEf+kkq7bT57LNA80HbSBmxi27opIGsScxr4hapQ7IzfzpM5Q1gRid2n
+	5E928/g2vTrEjM9LNpcHom788sQ9CkWvWgGYgQQieNFTXm0kd6Of0MP78FUYqJ3OVAkPiw7ydsxNi
+	fYpV/msg0Nr9ZW+MleQ7FtpZD/6kZQm+K169UAE/SRY95Cwxkfuvomap/bfnAShCne/rTEjy/m5UK
+	Ol0xxaePwyC/XOuzujag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hutua-0005Nr-Hn; Tue, 06 Aug 2019 07:29:36 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hutxu-0006xy-Im; Tue, 06 Aug 2019 07:33:02 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huttz-0005LZ-Uy; Tue, 06 Aug 2019 07:29:01 +0000
-X-UUID: d656105de0e341d08353ab4b4ee14bc8-20190805
-X-UUID: d656105de0e341d08353ab4b4ee14bc8-20190805
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <hsin-hsiung.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 263845327; Mon, 05 Aug 2019 23:28:50 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 6 Aug 2019 00:28:49 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 6 Aug 2019 15:28:47 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 6 Aug 2019 15:28:47 +0800
-Message-ID: <1565076527.23984.5.camel@mtksdaap41>
-Subject: Re: [PATCH v4 07/10] regulator: mt6358: Add support for MT6358
- regulator
-From: Hsin-hsiung Wang <hsin-hsiung.wang@mediatek.com>
-To: Mark Brown <broonie@kernel.org>
-Date: Tue, 6 Aug 2019 15:28:47 +0800
-In-Reply-To: <20190805131030.GE6432@sirena.org.uk>
-References: <1564982518-32163-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1564982518-32163-8-git-send-email-hsin-hsiung.wang@mediatek.com>
- <20190805131030.GE6432@sirena.org.uk>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hutxf-0006xE-Ok
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 07:32:49 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 803F17FA8FB05895B325;
+ Tue,  6 Aug 2019 15:32:44 +0800 (CST)
+Received: from use12-sp2.huawei.com (10.67.189.177) by
+ DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
+ 14.3.439.0; Tue, 6 Aug 2019 15:32:38 +0800
+From: chenzefeng <chenzefeng2@huawei.com>
+To: <linux@armlinux.org.uk>, <kstewart@linuxfoundation.org>,
+ <tglx@linutronix.de>, <allison@lohutok.net>, <jeyu@kernel.org>,
+ <gregkh@linuxfoundation.org>, <matthias.schiffer@ew.tq-group.com>
+Subject: [PATCH] arm:unwind: fix backtrace error with unwind_table
+Date: Tue, 6 Aug 2019 15:32:36 +0800
+Message-ID: <1565076756-71682-1-git-send-email-chenzefeng2@huawei.com>
+X-Mailer: git-send-email 1.8.5.6
 MIME-Version: 1.0
-X-MTK: N
+X-Originating-IP: [10.67.189.177]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_002900_004858_94F7880C 
-X-CRM114-Status: GOOD (  18.83  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190806_003247_995167_00675338 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,98 +64,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, Kate Stewart <kstewart@linuxfoundation.org>,
- Sean Wang <sean.wang@mediatek.com>, Liam Girdwood <lgirdwood@gmail.com>,
- linux-kernel@vger.kernel.org, Richard Fontana <rfontana@redhat.com>, Rob
- Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Lee Jones <lee.jones@linaro.org>, Allison
- Randal <allison@lohutok.net>, linux-rtc@vger.kernel.org
+Cc: stable@vger.kernel.org, chenzefeng2@huawei.com, nixiaoming@huawei.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
+For arm, when load_module success, the mod->init_layout.base would
+be free in function do_free_init, but do not remove it's unwind table
+from the unwind_tables' list. And later the above mod->init_layout.base
+would alloc for another module's text section, and add to the
+unwind_tables which cause one address can found more than two unwind table
+in the unwind_tables' list, therefore may get to errror unwind table to
+backtrace, and get an error backtrace.
 
-On Mon, 2019-08-05 at 14:10 +0100, Mark Brown wrote:
-> On Mon, Aug 05, 2019 at 01:21:55PM +0800, Hsin-Hsiung Wang wrote:
-> 
-> > +static const u32 vmch_voltages[] = {
-> > +	2900000, 3000000, 3300000,
-> > +};
-> 
-> > +static const u32 vemc_voltages[] = {
-> > +	2900000, 3000000, 3300000,
-> > +};
-> 
-> Several of these tables appear to be identical.
-> 
-I will use the same voltage table in the next patch.
+Signed-off-by: chenzefeng <chenzefeng2@huawei.com>
+---
+ arch/arm/kernel/module.c | 20 +++++++++++++++-----
+ 1 file changed, 15 insertions(+), 5 deletions(-)
 
-> > +static inline unsigned int mt6358_map_mode(unsigned int mode)
-> > +{
-> > +	return mode == MT6358_BUCK_MODE_AUTO ?
-> > +		REGULATOR_MODE_NORMAL : REGULATOR_MODE_FAST;
-> > +}
-> 
-> There is no need for this to be an inline and please write normal
-> conditional statements to improve legibility.  There's other examples in
-> the driver.
-> 
-will fix it in the next patch.
-
-> > +static int mt6358_get_buck_voltage_sel(struct regulator_dev *rdev)
-> > +{
-> > +	int ret, regval;
-> > +	struct mt6358_regulator_info *info = rdev_get_drvdata(rdev);
-> > +
-> > +	ret = regmap_read(rdev->regmap, info->da_vsel_reg, &regval);
-> > +	if (ret != 0) {
-> > +		dev_info(&rdev->dev,
-> > +			 "Failed to get mt6358 Buck %s vsel reg: %d\n",
-> > +			 info->desc.name, ret);
-> 
-> dev_err() for errors here and throughout the driver.
-> 
-will fix it in the next patch.
-
-> > +		return ret;
-> > +	}
-> > +
-> > +	ret = (regval >> info->da_vsel_shift) & info->da_vsel_mask;
-> > +
-> > +	return ret;
-> > +}
-> 
-> This looks like a standard get_voltage_sel_regmap()?
-> 
-MT6358 has buck voltage status registers to show the actual output
-voltage and the registers are different from the voltage setting
-registers.
-We want to get the actual voltage output, so we use the da_vsel status
-registers here.
-
-> > +err_mode:
-> > +	if (ret != 0)
-> > +		return ret;
-> > +
-> > +	return 0;
-> 
-> Or just return ret unconditionally?
-will modify it to return ret unconditionally in the next patch.
-
-Thanks a lot.
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
-
+diff --git a/arch/arm/kernel/module.c b/arch/arm/kernel/module.c
+index deef17f..a4eb5f4 100644
+--- a/arch/arm/kernel/module.c
++++ b/arch/arm/kernel/module.c
+@@ -403,14 +403,24 @@ int module_finalize(const Elf32_Ehdr *hdr, const Elf_Shdr *sechdrs,
+ 	return 0;
+ }
+ 
+-void
+-module_arch_cleanup(struct module *mod)
+-{
++
+ #ifdef CONFIG_ARM_UNWIND
++void module_arch_cleanup(struct module *mod)
++{
+ 	int i;
+ 
+ 	for (i = 0; i < ARM_SEC_MAX; i++)
+-		if (mod->arch.unwind[i])
++		if (mod->arch.unwind[i]) {
+ 			unwind_table_del(mod->arch.unwind[i]);
+-#endif
++			mod->arch.unwind[i] = NULL;
++		}
+ }
++
++void module_arch_freeing_init(struct module *mod)
++{
++	if (mod->arch.unwind[ARM_SEC_INIT]) {
++		unwind_table_del(mod->arch.unwind[ARM_SEC_INIT]);
++		mod->arch.unwind[ARM_SEC_INIT] = NULL;
++	}
++}
++#endif
+-- 
+1.8.5.6
 
 
 _______________________________________________
