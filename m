@@ -2,71 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E17182D8C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 10:09:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CA1E82D90
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 10:10:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dags0lh+XLj0FFUYPNu0hAEx/VgCHqmu3My1+adUtfc=; b=i3QKscTlyp0Bdo
-	qOOtXZoKZClf334IXiYarPk7DkiqbxoDJE+Ey6SLAJFPD4DmIFqBdBgjvaAqCYDSPJCGqxcmTIDkw
-	0QNe/bk5TYsh0sOVZzBeGU8Z8kEp1hyUeJ8phvES6QPgJncnlLr8iHeycf/wEQHgn+dzXTdnMyJ0Y
-	qYClR1qVkd/V1yi0SO/mkxy+I0rFnmzgNPEXJtSoXdwHLsMtnHIeXjkALYx9/3oTjtfz/6vZ2uxqk
-	gpMkzn6wLIpy6QVkjaToMOCmyJkcs7z8AHzVOXqlUxgK6O0/v+z5zGp+MSU/397oZKZtfANyN/seH
-	Q9esIzfa9Cw0UlQbOZVA==;
+	List-Owner; bh=xezOdfr2+cuQ3d+ucl8efkd0Vt3QBZpXLPCMflxrrPM=; b=YQHDdrD3GkXHkc
+	ETlmZpQEMuL4MGBwQoFzs3iZVTcj67WTJF57/UKKLo+7GBF9oj765EekSduINV5SRhiYEiHd7lYqd
+	4te4vKJnc+e6b3kZ6BnK33ug3GQnZBjBW45f/cUjaLM9BlRHkapuOf2XdQhS3DPGfXMsIySYM+5gB
+	Ju7RjRUcH5nCPOi2QJea63EHQLHc+3fHCxDLKAeULYmUgXFcQLMH75JgibMYeO6Ucl9SopyxRUQAL
+	EJz+AtizSPyWPB8psAmHbYqIxkpX+9Ey7EdHKKZZGARGJX1vb7jfPERGgYTz5sFl+aLeZsDJI2swU
+	PaIKSGV85tCLLgO/qpmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huuXQ-00030H-Nw; Tue, 06 Aug 2019 08:09:44 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1huuXt-0003Er-VK; Tue, 06 Aug 2019 08:10:14 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huuXD-0002za-DX
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 08:09:32 +0000
-Received: by mail-ot1-f65.google.com with SMTP id j11so33048823otp.10
+ id 1huuXf-0003Dy-L6
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 08:10:00 +0000
+Received: by mail-oi1-f195.google.com with SMTP id t76so65337608oih.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 01:09:28 -0700 (PDT)
+ Tue, 06 Aug 2019 01:09:59 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=xqMzHVpDgAOeonwqolEAexQrNRkRWUmsMZx6uc5Di+U=;
- b=FI41HtdD/7Dc2ZQ7NBdA/yqPzwrc8wxAe+hOXN4pvLoa3zRrAYW90KkGvA5FkLrgX0
- 1CGQLrUoQwC/x3pFLRJxS4gRqXRsIzx10vHMcU1g3wSwzZRBIJgXfQhvs1vuzd9JchjB
- 9axwDTvPWtsGxK8L6wJATXXEpwt3aRtHhs8obPhelOl6j1wSN+lptjJZvomVO7JyiE3l
- iIlYJuYaftVcFpuOMNoyMmCjvOqi5kpKI3Dk4lg1T7tVx97MkitZpuJ3XrKb/oJmDFb0
- 7gYJiZrnJeAUWdfhZn/SLtpHgrZvV2g2JcuDqc14mrO+UetQ4Tdbb7NjSnPvQLN1JK/Q
- sPQQ==
-X-Gm-Message-State: APjAAAXVxJgeoGlR/QBIIAxNoUF/JFGp5YCl0ecxh3DdXKGi+rwua3Eu
- cmJkFUHrjp0Lu35WGxGa2KIl/0GGLxXO18g1UZc=
-X-Google-Smtp-Source: APXvYqyxyt+Zm9XpZFQ3yabtEsQoWuW6uuAYo0QQEQY3CgXVLXrqXiHwww1RAwfouKG1y4E2IuOgL/omHPxmr9xrqjg=
-X-Received: by 2002:a9d:5c11:: with SMTP id o17mr1832302otk.107.1565078968223; 
- Tue, 06 Aug 2019 01:09:28 -0700 (PDT)
+ bh=HI/+7QvjOEEoVFOc4ETmV3V160VHifVAi0bhs8u9DNc=;
+ b=J+iBl89aE+GLc7EdBXPT0bTZon7xSe42cCRUhxqxcNzNKHnY184wHqV2LlMK/hD14G
+ 4QKoqs5IrjmwL4GvfArsm0V53XLoZlRY1Vm33pB2oXsFWI8ZXvcZuGclCWi6/IeOMwNQ
+ Ab14CVN0GzqVRdwu928Ll54kV+hgUlfcxKBo6sro0L02f343bOTY+gRV7TfQqE8+7ZaQ
+ lBNKGXJ/IyDsGk0t1sD2tGX6KwpeUBP+RfsyhSdEANAMxqsAr6bYslPZfVpqCmoEwBtH
+ A4MbgVwkQWDuXmjIxDC8y1/u2A4nXms5brPBAT3D6cqDBSVHPpy/+H54MhhYnrKZ/uRm
+ CjeA==
+X-Gm-Message-State: APjAAAWTkcGY+lP15VbnwU8AQDS1b1HZaeIFYFBzj9LjY+VB++n/n9B7
+ LarxHqyP+lBTR7cy6+LnkWIqOn0FiuCMIgkWItA=
+X-Google-Smtp-Source: APXvYqz1js8z8HnmSWxxKzsp2msa061pGX5lcuBT8TeExknala5sT01XRBUZ9FPRw+Q+arpqH93gKXBN9yl3l+BsKBw=
+X-Received: by 2002:a05:6808:3c5:: with SMTP id
+ o5mr1824672oie.102.1565078998482; 
+ Tue, 06 Aug 2019 01:09:58 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190802100349.8659-1-frieder.schrempf@kontron.de>
-In-Reply-To: <20190802100349.8659-1-frieder.schrempf@kontron.de>
+ <20190802100349.8659-3-frieder.schrempf@kontron.de>
+In-Reply-To: <20190802100349.8659-3-frieder.schrempf@kontron.de>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 6 Aug 2019 10:09:17 +0200
-Message-ID: <CAMuHMdXp9GAgWE7Ea_oA08PdPc8+J_wGVhM7L5B466OSbr7D_A@mail.gmail.com>
-Subject: Re: [PATCH v3 1/4] serial: mctrl_gpio: Avoid probe failures in case
- of missing gpiolib
+Date: Tue, 6 Aug 2019 10:09:47 +0200
+Message-ID: <CAMuHMdWoyfkyytRz8BJztpeAKLRY45UKLuy5hNU0e7QYYQYJ9Q@mail.gmail.com>
+Subject: Re: [PATCH v3 3/4] serial: sh-sci: Don't check for mctrl_gpio_init()
+ returning -ENOSYS
 To: Schrempf Frieder <frieder.schrempf@kontron.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_010931_459990_55EE3908 
-X-CRM114-Status: GOOD (  10.73  )
+X-CRM114-CacheID: sfid-20190806_010959_689984_3D5A846A 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (geert.uytterhoeven[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -101,16 +106,9 @@ On Fri, Aug 2, 2019 at 12:04 PM Schrempf Frieder
 <frieder.schrempf@kontron.de> wrote:
 > From: Frieder Schrempf <frieder.schrempf@kontron.de>
 >
-> If CONFIG_GPIOLIB is not enabled, mctrl_gpio_init() and
-> mctrl_gpio_init_noauto() will currently return an error pointer with
-> -ENOSYS. As the mctrl GPIOs are usually optional, drivers need to
-> check for this condition to allow continue probing.
+> Now that the mctrl_gpio code returns NULL instead of ERR_PTR(-ENOSYS)
+> if CONFIG_GPIOLIB is disabled, we can safely remove this check.
 >
-> To avoid the need for this check in each driver, we return NULL
-> instead, as all the mctrl_gpio_*() functions are skipped anyway.
-> We also adapt mctrl_gpio_to_gpiod() to be in line with this change.
->
-> Reviewed-by: Fabio Estevam <festevam@gmail.com>
 > Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
 
 Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
