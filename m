@@ -2,68 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8062A838B6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 20:40:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DF8D838B8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 20:41:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8TP43OZns6NPfOckyh3ehe0qyhRPM6G8k56hpo5/0Gs=; b=rfVdTvadlWQEFk
-	Wzz7UKZdtsX1F1pG4iLoDzvJafhL236mnbPXS9XqE7uiUmBtpe0J+v16778H0tNbzL9S7gCm014q5
-	fGIWHcgyAYi2TuIiZ4n+UDO2fQde21C5LNscbh8ROfLTInlXRhgPUqVtmWIXXInH2H3WiyJTVpY7b
-	hWewa9wLDr2nmZscRYaPQtkkDjvMfv92SrZYGz/M475nZwNzb0CfY4RIUZSjP7usn+Ud0rgvBXXUL
-	XjPJ2z4+Hk6pjwfpRHS+Zq6LHG4q0LmkSzMxhtSszNSgOaMMsf2odeuZnbTtUkb7O7ICoppGOWAtf
-	jsQ1ODKd9+77+phWBh4A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WVPxFswl5/4QkYR4sthzQ7JyzHv3dyxBAT57WwX5NCw=; b=WeDySQlMRN4KKx
+	MuNujKZENd0gMSISboL6fnf0bJzHd/LKknLwLbLS1yVifjk6USZu+oiXD3xpaMkGPDel4lMeSoR2c
+	BOneKQOqiJaUXXlEccitbZMhuecPaz5XCgY+8QowKah4lgeRunyD6ItVXLGy3TxfLNPYYm/hjlWp4
+	ZdWKMNxb7M6DdVU4dGce2PfetXHqlBjp8uNZ4P2sNEf94l2O0x8hqxi0FLViyBQ/YiJzI0n9+H7lP
+	LxGBX9vtjOdYaTw9oCOJwNZjTAocVs9iPa6gIf+J+HmhSlEaiL9Sw8MS5iXlJ5LMVy2JpANmJn4io
+	pjTCJVoepPOS8XNdG52g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv4NQ-0000EQ-Op; Tue, 06 Aug 2019 18:40:04 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hv4OD-0001jX-9o; Tue, 06 Aug 2019 18:40:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv4NH-0000E4-Ob
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 18:39:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Content-Transfer-Encoding:
- MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=cpKSMr3aMRit+OTK++cxQ0+sv+8y10M4RTKYQmUROXc=; b=vu5okr7cav6UuHHhZaJW2gX8F
- 2JvBzeQaO0B1/FW9zIP2JgBwPqmEECH02VP0Cqcz6MzMcoOm5SRBBdwpA8xM4R4knZgi4YCuC+qXI
- Z2VGcW7TZnvMbaCWAyeDnyMst2i2jDXl8dqEBbKV0lDJTC9SdaZq8CDqvFR1y4aQEKfKM=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1hv4NB-0005Rn-EJ; Tue, 06 Aug 2019 18:39:49 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 9C4B02742B68; Tue,  6 Aug 2019 19:39:48 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Nick Desaulniers <ndesaulniers@google.com>,
- Nathan Chancellor <natechancellor@gmail.com>, Tri Vo <trong@google.com>
-Subject: [PATCH] arm64: Disable big endian builds with clang
-Date: Tue,  6 Aug 2019 19:39:18 +0100
-Message-Id: <20190806183918.41078-1-broonie@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ id 1hv4O5-0001jC-HV
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 18:40:46 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B2C1120818;
+ Tue,  6 Aug 2019 18:40:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565116844;
+ bh=u1x4R5iUanTwInCID5PwGTrmyW23jOXOmyoOOvc4ERA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=K3bxmHgVSZOVnoqiuGhDKNBmuYYh0uuCp6Y1rh99th1Z9FIUYrg5RIIvgqAUNT2KI
+ ZS2B2vSpvb845Qx10KpHQAtMMTHeYD1Mp/YQ1cIff7Gn79tPvtnPj/Yb7hQVHCMtVD
+ K0NCzYURphpm5+cWg0U71eUEriCKwUDCdL6mBrcY=
+Date: Tue, 6 Aug 2019 20:40:42 +0200
+From: "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>
+To: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
+Subject: Re: [PATCH 5/6] tty: serial: Add linflexuart driver for S32V234
+Message-ID: <20190806184042.GA26041@kroah.com>
+References: <20190802194702.30249-1-stefan-gabriel.mirea@nxp.com>
+ <20190802194702.30249-6-stefan-gabriel.mirea@nxp.com>
+ <20190805153114.GA16836@kroah.com>
+ <HE1PR0402MB28579034C09EB49A76A4F8E7DFD50@HE1PR0402MB2857.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <HE1PR0402MB28579034C09EB49A76A4F8E7DFD50@HE1PR0402MB2857.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_113955_804046_B7D049E8 
-X-CRM114-Status: GOOD (  10.12  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190806_114045_616934_F2787985 
+X-CRM114-Status: GOOD (  17.63  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,42 +76,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux@googlegroups.com, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "corbet@lwn.net" <corbet@lwn.net>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ Larisa Ileana Grigore <larisa.grigore@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, Cosmin Stefan Stoica <cosmin.stoica@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ "jslaby@suse.com" <jslaby@suse.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current boot tests with clang built big endian kernels in KernelCI are
-showing problems with the kernel being unable to interpret big endian
-userspace. This is a bug and should be fixed but for now let's prevent
-these kernels being built, we may end up needing to add a version
-dependency on the compiler anyway.
+On Tue, Aug 06, 2019 at 05:11:17PM +0000, Stefan-gabriel Mirea wrote:
+> On 8/5/2019 6:31 PM, gregkh@linuxfoundation.org wrote:
+> > On Fri, Aug 02, 2019 at 07:47:23PM +0000, Stefan-gabriel Mirea wrote:
+> >>
+> >> +/* Freescale Linflex UART */
+> >> +#define PORT_LINFLEXUART     121
+> > 
+> > Do you really need this modified?
+> 
+> Hello Greg,
+> 
+> This macro is meant to be assigned to port->type in the config_port
+> method from uart_ops, in order for verify_port to know if the received
+> serial_struct structure was really targeted for a LINFlex port. It
+> needs to be defined outside, to avoid "collisions" with other drivers.
 
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
+Yes, I know what it goes to, but does anyone in userspace actually use
+it?
 
-The clang people (CCed) are aware and looking into this.
+> As far as I see, uart_set_info() will actually fail at the
+> "baud_base < 9600" check[1], right after calling verify_port(), when
+> performing an ioctl() on "/dev/console" with TIOCSSERIAL using a
+> serial_struct obtained with TIOCGSERIAL. This happens because this
+> reduced version of the LINFlex UART driver will not touch the uartclk
+> field of the uart_port (as there is currently no clock support).
+> Therefore, the linflex_config/verify_port() functions, along with the
+> PORT_LINFLEXUART macro, may be indeed unnecessary at this point (and
+> should be added later). Is this what you mean?
 
- arch/arm64/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+No, see below.
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 990fdcbf05c7..1c32d9889e0f 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -813,6 +813,7 @@ config ARM64_PA_BITS
- 
- config CPU_BIG_ENDIAN
-        bool "Build big-endian kernel"
-+       depends on !CC_IS_CLANG
-        help
-          Say Y if you plan on running a kernel in big-endian mode.
- 
--- 
-2.20.1
+> Other than that, I do not see anything wrong with the addition of a
+> define in serial_core.h for this purpose (which is also what most of the
+> serial drivers do, including amba-pl011.c, mentioned in
+> Documentation/driver-api/serial/driver.rst as providing the reference
+> implementation), so please be more specific.
 
+I am getting tired of dealing with merge issues with that list, and no
+one seems to be able to find where they are really needed for userspace,
+especially for new devices.  What happens if you do not have use it?
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
