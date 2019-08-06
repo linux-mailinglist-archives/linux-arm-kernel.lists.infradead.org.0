@@ -2,75 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14121833D4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:19:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 121A4833EA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:26:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QJCKRqHc53/c8E+fcAarcwtrxFbf13curR+WS3Eu0Xs=; b=PlnrpGsyOoky45
-	v6i0ySYnoHcz59cXOU/NGQ55tJj+jg+O0Rj/P6d3L6LQ8Y83zjJ+Sbj41FZUoIfESAJ8XGMCOYPC5
-	74el/WQnZ4P5DNH9wb+zdSldTdutHsSIOtjufMCPqD7oYDAHLWY5jUR18jX/Q9D3xnlX5m96MxZVm
-	873PVItNFHOZRQHOOAGeqhgD6An1tTLth86N8XT+3vgcrcbG4RRT/9ZqF0iksHUxkO53pbJF3C6su
-	n8dp0FeId4KZcctI7ETcAEFtJ4OKRL/djLCrn4HIfXtUG4n9a9Z1BwTv9c5wpZQPjzX9IsbbAMrdm
-	ML/ZRNoLCiRtwabg8neg==;
+	List-Owner; bh=6ftXJ6EaSpxSZQArplyp0cOZY+3SKQLk1xmv/Zqf2uM=; b=RYEhJ49GIxWQbo
+	a7/cwJqJiRNPpUUR1814tpF7b3l6aWMr1NoiTyINnC4LebdROVLv3rDIqXslspQZVD6TwR33X61ZB
+	538T0X/wlVzn9zuknSyvXlychrVgJpZu0xVySUcacS+qnW5A1RLQHLZxbsaLR+lQ3/T7dX0/KU2NN
+	RHLs/3w9lvi8vrsBYz9iC1Dh3Uh7y8zrM0D2LmKtzL6Z18ffHCGgekKh7xB8WI2giSo+iLLbWqV3W
+	y8MQNSZImuAKdlUomZnp2RpdfzQ0kSuygBT3gWAJQ4zpTepoCkZ68hA9F2YLpD3+JLdt+yN6lXkX0
+	f/IHVjCfCo+w+JB+yf6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv0Ja-0008BY-1D; Tue, 06 Aug 2019 14:19:50 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1hv0Pf-0003OD-8I; Tue, 06 Aug 2019 14:26:07 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv0JQ-0008Aw-HT
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:19:41 +0000
-Received: by mail-lf1-x142.google.com with SMTP id z15so57011852lfh.13
+ id 1hv0PV-0003Nk-Li
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:25:58 +0000
+Received: from mail-lj1-f180.google.com (mail-lj1-f180.google.com
+ [209.85.208.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4541E2064A
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 07:19:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=V5jEF7EG4PC/suq/OlXR4ZWTuw0HGXTqAzdKkVGslUk=;
- b=ULcOMR+jww4NTNUs7NcAx18e93B5Nw/gBlqWx6xiwSBs6cs7d37AY/0at+jBAZsz9L
- nKGakf4d3FcI66w3uSvEv2o1eYC1cGgIEeINGfJGS+NGWswAIsexCY2Qi12ZTECRlBUe
- Xs5PxT6h/5r5zjx/xyRVp6WcvOXeAZHhHhtKQJgViFGxqshcnDNoKNZHphz9RjZ4rPG1
- pCHl+Ur0ep1NsDIAWaesNPR9rG3NJNuVmyvy020U3GeG+2j8iN0rc/8pmV4Bl+YJ5CuY
- 7+/YbQopJ/SEahHd2BEbvp9irA2CuIxEk7yd+3t4oDFVCLIfUxnrXiRIBBNCWiCEumud
- B5/g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=V5jEF7EG4PC/suq/OlXR4ZWTuw0HGXTqAzdKkVGslUk=;
- b=SxW6bGFV04UU2FdEzzy0bSBLoDukdATfTVxhs7+pMKH5HnxGPazY+6jvJlyUmz/2fN
- NRCKXnkOut8vIRFoqgir4jZnKoidewrefw91a0R5ks/bxE0wMKqmMqba6IkDQddaEo/K
- 7j/IVKhhWBlEAfb2v+QSMBsv3WK/Lp6Zn2bMf1hyqI8zsXfnaJOmcdVSfJMyRrkb3jCt
- kt8wYfFnX5hsFECcSiYYSFa663fTHVurnPp/EFAn9tK5eEHWhsffuKFuuDA61pFOPk63
- d/BQm5hZGaxKMEusRC1+qOROMycaEQfzPmp+UuUQ/Kf//w5zhCeiCctbAi65wT3eybHD
- FfqQ==
-X-Gm-Message-State: APjAAAU0f17q9wrSmt9F/IaVrW39ZgogxyGuMaRoYQw7edIXAsvj9VJW
- qE8X0J6vxNHqDs4p+VYmrC6pyZTibUbRgSnsHUKYKQ==
-X-Google-Smtp-Source: APXvYqyiScvaJDP2ekkmRlgBAXhfXHwRa26aWf4+vzG26RvGWoN0Fe0dbrrYZnADbBqjPhQeEpVSj3qURqtbrw8I10E=
-X-Received: by 2002:ac2:5939:: with SMTP id v25mr2709543lfi.115.1565101179215; 
- Tue, 06 Aug 2019 07:19:39 -0700 (PDT)
+ Tue,  6 Aug 2019 14:25:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565101556;
+ bh=hxvRGDEpNBm3mZPFFZ9scjz7nw9+tfcB69glm76Zj6k=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=LAR1NOD9DK3tAJ2JkBf7vEicPIWD0xoAsrAY+BabPQk//OwFZlnFZkvh+TTlIzRPg
+ sVdl6HCU5R05RZzEZkshV9i0qJEpuvmd08ej8da/jvRo9VAnwsc7rae8PedWVNvVQ8
+ PA3itgfOxe8MmtT80ZJR5MRIVKAk5q7wWB93BvqU=
+Received: by mail-lj1-f180.google.com with SMTP id t28so82412911lje.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 06 Aug 2019 07:25:56 -0700 (PDT)
+X-Gm-Message-State: APjAAAUw0RTHfsncxv9Y7Ui71D6ruDtzriLQ0Pw05MYAGRLOB6kPnotC
+ 4ub5rq9LF0ejp+R+X2uARs9iQSrVDJlvdbF69jc=
+X-Google-Smtp-Source: APXvYqyR8xEsJE+MjEuvjOfu2HXgOcDbLzDQyXavm7a5+iFv4M54shHtw9bwzRKTalHYnjKzVT1tmRDtUKw9aVqqweQ=
+X-Received: by 2002:a2e:3008:: with SMTP id w8mr1964469ljw.13.1565101554494;
+ Tue, 06 Aug 2019 07:25:54 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190804154948.4584-1-nishkadg.linux@gmail.com>
-In-Reply-To: <20190804154948.4584-1-nishkadg.linux@gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 6 Aug 2019 16:19:27 +0200
-Message-ID: <CACRpkdaZs6+V1d0R+-jmukxbSgJhyRP9JXmP5oJ9L0tyfyKEHg@mail.gmail.com>
-Subject: Re: [PATCH] pinctrl: spear: spear: Add of_node_put() before return
-To: Nishka Dasgupta <nishkadg.linux@gmail.com>
+References: <20190805162710.7789-1-krzk@kernel.org>
+ <CACRpkda8P522pkxctZbf2Ut13V6Rzx=mSYsRuHv0BvPyF6q1gA@mail.gmail.com>
+In-Reply-To: <CACRpkda8P522pkxctZbf2Ut13V6Rzx=mSYsRuHv0BvPyF6q1gA@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Tue, 6 Aug 2019 16:25:43 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfuu1bgLL9oOf=7hrz-QvXBcJjJVMwqN2oRUv7hnB5Jyg@mail.gmail.com>
+Message-ID: <CAJKOXPfuu1bgLL9oOf=7hrz-QvXBcJjJVMwqN2oRUv7hnB5Jyg@mail.gmail.com>
+Subject: Re: [PATCH 1/4] pinctrl: samsung: Fix device node refcount leaks in
+ Exynos wakeup controller init
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_071940_586693_D7E01015 
-X-CRM114-Status: UNSURE (   8.61  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190806_072557_736776_6A0C8405 
+X-CRM114-Status: GOOD (  12.59  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -80,6 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,28 +87,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Viresh Kumar <vireshk@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>
+Cc: linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>, Tomasz Figa <tomasz.figa@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Kukjin Kim <kgene@kernel.org>, Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ notify@kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 4, 2019 at 5:50 PM Nishka Dasgupta <nishkadg.linux@gmail.com> wrote:
-
-> Each iteration of for_each_child_of_node puts the previous node, but in
-> the case of a return from the middle of the loop, there is no put, thus
-> causing a memory leak. Hence add an of_node_put before the return in
-> two places.
-> Issue found with Coccinelle.
+On Tue, 6 Aug 2019 at 16:15, Linus Walleij <linus.walleij@linaro.org> wrote:
 >
-> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+> On Mon, Aug 5, 2019 at 6:27 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> > In exynos_eint_wkup_init() the for_each_child_of_node() loop is used
+> > with a break to find a matching child node.  Although each iteration of
+> > for_each_child_of_node puts the previous node, but early exit from loop
+> > misses it.  This leads to leak of device node.
+> >
+> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+>
+> I assume you're collecting these for a pull request to me
+> at some later point, all look good to me.
 
-Patch applied with Viresh's ACK.
+Yes, I'll take these and one more patch from lists and send them to you.
 
-Yours,
-Linus Walleij
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
