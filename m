@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5AB2831E9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 14:54:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C7F1831EE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 14:56:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5qVTgNmTRpA8JDSvk/uQcPJKOBZUA5g+vOUjcpcjQLM=; b=MroKhkAW8cj7rX
-	ww0gzDzRRWG0YGNTnbQGSwEu3MqWJa8elufvvh7tcBv3SgvNyp/UKU+A2CN1+pbzwTvJ+Opxc95BO
-	OC1SaMZwCa+89SA43MyWjiZ/GYEaPlPWjAQo45+TBalPVgny6T8IKS1p+mornJhYcFkPGbM1RAbee
-	fa+cCkKzqOPABhqxQaGEBXb2KMwkVW5d9snf6OcyPF5hc6SoxDcW/TEu+1a8cxz9tXC5pzxuIXn1s
-	MIH9223ng/FdAn6AXKIN2dWd4AxqvdXzpIitMhYSpKWy9HXdEiKQF8qBAMwdbPDK1gtZAXcTX6lYi
-	i7Ak2x4CY8+MtBwFSK1Q==;
+	List-Owner; bh=ECodSUEE18mDYqdXwkPxBRcrkKX32PaZCrBy31BhCfs=; b=OseCE3ksds8Cxw
+	nNDTE2lCzqlHUXwaLcbJDjKQHJ2hv2EAJfeXzbJlEtVuQ5pGZp2FDRWEUN4XBOCCXwxqZM7lnPToU
+	8x8eAzXqHJkhf4CwO83DGyg3Dg9IKuQvDS4USvTPQggbtZHduD3wG/k1JoE0BbSe1vXbTn90ilrf+
+	0SXKMwCfSZlCcfvucgAWOahscYBfi86hENb3LqpFYT+RvvbvTjX80RXEvGqJVYfAJUPbvZBqAEzEv
+	QPrbK4HWatkAp5N7Zr02M4glVC1cQEQRztezDBJ8AwTcUelqYjHn28XZNr13yDi6Q0fzIS6kihPoo
+	0ZVgjcGY1Hi7SQcg3d+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huyyK-0003If-D8; Tue, 06 Aug 2019 12:53:48 +0000
+	id 1huz17-0004os-H8; Tue, 06 Aug 2019 12:56:41 +0000
 Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huyy3-0003I6-Gc
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 12:53:32 +0000
-Received: by mail-lj1-x241.google.com with SMTP id y17so57598360ljk.10
+ id 1huz0w-0004oS-Hz
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 12:56:31 +0000
+Received: by mail-lj1-x241.google.com with SMTP id v18so82097859ljh.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 05:53:31 -0700 (PDT)
+ Tue, 06 Aug 2019 05:56:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=HV09zpybfsy+I3fJbUAkGtQHbBc426YvIl5qaG1i4W8=;
- b=UdhpRIRR6fzwMx5vTEcn6+DpO3eK9AAXv6NwTfA6CFtU3xyvOCvIF4CXm8tI2TXq6E
- WKjFc2iD924G2t4KLDnsoxrM+jIpeTWzQ2cVE8806JarIISiphInjI1X7l6q7bzAqVR0
- pJgeyJGBXtIpRzVkRR6F3HcR6MWu1gxNr6KQjt/xOz0vuz4bv+jRS3IMFEZXfeLIStnF
- +HBhqcC9lNQZ9iluPad7URnLDNVqhUGyr3/2vT7QWrCBQOrDUMJcKc9w2hEk0obE8N3E
- 1WaZ30vDiQ6jmpBcRei9cVbMaGfgmuy/GgORwI3MsvAt5Iip7iGHzJfY5+AHhPJBWZBz
- xy6A==
+ :cc; bh=hWkwxSekOFjOJkkiUvNS6vk1XTlC8GglcO/MoVG5QiU=;
+ b=sHDErg1nel+qWZ6ii4Ow3da3HFj48RR7397s2QyeksX1iOni6fqeQTB3BqjhvnXymg
+ iDZ9/asuSdIwLEQ5+ASOgIwa3KaYHYgffPLUz0DjarhoqXArAdSLVuCeimHCPEmQL82E
+ estLVQyp/jfbd0YCA4DksvLMUL4+LXAC4feuCS6kGtz1OOY2ZNT0FLZ+LPKAkssy0/pu
+ Lfv3LV7ZLljskBd/xxsMOK9/JcDO0QbOgrA9r4p7x1osSVLm64d75lQd7dEkiUbPCFWU
+ Dm6ChuZWYqbu4VavYKXXv5UWiFoLLFsK1wv1UblaGU+WQIYDezjt/pURraKW1BTA3+if
+ 87kw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=HV09zpybfsy+I3fJbUAkGtQHbBc426YvIl5qaG1i4W8=;
- b=tth2/E9BF46Kc16Zycg+85goZF9ZKUAOgAHdD8CrhldE/crfCb97Kr72FqHz8ig0rh
- SkhNv8kI3ZDTUtT575/RbJQR6YP/r2/vlmSY4WCadQhVngAsApc7U8wK29TTUuQXIsuy
- JKsrEEC2SqMyoE9Shdc3t0WEgWjmBlZQXX57QYsprhVPZA0F35evjuVxsBo8efSBlTuK
- du5tqIsdiXOBlrlrcfMM86mNfbpkaLweLz98VLUX1ctIgC5R9GLMf+ocXAToFf3jEF3L
- /f7LBJdgZPDNo8ywqf3GvnTkwh5XU4PNM+Rrre1BhiNKA8BLMGhzJwyh3KUsPm2HHAM5
- CRZQ==
-X-Gm-Message-State: APjAAAXBe/B8bPoLqG6aYY3738gW9Yk+n9I0TWqkgtiplks7GipbdxI4
- 6+VOUNPzsotnbLOfEIN+93/KnytVLgwyx9+nVMttPg==
-X-Google-Smtp-Source: APXvYqwzjP8TFgqBE05qT9MDh1E1Lu5UcaY925WA0Nnx9/LH4CPLcq4VNPSmnGg+FJerwiR/lYW3/QuHn0NqhSYf/tU=
-X-Received: by 2002:a2e:8195:: with SMTP id e21mr1636402ljg.62.1565096010210; 
- Tue, 06 Aug 2019 05:53:30 -0700 (PDT)
+ bh=hWkwxSekOFjOJkkiUvNS6vk1XTlC8GglcO/MoVG5QiU=;
+ b=B8SymMtMv6r5H7EK46XiIaH+vkbXbRSdKwW2SzK/Uvl5Nb8QaYFEK+0ISHS57702TU
+ ItUEsm9TvY4uibHapgV9auFIQBlUA5jbyuBSQbsTFqoL7G1o2+ZPb5OFx+E8I4UHOxt0
+ pd4ctyrlTGnfSMmV9sNH6VYXkgKpykwr1WChrdwqg5KA9NBurIbJeq6NiiL9sGVeqHU8
+ xzDG10gR4Xl1ombbLOp2XiN1XWY3ccmu2ikM19IoQFxvVJ6ZLEOXG3d6C/Eh+tT72sQk
+ sdMaBXdW6sx189pNt/Nb8jXeu0OtZ4tFAb6Z3N5KG2MVNcmE9vTomBeaOV9zsKbub0zC
+ XJ4w==
+X-Gm-Message-State: APjAAAWEy1HPI7RiLgE4k1pWT9YbQkS62RDgiGfv+cDhyTovj8imxZOa
+ sC3or8oSm9N37Mp0N7x6RYsQbLtdnDWfA8TEDvDuqw==
+X-Google-Smtp-Source: APXvYqyubXEyA8qA2bp+bFUDFeaZYa6vFIsx3pnY8ux450GbZ0ztgW/G/BCVR2DhdbCt29loENRPoYWQh344coTndK4=
+X-Received: by 2002:a2e:9048:: with SMTP id n8mr1742815ljg.37.1565096189174;
+ Tue, 06 Aug 2019 05:56:29 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190804163445.6862-1-nishkadg.linux@gmail.com>
-In-Reply-To: <20190804163445.6862-1-nishkadg.linux@gmail.com>
+References: <20190804201637.1240-1-sam@ravnborg.org>
+ <20190804201637.1240-11-sam@ravnborg.org>
+In-Reply-To: <20190804201637.1240-11-sam@ravnborg.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 6 Aug 2019 14:53:19 +0200
-Message-ID: <CACRpkdZCE3nXaF9MK_VTpvyrADqhF1oVta649rUzMb9O57XVYw@mail.gmail.com>
-Subject: Re: [PATCH] clk: versatile: Add of_node_put() in cm_osc_setup()
-To: Nishka Dasgupta <nishkadg.linux@gmail.com>
+Date: Tue, 6 Aug 2019 14:56:16 +0200
+Message-ID: <CACRpkdYTaaxqhSSPx8KToVaiRJtzNmNynGCoGTMeJVgDUCsTnQ@mail.gmail.com>
+Subject: Re: [PATCH v1 10/16] drm/panel: ili9322: move bus_flags to get_modes()
+To: Sam Ravnborg <sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_055331_549250_B9113C50 
-X-CRM114-Status: UNSURE (   9.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190806_055630_601790_00624789 
+X-CRM114-Status: GOOD (  12.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -91,26 +91,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Fabio Estevam <festevam@gmail.com>, Marek Vasut <marex@denx.de>,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Joonyoung Shim <jy0922.shim@samsung.com>,
+ Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Kukjin Kim <kgene@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Alison Wang <alison.wang@nxp.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Gwan-gyeong Mun <gwan-gyeong.mun@intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Stefan Agner <stefan@agner.ch>, linux-tegra@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
+ Allison Randal <allison@lohutok.net>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Shawn Guo <shawnguo@kernel.org>, Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Enrico Weigelt <info@metux.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 4, 2019 at 6:34 PM Nishka Dasgupta <nishkadg.linux@gmail.com> wrote:
+On Sun, Aug 4, 2019 at 10:17 PM Sam Ravnborg <sam@ravnborg.org> wrote:
 
-> In function cm_osc_setup, variable parent takes the value returned by
-> of_get_parent, which gets a node but does not put it. If parent is not
-> put before it goes out of scope, it may cause a memory leak.
-> Hence put parent before the function terminates.
-> Issue found with Coccinelle.
+> To prepare the driver to receive drm_connector only in the get_modes()
+> callback, move bus_flags handling to ili9322_get_modes().
 >
-> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Thierry Reding <thierry.reding@gmail.com>
+> Cc: Sam Ravnborg <sam@ravnborg.org>
 
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+OK I don't see where this is going but I trust you so:
+Acked-by: Linus Walleij <linus.walleij@linaro.org>
 
 Yours,
 Linus Walleij
