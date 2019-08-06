@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81DF68346E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:55:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92A648347A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:56:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DQigK4OthhT9Bv1q9V0q34xKsSFzGL06THP+zLnj3K8=; b=MFIQfhY5uAXYC2
-	aniKWhQgGbCxejQsJwNi0Pa5giyTu0pYGep+OyC4/1KaquA3ovuSzegjhMOsexAInqdhdNa4WSnce
-	LAaIo74oh/1uxWGKv/CewwU7YtV3edCi745+PR+qZH+I94pUNEPE1MzgE1qyPg121fAuF6R38VW6s
-	oehEJ152fExQ4EkTwAr6B0lGykFCh0LrWw5ZjpK6CZM/URHoCX38Q7NwznSaVxLjH+SLzbIWiO1V3
-	GqzkPpqXFmr5xxQdtlu/RHxBrbZ+ZGiumg9oR6aUh6ONV9Sm/0vu8Fpbs6Ik7vzyiWPZKC1/xG+z5
-	78/kEA/e4kHbpuP5Ur4Q==;
+	List-Owner; bh=CgPKX7o8Nwz2NVbSoFfCts0DAYYVJ1BH4EneMB6bt+M=; b=A+as+rSmiHbsjt
+	mdcOuwpzLmPDS+gomyNiq30z6nCsaYG2ffbOPWhYvDbx8IXzGW5smXXZLVMbpRUYPz3T9g5vuKAZo
+	8Jgy0KZvpsHGUJAsJpL9p3H9dzVGu4qSNwN2ipydCbMKdQ6MQXM6wi2DcFGpWTqLTqytAbo10232I
+	2pKd/fASIHM5fEa3xSdt3VnV2SWzTtOtfdC/m+pg4AXmVKz/1n1BWwyG0R/9yrxblxAxUYIb4PsgQ
+	+cvSBrfS6bYR38SMNxjHcFO0Xpvxn6xTgGlT3yzGI0tv4vQ+UFqwnmACj7dio7jb1HfbHewf2RIXH
+	7l1Sg8q7TJGGHRrUscfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv0s8-0007n6-MM; Tue, 06 Aug 2019 14:55:32 +0000
+	id 1hv0tH-0000hB-Jd; Tue, 06 Aug 2019 14:56:43 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv0rx-0007l4-61
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:55:23 +0000
+ id 1hv0rx-0007l3-57
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:55:25 +0000
 X-Originating-IP: 86.250.200.211
 Received: from localhost.localdomain (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 2035CE000B;
- Tue,  6 Aug 2019 14:55:11 +0000 (UTC)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 87A0AE000D;
+ Tue,  6 Aug 2019 14:55:12 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Rob Herring <robh+dt@kernel.org>,
 	Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 04/20] MAINTAINERS: Add new Marvell CN9130-based files to track
-Date: Tue,  6 Aug 2019 16:54:44 +0200
-Message-Id: <20190806145500.24109-5-miquel.raynal@bootlin.com>
+Subject: [PATCH 05/20] arm64: dts: marvell: Prepare the introduction of AP807
+ based SoCs
+Date: Tue,  6 Aug 2019 16:54:45 +0200
+Message-Id: <20190806145500.24109-6-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190806145500.24109-1-miquel.raynal@bootlin.com>
 References: <20190806145500.24109-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_075521_383504_C41F7F18 
-X-CRM114-Status: GOOD (  10.28  )
+X-CRM114-CacheID: sfid-20190806_075522_494078_911003FE 
+X-CRM114-Status: GOOD (  14.51  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -69,6 +70,7 @@ Cc: devicetree@vger.kernel.org, Yan Markman <ymarkman@marvell.com>,
  Nadav Haklai <nadavh@marvell.com>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  Miquel Raynal <miquel.raynal@bootlin.com>,
+ Konstantin Porotchkin <kostap@marvell.com>,
  Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -76,37 +78,943 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Marvell has a new branch of products called CN9130 based on AP807 and
-CP115 which are derivatives of the currently supported AP806 and
-CP110. Update the MAINTAINERS entry to reflect this change in the
-naming.
+From: Konstantin Porotchkin <kostap@marvell.com>
 
+Prepare the support for Marvell AP807 die. This die is very similar to
+AP806 but uses different DDR PHY. AP807 is a major component of CN9130
+SoC series.
+
+Signed-off-by: Konstantin Porotchkin <kostap@marvell.com>
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- MAINTAINERS | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/marvell/armada-ap806.dtsi | 448 +----------------
+ arch/arm64/boot/dts/marvell/armada-ap80x.dtsi | 456 ++++++++++++++++++
+ 2 files changed, 458 insertions(+), 446 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 783569e3c4b4..0d35614fc5e0 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1865,7 +1865,7 @@ F:	arch/arm/boot/dts/dove*
- F:	arch/arm/boot/dts/orion5x*
- T:	git git://git.infradead.org/linux-mvebu.git
+diff --git a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+index a23ddd46efc5..cdadb28f287e 100644
+--- a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
++++ b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+@@ -5,454 +5,10 @@
+  * Device Tree file for Marvell Armada AP806.
+  */
  
--ARM/Marvell Kirkwood and Armada 370, 375, 38x, 39x, XP, 3700, 7K/8K SOC support
-+ARM/Marvell Kirkwood and Armada 370, 375, 38x, 39x, XP, 3700, 7K/8K, CN9130 SOC support
- M:	Jason Cooper <jason@lakedaemon.net>
- M:	Andrew Lunn <andrew@lunn.ch>
- M:	Gregory Clement <gregory.clement@bootlin.com>
-@@ -1877,6 +1877,7 @@ F:	arch/arm/boot/dts/kirkwood*
- F:	arch/arm/configs/mvebu_*_defconfig
- F:	arch/arm/mach-mvebu/
- F:	arch/arm64/boot/dts/marvell/armada*
-+F:	arch/arm64/boot/dts/marvell/cn913*
- F:	drivers/cpufreq/armada-37xx-cpufreq.c
- F:	drivers/cpufreq/armada-8k-cpufreq.c
- F:	drivers/cpufreq/mvebu-cpufreq.c
+-#include <dt-bindings/interrupt-controller/arm-gic.h>
+-#include <dt-bindings/thermal/thermal.h>
+-
+-/dts-v1/;
++#define AP_NAME		ap806
++#include "armada-ap80x.dtsi"
+ 
+ / {
+ 	model = "Marvell Armada AP806";
+ 	compatible = "marvell,armada-ap806";
+-	#address-cells = <2>;
+-	#size-cells = <2>;
+-
+-	aliases {
+-		serial0 = &uart0;
+-		serial1 = &uart1;
+-		gpio0 = &ap_gpio;
+-		spi0 = &spi0;
+-	};
+-
+-	psci {
+-		compatible = "arm,psci-0.2";
+-		method = "smc";
+-	};
+-
+-	reserved-memory {
+-		#address-cells = <2>;
+-		#size-cells = <2>;
+-		ranges;
+-
+-		/*
+-		 * This area matches the mapping done with a
+-		 * mainline U-Boot, and should be updated by the
+-		 * bootloader.
+-		 */
+-
+-		psci-area@4000000 {
+-			reg = <0x0 0x4000000 0x0 0x200000>;
+-			no-map;
+-		};
+-	};
+-
+-	ap806 {
+-		#address-cells = <2>;
+-		#size-cells = <2>;
+-		compatible = "simple-bus";
+-		interrupt-parent = <&gic>;
+-		ranges;
+-
+-		config-space@f0000000 {
+-			#address-cells = <1>;
+-			#size-cells = <1>;
+-			compatible = "simple-bus";
+-			ranges = <0x0 0x0 0xf0000000 0x1000000>;
+-
+-			gic: interrupt-controller@210000 {
+-				compatible = "arm,gic-400";
+-				#interrupt-cells = <3>;
+-				#address-cells = <1>;
+-				#size-cells = <1>;
+-				ranges;
+-				interrupt-controller;
+-				interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
+-				reg = <0x210000 0x10000>,
+-				      <0x220000 0x20000>,
+-				      <0x240000 0x20000>,
+-				      <0x260000 0x20000>;
+-
+-				gic_v2m0: v2m@280000 {
+-					compatible = "arm,gic-v2m-frame";
+-					msi-controller;
+-					reg = <0x280000 0x1000>;
+-					arm,msi-base-spi = <160>;
+-					arm,msi-num-spis = <32>;
+-				};
+-				gic_v2m1: v2m@290000 {
+-					compatible = "arm,gic-v2m-frame";
+-					msi-controller;
+-					reg = <0x290000 0x1000>;
+-					arm,msi-base-spi = <192>;
+-					arm,msi-num-spis = <32>;
+-				};
+-				gic_v2m2: v2m@2a0000 {
+-					compatible = "arm,gic-v2m-frame";
+-					msi-controller;
+-					reg = <0x2a0000 0x1000>;
+-					arm,msi-base-spi = <224>;
+-					arm,msi-num-spis = <32>;
+-				};
+-				gic_v2m3: v2m@2b0000 {
+-					compatible = "arm,gic-v2m-frame";
+-					msi-controller;
+-					reg = <0x2b0000 0x1000>;
+-					arm,msi-base-spi = <256>;
+-					arm,msi-num-spis = <32>;
+-				};
+-			};
+-
+-			timer {
+-				compatible = "arm,armv8-timer";
+-				interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
+-					     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
+-					     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
+-					     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
+-			};
+-
+-			pmu {
+-				compatible = "arm,cortex-a72-pmu";
+-				interrupt-parent = <&pic>;
+-				interrupts = <17>;
+-			};
+-
+-			odmi: odmi@300000 {
+-				compatible = "marvell,odmi-controller";
+-				interrupt-controller;
+-				msi-controller;
+-				marvell,odmi-frames = <4>;
+-				reg = <0x300000 0x4000>,
+-				      <0x304000 0x4000>,
+-				      <0x308000 0x4000>,
+-				      <0x30C000 0x4000>;
+-				marvell,spi-base = <128>, <136>, <144>, <152>;
+-			};
+-
+-			gicp: gicp@3f0040 {
+-				compatible = "marvell,ap806-gicp";
+-				reg = <0x3f0040 0x10>;
+-				marvell,spi-ranges = <64 64>, <288 64>;
+-				msi-controller;
+-			};
+-
+-			pic: interrupt-controller@3f0100 {
+-				compatible = "marvell,armada-8k-pic";
+-				reg = <0x3f0100 0x10>;
+-				#interrupt-cells = <1>;
+-				interrupt-controller;
+-				interrupts = <GIC_PPI 15 IRQ_TYPE_LEVEL_HIGH>;
+-			};
+-
+-			sei: interrupt-controller@3f0200 {
+-				compatible = "marvell,ap806-sei";
+-				reg = <0x3f0200 0x40>;
+-				interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
+-				#interrupt-cells = <1>;
+-				interrupt-controller;
+-				msi-controller;
+-			};
+-
+-			xor@400000 {
+-				compatible = "marvell,armada-7k-xor", "marvell,xor-v2";
+-				reg = <0x400000 0x1000>,
+-				      <0x410000 0x1000>;
+-				msi-parent = <&gic_v2m0>;
+-				clocks = <&ap_clk 3>;
+-				dma-coherent;
+-			};
+-
+-			xor@420000 {
+-				compatible = "marvell,armada-7k-xor", "marvell,xor-v2";
+-				reg = <0x420000 0x1000>,
+-				      <0x430000 0x1000>;
+-				msi-parent = <&gic_v2m0>;
+-				clocks = <&ap_clk 3>;
+-				dma-coherent;
+-			};
+-
+-			xor@440000 {
+-				compatible = "marvell,armada-7k-xor", "marvell,xor-v2";
+-				reg = <0x440000 0x1000>,
+-				      <0x450000 0x1000>;
+-				msi-parent = <&gic_v2m0>;
+-				clocks = <&ap_clk 3>;
+-				dma-coherent;
+-			};
+-
+-			xor@460000 {
+-				compatible = "marvell,armada-7k-xor", "marvell,xor-v2";
+-				reg = <0x460000 0x1000>,
+-				      <0x470000 0x1000>;
+-				msi-parent = <&gic_v2m0>;
+-				clocks = <&ap_clk 3>;
+-				dma-coherent;
+-			};
+-
+-			spi0: spi@510600 {
+-				compatible = "marvell,armada-380-spi";
+-				reg = <0x510600 0x50>;
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-				interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
+-				clocks = <&ap_clk 3>;
+-				status = "disabled";
+-			};
+-
+-			i2c0: i2c@511000 {
+-				compatible = "marvell,mv78230-i2c";
+-				reg = <0x511000 0x20>;
+-				#address-cells = <1>;
+-				#size-cells = <0>;
+-				interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
+-				timeout-ms = <1000>;
+-				clocks = <&ap_clk 3>;
+-				status = "disabled";
+-			};
+-
+-			uart0: serial@512000 {
+-				compatible = "snps,dw-apb-uart";
+-				reg = <0x512000 0x100>;
+-				reg-shift = <2>;
+-				interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
+-				reg-io-width = <1>;
+-				clocks = <&ap_clk 3>;
+-				status = "disabled";
+-			};
+-
+-			uart1: serial@512100 {
+-				compatible = "snps,dw-apb-uart";
+-				reg = <0x512100 0x100>;
+-				reg-shift = <2>;
+-				interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
+-				reg-io-width = <1>;
+-				clocks = <&ap_clk 3>;
+-				status = "disabled";
+-
+-			};
+-
+-			watchdog: watchdog@610000 {
+-				compatible = "arm,sbsa-gwdt";
+-				reg = <0x610000 0x1000>, <0x600000 0x1000>;
+-				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
+-			};
+-
+-			ap_sdhci0: sdhci@6e0000 {
+-				compatible = "marvell,armada-ap806-sdhci";
+-				reg = <0x6e0000 0x300>;
+-				interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+-				clock-names = "core";
+-				clocks = <&ap_clk 4>;
+-				dma-coherent;
+-				marvell,xenon-phy-slow-mode;
+-				status = "disabled";
+-			};
+-
+-			ap_syscon0: system-controller@6f4000 {
+-				compatible = "syscon", "simple-mfd";
+-				reg = <0x6f4000 0x2000>;
+-
+-				ap_clk: clock {
+-					compatible = "marvell,ap806-clock";
+-					#clock-cells = <1>;
+-				};
+-
+-				ap_pinctrl: pinctrl {
+-					compatible = "marvell,ap806-pinctrl";
+-
+-					uart0_pins: uart0-pins {
+-						marvell,pins = "mpp11", "mpp19";
+-						marvell,function = "uart0";
+-					};
+-				};
+-
+-				ap_gpio: gpio@1040 {
+-					compatible = "marvell,armada-8k-gpio";
+-					offset = <0x1040>;
+-					ngpios = <20>;
+-					gpio-controller;
+-					#gpio-cells = <2>;
+-					gpio-ranges = <&ap_pinctrl 0 0 20>;
+-				};
+-			};
+-
+-			ap_syscon1: system-controller@6f8000 {
+-				compatible = "syscon", "simple-mfd";
+-				reg = <0x6f8000 0x1000>;
+-				#address-cells = <1>;
+-				#size-cells = <1>;
+-
+-				cpu_clk: clock-cpu@278 {
+-					compatible = "marvell,ap806-cpu-clock";
+-					clocks = <&ap_clk 0>, <&ap_clk 1>;
+-					#clock-cells = <1>;
+-					reg = <0x278 0xa30>;
+-				};
+-
+-				ap_thermal: thermal-sensor@80 {
+-					compatible = "marvell,armada-ap806-thermal";
+-					reg = <0x80 0x10>;
+-					interrupt-parent = <&sei>;
+-					interrupts = <18>;
+-					#thermal-sensor-cells = <1>;
+-				};
+-			};
+-		};
+-	};
+-
+-	/*
+-	 * The thermal IP features one internal sensor plus, if applicable, one
+-	 * remote channel wired to one sensor per CPU.
+-	 *
+-	 * Only one thermal zone per AP/CP may trigger interrupts at a time, the
+-	 * first one that will have a critical trip point will be chosen.
+-	 */
+-	thermal-zones {
+-		ap_thermal_ic: ap-thermal-ic {
+-			polling-delay-passive = <0>; /* Interrupt driven */
+-			polling-delay = <0>; /* Interrupt driven */
+-
+-			thermal-sensors = <&ap_thermal 0>;
+-
+-			trips {
+-				ap_crit: ap-crit {
+-					temperature = <100000>; /* mC degrees */
+-					hysteresis = <2000>; /* mC degrees */
+-					type = "critical";
+-				};
+-			};
+-
+-			cooling-maps { };
+-		};
+-
+-		ap_thermal_cpu0: ap-thermal-cpu0 {
+-			polling-delay-passive = <1000>;
+-			polling-delay = <1000>;
+-
+-			thermal-sensors = <&ap_thermal 1>;
+-
+-			trips {
+-				cpu0_hot: cpu0-hot {
+-					temperature = <85000>;
+-					hysteresis = <2000>;
+-					type = "passive";
+-				};
+-				cpu0_emerg: cpu0-emerg {
+-					temperature = <95000>;
+-					hysteresis = <2000>;
+-					type = "passive";
+-				};
+-			};
+-
+-			cooling-maps {
+-				map0_hot: map0-hot {
+-					trip = <&cpu0_hot>;
+-					cooling-device = <&cpu0 1 2>,
+-						<&cpu1 1 2>;
+-				};
+-				map0_emerg: map0-ermerg {
+-					trip = <&cpu0_emerg>;
+-					cooling-device = <&cpu0 3 3>,
+-						<&cpu1 3 3>;
+-				};
+-			};
+-		};
+-
+-		ap_thermal_cpu1: ap-thermal-cpu1 {
+-			polling-delay-passive = <1000>;
+-			polling-delay = <1000>;
+-
+-			thermal-sensors = <&ap_thermal 2>;
+-
+-			trips {
+-				cpu1_hot: cpu1-hot {
+-					temperature = <85000>;
+-					hysteresis = <2000>;
+-					type = "passive";
+-				};
+-				cpu1_emerg: cpu1-emerg {
+-					temperature = <95000>;
+-					hysteresis = <2000>;
+-					type = "passive";
+-				};
+-			};
+-
+-			cooling-maps {
+-				map1_hot: map1-hot {
+-					trip = <&cpu1_hot>;
+-					cooling-device = <&cpu0 1 2>,
+-						<&cpu1 1 2>;
+-				};
+-				map1_emerg: map1-emerg {
+-					trip = <&cpu1_emerg>;
+-					cooling-device = <&cpu0 3 3>,
+-						<&cpu1 3 3>;
+-				};
+-			};
+-		};
+-
+-		ap_thermal_cpu2: ap-thermal-cpu2 {
+-			polling-delay-passive = <1000>;
+-			polling-delay = <1000>;
+-
+-			thermal-sensors = <&ap_thermal 3>;
+-
+-			trips {
+-				cpu2_hot: cpu2-hot {
+-					temperature = <85000>;
+-					hysteresis = <2000>;
+-					type = "passive";
+-				};
+-				cpu2_emerg: cpu2-emerg {
+-					temperature = <95000>;
+-					hysteresis = <2000>;
+-					type = "passive";
+-				};
+-			};
+-
+-			cooling-maps {
+-				map2_hot: map2-hot {
+-					trip = <&cpu2_hot>;
+-					cooling-device = <&cpu2 1 2>,
+-						<&cpu3 1 2>;
+-				};
+-				map2_emerg: map2-emerg {
+-					trip = <&cpu2_emerg>;
+-					cooling-device = <&cpu2 3 3>,
+-						<&cpu3 3 3>;
+-				};
+-			};
+-		};
+-
+-		ap_thermal_cpu3: ap-thermal-cpu3 {
+-			polling-delay-passive = <1000>;
+-			polling-delay = <1000>;
+-
+-			thermal-sensors = <&ap_thermal 4>;
+-
+-			trips {
+-				cpu3_hot: cpu3-hot {
+-					temperature = <85000>;
+-					hysteresis = <2000>;
+-					type = "passive";
+-				};
+-				cpu3_emerg: cpu3-emerg {
+-					temperature = <95000>;
+-					hysteresis = <2000>;
+-					type = "passive";
+-				};
+-			};
+-
+-			cooling-maps {
+-				map3_hot: map3-bhot {
+-					trip = <&cpu3_hot>;
+-					cooling-device = <&cpu2 1 2>,
+-						<&cpu3 1 2>;
+-				};
+-				map3_emerg: map3-emerg {
+-					trip = <&cpu3_emerg>;
+-					cooling-device = <&cpu2 3 3>,
+-						<&cpu3 3 3>;
+-				};
+-			};
+-		};
+-	};
+ };
+diff --git a/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi b/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
+new file mode 100644
+index 000000000000..c44cd7c64bf6
+--- /dev/null
++++ b/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
+@@ -0,0 +1,456 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (C) 2019 Marvell Technology Group Ltd.
++ *
++ * Device Tree file for Marvell Armada AP80x.
++ */
++
++#include <dt-bindings/interrupt-controller/arm-gic.h>
++#include <dt-bindings/thermal/thermal.h>
++
++/dts-v1/;
++
++/ {
++	#address-cells = <2>;
++	#size-cells = <2>;
++
++	aliases {
++		serial0 = &uart0;
++		serial1 = &uart1;
++		gpio0 = &ap_gpio;
++		spi0 = &spi0;
++	};
++
++	psci {
++		compatible = "arm,psci-0.2";
++		method = "smc";
++	};
++
++	reserved-memory {
++		#address-cells = <2>;
++		#size-cells = <2>;
++		ranges;
++
++		/*
++		 * This area matches the mapping done with a
++		 * mainline U-Boot, and should be updated by the
++		 * bootloader.
++		 */
++
++		psci-area@4000000 {
++			reg = <0x0 0x4000000 0x0 0x200000>;
++			no-map;
++		};
++	};
++
++	ap806 {
++		#address-cells = <2>;
++		#size-cells = <2>;
++		compatible = "simple-bus";
++		interrupt-parent = <&gic>;
++		ranges;
++
++		config-space@f0000000 {
++			#address-cells = <1>;
++			#size-cells = <1>;
++			compatible = "simple-bus";
++			ranges = <0x0 0x0 0xf0000000 0x1000000>;
++
++			gic: interrupt-controller@210000 {
++				compatible = "arm,gic-400";
++				#interrupt-cells = <3>;
++				#address-cells = <1>;
++				#size-cells = <1>;
++				ranges;
++				interrupt-controller;
++				interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
++				reg = <0x210000 0x10000>,
++				      <0x220000 0x20000>,
++				      <0x240000 0x20000>,
++				      <0x260000 0x20000>;
++
++				gic_v2m0: v2m@280000 {
++					compatible = "arm,gic-v2m-frame";
++					msi-controller;
++					reg = <0x280000 0x1000>;
++					arm,msi-base-spi = <160>;
++					arm,msi-num-spis = <32>;
++				};
++				gic_v2m1: v2m@290000 {
++					compatible = "arm,gic-v2m-frame";
++					msi-controller;
++					reg = <0x290000 0x1000>;
++					arm,msi-base-spi = <192>;
++					arm,msi-num-spis = <32>;
++				};
++				gic_v2m2: v2m@2a0000 {
++					compatible = "arm,gic-v2m-frame";
++					msi-controller;
++					reg = <0x2a0000 0x1000>;
++					arm,msi-base-spi = <224>;
++					arm,msi-num-spis = <32>;
++				};
++				gic_v2m3: v2m@2b0000 {
++					compatible = "arm,gic-v2m-frame";
++					msi-controller;
++					reg = <0x2b0000 0x1000>;
++					arm,msi-base-spi = <256>;
++					arm,msi-num-spis = <32>;
++				};
++			};
++
++			timer {
++				compatible = "arm,armv8-timer";
++				interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
++					     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
++					     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
++					     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
++			};
++
++			pmu {
++				compatible = "arm,cortex-a72-pmu";
++				interrupt-parent = <&pic>;
++				interrupts = <17>;
++			};
++
++			odmi: odmi@300000 {
++				compatible = "marvell,odmi-controller";
++				interrupt-controller;
++				msi-controller;
++				marvell,odmi-frames = <4>;
++				reg = <0x300000 0x4000>,
++				      <0x304000 0x4000>,
++				      <0x308000 0x4000>,
++				      <0x30C000 0x4000>;
++				marvell,spi-base = <128>, <136>, <144>, <152>;
++			};
++
++			gicp: gicp@3f0040 {
++				compatible = "marvell,ap806-gicp";
++				reg = <0x3f0040 0x10>;
++				marvell,spi-ranges = <64 64>, <288 64>;
++				msi-controller;
++			};
++
++			pic: interrupt-controller@3f0100 {
++				compatible = "marvell,armada-8k-pic";
++				reg = <0x3f0100 0x10>;
++				#interrupt-cells = <1>;
++				interrupt-controller;
++				interrupts = <GIC_PPI 15 IRQ_TYPE_LEVEL_HIGH>;
++			};
++
++			sei: interrupt-controller@3f0200 {
++				compatible = "marvell,ap806-sei";
++				reg = <0x3f0200 0x40>;
++				interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
++				#interrupt-cells = <1>;
++				interrupt-controller;
++				msi-controller;
++			};
++
++			xor@400000 {
++				compatible = "marvell,armada-7k-xor", "marvell,xor-v2";
++				reg = <0x400000 0x1000>,
++				      <0x410000 0x1000>;
++				msi-parent = <&gic_v2m0>;
++				clocks = <&ap_clk 3>;
++				dma-coherent;
++			};
++
++			xor@420000 {
++				compatible = "marvell,armada-7k-xor", "marvell,xor-v2";
++				reg = <0x420000 0x1000>,
++				      <0x430000 0x1000>;
++				msi-parent = <&gic_v2m0>;
++				clocks = <&ap_clk 3>;
++				dma-coherent;
++			};
++
++			xor@440000 {
++				compatible = "marvell,armada-7k-xor", "marvell,xor-v2";
++				reg = <0x440000 0x1000>,
++				      <0x450000 0x1000>;
++				msi-parent = <&gic_v2m0>;
++				clocks = <&ap_clk 3>;
++				dma-coherent;
++			};
++
++			xor@460000 {
++				compatible = "marvell,armada-7k-xor", "marvell,xor-v2";
++				reg = <0x460000 0x1000>,
++				      <0x470000 0x1000>;
++				msi-parent = <&gic_v2m0>;
++				clocks = <&ap_clk 3>;
++				dma-coherent;
++			};
++
++			spi0: spi@510600 {
++				compatible = "marvell,armada-380-spi";
++				reg = <0x510600 0x50>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&ap_clk 3>;
++				status = "disabled";
++			};
++
++			i2c0: i2c@511000 {
++				compatible = "marvell,mv78230-i2c";
++				reg = <0x511000 0x20>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
++				timeout-ms = <1000>;
++				clocks = <&ap_clk 3>;
++				status = "disabled";
++			};
++
++			uart0: serial@512000 {
++				compatible = "snps,dw-apb-uart";
++				reg = <0x512000 0x100>;
++				reg-shift = <2>;
++				interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
++				reg-io-width = <1>;
++				clocks = <&ap_clk 3>;
++				status = "disabled";
++			};
++
++			uart1: serial@512100 {
++				compatible = "snps,dw-apb-uart";
++				reg = <0x512100 0x100>;
++				reg-shift = <2>;
++				interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
++				reg-io-width = <1>;
++				clocks = <&ap_clk 3>;
++				status = "disabled";
++
++			};
++
++			watchdog: watchdog@610000 {
++				compatible = "arm,sbsa-gwdt";
++				reg = <0x610000 0x1000>, <0x600000 0x1000>;
++				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
++			};
++
++			ap_sdhci0: sdhci@6e0000 {
++				compatible = "marvell,armada-ap806-sdhci";
++				reg = <0x6e0000 0x300>;
++				interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
++				clock-names = "core";
++				clocks = <&ap_clk 4>;
++				dma-coherent;
++				marvell,xenon-phy-slow-mode;
++				status = "disabled";
++			};
++
++			ap_syscon0: system-controller@6f4000 {
++				compatible = "syscon", "simple-mfd";
++				reg = <0x6f4000 0x2000>;
++
++				ap_clk: clock {
++					compatible = "marvell,ap806-clock";
++					#clock-cells = <1>;
++				};
++
++				ap_pinctrl: pinctrl {
++					compatible = "marvell,ap806-pinctrl";
++
++					uart0_pins: uart0-pins {
++						marvell,pins = "mpp11", "mpp19";
++						marvell,function = "uart0";
++					};
++				};
++
++				ap_gpio: gpio@1040 {
++					compatible = "marvell,armada-8k-gpio";
++					offset = <0x1040>;
++					ngpios = <20>;
++					gpio-controller;
++					#gpio-cells = <2>;
++					gpio-ranges = <&ap_pinctrl 0 0 20>;
++				};
++			};
++
++			ap_syscon1: system-controller@6f8000 {
++				compatible = "syscon", "simple-mfd";
++				reg = <0x6f8000 0x1000>;
++				#address-cells = <1>;
++				#size-cells = <1>;
++
++				cpu_clk: clock-cpu@278 {
++					compatible = "marvell,ap806-cpu-clock";
++					clocks = <&ap_clk 0>, <&ap_clk 1>;
++					#clock-cells = <1>;
++					reg = <0x278 0xa30>;
++				};
++
++				ap_thermal: thermal-sensor@80 {
++					compatible = "marvell,armada-ap806-thermal";
++					reg = <0x80 0x10>;
++					interrupt-parent = <&sei>;
++					interrupts = <18>;
++					#thermal-sensor-cells = <1>;
++				};
++			};
++		};
++	};
++
++	/*
++	 * The thermal IP features one internal sensor plus, if applicable, one
++	 * remote channel wired to one sensor per CPU.
++	 *
++	 * Only one thermal zone per AP/CP may trigger interrupts at a time, the
++	 * first one that will have a critical trip point will be chosen.
++	 */
++	thermal-zones {
++		ap_thermal_ic: ap-thermal-ic {
++			polling-delay-passive = <0>; /* Interrupt driven */
++			polling-delay = <0>; /* Interrupt driven */
++
++			thermal-sensors = <&ap_thermal 0>;
++
++			trips {
++				ap_crit: ap-crit {
++					temperature = <100000>; /* mC degrees */
++					hysteresis = <2000>; /* mC degrees */
++					type = "critical";
++				};
++			};
++
++			cooling-maps { };
++		};
++
++		ap_thermal_cpu0: ap-thermal-cpu0 {
++			polling-delay-passive = <1000>;
++			polling-delay = <1000>;
++
++			thermal-sensors = <&ap_thermal 1>;
++
++			trips {
++				cpu0_hot: cpu0-hot {
++					temperature = <85000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++				cpu0_emerg: cpu0-emerg {
++					temperature = <95000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++			};
++
++			cooling-maps {
++				map0_hot: map0-hot {
++					trip = <&cpu0_hot>;
++					cooling-device = <&cpu0 1 2>,
++						<&cpu1 1 2>;
++				};
++				map0_emerg: map0-ermerg {
++					trip = <&cpu0_emerg>;
++					cooling-device = <&cpu0 3 3>,
++						<&cpu1 3 3>;
++				};
++			};
++		};
++
++		ap_thermal_cpu1: ap-thermal-cpu1 {
++			polling-delay-passive = <1000>;
++			polling-delay = <1000>;
++
++			thermal-sensors = <&ap_thermal 2>;
++
++			trips {
++				cpu1_hot: cpu1-hot {
++					temperature = <85000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++				cpu1_emerg: cpu1-emerg {
++					temperature = <95000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++			};
++
++			cooling-maps {
++				map1_hot: map1-hot {
++					trip = <&cpu1_hot>;
++					cooling-device = <&cpu0 1 2>,
++						<&cpu1 1 2>;
++				};
++				map1_emerg: map1-emerg {
++					trip = <&cpu1_emerg>;
++					cooling-device = <&cpu0 3 3>,
++						<&cpu1 3 3>;
++				};
++			};
++		};
++
++		ap_thermal_cpu2: ap-thermal-cpu2 {
++			polling-delay-passive = <1000>;
++			polling-delay = <1000>;
++
++			thermal-sensors = <&ap_thermal 3>;
++
++			trips {
++				cpu2_hot: cpu2-hot {
++					temperature = <85000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++				cpu2_emerg: cpu2-emerg {
++					temperature = <95000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++			};
++
++			cooling-maps {
++				map2_hot: map2-hot {
++					trip = <&cpu2_hot>;
++					cooling-device = <&cpu2 1 2>,
++						<&cpu3 1 2>;
++				};
++				map2_emerg: map2-emerg {
++					trip = <&cpu2_emerg>;
++					cooling-device = <&cpu2 3 3>,
++						<&cpu3 3 3>;
++				};
++			};
++		};
++
++		ap_thermal_cpu3: ap-thermal-cpu3 {
++			polling-delay-passive = <1000>;
++			polling-delay = <1000>;
++
++			thermal-sensors = <&ap_thermal 4>;
++
++			trips {
++				cpu3_hot: cpu3-hot {
++					temperature = <85000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++				cpu3_emerg: cpu3-emerg {
++					temperature = <95000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++			};
++
++			cooling-maps {
++				map3_hot: map3-bhot {
++					trip = <&cpu3_hot>;
++					cooling-device = <&cpu2 1 2>,
++						<&cpu3 1 2>;
++				};
++				map3_emerg: map3-emerg {
++					trip = <&cpu3_emerg>;
++					cooling-device = <&cpu2 3 3>,
++						<&cpu3 3 3>;
++				};
++			};
++		};
++	};
++};
 -- 
 2.20.1
 
