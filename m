@@ -2,86 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5538782F24
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 11:58:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D79682F43
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 12:01:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OMytlGoqWG1D2QEIq750qYyi7hyGEP7iKYCCnenNuVw=; b=apa9tvhtB91ZX98lShSMtkFfc
-	6ueqUYtnn+z4cjyQsGMA1NVfsZMP3prKPrlxO2J7pFDgCw2QfkIUiZCj9lD5k3rJ0EDAw4bLO1I2c
-	nBevb5ufRinr8Re68VZupNzzMA0ObEg9HQVIW4Vf3RUfzSR5DvW9aHGA/yNvTTSKTTlD4dYnMF826
-	no+a1PF7hA+8AH38wOFAXpJfovoKoxPVFaauMfLtSawYP0jEsd297yPKvHfTiG8rRn7omk11SYbU3
-	OgKXIoBmo1qsisCVMTP2DbRfjfwPmrWQWgh0HKUuxnv1naFJhavVD8eoOk7wc7glt/UbYtvroqP6u
-	N/ggBOvRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=2di4nUa/39TVBan7FhAqg9+Tolxq0kkm+VeOkkaZGPc=; b=UA3
+	v3/IebrMYVl+QkzxyXhTbMYbKLPrysr2Z+n5Bzu1teZZzm+OJtzz38U3ttHtZl6ea8DxvlwHWwBIq
+	EV9kPhRw4CunorQ/k5OBCaGn1eQklR/K2uGsHgoyglkduh2fU9uLVwlZdkJLywQmskHuVYRDG7oqA
+	0kO50EhhM/9yVW75Y6TX27g+J+lkZczpQMxQS1IRTT8okFOIy+/OvJCw2u+NoQu5StHehokwwRzpA
+	iqpGD02WEE2J5OyrR5Bmsv2f2b2k/8QAGqptFgJxXUW5zDhV7dQO9wTMkxIGGDgYC4RxfbbRINKVC
+	KEVny19nEdEa+Wj71CyNqu91JBfKrLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huwE7-0000qM-9M; Tue, 06 Aug 2019 09:57:55 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1huwHb-0002av-41; Tue, 06 Aug 2019 10:01:31 +0000
+Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huwDi-0000pL-4o
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 09:57:32 +0000
-Received: by mail-wm1-x344.google.com with SMTP id x15so77563799wmj.3
+ id 1huwH2-0002Uq-Qs
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 10:01:00 +0000
+Received: by mail-yb1-xb44.google.com with SMTP id x188so8261386yba.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 02:57:28 -0700 (PDT)
+ Tue, 06 Aug 2019 03:00:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=/Maji2RwwwtxnwYgjI3ukUF6tl3xJMB8QIi+/hRkUJQ=;
- b=dUYdusquMTgi5sgAluvwU2oAnGLw7yeqBk3Zk9kvngMNEoMzLJpIc68D8q1pnBYzQA
- 83bOfrGeXhqCp32Z9bFRfDjLqlutiKwYP26XXcol9haByP/hIpD7F7/tVenwSgvacIc1
- 7HHglIcSmnf6h3aiU2ROKUa5pRNzWVCREgVKwh1QVC6eKt1yE8ZdPagdrqez4WFva5ZE
- jK2wrNbgAZAkIQoVqlBqzNG4oUCrWJAnH2eYs6C9NzczpyPKMieySGg+QXA3PbAulN+v
- b9tRw+8Z4NTGdt/ZC70NTnxsFdB8qFFrfU1S7h1GBmkTCTd3aSTDSAYkFA/3jkOFgHAz
- W6Ew==
+ h=from:to:cc:subject:date:message-id;
+ bh=ss7tfuNN9gph1p4XOsDIlLKrMAe3sezcu2lcCyG5PrA=;
+ b=llzpCKvfTJg9zx4WGbK3W8ELlbZszVisTWmKs2WgL7/QVGUzVblcBslqpxo6sHvB/2
+ XTxuH6yt7Pqho2/Dk3XQRm5ssQG4b0J5+VL1WLv3DvEuC4iWmLQBmcnIeEYbnhvQAS3d
+ OaDIu3c8mjZ3MaC87uEx1ICI53UwFJn//mcEAXmhA1PI1HBLTuGVvr28BI74d7+vKFK8
+ g8I+2D4tta/rMVSZZQJJDzvZToRr0JlJ0xd4r32m0Z7Y3QGdloZvUkRz4PwUMa4SBbTJ
+ ReTDwAvbKrd4coRI8s0r8TqxVgUjPfsoTdlSM5oAL4w7ndmTwVVuizbrsn36eLs160LV
+ Gc3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=/Maji2RwwwtxnwYgjI3ukUF6tl3xJMB8QIi+/hRkUJQ=;
- b=ZxSuAs8IDuPAObUaIxA7ZXaMe02WRWepFuLrt932lTdchjcIBxqKANBdLmd6vzkR1e
- v+AJPOsJpDE5ro6xOyrLl6CrZJQ0+SouXItQEI2AF0uyNjm9a7Q71JMWsdivODNUVrMn
- 317jPbB+mfTgferY/P0GsHcOVGOlrqSo54WDH7z9tfOlVNx61myH3Nmy35u951lZ+wHj
- +QkF3OUImaiEULdeowRXbnBucaJ0NUPwP3aHffvSNhnM4/MKfemVhscD2t4m3mVz5ATB
- AMhPrILsN1XT1dL+bTVtKp2mEmMqDMpj6tW+7CE+vtg/f7nmDHIublE+V/kgdAEg42qh
- pt8A==
-X-Gm-Message-State: APjAAAXpdl7Mf0RyYR0q3x9z4elVZ7w11PqwlaeVN2XFkpkIPIiBK6bX
- DZZ9Et0i769zACspuzbH0dmiJImUD+s=
-X-Google-Smtp-Source: APXvYqybHKczGO4ZhHJ8e7xW0i7iRDztl518SonFt/A7ij3dDpkl+aNGTA0/Cpvgp1ssSTDtuzAJfA==
-X-Received: by 2002:a1c:a481:: with SMTP id n123mr3542235wme.123.1565085446511; 
- Tue, 06 Aug 2019 02:57:26 -0700 (PDT)
-Received: from [192.168.86.34]
- (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
- by smtp.googlemail.com with ESMTPSA id
- q18sm107898732wrw.36.2019.08.06.02.57.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 06 Aug 2019 02:57:25 -0700 (PDT)
-Subject: Re: [PATCH 2/2] nvmem: imx-ocotp: Support multiple word writes
-To: Trent Piepho <tpiepho@impinj.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-References: <20190709183016.4789-1-tpiepho@impinj.com>
- <20190709183016.4789-2-tpiepho@impinj.com>
-From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Message-ID: <c74bed07-9a67-8ff8-2a6d-0fe98f5a6193@linaro.org>
-Date: Tue, 6 Aug 2019 10:57:24 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20190709183016.4789-2-tpiepho@impinj.com>
-Content-Language: en-US
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=ss7tfuNN9gph1p4XOsDIlLKrMAe3sezcu2lcCyG5PrA=;
+ b=JmIRqTdZL+vYaVEI9OyroDOKrNh9Cw1jOchOvCJyIZzhZdlJVirsMGAwtJT1x8P0Wg
+ K5NoUL+y3GEP8XINV1nGpytEx6V6nA0FOMuvZWgBG/EtObQ00wREb89GQD6bEYqPqYuU
+ 9kjUxOu9mb/lqSe9RSjYgw5JT9yati+1Dov1cCS83LwBGXQ4Yo9eJYxl1IK6cBphpssb
+ JXbe0sseP1HwJIxKjveQw1m5mJ6tj4YbQt40x6bCjKwz7TY70kMl+WhoO1FF9Jj6yP58
+ Bz0DIhf850VPQX0qyVUF0poUe4pdlhXBCjBRvPRXfNG+ig1YkuT+vdVIrheRRSIZ1Dmj
+ oL5A==
+X-Gm-Message-State: APjAAAVAR+Nes9bmjxfPqR+r8KXEdT/u6vJWHW1uPJ+LtaHPKA/VU/t9
+ Wd1945gbfBAHrzt9Bvdeckdn/Q==
+X-Google-Smtp-Source: APXvYqzW3wsw6yhTMacboTuQrkHBN1nGm4i1ke3WRJqGdu22UVLlanKhTbvJJsUeyrKaTw/x/WIwAA==
+X-Received: by 2002:a25:2005:: with SMTP id g5mr1786698ybg.410.1565085653130; 
+ Tue, 06 Aug 2019 03:00:53 -0700 (PDT)
+Received: from localhost.localdomain (li1322-146.members.linode.com.
+ [45.79.223.146])
+ by smtp.gmail.com with ESMTPSA id h12sm18316685ywm.91.2019.08.06.03.00.42
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 06 Aug 2019 03:00:51 -0700 (PDT)
+From: Leo Yan <leo.yan@linaro.org>
+To: Russell King <linux@armlinux.org.uk>, Oleg Nesterov <oleg@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, "H. Peter Anvin" <hpa@zytor.com>,
+ x86@kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ Alexei Starovoitov <ast@kernel.org>,
+ Daniel Borkmann <daniel@iogearbox.net>, Martin KaFai Lau <kafai@fb.com>,
+ Song Liu <songliubraving@fb.com>, Yonghong Song <yhs@fb.com>,
+ "Naveen N. Rao" <naveen.n.rao@linux.vnet.ibm.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arch@vger.kernel.org,
+ netdev@vger.kernel.org, bpf@vger.kernel.org,
+ clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>
+Subject: [PATCH v2 0/3] arm/arm64: Add support for function error injection
+Date: Tue,  6 Aug 2019 18:00:12 +0800
+Message-Id: <20190806100015.11256-1-leo.yan@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_025730_441545_3B643471 
-X-CRM114-Status: GOOD (  16.26  )
+X-CRM114-CacheID: sfid-20190806_030057_302672_2E98C273 
+X-CRM114-Status: GOOD (  11.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,39 +106,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>
+Cc: Leo Yan <leo.yan@linaro.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This small patch set is to add support for function error injection;
+this can be used to eanble more advanced debugging feature, e.g.
+CONFIG_BPF_KPROBE_OVERRIDE.
+
+The patch 01/03 is to consolidate the function definition which can be
+suared cross architectures, patches 02,03/03 are used for enabling
+function error injection on arm64 and arm architecture respectively.
+
+I tested on arm64 platform Juno-r2 and one of my laptop with x86
+architecture with below steps; I don't test for Arm architecture so
+only pass compilation.
+
+- Enable kernel configuration:
+  CONFIG_BPF_KPROBE_OVERRIDE
+  CONFIG_BTRFS_FS
+  CONFIG_BPF_EVENTS=y
+  CONFIG_KPROBES=y
+  CONFIG_KPROBE_EVENTS=y
+  CONFIG_BPF_KPROBE_OVERRIDE=y
+
+- Build samples/bpf on with Debian rootFS:
+  # cd $kernel
+  # make headers_install
+  # make samples/bpf/ LLC=llc-7 CLANG=clang-7
+
+- Run the sample tracex7:
+  # dd if=/dev/zero of=testfile.img bs=1M seek=1000 count=1
+  # DEVICE=$(losetup --show -f testfile.img)
+  # mkfs.btrfs -f $DEVICE
+  # ./tracex7 testfile.img
+  [ 1975.211781] BTRFS error (device (efault)): open_ctree failed
+  mount: /mnt/linux-kernel/linux-cs-dev/samples/bpf/tmpmnt: mount(2) system call failed: Cannot allocate memory.
+
+Changes from v1:
+* Consolidated the function definition into asm-generic header (Will);
+* Used APIs to access pt_regs elements (Will);
+* Fixed typos in the comments (Will).
 
 
-On 09/07/2019 19:30, Trent Piepho wrote:
-> All the other nvmem drivers here support multiple words being read, and
-> for writable memory, written in one call.  This driver appears to be the
-> only one with a single word write restriction.  It makes the driver fail
-> with generic userspace nvmem tools.
-> 
-> It's easy to support multiple words to write so do that.
-> 
-> The nvmem core verifies the write length against the word size, so that
-> can be removed from the driver.  But offset still needs to be checked.
-> 
-> Also simplify the bank write code for imx7 to avoid a lot of
-> duplication.
-> 
-> Cc: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: Sascha Hauer <s.hauer@pengutronix.de>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Signed-off-by: Trent Piepho <tpiepho@impinj.com>
+Leo Yan (3):
+  error-injection: Consolidate override function definition
+  arm64: Add support for function error injection
+  arm: Add support for function error injection
 
+ arch/arm/Kconfig                           |  1 +
+ arch/arm/include/asm/ptrace.h              |  5 +++++
+ arch/arm/lib/Makefile                      |  2 ++
+ arch/arm/lib/error-inject.c                | 19 +++++++++++++++++++
+ arch/arm64/Kconfig                         |  1 +
+ arch/arm64/include/asm/ptrace.h            |  5 +++++
+ arch/arm64/lib/Makefile                    |  2 ++
+ arch/arm64/lib/error-inject.c              | 18 ++++++++++++++++++
+ arch/powerpc/include/asm/error-injection.h | 13 -------------
+ arch/x86/include/asm/error-injection.h     | 13 -------------
+ include/asm-generic/error-injection.h      |  6 ++++++
+ include/linux/error-injection.h            |  6 +++---
+ 12 files changed, 62 insertions(+), 29 deletions(-)
+ create mode 100644 arch/arm/lib/error-inject.c
+ create mode 100644 arch/arm64/lib/error-inject.c
+ delete mode 100644 arch/powerpc/include/asm/error-injection.h
+ delete mode 100644 arch/x86/include/asm/error-injection.h
 
-Any Acks or Tested-by before I can push this would be really appreciated.
-
---srini
+-- 
+2.17.1
 
 
 _______________________________________________
