@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0103982F51
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 12:02:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 602B182F54
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 12:02:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=JVjst6GB2UvKhX3tBxXvMclkiFRK3i0f8eCcj1taOro=; b=D31/it8n/7njezXKmlef6VNVJd
-	NtuTWGobimolAailWHryt3j3RX8RfboFaVCuXLiVBTfRxhIP8drlcKqlI7xbAMaJXuT1YaiMpessB
-	QYmafDCPZBmTgdlL5vxFfVq12XcJOA6fhcZu8ypmCCUt0TcXWfJOHSbK5hHvIbqCL1NjjqB9app9n
-	ewmvDTZBdsC7r2D9DDyq4AAnMWjgIaj6sIL+mX+NUGycOqEAsModwQhBXWyfAhuipIo19tIvZU7nA
-	MlJZa7CE5UWOZs1fniXPPimbU1wsaHPVTt5zT0xyFMyqqcSdWUhiS0fjRbUKR71eDY2GH4DAClSAi
-	HIuMCwMQ==;
+	bh=rS0IwQ4+OALEDu2iB2h7rN+rehfdd9Vk5EWYOTlwb4M=; b=l1c3JFGl+c/TWVo6WUG0WyrRk0
+	aBEQjfnM32IOaCNP2sVG5l8MRjKmroPwbby2KfS4tl+Kw13F39ljw9gBfRjhvkWPBrdlIMDcixYlQ
+	51OiU5D2ug0ZcXVkixntk3sQaUJCqZ3n7s7OBbX0JzL5WCfFLlPQQuEaajGMfUbrOiKJHdnSxF6pj
+	EXA5sb8eO91XLC7sejkVk2yJl1vPq8Fvi0s34zJlhbTtHh/puGFyMLyX00OTLH1UKsfcgUck4PB/9
+	9nnX8xz7ogIhzNWOZqwvFyQ226nGmqzQaE1zm7Y6QZ1iz68qVR90gWK8t9CW8Rpe0k/cLX/LcCs8O
+	6rtehd1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huwIQ-0003CP-GX; Tue, 06 Aug 2019 10:02:22 +0000
-Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
+	id 1huwIn-0003gJ-4i; Tue, 06 Aug 2019 10:02:45 +0000
+Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huwHK-0002fU-Vx
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 10:01:16 +0000
-Received: by mail-yw1-xc42.google.com with SMTP id u141so30625180ywe.4
+ id 1huwHT-0002jS-4s
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 10:01:24 +0000
+Received: by mail-yb1-xb42.google.com with SMTP id e11so4019106ybq.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 03:01:14 -0700 (PDT)
+ Tue, 06 Aug 2019 03:01:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=X1kq35amQF0eADWBqq2tRXGYPbvo4jnAQagrNi2mP5k=;
- b=ryN6Ug8NTpg6DdZSRbeCs9SgNy9VYtFjReXZvH386JZijbFKUzuZ1IjFN+pJi8xLPk
- LukM2OHMl1jpO+jAcXDzJzG1kaH2PnG+tcT5DoqbCGgCYAsjKehsHtqdpjk7TYaP+3CV
- HZ1GbOcghRxf92Hbf1SK5LK2/I8WDRR2FVLhSdgtj7ZW3y/uM0N3UDKoHjXcgpIcRbHD
- 1AYRQOWT3JC1YJ6kRjEADY9+WyGfW67uyh8F5pYDNBg65QJ+un2Ii1vzMKBODmSrobuN
- Vw2Yd3mHVNb3h8K0DrfYubyUTL2jde6CpXbbokcZVLtq5/WG2hhHq4YewOfhnaY442nK
- tnBg==
+ bh=SpJEkhv16jwVLO2sSfJ7SapVMbBMCm5PIZfy4pO40/c=;
+ b=NcmXSNcyQXDjk3UYlgYN76nvMxC7M92+xGOU6qJ+B27Ib4OnaFsQUE4R4i6AgQ5Z27
+ CrVPGUgZwTFsH/qOmNAZIQ9t8+tJQYLJRYwOgyGPNBTtVtV2+jhG318/V8R4JQ79LBji
+ IXJFOhESxve1HFswgRG5nTJ/blfxFcD16f8zz9LuhnDFQEGvMLmUBnqt1xPDTPxTR3F2
+ UHxlkCaew7fGYGA1NWH+bEsjzPS8fNmBKA8ge4sydhn43kds0Br7aJqOw8nsgys43bqq
+ +XxhHjPci5pdYEoWKUtlQUEsK7RtCbrhP00EmAXuXadm7JEFV+so2h2c2OMhdTF7sOr/
+ uDpQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=X1kq35amQF0eADWBqq2tRXGYPbvo4jnAQagrNi2mP5k=;
- b=b34RMLFRbNNCSX2h+LaSIxep9SJRtjbmopzSlQDezDf8qTEpv9YFi8skI0OrkdlJH6
- jIJwqs8pwiZtJmDwUd6+SmdVR7izDy5k+aE9Sf10eLzQxV8FppWYdcVGSk1HZNJmNemo
- K9FRItx7aW1nuda23bqEWaEtUEiNpi+igmRzUzoXjE6jSBYWu3eDWLGmbrVyzaL2x5mc
- 8Ir0hot48vLBHNZLatJ/Gu0p/WTxGrDzu858c++j6rMU8O3lCJzBr6WAeb+5nwvTcGUt
- 19xQ8gUIcIGkgzxyO/BMIPltKpC8xvjBJQIt6BYUmgHzcs1FEv44EM+3sUJRyoBAnHV6
- yb4w==
-X-Gm-Message-State: APjAAAUVaytIZUUEafsZtNtYYRmgsQgeAMjmf17plQd/7dGo28h36Rks
- kCC9vRGkBRAqwl05S6tA+WEE7w==
-X-Google-Smtp-Source: APXvYqwIma0HV1pnR7Z1+fYCWlNvk6seDzFUGYoiNt+a7UQALBxCkV/06ohxlMAH3c2ynUJgGkffCA==
-X-Received: by 2002:a81:2545:: with SMTP id l66mr1596296ywl.489.1565085671977; 
- Tue, 06 Aug 2019 03:01:11 -0700 (PDT)
+ bh=SpJEkhv16jwVLO2sSfJ7SapVMbBMCm5PIZfy4pO40/c=;
+ b=KIyf7TyhBwzKdy7rsszZ3JkYV71B1LFepJzMGsLScWGYNalqChMVj7DROfYu4qjhwf
+ 3w9uaqUS6JNmBDpYjKpUx/LCNEEAawwHdLr4dVw1x1A8r+aFoRFFQ5JIY8V/naWjCg5T
+ LqfCNOkCVOIxtUrZgVHixJzshKP3UxZLOhr9+3jn+6Wrrqga62MiBYUaA/ITQJoe9EP8
+ jXfdRLpVpshRexqGHIJ6ojLcAkShtsfJl5Wd+nCh29bhlk6m7xkfhMDbWJZ2wUmyphbm
+ XdoP4j6qjWf+4Fi7KX+tlPFLyOORhX8F2OiTQKRshCahtmpsXBrFpU7ve6N6XWjIHpvX
+ vsEw==
+X-Gm-Message-State: APjAAAWnHJlB5O324fEoRKdv4vHFGKJgJlrdXl4E2NN30zWGXqUng+5P
+ pluO8v0k+PQvQsMwLxNITr9YGw==
+X-Google-Smtp-Source: APXvYqwTAorLnL1JJGzrv713O0sksEZzjbqxPPlxmNn5n95Bw8aIX/crRrWGGgZ7Emh+mOBZG+hc4w==
+X-Received: by 2002:a25:1a82:: with SMTP id a124mr1799776yba.160.1565085681984; 
+ Tue, 06 Aug 2019 03:01:21 -0700 (PDT)
 Received: from localhost.localdomain (li1322-146.members.linode.com.
  [45.79.223.146])
- by smtp.gmail.com with ESMTPSA id h12sm18316685ywm.91.2019.08.06.03.01.02
+ by smtp.gmail.com with ESMTPSA id h12sm18316685ywm.91.2019.08.06.03.01.12
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 06 Aug 2019 03:01:11 -0700 (PDT)
+ Tue, 06 Aug 2019 03:01:21 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Russell King <linux@armlinux.org.uk>, Oleg Nesterov <oleg@redhat.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
@@ -73,22 +73,22 @@ To: Russell King <linux@armlinux.org.uk>, Oleg Nesterov <oleg@redhat.com>,
  linuxppc-dev@lists.ozlabs.org, linux-arch@vger.kernel.org,
  netdev@vger.kernel.org, bpf@vger.kernel.org,
  clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>
-Subject: [PATCH v2 2/3] arm64: Add support for function error injection
-Date: Tue,  6 Aug 2019 18:00:14 +0800
-Message-Id: <20190806100015.11256-3-leo.yan@linaro.org>
+Subject: [PATCH v2 3/3] arm: Add support for function error injection
+Date: Tue,  6 Aug 2019 18:00:15 +0800
+Message-Id: <20190806100015.11256-4-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190806100015.11256-1-leo.yan@linaro.org>
 References: <20190806100015.11256-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_030115_070742_670BF43B 
-X-CRM114-Status: GOOD (  17.14  )
+X-CRM114-CacheID: sfid-20190806_030123_376438_6D02D8B4 
+X-CRM114-Status: GOOD (  17.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -117,68 +117,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Inspired by the commit 7cd01b08d35f ("powerpc: Add support for function
-error injection"), this patch supports function error injection for
-Arm64.
+This patch implements arm specific functions regs_set_return_value() and
+override_function_with_return() to support function error injection.
 
-This patch mainly support two functions: one is regs_set_return_value()
-which is used to overwrite the return value; the another function is
-override_function_with_return() which is to override the probed
-function returning and jump to its caller.
+In the exception flow, it updates pt_regs::ARM_pc with pt_regs::ARM_lr
+so can override the probed function return.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- arch/arm64/Kconfig              |  1 +
- arch/arm64/include/asm/ptrace.h |  5 +++++
- arch/arm64/lib/Makefile         |  2 ++
- arch/arm64/lib/error-inject.c   | 18 ++++++++++++++++++
- 4 files changed, 26 insertions(+)
- create mode 100644 arch/arm64/lib/error-inject.c
+ arch/arm/Kconfig              |  1 +
+ arch/arm/include/asm/ptrace.h |  5 +++++
+ arch/arm/lib/Makefile         |  2 ++
+ arch/arm/lib/error-inject.c   | 19 +++++++++++++++++++
+ 4 files changed, 27 insertions(+)
+ create mode 100644 arch/arm/lib/error-inject.c
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 3adcec05b1f6..b15803afb2a0 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -148,6 +148,7 @@ config ARM64
- 	select HAVE_FAST_GUP
- 	select HAVE_FTRACE_MCOUNT_RECORD
- 	select HAVE_FUNCTION_TRACER
-+	select HAVE_FUNCTION_ERROR_INJECTION
- 	select HAVE_FUNCTION_GRAPH_TRACER
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 33b00579beff..2d3d44a037f6 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -77,6 +77,7 @@ config ARM
+ 	select HAVE_EXIT_THREAD
+ 	select HAVE_FAST_GUP if ARM_LPAE
+ 	select HAVE_FTRACE_MCOUNT_RECORD if !XIP_KERNEL
++	select HAVE_FUNCTION_ERROR_INJECTION if !THUMB2_KERNEL
+ 	select HAVE_FUNCTION_GRAPH_TRACER if !THUMB2_KERNEL && !CC_IS_CLANG
+ 	select HAVE_FUNCTION_TRACER if !XIP_KERNEL
  	select HAVE_GCC_PLUGINS
- 	select HAVE_HW_BREAKPOINT if PERF_EVENTS
-diff --git a/arch/arm64/include/asm/ptrace.h b/arch/arm64/include/asm/ptrace.h
-index b1dd039023ef..891b9995cb4b 100644
---- a/arch/arm64/include/asm/ptrace.h
-+++ b/arch/arm64/include/asm/ptrace.h
-@@ -301,6 +301,11 @@ static inline unsigned long regs_return_value(struct pt_regs *regs)
- 	return regs->regs[0];
+diff --git a/arch/arm/include/asm/ptrace.h b/arch/arm/include/asm/ptrace.h
+index 91d6b7856be4..3b41f37b361a 100644
+--- a/arch/arm/include/asm/ptrace.h
++++ b/arch/arm/include/asm/ptrace.h
+@@ -89,6 +89,11 @@ static inline long regs_return_value(struct pt_regs *regs)
+ 	return regs->ARM_r0;
  }
  
 +static inline void regs_set_return_value(struct pt_regs *regs, unsigned long rc)
 +{
-+	regs->regs[0] = rc;
++	regs->ARM_r0 = rc;
 +}
 +
- /**
-  * regs_get_kernel_argument() - get Nth function argument in kernel
-  * @regs:	pt_regs of that context
-diff --git a/arch/arm64/lib/Makefile b/arch/arm64/lib/Makefile
-index 33c2a4abda04..f182ccb0438e 100644
---- a/arch/arm64/lib/Makefile
-+++ b/arch/arm64/lib/Makefile
-@@ -33,3 +33,5 @@ UBSAN_SANITIZE_atomic_ll_sc.o	:= n
- lib-$(CONFIG_ARCH_HAS_UACCESS_FLUSHCACHE) += uaccess_flushcache.o
+ #define instruction_pointer(regs)	(regs)->ARM_pc
  
- obj-$(CONFIG_CRC32) += crc32.o
+ #ifdef CONFIG_THUMB2_KERNEL
+diff --git a/arch/arm/lib/Makefile b/arch/arm/lib/Makefile
+index b25c54585048..8f56484a7156 100644
+--- a/arch/arm/lib/Makefile
++++ b/arch/arm/lib/Makefile
+@@ -42,3 +42,5 @@ ifeq ($(CONFIG_KERNEL_MODE_NEON),y)
+   CFLAGS_xor-neon.o		+= $(NEON_FLAGS)
+   obj-$(CONFIG_XOR_BLOCKS)	+= xor-neon.o
+ endif
 +
 +obj-$(CONFIG_FUNCTION_ERROR_INJECTION) += error-inject.o
-diff --git a/arch/arm64/lib/error-inject.c b/arch/arm64/lib/error-inject.c
+diff --git a/arch/arm/lib/error-inject.c b/arch/arm/lib/error-inject.c
 new file mode 100644
-index 000000000000..ed15021da3ed
+index 000000000000..2d696dc94893
 --- /dev/null
-+++ b/arch/arm64/lib/error-inject.c
-@@ -0,0 +1,18 @@
++++ b/arch/arm/lib/error-inject.c
+@@ -0,0 +1,19 @@
 +// SPDX-License-Identifier: GPL-2.0
 +
 +#include <linux/error-injection.h>
@@ -190,11 +187,12 @@ index 000000000000..ed15021da3ed
 +	 * 'regs' represents the state on entry of a predefined function in
 +	 * the kernel/module and which is captured on a kprobe.
 +	 *
-+	 * When kprobe returns back from exception it will override the end
-+	 * of probed function and directly return to the predefined
++	 * 'regs->ARM_lr' contains the the link register for the probed
++	 * function, when kprobe returns back from exception it will override
++	 * the end of probed function and directly return to the predefined
 +	 * function's caller.
 +	 */
-+	instruction_pointer_set(regs, procedure_link_pointer(regs));
++	instruction_pointer_set(regs, regs->ARM_lr);
 +}
 +NOKPROBE_SYMBOL(override_function_with_return);
 -- 
