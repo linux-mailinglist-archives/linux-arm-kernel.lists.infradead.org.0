@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D45483489
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:58:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E61BA8348A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 16:58:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gq/MyN8zHT3oOjk3In5F9Pf+OQ5+vVZ89QOKEwGsCsI=; b=o30cL6uXSYAZWI
-	f1YIYzsY9V0RW4Umijtz78537Inf4Y3eo7C8AxFKQgX8VAS2yFU9RCsukKMVNEV2kycCEKN4miE9q
-	zq8VfaSeC2BjCcRVBYqYazFlcXli6XxMX6tE+14YmUowrMXAN3wkmoOBa2s+s03Y2Qw5+vERdBgBV
-	wqysIM1FRtnrCx3+uH3jORbir5KciXmtAB7AxvdOhtOev6VLO1ec9vqiRl9MUy6z4rFG8Hwapil6v
-	D9qUfZAZNCgti+VFQ0dAkf7lrcfL6QCVWRlPxxp9mIa7Kemw/prVGMKgNpQ0r/Mjwa7VQkqawUjIx
-	g7eCIpGnZW5u4KRK2oqQ==;
+	List-Owner; bh=p0DjCrWaNWbuWEnHbHbAoWBFN/ks5ReRW+dWjY34niE=; b=KGhv4lLf6RumIB
+	AV0qaxLAhqT8p6KlHUun1lF864n8s7hXfhPCVyJTV2iSFpXohnbqIIq5IIOWJ6B5gsDezdii0kOPC
+	XjGebcDSy6h2uAKVvfdbI7hMVOLyUTtGsEE1Gs/J1IqU9+bUwzEgAb2u0TZajNCl2TBWccguckPNU
+	kQxqJPfLGggIAZK/lohnW3BcHtZk+xoT5O8e6m3zXgKciAikXGCEnYI6qhOeHR5Bp7s04dpI7cJkg
+	XPM0WuUtkBXornFfJa9q3pteM4VEdj1SvGQkogBpXg1Xc+9aeCfxOQ0GiYw5MOPVZON0YPf94tkNk
+	aoB9MuRZLsutSFTYf0Eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv0ud-0002CR-G6; Tue, 06 Aug 2019 14:58:07 +0000
+	id 1hv0uq-0002Qo-6Q; Tue, 06 Aug 2019 14:58:20 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv0s6-0007tK-FD
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:55:31 +0000
+ id 1hv0s7-0007vL-VA
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 14:55:33 +0000
 X-Originating-IP: 86.250.200.211
 Received: from localhost.localdomain (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 683F0E0011;
- Tue,  6 Aug 2019 14:55:27 +0000 (UTC)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id E5BE1E000B;
+ Tue,  6 Aug 2019 14:55:28 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Rob Herring <robh+dt@kernel.org>,
 	Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 15/20] arm64: dts: marvell: Add support for CP115
-Date: Tue,  6 Aug 2019 16:54:55 +0200
-Message-Id: <20190806145500.24109-16-miquel.raynal@bootlin.com>
+Subject: [PATCH 16/20] dt-bindings: marvell: Declare the CN913x SoC compatibles
+Date: Tue,  6 Aug 2019 16:54:56 +0200
+Message-Id: <20190806145500.24109-17-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190806145500.24109-1-miquel.raynal@bootlin.com>
 References: <20190806145500.24109-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_075530_690078_8B91D31F 
-X-CRM114-Status: GOOD (  10.97  )
+X-CRM114-CacheID: sfid-20190806_075532_170598_40194C85 
+X-CRM114-Status: GOOD (  10.37  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -76,33 +76,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Create a DTSI file based on the CP11x one. Differences will be
-described in the near future.
+From: Grzegorz Jaszczyk <jaz@semihalf.com>
 
+Describe the compatible properties for the new Marvell SoCs:
+* CN9130: 1x AP807-quad + 1x CP115 (1x embedded)
+* CN9131: 1x AP807-quad + 2x CP115 (1x embedded + 1x modular)
+* CN9132: 1x AP807-quad + 3x CP115 (1x embedded + 2x modular)
+
+CP115 are similar to CP110 in terms of features.
+
+There are three development boards based on these SoCs:
+* CN9130-DB: comes as a single mother board (with the CP115 bundled)
+* CN9131-DB: same as CN9130-DB with one additional modular CP115
+* CN9132-DB: same as CN9130-DB with two additional modular CP115
+
+Signed-off-by: Grzegorz Jaszczyk <jaz@semihalf.com>
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- arch/arm64/boot/dts/marvell/armada-cp115.dtsi | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
- create mode 100644 arch/arm64/boot/dts/marvell/armada-cp115.dtsi
+ .../bindings/arm/marvell/armada-7k-8k.txt           | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-cp115.dtsi b/arch/arm64/boot/dts/marvell/armada-cp115.dtsi
-new file mode 100644
-index 000000000000..1d0a9653e681
---- /dev/null
-+++ b/arch/arm64/boot/dts/marvell/armada-cp115.dtsi
-@@ -0,0 +1,12 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (C) 2019 Marvell Technology Group Ltd.
-+ *
-+ * Device Tree file for Marvell Armada CP115.
-+ */
+diff --git a/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.txt b/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.txt
+index df98a9c82a8c..8eb34ca4c4f0 100644
+--- a/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.txt
++++ b/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.txt
+@@ -1,7 +1,7 @@
+ Marvell Armada 7K/8K Platforms Device Tree Bindings
+ ---------------------------------------------------
+ 
+-Boards using a SoC of the Marvell Armada 7K or 8K families must carry
++Boards using a SoC of the Marvell Armada 7K/8K or CN913x families must carry
+ the following root node property:
+ 
+  - compatible, with one of the following values:
+@@ -18,6 +18,17 @@ the following root node property:
+    - "marvell,armada8040", "marvell,armada-ap806-quad", "marvell,armada-ap806"
+       when the SoC being used is the Armada 8040
+ 
++   - "marvell,cn9130", "marvell,armada-ap807-quad", "marvell,armada-ap807"
++      when the SoC being used is the Armada CN9130 with no external CP.
 +
-+#define CP11X_TYPE cp115
++   - "marvell,cn9131", "marvell,cn9130",
++     "marvell,armada-ap807-quad", "marvell,armada-ap807"
++      when the SoC being used is the Armada CN9130 with one external CP.
 +
-+#include "armada-cp11x.dtsi"
++   - "marvell,cn9132", "marvell,cn9131", "marvell,cn9130",
++     "marvell,armada-ap807-quad", "marvell,armada-ap807"
++      when the SoC being used is the Armada CN9130 with two external CPs.
 +
-+#undef CP11X_TYPE
+ Example:
+ 
+ compatible = "marvell,armada7040-db", "marvell,armada7040",
 -- 
 2.20.1
 
