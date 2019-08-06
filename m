@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D79682F43
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 12:01:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D0B482F4B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 12:02:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=2di4nUa/39TVBan7FhAqg9+Tolxq0kkm+VeOkkaZGPc=; b=UA3
-	v3/IebrMYVl+QkzxyXhTbMYbKLPrysr2Z+n5Bzu1teZZzm+OJtzz38U3ttHtZl6ea8DxvlwHWwBIq
-	EV9kPhRw4CunorQ/k5OBCaGn1eQklR/K2uGsHgoyglkduh2fU9uLVwlZdkJLywQmskHuVYRDG7oqA
-	0kO50EhhM/9yVW75Y6TX27g+J+lkZczpQMxQS1IRTT8okFOIy+/OvJCw2u+NoQu5StHehokwwRzpA
-	iqpGD02WEE2J5OyrR5Bmsv2f2b2k/8QAGqptFgJxXUW5zDhV7dQO9wTMkxIGGDgYC4RxfbbRINKVC
-	KEVny19nEdEa+Wj71CyNqu91JBfKrLA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=889d2IAWTvBjuF6lFNvNruGPGSToRjWmV/gCBRH/qPk=; b=a6cDOogDLtUIrwCvnnbjvEjuV+
+	AstsBYFWvHZZ7ZlK+KiW5mlEDc7PA0kh7O/agtR3o947hY4I8PQ5sddTbxGl8lUkVcaa6lxKwjNLh
+	lOjUssJINBR/khMDn75pW2/QzIFDSENFpdbEoCBvovXCSKEaCpShQAP+OLjq/j5jRo6DbeEWk8Ltg
+	E/OPjwvxiAGjDb57l5yBJc9LkNthXmXFvWXK8vvdjK2KprSPniRdBLw4xEwXRz3GU/Zk8ac77E+Jc
+	ZCvEo/wmF2M5jmi1py5xc9mJ1Z18a7JM/8i65VlHucbE9TsaOrP4MTqzJFg8PYrcCj/m0EqBmug88
+	3xZaDavA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huwHb-0002av-41; Tue, 06 Aug 2019 10:01:31 +0000
+	id 1huwI4-0002rN-Km; Tue, 06 Aug 2019 10:02:00 +0000
 Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huwH2-0002Uq-Qs
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 10:01:00 +0000
-Received: by mail-yb1-xb44.google.com with SMTP id x188so8261386yba.8
+ id 1huwH8-0002ac-PM
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 10:01:04 +0000
+Received: by mail-yb1-xb44.google.com with SMTP id s41so8254911ybe.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 03:00:53 -0700 (PDT)
+ Tue, 06 Aug 2019 03:01:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=ss7tfuNN9gph1p4XOsDIlLKrMAe3sezcu2lcCyG5PrA=;
- b=llzpCKvfTJg9zx4WGbK3W8ELlbZszVisTWmKs2WgL7/QVGUzVblcBslqpxo6sHvB/2
- XTxuH6yt7Pqho2/Dk3XQRm5ssQG4b0J5+VL1WLv3DvEuC4iWmLQBmcnIeEYbnhvQAS3d
- OaDIu3c8mjZ3MaC87uEx1ICI53UwFJn//mcEAXmhA1PI1HBLTuGVvr28BI74d7+vKFK8
- g8I+2D4tta/rMVSZZQJJDzvZToRr0JlJ0xd4r32m0Z7Y3QGdloZvUkRz4PwUMa4SBbTJ
- ReTDwAvbKrd4coRI8s0r8TqxVgUjPfsoTdlSM5oAL4w7ndmTwVVuizbrsn36eLs160LV
- Gc3A==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=BrBBFjqsIPWSTPOwNEcUeajfoMogUhxNa7dexawAwRQ=;
+ b=Un6oFivG+UxJxUJOYr8+LA93ywEnvAQtUBkTGho7Ltp6aiGVqv555mAWbj39vVVe4T
+ tTAZGZRpv3XowvmjuMFxMrBReXJdTs8FxGKnoziDeXG0a4qL4zmORnd9YynujYMNhNfH
+ 4ecvqroC3gmCOKv5mJHmY4V38pqK6HNSb1geNVBH3Ivvtta3hsjCkmzLX9KUaWgVC6lX
+ kJB08KuTYFEWh/U6h9qYHQxR8vAbQxOtxHmBwM3NjyhcgI62tYhGmkw/q+wYGZwhLkHO
+ 4UzK1unsE6K15NH9p83nxGH/Qi30CQ2wvypdep65rye0RfNW5eLhw6/oUpCmj6Y9CEBx
+ AQ2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=ss7tfuNN9gph1p4XOsDIlLKrMAe3sezcu2lcCyG5PrA=;
- b=JmIRqTdZL+vYaVEI9OyroDOKrNh9Cw1jOchOvCJyIZzhZdlJVirsMGAwtJT1x8P0Wg
- K5NoUL+y3GEP8XINV1nGpytEx6V6nA0FOMuvZWgBG/EtObQ00wREb89GQD6bEYqPqYuU
- 9kjUxOu9mb/lqSe9RSjYgw5JT9yati+1Dov1cCS83LwBGXQ4Yo9eJYxl1IK6cBphpssb
- JXbe0sseP1HwJIxKjveQw1m5mJ6tj4YbQt40x6bCjKwz7TY70kMl+WhoO1FF9Jj6yP58
- Bz0DIhf850VPQX0qyVUF0poUe4pdlhXBCjBRvPRXfNG+ig1YkuT+vdVIrheRRSIZ1Dmj
- oL5A==
-X-Gm-Message-State: APjAAAVAR+Nes9bmjxfPqR+r8KXEdT/u6vJWHW1uPJ+LtaHPKA/VU/t9
- Wd1945gbfBAHrzt9Bvdeckdn/Q==
-X-Google-Smtp-Source: APXvYqzW3wsw6yhTMacboTuQrkHBN1nGm4i1ke3WRJqGdu22UVLlanKhTbvJJsUeyrKaTw/x/WIwAA==
-X-Received: by 2002:a25:2005:: with SMTP id g5mr1786698ybg.410.1565085653130; 
- Tue, 06 Aug 2019 03:00:53 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=BrBBFjqsIPWSTPOwNEcUeajfoMogUhxNa7dexawAwRQ=;
+ b=K8huInQRMgXZTwbzP772K3g5TVEXjJCfOGunTEFQBHTQoloGUjswuGUtWFx9QMff0U
+ FgnriMhlgKnXK7PnqSCbDm5j4B+9ZzQV7lsvNt/FC8x7qSFd2fSJVHk/CjT++LBUQJtx
+ GO7EysXQUgHtTZnCnNUM5IP/dLClck20X0L8Jy8+b05Rz1gnLuF5+GxK5u6DJppIv2fv
+ 8YeaVyy99SAP07OxDk/iIJjIqtrV3hNbeDMiUo/5dZN60f/lpRNYYY8VkM5ijdStc6NR
+ nTZxAORK8m0Xy6Gy06R0RziHK9McdXdxVTe+DfOQ3oGz4dNyfzOit7P2nQS2WdzqViuO
+ ux1w==
+X-Gm-Message-State: APjAAAXIvIHCaQX1+mVbxRfMjmRLF1OJLMrsLRqGcqQAtHWSCKgkpAbY
+ LxLlRt71Q8yEuQMiL03W1TMooQ==
+X-Google-Smtp-Source: APXvYqxlrdnW4SC05Llg8qrkK8vk5nJO9H/xk4mq0I/hM9oXEKg8zKXbxtiK57fOJLDWI4AfH7i6MA==
+X-Received: by 2002:a25:8410:: with SMTP id u16mr1788923ybk.466.1565085662057; 
+ Tue, 06 Aug 2019 03:01:02 -0700 (PDT)
 Received: from localhost.localdomain (li1322-146.members.linode.com.
  [45.79.223.146])
- by smtp.gmail.com with ESMTPSA id h12sm18316685ywm.91.2019.08.06.03.00.42
+ by smtp.gmail.com with ESMTPSA id h12sm18316685ywm.91.2019.08.06.03.00.53
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 06 Aug 2019 03:00:51 -0700 (PDT)
+ Tue, 06 Aug 2019 03:01:01 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Russell King <linux@armlinux.org.uk>, Oleg Nesterov <oleg@redhat.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
@@ -71,13 +73,16 @@ To: Russell King <linux@armlinux.org.uk>, Oleg Nesterov <oleg@redhat.com>,
  linuxppc-dev@lists.ozlabs.org, linux-arch@vger.kernel.org,
  netdev@vger.kernel.org, bpf@vger.kernel.org,
  clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>
-Subject: [PATCH v2 0/3] arm/arm64: Add support for function error injection
-Date: Tue,  6 Aug 2019 18:00:12 +0800
-Message-Id: <20190806100015.11256-1-leo.yan@linaro.org>
+Subject: [PATCH v2 1/3] error-injection: Consolidate override function
+ definition
+Date: Tue,  6 Aug 2019 18:00:13 +0800
+Message-Id: <20190806100015.11256-2-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190806100015.11256-1-leo.yan@linaro.org>
+References: <20190806100015.11256-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_030057_302672_2E98C273 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20190806_030102_822592_0BFB90B6 
+X-CRM114-Status: GOOD (  15.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -113,68 +118,121 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This small patch set is to add support for function error injection;
-this can be used to eanble more advanced debugging feature, e.g.
-CONFIG_BPF_KPROBE_OVERRIDE.
+The function override_function_with_return() is defined separately for
+each architecture and every architecture's definition is almost same
+with each other.  E.g. x86 and powerpc both define function in its own
+asm/error-injection.h header and override_function_with_return() has
+the same definition, the only difference is that x86 defines an extra
+function just_return_func() but it is specific for x86 and is only used
+by x86's override_function_with_return(), so don't need to export this
+function.
 
-The patch 01/03 is to consolidate the function definition which can be
-suared cross architectures, patches 02,03/03 are used for enabling
-function error injection on arm64 and arm architecture respectively.
+This patch consolidates override_function_with_return() definition into
+asm-generic/error-injection.h header, thus all architectures can use the
+common definition.  As result, the architecture specific headers are
+removed; the include/linux/error-injection.h header also changes to
+include asm-generic/error-injection.h header rather than architecture
+header, furthermore, it includes linux/compiler.h for successful
+compilation.
 
-I tested on arm64 platform Juno-r2 and one of my laptop with x86
-architecture with below steps; I don't test for Arm architecture so
-only pass compilation.
-
-- Enable kernel configuration:
-  CONFIG_BPF_KPROBE_OVERRIDE
-  CONFIG_BTRFS_FS
-  CONFIG_BPF_EVENTS=y
-  CONFIG_KPROBES=y
-  CONFIG_KPROBE_EVENTS=y
-  CONFIG_BPF_KPROBE_OVERRIDE=y
-
-- Build samples/bpf on with Debian rootFS:
-  # cd $kernel
-  # make headers_install
-  # make samples/bpf/ LLC=llc-7 CLANG=clang-7
-
-- Run the sample tracex7:
-  # dd if=/dev/zero of=testfile.img bs=1M seek=1000 count=1
-  # DEVICE=$(losetup --show -f testfile.img)
-  # mkfs.btrfs -f $DEVICE
-  # ./tracex7 testfile.img
-  [ 1975.211781] BTRFS error (device (efault)): open_ctree failed
-  mount: /mnt/linux-kernel/linux-cs-dev/samples/bpf/tmpmnt: mount(2) system call failed: Cannot allocate memory.
-
-Changes from v1:
-* Consolidated the function definition into asm-generic header (Will);
-* Used APIs to access pt_regs elements (Will);
-* Fixed typos in the comments (Will).
-
-
-Leo Yan (3):
-  error-injection: Consolidate override function definition
-  arm64: Add support for function error injection
-  arm: Add support for function error injection
-
- arch/arm/Kconfig                           |  1 +
- arch/arm/include/asm/ptrace.h              |  5 +++++
- arch/arm/lib/Makefile                      |  2 ++
- arch/arm/lib/error-inject.c                | 19 +++++++++++++++++++
- arch/arm64/Kconfig                         |  1 +
- arch/arm64/include/asm/ptrace.h            |  5 +++++
- arch/arm64/lib/Makefile                    |  2 ++
- arch/arm64/lib/error-inject.c              | 18 ++++++++++++++++++
+Signed-off-by: Leo Yan <leo.yan@linaro.org>
+---
  arch/powerpc/include/asm/error-injection.h | 13 -------------
  arch/x86/include/asm/error-injection.h     | 13 -------------
  include/asm-generic/error-injection.h      |  6 ++++++
  include/linux/error-injection.h            |  6 +++---
- 12 files changed, 62 insertions(+), 29 deletions(-)
- create mode 100644 arch/arm/lib/error-inject.c
- create mode 100644 arch/arm64/lib/error-inject.c
+ 4 files changed, 9 insertions(+), 29 deletions(-)
  delete mode 100644 arch/powerpc/include/asm/error-injection.h
  delete mode 100644 arch/x86/include/asm/error-injection.h
 
+diff --git a/arch/powerpc/include/asm/error-injection.h b/arch/powerpc/include/asm/error-injection.h
+deleted file mode 100644
+index 62fd24739852..000000000000
+--- a/arch/powerpc/include/asm/error-injection.h
++++ /dev/null
+@@ -1,13 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0+ */
+-
+-#ifndef _ASM_ERROR_INJECTION_H
+-#define _ASM_ERROR_INJECTION_H
+-
+-#include <linux/compiler.h>
+-#include <linux/linkage.h>
+-#include <asm/ptrace.h>
+-#include <asm-generic/error-injection.h>
+-
+-void override_function_with_return(struct pt_regs *regs);
+-
+-#endif /* _ASM_ERROR_INJECTION_H */
+diff --git a/arch/x86/include/asm/error-injection.h b/arch/x86/include/asm/error-injection.h
+deleted file mode 100644
+index 47b7a1296245..000000000000
+--- a/arch/x86/include/asm/error-injection.h
++++ /dev/null
+@@ -1,13 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-#ifndef _ASM_ERROR_INJECTION_H
+-#define _ASM_ERROR_INJECTION_H
+-
+-#include <linux/compiler.h>
+-#include <linux/linkage.h>
+-#include <asm/ptrace.h>
+-#include <asm-generic/error-injection.h>
+-
+-asmlinkage void just_return_func(void);
+-void override_function_with_return(struct pt_regs *regs);
+-
+-#endif /* _ASM_ERROR_INJECTION_H */
+diff --git a/include/asm-generic/error-injection.h b/include/asm-generic/error-injection.h
+index 95a159a4137f..80ca61058dd2 100644
+--- a/include/asm-generic/error-injection.h
++++ b/include/asm-generic/error-injection.h
+@@ -16,6 +16,8 @@ struct error_injection_entry {
+ 	int		etype;
+ };
+ 
++struct pt_regs;
++
+ #ifdef CONFIG_FUNCTION_ERROR_INJECTION
+ /*
+  * Whitelist ganerating macro. Specify functions which can be
+@@ -28,8 +30,12 @@ static struct error_injection_entry __used				\
+ 		.addr = (unsigned long)fname,				\
+ 		.etype = EI_ETYPE_##_etype,				\
+ 	};
++
++void override_function_with_return(struct pt_regs *regs);
+ #else
+ #define ALLOW_ERROR_INJECTION(fname, _etype)
++
++static inline void override_function_with_return(struct pt_regs *regs) { }
+ #endif
+ #endif
+ 
+diff --git a/include/linux/error-injection.h b/include/linux/error-injection.h
+index 280c61ecbf20..635a95caf29f 100644
+--- a/include/linux/error-injection.h
++++ b/include/linux/error-injection.h
+@@ -2,16 +2,16 @@
+ #ifndef _LINUX_ERROR_INJECTION_H
+ #define _LINUX_ERROR_INJECTION_H
+ 
+-#ifdef CONFIG_FUNCTION_ERROR_INJECTION
++#include <linux/compiler.h>
++#include <asm-generic/error-injection.h>
+ 
+-#include <asm/error-injection.h>
++#ifdef CONFIG_FUNCTION_ERROR_INJECTION
+ 
+ extern bool within_error_injection_list(unsigned long addr);
+ extern int get_injectable_error_type(unsigned long addr);
+ 
+ #else /* !CONFIG_FUNCTION_ERROR_INJECTION */
+ 
+-#include <asm-generic/error-injection.h>
+ static inline bool within_error_injection_list(unsigned long addr)
+ {
+ 	return false;
 -- 
 2.17.1
 
