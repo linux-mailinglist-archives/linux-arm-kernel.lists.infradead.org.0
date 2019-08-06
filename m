@@ -2,84 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11F9583705
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 18:32:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A5EB8370F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 18:33:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VDXg1HJHPnCVdZ3Tcm0qE4uGNG69JpzOAJ2NiCf70QA=; b=Q1CIvI8qcYYjAB
-	eCB8dt9RlnfLtsPAxC1/CE4bAG7QtWuIFjHyzsBkQIXLHo7Tc2wroCr4EWjpWD5rCM8qlJBBNnVf6
-	qWwPc1JLE9TJ1/15JdATHSJdXktGAlYIEn10pZHxWquTkUvpTW4sZrIHknn8qVnK0BiCdceONQvYd
-	QWTnsUg4TXOoYK9rIChyHY+QzahNGoj+ZN5HDfYXGcXs85Lr9EpxrQ3kgPgcvVXSQmf/hxlQTkF1U
-	Q5rRbfjAejIE0PiugQtSIcaBUjM/grfis0h8KJcBw0SEDfDYZSqllFrYFV3OYWIxdeMHacqhxHaaQ
-	bFS7BWOPT1xUIb/Q7sRQ==;
+	List-Owner; bh=QVOvTRmgHyOoE3JUKSGDa7RA/cnpFtfRD7tRbFtjZPc=; b=uzJ/V06rG/lRuj
+	aLF2Dbj2sPjFFGImVCms+9FC1AxI+gt5cDB9C2dIEbjwzLKj+zVf2qFBcNF1oYDbPfA5tuJxnuWA2
+	N8b++S3kkJhTcnNrjn6Qp35zy0RuDBTP5b5/VjbV1nVkiu3EcX09Wslg1BZHWerVV9OdkQBLoCokn
+	wN33ct64ExthiNw1rtKH7eA9mwXi9Z4KfNVAGunLdGZfmCfcA+iEd+yD1Ts7NkBn15sQCIIbqXiWX
+	Cfcr1YUIuS46XRxDhM5kwuiCqlJlDzhWPOargziztog4wPVQMhUQN6CzZXfdKp+tHG2cy502GXKFK
+	pEYT79YuLBdjeIREtxDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv2Nj-00053U-Pk; Tue, 06 Aug 2019 16:32:15 +0000
-Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv2Nb-00052c-0V
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 16:32:08 +0000
-Received: by mail-ua1-x942.google.com with SMTP id v18so33884508uad.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 09:32:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qJV0VVyb7OBSwrj4NQkfWBYcw+e0SGu2TpYvncrxquQ=;
- b=PaNovIOOce5SiqO4ZfKl84Pa4yv0mSqVy5C30RPobTjNSM7clsyNQbQ/vhelfWggU9
- NgsFUrCfnnyuoAdH13iul7qyQW+rfYTpPfBbokbf4T3tjfWMbJTP7PDBLdM2atX1U17L
- kqJ0ZreL5023LO6c/T/0E/lD7i0AsyjbuCbI0=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qJV0VVyb7OBSwrj4NQkfWBYcw+e0SGu2TpYvncrxquQ=;
- b=cek6pFz9tcy+okN/IT2+wP8zP9Pm5tdmdwxxStFZIoY09Oe4EGB+/S6tZqS7Q0iFd1
- 3Nv0ZvB1+MtvPzyRV5VW8VqqmcSWkHKX8hjxRb2CrJYFxt0qYNj7ebpUA0HOtc4EGxjW
- K5lSWIDSr8HEd0PvZAJ7HjQzUpkqF8/7Q/ex5XT0SOhEQOEOdb6xmjqr6AGFwWvyxPII
- YTgnTHz4F7b1w/M1YFxlIFzoRAWmdD2jsAHkcwIrmpUK2maFBJKrnhyaKC05EDUmYUqS
- Ui7iDPJhOPl8bvfO7OWn1r+XDHrUHrj9EmVuY9v8HcHMqh+l2dvMG0tX7kj39yxmuLlF
- SFpw==
-X-Gm-Message-State: APjAAAWDf53FJow0xOWRJru4DCj3d6DBOL3CCfPv+EeVLwKt3dxtH9eZ
- qoUf+Z+6u7gv3aXcoASfJHDOuPnL7+ulroF3Z7Lqrw==
-X-Google-Smtp-Source: APXvYqxN7Za8djlBzCs0iQ70yJGGaDd0xjSmac554wXuA65p9UMe7pqTUjduNocumSHig7Qa6Mhlgd8Iif02bjhVezI=
-X-Received: by 2002:ab0:66d2:: with SMTP id d18mr1393892uaq.101.1565109125884; 
- Tue, 06 Aug 2019 09:32:05 -0700 (PDT)
+	id 1hv2PE-0005MG-Jn; Tue, 06 Aug 2019 16:33:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hv2P6-0005Ko-Tp; Tue, 06 Aug 2019 16:33:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 02A1E344;
+ Tue,  6 Aug 2019 09:33:35 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 71DA23F575;
+ Tue,  6 Aug 2019 09:33:34 -0700 (PDT)
+Date: Tue, 6 Aug 2019 17:33:32 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Jianjun Wang <jianjun.wang@mediatek.com>
+Subject: Re: [v2,2/2] PCI: mediatek: Add controller support for MT7629
+Message-ID: <20190806163332.GQ56241@e119886-lin.cambridge.arm.com>
+References: <20190628073425.25165-1-jianjun.wang@mediatek.com>
+ <20190628073425.25165-3-jianjun.wang@mediatek.com>
+ <1564385918.17211.6.camel@mhfsdcap03>
 MIME-Version: 1.0
-References: <20190805211451.20176-1-robdclark@gmail.com>
- <20190806084821.GA17129@lst.de>
- <CAJs_Fx6eh1w7c=crMoD5XyEOMzP6orLhqUewErE51cPGYmObBQ@mail.gmail.com>
- <20190806143457.GF475@lakrids.cambridge.arm.com>
-In-Reply-To: <20190806143457.GF475@lakrids.cambridge.arm.com>
-From: Rob Clark <robdclark@chromium.org>
-Date: Tue, 6 Aug 2019 09:31:55 -0700
-Message-ID: <CAJs_Fx4h6SWGmDTLBnV4nmWUFAs_Ge1inxd-dW9aDKgKqmc1eQ@mail.gmail.com>
-Subject: Re: [PATCH 1/2] drm: add cache support for arm64
-To: Mark Rutland <mark.rutland@arm.com>
+Content-Disposition: inline
+In-Reply-To: <1564385918.17211.6.camel@mhfsdcap03>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_093207_074229_9F141A5C 
-X-CRM114-Status: GOOD (  18.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190806_093341_050375_CDDDE12A 
+X-CRM114-Status: GOOD (  21.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,61 +61,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sean Paul <sean@poorly.run>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- LKML <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- Rob Clark <robdclark@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Christoph Hellwig <hch@lst.de>, Allison Randal <allison@lohutok.net>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ youlin.pei@mediatek.com, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Ryder Lee <ryder.lee@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 6, 2019 at 7:35 AM Mark Rutland <mark.rutland@arm.com> wrote:
->
-> On Tue, Aug 06, 2019 at 07:11:41AM -0700, Rob Clark wrote:
-> > On Tue, Aug 6, 2019 at 1:48 AM Christoph Hellwig <hch@lst.de> wrote:
-> > >
-> > > This goes in the wrong direction.  drm_cflush_* are a bad API we need to
-> > > get rid of, not add use of it.  The reason for that is two-fold:
-> > >
-> > >  a) it doesn't address how cache maintaince actually works in most
-> > >     platforms.  When talking about a cache we three fundamental operations:
-> > >
-> > >         1) write back - this writes the content of the cache back to the
-> > >            backing memory
-> > >         2) invalidate - this remove the content of the cache
-> > >         3) write back + invalidate - do both of the above
-> >
-> > Agreed that drm_cflush_* isn't a great API.  In this particular case
-> > (IIUC), I need wb+inv so that there aren't dirty cache lines that drop
-> > out to memory later, and so that I don't get a cache hit on
-> > uncached/wc mmap'ing.
->
-> Is there a cacheable alias lying around (e.g. the linear map), or are
-> these addresses only mapped uncached/wc?
->
-> If there's a cacheable alias, performing an invalidate isn't sufficient,
-> since a CPU can allocate a new (clean) entry at any point in time (e.g.
-> as a result of prefetching or arbitrary speculation).
+On Mon, Jul 29, 2019 at 03:38:38PM +0800, Jianjun Wang wrote:
+> On Fri, 2019-06-28 at 15:34 +0800, Jianjun Wang wrote:
+> > MT7629 is an ARM platform SoC which has the same PCIe IP with MT7622.
+> > 
+> > The HW default value of its Device ID is invalid, fix its Device ID to
+> > match the hardware implementation.
+> > 
+> > Acked-by: Ryder Lee <ryder.lee@mediatek.com>
+> > Signed-off-by: Jianjun Wang <jianjun.wang@mediatek.com>
+> > ---
+> >  drivers/pci/controller/pcie-mediatek.c | 18 ++++++++++++++++++
+> >  include/linux/pci_ids.h                |  1 +
+> >  2 files changed, 19 insertions(+)
+> > 
+> > diff --git a/drivers/pci/controller/pcie-mediatek.c b/drivers/pci/controller/pcie-mediatek.c
+> > index 80601e1b939e..e5e6740b635d 100644
+> > --- a/drivers/pci/controller/pcie-mediatek.c
+> > +++ b/drivers/pci/controller/pcie-mediatek.c
+> > @@ -73,6 +73,7 @@
+> >  #define PCIE_MSI_VECTOR		0x0c0
+> >  
+> >  #define PCIE_CONF_VEND_ID	0x100
+> > +#define PCIE_CONF_DEVICE_ID	0x102
+> >  #define PCIE_CONF_CLASS_ID	0x106
+> >  
+> >  #define PCIE_INT_MASK		0x420
+> > @@ -141,12 +142,16 @@ struct mtk_pcie_port;
+> >  /**
+> >   * struct mtk_pcie_soc - differentiate between host generations
+> >   * @need_fix_class_id: whether this host's class ID needed to be fixed or not
+> > + * @need_fix_device_id: whether this host's Device ID needed to be fixed or not
+> > + * @device_id: Device ID which this host need to be fixed
 
-I *believe* that there are not alias mappings (that I don't control
-myself) for pages coming from
-shmem_file_setup()/shmem_read_mapping_page()..  digging around at what
-dma_sync_sg_* does under the hood, it looks like it is just
-arch_sync_dma_for_cpu/device(), so I guess that should be sufficient
-for what I need.
+Really trivial nit: s/Device ID/device ID/ to be consistent with class ID above it.
 
-There are a few buffers that I vmap for use on kernel side, but like
-the userspace mmap's, the vmaps are also writecombine.
+Either way:
 
-BR,
--R
+Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+
+
+> >   * @ops: pointer to configuration access functions
+> >   * @startup: pointer to controller setting functions
+> >   * @setup_irq: pointer to initialize IRQ functions
+> >   */
+> >  struct mtk_pcie_soc {
+> >  	bool need_fix_class_id;
+> > +	bool need_fix_device_id;
+> > +	unsigned int device_id;
+> >  	struct pci_ops *ops;
+> >  	int (*startup)(struct mtk_pcie_port *port);
+> >  	int (*setup_irq)(struct mtk_pcie_port *port, struct device_node *node);
+> > @@ -696,6 +701,9 @@ static int mtk_pcie_startup_port_v2(struct mtk_pcie_port *port)
+> >  		writew(val, port->base + PCIE_CONF_CLASS_ID);
+> >  	}
+> >  
+> > +	if (soc->need_fix_device_id)
+> > +		writew(soc->device_id, port->base + PCIE_CONF_DEVICE_ID);
+> > +
+> >  	/* 100ms timeout value should be enough for Gen1/2 training */
+> >  	err = readl_poll_timeout(port->base + PCIE_LINK_STATUS_V2, val,
+> >  				 !!(val & PCIE_PORT_LINKUP_V2), 20,
+> > @@ -1216,11 +1224,21 @@ static const struct mtk_pcie_soc mtk_pcie_soc_mt7622 = {
+> >  	.setup_irq = mtk_pcie_setup_irq,
+> >  };
+> >  
+> > +static const struct mtk_pcie_soc mtk_pcie_soc_mt7629 = {
+> > +	.need_fix_class_id = true,
+> > +	.need_fix_device_id = true,
+> > +	.device_id = PCI_DEVICE_ID_MEDIATEK_7629,
+> > +	.ops = &mtk_pcie_ops_v2,
+> > +	.startup = mtk_pcie_startup_port_v2,
+> > +	.setup_irq = mtk_pcie_setup_irq,
+> > +};
+> > +
+> >  static const struct of_device_id mtk_pcie_ids[] = {
+> >  	{ .compatible = "mediatek,mt2701-pcie", .data = &mtk_pcie_soc_v1 },
+> >  	{ .compatible = "mediatek,mt7623-pcie", .data = &mtk_pcie_soc_v1 },
+> >  	{ .compatible = "mediatek,mt2712-pcie", .data = &mtk_pcie_soc_mt2712 },
+> >  	{ .compatible = "mediatek,mt7622-pcie", .data = &mtk_pcie_soc_mt7622 },
+> > +	{ .compatible = "mediatek,mt7629-pcie", .data = &mtk_pcie_soc_mt7629 },
+> >  	{},
+> >  };
+> >  
+> > diff --git a/include/linux/pci_ids.h b/include/linux/pci_ids.h
+> > index 70e86148cb1e..aa32962759b2 100644
+> > --- a/include/linux/pci_ids.h
+> > +++ b/include/linux/pci_ids.h
+> > @@ -2131,6 +2131,7 @@
+> >  #define PCI_VENDOR_ID_MYRICOM		0x14c1
+> >  
+> >  #define PCI_VENDOR_ID_MEDIATEK		0x14c3
+> > +#define PCI_DEVICE_ID_MEDIATEK_7629	0x7629
+> >  
+> >  #define PCI_VENDOR_ID_TITAN		0x14D2
+> >  #define PCI_DEVICE_ID_TITAN_010L	0x8001
+> 
+> Hi Bjorn & Lorenzo,
+> 
+> Is this patch ok or is there anything I need to fixed?
+> 
+> Thanks.
+> 
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
