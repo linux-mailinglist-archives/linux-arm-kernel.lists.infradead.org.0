@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D507383A1A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 22:13:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FB4783A22
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  6 Aug 2019 22:14:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UOBAfxHoXdYiDyUuBJNufa7f8TKo/9JQgKIz+T+2RUo=; b=H+YsMYcSWlBtlX
-	Njwz3tJVO8MkkC1eaQ+TFFsFbW1qmZSquTb5tfe7fIsUFvbUpR1FvAyvaD+UL6Wtd+SjsaXzearbs
-	oIodDlSL1rKdZW7Qw6HZ+TjRIopCMX98KL5T/pfrZ+EJQbBv1hw1Yk2UlnWcnYzIGaDKezbNTfm7B
-	Ewa7EiNOrrIiC+6viHL86z9FoAZB4KKpdnYMv6DGTwxHf1JJhR/bngES32m4OdLMt0wjeyBA9ojhC
-	SmlhTEAM64BU3uK3UhT7k/dUNoIfQTFVAYcJ4BkIEvrkpbrwLuyd4BLh9fAaUZwPUpwyacOI3jcOx
-	izY53YwS6dMZ+zZD55uA==;
+	List-Owner; bh=XF6gdqAJJJrICt9mRAksK0789CeVcco+igwYbNhzT5I=; b=FA8beWn/lUP/Iu
+	NBFXGDkq+JzbOC7qURaqQ1MZQoAjyLasRF04GFaAh1Cf4vEXSiF58oVgElM3aMC+HOY+tZIBd1PYV
+	Db6eox6FwLkol0nACBiCgyxSJGizkurWQA61ulUWfwgNUVmg9M7RAT9Br78Rqq8zXfqtnxUsJQkEr
+	uyreia6NZ+p2caBuV/6F1bmsqXCziI1LfCrdoMwtcD9kYcpF2MDukjAsFpcOW1YMmJiUyLA80S0+P
+	tDHcjzirEvfPQoZR6xPx+uH31+2u6g4SV60v0F2qcbGVErMUco4DZ0isGdVbFJfe1COSHX0Cry53b
+	IuSwQc2N79rl5GrzlC+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv5ph-0007hr-AK; Tue, 06 Aug 2019 20:13:21 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1hv5qi-0007yw-Ps; Tue, 06 Aug 2019 20:14:25 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv5pS-0007h3-Bl
- for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 20:13:07 +0000
-Received: by mail-ot1-x343.google.com with SMTP id r6so95697215oti.3
+ id 1hv5qU-0007yb-1f
+ for linux-arm-kernel@lists.infradead.org; Tue, 06 Aug 2019 20:14:11 +0000
+Received: by mail-oi1-x244.google.com with SMTP id w196so47160822oie.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 06 Aug 2019 13:13:06 -0700 (PDT)
+ Tue, 06 Aug 2019 13:14:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=lMxZ0x37GnyZR6snyKLwN4Z+9SDuCLa+7zGM3bgCPsE=;
- b=uNhHnqHWxcUMjj/DObO9qobJZuWy3455TBAFqXuRBPRMYC5UOcehqvZgzujVQQ4tO7
- iDYaYUxpX3n0Mk6A0VuEi2MFvBpyGPkiicuFcaiBnkyAPwdFiIPP6T38CwGYN0rNYukJ
- fBODZFn5Oz2nqDIu++qJzEiRM6bpn5EyKgEsSS5lD09B271GHk3KNUYGKOyjtqAOWD1E
- p5Z/YfvgTNzyKHA7stW8/f5WGpf4d8iMSt4BlUyR9C5ezdn55uVRgKPYsPQdPzFgM4VT
- cRlCvxxZWCluzM8Embbcxk15JKo7CMf3oSK45KhhnTFQqDEsfnNjRAwlkx136AVhMz2g
- oGvQ==
+ :cc; bh=DHPLsakTg1F9PtegMLuUGuWnfD3D92bcDfRxNDjqJI4=;
+ b=k8lxIrEwMdAN3Wz6Y91EdQtfNt6sY0pqfBSAdqSvEzioqIOdX2BHS9WAp37OFMe8VC
+ 3DDmsgXtIP2U5GVRbF6C0SwdLYAY7Q0PtWLJRi72ukPxIDwY93uptRkBPV+R+vw+SxCr
+ 3ZO6rdzbJbR3aNRIn9OkujG2f/Map30fxD0yQU/QUESsylr+TWLQNrivWc7mfV11RwQd
+ 62BcPfSxpEsd5Hm0yLW6XFPp4qzAIYQ6qc42vFvr3XINFlv/vvLwLreEcOYBkXEKT5Hz
+ A3pR5L0+wLEVOBQF444i1ErkjW/CROHv2Uj5nNJnm1xXPrXgkDpYZcJlzK+GT2CXp97p
+ ArdA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=lMxZ0x37GnyZR6snyKLwN4Z+9SDuCLa+7zGM3bgCPsE=;
- b=miCYWsZChdzfTmA39O0uwvxojk6z811bjqTML6frno/upNX0YqvvqoxSEPg5dhcDLI
- KcXMgSQ31fLdwa1FJBs/GowBah+WVQw1BfRp8Nufd4jhFxfQeCwhdQyd69XK3BHRmqIY
- RmRzVgVRQcOTK58ceCKP9RWjmqoSGx+zZ5e4Ga3n8Yfsa5t3U297M+kh0hhl8muI/e5n
- oxmcRCApjvD7z+XqMSXz1cbKIxZEUTELDaIGkIMyYbC7hAagUvpnIX2m2nPFFbvoVvpG
- wkCGgX8MIzaPhLJ+9J27qtMn2pSW0K1OjtqbiiveKCx33qi2lZsy8JhpIWEUVoVV1lIh
- LuJQ==
-X-Gm-Message-State: APjAAAWiUv4zyr75VM7hvNeotcJreiBMHWbSoMPuJkM1bgiwGoXG2biL
- /rV38p2XhUCtVSF31pX1qBMUGfIueqpaLHiPIJU=
-X-Google-Smtp-Source: APXvYqxE7llsKhmMY5eBOo9Bp8SGwlO4IBzoSrd0PaMEtEgmygcJVEfPo61PKt0g7SmEEd0kK6W2y78Ewt3nTwN8ZyI=
-X-Received: by 2002:a05:6602:144:: with SMTP id
- v4mr5426163iot.202.1565122385732; 
- Tue, 06 Aug 2019 13:13:05 -0700 (PDT)
+ bh=DHPLsakTg1F9PtegMLuUGuWnfD3D92bcDfRxNDjqJI4=;
+ b=U8mlb41m+7foPM4qN09BI2UQg9sveccsRY2Idnrb+PYD3Q3CEWcGwF2xtZ94yJhXCM
+ LPhHOBgig7apD0fhUG2GKZcJKeOPZRtDTLBzi83RyhYgxpQiVQ65A07HKZEEwHOmpVxL
+ xxfPyB7JcUJ1LCTPknn4aEGeNTk/zGLsJPnXZneEXBwgbTdwspbXdHU6ATcvXE3D5zTS
+ Ke6v2vEbPk/J21W8ko9GSxcSqs2SLAAy5uCvRSYojo05u/CLMeYYRBqbdQU6GlWfUwhd
+ vdbCSUkbGdY21nMejbqVocIeTPF8j4SIeDMWzlplQwO6YATnFa0kSv4f2qvfL2/g9ApV
+ YYbA==
+X-Gm-Message-State: APjAAAUKNPs8+HkbI0UjTcQIYNl2XskgB2fBxq3tOivPZqPEyWRBkjl1
+ hAe8m87e6z6pTmwB8TsFPhQ85ydDiv/jU3o5M5o=
+X-Google-Smtp-Source: APXvYqzpsRU4U1y4gTKmBv9/Rt7TEBY/Ggbjy+Jkbq/7IroTE6LpnfiJJQOcHRvZJijSwJPaBPod6NihIbdweNp8v7s=
+X-Received: by 2002:a02:ca19:: with SMTP id i25mr6227780jak.6.1565122449379;
+ Tue, 06 Aug 2019 13:14:09 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190731195713.3150463-1-arnd@arndb.de>
- <20190731195713.3150463-8-arnd@arndb.de>
-In-Reply-To: <20190731195713.3150463-8-arnd@arndb.de>
+ <20190731195713.3150463-9-arnd@arndb.de>
+In-Reply-To: <20190731195713.3150463-9-arnd@arndb.de>
 From: Sylvain Lemieux <slemieux.tyco@gmail.com>
-Date: Tue, 6 Aug 2019 16:12:54 -0400
-Message-ID: <CA+rxa6pZ7RLAOR1AQqdcNWxvk8dyoMR586n0d2e_b8SHU-jyWA@mail.gmail.com>
-Subject: Re: [PATCH 07/14] net: lpc-enet: move phy setup into platform code
+Date: Tue, 6 Aug 2019 16:13:58 -0400
+Message-ID: <CA+rxa6ovZ+ghiHyGQXepx0pEo465WHEP3TJq+dcnZyx2weE0uw@mail.gmail.com>
+Subject: Re: [PATCH 08/14] net: lpc-enet: allow compile testing
 To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_131306_400787_B1A224FA 
-X-CRM114-Status: GOOD (  18.05  )
+X-CRM114-CacheID: sfid-20190806_131410_084976_326CA910 
+X-CRM114-Status: GOOD (  14.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -117,101 +116,40 @@ Acked-by: Sylvain Lemieux <slemieux.tyco@gmail.com>
 
 On Wed, Jul 31, 2019 at 4:01 PM Arnd Bergmann <arnd@arndb.de> wrote:
 >
-> Setting the phy mode requires touching a platform specific
-> register, which prevents us from building the driver without
-> its header files.
->
-> Move it into a separate function in arch/arm/mach/lpc32xx
-> to hide the core registers from the network driver.
+> The lpc-enet driver can now be built on all platforms, so
+> allow compile testing as well.
 >
 > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 > ---
->  arch/arm/mach-lpc32xx/common.c       | 12 ++++++++++++
->  drivers/net/ethernet/nxp/lpc_eth.c   | 12 +-----------
->  include/linux/soc/nxp/lpc32xx-misc.h |  5 +++++
->  3 files changed, 18 insertions(+), 11 deletions(-)
+>  drivers/net/ethernet/nxp/Kconfig   | 2 +-
+>  drivers/net/ethernet/nxp/lpc_eth.c | 1 +
+>  2 files changed, 2 insertions(+), 1 deletion(-)
 >
-> diff --git a/arch/arm/mach-lpc32xx/common.c b/arch/arm/mach-lpc32xx/common.c
-> index f648324d5fb4..a475339333c1 100644
-> --- a/arch/arm/mach-lpc32xx/common.c
-> +++ b/arch/arm/mach-lpc32xx/common.c
-> @@ -63,6 +63,18 @@ u32 lpc32xx_return_iram(void __iomem **mapbase, dma_addr_t *dmaaddr)
->  }
->  EXPORT_SYMBOL_GPL(lpc32xx_return_iram);
->
-> +void lpc32xx_set_phy_interface_mode(phy_interface_t mode)
-> +{
-> +       u32 tmp = __raw_readl(LPC32XX_CLKPWR_MACCLK_CTRL);
-> +       tmp &= ~LPC32XX_CLKPWR_MACCTRL_PINS_MSK;
-> +       if (mode == PHY_INTERFACE_MODE_MII)
-> +               tmp |= LPC32XX_CLKPWR_MACCTRL_USE_MII_PINS;
-> +       else
-> +               tmp |= LPC32XX_CLKPWR_MACCTRL_USE_RMII_PINS;
-> +       __raw_writel(tmp, LPC32XX_CLKPWR_MACCLK_CTRL);
-> +}
-> +EXPORT_SYMBOL_GPL(lpc32xx_set_phy_interface_mode);
-> +
->  static struct map_desc lpc32xx_io_desc[] __initdata = {
->         {
->                 .virtual        = (unsigned long)IO_ADDRESS(LPC32XX_AHB0_START),
+> diff --git a/drivers/net/ethernet/nxp/Kconfig b/drivers/net/ethernet/nxp/Kconfig
+> index 261f107e2be0..418afb84c84b 100644
+> --- a/drivers/net/ethernet/nxp/Kconfig
+> +++ b/drivers/net/ethernet/nxp/Kconfig
+> @@ -1,7 +1,7 @@
+>  # SPDX-License-Identifier: GPL-2.0-only
+>  config LPC_ENET
+>          tristate "NXP ethernet MAC on LPC devices"
+> -        depends on ARCH_LPC32XX
+> +        depends on ARCH_LPC32XX || COMPILE_TEST
+>          select PHYLIB
+>          help
+>           Say Y or M here if you want to use the NXP ethernet MAC included on
 > diff --git a/drivers/net/ethernet/nxp/lpc_eth.c b/drivers/net/ethernet/nxp/lpc_eth.c
-> index bcdd0adcfb0c..0893b77c385d 100644
+> index 0893b77c385d..34fdf2100772 100644
 > --- a/drivers/net/ethernet/nxp/lpc_eth.c
 > +++ b/drivers/net/ethernet/nxp/lpc_eth.c
-> @@ -20,9 +20,6 @@
->  #include <linux/spinlock.h>
->  #include <linux/soc/nxp/lpc32xx-misc.h>
->
-> -#include <mach/hardware.h>
-> -#include <mach/platform.h>
-> -
->  #define MODNAME "lpc-eth"
->  #define DRV_VERSION "1.00"
->
-> @@ -1237,16 +1234,9 @@ static int lpc_eth_drv_probe(struct platform_device *pdev)
->         dma_addr_t dma_handle;
->         struct resource *res;
->         int irq, ret;
-> -       u32 tmp;
->
->         /* Setup network interface for RMII or MII mode */
-> -       tmp = __raw_readl(LPC32XX_CLKPWR_MACCLK_CTRL);
-> -       tmp &= ~LPC32XX_CLKPWR_MACCTRL_PINS_MSK;
-> -       if (lpc_phy_interface_mode(dev) == PHY_INTERFACE_MODE_MII)
-> -               tmp |= LPC32XX_CLKPWR_MACCTRL_USE_MII_PINS;
-> -       else
-> -               tmp |= LPC32XX_CLKPWR_MACCTRL_USE_RMII_PINS;
-> -       __raw_writel(tmp, LPC32XX_CLKPWR_MACCLK_CTRL);
-> +       lpc32xx_set_phy_interface_mode(lpc_phy_interface_mode(dev));
->
->         /* Get platform resources */
->         res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> diff --git a/include/linux/soc/nxp/lpc32xx-misc.h b/include/linux/soc/nxp/lpc32xx-misc.h
-> index f232e1a1bcdc..af4f82f6cf3b 100644
-> --- a/include/linux/soc/nxp/lpc32xx-misc.h
-> +++ b/include/linux/soc/nxp/lpc32xx-misc.h
-> @@ -9,9 +9,11 @@
->  #define __SOC_LPC32XX_MISC_H
->
->  #include <linux/types.h>
-> +#include <linux/phy.h>
->
->  #ifdef CONFIG_ARCH_LPC32XX
->  extern u32 lpc32xx_return_iram(void __iomem **mapbase, dma_addr_t *dmaaddr);
-> +extern void lpc32xx_set_phy_interface_mode(phy_interface_t mode);
->  #else
->  static inline u32 lpc32xx_return_iram(void __iomem **mapbase, dma_addr_t *dmaaddr)
->  {
-> @@ -19,6 +21,9 @@ static inline u32 lpc32xx_return_iram(void __iomem **mapbase, dma_addr_t *dmaadd
->         *dmaaddr = 0;
->         return 0;
->  }
-> +static inline void lpc32xx_set_phy_interface_mode(phy_interface_t mode)
-> +{
-> +}
->  #endif
->
->  #endif  /* __SOC_LPC32XX_MISC_H */
+> @@ -14,6 +14,7 @@
+>  #include <linux/crc32.h>
+>  #include <linux/etherdevice.h>
+>  #include <linux/module.h>
+> +#include <linux/of.h>
+>  #include <linux/of_net.h>
+>  #include <linux/phy.h>
+>  #include <linux/platform_device.h>
 > --
 > 2.20.0
 >
