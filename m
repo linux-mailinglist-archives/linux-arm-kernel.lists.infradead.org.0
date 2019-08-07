@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54D49850D3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 18:16:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E257850E3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 18:18:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xs4HACbrfxegDH7sU0R1FChyILplYK/9wGeGqM3GjEg=; b=Vu1ZKy7UJSUYCM
-	rwxdV0Bk00NvOpPRg+AVrEmLNc0o0g9AHwUi84o7hgkBYDDQBRu36i5afWsvhuxP+vHs9R8LHnsKI
-	LU7PFeqSUuHYYWE9JI6gn8bLcFnmXrIRXSKMV1VfEG0RXrZhIKe3Wr0fV1x9O6eqfis2qMnSvuwkU
-	yT43SSNtiYNG6JT6fVMZYeeDWlbfWde9SG2J+3QrTyke8PwvTTi/O8aLZC0WdF//UbzZSo0C62KKr
-	gc/WGQ0ndBqUnZbWxOLRVrdoByHNXB7OIK+wtU8piVVy6x9wvUHqA79wZn1FdWcLffHD8sbu2lhYX
-	McANHBifGH2eYBwOMBnw==;
+	List-Owner; bh=oY+7tk8Q+m6qRNw9eohJpfpaBoMZZhTqKzBnDAvFIgo=; b=jDyIeBDPfWCURF
+	otiIsIO3kNzyMCJ6nPOkSpIeXS5zZdXpanXSkkA6+GfadrchFj1naJ20iapZ5bq3G+a4ZsS33rUqm
+	YrD6uA5GjD2ZJNGpgIqa5f1SPDG25C+ebM5/bvPpbuj5rj8OzYFkL6imuMb7pL4pastbXTRg0QZga
+	36HstWjOB2xeew7H9E6mQjjAZSAy83LYmYhwp2lqZ4eVixENECFvkUVvxTECIK0e6u3N9W+rDXmHY
+	v2rCGf9dzd/6sPpHu0xNY3AKn8TpcSdMlBETTTlWMFW0OUym/c8J/plvRI4X8k28K7GPzy30Uj/H/
+	X5frtlNhVF0XVHCV2ZaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvOcA-0002mj-CF; Wed, 07 Aug 2019 16:16:38 +0000
+	id 1hvOdr-000440-6e; Wed, 07 Aug 2019 16:18:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvObl-0002cz-Kq
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 16:16:14 +0000
+ id 1hvOdC-0003Xy-Mz
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 16:17:44 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 49470344;
- Wed,  7 Aug 2019 09:16:13 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4746B344;
+ Wed,  7 Aug 2019 09:17:42 -0700 (PDT)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 479843F694; Wed,  7 Aug 2019 09:16:12 -0700 (PDT)
-Date: Wed, 7 Aug 2019 17:16:10 +0100
+ 45D583F694; Wed,  7 Aug 2019 09:17:41 -0700 (PDT)
+Date: Wed, 7 Aug 2019 17:17:39 +0100
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Steve Capper <steve.capper@arm.com>
-Subject: Re: [PATCH V5 06/12] arm64: mm: Introduce vabits_actual
-Message-ID: <20190807161609.GD1766@arrakis.emea.arm.com>
+Subject: Re: [PATCH V5 11/12] arm64: mm: Remove vabits_user
+Message-ID: <20190807161738.GE1766@arrakis.emea.arm.com>
 References: <20190807155524.5112-1-steve.capper@arm.com>
- <20190807155524.5112-7-steve.capper@arm.com>
+ <20190807155524.5112-12-steve.capper@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190807155524.5112-7-steve.capper@arm.com>
+In-Reply-To: <20190807155524.5112-12-steve.capper@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_091613_807883_F65231D5 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20190807_091742_867726_00A5A489 
+X-CRM114-Status: UNSURE (   8.66  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,15 +69,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 04:55:18PM +0100, Steve Capper wrote:
-> In order to support 52-bit kernel addresses detectable at boot time, one
-> needs to know the actual VA_BITS detected. A new variable vabits_actual
-> is introduced in this commit and employed for the KVM hypervisor layout,
-> KASAN, fault handling and phys-to/from-virt translation where there
-> would normally be compile time constants.
+On Wed, Aug 07, 2019 at 04:55:23PM +0100, Steve Capper wrote:
+> Previous patches have enabled 52-bit kernel + user VAs and there is no
+> longer any scenario where user VA != kernel VA size.
 > 
-> In order to maintain performance in phys_to_virt, another variable
-> physvirt_offset is introduced.
+> This patch removes the, now redundant, vabits_user variable and replaces
+> usage with vabits_actual where appropriate.
 > 
 > Signed-off-by: Steve Capper <steve.capper@arm.com>
 
