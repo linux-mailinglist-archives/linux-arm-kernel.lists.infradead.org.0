@@ -2,82 +2,148 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 731218528E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 20:00:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60278852B6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 20:10:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wxojHsKE3GZjLtSO3w092LrfGINudFpPbkyT4kJO7rE=; b=qdRK0SvdCYdNVb
-	AD/k4ZsYWYLO78hd+RwZIOkWltb+ychTV4oTJerDnwmP6GdZdjOF3CtuiULt+cSJC6/uuQa69J9/7
-	7akND1I/FeB8Xm8aLCxHC54ooEF3PjfgKF8oHnBnpARsJzXcrW5rNQzraozMjLlD7iNZV3inD4PF4
-	twrlDX5W4/Lo7ZFL7ZQUw5XU4iOXdERO3dw92hb+7y7CrHAju1veI/woywERMOXhsHciGGJ5oYkNe
-	cndQy2B+xZlv8SZstnnHIPEKV01z453GshrKtobSKZNca9wo4oq3sU6vg4e54Xyz0BFFzZM52pDGu
-	72ueAGvHMbfE5T4PFIuA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8SSAJER8ua12A56XUZducaPKfg3i654HnCUsjVlkM9k=; b=PJzcs0vMY1Vnfr
+	X6s8FEW7WUwEGcDYXDZDSlZPHOUGznOIeIJlW/2IeeQwH/WCyu4RCAaNrgMUw12GXWsCmnYKrTp3E
+	ypG9A1P7a2X1NAcxxDwS4kSnDWdN4OEfMHS00qqiU6lbpnSP5gaRO5KlA1yB8fr+GBm9mJgyI9h4+
+	+GPZUhdC6d6rC+dhZB4sO/ru8HLIfhPi9hNFPXMEdLZLL3MeBLQcASakc3PrLLtet617+sVyKfqHV
+	pjDBdOfg0JBZeydo6gk8A7qZpG3jNaRz7GkQizFzLmlBC/XpYLx9eWd1bxwQXhqJR29mCNH+PD+sr
+	5ViT4hUr4QJXyDIMJpXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvQEs-0002wO-38; Wed, 07 Aug 2019 18:00:42 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hvQNq-0005Ed-Q6; Wed, 07 Aug 2019 18:09:58 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvQEg-0002vJ-Tt
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 18:00:33 +0000
-Received: by mail-wr1-x443.google.com with SMTP id x1so42366834wrr.9
+ id 1hvQNh-0005EA-5o
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 18:09:51 +0000
+Received: by mail-wm1-x343.google.com with SMTP id u25so940091wmc.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 07 Aug 2019 11:00:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pFr71ba4wTvnk5UDS39uecfIkQHbPN6xMB7Jqj/WRjI=;
- b=m9c1MHBuDCeo2Z88IwdSKM3amtE+vs5AoTgGWNdzmSKxistPEwZwFwKjKOLAiLTeV6
- piYs3QuMN0mGgOTedewVtsKw6qXYqOQJOQPsI5Rm8+ruxJDY7UzJ0azIgMMOGtyZK+lV
- V7In9wNR3+wK9STFB9PBqcyUKPMKk7zpVsyzghfv//fV2Ebtgud3fEvcjSc7HTvIofTb
- Qd+WAVy0hbQmfbe4a2WUuvfG8a6nAvDRMPFqtp0p13DTdg3Pj2Q+jxfAHLlIwmkCdvHs
- 1rlYxkg6QGFqJXU/uqlv42MHh0n48W1PN9Ac1hDIIwt118wPYPPSqTk0Y1U70qTPHe0L
- biLw==
+ Wed, 07 Aug 2019 11:09:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Z69czHNpMMZYmp5DiHWRPu9dV/HbYAv+Qy3R1jmhONs=;
+ b=CmSZUjrEKyoDC6JEZLKF3y8xaLm0Y05XM+NhORxJKY0TH25BPXoT7ysbrCvAG3H6O6
+ yfJEmGmUNI0KXVPhjKo9vrUMcdc9pfDkyZMOwhz21lSY4HazOUXczGBYoT2Yaq7Ihd3e
+ vjtwNWEvkD+Xfd86GL5owOtKyVZgZLvga7n3fNwfI0iRsCqxuBNnOmJBZXkOTdMwumhL
+ xTbahUIbM5Nbj6cJY98N4A1ywzrA0zQ3wpQT2ya1Vr75DMr893TUTOVv+a5eaakqKjcz
+ cOS5TsDUxti1g3rN7zaBUbyZjzpkVPvdSsIgzVu3P6szrOiPsE2coBQ3/ZKo1vUbV8HZ
+ O0Ig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pFr71ba4wTvnk5UDS39uecfIkQHbPN6xMB7Jqj/WRjI=;
- b=lZjpNX5l1WjeM4kJ63P0753/+5fDcPQqDUt1xnKZuaEQDEGu1K6LPIr/CYNaVXodZP
- E0ssGcAe+oiPgenuK4lrz5FpU5BNIJjfEQMvts1blg+ne3/x2EIuoxKeNRNznTD8t3xo
- CnecElpPNWnbmJjdz9aPj/mbQp13vjBQOOx4j4ano35Wi9+nHsr5+u90Qocm8Emx05y9
- 3ckjpvA8iDsjph1HnrEBdbdl9eccM7VhKlY/EO2MC50dpDXilHzav9N5KCOtGni5O8N/
- lIwqeWOfszlTq4VkPFajc5GcpBkxtVEOQKHTYFfyhLyZxNIk08PGiX0rDp6w9kNYmrxs
- hZUw==
-X-Gm-Message-State: APjAAAUlscp9UYDFYMDgb1ffLAu37KFFvJXp4mCK5kE00ahyuoeRoIRI
- vxnUU+mNY7xBxMNgMl6HQuald603OVO2oyh0FJgWjX1s
-X-Google-Smtp-Source: APXvYqxaCIZWdK+Tqrsn08yT+fqkM7ITkRh9oQN0LjCE02z/d6ocRZC1bG+I6yilPRfn2AKU8KzS1UbPFYRTzQWESuw=
-X-Received: by 2002:a5d:6ccd:: with SMTP id c13mr12673000wrc.4.1565200827673; 
- Wed, 07 Aug 2019 11:00:27 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=Z69czHNpMMZYmp5DiHWRPu9dV/HbYAv+Qy3R1jmhONs=;
+ b=gfHTJaymO+C6s5bRJWnbcblngHGttK5w0CGFa5Q/+C3XWg08DX+sY6RQYf0GZ4YVr5
+ 8pCcU15CkUJg7GQp0rhJ2NsFoTTD7h27LdBx5i4b76+MMoD4VZMsWKiYBGbSFYoySVFg
+ oGB91t2YaOwJVmQwtzhwd3gMl1fKDQtiudjwAgcmUBLXnBqKDi2FA0WXksmV8TtjEqRZ
+ NiM2mWOWyElVJVpTBYH11TwDZqFVzbVPw5LOZq/TkZQySZNAVVUAZXgZYEL7WbyI4Tco
+ kwt5XnEqgYHIYj6zOfSk+rKzG4d5LbvfAEg0kMkSMSE9NoufWdcpCWRxlBYMtynVyvnE
+ V/Bw==
+X-Gm-Message-State: APjAAAXj4B/biSjOuBZlOykq0nLD8OsTCSBTzgyjpYXGJZrsqX4jgIop
+ BRc8ZwhPUz7sdB0I/3dN9ea947S6rsM=
+X-Google-Smtp-Source: APXvYqxKnTBTEleaK1lDcO6OoiMCmnSnY3YDmdO0jQLS7Z34nzg/qXIPiVqvZmm5GUEkyPYYwhjdKw==
+X-Received: by 2002:a1c:a101:: with SMTP id k1mr1147504wme.98.1565201387298;
+ Wed, 07 Aug 2019 11:09:47 -0700 (PDT)
+Received: from ?IPv6:2a01:e34:ed2f:f020:90cb:64c9:c238:a704?
+ ([2a01:e34:ed2f:f020:90cb:64c9:c238:a704])
+ by smtp.googlemail.com with ESMTPSA id 66sm10519308wrc.83.2019.08.07.11.09.45
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 07 Aug 2019 11:09:46 -0700 (PDT)
+Subject: Re: [PATCH 6/6] PSCI: cpuidle: Refactor CPU suspend power_state
+ parameter handling
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pm@vger.kernel.org
+References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
+ <20190722153745.32446-7-lorenzo.pieralisi@arm.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Openpgp: preference=signencrypt
+Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
+ mQINBFv/yykBEADDdW8RZu7iZILSf3zxq5y8YdaeyZjI/MaqgnvG/c3WjFaunoTMspeusiFE
+ sXvtg3ehTOoyD0oFjKkHaia1Zpa1m/gnNdT/WvTveLfGA1gH+yGes2Sr53Ht8hWYZFYMZc8V
+ 2pbSKh8wepq4g8r5YI1XUy9YbcTdj5mVrTklyGWA49NOeJz2QbfytMT3DJmk40LqwK6CCSU0
+ 9Ed8n0a+vevmQoRZJEd3Y1qXn2XHys0F6OHCC+VLENqNNZXdZE9E+b3FFW0lk49oLTzLRNIq
+ 0wHeR1H54RffhLQAor2+4kSSu8mW5qB0n5Eb/zXJZZ/bRiXmT8kNg85UdYhvf03ZAsp3qxcr
+ xMfMsC7m3+ADOtW90rNNLZnRvjhsYNrGIKH8Ub0UKXFXibHbafSuq7RqyRQzt01Ud8CAtq+w
+ P9EftUysLtovGpLSpGDO5zQ++4ZGVygdYFr318aGDqCljKAKZ9hYgRimPBToDedho1S1uE6F
+ 6YiBFnI3ry9+/KUnEP6L8Sfezwy7fp2JUNkUr41QF76nz43tl7oersrLxHzj2dYfWUAZWXva
+ wW4IKF5sOPFMMgxoOJovSWqwh1b7hqI+nDlD3mmVMd20VyE9W7AgTIsvDxWUnMPvww5iExlY
+ eIC0Wj9K4UqSYBOHcUPrVOKTcsBVPQA6SAMJlt82/v5l4J0pSQARAQABtCpEYW5pZWwgTGV6
+ Y2FubyA8ZGFuaWVsLmxlemNhbm9AbGluYXJvLm9yZz6JAlcEEwEIAEECGwEFCwkIBwIGFQoJ
+ CAsCBBYCAwECHgECF4ACGQEWIQQk1ibyU76eh+bOW/SP9LjScWdVJwUCXAkeagUJDRnjhwAK
+ CRCP9LjScWdVJ+vYEACStDg7is2JdE7xz1PFu7jnrlOzoITfw05BurgJMqlvoiFYt9tEeUMl
+ zdU2+r0cevsmepqSUVuUvXztN8HA/Ep2vccmWnCXzlE56X1AK7PRRdaQd1SK/eVsJVaKbQTr
+ ii0wjbs6AU1uo0LdLINLjwwItnQ83/ttbf1LheyN8yknlch7jn6H6J2A/ORZECTfJbG4ecVr
+ 7AEm4A/G5nyPO4BG7dMKtjQ+crl/pSSuxV+JTDuoEWUO+YOClg6azjv8Onm0cQ46x9JRtahw
+ YmXdIXD6NsJHmMG9bKmVI0I7o5Q4XL52X6QxkeMi8+VhvqXXIkIZeizZe5XLTYUvFHLdexzX
+ Xze0LwLpmMObFLifjziJQsLP2lWwOfg6ZiH8z8eQJFB8bYTSMqmfTulB61YO0mhd676q17Y7
+ Z7u3md3CLH7rh61wU1g7FcLm9p5tXXWWaAud9Aa2kne2O3sirO0+JhsKbItz3d9yXuWgv6w3
+ heOIF0b91JyrY6tjz42hvyjxtHywRr4cdAEQa2S7HeQkw48BQOG6PqQ9d3FYU34pt3WFJ19V
+ A5qqAiEjqc4N0uPkC79W32yLGdyg0EEe8v0Uhs3CxM9euGg37kr5fujMm+akMtR1ENITo+UI
+ fgsxdwjBD5lNb/UGodU4QvPipB/xx4zz7pS5+2jGimfLeoe7mgGJxrkBDQRb/8z6AQgAvSkg
+ 5w7dVCSbpP6nXc+i8OBz59aq8kuL3YpxT9RXE/y45IFUVuSc2kuUj683rEEgyD7XCf4QKzOw
+ +XgnJcKFQiACpYAowhF/XNkMPQFspPNM1ChnIL5KWJdTp0DhW+WBeCnyCQ2pzeCzQlS/qfs3
+ dMLzzm9qCDrrDh/aEegMMZFO+reIgPZnInAcbHj3xUhz8p2dkExRMTnLry8XXkiMu9WpchHy
+ XXWYxXbMnHkSRuT00lUfZAkYpMP7La2UudC/Uw9WqGuAQzTqhvE1kSQe0e11Uc+PqceLRHA2
+ bq/wz0cGriUrcCrnkzRmzYLoGXQHqRuZazMZn2/pSIMZdDxLbwARAQABiQI2BBgBCAAgFiEE
+ JNYm8lO+nofmzlv0j/S40nFnVScFAlv/zPoCGwwACgkQj/S40nFnVSf4OhAAhWJPjgUu6VfS
+ mV53AUGIyqpOynPvSaMoGJzhNsDeNUDfV5dEZN8K4qjuz2CTNvGIyt4DE/IJbtasvi5dW4wW
+ Fl85bF6xeLM0qpCaZtXAsU5gzp3uT7ut++nTPYW+CpfYIlIpyOIzVAmw7rZbfgsId2Lj7g1w
+ QCjvGHw19mq85/wiEiZZNHeJQ3GuAr/uMoiaRBnf6wVcdpUTFMXlkE8/tYHPWbW0YKcKFwJ3
+ uIsNxZUe6coNzYnL0d9GK2fkDoqKfKbFjNhW9TygfeL2Qhk949jMGQudFS3zlwvN9wwVaC0i
+ KC/D303DiTnB0WFPT8CltMAZSbQ1WEWfwqxhY26di3k9pj+X3BfOmDL9GBlnRTSgwjqjqzpG
+ VZsWouuTfXd9ZPPzvYdUBrlTKgojk1C8v4fhSqb+ard+bZcwNp8Tzl/EI9ygw6lYEATGCUYI
+ Wco+fjehCgG1FWvWavMU+jLNs8/8uwj1u+BtRpWFj4ug/VaDDIuiApKPwl1Ge+zoC7TLMtyb
+ c00W5/8EckjmNgLDIINEsOsidMH61ZOlwDKCxo2lbV+Ij078KHBIY76zuHlwonEQaHLCAdqm
+ WiI95pYZNruAJEqZCpvXDdClmBVMZRDRePzSljCvoHxn7ArEt3F14mabn2RRq/hqB8IhC6ny
+ xAEPQIZaxxginIFYEziOjR65AQ0EW//NCAEIALcJqSmQdkt04vIBD12dryF6WcVWYvVwhspt
+ RlZbZ/NZ6nzarzEYPFcXaYOZCOCv+Xtm6hB8fh5XHd7Y8CWuZNDVp3ozuqwTkzQuux/aVdNb
+ Fe4VNeKGN2FK1aNlguAXJNCDNRCpWgRHuU3rWwGUMgentJogARvxfex2/RV/5mzYG/N1DJKt
+ F7g1zEcQD3JtK6WOwZXd+NDyke3tdG7vsNRFjMDkV4046bOOh1BKbWYu8nL3UtWBxhWKx3Pu
+ 1VOBUVwL2MJKW6umk+WqUNgYc2bjelgcTSdz4A6ZhJxstUO4IUfjvYRjoqle+dQcx1u+mmCn
+ 8EdKJlbAoR4NUFZy7WUAEQEAAYkDbAQYAQgAIBYhBCTWJvJTvp6H5s5b9I/0uNJxZ1UnBQJb
+ /80IAhsCAUAJEI/0uNJxZ1UnwHQgBBkBCAAdFiEEGn3N4YVz0WNVyHskqDIjiipP6E8FAlv/
+ zQgACgkQqDIjiipP6E+FuggAl6lkO7BhTkrRbFhrcjCm0bEoYWnCkQtX9YFvElQeA7MhxznO
+ BY/r1q2Uf6Ifr3YGEkLnME/tQQzUwznydM94CtRJ8KDSa1CxOseEsKq6B38xJtjgYSxNdgQb
+ EIfCzUHIGfk94AFKPdV6pqqSU5VpPUagF+JxiAkoEPOdFiQCULFNRLMsOtG7yp8uSyJRp6Tz
+ cQ+0+1QyX1krcHBUlNlvfdmL9DM+umPtbS9F6oRph15mvKVYiPObI1z8ymHoc68ReWjhUuHc
+ IDQs4w9rJVAyLypQ0p+ySDcTc+AmPP6PGUayIHYX63Q0KhJFgpr1wH0pHKpC78DPtX1a7HGM
+ 7MqzQ4NbD/4oLKKwByrIp12wLpSe3gDQPxLpfGgsJs6BBuAGVdkrdfIx2e6ENnwDoF0Veeji
+ BGrVmjVgLUWV9nUP92zpyByzd8HkRSPNZNlisU4gnz1tKhQl+j6G/l2lDYsqKeRG55TXbu9M
+ LqJYccPJ85B0PXcy63fL9U5DTysmxKQ5RgaxcxIZCM528ULFQs3dfEx5euWTWnnh7pN30RLg
+ a+0AjSGd886Bh0kT1Dznrite0dzYlTHlacbITZG84yRk/gS7DkYQdjL8zgFr/pxH5CbYJDk0
+ tYUhisTESeesbvWSPO5uNqqy1dAFw+dqRcF5gXIh3NKX0gqiAA87NM7nL5ym/CNpJ7z7nRC8
+ qePOXubgouxumi5RQs1+crBmCDa/AyJHKdG2mqCt9fx5EPbDpw6Zzx7hgURh4ikHoS7/tLjK
+ iqWjuat8/HWc01yEd8rtkGuUcMqbCi1XhcAmkaOnX8FYscMRoyyMrWClRZEQRokqZIj79+PR
+ adkDXtr4MeL8BaB7Ij2oyRVjXUwhFQNKi5Z5Rve0a3zvGkkqw8Mz20BOksjSWjAF6g9byukl
+ CUVjC03PdMSufNLK06x5hPc/c4tFR4J9cLrV+XxdCX7r0zGos9SzTPGNuIk1LK++S3EJhLFj
+ 4eoWtNhMWc1uiTf9ENza0ntqH9XBWEQ6IA1gubCniGG+Xg==
+Message-ID: <cfa96819-dda8-e481-8421-250c7c4c7565@linaro.org>
+Date: Wed, 7 Aug 2019 20:09:45 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190807025640.682-1-tao.zhou1@amd.com>
- <20190807070834.GA24792@infradead.org>
- <daff9fc7-ead8-40e0-9a16-cb3b90b01722@amd.com>
- <20190807104104.GA18773@infradead.org>
- <18cd9fa5-2d87-2f41-b5fa-927b9790287d@amd.com>
- <20190807130043.GA6023@infradead.org>
- <c613ca25-4443-f275-ea8d-6d55af10ac77@amd.com>
-In-Reply-To: <c613ca25-4443-f275-ea8d-6d55af10ac77@amd.com>
-From: Alex Deucher <alexdeucher@gmail.com>
-Date: Wed, 7 Aug 2019 14:00:15 -0400
-Message-ID: <CADnq5_M8YvmsA1SDCNygQ2+tcxGjDCbz9ETQ1Fu22OUr03t29g@mail.gmail.com>
-Subject: Re: [PATCH] drm/amdgpu: replace readq/writeq with atomic64 operations
-To: "Koenig, Christian" <Christian.Koenig@amd.com>
+In-Reply-To: <20190722153745.32446-7-lorenzo.pieralisi@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_110031_784565_768BBD7A 
-X-CRM114-Status: GOOD (  20.65  )
+X-CRM114-CacheID: sfid-20190807_110949_622303_196B89CC 
+X-CRM114-Status: GOOD (  16.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (alexdeucher[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -98,69 +164,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kernel-build-reports@lists.linaro.org"
- <kernel-build-reports@lists.linaro.org>, "Zhou1, Tao" <Tao.Zhou1@amd.com>,
- "amd-gfx@lists.freedesktop.org" <amd-gfx@lists.freedesktop.org>, "Li,
- Dennis" <Dennis.Li@amd.com>, Christoph Hellwig <hch@infradead.org>,
- "broonie@kernel.org" <broonie@kernel.org>,
- "linux-next@vger.kernel.org" <linux-next@vger.kernel.org>, "Deucher,
- Alexander" <Alexander.Deucher@amd.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "Zhang, Hawking" <Hawking.Zhang@amd.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
+ LAKML <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 7, 2019 at 9:03 AM Koenig, Christian
-<Christian.Koenig@amd.com> wrote:
->
-> Am 07.08.19 um 15:00 schrieb Christoph Hellwig:
-> > On Wed, Aug 07, 2019 at 10:55:01AM +0000, Koenig, Christian wrote:
-> >>>> Essentially writeq/readq doesn't seems to be available on all
-> >>>> architectures either.
-> >>> writeq/readq are provided whenever the CPU actually supports 64-bit
-> >>> atomic loads and stores.
-> >> Is there a config option which we can make the driver depend on?
-> >>
-> >> I mean that ARM doesn't support 64bit atomic loads and stores on MMIO is
-> >> quite a boomer for us.
-> > The model is to cheack if readq/writeq are defined, and if not to
-> > include the one of io-64-nonatomic-hi-lo.h or io-64-nonatomic-lo-hi.h.
-> > The reason for that is that hardware is supposed to be able to deal with
-> > two 32-bit writes, but it depends on the hardware if the lower or upper
-> > half is what commits the write.
->
-> Read, but as I understood Tao change this is not the case here.
-> Otherwise we would just use our WREG32/RREG32 macros in the driver.
->
-> Tao, please explain why exactly we need the WREG64/RREG64 change which
-> caused this.
-
-We use this for doorbells as well which is also MMIO.  Basically we
-have the requirement to read or write the full 64 bits in one
-operation.  E.g., for 64-bit doorbells, the entire register is the
-trigger so if we do it as two writes, we'll miss half the update.  In
-the case of some error counter registers, reading the register will
-clear the value so we need to read out the full value or we lose the
-half the value.  This works properly on x86 and AMD64.
-
-Alex
-
->
-> Christian.
->
-> >
-> > The only 32-bit platform that claims support for readq/writeq is sh,
-> > and I have doubts if that actually works as expected.
->
-> _______________________________________________
-> amd-gfx mailing list
-> amd-gfx@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/amd-gfx
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjIvMDcvMjAxOSAxNzozNywgTG9yZW56byBQaWVyYWxpc2kgd3JvdGU6Cj4gQ3VycmVudCBQ
+U0NJIGNvZGUgaGFuZGxlcyBpZGxlIHN0YXRlIGVudHJ5IHRocm91Z2ggdGhlCj4gcHNjaV9jcHVf
+c3VzcGVuZF9lbnRlcigpIEFQSSwgdGhhdCB0YWtlcyBhbiBpZGxlIHN0YXRlIGluZGV4IGFzIGEK
+PiBwYXJhbWV0ZXIgYW5kIGNvbnZlcnQgdGhlIGluZGV4IGludG8gYSBwcmV2aW91c2x5IGluaXRp
+YWxpemVkCj4gcG93ZXJfc3RhdGUgcGFyYW1ldGVyIGJlZm9yZSBjYWxsaW5nIHRoZSBQU0NJLkNQ
+VV9TVVNQRU5EKCkgd2l0aCBpdC4KPiAKPiBUaGlzIGlzIHVud2llbGRseSwgc2luY2UgaXQgZm9y
+Y2VzIHRoZSBQU0NJIGZpcm13YXJlIGxheWVyIHRvIGtlZXAgdHJhY2sKPiBvZiBwb3dlcl9zdGF0
+ZSBwYXJhbWV0ZXIgZm9yIGV2ZXJ5IGlkbGUgc3RhdGUgc28gdGhhdCB0aGUKPiBpbmRleC0+cG93
+ZXJfc3RhdGUgY29udmVyc2lvbiBjYW4gYmUgbWFkZSBpbiB0aGUgUFNDSSBmaXJtd2FyZSBsYXll
+cgo+IGluc3RlYWQgb2YgdGhlIENQVWlkbGUgZHJpdmVyIGltcGxlbWVudGF0aW9ucy4KPiAKPiBN
+b3ZlIHRoZSBwb3dlcl9zdGF0ZSBoYW5kbGluZyBvdXQgb2YgZHJpdmVycy9maXJtd2FyZS9wc2Np
+Cj4gaW50byB0aGUgcmVzcGVjdGl2ZSBBQ1BJL0RUIFBTQ0kgQ1BVaWRsZSBiYWNrZW5kcyBhbmQg
+Y29udmVydAo+IHRoZSBwc2NpX2NwdV9zdXNwZW5kX2VudGVyKCkgQVBJIHRvIGdldCB0aGUgcG93
+ZXJfc3RhdGUKPiBwYXJhbWV0ZXIgYXMgaW5wdXQsIHdoaWNoIG1ha2VzIGl0IGNsb3NlciB0byBp
+dHMgZmlybXdhcmUKPiBpbnRlcmZhY2UgUFNDSS5DUFVfU1VTUEVORCgpIEFQSS4KPiAKPiBBIG5v
+dGFibGUgc2lkZSBlZmZlY3QgaXMgdGhhdCB0aGUgUFNDSSBBQ1BJL0RUIENQVWlkbGUgYmFja2Vu
+ZHMKPiBub3cgY2FuIGRpcmVjdGx5IGhhbmRsZSAoYW5kIGlmIG5lZWRlZCB1cGRhdGUpIHBvd2Vy
+X3N0YXRlCj4gcGFyYW1ldGVycyBiZWZvcmUgaGFuZGluZyB0aGVtIG92ZXIgdG8gdGhlIFBTQ0kg
+ZmlybXdhcmUKPiBpbnRlcmZhY2UgdG8gdHJpZ2dlciBQU0NJLkNQVV9TVVNQRU5EKCkgY2FsbHMu
+Cj4gCj4gU2lnbmVkLW9mZi1ieTogTG9yZW56byBQaWVyYWxpc2kgPGxvcmVuem8ucGllcmFsaXNp
+QGFybS5jb20+Cj4gQ2M6IFdpbGwgRGVhY29uIDx3aWxsQGtlcm5lbC5vcmc+Cj4gQ2M6IFVsZiBI
+YW5zc29uIDx1bGYuaGFuc3NvbkBsaW5hcm8ub3JnPgo+IENjOiBTdWRlZXAgSG9sbGEgPHN1ZGVl
+cC5ob2xsYUBhcm0uY29tPgo+IENjOiBEYW5pZWwgTGV6Y2FubyA8ZGFuaWVsLmxlemNhbm9AbGlu
+YXJvLm9yZz4KPiBDYzogQ2F0YWxpbiBNYXJpbmFzIDxjYXRhbGluLm1hcmluYXNAYXJtLmNvbT4K
+PiBDYzogTWFyayBSdXRsYW5kIDxtYXJrLnJ1dGxhbmRAYXJtLmNvbT4KPiBDYzogIlJhZmFlbCBK
+LiBXeXNvY2tpIiA8cmp3QHJqd3lzb2NraS5uZXQ+Cj4gLS0tCgpBRkFJQ1QsCgpBY2tlZC1ieTog
+RGFuaWVsIExlemNhbm8gPGRhbmllbC5sZXpjYW5vQGxpbmFyby5vcmc+CgoKCi0tIAogPGh0dHA6
+Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZv
+ciBBUk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRwOi8vd3d3LmZhY2Vib29rLmNvbS9wYWdl
+cy9MaW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0dGVyLmNvbS8jIS9saW5hcm9vcmc+IFR3
+aXR0ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1ibG9nLz4gQmxvZwoKCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
+ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
