@@ -2,53 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23DC084558
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 09:10:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 621358458D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 09:20:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vxvXPNypnrNd1qejhCCxRxIlLSeuLeEIbCdo4cNxltc=; b=k3fzNtWw+GCISCYh/yCi5tKIA
-	j1YArs8oWOYWZP6vfEsxkRTCPDgdIBz7fbogW8mSnw9Lmv2rRLcZfY/38lauvgL3vO/rb0pAnty0J
-	0yTEw5/plng3F4HR1sBNBxn1jWNGUme050b90fDJ/PxJkhWJ2C4Hc/J+0EcVPvxs9vYeKItaf1T0n
-	M3p8UvUS+5MeqfCLKm1osDqzFd6yH7NuAVwnCQOk1W86QZBz41x5d3SnoJ7FN/FMmRCkA+pJRM1mt
-	IrVN/XmZCEl0Lya6ywMVn1fteEh5vvs0mEe20nLYCLyb8qr3xeyOn/yNGlLjpX5lgU0PGYbfWhCX4
-	8RfsGDXwg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v6WIVinj3UNTyz493tdqplPn73rwgdjUU3CHwkkeOzY=; b=Bts1jiPyQQzhuG
+	EVmunzkngeu5xusdhk5YrQtSU0QJ6419awBnMrPLTEeDssoKyYNTEYI5uhUdfu351w2200kDExvoq
+	3JyNVa9Hb1cCEZUFffFmrrBUjo2OSro84QEZbVrCJRNvBCrz792jeohvOATc02j4Z4T/w0khsH7O1
+	hcxh11H8ap11AUILFmFXyhulRaXxR4zaU+IS5YDKu0bO5eAeG8oudIrVOp3CX/vluN/Tm6BUuwoIr
+	jX94uytSMQmLN7xnqr1il7tmSpo/hYu79y8cAudH8zgKvrw730SKwasDKToBv2F98U+FteucaxjxI
+	MpPIa0nsXtbqQE7iCZLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvG5J-0008EW-7S; Wed, 07 Aug 2019 07:10:09 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1hvGEp-00033p-1i; Wed, 07 Aug 2019 07:19:59 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvG4v-0008Dh-F9
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 07:09:47 +0000
-X-Originating-IP: 86.250.200.211
-Received: from aptenodytes (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id B5CEA1BF204;
- Wed,  7 Aug 2019 07:09:32 +0000 (UTC)
-Date: Wed, 7 Aug 2019 09:09:32 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org>
-Subject: Re: [PATCH] ARM: dts: add touchkey nodes for midas
-Message-ID: <20190807070932.GC7152@aptenodytes>
-References: <20190806165749.29468-1-GNUtoo@cyberdimension.org>
+ id 1hvGEZ-00033J-Vm; Wed, 07 Aug 2019 07:19:46 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 Aug 2019 00:19:42 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,356,1559545200"; d="scan'208";a="176880179"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by orsmga003.jf.intel.com with ESMTP; 07 Aug 2019 00:19:32 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id 9980B202CC; Wed,  7 Aug 2019 10:20:07 +0300 (EEST)
+Date: Wed, 7 Aug 2019 10:20:07 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: john.hubbard@gmail.com
+Subject: Re: [PATCH v3 11/41] media/v4l2-core/mm: convert put_page() to
+ put_user_page*()
+Message-ID: <20190807072007.GG21370@paasikivi.fi.intel.com>
+References: <20190807013340.9706-1-jhubbard@nvidia.com>
+ <20190807013340.9706-12-jhubbard@nvidia.com>
 MIME-Version: 1.0
-In-Reply-To: <20190806165749.29468-1-GNUtoo@cyberdimension.org>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+Content-Disposition: inline
+In-Reply-To: <20190807013340.9706-12-jhubbard@nvidia.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_000945_818827_6A43F1D5 
-X-CRM114-Status: GOOD (  17.92  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190807_001944_249254_27679A3F 
+X-CRM114-Status: GOOD (  10.90  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -61,186 +69,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Simon Shields <simon@lineageos.org>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Krzysztof Kozlowski <krzk@kernel.org>
-Content-Type: multipart/mixed; boundary="===============1840741190809231775=="
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
+ Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Hans Verkuil <hans.verkuil@cisco.com>,
+ xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
+ linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
+ linux-block@vger.kernel.org,
+ =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ Souptick Joarder <jrdr.linux@gmail.com>, linux-xfs@vger.kernel.org,
+ linux-crypto@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Aug 06, 2019 at 06:33:10PM -0700, john.hubbard@gmail.com wrote:
+> From: John Hubbard <jhubbard@nvidia.com>
+> 
+> For pages that were retained via get_user_pages*(), release those pages
+> via the new put_user_page*() routines, instead of via put_page() or
+> release_pages().
+> 
+> This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
+> ("mm: introduce put_user_page*(), placeholder versions").
+> 
+> Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
+> Cc: Kees Cook <keescook@chromium.org>
+> Cc: Hans Verkuil <hans.verkuil@cisco.com>
+> Cc: Sakari Ailus <sakari.ailus@linux.intel.com>
+> Cc: Jan Kara <jack@suse.cz>
+> Cc: Robin Murphy <robin.murphy@arm.com>
+> Cc: Souptick Joarder <jrdr.linux@gmail.com>
+> Cc: Dan Williams <dan.j.williams@intel.com>
+> Cc: linux-media@vger.kernel.org
+> Signed-off-by: John Hubbard <jhubbard@nvidia.com>
 
---===============1840741190809231775==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="t0UkRYy7tHLRMCai"
-Content-Disposition: inline
+Acked-by: Sakari Ailus <sakari.ailus@linux.intel.com>
 
-
---t0UkRYy7tHLRMCai
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Tue 06 Aug 19, 18:57, Denis 'GNUtoo' Carikli wrote:
-> From: Simon Shields <simon@lineageos.org>
->=20
-> this patch adds the fixed VTOUCH_3.3V regulator and configures
-> the touchkey node + i2c-gpio node.
-
-Thanks for the patch, see some comments below.
-
-> Signed-off-by: Simon Shields <simon@lineageos.org>
-> GNUtoo@cyberdimension.org: Fixed keycodes.
-> Signed-off-by: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org>
-> ---
->  arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi |  4 +++
->  arch/arm/boot/dts/exynos4412-midas.dtsi     | 29 +++++++++++++++++++++
->  arch/arm/boot/dts/exynos4412-n710x.dts      |  4 +++
->  3 files changed, 37 insertions(+)
->=20
-> diff --git a/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi b/arch/arm/boot/=
-dts/exynos4412-galaxy-s3.dtsi
-> index ce87d2ff27aa..e71f103ab940 100644
-> --- a/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi
-> +++ b/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi
-> @@ -166,5 +166,9 @@
->  &s5c73m3 {
->  	standby-gpios =3D <&gpm0 1 GPIO_ACTIVE_LOW>;   /* ISP_STANDBY */
->  	vdda-supply =3D <&ldo17_reg>;
-> +};
-> +
-> +&touchkey_reg {
-> +	gpio =3D <&gpm0 0 GPIO_ACTIVE_HIGH>;
->  	status =3D "okay";
-
-It looks like status =3D "okay" was initially found on the s5c73m3 node. Wi=
-th this
-change, it's no longer the case so the camera node will remain disabled.
-
-So you probably need to duplicate status =3D "okay", so that it's both on
-touchkey_reg and s5c73m3.
-
->  };
-> diff --git a/arch/arm/boot/dts/exynos4412-midas.dtsi b/arch/arm/boot/dts/=
-exynos4412-midas.dtsi
-> index 83be3a797411..797e8de40580 100644
-> --- a/arch/arm/boot/dts/exynos4412-midas.dtsi
-> +++ b/arch/arm/boot/dts/exynos4412-midas.dtsi
-> @@ -13,6 +13,7 @@
->  #include "exynos4412.dtsi"
->  #include "exynos4412-ppmu-common.dtsi"
->  #include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/input/input.h>
->  #include <dt-bindings/interrupt-controller/irq.h>
->  #include <dt-bindings/clock/maxim,max77686.h>
->  #include <dt-bindings/pinctrl/samsung.h>
-> @@ -92,6 +93,15 @@
->  		enable-active-high;
->  	};
-> =20
-> +	touchkey_reg: voltage-regulator-4 {
-> +		compatible =3D "regulator-fixed";
-> +		regulator-name =3D "VTOUCH_3.3V";
-> +		regulator-min-microvolt =3D <3300000>;
-> +		regulator-max-microvolt =3D <3300000>;
-> +		enable-active-high;
-> +		status =3D "disabled";
-> +	};
-> +
->  	gpio-keys {
->  		compatible =3D "gpio-keys";
->  		pinctrl-names =3D "default";
-> @@ -197,6 +207,25 @@
->  		};
->  	};
-> =20
-> +	i2c_touchkey: i2c-gpio-4 {
-
-Any reason why this node is not marked as disabled here although the regula=
-tor
-it depends on is?
-
-> +		compatible =3D "i2c-gpio";
-> +		sda-gpios =3D <&gpl0 2 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-> +		scl-gpios =3D <&gpl0 1 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-> +		i2c-gpio,delay-us =3D <2>;
-> +		#address-cells =3D <1>;
-> +		#size-cells =3D <0>;
-> +
-> +		touchkey@20 {
-> +			compatible =3D "cypress,midas-touchkey";
-> +			reg =3D <0x20>;
-> +			vdd-supply =3D <&touchkey_reg>;
-> +			vcc-supply =3D <&ldo5_reg>;
-> +			interrupt-parent =3D <&gpj0>;
-> +			interrupts =3D <3 IRQ_TYPE_EDGE_FALLING>;
-> +			linux,keycodes =3D <KEY_BACK KEY_MENU>;
-> +		};
-> +	};
-> +
->  	i2c-mhl {
->  		compatible =3D "i2c-gpio";
->  		gpios =3D <&gpf0 4 GPIO_ACTIVE_HIGH>, <&gpf0 6 GPIO_ACTIVE_HIGH>;
-> diff --git a/arch/arm/boot/dts/exynos4412-n710x.dts b/arch/arm/boot/dts/e=
-xynos4412-n710x.dts
-> index fe2bfd76cc4e..6acb19d2bae2 100644
-> --- a/arch/arm/boot/dts/exynos4412-n710x.dts
-> +++ b/arch/arm/boot/dts/exynos4412-n710x.dts
-> @@ -71,5 +71,9 @@
->  &s5c73m3 {
->  	standby-gpios =3D <&gpm0 6 GPIO_ACTIVE_LOW>;   /* ISP_STANDBY */
->  	vdda-supply =3D <&cam_vdda_reg>;
-> +};
-> +
-> +&touchkey_reg {
-> +	gpio =3D <&gpm0 5 GPIO_ACTIVE_HIGH>;
->  	status =3D "okay";
-
-And ditto about duplicating status.
-
-Cheers,
-
-Paul
-
->  };
-> --=20
-> 2.22.0
->=20
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---t0UkRYy7tHLRMCai
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl1KeSwACgkQ3cLmz3+f
-v9EIGggAiIX6+1tZJUS7FyqFFeHTWWGuR5DVwcqikzX+dAFJH/gMFWhc0UQWPfA0
-qcBs/2r6K2AzKfVlf0AcnBuAqZSD5GOhLJo0TzHG7MtWa067bHvn6D+AVbHA6JKW
-ZlDOfGUe7iMFjtS6Cxe/Ul0lZTMnQbxwemWwsnNwYJD9tfvMsJX0xTBIJf+9J43F
-+Ge2lk1BTEKNK7V9zkSUi3V03C4yD1Vi+UKx06BCumAQgQI0RmfHdHEWRSbu1XgI
-N9v9ydgDXt4Zo81YpHyvNVna3vw1+N259kIr31V0rp4J+thakDxr8zNmZHf1csj3
-UqUDMn60YNORCMMpil0UEb/sXq1Ccg==
-=mwV3
------END PGP SIGNATURE-----
-
---t0UkRYy7tHLRMCai--
-
-
---===============1840741190809231775==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Sakari Ailus
+sakari.ailus@linux.intel.com
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1840741190809231775==--
-
