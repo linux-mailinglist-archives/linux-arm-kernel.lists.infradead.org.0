@@ -2,85 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EB148481A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 10:49:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B99F8482E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 10:51:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0mNtkjt1taBxWXdVm8kxnDiL6gguuNx/YBWTwXm2Zw0=; b=fcrOlRQ2RaiycZ
-	CWAqdHkq27J7sUrb2k5tMAsNj4YPp8UdDP6nolSuE3PDTBP9kMGCIGr9vuX6S5xNQOe6R771U1LLc
-	xbBjsi8SGMjB9/dut9aM9kB1uz11zIo+KUnLcUCaidbYpeEGo7KbHwCEKAMMiyI54HpQFB/wnga9t
-	WTTovFyRC7S3xosWs+n0dBLEXSg6FDzAl7ENHbdJ1vpGCfWqKYsJPioTALE5xYtzCCCadHXFow5il
-	QX8r++097QHIRQ2s2v4MV+MIi9cGD7EJcS0qW1FVRP9AwO+3jeN2XHa6VRHawTSLSoMEnT5TTTOEp
-	Ioc+7ZU6+wtIIAJnvsZQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zHLHCyB5TYh3TdfVbarZfMKs4lTGillpS5vInO4Bj7Q=; b=kg2QQnRBJOzuAA
+	ooocixVxhIjQzecX8aViT3Wb2qWft2EIXOVAycnA36iMY+s/t6mpUAX4/ZLsFjUyjY7uzJY3XAcDm
+	2ozPnyDrlNrGwXA+4K2wxlQStzCOXo/bmUi5/SF54bPeZN3GjPGBmVLD2PrKxHgwb8SQFaTAITtQX
+	qJNmJ8JMAUXjAq8mSQRGZSjSvnm3kEeXjCf2jMq3HyIXjc9MyQd4611TplDXVhmDpO/slDcY9RU7E
+	L01IUiyVXTf7hg2VkFcjkt9ESKGJNiZH30brignC686hG5Nh/rgCF2u0lFYWBuzzhLNC4dYbq+B+0
+	vG6itN3aXJCdfF5nLnzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvHdO-00089P-BS; Wed, 07 Aug 2019 08:49:26 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1hvHfZ-0001Px-5b; Wed, 07 Aug 2019 08:51:41 +0000
+Received: from lb2-smtp-cloud9.xs4all.net ([194.109.24.26])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvHd8-00088e-7f
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 08:49:11 +0000
-Received: by mail-ot1-x341.google.com with SMTP id d17so101357935oth.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 07 Aug 2019 01:49:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=T81jo3bu6m4G57eeMXxphqH+l+0vNlO7yTI3xodpqPI=;
- b=VzZ/k+WNyCuM2f1dJQ03+NI1UkAik3fFROb31bJVDnPPAZOSPcylhaCzalryzu9DPv
- YhKdlzglWiTsBwJ7cvfxH6+Mj/PGuIF+CuWeFKJxRfFHVq1h6EY5vqis+niVIuRIS5mk
- 190cRetnRdel+ZI8AXXYLVx8KIwjJUrhBPvUk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=T81jo3bu6m4G57eeMXxphqH+l+0vNlO7yTI3xodpqPI=;
- b=bZuZJdSBim0Lfs3B9ntOrQmKGwAKKrkTJt8/56kB8VCBRjRotAH2uKQVUfh5DgWROF
- X9LwKyNWRViBcAF+BZ1JqUxoidwzSsoX+Dnb2AmJ0McDfUfx57LqIhn7xf48KQbGMjkw
- H2ebBh/gczkzFlNZNWA3s/OLXwxy9humaTxFwnwQ2lHFSumidmTyhSPSd05Ik6Q/zNAB
- ICx7hsiX6dX1t0lmq8SdegkZ1OpD8xSDeAcRdz5tfQSG0cuWe+eKM9YgQV45eHnLufM9
- AT1WhnWYpIxVxqUxHTVJiq1NYOyf+M2urHA5VcXnKzpzuqIBR2WNONqaWfRp/5js5Fgb
- ztXw==
-X-Gm-Message-State: APjAAAWdZwodGHcloVcvF+9IgLAuZIOoVTQ/XXb9pB6vO7NncJrIj2qc
- Jw9fy0PddbFMFU9tqekSrTqy/rcJuQKgRYWqfZD/Qw==
-X-Google-Smtp-Source: APXvYqwVAPf2IGHO0oTry32QAj0SqfjmXrfGG+CXng41fJ63s62HG8IRd79JpZudl3h1OzpVmIpGS4CtyXSlXyxSzKs=
-X-Received: by 2002:aca:b104:: with SMTP id a4mr5382980oif.14.1565167748729;
- Wed, 07 Aug 2019 01:49:08 -0700 (PDT)
+ id 1hvHfI-0001OZ-97; Wed, 07 Aug 2019 08:51:26 +0000
+Received: from [IPv6:2001:983:e9a7:1:9c05:4bbc:890e:7747]
+ ([IPv6:2001:983:e9a7:1:9c05:4bbc:890e:7747])
+ by smtp-cloud9.xs4all.net with ESMTPA
+ id vHfBhjvBuAffAvHfDh7OBy; Wed, 07 Aug 2019 10:51:20 +0200
+Subject: Re: [PATCH v3 10/41] media/ivtv: convert put_page() to
+ put_user_page*()
+To: john.hubbard@gmail.com, Andrew Morton <akpm@linux-foundation.org>
+References: <20190807013340.9706-1-jhubbard@nvidia.com>
+ <20190807013340.9706-11-jhubbard@nvidia.com>
+From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Message-ID: <6fd38719-b5d3-f981-732f-da904e029546@xs4all.nl>
+Date: Wed, 7 Aug 2019 10:51:17 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190805211451.20176-1-robdclark@gmail.com>
- <20190806084821.GA17129@lst.de>
- <CAJs_Fx6eh1w7c=crMoD5XyEOMzP6orLhqUewErE51cPGYmObBQ@mail.gmail.com>
- <20190806155044.GC25050@lst.de>
- <CAJs_Fx6uztwDy2PqRy3Tc9p12k8r_ovS2tAcsMV6HqnAp=Ggug@mail.gmail.com>
- <20190807062545.GF6627@lst.de>
-In-Reply-To: <20190807062545.GF6627@lst.de>
-From: Daniel Vetter <daniel@ffwll.ch>
-Date: Wed, 7 Aug 2019 10:48:56 +0200
-Message-ID: <CAKMK7uH1O3q8VUftikipGH6ACPoT-8tbV1Zwo-8WL=wUHiqsoQ@mail.gmail.com>
-Subject: Re: [PATCH 1/2] drm: add cache support for arm64
-To: Christoph Hellwig <hch@lst.de>
+In-Reply-To: <20190807013340.9706-11-jhubbard@nvidia.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfMJxwy/aLQOuQbf06fYFW7+YfWl4BADGtFuQE6wXUrTjdGOxgky6uB//ESvSCh+yVYUjsu+P3ALVGvunyB2+4QNbiR9U1sMYhv33IEL6pdyKQiMVj8T1
+ W1Qkt4/A8zg1aaKiXQLOb9cAEBeGuXUGjP0ApW7QHZ9+dJcj1rZJOG9kuRWyqdkLdl0Xfd+YU4Sk6qze6hklKEmlvnGPBahaqqNlqtFrPY2VYZgE8xlevbPK
+ VYzwfyBnV0qB7sk2HJHbwtjw82ezllVmshbYtU2bjc7wM9hsKDG6EcPPmsd9lrPWAB9FBL1Y3g8hvBHaWnOx4q3kfDEr6Y3kC/4CbXRQ20FpJPAzV81+yAGi
+ +cKudbAsX3yt4NQHLMq6NA6K0kBILjc1co+39hFkrrZIcUvJwiKdy8NMve+H6E2GJnEUUv4nGFbjKuVZLLH5y+b+1vAe1RnVhiytR5yxpsF6hz0tRaR6dO/m
+ bKPKNqsFsYXDJ5W59C6b3zicjNWHQZiEn7R8u8OkVB9sGerU7xu4rh8uGzZcq6amwD2COMghZJgTrNiun/ifaDQhmzzN53FDOAKM+vszwSUJENplETndDo8y
+ lmjjtBHkM72XNJj8RdBdJI0SZn59/rf//zMIHHt6NgU9mNPP3mXofWS+FI78JEBQKLhYLHJa0ha02bP8S2wsCqhiBYGCYfLM5YjnglwHdz5MRKNNPyE0/oCr
+ dZ1pq2UTafijHXzLpcISRXLWw9AZnmu/wF9aLzcClow1YFgj8I4CVeEQWdBw+L0MQjl3rEanK6AEfKDCQJnJLHrgYCJZzK8lNhtogle+zBwwTVUbelovesg0
+ 2Z/LL+E2WfZzXhib9FscV/8Rh9ToBgNbNMhdUU+hlXoQnZWmFz4spOz6uc44jjnJMhTqUTTg5hrVWn9mTUsqOLeTtpY8kW/K2cuWdgF0wrxh68Tha0mbWKIT
+ h1eKpvM3yCzq6DBvt+4fyEiX9NjhFQCa7MNabjtWGhlXyk0ZjWF4ffIi9wV7oklEl1VYZUg79U6dELOAAE9vul6NRqDojlMJCqNaHjnuq3fjMxzEn5uV49mz
+ FPD7znLfhbE8FWiYTDTLLH+F8vVBTzJTBgpIxygp14Fz2rP8/IvLLQTaYZiAs1yls952pasjas0Q53pSxIQVarur6cT2MqxBbc5Dkh7+Kfq7Y91uNNAg04iu
+ d3+RJ+RCE2l1cbWqQWuXhu2j3C3rQr6dROpJhXRRXQP1J97AvtdCiS7dL9s6gULkooJ1lyTBk0aSFxIoqVYcIP0df/i5MmVLM4jFetRz5G+ThUJC0Gc1KTni
+ J8I2ou/BC1bOXOJ9lSOzAqFgDoYHvEZlRb2SvXzzXkDYqMgFYolGY5VKp9uCTVWd2PQmaBlbu1lHchM+NnqdfZ7YxkxIhSoqPdSqtG27MX0XBSfBp4v/ADsP
+ H7xofpTtcDVeVERyWqD+q5UMM2Wpkx8uIf59scuWLYExFj2E6FLh/6DxVIE2D4OhS9udVr+503DGAmvegA+vJlyXKbNabKFcW5bmXYY95PEPyy1wNsxvcmw6
+ BPLri27Pq99nmIRm69PM0/43YEDR6U4lfeDpNuOtu7XhL7tzHXBogR/ytIhLuavtudk3kQ1Nk50AAQdwvvIdGe/4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_014910_311280_46D70199 
-X-CRM114-Status: GOOD (  33.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190807_015124_479280_3F607999 
+X-CRM114-Status: GOOD (  18.43  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.26 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,127 +76,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Clark <robdclark@chromium.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Catalin Marinas <catalin.marinas@arm.com>, David Airlie <airlied@linux.ie>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- LKML <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <sean@poorly.run>,
- Rob Clark <robdclark@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Allison Randal <allison@lohutok.net>
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
+ ceph-devel@vger.kernel.org, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
+ devel@lists.orangefs.org, linux-media@vger.kernel.org,
+ John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
+ linux-block@vger.kernel.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, Dan Williams <dan.j.williams@intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ Andy Walls <awalls@md.metrocast.net>, netdev@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>, linux-xfs@vger.kernel.org,
+ linux-crypto@vger.kernel.org, linux-fsdevel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 7, 2019 at 8:25 AM Christoph Hellwig <hch@lst.de> wrote:
-> On Tue, Aug 06, 2019 at 09:23:51AM -0700, Rob Clark wrote:
-> > On Tue, Aug 6, 2019 at 8:50 AM Christoph Hellwig <hch@lst.de> wrote:
-> > >
-> > > On Tue, Aug 06, 2019 at 07:11:41AM -0700, Rob Clark wrote:
-> > > > Agreed that drm_cflush_* isn't a great API.  In this particular case
-> > > > (IIUC), I need wb+inv so that there aren't dirty cache lines that drop
-> > > > out to memory later, and so that I don't get a cache hit on
-> > > > uncached/wc mmap'ing.
-> > >
-> > > So what is the use case here?  Allocate pages using the page allocator
-> > > (or CMA for that matter), and then mmaping them to userspace and never
-> > > touching them again from the kernel?
-> >
-> > Currently, it is pages coming from tmpfs.  Ideally we want pages that
-> > are swappable when unpinned.
->
-> tmpfs is basically a (complicated) frontend for alloc pages as far
-> as page allocation is concerned.
->
-> > CPU mappings are *mostly* just mapping to userspace.  There are a few
-> > exceptions that are vmap'd (fbcon, and ringbuffer).
->
-> And those use the same backend?
->
-> > (Eventually I'd like to support pages passed in from userspace.. but
-> > that is down the road.)
->
-> Eww.  Please talk to the iommu list before starting on that.
->
-> > > > Tying it in w/ iommu seems a bit weird to me.. but maybe that is just
-> > > > me, I'm certainly willing to consider proposals or to try things and
-> > > > see how they work out.
-> > >
-> > > This was just my through as the fit seems easy.  But maybe you'll
-> > > need to explain your use case(s) a bit more so that we can figure out
-> > > what a good high level API is.
-> >
-> > Tying it to iommu_map/unmap would be awkward, as we could need to
-> > setup cpu mmap before it ends up mapped to iommu.  And the plan to
-> > support per-process pagetables involved creating an iommu_domain per
-> > userspace gl context.. some buffers would end up mapped into multiple
-> > contexts/iommu_domains.
-> >
-> > If the cache operation was detached from iommu_map/unmap, then it
-> > would seem weird to be part of the iommu API.
-> >
-> > I guess I'm not entirely sure what you had in mind, but this is why
-> > iommu seemed to me like a bad fit.
->
-> So back to the question, I'd like to understand your use case (and
-> maybe hear from the other drm folks if that is common):
+On 8/7/19 3:33 AM, john.hubbard@gmail.com wrote:
+> From: John Hubbard <jhubbard@nvidia.com>
+> 
+> For pages that were retained via get_user_pages*(), release those pages
+> via the new put_user_page*() routines, instead of via put_page() or
+> release_pages().
+> 
+> This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
+> ("mm: introduce put_user_page*(), placeholder versions").
+> 
+> Cc: Andy Walls <awalls@md.metrocast.net>
+> Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
+> Cc: linux-media@vger.kernel.org
+> Signed-off-by: John Hubbard <jhubbard@nvidia.com>
 
-Filling in a bunch more of the use-cases we have in drm. Don't need to
-solve them all right away ofc, but whatever direction we're aiming for
-should keep these in mind I think.
+Acked-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 
->  - you allocate pages from shmem (why shmem, btw?  if this is done by
->    other drm drivers how do they guarantee addressability without an
->    iommu?)
+Regards,
 
-We use shmem to get at swappable pages. We generally just assume that
-the gpu can get at those pages, but things fall apart in fun ways:
-- some setups somehow inject bounce buffers. Some drivers just give
-up, others try to allocate a pool of pages with dma_alloc_coherent.
-- some devices are misdesigned and can't access as much as the cpu. We
-allocate using GFP_DMA32 to fix that.
+	Hans
 
-Also modern gpu apis pretty much assume you can malloc() and then use
-that directly with the gpu.
+> ---
+>  drivers/media/pci/ivtv/ivtv-udma.c | 14 ++++----------
+>  drivers/media/pci/ivtv/ivtv-yuv.c  | 11 +++--------
+>  2 files changed, 7 insertions(+), 18 deletions(-)
+> 
+> diff --git a/drivers/media/pci/ivtv/ivtv-udma.c b/drivers/media/pci/ivtv/ivtv-udma.c
+> index 5f8883031c9c..7c7f33c2412b 100644
+> --- a/drivers/media/pci/ivtv/ivtv-udma.c
+> +++ b/drivers/media/pci/ivtv/ivtv-udma.c
+> @@ -92,7 +92,7 @@ int ivtv_udma_setup(struct ivtv *itv, unsigned long ivtv_dest_addr,
+>  {
+>  	struct ivtv_dma_page_info user_dma;
+>  	struct ivtv_user_dma *dma = &itv->udma;
+> -	int i, err;
+> +	int err;
+>  
+>  	IVTV_DEBUG_DMA("ivtv_udma_setup, dst: 0x%08x\n", (unsigned int)ivtv_dest_addr);
+>  
+> @@ -119,8 +119,7 @@ int ivtv_udma_setup(struct ivtv *itv, unsigned long ivtv_dest_addr,
+>  		IVTV_DEBUG_WARN("failed to map user pages, returned %d instead of %d\n",
+>  			   err, user_dma.page_count);
+>  		if (err >= 0) {
+> -			for (i = 0; i < err; i++)
+> -				put_page(dma->map[i]);
+> +			put_user_pages(dma->map, err);
+>  			return -EINVAL;
+>  		}
+>  		return err;
+> @@ -130,9 +129,7 @@ int ivtv_udma_setup(struct ivtv *itv, unsigned long ivtv_dest_addr,
+>  
+>  	/* Fill SG List with new values */
+>  	if (ivtv_udma_fill_sg_list(dma, &user_dma, 0) < 0) {
+> -		for (i = 0; i < dma->page_count; i++) {
+> -			put_page(dma->map[i]);
+> -		}
+> +		put_user_pages(dma->map, dma->page_count);
+>  		dma->page_count = 0;
+>  		return -ENOMEM;
+>  	}
+> @@ -153,7 +150,6 @@ int ivtv_udma_setup(struct ivtv *itv, unsigned long ivtv_dest_addr,
+>  void ivtv_udma_unmap(struct ivtv *itv)
+>  {
+>  	struct ivtv_user_dma *dma = &itv->udma;
+> -	int i;
+>  
+>  	IVTV_DEBUG_INFO("ivtv_unmap_user_dma\n");
+>  
+> @@ -170,9 +166,7 @@ void ivtv_udma_unmap(struct ivtv *itv)
+>  	ivtv_udma_sync_for_cpu(itv);
+>  
+>  	/* Release User Pages */
+> -	for (i = 0; i < dma->page_count; i++) {
+> -		put_page(dma->map[i]);
+> -	}
+> +	put_user_pages(dma->map, dma->page_count);
+>  	dma->page_count = 0;
+>  }
+>  
+> diff --git a/drivers/media/pci/ivtv/ivtv-yuv.c b/drivers/media/pci/ivtv/ivtv-yuv.c
+> index cd2fe2d444c0..2c61a11d391d 100644
+> --- a/drivers/media/pci/ivtv/ivtv-yuv.c
+> +++ b/drivers/media/pci/ivtv/ivtv-yuv.c
+> @@ -30,7 +30,6 @@ static int ivtv_yuv_prep_user_dma(struct ivtv *itv, struct ivtv_user_dma *dma,
+>  	struct yuv_playback_info *yi = &itv->yuv_info;
+>  	u8 frame = yi->draw_frame;
+>  	struct yuv_frame_info *f = &yi->new_frame_info[frame];
+> -	int i;
+>  	int y_pages, uv_pages;
+>  	unsigned long y_buffer_offset, uv_buffer_offset;
+>  	int y_decode_height, uv_decode_height, y_size;
+> @@ -81,8 +80,7 @@ static int ivtv_yuv_prep_user_dma(struct ivtv *itv, struct ivtv_user_dma *dma,
+>  				 uv_pages, uv_dma.page_count);
+>  
+>  			if (uv_pages >= 0) {
+> -				for (i = 0; i < uv_pages; i++)
+> -					put_page(dma->map[y_pages + i]);
+> +				put_user_pages(&dma->map[y_pages], uv_pages);
+>  				rc = -EFAULT;
+>  			} else {
+>  				rc = uv_pages;
+> @@ -93,8 +91,7 @@ static int ivtv_yuv_prep_user_dma(struct ivtv *itv, struct ivtv_user_dma *dma,
+>  				 y_pages, y_dma.page_count);
+>  		}
+>  		if (y_pages >= 0) {
+> -			for (i = 0; i < y_pages; i++)
+> -				put_page(dma->map[i]);
+> +			put_user_pages(dma->map, y_pages);
+>  			/*
+>  			 * Inherit the -EFAULT from rc's
+>  			 * initialization, but allow it to be
+> @@ -112,9 +109,7 @@ static int ivtv_yuv_prep_user_dma(struct ivtv *itv, struct ivtv_user_dma *dma,
+>  	/* Fill & map SG List */
+>  	if (ivtv_udma_fill_sg_list (dma, &uv_dma, ivtv_udma_fill_sg_list (dma, &y_dma, 0)) < 0) {
+>  		IVTV_DEBUG_WARN("could not allocate bounce buffers for highmem userspace buffers\n");
+> -		for (i = 0; i < dma->page_count; i++) {
+> -			put_page(dma->map[i]);
+> -		}
+> +		put_user_pages(dma->map, dma->page_count);
+>  		dma->page_count = 0;
+>  		return -ENOMEM;
+>  	}
+> 
 
->  - then the memory is either mapped to userspace or vmapped (or even
->    both, althrough the lack of aliasing you mentioned would speak
->    against it) as writecombine (aka arm v6+ normal uncached).  Does
->    the mapping live on until the memory is freed?
-
-Generally we cache mappings forever. Some exceptions for 32bit
-userspace excluded, where people expect to be able to use more than
-4GB of textures somehow, so we have to recycle old mappings. Obviously
-applies less to gpus on socs.
-
-Also, at least i915 also has writeback userspace mmaps, and userspace
-doing the cflushing. Also not sure I ever mentioned this, but at least
-i915 userspace controls the coherency mode of the device dma directly,
-on a per-op granularity. For buffers shared with other processes it
-defers to the gpu pagetables, which the kernel controls.
-
->  - as you mention swapping - how do you guarantee there are no
->    aliases in the kernel direct mapping after the page has been swapped
->    in?
-
-No idea personally, since we can ignore this on x86. I think atm
-there's not a huge overlap of gpu drivers doing swapping and running
-on something like arm where incompatible aliased mappings are bad.
-
->  - then the memory is potentially mapped to the iommu.  Is it using
->    a long-living mapping, or does get unmapped/remapped repeatedly?
-
-Again, generally cached for as long as possible, until we run out of
-space/memory somewhere.
--Daniel
---
-Daniel Vetter
-Software Engineer, Intel Corporation
-+41 (0) 79 365 57 48 - http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
