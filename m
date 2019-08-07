@@ -2,92 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F02D585229
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 19:36:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A619F8522F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 19:37:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E3XCP7wpLBHylIz+2ARerqJj7n0NjUZfCVxsHajP1Qs=; b=Sz+cGMaeRg4ffV
-	cWLfTXdfM5uPx0sO0eNn+9zDxM3smc/DO18M/SS4RigIrX/KRFzNVkI40J5YEqGqkD/tT/SGiYM+p
-	w/insIf5dq/n8Ok4X9LWDMnWOhJIYBADdfKm9WcVKEKkLUcjsu51r1dMcUVAA0LlQR2cJvpjpmwdL
-	7ngkm4/Ye85s0dcEdUR4jJpCBluel4l8LSjEqQPV7qo54YuB5Y95J9D4fczjM30uofumURi9iy92J
-	7lJx7Tm3XPBe5QSLwVSPScFeLrJvj4PU7q1bdQfpduVmnFxUXqYwLpox/DvQZcg4vsz6EGRLcuS6V
-	fBUn7XknvH04RBjVIYPA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=e2XpIcKwt75k6folLqq3DcAHVZQYcoq4VZAfeqQpZDE=; b=Cf4z/QM7MDTViwaZJmOJDFt0Pd
+	P82YZV/b6IYCead3gqFwlYw7OZferbXsMgZsp4SIbGCb7wT0lo7yz/83jdfkwjB8fPzAsFJAm8iLH
+	9yXM3ftroLZdAjhVXQ0PJbqaFoK+PqM3HGUeuYFOytpoSFa0O1Yxn2vN4EeuU3cWe3lIuo/7LcrQu
+	npm8gtVDiLaP8OkgCQjQxmjgJAydLbu5tVJ4035P/WHLiQlaZYHRunMGNIGz8QpE+1beb6DZXUHl2
+	ntbboSou8nxpha1vz+31d6cjG5dxfxRZMfgImNOLbew/2gKvb5vYMkBv/oOkHRLbl8D7QQAy5uR3P
+	2pojIkBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvPri-0001zv-Lf; Wed, 07 Aug 2019 17:36:46 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvPrY-0001zX-2T
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 17:36:37 +0000
-Received: by mail-ot1-x344.google.com with SMTP id q20so107429269otl.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 07 Aug 2019 10:36:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/ahAdMt9y/VNsV/qQd6y/xJHn8I5CpQDY3tZMcrNs4A=;
- b=ObxZYrA6VNyw2WNd9bgMvlmNcd6/7eKohgKlkt3sxiubQYzfbsyzxbYugiXVl+rX6s
- KFEry7YGiKl/RAY2GZm9y6E/eUl/XXHmlLb5jkJEPYReR4vAkzelXXuW7WC8PEdwTMSJ
- KyDx+yOUTM3DrtzDmCVw2B1qL1vPd5kdKRbttLIi3c3Boc/FTIuytauTWGJbpuEAX+S/
- jmmqu6q0WyUOtRdrCzZGiajrJU1Msg+wObjOEvuoPKnVVlJbKIpg/8PJeGx0RbImPetv
- NRJEN5oeKRArWHmglyLAamgBHZVl8BAs9J3+WnHNDhilpGpK+MOA5JypatKOPtqwHQ7u
- ll8Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/ahAdMt9y/VNsV/qQd6y/xJHn8I5CpQDY3tZMcrNs4A=;
- b=XuVhUu3Rb395P4OkwVtIdnYgDLrWNwf0GJJKnPYi1S+HZYWTI+S6ADafQzqjxYNqvZ
- P43jd80cf6Im4kE6nrGmbrof8iF2sdkegZNolJiYU2pXuuVQTM/d+RvLKTeHF4S/vbCc
- b/T2TqSinb23QMjPYVzESjUVYnCRlmUsRwffgD7c33fWsma1IWRj5ZHPC59aIbd7cGCf
- QTRr70ueWOLgdsFnAMSwnNyWs7FfpP2h0azpgboUTvtMl0PCtRKq1BoIe27y1UGAkGlO
- rrCizpFA/oVL20iOA1JSTSLpms1oQKbETYdjGdnBWxG/DLAxiQE66HM+FGPYS+LD/5HP
- JDgA==
-X-Gm-Message-State: APjAAAUIaGT3Vx60CXmtrLZvsA1rYSdN/gRWt/ZQamVx9NpKj0Gb+7R3
- T6yV0WUovgiBHmFV6JDe+feEcijIeZyIX16Bumw=
-X-Google-Smtp-Source: APXvYqzm6lbogH9emHG1HDu2xLWRfSw8r9srFqMIQuNwbv5KIxsLZzTEMC+DTxul5+vbGLi2ABtMU/29NyjFq/6ZiJs=
-X-Received: by 2002:a9d:6742:: with SMTP id w2mr9272816otm.371.1565199394377; 
- Wed, 07 Aug 2019 10:36:34 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190806140135.4739-1-anarsoul@gmail.com>
- <89402d22-d432-9551-e787-c8ede16dbe5f@arm.com>
- <CA+E=qVfh7mirJhRsDTeuAVgG55ia936uFSFVKR0N5Pn4GCF1UA@mail.gmail.com>
- <E1hv5vZ-0000jN-M8@stardust.g4.wien.funkfeuer.at>
- <CA+E=qVdHOtebR6xjpwTY_Whp0cHLtv82YULmxLPSEzdLN9TnVg@mail.gmail.com>
- <36e60078-7dd5-9c07-ffa1-6092d8c70fa8@arm.com>
- <CA+E=qVeAR4AFN99ZVy8EZLW6p_8ucTewOdMis37wnpV3DObaGg@mail.gmail.com>
- <20190807115614.phm7sbyae6yajkug@flea>
-In-Reply-To: <20190807115614.phm7sbyae6yajkug@flea>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Wed, 7 Aug 2019 10:36:08 -0700
-Message-ID: <CA+E=qVdh3MHMsEC9XKe5-7O8fGTHFh76WLOgVf+PZPv7c4JE9w@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: allwinner: a64: Drop PMU node
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+	id 1hvPss-0002KF-Dg; Wed, 07 Aug 2019 17:37:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvPsh-0002Jv-S2
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 17:37:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C9F4328;
+ Wed,  7 Aug 2019 10:37:46 -0700 (PDT)
+Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 23A043F575;
+ Wed,  7 Aug 2019 10:37:46 -0700 (PDT)
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] firmware: arm_scmi: Use {get, put}_unaligned_le{32,
+ 64} accessors
+Date: Wed,  7 Aug 2019 18:37:39 +0100
+Message-Id: <20190807173739.5939-1-sudeep.holla@arm.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190807130038.26878-1-sudeep.holla@arm.com>
+References: <20190807130038.26878-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_103636_141105_DE143A00 
-X-CRM114-Status: GOOD (  25.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190807_103747_989204_8ABAABFE 
+X-CRM114-Status: GOOD (  11.29  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,74 +60,223 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- "Jared D . McNeill" <jmcneill@netbsd.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Harald Geyer <harald@ccbib.org>,
- Robin Murphy <robin.murphy@arm.com>,
- arm-linux <linux-arm-kernel@lists.infradead.org>
+Cc: linux-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Sudeep Holla <sudeep.holla@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 7, 2019 at 4:56 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> On Tue, Aug 06, 2019 at 07:39:26PM -0700, Vasily Khoruzhick wrote:
-> > On Tue, Aug 6, 2019 at 2:14 PM Robin Murphy <robin.murphy@arm.com> wrote:
-> > >
-> > > On 2019-08-06 9:52 pm, Vasily Khoruzhick wrote:
-> > > > On Tue, Aug 6, 2019 at 1:19 PM Harald Geyer <harald@ccbib.org> wrote:
-> > > >>
-> > > >> Vasily Khoruzhick writes:
-> > > >>> On Tue, Aug 6, 2019 at 7:35 AM Robin Murphy <robin.murphy@arm.com> wrote:
-> > > >>>>
-> > > >>>> On 06/08/2019 15:01, Vasily Khoruzhick wrote:
-> > > >>>>> Looks like PMU in A64 is broken, it generates no interrupts at all and
-> > > >>>>> as result 'perf top' shows no events.
-> > > >>>>
-> > > >>>> Does something like 'perf stat sleep 1' at least count cycles correctly?
-> > > >>>> It could well just be that the interrupt numbers are wrong...
-> > > >>>
-> > > >>> Looks like it does, at least result looks plausible:
-> > > >>
-> > > >> I'm using perf stat regularly (cache benchmarks) and it works fine.
-> > > >>
-> > > >> Unfortunately I wasn't aware that perf stat is a poor test for
-> > > >> the interrupts part of the node, when I added it. So I'm not too
-> > > >> surprised I got it wrong.
-> > > >>
-> > > >> However, it would be unfortunate if the node got removed completely,
-> > > >> because perf stat would not work anymore. Maybe we can only remove
-> > > >> the interrupts or just fix them even if the HW doesn't work?
-> > > >
-> > > > I'm not familiar with PMU driver. Is it possible to get it working
-> > > > without interrupts?
-> > >
-> > > Yup - you get a grumpy message from the driver, it will refuse sampling
-> > > events (the ones which weren't working anyway), and if you measure
-> > > anything for long enough that a counter overflows you'll get wonky
-> > > results. But for counting hardware events over relatively short periods
-> > > it'll still do the job.
-> >
-> > I tried to drop interrupts completely from the node but 'perf top' is
-> > still broken. Though now in different way: it complains "cycles: PMU
-> > Hardware doesn't support sampling/overflow-interrupts. Try 'perf
-> > stat'"
->
-> I have no idea if that's the culprit, but what is the state of the
-> 0x09010000 register?
+Instead of type-casting the {tx,rx}.buf all over the place while
+accessing them to read/write __le{32,64} from/to the firmware, let's
+use the existing {get,put}_unaligned_le{32,64} accessors to hide all
+the type cast ugliness.
 
-What register is that and how do I check it?
+Suggested-by: Philipp Zabel <p.zabel@pengutronix.de>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+---
+ drivers/firmware/arm_scmi/base.c    |  2 +-
+ drivers/firmware/arm_scmi/clock.c   | 12 ++++--------
+ drivers/firmware/arm_scmi/common.h  |  2 ++
+ drivers/firmware/arm_scmi/perf.c    |  8 ++++----
+ drivers/firmware/arm_scmi/power.c   |  6 +++---
+ drivers/firmware/arm_scmi/reset.c   |  2 +-
+ drivers/firmware/arm_scmi/sensors.c | 17 ++++++-----------
+ 7 files changed, 21 insertions(+), 28 deletions(-)
 
-> (in particular, are the bits 16-19 and 24 set or not?
->
-> Maxime
->
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
+v1->v2:
+	- Dropped incorrect void ptr arithmetic and used unaligned_le64
+	  accessors instead
+
+diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
+index 204390297f4b..f804e8af6521 100644
+--- a/drivers/firmware/arm_scmi/base.c
++++ b/drivers/firmware/arm_scmi/base.c
+@@ -204,7 +204,7 @@ static int scmi_base_discover_agent_get(const struct scmi_handle *handle,
+ 	if (ret)
+ 		return ret;
+
+-	*(__le32 *)t->tx.buf = cpu_to_le32(id);
++	put_unaligned_le32(id, t->tx.buf);
+
+ 	ret = scmi_do_xfer(handle, t);
+ 	if (!ret)
+diff --git a/drivers/firmware/arm_scmi/clock.c b/drivers/firmware/arm_scmi/clock.c
+index 4a32ae1822a3..32526a793f3a 100644
+--- a/drivers/firmware/arm_scmi/clock.c
++++ b/drivers/firmware/arm_scmi/clock.c
+@@ -107,7 +107,7 @@ static int scmi_clock_attributes_get(const struct scmi_handle *handle,
+ 	if (ret)
+ 		return ret;
+
+-	*(__le32 *)t->tx.buf = cpu_to_le32(clk_id);
++	put_unaligned_le32(clk_id, t->tx.buf);
+ 	attr = t->rx.buf;
+
+ 	ret = scmi_do_xfer(handle, t);
+@@ -204,15 +204,11 @@ scmi_clock_rate_get(const struct scmi_handle *handle, u32 clk_id, u64 *value)
+ 	if (ret)
+ 		return ret;
+
+-	*(__le32 *)t->tx.buf = cpu_to_le32(clk_id);
++	put_unaligned_le32(clk_id, t->tx.buf);
+
+ 	ret = scmi_do_xfer(handle, t);
+-	if (!ret) {
+-		__le32 *pval = t->rx.buf;
+-
+-		*value = le32_to_cpu(*pval);
+-		*value |= (u64)le32_to_cpu(*(pval + 1)) << 32;
+-	}
++	if (!ret)
++		*value = get_unaligned_le64(t->rx.buf);
+
+ 	scmi_xfer_put(handle, t);
+ 	return ret;
+diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
+index 43884e4ceac5..5237c2ff79fe 100644
+--- a/drivers/firmware/arm_scmi/common.h
++++ b/drivers/firmware/arm_scmi/common.h
+@@ -15,6 +15,8 @@
+ #include <linux/scmi_protocol.h>
+ #include <linux/types.h>
+
++#include <asm/unaligned.h>
++
+ #define PROTOCOL_REV_MINOR_MASK	GENMASK(15, 0)
+ #define PROTOCOL_REV_MAJOR_MASK	GENMASK(31, 16)
+ #define PROTOCOL_REV_MAJOR(x)	(u16)(FIELD_GET(PROTOCOL_REV_MAJOR_MASK, (x)))
+diff --git a/drivers/firmware/arm_scmi/perf.c b/drivers/firmware/arm_scmi/perf.c
+index fb7f6cab2c11..9b338e66a24e 100644
+--- a/drivers/firmware/arm_scmi/perf.c
++++ b/drivers/firmware/arm_scmi/perf.c
+@@ -195,7 +195,7 @@ scmi_perf_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
+ 	if (ret)
+ 		return ret;
+
+-	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
++	put_unaligned_le32(domain, t->tx.buf);
+ 	attr = t->rx.buf;
+
+ 	ret = scmi_do_xfer(handle, t);
+@@ -380,7 +380,7 @@ static int scmi_perf_mb_limits_get(const struct scmi_handle *handle, u32 domain,
+ 	if (ret)
+ 		return ret;
+
+-	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
++	put_unaligned_le32(domain, t->tx.buf);
+
+ 	ret = scmi_do_xfer(handle, t);
+ 	if (!ret) {
+@@ -459,11 +459,11 @@ static int scmi_perf_mb_level_get(const struct scmi_handle *handle, u32 domain,
+ 		return ret;
+
+ 	t->hdr.poll_completion = poll;
+-	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
++	put_unaligned_le32(domain, t->tx.buf);
+
+ 	ret = scmi_do_xfer(handle, t);
+ 	if (!ret)
+-		*level = le32_to_cpu(*(__le32 *)t->rx.buf);
++		*level = get_unaligned_le32(t->rx.buf);
+
+ 	scmi_xfer_put(handle, t);
+ 	return ret;
+diff --git a/drivers/firmware/arm_scmi/power.c b/drivers/firmware/arm_scmi/power.c
+index 62f3401a1f01..5abef7079c0a 100644
+--- a/drivers/firmware/arm_scmi/power.c
++++ b/drivers/firmware/arm_scmi/power.c
+@@ -96,7 +96,7 @@ scmi_power_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
+ 	if (ret)
+ 		return ret;
+
+-	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
++	put_unaligned_le32(domain, t->tx.buf);
+ 	attr = t->rx.buf;
+
+ 	ret = scmi_do_xfer(handle, t);
+@@ -147,11 +147,11 @@ scmi_power_state_get(const struct scmi_handle *handle, u32 domain, u32 *state)
+ 	if (ret)
+ 		return ret;
+
+-	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
++	put_unaligned_le32(domain, t->tx.buf);
+
+ 	ret = scmi_do_xfer(handle, t);
+ 	if (!ret)
+-		*state = le32_to_cpu(*(__le32 *)t->rx.buf);
++		*state = get_unaligned_le32(t->rx.buf);
+
+ 	scmi_xfer_put(handle, t);
+ 	return ret;
+diff --git a/drivers/firmware/arm_scmi/reset.c b/drivers/firmware/arm_scmi/reset.c
+index 11cb8b5ccf34..c1d67a2af12f 100644
+--- a/drivers/firmware/arm_scmi/reset.c
++++ b/drivers/firmware/arm_scmi/reset.c
+@@ -88,7 +88,7 @@ scmi_reset_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
+ 	if (ret)
+ 		return ret;
+
+-	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
++	put_unaligned_le32(domain, t->tx.buf);
+ 	attr = t->rx.buf;
+
+ 	ret = scmi_do_xfer(handle, t);
+diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
+index 7570308a16a0..a400ea805fc2 100644
+--- a/drivers/firmware/arm_scmi/sensors.c
++++ b/drivers/firmware/arm_scmi/sensors.c
+@@ -120,7 +120,7 @@ static int scmi_sensor_description_get(const struct scmi_handle *handle,
+
+ 	do {
+ 		/* Set the number of sensors to be skipped/already read */
+-		*(__le32 *)t->tx.buf = cpu_to_le32(desc_index);
++		put_unaligned_le32(desc_index, t->tx.buf);
+
+ 		ret = scmi_do_xfer(handle, t);
+ 		if (ret)
+@@ -217,7 +217,6 @@ static int scmi_sensor_reading_get(const struct scmi_handle *handle,
+ 				   u32 sensor_id, u64 *value)
+ {
+ 	int ret;
+-	__le32 *pval;
+ 	struct scmi_xfer *t;
+ 	struct scmi_msg_sensor_reading_get *sensor;
+ 	struct sensors_info *si = handle->sensor_priv;
+@@ -229,24 +228,20 @@ static int scmi_sensor_reading_get(const struct scmi_handle *handle,
+ 	if (ret)
+ 		return ret;
+
+-	pval = t->rx.buf;
+ 	sensor = t->tx.buf;
+ 	sensor->id = cpu_to_le32(sensor_id);
+
+ 	if (s->async) {
+ 		sensor->flags = cpu_to_le32(SENSOR_READ_ASYNC);
+ 		ret = scmi_do_xfer_with_response(handle, t);
+-		if (!ret) {
+-			*value = le32_to_cpu(*(pval + 1));
+-			*value |= (u64)le32_to_cpu(*(pval + 2)) << 32;
+-		}
++		if (!ret)
++			*value = get_unaligned_le64((void *)
++						    ((__le32 *)t->rx.buf + 1));
+ 	} else {
+ 		sensor->flags = cpu_to_le32(0);
+ 		ret = scmi_do_xfer(handle, t);
+-		if (!ret) {
+-			*value = le32_to_cpu(*pval);
+-			*value |= (u64)le32_to_cpu(*(pval + 1)) << 32;
+-		}
++		if (!ret)
++			*value = get_unaligned_le64(t->rx.buf);
+ 	}
+
+ 	scmi_xfer_put(handle, t);
+--
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
