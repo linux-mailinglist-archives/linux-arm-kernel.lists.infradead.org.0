@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EE44851BA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 19:08:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41184851BB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 19:08:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ayz10WY7TlhEjubnhzdcPd8z5LA7HN3osXaCkZAh6ws=; b=ntwEjWFwCVrKbM
-	WN+Hd8auomfMQeeWEGhaM3dfhJSyO7CnxdjkZGk72QMOBNSwET7nwGBU7mGcxadVPYFONQ8Ud7scz
-	1GU+WQVcw9A3wNDStihEzifCH/Tu2G9inrx2F8HUUERGyaXjw1srWKgABtrFkYRIgp7gfJWuBAcn/
-	IT+SjiCF9WiqLwyTKWXOKuY9EA7njUZSZK67uPKNS0fqYDCUT2I4FZb4yXMCquT4hd7zKf55AJLM2
-	CwzcRh0r/Ag/sXLWflv5sWAug/Ze5rWiLL87Mj+6sHOX4T9Oy1UvIj8+C1rqv8qTzhsND7ZauvnS9
-	O2wvz3a6jw9173+ini8w==;
+	List-Owner; bh=ONUtjsYCIvUBhEOW/TXHQmgerFdH7YLfktSNiQ4HNmk=; b=AaSCvA3xfiaE5y
+	AzQ8i/sJG70IKWkSCmG9WXs5Zfg/i6s3xGBLgC6wQQ7Cu1Dn7FBzBB76rjPuZXDSMu4W2oyJnWDS+
+	FTApl5MWGBaf/x6N0iihRrHXgHMYL3/jiE4QBSAfvlh4o6/FijEX88FPriiENsbIX6jGexwm75yrI
+	K2chyaiYBlhThVwwuDq/5dR7+bIgLdjVSfg1NSskAOvmf9Bl8cOKQs7pjC6SDMD4uC123ePUcP/D/
+	gPV/ear/Zuevgv465sjcVu6QhnKzxNoo+Xr+nEQZm68uxWGByR4VcyEWhQHlbm5UXb9vNBNQ66Ahh
+	L7D2MW/V3tw6a4YZANQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvPQJ-0007si-1O; Wed, 07 Aug 2019 17:08:27 +0000
+	id 1hvPQW-00083s-1o; Wed, 07 Aug 2019 17:08:40 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvPQ7-0007s0-60
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 17:08:16 +0000
+ id 1hvPQD-0007vl-Rq
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 17:08:23 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3C10F344;
- Wed,  7 Aug 2019 10:08:12 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8AEBD3F575;
- Wed,  7 Aug 2019 10:08:11 -0700 (PDT)
-Date: Wed, 7 Aug 2019 18:08:09 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: David Laight <David.Laight@ACULAB.COM>
-Subject: Re: [PATCH] firmware: arm_scmi: Use {get,put}_unaligned_le32 accessors
-Message-ID: <20190807170808.GD27278@e107155-lin>
-References: <20190807130038.26878-1-sudeep.holla@arm.com>
- <4102ce79ef7a4f5ba819663d072bccc8@AcuMS.aculab.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1F3C0344;
+ Wed,  7 Aug 2019 10:08:21 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 01E8F3F575;
+ Wed,  7 Aug 2019 10:08:19 -0700 (PDT)
+Date: Wed, 7 Aug 2019 18:08:14 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Steven Rostedt <rostedt@goodmis.org>
+Subject: Re: [PATCH 0/2] tracing/arm: Fix the stack tracer when LR is saved
+ after local storage
+Message-ID: <20190807170814.GA45351@lakrids.cambridge.arm.com>
+References: <20190807163401.570339297@goodmis.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4102ce79ef7a4f5ba819663d072bccc8@AcuMS.aculab.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190807163401.570339297@goodmis.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_100815_267360_3C26543E 
-X-CRM114-Status: GOOD (  14.61  )
+X-CRM114-CacheID: sfid-20190807_100822_109155_434DFFBE 
+X-CRM114-Status: GOOD (  17.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,45 +62,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Jiping Ma <jiping.ma2@windriver.com>, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, mingo@redhat.com,
+ Joel Fernandes <joel@joelfernandes.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 03:18:59PM +0000, David Laight wrote:
-> From: Sudeep Holla
-> > Sent: 07 August 2019 14:01
-> >
-> > Instead of type-casting the {tx,rx}.buf all over the place while
-> > accessing them to read/write __le32 from/to the firmware, let's use
-> > the nice existing {get,put}_unaligned_le32 accessors to hide all the
-> > type cast ugliness.
->
-> Why the 'unaligned' accessors?
->
+Hi Steve,
 
-Since the firmware run in LE, we do byte-swapping anyways.
+On Wed, Aug 07, 2019 at 12:34:01PM -0400, Steven Rostedt wrote:
+> As arm64 saves the link register after a function's local variables are
+> stored, it causes the max stack tracer to be off by one in its output
+> of which function has the bloated stack frame.
 
-> > -	*(__le32 *)t->tx.buf = cpu_to_le32(id);
-> > +	put_unaligned_le32(id, t->tx.buf);
->
+For reference, it's a bit more complex than that. :/
 
-If you look at the generic definition for put_unaligned_le32, it's
-exactly the same as what I am replacing with the call. So nothing
-changes IIUC. In fact, I see that all the helper in unaligned/access_ok.h
-just do the byte-swapping.
+Our procedure call standard (the AAPCS) says that the frame record may
+be placed anywhere within a stackframe, so we don't have a guarantee as
+to where the saved lr will fall w.r.t local variables.
 
-> These will be expensive if the cpu doesn't support them.
+Today, GCC happens to create the stack frame by creating the stack
+record, so the LR is saved at a lower addresss than the local variables.
 
-The SCMI is currently used only on ARM platforms which have
-HAVE_EFFICIENT_UNALIGNED_ACCESS defined.
+However, I am aware that there are reasons why a compiler may choose to
+place the frame record at a different locations, e.g. using pointer
+authentication to provide an implicit stack canary, so this could change
+in future, or potentially differ across functions.
 
---
-Regards,
-Sudeep
+Maybe that's a bridge we'll have to cross in future.
+
+Thanks,
+Mark.
+
+> 
+> The first patch fixes this by creating a ARCH_RET_ADDR_BEFORE_LOCAL_VARS
+> define that an achitecture (arm64) may set in asm/ftrace.h, and this
+> will cause the stack tracer to make the shift.
+> 
+> As it has been proven that the stack tracer isn't the most trivial
+> algorithm to understand by staring at the code, the second patch adds
+> comments to the code to explain the algorithm with and without the
+> ARCH_RET_ADDR_BEFORE_LOCAL_VARS.
+> 
+> Hmm, should this be sent to stable (and for inclusion now?)
+> 
+> -- Steve
+> 
+> Steven Rostedt (VMware) (2):
+>       tracing/arm64: Have max stack tracer handle the case of return address after data
+>       tracing: Document the stack trace algorithm in the comments
+> 
+> ----
+>  arch/arm64/include/asm/ftrace.h |   1 +
+>  kernel/trace/trace_stack.c      | 112 ++++++++++++++++++++++++++++++++++++++++
+>  2 files changed, 113 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
