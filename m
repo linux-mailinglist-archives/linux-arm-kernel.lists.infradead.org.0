@@ -2,112 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBB5784D91
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 15:39:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 809B784DB0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 15:40:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r/joP4xxnjX8X5mwxNXnhxpSfuJVbuk3NdcdhgaE4KM=; b=Ko/XE5Z6TQdeZW
-	HqI2lhFv6XZd8MIASNMjByob4XLXnQfa89+CmE4MXJbFtdc3a0jbRmsKRmytRoU327ahjLyew5WHi
-	nRBVoam6PJpHLJSH8L+M4942q3v11jzhwhxm7U27hPYALeu5BQ9XnAbO7ngFliIe10kdRlmsLTfoQ
-	9vNmWeObN4fos7ljG+jsms66lML4ugUX1VYwNBYWkAvQ7vG4mUjWzufHAejqhwHpiwgW1qwRIkogp
-	i4UG5MzxnzwrWnM5loAq8DZ5wN2muCwVDYEiX47ZPLI6rdH2BURm0N/44NNO6FG4EwLTXOagqR9uY
-	AnJKgJaF2l520JZzJRzw==;
+	List-Owner; bh=RaKRXWKWZ4KSaisVmwmCFm6kgJccSmjAz1CRib6Leeo=; b=OQ+TJMEOH+iSrI
+	HYdp/LhGTrvIpmajxALACbV5yUzFb16Cv7Y6lNZa15S1H6w9xHrDRCkb7LTepfeV+sI+hxMj7IfAB
+	DffClT3onfPQjeJIkcheeOzvjeEZuJlrgrVkkT9tWACByE+sjVvKCvXVbuIFbzYnJju9hC/mad04g
+	Jy3hP8bUlKFGuJhJsTCCfTJmvTfl/SBpUC1Y/MhkbYaD6DLiC5RrlPrr6jrKl5/pw5Sz4ZiduemgS
+	D6RqU7camTzGBemM0kJepsU+UL/TqOLgz0nckUNU8f3yUmyMwxqdDAstW5Y+72d+wcXfX5aXfyWJH
+	Szaxv6sE58XnZmp8Rp6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvM9r-0002D4-Og; Wed, 07 Aug 2019 13:39:15 +0000
+	id 1hvMAZ-0002kb-8Z; Wed, 07 Aug 2019 13:39:59 +0000
 Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvM9e-0002BD-9j
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 13:39:03 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ id 1hvM9f-0002BG-9d
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 13:39:05 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
  by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190807133858euoutp026ad6644f9bb8fdb7072d0c4466df8f03~4p5c2FvkD1791117911euoutp02_
+ 20190807133900euoutp02e94d8a0b3285e2b0f495251e1bc9560d~4p5edBpZ31903619036euoutp02C
  for <linux-arm-kernel@lists.infradead.org>;
- Wed,  7 Aug 2019 13:38:58 +0000 (GMT)
+ Wed,  7 Aug 2019 13:39:00 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190807133858euoutp026ad6644f9bb8fdb7072d0c4466df8f03~4p5c2FvkD1791117911euoutp02_
+ 20190807133900euoutp02e94d8a0b3285e2b0f495251e1bc9560d~4p5edBpZ31903619036euoutp02C
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1565185138;
- bh=CjwZyowP2SyGv4qfE/HxF+yoeTjTHLNxjLACzBKukg4=;
+ s=mail20170921; t=1565185140;
+ bh=MPIjTyHieD2gGpsaXd2KwE9jDzTxd4a6XuBnBOBEIew=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=AqZTuv1CcWRC8/YCOLDcc/C+XeqiIdIZ9/Ubs1H+88Wji6XYvFjQUexJoiZVkeaQv
- 1iRdPPzeUjtQauWnJEKIx8ZxZlggS6Bw/SNKAT9n0K++6mOQIVKGt5SK4Y8rH9vsf2
- cxCIhIAhpIs7RzkDWYdEUa6V4zqJFDYb2Ua7nm8c=
+ b=nRd+lspbjBUvjN27E6OXuVdyOaBKpuNnFWliS8z8qezcBk/UGaQeM9UHRzEPE3sqs
+ AEA7Kotr9L2dONSW0xVGNa5AxEVSe+5StfgWcJOpEKtCdBSQA6fdzp/L323C3/LeyR
+ QD7QoAMnQUDT1e53Z36Ayqy3Z+DgkPnIag3/dQVI=
 Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
  eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190807133857eucas1p21a53d364906d342b94849ed7fa78e5eb~4p5cLVJC11098810988eucas1p2J;
- Wed,  7 Aug 2019 13:38:57 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 7E.19.04309.174DA4D5; Wed,  7
- Aug 2019 14:38:57 +0100 (BST)
+ 20190807133859eucas1p27583edae9e862600f647c69bfd19e23f~4p5di1FqP1798117981eucas1p2h;
+ Wed,  7 Aug 2019 13:38:59 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 70.29.04309.274DA4D5; Wed,  7
+ Aug 2019 14:38:58 +0100 (BST)
 Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
  eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190807133856eucas1p2a893cd24096b089307e4216a1033a742~4p5bT0yde1099710997eucas1p2q;
- Wed,  7 Aug 2019 13:38:56 +0000 (GMT)
+ 20190807133858eucas1p28b272aa9a8dbbd95830f70098e25325a~4p5c0VeXj1099710997eucas1p2r;
+ Wed,  7 Aug 2019 13:38:58 +0000 (GMT)
 Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
  eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190807133856eusmtrp2f02b70f236ecc6e971a43f8c3fc3e8d6~4p5bFhwWl0146501465eusmtrp2E;
- Wed,  7 Aug 2019 13:38:56 +0000 (GMT)
-X-AuditID: cbfec7f4-afbff700000010d5-a8-5d4ad471ec33
+ 20190807133858eusmtrp26a80c933af4fa93bcfb91d65fe4c5b14~4p5cmF8-z0146501465eusmtrp2K;
+ Wed,  7 Aug 2019 13:38:58 +0000 (GMT)
+X-AuditID: cbfec7f4-ae1ff700000010d5-ad-5d4ad4729680
 Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id DB.0F.04117.074DA4D5; Wed,  7
- Aug 2019 14:38:56 +0100 (BST)
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 1E.0F.04117.174DA4D5; Wed,  7
+ Aug 2019 14:38:58 +0100 (BST)
 Received: from AMDC3218.DIGITAL.local (unknown [106.120.51.18]) by
  eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190807133855eusmtip2f1ea21a25bffbbee728eb421bb70d871~4p5aYMd4m1919719197eusmtip2c;
- Wed,  7 Aug 2019 13:38:55 +0000 (GMT)
+ 20190807133857eusmtip292ac6b938e88a2efec109082d9eb389e~4p5bzpqz11919719197eusmtip2d;
+ Wed,  7 Aug 2019 13:38:57 +0000 (GMT)
 From: k.konieczny@partner.samsung.com
 To: k.konieczny@partner.samsung.com
-Subject: [PATCH v5 1/4] devfreq: exynos-bus: correct clock enable sequence
-Date: Wed,  7 Aug 2019 15:38:35 +0200
-Message-Id: <20190807133838.14678-2-k.konieczny@partner.samsung.com>
+Subject: [PATCH v5 3/4] ARM: dts: exynos: add initial data for coupled
+ regulators for Exynos5422/5800
+Date: Wed,  7 Aug 2019 15:38:37 +0200
+Message-Id: <20190807133838.14678-4-k.konieczny@partner.samsung.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190807133838.14678-1-k.konieczny@partner.samsung.com>
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrHKsWRmVeSWpSXmKPExsWy7djP87qFV7xiDTZtErXYOGM9q8X1L89Z
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrHKsWRmVeSWpSXmKPExsWy7djPc7pFV7xiDebeNrPYOGM9q8X1L89Z
  LeYfOcdq0bfvP6NF/+PXzBbnz29gtzjb9IbdYtPja6wWl3fNYbP43HuE0WLG+X1MFmuP3GW3
  WHr9IpPF7cYVbBZvfpxlsmjde4Td4t+1jSwWmx8cY3MQ8lgzbw2jx6ZVnWwem5fUexx8t4fJ
- o2/LKkaP4ze2M3l83iQXwB7FZZOSmpNZllqkb5fAlbFn+wyWgtuiFbN2hDQwnhfsYuTkkBAw
- kfh4ZylrFyMXh5DACkaJLw8XskE4XxglVszfwgLhfGaU+HrpPStMy/lpT5khEssZJV533mCF
- a7l5cjsbSBWbgKrElhkv2UFsEQFlicn3poN1MAv8ZJHYcHkjWEJYwEuiafI3MJsFqOHh5rdg
- Nq+Ai8ShWaeYIdbJS3Tu2M0CYnMKuEp83TuBEaJGUOLkzCdgcWagmuats8EWSAi8ZZc4dv40
- O0Szi8TCtm5GCFtY4tXxLVBxGYn/O+czQdjlEk8X9rFDNLcwSjxo/8gCkbCWOHz8ItBvHEAb
- NCXW79IHMSUEHCUerY2DMPkkbrwVhDiBT2LSNpAfQcK8Eh1tQhAzdCXm/T8DDThpia7/66Bs
- D4mnj06xTmBUnIXkmVlInpmFsHYBI/MqRvHU0uLc9NRio7zUcr3ixNzi0rx0veT83E2MwFR3
+ o2/LKkaP4ze2M3l83iQXwB7FZZOSmpNZllqkb5fAlXHivW/BCZuKOQvesDcw3tDrYuTkkBAw
+ kfi/8yBzFyMXh5DACkaJYx2/2SCcL4wSu152QGU+M0rM39XGDtPy+PobRojEcqCWe+/Z4Vo6
+ FjezgVSxCahKbJnxEqxDREBZYvK96WCjmAV+skic3tXMCpIQFkiXeN+7BqyIBajh4bw+li5G
+ Dg5eAReJtQf0IbbJS3Tu2M0CYnMKuEp83TuBEcTmFRCUODnzCVicGaimeetssPkSAm/ZJVqn
+ /WWBaHaReHiglw3CFpZ4dXwL1AsyQF/PZ4KwyyWeLuxjh2huYZR40P4Rqtla4vDxi6wgBzEL
+ aEqs3wV1kKPEmXf9YGEJAT6JG28FIW7gk5i0DeRHkDCvREebEES1rsS8/2dYIWxpia7/66Bs
+ D4k535cxT2BUnIXkm1lIvpmFsHcBI/MqRvHU0uLc9NRio7zUcr3ixNzi0rx0veT83E2MwFR3
  +t/xLzsYd/1JOsQowMGoxMPLcMErVog1say4MvcQowQHs5II770yz1gh3pTEyqrUovz4otKc
- 1OJDjNIcLErivNUMD6KFBNITS1KzU1MLUotgskwcnFINjKH7637t70jI65Z88SmJhzfLxLtE
- NNdI6BlDT3RbhemVvT8XO4f+fBglJREtKuDqccbqSkiH5/dXpft3bRKqD3O4/3/iG869i+/2
- F2beW9bKktEVWOqY991dM4Wb495C53Oz1riG7NW4K9g9c80r46SG0l7XqTGccr82KdxSmZEu
- xhuZfTZZiaU4I9FQi7moOBEAdXTNnnEDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrLIsWRmVeSWpSXmKPExsVy+t/xe7oFV7xiDTr2yFpsnLGe1eL6l+es
- FvOPnGO16Nv3n9Gi//FrZovz5zewW5xtesNusenxNVaLy7vmsFl87j3CaDHj/D4mi7VH7rJb
- LL1+kcniduMKNos3P84yWbTuPcJu8e/aRhaLzQ+OsTkIeayZt4bRY9OqTjaPzUvqPQ6+28Pk
- 0bdlFaPH8RvbmTw+b5ILYI/SsynKLy1JVcjILy6xVYo2tDDSM7S00DMysdQzNDaPtTIyVdK3
- s0lJzcksSy3St0vQy9izfQZLwW3Rilk7QhoYzwt2MXJySAiYSJyf9pS5i5GLQ0hgKaPEj6ZT
- jBAJaYnG06uZIGxhiT/Xutggij4xSty8dR6siE1AVWLLjJfsILaIgLLE5HvTwSYxC3SySqx4
- coQNJCEs4CXRNPkbWBELUMPDzW/BbF4BF4lDs04xQ2yQl+jcsZsFxOYUcJX4uncC2AIhoJpF
- BzcyQdQLSpyc+QSshhmovnnrbOYJjAKzkKRmIUktYGRaxSiSWlqcm55bbKRXnJhbXJqXrpec
- n7uJERiV24793LKDsetd8CFGAQ5GJR5ehgtesUKsiWXFlbmHGCU4mJVEeO+VecYK8aYkVlal
- FuXHF5XmpBYfYjQFemIis5Rocj4wYeSVxBuaGppbWBqaG5sbm1koifN2CByMERJITyxJzU5N
- LUgtgulj4uCUamC0EazqmvLl+4JuGYEL3P/D3vc9Wfrpkj9TtFhQB69ml3LsItE9/PMZJRV5
- zyR5VwTNOmny636Xjeed1N9rLpRILrU7JXn119dDaTYLoitKGRwrdvo+0/WYv+63h2jffYuo
- 2BOTj94XemCc1VPuHHe9x1vCfcm5t8cz+wIVNcX2FNtk69f+uavEUpyRaKjFXFScCADdVKh0
- 4AIAAA==
-X-CMS-MailID: 20190807133856eucas1p2a893cd24096b089307e4216a1033a742
+ 1OJDjNIcLErivNUMD6KFBNITS1KzU1MLUotgskwcnFINjA3XDHvys4pjo/eff/m7qlxtirPw
+ kg0pDcf2SCpcbnu35ttSmZeLXCbE/WISTXWN5+tcz6OtlptcXFNzZJ+inZG67rzPpzLPr0zN
+ nnnpzqrKg8bCyyQ5W/Z5CO3ysDRZvkxogXXIsr27SsJXnN3PKykbsSk18sKJF+f6On/+dZd9
+ s2pxj5+xjRJLcUaioRZzUXEiAK7ejmpxAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrDIsWRmVeSWpSXmKPExsVy+t/xe7pFV7xiDVZPZrLYOGM9q8X1L89Z
+ LeYfOcdq0bfvP6NF/+PXzBbnz29gtzjb9IbdYtPja6wWl3fNYbP43HuE0WLG+X1MFmuP3GW3
+ WHr9IpPF7cYVbBZvfpxlsmjde4Td4t+1jSwWmx8cY3MQ8lgzbw2jx6ZVnWwem5fUexx8t4fJ
+ o2/LKkaP4ze2M3l83iQXwB6lZ1OUX1qSqpCRX1xiqxRtaGGkZ2hpoWdkYqlnaGwea2VkqqRv
+ Z5OSmpNZllqkb5egl3HivW/BCZuKOQvesDcw3tDrYuTkkBAwkXh8/Q1jFyMXh5DAUkaJeZ9X
+ M0EkpCUaT8PYwhJ/rnWxQRR9YpR4/OkZI0iCTUBVYsuMl+wgtoiAssTke9OZQYqYBTpZJZZM
+ +guWEBZIlZjbNAdsEgtQw8N5fSxdjBwcvAIuEmsP6EMskJfo3LGbBcTmFHCV+Lp3Ath8IaCS
+ RQc3grXyCghKnJz5BKyGGai+eets5gmMArOQpGYhSS1gZFrFKJJaWpybnltspFecmFtcmpeu
+ l5yfu4kRGJPbjv3csoOx613wIUYBDkYlHl6GC16xQqyJZcWVuYcYJTiYlUR475V5xgrxpiRW
+ VqUW5ccXleakFh9iNAX6YSKzlGhyPjBd5JXEG5oamltYGpobmxubWSiJ83YIHIwREkhPLEnN
+ Tk0tSC2C6WPi4JRqYOzn+ZV//Oazrdp/g1e1PRacaLY6Ms1gUVL3tfsNkXZ5TzqWPszzeqCz
+ 4mtD4JbAE1EWT4L6XEtvn5cV/MMSduKgja3t+j21tbIKnjE+74vTjxUHPFQ/vcr5eIPVpatt
+ GfPWC5r+6ZOWN9yhr/eoSEHQPq1Ofwbz0UvHrxSF2DVa7fmX7xfJrsRSnJFoqMVcVJwIAP7Q
+ j3XfAgAA
+X-CMS-MailID: 20190807133858eucas1p28b272aa9a8dbbd95830f70098e25325a
 X-Msg-Generator: CA
-X-RootMTR: 20190807133856eucas1p2a893cd24096b089307e4216a1033a742
+X-RootMTR: 20190807133858eucas1p28b272aa9a8dbbd95830f70098e25325a
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20190807133856eucas1p2a893cd24096b089307e4216a1033a742
+X-CMS-RootMailID: 20190807133858eucas1p28b272aa9a8dbbd95830f70098e25325a
 References: <20190807133838.14678-1-k.konieczny@partner.samsung.com>
- <CGME20190807133856eucas1p2a893cd24096b089307e4216a1033a742@eucas1p2.samsung.com>
+ <CGME20190807133858eucas1p28b272aa9a8dbbd95830f70098e25325a@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_063902_478449_56DFC157 
-X-CRM114-Status: GOOD (  20.38  )
+X-CRM114-CacheID: sfid-20190807_063903_475071_E2513307 
+X-CRM114-Status: GOOD (  15.36  )
 X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.1 points)
@@ -149,102 +150,257 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Regulators should be enabled before clocks to avoid h/w hang. This
-require change in exynos_bus_probe() to move exynos_bus_parse_of()
-after exynos_bus_parent_parse_of() and change in error handling.
-Similar change is needed in exynos_bus_exit() where clock should be
-disabled before regulators.
+From: Marek Szyprowski <m.szyprowski@samsung.com>
 
+Declare Exynos5422/5800 voltage ranges for opp points for big cpu core and
+bus wcore and couple their voltage supllies as vdd_arm and vdd_int should
+be in 300mV range.
+
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+[k.konieczny: add missing patch description]
 Signed-off-by: Kamil Konieczny <k.konieczny@partner.samsung.com>
-Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
+Reviewed-by: Chanwoo Choi <cw00.choi@samsung.com>
 ---
-Changes:
-v5:
-- added Acked-by tag
-v4:
-- move regulator disable after clock disable
-- remove unrelated changes
-- add disabling regulators in error path in exynos_bus_probe()
+ arch/arm/boot/dts/exynos5420.dtsi             | 34 +++++++++----------
+ arch/arm/boot/dts/exynos5422-odroid-core.dtsi |  4 +++
+ arch/arm/boot/dts/exynos5800-peach-pi.dts     |  4 +++
+ arch/arm/boot/dts/exynos5800.dtsi             | 32 ++++++++---------
+ 4 files changed, 41 insertions(+), 33 deletions(-)
 
----
- drivers/devfreq/exynos-bus.c | 31 +++++++++++++++++--------------
- 1 file changed, 17 insertions(+), 14 deletions(-)
-
-diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
-index 486cc5b422f1..f34fa26f00d0 100644
---- a/drivers/devfreq/exynos-bus.c
-+++ b/drivers/devfreq/exynos-bus.c
-@@ -194,11 +194,10 @@ static void exynos_bus_exit(struct device *dev)
- 	if (ret < 0)
- 		dev_warn(dev, "failed to disable the devfreq-event devices\n");
+diff --git a/arch/arm/boot/dts/exynos5420.dtsi b/arch/arm/boot/dts/exynos5420.dtsi
+index 5fb2326875dc..0cbf74750553 100644
+--- a/arch/arm/boot/dts/exynos5420.dtsi
++++ b/arch/arm/boot/dts/exynos5420.dtsi
+@@ -48,62 +48,62 @@
+ 			opp-shared;
+ 			opp-1800000000 {
+ 				opp-hz = /bits/ 64 <1800000000>;
+-				opp-microvolt = <1250000>;
++				opp-microvolt = <1250000 1250000 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-1700000000 {
+ 				opp-hz = /bits/ 64 <1700000000>;
+-				opp-microvolt = <1212500>;
++				opp-microvolt = <1212500 1212500 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-1600000000 {
+ 				opp-hz = /bits/ 64 <1600000000>;
+-				opp-microvolt = <1175000>;
++				opp-microvolt = <1175000 1175000 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-1500000000 {
+ 				opp-hz = /bits/ 64 <1500000000>;
+-				opp-microvolt = <1137500>;
++				opp-microvolt = <1137500 1137500 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-1400000000 {
+ 				opp-hz = /bits/ 64 <1400000000>;
+-				opp-microvolt = <1112500>;
++				opp-microvolt = <1112500 1112500 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-1300000000 {
+ 				opp-hz = /bits/ 64 <1300000000>;
+-				opp-microvolt = <1062500>;
++				opp-microvolt = <1062500 1062500 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-1200000000 {
+ 				opp-hz = /bits/ 64 <1200000000>;
+-				opp-microvolt = <1037500>;
++				opp-microvolt = <1037500 1037500 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-1100000000 {
+ 				opp-hz = /bits/ 64 <1100000000>;
+-				opp-microvolt = <1012500>;
++				opp-microvolt = <1012500 1012500 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-1000000000 {
+ 				opp-hz = /bits/ 64 <1000000000>;
+-				opp-microvolt = < 987500>;
++				opp-microvolt = < 987500 987500 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-900000000 {
+ 				opp-hz = /bits/ 64 <900000000>;
+-				opp-microvolt = < 962500>;
++				opp-microvolt = < 962500 962500 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-800000000 {
+ 				opp-hz = /bits/ 64 <800000000>;
+-				opp-microvolt = < 937500>;
++				opp-microvolt = < 937500 937500 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 			opp-700000000 {
+ 				opp-hz = /bits/ 64 <700000000>;
+-				opp-microvolt = < 912500>;
++				opp-microvolt = < 912500 912500 1500000>;
+ 				clock-latency-ns = <140000>;
+ 			};
+ 		};
+@@ -1100,23 +1100,23 @@
  
--	if (bus->regulator)
--		regulator_disable(bus->regulator);
--
- 	dev_pm_opp_of_remove_table(dev);
- 	clk_disable_unprepare(bus->clk);
-+	if (bus->regulator)
-+		regulator_disable(bus->regulator);
- }
+ 			opp00 {
+ 				opp-hz = /bits/ 64 <84000000>;
+-				opp-microvolt = <925000>;
++				opp-microvolt = <925000 925000 1400000>;
+ 			};
+ 			opp01 {
+ 				opp-hz = /bits/ 64 <111000000>;
+-				opp-microvolt = <950000>;
++				opp-microvolt = <950000 950000 1400000>;
+ 			};
+ 			opp02 {
+ 				opp-hz = /bits/ 64 <222000000>;
+-				opp-microvolt = <950000>;
++				opp-microvolt = <950000 950000 1400000>;
+ 			};
+ 			opp03 {
+ 				opp-hz = /bits/ 64 <333000000>;
+-				opp-microvolt = <950000>;
++				opp-microvolt = <950000 950000 1400000>;
+ 			};
+ 			opp04 {
+ 				opp-hz = /bits/ 64 <400000000>;
+-				opp-microvolt = <987500>;
++				opp-microvolt = <987500 987500 1400000>;
+ 			};
+ 		};
  
- /*
-@@ -386,6 +385,7 @@ static int exynos_bus_probe(struct platform_device *pdev)
- 	struct exynos_bus *bus;
- 	int ret, max_state;
- 	unsigned long min_freq, max_freq;
-+	bool passive = false;
+diff --git a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
+index 25d95de15c9b..65d094256b54 100644
+--- a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
++++ b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
+@@ -428,6 +428,8 @@
+ 				regulator-max-microvolt = <1500000>;
+ 				regulator-always-on;
+ 				regulator-boot-on;
++				regulator-coupled-with = <&buck3_reg>;
++				regulator-coupled-max-spread = <300000>;
+ 			};
  
- 	if (!np) {
- 		dev_err(dev, "failed to find devicetree node\n");
-@@ -399,27 +399,27 @@ static int exynos_bus_probe(struct platform_device *pdev)
- 	bus->dev = &pdev->dev;
- 	platform_set_drvdata(pdev, bus);
+ 			buck3_reg: BUCK3 {
+@@ -436,6 +438,8 @@
+ 				regulator-max-microvolt = <1400000>;
+ 				regulator-always-on;
+ 				regulator-boot-on;
++				regulator-coupled-with = <&buck2_reg>;
++				regulator-coupled-max-spread = <300000>;
+ 			};
  
--	/* Parse the device-tree to get the resource information */
--	ret = exynos_bus_parse_of(np, bus);
--	if (ret < 0)
--		return ret;
--
- 	profile = devm_kzalloc(dev, sizeof(*profile), GFP_KERNEL);
--	if (!profile) {
--		ret = -ENOMEM;
--		goto err;
--	}
-+	if (!profile)
-+		return -ENOMEM;
+ 			buck4_reg: BUCK4 {
+diff --git a/arch/arm/boot/dts/exynos5800-peach-pi.dts b/arch/arm/boot/dts/exynos5800-peach-pi.dts
+index e0f470fe54c8..5c1e965ed7e9 100644
+--- a/arch/arm/boot/dts/exynos5800-peach-pi.dts
++++ b/arch/arm/boot/dts/exynos5800-peach-pi.dts
+@@ -257,6 +257,8 @@
+ 				regulator-always-on;
+ 				regulator-boot-on;
+ 				regulator-ramp-delay = <12500>;
++				regulator-coupled-with = <&buck3_reg>;
++				regulator-coupled-max-spread = <300000>;
+ 				regulator-state-mem {
+ 					regulator-off-in-suspend;
+ 				};
+@@ -269,6 +271,8 @@
+ 				regulator-always-on;
+ 				regulator-boot-on;
+ 				regulator-ramp-delay = <12500>;
++				regulator-coupled-with = <&buck2_reg>;
++				regulator-coupled-max-spread = <300000>;
+ 				regulator-state-mem {
+ 					regulator-off-in-suspend;
+ 				};
+diff --git a/arch/arm/boot/dts/exynos5800.dtsi b/arch/arm/boot/dts/exynos5800.dtsi
+index 57d3b319fd65..2a74735d161c 100644
+--- a/arch/arm/boot/dts/exynos5800.dtsi
++++ b/arch/arm/boot/dts/exynos5800.dtsi
+@@ -22,61 +22,61 @@
  
- 	node = of_parse_phandle(dev->of_node, "devfreq", 0);
- 	if (node) {
- 		of_node_put(node);
--		goto passive;
-+		passive = true;
- 	} else {
- 		ret = exynos_bus_parent_parse_of(np, bus);
-+		if (ret < 0)
-+			return ret;
- 	}
- 
-+	/* Parse the device-tree to get the resource information */
-+	ret = exynos_bus_parse_of(np, bus);
- 	if (ret < 0)
--		goto err;
-+		goto err_reg;
-+
-+	if (passive)
-+		goto passive;
- 
- 	/* Initialize the struct profile and governor data for parent device */
- 	profile->polling_ms = 50;
-@@ -510,6 +510,9 @@ static int exynos_bus_probe(struct platform_device *pdev)
- err:
- 	dev_pm_opp_of_remove_table(dev);
- 	clk_disable_unprepare(bus->clk);
-+err_reg:
-+	if (!passive)
-+		regulator_disable(bus->regulator);
- 
- 	return ret;
- }
+ &cluster_a15_opp_table {
+ 	opp-1700000000 {
+-		opp-microvolt = <1250000>;
++		opp-microvolt = <1250000 1250000 1500000>;
+ 	};
+ 	opp-1600000000 {
+-		opp-microvolt = <1250000>;
++		opp-microvolt = <1250000 1250000 1500000>;
+ 	};
+ 	opp-1500000000 {
+-		opp-microvolt = <1100000>;
++		opp-microvolt = <1100000 1100000 1500000>;
+ 	};
+ 	opp-1400000000 {
+-		opp-microvolt = <1100000>;
++		opp-microvolt = <1100000 1100000 1500000>;
+ 	};
+ 	opp-1300000000 {
+-		opp-microvolt = <1100000>;
++		opp-microvolt = <1100000 1100000 1500000>;
+ 	};
+ 	opp-1200000000 {
+-		opp-microvolt = <1000000>;
++		opp-microvolt = <1000000 1000000 1500000>;
+ 	};
+ 	opp-1100000000 {
+-		opp-microvolt = <1000000>;
++		opp-microvolt = <1000000 1000000 1500000>;
+ 	};
+ 	opp-1000000000 {
+-		opp-microvolt = <1000000>;
++		opp-microvolt = <1000000 1000000 1500000>;
+ 	};
+ 	opp-900000000 {
+-		opp-microvolt = <1000000>;
++		opp-microvolt = <1000000 1000000 1500000>;
+ 	};
+ 	opp-800000000 {
+-		opp-microvolt = <900000>;
++		opp-microvolt = <900000 900000 1500000>;
+ 	};
+ 	opp-700000000 {
+-		opp-microvolt = <900000>;
++		opp-microvolt = <900000 900000 1500000>;
+ 	};
+ 	opp-600000000 {
+ 		opp-hz = /bits/ 64 <600000000>;
+-		opp-microvolt = <900000>;
++		opp-microvolt = <900000 900000 1500000>;
+ 		clock-latency-ns = <140000>;
+ 	};
+ 	opp-500000000 {
+ 		opp-hz = /bits/ 64 <500000000>;
+-		opp-microvolt = <900000>;
++		opp-microvolt = <900000 900000 1500000>;
+ 		clock-latency-ns = <140000>;
+ 	};
+ 	opp-400000000 {
+ 		opp-hz = /bits/ 64 <400000000>;
+-		opp-microvolt = <900000>;
++		opp-microvolt = <900000 900000 1500000>;
+ 		clock-latency-ns = <140000>;
+ 	};
+ 	opp-300000000 {
+ 		opp-hz = /bits/ 64 <300000000>;
+-		opp-microvolt = <900000>;
++		opp-microvolt = <900000 900000 1500000>;
+ 		clock-latency-ns = <140000>;
+ 	};
+ 	opp-200000000 {
+ 		opp-hz = /bits/ 64 <200000000>;
+-		opp-microvolt = <900000>;
++		opp-microvolt = <900000 900000 1500000>;
+ 		clock-latency-ns = <140000>;
+ 	};
+ };
 -- 
 2.22.0
 
