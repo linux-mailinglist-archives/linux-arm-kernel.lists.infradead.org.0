@@ -2,110 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF48284A69
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 13:14:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BF9384A78
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 13:17:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dv8n0ChSA/xiTVWENegTltRikFaqoAcnxbPfaopsiEE=; b=NhOpYXfmN8+PmJ
-	R7QWolZiJc//mhUmu8T5VtJYA2eUc61lN7QjTHeVhTxknTDOO3hxR3hsVF9Ka8MW86Rj/eHHU/zxw
-	bHb9jn4nrp8w4/PjsLvImTPmUKJw9qEhuEzxT2ZjEZA8GIDP2HWGf43GdAPv9rHAaot/2Iev+sfki
-	6CSkPZ3XOmBbHqOhplH06xJwFwdIaFG5RUueIJmNX0eDFAPqcfulQ9OpbjiMiU4xbjXpDgXtgrYSr
-	AXkZSetIqEoU759soyLvdgwQG4098WoUcr5WF72U7zn2HTvVWsVWvUgo7LpWgIb4p+gRmUSKAGwnf
-	21pb8sofqxLT9IaJ3K0A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=f9CihOirPF05NxqqSNQ12pIK1sMKq03+14zLEC7Dti0=; b=bpi0NctSsqSD0N3td0Z5u3QER
+	E+FZBC9pYBysASKhdoFJktSOgFw+/Sv6cMYOwnXz/8m2L5wbIPGPjgCkPPYNc9ZivleVW0g0CsGY+
+	fMsbtAcZ0nicHGA2oDhsTwitjywTVzsC4xWxYGxBV/WLPUT8buKf6KZht59q+zijFuhV3SFSEk2EV
+	JhnxRqjOrAtc7p+1KmODatgfilb6X2+AIRpXKiNGO9u1DBaXI7vc0uS1JQMjQT/V2EeEjySfpdhjp
+	0OYBJTSEtnS31HGSYpC27H6ecDWOnL440Ndl6Xc3due7ZUDO7pfeY7ScmKQrLGBQ3iXzP+Xc2WFSG
+	fEj2FqydQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvJtF-0003SL-1F; Wed, 07 Aug 2019 11:13:57 +0000
-Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
+	id 1hvJwA-00057N-Vg; Wed, 07 Aug 2019 11:16:59 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvJsg-0003Jd-Hz
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 11:13:30 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 463TPw5FgCz1s4qV;
- Wed,  7 Aug 2019 13:13:08 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 463TPw51Tmz1r4hY;
- Wed,  7 Aug 2019 13:13:08 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id 4E1wdrU5Y7Y2; Wed,  7 Aug 2019 13:13:07 +0200 (CEST)
-X-Auth-Info: BJcZCf3+AbDuc7uUBhvvWmLy86/WPgKiZ3fz3q10stg=
-Received: from [IPv6:::1] (unknown [195.140.253.167])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hvJvw-00056g-Aw
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 11:16:45 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id DB75160795; Wed,  7 Aug 2019 11:16:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1565176602;
+ bh=wn8HVAyIf35oyGrdxkkAG6UgB7MluicsdBzxP+JPiYA=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=PKRTDch+ILT5c2mLnwRwIR/5vZ1qGH/zvy5OYZdharsH60lYWPtZ76yCtGP9WF+VY
+ BczYuOjejWeF6nE7qj1r75wHX3JND9awFU39HjG6wse2/nqCJ15BQJzd85zvudNug9
+ j70jXNlmj3m+5aAzlvKS7fST2nyhfPMbjk0iQ2yI=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [192.168.43.47] (unknown [223.237.242.11])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Wed,  7 Aug 2019 13:13:07 +0200 (CEST)
-Subject: Re: [PATCH] ARM: dts: socfpga: Fix up button mapping on VINING FPGA
-To: linux-arm-kernel@lists.infradead.org
-References: <20190628001920.1416-1-marex@denx.de>
-From: Marek Vasut <marex@denx.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marex@denx.de; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <a7c317e9-22d2-965e-7143-b07014cb5dfe@denx.de>
-Date: Wed, 7 Aug 2019 13:13:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 2FBE560795;
+ Wed,  7 Aug 2019 11:16:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1565176602;
+ bh=wn8HVAyIf35oyGrdxkkAG6UgB7MluicsdBzxP+JPiYA=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=PKRTDch+ILT5c2mLnwRwIR/5vZ1qGH/zvy5OYZdharsH60lYWPtZ76yCtGP9WF+VY
+ BczYuOjejWeF6nE7qj1r75wHX3JND9awFU39HjG6wse2/nqCJ15BQJzd85zvudNug9
+ j70jXNlmj3m+5aAzlvKS7fST2nyhfPMbjk0iQ2yI=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 2FBE560795
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+Subject: Re: [PATCHv9 1/3] arm64: dts: qcom: sdm845: Add Coresight support
+To: Suzuki K Poulose <suzuki.poulose@arm.com>, mathieu.poirier@linaro.org,
+ bjorn.andersson@linaro.org, leo.yan@linaro.org,
+ alexander.shishkin@linux.intel.com, agross@kernel.org,
+ david.brown@linaro.org, mark.rutland@arm.com
+References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
+ <be6d77eb6c7498df09d04e0a369d4d65b38f4b8e.1564550873.git.saiprakash.ranjan@codeaurora.org>
+ <b50c06d4-8298-7abe-4442-2aff336509f5@codeaurora.org>
+ <b5cb08ef-ca2f-e852-f234-d0f693b58596@codeaurora.org>
+ <adc1ac7a-877a-73cf-4051-4e3b4017799b@arm.com>
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Message-ID: <20da41d4-7626-0fd8-ebd3-f8a632b3cac2@codeaurora.org>
+Date: Wed, 7 Aug 2019 16:46:26 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190628001920.1416-1-marex@denx.de>
+In-Reply-To: <adc1ac7a-877a-73cf-4051-4e3b4017799b@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_041325_829645_38248495 
-X-CRM114-Status: GOOD (  10.74  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190807_041644_401914_CFDDDD6D 
+X-CRM114-Status: GOOD (  11.77  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,20 +104,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dinh Nguyen <dinguyen@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: rnayak@codeaurora.org, marc.w.gonzalez@free.fr,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ sibis@codeaurora.org, vivek.gautam@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/28/19 2:19 AM, Marek Vasut wrote:
-> Add missing buttons and signals to the VINING FPGA device tree,
-> so they are presented to the userspace via gpio-keys evdev.
+On 8/7/2019 3:42 PM, Suzuki K Poulose wrote:
+> Sai,
 > 
-> Signed-off-by: Marek Vasut <marex@denx.de>
-> Cc: Dinh Nguyen <dinguyen@kernel.org>
+>> Any more tests you would want me to run?
+> 
+> Apologies for the late response. I had seen the results and they look fine.
+> I was hitting some issues, which I have now root caused to firmware issues.
+> So we are good to go.
+> 
 
-Bump ?
+Thanks Suzuki.
+
+Hi Bjorn, any chance you could pull these in?
+
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
