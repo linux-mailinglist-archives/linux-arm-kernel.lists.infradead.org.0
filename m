@@ -2,84 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FDA384C92
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 15:13:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9967A84CD1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 15:22:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3LJo+Njhvyj/CffyAUwBdGUWnzif1KtDTP4XY2LFkU4=; b=j3evT/Pml/80u2
-	s12IA9jxcYhJzehxqT98yc4R32aiWZhuE7jvsVLRZKe/0mSHwf/F3F9LDCMTgp+3njpRl1gliGzsL
-	uZ3Izc/aOhomq1YQak37SA8cx1EiI1ts6fIudamMvlWBpD0oS5ugPTBkj7ZY8hmtVfLkTw1aoDv4n
-	mZdqQ11e1FHn9DmLPnsG8sb7hydw/SHoxnHyJVKmRkmek3CvNEICE/wG3fxUfnC9O0qarAAWR6jOF
-	L/zlWlY2p6wcfXOpkkf9WvblP+nkN0UYyVJrsQV5kPVhg+N4YLtcx777X28AlWHQyCpiVF22ETrU9
-	hOwT+FTSsiTP6ESgOWcQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gusjxId2h5qGRPz9LH00+O84ShnsRK4X+3vvF5aSmgU=; b=NVq2WvibDWtlFZ
+	hjTEBnEX5YbguTHhQD/PH5OwCV0+bMP4iVmdAluyDcdPf91gU8odRdTE31q8smJ1wjlJtV+IsRbW8
+	x3CivEpJ717Y2aobVJyqjWrAf1M6/O3ZumrCSr4Usxk/IrDa4TxHDNyhnBDOx5cBm/NIkKCvy3SGj
+	0OVfH/tzEiDISvf2NI9B8UGECLsNMIlSlpHtDNtASdhZyfW+TQuA7NnGJahBMcRkdfALTRGlhFKsP
+	zF+YV+eOqFEQ2J4Ks+wkn77oepvqtRM5+MRaaxpqcFLX9yv3CS7wAQ/i6x4eQgXNeWZMhvaZyrl0o
+	6f8xh4CZFSHr48kqgivg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvLko-00007K-Bq; Wed, 07 Aug 2019 13:13:22 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvLkb-00006e-7n
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 13:13:11 +0000
-Received: by mail-lf1-x144.google.com with SMTP id b17so64011258lff.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 07 Aug 2019 06:13:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QPeSCYBgEa5oHwi1QvDtW28UD0MCoSfvST8mfWPIVyY=;
- b=c4cZ1y0tVhiymf92vKCdpgKV+43I/vq5Hq954nP/OGUR83Al7woXs7oQ+xM2A+9xlt
- zkLV5BhRMU4hBSd8vZW7ixinpfEKEP6SBL4D6TDHbJwfjF9Ca+5KZmlzPImEBg5RsHml
- wbpK1wfmu+hAZX8AxkAGBzpYPT6uFEIpMMKXMSbSnfLdcU4VXCHaET1Uw03eaFmy7PvX
- i0C2gHqF7qfGN7eqx+JZg/IiFbUy/euOvdAd+NE0qtyJCwObVcLbXGD7Pct7PPe8GWyn
- zJVpkNkJ4VowqJzICmPlcSAH1mJVVMBcZlAx49s2JPt3nD/l2hsgjSPpYkpHyv2slKSc
- E84Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QPeSCYBgEa5oHwi1QvDtW28UD0MCoSfvST8mfWPIVyY=;
- b=DCJ5NVVB5Jsc8IsvsA9TPkbrv39LAfNUm9fvlO+OpsmZUCw50MNTNB7DlbdQxJSYZs
- OxCQr55USaYe0AF+zsF1TyZ54/KNvx3OiKGQCaoZ9O5tNz8dJZVeGFX8SsP5hqWurLQi
- 6KG2bmAuBiNNSPtUuBGLW8VpcV5G5riezrvJk+nj5/20AS7UsLwMQCjLvZ5XkVkhlnus
- QAizJ/OBgYkch7n5fjzma+LjRuhmS7GkKvxWzdA5I64NVWQ1VZu5K77DUhidfii+cVdW
- m4C6tty/Has/cTd0PQ05qsl6wLaao+helDTkqcpe9mfPTekT1zYreeRPq5uORXmB5PlS
- aoVA==
-X-Gm-Message-State: APjAAAVSBh3ZQ9sqJGi7N2PyY7T59CWYraDXfj4yqxMW7lMokRCCSy4y
- 8zKXFGSyYYNwbSBMZJoPtR6PiudT7qCdJGouPQ9v7w==
-X-Google-Smtp-Source: APXvYqza6NtwlGeUFU7vhHOfryh8rYMl0CQaYDfKwaupdDGLNeQyV54Th56/MC1GP5/Xg+l8Cv9vr56lPJQ1c5I8FGM=
-X-Received: by 2002:a19:e006:: with SMTP id x6mr5763750lfg.165.1565183584803; 
- Wed, 07 Aug 2019 06:13:04 -0700 (PDT)
+	id 1hvLtC-00038E-2Y; Wed, 07 Aug 2019 13:22:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvLsu-00037L-Nh
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 13:21:46 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8AC0128;
+ Wed,  7 Aug 2019 06:21:43 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B93843F706;
+ Wed,  7 Aug 2019 06:21:41 -0700 (PDT)
+Subject: Re: [PATCH 1/9] KVM: arm64: Document PV-time interface
+To: Christophe de Dinechin <christophe.de.dinechin@gmail.com>
+References: <20190802145017.42543-1-steven.price@arm.com>
+ <20190802145017.42543-2-steven.price@arm.com> <m1mugnmv0x.fsf@dinechin.org>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <ff2d038d-d866-65fa-655d-b9865bf14016@arm.com>
+Date: Wed, 7 Aug 2019 14:21:40 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190728235614.GA23618@embeddedor>
-In-Reply-To: <20190728235614.GA23618@embeddedor>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 7 Aug 2019 15:12:53 +0200
-Message-ID: <CACRpkdZuC0PS7GB_rx4q7YSbVHan0Jy0L+pmDuJv7ec=b6UoSg@mail.gmail.com>
-Subject: Re: [PATCH] mfd: db8500-prcmu: Mark expected switch fall-throughs
-To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+In-Reply-To: <m1mugnmv0x.fsf@dinechin.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_061310_156204_7D8D2C19 
-X-CRM114-Status: UNSURE (   8.55  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190807_062144_866242_1F291FAA 
+X-CRM114-Status: GOOD (  24.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,43 +62,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>, Lee Jones <lee.jones@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kees Cook <keescook@chromium.org>
+Cc: =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?= <rkrcmar@redhat.com>, kvm@vger.kernel.org,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-doc@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, Marc Zyngier <maz@kernel.org>,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 29, 2019 at 1:56 AM Gustavo A. R. Silva
-<gustavo@embeddedor.com> wrote:
+On 05/08/2019 17:40, Christophe de Dinechin wrote:
+> 
+> Steven Price writes:
+> 
+>> Introduce a paravirtualization interface for KVM/arm64 based on the
+>> "Arm Paravirtualized Time for Arm-Base Systems" specification DEN 0057A.
+>>
+>> This only adds the details about "Stolen Time" as the details of "Live
+>> Physical Time" have not been fully agreed.
+>>
+> [...]
+> 
+>> +
+>> +Stolen Time
+>> +-----------
+>> +
+>> +The structure pointed to by the PV_TIME_ST hypercall is as follows:
+>> +
+>> +  Field       | Byte Length | Byte Offset | Description
+>> +  ----------- | ----------- | ----------- | --------------------------
+>> +  Revision    |      4      |      0      | Must be 0 for version 0.1
+>> +  Attributes  |      4      |      4      | Must be 0
+>> +  Stolen time |      8      |      8      | Stolen time in unsigned
+>> +              |             |             | nanoseconds indicating how
+>> +              |             |             | much time this VCPU thread
+>> +              |             |             | was involuntarily not
+>> +              |             |             | running on a physical CPU.
+> 
+> I know very little about the topic, but I don't understand how the spec
+> as proposed allows an accurate reading of the relation between physical
+> time and stolen time simultaneously. In other words, could you draw
+> Figure 1 of the spec from within the guest? Or is it a non-objective?
 
-> Mark switch cases where we are expecting to fall through.
->
-> This patch fixes the following warnings:
->
-> drivers/mfd/db8500-prcmu.c: In function 'dsiclk_rate':
-> drivers/mfd/db8500-prcmu.c:1592:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
->    div *= 2;
->    ~~~~^~~~
-> drivers/mfd/db8500-prcmu.c:1593:2: note: here
->   case PRCM_DSI_PLLOUT_SEL_PHI_2:
->   ^~~~
-> drivers/mfd/db8500-prcmu.c:1594:7: warning: this statement may fall through [-Wimplicit-fallthrough=]
->    div *= 2;
->    ~~~~^~~~
-> drivers/mfd/db8500-prcmu.c:1595:2: note: here
->   case PRCM_DSI_PLLOUT_SEL_PHI:
->   ^~~~
->
-> Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
-> Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+Figure 1 is mostly attempting to explain Live Physical Time (LPT), which
+is not part of this patch series. But it does touch on stolen time by
+the difference between "live physical time" and "virtual time".
 
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+I'm not sure what you mean by "from within the guest". From the
+perspective of the guest the parts of the diagram where the guest isn't
+running don't exist (therefore there are discontinuities in the
+"physical time" and "live physical time" lines).
 
-Yours,
-Linus Walleij
+This patch series doesn't attempt to provide the guest with a view of
+"physical time" (or LPT) - but it might be able to observe that by
+consulting something external (e.g. an NTP server, or an emulated RTC
+which reports wall-clock time).
+
+What it does provide is a mechanism for obtaining the difference (as
+reported by the host) between "live physical time" and "virtual time" -
+this is reported in nanoseconds in the above structure.
+
+> For example, if you read the stolen time before you read CNTVCT_EL0,
+> isn't it possible for a lengthy event like a migration to occur between
+> the two reads, causing the stolen time to be obsolete and off by seconds?
+
+"Lengthy events" like migration are represented by the "paused" state in
+the diagram - i.e. it's the difference between "physical time" and "live
+physical time". So stolen time doesn't attempt to represent that.
+
+And yes, there is a race between reading CNTVCT_EL0 and reading stolen
+time - but in practice this doesn't really matter. The usual pseudo-code
+way of using stolen time is:
+
+  * scheduler captures stolen time from structure and CNTVCT_EL0:
+      before_timer = CNTVCT_EL0
+      before_stolen = stolen
+  * schedule in process
+  * process is pre-empted (or blocked in some way)
+  * scheduler captures stolen time from structure and CNTVCT_EL0:
+      after_timer = CNTVCT_EL0
+      after_stolen = stolen
+      time = to_nsecs(after_timer - before_timer) -
+             (after_stolen - before_stolen)
+
+The scheduler can then charge the process for "time" nanoseconds of
+time. This ensures that a process isn't unfairly penalised if the host
+doesn't schedule the VCPU while it is supposed to be running.
+
+The race is very small in comparison to the time the process is running,
+and in the worst case just means the process is charged slightly more
+(or less) than it should be.
+
+I guess if you're really worried about it, you could do a dance like:
+
+	do {
+		before = stolen
+		timer = CNTVCT_EL0
+		after = stolen
+	} while (before != after);
+
+But I don't see the need to have such an accurate view of elapsed time
+that the VCPU was scheduled. And of course at the moment (without this
+series) the guest has no idea about time stolen by the host.
+
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
