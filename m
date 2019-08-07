@@ -2,88 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BF9384A78
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 13:17:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52BDF84A7F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 13:18:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=f9CihOirPF05NxqqSNQ12pIK1sMKq03+14zLEC7Dti0=; b=bpi0NctSsqSD0N3td0Z5u3QER
-	E+FZBC9pYBysASKhdoFJktSOgFw+/Sv6cMYOwnXz/8m2L5wbIPGPjgCkPPYNc9ZivleVW0g0CsGY+
-	fMsbtAcZ0nicHGA2oDhsTwitjywTVzsC4xWxYGxBV/WLPUT8buKf6KZht59q+zijFuhV3SFSEk2EV
-	JhnxRqjOrAtc7p+1KmODatgfilb6X2+AIRpXKiNGO9u1DBaXI7vc0uS1JQMjQT/V2EeEjySfpdhjp
-	0OYBJTSEtnS31HGSYpC27H6ecDWOnL440Ndl6Xc3due7ZUDO7pfeY7ScmKQrLGBQ3iXzP+Xc2WFSG
-	fEj2FqydQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=O1yWcsjiJzYCTTN4znAKp7r7gjGTGDqndaOCt+8A+Mk=; b=SHUsf8LtM1PQO+
+	AChdG6OllU/R2+QnAKpXVTUrPG2eu6K4bKdREDItTRcoqZkbSUqpnXAKdYvjPji6/4cZmklOy+sDV
+	J6xnO/0HCAAJieSCJMvrch9wGTqbJbq8oOGcWHN2a1fzAzCaqaWNVeVRAGl3o5DyPvrpQ5VRi2yJs
+	w3RB4odAW/QDfXl1VF2Pgqf0qg3FMFXRatdSiZFkCA+OYGCmT++mXMJ5ibsYOrJ3AnZkhV3lwpjkv
+	tynEGdnKFiN3UZXbxyTg1kIYh4mS1KkIX9e+K8ulOgjw2dR8x7aTIKdYViXLZ4CEST+bHABRx1h0v
+	rNQ7dahA8OcPZZDY+nhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvJwA-00057N-Vg; Wed, 07 Aug 2019 11:16:59 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hvJxq-0005Pl-JM; Wed, 07 Aug 2019 11:18:42 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvJvw-00056g-Aw
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 11:16:45 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id DB75160795; Wed,  7 Aug 2019 11:16:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1565176602;
- bh=wn8HVAyIf35oyGrdxkkAG6UgB7MluicsdBzxP+JPiYA=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=PKRTDch+ILT5c2mLnwRwIR/5vZ1qGH/zvy5OYZdharsH60lYWPtZ76yCtGP9WF+VY
- BczYuOjejWeF6nE7qj1r75wHX3JND9awFU39HjG6wse2/nqCJ15BQJzd85zvudNug9
- j70jXNlmj3m+5aAzlvKS7fST2nyhfPMbjk0iQ2yI=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [192.168.43.47] (unknown [223.237.242.11])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 2FBE560795;
- Wed,  7 Aug 2019 11:16:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1565176602;
- bh=wn8HVAyIf35oyGrdxkkAG6UgB7MluicsdBzxP+JPiYA=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=PKRTDch+ILT5c2mLnwRwIR/5vZ1qGH/zvy5OYZdharsH60lYWPtZ76yCtGP9WF+VY
- BczYuOjejWeF6nE7qj1r75wHX3JND9awFU39HjG6wse2/nqCJ15BQJzd85zvudNug9
- j70jXNlmj3m+5aAzlvKS7fST2nyhfPMbjk0iQ2yI=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 2FBE560795
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-Subject: Re: [PATCHv9 1/3] arm64: dts: qcom: sdm845: Add Coresight support
-To: Suzuki K Poulose <suzuki.poulose@arm.com>, mathieu.poirier@linaro.org,
- bjorn.andersson@linaro.org, leo.yan@linaro.org,
- alexander.shishkin@linux.intel.com, agross@kernel.org,
- david.brown@linaro.org, mark.rutland@arm.com
-References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <be6d77eb6c7498df09d04e0a369d4d65b38f4b8e.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <b50c06d4-8298-7abe-4442-2aff336509f5@codeaurora.org>
- <b5cb08ef-ca2f-e852-f234-d0f693b58596@codeaurora.org>
- <adc1ac7a-877a-73cf-4051-4e3b4017799b@arm.com>
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Message-ID: <20da41d4-7626-0fd8-ebd3-f8a632b3cac2@codeaurora.org>
-Date: Wed, 7 Aug 2019 16:46:26 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hvJxc-0005Ox-MV
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 11:18:30 +0000
+Received: by mail-lj1-x241.google.com with SMTP id x25so85177490ljh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 07 Aug 2019 04:18:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=OPtDIWD1oyhmvgdHSOSG81TcfHz+uzX2gkbcVtn5ULE=;
+ b=BKg1XWz76ThRetJwm2Ypk0pOm23cGUXpYhH2r8gddn3xAjYJ5CWfD0j1qyCgWuBRiO
+ C/epNQA8aWh/sWQPKrkiHTvxQc4z0L3ncGkiKT0bAdwiq1C61QtpvTCcDCW2uisk7OR+
+ 7FlctYuyZKTgbys5tZ3EXNLSxgyj67UoT7nVsDQZ0rxhoBjyoHwvMmpjfKteZ6UV47R0
+ 6I76lQUTYm5Z1UICmiqzv9ysTQzx4j475gksfMPOTwidtbkVNH7ujF9jiaex+H0CKkWL
+ VGvkpCPKtPKwVLnn7kpe+xOcNHPE88/eAg6A4xUwbiysqwIuGhMLzQf6UsUfkOI12GfL
+ MXDA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=OPtDIWD1oyhmvgdHSOSG81TcfHz+uzX2gkbcVtn5ULE=;
+ b=iqN8+pFO/B3IbZocC+G6R28eGoJWiKaM0zLiHUNSu6vJ6AxLrt1o+if4zBu3Bl30Dm
+ /AKxLFq39bi8f+swlM3Tp01fptUGFUaRkb4aS5lk9jqgcn9C6Ab6iHkZu1i1DOH2dfpy
+ eZ4CbNwpBocTyBa/RZU0EdYTKl3t6cQL5MKnKIz3RVHTwyu8de+OBYI9TCHY5ZW0RKha
+ sW/di0HdfsfpZaYiRZXyAV5A2lRFv9ypRk/bAcPAt8yChFClg9/+bMxjyuWwml4yuKRx
+ CgDGC226HKF6PgYd/y4h8KTlgjBJ937u5VubPtkBCwRrC6KhRn9C6BKSrEris4AASgDg
+ dpQA==
+X-Gm-Message-State: APjAAAU2KBAPFtLqgxPhBld+moK05eVZQm8/vxFHkNHrVERyq1OCZcjT
+ M+02CRiYVPYpYSpKnwh+kY0jvxWqjnNKChWKYKy9QQ==
+X-Google-Smtp-Source: APXvYqwTAVe95rSksZw+erekFdosmSxQDfjfhjtERnRYyENWOwshak+UScYbzsb44hFPW/YALmJunz/0Cw+mT4FzW4M=
+X-Received: by 2002:a2e:6e0c:: with SMTP id j12mr4497521ljc.123.1565176706159; 
+ Wed, 07 Aug 2019 04:18:26 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <adc1ac7a-877a-73cf-4051-4e3b4017799b@arm.com>
-Content-Language: en-US
+From: Naresh Kamboju <naresh.kamboju@linaro.org>
+Date: Wed, 7 Aug 2019 16:48:15 +0530
+Message-ID: <CA+G9fYvehn=5Rn0RHjFvCc1pCDFTUtxNeR11CQjD6rjM53D4ig@mail.gmail.com>
+Subject: Linux next-20190807: arm64: build failed -
+ phy-rockchip-inno-hdmi.c:1046:26:
+ error: anonymous bit-field has negative width (-1)
+To: open list <linux-kernel@vger.kernel.org>, 
+ Linux-Next Mailing List <linux-next@vger.kernel.org>, kishon@ti.com,
+ heiko@sntech.de, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ Stephen Rothwell <sfr@canb.auug.org.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_041644_401914_CFDDDD6D 
-X-CRM114-Status: GOOD (  11.77  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190807_041828_770807_DFEFB284 
+X-CRM114-Status: UNSURE (   4.33  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -104,35 +94,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rnayak@codeaurora.org, marc.w.gonzalez@free.fr,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- sibis@codeaurora.org, vivek.gautam@codeaurora.org,
- linux-arm-kernel@lists.infradead.org
+Cc: lkft-triage@lists.linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/7/2019 3:42 PM, Suzuki K Poulose wrote:
-> Sai,
-> 
->> Any more tests you would want me to run?
-> 
-> Apologies for the late response. I had seen the results and they look fine.
-> I was hitting some issues, which I have now root caused to firmware issues.
-> So we are good to go.
-> 
+Linux next 20190807 arm64 default config build failed due to below error.
 
-Thanks Suzuki.
+/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:1046:26: error:
+anonymous bit-field has negative width (-1)
+                inno_write(inno, 0xc6, RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(v));
+                                       ^
+../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:201:50: note:
+expanded from macro 'RK3328_TERM_RESISTOR_CALIB_SPEED_7_0'
+#define RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(x)         UPDATE(x, 7, 9)
+                                                        ^
+../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:24:42: note: expanded
+from macro 'UPDATE'
+#define UPDATE(x, h, l)         (((x) << (l)) & GENMASK((h), (l)))
+                                                ^
+../include/linux/bits.h:39:3: note: expanded from macro 'GENMASK'
+        (GENMASK_INPUT_CHECK(high, low) + __GENMASK(high, low))
+         ^
+../include/linux/bits.h:24:18: note: expanded from macro 'GENMASK_INPUT_CHECK'
+        ((unsigned long)BUILD_BUG_ON_ZERO(__builtin_choose_expr( \
+                        ^
+../include/linux/build_bug.h:16:47: note: expanded from macro
+'BUILD_BUG_ON_ZERO'
+#define BUILD_BUG_ON_ZERO(e) (sizeof(struct { int:(-!!(e)); }))
 
-Hi Bjorn, any chance you could pull these in?
+Config link,
+https://storage.kernelci.org/next/master/next-20190807/arm64/defconfig/clang-8/kernel.config
 
-Thanks,
-Sai
+Build link,
+https://storage.kernelci.org/next/master/next-20190807/arm64/defconfig/clang-8/build.log
 
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-of Code Aurora Forum, hosted by The Linux Foundation
+--
+Naresh Kamoju
 
 _______________________________________________
 linux-arm-kernel mailing list
