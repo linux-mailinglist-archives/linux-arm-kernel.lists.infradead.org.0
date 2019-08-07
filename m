@@ -2,37 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8523F849E1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 12:41:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C329849EC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 12:44:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mrSWkv3sxDOYDx5gYUQDUuvtgY3h1JqbcJDPXq+FnSs=; b=rFbK0KQoFWbnt2
-	hx5yHYFhslZSeLiFsJZwBGOyNuAjqoxrhkpvjDRO4WBYvkjOE34eeJZHQ/mk36VnPmyDzSoGiOyV/
-	9iwtcf/Bwar2BGMJdwHhJD7kWDouWvzOfpS4UG34JzAeW5XToyjCXLUyvDK3KDvjgunw8f43suYir
-	5cugGsyn1mVXYSeZEeDyVS9NYgulX/38icwwOTf2YjC/DsPTMOCNG/mmdy09ukSSWL2pVp3rHAoRz
-	XGw7qQTBuW82xXJYWW/nXLf8cP/xVwEiozp4H3a3VB3ByAOoSD7Xf5u7rQ5y5J90gjgZP+uefqVVp
-	oaLgMdAqYMBo5cpcw8+A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=36mYIi0Wz82N3J84p8tbcv0q3igA+X+uLF+QtOGdhxI=; b=DQSTwrxYK2QPs4
+	PJIxQ2Am7poBmfyQKwRHInCvtBERUgPQyGqgMUmRPLKZyeZCU2g6xABNVQp9gIOdNRC7RdXRkRNh6
+	zseg3olNjHIBIHmkJDMYeFreG5df9j9ZGhELffkEkNhtmKpzSUpT4ECdQAfIACZrBSYt4T+UXPnYv
+	RQhvCSoh1s+ed9scZH0Smv9U+u/t5oXGWannDnq+GbJpfqdqEqSBIPX/QUiX6vIRGP9wEfjk6WEgv
+	PIsgs9jDODZJuU7nwQThMqh4Aha4Sh73iI5flkGgr0zCNmvyMoWWwenR/xnuTWBLvLXvYPI/6DrB6
+	5YknahxPx9xhQ4unxFVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvJNd-0006tf-A9; Wed, 07 Aug 2019 10:41:17 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.92 #3 (Red Hat
- Linux)) id 1hvJNQ-0006tJ-Sh; Wed, 07 Aug 2019 10:41:04 +0000
-Date: Wed, 7 Aug 2019 03:41:04 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: "Koenig, Christian" <Christian.Koenig@amd.com>
-Subject: Re: [PATCH] drm/amdgpu: replace readq/writeq with atomic64 operations
-Message-ID: <20190807104104.GA18773@infradead.org>
-References: <20190807025640.682-1-tao.zhou1@amd.com>
- <20190807070834.GA24792@infradead.org>
- <daff9fc7-ead8-40e0-9a16-cb3b90b01722@amd.com>
+	id 1hvJQf-0007Ne-BI; Wed, 07 Aug 2019 10:44:25 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvJQI-0007Fh-BC
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 10:44:04 +0000
+Received: by mail-pl1-x644.google.com with SMTP id a93so40145103pla.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 07 Aug 2019 03:44:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=2fwKnWSm6BGaf1qCsMupL+FnU52l2lN+u1iw/EIqr50=;
+ b=EWjeCR0yZJKY3n3DA1O/jj/8jCNguYJGj041raPo9ib9owsgj23JoOYOCjzmT0TtY8
+ NPY410yaiHp7lw3/lZEhwftyrJNRX79Uxb0SkKgkCDRfoV76b90AYYpVW9LO4UNm+r28
+ 61IiR4cwEQh0/8Zc4pXpGvAeemCsH199taujg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=2fwKnWSm6BGaf1qCsMupL+FnU52l2lN+u1iw/EIqr50=;
+ b=LOHce2gtSRalbDBoFAeIJHTpeOyvmGVf6LzhlPv0+tGm0q8uO4Y/ydNtAVPnThad+J
+ hgzBHVW2AZur8e81Wt5/5KsX6HPazXYZUtxziLB1jOn/GPBsLkMJZNNzBhrdo2VRZlHf
+ riKB52p1G2ryeZEbyJ/in60bvwwL7ZPw9zG44AMXlXD61fv+w1qjS/NkUyGiAVaJVoUa
+ n9hUWWnOERaJf71a999XF0Lf/S5rfZEkqNabR4DZ4JFCQQrcxCZV+92SN1X/8AKb++OI
+ 1gscu42DY8aqi10b1T0euInybgbMqql5AT8HWdYA26Srk00OvZEvg4ZH/xkZTnOd8H+6
+ Kwzw==
+X-Gm-Message-State: APjAAAWIZHzLjVL9n9IJd07O2HIKOWTqKP2pD+Qsd7buf76QczckQb8h
+ g0X5nCngxGRDl6FOX71iOvevFg==
+X-Google-Smtp-Source: APXvYqwl+Lly+Mp853ylbDZIxsl9IpSvYkIq95u252zoo5bxtCncNtCNuULEpPhm+HMvPpkGgR8Ovg==
+X-Received: by 2002:a63:6ec1:: with SMTP id j184mr5727509pgc.232.1565174641058; 
+ Wed, 07 Aug 2019 03:44:01 -0700 (PDT)
+Received: from pihsun-z840.tpe.corp.google.com
+ ([2401:fa00:1:10:7889:7a43:f899:134c])
+ by smtp.googlemail.com with ESMTPSA id a3sm24747697pje.3.2019.08.07.03.43.59
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 07 Aug 2019 03:44:00 -0700 (PDT)
+From: Pi-Hsun Shih <pihsun@chromium.org>
+To: 
+Subject: [PATCH v15 0/5] Add support for mt8183 SCP.
+Date: Wed,  7 Aug 2019 18:43:41 +0800
+Message-Id: <20190807104352.259767-1-pihsun@chromium.org>
+X-Mailer: git-send-email 2.22.0.770.g0f2c4a37fd-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <daff9fc7-ead8-40e0-9a16-cb3b90b01722@amd.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190807_034402_442207_8FD25317 
+X-CRM114-Status: GOOD (  17.87  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -44,39 +93,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "kernel-build-reports@lists.linaro.org"
- <kernel-build-reports@lists.linaro.org>, "Zhou1, Tao" <Tao.Zhou1@amd.com>,
- "amd-gfx@lists.freedesktop.org" <amd-gfx@lists.freedesktop.org>,
- Christoph Hellwig <hch@infradead.org>,
- "broonie@kernel.org" <broonie@kernel.org>,
- "linux-next@vger.kernel.org" <linux-next@vger.kernel.org>, "Deucher,
- Alexander" <Alexander.Deucher@amd.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>, "Li,
- Dennis" <Dennis.Li@amd.com>, "Zhang, Hawking" <Hawking.Zhang@amd.com>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ "open list:REMOTE PROCESSOR REMOTEPROC SUBSYSTEM"
+ <linux-remoteproc@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Pi-Hsun Shih <pihsun@chromium.org>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 08:53:25AM +0000, Koenig, Christian wrote:
-> Am 07.08.19 um 09:08 schrieb Christoph Hellwig:
-> > On Wed, Aug 07, 2019 at 10:56:40AM +0800, Tao Zhou wrote:
-> >> readq/writeq are not supported on all architectures
-> > NAK.  You must not use atomic_* on __iomem (MMIO) memory.
-> 
-> Well then what's the right thing to do here?
-> 
-> Essentially writeq/readq doesn't seems to be available on all 
-> architectures either.
+Add support for controlling and communicating with mt8183's system
+control processor (SCP), using the remoteproc & rpmsg framework.
+And also add a cros_ec driver for CrOS EC host command over rpmsg.
 
-writeq/readq are provided whenever the CPU actually supports 64-bit
-atomic loads and stores.  If it doesn't provide them atomic64* is
-not going to be atomic vs the I/O device either.  And that is on top
-of the fact that for various architectures you can't simply use
-plain loads and stores on MMIO memory to start with, which is why
-we have the special accessors and the __iomem annotation.
+The overall structure of the series is:
+* remoteproc/mtk_scp.c: Control the start / stop of SCP (Patch 2, 3).
+* remoteproc/mtk_scp_ipi.c: Communicates to SCP using inter-processor
+  interrupt (IPI) and shared memory (Patch 2, 3).
+* rpmsg/mtk_rpmsg.c: Wrapper to wrap the IPI communication into a rpmsg
+  device. Supports name service for SCP firmware to
+  announce channels (Patch 4).
+* add scp dts node to mt8183 platform (Patch 5).
+
+Changes from v14:
+ - Fix a typo on variable in DEBUG section.
+
+Changes from v13:
+ - Move include/linux/platform_data/mtk_scp.h to
+   include/linux/remoteproc/mtk_scp.h.
+ - Rename scp_get_reserve_* to scp_get_reserved_*.
+ - Add lock for access of scp->ipi_desc.
+ - Lock the whole ipi_send function.
+ - Move more setting of cache size from SCP firmware to kernel driver,
+   to prevent problem while loading firmware onto DRAM.
+ - Minor fixes addressing comment.
+
+Changes from v12:
+ - Initialize cache before firmware load, to avoid problem while loading
+   large firmware.
+ - Disable watchdog before stopping SCP, to avoid extra warning message.
+ - Fix new warnings by checkpatch.
+
+Changes from v11:
+ - Fixed a bug that mtk_rpmsg_endpoint is not properly cleaned up if
+   rproc_boot fails.
+ - Add missing documentation in comment.
+
+Changes from v10:
+ - Drop applied cros_ec_rpmsg patches.
+ - Add clock reset before loading SCP firmware.
+ - Fix some type mismatch warnings when printing debug messages.
+
+Changes from v9:
+ - Remove reserve-memory-vpu_share node.
+ - Remove change to cros_ec_commands.h (That is already in
+   https://lore.kernel.org/lkml/20190518063949.GY4319@dell/T/)
+
+Changes from v8:
+ - Rebased onto https://patchwork.kernel.org/cover/10962385/.
+ - Drop merged cros_ec_rpmsg patch, and add scp dts node patch.
+ - Add more reserved memory region.
+
+Changes from v7:
+ - Rebase onto https://lore.kernel.org/patchwork/patch/1059196/.
+ - Fix clock enable/disable timing for SCP driver.
+ - Add more SCP IPI ID.
+
+Changes from v6:
+ - Decouple mtk_rpmsg from mtk_scp.
+ - Change data of EC response to be aligned to 4 bytes.
+
+Changes from v5:
+ - Add device tree binding document for cros_ec_rpmsg.
+ - Better document in comments for cros_ec_rpmsg.
+ - Remove dependency on CONFIG_ in binding tree document.
+
+Changes from v4:
+ - Merge patch 6 (Load ELF firmware) into patch 2, so the driver loads
+   ELF firmware by default, and no longer accept plain binary.
+ - rpmsg_device listed in device tree (as a child of the SCP node) would
+   have it's device tree node mapped to the rpmsg_device, so the rpmsg
+   driver can use the properties on device tree.
+
+Changes from v3:
+ - Make writing to SCP SRAM aligned.
+ - Add a new patch (Patch 6) to load ELF instead of bin firmware.
+ - Add host event support for EC driver.
+ - Fix some bugs found in testing (missing spin_lock_init,
+   rproc_subdev_unprepare to rproc_subdev_stop).
+ - Fix some coding style issue found by checkpatch.pl.
+
+Changes from v2:
+ - Fold patch 3 into patch 2 in v2.
+ - Move IPI id around to support cross-testing for old and new firmware.
+ - Finish more TODO items.
+
+Changes from v1:
+ - Extract functions and rename variables in mtk_scp.c.
+ - Do cleanup properly in mtk_rpmsg.c, which also removes the problem of
+   short-lived work items.
+ - Code format fix based on feedback for cros_ec_rpmsg.c.
+ - Extract feature detection for SCP into separate patch (Patch 6).
+
+Eddie Huang (1):
+  arm64: dts: mt8183: add scp node
+
+Erin Lo (3):
+  dt-bindings: Add a binding for Mediatek SCP
+  remoteproc/mediatek: add SCP support for mt8183
+  remoteproc: mt8183: add reserved memory manager API
+
+Pi-Hsun Shih (1):
+  rpmsg: add rpmsg support for mt8183 SCP.
+
+ .../bindings/remoteproc/mtk,scp.txt           |  36 +
+ arch/arm64/boot/dts/mediatek/mt8183-evb.dts   |  11 +
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi      |  12 +
+ drivers/remoteproc/Kconfig                    |  10 +
+ drivers/remoteproc/Makefile                   |   1 +
+ drivers/remoteproc/mtk_common.h               |  92 +++
+ drivers/remoteproc/mtk_scp.c                  | 710 ++++++++++++++++++
+ drivers/remoteproc/mtk_scp_ipi.c              | 159 ++++
+ drivers/rpmsg/Kconfig                         |   9 +
+ drivers/rpmsg/Makefile                        |   1 +
+ drivers/rpmsg/mtk_rpmsg.c                     | 414 ++++++++++
+ include/linux/remoteproc/mtk_scp.h            | 168 +++++
+ include/linux/rpmsg/mtk_rpmsg.h               |  38 +
+ 13 files changed, 1661 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/remoteproc/mtk,scp.txt
+ create mode 100644 drivers/remoteproc/mtk_common.h
+ create mode 100644 drivers/remoteproc/mtk_scp.c
+ create mode 100644 drivers/remoteproc/mtk_scp_ipi.c
+ create mode 100644 drivers/rpmsg/mtk_rpmsg.c
+ create mode 100644 include/linux/remoteproc/mtk_scp.h
+ create mode 100644 include/linux/rpmsg/mtk_rpmsg.h
+
+-- 
+2.22.0.770.g0f2c4a37fd-goog
 
 
 _______________________________________________
