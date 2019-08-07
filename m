@@ -2,77 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24E47846C3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 10:06:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CD8E846D6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 10:07:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=2gAE9j0lSTv7ezav8OIByRBKo0LlMbvYUD6W88uQh6E=; b=hQDEJCXQmEEPX+MDk7/jAxq7Dq
-	MVdCWNNQNlnNeUL+hU1VZllXcxL5pDqSYdkV2s3hUyKB/r9X9TuJRhRD0tt8+sBmjgGqrKOCJB+jI
-	v0Re3XMjBrzgNMewERkGIzSuRTQF3nnCqLqJz4yRKeWQp6pTTL1PpHlFVmmHMW9sPAL5noif2od/4
-	ZffIxk9jrPnlZo+JnzUfwfVOa5uRNaQX8gRNCDpVyd1Ev6XxCtxktd7qNAS5HCbx7/nQ1s+mwas1L
-	YI5aGzYNQq8wqThf6VQGDcT1EYxQ6R1mmrUMfGrkJB8ZQ1DLNbKisKqpsd7MYUA4HMw1PRhqthBKQ
-	tSDW9S5Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9zXk1GQvOw+hnhhRNhw2s0X8p4eQYgoOakV+EpX5sdU=; b=Pz7AeKH6DCA5M7
+	7OruuyQ4MoqzPwEkqe3WPRJ1ppAJsLmOe+X22//Kjn/8uADzj/kgn/c8qS/Fo5Q/iG4xYsg5sfu8r
+	VOqbEhfOD0YtMHfQyDZ8HceT8ltmz5l4h3sRZYfwKaX3LotTtFLHtkeNuEBw9xKyzhkOTfi921jON
+	rOQw9GGvIxzrVtrKYpMytLHNMatSVwn305lG6olCY4v87mFMpS7qKxmD/IMalKtwYkhsEbILAGV2o
+	hSgJxxeTOWiZHOKn2vnXCwWfBgCkvWQfB7piAXFw0kxo172W8iuSIONpQJJMoAZiZGjwypnuWNexN
+	225m5C95rgltxRARu5ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvGxb-0007dc-Ch; Wed, 07 Aug 2019 08:06:15 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hvGyf-0002L7-Py; Wed, 07 Aug 2019 08:07:21 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvGuv-0003PD-Kc
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 08:03:35 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 04537C1228;
- Wed,  7 Aug 2019 08:03:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1565165008; bh=18B/BrYz2sxVzKeQcjktizOD0pcEwHNkm/ulnP89N5A=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=J0SjFBY7p3tHnixu17GQmKLzEIEqY225fRN41nepShur3EePhWr3eCR/zziEOypj6
- 5MbQW5tYmlI2AozsTeyNmA69vneLUOZMJkpa/xk+mC3xzzCEmYZ9yj6i6+5ui1pT0v
- V+Zs+Pfo3fGPG323fG6UhlHIsE7TgrPm4/GmRa9M7EEDYZ5VkqIJ7UHHwGX2BkhPH9
- zmTBy42FfoXYeYW8Zf5rxV37AkrTRbKCsTsPu4AHBqglCTICV+owprbwNb8B+3zskm
- a7CtGyvV6MvmykqbEU8BvwGOwtLKUW3ckC/2LMsjgIhI8xFJm7mmWyF3u/EiOLYumc
- 4y06kITDZoSPQ==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id BDEDCA007C;
- Wed,  7 Aug 2019 08:03:26 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net-next v3 10/10] net: stmmac: selftests: Add a selftest for
- Flexible RX Parser
-Date: Wed,  7 Aug 2019 10:03:18 +0200
-Message-Id: <1db98f63265e0e8727a56a4d963164d133c5cef0.1565164730.git.joabreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1565164729.git.joabreu@synopsys.com>
-References: <cover.1565164729.git.joabreu@synopsys.com>
-In-Reply-To: <cover.1565164729.git.joabreu@synopsys.com>
-References: <cover.1565164729.git.joabreu@synopsys.com>
+ id 1hvGvw-0004FE-V9
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 08:04:34 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1hvGvs-000855-EI; Wed, 07 Aug 2019 10:04:28 +0200
+Message-ID: <1565165066.5048.2.camel@pengutronix.de>
+Subject: Re: [PATCH v2 5/5] reset: Add support for resets provided by SCMI
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Date: Wed, 07 Aug 2019 10:04:26 +0200
+In-Reply-To: <20190806170208.6787-6-sudeep.holla@arm.com>
+References: <20190806170208.6787-1-sudeep.holla@arm.com>
+ <20190806170208.6787-6-sudeep.holla@arm.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_010329_718626_13F31323 
-X-CRM114-Status: GOOD (  15.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190807_010433_076377_CB97B722 
+X-CRM114-Status: GOOD (  21.65  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,171 +64,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Peng Fan <peng.fan@nxp.com>, Etienne Carriere <etienne.carriere@linaro.org>,
+ Souvik Chakravarty <Souvik.Chakravarty@arm.com>, wesleys@xilinx.com,
+ aidapala@qti.qualcomm.com, linux-kernel@vger.kernel.org,
+ Saeed Nowshadi <saeed.nowshadi@xilinx.com>,
+ Bo Zhang <bozhang.zhang@broadcom.com>, Felix Burton <fburton@xilinx.com>,
+ Jim Quinlan <james.quinlan@broadcom.com>, pajay@qti.qualcomm.com,
+ Gaku Inami <gaku.inami.xh@renesas.com>,
+ Volodymyr Babchuk <volodymyr_babchuk@epam.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a selftest for the Flexible RX Parser feature.
+On Tue, 2019-08-06 at 18:02 +0100, Sudeep Holla wrote:
+> On some ARM based systems, a separate Cortex-M based System Control
+> Processor(SCP) provides the overall power, clock, reset and system
+> control. System Control and Management Interface(SCMI) Message Protocol
+> is defined for the communication between the Application Cores(AP)
+> and the SCP.
+> 
+> Adds support for the resets provided using SCMI protocol for performing
+> reset management of various devices present on the SoC. Various reset
+> functionalities are achieved by the means of different ARM SCMI device
+> operations provided by the ARM SCMI framework.
+> 
+> Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> ---
+>  MAINTAINERS                |   1 +
+>  drivers/reset/Kconfig      |  11 ++++
+>  drivers/reset/Makefile     |   1 +
+>  drivers/reset/reset-scmi.c | 126 +++++++++++++++++++++++++++++++++++++
+>  4 files changed, 139 insertions(+)
+>  create mode 100644 drivers/reset/reset-scmi.c
+> 
+> v1->v2:
+> 	- Renamed RESET_ARM_SCMI to RESET_SCMI and reworded Kconfig text
+> 	- Dropped unused struct device pointer from scmi_reset_data
+> 	- Added to_scmi_handle which helped to remove some repetitive code
+> 	- Fixed some doxygen comments
+> 	- Initialised rcdev.nr_resets
+> 	- Fixed MODULE_DESCRIPTION
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 6426db5198f0..f4af5c59c116 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -15545,6 +15545,7 @@ F:	drivers/clk/clk-sc[mp]i.c
+>  F:	drivers/cpufreq/sc[mp]i-cpufreq.c
+>  F:	drivers/firmware/arm_scpi.c
+>  F:	drivers/firmware/arm_scmi/
+> +F:	drivers/reset/reset-scmi.c
+>  F:	include/linux/sc[mp]i_protocol.h
+>  
+>  SYSTEM RESET/SHUTDOWN DRIVERS
+> diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
+> index 21efb7d39d62..4178ac11ba85 100644
+> --- a/drivers/reset/Kconfig
+> +++ b/drivers/reset/Kconfig
+> @@ -116,6 +116,17 @@ config RESET_QCOM_PDC
+>  	  to control reset signals provided by PDC for Modem, Compute,
+>  	  Display, GPU, Debug, AOP, Sensors, Audio, SP and APPS.
+>  
+> +config RESET_SCMI
+> +	tristate "Reset driver controlled via ARM SCMI interface"
+> +	depends on ARM_SCMI_PROTOCOL || COMPILE_TEST
+> +	default ARM_SCMI_PROTOCOL
+> +	help
+> +	  This driver provides support for reset signal/domains that are
+> +	  controlled by firmware that implements the SCMI interface.
+> +
+> +	  This driver uses SCMI Message Protocol to interact with the
+> +	  firmware controlling all the reset signals.
+> +
+>  config RESET_SIMPLE
+>  	bool "Simple Reset Controller Driver" if COMPILE_TEST
+>  	default ARCH_STM32 || ARCH_STRATIX10 || ARCH_SUNXI || ARCH_ZX || ARCH_ASPEED || ARCH_BITMAIN
+> diff --git a/drivers/reset/Makefile b/drivers/reset/Makefile
+> index 61456b8f659c..cf60ce526064 100644
+> --- a/drivers/reset/Makefile
+> +++ b/drivers/reset/Makefile
+> @@ -18,6 +18,7 @@ obj-$(CONFIG_RESET_OXNAS) += reset-oxnas.o
+>  obj-$(CONFIG_RESET_PISTACHIO) += reset-pistachio.o
+>  obj-$(CONFIG_RESET_QCOM_AOSS) += reset-qcom-aoss.o
+>  obj-$(CONFIG_RESET_QCOM_PDC) += reset-qcom-pdc.o
+> +obj-$(CONFIG_RESET_SCMI) += reset-scmi.o
+>  obj-$(CONFIG_RESET_SIMPLE) += reset-simple.o
+>  obj-$(CONFIG_RESET_STM32MP157) += reset-stm32mp1.o
+>  obj-$(CONFIG_RESET_SOCFPGA) += reset-socfpga.o
+> diff --git a/drivers/reset/reset-scmi.c b/drivers/reset/reset-scmi.c
+> new file mode 100644
+> index 000000000000..5e976a02a6cc
+> --- /dev/null
+> +++ b/drivers/reset/reset-scmi.c
+> @@ -0,0 +1,126 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * ARM System Control and Management Interface (ARM SCMI) reset driver
+> + *
+> + * Copyright (C) 2019 ARM Ltd.
+> + */
+> +
+> +#include <linux/module.h>
+> +#include <linux/mutex.h>
 
-Signed-off-by: Jose Abreu <joabreu@synopsys.com>
+You can drop mutex.h, it is unused.
 
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 98 +++++++++++++++++++++-
- 1 file changed, 97 insertions(+), 1 deletion(-)
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-index 6b08bb15af15..abab84f2ef8b 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-@@ -11,8 +11,10 @@
- #include <linux/ip.h>
- #include <linux/phy.h>
- #include <linux/udp.h>
-+#include <net/pkt_cls.h>
- #include <net/tcp.h>
- #include <net/udp.h>
-+#include <net/tc_act/tc_gact.h>
- #include "stmmac.h"
- 
- struct stmmachdr {
-@@ -229,7 +231,7 @@ static int stmmac_test_loopback_validate(struct sk_buff *skb,
- 			goto out;
- 	}
- 	if (tpriv->packet->src) {
--		if (!ether_addr_equal(ehdr->h_source, orig_ndev->dev_addr))
-+		if (!ether_addr_equal(ehdr->h_source, tpriv->packet->src))
- 			goto out;
- 	}
- 
-@@ -912,6 +914,96 @@ static int stmmac_test_dvlanfilt(struct stmmac_priv *priv)
- 	return ret;
- }
- 
-+#ifdef CONFIG_NET_CLS_ACT
-+static int stmmac_test_rxp(struct stmmac_priv *priv)
-+{
-+	unsigned char addr[ETH_ALEN] = {0xde, 0xad, 0xbe, 0xef, 0x00, 0x00};
-+	struct tc_cls_u32_offload cls_u32 = { };
-+	struct stmmac_packet_attrs attr = { };
-+	struct tc_action **actions, *act;
-+	struct tc_u32_sel *sel;
-+	struct tcf_exts *exts;
-+	int ret, i, nk = 1;
-+
-+	if (!tc_can_offload(priv->dev))
-+		return -EOPNOTSUPP;
-+	if (!priv->dma_cap.frpsel)
-+		return -EOPNOTSUPP;
-+
-+	sel = kzalloc(sizeof(*sel) + nk * sizeof(struct tc_u32_key), GFP_KERNEL);
-+	if (!sel)
-+		return -ENOMEM;
-+
-+	exts = kzalloc(sizeof(*exts), GFP_KERNEL);
-+	if (!exts) {
-+		ret = -ENOMEM;
-+		goto cleanup_sel;
-+	}
-+
-+	actions = kzalloc(nk * sizeof(*actions), GFP_KERNEL);
-+	if (!actions) {
-+		ret = -ENOMEM;
-+		goto cleanup_exts;
-+	}
-+
-+	act = kzalloc(nk * sizeof(*act), GFP_KERNEL);
-+	if (!act) {
-+		ret = -ENOMEM;
-+		goto cleanup_actions;
-+	}
-+
-+	cls_u32.command = TC_CLSU32_NEW_KNODE;
-+	cls_u32.common.chain_index = 0;
-+	cls_u32.common.protocol = htons(ETH_P_ALL);
-+	cls_u32.knode.exts = exts;
-+	cls_u32.knode.sel = sel;
-+	cls_u32.knode.handle = 0x123;
-+
-+	exts->nr_actions = nk;
-+	exts->actions = actions;
-+	for (i = 0; i < nk; i++) {
-+		struct tcf_gact *gact = to_gact(&act[i]);
-+
-+		actions[i] = &act[i];
-+		gact->tcf_action = TC_ACT_SHOT;
-+	}
-+
-+	sel->nkeys = nk;
-+	sel->offshift = 0;
-+	sel->keys[0].off = 6;
-+	sel->keys[0].val = htonl(0xdeadbeef);
-+	sel->keys[0].mask = ~0x0;
-+
-+	ret = stmmac_tc_setup_cls_u32(priv, priv, &cls_u32);
-+	if (ret)
-+		goto cleanup_act;
-+
-+	attr.dst = priv->dev->dev_addr;
-+	attr.src = addr;
-+
-+	ret = __stmmac_test_loopback(priv, &attr);
-+	ret = !ret; /* Shall NOT receive packet */
-+
-+	cls_u32.command = TC_CLSU32_DELETE_KNODE;
-+	stmmac_tc_setup_cls_u32(priv, priv, &cls_u32);
-+
-+cleanup_act:
-+	kfree(act);
-+cleanup_actions:
-+	kfree(actions);
-+cleanup_exts:
-+	kfree(exts);
-+cleanup_sel:
-+	kfree(sel);
-+	return ret;
-+}
-+#else
-+static int stmmac_test_rxp(struct stmmac_priv *priv)
-+{
-+	return -EOPNOTSUPP;
-+}
-+#endif
-+
- #define STMMAC_LOOPBACK_NONE	0
- #define STMMAC_LOOPBACK_MAC	1
- #define STMMAC_LOOPBACK_PHY	2
-@@ -969,6 +1061,10 @@ static const struct stmmac_test {
- 		.name = "Double VLAN Filtering",
- 		.lb = STMMAC_LOOPBACK_PHY,
- 		.fn = stmmac_test_dvlanfilt,
-+	}, {
-+		.name = "Flexible RX Parser   ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_rxp,
- 	},
- };
- 
--- 
-2.7.4
+This is not a platform device driver. Better replace this with
 
+#include <linux/device.h>
+
+> +#include <linux/reset-controller.h>
+> +#include <linux/scmi_protocol.h>
+> +
+> +/**
+> + * struct scmi_reset_data - reset controller information structure
+> + * @rcdev: reset controller entity
+> + * @handle: ARM SCMI handle used for communication with system controller
+> + * @dev: reset controller device pointer
+
+Drop this line, dev has been removed from struct scmi_reset_data.
+
+> + */
+> +struct scmi_reset_data {
+> +	struct reset_controller_dev rcdev;
+> +	const struct scmi_handle *handle;
+> +};
+> +
+> +#define to_scmi_reset_data(p)	container_of((p), struct scmi_reset_data, rcdev)
+> +#define to_scmi_handle(p)	(to_scmi_reset_data(p)->handle)
+[...]
+
+Apart from these,
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
