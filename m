@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72EAA84C03
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 14:49:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10A4684C02
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 14:49:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:
 	In-Reply-To:Message-ID:Date:Subject:To:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B6tqCfnVA+dtVcN1X5fu+QgDULEv3hjHpSlqNjnTssk=; b=ncuYzCO+OvZsJm
-	KIWx/qn2CyaX3JvX1Rq3rC4wWvxI5VuOmSvAClheOwojG6vKIcOuJ44AUaqhDDe+6ZcanQBrQCKEO
-	tPSnBCvBYv1ZfD7m1PBIJWpSiXoLgGR5TG8Um6Kh2o/OZRa4porh6tZvz7mJ0vUlH5DIjxwA2Q6ON
-	r5J5MhnY2v+vxC7DyE2do5S2F9MLY7F/PzLxiIpynZNkCG4rc+65iBYQ4eI46Gxs/c0p5n6xokSw2
-	fG+DKcnB+4CnNPJaBo/Y0bo9kh0REkrWYwnds7GGOHBzCt0Rsy0jy/HujZYdMqT8u+eABJ9MX9b1f
-	fttg/iKLN7lTok/xtjVQ==;
+	List-Owner; bh=MbxUi79pxk2R3u9bOgAZsOsDXtofbeUWK/lw6zItbIQ=; b=fBTDSSdgDMfOgQ
+	j4wjsgNQ4EN1lVUlLHC4nlBRzmJxkpf09cIXhLSArUdIyPlaq6zAO8QoZ2Pfd3QTOUqKiOC+ml8eI
+	FcFPb4/OfJ0a8hUwSy2D+DfvEEv9/BFaTb+0V8dV6WsWvsl4dEsn8by5RBBplIQx2p+p4+bs5ZBeG
+	6/xooSnOeE2HSJTtPJfHaRivYxSbu+tiXOVOXtSpyTvGOSka6LK7pVc5yIikAORZk8//+jxVOhgwe
+	rwdaold0Ep7I/N13/Pfzq4iGOT5ng8p3hYD2Fx5bZiJzyQiSlj+Ql8neUNOKu/BC+S2Fmaut18kiY
+	AbSZhlwiijkzA9/N5hJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvLNR-0005WE-1q; Wed, 07 Aug 2019 12:49:13 +0000
+	id 1hvLNB-0005M5-0j; Wed, 07 Aug 2019 12:48:57 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvLMy-0005LA-M8; Wed, 07 Aug 2019 12:48:46 +0000
-X-UUID: abc1cb677744462d8a918f5acf455f25-20190807
-X-UUID: abc1cb677744462d8a918f5acf455f25-20190807
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ id 1hvLMy-0005LC-M8; Wed, 07 Aug 2019 12:48:45 +0000
+X-UUID: de1b60999911453dae746138af14a096-20190807
+X-UUID: de1b60999911453dae746138af14a096-20190807
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <jungo.lin@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 849730849; Wed, 07 Aug 2019 04:48:40 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ with ESMTP id 955386610; Wed, 07 Aug 2019 04:48:40 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Wed, 7 Aug 2019 05:48:38 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 7 Aug 2019 20:48:24 +0800
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 7 Aug 2019 20:48:30 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Wed, 7 Aug 2019 20:48:24 +0800
+ Frontend Transport; Wed, 7 Aug 2019 20:48:30 +0800
 From: Jungo Lin <jungo.lin@mediatek.com>
 To: <tfiga@chromium.org>, <hverkuil-cisco@xs4all.nl>,
  <laurent.pinchart@ideasonboard.com>, <matthias.bgg@gmail.com>,
  <mchehab@kernel.org>
-Subject: [RFC,v4,1/4] media: dt-bindings: mt8183: Added camera ISP Pass 1
-Date: Wed, 7 Aug 2019 20:48:00 +0800
-Message-ID: <20190807124803.29884-2-jungo.lin@mediatek.com>
+Subject: [RFC,v4,2/4] dts: arm64: mt8183: Add ISP Pass 1 nodes
+Date: Wed, 7 Aug 2019 20:48:01 +0800
+Message-ID: <20190807124803.29884-3-jungo.lin@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20190807124803.29884-1-jungo.lin@mediatek.com>
 References: <Jungo Lin <jungo.lin@mediatek.com>
@@ -51,8 +51,8 @@ References: <Jungo Lin <jungo.lin@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_054844_737954_017427B9 
-X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-CacheID: sfid-20190807_054844_727304_32F15B64 
+X-CRM114-Status: UNSURE (   6.93  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,66 +87,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds DT binding document for the Pass 1 (P1) unit
-in Mediatek's camera ISP system. The Pass 1 unit grabs the sensor
-data out from the sensor interface, applies ISP image effects
-from tuning data and outputs the image data or statistics data to DRAM.
+Add nodes for Pass 1 unit of Mediatek's camera ISP system.
+Pass 1 unit embedded in Mediatek SoCs, works with the
+co-processor to process image signal from the image sensor
+and output RAW image data.
 
 Signed-off-by: Jungo Lin <jungo.lin@mediatek.com>
 ---
- .../bindings/media/mediatek,camisp.txt        | 73 +++++++++++++++++++
- 1 file changed, 73 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/media/mediatek,camisp.txt
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 31 ++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/media/mediatek,camisp.txt b/Documentation/devicetree/bindings/media/mediatek,camisp.txt
-new file mode 100644
-index 000000000000..fa2713acceca
---- /dev/null
-+++ b/Documentation/devicetree/bindings/media/mediatek,camisp.txt
-@@ -0,0 +1,73 @@
-+* Mediatek Image Signal Processor Pass 1 (ISP P1)
-+
-+The Pass 1 unit of Mediatek's camera ISP system grabs the sensor data out
-+from the sensor interface, applies ISP effects from tuning data and outputs
-+the image data and statistics data to DRAM. Furthermore, Pass 1 unit has
-+the ability to output two different resolutions frames at the same time to
-+increase the performance of the camera application.
-+
-+Required properties:
-+- compatible: Must be "mediatek,mt8183-camisp" for MT8183.
-+- reg: Physical base address of the camera function block register and
-+  length of memory mapped region. Must contain an entry for each entry
-+  in reg-names.
-+- reg-names: Must include the following entries:
-+  "cam_sys": Camera base function block
-+  "cam_uni": Camera UNI function block
-+  "cam_a": Camera ISP P1 hardware unit A
-+  "cam_b": Camera ISP P1 hardware unit B
-+  "cam_c": Camera ISP P1 hardware unit C
-+- interrupts: Must contain an entry for each entry in interrupt-names.
-+- interrupt-names : Must include the following entries:
-+  "cam_uni": Camera UNI interrupt
-+  "cam_a": Camera unit A interrupt
-+  "cam_b": Camera unit B interrupt
-+  "cam_c": Camera unit C interrupt
-+- iommus: Shall point to the respective IOMMU block with master port
-+  as argument, see Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
-+  for details.
-+- clocks: A list of phandle and clock specifier pairs as listed
-+  in clock-names property, see
-+  Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
-+- clock-names: Must be "camsys_cam_cgpdn" and "camsys_camtg_cgpdn".
-+- mediatek,larb: Must contain the local arbiters in the current SoCs, see
-+  Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.txt
-+  for details.
-+- power-domains: a phandle to the power domain, see
-+  Documentation/devicetree/bindings/power/power_domain.txt for details.
-+- mediatek,scp : The node of system control processor (SCP), see
-+  Documentation/devicetree/bindings/remoteproc/mtk,scp.txt for details.
-+
-+Example:
-+SoC specific DT entry:
-+
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index 111866d36862..1692466c62fc 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -487,6 +487,37 @@
+ 			#clock-cells = <1>;
+ 		};
+ 
 +		camisp: camisp@1a000000 {
 +			compatible = "mediatek,mt8183-camisp", "syscon";
 +			reg = <0 0x1a000000 0 0x1000>,
@@ -177,6 +135,10 @@ index 000000000000..fa2713acceca
 +			power-domains = <&scpsys MT8183_POWER_DOMAIN_CAM>;
 +			mediatek,scp = <&scp>;
 +		};
++
+ 		larb6: larb@1a001000 {
+ 			compatible = "mediatek,mt8183-smi-larb";
+ 			reg = <0 0x1a001000 0 0x1000>;
 -- 
 2.18.0
 
