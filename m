@@ -2,47 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C656C84325
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 06:13:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE84C8432F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 06:13:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tOeBjmIXL1857uA2AFlB2BiiTJJltzVEeRGWmg4H4MA=; b=Dqv
-	UJg0gx8qBGEsQaI7TkIyv0oV6zZ5Nk/rpy2fvVae4Ct3+otBctWJZpPBOIF/vlwcwstIuvzri0w9M
-	vaa1b3QyyYY9eNaNjZRs5oRSzVfHq8a8sMcek41+fWk+jXip/zmtzymh8q2ZXXzvnjoiguqiTvec6
-	E4UsNaEPNBnJPa2pAwW71K+Lv9lqL7FFGjHjamZbxKUaUVBEjM9ZP0cX46Gcg3W3jRfkUEIJk7qik
-	8LSdw/279iHLHUhGwuyjdM8oGb8slf+pvZHvDjZZT1aQDYDFTAd+vWFSsjalzo+jILKSqmgYjCpIy
-	oD/MhU1haQst3iUskmCCSkO/17vcpag==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=KAWUAG6+Y7Dzm9aVXbufYr2efIzgbADJglROV6ouHJM=; b=HUMnorNHxlwdpcrq+R0ehhI8lX
+	TqM1n16vD188h74WN10z5dpB8Ch1X5eLGBKumFCA282V3APqe5NWyrmFherTotwxP81bkrriDpGBW
+	2whgv2RFo1fFh9tsGC4AnQN3rjNnFVoQTVu3H7oExBRxAcA9wqQI6BRdRGn4yWfQokTcTML7C17YH
+	ZpVm3sIhwl3qff8hX1S1UXarm7ZV6eU6QVVMQSG/7iVd7v5cDps52ltwUep8sSQD2xDd0a0Tanu/n
+	JGH3wK8Cd5AQuv9c5taVNr6CNzo1aPqpO1Lnx+46ue7LCcOjA4cVTSy9pnUa+NdD5UOUlrxeeezAa
+	Y3iG6Gow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvDKN-00007i-7k; Wed, 07 Aug 2019 04:13:31 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hvDKY-0000Nk-OT; Wed, 07 Aug 2019 04:13:42 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvDJy-0008K4-S3
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 04:13:08 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 17DC41A01FB;
- Wed,  7 Aug 2019 06:13:05 +0200 (CEST)
+ id 1hvDJz-0008KI-Ui
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 04:13:09 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4D1E2200064;
+ Wed,  7 Aug 2019 06:13:06 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9412C1A02B9;
- Wed,  7 Aug 2019 06:12:59 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CC4D92001EF;
+ Wed,  7 Aug 2019 06:13:00 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8D7F240296;
- Wed,  7 Aug 2019 12:12:52 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id C6FEB402B5;
+ Wed,  7 Aug 2019 12:12:53 +0800 (SGT)
 From: fugang.duan@nxp.com
 To: srinivas.kandagatla@linaro.org
-Subject: [PATCH nvmem v2 0/2] nvmem: imx: add i.MX8QM platform support
-Date: Wed,  7 Aug 2019 12:03:18 +0800
-Message-Id: <20190807040320.1760-1-fugang.duan@nxp.com>
+Subject: [PATCH nvmem v2 1/2] nvmem: imx: add i.MX8QM platform support
+Date: Wed,  7 Aug 2019 12:03:19 +0800
+Message-Id: <20190807040320.1760-2-fugang.duan@nxp.com>
 X-Mailer: git-send-email 2.9.5
+In-Reply-To: <20190807040320.1760-1-fugang.duan@nxp.com>
+References: <20190807040320.1760-1-fugang.duan@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_211307_048675_44B94194 
-X-CRM114-Status: UNSURE (   5.23  )
+X-CRM114-CacheID: sfid-20190806_211308_232671_80CF83DD 
+X-CRM114-Status: UNSURE (   7.36  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -50,7 +53,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,21 +79,46 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Fugang Duan <fugang.duan@nxp.com>
 
-The patch set is to add i.MX8QM platform support for i.MX8 SCU
-OCOTP driver due to i.MX8QM efuse table has some difference with
-i.MX8QXP platform.
+i.MX8QM efuse table has some difference with i.MX8QXP platform,
+so add i.MX8QM platform support.
 
-V2:
-- Add dt-bindings for the new compatible string support.
+Signed-off-by: Fugang Duan <fugang.duan@nxp.com>
+---
+ drivers/nvmem/imx-ocotp-scu.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-Fugang Duan (2):
-  nvmem: imx: add i.MX8QM platform support
-  dt-bindings: fsl: scu: add new compatible string for ocotp
-
- Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt | 4 +++-
- drivers/nvmem/imx-ocotp-scu.c                               | 7 +++++++
- 2 files changed, 10 insertions(+), 1 deletion(-)
-
+diff --git a/drivers/nvmem/imx-ocotp-scu.c b/drivers/nvmem/imx-ocotp-scu.c
+index be2f5f0..0d78ab4 100644
+--- a/drivers/nvmem/imx-ocotp-scu.c
++++ b/drivers/nvmem/imx-ocotp-scu.c
+@@ -16,6 +16,7 @@
+ 
+ enum ocotp_devtype {
+ 	IMX8QXP,
++	IMX8QM,
+ };
+ 
+ struct ocotp_devtype_data {
+@@ -39,6 +40,11 @@ static struct ocotp_devtype_data imx8qxp_data = {
+ 	.nregs = 800,
+ };
+ 
++static struct ocotp_devtype_data imx8qm_data = {
++	.devtype = IMX8QM,
++	.nregs = 800,
++};
++
+ static int imx_sc_misc_otp_fuse_read(struct imx_sc_ipc *ipc, u32 word,
+ 				     u32 *val)
+ {
+@@ -118,6 +124,7 @@ static struct nvmem_config imx_scu_ocotp_nvmem_config = {
+ 
+ static const struct of_device_id imx_scu_ocotp_dt_ids[] = {
+ 	{ .compatible = "fsl,imx8qxp-scu-ocotp", (void *)&imx8qxp_data },
++	{ .compatible = "fsl,imx8qm-scu-ocotp", (void *)&imx8qm_data },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, imx_scu_ocotp_dt_ids);
 -- 
 2.7.4
 
