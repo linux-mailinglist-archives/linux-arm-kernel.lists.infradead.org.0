@@ -2,78 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 060CC846EA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 10:13:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3681A846F8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 10:18:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZbTEeOrgWglrPMjp055N9BqEf0VmI7vbeaqgnZ1ytmA=; b=XrpoKYgmUKAg0k
-	WBBLzO+NB4ZHvbYNKQYvVYXCjcC5RN4P7hXHI8HbqUmdeu32NjJ6JOI9aqmkgIO+8zghDl8eByvx8
-	+i48EcuBWcw9XaxrQs8dNFlD3rE/hwvyoLAnuy0cwRJ+9GdLXpHzFlZrLD4V9xCRfSsmlX/7ZkwPu
-	k/TYPEzbNtMSW3YCTOZMNDaKC8R3RpSJ3yr1JMRuPekuNHBd2eSTDfoImU1deUTn3hh5MKzuTp5Nf
-	j++iCBgaBAhzRvzOlJEXr4ASVNfeyS1GT9sn0Q8s2+cBFddv+6IWHU4bCIZW6rjKFlPdawcLTZlr8
-	JQ14/LpZ/1fo0NNkNc8g==;
+	List-Owner; bh=ToJi48MCPrUiLJRIf6AKPe+hpcty0Fo8suBo6lcEXPk=; b=ErCBvdHf9co7U6
+	2mqwxttKTcN/cjor6jTDFjO/AnNmrTMDKab3tg4OSVh7kYky4N6bQAcRirH1ILKqtCGElqIiAx7a4
+	4cj/dCjbjEFkxqIT+M2YWRZv51+WzdOyTMmd6KQA6C04nLGyQhV7YcF+JtWLMNSf1X+L4HuP2zLFY
+	XOFcayM32eHOKkxrKdb+n0DTjf8G5DgzEY5mobt+BQyJnCKfh2xu7QkG6kSlf7u/MkRRxacJOvvSa
+	rTplhY71TWe7GzFfGV62GpISdIJH+x+YC8vY4iOtMJmVzyiDie+1qvSGN0jxZlIARKG+qcRM6c9up
+	7dkEsRfltBaHjQD5o4Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvH4e-00067j-0k; Wed, 07 Aug 2019 08:13:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hvH93-0007cA-SP; Wed, 07 Aug 2019 08:18:06 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvH4Q-00067O-Ah
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 08:13:19 +0000
-Received: from mail-lf1-f42.google.com (mail-lf1-f42.google.com
- [209.85.167.42])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 59D70229ED
- for <linux-arm-kernel@lists.infradead.org>;
- Wed,  7 Aug 2019 08:13:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565165597;
- bh=ZzOLDubo8R09snB3dXIqUMFWNbyNheWbS3pPB0VyYpE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=qIMXavRYElwABh8sorJIdVRvOr9U7z2iG+AC/YJnmXiNrCFYTaSOiweKK3WqdR9kt
- v4NYRpQR4xwTEMNuy+mY5CpAu1lnY8hvdLR1jBqbp5y7GH4O25O8o1GHnEJ7TlubUM
- 5DRsfFk8sjPfAAE+thEvHDZtJSuMsv06zZN2Mji4=
-Received: by mail-lf1-f42.google.com with SMTP id c19so63362681lfm.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 07 Aug 2019 01:13:17 -0700 (PDT)
-X-Gm-Message-State: APjAAAUHTcbU8haD4+BMCwwiS3lkcAz1nQZVivCTk/17e4RVOmlhhmSU
- OgqWhwIzttcElZPcPw/FH68AOnjFyepMXo7TEp8=
-X-Google-Smtp-Source: APXvYqyMLiTTcKzJv2ui5II+IaAbxqCDN3np2W8ZnEeh2YUGjUBZV1yjTQi1efB5id52IG+jexTXZulq8AGh+S3Fk3Y=
-X-Received: by 2002:ac2:44ac:: with SMTP id c12mr5263808lfm.33.1565165595525; 
- Wed, 07 Aug 2019 01:13:15 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190806165749.29468-1-GNUtoo@cyberdimension.org>
-In-Reply-To: <20190806165749.29468-1-GNUtoo@cyberdimension.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 7 Aug 2019 10:13:04 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPcuPQa-jVtFMfiseuXq3P=mxc6DecCCj_j-y2NauMqTdA@mail.gmail.com>
-Message-ID: <CAJKOXPcuPQa-jVtFMfiseuXq3P=mxc6DecCCj_j-y2NauMqTdA@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: add touchkey nodes for midas
-To: "Denis 'GNUtoo' Carikli" <GNUtoo@cyberdimension.org>
+ id 1hvH8r-0007bP-T2
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 08:17:55 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1hvH8q-0001UB-81; Wed, 07 Aug 2019 10:17:52 +0200
+Message-ID: <1565165870.5048.4.camel@pengutronix.de>
+Subject: Re: [PATCH v2 4/5] firmware: arm_scmi: Add RESET protocol in SCMI v2.0
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Date: Wed, 07 Aug 2019 10:17:50 +0200
+In-Reply-To: <20190806170208.6787-5-sudeep.holla@arm.com>
+References: <20190806170208.6787-1-sudeep.holla@arm.com>
+ <20190806170208.6787-5-sudeep.holla@arm.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_011318_415133_D7DAF9B7 
-X-CRM114-Status: GOOD (  18.07  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190807_011753_951341_448E5480 
+X-CRM114-Status: GOOD (  19.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,102 +64,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, Simon Shields <simon@lineageos.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Peng Fan <peng.fan@nxp.com>, Etienne Carriere <etienne.carriere@linaro.org>,
+ Souvik Chakravarty <Souvik.Chakravarty@arm.com>, wesleys@xilinx.com,
+ aidapala@qti.qualcomm.com, linux-kernel@vger.kernel.org,
+ Saeed Nowshadi <saeed.nowshadi@xilinx.com>,
+ Bo Zhang <bozhang.zhang@broadcom.com>, Felix Burton <fburton@xilinx.com>,
+ Jim Quinlan <james.quinlan@broadcom.com>, pajay@qti.qualcomm.com,
+ Gaku Inami <gaku.inami.xh@renesas.com>,
+ Volodymyr Babchuk <volodymyr_babchuk@epam.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 6 Aug 2019 at 19:04, Denis 'GNUtoo' Carikli
-<GNUtoo@cyberdimension.org> wrote:
->
-> From: Simon Shields <simon@lineageos.org>
->
-> this patch adds the fixed VTOUCH_3.3V regulator and configures
-> the touchkey node + i2c-gpio node.
-
-Use the simple imperative form and please describe the user-visible
-impact of this changes (or why you are doing it). Probably you want to
-enable keys on touchscreen but it's not explicitly stated...
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst?h=v5.3-rc3&id=e21a712a9685488f5ce80495b37b9fdbe96c230d#n102
-
-
->
-> Signed-off-by: Simon Shields <simon@lineageos.org>
-> GNUtoo@cyberdimension.org: Fixed keycodes.
-> Signed-off-by: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org>
+On Tue, 2019-08-06 at 18:02 +0100, Sudeep Holla wrote:
+> SCMIv2.0 adds a new Reset Management Protocol to manage various reset
+> states a given device or domain can enter. Device(s) that can be
+> collectively reset through a common reset signal constitute a reset
+> domain for the firmware.
+> 
+> A reset domain can be reset autonomously or explicitly through assertion
+> and de-assertion of the signal. When autonomous reset is chosen, the
+> firmware is responsible for taking the necessary steps to reset the
+> domain and to subsequently bring it out of reset. When explicit reset is
+> chosen, the caller has to specifically assert and then de-assert the
+> reset signal by issuing two separate RESET commands.
+> 
+> Add the basic SCMI reset infrastructure that can be used by Linux
+> reset controller driver.
+> 
+> Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 > ---
->  arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi |  4 +++
->  arch/arm/boot/dts/exynos4412-midas.dtsi     | 29 +++++++++++++++++++++
->  arch/arm/boot/dts/exynos4412-n710x.dts      |  4 +++
->  3 files changed, 37 insertions(+)
->
-> diff --git a/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi b/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi
-> index ce87d2ff27aa..e71f103ab940 100644
-> --- a/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi
-> +++ b/arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi
-> @@ -166,5 +166,9 @@
->  &s5c73m3 {
->         standby-gpios = <&gpm0 1 GPIO_ACTIVE_LOW>;   /* ISP_STANDBY */
->         vdda-supply = <&ldo17_reg>;
+>  drivers/firmware/arm_scmi/Makefile |   2 +-
+>  drivers/firmware/arm_scmi/reset.c  | 231 +++++++++++++++++++++++++++++
+>  include/linux/scmi_protocol.h      |  26 ++++
+>  3 files changed, 258 insertions(+), 1 deletion(-)
+>  create mode 100644 drivers/firmware/arm_scmi/reset.c
+> 
+> diff --git a/drivers/firmware/arm_scmi/Makefile b/drivers/firmware/arm_scmi/Makefile
+> index c47d28d556b6..5f298f00a82e 100644
+> --- a/drivers/firmware/arm_scmi/Makefile
+> +++ b/drivers/firmware/arm_scmi/Makefile
+> @@ -2,5 +2,5 @@
+>  obj-y	= scmi-bus.o scmi-driver.o scmi-protocols.o
+>  scmi-bus-y = bus.o
+>  scmi-driver-y = driver.o
+> -scmi-protocols-y = base.o clock.o perf.o power.o sensors.o
+> +scmi-protocols-y = base.o clock.o perf.o power.o reset.o sensors.o
+>  obj-$(CONFIG_ARM_SCMI_POWER_DOMAIN) += scmi_pm_domain.o
+> diff --git a/drivers/firmware/arm_scmi/reset.c b/drivers/firmware/arm_scmi/reset.c
+> new file mode 100644
+> index 000000000000..11cb8b5ccf34
+> --- /dev/null
+> +++ b/drivers/firmware/arm_scmi/reset.c
+> @@ -0,0 +1,231 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * System Control and Management Interface (SCMI) Reset Protocol
+> + *
+> + * Copyright (C) 2019 ARM Ltd.
+> + */
+> +
+> +#include "common.h"
+> +
+> +enum scmi_reset_protocol_cmd {
+> +	RESET_DOMAIN_ATTRIBUTES = 0x3,
+> +	RESET = 0x4,
+> +	RESET_NOTIFY = 0x5,
 > +};
 > +
-> +&touchkey_reg {
-> +       gpio = <&gpm0 0 GPIO_ACTIVE_HIGH>;
-
-You break existing code...
-
->         status = "okay";
->  };
-> diff --git a/arch/arm/boot/dts/exynos4412-midas.dtsi b/arch/arm/boot/dts/exynos4412-midas.dtsi
-> index 83be3a797411..797e8de40580 100644
-> --- a/arch/arm/boot/dts/exynos4412-midas.dtsi
-> +++ b/arch/arm/boot/dts/exynos4412-midas.dtsi
-> @@ -13,6 +13,7 @@
->  #include "exynos4412.dtsi"
->  #include "exynos4412-ppmu-common.dtsi"
->  #include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/input/input.h>
->  #include <dt-bindings/interrupt-controller/irq.h>
->  #include <dt-bindings/clock/maxim,max77686.h>
->  #include <dt-bindings/pinctrl/samsung.h>
-> @@ -92,6 +93,15 @@
->                 enable-active-high;
->         };
->
-> +       touchkey_reg: voltage-regulator-4 {
-
-There is already voltage-regulator-4 node.
-
-> +               compatible = "regulator-fixed";
-> +               regulator-name = "VTOUCH_3.3V";
-
-Let's keep the name as in schematics - "LED_VDD_3.3V"... which brings
-us to the question is it really needed for touch keys? or for display
-panel?
-
-> +               regulator-min-microvolt = <3300000>;
-> +               regulator-max-microvolt = <3300000>;
-> +               enable-active-high;
-> +               status = "disabled";
-> +       };
+> +enum scmi_reset_protocol_notify {
+> +	RESET_ISSUED = 0x0,
+> +};
 > +
->         gpio-keys {
->                 compatible = "gpio-keys";
->                 pinctrl-names = "default";
-> @@ -197,6 +207,25 @@
->                 };
->         };
->
-> +       i2c_touchkey: i2c-gpio-4 {
+> +#define NUM_RESET_DOMAIN_MASK	0xffff
+> +#define RESET_NOTIFY_ENABLE	BIT(0)
+> +
+> +struct scmi_msg_resp_reset_domain_attributes {
+> +	__le32 attributes;
+> +#define SUPPORTS_ASYNC_RESET(x)		((x) & BIT(31))
+> +#define SUPPORTS_NOTIFY_RESET(x)	((x) & BIT(30))
+> +	__le32 latency;
+> +	    u8 name[SCMI_MAX_STR_SIZE];
+> +};
+> +
+> +struct scmi_msg_reset_domain_reset {
+> +	__le32 domain_id;
+> +	__le32 flags;
+> +#define AUTONOMOUS_RESET	BIT(0)
+> +#define EXPLICIT_RESET_ASSERT	BIT(1)
+> +#define ASYNCHRONOUS_RESET	BIT(2)
+> +	__le32 reset_state;
+> +#define ARCH_RESET_TYPE		BIT(31)
+> +#define COLD_RESET_STATE	BIT(0)
+> +#define ARCH_COLD_RESET		(ARCH_RESET_TYPE | COLD_RESET_STATE)
+> +};
+> +
+> +struct reset_dom_info {
+> +	bool async_reset;
+> +	bool reset_notify;
+> +	u32 latency_us;
+> +	char name[SCMI_MAX_STR_SIZE];
+> +};
+> +
+> +struct scmi_reset_info {
+> +	int num_domains;
+> +	struct reset_dom_info *dom_info;
+> +};
+> +
+> +static int scmi_reset_attributes_get(const struct scmi_handle *handle,
+> +				     struct scmi_reset_info *pi)
+> +{
+> +	int ret;
+> +	struct scmi_xfer *t;
+> +	u32 *attr;
+> +
+> +	ret = scmi_xfer_get_init(handle, PROTOCOL_ATTRIBUTES,
+> +				 SCMI_PROTOCOL_RESET, 0, sizeof(*attr), &t);
+> +	if (ret)
+> +		return ret;
+> +
+> +	attr = t->rx.buf;
+> +
+> +	ret = scmi_do_xfer(handle, t);
+> +	if (!ret)
+> +		pi->num_domains = le32_to_cpu(*attr) & NUM_RESET_DOMAIN_MASK;
+> +
+> +	scmi_xfer_put(handle, t);
+> +	return ret;
+> +}
+> +
+> +static int
+> +scmi_reset_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
+> +				 struct reset_dom_info *dom_info)
+> +{
+> +	int ret;
+> +	struct scmi_xfer *t;
+> +	struct scmi_msg_resp_reset_domain_attributes *attr;
+> +
+> +	ret = scmi_xfer_get_init(handle, RESET_DOMAIN_ATTRIBUTES,
+> +				 SCMI_PROTOCOL_RESET, sizeof(domain),
+> +				 sizeof(*attr), &t);
+> +	if (ret)
+> +		return ret;
+> +
+> +	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
 
-No need for label.
+Should this use
+	put_unaligned_le32(domain, t->tx.buf);
+? Either way,
 
-Best regards,
-Krzysztof
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
