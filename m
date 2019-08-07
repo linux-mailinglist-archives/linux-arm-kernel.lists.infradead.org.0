@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE84C8432F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 06:13:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CC4C84330
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 06:14:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,41 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=KAWUAG6+Y7Dzm9aVXbufYr2efIzgbADJglROV6ouHJM=; b=HUMnorNHxlwdpcrq+R0ehhI8lX
-	TqM1n16vD188h74WN10z5dpB8Ch1X5eLGBKumFCA282V3APqe5NWyrmFherTotwxP81bkrriDpGBW
-	2whgv2RFo1fFh9tsGC4AnQN3rjNnFVoQTVu3H7oExBRxAcA9wqQI6BRdRGn4yWfQokTcTML7C17YH
-	ZpVm3sIhwl3qff8hX1S1UXarm7ZV6eU6QVVMQSG/7iVd7v5cDps52ltwUep8sSQD2xDd0a0Tanu/n
-	JGH3wK8Cd5AQuv9c5taVNr6CNzo1aPqpO1Lnx+46ue7LCcOjA4cVTSy9pnUa+NdD5UOUlrxeeezAa
-	Y3iG6Gow==;
+	bh=gIFVyDiWAth7lxeOVOCIJlC5SbKJWt2vh2EpgKVnxx8=; b=n2A4fBtG5pGXeQJgBICbIQAA1P
+	nKyHvi3zgSXslDm6rk02WP7l9y8fAtabGebGy+KjKBCdKLf2mJ5HN3TkEt5lTDeiuopUXl2rKb80X
+	UQKmOUANX7SqUJgkxAyY2XTQZrGSzwTnEVmAgcpst6UytN41NlJKpwCTeF9jwd/NBV4QIweuQhYl6
+	UrYTqI/pb1iHiKOvhLs3AjDMZil53ZWdw2286bEax0L92p1dLcYsqFZPSkmv2kpZLs5OokS2ocayG
+	qqMrh21D3PHJwGX15suioSHCdU/eG4KLNn4Ya0fI16g9nHBzHUHdWRJKhqbhWLvNnjCuJr7AID2Z7
+	//5ZmAig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvDKY-0000Nk-OT; Wed, 07 Aug 2019 04:13:42 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hvDKm-0000bU-Jm; Wed, 07 Aug 2019 04:13:56 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvDJz-0008KI-Ui
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 04:13:09 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4D1E2200064;
- Wed,  7 Aug 2019 06:13:06 +0200 (CEST)
+ id 1hvDK0-0008Ld-NZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 04:13:10 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 889E31A06FE;
+ Wed,  7 Aug 2019 06:13:07 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CC4D92001EF;
- Wed,  7 Aug 2019 06:13:00 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 13A041A06E9;
+ Wed,  7 Aug 2019 06:13:02 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id C6FEB402B5;
- Wed,  7 Aug 2019 12:12:53 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 0D296402E6;
+ Wed,  7 Aug 2019 12:12:54 +0800 (SGT)
 From: fugang.duan@nxp.com
 To: srinivas.kandagatla@linaro.org
-Subject: [PATCH nvmem v2 1/2] nvmem: imx: add i.MX8QM platform support
-Date: Wed,  7 Aug 2019 12:03:19 +0800
-Message-Id: <20190807040320.1760-2-fugang.duan@nxp.com>
+Subject: [PATCH nvmem v2 2/2] dt-bindings: fsl: scu: add new compatible string
+ for ocotp
+Date: Wed,  7 Aug 2019 12:03:20 +0800
+Message-Id: <20190807040320.1760-3-fugang.duan@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20190807040320.1760-1-fugang.duan@nxp.com>
 References: <20190807040320.1760-1-fugang.duan@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_211308_232671_80CF83DD 
-X-CRM114-Status: UNSURE (   7.36  )
+X-CRM114-CacheID: sfid-20190806_211308_920156_8C6171D5 
+X-CRM114-Status: UNSURE (   6.40  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -53,7 +54,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,46 +80,29 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Fugang Duan <fugang.duan@nxp.com>
 
-i.MX8QM efuse table has some difference with i.MX8QXP platform,
-so add i.MX8QM platform support.
+Add new compatible string "fsl,imx8qm-scu-ocotp" into binding
+doc  for i.MX8 SCU OCOTP driver.
 
 Signed-off-by: Fugang Duan <fugang.duan@nxp.com>
 ---
- drivers/nvmem/imx-ocotp-scu.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+ Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/nvmem/imx-ocotp-scu.c b/drivers/nvmem/imx-ocotp-scu.c
-index be2f5f0..0d78ab4 100644
---- a/drivers/nvmem/imx-ocotp-scu.c
-+++ b/drivers/nvmem/imx-ocotp-scu.c
-@@ -16,6 +16,7 @@
+diff --git a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+index a575e42..c149fad 100644
+--- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
++++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+@@ -136,7 +136,9 @@ Required properties:
+ OCOTP bindings based on SCU Message Protocol
+ ------------------------------------------------------------
+ Required properties:
+-- compatible:		Should be "fsl,imx8qxp-scu-ocotp"
++- compatible:		Should be one of:
++			"fsl,imx8qm-scu-ocotp",
++			"fsl,imx8qxp-scu-ocotp".
+ - #address-cells:	Must be 1. Contains byte index
+ - #size-cells:		Must be 1. Contains byte length
  
- enum ocotp_devtype {
- 	IMX8QXP,
-+	IMX8QM,
- };
- 
- struct ocotp_devtype_data {
-@@ -39,6 +40,11 @@ static struct ocotp_devtype_data imx8qxp_data = {
- 	.nregs = 800,
- };
- 
-+static struct ocotp_devtype_data imx8qm_data = {
-+	.devtype = IMX8QM,
-+	.nregs = 800,
-+};
-+
- static int imx_sc_misc_otp_fuse_read(struct imx_sc_ipc *ipc, u32 word,
- 				     u32 *val)
- {
-@@ -118,6 +124,7 @@ static struct nvmem_config imx_scu_ocotp_nvmem_config = {
- 
- static const struct of_device_id imx_scu_ocotp_dt_ids[] = {
- 	{ .compatible = "fsl,imx8qxp-scu-ocotp", (void *)&imx8qxp_data },
-+	{ .compatible = "fsl,imx8qm-scu-ocotp", (void *)&imx8qm_data },
- 	{ },
- };
- MODULE_DEVICE_TABLE(of, imx_scu_ocotp_dt_ids);
 -- 
 2.7.4
 
