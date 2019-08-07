@@ -2,51 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D68AB8438A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 06:59:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECA6084393
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 07:11:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=8YB+rHsfYg4CHjbrmotj42QrtSWbFboPWzAgH9rm9cQ=; b=Xa4
-	KN2pm2Q227LwjEq6q/pQjgLrqWbhnBmuXi+0/NAVFV6m5fkumfeNbkzNdLpVnENrx+q2wg8YYQTIc
-	6UcGgw0XI8vLH9dKzS0aAOlbmf39os7J3KkXCdOamMRT3HmohcDzdTGUNQa0dGbyjry0EKnmHFNik
-	tYRfnZtPf1Ai8DQyDkZk5Apc0luoqr6M2cpWHZYnMupehUIpE1cUtwG5T8bA0h0kDrOjfeqx4kx1B
-	gImdYl9h1YsvvzWFPo76lyEe789E3RCxZPJ73kiYzkYw5s+Y/yJS4mj+ppcdiiD3orTeyhATes5fY
-	1e62zMj8sKI2NfGvltCEqh+g87mQV/Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f27sIMju9ZCVZ0IoBlIOKXY1QZo2PBv/Ob7vM8O3iPQ=; b=Wu8r0617hBBV5Q
+	jT7pVVaeVo0/diShgSXGJLw/KTseQDXw1zAiCcR43skH/W8/iGhJ4doFTDbetchj2xxfgBKhGS4bB
+	51+IMQSWn0fQRv527IpnzYWlrrw0Uefhn4KRfGp7esr5rehdLXiXZ+uub5frsWMT8yf1RSfSQJxBZ
+	U7od4FUZy8isIDizQoUG0xoXtiSvIlaOuWMx8NWWDhHJtW+Yyq6Eb2+seujF1jk3S3+VSXMIrl9b5
+	muWaM8caSZKyvekxccXDaDRO4JGWEuU5369ZHkgA4AsoZVrTjcB4//ksvXOROAHxNHnERcS4VusoD
+	EsenoI2z/goTzAk1GHtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvE2j-0004wW-SI; Wed, 07 Aug 2019 04:59:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvE2c-0004vl-7J
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 04:59:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DF7D8344;
- Tue,  6 Aug 2019 21:59:07 -0700 (PDT)
-Received: from localhost.localdomain (entos-thunderx2-02.shanghai.arm.com
- [10.169.40.54])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B07553F706;
- Tue,  6 Aug 2019 21:59:04 -0700 (PDT)
-From: Jia He <justin.he@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, James Morse <james.morse@arm.com>
-Subject: [PATCH] arm64: mm: add missing PTE_SPECIAL in pte_mkdevmap on arm64
-Date: Wed,  7 Aug 2019 12:58:51 +0800
-Message-Id: <20190807045851.10772-1-justin.he@arm.com>
-X-Mailer: git-send-email 2.17.1
+	id 1hvEDu-0000Ve-Qx; Wed, 07 Aug 2019 05:10:54 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvEDl-0000V8-Tq
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 05:10:47 +0000
+Received: by mail-wr1-x444.google.com with SMTP id g17so89960164wrr.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 06 Aug 2019 22:10:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=J8q3C8XNtyFn5o0cwi/6TaYLXcXbfFKt+Egf2sjlgy4=;
+ b=kORicJpztHIAwdM1j6OiXotMjAmnbeuzPVZK1OaRQqPj3TihOURdk3RfNJcrNYn71+
+ rkYlRYB8UN8FvSCEU7NhsxslbjiCQZziRQytKjphOWY3pDterZ5KGGg5JrXEVIlSOHYl
+ n+cJhGcjrw0vhAqoc/2wyY/qPptwNTsyJtbx/ulhiGkEHKSHXx00c2GlqpDuB1Jq/T4F
+ pdyjiC2s65LPItL7nqmur9LPmsu9wFUROtYC+RWRagdcw3lV3E35Fn8Ln3xOo5oUUtO2
+ ADawuzcz2reCB0yu9FvBoFKqzXWCsfhbE/Q4FV+6aiBn4BOjUH5DqiO8KMApy2GknrLT
+ FECQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=J8q3C8XNtyFn5o0cwi/6TaYLXcXbfFKt+Egf2sjlgy4=;
+ b=nELfGaNA9PwCFJ7p9JPSlXqMmy2aabWC91823PvdwmrRX7YtYF0Rb2fAR/kViPlThG
+ 3k6OSNATnOqENM+Yo1poJwiOnCljxn/x8L584X6a6CUpWtN/MzgT8rxeQoz6fthVHy9p
+ cLNYml5+QJKNqdmVcL3LgaxSeHPcEnnFSfvMRuah9wMzb0z9A8YLj291F8ESENrSlhH9
+ GW4nT3TESE8JL4rsxstphxZYfQIS8FSO6dprkKpqYWgvzs8sk+KCHfkLKfwoFjxh0pf5
+ OKllNvqJR91g5Vwn28jMmSymiPwml6Ztaw5keQ06wLSs+/ddlwgRhuiBsBbHcwlF7zWT
+ 1XQw==
+X-Gm-Message-State: APjAAAXvJ/BaN1+PK9x1l2OB28xIKuHW+fLCAvx4yXYAZWU84OuMvM+H
+ i3P6Oqg8lKNkU3mBgoDGvwqIFGe4OMVkVw==
+X-Google-Smtp-Source: APXvYqyjCQmPGVso7ydC60Zaa2gys5Ws3aDZ25TP0UeAxXRLDn2hGC0AAUKFdh/ro7Y4q3pZ1dRHLg==
+X-Received: by 2002:a5d:4941:: with SMTP id r1mr7822802wrs.225.1565154643044; 
+ Tue, 06 Aug 2019 22:10:43 -0700 (PDT)
+Received: from archlinux-threadripper ([2a01:4f8:222:2f1b::2])
+ by smtp.gmail.com with ESMTPSA id o20sm227955236wrh.8.2019.08.06.22.10.41
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 06 Aug 2019 22:10:41 -0700 (PDT)
+Date: Tue, 6 Aug 2019 22:10:40 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: David Miller <davem@davemloft.net>
+Subject: Re: [PATCH v2] net: mdio-octeon: Fix Kconfig warnings and build errors
+Message-ID: <20190807051040.GA117554@archlinux-threadripper>
+References: <20190731185023.20954-1-natechancellor@gmail.com>
+ <20190803060155.89548-1-natechancellor@gmail.com>
+ <20190806.141133.1365654857955536268.davem@davemloft.net>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190806.141133.1365654857955536268.davem@davemloft.net>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_215914_357563_A00103AC 
-X-CRM114-Status: GOOD (  11.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190806_221045_991151_68991043 
+X-CRM114-Status: GOOD (  17.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (natechancellor[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,187 +102,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jia He <justin.he@arm.com>, Anshuman Khandual <anshuman.khandual@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, linux-kernel@vger.kernel.org,
- Jun Yao <yaojun8558363@gmail.com>, Qian Cai <cai@lca.pw>,
- Punit Agrawal <punitagrawal@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
- Robin Murphy <robin.murphy@arm.com>, Alex Van Brunt <avanbrunt@nvidia.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, andrew@lunn.ch, f.fainelli@gmail.com,
+ lkp@intel.com, kernel-build-reports@lists.linaro.org,
+ gregkh@linuxfoundation.org, rdunlap@infradead.org, willy@infradead.org,
+ broonie@kernel.org, linux-next@vger.kernel.org, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Without this patch, the MAP_SYNC test case will cause a print_bad_pte
-warning on arm64 as follows:
-[   25.542693] BUG: Bad page map in process mapdax333
-pte:2e8000448800f53 pmd:41ff5f003
-[   25.546360] page:ffff7e0010220000 refcount:1 mapcount:-1
-mapping:ffff8003e29c7440 index:0x0
-[   25.550281] ext4_dax_aops
-[   25.550282] name:"__aaabbbcccddd__"
-[   25.551553] flags: 0x3ffff0000001002(referenced|reserved)
-[   25.555802] raw: 03ffff0000001002 ffff8003dfffa908 0000000000000000
-ffff8003e29c7440
-[   25.559446] raw: 0000000000000000 0000000000000000 00000001fffffffe
-0000000000000000
-[   25.563075] page dumped because: bad pte
-[   25.564938] addr:0000ffffbe05b000 vm_flags:208000fb
-anon_vma:0000000000000000 mapping:ffff8003e29c7440 index:0
-[   25.574272] file:__aaabbbcccddd__ fault:ext4_dax_fault
-mmmmap:ext4_file_mmap readpage:0x0
-[   25.578799] CPU: 1 PID: 1180 Comm: mapdax333 Not tainted 5.2.0+ #21
-[   25.581702] Hardware name: QEMU KVM Virtual Machine, BIOS 0.0.0
-02/06/2015
-[   25.585624] Call trace:
-[   25.587008]  dump_backtrace+0x0/0x178
-[   25.588799]  show_stack+0x24/0x30
-[   25.590328]  dump_stack+0xa8/0xcc
-[   25.591901]  print_bad_pte+0x18c/0x218
-[   25.593628]  unmap_page_range+0x778/0xc00
-[   25.595506]  unmap_single_vma+0x94/0xe8
-[   25.597304]  unmap_vmas+0x90/0x108
-[   25.598901]  unmap_region+0xc0/0x128
-[   25.600566]  __do_munmap+0x284/0x3f0
-[   25.602245]  __vm_munmap+0x78/0xe0
-[   25.603820]  __arm64_sys_munmap+0x34/0x48
-[   25.605709]  el0_svc_common.constprop.0+0x78/0x168
-[   25.607956]  el0_svc_handler+0x34/0x90
-[   25.609698]  el0_svc+0x8/0xc
-[   25.611103] Disabling lock debugging due to kernel taint
-[   25.613573] BUG: Bad page state in process mapdax333  pfn:448800
-[   25.616359] page:ffff7e0010220000 refcount:0 mapcount:-1
-mapping:ffff8003e29c7440 index:0x1
-[   25.620236] ext4_dax_aops
-[   25.620237] name:"__aaabbbcccddd__"
-[   25.621495] flags: 0x3ffff0000000000()
-[   25.624912] raw: 03ffff0000000000 dead000000000100 dead000000000200
-ffff8003e29c7440
-[   25.628502] raw: 0000000000000001 0000000000000000 00000000fffffffe
-0000000000000000
-[   25.632097] page dumped because: non-NULL mapping
-[...]
-[   25.656567] CPU: 1 PID: 1180 Comm: mapdax333 Tainted: G    B
-5.2.0+ #21
-[   25.660131] Hardware name: QEMU KVM Virtual Machine, BIOS 0.0.0
-02/06/2015
-[   25.663324] Call trace:
-[   25.664466]  dump_backtrace+0x0/0x178
-[   25.666163]  show_stack+0x24/0x30
-[   25.667721]  dump_stack+0xa8/0xcc
-[   25.669270]  bad_page+0xf0/0x150
-[   25.670772]  free_pages_check_bad+0x84/0xa0
-[   25.672724]  free_pcppages_bulk+0x45c/0x708
-[   25.674675]  free_unref_page_commit+0xcc/0x100
-[   25.676751]  free_unref_page_list+0x13c/0x200
-[   25.678801]  release_pages+0x350/0x420
-[   25.680539]  free_pages_and_swap_cache+0xf8/0x128
-[   25.682738]  tlb_flush_mmu+0x164/0x2b0
-[   25.684485]  unmap_page_range+0x648/0xc00
-[   25.686349]  unmap_single_vma+0x94/0xe8
-[   25.688131]  unmap_vmas+0x90/0x108
-[   25.689739]  unmap_region+0xc0/0x128
-[   25.691392]  __do_munmap+0x284/0x3f0
-[   25.693079]  __vm_munmap+0x78/0xe0
-[   25.694658]  __arm64_sys_munmap+0x34/0x48
-[   25.696530]  el0_svc_common.constprop.0+0x78/0x168
-[   25.698772]  el0_svc_handler+0x34/0x90
-[   25.700512]  el0_svc+0x8/0xc
-
-The root cause is in _vm_normal_page, without the PTE_SPECIAL bit,
-the return value will be incorrectly set to pfn_to_page(pfn) instead
-of NULL. Besides, this patch also rewrite the pmd_mkdevmap to avoid
-setting PTE_SPECIAL for pmd
-
-The MAP_SYNC test case is as follows(Provided by Yibo Cai)
-$#include <stdio.h>
-$#include <string.h>
-$#include <unistd.h>
-$#include <sys/file.h>
-$#include <sys/mman.h>
-
-$#ifndef MAP_SYNC
-$#define MAP_SYNC 0x80000
-$#endif
-
-/* mount -o dax /dev/pmem0 /mnt */
-$#define F "/mnt/__aaabbbcccddd__"
-
-int main(void)
-{
-    int fd;
-    char buf[4096];
-    void *addr;
-
-    if ((fd = open(F, O_CREAT|O_TRUNC|O_RDWR, 0644)) < 0) {
-        perror("open1");
-        return 1;
-    }
-
-    if (write(fd, buf, 4096) != 4096) {
-        perror("lseek");
-        return 1;
-    }
-
-    addr = mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED|MAP_SYNC,
-fd, 0);
-    if (addr == MAP_FAILED) {
-        perror("mmap");
-        printf("did you mount with '-o dax'?\n");
-        return 1;
-    }
-
-    memset(addr, 0x55, 4096);
-
-    if (munmap(addr, 4096) == -1) {
-        perror("munmap");
-        return 1;
-    }
-
-    close(fd);
-
-    return 0;
-}
-
-Fixes: 73b20c84d42d ("arm64: mm: implement pte_devmap support")
-Reported-by: Yibo Cai <Yibo.Cai@arm.com>
-Signed-off-by: Jia He <justin.he@arm.com>
-Acked-by: Robin Murphy <Robin.Murphy@arm.com>
----
- arch/arm64/include/asm/pgtable.h | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 5fdcfe237338..e09760ece844 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -209,7 +209,7 @@ static inline pmd_t pmd_mkcont(pmd_t pmd)
- 
- static inline pte_t pte_mkdevmap(pte_t pte)
- {
--	return set_pte_bit(pte, __pgprot(PTE_DEVMAP));
-+	return set_pte_bit(pte, __pgprot(PTE_DEVMAP | PTE_SPECIAL));
- }
- 
- static inline void set_pte(pte_t *ptep, pte_t pte)
-@@ -396,7 +396,10 @@ static inline int pmd_protnone(pmd_t pmd)
- #ifdef CONFIG_TRANSPARENT_HUGEPAGE
- #define pmd_devmap(pmd)		pte_devmap(pmd_pte(pmd))
- #endif
--#define pmd_mkdevmap(pmd)	pte_pmd(pte_mkdevmap(pmd_pte(pmd)))
-+static inline pmd_t pmd_mkdevmap(pmd_t pmd)
-+{
-+	return pte_pmd(set_pte_bit(pmd_pte(pmd), __pgprot(PTE_DEVMAP)));
-+}
- 
- #define __pmd_to_phys(pmd)	__pte_to_phys(pmd_pte(pmd))
- #define __phys_to_pmd_val(phys)	__phys_to_pte_val(phys)
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBBdWcgMDYsIDIwMTkgYXQgMDI6MTE6MzNQTSAtMDcwMCwgRGF2aWQgTWlsbGVyIHdy
+b3RlOgo+IEZyb206IE5hdGhhbiBDaGFuY2VsbG9yIDxuYXRlY2hhbmNlbGxvckBnbWFpbC5jb20+
+Cj4gRGF0ZTogRnJpLCAgMiBBdWcgMjAxOSAyMzowMTo1NiAtMDcwMAo+IAo+ID4gQWZ0ZXIgY29t
+bWl0IDE3MWE5YmFlNjhjNyAoInN0YWdpbmcvb2N0ZW9uOiBBbGxvdyB0ZXN0IGJ1aWxkIG9uCj4g
+PiAhTUlQUyIpLCB0aGUgZm9sbG93aW5nIGNvbWJpbmF0aW9uIG9mIGNvbmZpZ3MgY2F1c2UgYSBm
+ZXcgS2NvbmZpZwo+ID4gd2FybmluZ3MgYW5kIGJ1aWxkIGVycm9ycyAoZGlzdGlsbGVkIGZyb20g
+YXJtIGFsbHllc2NvbmZpZyBhbmQgUmFuZHkncwo+ID4gcmFuZGNvbmZpZyBidWlsZHMpOgo+ID4g
+Cj4gPiAgICAgQ09ORklHX05FVERFVklDRVM9eQo+ID4gICAgIENPTkZJR19TVEFHSU5HPXkKPiA+
+ICAgICBDT05GSUdfQ09NUElMRV9URVNUPXkKPiA+IAo+ID4gYW5kIENPTkZJR19PQ1RFT05fRVRI
+RVJORVQgYXMgZWl0aGVyIGEgbW9kdWxlIG9yIGJ1aWx0LWluLgo+ID4gCj4gPiBXQVJOSU5HOiB1
+bm1ldCBkaXJlY3QgZGVwZW5kZW5jaWVzIGRldGVjdGVkIGZvciBNRElPX09DVEVPTgo+ID4gICBE
+ZXBlbmRzIG9uIFtuXTogTkVUREVWSUNFUyBbPXldICYmIE1ESU9fREVWSUNFIFs9eV0gJiYgTURJ
+T19CVVMgWz15XQo+ID4gJiYgNjRCSVQgWz1uXSAmJiBIQVNfSU9NRU0gWz15XSAmJiBPRl9NRElP
+IFs9bl0KPiA+ICAgU2VsZWN0ZWQgYnkgW3ldOgo+ID4gICAtIE9DVEVPTl9FVEhFUk5FVCBbPXld
+ICYmIFNUQUdJTkcgWz15XSAmJiAoQ0FWSVVNX09DVEVPTl9TT0MgfHwKPiA+IENPTVBJTEVfVEVT
+VCBbPXldKSAmJiBORVRERVZJQ0VTIFs9eV0KPiA+IAo+ID4gSW4gZmlsZSBpbmNsdWRlZCBmcm9t
+IC4uL2RyaXZlcnMvbmV0L3BoeS9tZGlvLW9jdGVvbi5jOjE0Ogo+ID4gLi4vZHJpdmVycy9uZXQv
+cGh5L21kaW8tY2F2aXVtLmg6MTExOjM2OiBlcnJvcjogaW1wbGljaXQgZGVjbGFyYXRpb24gb2YK
+PiA+IGZ1bmN0aW9uIOKAmHdyaXRlceKAmTsgZGlkIHlvdSBtZWFuIOKAmHdyaXRlbOKAmT8KPiA+
+IFstV2Vycm9yPWltcGxpY2l0LWZ1bmN0aW9uLWRlY2xhcmF0aW9uXQo+ID4gICAxMTEgfCAjZGVm
+aW5lIG9jdF9tZGlvX3dyaXRlcSh2YWwsIGFkZHIpIHdyaXRlcSh2YWwsICh2b2lkICopYWRkcikK
+PiA+ICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBefn5+fn4KPiA+
+IAo+ID4gQ09ORklHXzY0QklUIGlzIG5vdCBzdHJpY3RseSBuZWNlc3NhcnkgaWYgdGhlIHByb3Bl
+ciByZWFkcS93cml0ZXEKPiA+IGRlZmluaXRpb25zIGFyZSBpbmNsdWRlZCBmcm9tIGlvLTY0LW5v
+bmF0b21pYy1sby1oaS5oLgo+ID4gCj4gPiBDT05GSUdfT0ZfTURJTyBpcyBub3QgbmVlZGVkIHdo
+ZW4gQ09ORklHX0NPTVBJTEVfVEVTVCBpcyBlbmFibGVkIGJlY2F1c2UKPiA+IG9mIGNvbW1pdCBm
+OWRjOWFjNTE2MTAgKCJvZi9tZGlvOiBBZGQgZHVtbXkgZnVuY3Rpb25zIGluIG9mX21kaW8uaC4i
+KS4KPiA+IAo+ID4gRml4ZXM6IDE3MWE5YmFlNjhjNyAoInN0YWdpbmcvb2N0ZW9uOiBBbGxvdyB0
+ZXN0IGJ1aWxkIG9uICFNSVBTIikKPiA+IFJlcG9ydGVkLWJ5OiBrYnVpbGQgdGVzdCByb2JvdCA8
+bGtwQGludGVsLmNvbT4KPiA+IFJlcG9ydGVkLWJ5OiBNYXJrIEJyb3duIDxicm9vbmllQGtlcm5l
+bC5vcmc+Cj4gPiBSZXBvcnRlZC1ieTogUmFuZHkgRHVubGFwIDxyZHVubGFwQGluZnJhZGVhZC5v
+cmc+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBOYXRoYW4gQ2hhbmNlbGxvciA8bmF0ZWNoYW5jZWxsb3JA
+Z21haWwuY29tPgo+IAo+IEFwcGxpZWQgdG8gbmV0LW5leHQuCj4gCj4gUGxlYXNlIG1ha2UgaXQg
+Y2xlYXIgd2hhdCB0cmVlIHlvdXIgY2hhbmdlcyBhcmUgdGFyZ2V0dGluZyBpbiB0aGUgZnV0dXJl
+LAo+IHRoYW5rIHlvdS4KClNvcnJ5IGZvciB0aGUgY29uZnVzaW9uLCBJJ2xsIGRvIG15IGJlc3Qg
+dG8gYWRkIGEgcGF0Y2ggc3VmZml4IGluIHRoZQpmdXR1cmUuCgpUaGFuayB5b3UgZm9yIHBpY2tp
+bmcgdGhpcyB1cCEKTmF0aGFuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
