@@ -2,157 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60278852B6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 20:10:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76E1185327
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 20:45:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8SSAJER8ua12A56XUZducaPKfg3i654HnCUsjVlkM9k=; b=PJzcs0vMY1Vnfr
-	X6s8FEW7WUwEGcDYXDZDSlZPHOUGznOIeIJlW/2IeeQwH/WCyu4RCAaNrgMUw12GXWsCmnYKrTp3E
-	ypG9A1P7a2X1NAcxxDwS4kSnDWdN4OEfMHS00qqiU6lbpnSP5gaRO5KlA1yB8fr+GBm9mJgyI9h4+
-	+GPZUhdC6d6rC+dhZB4sO/ru8HLIfhPi9hNFPXMEdLZLL3MeBLQcASakc3PrLLtet617+sVyKfqHV
-	pjDBdOfg0JBZeydo6gk8A7qZpG3jNaRz7GkQizFzLmlBC/XpYLx9eWd1bxwQXhqJR29mCNH+PD+sr
-	5ViT4hUr4QJXyDIMJpXA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EslWcHo9AztG3XyiVsQCWfg5y9ymA/B2/AwanXAeB+U=; b=KqG6XLCPUHUtQt
+	suQqfZ0IhXrUklrZHyvVXVv5MPEp0t3etV48AtY+97dvO4wGCe9LxpdHN7lZcYV7daHC0tB/BlnOj
+	vv5NR3XFNOwEC7DIsG2TP8MuFZxp0RR+BRGm0ggaCl4so68pmrhLYtSLAUKvY8AKrIYhhz2eNORgr
+	BWPaZpBxCJ0AFtL5zB82HTZOay8lf7NdiUM0sVSb4R1C/FDJo20FbolwawYmg9jp3/1xjgbL4bO6p
+	Am4jAml8kqYtppCyXh8hrvXeo8IzrbEMJjD0cU4R1jdz1WO46o+bSH+Ga9x0XGjWlYb2MrClToHt7
+	Fco2h/eayBqVNOQOOiKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvQNq-0005Ed-Q6; Wed, 07 Aug 2019 18:09:58 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hvQwV-0000YT-5V; Wed, 07 Aug 2019 18:45:47 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvQNh-0005EA-5o
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 18:09:51 +0000
-Received: by mail-wm1-x343.google.com with SMTP id u25so940091wmc.4
+ id 1hvQw7-0000XY-1F
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 18:45:24 +0000
+Received: by mail-qt1-x844.google.com with SMTP id n11so89395383qtl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 07 Aug 2019 11:09:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Z69czHNpMMZYmp5DiHWRPu9dV/HbYAv+Qy3R1jmhONs=;
- b=CmSZUjrEKyoDC6JEZLKF3y8xaLm0Y05XM+NhORxJKY0TH25BPXoT7ysbrCvAG3H6O6
- yfJEmGmUNI0KXVPhjKo9vrUMcdc9pfDkyZMOwhz21lSY4HazOUXczGBYoT2Yaq7Ihd3e
- vjtwNWEvkD+Xfd86GL5owOtKyVZgZLvga7n3fNwfI0iRsCqxuBNnOmJBZXkOTdMwumhL
- xTbahUIbM5Nbj6cJY98N4A1ywzrA0zQ3wpQT2ya1Vr75DMr893TUTOVv+a5eaakqKjcz
- cOS5TsDUxti1g3rN7zaBUbyZjzpkVPvdSsIgzVu3P6szrOiPsE2coBQ3/ZKo1vUbV8HZ
- O0Ig==
+ Wed, 07 Aug 2019 11:45:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=3FBU1u876RL78FpNPM+fEUZZ2hjnifBWtf0De88VGZE=;
+ b=MZtM6ZBGFwE33KRflR0oa3CBb23tUJNibReW2z8hV+PFQvDLcROCi2gyRBPe9ee6oq
+ pZn6TbSj3r0ODQteFDkF1CSI4mKykNPbAiajIshMY8VzAliNvgcPXBUUGCREQt6+8Z1V
+ uoq1tMl4l0ZO9Kp2qY9IGoOwb+odrfNXSq6RIRLRaR+Rg1xVi42LEnwRIXgobluBY2Yl
+ qiqvH8jUFJ6YLAtQc4zO3xuLwE0Qe/iGGtjDSRfnAaXDmDRDsf69FDSYnm7CaH8JdJOZ
+ HtIY+f05nKmGpuO8XMPOf0z13FI4w4jOLVqdzAzcRSRKvZyv4TNu/S1mM4sV1EBmg3u2
+ tB/w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=Z69czHNpMMZYmp5DiHWRPu9dV/HbYAv+Qy3R1jmhONs=;
- b=gfHTJaymO+C6s5bRJWnbcblngHGttK5w0CGFa5Q/+C3XWg08DX+sY6RQYf0GZ4YVr5
- 8pCcU15CkUJg7GQp0rhJ2NsFoTTD7h27LdBx5i4b76+MMoD4VZMsWKiYBGbSFYoySVFg
- oGB91t2YaOwJVmQwtzhwd3gMl1fKDQtiudjwAgcmUBLXnBqKDi2FA0WXksmV8TtjEqRZ
- NiM2mWOWyElVJVpTBYH11TwDZqFVzbVPw5LOZq/TkZQySZNAVVUAZXgZYEL7WbyI4Tco
- kwt5XnEqgYHIYj6zOfSk+rKzG4d5LbvfAEg0kMkSMSE9NoufWdcpCWRxlBYMtynVyvnE
- V/Bw==
-X-Gm-Message-State: APjAAAXj4B/biSjOuBZlOykq0nLD8OsTCSBTzgyjpYXGJZrsqX4jgIop
- BRc8ZwhPUz7sdB0I/3dN9ea947S6rsM=
-X-Google-Smtp-Source: APXvYqxKnTBTEleaK1lDcO6OoiMCmnSnY3YDmdO0jQLS7Z34nzg/qXIPiVqvZmm5GUEkyPYYwhjdKw==
-X-Received: by 2002:a1c:a101:: with SMTP id k1mr1147504wme.98.1565201387298;
- Wed, 07 Aug 2019 11:09:47 -0700 (PDT)
-Received: from ?IPv6:2a01:e34:ed2f:f020:90cb:64c9:c238:a704?
- ([2a01:e34:ed2f:f020:90cb:64c9:c238:a704])
- by smtp.googlemail.com with ESMTPSA id 66sm10519308wrc.83.2019.08.07.11.09.45
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3FBU1u876RL78FpNPM+fEUZZ2hjnifBWtf0De88VGZE=;
+ b=gQkgde1RCzr/3vbjqtBOyr40rckfpPmpos1BhpGQkIRUAsqrkaU89vJbiVJiiYZqvN
+ Ww0+kxmy4Zz53rTjllilGI/Rqw77wJh+wEXowBgMybyq35dQl5Ow8pcaJHa9aZ61O1vQ
+ AZ0wfo9wWHijp7kZxMPkdmYA7y0T42u8S/Dim/UcQcH7fBlwuWKly2c4LDCgN8Y1IgsV
+ AOonWs7fDZxraIRfvGz5e+FebkNxsDXIlwny6kYJFQVYADPbjitU8rzsZhFHQsZMUb3I
+ v7xHVbA/MnX6mWDZ4V22P3KOxdeU9/aR1KNN3tBTMaIiYCgz8/RHZaaBLzHD62eKYf6g
+ 0zAw==
+X-Gm-Message-State: APjAAAXRNYOkJ2iW5nmjHDg82yaElR3a5FtfQBWZW9/IA+FoESVzQLUl
+ L94LDabYDHCmmebqSsTKy9E=
+X-Google-Smtp-Source: APXvYqwWf1dv6Cff16aig8tua7PcpEKLMe7WcVox4dHzStZsHVQ+QYcKczlV2ADG8SaLlMn6NYeznw==
+X-Received: by 2002:a0c:8705:: with SMTP id 5mr9434765qvh.32.1565203520357;
+ Wed, 07 Aug 2019 11:45:20 -0700 (PDT)
+Received: from localhost ([2620:10d:c091:500::6ac7])
+ by smtp.gmail.com with ESMTPSA id d123sm41665368qkb.94.2019.08.07.11.45.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 07 Aug 2019 11:09:46 -0700 (PDT)
-Subject: Re: [PATCH 6/6] PSCI: cpuidle: Refactor CPU suspend power_state
- parameter handling
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pm@vger.kernel.org
-References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
- <20190722153745.32446-7-lorenzo.pieralisi@arm.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <cfa96819-dda8-e481-8421-250c7c4c7565@linaro.org>
-Date: Wed, 7 Aug 2019 20:09:45 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Wed, 07 Aug 2019 11:45:19 -0700 (PDT)
+Date: Wed, 7 Aug 2019 11:45:18 -0700
+From: Tejun Heo <tj@kernel.org>
+To: Tony Lindgren <tony@atomide.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: Re: [PATCH] kernfs: fix memleak in kernel_ops_readdir()
+Message-ID: <20190807184518.GP136335@devbig004.ftw2.facebook.com>
+References: <20190805173404.GF136335@devbig004.ftw2.facebook.com>
+ <20190807132928.GD5443@atomide.com>
 MIME-Version: 1.0
-In-Reply-To: <20190722153745.32446-7-lorenzo.pieralisi@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190807132928.GD5443@atomide.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_110949_622303_196B89CC 
-X-CRM114-Status: GOOD (  16.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190807_114523_080686_59828AC6 
+X-CRM114-Status: GOOD (  13.89  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (htejun[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -164,47 +103,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
- LAKML <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Andrea Arcangeli <aarcange@redhat.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, linux-omap@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjIvMDcvMjAxOSAxNzozNywgTG9yZW56byBQaWVyYWxpc2kgd3JvdGU6Cj4gQ3VycmVudCBQ
-U0NJIGNvZGUgaGFuZGxlcyBpZGxlIHN0YXRlIGVudHJ5IHRocm91Z2ggdGhlCj4gcHNjaV9jcHVf
-c3VzcGVuZF9lbnRlcigpIEFQSSwgdGhhdCB0YWtlcyBhbiBpZGxlIHN0YXRlIGluZGV4IGFzIGEK
-PiBwYXJhbWV0ZXIgYW5kIGNvbnZlcnQgdGhlIGluZGV4IGludG8gYSBwcmV2aW91c2x5IGluaXRp
-YWxpemVkCj4gcG93ZXJfc3RhdGUgcGFyYW1ldGVyIGJlZm9yZSBjYWxsaW5nIHRoZSBQU0NJLkNQ
-VV9TVVNQRU5EKCkgd2l0aCBpdC4KPiAKPiBUaGlzIGlzIHVud2llbGRseSwgc2luY2UgaXQgZm9y
-Y2VzIHRoZSBQU0NJIGZpcm13YXJlIGxheWVyIHRvIGtlZXAgdHJhY2sKPiBvZiBwb3dlcl9zdGF0
-ZSBwYXJhbWV0ZXIgZm9yIGV2ZXJ5IGlkbGUgc3RhdGUgc28gdGhhdCB0aGUKPiBpbmRleC0+cG93
-ZXJfc3RhdGUgY29udmVyc2lvbiBjYW4gYmUgbWFkZSBpbiB0aGUgUFNDSSBmaXJtd2FyZSBsYXll
-cgo+IGluc3RlYWQgb2YgdGhlIENQVWlkbGUgZHJpdmVyIGltcGxlbWVudGF0aW9ucy4KPiAKPiBN
-b3ZlIHRoZSBwb3dlcl9zdGF0ZSBoYW5kbGluZyBvdXQgb2YgZHJpdmVycy9maXJtd2FyZS9wc2Np
-Cj4gaW50byB0aGUgcmVzcGVjdGl2ZSBBQ1BJL0RUIFBTQ0kgQ1BVaWRsZSBiYWNrZW5kcyBhbmQg
-Y29udmVydAo+IHRoZSBwc2NpX2NwdV9zdXNwZW5kX2VudGVyKCkgQVBJIHRvIGdldCB0aGUgcG93
-ZXJfc3RhdGUKPiBwYXJhbWV0ZXIgYXMgaW5wdXQsIHdoaWNoIG1ha2VzIGl0IGNsb3NlciB0byBp
-dHMgZmlybXdhcmUKPiBpbnRlcmZhY2UgUFNDSS5DUFVfU1VTUEVORCgpIEFQSS4KPiAKPiBBIG5v
-dGFibGUgc2lkZSBlZmZlY3QgaXMgdGhhdCB0aGUgUFNDSSBBQ1BJL0RUIENQVWlkbGUgYmFja2Vu
-ZHMKPiBub3cgY2FuIGRpcmVjdGx5IGhhbmRsZSAoYW5kIGlmIG5lZWRlZCB1cGRhdGUpIHBvd2Vy
-X3N0YXRlCj4gcGFyYW1ldGVycyBiZWZvcmUgaGFuZGluZyB0aGVtIG92ZXIgdG8gdGhlIFBTQ0kg
-ZmlybXdhcmUKPiBpbnRlcmZhY2UgdG8gdHJpZ2dlciBQU0NJLkNQVV9TVVNQRU5EKCkgY2FsbHMu
-Cj4gCj4gU2lnbmVkLW9mZi1ieTogTG9yZW56byBQaWVyYWxpc2kgPGxvcmVuem8ucGllcmFsaXNp
-QGFybS5jb20+Cj4gQ2M6IFdpbGwgRGVhY29uIDx3aWxsQGtlcm5lbC5vcmc+Cj4gQ2M6IFVsZiBI
-YW5zc29uIDx1bGYuaGFuc3NvbkBsaW5hcm8ub3JnPgo+IENjOiBTdWRlZXAgSG9sbGEgPHN1ZGVl
-cC5ob2xsYUBhcm0uY29tPgo+IENjOiBEYW5pZWwgTGV6Y2FubyA8ZGFuaWVsLmxlemNhbm9AbGlu
-YXJvLm9yZz4KPiBDYzogQ2F0YWxpbiBNYXJpbmFzIDxjYXRhbGluLm1hcmluYXNAYXJtLmNvbT4K
-PiBDYzogTWFyayBSdXRsYW5kIDxtYXJrLnJ1dGxhbmRAYXJtLmNvbT4KPiBDYzogIlJhZmFlbCBK
-LiBXeXNvY2tpIiA8cmp3QHJqd3lzb2NraS5uZXQ+Cj4gLS0tCgpBRkFJQ1QsCgpBY2tlZC1ieTog
-RGFuaWVsIExlemNhbm8gPGRhbmllbC5sZXpjYW5vQGxpbmFyby5vcmc+CgoKCi0tIAogPGh0dHA6
-Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZv
-ciBBUk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRwOi8vd3d3LmZhY2Vib29rLmNvbS9wYWdl
-cy9MaW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0dGVyLmNvbS8jIS9saW5hcm9vcmc+IFR3
-aXR0ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1ibG9nLz4gQmxvZwoKCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hello,
+
+On Wed, Aug 07, 2019 at 06:29:28AM -0700, Tony Lindgren wrote:
+> Hi,
+> 
+> * Tejun Heo <tj@kernel.org> [691231 23:00]:
+> > From: Andrea Arcangeli <aarcange@redhat.com>
+> > 
+> > If getdents64 is killed or hits on segfault, it'll leave cgroups
+> > directories in sysfs pinned leaking memory because the kernfs node
+> > won't be freed on rmdir and the parent neither.
+> 
+> Somehow this causes a regression in Linux next for me where I'm seeing
+> lots of sysfs entries now missing under /sys/bus/platform/devices.
+> 
+> For example, I now only see one .serial entry show up in sysfs.
+> Things work again if I revert commit cc798c83898e ("kernfs: fix memleak
+> inkernel_ops_readdir()"). Any ideas why that would be?
+> 
+> Below is a diff -u of ls /sys/bus/platform/devices for reference
+> showing the missing entries with cc798c83898e.
+
+Ugh, you're right.  It can get double-put cuz ctx->pos is put by
+release too.  Greg, sorry about the noise but can you please revert
+the patch?  I'll look into why this looked like memory leak from
+slabinfo side.
+
+Thanks.
+
+-- 
+tejun
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
