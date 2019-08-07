@@ -2,54 +2,182 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1B0785078
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 17:59:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C959A8507C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 18:00:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pAUB3ayjd4ey2+ZHnrnRUlqzpXE8fnvBXtWv4uis7Q4=; b=W522QCkyFS1/R5
-	p9w61NuR+JUC//Clm48vjjGOHxr4lvcr3EidAjDdMVpy7o+BNxr2O5Olpc2lwDRM4BhykuvwXG5aw
-	q2oaUS/L/EGXM1dWf6Yy8cz7jUg7o7Ga8NwQZWQek2Ew013Pl9pfvjRT+fpE3j85xGUmgEUInfKrm
-	Vd+yyrDwCARhJP0FFj7BVrxay3/WBvdUclwnLEuMyd2q8L8W2KQapSu1sN9DHZUq0KnDbqS4rJqs6
-	GrS/HWxXr50vwg8aTOfBnMBjsxbHhipsh9ltfEpU8U62OL+6e9tKamhHBL4InGJW3EolyA9Q6b3sg
-	3WRAzQIqyTOY8ER/k4Ug==;
+	List-Owner; bh=K6Vw68YYaOGuGUr6eZPDaMV9Gbmt6gLtY/IpkhSwT9M=; b=VkrrYf6LhIUfa+
+	jft/XZy30/UX41YOlNusZ1utYM7ZjZCrOyM51YTRlMrjofz2k4QQIr4SlClrmQax20TcuLwkJDIUZ
+	t+ax7awyUC2+oRukuJ7AVw/1+7QIOPpAYjgff90xXhaj/6S0DebJSX6a+zqMGNQA48MP/zC8qM3OP
+	GrISGGPojnNJirsq7Bvv1OF7VPFDQvGG1z8F9Uv5Xbitq+CQn7bFT2jRX0bbHESJqu47EMZctISL1
+	U5JmG0GeM2q4hN5e4X96pF6sdJFXWdnR7Z1U6GnsFdgA+SaqmUPfJp/372r7wuHHJjhft7H8NxZNF
+	IOtaV3Yg+QFGlS1BU64A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvOLR-0000py-H9; Wed, 07 Aug 2019 15:59:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvOIE-0006V0-Rc
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 15:56:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B4E9B1570;
- Wed,  7 Aug 2019 08:56:02 -0700 (PDT)
-Received: from capper-ampere.manchester.arm.com
- (capper-ampere.manchester.arm.com [10.32.98.74])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7BB633F706;
- Wed,  7 Aug 2019 08:56:01 -0700 (PDT)
-From: Steve Capper <steve.capper@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V5 12/12] docs: arm64: Add layout and 52-bit info to memory
- document
-Date: Wed,  7 Aug 2019 16:55:24 +0100
-Message-Id: <20190807155524.5112-13-steve.capper@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190807155524.5112-1-steve.capper@arm.com>
-References: <20190807155524.5112-1-steve.capper@arm.com>
+	id 1hvOM6-0001Wb-EE; Wed, 07 Aug 2019 16:00:02 +0000
+Received: from mail-eopbgr50071.outbound.protection.outlook.com ([40.107.5.71]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvOKP-00006p-8E
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 15:58:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0juoBC/HPckAK9cAM8bC88e000LQ/EXjUth06LLN3wU=;
+ b=j1ymQUARhS2qv8qguhWuvFOOonl6Lo1EHrwm5epk4GQtxbze2hOLyPex612lGM4Xv1id2GZHqLMJRcIjZrk1LOKG+4VoogS9hJhZtuRM2Sy1RfyJTMRclJVJtgJSpowMq5/oaWQB6ofJPkUEBKRPmYoFfQRLu2yAN7e7edfxhLo=
+Received: from VI1PR08CA0125.eurprd08.prod.outlook.com (2603:10a6:800:d4::27)
+ by DB6PR0802MB2600.eurprd08.prod.outlook.com (2603:10a6:4:a1::22)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2136.16; Wed, 7 Aug
+ 2019 15:58:12 +0000
+Received: from VE1EUR03FT054.eop-EUR03.prod.protection.outlook.com
+ (2a01:111:f400:7e09::203) by VI1PR08CA0125.outlook.office365.com
+ (2603:10a6:800:d4::27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2157.15 via Frontend
+ Transport; Wed, 7 Aug 2019 15:58:12 +0000
+Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
+ smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
+ verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=temperror
+ action=none header.from=arm.com;
+Received-SPF: TempError (protection.outlook.com: error in processing during
+ lookup of arm.com: DNS Timeout)
+Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
+ VE1EUR03FT054.mail.protection.outlook.com (10.152.19.64) with
+ Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.2052.18 via Frontend Transport; Wed, 7 Aug 2019 15:58:10 +0000
+Received: ("Tessian outbound 578a71fe5eaa:v26");
+ Wed, 07 Aug 2019 15:58:06 +0000
+X-CheckRecipientChecked: true
+X-CR-MTA-CID: f1fb4247b044addc
+X-CR-MTA-TID: 64aa7808
+Received: from 8f3c2a62aa7b.1 (ip-172-16-0-2.eu-west-1.compute.internal
+ [104.47.5.58]) by 64aa7808-outbound-1.mta.getcheckrecipient.com id
+ 468B5B84-8E59-4503-936E-FA03665F5D96.1; 
+ Wed, 07 Aug 2019 15:58:01 +0000
+Received: from EUR02-HE1-obe.outbound.protection.outlook.com
+ (mail-he1eur02lp2058.outbound.protection.outlook.com [104.47.5.58])
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 8f3c2a62aa7b.1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
+ Wed, 07 Aug 2019 15:58:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=V5cUiUZPL0eOEBzUYfk6Efdg6s/sMKEDgCHLz0teEip4zqDvUoYXAZ8+VjpNcyu2U/AVPLdOnKSO0+wWQMMqY21afsdGw2xiv7cBIqy+z3QsJOXez8MjM4FvUjvyrFmrW7cIgR5SN8fLmHL+tLWoA5DeLHTdXYF9fQQEBVNuJI+xv+YblFnqJk4uqX8DAqwirUBWKEaAesSSKfKkhUngApQ+P+QethfhbcClM84roV22ZKuGEfxBsKqtZHJu/MBR39UxJYrFCkAa6Rrb2EU7zrFRhnYbhNpeQrhhGvqprig+0Y6lOtdUOhtvwO5cQYr3eJwRkDiLTSaSVZppcsSSwQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0juoBC/HPckAK9cAM8bC88e000LQ/EXjUth06LLN3wU=;
+ b=a607pv2+atey45myiNOJdKXeE1D8rBGbXPTBDtgDb3VgPV8OjnTsmsQF3xqst95l9Gcxtik5IlB3+5vfK7H06ZDveBS4RZVrHxPBW5UXkLSM31CyFCO6FYBkQxvOPbnITWiNDCrQqk/w4NiQVJWhiz4RGOZalq0gy3WR2RI4iASdaH9bQua3HoFPtjHZntJPU0h2iQXR4foxiuRaZUfpiKMVaP1h2tnhtnsWWrild+wVG2eCqys3C/6Rhs5WclZeT6/BJ9c1LHOrXWEc4fKXNBXOqSnPUtegIUyZFjjBP9U6k3+fSPrCxdUqyd/Es67us1CFy1HPByhpbbHPXRsGGA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=arm.com;dmarc=pass action=none header.from=arm.com;dkim=pass
+ header.d=arm.com;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0juoBC/HPckAK9cAM8bC88e000LQ/EXjUth06LLN3wU=;
+ b=j1ymQUARhS2qv8qguhWuvFOOonl6Lo1EHrwm5epk4GQtxbze2hOLyPex612lGM4Xv1id2GZHqLMJRcIjZrk1LOKG+4VoogS9hJhZtuRM2Sy1RfyJTMRclJVJtgJSpowMq5/oaWQB6ofJPkUEBKRPmYoFfQRLu2yAN7e7edfxhLo=
+Received: from DB8PR08MB4105.eurprd08.prod.outlook.com (20.179.12.12) by
+ DB8PR08MB4187.eurprd08.prod.outlook.com (20.179.9.82) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2136.17; Wed, 7 Aug 2019 15:57:58 +0000
+Received: from DB8PR08MB4105.eurprd08.prod.outlook.com
+ ([fe80::f558:a6c5:f71c:491]) by DB8PR08MB4105.eurprd08.prod.outlook.com
+ ([fe80::f558:a6c5:f71c:491%5]) with mapi id 15.20.2136.010; Wed, 7 Aug 2019
+ 15:57:58 +0000
+From: Steve Capper <Steve.Capper@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH V4 11/11] docs: arm64: Add layout and 52-bit info to
+ memory document
+Thread-Topic: [PATCH V4 11/11] docs: arm64: Add layout and 52-bit info to
+ memory document
+Thread-Index: AQHVRinQqqwQFRazNUqPmc5n7tMFdabuSpwAgAGCIoCAAAdKAIAAEWUA
+Date: Wed, 7 Aug 2019 15:57:58 +0000
+Message-ID: <20190807155755.GA5208@capper-ampere.manchester.arm.com>
+References: <20190729162117.832-1-steve.capper@arm.com>
+ <20190729162117.832-12-steve.capper@arm.com>
+ <20190806152734.GH30716@arrakis.emea.arm.com>
+ <20190807132935.GB17012@capper-ampere.manchester.arm.com>
+ <20190807145540.uglvqrgkotkzfzuy@willie-the-truck>
+In-Reply-To: <20190807145540.uglvqrgkotkzfzuy@willie-the-truck>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mutt/1.10.1 (2018-07-13)
+x-originating-ip: [217.140.106.32]
+x-clientproxiedby: LO2P123CA0006.GBRP123.PROD.OUTLOOK.COM
+ (2603:10a6:600:a6::18) To DB8PR08MB4105.eurprd08.prod.outlook.com
+ (2603:10a6:10:b0::12)
+Authentication-Results-Original: spf=none (sender IP is )
+ smtp.mailfrom=Steve.Capper@arm.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+X-MS-Office365-Filtering-Correlation-Id: 9ebbc76a-0858-4a94-0ba2-08d71b500bf2
+X-MS-Office365-Filtering-HT: Tenant
+X-Microsoft-Antispam-Untrusted: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB8PR08MB4187; 
+X-MS-TrafficTypeDiagnostic: DB8PR08MB4187:|DB6PR0802MB2600:
+X-Microsoft-Antispam-PRVS: <DB6PR0802MB2600459B73C0E123A2565DD681D40@DB6PR0802MB2600.eurprd08.prod.outlook.com>
+x-checkrecipientrouted: true
+x-ms-oob-tlc-oobclassifiers: OLM:7219;OLM:7219;
+x-forefront-prvs: 01221E3973
+X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(136003)(346002)(376002)(39860400002)(366004)(189003)(199004)(6436002)(4744005)(66556008)(6246003)(1076003)(81156014)(5660300002)(229853002)(2906002)(53936002)(71190400001)(26005)(256004)(478600001)(66476007)(64756008)(25786009)(66446008)(6512007)(66066001)(8936002)(6486002)(71200400001)(6116002)(8676002)(66946007)(3846002)(486006)(52116002)(7736002)(76176011)(6916009)(316002)(4326008)(54906003)(33656002)(44832011)(386003)(81166006)(476003)(11346002)(186003)(446003)(99286004)(6506007)(58126008)(102836004)(68736007)(305945005)(86362001)(14454004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR08MB4187;
+ H:DB8PR08MB4105.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: arm.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info-Original: XFYHIB9vcMkQSkXw29w2FIgMbyex8y7W27v5uW+CVbKErjsVL4anPLQxILPwRfZYF/wCPc7DZ6AJTIzhlU7Y5JuDaPEJd6IkE7+DE2xMSC4HeyB9GinNG9wjFRTQ1D+QU4ZclsI8+Z94MewfW5wsDG2MKJx82uOTlV3ktwTDMRJ4579HqJZIt0KhElACRgI6Cr2I0BgnSW/mnJH+FXSJGA1SOyeSVxSoWLlqEIGOZgBsrCrmCzmexjgorCNC+cclMHTHqyfWHCUzXJVWmPZshwOpAVOJfAmTEcTMBtuS+szvRV07yGK5XL6dq2wKDvpMoEaLdKJoQNn++i0Bs1AKONM5NgnUDzjWn8QaRscEsjgvlLasqqc0X7MM/vitu6Ed9Mn5+kE1A/6+oknn404colpt8hGukZmEDRF+57h1SzM=
+Content-ID: <64449EDC13CE8F4394EFD2F0B1574756@eurprd08.prod.outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR08MB4187
+Original-Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=Steve.Capper@arm.com; 
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: VE1EUR03FT054.eop-EUR03.prod.protection.outlook.com
+X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
+ EFV:NLI; SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(376002)(136003)(39860400002)(346002)(2980300002)(199004)(189003)(99286004)(6486002)(70586007)(186003)(11346002)(97756001)(3846002)(86362001)(63370400001)(6116002)(63350400001)(1076003)(478600001)(126002)(6512007)(229853002)(70206006)(26826003)(81166006)(356004)(476003)(6246003)(8676002)(81156014)(446003)(23726003)(76176011)(33656002)(8746002)(7736002)(36906005)(46406003)(8936002)(102836004)(58126008)(4744005)(316002)(76130400001)(22756006)(386003)(5660300002)(26005)(14454004)(305945005)(336012)(66066001)(2906002)(54906003)(50466002)(4326008)(6862004)(486006)(25786009)(6506007)(47776003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB6PR0802MB2600;
+ H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:TempError; LANG:en;
+ PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; A:1; MX:1; 
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 4c70fa3c-a143-4d2c-e64d-08d71b500444
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(710020)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:DB6PR0802MB2600; 
+NoDisclaimer: True
+X-Forefront-PRVS: 01221E3973
+X-Microsoft-Antispam-Message-Info: OhWw0kye/8LUGH+17MRlvzWZsW6QTutqsBtWkDwzCZb40emWf0TnoaScaPoHHPfmVJfksK0AurOcE77fTX6oWjZGe0Et5Ayx9Z2OR66zojSXMSVspAdBkEjoNebjxlCcxyK+brudnGkWImyF//CQKikuNVs2aisuyUPcVkXwTZMGcqmT8UobBHJIIwWWG0DxJnnzfgslLu4H9TNTqrvQHTSWmEoh2hAhFl/zlQ4KMnb32fxINxVUeG62r6bv6ow4LwtexBLA5o+UcVFgxGjWCQ0tE8JKAwpnAplD1+3pI9wKVLQGs8jNy8WyIkfMHQ/AMopbvr7H4GqKSvaK8BDy1OkoH+ELKctdUE03zoHrfqO5wEBS8+aMNMKnwvqPvj8D5/P2Zs8H9kkBMpyYLEUtPpJ+hQV35FvEh6ttQj8Uhoc=
+X-OriginatorOrg: arm.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Aug 2019 15:58:10.6629 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9ebbc76a-0858-4a94-0ba2-08d71b500bf2
+X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
+ Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0802MB2600
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_085603_040613_385F13E0 
-X-CRM114-Status: GOOD (  18.86  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190807_085817_614925_848224BC 
+X-CRM114-Status: UNSURE (   6.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.5.71 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,195 +189,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, catalin.marinas@arm.com,
- bhsharma@redhat.com, Steve Capper <steve.capper@arm.com>, maz@kernel.org,
- will@kernel.org
+Cc: "crecklin@redhat.com" <crecklin@redhat.com>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <Catalin.Marinas@arm.com>,
+ "bhsharma@redhat.com" <bhsharma@redhat.com>, "maz@kernel.org" <maz@kernel.org>,
+ nd <nd@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As the kernel no longer prints out the memory layout on boot, this patch
-adds this information back to the memory document.
+On Wed, Aug 07, 2019 at 03:55:40PM +0100, Will Deacon wrote:
+> On Wed, Aug 07, 2019 at 01:29:38PM +0000, Steve Capper wrote:
+> > Many thanks for going through this series Catalin. Would you like me to post
+> > a V5 of the series?
+> 
+> /me does best Catalin impression...
+> 
+> "Yes, please."
+> 
+> Uncanny, eh?
 
-Also, as the 52-bit support introduces some subtle changes to the arm64
-memory, the rationale behind these changes are also added to the memory
-document.
+Well I'm convinced! Just sent out a V5 now.
 
-Signed-off-by: Steve Capper <steve.capper@arm.com>
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Cheers Will ;-).
 
----
-
-V5: tables reduced to 2, typos fixed.
-
-New in V4
----
- Documentation/arm64/memory.rst | 123 +++++++++++++++++++++++++--------
- 1 file changed, 95 insertions(+), 28 deletions(-)
-
-diff --git a/Documentation/arm64/memory.rst b/Documentation/arm64/memory.rst
-index 464b880fc4b7..b040909e45f8 100644
---- a/Documentation/arm64/memory.rst
-+++ b/Documentation/arm64/memory.rst
-@@ -14,6 +14,10 @@ with the 4KB page configuration, allowing 39-bit (512GB) or 48-bit
- 64KB pages, only 2 levels of translation tables, allowing 42-bit (4TB)
- virtual address, are used but the memory layout is the same.
- 
-+ARMv8.2 adds optional support for Large Virtual Address space. This is
-+only available when running with a 64KB page size and expands the
-+number of descriptors in the first level of translation.
-+
- User addresses have bits 63:48 set to 0 while the kernel addresses have
- the same bits set to 1. TTBRx selection is given by bit 63 of the
- virtual address. The swapper_pg_dir contains only kernel (global)
-@@ -22,40 +26,43 @@ The swapper_pg_dir address is written to TTBR1 and never written to
- TTBR0.
- 
- 
--AArch64 Linux memory layout with 4KB pages + 3 levels::
--
--  Start			End			Size		Use
--  -----------------------------------------------------------------------
--  0000000000000000	0000007fffffffff	 512GB		user
--  ffffff8000000000	ffffffffffffffff	 512GB		kernel
--
--
--AArch64 Linux memory layout with 4KB pages + 4 levels::
-+AArch64 Linux memory layout with 4KB pages + 4 levels (48-bit)::
- 
-   Start			End			Size		Use
-   -----------------------------------------------------------------------
-   0000000000000000	0000ffffffffffff	 256TB		user
--  ffff000000000000	ffffffffffffffff	 256TB		kernel
--
--
--AArch64 Linux memory layout with 64KB pages + 2 levels::
-+  ffff000000000000	ffff7fffffffffff	 128TB		kernel logical memory map
-+  ffff800000000000	ffff9fffffffffff	  32TB		kasan shadow region
-+  ffffa00000000000	ffffa00007ffffff	 128MB		bpf jit region
-+  ffffa00008000000	ffffa0000fffffff	 128MB		modules
-+  ffffa00010000000	fffffdffbffeffff	 ~93TB		vmalloc
-+  fffffdffbfff0000	fffffdfffe5f8fff	~998MB		[guard region]
-+  fffffdfffe5f9000	fffffdfffe9fffff	4124KB		fixed mappings
-+  fffffdfffea00000	fffffdfffebfffff	   2MB		[guard region]
-+  fffffdfffec00000	fffffdffffbfffff	  16MB		PCI I/O space
-+  fffffdffffc00000	fffffdffffdfffff	   2MB		[guard region]
-+  fffffdffffe00000	ffffffffffdfffff	   2TB		vmemmap
-+  ffffffffffe00000	ffffffffffffffff	   2MB		[guard region]
-+
-+
-+AArch64 Linux memory layout with 64KB pages + 3 levels (52-bit with HW support)::
- 
-   Start			End			Size		Use
-   -----------------------------------------------------------------------
--  0000000000000000	000003ffffffffff	   4TB		user
--  fffffc0000000000	ffffffffffffffff	   4TB		kernel
--
--
--AArch64 Linux memory layout with 64KB pages + 3 levels::
--
--  Start			End			Size		Use
--  -----------------------------------------------------------------------
--  0000000000000000	0000ffffffffffff	 256TB		user
--  ffff000000000000	ffffffffffffffff	 256TB		kernel
--
--
--For details of the virtual kernel memory layout please see the kernel
--booting log.
-+  0000000000000000	000fffffffffffff	   4PB		user
-+  fff0000000000000	fff7ffffffffffff	   2PB		kernel logical memory map
-+  fff8000000000000	fffd9fffffffffff	1440TB		[gap]
-+  fffda00000000000	ffff9fffffffffff	 512TB		kasan shadow region
-+  ffffa00000000000	ffffa00007ffffff	 128MB		bpf jit region
-+  ffffa00008000000	ffffa0000fffffff	 128MB		modules
-+  ffffa00010000000	fffff81ffffeffff	 ~88TB		vmalloc
-+  fffff81fffff0000	fffffc1ffe58ffff	  ~3TB		[guard region]
-+  fffffc1ffe590000	fffffc1ffe9fffff	4544KB		fixed mappings
-+  fffffc1ffea00000	fffffc1ffebfffff	   2MB		[guard region]
-+  fffffc1ffec00000	fffffc1fffbfffff	  16MB		PCI I/O space
-+  fffffc1fffc00000	fffffc1fffdfffff	   2MB		[guard region]
-+  fffffc1fffe00000	ffffffffffdfffff	3968GB		vmemmap
-+  ffffffffffe00000	ffffffffffffffff	   2MB		[guard region]
- 
- 
- Translation table lookup with 4KB pages::
-@@ -83,7 +90,8 @@ Translation table lookup with 64KB pages::
-    |                 |    |               |            [15:0]  in-page offset
-    |                 |    |               +----------> [28:16] L3 index
-    |                 |    +--------------------------> [41:29] L2 index
--   |                 +-------------------------------> [47:42] L1 index
-+   |                 +-------------------------------> [47:42] L1 index (48-bit)
-+   |                                                   [51:42] L1 index (52-bit)
-    +-------------------------------------------------> [63] TTBR0/1
- 
- 
-@@ -96,3 +104,62 @@ ARM64_HARDEN_EL2_VECTORS is selected for particular CPUs.
- 
- When using KVM with the Virtualization Host Extensions, no additional
- mappings are created, since the host kernel runs directly in EL2.
-+
-+52-bit VA support in the kernel
-+-------------------------------
-+If the ARMv8.2-LVA optional feature is present, and we are running
-+with a 64KB page size; then it is possible to use 52-bits of address
-+space for both userspace and kernel addresses. However, any kernel
-+binary that supports 52-bit must also be able to fall back to 48-bit
-+at early boot time if the hardware feature is not present.
-+
-+This fallback mechanism necessitates the kernel .text to be in the
-+higher addresses such that they are invariant to 48/52-bit VAs. Due
-+to the kasan shadow being a fraction of the entire kernel VA space,
-+the end of the kasan shadow must also be in the higher half of the
-+kernel VA space for both 48/52-bit. (Switching from 48-bit to 52-bit,
-+the end of the kasan shadow is invariant and dependent on ~0UL,
-+whilst the start address will "grow" towards the lower addresses).
-+
-+In order to optimise phys_to_virt and virt_to_phys, the PAGE_OFFSET
-+is kept constant at 0xFFF0000000000000 (corresponding to 52-bit),
-+this obviates the need for an extra variable read. The physvirt
-+offset and vmemmap offsets are computed at early boot to enable
-+this logic.
-+
-+As a single binary will need to support both 48-bit and 52-bit VA
-+spaces, the VMEMMAP must be sized large enough for 52-bit VAs and
-+also must be sized large enought to accommodate a fixed PAGE_OFFSET.
-+
-+Most code in the kernel should not need to consider the VA_BITS, for
-+code that does need to know the VA size the variables are
-+defined as follows:
-+
-+VA_BITS		constant	the *maximum* VA space size
-+
-+VA_BITS_MIN	constant	the *minimum* VA space size
-+
-+vabits_actual	variable	the *actual* VA space size
-+
-+
-+Maximum and minimum sizes can be useful to ensure that buffers are
-+sized large enough or that addresses are positioned close enough for
-+the "worst" case.
-+
-+52-bit userspace VAs
-+--------------------
-+To maintain compatibility with software that relies on the ARMv8.0
-+VA space maximum size of 48-bits, the kernel will, by default,
-+return virtual addresses to userspace from a 48-bit range.
-+
-+Software can "opt-in" to receiving VAs from a 52-bit space by
-+specifying an mmap hint parameter that is larger than 48-bit.
-+For example:
-+    maybe_high_address = mmap(~0UL, size, prot, flags,...);
-+
-+It is also possible to build a debug kernel that returns addresses
-+from a 52-bit space by enabling the following kernel config options:
-+   CONFIG_EXPERT=y && CONFIG_ARM64_FORCE_52BIT=y
-+
-+Note that this option is only intended for debugging applications
-+and should not be used in production.
 -- 
-2.20.1
-
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
