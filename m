@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E693C8494B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 12:18:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9A8484974
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 12:28:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FxqpsAkf/IvuMDZnIt3O0Q/AYU9HKy1sA6X/b1NIMDQ=; b=ACGz68VNcw/lp3
-	4sbKUjaYFoGB3jUdWntidfr5ANO8/Ej1gQDhX35HeZD3FgrXouHGdG6E65m6bitw/SCqyL0FQuAg/
-	QTUnYL7Qda5MgKXDpS7dB8lKi2dcldSCBv29kP9LvYZV6JL+pk5yBoQonhkhHJLxIMuBi/4jTHF8W
-	wD8jCYxKHx8c2PP2JjQd0xz69E9Cudf5eUulFm4B0YN35YHgqXzhlTjNspOjU99lVe4Xe4FHBqcE0
-	njAoQrsQ5FjR183xXQEGrwMRqPIz9ol0s1f9Oc1SQ+gkhNwho1mbM9j3Gt9JTqVlP3vRCe5IYqMJ8
-	e4gXrdUOkE5i94/0cUdg==;
+	List-Owner; bh=nNqKksuc58PpytIny+gLnZff8vBCdEiHfmVYhAt2t/w=; b=kUa+WwCScXnfYi
+	gvwkgMgU84mjdmc//rZQkUjNmVtSLgSgSqm4QdkISWBnCzw/baFpSV3Y6ld3cyMfTBsyUR8GWHxOG
+	av+exE2qAMGpyLDibB1lRXq9hBz4RSnGFPTBOWJhYFPuHVICa86TPPJD7hTcGr4+rHSgtlzuXTvxJ
+	LT3PzTzpfZLcB5abPsFUnLIeByF+wl+OwbmfPwbkhZRFaRbOy7MBZDYcU21RhQxzrKPHD5YGHtdlI
+	Ec+DmTDrLeT3tf1sGMafnI2rfq3VfihEuwdJNxE1Qmu+UjUWfBAxeRo1VB2rKYDGBWMfULIHYbcDH
+	qk1FwO+k04uo9TwWYt9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvJ1X-00066K-2P; Wed, 07 Aug 2019 10:18:27 +0000
+	id 1hvJBM-0000an-El; Wed, 07 Aug 2019 10:28:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvJ1J-00065m-1f
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 10:18:14 +0000
+ id 1hvJB9-0000aR-5g
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 10:28:24 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9293128;
- Wed,  7 Aug 2019 03:18:12 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E22C428;
+ Wed,  7 Aug 2019 03:28:21 -0700 (PDT)
 Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 54BF13F575;
- Wed,  7 Aug 2019 03:18:10 -0700 (PDT)
-Date: Wed, 7 Aug 2019 11:18:08 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C49293F575;
+ Wed,  7 Aug 2019 03:28:19 -0700 (PDT)
+Date: Wed, 7 Aug 2019 11:28:17 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>
-Subject: Re: [PATCH v2 3/5] dt-bindings: arm: Extend SCMI to support new
- reset protocol
-Message-ID: <20190807101808.GF16546@e107155-lin>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH v2 1/5] firmware: arm_scmi: Add discovery of SCMI v2.0
+ performance fastchannels
+Message-ID: <20190807102817.GG16546@e107155-lin>
 References: <20190806170208.6787-1-sudeep.holla@arm.com>
- <20190806170208.6787-4-sudeep.holla@arm.com>
- <1565166410.5048.5.camel@pengutronix.de>
+ <20190806170208.6787-2-sudeep.holla@arm.com>
+ <AM0PR04MB4481BA101A13A0E45DA50E9088D40@AM0PR04MB4481.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1565166410.5048.5.camel@pengutronix.de>
+In-Reply-To: <AM0PR04MB4481BA101A13A0E45DA50E9088D40@AM0PR04MB4481.eurprd04.prod.outlook.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_031813_132328_487B96EA 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20190807_032823_259227_87A387A3 
+X-CRM114-Status: GOOD (  14.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,32 +63,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Peng Fan <peng.fan@nxp.com>, Etienne Carriere <etienne.carriere@linaro.org>,
- Souvik Chakravarty <Souvik.Chakravarty@arm.com>, wesleys@xilinx.com,
- aidapala@qti.qualcomm.com, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Saeed Nowshadi <saeed.nowshadi@xilinx.com>,
- Bo Zhang <bozhang.zhang@broadcom.com>, Felix Burton <fburton@xilinx.com>,
- Jim Quinlan <james.quinlan@broadcom.com>, pajay@qti.qualcomm.com,
+Cc: "aidapala@qti.qualcomm.com" <aidapala@qti.qualcomm.com>,
+ Etienne Carriere <etienne.carriere@linaro.org>,
+ Souvik Chakravarty <Souvik.Chakravarty@arm.com>,
+ "wesleys@xilinx.com" <wesleys@xilinx.com>,
+ Ionela Voinescu <Ionela.Voinescu@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Saeed Nowshadi <saeed.nowshadi@xilinx.com>,
+ Quentin Perret <Quentin.Perret@arm.com>, Bo Zhang <bozhang.zhang@broadcom.com>,
+ Felix Burton <fburton@xilinx.com>, Jim Quinlan <james.quinlan@broadcom.com>,
+ Chris Redpath <Chris.Redpath@arm.com>,
+ "pajay@qti.qualcomm.com" <pajay@qti.qualcomm.com>,
  Gaku Inami <gaku.inami.xh@renesas.com>,
  Volodymyr Babchuk <volodymyr_babchuk@epam.com>,
- linux-arm-kernel@lists.infradead.org
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 10:26:50AM +0200, Philipp Zabel wrote:
-> On Tue, 2019-08-06 at 18:02 +0100, Sudeep Holla wrote:
-> > SCMIv2.0 adds a new Reset Management Protocol to manage various reset
-> > states a given device or domain can enter. Extend the existing SCMI
-> > bindings to add reset protocol support by re-using the reset bindings
-> > for bothe reset providers and consumers.
->           ^
-> typo
+On Wed, Aug 07, 2019 at 09:23:41AM +0000, Peng Fan wrote:
+> > Subject: [PATCH v2 1/5] firmware: arm_scmi: Add discovery of SCMI v2.0
+> > performance fastchannels
+> >
+> > SCMI v2.0 adds support for "FastChannel", a lightweight unidirectional
+> > channel that is dedicated to a single SCMI message type for controlling a
+> > specific platform resource. They do not use a message header as they are
+> > specialized for a single message.
+> >
+> > Only PERFORMANCE_LIMITS_{SET,GET} and
+> > PERFORMANCE_LEVEL_{SET,GET} commands are supported over
+> > fastchannels. As they are optional, they need to be discovered by
+> > PERFORMANCE_DESCRIBE_FASTCHANNEL command.
+> > Further {LIMIT,LEVEL}_SET commands can have optional doorbell support.
+> >
+> > Add support for discovery of these fastchannels.
+> >
+> > Cc: Ionela Voinescu <Ionela.Voinescu@arm.com>
+> > Cc: Chris Redpath <Chris.Redpath@arm.com>
+> > Cc: Quentin Perret <Quentin.Perret@arm.com>
+> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> > ---
+> >  drivers/firmware/arm_scmi/perf.c | 153
+> > ++++++++++++++++++++++++++++++-
+> >  1 file changed, 149 insertions(+), 4 deletions(-)
+> >
+
+[...]
+
+>
+> Reviewed-by: Peng Fan <peng.fan@nxp.com>
 >
 
-Thanks, fixed now.
+Thanks for the review.
 
 --
 Regards,
