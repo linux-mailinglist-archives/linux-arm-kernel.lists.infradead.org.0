@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F36D84093
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 03:39:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F5ED840A7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 03:39:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/qh+9/HeCAI4jB+dqLrRQPaN2uT2UqKpnv2zNdX7BTQ=; b=l/1+03CXukSTHn
-	g10uNSSfRzn0kuiKUqTQLuArdTRYvybb2HKu9kQu9w0PE5N5B1eBKGUiYcWRCFI+kKpAS70d4Iiw3
-	jcTn8zz72vbUJ97cZl/YceQX7ruUJgLnb9Txub4EdF6MjcTJGOM/BwhnCLcQU/cq7XPdEL1PY3/k7
-	8bu4kC4p54WL/ru628ptRmUj0aI8u6Scn1VAh5AUPbwY1xbPFGu3PGgwrzTyBvehUMDiBZR3txNlm
-	BAG1QAviliYHG578yG1ztUqNv8xCKzDBLTOjonUECMz9qeBwETjLeWsKHmr7QCRc3Fn5fYEZEjh/o
-	bfDUi3ANsSqyjdSUAkLg==;
+	List-Owner; bh=EADqEp0pHjD0c19Tt3ic5ciSC9YCxv3hEmV166dTOis=; b=CUOwluDs7c6pQl
+	Aq8q5pmWe+s2L6psoMPLD70BiS82c9Bajzj9B4/FxG+cMHly6CS/zrLj0KSzv1YS1W7OJwGPedRGA
+	KTRQiIWk26RyUTtQUShrmccWO3T8DfwggpaqsVoq1APPsFmfPDkU7UETtvXg34jFsgcNhmcBs0ZpL
+	LEVexYnNJfWvSpIQ2u2DgE7Vtrdleh6gTLnWOaXcQZSa9mHNsnnkG23mODLTBtWdUb43v8mQZKF11
+	qZAfUQNExraWnFfuXsiQJfOukhUJMiHKhYB/lgz2MNZnQP9lOtdR0e95WyLi1lW/+2BGaa8owkYWW
+	gQp/JEweMIUfBw2Ee9Ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvAuo-00006r-Dz; Wed, 07 Aug 2019 01:38:58 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hvAv4-0000NO-9q; Wed, 07 Aug 2019 01:39:14 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvAqA-0002FQ-Vk; Wed, 07 Aug 2019 01:34:12 +0000
-Received: by mail-pl1-x644.google.com with SMTP id b7so38640032pls.6;
- Tue, 06 Aug 2019 18:34:10 -0700 (PDT)
+ id 1hvAqC-0002Ig-QX; Wed, 07 Aug 2019 01:34:14 +0000
+Received: by mail-pf1-x442.google.com with SMTP id m30so42507754pff.8;
+ Tue, 06 Aug 2019 18:34:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=6zqhiQUR/t5HSZML/x55nFGZKGW5GK1LULKEmO0k7kA=;
- b=EFr+1Ao3qBWmnJE02e7LcpB6YUVuRVbr9fx2rTH0O8yhq0D77M0YGPm0P+jSp6Jtuq
- 2YlUZC321Nw3VSKn/00GLAANBgeiSrRJFaGZRoVjMnZ04FL9NLT6sKwnd0vV7JxKBdum
- Sqd0ag8jbhm9lcgz/XGxcy282zyTuU0Inaax4Btd/pAUlY3wTglSAc2wTFu9hSsedu/U
- Ux8BLgDEL4leQ7GXOOnEQmGonJeNt4nNmRZIhNi+Q94mV14xLfJWcwz4/pgXWu55VGQ6
- 7Ogfd27qokaRQiNc+s9HO/wimpOVcSkVDqUWnVlQuzAm83PkUtGh2xlJDzKo+0GLPz99
- 7D+w==
+ bh=JsaN0a6ImilSblrGqgWWjtVL4aaUVqoBD3LMggUShuU=;
+ b=GqUNc3X3RUD+fMQ/tQov0eVptsX6vtpAZn07Fz7EwuEqRFmPs6eCUIqWfymN9U5tJQ
+ Hp7GWk6oPhSKnPDc9mTSSc0b1ETtX6WZgNyVT9i/ZAc9DVX2wgidQTYQD678snuo6Uld
+ OC0AxpA2rwU9kzsgxg4J7222NtI9nwWIQ3kKBxRvKJz1x31XBYs72NYIFgvDtQhOtH6x
+ c30ljXQcc0npojtfiU8d5Zil2HhFRjkicdzBOPLsXrn4hkS7yUXDhahjzIOv/1HcFIxR
+ 8vAP8M1yLlIpgKytXt/GLUCaDmX+n+gX0JAtjCLQsjpUrzEN6iMEgLfOxOdX4VT9I1MD
+ gqwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=6zqhiQUR/t5HSZML/x55nFGZKGW5GK1LULKEmO0k7kA=;
- b=cOL45s5HHfUgCmDyWfk9aKraAMvZBuI8LXHCzA5evlk7/94inMS9OF084P6OiyH1/t
- wf9Scz6Ui/VJyWZzqPDYObRfX1/MuzH0SsrnR1eu7crtOJH0OOvfO9NKTbid6rpUbOvS
- TTEOaC3kfqU20311gmLaoGGOzfwMQWCiniU/KvfSqsDESmbpLYYm56B1StSRjfwjSuan
- rUfS8qTE4RIzYq1M9zkxv5t42BL2Jin1VdQFwRzydcSfp0cHLBrzo6/cwJZgfCNQXUjP
- gtCXZIU5H4TUtrnfDH8Rq/a5koFdiNNrmzUGAK4fXvbwHUM0VqLNrF9/wW4cL5wYqPvO
- D8kw==
-X-Gm-Message-State: APjAAAVQKqNlFDxl6087JWvcsXahzZvhLSB7jeDvg/r+xHWU75QpxhNf
- uWKRuLlVnPS76hP7QRAPp5E=
-X-Google-Smtp-Source: APXvYqwoNo1PQmUv0ey0ILQvIwCoxxeyMFQeV7g8XASyN0XYGLEtQs3kplEx5vqWyqtJhS4NAvKAHg==
-X-Received: by 2002:a17:902:20e5:: with SMTP id
- v34mr2979392plg.136.1565141650096; 
- Tue, 06 Aug 2019 18:34:10 -0700 (PDT)
+ bh=JsaN0a6ImilSblrGqgWWjtVL4aaUVqoBD3LMggUShuU=;
+ b=gMGFOsD8WXzK+5fZ1Qkz+mSo4A08WuLr2jqFFSowuuRwWASOUJMRbpszy/CWCJKnXc
+ 2MbnfT3BzG4ALUx7T7qaeh5oZnk/Zoepb9LC9lML3St0RFDxBYjiasN11Vw1moipDJ/x
+ QtM2kndbVkpSoHSro1PISB0OPkmuR30j4BFv037c2oeyuSJlUiQWLIHUMMeYF1RNVRGw
+ P1i3uw7CPt45T9Sx2YewEDbs0SN7lR8+0LP64TIR3McIxQBHreMkqqbSLygi3p14gdMs
+ d3GTPIyG229NaxnQPx3wR1/v9ILts0PY4FcfK1xErCiNrZkLcFxd3JmNLRXXTLY1pGlN
+ vc7A==
+X-Gm-Message-State: APjAAAW1NsXO84L2eVLsc14w4jQkzv3cRpZzmSWA3S4LCXrNL3QBPEdb
+ OhwHidHpFMk96RpqQ3A6IVs=
+X-Google-Smtp-Source: APXvYqxA3xyoDOQ03wz3+MrAsxUgDjCiiP1q/97dVlMDAvCMqLwWlj7LgNPejGHFGrv69vRcUlGBpA==
+X-Received: by 2002:a63:3112:: with SMTP id x18mr5571166pgx.385.1565141652072; 
+ Tue, 06 Aug 2019 18:34:12 -0700 (PDT)
 Received: from blueforge.nvidia.com (searspoint.nvidia.com. [216.228.112.21])
  by smtp.gmail.com with ESMTPSA id
- u69sm111740800pgu.77.2019.08.06.18.34.08
+ u69sm111740800pgu.77.2019.08.06.18.34.10
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 06 Aug 2019 18:34:09 -0700 (PDT)
+ Tue, 06 Aug 2019 18:34:11 -0700 (PDT)
 From: john.hubbard@gmail.com
 X-Google-Original-From: jhubbard@nvidia.com
 To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH v3 16/41] oradax: convert put_page() to put_user_page*()
-Date: Tue,  6 Aug 2019 18:33:15 -0700
-Message-Id: <20190807013340.9706-17-jhubbard@nvidia.com>
+Subject: [PATCH v3 17/41] staging/vc04_services: convert put_page() to
+ put_user_page*()
+Date: Tue,  6 Aug 2019 18:33:16 -0700
+Message-Id: <20190807013340.9706-18-jhubbard@nvidia.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190807013340.9706-1-jhubbard@nvidia.com>
 References: <20190807013340.9706-1-jhubbard@nvidia.com>
 MIME-Version: 1.0
 X-NVConfidentiality: public
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_183411_058562_8AB0C406 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20190806_183413_114371_04D74246 
+X-CRM114-Status: GOOD (  13.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,27 +100,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, Rob Gardner <rob.gardner@oracle.com>,
- Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
  Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
  dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Wei Yongjun <weiyongjun1@huawei.com>, sparclinux@vger.kernel.org,
- Ira Weiny <ira.weiny@intel.com>, ceph-devel@vger.kernel.org,
- devel@driverdev.osuosl.org, rds-devel@oss.oracle.com,
- Jonathan Corbet <corbet@lwn.net>, linux-rdma@vger.kernel.org, x86@kernel.org,
+ sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
+ ceph-devel@vger.kernel.org, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org,
+ Suniel Mahesh <sunil.m@techveda.org>, x86@kernel.org,
  amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Mihaela Muraru <mihaela.muraru21@gmail.com>,
  xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
- linux-media@vger.kernel.org, Jonathan Helman <jonathan.helman@oracle.com>,
+ linux-media@vger.kernel.org, Stefan Wahren <stefan.wahren@i2se.com>,
  John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
- linux-block@vger.kernel.org,
+ Kishore KP <kishore.p@techveda.org>, linux-block@vger.kernel.org,
  =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
  linux-rpi-kernel@lists.infradead.org, Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ Sidong Yang <realwakka@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-nfs@vger.kernel.org, Eric Anholt <eric@anholt.net>,
  netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
  linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, "David S . Miller" <davem@davemloft.net>
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-fsdevel@vger.kernel.org,
+ Al Viro <viro@zeniv.linux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -135,31 +135,51 @@ release_pages().
 This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
 ("mm: introduce put_user_page*(), placeholder versions").
 
-Cc: David S. Miller <davem@davemloft.net>
-Cc: Jonathan Helman <jonathan.helman@oracle.com>
-Cc: Rob Gardner <rob.gardner@oracle.com>
-Cc: Andy Shevchenko <andy.shevchenko@gmail.com>
-Cc: Jonathan Corbet <corbet@lwn.net>
-Cc: Wei Yongjun <weiyongjun1@huawei.com>
-Cc: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-Cc: sparclinux@vger.kernel.org
+Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+Cc: Eric Anholt <eric@anholt.net>
+Cc: Stefan Wahren <stefan.wahren@i2se.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Mihaela Muraru <mihaela.muraru21@gmail.com>
+Cc: Suniel Mahesh <sunil.m@techveda.org>
+Cc: Al Viro <viro@zeniv.linux.org.uk>
+Cc: Sidong Yang <realwakka@gmail.com>
+Cc: Kishore KP <kishore.p@techveda.org>
+Cc: linux-rpi-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: devel@driverdev.osuosl.org
 Signed-off-by: John Hubbard <jhubbard@nvidia.com>
 ---
- drivers/sbus/char/oradax.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .../vc04_services/interface/vchiq_arm/vchiq_2835_arm.c | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/sbus/char/oradax.c b/drivers/sbus/char/oradax.c
-index 8af216287a84..029e619992fc 100644
---- a/drivers/sbus/char/oradax.c
-+++ b/drivers/sbus/char/oradax.c
-@@ -412,7 +412,7 @@ static void dax_unlock_pages(struct dax_ctx *ctx, int ccb_index, int nelem)
- 				dax_dbg("freeing page %p", p);
- 				if (j == OUT)
- 					set_page_dirty(p);
--				put_page(p);
-+				put_user_page(p);
- 				ctx->pages[i][j] = NULL;
- 			}
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_2835_arm.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_2835_arm.c
+index 61c69f353cdb..ec92b4c50e95 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_2835_arm.c
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_2835_arm.c
+@@ -336,10 +336,7 @@ cleanup_pagelistinfo(struct vchiq_pagelist_info *pagelistinfo)
+ 	}
+ 
+ 	if (pagelistinfo->pages_need_release) {
+-		unsigned int i;
+-
+-		for (i = 0; i < pagelistinfo->num_pages; i++)
+-			put_page(pagelistinfo->pages[i]);
++		put_user_pages(pagelistinfo->pages, pagelistinfo->num_pages);
+ 	}
+ 
+ 	dma_free_coherent(g_dev, pagelistinfo->pagelist_buffer_size,
+@@ -454,10 +451,7 @@ create_pagelist(char __user *buf, size_t count, unsigned short type)
+ 				       __func__, actual_pages, num_pages);
+ 
+ 			/* This is probably due to the process being killed */
+-			while (actual_pages > 0) {
+-				actual_pages--;
+-				put_page(pages[actual_pages]);
+-			}
++			put_user_pages(pages, actual_pages);
+ 			cleanup_pagelistinfo(pagelistinfo);
+ 			return NULL;
  		}
 -- 
 2.22.0
