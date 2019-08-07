@@ -2,53 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A619F8522F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 19:37:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0FBC85238
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 19:39:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=e2XpIcKwt75k6folLqq3DcAHVZQYcoq4VZAfeqQpZDE=; b=Cf4z/QM7MDTViwaZJmOJDFt0Pd
-	P82YZV/b6IYCead3gqFwlYw7OZferbXsMgZsp4SIbGCb7wT0lo7yz/83jdfkwjB8fPzAsFJAm8iLH
-	9yXM3ftroLZdAjhVXQ0PJbqaFoK+PqM3HGUeuYFOytpoSFa0O1Yxn2vN4EeuU3cWe3lIuo/7LcrQu
-	npm8gtVDiLaP8OkgCQjQxmjgJAydLbu5tVJ4035P/WHLiQlaZYHRunMGNIGz8QpE+1beb6DZXUHl2
-	ntbboSou8nxpha1vz+31d6cjG5dxfxRZMfgImNOLbew/2gKvb5vYMkBv/oOkHRLbl8D7QQAy5uR3P
-	2pojIkBA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=oDjeFAE+bTOOl3eFpQ7o2h/fnXpuNPRnuGyJbf/4FDE=; b=T+Wh74uww0opjdyCHaszhSbIv
+	GNX9nHl1LUVmZlnlTYqTX6xtkXYurZCxMpNu9IAiD+7eTEEuA/hm4hkzeT/JGHUzZO2mTbLaIIFUQ
+	2em+IsHe5CFYtEhAaq8fkRdaUSTHizNoE2yeyOY2kkwiYIfwBSY/YNZvlM75x/gr0uD/KKUNQn08J
+	Jl9wEmw9eaU73C/1cBxPSEaASFGhFa8qPcFjJIO0sa2TajvM6jMN8O/Tm9rhqVsgqWt0v+1fH4Bq4
+	v9k6l+2F8PKwbKDtDKsTB6ocHeve1UleumS2+pSErTeUEGzcpOw8k6E36xpoMYA+QK/ZIIITYBbVA
+	gsN4MDw9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvPss-0002KF-Dg; Wed, 07 Aug 2019 17:37:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvPsh-0002Jv-S2
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 17:37:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C9F4328;
- Wed,  7 Aug 2019 10:37:46 -0700 (PDT)
-Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 23A043F575;
- Wed,  7 Aug 2019 10:37:46 -0700 (PDT)
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2] firmware: arm_scmi: Use {get, put}_unaligned_le{32,
- 64} accessors
-Date: Wed,  7 Aug 2019 18:37:39 +0100
-Message-Id: <20190807173739.5939-1-sudeep.holla@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190807130038.26878-1-sudeep.holla@arm.com>
-References: <20190807130038.26878-1-sudeep.holla@arm.com>
+	id 1hvPtk-0002Zn-O6; Wed, 07 Aug 2019 17:38:52 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvPtZ-0002ZU-LR
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 17:38:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=wa3PM2IPgYIbeTotIrjEpA6x+CSggkAquaTMWPLLVlg=; b=un56Q7Y8IugFG4Uzjrf9TpN4q
+ qsXduoPza3EzpowKXCYTiHVEoKthEF5ysdSes4U5R03S8qiEPu1sH/blIBC9GQZ8QMwR8pSdr3x9r
+ iJHXbncvv8g1qo3flKIEe/gahNUXQbTjspLpxqRj4AfZWPpux8XNeJ8Gr/xBCg4D96cDI=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1hvPtV-0008KE-8b; Wed, 07 Aug 2019 17:38:37 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 47A412742B9E; Wed,  7 Aug 2019 18:38:36 +0100 (BST)
+Date: Wed, 7 Aug 2019 18:38:36 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Andy Gross <agross@kernel.org>, khilman@baylibre.com,
+ Rob Clark <robdclark@gmail.com>, Sean Paul <sean@poorly.run>
+Subject: Re: next/master boot: 263 boots: 11 failed, 186 passed with 64
+ offline, 1 untried/unknown, 1 conflict (next-20190802)
+Message-ID: <20190807173836.GJ4048@sirena.co.uk>
+References: <5d4428ea.1c69fb81.4e1ae.1008@mx.google.com>
+MIME-Version: 1.0
+In-Reply-To: <5d4428ea.1c69fb81.4e1ae.1008@mx.google.com>
+X-Cookie: Dammit Jim, I'm an actor, not a doctor.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_103747_989204_8ABAABFE 
-X-CRM114-Status: GOOD (  11.29  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190807_103843_033436_C115F283 
+X-CRM114-Status: UNSURE (   7.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,225 +79,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Sudeep Holla <sudeep.holla@arm.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-build-reports@lists.linaro.org, linux-arm-msm@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-next@vger.kernel.org,
+ freedreno@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2309499255228291710=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Instead of type-casting the {tx,rx}.buf all over the place while
-accessing them to read/write __le{32,64} from/to the firmware, let's
-use the existing {get,put}_unaligned_le{32,64} accessors to hide all
-the type cast ugliness.
 
-Suggested-by: Philipp Zabel <p.zabel@pengutronix.de>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
----
- drivers/firmware/arm_scmi/base.c    |  2 +-
- drivers/firmware/arm_scmi/clock.c   | 12 ++++--------
- drivers/firmware/arm_scmi/common.h  |  2 ++
- drivers/firmware/arm_scmi/perf.c    |  8 ++++----
- drivers/firmware/arm_scmi/power.c   |  6 +++---
- drivers/firmware/arm_scmi/reset.c   |  2 +-
- drivers/firmware/arm_scmi/sensors.c | 17 ++++++-----------
- 7 files changed, 21 insertions(+), 28 deletions(-)
+--===============2309499255228291710==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="qD3brAgIG4LbUq6d"
+Content-Disposition: inline
 
-v1->v2:
-	- Dropped incorrect void ptr arithmetic and used unaligned_le64
-	  accessors instead
 
-diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
-index 204390297f4b..f804e8af6521 100644
---- a/drivers/firmware/arm_scmi/base.c
-+++ b/drivers/firmware/arm_scmi/base.c
-@@ -204,7 +204,7 @@ static int scmi_base_discover_agent_get(const struct scmi_handle *handle,
- 	if (ret)
- 		return ret;
+--qD3brAgIG4LbUq6d
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
--	*(__le32 *)t->tx.buf = cpu_to_le32(id);
-+	put_unaligned_le32(id, t->tx.buf);
+On Fri, Aug 02, 2019 at 05:13:30AM -0700, kernelci.org bot wrote:
 
- 	ret = scmi_do_xfer(handle, t);
- 	if (!ret)
-diff --git a/drivers/firmware/arm_scmi/clock.c b/drivers/firmware/arm_scmi/clock.c
-index 4a32ae1822a3..32526a793f3a 100644
---- a/drivers/firmware/arm_scmi/clock.c
-+++ b/drivers/firmware/arm_scmi/clock.c
-@@ -107,7 +107,7 @@ static int scmi_clock_attributes_get(const struct scmi_handle *handle,
- 	if (ret)
- 		return ret;
+Today's -next still fails to boot on CM-QS600 with qcom_defconfig:
 
--	*(__le32 *)t->tx.buf = cpu_to_le32(clk_id);
-+	put_unaligned_le32(clk_id, t->tx.buf);
- 	attr = t->rx.buf;
+>     qcom_defconfig:
+>         gcc-8:
+>             qcom-apq8064-cm-qs600: 1 failed lab
 
- 	ret = scmi_do_xfer(handle, t);
-@@ -204,15 +204,11 @@ scmi_clock_rate_get(const struct scmi_handle *handle, u32 clk_id, u64 *value)
- 	if (ret)
- 		return ret;
+This has been going on since June.  It crashes initializing the GPU:
 
--	*(__le32 *)t->tx.buf = cpu_to_le32(clk_id);
-+	put_unaligned_le32(clk_id, t->tx.buf);
+[    4.261135] adreno 4300000.adreno-3xx: 4300000.adreno-3xx supply vddcx not found, using dummy regulator
+[    4.270254] msm 5100000.mdp: [drm:msm_gpu_init] A320: using IOMMU
+[    4.280025] 8<--- cut here ---
+[    4.285557] Unable to handle kernel paging request at virtual address 40000000
+[    4.288430] pgd = (ptrval)
+[    4.295714] [40000000] *pgd=00000000
+[    4.298329] Internal error: Oops: 805 [#1] PREEMPT SMP ARM
+[    4.302054] Modules linked in:
+[    4.307352] CPU: 2 PID: 88 Comm: kworker/2:1 Tainted: G        W         5.3.0-rc3-next-20190807 #1
+[    4.310391] Hardware name: Generic DT based system
+[    4.319353] Workqueue: events deferred_probe_work_func
+[    4.319930] usb 1-1: New USB device found, idVendor=04b4, idProduct=6570, bcdDevice=32.99
+[    4.324201] PC is at v7_dma_clean_range+0x1c/0x34
+[    4.324214] LR is at __dma_page_cpu_to_dev+0x28/0x8c
 
- 	ret = scmi_do_xfer(handle, t);
--	if (!ret) {
--		__le32 *pval = t->rx.buf;
--
--		*value = le32_to_cpu(*pval);
--		*value |= (u64)le32_to_cpu(*(pval + 1)) << 32;
--	}
-+	if (!ret)
-+		*value = get_unaligned_le64(t->rx.buf);
+...
 
- 	scmi_xfer_put(handle, t);
- 	return ret;
-diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
-index 43884e4ceac5..5237c2ff79fe 100644
---- a/drivers/firmware/arm_scmi/common.h
-+++ b/drivers/firmware/arm_scmi/common.h
-@@ -15,6 +15,8 @@
- #include <linux/scmi_protocol.h>
- #include <linux/types.h>
+[    4.753642] [] (v7_dma_clean_range) from [] (__dma_page_cpu_to_dev+0x28/0x8c)
+[    4.761795] [] (__dma_page_cpu_to_dev) from [] (arm_dma_sync_sg_for_device+0x4c/0x64)
+[    4.770654] [] (arm_dma_sync_sg_for_device) from [] (get_pages+0x1bc/0x218)
+[    4.780199] [] (get_pages) from [] (msm_gem_get_and_pin_iova+0xb4/0x13c)
+[    4.788704] [] (msm_gem_get_and_pin_iova) from [] (_msm_gem_kernel_new+0x38/0xa8)
+[    4.797386] [] (_msm_gem_kernel_new) from [] (msm_gem_kernel_new+0x24/0x2c)
+[    4.806501] [] (msm_gem_kernel_new) from [] (msm_gpu_init+0x4a4/0x614)
+[    4.815021] [] (msm_gpu_init) from [] (adreno_gpu_init+0x17c/0x288)
+[    4.823342] [] (adreno_gpu_init) from [] (a3xx_gpu_init+0x84/0x108)
+[    4.831239] [] (a3xx_gpu_init) from [] (adreno_bind+0x1c4/0x268)
+[    4.839224] [] (adreno_bind) from [] (component_bind_all+0x11c/0x258)
+[    4.847213] [] (component_bind_all) from [] (msm_drm_bind+0xf8/0x638)
+[    4.855282] [] (msm_drm_bind) from [] (try_to_bring_up_master+0x1fc/0x2b8)
 
-+#include <asm/unaligned.h>
-+
- #define PROTOCOL_REV_MINOR_MASK	GENMASK(15, 0)
- #define PROTOCOL_REV_MAJOR_MASK	GENMASK(31, 16)
- #define PROTOCOL_REV_MAJOR(x)	(u16)(FIELD_GET(PROTOCOL_REV_MAJOR_MASK, (x)))
-diff --git a/drivers/firmware/arm_scmi/perf.c b/drivers/firmware/arm_scmi/perf.c
-index fb7f6cab2c11..9b338e66a24e 100644
---- a/drivers/firmware/arm_scmi/perf.c
-+++ b/drivers/firmware/arm_scmi/perf.c
-@@ -195,7 +195,7 @@ scmi_perf_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
- 	if (ret)
- 		return ret;
+More details including full logs and the image file at:
 
--	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
-+	put_unaligned_le32(domain, t->tx.buf);
- 	attr = t->rx.buf;
+	https://kernelci.org/boot/id/5d4ac1e659b514754b31b293/
 
- 	ret = scmi_do_xfer(handle, t);
-@@ -380,7 +380,7 @@ static int scmi_perf_mb_limits_get(const struct scmi_handle *handle, u32 domain,
- 	if (ret)
- 		return ret;
+--qD3brAgIG4LbUq6d
+Content-Type: application/pgp-signature; name="signature.asc"
 
--	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
-+	put_unaligned_le32(domain, t->tx.buf);
+-----BEGIN PGP SIGNATURE-----
 
- 	ret = scmi_do_xfer(handle, t);
- 	if (!ret) {
-@@ -459,11 +459,11 @@ static int scmi_perf_mb_level_get(const struct scmi_handle *handle, u32 domain,
- 		return ret;
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1LDJsACgkQJNaLcl1U
+h9Bg/wf9FixzsVlkqiOzvwUv+Hd4DpypmROaAhSbozl77Dy/KqDn4DsMIeuyKhYJ
+/I2KNn3yazKyh4NA02GD7/lL0Vw5VmEw19lNqIC+m7ozQK/jTY/Qc8R1BpjfVooy
+s2IBQ8/PyrPP0s3q5quTEfKavfDQU7YcxMcMaT+XNNFO1Jf66ZWVVHvPgCprafQd
+eWhy8i07WPZKdFlh3jpnUKTmm7TDOvF6grnhF8qS+ZhEN+5Bfg7qhrUKc8TM7qJX
+G0+WdOy8ph6PZVqXlUaWkXz6prKdEkoMrfGOl1Pwc0Bh0qqTyctP/RUiXg8Qeq5C
+KT5zwu4px+F5XdIadLwwqgMn46XoKA==
+=cozE
+-----END PGP SIGNATURE-----
 
- 	t->hdr.poll_completion = poll;
--	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
-+	put_unaligned_le32(domain, t->tx.buf);
+--qD3brAgIG4LbUq6d--
 
- 	ret = scmi_do_xfer(handle, t);
- 	if (!ret)
--		*level = le32_to_cpu(*(__le32 *)t->rx.buf);
-+		*level = get_unaligned_le32(t->rx.buf);
 
- 	scmi_xfer_put(handle, t);
- 	return ret;
-diff --git a/drivers/firmware/arm_scmi/power.c b/drivers/firmware/arm_scmi/power.c
-index 62f3401a1f01..5abef7079c0a 100644
---- a/drivers/firmware/arm_scmi/power.c
-+++ b/drivers/firmware/arm_scmi/power.c
-@@ -96,7 +96,7 @@ scmi_power_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
- 	if (ret)
- 		return ret;
-
--	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
-+	put_unaligned_le32(domain, t->tx.buf);
- 	attr = t->rx.buf;
-
- 	ret = scmi_do_xfer(handle, t);
-@@ -147,11 +147,11 @@ scmi_power_state_get(const struct scmi_handle *handle, u32 domain, u32 *state)
- 	if (ret)
- 		return ret;
-
--	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
-+	put_unaligned_le32(domain, t->tx.buf);
-
- 	ret = scmi_do_xfer(handle, t);
- 	if (!ret)
--		*state = le32_to_cpu(*(__le32 *)t->rx.buf);
-+		*state = get_unaligned_le32(t->rx.buf);
-
- 	scmi_xfer_put(handle, t);
- 	return ret;
-diff --git a/drivers/firmware/arm_scmi/reset.c b/drivers/firmware/arm_scmi/reset.c
-index 11cb8b5ccf34..c1d67a2af12f 100644
---- a/drivers/firmware/arm_scmi/reset.c
-+++ b/drivers/firmware/arm_scmi/reset.c
-@@ -88,7 +88,7 @@ scmi_reset_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
- 	if (ret)
- 		return ret;
-
--	*(__le32 *)t->tx.buf = cpu_to_le32(domain);
-+	put_unaligned_le32(domain, t->tx.buf);
- 	attr = t->rx.buf;
-
- 	ret = scmi_do_xfer(handle, t);
-diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
-index 7570308a16a0..a400ea805fc2 100644
---- a/drivers/firmware/arm_scmi/sensors.c
-+++ b/drivers/firmware/arm_scmi/sensors.c
-@@ -120,7 +120,7 @@ static int scmi_sensor_description_get(const struct scmi_handle *handle,
-
- 	do {
- 		/* Set the number of sensors to be skipped/already read */
--		*(__le32 *)t->tx.buf = cpu_to_le32(desc_index);
-+		put_unaligned_le32(desc_index, t->tx.buf);
-
- 		ret = scmi_do_xfer(handle, t);
- 		if (ret)
-@@ -217,7 +217,6 @@ static int scmi_sensor_reading_get(const struct scmi_handle *handle,
- 				   u32 sensor_id, u64 *value)
- {
- 	int ret;
--	__le32 *pval;
- 	struct scmi_xfer *t;
- 	struct scmi_msg_sensor_reading_get *sensor;
- 	struct sensors_info *si = handle->sensor_priv;
-@@ -229,24 +228,20 @@ static int scmi_sensor_reading_get(const struct scmi_handle *handle,
- 	if (ret)
- 		return ret;
-
--	pval = t->rx.buf;
- 	sensor = t->tx.buf;
- 	sensor->id = cpu_to_le32(sensor_id);
-
- 	if (s->async) {
- 		sensor->flags = cpu_to_le32(SENSOR_READ_ASYNC);
- 		ret = scmi_do_xfer_with_response(handle, t);
--		if (!ret) {
--			*value = le32_to_cpu(*(pval + 1));
--			*value |= (u64)le32_to_cpu(*(pval + 2)) << 32;
--		}
-+		if (!ret)
-+			*value = get_unaligned_le64((void *)
-+						    ((__le32 *)t->rx.buf + 1));
- 	} else {
- 		sensor->flags = cpu_to_le32(0);
- 		ret = scmi_do_xfer(handle, t);
--		if (!ret) {
--			*value = le32_to_cpu(*pval);
--			*value |= (u64)le32_to_cpu(*(pval + 1)) << 32;
--		}
-+		if (!ret)
-+			*value = get_unaligned_le64(t->rx.buf);
- 	}
-
- 	scmi_xfer_put(handle, t);
---
-2.17.1
-
+--===============2309499255228291710==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2309499255228291710==--
+
