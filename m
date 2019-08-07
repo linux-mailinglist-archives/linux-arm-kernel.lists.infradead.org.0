@@ -2,71 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEB5884B20
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 14:00:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6588A84B23
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 14:01:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/2BfbLcuhn+X4vHXT2aWnCfRrQyrn0ZTTwS1WuW0vKE=; b=KIckRmTDsCuf1F
-	UBa4Q0VSmC4CPbe0H/YJM4FXUydfprIESV52KWAr4dNBQDfUXsFuSKWgpf5rmYycChAYq10x9sFfW
-	GZUS7eQ4cXRHNTuFH/KRNAOGLPmrNTrQQwcaAAfOF1U9Ic5pTXFWBYm4W1fVO6x/WY8+G7VEf/+AO
-	dYq/PymtfrgptkzeKugq6Ig+EKNT7GpoKR4TrpO2W/S0K5bXIN4YbJYVbu2hE5nhKcarCpQccTIve
-	Le5D3r2BP1Hh2IQAIlVlQEmerXKyCEeDOFDFD901JMEh3LmLNHnhj4eU9hAw2XHJrITzxJ5UNCm8C
-	xwd6nIv0R/V+Hiw92wlA==;
+	List-Owner; bh=Nnxv5C0Z7hp1WGI1wezAc6hXGwXsWbK2+6n/vWHPNxE=; b=VJc70WvpVUu+Dz
+	NA2zzk7RajRGCbMG65KsKczNVVOlFMeat90bu0CPF/TMb3CN76LzZpO6MsFl0t9L8h8wtjT2L+7Uh
+	/zbzoYNIHfrh3UEbXGN98rNSyU5RVfbCxV3l253Jaq06G8KGQ1M5xqJrc3irdxZjTXtIi0iTvvX1B
+	DXcmbfZv1fSmSnKR558uz/lrUD1rj79CJBq32YA3JG//gVxzaGqsmzcGaCdk9Yb9lnZJ1ncwnC2U4
+	vmtuj7BY0RcnU++DVzBixD39dZQHXMPFKduMYGHovAVMV6lNx+61E1y2oBcXTujWel+6yg252yZaU
+	EBOtyvkzCsG/pB5RYdYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvKbk-0002r4-7f; Wed, 07 Aug 2019 11:59:56 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hvKdF-0004bk-QT; Wed, 07 Aug 2019 12:01:29 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvKbL-0002i7-Ro
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 11:59:33 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 23123219BE;
- Wed,  7 Aug 2019 11:59:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565179171;
- bh=fE7YIYx8+y7MYU9u2RxYo4CVYhuKEipF0tinVVdo9Sc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=fqIoWwnfxBbJUXf2BBa9wQdIyLyOhszNRhLtFcfUHw3NhQ4TmBvZyabOT6UVP27B9
- ASkT5VvHTL+BACFrKajkYhPYPMaWw4LeiIWDNFMMdjZoj3r3C40mbgXXWCY+/JpS4S
- mbeGy4GZOgpyBKGaBOoHZj8FeY5+lrEWDT1JjlwY=
-Date: Wed, 7 Aug 2019 12:59:27 +0100
-From: Will Deacon <will@kernel.org>
-To: Qian Cai <cai@lca.pw>
-Subject: Re: [PATCH v2] arm64/cache: fix -Woverride-init compiler warnings
-Message-ID: <20190807115926.np7izmaq36kgxzdg@willie-the-truck>
-References: <20190806193434.965-1-cai@lca.pw>
- <20190807105652.cyi3fou2rfsxhxrk@willie-the-truck>
- <D11F0810-A6D0-4835-B71A-9DDDC120423B@lca.pw>
+ id 1hvKcu-0004bN-7H
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 12:01:09 +0000
+X-Originating-IP: 88.168.111.231
+Received: from localhost (lpr83-1-88-168-111-231.fbx.proxad.net
+ [88.168.111.231]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id F0835E0003;
+ Wed,  7 Aug 2019 12:01:04 +0000 (UTC)
+Date: Wed, 7 Aug 2019 14:01:04 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Re: [PATCH v2] arm64: dts: allwinner: a64: Enable eMMC on
+ A64-OLinuXino
+Message-ID: <20190807120104.ssj5cvx4hwicufrv@flea>
+References: <20190727210307.17607-1-sunil@medhas.org>
+ <CAGb2v66S1+CSn=CYwZQOP8V+ZL+D9ayf6cvidzK5ENXOqKRGew@mail.gmail.com>
+ <CAKQ8BtjLmhDgA8woY5NqaifODLUh_w_K4QYOUuqc4Six5Amerg@mail.gmail.com>
+ <fd19b2e3-e340-f4fd-a320-1cfc45964f5b@medhas.org>
+ <CAGb2v66w6y_0NLcT=WminsgK=QXpUPVnMWdCotMmgM1vgPByxw@mail.gmail.com>
+ <de875c31-6cb3-8975-ac3d-de4ab3a851bd@medhas.org>
+ <1955D9AD572C4F57A2D66B15EB8CF79C@GirolesWin7>
+ <CAGb2v67oT0OV9p+KffBDFGz5BN5zR7=DhYLStwkagY=TXkskQA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <D11F0810-A6D0-4835-B71A-9DDDC120423B@lca.pw>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <CAGb2v67oT0OV9p+KffBDFGz5BN5zR7=DhYLStwkagY=TXkskQA@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_045932_225968_10F6CB0D 
-X-CRM114-Status: GOOD (  17.58  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190807_050108_417130_7012E643 
+X-CRM114-Status: GOOD (  19.31  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,55 +69,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sunil Mohan Adapa <sunil@medhas.org>,
+ Martin Ayotte <martinayotte@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBBdWcgMDcsIDIwMTkgYXQgMDc6NTA6NDNBTSAtMDQwMCwgUWlhbiBDYWkgd3JvdGU6
-Cj4gCj4gCj4gPiBPbiBBdWcgNywgMjAxOSwgYXQgNjo1NiBBTSwgV2lsbCBEZWFjb24gPHdpbGxA
-a2VybmVsLm9yZz4gd3JvdGU6Cj4gPiAKPiA+IE9uIFR1ZSwgQXVnIDA2LCAyMDE5IGF0IDAzOjM0
-OjM0UE0gLTA0MDAsIFFpYW4gQ2FpIHdyb3RlOgo+ID4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0
-L2tlcm5lbC9jcHVpbmZvLmMgYi9hcmNoL2FybTY0L2tlcm5lbC9jcHVpbmZvLmMKPiA+PiBpbmRl
-eCA4NzYwNTVlMzczNTIuLmEwYzQ5NWEzZjRmZCAxMDA2NDQKPiA+PiAtLS0gYS9hcmNoL2FybTY0
-L2tlcm5lbC9jcHVpbmZvLmMKPiA+PiArKysgYi9hcmNoL2FybTY0L2tlcm5lbC9jcHVpbmZvLmMK
-PiA+PiBAQCAtMzQsMTAgKzM0LDcgQEAgREVGSU5FX1BFUl9DUFUoc3RydWN0IGNwdWluZm9fYXJt
-NjQsIGNwdV9kYXRhKTsKPiA+PiBzdGF0aWMgc3RydWN0IGNwdWluZm9fYXJtNjQgYm9vdF9jcHVf
-ZGF0YTsKPiA+PiAKPiA+PiBzdGF0aWMgY2hhciAqaWNhY2hlX3BvbGljeV9zdHJbXSA9IHsKPiA+
-PiAtCVswIC4uLiBJQ0FDSEVfUE9MSUNZX1BJUFRdCT0gIlJFU0VSVkVEL1VOS05PV04iLAo+ID4+
-IC0JW0lDQUNIRV9QT0xJQ1lfVklQVF0JCT0gIlZJUFQiLAo+ID4+IC0JW0lDQUNIRV9QT0xJQ1lf
-UElQVF0JCT0gIlBJUFQiLAo+ID4+IC0JW0lDQUNIRV9QT0xJQ1lfVlBJUFRdCQk9ICJWUElQVCIs
-Cj4gPj4gKwlbMCAuLi4gSUNBQ0hFX1BPTElDWV9QSVBUXQk9ICJSRVNFUlZFRC9VTktOT1dOIgo+
-ID4+IH07Cj4gPj4gCj4gPj4gdW5zaWduZWQgbG9uZyBfX2ljYWNoZV9mbGFnczsKPiA+PiBAQCAt
-MzEwLDEzICszMDcsMTYgQEAgc3RhdGljIHZvaWQgY3B1aW5mb19kZXRlY3RfaWNhY2hlX3BvbGlj
-eShzdHJ1Y3QgY3B1aW5mb19hcm02NCAqaW5mbykKPiA+PiAKPiA+PiAJc3dpdGNoIChsMWlwKSB7
-Cj4gPj4gCWNhc2UgSUNBQ0hFX1BPTElDWV9QSVBUOgo+ID4+ICsJCWljYWNoZV9wb2xpY3lfc3Ry
-W0lDQUNIRV9QT0xJQ1lfUElQVF0gPSAiUElQVCI7Cj4gPj4gCQlicmVhazsKPiA+PiAJY2FzZSBJ
-Q0FDSEVfUE9MSUNZX1ZQSVBUOgo+ID4+ICsJCWljYWNoZV9wb2xpY3lfc3RyW0lDQUNIRV9QT0xJ
-Q1lfVlBJUFRdID0gIlZQSVBUIjsKPiA+PiAJCXNldF9iaXQoSUNBQ0hFRl9WUElQVCwgJl9faWNh
-Y2hlX2ZsYWdzKTsKPiA+PiAJCWJyZWFrOwo+ID4+IAlkZWZhdWx0Ogo+ID4+IAkJLyogRmFsbHRo
-cm91Z2ggKi8KPiA+PiAJY2FzZSBJQ0FDSEVfUE9MSUNZX1ZJUFQ6Cj4gPj4gKwkJaWNhY2hlX3Bv
-bGljeV9zdHJbSUNBQ0hFX1BPTElDWV9WSVBUXSA9ICJWSVBUIjsKPiA+PiAJCS8qIEFzc3VtZSBh
-bGlhc2luZyAqLwo+ID4+IAkJc2V0X2JpdChJQ0FDSEVGX0FMSUFTSU5HLCAmX19pY2FjaGVfZmxh
-Z3MpOwo+ID4gCj4gPiBJIHN0aWxsIHRoaW5rIHRoaXMgaXMgd29yc2UgdGhhbiB0aGUgY29kZSBp
-biBtYWlubGluZS4gSSBkb24ndCB0aGluawo+ID4gLVdvdmVycmlkZS1pbml0IHNob3VsZCB3YXJu
-IHdoZW4gb3ZlcnJpZGluZyBhIGZpZWxkIGZyb20gYSBHQ0MgcmFuZ2UKPiA+IGRlc2lnbmF0ZWQg
-aW5pdGlhbGlzZXIsIHNpbmNlIGl0IG1ha2VzIHRoZW0gY29uc2lkZXJhYmx5IGxlc3MgdXNlZnVs
-Cj4gPiBpbW8uCj4gCj4gVW5mb3J0dW5hdGVseSwgY29tcGlsZXIgcGVvcGxlIGFyZSBtb3Zpbmcg
-aW50byBhIGRpZmZlcmVudCBkaXJlY3Rpb24gYXMKPiBDbGFuZyB3b3VsZCB3YXJuIHRob3NlIGtp
-bmQgb2YgdXNhZ2UgdG9vLgo+IAo+IEl0IGFjdHVhbGx5IHByb3ZlIHRoYXQgdGhvc2Ugd2Fybmlu
-Z3MgYXJlIHVzZWZ1bCB0byBmaW5kIHJlYWwgaXNzdWVzLiBTZWUsCj4gCj4gRmFlNWUwMzNkNjVh
-ICjigJxtZmQ6IHJrODA4OiBGaXggUks4MThfSVJRX0RJU0NIR19JTElNIGluaXRpYWxpemVy4oCd
-KQo+IDMyZGYzNGQ4NzViYiAo4oCcW21lZGlhXSByYzogaW1nLWlyOiBqdmM6IFJlbW92ZSB1bnVz
-ZWQgbm8tbGVhZGVyIHRpbWluZ3PigJ0pCj4gCj4gRXNwZWNpYWxseSwgdG8gZmluZCByZWR1bmRh
-bnQgaW5pdGlhbGl6YXRpb25zIGluIGxhcmdlIHN0cnVjdHVyZXMuIGUuZy4sCj4gCj4gZTZlYTBi
-OTE3ODc1ICjigJxbbWVkaWFdIGR2Yl9mcm9udGVuZDogRG9uJ3QgZGVjbGFyZSB2YWx1ZXMgdHdp
-Y2UgYXQgYSB0YWJsZeKAnSkKCk5vbmUgb2YgdGhlc2UgYXBwZWFyIHRvIHVzZSB0aGUgcmFuZ2Ug
-aW5pdGlhbGlzZXJzIEkgd2FzIHJlZmVycmluZyB0bywgc28gSQpkb24ndCBzZWUgd2h5IHRoaXMg
-aXMgcmVsZXZhbnQgdG8gdGhlIGRpc2N1c3Npb24gYXQgaGFuZC4KCldpbGwKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, Aug 06, 2019 at 02:25:17PM +0800, Chen-Yu Tsai wrote:
+> On Mon, Aug 5, 2019 at 8:58 PM Martin Ayotte <martinayotte@gmail.com> wro=
+te:
+> >
+> > Fine for me too.
+> >
+> > Thanks .
+> >
+> > -----Message d'origine-----
+> > De : Sunil Mohan Adapa [mailto:sunil@medhas.org]
+> > Envoy=E9 : Monday, August 05, 2019 1:25 AM
+> > =C0 : Chen-Yu Tsai
+> > Cc : Maxime Ripard; Martin Ayotte; linux-arm-kernel
+> > Objet : Re: [PATCH v2] arm64: dts: allwinner: a64: Enable eMMC on
+> > A64-OLinuXino
+> >
+> > On 04/08/19 8:33 pm, Chen-Yu Tsai wrote:
+> > > On Fri, Aug 2, 2019 at 2:47 AM Sunil Mohan Adapa <sunil@medhas.org> w=
+rote:
+> > >>
+> > >> On 01/08/19 6:49 am, Martin Ayotte wrote:
+> > >>> If my SOB could help here, I don't mind since I've done the commit
+> > >>> more than a year ago for Armbian ...
+> > >>>
+> > >>> Signed-off-by: Martin Ayotte <martinayotte@gmai.com>
+> > >>> Tested-by: Martin Ayotte <martinayotte@gmai.com>
+> > >> gmai.com is likely a typo.
+> > >>
+> > >>> On Wed, Jul 31, 2019 at 10:42 PM Chen-Yu Tsai <wens@csie.org
+> > >>>
+> > >>>> Thanks. The patch looks good overall. The authorship is a little
+> > >>>> confusing though. If it was initially done by Martin (CC-ed), then
+> > >>>> he should be the author, and we should get his Signed-off-by if
+> > >>>> possible.
+> > >>
+> > >> Martin is indeed the original author of the patch. Thank you for
+> > reviewing.
+> > >
+> > > I'd like to apply this patch with Martin as the author, if that's OK =
+with
+> > you
+> > > both?
+> >
+> > That is completely okay with me.
+>
+> Applied for 5.4.
+>
+> I reordered the tags so they make more sense:
+>
+> https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux.git/commit/?h=
+=3Dsunxi/dt-for-5.4&id=3D0834887732df5af41b59b2e4d530fc1f5478965f
+
+Sorry for being late on this, but it looks like the eMMC, NAND and SPI
+pins are conflicting on the A64-Olinuxino design.
+
+There's no configuration with a NAND, so we don't really need to worry
+about that, but if we merge this in the main DT, we'll prevent anyone
+from using that DT on an olinuxino with a SPI flash.
+
+I think we should just create emmc and SPI-flash variants of that DT.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
