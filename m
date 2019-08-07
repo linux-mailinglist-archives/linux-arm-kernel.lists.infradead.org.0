@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2ED5985028
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 17:43:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B09CE8502B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 17:43:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7rSuCL1RHhFcDUqir40uw5cwUISJI+TiJnHMBVY/Mh8=; b=fJP3WcCTUD9Kv0
-	0BFNPpVmNNpbgehdzOUizVM5E1MHM1hsNa5tE12u+CI9leCYgD0JkhIlKU4/DstnwHQe7akzrF+Ca
-	3+R3durDnKAiI2WzOhpnxtHILeM29YXXgOP7ZxpDHKgReFkx4pBth/qkEV4+LsL1ECTzqjRgyglSh
-	vGC0TgbXXABk5mPk0iNKn1X+S8ZWuitpqvE9i2Uzn00aJnSpl8nD4DBzWlMD1ALmXaA73UOCrCMof
-	kNruYHadDvwn/jVkAUzV2EuR2y/dxbjwrANl1X/kO+s63LmW17NP/uLXr8cHkevfeE0n2rclBDE+L
-	RSpGJeSIHisjrxaY+tPA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MTwVGllAtdrMU7iC7sFQFhW80fUpJaXyWxOXQi8GPdA=; b=pYXg2WleUF8RK/
+	L1yfFcZbXa5XiQ+QXc3ELYB4bQp9kGgs2FqTMrZfujgRcKOszrq0BXy5DEvIAqj/p1ckYieQR8nSM
+	VZWwOvyVLRAV11D/5Kbis31R4kBS4aC7sL+mMbvMSbGjaa1nT7zpp5Ot9R4q7c13KPk5AVtSnblMa
+	T6p9wYfcYenQiCD2rTD2/hfB/6ce+0KqACcDiNrBsmInwHvhINzLWoNd5ImIpPi1w/sLIXtlvbGzQ
+	QgmsFLfj1T860Pbzix/7MUkO5EA98EYG1CTNCuIH8ISJWCglhB4L/lE6rsclJY1Ml139UfvdpnAMn
+	B1tB/E6rt+ewpg+92IAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvO5g-0000wg-Fy; Wed, 07 Aug 2019 15:43:04 +0000
+	id 1hvO6A-0001FZ-Aj; Wed, 07 Aug 2019 15:43:34 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvO5P-0000vZ-I2
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 15:42:52 +0000
+ id 1hvO5u-0001E9-MI
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 15:43:21 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2D278344;
- Wed,  7 Aug 2019 08:42:47 -0700 (PDT)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 95D0F3F706;
- Wed,  7 Aug 2019 08:42:46 -0700 (PDT)
-Subject: Re: [PATCH v3 02/11] kselftest: arm64: adds first test and common
- utils
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <20190802170300.20662-1-cristian.marussi@arm.com>
- <20190802170300.20662-3-cristian.marussi@arm.com>
-Message-ID: <044ae08e-7a2c-24fa-42be-167a6523f403@arm.com>
-Date: Wed, 7 Aug 2019 16:42:45 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 34ABD1570;
+ Wed,  7 Aug 2019 08:43:18 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EFAE03F73D;
+ Wed,  7 Aug 2019 08:43:16 -0700 (PDT)
+Date: Wed, 7 Aug 2019 16:43:14 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH] arm64: Disable big endian builds with clang
+Message-ID: <20190807154314.GH54191@lakrids.cambridge.arm.com>
+References: <20190806183918.41078-1-broonie@kernel.org>
+ <20190807130111.GE54191@lakrids.cambridge.arm.com>
+ <20190807130527.GD4048@sirena.co.uk>
+ <20190807135618.GF54191@lakrids.cambridge.arm.com>
+ <20190807152934.GF4048@sirena.co.uk>
 MIME-Version: 1.0
-In-Reply-To: <20190802170300.20662-3-cristian.marussi@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190807152934.GF4048@sirena.co.uk>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_084247_692878_82782CC7 
-X-CRM114-Status: GOOD (  39.14  )
+X-CRM114-CacheID: sfid-20190807_084318_815028_CD4FD7DE 
+X-CRM114-Status: GOOD (  14.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,1086 +65,368 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dave.martin@arm.com
+Cc: Tri Vo <trong@google.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, clang-built-linux@googlegroups.com,
+ Matt Hart <matthew.hart@linaro.org>,
+ Nathan Chancellor <natechancellor@gmail.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
-
-On 02/08/2019 18:02, Cristian Marussi wrote:
-> Added some arm64/signal specific boilerplate and utility code to help
-> further testcase development.
+On Wed, Aug 07, 2019 at 04:29:34PM +0100, Mark Brown wrote:
+> On Wed, Aug 07, 2019 at 02:56:19PM +0100, Mark Rutland wrote:
+> > On Wed, Aug 07, 2019 at 02:05:27PM +0100, Mark Brown wrote:
+> You can see the exact image being used in the reports I linked:
 > 
-> A simple testcase and related helpers are also introduced in this commit:
-> mangle_pstate_invalid_compat_toggle is a simple mangle testcase which
-> messes with the ucontext_t from within the sig_handler, trying to toggle
-> PSTATE state bits to switch the system between 32bit/64bit execution state.
-> Expects SIGSEGV on test PASS.
-> 
-> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
-> ---
-> A few fixes:
-> - test_arm64_signals.sh runner script generation has been reviewed in order to
->   be safe against the .gitignore
-> - using kselftest.h officially provided defines for tests' return values
-> - removed SAFE_WRITE()/dump_uc()
-> - looking for si_code==SEGV_ACCERR on SEGV test cases to better understand if
->   the sigfault had been directly triggered by Kernel
-> ---
->  tools/testing/selftests/arm64/Makefile        |   2 +-
->  .../testing/selftests/arm64/signal/.gitignore |   6 +
->  tools/testing/selftests/arm64/signal/Makefile |  88 ++++++
->  tools/testing/selftests/arm64/signal/README   |  59 ++++
->  .../arm64/signal/test_arm64_signals.src_shell |  55 ++++
->  .../selftests/arm64/signal/test_signals.c     |  26 ++
->  .../selftests/arm64/signal/test_signals.h     | 137 +++++++++
->  .../arm64/signal/test_signals_utils.c         | 261 ++++++++++++++++++
->  .../arm64/signal/test_signals_utils.h         |  13 +
->  .../arm64/signal/testcases/.gitignore         |   1 +
->  .../mangle_pstate_invalid_compat_toggle.c     |  25 ++
->  .../arm64/signal/testcases/testcases.c        | 150 ++++++++++
->  .../arm64/signal/testcases/testcases.h        |  83 ++++++
->  13 files changed, 905 insertions(+), 1 deletion(-)
->  create mode 100644 tools/testing/selftests/arm64/signal/.gitignore
->  create mode 100644 tools/testing/selftests/arm64/signal/Makefile
->  create mode 100644 tools/testing/selftests/arm64/signal/README
->  create mode 100755 tools/testing/selftests/arm64/signal/test_arm64_signals.src_shell
->  create mode 100644 tools/testing/selftests/arm64/signal/test_signals.c
->  create mode 100644 tools/testing/selftests/arm64/signal/test_signals.h
->  create mode 100644 tools/testing/selftests/arm64/signal/test_signals_utils.c
->  create mode 100644 tools/testing/selftests/arm64/signal/test_signals_utils.h
->  create mode 100644 tools/testing/selftests/arm64/signal/testcases/.gitignore
->  create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_compat_toggle.c
->  create mode 100644 tools/testing/selftests/arm64/signal/testcases/testcases.c
->  create mode 100644 tools/testing/selftests/arm64/signal/testcases/testcases.h
-> 
+> 	https://storage.kernelci.org/next/master/next-20190730/arm64/defconfig+CONFIG_CPU_BIG_ENDIAN=y/clang-8/Image
 
-I discovered an additional issue with this patch while building
-some additional SVE related arm64/signal testcases (ofr a different patch series),
-which is related to the logic of the helper get_header() that is flawed under some
-specific conditions (not exposed by the test-cases included in this series).
+That confirms what Robin suggested [1] from looking at the config: this
+is a little-endian kernel.
 
-A fix like the one below will go into V4, once reviews have settled.
+The Image header flags the big-endian bit is 0, and it succcessfully
+boots with a little-endian rootfs; log below.
 
-diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.c b/tools/testing/selftests/arm64/signal/testcases/testcases.c
-index a59785092e1f..0727b3987bbd 100644
---- a/tools/testing/selftests/arm64/signal/testcases/testcases.c
-+++ b/tools/testing/selftests/arm64/signal/testcases/testcases.c
-@@ -10,9 +10,16 @@ struct _aarch64_ctx *get_header(struct _aarch64_ctx *head, uint32_t magic,
-                return found;
- 
-        do {
-+               /*
-+                * account for the fact that:
-+                * - we could be in search of the terminator itself
-+                * - a terminator should anyway terminate the loop
-+                */
-                if (head->magic == magic) {
-                        found = head;
-                        break;
-+               } else if (!head->magic) {
-+                       break;
-                }
-                offs += head->size;
-                head = GET_RESV_NEXT_HEAD(head);
+Thanks,
+Mark.
 
-Cheers
+[1] https://lore.kernel.org/r/ec7bef46-7dcf-d165-b772-b4fd6055d964@arm.com
 
-Cristian
+---->8----
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x431f0af1]
+[    0.000000] Linux version 5.3.0-rc2-next-20190730 (KernelCI@30d217901839) (clang version 8.0.1-svn359952-1~exp1~20190504004501.65 (branches/release_80)) #1 SMP PREEMPT Tue Jul 30 06:50:57 UTC 2019
+[    0.000000] Machine model: linux,dummy-virt
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 32 MiB at 0x00000000be000000
+[    0.000000] earlycon: pl11 at MMIO 0x0000000009000000 (options '')
+[    0.000000] printk: bootconsole [pl11] enabled
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000] NUMA: NODE_DATA [mem 0xbdbf3840-0xbdbf4fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000] On node 0 totalpages: 524288
+[    0.000000]   DMA32 zone: 8192 pages used for memmap
+[    0.000000]   DMA32 zone: 0 pages reserved
+[    0.000000]   DMA32 zone: 524288 pages, LIFO batch:63
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.0 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] psci: SMC Calling Convention v1.1
+[    0.000000] percpu: Embedded 23 pages/cpu s56856 r8192 d29160 u94208
+[    0.000000] pcpu-alloc: s56856 r8192 d29160 u94208 alloc=23*4096
+[    0.000000] pcpu-alloc: [0] 0
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] CPU features: detected: GIC system register CPU interface
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 516096
+[    0.000000] Policy zone: DMA32
+[    0.000000] Kernel command line: loglevel=9 rodata=full earlycon root=/dev/vda
+[    0.000000] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 1997596K/2097152K available (12028K kernel code, 1912K rwdata, 6004K rodata, 5184K init, 448K bss, 66788K reserved, 32768K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+[    0.000000]  Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: Distributor has no Range Selector support
+[    0.000000] GICv3: no VLPI support, no direct LPI support
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000080a0000
+[    0.000000] ITS [mem 0x08080000-0x0809ffff]
+[    0.000000] ITS@0x0000000008080000: allocated 8192 Devices @bb030000 (indirect, esz 8, psz 64K, shr 1)
+[    0.000000] ITS@0x0000000008080000: allocated 8192 Interrupt Collections @bb040000 (flat, esz 8, psz 64K, shr 1)
+[    0.000000] GICv3: using LPI property table @0x00000000bb050000
+[    0.000000] GICv3: CPU0: using allocated LPI pending table @0x00000000bb060000
+[    0.000000] random: get_random_bytes called from start_kernel+0x1d4/0x39c with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 200.00MHz (virt).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x2e2049d3e8, max_idle_ns: 440795210634 ns
+[    0.000008] sched_clock: 56 bits at 200MHz, resolution 5ns, wraps every 4398046511102ns
+[    0.003286] Console: colour dummy device 80x25
+[    0.004711] printk: console [tty0] enabled
+[    0.006114] printk: bootconsole [pl11] disabled
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x431f0af1]
+[    0.000000] Linux version 5.3.0-rc2-next-20190730 (KernelCI@30d217901839) (clang version 8.0.1-svn359952-1~exp1~20190504004501.65 (branches/release_80)) #1 SMP PREEMPT Tue Jul 30 06:50:57 UTC 2019
+[    0.000000] Machine model: linux,dummy-virt
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 32 MiB at 0x00000000be000000
+[    0.000000] earlycon: pl11 at MMIO 0x0000000009000000 (options '')
+[    0.000000] printk: bootconsole [pl11] enabled
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000] NUMA: NODE_DATA [mem 0xbdbf3840-0xbdbf4fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA32    [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000040000000-0x00000000bfffffff]
+[    0.000000] On node 0 totalpages: 524288
+[    0.000000]   DMA32 zone: 8192 pages used for memmap
+[    0.000000]   DMA32 zone: 0 pages reserved
+[    0.000000]   DMA32 zone: 524288 pages, LIFO batch:63
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.0 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] psci: SMC Calling Convention v1.1
+[    0.000000] percpu: Embedded 23 pages/cpu s56856 r8192 d29160 u94208
+[    0.000000] pcpu-alloc: s56856 r8192 d29160 u94208 alloc=23*4096
+[    0.000000] pcpu-alloc: [0] 0
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] CPU features: detected: GIC system register CPU interface
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 516096
+[    0.000000] Policy zone: DMA32
+[    0.000000] Kernel command line: loglevel=9 rodata=full earlycon root=/dev/vda
+[    0.000000] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 1997596K/2097152K available (12028K kernel code, 1912K rwdata, 6004K rodata, 5184K init, 448K bss, 66788K reserved, 32768K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+[    0.000000]  Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: Distributor has no Range Selector support
+[    0.000000] GICv3: no VLPI support, no direct LPI support
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000080a0000
+[    0.000000] ITS [mem 0x08080000-0x0809ffff]
+[    0.000000] ITS@0x0000000008080000: allocated 8192 Devices @bb030000 (indirect, esz 8, psz 64K, shr 1)
+[    0.000000] ITS@0x0000000008080000: allocated 8192 Interrupt Collections @bb040000 (flat, esz 8, psz 64K, shr 1)
+[    0.000000] GICv3: using LPI property table @0x00000000bb050000
+[    0.000000] GICv3: CPU0: using allocated LPI pending table @0x00000000bb060000
+[    0.000000] random: get_random_bytes called from start_kernel+0x1d4/0x39c with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 200.00MHz (virt).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x2e2049d3e8, max_idle_ns: 440795210634 ns
+[    0.000008] sched_clock: 56 bits at 200MHz, resolution 5ns, wraps every 4398046511102ns
+[    0.003286] Console: colour dummy device 80x25
+[    0.004711] printk: console [tty0] enabled
+[    0.006114] printk: bootconsole [pl11] disabled
+[    0.007538] Calibrating delay loop (skipped), value calculated using timer frequency.. 400.00 BogoMIPS (lpj=800000)
+[    0.007551] pid_max: default: 32768 minimum: 301
+[    0.007581] LSM: Security Framework initializing
+[    0.007608] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.007620] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.031972] ASID allocator initialised with 32768 entries
+[    0.040072] rcu: Hierarchical SRCU implementation.
+[    0.048261] Platform MSI: its@8080000 domain created
+[    0.048294] PCI/MSI: /intc@8000000/its@8080000 domain created
+[    0.048599] EFI services will not be available.
+[    0.056343] smp: Bringing up secondary CPUs ...
+[    0.056358] smp: Brought up 1 node, 1 CPU
+[    0.056364] SMP: Total of 1 processors activated.
+[    0.056372] CPU features: detected: Privileged Access Never
+[    0.056378] CPU features: detected: LSE atomic instructions
+[    0.056385] CPU features: detected: RAS Extension Support
+[    0.056390] CPU features: detected: CRC32 instructions
+[    0.056422] CPU: All CPU(s) started at EL1
+[    0.056433] alternatives: patching kernel code
+[    0.060214] devtmpfs: initialized
+[    0.064667] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.064698] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[    0.065319] pinctrl core: initialized pinctrl subsystem
+[    0.065982] DMI not present or invalid.
+[    0.066218] NET: Registered protocol family 16
+[    0.066370] audit: initializing netlink subsys (disabled)
+[    0.068996] audit: type=2000 audit(0.064:1): state=initialized audit_enabled=0 res=1
+[    0.073011] cpuidle: using governor menu
+[    0.073154] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.074272] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.074866] Serial: AMBA PL011 UART driver
+[    0.080484] 9000000.pl011: ttyAMA0 at MMIO 0x9000000 (irq = 39, base_baud = 0) is a PL011 rev1
+[    0.229613] printk: console [ttyAMA0] enabled
+[    0.239415] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.241407] HugeTLB registered 32.0 MiB page size, pre-allocated 0 pages
+[    0.243419] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.245647] HugeTLB registered 64.0 KiB page size, pre-allocated 0 pages
+[    0.255900] cryptd: max_cpu_qlen set to 1000
+[    0.268422] ACPI: Interpreter disabled.
+[    0.272279] vgaarb: loaded
+[    0.273044] SCSI subsystem initialized
+[    0.276232] libata version 3.00 loaded.
+[    0.277368] usbcore: registered new interface driver usbfs
+[    0.278868] usbcore: registered new interface driver hub
+[    0.280448] usbcore: registered new device driver usb
+[    0.282241] pps_core: LinuxPPS API ver. 1 registered
+[    0.283441] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.285880] PTP clock support registered
+[    0.286815] EDAC MC: Ver: 3.0.0
+[    0.294074] FPGA manager framework
+[    0.295226] Advanced Linux Sound Architecture Driver Initialized.
+[    0.297068] clocksource: Switched to clocksource arch_sys_counter
+[    0.298920] VFS: Disk quotas dquot_6.6.0
+[    0.300084] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.302592] pnp: PnP ACPI: disabled
+[    0.305599] thermal_sys: Registered thermal governor 'step_wise'
+[    0.305601] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.307263] NET: Registered protocol family 2
+[    0.310373] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.312314] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.314627] TCP bind hash table entries: 16384 (order: 6, 262144 bytes, linear)
+[    0.316540] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.318499] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.320465] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.322749] NET: Registered protocol family 1
+[    0.336608] RPC: Registered named UNIX socket transport module.
+[    0.338472] RPC: Registered udp transport module.
+[    0.339675] RPC: Registered tcp transport module.
+[    0.340980] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.343132] PCI: CLS 0 bytes, default 64
+[    0.344482] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[    0.347065] kvm [1]: HYP mode not available
+[    0.351832] Initialise system trusted keyrings
+[    0.352989] workingset: timestamp_bits=44 max_order=19 bucket_order=0
+[    0.357762] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.363821] NFS: Registering the id_resolver key type
+[    0.365144] Key type id_resolver registered
+[    0.365963] Key type id_legacy registered
+[    0.366969] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    0.368424] 9p: Installing v9fs 9p2000 file system support
+[    0.378865] Key type asymmetric registered
+[    0.379958] Asymmetric key parser 'x509' registered
+[    0.381016] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    0.383497] io scheduler mq-deadline registered
+[    0.384538] io scheduler kyber registered
+[    0.388367] pl061_gpio 9030000.pl061: PL061 GPIO chip registered
+[    0.390238] pci-host-generic 4010000000.pcie: host bridge /pcie@10000000 ranges:
+[    0.391780] pci-host-generic 4010000000.pcie:    IO 0x3eff0000..0x3effffff -> 0x00000000
+[    0.393604] pci-host-generic 4010000000.pcie:   MEM 0x10000000..0x3efeffff -> 0x10000000
+[    0.395182] pci-host-generic 4010000000.pcie:   MEM 0x8000000000..0xffffffffff -> 0x8000000000
+[    0.396830] pci-host-generic 4010000000.pcie: ECAM at [mem 0x4010000000-0x401fffffff] for [bus 00-ff]
+[    0.399261] pci-host-generic 4010000000.pcie: PCI host bridge to bus 0000:00
+[    0.400526] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.401684] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    0.402759] pci_bus 0000:00: root bus resource [mem 0x10000000-0x3efeffff]
+[    0.404202] pci_bus 0000:00: root bus resource [mem 0x8000000000-0xffffffffff]
+[    0.405634] pci 0000:00:00.0: [1b36:0008] type 00 class 0x060000
+[    0.407312] pci 0000:00:01.0: [1af4:1000] type 00 class 0x020000
+[    0.408801] pci 0000:00:01.0: reg 0x10: [io  0x0000-0x001f]
+[    0.409984] pci 0000:00:01.0: reg 0x14: [mem 0x00000000-0x00000fff]
+[    0.411504] pci 0000:00:01.0: reg 0x20: [mem 0x00000000-0x00003fff 64bit pref]
+[    0.413840] pci 0000:00:01.0: reg 0x30: [mem 0x00000000-0x0003ffff pref]
+[    0.416196] pci 0000:00:02.0: [1af4:1001] type 00 class 0x010000
+[    0.417822] pci 0000:00:02.0: reg 0x10: [io  0x0000-0x007f]
+[    0.419063] pci 0000:00:02.0: reg 0x14: [mem 0x00000000-0x00000fff]
+[    0.420334] pci 0000:00:02.0: reg 0x20: [mem 0x00000000-0x00003fff 64bit pref]
+[    0.423194] pci 0000:00:01.0: BAR 6: assigned [mem 0x10000000-0x1003ffff pref]
+[    0.424869] pci 0000:00:01.0: BAR 4: assigned [mem 0x8000000000-0x8000003fff 64bit pref]
+[    0.427018] pci 0000:00:02.0: BAR 4: assigned [mem 0x8000004000-0x8000007fff 64bit pref]
+[    0.428507] pci 0000:00:01.0: BAR 1: assigned [mem 0x10040000-0x10040fff]
+[    0.430560] pci 0000:00:02.0: BAR 1: assigned [mem 0x10041000-0x10041fff]
+[    0.432139] pci 0000:00:02.0: BAR 0: assigned [io  0x1000-0x107f]
+[    0.433657] pci 0000:00:01.0: BAR 0: assigned [io  0x1080-0x109f]
+[    0.439764] EINJ: ACPI disabled.
+[    0.444641] virtio-pci 0000:00:01.0: enabling device (0000 -> 0003)
+[    0.449017] virtio-pci 0000:00:02.0: enabling device (0000 -> 0003)
+[    0.455905] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.458373] SuperH (H)SCI(F) driver initialized
+[    0.459684] msm_serial: driver initialized
+[    0.461407] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.465763] loop: module loaded
+[    0.468068] virtio_blk virtio1: [vda] 12000000 512-byte logical blocks (6.14 GB/5.72 GiB)
+[    0.477848] libphy: Fixed MDIO Bus: probed
+[    0.478986] tun: Universal TUN/TAP device driver, 1.6
+[    0.482174] thunder_xcv, ver 1.0
+[    0.482970] thunder_bgx, ver 1.0
+[    0.483806] nicpf, ver 1.0
+[    0.484754] hclge is initializing
+[    0.485736] hns3: Hisilicon Ethernet Network Driver for Hip08 Family - version
+[    0.487390] hns3: Copyright (c) 2017 Huawei Corporation.
+[    0.488827] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[    0.490682] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    0.492067] igb: Intel(R) Gigabit Ethernet Network Driver - version 5.6.0-k
+[    0.493889] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    0.495332] igbvf: Intel(R) Gigabit Virtual Function Network Driver - version 2.4.0-k
+[    0.498230] igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+[    0.499893] sky2: driver version 1.30
+[    0.501195] VFIO - User Level meta-driver version: 0.3
+[    0.507337] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.509403] ehci-pci: EHCI PCI platform driver
+[    0.510865] ehci-platform: EHCI generic platform driver
+[    0.512295] ehci-orion: EHCI orion driver
+[    0.513372] ehci-exynos: EHCI EXYNOS driver
+[    0.514497] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    0.515985] ohci-pci: OHCI PCI platform driver
+[    0.516978] ohci-platform: OHCI generic platform driver
+[    0.518568] ohci-exynos: OHCI EXYNOS driver
+[    0.520044] usbcore: registered new interface driver usb-storage
+[    0.522710] rtc-pl031 9010000.pl031: registered as rtc0
+[    0.524262] i2c /dev entries driver
+[    0.527836] sdhci: Secure Digital Host Controller Interface driver
+[    0.529490] sdhci: Copyright(c) Pierre Ossman
+[    0.530893] Synopsys Designware Multimedia Card Interface Driver
+[    0.532651] sdhci-pltfm: SDHCI platform and OF driver helper
+[    0.535051] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.537058] usbcore: registered new interface driver usbhid
+[    0.538898] usbhid: USB HID core driver
+[    0.541460] NET: Registered protocol family 17
+[    0.542521] 9pnet: Installing 9P2000 support
+[    0.543580] Key type dns_resolver registered
+[    0.544954] registered taskstats version 1
+[    0.546181] Loading compiled-in X.509 certificates
+[    0.547737] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    0.549466] rtc-pl031 9010000.pl031: setting system clock to 2019-08-07T15:40:46 UTC (1565192446)
+[    0.553232] ALSA device list:
+[    0.554015]   No soundcards found.
+[    0.554839] uart-pl011 9000000.pl011: no DMA platform data
+[    0.556293] EXT4-fs (vda): mounting ext3 file system using the ext4 subsystem
+[    0.564596] EXT4-fs (vda): mounted filesystem with ordered data mode. Opts: (null)
+[    0.567288] VFS: Mounted root (ext3 filesystem) readonly on device 254:0.
+[    0.569455] devtmpfs: mounted
+[    0.571312] Freeing unused kernel memory: 5184K
+[    0.572540] Run /sbin/init as init process
+[    0.597524] EXT4-fs (vda): re-mounted. Opts: errors=remount-ro
+Starting logging: OK
+Initializing random number generator... [    0.631818] random: dd: uninitialized urandom read (512 bytes read)
+done.
+Starting network: udhcpc: started, v1.26.2
+udhcpc: sending discover
+udhcpc: sending select for 10.0.2.15
+udhcpc: lease of 10.0.2.15 obtained, lease time 86400
+deleting routers
+adding dns 10.0.2.3
+OK
+Starting sshd: [    0.773922] random: sshd: uninitialized urandom read (32 bytes read)
+OK
 
-> diff --git a/tools/testing/selftests/arm64/Makefile b/tools/testing/selftests/arm64/Makefile
-> index 03a0d4f71218..af59dc74e0dc 100644
-> --- a/tools/testing/selftests/arm64/Makefile
-> +++ b/tools/testing/selftests/arm64/Makefile
-> @@ -6,7 +6,7 @@ ARCH ?= $(shell uname -m)
->  ARCH := $(shell echo $(ARCH) | sed -e s/aarch64/arm64/)
->  
->  ifeq ("x$(ARCH)", "xarm64")
-> -SUBDIRS :=
-> +SUBDIRS := signal
->  else
->  SUBDIRS :=
->  endif
-> diff --git a/tools/testing/selftests/arm64/signal/.gitignore b/tools/testing/selftests/arm64/signal/.gitignore
-> new file mode 100644
-> index 000000000000..434f65c15f03
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/.gitignore
-> @@ -0,0 +1,6 @@
-> +# Helper script's internal testcases list (TPROGS) is regenerated
-> +# each time by Makefile on standalone (non KSFT driven) runs.
-> +# Committing such list creates a dependency between testcases
-> +# patches such that they are no more easily revertable. Just ignore.
-> +test_arm64_signals.src_shell
-> +test_arm64_signals.sh
-> diff --git a/tools/testing/selftests/arm64/signal/Makefile b/tools/testing/selftests/arm64/signal/Makefile
-> new file mode 100644
-> index 000000000000..8c8d08be4b0d
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/Makefile
-> @@ -0,0 +1,88 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +# Copyright (C) 2019 ARM Limited
-> +
-> +# Supports also standalone invokation out of KSFT-tree
-> +# Compile standalone and run on your device with:
-> +#
-> +#  $ make -C tools/testing/selftests/arm64/signal INSTALL_PATH=<your-dir> install
-> +#
-> +# Run standalone on device with:
-> +#
-> +#  $ <your-device-instdir>/test_arm64_signals.sh [-k|-v]
-> +#
-> +# If INSTALL_PATH= is NOT provided it will default to ./install
-> +
-> +# A proper top_srcdir is needed both by KSFT(lib.mk)
-> +# and standalone builds
-> +top_srcdir = ../../../../..
-> +
-> +CFLAGS += -std=gnu99 -I. -I$(top_srcdir)/tools/testing/selftests/
-> +SRCS := $(filter-out testcases/testcases.c,$(wildcard testcases/*.c))
-> +PROGS := $(patsubst %.c,%,$(SRCS))
-> +
-> +# Guessing as best as we can where the Kernel headers
-> +# could have been installed depending on ENV config and
-> +# type of invocation.
-> +ifeq ($(KBUILD_OUTPUT),)
-> +khdr_dir = $(top_srcdir)/usr/include
-> +else
-> +ifeq (0,$(MAKELEVEL))
-> +khdr_dir = $(KBUILD_OUTPUT)/usr/include
-> +else
-> +# the KSFT preferred location when KBUILD_OUTPUT is set
-> +khdr_dir = $(KBUILD_OUTPUT)/kselftest/usr/include
-> +endif
-> +endif
-> +
-> +CFLAGS += -I$(khdr_dir)
-> +
-> +# Standalone run
-> +ifeq (0,$(MAKELEVEL))
-> +CC := $(CROSS_COMPILE)gcc
-> +RUNNER_SRC = test_arm64_signals.src_shell
-> +RUNNER = test_arm64_signals.sh
-> +INSTALL_PATH ?= install/
-> +
-> +all: $(RUNNER)
-> +
-> +$(RUNNER): $(PROGS)
-> +	cp $(RUNNER_SRC) $(RUNNER)
-> +	sed -i -e 's#PROGS=.*#PROGS="$(PROGS)"#' $@
-> +
-> +install: all
-> +	mkdir -p $(INSTALL_PATH)/testcases
-> +	cp $(PROGS) $(INSTALL_PATH)/testcases
-> +	cp $(RUNNER) $(INSTALL_PATH)/
-> +
-> +.PHONY clean:
-> +	rm -f $(PROGS)
-> +# KSFT run
-> +else
-> +# Generated binaries to be installed by top KSFT script
-> +TEST_GEN_PROGS := $(notdir $(PROGS))
-> +
-> +# Get Kernel headers installed and use them.
-> +KSFT_KHDR_INSTALL := 1
-> +
-> +# This include mk will also mangle the TEST_GEN_PROGS list
-> +# to account for any OUTPUT target-dirs optionally provided
-> +# by the toplevel makefile
-> +include ../../lib.mk
-> +
-> +$(TEST_GEN_PROGS): $(PROGS)
-> +	cp $(PROGS) $(OUTPUT)/
-> +
-> +clean:
-> +	$(CLEAN)
-> +	rm -f $(PROGS)
-> +endif
-> +
-> +# Common test-unit targets to build common-layout test-cases executables
-> +# Needs secondary expansion to properly include the testcase c-file in pre-reqs
-> +.SECONDEXPANSION:
-> +$(PROGS): test_signals.c test_signals_utils.c testcases/testcases.c $$@.c test_signals.h test_signals_utils.h testcases/testcases.h
-> +	@if [ ! -d $(khdr_dir) ]; then \
-> +		echo -n "\n!!! WARNING: $(khdr_dir) NOT FOUND."; \
-> +		echo "===>  Are you sure Kernel Headers have been installed properly ?\n"; \
-> +	fi
-> +	$(CC) $(CFLAGS) $^ -o $@
-> diff --git a/tools/testing/selftests/arm64/signal/README b/tools/testing/selftests/arm64/signal/README
-> new file mode 100644
-> index 000000000000..53f005f7910a
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/README
-> @@ -0,0 +1,59 @@
-> +KSelfTest arm64/signal/
-> +=======================
-> +
-> +Signals Tests
-> ++++++++++++++
-> +
-> +- Tests are built around a common main compilation unit: such shared main
-> +  enforces a standard sequence of operations needed to perform a single
-> +  signal-test (setup/trigger/run/result/cleanup)
-> +
-> +- The above mentioned ops are configurable on a test-by-test basis: each test
-> +  is described (and configured) using the descriptor signals.h::struct tdescr
-> +
-> +- Each signal testcase is compiled into its own executable: a separate
-> +  executable is used for each test since many tests complete successfully
-> +  by receiving some kind of fatal signal from the Kernel, so it's safer
-> +  to run each test unit in its own standalone process, so as to start each
-> +  test from a clean slate.
-> +
-> +- New tests can be simply defined in testcases/ dir providing a proper struct
-> +  tdescr overriding all the defaults we wish to change (as of now providing a
-> +  custom run method is mandatory though)
-> +
-> +- Signals' test-cases hereafter defined belong currently to two
-> +  principal families:
-> +
-> +  - 'mangle_' tests: a real signal (SIGUSR1) is raised and used as a trigger
-> +    and then the test case code messes-up with the sigframe ucontext_t from
-> +    inside the sighandler itself.
-> +
-> +  - 'fake_sigreturn_' tests: a brand new custom artificial sigframe structure
-> +    is placed on the stack and a sigreturn syscall is called to simulate a
-> +    real signal return. This kind of tests does not use a trigger usually and
-> +    they are just fired using some simple included assembly trampoline code.
-> +
-> + - Most of these tests are successfully passing if the process gets killed by
-> +   some fatal signal: usually SIGSEGV or SIGBUS. Since while writing this
-> +   kind of tests it is extremely easy in fact to end-up injecting other
-> +   unrelated SEGV bugs in the testcases, it becomes extremely tricky to
-> +   be really sure that the tests are really addressing what they are meant
-> +   to address and they are not instead falling apart due to unplanned bugs
-> +   in the test code.
-> +   In order to alleviate the misery of the life of such test-developer, a few
-> +   helpers are provided:
-> +
-> +   - a couple of ASSERT_BAD/GOOD_CONTEXT() macros to easily parse a ucontext_t
-> +     and verify if it is indeed GOOD or BAD (depending on what we were
-> +     expecting), using the same logic/perspective as in the arm64 Kernel signals
-> +     routines.
-> +
-> +   - a sanity mechanism to be used in 'fake_sigreturn_'-alike tests: enabled by
-> +     default it takes care to verify that the test-execution had at least
-> +     successfully progressed up to the stage of triggering the fake sigreturn
-> +     call.
-> +
-> +  In both cases test results are expected in terms of:
-> +   - some fatal signal sent by the Kernel to the test process
-> +  or
-> +  - analyzing some final regs state
-> diff --git a/tools/testing/selftests/arm64/signal/test_arm64_signals.src_shell b/tools/testing/selftests/arm64/signal/test_arm64_signals.src_shell
-> new file mode 100755
-> index 000000000000..163e941e2997
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/test_arm64_signals.src_shell
-> @@ -0,0 +1,55 @@
-> +#!/bin/sh
-> +# SPDX-License-Identifier: GPL-2.0
-> +# Copyright (C) 2019 ARM Limited
-> +
-> +ret=0
-> +keep_on_fail=0
-> +err_out="2> /dev/null"
-> +
-> +usage() {
-> +	echo "Usage: `basename $0` [-v] [-k]"
-> +	exit 1
-> +}
-> +
-> +# avoiding getopt to avoid compatibility issues on targets
-> +# with limited resources
-> +while [ $# -gt 0 ]
-> +do
-> +	case $1 in
-> +		"-k")
-> +			keep_on_fail=1
-> +			;;
-> +		"-v")
-> +			err_out=
-> +			;;
-> +		*)
-> +			usage
-> +			;;
-> +	esac
-> +	shift
-> +done
-> +
-> +TPROGS=
-> +
-> +tot=$(echo $TPROGS | wc -w)
-> +
-> +# Tests are expected in testcases/ subdir inside the installation path
-> +workdir="`dirname $0 2>/dev/null`"
-> +[ -n $workdir ] && cd $workdir
-> +
-> +passed=0
-> +run=0
-> +for test in $TPROGS
-> +do
-> +	run=$((run + 1))
-> +	eval ./$test $err_out
-> +	if [ $? != 0 ]; then
-> +		[ $keep_on_fail = 0 ] && echo "===>>> FAILED:: $test <<<===" && ret=1 && break
-> +	else
-> +		passed=$((passed + 1))
-> +	fi
-> +done
-> +
-> +echo "==>> PASSED: $passed/$run on $tot available tests."
-> +
-> +exit $ret
-> diff --git a/tools/testing/selftests/arm64/signal/test_signals.c b/tools/testing/selftests/arm64/signal/test_signals.c
-> new file mode 100644
-> index 000000000000..3447d7011aec
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/test_signals.c
-> @@ -0,0 +1,26 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/* Copyright (C) 2019 ARM Limited */
-> +
-> +#include <kselftest.h>
-> +
-> +#include "test_signals.h"
-> +#include "test_signals_utils.h"
-> +
-> +struct tdescr *current;
-> +extern struct tdescr tde;
-> +
-> +int main(int argc, char *argv[])
-> +{
-> +	current = &tde;
-> +
-> +	ksft_print_msg("%s :: %s - SIG_TRIG:%d  SIG_OK:%d -- current:%p\n",
-> +		       current->name, current->descr, current->sig_trig,
-> +		       current->sig_ok, current);
-> +	if (test_setup(current)) {
-> +		if (test_run(current))
-> +			test_result(current);
-> +		test_cleanup(current);
-> +	}
-> +
-> +	return current->pass ? KSFT_PASS : KSFT_FAIL;
-> +}
-> diff --git a/tools/testing/selftests/arm64/signal/test_signals.h b/tools/testing/selftests/arm64/signal/test_signals.h
-> new file mode 100644
-> index 000000000000..85db3ac44b32
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/test_signals.h
-> @@ -0,0 +1,137 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/* Copyright (C) 2019 ARM Limited */
-> +
-> +#ifndef __TEST_SIGNALS_H__
-> +#define __TEST_SIGNALS_H__
-> +
-> +#include <assert.h>
-> +#include <stdbool.h>
-> +#include <signal.h>
-> +#include <ucontext.h>
-> +#include <stdint.h>
-> +
-> +/*
-> + * Using ARCH specific and sanitized Kernel headers installed by KSFT
-> + * framework since we asked for it by setting flag KSFT_KHDR_INSTALL
-> + * in our Makefile.
-> + */
-> +#include <asm/ptrace.h>
-> +#include <asm/hwcap.h>
-> +
-> +/* pasted from include/linux/stringify.h */
-> +#define __stringify_1(x...)	#x
-> +#define __stringify(x...)	__stringify_1(x)
-> +
-> +/*
-> + * Reads a sysreg using the, possibly provided, S3_ encoding in order to
-> + * avoid inject any dependency on the used toolchain regarding possibly
-> + * still unsupported ARMv8 extensions.
-> + *
-> + * Using a standard mnemonic here to indicate the specific sysreg (like SSBS)
-> + * would introduce a compile-time dependency on possibly unsupported ARMv8
-> + * Extensions: you could end-up failing to build the test depending on the
-> + * available toolchain.
-> + * This is undesirable since some tests, even if specifically targeted at some
-> + * ARMv8 Extensions, can be plausibly run even on hardware lacking the above
-> + * optional ARM features. (SSBS bit preservation is an example: Kernel handles
-> + * it transparently not caring at all about the effective set of supported
-> + * features).
-> + * On the other side we will expect to observe different behaviours if the
-> + * feature is supported or not: usually getting a SIGILL when trying to use
-> + * unsupported features. For this reason we have anyway in place some
-> + * preliminary run-time checks about the cpu effectively supported features.
-> + *
-> + * This helper macro is meant to be used for regs readable at EL0, BUT some
-> + * EL1 sysregs are indeed readable too through MRS emulation Kernel-mechanism
-> + * if the required reg is included in the supported encoding space:
-> + *
-> + *  Documentation/arm64/cpu-feature-regsiters.txt
-> + *
-> + *  "The infrastructure emulates only the following system register space:
-> + *   	Op0=3, Op1=0, CRn=0, CRm=0,4,5,6,7
-> + */
-> +#define get_regval(regname, out) \
-> +	asm volatile("mrs %0, " __stringify(regname) : "=r" (out) :: "memory")
-> +
-> +/* Regs encoding and masks naming copied in from sysreg.h */
-> +#define SYS_ID_AA64MMFR1_EL1	S3_0_C0_C7_1	/* MRS Emulated */
-> +#define SYS_ID_AA64MMFR2_EL1	S3_0_C0_C7_2	/* MRS Emulated */
-> +#define ID_AA64MMFR1_PAN_SHIFT	20
-> +#define ID_AA64MMFR2_UAO_SHIFT	4
-> +
-> +/* Local Helpers */
-> +#define IS_PAN_SUPPORTED(val) \
-> +	(!!((val) & (0xfUL << ID_AA64MMFR1_PAN_SHIFT)))
-> +#define IS_UAO_SUPPORTED(val) \
-> +	(!!((val) & (0xfUL << ID_AA64MMFR2_UAO_SHIFT)))
-> +
-> +#define S3_MRS_SSBS_SYSREG		S3_3_C4_C2_6	/* EL0 supported */
-> +
-> +/*
-> + * Feature flags used in tdescr.feats_required to specify
-> + * any feature by the test
-> + */
-> +enum {
-> +	FSSBS_BIT,
-> +	FPAN_BIT,
-> +	FUAO_BIT,
-> +	FMAX_END
-> +};
-> +
-> +#define FEAT_SSBS		(1UL << FSSBS_BIT)
-> +#define FEAT_PAN		(1UL << FPAN_BIT)
-> +#define FEAT_UAO		(1UL << FUAO_BIT)
-> +
-> +/*
-> + * A descriptor used to describe and configure a test case.
-> + * Fields with a non-trivial meaning are described inline in the following.
-> + */
-> +struct tdescr {
-> +	/* KEEP THIS FIELD FIRST for easier lookup from assembly */
-> +	void		*token;
-> +	/* when disabled token based sanity checking is skipped in handler */
-> +	bool		sanity_disabled;
-> +	/* just a name for the test-case; manadatory field */
-> +	char		*name;
-> +	char		*descr;
-> +	unsigned long	feats_required;
-> +	/* bitmask of effectively supported feats: populated at run-time */
-> +	unsigned long	feats_supported;
-> +	bool		feats_ok;
-> +	bool		initialized;
-> +	unsigned int	minsigstksz;
-> +	/* signum used as a test trigger. Zero if no trigger-signal is used */
-> +	int		sig_trig;
-> +	/*
-> +	 * signum considered as a successful test completion.
-> +	 * Zero when no signal is expected on success
-> +	 */
-> +	int		sig_ok;
-> +	/* signum expected on unsupported CPU features. */
-> +	int		sig_unsupp;
-> +	/* a timeout in second for test completion */
-> +	unsigned int	timeout;
-> +	bool		triggered;
-> +	bool		pass;
-> +	/* optional sa_flags for the installed handler */
-> +	int		sa_flags;
-> +	ucontext_t	saved_uc;
-> +
-> +	/* a setup function to be called before test starts */
-> +	int (*setup)(struct tdescr *td);
-> +	void (*cleanup)(struct tdescr *td);
-> +
-> +	/* an optional function to be used as a trigger for test starting */
-> +	int (*trigger)(struct tdescr *td);
-> +	/*
-> +	 * the actual test-core: invoked differently depending on the
-> +	 * presence of the trigger function above; this is mandatory
-> +	 */
-> +	int (*run)(struct tdescr *td, siginfo_t *si, ucontext_t *uc);
-> +
-> +	/* an optional function for custom results' processing */
-> +	void (*check_result)(struct tdescr *td);
-> +
-> +	void *priv;
-> +};
-> +#endif
-> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
-> new file mode 100644
-> index 000000000000..ac0055f6340b
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.c
-> @@ -0,0 +1,261 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/* Copyright (C) 2019 ARM Limited */
-> +
-> +#include <stdio.h>
-> +#include <stdlib.h>
-> +#include <signal.h>
-> +#include <string.h>
-> +#include <unistd.h>
-> +#include <assert.h>
-> +#include <sys/auxv.h>
-> +#include <linux/auxvec.h>
-> +#include <ucontext.h>
-> +
-> +#include "test_signals.h"
-> +#include "test_signals_utils.h"
-> +#include "testcases/testcases.h"
-> +
-> +extern struct tdescr *current;
-> +
-> +static char *feats_store[FMAX_END] = {
-> +	"SSBS",
-> +	"PAN",
-> +	"UAO"
-> +};
-> +
-> +#define MAX_FEATS_SZ	128
-> +static inline char *feats_to_string(unsigned long feats)
-> +{
-> +	static char feats_string[MAX_FEATS_SZ];
-> +
-> +	for (int i = 0; i < FMAX_END && feats_store[i][0]; i++) {
-> +		if (feats & 1UL << i)
-> +			snprintf(feats_string, MAX_FEATS_SZ - 1, "%s %s ",
-> +				 feats_string, feats_store[i]);
-> +	}
-> +
-> +	return feats_string;
-> +}
-> +
-> +static void unblock_signal(int signum)
-> +{
-> +	sigset_t sset;
-> +
-> +	sigemptyset(&sset);
-> +	sigaddset(&sset, signum);
-> +	sigprocmask(SIG_UNBLOCK, &sset, NULL);
-> +}
-> +
-> +static void default_result(struct tdescr *td, bool force_exit)
-> +{
-> +	if (td->pass)
-> +		fprintf(stderr, "==>> completed. PASS(1)\n");
-> +	else
-> +		fprintf(stdout, "==>> completed. FAIL(0)\n");
-> +	if (force_exit)
-> +		exit(td->pass ? EXIT_SUCCESS : EXIT_FAILURE);
-> +}
-> +
-> +static inline bool are_feats_ok(struct tdescr *td)
-> +{
-> +	return td ? td->feats_required == td->feats_supported : 0;
-> +}
-> +
-> +static void default_handler(int signum, siginfo_t *si, void *uc)
-> +{
-> +	if (current->sig_trig && signum == current->sig_trig) {
-> +		fprintf(stderr, "Handling SIG_TRIG\n");
-> +		current->triggered = 1;
-> +		/* ->run was asserted NON-NULL in test_setup() already */
-> +		current->run(current, si, uc);
-> +	} else if (signum == SIGILL && !current->initialized) {
-> +		/*
-> +		 * A SIGILL here while still not initialized means we failed
-> +		 * even to asses the existence of features during init
-> +		 */
-> +		fprintf(stdout,
-> +			"Got SIGILL test_init. Marking ALL features UNSUPPORTED.\n");
-> +		current->feats_supported = 0;
-> +	} else if (current->sig_ok && signum == current->sig_ok) {
-> +		/* it's a bug in the test code when this assert fail */
-> +		assert(!current->sig_trig || current->triggered);
-> +		fprintf(stderr,
-> +			"SIG_OK -- SP:%p  si_addr@:0x%p  si_code:%d  token@:0x%p  offset:%ld\n",
-> +			((ucontext_t *)uc)->uc_mcontext.sp,
-> +			si->si_addr, si->si_code, current->token,
-> +			current->token - si->si_addr);
-> +		/*
-> +		 * fake_sigreturn tests, which have sanity_enabled=1, set, at
-> +		 * the very last time, the token field to the SP address used
-> +		 * to place the fake sigframe: so token==0 means we never made
-> +		 * it to the end, segfaulting well-before, and the test is
-> +		 * possibly broken.
-> +		 */
-> +		if (!current->sanity_disabled && !current->token) {
-> +			fprintf(stdout,
-> +				"current->token ZEROED...test is probably broken!\n");
-> +			assert(0);
-> +		}
-> +		/*
-> +		 * Trying to narrow down the SEGV to the ones generated by
-> +		 * Kernel itself via arm64_notify_segfault()
-> +		 */
-> +		if (current->sig_ok == SIGSEGV && si->si_code != SEGV_ACCERR) {
-> +			fprintf(stdout,
-> +				"si_code != SEGV_ACCERR...test is probably broken!\n");
-> +			assert(0);
-> +		}
-> +		fprintf(stderr, "Handling SIG_OK\n");
-> +		current->pass = 1;
-> +		/*
-> +		 * Some tests can lead to SEGV loops: in such a case we want
-> +		 * to terminate immediately exiting straight away
-> +		 */
-> +		default_result(current, 1);
-> +	} else {
-> +		if (signum == current->sig_unsupp && !are_feats_ok(current)) {
-> +			fprintf(stderr, "-- RX SIG_UNSUPP on unsupported feature...OK\n");
-> +			current->pass = 1;
-> +		} else if (signum == SIGALRM && current->timeout) {
-> +			fprintf(stderr, "-- Timeout !\n");
-> +		} else {
-> +			fprintf(stderr,
-> +				"-- RX UNEXPECTED SIGNAL: %d\n", signum);
-> +		}
-> +		default_result(current, 1);
-> +	}
-> +}
-> +
-> +static int default_setup(struct tdescr *td)
-> +{
-> +	struct sigaction sa;
-> +
-> +	sa.sa_sigaction = default_handler;
-> +	sa.sa_flags = SA_SIGINFO;
-> +	if (td->sa_flags)
-> +		sa.sa_flags |= td->sa_flags;
-> +	sigemptyset(&sa.sa_mask);
-> +	/* uncatchable signals naturally skipped ... */
-> +	for (int sig = 1; sig < 32; sig++)
-> +		sigaction(sig, &sa, NULL);
-> +	/*
-> +	 * RT Signals default disposition is Term but they cannot be
-> +	 * generated by the Kernel in response to our tests; so just catch
-> +	 * them all and report them as UNEXPECTED signals.
-> +	 */
-> +	for (int sig = SIGRTMIN; sig <= SIGRTMAX; sig++)
-> +		sigaction(sig, &sa, NULL);
-> +
-> +	/* just in case...unblock explicitly all we need */
-> +	if (td->sig_trig)
-> +		unblock_signal(td->sig_trig);
-> +	if (td->sig_ok)
-> +		unblock_signal(td->sig_ok);
-> +	if (td->sig_unsupp)
-> +		unblock_signal(td->sig_unsupp);
-> +
-> +	if (td->timeout) {
-> +		unblock_signal(SIGALRM);
-> +		alarm(td->timeout);
-> +	}
-> +	fprintf(stderr, "Registered handlers for all signals.\n");
-> +
-> +	return 1;
-> +}
-> +
-> +static inline int default_trigger(struct tdescr *td)
-> +{
-> +	return !raise(td->sig_trig);
-> +}
-> +
-> +static int test_init(struct tdescr *td)
-> +{
-> +	td->minsigstksz = getauxval(AT_MINSIGSTKSZ);
-> +	if (!td->minsigstksz)
-> +		td->minsigstksz = MINSIGSTKSZ;
-> +	fprintf(stderr, "Detected MINSTKSIGSZ:%d\n", td->minsigstksz);
-> +
-> +	if (td->feats_required) {
-> +		bool feats_ok = false;
-> +		td->feats_supported = 0;
-> +		/*
-> +		 * Checking for CPU required features using both the
-> +		 * auxval and the arm64 MRS Emulation to read sysregs.
-> +		 */
-> +		if (getauxval(AT_HWCAP) & HWCAP_CPUID) {
-> +			uint64_t val = 0;
-> +
-> +			if (td->feats_required & FEAT_SSBS) {
-> +				/* Uses HWCAP to check capability */
-> +				if (getauxval(AT_HWCAP) & HWCAP_SSBS)
-> +					td->feats_supported |= FEAT_SSBS;
-> +			}
-> +			if (td->feats_required & FEAT_PAN) {
-> +				/* Uses MRS emulation to check capability */
-> +				get_regval(SYS_ID_AA64MMFR1_EL1, val);
-> +				if (IS_PAN_SUPPORTED(val))
-> +					td->feats_supported |= FEAT_PAN;
-> +			}
-> +			if (td->feats_required & FEAT_UAO) {
-> +				/* Uses MRS emulation to check capability */
-> +				get_regval(SYS_ID_AA64MMFR2_EL1 , val);
-> +				if (IS_UAO_SUPPORTED(val))
-> +					td->feats_supported |= FEAT_UAO;
-> +			}
-> +		} else {
-> +			fprintf(stderr,
-> +				"HWCAP_CPUID NOT available. Mark ALL feats UNSUPPORTED.\n");
-> +		}
-> +		feats_ok = are_feats_ok(td);
-> +		fprintf(stderr,
-> +			"Required Features: [%s] %ssupported\n",
-> +			feats_ok ? feats_to_string(td->feats_supported) :
-> +		        feats_to_string(td->feats_required ^ td->feats_supported),
-> +			!feats_ok ? "NOT " : "");
-> +	}
-> +
-> +	td->initialized = 1;
-> +	return 1;
-> +}
-> +
-> +int test_setup(struct tdescr *td)
-> +{
-> +	/* assert core invariants symptom of a rotten testcase */
-> +	assert(current);
-> +	assert(td);
-> +	assert(td->name);
-> +	assert(td->run);
-> +
-> +	if (!test_init(td))
-> +		return 0;
-> +
-> +	if (td->setup)
-> +		return td->setup(td);
-> +	else
-> +		return default_setup(td);
-> +}
-> +
-> +int test_run(struct tdescr *td)
-> +{
-> +	if (td->sig_trig) {
-> +		if (td->trigger)
-> +			return td->trigger(td);
-> +		else
-> +			return default_trigger(td);
-> +	} else {
-> +		return td->run(td, NULL, NULL);
-> +	}
-> +}
-> +
-> +void test_result(struct tdescr *td)
-> +{
-> +	if (td->check_result)
-> +		td->check_result(td);
-> +	default_result(td, 0);
-> +}
-> +
-> +void test_cleanup(struct tdescr *td)
-> +{
-> +	if (td->cleanup)
-> +		td->cleanup(td);
-> +}
-> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.h b/tools/testing/selftests/arm64/signal/test_signals_utils.h
-> new file mode 100644
-> index 000000000000..8658d1a7d4b9
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.h
-> @@ -0,0 +1,13 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/* Copyright (C) 2019 ARM Limited */
-> +
-> +#ifndef __TEST_SIGNALS_UTILS_H__
-> +#define __TEST_SIGNALS_UTILS_H__
-> +
-> +#include "test_signals.h"
-> +
-> +int test_setup(struct tdescr *td);
-> +void test_cleanup(struct tdescr *td);
-> +int test_run(struct tdescr *td);
-> +void test_result(struct tdescr *td);
-> +#endif
-> diff --git a/tools/testing/selftests/arm64/signal/testcases/.gitignore b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-> new file mode 100644
-> index 000000000000..8651272e3cfc
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-> @@ -0,0 +1 @@
-> +mangle_pstate_invalid_compat_toggle
-> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_compat_toggle.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_compat_toggle.c
-> new file mode 100644
-> index 000000000000..971193e7501b
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_compat_toggle.c
-> @@ -0,0 +1,25 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/* Copyright (C) 2019 ARM Limited */
-> +
-> +#include "test_signals_utils.h"
-> +#include "testcases.h"
-> +
-> +static int mangle_invalid_pstate_run(struct tdescr *td, siginfo_t *si,
-> +				     ucontext_t *uc)
-> +{
-> +	ASSERT_GOOD_CONTEXT(uc);
-> +
-> +	/* This config should trigger a SIGSEGV by Kernel */
-> +	uc->uc_mcontext.pstate ^= PSR_MODE32_BIT;
-> +
-> +	return 1;
-> +}
-> +
-> +struct tdescr tde = {
-> +		.sanity_disabled = true,
-> +		.name = "MANGLE_PSTATE_INVALID_STATE_TOGGLE",
-> +		.descr = "Mangling uc_mcontext with INVALID STATE_TOGGLE",
-> +		.sig_trig = SIGUSR1,
-> +		.sig_ok = SIGSEGV,
-> +		.run = mangle_invalid_pstate_run,
-> +};
-> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.c b/tools/testing/selftests/arm64/signal/testcases/testcases.c
-> new file mode 100644
-> index 000000000000..a59785092e1f
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/testcases/testcases.c
-> @@ -0,0 +1,150 @@
-> +#include "testcases.h"
-> +
-> +struct _aarch64_ctx *get_header(struct _aarch64_ctx *head, uint32_t magic,
-> +				size_t resv_sz, size_t *offset)
-> +{
-> +	size_t offs = 0;
-> +	struct _aarch64_ctx *found = NULL;
-> +
-> +	if (!head || resv_sz < HDR_SZ)
-> +		return found;
-> +
-> +	do {
-> +		if (head->magic == magic) {
-> +			found = head;
-> +			break;
-> +		}
-> +		offs += head->size;
-> +		head = GET_RESV_NEXT_HEAD(head);
-> +	} while (offs < resv_sz - HDR_SZ);
-> +
-> +	if (offset)
-> +		*offset = offs;
-> +
-> +	return found;
-> +}
-> +
-> +bool validate_extra_context(struct extra_context *extra, char **err)
-> +{
-> +	struct _aarch64_ctx *term;
-> +
-> +	if (!extra || !err)
-> +		return false;
-> +
-> +	fprintf(stderr, "Validating EXTRA...\n");
-> +	term = GET_RESV_NEXT_HEAD(extra);
-> +	if (!term || term->magic || term->size) {
-> +		*err = "UN-Terminated EXTRA context";
-> +		return false;
-> +	}
-> +	if (extra->datap & 0x0fUL)
-> +		*err = "Extra DATAP misaligned";
-> +	else if (extra->size & 0x0fUL)
-> +		*err = "Extra SIZE misaligned";
-> +	else if (extra->datap != (uint64_t)term + sizeof(*term))
-> +		*err = "Extra DATAP misplaced (not contiguos)";
-> +	if (*err)
-> +		return false;
-> +
-> +	return true;
-> +}
-> +
-> +bool validate_reserved(ucontext_t *uc, size_t resv_sz, char **err)
-> +{
-> +	bool terminated = false;
-> +	size_t offs = 0;
-> +	int flags = 0;
-> +	struct extra_context *extra = NULL;
-> +	struct _aarch64_ctx *head =
-> +		(struct _aarch64_ctx *)uc->uc_mcontext.__reserved;
-> +
-> +	if (!err)
-> +		return false;
-> +	/* Walk till the end terminator verifying __reserved contents */
-> +	while (head && !terminated && offs < resv_sz) {
-> +		if ((uint64_t)head & 0x0fUL) {
-> +			*err = "Misaligned HEAD";
-> +			return false;
-> +		}
-> +
-> +		switch (head->magic) {
-> +			case 0:
-> +				if (head->size)
-> +					*err = "Bad size for MAGIC0";
-> +				else
-> +					terminated = true;
-> +				break;
-> +			case FPSIMD_MAGIC:
-> +				if (flags & FPSIMD_CTX)
-> +					*err = "Multiple FPSIMD_MAGIC";
-> +				else if (head->size !=
-> +					 sizeof(struct fpsimd_context))
-> +					*err = "Bad size for fpsimd_context";
-> +				flags |= FPSIMD_CTX;
-> +				break;
-> +			case ESR_MAGIC:
-> +				if (head->size != sizeof(struct esr_context))
-> +					fprintf(stderr,
-> +						"Bad size for esr_context is not an error...just ignore.\n");
-> +				break;
-> +			case SVE_MAGIC:
-> +				if (flags & SVE_CTX)
-> +					*err = "Multiple SVE_MAGIC";
-> +				else if (head->size !=
-> +					 sizeof(struct sve_context))
-> +					*err = "Bad size for sve_context";
-> +				flags |= SVE_CTX;
-> +				break;
-> +			case EXTRA_MAGIC:
-> +				if (flags & EXTRA_CTX)
-> +					*err = "Multiple EXTRA_MAGIC";
-> +				else if (head->size !=
-> +					 sizeof(struct extra_context))
-> +					*err = "Bad size for extra_context";
-> +				flags |= EXTRA_CTX;
-> +				extra = (struct extra_context *)head;
-> +				break;
-> +			case KSFT_BAD_MAGIC:
-> +				/*
-> +				 * This is a BAD magic header defined
-> +				 * artificially by a testcase and surely
-> +				 * unknown to the Kernel parse_user_sigframe().
-> +				 * It MUST cause a Kernel induced SEGV
-> +				 */
-> +				*err = "BAD MAGIC !";
-> +				break;
-> +			default:
-> +				/*
-> +				 * A still unknown Magic: potentially freshly added
-> +				 * to the Kernel code and still unknown to the
-> +				 * tests.
-> +				 */
-> +				fprintf(stdout,
-> +					"SKIP Unknown MAGIC: 0x%X - Is KSFT arm64/signal up to date ?\n",
-> +					head->magic);
-> +				break;
-> +		}
-> +
-> +		if (*err)
-> +			return false;
-> +
-> +		offs += head->size;
-> +		if (resv_sz - offs < sizeof(*head)) {
-> +			*err = "HEAD Overrun";
-> +			return false;
-> +		}
-> +
-> +		if (flags & EXTRA_CTX)
-> +			if (!validate_extra_context(extra, err))
-> +				return false;
-> +
-> +		head = GET_RESV_NEXT_HEAD(head);
-> +	}
-> +
-> +	if (terminated && !(flags & FPSIMD_CTX)) {
-> +		*err = "Missing FPSIMD";
-> +		return false;
-> +	}
-> +
-> +	return true;
-> +}
-> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.h b/tools/testing/selftests/arm64/signal/testcases/testcases.h
-> new file mode 100644
-> index 000000000000..624717c71b1d
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/testcases/testcases.h
-> @@ -0,0 +1,83 @@
-> +#ifndef __TESTCASES_H__
-> +#define __TESTCASES_H__
-> +
-> +#include <stdio.h>
-> +#include <stdbool.h>
-> +#include <stdint.h>
-> +#include <unistd.h>
-> +#include <ucontext.h>
-> +#include <assert.h>
-> +
-> +/* Architecture specific sigframe definitions */
-> +#include <asm/sigcontext.h>
-> +
-> +#define FPSIMD_CTX	(1 << 0)
-> +#define SVE_CTX		(1 << 1)
-> +#define EXTRA_CTX	(1 << 2)
-> +
-> +#define KSFT_BAD_MAGIC	0xdeadbeef
-> +
-> +#define HDR_SZ \
-> +	sizeof(struct _aarch64_ctx)
-> +
-> +#define GET_SF_RESV_HEAD(sf) \
-> +	(struct _aarch64_ctx *)(&(sf).uc.uc_mcontext.__reserved)
-> +
-> +#define GET_SF_RESV_SIZE(sf) \
-> +	sizeof((sf).uc.uc_mcontext.__reserved)
-> +
-> +#define GET_UCP_RESV_SIZE(ucp) \
-> +	sizeof((ucp)->uc_mcontext.__reserved)
-> +
-> +#define ASSERT_BAD_CONTEXT(uc) do {					\
-> +	char *err = NULL;						\
-> +	assert(!validate_reserved((uc), GET_UCP_RESV_SIZE((uc)), &err));\
-> +	if (err)							\
-> +		fprintf(stderr,						\
-> +			"Using badly built context - ERR: %s\n", err);	\
-> +} while(0)
-> +
-> +#define ASSERT_GOOD_CONTEXT(uc) do {					 \
-> +	char *err = NULL;						 \
-> +	if (!validate_reserved((uc), GET_UCP_RESV_SIZE((uc)), &err)) {	 \
-> +		if (err)						 \
-> +			fprintf(stderr,					 \
-> +				"Detected BAD context - ERR: %s\n", err);\
-> +		assert(0);						 \
-> +	} else {							 \
-> +		fprintf(stderr, "uc context validated.\n");		 \
-> +	}								 \
-> +} while(0)
-> +
-> +/* head->size accounts both for payload and header _aarch64_ctx size ! */
-> +#define GET_RESV_NEXT_HEAD(h) \
-> +	(struct _aarch64_ctx *)((char *)(h) + (h)->size)
-> +
-> +struct fake_sigframe {
-> +	siginfo_t	info;
-> +	ucontext_t	uc;
-> +};
-> +
-> +
-> +bool validate_reserved(ucontext_t *uc, size_t resv_sz, char **err);
-> +
-> +bool validate_extra_context(struct extra_context *extra, char **err);
-> +
-> +struct _aarch64_ctx *get_header(struct _aarch64_ctx *head, uint32_t magic,
-> +				size_t resv_sz, size_t *offset);
-> +
-> +static inline struct _aarch64_ctx *get_terminator(struct _aarch64_ctx *head,
-> +						  size_t resv_sz,
-> +						  size_t *offset)
-> +{
-> +	return get_header(head, 0, resv_sz, offset);
-> +}
-> +
-> +static inline void write_terminator_record(struct _aarch64_ctx *tail)
-> +{
-> +	if (tail) {
-> +		tail->magic = 0;
-> +		tail->size = 0;
-> +	}
-> +}
-> +#endif
-> 
-
+Welcome to Buildroot
+buildroot login: root
+Password:
+# zcat /proc/config.gz | grep ENDIAN
+# CONFIG_CPU_BIG_ENDIAN is not set
+# CONFIG_VHOST_CROSS_ENDIAN_LEGACY is not set
+# CONFIG_FB_FOREIGN_ENDIAN is not set
+CONFIG_USB_OHCI_LITTLE_ENDIAN=y
+# poweroff
+Stopping vtund.
+# no process in pidfile '/var/run/vtund*' found; none killed
+Stopping sshd: OK
+Stopping network: OK
+Saving random seed... [   15.010433] random: dd: uninitialized urandom read (512 bytes read)
+done.
+Stopping logging: OK
+umount: devtmpfs busy - remounted read-only
+[   15.029155] EXT4-fs (vda): re-mounted. Opts: (null)
+The system is going down NOW!
+Sent SIGTERM to all processes
+Sent SIGKILL to all processes
+Requesting system poweroff
+[   17.035638] reboot: Power down
+[
 
 _______________________________________________
 linux-arm-kernel mailing list
