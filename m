@@ -2,81 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E05D85388
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 21:23:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B25D48538F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 21:28:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Yiuw6WFDCzLhF6JEC+LvtDVmzkByb2hags6xZmUWVeY=; b=ez68RbUOdxvt22
-	bfi7081CShlV658d41csyA0mFafrxb0MYywgiYrCivfXPgU7C0+qeWT/pm4YhvXZwWtQmd6ygBPOh
-	YMtcoDXxjkSvLzusT7qhNI6LMtRR8eI3gg9hJ1W8wTQnuhCHbsXVdXfNSL6es2DbsWOiABb8K9ppi
-	wi9qvhXTST8RZHRUKeBx2dpaYywkdeF/Ay7zvfX63sAznSf5cR1nHyCvI9S9iWxorT3nFJR4tD5tS
-	Ka3O+gTTj6dCn2hEDDSf3Lkaj0jOsL0D0JBKLcreyDaBlaSMyQ/gKbDS5IQBGk68bqhysrgOVfvRx
-	4ZKS3JCjXCLyuGEHpsxA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MArcg/a44gZfaUlQzJiJCKful0hVkK6Dzxi4mp3L228=; b=V/KzWOhbUE2Ffn
+	eSEtLpovwIAhFTawdlB3gvGcf/YzQzyz+0FyXxoa7HGIHNn6DMlvWTNCLlbdxas62wo2UMHHKlNJ4
+	17pKz365oxk0J3BJQsmwrrQECQBK6kf67Det4fPxA0DHwlMdRAOjQAoHSAqBOWIFxNnxlpWPeZQsr
+	In9Uir+0qq42DNLVoDrdD7Zkbw86QSRS4E5z8XqXm/8fFRo2sSJHFAGMVDbFW9zaS/tDpXGTSNysi
+	jq3Fkync8s2p4eKZ9u6w5w91CysKQ5br7nhRPOCr8v12ZxXxpyj5v4W+YfZblcC0OADM4U4UegyRp
+	vCRHDkOncMDZpsiSWyCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvRXO-00052t-KI; Wed, 07 Aug 2019 19:23:54 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hvRbs-0006tY-2u; Wed, 07 Aug 2019 19:28:32 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvRXD-00052S-Ad; Wed, 07 Aug 2019 19:23:45 +0000
-Received: by mail-wm1-x344.google.com with SMTP id s3so11957wms.2;
- Wed, 07 Aug 2019 12:23:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ZKsoxc607/oVG4FUuBA6pIcOKMffd677oTtTK5nzkwQ=;
- b=hAbyL2kbAFr/v1igXbo/LxpM6rdjv8gVdpmorEKD5FUrB1ZYcimF1qaQyLZMb6TYhW
- QzjkRAErG1RegaWbCDdgGVUKwymrAJ/l+pGyRNvoPbXDKXge8tgQSb/geI+cOWjnRCmF
- 7S+MdI3tJIe3MxAgCLb1JPFwc7Iw0cXhq+bepW2li//lnMzfGH0Xze2qLht+6u85znTJ
- b9RL7RNC9Ed/4MNuYeQ6PkUu8BWDc32Q97oGYvVmVAdzCrr6ofUU9a39FOw7h1OGyn1n
- +sByh2bvE5LGEsst6gBAnGXTGpX7uyB2s6FVWLRXQJYOabz+3oz+SyUV5D9QlPrf8+2j
- A9cg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ZKsoxc607/oVG4FUuBA6pIcOKMffd677oTtTK5nzkwQ=;
- b=sDtFcinfUjmNmXqj5xrnm8AFTOg77P1Up6Qzv4YYjChuCT1ZaVdrWczVniuu3MutPy
- dV0nLojcLJGgAeadf0H1wsC9Y3fbBcZv8nUapy6luOlfqZ1oXgSFmFWcXBvXZyz/64Ra
- M7RAtrD7lI5xnGdKrcTe84xgImXuC6KTSnNkt1HVFrKktlUfwkeb408UorBYJLb98DTm
- 3nJHeZzur0MAB9co9TzusMi5NFPl6AveHZ/2/1CJgQsV8vJiH2xj+4Q3W+Z9sbCNh/gN
- 2uGgV2PYH5jSPeMOYAJxGcD0lAJJKQJG7aO2s8pfHY7ec/w/7iae5nNaAbZ2ArXwYXlT
- rKZg==
-X-Gm-Message-State: APjAAAVgUA3JYHrit8VmH1yY7NzZufbCuVRxg1sJ7F9gs/rHUcr2uKvM
- ftuW5lMEWM7TpEy8t8HgrhI=
-X-Google-Smtp-Source: APXvYqzrB/Ac6gK6PxwJ5f0X0aWnErXK6rJNnENn30REBvhx246EotYXNh2vR//dxdH43icmi3BPGw==
-X-Received: by 2002:a1c:f415:: with SMTP id z21mr21203wma.34.1565205821315;
- Wed, 07 Aug 2019 12:23:41 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:4f8:222:2f1b::2])
- by smtp.gmail.com with ESMTPSA id t13sm109820555wrr.0.2019.08.07.12.23.40
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 07 Aug 2019 12:23:40 -0700 (PDT)
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>,
-	Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] phy-rockchip-inno-hdmi: Fix
- RK3328_TERM_RESISTOR_CALIB_SPEED_7_0's third value
-Date: Wed,  7 Aug 2019 12:23:05 -0700
-Message-Id: <20190807192305.6604-1-natechancellor@gmail.com>
-X-Mailer: git-send-email 2.23.0.rc1
+ id 1hvRba-0006st-Q6
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 19:28:16 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x77JSBXa037788;
+ Wed, 7 Aug 2019 14:28:11 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1565206091;
+ bh=s6qSTw4uTX39/wpqBURdlKljFoXZCZOw10ItvX2ujn8=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=pKqFFrXDQyVK7s7VZsnG3SWq6eqC22upoTejwXJgs5xLmN2H0WmTVZrQwDjzrRzi8
+ BtOadbBo0buFSd3SqsBI+xBLclboHD15ICggPNvr553nmd0tOvGJ4uHXpZEGI9zQ1N
+ pTK4Lg9GXoQR4mg0+SvON2Y69SghTduKB/1xcrXU=
+Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x77JSA2l119747
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 7 Aug 2019 14:28:10 -0500
+Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 7 Aug
+ 2019 14:28:10 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 7 Aug 2019 14:28:10 -0500
+Received: from [172.24.190.172] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x77JS8MS120779;
+ Wed, 7 Aug 2019 14:28:09 -0500
+Subject: Re: [RESEND PATCH 00/10] ARM: davinci: use the new clocksource driver
+To: Bartosz Golaszewski <brgl@bgdev.pl>, Kevin Hilman <khilman@kernel.org>
+References: <20190722131748.30319-1-brgl@bgdev.pl>
+ <CAMRc=Mes8dEwscGU8LLQ5CcxmUnhBwt2iP0wk1qNRjRwy8CcFA@mail.gmail.com>
+From: Sekhar Nori <nsekhar@ti.com>
+Message-ID: <9e5704a3-8169-1575-4027-61d36c5e39b4@ti.com>
+Date: Thu, 8 Aug 2019 00:58:07 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Patchwork-Bot: notify
+In-Reply-To: <CAMRc=Mes8dEwscGU8LLQ5CcxmUnhBwt2iP0wk1qNRjRwy8CcFA@mail.gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_122343_395696_22ED8173 
-X-CRM114-Status: GOOD (  11.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190807_122814_990673_3B4C5D54 
+X-CRM114-Status: GOOD (  17.46  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (natechancellor[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -86,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,80 +92,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kernelci . org bot" <bot@kernelci.org>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Naresh Kamboju <naresh.kamboju@linaro.org>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Nathan Chancellor <natechancellor@gmail.com>,
- Robin Murphy <robin.murphy@arm.com>, Guenter Roeck <linux@roeck-us.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-After commit "linux/bits.h: Add compile time sanity check of GENMASK
-inputs" [1], arm64 defconfig builds started failing:
-
-In file included from ../include/linux/bits.h:22,
-                 from ../include/linux/bitops.h:5,
-                 from ../include/linux/kernel.h:12,
-                 from ../include/linux/clk.h:13,
-                 from ../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:9:
-../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c: In function 'inno_hdmi_phy_rk3328_power_on':
-../include/linux/build_bug.h:16:45: error: negative width in bit-field '<anonymous>'
-   16 | #define BUILD_BUG_ON_ZERO(e) (sizeof(struct { int:(-!!(e)); }))
-      |                                             ^
-../include/linux/bits.h:24:18: note: in expansion of macro 'BUILD_BUG_ON_ZERO'
-   24 |  ((unsigned long)BUILD_BUG_ON_ZERO(__builtin_choose_expr( \
-      |                  ^~~~~~~~~~~~~~~~~
-../include/linux/bits.h:39:3: note: in expansion of macro 'GENMASK_INPUT_CHECK'
-   39 |  (GENMASK_INPUT_CHECK(high, low) + __GENMASK(high, low))
-      |   ^~~~~~~~~~~~~~~~~~~
-../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:24:42: note: in expansion of macro 'GENMASK'
-   24 | #define UPDATE(x, h, l)  (((x) << (l)) & GENMASK((h), (l)))
-      |                                          ^~~~~~~
-../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:201:50: note: in expansion of macro 'UPDATE'
-  201 | #define RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(x)  UPDATE(x, 7, 9)
-      |                                                  ^~~~~~
-../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:1046:26: note: in expansion of macro 'RK3328_TERM_RESISTOR_CALIB_SPEED_7_0'
- 1046 |   inno_write(inno, 0xc6, RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(v));
-      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-As pointed out by Robin and Guenter, inno_write's val argument is an
-8-bit value so having a mask larger than that doesn't make sense. This
-also matches the rest of the *_7_0 macros in this driver.
-
-[1]: https://lore.kernel.org/lkml/20190801230358.4193-2-rikard.falkeborn@gmail.com/
-
-Reported-by: Andrzej Hajda <a.hajda@samsung.com>
-Reported-by: Guenter Roeck <linux@roeck-us.net>
-Reported-by: kernelci.org bot <bot@kernelci.org>
-Reported-by: Naresh Kamboju <naresh.kamboju@linaro.org>
-Suggested-by: Guenter Roeck <linux@roeck-us.net>
-Suggested-by: Robin Murphy <robin.murphy@arm.com>
-Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
----
- drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-index b10a84cab4a7..2b97fb1185a0 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-@@ -198,7 +198,7 @@
- #define RK3328_BYPASS_TERM_RESISTOR_CALIB		BIT(7)
- #define RK3328_TERM_RESISTOR_CALIB_SPEED_14_8(x)	UPDATE((x) >> 8, 6, 0)
- /* REG:0xc6 */
--#define RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(x)		UPDATE(x, 7, 9)
-+#define RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(x)		UPDATE(x, 7, 0)
- /* REG:0xc7 */
- #define RK3328_TERM_RESISTOR_50				UPDATE(0, 2, 1)
- #define RK3328_TERM_RESISTOR_62_5			UPDATE(1, 2, 1)
--- 
-2.23.0.rc1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDUvMDgvMTkgMTo1OSBQTSwgQmFydG9zeiBHb2xhc3pld3NraSB3cm90ZToKPiBwb24uLCAy
+MiBsaXAgMjAxOSBvIDE1OjE3IEJhcnRvc3ogR29sYXN6ZXdza2kgPGJyZ2xAYmdkZXYucGw+IG5h
+cGlzYcWCKGEpOgo+Pgo+PiBGcm9tOiBCYXJ0b3N6IEdvbGFzemV3c2tpIDxiZ29sYXN6ZXdza2lA
+YmF5bGlicmUuY29tPgo+Pgo+PiBTZWtoYXIsCj4+Cj4+IHRoZSBmb2xsb3dpbmcgcGF0Y2hlcyBz
+d2l0Y2ggRGFWaW5jaSB0byB1c2luZyB0aGUgbmV3IGNsb2Nrc291cmNlIGRyaXZlciB3aGljaAo+
+PiBpcyBub3cgdXBzdHJlYW0uIFRoZXkgYXJlIHJlYmFzZWQgb24gdG9wIG9mIHY1LjMtcmMxLiBB
+ZGRpdGlvbmFsbHkgdGhlCj4+IGZvbGxvd2luZyB0d28gcGF0Y2hlcyB3ZXJlIHJldmVydGVkIGxv
+Y2FsbHkgZHVlIHRvIGEgcmVncmVzc2lvbiBpbiB2NS4zLXJjMQo+PiBhYm91dCB3aGljaCB0aGUg
+cmVsZXZhbnQgbWFpbnRhaW5lcnMgaGF2ZSBiZWVuIGFscmVhZHkgbm90aWZpZWQ6Cj4+Cj4+ICAg
+MmVlZjEzOTlhODY2IG1vZHVsZXM6IGZpeCBCVUcgd2hlbiBsb2FkIG1vZHVsZSB3aXRoIHJvZGF0
+YT1uCj4+ICAgOTM2NTFmODBkY2I2IG1vZHVsZXM6IGZpeCBjb21waWxlIGVycm9yIGlmIGRvbid0
+IGhhdmUgc3RyaWN0IG1vZHVsZSByd3gKPj4KPj4gQmFydG9zeiBHb2xhc3pld3NraSAoMTApOgo+
+PiAgIEFSTTogZGF2aW5jaTogZW5hYmxlIHRoZSBjbG9ja3NvdXJjZSBkcml2ZXIgZm9yIERUIG1v
+ZGUKPj4gICBBUk06IGRhdmluY2k6IFdBUk5fT04oKSBpZiBjbGtfZ2V0KCkgZmFpbHMKPj4gICBB
+Uk06IGRhdmluY2k6IGRhODUwOiBzd2l0Y2ggdG8gdXNpbmcgdGhlIGNsb2Nrc291cmNlIGRyaXZl
+cgo+PiAgIEFSTTogZGF2aW5jaTogZGE4MzA6IHN3aXRjaCB0byB1c2luZyB0aGUgY2xvY2tzb3Vy
+Y2UgZHJpdmVyCj4+ICAgQVJNOiBkYXZpbmNpOiBtb3ZlIHRpbWVyIGRlZmluaXRpb25zIHRvIGRh
+dmluY2kuaAo+PiAgIEFSTTogZGF2aW5jaTogZG0zNTU6IHN3aXRjaCB0byB1c2luZyB0aGUgY2xv
+Y2tzb3VyY2UgZHJpdmVyCj4+ICAgQVJNOiBkYXZpbmNpOiBkbTM2NTogc3dpdGNoIHRvIHVzaW5n
+IHRoZSBjbG9ja3NvdXJjZSBkcml2ZXIKPj4gICBBUk06IGRhdmluY2k6IGRtNjQ0eDogc3dpdGNo
+IHRvIHVzaW5nIHRoZSBjbG9ja3NvdXJjZSBkcml2ZXIKPj4gICBBUk06IGRhdmluY2k6IGRtNjQ2
+eDogc3dpdGNoIHRvIHVzaW5nIHRoZSBjbG9ja3NvdXJjZSBkcml2ZXIKPj4gICBBUk06IGRhdmlu
+Y2k6IHJlbW92ZSBsZWdhY3kgdGltZXIgc3VwcG9ydAo+Pgo+PiAgYXJjaC9hcm0vS2NvbmZpZyAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgMSArCj4+ICBhcmNoL2FybS9tYWNoLWRhdmlu
+Y2kvTWFrZWZpbGUgICAgICAgICAgICAgIHwgICAzICstCj4+ICBhcmNoL2FybS9tYWNoLWRhdmlu
+Y2kvZGE4MzAuYyAgICAgICAgICAgICAgIHwgIDQ1ICstLQo+PiAgYXJjaC9hcm0vbWFjaC1kYXZp
+bmNpL2RhODUwLmMgICAgICAgICAgICAgICB8ICA1MCArLS0KPj4gIGFyY2gvYXJtL21hY2gtZGF2
+aW5jaS9kYXZpbmNpLmggICAgICAgICAgICAgfCAgIDMgKwo+PiAgYXJjaC9hcm0vbWFjaC1kYXZp
+bmNpL2RldmljZXMtZGE4eHguYyAgICAgICB8ICAgMSAtCj4+ICBhcmNoL2FybS9tYWNoLWRhdmlu
+Y2kvZGV2aWNlcy5jICAgICAgICAgICAgIHwgIDE5IC0KPj4gIGFyY2gvYXJtL21hY2gtZGF2aW5j
+aS9kbTM1NS5jICAgICAgICAgICAgICAgfCAgMjggKy0KPj4gIGFyY2gvYXJtL21hY2gtZGF2aW5j
+aS9kbTM2NS5jICAgICAgICAgICAgICAgfCAgMjYgKy0KPj4gIGFyY2gvYXJtL21hY2gtZGF2aW5j
+aS9kbTY0NHguYyAgICAgICAgICAgICAgfCAgMjggKy0KPj4gIGFyY2gvYXJtL21hY2gtZGF2aW5j
+aS9kbTY0NnguYyAgICAgICAgICAgICAgfCAgMjggKy0KPj4gIGFyY2gvYXJtL21hY2gtZGF2aW5j
+aS9pbmNsdWRlL21hY2gvY29tbW9uLmggfCAgMTcgLQo+PiAgYXJjaC9hcm0vbWFjaC1kYXZpbmNp
+L2luY2x1ZGUvbWFjaC90aW1lLmggICB8ICAzNSAtLQo+PiAgYXJjaC9hcm0vbWFjaC1kYXZpbmNp
+L3RpbWUuYyAgICAgICAgICAgICAgICB8IDQxNCAtLS0tLS0tLS0tLS0tLS0tLS0tLQo+PiAgMTQg
+ZmlsZXMgY2hhbmdlZCwgMTEwIGluc2VydGlvbnMoKyksIDU4OCBkZWxldGlvbnMoLSkKPj4gIGRl
+bGV0ZSBtb2RlIDEwMDY0NCBhcmNoL2FybS9tYWNoLWRhdmluY2kvaW5jbHVkZS9tYWNoL3RpbWUu
+aAo+PiAgZGVsZXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtL21hY2gtZGF2aW5jaS90aW1lLmMKPj4K
+Pj4gLS0KPj4gMi4yMS4wCj4+Cj4gCj4gSGkgU2VraGFyLAo+IAo+IGEgZ2VudGxlIHBpbmcuIElz
+IHRoaXMgc2VyaWVzIGdvb2QgdG8gZ28gaW4gZm9yIHY1LjQ/CgpIaSBCYXJ0b3N6LCBhIHF1aWNr
+IHRlc3Qgc2hvd3MgdGhhdCBETTM2NSBmYWlscyB0byBib290IGFmdGVyIHRoaXMuIENhbgp5b3Ug
+cGxlYXNlIHNlZSBpZiB0aGVyZSBpcyBhbnl0aGluZyBvYnZpb3VzbHkgd3JvbmcgZm9yIHRoYXQg
+U29DLiBSZXN0CnNlZW1zIHRvIGJlIG9rYXkuCgpUaGFua3MsClNla2hhcgoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
+aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
