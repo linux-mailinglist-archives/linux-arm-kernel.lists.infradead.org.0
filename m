@@ -2,57 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECF5F84FD6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 17:27:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4931D84FDB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 17:27:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mt25JRKaPA8/feelikZ4f0ocDJ3tUKTlWhehEIflDmc=; b=UDK2CgVPsO8xwn
-	CrvnVUI4uDODIkoj6HzGZNP2+GkuRewpzf4r6xjIb7sek2h4kG5sBKybPdqOCnmWU9P540+hvQk3i
-	e+3/IPv2x8+qEt7RI29Px4p5j43Ynzqrytl2UXSpOhFzZM3fQ1QDgGsX18bjF+AYCI8YlAuP24T17
-	Ckc3wYDI8H8qoj+ApFp03wEUx83pDe+4EpUl/2kfT0cUr/dst6Tdl1ozxuCwyYY6hdlwUrXeHIdZd
-	2FQ+0YSUEstd30A3iM4IEdDlfIb41/7Tr+H6NiMnhZsscnVflkt+lKpdOK0gqq2mc5t37d/XV4QAh
-	4tSj9dY4WNf0trg7fsow==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=COZGbIxl1+X/gzwKp+bR5p1S5Rbs71mwCrLdF5TCZuc=; b=V1WLNnafIVvJTZ
+	g03ybSIaSvepBaxTKMaZBWLXo+/r6B0GxG3cf5HSu+jgGvwjdhe4WlYtp7DfO7y8c+R7WLQA00aWP
+	HieOiOa3D5AhaIGN+3XOd0JGs8fITV77c2o5jYsWaY9KwMCA5HWbIEyI62CgkAqdgKkYY7Svw9G1X
+	AqJc9cA82hy/zTHiFJYgt+FK0mY6LzXX4bcqSiKJvngJn7alao/OtIdTrC5TqKGvJ+kl5WQkHorXb
+	w3UrzkqAdirfyIdx1R09Wojoqtm0viGGzWnMaj84Gy3sS/vhoMwAXcB635aTZN/t+X/pomzeHsaqh
+	Y6P/L09o3i3zuuBIkepA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvNqR-0002lC-BL; Wed, 07 Aug 2019 15:27:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvNq5-0002kV-UH
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 15:26:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C05F5344;
- Wed,  7 Aug 2019 08:26:56 -0700 (PDT)
-Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 69BC03F706;
- Wed,  7 Aug 2019 08:26:55 -0700 (PDT)
-Subject: Re: [PATCH 1/9] KVM: arm64: Document PV-time interface
-To: Christophe de Dinechin <christophe.de.dinechin@gmail.com>
-References: <20190802145017.42543-1-steven.price@arm.com>
- <20190802145017.42543-2-steven.price@arm.com> <m1mugnmv0x.fsf@dinechin.org>
- <ff2d038d-d866-65fa-655d-b9865bf14016@arm.com>
- <9F77FA64-C71B-4025-A58D-3AC07E6688DE@dinechin.org>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <e56c3179-c988-1598-9274-7c3a31444a53@arm.com>
-Date: Wed, 7 Aug 2019 16:26:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hvNqk-0002z5-7j; Wed, 07 Aug 2019 15:27:38 +0000
+Received: from mga14.intel.com ([192.55.52.115])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvNq8-0002kq-9H; Wed, 07 Aug 2019 15:27:03 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 Aug 2019 08:26:59 -0700
+X-IronPort-AV: E=Sophos;i="5.64,357,1559545200"; d="scan'208";a="203228697"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by fmsmga002-auth.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 Aug 2019 08:26:52 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id ABF0A20355; Wed,  7 Aug 2019 18:27:27 +0300 (EEST)
+Date: Wed, 7 Aug 2019 18:27:27 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Helen Koike <helen.koike@collabora.com>
+Subject: Re: [PATCH v8 09/14] media: rkisp1: add rockchip isp1 core driver
+Message-ID: <20190807152727.GN21370@paasikivi.fi.intel.com>
+References: <20190730184256.30338-1-helen.koike@collabora.com>
+ <20190730184256.30338-10-helen.koike@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <9F77FA64-C71B-4025-A58D-3AC07E6688DE@dinechin.org>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20190730184256.30338-10-helen.koike@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_082658_062662_B84604EF 
-X-CRM114-Status: GOOD (  46.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190807_082700_354020_20FFA9E1 
+X-CRM114-Status: GOOD (  30.15  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,181 +68,1085 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: KVM list <kvm@vger.kernel.org>, linux-doc@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Catalin Marinas <catalin.marinas@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
+ heiko@sntech.de, jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com,
+ zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, Allon Huang <allon.huang@rock-chips.com>,
+ Jacob Chen <cc@rock-chips.com>, hans.verkuil@cisco.com,
+ laurent.pinchart@ideasonboard.com, zhengsq@rock-chips.com, mchehab@kernel.org,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDcvMDgvMjAxOSAxNToyOCwgQ2hyaXN0b3BoZSBkZSBEaW5lY2hpbiB3cm90ZToKPiAKPiAK
-Pj4gT24gNyBBdWcgMjAxOSwgYXQgMTU6MjEsIFN0ZXZlbiBQcmljZSA8c3RldmVuLnByaWNlQGFy
-bS5jb20KPj4gPG1haWx0bzpzdGV2ZW4ucHJpY2VAYXJtLmNvbT4+IHdyb3RlOgo+Pgo+PiBPbiAw
-NS8wOC8yMDE5IDE3OjQwLCBDaHJpc3RvcGhlIGRlIERpbmVjaGluIHdyb3RlOgo+Pj4KPj4+IFN0
-ZXZlbiBQcmljZSB3cml0ZXM6Cj4+Pgo+Pj4+IEludHJvZHVjZSBhIHBhcmF2aXJ0dWFsaXphdGlv
-biBpbnRlcmZhY2UgZm9yIEtWTS9hcm02NCBiYXNlZCBvbiB0aGUKPj4+PiAiQXJtIFBhcmF2aXJ0
-dWFsaXplZCBUaW1lIGZvciBBcm0tQmFzZSBTeXN0ZW1zIiBzcGVjaWZpY2F0aW9uIERFTiAwMDU3
-QS4KPj4+Pgo+Pj4+IFRoaXMgb25seSBhZGRzIHRoZSBkZXRhaWxzIGFib3V0ICJTdG9sZW4gVGlt
-ZSIgYXMgdGhlIGRldGFpbHMgb2YgIkxpdmUKPj4+PiBQaHlzaWNhbCBUaW1lIiBoYXZlIG5vdCBi
-ZWVuIGZ1bGx5IGFncmVlZC4KPj4+Pgo+Pj4gWy4uLl0KPj4+Cj4+Pj4gKwo+Pj4+ICtTdG9sZW4g
-VGltZQo+Pj4+ICstLS0tLS0tLS0tLQo+Pj4+ICsKPj4+PiArVGhlIHN0cnVjdHVyZSBwb2ludGVk
-IHRvIGJ5IHRoZSBQVl9USU1FX1NUIGh5cGVyY2FsbCBpcyBhcyBmb2xsb3dzOgo+Pj4+ICsKPj4+
-PiArIMKgRmllbGQgwqDCoMKgwqDCoMKgfCBCeXRlIExlbmd0aCB8IEJ5dGUgT2Zmc2V0IHwgRGVz
-Y3JpcHRpb24KPj4+PiArIMKgLS0tLS0tLS0tLS0gfCAtLS0tLS0tLS0tLSB8IC0tLS0tLS0tLS0t
-IHwgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KPj4+PiArIMKgUmV2aXNpb24gwqDCoMKgfCDC
-oMKgwqDCoMKgNCDCoMKgwqDCoMKgfCDCoMKgwqDCoMKgMCDCoMKgwqDCoMKgfCBNdXN0IGJlIDAg
-Zm9yIHZlcnNpb24gMC4xCj4+Pj4gKyDCoEF0dHJpYnV0ZXMgwqB8IMKgwqDCoMKgwqA0IMKgwqDC
-oMKgwqB8IMKgwqDCoMKgwqA0IMKgwqDCoMKgwqB8IE11c3QgYmUgMAo+Pj4+ICsgwqBTdG9sZW4g
-dGltZSB8IMKgwqDCoMKgwqA4IMKgwqDCoMKgwqB8IMKgwqDCoMKgwqA4IMKgwqDCoMKgwqB8IFN0
-b2xlbiB0aW1lIGluIHVuc2lnbmVkCj4+Pj4gKyDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoHwg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgfCDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqB8IG5hbm9z
-ZWNvbmRzIGluZGljYXRpbmcgaG93Cj4+Pj4gKyDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoHwg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgfCDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqB8IG11Y2gg
-dGltZSB0aGlzIFZDUFUgdGhyZWFkCj4+Pj4gKyDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoHwg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgfCDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqB8IHdhcyBp
-bnZvbHVudGFyaWx5IG5vdAo+Pj4+ICsgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqB8IMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoHwgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgfCBydW5uaW5nIG9u
-IGEgcGh5c2ljYWwgQ1BVLgo+Pj4KPj4+IEkga25vdyB2ZXJ5IGxpdHRsZSBhYm91dCB0aGUgdG9w
-aWMsIGJ1dCBJIGRvbid0IHVuZGVyc3RhbmQgaG93IHRoZSBzcGVjCj4+PiBhcyBwcm9wb3NlZCBh
-bGxvd3MgYW4gYWNjdXJhdGUgcmVhZGluZyBvZiB0aGUgcmVsYXRpb24gYmV0d2VlbiBwaHlzaWNh
-bAo+Pj4gdGltZSBhbmQgc3RvbGVuIHRpbWUgc2ltdWx0YW5lb3VzbHkuIEluIG90aGVyIHdvcmRz
-LCBjb3VsZCB5b3UgZHJhdwo+Pj4gRmlndXJlIDEgb2YgdGhlIHNwZWMgZnJvbSB3aXRoaW4gdGhl
-IGd1ZXN0PyBPciBpcyBpdCBhIG5vbi1vYmplY3RpdmU/Cj4+Cj4+IEZpZ3VyZSAxIGlzIG1vc3Rs
-eSBhdHRlbXB0aW5nIHRvIGV4cGxhaW4gTGl2ZSBQaHlzaWNhbCBUaW1lIChMUFQpLCB3aGljaAo+
-PiBpcyBub3QgcGFydCBvZiB0aGlzIHBhdGNoIHNlcmllcy4gQnV0IGl0IGRvZXMgdG91Y2ggb24g
-c3RvbGVuIHRpbWUgYnkKPj4gdGhlIGRpZmZlcmVuY2UgYmV0d2VlbiAibGl2ZSBwaHlzaWNhbCB0
-aW1lIiBhbmQgInZpcnR1YWwgdGltZSIuCj4+Cj4+IEknbSBub3Qgc3VyZSB3aGF0IHlvdSBtZWFu
-IGJ5ICJmcm9tIHdpdGhpbiB0aGUgZ3Vlc3QiLiBGcm9tIHRoZQo+PiBwZXJzcGVjdGl2ZSBvZiB0
-aGUgZ3Vlc3QgdGhlIHBhcnRzIG9mIHRoZSBkaWFncmFtIHdoZXJlIHRoZSBndWVzdCBpc24ndAo+
-PiBydW5uaW5nIGRvbid0IGV4aXN0ICh0aGVyZWZvcmUgdGhlcmUgYXJlIGRpc2NvbnRpbnVpdGll
-cyBpbiB0aGUKPj4gInBoeXNpY2FsIHRpbWUiIGFuZCAibGl2ZSBwaHlzaWNhbCB0aW1lIiBsaW5l
-cykuCj4gCj4gSSBtZWFudDogSWYgSSBydW4gY29kZSB3aXRoaW4gdGhlIGd1ZXN0IHRoYXQgYXR0
-ZW1wdHMgdG8gZHJhdyBGaWd1cmUgMSwKPiByYWNlIGNvbmRpdGlvbnMgbWF5IGNhdXNlIHRoZSBk
-aWFncmFtIGFjdHVhbGx5IGRyYXduIGJ5IHlvdXIgZ3Vlc3QKPiBwcm9ncmFtIHRvIGxvb2sgY29t
-cGxldGVseSB3cm9uZyBvbiBvY2Nhc2lvbnMuCj4gCj4+IFRoaXMgcGF0Y2ggc2VyaWVzIGRvZXNu
-J3QgYXR0ZW1wdCB0byBwcm92aWRlIHRoZSBndWVzdCB3aXRoIGEgdmlldyBvZgo+PiAicGh5c2lj
-YWwgdGltZSIgKG9yIExQVCkgLSBidXQgaXQgbWlnaHQgYmUgYWJsZSB0byBvYnNlcnZlIHRoYXQg
-YnkKPj4gY29uc3VsdGluZyBzb21ldGhpbmcgZXh0ZXJuYWwgKGUuZy4gYW4gTlRQIHNlcnZlciwg
-b3IgYW4gZW11bGF0ZWQgUlRDCj4+IHdoaWNoIHJlcG9ydHMgd2FsbC1jbG9jayB0aW1lKS4KPiAK
-PiDigKYgd2l0aCB3aGF0IGFwcGVhciB0byBiZSBsaWtlIGEgYnVpbHQtaW4gcmFjZSBjb25kaXRp
-b24sIGFzIHlvdSBjb3JyZWN0bHkKPiBpZGVudGlmaWVkLiBJIHdhcyB3b25kZXJpbmcgaWYgdGhl
-IGJ1aWx0LWluIHJhY2UgY29uZGl0aW9uIHdhcyBkZWxpYmVyYXRlCj4gYW5kL29yIG5lY2Vzc2Fy
-eSwgb3IgaWYgaXQgd2FzIGlycmVsZXZhbnQgZm9yIHRoZSBwbGFubmVkIHVzZXMgb2YgdGhlIHZh
-bHVlLgo+IAo+PiBXaGF0IGl0IGRvZXMgcHJvdmlkZSBpcyBhIG1lY2hhbmlzbSBmb3Igb2J0YWlu
-aW5nIHRoZSBkaWZmZXJlbmNlIChhcwo+PiByZXBvcnRlZCBieSB0aGUgaG9zdCkgYmV0d2VlbiAi
-bGl2ZSBwaHlzaWNhbCB0aW1lIiBhbmQgInZpcnR1YWwgdGltZSIgLQo+PiB0aGlzIGlzIHJlcG9y
-dGVkIGluIG5hbm9zZWNvbmRzIGluIHRoZSBhYm92ZSBzdHJ1Y3R1cmUuCj4+Cj4+PiBGb3IgZXhh
-bXBsZSwgaWYgeW91IHJlYWQgdGhlIHN0b2xlbiB0aW1lIGJlZm9yZSB5b3UgcmVhZCBDTlRWQ1Rf
-RUwwLAo+Pj4gaXNuJ3QgaXQgcG9zc2libGUgZm9yIGEgbGVuZ3RoeSBldmVudCBsaWtlIGEgbWln
-cmF0aW9uIHRvIG9jY3VyIGJldHdlZW4KPj4+IHRoZSB0d28gcmVhZHMsIGNhdXNpbmcgdGhlIHN0
-b2xlbiB0aW1lIHRvIGJlIG9ic29sZXRlIGFuZCBvZmYgYnkgc2Vjb25kcz8KPj4KPj4gIkxlbmd0
-aHkgZXZlbnRzIiBsaWtlIG1pZ3JhdGlvbiBhcmUgcmVwcmVzZW50ZWQgYnkgdGhlICJwYXVzZWQi
-IHN0YXRlIGluCj4+IHRoZSBkaWFncmFtIC0gaS5lLiBpdCdzIHRoZSBkaWZmZXJlbmNlIGJldHdl
-ZW4gInBoeXNpY2FsIHRpbWUiIGFuZCAibGl2ZQo+PiBwaHlzaWNhbCB0aW1lIi4gU28gc3RvbGVu
-IHRpbWUgZG9lc24ndCBhdHRlbXB0IHRvIHJlcHJlc2VudCB0aGF0Lgo+Pgo+PiBBbmQgeWVzLCB0
-aGVyZSBpcyBhIHJhY2UgYmV0d2VlbiByZWFkaW5nIENOVFZDVF9FTDAgYW5kIHJlYWRpbmcgc3Rv
-bGVuCj4+IHRpbWUgLSBidXQgaW4gcHJhY3RpY2UgdGhpcyBkb2Vzbid0IHJlYWxseSBtYXR0ZXIu
-IFRoZSB1c3VhbCBwc2V1ZG8tY29kZQo+PiB3YXkgb2YgdXNpbmcgc3RvbGVuIHRpbWUgaXM6Cj4g
-Cj4gSeKAmW0gYXNzdW1pbmcgdGhpcyBpcyB0aGUgZ3Vlc3Qgc2NoZWR1bGVyIHlvdSBhcmUgdGFs
-a2luZyBhYm91dCwKCnllcwoKPiBhbmQgSeKAmW0gYXNzdW1pbmcgdmlydHVhbGl6YXRpb24gY2Fu
-IHByZWVtcHQgdGhhdCBjb2RlIGFueXdoZXJlLgo+IE1heWJlIHRoYXTigJlzIHdoZXJlIEnigJlt
-IHdyb25nPwoKWW91IGFyZSBjb3JyZWN0LCB0aGUgZ3Vlc3QgY2FuIGJlIHByZWVtcHRlZCBhdCBh
-bnkgcG9pbnQuCgo+IAo+IEZvciB0aGUgc2FrZSBvZiB0aGUgYXJndW1lbnQsIGFzc3VtZSB0aGVy
-ZSBpcyBhIDFzIHBhdXNlLgo+IE5vdCBjb21wbGV0ZWx5IHVucmVhc29uYWJsZSBpbiBhIG1pZ3Jh
-dGlvbiBzY2VuYXJpby4KCkFzIEkgbWVudGlvbmVkIGJlZm9yZSwgZXZlbnRzIGxpa2UgbWlncmF0
-aW9uIGFyZSBub3QgcmVwcmVzZW50ZWQgYnkKc3RvbGVuIHRpbWUuIFRoZXkgd291bGQgYmUgcmVw
-cmVzZW50ZWQgYnkgQ05UVkNUX0VMMCBhcHBlYXJpbmcgdG8gcGF1c2UKZHVyaW5nIHRoZSBtaWdy
-YXRpb24gKHNvIHNob3dpbmcgYSBkaWZmZXJlbmNlIGJldHdlZW4gInBoeXNpY2FsIHRpbWUiCmFu
-ZCAibGl2ZSBwaHlzaWNhbCB0aW1lIikuIFRoZSBzdG9sZW4gdGltZSB2YWx1ZSB3b3VsZCBub3Qg
-YmUgaW5jcmVtZW50ZWQuCgo+PiDCoCogc2NoZWR1bGVyIGNhcHR1cmVzIHN0b2xlbiB0aW1lIGZy
-b20gc3RydWN0dXJlIGFuZCBDTlRWQ1RfRUwwOgo+PiDCoMKgwqDCoMKgYmVmb3JlX3RpbWVyID0g
-Q05UVkNUX0VMMAo+IAo+IFtpbnNlcnQgb3B0aW9uYWwgMXMgcGF1c2UgaGVyZSwgY2FzZSBBXQo+
-IAo+PiDCoMKgwqDCoMKgYmVmb3JlX3N0b2xlbiA9IHN0b2xlbgo+PiDCoCogc2NoZWR1bGUgaW4g
-cHJvY2Vzcwo+PiDCoCogcHJvY2VzcyBpcyBwcmUtZW1wdGVkIChvciBibG9ja2VkIGluIHNvbWUg
-d2F5KQo+PiDCoCogc2NoZWR1bGVyIGNhcHR1cmVzIHN0b2xlbiB0aW1lIGZyb20gc3RydWN0dXJl
-IGFuZCBDTlRWQ1RfRUwwOgo+PiDCoMKgwqDCoMKgYWZ0ZXJfdGltZXIgPSBDTlRWQ1RfRUwwCj4g
-Cj4gW2luc2VydCBvcHRpb25hbCAxcyBwYXVzZSBoZXJlLCBjYXNlIEJdCj4gCj4+IMKgwqDCoMKg
-wqBhZnRlcl9zdG9sZW4gPSBzdG9sZW4KPj4gwqDCoMKgwqDCoHRpbWUgPSB0b19uc2VjcyhhZnRl
-cl90aW1lciAtIGJlZm9yZV90aW1lcikgLQo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAoYWZ0
-ZXJfc3RvbGVuIC0gYmVmb3JlX3N0b2xlbikKPiAKPiBJbiBjYXNlIEEsIHRpbWUgaXMgdG9vIGJp
-ZyBieSBvbmUgc2Vjb25kLiBJbiBjYXNlIEIsIGl0IGlzIHRvbyBzbWFsbCwKPiB0byB0aGUgcG9p
-bnQgd2hlcmUgeW91ciBjb2RlIG1pZ2h0IG5lZWQgdG8gYmUgcmVhZHkgZm9yCj4g4oCcdGltZeKA
-nSB1bmV4cGVjdGVkbHkgc2hvd2luZyB1cCBhcyBuZWdhdGl2ZS4KClNvIGEgMSBzZWNvbmQgcGF1
-c2UgaXMgdW5saWtlbHkgZm9yIHN0b2xlbiB0aW1lIC0gdGhpcyBtZWFucyB0aGF0IHRoZQpWQ1BV
-IHdhcyByZWFkeSB0byBydW4sIGJ1dCB0aGUgaG9zdCBkaWRuJ3QgcnVuIGl0IGZvciBzb21lIHJl
-YXNvbi4gQnV0CmluIHRoZW9yeSB5b3UgYXJlIGNvcnJlY3QgdGhpcyBjb3VsZCBoYXBwZW4uIFRo
-ZSBjb3JlIGNvZGUgZGVhbHMgd2l0aCBpdApsaWtlIHRoaXMgKHVwZGF0ZV9ycV9jbG9ja190YXNr
-KToKPiAJaWYgKHN0YXRpY19rZXlfZmFsc2UoKCZwYXJhdmlydF9zdGVhbF9ycV9lbmFibGVkKSkp
-IHsKPiAJCXN0ZWFsID0gcGFyYXZpcnRfc3RlYWxfY2xvY2soY3B1X29mKHJxKSk7Cj4gCQlzdGVh
-bCAtPSBycS0+cHJldl9zdGVhbF90aW1lX3JxOwo+IAo+IAkJaWYgKHVubGlrZWx5KHN0ZWFsID4g
-ZGVsdGEpKQo+IAkJCXN0ZWFsID0gZGVsdGE7Cj4gCj4gCQlycS0+cHJldl9zdGVhbF90aW1lX3Jx
-ICs9IHN0ZWFsOwo+IAkJZGVsdGEgLT0gc3RlYWw7Cj4gCX0KClNvIGlmIChzdGVhbCA+IGRlbHRh
-KSB0aGVuIHN0ZWFsIGlzIGNhcHBlZCB0byBkZWx0YSwgcHJldmVudGluZyB0aGUKZmluYWwgZGVs
-dGEgZnJvbSBnb2luZyBuZWdhdGl2ZS4KCj4+Cj4+IFRoZSBzY2hlZHVsZXIgY2FuIHRoZW4gY2hh
-cmdlIHRoZSBwcm9jZXNzIGZvciAidGltZSIgbmFub3NlY29uZHMgb2YKPj4gdGltZS4gVGhpcyBl
-bnN1cmVzIHRoYXQgYSBwcm9jZXNzIGlzbid0IHVuZmFpcmx5IHBlbmFsaXNlZCBpZiB0aGUgaG9z
-dAo+PiBkb2Vzbid0IHNjaGVkdWxlIHRoZSBWQ1BVIHdoaWxlIGl0IGlzIHN1cHBvc2VkIHRvIGJl
-IHJ1bm5pbmcuCj4+Cj4+IFRoZSByYWNlIGlzIHZlcnkgc21hbGwgaW4gY29tcGFyaXNvbiB0byB0
-aGUgdGltZSB0aGUgcHJvY2VzcyBpcyBydW5uaW5nLAo+PiBhbmQgaW4gdGhlIHdvcnN0IGNhc2Ug
-anVzdCBtZWFucyB0aGUgcHJvY2VzcyBpcyBjaGFyZ2VkIHNsaWdodGx5IG1vcmUKPj4gKG9yIGxl
-c3MpIHRoYW4gaXQgc2hvdWxkIGJlLgo+IAo+IEF0IHRoaXMgcG9pbnQsIHdoYXQgSSBkb27igJl0
-IHVuZGVyc3RhbmQgaXMgd2h5IHRoZSByYWNlIHdvdWxkIGJlCj4g4oCcdmVyeSBzbWFsbOKAnSBv
-ciB3aHkgeW91IHdvdWxkIG9ubHkgYmUgY2hhcmdlZCDigJxzbGlnaHRseeKAnSBtb3JlIG9yIGxl
-c3M/CgpUaGUgd2luZG93IGJldHdlZW4gbWVhc3VyaW5nIHRoZSB0aW1lIHVzaW5nIENOVFZDVF9F
-TDAgYW5kIGdldHRpbmcgdGhlCnN0b2xlbiB0aW1lIGZyb20gdGhlIGh5cGVydmlzb3IgaXMgcHJl
-dHR5IHNob3J0LiBUaGUgYW1vdW50IG9mIHRpbWUgdGhhdAppcyAobm9ybWFsbHkpIHN0b2xlbiBp
-biBvbmUgZ28gaXMgYWxzbyBzbWFsbC4gU28gdGhlIHJhY2UgaXMgdW5saWtlbHkKYW5kIHRoZSBl
-cnJvciB3aGVuIGl0IG9jY3VycyBpcyAodXN1YWxseSkgc21hbGwuCgpMb25nIGV2ZW50cyAoc3Vj
-aCBhcyBtaWdyYXRpb24gb3IgcGF1c2luZyB0aGUgZ3Vlc3QpIGFyZSBub3QgY29uc2lkZXJlZAoi
-c3RvbGVuIHRpbWUiIGFuZCBzaG91bGQgYmUgcmVmbGVjdGVkIHRvIHRoZSBndWVzdCBpbiBvdGhl
-ciB3YXlzLgoKPj4gSSBndWVzcyBpZiB5b3UncmUgcmVhbGx5IHdvcnJpZWQgYWJvdXQgaXQsIHlv
-dSBjb3VsZCBkbyBhIGRhbmNlIGxpa2U6Cj4+Cj4+IGRvIHsKPj4gYmVmb3JlID0gc3RvbGVuCj4+
-IHRpbWVyID0gQ05UVkNUX0VMMAo+PiBhZnRlciA9IHN0b2xlbgo+PiB9IHdoaWxlIChiZWZvcmUg
-IT0gYWZ0ZXIpOwo+IAo+IFRoYXQgd2lsbCB3b3JrIGFzIGxvbmcgYXMgbm90aGluZyBpbiB0aGF0
-IGxvb3AgcmVxdWlyZXMgc29tZXRoaW5nCj4gdGhhdCB3b3VsZCBjYXVzZSBgc3RvbGVuYCB0byBq
-dW1wLiBJZiB0aGVyZSBpcyBzdWNoIGEgZ3VhcmFudGVlLAo+IHRoZW4gdGhhdOKAmXMgZXZlbiBl
-ZmZpY2llbnQsIGJlY2F1c2UgaW4gbW9zdCBjYXNlcyB0aGUgbG9vcAo+IHdvdWxkIG9ubHkgcnVu
-IG9uY2UsIGF0IHRoZSBjb3N0IG9mIG9uZSBleHRyYSByZWFkIGFuZCBvbmUgdGVzdC4KCk5vdGUg
-dGhhdCBvdGhlciBhcmNoaXRlY3R1cmVzIGRvbid0IGhhdmUgc3VjaCBsb29wcywgc28gYXJtNjQg
-aXMganVzdApmb2xsb3dpbmcgdGhlIGxlYWQgb2YgZXhpc3RpbmcgYXJjaGl0ZWN0dXJlLgoKPj4g
-QnV0IEkgZG9uJ3Qgc2VlIHRoZSBuZWVkIHRvIGhhdmUgc3VjaCBhbiBhY2N1cmF0ZSB2aWV3IG9m
-IGVsYXBzZWQgdGltZQo+PiB0aGF0IHRoZSBWQ1BVIHdhcyBzY2hlZHVsZWQuIEFuZCBvZiBjb3Vy
-c2UgYXQgdGhlIG1vbWVudCAod2l0aG91dCB0aGlzCj4+IHNlcmllcykgdGhlIGd1ZXN0IGhhcyBu
-byBpZGVhIGFib3V0IHRpbWUgc3RvbGVuIGJ5IHRoZSBob3N0Lgo+IAo+IEnigJltIGNlcnRhaW5s
-eSBub3QgYXJndWluZyB0aGF0IGV4cG9zaW5nIHN0b2xlbiB0aW1lIGlzIGEgYmFkIGlkZWEsCj4g
-SeKAmW0gb25seSB3b25kZXJpbmcgaWYgdGhlIHByb3Bvc2VkIHNvbHV0aW9uIGlzIHJhY3ksIGFu
-ZCBpZiBzbywgaWYKPiBpdCBpcyBpbnRlbnRpb25hbC4KPiAKPiBJZiBpdOKAmXMgaW5kZWVkIHJh
-Y3ksIHRoZSBwcm9ibGVtIGNvdWxkIGJlIG1pdGlnYXRlZCBpbiBhIG51bWJlciBvZgo+IHdheXMK
-PiAKPiBhKSBkb2N1bWVudCB5b3VyIGxvb3Agb3Igc29tZXRoaW5nIHNpbWlsYXIgYXMgYmVpbmcg
-dGhlIHJlY29tbWVuZGVkCj4gd2F5IHRvIGF2b2lkIHRoZSByYWNlLCBhbmQgdGhlbiBlbnN1cmUg
-dGhhdCB0aGUgbG9vcCBhY3R1YWxseQo+IHdpbGwgYWx3YXlzIHdvcmsgYXMgaW50ZW5kZWQuIFRo
-ZSB1cHNpZGUgaXMgdGhhdCBpdOKAmXMganVzdCBhIGNoYW5nZSBpbgo+IHNvbWUgY29tbWVudHMg
-b3IgZG9jdW1lbnRhdGlvbi4KPiAKPiBiKSBoYXZpbmcgYSBzaW5nbGUgaW50ZXJmYWNlIHRoYXQg
-ZXhwb3NlcyBtdWx0aXBsZSB0aW1lcy4gRm9yIGV4YW1wbGUsCj4geW91IGNvdWxkIGhhdmUgYSBj
-b3B5IG9mIENOVFZDVF9FTDAgd3JpdHRlbiBhbG9uZ3NpZGUgc3RvbGVuIHRpbWUsCj4gYW5kIHRo
-ZW4gdGhlIHNjaGVkdWxlciBjb3VsZCB1c2UgdGhhdCBjb3B5IGZvciBpdHMgZGVjaXNpb24uCgpU
-aGF0IHdvdWxkIHN0aWxsIGJlIHJhY3kgLSB0aGUgc3RydWN0dXJlIGNhbiBiZSB1cGRhdGVkIGF0
-IGFueSB0aW1lIChhcwp0aGUgaG9zdCBjb3VsZCBpbnRlcnJ1cHQgdGhlIFZDUFUgYXQgYW55IHRp
-bWUpLCBzbyB5b3Ugd291bGQgc3RpbGwgYmUKbGVmdCB3aXRoIHRoZSBwcm9ibGVtIG9mIHJlYWRp
-bmcgYm90aCBhdG9taWNhbGx5IC0gd2hpY2ggd291bGQgbWVhbgpnb2luZyBiYWNrIHRvIHRoZSBs
-b29wLiBUaGlzIGlzIHRoZSBhcHByb2FjaCB0aGF0IExQVCB0YWtlcyBhbmQgaXMKZG9jdW1lbnRl
-ZCBpbiB0aGUgc3BlYy4KCkFsc28gSSBjYW4ndCBzZWUgd2h5IHlvdSB3b3VsZCB3YW50IHRvIGtu
-b3cgdGhlIENOVFZDVF9FTDAgdmFsdWUgYXQgdGhlCnBvaW50IHRoZSBzdG9sZW4gdGltZSB3YXMg
-dXBkYXRlZCwgaXQncyBtdWNoIG1vcmUgdXNlZnVsIHRvIGtub3cgdGhlCmN1cnJlbnQgQ05UVkNU
-X0VMMCB2YWx1ZS4KClVsdGltYXRlbHkgcmVhZGluZyB0aGUgc3RvbGVuIHRpbWUgaXMgYWx3YXlz
-IGdvaW5nIHRvIGJlIHNsaWdodGx5IHJhY3kKYmVjYXVzZSB5b3UgYXJlIGluY2x1ZGluZyBzb21l
-IG9mIHRoZSBzY2hlZHVsZXIncyB0aW1lIGluIHRoZQpjYWxjdWxhdGlvbiBvZiBob3cgbXVjaCB0
-aW1lIHRoZSBwcm9jZXNzIHdhcyBydW5uaW5nIGZvci4gVGhlIHBhdXNlcyB5b3UKZGVzY3JpYmUg
-YWJvdmUgYXJlIGluc3RhbmNlcyB3aGVyZSB0aW1lIGhhcyBiZWVuIHN0b2xlbiBmcm9tIHRoZQpz
-Y2hlZHVsZXIsIGJ1dCB0aGF0IHRpbWUgaXMgYmVpbmcgYWNjb3VudGVkIGZvci9hZ2FpbnN0IGEg
-dXNlciBzcGFjZQpwcm9jZXNzLiBXaGlsZSB0aGUgYWxnb3JpdGhtIGNvdWxkIGJlIGNoYW5nZWQg
-c28gdGhhdCBpdCdzIGFsd2F5cyBhCnBvc2l0aXZlIGZvciB0aGUgdXNlciBzcGFjZSBwcm9jZXNz
-IEknbSBub3Qgc3VyZSB0aGF0J3MgYSBiZW5lZml0IChpdCdzCnByb2JhYmx5IGJldHRlciB0aGF0
-IHN0YXRpc3RpY2FsbHkgaXQgY2FuIGdvIGVpdGhlciB3YXkpLgoKU3RldmUKCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Helen,
+
+On Tue, Jul 30, 2019 at 03:42:51PM -0300, Helen Koike wrote:
+> From: Jacob Chen <jacob2.chen@rock-chips.com>
+> 
+> Add the core driver for rockchip isp1.
+> 
+> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
+> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
+> Signed-off-by: Yichong Zhong <zyc@rock-chips.com>
+> Signed-off-by: Jacob Chen <cc@rock-chips.com>
+> Signed-off-by: Eddie Cai <eddie.cai.linux@gmail.com>
+> Signed-off-by: Jeffy Chen <jeffy.chen@rock-chips.com>
+> Signed-off-by: Allon Huang <allon.huang@rock-chips.com>
+> Signed-off-by: Tomasz Figa <tfiga@chromium.org>
+> [fixed compilation and run time errors regarding new v4l2 async API]
+> Signed-off-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> [Add missing module device table]
+> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+> [update for upstream]
+> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> 
+> ---
+> 
+> Changes in v8: None
+> Changes in v7:
+> - VIDEO_ROCKCHIP_ISP1 selects VIDEOBUF2_VMALLOC
+> - add PHY_ROCKCHIP_DPHY as a dependency for VIDEO_ROCKCHIP_ISP1
+> - Fix compilation and runtime errors due to bitrotting
+> The code has bit-rotten since March 2018, fix compilation errors.
+> The new V4L2 async notifier API requires notifiers to be initialized by
+> a call to v4l2_async_notifier_init() before being used, do so.
+> - Add missing module device table
+> - use clk_bulk framework
+> - add missing notifiers cleanups
+> - s/strlcpy/strscpy
+> - normalize bus_info name
+> - fix s_stream error path, stream_cnt wans't being decremented properly
+> - use devm_platform_ioremap_resource() helper
+> - s/deice/device
+> - redesign: remove mipi/csi subdevice, sensors connect directly to the
+> isp subdevice in the media topology now.
+> - remove "saved_state" member from rkisp1_stream struct
+> - Reverse the order of MIs
+> - Simplify MI interrupt handling
+> Rather than adding unnecessary indirection, just use stream index to
+> handle MI interrupt enable/disable/clear, since the stream index matches
+> the order of bits now, thanks to previous patch. While at it, remove
+> some dead code.
+> - code styling and checkpatch fixes
+> 
+>  drivers/media/platform/Kconfig                |  12 +
+>  drivers/media/platform/Makefile               |   1 +
+>  drivers/media/platform/rockchip/isp1/Makefile |   7 +
+>  drivers/media/platform/rockchip/isp1/common.h | 101 +++
+>  drivers/media/platform/rockchip/isp1/dev.c    | 675 ++++++++++++++++++
+>  drivers/media/platform/rockchip/isp1/dev.h    |  97 +++
+>  6 files changed, 893 insertions(+)
+>  create mode 100644 drivers/media/platform/rockchip/isp1/Makefile
+>  create mode 100644 drivers/media/platform/rockchip/isp1/common.h
+>  create mode 100644 drivers/media/platform/rockchip/isp1/dev.c
+>  create mode 100644 drivers/media/platform/rockchip/isp1/dev.h
+> 
+> diff --git a/drivers/media/platform/Kconfig b/drivers/media/platform/Kconfig
+> index 89555f9a813f..e0e98937c565 100644
+> --- a/drivers/media/platform/Kconfig
+> +++ b/drivers/media/platform/Kconfig
+> @@ -106,6 +106,18 @@ config VIDEO_QCOM_CAMSS
+>  	select VIDEOBUF2_DMA_SG
+>  	select V4L2_FWNODE
+>  
+> +config VIDEO_ROCKCHIP_ISP1
+> +	tristate "Rockchip Image Signal Processing v1 Unit driver"
+> +	depends on VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+> +	depends on ARCH_ROCKCHIP || COMPILE_TEST
+> +	select VIDEOBUF2_DMA_CONTIG
+> +	select VIDEOBUF2_VMALLOC
+> +	select V4L2_FWNODE
+> +	select PHY_ROCKCHIP_DPHY
+> +	default n
+> +	---help---
+> +	  Support for ISP1 on the rockchip SoC.
+> +
+>  config VIDEO_S3C_CAMIF
+>  	tristate "Samsung S3C24XX/S3C64XX SoC Camera Interface driver"
+>  	depends on VIDEO_V4L2 && I2C && VIDEO_V4L2_SUBDEV_API
+> diff --git a/drivers/media/platform/Makefile b/drivers/media/platform/Makefile
+> index 7cbbd925124c..f9fcf8e7c513 100644
+> --- a/drivers/media/platform/Makefile
+> +++ b/drivers/media/platform/Makefile
+> @@ -69,6 +69,7 @@ obj-$(CONFIG_VIDEO_RENESAS_FDP1)	+= rcar_fdp1.o
+>  obj-$(CONFIG_VIDEO_RENESAS_JPU)		+= rcar_jpu.o
+>  obj-$(CONFIG_VIDEO_RENESAS_VSP1)	+= vsp1/
+>  
+> +obj-$(CONFIG_VIDEO_ROCKCHIP_ISP1)	+= rockchip/isp1/
+>  obj-$(CONFIG_VIDEO_ROCKCHIP_RGA)	+= rockchip/rga/
+>  
+>  obj-y	+= omap/
+> diff --git a/drivers/media/platform/rockchip/isp1/Makefile b/drivers/media/platform/rockchip/isp1/Makefile
+> new file mode 100644
+> index 000000000000..72706e80fc8b
+> --- /dev/null
+> +++ b/drivers/media/platform/rockchip/isp1/Makefile
+> @@ -0,0 +1,7 @@
+> +obj-$(CONFIG_VIDEO_ROCKCHIP_ISP1) += 	rockchip-isp1.o
+> +rockchip-isp1-objs 	   += 	rkisp1.o \
+> +				dev.o \
+> +				regs.o \
+> +				isp_stats.o \
+> +				isp_params.o \
+> +				capture.o
+> diff --git a/drivers/media/platform/rockchip/isp1/common.h b/drivers/media/platform/rockchip/isp1/common.h
+> new file mode 100644
+> index 000000000000..606ce2793546
+> --- /dev/null
+> +++ b/drivers/media/platform/rockchip/isp1/common.h
+> @@ -0,0 +1,101 @@
+> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
+> +/*
+> + * Rockchip isp1 driver
+> + *
+> + * Copyright (C) 2017 Rockchip Electronics Co., Ltd.
+> + */
+> +
+> +#ifndef _RKISP1_COMMON_H
+> +#define _RKISP1_COMMON_H
+> +
+> +#include <linux/mutex.h>
+> +#include <media/media-device.h>
+> +#include <media/media-entity.h>
+> +#include <media/v4l2-ctrls.h>
+> +#include <media/v4l2-device.h>
+> +#include <media/videobuf2-v4l2.h>
+> +
+> +#define RKISP1_DEFAULT_WIDTH		800
+> +#define RKISP1_DEFAULT_HEIGHT		600
+> +
+> +#define RKISP1_MAX_STREAM		2
+> +#define RKISP1_STREAM_MP		0
+> +#define RKISP1_STREAM_SP		1
+> +
+> +#define RKISP1_PLANE_Y			0
+> +#define RKISP1_PLANE_CB			1
+> +#define RKISP1_PLANE_CR			2
+> +
+> +enum rkisp1_sd_type {
+> +	RKISP1_SD_SENSOR,
+> +	RKISP1_SD_PHY_CSI,
+> +	RKISP1_SD_VCM,
+> +	RKISP1_SD_FLASH,
+> +	RKISP1_SD_MAX,
+> +};
+
+I wonder if this is a leftover from the driver development time. Same goes
+for the subdevs field in struct rkisp1_device.
+
+> +
+> +/* One structure per video node */
+> +struct rkisp1_vdev_node {
+> +	struct vb2_queue buf_queue;
+> +	/* vfd lock */
+> +	struct mutex vlock;
+> +	struct video_device vdev;
+> +	struct media_pad pad;
+> +};
+> +
+> +enum rkisp1_fmt_pix_type {
+> +	FMT_YUV,
+> +	FMT_RGB,
+> +	FMT_BAYER,
+> +	FMT_JPEG,
+> +	FMT_MAX
+> +};
+> +
+> +enum rkisp1_fmt_raw_pat_type {
+> +	RAW_RGGB = 0,
+> +	RAW_GRBG,
+> +	RAW_GBRG,
+> +	RAW_BGGR,
+> +};
+> +
+> +struct rkisp1_buffer {
+> +	struct vb2_v4l2_buffer vb;
+> +	struct list_head queue;
+> +	union {
+> +		u32 buff_addr[VIDEO_MAX_PLANES];
+> +		void *vaddr[VIDEO_MAX_PLANES];
+> +	};
+> +};
+> +
+> +struct rkisp1_dummy_buffer {
+> +	void *vaddr;
+> +	dma_addr_t dma_addr;
+> +	u32 size;
+> +};
+> +
+> +extern int rkisp1_debug;
+> +
+> +static inline
+> +struct rkisp1_vdev_node *vdev_to_node(struct video_device *vdev)
+> +{
+> +	return container_of(vdev, struct rkisp1_vdev_node, vdev);
+> +}
+> +
+> +static inline struct rkisp1_vdev_node *queue_to_node(struct vb2_queue *q)
+> +{
+> +	return container_of(q, struct rkisp1_vdev_node, buf_queue);
+> +}
+> +
+> +static inline struct rkisp1_buffer *to_rkisp1_buffer(struct vb2_v4l2_buffer *vb)
+> +{
+> +	return container_of(vb, struct rkisp1_buffer, vb);
+> +}
+> +
+> +static inline struct vb2_queue *to_vb2_queue(struct file *file)
+> +{
+> +	struct rkisp1_vdev_node *vnode = video_drvdata(file);
+> +
+> +	return &vnode->buf_queue;
+> +}
+> +
+> +#endif /* _RKISP1_COMMON_H */
+> diff --git a/drivers/media/platform/rockchip/isp1/dev.c b/drivers/media/platform/rockchip/isp1/dev.c
+> new file mode 100644
+> index 000000000000..2b4a67e1a3b5
+> --- /dev/null
+> +++ b/drivers/media/platform/rockchip/isp1/dev.c
+> @@ -0,0 +1,675 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Rockchip isp1 driver
+> + *
+> + * Copyright (C) 2017 Rockchip Electronics Co., Ltd.
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_graph.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/pm_runtime.h>
+> +#include <linux/pinctrl/consumer.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/phy/phy-mipi-dphy.h>
+> +
+> +#include "common.h"
+> +#include "regs.h"
+> +
+> +struct isp_match_data {
+> +	const char * const *clks;
+> +	int size;
+
+unsigned int
+
+> +};
+> +
+> +struct sensor_async_subdev {
+> +	struct v4l2_async_subdev asd;
+> +	struct v4l2_mbus_config mbus;
+> +	unsigned int lanes;
+> +};
+> +
+> +int rkisp1_debug;
+> +module_param_named(debug, rkisp1_debug, int, 0644);
+> +MODULE_PARM_DESC(debug, "Debug level (0-1)");
+
+Have you thought of using dynamic debug instead?
+
+> +
+> +/**************************** pipeline operations******************************/
+> +
+> +static int __isp_pipeline_prepare(struct rkisp1_pipeline *p,
+> +				  struct media_entity *me)
+> +{
+> +	struct rkisp1_device *dev = container_of(p, struct rkisp1_device, pipe);
+> +	struct v4l2_subdev *sd;
+> +	unsigned int i;
+> +
+> +	p->num_subdevs = 0;
+> +	memset(p->subdevs, 0, sizeof(p->subdevs));
+> +
+> +	while (1) {
+> +		struct media_pad *pad = NULL;
+> +
+> +		/* Find remote source pad */
+> +		for (i = 0; i < me->num_pads; i++) {
+> +			struct media_pad *spad = &me->pads[i];
+> +
+> +			if (!(spad->flags & MEDIA_PAD_FL_SINK))
+> +				continue;
+> +			pad = media_entity_remote_pad(spad);
+> +			if (pad)
+> +				break;
+> +		}
+> +
+> +		if (!pad)
+> +			break;
+> +
+> +		sd = media_entity_to_v4l2_subdev(pad->entity);
+> +		if (sd != &dev->isp_sdev.sd)
+> +			p->subdevs[p->num_subdevs++] = sd;
+
+How do you make sure you don't overrun the array?
+
+Instead, I'd avoid maintaining the array in the first place --- the same
+information is available from the MC framework data structures --- see e.g.
+the omap3isp driver.
+
+> +
+> +		me = &sd->entity;
+> +		if (me->num_pads == 1)
+> +			break;
+> +	}
+> +	return 0;
+> +}
+> +
+> +static int __subdev_set_power(struct v4l2_subdev *sd, int on)
+> +{
+> +	int ret;
+> +
+> +	if (!sd)
+> +		return -ENXIO;
+> +
+> +	ret = v4l2_subdev_call(sd, core, s_power, on);
+> +
+> +	return ret != -ENOIOCTLCMD ? ret : 0;
+> +}
+> +
+> +static int __isp_pipeline_s_power(struct rkisp1_pipeline *p, bool on)
+
+Could you instead use v4l2_pipeline_pm_use()?
+
+> +{
+> +	struct rkisp1_device *dev = container_of(p, struct rkisp1_device, pipe);
+> +	int i, ret;
+> +
+> +	if (on) {
+> +		__subdev_set_power(&dev->isp_sdev.sd, true);
+> +
+> +		for (i = p->num_subdevs - 1; i >= 0; --i) {
+> +			ret = __subdev_set_power(p->subdevs[i], true);
+> +			if (ret < 0 && ret != -ENXIO)
+> +				goto err_power_off;
+> +		}
+> +	} else {
+> +		for (i = 0; i < p->num_subdevs; ++i)
+> +			__subdev_set_power(p->subdevs[i], false);
+> +
+> +		__subdev_set_power(&dev->isp_sdev.sd, false);
+> +	}
+> +
+> +	return 0;
+> +
+> +err_power_off:
+> +	for (++i; i < p->num_subdevs; ++i)
+> +		__subdev_set_power(p->subdevs[i], false);
+> +	__subdev_set_power(&dev->isp_sdev.sd, true);
+> +	return ret;
+> +}
+> +
+> +static int rkisp1_pipeline_open(struct rkisp1_pipeline *p,
+> +				struct media_entity *me,
+> +				bool prepare)
+> +{
+> +	int ret;
+> +
+> +	if (WARN_ON(!p || !me))
+> +		return -EINVAL;
+> +	if (atomic_inc_return(&p->power_cnt) > 1)
+> +		return 0;
+> +
+> +	/* go through media graphic and get subdevs */
+> +	if (prepare)
+> +		__isp_pipeline_prepare(p, me);
+> +
+> +	if (!p->num_subdevs)
+> +		return -EINVAL;
+> +
+> +	ret = __isp_pipeline_s_power(p, 1);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	return 0;
+> +}
+> +
+> +static int rkisp1_pipeline_close(struct rkisp1_pipeline *p)
+> +{
+> +	int ret;
+> +
+> +	if (atomic_dec_return(&p->power_cnt) > 0)
+> +		return 0;
+> +	ret = __isp_pipeline_s_power(p, 0);
+> +
+> +	return ret == -ENXIO ? 0 : ret;
+> +}
+> +
+> +/*
+> + * stream-on order: isp_subdev, mipi dphy, sensor
+> + * stream-off order: mipi dphy, sensor, isp_subdev
+> + */
+> +static int rkisp1_pipeline_set_stream(struct rkisp1_pipeline *p, bool on)
+> +{
+> +	struct rkisp1_device *dev = container_of(p, struct rkisp1_device, pipe);
+> +	int i, ret;
+> +
+> +	if ((on && atomic_inc_return(&p->stream_cnt) > 1) ||
+> +	    (!on && atomic_dec_return(&p->stream_cnt) > 0))
+> +		return 0;
+> +
+> +	if (on) {
+> +		ret = v4l2_subdev_call(&dev->isp_sdev.sd, video, s_stream,
+> +				       true);
+> +		if (ret && ret != -ENOIOCTLCMD && ret != -ENODEV) {
+> +			v4l2_err(&dev->v4l2_dev,
+> +				 "s_stream failed on subdevice %s (%d)\n",
+> +				 dev->isp_sdev.sd.name,
+> +				 ret);
+> +			atomic_dec(&p->stream_cnt);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	/* phy -> sensor */
+> +	for (i = 0; i < p->num_subdevs; ++i) {
+> +		ret = v4l2_subdev_call(p->subdevs[i], video, s_stream, on);
+> +		if (on && ret < 0 && ret != -ENOIOCTLCMD && ret != -ENODEV)
+> +			goto err_stream_off;
+
+You should stop after the first external sub-device.
+
+It seems even the omap3isp driver doesn't do that. It's not easy to spot
+such issues indeed.
+
+> +	}
+> +
+> +	if (!on)
+> +		v4l2_subdev_call(&dev->isp_sdev.sd, video, s_stream, false);
+> +
+> +	return 0;
+> +
+> +err_stream_off:
+> +	for (--i; i >= 0; --i)
+> +		v4l2_subdev_call(p->subdevs[i], video, s_stream, false);
+> +	v4l2_subdev_call(&dev->isp_sdev.sd, video, s_stream, false);
+> +	atomic_dec(&p->stream_cnt);
+> +	return ret;
+> +}
+> +
+> +/***************************** media controller *******************************/
+> +/* See http://opensource.rock-chips.com/wiki_Rockchip-isp1 for Topology */
+
+The host appears to be down, or there's a routing problem. Unless this is
+fixed, having such a URL here doesn't do much good. :-I
+
+> +
+> +static int rkisp1_create_links(struct rkisp1_device *dev)
+> +{
+> +	struct media_entity *source, *sink;
+> +	struct rkisp1_sensor *sensor;
+> +	unsigned int flags, pad;
+> +	int ret;
+> +
+> +	/* sensor links(or mipi-phy) */
+> +	list_for_each_entry(sensor, &dev->sensors, list) {
+> +		for (pad = 0; pad < sensor->sd->entity.num_pads; pad++)
+> +			if (sensor->sd->entity.pads[pad].flags &
+> +				MEDIA_PAD_FL_SOURCE)
+> +				break;
+
+Could you use media_entity_get_fwnode_pad() instead?
+
+> +
+> +		if (pad == sensor->sd->entity.num_pads) {
+> +			dev_err(dev->dev,
+> +				"failed to find src pad for %s\n",
+> +				sensor->sd->name);
+> +
+> +			return -ENXIO;
+> +		}
+> +
+> +		ret = media_create_pad_link(
+> +				&sensor->sd->entity, pad,
+> +				&dev->isp_sdev.sd.entity,
+> +				RKISP1_ISP_PAD_SINK,
+> +				list_is_first(&sensor->list, &dev->sensors) ?
+> +				MEDIA_LNK_FL_ENABLED : 0);
+> +		if (ret) {
+> +			dev_err(dev->dev,
+> +				"failed to create link for %s\n",
+> +				sensor->sd->name);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	/* params links */
+> +	source = &dev->params_vdev.vnode.vdev.entity;
+> +	sink = &dev->isp_sdev.sd.entity;
+> +	flags = MEDIA_LNK_FL_ENABLED;
+> +	ret = media_create_pad_link(source, 0, sink,
+> +				       RKISP1_ISP_PAD_SINK_PARAMS, flags);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	/* create isp internal links */
+> +	/* SP links */
+> +	source = &dev->isp_sdev.sd.entity;
+> +	sink = &dev->stream[RKISP1_STREAM_SP].vnode.vdev.entity;
+> +	ret = media_create_pad_link(source, RKISP1_ISP_PAD_SOURCE_PATH,
+> +				       sink, 0, flags);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	/* MP links */
+> +	source = &dev->isp_sdev.sd.entity;
+> +	sink = &dev->stream[RKISP1_STREAM_MP].vnode.vdev.entity;
+> +	ret = media_create_pad_link(source, RKISP1_ISP_PAD_SOURCE_PATH,
+> +				       sink, 0, flags);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	/* 3A stats links */
+> +	source = &dev->isp_sdev.sd.entity;
+> +	sink = &dev->stats_vdev.vnode.vdev.entity;
+> +	return media_create_pad_link(source, RKISP1_ISP_PAD_SOURCE_STATS,
+> +					sink, 0, flags);
+
+Indentation. Same for the calls to the same function above.
+
+> +}
+> +
+> +static int subdev_notifier_bound(struct v4l2_async_notifier *notifier,
+> +				 struct v4l2_subdev *sd,
+> +				 struct v4l2_async_subdev *asd)
+> +{
+> +	struct rkisp1_device *isp_dev = container_of(notifier,
+> +						     struct rkisp1_device,
+> +						     notifier);
+> +	struct sensor_async_subdev *s_asd = container_of(asd,
+> +					struct sensor_async_subdev, asd);
+> +	struct rkisp1_sensor *sensor;
+> +
+> +	sensor = devm_kzalloc(isp_dev->dev, sizeof(*sensor), GFP_KERNEL);
+> +	if (!sensor)
+> +		return -ENOMEM;
+> +
+> +	sensor->lanes = s_asd->lanes;
+> +	sensor->mbus = s_asd->mbus;
+> +	sensor->sd = sd;
+> +	sensor->dphy = devm_phy_get(isp_dev->dev, "dphy");
+> +	if (IS_ERR(sensor->dphy)) {
+> +		if (PTR_ERR(sensor->dphy) != -EPROBE_DEFER)
+> +			dev_err(isp_dev->dev, "Couldn't get the MIPI D-PHY\n");
+> +		return PTR_ERR(sensor->dphy);
+> +	}
+> +	phy_init(sensor->dphy);
+> +
+> +	list_add(&sensor->list, &isp_dev->sensors);
+
+In general, maintaining the information on the external subdevs on your own
+adds complexity to the driver. You can get the information when you need it
+from the data structures maintained by MC (see e.g. the omap3isp driver for
+examples).
+
+> +
+> +	return 0;
+> +}
+> +
+> +static struct rkisp1_sensor *sd_to_sensor(struct rkisp1_device *dev,
+> +					  struct v4l2_subdev *sd)
+> +{
+> +	struct rkisp1_sensor *sensor;
+> +
+> +	list_for_each_entry(sensor, &dev->sensors, list)
+> +		if (sensor->sd == sd)
+> +			return sensor;
+> +
+> +	return NULL;
+> +}
+> +
+> +static void subdev_notifier_unbind(struct v4l2_async_notifier *notifier,
+> +				   struct v4l2_subdev *sd,
+> +				   struct v4l2_async_subdev *asd)
+> +{
+> +	struct rkisp1_device *isp_dev = container_of(notifier,
+> +						     struct rkisp1_device,
+> +						     notifier);
+> +	struct rkisp1_sensor *sensor = sd_to_sensor(isp_dev, sd);
+> +
+> +	/* TODO: check if a lock is required here */
+> +	list_del(&sensor->list);
+> +
+> +	phy_exit(sensor->dphy);
+> +}
+> +
+> +static int subdev_notifier_complete(struct v4l2_async_notifier *notifier)
+> +{
+> +	struct rkisp1_device *dev = container_of(notifier, struct rkisp1_device,
+> +						 notifier);
+> +	int ret;
+> +
+> +	mutex_lock(&dev->media_dev.graph_mutex);
+> +	ret = rkisp1_create_links(dev);
+> +	if (ret < 0)
+> +		goto unlock;
+> +	ret = v4l2_device_register_subdev_nodes(&dev->v4l2_dev);
+> +	if (ret < 0)
+> +		goto unlock;
+> +
+> +	v4l2_info(&dev->v4l2_dev, "Async subdev notifier completed\n");
+> +
+> +unlock:
+> +	mutex_unlock(&dev->media_dev.graph_mutex);
+> +	return ret;
+> +}
+> +
+> +static int rkisp1_fwnode_parse(struct device *dev,
+> +			       struct v4l2_fwnode_endpoint *vep,
+> +			       struct v4l2_async_subdev *asd)
+> +{
+> +	struct sensor_async_subdev *s_asd =
+> +			container_of(asd, struct sensor_async_subdev, asd);
+> +
+> +	if (vep->bus_type != V4L2_MBUS_CSI2_DPHY) {
+> +		dev_err(dev, "Only CSI2 bus type is currently supported\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (vep->base.port != 0) {
+> +		dev_err(dev, "The ISP has only port 0\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	s_asd->mbus.type = vep->bus_type;
+> +	s_asd->mbus.flags = vep->bus.mipi_csi2.flags;
+> +	s_asd->lanes = vep->bus.mipi_csi2.num_data_lanes;
+> +
+> +	switch (vep->bus.mipi_csi2.num_data_lanes) {
+> +	case 1:
+> +		s_asd->mbus.flags |= V4L2_MBUS_CSI2_1_LANE;
+> +		break;
+> +	case 2:
+> +		s_asd->mbus.flags |= V4L2_MBUS_CSI2_2_LANE;
+> +		break;
+> +	case 3:
+> +		s_asd->mbus.flags |= V4L2_MBUS_CSI2_3_LANE;
+> +		break;
+> +	case 4:
+> +		s_asd->mbus.flags |= V4L2_MBUS_CSI2_4_LANE;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct v4l2_async_notifier_operations subdev_notifier_ops = {
+> +	.bound = subdev_notifier_bound,
+> +	.unbind = subdev_notifier_unbind,
+> +	.complete = subdev_notifier_complete,
+> +};
+> +
+> +static int isp_subdev_notifier(struct rkisp1_device *isp_dev)
+> +{
+> +	struct v4l2_async_notifier *ntf = &isp_dev->notifier;
+> +	struct device *dev = isp_dev->dev;
+> +	int ret;
+> +
+> +	v4l2_async_notifier_init(ntf);
+> +
+> +	ret = v4l2_async_notifier_parse_fwnode_endpoints_by_port(
+> +		dev, ntf, sizeof(struct sensor_async_subdev), 0,
+> +		rkisp1_fwnode_parse);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	if (list_empty(&ntf->asd_list))
+> +		return -ENODEV;	/* no endpoint */
+> +
+> +	ntf->ops = &subdev_notifier_ops;
+> +
+> +	return v4l2_async_notifier_register(&isp_dev->v4l2_dev, ntf);
+> +}
+> +
+> +/***************************** platform device *******************************/
+> +
+> +static int rkisp1_register_platform_subdevs(struct rkisp1_device *dev)
+> +{
+> +	int ret;
+> +
+> +	ret = rkisp1_register_isp_subdev(dev, &dev->v4l2_dev);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	ret = rkisp1_register_stream_vdevs(dev);
+> +	if (ret < 0)
+> +		goto err_unreg_isp_subdev;
+> +
+> +	ret = rkisp1_register_stats_vdev(&dev->stats_vdev, &dev->v4l2_dev, dev);
+> +	if (ret < 0)
+> +		goto err_unreg_stream_vdev;
+> +
+> +	ret = rkisp1_register_params_vdev(&dev->params_vdev, &dev->v4l2_dev,
+> +					  dev);
+> +	if (ret < 0)
+> +		goto err_unreg_stats_vdev;
+> +
+> +	ret = isp_subdev_notifier(dev);
+> +	if (ret < 0) {
+> +		v4l2_err(&dev->v4l2_dev,
+> +			 "Failed to register subdev notifier(%d)\n", ret);
+> +		goto err_unreg_params_vdev;
+> +	}
+> +
+> +	return 0;
+> +err_unreg_params_vdev:
+> +	rkisp1_unregister_params_vdev(&dev->params_vdev);
+> +err_unreg_stats_vdev:
+> +	rkisp1_unregister_stats_vdev(&dev->stats_vdev);
+> +err_unreg_stream_vdev:
+> +	rkisp1_unregister_stream_vdevs(dev);
+> +err_unreg_isp_subdev:
+> +	rkisp1_unregister_isp_subdev(dev);
+> +	return ret;
+> +}
+> +
+> +static const char * const rk3399_isp_clks[] = {
+> +	"clk_isp",
+> +	"aclk_isp",
+> +	"hclk_isp",
+> +	"aclk_isp_wrap",
+> +	"hclk_isp_wrap",
+> +};
+> +
+> +static const char * const rk3288_isp_clks[] = {
+> +	"clk_isp",
+> +	"aclk_isp",
+> +	"hclk_isp",
+> +	"pclk_isp_in",
+> +	"sclk_isp_jpe",
+> +};
+> +
+> +static const struct isp_match_data rk3288_isp_clk_data = {
+> +	.clks = rk3288_isp_clks,
+> +	.size = ARRAY_SIZE(rk3288_isp_clks),
+> +};
+> +
+> +static const struct isp_match_data rk3399_isp_clk_data = {
+> +	.clks = rk3399_isp_clks,
+> +	.size = ARRAY_SIZE(rk3399_isp_clks),
+> +};
+> +
+> +static const struct of_device_id rkisp1_plat_of_match[] = {
+> +	{
+> +		.compatible = "rockchip,rk3288-cif-isp",
+> +		.data = &rk3288_isp_clk_data,
+> +	}, {
+> +		.compatible = "rockchip,rk3399-cif-isp",
+> +		.data = &rk3399_isp_clk_data,
+> +	},
+> +	{},
+> +};
+> +MODULE_DEVICE_TABLE(of, rkisp1_plat_of_match);
+> +
+> +static irqreturn_t rkisp1_irq_handler(int irq, void *ctx)
+> +{
+> +	struct device *dev = ctx;
+> +	struct rkisp1_device *rkisp1_dev = dev_get_drvdata(dev);
+> +	unsigned int mis_val;
+> +
+> +	mis_val = readl(rkisp1_dev->base_addr + CIF_ISP_MIS);
+> +	if (mis_val)
+> +		rkisp1_isp_isr(mis_val, rkisp1_dev);
+> +
+> +	mis_val = readl(rkisp1_dev->base_addr + CIF_MIPI_MIS);
+> +	if (mis_val)
+> +		rkisp1_mipi_isr(mis_val, rkisp1_dev);
+> +
+> +	mis_val = readl(rkisp1_dev->base_addr + CIF_MI_MIS);
+> +	if (mis_val)
+> +		rkisp1_mi_isr(mis_val, rkisp1_dev);
+> +
+> +	return IRQ_HANDLED;
+> +}
+> +
+> +static int rkisp1_plat_probe(struct platform_device *pdev)
+> +{
+> +	struct device_node *node = pdev->dev.of_node;
+> +	const struct isp_match_data *clk_data;
+> +	const struct of_device_id *match;
+> +	struct device *dev = &pdev->dev;
+> +	struct rkisp1_device *isp_dev;
+> +	struct v4l2_device *v4l2_dev;
+> +	unsigned int i;
+> +	int ret, irq;
+> +
+> +	match = of_match_node(rkisp1_plat_of_match, node);
+> +	isp_dev = devm_kzalloc(dev, sizeof(*isp_dev), GFP_KERNEL);
+> +	if (!isp_dev)
+> +		return -ENOMEM;
+> +
+> +	INIT_LIST_HEAD(&isp_dev->sensors);
+> +
+> +	dev_set_drvdata(dev, isp_dev);
+> +	isp_dev->dev = dev;
+> +
+> +	isp_dev->base_addr = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(isp_dev->base_addr))
+> +		return PTR_ERR(isp_dev->base_addr);
+> +
+> +	irq = platform_get_irq(pdev, 0);
+> +	if (irq < 0)
+> +		return irq;
+> +
+> +	ret = devm_request_irq(dev, irq, rkisp1_irq_handler, IRQF_SHARED,
+> +			       dev_driver_string(dev), dev);
+> +	if (ret < 0) {
+> +		dev_err(dev, "request irq failed: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	isp_dev->irq = irq;
+> +	clk_data = match->data;
+> +
+> +	for (i = 0; i < clk_data->size; i++)
+> +		isp_dev->clks[i].id = clk_data->clks[i];
+> +	ret = devm_clk_bulk_get(dev, clk_data->size, isp_dev->clks);
+> +	if (ret)
+> +		return ret;
+> +	isp_dev->clk_size = clk_data->size;
+> +
+> +	atomic_set(&isp_dev->pipe.power_cnt, 0);
+> +	atomic_set(&isp_dev->pipe.stream_cnt, 0);
+> +	isp_dev->pipe.open = rkisp1_pipeline_open;
+> +	isp_dev->pipe.close = rkisp1_pipeline_close;
+> +	isp_dev->pipe.set_stream = rkisp1_pipeline_set_stream;
+> +
+> +	rkisp1_stream_init(isp_dev, RKISP1_STREAM_SP);
+> +	rkisp1_stream_init(isp_dev, RKISP1_STREAM_MP);
+> +
+> +	strscpy(isp_dev->media_dev.model, "rkisp1",
+> +		sizeof(isp_dev->media_dev.model));
+> +	isp_dev->media_dev.dev = &pdev->dev;
+> +	strscpy(isp_dev->media_dev.bus_info,
+> +		"platform: " DRIVER_NAME, sizeof(isp_dev->media_dev.bus_info));
+> +	media_device_init(&isp_dev->media_dev);
+> +
+> +	v4l2_dev = &isp_dev->v4l2_dev;
+> +	v4l2_dev->mdev = &isp_dev->media_dev;
+> +	strscpy(v4l2_dev->name, "rkisp1", sizeof(v4l2_dev->name));
+> +	v4l2_ctrl_handler_init(&isp_dev->ctrl_handler, 5);
+> +	v4l2_dev->ctrl_handler = &isp_dev->ctrl_handler;
+> +
+> +	ret = v4l2_device_register(isp_dev->dev, &isp_dev->v4l2_dev);
+> +	if (ret < 0)
+
+Once you've initialised the control handler, you'll need to free it in case
+of an error. I.e. add one more label for that purpose near the end.
+
+> +		return ret;
+> +
+> +	ret = media_device_register(&isp_dev->media_dev);
+> +	if (ret < 0) {
+> +		v4l2_err(v4l2_dev, "Failed to register media device: %d\n",
+> +			 ret);
+> +		goto err_unreg_v4l2_dev;
+> +	}
+> +
+> +	/* create & register platefom subdev (from of_node) */
+> +	ret = rkisp1_register_platform_subdevs(isp_dev);
+> +	if (ret < 0)
+> +		goto err_unreg_media_dev;
+> +
+> +	pm_runtime_enable(&pdev->dev);
+> +
+> +	return 0;
+> +
+> +err_unreg_media_dev:
+> +	media_device_unregister(&isp_dev->media_dev);
+> +err_unreg_v4l2_dev:
+> +	v4l2_device_unregister(&isp_dev->v4l2_dev);
+> +	return ret;
+> +}
+> +
+> +static int rkisp1_plat_remove(struct platform_device *pdev)
+> +{
+> +	struct rkisp1_device *isp_dev = platform_get_drvdata(pdev);
+> +
+> +	pm_runtime_disable(&pdev->dev);
+> +	media_device_unregister(&isp_dev->media_dev);
+> +	v4l2_async_notifier_unregister(&isp_dev->notifier);
+> +	v4l2_async_notifier_cleanup(&isp_dev->notifier);
+> +	v4l2_device_unregister(&isp_dev->v4l2_dev);
+> +	rkisp1_unregister_params_vdev(&isp_dev->params_vdev);
+> +	rkisp1_unregister_stats_vdev(&isp_dev->stats_vdev);
+> +	rkisp1_unregister_stream_vdevs(isp_dev);
+> +	rkisp1_unregister_isp_subdev(isp_dev);
+> +
+> +	return 0;
+> +}
+> +
+> +static int __maybe_unused rkisp1_runtime_suspend(struct device *dev)
+> +{
+> +	struct rkisp1_device *isp_dev = dev_get_drvdata(dev);
+> +
+> +	clk_bulk_disable_unprepare(isp_dev->clk_size, isp_dev->clks);
+> +	return pinctrl_pm_select_sleep_state(dev);
+> +}
+> +
+> +static int __maybe_unused rkisp1_runtime_resume(struct device *dev)
+> +{
+> +	struct rkisp1_device *isp_dev = dev_get_drvdata(dev);
+> +	int ret;
+> +
+> +	ret = pinctrl_pm_select_default_state(dev);
+> +	if (ret < 0)
+> +		return ret;
+> +	ret = clk_bulk_prepare_enable(isp_dev->clk_size, isp_dev->clks);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct dev_pm_ops rkisp1_plat_pm_ops = {
+> +	SET_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend,
+> +				pm_runtime_force_resume)
+> +	SET_RUNTIME_PM_OPS(rkisp1_runtime_suspend, rkisp1_runtime_resume, NULL)
+> +};
+> +
+> +static struct platform_driver rkisp1_plat_drv = {
+> +	.driver = {
+> +		.name = DRIVER_NAME,
+> +		.of_match_table = of_match_ptr(rkisp1_plat_of_match),
+> +		.pm = &rkisp1_plat_pm_ops,
+> +	},
+> +	.probe = rkisp1_plat_probe,
+> +	.remove = rkisp1_plat_remove,
+> +};
+> +
+> +module_platform_driver(rkisp1_plat_drv);
+> +MODULE_AUTHOR("Rockchip Camera/ISP team");
+> +MODULE_DESCRIPTION("Rockchip ISP1 platform driver");
+> +MODULE_LICENSE("Dual BSD/GPL");
+
+BSD or MIT?
+
+> diff --git a/drivers/media/platform/rockchip/isp1/dev.h b/drivers/media/platform/rockchip/isp1/dev.h
+> new file mode 100644
+> index 000000000000..f7cbee316523
+> --- /dev/null
+> +++ b/drivers/media/platform/rockchip/isp1/dev.h
+> @@ -0,0 +1,97 @@
+> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
+> +/*
+> + * Rockchip isp1 driver
+> + *
+> + * Copyright (C) 2017 Rockchip Electronics Co., Ltd.
+> + */
+> +
+> +#ifndef _RKISP1_DEV_H
+> +#define _RKISP1_DEV_H
+> +
+> +#include <linux/clk.h>
+> +
+> +#include "capture.h"
+> +#include "rkisp1.h"
+> +#include "isp_params.h"
+> +#include "isp_stats.h"
+> +
+> +#define DRIVER_NAME "rkisp1"
+> +#define ISP_VDEV_NAME DRIVER_NAME  "_ispdev"
+> +#define SP_VDEV_NAME DRIVER_NAME   "_selfpath"
+> +#define MP_VDEV_NAME DRIVER_NAME   "_mainpath"
+> +#define DMA_VDEV_NAME DRIVER_NAME  "_dmapath"
+> +
+> +#define GRP_ID_SENSOR			BIT(0)
+> +#define GRP_ID_MIPIPHY			BIT(1)
+> +#define GRP_ID_ISP			BIT(2)
+> +#define GRP_ID_ISP_MP			BIT(3)
+> +#define GRP_ID_ISP_SP			BIT(4)
+> +
+> +#define RKISP1_MAX_BUS_CLK	8
+> +#define RKISP1_MAX_SENSOR	2
+> +#define RKISP1_MAX_PIPELINE	4
+> +
+> +/*
+> + * struct rkisp1_pipeline - An ISP hardware pipeline
+> + *
+> + * Capture device call other devices via pipeline
+> + *
+> + * @num_subdevs: number of linked subdevs
+> + * @power_cnt: pipeline power count
+> + * @stream_cnt: stream power count
+> + */
+> +struct rkisp1_pipeline {
+> +	struct media_pipeline pipe;
+> +	int num_subdevs;
+> +	atomic_t power_cnt;
+> +	atomic_t stream_cnt;
+> +	struct v4l2_subdev *subdevs[RKISP1_MAX_PIPELINE];
+> +	int (*open)(struct rkisp1_pipeline *p,
+> +		    struct media_entity *me, bool prepare);
+> +	int (*close)(struct rkisp1_pipeline *p);
+> +	int (*set_stream)(struct rkisp1_pipeline *p, bool on);
+> +};
+> +
+> +/*
+> + * struct rkisp1_sensor - Sensor information
+> + * @mbus: media bus configuration
+> + */
+> +struct rkisp1_sensor {
+> +	struct v4l2_subdev *sd;
+> +	struct v4l2_mbus_config mbus;
+> +	unsigned int lanes;
+> +	struct phy *dphy;
+> +	struct list_head list;
+> +};
+
+You seem to also have struct sensor_async_subdev that appears to contain
+similar information. Would it be possible to unify the two?
+
+This would appear to allow you getting rid of functions such as
+sd_to_sensor, for instance.
+
+> +
+> +/*
+> + * struct rkisp1_device - ISP platform device
+> + * @base_addr: base register address
+> + * @active_sensor: sensor in-use, set when streaming on
+> + * @isp_sdev: ISP sub-device
+> + * @rkisp1_stream: capture video device
+> + * @stats_vdev: ISP statistics output device
+> + * @params_vdev: ISP input parameters device
+> + */
+> +struct rkisp1_device {
+> +	void __iomem *base_addr;
+> +	int irq;
+> +	struct device *dev;
+> +	unsigned int clk_size;
+> +	struct clk_bulk_data clks[RKISP1_MAX_BUS_CLK];
+> +	struct v4l2_device v4l2_dev;
+> +	struct v4l2_ctrl_handler ctrl_handler;
+> +	struct media_device media_dev;
+> +	struct v4l2_async_notifier notifier;
+> +	struct v4l2_subdev *subdevs[RKISP1_SD_MAX];
+> +	struct rkisp1_sensor *active_sensor;
+> +	struct list_head sensors;
+> +	struct rkisp1_isp_subdev isp_sdev;
+> +	struct rkisp1_stream stream[RKISP1_MAX_STREAM];
+> +	struct rkisp1_isp_stats_vdev stats_vdev;
+> +	struct rkisp1_isp_params_vdev params_vdev;
+> +	struct rkisp1_pipeline pipe;
+> +	struct vb2_alloc_ctx *alloc_ctx;
+> +};
+> +
+> +#endif
+
+-- 
+Regards,
+
+Sakari Ailus
+sakari.ailus@linux.intel.com
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
