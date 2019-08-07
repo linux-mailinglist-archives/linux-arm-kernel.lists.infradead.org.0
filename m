@@ -2,69 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2A7B84A36
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 12:57:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0554E84A38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 12:57:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=35e5woSPDknJu27ulZaxK47oMDV73Qxy4/U4lovxwDQ=; b=jZoN8qdwe+yrj4
-	H2mz9aHxqQUznY2rOvXxOGJCXiI6Mx4PtKz9w2q92kGGqRhkiVrx8G3KbSspaS+Cn17CAvye52AEW
-	wOzN7yNDdDh2+ajS3tspflDVEQ91UEiJNQPRAS/2q5H3ufD5A0Ry7XO66lOuEoqAaNd8GBTZBVXSa
-	WriAUJ8/Gd6M9KrCZTYJKlT8hiW1f0nOeChDilWdWnKKpXKaGJWd7BPHJ/xuFPtUgSM4hjel28dap
-	s5VmJouIoWAp0c+LuxS0h+5pGDRxeGP4VnJ/lx5uaqqK8RsJhnOGMKhrNPX268YDG54lSQu0bjGms
-	V+EflGLWccknvP7HDrGw==;
+	List-Owner; bh=r2H/8tlvt7qDFW2PeJLfp9te2kEaRbzAyNy+3IrHUKo=; b=EgQI/JRnymZfxE
+	v0Cq4wXDBC5oMb5bS7c7Nz2v4ZLEw2ay84MUud435IAp5mLmzYkRAM24qU9O7S3pjk2jOlzZgibXk
+	93RgKxHAVCXJxCmYaYWylS5bKc1Jzje44ByjqKA0A8BJjsMZthDU2WAdo9Q+9nvMD3K0+ZMW4qtJB
+	i9IwHYVIVZZt1WHRx7CMwlsgjdbPOJvjs5DXuuOAT27QyslnOEl8rPeqI0Ee5jxBJ34s2QoZt/M1v
+	4FAlqeBNXxVOPUSYvoIxNH49ftMFHRukk4v0NTfExSmsTu2boMaQf8UGsSTiM9JJhEQSqXwYf6VE6
+	ar5ZI0aFgYms277p+Ubg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvJd0-0006ZN-G8; Wed, 07 Aug 2019 10:57:10 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvJco-0006Z0-16
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 10:56:59 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7796321E6A;
- Wed,  7 Aug 2019 10:56:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565175417;
- bh=E+jdnPAL8byjVs25HbPkNIC+Qlh+GYI7JlSAMKjNmOY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=j0v7RK71k0oqk5weJNib/8LBsqGyJuYACUDft4NB8ckJHk84Ro4o9VTusqDkVFveE
- hInp6nbV+z6+c+eRkSZVJv21dWsErYP1VHjdJ7RmC2SBGYizMOpOtiO+ScxwmbGTe9
- r4JvYQc42MzUUHLNSqnCb0q5hGDm1JjgcMaFR6GU=
-Date: Wed, 7 Aug 2019 11:56:53 +0100
-From: Will Deacon <will@kernel.org>
-To: Qian Cai <cai@lca.pw>
-Subject: Re: [PATCH v2] arm64/cache: fix -Woverride-init compiler warnings
-Message-ID: <20190807105652.cyi3fou2rfsxhxrk@willie-the-truck>
-References: <20190806193434.965-1-cai@lca.pw>
+	id 1hvJdL-0006na-NI; Wed, 07 Aug 2019 10:57:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvJd5-0006mb-Q1; Wed, 07 Aug 2019 10:57:16 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7957628;
+ Wed,  7 Aug 2019 03:57:15 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E22BB3F575;
+ Wed,  7 Aug 2019 03:57:13 -0700 (PDT)
+Date: Wed, 7 Aug 2019 11:57:09 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Jianjun Wang <jianjun.wang@mediatek.com>
+Subject: Re: [v2,0/2] PCI: mediatek: Add support for MT7629
+Message-ID: <20190807105709.GA16214@e121166-lin.cambridge.arm.com>
+References: <20190628073425.25165-1-jianjun.wang@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190806193434.965-1-cai@lca.pw>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190628073425.25165-1-jianjun.wang@mediatek.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_035658_093510_2B7A5F2B 
-X-CRM114-Status: GOOD (  12.49  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190807_035715_884401_30D8F732 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,53 +61,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ryder Lee <ryder.lee@mediatek.com>, linux-pci@vger.kernel.org,
+ youlin.pei@mediatek.com, linux-kernel@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Bjorn Helgaas <bhelgaas@google.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 06, 2019 at 03:34:34PM -0400, Qian Cai wrote:
-> diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
-> index 876055e37352..a0c495a3f4fd 100644
-> --- a/arch/arm64/kernel/cpuinfo.c
-> +++ b/arch/arm64/kernel/cpuinfo.c
-> @@ -34,10 +34,7 @@ DEFINE_PER_CPU(struct cpuinfo_arm64, cpu_data);
->  static struct cpuinfo_arm64 boot_cpu_data;
->  
->  static char *icache_policy_str[] = {
-> -	[0 ... ICACHE_POLICY_PIPT]	= "RESERVED/UNKNOWN",
-> -	[ICACHE_POLICY_VIPT]		= "VIPT",
-> -	[ICACHE_POLICY_PIPT]		= "PIPT",
-> -	[ICACHE_POLICY_VPIPT]		= "VPIPT",
-> +	[0 ... ICACHE_POLICY_PIPT]	= "RESERVED/UNKNOWN"
->  };
->  
->  unsigned long __icache_flags;
-> @@ -310,13 +307,16 @@ static void cpuinfo_detect_icache_policy(struct cpuinfo_arm64 *info)
->  
->  	switch (l1ip) {
->  	case ICACHE_POLICY_PIPT:
-> +		icache_policy_str[ICACHE_POLICY_PIPT] = "PIPT";
->  		break;
->  	case ICACHE_POLICY_VPIPT:
-> +		icache_policy_str[ICACHE_POLICY_VPIPT] = "VPIPT";
->  		set_bit(ICACHEF_VPIPT, &__icache_flags);
->  		break;
->  	default:
->  		/* Fallthrough */
->  	case ICACHE_POLICY_VIPT:
-> +		icache_policy_str[ICACHE_POLICY_VIPT] = "VIPT";
->  		/* Assume aliasing */
->  		set_bit(ICACHEF_ALIASING, &__icache_flags);
+On Fri, Jun 28, 2019 at 03:34:23PM +0800, Jianjun Wang wrote:
+> These series patches modify pcie-mediatek.c and dt-bindings compatible
+> string to support MT7629 PCIe host.
+> 
+> Jianjun Wang (2):
+>   dt-bindings: PCI: Add support for MT7629
+>   PCI: mediatek: Add controller support for MT7629
+> 
+>  .../devicetree/bindings/pci/mediatek-pcie.txt  |  1 +
+>  drivers/pci/controller/pcie-mediatek.c         | 18 ++++++++++++++++++
+>  include/linux/pci_ids.h                        |  1 +
+>  3 files changed, 20 insertions(+)
 
-I still think this is worse than the code in mainline. I don't think
--Woverride-init should warn when overriding a field from a GCC range
-designated initialiser, since it makes them considerably less useful
-imo.
+Applied to pci/mediatek for v5.4.
 
-Will
+Thanks,
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
