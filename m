@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3640B851FA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 19:21:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2888285212
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 19:29:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qNaqyGFby7dW/GKm5TZlBcdWzQ1KAqxTaByx0ysnOgA=; b=kj4qtTpDTuPI+g
-	aciPm1LOtAfkN89532Zvsgg+nFAa4JwA5fuYdY3G+vNAm2Rx+3RsfIptR8BEgj5i/NYnF8IcideV1
-	Hl591PmY7z6XuSxfdsRI3MluYQ57zniswLjFuRCigH7ZWaXUIdnEkpZxW9CkM3b//MqwZa86gSNeO
-	MBYHetW3hO4c6K9Q0U3C9w37evsk4ErALWApmjQXxOnYfytAhUtrTr8WFsu29u5eDldfr7Tx1V4G9
-	AaXI9FaCNJMP+eZtaGPi3mQYKM50/oBr2MAmD8PYMpA6N1axQiZEtxpTAQImvqS6K5uo9VZWW6uCJ
-	mUrgEFxZqfKeB+TEumfA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:To:From:
+	Date:Message-Id:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=LUrSzr2yvr1KUeCd+wO+S8OS2oUww6kUkgrbwKMS9Tc=; b=VYF
+	oFRDykOyRp64j/R3O3EMlfNl7VfQcY6hh13+YyrvK0s5QsqXlCGn2jz0Rx+ahtL9gcI0RUP0LY4gS
+	7QpL3TU8H1DdZ2U5En/VyU78YiIW09M5fXlKEt2cr4dtwqRj6CBdhXkjwPSyWGLya9jFQLRRMDZ30
+	D6ssi2yIbD6Y+RzoIr3G+btz6/m3xILWElkRBlCP99/XP/nNJrUEzrkRrYM4dYoYgpwqUadqzVw1K
+	W1KswSCfL9Lk58ZV69E62Q1o1TquQPAiHU3MJbmizI779O5TtnQa6UzQVrJRstnLUxr6FbeapMsAS
+	az4gSD9UDUKm+3mP22KqLc+6haHlkHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvPcm-0004Sp-1h; Wed, 07 Aug 2019 17:21:20 +0000
+	id 1hvPkU-0006r9-Bf; Wed, 07 Aug 2019 17:29:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvPcU-0004SA-1L
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 17:21:03 +0000
+ id 1hvPkK-0006qK-Aj
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 17:29:09 +0000
 Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
  [66.24.58.225])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B813E22296;
- Wed,  7 Aug 2019 17:21:00 +0000 (UTC)
-Date: Wed, 7 Aug 2019 13:20:58 -0400
+ by mail.kernel.org (Postfix) with ESMTPSA id 03B7B2229C;
+ Wed,  7 Aug 2019 17:29:08 +0000 (UTC)
+Received: from rostedt by gandalf.local.home with local (Exim 4.92)
+ (envelope-from <rostedt@goodmis.org>)
+ id 1hvPkJ-0007yx-2L; Wed, 07 Aug 2019 13:29:07 -0400
+Message-Id: <20190807172826.352574408@goodmis.org>
+User-Agent: quilt/0.65
+Date: Wed, 07 Aug 2019 13:28:26 -0400
 From: Steven Rostedt <rostedt@goodmis.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 0/2] tracing/arm: Fix the stack tracer when LR is saved
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 0/2 v2] tracing/arm: Fix the stack tracer when LR is saved
  after local storage
-Message-ID: <20190807132058.37616e8f@gandalf.local.home>
-In-Reply-To: <20190807170814.GA45351@lakrids.cambridge.arm.com>
-References: <20190807163401.570339297@goodmis.org>
- <20190807170814.GA45351@lakrids.cambridge.arm.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_102102_101482_F34C727C 
-X-CRM114-Status: GOOD (  16.04  )
+X-CRM114-CacheID: sfid-20190807_102908_391597_C9FFBE73 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-4.8 points)
@@ -66,56 +66,47 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Jiping Ma <jiping.ma2@windriver.com>, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, mingo@redhat.com,
- Joel Fernandes <joel@joelfernandes.org>, linux-arm-kernel@lists.infradead.org
+ will.deacon@arm.com, mingo@redhat.com, Joel Fernandes <joel@joelfernandes.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 7 Aug 2019 18:08:14 +0100
-Mark Rutland <mark.rutland@arm.com> wrote:
+As arm64 saves the link register after a function's local variables are
+stored, it causes the max stack tracer to be off by one in its output
+of which function has the bloated stack frame.
 
-> Hi Steve,
-> 
-> On Wed, Aug 07, 2019 at 12:34:01PM -0400, Steven Rostedt wrote:
-> > As arm64 saves the link register after a function's local variables are
-> > stored, it causes the max stack tracer to be off by one in its output
-> > of which function has the bloated stack frame.  
-> 
-> For reference, it's a bit more complex than that. :/
+The first patch fixes this by creating a ARCH_RET_ADDR_BEFORE_LOCAL_VARS
+define that an achitecture (arm64) may set in asm/ftrace.h, and this
+will cause the stack tracer to make the shift.
 
-Yeah, I know it is. ;-)
+As it has been proven that the stack tracer isn't the most trivial
+algorithm to understand by staring at the code, the second patch adds
+comments to the code to explain the algorithm with and without the
+ARCH_RET_ADDR_BEFORE_LOCAL_VARS.
 
-> 
-> Our procedure call standard (the AAPCS) says that the frame record may
-> be placed anywhere within a stackframe, so we don't have a guarantee as
-> to where the saved lr will fall w.r.t local variables.
-
-Yep.
-
-> 
-> Today, GCC happens to create the stack frame by creating the stack
-> record, so the LR is saved at a lower addresss than the local variables.
-
-Which is what breaks the current algorithm (without this update).
-
-> 
-> However, I am aware that there are reasons why a compiler may choose to
-> place the frame record at a different locations, e.g. using pointer
-> authentication to provide an implicit stack canary, so this could change
-> in future, or potentially differ across functions.
-> 
-> Maybe that's a bridge we'll have to cross in future.
-
-OK, how about I update the change log and add a comment that states
-that this can change. But even if it does, it wont break anything but
-show the wrong stack size, which is usually only important for us
-kernel developers anyway ;-)
-
-Let me send a v2.
+Hmm, should this be sent to stable (and for inclusion now?)
 
 -- Steve
+
+Changes since v1:
+
+ - Fixed wrong value in stack_trace_index[] array in comment
+
+ - Added a comment about gcc currently saves the LR after local variables,
+   but there's no guarantee that it will be like that in the future.
+   (Notified of this by Mark Rutland)
+
+Steven Rostedt (VMware) (2):
+      tracing/arm64: Have max stack tracer handle the case of return address after data
+      tracing: Document the stack trace algorithm in the comments
+
+----
+ arch/arm64/include/asm/ftrace.h |  13 +++++
+ kernel/trace/trace_stack.c      | 112 ++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 125 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
