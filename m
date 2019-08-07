@@ -2,49 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EEBB84ECC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 16:33:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B828084ED6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 16:35:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VZ09UhGWn8yT0VB+gESZFLJbViOYLENa7At4vyNADGk=; b=MOB+NdIEb4WlSl
-	WILulT0K4xXrjbaC8FCJqlcTUkMmeukl9s6I8d9Ru1lDmRfL/64a7GMpphK4ADlZycSOV/NXu6i9v
-	1uEvwXlkqoSiHgk0zkOwnkwXQYotGerXs7HsabzTxb2ZWdOAgfGL42efcohmwsZXQ+WLU5uXt+/Ro
-	EUAWGwheebxMuc5ZnFiUHU9HGvl1m+tEj8xqr/gzOgLhp9nbHcRBLF7ZA+GXKREI+eKJ20K6t6HQb
-	HxkxWIvMW5P4rF7yeTPd2I8MFl85eJaWys0SDgyFbbXF+7UNMtkkrhU1nPRxMvRWrEVmq5NiwoqvW
-	Tq8mzx6cjpkrNZvuBJsg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=36mQRjCnlFanCyMaSrTbFhWrnvak+xdIK2BLgGDq72A=; b=OVV7gYSXqJhxnU
+	iVItehfAKm4mxsl8QpXyXO67lfklUmjB/1Gw068NCt5TnFG26tC2upuzJrR6hWXTxx39K6RvLdol3
+	FJEzZzC07D8Mi9Wm2Tose4A0YrwbAyBaLeWdNak7H+Mv/hYK2o8Bt1z8BKdwGHoW+/REUHIC5qpCs
+	QHT/ZUce55Je395HfMdoJaJK2m6RficZwJwfNEU6P4AChRi1W3BsuRuF6UATwjMX0XKZPMdHR10MY
+	3wK0xHX/FHD/46nKW5mArryRIEY8a24e47yYYfzDjgtckU+tqLJzzHJ0MQKikd/pSkcGYX1xjpMeA
+	k29Dd6kTRZoVK3XZigbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvN01-0005as-Hb; Wed, 07 Aug 2019 14:33:09 +0000
-Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
+	id 1hvN1q-0005wX-LU; Wed, 07 Aug 2019 14:35:02 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvMzn-0005aV-QA
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 14:32:58 +0000
-Received: from sapphire.lan (unknown [192.168.100.188])
- by mx.tkos.co.il (Postfix) with ESMTP id 4BA2444057D;
- Wed,  7 Aug 2019 17:32:49 +0300 (IDT)
-From: Baruch Siach <baruch@tkos.co.il>
-To: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>
-Subject: [PATCH] arm64: dts: fsl: add support for Hummingboard Pulse
-Date: Wed,  7 Aug 2019 17:32:34 +0300
-Message-Id: <8dec8f80b1269df040251a14b671f9c834c121cd.1565188354.git.baruch@tkos.co.il>
-X-Mailer: git-send-email 2.20.1
+ id 1hvN1W-0005uW-SW; Wed, 07 Aug 2019 14:34:44 +0000
+X-Originating-IP: 88.168.111.231
+Received: from localhost (lpr83-1-88-168-111-231.fbx.proxad.net
+ [88.168.111.231]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 4B53F240002;
+ Wed,  7 Aug 2019 14:34:32 +0000 (UTC)
+Date: Wed, 7 Aug 2019 16:34:31 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [RFCv2 1/9] dt-bindings: mailbox: meson-mhu: convert to yaml
+Message-ID: <20190807143431.6w6dg44mjiwtffi2@flea>
+References: <20190805120320.32282-1-narmstrong@baylibre.com>
+ <20190805120320.32282-2-narmstrong@baylibre.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190805120320.32282-2-narmstrong@baylibre.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_073256_332046_729A18D4 
-X-CRM114-Status: GOOD (  14.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190807_073443_077733_5E56F67A 
+X-CRM114-Status: GOOD (  16.00  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,604 +61,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Baruch Siach <baruch@tkos.co.il>, Jon Nettleton <jon@solid-run.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org, robh+dt@kernel.org,
+ jassisinghbrar@gmail.com, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jon Nettleton <jon@solid-run.com>
+Hi,
 
-The SolidRun Hummingboard Pulse carrier board carries the SolidRun
-i.MX8MQ based SOM.
+On Mon, Aug 05, 2019 at 02:03:12PM +0200, Neil Armstrong wrote:
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for the Amlogic MHU controller over to a YAML schemas.
+>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> ---
+>  .../mailbox/amlogic,meson-gxbb-mhu.yaml       | 53 +++++++++++++++++++
+>  .../devicetree/bindings/mailbox/meson-mhu.txt | 34 ------------
+>  2 files changed, 53 insertions(+), 34 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/mailbox/amlogic,meson-gxbb-mhu.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/mailbox/meson-mhu.txt
+>
+> diff --git a/Documentation/devicetree/bindings/mailbox/amlogic,meson-gxbb-mhu.yaml b/Documentation/devicetree/bindings/mailbox/amlogic,meson-gxbb-mhu.yaml
+> new file mode 100644
+> index 000000000000..2536a0082cff
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mailbox/amlogic,meson-gxbb-mhu.yaml
+> @@ -0,0 +1,53 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +# Copyright 2019 BayLibre, SAS
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/mailbox/amlogic,meson-gxbb-mhu.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Amlogic Meson Message-Handling-Unit Controller
+> +
+> +maintainers:
+> +  - Neil Armstrong <narmstrong@baylibre.com>
+> +
+> +description: |
+> +  The Amlogic's Meson SoCs Message-Handling-Unit (MHU) is a mailbox controller
+> +  that has 3 independent channels/links to communicate with remote processor(s).
+> +  MHU links are hardwired on a platform. A link raises interrupt for any
+> +  received data. However, there is no specified way of knowing if the sent
+> +  data has been read by the remote. This driver assumes the sender polls
+> +  STAT register and the remote clears it after having read the data.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - amlogic,meson-gxbb-mhu
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    minItems: 3
+> +    maxItems: 3
 
-Notably missing is PCIe support that depends on analog PLLOUT clock.
-Current imx clk driver does not support this clock.
+You don't need to specify both here. If one is missing, the tools will
+fill it automatically with the other's value.
 
-Signed-off-by: Jon Nettleton <jon@solid-run.com>
-Signed-off-by: Baruch Siach <baruch@tkos.co.il>
----
- arch/arm64/boot/dts/freescale/Makefile        |   1 +
- .../freescale/imx8mq-hummingboard-pulse.dts   | 237 ++++++++++++++
- .../boot/dts/freescale/imx8mq-sr-som.dtsi     | 309 ++++++++++++++++++
- 3 files changed, 547 insertions(+)
- create mode 100644 arch/arm64/boot/dts/freescale/imx8mq-hummingboard-pulse.dts
- create mode 100644 arch/arm64/boot/dts/freescale/imx8mq-sr-som.dtsi
+Maxime
 
-diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
-index c043aca66572..6833b23e2dd2 100644
---- a/arch/arm64/boot/dts/freescale/Makefile
-+++ b/arch/arm64/boot/dts/freescale/Makefile
-@@ -22,6 +22,7 @@ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-lx2160a-rdb.dtb
- 
- dtb-$(CONFIG_ARCH_MXC) += imx8mm-evk.dtb
- dtb-$(CONFIG_ARCH_MXC) += imx8mq-evk.dtb
-+dtb-$(CONFIG_ARCH_MXC) += imx8mq-hummingboard-pulse.dtb
- dtb-$(CONFIG_ARCH_MXC) += imx8mq-librem5-devkit.dtb
- dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-rmb3.dtb
- dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-zest.dtb
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq-hummingboard-pulse.dts b/arch/arm64/boot/dts/freescale/imx8mq-hummingboard-pulse.dts
-new file mode 100644
-index 000000000000..653cad30deb7
---- /dev/null
-+++ b/arch/arm64/boot/dts/freescale/imx8mq-hummingboard-pulse.dts
-@@ -0,0 +1,237 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-+/*
-+ * Copyright (C) 2018 Jon Nettleton <jon@solid-run.com>
-+ */
-+
-+/dts-v1/;
-+
-+#include "imx8mq.dtsi"
-+#include "imx8mq-sr-som.dtsi"
-+
-+/ {
-+	model = "SolidRun i.MX8MQ HummingBoard Pulse";
-+	compatible = "solidrun,hummingboard-pulse", "fsl,imx8mq";
-+
-+	chosen {
-+		stdout-path = &uart1;
-+	};
-+
-+	regulators {
-+		compatible = "simple-bus";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		reg_usdhc2_vmmc: usdhc2_vmmc {
-+			compatible = "regulator-fixed";
-+			regulator-name = "VSD_3V3";
-+			regulator-min-microvolt = <3300000>;
-+			regulator-max-microvolt = <3300000>;
-+			gpio = <&gpio2 19 GPIO_ACTIVE_HIGH>;
-+			enable-active-high;
-+		};
-+
-+		v_5v0: regulator-v-5v0 {
-+			compatible = "regulator-fixed";
-+			regulator-always-on;
-+			regulator-max-microvolt = <5000000>;
-+			regulator-min-microvolt = <5000000>;
-+			regulator-name = "v_5v0";
-+		};
-+	};
-+};
-+
-+&iomuxc {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_hog>;
-+
-+	imx8mq-sr-hb {
-+		pinctrl_hog: hoggrp {
-+			fsl,pins = <
-+				/* MikroBus Analog */
-+				MX8MQ_IOMUXC_NAND_DATA05_GPIO3_IO11		0x41
-+				/* MikroBus Reset */
-+				MX8MQ_IOMUXC_SAI2_RXD0_GPIO4_IO23		0x41
-+				/* The following 2 pins need to be commented out and
-+				 * reconfigured to enable RTS/CTS on UART3
-+				 */
-+				/* MikroBus PWM */
-+				MX8MQ_IOMUXC_ECSPI1_MISO_GPIO5_IO8		0x41
-+				/* MikroBus INT */
-+				MX8MQ_IOMUXC_ECSPI1_SS0_GPIO5_IO9		0x41
-+			>;
-+		};
-+
-+		pinctrl_i2c2: i2c2grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_I2C2_SCL_I2C2_SCL			0x4000007f
-+				MX8MQ_IOMUXC_I2C2_SDA_I2C2_SDA			0x4000007f
-+			>;
-+		};
-+
-+		pinctrl_i2c3: i2c3grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_I2C3_SCL_I2C3_SCL			0x4000007f
-+				MX8MQ_IOMUXC_I2C3_SDA_I2C3_SDA			0x4000007f
-+			>;
-+		};
-+
-+		pinctrl_typec: typecgrp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_NAND_RE_B_GPIO3_IO15	0x16
-+				MX8MQ_IOMUXC_GPIO1_IO06_GPIO1_IO6	0x17059
-+			>;
-+		};
-+
-+		pinctrl_uart2: uart2grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_UART2_TXD_UART2_DCE_TX		0x49
-+				MX8MQ_IOMUXC_UART2_RXD_UART2_DCE_RX		0x49
-+				/* These pins are currently allocated to the
-+				 * uBLOX module on the SOM
-+				 */
-+				/* MX8MQ_IOMUXC_UART4_RXD_UART2_DCE_CTS_B		0x49 */
-+				/* MX8MQ_IOMUXC_UART4_TXD_UART2_DCE_RTS_B		0x49 */
-+			>;
-+		};
-+
-+		pinctrl_uart3: uart3grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_UART3_TXD_UART3_DCE_TX		0x49
-+				MX8MQ_IOMUXC_UART3_RXD_UART3_DCE_RX		0x49
-+				/* These pins are by default GPIO on the Mikro Bus
-+				 * Header.  To use RTS/CTS on UART3 comment them out
-+				 * of the hoggrp and enable them here
-+				 */
-+				/* MX8MQ_IOMUXC_ECSPI1_MISO_UART3_DCE_CTS_B	0x49 */
-+				/* MX8MQ_IOMUXC_ECSPI1_SS0_UART3_DCE_RTS_B	0x49 */
-+			>;
-+		};
-+
-+		pinctrl_usdhc2_gpio: usdhc2grpgpio {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_SD2_CD_B_GPIO2_IO12	0x41
-+			>;
-+		};
-+
-+		pinctrl_usdhc2: usdhc2grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_SD2_CLK_USDHC2_CLK			0x83
-+				MX8MQ_IOMUXC_SD2_CMD_USDHC2_CMD			0xc3
-+				MX8MQ_IOMUXC_SD2_DATA0_USDHC2_DATA0		0xc3
-+				MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1		0xc3
-+				MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2		0xc3
-+				MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3		0xc3
-+				MX8MQ_IOMUXC_GPIO1_IO04_USDHC2_VSELECT		0xc1
-+			>;
-+		};
-+
-+		pinctrl_usdhc2_100mhz: usdhc2grp100mhz {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_SD2_CLK_USDHC2_CLK			0x8d
-+				MX8MQ_IOMUXC_SD2_CMD_USDHC2_CMD			0xcd
-+				MX8MQ_IOMUXC_SD2_DATA0_USDHC2_DATA0		0xcd
-+				MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1		0xcd
-+				MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2		0xcd
-+				MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3		0xcd
-+				MX8MQ_IOMUXC_GPIO1_IO04_USDHC2_VSELECT		0xc1
-+			>;
-+		};
-+
-+		pinctrl_usdhc2_200mhz: usdhc2grp200mhz {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_SD2_CLK_USDHC2_CLK			0x9f
-+				MX8MQ_IOMUXC_SD2_CMD_USDHC2_CMD			0xdf
-+				MX8MQ_IOMUXC_SD2_DATA0_USDHC2_DATA0		0xdf
-+				MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1		0xdf
-+				MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2		0xdf
-+				MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3		0xdf
-+				MX8MQ_IOMUXC_GPIO1_IO04_USDHC2_VSELECT		0xc1
-+			>;
-+		};
-+	};
-+};
-+
-+&i2c2 {
-+	clock-frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c2>;
-+	status = "okay";
-+
-+	typec_ptn5100: ptn5110@50 {
-+		compatible = "usb,tcpci";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_typec>;
-+		reg = <0x50>;
-+		interrupt-parent = <&gpio1>;
-+		interrupts = <6 8>;
-+		ss-sel-gpios = <&gpio3 15 GPIO_ACTIVE_HIGH>;
-+		src-pdos = <0x380190c8>;
-+		snk-pdos = <0x380190c8 0x3802d0c8>;
-+		max-snk-mv = <9000>;
-+		max-snk-ma = <2000>;
-+		op-snk-mw = <9000>;
-+		max-snk-mw = <18000>;
-+		port-type = "drp";
-+		default-role = "sink";
-+	};
-+};
-+
-+&i2c3 {
-+	clock-frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c3>;
-+	status = "okay";
-+
-+	rtc@69 {
-+		compatible = "abracon,ab1805";
-+		reg = <0x69>;
-+		abracon,tc-diode = "schottky";
-+		abracon,tc-resistor = <3>;
-+	};
-+};
-+
-+&uart2 { /* J35 header */
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart2>;
-+	assigned-clocks = <&clk IMX8MQ_CLK_UART2>;
-+	assigned-clock-parents = <&clk IMX8MQ_CLK_25M>;
-+	status = "okay";
-+};
-+
-+&uart3 { /* Mikrobus */
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart3>;
-+	assigned-clocks = <&clk IMX8MQ_CLK_UART3>;
-+	assigned-clock-parents = <&clk IMX8MQ_SYS1_PLL_80M>;
-+	fsl,uart-has-rtscts;
-+	status = "okay";
-+};
-+
-+&usdhc2 {
-+	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-+	pinctrl-0 = <&pinctrl_usdhc2>, <&pinctrl_usdhc2_gpio>;
-+	pinctrl-1 = <&pinctrl_usdhc2_100mhz>, <&pinctrl_usdhc2_gpio>;
-+	pinctrl-2 = <&pinctrl_usdhc2_200mhz>, <&pinctrl_usdhc2_gpio>;
-+	cd-gpios = <&gpio2 12 GPIO_ACTIVE_LOW>;
-+	vmmc-supply = <&reg_usdhc2_vmmc>;
-+	status = "okay";
-+};
-+
-+&usb_dwc3_0 {
-+	status = "okay";
-+	extcon = <&typec_ptn5100>;
-+	dr_mode = "otg";
-+};
-+
-+&usb_dwc3_1 {
-+	status = "okay";
-+	dr_mode = "host";
-+};
-+
-+&usb3_phy0 {
-+	status = "okay";
-+};
-+
-+&usb3_phy1 {
-+	status = "okay";
-+};
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq-sr-som.dtsi b/arch/arm64/boot/dts/freescale/imx8mq-sr-som.dtsi
-new file mode 100644
-index 000000000000..c19956ad4921
---- /dev/null
-+++ b/arch/arm64/boot/dts/freescale/imx8mq-sr-som.dtsi
-@@ -0,0 +1,309 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-+/*
-+ * Copyright (C) 2018 Jon Nettleton <jon@solid-run.com>
-+ */
-+
-+/ {
-+	vdd_3v3: regulator-vdd-3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-always-on;
-+		regulator-name = "vdd_3v3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+};
-+
-+&pgc_gpu{
-+	power-supply = <&sw1a_reg>;
-+};
-+
-+&fec1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_fec1>;
-+	phy-mode = "rgmii-id";
-+	phy-handle = <&ethphy0>;
-+	phy-reset-gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
-+	phy-reset-duration = <2>;
-+	fsl,magic-packet;
-+	status = "okay";
-+
-+	mdio {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		ethphy0: ethernet-phy@0 {
-+			compatible = "ethernet-phy-ieee802.3-c22";
-+			reg = <4>;
-+		};
-+	};
-+};
-+
-+&iomuxc {
-+	microsom {
-+		pinctrl_fec1: fec1grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_ENET_MDC_ENET1_MDC		0x3
-+				MX8MQ_IOMUXC_ENET_MDIO_ENET1_MDIO	0x23
-+				MX8MQ_IOMUXC_ENET_TD3_ENET1_RGMII_TD3	0x1f
-+				MX8MQ_IOMUXC_ENET_TD2_ENET1_RGMII_TD2	0x1f
-+				MX8MQ_IOMUXC_ENET_TD1_ENET1_RGMII_TD1	0x1f
-+				MX8MQ_IOMUXC_ENET_TD0_ENET1_RGMII_TD0	0x1f
-+				MX8MQ_IOMUXC_ENET_RD3_ENET1_RGMII_RD3	0x91
-+				MX8MQ_IOMUXC_ENET_RD2_ENET1_RGMII_RD2	0x91
-+				MX8MQ_IOMUXC_ENET_RD1_ENET1_RGMII_RD1	0x91
-+				MX8MQ_IOMUXC_ENET_RD0_ENET1_RGMII_RD0	0x91
-+				MX8MQ_IOMUXC_ENET_TXC_ENET1_RGMII_TXC	0x1f
-+				MX8MQ_IOMUXC_ENET_RXC_ENET1_RGMII_RXC	0x91
-+				MX8MQ_IOMUXC_ENET_RX_CTL_ENET1_RGMII_RX_CTL	0x91
-+				MX8MQ_IOMUXC_ENET_TX_CTL_ENET1_RGMII_TX_CTL	0x1f
-+				MX8MQ_IOMUXC_GPIO1_IO09_GPIO1_IO9	0x19
-+			>;
-+		};
-+
-+		pinctrl_i2c1: i2c1grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_I2C1_SCL_I2C1_SCL			0x4000007f
-+				MX8MQ_IOMUXC_I2C1_SDA_I2C1_SDA			0x4000007f
-+			>;
-+		};
-+
-+		pinctrl_pcie0: pcie0grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B	0x74
-+				MX8MQ_IOMUXC_SPDIF_EXT_CLK_GPIO5_IO5	0x16
-+				MX8MQ_IOMUXC_SAI2_RXFS_GPIO4_IO21	0x16
-+			>;
-+		};
-+
-+		pinctrl_qspi: qspigrp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_NAND_ALE_QSPI_A_SCLK	0x82
-+				MX8MQ_IOMUXC_NAND_CE0_B_QSPI_A_SS0_B	0x82
-+				MX8MQ_IOMUXC_NAND_DATA00_QSPI_A_DATA0	0x82
-+				MX8MQ_IOMUXC_NAND_DATA01_QSPI_A_DATA1	0x82
-+				MX8MQ_IOMUXC_NAND_DATA02_QSPI_A_DATA2	0x82
-+				MX8MQ_IOMUXC_NAND_DATA03_QSPI_A_DATA3	0x82
-+
-+			>;
-+		};
-+
-+		pinctrl_uart1: uart1grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_UART1_RXD_UART1_DCE_RX		0x49
-+				MX8MQ_IOMUXC_UART1_TXD_UART1_DCE_TX		0x49
-+				MX8MQ_IOMUXC_NAND_CE1_B_GPIO3_IO2		0x19
-+			>;
-+		};
-+
-+		pinctrl_uart4: uart4grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_UART4_TXD_UART4_DCE_TX		0x49
-+				MX8MQ_IOMUXC_UART4_RXD_UART4_DCE_RX		0x49
-+				MX8MQ_IOMUXC_SAI3_TXD_GPIO5_IO1			0x19
-+			>;
-+		};
-+
-+		pinctrl_usdhc1: usdhc1grp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x83
-+				MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xc3
-+				MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xc3
-+				MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xc3
-+				MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xc3
-+				MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xc3
-+				MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xc3
-+				MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xc3
-+				MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xc3
-+				MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xc3
-+				MX8MQ_IOMUXC_SD1_STROBE_USDHC1_STROBE		0x83
-+				MX8MQ_IOMUXC_SD1_RESET_B_USDHC1_RESET_B		0xc1
-+			>;
-+		};
-+
-+		pinctrl_usdhc1_100mhz: usdhc1grp100mhz {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x8d
-+				MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xcd
-+				MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xcd
-+				MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xcd
-+				MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xcd
-+				MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xcd
-+				MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xcd
-+				MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xcd
-+				MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xcd
-+				MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xcd
-+				MX8MQ_IOMUXC_SD1_STROBE_USDHC1_STROBE		0x8d
-+				MX8MQ_IOMUXC_SD1_RESET_B_USDHC1_RESET_B		0xc1
-+			>;
-+		};
-+
-+		pinctrl_usdhc1_200mhz: usdhc1grp200mhz {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x9f
-+				MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xdf
-+				MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xdf
-+				MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xdf
-+				MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xdf
-+				MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xdf
-+				MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xdf
-+				MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xdf
-+				MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xdf
-+				MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xdf
-+				MX8MQ_IOMUXC_SD1_STROBE_USDHC1_STROBE		0x9f
-+				MX8MQ_IOMUXC_SD1_RESET_B_USDHC1_RESET_B		0xc1
-+			>;
-+		};
-+
-+		pinctrl_wdog: wdoggrp {
-+			fsl,pins = <
-+				MX8MQ_IOMUXC_GPIO1_IO02_WDOG1_WDOG_B 0xc6
-+			>;
-+		};
-+	};
-+};
-+
-+&i2c1 {
-+	clock-frequency = <400000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c1>;
-+	status = "okay";
-+
-+	pmic: pfuze100@8 {
-+		compatible = "fsl,pfuze100";
-+		reg = <0x08>;
-+
-+		regulators {
-+			sw1a_reg: sw1ab {
-+				regulator-min-microvolt = <300000>;
-+				regulator-max-microvolt = <1875000>;
-+			};
-+
-+			sw1c_reg: sw1c {
-+				regulator-min-microvolt = <300000>;
-+				regulator-max-microvolt = <1875000>;
-+			};
-+
-+			sw2_reg: sw2 {
-+				regulator-min-microvolt = <800000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-always-on;
-+			};
-+
-+			sw3a_reg: sw3ab {
-+				regulator-min-microvolt = <400000>;
-+				regulator-max-microvolt = <1975000>;
-+				regulator-always-on;
-+			};
-+
-+			sw4_reg: sw4 {
-+				regulator-min-microvolt = <800000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-always-on;
-+			};
-+
-+			swbst_reg: swbst {
-+				regulator-min-microvolt = <5000000>;
-+				regulator-max-microvolt = <5150000>;
-+			};
-+
-+			snvs_reg: vsnvs {
-+				regulator-min-microvolt = <1000000>;
-+				regulator-max-microvolt = <3000000>;
-+				regulator-always-on;
-+			};
-+
-+			vref_reg: vrefddr {
-+				regulator-always-on;
-+			};
-+
-+			vgen1_reg: vgen1 {
-+				regulator-min-microvolt = <800000>;
-+				regulator-max-microvolt = <1550000>;
-+			};
-+
-+			vgen2_reg: vgen2 {
-+				regulator-min-microvolt = <800000>;
-+				regulator-max-microvolt = <1550000>;
-+				regulator-always-on;
-+			};
-+
-+			vgen3_reg: vgen3 {
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-always-on;
-+			};
-+
-+			vgen4_reg: vgen4 {
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-always-on;
-+			};
-+
-+			vgen5_reg: vgen5 {
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-always-on;
-+			};
-+
-+			vgen6_reg: vgen6 {
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3300000>;
-+			};
-+		};
-+	};
-+};
-+
-+&qspi0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_qspi>;
-+	status = "okay";
-+
-+	/* SPI flash; not assembled by default */
-+	n25q256a@0 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		reg = <0>;
-+		compatible = "micron,n25q256a", "jedec,spi-nor";
-+		spi-max-frequency = <29000000>;
-+		status = "disabled";
-+	};
-+};
-+
-+&uart1 { /* console */
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart1>;
-+	assigned-clocks = <&clk IMX8MQ_CLK_UART1>;
-+	assigned-clock-parents = <&clk IMX8MQ_CLK_25M>;
-+	assigned-clock-rates = <25000000>;
-+	status = "okay";
-+};
-+
-+&uart4 { /* ublox BT */
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart4>;
-+	assigned-clocks = <&clk IMX8MQ_CLK_UART4>;
-+	assigned-clock-parents = <&clk IMX8MQ_SYS1_PLL_80M>;
-+	assigned-clock-rates = <80000000>;
-+	status = "okay";
-+};
-+
-+&usdhc1 {
-+	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-+	pinctrl-0 = <&pinctrl_usdhc1>;
-+	pinctrl-1 = <&pinctrl_usdhc1_100mhz>;
-+	pinctrl-2 = <&pinctrl_usdhc1_200mhz>;
-+	bus-width = <8>;
-+	non-removable;
-+	status = "okay";
-+};
-+
-+&pgc_vpu {
-+	power-supply = <&sw1c_reg>;
-+};
-+
-+&wdog1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_wdog>;
-+	fsl,ext-reset-output;
-+	status = "okay";
-+};
--- 
-2.20.1
-
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
