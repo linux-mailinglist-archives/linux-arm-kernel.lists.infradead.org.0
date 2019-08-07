@@ -2,58 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D1198492E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 12:13:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9692A8493E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 12:16:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MKTFnFbU2uhM4RG60ZcF1zwAi7bP7rmGrkHeAvZNZLs=; b=oUIgRicD74KL+JZlILQ/JxEFq
-	5PtPe66rJ1ytJeUOwGTQkDPpof1DpmFw8OBOqbAqqOWedsmwoN8tDEFBteNWrN/ZeOjNAKks+tX7i
-	Wmx7ocrcDMbDdtaVSvO+ywsf6H/NRHHzmcLEdQjvCg76d6yNvku3EQQBqrYYqPq8rS+oy0uun4E3o
-	kAEZdjPBlws5Y/pZ5SlNRM0l5mzppJIxynAZh5lFWqIMvefMqsHLgfgrM02Ls1CqqeDeC1bdplEH2
-	ySWfPeEwgJa62b9nru2VeoFVs/6DiTNseiObRrXNXYH6OElOFG07TJSkRdv7N3yno7c/chSj7Ghjq
-	nGdMJrNZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fUTFbrM2/b1bwlydoDPurSszf+rTKjPvn7TouvLDynQ=; b=MCBDqasmCdUtQf
+	QmjuYv75PRTlIPUM22IqnTR/9shpgc3GXfyoLz48HfDgVaaZrLWaBzYK/jLf0pzfdMIOVqRvMlC9w
+	+/LxArQ2QI/vjUmQKHvaj1eKoJFLLHmYo6ukMwFPOvlua/p/nWtr7F6dYETYDe+w/8xCLDTEKQOBF
+	eeGRyND4Thzbl1CV9ZAI8czaJyB3dd7aIVi+fxNPZB4+kMSiNbLrRz5RlnjaJzvwTBac9zEYtzvGL
+	c+Yr67VbCQX2n7pn8chpgPFJBySrl2c2ItJ7sofDMbxVqQwt6LXy5FdcaHGoaNJWMnAiH3vjjGlym
+	ZrQLEzdxJ91PpJEFMGVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvIwQ-00041Z-IB; Wed, 07 Aug 2019 10:13:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvIw2-00040o-Ah
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 10:12:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AFCC028;
- Wed,  7 Aug 2019 03:12:42 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DE71B3F575;
- Wed,  7 Aug 2019 03:12:40 -0700 (PDT)
-Subject: Re: [PATCHv9 1/3] arm64: dts: qcom: sdm845: Add Coresight support
-To: saiprakash.ranjan@codeaurora.org, mathieu.poirier@linaro.org,
- bjorn.andersson@linaro.org, leo.yan@linaro.org,
- alexander.shishkin@linux.intel.com, agross@kernel.org,
- david.brown@linaro.org, mark.rutland@arm.com
-References: <cover.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <be6d77eb6c7498df09d04e0a369d4d65b38f4b8e.1564550873.git.saiprakash.ranjan@codeaurora.org>
- <b50c06d4-8298-7abe-4442-2aff336509f5@codeaurora.org>
- <b5cb08ef-ca2f-e852-f234-d0f693b58596@codeaurora.org>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <adc1ac7a-877a-73cf-4051-4e3b4017799b@arm.com>
-Date: Wed, 7 Aug 2019 11:12:39 +0100
+	id 1hvIzX-0005jg-Dc; Wed, 07 Aug 2019 10:16:23 +0000
+Received: from lb3-smtp-cloud9.xs4all.net ([194.109.24.30])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvIzI-0005ik-CN
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 10:16:10 +0000
+Received: from [IPv6:2001:983:e9a7:1:9c05:4bbc:890e:7747]
+ ([IPv6:2001:983:e9a7:1:9c05:4bbc:890e:7747])
+ by smtp-cloud9.xs4all.net with ESMTPA
+ id vIz9hkTa7AffAvIzBh7ksg; Wed, 07 Aug 2019 12:16:01 +0200
+Subject: Re: [PATCH v4 0/3] DCMI bridge support
+To: Hugues Fruchet <hugues.fruchet@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>
+References: <1564577783-18627-1-git-send-email-hugues.fruchet@st.com>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <28a2a9ac-d5b9-a312-616a-620e0385cf66@xs4all.nl>
+Date: Wed, 7 Aug 2019 12:15:59 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <b5cb08ef-ca2f-e852-f234-d0f693b58596@codeaurora.org>
+In-Reply-To: <1564577783-18627-1-git-send-email-hugues.fruchet@st.com>
 Content-Language: en-US
+X-CMAE-Envelope: MS4wfCP9LqKEIJwW0pIhFdbw6tGpB9o9mbS/qErOZQWhGe5Bzq7r6mVey37KBsvPv5vRS+rwW4N5qvZSOS4HYAHC9TbGd7KxoLiLiXGiTEb4+kK7x5xBPXQF
+ BEKx6sgrIvZ0Uk2csPHS/u6dM4/EZ5RzZJMoc3sSL2Ftnd5D30a8380raWQ37PDsgqgo+XwyUsC8ecezUORYKUaiu8AlQFpK7NcZ2kqkqGNoNRUqkL5lv6/E
+ 6rGGcxbPLAgjVmhsp7xtoJB/0/1nhlIxo/nNlOLvN8hVjXTEb7mxhtCkYIC4PnrI0k7Uco9RR/DSvYRlVtiOp0g8QbNMcYWGmMKQMmlbdATwpMwb6+o9/PKB
+ 0f7OS+bm6jQC/JXUbtu66bq5e6dE+yd97Z+6+FMEUJMTDM6wT3RRAIFhkLAiFFivFkidzKEf81ZgWil9qupnniOLQrlviMaJxsrpGfXVuc/yafzDWGVoJxqP
+ D3R2drlaxdCqAOIL1KqFuKS83fDDdoqFITo/xflSSwF5DDCAWnMaPTA/NzI97hMd3xRm78K1xATAN3zdgSDiuBna7qJ7k6d/keAn6jL4hVk/lTEMkAb4f45i
+ 2MTqZy5jWM31PmqA90PGPUrXraELt3plhtT7xGq0dbSWVDd8k3RdHKG0EZyFASMtmNcJXDWCzo/KHUDfoovEGU1MmAHiSUcGg8zzov+mAvBSslhhkZbWLqGt
+ AVIwa0VN8r0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_031246_413203_D4FF329D 
-X-CRM114-Status: GOOD (  15.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190807_031608_613808_ABD80CB0 
+X-CRM114-Status: GOOD (  14.53  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.30 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,40 +71,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rnayak@codeaurora.org, marc.w.gonzalez@free.fr,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- sibis@codeaurora.org, vivek.gautam@codeaurora.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mickael GUENE <mickael.guene@st.com>, linux-kernel@vger.kernel.org,
+ Philippe CORNU <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U2FpLAoKT24gMDcvMDgvMjAxOSAxMTowOCwgU2FpIFByYWthc2ggUmFuamFuIHdyb3RlOgo+IEhp
-IFN1enVraSwKPiAKPiBPbiA3LzMxLzIwMTkgMTE6MzUgQU0sIFNhaSBQcmFrYXNoIFJhbmphbiB3
-cm90ZToKPj4gSGkgU3V6dWtpLAo+Pgo+PiBPbiA3LzMxLzIwMTkgMTE6MjggQU0sIFNhaSBQcmFr
-YXNoIFJhbmphbiB3cm90ZToKPj4+IEFkZCBjb3Jlc2lnaHQgY29tcG9uZW50cyBmb3VuZCBvbiBR
-dWFsY29tbSBTRE04NDUgU29DLgo+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IFNhaSBQcmFrYXNoIFJh
-bmphbiA8c2FpcHJha2FzaC5yYW5qYW5AY29kZWF1cm9yYS5vcmc+Cj4+PiBSZXZpZXdlZC1ieTog
-TWF0aGlldSBQb2lyaWVyIDxtYXRoaWV1LnBvaXJpZXJAbGluYXJvLm9yZz4KPj4+IEFja2VkLWJ5
-OiBTdXp1a2kgSyBQb3Vsb3NlIDxzdXp1a2kucG91bG9zZUBhcm0uY29tPgo+Pj4gLS0tCj4+PiAg
-wqAgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL3NkbTg0NS5kdHNpIHwgNDUxICsrKysrKysrKysr
-KysrKysrKysrKysrKysrKwo+Pj4gIMKgIDEgZmlsZSBjaGFuZ2VkLCA0NTEgaW5zZXJ0aW9ucygr
-KQo+Pgo+PiBJIGhhdmUgdGVzdGVkIGNvcmVzaWdodCB3aXRoIHNjYXR0ZXIgZ2F0aGVyIG9uIFNE
-TTg0NSBNVFAgYW5kIE1TTTg5OTYKPj4gYmFzZWQgREI4MjBjIGJvYXJkIGFuZCBwb3N0ZWQgdGhl
-IHJlc3VsdHMgaW4KPj4KPj4gLSBodHRwczovL2dpdGh1Yi5jb20vc2FpcHJha2FzaC1yYW5qYW4v
-Y29yZXNpZ2h0LXRlc3QtcmVzdWx0cwo+Pgo+PiBQbGVhc2UgbGV0IG1lIGtub3cgaWYgeW91IG5l
-ZWQgc29tZSBhZGRpdGlvbmFsIHRlc3RpbmcgZG9uZS4KPj4KPj4gSSBjb3VsZCBub3QgcGVyZm9y
-bSBjb3Jlc2lnaHQgdGVzdHMgb24gTVNNODk5OCBNVFAgd2l0aCBsYXRlc3QgYnVpbGQKPj4gYXMg
-aXQgd2FzIHJlc3VsdGluZyBpbiBjcmFzaCBkdWUgdG8gc29tZSBBSEIgdGltZW91dHMuIFRoaXMg
-d2FzIG5vdAo+PiBkdWUgdG8gc2NhdHRlci1nYXRoZXIgYW5kIG1vc3RseSBsaWtlbHkgdGhlIHBy
-b2JsZW0gd2l0aCB0aGUgYnVpbGQuCj4+IE1heWJlIHdlIGNhbiBrZWVwIG1zbTg5OTgtY29yZXNp
-Z2h0IG9uIGhvbGQ/Cj4+Cj4+IEJUVywgcGF0Y2hlcyBhcmUgYmFzZWQgb24gbGludXgtbmV4dC4K
-Pj4KPiAKPiBBbnkgbW9yZSB0ZXN0cyB5b3Ugd291bGQgd2FudCBtZSB0byBydW4/CgpBcG9sb2dp
-ZXMgZm9yIHRoZSBsYXRlIHJlc3BvbnNlLiBJIGhhZCBzZWVuIHRoZSByZXN1bHRzIGFuZCB0aGV5
-IGxvb2sgZmluZS4KSSB3YXMgaGl0dGluZyBzb21lIGlzc3Vlcywgd2hpY2ggSSBoYXZlIG5vdyBy
-b290IGNhdXNlZCB0byBmaXJtd2FyZSBpc3N1ZXMuClNvIHdlIGFyZSBnb29kIHRvIGdvLgoKU3V6
-dWtpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+Hi Hugues,
+
+Can you provide the output of the most recent v4l2-compliance?
+
+Use 'v4l2-compliance -s'.
+
+Also, just to confirm, with this v4 there are no /dev/mediaX or
+/dev/v4l-subdevX devices created anymore, right?
+
+This v4 looks good to me, I just want to have these final checks
+done.
+
+Regards,
+
+	Hans
+
+On 7/31/19 2:56 PM, Hugues Fruchet wrote:
+> This patch serie allows to connect non-parallel camera sensor to
+> DCMI thanks to a bridge connected in between such as STMIPID02 [1].
+> 
+> Media controller support is introduced first, then support of
+> several sub-devices within pipeline with dynamic linking
+> between them.
+> In order to keep backward compatibility with applications
+> relying on V4L2 interface only, format set on video node
+> is propagated to all sub-devices connected to camera interface.
+> 
+> [1] https://www.spinics.net/lists/devicetree/msg278002.html
+> 
+> ===========
+> = history =
+> ===========
+> version 4:
+>   - Also drop subdev nodes registry as suggested by Hans:
+>     https://www.spinics.net/lists/arm-kernel/msg743375.html
+> 
+> version 3:
+>   - Drop media device registry to not expose media controller
+>     interface to userspace as per Laurent' suggestion:
+>     https://www.spinics.net/lists/linux-media/msg153417.html
+>   - Prefer "source" instead of "sensor" and keep it in 
+>     dcmi_graph_entity struct, move asd as first member
+>     of struct as per Sakari' suggestion:
+>     https://www.spinics.net/lists/linux-media/msg153119.html
+>   - Drop dcmi_graph_deinit() as per Sakari' suggestion:
+>     https://www.spinics.net/lists/linux-media/msg153417.html
+> 
+> version 2:
+>   - Fix bus_info not consistent between media and V4L:
+>     https://www.spinics.net/lists/arm-kernel/msg717676.html
+>   - Propagation of format set on video node to the sub-devices
+>     chain connected on camera interface
+> 
+> version 1:
+>   - Initial submission
+> 
+> Hugues Fruchet (3):
+>   media: stm32-dcmi: improve sensor subdev naming
+>   media: stm32-dcmi: add media controller support
+>   media: stm32-dcmi: add support of several sub-devices
+> 
+>  drivers/media/platform/Kconfig            |   2 +-
+>  drivers/media/platform/stm32/stm32-dcmi.c | 283 +++++++++++++++++++++++++-----
+>  2 files changed, 236 insertions(+), 49 deletions(-)
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
