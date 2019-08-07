@@ -2,88 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E185083E7E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 02:38:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8531783E84
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 02:46:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UK0H+D8PJLxdTHHp51frs3Y4V2ToI7XD+FEhMCmwvP0=; b=qnsUTZJ2Mzbbwh
-	nCgNcNzyq7eAOD1EKBapFzNySAkzv9tOe0v9F1S5kj/za8L5xW40TE8VBskWY3DonVB/ESgytXTA5
-	6qzCuYWL7tuS45MNTJM/k0U0CeAFlzXen9ry8KsMQUt3l20ldv/bWKIZnbc8hTYL55/L0PFx6fkqV
-	4B0H1W+6ogeJ1gtKCNkIJ5MgVaBCMQ7UbtlcAdPRiBUAoRWKkWMZZNcUwR2sB9r7spVpgmjaVx1U1
-	/C0KX/O4AUxTPTworRyo+p/879edmPfIJtIjxEWPoaYWzDRFEzcpASv+WOtZjnsBs+S0hTNGEcEpH
-	XRz1llSLM19rQ4fapkRw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:Subject:Mime-Version
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oAUzfYYJYiDaAy7Zfo56iFhKtrWdovrono/FeQATsTc=; b=aNZWScZXAJ9ScA
+	qhxjgUX5rHcXJm0dQ02eapH4/Ee3u3yRNVB6qaZe04UtekFuyH4kvxMhKss+egsP1xY1RXFk7c8qD
+	R//lq7eX58UcR3wUy0y0KlWYZyyZr0Sr17ZR9eTQ+pAMVYZUMM0wyCvPCTBsd+beJQtPXv0I85miB
+	Rs2Y+uip1XRt5ccb8UsFfH4uVady8vGzmksk2414eB1vbNFd4G0PSdfn24dsPkVfRMWMaLb7Te5kD
+	DobqQmkIbga0GAPfXiDePh7NhkAmWjdo7CWaMURSAJa0oKpoiQ/dDnfcrOTR8CGUoHxUIpjJCDTfj
+	qRJx2plrn+/P56r8yk5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv9ya-0001Aq-EA; Wed, 07 Aug 2019 00:38:48 +0000
-Received: from new1-smtp.messagingengine.com ([66.111.4.221])
+	id 1hvA67-0004FS-HF; Wed, 07 Aug 2019 00:46:35 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv9xv-0000ly-Fy
- for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 00:38:09 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id E0B2F27D7;
- Tue,  6 Aug 2019 20:38:06 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Tue, 06 Aug 2019 20:38:06 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=0AhfLkPhnd4xC
- wAQK+J4LZ4tY5K4fs7DvSdi94mwKvI=; b=lq3qZoilyXTaJIGwUihhB5rPeRlpk
- 2SU4LTn//Gah2WBfO1mgeKgoOG54UkdAiO5LDOb35KIvGJlDl8ur8fTBLEGMca8z
- jkxAHb5EOI03OrpG+AXuRpBnAo1Di23DJh7RWST/eW5QbpqOGdmjUkeZ/VJ4izd9
- GaeX3kRVDWCYmVwB2xniee1A1vNrbf570MzxWGcnOJH9fZ1IjqmWyFMZOm5ygvRR
- htA5NwleKFsVwIjdQ2YDiNSIh+bH5RJd5mgHq8CZIcu2hZ8f0EqRyhap+1yywvQ8
- F9PjEq1pk4LRsbvgUtVIqzwy0LV7/EZCwgOAapWpB54TAiSEeLwx7zYNQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=0AhfLkPhnd4xCwAQK+J4LZ4tY5K4fs7DvSdi94mwKvI=; b=nMvXkW+a
- tVR1nh8jQRgOAZVrBVjWtyuxWyiVepuNRVRa/gOHMLujZIn4GjlrMnRby78Bwyri
- u7uXM37oqYekV4dqDnhSXTWFSVeRnDDbXc1S+dD6oF3Y7FHwmTYobvnPVAkIRbTl
- PLmrijfH8ZTXTh4mSo1Oq6Q6M9uAvov5V+DmI6DGEdyzYr6oaT2QqwrA8WaPm0TK
- Jg5J71japt4zzF9iJQXNRRv27nWOdp4M5Msw3GetiIStLtYmorZEy/7E+hdfhigI
- FDyTbRiqVqtOg1AOyu6q37N32/qdUQ+NITqVDnIoSYVtnBVxwX7HlTMv1eqMi7sN
- +gMmksQP+e96jQ==
-X-ME-Sender: <xms:bh1KXXl0CB347ZbHuPkBuNTx_MS-jhhDSqw6J-4jrwNQt_R5Ke7IUA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudduuddgfeejucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgjfhgggfestdekre
- dtredttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegr
- jhdrihgurdgruheqnecukfhppedvtddvrdekuddrudekrdeftdenucfrrghrrghmpehmrg
- hilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhiiigv
- pedt
-X-ME-Proxy: <xmx:bh1KXWb3AVFyi12UXTEaQeDAxK09XYAlF9WtaspZprD4ToVieliKGA>
- <xmx:bh1KXU5E8_xAepe445YJt9RNtkYnQJgouhRRuL_FJLg8W3KJr6vNmg>
- <xmx:bh1KXX9sri6BZDpo6NXHIFS0zxl_3yLSjDc5Fl-OG5ZQWamLZmmUkA>
- <xmx:bh1KXUHPudhEGSTx__Y3DReRu204Wc1l_xBL7hBLVBqVKdmhD1_AsQ>
-Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id 84135380086;
- Tue,  6 Aug 2019 20:38:02 -0400 (EDT)
-From: Andrew Jeffery <andrew@aj.id.au>
-To: linux-mmc@vger.kernel.org
-Subject: [PATCH v5 2/2] mmc: Add support for the ASPEED SD controller
-Date: Wed,  7 Aug 2019 10:06:29 +0930
-Message-Id: <20190807003629.2974-3-andrew@aj.id.au>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190807003629.2974-1-andrew@aj.id.au>
-References: <20190807003629.2974-1-andrew@aj.id.au>
-MIME-Version: 1.0
+ id 1hvA5v-0004Ek-C3
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 00:46:25 +0000
+Received: by mail-qt1-x843.google.com with SMTP id z4so86683775qtc.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 06 Aug 2019 17:46:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=from:content-transfer-encoding:mime-version:subject:message-id:date
+ :cc:to; bh=+nZvNNbEUa3hT+1r/NMmepJfUlIswUH5GSUBiFbLimc=;
+ b=ljHODMp9DZCsdja6NR6A7nf3q2kLMF/lCltRfg1f0HZyEoXSkcmg73nt7DK7RxaOlJ
+ +CAHCuqZ8D0BABrcP1lImp4Q5ANPhJkTRvY0WmrwTa66DQA+bAeBqAPzntQJZLsUMrnk
+ YvfK/fezKA3aU8oQshm1/gaBqiZpPGP/v53GY9Oufq80wrlLfoX2SnQQSApqhIoRh2yT
+ zlKiaHB6ulXLqkGaUOs9N244Yj0NYr5ZrNX1xt5przHXG34BBzwQjxtHuHCUMJUbGemy
+ 7kffk+msubnkM9Ooeo10Rqip+wASxJuyaiZdR43KVXoqBK6mKGHRuakCyB0jBFQubvrC
+ enyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:content-transfer-encoding:mime-version
+ :subject:message-id:date:cc:to;
+ bh=+nZvNNbEUa3hT+1r/NMmepJfUlIswUH5GSUBiFbLimc=;
+ b=ALsfFmcOhcB+COUKWSvvuj3VVB/eBmMr8lqU7MImFnOKZtgrVevMM810UqOP/KmnQf
+ HyJjxKi6gADimbkKgpmUgFPtUaWL47ra7LIRxDz2XkdbsuHWRJCu6pFGB0kg9M63vZk7
+ 5LqanuCSc9C4DgmtvJP185F58TaPCbXd6FVQy4zB/I1fcoVxc0ZLvHhqvH1tmhZSxFIf
+ j/IiAiNswrxC5BGzR20sre/+tBQDlBOuEniW6Sn1L84XHDhXUyVjF3EcW3R7p0rKaOFu
+ UCLTWYrvMM5WcHqosII41iOml7umWj1IXYajKmiaBTBxoj4FX/vcT7k1epUJ9EUiWlJ2
+ ryBQ==
+X-Gm-Message-State: APjAAAUVhg5nLWHENa3RntHeLRMMxWYW8EM7n8360AMRRbj3w91ShstQ
+ 4/rABapxPaz9RAq0QXKOS9Sw8w==
+X-Google-Smtp-Source: APXvYqzfn3s4HDkpVhIAkiGkxMbioyoRgDU/o7hx7RXiLskgv/KOyg/Yc93FNgn8l7xpAog6HFdPsw==
+X-Received: by 2002:a0c:ae24:: with SMTP id y33mr5812928qvc.106.1565138781643; 
+ Tue, 06 Aug 2019 17:46:21 -0700 (PDT)
+Received: from [192.168.1.153] (pool-71-184-117-43.bstnma.fios.verizon.net.
+ [71.184.117.43])
+ by smtp.gmail.com with ESMTPSA id l19sm49124940qtb.6.2019.08.06.17.46.20
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 06 Aug 2019 17:46:21 -0700 (PDT)
+From: Qian Cai <cai@lca.pw>
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+Subject: "of/platform: Pause/resume sync state during init and
+ of_platform_populate()" with a warning on arm64
+Message-Id: <B4B0AD7F-FA0F-4DA0-9A8B-EAE1CEE11759@lca.pw>
+Date: Tue, 6 Aug 2019 20:46:20 -0400
+To: Saravana Kannan <saravanak@google.com>
+X-Mailer: Apple Mail (2.3445.104.11)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_173807_975362_A7A66519 
-X-CRM114-Status: GOOD (  21.30  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190806_174623_482067_65EC1F8C 
+X-CRM114-Status: UNSURE (   7.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.221 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -102,444 +96,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
- linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
- ryanchen.aspeed@gmail.com, adrian.hunter@intel.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a minimal driver for ASPEED's SD controller, which exposes two
-SDHCIs.
-
-The ASPEED design implements a common register set for the SDHCIs, and
-moves some of the standard configuration elements out to this common
-area (e.g. 8-bit mode, and card detect configuration which is not
-currently supported).
-
-The SD controller has a dedicated hardware interrupt that is shared
-between the slots. The common register set exposes information on which
-slot triggered the interrupt; early revisions of the patch introduced an
-irqchip for the register, but reality is it doesn't behave as an
-irqchip, and the result fits awkwardly into the irqchip APIs. Instead
-I've taken the simple approach of using the IRQ as a shared IRQ with
-some minor performance impact for the second slot.
-
-Ryan was the original author of the patch - I've taken his work and
-massaged it to drop the irqchip support and rework the devicetree
-integration. The driver has been smoke tested under qemu against a
-minimal SD controller model and lightly tested on an ast2500-evb.
-
-Signed-off-by: Ryan Chen <ryanchen.aspeed@gmail.com>
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-Acked-by: Adrian Hunter <adrian.hunter@intel.com>
-
----
-
-v5:
-* Cleanup sdhci driver on registration failure
-
-v4: No change
-
-v2:
-* Add AST2600 compatible
-* Drop SDHCI_QUIRK2_CLOCK_DIV_ZERO_BROKEN
-* Ensure slot number is valid
-* Fix build with CONFIG_MODULES
-* Fix module license string
-* Non-PCI devices won't die
-* Rename aspeed_sdc_configure_8bit_mode()
-* Rename aspeed_sdhci_pdata
-* Switch to sdhci_enable_clk()
-* Use PTR_ERR() on the right `struct platform_device *`
----
- drivers/mmc/host/Kconfig           |  12 ++
- drivers/mmc/host/Makefile          |   1 +
- drivers/mmc/host/sdhci-of-aspeed.c | 332 +++++++++++++++++++++++++++++
- 3 files changed, 345 insertions(+)
- create mode 100644 drivers/mmc/host/sdhci-of-aspeed.c
-
-diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
-index 14d89a108edd..0f8a230de2f3 100644
---- a/drivers/mmc/host/Kconfig
-+++ b/drivers/mmc/host/Kconfig
-@@ -154,6 +154,18 @@ config MMC_SDHCI_OF_ARASAN
- 
- 	  If unsure, say N.
- 
-+config MMC_SDHCI_OF_ASPEED
-+	tristate "SDHCI OF support for the ASPEED SDHCI controller"
-+	depends on MMC_SDHCI_PLTFM
-+	depends on OF
-+	help
-+	  This selects the ASPEED Secure Digital Host Controller Interface.
-+
-+	  If you have a controller with this interface, say Y or M here. You
-+	  also need to enable an appropriate bus interface.
-+
-+	  If unsure, say N.
-+
- config MMC_SDHCI_OF_AT91
- 	tristate "SDHCI OF support for the Atmel SDMMC controller"
- 	depends on MMC_SDHCI_PLTFM
-diff --git a/drivers/mmc/host/Makefile b/drivers/mmc/host/Makefile
-index 73578718f119..390ee162fe71 100644
---- a/drivers/mmc/host/Makefile
-+++ b/drivers/mmc/host/Makefile
-@@ -84,6 +84,7 @@ obj-$(CONFIG_MMC_SDHCI_ESDHC_IMX)	+= sdhci-esdhc-imx.o
- obj-$(CONFIG_MMC_SDHCI_DOVE)		+= sdhci-dove.o
- obj-$(CONFIG_MMC_SDHCI_TEGRA)		+= sdhci-tegra.o
- obj-$(CONFIG_MMC_SDHCI_OF_ARASAN)	+= sdhci-of-arasan.o
-+obj-$(CONFIG_MMC_SDHCI_OF_ASPEED)	+= sdhci-of-aspeed.o
- obj-$(CONFIG_MMC_SDHCI_OF_AT91)		+= sdhci-of-at91.o
- obj-$(CONFIG_MMC_SDHCI_OF_ESDHC)	+= sdhci-of-esdhc.o
- obj-$(CONFIG_MMC_SDHCI_OF_HLWD)		+= sdhci-of-hlwd.o
-diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
-new file mode 100644
-index 000000000000..8bb095ca2fa9
---- /dev/null
-+++ b/drivers/mmc/host/sdhci-of-aspeed.c
-@@ -0,0 +1,332 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/* Copyright (C) 2019 ASPEED Technology Inc. */
-+/* Copyright (C) 2019 IBM Corp. */
-+
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/device.h>
-+#include <linux/io.h>
-+#include <linux/mmc/host.h>
-+#include <linux/module.h>
-+#include <linux/of_address.h>
-+#include <linux/of.h>
-+#include <linux/of_platform.h>
-+#include <linux/platform_device.h>
-+#include <linux/spinlock.h>
-+
-+#include "sdhci-pltfm.h"
-+
-+#define ASPEED_SDC_INFO		0x00
-+#define   ASPEED_SDC_S1MMC8	BIT(25)
-+#define   ASPEED_SDC_S0MMC8	BIT(24)
-+
-+struct aspeed_sdc {
-+	struct clk *clk;
-+	struct resource *res;
-+
-+	spinlock_t lock;
-+	void __iomem *regs;
-+};
-+
-+struct aspeed_sdhci {
-+	struct aspeed_sdc *parent;
-+	u32 width_mask;
-+};
-+
-+static void aspeed_sdc_configure_8bit_mode(struct aspeed_sdc *sdc,
-+					   struct aspeed_sdhci *sdhci,
-+					   bool bus8)
-+{
-+	u32 info;
-+
-+	/* Set/clear 8 bit mode */
-+	spin_lock(&sdc->lock);
-+	info = readl(sdc->regs + ASPEED_SDC_INFO);
-+	if (bus8)
-+		info |= sdhci->width_mask;
-+	else
-+		info &= ~sdhci->width_mask;
-+	writel(info, sdc->regs + ASPEED_SDC_INFO);
-+	spin_unlock(&sdc->lock);
-+}
-+
-+static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
-+{
-+	int div;
-+	u16 clk;
-+
-+	if (clock == host->clock)
-+		return;
-+
-+	sdhci_writew(host, 0, SDHCI_CLOCK_CONTROL);
-+
-+	if (clock == 0)
-+		goto out;
-+
-+	for (div = 1; div < 256; div *= 2) {
-+		if ((host->max_clk / div) <= clock)
-+			break;
-+	}
-+	div >>= 1;
-+
-+	clk = div << SDHCI_DIVIDER_SHIFT;
-+
-+	sdhci_enable_clk(host, clk);
-+
-+out:
-+	host->clock = clock;
-+}
-+
-+static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
-+{
-+	struct sdhci_pltfm_host *pltfm_priv;
-+	struct aspeed_sdhci *aspeed_sdhci;
-+	struct aspeed_sdc *aspeed_sdc;
-+	u8 ctrl;
-+
-+	pltfm_priv = sdhci_priv(host);
-+	aspeed_sdhci = sdhci_pltfm_priv(pltfm_priv);
-+	aspeed_sdc = aspeed_sdhci->parent;
-+
-+	/* Set/clear 8-bit mode */
-+	aspeed_sdc_configure_8bit_mode(aspeed_sdc, aspeed_sdhci,
-+				       width == MMC_BUS_WIDTH_8);
-+
-+	/* Set/clear 1 or 4 bit mode */
-+	ctrl = sdhci_readb(host, SDHCI_HOST_CONTROL);
-+	if (width == MMC_BUS_WIDTH_4)
-+		ctrl |= SDHCI_CTRL_4BITBUS;
-+	else
-+		ctrl &= ~SDHCI_CTRL_4BITBUS;
-+	sdhci_writeb(host, ctrl, SDHCI_HOST_CONTROL);
-+}
-+
-+static const struct sdhci_ops aspeed_sdhci_ops = {
-+	.set_clock = aspeed_sdhci_set_clock,
-+	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
-+	.set_bus_width = aspeed_sdhci_set_bus_width,
-+	.get_timeout_clock = sdhci_pltfm_clk_get_max_clock,
-+	.reset = sdhci_reset,
-+	.set_uhs_signaling = sdhci_set_uhs_signaling,
-+};
-+
-+static const struct sdhci_pltfm_data aspeed_sdhci_pdata = {
-+	.ops = &aspeed_sdhci_ops,
-+	.quirks = SDHCI_QUIRK_CAP_CLOCK_BASE_BROKEN,
-+};
-+
-+static inline int aspeed_sdhci_calculate_slot(struct aspeed_sdhci *dev,
-+					      struct resource *res)
-+{
-+	resource_size_t delta;
-+
-+	if (!res || resource_type(res) != IORESOURCE_MEM)
-+		return -EINVAL;
-+
-+	if (res->start < dev->parent->res->start)
-+		return -EINVAL;
-+
-+	delta = res->start - dev->parent->res->start;
-+	if (delta & (0x100 - 1))
-+		return -EINVAL;
-+
-+	return (delta / 0x100) - 1;
-+}
-+
-+static int aspeed_sdhci_probe(struct platform_device *pdev)
-+{
-+	struct sdhci_pltfm_host *pltfm_host;
-+	struct aspeed_sdhci *dev;
-+	struct sdhci_host *host;
-+	struct resource *res;
-+	int slot;
-+	int ret;
-+
-+	host = sdhci_pltfm_init(pdev, &aspeed_sdhci_pdata, sizeof(*dev));
-+	if (IS_ERR(host))
-+		return PTR_ERR(host);
-+
-+	pltfm_host = sdhci_priv(host);
-+	dev = sdhci_pltfm_priv(pltfm_host);
-+	dev->parent = dev_get_drvdata(pdev->dev.parent);
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	slot = aspeed_sdhci_calculate_slot(dev, res);
-+
-+	if (slot < 0)
-+		return slot;
-+	else if (slot >= 2)
-+		return -EINVAL;
-+
-+	dev_info(&pdev->dev, "Configuring for slot %d\n", slot);
-+	dev->width_mask = !slot ? ASPEED_SDC_S0MMC8 : ASPEED_SDC_S1MMC8;
-+
-+	sdhci_get_of_property(pdev);
-+
-+	pltfm_host->clk = devm_clk_get(&pdev->dev, NULL);
-+	if (IS_ERR(pltfm_host->clk))
-+		return PTR_ERR(pltfm_host->clk);
-+
-+	ret = clk_prepare_enable(pltfm_host->clk);
-+	if (ret) {
-+		dev_err(&pdev->dev, "Unable to enable SDIO clock\n");
-+		goto err_pltfm_free;
-+	}
-+
-+	ret = mmc_of_parse(host->mmc);
-+	if (ret)
-+		goto err_sdhci_add;
-+
-+	ret = sdhci_add_host(host);
-+	if (ret)
-+		goto err_sdhci_add;
-+
-+	return 0;
-+
-+err_sdhci_add:
-+	clk_disable_unprepare(pltfm_host->clk);
-+err_pltfm_free:
-+	sdhci_pltfm_free(pdev);
-+	return ret;
-+}
-+
-+static int aspeed_sdhci_remove(struct platform_device *pdev)
-+{
-+	struct sdhci_pltfm_host *pltfm_host;
-+	struct sdhci_host *host;
-+	int dead = 0;
-+
-+	host = platform_get_drvdata(pdev);
-+	pltfm_host = sdhci_priv(host);
-+
-+	sdhci_remove_host(host, dead);
-+
-+	clk_disable_unprepare(pltfm_host->clk);
-+
-+	sdhci_pltfm_free(pdev);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id aspeed_sdhci_of_match[] = {
-+	{ .compatible = "aspeed,ast2400-sdhci", },
-+	{ .compatible = "aspeed,ast2500-sdhci", },
-+	{ .compatible = "aspeed,ast2600-sdhci", },
-+	{ }
-+};
-+
-+static struct platform_driver aspeed_sdhci_driver = {
-+	.driver		= {
-+		.name	= "sdhci-aspeed",
-+		.of_match_table = aspeed_sdhci_of_match,
-+	},
-+	.probe		= aspeed_sdhci_probe,
-+	.remove		= aspeed_sdhci_remove,
-+};
-+
-+static int aspeed_sdc_probe(struct platform_device *pdev)
-+
-+{
-+	struct device_node *parent, *child;
-+	struct aspeed_sdc *sdc;
-+	int ret;
-+
-+	sdc = devm_kzalloc(&pdev->dev, sizeof(*sdc), GFP_KERNEL);
-+	if (!sdc)
-+		return -ENOMEM;
-+
-+	spin_lock_init(&sdc->lock);
-+
-+	sdc->clk = devm_clk_get(&pdev->dev, NULL);
-+	if (IS_ERR(sdc->clk))
-+		return PTR_ERR(sdc->clk);
-+
-+	ret = clk_prepare_enable(sdc->clk);
-+	if (ret) {
-+		dev_err(&pdev->dev, "Unable to enable SDCLK\n");
-+		return ret;
-+	}
-+
-+	sdc->res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	sdc->regs = devm_ioremap_resource(&pdev->dev, sdc->res);
-+	if (IS_ERR(sdc->regs)) {
-+		ret = PTR_ERR(sdc->regs);
-+		goto err_clk;
-+	}
-+
-+	dev_set_drvdata(&pdev->dev, sdc);
-+
-+	parent = pdev->dev.of_node;
-+	for_each_available_child_of_node(parent, child) {
-+		struct platform_device *cpdev;
-+
-+		cpdev = of_platform_device_create(child, NULL, &pdev->dev);
-+		if (IS_ERR(cpdev)) {
-+			of_node_put(child);
-+			ret = PTR_ERR(cpdev);
-+			goto err_clk;
-+		}
-+	}
-+
-+	return 0;
-+
-+err_clk:
-+	clk_disable_unprepare(sdc->clk);
-+	return ret;
-+}
-+
-+static int aspeed_sdc_remove(struct platform_device *pdev)
-+{
-+	struct aspeed_sdc *sdc = dev_get_drvdata(&pdev->dev);
-+
-+	clk_disable_unprepare(sdc->clk);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id aspeed_sdc_of_match[] = {
-+	{ .compatible = "aspeed,ast2400-sd-controller", },
-+	{ .compatible = "aspeed,ast2500-sd-controller", },
-+	{ .compatible = "aspeed,ast2600-sd-controller", },
-+	{ }
-+};
-+
-+MODULE_DEVICE_TABLE(of, aspeed_sdc_of_match);
-+
-+static struct platform_driver aspeed_sdc_driver = {
-+	.driver		= {
-+		.name	= "sd-controller-aspeed",
-+		.pm	= &sdhci_pltfm_pmops,
-+		.of_match_table = aspeed_sdc_of_match,
-+	},
-+	.probe		= aspeed_sdc_probe,
-+	.remove		= aspeed_sdc_remove,
-+};
-+
-+static int __init aspeed_sdc_init(void)
-+{
-+	int rc;
-+
-+	rc = platform_driver_register(&aspeed_sdhci_driver);
-+	if (rc < 0)
-+		return rc;
-+
-+	rc = platform_driver_register(&aspeed_sdc_driver);
-+	if (rc < 0)
-+		platform_driver_unregister(&aspeed_sdhci_driver);
-+
-+	return rc;
-+}
-+module_init(aspeed_sdc_init);
-+
-+static void __exit aspeed_sdc_exit(void)
-+{
-+	platform_driver_unregister(&aspeed_sdc_driver);
-+	platform_driver_unregister(&aspeed_sdhci_driver);
-+}
-+module_exit(aspeed_sdc_exit);
-+
-+MODULE_DESCRIPTION("Driver for the ASPEED SD/SDIO/SDHCI Controllers");
-+MODULE_AUTHOR("Ryan Chen <ryan_chen@aspeedtech.com>");
-+MODULE_AUTHOR("Andrew Jeffery <andrew@aj.id.au>");
-+MODULE_LICENSE("GPL");
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SXQgbG9va3MgbGlrZSB0aGUgbGludXgtbmV4dCBjb21taXQg4oCcb2YvcGxhdGZvcm06IFBhdXNl
+L3Jlc3VtZSBzeW5jIHN0YXRlIGR1cmluZyBpbml0IGFuZCBvZl9wbGF0Zm9ybV9wb3B1bGF0ZSgp
+4oCdIFsxXQpJbnRyb2R1Y2VkIGEgd2FybmluZyB3aGlsZSBib290aW5nIGFybTY0LgoKWzFdIGh0
+dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xrbWwvMjAxOTA3MzEyMjE3MjEuMTg3NzEzLTYtc2FyYXZh
+bmFrQGdvb2dsZS5jb20vCgpbICAgOTMuNDQ5MzAwXVsgICAgVDFdIGFybS1zbW11LXYzIGFybS1z
+bW11LXYzLjQuYXV0bzogaWFzIDQ0LWJpdCwgb2FzIDQ0LWJpdCAoZmVhdHVyZXMgMHgwMDAwMTcw
+ZCkKWyAgIDkzLjQ2NDg3M11bICAgIFQxXSBhcm0tc21tdS12MyBhcm0tc21tdS12My40LmF1dG86
+IGFsbG9jYXRlZCA1MjQyODggZW50cmllcyBmb3IgY21kcQpbICAgOTMuNDg1NDgxXVsgICAgVDFd
+IGFybS1zbW11LXYzIGFybS1zbW11LXYzLjQuYXV0bzogYWxsb2NhdGVkIDUyNDI4OCBlbnRyaWVz
+IGZvciBldnRxClsgICA5My40OTYzMjBdWyAgICBUMV0gYXJtLXNtbXUtdjMgYXJtLXNtbXUtdjMu
+NS5hdXRvOiBvcHRpb24gbWFzayAweDIKWyAgIDkzLjUwMjkxN11bICAgIFQxXSBhcm0tc21tdS12
+MyBhcm0tc21tdS12My41LmF1dG86IGlhcyA0NC1iaXQsIG9hcyA0NC1iaXQgKGZlYXR1cmVzIDB4
+MDAwMDE3MGQpClsgICA5My42MjE4MThdWyAgICBUMV0gYXJtLXNtbXUtdjMgYXJtLXNtbXUtdjMu
+NS5hdXRvOiBhbGxvY2F0ZWQgNTI0Mjg4IGVudHJpZXMgZm9yIGNtZHEKWyAgIDkzLjY0MzAwMF1b
+ICAgIFQxXSBhcm0tc21tdS12MyBhcm0tc21tdS12My41LmF1dG86IGFsbG9jYXRlZCA1MjQyODgg
+ZW50cmllcyBmb3IgZXZ0cQpbICAgOTQuNTE5NDQ1XVsgICAgVDFdIGxpYnBoeTogRml4ZWQgTURJ
+TyBCdXM6IHByb2JlZApbICAgOTQuNTI0NjQ5XVsgICAgVDFdIEVGSSBWYXJpYWJsZXMgRmFjaWxp
+dHkgdjAuMDggMjAwNC1NYXktMTcKWyAgIDk0LjYwMTE2Nl1bICAgIFQxXSBORVQ6IFJlZ2lzdGVy
+ZWQgcHJvdG9jb2wgZmFtaWx5IDE3ClsgICA5NC43NjYwMDhdWyAgICBUMV0genN3YXA6IGxvYWRl
+ZCB1c2luZyBwb29sIGx6by96YnVkClsgICA5NC43NzQ3NDVdWyAgICBUMV0ga21lbWxlYWs6IEtl
+cm5lbCBtZW1vcnkgbGVhayBkZXRlY3RvciBpbml0aWFsaXplZCAobWVtcG9vbCBzaXplOiAxNjM4
+NCkKWyAgIDk0Ljc3NDc1Nl1bIFQxNjk5XSBrbWVtbGVhazogQXV0b21hdGljIG1lbW9yeSBzY2Fu
+bmluZyB0aHJlYWQgc3RhcnRlZApbICAgOTQuODEyMzM4XVsgVDEzNjhdIHBjaWVwb3J0IDAwMDA6
+MGY6MDAuMDogQWRkaW5nIHRvIGlvbW11IGdyb3VwIDAKWyAgIDk0Ljk4NDQ2Nl1bICAgIFQxXSAt
+LS0tLS0tLS0tLS1bIGN1dCBoZXJlIF0tLS0tLS0tLS0tLS0KWyAgIDk0Ljk4OTgyN11bICAgIFQx
+XSBVbm1hdGNoZWQgc3luY19zdGF0ZSBwYXVzZS9yZXN1bWUhClsgICA5NC45ODk4OTRdWyAgICBU
+MV0gV0FSTklORzogQ1BVOiAyNSBQSUQ6IDEgYXQgZHJpdmVycy9iYXNlL2NvcmUuYzo2OTEgZGV2
+aWNlX2xpbmtzX3N1cHBsaWVyX3N5bmNfc3RhdGVfcmVzdW1lKzB4MTAwLzB4MTI4ClsgICA5NS4w
+MDYwNjJdWyAgICBUMV0gTW9kdWxlcyBsaW5rZWQgaW46ClsgICA5NS4wMDk4MTVdWyAgICBUMV0g
+Q1BVOiAyNSBQSUQ6IDEgQ29tbTogc3dhcHBlci8wIE5vdCB0YWludGVkIDUuMy4wLXJjMy1uZXh0
+LTIwMTkwODA2KyAjMTEKWyAgIDk1LjAxODE2MV1bICAgIFQxXSBIYXJkd2FyZSBuYW1lOiBIUEUg
+QXBvbGxvIDcwICAgICAgICAgICAgIC9DMDFfQVBBQ0hFX01CICAgICAgICAgLCBCSU9TIEw1MF81
+LjEzXzEuMTEgMDYvMTgvMjAxOQpbICAgOTUuMDI4NTkzXVsgICAgVDFdIHBzdGF0ZTogNjA0MDAw
+MDkgKG5aQ3YgZGFpZiArUEFOIC1VQU8pClsgICA5NS4wMzQwNzddWyAgICBUMV0gcGMgOiBkZXZp
+Y2VfbGlua3Nfc3VwcGxpZXJfc3luY19zdGF0ZV9yZXN1bWUrMHgxMDAvMHgxMjgKWyAgIDk1LjA0
+MTEyNF1bICAgIFQxXSBsciA6IGRldmljZV9saW5rc19zdXBwbGllcl9zeW5jX3N0YXRlX3Jlc3Vt
+ZSsweDEwMC8weDEyOApbICAgOTUuMDQ4MTY3XVsgICAgVDFdIHNwIDogMzRmZjgwMDgwNmU2ZmJj
+MApbICAgOTUuMDUyMTcyXVsgICAgVDFdIHgyOTogMzRmZjgwMDgwNmU2ZmMwMCB4Mjg6IDAwMDAw
+MDAwMDAwMDAwMDAgClsgICA5NS4wNTgxNzddWyAgICBUMV0geDI3OiAwMDAwMDAwMDAwMDAwMDAw
+IHgyNjogMDAwMDAwMDAwMDAwMDAwMCAKWyAgIDk1LjA2NDE4MV1bICAgIFQxXSB4MjU6IDAwMDAw
+MDAwMDAwMDAwMzggeDI0OiAwMDAwMDAwMDAwMDAwMDAwIApbICAgOTUuMDcwMTg1XVsgICAgVDFd
+IHgyMzogMDAwMDAwMDAwMDAwMDAwMCB4MjI6IDAwMDAwMDAwMDAwMDAwMTkgClsgICA5NS4wNzYx
+ODldWyAgICBUMV0geDIxOiAwMDAwMDAwMDAwMDAwMDAwIHgyMDogZjlmZjgwOGI4MDRlNmM1MCAK
+WyAgIDk1LjA4MjE5M11bICAgIFQxXSB4MTk6IGZmZmYxMDAwMTRhNmU2MDAgeDE4OiAwMDAwMDAw
+MDAwMDAwMDQwIApbICAgOTUuMDg4MTk3XVsgICAgVDFdIHgxNzogMDAwMDAwMDAwMDAwMDAwMCB4
+MTY6IDg2ZmY4MDA5OWQ1ODFiNTAgClsgICA5NS4wOTQyMDFdWyAgICBUMV0geDE1OiAwMDAwMDAw
+MDAwMDAwMDAwIHgxNDogZmZmZjEwMDAxMDA4NmQxYyAKWyAgIDk1LjEwMDIwNV1bICAgIFQxXSB4
+MTM6IGZmZmYxMDAwMTA5ZDg2ODggeDEyOiBmZmZmZmZmZmZmZmZmZmZmIApbICAgOTUuMTA2MjA5
+XVsgICAgVDFdIHgxMTogMDAwMDAwMDAwMDAwMDBmOSB4MTA6IGZmZmYwODA4YjgwNGU2YzYgClsg
+ICA5NS4xMTIyMTNdWyAgICBUMV0geDkgOiA0YjcxYWQ1MjJjODUxZDAwIHg4IDogNGI3MWFkNTIy
+Yzg1MWQwMCAKWyAgIDk1LjExODIxN11bICAgIFQxXSB4NyA6IDYxNzAyMDY1NzQ2MTc0NzMgeDYg
+OiBmZmZmMTAwMDE0MDc2OTcyIApbICAgOTUuMTI0MjIxXVsgICAgVDFdIHg1IDogMzRmZjgwMDgw
+NmU2ZjhmMCB4NCA6IDAwMDAwMDAwMDAwMDAwMGYgClsgICA5NS4xMzAyMjVdWyAgICBUMV0geDMg
+OiBmZmZmMTAwMDEwMWJmYTVjIHgyIDogMDAwMDAwMDAwMDAwMDAwMSAKWyAgIDk1LjEzNjIyOV1b
+ICAgIFQxXSB4MSA6IDAwMDAwMDAwMDAwMDAwMDEgeDAgOiAwMDAwMDAwMDAwMDAwMDIyIApbICAg
+OTUuMTQyMjMzXVsgICAgVDFdIENhbGwgdHJhY2U6ClsgICA5NS4xNDUzNzRdWyAgICBUMV0gIGRl
+dmljZV9saW5rc19zdXBwbGllcl9zeW5jX3N0YXRlX3Jlc3VtZSsweDEwMC8weDEyOApbICAgOTUu
+MTUyMDc0XVsgICAgVDFdICBvZl9wbGF0Zm9ybV9zeW5jX3N0YXRlX2luaXQrMHgxMC8weDFjClsg
+ICA5NS4xNTc1NTddWyAgICBUMV0gIGRvX29uZV9pbml0Y2FsbCsweDJmOC8weDYwMApbICAgOTUu
+MTYyMTcyXVsgICAgVDFdICBkb19pbml0Y2FsbF9sZXZlbCsweDM3Yy8weDNmYwpbICAgOTUuMTY2
+OTU5XVsgICAgVDFdICBkb19iYXNpY19zZXR1cCsweDM0LzB4NGMKWyAgIDk1LjE3MTMxM11bICAg
+IFQxXSAga2VybmVsX2luaXRfZnJlZWFibGUrMHgxODgvMHgyNGMKWyAgIDk1LjE3NjM2M11bICAg
+IFQxXSAga2VybmVsX2luaXQrMHgxOC8weDMzNApbICAgOTUuMTgwNTQzXVsgICAgVDFdICByZXRf
+ZnJvbV9mb3JrKzB4MTAvMHgxOApbICAgOTUuMTg0ODA5XVsgICAgVDFdIC0tLVsgZW5kIHRyYWNl
+IGE5ZWE2OGM5MDI1NDBmZTUgXS0tLQpbICAgOTUuMjY5MDg1XVsgICAgVDFdIEZyZWVpbmcgdW51
+c2VkIGtlcm5lbCBtZW1vcnk6IDI4NjcySwpbICAxMDEuMDY5ODYwXVsgICAgVDFdIENoZWNrZWQg
+VytYIG1hcHBpbmdzOiBwYXNzZWQsIG5vIFcrWCBwYWdlcyBmb3VuZApbICAxMDEuMDc2MjY1XVsg
+ICAgVDFdIFJ1biAvaW5pdCBhcyBpbml0IHByb2Nlc3MKWyAgMTAxLjE4NjM1OV1bICAgIFQxXSBz
+eXN0ZW1kWzFdOiBTeXN0ZW0gdGltZSBiZWZvcmUgYnVpbGQgdGltZSwgYWR2YW5jaW5nIGNsb2Nr
+LgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
