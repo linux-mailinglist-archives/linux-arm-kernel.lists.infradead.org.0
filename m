@@ -2,51 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCDED854DF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 23:03:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 983D585507
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  7 Aug 2019 23:15:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:Subject:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1vSxFDYvtxXdF3sh8avL7LJwL28uLqRABHNk0ikDG7Y=; b=dJ56dYMiQSzaOb
-	pKEx45r9q/qaEIfT3+ooXAY1SsHTnNOw//pD1IUcrj9uBxqQ9bNUDgmfPe2pwBwNCCxmx06GPBFZm
-	0ao+3xYSn706D83ZCBe3f0MD0OfyBEJnCKvHzzRV8NXjjcGGxREwhd50NUnq8V+5/usFcSelPKEJ6
-	/IH61G4XED1lGQkxwu4wK1wG0bVUPN/hOGjqjlBx2Ye/f3LYVrS3LAvLd6e/VwimD3ztaxT8hX8TI
-	uD5ZI9jmyc7ASdIacb4UvyzzxXKoFWH4zK+ZKyph4Vgk+VgiZFHUdnOy38hkMgC2OQtUuibbx5COo
-	Kh5h+HJ7g12mumfZqneg==;
+	List-Owner; bh=bxTY7fxlcPOKkrg+LeGam4GBpFCvUov+HY//kJBm6fU=; b=uva+RvG/9YavO2
+	dNbFjQ1OlsZQo8FqiyD6EFFi8a3Bl0zcOEfyexmEliJeHXac1xIMdkuYIiT3kYgWforIVmSDcBfcc
+	4QEHc7xDu9e9hIraKSlYA++K1CLKQCS2onPeDwxtID3rRXr6xx8jHOPOy2A1CSahNOlA51azqNfsP
+	GnTLo95AlUMRIQUKGH8FsotqSUVWK+yG8VpbS6J16PQZ1p9yjaHzHXcXeeTLy8c7XcelOw0IQjVUQ
+	lgs4TTTp5xeYxx0hDNJKPmIbiEbDQD9pfT0T9u1MrWQ+0DlWBc2/mGsjzAZrnkiybBSlBak4sdcFV
+	idAyiQjofOIp3WMBfJWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvT5e-0002kJ-5L; Wed, 07 Aug 2019 21:03:22 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1hvTHn-0007Dg-VK; Wed, 07 Aug 2019 21:15:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvT5R-0002jW-09; Wed, 07 Aug 2019 21:03:10 +0000
-Received: from ip5f5a6044.dynamic.kabel-deutschland.de ([95.90.96.68]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hvT5G-0003Vr-GS; Wed, 07 Aug 2019 23:02:58 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Nathan Chancellor <natechancellor@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>
-Subject: Re: [PATCH] phy-rockchip-inno-hdmi: Fix
- RK3328_TERM_RESISTOR_CALIB_SPEED_7_0's third value
-Date: Wed, 07 Aug 2019 23:02:57 +0200
-Message-ID: <5866399.zOWMQKR7fF@diego>
-In-Reply-To: <20190807192305.6604-1-natechancellor@gmail.com>
-References: <20190807192305.6604-1-natechancellor@gmail.com>
+ id 1hvTHc-0007D1-Fa
+ for linux-arm-kernel@lists.infradead.org; Wed, 07 Aug 2019 21:15:45 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5D6B0217D9;
+ Wed,  7 Aug 2019 21:15:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565212541;
+ bh=mPs5ZRxH/plyzQCc3mZVnB4VCrN6NeDkFyiCjTFTVtE=;
+ h=In-Reply-To:References:Cc:From:Subject:To:Date:From;
+ b=evVShKsELYA/qJL/FotSY8uoAWZf/EbpbypuGS9QvppQIIUWYxHHjl70dzSqeF2/s
+ BHZw3OUEZ0Nq7db9hOloZhWWBoVvcnV8fWciveKFPCSnX38Rq6WajRrhfbyJ1Zx9Gc
+ 1jmyIRmeSDb4mjzAWhRtKj/hmThM7QY0q3pyKpO8=
 MIME-Version: 1.0
+In-Reply-To: <20190710141009.20651-1-andrew@aj.id.au>
+References: <20190710141009.20651-1-andrew@aj.id.au>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH] clk: aspeed: Add SDIO gate
+To: Andrew Jeffery <andrew@aj.id.au>, linux-clk@vger.kernel.org
+User-Agent: alot/0.8.1
+Date: Wed, 07 Aug 2019 14:15:40 -0700
+Message-Id: <20190807211541.5D6B0217D9@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_140309_195862_07C4CC6E 
-X-CRM114-Status: GOOD (  16.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190807_141544_544187_7301443B 
+X-CRM114-Status: UNSURE (   7.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,91 +76,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kernelci . org bot" <bot@kernelci.org>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Naresh Kamboju <naresh.kamboju@linaro.org>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Robin Murphy <robin.murphy@arm.com>, Guenter Roeck <linux@roeck-us.net>
+Cc: linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
+ mturquette@baylibre.com, ryanchen.aspeed@gmail.com,
+ linux-kernel@vger.kernel.org, Joel Stanley <joel@jms.id.au>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 7. August 2019, 21:23:05 CEST schrieb Nathan Chancellor:
-> After commit "linux/bits.h: Add compile time sanity check of GENMASK
-> inputs" [1], arm64 defconfig builds started failing:
+Quoting Andrew Jeffery (2019-07-10 07:10:09)
+> From: Joel Stanley <joel@jms.id.au>
 > 
-> In file included from ../include/linux/bits.h:22,
->                  from ../include/linux/bitops.h:5,
->                  from ../include/linux/kernel.h:12,
->                  from ../include/linux/clk.h:13,
->                  from ../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:9:
-> ../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c: In function 'inno_hdmi_phy_rk3328_power_on':
-> ../include/linux/build_bug.h:16:45: error: negative width in bit-field '<anonymous>'
->    16 | #define BUILD_BUG_ON_ZERO(e) (sizeof(struct { int:(-!!(e)); }))
->       |                                             ^
-> ../include/linux/bits.h:24:18: note: in expansion of macro 'BUILD_BUG_ON_ZERO'
->    24 |  ((unsigned long)BUILD_BUG_ON_ZERO(__builtin_choose_expr( \
->       |                  ^~~~~~~~~~~~~~~~~
-> ../include/linux/bits.h:39:3: note: in expansion of macro 'GENMASK_INPUT_CHECK'
->    39 |  (GENMASK_INPUT_CHECK(high, low) + __GENMASK(high, low))
->       |   ^~~~~~~~~~~~~~~~~~~
-> ../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:24:42: note: in expansion of macro 'GENMASK'
->    24 | #define UPDATE(x, h, l)  (((x) << (l)) & GENMASK((h), (l)))
->       |                                          ^~~~~~~
-> ../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:201:50: note: in expansion of macro 'UPDATE'
->   201 | #define RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(x)  UPDATE(x, 7, 9)
->       |                                                  ^~~~~~
-> ../drivers/phy/rockchip/phy-rockchip-inno-hdmi.c:1046:26: note: in expansion of macro 'RK3328_TERM_RESISTOR_CALIB_SPEED_7_0'
->  1046 |   inno_write(inno, 0xc6, RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(v));
->       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> The clock divisor comes with an enable bit (gate). This was not
+> implemented as we didn't have access to SD hardware when writing the
+> driver. Now that we can test it, add the gate as a parent to the
+> divisor.
 > 
-> As pointed out by Robin and Guenter, inno_write's val argument is an
-> 8-bit value so having a mask larger than that doesn't make sense. This
-> also matches the rest of the *_7_0 macros in this driver.
+> There is no reason to expose the gate separately, so users will enable
+> it by turning on the ASPEED_CLK_SDIO divisor.
 > 
-> [1]: https://lore.kernel.org/lkml/20190801230358.4193-2-rikard.falkeborn@gmail.com/
-> 
-> Reported-by: Andrzej Hajda <a.hajda@samsung.com>
-> Reported-by: Guenter Roeck <linux@roeck-us.net>
-> Reported-by: kernelci.org bot <bot@kernelci.org>
-> Reported-by: Naresh Kamboju <naresh.kamboju@linaro.org>
-> Suggested-by: Guenter Roeck <linux@roeck-us.net>
-> Suggested-by: Robin Murphy <robin.murphy@arm.com>
-> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+> Signed-off-by: Joel Stanley <joel@jms.id.au>
+> [aj: Minor style cleanup]
+> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 > ---
 
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-
-on a rk3328-rock64 hdmi output still works
-Tested-by: Heiko Stuebner <heiko@sntech.de>
-
-@Kishon: Would probably be good to get this fast into 5.3-rc.
-
-
-Heiko
-
-
->  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-> index b10a84cab4a7..2b97fb1185a0 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-> @@ -198,7 +198,7 @@
->  #define RK3328_BYPASS_TERM_RESISTOR_CALIB		BIT(7)
->  #define RK3328_TERM_RESISTOR_CALIB_SPEED_14_8(x)	UPDATE((x) >> 8, 6, 0)
->  /* REG:0xc6 */
-> -#define RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(x)		UPDATE(x, 7, 9)
-> +#define RK3328_TERM_RESISTOR_CALIB_SPEED_7_0(x)		UPDATE(x, 7, 0)
->  /* REG:0xc7 */
->  #define RK3328_TERM_RESISTOR_50				UPDATE(0, 2, 1)
->  #define RK3328_TERM_RESISTOR_62_5			UPDATE(1, 2, 1)
-> 
-
-
-
+Applied to clk-next
 
 
 _______________________________________________
