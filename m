@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64A3785BA1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 09:33:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1616D85BA2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 09:33:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pVHFL9mmcMzF+ztZXGw4Aa6sPrTlrpssDt9FKsmNn08=; b=WnmHN20ayCt2Oi
-	guEG1Sh9zlQfuPdPCoU/4J9UIwbmjSw3NoLN/dBgKfYCq7SM8hz33VozoZnYdFoBaI+MOx/XunnT/
-	n4lxnq5LAKfJXW/kgjKs99uZp0/giY7I8u1wyByLCFODP8D9ERfAbSvhv8EwTljOSB5SfxpUxhc0z
-	JgA7vRwKyJKG8kM35vPIUnaXvvfSHT8ZAB775OVooiP9hKRs6g0cgrLbpnAi4+YTyryUvo0IkyInl
-	SXFBlmG0Rph0Ga/kIn3vrkaVYiadZtkcXlGJZWFwIcKGmHruu1XDtSiQyV5BrnmVNqzg6lwiawxtp
-	dYOdnV6l9IfbKcIloZGw==;
+	List-Owner; bh=LHZm7uVLmsF0ct3BJA7Ep0+OjQlBkMMAxJsZreomyAs=; b=AYT51qjc0TXe6P
+	0vPgrbV4jemuTGQ9xHVlxotVcQ3SvNr19I5aFvAQ9Kn0HuGPVLO/Dfp1BJtbGCVqA+U6LDg1+YRyF
+	7ibhkdI5LTvGw4o18SPLEe3OPRhMT2rRFcxv45QUEHnTjG2xtBduaq1aBhGPfI2g5B5Wtd61PpktT
+	Yjvsv8mYgDXtgYQqrKQlmnX0beEWDoaGONRH7YoAVw0b9qyRkIhHIV+77pfh3U1aOtzdeM+AtEtV9
+	LbWFdxrhH+41I5Y1DAVBMd+QiIrzavujEJZVeNbzD0BbdomrbxImWnsKNWrhMSpgMgyi6VJCaMinr
+	0GeTGhOPsEvza+uQkHBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvcus-00034b-Mj; Thu, 08 Aug 2019 07:32:56 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hvcvF-0003Gp-Lr; Thu, 08 Aug 2019 07:33:17 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvcuT-00034C-MG
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 07:32:31 +0000
-Received: by mail-wr1-x442.google.com with SMTP id t16so3721953wra.6
+ id 1hvcue-00036R-8W
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 07:32:42 +0000
+Received: by mail-wm1-x341.google.com with SMTP id u25so1339327wmc.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 08 Aug 2019 00:32:28 -0700 (PDT)
+ Thu, 08 Aug 2019 00:32:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=3YWeeONpn3kFjgXjqVxK5rhO6iGNIdqgi9iiTkhqk4E=;
- b=hdjZsTf2RU0z/QEpg484A2Q/YkuXiyYQ6hG9jchmH3l2BIEbmVV7VnSY4qWhfC0Qw+
- CH9gle7f4Yb/X+Wzp4ptf8K0O6elLfRPsW6jhDx6DFKOt9qEJkZKUbEMng+BDXP6uMxC
- gq8dhtGkfhFnI3NMle5AFR33QIOQ//qfNagulljPJ4dXvODvPeTzmJDoaYcwyOSjxx/K
- Go9Vk4o8iIQ+mV/SoBUcqqHodSl7Gzyqe5mT+58s7wvqWSYuWB9EJ+YXuReHUH8lTg+S
- /r+7H15N1Zn2WdEMbGqiwHEIelD5AkIc1pbAJ59iLX7Sy8VekZCT/RQReK98f0pStNHD
- YUnQ==
+ :user-agent; bh=rwsTN4PYWZDSBim2xfgbKTZBPcn1iO8XAT+A7X4RpJo=;
+ b=Be3yljt2cUiFHhsA46esH7ke5SsW+gtpmpgBh4WrM0SnU0MsEG7+m40YcUB0Q8wFSc
+ I5Zr6JDEfBUk8/vAZP19J2+MirRs3cbd1sIv9k1YXqYegmF+2Ft1JyJLxCRbQV2tH4n+
+ VOvX3ohX4cogwB4NqpaGDG68gM17zp4kcnxtVfdZXLyoOycYq8PPp0s7vR0UET0PoVD4
+ 4y3q34HOeAWLzsx87yl6GHk4PXy5zBLXtQl53i3I4YmCZE50bKuZb0qjrAL/7R/aOFq/
+ i04NBEE1lRBSM8f6uXk2KOdTqBr3wd5RHZj7CqLEekAzHDoVrTeR6vtcALmPVFaDXpnw
+ f3WA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:content-transfer-encoding
  :in-reply-to:user-agent;
- bh=3YWeeONpn3kFjgXjqVxK5rhO6iGNIdqgi9iiTkhqk4E=;
- b=iWZ9DUHPk2UO87NozoY8koqfr5ka2o/IMLnMOw6rDBDzqklfc8QazHgXUdz4P/34kG
- 09yxCZh3cUl8kEjWIpj2oeWeHy9J8eal85rDEi+Yok5h0psCiZyvN9NK151RsuOmqWz+
- pZnWOLryxBRPHj990ENRhCjV8HJ7YGs6En3cv36NBYkdcQoP1bj+Aw6tYzkvktNVzAX7
- y4Ar28bAD+B+7lG/TvcdUfVZ1t3wccog7i79YGWp5sk9A4ufgeBUXtanZsGLA1tg28nl
- qpz5jhYuZx9fHUiHOrgAN7Kz+3TZt9FTXTPFliy/4PgbucpeF6Z/QRgaEMHUjJ1kdpLu
- htdQ==
-X-Gm-Message-State: APjAAAWO0LLcaRPT5n29V4YuAj3bGEnepFm5q3aERG0jE0TuDqIQOfDb
- eZZQ5i7+Bn82zh3w8Mr/e0+26WciYpE=
-X-Google-Smtp-Source: APXvYqyOCEm/r7tnoj7aXoWm6m4nMP79YC/UVxxGxoFrmtJi9d9zHFdWug+OgSU386/6lXAScggVkg==
-X-Received: by 2002:adf:d1b4:: with SMTP id w20mr8320212wrc.301.1565249546980; 
- Thu, 08 Aug 2019 00:32:26 -0700 (PDT)
+ bh=rwsTN4PYWZDSBim2xfgbKTZBPcn1iO8XAT+A7X4RpJo=;
+ b=qWqCIotKpNSk0EmisIlOB3pXQFYbX2CjnUiiB6YrelNjrRdeOhYbL9esuEAEUiw8Vj
+ iQUrjwdNMtpBp5KS90yUto2asWB0hFuTUkjEdX9XZYPfvoyvs5ybENw8C4nMfuTzzzse
+ hUmNQkBwY5oVoqlqHDylJ7aCMIK5gMWl+xH3nq6uCKoCa1yN4WB4UTx284O+fXdrbQ6X
+ AYa5dU5Pj4BpLtBrHFYppvbw8FBRz1F+q+SXu5rTRcGMBnt33cSzl1IFiLANlm8MKDU/
+ hq6mi6CiDU5FBnjJrinrk3Yf8gcEbX2KD6VqyWfpkpJPEBqxXk8LvYJD+mi9HvW+jpyS
+ BHwA==
+X-Gm-Message-State: APjAAAVlwZ0hBtu8o0itJgrhjc7kqEvG+2WVvkuZZHNoWduQNfAqcHcN
+ RVNYQ8QcH4w5mcGkp/SSptocvw==
+X-Google-Smtp-Source: APXvYqzPnEJf3wzVF1oCKQHzErCA0BUxeZXArLH/0A2RVb7eYUOfGySo/SZcBJyarxcfrQhrzxrvFg==
+X-Received: by 2002:a7b:ce83:: with SMTP id q3mr2697473wmj.116.1565249557789; 
+ Thu, 08 Aug 2019 00:32:37 -0700 (PDT)
 Received: from dell ([2.27.35.255])
- by smtp.gmail.com with ESMTPSA id n9sm143092362wrp.54.2019.08.08.00.32.25
+ by smtp.gmail.com with ESMTPSA id k63sm1840106wmb.2.2019.08.08.00.32.37
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 08 Aug 2019 00:32:25 -0700 (PDT)
-Date: Thu, 8 Aug 2019 08:32:24 +0100
+ Thu, 08 Aug 2019 00:32:37 -0700 (PDT)
+Date: Thu, 8 Aug 2019 08:32:35 +0100
 From: Lee Jones <lee.jones@linaro.org>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH 1/3] mfd: ab3100: no need to check return value of
+Subject: Re: [PATCH 2/3] mfd: ab8500: no need to check return value of
  debugfs_create functions
-Message-ID: <20190808073224.GK4739@dell>
+Message-ID: <20190808073235.GL4739@dell>
 References: <20190706164722.18766-1-gregkh@linuxfoundation.org>
+ <20190706164722.18766-2-gregkh@linuxfoundation.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190706164722.18766-1-gregkh@linuxfoundation.org>
+In-Reply-To: <20190706164722.18766-2-gregkh@linuxfoundation.org>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_003229_765562_E8219F01 
-X-CRM114-Status: GOOD (  11.01  )
+X-CRM114-CacheID: sfid-20190808_003240_829705_4619EDE8 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,12 +115,11 @@ biB0aGlzLgo+IAo+IENjOiBMaW51cyBXYWxsZWlqIDxsaW51cy53YWxsZWlqQGxpbmFyby5vcmc+
 Cj4gQ2M6IExlZSBKb25lcyA8bGVlLmpvbmVzQGxpbmFyby5vcmc+Cj4gQ2M6IGxpbnV4LWFybS1r
 ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IFNpZ25lZC1vZmYtYnk6IEdyZWcgS3JvYWgtSGFy
 dG1hbiA8Z3JlZ2toQGxpbnV4Zm91bmRhdGlvbi5vcmc+Cj4gLS0tCj4gIGRyaXZlcnMvbWZkL2Fi
-MzEwMC1jb3JlLmMgfCA0NSArKysrKystLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0K
-PiAgZHJpdmVycy9tZmQvYWIzMTAwLW90cC5jICB8IDIxICsrKysrKy0tLS0tLS0tLS0tLQo+ICAy
-IGZpbGVzIGNoYW5nZWQsIDEzIGluc2VydGlvbnMoKyksIDUzIGRlbGV0aW9ucygtKQoKQXBwbGll
-ZCwgdGhhbmtzLgoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQpMaW5hcm8gU2VydmljZXMgVGVj
-aG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBT
-b0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+ODUwMC1kZWJ1Z2ZzLmMgfCAzMjQgKysrKysrKysrKystLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0K
+PiAgMSBmaWxlIGNoYW5nZWQsIDk4IGluc2VydGlvbnMoKyksIDIyNiBkZWxldGlvbnMoLSkKCkFw
+cGxpZWQsIHRoYW5rcy4KCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2Vz
+IFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBB
+Uk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
