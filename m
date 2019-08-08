@@ -2,58 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBEFD85B23
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 08:59:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DA7A85B27
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 08:59:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qdlKPs1+Qa51M7uyx5x/f+ZUC644kT7LAorCTOBLwS0=; b=S55f/7xB531pNk
-	0ArZHFkc1uU0W3gg15Pg64lLKHaP+knBbSO+ftkdu8qratR42Mt4zJd00bN+z4r4VLctEClTgyA+1
-	lGOqD1+Fi6rle+aOLgiNCJrAJBZCiGlk6TUbdtsd3OqHakZ3/Tde6UB/o3JQmyL8XUH/VLlvxh2Fv
-	+G7riGTDqmdoU2ovNT9Yj6wHKxkbu0px/IT9uIdtIjQfQzWDoDNRE3Xa5m27IkhW/zjdNZ0ikAUVA
-	bXRQTwzEFxT6rUBEjkoe34OJykQHMUdPDnkZW9U4Qc72E0AlyoqQsmfFkMSxShNnetGN2gLEMfJ4O
-	4ctELiDsMOHadlI0Ol/Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gsrAb0YwpQRi8Rxniwz1Tdey6lxENBnKzCUUz8D3J/A=; b=ZqcEjnpUBvP3fB
+	LIQKNPR46xnFyrk+pv0ZV3ROEMTWsZBwbdDjKTC6P0AsP2IsCnN8yifVnKGSvPaSWzDEXagWj8kRh
+	d10x2lSq5lGkVNkb3+pXEXffZy6Uci9nmLki6E6MHwXvN9D76cMkyDbANQt2EMb+Ys8mlObydUHph
+	jfd2NUGScT29KyWSu1IbQs5ZMT7tid0pTiMpOyNb0GKRd8kaEiyu0FRS12oaln6zAUQ5piAVa4q/G
+	IDvLAMQzytF/+9aybG3VTjjbYxOYYdmZsN2AVngbEfxGtnc5Y4sN/351IcsVV8xiI+0SMGxlWmfPn
+	hRCucZLVF58gynkEd+tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvcOD-0005F7-4r; Thu, 08 Aug 2019 06:59:09 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvcNl-0005Cm-Da; Thu, 08 Aug 2019 06:58:45 +0000
-X-UUID: d6d1090fa24940de89fa89c58f7ec3ac-20190807
-X-UUID: d6d1090fa24940de89fa89c58f7ec3ac-20190807
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <miles.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 737120949; Wed, 07 Aug 2019 22:58:34 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 7 Aug 2019 23:58:32 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 8 Aug 2019 14:58:31 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 8 Aug 2019 14:58:30 +0800
-Message-ID: <1565247511.29066.1.camel@mtkswgap22>
-Subject: Re: [PATCH v2] arm64: mm: print hexadecimal EC value in
- mem_abort_decode()
-From: Miles Chen <miles.chen@mediatek.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Date: Thu, 8 Aug 2019 14:58:31 +0800
-In-Reply-To: <256df022-6ad2-bae8-cc94-908adf409a07@arm.com>
-References: <20190807003336.28040-1-miles.chen@mediatek.com>
- <98bdbcfb-24ed-fcd8-4b2c-f2c78b245dda@arm.com>
- <1565244075.26350.3.camel@mtkswgap22>
- <256df022-6ad2-bae8-cc94-908adf409a07@arm.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+	id 1hvcOg-0005Yw-Rp; Thu, 08 Aug 2019 06:59:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvcOI-0005US-6a
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 06:59:16 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1E449337;
+ Wed,  7 Aug 2019 23:59:13 -0700 (PDT)
+Received: from [10.163.1.243] (unknown [10.163.1.243])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6A1CF3F706;
+ Thu,  8 Aug 2019 00:01:13 -0700 (PDT)
+Subject: Re: [PATCH] arm64: mm: add missing PTE_SPECIAL in pte_mkdevmap on
+ arm64
+To: "Justin He (Arm Technology China)" <Justin.He@arm.com>,
+ Catalin Marinas <Catalin.Marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Mark Rutland <Mark.Rutland@arm.com>, James Morse <James.Morse@arm.com>
+References: <20190807045851.10772-1-justin.he@arm.com>
+ <ce0be561-117c-ef94-6a26-f88c3ba21096@arm.com>
+ <DB7PR08MB30823791749E5B083AF167B5F7D70@DB7PR08MB3082.eurprd08.prod.outlook.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <7c950e09-bc34-fa19-8889-598832c97b44@arm.com>
+Date: Thu, 8 Aug 2019 12:28:58 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <DB7PR08MB30823791749E5B083AF167B5F7D70@DB7PR08MB3082.eurprd08.prod.outlook.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_235843_706974_93AD6E1E 
-X-CRM114-Status: GOOD (  17.38  )
+X-CRM114-CacheID: sfid-20190807_235914_439831_C3A34A5C 
+X-CRM114-Status: GOOD (  23.66  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,8 +55,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,95 +66,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.rutland@arm.com>, wsd_upstream@mediatek.com,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Logan Gunthorpe <logang@deltatee.com>, Christoph Hellwig <hch@lst.de>,
+ Dan Williams <dan.j.williams@intel.com>,
+ Christoffer Dall <Christoffer.Dall@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jun Yao <yaojun8558363@gmail.com>, "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>, Qian Cai <cai@lca.pw>,
+ Punit Agrawal <punitagrawal@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Robin Murphy <Robin.Murphy@arm.com>, Alex Van Brunt <avanbrunt@nvidia.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-08-08 at 11:51 +0530, Anshuman Khandual wrote:
-> 
-> On 08/08/2019 11:31 AM, Miles Chen wrote:
-> > On Thu, 2019-08-08 at 11:19 +0530, Anshuman Khandual wrote:
-> >>
-> >> On 08/07/2019 06:03 AM, Miles Chen wrote:
-> >>> This change prints the hexadecimal EC value in mem_abort_decode(),
-> >>> which makes it easier to lookup the corresponding EC in
-> >>> the ARM Architecture Reference Manual.
-> >>>
-> >>> The commit 1f9b8936f36f ("arm64: Decode information from ESR upon mem
-> >>> faults") prints useful information when memory abort occurs. It would
-> >>> be easier to lookup "0x25" instead of "DABT" in the document. Then we
-> >>> can check the corresponding ISS.
-> >>>
-> >>> For example:
-> >>> Current	info	  	Document
-> >>> 		  	EC	Exception class
-> >>> "CP15 MCR/MRC"		0x3	"MCR or MRC access to CP15a..."
-> >>> "ASIMD"			0x7	"Access to SIMD or floating-point..."
-> >>> "DABT (current EL)" 	0x25	"Data Abort taken without..."
-> >>> ...
-> >>>
-> >>> Before:
-> >>> Unable to handle kernel paging request at virtual address 000000000000c000
-> >>> Mem abort info:
-> >>>   ESR = 0x96000046
-> >>>   Exception class = DABT (current EL), IL = 32 bits
-> >>>   SET = 0, FnV = 0
-> >>>   EA = 0, S1PTW = 0
-> >>> Data abort info:
-> >>>   ISV = 0, ISS = 0x00000046
-> >>>   CM = 0, WnR = 1
-> >>>
-> >>> After:
-> >>> Unable to handle kernel paging request at virtual address 000000000000c000
-> >>> Mem abort info:
-> >>>   ESR = 0x96000046
-> >>>   EC = 0x25: DABT (current EL), IL = 32 bits
-> >>>   SET = 0, FnV = 0
-> >>>   EA = 0, S1PTW = 0
-> >>> Data abort info:
-> >>>   ISV = 0, ISS = 0x00000046
-> >>>   CM = 0, WnR = 1
-> >>>
-> >>> Change since v1:
-> >>> print "EC" instead of "Exception class"
-> >>> print EC in fixwidth
-> >>>
-> >>> Cc: Mark Rutland <Mark.rutland@arm.com>
-> >>> Cc: Anshuman Khandual <anshuman.khandual@arm.com>
-> >>> Cc: James Morse <james.morse@arm.com>
-> >>> Signed-off-by: Miles Chen <miles.chen@mediatek.com>
-> >>
-> >> This version implements the suggestion, hence it should have
-> >> also contained acked-by tag from Mark from earlier version.
-> >>
-> > 
-> > No problem. Sorry for not including the tag.
-> > I was not sure if I should add the acked-by tag from Mark in patch v2.
-> 
-> Yeah because V2 has now implemented the suggestion as required for
-> getting the tag per Mark in V1.
-> 
-
-Understood. thanks for the explanation
-
-
-> > 
-> >> Reviewed-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> > 
-> > If I send patch v3, I should include acked-by tag from Mark and
-> > Reviewed-by tag from you, right?
-> 
-> Right.
-
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAwOC8wOC8yMDE5IDExOjUwIEFNLCBKdXN0aW4gSGUgKEFybSBUZWNobm9sb2d5IENoaW5h
+KSB3cm90ZToKPiBIaSBBbnNodW1hbgo+IFRoYW5rcyBmb3IgdGhlIGNvbW1lbnRzLCBwbGVhc2Ug
+c2VlIG15IGNvbW1lbnRzIGJlbG93Cj4gCj4+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4+
+IEZyb206IEFuc2h1bWFuIEtoYW5kdWFsIDxhbnNodW1hbi5raGFuZHVhbEBhcm0uY29tPgo+PiBT
+ZW50OiAyMDE55bm0OOaciDjml6UgMTM6MTkKPj4gVG86IEp1c3RpbiBIZSAoQXJtIFRlY2hub2xv
+Z3kgQ2hpbmEpIDxKdXN0aW4uSGVAYXJtLmNvbT47IENhdGFsaW4KPj4gTWFyaW5hcyA8Q2F0YWxp
+bi5NYXJpbmFzQGFybS5jb20+OyBXaWxsIERlYWNvbiA8d2lsbEBrZXJuZWwub3JnPjsKPj4gTWFy
+ayBSdXRsYW5kIDxNYXJrLlJ1dGxhbmRAYXJtLmNvbT47IEphbWVzIE1vcnNlCj4+IDxKYW1lcy5N
+b3JzZUBhcm0uY29tPgo+PiBDYzogQ2hyaXN0b2ZmZXIgRGFsbCA8Q2hyaXN0b2ZmZXIuRGFsbEBh
+cm0uY29tPjsgUHVuaXQgQWdyYXdhbAo+PiA8cHVuaXRhZ3Jhd2FsQGdtYWlsLmNvbT47IFFpYW4g
+Q2FpIDxjYWlAbGNhLnB3PjsgSnVuIFlhbwo+PiA8eWFvanVuODU1ODM2M0BnbWFpbC5jb20+OyBB
+bGV4IFZhbiBCcnVudCA8YXZhbmJydW50QG52aWRpYS5jb20+Owo+PiBSb2JpbiBNdXJwaHkgPFJv
+YmluLk11cnBoeUBhcm0uY29tPjsgVGhvbWFzIEdsZWl4bmVyCj4+IDx0Z2x4QGxpbnV0cm9uaXgu
+ZGU+OyBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmc7IGxpbnV4LQo+PiBrZXJu
+ZWxAdmdlci5rZXJuZWwub3JnCj4+IFN1YmplY3Q6IFJlOiBbUEFUQ0hdIGFybTY0OiBtbTogYWRk
+IG1pc3NpbmcgUFRFX1NQRUNJQUwgaW4KPj4gcHRlX21rZGV2bWFwIG9uIGFybTY0Cj4+Cj4gWy4u
+Ll0KPj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL3BndGFibGUuaAo+PiBi
+L2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vcGd0YWJsZS5oCj4+PiBpbmRleCA1ZmRjZmUyMzczMzgu
+LmUwOTc2MGVjZTg0NCAxMDA2NDQKPj4+IC0tLSBhL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vcGd0
+YWJsZS5oCj4+PiArKysgYi9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL3BndGFibGUuaAo+Pj4gQEAg
+LTIwOSw3ICsyMDksNyBAQCBzdGF0aWMgaW5saW5lIHBtZF90IHBtZF9ta2NvbnQocG1kX3QgcG1k
+KQo+Pj4KPj4+ICBzdGF0aWMgaW5saW5lIHB0ZV90IHB0ZV9ta2Rldm1hcChwdGVfdCBwdGUpCj4+
+PiAgewo+Pj4gLQlyZXR1cm4gc2V0X3B0ZV9iaXQocHRlLCBfX3BncHJvdChQVEVfREVWTUFQKSk7
+Cj4+PiArCXJldHVybiBzZXRfcHRlX2JpdChwdGUsIF9fcGdwcm90KFBURV9ERVZNQVAgfCBQVEVf
+U1BFQ0lBTCkpOwo+Pj4gIH0KPj4+Cj4+PiAgc3RhdGljIGlubGluZSB2b2lkIHNldF9wdGUocHRl
+X3QgKnB0ZXAsIHB0ZV90IHB0ZSkKPj4+IEBAIC0zOTYsNyArMzk2LDEwIEBAIHN0YXRpYyBpbmxp
+bmUgaW50IHBtZF9wcm90bm9uZShwbWRfdCBwbWQpCj4+PiAgI2lmZGVmIENPTkZJR19UUkFOU1BB
+UkVOVF9IVUdFUEFHRQo+Pj4gICNkZWZpbmUgcG1kX2Rldm1hcChwbWQpCQlwdGVfZGV2bWFwKHBt
+ZF9wdGUocG1kKSkKPj4+ICAjZW5kaWYKPj4+IC0jZGVmaW5lIHBtZF9ta2Rldm1hcChwbWQpCj4+
+IAlwdGVfcG1kKHB0ZV9ta2Rldm1hcChwbWRfcHRlKHBtZCkpKQo+Pj4gK3N0YXRpYyBpbmxpbmUg
+cG1kX3QgcG1kX21rZGV2bWFwKHBtZF90IHBtZCkKPj4+ICt7Cj4+PiArCXJldHVybiBwdGVfcG1k
+KHNldF9wdGVfYml0KHBtZF9wdGUocG1kKSwKPj4gX19wZ3Byb3QoUFRFX0RFVk1BUCkpKTsKPj4+
+ICt9Cj4+Cj4+IFRob3VnaCBJIGNvdWxkIHNlZSBvdGhlciBwbGF0Zm9ybXMgbGlrZSBwb3dlcnBj
+IGFuZCB4ODYgZm9sbG93aW5nIHNhbWUKPj4gYXBwcm9hY2ggKERFVk1BUCArIFNQRUNJQUwpIGZv
+ciBwdGUgc28gdGhhdCBpdCBjaGVja3MgcG9zaXRpdmUgZm9yCj4+IHB0ZV9zcGVjaWFsKCkgYnV0
+IHRoZW4ganVzdCBERVZNQVAgZm9yIHBtZCB3aGljaCBjb3VsZCBuZXZlciBoYXZlIGEKPj4gcG1k
+X3NwZWNpYWwoKS4gQnV0IGEgbW9yZSBmdW5kYW1lbnRhbCBxdWVzdGlvbiBpcyAtIHdoeSBzaG91
+bGQgYSBkZXZtYXAKPj4gYmUgYSBzcGVjaWFsIHB0ZSBhcyB3ZWxsID8KPiAKPiBJSVVDLCBzcGVj
+aWFsIHB0ZSBiaXQgbWFrZSB0aGluZ3MgaGFuZGxpbmcgZWFzaWVyIGNvbXBhcmUgd2l0aCB0aG9z
+ZSBhcmNoZXMgd2hpY2gKPiBoYXZlIG5vIHNwZWNpYWwgYml0LiBUaGUgbWVtb3J5IGNvZGVzIHdp
+bGwgcmVnYXJkIGRldm1hcCBwYWdlIGFzIGEgc3BlY2lhbCBvbmUgCj4gY29tcGFyZWQgd2l0aCBu
+b3JtYWwgcGFnZS4KCkZvciB0aGF0IHdlIGhhdmUgUFRFX0RFVk1BUCBvbiBhcm02NCB3aGljaCBk
+aWZmZXJlbnRpYXRlcyBkZXZpY2UgbWVtb3J5CmVudHJpZXMgZnJvbSBvdGhlcnMgYW5kIGl0IHNo
+b3VsZCBub3QgYWdhaW4gbmVlZCBQVEVfU1BFQ0lBTCBhcyB3ZWxsIGZvcgp0aGF0LiBXZSBzZXQg
+Ym90aCBiaXRzIHdoaWxlIGNyZWF0aW5nIHRoZSBlbnRyaWVzIHdpdGggcHRlX21rZGV2bWFwKCkK
+YW5kIGNoZWNrIGp1c3Qgb25lIGJpdCBQVEVfREVWTUFQIHdpdGggcHRlX2Rldm1hcCgpLiBQcm9i
+bGVtIGlzIGl0IHdpbGwKYWxzbyB0ZXN0IHBvc2l0aXZlIGZvciBwdGVfc3BlY2lhbCgpIGFuZCBy
+aXNrcyBiZWluZyBpZGVudGlmaWVkIGFzIG9uZS4KCj4gRGV2bWFwIHBhZ2Ugc3RydWN0dXJlIGNh
+biBiZSBzdG9yZWQgaW4gcmFtL3BtZW0vbm9uZS4KClRoYXQgaXMgYWx0b2dldGhlciBhIGRpZmZl
+cmVudCBhc3BlY3Qgd2hpY2ggaXMgaGFuZGxlZCB3aXRoIHZtZW1fYWx0bWFwCmR1cmluZyBob3Rw
+bHVnIGFuZCBub3RoaW5nIHRvIGRvIHdpdGggaG93IGRldmljZSBtZW1vcnkgaXMgbWFwcGVkIGlu
+IHRoZQpwYWdlIHRhYmxlLiBJIGFtIG5vdCBzdXJlIGFib3V0ICJub25lIiB0aG91Z2guIElJVUMg
+dW5saWtlIHRyYWRpdGlvbmFsCmRldmljZSBwZm4gYWxsIFpPTkVfREVWSUNFIG1lbW9yeSB3aWxs
+IGhhdmUgc3RydWN0IHBhZ2UgYmFja2luZyBlaXRoZXIKb24gc3lzdGVtIFJBTSBvciBpbiB0aGUg
+ZGV2aWNlIG1lbW9yeSBpdHNlbGYuCgo+IAo+Pgo+PiBBbHNvIGluIHZtX25vcm1hbF9wYWdlKCkg
+d2h5IGNhbm5vdCBpdCB0ZXN0cyBmb3IgcHRlX2Rldm1hcCgpIGJlZm9yZSBpdAo+PiBzdGFydHMg
+bG9va2luZyBmb3IgQ09ORklHX0FSQ0hfSEFTX1BURV9TUEVDSUFMLiBJcyB0aGlzIHRoZSBvbmx5
+IHBhdGgKPj4gZm9yCj4gCj4gQUZBSUNULCB5ZXMsIGJ1dCBpdCBjaGFuZ2VzIHRvIG11Y2ggYmVz
+aWRlcyBhcm0gY29kZXMuIPCfmIoKCklmIHRoaXMgaXMgdGhlIG9ubHkgcGF0aCBmb3Igd2hpY2gg
+YWxsIHBsYXRmb3JtcyBoYXZlIHRvIHNldCBQVEVfU1BFQ0lBTAppbiB0aGVpciBkZXZpY2UgbWFw
+cGluZywgdGhlbiBpdCBzaG91bGQganVzdCBiZSBmaXhlZCBpbiB2bV9ub3JtYWxfcGFnZSgpLgoK
+PiAKPj4gd2hpY2ggd2UgbmVlZCB0byBzZXQgU1BFQ0lBTCBiaXQgb24gYSBkZXZtYXAgcHRlIG9y
+IHRoZXJlIGFyZSBvdGhlciBwYXRocwo+PiB3aGVyZSB0aGlzIHNlbWFudGljcyBpcyBhc3N1bWVk
+ID8KPiAKPiBObyBpZGVhCgpQcm9iYWJseSBzb21ldGhpbmcgdG8gYmUgYXNrZWQgaW4gdGhlIG1t
+IGNvbW11bml0eS4KCjEuIFdoeSBwdGVfbWtkZXZtYXAoKSBzaG91bGQgc2V0IFNQRUNJQUwgYml0
+IGZvciBhIHBvc2l0aXZlIHB0ZV9zcGVjaWFsKCkKICAgY2hlY2suIFdoeSB0aGUgc2FtZSBtYXBw
+aW5nIGJlIGlkZW50aWZpZWQgYXMgcHRlX2Rldm1hcCgpIGFzIHdlbGwgYXMKICAgcHRlX3NwZWNp
+YWwoKS4KCjIuIENhbiBwdGVfZGV2bWFwKCkgYW5kIHB0ZV9zcGVjaWFsKCkgcmUtb3JkZXJpbmcg
+YXQgdm1fbm9ybWFsX3BhZ2UoKSB3aWxsCiAgIHJlbW92ZSB0aGlzIGRlcGVuZGVuY3kgb3IgdGhl
+cmUgYXJlIG90aGVyIGNvbW1vbnMgTU0gcGF0aHMgd2hpY2ggYXNzdW1lCiAgIHRoaXMgYmVoYXZp
+b3IgPwoKKyBsaW51eC1tbUBrdmFjay5vcmcgPGxpbnV4LW1tQGt2YWNrLm9yZz4KKyBEYW4gV2ls
+bGlhbXMgPGRhbi5qLndpbGxpYW1zQGludGVsLmNvbT4KKyBKw6lyw7RtZSBHbGlzc2UgPGpnbGlz
+c2VAcmVkaGF0LmNvbT4KKyBMb2dhbiBHdW50aG9ycGUgPGxvZ2FuZ0BkZWx0YXRlZS5jb20+Cisg
+Q2hyaXN0b3BoIEhlbGx3aWcgPGhjaEBsc3QuZGU+CgpfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
+eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
