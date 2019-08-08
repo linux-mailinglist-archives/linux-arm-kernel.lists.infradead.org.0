@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FEB88670E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:27:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C83286712
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:28:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mlaEH/I6Rn0clIUIooP1MqXHSKACgy3HB2BrBbp0gBo=; b=NNvklfM+rQ2vMp
-	RLKT82V8aVwZ7F4oVj+BVW9AIYM5oem8+9ADNTf0KhB3biSXBefmuxnoThiR7V9WgAq7eHMgEfrjs
-	n5pauLD89E7SAgqD7cMO+CVW0w3TrMOKID2ntCipvxSB2XjmxEIYQCtEM6DFVYSbWb3yd5aBnlD/s
-	5r0hs1D0GaGQMD1Uq6ftbtcPuWlDkZBH6LcDwhD7TKnyzVm8h24TAoy8TSitsax5uE2mASTJP+oyO
-	hA10XUdhX3SEm063mnSNYy71qhnQ0Wo/tpkUUHMhwrXZJ2QqhdFxW5Z/pssmTkZk10zhocP9vFBc7
-	C/sPD0HUGmETBeiGSbQw==;
+	List-Owner; bh=KempLyeI6AYa5rwXwUG/nJSnH9aCywy2Gm5KYEF83Ng=; b=HYr75ErBdqKJTj
+	iTpRMN0Nt9qmXO1SjHEU7/NskTXfbiYUkJB/G8ayHSm9SHmLd69GjO3XYbKMqG5fUYijU0fCZld3g
+	9siANZU12/YyMjzrA33cHj0YXydqo5Uk46Rsau1CCfH04NVj2AiZeJCimGlY5EeODonY71lmi0oYs
+	KYW3K0hrw1V56Z6HqK8pRP6n/G+OVuGPVwAqYAEH0L5H7kYO8+GBEuCA/kUEqKYsUQU9qLM5YVfX2
+	5OcG2YmOLijolarJjqVdWS0JNlc784q4QR5vo5Z26SYCXMwGiTrYLjyrjUnOus3db0axyVG3gP8iE
+	DE4Odfaz+BjVX8/tsFmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvlG1-0003hQ-Eg; Thu, 08 Aug 2019 16:27:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvlFr-0003SR-3v
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:27:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 605471596;
- Thu,  8 Aug 2019 09:27:06 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0BCCE3F706;
- Thu,  8 Aug 2019 09:27:04 -0700 (PDT)
-Date: Thu, 8 Aug 2019 17:27:02 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Dave Hansen <dave.hansen@intel.com>
-Subject: Re: [PATCH v7 1/2] arm64: Define
- Documentation/arm64/tagged-address-abi.rst
-Message-ID: <20190808162702.GJ10425@arm.com>
-References: <20190807155321.9648-1-catalin.marinas@arm.com>
- <20190807155321.9648-2-catalin.marinas@arm.com>
- <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
+	id 1hvlHN-00042n-14; Thu, 08 Aug 2019 16:28:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvlHC-00042O-VA
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:28:32 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1EA172173E;
+ Thu,  8 Aug 2019 16:28:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565281710;
+ bh=cUGyg9k4F6Juf5wkwZjrlmaaxkCzQychbABolvfV4YE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=1ZW/N1G5Aa4mL1wNhRPu1D5/tOlCGv/dfpmMvYhHXWaM5mPicrvGsI7SQUaOWTAB5
+ BoY/4XB2jOLH3cjBJ6TYp59uxyM+N6L4RKSghBpNK4G22cm9VkO61IaJ4ZmL/hOnkg
+ I2XLKB8O4PARNWpXZPy289orXB+eQNlg7THDJUAs=
+Date: Thu, 8 Aug 2019 17:28:26 +0100
+From: Will Deacon <will@kernel.org>
+To: Steven Rostedt <rostedt@goodmis.org>
+Subject: Re: [PATCH 1/2 v2] tracing/arm64: Have max stack tracer handle the
+ case of return address after data
+Message-ID: <20190808162825.7klpu3ffza5zxwrt@willie-the-truck>
+References: <20190807172826.352574408@goodmis.org>
+ <20190807172907.155165959@goodmis.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20190807172907.155165959@goodmis.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_092707_200751_D7313A5B 
-X-CRM114-Status: GOOD (  18.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190808_092831_045060_260375BB 
+X-CRM114-Status: GOOD (  19.41  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,94 +78,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will.deacon@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Jiping Ma <jiping.ma2@windriver.com>, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, mingo@redhat.com,
+ Joel Fernandes <joel@joelfernandes.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 01:38:16PM -0700, Dave Hansen wrote:
+Hi Steve,
 
-[Random comments below on a couple of points]
-
-> On 8/7/19 8:53 AM, Catalin Marinas wrote:
-> > +- mmap() done by the process itself (or its parent), where either:
-> > +
-> > +  - flags have the **MAP_ANONYMOUS** bit set
-> > +  - the file descriptor refers to a regular file (including those returned
-> > +    by memfd_create()) or **/dev/zero**
+On Wed, Aug 07, 2019 at 01:28:27PM -0400, Steven Rostedt wrote:
+> From: "Steven Rostedt (VMware)" <rostedt@goodmis.org>
 > 
-> What's a "regular file"? ;)
-
-A file, as distinct from device nodes, sockets, symlinks etc.
-
-I think this is fairly standard UNIX terminology, even though it sounds
-vague:
-
-From glibc's <bits/stat.h>:
-
-#define	__S_IFREG	0100000	/* Regular file.  */
-
-
-Or for POSIX test (a.k.a. "[")
-
-       -f file
-              True if file exists and is a regular file.
-
-Using memfd_create() or opening /dev/zero doesn't yield a regular file
-though, so perhaps those should be a separate bullet.
-
-[...]
-
-> > +The AArch64 Tagged Address ABI is an opt-in feature and an application can
-> > +control it via **prctl()** as follows:
-> > +
-> > +- **PR_SET_TAGGED_ADDR_CTRL**: enable or disable the AArch64 Tagged Address
-> > +  ABI for the calling process.
-> > +
-> > +  The (unsigned int) arg2 argument is a bit mask describing the control mode
-> > +  used:
-> > +
-> > +  - **PR_TAGGED_ADDR_ENABLE**: enable AArch64 Tagged Address ABI. Default
-> > +    status is disabled.
-> > +
-> > +  The arguments arg3, arg4, and arg5 are ignored.
+> Most archs (well at least x86) store the function call return address on the
+> stack before storing the local variables for the function. The max stack
+> tracer depends on this in its algorithm to display the stack size of each
+> function it finds in the back trace.
 > 
-> For previous prctl()'s, we've found that it's best to require that the
-> unused arguments be 0.  Without that, apps are free to put garbage
-> there, which makes extending the prctl to use other arguments impossible
-> in the future.
+> Some archs (arm64), may store the return address (from its link register)
+> just before calling a nested function. There's no reason to save the link
+> register on leaf functions, as it wont be updated. This breaks the algorithm
+> of the max stack tracer.
+> 
+> Add a new define ARCH_RET_ADDR_AFTER_LOCAL_VARS that an architecture may set
+> if it stores the return address (link register) after it stores the
+> function's local variables, and have the stack trace shift the values of the
+> mapped stack size to the appropriate functions.
+> 
+> Link: 20190802094103.163576-1-jiping.ma2@windriver.com
+> 
+> Reported-by: Jiping Ma <jiping.ma2@windriver.com>
+> Signed-off-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
+> ---
+>  arch/arm64/include/asm/ftrace.h | 13 +++++++++++++
+>  kernel/trace/trace_stack.c      | 14 ++++++++++++++
+>  2 files changed, 27 insertions(+)
 
-Because arg2 is already a mask of flags with some flags unallocated,
-we can add a new flag for ABI extensions.
+I agree with your later comment that this should NOT go to stable.
 
-If arg3 is used someday, it may or may not be natural for 0 to mean
-"default".  Enabling this argument with an explicit flag in arg2 may
-be cleaner than mangling the semantics of arg3 so that 0 can have
-the right meaning.
+> diff --git a/arch/arm64/include/asm/ftrace.h b/arch/arm64/include/asm/ftrace.h
+> index 5ab5200b2bdc..961e98618db4 100644
+> --- a/arch/arm64/include/asm/ftrace.h
+> +++ b/arch/arm64/include/asm/ftrace.h
+> @@ -14,6 +14,19 @@
+>  #define MCOUNT_ADDR		((unsigned long)_mcount)
+>  #define MCOUNT_INSN_SIZE	AARCH64_INSN_SIZE
+>  
+> +/*
+> + * Currently, gcc tends to save the link register after the local variables
+> + * on the stack. This causes the max stack tracer to report the function
+> + * frame sizes for the wrong functions. By defining
+> + * ARCH_RET_ADDR_AFTER_LOCAL_VARS, it will tell the stack tracer to expect
+> + * to find the return address on the stack after the local variables have
+> + * been set up.
+> + *
+> + * Note, this may change in the future, and we will need to deal with that
+> + * if it were to happen.
+> + */
+> +#define ARCH_RET_ADDR_AFTER_LOCAL_VARS 1
 
-Avoiding redundant 0 arguments also allows userspace to take advantage
-of the glibc's variadic prototype for prctl() for example.
+I know it's long already, but prefixing this with FTRACE_ would be good so
+that other code doesn't use it for anything. It's not the end of the world
+if the ftrace stack usage statistics are wonky, but if people tried to use
+this for crazy things like livepatching then we'd be in trouble.
 
-Not a huge deal, but that was my rationale anyway.
+Maybe FTRACE_ARCH_FRAME_AFTER_LOCALS, which is the same length as what
+you currently have?
 
-> Also, shouldn't this be converted over to an arch_prctl()?
-
-Most arch-specific prctls seem to use prctl(), and arm64 already has a
-few there.
-
-arch_prctl() is x86-specific.  I don't know the history.
-
-[...]
-
-Cheers
----Dave
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
