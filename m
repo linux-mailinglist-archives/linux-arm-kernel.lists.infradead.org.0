@@ -2,85 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F73B86A9B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 21:31:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C5BD86AA2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 21:33:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NB0l3wcOLQ5Y1HqUhH1VdGuywk2TrVgZs+dJv+a3yXg=; b=ox5YzmThz4H0Nz
-	ZjDTPJB2E3gG+dqCK0XFvrpHi3YiBXRrqqYwYTIz02sAzQnvcoXyG17/dw+JRtjpTW81T6IvdGfOb
-	cX2Hkg+euOeEadZMOOO45OSs+Krzg1Xf2y0niU/NxZlFM7WJHtVRC0qhaQEx4TdhuDPf7MEAPn4Ir
-	YkFVuSikGqZIsTJEWGc1lVsBCwW7u5Zs1eRKfSb8zGdoON9NKMgC5dvuluHXS6HUEmm6x8GGLaX4i
-	ytxn4GmTT0vhmfaP8eiJkGWn6Px4qTsoCcihX9I070Tb4iyZkP2jMVRDLc6da+9YkE3cPh0CND0o/
-	iiqYLN2NEzPBwXuO6keA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WnggQlXOiQM//DlL5XGbNMXWhelUo4MJT3SssTKfQuI=; b=KlzyygpZ87rWX6
+	d/S1uWFw/et1lFDO1OFkeqyuiESOZpkoUFetkk9YMggm2eoOGCp3ysx3mfOcffpJTn5nqzjRrLNi6
+	KWIhzdslvm82vxQyLuZqu+Z4zEOfZt2mDOzQHlY7s8EsKm1fJIBNSzuhyk6VL2gneTvfAY0m5sUH4
+	hh2d8s00iOVi6iroK95G6M7MkO0GC9CrdmVq8ArFcekyo1yBdWW/rcZC8Dh3HEk4D0SVP+oWWhdLB
+	3ESW2ciPxG9JM0ntonXE/KO7vg4/egpSCcLOJXL9f464GO/s1Dj7TrU34AKE65l4Qv4ocsKZSyj5h
+	dYtHawXaftzBy3dpkokA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvo8Q-0006FS-4Y; Thu, 08 Aug 2019 19:31:38 +0000
-Received: from mail-vs1-xe49.google.com ([2607:f8b0:4864:20::e49])
+	id 1hvoAQ-0006lG-HF; Thu, 08 Aug 2019 19:33:42 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvo8I-0006EO-7o
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 19:31:31 +0000
-Received: by mail-vs1-xe49.google.com with SMTP id 4so16635vsd.21
+ id 1hvoAF-0006kR-D3
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 19:33:32 +0000
+Received: by mail-wm1-x344.google.com with SMTP id v15so3476610wml.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 08 Aug 2019 12:31:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=Y7EhV9R53SdAuJMBA2LVyo7uNmGfsioMNmmNCKcAKVc=;
- b=fqAtfhnqUKmEuu2DadlaluFP6n9iBHl/UJUasXOkm0OscZqXW+lwkZx/3mv3uoZhAC
- OCPXv/3lDYe+UEjV6jEFeo4T6KN6OUETZT0uxxEoo2lWtycilli1Usrk+5DmSzUszVed
- i1igcJIkNhslr9ilyPav1FckCTmCSYShPrxPm0aEbM7vtgRLnZ3thj9VWluYYoeeS8Gr
- 1c8o7qcLtGfRS0KoSrh9B7/oq7YoiCI4etG0+fzmwVPtawENjcZwmgFaLNiFrQlIHgtd
- xzYY7Hzs+Jk6usoHoVh8SmSU9Pi3/dU1mJJOPJR99sH7+ItDVNNr2DZ7Vc0FK41JvSNH
- vMGQ==
+ Thu, 08 Aug 2019 12:33:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=FfnRvT8bsCxQfTxapev0xWL1W1r30LXrZim/pxgudsU=;
+ b=USK90tVIdJIFVBJZ2H17am399y7k1Utv/BXtZddGo6yJp74+M9f3x25FyBl6tkxpfW
+ e+sW8fcQJgN7rhBFguwmJIMhyHfhN1hPlJkPZYC7AcWot2O1OHkTM9iA1E9qD0QilqQ7
+ x3PGckwRyI5rLi38dtaInQBPQkjHvF0waQlm3qU4aEteDUtDYTWxa31/sHuT7dHloPkv
+ SW5T0EHQxbWDDg+61m+b3qpEE9Y9r8oa4EagA22Z3tC08EKTkRti/nO+UdTtDnEC9Emv
+ 49SRgpEG23SWIJo+o4oIoqDSOXh4sjt9Izdrt90p4v5CplNKgQQK3CDFIIm1BOVVUYa3
+ K+DQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=Y7EhV9R53SdAuJMBA2LVyo7uNmGfsioMNmmNCKcAKVc=;
- b=sg4eATm6SLWvoidDTgB87xwHi+TjHbJIRqpI+740PYhVsXCAG9fpB3MGcA3DR/UcVY
- D1szxu63XF54ZFhUH+YagAVcFwWfcki0bRQm1r2EgggWLvHtijsmsV0TPpLyjjc+oeG/
- rdsVOgheqVr4VGYNkhOWYv1ze10rRwBi2dp7Q3pkQ1pE2jha29SgbGHkB+yeeKSLevoi
- ynX1O2/sX2sIwfv2Q6PwLWDc8MtNjeA/2OaY/OFbzXxn14rE7mcs9o5Y2SnLFPgzAEQr
- RKk3OERLZAMmcnzhnBySFdzIPF1zR4PnQvzVi1tL2OKretHYAuHGAioafpP2iRcEaCtW
- tkEQ==
-X-Gm-Message-State: APjAAAUYewJMSVF/TTKJ+45AGeKIEOb0TEwBWeeqivEg3FGfz0bPUK5X
- av3UVCgXeruKbS6I+y10L6bi44nmQg==
-X-Google-Smtp-Source: APXvYqzFJnXdQ1RjWmuuNC0tPWroHzGPv2QybfWV/E4n1Fj9Gy51j8vmYrFEA/TFfcPlC3TJIO4khzTuYP0=
-X-Received: by 2002:ac5:ccda:: with SMTP id j26mr6637280vkn.43.1565292686277; 
- Thu, 08 Aug 2019 12:31:26 -0700 (PDT)
-Date: Thu,  8 Aug 2019 12:31:22 -0700
-Message-Id: <20190808193122.76679-1-yabinc@google.com>
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.22.0.770.g0f2c4a37fd-goog
-Subject: [PATCH] coresight: tmc-etr: Remove perf_data check.
-From: Yabin Cui <yabinc@google.com>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, 
- Alexander Shishkin <alexander.shishkin@linux.intel.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=FfnRvT8bsCxQfTxapev0xWL1W1r30LXrZim/pxgudsU=;
+ b=pUZGztlZHoyI2zLqAZ83dgH2kBBrlCcE3tEnZN/GLErC72M5YYCCxFPBRJr5VJpMoB
+ Dr1gGhx4PCVtLoWBBNfCD7VzKo+8OTazac+06SgTSpfMQ8Ik3DAwxu5yEdl7RKTIm3MJ
+ L9ekFjH9ugzgkS/QFGUgTlQCQet9D1cagy/dqR3VaTj0rt5nyFjTyq4TeYN+q3mFulSt
+ zQipRLQqyTTv7EyOudUxNSetXcP3cTX7fspp31Y4wLfLdE2IqZ5jETgITzJ8wy+er5aJ
+ zdyB0qPXRxCMZF6Lg5kITZJpOFyKyWPlx4PQiNPb9At3qVHlDJU+qx/3SABFS8CvPhWL
+ /fRQ==
+X-Gm-Message-State: APjAAAUKVYkrltDyr7aVQuTYNyxOrviSPrjSHLkwUjjtqNZxtayf1r0V
+ DwV4cZq8Hu0D3fwXP780fDqSd0iFaeaF8OwPs5I=
+X-Google-Smtp-Source: APXvYqxYYZWziRgtaG892+kpeNCC9wfJ7Nk7VgPAAR6JgQ9Jg9J6r/T2K7IQ+WDKu0ncIr3q5D9lqT2jiaNIWF2wJGk=
+X-Received: by 2002:a7b:c751:: with SMTP id w17mr6501804wmk.127.1565292809753; 
+ Thu, 08 Aug 2019 12:33:29 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190807025640.682-1-tao.zhou1@amd.com>
+ <20190808192535.GA18697@roeck-us.net>
+In-Reply-To: <20190808192535.GA18697@roeck-us.net>
+From: Alex Deucher <alexdeucher@gmail.com>
+Date: Thu, 8 Aug 2019 15:33:17 -0400
+Message-ID: <CADnq5_ONGvL0yMybsXCyYJO6zKRAi4aEPo8LwEwQjSP3aVbdJQ@mail.gmail.com>
+Subject: Re: drm/amdgpu: replace readq/writeq with atomic64 operations
+To: Guenter Roeck <linux@roeck-us.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_123130_316864_7DB7E49C 
-X-CRM114-Status: GOOD (  10.98  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20190808_123331_448141_E8E98644 
+X-CRM114-Status: GOOD (  11.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e49 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alexdeucher[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,82 +94,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yabin Cui <yabinc@google.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel-build-reports@lists.linaro.org, Mark Brown <broonie@kernel.org>,
+ Tao Zhou <tao.zhou1@amd.com>, amd-gfx list <amd-gfx@lists.freedesktop.org>,
+ Linux-Next Mailing List <linux-next@vger.kernel.org>,
+ Dennis Li <dennis.li@amd.com>, "Deucher,
+ Alexander" <alexander.deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Christian Koenig <christian.koenig@amd.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Hawking Zhang <hawking.zhang@amd.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When tracing etm data of multiple threads on multiple cpus through
-perf interface, each cpu has a unique etr_perf_buffer while sharing
-the same etr device. There is no guarantee that the last cpu starts
-etm tracing also stops last. So the perf_data check is no longer valid.
-
-Signed-off-by: Yabin Cui <yabinc@google.com>
----
- drivers/hwtracing/coresight/coresight-tmc-etr.c | 9 ---------
- drivers/hwtracing/coresight/coresight-tmc.h     | 2 --
- 2 files changed, 11 deletions(-)
-
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index 17006705287a..0418440e0141 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -1484,20 +1484,12 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
- 		goto out;
- 	}
- 
--	if (WARN_ON(drvdata->perf_data != etr_perf)) {
--		lost = true;
--		spin_unlock_irqrestore(&drvdata->spinlock, flags);
--		goto out;
--	}
--
- 	CS_UNLOCK(drvdata->base);
- 
- 	tmc_flush_and_stop(drvdata);
- 	tmc_sync_etr_buf(drvdata);
- 
- 	CS_LOCK(drvdata->base);
--	/* Reset perf specific data */
--	drvdata->perf_data = NULL;
- 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
- 
- 	size = etr_buf->len;
-@@ -1556,7 +1548,6 @@ static int tmc_enable_etr_sink_perf(struct coresight_device *csdev, void *data)
- 	}
- 
- 	etr_perf->head = PERF_IDX2OFF(handle->head, etr_perf);
--	drvdata->perf_data = etr_perf;
- 
- 	/*
- 	 * No HW configuration is needed if the sink is already in
-diff --git a/drivers/hwtracing/coresight/coresight-tmc.h b/drivers/hwtracing/coresight/coresight-tmc.h
-index 1ed50411cc3c..3881a9ee565a 100644
---- a/drivers/hwtracing/coresight/coresight-tmc.h
-+++ b/drivers/hwtracing/coresight/coresight-tmc.h
-@@ -178,7 +178,6 @@ struct etr_buf {
-  *		device configuration register (DEVID)
-  * @idr:	Holds etr_bufs allocated for this ETR.
-  * @idr_mutex:	Access serialisation for idr.
-- * @perf_data:	PERF buffer for ETR.
-  * @sysfs_data:	SYSFS buffer for ETR.
-  */
- struct tmc_drvdata {
-@@ -202,7 +201,6 @@ struct tmc_drvdata {
- 	struct idr		idr;
- 	struct mutex		idr_mutex;
- 	struct etr_buf		*sysfs_buf;
--	void			*perf_data;
- };
- 
- struct etr_buf_operations {
--- 
-2.22.0.770.g0f2c4a37fd-goog
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBBdWcgOCwgMjAxOSBhdCAzOjMxIFBNIEd1ZW50ZXIgUm9lY2sgPGxpbnV4QHJvZWNr
+LXVzLm5ldD4gd3JvdGU6Cj4KPiBPbiBXZWQsIEF1ZyAwNywgMjAxOSBhdCAxMDo1Njo0MEFNICsw
+ODAwLCBUYW8gWmhvdSB3cm90ZToKPiA+IHJlYWRxL3dyaXRlcSBhcmUgbm90IHN1cHBvcnRlZCBv
+biBhbGwgYXJjaGl0ZWN0dXJlcwo+ID4KPiA+IFNpZ25lZC1vZmYtYnk6IFRhbyBaaG91IDx0YW8u
+emhvdTFAYW1kLmNvbT4KPiA+IFJldmlld2VkLWJ5OiBBbGV4IERldWNoZXIgPGFsZXhhbmRlci5k
+ZXVjaGVyQGFtZC5jb20+Cj4KPiBSZWdhcmRpbmcgdGhlIGNsYWltIHRoYXQgdGhpcyB3b3VsZCB3
+b3JrIGZvciAzMi1iaXQgeDg2IGJ1aWxkczoKCkkgd2Fzbid0IHRhbGtpbmcgYWJvdXQgcmVhZHEv
+d3JpdGVxLCBJIHdhcyB0YWxraW5nIGFib3V0IHRoZSBhdG9taWM2NAppbnRlcmZhY2VzLgoKQWxl
+eAoKPgo+IG1ha2UgQVJDSD1pMzg2IGFsbG1vZGNvbmZpZwo+IG1ha2UgQVJDSD1pMzg2IGRyaXZl
+cnMvZ3B1L2RybS9hbWQvYW1kZ3B1L2FtZGdwdV9kZXZpY2Uubwo+Cj4gcmVzdWx0cyBpbjoKPgo+
+ICAgLi4uCj4gICBDQyBbTV0gIGRyaXZlcnMvZ3B1L2RybS9hbWQvYW1kZ3B1L2FtZGdwdV9kZXZp
+Y2Uubwo+IGRyaXZlcnMvZ3B1L2RybS9hbWQvYW1kZ3B1L2FtZGdwdV9kZXZpY2UuYzogSW4gZnVu
+Y3Rpb24g4oCYYW1kZ3B1X21tX3JyZWc2NOKAmToKPiBkcml2ZXJzL2dwdS9kcm0vYW1kL2FtZGdw
+dS9hbWRncHVfZGV2aWNlLmM6Mjc5Ojk6IGVycm9yOiBpbXBsaWNpdCBkZWNsYXJhdGlvbiBvZiBm
+dW5jdGlvbiDigJhyZWFkceKAmTsKPgo+IGRyaXZlcnMvZ3B1L2RybS9hbWQvYW1kZ3B1L2FtZGdw
+dV9kZXZpY2UuYzogSW4gZnVuY3Rpb24g4oCYYW1kZ3B1X21tX3dyZWc2NOKAmToKPiBkcml2ZXJz
+L2dwdS9kcm0vYW1kL2FtZGdwdS9hbWRncHVfZGV2aWNlLmM6Mjk4OjM6IGVycm9yOiBpbXBsaWNp
+dCBkZWNsYXJhdGlvbiBvZiBmdW5jdGlvbiDigJh3cml0ZXHigJkKPgo+IFRoaXMgaXMgd2l0aCBu
+ZXh0LTIwMTkwODA4Lgo+Cj4gR3VlbnRlcgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCj4gYW1kLWdmeCBtYWlsaW5nIGxpc3QKPiBhbWQtZ2Z4QGxpc3Rz
+LmZyZWVkZXNrdG9wLm9yZwo+IGh0dHBzOi8vbGlzdHMuZnJlZWRlc2t0b3Aub3JnL21haWxtYW4v
+bGlzdGluZm8vYW1kLWdmeAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
