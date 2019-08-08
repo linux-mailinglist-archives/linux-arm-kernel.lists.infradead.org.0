@@ -2,67 +2,185 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 038CF85E2A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 11:23:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7638585E38
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 11:26:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QYBrCbvfzk6ECN3SNcntTMRx6hjd4TG3DLOb1DufTPY=; b=EprELsAI8gydHY
-	/W2xkzm4VYE8diI23B0qxIo2S6GaX2wB3tkGfvZ5Ciewc8dIckezfkLJGMbmodgp2F+Ou0XMNfkEA
-	Bmwt/0oFngFQtVKvnFZrXWTjs8eH8rKa82f8SKG01JylSs5N//6SrKlIx5ic3FmUg1/aId9czJFy3
-	3cusi86mAYyeH95rvJBYrdnBjVM14kmt8oqxdls5kKaOGu2tkafZLQEsYiODDH3Hhd2zLENtX7v9C
-	RdpzTzVSklu7BIrVwkfMDjcwI9aTeu3Jh7KZ/SidwZEbTgZZs5qBJpIuduMPyFVbjsSTX6pN548zZ
-	npzz2otjWEyEawtZ+FMg==;
+	List-Owner; bh=a7TRQPidPoA+rS7BfwDu6VIg3h7JNFcSz2TMOe+za3E=; b=uCUngfS3uz/9IH
+	qie63d1fNJWr7/rvkK0pmrXjehCSwTDwFKsbKLliReiXsBZ1xBS/V+A+pKLbK0/XpqgsBmjgVq1vi
+	DEfSIBJpieGm0NgmisRiQtYjl68aTDqWuQBx6JylD7X0zF94LURg0TuC5stOlFNpbDdhftGiFXDdY
+	bVF84cLUYHwXbWvjXR/sCTqt8aaYw2mS64ijZG+zyIhIpMx2xu5BvszQfxspU0rq5mVlDWyEiXTg5
+	GeYIUyecdTb1H4E7LL0OxoxuLi6q9T1yaAxEz2dH7upNxlIrTuwgkCHXW0kTjnpz8AHi7404/i+EL
+	0HHgs4Bwjk6RYBFga+HQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvee1-0001bo-F7; Thu, 08 Aug 2019 09:23:37 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hvegj-0003IP-3w; Thu, 08 Aug 2019 09:26:25 +0000
+Received: from mail-he1eur01on0622.outbound.protection.outlook.com
+ ([2a01:111:f400:fe1e::622]
+ helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hved9-00013R-Dn; Thu, 08 Aug 2019 09:22:45 +0000
-X-UUID: 043f90eaf5f0494c93a9a489e5969b97-20190808
-X-UUID: 043f90eaf5f0494c93a9a489e5969b97-20190808
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 650880283; Thu, 08 Aug 2019 01:22:40 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 8 Aug 2019 02:22:38 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 8 Aug 2019 17:22:30 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 8 Aug 2019 17:22:29 +0800
-From: <dongchun.zhu@mediatek.com>
-To: <mchehab@kernel.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
- <sakari.ailus@linux.intel.com>, <drinkcat@chromium.org>,
- <tfiga@chromium.org>, <matthias.bgg@gmail.com>, <bingbu.cao@intel.com>
-Subject: [V1, 2/2] media: i2c: Add more sensor mode for ov8856 camera sensor
-Date: Thu, 8 Aug 2019 17:22:15 +0800
-Message-ID: <20190808092215.5608-3-dongchun.zhu@mediatek.com>
-X-Mailer: git-send-email 2.9.2
-In-Reply-To: <20190808092215.5608-1-dongchun.zhu@mediatek.com>
-References: <20190808092215.5608-1-dongchun.zhu@mediatek.com>
+ id 1hvegT-0003Ht-2O
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 09:26:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PWmUXu6Z3ulF6zBDue55trNJhyLyULxjqTZ0CFENnAg=;
+ b=EUW+HhMayIBSviMC+kpY+z/6ceGR6/DKFT642p/iDzJV/wj9//nfEdKssK28m4dBxxPoyjzVkyXdFS2Ey61xQy64dqmJvbnpCmu6sTpmb+jQdAOX7A502gyEYKz7yNMicscq/zG75dhCflCj3gIhmU6oWJ/YYJZzHJypqP220cM=
+Received: from VI1PR08CA0115.eurprd08.prod.outlook.com (2603:10a6:800:d4::17)
+ by AM0PR08MB4945.eurprd08.prod.outlook.com (2603:10a6:208:157::22)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.14; Thu, 8 Aug
+ 2019 09:26:03 +0000
+Received: from VE1EUR03FT008.eop-EUR03.prod.protection.outlook.com
+ (2a01:111:f400:7e09::202) by VI1PR08CA0115.outlook.office365.com
+ (2603:10a6:800:d4::17) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2157.15 via Frontend
+ Transport; Thu, 8 Aug 2019 09:26:02 +0000
+Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
+ smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
+ verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=temperror
+ action=none header.from=arm.com;
+Received-SPF: TempError (protection.outlook.com: error in processing during
+ lookup of arm.com: DNS Timeout)
+Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
+ VE1EUR03FT008.mail.protection.outlook.com (10.152.18.75) with
+ Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.2052.18 via Frontend Transport; Thu, 8 Aug 2019 09:26:01 +0000
+Received: ("Tessian outbound 71602e13cd49:v26");
+ Thu, 08 Aug 2019 09:25:55 +0000
+X-CheckRecipientChecked: true
+X-CR-MTA-CID: d7cb0969aa170b39
+X-CR-MTA-TID: 64aa7808
+Received: from 0c6d593ab3bc.2 (cr-mta-lb-1.cr-mta-net [104.47.13.51])
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com id
+ 55948023-1D86-4AFD-9B76-7F5F0D2AB9A6.1; 
+ Thu, 08 Aug 2019 09:25:50 +0000
+Received: from EUR04-HE1-obe.outbound.protection.outlook.com
+ (mail-he1eur04lp2051.outbound.protection.outlook.com [104.47.13.51])
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 0c6d593ab3bc.2
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384);
+ Thu, 08 Aug 2019 09:25:50 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HSKjV8eo7xrv3vuSLqaVy78hFjzs5Zs1WLlrwFzgF9I6Wj6mSZN/6aaGrbzoWvksFyeOxjw3n6z+nfEbQk5BAuUbb1GOpNa2y6lZxz8DD+8RUQOdx9xnO+5D5puaO2YoBABSBrBwfBSAuDWyNNgidRfoA7Yp50jJSv4R0Sq5Hbqw4HERRMpDoTso3Dc8yQ9NYLm1Za2o27+JVwC7Ci+V8lxS7fSjLn7iNNw16fCFDSXUvijZOnOmSV5QQKLO6OAkrJmZeVGafZW57hXe0zPP//LEM/Mfe9MGTe7WI7JBYKZitMkJugIwfpoJWjjhVIssFLGOMxzGHHP/zwQBnFRIZg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PWmUXu6Z3ulF6zBDue55trNJhyLyULxjqTZ0CFENnAg=;
+ b=ZLD9krQtJuYnmkbEdR6ta+GNK9fmfyL2qYEV2hqvORK7FDdD7+/FcxIhAg/EnR0dppT6UgM16xjhLeK/iLwr/BgavIFtxHWOwHpSWWYV1SUfQu9J8tDzjhzDinRV7cDpIKpXPPcIhtxwXdGHMkfmAu2QsF9jkeKg7/96S5tLz5rrie9etrqJjdyfk7W9HdinpMY22A+UY/VWtwL5yxoS0h8DdHUv94a2Ug5OdCiwyMBCuf28VDEM2Q0DTGNOn7MZRDJJWtN8obDKDnu81zmjwLX+jJc9p8PeMr8PBsUfU+x4h/oaruP5NosxWadfqF9y8qKwG4Wf7eoaPBqO45hnfQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
+ header.d=arm.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PWmUXu6Z3ulF6zBDue55trNJhyLyULxjqTZ0CFENnAg=;
+ b=EUW+HhMayIBSviMC+kpY+z/6ceGR6/DKFT642p/iDzJV/wj9//nfEdKssK28m4dBxxPoyjzVkyXdFS2Ey61xQy64dqmJvbnpCmu6sTpmb+jQdAOX7A502gyEYKz7yNMicscq/zG75dhCflCj3gIhmU6oWJ/YYJZzHJypqP220cM=
+Received: from AM4PR0802MB2307.eurprd08.prod.outlook.com (10.172.219.8) by
+ AM4PR0802MB2161.eurprd08.prod.outlook.com (10.172.216.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.18; Thu, 8 Aug 2019 09:25:47 +0000
+Received: from AM4PR0802MB2307.eurprd08.prod.outlook.com
+ ([fe80::e854:32de:1cad:f93a]) by AM4PR0802MB2307.eurprd08.prod.outlook.com
+ ([fe80::e854:32de:1cad:f93a%9]) with mapi id 15.20.2157.015; Thu, 8 Aug 2019
+ 09:25:47 +0000
+From: Szabolcs Nagy <Szabolcs.Nagy@arm.com>
+To: Dave Hansen <dave.hansen@intel.com>, Catalin Marinas
+ <Catalin.Marinas@arm.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: Re: [PATCH v7 1/2] arm64: Define
+ Documentation/arm64/tagged-address-abi.rst
+Thread-Topic: [PATCH v7 1/2] arm64: Define
+ Documentation/arm64/tagged-address-abi.rst
+Thread-Index: AQHVTThJtBlc8zHC8EmoKLcy3EHPqqbwJaMAgADWb4A=
+Date: Thu, 8 Aug 2019 09:25:47 +0000
+Message-ID: <48c5f9b3-d253-bede-e755-0aabba2757b5@arm.com>
+References: <20190807155321.9648-1-catalin.marinas@arm.com>
+ <20190807155321.9648-2-catalin.marinas@arm.com>
+ <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
+In-Reply-To: <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+x-originating-ip: [217.140.106.55]
+x-clientproxiedby: LO2P265CA0217.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:b::13) To AM4PR0802MB2307.eurprd08.prod.outlook.com
+ (2603:10a6:200:61::8)
+Authentication-Results-Original: spf=none (sender IP is )
+ smtp.mailfrom=Szabolcs.Nagy@arm.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+X-MS-Office365-Filtering-Correlation-Id: a0e70460-4ff8-468e-ecb3-08d71be26da5
+X-MS-Office365-Filtering-HT: Tenant
+X-Microsoft-Antispam-Untrusted: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM4PR0802MB2161; 
+X-MS-TrafficTypeDiagnostic: AM4PR0802MB2161:|AM0PR08MB4945:
+x-ms-exchange-transport-forked: True
+X-Microsoft-Antispam-PRVS: <AM0PR08MB494591E4444C30126A95CDC5EDD70@AM0PR08MB4945.eurprd08.prod.outlook.com>
+x-checkrecipientrouted: true
+x-ms-oob-tlc-oobclassifiers: OLM:5236;OLM:5236;
+x-forefront-prvs: 012349AD1C
+X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(376002)(136003)(396003)(366004)(39860400002)(54094003)(199004)(189003)(6512007)(52116002)(53936002)(86362001)(25786009)(7736002)(99286004)(71190400001)(71200400001)(476003)(36756003)(102836004)(386003)(53546011)(6506007)(44832011)(256004)(486006)(4326008)(6246003)(76176011)(2616005)(11346002)(446003)(186003)(5660300002)(26005)(66946007)(66476007)(66556008)(64756008)(66446008)(31696002)(2501003)(6116002)(14454004)(65806001)(65956001)(66066001)(3846002)(65826007)(478600001)(6486002)(81156014)(81166006)(2906002)(54906003)(110136005)(316002)(58126008)(229853002)(305945005)(64126003)(8676002)(6436002)(31686004)(8936002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM4PR0802MB2161;
+ H:AM4PR0802MB2307.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: arm.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info-Original: kAQ/NcX1v7sXRgpyyyNJZO/B0kZE/8IxEJH6DBs6ZzZ4jOpflqQFaW1n/5gg1IgHZ/RuWIBFK9Wls04AmYnyjJi3XlpNsuqeJ1vNmVkieYu/x5VtoZFCKTIUdUCahah90rLVx2bfmiowjz6+gVFEobszH/k2YWYJBdoPRT8jp+xzUpJ0fHer3GJVm6FFbMBCFrCBY5sP5iJ1PxX8okJs9zxCUCzoukY55IGVk+u24lZminPg6mdJ52j3B94I3mRvRD1gAn+W4ZEphyeAWuNB+s75+OWalyPQqhfysIJ9adn3oiYHq12ZVgdsYyVxw4PgbCqvVtk66CRaej92QasGdv0oU4kSa3rjCJUDBxMaPu7vVq8vtGmFN7lYUdIKsJht7A6oK+btq4piRwBASokXW2DZrc91qvLYB+6fkwUMu5k=
+Content-ID: <960F9790878B3346A988307D90E92E55@eurprd08.prod.outlook.com>
 MIME-Version: 1.0
-X-MTK: N
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM4PR0802MB2161
+Original-Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=Szabolcs.Nagy@arm.com; 
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: VE1EUR03FT008.eop-EUR03.prod.protection.outlook.com
+X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
+ EFV:NLI; SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(346002)(376002)(136003)(39860400002)(2980300002)(199004)(189003)(54094003)(86362001)(6246003)(107886003)(8936002)(31686004)(6512007)(31696002)(6486002)(14454004)(65826007)(6506007)(64126003)(229853002)(26826003)(478600001)(7736002)(102836004)(305945005)(386003)(99286004)(26005)(53546011)(2501003)(186003)(76176011)(23676004)(2486003)(110136005)(476003)(2616005)(63370400001)(11346002)(336012)(356004)(58126008)(126002)(446003)(54906003)(3846002)(63350400001)(50466002)(436003)(36906005)(486006)(22756006)(6116002)(4326008)(47776003)(5660300002)(65806001)(65956001)(66066001)(316002)(81166006)(25786009)(8676002)(36756003)(2906002)(81156014)(76130400001)(70586007)(70206006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR08MB4945;
+ H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:TempError; LANG:en;
+ PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; A:1; MX:1; 
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 92843451-54da-426b-674f-08d71be26534
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(710020)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:AM0PR08MB4945; 
+NoDisclaimer: True
+X-Forefront-PRVS: 012349AD1C
+X-Microsoft-Antispam-Message-Info: gSDPrPLaeDgudYMy4xUbZWOJWnp/opgpQs8+4ZVZpEU/MRILBK1q0H9iJ1sjNJ2mVP3Y4VxCiNQ+FFgA/BW7gm5mqxrFoLk/2ibiTlT+6NPx3Vel5B9h1LgShdjv4V6goKWDSvzrSUjCPPZSLj0kFiW2H9eN6ajNTPv+Tm1latj/ocvxPYLdgBMpZftH8wgqjG3ZX/iTxnnvbe0229IZZvWMjNWDQVumV+GbHdJmceCByOGdDfSniMaCiyae5dgaVX1Xu4FoA33wB3ztffdUM1wAPkZq4TXvC9xkHoRhOjsQPG/OTPWkjwhs1m+XUCUGjM3IEffhr9PYwugv4cjeemdah4nUMbQl2wuYKOHvpdEL9V6Amc5NIKfUeLNFUo75ebN2/7wj4zgIOL5Jo6N4Jt62XD1ZRI+/3pzmQ+Ub+Gg=
+X-OriginatorOrg: arm.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Aug 2019 09:26:01.1032 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a0e70460-4ff8-468e-ecb3-08d71be26da5
+X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
+ Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR08MB4945
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_022243_483104_FC42FADD 
-X-CRM114-Status: GOOD (  15.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190808_022609_176966_D6811505 
+X-CRM114-Status: GOOD (  12.09  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [2a01:111:f400:fe1e:0:0:0:622 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,817 +192,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- shengnan.wang@mediatek.com, sj.huang@mediatek.com,
- linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
- louis.kuo@mediatek.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <Kevin.Brodsky@arm.com>, Will
+ Deacon <Will.Deacon@arm.com>, nd <nd@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+On 07/08/2019 21:38, Dave Hansen wrote:
+> On 8/7/19 8:53 AM, Catalin Marinas wrote:
+>> +- The syscall behaviour is undefined for non valid tagged pointers.
+> 
+> Do you really mean "undefined"?  I mean, a bad pointer is a bad pointer.
+>  Why should it matter if it's a tagged bad pointer or an untagged bad
+> pointer?
 
-This patch mainly adds two more sensor modes for OV8856 image sensor.
-The OV8856 driver currently supports output format: 10-bit Raw,
-the resolution of 1632*1224 and 3264*2448, and the bayer order of BGGR.
-The hardware version also differs in some OTP regiser,
-as well as PLL register setting.
+bad pointers are invalid, but some non-bad pointers are
+also invalid if they are tagged (e.g. tagged pointer to
+device memory?) those may be valid to dereference in
+userspace but don't work across the syscall abi (device
+driver does not handle the tag?).
 
-Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
----
- drivers/media/i2c/ov8856.c | 624 ++++++++++++++++++++++++++++++++++++++++++++-
- 1 file changed, 621 insertions(+), 3 deletions(-)
+>> +- mmap() addr parameter.
+>> +
+>> +- mremap() new_address parameter.
+> 
+> Is munmap() missing?  Or was there a reason for leaving it out?
 
-diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
-index cd347d6..e0610b6 100644
---- a/drivers/media/i2c/ov8856.c
-+++ b/drivers/media/i2c/ov8856.c
-@@ -1,12 +1,15 @@
- // SPDX-License-Identifier: GPL-2.0
- // Copyright (c) 2019 Intel Corporation.
- 
-+#include <linux/clk.h>
- #include <asm/unaligned.h>
- #include <linux/acpi.h>
- #include <linux/delay.h>
-+#include <linux/gpio/consumer.h>
- #include <linux/i2c.h>
- #include <linux/module.h>
- #include <linux/pm_runtime.h>
-+#include <linux/regulator/consumer.h>
- #include <media/v4l2-ctrls.h>
- #include <media/v4l2-device.h>
- #include <media/v4l2-fwnode.h>
-@@ -19,6 +22,7 @@
- #define OV8856_LINK_FREQ_180MHZ		180000000ULL
- #define OV8856_SCLK			144000000ULL
- #define OV8856_MCLK			19200000
-+#define OV8856_XVCLK_FREQ		24000000
- #define OV8856_DATA_LANES		4
- #define OV8856_RGB_DEPTH		10
- 
-@@ -29,6 +33,18 @@
- #define OV8856_MODE_STANDBY		0x00
- #define OV8856_MODE_STREAMING		0x01
- 
-+/* define 1B module */
-+#define OV8856_1B_MODULE		0x02
-+
-+/* otp sram register */
-+#define OV8856_OTP_REG			0x700f
-+#define OV8856_OTP_REG_ONE		0x3d84
-+#define OV8856_OTP_REG_TWO		0x3d81
-+
-+/* clock register */
-+#define OV8856_CLK_REG			0x3614
-+#define OV8856_CLK_REG_1B_VAL		0x20
-+
- /* vertical-timings from sensor */
- #define OV8856_REG_VTS			0x380e
- #define OV8856_VTS_MAX			0x7fff
-@@ -64,6 +80,14 @@
- 
- #define to_ov8856(_sd)			container_of(_sd, struct ov8856, sd)
- 
-+static const char * const ov8856_supply_names[] = {
-+	"dovdd",	/* Digital I/O power */
-+	"avdd",		/* Analog power */
-+	"dvdd",		/* Digital core power */
-+};
-+
-+#define OV8856_NUM_SUPPLIES ARRAY_SIZE(ov8856_supply_names)
-+
- enum {
- 	OV8856_LINK_FREQ_720MBPS,
- 	OV8856_LINK_FREQ_360MBPS,
-@@ -316,6 +340,208 @@ static const struct ov8856_reg mode_3280x2464_regs[] = {
- 	{0x5e00, 0x00}
- };
- 
-+static const struct ov8856_reg mode_3264x2448_regs[] = {
-+	{0x0103, 0x01},
-+	{0x0302, 0x3c},
-+	{0x0303, 0x01},
-+	{0x031e, 0x0c},
-+	{0x3000, 0x00},
-+	{0x300e, 0x00},
-+	{0x3010, 0x00},
-+	{0x3015, 0x84},
-+	{0x3018, 0x72},
-+	{0x3021, 0x23},
-+	{0x3033, 0x24},
-+	{0x3500, 0x00},
-+	{0x3501, 0x9a},
-+	{0x3502, 0x20},
-+	{0x3503, 0x08},
-+	{0x3505, 0x83},
-+	{0x3508, 0x01},
-+	{0x3509, 0x80},
-+	{0x350c, 0x00},
-+	{0x350d, 0x80},
-+	{0x350e, 0x04},
-+	{0x350f, 0x00},
-+	{0x3510, 0x00},
-+	{0x3511, 0x02},
-+	{0x3512, 0x00},
-+	{0x3600, 0x72},
-+	{0x3601, 0x40},
-+	{0x3602, 0x30},
-+	{0x3610, 0xc5},
-+	{0x3611, 0x58},
-+	{0x3612, 0x5c},
-+	{0x3613, 0xca},
-+	{0x3614, 0x60},
-+	{0x3628, 0xff},
-+	{0x3629, 0xff},
-+	{0x362a, 0xff},
-+	{0x3633, 0x10},
-+	{0x3634, 0x10},
-+	{0x3635, 0x10},
-+	{0x3636, 0x10},
-+	{0x3663, 0x08},
-+	{0x3669, 0x34},
-+	{0x366d, 0x00},
-+	{0x366e, 0x10},
-+	{0x3706, 0x86},
-+	{0x370b, 0x7e},
-+	{0x3714, 0x23},
-+	{0x3730, 0x12},
-+	{0x3733, 0x10},
-+	{0x3764, 0x00},
-+	{0x3765, 0x00},
-+	{0x3769, 0x62},
-+	{0x376a, 0x2a},
-+	{0x376b, 0x30},
-+	{0x3780, 0x00},
-+	{0x3781, 0x24},
-+	{0x3782, 0x00},
-+	{0x3783, 0x23},
-+	{0x3798, 0x2f},
-+	{0x37a1, 0x60},
-+	{0x37a8, 0x6a},
-+	{0x37ab, 0x3f},
-+	{0x37c2, 0x04},
-+	{0x37c3, 0xf1},
-+	{0x37c9, 0x80},
-+	{0x37cb, 0x16},
-+	{0x37cc, 0x16},
-+	{0x37cd, 0x16},
-+	{0x37ce, 0x16},
-+	{0x3800, 0x00},
-+	{0x3801, 0x00},
-+	{0x3802, 0x00},
-+	{0x3803, 0x0c},
-+	{0x3804, 0x0c},
-+	{0x3805, 0xdf},
-+	{0x3806, 0x09},
-+	{0x3807, 0xa3},
-+	{0x3808, 0x0c},
-+	{0x3809, 0xc0},
-+	{0x380a, 0x09},
-+	{0x380b, 0x90},
-+	{0x380c, 0x07},
-+	{0x380d, 0x8c},
-+	{0x380e, 0x09},
-+	{0x380f, 0xb2},
-+	{0x3810, 0x00},
-+	{0x3811, 0x04},
-+	{0x3812, 0x00},
-+	{0x3813, 0x02},
-+	{0x3814, 0x01},
-+	{0x3815, 0x01},
-+	{0x3816, 0x00},
-+	{0x3817, 0x00},
-+	{0x3818, 0x00},
-+	{0x3819, 0x00},
-+	{0x3820, 0x80},
-+	{0x3821, 0x46},
-+	{0x382a, 0x01},
-+	{0x382b, 0x01},
-+	{0x3830, 0x06},
-+	{0x3836, 0x02},
-+	{0x3862, 0x04},
-+	{0x3863, 0x08},
-+	{0x3cc0, 0x33},
-+	{0x3d85, 0x17},
-+	{0x3d8c, 0x73},
-+	{0x3d8d, 0xde},
-+	{0x4001, 0xe0},
-+	{0x4003, 0x40},
-+	{0x4008, 0x00},
-+	{0x4009, 0x0b},
-+	{0x400a, 0x00},
-+	{0x400b, 0x84},
-+	{0x400f, 0x80},
-+	{0x4010, 0xf0},
-+	{0x4011, 0xff},
-+	{0x4012, 0x02},
-+	{0x4013, 0x01},
-+	{0x4014, 0x01},
-+	{0x4015, 0x01},
-+	{0x4042, 0x00},
-+	{0x4043, 0x80},
-+	{0x4044, 0x00},
-+	{0x4045, 0x80},
-+	{0x4046, 0x00},
-+	{0x4047, 0x80},
-+	{0x4048, 0x00},
-+	{0x4049, 0x80},
-+	{0x4041, 0x03},
-+	{0x404c, 0x20},
-+	{0x404d, 0x00},
-+	{0x404e, 0x20},
-+	{0x4203, 0x80},
-+	{0x4307, 0x30},
-+	{0x4317, 0x00},
-+	{0x4502, 0x50},
-+	{0x4503, 0x08},
-+	{0x4601, 0x80},
-+	{0x4800, 0x44},
-+	{0x4816, 0x53},
-+	{0x481b, 0x50},
-+	{0x481f, 0x27},
-+	{0x4823, 0x3c},
-+	{0x482b, 0x00},
-+	{0x4831, 0x66},
-+	{0x4837, 0x16},
-+	{0x483c, 0x0f},
-+	{0x484b, 0x05},
-+	{0x5000, 0x77},
-+	{0x5001, 0x0a},
-+	{0x5003, 0xc8},
-+	{0x5004, 0x04},
-+	{0x5006, 0x00},
-+	{0x5007, 0x00},
-+	{0x502e, 0x03},
-+	{0x5030, 0x41},
-+	{0x5780, 0x14},
-+	{0x5781, 0x0f},
-+	{0x5782, 0x44},
-+	{0x5783, 0x02},
-+	{0x5784, 0x01},
-+	{0x5785, 0x01},
-+	{0x5786, 0x00},
-+	{0x5787, 0x04},
-+	{0x5788, 0x02},
-+	{0x5789, 0x0f},
-+	{0x578a, 0xfd},
-+	{0x578b, 0xf5},
-+	{0x578c, 0xf5},
-+	{0x578d, 0x03},
-+	{0x578e, 0x08},
-+	{0x578f, 0x0c},
-+	{0x5790, 0x08},
-+	{0x5791, 0x04},
-+	{0x5792, 0x00},
-+	{0x5793, 0x52},
-+	{0x5794, 0xa3},
-+	{0x5795, 0x02},
-+	{0x5796, 0x20},
-+	{0x5797, 0x20},
-+	{0x5798, 0xd5},
-+	{0x5799, 0xd5},
-+	{0x579a, 0x00},
-+	{0x579b, 0x50},
-+	{0x579c, 0x00},
-+	{0x579d, 0x2c},
-+	{0x579e, 0x0c},
-+	{0x579f, 0x40},
-+	{0x57a0, 0x09},
-+	{0x57a1, 0x40},
-+	{0x59f8, 0x3d},
-+	{0x5a08, 0x02},
-+	{0x5b00, 0x02},
-+	{0x5b01, 0x10},
-+	{0x5b02, 0x03},
-+	{0x5b03, 0xcf},
-+	{0x5b05, 0x6c},
-+	{0x5e00, 0x00},
-+	{0x5e10, 0xfc}
-+};
-+
- static const struct ov8856_reg mode_1640x1232_regs[] = {
- 	{0x3000, 0x20},
- 	{0x3003, 0x08},
-@@ -506,6 +732,208 @@ static const struct ov8856_reg mode_1640x1232_regs[] = {
- 	{0x5e00, 0x00}
- };
- 
-+static const struct ov8856_reg mode_1632x1224_regs[] = {
-+	{0x0103, 0x01},
-+	{0x0302, 0x3c},
-+	{0x0303, 0x01},
-+	{0x031e, 0x0c},
-+	{0x3000, 0x00},
-+	{0x300e, 0x00},
-+	{0x3010, 0x00},
-+	{0x3015, 0x84},
-+	{0x3018, 0x72},
-+	{0x3021, 0x23},
-+	{0x3033, 0x24},
-+	{0x3500, 0x00},
-+	{0x3501, 0x4c},
-+	{0x3502, 0xe0},
-+	{0x3503, 0x08},
-+	{0x3505, 0x83},
-+	{0x3508, 0x01},
-+	{0x3509, 0x80},
-+	{0x350c, 0x00},
-+	{0x350d, 0x80},
-+	{0x350e, 0x04},
-+	{0x350f, 0x00},
-+	{0x3510, 0x00},
-+	{0x3511, 0x02},
-+	{0x3512, 0x00},
-+	{0x3600, 0x72},
-+	{0x3601, 0x40},
-+	{0x3602, 0x30},
-+	{0x3610, 0xc5},
-+	{0x3611, 0x58},
-+	{0x3612, 0x5c},
-+	{0x3613, 0xca},
-+	{0x3614, 0x60},
-+	{0x3628, 0xff},
-+	{0x3629, 0xff},
-+	{0x362a, 0xff},
-+	{0x3633, 0x10},
-+	{0x3634, 0x10},
-+	{0x3635, 0x10},
-+	{0x3636, 0x10},
-+	{0x3663, 0x08},
-+	{0x3669, 0x34},
-+	{0x366d, 0x00},
-+	{0x366e, 0x08},
-+	{0x3706, 0x86},
-+	{0x370b, 0x7e},
-+	{0x3714, 0x27},
-+	{0x3730, 0x12},
-+	{0x3733, 0x10},
-+	{0x3764, 0x00},
-+	{0x3765, 0x00},
-+	{0x3769, 0x62},
-+	{0x376a, 0x2a},
-+	{0x376b, 0x30},
-+	{0x3780, 0x00},
-+	{0x3781, 0x24},
-+	{0x3782, 0x00},
-+	{0x3783, 0x23},
-+	{0x3798, 0x2f},
-+	{0x37a1, 0x60},
-+	{0x37a8, 0x6a},
-+	{0x37ab, 0x3f},
-+	{0x37c2, 0x14},
-+	{0x37c3, 0xf1},
-+	{0x37c9, 0x80},
-+	{0x37cb, 0x16},
-+	{0x37cc, 0x16},
-+	{0x37cd, 0x16},
-+	{0x37ce, 0x16},
-+	{0x3800, 0x00},
-+	{0x3801, 0x00},
-+	{0x3802, 0x00},
-+	{0x3803, 0x0c},
-+	{0x3804, 0x0c},
-+	{0x3805, 0xdf},
-+	{0x3806, 0x09},
-+	{0x3807, 0xa3},
-+	{0x3808, 0x06},
-+	{0x3809, 0x60},
-+	{0x380a, 0x04},
-+	{0x380b, 0xc8},
-+	{0x380c, 0x07},
-+	{0x380d, 0x8c},
-+	{0x380e, 0x09},
-+	{0x380f, 0xb2},
-+	{0x3810, 0x00},
-+	{0x3811, 0x02},
-+	{0x3812, 0x00},
-+	{0x3813, 0x02},
-+	{0x3814, 0x03},
-+	{0x3815, 0x01},
-+	{0x3816, 0x00},
-+	{0x3817, 0x00},
-+	{0x3818, 0x00},
-+	{0x3819, 0x00},
-+	{0x3820, 0x80},
-+	{0x3821, 0x47},
-+	{0x382a, 0x03},
-+	{0x382b, 0x01},
-+	{0x3830, 0x06},
-+	{0x3836, 0x02},
-+	{0x3862, 0x04},
-+	{0x3863, 0x08},
-+	{0x3cc0, 0x33},
-+	{0x3d85, 0x17},
-+	{0x3d8c, 0x73},
-+	{0x3d8d, 0xde},
-+	{0x4001, 0xe0},
-+	{0x4003, 0x40},
-+	{0x4008, 0x00},
-+	{0x4009, 0x05},
-+	{0x400a, 0x00},
-+	{0x400b, 0x84},
-+	{0x400f, 0x80},
-+	{0x4010, 0xf0},
-+	{0x4011, 0xff},
-+	{0x4012, 0x02},
-+	{0x4013, 0x01},
-+	{0x4014, 0x01},
-+	{0x4015, 0x01},
-+	{0x4042, 0x00},
-+	{0x4043, 0x80},
-+	{0x4044, 0x00},
-+	{0x4045, 0x80},
-+	{0x4046, 0x00},
-+	{0x4047, 0x80},
-+	{0x4048, 0x00},
-+	{0x4049, 0x80},
-+	{0x4041, 0x03},
-+	{0x404c, 0x20},
-+	{0x404d, 0x00},
-+	{0x404e, 0x20},
-+	{0x4203, 0x80},
-+	{0x4307, 0x30},
-+	{0x4317, 0x00},
-+	{0x4502, 0x50},
-+	{0x4503, 0x08},
-+	{0x4601, 0x80},
-+	{0x4800, 0x44},
-+	{0x4816, 0x53},
-+	{0x481b, 0x50},
-+	{0x481f, 0x27},
-+	{0x4823, 0x3c},
-+	{0x482b, 0x00},
-+	{0x4831, 0x66},
-+	{0x4837, 0x16},
-+	{0x483c, 0x0f},
-+	{0x484b, 0x05},
-+	{0x5000, 0x77},
-+	{0x5001, 0x0a},
-+	{0x5003, 0xc8},
-+	{0x5004, 0x04},
-+	{0x5006, 0x00},
-+	{0x5007, 0x00},
-+	{0x502e, 0x03},
-+	{0x5030, 0x41},
-+	{0x5795, 0x00},
-+	{0x5796, 0x10},
-+	{0x5797, 0x10},
-+	{0x5798, 0x73},
-+	{0x5799, 0x73},
-+	{0x579a, 0x00},
-+	{0x579b, 0x28},
-+	{0x579c, 0x00},
-+	{0x579d, 0x16},
-+	{0x579e, 0x06},
-+	{0x579f, 0x20},
-+	{0x57a0, 0x04},
-+	{0x57a1, 0xa0},
-+	{0x5780, 0x14},
-+	{0x5781, 0x0f},
-+	{0x5782, 0x44},
-+	{0x5783, 0x02},
-+	{0x5784, 0x01},
-+	{0x5785, 0x01},
-+	{0x5786, 0x00},
-+	{0x5787, 0x04},
-+	{0x5788, 0x02},
-+	{0x5789, 0x0f},
-+	{0x578a, 0xfd},
-+	{0x578b, 0xf5},
-+	{0x578c, 0xf5},
-+	{0x578d, 0x03},
-+	{0x578e, 0x08},
-+	{0x578f, 0x0c},
-+	{0x5790, 0x08},
-+	{0x5791, 0x04},
-+	{0x5792, 0x00},
-+	{0x5793, 0x52},
-+	{0x5794, 0xa3},
-+	{0x59f8, 0x3d},
-+	{0x5a08, 0x02},
-+	{0x5b00, 0x02},
-+	{0x5b01, 0x10},
-+	{0x5b02, 0x03},
-+	{0x5b03, 0xcf},
-+	{0x5b05, 0x6c},
-+	{0x5e00, 0x00},
-+	{0x5e10, 0xfc}
-+};
-+
- static const char * const ov8856_test_pattern_menu[] = {
- 	"Disabled",
- 	"Standard Color Bar",
-@@ -548,6 +976,18 @@ static const struct ov8856_mode supported_modes[] = {
- 		.link_freq_index = OV8856_LINK_FREQ_720MBPS,
- 	},
- 	{
-+		.width    = 3264,
-+		.height   = 2448,
-+		.hts      = 1932,
-+		.vts_def  = 2482,
-+		.vts_min  = 2482,
-+		.reg_list = {
-+			.num_of_regs = ARRAY_SIZE(mode_3264x2448_regs),
-+			.regs = mode_3264x2448_regs,
-+		},
-+		.link_freq_index = OV8856_LINK_FREQ_720MBPS,
-+	},
-+	{
- 		.width = 1640,
- 		.height = 1232,
- 		.hts = 3820,
-@@ -558,6 +998,18 @@ static const struct ov8856_mode supported_modes[] = {
- 			.regs = mode_1640x1232_regs,
- 		},
- 		.link_freq_index = OV8856_LINK_FREQ_360MBPS,
-+	},
-+	{
-+		.width    = 1632,
-+		.height   = 1224,
-+		.hts      = 1932,
-+		.vts_def  = 2482,
-+		.vts_min  = 2482,
-+		.reg_list = {
-+			.num_of_regs = ARRAY_SIZE(mode_1632x1224_regs),
-+			.regs = mode_1632x1224_regs,
-+		},
-+		.link_freq_index = OV8856_LINK_FREQ_360MBPS,
- 	}
- };
- 
-@@ -566,6 +1018,10 @@ struct ov8856 {
- 	struct media_pad pad;
- 	struct v4l2_ctrl_handler ctrl_handler;
- 
-+	struct clk		*xvclk;
-+	struct gpio_desc	*reset_gpio;
-+	struct regulator_bulk_data supplies[OV8856_NUM_SUPPLIES];
-+
- 	/* V4L2 Controls */
- 	struct v4l2_ctrl *link_freq;
- 	struct v4l2_ctrl *pixel_rate;
-@@ -576,6 +1032,9 @@ struct ov8856 {
- 	/* Current mode */
- 	const struct ov8856_mode *cur_mode;
- 
-+	/* module hardware version */
-+	bool is_1B_module;
-+
- 	/* To serialize asynchronus callbacks */
- 	struct mutex mutex;
- 
-@@ -696,6 +1155,24 @@ static int ov8856_test_pattern(struct ov8856 *ov8856, u32 pattern)
- 				OV8856_REG_VALUE_08BIT, pattern);
- }
- 
-+static int ov8856_update_otp_reg(struct ov8856 *ov8856)
-+{
-+	int ret;
-+
-+	ret = ov8856_write_reg(ov8856, OV8856_REG_MODE_SELECT,
-+			       OV8856_REG_VALUE_08BIT, OV8856_MODE_STREAMING);
-+	if (ret)
-+		return ret;
-+
-+	ret = ov8856_write_reg(ov8856, OV8856_OTP_REG_ONE,
-+			       OV8856_REG_VALUE_08BIT, OV8856_MODE_STANDBY);
-+	if (ret)
-+		return ret;
-+
-+	return ov8856_write_reg(ov8856, OV8856_OTP_REG_TWO,
-+				OV8856_REG_VALUE_08BIT, OV8856_MODE_STREAMING);
-+}
-+
- static int ov8856_set_ctrl(struct v4l2_ctrl *ctrl)
- {
- 	struct ov8856 *ov8856 = container_of(ctrl->handler,
-@@ -825,7 +1302,13 @@ static void ov8856_update_pad_format(const struct ov8856_mode *mode,
- {
- 	fmt->width = mode->width;
- 	fmt->height = mode->height;
--	fmt->code = MEDIA_BUS_FMT_SGRBG10_1X10;
-+
-+	/* Bayer Order is determined by image resolution */
-+	if (fmt->width == 3264 || fmt->width == 1632)
-+		fmt->code = MEDIA_BUS_FMT_SBGGR10_1X10;
-+	else
-+		fmt->code = MEDIA_BUS_FMT_SGRBG10_1X10;
-+
- 	fmt->field = V4L2_FIELD_NONE;
- }
- 
-@@ -850,6 +1333,17 @@ static int ov8856_start_streaming(struct ov8856 *ov8856)
- 		return ret;
- 	}
- 
-+	/* update R3614 for 1B module */
-+	if (ov8856->is_1B_module) {
-+		ret = ov8856_write_reg(ov8856, OV8856_CLK_REG,
-+				       OV8856_REG_VALUE_08BIT,
-+				       OV8856_CLK_REG_1B_VAL);
-+		if (ret) {
-+			dev_err(&client->dev, "failed to set R3614");
-+			return ret;
-+		}
-+	}
-+
- 	ret = __v4l2_ctrl_handler_setup(ov8856->sd.ctrl_handler);
- 	if (ret)
- 		return ret;
-@@ -882,6 +1376,8 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
- 	if (ov8856->streaming == enable)
- 		return 0;
- 
-+	dev_dbg(&client->dev, "hardware version: (%d)\n", ov8856->is_1B_module);
-+
- 	mutex_lock(&ov8856->mutex);
- 	if (enable) {
- 		ret = pm_runtime_get_sync(&client->dev);
-@@ -908,6 +1404,54 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
- 	return ret;
- }
- 
-+/* Calculate the delay in us by clock rate and clock cycles */
-+static inline u32 ov8856_cal_delay(u32 cycles)
-+{
-+	return DIV_ROUND_UP(cycles, OV8856_XVCLK_FREQ / 1000 / 1000);
-+}
-+
-+static int __ov8856_power_on(struct ov8856 *ov8856)
-+{
-+	int ret;
-+	u32 delay_us;
-+	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-+
-+	ret = clk_prepare_enable(ov8856->xvclk);
-+	if (ret < 0) {
-+		dev_err(&client->dev, "Failed to enable xvclk\n");
-+		return ret;
-+	}
-+
-+	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-+
-+	ret = regulator_bulk_enable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-+	if (ret < 0) {
-+		dev_err(&client->dev, "Failed to enable regulators\n");
-+		goto disable_clk;
-+	}
-+
-+	gpiod_set_value_cansleep(ov8856->reset_gpio, 0);
-+
-+	/* 8192 cycles prior to first SCCB transaction */
-+	delay_us = ov8856_cal_delay(8192);
-+	usleep_range(delay_us  * 2, delay_us * 4);
-+
-+	return 0;
-+
-+disable_clk:
-+	clk_disable_unprepare(ov8856->xvclk);
-+
-+	return ret;
-+}
-+
-+static void __ov8856_power_off(struct ov8856 *ov8856)
-+{
-+	clk_disable_unprepare(ov8856->xvclk);
-+	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-+
-+	regulator_bulk_disable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-+}
-+
- static int __maybe_unused ov8856_suspend(struct device *dev)
- {
- 	struct i2c_client *client = to_i2c_client(dev);
-@@ -915,8 +1459,8 @@ static int __maybe_unused ov8856_suspend(struct device *dev)
- 	struct ov8856 *ov8856 = to_ov8856(sd);
- 
- 	mutex_lock(&ov8856->mutex);
--	if (ov8856->streaming)
--		ov8856_stop_streaming(ov8856);
-+
-+	__ov8856_power_off(ov8856);
- 
- 	mutex_unlock(&ov8856->mutex);
- 
-@@ -1089,6 +1633,20 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
- 		return -ENXIO;
- 	}
- 
-+	/* set R3614 to distinguish harward versions */
-+	ret = ov8856_update_otp_reg(ov8856);
-+	if (ret) {
-+		dev_err(&client->dev, "failed to set otp register");
-+		return ret;
-+	}
-+
-+	ret = ov8856_read_reg(ov8856, OV8856_OTP_REG,
-+			      OV8856_REG_VALUE_08BIT, &val);
-+	if (ret)
-+		return ret;
-+
-+	ov8856->is_1B_module = (val == OV8856_1B_MODULE) ? 1 : 0;
-+
- 	return 0;
- }
- 
-@@ -1164,11 +1722,27 @@ static int ov8856_remove(struct i2c_client *client)
- 	media_entity_cleanup(&sd->entity);
- 	v4l2_ctrl_handler_free(sd->ctrl_handler);
- 	pm_runtime_disable(&client->dev);
-+	if (!pm_runtime_status_suspended(&client->dev))
-+		__ov8856_power_off(ov8856);
-+	pm_runtime_set_suspended(&client->dev);
- 	mutex_destroy(&ov8856->mutex);
- 
- 	return 0;
- }
- 
-+static int ov8856_configure_regulators(struct ov8856 *ov8856)
-+{
-+	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-+	int i;
-+
-+	for (i = 0; i < OV8856_NUM_SUPPLIES; i++)
-+		ov8856->supplies[i].supply = ov8856_supply_names[i];
-+
-+	return devm_regulator_bulk_get(&client->dev,
-+				       OV8856_NUM_SUPPLIES,
-+				       ov8856->supplies);
-+}
-+
- static int ov8856_probe(struct i2c_client *client)
- {
- 	struct ov8856 *ov8856;
-@@ -1186,6 +1760,40 @@ static int ov8856_probe(struct i2c_client *client)
- 		return -ENOMEM;
- 
- 	v4l2_i2c_subdev_init(&ov8856->sd, client, &ov8856_subdev_ops);
-+
-+	ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
-+	if (IS_ERR(ov8856->xvclk)) {
-+		dev_err(&client->dev, "Failed to get xvclk\n");
-+		return -EINVAL;
-+	}
-+
-+	ret = clk_set_rate(ov8856->xvclk, OV8856_XVCLK_FREQ);
-+	if (ret < 0) {
-+		dev_err(&client->dev, "Failed to set xvclk rate (24MHz)\n");
-+		return ret;
-+	}
-+	if (clk_get_rate(ov8856->xvclk) != OV8856_XVCLK_FREQ)
-+		dev_warn(&client->dev,
-+			 "xvclk mismatched, modes are based on 24MHz\n");
-+
-+	ov8856->reset_gpio = devm_gpiod_get(&client->dev,
-+					    "reset",
-+					    GPIOD_OUT_LOW);
-+	if (IS_ERR(ov8856->reset_gpio)) {
-+		dev_err(&client->dev, "Failed to get reset-gpios\n");
-+		return -EINVAL;
-+	}
-+
-+	ret = ov8856_configure_regulators(ov8856);
-+	if (ret) {
-+		dev_err(&client->dev, "Failed to get power regulators\n");
-+		return ret;
-+	}
-+
-+	ret = __ov8856_power_on(ov8856);
-+	if (ret)
-+		goto probe_error_v4l2_ctrl_handler_free;
-+
- 	ret = ov8856_identify_module(ov8856);
- 	if (ret) {
- 		dev_err(&client->dev, "failed to find sensor: %d", ret);
-@@ -1251,11 +1859,21 @@ static const struct acpi_device_id ov8856_acpi_ids[] = {
- MODULE_DEVICE_TABLE(acpi, ov8856_acpi_ids);
- #endif
- 
-+#if IS_ENABLED(CONFIG_OF)
-+static const struct of_device_id ov8856_of_match[] = {
-+	{ .compatible = "ovti,ov8856" },
-+	{},
-+};
-+
-+MODULE_DEVICE_TABLE(of, ov8856_of_match);
-+#endif
-+
- static struct i2c_driver ov8856_i2c_driver = {
- 	.driver = {
- 		.name = "ov8856",
- 		.pm = &ov8856_pm_ops,
- 		.acpi_match_table = ACPI_PTR(ov8856_acpi_ids),
-+		.of_match_table = of_match_ptr(ov8856_of_match),
- 	},
- 	.probe_new = ov8856_probe,
- 	.remove = ov8856_remove,
--- 
-2.9.2
+the new address in mmap and mremap may not be currently
+mapped, other m* functions operate on existing mappings
+(munmap, madvise, mprotect, mlock,...)
 
+although by this logic brk (and related PR_SET_MM_*)
+should be excluded here too.
 
+>> +- prctl(PR_SET_MM, ``*``, ...) other than arg2 PR_SET_MM_MAP and
+>> +  PR_SET_MM_MAP_SIZE.
+>> +
+>> +- prctl(PR_SET_MM, PR_SET_MM_MAP{,_SIZE}, ...) struct prctl_mm_map fields.
+>> +
+>> +Any attempt to use non-zero tagged pointers will lead to undefined
+>> +behaviour.
+> 
+> I wonder if you want to generalize this a bit.  I think you're saying
+> that parts of the ABI that modify the *layout* of the address space
+> never accept tagged pointers.
+
+something like that, but i think this is hard to specify
+in a generic way.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
