@@ -2,50 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4364867A4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:05:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA7CA867AC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:07:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QFBQNVG1jlEi99bHMmoIkvoc0JMWqzMWq3moYvH4pyc=; b=h1fszQRXAIUAZO
-	aYA3BeKh+zrX71s/8M+miSu1MdssCLUD3r8ew4DAWvlV13auaKqhdFcZa9thBeAH4WfMDh/i6pLHl
-	r5EyuzF0xweczE9BM8najEqdsRztR9kA5fcIJABGdf8dibi5tRhG1MOWu89KD291FuCxX7F37knoM
-	eQZK5LnUedBXRfyYNusQSby6t/tFHP5iKce9bcua4aJc2BLmNFVBZLzR3DWrciMEEZi7PFf8n8zXq
-	xeOh87rxdJWx3Ah6uOvAfh2YDTWZDxa4hFZ13U8wF/aQAnEJf6AOM+1v9Hx77CjNl2Jkyt1rF8Y60
-	1D13+9nEkHIV+Vb+rjQA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iD3avu8KRQV1nFrM6kvUch+ynkDd48Qy/ER3RmF8CvA=; b=GICBYMV33Al38n
+	oaBlRdxdHamjTHAVETgZcXFfGykWMxYuE8yXeqI9Qk6dYWfZsVr8nMtcmbCwKb1DCRK6W27HfWZNp
+	0CJQ/CXfHjeXykSjV5iuXmGrl9aw2OdJJyvvgS7vIqEZMefKExJzqXDRC/QDW4onLVK/05SjYFYe/
+	RD136zT48bw+1FuZPueQ/eW2gl2M/qE2QjBOpP5wnV0+ByhKgz/9XmU96pFZ+rig6sC4sKy/mP4/4
+	xxOPuGdthhu3XokStFA2hC5mOj/qXvzer1DxQfHwc/neW9piB08HhcruuIm9hn+frQ2OymGbaVuLu
+	9fa637TS6b1tKgTa1vSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvlqt-0002ay-Nn; Thu, 08 Aug 2019 17:05:23 +0000
+	id 1hvlsX-00033C-MN; Thu, 08 Aug 2019 17:07:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvlqh-0002Zs-CH; Thu, 08 Aug 2019 17:05:12 +0000
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net
- [71.197.186.152])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 00A702173C;
- Thu,  8 Aug 2019 17:05:10 +0000 (UTC)
+ id 1hvlsO-00032d-SE
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 17:06:58 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DF8752173C;
+ Thu,  8 Aug 2019 17:06:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565283911;
- bh=zjIYazZXYmDz0mSg6jSasyr/sD3v4s4QZ/0wOpd+6V8=;
- h=From:To:Cc:Subject:Date:From;
- b=sf9v9V1IY7ZjpE+il+TEr27iMMY8AwIeJxaSIuk3AFyXfj9I9lylHe0864VX/rUA3
- jfYPJ+rrTNCOOXqaBfawWQdrzso4RbhUsL/oLWbi5H8QmD1wIzJYkLpOMgKPVmpy11
- n59tiTpNjOdlRvuWy/tADw6XytpvZRhERClbZJVk=
-From: Kevin Hilman <khilman@kernel.org>
-To: linux-amlogic@lists.infradead.org
-Subject: [PATCH] arm64: dts: amlogic: g12 CPU timers stop in suspend
-Date: Thu,  8 Aug 2019 10:05:10 -0700
-Message-Id: <20190808170510.4141-1-khilman@kernel.org>
-X-Mailer: git-send-email 2.22.0
+ s=default; t=1565284016;
+ bh=6NCSbiarfUPfvof9H5iq7rmAMMlI2cd617d7HXVu71g=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=O1niW5am1bbF4Y9RSMMymm4zzkeUeufEryPN345TaPK7w+GonSZ1rNl8wpHLRBLFG
+ apjOg0dRj6TDjUIPf33HCxD0zUnsF1nMyDaqLs3YA1oqvPdwD/q3+P8icRXeDz3ZAK
+ +QLIaoMpiB2x+zLWsiPwRQJgwnODecpqoloH9XTs=
+Date: Thu, 8 Aug 2019 18:06:52 +0100
+From: Will Deacon <will@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v7 2/2] arm64: Relax
+ Documentation/arm64/tagged-pointers.rst
+Message-ID: <20190808170651.c6hflztfunjmisgm@willie-the-truck>
+References: <20190807155321.9648-1-catalin.marinas@arm.com>
+ <20190807155321.9648-3-catalin.marinas@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190807155321.9648-3-catalin.marinas@arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_100511_442221_24927E3E 
-X-CRM114-Status: UNSURE (   7.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190808_100656_939783_9E9FA7FF 
+X-CRM114-Status: GOOD (  17.32  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -74,39 +78,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kevin Hilman <khilman@baylibre.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Dave Hansen <dave.hansen@intel.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Kevin Hilman <khilman@baylibre.com>
+On Wed, Aug 07, 2019 at 04:53:21PM +0100, Catalin Marinas wrote:
+> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> 
+> On arm64 the TCR_EL1.TBI0 bit has been always enabled hence
+> the userspace (EL0) is allowed to set a non-zero value in the
+> top byte but the resulting pointers are not allowed at the
+> user-kernel syscall ABI boundary.
+> 
+> With the relaxed ABI proposed in this set, it is now possible to pass
+> tagged pointers to the syscalls, when these pointers are in memory
+> ranges obtained by an anonymous (MAP_ANONYMOUS) mmap().
+> 
+> Relax the requirements described in tagged-pointers.rst to be compliant
+> with the behaviours guaranteed by the ARM64 Tagged Address ABI.
+> 
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Andrey Konovalov <andreyknvl@google.com>
+> Cc: Szabolcs Nagy <szabolcs.nagy@arm.com>
+> Cc: Kevin Brodsky <kevin.brodsky@arm.com>
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> [catalin.marinas@arm.com: minor tweaks]
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+>  Documentation/arm64/tagged-pointers.rst | 23 ++++++++++++++++-------
+>  1 file changed, 16 insertions(+), 7 deletions(-)
+> 
+> diff --git a/Documentation/arm64/tagged-pointers.rst b/Documentation/arm64/tagged-pointers.rst
+> index 2acdec3ebbeb..82a3eff71a70 100644
+> --- a/Documentation/arm64/tagged-pointers.rst
+> +++ b/Documentation/arm64/tagged-pointers.rst
+> @@ -20,7 +20,8 @@ Passing tagged addresses to the kernel
+>  --------------------------------------
+>  
+>  All interpretation of userspace memory addresses by the kernel assumes
+> -an address tag of 0x00.
+> +an address tag of 0x00, unless the application enables the AArch64
+> +Tagged Address ABI explicitly.
 
-The Arm per-CPU architected timers stop ticking in suspend, when the
-SCP powers down the CPUs.  Flag that in the DT.
+I think we should have the link to Documentation/arm64/tagged-address-abi.rst
+here so people see it when it's first referenced.
 
-Signed-off-by: Kevin Hilman <khilman@baylibre.com>
----
-Applies on my v5.4/dt64 branch
+> +The AArch64 Tagged Address ABI description and the guarantees it
+> +provides can be found in: Documentation/arm64/tagged-address-abi.rst.
 
- arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+Then this sentence can be dropped.
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-index 27bb242dc95d..cd3d23d2c6a2 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-@@ -2407,6 +2407,7 @@
- 			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>,
- 			     <GIC_PPI 10
- 			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>;
-+		arm,no-tick-in-suspend;
- 	};
- 
- 	xtal: xtal-clk {
--- 
-2.22.0
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
