@@ -2,65 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6297F85AE2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 08:34:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D99685AFB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 08:42:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/TstlMQK/tjNv8I8WsgfyhABdwPVQdfPVXvrSGp5xt0=; b=nB4ws8wDtJcovF
-	x5jW63t2H/5Tm66tZv9YrbdRZfC7W0oeR81H+dCrFfo/CYhTWwUcwyyQ1eZ9D+1RdB49rAIDqwbC8
-	6N3aBhVoBGboyGLlJy/04Lp+60/MeEgk4TX4+xz1k2DGsuIzUyW4R/8eGzeGzh8+cULplo5eR8G08
-	Dlbyxt2yT1b5y9Sdw8AFF6FP9HjqjVQyY28YufSATV3eBtmTmj5AjzKqq2+l/HcTShfaM2RFXulh6
-	6vflYiNkQMBc7rRecFTUmkuuPiVHGwedsWZahE6uVhdnQHoYlitmY3cpliaqcegfsk6z4nFVpvquy
-	lxsnDJBS9xxqE6vmGAfA==;
+	List-Owner; bh=lJ2z9U0drJPkL5MHFrz/varcfI+IEiMN66HWMzxZ9eQ=; b=kZ91F1040vPiG9
+	pRBqp7fESU+oEpiYzL4KqCYpwh3egm5drBwkZvun0qkSTu7UZHfK6xkPqgCxTkYdRJP5942cY7h/x
+	yUt4t6Zom9IRJV1v4EoB1Hop7polRDfMpatftNLG6AYE/wJ2QVwHqxk69Vho7T0zOU04pfXdU5pmX
+	e+ljsN6sTuJzPKuQTlREf75jiC6UGKGwWswDk5x8Z/7ekuo5iOlrKoqKHSPqrO7Nmj84fHQGP2RBy
+	w2AiF9jIhdjO5u0JwJgRnCGE0a5w00IfSwRq0ghUWvq5Yy1r7/OcwyEU4Q/ljDcxgk7fyBUeUHUAx
+	eJc8QzAWrcmB3XVHcEdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvc05-0004pn-5s; Thu, 08 Aug 2019 06:34:13 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hvc8U-0007qg-4Q; Thu, 08 Aug 2019 06:42:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvbzs-0004pb-Nw; Thu, 08 Aug 2019 06:34:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hhD4vBSrp0XSthw0GklS6gaJ3KMWMaDwTu/gQP9IYFM=; b=efcoXMj1ClalXe+5HQBUVzXThY
- A3Out9vqbAWaCO5QEDMppGyxra5/3B4HOXwWjgCeeJCLeV88ip4sFKliGdV4RPbtX3VYdgP9+vkQp
- pCM6pAG/CbjabNA1u9cSnoccMcAdW8kd+8dPJ8oVZxkiTsxPdcvEJpPqLN7yRSvMKFIQqQczDwzM8
- iHvmAdDf1WLKOraLhci7vcn7yebWeMCHHnBVkNqRd8U8emPZm4NB7lwbsVwWDlbnz7xxWoihvpSAB
- 36ywCShl5906QGsNJOh8H3ssxz9AUXmxMPpZKSoC39anqjDH6Vrr4BkENEbYKCQ/t0JKPhqZnp8Ks
- iZ3cGEBQ==;
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvbzp-0006zb-4h; Thu, 08 Aug 2019 06:33:58 +0000
-X-Originating-IP: 79.86.19.127
-Received: from alex.numericable.fr (127.19.86.79.rev.sfr.net [79.86.19.127])
- (Authenticated sender: alex@ghiti.fr)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 6957F1BF207;
- Thu,  8 Aug 2019 06:33:19 +0000 (UTC)
-From: Alexandre Ghiti <alex@ghiti.fr>
-To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH v6 14/14] riscv: Make mmap allocation top-down by default
-Date: Thu,  8 Aug 2019 02:17:56 -0400
-Message-Id: <20190808061756.19712-15-alex@ghiti.fr>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190808061756.19712-1-alex@ghiti.fr>
-References: <20190808061756.19712-1-alex@ghiti.fr>
+ id 1hvc8E-0007pj-SL
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 06:42:40 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EF2DD20880;
+ Thu,  8 Aug 2019 06:42:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565246557;
+ bh=QkRNK9YOfVlVjw60w9/iF0cccnbeZTBNkhlnMmoHZSo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=TEEQWuy6TSpOEZMwvSr5bheEo6c0goUwfwhY6u81BONopHxyVvbgi4ZhzicU1UCZU
+ QXbtoqaRmyPdA18atxTjX/YtfT5T8mPLvFzvbzRdeu4qtSO+eZw4b0Gf4W97UvfZSm
+ L8jVUt4qJ/cpM3lWvFw3sZyg80FMbtaTWDY/b8Qo=
+Date: Thu, 8 Aug 2019 08:42:35 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Tejun Heo <tj@kernel.org>
+Subject: Re: [PATCH] kernfs: fix memleak in kernel_ops_readdir()
+Message-ID: <20190808064235.GC26197@kroah.com>
+References: <20190805173404.GF136335@devbig004.ftw2.facebook.com>
+ <20190807132928.GD5443@atomide.com>
+ <20190807184518.GP136335@devbig004.ftw2.facebook.com>
 MIME-Version: 1.0
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+Content-Disposition: inline
+In-Reply-To: <20190807184518.GP136335@devbig004.ftw2.facebook.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190807_234238_950254_A83EE394 
+X-CRM114-Status: GOOD (  14.03  )
+X-Spam-Score: -5.0 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,95 +75,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
- Alexandre Ghiti <alex@ghiti.fr>, linux-mm@kvack.org,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Luis Chamberlain <mcgrof@kernel.org>,
- Paul Burton <paul.burton@mips.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- James Hogan <jhogan@kernel.org>, linux-riscv@lists.infradead.org,
- linux-mips@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>
+Cc: Andrea Arcangeli <aarcange@redhat.com>, Tony Lindgren <tony@atomide.com>,
+ linux-kernel@vger.kernel.org, Russell King <rmk+kernel@armlinux.org.uk>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to avoid wasting user address space by using bottom-up mmap
-allocation scheme, prefer top-down scheme when possible.
+On Wed, Aug 07, 2019 at 11:45:18AM -0700, Tejun Heo wrote:
+> Hello,
+> 
+> On Wed, Aug 07, 2019 at 06:29:28AM -0700, Tony Lindgren wrote:
+> > Hi,
+> > 
+> > * Tejun Heo <tj@kernel.org> [691231 23:00]:
+> > > From: Andrea Arcangeli <aarcange@redhat.com>
+> > > 
+> > > If getdents64 is killed or hits on segfault, it'll leave cgroups
+> > > directories in sysfs pinned leaking memory because the kernfs node
+> > > won't be freed on rmdir and the parent neither.
+> > 
+> > Somehow this causes a regression in Linux next for me where I'm seeing
+> > lots of sysfs entries now missing under /sys/bus/platform/devices.
+> > 
+> > For example, I now only see one .serial entry show up in sysfs.
+> > Things work again if I revert commit cc798c83898e ("kernfs: fix memleak
+> > inkernel_ops_readdir()"). Any ideas why that would be?
+> > 
+> > Below is a diff -u of ls /sys/bus/platform/devices for reference
+> > showing the missing entries with cc798c83898e.
+> 
+> Ugh, you're right.  It can get double-put cuz ctx->pos is put by
+> release too.  Greg, sorry about the noise but can you please revert
+> the patch?  I'll look into why this looked like memory leak from
+> slabinfo side.
 
-Before:
-root@qemuriscv64:~# cat /proc/self/maps
-00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
-00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
-00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
-00018000-00039000 rw-p 00000000 00:00 0          [heap]
-1555556000-155556d000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-155556d000-155556e000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-155556e000-155556f000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-155556f000-1555570000 rw-p 00000000 00:00 0
-1555570000-1555572000 r-xp 00000000 00:00 0      [vdso]
-1555574000-1555576000 rw-p 00000000 00:00 0
-1555576000-1555674000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
-1555674000-1555678000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
-1555678000-155567a000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
-155567a000-15556a0000 rw-p 00000000 00:00 0
-3fffb90000-3fffbb1000 rw-p 00000000 00:00 0      [stack]
+Now reverted, thanks.
 
-After:
-root@qemuriscv64:~# cat /proc/self/maps
-00010000-00016000 r-xp 00000000 fe:00 6389       /bin/cat.coreutils
-00016000-00017000 r--p 00005000 fe:00 6389       /bin/cat.coreutils
-00017000-00018000 rw-p 00006000 fe:00 6389       /bin/cat.coreutils
-2de81000-2dea2000 rw-p 00000000 00:00 0          [heap]
-3ff7eb6000-3ff7ed8000 rw-p 00000000 00:00 0
-3ff7ed8000-3ff7fd6000 r-xp 00000000 fe:00 7187   /lib/libc-2.28.so
-3ff7fd6000-3ff7fda000 r--p 000fd000 fe:00 7187   /lib/libc-2.28.so
-3ff7fda000-3ff7fdc000 rw-p 00101000 fe:00 7187   /lib/libc-2.28.so
-3ff7fdc000-3ff7fe2000 rw-p 00000000 00:00 0
-3ff7fe4000-3ff7fe6000 r-xp 00000000 00:00 0      [vdso]
-3ff7fe6000-3ff7ffd000 r-xp 00000000 fe:00 7193   /lib/ld-2.28.so
-3ff7ffd000-3ff7ffe000 r--p 00016000 fe:00 7193   /lib/ld-2.28.so
-3ff7ffe000-3ff7fff000 rw-p 00017000 fe:00 7193   /lib/ld-2.28.so
-3ff7fff000-3ff8000000 rw-p 00000000 00:00 0
-3fff888000-3fff8a9000 rw-p 00000000 00:00 0      [stack]
-
-Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
-Acked-by: Paul Walmsley <paul.walmsley@sifive.com>
-Reviewed-by: Christoph Hellwig <hch@lst.de>
-Reviewed-by: Kees Cook <keescook@chromium.org>
-Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
----
- arch/riscv/Kconfig | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
-
-diff --git a/arch/riscv/Kconfig b/arch/riscv/Kconfig
-index 59a4727ecd6c..87dc5370becb 100644
---- a/arch/riscv/Kconfig
-+++ b/arch/riscv/Kconfig
-@@ -54,6 +54,18 @@ config RISCV
- 	select EDAC_SUPPORT
- 	select ARCH_HAS_GIGANTIC_PAGE
- 	select ARCH_WANT_HUGE_PMD_SHARE if 64BIT
-+	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
-+	select HAVE_ARCH_MMAP_RND_BITS
-+
-+config ARCH_MMAP_RND_BITS_MIN
-+	default 18 if 64BIT
-+	default 8
-+
-+# max bits determined by the following formula:
-+#  VA_BITS - PAGE_SHIFT - 3
-+config ARCH_MMAP_RND_BITS_MAX
-+	default 24 if 64BIT # SV39 based
-+	default 17
- 
- config MMU
- 	def_bool y
--- 
-2.20.1
-
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
