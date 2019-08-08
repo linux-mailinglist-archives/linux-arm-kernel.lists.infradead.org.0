@@ -2,65 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CD838629A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 15:05:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68FFB862C3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 15:15:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zstzdvXXRAwMEd5EMVwd8GOhv3to0yta/0qQTdNOjqs=; b=QjZTqZC/Gf7/Tq
-	9HmXse87+OF7IF2PSe7MgsZdcRpoBCcvYda9Ugp/A3jVeN1MYIEd3ROC/lQzNNKwbYTf5kDaVMP/I
-	bm2uskeDmvtjwoeU46z5IeLpr7+RiNtVVBqvhyIBcX2MUDHXhpLvNHzjOycJyzQMIUNhIkqIim2XA
-	Q3/a7kFx+tm+/jwvDGiHyR1EBK3a5/T8wiLFM5AGJNj8CkDxiQyh6i3J0Z7hx9zoNY/2H/LFyso7Z
-	4YkOYDVPnMR3/F8etxVjzcvXHOEt11c82BGaeDsYimhmV3hB7NgaHd2XPBNUFQ07ZRAtzv9Mq90OW
-	c5Pt30CGj6JL01HSxw8Q==;
+	List-Owner; bh=403ei/bXwax61dHvnqPewMgNVrnMMvNRxK76OXla5Xg=; b=U61yrbM+A1Ang0
+	1OR+1zB5C8RW7sp7DOF6aCEOdyEQusWtJmKTp2t94cp7b64qzq4gtUsKGz/pD+f1q6JUeADExePX9
+	htW09fy+l5Xn74NPlgvg7gIWDLYNaKjFJ3ib81v3Uw51E6QULY1pB4ATS+PATL2DaZFJLoM+d1yWv
+	ZhkHf/tU9NUuNNEUHXuCbuC3i11pCeDbkRGLnLAKV4dFplmKWHUkviEdph3lHD2CxRtA5UHMLAkAy
+	QoZ/iHce3ocZEAW+E86LQqIVXe8S5ht6VgleYOwFWTBHIkfrrkXXzmeQWuZu6TwcLxoh+4cyfC0CY
+	9N7VPoYCTQ4cL87ysO+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvi6v-0001MO-Da; Thu, 08 Aug 2019 13:05:41 +0000
+	id 1hviGG-0004RS-3O; Thu, 08 Aug 2019 13:15:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvi6i-0001M1-Jp
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 13:05:30 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hviG5-0004R1-7n
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 13:15:10 +0000
+Received: from mail-lj1-f171.google.com (mail-lj1-f171.google.com
+ [209.85.208.171])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AC5772171F;
- Thu,  8 Aug 2019 13:05:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 31D5521883
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu,  8 Aug 2019 13:15:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565269528;
- bh=r3Z5T+QVkdlTcqHZjGzDvph2nY+qT+ThI9PNNH4bnTU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sv7ua+CxnH4xl1J1IjZ4Q7jgVJb+PPElfZvzAsBNQ07YIHlG+uNLPT/sSoREMITc0
- VpYeoLODKkw4x74JJz0bjREEdESbRSBpDQGQKNTpND9muZFan0O6qStPHezRRNYFuG
- fFQqWbfVP0ioqth8Xw5+UntJX+vqnM19c/d6e7f8=
-Date: Thu, 8 Aug 2019 15:05:25 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: usb zero copy dma handling
-Message-ID: <20190808130525.GA1756@kroah.com>
-References: <20190808084636.GB15080@priv-mua.localdomain>
- <20190808085811.GA1265@kroah.com>
- <10bcb28b-e87b-7b16-97e3-88e727e76d25@arm.com>
- <20190808100726.GB23844@kroah.com>
+ s=default; t=1565270108;
+ bh=5yPzM5yGGSNATY9kmjyrKwemZkcgY7dISuXee3TjHbA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=r8LLjQSFOD5ZA2mugoq5PfbhvrYb2QgV1WP0LufxAR2YpULVjpPB2DqsCJ99YgWf3
+ ybC/lYyEiNBMdDlf4f24jeP2nXzUoU26pgn6E0S9/W+NjWNk0YpL1aSWS6bCRgtYxg
+ 3y+rWBmCPDgsAGJrTYBT8OmYFX4iQf7MlbbLmBFE=
+Received: by mail-lj1-f171.google.com with SMTP id y17so64300158ljk.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 08 Aug 2019 06:15:08 -0700 (PDT)
+X-Gm-Message-State: APjAAAUFVw1pwNI3XDo7P3TQBub4hfu5jzqgSvCwlSPa31BNNnAhi1JO
+ lOLFvrkfW8YElUvKzYrsaBtAeEvcvQLrTgP3Ask=
+X-Google-Smtp-Source: APXvYqzWTwcs6TPkPrDTz+qUFZmx5IMdHV6tLMEdfb5Dbo2QpS6RlvnpGcLKMZOf3TR4vCBEsNVuYYrMDmmz/hVY2Qw=
+X-Received: by 2002:a2e:3008:: with SMTP id w8mr8417296ljw.13.1565270106316;
+ Thu, 08 Aug 2019 06:15:06 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190808100726.GB23844@kroah.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <CGME20190718143130eucas1p26f2058f47eb2f4020e1ddbf1619d1ac8@eucas1p2.samsung.com>
+ <20190718143044.25066-1-s.nawrocki@samsung.com>
+ <20190718143044.25066-4-s.nawrocki@samsung.com>
+ <CAJKOXPeOfDHjqSotxVwVuy+6r9X3Q8ZXLit1_=gGd7bOwkHupA@mail.gmail.com>
+ <a56fe2d8-1f26-b462-1564-f23902f7dbb5@samsung.com>
+ <CAJKOXPc8iFo=2JAGEZSC46N3sZae4+JcZYBCjpKysb6PFPzyaQ@mail.gmail.com>
+ <669c6b25-eb7e-ed3a-72a2-ee155a568363@arm.com>
+In-Reply-To: <669c6b25-eb7e-ed3a-72a2-ee155a568363@arm.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Thu, 8 Aug 2019 15:14:54 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPc01ViCcwpasJ4o+yxvz5r8v0D1h5F5dc4=s0R0Jn4uNw@mail.gmail.com>
+Message-ID: <CAJKOXPc01ViCcwpasJ4o+yxvz5r8v0D1h5F5dc4=s0R0Jn4uNw@mail.gmail.com>
+Subject: Re: [PATCH v2 3/9] soc: samsung: Add Exynos Adaptive Supply Voltage
+ driver
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_060528_698987_5B460408 
-X-CRM114-Status: GOOD (  36.55  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190808_061509_322026_5005EBA0 
+X-CRM114-Status: GOOD (  18.60  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -76,135 +92,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: yvahkhfo.1df7f8c2@hashmail.org, linux-usb@vger.kernel.org,
- security@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ =?UTF-8?B?QmFydMWCb21pZWogxbtvxYJuaWVya2lld2ljeg==?=
+ <b.zolnierkie@samsung.com>, pankaj.dubey@samsung.com, linux-pm@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ robh+dt@kernel.org, kgene@kernel.org,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, vireshk@kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 08, 2019 at 12:07:26PM +0200, Greg KH wrote:
-> On Thu, Aug 08, 2019 at 10:46:24AM +0100, Robin Murphy wrote:
-> > On 2019-08-08 9:58 am, Greg KH wrote:
-> > > On Thu, Aug 08, 2019 at 10:46:36AM +0200, yvahkhfo.1df7f8c2@hashmail.org wrote:
-> > > > Hello linux-usb and linux-arm.
-> > > > 
-> > > > Ccing security@ because "the kernel dma code is mapping randomish
-> > > > kernel/user mem to a user process" seems to have security implications
-> > > > even though i didnt research that aspect past "its a 100% reliable way
-> > > > to crash a raspi from userspace".
-> > > > 
-> > > > tried submitting this through linux-arm-kernel ~2 weeks ago but
-> > > > the only "response" i got was phishing-spam.
-> > > > tried to follow up through raspi-internals chat, they suggested
-> > > > i try linux-usb instead, but otoh the original reporter was
-> > > > deflected from -usb to "try some other mls, they might care".
-> > > > https://www.spinics.net/lists/linux-usb/msg173277.html
-> > > > 
-> > > > if i am not following some arcane ritual or indenting convention required
-> > > > by regular users of these lists i apologize in advance, but i am not a
-> > > > kernel developer, i am just here as a user with a bug and a patch.
-> > > > (and the vger FAQ link 404s...)
-> > > 
-> > > The "arcane ritual" should be really well documented by now, it's in
-> > > Documentation/SubmittingPatches in your kernel tree, and you can read it
-> > > online at:
-> > > 	https://www.kernel.org/doc/html/latest/process/submitting-patches.html
-> > > 
-> > > 
-> > > > i rediffed against HEAD even though the two weeks old patch still applied
-> > > > cleanly with +2 offset.
-> > > > 
-> > > > # stepping off soap box # actual technical content starts here #
-> > > > 
-> > > > this is a followup to that thread from 2018-11:
-> > > > https://www.spinics.net/lists/arm-kernel/msg685598.html
-> > > > 
-> > > > the issue was discussed in more detail than i can claim
-> > > > to fully understand back then, but no fix ever merged.
-> > > > but i would really like to use rtl_433 on a raspi without
-> > > > having to build a custom-patched kernel first.
-> > > > 
-> > > > the attached patch is my stripdown/cleanup of a devel-diff
-> > > > provided to me by the original reporter Steve Markgraf.
-> > > > credits to him for the good parts, blame to me for the bad parts.
-> > > > 
-> > > > this does not cover the additional case of "PIO-based usb controllers"
-> > > > mainly because i dont understand what that means (or how to handle it)
-> > > > and if its broken right now (as the thread indicates) it might
-> > > > as well stay broken until someone who understands cares enough.
-> > > > 
-> > > > could you please get this on track for merging?
-> > > 
-> > > 
-> > > > 
-> > > > regards,
-> > > >    x23
-> > > > 
-> > > > 
-> > > > 
-> > > 
-> > > > diff --git a/drivers/usb/core/devio.c b/drivers/usb/core/devio.c
-> > > > index b265ab5405f9..69594c2169ea 100644
-> > > > --- a/drivers/usb/core/devio.c
-> > > > +++ b/drivers/usb/core/devio.c
-> > > > @@ -238,9 +238,14 @@ static int usbdev_mmap(struct file *file, struct vm_area_struct *vma)
-> > > >   	usbm->vma_use_count = 1;
-> > > >   	INIT_LIST_HEAD(&usbm->memlist);
-> > > > +#ifdef CONFIG_X86
-> > > >   	if (remap_pfn_range(vma, vma->vm_start,
-> > > >   			virt_to_phys(usbm->mem) >> PAGE_SHIFT,
-> > > >   			size, vma->vm_page_prot) < 0) {
-> > > > +#else /* !CONFIG_X86 */
-> > > > +	if (dma_mmap_coherent(ps->dev->bus->sysdev,
-> > > > +			vma, mem, dma_handle, size) < 0) {
-> > > > +#endif /* !CONFIG_X86 */
-> > > >   		dec_usb_memory_use_count(usbm, &usbm->vma_use_count);
-> > > >   		return -EAGAIN;
-> > > >   	}
-> > > 
-> > > First off, we need this in a format we could apply it in (hint, read the
-> > > above links).
-> > > 
-> > > But the main issue here is what exactly is this "fixing"?  What is wrong
-> > > with the existing code that non-x86 systems have such a problem with?
-> > > Shouldn't all of these dma issues be handled by the platform with the
-> > > remap_pfn_range() call itself?
-> > 
-> > If usbm->mem is (or ever can be) a CPU address returned by
-> > dma_alloc_coherent(), then doing virt_to_phys() on it is bogus and may yield
-> > a nonsense 'PFN' to begin with. However, it it can can ever come from a
-> > regular page allocation/kmalloc/vmalloc then unconditionally passing it to
-> > dma_mmap_coherent wouldn't be right either.
-> 
-> usbm->mem comes from a call to usb_alloc_coherent() which calls
-> hcd_buffer_alloc() which tries to allocate memory in the best possible
-> way for that specific host controller.  If the host controller has a
-> pool of memory, it uses that, if the host controller has PIO it uses
-> kmalloc(), if there are some "pools" of host controller memory it uses
-> dma_pool_alloc() and as a total last resort, calls dma_alloc_coherent().
-> 
-> So yes, this could happen.
-> 
-> So how to fix this properly?  What host controller driver is being used
-> here that ends up defaulting to dma_alloc_coherent()?  Shouldn't that be
-> fixed up no matter what?
-> 
-> And then, if what you say is correct then a real fix for devio.c could
-> be made, but that is NOT going to just depend on the arch the system is
-> running on, as all of this depends on the host controller being accessed
-> at that moment for that device.
+On Thu, 8 Aug 2019 at 14:48, Robin Murphy <robin.murphy@arm.com> wrote:
+>
+> On 08/08/2019 13:31, Krzysztof Kozlowski wrote:
+> > On Thu, 8 Aug 2019 at 14:07, Sylwester Nawrocki <s.nawrocki@samsung.com> wrote:
+> >>>> +static unsigned int exynos5422_asv_parse_table(struct exynos_asv *asv,
+> >>>> +                                     unsigned int pkg_id)
+> >>>> +{
+> >>>> +       return (pkg_id >> EXYNOS5422_TABLE_OFFSET) & EXYNOS5422_TABLE_MASK;
+> >>>> +}
+> >>>> +
+> >>>> +static bool exynos5422_asv_parse_bin2(struct exynos_asv *asv,
+> >>>> +                                    unsigned int pkg_id)
+> >>>> +{
+> >>>> +       return (pkg_id >> EXYNOS5422_BIN2_OFFSET) & EXYNOS5422_BIN2_MASK;
+> >>>
+> >>> return !!() for converting to boolean.
+> >>
+> >> I'm not convinced it is needed, the return type of the function is bool
+> >> and value of the expression will be implicitly converted to that type.
+> >> Is there any compiler warning related to that?
+> >
+> > Yeah, but bool is int so there will be no implicit conversion... I
+> > guess it is a convention. In theory !! is the proper conversion to
+> > bool but if bool==int then it's essentially conversion to 1. I am not
+> > sure what's the benefit, maybe for some wrong code which would do
+> > comparisons on result like if (exynos5422_asv_parse_bin2() == TRUE)...
+>
+> Not so - since we use "-std=gnu89", we have C99-like _Bool, which our
+> bool is a typedef of. Conversions, either implicit or explicit, are
+> well-defined:
+>
+> "6.3.1.2 Boolean type
+>
+> When any scalar value is converted to _Bool, the result is 0 if the
+> value compares equal
+> to 0; otherwise, the result is 1."
+>
+> This is even called out in Documentation/process/coding-style.rst:
+>
+> "When using bool types the !! construction is not needed, which
+> eliminates a class of bugs."
 
-Also see this thread:
-	https://lore.kernel.org/linux-usb/20190801220134.3295-1-gavinli@thegavinli.com/
+Good point, thanks!
 
-where this just came up and how the proposed patch here would cause
-warnings to occur in the kernel log of users for no good reason.  That
-issue is supposed to be fixed "soon"...
-
-thanks,
-
-greg k-h
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
