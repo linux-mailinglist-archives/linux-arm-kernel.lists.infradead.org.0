@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90F1985F91
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 12:26:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D945D85F86
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 12:26:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RVuP26ziBx5gyvBcPSCSpx9+0uvIBnldVP5P/nweIbg=; b=qkB
-	T4ORXnsDCiMPWO9grSoI5ULirbL549C0yK8xdfqjeKw6xMcZfty9AQw4GMoPRqx0o3kWNa+jJlqG4
-	xLrYaWh2S0lGQT+ZCDG3jz6pBnPdXV307s17yQrdbEjG96NsUkINd/mbzl4hNzz3PHmmv63GXFjDH
-	xzOZ/CWzHVmxhH/7Q4RpNmF4C9ZvLNwAMh98lPJBcSLPvhliXockpZBNiGrw/iR9BZHXj2poGANt5
-	NJVbBS3GulwySlQ9pRnTlHfYPSUEUPWZpWEzTMRknCH6dhWgDuSGxuoHJBy3yjcoPlgxPejmYQmYb
-	O/chL5HO6qY3VhUt9D+3Mz3RZYJvDIw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=zRBjBaqnr6LU1Z6OZf2Zk5TznxYU5Ris05WsTt5ktFw=; b=BGqiYdtEiwv2Dh8Thyly69wURS
+	YFfd0MPlEhuAxpHszinvecZR5yIZzXoVzZi5T5VQLUWbOxnpyTu1yEeug26zkzf6/vx6vyTS5gp8x
+	rhBG7Y5gIUtvDhK5hz03idHu+03pqtSf3vlIv5NTgPEQ1Fe6hKLFFr5kqGxXkewCb6D3vrrm9CDq9
+	HO1DT7BLk7+3YDW0TkgE8nrtmnoBOjx19a7aQ2JviA1+IEJjHb/3ly8DGCJhv1gWPEoQBejTC25JO
+	RhZa0fkKBbR94zwi1ssCTqpRvYbmJSQT3OU5pbY05sFD5hsq5Ddx3ZTkLOAY09jPuiq6jP2o8H0H8
+	SyO0/YfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvfdC-0001UB-1R; Thu, 08 Aug 2019 10:26:50 +0000
+	id 1hvfct-0001DA-16; Thu, 08 Aug 2019 10:26:31 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvfcc-0001Bm-R2
+ id 1hvfcc-0001Bs-Rb
  for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 10:26:16 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4D8F8200921;
- Thu,  8 Aug 2019 12:26:11 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7EA3520092C;
+ Thu,  8 Aug 2019 12:26:13 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 359BA2000E0;
- Thu,  8 Aug 2019 12:26:06 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 68558200920;
+ Thu,  8 Aug 2019 12:26:08 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B0CAF402D8;
- Thu,  8 Aug 2019 18:25:59 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E30264029A;
+ Thu,  8 Aug 2019 18:26:01 +0800 (SGT)
 From: Hui Song <hui.song_1@nxp.com>
 To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Linus Walleij <linus.walleij@linaro.org>,
  Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: [PATCH v1 1/3] gpio: mpc8xxx: add ls1088a platform gpio node DT
- binding description
-Date: Thu,  8 Aug 2019 18:16:26 +0800
-Message-Id: <20190808101628.36782-1-hui.song_1@nxp.com>
+Subject: [PATCH v1 2/3] arm64: dts: fix gpio node
+Date: Thu,  8 Aug 2019 18:16:27 +0800
+Message-Id: <20190808101628.36782-2-hui.song_1@nxp.com>
 X-Mailer: git-send-email 2.9.5
+In-Reply-To: <20190808101628.36782-1-hui.song_1@nxp.com>
+References: <20190808101628.36782-1-hui.song_1@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_032615_032349_6726B298 
-X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-CacheID: sfid-20190808_032615_035491_74948F53 
+X-CRM114-Status: UNSURE (   7.41  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,39 +81,71 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Song Hui <hui.song_1@nxp.com>
 
-ls1088a and ls1028a platform share common gpio node.
+Update the nodes to include little-endian
+property to be consistent with the hardware
+and add ls1088a gpio specify compatible.
 
 Signed-off-by: Song Hui <hui.song_1@nxp.com>
 ---
- Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt b/Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt
-index baf95d9..cd28e93 100644
---- a/Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt
-+++ b/Documentation/devicetree/bindings/gpio/gpio-mpc8xxx.txt
-@@ -4,7 +4,7 @@ Required properties:
- - compatible : Should be "fsl,<soc>-gpio"
-   The following <soc>s are known to be supported:
- 	mpc5121, mpc5125, mpc8349, mpc8572, mpc8610, pq3, qoriq,
--	ls1021a, ls1043a, ls2080a, ls1028a.
-+	ls1021a, ls1043a, ls2080a, ls1028a, ls1088a.
- - reg : Address and length of the register set for the device
- - interrupts : Should be the port interrupt shared by all 32 pins.
- - #gpio-cells : Should be two.  The first cell is the pin number and
-@@ -39,10 +39,10 @@ gpio0: gpio@2300000 {
- };
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+index 20f5ebd..d58d203 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+@@ -269,43 +269,47 @@
+ 		};
  
+ 		gpio0: gpio@2300000 {
+-			compatible = "fsl,qoriq-gpio";
++			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+ 			reg = <0x0 0x2300000 0x0 0x10000>;
+ 			interrupts = <0 36 IRQ_TYPE_LEVEL_HIGH>;
+ 			gpio-controller;
+ 			#gpio-cells = <2>;
+ 			interrupt-controller;
+ 			#interrupt-cells = <2>;
++			little-endian;
+ 		};
  
--Example of gpio-controller node for a ls1028a SoC:
-+Example of gpio-controller node for a ls1028a/ls1088a SoC:
+ 		gpio1: gpio@2310000 {
+-			compatible = "fsl,qoriq-gpio";
++			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+ 			reg = <0x0 0x2310000 0x0 0x10000>;
+ 			interrupts = <0 36 IRQ_TYPE_LEVEL_HIGH>;
+ 			gpio-controller;
+ 			#gpio-cells = <2>;
+ 			interrupt-controller;
+ 			#interrupt-cells = <2>;
++			little-endian;
+ 		};
  
- gpio1: gpio@2300000 {
--	compatible = "fsl,ls1028a-gpio","fsl,qoriq-gpio";
-+	compatible = "fsl,ls1028a-gpio", "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
- 	reg = <0x0 0x2300000 0x0 0x10000>;
- 	interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
- 	gpio-controller;
+ 		gpio2: gpio@2320000 {
+-			compatible = "fsl,qoriq-gpio";
++			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+ 			reg = <0x0 0x2320000 0x0 0x10000>;
+ 			interrupts = <0 37 IRQ_TYPE_LEVEL_HIGH>;
+ 			gpio-controller;
+ 			#gpio-cells = <2>;
+ 			interrupt-controller;
+ 			#interrupt-cells = <2>;
++			little-endian;
+ 		};
+ 
+ 		gpio3: gpio@2330000 {
+-			compatible = "fsl,qoriq-gpio";
++			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+ 			reg = <0x0 0x2330000 0x0 0x10000>;
+ 			interrupts = <0 37 IRQ_TYPE_LEVEL_HIGH>;
+ 			gpio-controller;
+ 			#gpio-cells = <2>;
+ 			interrupt-controller;
+ 			#interrupt-cells = <2>;
++			little-endian;
+ 		};
+ 
+ 		ifc: ifc@2240000 {
 -- 
 2.9.5
 
