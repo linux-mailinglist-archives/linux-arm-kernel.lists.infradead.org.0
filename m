@@ -2,59 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C85386781
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:54:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F012A86788
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:57:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=68euWIgkfqy++Eut/MLoQ+TgowWEDieAGHIOEMCUYyM=; b=F2u
-	m35NQZMt+zlb+OZJfRlYEVYj5xETXDyoUcVqOP/1+ot4fY6qsAyYuBXpOuGVhYGaF6j3ihbllLxEA
-	lglRdtUIVR0ZSTNAqVDlX07XMoZ4XsY7tIFatjZgz14npzSof3ySq3j4LI8t7tRraNcxqvda6hlDK
-	198+NbUvTVcay1zkmyUo9Rz5v4IyXCnf+TROYvyW8eWJLMA8SB6jRRI1uhGNhiqQotIA6sOSH3mb4
-	IKzNp6g05XOgzFdiT4Ci8RR5qE/4A7WE03LfB+HL5o06mZwvglaIk/O/YfCuH13HKPIScF2u8glaS
-	/6ZyvQSCx2zc1FUUcetd1cI34NKx9sg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UDMWvLhr2V2PaRYEiR/l/2wRWPB/Nmbgdhz+RjvQaao=; b=iWFWk7ms8VY5c+
+	QKEy0bqFZFKZ8SSNdIkvXsU53MSTBC/tPgmk7ADa3docWTlsNLZaY5uL3NmARB+M1MOE9SmdAm3mW
+	QWExFqIA5wKpzcNILdRUPiLfvZN/lpJjULfKjk+NSEQuJXPrvLerg5vJv4L6PgRVMMArZBIFgqsqA
+	ldWPDpqgJ9wr3RDVsgjshvPmORIBZbARkyM+EhgZxYNok6u8NmTi7Fsd/vqJQ9NvtniVh30zx/md5
+	M6ce5D6Tr4uv/90bw5Q0vFMPeVjPzjNocISehFMsEji2tcFVi4IhtdV+BmS5vDlMnssa2mfdmvk53
+	L4Q7qIg0cAcFYW4Cu28w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvlgF-00059W-CG; Thu, 08 Aug 2019 16:54:23 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hvlj3-0006oA-Bv; Thu, 08 Aug 2019 16:57:17 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvlg5-000596-Ry
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:54:15 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C0EF820015D;
- Thu,  8 Aug 2019 18:54:11 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B2DA420014C;
- Thu,  8 Aug 2019 18:54:11 +0200 (CEST)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 15A542061D;
- Thu,  8 Aug 2019 18:54:11 +0200 (CEST)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: MyungJoo Ham <myungjoo.ham@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Chanwoo Choi <cw00.choi@samsung.com>
-Subject: [PATCH] PM / devfreq: passive: Use non-devm notifiers
-Date: Thu,  8 Aug 2019 19:54:08 +0300
-Message-Id: <38b77bb80d12aa788d4e234e399780a27dcd9e9f.1565282993.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hvlit-0006nZ-Al; Thu, 08 Aug 2019 16:57:10 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 08 Aug 2019 09:57:05 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,362,1559545200"; d="scan'208";a="179895442"
+Received: from okartau-mobl.ger.corp.intel.com (HELO kekkonen.fi.intel.com)
+ ([10.252.35.161])
+ by orsmga006.jf.intel.com with ESMTP; 08 Aug 2019 09:57:00 -0700
+Received: by kekkonen.fi.intel.com (Postfix, from userid 1000)
+ id 0E0F721F8E; Thu,  8 Aug 2019 19:54:16 +0300 (EEST)
+Date: Thu, 8 Aug 2019 19:54:16 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: dongchun.zhu@mediatek.com
+Subject: Re: [V1, 1/2] media: dt-bindings: media: i2c: Add bindings for ov8856
+Message-ID: <20190808165416.GA1845@kekkonen.localdomain>
+References: <20190808092215.5608-1-dongchun.zhu@mediatek.com>
+ <20190808092215.5608-2-dongchun.zhu@mediatek.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190808092215.5608-2-dongchun.zhu@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_095414_045739_62A6956E 
-X-CRM114-Status: GOOD (  10.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190808_095707_388076_200C6334 
+X-CRM114-Status: GOOD (  17.20  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,91 +69,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Saravana Kannan <saravanak@google.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Bartosz Golaszewski <brgl@bgdev.pl>, linux-pm@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Lukasz Luba <l.luba@partner.samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
+ srv_heupstream@mediatek.com, shengnan.wang@mediatek.com,
+ Ben Kao <ben.kao@intel.com>, tfiga@chromium.org, louis.kuo@mediatek.com,
+ sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The devfreq passive governor registers and unregisters devfreq
-transition notifiers on DEVFREQ_GOV_START/GOV_STOP using devm wrappers.
+Hi Dongchun,
 
-If devfreq itself is registered with devm then a warning is triggered on
-rmmod from devm_devfreq_unregister_notifier. Call stack looks like this:
+(Cc'ing Ben, too.)
 
-	devm_devfreq_unregister_notifier+0x30/0x40
-	devfreq_passive_event_handler+0x4c/0x88
-	devfreq_remove_device.part.8+0x6c/0x9c
-	devm_devfreq_dev_release+0x18/0x20
-	release_nodes+0x1b0/0x220
-	devres_release_all+0x78/0x84
-	device_release_driver_internal+0x100/0x1c0
-	driver_detach+0x4c/0x90
-	bus_remove_driver+0x7c/0xd0
-	driver_unregister+0x2c/0x58
-	platform_driver_unregister+0x10/0x18
-	imx_devfreq_platdrv_exit+0x14/0xd40 [imx_devfreq]
+On Thu, Aug 08, 2019 at 05:22:14PM +0800, dongchun.zhu@mediatek.com wrote:
+> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> 
+> Add device tree binding documentation for the ov8856 camera sensor.
+> 
+> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> ---
+>  .../devicetree/bindings/media/i2c/ov8856.txt       | 41 ++++++++++++++++++++++
+>  MAINTAINERS                                        |  1 +
+>  2 files changed, 42 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/media/i2c/ov8856.txt b/Documentation/devicetree/bindings/media/i2c/ov8856.txt
+> new file mode 100644
+> index 0000000..96b10e0
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/i2c/ov8856.txt
+> @@ -0,0 +1,41 @@
+> +* Omnivision OV8856 MIPI CSI-2 sensor
+> +
+> +Required Properties:
+> +- compatible: shall be "ovti,ov8856"
+> +- clocks: reference to the xvclk input clock
+> +- clock-names: shall be "xvclk"
 
-This happens because devres_release_all will first remove all the nodes
-into a separate todo list so the nested devres_release from
-devm_devfreq_unregister_notifier won't find anything.
+Could you add "clock-frequency" property here, please, and specify the
+upper and lower limits?
 
-Fix the warning by calling the non-devm APIS for frequency notification.
-Using devm wrappers is not actually useful for a governor anyway: it
-relies on the devfreq core to correctly match the GOV_START/GOV_STOP
-notifications.
+> +- avdd-supply: Analog voltage supply, 2.8 volts
+> +- dovdd-supply: Digital I/O voltage supply, 1.8 volts
+> +- dvdd-supply: Digital core voltage supply, 1.2 volts
+> +- reset-gpios: Low active reset gpio
+> +
+> +The device node shall contain one 'port' child node with an
+> +'endpoint' subnode for its digital output video port,
+> +in accordance with the video interface bindings defined in
+> +Documentation/devicetree/bindings/media/video-interfaces.txt.
+> +The endpoint optional property 'data-lanes' shall be "<0 1 3 4>".
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+If you don't support lane reordering, then monotonically incrementing lane
+numbers from 1 onwards are recommended.
 
----
- drivers/devfreq/governor_passive.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+Please also make the property mandatory.
 
-The only current user of passive governor is exynos-bus; does rmmod work
-for you? Maybe I'm missing something.
+> +
+> +Example:
+> +&i2c7 {
+> +	ov8856: camera-sensor@10 {
+> +		compatible = "ovti,ov8856";
+> +		reg = <0x10>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&clk_24m_cam>;
+> +
+> +		clocks = <&cru SCLK_TESTCLKOUT1>;
+> +		clock-names = "xvclk";
+> +
+> +		avdd-supply = <&mt6358_vcama2_reg>;
+> +		dvdd-supply = <&mt6358_vcamd_reg>;
+> +		dovdd-supply = <&mt6358_vcamio_reg>;
+> +		reset-gpios = <&gpio2 3 GPIO_ACTIVE_LOW>;
+> +
+> +		port {
+> +			wcam_out: endpoint {
+> +				remote-endpoint = <&mipi_in_wcam>;
+> +				data-lanes = <0 1 3 4>;
+> +			};
+> +		};
+> +	};
+> +};
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 783569e..7746c6b 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -11889,6 +11889,7 @@ L:	linux-media@vger.kernel.org
+>  T:	git git://linuxtv.org/media_tree.git
+>  S:	Maintained
+>  F:	drivers/media/i2c/ov8856.c
+> +F:	Documentation/devicetree/bindings/media/i2c/ov8856.txt
+>  
+>  OMNIVISION OV9650 SENSOR DRIVER
+>  M:	Sakari Ailus <sakari.ailus@linux.intel.com>
 
-It also seems that no attempt is made to increase the ref count of
-the passive "parent" so in theory devices can be removed while still
-referenced. However that would be a separate issue.
-
-diff --git a/drivers/devfreq/governor_passive.c b/drivers/devfreq/governor_passive.c
-index 58308948b863..da485477065c 100644
---- a/drivers/devfreq/governor_passive.c
-+++ b/drivers/devfreq/governor_passive.c
-@@ -163,16 +163,16 @@ static int devfreq_passive_event_handler(struct devfreq *devfreq,
- 	case DEVFREQ_GOV_START:
- 		if (!p_data->this)
- 			p_data->this = devfreq;
- 
- 		nb->notifier_call = devfreq_passive_notifier_call;
--		ret = devm_devfreq_register_notifier(dev, parent, nb,
-+		ret = devfreq_register_notifier(parent, nb,
- 					DEVFREQ_TRANSITION_NOTIFIER);
- 		break;
- 	case DEVFREQ_GOV_STOP:
--		devm_devfreq_unregister_notifier(dev, parent, nb,
--					DEVFREQ_TRANSITION_NOTIFIER);
-+		WARN_ON(devfreq_unregister_notifier(parent, nb,
-+					DEVFREQ_TRANSITION_NOTIFIER));
- 		break;
- 	default:
- 		break;
- 	}
- 
 -- 
-2.17.1
+Regards,
 
+Sakari Ailus
+sakari.ailus@linux.intel.com
 
 _______________________________________________
 linux-arm-kernel mailing list
