@@ -2,51 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBE7085E8D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 11:34:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B63185E94
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 11:35:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K7rWtGhQsANZyhZxbJxX3J9rX7iK/aGLbkBIRuZuJsY=; b=SGkKuAaCvooluh
-	3/ZNkRuwcxm+JpkR9wSnB4dloI8qLCYs+znf8zEaCCl3IwsKiaT6ysWSNo1khiZL3/kwDrUsMF5pZ
-	lKfbK/JT/jcsxXloukAzfXpBwRPGSyb3Xp20Awit2k1zTSmy2WViHNe4WQsHoFvNF3GN7FwoAYD7B
-	Rld3smYHddf921zjGC69GVS6bpDQ0YhfmXNVQt3HeJUPRWhmIzDwrnvE4lXOLIh3+vK/bTtZqfC6y
-	mRcfOnixnTVM2IRlYt9pjzYMi7hks9bGJvCN1NJI9zFHbYdGtC/w0/MXAsqvQ2kxxy0ylQcdE1F+P
-	pp+CG0cr2W7ubX7i4bfQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M3kXu0MS/GK3Dc4XIuEAd/QwMCfurCF0sPlP3LOPehs=; b=S2OZ0tjCgEp5dl
+	4GsssOTlSB7Em54+FNVVBWNPyVArc4mYCpFNeDz/80ea1mGX1u/PSSj+oyOgKZ6ReWyhQ10obmrte
+	xCfXGuKUPS7bz9CkDUe9BwCUQfiummbdZmObsQL0YgoCG4ljTOyr/23X+WPFtim9bmOT60X5RPMcP
+	ZCGMrOcDsM99/Tx2q0sYVNHAGHxUCWWgW/pk/MWzprqEIaCrbJDx+BuIde9cXi1FcWVZl92IWxcIW
+	5CwishMLXJzZxFcYiOTjAm+It/AVwWlAF4H5cJ9Nsi7VWRBna5G/MqjyKUPTr42WbyMngiqcQShgf
+	KS5mz35HMDeS7pQPscVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hveot-0005dR-EV; Thu, 08 Aug 2019 09:34:51 +0000
+	id 1hvepi-00074n-5g; Thu, 08 Aug 2019 09:35:42 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hveog-0005cn-5r
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 09:34:39 +0000
+ id 1hvepT-00073s-It
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 09:35:28 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1F5F11576;
- Thu,  8 Aug 2019 02:34:37 -0700 (PDT)
-Received: from [10.1.196.217] (e121566-lin.cambridge.arm.com [10.1.196.217])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 50FAA3F706;
- Thu,  8 Aug 2019 02:34:36 -0700 (PDT)
-Subject: Re: [PATCH 47/59] KVM: arm64: nv: Propagate CNTVOFF_EL2 to the
- virtual EL1 timer
-To: Marc Zyngier <marc.zyngier@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-48-marc.zyngier@arm.com>
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Message-ID: <95edbe3a-bd6c-11b5-cfa9-6d5252dbb50c@arm.com>
-Date: Thu, 8 Aug 2019 10:34:35 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2DFBE1576;
+ Thu,  8 Aug 2019 02:35:27 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 46D993F706;
+ Thu,  8 Aug 2019 02:35:26 -0700 (PDT)
+Date: Thu, 8 Aug 2019 10:35:24 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Stefan Agner <stefan@agner.ch>
+Subject: Re: Detecting AArch32 support from a AArch64 process in user space
+Message-ID: <20190808093522.GG10425@arm.com>
+References: <ffbb92107af81971c03ec832cf25116c@agner.ch>
 MIME-Version: 1.0
-In-Reply-To: <20190621093843.220980-48-marc.zyngier@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <ffbb92107af81971c03ec832cf25116c@agner.ch>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_023438_309026_EE44F2F2 
-X-CRM114-Status: GOOD (  19.35  )
+X-CRM114-CacheID: sfid-20190808_023527_715536_BD3C7B8F 
+X-CRM114-Status: GOOD (  25.43  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,129 +60,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
+Cc: Marc Zyngier <marc.zyngier@arm.com>, ynorov@caviumnetworks.com,
+ will.deacon@arm.com, linux-arm-kernel@lists.infradead.org,
+ suzuki.poulose@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/21/19 10:38 AM, Marc Zyngier wrote:
-> We need to allow a guest hypervisor to virtualize the virtual timer.
-> FOr that, let's propagate CNTVOFF_EL2 to the guest's view of that
-> timer.
->
-> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
-> ---
->  arch/arm64/include/asm/kvm_host.h |  1 -
->  arch/arm64/kvm/sys_regs.c         |  8 ++++++--
->  include/kvm/arm_arch_timer.h      |  1 +
->  virt/kvm/arm/arch_timer.c         | 12 ++++++++++++
->  4 files changed, 19 insertions(+), 3 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-> index b7c44adcdbf3..e0fe9acb46bf 100644
-> --- a/arch/arm64/include/asm/kvm_host.h
-> +++ b/arch/arm64/include/asm/kvm_host.h
-> @@ -252,7 +252,6 @@ enum vcpu_sysreg {
->  	RMR_EL2,	/* Reset Management Register */
->  	CONTEXTIDR_EL2,	/* Context ID Register (EL2) */
->  	TPIDR_EL2,	/* EL2 Software Thread ID Register */
-> -	CNTVOFF_EL2,	/* Counter-timer Virtual Offset register */
->  	CNTHCTL_EL2,	/* Counter-timer Hypervisor Control register */
->  	SP_EL2,		/* EL2 Stack Pointer */
->  
-> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-> index 1b8016330a19..2031a59fcf49 100644
-> --- a/arch/arm64/kvm/sys_regs.c
-> +++ b/arch/arm64/kvm/sys_regs.c
-> @@ -150,7 +150,6 @@ struct el2_sysreg_map {
->  	PURE_EL2_SYSREG( RVBAR_EL2 ),
->  	PURE_EL2_SYSREG( RMR_EL2 ),
->  	PURE_EL2_SYSREG( TPIDR_EL2 ),
-> -	PURE_EL2_SYSREG( CNTVOFF_EL2 ),
->  	PURE_EL2_SYSREG( CNTHCTL_EL2 ),
->  	PURE_EL2_SYSREG( HPFAR_EL2 ),
->  	EL2_SYSREG(      SCTLR_EL2,  SCTLR_EL1,      translate_sctlr ),
-> @@ -1351,6 +1350,11 @@ static bool access_arch_timer(struct kvm_vcpu *vcpu,
->  		tmr = TIMER_PTIMER;
->  		treg = TIMER_REG_CVAL;
->  		break;
-> +	case SYS_CNTVOFF_EL2:
-> +		tmr = TIMER_VTIMER;
-> +		treg = TIMER_REG_VOFF;
-> +		break;
-> +
->  	default:
->  		BUG();
->  	}
-> @@ -2122,7 +2126,7 @@ static const struct sys_reg_desc sys_reg_descs[] = {
->  	{ SYS_DESC(SYS_CONTEXTIDR_EL2), access_rw, reset_val, CONTEXTIDR_EL2, 0 },
->  	{ SYS_DESC(SYS_TPIDR_EL2), access_rw, reset_val, TPIDR_EL2, 0 },
->  
-> -	{ SYS_DESC(SYS_CNTVOFF_EL2), access_rw, reset_val, CNTVOFF_EL2, 0 },
-> +	{ SYS_DESC(SYS_CNTVOFF_EL2), access_arch_timer },
->  	{ SYS_DESC(SYS_CNTHCTL_EL2), access_rw, reset_val, CNTHCTL_EL2, 0 },
->  
->  	{ SYS_DESC(SYS_CNTHP_TVAL_EL2), access_arch_timer },
-> diff --git a/include/kvm/arm_arch_timer.h b/include/kvm/arm_arch_timer.h
-> index 3a5d9255120e..3389606f3029 100644
-> --- a/include/kvm/arm_arch_timer.h
-> +++ b/include/kvm/arm_arch_timer.h
-> @@ -23,6 +23,7 @@ enum kvm_arch_timer_regs {
->  	TIMER_REG_CVAL,
->  	TIMER_REG_TVAL,
->  	TIMER_REG_CTL,
-> +	TIMER_REG_VOFF,
->  };
->  
->  struct arch_timer_context {
-> diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
-> index 3d84c240071d..1d53352c7d97 100644
-> --- a/virt/kvm/arm/arch_timer.c
-> +++ b/virt/kvm/arm/arch_timer.c
-> @@ -913,6 +913,10 @@ static u64 kvm_arm_timer_read(struct kvm_vcpu *vcpu,
->  		val = kvm_phys_timer_read() - timer->cntvoff;
->  		break;
->  
-> +	case TIMER_REG_VOFF:
-> +		val = timer->cntvoff;
-> +		break;
-> +
->  	default:
->  		BUG();
->  	}
-> @@ -955,6 +959,10 @@ static void kvm_arm_timer_write(struct kvm_vcpu *vcpu,
->  		timer->cnt_cval = val;
->  		break;
->  
-> +	case TIMER_REG_VOFF:
-> +		timer->cntvoff = val;
-> +		break;
-> +
->  	default:
->  		BUG();
->  	}
-> @@ -1166,6 +1174,10 @@ int kvm_timer_enable(struct kvm_vcpu *vcpu)
->  		return -EINVAL;
->  	}
->  
-> +	/* Nested virtualization requires zero offset for virtual EL2 */
-> +	if (nested_virt_in_use(vcpu))
-> +		vcpu_vtimer(vcpu)->cntvoff = 0;
+On Thu, Aug 08, 2019 at 09:36:42AM +0200, Stefan Agner wrote:
+> [resend this time with the correct mailing list address]
+> 
+> Hello,
+> 
+> I am trying to detect whether an ARMv8 system running in AArch64 state
+> supports AArch32 state from a user space process. The arm64_features[]
+> in
 
-I think this is related to the fact that the virtual offset is treated as 0 when
-reading CNTVCT_EL0 from EL2, or from from EL2 and EL0 if E2H, TGE are set
-(please correct me if I'm wrong).
+Why?  Is this just for diagnostic purposes, or some programmatic reason?
 
-However, when the guest runs in virtual EL2, the direct_vtimer is the hvtimer,
-so the value that ends up in CNTVOFF_EL2 is vcpu_hvtimer(vcpu)->cntvoff.
+In the latter case, just try to do what ever it is you want to do that
+depends on AArch32: if it fails, you don't have AArch32.
 
-Thanks,
-Alex
-> +
->  	get_timer_map(vcpu, &map);
->  
->  	ret = kvm_vgic_map_phys_irq(vcpu,
+> arch/arm64/kernel/cpufeature.c lists a CPU feature "32-bit EL0 Support".
+> However, afaik this CPU feature is not directly exposed to user-space.
+> The features do get printed in the kernel log, but that requires
+> privileges and only works directly after boot. There is
+
+Please don't scrape dmesg :)
+
+However, detecting AArch32 support is a bit annoying due to the fact
+that there's no hwcap or similar.
+
+> system_supports_32bit_el0() which is used in various places in the arm64
+> architecture code. One of the instances where I can make sense of from
+> user space is through the personality system call. One idea is to call
+> personality(PER_LINUX32). It would then return error code 22 in case
+> 32-bit is not supported in user space. However, if successful this
+> changes the personality of the current process which might have side
+> effects which I do not want...?
+> 
+> I started to ask myself what PER_LINUX32 actually changes. From what I
+> can tell it only changes the behavior of /proc/cpuinfo? The personality
+> seems not to be applied automatically to 32-bit processes, so this is a
+> opt-in backward compatibility feature?
+
+Basically yes.  Nonetheless, this is probably a reasonable way to test
+for AArch32 userspace support.
+
+> To be on the safe side, I was thinking about executing the system call
+> in a separate process. However, at that point I could also just execute
+> a statically linked AArch32 binary and see whether I get a "exec format
+> error". I guess this could then be either due to missing AArch32 CPU
+> support or the kernel not being compiled with 32-bit compatibility.
+
+personality() returns the old personality, so you providing you don't
+have multiple threads you can probably try to set it to PER_LINUX32
+and then restore it.
+
+Otherwise, you would need to fork and try personality() from the child.
+
+Or as you suggest, try to exec a 32-bit binary.
+		
+> At last I was considering reading directly from the CPU. But from what I
+> understand the register used in the kernel to determine 32-bit
+> compatibility (ID_AA64PFR0_EL1) is not accessible by user space (due to
+> the suffix _EL1).
+> 
+> Any advice/thoughts on this topic?
+
+This register is emulated for userspace, so you can read it.  However,
+the relevant field gets masked out, so this is probably not much use to
+you.
+
+We could expose the field, but a test that relies on it wouldn't be
+backwards compatible.
+
+If you just want to do this test from a script for diagnostic purposes
+and the filesystem has util-linux, then something like
+
+	linux32 /bin/true
+
+might also work (this is effectively a scripted version of the
+personality(PER_LINUX32) test).
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
