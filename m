@@ -2,78 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADC5885FB8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 12:33:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95A2A85FED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 12:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2UuvP8NjQy1rvfGI8UWBNvFwoGDaQK92hVgoVnyy5ZU=; b=upeuFGCo6+HmkD
-	zrSkim96iSiQKl79MLeEMXBVghC8meqZHd5Pu/2bB3RhsfoBiAMTWJBQX54eBqUR9I/bwvfRiJDf8
-	Ce39Kyk2/ajdm50w7qGuXjTMTx6ldFXRqHxf2tsfADFzY/iiJzobcDQ1xwX9PqWB4DmBHMvQ/4VD9
-	6NzhFMIk+/XIe3zJE6cvVhCnIHx/bjrHhtnU5ihrqkvSecrnc4y7jQcRZBOOLBBq+TR7iVxXZkbsG
-	1sqsRYuvkXdyvdByi94J7OBbuHoOiROsSAmzofXtFp+aDy53P8U8a7t/UWDyCAlZRCYLv+tlp9YkS
-	sahhByB2pNvdJHk6xC8g==;
+	List-Owner; bh=3Zw9v2s/4lgLMzutP/rXHZI1LTb5jn0+hxSU7P5K4O8=; b=lE7TbSAt1061yi
+	pAyUlwHvtKW1G3l9ADBTmkBMgEwxR5WkIkB7k/H7XDaDy/MMH6QMeTGmzJrYU9eSCXc/BGvxI67T1
+	IWS1wAr8m7Njqhi+sf1y0fSNQf+XiZpSXLW5ur7WSSOA7pP7WGJJ56z9sBMtEb42K4vgfaoKoTaFI
+	mqbmDaQiCPAKWB6asyH2r26ZKby+HF/mwWbJV9FPoWlo4epJhyTvfsj8nDBZSbyE9fxk0K3fYsR0Q
+	va9etDZFWaI6dmpzLyUWmhCpjmMJsy7OXAiHWa6Og3uMH43dzrSCi6Dp9hPhqxMea8EuZE9t/NYbh
+	eXUkhkFViGtQN1QqlMfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvfjZ-00048c-Ca; Thu, 08 Aug 2019 10:33:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvfjE-00048G-0P
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 10:33:05 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0DB142173E;
- Thu,  8 Aug 2019 10:33:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565260383;
- bh=FQ6+FsASdUdEGiZDnohQHtyEdIqjQg4sf53ogeYronU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=i0cpkV6yxp9rMymSHvxjKf0jsHk3h+WHG95kn4WWQPwZZAhvUGd7+TO3nZ23eheGH
- A1Bc1VB+y4plVRkxLuTagWC3CwLI59ZuuyCt8w7z6tlpdftzRnlxyD9l5Azt8tFrEI
- fWGfWW3kB9p8pDXuOdw6q+Z0Q4YvrTZy9VrwpRPc=
-Date: Thu, 8 Aug 2019 11:32:57 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 1/2] drm: add cache support for arm64
-Message-ID: <20190808103257.4tqpip7ty4gf7eqf@willie-the-truck>
-References: <20190805211451.20176-1-robdclark@gmail.com>
- <20190806084821.GA17129@lst.de>
- <CAJs_Fx6eh1w7c=crMoD5XyEOMzP6orLhqUewErE51cPGYmObBQ@mail.gmail.com>
- <20190806143457.GF475@lakrids.cambridge.arm.com>
- <CAJs_Fx4h6SWGmDTLBnV4nmWUFAs_Ge1inxd-dW9aDKgKqmc1eQ@mail.gmail.com>
- <20190807123807.GD54191@lakrids.cambridge.arm.com>
- <CAJs_Fx5xU2-dn3iOVqWTzAjpTaQ8BBNP_Gn_iMc-eJpOX+iXoQ@mail.gmail.com>
- <20190807164958.GA44765@lakrids.cambridge.arm.com>
- <20190808075827.GD30308@lst.de>
- <20190808102053.GA46901@lakrids.cambridge.arm.com>
+	id 1hvfoS-0006F9-S1; Thu, 08 Aug 2019 10:38:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvfoC-0006Eo-Q6
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 10:38:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C465028;
+ Thu,  8 Aug 2019 03:38:11 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D9D2F3F694;
+ Thu,  8 Aug 2019 03:38:10 -0700 (PDT)
+Date: Thu, 8 Aug 2019 11:38:08 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Qian Cai <cai@lca.pw>
+Subject: Re: [PATCH] arm64/cache: silence -Woverride-init warnings
+Message-ID: <20190808103808.GC46901@lakrids.cambridge.arm.com>
+References: <20190808032916.879-1-cai@lca.pw>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190808102053.GA46901@lakrids.cambridge.arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190808032916.879-1-cai@lca.pw>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_033304_091386_6EE2BB93 
-X-CRM114-Status: GOOD (  17.84  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190808_033812_892963_B19A8740 
+X-CRM114-Status: GOOD (  16.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,49 +61,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Clark <robdclark@chromium.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- LKML <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- Rob Clark <robdclark@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- Christoph Hellwig <hch@lst.de>, Allison Randal <allison@lohutok.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: catalin.marinas@arm.com, will@kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, clang-built-linux@googlegroups.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBBdWcgMDgsIDIwMTkgYXQgMTE6MjA6NTNBTSArMDEwMCwgTWFyayBSdXRsYW5kIHdy
-b3RlOgo+IE9uIFRodSwgQXVnIDA4LCAyMDE5IGF0IDA5OjU4OjI3QU0gKzAyMDAsIENocmlzdG9w
-aCBIZWxsd2lnIHdyb3RlOgo+ID4gT24gV2VkLCBBdWcgMDcsIDIwMTkgYXQgMDU6NDk6NTlQTSAr
-MDEwMCwgTWFyayBSdXRsYW5kIHdyb3RlOgo+ID4gPiBGb3IgYXJtNjQsIHdlIGNhbiB0ZWFyIGRv
-d24gcG9ydGlvbnMgb2YgdGhlIGxpbmVhciBtYXAsIGJ1dCB0aGF0IGhhcyB0bwo+ID4gPiBiZSBk
-b25lIGV4cGxpY2l0bHksIGFuZCB0aGlzIGlzIG9ubHkgcG9zc2libGUgd2hlbiB1c2luZyByb2Rh
-dGFfZnVsbC4gSWYKPiA+ID4gbm90IHVzaW5nIHJvZGF0YV9mdWxsLCBpdCBpcyBub3QgcG9zc2li
-bGUgdG8gZHluYW1pY2FsbHkgdGVhciBkb3duIHRoZQo+ID4gPiBjYWNoZWFibGUgYWxpYXMuCj4g
-PiAKPiA+IEludGVyZXN0aW5nLiAgRm9yIHRoaXMgb3IgbmV4dCBtZXJnZSB3aW5kb3cgSSBwbGFu
-IHRvIGFkZCBzdXBwb3J0IHRvIHRoZQo+ID4gZ2VuZXJpYyBETUEgY29kZSB0byByZW1hcCBwYWdl
-cyBhcyB1bmNhY2hhYmxlIGluIHBsYWNlIGJhc2VkIG9uIHRoZQo+ID4gb3BlbnJpc2MgY29kZS4g
-IEHRlSBmYXIgYXMgSSBjYW4gdGVsbCB0aGUgcmVxdWlyZW1lbnQgZm9yIHRoYXQgaXMKPiA+IGJh
-c2ljYWxseSBqdXN0IHRoYXQgdGhlIGtlcm5lbCBkaXJlY3QgbWFwcGluZyBkb2Vzbid0IHVzZSBQ
-TUQgb3IgYmlnZ2VyCj4gPiBtYXBwaW5nIHNvIHRoYXQgaXQgc3VwcG9ydHMgY2hhbmdpbmcgcHJv
-dGVjdGlvbiBiaXRzIG9uIGEgcGVyLVBURSBiYXNpcy4KPiA+IElzIHRoYXQgdGhlIGNhc2Ugd2l0
-aCBhcm02NCArIHJvZGF0YV9mdWxsPwo+IAo+IFllcywgd2l0aCB0aGUgYWRkZWQgY2FzZSB0aGF0
-IG9uIGFybTY0IHdlIGNhbiBhbHNvIGhhdmUgY29udGlndW91cwo+IGVudHJpZXMgYXQgdGhlIFBU
-RSBsZXZlbCwgd2hpY2ggd2UgYWxzbyBoYXZlIHRvIGRpc2FibGUuCj4gCj4gT3VyIGtlcm5lbCBw
-YWdlIHRhYmxlIGNyZWF0aW9uIGNvZGUgZG9lcyB0aGF0IGZvciByb2RhdGFfZnVsbCBvcgo+IERF
-QlVHX1BBR0VBTExPQy4gU2VlIGFyY2gvYXJtNjQvbW11LmMsIGluIG1hcF9tZW0oKSwgd2hlcmUg
-d2UgcGFzcwo+IE5PX3tCTE9DSyxDT05UfV9NQVBQSU5HUyBkb3duIHRvIG91ciBwYWdldGFibGUg
-Y3JlYXRpb24gY29kZS4KCkZXSVcsIHdlIG1hZGUgcm9kYXRhX2Z1bGwgdGhlIGRlZmF1bHQgYSBj
-b3VwbGUgb2YgcmVsZWFzZXMgYWdvLCBzbyBpZgpzb2x2aW5nIHRoZSBjYWNoZWFibGUgYWxpYXMg
-Zm9yIG5vbi1jYWNoZWFibGUgRE1BIGJ1ZmZlcnMgcmVxdWlyZXMgdGhpcwp0byBiZSBwcmVzZW50
-LCB0aGVuIHdlIGNvdWxkIHByb2JhYmx5IGp1c3QgcmVmdXNlIHRvIHByb2JlIG5vbi1jb2hlcmVu
-dApETUEtY2FwYWJsZSBkZXZpY2VzIG9uIHN5c3RlbXMgd2hlcmUgcm9kYXRhX2Z1bGwgaGFzIGJl
-ZW4gZGlzYWJsZWQuCgpXaWxsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, Aug 07, 2019 at 11:29:16PM -0400, Qian Cai wrote:
+> The commit 155433cb365e ("arm64: cache: Remove support for ASID-tagged
+> VIVT I-caches") introduced some compiation warnings from GCC (and
+> Clang) with -Winitializer-overrides),
+> 
+> arch/arm64/kernel/cpuinfo.c:38:26: warning: initialized field
+> overwritten [-Woverride-init]
+> [ICACHE_POLICY_VIPT]  = "VIPT",
+>                         ^~~~~~
+> arch/arm64/kernel/cpuinfo.c:38:26: note: (near initialization for
+> 'icache_policy_str[2]')
+> arch/arm64/kernel/cpuinfo.c:39:26: warning: initialized field
+> overwritten [-Woverride-init]
+> [ICACHE_POLICY_PIPT]  = "PIPT",
+>                         ^~~~~~
+> arch/arm64/kernel/cpuinfo.c:39:26: note: (near initialization for
+> 'icache_policy_str[3]')
+> arch/arm64/kernel/cpuinfo.c:40:27: warning: initialized field
+> overwritten [-Woverride-init]
+> [ICACHE_POLICY_VPIPT]  = "VPIPT",
+>                          ^~~~~~~
+> arch/arm64/kernel/cpuinfo.c:40:27: note: (near initialization for
+> 'icache_policy_str[0]')
+> 
+> because it initializes icache_policy_str[0 ... 3] twice. Since
+> arm64 developers are keen to keep the style of initializing a static
+> array with a non-zero pattern first, just disable those warnings for
+> both GCC and Clang of this file.
+> 
+> Fixes: 155433cb365e ("arm64: cache: Remove support for ASID-tagged VIVT I-caches")
+> Signed-off-by: Qian Cai <cai@lca.pw>
+
+This is _not_ a fix, and should not require backporting to stable trees.
+
+What about all the other instances that we have in mainline?
+
+I really don't think that we need to go down this road; we're just going
+to end up adding this to every file that happens to include a header
+using this scheme...
+
+Please just turn this off by default for clang.
+
+If we want to enable this, we need a mechanism to permit overridable
+assignments as we use range initializers for.
+
+Thanks,
+Mark.
+
+> ---
+>  arch/arm64/kernel/Makefile | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
+> index 478491f07b4f..397ed5f7be1e 100644
+> --- a/arch/arm64/kernel/Makefile
+> +++ b/arch/arm64/kernel/Makefile
+> @@ -11,6 +11,9 @@ CFLAGS_REMOVE_ftrace.o = $(CC_FLAGS_FTRACE)
+>  CFLAGS_REMOVE_insn.o = $(CC_FLAGS_FTRACE)
+>  CFLAGS_REMOVE_return_address.o = $(CC_FLAGS_FTRACE)
+>  
+> +CFLAGS_cpuinfo.o += $(call cc-disable-warning, override-init)
+> +CFLAGS_cpuinfo.o += $(call cc-disable-warning, initializer-overrides)
+> +
+>  # Object file lists.
+>  obj-y			:= debug-monitors.o entry.o irq.o fpsimd.o		\
+>  			   entry-fpsimd.o process.o ptrace.o setup.o signal.o	\
+> -- 
+> 2.20.1 (Apple Git-117)
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
