@@ -2,87 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 115FE859C8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 07:30:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFF41859EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 07:43:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SGRn1iMqx5jLRvTDv54LcrxNcfxVP9vlrd8Jt6F3KsY=; b=RBiDq3/7WSeeMid4mPbPsjN/y
-	NuSD652LnFo4ImK4PfRVO332WgxKoVawnAz41uMzKUdTG3rXvIc6/oDUfDjseRfSPobNWFEM8XQ3U
-	4i3b0QnncfiafC9UmQfwoyNOiL/91Hg4DRFwpjQRUgiwG8tYqffNq+lDwDAEi1Qo7Fp/s/USoLmuH
-	zrjS6svJ3kEwAmXczuokgQB77oVyf4HjrFEnrpMopKOc7KP43IQnq8TUcPGfKAqtOEprUwKfk9ujJ
-	0UN2u7KHW1EKJKg3zzCtvqO4wQmkUhRvbYpQJxSNvVCtr23xLXOUnTiv3g7qyurd6kHeOv8fQVbuN
-	66Unl1BKA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Wx9RspCiqSJz5m308uLuQdJHfT+sCDpGz6YzrpwkvMs=; b=XDOU7n8KIcJ7Zy
+	Pef7KwpS2Esac5tLyOVWScUBox/iKM9OzthcVONkQH4hGP+Cb1jgvvhnoN71Rf+099oHXXABiKX2M
+	i17pEgBkQXKl4uIu42naEDScMoCAhHbYt8UGMMV5H024Ye3EvFsIQ5E2G9NyQNpZoyEnBNeZhbweW
+	oxnjFb7XOXJxnc2pefdPw3uljtA8sokePRt5jMNcjoYxxcTXNgFMq/dts03ZN9uw7L3QJgsjHOyd+
+	jlqicjBASgfQYRh9A5K4HYdKg4eZOzqW934QgzNljAPv4INk98hR3GrHAfDOXXuKlf467/OLfQVWC
+	8AVZPhcNuwWrKZb3rRaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvb0L-0004CF-I9; Thu, 08 Aug 2019 05:30:25 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1hvbCY-0007g4-Ll; Thu, 08 Aug 2019 05:43:02 +0000
+Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvb05-0004BG-Fy
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 05:30:10 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x785U5Ls031936;
- Thu, 8 Aug 2019 00:30:05 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1565242205;
- bh=Om5NSalTtmTObIUv0acQzdTPhMq7gVkI73HNZY/ZgKY=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=NWZFklCEL489y4jXUA4v5yHSem9kWzMGtMkoPgH7BWydOYz56uP1yDcFoadSq7vVU
- IzKThsJFl2wzw9A8bb2TFnCbpPKJtaJT2Iwxu2ss6uZJo6VnGULNjncsIC4Pxjb+OI
- kK0HdBxfW6fZRvte6c+8NbyFxXLDiATXg7QvTTgc=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x785U5il068308
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 8 Aug 2019 00:30:05 -0500
-Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 8 Aug
- 2019 00:30:05 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 8 Aug 2019 00:30:05 -0500
-Received: from [172.24.191.45] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x785U2dh066424;
- Thu, 8 Aug 2019 00:30:03 -0500
-Subject: Re: [PATCH 5/8] soc: ti: omap-prm: add omap4 PRM data
-To: Tero Kristo <t-kristo@ti.com>, <ssantosh@kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-omap@vger.kernel.org>,
- <robh+dt@kernel.org>
-References: <1565164139-21886-1-git-send-email-t-kristo@ti.com>
- <1565164139-21886-6-git-send-email-t-kristo@ti.com>
-From: Keerthy <j-keerthy@ti.com>
-Message-ID: <643cd090-a4d5-dac6-8395-c01f7fba04ab@ti.com>
-Date: Thu, 8 Aug 2019 11:00:38 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hvbCI-0007fT-QN; Thu, 08 Aug 2019 05:42:48 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 463y252c4Xz9sN1;
+ Thu,  8 Aug 2019 15:42:37 +1000 (AEST)
+From: Michael Ellerman <mpe@ellerman.id.au>
+To: john.hubbard@gmail.com, Andrew Morton <akpm@linux-foundation.org>
+Subject: Re: [PATCH v3 38/41] powerpc: convert put_page() to put_user_page*()
+In-Reply-To: <20190807013340.9706-39-jhubbard@nvidia.com>
+References: <20190807013340.9706-1-jhubbard@nvidia.com>
+ <20190807013340.9706-39-jhubbard@nvidia.com>
+Date: Thu, 08 Aug 2019 15:42:34 +1000
+Message-ID: <87k1botdpx.fsf@concordia.ellerman.id.au>
 MIME-Version: 1.0
-In-Reply-To: <1565164139-21886-6-git-send-email-t-kristo@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_223009_622866_6B6769F1 
-X-CRM114-Status: GOOD (  13.89  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190807_224247_065978_89ED7807 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,59 +61,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tony@atomide.com, devicetree@vger.kernel.org
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
+ ceph-devel@vger.kernel.org, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@lst.de>,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
+ linux-media@vger.kernel.org, John Hubbard <jhubbard@nvidia.com>,
+ intel-gfx@lists.freedesktop.org, linux-block@vger.kernel.org,
+ =?utf-8?B?SsOpcsO0?= =?utf-8?B?bWU=?= Glisse <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi John,
 
+john.hubbard@gmail.com writes:
+> diff --git a/arch/powerpc/mm/book3s64/iommu_api.c b/arch/powerpc/mm/book3s64/iommu_api.c
+> index b056cae3388b..e126193ba295 100644
+> --- a/arch/powerpc/mm/book3s64/iommu_api.c
+> +++ b/arch/powerpc/mm/book3s64/iommu_api.c
+> @@ -203,6 +202,7 @@ static void mm_iommu_unpin(struct mm_iommu_table_group_mem_t *mem)
+>  {
+>  	long i;
+>  	struct page *page = NULL;
+> +	bool dirty = false;
 
-On 07/08/19 1:18 PM, Tero Kristo wrote:
-> Add PRM data for omap4 family of SoCs.
-> 
-> Signed-off-by: Tero Kristo <t-kristo@ti.com>
-> ---
->   drivers/soc/ti/omap_prm.c | 20 ++++++++++++++++++++
->   1 file changed, 20 insertions(+)
-> 
-> diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
-> index 870515e3..9b8d5945 100644
-> --- a/drivers/soc/ti/omap_prm.c
-> +++ b/drivers/soc/ti/omap_prm.c
-> @@ -54,7 +54,27 @@ struct omap_reset_data {
->   
->   #define OMAP_PRM_NO_RSTST	BIT(0)
->   
-> +struct omap_prm_data omap4_prm_data[] = {
-> +	{ .name = "mpu", .base = 0x4a306300, .pwstst = 0x4 },
-> +	{ .name = "tesla", .base = 0x4a306400, .pwstst = 0x4, .rstctl = 0x10, .rstst = 0x14 },
-> +	{ .name = "abe", .base = 0x4a306500, .pwstst = 0x4 },
-> +	{ .name = "always_on_core", .base = 0x4a306600, .pwstst = 0x4 },
-> +	{ .name = "core", .base = 0x4a306700, .pwstst = 0x4, .rstctl = 0x210, .rstst = 0x214 },
-> +	{ .name = "ivahd", .base = 0x4a306f00, .pwstst = 0x4, .rstctl = 0x10, .rstst = 0x14 },
-> +	{ .name = "cam", .base = 0x4a307000, .pwstst = 0x4 },
-> +	{ .name = "dss", .base = 0x4a307100, .pwstst = 0x4 },
-> +	{ .name = "gfx", .base = 0x4a307200, .pwstst = 0x4 },
-> +	{ .name = "l3init", .base = 0x4a307300, .pwstst = 0x4 },
-> +	{ .name = "l4per", .base = 0x4a307400, .pwstst = 0x4 },
-> +	{ .name = "cefuse", .base = 0x4a307600, .pwstst = 0x4 },
-> +	{ .name = "wkup", .base = 0x4a307700, .pwstst = 0x4 },
-> +	{ .name = "emu", .base = 0x4a307900, .pwstst = 0x4 },
-> +	{ .name = "device", .base = 0x4a307b00, .rstctl = 0x0, .rstst = 0x4 },
-> +	{ },
-> +};
+I don't think you need that initialisation do you?
 
-So at some point arch/arm/mach-omap2/powerdomains44xx_data.c
-duplicated data will be removed?
+>  	if (!mem->hpas)
+>  		return;
+> @@ -215,10 +215,9 @@ static void mm_iommu_unpin(struct mm_iommu_table_group_mem_t *mem)
+>  		if (!page)
+>  			continue;
+>  
+> -		if (mem->hpas[i] & MM_IOMMU_TABLE_GROUP_PAGE_DIRTY)
+> -			SetPageDirty(page);
+> +		dirty = mem->hpas[i] & MM_IOMMU_TABLE_GROUP_PAGE_DIRTY;
+> -		put_page(page);
+> +		put_user_pages_dirty_lock(&page, 1, dirty);
+>  		mem->hpas[i] = 0;
+>  	}
+>  }
 
-> +
->   static const struct of_device_id omap_prm_id_table[] = {
-> +	{ .compatible = "ti,omap4-prm-inst", .data = omap4_prm_data },
->   	{ },
->   };
->   
-> 
+cheers
 
 _______________________________________________
 linux-arm-kernel mailing list
