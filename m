@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C89985E0F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 11:19:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15DE685E18
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 11:20:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:Reply-To
 	:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1TQ+TvMog/hKbqQcFXzi8wdhtUEaStqoLrROsUhmzWk=; b=eeB3TMJW4HUiVjSBroEX8NHAh
-	itGIZjRCM2lMUB4/x+7NzLYAj7Hfrz7eYRh6B+e92cKgTGBNd9LioIkoOX/hnTVBVc2NmRy6NDyuZ
-	K9IHfQzFL9k8fr8ymcYKCzqqKTk3zIqYU36QzXZ+UsRAEc9WQG/ACeAne6NecDXrAT/VshdHGHW6G
-	BJX6inkCSu1bYYdv5bC01YnRaUAg+uZwzZJCjBJYUaFhRqSuT628IWEhhhh/8sdaLEoDOO/K0e11x
-	XWA5Yu4gMaBIr6gTBrFbm0n8dPSlSZTfnOXqApoLTIBFzVEM5wpgAPaF/kdD2pO8FqpuE4+otXAFv
-	zUraWd8Jg==;
+	 bh=zTsVZVXDRW2vMOch1s3az8YNgdswP2Gi5RkJwrZfU2Y=; b=PXG7j/qBnJBJnY8fIPQaZFkTG
+	ZAnCDVVKyN0tb8XTWJXRHE/FktEK4VtBqwetrrq3QXq17RqR9vngN6jPz9Lls5k3lPcMtUU+v4Q5p
+	lUrpNTyYzwVOZd2r3XavfmQirDQZygBnwO23nBmTySTttZXKbYUM0Tx8+XwCKqaZKqYpEUMH73EDV
+	sokDJp8cTsGMAwBsMDPMjMYEKIDLQvx+T1+rJmlSbRBnxAlb1QF+BxgzoTL/W1AWB5m/HhhukXCMi
+	TWg22QbGEvcFp/uPAqbFLmCMj9MTlzgFtJ+ppaj9JVfD8GL6PsoAx653V3VOqxcKJwgIM/hnNfHtd
+	4UGIpCIRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hveZZ-0006pD-Tv; Thu, 08 Aug 2019 09:19:02 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hveag-00074a-DO; Thu, 08 Aug 2019 09:20:10 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hveZK-0006or-Rj
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 09:18:48 +0000
-Received: by mail-wm1-x343.google.com with SMTP id f72so1634939wmf.5
+ id 1hveaQ-000746-M5
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 09:19:55 +0000
+Received: by mail-wr1-x444.google.com with SMTP id 31so94197140wrm.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 08 Aug 2019 02:18:46 -0700 (PDT)
+ Thu, 08 Aug 2019 02:19:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
  h=reply-to:subject:to:cc:references:from:openpgp:autocrypt:message-id
  :date:user-agent:mime-version:in-reply-to;
- bh=wH6zZD3O6QwkSrOseoe32Lx38cGofcR2MdZT2pC+ZqY=;
- b=nWG0hjKEqr9Az0dwNodojdwL2zmN9m++dyn+YxBtf8KnT12VhXbSCgAGMFDJ9WE0XL
- O+UewciviGeqQt93gWGFdbueTPFC689SiUor0HJFHTndE+sNImWQ+Jr0AOZ9VpF6aPCq
- o8RM58itpq8oDkadBOZYZ+XQS+mCxNpiX5J3hk8HKwBAOqm/5pDz6AXe44URsPh88hjo
- LQv0CYts0iKQNMO93s93LS8K0IUx6Ht4gSDGxIxXI1LlaGmZZi2iF/krBksFZBjjQvod
- 1WLLTWVABUEZFPu/exb8wYdCJ+4WN2j0zk/26wn70ScC5U4XJdazWQJC9zSuC+dmDrhW
- VmaQ==
+ bh=boFL17g+r1DVnnh5UlPaoygW7yvD10knzZn4sJQmOy4=;
+ b=cbUO6aHRKhLAAibtk5Zll49z1qNw2fpWRAFBovhBVhN1Zm37T4J87s9LTIH5zchwdd
+ BslCpCTEhmbwB/OAiIg1ozt9ntx0g3mnfDIiR7aFuY6TNIsF9tj1A3IKbPRg87fiGcgS
+ 2RkgDDOO4zkOEXjEW7TMJviZJb3KMNbbGKtyNjM+CzFhYtgwik1Opnc8StYPjRQ9BVKH
+ oASK8VeogsuBVk3R+/b4rn/x1HPYNHLspb/1Yrh78T2nf2JZHwJzp0lPbnqKkq/nf9J1
+ brzTKpi5HuQwaEeEZQZ2lq1/9nsveyTU+/breIRNZJ1iWHIlM+N+WE1Y8XgTqVYospQD
+ uS2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:reply-to:subject:to:cc:references:from:openpgp
  :autocrypt:message-id:date:user-agent:mime-version:in-reply-to;
- bh=wH6zZD3O6QwkSrOseoe32Lx38cGofcR2MdZT2pC+ZqY=;
- b=ATkOnojloqsieiQY2LXT/WE0MLbdBSqCgqYxwgGkqeweVqAkV6N4n1n1AgFN06UTeF
- LNj7rzp1zGTqRwfbLc6F4mUu0B4BPyTxqt1vMqHKEkj3ULusTg1ChZhsGUI3OwWwKMpX
- 86pxpDZtE4HzMMgN52xXJLjzNjAqk+DMINdpns/JPgCnXdjQncKmhPC/dPM//4X49xKd
- ekn+NjyMlT3KphY1Vg0bmZBNbLzzlSfPJtmuCHa810UhXwU3BDmM4LZkDU3lQE2IO0T1
- OmQapxOjk4aYXqXOSeHnYz8mD5jztdYaiotHKFv731e584x0Lfe49rmkk88lp+T2LJbk
- 1qtA==
-X-Gm-Message-State: APjAAAXlusHx5NTN4VlDvrTbhP3RGfeSmRZcj+rqxx8LsazuzA6EoK7A
- 21ZuUE0msWxtNFO67AAG7L1RNg==
-X-Google-Smtp-Source: APXvYqxTtxm06Ju4gZv5/IOWwCEpXbTfJlHTTksjJ4KMl78q2FsQhtslyJldGHM1tPlQ98ecrNwTdA==
-X-Received: by 2002:a1c:f509:: with SMTP id t9mr3321398wmh.6.1565255925039;
- Thu, 08 Aug 2019 02:18:45 -0700 (PDT)
+ bh=boFL17g+r1DVnnh5UlPaoygW7yvD10knzZn4sJQmOy4=;
+ b=EtrWh8LfjEbnTgfZD7RayFB87fYz1pRQbWXvybh99kAWWgE9R+M9eA42EBTS9hUjPa
+ 3YfmXrX+Y20OIGbeoex2/ALf7m53LrF+Zfiqabk2LhqCYhoLFiFsM5O877EDBzlITElG
+ F1ZJdug3Su7GAioEI7hGI1coRrHws+qeggDTrgAoh8AdbKsf/Z1r/XxKcrzKFXBbeJHP
+ U4Px66ql7PDHlYd8pOzTSP0kxP205+XmdeP9qIoJWjdsWTSkOfJ8dDI81rLHZpLjTIwA
+ r+G7pHRhTAF6c1xqzwWv4eh+zv/84BA+F8jZqx9PmSibX7Dri41ujF6KX3EwerBS51vI
+ QPSA==
+X-Gm-Message-State: APjAAAUTIddl4qQxQzgjFto8AlnpSHrygDR1vVVzDKJYqnxePNqXnCks
+ E4Qc2FvxX9KsXmJs0XdCxFWHcfxYCV9/lQ==
+X-Google-Smtp-Source: APXvYqwp/Brb7iV2nE3ExNvKHLIKw/W8ZDiN78+c+hbnPjm85oEqyhH+IimN2bHfuZLceJ5Msx35oQ==
+X-Received: by 2002:adf:9bcd:: with SMTP id e13mr15611808wrc.338.1565255993205; 
+ Thu, 08 Aug 2019 02:19:53 -0700 (PDT)
 Received: from [173.194.76.109] ([149.199.62.131])
- by smtp.gmail.com with ESMTPSA id s63sm2818258wme.17.2019.08.08.02.18.41
+ by smtp.gmail.com with ESMTPSA id v16sm90944999wrn.28.2019.08.08.02.19.50
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 08 Aug 2019 02:18:44 -0700 (PDT)
-Subject: Re: [PATCH 1/2] ARM: zynq: support smp in thumb mode
+ Thu, 08 Aug 2019 02:19:52 -0700 (PDT)
+Subject: Re: [PATCH 2/2] ARM: zynq: Use memcpy_toio instead of memcpy on smp
+ bring-up
 To: Luis Araneda <luaraneda@gmail.com>, Michal Simek <michal.simek@xilinx.com>
 References: <20190806030718.29048-1-luaraneda@gmail.com>
- <20190806030718.29048-2-luaraneda@gmail.com>
- <17a45e21-8362-e888-d222-812c879a38a8@xilinx.com>
- <CAHbBuxosAnWdpee8jS7feR06+KF_PjOiTF2+PsiMnMAjwfUFKw@mail.gmail.com>
+ <20190806030718.29048-3-luaraneda@gmail.com>
+ <194fe121-151d-0b64-b83e-e4d82c02efa7@xilinx.com>
+ <CAHbBuxpM8YKxADGJv2PAPbyS-2FZ6xiwohJwGJ1DMPuGnDV-Jg@mail.gmail.com>
 From: Michal Simek <monstr@monstr.eu>
 Openpgp: preference=signencrypt
 Autocrypt: addr=monstr@monstr.eu; prefer-encrypt=mutual; keydata=
@@ -154,22 +155,22 @@ Autocrypt: addr=monstr@monstr.eu; prefer-encrypt=mutual; keydata=
  EwIAdQuPb2h1QLk5KnknUNikjdIZa9yRC5OnUDwV3ffG4Gsb+xtEL7eTLlbFPgBRUmvy6QbE
  9GjRSSvlab6Mj5tocPBA0CSsonfLCiHlOLvjdMsdmX5NDUpDCo5QMSNEfHEmV3p+A/NOQ/Hk
  Qg41tpHgK85MlNXw6MBWLgdXBSGdD0zVX4S4Gz+vwyY1
-Message-ID: <7ebddbc5-e963-6430-37f3-d13d0c078463@monstr.eu>
-Date: Thu, 8 Aug 2019 11:18:27 +0200
+Message-ID: <d28323de-6751-0a11-4790-f814539f536f@monstr.eu>
+Date: Thu, 8 Aug 2019 11:19:46 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <CAHbBuxosAnWdpee8jS7feR06+KF_PjOiTF2+PsiMnMAjwfUFKw@mail.gmail.com>
+In-Reply-To: <CAHbBuxpM8YKxADGJv2PAPbyS-2FZ6xiwohJwGJ1DMPuGnDV-Jg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_021847_038146_6B2516A5 
-X-CRM114-Status: GOOD (  17.99  )
+X-CRM114-CacheID: sfid-20190808_021954_729222_8B7A0B33 
+X-CRM114-Status: GOOD (  19.72  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -191,19 +192,19 @@ Reply-To: monstr@monstr.eu
 Cc: Russell King <linux@armlinux.org.uk>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
  linux-kernel@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============7812950915509804756=="
+Content-Type: multipart/mixed; boundary="===============7018317928664867187=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============7812950915509804756==
+--===============7018317928664867187==
 Content-Type: multipart/signed; micalg=pgp-sha1;
  protocol="application/pgp-signature";
- boundary="m05SSs1PYnlpEXtCCW6oEs2zzW9hzFfHe"
+ boundary="3VHn5xLLkhWU4W6I4NCgesZwfMtJ2CRpi"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---m05SSs1PYnlpEXtCCW6oEs2zzW9hzFfHe
-Content-Type: multipart/mixed; boundary="pTpYcIOy9zXSBKG5CBdyTgzsY0cSB9H0L";
+--3VHn5xLLkhWU4W6I4NCgesZwfMtJ2CRpi
+Content-Type: multipart/mixed; boundary="DGNIAlcoa3GStLL3YWKXJKhs2omylnh0X";
  protected-headers="v1"
 From: Michal Simek <monstr@monstr.eu>
 Reply-To: monstr@monstr.eu
@@ -211,50 +212,58 @@ To: Luis Araneda <luaraneda@gmail.com>, Michal Simek <michal.simek@xilinx.com>
 Cc: Russell King <linux@armlinux.org.uk>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
  linux-kernel@vger.kernel.org
-Message-ID: <7ebddbc5-e963-6430-37f3-d13d0c078463@monstr.eu>
-Subject: Re: [PATCH 1/2] ARM: zynq: support smp in thumb mode
+Message-ID: <d28323de-6751-0a11-4790-f814539f536f@monstr.eu>
+Subject: Re: [PATCH 2/2] ARM: zynq: Use memcpy_toio instead of memcpy on smp
+ bring-up
 References: <20190806030718.29048-1-luaraneda@gmail.com>
- <20190806030718.29048-2-luaraneda@gmail.com>
- <17a45e21-8362-e888-d222-812c879a38a8@xilinx.com>
- <CAHbBuxosAnWdpee8jS7feR06+KF_PjOiTF2+PsiMnMAjwfUFKw@mail.gmail.com>
-In-Reply-To: <CAHbBuxosAnWdpee8jS7feR06+KF_PjOiTF2+PsiMnMAjwfUFKw@mail.gmail.com>
+ <20190806030718.29048-3-luaraneda@gmail.com>
+ <194fe121-151d-0b64-b83e-e4d82c02efa7@xilinx.com>
+ <CAHbBuxpM8YKxADGJv2PAPbyS-2FZ6xiwohJwGJ1DMPuGnDV-Jg@mail.gmail.com>
+In-Reply-To: <CAHbBuxpM8YKxADGJv2PAPbyS-2FZ6xiwohJwGJ1DMPuGnDV-Jg@mail.gmail.com>
 
---pTpYcIOy9zXSBKG5CBdyTgzsY0cSB9H0L
+--DGNIAlcoa3GStLL3YWKXJKhs2omylnh0X
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 06. 08. 19 14:40, Luis Araneda wrote:
-> Hi,
+On 06. 08. 19 14:49, Luis Araneda wrote:
+> Hi Michal,
 >=20
-> On Tue, Aug 6, 2019 at 2:39 AM Michal Simek <michal.simek@xilinx.com> w=
+> On Tue, Aug 6, 2019 at 2:42 AM Michal Simek <michal.simek@xilinx.com> w=
 rote:
->>
 >> On 06. 08. 19 5:07, Luis Araneda wrote:
->>> Add .arm directive to headsmp.S to ensure that the
->>> CPU starts in 32-bit ARM mode and the correct code
->>> size is copied on smp bring-up
+>>> This fixes a kernel panic (read overflow) on memcpy when
+>>> FORTIFY_SOURCE is enabled.
 >>>
->>> Additionally, start secondary CPUs on secondary_startup_arm
->>> to automatically switch from ARM to thumb on a thumb kernel
+>>> The computed size of memcpy args are:
+>>> - p_size (dst): 4294967295 =3D (size_t) -1
+>>> - q_size (src): 1
+>>> - size (len): 8
+>>>
+>>> Additionally, the memory is marked as __iomem, so one of
+>>> the memcpy_* functions should be used for read/write
+>>>
+>>> Signed-off-by: Luis Araneda <luaraneda@gmail.com>
 > [...]
->>
->> It is really a question if this should go to stable tree. It is pretty=
-
->> much new feature.
->> Will be good to also add link to similar patch for example this one
->> 5616f36713ea77f57ae908bf2fef641364403c9f.
+>> I would consider this one as stable material. Please also add there li=
+nk
+>> to the patch which this patch fixes.
 >=20
-> Ok, I'm dropping stable from CC. From the previous comments, I thought
-> that the two patches were part of the same fix, but now I realized
-> this is a feature rather than a fix.
->=20
-> Michal, do you want a new version with the link to the similar patch
-> or would you take it in its current form?
+> I'm dropping stable CC (for now), as I'm not sure I completely
+> understood the process for inclusion in stable trees.
+> Do I have to wait for the patch to be on Linus' tree before CCing stabl=
+e?
 
-new version please.
+just put Cc: to commit message and they will pick it up.
+
+>=20
+> As for the link which this patch fixes, you mean
+> aa7eb2bb4e4a22e41bbe4612ff46e5885b13c33e (arm: zynq: Add smp support)?
+> where you added SMP support for zynq.
+
+yes but make sha1 only 12char long.
+
 M
-
 
 --=20
 Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
@@ -265,24 +274,24 @@ U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
 
 
 
---pTpYcIOy9zXSBKG5CBdyTgzsY0cSB9H0L--
+--DGNIAlcoa3GStLL3YWKXJKhs2omylnh0X--
 
---m05SSs1PYnlpEXtCCW6oEs2zzW9hzFfHe
+--3VHn5xLLkhWU4W6I4NCgesZwfMtJ2CRpi
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXUvo7AAKCRDKSWXLKUoM
-IfEKAJ0Z79AbVLXOSgJrCHmNLQiOkQVqFQCglZKx1IA2MMe8DXTB4tkC3KkcOUM=
-=VtMM
+iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXUvpMgAKCRDKSWXLKUoM
+Ia//AJsEYKVSpaeGQaVCvUGxQNGTInvuEACbBEgCQ/p/qhgp4xjFk1G/x3Rhtek=
+=+U0C
 -----END PGP SIGNATURE-----
 
---m05SSs1PYnlpEXtCCW6oEs2zzW9hzFfHe--
+--3VHn5xLLkhWU4W6I4NCgesZwfMtJ2CRpi--
 
 
---===============7812950915509804756==
+--===============7018317928664867187==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -293,5 +302,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7812950915509804756==--
+--===============7018317928664867187==--
 
