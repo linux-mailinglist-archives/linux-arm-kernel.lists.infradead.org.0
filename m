@@ -2,66 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F26B88642E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 16:18:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F9C186443
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 16:24:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nj25vAROEkZQtl66YaFnW72V3BmnRp6FiJ5HU86PxC0=; b=JYq6MRdnPLgQJh
-	oYgSYOdFQ+v/MW2a+crEb5Ca2EdiKQMhgPgQ94juyP64BnZT9QejhmyXSb8yeVks/WPzaqvUxXnzJ
-	bpg/kZyQRSd8BzKrhmlhGccWV/Pk1qcKKKx9r5xQ4PoF/WPhHOWmvOBUAPICJsd7o5wmGviBL16cS
-	dBH7wsIaLL0oLfgl+wwYykR3PJ/g7OxWcD6XN8VBGm9fa9ACc75J1BrB7BbHLuu0PtOJjOMOufdwS
-	QSqBXEiO5HZEk/Hu/5nvnrymXEk6VOfPE1MZcVaDmfbn/BwnFa+UOeCUJ5uHmMPRI7sJAzoveAg7l
-	R3s7hmdMPGlVETBcUUIQ==;
+	List-Owner; bh=vyb96rv+osaF1JYdlXKK+XgDCe643TEYvez0tb/k3bg=; b=OA+H2JwvT6bLnX
+	1GjWRMRyRgI5TE/u2OPRAsCIyBVCZ5tyBMM/BGvGRHSLQktBl//9694y+6FECBblPiEc4BoseaSFa
+	9MbdJ/FfSe6oMZO6PqWvIwTWXT0sDrmJTxhLGuG3nVk2nOuDHORKSIDvUJ1dytB29ttWZLqwV/Wwj
+	VcNSLA/a/oIEI7EwlxDS7O8fzDUx0L/XmooDYhqdRWPu3EXzoAVk9qgMrOuDlsVVXp91cb+4az1E5
+	xR0hLiiPya2jflaWdWqmXgNHd2ag94YGNSsu/PsBnM2UYq1nFKsMdKmcOTtVMPQCbRuIf8gGAcMRy
+	llEvJue+5MTYVjtp6x8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvjFU-0002Jy-Mb; Thu, 08 Aug 2019 14:18:36 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hvjLL-0004DH-7i; Thu, 08 Aug 2019 14:24:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvjFK-0002JC-1R
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 14:18:27 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1hvjFE-0001VL-FP; Thu, 08 Aug 2019 16:18:20 +0200
-Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <sha@pengutronix.de>)
- id 1hvjF8-0005Fs-S5; Thu, 08 Aug 2019 16:18:14 +0200
-Date: Thu, 8 Aug 2019 16:18:14 +0200
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: Biwen Li <biwen.li@nxp.com>
-Subject: Re: i2c: imx: support slave mode for imx I2C driver
-Message-ID: <20190808141814.wr4hlmbaek6p7dy2@pengutronix.de>
-References: <20190808035343.34120-1-biwen.li@nxp.com>
+ id 1hvjL6-0004Cl-Lx; Thu, 08 Aug 2019 14:24:26 +0000
+Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
+ [209.85.160.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3BC5B2171F;
+ Thu,  8 Aug 2019 14:24:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565274264;
+ bh=GbxGK/XeU8Jq3BsD5vAhpYB5spmsW6zGX1dwrpsE5t4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=aoIa7iW+xO03864JPGOTaZ0uKpmXzd9TyBhnV4ccOITEc6lK3zCzzIcNr094IVknO
+ SQuc+rxdvYL1EOfaPJXKSJQIOp+iewyyYbOTwhFMc30yuSsfvlmlM4ZcjM9ygpk39e
+ HVHroC/rC1LdgrNSETv7fVg+s4eQqHJ65iKv9yak=
+Received: by mail-qt1-f169.google.com with SMTP id n11so92291706qtl.5;
+ Thu, 08 Aug 2019 07:24:24 -0700 (PDT)
+X-Gm-Message-State: APjAAAUeP7ByXmntBQU2Ew8Pj3IAEn2iO0d0K2vYVCT81QebiSTQizxx
+ JLA+mZ+wRP4iBsZYPVQr3saTbohqBvZ1wdlrWQ==
+X-Google-Smtp-Source: APXvYqye2r+EAqTd1bwyViP0nnseaD8L/QzN64cUXepyshuKkd3QHF+cGD87GSZVBbS9vKtfQnvvObZlYmsjxVhLY5U=
+X-Received: by 2002:ac8:23b3:: with SMTP id q48mr3395933qtq.110.1565274263456; 
+ Thu, 08 Aug 2019 07:24:23 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190808035343.34120-1-biwen.li@nxp.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 15:40:58 up 31 days, 19:51, 60 users,  load average: 0.46, 0.27, 0.21
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <20190805124037.10597-1-andyshrk@gmail.com>
+ <CAL_JsqJ6_J1pR-MYK5kmUN5Q+tX32UNFqLW81tmBf=pYxtAmjg@mail.gmail.com>
+ <CANbgqATvVSo_D-n_mW2hK2KEK_8cs3374ddB6C8GcZZwjMSoRQ@mail.gmail.com>
+In-Reply-To: <CANbgqATvVSo_D-n_mW2hK2KEK_8cs3374ddB6C8GcZZwjMSoRQ@mail.gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 8 Aug 2019 08:24:12 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+1KVVube322GZXetVWdthrtWG=QiOTSnUg5aLbXjBuWg@mail.gmail.com>
+Message-ID: <CAL_Jsq+1KVVube322GZXetVWdthrtWG=QiOTSnUg5aLbXjBuWg@mail.gmail.com>
+Subject: Re: [PATCH v2] arm64: dts: rockchip: Add dts for Leez RK3399 P710 SBC
+To: Andy Yan <andyshrk@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_071826_252817_55778EB5 
-X-CRM114-Status: GOOD (  23.97  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190808_072424_743944_5CE91F38 
+X-CRM114-Status: GOOD (  11.20  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,239 +84,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsa@the-dreams.de, shawnguo@kernel.org, linux-kernel@vger.kernel.org,
- linux-i2c@vger.kernel.org, kernel@pengutronix.de, laurentiu.tudor@nxp.com,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "heiko@sntech.de" <heiko@sntech.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Thu, Aug 08, 2019 at 11:53:43AM +0800, Biwen Li wrote:
-> The patch supports slave mode for imx I2C driver
-> 
-> Signed-off-by: Biwen Li <biwen.li@nxp.com>
-> ---
->  drivers/i2c/busses/i2c-imx.c | 199 ++++++++++++++++++++++++++++++++---
->  1 file changed, 185 insertions(+), 14 deletions(-)
-> 
-> diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
-> index b1b8b938d7f4..f7583a9fa56f 100644
-> --- a/drivers/i2c/busses/i2c-imx.c
-> +++ b/drivers/i2c/busses/i2c-imx.c
-> @@ -202,6 +202,9 @@ struct imx_i2c_struct {
->  	struct pinctrl_state *pinctrl_pins_gpio;
->  
->  	struct imx_i2c_dma	*dma;
-> +#if IS_ENABLED(CONFIG_I2C_SLAVE)
-> +	struct i2c_client		*slave;
-> +#endif /* CONFIG_I2C_SLAVE */
-
-Other drivers just do a "select I2C_SLAVE" in Kconfig to get rid of
-these #ifs. We should do the same.
-
->  };
->  
->  static const struct imx_i2c_hwdata imx1_i2c_hwdata = {
-> @@ -583,23 +586,40 @@ static void i2c_imx_stop(struct imx_i2c_struct *i2c_imx)
->  	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
->  }
->  
-> -static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
-> +/* Clear interrupt flag bit */
-> +static void i2c_imx_clr_if_bit(struct imx_i2c_struct *i2c_imx)
->  {
-> -	struct imx_i2c_struct *i2c_imx = dev_id;
-> -	unsigned int temp;
-> +	unsigned int status;
->  
-> -	temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> -	if (temp & I2SR_IIF) {
-> -		/* save status register */
-> -		i2c_imx->i2csr = temp;
-> -		temp &= ~I2SR_IIF;
-> -		temp |= (i2c_imx->hwdata->i2sr_clr_opcode & I2SR_IIF);
-> -		imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2SR);
-> -		wake_up(&i2c_imx->queue);
-> -		return IRQ_HANDLED;
-> -	}
-> +	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> +	status &= ~I2SR_IIF;
-> +	status |= (i2c_imx->hwdata->i2sr_clr_opcode & I2SR_IIF);
-> +	imx_i2c_write_reg(status, i2c_imx, IMX_I2C_I2SR);
-> +}
-> +
-> +/* Clear arbitration lost bit */
-> +static void i2c_imx_clr_al_bit(struct imx_i2c_struct *i2c_imx)
-> +{
-> +	unsigned int status;
-> +
-> +	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> +	status &= ~I2SR_IAL;
-> +	imx_i2c_write_reg(status, i2c_imx, IMX_I2C_I2SR);
-> +}
->  
-> -	return IRQ_NONE;
-> +static irqreturn_t i2c_imx_master_isr(struct imx_i2c_struct *i2c_imx)
-> +{
-> +	unsigned int status;
-> +
-> +	dev_dbg(&i2c_imx->adapter.dev, "<%s>: master interrupt\n", __func__);
-
-Generally this driver has way too many dev_dbg spread around in hot
-pathes already. IMO adding more doesn't make the output more useful.
-
-> +
-> +	/* Save status register */
-> +	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> +	i2c_imx->i2csr = status | I2SR_IIF;
-> +
-> +	wake_up(&i2c_imx->queue);
-> +
-> +	return IRQ_HANDLED;
->  }
->  
->  static int i2c_imx_dma_write(struct imx_i2c_struct *i2c_imx,
-> @@ -1043,11 +1063,162 @@ static u32 i2c_imx_func(struct i2c_adapter *adapter)
->  		| I2C_FUNC_SMBUS_READ_BLOCK_DATA;
->  }
->  
-> +#if IS_ENABLED(CONFIG_I2C_SLAVE)
-> +static void i2c_imx_slave_init(struct imx_i2c_struct *i2c_imx)
-> +{
-> +	unsigned int temp;
-> +
-> +	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
-> +
-> +	/* Set slave addr. */
-> +	imx_i2c_write_reg((i2c_imx->slave->addr << 1), i2c_imx, IMX_I2C_IADR);
-> +
-> +	/* Disable i2c module */
-> +	temp = i2c_imx->hwdata->i2cr_ien_opcode
-> +			^ I2CR_IEN;
-
-unnecessary line break.
-
-> +	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
-> +
-> +	/* Reset status register */
-> +	imx_i2c_write_reg(i2c_imx->hwdata->i2sr_clr_opcode, i2c_imx,
-> +			  IMX_I2C_I2SR);
-> +
-> +	/* Enable module and enable interrupt from i2c module */
-> +	temp = i2c_imx->hwdata->i2cr_ien_opcode
-> +			| I2CR_IIEN;
-
-ditto.
-
-> +	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
-> +
-> +	/* Wait controller to be stable */
-> +	usleep_range(50, 150);
-> +}
-> +
-> +static irqreturn_t i2c_imx_slave_isr(struct imx_i2c_struct *i2c_imx)
-> +{
-> +	unsigned int status, ctl;
-> +	u8 value;
-> +
-> +	if (!i2c_imx->slave) {
-> +		dev_err(&i2c_imx->adapter.dev, "cannot deal with slave irq,i2c_imx->slave is null");
-> +		return IRQ_NONE;
-> +	}
-> +
-> +	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> +	ctl = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
-> +	if (status & I2SR_IAL) { /* Arbitration lost */
-> +		i2c_imx_clr_al_bit(i2c_imx);
-> +	} else if (status & I2SR_IAAS) { /* Addressed as a slave */
-> +		if (status & I2SR_SRW) { /* Master wants to read from us*/
-> +			dev_dbg(&i2c_imx->adapter.dev, "read requested");
-> +			i2c_slave_event(i2c_imx->slave, I2C_SLAVE_READ_REQUESTED, &value);
-> +
-> +			/* Slave transimt */
-
-s/transimt/transmit/
-
-> +			ctl |= I2CR_MTX;
-> +			imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-> +
-> +			/* Send data */
-> +			imx_i2c_write_reg(value, i2c_imx, IMX_I2C_I2DR);
-> +		} else { /* Master wants to write to us */
-> +			dev_dbg(&i2c_imx->adapter.dev, "write requested");
-> +			i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_WRITE_REQUESTED, &value);
-> +
-> +			/* Slave receive */
-> +			ctl &= ~I2CR_MTX;
-> +			imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-> +			/* Dummy read */
-> +			value = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
-
-value is unused, no need to assign a value to it.
-
-> +		}
-> +	} else {
-> +		if (!(ctl & I2CR_MTX)) { /* Receive mode */
-
-Since you have an 'else' path please convert this to positive logic.
-This makes it easier to read.
-
-> +			if (status & I2SR_IBB) { /* No STOP signal detected */
-> +				ctl &= ~I2CR_MTX;
-> +				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-> +
-> +				value = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
-> +				i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_WRITE_RECEIVED, &value);
-> +			} else { /* STOP signal is detected */
-> +				dev_dbg(&i2c_imx->adapter.dev,
-> +					"STOP signal detected");
-> +				i2c_slave_event(i2c_imx->slave, I2C_SLAVE_STOP, &value);
-> +			}
-> +		} else { /* Transmit mode */
-> +			if (!(status & I2SR_RXAK)) {	/* Received ACK */
-
-Same here.
-
-> +				ctl |= I2CR_MTX;
-> +				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-> +
-> +				i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_READ_PROCESSED, &value);
-> +
-> +				imx_i2c_write_reg(value, i2c_imx, IMX_I2C_I2DR);
-> +			} else { /* Received NAK */
-> +				ctl &= ~I2CR_MTX;
-> +				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-> +				value = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
-
-Also value unused.
-
-> +			}
-> +		}
-> +	}
-> +	return IRQ_HANDLED;
-> +}
-> +
-> +static int i2c_imx_reg_slave(struct i2c_client *client)
-> +{
-> +	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(client->adapter);
-> +
-> +	if (i2c_imx->slave)
-> +		return -EINVAL;
-
-Better -EBUSY?
-
-Sascha
-
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCBBdWcgNywgMjAxOSBhdCAxMjoxNCBBTSBBbmR5IFlhbiA8YW5keXNocmtAZ21haWwu
+Y29tPiB3cm90ZToKPgo+IEhpIFJvYjoKPgo+IFJvYiBIZXJyaW5nIDxyb2JoK2R0QGtlcm5lbC5v
+cmc+IOS6jjIwMTnlubQ45pyINuaXpeWRqOS6jCDkuIvljYgxMDo0OOWGmemBk++8mgo+Pgo+PiBP
+biBNb24sIEF1ZyA1LCAyMDE5IGF0IDY6NDAgQU0gQW5keSBZYW4gPGFuZHlzaHJrQGdtYWlsLmNv
+bT4gd3JvdGU6Cj4+ID4KPj4gPiBQNzEwIGlzIGEgUkszMzk5IGJhc2VkIFNCQywgZGVzaWduZWQg
+YnkgTGVleiBbMF0uCj4+ID4KPj4gPiBTcGVjaWZpY2F0aW9uCj4+ID4gLSBSb2NrY2hpcCBSSzMz
+OTkKPj4gPiAtIDQvMkdCIExQRERSNAo+PiA+IC0gVEYgc2Qgc2NhcmQgc2xvdAo+PiA+IC0gZU1N
+Qwo+PiA+IC0gTS4yIEItS2V5IGZvciA0RyBMVEUKPj4gPiAtIEFQNjI1NiBmb3IgV2lGaSArIEJU
+Cj4+ID4gLSBHaWdhYml0IGV0aGVybmV0Cj4+ID4gLSBIRE1JIG91dAo+PiA+IC0gNDAgcGluIGhl
+YWRlcgo+PiA+IC0gVVNCIDIuMCB4IDIKPj4gPiAtIFVTQiAzLjAgeCAxCj4+ID4gLSBVU0IgMy4w
+IFR5cGUtQyB4IDEKPj4gPiAtIFRZUEUtQyBQb3dlciBzdXBwbHkKPj4gPgo+PiA+IFswXWh0dHBz
+Oi8vbGVlei5sZW5vdm8uY29tCj4+Cj4+IEknbSBub3QgcmVhbGx5IGNvbnZpbmNlZCBMZWV6IGlz
+IGEgdmVuZG9yLiBMb29rcyBsaWtlIGJyYW5kaW5nIHRvIG1lLgo+PiBXZSBoYXZlIGVub3VnaCB3
+aXRoIGNvbXBhbnkgbmFtZXMgY2hhbmdpbmcsIHdlIGRvbid0IG5lZWQgY2hhbmdpbmcKPj4gYnJh
+bmRzIHRvby4gVXNlICdsZW5vdm8nLgo+Pgo+Cj4gSSBoYWQgY2hlY2tlZCB3aXRoIExlZXogcGVv
+cGxlIGJlZm9yZSBWMSwgdGhleSBzYWlkIExlZXogd2lsbCBydW4gYXMgYW4gaW5kZXBlbmRlbnQg
+Y29tcGFueSwgc28gdGhleSBkb24ndCB3YW50IHRvCj4gZ2l2ZSBhIGxlbm92byBsYWJlbCBmb3Ig
+dGhpcyBib2FyZC4KCk9rYXkuCgpSZXZpZXdlZC1ieTogUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVs
+Lm9yZz4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
+bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFybS1rZXJuZWwK
