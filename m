@@ -2,54 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFF41859EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 07:43:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB24085A03
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 07:49:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wx9RspCiqSJz5m308uLuQdJHfT+sCDpGz6YzrpwkvMs=; b=XDOU7n8KIcJ7Zy
-	Pef7KwpS2Esac5tLyOVWScUBox/iKM9OzthcVONkQH4hGP+Cb1jgvvhnoN71Rf+099oHXXABiKX2M
-	i17pEgBkQXKl4uIu42naEDScMoCAhHbYt8UGMMV5H024Ye3EvFsIQ5E2G9NyQNpZoyEnBNeZhbweW
-	oxnjFb7XOXJxnc2pefdPw3uljtA8sokePRt5jMNcjoYxxcTXNgFMq/dts03ZN9uw7L3QJgsjHOyd+
-	jlqicjBASgfQYRh9A5K4HYdKg4eZOzqW934QgzNljAPv4INk98hR3GrHAfDOXXuKlf467/OLfQVWC
-	8AVZPhcNuwWrKZb3rRaw==;
+	List-Owner; bh=17xXGb9zT4KvTGg5rZbsFylU+FVCDNroS8qJ3OZRXTA=; b=qnq/8Tv861uhXq
+	OBVSB1OzIrsR1DoUPJkYXfBfpmmbwXRc5Ki5eknJAFCq2vlXPugkOj73w1NZ21VPaB/b3kayyY76V
+	bK1MsNBGhR4dWHygQVSKRuq+mR1n1+SN0n30z7VfGRu2TZjZ/rW5HB27UhU5v4A1gBCyrc/LJc3rN
+	brweSedh6LGaMS2f/ePOBRGYikwOcN9H/QjmMPrVp+E6hniyWD/C42hBZftkvhB7uC41SQ6hTNrgO
+	Do3CSIUqsD1HX7INUAypmFLFN43nYA7d5EY8a2rFKnJnsj2IKlUpatysi0+8UTT9c/tJrN/RKWTxO
+	0greS0IMM7y9xuRaLu2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvbCY-0007g4-Ll; Thu, 08 Aug 2019 05:43:02 +0000
-Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
+	id 1hvbIn-0000wk-Jm; Thu, 08 Aug 2019 05:49:29 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvbCI-0007fT-QN; Thu, 08 Aug 2019 05:42:48 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 463y252c4Xz9sN1;
- Thu,  8 Aug 2019 15:42:37 +1000 (AEST)
-From: Michael Ellerman <mpe@ellerman.id.au>
-To: john.hubbard@gmail.com, Andrew Morton <akpm@linux-foundation.org>
-Subject: Re: [PATCH v3 38/41] powerpc: convert put_page() to put_user_page*()
-In-Reply-To: <20190807013340.9706-39-jhubbard@nvidia.com>
-References: <20190807013340.9706-1-jhubbard@nvidia.com>
- <20190807013340.9706-39-jhubbard@nvidia.com>
-Date: Thu, 08 Aug 2019 15:42:34 +1000
-Message-ID: <87k1botdpx.fsf@concordia.ellerman.id.au>
+ id 1hvbIX-0000w3-QW
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 05:49:15 +0000
+Received: by mail-ed1-f65.google.com with SMTP id w5so562493edl.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 07 Aug 2019 22:49:11 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=hJnMSCAXvPmR1BZ+8zibfYrH0y/pT73eVvDwjd3Lsw8=;
+ b=t/hz81HCWKjHiAYX118dFfXUeafhshJmmrJyn3bgIAl6ppqyC6LetDNhL6+mrMspoj
+ +9GXFvawRIzooRLGuqvpNroXM4g19P5aZSdhXLNl9/QZ9PsCFqXw+hRVjIWTuG63edFM
+ ER//lMf08iawE16CGI0y5vjMDKHQkk7Q9cnJhHJgOCZn3jXR4w10r2epAhmu5ZGHcpbR
+ YbbAj4pC9RRin616+ReH0GTzHEWxb2kH0td2ZL6jQUuJJrKtP8oaLi7Q3DtpaeJSfkY2
+ KAjGZQYBjalziFDqw93IZTYF/75h4QnmIUbaeWrmncT20xwodcg43BycgDaUBKu0gnrU
+ aHHQ==
+X-Gm-Message-State: APjAAAUpsyndQFiCV8pCNUk+0CtB4P48Lal898ksqDutiRZJYqjxULhq
+ RsM0LouoNSr5pO2JCHoMGvuGCbxEYS0=
+X-Google-Smtp-Source: APXvYqxYdDUMqzVZSdIyGIeLbZzL0eIrD0l9vx7cXDtB0QbsjJi9/V2qWhuk3IjCAqzjzfJEqD5K0Q==
+X-Received: by 2002:a17:906:340e:: with SMTP id
+ c14mr11989439ejb.170.1565243349572; 
+ Wed, 07 Aug 2019 22:49:09 -0700 (PDT)
+Received: from mail-wm1-f53.google.com (mail-wm1-f53.google.com.
+ [209.85.128.53])
+ by smtp.gmail.com with ESMTPSA id d4sm21210183edb.4.2019.08.07.22.49.08
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Wed, 07 Aug 2019 22:49:09 -0700 (PDT)
+Received: by mail-wm1-f53.google.com with SMTP id s3so1090174wms.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 07 Aug 2019 22:49:08 -0700 (PDT)
+X-Received: by 2002:a05:600c:292:: with SMTP id
+ 18mr1427274wmk.51.1565243348647; 
+ Wed, 07 Aug 2019 22:49:08 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190412120730.473-1-megous@megous.com>
+ <CAGb2v66cbpsoHJoiFJkBwhZ5SbO+uO+Kf6gtnA3kPFQZq0329Q@mail.gmail.com>
+ <20190806183045.edhm3qzpegscf2z7@core.my.home>
+ <20190807105502.GK3600@piout.net>
+In-Reply-To: <20190807105502.GK3600@piout.net>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Thu, 8 Aug 2019 13:48:55 +0800
+X-Gmail-Original-Message-ID: <CAGb2v64y+iUknG=h6NC_16JsiBXATim4PpX6g3OVg3G0vDjBwA@mail.gmail.com>
+Message-ID: <CAGb2v64y+iUknG=h6NC_16JsiBXATim4PpX6g3OVg3G0vDjBwA@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH 0/3] Add basic support for RTC on Allwinner
+ H6 SoC
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_224247_065978_89ED7807 
-X-CRM114-Status: UNSURE (   9.38  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190807_224913_869156_CF4668A9 
+X-CRM114-Status: GOOD (  15.65  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,62 +101,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
- ceph-devel@vger.kernel.org, devel@driverdev.osuosl.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
- amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@lst.de>,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
- linux-media@vger.kernel.org, John Hubbard <jhubbard@nvidia.com>,
- intel-gfx@lists.freedesktop.org, linux-block@vger.kernel.org,
- =?utf-8?B?SsOpcsO0?= =?utf-8?B?bWU=?= Glisse <jglisse@redhat.com>,
- linux-rpi-kernel@lists.infradead.org, Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
- netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ devicetree <devicetree@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-rtc@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi John,
-
-john.hubbard@gmail.com writes:
-> diff --git a/arch/powerpc/mm/book3s64/iommu_api.c b/arch/powerpc/mm/book3s64/iommu_api.c
-> index b056cae3388b..e126193ba295 100644
-> --- a/arch/powerpc/mm/book3s64/iommu_api.c
-> +++ b/arch/powerpc/mm/book3s64/iommu_api.c
-> @@ -203,6 +202,7 @@ static void mm_iommu_unpin(struct mm_iommu_table_group_mem_t *mem)
->  {
->  	long i;
->  	struct page *page = NULL;
-> +	bool dirty = false;
-
-I don't think you need that initialisation do you?
-
->  	if (!mem->hpas)
->  		return;
-> @@ -215,10 +215,9 @@ static void mm_iommu_unpin(struct mm_iommu_table_group_mem_t *mem)
->  		if (!page)
->  			continue;
->  
-> -		if (mem->hpas[i] & MM_IOMMU_TABLE_GROUP_PAGE_DIRTY)
-> -			SetPageDirty(page);
-> +		dirty = mem->hpas[i] & MM_IOMMU_TABLE_GROUP_PAGE_DIRTY;
-> -		put_page(page);
-> +		put_user_pages_dirty_lock(&page, 1, dirty);
->  		mem->hpas[i] = 0;
->  	}
->  }
-
-cheers
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCBBdWcgNywgMjAxOSBhdCA2OjU1IFBNIEFsZXhhbmRyZSBCZWxsb25pCjxhbGV4YW5k
+cmUuYmVsbG9uaUBib290bGluLmNvbT4gd3JvdGU6Cj4KPiBIaSwKPgo+IE9uIDA2LzA4LzIwMTkg
+MjA6MzA6NDUrMDIwMCwgT25kxZllaiBKaXJtYW4gd3JvdGU6Cj4gPiBNYXliZSB3aGV0aGVyIFhP
+IG9yIERDWE8gaXMgdXNlZCBhbHNvIG1hdHRlcnMgaWYgeW91IHdhbnQgdG8gZG8gc29tZSBmaW5l
+Cj4gPiB0dW5uaW5nIG9mIERDWE8gKGNvbnRyb2wgcmVnaXN0ZXIgaGFzIHBsZXRueSBvZiBvcHRp
+b25zKSwgYnV0IHRoYXQncyBwcm9iYWJseQo+ID4gYmV0dGVyIGRvbmUgaW4gdS1ib290LiBBbmQg
+dGhlcmUncyBzdGlsbCBubyBuZWVkIHRvIHJlYWQgSE9TQyBzb3VyY2UgZnJvbSBEVC4KPiA+IFRo
+ZSBkcml2ZXIgY2FuIGp1c3QgY2hlY2sgY29tcGF0aWJsZSwgYW5kIGlmIGl0IGlzIEg2IGFuZCBP
+U0NfQ0xLX1NSQ19TRUwgaXMgMSwKPiA+IGl0IGNhbiBkbyBpdCdzIERDWE8gdHVubmluZywgb3Ig
+d2hhdGV2ZXIuIEJ1dCBuZWl0aGVyIE9TIG5vciBib290bG9hZGVyIHdpbGwKPiA+IGJlIHVzaW5n
+IHRoaXMgaW5mbyB0byBnYXRlL2Rpc2FibGUgdGhlIG9zY2lhbGxhdG9yLgo+ID4KPgo+IEl0IGlz
+IGFjdHVhbGx5IHVzZWZ1bCB0byBiZSBhYmxlIHRvIHR3ZWFrIHRoZSBjcnlzdGFsIHR1bmluZyBh
+dAo+IHJ1bnRpbWUgdG8gYmUgYWJsZSB0byByZWR1Y2UgY2xvY2sgZHJpZnQgYW5kIGNvbXBhcmUg
+d2l0aCBhIHJlbGlhYmxlCj4gc291cmNlIChlLmcuIE5UUCkuCj4gSSdtIGN1cmlvdXMsIHdoYXQg
+a2luZCBvZiBvcHRpb25zIGRvZXMgdGhpcyBSVEMgaGF2ZT8KCkl0IGhhcyBvcHRpb25zIHRvIHNl
+dCB0aGUgY3VycmVudCwgdHJpbSBjYXAgdmFsdWUsIGJhbmQgZ2FwIHZvbHRhZ2UsIGFuZCBhbHNv
+CmNoYW5nZSB0aGUgbW9kZSB0byBqdXN0IGFjY2VwdCBhbiBleHRlcm5hbCBjbG9jayBzaWduYWws
+IGluc3RlYWQgb2YgZHJpdmluZwphIGNyeXN0YWwuIFRoZSBzZXR0aW5ncyBmb3IgdGhlIGZvcm1l
+ciBwYXJhbWV0ZXJzIGFyZSBub3QgZXhwbGFpbmVkIHRob3VnaC4KClNlZSBwYWdlIDM2NCBvZgpo
+dHRwOi8vbGludXgtc3VueGkub3JnL0ZpbGU6QWxsd2lubmVyX0g2X1YyMDBfVXNlcl9NYW51YWxf
+VjEuMS5wZGYKCkNoZW5ZdQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
