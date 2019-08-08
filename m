@@ -2,59 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4817E85C4A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 10:00:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6BD285C50
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 10:01:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rLFxaLirCCYAR6uEKrwluZrhOAkqtap3raC5suNtOxU=; b=d1I+5DzCmXKDon
-	DCWO/bZxkIAWynq2UU1Cvh7rYvfQzKhaWGStLMOLr/BcZBmTlAUrYUkk5ZulQy2IBMXZryoj95vRo
-	odDDNrLMUnuufyYQViuDSvP5ejMinOklVFlu1n/V7eCA5AAjUar6+nwYAefSqEyTOVQRQ0dovkRha
-	84TKtisrt3uGUq1mNSpo796JM7HO1k4rscZBSWXRGr47o5VSDHHiLOUFLnCmj5OCWCeyR+yG7ppmB
-	8qYLHP3TnDXZx24FuSuDImuchXVnZm7oQoaU7nGRXa0iGeWz8+FGrq/S0zhdjGF/BenWPaif4t25i
-	ANvBzLag3CeM1WPn3BDQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HP+ZzqtuOuhZzwucOrguApYHXl4nOMXgXifPaIe9IIQ=; b=CslFMXzjEVPOyM
+	zCLJEvKvrbrzXaqiLrKbnTqe/4RuOBfvnR0hO6DMY5eYYrAy3PFqBsH7u3L+DDSNiV3G3AGg9HkTJ
+	eFHaN0KsYr9xJrbg11JpEMpYKtoD4lLBkoyHnvtGNIFNFDe6hdHwtf4e7CO64nemauNWbaxG82MFw
+	1pDuG0rrFClY8SOJCvvKD9VCgVUlrS426qFc20cVy7whti/GVG6DaJzB0mIjHKorkDyDYopTkoQcB
+	iwA0IiRwi7+uJMjq50AEvHcDMjheQY7zrOXMZ+wUKtaogQ+vfNdKJ+60yNx6Cfcqi+1xY8ynHuLig
+	N/ds21qcZaeXwdYMw6GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvdLW-0005HF-Aj; Thu, 08 Aug 2019 08:00:26 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1hvdM4-0006sa-1m; Thu, 08 Aug 2019 08:01:00 +0000
+Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvdKx-0005G2-7H
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 07:59:55 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id DE88068B02; Thu,  8 Aug 2019 09:59:47 +0200 (CEST)
-Date: Thu, 8 Aug 2019 09:59:47 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Rob Clark <robdclark@chromium.org>
-Subject: Re: [PATCH 1/2] drm: add cache support for arm64
-Message-ID: <20190808075947.GE30308@lst.de>
-References: <20190805211451.20176-1-robdclark@gmail.com>
- <20190806084821.GA17129@lst.de>
- <CAJs_Fx6eh1w7c=crMoD5XyEOMzP6orLhqUewErE51cPGYmObBQ@mail.gmail.com>
- <20190806143457.GF475@lakrids.cambridge.arm.com>
- <CAJs_Fx4h6SWGmDTLBnV4nmWUFAs_Ge1inxd-dW9aDKgKqmc1eQ@mail.gmail.com>
- <20190807123807.GD54191@lakrids.cambridge.arm.com>
- <CAJs_Fx5xU2-dn3iOVqWTzAjpTaQ8BBNP_Gn_iMc-eJpOX+iXoQ@mail.gmail.com>
- <20190807164958.GA44765@lakrids.cambridge.arm.com>
- <CAJs_Fx71T=kJEgt28TWqzw+jOahSbLQynCg83+szQW7op4xBkQ@mail.gmail.com>
+ id 1hvdLZ-0006id-Dg
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 08:00:31 +0000
+Received: from trochilidae.cardiotech.int (unknown [37.17.234.113])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id D03585C0B09;
+ Thu,  8 Aug 2019 10:00:25 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
+ t=1565251225;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:
+ content-transfer-encoding:content-transfer-encoding:in-reply-to:
+ references; bh=M05gzHKGxby2hM7h2BsIuIBZoqVNih3A9gBg+LSXumQ=;
+ b=j52hRIT/sy02HixwzebBmR5sBqtWF8OHjpgWZkS0W0HNECr6IIEgELaMAX8qjHZZuMGrA2
+ enVdhcHJaJRnxCquhr1M6NClqMPDcVLqeEQGmWvP7AM/oirXXPQ14lzFeRqgXYhAFUD0L3
+ 2Iz9HW9//BwNFaiY8WxbjONVa/a3Jtg=
+From: Stefan Agner <stefan@agner.ch>
+To: catalin.marinas@arm.com,
+	will@kernel.org
+Subject: [PATCH] arm64: defconfig: enable deprecated ARMv8 instructions
+ emulation
+Date: Thu,  8 Aug 2019 10:00:04 +0200
+Message-Id: <20190808080004.20984-1-stefan@agner.ch>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJs_Fx71T=kJEgt28TWqzw+jOahSbLQynCg83+szQW7op4xBkQ@mail.gmail.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_005951_423568_EE2070DA 
-X-CRM114-Status: GOOD (  14.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190808_010029_745962_A24F957E 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,35 +73,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Catalin Marinas <catalin.marinas@arm.com>, David Airlie <airlied@linux.ie>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- LKML <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <sean@poorly.run>,
- Rob Clark <robdclark@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Christoph Hellwig <hch@lst.de>, Allison Randal <allison@lohutok.net>
+Cc: Stefan Agner <stefan.agner@toradex.com>, linux-kernel@vger.kernel.org,
+ Stefan Agner <stefan@agner.ch>, olof@lixom.net, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 10:30:04AM -0700, Rob Clark wrote:
-> So, we do end up using GFP_HIGHUSER, which appears to get passed thru
-> when shmem gets to the point of actually allocating pages.. not sure
-> if that just ends up being a hint, or if it guarantees that we don't
-> get something in the linear map.
-> 
-> (Bear with me while I "page" this all back in.. last time I dug thru
-> the shmem code was probably pre-armv8, or at least before I had any
-> armv8 hw)
+Enable deprecated/obsolete ARMv8 instructions emulation. This allows
+to run ARMv6 binaries (e.g. Raspberry Pi) on ARMv8 machines.
 
-GFP_HIGHUSER basically just means that this is an allocation that could
-dip into highmem, in which case it would not have a kernel mapping.
-This can happen on arm + LPAE, but not on arm64.
+Signed-off-by: Stefan Agner <stefan.agner@toradex.com>
+---
+ arch/arm64/configs/defconfig | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 0e58ef02880c..fd5af5582dda 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -68,6 +68,10 @@ CONFIG_KEXEC=y
+ CONFIG_CRASH_DUMP=y
+ CONFIG_XEN=y
+ CONFIG_COMPAT=y
++CONFIG_ARMV8_DEPRECATED=y
++CONFIG_SWP_EMULATION=y
++CONFIG_CP15_BARRIER_EMULATION=y
++CONFIG_SETEND_EMULATION=y
+ CONFIG_RANDOMIZE_BASE=y
+ CONFIG_HIBERNATION=y
+ CONFIG_WQ_POWER_EFFICIENT_DEFAULT=y
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
