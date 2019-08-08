@@ -2,86 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C34485BA6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 09:33:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5485785BAD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 09:37:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=63capeqhhA06HPMSJfARWV/bHY9CJDWsaZVEdd23mow=; b=HCpZWG4Ep0LkGe
-	px4fU1/PLCNcCM5s95Mz9CSUsud7Z4kwDgWBVZHz6OEXoeOYWWPQ5+Zf+BNus7QFXE43zmPwGQN5R
-	nFg3m4FdSI1ATirvVMkWbWwW1WOzPODONWP+8f89OYHZwmT5tiFSjjB7cQBgyYah9sgMY/zBUdQNu
-	plc3oAcuIkpSsfKFt6xlXyUwv+CIZZtO300sI4N7GEiOcirs4luVzSiNl+RmEon1b41H2HMMqDT5D
-	lYQWs0CAiDlvZE/Lp2unXvsJMEmgj42/5eDU6Qdx0i/rU9LAamILt+lbX3Hgy3bwBXqf84+0oFoX7
-	/+7WaAm9McsOHeUBbpbw==;
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Subject:To:From:Date:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=k3qZMpdK8Pbhm/YArNdWMNEXBR4JJ3LD1MKpC8iYjrc=; b=pWPMZOa6W5DdkN
+	RNNd1v6Pk4MaJeK6xS8xl3HYvNZr4p92kOLlLhAzygNtExAORzULRPKUd1/WJKH+7G1qpDLiTzTnd
+	i+abd+7xQi5MiBLpKYYA904p4tLqwiquK763vSGWSmuzFJecVSaFy97pPIDtv+bAf02Sllbqtm1o0
+	hPVdwb4LOY0TJARoeBTIvxXuwH82QY/Jsy67K9mSYsXrK6hBXsgWyurcoUJbmHwQE3OktgHejJDkR
+	lwS4KURKdu5OOQna0hcxXTBA/LRv9xz5rYGEq5TcFnSl0+bisHEeiuOGTyhdeJcpZ0XDY9gOhBexp
+	d5KkljUN7Qr4A5zsSHOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvcvY-0003VP-Cq; Thu, 08 Aug 2019 07:33:36 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hvcyz-00057v-AP; Thu, 08 Aug 2019 07:37:09 +0000
+Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvcuq-0003C3-0O
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 07:32:53 +0000
-Received: by mail-wm1-x342.google.com with SMTP id s15so1342902wmj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 08 Aug 2019 00:32:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=cdeGr0ZxpYxqKAREv9bEF6Lm91cCQB0EI/1CSCmLaDM=;
- b=W6xhQGJMlLaAAbRWQ1WyaYi4nzW6FgHKCqeu16DMj3xQ9NcDv8miboXhZZvHZ+olQm
- SJYNhWb+65WGeIehcPPeiP5TF6NH7SXIQtvCXHpbyikuepwOJK5ptSd8GMuPEDOEQhxi
- eB0PteEAr5Z7sELHoQhZyM8jFbQARkLGZzbEuv1z6oB1RxdDjQB2F2Sg9V69Fw29prfg
- pGonXftshSo9cyF94m4j59zCMXqsUCPovyPGH1Vzj4Xf72eMZQNZpeMOJZoPXQJk8KqD
- /zXifkMFRXjGxwOqt9oe6Q1imyLZz4+0njOLivTbldf2+44apSNfJgrxN71Zyy/w7OUQ
- tWIQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=cdeGr0ZxpYxqKAREv9bEF6Lm91cCQB0EI/1CSCmLaDM=;
- b=iVSsnuQFm1OSzMQO65wbwhkZQ0HsG6CgIEmDwMlgxKJU3xU7USvauAHekZLCJ4kXLh
- 2ofbB/VYTXwSXEQy4/s159p9ImPawT4/VKX4OnqiDdVARV9VaxgXIFn6wQxdROsEvoIt
- tCDWx5uQTpqog+6GUb0A24PSS7iqsh/MUhx6ssVisVWfxrpQs3/k65rzsdA05WE7MywA
- kVhF6LaUiM5D7tshusONwg4UDW5bFY5owM4LC5idHP0zIkWMQIPLC6QKChjBq8bPgHIU
- KYHV7qFKjcXIWKCUiQog09AhBfF3KigUOkThSoEdx6wGjorF8d++6hRTFZLY+puWBw/I
- wIFw==
-X-Gm-Message-State: APjAAAWtVmTngS58AZHvwc88fAC8McmD7IFbnxAhnG+1QZvxtdhal8k4
- Bq+Uy9zvraBiKMw4PXVHiwiSLilJLh0=
-X-Google-Smtp-Source: APXvYqx/icXlgxHRHQn+sOev/u//ftapjI1TrAoW8rfx/t6xUgedYecR3Z9qwNPcmYzX3BSBTD1Dlg==
-X-Received: by 2002:a05:600c:2243:: with SMTP id
- a3mr2497357wmm.83.1565249569173; 
- Thu, 08 Aug 2019 00:32:49 -0700 (PDT)
-Received: from dell ([2.27.35.255])
- by smtp.gmail.com with ESMTPSA id c9sm1548602wml.41.2019.08.08.00.32.48
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 08 Aug 2019 00:32:48 -0700 (PDT)
-Date: Thu, 8 Aug 2019 08:32:47 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH 3/3] mfd: aat2870: no need to check return value of
- debugfs_create functions
-Message-ID: <20190808073247.GM4739@dell>
-References: <20190706164722.18766-1-gregkh@linuxfoundation.org>
- <20190706164722.18766-3-gregkh@linuxfoundation.org>
+ id 1hvcyb-00056f-9h
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 07:36:46 +0000
+Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id E731D5C272F;
+ Thu,  8 Aug 2019 09:36:42 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
+ t=1565249802;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:in-reply-to:
+ references; bh=Zy6Uzd6l5OJmJXTm+7aNmEIadfLxQF9rxUaxchDTEdY=;
+ b=dRjDcw61o/wsHpZTWyPCyzcoEiez3wKiJa5IUILKRGarRA5Lem3xgjUCFtCvAJCDQYWLbn
+ 5ykS5R0t5lEfdD4Jn5QcRex7eTidqxyFv/9G4I3HNOSM46E20WQSu/qt5vGIIQKceh3IUw
+ 4VZmYbwFnjA7JBca/dnMYObCc8Ka6jQ=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190706164722.18766-3-gregkh@linuxfoundation.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Date: Thu, 08 Aug 2019 09:36:42 +0200
+From: Stefan Agner <stefan@agner.ch>
+To: linux-arm-kernel@lists.infradead.org
+Subject: Detecting AArch32 support from a AArch64 process in user space
+Message-ID: <ffbb92107af81971c03ec832cf25116c@agner.ch>
+X-Sender: stefan@agner.ch
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_003252_274001_A04E5128 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20190808_003645_507972_DECFCDB2 
+X-CRM114-Status: GOOD (  12.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -101,24 +71,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Marc Zyngier <marc.zyngier@arm.com>, ynorov@caviumnetworks.com,
+ will.deacon@arm.com, suzuki.poulose@arm.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU2F0LCAwNiBKdWwgMjAxOSwgR3JlZyBLcm9haC1IYXJ0bWFuIHdyb3RlOgoKPiBXaGVuIGNh
-bGxpbmcgZGVidWdmcyBmdW5jdGlvbnMsIHRoZXJlIGlzIG5vIG5lZWQgdG8gZXZlciBjaGVjayB0
-aGUKPiByZXR1cm4gdmFsdWUuICBUaGUgZnVuY3Rpb24gY2FuIHdvcmsgb3Igbm90LCBidXQgdGhl
-IGNvZGUgbG9naWMgc2hvdWxkCj4gbmV2ZXIgZG8gc29tZXRoaW5nIGRpZmZlcmVudCBiYXNlZCBv
-biB0aGlzLgo+IAo+IENjOiBMZWUgSm9uZXMgPGxlZS5qb25lc0BsaW5hcm8ub3JnPgo+IFNpZ25l
-ZC1vZmYtYnk6IEdyZWcgS3JvYWgtSGFydG1hbiA8Z3JlZ2toQGxpbnV4Zm91bmRhdGlvbi5vcmc+
-Cj4gLS0tCj4gIGRyaXZlcnMvbWZkL2FhdDI4NzAtY29yZS5jICB8IDEzICsrLS0tLS0tLS0tLS0K
-PiAgaW5jbHVkZS9saW51eC9tZmQvYWF0Mjg3MC5oIHwgIDEgLQo+ICAyIGZpbGVzIGNoYW5nZWQs
-IDIgaW5zZXJ0aW9ucygrKSwgMTIgZGVsZXRpb25zKC0pCgpBcHBsaWVkLCB0aGFua3MuCgotLSAK
-TGVlIEpvbmVzIFvmnY7nkLzmlq9dCkxpbmFybyBTZXJ2aWNlcyBUZWNobmljYWwgTGVhZApMaW5h
-cm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKRm9sbG93IExpbmFy
-bzogRmFjZWJvb2sgfCBUd2l0dGVyIHwgQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+[resend this time with the correct mailing list address]
+
+Hello,
+
+I am trying to detect whether an ARMv8 system running in AArch64 state
+supports AArch32 state from a user space process. The arm64_features[]
+in
+arch/arm64/kernel/cpufeature.c lists a CPU feature "32-bit EL0 Support".
+However, afaik this CPU feature is not directly exposed to user-space.
+The features do get printed in the kernel log, but that requires
+privileges and only works directly after boot. There is
+system_supports_32bit_el0() which is used in various places in the arm64
+architecture code. One of the instances where I can make sense of from
+user space is through the personality system call. One idea is to call
+personality(PER_LINUX32). It would then return error code 22 in case
+32-bit is not supported in user space. However, if successful this
+changes the personality of the current process which might have side
+effects which I do not want...?
+
+I started to ask myself what PER_LINUX32 actually changes. From what I
+can tell it only changes the behavior of /proc/cpuinfo? The personality
+seems not to be applied automatically to 32-bit processes, so this is a
+opt-in backward compatibility feature?
+
+To be on the safe side, I was thinking about executing the system call
+in a separate process. However, at that point I could also just execute
+a statically linked AArch32 binary and see whether I get a "exec format
+error". I guess this could then be either due to missing AArch32 CPU
+support or the kernel not being compiled with 32-bit compatibility.
+
+At last I was considering reading directly from the CPU. But from what I
+understand the register used in the kernel to determine 32-bit
+compatibility (ID_AA64PFR0_EL1) is not accessible by user space (due to
+the suffix _EL1).
+
+Any advice/thoughts on this topic?
+
+--
+Stefan
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
