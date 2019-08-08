@@ -2,53 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A07DB86269
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 14:55:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBAF386272
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 14:58:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zEMqRUFl2+ueL4hQGPYMWFFNpd0ZidZIhrjzrJT/ewM=; b=sAT3krBciBIwti
-	VGYbJDz4ZlFs4sErzjK/8iR7ETiF3hy5O+wv16AF2mnzObQnN30W8ZK2wQ9nmkO0eswRt8kXAgPge
-	1rmJnQ5a4pe1s/icJGipDygBD9xn/CI6TcdQ1ux9jaMqM5EWmrvnPoH/cSxcz7C1I4S7+tXMIF6jO
-	lyP9gyniBo6cOdjNfLCNNZkYbtcPnpeqX4WLXF3kjzX5iSg3I3x59DJ+Ie5OIa2Rixb7PbT1w5+kX
-	oVuaoqk1gfgvJENzh6EF59/bKBChuNz3iWHQRin5s5ak7Wc++iQ1Elw+jycjY8+D3gSO7xc5gjYGf
-	A0ws0ykrLYRrJjKhUjaw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=UDPE+IWjrHu2M7o0xDWwW4Fa/1TES3w6DTW5mH/U/6s=; b=oRhxFyGrNH3VEZKunPtLKc1W9U
+	vTwtrdGEf9BNlfGI6e1oRuX86MF8xufj4K7Oh2IfJYlB+4qern5R9kN6NTPoeWet+i8vrlIvaoc6O
+	pUXzJD4rOPHap+F7XRdbDYeYr3lvWPV2wE+i9gSuESgyDsAD/aEOgM8b4pMLxY1Cs08MrRltRrbpl
+	MORpNE6lnPg8s+U9pOM8NrBN8/9u/ObH1GzoKgNyynpJaUJP6+hKVO9jBEg0JcavF2fd+WHEhFO3H
+	5GgDmPmFsWQnFFFuV2RGIcVk9r0QYFmEJG5D7DTZ6E7tuzjoHaSCjcncDnaE2wNQEnN348VGQKILu
+	kyCvddPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvhxU-0005jw-7L; Thu, 08 Aug 2019 12:55:56 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvhwy-0005SO-PV
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 12:55:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39A7515A2;
- Thu,  8 Aug 2019 05:55:24 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D913F3F694;
- Thu,  8 Aug 2019 05:55:22 -0700 (PDT)
-Date: Thu, 8 Aug 2019 13:55:16 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: Re: [PATCH 6/6] PSCI: cpuidle: Refactor CPU suspend power_state
- parameter handling
-Message-ID: <20190808125516.GA2246@e107155-lin>
-References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
- <20190722153745.32446-7-lorenzo.pieralisi@arm.com>
+	id 1hvi0I-00069M-9H; Thu, 08 Aug 2019 12:58:50 +0000
+Received: from mga11.intel.com ([192.55.52.93])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvi07-00068s-RN
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 12:58:41 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 08 Aug 2019 05:58:38 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,361,1559545200"; d="scan'208";a="182585442"
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.122])
+ ([10.237.72.122])
+ by FMSMGA003.fm.intel.com with ESMTP; 08 Aug 2019 05:58:36 -0700
+Subject: Re: [PATCH 2/2] ARM: dts: at91: sama5d27_som1_ek: add mmc
+ capabilities for SDMMC0
+To: Eugen Hristev - M18282 <Eugen.Hristev@microchip.com>,
+ Nicolas Ferre - M43238 <Nicolas.Ferre@microchip.com>,
+ "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>
+References: <1565252928-28994-1-git-send-email-eugen.hristev@microchip.com>
+ <1565252928-28994-2-git-send-email-eugen.hristev@microchip.com>
+ <20190808124217.wrmcxohw5i6ju2qe@M43218.corp.atmel.com>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <04fd74c3-a828-1064-b77b-f3de07a26190@intel.com>
+Date: Thu, 8 Aug 2019 15:57:30 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190722153745.32446-7-lorenzo.pieralisi@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190808124217.wrmcxohw5i6ju2qe@M43218.corp.atmel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_055525_003718_0D222115 
-X-CRM114-Status: GOOD (  18.83  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190808_055839_899513_8844365E 
+X-CRM114-Status: GOOD (  21.03  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,67 +81,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- linux-pm@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
- Will Deacon <will@kernel.org>, LAKML <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 04:37:45PM +0100, Lorenzo Pieralisi wrote:
-> Current PSCI code handles idle state entry through the
-> psci_cpu_suspend_enter() API, that takes an idle state index as a
-> parameter and convert the index into a previously initialized
-> power_state parameter before calling the PSCI.CPU_SUSPEND() with it.
->
-> This is unwieldly, since it forces the PSCI firmware layer to keep track
-> of power_state parameter for every idle state so that the
-> index->power_state conversion can be made in the PSCI firmware layer
-> instead of the CPUidle driver implementations.
->
-> Move the power_state handling out of drivers/firmware/psci
-> into the respective ACPI/DT PSCI CPUidle backends and convert
-> the psci_cpu_suspend_enter() API to get the power_state
-> parameter as input, which makes it closer to its firmware
-> interface PSCI.CPU_SUSPEND() API.
->
-> A notable side effect is that the PSCI ACPI/DT CPUidle backends
-> now can directly handle (and if needed update) power_state
-> parameters before handing them over to the PSCI firmware
-> interface to trigger PSCI.CPU_SUSPEND() calls.
->
-> Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Ulf Hansson <ulf.hansson@linaro.org>
-> Cc: Sudeep Holla <sudeep.holla@arm.com>
+On 8/08/19 3:42 PM, Ludovic Desroches wrote:
+> On Thu, Aug 08, 2019 at 10:35:43AM +0200, Eugen Hristev - M18282 wrote:
+>> From: Eugen Hristev <eugen.hristev@microchip.com>
+>>
+>> Add mmc capabilities for SDMMC0 for this board.
+>> With this enabled, eMMC connected card is detected as:
+>>
+>> mmc0: new DDR MMC card at address 0001
+>>
+>> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+> Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+> 
+> I am interested to have the some insights about the use of sd-uhs-*
+> properties.
+> 
+> Our IP can't deal with 1V8 by itself. It has a 1V8SEL signal which can
+> be used as the logic control input of a mux. So even if the IP claims
+> to support UHS modes, it depends on the board.
+> 
+> Are the sd-uhs-* properties a way to deal with this? I tend to think no
+> as sdhci_setup_host() will set the caps depending on the content of the
+> capabilities register. Do we have to use the SDHCI_QUIRK_MISSING_CAPS
+> quirk or sdhci-caps/sdhci-caps-mask?
 
-Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+There is "no-1-8-v" which it looks like sdhci-of-at91.c already supports:
 
-> +static __init int psci_cpu_init_idle(unsigned int cpu)
-> +{
-> +	struct device_node *cpu_node;
-> +	int ret;
-> +
-> +	/*
-> +	 * If the PSCI cpu_suspend function hook has not been initialized
-> +	 * idle states must not be enabled, so bail out
-> +	 */
-> +	if (!psci_ops.cpu_suspend)
-> +		return -EOPNOTSUPP;
-> +
-> +	cpu_node = of_get_cpu_node(cpu, NULL);
+  sdhci_at91_probe() -> sdhci_get_of_property() -> sdhci_get_property()
 
-[nit] You could use of_cpu_device_node_get in linux/of_device.h as
-it may avoid parsing if used later during the boot(i.e. after
-cpu->of_node is populated). I think there's another instance in
-psci_idle_init_cpu
+    	if (device_property_present(dev, "no-1-8-v"))
+		host->quirks2 |= SDHCI_QUIRK2_NO_1_8_V;
 
---
-Regards,
-Sudeep
+
+> 
+> Regards
+> 
+> Ludovic
+> 
+>> ---
+>>  arch/arm/boot/dts/at91-sama5d27_som1_ek.dts | 1 +
+>>  1 file changed, 1 insertion(+)
+>>
+>> diff --git a/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts b/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts
+>> index 149e539..194b3a3 100644
+>> --- a/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts
+>> +++ b/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts
+>> @@ -54,6 +54,7 @@
+>>  
+>>  		sdmmc0: sdio-host@a0000000 {
+>>  			bus-width = <8>;
+>> +			mmc-ddr-3_3v;
+>>  			pinctrl-names = "default";
+>>  			pinctrl-0 = <&pinctrl_sdmmc0_default>;
+>>  			status = "okay";
+>> -- 
+>> 2.7.4
+>>
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
