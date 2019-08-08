@@ -2,108 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F01A8676B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:47:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A9EC86778
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:49:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=wGWa5s3PwrqDHvwHN1UAzYKu/jsxmbT/lm1jAQVaqYY=; b=WNd96VCR7Sm8A5
-	nZKRQhycnQyAvXhVLS/cKDMw1OSfWx6n3O5mZdsVv25ZKhE/wYsm0nlOEiiVHUwb3o+fgbnDNLate
-	hJnzS4qZJ5PQv/exyY4L5Re/Jtqbb/1tWs3r2mR0Craf9/Lhr4Mne2yFBXAboE7HrEgRD0YkT9gYX
-	Y7jRo9MisGLBA4PqdUOoE0S+5hkQTqrZS9WqTCA0/1iWTKJrN76lJCQChzjGQnBJi6rxfP72uVJDl
-	FBURHq6s8ZvyMhzQH5fEP9ii1q1tyO/sqGdM46dyxMhPVdxUivTY+VMZ/tIvG1ukH6lthLxrAdzvR
-	lJ8nWGN8hi2f0Vx0FDLA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NHev14bw8rT7h2nkCdV6oy5RkxLnOuxyXaWQ/ZXoIdw=; b=dNd6Tdn6wVlwjp
+	W/sTMHXz85ZYg4nwWJzzesZaDrGt6GGDUyjbInn5cBgT4zlUvtQHmm72SF/x6AK5XynvlM26iR4vN
+	GkOgz+qhTjmYIjTrzg3ki7OCGNd5aQDy9hoTv8SEhzkw07onAcuGlA9edjzuhaxAjz0zY/BJdbIdZ
+	liaoKUOoZmFO37HZ26CSnGqJYKRNtw1lndLdnvcGxD6JevroD4IRptDTlw0hJjMQdRu+pWcwITOMG
+	RTZYyr8bxRfKlwMX73E5K7+Soz77H/pNY0kbQ/IMceWVQi/gUwrFARkMOAimFDVz16FAO1BA4kFqT
+	8u2bVZ8bl3rfFXlODh0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvlZ6-00036G-PX; Thu, 08 Aug 2019 16:47:00 +0000
-Received: from mail-eopbgr60062.outbound.protection.outlook.com ([40.107.6.62]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1hvlbb-0003ah-Uc; Thu, 08 Aug 2019 16:49:35 +0000
+Received: from mout.gmx.net ([212.227.17.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvlYx-00035T-LM
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:46:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cBeD0lXwdVBRQM6m1OchkuD2i9RNRA/Q4e8vgpUlPbZ55l/WTwPCyFP14gDwE2G0ktHndmSFaTCW4V8Yqy9OJu8nIMbSKWCH0mfatYCiF14Wpa+H1rQ6Kz16cxzp1/lLbI23DUPgMSB1GWp6egVtr9UaB2l8RVK6tcmAPybESo00gojI7l3KD1/NyCb3kyp6ZRuV6137r30kPdPyZktUCEsLszpLa27o/ui+m5EVpqiTracPf6wWaLqsavmQI4ysVaykndxHaniiMh4Ew/3dSvhTad77vUfpp3qtB2Uj8kAFrcFAMDu7fogdjt7zNXZ85NFUbKZCaFJ0o82QEYxlRw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=89gyf+bubo9ODlDykcslOmaUDYIz+Q9T4mnOpFe3EdY=;
- b=RS/qggNCtoGeJdCzUkKjIIqZhzdp01yWS36JEfB2hRQbYFWg+SEsrFPympLPWuHqvtxVNjoeo0KG6KYINrtrdzja4txLvLAe835sMD/pAd1a67yhRWPf9Z5aYPX0XKRUo13IKnwscGhgcq2jrlFZDNAuC1tB0Dslggl3WtIopY3/sOsqyDT+//oFM9y34GGPtq8inE9lLnoc7Kv2uW4inHcXuVx2ynIk+aqRvnEPommW9eKk3QssNEIqhN31o7ERLSrjO52KuABZhVHsMN0MtJxmKTX3EmXOdMKbQJVGt0ZT0jyRQoZOvtJZr5Ejbv2mOMc1lgEYmz7n6y19oBEL8g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=89gyf+bubo9ODlDykcslOmaUDYIz+Q9T4mnOpFe3EdY=;
- b=WrIjnxXL2O7WSZNR3TqRvuVCR4UKDYo0zQrEmBD9fYyCwDiZdUG+rfg38gBij2ALy+CjL4FDd9pCoXVYPvQHtFf5KIEqIpXHvIYWADaygQwxXitk9XBziRKPmJSqqkcV0CQHaAzUBxndcGlhBEUx2EbJjfo3vTbtVzOf+L/DXvQ=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB4557.eurprd04.prod.outlook.com (20.177.55.215) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2157.14; Thu, 8 Aug 2019 16:46:48 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::e53d:e6a9:79bd:f970]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::e53d:e6a9:79bd:f970%2]) with mapi id 15.20.2157.015; Thu, 8 Aug 2019
- 16:46:48 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Stephen Boyd <sboyd@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH v3 1/2] clk: Add clk_min/max_rate entries in debugfs
-Thread-Topic: [PATCH v3 1/2] clk: Add clk_min/max_rate entries in debugfs
-Thread-Index: AQHVTfoGXeMGdmRTE0G0NHpNjfznmw==
-Date: Thu, 8 Aug 2019 16:46:48 +0000
-Message-ID: <VI1PR04MB7023C8A78321E34492290E56EED70@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <68e96af2df96512300604d797ade2088d7e6e496.1562073871.git.leonard.crestez@nxp.com>
- <20190808150028.0BC1F217D7@mail.kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [212.146.100.6]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 33e44622-d231-4747-20e8-08d71c200146
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB4557; 
-x-ms-traffictypediagnostic: VI1PR04MB4557:
-x-microsoft-antispam-prvs: <VI1PR04MB4557EEE9F0B55455288F7382EED70@VI1PR04MB4557.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2887;
-x-forefront-prvs: 012349AD1C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(346002)(136003)(396003)(376002)(366004)(189003)(199004)(229853002)(74316002)(25786009)(71200400001)(2906002)(71190400001)(66066001)(66446008)(52536014)(486006)(76176011)(7696005)(9686003)(55016002)(4326008)(44832011)(53546011)(53936002)(186003)(478600001)(6506007)(8676002)(6246003)(8936002)(102836004)(476003)(81166006)(446003)(33656002)(26005)(7736002)(66946007)(81156014)(256004)(66476007)(91956017)(64756008)(66556008)(99286004)(14454004)(6436002)(76116006)(305945005)(86362001)(3846002)(6116002)(110136005)(54906003)(4744005)(316002)(5660300002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4557;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 2+f84Ue9wfJGnABiGJs6t9Jgkc5/KreJrfSPR13/OI34f5xoqvEVA9ngZmB+VYfQqniB4r5uAezs95OkDm3yMJy7+iAZt+vuclDwDeqOPacUb5bCONs4Ta1nJ9zRfUeSgoc5zZF3xTeR3cdxwbGR4tkj3rkkCswfLrbVHgp7kTLUDwHJESUJRo1NAGDK/o/k65F+oPr4mMphg2Vsbh7WELwfOkM7KIIt2nT9p2Tr143Z+LfuLz7AFH4Uv4l2BQ1TFX+/sDozpQTyu42r5AJE79i4aLpuE79jK+6d0fIfqBoqRS7v53ajcrkJYYmWngKjbhCyFZCGc9V4V6Qa/6nCdMx44CCsi8nDHVqQYZRcfgkEVtXY/6GON3gldyBPuCg/mmmJkaisAGpQuxmM0r6SI+m1nPK6ZJQXWwV8fa7lTAA=
-x-ms-exchange-transport-forked: True
+ id 1hvlbT-0003aM-6B
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:49:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1565282955;
+ bh=NyYRIlyJp1dNqY9bMLhKdZDQoswA/k6BxEUTuDZ+Zb8=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=dV8YQMdchQ5RKjdA20SaoSKPKuU8G05WvMvaPIUMySCtxCIdbqnX0XC2JC+XnLud3
+ SYdo8NKzhO4ZzKKqlGhgHa08DhwP++1cPzSYiJORywewgfjql0t15WfFgsuhuJL2hm
+ Sg1zZdehUfG/U+LeXuL1WcH4lM6G6N/31IVucbfs=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from longitude ([109.90.233.87]) by mail.gmx.com (mrgmx102
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 0Lmwpk-1iWCHf00Am-00h5Fs; Thu, 08
+ Aug 2019 18:49:15 +0200
+From: =?UTF-8?q?Jonathan=20Neusch=C3=A4fer?= <j.neuschaefer@gmx.net>
+To: linux-doc@vger.kernel.org
+Subject: [PATCH] Documentation/arm/samsung-s3c24xx: Remove stray U+FEFF
+ character to fix title
+Date: Thu,  8 Aug 2019 18:48:09 +0200
+Message-Id: <20190808164811.15645-1-j.neuschaefer@gmx.net>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 33e44622-d231-4747-20e8-08d71c200146
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Aug 2019 16:46:48.0647 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: f2Bkq9W3Tl39MTyXT/yBo8QljNd4e/kf/2EMZzD+0vaVXIEmnGps5HC6qYdDnI5wsdFxX75f57SzvoZMqtDpeg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4557
+X-Provags-ID: V03:K1:Hh+MMVrp26ugQyFj+D/l4R8ydI3JFX9v5nK/15hlhDut2Eh6Y2L
+ QLxShqdo8KDJwsAdSSddpgpiCyup3PqyrM2a5LBmFDQI9C+Eqi+YKFi+Oz36OVw6zwviSk9
+ VZEs46WEyXKOnAuOd9KmrKd8yx2RrwCHZuwP7N+EipYj+eYmxcIcJkVU462lmplJ93HFeZg
+ lR6aVBBmQ4LJvuakhnAFA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:c6pVNIDsHNg=:FGqIiO2jLGaVGa76F74RXp
+ tcUbzZT7A2Oe2urH83/b48cZWUlWW9UKIqGfjTykNm+rilrnwAq88cBHOz6Hz8p5bhBYTtNh5
+ UO7O110UrafNB0hAiOJ9VeqzTor8S3K2LQc+VwdYK4dGshKqeY+QAIrURC4BGU3nDeuNTLzu4
+ BF3NBaOf30B6rNE6QtHsn6yS7InHaIMlKs65YSVmxAH2kE0+Hyn8ZJ11G7/evujkUInGb5IhL
+ iRobXZKV0Jqz5qQPQurj8xEyUvzfQGxkhfWucnJKZVhoW/+TV8FnylKrQIK9TY3f8Ot7ldsH5
+ JqPBo/uJuB/eKCUR1j1Nj5px5LHJ1z2bPEOT3qineeJFqqhFTGKfiVNEJHg9YUNsB9vSlqlA5
+ bFAQbDE6hua+ZDfxBGjzaW7mSB2E0CipOwPjmBtdx30E8a9OV2LWV3Warrm6dn7L1YJYqEEYg
+ hYJ2GeWkWDCXaTlJq0K0iyE8oFXiJcIEKdej/1opQOcsN1rl0sRhmXCa1UyerECVvKtKcivrK
+ ZSihTme0UhUsZLQ2QdhCbT/9Mgb0vKrEtO/Gu+cjLwjshItORUAQA6oBZAk2kirQadpMEd0vn
+ aVXXhsvc9VMHUbjyVugzV0Pm0ooikDnyqyWHQ7e045GdoFAxoz+zTJlQVrieITAXzBFFXHuTb
+ T4Msh2CZV15pW46AUFXHS5u1Qqp980ESjqxMvfA0i5lgMp7KjdnAfTzArDDYOAwvMmH9iR6nV
+ 5my/YOSccGlfbI8hX/fAeXoUIYQBP4dJSLK1qqMi7OfEZmf6Vy+L1Z5AZpCCfiV1PG6T+z8c1
+ QhWN8It4w7aVMchPtxACmU9y60yI2AN+xPlQFzVnmT5rtsLkw0D6AaJwL5aeg2ukpRsOh0S6H
+ DghHEl1VFRBIOH+LHmBGNGJj3Gk7G+UHUiFRhAcu2LKpRXBYcfgV1pNjXPOFEjXZLsJyYR/vt
+ azrmrmCHvhDw8pl8yOwCJacZLcf1HJW9PGIcJxi9pQVIx5pjRtOlmeHEoz+ZZbLrrae9Qiyb6
+ sqGQmWfI27rt/VIpfV0nT9QpBFvcdb/Q5vnk6VnPKrmlAwHyhkc4zQ0lB5MO+RMlXq1A22VKb
+ IjncQgDJuNvD2Rd9RFkUz1SHjExLLhFix5jMV0Cb0D7gezwDQlKjq0rn3CchNQ/rrhvFD9+Nr
+ R47+8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_094651_772813_DFFBF9CB 
-X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-CacheID: sfid-20190808_094927_522352_C9846592 
+X-CRM114-Status: UNSURE (   9.83  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.62 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.20 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (j.neuschaefer[at]gmx.net)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -122,43 +98,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Turquette <mturquette@baylibre.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ linux-kernel@vger.kernel.org,
+ =?UTF-8?q?Jonathan=20Neusch=C3=A4fer?= <j.neuschaefer@gmx.net>,
+ linux-arm-kernel@lists.infradead.org, Jonathan Corbet <corbet@lwn.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/8/2019 6:00 PM, Stephen Boyd wrote:
-> Quoting Leonard Crestez (2019-07-02 06:27:09)
->> diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
-
->>   static void clk_dump_one(struct seq_file *s, struct clk_core *c, int level)
->>   {
->> +       clk_core_get_boundaries(c, &min_rate, &max_rate);
->> +       if (min_rate != 0)
->> +               seq_printf(s, "\"min_rate\": %lu,", min_rate);
->> +       if (max_rate != ULONG_MAX)
->> +               seq_printf(s, "\"max_rate\": %lu,", max_rate);
-> 
-> What are the if conditions about? We always output the values in the
-> individual files, but for some reason we don't want to do that in the
-> json output?
-
-These if conditions are an easy way to avoid spamming "min_rate": 0, 
-"max_rate": 18446744073709551615 in json. If you object to the 
-inconsistency a nice solution would to be show "null" in both debugfs 
-and json.
-
-Outright hiding min/max files from debugfs is impractical, it would 
-require filesystem calls from clk_set_min_rate
-
---
-Regards,
-Leonard
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SXQgc2VlbXMgYSBVVEYtOCBieXRlIG9yZGVyIG1hcmsgKHRoZSBsZWFzdCB1c2VmdWwga2luZCBv
+ZiBCT00uLi4pIHNudWNrCmludG8gdGhlIGZpbGUgYW5kIGJyb2tlIFNwaGlueCdzIGRldGVjdGlv
+biBvZiB0aGUgdGl0bGUgbGluZS4KCkJlc2lkZXMgbWFraW5nIGFybS9zYW1zdW5nLXMzYzI0eHgv
+aW5kZXguaHRtbCBsb29rIGEgbGl0dGxlIGJldHRlciwgdGhpcwpwYXRjaCBhbHNvIGNvbmZpbmVz
+IHRoZSBub24taW5kZXggcGFnZXMgaW4gYXJtL3NhbXN1bmctczNjMjR4eCB0byB0aGVpcgpvd24g
+dGFibGUgb2YgY29udGVudHMuCgpTaWduZWQtb2ZmLWJ5OiBKb25hdGhhbiBOZXVzY2jDpGZlciA8
+ai5uZXVzY2hhZWZlckBnbXgubmV0PgotLS0KIERvY3VtZW50YXRpb24vYXJtL3NhbXN1bmctczNj
+MjR4eC9pbmRleC5yc3QgfCAyICstCiAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEg
+ZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2FybS9zYW1zdW5nLXMzYzI0
+eHgvaW5kZXgucnN0IGIvRG9jdW1lbnRhdGlvbi9hcm0vc2Ftc3VuZy1zM2MyNHh4L2luZGV4LnJz
+dAppbmRleCA1YjhhN2Y5Mzk4ZDguLmNjYjk1MWEwYmVkYiAxMDA2NDQKLS0tIGEvRG9jdW1lbnRh
+dGlvbi9hcm0vc2Ftc3VuZy1zM2MyNHh4L2luZGV4LnJzdAorKysgYi9Eb2N1bWVudGF0aW9uL2Fy
+bS9zYW1zdW5nLXMzYzI0eHgvaW5kZXgucnN0CkBAIC0xLDYgKzEsNiBAQAogLi4gU1BEWC1MaWNl
+bnNlLUlkZW50aWZpZXI6IEdQTC0yLjAKCi3vu789PT09PT09PT09PT09PT09PT09PT09PT09PQor
+PT09PT09PT09PT09PT09PT09PT09PT09PT0KIFNhbXN1bmcgUzNDMjRYWCBTb0MgRmFtaWx5CiA9
+PT09PT09PT09PT09PT09PT09PT09PT09PQoKLS0KMi4yMC4xCgoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
+c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
