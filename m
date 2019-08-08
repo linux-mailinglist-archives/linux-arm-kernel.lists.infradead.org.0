@@ -2,56 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58E04867FF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:27:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E91388680D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:31:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y7Ck+ajyp/DJhL94s/YdQGk4unSViA8y+t3+dg1PZeQ=; b=fvUkfTSSE9YWBs
-	rf7UmpBsqXGU9kZF5CaVMxJY+Sx2iv2yOK8KLDQQiqWJiyukoEsjpmgpLQpTVLYv0wLFmERQmNPsB
-	1jv0n1fUKzKHOflEj50ufhZzrS77MMe2vvp5YL7JD/KpC6XSRElBPyaMLJl4BO+JaA+PiULEbeO9r
-	IrPvKhBrVX7BLbGpLOTYtMcjSM1XGiczunrGi0WtXmhZJFtYITIpC+rliwwfZzGq1SUDek+UkDnLH
-	tVXmuhR+9lYnjsn7TWCjUO0PuuujVwmXLaem+GuZmlFyswjcvRbxNngzXV/9A57t9EaktHEu61QeR
-	O/NfCX4jAEJJmNzGsPJA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=YK1whkSexyn7tDmdf8CeYqMSUxQ6B/3S1juqUnxFV0o=; b=KR4OAcc2WrUa6OlaV52j4WRId
+	E135TUnLFtotzDZEVmr9Ft/lvgTjMnqDdnh8bepjYhw1coPUrQMIR212++UDZCVc4HSRSaFaJxQtV
+	HVaAm4qBW1gQggKQdeJYXhMI9/cNWeEf+m9mMht6D8YaBsSdKCvfk206OlyupQ/s/qGVYJq18PTTk
+	EmaBXAerZ7z8vlg3yv16Yevx2lLhAlGnyZzhQH5XPm3KXcxnHVz4xH9P3giV9BHni9Sq7z8hsojTv
+	x2EHkJtdyMC0Ri2MoI7NsbjizjP9zS9s5XGCtjc6K84LzoSX1ETWJ51a2x9eE3hSpnNZHjrKrV68o
+	uTU2Kq4WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvmCc-0003oW-9Z; Thu, 08 Aug 2019 17:27:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvmCQ-0003nl-VQ
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 17:27:40 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5DF1715A2;
- Thu,  8 Aug 2019 10:27:36 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 25EE03F575; Thu,  8 Aug 2019 10:27:35 -0700 (PDT)
-Date: Thu, 8 Aug 2019 18:27:32 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Dave Hansen <dave.hansen@intel.com>
-Subject: Re: [PATCH v7 1/2] arm64: Define
- Documentation/arm64/tagged-address-abi.rst
-Message-ID: <20190808172730.GC37129@arrakis.emea.arm.com>
-References: <20190807155321.9648-1-catalin.marinas@arm.com>
- <20190807155321.9648-2-catalin.marinas@arm.com>
- <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
+	id 1hvmFe-0005Mk-BM; Thu, 08 Aug 2019 17:30:58 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvmFU-0005Lu-Hn; Thu, 08 Aug 2019 17:30:50 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id E72A0AF4C;
+ Thu,  8 Aug 2019 17:30:44 +0000 (UTC)
+Message-ID: <6917ea286e76cb0f3f3bea23552a00d1b2a381de.camel@suse.de>
+Subject: Re: [PATCH 3/8] of/fdt: add function to get the SoC wide DMA
+ addressable memory size
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 08 Aug 2019 19:30:42 +0200
+In-Reply-To: <CAL_JsqJS6XBSc8DuK2sJApHtY4nCSFpLezf003YMD75THLHAqg@mail.gmail.com>
+References: <20190731154752.16557-1-nsaenzjulienne@suse.de>
+ <20190731154752.16557-4-nsaenzjulienne@suse.de>
+ <CAL_JsqKF5nh3hcdLTG5+6RU3_TnFrNX08vD6qZ8wawoA3WSRpA@mail.gmail.com>
+ <2050374ac07e0330e505c4a1637256428adb10c4.camel@suse.de>
+ <CAL_Jsq+LjsRmFg-xaLgpVx3miXN3hid3aD+mgTW__j0SbEFYjQ@mail.gmail.com>
+ <12eb3aba207c552e5eb727535e7c4f08673c4c80.camel@suse.de>
+ <CAL_JsqJS6XBSc8DuK2sJApHtY4nCSFpLezf003YMD75THLHAqg@mail.gmail.com>
+User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_102739_097068_ABE8005F 
-X-CRM114-Status: GOOD (  44.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190808_103048_883798_58425232 
+X-CRM114-Status: GOOD (  35.52  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,267 +65,198 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will.deacon@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: phill@raspberryi.org, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, Frank Rowand <frowand.list@gmail.com>,
+ linux-mm@kvack.org, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Eric Anholt <eric@anholt.net>, Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Matthias Brugger <mbrugger@suse.com>, "moderated
+ list:BROADCOM BCM2835 ARM ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, Will Deacon <will@kernel.org>,
+ Christoph Hellwig <hch@lst.de>, "moderated list:ARM/FREESCALE IMX / MXC ARM
+ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>, wahrenst@gmx.net
+Content-Type: multipart/mixed; boundary="===============5860687532907909304=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 01:38:16PM -0700, Dave Hansen wrote:
-> On 8/7/19 8:53 AM, Catalin Marinas wrote:
-> > +- mmap() done by the process itself (or its parent), where either:
-> > +
-> > +  - flags have the **MAP_ANONYMOUS** bit set
-> > +  - the file descriptor refers to a regular file (including those returned
-> > +    by memfd_create()) or **/dev/zero**
-> 
-> What's a "regular file"? ;)
 
-We could make it more explicit like '(stat.st_mode & S_IFMT) == S_IFREG'
-but it gets too verbose ;).
+--===============5860687532907909304==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-aUnd1sGElH9S49gE7iVL"
 
-> > +- brk() system call done by the process itself (i.e. the heap area between
-> > +  the initial location of the program break at process creation and its
-> > +  current location).
-> > +
-> > +- any memory mapped by the kernel in the address space of the process
-> > +  during creation and with the same restrictions as for mmap() above (e.g.
-> > +  data, bss, stack).
-> > +
-> > +The AArch64 Tagged Address ABI is an opt-in feature and an application can
-> > +control it via **prctl()** as follows:
-> > +
-> > +- **PR_SET_TAGGED_ADDR_CTRL**: enable or disable the AArch64 Tagged Address
-> > +  ABI for the calling process.
-> > +
-> > +  The (unsigned int) arg2 argument is a bit mask describing the control mode
-> > +  used:
-> > +
-> > +  - **PR_TAGGED_ADDR_ENABLE**: enable AArch64 Tagged Address ABI. Default
-> > +    status is disabled.
-> > +
-> > +  The arguments arg3, arg4, and arg5 are ignored.
-> 
-> For previous prctl()'s, we've found that it's best to require that the
-> unused arguments be 0.  Without that, apps are free to put garbage
-> there, which makes extending the prctl to use other arguments impossible
-> in the future.
 
-We've had a bit of bikeshedding already:
+--=-aUnd1sGElH9S49gE7iVL
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-http://lkml.kernel.org/r/20190613110235.GW28398@e103592.cambridge.arm.com
+On Thu, 2019-08-08 at 09:02 -0600, Rob Herring wrote:
+> On Tue, Aug 6, 2019 at 12:12 PM Nicolas Saenz Julienne
+> <nsaenzjulienne@suse.de> wrote:
+> > Hi Rob,
+> >=20
+> > On Mon, 2019-08-05 at 13:23 -0600, Rob Herring wrote:
+> > > On Mon, Aug 5, 2019 at 10:03 AM Nicolas Saenz Julienne
+> > > <nsaenzjulienne@suse.de> wrote:
+> > > > Hi Rob,
+> > > > Thanks for the review!
+> > > >=20
+> > > > On Fri, 2019-08-02 at 11:17 -0600, Rob Herring wrote:
+> > > > > On Wed, Jul 31, 2019 at 9:48 AM Nicolas Saenz Julienne
+> > > > > <nsaenzjulienne@suse.de> wrote:
+> > > > > > Some SoCs might have multiple interconnects each with their own=
+ DMA
+> > > > > > addressing limitations. This function parses the 'dma-ranges' o=
+n
+> > > > > > each of
+> > > > > > them and tries to guess the maximum SoC wide DMA addressable me=
+mory
+> > > > > > size.
+> > > > > >=20
+> > > > > > This is specially useful for arch code in order to properly set=
+up
+> > > > > > CMA
+> > > > > > and memory zones.
+> > > > >=20
+> > > > > We already have a way to setup CMA in reserved-memory, so why is =
+this
+> > > > > needed for that?
+> > > >=20
+> > > > Correct me if I'm wrong but I got the feeling you got the point of =
+the
+> > > > patch
+> > > > later on.
+> > >=20
+> > > No, for CMA I don't. Can't we already pass a size and location for CM=
+A
+> > > region under /reserved-memory. The only advantage here is perhaps the
+> > > CMA range could be anywhere in the DMA zone vs. a fixed location.
+> >=20
+> > Now I get it, sorry I wasn't aware of that interface.
+> >=20
+> > Still, I'm not convinced it matches RPi's use case as this would hard-c=
+ode
+> > CMA's size. Most people won't care, but for the ones that do, it's nice=
+r to
+> > change the value from the kernel command line than editing the dtb.
+>=20
+> Sure, I fully agree and am not a fan of the CMA DT overlays I've seen.
+>=20
+> > I get that
+> > if you need to, for example, reserve some memory for the video to work,=
+ it's
+> > silly not to hard-code it. Yet due to the board's nature and users base=
+ I
+> > say
+> > it's important to favor flexibility. It would also break compatibility =
+with
+> > earlier versions of the board and diverge from the downstream kernel
+> > behaviour.
+> > Which is a bigger issue than it seems as most users don't always unders=
+tand
+> > which kernel they are running and unknowingly copy configuration option=
+s
+> > from
+> > forums.
+> >=20
+> > As I also need to know the DMA addressing limitations to properly confi=
+gure
+> > memory zones and dma-direct. Setting up the proper CMA constraints duri=
+ng
+> > the
+> > arch's init will be trivial anyway.
+>=20
+> It was really just commentary on commit text as for CMA alone we have
+> a solution already. I agree on the need for zones.
 
-Extending the interface is still possible even with the current
-proposal, by changing arg2 etc. We also don't seem to be consistent in
-sys_prctl().
+Ok, understood :)
 
-> Also, shouldn't this be converted over to an arch_prctl()?
+> > > > > IMO, I'd just do:
+> > > > >=20
+> > > > > if (of_fdt_machine_is_compatible(blob, "brcm,bcm2711"))
+> > > > >     dma_zone_size =3D XX;
+> > > > >=20
+> > > > > 2 lines of code is much easier to maintain than 10s of incomplete=
+ code
+> > > > > and is clearer who needs this. Maybe if we have dozens of SoCs wi=
+th
+> > > > > this problem we should start parsing dma-ranges.
+> > > >=20
+> > > > FYI that's what arm32 is doing at the moment and was my first insti=
+nct.
+> > > > But
+> > > > it
+> > > > seems that arm64 has been able to survive so far without any machin=
+e
+> > > > specific
+> > > > code and I have the feeling Catalin and Will will not be happy abou=
+t
+> > > > this
+> > > > solution. Am I wrong?
+> > >=20
+> > > No doubt. I'm fine if the 2 lines live in drivers/of/.
+> > >=20
+> > > Note that I'm trying to reduce the number of early_init_dt_scan_*
+> > > calls from arch code into the DT code so there's more commonality
+> > > across architectures in the early DT scans. So ideally, this can all
+> > > be handled under early_init_dt_scan() call.
+> >=20
+> > How does this look? (I'll split it in two patches and add a comment
+> > explaining
+> > why dt_dma_zone_size is needed)
+> >=20
+> > diff --git a/drivers/of/fdt.c b/drivers/of/fdt.c
+> > index f2444c61a136..1395be40b722 100644
+> > --- a/drivers/of/fdt.c
+> > +++ b/drivers/of/fdt.c
+> > @@ -30,6 +30,8 @@
+> >=20
+> >  #include "of_private.h"
+> >=20
+> > +u64 dt_dma_zone_size __ro_after_init;
+>=20
+> Avoiding a call from arch code by just having a variable isn't really
+> better. I'd rather see a common, non DT specific variable that can be
+> adjusted. Something similar to initrd_start/end. Then the arch code
+> doesn't have to care what hardware description code adjusted the
+> value.
 
-What do you mean by arch_prctl()? We don't have such thing, apart from
-maybe arch_prctl_spec_ctrl_*(). We achieve the same thing with the
-{SET,GET}_TAGGED_ADDR_CTRL macros. They could be renamed to
-arch_prctl_tagged_addr_{set,get} or something but I don't see much
-point.
+Way better, I'll update it.
 
-What would be better (for a separate patch series) is to clean up
-sys_prctl() and move the arch-specific options into separate
-arch_prctl() under arch/*/kernel/. But it's not really for this series.
 
-> > +The prctl(PR_SET_TAGGED_ADDR_CTRL, ...) will return -EINVAL if the
-> > +AArch64 Tagged Address ABI is not available
-> > +(CONFIG_ARM64_TAGGED_ADDR_ABI disabled or sysctl abi.tagged_addr=0).
-> > +
-> > +The ABI properties set by the mechanism described above are inherited by
-> > +threads of the same application and fork()'ed children but cleared by
-> > +execve().
-> 
-> What is the scope of these prctl()'s?  Are they thread-scoped or
-> process-scoped?  Can two threads in the same process run with different
-> tagging ABI modes?
+--=-aUnd1sGElH9S49gE7iVL
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
 
-Good point. They are thread-scoped and this should be made clear in the
-doc. Two threads can have different modes.
+-----BEGIN PGP SIGNATURE-----
 
-The expectation is that this is invoked early during process start (by
-the dynamic loader or libc init) while in single-thread mode and
-subsequent threads will inherit the same mode. However, other uses are
-possible.
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl1MXEIACgkQlfZmHno8
+x/4I5gf6A+XJGnTIx+91Jp1InIYL3ffBEX7UUGqmhdiznnad0gVF6JWh/Kq6dJyQ
+zkCiCoziJ5AFuNeS3Akpa7psFTnLYsWWaeL+FzWvSvLntp6ti6URyBlx5v4JeKT2
+QaGzJsdWWGEMXA8QIHk309B127xqqgKqFJKnOYubd1h7xdULE11Ht1Ur+mTlkur/
+AEaSkGTAJHap13dIxCnV2cdHt8u/79mL/vDRSCDLmUrJxaOcvQPSDQHIK86j+cBb
+OEzAaU89Ektf1Uq1GI5yjn0gBRcOiPw+TaMlJw4PcPWZN1Lfz8M9lb3+QZOrykTs
+KgzRXlmzYbKR0CO/8rK+dbxSO+x9gg==
+=JXPI
+-----END PGP SIGNATURE-----
 
-> > +Opting in (the prctl() option described above only) to or out of the
-> > +AArch64 Tagged Address ABI can be disabled globally at runtime using the
-> > +sysctl interface:
-> > +
-> > +- **abi.tagged_addr**: a new sysctl interface that can be used to prevent
-> > +  applications from enabling or disabling the relaxed ABI. The sysctl
-> > +  supports the following configuration options:
-> > +
-> > +  - **0**: disable the prctl(PR_SET_TAGGED_ADDR_CTRL) option to
-> > +    enable/disable the AArch64 Tagged Address ABI globally
-> > +
-> > +  - **1** (Default): enable the prctl(PR_SET_TAGGED_ADDR_CTRL) option to
-> > +    enable/disable the AArch64 Tagged Address ABI globally
-> > +
-> > +  Note that this sysctl does not affect the status of the AArch64 Tagged
-> > +  Address ABI of the running processes.
-> 
-> Shouldn't the name be "abi.tagged_addr_control" or something?  It
-> actually has *zero* direct effect on tagged addresses in the ABI.
+--=-aUnd1sGElH9S49gE7iVL--
 
-Yeah, we could add a _ctrl suffix. I usually lack inspiration when
-naming things.
 
-> What's the reason for allowing it to be toggled at runtime like this?
-> Wouldn't it make more sense to just have it be a boot option so you
-> *know* what the state of individual processes is?
 
-This was initially suggested by Vincenzo but I wasn't keen on having a
-kernel command line option that affects the user ABI. Since then we went
-through several incarnations and ended up with a default off for the
-relaxed ABI with an opt-in prctl(). The reason behind default off is
-that I'm not 100% confident the kernel won't break the relaxed ABI in
-the future and I wouldn't want applications that don't use
-top-byte-ignore (or tagged addresses) to inadvertently start using it.
-The additional sysctl is to allow system administrators to block the
-opt-in altogether. It also comes in handy for testing userspace
-behaviour without rebooting.
-
-That said, do we have a precedent for changing user ABI from the kernel
-cmd line? 'noexec32', 'vsyscall' I think come close. With the prctl()
-for opt-in, controlling this from the cmd line is not too bad (though my
-preference is still for the sysctl).
-
-> > +When a process has successfully enabled the new ABI by invoking
-> > +prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE), the following
-> > +behaviours are guaranteed:
-> > +
-> > +- Every currently available syscall, except the cases mentioned in section
-> > +  3, can accept any valid tagged pointer. The same rule is applicable to
-> > +  any syscall introduced in the future.
-> > +
-> > +- The syscall behaviour is undefined for non valid tagged pointers.
-> 
-> Do you really mean "undefined"?  I mean, a bad pointer is a bad pointer.
->  Why should it matter if it's a tagged bad pointer or an untagged bad
-> pointer?
-
-Szabolcs already replied here. We may have tagged pointers that can be
-dereferenced just fine but being passed to the kernel may not be well
-defined (e.g. some driver doing a find_vma() that fails unless it
-explicitly untags the address). It's as undefined as the current
-behaviour (without these patches) guarantees.
-
-> ...
-> > +A definition of the meaning of tagged pointers on AArch64 can be found in:
-> > +Documentation/arm64/tagged-pointers.txt.
-> > +
-> > +3. AArch64 Tagged Address ABI Exceptions
-> > +-----------------------------------------
-> > +
-> > +The behaviour described in section 2, with particular reference to the
-> > +acceptance by the syscalls of any valid tagged pointer, is not applicable
-> > +to the following cases:
-> 
-> This is saying things in a pretty roundabout manner.  Can't it just say:
->  "The following cases do not accept tagged pointers:"
-
-I agree.
-
-> > +- mmap() addr parameter.
-> > +
-> > +- mremap() new_address parameter.
-> 
-> Is munmap() missing?  Or was there a reason for leaving it out?
-
-Szabolcs replied already here.
-
-For a bit of history, I initially didn't want any of the address space
-handling functions to accept tagged pointers but it got harder to
-specify what this means that can be safely applied to future syscall
-extensions. We then changed the approach to allow it everywhere with
-some exclusions like mmap/mremap.
-
-> > +- prctl(PR_SET_MM, ``*``, ...) other than arg2 PR_SET_MM_MAP and
-> > +  PR_SET_MM_MAP_SIZE.
-> > +
-> > +- prctl(PR_SET_MM, PR_SET_MM_MAP{,_SIZE}, ...) struct prctl_mm_map fields.
-> > +
-> > +Any attempt to use non-zero tagged pointers will lead to undefined
-> > +behaviour.
-> 
-> I wonder if you want to generalize this a bit.  I think you're saying
-> that parts of the ABI that modify the *layout* of the address space
-> never accept tagged pointers.
-
-I guess our difficulty in specifying this may have been caused by
-over-generalising. For example, madvise/mprotect came under the same
-category but there is a use-case for malloc'ed pointers (and tagged) to
-the kernel (e.g. MADV_DONTNEED). If we can restrict the meaning to
-address space *layout* manipulation, we'd have mmap/mremap/munmap,
-brk/sbrk, prctl(PR_SET_MM). Did I miss anything?. Other related syscalls
-like mprotect/madvise preserve the layout while only changing permissions,
-backing store, so the would be allowed to accept tags.
-
-Open to feedback from others, especially libc/userspace folk. Ideally,
-what I'd like is that when a new syscall is added (or extension to an
-existing syscall), it should be fairly obvious to the user whether it
-can take a tagged address or not (or maybe that's just not possible).
-
-> > +4. Example of correct usage
-> > +---------------------------
-> > +.. code-block:: c
-> > +
-> > +   void main(void)
-> > +   {
-> > +           static int tbi_enabled = 0;
-> > +           unsigned long tag = 0;
-> > +
-> > +           char *ptr = mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE,
-> > +                            MAP_ANONYMOUS, -1, 0);
-> > +
-> > +           if (prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE,
-> > +                     0, 0, 0) == 0)
-> > +                   tbi_enabled = 1;
-> > +
-> > +           if (ptr == (void *)-1) /* MAP_FAILED */
-> > +                   return -1;
-> > +
-> > +           if (tbi_enabled)
-> > +                   tag = rand() & 0xff;
-> > +
-> > +           ptr = (char *)((unsigned long)ptr | (tag << TAG_SHIFT));
-> > +
-> > +           *ptr = 'a';
-> > +
-> > +           ...
-> > +   }
-> 
-> It looks like the TAG_SHIFT and tag size are pretty baked into the
-> aarch64 architecture.  But, are you confident that no future
-> implementations will want different positions or sizes?  (obviously
-> controlled by other TCR_EL1 bits)
-
-For the top-byte-ignore (TBI), that's been baked in the architecture
-since ARMv8.0 and we'll have to keep the backwards compatible mode. As
-the name implies, it's the top byte of the address and that's what the
-document above refers to.
-
-With MTE, I can't exclude other configurations in the future but I'd
-expect the kernel to present the option as a new HWCAP and the user to
-explicitly opt in via a new prctl() flag. I seriously doubt we'd break
-existing binaries. So, yes TAG_SHIFT may be different but so would the
-prctl() above.
-
-Thanks.
-
--- 
-Catalin
+--===============5860687532907909304==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5860687532907909304==--
+
+
