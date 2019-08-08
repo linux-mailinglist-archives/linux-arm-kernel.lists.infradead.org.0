@@ -2,85 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F69086A71
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 21:17:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D94686A82
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 21:21:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=brQjNdIS1CP5RgoC6tQNXfMDwnnHL5U2dW4Kr/nM5GU=; b=nsgJ0CtTqNMK/G
-	BdzP1/t5ndMNBeRvfvYDqx/eJ/PnNjugSUt2GvglUtQbOhzMShIgD8Tbu/jjeOoC9b8gUk+E2qhAM
-	tJ4tB9iNIJpYgnhNIrsXl+wUSCBGP4Y0NPwd9K+YPDCt8vlUmSPoe5YNi/iT4E6avm9mR1Q3M1hZ5
-	diOZNUSDRPhkH9aX9S5TSmIR8qp4gWL2flCJgxLYwP3IpAsRQtw+bpEuQ7xTQDJufuFf1IL+Wvwi+
-	Pb0ZJ7FLAbCx82EHPNHOFy0vuqNFDbnPwc31A9Sj2DXJziF7TDr2biBAJB83XdLQ7Yhq0H4cYMkfL
-	D62Dbs8+A8eHFCnwTIUg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7n3nuVs58fi9YxnobWsQezD/5UUutIjCR7Nh9Wlq3sQ=; b=F2BiHthxYyGqF4GnFFJHTtWE0
+	kZzOonC5oTmvQYMO2eqFePbdRDdRlYEyTt8qSgVkZ7sg0BE96R4XRL6wZKwCk/qr4aehEK6iMhTrG
+	FkJVRPfN8OXWBlk+Rz8DXJIHpITl8yLY39o6VsqF/iQfjp68Nm721bNo0dKf5XOLKorQ3dlhHpLFC
+	kuVWmaUY/l0p1Du0t06rDZewwR/1X5N9UgVXoBoDQvb9F7ORvkjK60xyHNbtLEB/g9QOL3FXaz4o5
+	EkJSVO8F5zLd0pu86liLj1dP5F0mCYSP2gW3peRLYqiymSrESXRQfeV124v5kLPlliG7F3wZ+dmr1
+	0CcD2oaiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvnuw-0001Lb-EU; Thu, 08 Aug 2019 19:17:42 +0000
-Received: from mail-qk1-x74a.google.com ([2607:f8b0:4864:20::74a])
+	id 1hvnyF-0002td-16; Thu, 08 Aug 2019 19:21:07 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvnuo-0001GX-6u
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 19:17:35 +0000
-Received: by mail-qk1-x74a.google.com with SMTP id c79so83645274qkg.13
+ id 1hvny3-0002tH-Fs
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 19:20:57 +0000
+Received: by mail-pg1-x541.google.com with SMTP id n190so3747516pgn.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 08 Aug 2019 12:17:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=n1rPGE45Vv9PYSBQo+gbqrqUGU7GHu12P6zmiT4Upy8=;
- b=BetvwZcgg5rNPJoqNeBgcvBGbhDS13ZMG1CCVJ7AZati0UfVO4XB58q1n82c37gTkd
- 9G5d+yrEmKkbJ3aewSVlZDSmbT0l4AMxbQ1t1qyFh3qQi15vgA9JD0ah3zYbvkvmbhN5
- /xSBubMffiViT7Wq0nqlrCgcwO9Y7G8ZBb06kxz8ams8CEtLZz+ivBzJPl/whqLSCOR7
- tsg34prHitTZZbYOQdA+cJ//Heyt4UN5AJ9M8zFtnvwKgjQbAce/hMawmytuvp+71Byh
- QqTAS9RLJkYkZYWThJGRKP1lioh5PoF2QcTlshSMtXMTeb+3krcwhRcPGokwp98LwxG5
- x7lg==
+ Thu, 08 Aug 2019 12:20:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=WofIjniXiwNzxEUaGFVhZ+h83Wcut+hzdIT3wo6e7YM=;
+ b=KQljckW9Gh7h2hSk+gLggObASU2CPWRIxV7VyUuCJvL2RUAx4WqtitmD7N7cnp6dtx
+ 1bSKBO7I2OZorVgWYzMkpzO3B6BIsB42z6GOkLb2mpjCUwtjti3t8QKP5k7He1Tig9zq
+ jOrsP1LmiRh9m+6/QM88HoXQXRZChQKxEYeIqxzFY4CjN+0DkRbI9FFENeF/VtQ91ibj
+ wjycfbIZ18hEDhEpzFP+koh8U+KaZGz/YRV29a9TWvOBJkhP59Scv9Pq8Z9GeAaM2uo2
+ /VeEZDsaWHSxcNBQfDgNTCOxY5hj5P58fSPg4jLgLEhbYwyCybIq1fc4MMvmXkj1JekE
+ WURg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=n1rPGE45Vv9PYSBQo+gbqrqUGU7GHu12P6zmiT4Upy8=;
- b=kxNkVKfhfKhNfekKPOCGBODxcDku+qDhoD1KKgI+c5rZiJnYY4OKWINSYyn9T3Xeza
- y99c7VofLfS9TdHjIwZMrL5J+zvkuPIYSn9ydXdLSJjHEW9j2wV04q1Yjht1HWURaNIN
- iy1kh1aAwafRfPNGGXDHxlDeDoIDCyVoTo29G1xN8KsE9sHBfTRzaOMwigGfZGEPMbSU
- Lu7tPe6K7OB5zERwZbtNGaMzznZ2YKqKvF/kJaR1I3aTriEHMvKCcii9aLmj6W7/C07w
- EfXAyaWOZjhKTf+Ms8lyrHJp6eBwK8CVk/Ge+b5oMnZJmptat4C4RtKhWhq119g8F8sZ
- ub6Q==
-X-Gm-Message-State: APjAAAWQGqVx0su8BQ3EielvCOZsSzMhE4B5WJWnzxtsxJ5E0sbcKXg8
- 3mJ5eojqJQ9qS2kPaTzw5B+s994A/Q==
-X-Google-Smtp-Source: APXvYqxlMMdwKW0gDRzyHxtAqpr9SUDwCZ62ezy0CtTcCaxDe5YgFegRMAjnXHjWXfcEWwepVmelhECkQw4=
-X-Received: by 2002:aed:3b30:: with SMTP id p45mr7076254qte.84.1565291850598; 
- Thu, 08 Aug 2019 12:17:30 -0700 (PDT)
-Date: Thu,  8 Aug 2019 12:17:26 -0700
-Message-Id: <20190808191726.65806-1-yabinc@google.com>
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.22.0.770.g0f2c4a37fd-goog
-Subject: [PATCH] coresight: Serialize enabling/disabling a link device.
-From: Yabin Cui <yabinc@google.com>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, 
- Alexander Shishkin <alexander.shishkin@linux.intel.com>
+ h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=WofIjniXiwNzxEUaGFVhZ+h83Wcut+hzdIT3wo6e7YM=;
+ b=sKSWFBAgw+IE/LZuHdDNM6BQjMvNEFhHqAa6FGTPOEn1OfnR3xFaBvQaFO1T7KBdPn
+ sHzjgzJZPprXygZGNxUTH8Snph3rwoGv4FZswvVAOMsER5uuQYkswFvpXcD0KMIZfCjE
+ Qym3RtzbPZpNEtd0u+8DnemMiYGjq17IxCGsNJhkcgH8N6u8Ut75JY2uxab9zLlJn0TU
+ 2lVG24tJM6y7hBZDrifSC0P+xsdSHuO6TY9byGA3knK3u7ZsF1Cw6FOywBZ8yxP2e3GJ
+ uXidfmZUFTSLtlczp7wRlaboTIJxzAwuodxe3THfJCzsUJEtwemki0PQ9DJ0ofvO1w4D
+ qkYw==
+X-Gm-Message-State: APjAAAVEagf/Ce5FOGbsoLLTcBtuOo/BolXOH4IlAAU3q30+RucFlLVl
+ gGKUipwKOgo6Wv2JE9i58PE=
+X-Google-Smtp-Source: APXvYqy1nAMROP2tNRjP90YcDjSjfw5g7Jxmg/KRzY27RLDmMUbzlnugppsGaJIAUrvztZ+VMG7E7A==
+X-Received: by 2002:a62:16:: with SMTP id 22mr17745874pfa.151.1565292055001;
+ Thu, 08 Aug 2019 12:20:55 -0700 (PDT)
+Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id
+ e189sm83108353pgc.15.2019.08.08.12.20.53
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 08 Aug 2019 12:20:54 -0700 (PDT)
+Subject: Re: next/master build: 230 builds: 5 failed, 225 passed, 6 errors,
+ 1344 warnings (next-20190805)
+To: Alex Deucher <alexdeucher@gmail.com>
+References: <5d47f990.1c69fb81.a5d88.ee1f@mx.google.com>
+ <20190805111205.GB6432@sirena.org.uk> <20190808184149.GA441@roeck-us.net>
+ <CADnq5_NL6+AohC-3HJa+84k50ewqYLMy_VuFmgY=aw872JFf-A@mail.gmail.com>
+From: Guenter Roeck <linux@roeck-us.net>
+Message-ID: <768ee31a-c870-4237-f38a-b176378072b6@roeck-us.net>
+Date: Thu, 8 Aug 2019 12:20:53 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <CADnq5_NL6+AohC-3HJa+84k50ewqYLMy_VuFmgY=aw872JFf-A@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_121734_278285_AD7D4BAF 
-X-CRM114-Status: GOOD (  13.98  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20190808_122055_534303_0FDE2626 
+X-CRM114-Status: GOOD (  14.60  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:74a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,135 +109,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yabin Cui <yabinc@google.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: David Zhou <David1.Zhou@amd.com>, kernel-build-reports@lists.linaro.org,
+ David Airlie <airlied@linux.ie>,
+ Maling list - DRI developers <dri-devel@lists.freedesktop.org>,
+ Tao Zhou <tao.zhou1@amd.com>, amd-gfx list <amd-gfx@lists.freedesktop.org>,
+ Dennis Li <dennis.li@amd.com>, Mark Brown <broonie@kernel.org>,
+ Linux-Next Mailing List <linux-next@vger.kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Alex Deucher <alexander.deucher@amd.com>,
+ =?UTF-8?Q?Christian_K=c3=b6nig?= <christian.koenig@amd.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When tracing etm data of multiple threads on multiple cpus through perf
-interface, some link devices are shared between paths of different cpus.
-It creates race conditions when different cpus wants to enable/disable
-the same link device at the same time.
-
-Example 1:
-Two cpus want to enable different ports of a coresight funnel, thus
-calling the funnel enable operation at the same time. But the funnel
-enable operation isn't reentrantable.
-
-Example 2:
-For an enabled coresight dynamic replicator with refcnt=1, one cpu wants
-to disable it, while another cpu wants to enable it. Ideally we still have
-an enabled replicator with refcnt=1 at the end. But in reality the result
-is uncertain.
-
-Since coresight devices claim themselves when enabled for self-hosted
-usage, the race conditions above usually make the link devices not usable
-after many cycles.
-
-To fix the race conditions, this patch adds a spinlock to serialize
-enabling/disabling a link device.
-
-Signed-off-by: Yabin Cui <yabinc@google.com>
----
- drivers/hwtracing/coresight/coresight.c | 8 ++++++++
- include/linux/coresight.h               | 3 +++
- 2 files changed, 11 insertions(+)
-
-diff --git a/drivers/hwtracing/coresight/coresight.c b/drivers/hwtracing/coresight/coresight.c
-index 55db77f6410b..90f97f4f99b2 100644
---- a/drivers/hwtracing/coresight/coresight.c
-+++ b/drivers/hwtracing/coresight/coresight.c
-@@ -256,6 +256,7 @@ static int coresight_enable_link(struct coresight_device *csdev,
- 	int ret;
- 	int link_subtype;
- 	int refport, inport, outport;
-+	unsigned long flags;
- 
- 	if (!parent || !child)
- 		return -EINVAL;
-@@ -274,15 +275,18 @@ static int coresight_enable_link(struct coresight_device *csdev,
- 	if (refport < 0)
- 		return refport;
- 
-+	spin_lock_irqsave(&csdev->spinlock, flags);
- 	if (atomic_inc_return(&csdev->refcnt[refport]) == 1) {
- 		if (link_ops(csdev)->enable) {
- 			ret = link_ops(csdev)->enable(csdev, inport, outport);
- 			if (ret) {
- 				atomic_dec(&csdev->refcnt[refport]);
-+				spin_unlock_irqrestore(&csdev->spinlock, flags);
- 				return ret;
- 			}
- 		}
- 	}
-+	spin_unlock_irqrestore(&csdev->spinlock, flags);
- 
- 	csdev->enable = true;
- 
-@@ -296,6 +300,7 @@ static void coresight_disable_link(struct coresight_device *csdev,
- 	int i, nr_conns;
- 	int link_subtype;
- 	int refport, inport, outport;
-+	unsigned long flags;
- 
- 	if (!parent || !child)
- 		return;
-@@ -315,10 +320,12 @@ static void coresight_disable_link(struct coresight_device *csdev,
- 		nr_conns = 1;
- 	}
- 
-+	spin_lock_irqsave(&csdev->spinlock, flags);
- 	if (atomic_dec_return(&csdev->refcnt[refport]) == 0) {
- 		if (link_ops(csdev)->disable)
- 			link_ops(csdev)->disable(csdev, inport, outport);
- 	}
-+	spin_unlock_irqrestore(&csdev->spinlock, flags);
- 
- 	for (i = 0; i < nr_conns; i++)
- 		if (atomic_read(&csdev->refcnt[i]) != 0)
-@@ -1225,6 +1232,7 @@ struct coresight_device *coresight_register(struct coresight_desc *desc)
- 	csdev->subtype = desc->subtype;
- 	csdev->ops = desc->ops;
- 	csdev->orphan = false;
-+	spin_lock_init(&csdev->spinlock);
- 
- 	csdev->dev.type = &coresight_dev_type[desc->type];
- 	csdev->dev.groups = desc->groups;
-diff --git a/include/linux/coresight.h b/include/linux/coresight.h
-index a2b68823717b..dd28d9ab841d 100644
---- a/include/linux/coresight.h
-+++ b/include/linux/coresight.h
-@@ -9,6 +9,7 @@
- #include <linux/device.h>
- #include <linux/perf_event.h>
- #include <linux/sched.h>
-+#include <linux/spinlock.h>
- 
- /* Peripheral id registers (0xFD0-0xFEC) */
- #define CORESIGHT_PERIPHIDR4	0xfd0
-@@ -153,6 +154,7 @@ struct coresight_connection {
-  *		activated but not yet enabled.  Enabling for a _sink_
-  *		appens when a source has been selected for that it.
-  * @ea:		Device attribute for sink representation under PMU directory.
-+ * @spinlock:	Serialize enabling/disabling this device.
-  */
- struct coresight_device {
- 	struct coresight_platform_data *pdata;
-@@ -166,6 +168,7 @@ struct coresight_device {
- 	/* sink specific fields */
- 	bool activated;	/* true only if a sink is part of a path */
- 	struct dev_ext_attribute *ea;
-+	spinlock_t spinlock;
- };
- 
- /*
--- 
-2.22.0.770.g0f2c4a37fd-goog
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gOC84LzE5IDExOjUzIEFNLCBBbGV4IERldWNoZXIgd3JvdGU6Cj4gT24gVGh1LCBBdWcgOCwg
+MjAxOSBhdCAyOjUzIFBNIEd1ZW50ZXIgUm9lY2sgPGxpbnV4QHJvZWNrLXVzLm5ldD4gd3JvdGU6
+Cj4+Cj4+IE9uIE1vbiwgQXVnIDA1LCAyMDE5IGF0IDEyOjEyOjA1UE0gKzAxMDAsIE1hcmsgQnJv
+d24gd3JvdGU6Cj4+PiBPbiBNb24sIEF1ZyAwNSwgMjAxOSBhdCAwMjo0MDozMkFNIC0wNzAwLCBr
+ZXJuZWxjaS5vcmcgYm90IHdyb3RlOgo+Pj4KPj4+IFRvZGF5J3MgLW5leHQgZmFpbHMgdG8gYnVp
+bGQgYW4gYXJtIGFsbG1vZGNvbmZpZyBkdWUgdG86Cj4+Pgo+Pj4+IGFsbG1vZGNvbmZpZyAoYXJt
+LCBnY2MtOCkg4oCUIEZBSUwsIDIgZXJyb3JzLCAxNiB3YXJuaW5ncywgMCBzZWN0aW9uIG1pc21h
+dGNoZXMKPj4+Pgo+Pj4+IEVycm9yczoKPj4+PiAgICAgIGRyaXZlcnMvZ3B1L2RybS9hbWQvYW1k
+Z3B1L2FtZGdwdV9kZXZpY2UuYzoyNzk6OTogZXJyb3I6IGltcGxpY2l0IGRlY2xhcmF0aW9uIG9m
+IGZ1bmN0aW9uICdyZWFkcSc7IGRpZCB5b3UgbWVhbiAncmVhZGInPyBbLVdlcnJvcj1pbXBsaWNp
+dC1mdW5jdGlvbi1kZWNsYXJhdGlvbl0KPj4+PiAgICAgIGRyaXZlcnMvZ3B1L2RybS9hbWQvYW1k
+Z3B1L2FtZGdwdV9kZXZpY2UuYzoyOTg6MzogZXJyb3I6IGltcGxpY2l0IGRlY2xhcmF0aW9uIG9m
+IGZ1bmN0aW9uICd3cml0ZXEnOyBkaWQgeW91IG1lYW4gJ3dyaXRlYic/IFstV2Vycm9yPWltcGxp
+Y2l0LWZ1bmN0aW9uLWRlY2xhcmF0aW9uXQo+Pj4KPj4+IGR1ZSB0byA0ZmExYzZhNjc5YmIwIChk
+cm0vYW1kZ3B1OiBhZGQgUlJFRzY0L1dSRUc2NChfUENJRSkgb3BlcmF0aW9ucykKPj4+IHdoaWNo
+IGludHJvZHVjZXMgdXNlIG9mIHJlYWRxKCkgYW5kIHdyaXRlcSgpLgo+Pgo+PiBBRkFJQ1MgdGhp
+cyBwcm9ibGVtIGFmZmVjdHMgYWxsIDMyLWJpdCBidWlsZHMsIGluY2x1ZGluZyBpMzg2Lgo+PiBJ
+cyBpdCBpbiB0aGUgcHJvY2VzcyBvZiBiZWluZyBmaXhlZCwgb3Igc2hvdWxkIHdlIHN1Ym1pdCBh
+Cj4+IHBhdGNoIGxpbWl0aW5nIERSTV9BTURHUFUgdG8gNjQtYml0IGJ1aWxkcyA/Cj4gCj4gWWVz
+LCB0aGUgZml4IGlzIGJlaW5nIGRpc2N1c3NlZCBoZXJlOgo+IGh0dHBzOi8vcGF0Y2h3b3JrLmZy
+ZWVkZXNrdG9wLm9yZy9wYXRjaC8zMjIyMTMvCj4gCgpQbGVhc2Ugbm90ZSB0aGF0IHRoaXMgZG9l
+cyBmYWlsIGZvciBpMzg2ICgzMi1iaXQgeDg2KSBidWlsZHMsIGNvbnRyYXJ5IHRvIHRoZSBpbmZv
+cm1hdGlvbgppbiB0aGF0IGRpc2N1c3Npb24uIEFsc28sIGZyb20gbG9va2luZyBpbnRvIHRoZSBr
+ZXJuZWwsIEkgb25seSBzZWUgcmVhZHEvd3JpdGVxIGRlZmluZWQKZm9yIGFyY2gveDg2IGluIDY0
+LWJpdCBtb2RlOyBzZWUgYXJjaC94ODYvaW5jbHVkZS9hc20vaW8uaC4KCkd1ZW50ZXIKCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
+ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
