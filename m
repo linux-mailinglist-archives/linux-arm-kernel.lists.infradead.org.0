@@ -2,82 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 911C6870B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 06:37:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B07EF870B6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 06:38:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2FF0+73NSDLNqiV07pYKdJ9qgYfe0PZUw4JjPnXqGZo=; b=ZC6FQad5uFOmnN
-	Rf52Lgj6KP+JiiV2EW2qxGyP5mL3xmeDsE7UYDEi7Iwz5izxIfpOoFzXXnyzxsCXXQ5UUhWd1dyqW
-	DyP6xMy1a9movGYaEAWVPFF2LkbOjxMoI9/VN4mJMo+d/t+or5K+ejn8vTunoQ2UWU58Ch0Drrowa
-	2pysihjgPeuuyimtGCr7fPf6VM7SlVXNigDy8baEGJ1uduA8mwBcSSEQiFPACmWVwFBDgq0SJGe4q
-	DnbIFsNpT1oNgDXbeHpX9XrRS017G9G6OA//ug/5aHiSOElREJeS30UnYQreMd5F4yh8IUNNcbYsR
-	OIUb3p0prhpZWCQEKexg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FWWSuwDj/sZ38tqyxbpePd6MPcEUwSHclWAxWZJrk6o=; b=Bi2LhStCa/O5fT
+	/as9lrPU8Q82tMeUJ+5EsWgE/5Bcfeul3qiaaQ2FoeXFkP5y49fwypm//j182e9Ddwxg6mVvJeqnt
+	Zh2VRVClWvVvXRjAY3US2n1yGgqErX0d8k1Vsx6T/T8grYz5J3h6Gh5jaCy0zpqfwvL1VLVplKJZc
+	wonKf3gXnPVTy9EnBZExomajnkyqAV431ieKj+3lhCoJL+ZV32dyqySTo9vHm/ZQ4IPu6CU6N3Uy6
+	ipqTCNNwAsJ4DCjUgtiuYFimMRetsQQyG4X7RsHdwPyVJVNUkjqJaW4NR17q0XIA4HfKg9Ffh0N+T
+	BwTkcUpMMv/YhA5II/Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvwes-0006Mb-HG; Fri, 09 Aug 2019 04:37:42 +0000
+	id 1hvwfA-0006Vd-Np; Fri, 09 Aug 2019 04:38:00 +0000
 Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvweh-0006Lr-E4
+ id 1hvwei-0006Lw-0Y
  for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 04:37:33 +0000
 Received: from compute7.internal (compute7.nyi.internal [10.202.2.47])
- by mailout.nyi.internal (Postfix) with ESMTP id 3917E21BA9;
- Fri,  9 Aug 2019 00:37:25 -0400 (EDT)
+ by mailout.nyi.internal (Postfix) with ESMTP id E0AF320355;
+ Fri,  9 Aug 2019 00:37:27 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute7.internal (MEProxy); Fri, 09 Aug 2019 00:37:25 -0400
+ by compute7.internal (MEProxy); Fri, 09 Aug 2019 00:37:27 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alistair23.me;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm1; bh=4FHimcbCMY+I1omIJBES7VgYGl
- 5XckWciRYWJ2MmcAw=; b=fON8ouhh32YfvctwQ7EYsmF3/de9yGe4ATZOIb25CI
- 7roQEEXRAN3EirUs2SpHNT6vQF8kY+sNA9tP5g1BDuuQA61nGLdnI5U3knxydU5r
- MbQi7m07YUK2w32d9WcyPvDX951poVxixgQVv8LlmDrV0ip6ZXBsmy753s3jdXVZ
- 7w1u9QfEeYPnUZuBd4NOxJdsF/Ncx8ZgZHNtthCGNt5nNJYKQOjJdDW+sXpnRjJO
- KZoVzTBJ+VA+CwONbAAgBeIN1kcRHbBxv2EtIH+cAT7auhjBa6GhfJXKCWt82dkD
- mbv4ocC74L/boGfSRqI2LlAZQt+0Z/zQJo0o7mL2BsEA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm1; bh=EoJ2wwxdmR03d
+ fpAYPe+gJYviPTMS5bz+4dOnD3WST8=; b=VVvSS6nQtwp9ReVHsB74mR5ERcHfw
+ LhoRQiz7hP/DsK6tJsN3qomhJX7j5v4JljfrAyjMDk8w8kEJl0Hr2yNeabuEGc63
+ nvf//Dz7tVn1pVUYtf6VUQrMuZgU2H/3cUwlN7ccGbz3ZVUB6bNVhzaGyVzmC6Ur
+ R0cVIJnSUNd8MC3MxrikPKqFwCgpsClyrzBHM0ATYiB1lJiz0xO4voKPYfOo1CpB
+ /E3x7b+6ZYJdCQAuhZAGaW58tYdQy2kstiH5Ta6Y/kAHJuVVYD5NOt0uMWf1rBYS
+ dDWlP+GnaeSy8G5MccAk0MQcvym5VdtP7UfzEKAXz1rH8HDIF7JYYIEkw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=4FHimcbCMY+I1omIJ
- BES7VgYGl5XckWciRYWJ2MmcAw=; b=A6tjv9izKyBCaGWFB0zFHjATk9PY8nCLp
- 3YDDrKsHkA8ey7bWbeN0a3B5hYxCGK7D/z1IuPx5C9LzB60v3G8jprdCyvwo7NZ6
- ewOAC2KjuE9ag8qua1wEIQ5n1HIchiTUMSqgMHoz6PtIeguH+TOR3XsV1gBlRwGR
- tkN6N4jLrkWCXeshHWflmYfmVBJSC9f1NCbmb2oIXVP/Ltgx9NgjUcoDT9KWLfff
- fwew5SqhK7yJgAvbsHbCX/V+ZhTSodue9+CZ3Vpr3ZMS8IMvIqK/ObCHn9WeeuaF
- 9UIICAjdzGdjScHt1YUxXIkzW/VfkuaAjHuJVdTsjD9q1qULbvtmg==
-X-ME-Sender: <xms:hPhMXYwtpj1cqZkaiehzLUpg6rAeA4v2gw8WxmIq1xWb89Cu4-0V9A>
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm3; bh=EoJ2wwxdmR03dfpAYPe+gJYviPTMS5bz+4dOnD3WST8=; b=Zct7FONo
+ nij4Phl4eU2Y6zax/dG3Bh8Ly6QW4+90o794JvW1n/qDxQG3ixLi8qTZOwD5Umui
+ ZmpZxIJnqV3LRH6t2zphuKPaXvre1IIwC8YlXhMfXmeIFIhjbUfhZtRW+QFwWIcp
+ TsaF9TLyLDjIApMpWBr/1yUctmo7xlPI2V7jnJVccGqHsBsJVJexA/uGsirc/1t2
+ o6M1mc3CYbYz0uhhMagtEfY/Huyf+AvFcjEIckYDGITVuWIIPqK6WSaXfgGoa6Gg
+ salwgfjck3RMEldVWp9NQwOmaF/bpLyHmi5ysBbOSUS6zkSHzUy9wOF9W3RE3+2h
+ wiTjZHfpUhIVVA==
+X-ME-Sender: <xms:h_hMXfQHdaICBDrtHlhxUQhdl0ggvpCzUfAZHTMPGhUhiJu3bt7XwA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudduiedgkeefucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgggfestdekredtre
- dttdenucfhrhhomheptehlihhsthgrihhrucfhrhgrnhgtihhsuceorghlihhsthgrihhr
- segrlhhishhtrghirhdvfedrmhgvqeenucfkphepjeefrdelfedrkeegrddvtdeknecurf
- grrhgrmhepmhgrihhlfhhrohhmpegrlhhishhtrghirhesrghlihhsthgrihhrvdefrdhm
- vgenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:hPhMXWRKpmbCqrKSU00f5l9oODJck_Fj3RwAQkF4IGSLndIctrcHiA>
- <xmx:hPhMXQ8TEpDh7BunhOoaZekUvQFVYS0Ct_-ByVUMPo9mUHaqis14EA>
- <xmx:hPhMXUuVXQlP3sc5y0WCTFUW9x5rR9JwUNkLHibjRo15uztaA7m0qg>
- <xmx:hfhMXTzY40mTLryCTlPQIj9mtagsYbYqiXA-vXfAgF89gO7rDMpXng>
+ uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgjfhgggfestdekre
+ dtredttdenucfhrhhomheptehlihhsthgrihhrucfhrhgrnhgtihhsuceorghlihhsthgr
+ ihhrsegrlhhishhtrghirhdvfedrmhgvqeenucfkphepjeefrdelfedrkeegrddvtdekne
+ curfgrrhgrmhepmhgrihhlfhhrohhmpegrlhhishhtrghirhesrghlihhsthgrihhrvdef
+ rdhmvgenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:h_hMXb_Y6A1vAhJDUnFlMgl2jmSLz8R1yV6vxIpzxRkK9P73b9xn5A>
+ <xmx:h_hMXYphLM1MwejGBvk365Vh8aREL4Tyd447Wuja8VCbOjBVhmmGUw>
+ <xmx:h_hMXZWJbLFeu3a8HyoWSJ1v6VIl9GvjMjbZvJUum0vspwGtfWJ3zg>
+ <xmx:h_hMXToeHxzVZ2mhB8OEUuJHzQH5IND6utFl7l0FK6va-qtKHhai1w>
 Received: from alistair-xps-14z.alistair23.me
  (c-73-93-84-208.hsd1.ca.comcast.net [73.93.84.208])
- by mail.messagingengine.com (Postfix) with ESMTPA id 9F950380075;
- Fri,  9 Aug 2019 00:37:23 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id BC01A380074;
+ Fri,  9 Aug 2019 00:37:26 -0400 (EDT)
 From: Alistair Francis <alistair@alistair23.me>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] arm64: defconfig: Cleanup the defconfig
-Date: Thu,  8 Aug 2019 14:37:17 -0700
-Message-Id: <20190808213718.12270-1-alistair@alistair23.me>
+Subject: [PATCH 2/2] arm64: defconfig: Enable sound drivers on Allwinner
+ devices
+Date: Thu,  8 Aug 2019 14:37:18 -0700
+Message-Id: <20190808213718.12270-2-alistair@alistair23.me>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190808213718.12270-1-alistair@alistair23.me>
+References: <20190808213718.12270-1-alistair@alistair23.me>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_213731_674775_60E0225A 
-X-CRM114-Status: UNSURE (   6.04  )
+X-CRM114-CacheID: sfid-20190808_213732_124045_7E80C930 
+X-CRM114-Status: UNSURE (   6.19  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
@@ -92,7 +96,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,115 +114,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Re-run savedefconfig to cleanup the defconfig.
+Enable the sound drivers for Allwinner devices.
 
 Signed-off-by: Alistair Francis <alistair@alistair23.me>
 ---
- arch/arm64/configs/defconfig | 24 ++++++------------------
- 1 file changed, 6 insertions(+), 18 deletions(-)
+ arch/arm64/configs/defconfig | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 0e58ef02880c..b17ed20e1754 100644
+index b17ed20e1754..3dc12c3b9bf8 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -88,7 +88,6 @@ CONFIG_ARM_TEGRA186_CPUFREQ=y
- CONFIG_ARM_SCPI_PROTOCOL=y
- CONFIG_RASPBERRYPI_FIRMWARE=y
- CONFIG_INTEL_STRATIX10_SERVICE=y
--CONFIG_TI_SCI_PROTOCOL=y
- CONFIG_EFI_CAPSULE_LOADER=y
- CONFIG_IMX_SCU=y
- CONFIG_IMX_SCU_PD=y
-@@ -193,7 +192,6 @@ CONFIG_PCIE_QCOM=y
- CONFIG_PCIE_ARMADA_8K=y
- CONFIG_PCIE_KIRIN=y
- CONFIG_PCIE_HISI_STB=y
--CONFIG_PCIE_TEGRA194=m
- CONFIG_DEVTMPFS=y
- CONFIG_DEVTMPFS_MOUNT=y
- CONFIG_HISILICON_LPC=y
-@@ -260,18 +258,12 @@ CONFIG_HNS3_ENET=y
- CONFIG_E1000E=y
- CONFIG_IGB=y
- CONFIG_IGBVF=y
--CONFIG_MLX4_EN=m
--CONFIG_MLX4_CORE=m
--CONFIG_MLX4_DEBUG=y
--CONFIG_MLX4_CORE_GEN2=y
--CONFIG_MLX5_CORE=m
--CONFIG_MLX5_CORE_EN=y
--CONFIG_MLX5_EN_ARFS=y
--CONFIG_MLX5_EN_RXNFC=y
--CONFIG_MLX5_MPFS=y
- CONFIG_MVNETA=y
- CONFIG_MVPP2=y
- CONFIG_SKY2=y
-+CONFIG_MLX4_EN=m
-+CONFIG_MLX5_CORE=m
-+CONFIG_MLX5_CORE_EN=y
- CONFIG_QCOM_EMAC=m
- CONFIG_RAVB=y
- CONFIG_SMC91X=y
-@@ -386,8 +378,8 @@ CONFIG_SPI_PL022=y
- CONFIG_SPI_ROCKCHIP=y
- CONFIG_SPI_QUP=y
- CONFIG_SPI_S3C64XX=y
--CONFIG_SPI_SPIDEV=m
- CONFIG_SPI_SUN6I=y
-+CONFIG_SPI_SPIDEV=m
- CONFIG_SPMI=y
- CONFIG_PINCTRL_SINGLE=y
- CONFIG_PINCTRL_MAX77620=y
-@@ -593,7 +585,6 @@ CONFIG_USB_GADGET=y
- CONFIG_USB_RENESAS_USBHS_UDC=m
- CONFIG_USB_RENESAS_USB3=m
- CONFIG_TYPEC=m
--CONFIG_TYPEC_HD3SS3220=m
- CONFIG_MMC=y
- CONFIG_MMC_BLOCK_MINORS=32
- CONFIG_MMC_ARMMMCI=y
-@@ -648,9 +639,9 @@ CONFIG_RTC_DRV_SNVS=m
- CONFIG_RTC_DRV_IMX_SC=m
- CONFIG_RTC_DRV_XGENE=y
- CONFIG_DMADEVICES=y
--CONFIG_FSL_EDMA=y
- CONFIG_DMA_BCM2835=m
- CONFIG_DMA_SUN6I=m
-+CONFIG_FSL_EDMA=y
- CONFIG_K3_DMA=y
- CONFIG_MV_XOR=y
- CONFIG_MV_XOR_V2=y
-@@ -696,7 +687,6 @@ CONFIG_ARM_MHU=y
- CONFIG_IMX_MBOX=y
- CONFIG_PLATFORM_MHU=y
- CONFIG_BCM2835_MBOX=y
--CONFIG_TI_MESSAGE_MANAGER=y
- CONFIG_QCOM_APCS_IPC=y
- CONFIG_ROCKCHIP_IOMMU=y
- CONFIG_TEGRA_IOMMU_SMMU=y
-@@ -736,9 +726,7 @@ CONFIG_ARCH_TEGRA_186_SOC=y
- CONFIG_ARCH_TEGRA_194_SOC=y
- CONFIG_ARCH_K3_AM6_SOC=y
- CONFIG_ARCH_K3_J721E_SOC=y
--CONFIG_SOC_TI=y
- CONFIG_TI_SCI_PM_DOMAINS=y
--CONFIG_DEVFREQ_GOV_SIMPLE_ONDEMAND=y
- CONFIG_EXTCON_USB_GPIO=y
- CONFIG_EXTCON_USBC_CROS_EC=y
- CONFIG_MEMORY=y
-@@ -783,11 +771,11 @@ CONFIG_PHY_TEGRA_XUSB=y
- CONFIG_HISI_PMU=y
- CONFIG_QCOM_L2_PMU=y
- CONFIG_QCOM_L3_PMU=y
--CONFIG_NVMEM_SUNXI_SID=y
- CONFIG_NVMEM_IMX_OCOTP=y
- CONFIG_NVMEM_IMX_OCOTP_SCU=y
- CONFIG_QCOM_QFPROM=y
- CONFIG_ROCKCHIP_EFUSE=y
-+CONFIG_NVMEM_SUNXI_SID=y
- CONFIG_UNIPHIER_EFUSE=y
- CONFIG_MESON_EFUSE=m
- CONFIG_FPGA=y
+@@ -550,6 +550,12 @@ CONFIG_SND_SOC_ROCKCHIP_RT5645=m
+ CONFIG_SND_SOC_RK3399_GRU_SOUND=m
+ CONFIG_SND_SOC_SAMSUNG=y
+ CONFIG_SND_SOC_RCAR=m
++CONFIG_SND_SUN4I_CODEC=m
++CONFIG_SND_SUN8I_CODEC=m
++CONFIG_SND_SUN8I_CODEC_ANALOG=m
++CONFIG_SND_SUN50I_CODEC_ANALOG=m
++CONFIG_SND_SUN4I_I2S=m
++CONFIG_SND_SUN4I_SPDIF=m
+ CONFIG_SND_SOC_AK4613=m
+ CONFIG_SND_SOC_ES7134=m
+ CONFIG_SND_SOC_ES7241=m
 -- 
 2.22.0
 
