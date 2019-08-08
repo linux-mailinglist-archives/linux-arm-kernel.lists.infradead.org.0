@@ -2,48 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD98E85E1B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 11:21:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A5FB85E24
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 11:23:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cpcDTjH6v1e3ISv0PcmQjOfrUiKOsRKOkOXqfxlSgz4=; b=rQnDrVa7SP/hB3ADk+0Ph2oYj
-	Q+xuvVyDCK6qoDQsYFEJMToqniSUGalKoN7yiOtRyjuVQ3dWJu6K6lHIpHqbrcAWXQUNCvs22ur/W
-	YDzg5ar2N8U/CunVGI829AFKjwddTxhSOeOSkf0ACwAbCwTo3U8xJLnAHpiuPXqx+LVZFQu3QMQK2
-	AH+Or4SdVJPtVHYnqapAAGeGDbjjyPR0kj2bg1Lx6VKpS9ce3icwqDhnBAhJDW20nJOStUdA8Ye2T
-	BJas5HDDADQY4HoUCpEKd4T+R3dS0U4JFRsUfIwlQ/vdvavWe8c0TLWW+IhLL3JfW6J0I/Q4k0z95
-	jK54Roz6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MfOdclUaM6ncSw5mZhht8hhaGCHLMqZB/NbFsvlgERs=; b=YvZ27IHi7pjK9Q
+	zDh6DPMENYmDOY9xvl0amV1944i0kUgYyioOd21UC3jLgGTlyHpCHHMr1prIM/wNcFXotQWTuryLj
+	qX7XdD2W6nwjmvsBvD9N3NbZETKJbWK4AtlMckR/B5Ni8uc87G4NRj7GXH/nsOBQtwWqQlx9yxfUG
+	HIMPNI0KAsn551D2cE+udyHxrMWrXAFBzK+/8z+YgqvIGBfzs+xatNsHfTpj8BJVeY/kJGKOIVPAQ
+	NFuBvlTNT5l7Gj/mZodTQdoauXWUV5R1cC3rEHM//5Gf+LIliDcNF7E/aO0X9zLm5KEIznVkRTKQD
+	/0ZJb6C8gWFxaJ/nR11Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvebY-0000O8-61; Thu, 08 Aug 2019 09:21:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hveak-0008Tf-J5
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 09:20:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B46CB1576;
- Thu,  8 Aug 2019 02:20:13 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 22ED33F706;
- Thu,  8 Aug 2019 02:20:13 -0700 (PDT)
-Subject: Re: [PATCH] arm64: Clarify when cpu_enable() is called
-To: will@kernel.org, broonie@kernel.org
-References: <20190806170043.35588-1-broonie@kernel.org>
- <20190807160107.fpanxo4iimhg743c@willie-the-truck>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <460ad751-9b15-03c8-2279-d90837e94219@arm.com>
-Date: Thu, 8 Aug 2019 10:20:12 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hvedL-00013u-Rx; Thu, 08 Aug 2019 09:22:56 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hved7-00012c-IW; Thu, 08 Aug 2019 09:22:42 +0000
+X-UUID: bdcad89be76949b0a1d3ab7afab56b10-20190808
+X-UUID: bdcad89be76949b0a1d3ab7afab56b10-20190808
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 479943235; Thu, 08 Aug 2019 01:22:28 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 8 Aug 2019 02:22:26 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 8 Aug 2019 17:22:25 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 8 Aug 2019 17:22:24 +0800
+From: <dongchun.zhu@mediatek.com>
+To: <mchehab@kernel.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
+ <sakari.ailus@linux.intel.com>, <drinkcat@chromium.org>,
+ <tfiga@chromium.org>, <matthias.bgg@gmail.com>, <bingbu.cao@intel.com>
+Subject: [V1, 0/2] media: ov8856: DT bindings and sensor mode improvements
+Date: Thu, 8 Aug 2019 17:22:13 +0800
+Message-ID: <20190808092215.5608-1-dongchun.zhu@mediatek.com>
+X-Mailer: git-send-email 2.9.2
 MIME-Version: 1.0
-In-Reply-To: <20190807160107.fpanxo4iimhg743c@willie-the-truck>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_022014_889603_9A08F33E 
-X-CRM114-Status: GOOD (  21.63  )
+X-CRM114-CacheID: sfid-20190808_022241_619375_8915D5EC 
+X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -51,6 +58,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,67 +71,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ shengnan.wang@mediatek.com, sj.huang@mediatek.com,
+ linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
+ louis.kuo@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
 
+Hello,
 
-On 07/08/2019 17:01, Will Deacon wrote:
-> [+Suzuki]
-> 
-> On Tue, Aug 06, 2019 at 06:00:43PM +0100, Mark Brown wrote:
->> Strengthen the wording in the documentation for cpu_enable() to make it
->> more obvious to readers not already familiar with the code when the core
->> will call this callback and that this is intentional.
->>
->> Signed-off-by: Mark Brown <broonie@kernel.org>
->> ---
->>   arch/arm64/include/asm/cpufeature.h | 6 +++---
->>   1 file changed, 3 insertions(+), 3 deletions(-)
->>
->> diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
->> index cf65a47ee6b4..3d8afcf687d9 100644
->> --- a/arch/arm64/include/asm/cpufeature.h
->> +++ b/arch/arm64/include/asm/cpufeature.h
->> @@ -289,9 +289,9 @@ struct arm64_cpu_capabilities {
->>   	u16 type;
->>   	bool (*matches)(const struct arm64_cpu_capabilities *caps, int scope);
->>   	/*
->> -	 * Take the appropriate actions to enable this capability for this CPU.
->> -	 * For each successfully booted CPU, this method is called for each
->> -	 * globally detected capability.
->> +	 * Take the appropriate actions to configure this capability for this
->> +	 * CPU.  This will be called on all CPUs in the system if the
->> +	 * capability is detected anywhere in the system.
->>   	 */
->>   	void (*cpu_enable)(const struct arm64_cpu_capabilities *cap);
->>   	union {
-> 
-> That's not quite right though either, is it? We need to take into account
-> the scope of the capability/erratum as well, 
+This series adds DT bindings and some more sensor modes for users to use.
 
-Exactly. Each capability is detected based on the "SCOPE" of the capability.
-So, the above statement is clearly misleading (i.e, mentioning the case for the
-LOCAL_CPU scope capabilities) and is wrong for SYSTEM scope. For that matter,
-one should not talk about the "where" it is detected, as long as he understands
-the "scope" of the capability.
+From the latest ov8856 datasheet, it is proposed to adopt the resolution of 1632*1224 and 3264*2448,
+together with Bayer Order of BGGR. Thus here we provide two more scenarios.
 
-since we don't /always/ call
-> this function for everybody.
-> 
-> Suzuki, are there any cases where ->cpu_enable() may be called on a CPU
-> without the feature outside of ARM64_CPUCAP_LOCAL_CPU_ERRATUM or
-> ARM64_CPUCAP_BOOT_RESTRICTED_CPU_LOCAL_FEATURE?
+In addition, the hardware version of ov8856 is also distinguished from one OTP SRAM register R700F.
+PLL register R3614 requires to be correspondingly updated.
+For instance, 0x20 is suggested for 1B camera module.
 
-The callback can be issued for any "capability" with LOCAL_CPU scope, provided
-the capability is detected before the system finalizes the list. So, it applies
-for both the above and the ARM64_CPUCAP_WEAK_LOCAL_CPU_FEATURE.
+It is emphasized that I2C still actives while device is to runtime suspended.
+This makes ov8856_suspend function need to remove the operation of stoping streaming.
 
-Cheers
-Suzuki
+Finally, ARM and device tree matching were added as an alternative.
+
+Dongchun Zhu (2):
+  media: dt-bindings: media: i2c: Add bindings for OV8856
+  media: i2c: Add more sensor mode for OV8856 camera sensor
+
+ .../devicetree/bindings/media/i2c/ov8856.txt       |  41 ++
+ MAINTAINERS                                        |   1 +
+ drivers/media/i2c/ov8856.c                         | 624 ++++++++++++++++++++-
+ 3 files changed, 663 insertions(+), 3 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.txt
+
+-- 
+2.9.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
