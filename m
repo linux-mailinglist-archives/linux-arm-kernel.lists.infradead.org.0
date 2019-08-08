@@ -2,61 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9EA885EA4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 11:37:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4289285ED6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 11:39:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QkLx47+fwOhWxtObWsXeWzbcviV1UmF1ehkW2ogYH0c=; b=JQkq/X6u4qzDaH
-	JdcdkaV6VIngEI4PGRep6iDccleFB2F9GxJ99eBFtfSyl3i0G3yonRCsW7THuW0YXV6Lw6DfJaGph
-	UtjYSTwU9Nz8Vx/6wAh5nw+eWUaYtm5G72k6vz7xQmMqBAzQicaI5vQWXhORgRj5NAtvxyGGPDTjB
-	GER54NnYLYTyKmdYHfYrwHxUPtNYtLSCpZwyzuvkBd+2Fm6wYk3XeuHFbGojFqdiP4nELTSQvVLU1
-	JD1cv6BwEsPUn/DabsyL+4CdfH4KxbeNCh5vrG8Mz+KWPAQ+9L7cbCkx1ME9pLS824wQfY+3w02GT
-	ly89TJgAjDKNzP4Fnh3A==;
+	List-Owner; bh=fEy9vCq/Qp2naySoW2cJZT2MIAIO3FClWyQKRderbWo=; b=Xkjosdgz1S4BMl
+	AZoJKZkGu/JqsGzhQsJa1wYjdjnnn6hU5j/0qJlW7xdRyRmFrq9bNLxE7OhrcjXTGblAeEq4k1LBK
+	A14H8Ago5HEoAxujZTFqy0IuvVGb1BWImPQnzJfQYXaA4LyvTf254+576qyj9fLjMfWmRe+miVcHs
+	GFqzxoSb3MDdb2rChs5+2mDTD1zRpzIpLcX5mZSnCiNLSifXyQpExG9mQ3lP8w1YhyVBE3LpEbY2c
+	ik0Oc86jeK4SK5KiYvyNz0taKVKsF4AXGhwhYfV2puUXTjSfOplyiZyFwJzRvtCOYz6WbIsE0JDVU
+	3okBTeITMjrBUpdCDG6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hverB-0007Nr-Bd; Thu, 08 Aug 2019 09:37:13 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1hveth-0007y3-84; Thu, 08 Aug 2019 09:39:49 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hveqw-0007NB-NR; Thu, 08 Aug 2019 09:37:01 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
- by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 08 Aug 2019 02:36:57 -0700
-X-IronPort-AV: E=Sophos;i="5.64,360,1559545200"; d="scan'208";a="176467836"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by fmsmga007-auth.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 08 Aug 2019 02:36:53 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id C0F1C203D9; Thu,  8 Aug 2019 12:37:29 +0300 (EEST)
-Date: Thu, 8 Aug 2019 12:37:29 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH v8 06/14] media: rkisp1: add ISP1 statistics driver
-Message-ID: <20190808093729.GR21370@paasikivi.fi.intel.com>
-References: <20190730184256.30338-1-helen.koike@collabora.com>
- <20190730184256.30338-7-helen.koike@collabora.com>
+ id 1hvetT-0007x2-2D
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 09:39:36 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x789cIQd023410; Thu, 8 Aug 2019 11:38:22 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=rfAy2kQie5nyqet5futdME6zq6BbLniw6BappTO8JW8=;
+ b=bZw3ufJS0Ny+6r7smXCGChSxzXuJohT5YuZKYP1I1STBqCiHttUYNKPztyOe3HPD3ezE
+ 00qBEr8ooA9XY7NWjJSrQm8yN9iAWoGSKfzGkM+8KTp5oFvUlJvRCYHxAUd53g7tDU2V
+ bfBVvIA/bwifv9nZiJVrCb7ZV3fUGU2p9Ao4zvD1XuKdY5yOpU9CVzV6Pdf59cBjfurz
+ sChiUvSoCuJVF3Iw1e1yPDyLh6jzdK+En+LVy0KVIwqG1oYXhRh6uu9SRAf3WBz0haBa
+ NPrkaYgnJxtlyIuoI/QlmfjOWQiomFLAZf/ACwBAczRiCPu7Iazvf++zx+AlS5TiPgSu Zg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2u515mvb4c-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Thu, 08 Aug 2019 11:38:22 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 468F938;
+ Thu,  8 Aug 2019 09:38:03 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 22B312DAD65;
+ Thu,  8 Aug 2019 11:38:03 +0200 (CEST)
+Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG6NODE3.st.com
+ (10.75.127.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 8 Aug
+ 2019 11:38:02 +0200
+Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
+ SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
+ 15.00.1473.003; Thu, 8 Aug 2019 11:38:02 +0200
+From: Hugues FRUCHET <hugues.fruchet@st.com>
+To: Hans Verkuil <hverkuil@xs4all.nl>, Alexandre TORGUE
+ <alexandre.torgue@st.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "Sakari Ailus" <sakari.ailus@linux.intel.com>
+Subject: Re: [PATCH v4 0/3] DCMI bridge support
+Thread-Topic: [PATCH v4 0/3] DCMI bridge support
+Thread-Index: AQHVTQkgTcvIjOQmAEWftzhpiuOH2qbw3leA
+Date: Thu, 8 Aug 2019 09:38:02 +0000
+Message-ID: <85edd40f-68cc-13aa-52e0-6ec832bf6c2f@st.com>
+References: <1564577783-18627-1-git-send-email-hugues.fruchet@st.com>
+ <28a2a9ac-d5b9-a312-616a-620e0385cf66@xs4all.nl>
+In-Reply-To: <28a2a9ac-d5b9-a312-616a-620e0385cf66@xs4all.nl>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.45]
+Content-ID: <68E7D2C351D66940A2DE53144A771ACE@st.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190730184256.30338-7-helen.koike@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-08-08_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_023658_800865_A06D1702 
-X-CRM114-Status: GOOD (  22.03  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190808_023935_403540_2BE10F46 
+X-CRM114-Status: GOOD (  14.41  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,678 +108,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
- heiko@sntech.de, jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com,
- zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- linux-rockchip@lists.infradead.org, Allon Huang <allon.huang@rock-chips.com>,
- Jacob Chen <cc@rock-chips.com>, hans.verkuil@cisco.com,
- laurent.pinchart@ideasonboard.com, zhengsq@rock-chips.com, mchehab@kernel.org,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Mickael GUENE <mickael.guene@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Philippe CORNU <philippe.cornu@st.com>, Yannick FERTRE <yannick.fertre@st.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Helen,
+Hi Hans,
 
-On Tue, Jul 30, 2019 at 03:42:48PM -0300, Helen Koike wrote:
-> From: Jacob Chen <jacob2.chen@rock-chips.com>
+You're welcome, here it is:
+
+1) v4l-utils master branch, commit 
+6aa15f7447d4aeca6af1ed7ee9644a0c7e891ece "v4l2-ctl: fix double 
+decrementing of stream_count"
+
+2) Cropping test is failed as usual because of OV5640 discrete framesizes
+
+3) No more /dev/media* and /dev/v4l-*:
+root@stm32mp1-av96:~# ls -al /dev/video0
+crw-rw---- 1 root video 81, 0 Mar 19 17:42 /dev/video0
+root@stm32mp1-av96:~# ls -al /dev/media*
+ls: cannot access '/dev/media*': No such file or directory
+root@stm32mp1-av96:~# ls -al /dev/v4l-*
+ls: cannot access '/dev/v4l-*': No such file or directory
+
+
+root@stm32mp1-av96:~# v4l2-compliance -s
+v4l2-compliance SHA: 6aa15f7447d4aeca6af1ed7ee9644a0c7e891ece, 32 bits
+
+Compliance test for stm32-dcmi device /dev/video0:
+
+Driver Info:
+         Driver name      : stm32-dcmi
+         Card type        : STM32 Camera Memory Interface
+         Bus info         : platform:dcmi
+         Driver version   : 4.19.49
+         Capabilities     : 0x85200001
+                 Video Capture
+                 Read/Write
+                 Streaming
+                 Extended Pix Format
+                 Device Capabilities
+         Device Caps      : 0x05200001
+                 Video Capture
+                 Read/Write
+                 Streaming
+                 Extended Pix Format
+
+Required ioctls:
+         test VIDIOC_QUERYCAP: OK
+
+Allow for multiple opens:
+         test second /dev/video0 open: OK
+         test VIDIOC_QUERYCAP: OK
+         test VIDIOC_G/S_PRIORITY: OK
+         test for unlimited opens: OK
+
+Debug ioctls:
+         test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
+         test VIDIOC_LOG_STATUS: OK
+
+Input ioctls:
+         test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
+         test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+         test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
+         test VIDIOC_ENUMAUDIO: OK (Not Supported)
+         test VIDIOC_G/S/ENUMINPUT: OK
+         test VIDIOC_G/S_AUDIO: OK (Not Supported)
+         Inputs: 1 Audio Inputs: 0 Tuners: 0
+
+Output ioctls:
+         test VIDIOC_G/S_MODULATOR: OK (Not Supported)
+         test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+         test VIDIOC_ENUMAUDOUT: OK (Not Supported)
+         test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
+         test VIDIOC_G/S_AUDOUT: OK (Not Supported)
+         Outputs: 0 Audio Outputs: 0 Modulators: 0
+
+Input/Output configuration ioctls:
+         test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
+         test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
+         test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
+         test VIDIOC_G/S_EDID: OK (Not Supported)
+
+Control ioctls (Input 0):
+         test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
+         test VIDIOC_QUERYCTRL: OK
+         test VIDIOC_G/S_CTRL: OK
+         test VIDIOC_G/S/TRY_EXT_CTRLS: OK
+         test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
+         test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
+         Standard Controls: 18 Private Controls: 0
+
+Format ioctls (Input 0):
+         test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
+         test VIDIOC_G/S_PARM: OK
+         test VIDIOC_G_FBUF: OK (Not Supported)
+         test VIDIOC_G_FMT: OK
+         test VIDIOC_TRY_FMT: OK
+         test VIDIOC_S_FMT: OK
+         test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
+                 fail: 
+../../../../../../../../../sources/v4l-utils/utils/v4l2-compliance/v4l2-test-formats.cpp(1414): 
+node->frmsizes_count[pixfm
+t] > 1
+         test Cropping: FAIL
+         test Composing: OK (Not Supported)
+         test Scaling: OK (Not Supported)
+
+Codec ioctls (Input 0):
+         test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
+         test VIDIOC_G_ENC_INDEX: OK (Not Supported)
+         test VIDIOC_(TRY_)DECODER_CMD: OK (Not Supported)
+
+Buffer ioctls (Input 0):
+         test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
+         test VIDIOC_EXPBUF: OK
+         test Requests: OK (Not Supported)
+
+Test input 0:
+
+Streaming ioctls:
+         test read/write: OK
+         test blocking wait: OK
+         test MMAP (no poll): OK
+         test MMAP (select): OK
+         test MMAP (epoll): OK
+         test USERPTR (no poll): OK (Not Supported)
+         test USERPTR (select): OK (Not Supported)
+         test DMABUF: Cannot test, specify --expbuf-device
+
+Total for stm32-dcmi device /dev/video0: 51, Succeeded: 50, Failed: 1, 
+Warnings: 0
+
+
+On 8/7/19 12:15 PM, Hans Verkuil wrote:
+> Hi Hugues,
 > 
-> Add the capture video driver for rockchip isp1 statistics block.
+> Can you provide the output of the most recent v4l2-compliance?
 > 
-> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
-> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
-> Signed-off-by: Yichong Zhong <zyc@rock-chips.com>
-> Signed-off-by: Jacob Chen <cc@rock-chips.com>
-> Signed-off-by: Eddie Cai <eddie.cai.linux@gmail.com>
-> Signed-off-by: Jeffy Chen <jeffy.chen@rock-chips.com>
-> Signed-off-by: Allon Huang <allon.huang@rock-chips.com>
-> Signed-off-by: Tomasz Figa <tfiga@chromium.org>
-> [update for upstream]
-> Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> Acked-by: Hans Verkuil <hans.verkuil@cisco.com>
+> Use 'v4l2-compliance -s'.
 > 
-> ---
+> Also, just to confirm, with this v4 there are no /dev/mediaX or
+> /dev/v4l-subdevX devices created anymore, right?
 > 
-> Changes in v8: None
-> Changes in v7:
-> - s/strlcpy/strscpy
-> - sort out the locks in isp stats
-> - code styling and checkpatch fixes
+> This v4 looks good to me, I just want to have these final checks
+> done.
 > 
->  .../media/platform/rockchip/isp1/isp_stats.c  | 508 ++++++++++++++++++
->  .../media/platform/rockchip/isp1/isp_stats.h  |  60 +++
->  2 files changed, 568 insertions(+)
->  create mode 100644 drivers/media/platform/rockchip/isp1/isp_stats.c
->  create mode 100644 drivers/media/platform/rockchip/isp1/isp_stats.h
+> Regards,
 > 
-> diff --git a/drivers/media/platform/rockchip/isp1/isp_stats.c b/drivers/media/platform/rockchip/isp1/isp_stats.c
-> new file mode 100644
-> index 000000000000..01d947867c70
-> --- /dev/null
-> +++ b/drivers/media/platform/rockchip/isp1/isp_stats.c
-> @@ -0,0 +1,508 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Rockchip isp1 driver
-> + *
-> + * Copyright (C) 2017 Rockchip Electronics Co., Ltd.
-> + */
-> +
-> +#include <media/v4l2-common.h>
-> +#include <media/v4l2-event.h>
-> +#include <media/v4l2-ioctl.h>
-> +#include <media/videobuf2-core.h>
-> +#include <media/videobuf2-vmalloc.h>	/* for ISP statistics */
-> +
-> +#include "dev.h"
-> +#include "regs.h"
-> +
-> +#define RKISP1_ISP_STATS_REQ_BUFS_MIN 2
-> +#define RKISP1_ISP_STATS_REQ_BUFS_MAX 8
-> +
-> +static int rkisp1_stats_enum_fmt_meta_cap(struct file *file, void *priv,
-> +					  struct v4l2_fmtdesc *f)
-> +{
-> +	struct video_device *video = video_devdata(file);
-> +	struct rkisp1_isp_stats_vdev *stats_vdev = video_get_drvdata(video);
-> +
-> +	if (f->index > 0 || f->type != video->queue->type)
-> +		return -EINVAL;
-> +
-> +	f->pixelformat = stats_vdev->vdev_fmt.fmt.meta.dataformat;
-> +	return 0;
-> +}
-> +
-> +static int rkisp1_stats_g_fmt_meta_cap(struct file *file, void *priv,
-> +				       struct v4l2_format *f)
-> +{
-> +	struct video_device *video = video_devdata(file);
-> +	struct rkisp1_isp_stats_vdev *stats_vdev = video_get_drvdata(video);
-> +	struct v4l2_meta_format *meta = &f->fmt.meta;
-> +
-> +	if (f->type != video->queue->type)
-> +		return -EINVAL;
-> +
-> +	memset(meta, 0, sizeof(*meta));
-> +	meta->dataformat = stats_vdev->vdev_fmt.fmt.meta.dataformat;
-> +	meta->buffersize = stats_vdev->vdev_fmt.fmt.meta.buffersize;
-> +
-> +	return 0;
-> +}
-> +
-> +static int rkisp1_stats_querycap(struct file *file,
-> +				 void *priv, struct v4l2_capability *cap)
-> +{
-> +	struct video_device *vdev = video_devdata(file);
-> +
-> +	strscpy(cap->driver, DRIVER_NAME, sizeof(cap->driver));
-> +	strscpy(cap->card, vdev->name, sizeof(cap->card));
-> +	strscpy(cap->bus_info, "platform: " DRIVER_NAME, sizeof(cap->bus_info));
-> +
-> +	return 0;
-> +}
-> +
-> +/* ISP video device IOCTLs */
-> +static const struct v4l2_ioctl_ops rkisp1_stats_ioctl = {
-> +	.vidioc_reqbufs = vb2_ioctl_reqbufs,
-> +	.vidioc_querybuf = vb2_ioctl_querybuf,
-> +	.vidioc_create_bufs = vb2_ioctl_create_bufs,
-> +	.vidioc_qbuf = vb2_ioctl_qbuf,
-> +	.vidioc_dqbuf = vb2_ioctl_dqbuf,
-> +	.vidioc_prepare_buf = vb2_ioctl_prepare_buf,
-> +	.vidioc_expbuf = vb2_ioctl_expbuf,
-> +	.vidioc_streamon = vb2_ioctl_streamon,
-> +	.vidioc_streamoff = vb2_ioctl_streamoff,
-> +	.vidioc_enum_fmt_meta_cap = rkisp1_stats_enum_fmt_meta_cap,
-> +	.vidioc_g_fmt_meta_cap = rkisp1_stats_g_fmt_meta_cap,
-> +	.vidioc_s_fmt_meta_cap = rkisp1_stats_g_fmt_meta_cap,
-> +	.vidioc_try_fmt_meta_cap = rkisp1_stats_g_fmt_meta_cap,
-> +	.vidioc_querycap = rkisp1_stats_querycap,
-> +	.vidioc_subscribe_event = v4l2_ctrl_subscribe_event,
-> +	.vidioc_unsubscribe_event = v4l2_event_unsubscribe,
+> 	Hans
+> 
 
-Do you have controls on the video nodes? If not, you can remove the two.
-
-> +};
-> +
-> +struct v4l2_file_operations rkisp1_stats_fops = {
-
-static const
-
-> +	.mmap = vb2_fop_mmap,
-> +	.unlocked_ioctl = video_ioctl2,
-> +	.poll = vb2_fop_poll,
-> +	.open = v4l2_fh_open,
-> +	.release = vb2_fop_release
-> +};
-> +
-> +static int rkisp1_stats_vb2_queue_setup(struct vb2_queue *vq,
-> +					unsigned int *num_buffers,
-> +					unsigned int *num_planes,
-> +					unsigned int sizes[],
-> +					struct device *alloc_devs[])
-> +{
-> +	struct rkisp1_isp_stats_vdev *stats_vdev = vq->drv_priv;
-> +
-> +	*num_planes = 1;
-> +
-> +	*num_buffers = clamp_t(u32, *num_buffers, RKISP1_ISP_STATS_REQ_BUFS_MIN,
-> +			       RKISP1_ISP_STATS_REQ_BUFS_MAX);
-> +
-> +	sizes[0] = sizeof(struct rkisp1_stat_buffer);
-> +
-> +	INIT_LIST_HEAD(&stats_vdev->stat);
-> +
-> +	return 0;
-> +}
-> +
-> +static void rkisp1_stats_vb2_buf_queue(struct vb2_buffer *vb)
-> +{
-> +	struct vb2_v4l2_buffer *vbuf = to_vb2_v4l2_buffer(vb);
-> +	struct rkisp1_buffer *stats_buf = to_rkisp1_buffer(vbuf);
-> +	struct vb2_queue *vq = vb->vb2_queue;
-> +	struct rkisp1_isp_stats_vdev *stats_dev = vq->drv_priv;
-> +
-> +	stats_buf->vaddr[0] = vb2_plane_vaddr(vb, 0);
-> +
-> +	mutex_lock(&stats_dev->wq_lock);
-> +	list_add_tail(&stats_buf->queue, &stats_dev->stat);
-> +	mutex_unlock(&stats_dev->wq_lock);
-> +}
-> +
-> +static int rkisp1_stats_vb2_buf_prepare(struct vb2_buffer *vb)
-> +{
-> +	if (vb2_plane_size(vb, 0) < sizeof(struct rkisp1_stat_buffer))
-> +		return -EINVAL;
-> +
-> +	vb2_set_plane_payload(vb, 0, sizeof(struct rkisp1_stat_buffer));
-> +
-> +	return 0;
-> +}
-> +
-> +static void rkisp1_stats_vb2_stop_streaming(struct vb2_queue *vq)
-> +{
-> +	struct rkisp1_isp_stats_vdev *stats_vdev = vq->drv_priv;
-> +	struct rkisp1_buffer *buf;
-> +	unsigned long flags;
-> +	unsigned int i;
-> +
-> +	/* Make sure no new work queued in isr before draining wq */
-> +	spin_lock_irqsave(&stats_vdev->irq_lock, flags);
-> +	stats_vdev->streamon = false;
-> +	spin_unlock_irqrestore(&stats_vdev->irq_lock, flags);
-> +
-> +	drain_workqueue(stats_vdev->readout_wq);
-> +
-> +	mutex_lock(&stats_vdev->wq_lock);
-> +	for (i = 0; i < RKISP1_ISP_STATS_REQ_BUFS_MAX; i++) {
-> +		if (list_empty(&stats_vdev->stat))
-> +			break;
-> +		buf = list_first_entry(&stats_vdev->stat,
-> +				       struct rkisp1_buffer, queue);
-> +		list_del(&buf->queue);
-> +		vb2_buffer_done(&buf->vb.vb2_buf, VB2_BUF_STATE_ERROR);
-> +	}
-> +	mutex_unlock(&stats_vdev->wq_lock);
-> +}
-> +
-> +static int
-> +rkisp1_stats_vb2_start_streaming(struct vb2_queue *queue,
-> +				 unsigned int count)
-> +{
-> +	struct rkisp1_isp_stats_vdev *stats_vdev = queue->drv_priv;
-> +
-> +	stats_vdev->streamon = true;
-> +
-> +	return 0;
-> +}
-> +
-> +static struct vb2_ops rkisp1_stats_vb2_ops = {
-
-const
-
-> +	.queue_setup = rkisp1_stats_vb2_queue_setup,
-> +	.buf_queue = rkisp1_stats_vb2_buf_queue,
-> +	.buf_prepare = rkisp1_stats_vb2_buf_prepare,
-> +	.wait_prepare = vb2_ops_wait_prepare,
-> +	.wait_finish = vb2_ops_wait_finish,
-> +	.stop_streaming = rkisp1_stats_vb2_stop_streaming,
-> +	.start_streaming = rkisp1_stats_vb2_start_streaming,
-> +};
-> +
-> +static int rkisp1_stats_init_vb2_queue(struct vb2_queue *q,
-> +				       struct rkisp1_isp_stats_vdev *stats_vdev)
-> +{
-> +	struct rkisp1_vdev_node *node;
-> +
-> +	node = queue_to_node(q);
-> +
-> +	q->type = V4L2_BUF_TYPE_META_CAPTURE;
-> +	q->io_modes = VB2_MMAP | VB2_USERPTR | VB2_DMABUF;
-> +	q->drv_priv = stats_vdev;
-> +	q->ops = &rkisp1_stats_vb2_ops;
-> +	q->mem_ops = &vb2_vmalloc_memops;
-> +	q->buf_struct_size = sizeof(struct rkisp1_buffer);
-> +	q->timestamp_flags = V4L2_BUF_FLAG_TIMESTAMP_MONOTONIC;
-> +	q->lock = &node->vlock;
-> +
-> +	return vb2_queue_init(q);
-> +}
-> +
-> +static void rkisp1_stats_get_awb_meas(struct rkisp1_isp_stats_vdev *stats_vdev,
-> +				      struct rkisp1_stat_buffer *pbuf)
-> +{
-> +	/* Protect against concurrent access from ISR? */
-> +	u32 reg_val;
-> +
-> +	pbuf->meas_type |= CIFISP_STAT_AWB;
-> +	reg_val = readl(stats_vdev->dev->base_addr + CIF_ISP_AWB_WHITE_CNT);
-> +	pbuf->params.awb.awb_mean[0].cnt = CIF_ISP_AWB_GET_PIXEL_CNT(reg_val);
-> +	reg_val = readl(stats_vdev->dev->base_addr + CIF_ISP_AWB_MEAN);
-> +
-> +	pbuf->params.awb.awb_mean[0].mean_cr_or_r =
-> +		CIF_ISP_AWB_GET_MEAN_CR_R(reg_val);
-> +	pbuf->params.awb.awb_mean[0].mean_cb_or_b =
-> +		CIF_ISP_AWB_GET_MEAN_CB_B(reg_val);
-> +	pbuf->params.awb.awb_mean[0].mean_y_or_g =
-> +		CIF_ISP_AWB_GET_MEAN_Y_G(reg_val);
-> +}
-> +
-> +static void rkisp1_stats_get_aec_meas(struct rkisp1_isp_stats_vdev *stats_vdev,
-> +				      struct rkisp1_stat_buffer *pbuf)
-> +{
-> +	void __iomem *addr = stats_vdev->dev->base_addr + CIF_ISP_EXP_MEAN_00;
-> +	unsigned int i;
-> +
-> +	pbuf->meas_type |= CIFISP_STAT_AUTOEXP;
-> +	for (i = 0; i < CIFISP_AE_MEAN_MAX; i++)
-> +		pbuf->params.ae.exp_mean[i] = (u8)readl(addr + i * 4);
-> +}
-> +
-> +static void rkisp1_stats_get_afc_meas(struct rkisp1_isp_stats_vdev *stats_vdev,
-> +				      struct rkisp1_stat_buffer *pbuf)
-> +{
-> +	void __iomem *base_addr;
-> +	struct cifisp_af_stat *af;
-> +
-> +	pbuf->meas_type = CIFISP_STAT_AFM_FIN;
-> +
-> +	af = &pbuf->params.af;
-> +	base_addr = stats_vdev->dev->base_addr;
-> +	af->window[0].sum = readl(base_addr + CIF_ISP_AFM_SUM_A);
-> +	af->window[0].lum = readl(base_addr + CIF_ISP_AFM_LUM_A);
-> +	af->window[1].sum = readl(base_addr + CIF_ISP_AFM_SUM_B);
-> +	af->window[1].lum = readl(base_addr + CIF_ISP_AFM_LUM_B);
-> +	af->window[2].sum = readl(base_addr + CIF_ISP_AFM_SUM_C);
-> +	af->window[2].lum = readl(base_addr + CIF_ISP_AFM_LUM_C);
-> +}
-> +
-> +static void rkisp1_stats_get_hst_meas(struct rkisp1_isp_stats_vdev *stats_vdev,
-> +				      struct rkisp1_stat_buffer *pbuf)
-> +{
-> +	void __iomem *addr = stats_vdev->dev->base_addr + CIF_ISP_HIST_BIN_0;
-> +	unsigned int i;
-> +
-> +	pbuf->meas_type |= CIFISP_STAT_HIST;
-> +	for (i = 0; i < CIFISP_HIST_BIN_N_MAX; i++)
-> +		pbuf->params.hist.hist_bins[i] = readl(addr + (i * 4));
-> +}
-> +
-> +static void rkisp1_stats_get_bls_meas(struct rkisp1_isp_stats_vdev *stats_vdev,
-> +				      struct rkisp1_stat_buffer *pbuf)
-> +{
-> +	struct rkisp1_device *dev = stats_vdev->dev;
-> +	const struct ispsd_in_fmt *in_fmt =
-> +			rkisp1_get_ispsd_in_fmt(&dev->isp_sdev);
-> +	void __iomem *base = stats_vdev->dev->base_addr;
-> +	struct cifisp_bls_meas_val *bls_val;
-> +
-> +	bls_val = &pbuf->params.ae.bls_val;
-> +	if (in_fmt->bayer_pat == RAW_BGGR) {
-> +		bls_val->meas_b = readl(base + CIF_ISP_BLS_A_MEASURED);
-> +		bls_val->meas_gb = readl(base + CIF_ISP_BLS_B_MEASURED);
-> +		bls_val->meas_gr = readl(base + CIF_ISP_BLS_C_MEASURED);
-> +		bls_val->meas_r = readl(base + CIF_ISP_BLS_D_MEASURED);
-> +	} else if (in_fmt->bayer_pat == RAW_GBRG) {
-> +		bls_val->meas_gb = readl(base + CIF_ISP_BLS_A_MEASURED);
-> +		bls_val->meas_b = readl(base + CIF_ISP_BLS_B_MEASURED);
-> +		bls_val->meas_r = readl(base + CIF_ISP_BLS_C_MEASURED);
-> +		bls_val->meas_gr = readl(base + CIF_ISP_BLS_D_MEASURED);
-> +	} else if (in_fmt->bayer_pat == RAW_GRBG) {
-> +		bls_val->meas_gr = readl(base + CIF_ISP_BLS_A_MEASURED);
-> +		bls_val->meas_r = readl(base + CIF_ISP_BLS_B_MEASURED);
-> +		bls_val->meas_b = readl(base + CIF_ISP_BLS_C_MEASURED);
-> +		bls_val->meas_gb = readl(base + CIF_ISP_BLS_D_MEASURED);
-> +	} else if (in_fmt->bayer_pat == RAW_RGGB) {
-> +		bls_val->meas_r = readl(base + CIF_ISP_BLS_A_MEASURED);
-> +		bls_val->meas_gr = readl(base + CIF_ISP_BLS_B_MEASURED);
-> +		bls_val->meas_gb = readl(base + CIF_ISP_BLS_C_MEASURED);
-> +		bls_val->meas_b = readl(base + CIF_ISP_BLS_D_MEASURED);
-> +	}
-> +}
-> +
-> +static void
-> +rkisp1_stats_send_measurement(struct rkisp1_isp_stats_vdev *stats_vdev,
-> +			      struct rkisp1_isp_readout_work *meas_work)
-> +{
-> +	struct rkisp1_stat_buffer *cur_stat_buf;
-> +	struct rkisp1_buffer *cur_buf = NULL;
-> +	unsigned int cur_frame_id = -1;
-> +
-> +	cur_frame_id = atomic_read(&stats_vdev->dev->isp_sdev.frm_sync_seq) - 1;
-> +	if (cur_frame_id != meas_work->frame_id) {
-> +		v4l2_warn(stats_vdev->vnode.vdev.v4l2_dev,
-> +			  "Measurement late(%d, %d)\n",
-> +			  cur_frame_id, meas_work->frame_id);
-> +		cur_frame_id = meas_work->frame_id;
-> +	}
-> +
-> +	mutex_lock(&stats_vdev->wq_lock);
-> +	/* get one empty buffer */
-> +	if (!list_empty(&stats_vdev->stat)) {
-> +		cur_buf = list_first_entry(&stats_vdev->stat,
-> +					   struct rkisp1_buffer, queue);
-> +		list_del(&cur_buf->queue);
-> +	}
-> +	mutex_unlock(&stats_vdev->wq_lock);
-> +
-> +	if (!cur_buf)
-> +		return;
-> +
-> +	cur_stat_buf =
-> +		(struct rkisp1_stat_buffer *)(cur_buf->vaddr[0]);
-> +
-> +	if (meas_work->isp_ris & CIF_ISP_AWB_DONE) {
-> +		rkisp1_stats_get_awb_meas(stats_vdev, cur_stat_buf);
-> +		cur_stat_buf->meas_type |= CIFISP_STAT_AWB;
-> +	}
-> +
-> +	if (meas_work->isp_ris & CIF_ISP_AFM_FIN) {
-> +		rkisp1_stats_get_afc_meas(stats_vdev, cur_stat_buf);
-> +		cur_stat_buf->meas_type |= CIFISP_STAT_AFM_FIN;
-> +	}
-> +
-> +	if (meas_work->isp_ris & CIF_ISP_EXP_END) {
-> +		rkisp1_stats_get_aec_meas(stats_vdev, cur_stat_buf);
-> +		rkisp1_stats_get_bls_meas(stats_vdev, cur_stat_buf);
-> +		cur_stat_buf->meas_type |= CIFISP_STAT_AUTOEXP;
-> +	}
-> +
-> +	if (meas_work->isp_ris & CIF_ISP_HIST_MEASURE_RDY) {
-> +		rkisp1_stats_get_hst_meas(stats_vdev, cur_stat_buf);
-> +		cur_stat_buf->meas_type |= CIFISP_STAT_HIST;
-> +	}
-> +
-> +	vb2_set_plane_payload(&cur_buf->vb.vb2_buf, 0,
-> +			      sizeof(struct rkisp1_stat_buffer));
-> +	cur_buf->vb.sequence = cur_frame_id;
-> +	cur_buf->vb.vb2_buf.timestamp = ktime_get_ns();
-
-It might be better to get the timestamp in the beginning of the function
-before acquiring the mutex which can take a relatively long time.
-
-> +	vb2_buffer_done(&cur_buf->vb.vb2_buf, VB2_BUF_STATE_DONE);
-> +}
-> +
-> +static void rkisp1_stats_readout_work(struct work_struct *work)
-> +{
-> +	struct rkisp1_isp_readout_work *readout_work = container_of(work,
-> +						struct rkisp1_isp_readout_work,
-> +						work);
-> +	struct rkisp1_isp_stats_vdev *stats_vdev = readout_work->stats_vdev;
-> +
-> +	if (readout_work->readout == RKISP1_ISP_READOUT_MEAS)
-> +		rkisp1_stats_send_measurement(stats_vdev, readout_work);
-> +
-> +	kfree(readout_work);
-> +}
-> +
-> +int rkisp1_stats_isr(struct rkisp1_isp_stats_vdev *stats_vdev, u32 isp_ris)
-> +{
-> +	unsigned int cur_frame_id =
-> +		atomic_read(&stats_vdev->dev->isp_sdev.frm_sync_seq) - 1;
-> +	struct rkisp1_isp_readout_work *work;
-> +	unsigned int isp_mis_tmp = 0;
-> +#ifdef LOG_ISR_EXE_TIME
-> +	ktime_t in_t = ktime_get();
-> +#endif
-> +
-> +	spin_lock(&stats_vdev->irq_lock);
-> +
-> +	writel((CIF_ISP_AWB_DONE | CIF_ISP_AFM_FIN | CIF_ISP_EXP_END |
-> +		CIF_ISP_HIST_MEASURE_RDY),
-> +		stats_vdev->dev->base_addr + CIF_ISP_ICR);
-> +
-> +	isp_mis_tmp = readl(stats_vdev->dev->base_addr + CIF_ISP_MIS);
-> +	if (isp_mis_tmp &
-> +		(CIF_ISP_AWB_DONE | CIF_ISP_AFM_FIN |
-> +		 CIF_ISP_EXP_END | CIF_ISP_HIST_MEASURE_RDY))
-> +		v4l2_err(stats_vdev->vnode.vdev.v4l2_dev,
-> +			 "isp icr 3A info err: 0x%x\n",
-> +			 isp_mis_tmp);
-> +
-> +	if (!stats_vdev->streamon)
-> +		goto unlock;
-> +	if (isp_ris & (CIF_ISP_AWB_DONE | CIF_ISP_AFM_FIN | CIF_ISP_EXP_END |
-> +		CIF_ISP_HIST_MEASURE_RDY)) {
-> +		work = (struct rkisp1_isp_readout_work *)
-> +			kzalloc(sizeof(struct rkisp1_isp_readout_work),
-> +				GFP_ATOMIC);
-> +		if (work) {
-> +			INIT_WORK(&work->work,
-> +				  rkisp1_stats_readout_work);
-> +			work->readout = RKISP1_ISP_READOUT_MEAS;
-> +			work->stats_vdev = stats_vdev;
-> +			work->frame_id = cur_frame_id;
-> +			work->isp_ris = isp_ris;
-> +			if (!queue_work(stats_vdev->readout_wq,
-> +					&work->work))
-
-Please use threaded interrupt handling instead.
-
-> +				kfree(work);
-> +		} else {
-> +			v4l2_err(stats_vdev->vnode.vdev.v4l2_dev,
-> +				 "Could not allocate work\n");
-> +		}
-> +	}
-> +
-> +#ifdef LOG_ISR_EXE_TIME
-> +	if (isp_ris & (CIF_ISP_EXP_END | CIF_ISP_AWB_DONE |
-> +		       CIF_ISP_FRAME | CIF_ISP_HIST_MEASURE_RDY)) {
-> +		unsigned int diff_us =
-> +				ktime_to_us(ktime_sub(ktime_get(), in_t));
-> +
-> +		if (diff_us > g_longest_isr_time)
-> +			g_longest_isr_time = diff_us;
-> +
-> +		v4l2_info(stats_vdev->vnode.vdev.v4l2_dev,
-> +			  "isp_isr time %d %d\n", diff_us, g_longest_isr_time);
-> +	}
-> +#endif
-
-I'd remove this; it could be useful during development time but hardly any
-longer.
-
-> +
-> +unlock:
-> +	spin_unlock(&stats_vdev->irq_lock);
-> +
-> +	return 0;
-> +}
-> +
-> +static void rkisp1_init_stats_vdev(struct rkisp1_isp_stats_vdev *stats_vdev)
-> +{
-> +	stats_vdev->vdev_fmt.fmt.meta.dataformat =
-> +		V4L2_META_FMT_RK_ISP1_STAT_3A;
-> +	stats_vdev->vdev_fmt.fmt.meta.buffersize =
-> +		sizeof(struct rkisp1_stat_buffer);
-> +}
-> +
-> +int rkisp1_register_stats_vdev(struct rkisp1_isp_stats_vdev *stats_vdev,
-> +			       struct v4l2_device *v4l2_dev,
-> +			       struct rkisp1_device *dev)
-> +{
-> +	struct rkisp1_vdev_node *node = &stats_vdev->vnode;
-> +	struct video_device *vdev = &node->vdev;
-> +	unsigned int ret;
-> +
-> +	stats_vdev->dev = dev;
-> +	mutex_init(&stats_vdev->wq_lock);
-> +	mutex_init(&node->vlock);
-> +	INIT_LIST_HEAD(&stats_vdev->stat);
-> +	spin_lock_init(&stats_vdev->irq_lock);
-> +
-> +	strlcpy(vdev->name, "rkisp1-statistics", sizeof(vdev->name));
-
-strscpy()?
-
-> +
-> +	video_set_drvdata(vdev, stats_vdev);
-> +	vdev->ioctl_ops = &rkisp1_stats_ioctl;
-> +	vdev->fops = &rkisp1_stats_fops;
-> +	vdev->release = video_device_release_empty;
-> +	vdev->lock = &node->vlock;
-> +	vdev->v4l2_dev = v4l2_dev;
-> +	vdev->queue = &node->buf_queue;
-> +	vdev->device_caps = V4L2_CAP_META_CAPTURE | V4L2_CAP_STREAMING;
-> +	vdev->vfl_dir =  VFL_DIR_RX;
-> +	rkisp1_stats_init_vb2_queue(vdev->queue, stats_vdev);
-> +	rkisp1_init_stats_vdev(stats_vdev);
-> +	video_set_drvdata(vdev, stats_vdev);
-> +
-> +	node->pad.flags = MEDIA_PAD_FL_SINK;
-> +	ret = media_entity_pads_init(&vdev->entity, 1, &node->pad);
-> +	if (ret < 0)
-> +		goto err_release_queue;
-> +
-> +	ret = video_register_device(vdev, VFL_TYPE_GRABBER, -1);
-> +	if (ret < 0) {
-> +		dev_err(&vdev->dev,
-> +			"could not register Video for Linux device\n");
-> +		goto err_cleanup_media_entity;
-> +	}
-> +
-> +	stats_vdev->readout_wq =
-> +	    alloc_workqueue("measurement_queue",
-
-Indentation.
-
-> +			    WQ_UNBOUND | WQ_MEM_RECLAIM, 1);
-> +
-> +	if (!stats_vdev->readout_wq) {
-> +		ret = -ENOMEM;
-> +			goto err_unreg_vdev;
-
-Same here.
-
-> +	}
-> +
-> +	return 0;
-
-Please leave an extra newline before the labels below, as well as before
-return.
-
-> +err_unreg_vdev:
-> +	video_unregister_device(vdev);
-> +err_cleanup_media_entity:
-> +	media_entity_cleanup(&vdev->entity);
-> +err_release_queue:
-> +	vb2_queue_release(vdev->queue);
-
-Also remember mutex_destroy() for the two mutexes.
-
-> +	return ret;
-> +}
-> +
-> +void rkisp1_unregister_stats_vdev(struct rkisp1_isp_stats_vdev *stats_vdev)
-> +{
-> +	struct rkisp1_vdev_node *node = &stats_vdev->vnode;
-> +	struct video_device *vdev = &node->vdev;
-> +
-> +	destroy_workqueue(stats_vdev->readout_wq);
-> +	video_unregister_device(vdev);
-> +	media_entity_cleanup(&vdev->entity);
-> +	vb2_queue_release(vdev->queue);
-
-mutex_destroy() here, too.
-
-> +}
-> diff --git a/drivers/media/platform/rockchip/isp1/isp_stats.h b/drivers/media/platform/rockchip/isp1/isp_stats.h
-> new file mode 100644
-> index 000000000000..b46c8537e1c7
-> --- /dev/null
-> +++ b/drivers/media/platform/rockchip/isp1/isp_stats.h
-> @@ -0,0 +1,60 @@
-> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
-> +/*
-> + * Rockchip isp1 driver
-> + *
-> + * Copyright (C) 2017 Rockchip Electronics Co., Ltd.
-> + */
-> +
-> +#ifndef _RKISP1_ISP_STATS_H
-> +#define _RKISP1_ISP_STATS_H
-> +
-> +#include <linux/rkisp1-config.h>
-> +
-> +#include "common.h"
-> +
-> +struct rkisp1_isp_stats_vdev;
-> +
-> +enum rkisp1_isp_readout_cmd {
-> +	RKISP1_ISP_READOUT_MEAS,
-> +	RKISP1_ISP_READOUT_META,
-> +};
-> +
-> +struct rkisp1_isp_readout_work {
-> +	struct work_struct work;
-> +	struct rkisp1_isp_stats_vdev *stats_vdev;
-> +
-> +	unsigned int frame_id;
-> +	unsigned int isp_ris;
-> +	enum rkisp1_isp_readout_cmd readout;
-> +	struct vb2_buffer *vb;
-> +};
-> +
-> +/*
-> + * struct rkisp1_isp_stats_vdev - ISP Statistics device
-> + *
-> + * @irq_lock: buffer queue lock
-> + * @stat: stats buffer list
-> + * @readout_wq: workqueue for statistics information read
-> + */
-> +struct rkisp1_isp_stats_vdev {
-> +	struct rkisp1_vdev_node vnode;
-> +	struct rkisp1_device *dev;
-> +
-> +	spinlock_t irq_lock;
-> +	struct list_head stat;
-> +	struct v4l2_format vdev_fmt;
-> +	bool streamon;
-> +
-> +	struct workqueue_struct *readout_wq;
-> +	struct mutex wq_lock;
-> +};
-> +
-> +int rkisp1_stats_isr(struct rkisp1_isp_stats_vdev *stats_vdev, u32 isp_ris);
-> +
-> +int rkisp1_register_stats_vdev(struct rkisp1_isp_stats_vdev *stats_vdev,
-> +			       struct v4l2_device *v4l2_dev,
-> +			       struct rkisp1_device *dev);
-> +
-> +void rkisp1_unregister_stats_vdev(struct rkisp1_isp_stats_vdev *stats_vdev);
-> +
-> +#endif /* _RKISP1_ISP_STATS_H */
-
--- 
-Kind regards,
-
-Sakari Ailus
-sakari.ailus@linux.intel.com
-
+Best regards,
+Hugues.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
