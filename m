@@ -2,51 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC6CB86B02
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 22:02:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5AD486B3B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 22:17:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lOFyeiW2Yxdrt9g+M1asOqN1bcaswwR+aJQM+1Xj4wg=; b=OVvfOigVoQkxjr8os3Gb6j9ZY
-	TGAfvdNAA3LtvBArsr9XgEW5EYDvYlzOc1123Mjh8uVuQdfNX4oB2VMPR7aKg62lnsWxyJcKtgZ7m
-	oQhWk7U5nSYPr3uOSB30QBSleu3eXp2dy0dIXlBJIEBPCuUxeo4EAn2fsMADqECA72z30TvB2UwVS
-	Y4xy0K0liruZXtNlXSyMNO3jiwhbKujKo1Ab9x5j6E99pvoP0uyaie361c7cuk//uqhM93Mmc7g4k
-	Y6kyWhHjP6gEnfmVGSsr7wOJhdwwXDEIbTAssCdOZiAzjPTfpR7jGOEPI2nvVmhaN2RJzen1KoOSo
-	YvxbUJ2lQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VCydnMfj0HrMNc8tpBC+x4uy697SHdX+FizAKK26Wos=; b=WTjr4+bffFs+I3
+	uF9kHIKMBXV2xejOEPJHXJ7tY0bDH3HahtPHrmC5cRBpxdsqcK0hyYUQoywqCOI+nu2k3XMgWFcj4
+	Z1BM74a9xbnzdcIHuHpM3pHfqJnXAD267X75l3LL2Mr9ZhpZf4dvWsr0xVYXAPXYTXnveCUE72tOb
+	rmqCL47BUchTT2+iFCdVSmUIgKe0Wn+9lt+sRA1Sg/X/6VkLqO2GVGbi7dRmOnP2+ZbOifreMD25+
+	odTFoZSichk3/WTPcXJBuhvZZPOUsWNyASToI/mvGE/DvT6oSEOGIMnK7r3VdKIN9o1pvFFRR5XFM
+	yl5bDrdvgvIk6y/mI2/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvoc5-0000FP-K6; Thu, 08 Aug 2019 20:02:17 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvobw-0000Ee-52
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 20:02:10 +0000
-Received: from localhost (p5486CA1C.dip0.t-ipconnect.de [84.134.202.28])
- by pokefinder.org (Postfix) with ESMTPSA id 9AAEE2C3112;
- Thu,  8 Aug 2019 22:02:02 +0200 (CEST)
-Date: Thu, 8 Aug 2019 22:02:02 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Biwen Li <biwen.li@nxp.com>, Joshua Frkuska <joshua_frkuska@mentor.com>
-Subject: Re: i2c: imx: support slave mode for imx I2C driver
-Message-ID: <20190808200202.GA6609@ninjato>
-References: <20190808035343.34120-1-biwen.li@nxp.com>
+	id 1hvoqX-0006wd-Vu; Thu, 08 Aug 2019 20:17:14 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvoqP-0006vz-JV
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 20:17:07 +0000
+Received: by mail-pl1-x641.google.com with SMTP id m12so5380211plt.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 08 Aug 2019 13:17:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=joelfernandes.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=5f4CqgEOBdU1sAWH2G9u22gyRYPbta1aig+V48mAphg=;
+ b=K0fHDV/c6bvsC0qLSvpocXZbNgQfks/MdnquDqwksf7dhTD98RI4nANdKdU4EkY24x
+ 0olhK/GhPbPPex9HnYXSj8j7OF0HgwYuSQJmcgDQq/Uj5scHAI+ui2G2tvoM9Lzudw5h
+ 5XilgXJpwsOHsGXXb4xvQbuSxUu1T3VWv/b6o=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=5f4CqgEOBdU1sAWH2G9u22gyRYPbta1aig+V48mAphg=;
+ b=c9VihY+7ZA2HxN412NhebJfLYXKA3cuWL23rH+Zw1c/u7zqx0Iq2Z30o4oc9XFrus7
+ 2ht/U+oCHHc3KKAH2mK06Ebm91fVf44wpYqIPPfzhlF/Kmh694qrUwxiLpLYX4ZGqPpf
+ Uwo8C/Z8JhNUO1yY4NxJuVFQ9OWCOndDB0RaeC895YkJ9DGkumI3l3EPON411V33G+o1
+ h4kcgmXbSlMjVrxyTM1bjRxo98RaG6lQ6/vMrKFkpOf0WwjM6PIhiaO5pSIyCA+O6+Ox
+ hoFmNbhE9TQ7XQgYo1HNH4ORjHg9UNaXOvbrtf5eB3/3pwUJk5AiFdlwq2Uj7v1Tu2lH
+ xmhA==
+X-Gm-Message-State: APjAAAWjymds/AycS4KdLL/SUZUezl0ketNaupmjVd748T/9kXGmbLvp
+ guBZt+ofFKalC0AmupN3BeVouA==
+X-Google-Smtp-Source: APXvYqws/0AbAFRQrpc39ivMkiU/nNnCNzDeEutw3lh4sdHQxYIsAE9EYG1zanM54XVWwO1sxMytHg==
+X-Received: by 2002:a17:902:9004:: with SMTP id
+ a4mr15566437plp.109.1565295424221; 
+ Thu, 08 Aug 2019 13:17:04 -0700 (PDT)
+Received: from localhost ([2620:15c:6:12:9c46:e0da:efbf:69cc])
+ by smtp.gmail.com with ESMTPSA id cx22sm2915882pjb.25.2019.08.08.13.17.03
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 08 Aug 2019 13:17:03 -0700 (PDT)
+Date: Thu, 8 Aug 2019 16:17:02 -0400
+From: Joel Fernandes <joel@joelfernandes.org>
+To: Steven Rostedt <rostedt@goodmis.org>
+Subject: Re: [PATCH 2/2 v2] tracing: Document the stack trace algorithm in
+ the comments
+Message-ID: <20190808201702.GF261256@google.com>
+References: <20190807172826.352574408@goodmis.org>
+ <20190807172907.310138647@goodmis.org>
 MIME-Version: 1.0
-In-Reply-To: <20190808035343.34120-1-biwen.li@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20190807172907.310138647@goodmis.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_130208_494748_911124C9 
-X-CRM114-Status: GOOD (  19.66  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190808_131705_646954_9326A90C 
+X-CRM114-Status: GOOD (  26.70  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,315 +98,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: shawnguo@kernel.org, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, laurentiu.tudor@nxp.com,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============8695999058371436208=="
+Cc: Jiping Ma <jiping.ma2@windriver.com>, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, mingo@redhat.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Aug 07, 2019 at 01:28:28PM -0400, Steven Rostedt wrote:
+> From: "Steven Rostedt (VMware)" <rostedt@goodmis.org>
+> 
+> As the max stack tracer algorithm is not that easy to understand from the
+> code, add comments that explain the algorithm and mentions how
+> ARCH_RET_ADDR_AFTER_LOCAL_VARS affects it.
+> 
+> Link: http://lkml.kernel.org/r/20190806123455.487ac02b@gandalf.local.home
+> 
 
---===============8695999058371436208==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="7JfCtLOvnd9MIVvH"
-Content-Disposition: inline
+Acked-by: Joel Fernandes (Google) <joel@joelfernandes.org>
+
+thanks!!
+
+- Joel
 
 
---7JfCtLOvnd9MIVvH
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Aug 08, 2019 at 11:53:43AM +0800, Biwen Li wrote:
-> The patch supports slave mode for imx I2C driver
->=20
-> Signed-off-by: Biwen Li <biwen.li@nxp.com>
-
-Wow, this is much simpler than the other approach flying around:
-
-http://patchwork.ozlabs.org/patch/1124048/
-
-Can this one be master and slave on the same bus, too?
-
-CCing the author of the other patch.
-
+> Suggested-by: Joel Fernandes <joel@joelfernandes.org>
+> Signed-off-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
 > ---
->  drivers/i2c/busses/i2c-imx.c | 199 ++++++++++++++++++++++++++++++++---
->  1 file changed, 185 insertions(+), 14 deletions(-)
->=20
-> diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
-> index b1b8b938d7f4..f7583a9fa56f 100644
-> --- a/drivers/i2c/busses/i2c-imx.c
-> +++ b/drivers/i2c/busses/i2c-imx.c
-> @@ -202,6 +202,9 @@ struct imx_i2c_struct {
->  	struct pinctrl_state *pinctrl_pins_gpio;
-> =20
->  	struct imx_i2c_dma	*dma;
-> +#if IS_ENABLED(CONFIG_I2C_SLAVE)
-> +	struct i2c_client		*slave;
-> +#endif /* CONFIG_I2C_SLAVE */
->  };
-> =20
->  static const struct imx_i2c_hwdata imx1_i2c_hwdata =3D {
-> @@ -583,23 +586,40 @@ static void i2c_imx_stop(struct imx_i2c_struct *i2c=
-_imx)
->  	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
+>  kernel/trace/trace_stack.c | 98 ++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 98 insertions(+)
+> 
+> diff --git a/kernel/trace/trace_stack.c b/kernel/trace/trace_stack.c
+> index 40e4a88eea8f..f94a2fc567de 100644
+> --- a/kernel/trace/trace_stack.c
+> +++ b/kernel/trace/trace_stack.c
+> @@ -53,6 +53,104 @@ static void print_max_stack(void)
+>  	}
 >  }
-> =20
-> -static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
-> +/* Clear interrupt flag bit */
-> +static void i2c_imx_clr_if_bit(struct imx_i2c_struct *i2c_imx)
+>  
+> +/*
+> + * The stack tracer looks for a maximum stack at each call from a function. It
+> + * registers a callback from ftrace, and in that callback it examines the stack
+> + * size. It determines the stack size from the variable passed in, which is the
+> + * address of a local variable in the stack_trace_call() callback function.
+> + * The stack size is calculated by the address of the local variable to the top
+> + * of the current stack. If that size is smaller than the currently saved max
+> + * stack size, nothing more is done.
+> + *
+> + * If the size of the stack is greater than the maximum recorded size, then the
+> + * following algorithm takes place.
+> + *
+> + * For architectures (like x86) that store the function's return address before
+> + * saving the function's local variables, the stack will look something like
+> + * this:
+> + *
+> + *   [ top of stack ]
+> + *    0: sys call entry frame
+> + *   10: return addr to entry code
+> + *   11: start of sys_foo frame
+> + *   20: return addr to sys_foo
+> + *   21: start of kernel_func_bar frame
+> + *   30: return addr to kernel_func_bar
+> + *   31: [ do trace stack here ]
+> + *
+> + * The save_stack_trace() is called returning all the functions it finds in the
+> + * current stack. Which would be (from the bottom of the stack to the top):
+> + *
+> + *   return addr to kernel_func_bar
+> + *   return addr to sys_foo
+> + *   return addr to entry code
+> + *
+> + * Now to figure out how much each of these functions' local variable size is,
+> + * a search of the stack is made to find these values. When a match is made, it
+> + * is added to the stack_dump_trace[] array. The offset into the stack is saved
+> + * in the stack_trace_index[] array. The above example would show:
+> + *
+> + *        stack_dump_trace[]        |   stack_trace_index[]
+> + *        ------------------        +   -------------------
+> + *  return addr to kernel_func_bar  |          30
+> + *  return addr to sys_foo          |          20
+> + *  return addr to entry            |          10
+> + *
+> + * The print_max_stack() function above, uses these values to print the size of
+> + * each function's portion of the stack.
+> + *
+> + *  for (i = 0; i < nr_entries; i++) {
+> + *     size = i == nr_entries - 1 ? stack_trace_index[i] :
+> + *                    stack_trace_index[i] - stack_trace_index[i+1]
+> + *     print "%d %d %d %s\n", i, stack_trace_index[i], size, stack_dump_trace[i]);
+> + *  }
+> + *
+> + * The above shows
+> + *
+> + *     depth size  location
+> + *     ----- ----  --------
+> + *  0    30   10   kernel_func_bar
+> + *  1    20   10   sys_foo
+> + *  2    10   10   entry code
+> + *
+> + * Now for architectures that might save the return address after the functions
+> + * local variables (saving the link register before calling nested functions),
+> + * this will cause the stack to look a little different:
+> + *
+> + * [ top of stack ]
+> + *  0: sys call entry frame
+> + * 10: start of sys_foo_frame
+> + * 19: return addr to entry code << lr saved before calling kernel_func_bar
+> + * 20: start of kernel_func_bar frame
+> + * 29: return addr to sys_foo_frame << lr saved before calling next function
+> + * 30: [ do trace stack here ]
+> + *
+> + * Although the functions returned by save_stack_trace() may be the same, the
+> + * placement in the stack will be different. Using the same algorithm as above
+> + * would yield:
+> + *
+> + *        stack_dump_trace[]        |   stack_trace_index[]
+> + *        ------------------        +   -------------------
+> + *  return addr to kernel_func_bar  |          30
+> + *  return addr to sys_foo          |          29
+> + *  return addr to entry            |          19
+> + *
+> + * Where the mapping is off by one:
+> + *
+> + *   kernel_func_bar stack frame size is 29 - 19 not 30 - 29!
+> + *
+> + * To fix this, if the architecture sets ARCH_RET_ADDR_AFTER_LOCAL_VARS the
+> + * values in stack_trace_index[] are shifted by one to and the number of
+> + * stack trace entries is decremented by one.
+> + *
+> + *        stack_dump_trace[]        |   stack_trace_index[]
+> + *        ------------------        +   -------------------
+> + *  return addr to kernel_func_bar  |          29
+> + *  return addr to sys_foo          |          19
+> + *
+> + * Although the entry function is not displayed, the first function (sys_foo)
+> + * will still include the stack size of it.
+> + */
+>  static void check_stack(unsigned long ip, unsigned long *stack)
 >  {
-> -	struct imx_i2c_struct *i2c_imx =3D dev_id;
-> -	unsigned int temp;
-> +	unsigned int status;
-> =20
-> -	temp =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> -	if (temp & I2SR_IIF) {
-> -		/* save status register */
-> -		i2c_imx->i2csr =3D temp;
-> -		temp &=3D ~I2SR_IIF;
-> -		temp |=3D (i2c_imx->hwdata->i2sr_clr_opcode & I2SR_IIF);
-> -		imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2SR);
-> -		wake_up(&i2c_imx->queue);
-> -		return IRQ_HANDLED;
-> -	}
-> +	status =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> +	status &=3D ~I2SR_IIF;
-> +	status |=3D (i2c_imx->hwdata->i2sr_clr_opcode & I2SR_IIF);
-> +	imx_i2c_write_reg(status, i2c_imx, IMX_I2C_I2SR);
-> +}
-> +
-> +/* Clear arbitration lost bit */
-> +static void i2c_imx_clr_al_bit(struct imx_i2c_struct *i2c_imx)
-> +{
-> +	unsigned int status;
-> +
-> +	status =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> +	status &=3D ~I2SR_IAL;
-> +	imx_i2c_write_reg(status, i2c_imx, IMX_I2C_I2SR);
-> +}
-> =20
-> -	return IRQ_NONE;
-> +static irqreturn_t i2c_imx_master_isr(struct imx_i2c_struct *i2c_imx)
-> +{
-> +	unsigned int status;
-> +
-> +	dev_dbg(&i2c_imx->adapter.dev, "<%s>: master interrupt\n", __func__);
-> +
-> +	/* Save status register */
-> +	status =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> +	i2c_imx->i2csr =3D status | I2SR_IIF;
-> +
-> +	wake_up(&i2c_imx->queue);
-> +
-> +	return IRQ_HANDLED;
->  }
-> =20
->  static int i2c_imx_dma_write(struct imx_i2c_struct *i2c_imx,
-> @@ -1043,11 +1063,162 @@ static u32 i2c_imx_func(struct i2c_adapter *adap=
-ter)
->  		| I2C_FUNC_SMBUS_READ_BLOCK_DATA;
->  }
-> =20
-> +#if IS_ENABLED(CONFIG_I2C_SLAVE)
-> +static void i2c_imx_slave_init(struct imx_i2c_struct *i2c_imx)
-> +{
-> +	unsigned int temp;
-> +
-> +	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
-> +
-> +	/* Set slave addr. */
-> +	imx_i2c_write_reg((i2c_imx->slave->addr << 1), i2c_imx, IMX_I2C_IADR);
-> +
-> +	/* Disable i2c module */
-> +	temp =3D i2c_imx->hwdata->i2cr_ien_opcode
-> +			^ I2CR_IEN;
-> +	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
-> +
-> +	/* Reset status register */
-> +	imx_i2c_write_reg(i2c_imx->hwdata->i2sr_clr_opcode, i2c_imx,
-> +			  IMX_I2C_I2SR);
-> +
-> +	/* Enable module and enable interrupt from i2c module */
-> +	temp =3D i2c_imx->hwdata->i2cr_ien_opcode
-> +			| I2CR_IIEN;
-> +	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
-> +
-> +	/* Wait controller to be stable */
-> +	usleep_range(50, 150);
-> +}
-> +
-> +static irqreturn_t i2c_imx_slave_isr(struct imx_i2c_struct *i2c_imx)
-> +{
-> +	unsigned int status, ctl;
-> +	u8 value;
-> +
-> +	if (!i2c_imx->slave) {
-> +		dev_err(&i2c_imx->adapter.dev, "cannot deal with slave irq,i2c_imx->sl=
-ave is null");
-> +		return IRQ_NONE;
-> +	}
-> +
-> +	status =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> +	ctl =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
-> +	if (status & I2SR_IAL) { /* Arbitration lost */
-> +		i2c_imx_clr_al_bit(i2c_imx);
-> +	} else if (status & I2SR_IAAS) { /* Addressed as a slave */
-> +		if (status & I2SR_SRW) { /* Master wants to read from us*/
-> +			dev_dbg(&i2c_imx->adapter.dev, "read requested");
-> +			i2c_slave_event(i2c_imx->slave, I2C_SLAVE_READ_REQUESTED, &value);
-> +
-> +			/* Slave transimt */
-> +			ctl |=3D I2CR_MTX;
-> +			imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-> +
-> +			/* Send data */
-> +			imx_i2c_write_reg(value, i2c_imx, IMX_I2C_I2DR);
-> +		} else { /* Master wants to write to us */
-> +			dev_dbg(&i2c_imx->adapter.dev, "write requested");
-> +			i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_WRITE_REQUESTED, &value);
-> +
-> +			/* Slave receive */
-> +			ctl &=3D ~I2CR_MTX;
-> +			imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-> +			/* Dummy read */
-> +			value =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
-> +		}
-> +	} else {
-> +		if (!(ctl & I2CR_MTX)) { /* Receive mode */
-> +			if (status & I2SR_IBB) { /* No STOP signal detected */
-> +				ctl &=3D ~I2CR_MTX;
-> +				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-> +
-> +				value =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
-> +				i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_WRITE_RECEIVED, &value);
-> +			} else { /* STOP signal is detected */
-> +				dev_dbg(&i2c_imx->adapter.dev,
-> +					"STOP signal detected");
-> +				i2c_slave_event(i2c_imx->slave, I2C_SLAVE_STOP, &value);
-> +			}
-> +		} else { /* Transmit mode */
-> +			if (!(status & I2SR_RXAK)) {	/* Received ACK */
-> +				ctl |=3D I2CR_MTX;
-> +				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-> +
-> +				i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_READ_PROCESSED, &value);
-> +
-> +				imx_i2c_write_reg(value, i2c_imx, IMX_I2C_I2DR);
-> +			} else { /* Received NAK */
-> +				ctl &=3D ~I2CR_MTX;
-> +				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
-> +				value =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
-> +			}
-> +		}
-> +	}
-> +	return IRQ_HANDLED;
-> +}
-> +
-> +static int i2c_imx_reg_slave(struct i2c_client *client)
-> +{
-> +	struct imx_i2c_struct *i2c_imx =3D i2c_get_adapdata(client->adapter);
-> +
-> +	if (i2c_imx->slave)
-> +		return -EINVAL;
-> +
-> +	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
-> +	i2c_imx->slave =3D client;
-> +
-> +	i2c_imx_slave_init(i2c_imx);
-> +
-> +	return 0;
-> +}
-> +
-> +static int i2c_imx_unreg_slave(struct i2c_client *client)
-> +{
-> +	struct imx_i2c_struct *i2c_imx =3D i2c_get_adapdata(client->adapter);
-> +
-> +	if (!i2c_imx->slave)
-> +		return -EINVAL;
-> +
-> +	i2c_imx->slave =3D NULL;
-> +
-> +	return 0;
-> +}
-> +#endif /* CONFIG_I2C_SLAVE */
-> +
->  static const struct i2c_algorithm i2c_imx_algo =3D {
->  	.master_xfer	=3D i2c_imx_xfer,
->  	.functionality	=3D i2c_imx_func,
-> +#if IS_ENABLED(CONFIG_I2C_SLAVE)
-> +	.reg_slave	=3D i2c_imx_reg_slave,
-> +	.unreg_slave	=3D i2c_imx_unreg_slave,
-> +#endif /* CONFIG_I2C_SLAVE */
->  };
-> =20
-> +static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
-> +{
-> +	struct imx_i2c_struct *i2c_imx =3D dev_id;
-> +	unsigned int status, ctl;
-> +	irqreturn_t irq_status =3D IRQ_NONE;
-> +
-> +	status =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
-> +	ctl =3D imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
-> +
-> +	if (status & I2SR_IIF) {
-> +		i2c_imx_clr_if_bit(i2c_imx);
-> +#if IS_ENABLED(CONFIG_I2C_SLAVE)
-> +		if (ctl & I2CR_MSTA)
-> +			irq_status =3D i2c_imx_master_isr(i2c_imx);
-> +		else
-> +			irq_status =3D i2c_imx_slave_isr(i2c_imx);
-> +#else
-> +		irq_status =3D i2c_imx_master_isr(i2c_imx);
-> +
-> +#endif /* CONFIG_I2C_SLAVE */
-> +	}
-> +
-> +	return irq_status;
-> +}
-> +
->  static int i2c_imx_probe(struct platform_device *pdev)
->  {
->  	const struct of_device_id *of_id =3D of_match_device(i2c_imx_dt_ids,
-> --=20
-> 2.17.1
->=20
-
---7JfCtLOvnd9MIVvH
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1Mf7UACgkQFA3kzBSg
-KbbIdRAAmY+CmZvnxzaoFKgN0BZt09R2Y3W+z+3mpuJC4EC9WDc3zZxrLAJBtXKB
-m5GiooGqY9tYfxKDEcZgnAbsg0+duHDCBi7Ky7qrgiyawIo8ZbhRCpa4LSzA0QRN
-+FmL91PDIJcqxd4xIU6UKJRFrKCpWeR4iYOAVuF/3PtPlIpzgVRZvvi5/fFAaIHx
-2gGvdGAx9eMtAs7HMA7/GMYalzex4EuGBuP+U5rXP6tUBNh+pSzJtqof9WFwGV/N
-OmUBLCd6dVoLbJcT1F47gxqC4mEo8SKsgv2rMlYS5GQIInVU7/p6uER/Yr5zHERS
-Z/phPdfMhqmATRIOBKdrgDRBPfAwHU9tuBep8glR0MpfjiejrZLWri4kTJ18nPy5
-znVN0QiLU4rFNyHOn716AS9ykzmRd1a2ujs5nT8vRd6ccNxi9zLAT68VuYY62HLS
-iWaVjx5kCgfx/W9GZMs0e++i+I3wca40LpeLMvP56wGjrBh+VfoMQVeKk3IONgYQ
-6fECaczR3Fop5W3pYf8+n/rekOw9u1fEIFz4FDLxxb+Rjsiu60/5o99MgU+Zd8+C
-z42/FHVuhdZE93Y9kfudirKPBen05s6qdnbEr98DZhMJZ0oT7RBCLsfRl5kIqWgH
-mOYmOGy4u7m4h+CLHmlrYDdVOnBPj5JnAqvqJdyqm47YC1OgrvU=
-=2lFt
------END PGP SIGNATURE-----
-
---7JfCtLOvnd9MIVvH--
-
-
---===============8695999058371436208==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>  	unsigned long this_size, flags; unsigned long *p, *top, *start;
+> -- 
+> 2.20.1
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8695999058371436208==--
-
