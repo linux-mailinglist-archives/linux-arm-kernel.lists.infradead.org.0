@@ -2,81 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A71D8675C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:45:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F01A8676B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:47:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kAfS5PMnkKkQcqEPNHgV4rnohHUwp5M46EtJn5xm60U=; b=GrC+kFQ469nvsx
-	M2wleZlYhtFwYz6YJQT7kVADU5TzvOvlY73q9nTn2i2s/3ogWTvR+wKZy289XNXk4VvTC27gNA3Uo
-	YcYLMzbSqY0YjnCQrX6iOhxqIKJ7ES++5oBNVjqaRraa9Yzmi9EmevwmMEH/Ugsgf3DssquNNkGaO
-	Zrtpv8Y9O19ixwTEansrdAPX1t48cXqy40eDgwtpTKMDbKjsjupKI8/ksiNkNBJ6DQn5lSzTnnpJY
-	xI4TQJu2CvAa54LCXgFOhuw3b+9PJe2MelUMs4z63Rn6KxTPW8zsJSabaqnSY6+d9khK93r9FXD2m
-	MSbPvXcGyBgZA92nyGTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=wGWa5s3PwrqDHvwHN1UAzYKu/jsxmbT/lm1jAQVaqYY=; b=WNd96VCR7Sm8A5
+	nZKRQhycnQyAvXhVLS/cKDMw1OSfWx6n3O5mZdsVv25ZKhE/wYsm0nlOEiiVHUwb3o+fgbnDNLate
+	hJnzS4qZJ5PQv/exyY4L5Re/Jtqbb/1tWs3r2mR0Craf9/Lhr4Mne2yFBXAboE7HrEgRD0YkT9gYX
+	Y7jRo9MisGLBA4PqdUOoE0S+5hkQTqrZS9WqTCA0/1iWTKJrN76lJCQChzjGQnBJi6rxfP72uVJDl
+	FBURHq6s8ZvyMhzQH5fEP9ii1q1tyO/sqGdM46dyxMhPVdxUivTY+VMZ/tIvG1ukH6lthLxrAdzvR
+	lJ8nWGN8hi2f0Vx0FDLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvlX5-0001VK-Fu; Thu, 08 Aug 2019 16:44:55 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1hvlZ6-00036G-PX; Thu, 08 Aug 2019 16:47:00 +0000
+Received: from mail-eopbgr60062.outbound.protection.outlook.com ([40.107.6.62]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvlWu-0001Uu-6g
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:44:45 +0000
-Received: by mail-ot1-x344.google.com with SMTP id j11so20775913otp.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 08 Aug 2019 09:44:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mdKChiO6toradfdA1i6Jwh7yiUgV/BOpjgptiTpJXTc=;
- b=nN25bX7pb6egOKBjU+l2ju89PKwN/5apoENIzX1yELI4kWtTHv02FC8vmZ5UY5HgdY
- N0hM9lnejemrdoHWz7YV2JwiOcYaVcO0RE4nBEwv8TFYoMqpzNn1u7FJpugxUj/FB+rB
- qpQ6yLSPsVmThmT5atHi74jQNdieykgqiXoGU=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=mdKChiO6toradfdA1i6Jwh7yiUgV/BOpjgptiTpJXTc=;
- b=LdGIQ0X3+W48ipLHY3LUAp1XKzqHZRn5Jc+1Ti7YtAuIFQwiYJUuMWY1KLRbDnLjiV
- eXus62OYIrGDrJ4/75r6u9SeaJQN9F4CqgmmrJsRJnrsxZoDE/48dZolZ6mvqMWIpsJG
- 29CIp4Zg1M26/PKKc/tlHuWfRM3QjjpF2AfQU1TwbOAmK6rj2U3OA4HY0DmNBIv+XKiI
- UnysMbl937VwhUeZMKu0VpOevzeU58iZeX+xasv5JjEupKlkB/yPS62FfovP6HpnlS0E
- LF7LqNsEmS7fcgYBr2zn8MIvrCxGg7qGjJu0hq5Z73Ota4SvYBAej8C1MUodgJnoFkAX
- 4THQ==
-X-Gm-Message-State: APjAAAX3BpxPLoOFeVS9r9/tzfQ/Oll+PBydGmCYymMXE4b92aPg0+wb
- NG/eHegfjZp3+EzR9JCWufMb3bgBf10HOdoz6PSM5A==
-X-Google-Smtp-Source: APXvYqzEoYGvoalYE9dVirABjTjcHh9LZvDh0CA4mUt+tKEDBTe88c3+j/qr32L9yYNNrYvPSZymRl+NG991z6cfJJI=
-X-Received: by 2002:a02:c549:: with SMTP id g9mr17312340jaj.14.1565282683214; 
- Thu, 08 Aug 2019 09:44:43 -0700 (PDT)
+ id 1hvlYx-00035T-LM
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:46:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cBeD0lXwdVBRQM6m1OchkuD2i9RNRA/Q4e8vgpUlPbZ55l/WTwPCyFP14gDwE2G0ktHndmSFaTCW4V8Yqy9OJu8nIMbSKWCH0mfatYCiF14Wpa+H1rQ6Kz16cxzp1/lLbI23DUPgMSB1GWp6egVtr9UaB2l8RVK6tcmAPybESo00gojI7l3KD1/NyCb3kyp6ZRuV6137r30kPdPyZktUCEsLszpLa27o/ui+m5EVpqiTracPf6wWaLqsavmQI4ysVaykndxHaniiMh4Ew/3dSvhTad77vUfpp3qtB2Uj8kAFrcFAMDu7fogdjt7zNXZ85NFUbKZCaFJ0o82QEYxlRw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=89gyf+bubo9ODlDykcslOmaUDYIz+Q9T4mnOpFe3EdY=;
+ b=RS/qggNCtoGeJdCzUkKjIIqZhzdp01yWS36JEfB2hRQbYFWg+SEsrFPympLPWuHqvtxVNjoeo0KG6KYINrtrdzja4txLvLAe835sMD/pAd1a67yhRWPf9Z5aYPX0XKRUo13IKnwscGhgcq2jrlFZDNAuC1tB0Dslggl3WtIopY3/sOsqyDT+//oFM9y34GGPtq8inE9lLnoc7Kv2uW4inHcXuVx2ynIk+aqRvnEPommW9eKk3QssNEIqhN31o7ERLSrjO52KuABZhVHsMN0MtJxmKTX3EmXOdMKbQJVGt0ZT0jyRQoZOvtJZr5Ejbv2mOMc1lgEYmz7n6y19oBEL8g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=89gyf+bubo9ODlDykcslOmaUDYIz+Q9T4mnOpFe3EdY=;
+ b=WrIjnxXL2O7WSZNR3TqRvuVCR4UKDYo0zQrEmBD9fYyCwDiZdUG+rfg38gBij2ALy+CjL4FDd9pCoXVYPvQHtFf5KIEqIpXHvIYWADaygQwxXitk9XBziRKPmJSqqkcV0CQHaAzUBxndcGlhBEUx2EbJjfo3vTbtVzOf+L/DXvQ=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB4557.eurprd04.prod.outlook.com (20.177.55.215) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.14; Thu, 8 Aug 2019 16:46:48 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::e53d:e6a9:79bd:f970]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::e53d:e6a9:79bd:f970%2]) with mapi id 15.20.2157.015; Thu, 8 Aug 2019
+ 16:46:48 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH v3 1/2] clk: Add clk_min/max_rate entries in debugfs
+Thread-Topic: [PATCH v3 1/2] clk: Add clk_min/max_rate entries in debugfs
+Thread-Index: AQHVTfoGXeMGdmRTE0G0NHpNjfznmw==
+Date: Thu, 8 Aug 2019 16:46:48 +0000
+Message-ID: <VI1PR04MB7023C8A78321E34492290E56EED70@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <68e96af2df96512300604d797ade2088d7e6e496.1562073871.git.leonard.crestez@nxp.com>
+ <20190808150028.0BC1F217D7@mail.kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [212.146.100.6]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 33e44622-d231-4747-20e8-08d71c200146
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB4557; 
+x-ms-traffictypediagnostic: VI1PR04MB4557:
+x-microsoft-antispam-prvs: <VI1PR04MB4557EEE9F0B55455288F7382EED70@VI1PR04MB4557.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2887;
+x-forefront-prvs: 012349AD1C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(346002)(136003)(396003)(376002)(366004)(189003)(199004)(229853002)(74316002)(25786009)(71200400001)(2906002)(71190400001)(66066001)(66446008)(52536014)(486006)(76176011)(7696005)(9686003)(55016002)(4326008)(44832011)(53546011)(53936002)(186003)(478600001)(6506007)(8676002)(6246003)(8936002)(102836004)(476003)(81166006)(446003)(33656002)(26005)(7736002)(66946007)(81156014)(256004)(66476007)(91956017)(64756008)(66556008)(99286004)(14454004)(6436002)(76116006)(305945005)(86362001)(3846002)(6116002)(110136005)(54906003)(4744005)(316002)(5660300002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4557;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 2+f84Ue9wfJGnABiGJs6t9Jgkc5/KreJrfSPR13/OI34f5xoqvEVA9ngZmB+VYfQqniB4r5uAezs95OkDm3yMJy7+iAZt+vuclDwDeqOPacUb5bCONs4Ta1nJ9zRfUeSgoc5zZF3xTeR3cdxwbGR4tkj3rkkCswfLrbVHgp7kTLUDwHJESUJRo1NAGDK/o/k65F+oPr4mMphg2Vsbh7WELwfOkM7KIIt2nT9p2Tr143Z+LfuLz7AFH4Uv4l2BQ1TFX+/sDozpQTyu42r5AJE79i4aLpuE79jK+6d0fIfqBoqRS7v53ajcrkJYYmWngKjbhCyFZCGc9V4V6Qa/6nCdMx44CCsi8nDHVqQYZRcfgkEVtXY/6GON3gldyBPuCg/mmmJkaisAGpQuxmM0r6SI+m1nPK6ZJQXWwV8fa7lTAA=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-References: <20190805211451.20176-1-robdclark@gmail.com>
- <20190806084821.GA17129@lst.de>
- <CAJs_Fx6eh1w7c=crMoD5XyEOMzP6orLhqUewErE51cPGYmObBQ@mail.gmail.com>
- <20190806143457.GF475@lakrids.cambridge.arm.com>
- <CAJs_Fx4h6SWGmDTLBnV4nmWUFAs_Ge1inxd-dW9aDKgKqmc1eQ@mail.gmail.com>
- <20190807123807.GD54191@lakrids.cambridge.arm.com>
- <CAJs_Fx5xU2-dn3iOVqWTzAjpTaQ8BBNP_Gn_iMc-eJpOX+iXoQ@mail.gmail.com>
- <20190807164958.GA44765@lakrids.cambridge.arm.com>
- <CAJs_Fx71T=kJEgt28TWqzw+jOahSbLQynCg83+szQW7op4xBkQ@mail.gmail.com>
- <20190808075947.GE30308@lst.de>
-In-Reply-To: <20190808075947.GE30308@lst.de>
-From: Rob Clark <robdclark@chromium.org>
-Date: Thu, 8 Aug 2019 09:44:32 -0700
-Message-ID: <CAJs_Fx5fJ31CsFODBgBbhcCvoxSX_D1NHDjQs4LtJ_0GwuxMVA@mail.gmail.com>
-Subject: Re: [PATCH 1/2] drm: add cache support for arm64
-To: Christoph Hellwig <hch@lst.de>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 33e44622-d231-4747-20e8-08d71c200146
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Aug 2019 16:46:48.0647 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: f2Bkq9W3Tl39MTyXT/yBo8QljNd4e/kf/2EMZzD+0vaVXIEmnGps5HC6qYdDnI5wsdFxX75f57SzvoZMqtDpeg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4557
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_094444_275074_02213038 
-X-CRM114-Status: GOOD (  18.86  )
+X-CRM114-CacheID: sfid-20190808_094651_772813_DFFBF9CB 
+X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.6.62 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,7 +111,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,48 +122,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Catalin Marinas <catalin.marinas@arm.com>, David Airlie <airlied@linux.ie>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- LKML <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <sean@poorly.run>,
- Rob Clark <robdclark@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Allison Randal <allison@lohutok.net>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 8, 2019 at 12:59 AM Christoph Hellwig <hch@lst.de> wrote:
->
-> On Wed, Aug 07, 2019 at 10:30:04AM -0700, Rob Clark wrote:
-> > So, we do end up using GFP_HIGHUSER, which appears to get passed thru
-> > when shmem gets to the point of actually allocating pages.. not sure
-> > if that just ends up being a hint, or if it guarantees that we don't
-> > get something in the linear map.
-> >
-> > (Bear with me while I "page" this all back in.. last time I dug thru
-> > the shmem code was probably pre-armv8, or at least before I had any
-> > armv8 hw)
->
-> GFP_HIGHUSER basically just means that this is an allocation that could
-> dip into highmem, in which case it would not have a kernel mapping.
-> This can happen on arm + LPAE, but not on arm64.
+On 8/8/2019 6:00 PM, Stephen Boyd wrote:
+> Quoting Leonard Crestez (2019-07-02 06:27:09)
+>> diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
 
-Just a dumb question, but why is *all* memory in the linear map on
-arm64?  It would seem useful to have a source of pages that is not in
-the linear map.
-I guess it is mapped as huge pages (or something larger than 4k pages)?
+>>   static void clk_dump_one(struct seq_file *s, struct clk_core *c, int level)
+>>   {
+>> +       clk_core_get_boundaries(c, &min_rate, &max_rate);
+>> +       if (min_rate != 0)
+>> +               seq_printf(s, "\"min_rate\": %lu,", min_rate);
+>> +       if (max_rate != ULONG_MAX)
+>> +               seq_printf(s, "\"max_rate\": %lu,", max_rate);
+> 
+> What are the if conditions about? We always output the values in the
+> individual files, but for some reason we don't want to do that in the
+> json output?
 
-Any recommended reading to understand how/why the kernel address space
-is setup the way it is (so I can ask fewer dumb questions)?
+These if conditions are an easy way to avoid spamming "min_rate": 0, 
+"max_rate": 18446744073709551615 in json. If you object to the 
+inconsistency a nice solution would to be show "null" in both debugfs 
+and json.
 
-BR,
--R
+Outright hiding min/max files from debugfs is impractical, it would 
+require filesystem calls from clk_set_min_rate
+
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
