@@ -2,61 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68E708639D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 15:47:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66C27863BE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 15:55:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=q34EP46xQIuGAxjZENTXopOS8UPhoKNr7eqaUHUzEkQ=; b=ml4wY/5roPj5ecUkqZsbY/oyY
-	JXmuQd31t7cWnMLHP24zB3j01UiHk4TAO1PeqEa/pzJ5Lc/dJYNDaEkK22bVPsgOtrRwyUHnowMRe
-	B3WfImDiUVVSoylNgLt6cDi0UClhPdPCk3kZG2w8uBw/VmZ2ADBsvV4MpqpoyXoQA5umeguXeY4OF
-	pgDWuG3P/6snthvPc3iDmPjgH8/ar7BkmyI83Jtqm1XelEq3FAPhgIFpNKe+YlCnWn19cZSWzLANb
-	UhbA7sjFXJ2yXcBuvZo/OapKc6eupMhziplTRVmQlU7eICwMwToSaWiRXrcPEG7ichfLF7G73VHaZ
-	Vz/0Eg4qA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=84GxKf+AwMXj4E2yeIErvbkPUrXqrja/oQJJ4h4fRbU=; b=N8ca5ckPR9tjmD
+	eRdELlk4KADyrsndgrnzLg/iP5a2Rcg/lBfba1PHLBGlFfU0kDaWuvyyoXPlAZjfCsVOYYYNsCW02
+	8L9kNwH+7TyaZOOdzAEPDhaHQC3XlzTeAeCXkO3bBdKE65FZC7ERxHKKjgD+mscFZIqk23/Tzt6KG
+	klk2FXy+tim6tSJIamur4f/wiXn9buHbhqaWZGqFWiKYN2R9gNTZ3kJ+KTLFXqQjiC/6nLx/eWncQ
+	heWspY2f+iTCChJG5KKh2vJmcRuHlHtu4uiqOmYlx/++pL5yzA0GGJPeWgDmHuyl8Nz7nvcHn9bMy
+	/ayKqjszz7aT2gbB01yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvikv-000738-20; Thu, 08 Aug 2019 13:47:01 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hvitE-0001wy-Ey; Thu, 08 Aug 2019 13:55:36 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvikj-00072X-S7
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 13:46:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=OGCsi1q7WY4PE7bNxm28Wmz8rdbJLi1kTOGweo4jGq4=; b=aBXCIeZiy1Bg2lzP0qDNGvO56
- PaA0tRXrdNZBDnLxrgVxNme6lvygdUZK65CXPndnP9wtOZosdax3mRDtRLGaKRvHkGFGxr2LuVesN
- mQTtzyWZvtCfHtyLNzsoV/tBKiaB757zSh9o+Xj/CU1LrGw607hO6ZdQnH7jU6xPkGhik=;
-Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1hvikf-000330-3V; Thu, 08 Aug 2019 13:46:45 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 109CB2742B42; Thu,  8 Aug 2019 14:46:44 +0100 (BST)
-Date: Thu, 8 Aug 2019 14:46:43 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH] arm64: Clarify when cpu_enable() is called
-Message-ID: <20190808134643.GH3795@sirena.co.uk>
-References: <20190806170043.35588-1-broonie@kernel.org>
- <20190807160107.fpanxo4iimhg743c@willie-the-truck>
- <20190807165143.GI4048@sirena.co.uk>
- <0508fc5a-ab61-f507-507f-3002e49f2d27@arm.com>
- <20190808121956.GA3795@sirena.co.uk>
- <4975be8c-09ca-9acc-06ea-87e831f7fd79@arm.com>
+ id 1hvit1-0000Na-L1; Thu, 08 Aug 2019 13:55:27 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 86EE5634C87;
+ Thu,  8 Aug 2019 16:53:09 +0300 (EEST)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1hviqs-0000JZ-DW; Thu, 08 Aug 2019 16:53:10 +0300
+Date: Thu, 8 Aug 2019 16:53:10 +0300
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: dongchun.zhu@mediatek.com
+Subject: Re: [V1, 2/2] media: i2c: Add more sensor mode for ov8856 camera
+ sensor
+Message-ID: <20190808135310.GC917@valkosipuli.retiisi.org.uk>
+References: <20190808092215.5608-1-dongchun.zhu@mediatek.com>
+ <20190808092215.5608-3-dongchun.zhu@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <4975be8c-09ca-9acc-06ea-87e831f7fd79@arm.com>
-X-Cookie: I think we're in trouble.
+Content-Disposition: inline
+In-Reply-To: <20190808092215.5608-3-dongchun.zhu@mediatek.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_064650_035201_D575B676 
-X-CRM114-Status: GOOD (  20.15  )
+X-CRM114-CacheID: sfid-20190808_065524_057424_1656C72A 
+X-CRM114-Status: GOOD (  20.69  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -66,9 +56,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,94 +67,873 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7396570290684312308=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
+ srv_heupstream@mediatek.com, shengnan.wang@mediatek.com, tfiga@chromium.org,
+ louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Dongchun,
 
---===============7396570290684312308==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="0XhtP95kHFp3KGBe"
-Content-Disposition: inline
+Thanks for the patch.
 
+On Thu, Aug 08, 2019 at 05:22:15PM +0800, dongchun.zhu@mediatek.com wrote:
+> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> 
+> This patch mainly adds two more sensor modes for OV8856 image sensor.
+> The OV8856 driver currently supports output format: 10-bit Raw,
+> the resolution of 1632*1224 and 3264*2448, and the bayer order of BGGR.
+> The hardware version also differs in some OTP regiser,
+> as well as PLL register setting.
+> 
+> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> ---
+>  drivers/media/i2c/ov8856.c | 624 ++++++++++++++++++++++++++++++++++++++++++++-
+>  1 file changed, 621 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
+> index cd347d6..e0610b6 100644
+> --- a/drivers/media/i2c/ov8856.c
+> +++ b/drivers/media/i2c/ov8856.c
+> @@ -1,12 +1,15 @@
+>  // SPDX-License-Identifier: GPL-2.0
+>  // Copyright (c) 2019 Intel Corporation.
+>  
+> +#include <linux/clk.h>
+>  #include <asm/unaligned.h>
+>  #include <linux/acpi.h>
+>  #include <linux/delay.h>
+> +#include <linux/gpio/consumer.h>
+>  #include <linux/i2c.h>
+>  #include <linux/module.h>
+>  #include <linux/pm_runtime.h>
+> +#include <linux/regulator/consumer.h>
+>  #include <media/v4l2-ctrls.h>
+>  #include <media/v4l2-device.h>
+>  #include <media/v4l2-fwnode.h>
+> @@ -19,6 +22,7 @@
+>  #define OV8856_LINK_FREQ_180MHZ		180000000ULL
+>  #define OV8856_SCLK			144000000ULL
+>  #define OV8856_MCLK			19200000
+> +#define OV8856_XVCLK_FREQ		24000000
 
---0XhtP95kHFp3KGBe
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+The driver currenctly uses, perhaps misleadingly, OV8856_MCLK for this
+purpose. You could rename the existing MCLK as XVCLK.
 
-On Thu, Aug 08, 2019 at 02:21:42PM +0100, Suzuki K Poulose wrote:
-> On 08/08/2019 13:19, Mark Brown wrote:
+This also means the driver needs to differentiate configurations for 24 and
+19,2 MHz which it currently does not do. I think it may make sense to make
+this a separate patch from the rest.
 
-> > > > 	If this is called for any CPU in the system then it will be
-> > > > 	called for all of them.
+>  #define OV8856_DATA_LANES		4
+>  #define OV8856_RGB_DEPTH		10
+>  
+> @@ -29,6 +33,18 @@
+>  #define OV8856_MODE_STANDBY		0x00
+>  #define OV8856_MODE_STREAMING		0x01
+>  
+> +/* define 1B module */
+> +#define OV8856_1B_MODULE		0x02
+> +
+> +/* otp sram register */
+> +#define OV8856_OTP_REG			0x700f
+> +#define OV8856_OTP_REG_ONE		0x3d84
+> +#define OV8856_OTP_REG_TWO		0x3d81
+> +
+> +/* clock register */
+> +#define OV8856_CLK_REG			0x3614
+> +#define OV8856_CLK_REG_1B_VAL		0x20
+> +
+>  /* vertical-timings from sensor */
+>  #define OV8856_REG_VTS			0x380e
+>  #define OV8856_VTS_MAX			0x7fff
+> @@ -64,6 +80,14 @@
+>  
+>  #define to_ov8856(_sd)			container_of(_sd, struct ov8856, sd)
+>  
+> +static const char * const ov8856_supply_names[] = {
+> +	"dovdd",	/* Digital I/O power */
+> +	"avdd",		/* Analog power */
+> +	"dvdd",		/* Digital core power */
+> +};
+> +
+> +#define OV8856_NUM_SUPPLIES ARRAY_SIZE(ov8856_supply_names)
+> +
+>  enum {
+>  	OV8856_LINK_FREQ_720MBPS,
+>  	OV8856_LINK_FREQ_360MBPS,
+> @@ -316,6 +340,208 @@ static const struct ov8856_reg mode_3280x2464_regs[] = {
+>  	{0x5e00, 0x00}
+>  };
+>  
+> +static const struct ov8856_reg mode_3264x2448_regs[] = {
+> +	{0x0103, 0x01},
+> +	{0x0302, 0x3c},
+> +	{0x0303, 0x01},
+> +	{0x031e, 0x0c},
+> +	{0x3000, 0x00},
+> +	{0x300e, 0x00},
+> +	{0x3010, 0x00},
+> +	{0x3015, 0x84},
+> +	{0x3018, 0x72},
+> +	{0x3021, 0x23},
+> +	{0x3033, 0x24},
+> +	{0x3500, 0x00},
+> +	{0x3501, 0x9a},
+> +	{0x3502, 0x20},
+> +	{0x3503, 0x08},
+> +	{0x3505, 0x83},
+> +	{0x3508, 0x01},
+> +	{0x3509, 0x80},
+> +	{0x350c, 0x00},
+> +	{0x350d, 0x80},
+> +	{0x350e, 0x04},
+> +	{0x350f, 0x00},
+> +	{0x3510, 0x00},
+> +	{0x3511, 0x02},
+> +	{0x3512, 0x00},
+> +	{0x3600, 0x72},
+> +	{0x3601, 0x40},
+> +	{0x3602, 0x30},
+> +	{0x3610, 0xc5},
+> +	{0x3611, 0x58},
+> +	{0x3612, 0x5c},
+> +	{0x3613, 0xca},
+> +	{0x3614, 0x60},
+> +	{0x3628, 0xff},
+> +	{0x3629, 0xff},
+> +	{0x362a, 0xff},
+> +	{0x3633, 0x10},
+> +	{0x3634, 0x10},
+> +	{0x3635, 0x10},
+> +	{0x3636, 0x10},
+> +	{0x3663, 0x08},
+> +	{0x3669, 0x34},
+> +	{0x366d, 0x00},
+> +	{0x366e, 0x10},
+> +	{0x3706, 0x86},
+> +	{0x370b, 0x7e},
+> +	{0x3714, 0x23},
+> +	{0x3730, 0x12},
+> +	{0x3733, 0x10},
+> +	{0x3764, 0x00},
+> +	{0x3765, 0x00},
+> +	{0x3769, 0x62},
+> +	{0x376a, 0x2a},
+> +	{0x376b, 0x30},
+> +	{0x3780, 0x00},
+> +	{0x3781, 0x24},
+> +	{0x3782, 0x00},
+> +	{0x3783, 0x23},
+> +	{0x3798, 0x2f},
+> +	{0x37a1, 0x60},
+> +	{0x37a8, 0x6a},
+> +	{0x37ab, 0x3f},
+> +	{0x37c2, 0x04},
+> +	{0x37c3, 0xf1},
+> +	{0x37c9, 0x80},
+> +	{0x37cb, 0x16},
+> +	{0x37cc, 0x16},
+> +	{0x37cd, 0x16},
+> +	{0x37ce, 0x16},
+> +	{0x3800, 0x00},
+> +	{0x3801, 0x00},
+> +	{0x3802, 0x00},
+> +	{0x3803, 0x0c},
+> +	{0x3804, 0x0c},
+> +	{0x3805, 0xdf},
+> +	{0x3806, 0x09},
+> +	{0x3807, 0xa3},
+> +	{0x3808, 0x0c},
+> +	{0x3809, 0xc0},
+> +	{0x380a, 0x09},
+> +	{0x380b, 0x90},
+> +	{0x380c, 0x07},
+> +	{0x380d, 0x8c},
+> +	{0x380e, 0x09},
+> +	{0x380f, 0xb2},
+> +	{0x3810, 0x00},
+> +	{0x3811, 0x04},
+> +	{0x3812, 0x00},
+> +	{0x3813, 0x02},
+> +	{0x3814, 0x01},
+> +	{0x3815, 0x01},
+> +	{0x3816, 0x00},
+> +	{0x3817, 0x00},
+> +	{0x3818, 0x00},
+> +	{0x3819, 0x00},
+> +	{0x3820, 0x80},
+> +	{0x3821, 0x46},
+> +	{0x382a, 0x01},
+> +	{0x382b, 0x01},
+> +	{0x3830, 0x06},
+> +	{0x3836, 0x02},
+> +	{0x3862, 0x04},
+> +	{0x3863, 0x08},
+> +	{0x3cc0, 0x33},
+> +	{0x3d85, 0x17},
+> +	{0x3d8c, 0x73},
+> +	{0x3d8d, 0xde},
+> +	{0x4001, 0xe0},
+> +	{0x4003, 0x40},
+> +	{0x4008, 0x00},
+> +	{0x4009, 0x0b},
+> +	{0x400a, 0x00},
+> +	{0x400b, 0x84},
+> +	{0x400f, 0x80},
+> +	{0x4010, 0xf0},
+> +	{0x4011, 0xff},
+> +	{0x4012, 0x02},
+> +	{0x4013, 0x01},
+> +	{0x4014, 0x01},
+> +	{0x4015, 0x01},
+> +	{0x4042, 0x00},
+> +	{0x4043, 0x80},
+> +	{0x4044, 0x00},
+> +	{0x4045, 0x80},
+> +	{0x4046, 0x00},
+> +	{0x4047, 0x80},
+> +	{0x4048, 0x00},
+> +	{0x4049, 0x80},
+> +	{0x4041, 0x03},
+> +	{0x404c, 0x20},
+> +	{0x404d, 0x00},
+> +	{0x404e, 0x20},
+> +	{0x4203, 0x80},
+> +	{0x4307, 0x30},
+> +	{0x4317, 0x00},
+> +	{0x4502, 0x50},
+> +	{0x4503, 0x08},
+> +	{0x4601, 0x80},
+> +	{0x4800, 0x44},
+> +	{0x4816, 0x53},
+> +	{0x481b, 0x50},
+> +	{0x481f, 0x27},
+> +	{0x4823, 0x3c},
+> +	{0x482b, 0x00},
+> +	{0x4831, 0x66},
+> +	{0x4837, 0x16},
+> +	{0x483c, 0x0f},
+> +	{0x484b, 0x05},
+> +	{0x5000, 0x77},
+> +	{0x5001, 0x0a},
+> +	{0x5003, 0xc8},
+> +	{0x5004, 0x04},
+> +	{0x5006, 0x00},
+> +	{0x5007, 0x00},
+> +	{0x502e, 0x03},
+> +	{0x5030, 0x41},
+> +	{0x5780, 0x14},
+> +	{0x5781, 0x0f},
+> +	{0x5782, 0x44},
+> +	{0x5783, 0x02},
+> +	{0x5784, 0x01},
+> +	{0x5785, 0x01},
+> +	{0x5786, 0x00},
+> +	{0x5787, 0x04},
+> +	{0x5788, 0x02},
+> +	{0x5789, 0x0f},
+> +	{0x578a, 0xfd},
+> +	{0x578b, 0xf5},
+> +	{0x578c, 0xf5},
+> +	{0x578d, 0x03},
+> +	{0x578e, 0x08},
+> +	{0x578f, 0x0c},
+> +	{0x5790, 0x08},
+> +	{0x5791, 0x04},
+> +	{0x5792, 0x00},
+> +	{0x5793, 0x52},
+> +	{0x5794, 0xa3},
+> +	{0x5795, 0x02},
+> +	{0x5796, 0x20},
+> +	{0x5797, 0x20},
+> +	{0x5798, 0xd5},
+> +	{0x5799, 0xd5},
+> +	{0x579a, 0x00},
+> +	{0x579b, 0x50},
+> +	{0x579c, 0x00},
+> +	{0x579d, 0x2c},
+> +	{0x579e, 0x0c},
+> +	{0x579f, 0x40},
+> +	{0x57a0, 0x09},
+> +	{0x57a1, 0x40},
+> +	{0x59f8, 0x3d},
+> +	{0x5a08, 0x02},
+> +	{0x5b00, 0x02},
+> +	{0x5b01, 0x10},
+> +	{0x5b02, 0x03},
+> +	{0x5b03, 0xcf},
+> +	{0x5b05, 0x6c},
+> +	{0x5e00, 0x00},
+> +	{0x5e10, 0xfc}
+> +};
+> +
+>  static const struct ov8856_reg mode_1640x1232_regs[] = {
+>  	{0x3000, 0x20},
+>  	{0x3003, 0x08},
+> @@ -506,6 +732,208 @@ static const struct ov8856_reg mode_1640x1232_regs[] = {
+>  	{0x5e00, 0x00}
+>  };
+>  
+> +static const struct ov8856_reg mode_1632x1224_regs[] = {
+> +	{0x0103, 0x01},
+> +	{0x0302, 0x3c},
+> +	{0x0303, 0x01},
+> +	{0x031e, 0x0c},
+> +	{0x3000, 0x00},
+> +	{0x300e, 0x00},
+> +	{0x3010, 0x00},
+> +	{0x3015, 0x84},
+> +	{0x3018, 0x72},
+> +	{0x3021, 0x23},
+> +	{0x3033, 0x24},
+> +	{0x3500, 0x00},
+> +	{0x3501, 0x4c},
+> +	{0x3502, 0xe0},
+> +	{0x3503, 0x08},
+> +	{0x3505, 0x83},
+> +	{0x3508, 0x01},
+> +	{0x3509, 0x80},
+> +	{0x350c, 0x00},
+> +	{0x350d, 0x80},
+> +	{0x350e, 0x04},
+> +	{0x350f, 0x00},
+> +	{0x3510, 0x00},
+> +	{0x3511, 0x02},
+> +	{0x3512, 0x00},
+> +	{0x3600, 0x72},
+> +	{0x3601, 0x40},
+> +	{0x3602, 0x30},
+> +	{0x3610, 0xc5},
+> +	{0x3611, 0x58},
+> +	{0x3612, 0x5c},
+> +	{0x3613, 0xca},
+> +	{0x3614, 0x60},
+> +	{0x3628, 0xff},
+> +	{0x3629, 0xff},
+> +	{0x362a, 0xff},
+> +	{0x3633, 0x10},
+> +	{0x3634, 0x10},
+> +	{0x3635, 0x10},
+> +	{0x3636, 0x10},
+> +	{0x3663, 0x08},
+> +	{0x3669, 0x34},
+> +	{0x366d, 0x00},
+> +	{0x366e, 0x08},
+> +	{0x3706, 0x86},
+> +	{0x370b, 0x7e},
+> +	{0x3714, 0x27},
+> +	{0x3730, 0x12},
+> +	{0x3733, 0x10},
+> +	{0x3764, 0x00},
+> +	{0x3765, 0x00},
+> +	{0x3769, 0x62},
+> +	{0x376a, 0x2a},
+> +	{0x376b, 0x30},
+> +	{0x3780, 0x00},
+> +	{0x3781, 0x24},
+> +	{0x3782, 0x00},
+> +	{0x3783, 0x23},
+> +	{0x3798, 0x2f},
+> +	{0x37a1, 0x60},
+> +	{0x37a8, 0x6a},
+> +	{0x37ab, 0x3f},
+> +	{0x37c2, 0x14},
+> +	{0x37c3, 0xf1},
+> +	{0x37c9, 0x80},
+> +	{0x37cb, 0x16},
+> +	{0x37cc, 0x16},
+> +	{0x37cd, 0x16},
+> +	{0x37ce, 0x16},
+> +	{0x3800, 0x00},
+> +	{0x3801, 0x00},
+> +	{0x3802, 0x00},
+> +	{0x3803, 0x0c},
+> +	{0x3804, 0x0c},
+> +	{0x3805, 0xdf},
+> +	{0x3806, 0x09},
+> +	{0x3807, 0xa3},
+> +	{0x3808, 0x06},
+> +	{0x3809, 0x60},
+> +	{0x380a, 0x04},
+> +	{0x380b, 0xc8},
+> +	{0x380c, 0x07},
+> +	{0x380d, 0x8c},
+> +	{0x380e, 0x09},
+> +	{0x380f, 0xb2},
+> +	{0x3810, 0x00},
+> +	{0x3811, 0x02},
+> +	{0x3812, 0x00},
+> +	{0x3813, 0x02},
+> +	{0x3814, 0x03},
+> +	{0x3815, 0x01},
+> +	{0x3816, 0x00},
+> +	{0x3817, 0x00},
+> +	{0x3818, 0x00},
+> +	{0x3819, 0x00},
+> +	{0x3820, 0x80},
+> +	{0x3821, 0x47},
+> +	{0x382a, 0x03},
+> +	{0x382b, 0x01},
+> +	{0x3830, 0x06},
+> +	{0x3836, 0x02},
+> +	{0x3862, 0x04},
+> +	{0x3863, 0x08},
+> +	{0x3cc0, 0x33},
+> +	{0x3d85, 0x17},
+> +	{0x3d8c, 0x73},
+> +	{0x3d8d, 0xde},
+> +	{0x4001, 0xe0},
+> +	{0x4003, 0x40},
+> +	{0x4008, 0x00},
+> +	{0x4009, 0x05},
+> +	{0x400a, 0x00},
+> +	{0x400b, 0x84},
+> +	{0x400f, 0x80},
+> +	{0x4010, 0xf0},
+> +	{0x4011, 0xff},
+> +	{0x4012, 0x02},
+> +	{0x4013, 0x01},
+> +	{0x4014, 0x01},
+> +	{0x4015, 0x01},
+> +	{0x4042, 0x00},
+> +	{0x4043, 0x80},
+> +	{0x4044, 0x00},
+> +	{0x4045, 0x80},
+> +	{0x4046, 0x00},
+> +	{0x4047, 0x80},
+> +	{0x4048, 0x00},
+> +	{0x4049, 0x80},
+> +	{0x4041, 0x03},
+> +	{0x404c, 0x20},
+> +	{0x404d, 0x00},
+> +	{0x404e, 0x20},
+> +	{0x4203, 0x80},
+> +	{0x4307, 0x30},
+> +	{0x4317, 0x00},
+> +	{0x4502, 0x50},
+> +	{0x4503, 0x08},
+> +	{0x4601, 0x80},
+> +	{0x4800, 0x44},
+> +	{0x4816, 0x53},
+> +	{0x481b, 0x50},
+> +	{0x481f, 0x27},
+> +	{0x4823, 0x3c},
+> +	{0x482b, 0x00},
+> +	{0x4831, 0x66},
+> +	{0x4837, 0x16},
+> +	{0x483c, 0x0f},
+> +	{0x484b, 0x05},
+> +	{0x5000, 0x77},
+> +	{0x5001, 0x0a},
+> +	{0x5003, 0xc8},
+> +	{0x5004, 0x04},
+> +	{0x5006, 0x00},
+> +	{0x5007, 0x00},
+> +	{0x502e, 0x03},
+> +	{0x5030, 0x41},
+> +	{0x5795, 0x00},
+> +	{0x5796, 0x10},
+> +	{0x5797, 0x10},
+> +	{0x5798, 0x73},
+> +	{0x5799, 0x73},
+> +	{0x579a, 0x00},
+> +	{0x579b, 0x28},
+> +	{0x579c, 0x00},
+> +	{0x579d, 0x16},
+> +	{0x579e, 0x06},
+> +	{0x579f, 0x20},
+> +	{0x57a0, 0x04},
+> +	{0x57a1, 0xa0},
+> +	{0x5780, 0x14},
+> +	{0x5781, 0x0f},
+> +	{0x5782, 0x44},
+> +	{0x5783, 0x02},
+> +	{0x5784, 0x01},
+> +	{0x5785, 0x01},
+> +	{0x5786, 0x00},
+> +	{0x5787, 0x04},
+> +	{0x5788, 0x02},
+> +	{0x5789, 0x0f},
+> +	{0x578a, 0xfd},
+> +	{0x578b, 0xf5},
+> +	{0x578c, 0xf5},
+> +	{0x578d, 0x03},
+> +	{0x578e, 0x08},
+> +	{0x578f, 0x0c},
+> +	{0x5790, 0x08},
+> +	{0x5791, 0x04},
+> +	{0x5792, 0x00},
+> +	{0x5793, 0x52},
+> +	{0x5794, 0xa3},
+> +	{0x59f8, 0x3d},
+> +	{0x5a08, 0x02},
+> +	{0x5b00, 0x02},
+> +	{0x5b01, 0x10},
+> +	{0x5b02, 0x03},
+> +	{0x5b03, 0xcf},
+> +	{0x5b05, 0x6c},
+> +	{0x5e00, 0x00},
+> +	{0x5e10, 0xfc}
+> +};
+> +
+>  static const char * const ov8856_test_pattern_menu[] = {
+>  	"Disabled",
+>  	"Standard Color Bar",
+> @@ -548,6 +976,18 @@ static const struct ov8856_mode supported_modes[] = {
+>  		.link_freq_index = OV8856_LINK_FREQ_720MBPS,
+>  	},
+>  	{
+> +		.width    = 3264,
+> +		.height   = 2448,
+> +		.hts      = 1932,
+> +		.vts_def  = 2482,
+> +		.vts_min  = 2482,
+> +		.reg_list = {
+> +			.num_of_regs = ARRAY_SIZE(mode_3264x2448_regs),
+> +			.regs = mode_3264x2448_regs,
+> +		},
+> +		.link_freq_index = OV8856_LINK_FREQ_720MBPS,
+> +	},
+> +	{
+>  		.width = 1640,
+>  		.height = 1232,
+>  		.hts = 3820,
+> @@ -558,6 +998,18 @@ static const struct ov8856_mode supported_modes[] = {
+>  			.regs = mode_1640x1232_regs,
+>  		},
+>  		.link_freq_index = OV8856_LINK_FREQ_360MBPS,
+> +	},
+> +	{
+> +		.width    = 1632,
+> +		.height   = 1224,
+> +		.hts      = 1932,
+> +		.vts_def  = 2482,
+> +		.vts_min  = 2482,
+> +		.reg_list = {
+> +			.num_of_regs = ARRAY_SIZE(mode_1632x1224_regs),
+> +			.regs = mode_1632x1224_regs,
+> +		},
+> +		.link_freq_index = OV8856_LINK_FREQ_360MBPS,
+>  	}
+>  };
+>  
+> @@ -566,6 +1018,10 @@ struct ov8856 {
+>  	struct media_pad pad;
+>  	struct v4l2_ctrl_handler ctrl_handler;
+>  
+> +	struct clk		*xvclk;
+> +	struct gpio_desc	*reset_gpio;
+> +	struct regulator_bulk_data supplies[OV8856_NUM_SUPPLIES];
+> +
+>  	/* V4L2 Controls */
+>  	struct v4l2_ctrl *link_freq;
+>  	struct v4l2_ctrl *pixel_rate;
+> @@ -576,6 +1032,9 @@ struct ov8856 {
+>  	/* Current mode */
+>  	const struct ov8856_mode *cur_mode;
+>  
+> +	/* module hardware version */
+> +	bool is_1B_module;
 
-> > > > might cover it?
+What other hardware versions are there, and what are the differences?
 
-> > > 	* current CPU. If this capability is detected by the kernel, this will
-> > > 	* called on all the CPUs in the system, including the hotplugged
-> > > 	* CPUs.
-> > > 	*/
+> +
+>  	/* To serialize asynchronus callbacks */
+>  	struct mutex mutex;
+>  
+> @@ -696,6 +1155,24 @@ static int ov8856_test_pattern(struct ov8856 *ov8856, u32 pattern)
+>  				OV8856_REG_VALUE_08BIT, pattern);
+>  }
+>  
+> +static int ov8856_update_otp_reg(struct ov8856 *ov8856)
+> +{
+> +	int ret;
+> +
+> +	ret = ov8856_write_reg(ov8856, OV8856_REG_MODE_SELECT,
+> +			       OV8856_REG_VALUE_08BIT, OV8856_MODE_STREAMING);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = ov8856_write_reg(ov8856, OV8856_OTP_REG_ONE,
+> +			       OV8856_REG_VALUE_08BIT, OV8856_MODE_STANDBY);
+> +	if (ret)
+> +		return ret;
+> +
+> +	return ov8856_write_reg(ov8856, OV8856_OTP_REG_TWO,
+> +				OV8856_REG_VALUE_08BIT, OV8856_MODE_STREAMING);
+> +}
 
-> > 	 If this capability is detected by the kernel
-> > 	 this will called on all the CPUs in the system, including
-> > 	 the hotplugged CPUs, regardless of if the capability was
-> > 	 detected on that specific CPU.
+What does this do?
 
-> I think the only issue with this, as also with the original statement, is that
-> you are overloading "detected" for the "specific CPU" case.  In the first
-> use, the "detect" is dependent on the SCOPE of the capability and in the
-> latter one
+> +
+>  static int ov8856_set_ctrl(struct v4l2_ctrl *ctrl)
+>  {
+>  	struct ov8856 *ov8856 = container_of(ctrl->handler,
+> @@ -825,7 +1302,13 @@ static void ov8856_update_pad_format(const struct ov8856_mode *mode,
+>  {
+>  	fmt->width = mode->width;
+>  	fmt->height = mode->height;
+> -	fmt->code = MEDIA_BUS_FMT_SGRBG10_1X10;
+> +
+> +	/* Bayer Order is determined by image resolution */
 
-That's not quite what I'm trying to get over here - what I'm trying to
-get over is that the enable does not have the same scope as the
-detection, I think it's fairly natural to assume that that is the case.
-That is to say that the behaviour for the system scope detection case is
-expected but for anything that's CPU local it's a surprise.
+Ouch. 
 
-> is strictly "LOCAL" scope. If you replace the second "detected" with say, "not
-> available" or even "not matched", it makes it less confusing.
+This rather looks like a side effect of vertical cropping. How about
+either cropping one line above or below, to keep the same Bayer order?
 
->  	If the capability is detected by the kernel this will be called on all
-> 	the CPUs in the system, including the hotplugged CPUs, regardless of if
-> 	the capability was *available* on that specific CPU. This is useful for
-> 	some capabilities (e.g, working around CPU errata), where all the CPUs
-> 	must take some action (e.g, changing system control/configuration).
-> 	Thus, if an action is required only if the CPU has the capability, then
-> 	the routine must check it before taking any action.
+The driver is based on register lists that heavily restricts the
+possibilities of configuring the sensor. The alternative, should more
+free-form configuration be enabled, would be to expose the cropping
+capability to the user --- as well as binning.
 
-That's a bit verbose but I think it's sufficiently unambiguous. I'm
-still confused about how this differs from what I originally proposed :/
+> +	if (fmt->width == 3264 || fmt->width == 1632)
+> +		fmt->code = MEDIA_BUS_FMT_SBGGR10_1X10;
+> +	else
+> +		fmt->code = MEDIA_BUS_FMT_SGRBG10_1X10;
+> +
+>  	fmt->field = V4L2_FIELD_NONE;
+>  }
+>  
+> @@ -850,6 +1333,17 @@ static int ov8856_start_streaming(struct ov8856 *ov8856)
+>  		return ret;
+>  	}
+>  
+> +	/* update R3614 for 1B module */
+> +	if (ov8856->is_1B_module) {
+> +		ret = ov8856_write_reg(ov8856, OV8856_CLK_REG,
+> +				       OV8856_REG_VALUE_08BIT,
+> +				       OV8856_CLK_REG_1B_VAL);
+> +		if (ret) {
+> +			dev_err(&client->dev, "failed to set R3614");
+> +			return ret;
+> +		}
+> +	}
+> +
+>  	ret = __v4l2_ctrl_handler_setup(ov8856->sd.ctrl_handler);
+>  	if (ret)
+>  		return ret;
+> @@ -882,6 +1376,8 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
+>  	if (ov8856->streaming == enable)
+>  		return 0;
+>  
+> +	dev_dbg(&client->dev, "hardware version: (%d)\n", ov8856->is_1B_module);
+> +
+>  	mutex_lock(&ov8856->mutex);
+>  	if (enable) {
+>  		ret = pm_runtime_get_sync(&client->dev);
+> @@ -908,6 +1404,54 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
+>  	return ret;
+>  }
+>  
+> +/* Calculate the delay in us by clock rate and clock cycles */
+> +static inline u32 ov8856_cal_delay(u32 cycles)
+> +{
+> +	return DIV_ROUND_UP(cycles, OV8856_XVCLK_FREQ / 1000 / 1000);
 
---0XhtP95kHFp3KGBe
-Content-Type: application/pgp-signature; name="signature.asc"
+The frequency is rounded down. As it is used to calculate a delay needed,
+rounding up should be done for the frequency, too.
 
------BEGIN PGP SIGNATURE-----
+> +}
+> +
+> +static int __ov8856_power_on(struct ov8856 *ov8856)
+> +{
+> +	int ret;
+> +	u32 delay_us;
+> +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
+> +
+> +	ret = clk_prepare_enable(ov8856->xvclk);
+> +	if (ret < 0) {
+> +		dev_err(&client->dev, "Failed to enable xvclk\n");
+> +		return ret;
+> +	}
+> +
+> +	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
+> +
+> +	ret = regulator_bulk_enable(OV8856_NUM_SUPPLIES, ov8856->supplies);
+> +	if (ret < 0) {
+> +		dev_err(&client->dev, "Failed to enable regulators\n");
+> +		goto disable_clk;
+> +	}
+> +
+> +	gpiod_set_value_cansleep(ov8856->reset_gpio, 0);
+> +
+> +	/* 8192 cycles prior to first SCCB transaction */
+> +	delay_us = ov8856_cal_delay(8192);
+> +	usleep_range(delay_us  * 2, delay_us * 4);
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1MJ8MACgkQJNaLcl1U
-h9DP8Qf+PlVwa1QTeeqVTezu2igZiCXv3b9bKetHY3qRb4k6wnb+gs0VekLCMgfd
-H1WHgL0Ajf0F5i5AhAROYXHidhX4143IzxP+sgmPuftthuPmRxbJa8YgO1CCZc86
-pWGnt+TtrnnwxhuybPcysHW41WgxExY0iLPmyAVAVqqbTsZVn1Aj6feBEUJV4IpE
-6kUR2hLYSjiwYG4fM4xRe72O/WTTJpdIE1GTkH1qB8CnzPE6NZYJv5Uldblo2BbU
-s8MqI1N/z4fzwAz3YdWe+NA8RRwT0G7Kf292mAcbnfNo7cKth4rKUEY47Wh1y5Ok
-ZHn9ZZWEfhY/xOA6n41kfQyL4bXqhg==
-=+epL
------END PGP SIGNATURE-----
+Why multiply by 2?
 
---0XhtP95kHFp3KGBe--
+Note that the driver still needs to work even if the resources aren't
+visible to the software. That's the case e.g. on ACPI based systems.
 
+> +
+> +	return 0;
+> +
+> +disable_clk:
+> +	clk_disable_unprepare(ov8856->xvclk);
+> +
+> +	return ret;
+> +}
+> +
+> +static void __ov8856_power_off(struct ov8856 *ov8856)
+> +{
+> +	clk_disable_unprepare(ov8856->xvclk);
+> +	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
+> +
+> +	regulator_bulk_disable(OV8856_NUM_SUPPLIES, ov8856->supplies);
+> +}
+> +
+>  static int __maybe_unused ov8856_suspend(struct device *dev)
+>  {
+>  	struct i2c_client *client = to_i2c_client(dev);
+> @@ -915,8 +1459,8 @@ static int __maybe_unused ov8856_suspend(struct device *dev)
+>  	struct ov8856 *ov8856 = to_ov8856(sd);
+>  
+>  	mutex_lock(&ov8856->mutex);
+> -	if (ov8856->streaming)
+> -		ov8856_stop_streaming(ov8856);
 
---===============7396570290684312308==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+This seems like an unrelated change.
+
+> +
+> +	__ov8856_power_off(ov8856);
+>  
+>  	mutex_unlock(&ov8856->mutex);
+>  
+> @@ -1089,6 +1633,20 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
+>  		return -ENXIO;
+>  	}
+>  
+> +	/* set R3614 to distinguish harward versions */
+> +	ret = ov8856_update_otp_reg(ov8856);
+> +	if (ret) {
+> +		dev_err(&client->dev, "failed to set otp register");
+> +		return ret;
+> +	}
+> +
+> +	ret = ov8856_read_reg(ov8856, OV8856_OTP_REG,
+> +			      OV8856_REG_VALUE_08BIT, &val);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ov8856->is_1B_module = (val == OV8856_1B_MODULE) ? 1 : 0;
+> +
+>  	return 0;
+>  }
+>  
+> @@ -1164,11 +1722,27 @@ static int ov8856_remove(struct i2c_client *client)
+>  	media_entity_cleanup(&sd->entity);
+>  	v4l2_ctrl_handler_free(sd->ctrl_handler);
+>  	pm_runtime_disable(&client->dev);
+> +	if (!pm_runtime_status_suspended(&client->dev))
+> +		__ov8856_power_off(ov8856);
+> +	pm_runtime_set_suspended(&client->dev);
+>  	mutex_destroy(&ov8856->mutex);
+>  
+>  	return 0;
+>  }
+>  
+> +static int ov8856_configure_regulators(struct ov8856 *ov8856)
+> +{
+> +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
+> +	int i;
+
+unsigned int
+
+> +
+> +	for (i = 0; i < OV8856_NUM_SUPPLIES; i++)
+> +		ov8856->supplies[i].supply = ov8856_supply_names[i];
+> +
+> +	return devm_regulator_bulk_get(&client->dev,
+> +				       OV8856_NUM_SUPPLIES,
+> +				       ov8856->supplies);
+
+Remember to put the regulators, too.
+
+> +}
+> +
+>  static int ov8856_probe(struct i2c_client *client)
+>  {
+>  	struct ov8856 *ov8856;
+> @@ -1186,6 +1760,40 @@ static int ov8856_probe(struct i2c_client *client)
+>  		return -ENOMEM;
+>  
+>  	v4l2_i2c_subdev_init(&ov8856->sd, client, &ov8856_subdev_ops);
+> +
+> +	ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
+> +	if (IS_ERR(ov8856->xvclk)) {
+> +		dev_err(&client->dev, "Failed to get xvclk\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	ret = clk_set_rate(ov8856->xvclk, OV8856_XVCLK_FREQ);
+> +	if (ret < 0) {
+> +		dev_err(&client->dev, "Failed to set xvclk rate (24MHz)\n");
+> +		return ret;
+> +	}
+> +	if (clk_get_rate(ov8856->xvclk) != OV8856_XVCLK_FREQ)
+> +		dev_warn(&client->dev,
+> +			 "xvclk mismatched, modes are based on 24MHz\n");
+> +
+> +	ov8856->reset_gpio = devm_gpiod_get(&client->dev,
+> +					    "reset",
+
+Fits on the previous line.
+
+> +					    GPIOD_OUT_LOW);
+> +	if (IS_ERR(ov8856->reset_gpio)) {
+> +		dev_err(&client->dev, "Failed to get reset-gpios\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	ret = ov8856_configure_regulators(ov8856);
+> +	if (ret) {
+> +		dev_err(&client->dev, "Failed to get power regulators\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = __ov8856_power_on(ov8856);
+> +	if (ret)
+> +		goto probe_error_v4l2_ctrl_handler_free;
+> +
+>  	ret = ov8856_identify_module(ov8856);
+>  	if (ret) {
+>  		dev_err(&client->dev, "failed to find sensor: %d", ret);
+> @@ -1251,11 +1859,21 @@ static const struct acpi_device_id ov8856_acpi_ids[] = {
+>  MODULE_DEVICE_TABLE(acpi, ov8856_acpi_ids);
+>  #endif
+>  
+> +#if IS_ENABLED(CONFIG_OF)
+> +static const struct of_device_id ov8856_of_match[] = {
+> +	{ .compatible = "ovti,ov8856" },
+> +	{},
+> +};
+> +
+> +MODULE_DEVICE_TABLE(of, ov8856_of_match);
+> +#endif
+> +
+>  static struct i2c_driver ov8856_i2c_driver = {
+>  	.driver = {
+>  		.name = "ov8856",
+>  		.pm = &ov8856_pm_ops,
+>  		.acpi_match_table = ACPI_PTR(ov8856_acpi_ids),
+> +		.of_match_table = of_match_ptr(ov8856_of_match),
+>  	},
+>  	.probe_new = ov8856_probe,
+>  	.remove = ov8856_remove,
+
+-- 
+Regards,
+
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7396570290684312308==--
-
