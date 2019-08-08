@@ -2,36 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28E0B86692
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:02:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B2B586699
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:04:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6iC+GYyQjKVlgm7MC0WGwNBAhGlj12kZCkVCs2psA80=; b=XYVP94f09t43Bs
-	MlAU4vlpTUaSRwS41J6VoW7VhigmD6osPpklMwUCS+0T+ZIXw3gisGbfpEl+G9WGrRaEzNY7Ifkhw
-	c1gRqqT+gzmZpmXezBWtVVULc4P6+gKdOG/lKPDN3E0ftxWkFvsDx+6DcbAgs0HhkibTD9ma6BXLR
-	3zxGb4prycONTeh2LqgiKEH+hzf3KcrqvOhd4ixtdLgJw2qEJerYbp/SMrBaz1OIs6ii3NQBH8yE2
-	h0ZLuoRQhA69pcDXUPbpTnHM0+omzjwfBu+tOclocoUE1TvSciX5jtJ08MAxn2PLwRdhytHWm69R5
-	UJaf0/cmCx7Mffh/vGbw==;
+	List-Owner; bh=9+EkAL/JS1L8fLMXVWjIsvYSLermcLrw383hc43qbOU=; b=iiYJ7Pttgy3TQw
+	a+ykzp1bIw0zJ6g36HZv/4Jhf1iuA03FtFptHb+FIdt3Leiba5x6+a0H+VzcpJkwnHI0J7MzvB8lV
+	GCQs3UsQAReUD2RUOnGwtMWYHSgM/Tr6LlPAJvBhlOgpWMUFMHLMa0FU3931RxfmEqxV1ZNgkSGrF
+	68gr3edc2xtkwhcJXb9Gqb2NFFGsqPfInVmwkQghhW8PHE6lCQGDWYymD97m3qBqgWirhtiaX2dUy
+	hn7Z8hUibeFmVUSv+OHyldL2pYf9Ev0viYQP9lEcpaoZgEjzG15A8HHwRvfdk8sZs/iju03JlwRTX
+	mOOIBxENVNWEu923rSXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvks6-0008Us-Sy; Thu, 08 Aug 2019 16:02:35 +0000
-Received: from [195.167.85.94] (helo=localhost)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hvkqW-0006wr-CU; Thu, 08 Aug 2019 16:00:57 +0000
-From: Christoph Hellwig <hch@lst.de>
-To: iommu@lists.linux-foundation.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: [PATCH 8/8] dma-mapping: remove CONFIG_ARCH_NO_COHERENT_DMA_MMAP
-Date: Thu,  8 Aug 2019 19:00:05 +0300
-Message-Id: <20190808160005.10325-9-hch@lst.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190808160005.10325-1-hch@lst.de>
-References: <20190808160005.10325-1-hch@lst.de>
+	id 1hvku1-0000Rz-Ey; Thu, 08 Aug 2019 16:04:33 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvktr-0000RV-Bj
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:04:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6ACEB1684;
+ Thu,  8 Aug 2019 09:04:22 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 169B13F706;
+ Thu,  8 Aug 2019 09:04:20 -0700 (PDT)
+Date: Thu, 8 Aug 2019 17:04:14 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH 6/6] PSCI: cpuidle: Refactor CPU suspend power_state
+ parameter handling
+Message-ID: <20190808160414.GA19233@e107155-lin>
+References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
+ <20190722153745.32446-7-lorenzo.pieralisi@arm.com>
+ <20190808125516.GA2246@e107155-lin>
+ <CAPDyKFqHHwq=3XhSH_=uu5QoFkP3VYJ+2h7ENG5DNs-YzM6bNQ@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAPDyKFqHHwq=3XhSH_=uu5QoFkP3VYJ+2h7ENG5DNs-YzM6bNQ@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190808_090423_487935_2C481255 
+X-CRM114-Status: GOOD (  24.51  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -43,150 +64,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-xtensa@linux-xtensa.org, Michal Simek <monstr@monstr.eu>,
- Vladimir Murzin <vladimir.murzin@arm.com>, linux-parisc@vger.kernel.org,
- linux-sh@vger.kernel.org, Takashi Iwai <tiwai@suse.de>,
- linuxppc-dev@lists.ozlabs.org, Helge Deller <deller@gmx.de>, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
+ Will Deacon <will@kernel.org>, LAKML <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CONFIG_ARCH_NO_COHERENT_DMA_MMAP is now functionally identical to
-!CONFIG_MMU, so remove the separate symbol.  The only difference is that
-arm did not set it for !CONFIG_MMU, but arm uses a separate dma mapping
-implementation including its own mmap method, which is handled by moving
-the CONFIG_MMU check in dma_can_mmap so that is only applies to the
-dma-direct case, just as the other ifdefs for it.
+On Thu, Aug 08, 2019 at 05:29:24PM +0200, Ulf Hansson wrote:
+> On Thu, 8 Aug 2019 at 14:55, Sudeep Holla <sudeep.holla@arm.com> wrote:
+> >
+> > On Mon, Jul 22, 2019 at 04:37:45PM +0100, Lorenzo Pieralisi wrote:
+> > > Current PSCI code handles idle state entry through the
+> > > psci_cpu_suspend_enter() API, that takes an idle state index as a
+> > > parameter and convert the index into a previously initialized
+> > > power_state parameter before calling the PSCI.CPU_SUSPEND() with it.
+> > >
+> > > This is unwieldly, since it forces the PSCI firmware layer to keep track
+> > > of power_state parameter for every idle state so that the
+> > > index->power_state conversion can be made in the PSCI firmware layer
+> > > instead of the CPUidle driver implementations.
+> > >
+> > > Move the power_state handling out of drivers/firmware/psci
+> > > into the respective ACPI/DT PSCI CPUidle backends and convert
+> > > the psci_cpu_suspend_enter() API to get the power_state
+> > > parameter as input, which makes it closer to its firmware
+> > > interface PSCI.CPU_SUSPEND() API.
+> > >
+> > > A notable side effect is that the PSCI ACPI/DT CPUidle backends
+> > > now can directly handle (and if needed update) power_state
+> > > parameters before handing them over to the PSCI firmware
+> > > interface to trigger PSCI.CPU_SUSPEND() calls.
+> > >
+> > > Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > > Cc: Will Deacon <will@kernel.org>
+> > > Cc: Ulf Hansson <ulf.hansson@linaro.org>
+> > > Cc: Sudeep Holla <sudeep.holla@arm.com>
+> >
+> > Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+> >
+> > > +static __init int psci_cpu_init_idle(unsigned int cpu)
+> > > +{
+> > > +     struct device_node *cpu_node;
+> > > +     int ret;
+> > > +
+> > > +     /*
+> > > +      * If the PSCI cpu_suspend function hook has not been initialized
+> > > +      * idle states must not be enabled, so bail out
+> > > +      */
+> > > +     if (!psci_ops.cpu_suspend)
+> > > +             return -EOPNOTSUPP;
+> > > +
+> > > +     cpu_node = of_get_cpu_node(cpu, NULL);
+> >
+> > [nit] You could use of_cpu_device_node_get in linux/of_device.h as
+> > it may avoid parsing if used later during the boot(i.e. after
+> > cpu->of_node is populated). I think there's another instance in
+> > psci_idle_init_cpu
+>
+> Good idea!
+>
+> However, as $subject patch more or less just moves code from the
+> current psci firmware directory into cpuidle, perhaps it's better to
+> defer improvements to be made on top?
+>
 
-Signed-off-by: Christoph Hellwig <hch@lst.de>
----
- arch/Kconfig            |  3 ---
- arch/c6x/Kconfig        |  1 -
- arch/m68k/Kconfig       |  1 -
- arch/microblaze/Kconfig |  1 -
- arch/sh/Kconfig         |  1 -
- arch/xtensa/Kconfig     |  1 -
- kernel/dma/mapping.c    | 12 +++++-------
- 7 files changed, 5 insertions(+), 15 deletions(-)
+I am fine either way. But since cpuidle-psci.c is new file introduced
+in this series, we can have it as part of the original patch. I leave it
+to Lorenzo to decide :)
 
-diff --git a/arch/Kconfig b/arch/Kconfig
-index a7b57dd42c26..ec2834206d08 100644
---- a/arch/Kconfig
-+++ b/arch/Kconfig
-@@ -790,9 +790,6 @@ config COMPAT_32BIT_TIME
- 	  This is relevant on all 32-bit architectures, and 64-bit architectures
- 	  as part of compat syscall handling.
- 
--config ARCH_NO_COHERENT_DMA_MMAP
--	bool
--
- config ARCH_NO_PREEMPT
- 	bool
- 
-diff --git a/arch/c6x/Kconfig b/arch/c6x/Kconfig
-index b4fb61c83494..e65e8d82442a 100644
---- a/arch/c6x/Kconfig
-+++ b/arch/c6x/Kconfig
-@@ -20,7 +20,6 @@ config C6X
- 	select OF_EARLY_FLATTREE
- 	select GENERIC_CLOCKEVENTS
- 	select MODULES_USE_ELF_RELA
--	select ARCH_NO_COHERENT_DMA_MMAP
- 	select MMU_GATHER_NO_RANGE if MMU
- 
- config MMU
-diff --git a/arch/m68k/Kconfig b/arch/m68k/Kconfig
-index c518d695c376..614b355ae338 100644
---- a/arch/m68k/Kconfig
-+++ b/arch/m68k/Kconfig
-@@ -8,7 +8,6 @@ config M68K
- 	select ARCH_HAS_DMA_PREP_COHERENT if HAS_DMA && MMU && !COLDFIRE
- 	select ARCH_HAS_SYNC_DMA_FOR_DEVICE if HAS_DMA
- 	select ARCH_MIGHT_HAVE_PC_PARPORT if ISA
--	select ARCH_NO_COHERENT_DMA_MMAP if !MMU
- 	select ARCH_NO_PREEMPT if !COLDFIRE
- 	select BINFMT_FLAT_ARGVP_ENVP_ON_STACK
- 	select DMA_DIRECT_REMAP if HAS_DMA && MMU && !COLDFIRE
-diff --git a/arch/microblaze/Kconfig b/arch/microblaze/Kconfig
-index d411de05b628..632c9477a0f6 100644
---- a/arch/microblaze/Kconfig
-+++ b/arch/microblaze/Kconfig
-@@ -9,7 +9,6 @@ config MICROBLAZE
- 	select ARCH_HAS_SYNC_DMA_FOR_CPU
- 	select ARCH_HAS_SYNC_DMA_FOR_DEVICE
- 	select ARCH_MIGHT_HAVE_PC_PARPORT
--	select ARCH_NO_COHERENT_DMA_MMAP if !MMU
- 	select ARCH_WANT_IPC_PARSE_VERSION
- 	select BUILDTIME_EXTABLE_SORT
- 	select TIMER_OF
-diff --git a/arch/sh/Kconfig b/arch/sh/Kconfig
-index 6b1b5941b618..f356ee674d89 100644
---- a/arch/sh/Kconfig
-+++ b/arch/sh/Kconfig
-@@ -5,7 +5,6 @@ config SUPERH
- 	select ARCH_HAS_PTE_SPECIAL
- 	select ARCH_HAS_TICK_BROADCAST if GENERIC_CLOCKEVENTS_BROADCAST
- 	select ARCH_MIGHT_HAVE_PC_PARPORT
--	select ARCH_NO_COHERENT_DMA_MMAP if !MMU
- 	select HAVE_PATA_PLATFORM
- 	select CLKDEV_LOOKUP
- 	select DMA_DECLARE_COHERENT
-diff --git a/arch/xtensa/Kconfig b/arch/xtensa/Kconfig
-index ebc135bda921..70653aed3005 100644
---- a/arch/xtensa/Kconfig
-+++ b/arch/xtensa/Kconfig
-@@ -5,7 +5,6 @@ config XTENSA
- 	select ARCH_HAS_BINFMT_FLAT if !MMU
- 	select ARCH_HAS_SYNC_DMA_FOR_CPU
- 	select ARCH_HAS_SYNC_DMA_FOR_DEVICE
--	select ARCH_NO_COHERENT_DMA_MMAP if !MMU
- 	select ARCH_USE_QUEUED_RWLOCKS
- 	select ARCH_USE_QUEUED_SPINLOCKS
- 	select ARCH_WANT_FRAME_POINTERS
-diff --git a/kernel/dma/mapping.c b/kernel/dma/mapping.c
-index 64d1de59e133..fc17016b0871 100644
---- a/kernel/dma/mapping.c
-+++ b/kernel/dma/mapping.c
-@@ -186,7 +186,7 @@ int dma_common_mmap(struct device *dev, struct vm_area_struct *vma,
- 		void *cpu_addr, dma_addr_t dma_addr, size_t size,
- 		unsigned long attrs)
- {
--#ifndef CONFIG_ARCH_NO_COHERENT_DMA_MMAP
-+#ifdef CONFIG_MMU
- 	unsigned long user_count = vma_pages(vma);
- 	unsigned long count = PAGE_ALIGN(size) >> PAGE_SHIFT;
- 	unsigned long off = vma->vm_pgoff;
-@@ -217,7 +217,7 @@ int dma_common_mmap(struct device *dev, struct vm_area_struct *vma,
- 			user_count << PAGE_SHIFT, vma->vm_page_prot);
- #else
- 	return -ENXIO;
--#endif /* !CONFIG_ARCH_NO_COHERENT_DMA_MMAP */
-+#endif /* CONFIG_MMU */
- }
- 
- /**
-@@ -231,12 +231,10 @@ bool dma_can_mmap(struct device *dev)
- {
- 	const struct dma_map_ops *ops = get_dma_ops(dev);
- 
--	if (IS_ENABLED(CONFIG_ARCH_NO_COHERENT_DMA_MMAP))
--		return false;
--
- 	if (dma_is_direct(ops)) {
--		return dev_is_dma_coherent(dev) ||
--			IS_ENABLED(CONFIG_ARCH_HAS_DMA_COHERENT_TO_PFN);
-+		return IS_ENABLED(CONFIG_MMU) &&
-+		       (dev_is_dma_coherent(dev) ||
-+			IS_ENABLED(CONFIG_ARCH_HAS_DMA_COHERENT_TO_PFN));
- 	}
- 
- 	return ops->mmap != NULL;
--- 
-2.20.1
-
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
