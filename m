@@ -2,92 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B63C858BD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 05:47:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D399858D5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 06:03:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/KwH9UlM/ZwYIFfvctCVpUtisfRkS/HQd0fQL9eLyFE=; b=jmMmLPIBX4C0U0JQT1JeFHEca
-	khituqZmushOx0zPCWW9VkHSTLubwFdrbsx6HkfIDldnN5MTfxVWgL2f1k/IOH7QaTJze6w6kegaW
-	aZJi4lWbhZscTEiCMoBTKW8/FblCaQCWCGdFTVOLbKYhs/iCe3w81Wngk5q9LTCldApLJDxu7KXes
-	4M7VrdYBXypom9C7bOk5nM3MPI8XJ6AGChKHAPvoDBFu9whnPLea3xU6nmq5RWwmDTNBF71M+Vw5z
-	FT5tRA6y8hRMYsKFOvOeZHS5oVrDQcWhfvEpb+p3zQjU5GCbvKG0RcZkWOLwwC5dXJZKwVIj/b6Ch
-	HcaH9360A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=wSl79A4Xy4cjp0NkB0Sw1Rq4JI+kI0Ush99fytyeIb4=; b=Mpj
+	7NT5UBjvuaTb5rWN5dh8c9ZBlxDeYlSmEDIbvi8r7rQEhmcDQyE0yYjSWj2bmByFKcvKPJ15W7HHG
+	npUr3ihaXKQRHWX6Cosi7N36WjjBpv9JcLZn+Iygb9vlwI9qfQYT+xYTOiW7Qd9ZIn/LUW5pXhmZt
+	WeSFF3cgArM/BUqpHGxN7dLFYHoyD+w5b8BKzOF14XA8oqODumQMIvwIQ14wsadbJ8jNQaJqcSzJP
+	PsgdXJWXnF7YwqajhQz/PI+B7twkfoxe6Rkj3ECvyraARZ+5LVwHwOq8O787hdNH5SIzo3CVA6ekm
+	A5lENZeJIpWAGicW+tBWe9XgEyjUdLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvZOX-0002ok-Cc; Thu, 08 Aug 2019 03:47:17 +0000
-Received: from hqemgate16.nvidia.com ([216.228.121.65])
+	id 1hvZeS-00088g-6y; Thu, 08 Aug 2019 04:03:44 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvZO8-0002oL-WA; Thu, 08 Aug 2019 03:46:54 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d4b9b2c0000>; Wed, 07 Aug 2019 20:46:53 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Wed, 07 Aug 2019 20:46:51 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Wed, 07 Aug 2019 20:46:51 -0700
-Received: from ngvpn01-164-84.dyn.scz.us.nvidia.com (172.20.13.39) by
- HQMAIL107.nvidia.com (172.20.187.13) with Microsoft SMTP Server (TLS) id
- 15.0.1473.3; Thu, 8 Aug 2019 03:46:50 +0000
-Subject: Re: [PATCH 00/34] put_user_pages(): miscellaneous call sites
-To: Ira Weiny <ira.weiny@intel.com>, Michal Hocko <mhocko@kernel.org>
-References: <20190802022005.5117-1-jhubbard@nvidia.com>
- <20190802091244.GD6461@dhcp22.suse.cz>
- <20190802124146.GL25064@quack2.suse.cz>
- <20190802142443.GB5597@bombadil.infradead.org>
- <20190802145227.GQ25064@quack2.suse.cz>
- <076e7826-67a5-4829-aae2-2b90f302cebd@nvidia.com>
- <20190807083726.GA14658@quack2.suse.cz>
- <20190807084649.GQ11812@dhcp22.suse.cz>
- <20190808023637.GA1508@iweiny-DESK2.sc.intel.com>
-From: John Hubbard <jhubbard@nvidia.com>
-X-Nvconfidentiality: public
-Message-ID: <e648a7f3-6a1b-c9ea-1121-7ab69b6b173d@nvidia.com>
-Date: Wed, 7 Aug 2019 20:46:50 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190808023637.GA1508@iweiny-DESK2.sc.intel.com>
-X-Originating-IP: [172.20.13.39]
-X-ClientProxiedBy: HQMAIL107.nvidia.com (172.20.187.13) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1565236013; bh=oa/UlzMF1BY8hfwSUK2E34E4BK86wv0rI2GL87o8kWQ=;
- h=X-PGP-Universal:Subject:To:CC:References:From:X-Nvconfidentiality:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=caNdsK+H718e8IaMHboxAo7N5kSDjdO0aPPP7qMD/uXC6LIuseTU5yocCYztoyhLS
- A8theOeNn9DFbaKSyltNZVy/0B3VPZPEr/7HwHnfipqBI1W9E/1RXgk4cYboMCcd2v
- K1AubOjDxM7RJmlTd1q1ZO/DARZkbUQqfdDa7AtzCGn8CgjUMfboXlhtit5supcfVJ
- t3SF5BlWoOZ+ktHQ+Gy0QbysjhXaepl4K0zI9Pv3YsYauPp0cOOqMsTfKIdJYZp847
- qDjXLEk745BEl9a58mwF6yYg4Z7StCZBL718mfzBDBCPCwNZsIoTbJbWCkazTDd50+
- NvHzitKycTv2g==
+ id 1hvZeF-00087l-0N
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 04:03:33 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C3860200103;
+ Thu,  8 Aug 2019 06:03:26 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7F2E320009E;
+ Thu,  8 Aug 2019 06:03:21 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 012B5402F6;
+ Thu,  8 Aug 2019 12:03:14 +0800 (SGT)
+From: Biwen Li <biwen.li@nxp.com>
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, linux-imx@nxp.com, wsa@the-dreams.de
+Subject: i2c: imx: support slave mode for imx I2C driver
+Date: Thu,  8 Aug 2019 11:53:43 +0800
+Message-Id: <20190808035343.34120-1-biwen.li@nxp.com>
+X-Mailer: git-send-email 2.9.5
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_204653_048810_A036796B 
-X-CRM114-Status: GOOD (  17.44  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190807_210331_329569_E0280AAE 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.65 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,76 +64,257 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
- Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- amd-gfx@lists.freedesktop.org, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
- Matthew Wilcox <willy@infradead.org>, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
- devel@lists.orangefs.org, linux-media@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, linux-block@vger.kernel.org,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
- netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>
+Cc: Biwen Li <biwen.li@nxp.com>, laurentiu.tudor@nxp.com,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/7/19 7:36 PM, Ira Weiny wrote:
-> On Wed, Aug 07, 2019 at 10:46:49AM +0200, Michal Hocko wrote:
->> On Wed 07-08-19 10:37:26, Jan Kara wrote:
->>> On Fri 02-08-19 12:14:09, John Hubbard wrote:
->>>> On 8/2/19 7:52 AM, Jan Kara wrote:
->>>>> On Fri 02-08-19 07:24:43, Matthew Wilcox wrote:
->>>>>> On Fri, Aug 02, 2019 at 02:41:46PM +0200, Jan Kara wrote:
->>>>>>> On Fri 02-08-19 11:12:44, Michal Hocko wrote:
->>>>>>>> On Thu 01-08-19 19:19:31, john.hubbard@gmail.com wrote:
-  [...]
-> Before I go on, I would like to say that the "imbalance" of get_user_pages()
-> and put_page() bothers me from a purist standpoint...  However, since this
-> discussion cropped up I went ahead and ported my work to Linus' current master
-> (5.3-rc3+) and in doing so I only had to steal a bit of Johns code...  Sorry
-> John...  :-(
-> 
-> I don't have the commit messages all cleaned up and I know there may be some
-> discussion on these new interfaces but I wanted to throw this series out there
-> because I think it may be what Jan and Michal are driving at (or at least in
-> that direction.
-> 
-> Right now only RDMA and DAX FS's are supported.  Other users of GUP will still
-> fail on a DAX file and regular files will still be at risk.[2]
-> 
-> I've pushed this work (based 5.3-rc3+ (33920f1ec5bf)) here[3]:
-> 
-> https://github.com/weiny2/linux-kernel/tree/linus-rdmafsdax-b0-v3
-> 
-> I think the most relevant patch to this conversation is:
-> 
-> https://github.com/weiny2/linux-kernel/commit/5d377653ba5cf11c3b716f904b057bee6641aaf6
-> 
+The patch supports slave mode for imx I2C driver
 
-ohhh...can you please avoid using the old __put_user_pages_dirty()
-function? I thought I'd caught things early enough to get away with
-the rename and deletion of that. You could either:
+Signed-off-by: Biwen Li <biwen.li@nxp.com>
+---
+ drivers/i2c/busses/i2c-imx.c | 199 ++++++++++++++++++++++++++++++++---
+ 1 file changed, 185 insertions(+), 14 deletions(-)
 
-a) open code an implementation of vaddr_put_pages_dirty_lock() that
-doesn't call any of the *put_user_pages_dirty*() variants, or
-
-b) include my first patch ("") are part of your series, or
-
-c) base this on Andrews's tree, which already has merged in my first patch.
-
-
-thanks,
+diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
+index b1b8b938d7f4..f7583a9fa56f 100644
+--- a/drivers/i2c/busses/i2c-imx.c
++++ b/drivers/i2c/busses/i2c-imx.c
+@@ -202,6 +202,9 @@ struct imx_i2c_struct {
+ 	struct pinctrl_state *pinctrl_pins_gpio;
+ 
+ 	struct imx_i2c_dma	*dma;
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++	struct i2c_client		*slave;
++#endif /* CONFIG_I2C_SLAVE */
+ };
+ 
+ static const struct imx_i2c_hwdata imx1_i2c_hwdata = {
+@@ -583,23 +586,40 @@ static void i2c_imx_stop(struct imx_i2c_struct *i2c_imx)
+ 	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
+ }
+ 
+-static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
++/* Clear interrupt flag bit */
++static void i2c_imx_clr_if_bit(struct imx_i2c_struct *i2c_imx)
+ {
+-	struct imx_i2c_struct *i2c_imx = dev_id;
+-	unsigned int temp;
++	unsigned int status;
+ 
+-	temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
+-	if (temp & I2SR_IIF) {
+-		/* save status register */
+-		i2c_imx->i2csr = temp;
+-		temp &= ~I2SR_IIF;
+-		temp |= (i2c_imx->hwdata->i2sr_clr_opcode & I2SR_IIF);
+-		imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2SR);
+-		wake_up(&i2c_imx->queue);
+-		return IRQ_HANDLED;
+-	}
++	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
++	status &= ~I2SR_IIF;
++	status |= (i2c_imx->hwdata->i2sr_clr_opcode & I2SR_IIF);
++	imx_i2c_write_reg(status, i2c_imx, IMX_I2C_I2SR);
++}
++
++/* Clear arbitration lost bit */
++static void i2c_imx_clr_al_bit(struct imx_i2c_struct *i2c_imx)
++{
++	unsigned int status;
++
++	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
++	status &= ~I2SR_IAL;
++	imx_i2c_write_reg(status, i2c_imx, IMX_I2C_I2SR);
++}
+ 
+-	return IRQ_NONE;
++static irqreturn_t i2c_imx_master_isr(struct imx_i2c_struct *i2c_imx)
++{
++	unsigned int status;
++
++	dev_dbg(&i2c_imx->adapter.dev, "<%s>: master interrupt\n", __func__);
++
++	/* Save status register */
++	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
++	i2c_imx->i2csr = status | I2SR_IIF;
++
++	wake_up(&i2c_imx->queue);
++
++	return IRQ_HANDLED;
+ }
+ 
+ static int i2c_imx_dma_write(struct imx_i2c_struct *i2c_imx,
+@@ -1043,11 +1063,162 @@ static u32 i2c_imx_func(struct i2c_adapter *adapter)
+ 		| I2C_FUNC_SMBUS_READ_BLOCK_DATA;
+ }
+ 
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++static void i2c_imx_slave_init(struct imx_i2c_struct *i2c_imx)
++{
++	unsigned int temp;
++
++	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
++
++	/* Set slave addr. */
++	imx_i2c_write_reg((i2c_imx->slave->addr << 1), i2c_imx, IMX_I2C_IADR);
++
++	/* Disable i2c module */
++	temp = i2c_imx->hwdata->i2cr_ien_opcode
++			^ I2CR_IEN;
++	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
++
++	/* Reset status register */
++	imx_i2c_write_reg(i2c_imx->hwdata->i2sr_clr_opcode, i2c_imx,
++			  IMX_I2C_I2SR);
++
++	/* Enable module and enable interrupt from i2c module */
++	temp = i2c_imx->hwdata->i2cr_ien_opcode
++			| I2CR_IIEN;
++	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
++
++	/* Wait controller to be stable */
++	usleep_range(50, 150);
++}
++
++static irqreturn_t i2c_imx_slave_isr(struct imx_i2c_struct *i2c_imx)
++{
++	unsigned int status, ctl;
++	u8 value;
++
++	if (!i2c_imx->slave) {
++		dev_err(&i2c_imx->adapter.dev, "cannot deal with slave irq,i2c_imx->slave is null");
++		return IRQ_NONE;
++	}
++
++	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
++	ctl = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
++	if (status & I2SR_IAL) { /* Arbitration lost */
++		i2c_imx_clr_al_bit(i2c_imx);
++	} else if (status & I2SR_IAAS) { /* Addressed as a slave */
++		if (status & I2SR_SRW) { /* Master wants to read from us*/
++			dev_dbg(&i2c_imx->adapter.dev, "read requested");
++			i2c_slave_event(i2c_imx->slave, I2C_SLAVE_READ_REQUESTED, &value);
++
++			/* Slave transimt */
++			ctl |= I2CR_MTX;
++			imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
++
++			/* Send data */
++			imx_i2c_write_reg(value, i2c_imx, IMX_I2C_I2DR);
++		} else { /* Master wants to write to us */
++			dev_dbg(&i2c_imx->adapter.dev, "write requested");
++			i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_WRITE_REQUESTED, &value);
++
++			/* Slave receive */
++			ctl &= ~I2CR_MTX;
++			imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
++			/* Dummy read */
++			value = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
++		}
++	} else {
++		if (!(ctl & I2CR_MTX)) { /* Receive mode */
++			if (status & I2SR_IBB) { /* No STOP signal detected */
++				ctl &= ~I2CR_MTX;
++				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
++
++				value = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
++				i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_WRITE_RECEIVED, &value);
++			} else { /* STOP signal is detected */
++				dev_dbg(&i2c_imx->adapter.dev,
++					"STOP signal detected");
++				i2c_slave_event(i2c_imx->slave, I2C_SLAVE_STOP, &value);
++			}
++		} else { /* Transmit mode */
++			if (!(status & I2SR_RXAK)) {	/* Received ACK */
++				ctl |= I2CR_MTX;
++				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
++
++				i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_READ_PROCESSED, &value);
++
++				imx_i2c_write_reg(value, i2c_imx, IMX_I2C_I2DR);
++			} else { /* Received NAK */
++				ctl &= ~I2CR_MTX;
++				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
++				value = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
++			}
++		}
++	}
++	return IRQ_HANDLED;
++}
++
++static int i2c_imx_reg_slave(struct i2c_client *client)
++{
++	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(client->adapter);
++
++	if (i2c_imx->slave)
++		return -EINVAL;
++
++	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
++	i2c_imx->slave = client;
++
++	i2c_imx_slave_init(i2c_imx);
++
++	return 0;
++}
++
++static int i2c_imx_unreg_slave(struct i2c_client *client)
++{
++	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(client->adapter);
++
++	if (!i2c_imx->slave)
++		return -EINVAL;
++
++	i2c_imx->slave = NULL;
++
++	return 0;
++}
++#endif /* CONFIG_I2C_SLAVE */
++
+ static const struct i2c_algorithm i2c_imx_algo = {
+ 	.master_xfer	= i2c_imx_xfer,
+ 	.functionality	= i2c_imx_func,
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++	.reg_slave	= i2c_imx_reg_slave,
++	.unreg_slave	= i2c_imx_unreg_slave,
++#endif /* CONFIG_I2C_SLAVE */
+ };
+ 
++static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
++{
++	struct imx_i2c_struct *i2c_imx = dev_id;
++	unsigned int status, ctl;
++	irqreturn_t irq_status = IRQ_NONE;
++
++	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
++	ctl = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
++
++	if (status & I2SR_IIF) {
++		i2c_imx_clr_if_bit(i2c_imx);
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++		if (ctl & I2CR_MSTA)
++			irq_status = i2c_imx_master_isr(i2c_imx);
++		else
++			irq_status = i2c_imx_slave_isr(i2c_imx);
++#else
++		irq_status = i2c_imx_master_isr(i2c_imx);
++
++#endif /* CONFIG_I2C_SLAVE */
++	}
++
++	return irq_status;
++}
++
+ static int i2c_imx_probe(struct platform_device *pdev)
+ {
+ 	const struct of_device_id *of_id = of_match_device(i2c_imx_dt_ids,
 -- 
-John Hubbard
-NVIDIA
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
