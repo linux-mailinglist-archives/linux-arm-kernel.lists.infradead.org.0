@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2A948621A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 14:44:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EF908621D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 14:44:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=88gyUdKG5xDzLkJ26SIjMJRjpL+CdFi9UbwUs+J3G50=; b=jtOeRg9sRcjfOL
-	GyZBcTmA6Ki9hgIEY/mm4Nl0mPD9REqyf/+LUFGBkqYkKeD3pVF0/7txfkq7DrLJj4ANcaHTxggDM
-	Yp0+tjSY5DOanT5PuO2ixa9Qj6dYObGLfVQajgdkLMnEk9suGCzBrRutJ36OZ1Wni/+/LoJyLT3jG
-	Fa6adA0xQzG7XZGYwUub08j6TtaBNAS/SX2wnocmV1/mcYKS9mDzNotq6L7UvchBHF9Vt+qGLYJbI
-	vh4/46C9bBQokkyKS5nD7mkHfcvZMI6AHQTUwa/ByeeD4Ou7G9R5hAR7dWUMVarNKqtGk3HWwi9AX
-	vXbvdd8P8LmxbvgKAafA==;
+	List-Owner; bh=QLeM7tCAPuKxqqqUkBlLq9keit2PojHVdhCkBs7ClJY=; b=bj8ICjo6upipzy
+	Q33uTEnG+940424sfZCYOusrXwatRZX8fnVz/uPsh7yDpP+84Efxpkpl4pzLnJ+qIpIayEqysHj+Y
+	YgF4O3WfBJ6Q06/0q2ErWrtSqmq91P0LgA7UUld6OgLAjSSxPCE0FCDiwjhv6ZAAAOH2RDcd1MWAd
+	OvPwm12UUsqQNAR0A95J6D63NnOyjSmnQ9gl2brxA0Fmv0DRxSDO8dbL3DM4uhp2ZQW9boePug0TJ
+	XJ6sToQqykxJ2DnyfYZ7Ngnqk2mxcZDDl1aQpBT7+2vr3Q/DutH+BBYNxPe+5BxSA/GwwLlV2GDju
+	Alvy5Nv1kT0ZLdmD/1PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvhlm-0007Gr-Av; Thu, 08 Aug 2019 12:43:50 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1hvhm1-0007Qw-UX; Thu, 08 Aug 2019 12:44:05 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvhlX-0007F8-On
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 12:43:39 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ id 1hvhlh-0007JZ-K4
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 12:43:47 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
  Ludovic.Desroches@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
  envelope-from="Ludovic.Desroches@microchip.com";
  x-sender="Ludovic.Desroches@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,40 +34,39 @@ Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  a:smtpout.microchip.com a:mx1.microchip.iphmx.com
  a:mx2.microchip.iphmx.com include:servers.mcsv.net
  include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
  envelope-from="Ludovic.Desroches@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
+Authentication-Results: esa6.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 6BkT1O3KzLTrAEfzzKQKUg+ov/TLPRtRkX+Hy2eWKTrWrx6dAUCxmQ8HDSgbCnz8E6/jMTPpAL
- k4tC2ohBKyFmwAS4Dv1yPRX4Qt2x4vzsF53IUDGiIhgmRrf40QjlGNtNvMUJl6oTQqZM91ZeHj
- pdlsujUI+g2Fqo/kEdL7kNA1shBS8j2DvHBO3NqXkS6s78HEYWUrSc0WDXazgsq7L1Xu3BJoTO
- i4GZw3OgKZJpLmmLrAF9rD5C6Jy0sMviJ6+a8zYH2o6o8dTbU9CT1SnzA7TZm0n0fO/2IKZwaq
- 180=
-X-IronPort-AV: E=Sophos;i="5.64,361,1559545200"; d="scan'208";a="42891100"
+IronPort-SDR: UhMqoEB7R5wKP2mt2+WYc0BEl2Chih+xj1GWZXKExMYR0S5CsQboqsYaxz6b4JkkAXTIMUbk2U
+ T0EaEXKPbvMlBWnKJcWXV/9Kx0RPRGisaWsIF1FFhhDmPJ9oW2hUr9GdsD5/OezDS12Rjt/ru1
+ o7dOp3ot1ReAQxiM05xerQMZswlaTYtqPjEc90WN8p+jexQYMpnSjTyjwOXZOzBVMGoiXFiXIP
+ 0yNslWnYEn+Y8mlXsimrPRn5mjtB1XjbzNW83CHyj6PQi3aLgO0bUzXmJOmi6AW88eAMRfrOej
+ nFk=
+X-IronPort-AV: E=Sophos;i="5.64,361,1559545200"; d="scan'208";a="41506438"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 08 Aug 2019 05:43:23 -0700
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 08 Aug 2019 05:43:42 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 8 Aug 2019 05:43:21 -0700
+ 15.1.1713.5; Thu, 8 Aug 2019 05:43:42 -0700
 Received: from localhost (10.10.85.251) by chn-vm-ex03.mchp-main.com
  (10.10.85.151) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Thu, 8 Aug 2019 05:43:21 -0700
-Date: Thu, 8 Aug 2019 14:42:18 +0200
+ Transport; Thu, 8 Aug 2019 05:43:41 -0700
+Date: Thu, 8 Aug 2019 14:42:38 +0200
 From: Ludovic Desroches <ludovic.desroches@microchip.com>
 To: Eugen Hristev - M18282 <Eugen.Hristev@microchip.com>
-Subject: Re: [PATCH 2/2] ARM: dts: at91: sama5d27_som1_ek: add mmc
- capabilities for SDMMC0
-Message-ID: <20190808124217.wrmcxohw5i6ju2qe@M43218.corp.atmel.com>
+Subject: Re: [PATCH 1/2] mmc: sdhci-of-at91: add quirk for broken HS200
+Message-ID: <20190808124238.qui3rhk3t6dabbk7@M43218.corp.atmel.com>
 Mail-Followup-To: Eugen Hristev - M18282 <Eugen.Hristev@microchip.com>,
  Nicolas Ferre - M43238 <Nicolas.Ferre@microchip.com>,
  "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
@@ -78,21 +77,20 @@ Mail-Followup-To: Eugen Hristev - M18282 <Eugen.Hristev@microchip.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>
 References: <1565252928-28994-1-git-send-email-eugen.hristev@microchip.com>
- <1565252928-28994-2-git-send-email-eugen.hristev@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1565252928-28994-2-git-send-email-eugen.hristev@microchip.com>
+In-Reply-To: <1565252928-28994-1-git-send-email-eugen.hristev@microchip.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_054335_918628_8AF1814B 
-X-CRM114-Status: GOOD (  15.81  )
+X-CRM114-CacheID: sfid-20190808_054345_893418_13660134 
+X-CRM114-Status: GOOD (  14.95  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -118,49 +116,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 08, 2019 at 10:35:43AM +0200, Eugen Hristev - M18282 wrote:
+On Thu, Aug 08, 2019 at 10:35:40AM +0200, Eugen Hristev - M18282 wrote:
 > From: Eugen Hristev <eugen.hristev@microchip.com>
 > 
-> Add mmc capabilities for SDMMC0 for this board.
-> With this enabled, eMMC connected card is detected as:
-> 
-> mmc0: new DDR MMC card at address 0001
+> HS200 is not implemented in the driver, but the controller claims it
+> through caps.
+> Remove it via quirk.
+> Without this quirk, the mmc core will try to enable hs200, which will fail,
+> and the eMMC initialization will fail.
 > 
 > Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
 Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
 
-I am interested to have the some insights about the use of sd-uhs-*
-properties.
-
-Our IP can't deal with 1V8 by itself. It has a 1V8SEL signal which can
-be used as the logic control input of a mux. So even if the IP claims
-to support UHS modes, it depends on the board.
-
-Are the sd-uhs-* properties a way to deal with this? I tend to think no
-as sdhci_setup_host() will set the caps depending on the content of the
-capabilities register. Do we have to use the SDHCI_QUIRK_MISSING_CAPS
-quirk or sdhci-caps/sdhci-caps-mask?
-
-Regards
+Thanks
 
 Ludovic
 
 > ---
->  arch/arm/boot/dts/at91-sama5d27_som1_ek.dts | 1 +
->  1 file changed, 1 insertion(+)
+>  drivers/mmc/host/sdhci-of-at91.c | 3 +++
+>  1 file changed, 3 insertions(+)
 > 
-> diff --git a/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts b/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts
-> index 149e539..194b3a3 100644
-> --- a/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts
-> +++ b/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts
-> @@ -54,6 +54,7 @@
+> diff --git a/drivers/mmc/host/sdhci-of-at91.c b/drivers/mmc/host/sdhci-of-at91.c
+> index 57fe3b2..3a8c6d8 100644
+> --- a/drivers/mmc/host/sdhci-of-at91.c
+> +++ b/drivers/mmc/host/sdhci-of-at91.c
+> @@ -370,6 +370,9 @@ static int sdhci_at91_probe(struct platform_device *pdev)
+>  	pm_runtime_set_autosuspend_delay(&pdev->dev, 50);
+>  	pm_runtime_use_autosuspend(&pdev->dev);
 >  
->  		sdmmc0: sdio-host@a0000000 {
->  			bus-width = <8>;
-> +			mmc-ddr-3_3v;
->  			pinctrl-names = "default";
->  			pinctrl-0 = <&pinctrl_sdmmc0_default>;
->  			status = "okay";
+> +	/* HS200 is broken at this moment */
+> +	host->quirks2 = SDHCI_QUIRK2_BROKEN_HS200;
+> +
+>  	ret = sdhci_add_host(host);
+>  	if (ret)
+>  		goto pm_runtime_disable;
 > -- 
 > 2.7.4
 > 
