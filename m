@@ -2,71 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F0FA859AC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 07:16:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B42FC859B4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 07:19:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ODeHZWpwIk9dWp7rFsdzMlwGjVEC/zIwBqCu+p2yPBQ=; b=Yewt/Hk8SAWVg9
-	fk+mecyfbZe+eSSqoeHMWOJxK/qsSJZzDt+wWOrSrw5BmaCLnUuIK9ULa3XZrtKv0P9vYyM02u4TI
-	NO8uRj9MoL8bMGZHE35wiuM6FudvpO5WwmgPk6EUJGyiHGJu7SlLf+l/ifqgNgkA3d2SHhZOpE73h
-	aQF4NFjorXXPcsLgGjYoo8Ps4cFGCuQtDRSqjaOfUIVoAqO5WcIFuZqr2vY2ky6vmPyidMvdaejWo
-	jPfp6xkMdm+d21AdzbTWPJRthV/nJg4DX73O4G5i+4GbZbBQatLJODmFf2MT0z58P/sloesNZD26M
-	Cbo39NRKGpmWeXeR4FSg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aazBVOIlpD+NJQaNHSY+Qgdk1wKox+Td8h4PRj7m1B4=; b=bvYAeugEh3fjF0
+	am2AWxMxvvyiRRLLc045P9QwVC2xYtPXwWyOaF4rcFFaFpUlhbJf6uxLu/sJO0zLWyDV7yA1htsNM
+	2m0j9bd7NzJUc7rJXig9JzHZhDMAox9MfOS+DS0HbdSGTVsghSM0AuZhheCAMSwMmR66BPBTlsFPn
+	ax50JhHON41HK4AMMx8ezGBa2VEvIQkhUbPyqvJXMIZ01M7pDzCsHIF48MUtZQV5osetTqO0Sjs2B
+	ORCoVZc4vjg08hsB66pWFnH2V7m6Vn6qXOvkFUz4nw3fqZNN7rwLyQwAqwrG1Z3LCWRebN5enoiba
+	wEU31DPainkqKhvxz1NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvame-0007oK-SW; Thu, 08 Aug 2019 05:16:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvamO-0007ns-Rr
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 05:16:03 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4EF7D2186A;
- Thu,  8 Aug 2019 05:16:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565241360;
- bh=2J9RvfstSlyf0vtjptVm/Auv7Jwm1Jh0rrjJwO14OmE=;
- h=In-Reply-To:References:From:Cc:To:Subject:Date:From;
- b=KPq0XKr2lxK2B+EsGtZZLwHAG+9RBzAh0+DInHNjhjmU0Hj5hy58QNeUeYSwydXgi
- w3ufJXrJlwRFofl8DfRO1I9olizNGCLTaxiwbWsLnWYSuTAyLMgDqTWWWPSOa+ujok
- 9M7oeKksFXvSCRWnlblEDXpWI5pbQfB9TP7GfTtc=
+	id 1hvapc-0008BN-6Q; Thu, 08 Aug 2019 05:19:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvapN-0008AY-Ko
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 05:19:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 902D428;
+ Wed,  7 Aug 2019 22:19:02 -0700 (PDT)
+Received: from [10.163.1.243] (unknown [10.163.1.243])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A6EF3F706;
+ Wed,  7 Aug 2019 22:21:07 -0700 (PDT)
+Subject: Re: [PATCH] arm64: mm: add missing PTE_SPECIAL in pte_mkdevmap on
+ arm64
+To: Jia He <justin.he@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ James Morse <james.morse@arm.com>
+References: <20190807045851.10772-1-justin.he@arm.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <ce0be561-117c-ef94-6a26-f88c3ba21096@arm.com>
+Date: Thu, 8 Aug 2019 10:48:53 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <20190705151440.20844-5-manivannan.sadhasivam@linaro.org>
-References: <20190705151440.20844-1-manivannan.sadhasivam@linaro.org>
- <20190705151440.20844-5-manivannan.sadhasivam@linaro.org>
-From: Stephen Boyd <sboyd@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- mturquette@baylibre.com, robh+dt@kernel.org
-Subject: Re: [PATCH 4/5] clk: Add driver for Bitmain BM1880 SoC clock
- controller
-User-Agent: alot/0.8.1
-Date: Wed, 07 Aug 2019 22:15:59 -0700
-Message-Id: <20190808051600.4EF7D2186A@mail.kernel.org>
+In-Reply-To: <20190807045851.10772-1-justin.he@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_221600_963283_A5182173 
-X-CRM114-Status: GOOD (  15.13  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190807_221905_784177_F4C264E8 
+X-CRM114-Status: GOOD (  24.20  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,1025 +64,191 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- darren.tsao@bitmain.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, fisher.cheng@bitmain.com,
- alec.lin@bitmain.com, linux-clk@vger.kernel.org, haitao.suo@bitmain.com
+Cc: Christoffer Dall <christoffer.dall@arm.com>, linux-kernel@vger.kernel.org,
+ Jun Yao <yaojun8558363@gmail.com>, Qian Cai <cai@lca.pw>,
+ Punit Agrawal <punitagrawal@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Robin Murphy <robin.murphy@arm.com>, Alex Van Brunt <avanbrunt@nvidia.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Manivannan Sadhasivam (2019-07-05 08:14:39)
-> diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
-> index fc1e0cf44995..ffc61ed85ade 100644
-> --- a/drivers/clk/Kconfig
-> +++ b/drivers/clk/Kconfig
-> @@ -304,6 +304,12 @@ config COMMON_CLK_FIXED_MMIO
->         help
->           Support for Memory Mapped IO Fixed clocks
+
+
+On 08/07/2019 10:28 AM, Jia He wrote:
+> Without this patch, the MAP_SYNC test case will cause a print_bad_pte
+> warning on arm64 as follows:
+> [   25.542693] BUG: Bad page map in process mapdax333
+> pte:2e8000448800f53 pmd:41ff5f003
+> [   25.546360] page:ffff7e0010220000 refcount:1 mapcount:-1
+> mapping:ffff8003e29c7440 index:0x0
+> [   25.550281] ext4_dax_aops
+> [   25.550282] name:"__aaabbbcccddd__"
+> [   25.551553] flags: 0x3ffff0000001002(referenced|reserved)
+> [   25.555802] raw: 03ffff0000001002 ffff8003dfffa908 0000000000000000
+> ffff8003e29c7440
+> [   25.559446] raw: 0000000000000000 0000000000000000 00000001fffffffe
+> 0000000000000000
+> [   25.563075] page dumped because: bad pte
+> [   25.564938] addr:0000ffffbe05b000 vm_flags:208000fb
+> anon_vma:0000000000000000 mapping:ffff8003e29c7440 index:0
+> [   25.574272] file:__aaabbbcccddd__ fault:ext4_dax_fault
+> mmmmap:ext4_file_mmap readpage:0x0
+> [   25.578799] CPU: 1 PID: 1180 Comm: mapdax333 Not tainted 5.2.0+ #21
+> [   25.581702] Hardware name: QEMU KVM Virtual Machine, BIOS 0.0.0
+> 02/06/2015
+> [   25.585624] Call trace:
+> [   25.587008]  dump_backtrace+0x0/0x178
+> [   25.588799]  show_stack+0x24/0x30
+> [   25.590328]  dump_stack+0xa8/0xcc
+> [   25.591901]  print_bad_pte+0x18c/0x218
+> [   25.593628]  unmap_page_range+0x778/0xc00
+> [   25.595506]  unmap_single_vma+0x94/0xe8
+> [   25.597304]  unmap_vmas+0x90/0x108
+> [   25.598901]  unmap_region+0xc0/0x128
+> [   25.600566]  __do_munmap+0x284/0x3f0
+> [   25.602245]  __vm_munmap+0x78/0xe0
+> [   25.603820]  __arm64_sys_munmap+0x34/0x48
+> [   25.605709]  el0_svc_common.constprop.0+0x78/0x168
+> [   25.607956]  el0_svc_handler+0x34/0x90
+> [   25.609698]  el0_svc+0x8/0xc
+> [   25.611103] Disabling lock debugging due to kernel taint
+> [   25.613573] BUG: Bad page state in process mapdax333  pfn:448800
+> [   25.616359] page:ffff7e0010220000 refcount:0 mapcount:-1
+> mapping:ffff8003e29c7440 index:0x1
+> [   25.620236] ext4_dax_aops
+> [   25.620237] name:"__aaabbbcccddd__"
+> [   25.621495] flags: 0x3ffff0000000000()
+> [   25.624912] raw: 03ffff0000000000 dead000000000100 dead000000000200
+> ffff8003e29c7440
+> [   25.628502] raw: 0000000000000001 0000000000000000 00000000fffffffe
+> 0000000000000000
+> [   25.632097] page dumped because: non-NULL mapping
+> [...]
+> [   25.656567] CPU: 1 PID: 1180 Comm: mapdax333 Tainted: G    B
+> 5.2.0+ #21
+> [   25.660131] Hardware name: QEMU KVM Virtual Machine, BIOS 0.0.0
+> 02/06/2015
+> [   25.663324] Call trace:
+> [   25.664466]  dump_backtrace+0x0/0x178
+> [   25.666163]  show_stack+0x24/0x30
+> [   25.667721]  dump_stack+0xa8/0xcc
+> [   25.669270]  bad_page+0xf0/0x150
+> [   25.670772]  free_pages_check_bad+0x84/0xa0
+> [   25.672724]  free_pcppages_bulk+0x45c/0x708
+> [   25.674675]  free_unref_page_commit+0xcc/0x100
+> [   25.676751]  free_unref_page_list+0x13c/0x200
+> [   25.678801]  release_pages+0x350/0x420
+> [   25.680539]  free_pages_and_swap_cache+0xf8/0x128
+> [   25.682738]  tlb_flush_mmu+0x164/0x2b0
+> [   25.684485]  unmap_page_range+0x648/0xc00
+> [   25.686349]  unmap_single_vma+0x94/0xe8
+> [   25.688131]  unmap_vmas+0x90/0x108
+> [   25.689739]  unmap_region+0xc0/0x128
+> [   25.691392]  __do_munmap+0x284/0x3f0
+> [   25.693079]  __vm_munmap+0x78/0xe0
+> [   25.694658]  __arm64_sys_munmap+0x34/0x48
+> [   25.696530]  el0_svc_common.constprop.0+0x78/0x168
+> [   25.698772]  el0_svc_handler+0x34/0x90
+> [   25.700512]  el0_svc+0x8/0xc
+> 
+> The root cause is in _vm_normal_page, without the PTE_SPECIAL bit,
+> the return value will be incorrectly set to pfn_to_page(pfn) instead
+> of NULL. Besides, this patch also rewrite the pmd_mkdevmap to avoid
+> setting PTE_SPECIAL for pmd
+> 
+> The MAP_SYNC test case is as follows(Provided by Yibo Cai)
+> $#include <stdio.h>
+> $#include <string.h>
+> $#include <unistd.h>
+> $#include <sys/file.h>
+> $#include <sys/mman.h>
+> 
+> $#ifndef MAP_SYNC
+> $#define MAP_SYNC 0x80000
+> $#endif
+> 
+> /* mount -o dax /dev/pmem0 /mnt */
+> $#define F "/mnt/__aaabbbcccddd__"
+> 
+> int main(void)
+> {
+>     int fd;
+>     char buf[4096];
+>     void *addr;
+> 
+>     if ((fd = open(F, O_CREAT|O_TRUNC|O_RDWR, 0644)) < 0) {
+>         perror("open1");
+>         return 1;
+>     }
+> 
+>     if (write(fd, buf, 4096) != 4096) {
+>         perror("lseek");
+>         return 1;
+>     }
+> 
+>     addr = mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED|MAP_SYNC,
+> fd, 0);
+>     if (addr == MAP_FAILED) {
+>         perror("mmap");
+>         printf("did you mount with '-o dax'?\n");
+>         return 1;
+>     }
+> 
+>     memset(addr, 0x55, 4096);
+> 
+>     if (munmap(addr, 4096) == -1) {
+>         perror("munmap");
+>         return 1;
+>     }
+> 
+>     close(fd);
+> 
+>     return 0;
+> }
+> 
+> Fixes: 73b20c84d42d ("arm64: mm: implement pte_devmap support")
+> Reported-by: Yibo Cai <Yibo.Cai@arm.com>
+> Signed-off-by: Jia He <justin.he@arm.com>
+> Acked-by: Robin Murphy <Robin.Murphy@arm.com>
+> ---
+>  arch/arm64/include/asm/pgtable.h | 7 +++++--
+>  1 file changed, 5 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+> index 5fdcfe237338..e09760ece844 100644
+> --- a/arch/arm64/include/asm/pgtable.h
+> +++ b/arch/arm64/include/asm/pgtable.h
+> @@ -209,7 +209,7 @@ static inline pmd_t pmd_mkcont(pmd_t pmd)
 >  
-> +config COMMON_CLK_BM1880
-> +       bool "Clock driver for Bitmain BM1880 SoC"
-> +       depends on ARCH_BITMAIN || COMPILE_TEST
-> +       help
-> +         This driver supports the clocks on Bitmain BM1880 SoC.
-
-Can you add this config somewhere else besides the end? Preferably
-close to alphabetically in this file.
-
-> +
->  source "drivers/clk/actions/Kconfig"
->  source "drivers/clk/analogbits/Kconfig"
->  source "drivers/clk/bcm/Kconfig"
-> diff --git a/drivers/clk/clk-bm1880.c b/drivers/clk/clk-bm1880.c
-> new file mode 100644
-> index 000000000000..26cdb75bb936
-> --- /dev/null
-> +++ b/drivers/clk/clk-bm1880.c
-> @@ -0,0 +1,947 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Bitmain BM1880 SoC clock driver
-> + *
-> + * Copyright (c) 2019 Linaro Ltd.
-> + * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> + */
-> +
-> +#include <linux/clk-provider.h>
-> +#include <linux/of_address.h>
-> +#include <linux/slab.h>
-
-Should probably add kernel.h for at least container_of()
-
-> +
-> +#include <dt-bindings/clock/bm1880-clock.h>
-> +
-> +#define BM1880_CLK_MPLL_CTL    0x00
-> +#define BM1880_CLK_SPLL_CTL    0x04
-> +#define BM1880_CLK_FPLL_CTL    0x08
-> +#define BM1880_CLK_DDRPLL_CTL  0x0c
-> +
-> +#define BM1880_CLK_ENABLE0     0x00
-> +#define BM1880_CLK_ENABLE1     0x04
-> +#define BM1880_CLK_SELECT      0x20
-> +#define BM1880_CLK_DIV0                0x40
-> +#define BM1880_CLK_DIV1                0x44
-> +#define BM1880_CLK_DIV2                0x48
-> +#define BM1880_CLK_DIV3                0x4c
-> +#define BM1880_CLK_DIV4                0x50
-> +#define BM1880_CLK_DIV5                0x54
-> +#define BM1880_CLK_DIV6                0x58
-> +#define BM1880_CLK_DIV7                0x5c
-> +#define BM1880_CLK_DIV8                0x60
-> +#define BM1880_CLK_DIV9                0x64
-> +#define BM1880_CLK_DIV10       0x68
-> +#define BM1880_CLK_DIV11       0x6c
-> +#define BM1880_CLK_DIV12       0x70
-> +#define BM1880_CLK_DIV13       0x74
-> +#define BM1880_CLK_DIV14       0x78
-> +#define BM1880_CLK_DIV15       0x7c
-> +#define BM1880_CLK_DIV16       0x80
-> +#define BM1880_CLK_DIV17       0x84
-> +#define BM1880_CLK_DIV18       0x88
-> +#define BM1880_CLK_DIV19       0x8c
-> +#define BM1880_CLK_DIV20       0x90
-> +#define BM1880_CLK_DIV21       0x94
-> +#define BM1880_CLK_DIV22       0x98
-> +#define BM1880_CLK_DIV23       0x9c
-> +#define BM1880_CLK_DIV24       0xa0
-> +#define BM1880_CLK_DIV25       0xa4
-> +#define BM1880_CLK_DIV26       0xa8
-> +#define BM1880_CLK_DIV27       0xac
-> +#define BM1880_CLK_DIV28       0xb0
-> +
-> +#define to_bm1880_pll_clk(_hw) container_of(_hw, struct bm1880_pll_hw_clock, hw)
-> +#define to_bm1880_div_clk(_hw) container_of(_hw, struct bm1880_div_hw_clock, hw)
-> +
-> +static DEFINE_SPINLOCK(bm1880_clk_lock);
-> +
-> +struct bm1880_clock_data {
-> +       void __iomem *pll_base;
-> +       void __iomem *sys_base;
-> +       struct clk_onecell_data clk_data;
-> +};
-> +
-> +struct bm1880_gate_clock {
-> +       unsigned int    id;
-> +       const char      *name;
-> +       const char      *parent;
-> +       u32             gate_reg;
-> +       s8              gate_shift;
-> +       unsigned long   flags;
-> +};
-> +
-> +struct bm1880_mux_clock {
-> +       unsigned int    id;
-> +       const char      *name;
-> +       const char      * const * parents;
-> +       s8              num_parents;
-> +       u32             reg;
-> +       s8              shift;
-> +       unsigned long   flags;
-> +};
-> +
-> +struct bm1880_div_clock {
-> +       unsigned int    id;
-> +       const char      *name;
-> +       const char      *parent;
-> +       u32             reg;
-> +       u8              shift;
-> +       u8              width;
-> +       u32             initval;
-> +       struct clk_div_table *table;
-> +       unsigned long   flags;
-> +};
-> +
-> +struct bm1880_div_hw_clock {
-> +       struct bm1880_div_clock div;
-> +       void __iomem *base;
-> +       spinlock_t *lock;
-> +       struct clk_hw hw;
-> +};
-> +
-> +struct bm1880_composite_clock {
-> +       unsigned int    id;
-> +       const char      *name;
-> +       const char      *parent;
-> +       const char      * const * parents;
-> +       unsigned int    num_parents;
-> +       unsigned long   flags;
-> +
-> +       u32             gate_reg;
-> +       u32             mux_reg;
-> +       u32             div_reg;
-> +
-> +       s8              gate_shift;
-> +       s8              mux_shift;
-> +       s8              div_shift;
-> +       s8              div_width;
-> +       s16             div_initval;
-> +       struct clk_div_table *table;
-> +};
-> +
-> +struct bm1880_pll_clock {
-> +       unsigned int    id;
-> +       const char      *name;
-> +       const char      *parent;
-> +       u32             reg;
-> +       unsigned long   flags;
-> +};
-> +
-> +struct bm1880_pll_hw_clock {
-> +       struct bm1880_pll_clock pll;
-> +       void __iomem *base;
-> +       struct clk_hw hw;
-> +};
-> +
-> +#define GATE_DIV(_id, _name, _parent, _gate_reg, _gate_shift, _div_reg,        \
-> +                       _div_shift, _div_width, _div_initval, _table,   \
-> +                       _flags) {                                       \
-> +               .id = _id,                                              \
-> +               .parent = _parent,                                      \
-> +               .name = _name,                                          \
-> +               .gate_reg = _gate_reg,                                  \
-> +               .gate_shift = _gate_shift,                              \
-> +               .div_reg = _div_reg,                                    \
-> +               .div_shift = _div_shift,                                \
-> +               .div_width = _div_width,                                \
-> +               .div_initval = _div_initval,                            \
-> +               .table = _table,                                        \
-> +               .mux_shift = -1,                                        \
-> +               .flags = _flags,                                        \
-> +       }
-> +
-> +#define GATE_MUX(_id, _name, _parents, _gate_reg, _gate_shift,         \
-> +                       _mux_reg, _mux_shift, _flags) {                 \
-> +               .id = _id,                                              \
-> +               .parents = _parents,                                    \
-> +               .num_parents = ARRAY_SIZE(_parents),                    \
-> +               .name = _name,                                          \
-> +               .gate_reg = _gate_reg,                                  \
-> +               .gate_shift = _gate_shift,                              \
-> +               .div_shift = -1,                                        \
-> +               .mux_reg = _mux_reg,                                    \
-> +               .mux_shift = _mux_shift,                                \
-> +               .flags = _flags,                                        \
-> +       }
-> +
-> +static const struct bm1880_pll_clock bm1880_pll_clks[] = {
-> +       { BM1880_CLK_MPLL, "clk_mpll", "osc", BM1880_CLK_MPLL_CTL,
-> +         CLK_IS_CRITICAL },
-> +       { BM1880_CLK_SPLL, "clk_spll", "osc", BM1880_CLK_SPLL_CTL,
-> +         CLK_IS_CRITICAL },
-> +       { BM1880_CLK_FPLL, "clk_fpll", "osc", BM1880_CLK_FPLL_CTL,
-> +         CLK_IS_CRITICAL },
-> +       { BM1880_CLK_DDRPLL, "clk_ddrpll", "osc", BM1880_CLK_DDRPLL_CTL,
-> +         CLK_IS_CRITICAL },
-> +};
-> +
-> +static const struct bm1880_gate_clock bm1880_gate_clks[] = {
-> +       { BM1880_CLK_AHB_ROM, "clk_ahb_rom", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE0, 2, CLK_IS_CRITICAL },
-> +       { BM1880_CLK_AXI_SRAM, "clk_axi_sram", "clk_axi1",
-> +         BM1880_CLK_ENABLE0, 3, CLK_IS_CRITICAL },
-> +       { BM1880_CLK_DDR_AXI, "clk_ddr_axi", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE0, 4, CLK_IS_CRITICAL },
-> +       { BM1880_CLK_APB_EFUSE, "clk_apb_efuse", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE0, 6, CLK_IS_CRITICAL },
-> +       { BM1880_CLK_AXI5_EMMC, "clk_axi5_emmc", "clk_axi5",
-> +         BM1880_CLK_ENABLE0, 7, 0 },
-> +       { BM1880_CLK_AXI5_SD, "clk_axi5_sd", "clk_axi5",
-> +         BM1880_CLK_ENABLE0, 10, 0 },
-> +       { BM1880_CLK_AXI4_ETH0, "clk_axi4_eth0", "clk_axi4",
-> +         BM1880_CLK_ENABLE0, 14, 0 },
-> +       { BM1880_CLK_AXI4_ETH1, "clk_axi4_eth1", "clk_axi4",
-> +         BM1880_CLK_ENABLE0, 16, 0 },
-> +       { BM1880_CLK_AXI1_GDMA, "clk_axi1_gdma", "clk_axi1",
-> +         BM1880_CLK_ENABLE0, 17, 0 },
-> +       /* Don't gate GPIO clocks as it is not owned by the GPIO driver */
-> +       { BM1880_CLK_APB_GPIO, "clk_apb_gpio", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE0, 18, CLK_IGNORE_UNUSED },
-> +       { BM1880_CLK_APB_GPIO_INTR, "clk_apb_gpio_intr", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE0, 19, CLK_IGNORE_UNUSED },
-> +       { BM1880_CLK_AXI1_MINER, "clk_axi1_miner", "clk_axi1",
-> +         BM1880_CLK_ENABLE0, 21, 0 },
-> +       { BM1880_CLK_AHB_SF, "clk_ahb_sf", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE0, 22, 0 },
-> +       { BM1880_CLK_SDMA_AXI, "clk_sdma_axi", "clk_axi5",
-> +         BM1880_CLK_ENABLE0, 23, 0 },
-> +       { BM1880_CLK_APB_I2C, "clk_apb_i2c", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE0, 25, 0 },
-> +       { BM1880_CLK_APB_WDT, "clk_apb_wdt", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE0, 26, 0 },
-> +       { BM1880_CLK_APB_JPEG, "clk_apb_jpeg", "clk_axi6",
-> +         BM1880_CLK_ENABLE0, 27, 0 },
-> +       { BM1880_CLK_AXI5_NF, "clk_axi5_nf", "clk_axi5",
-> +         BM1880_CLK_ENABLE0, 29, 0 },
-> +       { BM1880_CLK_APB_NF, "clk_apb_nf", "clk_axi6",
-> +         BM1880_CLK_ENABLE0, 30, 0 },
-> +       { BM1880_CLK_APB_PWM, "clk_apb_pwm", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE1, 0, 0 },
-> +       { BM1880_CLK_RV, "clk_rv", "clk_mux_rv",
-> +         BM1880_CLK_ENABLE1, 1, 0 },
-> +       { BM1880_CLK_APB_SPI, "clk_apb_spi", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE1, 2, 0 },
-> +       { BM1880_CLK_UART_500M, "clk_uart_500m", "clk_div_uart_500m",
-> +         BM1880_CLK_ENABLE1, 4, 0 },
-> +       { BM1880_CLK_APB_UART, "clk_apb_uart", "clk_axi6",
-> +         BM1880_CLK_ENABLE1, 5, 0 },
-> +       { BM1880_CLK_APB_I2S, "clk_apb_i2s", "clk_axi6",
-> +         BM1880_CLK_ENABLE1, 6, 0 },
-> +       { BM1880_CLK_AXI4_USB, "clk_axi4_usb", "clk_axi4",
-> +         BM1880_CLK_ENABLE1, 7, 0 },
-> +       { BM1880_CLK_APB_USB, "clk_apb_usb", "clk_axi6",
-> +         BM1880_CLK_ENABLE1, 8, 0 },
-> +       { BM1880_CLK_12M_USB, "clk_12m_usb", "clk_div_12m_usb",
-> +         BM1880_CLK_ENABLE1, 11, 0 },
-> +       { BM1880_CLK_APB_VIDEO, "clk_apb_video", "clk_axi6",
-> +         BM1880_CLK_ENABLE1, 12, 0 },
-> +       { BM1880_CLK_APB_VPP, "clk_apb_vpp", "clk_axi6",
-> +         BM1880_CLK_ENABLE1, 15, 0 },
-> +       { BM1880_CLK_AXI6, "clk_axi6", "clk_mux_axi6",
-> +         BM1880_CLK_ENABLE1, 21, CLK_IS_CRITICAL },
-> +};
-> +
-> +static const char * const clk_a53_parents[] = { "clk_spll", "clk_mpll" };
-> +static const char * const clk_rv_parents[] = { "clk_div_1_rv", "clk_div_0_rv" };
-> +static const char * const clk_axi1_parents[] = { "clk_div_1_axi1", "clk_div_0_axi1" };
-> +static const char * const clk_axi6_parents[] = { "clk_div_1_axi6", "clk_div_0_axi6" };
-> +
-> +static const struct bm1880_mux_clock bm1880_mux_clks[] = {
-> +       { BM1880_CLK_MUX_RV, "clk_mux_rv", clk_rv_parents, 2,
-> +         BM1880_CLK_SELECT, 1, 0 },
-> +       { BM1880_CLK_MUX_AXI6, "clk_mux_axi6", clk_axi6_parents, 2,
-> +         BM1880_CLK_SELECT, 3, 0 },
-> +};
-> +
-> +static struct clk_div_table bm1880_div_table_0[] = {
-
-Can these tables be const?
-
-> +       { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 },
-> +       { 4, 5 }, { 5, 6 }, { 6, 7 }, { 7, 8 },
-> +       { 8, 9 }, { 9, 10 }, { 10, 11 }, { 11, 12 },
-> +       { 12, 13 }, { 13, 14 }, { 14, 15 }, { 15, 16 },
-> +       { 16, 17 }, { 17, 18 }, { 18, 19 }, { 19, 20 },
-> +       { 20, 21 }, { 21, 22 }, { 22, 23 }, { 23, 24 },
-> +       { 24, 25 }, { 25, 26 }, { 26, 27 }, { 27, 28 },
-> +       { 28, 29 }, { 29, 30 }, { 30, 31 }, { 31, 32 },
-> +       { 0, 0 }
-> +};
-> +
-> +static struct clk_div_table bm1880_div_table_1[] = {
-> +       { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 },
-> +       { 4, 5 }, { 5, 6 }, { 6, 7 }, { 7, 8 },
-> +       { 8, 9 }, { 9, 10 }, { 10, 11 }, { 11, 12 },
-> +       { 12, 13 }, { 13, 14 }, { 14, 15 }, { 15, 16 },
-> +       { 16, 17 }, { 17, 18 }, { 18, 19 }, { 19, 20 },
-> +       { 20, 21 }, { 21, 22 }, { 22, 23 }, { 23, 24 },
-> +       { 24, 25 }, { 25, 26 }, { 26, 27 }, { 27, 28 },
-> +       { 28, 29 }, { 29, 30 }, { 30, 31 }, { 31, 32 },
-> +       { 127, 128 }, { 0, 0 }
-> +};
-> +
-> +static struct clk_div_table bm1880_div_table_2[] = {
-> +       { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 },
-> +       { 4, 5 }, { 5, 6 }, { 6, 7 }, { 7, 8 },
-> +       { 8, 9 }, { 9, 10 }, { 10, 11 }, { 11, 12 },
-> +       { 12, 13 }, { 13, 14 }, { 14, 15 }, { 15, 16 },
-> +       { 16, 17 }, { 17, 18 }, { 18, 19 }, { 19, 20 },
-> +       { 20, 21 }, { 21, 22 }, { 22, 23 }, { 23, 24 },
-> +       { 24, 25 }, { 25, 26 }, { 26, 27 }, { 27, 28 },
-> +       { 28, 29 }, { 29, 30 }, { 30, 31 }, { 31, 32 },
-> +       { 127, 128 }, { 255, 256 }, { 0, 0 }
-> +};
-> +
-> +static struct clk_div_table bm1880_div_table_3[] = {
-> +       { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 },
-> +       { 4, 5 }, { 5, 6 }, { 6, 7 }, { 7, 8 },
-> +       { 8, 9 }, { 9, 10 }, { 10, 11 }, { 11, 12 },
-> +       { 12, 13 }, { 13, 14 }, { 14, 15 }, { 15, 16 },
-> +       { 16, 17 }, { 17, 18 }, { 18, 19 }, { 19, 20 },
-> +       { 20, 21 }, { 21, 22 }, { 22, 23 }, { 23, 24 },
-> +       { 24, 25 }, { 25, 26 }, { 26, 27 }, { 27, 28 },
-> +       { 28, 29 }, { 29, 30 }, { 30, 31 }, { 31, 32 },
-> +       { 127, 128 }, { 255, 256 }, { 511, 512 }, { 0, 0 }
-> +};
-> +
-> +static struct clk_div_table bm1880_div_table_4[] = {
-> +       { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 },
-> +       { 4, 5 }, { 5, 6 }, { 6, 7 }, { 7, 8 },
-> +       { 8, 9 }, { 9, 10 }, { 10, 11 }, { 11, 12 },
-> +       { 12, 13 }, { 13, 14 }, { 14, 15 }, { 15, 16 },
-> +       { 16, 17 }, { 17, 18 }, { 18, 19 }, { 19, 20 },
-> +       { 20, 21 }, { 21, 22 }, { 22, 23 }, { 23, 24 },
-> +       { 24, 25 }, { 25, 26 }, { 26, 27 }, { 27, 28 },
-> +       { 28, 29 }, { 29, 30 }, { 30, 31 }, { 31, 32 },
-> +       { 127, 128 }, { 255, 256 }, { 511, 512 }, { 65535, 65536 },
-> +       { 0, 0 }
-> +};
-> +
-> +static const struct bm1880_div_clock bm1880_div_clks[] = {
-> +       { BM1880_CLK_DIV_0_RV, "clk_div_0_rv", "clk_spll",
-> +         BM1880_CLK_DIV12, 16, 5, 1, bm1880_div_table_0, CLK_IGNORE_UNUSED },
-> +       { BM1880_CLK_DIV_1_RV, "clk_div_1_rv", "clk_fpll",
-> +         BM1880_CLK_DIV13, 16, 5, 1, bm1880_div_table_0, CLK_IGNORE_UNUSED },
-> +       { BM1880_CLK_DIV_UART_500M, "clk_div_uart_500m", "clk_fpll",
-> +         BM1880_CLK_DIV15, 16, 7, 3, bm1880_div_table_1, 0 },
-> +       { BM1880_CLK_DIV_0_AXI1, "clk_div_0_axi1", "clk_mpll",
-> +         BM1880_CLK_DIV21, 16, 5, 2, bm1880_div_table_0, CLK_IS_CRITICAL },
-> +       { BM1880_CLK_DIV_1_AXI1, "clk_div_1_axi1", "clk_fpll",
-> +         BM1880_CLK_DIV22, 16, 5, 3, bm1880_div_table_0, CLK_IS_CRITICAL },
-> +       { BM1880_CLK_DIV_0_AXI6, "clk_div_0_axi6", "clk_fpll",
-> +         BM1880_CLK_DIV27, 16, 5, 15, bm1880_div_table_0, CLK_IS_CRITICAL },
-> +       { BM1880_CLK_DIV_1_AXI6, "clk_div_1_axi6", "clk_mpll",
-> +         BM1880_CLK_DIV28, 16, 5, 11, bm1880_div_table_0, CLK_IS_CRITICAL },
-> +       { BM1880_CLK_DIV_12M_USB, "clk_div_12m_usb", "clk_fpll",
-> +         BM1880_CLK_DIV18, 16, 7, 125, bm1880_div_table_1, 0 },
-> +};
-> +
-> +static struct bm1880_composite_clock bm1880_composite_clks[] = {
-> +       GATE_MUX(BM1880_CLK_A53, "clk_a53", clk_a53_parents,
-> +                BM1880_CLK_ENABLE0, 0, BM1880_CLK_SELECT, 0,
-> +                CLK_IS_CRITICAL),
-
-Please document why CLK_IS_CRITICAL. Maybe CPU clk so must be kept on?
-
-> +       GATE_DIV(BM1880_CLK_50M_A53, "clk_50m_a53", "clk_fpll",
-> +                BM1880_CLK_ENABLE0, 1, BM1880_CLK_DIV0, 16, 5, 30,
-> +                bm1880_div_table_0, CLK_IS_CRITICAL),
-> +       GATE_DIV(BM1880_CLK_EFUSE, "clk_efuse", "clk_fpll",
-> +                BM1880_CLK_ENABLE0, 5, BM1880_CLK_DIV1, 16, 7, 60,
-> +                bm1880_div_table_1, 0),
-> +       GATE_DIV(BM1880_CLK_EMMC, "clk_emmc", "clk_fpll",
-> +                BM1880_CLK_ENABLE0, 8, BM1880_CLK_DIV2, 16, 5, 15,
-> +                bm1880_div_table_0, 0),
-> +       GATE_DIV(BM1880_CLK_100K_EMMC, "clk_100k_emmc", "clk_div_12m_usb",
-> +                BM1880_CLK_ENABLE0, 9, BM1880_CLK_DIV3, 16, 8, 120,
-> +                bm1880_div_table_2, 0),
-> +       GATE_DIV(BM1880_CLK_SD, "clk_sd", "clk_fpll",
-> +                BM1880_CLK_ENABLE0, 11, BM1880_CLK_DIV4, 16, 5, 15,
-> +                bm1880_div_table_0, 0),
-> +       GATE_DIV(BM1880_CLK_100K_SD, "clk_100k_sd", "clk_div_12m_usb",
-> +                BM1880_CLK_ENABLE0, 12, BM1880_CLK_DIV5, 16, 8, 120,
-> +                bm1880_div_table_2, 0),
-> +       GATE_DIV(BM1880_CLK_500M_ETH0, "clk_500m_eth0", "clk_fpll",
-> +                BM1880_CLK_ENABLE0, 13, BM1880_CLK_DIV6, 16, 5, 3,
-> +                bm1880_div_table_0, 0),
-> +       GATE_DIV(BM1880_CLK_500M_ETH1, "clk_500m_eth1", "clk_fpll",
-> +                BM1880_CLK_ENABLE0, 15, BM1880_CLK_DIV7, 16, 5, 3,
-> +                bm1880_div_table_0, 0),
-> +       /* Don't gate GPIO clocks as it is not owned by the GPIO driver */
-> +       GATE_DIV(BM1880_CLK_GPIO_DB, "clk_gpio_db", "clk_div_12m_usb",
-> +                BM1880_CLK_ENABLE0, 20, BM1880_CLK_DIV8, 16, 16, 120,
-> +                bm1880_div_table_4, CLK_IGNORE_UNUSED),
-> +       GATE_DIV(BM1880_CLK_SDMA_AUD, "clk_sdma_aud", "clk_fpll",
-> +                BM1880_CLK_ENABLE0, 24, BM1880_CLK_DIV9, 16, 7, 61,
-> +                bm1880_div_table_1, 0),
-> +       GATE_DIV(BM1880_CLK_JPEG_AXI, "clk_jpeg_axi", "clk_fpll",
-> +                BM1880_CLK_ENABLE0, 28, BM1880_CLK_DIV10, 16, 5, 4,
-> +                bm1880_div_table_0, 0),
-> +       GATE_DIV(BM1880_CLK_NF, "clk_nf", "clk_fpll",
-> +                BM1880_CLK_ENABLE0, 31, BM1880_CLK_DIV11, 16, 5, 30,
-> +                bm1880_div_table_0, 0),
-> +       GATE_DIV(BM1880_CLK_TPU_AXI, "clk_tpu_axi", "clk_spll",
-> +                BM1880_CLK_ENABLE1, 3, BM1880_CLK_DIV14, 16, 5, 1,
-> +                bm1880_div_table_0, 0),
-> +       GATE_DIV(BM1880_CLK_125M_USB, "clk_125m_usb", "clk_fpll",
-> +                BM1880_CLK_ENABLE1, 9, BM1880_CLK_DIV16, 16, 5, 12,
-> +                bm1880_div_table_0, 0),
-> +       GATE_DIV(BM1880_CLK_33K_USB, "clk_33k_usb", "clk_div_12m_usb",
-> +                BM1880_CLK_ENABLE1, 10, BM1880_CLK_DIV17, 16, 9, 363,
-> +                bm1880_div_table_3, 0),
-> +       GATE_DIV(BM1880_CLK_VIDEO_AXI, "clk_video_axi", "clk_fpll",
-> +                BM1880_CLK_ENABLE1, 13, BM1880_CLK_DIV19, 16, 5, 4,
-> +                bm1880_div_table_0, 0),
-> +       GATE_DIV(BM1880_CLK_VPP_AXI, "clk_vpp_axi", "clk_fpll",
-> +                BM1880_CLK_ENABLE1, 14, BM1880_CLK_DIV20, 16, 5, 4,
-> +                bm1880_div_table_0, 0),
-> +       GATE_MUX(BM1880_CLK_AXI1, "clk_axi1", clk_axi1_parents,
-> +                BM1880_CLK_ENABLE1, 15, BM1880_CLK_SELECT, 2,
-> +                CLK_IS_CRITICAL),
-> +       GATE_DIV(BM1880_CLK_AXI2, "clk_axi2", "clk_fpll",
-> +                BM1880_CLK_ENABLE1, 17, BM1880_CLK_DIV23, 16, 5, 3,
-> +                bm1880_div_table_0, CLK_IS_CRITICAL),
-> +       GATE_DIV(BM1880_CLK_AXI3, "clk_axi3", "clk_mux_rv",
-> +                BM1880_CLK_ENABLE1, 18, BM1880_CLK_DIV24, 16, 5, 2,
-> +                bm1880_div_table_0, CLK_IS_CRITICAL),
-> +       GATE_DIV(BM1880_CLK_AXI4, "clk_axi4", "clk_fpll",
-> +                BM1880_CLK_ENABLE1, 19, BM1880_CLK_DIV25, 16, 5, 6,
-> +                bm1880_div_table_0, CLK_IS_CRITICAL),
-> +       GATE_DIV(BM1880_CLK_AXI5, "clk_axi5", "clk_fpll",
-> +                BM1880_CLK_ENABLE1, 20, BM1880_CLK_DIV26, 16, 5, 15,
-> +                bm1880_div_table_0, CLK_IS_CRITICAL),
-> +};
-> +
-> +static unsigned long bm1880_pll_rate_calc(u32 regval, unsigned long parent_rate)
+>  static inline pte_t pte_mkdevmap(pte_t pte)
+>  {
+> -	return set_pte_bit(pte, __pgprot(PTE_DEVMAP));
+> +	return set_pte_bit(pte, __pgprot(PTE_DEVMAP | PTE_SPECIAL));
+>  }
+>  
+>  static inline void set_pte(pte_t *ptep, pte_t pte)
+> @@ -396,7 +396,10 @@ static inline int pmd_protnone(pmd_t pmd)
+>  #ifdef CONFIG_TRANSPARENT_HUGEPAGE
+>  #define pmd_devmap(pmd)		pte_devmap(pmd_pte(pmd))
+>  #endif
+> -#define pmd_mkdevmap(pmd)	pte_pmd(pte_mkdevmap(pmd_pte(pmd)))
+> +static inline pmd_t pmd_mkdevmap(pmd_t pmd)
 > +{
-> +       u32 fbdiv, fref, refdiv;
-> +       u32 postdiv1, postdiv2;
-> +       unsigned long rate, numerator, denominator;
-> +
-> +       fbdiv = (regval >> 16) & 0xfff;
-> +       fref = parent_rate;
-> +       refdiv = regval & 0x1f;
-> +       postdiv1 = (regval >> 8) & 0x7;
-> +       postdiv2 = (regval >> 12) & 0x7;
-> +
-> +       numerator = parent_rate * fbdiv;
-> +       denominator = refdiv * postdiv1 * postdiv2;
-> +       do_div(numerator, denominator);
-> +       rate = numerator;
-> +
-> +       return rate;
+> +	return pte_pmd(set_pte_bit(pmd_pte(pmd), __pgprot(PTE_DEVMAP)));
 > +}
-> +
-> +static unsigned long bm1880_pll_recalc_rate(struct clk_hw *hw,
-> +                                           unsigned long parent_rate)
-> +{
-> +       struct bm1880_pll_hw_clock *pll_hw = to_bm1880_pll_clk(hw);
-> +       unsigned long rate;
-> +       u32 regval;
-> +
-> +       regval = readl(pll_hw->base + pll_hw->pll.reg);
-> +       rate = bm1880_pll_rate_calc(regval, parent_rate);
-> +
-> +       return rate;
-> +}
-> +
-> +static const struct clk_ops bm1880_pll_ops = {
-> +       .recalc_rate    = bm1880_pll_recalc_rate,
-> +};
-> +
-> +struct clk *bm1880_clk_register_pll(const struct bm1880_pll_clock *pll_clk,
-> +                                   void __iomem *sys_base)
-> +{
-> +       struct bm1880_pll_hw_clock *pll_hw;
-> +       struct clk_init_data init;
-> +       struct clk_hw *hw;
-> +       int err;
-> +
-> +       pll_hw = kzalloc(sizeof(*pll_hw), GFP_KERNEL);
-> +       if (!pll_hw)
-> +               return ERR_PTR(-ENOMEM);
-> +
-> +       init.name = pll_clk->name;
-> +       init.ops = &bm1880_pll_ops;
-> +       init.flags = pll_clk->flags;
-> +       init.parent_names = &pll_clk->parent;
 
-Can you use the new way of specifying parents instead of using strings
-for everything?
+Though I could see other platforms like powerpc and x86 following same
+approach (DEVMAP + SPECIAL) for pte so that it checks positive for
+pte_special() but then just DEVMAP for pmd which could never have a
+pmd_special(). But a more fundamental question is - why should a devmap
+be a special pte as well ?
 
-> +       init.num_parents = 1;
-> +
-> +       pll_hw->hw.init = &init;
-> +       pll_hw->pll.reg = pll_clk->reg;
-> +       pll_hw->base = sys_base;
-> +
-> +       hw = &pll_hw->hw;
-> +       err = clk_hw_register(NULL, hw);
-> +
-> +       if (err) {
-> +               kfree(pll_hw);
-> +               return ERR_PTR(err);
-> +       }
-> +
-> +       return hw->clk;
-
-Can this return the clk_hw pointer instead?
-
-> +}
-> +
-> +void bm1880_clk_unregister_pll(struct clk *clk)
-
-Should this be static?
-
-> +{
-> +       struct bm1880_pll_hw_clock *pll_hw;
-> +       struct clk_hw *hw;
-> +
-> +       hw = __clk_get_hw(clk);
-> +       if (!hw)
-> +               return;
-> +
-> +       pll_hw = to_bm1880_pll_clk(hw);
-> +
-> +       clk_unregister(clk);
-> +       kfree(pll_hw);
-> +}
-> +
-> +int bm1880_clk_register_plls(const struct bm1880_pll_clock *clks,
-> +                            int num_clks, struct bm1880_clock_data *data)
-> +{
-> +       struct clk *clk;
-> +       void __iomem *pll_base = data->pll_base;
-> +       int i;
-> +
-> +       for (i = 0; i < num_clks; i++) {
-> +               const struct bm1880_pll_clock *bm1880_clk = &clks[i];
-> +
-> +               clk = bm1880_clk_register_pll(bm1880_clk, pll_base);
-> +               if (IS_ERR(clk)) {
-> +                       pr_err("%s: failed to register clock %s\n",
-> +                              __func__, bm1880_clk->name);
-> +                       goto err_clk;
-> +               }
-> +
-> +               data->clk_data.clks[clks[i].id] = clk;
-> +       }
-> +
-> +       return 0;
-> +
-> +err_clk:
-> +       while (i--)
-
-I guess while (--i) is more idiomatic but this works too.
-
-> +               bm1880_clk_unregister_pll(data->clk_data.clks[clks[i].id]);
-> +
-> +       return PTR_ERR(clk);
-> +}
-> +
-> +int bm1880_clk_register_mux(const struct bm1880_mux_clock *clks,
-> +                           int num_clks, struct bm1880_clock_data *data)
-> +{
-> +       struct clk *clk;
-> +       void __iomem *sys_base = data->sys_base;
-> +       int i;
-> +
-> +       for (i = 0; i < num_clks; i++) {
-> +               clk = clk_register_mux(NULL, clks[i].name,
-
-Can you use the clk_hw based APIs for generic type clks?
-
-> +                                      clks[i].parents,
-> +                                      clks[i].num_parents,
-> +                                      clks[i].flags,
-> +                                      sys_base + clks[i].reg,
-> +                                      clks[i].shift, 1, 0,
-> +                                      &bm1880_clk_lock);
-> +               if (IS_ERR(clk)) {
-> +                       pr_err("%s: failed to register clock %s\n",
-> +                              __func__, clks[i].name);
-> +                       goto err_clk;
-> +               }
-> +
-> +               data->clk_data.clks[clks[i].id] = clk;
-> +       }
-> +
-> +       return 0;
-> +
-> +err_clk:
-> +       while (i--)
-> +               clk_unregister_gate(data->clk_data.clks[clks[i].id]);
-> +
-> +       return PTR_ERR(clk);
-> +}
-> +
-> +static unsigned long bm1880_clk_div_recalc_rate(struct clk_hw *hw,
-> +                                               unsigned long parent_rate)
-> +{
-> +       struct bm1880_div_hw_clock *div_hw = to_bm1880_div_clk(hw);
-> +       struct bm1880_div_clock *div = &div_hw->div;
-> +       void __iomem *reg_addr = div_hw->base + div->reg;
-> +       unsigned int val;
-> +       unsigned long rate;
-> +
-> +       if (!(readl(reg_addr) & BIT(3))) {
-> +               val = div->initval;
-> +       } else {
-> +               val = readl(reg_addr) >> div->shift;
-> +               val &= clk_div_mask(div->width);
-> +       }
-> +
-> +       rate = divider_recalc_rate(hw, parent_rate, val, div->table,
-> +                                  div->flags, div->width);
-> +
-> +       return rate;
-> +}
-> +
-> +static long bm1880_clk_div_round_rate(struct clk_hw *hw, unsigned long rate,
-> +                                     unsigned long *prate)
-> +{
-> +       struct bm1880_div_hw_clock *div_hw = to_bm1880_div_clk(hw);
-> +       struct bm1880_div_clock *div = &div_hw->div;
-> +       void __iomem *reg_addr = div_hw->base + div->reg;
-> +
-> +       if (div->flags & CLK_DIVIDER_READ_ONLY) {
-> +               u32 val;
-> +
-> +               val = readl(reg_addr) >> div->shift;
-> +               val &= clk_div_mask(div->width);
-> +
-> +               return divider_ro_round_rate(hw, rate, prate, div->table,
-> +                                            div->width, div->flags,
-> +                                            val);
-> +       }
-> +
-> +       return divider_round_rate(hw, rate, prate, div->table,
-> +                                 div->width, div->flags);
-> +}
-> +
-> +static int bm1880_clk_div_set_rate(struct clk_hw *hw, unsigned long rate,
-> +                                  unsigned long parent_rate)
-> +{
-> +       struct bm1880_div_hw_clock *div_hw = to_bm1880_div_clk(hw);
-> +       struct bm1880_div_clock *div = &div_hw->div;
-> +       void __iomem *reg_addr = div_hw->base + div->reg;
-> +       unsigned long flags = 0;
-> +       int value;
-> +       u32 val;
-> +
-> +       value = divider_get_val(rate, parent_rate, div->table,
-> +                               div->width, div_hw->div.flags);
-> +       if (value < 0)
-> +               return value;
-> +
-> +       if (div_hw->lock)
-> +               spin_lock_irqsave(div_hw->lock, flags);
-> +       else
-> +               __acquire(div_hw->lock);
-> +
-> +       if (div->flags & CLK_DIVIDER_HIWORD_MASK) {
-> +               val = clk_div_mask(div->width) << (div_hw->div.shift + 16);
-> +       } else {
-> +               val = readl(reg_addr);
-> +               val &= ~(clk_div_mask(div->width) << div_hw->div.shift);
-> +       }
-> +       val |= (u32)value << div->shift;
-> +       writel(val, reg_addr);
-> +
-> +       if (div_hw->lock)
-> +               spin_unlock_irqrestore(div_hw->lock, flags);
-> +       else
-> +               __release(div_hw->lock);
-> +
-> +       return 0;
-> +}
-> +
-> +const struct clk_ops bm1880_clk_div_ops = {
-
-static?
-
-> +       .recalc_rate = bm1880_clk_div_recalc_rate,
-> +       .round_rate = bm1880_clk_div_round_rate,
-> +       .set_rate = bm1880_clk_div_set_rate,
-> +};
-> +
-> +struct clk *bm1880_clk_register_div(const struct bm1880_div_clock *div_clk,
-> +                                   void __iomem *sys_base)
-> +{
-> +       struct bm1880_div_hw_clock *div_hw;
-> +       struct clk_init_data init;
-> +       struct clk_hw *hw;
-> +       int err;
-> +
-> +       div_hw = kzalloc(sizeof(*div_hw), GFP_KERNEL);
-> +       if (!div_hw)
-> +               return ERR_PTR(-ENOMEM);
-> +
-> +       init.name = div_clk->name;
-> +       init.ops = &bm1880_clk_div_ops;
-> +       init.flags = div_clk->flags;
-> +       init.parent_names = &div_clk->parent;
-> +       init.num_parents = 1;
-> +
-> +       div_hw->hw.init = &init;
-> +       div_hw->div.reg = div_clk->reg;
-> +       div_hw->div.shift = div_clk->shift;
-> +       div_hw->div.width = div_clk->width;
-> +       div_hw->div.initval = div_clk->initval;
-> +       div_hw->div.table = div_clk->table;
-> +       div_hw->div.flags = CLK_DIVIDER_ONE_BASED | CLK_DIVIDER_ALLOW_ZERO;
-> +       div_hw->base = sys_base;
-> +       div_hw->lock = &bm1880_clk_lock;
-> +
-> +       hw = &div_hw->hw;
-> +       err = clk_hw_register(NULL, hw);
-> +
-> +       if (err) {
-> +               kfree(div_hw);
-> +               return ERR_PTR(err);
-> +       }
-> +
-> +       return hw->clk;
-> +}
-> +
-> +void bm1880_clk_unregister_div(struct clk *clk)
-> +{
-> +       struct bm1880_div_hw_clock *div_hw;
-> +       struct clk_hw *hw;
-> +
-> +       hw = __clk_get_hw(clk);
-> +       if (!hw)
-> +               return;
-> +
-> +       div_hw = to_bm1880_div_clk(hw);
-> +
-> +       clk_unregister(clk);
-> +       kfree(div_hw);
-> +}
-> +
-> +int bm1880_clk_register_divs(const struct bm1880_div_clock *clks,
-> +                            int num_clks, struct bm1880_clock_data *data)
-> +{
-> +       struct clk *clk;
-> +       void __iomem *sys_base = data->sys_base;
-> +       int i;
-> +
-> +       for (i = 0; i < num_clks; i++) {
-> +               const struct bm1880_div_clock *bm1880_clk = &clks[i];
-> +
-> +               clk = bm1880_clk_register_div(bm1880_clk, sys_base);
-> +               if (IS_ERR(clk)) {
-> +                       pr_err("%s: failed to register clock %s\n",
-> +                              __func__, bm1880_clk->name);
-> +                       goto err_clk;
-> +               }
-> +
-> +               data->clk_data.clks[clks[i].id] = clk;
-> +       }
-> +
-> +       return 0;
-> +
-> +err_clk:
-> +       while (i--)
-> +               bm1880_clk_unregister_div(data->clk_data.clks[clks[i].id]);
-> +
-> +       return PTR_ERR(clk);
-> +}
-> +
-> +int bm1880_clk_register_gate(const struct bm1880_gate_clock *clks,
-> +                            int num_clks, struct bm1880_clock_data *data)
-> +{
-> +       struct clk *clk;
-> +       void __iomem *sys_base = data->sys_base;
-> +       int i;
-> +
-> +       for (i = 0; i < num_clks; i++) {
-> +               clk = clk_register_gate(NULL, clks[i].name,
-> +                                       clks[i].parent,
-> +                                       clks[i].flags,
-> +                                       sys_base + clks[i].gate_reg,
-> +                                       clks[i].gate_shift,
-> +                                       0,
-> +                                       &bm1880_clk_lock);
-> +               if (IS_ERR(clk)) {
-> +                       pr_err("%s: failed to register clock %s\n",
-> +                              __func__, clks[i].name);
-> +                       goto err_clk;
-> +               }
-> +
-> +               data->clk_data.clks[clks[i].id] = clk;
-> +       }
-> +
-> +       return 0;
-> +
-> +err_clk:
-> +       while (i--)
-> +               clk_unregister_gate(data->clk_data.clks[clks[i].id]);
-> +
-> +       return PTR_ERR(clk);
-> +}
-> +
-> +struct clk *bm1880_clk_register_composite(struct bm1880_composite_clock *clks,
-> +                                         void __iomem *sys_base)
-> +{
-> +       struct clk *clk;
-> +       struct clk_mux *mux = NULL;
-> +       struct clk_gate *gate = NULL;
-> +       struct bm1880_div_hw_clock *div_hws = NULL;
-> +       struct clk_hw *mux_hw = NULL, *gate_hw = NULL, *div_hw = NULL;
-> +       const struct clk_ops *mux_ops = NULL, *gate_ops = NULL, *div_ops = NULL;
-> +       const char * const *parent_names;
-> +       const char *parent;
-> +       int num_parents;
-> +       int ret;
-> +
-> +       if (clks->mux_shift >= 0) {
-> +               mux = kzalloc(sizeof(*mux), GFP_KERNEL);
-> +               if (!mux)
-> +                       return ERR_PTR(-ENOMEM);
-> +
-> +               mux->reg = sys_base + clks->mux_reg;
-> +               mux->mask = 1;
-> +               mux->shift = clks->mux_shift;
-> +               mux_hw = &mux->hw;
-> +               mux_ops = &clk_mux_ops;
-> +               mux->lock = &bm1880_clk_lock;
-> +
-> +               parent_names = clks->parents;
-> +               num_parents = clks->num_parents;
-> +       } else {
-> +               parent = clks->parent;
-> +               parent_names = &parent;
-> +               num_parents = 1;
-> +       }
-> +
-> +       if (clks->gate_shift >= 0) {
-> +               gate = kzalloc(sizeof(*gate), GFP_KERNEL);
-> +               if (!gate) {
-> +                       ret = -ENOMEM;
-> +                       goto err_out;
-> +               }
-> +
-> +               gate->reg = sys_base + clks->gate_reg;
-> +               gate->bit_idx = clks->gate_shift;
-> +               gate->lock = &bm1880_clk_lock;
-> +
-> +               gate_hw = &gate->hw;
-> +               gate_ops = &clk_gate_ops;
-> +       }
-> +
-> +       if (clks->div_shift >= 0) {
-> +               div_hws = kzalloc(sizeof(*div_hws), GFP_KERNEL);
-> +               if (!div_hws) {
-> +                       ret = -ENOMEM;
-> +                       goto err_out;
-> +               }
-> +
-> +               div_hws->base = sys_base;
-> +               div_hws->div.reg = clks->div_reg;
-> +               div_hws->div.shift = clks->div_shift;
-> +               div_hws->div.width = clks->div_width;
-> +               div_hws->div.table = clks->table;
-> +               div_hws->div.initval = clks->div_initval;
-> +               div_hws->lock = &bm1880_clk_lock;
-> +               div_hws->div.flags = CLK_DIVIDER_ONE_BASED |
-> +                                    CLK_DIVIDER_ALLOW_ZERO;
-> +
-> +               div_hw = &div_hws->hw;
-> +               div_ops = &bm1880_clk_div_ops;
-> +       }
-> +
-> +       clk = clk_register_composite(NULL, clks->name, parent_names,
-> +                                    num_parents, mux_hw, mux_ops, div_hw,
-> +                                    div_ops, gate_hw, gate_ops, (clks->flags));
-> +
-> +       if (IS_ERR(clk)) {
-> +               ret = PTR_ERR(clk);
-> +               goto err_out;
-> +       }
-> +
-> +       return clk;
-> +
-> +err_out:
-> +       kfree(div_hws);
-> +       kfree(gate);
-> +       kfree(mux);
-> +
-> +       return ERR_PTR(ret);
-> +}
-> +
-> +int bm1880_clk_register_composites(struct bm1880_composite_clock *clks,
-> +                                  int num_clks, struct bm1880_clock_data *data)
-> +{
-> +       struct clk *clk;
-> +       void __iomem *sys_base = data->sys_base;
-> +       int i;
-> +
-> +       for (i = 0; i < num_clks; i++) {
-> +               struct bm1880_composite_clock *bm1880_clk = &clks[i];
-> +
-> +               clk = bm1880_clk_register_composite(bm1880_clk, sys_base);
-> +               if (IS_ERR(clk)) {
-> +                       pr_err("%s: failed to register clock %s\n",
-> +                              __func__, bm1880_clk->name);
-> +                       goto err_clk;
-> +               }
-> +
-> +               data->clk_data.clks[clks[i].id] = clk;
-> +       }
-> +
-> +       return 0;
-> +
-> +err_clk:
-> +       while (i--)
-> +               clk_unregister_composite(data->clk_data.clks[clks[i].id]);
-> +
-> +       return PTR_ERR(clk);
-> +}
-> +
-> +static void bm1880_clk_init(struct device_node *np)
-> +{
-> +       struct bm1880_clock_data *clk_data;
-> +       struct clk **clk_table;
-> +       void __iomem *pll_base, *sys_base;
-> +       int num_clks;
-> +
-> +       pll_base = of_iomap(np, 0);
-> +       if (!pll_base) {
-> +               pr_err("%pOFn: unable to map pll resource", np);
-> +               of_node_put(np);
-> +               return;
-> +       }
-> +
-> +       sys_base = of_iomap(np, 1);
-> +       if (!sys_base) {
-> +               pr_err("%pOFn: unable to map sys resource", np);
-> +               of_node_put(np);
-> +               return;
-> +       }
-> +
-> +       clk_data = kzalloc(sizeof(*clk_data), GFP_KERNEL);
-> +       if (!clk_data)
-> +               return;
-> +
-> +       clk_data->pll_base = pll_base;
-> +       clk_data->sys_base = sys_base;
-> +       num_clks = ARRAY_SIZE(bm1880_gate_clks) +
-> +                  ARRAY_SIZE(bm1880_composite_clks);
-> +
-> +       clk_table = kcalloc(num_clks, sizeof(*clk_table), GFP_KERNEL);
-> +       if (!clk_table)
-> +               goto err_out;
-> +
-> +       clk_data->clk_data.clks = clk_table;
-> +       clk_data->clk_data.clk_num = num_clks;
-> +
-> +       /* Register PLL clocks */
-> +       bm1880_clk_register_plls(bm1880_pll_clks,
-> +                                ARRAY_SIZE(bm1880_pll_clks),
-> +                                clk_data);
-> +
-> +       /* Register Divider clocks */
-
-Please remove these comments, they provide no useful information.
-
-> +       bm1880_clk_register_divs(bm1880_div_clks,
-> +                                ARRAY_SIZE(bm1880_div_clks),
-> +                                clk_data);
-> +
-> +       /* Register Mux clocks */
-> +       bm1880_clk_register_mux(bm1880_mux_clks,
-> +                               ARRAY_SIZE(bm1880_mux_clks),
-> +                               clk_data);
-> +
-> +       /* Register Composite clocks */
-> +       bm1880_clk_register_composites(bm1880_composite_clks,
-> +                                      ARRAY_SIZE(bm1880_composite_clks),
-> +                                      clk_data);
-> +
-> +       /* Register Gate clocks */
-> +       bm1880_clk_register_gate(bm1880_gate_clks,
-> +                                ARRAY_SIZE(bm1880_gate_clks),
-> +                                clk_data);
-> +
-> +       of_clk_add_provider(np, of_clk_src_onecell_get, &clk_data->clk_data);
-> +
-> +       return;
-> +
-> +err_out:
-> +       kfree(clk_data);
-> +}
-> +
-> +CLK_OF_DECLARE_DRIVER(bm1880_clk, "bitmain,bm1880-clk", bm1880_clk_init);
-
-Is there a reason why it can't be a platform driver?
-
+Also in vm_normal_page() why cannot it tests for pte_devmap() before it
+starts looking for CONFIG_ARCH_HAS_PTE_SPECIAL. Is this the only path for
+which we need to set SPECIAL bit on a devmap pte or there are other paths
+where this semantics is assumed ?
 
 _______________________________________________
 linux-arm-kernel mailing list
