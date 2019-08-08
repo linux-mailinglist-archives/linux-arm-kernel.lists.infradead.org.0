@@ -2,58 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18231862FF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 15:22:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BC2E86315
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 15:26:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FhP42KkeWCVzM7rW49zBnSxpJb8tPjUs764sqcOeM8g=; b=OvYqDnye+JaR+lQDxNyiSyU+E
-	r7zpXcJW2n5kZlyfxLOgqPaN22rjujxa3WEY9pA4yz5pB/hFZno8XOSeHZmbfj6+RyUk0BM5obj/E
-	u6DLTTvU0iK4WGrF9la62J3CxtellH1tljGAQ/LzB74/q+BbT0UmsV25AtvfJ1gCcaMXaldF07ItP
-	s6wKeuSWEn4HDs/lf3AhE1ySTwkjoU8gFHX3YBKbmftqLyNqBdvUcNFl6qA//HFRTS4Co9xTydFQ5
-	To41fnLAvIagV/DNXDhvKZZiI/t9LIMvB6uvgYr2XTrOMxmNEYR0MwiEv0yFNNMCKeeIPbwrusUa2
-	+FP7sWw7g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NpPMJbgZHMrNdZZI43X23SIghDC1GLb8Cv5TwfPorZg=; b=Tlyxk5zP7jf4l+
+	wkcQJl+Ui0c+cT0M0+WRYVkokqjYiRQfwyifvP9oYQsXjiKpLlsxur8dp5hYkMwHKUkZzjqY3Ban4
+	JYbFi9YMR2b645T365CWf7nrXdHu7PLiiE4p6gkoRnFc/YJwH+Wpdpr9p00ghsRUMh4R3UJVFIr0f
+	7QURejcIUKbRWchCdVdWEQTqLO0n1Qa9RPp84hCBMGxiB+VTdRdzqLizt1zk4nN9vK3Zqff94VW5j
+	qla6RxSp7pyjW14HcVXaui4nhKwd3CsmsPmS7DOjctJD7edhy1h1tWAMdsSDlESXTFyOnK2orRSe9
+	lExY8TyIbzOc3L2g2zoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hviMk-0006rm-5p; Thu, 08 Aug 2019 13:22:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hviMV-0006rD-2d
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 13:21:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6503815A2;
- Thu,  8 Aug 2019 06:21:44 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CE0A43F694;
- Thu,  8 Aug 2019 06:21:43 -0700 (PDT)
-Subject: Re: [PATCH] arm64: Clarify when cpu_enable() is called
-To: broonie@kernel.org
-References: <20190806170043.35588-1-broonie@kernel.org>
- <20190807160107.fpanxo4iimhg743c@willie-the-truck>
- <20190807165143.GI4048@sirena.co.uk>
- <0508fc5a-ab61-f507-507f-3002e49f2d27@arm.com>
- <20190808121956.GA3795@sirena.co.uk>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <4975be8c-09ca-9acc-06ea-87e831f7fd79@arm.com>
-Date: Thu, 8 Aug 2019 14:21:42 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hviQv-0008Qb-KO; Thu, 08 Aug 2019 13:26:21 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hviQl-0008QJ-7d
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 13:26:12 +0000
+Received: from localhost (unknown [122.178.245.201])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B37412171F;
+ Thu,  8 Aug 2019 13:26:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565270770;
+ bh=xOthRltc9QPDcvSfY6/4aGUZsvl14aXcUqTn5d6Zb0c=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=wdhiSMgEUzklpKCVFzekiTPw8B+at3lhPkMlMq4SDMz7bagefPWO/3Q+YcDzoHCPg
+ vY90keJnw2raAF5MHo3hox17C8WLQGi9gvALi+W9RX1r1qYdChpA4QJ93ZTn9d6Kam
+ koHNlTvuUSrcY+0LQUue/knLXIFACQjNVu0A19FU=
+Date: Thu, 8 Aug 2019 18:54:56 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Jia-Ju Bai <baijiaju1990@gmail.com>
+Subject: Re: [PATCH] dma: stm32-mdma: Fix a possible null-pointer dereference
+ in stm32_mdma_irq_handler()
+Message-ID: <20190808132456.GA12733@vkoul-mobl.Dlink>
+References: <20190729020849.17971-1-baijiaju1990@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190808121956.GA3795@sirena.co.uk>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190729020849.17971-1-baijiaju1990@gmail.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_062151_661650_13CB27E3 
-X-CRM114-Status: GOOD (  21.73  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190808_062611_296339_199DF88E 
+X-CRM114-Status: UNSURE (   8.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,71 +78,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 29-07-19, 10:08, Jia-Ju Bai wrote:
+> In stm32_mdma_irq_handler(), chan is checked on line 1368.
+> When chan is NULL, it is still used on line 1369:
+>     dev_err(chan2dev(chan), "MDMA channel not initialized\n");
+> 
+> Thus, a possible null-pointer dereference may occur.
+> 
+> To fix this bug, "dev_dbg(mdma2dev(dmadev), ...)" is used instead.
 
+Applied after changing subsystem name in patch title to dmaengine: ...,
+Also while fixing it helps to add Fixes tag, have added
 
-On 08/08/2019 13:19, Mark Brown wrote:
-> On Thu, Aug 08, 2019 at 12:05:02PM +0100, Suzuki K Poulose wrote:
->> On 07/08/2019 17:51, Mark Brown wrote:
->>> On Wed, Aug 07, 2019 at 05:01:08PM +0100, Will Deacon wrote:
->>>> On Tue, Aug 06, 2019 at 06:00:43PM +0100, Mark Brown wrote:
-> 
->>> I guess you're thinking of the ARM64_CPUCAP_SYSTEM_FEATURE case where we
->>> match the feature on all CPUs so we could see the feature on some CPUs
->>> but not detect it as we're requiring a match on all?
-> 
->> We don't run the "match" check (i.e, detect) on all CPUs for SYSTEM scoped
->> features. Instead, we use sanitised feature set to detect the system features.
-> 
-> Right, but the sanitised feature set involves merging the capabilities
-> of all the CPUs.
-> 
->>> 	If this is called for any CPU in the system then it will be
->>> 	called for all of them.
-> 
->>> might cover it?
-> 
->> 	* current CPU. If this capability is detected by the kernel, this will
->> 	* called on all the CPUs in the system, including the hotplugged
->> 	* CPUs.
->> 	*/
-> 
-> How about adding ", regardless of if the capability was detected on that
-> specific CPU" at the end?  The above is *accurate* but it's still easy to
-> insert an "on that CPU" in there when reading especially with the
-> awkward phrasing.  Or possibly just drop the first comma.  The reason I
-> said "If this is called" rather than "if this is detected" is to make it
-> as clear as possible that the calls don't depend on detection without
-> being overly verbose.
-> 
-> 	 If this capability is detected by the kernel
-> 	 this will called on all the CPUs in the system, including
-> 	 the hotplugged CPUs, regardless of if the capability was
-> 	 detected on that specific CPU.
-
-I think the only issue with this, as also with the original statement, is that
-you are overloading "detected" for the "specific CPU" case.  In the first use, 
-the "detect" is dependent on the SCOPE of the capability and in the latter one
-is strictly "LOCAL" scope. If you replace the second "detected" with say, "not
-available" or even "not matched", it makes it less confusing.
-
-How about:
-
-  	If the capability is detected by the kernel this will be called on all
-	the CPUs in the system, including the hotplugged CPUs, regardless of if
-	the capability was *available* on that specific CPU. This is useful for
-	some capabilities (e.g, working around CPU errata), where all the CPUs
-	must take some action (e.g, changing system control/configuration).
-	Thus, if an action is required only if the CPU has the capability, then
-	the routine must check it before taking any action.
-
-Suzuki
+Thanks
+-- 
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
