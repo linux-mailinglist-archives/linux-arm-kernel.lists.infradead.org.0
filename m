@@ -2,83 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23FAA85D16
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 10:43:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 875A085D36
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 10:47:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Jd5uyYj7PTeBSnzLfhBe5S6wUic4G7a64eAfRLze0BM=; b=JVTDwv6FSHLxQT
-	aNfrF7ho+3XV+R+YpA1HVWT9k++YLMly0cDtiALJD3umNqh6mPSbq5COBYu3P9aYGjFyhrr6e5z6c
-	b9BjFQwt3PR++XrznHhU/QoXnB0uEOa0uXUVUT0jYFqCLUE8SerUxgD7D02TaXcq8sa+tdw45h9sV
-	S9PNnszKvuy9HWIT/DcJaipRkzIqUemrwGZPjWUzAgDt7dNvPvATrm/WRbL9lOFL7UEASIyKhcKXj
-	RX+Pj+lEIws3ZjJtvf/gu/QqebVhZ1em3giyvqd9omrB3oS9AgYE1ohCjE2WMeNqRNk6q8cEcFHBX
-	KyvNUVA7ZOreGgmAAvBg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BpR97BmibAktcFal02Kd10/q5uscMv1sPcDVKOQUMUo=; b=rbz
+	YLX6OHXF9xuDsnQjK+jyl7vhs/wsuciAHXQ33sxQFnOb0VJHbcHaNolkHuAstJgVHsBl92gADB0KY
+	eA7cU2VvjiWXMQgtt+0lFd6IVTucgUogQq6DUTI7BM0Q87A5xUynDEBvyIonRaFSOYOhh2h/X6S+B
+	talIvihU9/IcaH3qJ82mKW25DGHXQWuSGSwJm1+o0DEeKhKEIQzLbgb9QU6DkeLikrdC5DXkUo0Dr
+	QM3yglSO6tsyhzafNjrvzflbRAnz1S4VI9sJ0uX1yzipgsAXze12DMHmUfAMcFVc2pfw9SOnp6qjN
+	qdXW0j2ntDOJJDMA/JqplzWQqcMW8Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hve0u-0005Kx-Ps; Thu, 08 Aug 2019 08:43:13 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hve4Z-00076n-Gd; Thu, 08 Aug 2019 08:46:59 +0000
+Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hve0g-0005KJ-US
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 08:43:00 +0000
-Received: by mail-wm1-x341.google.com with SMTP id s15so1551334wmj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 08 Aug 2019 01:42:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=o0gY6GIOGxAdAcOqxh/7txJTZ7y4Fp96qJrFWzmJvJs=;
- b=RUwiyaImbBGQoy18xa2BhqGI8xsDFamrbahqE96VfeFA6VE0a+pYf+hMqnuX0AZhmo
- Z+mJc+SlQn5ApVviiHsgsXmnDePZl0YFD0+TWX2vDF/RUl2FiIq6m2KsXrM1v1C48xmJ
- 7nN6hfG9Sbn4S4s2FztFp25RDmu+C91Jv9V6VjynVMBYlaIypgm3v9xzgqJD/XOftZpj
- Zg9jkrI1j2cnfDSgNsF/lHXvEW7hgX0WfokMqFvil8cKK9kyV4VWlV0o4m4J4Zj8OfVi
- nhdoe7sl2TURQXr2WEzaXbScdo97ImFTTpXg5AfS0d60/mGaaYnDFL10jlkslAIjTZFK
- lg7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=o0gY6GIOGxAdAcOqxh/7txJTZ7y4Fp96qJrFWzmJvJs=;
- b=jm1KkBF9g5rX9alnkp1ZLAe5Xl+AWxlJUcaNF1U2vAz6/UCKKxwCzt/mM4/G70azzG
- tcesYuJLB7Q6bd1iEjZTlC+1vteNJoU8Yxpg4XLN2wvFrChKNT2ipBtuiHNc/9GnbYcC
- TqcTptS505eTorUG/WlgZJX2YcdzQBiN1Tk0uddrlNu5VdiGPTZO7xU+SVa0MSxLVDRe
- Omtrw80PVZN9XWAPtOeNvha6Yj55p2pkFL+7LIQ1DPMOandfX2pIQ/zQcLCIETts78Bz
- 6JI//R3Z6EiDzgPO1r1wAWUKqn/dlsttkkQNfPMjQ223BKhj7W9Ib0bKE1MMO8KMx2+3
- h+qw==
-X-Gm-Message-State: APjAAAU2NhOqJApCV9JlyKTGyFf6B8wbZng2nhGs2FTffIYgW9n4dikz
- DOX6HIHK82bj7KQrZ5MhLJg=
-X-Google-Smtp-Source: APXvYqwlO+R71FW8BynOKwYku3Wp9gYOHeIIBZF6I/QjRTsEvLX/UseL7h//+kMmc+MbDlaAx5ji/g==
-X-Received: by 2002:a7b:c383:: with SMTP id s3mr2992226wmj.44.1565253776712;
- Thu, 08 Aug 2019 01:42:56 -0700 (PDT)
-Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id c1sm2059259wmc.40.2019.08.08.01.42.55
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 08 Aug 2019 01:42:56 -0700 (PDT)
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: mark.rutland@arm.com, mripard@kernel.org, robh+dt@kernel.org, wens@csie.org
-Subject: [PATCH] ARM64: dts: allwinner: Add devicetree for pine H64 modelA
- evaluation board
-Date: Thu,  8 Aug 2019 10:42:53 +0200
-Message-Id: <20190808084253.10573-1-clabbe.montjoie@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ id 1hve4L-000763-5M
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 08:46:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1565254001;
+ s=strato-dkim-0002; d=hashmail.org;
+ h=Message-ID:Subject:Cc:To:From:Date:X-RZG-CLASS-ID:X-RZG-AUTH:From:
+ Subject:Sender;
+ bh=2zgjnksGmQ/ZAqwgmVBQpCI5NujcSeTtpImhQoYcKR0=;
+ b=YpnxougucLY79fPObRYzPxzHpW6wVWfyLNBQGj6xF5mF2RqDCjc7VaBU11Wz5lb87e
+ 5usNp2RKXjvNH7dxuKkZZtklLlbfRoo0VvRMHft+eZiDy1QajqSUBVb9n2Yi26kUxuee
+ q7ZPxyFy0FZjJc+zGy8s3n3niBlh/RmtM6EepGvqMKyPp2ytX0oVrjVJ5+RdM5kKByrm
+ kgNjOf9veL4/ZEFybucQ6Xz35hdBfW25Qdn3WpDFI/kpa80niTJUHHm7LtAcCxsYcYym
+ SZ+qIjcBzxZ8FmuNR3zBlq467G6RTFNNnzWwAN8PftAWL6u4Xw/b7cEISLYWWdsrpgNX
+ Zj4w==
+X-RZG-AUTH: ":O2kGeEG7b/pS1F+/SC3i33Z09cEcHcRBAtqtGgRBDGeSaUqOsX4glAsBpQEeWZN4DOM7"
+X-RZG-CLASS-ID: mo00
+Received: from localhost by smtp.strato.de (RZmta 44.24 DYNA|AUTH)
+ with ESMTPSA id f0aa24v788kcir9
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
+ 521 ECDH bits, eq. 15360 bits RSA))
+ (Client did not present a certificate);
+ Thu, 8 Aug 2019 10:46:38 +0200 (CEST)
+Date: Thu, 8 Aug 2019 10:46:36 +0200
+From: yvahkhfo.1df7f8c2@hashmail.org
+To: linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: usb zero copy dma handling
+Message-ID: <20190808084636.GB15080@priv-mua.localdomain>
 MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="ZPt4rx8FFjLCG7dd"
+Content-Disposition: inline
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_014258_990345_25BBB86A 
-X-CRM114-Status: GOOD (  14.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190808_014645_807814_4841E050 
+X-CRM114-Status: GOOD (  10.45  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5300:0:0:12 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,73 +82,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
- Corentin Labbe <clabbe.montjoie@gmail.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: security@kernel.org
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds the evaluation variant of the model A of the PineH64.
-The model A has the same size of the pine64 and has a PCIE slot.
 
-The only devicetree difference with current pineH64, is the PHY
-regulator.
+--ZPt4rx8FFjLCG7dd
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
----
- arch/arm64/boot/dts/allwinner/Makefile        |  1 +
- .../sun50i-h6-pine-h64-modelA-eval.dts        | 26 +++++++++++++++++++
- 2 files changed, 27 insertions(+)
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts
+Hello linux-usb and linux-arm.
 
-diff --git a/arch/arm64/boot/dts/allwinner/Makefile b/arch/arm64/boot/dts/allwinner/Makefile
-index f6db0611cb85..9a02166cbf72 100644
---- a/arch/arm64/boot/dts/allwinner/Makefile
-+++ b/arch/arm64/boot/dts/allwinner/Makefile
-@@ -25,3 +25,4 @@ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-3.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-lite2.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-one-plus.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-pine-h64.dtb
-+dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-pine-h64-modelA-eval.dtb
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts
-new file mode 100644
-index 000000000000..d8ff02747efe
---- /dev/null
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts
-@@ -0,0 +1,26 @@
-+// SPDX-License-Identifier: (GPL-2.0+ or MIT)
-+/*
-+ * Copyright (C) 2019 Corentin Labbe <clabbe.montjoie@gmail.com>
-+ */
-+
-+#include "sun50i-h6-pine-h64.dts"
-+
-+/ {
-+	model = "Pine H64 model A evaluation board";
-+	compatible = "pine64,pine-h64-modelA-eval", "allwinner,sun50i-h6";
-+
-+	reg_gmac_3v3: gmac-3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc-gmac-3v3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		startup-delay-us = <100000>;
-+		gpio = <&pio 2 16 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
-+
-+};
-+
-+&emac {
-+	phy-supply = <&reg_gmac_3v3>;
-+};
--- 
-2.21.0
+Ccing security@ because "the kernel dma code is mapping randomish
+kernel/user mem to a user process" seems to have security implications
+even though i didnt research that aspect past "its a 100% reliable way
+to crash a raspi from userspace". 
 
+tried submitting this through linux-arm-kernel ~2 weeks ago but
+the only "response" i got was phishing-spam.
+tried to follow up through raspi-internals chat, they suggested
+i try linux-usb instead, but otoh the original reporter was
+deflected from -usb to "try some other mls, they might care".
+https://www.spinics.net/lists/linux-usb/msg173277.html
+
+if i am not following some arcane ritual or indenting convention required 
+by regular users of these lists i apologize in advance, but i am not a 
+kernel developer, i am just here as a user with a bug and a patch. 
+(and the vger FAQ link 404s...) 
+
+i rediffed against HEAD even though the two weeks old patch still applied
+cleanly with +2 offset.
+
+# stepping off soap box # actual technical content starts here #
+
+this is a followup to that thread from 2018-11:
+https://www.spinics.net/lists/arm-kernel/msg685598.html
+
+the issue was discussed in more detail than i can claim
+to fully understand back then, but no fix ever merged.
+but i would really like to use rtl_433 on a raspi without
+having to build a custom-patched kernel first.
+
+the attached patch is my stripdown/cleanup of a devel-diff
+provided to me by the original reporter Steve Markgraf.
+credits to him for the good parts, blame to me for the bad parts.
+
+this does not cover the additional case of "PIO-based usb controllers"
+mainly because i dont understand what that means (or how to handle it)
+and if its broken right now (as the thread indicates) it might
+as well stay broken until someone who understands cares enough.
+
+could you please get this on track for merging?
+
+regards,
+  x23
+
+
+
+
+--ZPt4rx8FFjLCG7dd
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: attachment; filename="arm-usb-dma-v2.diff"
+
+diff --git a/drivers/usb/core/devio.c b/drivers/usb/core/devio.c
+index b265ab5405f9..69594c2169ea 100644
+--- a/drivers/usb/core/devio.c
++++ b/drivers/usb/core/devio.c
+@@ -238,9 +238,14 @@ static int usbdev_mmap(struct file *file, struct vm_area_struct *vma)
+ 	usbm->vma_use_count = 1;
+ 	INIT_LIST_HEAD(&usbm->memlist);
+ 
++#ifdef CONFIG_X86
+ 	if (remap_pfn_range(vma, vma->vm_start,
+ 			virt_to_phys(usbm->mem) >> PAGE_SHIFT,
+ 			size, vma->vm_page_prot) < 0) {
++#else /* !CONFIG_X86 */
++	if (dma_mmap_coherent(ps->dev->bus->sysdev, 
++			vma, mem, dma_handle, size) < 0) {
++#endif /* !CONFIG_X86 */
+ 		dec_usb_memory_use_count(usbm, &usbm->vma_use_count);
+ 		return -EAGAIN;
+ 	}
+
+--ZPt4rx8FFjLCG7dd
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--ZPt4rx8FFjLCG7dd--
+
