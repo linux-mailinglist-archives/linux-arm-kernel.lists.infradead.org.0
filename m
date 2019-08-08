@@ -2,91 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A9EC86778
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:49:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C85386781
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:54:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NHev14bw8rT7h2nkCdV6oy5RkxLnOuxyXaWQ/ZXoIdw=; b=dNd6Tdn6wVlwjp
-	W/sTMHXz85ZYg4nwWJzzesZaDrGt6GGDUyjbInn5cBgT4zlUvtQHmm72SF/x6AK5XynvlM26iR4vN
-	GkOgz+qhTjmYIjTrzg3ki7OCGNd5aQDy9hoTv8SEhzkw07onAcuGlA9edjzuhaxAjz0zY/BJdbIdZ
-	liaoKUOoZmFO37HZ26CSnGqJYKRNtw1lndLdnvcGxD6JevroD4IRptDTlw0hJjMQdRu+pWcwITOMG
-	RTZYyr8bxRfKlwMX73E5K7+Soz77H/pNY0kbQ/IMceWVQi/gUwrFARkMOAimFDVz16FAO1BA4kFqT
-	8u2bVZ8bl3rfFXlODh0g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=68euWIgkfqy++Eut/MLoQ+TgowWEDieAGHIOEMCUYyM=; b=F2u
+	m35NQZMt+zlb+OZJfRlYEVYj5xETXDyoUcVqOP/1+ot4fY6qsAyYuBXpOuGVhYGaF6j3ihbllLxEA
+	lglRdtUIVR0ZSTNAqVDlX07XMoZ4XsY7tIFatjZgz14npzSof3ySq3j4LI8t7tRraNcxqvda6hlDK
+	198+NbUvTVcay1zkmyUo9Rz5v4IyXCnf+TROYvyW8eWJLMA8SB6jRRI1uhGNhiqQotIA6sOSH3mb4
+	IKzNp6g05XOgzFdiT4Ci8RR5qE/4A7WE03LfB+HL5o06mZwvglaIk/O/YfCuH13HKPIScF2u8glaS
+	/6ZyvQSCx2zc1FUUcetd1cI34NKx9sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvlbb-0003ah-Uc; Thu, 08 Aug 2019 16:49:35 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1hvlgF-00059W-CG; Thu, 08 Aug 2019 16:54:23 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvlbT-0003aM-6B
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:49:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1565282955;
- bh=NyYRIlyJp1dNqY9bMLhKdZDQoswA/k6BxEUTuDZ+Zb8=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=dV8YQMdchQ5RKjdA20SaoSKPKuU8G05WvMvaPIUMySCtxCIdbqnX0XC2JC+XnLud3
- SYdo8NKzhO4ZzKKqlGhgHa08DhwP++1cPzSYiJORywewgfjql0t15WfFgsuhuJL2hm
- Sg1zZdehUfG/U+LeXuL1WcH4lM6G6N/31IVucbfs=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from longitude ([109.90.233.87]) by mail.gmx.com (mrgmx102
- [212.227.17.168]) with ESMTPSA (Nemesis) id 0Lmwpk-1iWCHf00Am-00h5Fs; Thu, 08
- Aug 2019 18:49:15 +0200
-From: =?UTF-8?q?Jonathan=20Neusch=C3=A4fer?= <j.neuschaefer@gmx.net>
-To: linux-doc@vger.kernel.org
-Subject: [PATCH] Documentation/arm/samsung-s3c24xx: Remove stray U+FEFF
- character to fix title
-Date: Thu,  8 Aug 2019 18:48:09 +0200
-Message-Id: <20190808164811.15645-1-j.neuschaefer@gmx.net>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
-X-Provags-ID: V03:K1:Hh+MMVrp26ugQyFj+D/l4R8ydI3JFX9v5nK/15hlhDut2Eh6Y2L
- QLxShqdo8KDJwsAdSSddpgpiCyup3PqyrM2a5LBmFDQI9C+Eqi+YKFi+Oz36OVw6zwviSk9
- VZEs46WEyXKOnAuOd9KmrKd8yx2RrwCHZuwP7N+EipYj+eYmxcIcJkVU462lmplJ93HFeZg
- lR6aVBBmQ4LJvuakhnAFA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:c6pVNIDsHNg=:FGqIiO2jLGaVGa76F74RXp
- tcUbzZT7A2Oe2urH83/b48cZWUlWW9UKIqGfjTykNm+rilrnwAq88cBHOz6Hz8p5bhBYTtNh5
- UO7O110UrafNB0hAiOJ9VeqzTor8S3K2LQc+VwdYK4dGshKqeY+QAIrURC4BGU3nDeuNTLzu4
- BF3NBaOf30B6rNE6QtHsn6yS7InHaIMlKs65YSVmxAH2kE0+Hyn8ZJ11G7/evujkUInGb5IhL
- iRobXZKV0Jqz5qQPQurj8xEyUvzfQGxkhfWucnJKZVhoW/+TV8FnylKrQIK9TY3f8Ot7ldsH5
- JqPBo/uJuB/eKCUR1j1Nj5px5LHJ1z2bPEOT3qineeJFqqhFTGKfiVNEJHg9YUNsB9vSlqlA5
- bFAQbDE6hua+ZDfxBGjzaW7mSB2E0CipOwPjmBtdx30E8a9OV2LWV3Warrm6dn7L1YJYqEEYg
- hYJ2GeWkWDCXaTlJq0K0iyE8oFXiJcIEKdej/1opQOcsN1rl0sRhmXCa1UyerECVvKtKcivrK
- ZSihTme0UhUsZLQ2QdhCbT/9Mgb0vKrEtO/Gu+cjLwjshItORUAQA6oBZAk2kirQadpMEd0vn
- aVXXhsvc9VMHUbjyVugzV0Pm0ooikDnyqyWHQ7e045GdoFAxoz+zTJlQVrieITAXzBFFXHuTb
- T4Msh2CZV15pW46AUFXHS5u1Qqp980ESjqxMvfA0i5lgMp7KjdnAfTzArDDYOAwvMmH9iR6nV
- 5my/YOSccGlfbI8hX/fAeXoUIYQBP4dJSLK1qqMi7OfEZmf6Vy+L1Z5AZpCCfiV1PG6T+z8c1
- QhWN8It4w7aVMchPtxACmU9y60yI2AN+xPlQFzVnmT5rtsLkw0D6AaJwL5aeg2ukpRsOh0S6H
- DghHEl1VFRBIOH+LHmBGNGJj3Gk7G+UHUiFRhAcu2LKpRXBYcfgV1pNjXPOFEjXZLsJyYR/vt
- azrmrmCHvhDw8pl8yOwCJacZLcf1HJW9PGIcJxi9pQVIx5pjRtOlmeHEoz+ZZbLrrae9Qiyb6
- sqGQmWfI27rt/VIpfV0nT9QpBFvcdb/Q5vnk6VnPKrmlAwHyhkc4zQ0lB5MO+RMlXq1A22VKb
- IjncQgDJuNvD2Rd9RFkUz1SHjExLLhFix5jMV0Cb0D7gezwDQlKjq0rn3CchNQ/rrhvFD9+Nr
- R47+8=
+ id 1hvlg5-000596-Ry
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:54:15 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C0EF820015D;
+ Thu,  8 Aug 2019 18:54:11 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B2DA420014C;
+ Thu,  8 Aug 2019 18:54:11 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 15A542061D;
+ Thu,  8 Aug 2019 18:54:11 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ Chanwoo Choi <cw00.choi@samsung.com>
+Subject: [PATCH] PM / devfreq: passive: Use non-devm notifiers
+Date: Thu,  8 Aug 2019 19:54:08 +0300
+Message-Id: <38b77bb80d12aa788d4e234e399780a27dcd9e9f.1565282993.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_094927_522352_C9846592 
-X-CRM114-Status: UNSURE (   9.83  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190808_095414_045739_62A6956E 
+X-CRM114-Status: GOOD (  10.80  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.20 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (j.neuschaefer[at]gmx.net)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,31 +66,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- linux-kernel@vger.kernel.org,
- =?UTF-8?q?Jonathan=20Neusch=C3=A4fer?= <j.neuschaefer@gmx.net>,
- linux-arm-kernel@lists.infradead.org, Jonathan Corbet <corbet@lwn.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Saravana Kannan <saravanak@google.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Bartosz Golaszewski <brgl@bgdev.pl>, linux-pm@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Lukasz Luba <l.luba@partner.samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SXQgc2VlbXMgYSBVVEYtOCBieXRlIG9yZGVyIG1hcmsgKHRoZSBsZWFzdCB1c2VmdWwga2luZCBv
-ZiBCT00uLi4pIHNudWNrCmludG8gdGhlIGZpbGUgYW5kIGJyb2tlIFNwaGlueCdzIGRldGVjdGlv
-biBvZiB0aGUgdGl0bGUgbGluZS4KCkJlc2lkZXMgbWFraW5nIGFybS9zYW1zdW5nLXMzYzI0eHgv
-aW5kZXguaHRtbCBsb29rIGEgbGl0dGxlIGJldHRlciwgdGhpcwpwYXRjaCBhbHNvIGNvbmZpbmVz
-IHRoZSBub24taW5kZXggcGFnZXMgaW4gYXJtL3NhbXN1bmctczNjMjR4eCB0byB0aGVpcgpvd24g
-dGFibGUgb2YgY29udGVudHMuCgpTaWduZWQtb2ZmLWJ5OiBKb25hdGhhbiBOZXVzY2jDpGZlciA8
-ai5uZXVzY2hhZWZlckBnbXgubmV0PgotLS0KIERvY3VtZW50YXRpb24vYXJtL3NhbXN1bmctczNj
-MjR4eC9pbmRleC5yc3QgfCAyICstCiAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEg
-ZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2FybS9zYW1zdW5nLXMzYzI0
-eHgvaW5kZXgucnN0IGIvRG9jdW1lbnRhdGlvbi9hcm0vc2Ftc3VuZy1zM2MyNHh4L2luZGV4LnJz
-dAppbmRleCA1YjhhN2Y5Mzk4ZDguLmNjYjk1MWEwYmVkYiAxMDA2NDQKLS0tIGEvRG9jdW1lbnRh
-dGlvbi9hcm0vc2Ftc3VuZy1zM2MyNHh4L2luZGV4LnJzdAorKysgYi9Eb2N1bWVudGF0aW9uL2Fy
-bS9zYW1zdW5nLXMzYzI0eHgvaW5kZXgucnN0CkBAIC0xLDYgKzEsNiBAQAogLi4gU1BEWC1MaWNl
-bnNlLUlkZW50aWZpZXI6IEdQTC0yLjAKCi3vu789PT09PT09PT09PT09PT09PT09PT09PT09PQor
-PT09PT09PT09PT09PT09PT09PT09PT09PT0KIFNhbXN1bmcgUzNDMjRYWCBTb0MgRmFtaWx5CiA9
-PT09PT09PT09PT09PT09PT09PT09PT09PQoKLS0KMi4yMC4xCgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+The devfreq passive governor registers and unregisters devfreq
+transition notifiers on DEVFREQ_GOV_START/GOV_STOP using devm wrappers.
+
+If devfreq itself is registered with devm then a warning is triggered on
+rmmod from devm_devfreq_unregister_notifier. Call stack looks like this:
+
+	devm_devfreq_unregister_notifier+0x30/0x40
+	devfreq_passive_event_handler+0x4c/0x88
+	devfreq_remove_device.part.8+0x6c/0x9c
+	devm_devfreq_dev_release+0x18/0x20
+	release_nodes+0x1b0/0x220
+	devres_release_all+0x78/0x84
+	device_release_driver_internal+0x100/0x1c0
+	driver_detach+0x4c/0x90
+	bus_remove_driver+0x7c/0xd0
+	driver_unregister+0x2c/0x58
+	platform_driver_unregister+0x10/0x18
+	imx_devfreq_platdrv_exit+0x14/0xd40 [imx_devfreq]
+
+This happens because devres_release_all will first remove all the nodes
+into a separate todo list so the nested devres_release from
+devm_devfreq_unregister_notifier won't find anything.
+
+Fix the warning by calling the non-devm APIS for frequency notification.
+Using devm wrappers is not actually useful for a governor anyway: it
+relies on the devfreq core to correctly match the GOV_START/GOV_STOP
+notifications.
+
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+
+---
+ drivers/devfreq/governor_passive.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+The only current user of passive governor is exynos-bus; does rmmod work
+for you? Maybe I'm missing something.
+
+It also seems that no attempt is made to increase the ref count of
+the passive "parent" so in theory devices can be removed while still
+referenced. However that would be a separate issue.
+
+diff --git a/drivers/devfreq/governor_passive.c b/drivers/devfreq/governor_passive.c
+index 58308948b863..da485477065c 100644
+--- a/drivers/devfreq/governor_passive.c
++++ b/drivers/devfreq/governor_passive.c
+@@ -163,16 +163,16 @@ static int devfreq_passive_event_handler(struct devfreq *devfreq,
+ 	case DEVFREQ_GOV_START:
+ 		if (!p_data->this)
+ 			p_data->this = devfreq;
+ 
+ 		nb->notifier_call = devfreq_passive_notifier_call;
+-		ret = devm_devfreq_register_notifier(dev, parent, nb,
++		ret = devfreq_register_notifier(parent, nb,
+ 					DEVFREQ_TRANSITION_NOTIFIER);
+ 		break;
+ 	case DEVFREQ_GOV_STOP:
+-		devm_devfreq_unregister_notifier(dev, parent, nb,
+-					DEVFREQ_TRANSITION_NOTIFIER);
++		WARN_ON(devfreq_unregister_notifier(parent, nb,
++					DEVFREQ_TRANSITION_NOTIFIER));
+ 		break;
+ 	default:
+ 		break;
+ 	}
+ 
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
