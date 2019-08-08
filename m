@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5B8986C78
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 23:32:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A9B486C7C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 23:33:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GJC8GjARjo6OG/oueZKAP/dLTUESBp+UGFtuVT3bCw4=; b=at8IXcLcfJWWfw
-	qHWwXswzpBKqVrNvr1p4C5/Vv5Wj5ce44GXxXJS10dODAy80OTaknJKi7XjGliGMnXBM31b4YkBBC
-	bCkdKSoaHWjSK9WISu/jjiH+4pvSioLNlRJcZin82hCFwbssBLpoJ8C9WZ47xC08wiF07+HRoZ4Rd
-	P2CAAQuoaUdBdoVNUPBPZHh9vPyNM/i30DTiwSMvNN43UKgVCyJLbjQO4bSbH3wE64pr7Aujz6mC8
-	mxpRbNcByXy4uFI9I0nKrOmu4IZkNsmjifOk+GeVwaNsO7qBpDF//0QQeQBFQ2aPWRA9AHff48R6F
-	Gx83QIgUhogAU9IP3qPg==;
+	List-Owner; bh=KPL2DlgsltPQY7SvCAAunE0ilVznYMivhIwaS0yIwHE=; b=srt01SOrhf5MU5
+	UNafArO6W9neEE84+vGavdye39Hkz7XR9aUQWyvyblyToLCq2UNUderrqM8kgoRzvjX6QaQAWqRxT
+	HE4kKl2FNmRxsmpMgVzw2454t27CAbalO+F/40vb0vPAMPaF/J4EzUQV13G8m7lCDGh2KtganLDu4
+	leLoVbgZG4bKbz2Kl/5XRgXUJXOO8Oy9zcLr/T34VtvAOTDA1/ximllpQoeEVyRAegFtACShyp44l
+	Lg1AYODafYaE8hSpa51De35tfrtRHnf48mQEKh9GH9hOiucp9ac/z7lHhVRXC+/Kbs3TZkOhtoGlS
+	EU2N4i7zB2uZ8MPIpRVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvq1U-0000op-Fw; Thu, 08 Aug 2019 21:32:36 +0000
+	id 1hvq24-00014c-Rh; Thu, 08 Aug 2019 21:33:12 +0000
 Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvq1L-0000oC-Vu
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 21:32:28 +0000
+ id 1hvq1w-000141-Kg
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 21:33:05 +0000
 Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
  (mreue012 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MHEPI-1i93Qp43sm-00DK8b; Thu, 08 Aug 2019 23:32:04 +0200
+ 1M4384-1hvq1D3ixU-0004a5; Thu, 08 Aug 2019 23:32:20 +0200
 From: Arnd Bergmann <arnd@arndb.de>
 To: Tony Lindgren <tony@atomide.com>, Aaro Koskinen <aaro.koskinen@iki.fi>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 11/22] clocksource: ti-dmtimer: avoid using mach/hardware.h
-Date: Thu,  8 Aug 2019 23:22:20 +0200
-Message-Id: <20190808212234.2213262-12-arnd@arndb.de>
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jiri Slaby <jslaby@suse.com>
+Subject: [PATCH 12/22] serial: 8250/omap1: include linux/soc/ti/omap1-soc.h
+Date: Thu,  8 Aug 2019 23:22:21 +0200
+Message-Id: <20190808212234.2213262-13-arnd@arndb.de>
 X-Mailer: git-send-email 2.20.0
 In-Reply-To: <20190808212234.2213262-1-arnd@arndb.de>
 References: <20190808212234.2213262-1-arnd@arndb.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:3tljNrXw83+F4Hazcc57iyTVuqcANP1caRyw1sEvbkwOygXkbr1
- 2ASndSMUrdeHCNbt1U3/d4g6qDaH9k8V17XP2mqlGCEr/0WkuW4dpT0luK3Ib7tzCq3jePR
- BGIFP9qnN11wrBgaVcqYGbcuHh66bIzNhqhuwqjrw5DHew75jqoOoa8BFA3OkhD3Df5sApL
- 8Rp7aRufJofird7OveVzg==
+X-Provags-ID: V03:K1:z2A+z2co/6ENTJV8BzitLCY3ir62bsxJ3qP0RIDtuRKBSxc8W+s
+ UPlAmrmnNY1b4pYyNJWHze2+YeUDZ39fPMUaKr0ayGZKiv8kD1wSSTQCecLM54dKe66RFbq
+ iCcnWHfAU23Yo48rHq+twDPQTUjVS1dw3p7pkfdu6mpGnBDeMDU9k0KAgVEuXpBMe866k9N
+ drVQSjjKIytwnVomi/7ww==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:c+WCVkEggaY=:c38mMZPYd8pl1vXQe/HjSA
- DBUWUCNFjnUJbBngyRKBRfKPQh7GsHAImDc+yv3V7nryPEmK/AmVc0yULOOpMsZRogR9HyphU
- IUkECTgE4tRvMXh9k64YOLT8YnXTq5QuxwoV9XwFj4F3GHhkrsJ6bFp30AnMG/D2f2ZsafdG4
- yTzGXMB2SLhbHRGbxywX4gIz7ERYYwsWlbvmjHxGnS1E5p1E0E88XsCZSGQz0MHCmQckQOkE+
- 2YsOUR4fllQDmC1aTYZFqJjY+2amkjolTkB+F3G5vrDW3efKKAoga5h4ZujEjLAlahRw8zpK6
- lqrPBFihWNmjchEyQkPqsMIMAsrLCia9XhWzLfB6l7e/1hk4ZpBVHK5mKTv1MBj8T8n7dsEEh
- Y6WSDp9awK/eLo4MwI8Dw4VQSsIXA1AX76bqXMKoA6mmkEVaTW98dgPgPgNNu/6JtWg9WkjrH
- 5VcOE42yVkZLddcgBxeBhxQ6DQ48Q1VbzXZTuQADwcme5dJZvMC4xgv9ocOHIdf5+4RF4J7Jt
- 3lVUGDobZk45oXSv3t5vfWa+zh/oo1cRc8w05FzGCgRVvUXucWsIKMtnBI5JsYSvoesblkdiz
- sWZNvg6+WbPYA+hFDWF3Nc3jlTEm9ppDVyuk5gKxn5tRriaHB0xXHyVyVdYf3FvAiJoz/gBS5
- 2JRVH49k0FFL7f+CUQC7jnAOzJ34LYZceQlNBkqIsEBjBhM39l9iSQButSSt9PowGTmOyEa8n
- bXNX4gD8IhG84AdyKAiVXFr1ylArol+ND1mdAA==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ElvUHXaYh/I=:v35+aAwQWvH4rVEJdqF34z
+ Dlek5Xw/Ls1nDpiDTzd9kSWiltHCOuAOfCYo6Ckspm4mpx/FRuCQrGJvBCpsCddwWu9pmlkQW
+ UsGbYnmzqmoFGAbOGYqIDvMcK9qVPyDHFf9Wgqy4Kqft5lcwMXPqrGnWNqy5gKTytH33pM3Bv
+ 6tmbXUrgtnxSmewUepzYrKzs+hxLbop8xyqQj+0g51Q2gxKSc6RzW+ieQHkLmJUV4h04tcb3n
+ vk2u3PW9tPmmQy2AJrabh+AzXQYAYHQLdwrkgwCOm5fR3lDXeSRPDUNqvjkgdHI7XzNutoXDl
+ D6PUZxROQfXfsHkcj7ox8/2h4Lw4qQf69kDfs6G8INQmKuuO4nBfETWtxFIhTzVasS3hUaxND
+ +HdpXW7jrvxLJHm6LM5mbGaDO+e47dJHLFVwb1bAxJyeYwgC1l9637Zw7BkooP8sC/KhxZiRO
+ l6lS0o7x2Cd8yLYXepmkh+T/g5oDOmgdzHf2WwGNfaMEwuphCk2uLR1vXy7pSU8fo4DFe5bLe
+ FXYWoz0UMXAJntMWHir+JpGEw/yltq+BzVklCQ7z8OrDqI4diNLJ5sw6mp3cE3Lb5qqmqYAl1
+ CQGlBQVN8GFtqo6FdQifBPOP9L/ZJ9wFxnn3/y/Fsnb97R4DRs3/LTWdSWsTBNcbGIpvhwiQq
+ Rfbmx1ZcSeKg5nG43YcotG6uoh1Ewc2BYofFsJ0qzdbPsFS9Yhn1VYIOzHxmSsEmH0ll/yepL
+ Mi374DjQA0hby5rAVx4umG/4FluKYVzsWcbrmw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_143228_313361_682DCADC 
-X-CRM114-Status: GOOD (  11.20  )
+X-CRM114-CacheID: sfid-20190808_143304_975241_91AB1D2B 
+X-CRM114-Status: GOOD (  10.41  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,10 +64,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [212.227.126.135 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [212.227.126.135 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,37 +81,35 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Arnd Bergmann <arnd@arndb.de>,
  Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, linux-serial@vger.kernel.org,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As a preparation for future omap1 multiplatform support, stop
-using mach/hardware.h and instead include the omap1-io.h
-for low-level register access to MOD_CONF_CTRL_1.
+As a preparation for cleaning up the omap1 headers, start
+including linux/soc/ti/omap1-soc.h directly so we can
+keep calling cpu_is_omap1510().
 
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- drivers/clocksource/timer-ti-dm.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/tty/serial/8250/8250.h | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clocksource/timer-ti-dm.c b/drivers/clocksource/timer-ti-dm.c
-index 5394d9dbdfbc..422f96384dc5 100644
---- a/drivers/clocksource/timer-ti-dm.c
-+++ b/drivers/clocksource/timer-ti-dm.c
-@@ -448,7 +448,7 @@ int omap_dm_timer_get_irq(struct omap_dm_timer *timer)
- }
+diff --git a/drivers/tty/serial/8250/8250.h b/drivers/tty/serial/8250/8250.h
+index 33ad9d6de532..9deee198fae4 100644
+--- a/drivers/tty/serial/8250/8250.h
++++ b/drivers/tty/serial/8250/8250.h
+@@ -263,6 +263,7 @@ static inline int fintek_8250_probe(struct uart_8250_port *uart) { return 0; }
+ #endif
  
- #if defined(CONFIG_ARCH_OMAP1)
--#include <mach/hardware.h>
-+#include <linux/soc/ti/omap1-io.h>
- 
- static struct clk *omap_dm_timer_get_fclk(struct omap_dm_timer *timer)
+ #ifdef CONFIG_ARCH_OMAP1
++#include <linux/soc/ti/omap1-soc.h>
+ static inline int is_omap1_8250(struct uart_8250_port *pt)
  {
+ 	int res;
 -- 
 2.20.0
 
