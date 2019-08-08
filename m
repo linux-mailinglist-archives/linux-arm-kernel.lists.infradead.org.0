@@ -2,57 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B2B586699
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:04:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2309866B2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:10:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9+EkAL/JS1L8fLMXVWjIsvYSLermcLrw383hc43qbOU=; b=iiYJ7Pttgy3TQw
-	a+ykzp1bIw0zJ6g36HZv/4Jhf1iuA03FtFptHb+FIdt3Leiba5x6+a0H+VzcpJkwnHI0J7MzvB8lV
-	GCQs3UsQAReUD2RUOnGwtMWYHSgM/Tr6LlPAJvBhlOgpWMUFMHLMa0FU3931RxfmEqxV1ZNgkSGrF
-	68gr3edc2xtkwhcJXb9Gqb2NFFGsqPfInVmwkQghhW8PHE6lCQGDWYymD97m3qBqgWirhtiaX2dUy
-	hn7Z8hUibeFmVUSv+OHyldL2pYf9Ev0viYQP9lEcpaoZgEjzG15A8HHwRvfdk8sZs/iju03JlwRTX
-	mOOIBxENVNWEu923rSXA==;
+	List-Owner; bh=8S9F+fflslJkSoPamewaTvKtdMKj8S22NqiwP/yx4Js=; b=mbDzANDiaJNO5i
+	Mh9YLI1SKBDxwarMzarImL8IUGUonJ2yT/OOh3Y2w65wk+1RXQh0LFJnAGpFugLQNp833DI2rpcr+
+	2qJNoNJGrvHtx+KNG9jRP+8b1dEK+4ATR57tkETIzUeFcCdA2rB/0CziNllaheL4IXQfSUA01mmys
+	tr3e0HdwNhGhjK6S+GuH7zpfRaYAqKpeX56h1r2zCX4YZPpUBFsMeteAYINIWVBeBgFsmksX8SV5m
+	6ipw8+yNcW2Q4Lhy+iEcd+1ufjz5No3+qcJXARLEmlgg8lCdJidlXgy3T5MBAa05L4H0lcRTjqVlM
+	OsgpWlMqcN6qMwE0fhvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvku1-0000Rz-Ey; Thu, 08 Aug 2019 16:04:33 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvktr-0000RV-Bj
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:04:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6ACEB1684;
- Thu,  8 Aug 2019 09:04:22 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 169B13F706;
- Thu,  8 Aug 2019 09:04:20 -0700 (PDT)
-Date: Thu, 8 Aug 2019 17:04:14 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 6/6] PSCI: cpuidle: Refactor CPU suspend power_state
- parameter handling
-Message-ID: <20190808160414.GA19233@e107155-lin>
-References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
- <20190722153745.32446-7-lorenzo.pieralisi@arm.com>
- <20190808125516.GA2246@e107155-lin>
- <CAPDyKFqHHwq=3XhSH_=uu5QoFkP3VYJ+2h7ENG5DNs-YzM6bNQ@mail.gmail.com>
+	id 1hvkzg-0003h8-Al; Thu, 08 Aug 2019 16:10:24 +0000
+Received: from hch by bombadil.infradead.org with local (Exim 4.92 #3 (Red Hat
+ Linux)) id 1hvkzX-0003eq-O4; Thu, 08 Aug 2019 16:10:15 +0000
+Date: Thu, 8 Aug 2019 09:10:15 -0700
+From: Christoph Hellwig <hch@infradead.org>
+To: yvahkhfo.1df7f8c2@hashmail.org
+Subject: Re: usb zero copy dma handling
+Message-ID: <20190808161015.GA8470@infradead.org>
+References: <20190808084636.GB15080@priv-mua.localdomain>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAPDyKFqHHwq=3XhSH_=uu5QoFkP3VYJ+2h7ENG5DNs-YzM6bNQ@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_090423_487935_2C481255 
-X-CRM114-Status: GOOD (  24.51  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+In-Reply-To: <20190808084636.GB15080@priv-mua.localdomain>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,82 +42,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Linux PM <linux-pm@vger.kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
- Will Deacon <will@kernel.org>, LAKML <linux-arm-kernel@lists.infradead.org>
+Cc: security@kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 08, 2019 at 05:29:24PM +0200, Ulf Hansson wrote:
-> On Thu, 8 Aug 2019 at 14:55, Sudeep Holla <sudeep.holla@arm.com> wrote:
-> >
-> > On Mon, Jul 22, 2019 at 04:37:45PM +0100, Lorenzo Pieralisi wrote:
-> > > Current PSCI code handles idle state entry through the
-> > > psci_cpu_suspend_enter() API, that takes an idle state index as a
-> > > parameter and convert the index into a previously initialized
-> > > power_state parameter before calling the PSCI.CPU_SUSPEND() with it.
-> > >
-> > > This is unwieldly, since it forces the PSCI firmware layer to keep track
-> > > of power_state parameter for every idle state so that the
-> > > index->power_state conversion can be made in the PSCI firmware layer
-> > > instead of the CPUidle driver implementations.
-> > >
-> > > Move the power_state handling out of drivers/firmware/psci
-> > > into the respective ACPI/DT PSCI CPUidle backends and convert
-> > > the psci_cpu_suspend_enter() API to get the power_state
-> > > parameter as input, which makes it closer to its firmware
-> > > interface PSCI.CPU_SUSPEND() API.
-> > >
-> > > A notable side effect is that the PSCI ACPI/DT CPUidle backends
-> > > now can directly handle (and if needed update) power_state
-> > > parameters before handing them over to the PSCI firmware
-> > > interface to trigger PSCI.CPU_SUSPEND() calls.
-> > >
-> > > Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > > Cc: Will Deacon <will@kernel.org>
-> > > Cc: Ulf Hansson <ulf.hansson@linaro.org>
-> > > Cc: Sudeep Holla <sudeep.holla@arm.com>
-> >
-> > Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-> >
-> > > +static __init int psci_cpu_init_idle(unsigned int cpu)
-> > > +{
-> > > +     struct device_node *cpu_node;
-> > > +     int ret;
-> > > +
-> > > +     /*
-> > > +      * If the PSCI cpu_suspend function hook has not been initialized
-> > > +      * idle states must not be enabled, so bail out
-> > > +      */
-> > > +     if (!psci_ops.cpu_suspend)
-> > > +             return -EOPNOTSUPP;
-> > > +
-> > > +     cpu_node = of_get_cpu_node(cpu, NULL);
-> >
-> > [nit] You could use of_cpu_device_node_get in linux/of_device.h as
-> > it may avoid parsing if used later during the boot(i.e. after
-> > cpu->of_node is populated). I think there's another instance in
-> > psci_idle_init_cpu
->
-> Good idea!
->
-> However, as $subject patch more or less just moves code from the
-> current psci firmware directory into cpuidle, perhaps it's better to
-> defer improvements to be made on top?
->
+On Thu, Aug 08, 2019 at 10:46:36AM +0200, yvahkhfo.1df7f8c2@hashmail.org wrote:
+> --- a/drivers/usb/core/devio.c
+> +++ b/drivers/usb/core/devio.c
+> @@ -238,9 +238,14 @@ static int usbdev_mmap(struct file *file, struct vm_area_struct *vma)
+>  	usbm->vma_use_count = 1;
+>  	INIT_LIST_HEAD(&usbm->memlist);
+>  
+> +#ifdef CONFIG_X86
+>  	if (remap_pfn_range(vma, vma->vm_start,
+>  			virt_to_phys(usbm->mem) >> PAGE_SHIFT,
+>  			size, vma->vm_page_prot) < 0) {
+> +#else /* !CONFIG_X86 */
+> +	if (dma_mmap_coherent(ps->dev->bus->sysdev, 
+> +			vma, mem, dma_handle, size) < 0) {
+> +#endif /* !CONFIG_X86 */
 
-I am fine either way. But since cpuidle-psci.c is new file introduced
-in this series, we can have it as part of the original patch. I leave it
-to Lorenzo to decide :)
+Doing the dma_mmap_coherent unconditionally is the right thing here.
+Gavin who is on Cc has been looking into that.
 
---
-Regards,
-Sudeep
+Note that you'll also need this patch which I'm going to send to Linus
+this week before it properly works on x86:
+
+http://git.infradead.org/users/hch/dma-mapping.git/commitdiff/197b3e665b82c6027be5c68a143233df7ce5224f
 
 _______________________________________________
 linux-arm-kernel mailing list
