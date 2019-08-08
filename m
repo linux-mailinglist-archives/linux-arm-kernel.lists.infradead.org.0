@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89BA38640B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 16:11:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 710C386413
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 16:12:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kqh8K2QoDbiY3Oslf1JPgI6XWN/rtU23hw9p19f1d7w=; b=FQDVt+YfETq+eu
-	2lC3ZGZ129OPVG8E7lUy/fwXo7C15bag2rzlACYphkD33S3cyUHKuDx0bXfDBT2gPDT4lgxT2UiHZ
-	K0xl6M8PTLaph/M15zC7PlXsNpVG32N6os31upvO7vWZma0GCfQdfUAeVDUKCD/fvpUPVIFUbZUfO
-	rSRMDyCgPAMfY5C4FGI5NvbDQSXZq1edlojkT45IjOwSOJaFg9/dKHKM7sttsqtrL/PXSqGYAOV0V
-	sM31LRQwgyGpF3sqtg8oFIh+te7JDlj4oFi+2n0Dzc5nFUd4KViSk1gfF1a12ojm6vuoKEsYlDYS5
-	QCQr/CSsHWaeKKq4ZG6w==;
+	List-Owner; bh=b0HZn/W+R3pu/WpfSNTtpjQQkjUFyRtwVl24ufkBCIo=; b=lQ3AZHENtsLaBJ
+	MNBjFp4kUvHlAzxZyHpM0nStWk9OvL50e5GgAWc60+YlcVTF86Q3eTtTDCQ1KiUH5taLvBrGeaHlk
+	573NXLuKj6LQAnwq/UA6AWWpER2jGUCETnKgZyFIGOob1EUDeIOUdoyotHo4dfP1nh3giVgc62kRq
+	PDksdDBrG7NFNCQdzuyz3qvnmkL1FzF7qjj3UMGvARRcoSKCupBv/Uo/oThx+wRtOzzQTWHe3ZG78
+	s6HnNp5JsbM6pOVR59KJQwPPd4cfISQm85T4VBSjikDFBTahzqsXEiLX8OIITWXuPOdGf6FlROsYL
+	RILvskeXOu3GFiewAdhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvj8F-00089m-94; Thu, 08 Aug 2019 14:11:07 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hvj9q-0008WD-8Y; Thu, 08 Aug 2019 14:12:46 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvj80-00087K-29
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 14:10:54 +0000
-Received: by mail-wm1-x343.google.com with SMTP id v15so2582055wml.0
+ id 1hvj9d-0008UU-Ee
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 14:12:34 +0000
+Received: by mail-wr1-x444.google.com with SMTP id k2so9242890wrq.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 08 Aug 2019 07:10:51 -0700 (PDT)
+ Thu, 08 Aug 2019 07:12:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=6m6gxn9LKSOYIOC2UD+jJL1y8rpnk5zVAEhh5s4nAFQ=;
- b=bbMMDKltdkMddpB7ydaPuad3hSghabEIOlx/v1qAcXV70ngjxy16ZQkEkvLXiT39n7
- wKYWuU+t8/gj0JNpUlZdoAtk6fOvur0TPrgmRY0zwB8WjzZ5q8E3T/f87z0B6DZJwj2N
- Z7WGCb48mP352I8GvNi2cphG0BHWtVhpCDXOsXkRNzWTFj8iwITbfhp4LvhNjmfHfL3R
- GLRRaZQbtBFB0OfkI6nScUoLJxBpWE1wia99gm1IgGRCN4ZXMB8nuEyf0CCvLU2pEXAa
- gp2i2hYq/2t8Q0vKgAjSM8UABP3TtajVVifwRDFZDicJke1ipHVEPiWcibzH5QZTwcKh
- 8+Yw==
+ bh=ExDUSZOSQEdf5biuijIvsrr6rzY8cxJRGGa/I5FOVwg=;
+ b=cgvVzjB6DHtktJO59X1wY3+KA4w34S6aE9FrLDBhKSSegTF9mMGN/VwCF4XO73X/C3
+ sqXPy8JBX4I8ZEJZRb4e3C3i0MOl4te/J4H3X3P5PRAQjuPy+NYeGwIEwMfUVihjlNGv
+ SjCHpjTq7o6TlFeO6H+LiYvDRAX42zZM8tO/xMtKwY+q+XAQ1BV6AUtJAuGVOJzfmivc
+ DA80BE81PLFgShgf/SQ73OJe/JAvOj2swnu4NrC2XzUhX89E7E499XYsofc9ZT4Z1onI
+ 31VEj1HkUDurq4OoT7U8PTDLDHKdW+gjRv6zKQyjFtkTju8xewyoePizH63MVzNKgUYp
+ 9aTg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=6m6gxn9LKSOYIOC2UD+jJL1y8rpnk5zVAEhh5s4nAFQ=;
- b=WDwPK0/b+ptiG5k7TlWyWUjMRXVWtJBlFFnO7Poj+K2nan24vE8NOJndy1yRUtudXC
- TvCSWboiVoQTExt2tAb6Vp2FsQ6APkqilDr7S2t3eEbanFYceNDhb3mfM2EEpawEIso5
- F8fTG/hPIGJuxqVAiQjscR52qlMBZ60P1ZERKitqXb5Md1klaKVvaXUytO/VjzJ/Bpd1
- IifWMdnp3YbW9iEtkubNdBwKopYoV8CEO0g2wWm3OpzDWygdf+nkQjATSlQFBs6oGz+1
- TKMNVxt0XMpwh7p+i6rpVbOvKciFcx7PaZPorF5NlmgsQCMzr/Mp+JJ74WfqPVU+M9fF
- 4aZg==
-X-Gm-Message-State: APjAAAUilUpeFp0cE1fVLbO0rmJgxItszClT5AQXT17GZfwk/jcCdgU7
- qnH/lK1MxCYU+GkXk/fmzmSUKA==
-X-Google-Smtp-Source: APXvYqxLmc+sO7xMowb+RJSTyP1ooEMxclBETMdjl+uhSXebVMMNRcyl52c80GhEl3LNchoUK+Iomg==
-X-Received: by 2002:a1c:407:: with SMTP id 7mr4952733wme.113.1565273450023;
- Thu, 08 Aug 2019 07:10:50 -0700 (PDT)
+ bh=ExDUSZOSQEdf5biuijIvsrr6rzY8cxJRGGa/I5FOVwg=;
+ b=iSPdA44oeSSvhg5QDdNHySXL2hrcvf+mdW+lj31j1hbLCfsT73KDSYqpc6EGrdlt1S
+ xbhdUcIR+JL1uVJgXsl1itH1J0gmq2u+dRso1hRR4mwqASAT59cd0ZpuRtmmleF16Hea
+ KFwuFRqGD3OfsUbmWD9+EebNW0YLhFkU6qmYpFhp68ADRyMNCKFVN3L/WpKJoZn/r0g7
+ jj7Hi8s8raXXYxbVBUjhZ3TVtjys9x+z/kL0auz//yUZchPEEbxe/R6i0dvLRp+2RF6L
+ 9K7yRroYBNBDlyNBhGNLRcJUInZK1QWSNVSfqB6St4TmpDtTmEhUFrvFXoncOtOoQdfI
+ SPAw==
+X-Gm-Message-State: APjAAAV2eY/NrWpMr9XmVTmTe/pIu44GztVQELOOUNc65IxQ5rjwUU1h
+ AMRGyKj2f8yuwb38e6u228g5lA==
+X-Google-Smtp-Source: APXvYqyUytHgBqCyShqZVeFxRsGm9x+bjwGGiSEdSqmXh3YKR142ZN5ppB8CB6Y7nMd9oIxmX/q61A==
+X-Received: by 2002:adf:e8c2:: with SMTP id k2mr16932318wrn.198.1565273551697; 
+ Thu, 08 Aug 2019 07:12:31 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id a19sm9860294wra.2.2019.08.08.07.10.49
+ by smtp.gmail.com with ESMTPSA id w7sm109173384wrn.11.2019.08.08.07.12.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 08 Aug 2019 07:10:49 -0700 (PDT)
-Subject: Re: [PATCH 8/9] drm: meson: add macro used to enable HDMI PLL
-To: Kevin Hilman <khilman@baylibre.com>, 86zhm782g5.fsf@baylibre.com
-References: <86zhm782g5.fsf@baylibre.com> <86o92n82e1.fsf@baylibre.com>
- <7hwohawoxu.fsf@baylibre.com>
+ Thu, 08 Aug 2019 07:12:30 -0700 (PDT)
+Subject: Re: [PATCH 0/9] drm: meson: global clean-up (use proper macros,
+ update comments ...)
+To: Kevin Hilman <khilman@baylibre.com>, Julien Masson <jmasson@baylibre.com>
+References: <86zhm782g5.fsf@baylibre.com> <7ho92mwor0.fsf@baylibre.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -116,23 +116,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <33b9572f-59cc-a72b-c517-e85df70e3f96@baylibre.com>
-Date: Thu, 8 Aug 2019 16:10:49 +0200
+Message-ID: <61b73415-73be-bb72-37f4-0a6060f85ffa@baylibre.com>
+Date: Thu, 8 Aug 2019 16:12:30 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <7hwohawoxu.fsf@baylibre.com>
+In-Reply-To: <7ho92mwor0.fsf@baylibre.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_071052_105159_A5114F86 
-X-CRM114-Status: GOOD (  15.90  )
+X-CRM114-CacheID: sfid-20190808_071233_499709_56B5D064 
+X-CRM114-Status: GOOD (  14.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -150,55 +150,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Masson <jmasson@baylibre.com>, linux-amlogic@lists.infradead.org,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: linux-amlogic@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25/06/2019 01:20, Kevin Hilman wrote:
+On 25/06/2019 01:24, Kevin Hilman wrote:
 > Julien Masson <jmasson@baylibre.com> writes:
 > 
->> This patch add new macro HHI_HDMI_PLL_CNTL_EN which is used to enable
->> HDMI PLL.
+>> This patch series aims to clean-up differents parts of the drm meson
+>> code source.
 >>
->> Signed-off-by: Julien Masson <jmasson@baylibre.com>
->> ---
->>  drivers/gpu/drm/meson/meson_vclk.c | 3 ++-
->>  1 file changed, 2 insertions(+), 1 deletion(-)
+>> Couple macros have been defined and used to set several registers
+>> instead of using magic constants.
 >>
->> diff --git a/drivers/gpu/drm/meson/meson_vclk.c b/drivers/gpu/drm/meson/meson_vclk.c
->> index e7c2b439d0f7..be6e152fc75a 100644
->> --- a/drivers/gpu/drm/meson/meson_vclk.c
->> +++ b/drivers/gpu/drm/meson/meson_vclk.c
->> @@ -96,6 +96,7 @@
->>  #define HHI_VDAC_CNTL1		0x2F8 /* 0xbe offset in data sheet */
->>  
->>  #define HHI_HDMI_PLL_CNTL	0x320 /* 0xc8 offset in data sheet */
->> +#define HHI_HDMI_PLL_CNTL_EN	BIT(30)
->>  #define HHI_HDMI_PLL_CNTL2	0x324 /* 0xc9 offset in data sheet */
->>  #define HHI_HDMI_PLL_CNTL3	0x328 /* 0xca offset in data sheet */
->>  #define HHI_HDMI_PLL_CNTL4	0x32C /* 0xcb offset in data sheet */
->> @@ -468,7 +469,7 @@ void meson_hdmi_pll_set_params(struct meson_drm *priv, unsigned int m,
->>  
->>  		/* Enable and unreset */
->>  		regmap_update_bits(priv->hhi, HHI_HDMI_PLL_CNTL,
->> -				   0x7 << 28, 0x4 << 28);
->> +				   0x7 << 28, HHI_HDMI_PLL_CNTL_EN);
-
-I'll do a pass on the PLL part since it needs much more work than a cleanup,
-it's ok for me.
-
-Neil
-
+>> I also took the opportunity to:
+>> - add/remove/update comments
+>> - remove useless code
+>> - minor fix/improvment
 > 
-> still using a magic const for the mask.  Can use GENMASK() for this?
+> Nice set of cleanups, thanks!  I especially like the extra in-code
+> comments.
+> 
+> Could you also add to the cover-letter how this was tested, and on what
+> platforms so we know it's not going to introduce any regressions.
+> 
+> Thanks,
 > 
 > Kevin
 > 
 
+Apart the wrong magic value in patch 4 that I'll fix while applying,
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+
+I'll run a few tests on all the supported SoC versions:
+- GXBB
+- GXL
+- GXM
+- G12A/G12B
+
+and push to drm-misc-next.
+
+Neil
 
 _______________________________________________
 linux-arm-kernel mailing list
