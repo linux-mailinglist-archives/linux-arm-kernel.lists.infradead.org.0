@@ -2,86 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AF8A867B7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:09:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE837867B9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:10:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8smBHyjVaMQUV7QhyXde8wZ/mWvHfwFkjiUP6WZzZfA=; b=evLb9jOxvvNgPW
-	4WhWbBtWhsDEY1MXOgA/PMZEYtUrm2Gjv+pnfO+FwGY9cKYsslyTaaYCReIiNRY0bmLTJfkrQHdIG
-	zqJeeSrE7i4U7T1otGZ3Qxq7oPpNoxTO1jqxa0KZu1IEK9TUeNqkMNHvSCzrGWkCEJTmQ/FFMOHKU
-	QdbLqsUN/qoV5WutwOMZkfzny62AnnsUS9gQ3tsQ0boIauCK3Y9e3GCjZHtvrc5E6DjxDFOfkwV/s
-	miYXGgeNfh/strCsKBVEoKgTM418Z0ebrlCsPWQ1xAi65fY4VqbJmHOrH599pJF9uktLzUYQYLWXj
-	edJ1sHqchhj58SAkfmxw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ypzMJ0hEXgE6lWoUSB1WwgFfMgvoL1Q2vdY4aB53z64=; b=cbNwwD3rnTiWZzaRz1Gsa/Rlq
+	6x7xcHnoyrw37pOpz85OBrEk0wQwj8dlIXoqWUQ+cBp5FoeLwii89CxilCnutFHlpwqkMUBo7ysDp
+	Ob8+tpyV6pHpFheQlWabZMrrXegiujPLrDBwHTc9vm9OufUGHIOYBFg7iyNRPZGnwbV/LiEGlGimo
+	jTSCiyfodSx6W8KW1Tsi8wlfx523jKNMWEiDZavmclttQrwJwZGUUHhlXxWzR62lwhQdlB+VisTD+
+	bfFg6vY1b48dsTQ48z5HH+OT9Gd87sEPfYKLJCezlbmL+n/ICdBF9gli9OWODtS3H6k2GwOeZVZfZ
+	jPZmxX/8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvlus-0003aU-7T; Thu, 08 Aug 2019 17:09:30 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hvlvg-00052V-Bx; Thu, 08 Aug 2019 17:10:20 +0000
+Received: from vern.gendns.com ([98.142.107.122])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvluj-0003a9-3A
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 17:09:22 +0000
-Received: by mail-wm1-x342.google.com with SMTP id 207so3130573wma.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 08 Aug 2019 10:09:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=/RMqWJBZb+n91pADuicj3MI1Qevek2uTYFVfpzwwQYk=;
- b=mYI6ER/mImkFZNM1JZSRimjLCk1m9yKBp7MFo6R2vJElLd5RBgIbnfTTSaK0TgOWZk
- tgYU7T9y1cN2gH4spkcu8BdHVctmfrSUxPSubs2ouVJxh4yhBzYVE4QuOQRIz4f2RS/x
- OMLLuqDfuBtGtn6fzFkUBpxoJ5om4DHo2yaE+CzEuqgzkx19P05vWedXWUjM9zVXi6u0
- vTXFzlWiNpXP3UlRpIhE0a04ZajxbhGe14aCZV1VytgG2virlQL6fijO1C87nQiSDZ9H
- uNa3v/9DnsRi6yTQazWZxdTH90mjFg16NX4Vj3AhkCc08BjYwgsTRVgbyj7OXNZ85+ro
- fGJA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/RMqWJBZb+n91pADuicj3MI1Qevek2uTYFVfpzwwQYk=;
- b=tCTCd/GAybTDiVDTPyzpKDpNoZrfylRAy47BbgOo7gTFW2nP/40TDuAN8JpIM66HJ/
- kEZ/j3CcvmfjM8QBrPQ6Z+l6VsJ8jHLhbSF2x46PmK8c+wVp/tylOY+Uz+TijYC/63fp
- l0b8Oj1Ze/WSfQ71fNi9OLVMrFvIMo8keczTKGv/Y4JmDJHz11Md12ymSMwGcgT9xGDC
- u/CMVAfcsBvGxUPp9+bRPkUwx4Zxal4MaiilJbM8DNu8jWqoUtdGvNaGcvi/jawypdOG
- qw3v+ZxBf7ZZUDBYs8aXJYAACqRi3/52CZwn+qwG5zIh0wXgR34Ovy7mc7ucaVQ9Sxel
- R0Wg==
-X-Gm-Message-State: APjAAAXjGanmOjC7rTLxrybKWUh0cROpKJSgvd7SHcKzi16GIMjpwQhK
- SuQsJnF1yQWZvm1uOI9yzFc=
-X-Google-Smtp-Source: APXvYqzdP10PSpvSmqXcoaKhRQopyLLo13J5gwU1q/kfwSjlDon48+ds0qZsJzoRdvE4pJ2fwoicBA==
-X-Received: by 2002:a1c:f116:: with SMTP id p22mr5413792wmh.70.1565284159335; 
- Thu, 08 Aug 2019 10:09:19 -0700 (PDT)
-Received: from archlinux-threadripper ([2a01:4f8:222:2f1b::2])
- by smtp.gmail.com with ESMTPSA id c15sm22423803wrb.80.2019.08.08.10.09.18
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 08 Aug 2019 10:09:18 -0700 (PDT)
-Date: Thu, 8 Aug 2019 10:09:16 -0700
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH] arm64/cache: silence -Woverride-init warnings
-Message-ID: <20190808170916.GA32668@archlinux-threadripper>
-References: <20190808032916.879-1-cai@lca.pw>
- <20190808103808.GC46901@lakrids.cambridge.arm.com>
+ id 1hvlvU-0003d9-DV
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 17:10:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=6unxZ5asslwfaV24LhI64EK8dFL53Fedq9/jgw1wHlo=; b=reAcURK2AJzjNr83ooncOhsF2c
+ 7VO1ubLVDOqiH84SCYsVAAydn1Fh24R0gAOBSLx9gkvthu+btPeZ/XbdINxJARlbf+U6ma2nQc8Y6
+ h07kvAUVwx7CHYqLqQWb9ubb+k1iQUhVDtq7iR2G1h+rc1CtccYJ5+l1HHU+SvhVEPZbEHMxQSnaq
+ BE0BGmj2bRsrM7Hzhg25KVSTk76WBCTt/3IKx0mOgeBjYSCoMHswRiL7hZNaEtBy/U3G/aFox3Xub
+ LE0e5ouYWzs8ry8vSgVhKzSXysFpinAr1k8iHTA7o7THzp8KqSFtalmrusTsBgyxnMi+rNUGBaLQu
+ oSr8J62Q==;
+Received: from 108-198-5-147.lightspeed.okcbok.sbcglobal.net
+ ([108.198.5.147]:33302 helo=[192.168.0.134])
+ by vern.gendns.com with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
+ (Exim 4.92) (envelope-from <david@lechnology.com>)
+ id 1hvluk-0007RF-O7; Thu, 08 Aug 2019 13:09:22 -0400
+Subject: Re: [PATCH v2 4/6] irqchip/irq-pruss-intc: Add helper functions to
+ configure internal mapping
+To: Suman Anna <s-anna@ti.com>, Marc Zyngier <maz@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>
+References: <20190731224149.11153-1-s-anna@ti.com>
+ <20190731224149.11153-5-s-anna@ti.com>
+ <1a63eb50-7c5c-eb3d-3cbe-bd1cc59ce3fe@kernel.org>
+ <89abc27f-5d02-a8ce-df0e-b185c2a647cd@ti.com>
+ <1ac233f6-f3a3-6cec-9ad2-49e985fdfaca@lechnology.com>
+ <6c17875e-496d-1277-278f-239d3a9d8ca2@ti.com>
+From: David Lechner <david@lechnology.com>
+Message-ID: <124b03b8-f8e7-682b-8767-13a739329da2@lechnology.com>
+Date: Thu, 8 Aug 2019 12:09:21 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190808103808.GC46901@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <6c17875e-496d-1277-278f-239d3a9d8ca2@ti.com>
+Content-Language: en-US
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - vern.gendns.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - lechnology.com
+X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id:
+ davidmain+lechnology.com/only user confirmed/virtual account not confirmed
+X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_100921_162989_BE058298 
-X-CRM114-Status: GOOD (  16.64  )
+X-CRM114-CacheID: sfid-20190808_101008_621464_460DAF5F 
+X-CRM114-Status: GOOD (  36.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (natechancellor[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,74 +98,750 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com, Qian Cai <cai@lca.pw>, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Tony Lindgren <tony@atomide.com>, Sekhar Nori <nsekhar@ti.com>,
+ linux-kernel@vger.kernel.org, "Andrew F. Davis" <afd@ti.com>,
+ Lokesh Vutla <lokeshvutla@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Murali Karicheri <m-karicheri2@ti.com>, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 08, 2019 at 11:38:08AM +0100, Mark Rutland wrote:
-> On Wed, Aug 07, 2019 at 11:29:16PM -0400, Qian Cai wrote:
-> > The commit 155433cb365e ("arm64: cache: Remove support for ASID-tagged
-> > VIVT I-caches") introduced some compiation warnings from GCC (and
-> > Clang) with -Winitializer-overrides),
-> > 
-> > arch/arm64/kernel/cpuinfo.c:38:26: warning: initialized field
-> > overwritten [-Woverride-init]
-> > [ICACHE_POLICY_VIPT]  = "VIPT",
-> >                         ^~~~~~
-> > arch/arm64/kernel/cpuinfo.c:38:26: note: (near initialization for
-> > 'icache_policy_str[2]')
-> > arch/arm64/kernel/cpuinfo.c:39:26: warning: initialized field
-> > overwritten [-Woverride-init]
-> > [ICACHE_POLICY_PIPT]  = "PIPT",
-> >                         ^~~~~~
-> > arch/arm64/kernel/cpuinfo.c:39:26: note: (near initialization for
-> > 'icache_policy_str[3]')
-> > arch/arm64/kernel/cpuinfo.c:40:27: warning: initialized field
-> > overwritten [-Woverride-init]
-> > [ICACHE_POLICY_VPIPT]  = "VPIPT",
-> >                          ^~~~~~~
-> > arch/arm64/kernel/cpuinfo.c:40:27: note: (near initialization for
-> > 'icache_policy_str[0]')
-> > 
-> > because it initializes icache_policy_str[0 ... 3] twice. Since
-> > arm64 developers are keen to keep the style of initializing a static
-> > array with a non-zero pattern first, just disable those warnings for
-> > both GCC and Clang of this file.
-> > 
-> > Fixes: 155433cb365e ("arm64: cache: Remove support for ASID-tagged VIVT I-caches")
-> > Signed-off-by: Qian Cai <cai@lca.pw>
+On 8/2/19 4:26 PM, Suman Anna wrote:
+> Point is different applications might use mapping differently as per
+> their firmware and driver/application design and their split across one
+> or more PRUs (design by contract). And we need to set this up at runtime
+> when the application driver is getting run. We will have either the Soft
+> UART or the Ethernet running at a time depending on the end goal desired
 > 
-> This is _not_ a fix, and should not require backporting to stable trees.
+>> I have an idea that we can use multiple struct irq_domains to make
+>> this work in the existing IRQ framework, but it would be helpful to
+>> know more about the bigger picture first.
 > 
-> What about all the other instances that we have in mainline?
-> 
-> I really don't think that we need to go down this road; we're just going
-> to end up adding this to every file that happens to include a header
-> using this scheme...
-> 
-> Please just turn this off by default for clang.
-> 
-> If we want to enable this, we need a mechanism to permit overridable
-> assignments as we use range initializers for.
-> 
-> Thanks,
-> Mark.
+> Yeah, would be great if there is a way this can be solved without having
+> to introduce additional API.
 > 
 
-For what it's worth, this is disabled by default for clang in the
-kernel:
 
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/Makefile.extrawarn?h=v5.3-rc3#n69
+Here is what I came up with to use existing IRQ APIs to implement event mapping.
+Basically it is the same as my previous suggestion [1], with the addition of
+multiple IRQ domains.
 
-It only becomes visible with clang at W=1 because that section doesn't
-get applied. It becomes visible with GCC at W=1 because of -Wextra.
+The idea is that each external interrupt controller (or DMA controller, etc.)
+that is connected to the PRUSS interrupt controller is considered an interrupt
+domain. One of the objections to my previous patch was that we could only have
+one IRQ descriptor per event. Now we can have one descriptor per event per
+domain.
 
-Cheers,
-Nathan
+I am still proposing that we use the interrupt-cells and identical vendor
+resource data structures in the PRU firmware be used to provide the mapping
+information. (As a side note, I still think it is important to include EVTSEL
+on AM18xx in order to fully describe the event.)
+
+The bindings will have N = 4 cells (or N = 5 when EVTSEL is required to fully
+describe the event):
+
+	Cell 0: The PRUSS event number, e.g. 0 to 64 for most PRUSSs
+	Cell 1: The EVTSEL value (omitted when N == 4), e.g. 0, 1 or
+		TI_PRUSS_INTC_EVTSEL_ANY if the event is the same for all EVTSEL
+		values. On AM18xx, external events will all require 0 or 1 while
+		system events will always be TI_PRUSS_INTC_EVTSEL_ANY.
+	Cell N-3: The channel that the event gets mapped to, e.g. 0 to 9
+	Cell N-2: The host that the channel gets mapped to, e.g. 0 to 9
+	Cell N-1: The interrupt domain, e.g. TI_PRUSS_INTC_DOMAIN_PRU or
+		TI_PRUSS_INTC_DOMAIN_MCU
+
+The TI_PRUSS_INTC_DOMAIN_* values are just arbitrary numbers assigned to the
+possible domains. For example, on AM18xx and AM33xx, there are just two domains,
+the PRU domain for host 0 and host 1 and the MCU domain for host 2 thru 9.
+Looking at the AM65xx manual, it looks like it would have 4 domains, the PRU
+domain, the RTU PRU domain, the MCU domain and a task manager domain. (And I
+suppose that domains could even be more granular if needed, e.g. we could drop
+the arbitrary domain number and treat each host interrupt/event as an interrupt
+domain, then there would be an IRQ descriptor per PRU INTC event per host.)
+
+The AM18xx example I have been using will look like this in the device tree:
+
+	interrupts = <63 TI_PRUSS_INTC_EVTSEL_ANY 0 0 TI_PRUSS_INTC_DOMAIN_PRU>,
+		     <62 TI_PRUSS_INTC_EVTSEL_ANY 2 2 TI_PRUSS_INTC_DOMAIN_MCU>;
+
+To keep parsing simple, the PRU firmware can include vendor resources that have
+essentially the same format as the device tree bindings. For example:
+
+enum {
+	/* IRQ descriptor without EVTSEL */
+	TI_PRU_VENDOR_RESOURCE_IRQ = RSC_VENDOR_START,
+	/* IRQ descriptor with EVTSEL */
+	TI_PRU_VENDOR_RESOURCE_IRQ2,
+};
+
+struct ti_pru_vendor_resource_irq {
+	__le32 event;
+	__le32 channel;
+	__le32 host;
+	__le32 domain;
+};
+
+struct ti_pru_vendor_resource_irq2 {
+	__le32 event;
+	__le32 evt_sel;
+	__le32 channel;
+	__le32 host;
+	__le32 domain;
+};
+
+Then we can provide a vendor resource hook in the remoteproc driver to handle
+these resources:
+
+static int ti_pru_rproc_handle_rsc(struct rproc *rproc, u32 rsc_type, void *rsc,
+				   int offset, int avail)
+{
+	struct ti_pru_data *pru = rproc->priv;
+	struct irq_fwspec fwspec;
+	unsigned int virq;
+
+	switch (rsc_type) {
+	case TI_PRU_VENDOR_RESOURCE_IRQ:
+	{
+		struct ti_pru_vendor_resource_irq *rsc_irq = rsc;
+
+		fwspec.fwnode = pru->intc_fwnode;
+		fwspec.param[0] = le32_to_cpu(rsc_irq->event);
+		fwspec.param[1] = le32_to_cpu(rsc_irq->channel);
+		fwspec.param[2] = le32_to_cpu(rsc_irq->host);
+		fwspec.param[3] = le32_to_cpu(rsc_irq->domain);
+		fwspec.param_count = 4;
+	}
+		break;
+	case TI_PRU_VENDOR_RESOURCE_IRQ2:
+	{
+		struct ti_pru_vendor_resource_irq2 *rsc_irq2 = rsc;
+
+		fwspec.fwnode = pru->intc_fwnode;
+		fwspec.param[0] = le32_to_cpu(rsc_irq2->event);
+		fwspec.param[1] = le32_to_cpu(rsc_irq2->evt_sel);
+		fwspec.param[2] = le32_to_cpu(rsc_irq2->channel);
+		fwspec.param[3] = le32_to_cpu(rsc_irq2->host);
+		fwspec.param[4] = le32_to_cpu(rsc_irq2->domain);
+		fwspec.param_count = 5;
+		break;
+	}
+	default:
+		return RSC_IGNORED;
+	}
+
+	virq = irq_create_fwspec_mapping(&fwspec);
+	if (!virq)
+		return -EINVAL;
+
+	/* TODO: save virq (and other metadata) for later use */
+
+	return RSC_HANDLED;
+}
+
+static const struct rproc_ops ti_pru_rproc_ops = {
+	.start = ti_pru_rproc_start,
+	.stop = ti_pru_rproc_stop,
+	.kick = ti_pru_rproc_kick,
+	.da_to_va = ti_pru_rproc_da_to_va,
+	.handle_rsc = ti_pru_rproc_handle_rsc,
+};
+
+The handle_rsc callback is called for each resource when the PRU is booted.
+The function irq_create_fwspec_mapping() causes the IRQ to be mapped in
+hardware. From what I understand from the previous discussions, this is exactly
+when we want this to happen.
+
+This patch applies on top of "irqchip/irq-pruss-intc: Add a PRUSS irqchip driver
+for PRUSS interrupts", "irqchip/irq-pruss-intc: Add support for shared and
+invalid interrupts" and "irqchip/irq-pruss-intc: Implement irq_{get,set}
+_irqchip_state ops" from [PATCH v2 0/6] "Add TI PRUSS Local Interrupt Controller
+IRQChip driver" [2].
+
+A working copy along with some remoteproc and rpmsg hacks can be found on my
+GitHub [3].
+
+[1]: https://lore.kernel.org/lkml/fb2bdb7b-4d4d-508f-722a-554888280145@lechnology.com/
+[2]: https://lore.kernel.org/lkml/20190731224149.11153-1-s-anna@ti.com/
+[3]: https://github.com/dlech/linux/commits/pruss-2019-08-08
+
+Signed-off-by: Suman Anna <s-anna@ti.com>
+Signed-off-by: Andrew F. Davis <afd@ti.com>
+Signed-off-by: Roger Quadros <rogerq@ti.com>
+Signed-off-by: David Lechner <david@lechnology.com>
+---
+  drivers/irqchip/irq-pruss-intc.c              | 387 +++++++++++++++++-
+  .../interrupt-controller/ti-pruss.h           |  27 ++
+  2 files changed, 396 insertions(+), 18 deletions(-)
+  create mode 100644 include/dt-bindings/interrupt-controller/ti-pruss.h
+
+diff --git a/drivers/irqchip/irq-pruss-intc.c b/drivers/irqchip/irq-pruss-intc.c
+index c1fd6c09f2f2..da4349df08c3 100644
+--- a/drivers/irqchip/irq-pruss-intc.c
++++ b/drivers/irqchip/irq-pruss-intc.c
+@@ -5,6 +5,8 @@
+   * Copyright (C) 2016-2019 Texas Instruments Incorporated - http://www.ti.com/
+   *	Andrew F. Davis <afd@ti.com>
+   *	Suman Anna <s-anna@ti.com>
++ *
++ * Copyright (C) 2019 David Lechner <david@lechnology.com>
+   */
+  
+  #include <linux/interrupt.h>
+@@ -14,6 +16,14 @@
+  #include <linux/module.h>
+  #include <linux/of_device.h>
+  #include <linux/platform_device.h>
++#include <linux/pm_runtime.h>
++
++#include <dt-bindings/interrupt-controller/ti-pruss.h>
++
++/* The number of possible interrupt domains, see TI_PRUSS_INTC_DOMAIN_* in
++ * dt-bindings/interrupt-controller/ti-pruss.h
++ */
++#define NUM_TI_PRUSS_INTC_DOMAIN 5
+  
+  /*
+   * Number of host interrupts reaching the main MPU sub-system. Note that this
+@@ -25,6 +35,12 @@
+  /* minimum starting host interrupt number for MPU */
+  #define MIN_PRU_HOST_INT	2
+  
++/* maximum number of host interrupts */
++#define MAX_PRU_HOST_INT	10
++
++/* maximum number of interrupt channels */
++#define MAX_PRU_CHANNELS	10
++
+  /* maximum number of system events */
+  #define MAX_PRU_SYS_EVENTS	64
+  
+@@ -57,27 +73,83 @@
+  #define PRU_INTC_HINLR(x)	(0x1100 + (x) * 4)
+  #define PRU_INTC_HIER		0x1500
+  
++/* CMR register bit-field macros */
++#define CMR_EVT_MAP_MASK	0xf
++#define CMR_EVT_MAP_BITS	8
++#define CMR_EVT_PER_REG		4
++
++/* HMR register bit-field macros */
++#define HMR_CH_MAP_MASK		0xf
++#define HMR_CH_MAP_BITS		8
++#define HMR_CH_PER_REG		4
++
+  /* HIPIR register bit-fields */
+  #define INTC_HIPIR_NONE_HINT	0x80000000
+  
++/**
++ * struct pruss_intc_hwirq_data - additional metadata associated with a PRU
++ * system event
++ * @evtsel: The event select index (AM18xx only)
++ * @channel: The PRU INTC channel that the system event should be mapped to
++ * @host: The PRU INTC host that the channel should be mapped to
++ */
++struct pruss_intc_hwirq_data {
++	u8 evtsel;
++	u8 channel;
++	u8 host;
++};
++
++/**
++ * struct pruss_intc_map_record - keeps track of actual mapping state
++ * @value: The currently mapped value (evtsel, channel or host)
++ * @ref_count: Keeps track of number of current users of this resource
++ */
++struct pruss_intc_map_record {
++	u8 value;
++	u8 ref_count;
++};
++
++/**
++ * struct pruss_intc_domain - information specific to an external IRQ domain
++ * @hwirq_data: Table of additional mapping data received from device tree
++ *	or PRU firmware
++ * @domain: irq domain
++ * @intc: the interrupt controller
++ * @id: Unique domain identifier (from device tree bindings)
++ */
++struct pruss_intc_domain {
++	struct pruss_intc_hwirq_data hwirq_data[MAX_PRU_SYS_EVENTS];
++	struct irq_domain *domain;
++	struct pruss_intc *intc;
++	u32 id;
++};
++
+  /**
+   * struct pruss_intc - PRUSS interrupt controller structure
++ * @domain: External interrupt domains
++ * @evtsel: Tracks the current state of CFGCHIP3[3].PRUSSEVTSEL (AM18xx only)
++ * @event_channel: Tracks the current state of system event to channel mappings
++ * @channel_host: Tracks the current state of channel to host mappings
+   * @irqs: kernel irq numbers corresponding to PRUSS host interrupts
+   * @base: base virtual address of INTC register space
+   * @irqchip: irq chip for this interrupt controller
+- * @domain: irq domain for this interrupt controller
+   * @lock: mutex to serialize access to INTC
+   * @shared_intr: bit-map denoting if the MPU host interrupt is shared
+   * @invalid_intr: bit-map denoting if host interrupt is not connected to MPU
++ * @has_evtsel: indicates that the chip has an event select mux
+   */
+  struct pruss_intc {
++	struct pruss_intc_domain domain[NUM_ISA_INTERRUPTS];
++	struct pruss_intc_map_record evtsel;
++	struct pruss_intc_map_record event_channel[MAX_PRU_SYS_EVENTS];
++	struct pruss_intc_map_record channel_host[MAX_PRU_CHANNELS];
+  	unsigned int irqs[MAX_NUM_HOST_IRQS];
+  	void __iomem *base;
+  	struct irq_chip *irqchip;
+-	struct irq_domain *domain;
+  	struct mutex lock; /* PRUSS INTC lock */
+  	u16 shared_intr;
+  	u16 invalid_intr;
++	bool has_evtsel;
+  };
+  
+  static inline u32 pruss_intc_read_reg(struct pruss_intc *intc, unsigned int reg)
+@@ -105,6 +177,172 @@ static int pruss_intc_check_write(struct pruss_intc *intc, unsigned int reg,
+  	return 0;
+  }
+  
++/**
++ * pruss_intc_map() - configure the PRUSS INTC
++ * @domain: pru intc domain pointer
++ * @hwirq: the system event number
++ *
++ * Configures the PRUSS INTC with the provided configuration from the one
++ * parsed in the xlate function. Any existing event to channel mappings or
++ * channel to host interrupt mappings are checked to make sure there are no
++ * conflicting configuration between both the PRU cores.
++ *
++ * Returns 0 on success, or a suitable error code otherwise
++ */
++static int pruss_intc_map(struct pruss_intc_domain *domain, unsigned long hwirq)
++{
++	struct pruss_intc *intc = domain->intc;
++	struct device* dev = intc->irqchip->parent_device;
++	u32 val;
++	int idx, ret;
++	u8 evtsel, ch, host;
++
++	if (hwirq >= MAX_PRU_SYS_EVENTS)
++		return -EINVAL;
++
++	mutex_lock(&intc->lock);
++
++	evtsel = domain->hwirq_data[hwirq].evtsel;
++	ch = domain->hwirq_data[hwirq].channel;
++	host = domain->hwirq_data[hwirq].host;
++
++	if (intc->has_evtsel && intc->evtsel.ref_count > 0 &&
++	    intc->evtsel.value != evtsel) {
++		dev_err(dev, "event %lu (req. evtsel %d) already assigned to evtsel %d\n",
++			hwirq, evtsel, intc->evtsel.value);
++		ret = -EBUSY;
++		goto unlock;
++	}
++
++	/* check if sysevent already assigned */
++	if (intc->event_channel[hwirq].ref_count > 0 &&
++	    intc->event_channel[hwirq].value != ch) {
++		dev_err(dev, "event %lu (req. channel %d) already assigned to channel %d\n",
++			hwirq, ch, intc->event_channel[hwirq].value);
++		ret = -EBUSY;
++		goto unlock;
++	}
++
++	/* check if channel already assigned */
++	if (intc->channel_host[ch].ref_count > 0 &&
++	    intc->channel_host[ch].value != host) {
++		dev_err(dev, "channel %d (req. host %d) already assigned to host %d\n",
++			ch, host, intc->channel_host[ch].value);
++		ret = -EBUSY;
++		goto unlock;
++	}
++
++	if (++intc->evtsel.ref_count == 1) {
++		intc->evtsel.value = evtsel;
++
++		/* TODO: need to implement CFGCHIP3[3].PRUSSEVTSEL */
++	}
++
++	if (++intc->event_channel[hwirq].ref_count == 1) {
++		intc->event_channel[hwirq].value = ch;
++
++		/*
++		 * configure channel map registers - each register holds map
++		 * info for 4 events, with each event occupying the lower nibble
++		 * in a register byte address in little-endian fashion
++		 */
++		idx = hwirq / CMR_EVT_PER_REG;
++
++		val = pruss_intc_read_reg(intc, PRU_INTC_CMR(idx));
++		val &= ~(CMR_EVT_MAP_MASK <<
++				((hwirq % CMR_EVT_PER_REG) * CMR_EVT_MAP_BITS));
++		val |= ch << ((hwirq % CMR_EVT_PER_REG) * CMR_EVT_MAP_BITS);
++		pruss_intc_write_reg(intc, PRU_INTC_CMR(idx), val);
++
++		dev_dbg(dev, "SYSEV%lu -> CH%d (CMR%d 0x%08x)\n", hwirq, ch,
++			idx, pruss_intc_read_reg(intc, PRU_INTC_CMR(idx)));
++
++		/* clear and enable system event */
++		pruss_intc_write_reg(intc, PRU_INTC_SICR, hwirq);
++		pruss_intc_write_reg(intc, PRU_INTC_EISR, hwirq);
++	}
++
++	if (++intc->channel_host[ch].ref_count == 1) {
++		intc->channel_host[ch].value = host;
++
++		/*
++		 * set host map registers - each register holds map info for
++		 * 4 channels, with each channel occupying the lower nibble in
++		 * a register byte address in little-endian fashion
++		 */
++		idx = ch / HMR_CH_PER_REG;
++
++		val = pruss_intc_read_reg(intc, PRU_INTC_HMR(idx));
++		val &= ~(HMR_CH_MAP_MASK <<
++				((ch % HMR_CH_PER_REG) * HMR_CH_MAP_BITS));
++		val |= host << ((ch % HMR_CH_PER_REG) * HMR_CH_MAP_BITS);
++		pruss_intc_write_reg(intc, PRU_INTC_HMR(idx), val);
++
++		dev_dbg(dev, "CH%d -> HOST%d (HMR%d 0x%08x)\n", ch, host, idx,
++			pruss_intc_read_reg(intc, PRU_INTC_HMR(idx)));
++
++		/* enable host interrupts */
++		pruss_intc_write_reg(intc, PRU_INTC_HIEISR, host);
++	}
++
++	dev_info(dev, "mapped system_event = %lu channel = %d host = %d domain = %u\n",
++		 hwirq, ch, host, domain->id);
++
++	/* global interrupt enable */
++	pruss_intc_write_reg(intc, PRU_INTC_GER, 1);
++
++	mutex_unlock(&intc->lock);
++	return 0;
++
++unlock:
++	mutex_unlock(&intc->lock);
++	return ret;
++}
++
++/**
++ * pruss_intc_unmap() - unconfigure the PRUSS INTC
++ * @domain: pru intc domain pointer
++ * @hwirq: the system event number
++ *
++ * Undo whatever was done in pruss_intc_map() for a PRU core.
++ * Mappings are reference counted, so resources are only disabled when there
++ * are no longer any users.
++ */
++static void pruss_intc_unmap(struct pruss_intc_domain *domain, unsigned long hwirq)
++{
++	struct pruss_intc *intc = domain->intc;
++	struct device* dev = intc->irqchip->parent_device;
++	u8 ch, host;
++
++	if (hwirq >= MAX_PRU_SYS_EVENTS)
++		return;
++
++	mutex_lock(&intc->lock);
++
++	ch = intc->event_channel[hwirq].value;
++	host = intc->channel_host[ch].value;
++
++	if (--intc->channel_host[ch].ref_count == 0) {
++		/* disable host interrupts */
++		pruss_intc_write_reg(intc, PRU_INTC_HIDISR, host);
++	}
++
++	if (--intc->event_channel[hwirq].ref_count == 0) {
++		/* disable system events */
++		pruss_intc_write_reg(intc, PRU_INTC_EICR, hwirq);
++		/* clear any pending status */
++		pruss_intc_write_reg(intc, PRU_INTC_SICR, hwirq);
++	}
++
++	if (intc->has_evtsel)
++		intc->evtsel.ref_count--;
++
++	dev_info(dev, "unmapped system_event = %lu channel = %d host = %d\n",
++		 hwirq, ch, host);
++
++	mutex_unlock(&intc->lock);
++}
++
+  static void pruss_intc_init(struct pruss_intc *intc)
+  {
+  	int i;
+@@ -198,10 +436,83 @@ static int pruss_intc_irq_set_irqchip_state(struct irq_data *data,
+  	return pruss_intc_check_write(intc, PRU_INTC_SICR, data->hwirq);
+  }
+  
++static int pruss_intc_irq_domain_select(struct irq_domain *d,
++					struct irq_fwspec *fwspec,
++					enum irq_domain_bus_token bus_token)
++{
++	struct pruss_intc_domain *domain = d->host_data;
++	int num_cells = domain->intc->has_evtsel ? 5 : 4;
++	u32 domain_id;
++
++	if (!fwspec || fwspec->fwnode != domain->domain->fwnode)
++		return 0;
++
++	if (bus_token != DOMAIN_BUS_ANY && bus_token != domain->domain->bus_token)
++		return 0;
++
++	if (WARN_ON_ONCE(fwspec->param_count != num_cells))
++		return 0;
++
++	domain_id = fwspec->param[fwspec->param_count - 1];
++	if (domain_id != domain->id)
++		return 0;
++
++	return 1;
++}
++
++static int
++pruss_intc_irq_domain_xlate(struct irq_domain *d, struct device_node *node,
++			    const u32 *intspec, unsigned int intsize,
++			    unsigned long *out_hwirq, unsigned int *out_type)
++{
++	struct pruss_intc_domain *domain = d->host_data;
++	struct pruss_intc *intc = domain->intc;
++	int num_cells = intc->has_evtsel ? 5 : 4;
++	u32 sys_event, channel, host, domain_id;
++	u32 evtsel = 0;
++
++	if (WARN_ON_ONCE(intsize != num_cells))
++		return -EINVAL;
++
++	sys_event = intspec[0];
++	if (sys_event >= MAX_PRU_SYS_EVENTS)
++		return -EINVAL;
++
++	if (intc->has_evtsel)
++		evtsel = intspec[1];
++
++	channel = intspec[intsize - 3];
++	if (channel >= MAX_PRU_CHANNELS)
++		return -EINVAL;
++
++	host = intspec[intsize - 2];
++	if (host >= MAX_PRU_HOST_INT)
++		return -EINVAL;
++
++	domain_id = intspec[intsize - 1];
++	if (domain_id != domain->id)
++		return -EINVAL;
++
++	domain->hwirq_data[sys_event].evtsel = evtsel;
++	domain->hwirq_data[sys_event].channel = channel;
++	domain->hwirq_data[sys_event].host = host;
++
++	*out_hwirq = sys_event;
++	*out_type = IRQ_TYPE_NONE;
++
++	return 0;
++}
++
+  static int pruss_intc_irq_domain_map(struct irq_domain *d, unsigned int virq,
+  				     irq_hw_number_t hw)
+  {
+-	struct pruss_intc *intc = d->host_data;
++	struct pruss_intc_domain *domain = d->host_data;
++	struct pruss_intc *intc = domain->intc;
++	int err;
++
++	err = pruss_intc_map(domain, hw);
++	if (err < 0)
++		return err;
+  
+  	irq_set_chip_data(virq, intc);
+  	irq_set_chip_and_handler(virq, intc->irqchip, handle_level_irq);
+@@ -211,12 +522,17 @@ static int pruss_intc_irq_domain_map(struct irq_domain *d, unsigned int virq,
+  
+  static void pruss_intc_irq_domain_unmap(struct irq_domain *d, unsigned int virq)
+  {
++	struct pruss_intc_domain *domain = d->host_data;
++	unsigned long hwirq = irqd_to_hwirq(irq_get_irq_data(virq));
++
+  	irq_set_chip_and_handler(virq, NULL, NULL);
+  	irq_set_chip_data(virq, NULL);
++	pruss_intc_unmap(domain, hwirq);
+  }
+  
+  static const struct irq_domain_ops pruss_intc_irq_domain_ops = {
+-	.xlate	= irq_domain_xlate_onecell,
++	.select	= pruss_intc_irq_domain_select,
++	.xlate	= pruss_intc_irq_domain_xlate,
+  	.map	= pruss_intc_irq_domain_map,
+  	.unmap	= pruss_intc_irq_domain_unmap,
+  };
+@@ -245,7 +561,8 @@ static void pruss_intc_irq_handler(struct irq_desc *desc)
+  	hipir = pruss_intc_read_reg(intc, PRU_INTC_HIPIR(i));
+  	while (!(hipir & INTC_HIPIR_NONE_HINT)) {
+  		hwirq = hipir & GENMASK(9, 0);
+-		virq = irq_linear_revmap(intc->domain, hwirq);
++		virq = irq_linear_revmap(
++			intc->domain[TI_PRUSS_INTC_DOMAIN_MCU].domain, hwirq);
+  
+  		/*
+  		 * NOTE: manually ACK any system events that do not have a
+@@ -272,7 +589,8 @@ static int pruss_intc_probe(struct platform_device *pdev)
+  	struct pruss_intc *intc;
+  	struct resource *res;
+  	struct irq_chip *irqchip;
+-	int i, irq, count;
++	int i, err, irq, count;
++	u32 num_cells;
+  	u8 temp_intr[MAX_NUM_HOST_IRQS] = { 0 };
+  
+  	intc = devm_kzalloc(dev, sizeof(*intc), GFP_KERNEL);
+@@ -323,13 +641,22 @@ static int pruss_intc_probe(struct platform_device *pdev)
+  		}
+  	}
+  
++	err = of_property_read_u32(dev->of_node, "#interrupt-cells", &num_cells);
++	if (!err && num_cells == 5)
++		intc->has_evtsel = true;
++
+  	mutex_init(&intc->lock);
+  
++	pm_runtime_enable(dev);
++	pm_runtime_get_sync(dev);
++
+  	pruss_intc_init(intc);
+  
+  	irqchip = devm_kzalloc(dev, sizeof(*irqchip), GFP_KERNEL);
+-	if (!irqchip)
+-		return -ENOMEM;
++	if (!irqchip) {
++		err = -ENOMEM;
++		goto fail_alloc;
++	}
+  
+  	irqchip->irq_ack = pruss_intc_irq_ack;
+  	irqchip->irq_mask = pruss_intc_irq_mask;
+@@ -338,14 +665,24 @@ static int pruss_intc_probe(struct platform_device *pdev)
+  	irqchip->irq_release_resources = pruss_intc_irq_relres;
+  	irqchip->irq_get_irqchip_state = pruss_intc_irq_get_irqchip_state;
+  	irqchip->irq_set_irqchip_state = pruss_intc_irq_set_irqchip_state;
++	irqchip->parent_device = dev;
+  	irqchip->name = dev_name(dev);
+  	intc->irqchip = irqchip;
+  
+-	/* always 64 events */
+-	intc->domain = irq_domain_add_linear(dev->of_node, MAX_PRU_SYS_EVENTS,
+-					     &pruss_intc_irq_domain_ops, intc);
+-	if (!intc->domain)
+-		return -ENOMEM;
++	for (i = 0; i < NUM_TI_PRUSS_INTC_DOMAIN; i++) {
++		intc->domain[i].intc = intc;
++		intc->domain[i].id = i;
++		/* always 64 events */
++		intc->domain[i].domain = irq_domain_add_linear(dev->of_node,
++				MAX_PRU_SYS_EVENTS, &pruss_intc_irq_domain_ops,
++				&intc->domain[i]);
++		if (!intc->domain[i].domain) {
++			while (--i >= 0)
++				irq_domain_remove(intc->domain[i].domain);
++			err = -ENOMEM;
++			goto fail_alloc;
++		}
++	}
+  
+  	for (i = 0; i < MAX_NUM_HOST_IRQS; i++) {
+  		irq = platform_get_irq_byname(pdev, irq_names[i]);
+@@ -356,6 +693,7 @@ static int pruss_intc_probe(struct platform_device *pdev)
+  
+  			dev_err(dev, "platform_get_irq_byname failed for %s : %d\n",
+  				irq_names[i], irq);
++			err = irq;
+  			goto fail_irq;
+  		}
+  
+@@ -372,13 +710,20 @@ static int pruss_intc_probe(struct platform_device *pdev)
+  			irq_set_chained_handler_and_data(intc->irqs[i], NULL,
+  							 NULL);
+  	}
+-	irq_domain_remove(intc->domain);
+-	return irq;
++	for (i = 0; i < NUM_TI_PRUSS_INTC_DOMAIN; i++)
++		irq_domain_remove(intc->domain[i].domain);
++
++fail_alloc:
++	pm_runtime_put(dev);
++	pm_runtime_disable(dev);
++
++	return err;
+  }
+  
+  static int pruss_intc_remove(struct platform_device *pdev)
+  {
+  	struct pruss_intc *intc = platform_get_drvdata(pdev);
++	struct device *dev = &pdev->dev;
+  	unsigned int hwirq;
+  	int i;
+  
+@@ -388,9 +733,15 @@ static int pruss_intc_remove(struct platform_device *pdev)
+  							 NULL);
+  	}
+  
+-	for (hwirq = 0; hwirq < MAX_PRU_SYS_EVENTS; hwirq++)
+-		irq_dispose_mapping(irq_find_mapping(intc->domain, hwirq));
+-	irq_domain_remove(intc->domain);
++	for (i = 0; i < NUM_TI_PRUSS_INTC_DOMAIN; i++) {
++		for (hwirq = 0; hwirq < MAX_PRU_SYS_EVENTS; hwirq++)
++			irq_dispose_mapping(irq_find_mapping(
++					    intc->domain[i].domain, hwirq));
++		irq_domain_remove(intc->domain[i].domain);
++	}
++
++	pm_runtime_put(dev);
++	pm_runtime_disable(dev);
+  
+  	return 0;
+  }
+diff --git a/include/dt-bindings/interrupt-controller/ti-pruss.h b/include/dt-bindings/interrupt-controller/ti-pruss.h
+new file mode 100644
+index 000000000000..326a68c31bce
+--- /dev/null
++++ b/include/dt-bindings/interrupt-controller/ti-pruss.h
+@@ -0,0 +1,27 @@
++/* SPDX-License-Identifier: GPL-2.0 OR MIT */
++/*
++ * This header provides constants for the Texas Instruments Programmable
++ * Realtime Unit Subsystem (PRUSS) interrupt controller.
++ */
++
++#ifndef _DT_BINDINGS_INTERRUPT_CONTROLLER_TI_PRUSS_H
++#define _DT_BINDINGS_INTERRUPT_CONTROLLER_TI_PRUSS_H
++
++/* interrupt specifier for optional cell 1 */
++
++#define TI_PRUSS_INTC_EVTSEL_ANY	0xffffffff
++
++/* interrupt specifier for cell #interrupt-cells - 1 */
++
++/* host interrupt is connected to PRU cores, e.g. host events 0 and 1 */
++#define TI_PRUSS_INTC_DOMAIN_PRU	0
++/* host interrupt is connected to MCU's interrupt controller  */
++#define TI_PRUSS_INTC_DOMAIN_MCU	1
++/* host interrupt is connected to DSP's interrupt controller  */
++#define TI_PRUSS_INTC_DOMAIN_DSP	2
++/* host interrupt is connected to the auxillary PRU cores  */
++#define TI_PRUSS_INTC_DOMAIN_RTU_PRU	3
++/* host interrupt is connected to the task managers  */
++#define TI_PRUSS_INTC_DOMAIN_TASK	4
++
++#endif /* _DT_BINDINGS_INTERRUPT_CONTROLLER_TI_PRUSS_H */
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
