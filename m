@@ -2,83 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33EDA8597E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 06:50:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE8608598E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 07:01:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eTbCDdCBMGQTZt1X6b1QpNGe2cStYO97rVwlaQJ7RtM=; b=QWpxcqjIXs5XPH
-	DCFlwOIzEoUW3tcuziRxZYwQprkZJXMsJdttdhRDABTxyCiKE2p4FGZZbLqfN41R0EUmyvwIBwN6l
-	9wRdrpdX7bezQ+AG4VnYWagniGRbzAoVBBKyDUc90gRznirvsu/7eDywTjqNAo3/Fzm5IdesDRUxZ
-	6GnHPAK7ftWOYvmc1r/Cf2n1HbqFp0U1JzQhqi9Q86e7hoXqPHSLz1oeO+pxQ/r3YbRFrcQI6DLYS
-	BF2RC4gNNrb94pgM0BDa1CGsy1XWTjd9EIn29SSYOnPPBcw7HBmDg/9mxAL5T8oPP9h/1MdUqYqQC
-	84PewMLXZhufrKYqV4fQ==;
+	List-Owner; bh=bPSsrOShnB9LAFgcq3kBcp7dWVt9LURNOx7VE2l5GOQ=; b=RnB3bRiFTVU0m+
+	wn7fVEuAv8V5uI5QLr3TjUitx3sp7j/dtc4EvHbh8QKApHmRhUNNLi46lhC8PzHXljyHuctxh2qQb
+	VClTk5IOxx3v7IdzDXQMarzJAVbR/7gsbfNSv4LBJilXW8vDHsr7zpWnQmyZYVOrEO3IWKiaAD7os
+	lclUk+TPVzxIR1F+AsX9LEo7LErDL7VI9OatvhgzZLDDGSvee2YAb3aeH5t0Fspzezf5n6Y8BKhK3
+	J6JnBs/TUYhttk/R6XyiuEh2vhGZqEeJevtcV2oSCTsAjLdBWmZEatsL/fymQ1iURRh7cIaiKsL04
+	BF51ukHLCK0HKZNrL5Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvaO0-0007Z4-Dm; Thu, 08 Aug 2019 04:50:48 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hvaYd-0002kA-6h; Thu, 08 Aug 2019 05:01:47 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvaNl-0007YE-CG
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 04:50:34 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z23so993309wmf.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 07 Aug 2019 21:50:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=c2ctl4XAji46HwbaOhdkmf4zUAn2rV12GD6HMJfhhu0=;
- b=EnK2WRFCo2HUJXN26DDv3YeH1cdtPs78djtjZutI4oJDd6kAR7L+cBMTApuNBZJlAl
- EpA23bP8D5uElbDt0/Ac1AMatfMdb0pzwqof7AZehQl4T1OBlle9qLAjuM/lkqt7SxPB
- E44Rnf5Ou2h5TqHcewh4p5YllNwZpAA/zyQKFjEXFgV6PdGnMwrtvNIS6PA6ArUre5bk
- +Y2nj+0oIDqPEzPU5hIRUEyUYYIZQTNLWzv52Grs+N+kmJRjiHeXbkke5uxxBZ/WuooY
- rUzdU50fx13CU0iXSKbZ4GOozYjrKYQz0QTy6Ovgiv/rq3PnNvJ+1d2RySmOVgXVPDOx
- hYPw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=c2ctl4XAji46HwbaOhdkmf4zUAn2rV12GD6HMJfhhu0=;
- b=FdKTfVq6ekyJV6gdC8OCoRLWKAxGdtKqd1O6mRpCUbta7LEKL0QoZMjjiS2GPoITTC
- bO0i7FNefpGP6NYpZu2ttxP6SajPbNGhnhQe6cIvWbF/l9mFZZCeoyW8ZC+lpKY6FW24
- rF+BFYKG8PFdYPxwFF1f3JeTult85E8CHesZGFAosPLbqr9gF5VK66Jkg9UWalFFA4QR
- lpIn2DN7Pq64lKVjif+dBHAyYCyHLUpgB4whsMfZE8i4FR2isboZTvYfkArdUDUvd5Im
- gROOyEU+UFeQyvKLxHDJOmPE1hrtfEs23TXAvavnlKhDQX2bS9ZqytRiDuvOWZ8meBel
- cgwg==
-X-Gm-Message-State: APjAAAWPPHZlDgSK56pngslOok0SjveRKMrNKZnWd+yEhTwewMN1W9gF
- xTi3wPLslsl7aSlnU5aPRRI=
-X-Google-Smtp-Source: APXvYqzmVvFk9Dv5wtqWGfmpt4Ku8O6izZqJSqYGCnAp0dXDc8Alq0JXGsAIxvYE6kRL99pKbFZg6Q==
-X-Received: by 2002:a7b:c8c3:: with SMTP id f3mr1823749wml.124.1565239829705; 
- Wed, 07 Aug 2019 21:50:29 -0700 (PDT)
-Received: from archlinux-threadripper ([2a01:4f8:222:2f1b::2])
- by smtp.gmail.com with ESMTPSA id 2sm136472106wrn.29.2019.08.07.21.50.28
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 07 Aug 2019 21:50:29 -0700 (PDT)
-Date: Wed, 7 Aug 2019 21:50:27 -0700
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Qian Cai <cai@lca.pw>
-Subject: Re: [PATCH] arm64/cache: silence -Woverride-init warnings
-Message-ID: <20190808045027.GA34150@archlinux-threadripper>
-References: <20190808032916.879-1-cai@lca.pw>
+ id 1hvaYL-0002bt-EV
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 05:01:30 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E3DA52186A;
+ Thu,  8 Aug 2019 05:01:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565240489;
+ bh=AHNJVKPnI8TPzXlCehwNhKSlQ8JsSzT7dmoWdcLEXYI=;
+ h=In-Reply-To:References:From:Cc:To:Subject:Date:From;
+ b=unMwFYPEpX5n/FTzHQhYC3ZDi50tVE5xXE1YnBj+0CofrN5KgWqXJBPd96qDefB3m
+ II6qNG81HqA8oTHXOOM14vCWS7nzLnaUrHVIwLFJ9DlHlOk5OK2o1h+n7v3DvUyBem
+ /PARBCuOWRdDahKgrA08VasYJevhmfmGM+zQQ/Yk=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190808032916.879-1-cai@lca.pw>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20190705151440.20844-2-manivannan.sadhasivam@linaro.org>
+References: <20190705151440.20844-1-manivannan.sadhasivam@linaro.org>
+ <20190705151440.20844-2-manivannan.sadhasivam@linaro.org>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ mturquette@baylibre.com, robh+dt@kernel.org
+Subject: Re: [PATCH 1/5] dt-bindings: clock: Add Bitmain BM1880 SoC clock
+ controller binding
+User-Agent: alot/0.8.1
+Date: Wed, 07 Aug 2019 22:01:28 -0700
+Message-Id: <20190808050128.E3DA52186A@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_215033_423545_9A09308B 
-X-CRM114-Status: GOOD (  12.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190807_220129_509823_8C6EDCC3 
+X-CRM114-Status: GOOD (  14.28  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (natechancellor[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -88,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,58 +78,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ darren.tsao@bitmain.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, fisher.cheng@bitmain.com,
+ alec.lin@bitmain.com, linux-clk@vger.kernel.org, haitao.suo@bitmain.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 11:29:16PM -0400, Qian Cai wrote:
-> The commit 155433cb365e ("arm64: cache: Remove support for ASID-tagged
-> VIVT I-caches") introduced some compiation warnings from GCC (and
-> Clang) with -Winitializer-overrides),
+Quoting Manivannan Sadhasivam (2019-07-05 08:14:36)
+> Add devicetree binding for Bitmain BM1880 SoC clock controller.
 > 
-> arch/arm64/kernel/cpuinfo.c:38:26: warning: initialized field
-> overwritten [-Woverride-init]
-> [ICACHE_POLICY_VIPT]  = "VIPT",
->                         ^~~~~~
-> arch/arm64/kernel/cpuinfo.c:38:26: note: (near initialization for
-> 'icache_policy_str[2]')
-> arch/arm64/kernel/cpuinfo.c:39:26: warning: initialized field
-> overwritten [-Woverride-init]
-> [ICACHE_POLICY_PIPT]  = "PIPT",
->                         ^~~~~~
-> arch/arm64/kernel/cpuinfo.c:39:26: note: (near initialization for
-> 'icache_policy_str[3]')
-> arch/arm64/kernel/cpuinfo.c:40:27: warning: initialized field
-> overwritten [-Woverride-init]
-> [ICACHE_POLICY_VPIPT]  = "VPIPT",
->                          ^~~~~~~
-> arch/arm64/kernel/cpuinfo.c:40:27: note: (near initialization for
-> 'icache_policy_str[0]')
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> ---
+>  .../bindings/clock/bitmain,bm1880-clk.txt     | 47 +++++++++++
+
+Can you convert this to YAML? It's all the rage right now.
+
+>  include/dt-bindings/clock/bm1880-clock.h      | 82 +++++++++++++++++++
+>  2 files changed, 129 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.txt
+>  create mode 100644 include/dt-bindings/clock/bm1880-clock.h
 > 
-> because it initializes icache_policy_str[0 ... 3] twice. Since
-> arm64 developers are keen to keep the style of initializing a static
-> array with a non-zero pattern first, just disable those warnings for
-> both GCC and Clang of this file.
-> 
-> Fixes: 155433cb365e ("arm64: cache: Remove support for ASID-tagged VIVT I-caches")
-> Signed-off-by: Qian Cai <cai@lca.pw>
+> diff --git a/Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.txt b/Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.txt
+> new file mode 100644
+> index 000000000000..9c967095d430
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.txt
+> @@ -0,0 +1,47 @@
+> +* Bitmain BM1880 Clock Controller
+> +
+> +The Bitmain BM1880 clock controler generates and supplies clock to
+> +various peripherals within the SoC.
+> +
+> +Required Properties:
+> +
+> +- compatible: Should be "bitmain,bm1880-clk"
+> +- reg :        Register address and size of PLL and SYS control domains
+> +- reg-names : Register domain names: "pll" and "sys"
+> +- clocks : Phandle of the input reference clock.
+> +- #clock-cells: Should be 1.
+> +
+> +Each clock is assigned an identifier, and client nodes can use this identifier
+> +to specify the clock which they consume.
+> +
+> +All available clocks are defined as preprocessor macros in corresponding
+> +dt-bindings/clock/bm1880-clock.h header and can be used in device tree sources.
+> +
+> +External clocks:
+> +
+> +The osc clock used as the input for the plls is generated outside the SoC.
+> +It is expected that it is defined using standard clock bindings as "osc".
+> +
+> +Example: 
+> +
+> +        clk: clock-controller@800 {
+> +                compatible = "bitmain,bm1880-clk";
+> +                reg = <0xe8 0x0c>,<0x800 0xb0>;
 
-It's a shame we can't just use one cc-disable-warning statement but
--Woverride-init wasn't added for GCC compatibility until clang 8.0.0
-and we don't have an established minimum clang version.
+It looks weird still. What hardware module is this actually part of?
+Some larger power manager block?
 
-With that said, I applied your patch and I don't see with warning with
-W=1 anymore and I see both options get added to the clang command line
-with V=1.
-
-Reviewed-by: Nathan Chancellor <natechancellor@gmail.com>
-Tested-by: Nathan Chancellor <natechancellor@gmail.com>
-
-Cheers!
+> +                reg-names = "pll", "sys";
+> +                clocks = <&osc>;
+> +                #clock-cells = <1>;
+> +        };
+> +
 
 _______________________________________________
 linux-arm-kernel mailing list
