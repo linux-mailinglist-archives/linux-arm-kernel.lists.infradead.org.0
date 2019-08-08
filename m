@@ -2,39 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4AE7867F7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:26:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5450867F8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:26:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=NcbCDe00pk6oGK7Hyu37jEDZrvWtD0ZYmTs2EvR8PE4=; b=U5e
-	jZToWIU9SRq2td4ET6HHSrfFzHtrPLi3nBUaBKGhTXHDfgOjnKfzVjyx0/Oz7spxySN9N2+aIbe+f
-	RivkNafEEXU6eJYUqtcavPU4I+GiWH5zzefTdkwEU4nrNgoPo5Wlc7XfHTIk/P6oRG26HaDhu4FbQ
-	0pGN7bYEOMU4LERCYIeFwyCZM5ykkGv2BPu7OJITCZv8XQrhvw28Dmqn913ZAdGg6ucF2q0wy3L1q
-	hJShTiMDgjWrDQLmQd7U2H1gvxrz9hoNWrn+/M+N6lECfGdKeGeTGBALyqaK6vaePOIWvtFcz5N6e
-	IzMmIxBUkfdbOe1CEeGnPg8Su/xRpyA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=4Kxn7e0dvpxOa9s6FXsaS4raKBb6M1AM/kf8V1pm/fA=; b=t1lji+hJ48KqXI7p0AyDTbAyV6
+	28H4eoScxqwHfq7Lwdm+L0B6d6mO03S9/bOGDYdqX8oKErPWuh8YzHHtbsiRciuX4gcTBDy1o381d
+	Gl5ATiCV0wpOULr2rc10IpL/cS61Gp70Bqt9VsOt7/sVOHlKcVnblCBCDmLni/xZDZwFN6fTAKr+Y
+	Gga/vhNBiiIWLIqDwPGCmEdG17ICiEvbdop87FtSyYIj6o7I8OPQftc1TZbq9tIJ/KGxvmwGj7A3U
+	veWBYDHfyC3WjLToyTPwxBMA33/9gIbxEdxNaT5kjPvxLLUk97VXk1tHMey4VqQCJQLwlT9fwCMVk
+	O/cYPvfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvmBT-0002yS-3G; Thu, 08 Aug 2019 17:26:39 +0000
+	id 1hvmBd-00037o-To; Thu, 08 Aug 2019 17:26:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvmBF-0002wg-3M
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 17:26:30 +0000
+ id 1hvmBI-0002x6-2G
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 17:26:33 +0000
 Received: from localhost.localdomain (unknown [194.230.155.124])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3C3B1217F4;
- Thu,  8 Aug 2019 17:26:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 35FA72089E;
+ Thu,  8 Aug 2019 17:26:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565285184;
- bh=R38QSOqLbhF6pYAmCUOKDTd+6QC0rCEyjflUlXWIJRM=;
- h=From:To:Cc:Subject:Date:From;
- b=sDUqFeeMPSVz1NcXYbaytu83sBeuni/Enfh+nvqE43gqLkZgiwDK7+W09b7ObkAS9
- blyC6DSqrPf3EeqXaoGgPLrnEFj/ec++n7ccEPHRY4XBNTqNiTEanWKXyysUoPWH8g
- wu2I8EVE1TWW5WA02EdS0IqTk5VccpKqrBUiJgPs=
+ s=default; t=1565285187;
+ bh=xOoHtkayuFTM7IWeNm0jfHM35tww8lvlY5cTq4QWz4Y=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=P64gMLxxrmXkQPCOjRJJDlQTYL6eEul3R8cPVWBemZ5mBQpjal1FB5zKndFn/8zYf
+ WrOCBuJMMUR+V1PG6B7dmoqvuGbovWqE8VrqlwOQT5wQjg53xNWF3Ib83bh2d+xri5
+ qTXgIf3VWeNRj/mGzm8wrNDOfqz83Pb5zugx7b30=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Schrempf Frieder <frieder.schrempf@kontron.de>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -43,13 +44,15 @@ To: Schrempf Frieder <frieder.schrempf@kontron.de>,
  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 1/3] dt-bindings: vendor-prefixes: Add Anvo-Systems
-Date: Thu,  8 Aug 2019 19:26:14 +0200
-Message-Id: <20190808172616.11728-1-krzk@kernel.org>
+Subject: [PATCH v4 2/3] dt-bindings: eeprom: at25: Add Anvo ANV32E61W
+Date: Thu,  8 Aug 2019 19:26:15 +0200
+Message-Id: <20190808172616.11728-2-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190808172616.11728-1-krzk@kernel.org>
+References: <20190808172616.11728-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_102625_158596_A2AA686D 
-X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-CacheID: sfid-20190808_102628_124387_44ED7A27 
+X-CRM114-Status: UNSURE (   9.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -86,40 +89,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add vendor prefix for Anvo-Systems Dresden GmbH.
+Document the compatible for ANV32E61W EEPROM chip.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 ---
 
-Changes since v3:
-1. Add Rob's tag,
-2. Remove Admatec (not needed anymore).
-
-Changes since v2:
-1. Use admatecde vendor prefix.
-2. Add Anvo-Systems Dresden GmbH.
-
-Changes since v1:
 New patch
 ---
- Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ Documentation/devicetree/bindings/eeprom/at25.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-index 6992bbbbffab..519889f5aec8 100644
---- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-+++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-@@ -81,6 +81,8 @@ patternProperties:
-     description: Analogix Semiconductor, Inc.
-   "^andestech,.*":
-     description: Andes Technology Corporation
-+  "^anvo,.*":
-+    description: Anvo-Systems Dresden GmbH
-   "^apm,.*":
-     description: Applied Micro Circuits Corporation (APM)
-   "^aptina,.*":
+diff --git a/Documentation/devicetree/bindings/eeprom/at25.txt b/Documentation/devicetree/bindings/eeprom/at25.txt
+index b3bde97dc199..42577dd113dd 100644
+--- a/Documentation/devicetree/bindings/eeprom/at25.txt
++++ b/Documentation/devicetree/bindings/eeprom/at25.txt
+@@ -3,6 +3,7 @@ EEPROMs (SPI) compatible with Atmel at25.
+ Required properties:
+ - compatible : Should be "<vendor>,<type>", and generic value "atmel,at25".
+   Example "<vendor>,<type>" values:
++    "anvo,anv32e61w"
+     "microchip,25lc040"
+     "st,m95m02"
+     "st,m95256"
 -- 
 2.17.1
 
