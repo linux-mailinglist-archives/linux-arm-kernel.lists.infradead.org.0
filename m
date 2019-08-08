@@ -2,83 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CBF386703
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:25:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3542A8670B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:26:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CLhWC9zJ73PQDMin02YhVq3VjNZFvBAgVTuKkrJJn44=; b=JEJ5XWny42I0ic
-	UE6iWgFddJ2p0nwmpwkT5oLe40l5wJ/Qu8klxyPoJavkHThdhFkQIvs/WgFbaATMd6TQXbVT2f80G
-	LJrz753cUqH/Lqs8lsNfPf/EudOmud84q0uIkRttMI47rq8K5ac33xkmbpCGvQEl75xPipxRSchv3
-	OVNOt36ySYgw4ilAg0pZJaUqBg8UGHr9BDAG4feTeUL1kcfmAPTKb22f/ua0mBb3iSYszxihx1vSl
-	wYP4TE7UDJCoHVZ2sWUe2pW3upPRERXwsKG1T+oXkDJIknnaQtCdPihMxIBfcKeRqOrnI5i9RKTSh
-	ekczJRGcIbZP+enPX3vg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5hUmSQBsj8l7Iu5+H9RMNjaEnbxLtyASMGq8WZLQDNA=; b=MrbnHpoeNrBiSD4AxGQ8eTfWf
+	N+H9AA3d9OFzLO7HeDkXuP8ZbzpoPi2WgiVQVDWSZbjTfe9/fPotQqfLhAbDB+gS5FogueaOuZFfM
+	YDGxlqfN2r5i6HyWFHBbQBbqO4BxgkAspNB1+6Ow/0wCfaEAxShGh8cKroB9ATffFw5g2fiZ2nOrE
+	+rmAH4NfI0F8+JxJM76kYX1F+/CzWMpbTDzwOnRM762mr6psXL9+9+TMKaf6XfhXJQWvUEbG5Ou8g
+	Q0IPOzOh10B+MqwyDn6/AWWzvC69eoh0QU/ciaGpIuhpVM6zO199pODo30DUU8xg47+Le9RwyXwPo
+	1/ICx/yjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvlEA-0002aO-GU; Thu, 08 Aug 2019 16:25:22 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1hvlFa-0002zZ-0Z; Thu, 08 Aug 2019 16:26:50 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvlE0-0002Zp-4R; Thu, 08 Aug 2019 16:25:13 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 08 Aug 2019 09:25:09 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,362,1559545200"; d="scan'208";a="258761935"
-Received: from fmsmsx104.amr.corp.intel.com ([10.18.124.202])
- by orsmga001.jf.intel.com with ESMTP; 08 Aug 2019 09:25:08 -0700
-Received: from fmsmsx119.amr.corp.intel.com (10.18.124.207) by
- fmsmsx104.amr.corp.intel.com (10.18.124.202) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Thu, 8 Aug 2019 09:25:07 -0700
-Received: from crsmsx104.amr.corp.intel.com (172.18.63.32) by
- FMSMSX119.amr.corp.intel.com (10.18.124.207) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Thu, 8 Aug 2019 09:25:07 -0700
-Received: from crsmsx101.amr.corp.intel.com ([169.254.1.115]) by
- CRSMSX104.amr.corp.intel.com ([169.254.6.74]) with mapi id 14.03.0439.000;
- Thu, 8 Aug 2019 10:25:05 -0600
-From: "Weiny, Ira" <ira.weiny@intel.com>
-To: John Hubbard <jhubbard@nvidia.com>, Michal Hocko <mhocko@kernel.org>
-Subject: RE: [PATCH 00/34] put_user_pages(): miscellaneous call sites
-Thread-Topic: [PATCH 00/34] put_user_pages(): miscellaneous call sites
-Thread-Index: AQHVSNjU1EYxEMQcyke2Y16AlWiV+abn98YAgAA6ZwCAABzEgIAAB8CAgABJHoCABynCAIAAAqCAgAC1jYCAAIj3AIAAatiQ
-Date: Thu, 8 Aug 2019 16:25:04 +0000
-Message-ID: <2807E5FD2F6FDA4886F6618EAC48510E79E79644@CRSMSX101.amr.corp.intel.com>
-References: <20190802022005.5117-1-jhubbard@nvidia.com>
- <20190802091244.GD6461@dhcp22.suse.cz>
- <20190802124146.GL25064@quack2.suse.cz>
- <20190802142443.GB5597@bombadil.infradead.org>
- <20190802145227.GQ25064@quack2.suse.cz>
- <076e7826-67a5-4829-aae2-2b90f302cebd@nvidia.com>
- <20190807083726.GA14658@quack2.suse.cz>
- <20190807084649.GQ11812@dhcp22.suse.cz>
- <20190808023637.GA1508@iweiny-DESK2.sc.intel.com>
- <e648a7f3-6a1b-c9ea-1121-7ab69b6b173d@nvidia.com>
-In-Reply-To: <e648a7f3-6a1b-c9ea-1121-7ab69b6b173d@nvidia.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-titus-metadata-40: eyJDYXRlZ29yeUxhYmVscyI6IiIsIk1ldGFkYXRhIjp7Im5zIjoiaHR0cDpcL1wvd3d3LnRpdHVzLmNvbVwvbnNcL0ludGVsMyIsImlkIjoiNzg1NWU5YjgtN2QxYy00YWI4LWFkMDAtZTkzNjZiYzAyZWZhIiwicHJvcHMiOlt7Im4iOiJDVFBDbGFzc2lmaWNhdGlvbiIsInZhbHMiOlt7InZhbHVlIjoiQ1RQX05UIn1dfV19LCJTdWJqZWN0TGFiZWxzIjpbXSwiVE1DVmVyc2lvbiI6IjE3LjEwLjE4MDQuNDkiLCJUcnVzdGVkTGFiZWxIYXNoIjoidDZjeGJDdmV4UkoyZDkrSFdhT0RlXC9jalFDREdKeXlsWlJnSkxPamJtaXZuU2VIUmFYNG12UFE5cVIrbkR6QzkifQ==
-x-ctpclassification: CTP_NT
-dlp-product: dlpe-windows
-dlp-version: 11.2.0.6
-dlp-reaction: no-action
-x-originating-ip: [172.18.205.10]
+ id 1hvlFO-0002z9-V7
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:26:41 +0000
+X-Originating-IP: 88.168.111.231
+Received: from localhost (lpr83-1-88-168-111-231.fbx.proxad.net
+ [88.168.111.231]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 292A3E0008;
+ Thu,  8 Aug 2019 16:26:29 +0000 (UTC)
+Date: Thu, 8 Aug 2019 18:26:28 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: Re: [PATCH] arm64: dts: allwinner: a64: Drop PMU node
+Message-ID: <20190808162628.pthvy3tgf3naj76s@flea>
+References: <20190806140135.4739-1-anarsoul@gmail.com>
+ <89402d22-d432-9551-e787-c8ede16dbe5f@arm.com>
+ <CA+E=qVfh7mirJhRsDTeuAVgG55ia936uFSFVKR0N5Pn4GCF1UA@mail.gmail.com>
+ <E1hv5vZ-0000jN-M8@stardust.g4.wien.funkfeuer.at>
+ <CA+E=qVdHOtebR6xjpwTY_Whp0cHLtv82YULmxLPSEzdLN9TnVg@mail.gmail.com>
+ <36e60078-7dd5-9c07-ffa1-6092d8c70fa8@arm.com>
+ <CA+E=qVeAR4AFN99ZVy8EZLW6p_8ucTewOdMis37wnpV3DObaGg@mail.gmail.com>
+ <20190807115614.phm7sbyae6yajkug@flea>
+ <CA+E=qVdh3MHMsEC9XKe5-7O8fGTHFh76WLOgVf+PZPv7c4JE9w@mail.gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <CA+E=qVdh3MHMsEC9XKe5-7O8fGTHFh76WLOgVf+PZPv7c4JE9w@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_092512_231808_AC846DB4 
-X-CRM114-Status: GOOD (  32.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190808_092639_302268_451F9A59 
+X-CRM114-Status: GOOD (  24.45  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,114 +68,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-fbdev@vger.kernel.org" <linux-fbdev@vger.kernel.org>,
- Jan Kara <jack@suse.cz>, "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "amd-gfx@lists.freedesktop.org" <amd-gfx@lists.freedesktop.org>,
- "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>, "Williams,
- Dan J" <dan.j.williams@intel.com>,
- "devel@driverdev.osuosl.org" <devel@driverdev.osuosl.org>,
- "rds-devel@oss.oracle.com" <rds-devel@oss.oracle.com>,
- "linux-rdma@vger.kernel.org" <linux-rdma@vger.kernel.org>,
- "x86@kernel.org" <x86@kernel.org>, Matthew Wilcox <willy@infradead.org>,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- "xen-devel@lists.xenproject.org" <xen-devel@lists.xenproject.org>,
- "devel@lists.orangefs.org" <devel@lists.orangefs.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- "linux-block@vger.kernel.org" <linux-block@vger.kernel.org>,
- =?utf-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
- "ceph-devel@vger.kernel.org" <ceph-devel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-nfs@vger.kernel.org" <linux-nfs@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>,
- "linux-xfs@vger.kernel.org" <linux-xfs@vger.kernel.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
- "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>, Andrew
- Morton <akpm@linux-foundation.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ "Jared D . McNeill" <jmcneill@netbsd.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Harald Geyer <harald@ccbib.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============3460593965069158548=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> 
-> On 8/7/19 7:36 PM, Ira Weiny wrote:
-> > On Wed, Aug 07, 2019 at 10:46:49AM +0200, Michal Hocko wrote:
-> >> On Wed 07-08-19 10:37:26, Jan Kara wrote:
-> >>> On Fri 02-08-19 12:14:09, John Hubbard wrote:
-> >>>> On 8/2/19 7:52 AM, Jan Kara wrote:
-> >>>>> On Fri 02-08-19 07:24:43, Matthew Wilcox wrote:
-> >>>>>> On Fri, Aug 02, 2019 at 02:41:46PM +0200, Jan Kara wrote:
-> >>>>>>> On Fri 02-08-19 11:12:44, Michal Hocko wrote:
-> >>>>>>>> On Thu 01-08-19 19:19:31, john.hubbard@gmail.com wrote:
->   [...]
-> > Before I go on, I would like to say that the "imbalance" of
-> > get_user_pages() and put_page() bothers me from a purist standpoint...
-> > However, since this discussion cropped up I went ahead and ported my
-> > work to Linus' current master
-> > (5.3-rc3+) and in doing so I only had to steal a bit of Johns code...
-> > Sorry John...  :-(
+
+--===============3460593965069158548==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="v2jptlbwy23oihws"
+Content-Disposition: inline
+
+
+--v2jptlbwy23oihws
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Wed, Aug 07, 2019 at 10:36:08AM -0700, Vasily Khoruzhick wrote:
+> On Wed, Aug 7, 2019 at 4:56 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
 > >
-> > I don't have the commit messages all cleaned up and I know there may
-> > be some discussion on these new interfaces but I wanted to throw this
-> > series out there because I think it may be what Jan and Michal are
-> > driving at (or at least in that direction.
+> > On Tue, Aug 06, 2019 at 07:39:26PM -0700, Vasily Khoruzhick wrote:
+> > > On Tue, Aug 6, 2019 at 2:14 PM Robin Murphy <robin.murphy@arm.com> wrote:
+> > > >
+> > > > On 2019-08-06 9:52 pm, Vasily Khoruzhick wrote:
+> > > > > On Tue, Aug 6, 2019 at 1:19 PM Harald Geyer <harald@ccbib.org> wrote:
+> > > > >>
+> > > > >> Vasily Khoruzhick writes:
+> > > > >>> On Tue, Aug 6, 2019 at 7:35 AM Robin Murphy <robin.murphy@arm.com> wrote:
+> > > > >>>>
+> > > > >>>> On 06/08/2019 15:01, Vasily Khoruzhick wrote:
+> > > > >>>>> Looks like PMU in A64 is broken, it generates no interrupts at all and
+> > > > >>>>> as result 'perf top' shows no events.
+> > > > >>>>
+> > > > >>>> Does something like 'perf stat sleep 1' at least count cycles correctly?
+> > > > >>>> It could well just be that the interrupt numbers are wrong...
+> > > > >>>
+> > > > >>> Looks like it does, at least result looks plausible:
+> > > > >>
+> > > > >> I'm using perf stat regularly (cache benchmarks) and it works fine.
+> > > > >>
+> > > > >> Unfortunately I wasn't aware that perf stat is a poor test for
+> > > > >> the interrupts part of the node, when I added it. So I'm not too
+> > > > >> surprised I got it wrong.
+> > > > >>
+> > > > >> However, it would be unfortunate if the node got removed completely,
+> > > > >> because perf stat would not work anymore. Maybe we can only remove
+> > > > >> the interrupts or just fix them even if the HW doesn't work?
+> > > > >
+> > > > > I'm not familiar with PMU driver. Is it possible to get it working
+> > > > > without interrupts?
+> > > >
+> > > > Yup - you get a grumpy message from the driver, it will refuse sampling
+> > > > events (the ones which weren't working anyway), and if you measure
+> > > > anything for long enough that a counter overflows you'll get wonky
+> > > > results. But for counting hardware events over relatively short periods
+> > > > it'll still do the job.
+> > >
+> > > I tried to drop interrupts completely from the node but 'perf top' is
+> > > still broken. Though now in different way: it complains "cycles: PMU
+> > > Hardware doesn't support sampling/overflow-interrupts. Try 'perf
+> > > stat'"
 > >
-> > Right now only RDMA and DAX FS's are supported.  Other users of GUP
-> > will still fail on a DAX file and regular files will still be at
-> > risk.[2]
-> >
-> > I've pushed this work (based 5.3-rc3+ (33920f1ec5bf)) here[3]:
-> >
-> > https://github.com/weiny2/linux-kernel/tree/linus-rdmafsdax-b0-v3
-> >
-> > I think the most relevant patch to this conversation is:
-> >
-> > https://github.com/weiny2/linux-
-> kernel/commit/5d377653ba5cf11c3b716f90
-> > 4b057bee6641aaf6
-> >
-> 
-> ohhh...can you please avoid using the old __put_user_pages_dirty()
-> function? 
+> > I have no idea if that's the culprit, but what is the state of the
+> > 0x09010000 register?
+>
+> What register is that and how do I check it?
 
-Agreed... I did not like that.  Part of the reason I did not post this is I'm still trying to figure out what has landed and what I can and can't depend on.
+It's in the CPUX Configuration block, and the bits are labelled as CPU
+Debug Reset.
 
-For example, Christoph H. was proposing changes to some of the GUP calls which may conflict.  But I'm not sure his changes are moving forward.  So rather than waiting for the dust to settle I decided to see how hard it would be to get this rebased against mainline and working.  Turns out it was not too hard.
+And if you have busybox, you can use devmem.
 
-I think that is because, as time has moved on it seems that, for some users such as RDMA, a simple put_user_page() is not going to be sufficient.  We need something else to allow GUP to keep track of the file pins as we discussed.  So I'm starting to think some of this could go in at the same time.
+Maxime
 
-> I thought I'd caught things early enough to get away with the
-> rename and deletion of that. You could either:
-> 
-> a) open code an implementation of vaddr_put_pages_dirty_lock() that
-> doesn't call any of the *put_user_pages_dirty*() variants, or
-> 
-> b) include my first patch ("") are part of your series, or
-> 
-> c) base this on Andrews's tree, which already has merged in my first patch.
-> 
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
-Yep I can do this.  I did not realize that Andrew had accepted any of this work.  I'll check out his tree.  But I don't think he is going to accept this series through his tree.  So what is the ETA on that landing in Linus' tree?
+--v2jptlbwy23oihws
+Content-Type: application/pgp-signature; name="signature.asc"
 
-To that point I'm still not sure who would take all this as I am now touching mm, procfs, rdma, ext4, and xfs.
+-----BEGIN PGP SIGNATURE-----
 
-I just thought I would chime in with my progress because I'm to a point where things are working and so I can submit the code but I'm not sure what I can/should depend on landing...  Also, now that 0day has run overnight it has found issues with this rebase so I need to clean those up...  Perhaps I will base on Andrew's tree prior to doing that...
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXUxNNAAKCRDj7w1vZxhR
+xStDAP98jP1Kcn6msHdImj48XPiZcHTbCuRrjrwRFlwdpheW4wEA/tNBydnrBBHr
+UrB0GkeJjnGzoAR2JgDF28i300VyiQc=
+=4dGP
+-----END PGP SIGNATURE-----
 
-Thanks,
-Ira
+--v2jptlbwy23oihws--
 
-> 
-> thanks,
-> --
-> John Hubbard
-> NVIDIA
+
+--===============3460593965069158548==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3460593965069158548==--
+
