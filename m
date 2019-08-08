@@ -2,63 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA7CA867AC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:07:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AF8A867B7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:09:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iD3avu8KRQV1nFrM6kvUch+ynkDd48Qy/ER3RmF8CvA=; b=GICBYMV33Al38n
-	oaBlRdxdHamjTHAVETgZcXFfGykWMxYuE8yXeqI9Qk6dYWfZsVr8nMtcmbCwKb1DCRK6W27HfWZNp
-	0CJQ/CXfHjeXykSjV5iuXmGrl9aw2OdJJyvvgS7vIqEZMefKExJzqXDRC/QDW4onLVK/05SjYFYe/
-	RD136zT48bw+1FuZPueQ/eW2gl2M/qE2QjBOpP5wnV0+ByhKgz/9XmU96pFZ+rig6sC4sKy/mP4/4
-	xxOPuGdthhu3XokStFA2hC5mOj/qXvzer1DxQfHwc/neW9piB08HhcruuIm9hn+frQ2OymGbaVuLu
-	9fa637TS6b1tKgTa1vSw==;
+	List-Owner; bh=8smBHyjVaMQUV7QhyXde8wZ/mWvHfwFkjiUP6WZzZfA=; b=evLb9jOxvvNgPW
+	4WhWbBtWhsDEY1MXOgA/PMZEYtUrm2Gjv+pnfO+FwGY9cKYsslyTaaYCReIiNRY0bmLTJfkrQHdIG
+	zqJeeSrE7i4U7T1otGZ3Qxq7oPpNoxTO1jqxa0KZu1IEK9TUeNqkMNHvSCzrGWkCEJTmQ/FFMOHKU
+	QdbLqsUN/qoV5WutwOMZkfzny62AnnsUS9gQ3tsQ0boIauCK3Y9e3GCjZHtvrc5E6DjxDFOfkwV/s
+	miYXGgeNfh/strCsKBVEoKgTM418Z0ebrlCsPWQ1xAi65fY4VqbJmHOrH599pJF9uktLzUYQYLWXj
+	edJ1sHqchhj58SAkfmxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvlsX-00033C-MN; Thu, 08 Aug 2019 17:07:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hvlus-0003aU-7T; Thu, 08 Aug 2019 17:09:30 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvlsO-00032d-SE
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 17:06:58 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DF8752173C;
- Thu,  8 Aug 2019 17:06:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565284016;
- bh=6NCSbiarfUPfvof9H5iq7rmAMMlI2cd617d7HXVu71g=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=O1niW5am1bbF4Y9RSMMymm4zzkeUeufEryPN345TaPK7w+GonSZ1rNl8wpHLRBLFG
- apjOg0dRj6TDjUIPf33HCxD0zUnsF1nMyDaqLs3YA1oqvPdwD/q3+P8icRXeDz3ZAK
- +QLIaoMpiB2x+zLWsiPwRQJgwnODecpqoloH9XTs=
-Date: Thu, 8 Aug 2019 18:06:52 +0100
-From: Will Deacon <will@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v7 2/2] arm64: Relax
- Documentation/arm64/tagged-pointers.rst
-Message-ID: <20190808170651.c6hflztfunjmisgm@willie-the-truck>
-References: <20190807155321.9648-1-catalin.marinas@arm.com>
- <20190807155321.9648-3-catalin.marinas@arm.com>
+ id 1hvluj-0003a9-3A
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 17:09:22 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 207so3130573wma.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 08 Aug 2019 10:09:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=/RMqWJBZb+n91pADuicj3MI1Qevek2uTYFVfpzwwQYk=;
+ b=mYI6ER/mImkFZNM1JZSRimjLCk1m9yKBp7MFo6R2vJElLd5RBgIbnfTTSaK0TgOWZk
+ tgYU7T9y1cN2gH4spkcu8BdHVctmfrSUxPSubs2ouVJxh4yhBzYVE4QuOQRIz4f2RS/x
+ OMLLuqDfuBtGtn6fzFkUBpxoJ5om4DHo2yaE+CzEuqgzkx19P05vWedXWUjM9zVXi6u0
+ vTXFzlWiNpXP3UlRpIhE0a04ZajxbhGe14aCZV1VytgG2virlQL6fijO1C87nQiSDZ9H
+ uNa3v/9DnsRi6yTQazWZxdTH90mjFg16NX4Vj3AhkCc08BjYwgsTRVgbyj7OXNZ85+ro
+ fGJA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=/RMqWJBZb+n91pADuicj3MI1Qevek2uTYFVfpzwwQYk=;
+ b=tCTCd/GAybTDiVDTPyzpKDpNoZrfylRAy47BbgOo7gTFW2nP/40TDuAN8JpIM66HJ/
+ kEZ/j3CcvmfjM8QBrPQ6Z+l6VsJ8jHLhbSF2x46PmK8c+wVp/tylOY+Uz+TijYC/63fp
+ l0b8Oj1Ze/WSfQ71fNi9OLVMrFvIMo8keczTKGv/Y4JmDJHz11Md12ymSMwGcgT9xGDC
+ u/CMVAfcsBvGxUPp9+bRPkUwx4Zxal4MaiilJbM8DNu8jWqoUtdGvNaGcvi/jawypdOG
+ qw3v+ZxBf7ZZUDBYs8aXJYAACqRi3/52CZwn+qwG5zIh0wXgR34Ovy7mc7ucaVQ9Sxel
+ R0Wg==
+X-Gm-Message-State: APjAAAXjGanmOjC7rTLxrybKWUh0cROpKJSgvd7SHcKzi16GIMjpwQhK
+ SuQsJnF1yQWZvm1uOI9yzFc=
+X-Google-Smtp-Source: APXvYqzdP10PSpvSmqXcoaKhRQopyLLo13J5gwU1q/kfwSjlDon48+ds0qZsJzoRdvE4pJ2fwoicBA==
+X-Received: by 2002:a1c:f116:: with SMTP id p22mr5413792wmh.70.1565284159335; 
+ Thu, 08 Aug 2019 10:09:19 -0700 (PDT)
+Received: from archlinux-threadripper ([2a01:4f8:222:2f1b::2])
+ by smtp.gmail.com with ESMTPSA id c15sm22423803wrb.80.2019.08.08.10.09.18
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 08 Aug 2019 10:09:18 -0700 (PDT)
+Date: Thu, 8 Aug 2019 10:09:16 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH] arm64/cache: silence -Woverride-init warnings
+Message-ID: <20190808170916.GA32668@archlinux-threadripper>
+References: <20190808032916.879-1-cai@lca.pw>
+ <20190808103808.GC46901@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190807155321.9648-3-catalin.marinas@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190808103808.GC46901@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_100656_939783_9E9FA7FF 
-X-CRM114-Status: GOOD (  17.32  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190808_100921_162989_BE058298 
+X-CRM114-Status: GOOD (  16.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (natechancellor[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -66,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,65 +100,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will.deacon@arm.com>,
- Dave Hansen <dave.hansen@intel.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, Qian Cai <cai@lca.pw>, will@kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 04:53:21PM +0100, Catalin Marinas wrote:
-> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+On Thu, Aug 08, 2019 at 11:38:08AM +0100, Mark Rutland wrote:
+> On Wed, Aug 07, 2019 at 11:29:16PM -0400, Qian Cai wrote:
+> > The commit 155433cb365e ("arm64: cache: Remove support for ASID-tagged
+> > VIVT I-caches") introduced some compiation warnings from GCC (and
+> > Clang) with -Winitializer-overrides),
+> > 
+> > arch/arm64/kernel/cpuinfo.c:38:26: warning: initialized field
+> > overwritten [-Woverride-init]
+> > [ICACHE_POLICY_VIPT]  = "VIPT",
+> >                         ^~~~~~
+> > arch/arm64/kernel/cpuinfo.c:38:26: note: (near initialization for
+> > 'icache_policy_str[2]')
+> > arch/arm64/kernel/cpuinfo.c:39:26: warning: initialized field
+> > overwritten [-Woverride-init]
+> > [ICACHE_POLICY_PIPT]  = "PIPT",
+> >                         ^~~~~~
+> > arch/arm64/kernel/cpuinfo.c:39:26: note: (near initialization for
+> > 'icache_policy_str[3]')
+> > arch/arm64/kernel/cpuinfo.c:40:27: warning: initialized field
+> > overwritten [-Woverride-init]
+> > [ICACHE_POLICY_VPIPT]  = "VPIPT",
+> >                          ^~~~~~~
+> > arch/arm64/kernel/cpuinfo.c:40:27: note: (near initialization for
+> > 'icache_policy_str[0]')
+> > 
+> > because it initializes icache_policy_str[0 ... 3] twice. Since
+> > arm64 developers are keen to keep the style of initializing a static
+> > array with a non-zero pattern first, just disable those warnings for
+> > both GCC and Clang of this file.
+> > 
+> > Fixes: 155433cb365e ("arm64: cache: Remove support for ASID-tagged VIVT I-caches")
+> > Signed-off-by: Qian Cai <cai@lca.pw>
 > 
-> On arm64 the TCR_EL1.TBI0 bit has been always enabled hence
-> the userspace (EL0) is allowed to set a non-zero value in the
-> top byte but the resulting pointers are not allowed at the
-> user-kernel syscall ABI boundary.
+> This is _not_ a fix, and should not require backporting to stable trees.
 > 
-> With the relaxed ABI proposed in this set, it is now possible to pass
-> tagged pointers to the syscalls, when these pointers are in memory
-> ranges obtained by an anonymous (MAP_ANONYMOUS) mmap().
+> What about all the other instances that we have in mainline?
 > 
-> Relax the requirements described in tagged-pointers.rst to be compliant
-> with the behaviours guaranteed by the ARM64 Tagged Address ABI.
+> I really don't think that we need to go down this road; we're just going
+> to end up adding this to every file that happens to include a header
+> using this scheme...
 > 
-> Cc: Will Deacon <will.deacon@arm.com>
-> Cc: Andrey Konovalov <andreyknvl@google.com>
-> Cc: Szabolcs Nagy <szabolcs.nagy@arm.com>
-> Cc: Kevin Brodsky <kevin.brodsky@arm.com>
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> [catalin.marinas@arm.com: minor tweaks]
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> ---
->  Documentation/arm64/tagged-pointers.rst | 23 ++++++++++++++++-------
->  1 file changed, 16 insertions(+), 7 deletions(-)
+> Please just turn this off by default for clang.
 > 
-> diff --git a/Documentation/arm64/tagged-pointers.rst b/Documentation/arm64/tagged-pointers.rst
-> index 2acdec3ebbeb..82a3eff71a70 100644
-> --- a/Documentation/arm64/tagged-pointers.rst
-> +++ b/Documentation/arm64/tagged-pointers.rst
-> @@ -20,7 +20,8 @@ Passing tagged addresses to the kernel
->  --------------------------------------
->  
->  All interpretation of userspace memory addresses by the kernel assumes
-> -an address tag of 0x00.
-> +an address tag of 0x00, unless the application enables the AArch64
-> +Tagged Address ABI explicitly.
+> If we want to enable this, we need a mechanism to permit overridable
+> assignments as we use range initializers for.
+> 
+> Thanks,
+> Mark.
+> 
 
-I think we should have the link to Documentation/arm64/tagged-address-abi.rst
-here so people see it when it's first referenced.
+For what it's worth, this is disabled by default for clang in the
+kernel:
 
-> +The AArch64 Tagged Address ABI description and the guarantees it
-> +provides can be found in: Documentation/arm64/tagged-address-abi.rst.
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/Makefile.extrawarn?h=v5.3-rc3#n69
 
-Then this sentence can be dropped.
+It only becomes visible with clang at W=1 because that section doesn't
+get applied. It becomes visible with GCC at W=1 because of -Wextra.
 
-Will
+Cheers,
+Nathan
 
 _______________________________________________
 linux-arm-kernel mailing list
