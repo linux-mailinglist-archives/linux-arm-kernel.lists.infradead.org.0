@@ -2,57 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52C6D8663B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 17:50:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E7B086672
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:00:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z9hLJAxoJC0g2ptSStYAHpN5rDoyuvN+/Ya2trXrtAw=; b=Fr4QZh0fHTb2bI
-	J5amPG6VQ77Vv+2u1029385o6EcLpujlrhrYrD6VBbkveq4fCgrU1y7Iy5Oh+Y0KUHd42hrAN03Kg
-	MTG4t9wqCO7Oaq+f1Fk2QkMCE+LFB974G3WSS2p0U4KXR+KZXC3mqhadvQpoHJDSxY5kPzgfUDZ2E
-	FRzJEP0f+1R7OPPsJIEonn3xl3EUMEZirnVaVq49m0Z6YYEFuGU81Uhczt7fly2k8cX+qfMOerCx8
-	dsHloBBUTOTM84Rxc8tGjDXczfbXmIgyU5vVNCxhY+rmGPSEhjQ2QiYgSgMbFBDYXyjVe4cysQruC
-	v/5wGuYwgvuE4ilPmReQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yqU9AwEfxdy6ehEYSxGLwYeoIjmpqfe+xK4m3XXUWeE=; b=kb29J47s2EoxgV
+	pZA+u/gfmwEf/t+q+Hjgkqx+gjERzvjILkddy/xxryboDv7ScNLHqbo01l/1xbkCNVjsl7wjUH7FO
+	wyBGpWfqjFPhxFyQbkdpYWU6saoL3d8GXyRxMLaox+hjvD1sw42FVEcsATQkDdEiHRu8C8X0xPGT1
+	iTKKZPIs960lC3J82+3XuAInjvW2umG3oUju17TSkWrCuVaIemCBa9ogg76deND3Nbjig3Z4/0TL6
+	U7+jqIMlWR4bi/+IZLDUdWBKOowoQhJmQoMUHCmy8AIwMI41nV+k/FbzeynJkSPBni51hLlfyT7vg
+	odZ8Q+ALWKvp33CsTWtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvkfw-0001mO-8Q; Thu, 08 Aug 2019 15:50:00 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hvkfl-0001lg-VC
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 15:49:51 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 593D01596;
- Thu,  8 Aug 2019 08:49:48 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A5E283F706; Thu,  8 Aug 2019 08:49:46 -0700 (PDT)
-Subject: Re: [PATCH 9/9] arm64: Retrieve stolen time as paravirtualized guest
-To: Steven Price <steven.price@arm.com>
-References: <20190802145017.42543-1-steven.price@arm.com>
- <20190802145017.42543-10-steven.price@arm.com> <20190804105353.5e9824dc@why>
- <dc8a1e56-7b52-cc8f-265d-27eb5f458613@arm.com>
-From: Marc Zyngier <maz@kernel.org>
-Organization: Approximate
-Message-ID: <7108a70b-dafd-507b-8509-f4a092ef24af@kernel.org>
-Date: Thu, 8 Aug 2019 16:49:45 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hvkqH-0006XQ-DR; Thu, 08 Aug 2019 16:00:41 +0000
+Received: from [195.167.85.94] (helo=localhost)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvkpl-0006Bi-Ij; Thu, 08 Aug 2019 16:00:26 +0000
+From: Christoph Hellwig <hch@lst.de>
+To: iommu@lists.linux-foundation.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: remove default fallbacks in dma_map_ops v3
+Date: Thu,  8 Aug 2019 18:59:57 +0300
+Message-Id: <20190808160005.10325-1-hch@lst.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <dc8a1e56-7b52-cc8f-265d-27eb5f458613@arm.com>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_084950_051400_A5744B18 
-X-CRM114-Status: GOOD (  13.76  )
-X-Spam-Score: 1.0 (+)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,76 +41,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?= <rkrcmar@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: linux-xtensa@linux-xtensa.org, Michal Simek <monstr@monstr.eu>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, linux-parisc@vger.kernel.org,
+ linux-sh@vger.kernel.org, Takashi Iwai <tiwai@suse.de>,
+ linuxppc-dev@lists.ozlabs.org, Helge Deller <deller@gmx.de>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08/08/2019 16:29, Steven Price wrote:
-> On 04/08/2019 10:53, Marc Zyngier wrote:
->> On Fri,  2 Aug 2019 15:50:17 +0100
->> Steven Price <steven.price@arm.com> wrote:
->>
->>> Enable paravirtualization features when running under a hypervisor
->>> supporting the PV_TIME_ST hypercall.
->>>
->>> For each (v)CPU, we ask the hypervisor for the location of a shared
->>> page which the hypervisor will use to report stolen time to us. We set
->>> pv_time_ops to the stolen time function which simply reads the stolen
->>> value from the shared page for a VCPU. We guarantee single-copy
->>> atomicity using READ_ONCE which means we can also read the stolen
->>> time for another VCPU than the currently running one while it is
->>> potentially being updated by the hypervisor.
->>>
->>> Signed-off-by: Steven Price <steven.price@arm.com>
->>> ---
->>>  arch/arm64/kernel/Makefile |   1 +
->>>  arch/arm64/kernel/kvm.c    | 155 +++++++++++++++++++++++++++++++++++++
+Hi all,
 
-[...]
+we have a few places where the DMA mapping layer has non-trivial default
+actions that are questionable and/or dangerous.
 
->>> +static int __init kvm_guest_init(void)
->>> +{
->>> +	int ret = 0;
->>> +
->>> +	if (!has_kvm_steal_clock())
->>> +		return 0;
->>> +
->>> +	ret = kvm_arm_init_stolen_time();
->>> +	if (ret)
->>> +		return ret;
->>> +
->>> +	pv_ops.time.steal_clock = kvm_steal_clock;
->>> +
->>> +	static_key_slow_inc(&paravirt_steal_enabled);
->>> +	if (steal_acc)
->>> +		static_key_slow_inc(&paravirt_steal_rq_enabled);
->>> +
->>> +	pr_info("using stolen time PV\n");
->>> +
->>> +	return 0;
->>> +}
->>> +early_initcall(kvm_guest_init);
->>
->> Is there any reason why we wouldn't directly call into this rather than
->> using an initcall?
-> 
-> I'm not sure where the direct call would go - any pointers?
+This series instead wires up the mmap, get_sgtable and get_required_mask
+methods explicitly and cleans up some surrounding areas.  This also means
+we could get rid of the ARCH_NO_COHERENT_DMA_MMAP kconfig option, as we
+now require a mmap method wired up, or in case of non-coherent dma-direct
+the presence of the arch_dma_coherent_to_pfn hook.  The only interesting
+case is that the sound code also checked the ARCH_NO_COHERENT_DMA_MMAP
+symbol in somewhat odd ways, so I'd like to see a review of the sound
+situation before going forward with that patch.
 
-I'd be temped to say arch/arm64/kernel/time.c:time_init(), provided that
-there is no issue with the CPU hotplug lock (I remember hitting that a
-while ago).
+Changes since v2:
+ - fix use of dma_can_mmap in alsa
+ - improve the CONFIG_* mess a little more
 
-	M.
--- 
-Jazz is not dead, it just smells funny...
+Changes since v1:
+ - add a dma_can_mmap helper for alsa
 
 _______________________________________________
 linux-arm-kernel mailing list
