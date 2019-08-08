@@ -2,143 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 710C386413
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 16:12:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F26B88642E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 16:18:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b0HZn/W+R3pu/WpfSNTtpjQQkjUFyRtwVl24ufkBCIo=; b=lQ3AZHENtsLaBJ
-	MNBjFp4kUvHlAzxZyHpM0nStWk9OvL50e5GgAWc60+YlcVTF86Q3eTtTDCQ1KiUH5taLvBrGeaHlk
-	573NXLuKj6LQAnwq/UA6AWWpER2jGUCETnKgZyFIGOob1EUDeIOUdoyotHo4dfP1nh3giVgc62kRq
-	PDksdDBrG7NFNCQdzuyz3qvnmkL1FzF7qjj3UMGvARRcoSKCupBv/Uo/oThx+wRtOzzQTWHe3ZG78
-	s6HnNp5JsbM6pOVR59KJQwPPd4cfISQm85T4VBSjikDFBTahzqsXEiLX8OIITWXuPOdGf6FlROsYL
-	RILvskeXOu3GFiewAdhQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nj25vAROEkZQtl66YaFnW72V3BmnRp6FiJ5HU86PxC0=; b=JYq6MRdnPLgQJh
+	oYgSYOdFQ+v/MW2a+crEb5Ca2EdiKQMhgPgQ94juyP64BnZT9QejhmyXSb8yeVks/WPzaqvUxXnzJ
+	bpg/kZyQRSd8BzKrhmlhGccWV/Pk1qcKKKx9r5xQ4PoF/WPhHOWmvOBUAPICJsd7o5wmGviBL16cS
+	dBH7wsIaLL0oLfgl+wwYykR3PJ/g7OxWcD6XN8VBGm9fa9ACc75J1BrB7BbHLuu0PtOJjOMOufdwS
+	QSqBXEiO5HZEk/Hu/5nvnrymXEk6VOfPE1MZcVaDmfbn/BwnFa+UOeCUJ5uHmMPRI7sJAzoveAg7l
+	R3s7hmdMPGlVETBcUUIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvj9q-0008WD-8Y; Thu, 08 Aug 2019 14:12:46 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hvjFU-0002Jy-Mb; Thu, 08 Aug 2019 14:18:36 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvj9d-0008UU-Ee
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 14:12:34 +0000
-Received: by mail-wr1-x444.google.com with SMTP id k2so9242890wrq.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 08 Aug 2019 07:12:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=ExDUSZOSQEdf5biuijIvsrr6rzY8cxJRGGa/I5FOVwg=;
- b=cgvVzjB6DHtktJO59X1wY3+KA4w34S6aE9FrLDBhKSSegTF9mMGN/VwCF4XO73X/C3
- sqXPy8JBX4I8ZEJZRb4e3C3i0MOl4te/J4H3X3P5PRAQjuPy+NYeGwIEwMfUVihjlNGv
- SjCHpjTq7o6TlFeO6H+LiYvDRAX42zZM8tO/xMtKwY+q+XAQ1BV6AUtJAuGVOJzfmivc
- DA80BE81PLFgShgf/SQ73OJe/JAvOj2swnu4NrC2XzUhX89E7E499XYsofc9ZT4Z1onI
- 31VEj1HkUDurq4OoT7U8PTDLDHKdW+gjRv6zKQyjFtkTju8xewyoePizH63MVzNKgUYp
- 9aTg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=ExDUSZOSQEdf5biuijIvsrr6rzY8cxJRGGa/I5FOVwg=;
- b=iSPdA44oeSSvhg5QDdNHySXL2hrcvf+mdW+lj31j1hbLCfsT73KDSYqpc6EGrdlt1S
- xbhdUcIR+JL1uVJgXsl1itH1J0gmq2u+dRso1hRR4mwqASAT59cd0ZpuRtmmleF16Hea
- KFwuFRqGD3OfsUbmWD9+EebNW0YLhFkU6qmYpFhp68ADRyMNCKFVN3L/WpKJoZn/r0g7
- jj7Hi8s8raXXYxbVBUjhZ3TVtjys9x+z/kL0auz//yUZchPEEbxe/R6i0dvLRp+2RF6L
- 9K7yRroYBNBDlyNBhGNLRcJUInZK1QWSNVSfqB6St4TmpDtTmEhUFrvFXoncOtOoQdfI
- SPAw==
-X-Gm-Message-State: APjAAAV2eY/NrWpMr9XmVTmTe/pIu44GztVQELOOUNc65IxQ5rjwUU1h
- AMRGyKj2f8yuwb38e6u228g5lA==
-X-Google-Smtp-Source: APXvYqyUytHgBqCyShqZVeFxRsGm9x+bjwGGiSEdSqmXh3YKR142ZN5ppB8CB6Y7nMd9oIxmX/q61A==
-X-Received: by 2002:adf:e8c2:: with SMTP id k2mr16932318wrn.198.1565273551697; 
- Thu, 08 Aug 2019 07:12:31 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id w7sm109173384wrn.11.2019.08.08.07.12.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 08 Aug 2019 07:12:30 -0700 (PDT)
-Subject: Re: [PATCH 0/9] drm: meson: global clean-up (use proper macros,
- update comments ...)
-To: Kevin Hilman <khilman@baylibre.com>, Julien Masson <jmasson@baylibre.com>
-References: <86zhm782g5.fsf@baylibre.com> <7ho92mwor0.fsf@baylibre.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <61b73415-73be-bb72-37f4-0a6060f85ffa@baylibre.com>
-Date: Thu, 8 Aug 2019 16:12:30 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hvjFK-0002JC-1R
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 14:18:27 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1hvjFE-0001VL-FP; Thu, 08 Aug 2019 16:18:20 +0200
+Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <sha@pengutronix.de>)
+ id 1hvjF8-0005Fs-S5; Thu, 08 Aug 2019 16:18:14 +0200
+Date: Thu, 8 Aug 2019 16:18:14 +0200
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: Biwen Li <biwen.li@nxp.com>
+Subject: Re: i2c: imx: support slave mode for imx I2C driver
+Message-ID: <20190808141814.wr4hlmbaek6p7dy2@pengutronix.de>
+References: <20190808035343.34120-1-biwen.li@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <7ho92mwor0.fsf@baylibre.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190808035343.34120-1-biwen.li@nxp.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 15:40:58 up 31 days, 19:51, 60 users,  load average: 0.46, 0.27, 0.21
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_071233_499709_56B5D064 
-X-CRM114-Status: GOOD (  14.92  )
+X-CRM114-CacheID: sfid-20190808_071826_252817_55778EB5 
+X-CRM114-Status: GOOD (  23.97  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,50 +73,237 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: wsa@the-dreams.de, shawnguo@kernel.org, linux-kernel@vger.kernel.org,
+ linux-i2c@vger.kernel.org, kernel@pengutronix.de, laurentiu.tudor@nxp.com,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25/06/2019 01:24, Kevin Hilman wrote:
-> Julien Masson <jmasson@baylibre.com> writes:
-> 
->> This patch series aims to clean-up differents parts of the drm meson
->> code source.
->>
->> Couple macros have been defined and used to set several registers
->> instead of using magic constants.
->>
->> I also took the opportunity to:
->> - add/remove/update comments
->> - remove useless code
->> - minor fix/improvment
-> 
-> Nice set of cleanups, thanks!  I especially like the extra in-code
-> comments.
-> 
-> Could you also add to the cover-letter how this was tested, and on what
-> platforms so we know it's not going to introduce any regressions.
-> 
-> Thanks,
-> 
-> Kevin
-> 
+Hi,
 
-Apart the wrong magic value in patch 4 that I'll fix while applying,
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+On Thu, Aug 08, 2019 at 11:53:43AM +0800, Biwen Li wrote:
+> The patch supports slave mode for imx I2C driver
+> 
+> Signed-off-by: Biwen Li <biwen.li@nxp.com>
+> ---
+>  drivers/i2c/busses/i2c-imx.c | 199 ++++++++++++++++++++++++++++++++---
+>  1 file changed, 185 insertions(+), 14 deletions(-)
+> 
+> diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
+> index b1b8b938d7f4..f7583a9fa56f 100644
+> --- a/drivers/i2c/busses/i2c-imx.c
+> +++ b/drivers/i2c/busses/i2c-imx.c
+> @@ -202,6 +202,9 @@ struct imx_i2c_struct {
+>  	struct pinctrl_state *pinctrl_pins_gpio;
+>  
+>  	struct imx_i2c_dma	*dma;
+> +#if IS_ENABLED(CONFIG_I2C_SLAVE)
+> +	struct i2c_client		*slave;
+> +#endif /* CONFIG_I2C_SLAVE */
 
-I'll run a few tests on all the supported SoC versions:
-- GXBB
-- GXL
-- GXM
-- G12A/G12B
+Other drivers just do a "select I2C_SLAVE" in Kconfig to get rid of
+these #ifs. We should do the same.
 
-and push to drm-misc-next.
+>  };
+>  
+>  static const struct imx_i2c_hwdata imx1_i2c_hwdata = {
+> @@ -583,23 +586,40 @@ static void i2c_imx_stop(struct imx_i2c_struct *i2c_imx)
+>  	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
+>  }
+>  
+> -static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
+> +/* Clear interrupt flag bit */
+> +static void i2c_imx_clr_if_bit(struct imx_i2c_struct *i2c_imx)
+>  {
+> -	struct imx_i2c_struct *i2c_imx = dev_id;
+> -	unsigned int temp;
+> +	unsigned int status;
+>  
+> -	temp = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
+> -	if (temp & I2SR_IIF) {
+> -		/* save status register */
+> -		i2c_imx->i2csr = temp;
+> -		temp &= ~I2SR_IIF;
+> -		temp |= (i2c_imx->hwdata->i2sr_clr_opcode & I2SR_IIF);
+> -		imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2SR);
+> -		wake_up(&i2c_imx->queue);
+> -		return IRQ_HANDLED;
+> -	}
+> +	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
+> +	status &= ~I2SR_IIF;
+> +	status |= (i2c_imx->hwdata->i2sr_clr_opcode & I2SR_IIF);
+> +	imx_i2c_write_reg(status, i2c_imx, IMX_I2C_I2SR);
+> +}
+> +
+> +/* Clear arbitration lost bit */
+> +static void i2c_imx_clr_al_bit(struct imx_i2c_struct *i2c_imx)
+> +{
+> +	unsigned int status;
+> +
+> +	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
+> +	status &= ~I2SR_IAL;
+> +	imx_i2c_write_reg(status, i2c_imx, IMX_I2C_I2SR);
+> +}
+>  
+> -	return IRQ_NONE;
+> +static irqreturn_t i2c_imx_master_isr(struct imx_i2c_struct *i2c_imx)
+> +{
+> +	unsigned int status;
+> +
+> +	dev_dbg(&i2c_imx->adapter.dev, "<%s>: master interrupt\n", __func__);
 
-Neil
+Generally this driver has way too many dev_dbg spread around in hot
+pathes already. IMO adding more doesn't make the output more useful.
+
+> +
+> +	/* Save status register */
+> +	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
+> +	i2c_imx->i2csr = status | I2SR_IIF;
+> +
+> +	wake_up(&i2c_imx->queue);
+> +
+> +	return IRQ_HANDLED;
+>  }
+>  
+>  static int i2c_imx_dma_write(struct imx_i2c_struct *i2c_imx,
+> @@ -1043,11 +1063,162 @@ static u32 i2c_imx_func(struct i2c_adapter *adapter)
+>  		| I2C_FUNC_SMBUS_READ_BLOCK_DATA;
+>  }
+>  
+> +#if IS_ENABLED(CONFIG_I2C_SLAVE)
+> +static void i2c_imx_slave_init(struct imx_i2c_struct *i2c_imx)
+> +{
+> +	unsigned int temp;
+> +
+> +	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
+> +
+> +	/* Set slave addr. */
+> +	imx_i2c_write_reg((i2c_imx->slave->addr << 1), i2c_imx, IMX_I2C_IADR);
+> +
+> +	/* Disable i2c module */
+> +	temp = i2c_imx->hwdata->i2cr_ien_opcode
+> +			^ I2CR_IEN;
+
+unnecessary line break.
+
+> +	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
+> +
+> +	/* Reset status register */
+> +	imx_i2c_write_reg(i2c_imx->hwdata->i2sr_clr_opcode, i2c_imx,
+> +			  IMX_I2C_I2SR);
+> +
+> +	/* Enable module and enable interrupt from i2c module */
+> +	temp = i2c_imx->hwdata->i2cr_ien_opcode
+> +			| I2CR_IIEN;
+
+ditto.
+
+> +	imx_i2c_write_reg(temp, i2c_imx, IMX_I2C_I2CR);
+> +
+> +	/* Wait controller to be stable */
+> +	usleep_range(50, 150);
+> +}
+> +
+> +static irqreturn_t i2c_imx_slave_isr(struct imx_i2c_struct *i2c_imx)
+> +{
+> +	unsigned int status, ctl;
+> +	u8 value;
+> +
+> +	if (!i2c_imx->slave) {
+> +		dev_err(&i2c_imx->adapter.dev, "cannot deal with slave irq,i2c_imx->slave is null");
+> +		return IRQ_NONE;
+> +	}
+> +
+> +	status = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2SR);
+> +	ctl = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2CR);
+> +	if (status & I2SR_IAL) { /* Arbitration lost */
+> +		i2c_imx_clr_al_bit(i2c_imx);
+> +	} else if (status & I2SR_IAAS) { /* Addressed as a slave */
+> +		if (status & I2SR_SRW) { /* Master wants to read from us*/
+> +			dev_dbg(&i2c_imx->adapter.dev, "read requested");
+> +			i2c_slave_event(i2c_imx->slave, I2C_SLAVE_READ_REQUESTED, &value);
+> +
+> +			/* Slave transimt */
+
+s/transimt/transmit/
+
+> +			ctl |= I2CR_MTX;
+> +			imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
+> +
+> +			/* Send data */
+> +			imx_i2c_write_reg(value, i2c_imx, IMX_I2C_I2DR);
+> +		} else { /* Master wants to write to us */
+> +			dev_dbg(&i2c_imx->adapter.dev, "write requested");
+> +			i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_WRITE_REQUESTED, &value);
+> +
+> +			/* Slave receive */
+> +			ctl &= ~I2CR_MTX;
+> +			imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
+> +			/* Dummy read */
+> +			value = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
+
+value is unused, no need to assign a value to it.
+
+> +		}
+> +	} else {
+> +		if (!(ctl & I2CR_MTX)) { /* Receive mode */
+
+Since you have an 'else' path please convert this to positive logic.
+This makes it easier to read.
+
+> +			if (status & I2SR_IBB) { /* No STOP signal detected */
+> +				ctl &= ~I2CR_MTX;
+> +				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
+> +
+> +				value = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
+> +				i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_WRITE_RECEIVED, &value);
+> +			} else { /* STOP signal is detected */
+> +				dev_dbg(&i2c_imx->adapter.dev,
+> +					"STOP signal detected");
+> +				i2c_slave_event(i2c_imx->slave, I2C_SLAVE_STOP, &value);
+> +			}
+> +		} else { /* Transmit mode */
+> +			if (!(status & I2SR_RXAK)) {	/* Received ACK */
+
+Same here.
+
+> +				ctl |= I2CR_MTX;
+> +				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
+> +
+> +				i2c_slave_event(i2c_imx->slave,	I2C_SLAVE_READ_PROCESSED, &value);
+> +
+> +				imx_i2c_write_reg(value, i2c_imx, IMX_I2C_I2DR);
+> +			} else { /* Received NAK */
+> +				ctl &= ~I2CR_MTX;
+> +				imx_i2c_write_reg(ctl, i2c_imx, IMX_I2C_I2CR);
+> +				value = imx_i2c_read_reg(i2c_imx, IMX_I2C_I2DR);
+
+Also value unused.
+
+> +			}
+> +		}
+> +	}
+> +	return IRQ_HANDLED;
+> +}
+> +
+> +static int i2c_imx_reg_slave(struct i2c_client *client)
+> +{
+> +	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(client->adapter);
+> +
+> +	if (i2c_imx->slave)
+> +		return -EINVAL;
+
+Better -EBUSY?
+
+Sascha
+
+-- 
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
