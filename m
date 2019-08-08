@@ -2,76 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEBE385875
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 05:17:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 993148588F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 05:30:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G0f+0JXB7oeBwCanH4xyePs2aSEUfQTTZT6qwPU5PfQ=; b=rD1kCS2uBbcrm3
-	uQh573nkk32pAuyX0HVyZH+u+xL8yxnj23SC7VZ4ol+93SXAS8f+/q508ap9+k2kTgdc75Q4TVlSi
-	TZMZCb0n43b1WgLXQVGyySZiBtA7sPvzISy48hE6d2CyJy0aOiLvaOTSQLZhlQJaJksBlUAqCQzl3
-	mBb8JSTucT5yxd35YYFWd0JSkGxk/SQmzl7DhqHiwnVi4eyXlnMdHRnzw0Hh3EJkPjqxplM/41Vw2
-	EFitRXgQhOEBsTkI9WI9Bg9m/wnHLxRcYIk3nz/DrJraC0hzr0TML/jtaR/3u4R/lX95gQrsuOTDU
-	hNQ3rWU3d9IomPVyPEYQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=91SdTLf5of7uoUAVzBHg74jFrU1sd4He5zhltSi4hXQ=; b=hUKeDyTE7Zi3Yr
+	++6S5Dm3++zj/AOvU8CbTNiX1c+UhsTOFxeREfaJFu2SyomWAgQ12/ZFe+iB6bvwUW0CALZmFx50D
+	aUEV4wGWyIyHbfMENITWNBFROHnHVBxVOk+w9GD4EjPP7WGII7x63zZfM5676lVsQxDL70ixuGxoY
+	gEs7SJfqhzUeJ9ExnXzdeiurr0+yZ2epLR8YhIF2rX3zGthVrjpHxZ85xoINZ0JspFFSMiQqcXZQ7
+	CnirIagZsH3bLWT1NXCy7vV/z5WjTDWyG5F5YElhFXG0t6IyxkRiTt05N6P8XTX8yPd0RR1KftgE1
+	L8NoavsAyyuayguql+kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvYvX-0001p4-Sf; Thu, 08 Aug 2019 03:17:20 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hvZ80-0004pS-9y; Thu, 08 Aug 2019 03:30:12 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvYvJ-0001oQ-HD
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 03:17:07 +0000
-Received: by mail-lf1-x143.google.com with SMTP id x3so11871110lfn.6
+ id 1hvZ7e-0004ok-Bc
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 03:29:51 +0000
+Received: by mail-qk1-x741.google.com with SMTP id s22so67744332qkj.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 07 Aug 2019 20:17:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=rnUHOWUIPfP9ynrvWp4SQXItGHBr8FB61123zRP5J8Q=;
- b=BH0IXUFL+vP1zsRxveeXqzCJ43z+rtm+YjJqPBZHvHK1l1hsTmsezZ8BfOyNh67rSF
- g0VFX1ZBtKgFB4TNVsIXR5sJcdbtlJSwbnvvixeoL4Upuq39m2ko/NLnMsZPLic2DoZz
- KcYt2TnQ7xJfMHjk6yNdXOqNEeoM0dn0PLKschTMiu8vuenorutWFXm32M1VB8Sy3yi6
- WAceL3rLWwt/def9UXP6XN5u+1kA9T0Ken0kFdc2HIIQSQcWFj/L7howJmbcWlDz8DaP
- C+wWnEcrSP7l1B1AqPJCeU1pXqxsuIO2eZzcIA3mJfkI9Ssxi3M7fUXG3VTzbJp+ihvb
- mS7w==
+ Wed, 07 Aug 2019 20:29:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1wKcnipXNqNm/RJ8fKQegUpgi0jV6GjqcI6lqswIMYM=;
+ b=d02u9ahPx43NTrP7AXSn+RdH+k6rfbwOFMrvioM9PezpWYcOD77uZZWhAghObWX0Yr
+ y+PzChz9Gjo2xPk3gO9MNhM35RRWnG0k8cOyeclZyizD67jPejudSBgo5U4e135ByFOH
+ /Xs2vYw6MPoRj3/6emHYUO9nJv2vm8nlxkaouSxWMfv6APkynkSVkgm/UlvcqpqyJIi1
+ +FhLMnlYNBiN6sa6n3L1FivozK3WRZhVOOJ43xrmYUb2UPHdFBoqz+qBsBpEwo/CQvS1
+ GdcimICgHzn15gkg/f7FweRGm/+MM7+rPCb37ooSIecXRp4okwI5tvu5ozJmBrfqtUJT
+ KCFw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=rnUHOWUIPfP9ynrvWp4SQXItGHBr8FB61123zRP5J8Q=;
- b=giKFDBNgjIm1tqcl3a4kNzcln/4VkppWPQcozhGUz1hzzdCIrPmCh6K4tYUTQJMjg3
- eZ/qxDojv9zrtOmeEW8FMlOKJ8vUAxNilnU10VL763imyLDBu5OexauWpaFGHjqxfBUJ
- m/AKu91Bb4rKYOogo3gKR8oBDxyUqa9AgVP9xghcJs8e5ngcFJ0Pfmtr+pS3nZ1Lq3mg
- 0Wp0Tp0h471zDLBmY3Sqm9yDU6T4mOiGwprr9G7tH8U3XcmfoCuAm6/02HQMl93C47yT
- odVG3tWjj1+n7dFMmpv4XwAq8MjhbR4zhTzHUGogwAN8NZzvoRLNIkDH9wllNXEafYdx
- eKtg==
-X-Gm-Message-State: APjAAAW/5v6YlxkJo3nI5vWl2IcCt0PWdx9naEwW6A5zW2YrUbB71jO5
- f25Ed3ZrqrCee36ileVrXF9/zJZq/kDBalRE6HA=
-X-Google-Smtp-Source: APXvYqyvQohcFrXctenVwEh4IrZ4/iV/p9NGY3SiVj31blHqSYT1JCHoZXOJ6aaAaa3gfmuq3eH+8JYGYSnLeOUunTY=
-X-Received: by 2002:a19:ec0c:: with SMTP id b12mr7870689lfa.107.1565234223364; 
- Wed, 07 Aug 2019 20:17:03 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1wKcnipXNqNm/RJ8fKQegUpgi0jV6GjqcI6lqswIMYM=;
+ b=GxUVEQBspUuU0U9WftvtwIJeiAijv63g6ebSATa3ZjG1qg0ljDvOv7UJwFMEWMmdUp
+ nCt04S5yifap+0xAGc7vO+7HZSOjOIMXiop4omXeFOvNklHlsoR8N6X+O3lhXcaGjo0L
+ i65FBJkwxurbqdNFv+bGgDcxxsu7Lmm46uuZA/xYAhY7jPYnPtuWATQv/kQW7qm5VRMe
+ DbJHqCJb/FfW9wNbFA0SoEuqPVwjxAnOIXepypmwBeLRWIUn777EORlcZEZI03jFrdQM
+ qGmS2Uw7m5cd28eSoqhXeCMPtHRCCnsgdQ9U1vvi+8MpRrmr5oeB9l398z0swgGKJlMd
+ Gb5A==
+X-Gm-Message-State: APjAAAUajESO0+RUGypwjX0NxAkLBziAqL81LbBfobg8+oKs4ivBJVsm
+ 9zPmNw3vVUuc08/dMzAjY/GbBQ==
+X-Google-Smtp-Source: APXvYqwujP4p2qNPudtVv0M+LihtsXDG8THeXxk3R/d5qPWADqDjvX33f8rA/TpbUjyWFmtGbU6sKQ==
+X-Received: by 2002:a37:4043:: with SMTP id n64mr11669115qka.392.1565234984850; 
+ Wed, 07 Aug 2019 20:29:44 -0700 (PDT)
+Received: from ovpn-120-247.rdu2.redhat.com
+ (pool-71-184-117-43.bstnma.fios.verizon.net. [71.184.117.43])
+ by smtp.gmail.com with ESMTPSA id c5sm42466663qkb.41.2019.08.07.20.29.43
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Wed, 07 Aug 2019 20:29:44 -0700 (PDT)
+From: Qian Cai <cai@lca.pw>
+To: will@kernel.org,
+	catalin.marinas@arm.com
+Subject: [PATCH] arm64/cache: silence -Woverride-init warnings
+Date: Wed,  7 Aug 2019 23:29:16 -0400
+Message-Id: <20190808032916.879-1-cai@lca.pw>
+X-Mailer: git-send-email 2.20.1 (Apple Git-117)
 MIME-Version: 1.0
-References: <8dec8f80b1269df040251a14b671f9c834c121cd.1565188354.git.baruch@tkos.co.il>
-In-Reply-To: <8dec8f80b1269df040251a14b671f9c834c121cd.1565188354.git.baruch@tkos.co.il>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 8 Aug 2019 00:17:27 -0300
-Message-ID: <CAOMZO5C9zBPZgc4CfR_h6hDg5vEXTzokCh9rbzNknZ4eE06qLw@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: fsl: add support for Hummingboard Pulse
-To: Baruch Siach <baruch@tkos.co.il>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_201705_579353_07ED7F64 
-X-CRM114-Status: GOOD (  18.62  )
+X-CRM114-CacheID: sfid-20190807_202950_399923_4D089ECE 
+X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,203 +97,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>, Jon Nettleton <jon@solid-run.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, clang-built-linux@googlegroups.com,
+ Qian Cai <cai@lca.pw>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Baruch and Jon,
+The commit 155433cb365e ("arm64: cache: Remove support for ASID-tagged
+VIVT I-caches") introduced some compiation warnings from GCC (and
+Clang) with -Winitializer-overrides),
 
-On Wed, Aug 7, 2019 at 11:32 AM Baruch Siach <baruch@tkos.co.il> wrote:
->
-> From: Jon Nettleton <jon@solid-run.com>
->
-> The SolidRun Hummingboard Pulse carrier board carries the SolidRun
-> i.MX8MQ based SOM.
->
-> Notably missing is PCIe support that depends on analog PLLOUT clock.
-> Current imx clk driver does not support this clock.
->
-> Signed-off-by: Jon Nettleton <jon@solid-run.com>
-> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
-> ---
->  arch/arm64/boot/dts/freescale/Makefile        |   1 +
->  .../freescale/imx8mq-hummingboard-pulse.dts   | 237 ++++++++++++++
->  .../boot/dts/freescale/imx8mq-sr-som.dtsi     | 309 ++++++++++++++++++
+arch/arm64/kernel/cpuinfo.c:38:26: warning: initialized field
+overwritten [-Woverride-init]
+[ICACHE_POLICY_VIPT]  = "VIPT",
+                        ^~~~~~
+arch/arm64/kernel/cpuinfo.c:38:26: note: (near initialization for
+'icache_policy_str[2]')
+arch/arm64/kernel/cpuinfo.c:39:26: warning: initialized field
+overwritten [-Woverride-init]
+[ICACHE_POLICY_PIPT]  = "PIPT",
+                        ^~~~~~
+arch/arm64/kernel/cpuinfo.c:39:26: note: (near initialization for
+'icache_policy_str[3]')
+arch/arm64/kernel/cpuinfo.c:40:27: warning: initialized field
+overwritten [-Woverride-init]
+[ICACHE_POLICY_VPIPT]  = "VPIPT",
+                         ^~~~~~~
+arch/arm64/kernel/cpuinfo.c:40:27: note: (near initialization for
+'icache_policy_str[0]')
 
-Please add an entry for this board in
-Documentation/devicetree/bindings/arm/fsl.yaml
+because it initializes icache_policy_str[0 ... 3] twice. Since
+arm64 developers are keen to keep the style of initializing a static
+array with a non-zero pattern first, just disable those warnings for
+both GCC and Clang of this file.
 
-> +       regulators {
-> +               compatible = "simple-bus";
-> +               #address-cells = <1>;
-> +               #size-cells = <0>;
+Fixes: 155433cb365e ("arm64: cache: Remove support for ASID-tagged VIVT I-caches")
+Signed-off-by: Qian Cai <cai@lca.pw>
+---
+ arch/arm64/kernel/Makefile | 3 +++
+ 1 file changed, 3 insertions(+)
 
-No need for this "regulators {" node. You can just place
-reg_usdhc2_vmmc directly outside of it.
+diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
+index 478491f07b4f..397ed5f7be1e 100644
+--- a/arch/arm64/kernel/Makefile
++++ b/arch/arm64/kernel/Makefile
+@@ -11,6 +11,9 @@ CFLAGS_REMOVE_ftrace.o = $(CC_FLAGS_FTRACE)
+ CFLAGS_REMOVE_insn.o = $(CC_FLAGS_FTRACE)
+ CFLAGS_REMOVE_return_address.o = $(CC_FLAGS_FTRACE)
+ 
++CFLAGS_cpuinfo.o += $(call cc-disable-warning, override-init)
++CFLAGS_cpuinfo.o += $(call cc-disable-warning, initializer-overrides)
++
+ # Object file lists.
+ obj-y			:= debug-monitors.o entry.o irq.o fpsimd.o		\
+ 			   entry-fpsimd.o process.o ptrace.o setup.o signal.o	\
+-- 
+2.20.1 (Apple Git-117)
 
-> +
-> +               reg_usdhc2_vmmc: usdhc2_vmmc {
-
-Convention is reg_usdhc2_vmmc: regulator-usdhc2-vmmc {
-
-> +                       compatible = "regulator-fixed";
-> +                       regulator-name = "VSD_3V3";
-> +                       regulator-min-microvolt = <3300000>;
-> +                       regulator-max-microvolt = <3300000>;
-> +                       gpio = <&gpio2 19 GPIO_ACTIVE_HIGH>;
-> +                       enable-active-high;
-> +               };
-
-> +&iomuxc {
-
-We usually put the iomuxc node as the last one.
-
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&pinctrl_hog>;
-> +
-> +       imx8mq-sr-hb {
-
-No need for this imx8mq-sr-hb {
-
-> +               pinctrl_hog: hoggrp {
-> +                       fsl,pins = <
-> +                               /* MikroBus Analog */
-> +                               MX8MQ_IOMUXC_NAND_DATA05_GPIO3_IO11             0x41
-> +                               /* MikroBus Reset */
-> +                               MX8MQ_IOMUXC_SAI2_RXD0_GPIO4_IO23               0x41
-> +                               /* The following 2 pins need to be commented out and
-> +                                * reconfigured to enable RTS/CTS on UART3
-> +                                */
-
-Incorrect multi-lines comment style.
-
-> +
-> +               pinctrl_uart2: uart2grp {
-> +                       fsl,pins = <
-> +                               MX8MQ_IOMUXC_UART2_TXD_UART2_DCE_TX             0x49
-> +                               MX8MQ_IOMUXC_UART2_RXD_UART2_DCE_RX             0x49
-> +                               /* These pins are currently allocated to the
-> +                                * uBLOX module on the SOM
-> +                                */
-
-Same here.
-
-> +                               /* MX8MQ_IOMUXC_UART4_RXD_UART2_DCE_CTS_B               0x49 */
-> +                               /* MX8MQ_IOMUXC_UART4_TXD_UART2_DCE_RTS_B               0x49 */
-
-Just remove it?
-
-> +                       >;
-> +               };
-> +
-> +               pinctrl_uart3: uart3grp {
-> +                       fsl,pins = <
-> +                               MX8MQ_IOMUXC_UART3_TXD_UART3_DCE_TX             0x49
-> +                               MX8MQ_IOMUXC_UART3_RXD_UART3_DCE_RX             0x49
-> +                               /* These pins are by default GPIO on the Mikro Bus
-> +                                * Header.  To use RTS/CTS on UART3 comment them out
-> +                                * of the hoggrp and enable them here
-
-Same comment about multi-line style.
-
-> +                       fsl,pins = <
-> +                               MX8MQ_IOMUXC_SD2_CLK_USDHC2_CLK                 0x8d
-> +                               MX8MQ_IOMUXC_SD2_CMD_USDHC2_CMD                 0xcd
-> +                               MX8MQ_IOMUXC_SD2_DATA0_USDHC2_DATA0             0xcd
-> +                               MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1             0xcd
-> +                               MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2             0xcd
-> +                               MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3             0xcd
-> +                               MX8MQ_IOMUXC_GPIO1_IO04_USDHC2_VSELECT          0xc1
-> +                       >;
-> +               };
-
-> +&i2c2 {
-> +       clock-frequency = <100000>;
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&pinctrl_i2c2>;
-> +       status = "okay";
-> +
-> +       typec_ptn5100: ptn5110@50 {
-> +               compatible = "usb,tcpci";
-> +               pinctrl-names = "default";
-> +               pinctrl-0 = <&pinctrl_typec>;
-> +               reg = <0x50>;
-> +               interrupt-parent = <&gpio1>;
-> +               interrupts = <6 8>;
-> +               ss-sel-gpios = <&gpio3 15 GPIO_ACTIVE_HIGH>;
-> +               src-pdos = <0x380190c8>;
-
-This property and others do not exist in mainline
-
-Please see Documentation/devicetree/bindings/usb/typec-tcpci.txt and
-arch/arm64/boot/dts/freescale/imx8mm-evk.dts for a reference.
-
-> +&uart3 { /* Mikrobus */
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&pinctrl_uart3>;
-> +       assigned-clocks = <&clk IMX8MQ_CLK_UART3>;
-> +       assigned-clock-parents = <&clk IMX8MQ_SYS1_PLL_80M>;
-> +       fsl,uart-has-rtscts;
-
-Please use 'uart-has-rtscts' instead.
-
-> +&fec1 {
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&pinctrl_fec1>;
-> +       phy-mode = "rgmii-id";
-> +       phy-handle = <&ethphy0>;
-> +       phy-reset-gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
-> +       phy-reset-duration = <2>;
-> +       fsl,magic-packet;
-> +       status = "okay";
-> +
-> +       mdio {
-> +               #address-cells = <1>;
-> +               #size-cells = <0>;
-> +
-> +               ethphy0: ethernet-phy@0 {
-> +                       compatible = "ethernet-phy-ieee802.3-c22";
-> +                       reg = <4>;
-
-@0 does not match the reg property. Please fix it.
-
-Also, make sure to build it with W=1 and do not introduce new warnings.
-
-> +               };
-> +       };
-> +};
-> +
-> +&iomuxc {
-> +       microsom {
-
-No need for this node.
-
-> +&i2c1 {
-> +       clock-frequency = <400000>;
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&pinctrl_i2c1>;
-> +       status = "okay";
-> +
-> +       pmic: pfuze100@8 {
-
-Node names should be generic: pmic@8
-
-> +&qspi0 {
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&pinctrl_qspi>;
-> +       status = "okay";
-> +
-> +       /* SPI flash; not assembled by default */
-> +       n25q256a@0 {
-
-flash@0
 
 _______________________________________________
 linux-arm-kernel mailing list
