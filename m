@@ -2,33 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B7368668F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:01:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 388AD86690
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:02:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LBrNkCQo/AdRkIti8AEgwPTcTi+cKVFff5BfHtfvsDc=; b=C0x5NmZAvlRokU
-	kS/2eO9YE33/ZoTgz24uY/4V1yK/ife5mMHFxyhmnETsa+aUf5kxFgV7i40N99eKWPRcQhoMZpJkQ
-	aQc03Or0Q68czJNqnkC76ANvhLV/XGRT6eea5MvV40PiL7USfMGTRXLhq5qpEAtQPsGkSCv/aY7x1
-	bUkHqz6XVej0hcY2o354V8KpLegyZ1lTCJ+QAdBsbP61jtUXtTVJqM1YG37JWOABP4+5smh1pQB5Z
-	UYhKl6zmxESyuomgRGkrC5vF1+W4pRE9fpcuvCAic437c73kqoncZWbpF+MYE7PqAnWmiGLcje9/B
-	5FG1djvJC4Suvi7dRMDA==;
+	List-Owner; bh=90Alk2RqZAqFWbfZso3Ym/ao3ieKpPWk7zSPTqKKPrQ=; b=U648WbSOtm3oyd
+	DK8OdgAewgsBn8NOk9AQBtC9smtU5nPGOegbmCSJ7kV2hQnAaYQtjiMy8eWgCXzjHBuk0REeILvWI
+	z4Ib074wqp7mOQygI3OePxs49+K7VUb5BLgtozvl1jPyj3zuSIfG11jJDCbZgf8JDbtJbXdF7mlXU
+	LeKWtwd47ZVDJYka1ilksNrbvHSOmX1BaKaY+IAKwi5kBTHR9jvgxc+qyiEpCPkLvZGPDHLK1ZQ8N
+	Q4rlINpCmDX8NvFHklRoEoG6f0dRM9sV7/QBSeAkpO49wbCybV8wluLgWfdJbP3viwYRIoYERYKj5
+	c5nuIdNpNTYVWnWVGPyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvkrS-0007ns-RO; Thu, 08 Aug 2019 16:01:54 +0000
+	id 1hvkrf-000833-OT; Thu, 08 Aug 2019 16:02:07 +0000
 Received: from [195.167.85.94] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hvkqK-0006lS-SV; Thu, 08 Aug 2019 16:00:45 +0000
+ id 1hvkqO-0006pM-U7; Thu, 08 Aug 2019 16:00:49 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: iommu@lists.linux-foundation.org,
  Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: [PATCH 5/8] ALSA: pcm: use dma_can_mmap() to check if a device
- supports dma_mmap_*
-Date: Thu,  8 Aug 2019 19:00:02 +0300
-Message-Id: <20190808160005.10325-6-hch@lst.de>
+Subject: [PATCH 6/8] arm-nommu: call dma_mmap_from_dev_coherent directly
+Date: Thu,  8 Aug 2019 19:00:03 +0300
+Message-Id: <20190808160005.10325-7-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190808160005.10325-1-hch@lst.de>
 References: <20190808160005.10325-1-hch@lst.de>
@@ -55,39 +54,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace the local hack with the dma_can_mmap helper to check if
-a given device supports mapping DMA allocations to userspace.
+Ther is no need to go through dma_common_mmap for the arm-nommu
+dma mmap implementation as the only possible memory not handled above
+could be that from the per-device coherent pool.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
-Reviewed-by: Takashi Iwai <tiwai@suse.de>
 ---
- sound/core/pcm_native.c | 13 ++++++-------
- 1 file changed, 6 insertions(+), 7 deletions(-)
+ arch/arm/mm/dma-mapping-nommu.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/sound/core/pcm_native.c b/sound/core/pcm_native.c
-index 703857aab00f..9763c18e176a 100644
---- a/sound/core/pcm_native.c
-+++ b/sound/core/pcm_native.c
-@@ -220,13 +220,12 @@ static bool hw_support_mmap(struct snd_pcm_substream *substream)
- {
- 	if (!(substream->runtime->hw.info & SNDRV_PCM_INFO_MMAP))
- 		return false;
--	/* architecture supports dma_mmap_coherent()? */
--#if defined(CONFIG_ARCH_NO_COHERENT_DMA_MMAP) || !defined(CONFIG_HAS_DMA)
--	if (!substream->ops->mmap &&
--	    substream->dma_buffer.dev.type == SNDRV_DMA_TYPE_DEV)
--		return false;
--#endif
--	return true;
-+
-+	if (substream->ops->mmap ||
-+	    substream->dma_buffer.dev.type != SNDRV_DMA_TYPE_DEV)
-+		return true;
-+
-+	return dma_can_mmap(substream->dma_buffer.dev.dev);
+diff --git a/arch/arm/mm/dma-mapping-nommu.c b/arch/arm/mm/dma-mapping-nommu.c
+index 52b82559d99b..db9247898300 100644
+--- a/arch/arm/mm/dma-mapping-nommu.c
++++ b/arch/arm/mm/dma-mapping-nommu.c
+@@ -68,8 +68,9 @@ static int arm_nommu_dma_mmap(struct device *dev, struct vm_area_struct *vma,
+ 
+ 	if (dma_mmap_from_global_coherent(vma, cpu_addr, size, &ret))
+ 		return ret;
+-
+-	return dma_common_mmap(dev, vma, cpu_addr, dma_addr, size, attrs);
++	if (dma_mmap_from_dev_coherent(dev, vma, cpu_addr, size, &ret))
++		return ret;
++	return -ENXIO;
  }
  
- static int constrain_mask_params(struct snd_pcm_substream *substream,
+ 
 -- 
 2.20.1
 
