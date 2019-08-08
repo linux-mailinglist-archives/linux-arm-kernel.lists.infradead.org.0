@@ -2,75 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09B73867FA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:27:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58E04867FF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 19:27:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=EX1ZRRVYhT7KXkpB8+mTvUVa+vzb+zzc1d1qNq3rQvU=; b=seYmBoTl/NMmcymc4s2d58s6U2
-	8naGvicxi6I+0wHmEGLxGT2tCpSQx/YX/+Ha0QVstk6IKaUenjicJMBoUCHIvPJ8rfZARF36KaEGL
-	m1QCj5/0OBn2VL1LrUWJaNsvgiy8XDmyu68Q+xKLUKWlnaRoCfND5ikOdSEnfbfVSIA1r3p5XB56M
-	PCm7PQsCF6cx2lpnLq9tGvERzh4evCZdc3xICZc7spBGouW76HtTpScJv58qnn4p4LxnYB09E/I5j
-	nVuPQVE8MoSARGU/4rVo0kH3KzlOK+He/4lTJeJNJNz5lG7Kv4KTZoJnOEUgdIR0ImfgVSULG687Y
-	pHjVMxvg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y7Ck+ajyp/DJhL94s/YdQGk4unSViA8y+t3+dg1PZeQ=; b=fvUkfTSSE9YWBs
+	rf7UmpBsqXGU9kZF5CaVMxJY+Sx2iv2yOK8KLDQQiqWJiyukoEsjpmgpLQpTVLYv0wLFmERQmNPsB
+	1jv0n1fUKzKHOflEj50ufhZzrS77MMe2vvp5YL7JD/KpC6XSRElBPyaMLJl4BO+JaA+PiULEbeO9r
+	IrPvKhBrVX7BLbGpLOTYtMcjSM1XGiczunrGi0WtXmhZJFtYITIpC+rliwwfZzGq1SUDek+UkDnLH
+	tVXmuhR+9lYnjsn7TWCjUO0PuuujVwmXLaem+GuZmlFyswjcvRbxNngzXV/9A57t9EaktHEu61QeR
+	O/NfCX4jAEJJmNzGsPJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvmBq-0003Lq-PE; Thu, 08 Aug 2019 17:27:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvmBL-0002yD-8l
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 17:26:38 +0000
-Received: from localhost.localdomain (unknown [194.230.155.124])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 363A92184E;
- Thu,  8 Aug 2019 17:26:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565285190;
- bh=FrLGovO96f47wXvMg6WhiiiT5dv4pM1T/2luwYUENA8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=s0F3c84AVDCqX2uzZJGDA6xsAXiGUF8f+6d090K5idUYbPXjG7hPR0g1UNQPoTWuy
- MmVcl1VJkvP/ZfAVa7HM7yb+0VzgHfaSzxlv2itu4zOFwzxyD+A7LyzNpLC2SrVweF
- 2SgASRRUX048QweLljZx7cwOwK0EEDIm9zz5WTB8=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Schrempf Frieder <frieder.schrempf@kontron.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 3/3] ARM: dts: imx6ul-kontron-n6310: Add Kontron i.MX6UL
- N6310 SoM and boards
-Date: Thu,  8 Aug 2019 19:26:16 +0200
-Message-Id: <20190808172616.11728-3-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190808172616.11728-1-krzk@kernel.org>
-References: <20190808172616.11728-1-krzk@kernel.org>
+	id 1hvmCc-0003oW-9Z; Thu, 08 Aug 2019 17:27:50 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvmCQ-0003nl-VQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 17:27:40 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5DF1715A2;
+ Thu,  8 Aug 2019 10:27:36 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 25EE03F575; Thu,  8 Aug 2019 10:27:35 -0700 (PDT)
+Date: Thu, 8 Aug 2019 18:27:32 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Hansen <dave.hansen@intel.com>
+Subject: Re: [PATCH v7 1/2] arm64: Define
+ Documentation/arm64/tagged-address-abi.rst
+Message-ID: <20190808172730.GC37129@arrakis.emea.arm.com>
+References: <20190807155321.9648-1-catalin.marinas@arm.com>
+ <20190807155321.9648-2-catalin.marinas@arm.com>
+ <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_102631_354036_2C98CF2F 
-X-CRM114-Status: GOOD (  16.60  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190808_102739_097068_ABE8005F 
+X-CRM114-Status: GOOD (  44.75  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,788 +63,265 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, notify@kernel.org
-MIME-Version: 1.0
+Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for i.MX6UL modules from Kontron Electronics GmbH (before
-acquisition: Exceet Electronics) and evalkit boards based on it:
+On Wed, Aug 07, 2019 at 01:38:16PM -0700, Dave Hansen wrote:
+> On 8/7/19 8:53 AM, Catalin Marinas wrote:
+> > +- mmap() done by the process itself (or its parent), where either:
+> > +
+> > +  - flags have the **MAP_ANONYMOUS** bit set
+> > +  - the file descriptor refers to a regular file (including those returned
+> > +    by memfd_create()) or **/dev/zero**
+> 
+> What's a "regular file"? ;)
 
-1. N6310 SOM: i.MX6 UL System-on-Module, a 25x25 mm solderable module
-   (LGA pads and pin castellations) with 256 MB RAM, 1 MB NOR-Flash,
-   256 MB NAND and other interfaces,
-2. N6310 S: evalkit, w/wo eMMC, without display,
-3. N6310 S 43: evalkit with 4.3" display,
+We could make it more explicit like '(stat.st_mode & S_IFMT) == S_IFREG'
+but it gets too verbose ;).
 
-The work is based on Exceet/Kontron source code (GPLv2) with numerous
-changes:
-1. Reorganize files,
-2. Rename Exceet -> Kontron,
-3. Rename models/compatibles to match newest Kontron product naming,
-4. Fix coding style errors and adjust to device tree coding guidelines,
-5. Fix DTC warnings,
-6. Extend compatibles so eval boards inherit the SoM compatible,
-7. Use defines instead of GPIO and interrupt flag values,
-8. Use proper vendor compatible for Macronix SPI NOR,
-9. Replace deprecated bindings with proper ones,
-10. Sort nodes alphabetically,
-11. Remove Admatec display nodes (not yet supported).
+> > +- brk() system call done by the process itself (i.e. the heap area between
+> > +  the initial location of the program break at process creation and its
+> > +  current location).
+> > +
+> > +- any memory mapped by the kernel in the address space of the process
+> > +  during creation and with the same restrictions as for mmap() above (e.g.
+> > +  data, bss, stack).
+> > +
+> > +The AArch64 Tagged Address ABI is an opt-in feature and an application can
+> > +control it via **prctl()** as follows:
+> > +
+> > +- **PR_SET_TAGGED_ADDR_CTRL**: enable or disable the AArch64 Tagged Address
+> > +  ABI for the calling process.
+> > +
+> > +  The (unsigned int) arg2 argument is a bit mask describing the control mode
+> > +  used:
+> > +
+> > +  - **PR_TAGGED_ADDR_ENABLE**: enable AArch64 Tagged Address ABI. Default
+> > +    status is disabled.
+> > +
+> > +  The arguments arg3, arg4, and arg5 are ignored.
+> 
+> For previous prctl()'s, we've found that it's best to require that the
+> unused arguments be 0.  Without that, apps are free to put garbage
+> there, which makes extending the prctl to use other arguments impossible
+> in the future.
 
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Reviewed-by: Frieder Schrempf <frieder.schrempf@kontron.de>
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
+We've had a bit of bikeshedding already:
 
----
+http://lkml.kernel.org/r/20190613110235.GW28398@e103592.cambridge.arm.com
 
-Changes since v3, after Shawn's review:
-1. Split bindings update to patch 2/3,
-2. Remove unsupported displays from (Admatec),
-3. Remove N6310 S 50 board (same as N6310 S 43 since there is no Admatec
-   display),
-4. Order iomux nodes by name, minor cleanup,
-5. Use wakeup-source instead of enable-sdio-wakeup,
-6. Add review tags.
+Extending the interface is still possible even with the current
+proposal, by changing arg2 etc. We also don't seem to be consistent in
+sys_prctl().
 
-Changes since v2, after Fabio's review:
-1. Add "imx6ul" compatible to board name (that's what I understood from
-   review),
-2. Add vendor/device prefix to eeprom and document the compatible,
-3. Use "admatecde" as vendor compatible to avoid confusion with Admatec
-   AG in Switzerland (also making LCD panels),
-4. Use generic names for nodes,
-5. Use IRQ_TYPE_LEVEL_LOW,
-6. Move iomux to the end of files,
-7. Remove regulators node (include regulators in top level),
-8. Remove cpu clock-frequency,
-9. Other minor fixes pointed by Fabio.
+> Also, shouldn't this be converted over to an arch_prctl()?
 
-Changes since v1, after Frieder's review:
-1. Remove unneeded license notes,
-2. Add Kontron copyright (2018),
-3. Rename the files/models/compatibles to new naming - N6310,
-4. Remove unneeded CPU operating points override,
-5. Switch regulator nodes into simple children nodes without addresses
-   (so not simple bus),
-6. Use proper vendor compatible for Macronix SPI NOR.
----
- .../devicetree/bindings/arm/fsl.yaml          |   3 +
- arch/arm/boot/dts/Makefile                    |   2 +
- .../boot/dts/imx6ul-kontron-n6310-s-43.dts    | 102 +++++
- arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts  | 420 ++++++++++++++++++
- .../boot/dts/imx6ul-kontron-n6310-som.dtsi    | 134 ++++++
- 5 files changed, 661 insertions(+)
- create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts
- create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
- create mode 100644 arch/arm/boot/dts/imx6ul-kontron-n6310-som.dtsi
+What do you mean by arch_prctl()? We don't have such thing, apart from
+maybe arch_prctl_spec_ctrl_*(). We achieve the same thing with the
+{SET,GET}_TAGGED_ADDR_CTRL macros. They could be renamed to
+arch_prctl_tagged_addr_{set,get} or something but I don't see much
+point.
 
-diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index 7294ac36f4c0..d07b3c06d7cf 100644
---- a/Documentation/devicetree/bindings/arm/fsl.yaml
-+++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -161,6 +161,9 @@ properties:
-         items:
-           - enum:
-               - fsl,imx6ul-14x14-evk      # i.MX6 UltraLite 14x14 EVK Board
-+              - kontron,imx6ul-n6310-som  # Kontron N6310 SOM
-+              - kontron,imx6ul-n6310-s    # Kontron N6310 S Board
-+              - kontron,imx6ul-n6310-s-43 # Kontron N6310 S 43 Board
-           - const: fsl,imx6ul
- 
-       - description: i.MX6ULL based Boards
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 9159fa2cea90..747eef501f95 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -569,6 +569,8 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
- 	imx6ul-geam.dtb \
- 	imx6ul-isiot-emmc.dtb \
- 	imx6ul-isiot-nand.dtb \
-+	imx6ul-kontron-n6310-s.dtb \
-+	imx6ul-kontron-n6310-s-43.dtb \
- 	imx6ul-liteboard.dtb \
- 	imx6ul-opos6uldev.dtb \
- 	imx6ul-pico-hobbit.dtb \
-diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts b/arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts
-new file mode 100644
-index 000000000000..5bad29683cc3
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ul-kontron-n6310-s-43.dts
-@@ -0,0 +1,102 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2017 exceet electronics GmbH
-+ * Copyright (C) 2018 Kontron Electronics GmbH
-+ * Copyright (c) 2019 Krzysztof Kozlowski <krzk@kernel.org>
-+ */
-+
-+#include "imx6ul-kontron-n6310-s.dts"
-+
-+/ {
-+	model = "Kontron N6310 S 43";
-+	compatible = "kontron,imx6ul-n6310-s-43", "kontron,imx6ul-n6310-s",
-+		     "kontron,imx6ul-n6310-som", "fsl,imx6ul";
-+
-+	backlight {
-+		compatible = "pwm-backlight";
-+		pwms = <&pwm7 0 5000000>;
-+		brightness-levels = <0 4 8 16 32 64 128 255>;
-+		default-brightness-level = <6>;
-+		status = "okay";
-+	};
-+};
-+
-+&i2c4 {
-+	touchscreen@5d {
-+		compatible = "goodix,gt928";
-+		reg = <0x5d>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_cap_touch>;
-+		interrupt-parent = <&gpio5>;
-+		interrupts = <6 IRQ_TYPE_LEVEL_LOW>;
-+		reset-gpios = <&gpio5 8 GPIO_ACTIVE_HIGH>;
-+		irq-gpios = <&gpio5 6 GPIO_ACTIVE_HIGH>;
-+	};
-+};
-+
-+&lcdif {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_lcdif_dat &pinctrl_lcdif_ctrl>;
-+	/* Leave status disabled because of missing display panel node */
-+};
-+
-+&pwm7 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pwm7>;
-+	status = "okay";
-+};
-+
-+&iomuxc {
-+	pinctrl_cap_touch: captouchgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_SNVS_TAMPER6__GPIO5_IO06	0x1b0b0 /* Touch Interrupt */
-+			MX6UL_PAD_SNVS_TAMPER7__GPIO5_IO07	0x1b0b0 /* Touch Reset */
-+			MX6UL_PAD_SNVS_TAMPER8__GPIO5_IO08	0x1b0b0 /* Touch Wake */
-+		>;
-+	};
-+
-+	pinctrl_lcdif_ctrl: lcdifctrlgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_LCD_CLK__LCDIF_CLK		0x79
-+			MX6UL_PAD_LCD_ENABLE__LCDIF_ENABLE	0x79
-+			MX6UL_PAD_LCD_HSYNC__LCDIF_HSYNC	0x79
-+			MX6UL_PAD_LCD_VSYNC__LCDIF_VSYNC	0x79
-+			MX6UL_PAD_LCD_RESET__LCDIF_RESET	0x79
-+		>;
-+	};
-+
-+	pinctrl_lcdif_dat: lcdifdatgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_LCD_DATA00__LCDIF_DATA00	0x79
-+			MX6UL_PAD_LCD_DATA01__LCDIF_DATA01	0x79
-+			MX6UL_PAD_LCD_DATA02__LCDIF_DATA02	0x79
-+			MX6UL_PAD_LCD_DATA03__LCDIF_DATA03	0x79
-+			MX6UL_PAD_LCD_DATA04__LCDIF_DATA04	0x79
-+			MX6UL_PAD_LCD_DATA05__LCDIF_DATA05	0x79
-+			MX6UL_PAD_LCD_DATA06__LCDIF_DATA06	0x79
-+			MX6UL_PAD_LCD_DATA07__LCDIF_DATA07	0x79
-+			MX6UL_PAD_LCD_DATA08__LCDIF_DATA08	0x79
-+			MX6UL_PAD_LCD_DATA09__LCDIF_DATA09	0x79
-+			MX6UL_PAD_LCD_DATA10__LCDIF_DATA10	0x79
-+			MX6UL_PAD_LCD_DATA11__LCDIF_DATA11	0x79
-+			MX6UL_PAD_LCD_DATA12__LCDIF_DATA12	0x79
-+			MX6UL_PAD_LCD_DATA13__LCDIF_DATA13	0x79
-+			MX6UL_PAD_LCD_DATA14__LCDIF_DATA14	0x79
-+			MX6UL_PAD_LCD_DATA15__LCDIF_DATA15	0x79
-+			MX6UL_PAD_LCD_DATA16__LCDIF_DATA16	0x79
-+			MX6UL_PAD_LCD_DATA17__LCDIF_DATA17	0x79
-+			MX6UL_PAD_LCD_DATA18__LCDIF_DATA18	0x79
-+			MX6UL_PAD_LCD_DATA19__LCDIF_DATA19	0x79
-+			MX6UL_PAD_LCD_DATA20__LCDIF_DATA20	0x79
-+			MX6UL_PAD_LCD_DATA21__LCDIF_DATA21	0x79
-+			MX6UL_PAD_LCD_DATA22__LCDIF_DATA22	0x79
-+			MX6UL_PAD_LCD_DATA23__LCDIF_DATA23	0x79
-+		>;
-+	};
-+
-+	pinctrl_pwm7: pwm7grp {
-+		fsl,pins = <
-+			MX6UL_PAD_CSI_VSYNC__PWM7_OUT		0x110b0
-+		>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts b/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
-new file mode 100644
-index 000000000000..0205fd56d975
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ul-kontron-n6310-s.dts
-@@ -0,0 +1,420 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2017 exceet electronics GmbH
-+ * Copyright (C) 2018 Kontron Electronics GmbH
-+ * Copyright (c) 2019 Krzysztof Kozlowski <krzk@kernel.org>
-+ */
-+
-+/dts-v1/;
-+
-+#include "imx6ul-kontron-n6310-som.dtsi"
-+
-+/ {
-+	model = "Kontron N6310 S";
-+	compatible = "kontron,imx6ul-n6310-s", "kontron,imx6ul-n6310-som",
-+		     "fsl,imx6ul";
-+
-+	gpio-leds {
-+		compatible = "gpio-leds";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_gpio_leds>;
-+
-+		led1 {
-+			label = "debug-led1";
-+			gpios = <&gpio1 30 GPIO_ACTIVE_LOW>;
-+			default-state = "off";
-+			linux,default-trigger = "heartbeat";
-+		};
-+
-+		led2 {
-+			label = "debug-led2";
-+			gpios = <&gpio5 3 GPIO_ACTIVE_LOW>;
-+			default-state = "off";
-+		};
-+
-+		led3 {
-+			label = "debug-led3";
-+			gpios = <&gpio5 2 GPIO_ACTIVE_LOW>;
-+			default-state = "off";
-+		};
-+	};
-+
-+	pwm-beeper {
-+		compatible = "pwm-beeper";
-+		pwms = <&pwm8 0 5000>;
-+	};
-+
-+	reg_3v3: regulator-3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "3v3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+
-+	reg_usb_otg1_vbus: regulator-usb-otg1-vbus {
-+		compatible = "regulator-fixed";
-+		regulator-name = "usb_otg1_vbus";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		gpio = <&gpio1 4 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
-+
-+	reg_vref_adc: regulator-vref-adc {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vref-adc";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
-+};
-+
-+&adc1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_adc1>;
-+	num-channels = <3>;
-+	vref-supply = <&reg_vref_adc>;
-+	status = "okay";
-+};
-+
-+&can2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_flexcan2>;
-+	status = "okay";
-+};
-+
-+&ecspi1 {
-+	cs-gpios = <&gpio4 26 GPIO_ACTIVE_HIGH>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_ecspi1>;
-+	status = "okay";
-+
-+	eeprom@0 {
-+		compatible = "anvo,anv32e61w", "atmel,at25";
-+		reg = <0>;
-+		spi-max-frequency = <20000000>;
-+		spi-cpha;
-+		spi-cpol;
-+		pagesize = <1>;
-+		size = <8192>;
-+		address-width = <16>;
-+	};
-+};
-+
-+&fec1 {
-+	pinctrl-0 = <&pinctrl_enet1>;
-+	/delete-node/ mdio;
-+};
-+
-+&fec2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_enet2 &pinctrl_enet2_mdio>;
-+	phy-mode = "rmii";
-+	phy-handle = <&ethphy2>;
-+	status = "okay";
-+
-+	mdio {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		ethphy1: ethernet-phy@1 {
-+			reg = <1>;
-+			micrel,led-mode = <0>;
-+			clocks = <&clks IMX6UL_CLK_ENET_REF>;
-+			clock-names = "rmii-ref";
-+		};
-+
-+		ethphy2: ethernet-phy@2 {
-+			reg = <2>;
-+			micrel,led-mode = <0>;
-+			clocks = <&clks IMX6UL_CLK_ENET2_REF>;
-+			clock-names = "rmii-ref";
-+		};
-+	};
-+};
-+
-+&i2c1 {
-+	clock-frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c1>;
-+	status = "okay";
-+};
-+
-+&i2c4 {
-+	clock-frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c4>;
-+	status = "okay";
-+
-+	rtc@32 {
-+		compatible = "epson,rx8900";
-+		reg = <0x32>;
-+	};
-+};
-+
-+&pwm8 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_pwm8>;
-+	status = "okay";
-+};
-+
-+&snvs_poweroff {
-+	status = "okay";
-+};
-+
-+&uart1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart1>;
-+	status = "okay";
-+};
-+
-+&uart2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart2>;
-+	linux,rs485-enabled-at-boot-time;
-+	rs485-rx-during-tx;
-+	rs485-rts-active-low;
-+	uart-has-rtscts;
-+	status = "okay";
-+};
-+
-+&uart3 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart3>;
-+	fsl,uart-has-rtscts;
-+	status = "okay";
-+};
-+
-+&uart4 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_uart4>;
-+	status = "okay";
-+};
-+
-+&usbotg1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_usbotg1>;
-+	dr_mode = "otg";
-+	srp-disable;
-+	hnp-disable;
-+	adp-disable;
-+	vbus-supply = <&reg_usb_otg1_vbus>;
-+	status = "okay";
-+};
-+
-+&usbotg2 {
-+	dr_mode = "host";
-+	disable-over-current;
-+	status = "okay";
-+};
-+
-+&usdhc1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_usdhc1>;
-+	cd-gpios = <&gpio1 19 GPIO_ACTIVE_LOW>;
-+	keep-power-in-suspend;
-+	wakeup-source;
-+	vmmc-supply = <&reg_3v3>;
-+	voltage-ranges = <3300 3300>;
-+	no-1-8-v;
-+	status = "okay";
-+};
-+
-+&usdhc2 {
-+	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-+	pinctrl-0 = <&pinctrl_usdhc2>;
-+	pinctrl-1 = <&pinctrl_usdhc2_100mhz>;
-+	pinctrl-2 = <&pinctrl_usdhc2_200mhz>;
-+	non-removable;
-+	keep-power-in-suspend;
-+	wakeup-source;
-+	vmmc-supply = <&reg_3v3>;
-+	voltage-ranges = <3300 3300>;
-+	no-1-8-v;
-+	status = "okay";
-+};
-+
-+&wdog1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_wdog>;
-+	fsl,ext-reset-output;
-+	status = "okay";
-+};
-+
-+&iomuxc {
-+	pinctrl-0 = <&pinctrl_reset_out &pinctrl_gpio>;
-+
-+	pinctrl_adc1: adc1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_GPIO1_IO02__GPIO1_IO02	0xb0
-+			MX6UL_PAD_GPIO1_IO03__GPIO1_IO03	0xb0
-+			MX6UL_PAD_GPIO1_IO08__GPIO1_IO08	0xb0
-+		>;
-+	};
-+
-+	/* FRAM */
-+	pinctrl_ecspi1: ecspi1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_CSI_DATA07__ECSPI1_MISO	0x100b1
-+			MX6UL_PAD_CSI_DATA06__ECSPI1_MOSI	0x100b1
-+			MX6UL_PAD_CSI_DATA04__ECSPI1_SCLK	0x100b1
-+			MX6UL_PAD_CSI_DATA05__GPIO4_IO26	0x100b1	/* ECSPI1-CS1 */
-+		>;
-+	};
-+
-+	pinctrl_enet2: enet2grp {
-+		fsl,pins = <
-+			MX6UL_PAD_ENET2_RX_EN__ENET2_RX_EN	0x1b0b0
-+			MX6UL_PAD_ENET2_RX_ER__ENET2_RX_ER	0x1b0b0
-+			MX6UL_PAD_ENET2_RX_DATA0__ENET2_RDATA00	0x1b0b0
-+			MX6UL_PAD_ENET2_RX_DATA1__ENET2_RDATA01	0x1b0b0
-+			MX6UL_PAD_ENET2_TX_EN__ENET2_TX_EN	0x1b0b0
-+			MX6UL_PAD_ENET2_TX_DATA0__ENET2_TDATA00	0x1b0b0
-+			MX6UL_PAD_ENET2_TX_DATA1__ENET2_TDATA01	0x1b0b0
-+			MX6UL_PAD_ENET2_TX_CLK__ENET2_REF_CLK2	0x4001b009
-+		>;
-+	};
-+
-+	pinctrl_enet2_mdio: enet2mdiogrp {
-+		fsl,pins = <
-+			MX6UL_PAD_GPIO1_IO07__ENET2_MDC         0x1b0b0
-+			MX6UL_PAD_GPIO1_IO06__ENET2_MDIO        0x1b0b0
-+		>;
-+	};
-+
-+	pinctrl_flexcan2: flexcan2grp{
-+		fsl,pins = <
-+			MX6UL_PAD_UART2_RTS_B__FLEXCAN2_RX	0x1b020
-+			MX6UL_PAD_UART2_CTS_B__FLEXCAN2_TX	0x1b020
-+		>;
-+	};
-+
-+	pinctrl_gpio: gpiogrp {
-+		fsl,pins = <
-+			MX6UL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x1b0b0 /* DOUT1 */
-+			MX6UL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x1b0b0 /* DIN1 */
-+			MX6UL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x1b0b0 /* DOUT2 */
-+			MX6UL_PAD_SNVS_TAMPER0__GPIO5_IO00	0x1b0b0 /* DIN2 */
-+		>;
-+	};
-+
-+	pinctrl_gpio_leds: gpioledsgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_UART5_TX_DATA__GPIO1_IO30	0x1b0b0	/* LED H14 */
-+			MX6UL_PAD_SNVS_TAMPER3__GPIO5_IO03	0x1b0b0	/* LED H15 */
-+			MX6UL_PAD_SNVS_TAMPER2__GPIO5_IO02	0x1b0b0	/* LED H16 */
-+		>;
-+	};
-+
-+	pinctrl_i2c1: i2c1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_CSI_PIXCLK__I2C1_SCL		0x4001b8b0
-+			MX6UL_PAD_CSI_MCLK__I2C1_SDA		0x4001b8b0
-+		>;
-+	};
-+
-+	pinctrl_i2c4: i2c4grp {
-+		fsl,pins = <
-+			MX6UL_PAD_UART2_TX_DATA__I2C4_SCL	0x4001f8b0
-+			MX6UL_PAD_UART2_RX_DATA__I2C4_SDA	0x4001f8b0
-+		>;
-+	};
-+
-+	pinctrl_pwm8: pwm8grp {
-+		fsl,pins = <
-+			MX6UL_PAD_CSI_HSYNC__PWM8_OUT		0x110b0
-+		>;
-+	};
-+
-+	pinctrl_uart1: uart1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_UART1_TX_DATA__UART1_DCE_TX	0x1b0b1
-+			MX6UL_PAD_UART1_RX_DATA__UART1_DCE_RX	0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_uart2: uart2grp {
-+		fsl,pins = <
-+			MX6UL_PAD_NAND_DATA04__UART2_DCE_TX	0x1b0b1
-+			MX6UL_PAD_NAND_DATA05__UART2_DCE_RX	0x1b0b1
-+			MX6UL_PAD_NAND_DATA06__UART2_DCE_CTS	0x1b0b1
-+			/*
-+			 * mux unused RTS to make sure it doesn't cause
-+			 * any interrupts when it is undefined
-+			 */
-+			MX6UL_PAD_NAND_DATA07__UART2_DCE_RTS	0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_uart3: uart3grp {
-+		fsl,pins = <
-+			MX6UL_PAD_UART3_TX_DATA__UART3_DCE_TX	0x1b0b1
-+			MX6UL_PAD_UART3_RX_DATA__UART3_DCE_RX	0x1b0b1
-+			MX6UL_PAD_UART3_CTS_B__UART3_DCE_CTS	0x1b0b1
-+			MX6UL_PAD_UART3_RTS_B__UART3_DCE_RTS	0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_uart4: uart4grp {
-+		fsl,pins = <
-+			MX6UL_PAD_UART4_TX_DATA__UART4_DCE_TX	0x1b0b1
-+			MX6UL_PAD_UART4_RX_DATA__UART4_DCE_RX	0x1b0b1
-+		>;
-+	};
-+
-+	pinctrl_usbotg1: usbotg1 {
-+		fsl,pins = <
-+			MX6UL_PAD_GPIO1_IO04__GPIO1_IO04	0x1b0b0
-+		>;
-+	};
-+
-+	pinctrl_usdhc1: usdhc1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x17059
-+			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x10059
-+			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x17059
-+			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x17059
-+			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x17059
-+			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x17059
-+			MX6UL_PAD_UART1_RTS_B__GPIO1_IO19	0x100b1	/* SD1_CD */
-+		>;
-+	};
-+
-+	pinctrl_usdhc2: usdhc2grp {
-+		fsl,pins = <
-+			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x10059
-+			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x17059
-+			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x17059
-+			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x17059
-+			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x17059
-+			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x17059
-+		>;
-+	};
-+
-+	pinctrl_usdhc2_100mhz: usdhc2-100mhzgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x100b9
-+			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x170b9
-+			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x170b9
-+			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x170b9
-+			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x170b9
-+			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x170b9
-+		>;
-+	};
-+
-+	pinctrl_usdhc2_200mhz: usdhc2-200mhzgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x100f9
-+			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x170f9
-+			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x170f9
-+			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x170f9
-+			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x170f9
-+			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x170f9
-+		>;
-+	};
-+
-+	pinctrl_wdog: wdoggrp {
-+		fsl,pins = <
-+			MX6UL_PAD_GPIO1_IO09__WDOG1_WDOG_ANY	0x30b0
-+		>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/imx6ul-kontron-n6310-som.dtsi b/arch/arm/boot/dts/imx6ul-kontron-n6310-som.dtsi
-new file mode 100644
-index 000000000000..a896b2348dd2
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6ul-kontron-n6310-som.dtsi
-@@ -0,0 +1,134 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2017 exceet electronics GmbH
-+ * Copyright (C) 2018 Kontron Electronics GmbH
-+ * Copyright (c) 2019 Krzysztof Kozlowski <krzk@kernel.org>
-+ */
-+
-+#include "imx6ul.dtsi"
-+#include <dt-bindings/gpio/gpio.h>
-+
-+/ {
-+	model = "Kontron N6310 SOM";
-+	compatible = "kontron,imx6ul-n6310-som", "fsl,imx6ul";
-+
-+	memory@80000000 {
-+		reg = <0x80000000 0x10000000>;
-+		device_type = "memory";
-+	};
-+};
-+
-+&ecspi2 {
-+	cs-gpios = <&gpio4 22 GPIO_ACTIVE_HIGH>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_ecspi2>;
-+	status = "okay";
-+
-+	spi-flash@0 {
-+		compatible = "mxicy,mx25v8035f", "jedec,spi-nor";
-+		spi-max-frequency = <50000000>;
-+		reg = <0>;
-+	};
-+};
-+
-+&fec1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_enet1 &pinctrl_enet1_mdio>;
-+	phy-mode = "rmii";
-+	phy-handle = <&ethphy1>;
-+	status = "okay";
-+
-+	mdio {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		ethphy1: ethernet-phy@1 {
-+			reg = <1>;
-+			micrel,led-mode = <0>;
-+			clocks = <&clks IMX6UL_CLK_ENET_REF>;
-+			clock-names = "rmii-ref";
-+		};
-+	};
-+};
-+
-+&fec2 {
-+	phy-mode = "rmii";
-+	status = "disabled";
-+};
-+
-+&qspi {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_qspi>;
-+	status = "okay";
-+
-+	spi-flash@0 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "spi-nand";
-+		spi-max-frequency = <108000000>;
-+		spi-tx-bus-width = <4>;
-+		spi-rx-bus-width = <4>;
-+		reg = <0>;
-+
-+		partition@0 {
-+			label = "ubi1";
-+			reg = <0x00000000 0x08000000>;
-+		};
-+
-+		partition@8000000 {
-+			label = "ubi2";
-+			reg = <0x08000000 0x08000000>;
-+		};
-+	};
-+};
-+
-+&iomuxc {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_reset_out>;
-+
-+	pinctrl_ecspi2: ecspi2grp {
-+		fsl,pins = <
-+			MX6UL_PAD_CSI_DATA03__ECSPI2_MISO      0x100b1
-+			MX6UL_PAD_CSI_DATA02__ECSPI2_MOSI      0x100b1
-+			MX6UL_PAD_CSI_DATA00__ECSPI2_SCLK      0x100b1
-+			MX6UL_PAD_CSI_DATA01__GPIO4_IO22       0x100b1
-+		>;
-+	};
-+
-+	pinctrl_enet1: enet1grp {
-+		fsl,pins = <
-+			MX6UL_PAD_ENET1_RX_EN__ENET1_RX_EN      0x1b0b0
-+			MX6UL_PAD_ENET1_RX_ER__ENET1_RX_ER      0x1b0b0
-+			MX6UL_PAD_ENET1_RX_DATA0__ENET1_RDATA00 0x1b0b0
-+			MX6UL_PAD_ENET1_RX_DATA1__ENET1_RDATA01 0x1b0b0
-+			MX6UL_PAD_ENET1_TX_EN__ENET1_TX_EN      0x1b0b0
-+			MX6UL_PAD_ENET1_TX_DATA0__ENET1_TDATA00 0x1b0b0
-+			MX6UL_PAD_ENET1_TX_DATA1__ENET1_TDATA01 0x1b0b0
-+			MX6UL_PAD_ENET1_TX_CLK__ENET1_REF_CLK1  0x4001b009
-+		>;
-+	};
-+
-+	pinctrl_enet1_mdio: enet1mdiogrp {
-+		fsl,pins = <
-+			MX6UL_PAD_GPIO1_IO07__ENET1_MDC         0x1b0b0
-+			MX6UL_PAD_GPIO1_IO06__ENET1_MDIO        0x1b0b0
-+		>;
-+	};
-+
-+	pinctrl_qspi: qspigrp {
-+		fsl,pins = <
-+			MX6UL_PAD_NAND_WP_B__QSPI_A_SCLK        0x70a1
-+			MX6UL_PAD_NAND_READY_B__QSPI_A_DATA00   0x70a1
-+			MX6UL_PAD_NAND_CE0_B__QSPI_A_DATA01     0x70a1
-+			MX6UL_PAD_NAND_CE1_B__QSPI_A_DATA02     0x70a1
-+			MX6UL_PAD_NAND_CLE__QSPI_A_DATA03       0x70a1
-+			MX6UL_PAD_NAND_DQS__QSPI_A_SS0_B        0x70a1
-+		>;
-+	};
-+
-+	pinctrl_reset_out: rstoutgrp {
-+		fsl,pins = <
-+			MX6UL_PAD_SNVS_TAMPER9__GPIO5_IO09      0x1b0b0
-+		>;
-+	};
-+};
+What would be better (for a separate patch series) is to clean up
+sys_prctl() and move the arch-specific options into separate
+arch_prctl() under arch/*/kernel/. But it's not really for this series.
+
+> > +The prctl(PR_SET_TAGGED_ADDR_CTRL, ...) will return -EINVAL if the
+> > +AArch64 Tagged Address ABI is not available
+> > +(CONFIG_ARM64_TAGGED_ADDR_ABI disabled or sysctl abi.tagged_addr=0).
+> > +
+> > +The ABI properties set by the mechanism described above are inherited by
+> > +threads of the same application and fork()'ed children but cleared by
+> > +execve().
+> 
+> What is the scope of these prctl()'s?  Are they thread-scoped or
+> process-scoped?  Can two threads in the same process run with different
+> tagging ABI modes?
+
+Good point. They are thread-scoped and this should be made clear in the
+doc. Two threads can have different modes.
+
+The expectation is that this is invoked early during process start (by
+the dynamic loader or libc init) while in single-thread mode and
+subsequent threads will inherit the same mode. However, other uses are
+possible.
+
+> > +Opting in (the prctl() option described above only) to or out of the
+> > +AArch64 Tagged Address ABI can be disabled globally at runtime using the
+> > +sysctl interface:
+> > +
+> > +- **abi.tagged_addr**: a new sysctl interface that can be used to prevent
+> > +  applications from enabling or disabling the relaxed ABI. The sysctl
+> > +  supports the following configuration options:
+> > +
+> > +  - **0**: disable the prctl(PR_SET_TAGGED_ADDR_CTRL) option to
+> > +    enable/disable the AArch64 Tagged Address ABI globally
+> > +
+> > +  - **1** (Default): enable the prctl(PR_SET_TAGGED_ADDR_CTRL) option to
+> > +    enable/disable the AArch64 Tagged Address ABI globally
+> > +
+> > +  Note that this sysctl does not affect the status of the AArch64 Tagged
+> > +  Address ABI of the running processes.
+> 
+> Shouldn't the name be "abi.tagged_addr_control" or something?  It
+> actually has *zero* direct effect on tagged addresses in the ABI.
+
+Yeah, we could add a _ctrl suffix. I usually lack inspiration when
+naming things.
+
+> What's the reason for allowing it to be toggled at runtime like this?
+> Wouldn't it make more sense to just have it be a boot option so you
+> *know* what the state of individual processes is?
+
+This was initially suggested by Vincenzo but I wasn't keen on having a
+kernel command line option that affects the user ABI. Since then we went
+through several incarnations and ended up with a default off for the
+relaxed ABI with an opt-in prctl(). The reason behind default off is
+that I'm not 100% confident the kernel won't break the relaxed ABI in
+the future and I wouldn't want applications that don't use
+top-byte-ignore (or tagged addresses) to inadvertently start using it.
+The additional sysctl is to allow system administrators to block the
+opt-in altogether. It also comes in handy for testing userspace
+behaviour without rebooting.
+
+That said, do we have a precedent for changing user ABI from the kernel
+cmd line? 'noexec32', 'vsyscall' I think come close. With the prctl()
+for opt-in, controlling this from the cmd line is not too bad (though my
+preference is still for the sysctl).
+
+> > +When a process has successfully enabled the new ABI by invoking
+> > +prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE), the following
+> > +behaviours are guaranteed:
+> > +
+> > +- Every currently available syscall, except the cases mentioned in section
+> > +  3, can accept any valid tagged pointer. The same rule is applicable to
+> > +  any syscall introduced in the future.
+> > +
+> > +- The syscall behaviour is undefined for non valid tagged pointers.
+> 
+> Do you really mean "undefined"?  I mean, a bad pointer is a bad pointer.
+>  Why should it matter if it's a tagged bad pointer or an untagged bad
+> pointer?
+
+Szabolcs already replied here. We may have tagged pointers that can be
+dereferenced just fine but being passed to the kernel may not be well
+defined (e.g. some driver doing a find_vma() that fails unless it
+explicitly untags the address). It's as undefined as the current
+behaviour (without these patches) guarantees.
+
+> ...
+> > +A definition of the meaning of tagged pointers on AArch64 can be found in:
+> > +Documentation/arm64/tagged-pointers.txt.
+> > +
+> > +3. AArch64 Tagged Address ABI Exceptions
+> > +-----------------------------------------
+> > +
+> > +The behaviour described in section 2, with particular reference to the
+> > +acceptance by the syscalls of any valid tagged pointer, is not applicable
+> > +to the following cases:
+> 
+> This is saying things in a pretty roundabout manner.  Can't it just say:
+>  "The following cases do not accept tagged pointers:"
+
+I agree.
+
+> > +- mmap() addr parameter.
+> > +
+> > +- mremap() new_address parameter.
+> 
+> Is munmap() missing?  Or was there a reason for leaving it out?
+
+Szabolcs replied already here.
+
+For a bit of history, I initially didn't want any of the address space
+handling functions to accept tagged pointers but it got harder to
+specify what this means that can be safely applied to future syscall
+extensions. We then changed the approach to allow it everywhere with
+some exclusions like mmap/mremap.
+
+> > +- prctl(PR_SET_MM, ``*``, ...) other than arg2 PR_SET_MM_MAP and
+> > +  PR_SET_MM_MAP_SIZE.
+> > +
+> > +- prctl(PR_SET_MM, PR_SET_MM_MAP{,_SIZE}, ...) struct prctl_mm_map fields.
+> > +
+> > +Any attempt to use non-zero tagged pointers will lead to undefined
+> > +behaviour.
+> 
+> I wonder if you want to generalize this a bit.  I think you're saying
+> that parts of the ABI that modify the *layout* of the address space
+> never accept tagged pointers.
+
+I guess our difficulty in specifying this may have been caused by
+over-generalising. For example, madvise/mprotect came under the same
+category but there is a use-case for malloc'ed pointers (and tagged) to
+the kernel (e.g. MADV_DONTNEED). If we can restrict the meaning to
+address space *layout* manipulation, we'd have mmap/mremap/munmap,
+brk/sbrk, prctl(PR_SET_MM). Did I miss anything?. Other related syscalls
+like mprotect/madvise preserve the layout while only changing permissions,
+backing store, so the would be allowed to accept tags.
+
+Open to feedback from others, especially libc/userspace folk. Ideally,
+what I'd like is that when a new syscall is added (or extension to an
+existing syscall), it should be fairly obvious to the user whether it
+can take a tagged address or not (or maybe that's just not possible).
+
+> > +4. Example of correct usage
+> > +---------------------------
+> > +.. code-block:: c
+> > +
+> > +   void main(void)
+> > +   {
+> > +           static int tbi_enabled = 0;
+> > +           unsigned long tag = 0;
+> > +
+> > +           char *ptr = mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE,
+> > +                            MAP_ANONYMOUS, -1, 0);
+> > +
+> > +           if (prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE,
+> > +                     0, 0, 0) == 0)
+> > +                   tbi_enabled = 1;
+> > +
+> > +           if (ptr == (void *)-1) /* MAP_FAILED */
+> > +                   return -1;
+> > +
+> > +           if (tbi_enabled)
+> > +                   tag = rand() & 0xff;
+> > +
+> > +           ptr = (char *)((unsigned long)ptr | (tag << TAG_SHIFT));
+> > +
+> > +           *ptr = 'a';
+> > +
+> > +           ...
+> > +   }
+> 
+> It looks like the TAG_SHIFT and tag size are pretty baked into the
+> aarch64 architecture.  But, are you confident that no future
+> implementations will want different positions or sizes?  (obviously
+> controlled by other TCR_EL1 bits)
+
+For the top-byte-ignore (TBI), that's been baked in the architecture
+since ARMv8.0 and we'll have to keep the backwards compatible mode. As
+the name implies, it's the top byte of the address and that's what the
+document above refers to.
+
+With MTE, I can't exclude other configurations in the future but I'd
+expect the kernel to present the option as a new HWCAP and the user to
+explicitly opt in via a new prctl() flag. I seriously doubt we'd break
+existing binaries. So, yes TAG_SHIFT may be different but so would the
+prctl() above.
+
+Thanks.
+
 -- 
-2.17.1
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
