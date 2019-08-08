@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3363F866BD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:12:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACA1D866BF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  8 Aug 2019 18:12:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nIaZ4PH923YUdtwKLh/K0y2xB5r/v7Jc2VB7FpDiYlE=; b=gkcX8x8vwcJ7A2
-	3RjkpqWMxksArKiP5GrS80J2px6jNLqC+CqbHjX9mYlRK+4JfAM6VkLnfo9DTrrVl85xW9qIWt6UZ
-	mKqcHWIrjEgytGE9Jwgv4q1p8KxhdQ63cefkm6jyvHM+TYn2BvzeBgjWq7pmOn/1UXqKOxZ3Mmy1I
-	Ug92Gxr6rdsOEXwiLPvipLG6NhGAPc2iFlcwG3w7mBVijWWyRlSinwAkXCaI9HR9vue/2oDmU2qSr
-	KhAvKz/3HCeAeqieNguABbK6UfxNPGXDmRfBKDT5MVCvgrVmRgbB4sV2F//PquMnhCBAJrffCfG6q
-	Zvbg4o+0z4pnstJ6VhQA==;
+	List-Owner; bh=y4KS4Awpgx3LMw/ESpPxXBkrJ9POnqLmXd5BOYKihHM=; b=g0h8Etz/bxddFW
+	Pc3sA7lMvLV/1klG7ruRBfchMFwdW4Upf3sKtutththas/KigEQmj6kWk562vRXM1p8bqrW5uWKLy
+	rQEix0n1ZlpsCWcYHfYBLlwxu+9yKFQiZa8vSMe7GhHLtIow3CE3S7PhwbVKKK6/geYS+UqOc9nhf
+	F5iXP0KIMyKL8+8lkHgWDfRUevYgZX1J0041h291qT6aTflzSafmFNwMb6Fo+g9gY6CujzyJdJiQK
+	UEWf7K7m7Ce54/ilBeOvlX9p0z/Van7TMAKvZT82HHuXKILw9hj5t15FnMC6aTSX9XkoSS+e4zd+5
+	e9KyNxe0SM0DwyMb9TsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvl1o-0004Sj-QE; Thu, 08 Aug 2019 16:12:36 +0000
+	id 1hvl22-0004hv-Cp; Thu, 08 Aug 2019 16:12:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvl1R-0004Ah-RM
- for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:12:15 +0000
+ id 1hvl1V-0004F4-RU
+ for linux-arm-kernel@lists.infradead.org; Thu, 08 Aug 2019 16:12:19 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 735072184E;
- Thu,  8 Aug 2019 16:12:13 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6280721743;
+ Thu,  8 Aug 2019 16:12:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565280733;
- bh=y/0sRj7Yzk0Y5XU6X4a1WKbMI5VCh4dXaTuh3u8iH9Q=;
+ s=default; t=1565280737;
+ bh=hMbk09CEqq/4ZnGxwjNfY8qvoPlkHX3ojR8xSAa10AQ=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=wt4j4AzheUzaLwKqE5wyxurd+BbWg67YU+HGSKjE/MNhkxk+tEgMMb8luesRCV4rI
- htV7pB5zHZxCBVVIlcVmsRB9S3UmdHVSFa8MwgvQW1dPN3IoAq1U20zXjSP9FoirGE
- KTjRmrrnpLoKPuYc4mwNxvIgZXyjhqI7IaX5gka4=
+ b=ZxpF5RAbgDUrM4R9Msr8xapAQE8EzzDe00dWjrd5HbXTvZ48ZIEDz609L7PjVnOOw
+ mq31jCnjD3PmCkl18vuD1qJ1MTV0CH+x28Sp6WPlu+iZlQREnl0h6o/+UnkU6qqfYd
+ /6uKCOVdaibV+wK8oWdi2y+wtzVEa3TNXLAYpUjc=
 MIME-Version: 1.0
-In-Reply-To: <20190710134346.30239-3-gregory.clement@bootlin.com>
+In-Reply-To: <20190710134346.30239-4-gregory.clement@bootlin.com>
 References: <20190710134346.30239-1-gregory.clement@bootlin.com>
- <20190710134346.30239-3-gregory.clement@bootlin.com>
-Subject: Re: [PATCH v7 2/6] clk: mvebu: add helper file for Armada AP and CP
- clocks
+ <20190710134346.30239-4-gregory.clement@bootlin.com>
+Subject: Re: [PATCH v7 3/6] clk: mvebu: add CPU clock driver for Armada 7K/8K
 From: Stephen Boyd <sboyd@kernel.org>
 To: Gregory CLEMENT <gregory.clement@bootlin.com>,
  Mike Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
  linux-kernel@vger.kernel.org
 User-Agent: alot/0.8.1
-Date: Thu, 08 Aug 2019 09:12:12 -0700
-Message-Id: <20190808161213.735072184E@mail.kernel.org>
+Date: Thu, 08 Aug 2019 09:12:16 -0700
+Message-Id: <20190808161217.6280721743@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_091213_908822_46D817BF 
-X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-CacheID: sfid-20190808_091217_943174_A5260B3F 
+X-CRM114-Status: UNSURE (   9.31  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -86,10 +85,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Gregory CLEMENT (2019-07-10 06:43:42)
-> Clock drivers for Armada AP and Armada CP use the same function to
-> generate unique clock name. A third drivers is coming with the same
-> need, so it's time to move this function in a common file.
+Quoting Gregory CLEMENT (2019-07-10 06:43:43)
+> The CPU frequency is managed at the AP level for the Armada 7K/8K. The
+> CPU frequency is modified by cluster: the CPUs of the same cluster have
+> the same frequency.
+> 
+> This patch adds the clock driver that will be used by CPUFreq, it is
+> based on the work of Omri Itach <omrii@marvell.com>.
 > 
 > Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
 > ---
