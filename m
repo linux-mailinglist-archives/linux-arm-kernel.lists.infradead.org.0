@@ -2,121 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F52E87E56
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 17:43:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6574B87E6A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 17:47:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1x0RQMBRizwBMTX+2taJ2ImBuzoL/3l6JCnlqgKV/aM=; b=evaTOecKhZrVhe
-	gc2ll4p8hV/tEtmqwsSc6nnY6EYhZKYd+1Qt/9X5TvDGcQQpQgA1LGOYMXnR+hyTArOnkMwt92ryW
-	+5Xl/hlWpalVSFDUSGqqaCX1RUhKfL3pNtkhf/MtFFh3xaxT10q1d1DlSOSRWq8CEDrEK+S51tb/Y
-	bMCM8IsnZ+nhPDqupv2Olu8lkUiCl69Vyl5rJegrrN3IIiO9bFsTb4FZpO1Do1uJ+IpvcRNvy9RA9
-	ECwSMVBsMv1lqqGlxzGVfCOFpvmSP/s/8aMPhI4RTarzqj37vujs05+cc68zaPA8STUDLjB6TCsBR
-	Qes0GAP1EZa76k18Nt9g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K+M3aqax5Jhwnwv9Q1a9Czhrsa9GVr/+WV9g07UrYT0=; b=J515CIolr18J3z
+	tW9r9pY3d81luXUdGVFO0XeFDsuBAmAQ1nSoGS3S1EULXTqo+e9ussIGbCBHuCkzdmvHhX/jtvHGy
+	WcxJYH2IKA/5WkWUSoUGSLB3O2cO5MN7dkf88Voy2OtMdK2+/OfZwSQr90qaUI/59ExR3UbOhyBCt
+	aoPF0ZYtkacttvNRfFNbJFN1SfvAW2lPWuS98yfdvx8fnMxHHhJFyHo4GSv3CWm5CBm2M7ZBuDpUh
+	bJKksnkwIi2Ti9qqENoVQlRYLN9E/Udqj+wMmLHfWbIvhbV7knD5LXtvDRMIx/RIuB3zyuD0cFboc
+	wtC5mLpdOrc3G9OySSvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw73A-00051X-Sk; Fri, 09 Aug 2019 15:43:28 +0000
-Received: from mail-eopbgr30120.outbound.protection.outlook.com
- ([40.107.3.120] helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1hw76x-0007BE-Sm; Fri, 09 Aug 2019 15:47:23 +0000
+Received: from mail-wr1-f68.google.com ([209.85.221.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw731-00050W-Lp
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 15:43:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FLLVC7nmStCxQTjdNrdGQ8UfwMzx8OAjpMHeDTqUMcwYgXvd0Qo112b+OoBu+XzH8+BCfljhyMXkx9bp5xpJIf6UBlQ3J/nm36RW8KDL8crIgMh7Liqb1Aew8QJDestS0ljodWxnGz/p+K4JxyEZ9ckjaNoB0eBnkZhHUvVIkKB5fDeab+Cw+EVyUSfhnG3fFOK1NGnL+tQJZd94/iOVCraQLL2L1jJkcZYWNIdTdVW40SrRlHT2kij0M3NEciH+OWYf6KHpj0gNTWnDDg/jErGkYgRxFDzM29JXVNGxGMnPdraSR0Voc46XX8noMJ+9Uh/smdX6v+OexLsw2ayQKg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Y4y1JdZ9/yl0cE7140GCL8o8T5/ImPXruaQp1egAGZQ=;
- b=N2Fu+sW7467UaFvdB94YYGvSOAOc8yByVej4BUY4ao8qZF8LY/LUq3Z2fZUfMQWqrfPNVWYGGh94nXbgHxTjqLxlx70Imnp335i6FYQs7jMjEWF/Cpu14w56IHiy6Y6NIVjITCm6bLkHBpfAHOH2aRKOcj8dC/QOe6T+lKykncrr+yeCR4QOPknounduCAiHWS4DktDAOx3IzsPjCES/sD/hQ3/DKqqq162fHBx+boUz0GHYPEFlHOqadRx6DxV9NtSRkM4wbPQUfU4M5hAXVvnsTpTESMJ+CZH+fo4kCmBIxcHR0YyFNABzV7ldbz8CSB091OlKL8emuBJB0rqZhA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=toradex.com;dmarc=pass action=none
- header.from=toradex.com;dkim=pass header.d=toradex.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Y4y1JdZ9/yl0cE7140GCL8o8T5/ImPXruaQp1egAGZQ=;
- b=XTfDr7+JxZ0iVbrljub9x+UutPNJcl8vh661E9+UVwcM1eaCwvR+R7/AEimLvW3RGjUBylD18/EaR5jMulFQ2rZABn8Onfz+rl3Ov3RwmQDdSZwib7T2OSJCHC0hxGT1Ri/fEAQMN9BZ1SUWkWLY41XjzWxdbm7wCxBMjqMjzqo=
-Received: from VI1PR05MB6415.eurprd05.prod.outlook.com (20.179.27.139) by
- VI1PR05MB5823.eurprd05.prod.outlook.com (20.178.122.225) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2136.16; Fri, 9 Aug 2019 15:43:13 +0000
-Received: from VI1PR05MB6415.eurprd05.prod.outlook.com
- ([fe80::f1b2:353a:da9b:c19a]) by VI1PR05MB6415.eurprd05.prod.outlook.com
- ([fe80::f1b2:353a:da9b:c19a%4]) with mapi id 15.20.2157.020; Fri, 9 Aug 2019
- 15:43:13 +0000
-From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-To: Max Krummenacher <max.krummenacher@toradex.com>, "stefan@agner.ch"
- <stefan@agner.ch>, Philippe Schenker <philippe.schenker@toradex.com>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "michal.vokac@ysoft.com"
- <michal.vokac@ysoft.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>
-Subject: Re: [PATCH v3 16/21] ARM: dts: imx6ull-colibri: Add watchdog
-Thread-Topic: [PATCH v3 16/21] ARM: dts: imx6ull-colibri: Add watchdog
-Thread-Index: AQHVTPnV79tSXC+1fEesojD6I0AgYaby+FkA
-Date: Fri, 9 Aug 2019 15:43:13 +0000
-Message-ID: <1012c9f70373cb4f87f75d8c636029f0871e55c9.camel@toradex.com>
-References: <20190807082556.5013-1-philippe.schenker@toradex.com>
- <20190807082556.5013-17-philippe.schenker@toradex.com>
-In-Reply-To: <20190807082556.5013-17-philippe.schenker@toradex.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=marcel.ziswiler@toradex.com; 
-x-originating-ip: [2a01:2a8:8501:4d00:ca5b:76ff:fedf:3c49]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 6558519a-f369-4161-6e61-08d71ce049d5
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:VI1PR05MB5823; 
-x-ms-traffictypediagnostic: VI1PR05MB5823:
-x-microsoft-antispam-prvs: <VI1PR05MB58237FA01D0BD9842349ED8EFBD60@VI1PR05MB5823.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
-x-forefront-prvs: 01244308DF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(39850400004)(396003)(366004)(346002)(136003)(376002)(189003)(199004)(478600001)(66446008)(2201001)(81156014)(36756003)(46003)(2501003)(446003)(86362001)(7416002)(14454004)(25786009)(8676002)(118296001)(6246003)(99286004)(6116002)(8936002)(81166006)(66556008)(66946007)(76176011)(66476007)(64756008)(6506007)(229853002)(71190400001)(305945005)(110136005)(76116006)(102836004)(53936002)(6486002)(6512007)(91956017)(2906002)(6436002)(11346002)(486006)(476003)(44832011)(4326008)(256004)(71200400001)(54906003)(5660300002)(2616005)(7736002)(186003)(316002)(32563001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB5823;
- H:VI1PR05MB6415.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: toradex.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: qhSPlkvEBFZLCmenbUFLM7zdKVG5fH6f90mC0m6bhePP1SwWXd/6Z4W/9gDRbZEZBib+RDBh+S4TLCqIaAJ1EC8Ymul6Ioq4lbNCIJU9xdBYbHurHUz1ddoFlfOlbhFVm90lz7+J6Te4VDfkmsI/Iyc0Oja8E4cZP7j5moaB+SqFYFMhWcFhfw8i5HXwfRXcaNkD3T5OQu6bB7DEzGayxuh4Sr2DKWn0jldg9RNQUthnJQczqZI+F2AHVOYl+NICnxWla4L57g1rC7GQP2Uq6WnGCAU/+V3aXTDyjxL2cIcr563uX8SEMP2NMaUqkH50efyUpTZU4gGo6DKN6H/Khhme6vitnFy+VKzNRYMU7ZA2eYy8ExjNaynycQI7SB/vHEO2dmWzYMS0VmbDpfQ4KDHjxApz3s8rKRZSF9YOF7s=
-Content-ID: <9EEF78776F113A40AA7D891B9AAA5C6C@eurprd05.prod.outlook.com>
+ id 1hw76m-0007An-Md
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 15:47:15 +0000
+Received: by mail-wr1-f68.google.com with SMTP id r3so4936291wrt.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 09 Aug 2019 08:47:12 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=//yT3qJ8WuM03AEopdit51IEjFSTwNzla/34blwGVms=;
+ b=WYkUZgqR0wbeegDtNugqUlbVroIh4l8UKN0wCefGLEDZEW1kyhtQBsf9Wqmb47SQyM
+ I/5hDwssZsLB6BHwk04pg84M8mXnOCVCmW7kKnMRDPHFEsqc6dROqhXAwmfcHKV64Ktk
+ UUIa9c1HdwBUxE5qdjEQTxxpLkPuxZWPe1x7wbbCMq1fwav0iPaLsmA+T26LXC/Q/7jc
+ 6XGAWya8RUYlqzdLrln1NJXqJBFrwX2JDRDOX8nKFqSe6lgaRn7Q8hOj7QqrXyKmrcQW
+ t3cmm5zqqbuxLNJO4vYLR7nMKYvmuTRmcHi6gXIDZJCO7jHTFPb7RBM7NcHSXa6Gfq1n
+ Mggw==
+X-Gm-Message-State: APjAAAUKY7z0p2MUxI8SfIeG6agb4XQ/3UJv6TD61RbrwJActbFhBqoy
+ Tt5UYy7h9574F6eozVC/3Mje5Q==
+X-Google-Smtp-Source: APXvYqwMa058GcHnbYlQie7XSJJGnWJhLkCr/dR0jJdaNszGDMBL8D3HgdiIM/Wds/e4MYbYyG3u/w==
+X-Received: by 2002:adf:dd0f:: with SMTP id a15mr7416971wrm.265.1565365630847; 
+ Fri, 09 Aug 2019 08:47:10 -0700 (PDT)
+Received: from ?IPv6:2001:b07:6468:f312:9418:b1e8:9e8b:8c2f?
+ ([2001:b07:6468:f312:9418:b1e8:9e8b:8c2f])
+ by smtp.gmail.com with ESMTPSA id w13sm19709449wre.44.2019.08.09.08.47.09
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Fri, 09 Aug 2019 08:47:10 -0700 (PDT)
+Subject: Re: [GIT PULL] KVM/arm updates for 5.3-rc4
+To: Marc Zyngier <maz@kernel.org>, =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?=
+ <rkrcmar@redhat.com>
+References: <20190809074832.13283-1-maz@kernel.org>
+From: Paolo Bonzini <pbonzini@redhat.com>
+Openpgp: preference=signencrypt
+Message-ID: <9a6b90f4-7583-e002-76ba-a54525879469@redhat.com>
+Date: Fri, 9 Aug 2019 17:47:08 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6558519a-f369-4161-6e61-08d71ce049d5
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Aug 2019 15:43:13.2201 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: VWYWJXtxSSsaiB2lnaORjIAY2pdTTR//YDKYrHmZngsGlAK4A2sOTngC7grtKK5PihpFztsb9/+xGJ8/tSjLeveceE2VXwBtEldoroq4Tes=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB5823
+In-Reply-To: <20190809074832.13283-1-maz@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_084319_718950_9BBCC30C 
-X-CRM114-Status: GOOD (  15.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190809_084712_735980_2E2CB0A9 
+X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.120 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.221.68 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.68 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -128,62 +87,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-imx@nxp.com" <linux-imx@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Zenghui Yu <yuzenghui@huawei.com>, Alexandru Elisei <alexandru.elisei@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-08-07 at 08:26 +0000, Philippe Schenker wrote:
-> This patch adds the watchdog to the imx6ull-colibri devicetree
-> 
-> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
+On 09/08/19 09:48, Marc Zyngier wrote:
+>   git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git tags/kvmarm-fixes-for-5.3
+>   git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git tags/kvmarm-fixes-for-5.3-2
 
-Acked-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+Pulled both.  Thank you for including the lore link to the 5.3-rc3 pull
+request.
 
-> ---
-> 
-> Changes in v3: None
-> Changes in v2: None
-> 
->  arch/arm/boot/dts/imx6ull-colibri.dtsi | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/imx6ull-colibri.dtsi
-> b/arch/arm/boot/dts/imx6ull-colibri.dtsi
-> index 1f112ec55e5c..e3220298dd6f 100644
-> --- a/arch/arm/boot/dts/imx6ull-colibri.dtsi
-> +++ b/arch/arm/boot/dts/imx6ull-colibri.dtsi
-> @@ -199,6 +199,12 @@
->  	assigned-clock-rates = <0>, <198000000>;
->  };
->  
-> +&wdog1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_wdog>;
-> +	fsl,ext-reset-output;
-> +};
-> +
->  &iomuxc {
->  	pinctrl_can_int: canint-grp {
->  		fsl,pins = <
-> @@ -506,6 +512,12 @@
->  			MX6UL_PAD_GPIO1_IO03__OSC32K_32K_OUT	0x14
->  		>;
->  	};
-> +
-> +	pinctrl_wdog: wdog-grp {
-> +		fsl,pins = <
-> +			MX6UL_PAD_LCD_RESET__WDOG1_WDOG_ANY    0x30b0
-> +		>;
-> +	};
->  };
->  
->  &iomuxc_snvs {
+Paolo
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
