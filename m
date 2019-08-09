@@ -2,66 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BCFC87111
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 06:50:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A94D87162
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 07:20:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=91DWZUiL/qT2kx+Xp6mnD8Aa6vi3M0yyBqJAmAvZ0D0=; b=HcAkpLJdtNP79F
-	ZZBhZ4WCygPiwCqLowRnakTl2dqLEhfvlvD546tJA02Lbubu5kJR0Lw7AEd+PTjc+ICJJo07qiFKp
-	nez+Fup6dTEEE/U6UTBbiEEIOR5Su2Bt7tfx1C+VVEjVFvrSE8L+ia8Kt8NsMDcOP+pbMvAK9p3Wl
-	7mJhgtvdqKju5kafYWuxoXXYbqH83lzLynw8qAeSC515HzMLLRvpHG17S5nDd9xQMdbWpDedYB23d
-	oxe5ES7DMRrqeCFBAaEt+42K9TxOEbUEwphGCNiWFyo5Wye4D7+iUG7DZFzUwsCsbUnqEBd61Sv+h
-	eTJgwBSMzbdNXKmzQHDA==;
+	List-Owner; bh=1xmQ32sAhFN3zlBeHcOs5U/s+aN7xc4TjFL7rN4flnA=; b=KROVNLgrmObEnq
+	F5s1SsO/Ww3f6KKdKxClPN/eUphDfUYVfb52Wxwav70RP852Fea1FpHeJTq6/iMcUx7Ki9IP4KTuG
+	QYaHH3Uh7Me9B1KVHMCt9VCegiepWbKOlAikApz+u0LJxgtdStht5BWVPLbNRVR7G0djwrx91UCz7
+	gVtWTqlj1B+XmUTOJdhtD9rQ1CtHW65DuUex44YHBR39smcoMezhctlwhNqCnhhhocqBphst1gPts
+	29vMJl1CC864amwQpoFKHv+3WsX6m3ElN6HQbq8iRAwQ6VvzbEyrsb0OIpwC6W4jzAjmYBsbEtVZ/
+	7GtU9MWas6cRnTvrUTVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvwrg-00069D-Ts; Fri, 09 Aug 2019 04:50:56 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hvxKX-0006eJ-Kv; Fri, 09 Aug 2019 05:20:45 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvwos-0002hD-P7
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 04:48:05 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1hvwom-00084u-D5; Fri, 09 Aug 2019 06:47:56 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1hvwok-0003u2-3M; Fri, 09 Aug 2019 06:47:54 +0200
-Date: Fri, 9 Aug 2019 06:47:54 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Baruch Siach <baruch@tkos.co.il>
-Subject: Re: [PATCH v2 1/2] arm64: dts: fsl: add support for Hummingboard Pulse
-Message-ID: <20190809044754.r4f4y3hi7rkjbfpa@pengutronix.de>
-References: <48ba74b2dca636f8c0ad1287017193b7eb91a5d1.1565286513.git.baruch@tkos.co.il>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <48ba74b2dca636f8c0ad1287017193b7eb91a5d1.1565286513.git.baruch@tkos.co.il>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 06:23:02 up 83 days, 10:41, 53 users,  load average: 0.01, 0.05, 0.01
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1hvxKN-0006de-GH
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 05:20:36 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 36F741265924B;
+ Thu,  8 Aug 2019 22:20:33 -0700 (PDT)
+Date: Thu, 08 Aug 2019 22:20:32 -0700 (PDT)
+Message-Id: <20190808.222032.1627967838051048066.davem@davemloft.net>
+To: Jose.Abreu@synopsys.com
+Subject: Re: [PATCH net-next v3 00/10] net: stmmac: Improvements for -next
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <cover.1565164729.git.joabreu@synopsys.com>
+References: <cover.1565164729.git.joabreu@synopsys.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Thu, 08 Aug 2019 22:20:33 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_214803_254369_5182CADE 
-X-CRM114-Status: GOOD (  25.81  )
+X-CRM114-CacheID: sfid-20190808_222035_547067_9FD56427 
+X-CRM114-Status: UNSURE (   6.34  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,683 +63,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>, Jon Nettleton <jon@solid-run.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+Cc: Joao.Pinto@synopsys.com, alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jon,
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+Date: Wed,  7 Aug 2019 10:03:08 +0200
 
-On 19-08-08 20:48, Baruch Siach wrote:
-> From: Jon Nettleton <jon@solid-run.com>
+> [ This is just a rebase of v2 into latest -next in order to avoid a merge
+> conflict ]
 > 
-> The SolidRun Hummingboard Pulse carrier board carries the SolidRun
-> i.MX8MQ based SOM.
-> 
-> Notably missing is PCIe support that depends on analog PLLOUT clock.
-> Current imx clk driver does not support this clock.
-> 
-> Signed-off-by: Jon Nettleton <jon@solid-run.com>
-> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
-> ---
-> v2: Address Fabio's comments:
->   - Remove redundant node nesting
->   - Fix comments style
->   - Use mainline DT bindings in UART and USB type C
->   - Fix node names
->   - Move &iomuxc to the end of file
-> ---
->  arch/arm64/boot/dts/freescale/Makefile        |   1 +
->  .../freescale/imx8mq-hummingboard-pulse.dts   | 250 ++++++++++++++
->  .../boot/dts/freescale/imx8mq-sr-som.dtsi     | 307 ++++++++++++++++++
->  3 files changed, 558 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/freescale/imx8mq-hummingboard-pulse.dts
->  create mode 100644 arch/arm64/boot/dts/freescale/imx8mq-sr-som.dtsi
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
-> index c043aca66572..6833b23e2dd2 100644
-> --- a/arch/arm64/boot/dts/freescale/Makefile
-> +++ b/arch/arm64/boot/dts/freescale/Makefile
-> @@ -22,6 +22,7 @@ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-lx2160a-rdb.dtb
->  
->  dtb-$(CONFIG_ARCH_MXC) += imx8mm-evk.dtb
->  dtb-$(CONFIG_ARCH_MXC) += imx8mq-evk.dtb
-> +dtb-$(CONFIG_ARCH_MXC) += imx8mq-hummingboard-pulse.dtb
->  dtb-$(CONFIG_ARCH_MXC) += imx8mq-librem5-devkit.dtb
->  dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-rmb3.dtb
->  dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-zest.dtb
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-hummingboard-pulse.dts b/arch/arm64/boot/dts/freescale/imx8mq-hummingboard-pulse.dts
-> new file mode 100644
-> index 000000000000..cbe307abce7a
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq-hummingboard-pulse.dts
-> @@ -0,0 +1,250 @@
-> +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-> +/*
-> + * Copyright (C) 2018 Jon Nettleton <jon@solid-run.com>
-> + */
-> +
-> +/dts-v1/;
-> +
-> +#include "dt-bindings/usb/pd.h"
-> +#include "imx8mq.dtsi"
+> Couple of improvements for -next tree. More info in commit logs.
 
-This one should be moved to the 'imx8mq-sr-som.dtsi'.
-
-> +#include "imx8mq-sr-som.dtsi"
-> +
-> +/ {
-> +	model = "SolidRun i.MX8MQ HummingBoard Pulse";
-> +	compatible = "solidrun,hummingboard-pulse", "fsl,imx8mq";
-> +
-> +	chosen {
-> +		stdout-path = &uart1;
-> +	};
-
-Do we need that node? In case of barebox this is only relevant to the
-barebox dts.
-
-> +
-> +	reg_usdhc2_vmmc: regulator-usdhc2-vmmc {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VSD_3V3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +		gpio = <&gpio2 19 GPIO_ACTIVE_HIGH>;
-
-Missing pinctrl?
-
-> +		enable-active-high;
-> +	};
-> +
-> +	v_5v0: regulator-v-5v0 {
-
-Missing reg_ suffix? However it seems that this phandle isn't used
-nowhere.
-
-> +		compatible = "regulator-fixed";
-> +		regulator-always-on;
-> +		regulator-max-microvolt = <5000000>;
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-name = "v_5v0";
-
-Can you reorder the name property to the order used within
-regulator-usdhc2-vmmc. It's just a nitpick.
-
-> +	};
-> +};
-> +
-> +&i2c2 {
-> +	clock-frequency = <100000>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_i2c2>;
-
-Usually the pinctrl properties comes first.
-
-> +	status = "okay";
-> +
-> +	typec_ptn5100: usb-typec@50 {
-> +		compatible = "nxp,ptn5110";
-> +		reg = <0x50>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&pinctrl_typec>;
-> +		interrupt-parent = <&gpio1>;
-> +		interrupts = <6 IRQ_TYPE_LEVEL_LOW>;
-> +
-> +		connector {
-> +			compatible = "usb-c-connector";
-> +			label = "USB-C";
-> +			data-role = "dual";
-> +			power-role = "dual";
-> +			try-power-role = "sink";
-> +			source-pdos = <PDO_FIXED(5000, 2000,
-> +				PDO_FIXED_USB_COMM |
-> +				PDO_FIXED_SUSPEND |
-> +				PDO_FIXED_EXTPOWER)>;
-> +			sink-pdos = <PDO_FIXED(5000, 2000,
-> +					PDO_FIXED_USB_COMM |
-> +					PDO_FIXED_SUSPEND |
-> +					PDO_FIXED_EXTPOWER)
-> +				PDO_FIXED(9000, 2000,
-> +					PDO_FIXED_USB_COMM |
-> +					PDO_FIXED_SUSPEND |
-> +					PDO_FIXED_EXTPOWER)>;
-> +			op-sink-microwatt = <9000000>;
-> +
-> +			port {
-> +				typec1_dr_sw: endpoint {
-> +					remote-endpoint = <&usb1_drd_sw>;
-> +				};
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&i2c3 {
-> +	clock-frequency = <100000>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_i2c3>;
-
-Same here.
-
-> +	status = "okay";
-> +
-> +	rtc@69 {
-> +		compatible = "abracon,ab1805";
-> +		reg = <0x69>;
-> +		abracon,tc-diode = "schottky";
-> +		abracon,tc-resistor = <3>;
-> +	};
-> +};
-> +
-> +&uart2 { /* J35 header */
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_uart2>;
-> +	assigned-clocks = <&clk IMX8MQ_CLK_UART2>;
-> +	assigned-clock-parents = <&clk IMX8MQ_CLK_25M>;
-> +	status = "okay";
-> +};
-> +
-> +&uart3 { /* Mikrobus */
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_uart3>;
-> +	assigned-clocks = <&clk IMX8MQ_CLK_UART3>;
-> +	assigned-clock-parents = <&clk IMX8MQ_SYS1_PLL_80M>;
-> +	uart-has-rtscts;
-> +	status = "okay";
-> +};
-> +
-> +&usdhc2 {
-> +	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-> +	pinctrl-0 = <&pinctrl_usdhc2>, <&pinctrl_usdhc2_gpio>;
-> +	pinctrl-1 = <&pinctrl_usdhc2_100mhz>, <&pinctrl_usdhc2_gpio>;
-> +	pinctrl-2 = <&pinctrl_usdhc2_200mhz>, <&pinctrl_usdhc2_gpio>;
-> +	cd-gpios = <&gpio2 12 GPIO_ACTIVE_LOW>;
-> +	vmmc-supply = <&reg_usdhc2_vmmc>;
-> +	status = "okay";
-> +};
-> +
-> +&usb_dwc3_0 {
-> +	status = "okay";
-> +	dr_mode = "otg";
-> +
-> +	port {
-> +		usb1_drd_sw: endpoint {
-> +			remote-endpoint = <&typec1_dr_sw>;
-> +		};
-> +	};
-> +};
-> +
-> +&usb_dwc3_1 {
-> +	status = "okay";
-> +	dr_mode = "host";
-> +};
-> +
-> +&usb3_phy0 {
-> +	status = "okay";
-> +};
-> +
-> +&usb3_phy1 {
-> +	status = "okay";
-> +};
-> +
-> +&iomuxc {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_hog>;
-> +
-> +	pinctrl_hog: hoggrp {
-> +		fsl,pins = <
-> +			/* MikroBus Analog */
-> +			MX8MQ_IOMUXC_NAND_DATA05_GPIO3_IO11		0x41
-> +			/* MikroBus Reset */
-> +			MX8MQ_IOMUXC_SAI2_RXD0_GPIO4_IO23		0x41
-> +			/*
-> +			 * The following 2 pins need to be commented out and
-> +			 * reconfigured to enable RTS/CTS on UART3
-> +			 */
-> +			/* MikroBus PWM */
-> +			MX8MQ_IOMUXC_ECSPI1_MISO_GPIO5_IO8		0x41
-> +			/* MikroBus INT */
-> +			MX8MQ_IOMUXC_ECSPI1_SS0_GPIO5_IO9		0x41
-> +		>;
-> +	};
-
-Sorry for asking but whats a MikroBus?
-
-> +
-> +	pinctrl_i2c2: i2c2grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_I2C2_SCL_I2C2_SCL		0x4000007f
-> +			MX8MQ_IOMUXC_I2C2_SDA_I2C2_SDA		0x4000007f
-> +		>;
-> +	};
-> +
-> +	pinctrl_i2c3: i2c3grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_I2C3_SCL_I2C3_SCL		0x4000007f
-> +			MX8MQ_IOMUXC_I2C3_SDA_I2C3_SDA		0x4000007f
-> +		>;
-> +	};
-> +
-> +	pinctrl_typec: typecgrp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_NAND_RE_B_GPIO3_IO15	0x16
-> +			MX8MQ_IOMUXC_GPIO1_IO06_GPIO1_IO6	0x17059
-> +		>;
-> +	};
-> +
-> +	pinctrl_uart2: uart2grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_UART2_TXD_UART2_DCE_TX		0x49
-> +			MX8MQ_IOMUXC_UART2_RXD_UART2_DCE_RX		0x49
-> +		>;
-> +	};
-> +
-> +	pinctrl_uart3: uart3grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_UART3_TXD_UART3_DCE_TX		0x49
-> +			MX8MQ_IOMUXC_UART3_RXD_UART3_DCE_RX		0x49
-> +			/*
-> +			 * These pins are by default GPIO on the Mikro Bus
-> +			 * Header. To use RTS/CTS on UART3 comment them out
-> +			 * of the hoggrp and enable them here
-> +			 */
-> +			/* MX8MQ_IOMUXC_ECSPI1_MISO_UART3_DCE_CTS_B	0x49 */
-> +			/* MX8MQ_IOMUXC_ECSPI1_SS0_UART3_DCE_RTS_B	0x49 */
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc2_gpio: usdhc2grpgpio {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_SD2_CD_B_GPIO2_IO12	0x41
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc2: usdhc2grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_SD2_CLK_USDHC2_CLK			0x83
-> +			MX8MQ_IOMUXC_SD2_CMD_USDHC2_CMD			0xc3
-> +			MX8MQ_IOMUXC_SD2_DATA0_USDHC2_DATA0		0xc3
-> +			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1		0xc3
-> +			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2		0xc3
-> +			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3		0xc3
-> +			MX8MQ_IOMUXC_GPIO1_IO04_USDHC2_VSELECT		0xc1
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc2_100mhz: usdhc2grp100mhz {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_SD2_CLK_USDHC2_CLK			0x8d
-> +			MX8MQ_IOMUXC_SD2_CMD_USDHC2_CMD			0xcd
-> +			MX8MQ_IOMUXC_SD2_DATA0_USDHC2_DATA0		0xcd
-> +			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1		0xcd
-> +			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2		0xcd
-> +			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3		0xcd
-> +			MX8MQ_IOMUXC_GPIO1_IO04_USDHC2_VSELECT		0xc1
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc2_200mhz: usdhc2grp200mhz {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_SD2_CLK_USDHC2_CLK			0x9f
-> +			MX8MQ_IOMUXC_SD2_CMD_USDHC2_CMD			0xdf
-> +			MX8MQ_IOMUXC_SD2_DATA0_USDHC2_DATA0		0xdf
-> +			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1		0xdf
-> +			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2		0xdf
-> +			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3		0xdf
-> +			MX8MQ_IOMUXC_GPIO1_IO04_USDHC2_VSELECT		0xc1
-> +		>;
-> +	};
-> +};
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-sr-som.dtsi b/arch/arm64/boot/dts/freescale/imx8mq-sr-som.dtsi
-> new file mode 100644
-> index 000000000000..51afa0be54a7
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq-sr-som.dtsi
-> @@ -0,0 +1,307 @@
-> +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-> +/*
-> + * Copyright (C) 2018 Jon Nettleton <jon@solid-run.com>
-> + */
-> +
-> +/ {
-> +	vdd_3v3: regulator-vdd-3v3 {
-
-Missing reg_ suffix. Anyway the phandle seems to be not used nowhere.
-
-> +		compatible = "regulator-fixed";
-> +		regulator-always-on;
-> +		regulator-name = "vdd_3v3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +	};
-> +};
-> +
-> +&pgc_gpu{
-> +	power-supply = <&sw1a_reg>;
-> +};
-
-Alphabetical reordering please.
-
-> +
-> +&fec1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_fec1>;
-> +	phy-mode = "rgmii-id";
-> +	phy-handle = <&ethphy0>;
-> +	phy-reset-gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
-> +	phy-reset-duration = <2>;
-> +	fsl,magic-packet;
-> +	status = "okay";
-> +
-> +	mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		ethphy0: ethernet-phy@4 {
-> +			compatible = "ethernet-phy-ieee802.3-c22";
-> +			reg = <4>;
-> +		};
-> +	};
-> +};
-> +
-> +&i2c1 {
-> +	clock-frequency = <400000>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_i2c1>;
-
-Same here.
-
-> +	status = "okay";
-> +
-> +	pmic: pmic@8 {
-> +		compatible = "fsl,pfuze100";
-> +		reg = <0x08>;
-> +
-> +		regulators {
-> +			sw1a_reg: sw1ab {
-> +				regulator-min-microvolt = <300000>;
-> +				regulator-max-microvolt = <1875000>;
-> +			};
-> +
-> +			sw1c_reg: sw1c {
-> +				regulator-min-microvolt = <300000>;
-> +				regulator-max-microvolt = <1875000>;
-> +			};
-> +
-> +			sw2_reg: sw2 {
-> +				regulator-min-microvolt = <800000>;
-> +				regulator-max-microvolt = <3300000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			sw3a_reg: sw3ab {
-> +				regulator-min-microvolt = <400000>;
-> +				regulator-max-microvolt = <1975000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			sw4_reg: sw4 {
-> +				regulator-min-microvolt = <800000>;
-> +				regulator-max-microvolt = <3300000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			swbst_reg: swbst {
-> +				regulator-min-microvolt = <5000000>;
-> +				regulator-max-microvolt = <5150000>;
-> +			};
-> +
-> +			snvs_reg: vsnvs {
-> +				regulator-min-microvolt = <1000000>;
-> +				regulator-max-microvolt = <3000000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			vref_reg: vrefddr {
-> +				regulator-always-on;
-> +			};
-> +
-> +			vgen1_reg: vgen1 {
-> +				regulator-min-microvolt = <800000>;
-> +				regulator-max-microvolt = <1550000>;
-> +			};
-> +
-> +			vgen2_reg: vgen2 {
-> +				regulator-min-microvolt = <800000>;
-> +				regulator-max-microvolt = <1550000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			vgen3_reg: vgen3 {
-> +				regulator-min-microvolt = <1800000>;
-> +				regulator-max-microvolt = <3300000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			vgen4_reg: vgen4 {
-> +				regulator-min-microvolt = <1800000>;
-> +				regulator-max-microvolt = <3300000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			vgen5_reg: vgen5 {
-> +				regulator-min-microvolt = <1800000>;
-> +				regulator-max-microvolt = <3300000>;
-> +				regulator-always-on;
-> +			};
-> +
-> +			vgen6_reg: vgen6 {
-> +				regulator-min-microvolt = <1800000>;
-> +				regulator-max-microvolt = <3300000>;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&qspi0 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_qspi>;
-> +	status = "okay";
-> +
-> +	/* SPI flash; not assembled by default */
-> +	flash@0 {
-
-If someone uses the flash option they want to enable it within there
-"not upstream" DT. So we should add a phandle here.
-
-> +		#address-cells = <1>;
-> +		#size-cells = <1>;
-> +		reg = <0>;
-> +		compatible = "micron,n25q256a", "jedec,spi-nor";
-> +		spi-max-frequency = <29000000>;
-> +		status = "disabled";
-> +	};
-> +};
-> +
-> +&uart1 { /* console */
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_uart1>;
-> +	assigned-clocks = <&clk IMX8MQ_CLK_UART1>;
-> +	assigned-clock-parents = <&clk IMX8MQ_CLK_25M>;
-> +	assigned-clock-rates = <25000000>;
-
-It seems that the clock parent reordering apply always if someone is
-using this SoM. So should we do the reordering also for uart2/3 here?
-
-Regards,
-  Marco
-
-> +	status = "okay";
-> +};
-> +
-> +&uart4 { /* ublox BT */
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_uart4>;
-> +	assigned-clocks = <&clk IMX8MQ_CLK_UART4>;
-> +	assigned-clock-parents = <&clk IMX8MQ_SYS1_PLL_80M>;
-> +	assigned-clock-rates = <80000000>;
-> +	status = "okay";
-> +};
-> +
-> +&usdhc1 {
-> +	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-> +	pinctrl-0 = <&pinctrl_usdhc1>;
-> +	pinctrl-1 = <&pinctrl_usdhc1_100mhz>;
-> +	pinctrl-2 = <&pinctrl_usdhc1_200mhz>;
-> +	bus-width = <8>;
-> +	non-removable;
-> +	status = "okay";
-> +};
-> +
-> +&pgc_vpu {
-> +	power-supply = <&sw1c_reg>;
-> +};
-> +
-> +&wdog1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_wdog>;
-> +	fsl,ext-reset-output;
-> +	status = "okay";
-> +};
-> +
-> +&iomuxc {
-> +	pinctrl_fec1: fec1grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_ENET_MDC_ENET1_MDC		0x3
-> +			MX8MQ_IOMUXC_ENET_MDIO_ENET1_MDIO	0x23
-> +			MX8MQ_IOMUXC_ENET_TD3_ENET1_RGMII_TD3	0x1f
-> +			MX8MQ_IOMUXC_ENET_TD2_ENET1_RGMII_TD2	0x1f
-> +			MX8MQ_IOMUXC_ENET_TD1_ENET1_RGMII_TD1	0x1f
-> +			MX8MQ_IOMUXC_ENET_TD0_ENET1_RGMII_TD0	0x1f
-> +			MX8MQ_IOMUXC_ENET_RD3_ENET1_RGMII_RD3	0x91
-> +			MX8MQ_IOMUXC_ENET_RD2_ENET1_RGMII_RD2	0x91
-> +			MX8MQ_IOMUXC_ENET_RD1_ENET1_RGMII_RD1	0x91
-> +			MX8MQ_IOMUXC_ENET_RD0_ENET1_RGMII_RD0	0x91
-> +			MX8MQ_IOMUXC_ENET_TXC_ENET1_RGMII_TXC	0x1f
-> +			MX8MQ_IOMUXC_ENET_RXC_ENET1_RGMII_RXC	0x91
-> +			MX8MQ_IOMUXC_ENET_RX_CTL_ENET1_RGMII_RX_CTL	0x91
-> +			MX8MQ_IOMUXC_ENET_TX_CTL_ENET1_RGMII_TX_CTL	0x1f
-> +			MX8MQ_IOMUXC_GPIO1_IO09_GPIO1_IO9	0x19
-> +		>;
-> +	};
-> +
-> +	pinctrl_i2c1: i2c1grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_I2C1_SCL_I2C1_SCL			0x4000007f
-> +			MX8MQ_IOMUXC_I2C1_SDA_I2C1_SDA			0x4000007f
-> +		>;
-> +	};
-> +
-> +	pinctrl_pcie0: pcie0grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_I2C4_SCL_PCIE1_CLKREQ_B	0x74
-> +			MX8MQ_IOMUXC_SPDIF_EXT_CLK_GPIO5_IO5	0x16
-> +			MX8MQ_IOMUXC_SAI2_RXFS_GPIO4_IO21	0x16
-> +		>;
-> +	};
-> +
-> +	pinctrl_qspi: qspigrp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_NAND_ALE_QSPI_A_SCLK	0x82
-> +			MX8MQ_IOMUXC_NAND_CE0_B_QSPI_A_SS0_B	0x82
-> +			MX8MQ_IOMUXC_NAND_DATA00_QSPI_A_DATA0	0x82
-> +			MX8MQ_IOMUXC_NAND_DATA01_QSPI_A_DATA1	0x82
-> +			MX8MQ_IOMUXC_NAND_DATA02_QSPI_A_DATA2	0x82
-> +			MX8MQ_IOMUXC_NAND_DATA03_QSPI_A_DATA3	0x82
-> +
-> +		>;
-> +	};
-> +
-> +	pinctrl_uart1: uart1grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_UART1_RXD_UART1_DCE_RX		0x49
-> +			MX8MQ_IOMUXC_UART1_TXD_UART1_DCE_TX		0x49
-> +			MX8MQ_IOMUXC_NAND_CE1_B_GPIO3_IO2		0x19
-> +		>;
-> +	};
-> +
-> +	pinctrl_uart4: uart4grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_UART4_TXD_UART4_DCE_TX		0x49
-> +			MX8MQ_IOMUXC_UART4_RXD_UART4_DCE_RX		0x49
-> +			MX8MQ_IOMUXC_SAI3_TXD_GPIO5_IO1			0x19
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc1: usdhc1grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x83
-> +			MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xc3
-> +			MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xc3
-> +			MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xc3
-> +			MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xc3
-> +			MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xc3
-> +			MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xc3
-> +			MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xc3
-> +			MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xc3
-> +			MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xc3
-> +			MX8MQ_IOMUXC_SD1_STROBE_USDHC1_STROBE		0x83
-> +			MX8MQ_IOMUXC_SD1_RESET_B_USDHC1_RESET_B		0xc1
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc1_100mhz: usdhc1grp100mhz {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x8d
-> +			MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xcd
-> +			MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xcd
-> +			MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xcd
-> +			MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xcd
-> +			MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xcd
-> +			MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xcd
-> +			MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xcd
-> +			MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xcd
-> +			MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xcd
-> +			MX8MQ_IOMUXC_SD1_STROBE_USDHC1_STROBE		0x8d
-> +			MX8MQ_IOMUXC_SD1_RESET_B_USDHC1_RESET_B		0xc1
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc1_200mhz: usdhc1grp200mhz {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x9f
-> +			MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xdf
-> +			MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xdf
-> +			MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xdf
-> +			MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xdf
-> +			MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xdf
-> +			MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xdf
-> +			MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xdf
-> +			MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xdf
-> +			MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xdf
-> +			MX8MQ_IOMUXC_SD1_STROBE_USDHC1_STROBE		0x9f
-> +			MX8MQ_IOMUXC_SD1_RESET_B_USDHC1_RESET_B		0xc1
-> +		>;
-> +	};
-> +
-> +	pinctrl_wdog: wdoggrp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_GPIO1_IO02_WDOG1_WDOG_B 0xc6
-> +		>;
-> +	};
-> +};
-> -- 
-> 2.20.1
-> 
-> 
-> 
-
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Series applied, thank you.
 
 _______________________________________________
 linux-arm-kernel mailing list
