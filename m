@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7723D880F2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 19:10:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29898880F8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 19:11:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TNe8/Qo487R9qpLGqtS3+nMa7JeGzgl2mBV6XUG64Hw=; b=Lu+04SdORVTKYG
-	MkPIOfpNr1bRV9c7pTs44lUFF2yPEnm9QvsapUMnSAfLDnL1AJwnVsk0j1VUIMXz4onMGRdr0s5/A
-	8Q1F244bpvs9f2TgtqrMniNfx0AtGQ2ZrwEUMGhdo2JkaddEKJxRTam2GiaZiZZn6bjlbyNBGVRg8
-	baGsy3auB2KVgLXlCcTvYlk6rRNcTHKMJuaeQQbLjlJ/sQp1qg3Gt/m9KUCf4JH+5dwjJSyD6lL+7
-	AMg5L1TduDlx3nuzHXj8VMZ7a2cTou5M2+7O78PyVxWi5/JXCz+/S3LrqXZDOqxyHKzCAVhBkNImU
-	JvrED94Vsm6P0OpQSWCA==;
+	List-Owner; bh=za19P0yzTiqD0ZQBrfHpIYWAvfA61J/+Deh+mDR9OMw=; b=TW5Wwc5kVqJNgU
+	jaRyDuxvK5PLXM+HDfScQUfTOzrUcMczV0zywvH03qW1CYfR6Moa6IonfaF5Sdnfyq/4eR0/Wg3iV
+	53UihYyTTABVOSECzYkvupCDQkyFhTYX0J+L4lwm/SsdF6CfRXD+seRO4DQs/wTPJrhd7e7SHsyZf
+	eLl+d6aWhB52I5pOodgi8JY/BvrdmamgnJjuwOUhiuEcL1E6ztKo0J75TIqZBsQUh8WPq1uro+Uft
+	edmhrITf+2WL5x+FmInRmw0gWniP9/5tNdpfjsNL2weJ9elfR6TvXjhIDWNA815QBuqYXZMGEYVHL
+	vO4hupzwvQPolZR7tvWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw8Pg-0004xU-W1; Fri, 09 Aug 2019 17:10:49 +0000
+	id 1hw8QI-0005my-QV; Fri, 09 Aug 2019 17:11:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw8NR-00012k-3U
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 17:08:31 +0000
+ id 1hw8NU-0001Pe-MY
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 17:08:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F302C15AB;
- Fri,  9 Aug 2019 10:08:28 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 718861684;
+ Fri,  9 Aug 2019 10:08:30 -0700 (PDT)
 Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
  [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id BAD263F575;
- Fri,  9 Aug 2019 10:08:27 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3454F3F575;
+ Fri,  9 Aug 2019 10:08:29 -0700 (PDT)
 From: Robin Murphy <robin.murphy@arm.com>
 To: will@kernel.org
-Subject: [PATCH 11/15] iommu/arm-smmu: Add implementation infrastructure
-Date: Fri,  9 Aug 2019 18:07:48 +0100
-Message-Id: <674135e64e1ec95e40d4048f59a2c26022f15077.1565369764.git.robin.murphy@arm.com>
+Subject: [PATCH 12/15] iommu/arm-smmu: Move Secure access quirk to
+ implementation
+Date: Fri,  9 Aug 2019 18:07:49 +0100
+Message-Id: <6c16c65e43bf583d082c8b29d6dd7dbb3dc642bc.1565369764.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.21.0.dirty
 In-Reply-To: <cover.1565369764.git.robin.murphy@arm.com>
 References: <cover.1565369764.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_100829_361975_9A783A11 
-X-CRM114-Status: GOOD (  19.06  )
+X-CRM114-CacheID: sfid-20190809_100833_082150_FC173760 
+X-CRM114-Status: GOOD (  17.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,309 +69,279 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add some nascent infrastructure for handling implementation-specific
-details outside the flow of the architectural code. This will allow us
-to keep mutually-incompatible vendor-specific hooks in their own files
-where the respective interested parties can maintain them with minimal
-chance of conflicts. As somewhat of a template, we'll start with a
-general place to collect the relatively trivial existing quirks.
+Move detection of the Secure access quirk to its new home, trimming it
+down in the process - time has proven that boolean DT flags are neither
+ideal nor necessarily sufficient, so it's highly unlikely we'll ever add
+more, let alone enough to justify the frankly overengineered parsing
+machinery.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- MAINTAINERS                   |  3 +-
- drivers/iommu/Makefile        |  2 +-
- drivers/iommu/arm-smmu-impl.c | 13 +++++
- drivers/iommu/arm-smmu.c      | 82 ++------------------------------
- drivers/iommu/arm-smmu.h      | 89 +++++++++++++++++++++++++++++++++++
- 5 files changed, 108 insertions(+), 81 deletions(-)
- create mode 100644 drivers/iommu/arm-smmu-impl.c
+ drivers/iommu/arm-smmu-impl.c | 44 +++++++++++++++++
+ drivers/iommu/arm-smmu.c      | 89 -----------------------------------
+ drivers/iommu/arm-smmu.h      | 64 ++++++++++++++++++++++++-
+ 3 files changed, 106 insertions(+), 91 deletions(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 6426db5198f0..35ff49ac303b 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1350,8 +1350,7 @@ M:	Will Deacon <will@kernel.org>
- R:	Robin Murphy <robin.murphy@arm.com>
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- S:	Maintained
--F:	drivers/iommu/arm-smmu.c
--F:	drivers/iommu/arm-smmu-v3.c
-+F:	drivers/iommu/arm-smmu*
- F:	drivers/iommu/io-pgtable-arm.c
- F:	drivers/iommu/io-pgtable-arm-v7s.c
- 
-diff --git a/drivers/iommu/Makefile b/drivers/iommu/Makefile
-index f13f36ae1af6..a2729aadd300 100644
---- a/drivers/iommu/Makefile
-+++ b/drivers/iommu/Makefile
-@@ -13,7 +13,7 @@ obj-$(CONFIG_MSM_IOMMU) += msm_iommu.o
- obj-$(CONFIG_AMD_IOMMU) += amd_iommu.o amd_iommu_init.o
- obj-$(CONFIG_AMD_IOMMU_DEBUGFS) += amd_iommu_debugfs.o
- obj-$(CONFIG_AMD_IOMMU_V2) += amd_iommu_v2.o
--obj-$(CONFIG_ARM_SMMU) += arm-smmu.o
-+obj-$(CONFIG_ARM_SMMU) += arm-smmu.o arm-smmu-impl.o
- obj-$(CONFIG_ARM_SMMU_V3) += arm-smmu-v3.o
- obj-$(CONFIG_DMAR_TABLE) += dmar.o
- obj-$(CONFIG_INTEL_IOMMU) += intel-iommu.o intel-pasid.o
 diff --git a/drivers/iommu/arm-smmu-impl.c b/drivers/iommu/arm-smmu-impl.c
-new file mode 100644
-index 000000000000..efeb6d78da17
---- /dev/null
+index efeb6d78da17..f8b8895e1bbe 100644
+--- a/drivers/iommu/arm-smmu-impl.c
 +++ b/drivers/iommu/arm-smmu-impl.c
-@@ -0,0 +1,13 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+// Miscellaneous Arm SMMU implementation and integration quirks
-+// Copyright (C) 2019 Arm Limited
+@@ -4,10 +4,54 @@
+ 
+ #define pr_fmt(fmt) "arm-smmu: " fmt
+ 
++#include <linux/of.h>
 +
-+#define pr_fmt(fmt) "arm-smmu: " fmt
-+
-+#include "arm-smmu.h"
-+
-+
-+struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
+ #include "arm-smmu.h"
+ 
+ 
++static int arm_smmu_gr0_ns(int offset)
 +{
-+	return smmu;
++	switch(offset) {
++	case ARM_SMMU_GR0_sCR0:
++	case ARM_SMMU_GR0_sACR:
++	case ARM_SMMU_GR0_sGFSR:
++	case ARM_SMMU_GR0_sGFSYNR0:
++	case ARM_SMMU_GR0_sGFSYNR1:
++	case ARM_SMMU_GR0_sGFSYNR2:
++		return offset + 0x400;
++	default:
++		return offset;
++	}
 +}
++
++static u32 arm_smmu_read_ns(struct arm_smmu_device *smmu, int page,
++			    int offset)
++{
++	if (page == 0)
++		offset = arm_smmu_gr0_ns(offset);
++	return readl_relaxed(arm_smmu_page(smmu, page) + offset);
++}
++
++static void arm_smmu_write_ns(struct arm_smmu_device *smmu, int page,
++			      int offset, u32 val)
++{
++	if (page == 0)
++		offset = arm_smmu_gr0_ns(offset);
++	writel_relaxed(val, arm_smmu_page(smmu, page) + offset);
++}
++
++/* Since we don't care for sGFAR, we can do without 64-bit accessors */
++const struct arm_smmu_impl calxeda_impl = {
++	.read_reg = arm_smmu_read_ns,
++	.write_reg = arm_smmu_write_ns,
++};
++
++
+ struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
+ {
++	if (of_property_read_bool(smmu->dev->of_node,
++				  "calxeda,smmu-secure-config-access"))
++		smmu->impl = &calxeda_impl;
++
+ 	return smmu;
+ }
 diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index 09e2e71355d5..86e11141a0bb 100644
+index 86e11141a0bb..03159a1da4c9 100644
 --- a/drivers/iommu/arm-smmu.c
 +++ b/drivers/iommu/arm-smmu.c
-@@ -19,7 +19,6 @@
+@@ -155,83 +155,10 @@ struct arm_smmu_domain {
+ 	struct iommu_domain		domain;
+ };
  
- #include <linux/acpi.h>
- #include <linux/acpi_iort.h>
--#include <linux/atomic.h>
- #include <linux/bitfield.h>
- #include <linux/delay.h>
- #include <linux/dma-iommu.h>
-@@ -29,7 +28,6 @@
- #include <linux/io.h>
- #include <linux/io-64-nonatomic-hi-lo.h>
- #include <linux/io-pgtable.h>
--#include <linux/iommu.h>
- #include <linux/iopoll.h>
- #include <linux/init.h>
- #include <linux/moduleparam.h>
-@@ -41,7 +39,6 @@
- #include <linux/platform_device.h>
- #include <linux/pm_runtime.h>
- #include <linux/slab.h>
--#include <linux/spinlock.h>
- 
- #include <linux/amba/bus.h>
- #include <linux/fsl/mc.h>
-@@ -66,9 +63,6 @@
- #define TLB_LOOP_TIMEOUT		1000000	/* 1s! */
- #define TLB_SPIN_COUNT			10
- 
--/* Maximum number of context banks per SMMU */
--#define ARM_SMMU_MAX_CBS		128
+-static int arm_smmu_gr0_ns(int offset)
+-{
+-	switch(offset) {
+-	case ARM_SMMU_GR0_sCR0:
+-	case ARM_SMMU_GR0_sACR:
+-	case ARM_SMMU_GR0_sGFSR:
+-	case ARM_SMMU_GR0_sGFSYNR0:
+-	case ARM_SMMU_GR0_sGFSYNR1:
+-	case ARM_SMMU_GR0_sGFSYNR2:
+-		return offset + 0x400;
+-	default:
+-		return offset;
+-	}
+-}
 -
- #define MSI_IOVA_BASE			0x8000000
- #define MSI_IOVA_LENGTH			0x100000
- 
-@@ -86,19 +80,6 @@ module_param(disable_bypass, bool, S_IRUGO);
- MODULE_PARM_DESC(disable_bypass,
- 	"Disable bypass streams such that incoming transactions from devices that are not attached to an iommu domain will report an abort back to the device and will not be allowed to pass through the SMMU.");
- 
--enum arm_smmu_arch_version {
--	ARM_SMMU_V1,
--	ARM_SMMU_V1_64K,
--	ARM_SMMU_V2,
+-static void __iomem *arm_smmu_page(struct arm_smmu_device *smmu, int n)
+-{
+-	return smmu->base + (n << smmu->pgshift);
+-}
+-
+-static u32 arm_smmu_readl(struct arm_smmu_device *smmu, int page, int offset)
+-{
+-	if ((smmu->options & ARM_SMMU_OPT_SECURE_CFG_ACCESS) && page == 0)
+-		offset = arm_smmu_gr0_ns(offset);
+-
+-	return readl_relaxed(arm_smmu_page(smmu, page) + offset);
+-}
+-
+-static void arm_smmu_writel(struct arm_smmu_device *smmu, int page, int offset,
+-			    u32 val)
+-{
+-	if ((smmu->options & ARM_SMMU_OPT_SECURE_CFG_ACCESS) && page == 0)
+-		offset = arm_smmu_gr0_ns(offset);
+-
+-	writel_relaxed(val, arm_smmu_page(smmu, page) + offset);
+-}
+-
+-static u64 arm_smmu_readq(struct arm_smmu_device *smmu, int page, int offset)
+-{
+-	return readq_relaxed(arm_smmu_page(smmu, page) + offset);
+-}
+-
+-static void arm_smmu_writeq(struct arm_smmu_device *smmu, int page, int offset,
+-			    u64 val)
+-{
+-	writeq_relaxed(val, arm_smmu_page(smmu, page) + offset);
+-}
+-
+-#define arm_smmu_read_gr0(s, r)		arm_smmu_readl((s), 0, (r))
+-#define arm_smmu_write_gr0(s, r, v)	arm_smmu_writel((s), 0, (r), (v))
+-
+-#define arm_smmu_read_gr1(s, r)		arm_smmu_readl((s), 1, (r))
+-#define arm_smmu_write_gr1(s, r, v)	arm_smmu_writel((s), 1, (r), (v))
+-
+-#define arm_smmu_read_cb(s, n, r)				\
+-	arm_smmu_readl((s), (s)->cb_base + (n), (r))
+-#define arm_smmu_write_cb(s, n, r, v)				\
+-	arm_smmu_writel((s), (s)->cb_base + (n), (r), (v))
+-#define arm_smmu_read_cb_q(s, n, r)				\
+-	arm_smmu_readq((s), (s)->cb_base + (n), (r))
+-#define arm_smmu_write_cb_q(s, n, r, v)				\
+-	arm_smmu_writeq((s), (s)->cb_base + (n), (r), (v))
+-
+-struct arm_smmu_option_prop {
+-	u32 opt;
+-	const char *prop;
 -};
 -
--enum arm_smmu_implementation {
--	GENERIC_SMMU,
--	ARM_MMU500,
--	CAVIUM_SMMUV2,
--	QCOM_SMMUV2,
+ static atomic_t cavium_smmu_context_count = ATOMIC_INIT(0);
+ 
+ static bool using_legacy_binding, using_generic_binding;
+ 
+-static struct arm_smmu_option_prop arm_smmu_options[] = {
+-	{ ARM_SMMU_OPT_SECURE_CFG_ACCESS, "calxeda,smmu-secure-config-access" },
+-	{ 0, NULL},
 -};
 -
- struct arm_smmu_s2cr {
- 	struct iommu_group		*group;
- 	int				count;
-@@ -136,65 +117,6 @@ struct arm_smmu_master_cfg {
- #define for_each_cfg_sme(fw, i, idx) \
- 	for (i = 0; idx = fwspec_smendx(fw, i), i < fw->num_ids; ++i)
+ static inline int arm_smmu_rpm_get(struct arm_smmu_device *smmu)
+ {
+ 	if (pm_runtime_enabled(smmu->dev))
+@@ -251,20 +178,6 @@ static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
+ 	return container_of(dom, struct arm_smmu_domain, domain);
+ }
  
--struct arm_smmu_device {
--	struct device			*dev;
+-static void parse_driver_options(struct arm_smmu_device *smmu)
+-{
+-	int i = 0;
 -
--	void __iomem			*base;
--	unsigned int			cb_base;
--	unsigned int			pgshift;
+-	do {
+-		if (of_property_read_bool(smmu->dev->of_node,
+-						arm_smmu_options[i].prop)) {
+-			smmu->options |= arm_smmu_options[i].opt;
+-			dev_notice(smmu->dev, "option %s\n",
+-				arm_smmu_options[i].prop);
+-		}
+-	} while (arm_smmu_options[++i].opt);
+-}
 -
--#define ARM_SMMU_FEAT_COHERENT_WALK	(1 << 0)
--#define ARM_SMMU_FEAT_STREAM_MATCH	(1 << 1)
--#define ARM_SMMU_FEAT_TRANS_S1		(1 << 2)
--#define ARM_SMMU_FEAT_TRANS_S2		(1 << 3)
--#define ARM_SMMU_FEAT_TRANS_NESTED	(1 << 4)
--#define ARM_SMMU_FEAT_TRANS_OPS		(1 << 5)
--#define ARM_SMMU_FEAT_VMID16		(1 << 6)
--#define ARM_SMMU_FEAT_FMT_AARCH64_4K	(1 << 7)
--#define ARM_SMMU_FEAT_FMT_AARCH64_16K	(1 << 8)
--#define ARM_SMMU_FEAT_FMT_AARCH64_64K	(1 << 9)
--#define ARM_SMMU_FEAT_FMT_AARCH32_L	(1 << 10)
--#define ARM_SMMU_FEAT_FMT_AARCH32_S	(1 << 11)
--#define ARM_SMMU_FEAT_EXIDS		(1 << 12)
--	u32				features;
--
--#define ARM_SMMU_OPT_SECURE_CFG_ACCESS (1 << 0)
--	u32				options;
--	enum arm_smmu_arch_version	version;
--	enum arm_smmu_implementation	model;
--
--	u32				num_context_banks;
--	u32				num_s2_context_banks;
--	DECLARE_BITMAP(context_map, ARM_SMMU_MAX_CBS);
--	struct arm_smmu_cb		*cbs;
--	atomic_t			irptndx;
--
--	u32				num_mapping_groups;
--	u16				streamid_mask;
--	u16				smr_mask_mask;
--	struct arm_smmu_smr		*smrs;
--	struct arm_smmu_s2cr		*s2crs;
--	struct mutex			stream_map_mutex;
--
--	unsigned long			va_size;
--	unsigned long			ipa_size;
--	unsigned long			pa_size;
--	unsigned long			pgsize_bitmap;
--
--	u32				num_global_irqs;
--	u32				num_context_irqs;
--	unsigned int			*irqs;
--	struct clk_bulk_data		*clks;
--	int				num_clks;
--
--	u32				cavium_id_base; /* Specific to Cavium */
--
--	spinlock_t			global_sync_lock;
--
--	/* IOMMU core code handle */
--	struct iommu_device		iommu;
--};
--
- enum arm_smmu_context_fmt {
- 	ARM_SMMU_CTX_FMT_NONE,
- 	ARM_SMMU_CTX_FMT_AARCH64,
-@@ -2225,6 +2147,10 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
- 	if (err)
- 		return err;
+ static struct device_node *dev_get_dev_node(struct device *dev)
+ {
+ 	if (dev_is_pci(dev)) {
+@@ -2083,8 +1996,6 @@ static int arm_smmu_device_dt_probe(struct platform_device *pdev,
+ 	smmu->version = data->version;
+ 	smmu->model = data->model;
  
-+	smmu = arm_smmu_impl_init(smmu);
-+	if (IS_ERR(smmu))
-+		return PTR_ERR(smmu);
-+
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	ioaddr = res->start;
- 	smmu->base = devm_ioremap_resource(dev, res);
+-	parse_driver_options(smmu);
+-
+ 	legacy_binding = of_find_property(dev->of_node, "mmu-masters", NULL);
+ 	if (legacy_binding && !using_generic_binding) {
+ 		if (!using_legacy_binding)
 diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-index 3480f2621abe..460a29075bf8 100644
+index 460a29075bf8..0485ee7fd4c1 100644
 --- a/drivers/iommu/arm-smmu.h
 +++ b/drivers/iommu/arm-smmu.h
-@@ -10,7 +10,14 @@
- #ifndef _ARM_SMMU_H
- #define _ARM_SMMU_H
+@@ -242,10 +242,9 @@ struct arm_smmu_device {
+ #define ARM_SMMU_FEAT_EXIDS		(1 << 12)
+ 	u32				features;
  
-+#include <linux/atomic.h>
- #include <linux/bits.h>
-+#include <linux/clk.h>
-+#include <linux/device.h>
-+#include <linux/iommu.h>
-+#include <linux/mutex.h>
-+#include <linux/spinlock.h>
-+#include <linux/types.h>
+-#define ARM_SMMU_OPT_SECURE_CFG_ACCESS (1 << 0)
+-	u32				options;
+ 	enum arm_smmu_arch_version	version;
+ 	enum arm_smmu_implementation	model;
++	const struct arm_smmu_impl	*impl;
  
- /* Configuration registers */
- #define ARM_SMMU_GR0_sCR0		0x0
-@@ -194,4 +201,86 @@ enum arm_smmu_cbar_type {
- #define ARM_SMMU_CB_ATSR		0x8f0
- #define ATSR_ACTIVE			BIT(0)
+ 	u32				num_context_banks;
+ 	u32				num_s2_context_banks;
+@@ -281,6 +280,67 @@ struct arm_smmu_device {
  
-+
-+/* Maximum number of context banks per SMMU */
-+#define ARM_SMMU_MAX_CBS		128
-+
-+
-+/* Shared driver definitions */
-+enum arm_smmu_arch_version {
-+	ARM_SMMU_V1,
-+	ARM_SMMU_V1_64K,
-+	ARM_SMMU_V2,
+ 
+ /* Implementation details, yay! */
++struct arm_smmu_impl {
++	u32 (*read_reg)(struct arm_smmu_device *smmu, int page, int offset);
++	void (*write_reg)(struct arm_smmu_device *smmu, int page, int offset,
++			  u32 val);
++	u64 (*read_reg64)(struct arm_smmu_device *smmu, int page, int offset);
++	void (*write_reg64)(struct arm_smmu_device *smmu, int page, int offset,
++			    u64 val);
 +};
 +
-+enum arm_smmu_implementation {
-+	GENERIC_SMMU,
-+	ARM_MMU500,
-+	CAVIUM_SMMUV2,
-+	QCOM_SMMUV2,
-+};
++static inline void __iomem *arm_smmu_page(struct arm_smmu_device *smmu, int n)
++{
++	return smmu->base + (n << smmu->pgshift);
++}
 +
-+struct arm_smmu_device {
-+	struct device			*dev;
++static inline u32 arm_smmu_readl(struct arm_smmu_device *smmu, int page, int offset)
++{
++	if (smmu->impl && unlikely(smmu->impl->read_reg))
++		return smmu->impl->read_reg(smmu, page, offset);
++	return readl_relaxed(arm_smmu_page(smmu, page) + offset);
++}
 +
-+	void __iomem			*base;
-+	unsigned int			cb_base;
-+	unsigned int			pgshift;
++static inline void arm_smmu_writel(struct arm_smmu_device *smmu, int page,
++				   int offset, u32 val)
++{
++	if (smmu->impl && unlikely(smmu->impl->write_reg))
++		smmu->impl->write_reg(smmu, page, offset, val);
++	else
++		writel_relaxed(val, arm_smmu_page(smmu, page) + offset);
++}
 +
-+#define ARM_SMMU_FEAT_COHERENT_WALK	(1 << 0)
-+#define ARM_SMMU_FEAT_STREAM_MATCH	(1 << 1)
-+#define ARM_SMMU_FEAT_TRANS_S1		(1 << 2)
-+#define ARM_SMMU_FEAT_TRANS_S2		(1 << 3)
-+#define ARM_SMMU_FEAT_TRANS_NESTED	(1 << 4)
-+#define ARM_SMMU_FEAT_TRANS_OPS		(1 << 5)
-+#define ARM_SMMU_FEAT_VMID16		(1 << 6)
-+#define ARM_SMMU_FEAT_FMT_AARCH64_4K	(1 << 7)
-+#define ARM_SMMU_FEAT_FMT_AARCH64_16K	(1 << 8)
-+#define ARM_SMMU_FEAT_FMT_AARCH64_64K	(1 << 9)
-+#define ARM_SMMU_FEAT_FMT_AARCH32_L	(1 << 10)
-+#define ARM_SMMU_FEAT_FMT_AARCH32_S	(1 << 11)
-+#define ARM_SMMU_FEAT_EXIDS		(1 << 12)
-+	u32				features;
++static inline u64 arm_smmu_readq(struct arm_smmu_device *smmu, int page, int offset)
++{
++	if (smmu->impl && unlikely(smmu->impl->read_reg64))
++		return smmu->impl->read_reg64(smmu, page, offset);
++	return readq_relaxed(arm_smmu_page(smmu, page) + offset);
++}
 +
-+#define ARM_SMMU_OPT_SECURE_CFG_ACCESS (1 << 0)
-+	u32				options;
-+	enum arm_smmu_arch_version	version;
-+	enum arm_smmu_implementation	model;
++static inline void arm_smmu_writeq(struct arm_smmu_device *smmu, int page,
++				   int offset, u64 val)
++{
++	if (smmu->impl && unlikely(smmu->impl->write_reg64))
++		smmu->impl->write_reg64(smmu, page, offset, val);
++	else
++		writeq_relaxed(val, arm_smmu_page(smmu, page) + offset);
++}
 +
-+	u32				num_context_banks;
-+	u32				num_s2_context_banks;
-+	DECLARE_BITMAP(context_map, ARM_SMMU_MAX_CBS);
-+	struct arm_smmu_cb		*cbs;
-+	atomic_t			irptndx;
++#define arm_smmu_read_gr0(s, r)		arm_smmu_readl((s), 0, (r))
++#define arm_smmu_write_gr0(s, r, v)	arm_smmu_writel((s), 0, (r), (v))
 +
-+	u32				num_mapping_groups;
-+	u16				streamid_mask;
-+	u16				smr_mask_mask;
-+	struct arm_smmu_smr		*smrs;
-+	struct arm_smmu_s2cr		*s2crs;
-+	struct mutex			stream_map_mutex;
++#define arm_smmu_read_gr1(s, r)		arm_smmu_readl((s), 1, (r))
++#define arm_smmu_write_gr1(s, r, v)	arm_smmu_writel((s), 1, (r), (v))
 +
-+	unsigned long			va_size;
-+	unsigned long			ipa_size;
-+	unsigned long			pa_size;
-+	unsigned long			pgsize_bitmap;
++#define arm_smmu_read_cb(s, n, r)				\
++	arm_smmu_readl((s), (s)->cb_base + (n), (r))
++#define arm_smmu_write_cb(s, n, r, v)				\
++	arm_smmu_writel((s), (s)->cb_base + (n), (r), (v))
++#define arm_smmu_read_cb_q(s, n, r)				\
++	arm_smmu_readq((s), (s)->cb_base + (n), (r))
++#define arm_smmu_write_cb_q(s, n, r, v)			\
++	arm_smmu_writeq((s), (s)->cb_base + (n), (r), (v))
 +
-+	u32				num_global_irqs;
-+	u32				num_context_irqs;
-+	unsigned int			*irqs;
-+	struct clk_bulk_data		*clks;
-+	int				num_clks;
-+
-+	u32				cavium_id_base; /* Specific to Cavium */
-+
-+	spinlock_t			global_sync_lock;
-+
-+	/* IOMMU core code handle */
-+	struct iommu_device		iommu;
-+};
-+
-+
-+/* Implementation details, yay! */
-+struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu);
-+
+ struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu);
+ 
  #endif /* _ARM_SMMU_H */
 -- 
 2.21.0.dirty
