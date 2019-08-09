@@ -2,98 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 841EA87F9D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 18:20:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0322487FDA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 18:25:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uR897RTnWbMBEsHzPf6gNYu8ElvHOO8pUXVnYpCaQU4=; b=XXt76qcKLgfa9o
-	3bG09uxhCBBk/A1doCDChYW6Zjl9+//8MDnMsck9nyi0DytNGBOs4qfdlAbUDXMJoMhKDfZvcgfS1
-	gY15PaSEYWCCzJf2aiLrykyapNiyaA0qFzsh5pr7JU4tEe/AhRZY7iSXchSIRCiEVkbAp92jL6Ppr
-	eFAz3phx8ZMLFoizkCVUp5U5L60qhUhzZMMnNw1JLjAaPWAqz7ribS8rwIyPV5jRDPENE4W3N3j6X
-	21wD3DscHP4AjfvFuZmQUML/csZzP3M817z0jh7C/t76VzmETAOBuFo6ZluPLKb5fxvrnT5EtSP/3
-	luaYVN5rPwpCmCfs2EUA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iyQ0A7D52JceztpE9ODkvV2zSNjHYS3o3UK+lQtEouI=; b=YZu9UF+VabuqeS
+	V+mVjP5JU/lD/okhszzoHn61C+OA0Je8jgml6C+MGJzzkOaNT/7LaPtVliKS5q2WaKS35Cu3bQCt4
+	CXDUhEWdO84X6TBHzWNDq12HfMOftYv0Is1ZG1lkYe/s5a6xknAxnWyxlM+G0VN+MfEB4IAxJQYGb
+	MSQeuBi+NU/YvMrc2WgnrWzxML0hVnHKW7PZQQQ/7P7zzHXQF8sPPCa8mYiHz5B88ToDDy4xs8d89
+	2n1aUYsRWI9X+6ieHR4ZxFDC8JFXTUwqRstCL9M2gCZnTmxB3uyEkLPzrfZGuTyBHMuD0eQhYOTDn
+	2u46fofnaOoiWNXVu6nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw7ck-0004qs-4T; Fri, 09 Aug 2019 16:20:14 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hw7hO-0006en-Go; Fri, 09 Aug 2019 16:25:02 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw7cV-0004Z8-Si
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 16:20:01 +0000
-Received: by mail-pg1-x542.google.com with SMTP id o13so46079603pgp.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 09:19:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=VktzH3f+MMc6Y73k6S/0OWPYDEvl/+muipxWljljDC0=;
- b=r6FMJ9ltiscW9LOT1qgM80LC/h2LdpJ/hXLnkKMenMoLXRzT1nBpx3qbZ3GWH0Z3sN
- tXSSiWzOy1xmzTvDU2GLGU04Xh5bN0sJXTKrqJgc2zXLU7YTM2747mri4R7Df97gGxnf
- RR/SZts2V8KdMJIGUsGRlOTzJjQlcLdTMBgyho/Jo6MTb3ACVYHd3m3qltG4kOqtuJzZ
- Fa+1duhqD8wk5H0zsuYMlv4Q4gJWeYbOZyglK2QJYCNwRSpypX+Gv2FgLaSxbtU61ucT
- xLBtnGZ2dJf3SvkiZboDiCY0GMn8exTZ0IQ07apMHVI7VbhKj8fJ3LzNBo7+dBfaRUu3
- tENg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=VktzH3f+MMc6Y73k6S/0OWPYDEvl/+muipxWljljDC0=;
- b=MM2Xu2+PqybDPM3d9Wa5usB4Wlo0qAk5H1KCMOfNxImaHhQdaG1VJYoXdv8r1P5jhW
- biQgKfniY1GTvK0mvEIAZ8tV3z1VrcIRoJTxN6ryEzpV76Y4ajTfOFkz0KwcnUmAdWup
- UIADsq7uzhJgpwuWKenSRr6NUULbCmtUdiFNvTUy1I2XAgcLKb7dIq+ed/7OFfMVvQ1m
- /cZDTZjBXDfvHsaNV0/amRyGXNa0XwGNyGRaEf1GeGS8Ov52JI7bWskwb7OTmlzGvpxe
- cu6MVtsQ3gRr0ad+WGOQo8nO2E3Grgs3VdmBueBffPw+0YyknssWyHrtefh8+RzDgqmq
- 00Yw==
-X-Gm-Message-State: APjAAAVqsEEqLx7hSwPSdxBQ34khstd+VvAkbisFGC2ioUZVUIlny+LE
- wM9a7my9oBqA02B7NT+DdQM=
-X-Google-Smtp-Source: APXvYqyqWAZt/605oQcMnI1gQn/qWKV6SpDUCv9Mb2Jms/xHQbMhaDq9V5iK4MiH7N3VOiHovbVFCA==
-X-Received: by 2002:a63:66c5:: with SMTP id
- a188mr18134283pgc.127.1565367598124; 
- Fri, 09 Aug 2019 09:19:58 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id q8sm5445392pjq.20.2019.08.09.09.19.57
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 09 Aug 2019 09:19:57 -0700 (PDT)
-Date: Fri, 9 Aug 2019 09:19:56 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH 2/4] watchdog: Add i.MX7ULP watchdog support
-Message-ID: <20190809161956.GA6248@roeck-us.net>
-References: <1565334842-28161-1-git-send-email-Anson.Huang@nxp.com>
- <1565334842-28161-2-git-send-email-Anson.Huang@nxp.com>
+ id 1hw7gu-0006QH-5Q
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 16:24:34 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id B7BF8FB03;
+ Fri,  9 Aug 2019 18:24:27 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 3amAQx4zBijK; Fri,  9 Aug 2019 18:24:24 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id A595841D9E; Fri,  9 Aug 2019 18:24:23 +0200 (CEST)
+From: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
+To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Lee Jones <lee.jones@linaro.org>,
+ =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Robert Chiras <robert.chiras@nxp.com>, Sam Ravnborg <sam@ravnborg.org>
+Subject: [PATCH v2 0/3] drm: bridge: Add NWL MIPI DSI host controller support
+Date: Fri,  9 Aug 2019 18:24:20 +0200
+Message-Id: <cover.1565367567.git.agx@sigxcpu.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1565334842-28161-2-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_091959_962357_7CAB12C2 
-X-CRM114-Status: GOOD (  30.70  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20190809_092432_533072_444F3E49 
+X-CRM114-Status: GOOD (  20.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [24.134.29.49 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,337 +75,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, leonard.crestez@nxp.com,
- schnitzeltony@gmail.com, linux-watchdog@vger.kernel.org,
- otavio@ossystems.com.br, festevam@gmail.com, s.hauer@pengutronix.de,
- jan.tuerk@emtrion.com, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- u.kleine-koenig@pengutronix.de, wim@linux-watchdog.org, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 03:14:00PM +0800, Anson Huang wrote:
-> The i.MX7ULP Watchdog Timer (WDOG) module is an independent timer
-> that is available for system use.
-> It provides a safety feature to ensure that software is executing
-> as planned and that the CPU is not stuck in an infinite loop or
-> executing unintended code. If the WDOG module is not serviced
-> (refreshed) within a certain period, it resets the MCU.
-> 
-> Add driver support for i.MX7ULP watchdog.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
->  drivers/watchdog/Kconfig       |  13 +++
->  drivers/watchdog/Makefile      |   1 +
->  drivers/watchdog/imx7ulp_wdt.c | 221 +++++++++++++++++++++++++++++++++++++++++
->  3 files changed, 235 insertions(+)
->  create mode 100644 drivers/watchdog/imx7ulp_wdt.c
-> 
-> diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-> index 8188963..0884e53 100644
-> --- a/drivers/watchdog/Kconfig
-> +++ b/drivers/watchdog/Kconfig
-> @@ -740,6 +740,19 @@ config IMX_SC_WDT
->  	  To compile this driver as a module, choose M here: the
->  	  module will be called imx_sc_wdt.
->  
-> +config IMX7ULP_WDT
-> +	tristate "IMX7ULP Watchdog"
-> +	depends on ARCH_MXC || COMPILE_TEST
-> +	select WATCHDOG_CORE
-> +	help
-> +	  This is the driver for the hardware watchdog on the Freescale
-> +	  IMX7ULP and later processors. If you have one of these
-> +	  processors and wish to have watchdog support enabled,
-> +	  say Y, otherwise say N.
-> +
-> +	  To compile this driver as a module, choose M here: the
-> +	  module will be called imx7ulp_wdt.
-> +
->  config UX500_WATCHDOG
->  	tristate "ST-Ericsson Ux500 watchdog"
->  	depends on MFD_DB8500_PRCMU
-> diff --git a/drivers/watchdog/Makefile b/drivers/watchdog/Makefile
-> index 7caa920..7d32537 100644
-> --- a/drivers/watchdog/Makefile
-> +++ b/drivers/watchdog/Makefile
-> @@ -69,6 +69,7 @@ obj-$(CONFIG_TS4800_WATCHDOG) += ts4800_wdt.o
->  obj-$(CONFIG_TS72XX_WATCHDOG) += ts72xx_wdt.o
->  obj-$(CONFIG_IMX2_WDT) += imx2_wdt.o
->  obj-$(CONFIG_IMX_SC_WDT) += imx_sc_wdt.o
-> +obj-$(CONFIG_IMX7ULP_WDT) += imx7ulp_wdt.o
->  obj-$(CONFIG_UX500_WATCHDOG) += ux500_wdt.o
->  obj-$(CONFIG_RETU_WATCHDOG) += retu_wdt.o
->  obj-$(CONFIG_BCM2835_WDT) += bcm2835_wdt.o
-> diff --git a/drivers/watchdog/imx7ulp_wdt.c b/drivers/watchdog/imx7ulp_wdt.c
-> new file mode 100644
-> index 0000000..8d56023
-> --- /dev/null
-> +++ b/drivers/watchdog/imx7ulp_wdt.c
-> @@ -0,0 +1,221 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2019 NXP.
-> + */
-> +
-> +#include <linux/init.h>
-> +#include <linux/io.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/reboot.h>
-> +#include <linux/watchdog.h>
-> +
-> +#define WDOG_CS			0x0
-> +#define WDOG_CS_CMD32EN		(1 << 13)
-> +#define WDOG_CS_ULK		(1 << 11)
-> +#define WDOG_CS_RCS		(1 << 10)
-> +#define WDOG_CS_EN		(1 << 7)
-> +#define WDOG_CS_UPDATE		(1 << 5)
-> +
-
-Please use BIT() where appropriate.
-
-> +#define WDOG_CNT	0x4
-> +#define WDOG_TOVAL	0x8
-> +
-> +#define REFRESH_SEQ0	0xA602
-> +#define REFRESH_SEQ1	0xB480
-> +#define REFRESH		((REFRESH_SEQ1 << 16) | (REFRESH_SEQ0))
-
-The inner ( ) are unnecessary. While I would accept it for readability
-for the first part, (REFRESH_SEQ0) really doesn't add value.
-
-> +
-> +#define UNLOCK_SEQ0	0xC520
-> +#define UNLOCK_SEQ1	0xD928
-> +#define UNLOCK		((UNLOCK_SEQ1 << 16) | (UNLOCK_SEQ0))
-
-Same as above.
-
-> +
-> +#define DEFAULT_TIMEOUT 60
-> +#define MAX_TIMEOUT 128
-
-tabs after _TIMEOUT, please
-
-> +
-> +static bool nowayout = WATCHDOG_NOWAYOUT;
-> +module_param(nowayout, bool, 0000);
-> +MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started (default="
-> +		 __MODULE_STRING(WATCHDOG_NOWAYOUT) ")");
-> +
-> +struct imx7ulp_wdt_device {
-> +	struct notifier_block restart_handler;
-> +	struct watchdog_device wdd;
-> +	void __iomem *base;
-> +	int rate;
-> +};
-> +
-> +static inline void imx7ulp_wdt_enable(void __iomem *base, bool enable)
-> +{
-> +	u32 val = readl(base + WDOG_CS);
-> +
-> +	writel(UNLOCK, base + WDOG_CNT);
-> +	if (enable)
-> +		writel(val | WDOG_CS_EN, base + WDOG_CS);
-> +	else
-> +		writel(val & ~WDOG_CS_EN, base + WDOG_CS);
-> +}
-> +
-> +static inline bool imx7ulp_wdt_is_enabled(void __iomem *base)
-> +{
-> +	u32 val = readl(base + WDOG_CS);
-> +
-> +	return val & WDOG_CS_EN;
-> +}
-> +
-> +static int imx7ulp_wdt_ping(struct watchdog_device *wdog)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +
-> +	writel(REFRESH, wdt->base + WDOG_CNT);
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx7ulp_wdt_start(struct watchdog_device *wdog)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +
-> +	imx7ulp_wdt_enable(wdt->base, true);
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx7ulp_wdt_stop(struct watchdog_device *wdog)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +
-> +	imx7ulp_wdt_enable(wdt->base, false);
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx7ulp_wdt_set_timeout(struct watchdog_device *wdog,
-> +				   unsigned int timeout)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +	u32 val = wdt->rate * timeout;
-> +
-> +	writel(UNLOCK, wdt->base + WDOG_CNT);
-> +	writel(val, wdt->base + WDOG_TOVAL);
-> +
-> +	wdog->timeout = timeout;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct watchdog_ops imx7ulp_wdt_ops = {
-> +	.owner = THIS_MODULE,
-> +	.start = imx7ulp_wdt_start,
-> +	.stop  = imx7ulp_wdt_stop,
-> +	.ping  = imx7ulp_wdt_ping,
-> +	.set_timeout = imx7ulp_wdt_set_timeout,
-> +};
-> +
-> +static const struct watchdog_info imx7ulp_wdt_info = {
-> +	.identity = "i.MX7ULP watchdog timer",
-> +	.options  = WDIOF_SETTIMEOUT | WDIOF_KEEPALIVEPING |
-> +		    WDIOF_MAGICCLOSE,
-> +};
-> +
-> +static inline void imx7ulp_wdt_init(void __iomem *base, unsigned int timeout)
-> +{
-> +	u32 val;
-> +
-> +	/* unlock the wdog for reconfiguration */
-> +	writel_relaxed(UNLOCK_SEQ0, base + WDOG_CNT);
-> +	writel_relaxed(UNLOCK_SEQ1, base + WDOG_CNT);
-> +
-> +	/* set an initial timeout value in TOVAL */
-> +	writel(timeout, base + WDOG_TOVAL);
-> +	/* enable 32bit command sequence and reconfigure */
-> +	val = (1 << 13) | (1 << 8) | (1 << 5);
-
-Please use BIT()
-
-> +	writel(val, base + WDOG_CS);
-> +}
-> +
-> +static int imx7ulp_wdt_probe(struct platform_device *pdev)
-> +{
-> +	struct imx7ulp_wdt_device *imx7ulp_wdt;
-> +	struct device *dev = &pdev->dev;
-> +	struct watchdog_device *wdog;
-> +	int ret;
-> +
-> +	imx7ulp_wdt = devm_kzalloc(&pdev->dev,
-> +				   sizeof(*imx7ulp_wdt), GFP_KERNEL);
-> +	if (!imx7ulp_wdt)
-> +		return -ENOMEM;
-> +
-> +	platform_set_drvdata(pdev, imx7ulp_wdt);
-> +
-> +	imx7ulp_wdt->base = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(imx7ulp_wdt->base))
-> +		return PTR_ERR(imx7ulp_wdt->base);
-> +
-> +	imx7ulp_wdt->rate = 1000;
-> +	wdog = &imx7ulp_wdt->wdd;
-> +	wdog->info = &imx7ulp_wdt_info;
-> +	wdog->ops = &imx7ulp_wdt_ops;
-> +	wdog->min_timeout = 1;
-> +	wdog->max_timeout = MAX_TIMEOUT;
-> +	wdog->parent = dev;
-> +	wdog->timeout = DEFAULT_TIMEOUT;
-> +
-> +	watchdog_init_timeout(wdog, 0, dev);
-> +	watchdog_stop_on_reboot(wdog);
-> +	watchdog_stop_on_unregister(wdog);
-> +	watchdog_set_drvdata(wdog, imx7ulp_wdt);
-> +	imx7ulp_wdt_init(imx7ulp_wdt->base, wdog->timeout * imx7ulp_wdt->rate);
-> +
-> +	ret = devm_watchdog_register_device(dev, wdog);
-> +	if (ret)
-> +		dev_err(dev, "Failed to register watchdog device\n");
-
-An error message is already displayed by the watchdog core.
-
-> +
-> +	return ret;
-> +}
-> +
-> +static int __maybe_unused imx7ulp_wdt_suspend(struct device *dev)
-> +{
-> +	struct imx7ulp_wdt_device *imx7ulp_wdt = dev_get_drvdata(dev);
-> +
-> +	if (watchdog_active(&imx7ulp_wdt->wdd))
-> +		imx7ulp_wdt_stop(&imx7ulp_wdt->wdd);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused imx7ulp_wdt_resume(struct device *dev)
-> +{
-> +	struct imx7ulp_wdt_device *imx7ulp_wdt = dev_get_drvdata(dev);
-> +	u32 timeout = imx7ulp_wdt->wdd.timeout * imx7ulp_wdt->rate;
-> +
-> +	if (imx7ulp_wdt_is_enabled(imx7ulp_wdt->base))
-> +		imx7ulp_wdt_init(imx7ulp_wdt->base, timeout);
-> +
-If I understand correctly, imx7ulp_wdt_is_enabled() returns true
-if the watchdog is running. Since it was stopped on suspend, that
-means that it was started in BIOS/rommon during resume.
-
-With that, the above translates to "If the watchdog was started by
-BIOS/rommon, re-initialize it. Otherwise do nothing". This doesn't
-really make much sense to me. What if the watchdog was reprogrammed
-by the BIOS/rommon, but not started ? In other words, why not call
-imx7ulp_wdt_init() unconditionally ?
-
-Also, if it is possible that the watchdog is started by BIOS/rommon,
-why not keep it enabled and tell the watchdog core about it in
-the probe function ?
-
-> +	if (watchdog_active(&imx7ulp_wdt->wdd))
-> +		imx7ulp_wdt_start(&imx7ulp_wdt->wdd);
-> +
-> +	return 0;
-> +}
-> +
-> +static SIMPLE_DEV_PM_OPS(imx7ulp_wdt_pm_ops, imx7ulp_wdt_suspend,
-> +			 imx7ulp_wdt_resume);
-> +
-> +static const struct of_device_id imx7ulp_wdt_dt_ids[] = {
-> +	{ .compatible = "fsl,imx7ulp-wdt", },
-> +	{ /* sentinel */ }
-> +};
-> +MODULE_DEVICE_TABLE(of, imx7ulp_wdt_dt_ids);
-> +
-> +static struct platform_driver imx7ulp_wdt_driver = {
-> +	.probe		= imx7ulp_wdt_probe,
-> +	.driver		= {
-> +		.name	= "imx7ulp-wdt",
-> +		.pm	= &imx7ulp_wdt_pm_ops,
-> +		.of_match_table = imx7ulp_wdt_dt_ids,
-> +	},
-> +};
-> +module_platform_driver(imx7ulp_wdt_driver);
-> +
-> +MODULE_AUTHOR("Anson Huang <Anson.Huang@nxp.com>");
-> +MODULE_DESCRIPTION("Freescale i.MX7ULP watchdog driver");
-> +MODULE_LICENSE("GPL v2");
-> -- 
-> 2.7.4
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhpcyBhZGRzIGluaXRpYWwgc3VwcG9ydCBmb3IgdGhlIE5XTCBNSVBJIERTSSBIb3N0IGNvbnRy
+b2xsZXIgZm91bmQgb24gaS5NWDgKU29Dcy4KCkl0IGFkZHMgc3VwcG9ydCBmb3IgdGhlIGkuTVg4
+TVEgYnV0IHRoZSBzYW1lIElQIGNvcmUgY2FuIGFsc28gYmUgZm91bmQgb24gZS5nLgppLk1YOFFY
+UC4gSSBhZGRlZCB0aGUgbmVjZXNzYXJ5IGhvb2tzIHRvIHN1cHBvcnQgb3RoZXIgaW14OCB2YXJp
+YW50cyBidXQgc2luY2UKSSBvbmx5IGhhdmUgaW14OG1xIGJvYXJkcyB0byB0ZXN0IEkgb21pdHRl
+ZCB0aGUgcGxhdGZvcm0gZGF0YSBmb3Igb3RoZXIgU29Dcy4KClRoZSBjb2RlIGlzIGJhc2VkIG9u
+IE5YUHMgQlNQIHNvIEkgYWRkZWQgUm9iZXJ0IENoaXJhcyBhcwpDby1hdXRob3JlZC1ieS4gUm9i
+ZXJ0LCBpZiB0aGlzIGxvb2tzIHNhbmUgY291bGQgeW91IGFkZCB5b3VyClNpZ25lZC1vZmYtYnk6
+PwoKVGhlIG1vc3Qgbm90YWJsZSBjaGFuZ2VzIG92ZXIgdGhlIEJTUCBkcml2ZXIgYXJlCiAtIENh
+bGN1bGF0ZSBIUyBtb2RlIHRpbWluZyBmcm9tIHBoeV9jb25maWd1cmVfb3B0c19taXBpX2RwaHkK
+IC0gUGVyZm9ybSBhbGwgY2xvY2sgc2V0dXAgdmlhIERUCiAtIE1lcmdlIG53bC1pbXggYW5kIG53
+bCBkcml2ZXJzCiAtIEFkZCBCMCBzaWxpb24gcmV2aXNpb24gcXVpcmsKIC0gQmVjb21lIGEgYnJp
+ZGdlIGRyaXZlciB0byBob29rIGludG8gbXhzZmIgKGZyb20gd2hhdCBJIHJlYWRbMF0gRENTUywg
+d2hpY2gKICAgYWxzbyBjYW4gZHJpdmUgdGhlIG53bCBvbiB0aGUgaW14OG1xIHdpbGwgbGlrZWx5
+IG5vdCBiZWNvbWUgcGFydCBvZgogICBpbXgtZGlzcGxheS1zdWJzeXN0ZW0gc28gaXQgbWFrZXMg
+c2Vuc2UgdG8gbWFrZSBpdCBkcml2ZSBhIGJyaWRnZSBmb3IgZHNpIGFzCiAgIHdlbGwpLgogLSBV
+c2UgcGFuZWxfYnJpZGdlIHRvIGF0dGFjaCB0aGUgcGFuZWwKClRoaXMgaGFzIGJlZW4gdGVzdGVk
+IG9uIGEgTGlicmVtIDUgZGV2a2l0IHVzaW5nIG14c2ZiIHdpdGggUm9iZXJ0J3MgcGF0Y2hlc1sx
+XQphbmQgdGhlIHJvY2t0ZWNoLWpoMDU3bjAwOTAwIHBhbmVsIGRyaXZlciBvbiBuZXh0LTIwMTkw
+ODA3LiBUaGUgRENTUyBjYW4gbGF0ZXIKb24gYWxzbyBhY3QgYXMgaW5wdXQgc291cmNlIHRvby4K
+CkNoYW5nZXMgZnJvbSB2MToKLSBQZXIgcmV2aWV3IGNvbW1lbnRzIGJ5IFNhbSBSYXZuYm9yZwog
+IGh0dHBzOi8vbGlzdHMuZnJlZWRlc2t0b3Aub3JnL2FyY2hpdmVzL2RyaS1kZXZlbC8yMDE5LUp1
+bHkvMjI4MTMwLmh0bWwKICAtIENoYW5nZSBiaW5kaW5nIGRvY3MgdG8gWUFNTAogIC0gYnVpbGQ6
+IERvbid0IGFsd2F5cyB2aXNpdCBpbXgtbndsLwogIC0gYnVpbGQ6IEFkZCBoZWFkZXItdGVzdC15
+CiAgLSBTb3J0IGhlYWRlcnMgYWNjb3JkaW5nIHRvIERSTSBjb252ZW50aW9uCiAgLSBVc2UgZHJt
+X2Rpc3BsYXlfbW9kZSBpbnN0ZWFkIG9mIHZpZGVtb2RlCi0gUGVyIHJldmlldyBjb21tZW50cyBi
+eSBGYWJpbyBFc3RldmFtCiAgaHR0cHM6Ly9saXN0cy5mcmVlZGVza3RvcC5vcmcvYXJjaGl2ZXMv
+ZHJpLWRldmVsLzIwMTktSnVseS8yMjgyOTkuaHRtbAogIC0gRG9uJ3QgcmVzdHJpY3QgYnVpbGQg
+dG8gQVJDSF9NWEMKICAtIERyb3AgdW51c2VkIGluY2x1ZGVzCiAgLSBEcm9wIHVucmVhY2hhYmxl
+IGNvZGUgaW4gaW14X253bF9kc2lfYnJpZGdlX21vZGVfZml4dXAoKQogIC0gRHJvcCByZW1haW5p
+bmcgY2FsbHMgb2YgZGV2X2VycigpIGFuZCB1c2UgRFJNX0RFVl9FUlIoKQogICAgY29uc2lzdGVu
+dGx5LgogIC0gVXNlIGRldm1fcGxhdGZvcm1faW9yZW1hcF9yZXNvdXJjZSgpCiAgLSBEcm9wIGRl
+dm1fZnJlZV9pcnEoKSBpbiBwcm9iZSgpIGVycm9yIHBhdGgKICAtIFVzZSBzaW5nbGUgbGluZSBj
+b21tZW50cyB3aGVyZSBzdWZmaWNpZW50CiAgLSBVc2UgPGxpbnV4L3RpbWU2NC5oPiBpbnN0ZWFk
+IG9mIGRlZmluaW5nIFVTRUNfUEVSX1NFQwogIC0gTWFrZSBpbnB1dCBzb3VyY2Ugc2VsZWN0IGlt
+eDggc3BlY2lmaWMKICAtIERyb3AgPGFzbS91bmFsaWduZWQuaD4gaW5jbHVzaW9uIChhZnRlciBy
+ZW1vdmFsIG9mIGdldF91bmFsaWduZWRfbGUzMikKICAtIERyb3AgYWxsIEVYUE9SVF9TWU1CT0xf
+R1BMKCkgZm9yIGZ1bmN0aW9ucyB1c2VkIGluIHRoZSBzYW1lIG1vZHVsZQogICAgYnV0IGRpZmZl
+cmVudCBzb3VyY2UgZmlsZXMuCiAgLSBEcm9wIG53bF9kc2lfZW5hYmxlX3tyeCx0eH1fY2xvY2so
+KSBieSBpbnZva2luZyBjbGtfcHJlcGFyZV9lbmFibGUoKQogICAgZGlyZWN0bHkKICAtIFJlbW92
+ZSBwb2ludGxlc3MgY29tbWVudAotIExhdXJlbnQgUGluY2hhcnQKICBodHRwczovL2xpc3RzLmZy
+ZWVkZXNrdG9wLm9yZy9hcmNoaXZlcy9kcmktZGV2ZWwvMjAxOS1KdWx5LzIyODMxMy5odG1sCiAg
+aHR0cHM6Ly9saXN0cy5mcmVlZGVza3RvcC5vcmcvYXJjaGl2ZXMvZHJpLWRldmVsLzIwMTktSnVs
+eS8yMjgzMDguaHRtbAogIC0gRHJvcCAob24gaU1YOE1RKSB1bnVzZWQgY3NyIHJlZ21hcAogIC0g
+VXNlIE5XTF9NQVhfUExBVEZPUk1fQ0xPQ0tTIGV2ZXJ5d2hlcmUKICAtIERyb3AgZ2V0X3VuYWxp
+Z25lZF9sZTMyKCkgdXNhZ2UKICAtIHJlbW92ZSBkdXBsaWNhdGUgJ2ZvciB0aGUnIGluIGJpbmRp
+bmcgZG9jcwogIC0gRG9uJ3QgaW5jbHVkZSB1bnVzZWQgPGxpbnV4L2Nsay1wcm92aWRlci5oPgog
+IC0gRG9uJ3QgaW5jbHVkZSB1bnVzZWQgPGxpbnV4L2NvbXBvbmVudC5oPgogIC0gRHJvcCBkcG1z
+X21vZGUgZm9yIHRyYWNraW5nIHN0YXRlLCB0cnVzdCB0aGUgZHJtIGxheWVyIG9uIHRoYXQKICAt
+IFVzZSBwbV9ydW50aW1lX3B1dCgpIGluc3RlYWQgb2YgcG1fcnVudGltZV9wdXRfc3luYygpCiAg
+LSBEb24ndCBvdmVyd3JpdGUgZW5jb2RlciB0eXBlCiAgLSBNYWtlIGlteF9ud2xfcGxhdGZvcm1f
+ZGF0YSBjb25zdAogIC0gVXNlIHRoZSByZXNldCBjb250cm9sbGVyIEFQSSBpbnN0ZWFkIG9mIG9w
+ZW4gY29kaW5nIHRoYXQgcGxhdGZvcm0gc3BlY2lmaWMKICAgIHBhcnQKICAtIFVzZSA8bGludXgv
+Yml0ZmllbGQuaD4gaW50ZWFkIG9mIG1ha2luZyB1cCBvdXIgb3duIGRlZmluZXMKICAtIG5hbWUg
+bWlwaV9kc2lfdHJhbnNmZXIgbGVzcyBnZW5lcmljOiBud2xfZHNpX3RyYW5zZmVyCiAgLSBlbnN1
+cmUgY2xlYW4gaW4gLnJlbW92ZSBieSBjYWxsaW5nIG1pcGlfZHNpX2hvc3RfdW5yZWdpc3Rlci4K
+ICAtIHByZWZpeCBjb25zdGFudHMgYnkgTldMX0RTSV8KICAtIHByb3Blcmx5IGZvcm1hdCB0cmFu
+c2Zlcl9kaXJlY3Rpb24gZW51bQogIC0gc2ltcGxpZnkgcGxhdGZvcm0gY2xvY2sgaGFuZGxpbmcK
+ICAtIERvbid0IG1vZGlmeSBzdGF0ZSBpbiBtb2RlX2ZpeHVwKCkgYW5kIHVzZSBtb2RlX3NldCgp
+IGluc3RlYWQKICAtIERyb3AgYnJpZGdlIGRldGFjaCgpLCBhbHJlYWR5IGhhbmRsZSBieSBud2xf
+ZHNpX2hvc3RfZGV0YWNoKCkKICAtIERyb3AgVVNFXypfUVVJUksoKSBtYWNyb3MKLSBEcm9wIChm
+b3Igbm93KSB1bnVzZWQgY2xvY2sgZGVmbml0aW9ucy4gJ3BpeGVsJyBhbmQgJ2J5cGFzcycgY2xv
+Y2sgd2lsbCBiZQogIHVzZWQgZm9yIGkuTVg4IFNvQ3MgYnV0IHNpbmNlIHRoZXkncmUgdW51c2Vk
+IGF0bSBkcm9wIHRoZSBkZWZpbml0aW9ucyAtIGJ1dAogIGtlZXAgdGhlIGxvZ2ljIHRvIGVuYWJs
+ZS9kaXNhYmxlIHNldmVyYWwgY2xvY2tzIGluIHBsYWNlIHNpbmNlIHdlIGtub3cgd2UnbGwKICBu
+ZWVkIGl0IGluIHRoZSBmdXR1cmUuCgpDaGFuZ2VzIGZyb20gdjA6Ci0gQWRkIHF1aXJrIGZvciBJ
+TVE4TVEgc2lsaWNvbiBCMCByZXZpc2lvbiB0byBub3QgbWVzcyB3aXRoIHRoZQogIHN5c3RlbSBy
+ZXNldCBjb250cm9sbGVyIG9uIHBvd2VyIGRvd24gc2luY2UgZW5hYmxlKCkgd29uJ3Qgd29yawog
+IG90aGVyd2lzZS4KLSBEcm9wIGRldm1fZnJlZV9pcnEoKSBoYW5kbGVkIGJ5IHRoZSBkZXZpY2Ug
+ZHJpdmVyIGNvcmUKLSBEaXNhYmxlIHR4IGVzYyBjbG9jayBhZnRlciB0aGUgcGh5IHBvd2VyIGRv
+d24gdG8gdW5icmVhawogIGRpc2FibGUvZW5hYmxlICh1bmJsYW5rL2JsYW5rKQotIEFkZCBwb3J0
+cyB0byBkdCBiaW5kaW5nIGRvY3MKLSBTZWxlY3QgR0VORVJJQ19QSFlfTUlQSV9EUEhZIGluc3Rl
+YWQgb2YgR0VORVJJQ19QSFkgZm9yCiAgcGh5X21pcGlfZHBoeV9nZXRfZGVmYXVsdF9jb25maWcK
+LSBTZWxlY3QgRFJNX01JUElfRFNJCi0gSW5jbHVkZSBkcm1fcHJpbnQuaCB0byBmaXggYnVpbGQg
+b24gbmV4dC0yMDE5MDQwOAotIERyb3Agc29tZSBkZWJ1Z2dpbmcgbWVzc2FnZXMKLSBOZXdsaW5l
+IHRlcm1pbmF0ZSBhbGwgRFJNXyBwcmludG91dHMKLSBUdXJuIGNvbXBvbmVudCBkcml2ZXIgaW50
+byBhIGRybSBicmlkZ2UKClswXTogaHR0cHM6Ly9saXN0cy5mcmVlZGVza3RvcC5vcmcvYXJjaGl2
+ZXMvZHJpLWRldmVsLzIwMTktTWF5LzIxOTQ4NC5odG1sClsxXTogaHR0cHM6Ly9wYXRjaHdvcmsu
+ZnJlZWRlc2t0b3Aub3JnL3Nlcmllcy82MjgyMi8KCkd1aWRvIEfDvG50aGVyICgzKToKICBhcm02
+NDogaW14OG1xOiBhZGQgaW14OG1xIGlvbXV4LWdwciBmaWVsZCBkZWZpbmVzCiAgZHQtYmluZGlu
+Z3M6IGRpc3BsYXkvYnJpZGdlOiBBZGQgYmluZGluZyBmb3IgTldMIG1pcGkgZHNpIGhvc3QKICAg
+IGNvbnRyb2xsZXIKICBkcm0vYnJpZGdlOiBBZGQgTldMIE1JUEkgRFNJIGhvc3QgY29udHJvbGxl
+ciBzdXBwb3J0CgogLi4uL2JpbmRpbmdzL2Rpc3BsYXkvYnJpZGdlL253bC1kc2kueWFtbCAgICAg
+IHwgMTU1ICsrKysKIGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvS2NvbmZpZyAgICAgICAgICAgICAg
+ICB8ICAgMiArCiBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL01ha2VmaWxlICAgICAgICAgICAgICAg
+fCAgIDEgKwogZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9ud2wtZHNpL0tjb25maWcgICAgICAgIHwg
+IDE1ICsKIGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvbndsLWRzaS9NYWtlZmlsZSAgICAgICB8ICAg
+NCArCiBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1kc2kvbndsLWRydi5jICAgICAgfCA0ODQg
+KysrKysrKysrKysrCiBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1kc2kvbndsLWRydi5oICAg
+ICAgfCAgNjYgKysKIGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvbndsLWRzaS9ud2wtZHNpLmMgICAg
+ICB8IDcwMCArKysrKysrKysrKysrKysrKysKIGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvbndsLWRz
+aS9ud2wtZHNpLmggICAgICB8IDExMiArKysKIGluY2x1ZGUvbGludXgvbWZkL3N5c2Nvbi9pbXg4
+bXEtaW9tdXhjLWdwci5oICB8ICA2MiArKwogMTAgZmlsZXMgY2hhbmdlZCwgMTYwMSBpbnNlcnRp
+b25zKCspCiBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRp
+bmdzL2Rpc3BsYXkvYnJpZGdlL253bC1kc2kueWFtbAogY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZl
+cnMvZ3B1L2RybS9icmlkZ2UvbndsLWRzaS9LY29uZmlnCiBjcmVhdGUgbW9kZSAxMDA2NDQgZHJp
+dmVycy9ncHUvZHJtL2JyaWRnZS9ud2wtZHNpL01ha2VmaWxlCiBjcmVhdGUgbW9kZSAxMDA2NDQg
+ZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9ud2wtZHNpL253bC1kcnYuYwogY3JlYXRlIG1vZGUgMTAw
+NjQ0IGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvbndsLWRzaS9ud2wtZHJ2LmgKIGNyZWF0ZSBtb2Rl
+IDEwMDY0NCBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1kc2kvbndsLWRzaS5jCiBjcmVhdGUg
+bW9kZSAxMDA2NDQgZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9ud2wtZHNpL253bC1kc2kuaAogY3Jl
+YXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvbGludXgvbWZkL3N5c2Nvbi9pbXg4bXEtaW9tdXhjLWdw
+ci5oCgotLSAKMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
