@@ -2,57 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B42D87980
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 14:13:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B42A08798D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 14:13:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ma+x9cDymQ8Pt4hPpmJI4Ns+YckGFfPU80ySGF4PYSQ=; b=qg2Jj6j54ctTzN
-	BZSkQ7nL8UwnH6xHogfWNsACOD2oWnXO5fycBF26/tP6TKEyOwwpz4X6f+VxhSJ8nloVZ/1PeM+Th
-	uwiC9HUHrmVE8d2xfAH7IBqitUn04EG83SESmI3AAMwtrJ9FIY5nTSKoxpdpE4q15JnCQXCu4/F9U
-	jA2s9QjvaVQOqMEf9Hi4206YaGF2tpnYGV+6GIRPZwe12M1dPdtBSKeeCmzsnEDdICexJ4TRtk5te
-	PfP2J7PfTlpymXaLnuMyYp5C2ZnxWRypZe+6AasbBitXzvJjSXmGrhhEuta915Y5h1Gmi7Ct+1jiU
-	3VwHv9acV8S8NRZ7copQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wHrlKU9SuGEdOUHzaPY3UuPgJIrgkx8AXjRpdycwPws=; b=AfyVQC5W2f/RWP
+	CkEqOhaC+BpUmHFUL5PrgPN8HpzEC+f0Zs1MMssiULUmQB/4aHPg7jiM9s/zOjz1QTldxNdUjx8oq
+	Eav8cWjvd7N8ameALraH65Zk8NYyxxxo5nsoIFHRJsC8D2V0BDX5tnVm4C+hP71LgRF6h3VX4x+eV
+	wzrPqlDcwpkcH5bYx3QC6cv0FhyteLBHF7dx9At0jXrnS4UC8dhiQiPtGPdDvIB38oYefPvdHauPK
+	1BPP9puBbrakvgtfmuARdPKy3+Wq9kY5d34h8Mzx4wWQ0B69lR8YMUkz8f82waXh9LuisZqqDWEwP
+	+EhFHXrLoBAtPQLy1x0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw3lY-0008W3-RQ; Fri, 09 Aug 2019 12:13:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw3lN-0008Vj-Vq
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 12:12:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B9D4A1596;
- Fri,  9 Aug 2019 05:12:52 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- EB6683F706; Fri,  9 Aug 2019 05:12:50 -0700 (PDT)
-Subject: Re: [PATCH 05/19] irqchip/mmp: do not use of_address_to_resource() to
- get mux regs
-To: Lubomir Rintel <lkundrak@v3.sk>, Olof Johansson <olof@lixom.net>
-References: <20190809093158.7969-1-lkundrak@v3.sk>
- <20190809093158.7969-6-lkundrak@v3.sk>
-From: Marc Zyngier <maz@kernel.org>
-Organization: Approximate
-Message-ID: <16d77ca3-7ad1-3af2-650e-722cf6a931ed@kernel.org>
-Date: Fri, 9 Aug 2019 13:12:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hw3mC-0000JW-KK; Fri, 09 Aug 2019 12:13:44 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hw3ly-0000Ib-26
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 12:13:31 +0000
+Received: by mail-lj1-x242.google.com with SMTP id l14so1948436lje.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 09 Aug 2019 05:13:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=khC2xFZGDuzHm7LauVefQf76DxyJ5wKd6wD3GFIWUBg=;
+ b=YUgvvikfXP7Algmo5FVFozvaeWU2EgvjF+cD5mnYuI9U/j45lqwxwPig/8wh+wBIYJ
+ vuM2ziYQxZ3XRGtGKH8leZv/0X/H5XGfN1teN4G6dK5r5mNF99DaoQBvutQOFSVgwerk
+ 9hK95niDmQhtp26IAkvdHZCV9wiiW3TXt449kOLrWnGCjOlO//g5MXgC16LV+89FUL9f
+ 3zsyayZsATMVEY1Wc5XXhy87ejlE2aYZ++BhvhVtk2AaWLM9L0u0zz8JAEu8ZmpFvpWu
+ 69JrTgiRNMAMoGfpFEMoxM7A/bOsdIg1DJByonCqXf1r4c4b7onV3S+OXPKN6QADsvbR
+ 0rZw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=khC2xFZGDuzHm7LauVefQf76DxyJ5wKd6wD3GFIWUBg=;
+ b=OIODsqx0/tAd/xhGVfNKQpBFIbqiice7qzYzMr+lyQW7wtNvfpSQ0w1AJF3wzIA6QJ
+ +ShF5y9i8GKP2ZqJvtJkG5MLbazhj/rzCL3UPCxZBxA6yyKd0MUBp56qipUosRekosM0
+ +VrkZiXuwn3vR7a7qAdauYeTB2SvLVHtqnGszwixg5AB8QO7fKvgfBCWndDLO7utOQLC
+ iPE8Y/NCVkGiuVOvICVTiF4p48ClYPO5nQTYOFOK5uPLwftoXhLQwfg2cmwdHhgfuWWo
+ fM6rGYaffsQy/3IJ3Mwnpb/xsaQ8YNQwnjw4KqwE1BXGgBrbBuLFLTTT7jvCqHS1sJ9V
+ ddag==
+X-Gm-Message-State: APjAAAUJ0ATRJCtz7YNnuWuF6+MYiAjaSEDsKfHM4gnpkIiBjDjl3Aci
+ 6Hb5kLccKU+0Wizmny6Nz6Z1sA==
+X-Google-Smtp-Source: APXvYqwRqWQziVL8uoa4G3k4jkXSZfMfrqNN15MtnOv5kCBBjJo+CYN2nXEZmgvdeMjACcuywFWqNA==
+X-Received: by 2002:a2e:8455:: with SMTP id u21mr10848999ljh.20.1565352808013; 
+ Fri, 09 Aug 2019 05:13:28 -0700 (PDT)
+Received: from localhost.localdomain ([37.157.136.206])
+ by smtp.googlemail.com with ESMTPSA id f23sm1083425lfc.25.2019.08.09.05.13.26
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Fri, 09 Aug 2019 05:13:27 -0700 (PDT)
+From: Georgi Djakov <georgi.djakov@linaro.org>
+To: linux-pm@vger.kernel.org,
+	evgreen@chromium.org
+Subject: [PATCH v3 0/3] interconnect: Add path tagging support
+Date: Fri,  9 Aug 2019 15:13:22 +0300
+Message-Id: <20190809121325.8138-1-georgi.djakov@linaro.org>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <20190809093158.7969-6-lkundrak@v3.sk>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_051254_072242_9D56C65D 
-X-CRM114-Status: GOOD (  23.41  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190809_051330_102580_CED7B3CA 
+X-CRM114-Status: GOOD (  11.70  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,89 +95,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Pavel Machek <pavel@ucw.cz>,
- Thomas Gleixner <tglx@linutronix.de>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: seansw@qti.qualcomm.com, linux-kernel@vger.kernel.org,
+ daidavid1@codeaurora.org, dianders@chromium.org, amit.kucheria@linaro.org,
+ bjorn.andersson@linaro.org, linux-arm-msm@vger.kernel.org,
+ georgi.djakov@linaro.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/08/2019 10:31, Lubomir Rintel wrote:
-> The "regs" property of the "mrvl,mmp2-mux-intc" devices are silly. They
-> are offsets from intc's base, not addresses on the parent bus. At this
-> point it probably can't be fixed.
-> 
-> On an OLPC XO-1.75 machine, the muxes are children of the intc, not the
-> axi bus, and thus of_address_to_resource() won't work. We should treat
-> the values as mere integers as opposed to bus addresses.
-> 
-> Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
-> Acked-by: Pavel Machek <pavel@ucw.cz>
-> 
-> ---
->  drivers/irqchip/irq-mmp.c | 20 +++++++++++---------
->  1 file changed, 11 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/irqchip/irq-mmp.c b/drivers/irqchip/irq-mmp.c
-> index 14618dc0bd396..af9cba4a51c2e 100644
-> --- a/drivers/irqchip/irq-mmp.c
-> +++ b/drivers/irqchip/irq-mmp.c
-> @@ -424,9 +424,9 @@ IRQCHIP_DECLARE(mmp2_intc, "mrvl,mmp2-intc", mmp2_of_init);
->  static int __init mmp2_mux_of_init(struct device_node *node,
->  				   struct device_node *parent)
->  {
-> -	struct resource res;
->  	int i, ret, irq, j = 0;
->  	u32 nr_irqs, mfp_irq;
-> +	u32 reg[4];
->  
->  	if (!parent)
->  		return -ENODEV;
-> @@ -438,18 +438,20 @@ static int __init mmp2_mux_of_init(struct device_node *node,
->  		pr_err("Not found mrvl,intc-nr-irqs property\n");
->  		return -EINVAL;
->  	}
-> -	ret = of_address_to_resource(node, 0, &res);
-> +
-> +	/*
-> +	 * For historical reasonsm, the "regs" property of the
-> +	 * mrvl,mmp2-mux-intc is not a regular * "regs" property containing
-> +	 * addresses on the parent bus, but offsets from the intc's base.
-> +	 * That is why we can't use of_address_to_resource() here.
-> +	 */
-> +	ret = of_property_read_u32_array(node, "reg", reg, ARRAY_SIZE(reg));
+SoCs that have multiple coexisting CPUs and DSPs, may have shared
+interconnect buses between them. In such cases, each CPU/DSP may have
+different bandwidth needs, depending on whether it is active or sleeping.
+This means that we have to keep different bandwidth configurations for
+the CPU (active/sleep). In such systems, usually there is a way to
+communicate and synchronize this information with some firmware or pass
+it to another processor responsible for monitoring and switching the
+interconnect configurations based on the state of each CPU/DSP.
 
-This will return 0 even if you've read less than your expected 4 u32s.
-You may want to try of_property_read_variable_u32_array instead.
+The above problem can be solved by introducing the path tagging concept,
+that allows consumers to optionally attach a tag to each path they use.
+This tag is used to differentiate between the aggregated bandwidth values
+for each state. The tag is generic and how it's handled is up to the
+platform specific interconnect provider drivers.
 
->  	if (ret < 0) {
->  		pr_err("Not found reg property\n");
->  		return -EINVAL;
->  	}
-> -	icu_data[i].reg_status = mmp_icu_base + res.start;
-> -	ret = of_address_to_resource(node, 1, &res);
-> -	if (ret < 0) {
-> -		pr_err("Not found reg property\n");
-> -		return -EINVAL;
-> -	}
-> -	icu_data[i].reg_mask = mmp_icu_base + res.start;
-> +	icu_data[i].reg_status = mmp_icu_base + reg[0];
-> +	icu_data[i].reg_mask = mmp_icu_base + reg[2];
->  	icu_data[i].cascade_irq = irq_of_parse_and_map(node, 0);
->  	if (!icu_data[i].cascade_irq)
->  		return -EINVAL;
-> 
+v3:
+- New patch to add a pre_aggregate() callback.
 
-Thanks,
+v2: https://lore.kernel.org/lkml/20190618091724.28232-1-georgi.djakov@linaro.org/
+- Store tag with the request. (Evan)
+- Reorganize the code to save bandwidth values into buckets and use the
+  tag as a bitfield. (Evan)
+- Clear the aggregated values after icc_set().
 
-	M.
--- 
-Jazz is not dead, it just smells funny...
+v1: https://lore.kernel.org/lkml/20190208172152.1807-1-georgi.djakov@linaro.org/
+
+
+David Dai (1):
+  interconnect: qcom: Add tagging and wake/sleep support for sdm845
+
+Georgi Djakov (2):
+  interconnect: Add support for path tags
+  interconnect: Add pre_aggregate() callback
+
+ drivers/interconnect/core.c           |  27 ++++-
+ drivers/interconnect/qcom/sdm845.c    | 136 ++++++++++++++++++++------
+ include/linux/interconnect-provider.h |   7 +-
+ include/linux/interconnect.h          |   5 +
+ 4 files changed, 140 insertions(+), 35 deletions(-)
+
 
 _______________________________________________
 linux-arm-kernel mailing list
