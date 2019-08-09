@@ -2,55 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4994C87427
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 10:33:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 283D78743C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 10:34:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pNj92Z8xziHEZoxxE0HS1jg0GBcCZivj7ZQ2gekSTuU=; b=gj3/1tbNSvS1RL
-	08K6dvPhZsBE1F+nBKhMRmIhovIPCkj3jw1VTj1JYxeSCZzbbgJsmnV7p8F8eOyxYSod/XOvKBv4+
-	a4BIM1zAZzXSirjfLe4eL5kzfZ1DZHhCCN1VormWR9jnWg69fJ2CowZdpxvg2nuSVJIGs4EfX5g2N
-	wlrlq+eKlTiurFP3VK0ebcXTxG/Aw9Ew2vZaPUmn+Tx3UrOmEI8iOiQbt8H83bmZ4/Oe/QyQTHnQF
-	9dqbp0RkNtOOtGx0KlcyXW/TPEg28jvrDRU3bbLWJA5ynY6mjMGuGPGXbuel1MLMR05avgzv1tEZ7
-	xIzW9O+q0YlNv2cgmPug==;
+	List-Owner; bh=ZNNdyhycOwFprANA3M9YFprU+BYqvQSbs1ScAUbBwYE=; b=nzH2WOmnV1CY3e
+	5RCYrRqtzcmUKfS7Z68xIxARLSWEV1/AGjjLzcFHuH9IWAgfudxemYyT6aCsOXEILlDXmojN/8o24
+	wGn9h0mtCO6WVt98K6qaSmGziUtl6XoiWnBrGVNnQNy6aTqzBgV/tTTxoVjC5q8/7Ayog9hFLfgvE
+	jl0qoydPxqVxw/TzN51cPVYI7sTG6o39gUuYysJ8Q53qnVfnu31z3TTxoku+lM98j+u/VZihjEwHz
+	shlDCL5ykuwo1YduFRm9WBIKA8QFf2vAlBmd/M7YM6kcFwRfXcUfe+cRFr1uwLw/vJQssRzOTDKiC
+	Z4mJkUMv4zR26Jbg4nwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw0Ko-0006dd-BO; Fri, 09 Aug 2019 08:33:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw0Ka-0006cb-DA
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 08:33:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 18895344;
- Fri,  9 Aug 2019 01:32:58 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 149613F706;
- Fri,  9 Aug 2019 01:32:56 -0700 (PDT)
-Date: Fri, 9 Aug 2019 09:32:51 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Nathan Chancellor <natechancellor@gmail.com>
-Subject: Explicitly marking initializer overrides (was "Re: [PATCH]
- arm64/cache: silence -Woverride-init warnings")
-Message-ID: <20190809083251.GA48423@lakrids.cambridge.arm.com>
-References: <20190808032916.879-1-cai@lca.pw>
- <20190808103808.GC46901@lakrids.cambridge.arm.com>
- <20190808170916.GA32668@archlinux-threadripper>
+	id 1hw0MP-0006y6-9w; Fri, 09 Aug 2019 08:34:53 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hw0MC-0006xL-MT; Fri, 09 Aug 2019 08:34:42 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id DD89FAE49;
+ Fri,  9 Aug 2019 08:34:36 +0000 (UTC)
+Received: by quack2.suse.cz (Postfix, from userid 1000)
+ id DC04B1E437E; Fri,  9 Aug 2019 10:34:35 +0200 (CEST)
+Date: Fri, 9 Aug 2019 10:34:35 +0200
+From: Jan Kara <jack@suse.cz>
+To: Ira Weiny <ira.weiny@intel.com>
+Subject: Re: [PATCH 00/34] put_user_pages(): miscellaneous call sites
+Message-ID: <20190809083435.GA17568@quack2.suse.cz>
+References: <20190802022005.5117-1-jhubbard@nvidia.com>
+ <20190802091244.GD6461@dhcp22.suse.cz>
+ <20190802124146.GL25064@quack2.suse.cz>
+ <20190802142443.GB5597@bombadil.infradead.org>
+ <20190802145227.GQ25064@quack2.suse.cz>
+ <076e7826-67a5-4829-aae2-2b90f302cebd@nvidia.com>
+ <20190807083726.GA14658@quack2.suse.cz>
+ <20190807084649.GQ11812@dhcp22.suse.cz>
+ <20190808023637.GA1508@iweiny-DESK2.sc.intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190808170916.GA32668@archlinux-threadripper>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190808023637.GA1508@iweiny-DESK2.sc.intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_013300_527146_2C904262 
-X-CRM114-Status: GOOD (  21.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190809_013441_021064_21798A8E 
+X-CRM114-Status: GOOD (  26.71  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,113 +69,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com, Qian Cai <cai@lca.pw>, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ dri-devel@lists.freedesktop.org, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, amd-gfx@lists.freedesktop.org, sparclinux@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ Matthew Wilcox <willy@infradead.org>, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
+ devel@lists.orangefs.org, linux-media@vger.kernel.org,
+ John Hubbard <jhubbard@nvidia.com>, intel-gfx@lists.freedesktop.org,
+ john.hubbard@gmail.com, linux-block@vger.kernel.org,
+ =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 08, 2019 at 10:09:16AM -0700, Nathan Chancellor wrote:
-> On Thu, Aug 08, 2019 at 11:38:08AM +0100, Mark Rutland wrote:
-> > On Wed, Aug 07, 2019 at 11:29:16PM -0400, Qian Cai wrote:
-> > > The commit 155433cb365e ("arm64: cache: Remove support for ASID-tagged
-> > > VIVT I-caches") introduced some compiation warnings from GCC (and
-> > > Clang) with -Winitializer-overrides),
-> > > 
-> > > arch/arm64/kernel/cpuinfo.c:38:26: warning: initialized field
-> > > overwritten [-Woverride-init]
-> > > [ICACHE_POLICY_VIPT]  = "VIPT",
-> > >                         ^~~~~~
-> > > arch/arm64/kernel/cpuinfo.c:38:26: note: (near initialization for
-> > > 'icache_policy_str[2]')
-> > > arch/arm64/kernel/cpuinfo.c:39:26: warning: initialized field
-> > > overwritten [-Woverride-init]
-> > > [ICACHE_POLICY_PIPT]  = "PIPT",
-> > >                         ^~~~~~
-> > > arch/arm64/kernel/cpuinfo.c:39:26: note: (near initialization for
-> > > 'icache_policy_str[3]')
-> > > arch/arm64/kernel/cpuinfo.c:40:27: warning: initialized field
-> > > overwritten [-Woverride-init]
-> > > [ICACHE_POLICY_VPIPT]  = "VPIPT",
-> > >                          ^~~~~~~
-> > > arch/arm64/kernel/cpuinfo.c:40:27: note: (near initialization for
-> > > 'icache_policy_str[0]')
-> > > 
-> > > because it initializes icache_policy_str[0 ... 3] twice. Since
-> > > arm64 developers are keen to keep the style of initializing a static
-> > > array with a non-zero pattern first, just disable those warnings for
-> > > both GCC and Clang of this file.
-> > > 
-> > > Fixes: 155433cb365e ("arm64: cache: Remove support for ASID-tagged VIVT I-caches")
-> > > Signed-off-by: Qian Cai <cai@lca.pw>
+On Wed 07-08-19 19:36:37, Ira Weiny wrote:
+> On Wed, Aug 07, 2019 at 10:46:49AM +0200, Michal Hocko wrote:
+> > > So I think your debug option and my suggested renaming serve a bit
+> > > different purposes (and thus both make sense). If you do the renaming, you
+> > > can just grep to see unconverted sites. Also when someone merges new GUP
+> > > user (unaware of the new rules) while you switch GUP to use pins instead of
+> > > ordinary references, you'll get compilation error in case of renaming
+> > > instead of hard to debug refcount leak without the renaming. And such
+> > > conflict is almost bound to happen given the size of GUP patch set... Also
+> > > the renaming serves against the "coding inertia" - i.e., GUP is around for
+> > > ages so people just use it without checking any documentation or comments.
+> > > After switching how GUP works, what used to be correct isn't anymore so
+> > > renaming the function serves as a warning that something has really
+> > > changed.
 > > 
-> > This is _not_ a fix, and should not require backporting to stable trees.
-> > 
-> > What about all the other instances that we have in mainline?
-> > 
-> > I really don't think that we need to go down this road; we're just going
-> > to end up adding this to every file that happens to include a header
-> > using this scheme...
-> > 
-> > Please just turn this off by default for clang.
-> > 
-> > If we want to enable this, we need a mechanism to permit overridable
-> > assignments as we use range initializers for.
-> > 
-> > Thanks,
-> > Mark.
-> > 
+> > Fully agreed!
 > 
-> For what it's worth, this is disabled by default for clang in the
-> kernel:
+> Ok Prior to this I've been basing all my work for the RDMA/FS DAX stuff in
+> Johns put_user_pages()...  (Including when I proposed failing truncate with a
+> lease in June [1])
 > 
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/Makefile.extrawarn?h=v5.3-rc3#n69
+> However, based on the suggestions in that thread it became clear that a new
+> interface was going to need to be added to pass in the "RDMA file" information
+> to GUP to associate file pins with the correct processes...
 > 
-> It only becomes visible with clang at W=1 because that section doesn't
-> get applied. It becomes visible with GCC at W=1 because of -Wextra.
+> I have many drawings on my white board with "a whole lot of lines" on them to
+> make sure that if a process opens a file, mmaps it, pins it with RDMA, _closes_
+> it, and ummaps it; that the resulting file pin can still be traced back to the
+> RDMA context and all the processes which may have access to it....  No matter
+> where the original context may have come from.  I believe I have accomplished
+> that.
+> 
+> Before I go on, I would like to say that the "imbalance" of get_user_pages()
+> and put_page() bothers me from a purist standpoint...  However, since this
+> discussion cropped up I went ahead and ported my work to Linus' current master
+> (5.3-rc3+) and in doing so I only had to steal a bit of Johns code...  Sorry
+> John...  :-(
+> 
+> I don't have the commit messages all cleaned up and I know there may be some
+> discussion on these new interfaces but I wanted to throw this series out there
+> because I think it may be what Jan and Michal are driving at (or at least in
+> that direction.
+> 
+> Right now only RDMA and DAX FS's are supported.  Other users of GUP will still
+> fail on a DAX file and regular files will still be at risk.[2]
+> 
+> I've pushed this work (based 5.3-rc3+ (33920f1ec5bf)) here[3]:
+> 
+> https://github.com/weiny2/linux-kernel/tree/linus-rdmafsdax-b0-v3
+> 
+> I think the most relevant patch to this conversation is:
+> 
+> https://github.com/weiny2/linux-kernel/commit/5d377653ba5cf11c3b716f904b057bee6641aaf6
+> 
+> I stole Jans suggestion for a name as the name I used while prototyping was
+> pretty bad...  So Thanks Jan...  ;-)
 
-Thanks for clarifying that!
+For your function, I'd choose a name like vaddr_pin_leased_pages() so that
+association with a lease is clear from the name :) Also I'd choose the
+counterpart to be vaddr_unpin_leased_page[s](). Especially having put_page in
+the name looks confusing to me...
 
-Do you know if there's any existing mechanism that we can use to silence
-the warning on a per-assignment basis? Either to say that an assignment
-can be overridden, or that the assignment is expected to override an
-existing assignment?
+								Honza
 
-If not, who would be able to look at adding a mechanism to clang for
-this?
-
-If we could have some attribute or intrinsic that we could wrap like:
-
-struct foo f = {
-	.bar __defaultval = <default>,
-	.bar = <newval>,		// no warning
-	.bar = <anotherval>,		// warning
-};
-
-... or:
-
-struct foo f = {
-	.bar = <default>,
-	.bar __override = <newval>,	// no warning
-	.bar = <anotherval>,		// warning
-};
-
-... or:
-	
-	.bar = OVERRIDE(<newval>),	// no warning
-
-... or:
-	OVERRIDE(.bar) = <newval>,	// no warning
-
-... then I think it would be possible to make use of the warning
-effectively, as we could distinguish intentional overrides from
-unintentional ones, and annotating assignments in this way doesn't seem
-onerous to me.
-
-Thanks,
-Mark.
+-- 
+Jan Kara <jack@suse.com>
+SUSE Labs, CR
 
 _______________________________________________
 linux-arm-kernel mailing list
