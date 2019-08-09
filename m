@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A155A8741B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 10:31:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7454B8741E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 10:32:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OrGhB35mcBb21Qc1bFLTB1vMuSrgTOCyyr1jELlF//s=; b=nG3u9Zq7QW4a71
-	coUyU1HhHBfbHiAM36UiOzplfvFH8LA/yQBB6WewRP5V63q/IZrcaKj/wiEwoLYnBluAO8sfS7Ink
-	7WZaM/T0C4PfCx1IIkZ039Kwnz2fk0/TSeGVuHY0/nshDXaktBFk0optFWPscYDQMBYuxewE85VLV
-	A7dt88XgwBJ8Ij9L8FENwW90+pbk713DjTEwuSre2KUnYuL7a1dfImMmBZ8mxLv3KzeLjaCeyUnGo
-	phmYo6gWUX8fcEd7aPKzTN14MRUCIyZVbityrKaDAOYarwiHUE0Ovy7Lzi2ril5W9LlXyXW0rdY/X
-	A76WE+rXOnzqirmAc99A==;
+	List-Owner; bh=jwjqGGDTy9dm2Yowcsb9Jiu9Z1mz/ageqWpqDsmGy5w=; b=FLDq8vK88WJazq
+	UPCf1jLPspDyE9n/upBVcDYmRFOgv/FWBESTjTtGL5XbwZnpKvA1RCP4ytMUIO6Y5tL8VdnV/DLDW
+	oBzFzhbD+sXfRTp8Anks4+gun8qk8F+ZYqXohCkCdOpoyJD/I0lSz1DTD0M6XSl8q79FJp/SHs7k3
+	A1uqJ12YufCS+6vbAMshFVPdsd5ceqI1yiyO2Zd5LGx4PUsN6lvSw0sEI0TSP86Qfr77CEAp2E0t+
+	1L9/wmrfLG59k7AZddst0DDw0G8Tv1nqGEVgR6dIZKFi7pZSA8qSjBn8r21Wzp6B0yvPUSTwr7nhS
+	bujbu32+0OjgbJD5tHCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw0Iz-0005Hu-Ez; Fri, 09 Aug 2019 08:31:21 +0000
+	id 1hw0JW-0005on-VO; Fri, 09 Aug 2019 08:31:55 +0000
 Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw0IN-0004ui-MD
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 08:30:45 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x798Uff5060647;
- Fri, 9 Aug 2019 03:30:41 -0500
+ id 1hw0IP-0004xZ-JK
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 08:30:47 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x798UhsZ060670;
+ Fri, 9 Aug 2019 03:30:43 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1565339441;
- bh=P6Dx1BDCeX/DKSv3G7ABtQg2q+CUI8R2lT6CeCWYdxE=;
+ s=ti-com-17Q1; t=1565339443;
+ bh=/LQ7mn2gfK7/9aO67ju+/QCOcc+F8/so5NUcbTZEJhI=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=RO2E0pNH8NmBr8sJ9PXxDDc4oGJNrotZLh5QQOsLIwldGEcXQHEZOr6Yj3BqGwuIg
- cg4/Bo5+1SrCPCcwha0sgLuSDMFOVFcJc5j9merso9IGE2v5Nqc+3v+og6ey/kUeXA
- UAyjKrJagaRokRYQFmHykksitlcIoDiSWsTTYbjQ=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x798Ufhc084571
+ b=IBNlV8LR9mk9W/A3gC6Hz2mvMgW6LBjtR3V/DfOnpQ+/2vC2qyUGJ46sQmUaIUeDG
+ 3Q6VZ0cs2dMJ9WcP0Z8OO3b1akXvhlSJQJ9w8hROFopVbTCxmrFyFaf3+LqbVxjPI9
+ vlOsTa4KEoVTajI5RJ3em7p2AKmwAxMR1RhXcZXk=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x798UhYE117455
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 9 Aug 2019 03:30:41 -0500
-Received: from DLEE114.ent.ti.com (157.170.170.25) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ Fri, 9 Aug 2019 03:30:43 -0500
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 9 Aug
- 2019 03:30:40 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE114.ent.ti.com
- (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 03:30:43 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 9 Aug 2019 03:30:40 -0500
+ Frontend Transport; Fri, 9 Aug 2019 03:30:43 -0500
 Received: from uda0131933.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x798USdh070370;
- Fri, 9 Aug 2019 03:30:38 -0500
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x798USdi070370;
+ Fri, 9 Aug 2019 03:30:41 -0500
 From: Lokesh Vutla <lokeshvutla@ti.com>
 To: Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>,
  <linus.walleij@linaro.org>
-Subject: [PATCH 3/6] arm64: dts: ti: k3-j721e: Add gpio nodes in wakeup domain
-Date: Fri, 9 Aug 2019 13:59:44 +0530
-Message-ID: <20190809082947.30590-4-lokeshvutla@ti.com>
+Subject: [PATCH 4/6] arm64: dts: ti: k3-j721e-common-proc-board: Disable
+ unused gpio modules
+Date: Fri, 9 Aug 2019 13:59:45 +0530
+Message-ID: <20190809082947.30590-5-lokeshvutla@ti.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190809082947.30590-1-lokeshvutla@ti.com>
 References: <20190809082947.30590-1-lokeshvutla@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_013043_864893_2BF497B2 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20190809_013045_868455_8058B6D1 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -100,58 +102,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Similar to the gpio groups in main domain, there is one gpio group
-in wakup domain with 2 module instances in it. This gpio group pins
-out 84 lines(6 banks). Add DT node for these 2 gpio module instances.
+There are 10 gpio instances inside SoC with 3 groups as below:
+- Group1: main_gpio0, main_gpio2, main_gpio4, main_gpio6
+- Group2: main_gpio1, main_gpio3, main_gpio5, main_gpio7
+- Group3: wkup_gpio0, wkup_gpio1
+
+Only one instance can be used in each group at a time. So use main_gpio0,
+main_gpio1 and wkup_gpio0 for the current linux context and mark other
+gpio nodes as disabled.
 
 Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
 ---
- .../boot/dts/ti/k3-j721e-mcu-wakeup.dtsi      | 34 +++++++++++++++++++
- 1 file changed, 34 insertions(+)
+ .../dts/ti/k3-j721e-common-proc-board.dts     | 28 +++++++++++++++++++
+ 1 file changed, 28 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-index e616c2481f51..555dc7b7aedc 100644
---- a/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-@@ -87,4 +87,38 @@
- 		ti,sci-dst-id = <14>;
- 		ti,sci-rm-range-girq = <0x5>;
- 	};
-+
-+	wkup_gpio0: gpio@42110000 {
-+		compatible = "ti,j721e-gpio", "ti,keystone-gpio";
-+		reg = <0x0 0x42110000 0x0 0x100>;
-+		gpio-controller;
-+		#gpio-cells = <2>;
-+		interrupt-parent = <&wkup_gpio_intr>;
-+		interrupts = <113 0>, <113 1>, <113 2>,
-+			     <113 3>, <113 4>, <113 5>;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+		ti,ngpio = <84>;
-+		ti,davinci-gpio-unbanked = <0>;
-+		power-domains = <&k3_pds 113 TI_SCI_PD_EXCLUSIVE>;
-+		clocks = <&k3_clks 113 0>;
-+		clock-names = "gpio";
-+	};
-+
-+	wkup_gpio1: gpio@42100000 {
-+		compatible = "ti,j721e-gpio", "ti,keystone-gpio";
-+		reg = <0x0 0x42100000 0x0 0x100>;
-+		gpio-controller;
-+		#gpio-cells = <2>;
-+		interrupt-parent = <&wkup_gpio_intr>;
-+		interrupts = <114 0>, <114 1>, <114 2>,
-+			     <114 3>, <114 4>, <114 5>;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+		ti,ngpio = <84>;
-+		ti,davinci-gpio-unbanked = <0>;
-+		power-domains = <&k3_pds 114 TI_SCI_PD_EXCLUSIVE>;
-+		clocks = <&k3_clks 114 0>;
-+		clock-names = "gpio";
-+	};
+diff --git a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
+index 63b47b839388..509579ca3db2 100644
+--- a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
++++ b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
+@@ -52,3 +52,31 @@
+ 	/* UART not brought out */
+ 	status = "disabled";
  };
++
++&main_gpio2 {
++	status = "disabled";
++};
++
++&main_gpio3 {
++	status = "disabled";
++};
++
++&main_gpio4 {
++	status = "disabled";
++};
++
++&main_gpio5 {
++	status = "disabled";
++};
++
++&main_gpio6 {
++	status = "disabled";
++};
++
++&main_gpio7 {
++	status = "disabled";
++};
++
++&wkup_gpio1 {
++	status = "disabled";
++};
 -- 
 2.22.0
 
