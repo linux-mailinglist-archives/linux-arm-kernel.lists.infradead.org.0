@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5667879AB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 14:18:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D912879CA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 14:21:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YjgSapci1qtvulNP1mjY5R/x9dbXmxq1VvY5OdFGMYs=; b=jZE5mdaxDoQysv
-	46k9q0TBDQbz0l3lh4CbZAFWMv9s8TB0ETD2ADTgxmw3WTv/B4R7xhqufC1/E31pv7wD5VMMohjQv
-	Kabang4i4eIG9q+Il1bHFajvpFfEe1lGgBSWhnVJXGdBWV9c0RvjHpxJLmEjs4c75OLSkA/qBhTdZ
-	cNUfda+cOqUTQ+Q5kRnSUHPCsh/B5t8CAtQiVFpPh40b8uwnOdTOZUerB7EBsHajpFXDtYREUQ24i
-	a9Jb6BiVS6q/hrSqw+hMKghtvV7/cszFOpANNlXrHWMgF/AEnHvLEu4Q1FMS9uqGWxXJUBp8mzB6p
-	1o9GkaHFv4GOA4dkWUwQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TL0ctdjP/IfUORJhVylmaQ6QQGt2wAj3RNtCpPO46iA=; b=l+Ii8X1VphGAnV
+	7neHtsk0HkGbFukLE8Lb+BM6qj1O19tuY1uhY0iMYAtRGjk2AFXW7NfGBZWmnbej7TTjonUNMhIX/
+	cVBQuqGifplbsAKkeSsOTiBdGcC6H/aNCnsJs5JXgoTIat8qo0YhQAu18MQq5+bo3zjnvBfDP9kPP
+	rgW+1rEFi1b1SMW1O7T/a6tWUakkT6KF1l7QqzOrHMdO+1Xns4QxZkcGrUTIU5OCwwnzSh4sOCDFW
+	H1faiBGVtw2osursfnIAL5fstMjx6YXZ6B+nLgNOiz8nk6kAPdwhLrq/VSM8ue1CsbsIMnaWDe5AZ
+	1gH6fxPUuhMYr2/mWakQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw3r0-0002uo-Rc; Fri, 09 Aug 2019 12:18:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw3qm-0002u1-9c
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 12:18:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B4E0B1596;
- Fri,  9 Aug 2019 05:18:27 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- E5C493F706; Fri,  9 Aug 2019 05:18:25 -0700 (PDT)
-Subject: Re: [PATCH 07/19] irqchip/mmp: mask off interrupts from other cores
-To: Lubomir Rintel <lkundrak@v3.sk>, Olof Johansson <olof@lixom.net>
-References: <20190809093158.7969-1-lkundrak@v3.sk>
- <20190809093158.7969-8-lkundrak@v3.sk>
-From: Marc Zyngier <maz@kernel.org>
-Organization: Approximate
-Message-ID: <19a21c54-93ac-19dc-d679-8d376d44e68c@kernel.org>
-Date: Fri, 9 Aug 2019 13:18:24 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hw3tV-0005Nr-Ph; Fri, 09 Aug 2019 12:21:17 +0000
+Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hw3t7-0004zu-7G; Fri, 09 Aug 2019 12:20:55 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 464kpy5K69z9sBF;
+ Fri,  9 Aug 2019 22:20:42 +1000 (AEST)
+From: Michael Ellerman <mpe@ellerman.id.au>
+To: John Hubbard <jhubbard@nvidia.com>,
+ Andrew Morton <akpm@linux-foundation.org>
+Subject: Re: [PATCH v3 38/41] powerpc: convert put_page() to put_user_page*()
+In-Reply-To: <248c9ab2-93cc-6d8b-606d-d85b83e791e5@nvidia.com>
+References: <20190807013340.9706-1-jhubbard@nvidia.com>
+ <20190807013340.9706-39-jhubbard@nvidia.com>
+ <87k1botdpx.fsf@concordia.ellerman.id.au>
+ <248c9ab2-93cc-6d8b-606d-d85b83e791e5@nvidia.com>
+Date: Fri, 09 Aug 2019 22:20:40 +1000
+Message-ID: <875zn6ttrb.fsf@concordia.ellerman.id.au>
 MIME-Version: 1.0
-In-Reply-To: <20190809093158.7969-8-lkundrak@v3.sk>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_051828_425125_FFB0A0D3 
-X-CRM114-Status: GOOD (  24.84  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190809_052053_549421_DE983B15 
+X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,175 +64,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Andres Salomon <dilinger@queued.net>,
- Thomas Gleixner <tglx@linutronix.de>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
+ ceph-devel@vger.kernel.org, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@lst.de>,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
+ linux-media@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ linux-block@vger.kernel.org,
+ =?utf-8?B?SsOpcsO0?= =?utf-8?B?bWU=?= Glisse <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/08/2019 10:31, Lubomir Rintel wrote:
-> From: Andres Salomon <dilinger@queued.net>
-> 
-> On mmp3, there's an extra set of ICU registers (ICU2) that handle
-> interrupts on the extra cores.  When masking off interrupts on MP1,
-> these should be masked as well.
-> 
-> We add a new interrupt controller via device tree to identify when we're
-> looking at an mmp3 machine via compatible field of "marvell,mmp3-intc".
-> 
-> [lkundrak@v3.sk: Changed "mrvl,mmp3-intc" compatible strings to
-> "marvell,mmp3-intc". Tidied up the subject line a bit.]
-> 
-> Signed-off-by: Andres Salomon <dilinger@queued.net>
-> Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
-> 
-> ---
->  arch/arm/mach-mmp/regs-icu.h |  3 +++
->  drivers/irqchip/irq-mmp.c    | 51 ++++++++++++++++++++++++++++++++++++
->  2 files changed, 54 insertions(+)
-> 
-> diff --git a/arch/arm/mach-mmp/regs-icu.h b/arch/arm/mach-mmp/regs-icu.h
-> index 0375d5a7fcb2b..410743d2b4020 100644
-> --- a/arch/arm/mach-mmp/regs-icu.h
-> +++ b/arch/arm/mach-mmp/regs-icu.h
-> @@ -11,6 +11,9 @@
->  #define ICU_VIRT_BASE	(AXI_VIRT_BASE + 0x82000)
->  #define ICU_REG(x)	(ICU_VIRT_BASE + (x))
->  
-> +#define ICU2_VIRT_BASE	(AXI_VIRT_BASE + 0x84000)
-> +#define ICU2_REG(x)	(ICU2_VIRT_BASE + (x))
-> +
->  #define ICU_INT_CONF(n)		ICU_REG((n) << 2)
->  #define ICU_INT_CONF_MASK	(0xf)
->  
-> diff --git a/drivers/irqchip/irq-mmp.c b/drivers/irqchip/irq-mmp.c
-> index cd8d2253f56d1..25497c75cc861 100644
-> --- a/drivers/irqchip/irq-mmp.c
-> +++ b/drivers/irqchip/irq-mmp.c
-> @@ -44,6 +44,7 @@ struct icu_chip_data {
->  	unsigned int		conf_enable;
->  	unsigned int		conf_disable;
->  	unsigned int		conf_mask;
-> +	unsigned int		conf2_mask;
->  	unsigned int		clr_mfp_irq_base;
->  	unsigned int		clr_mfp_hwirq;
->  	struct irq_domain	*domain;
-> @@ -53,9 +54,11 @@ struct mmp_intc_conf {
->  	unsigned int	conf_enable;
->  	unsigned int	conf_disable;
->  	unsigned int	conf_mask;
-> +	unsigned int	conf2_mask;
->  };
->  
->  static void __iomem *mmp_icu_base;
-> +static void __iomem *mmp_icu2_base;
->  static struct icu_chip_data icu_data[MAX_ICU_NR];
->  static int max_icu_nr;
->  
-> @@ -98,6 +101,16 @@ static void icu_mask_irq(struct irq_data *d)
->  		r &= ~data->conf_mask;
->  		r |= data->conf_disable;
->  		writel_relaxed(r, mmp_icu_base + (hwirq << 2));
-> +
-> +		if (data->conf2_mask) {
-> +			/*
-> +			 * ICU1 (above) only controls PJ4 MP1; if using SMP,
-> +			 * we need to also mask the MP2 and MM cores via ICU2.
-> +			 */
-> +			r = readl_relaxed(mmp_icu2_base + (hwirq << 2));
-> +			r &= ~data->conf2_mask;
-> +			writel_relaxed(r, mmp_icu2_base + (hwirq << 2));
-> +		}
->  	} else {
->  		r = readl_relaxed(data->reg_mask) | (1 << hwirq);
->  		writel_relaxed(r, data->reg_mask);
-> @@ -201,6 +214,14 @@ static const struct mmp_intc_conf mmp2_conf = {
->  			  MMP2_ICU_INT_ROUTE_PJ4_FIQ,
->  };
->  
-> +static struct mmp_intc_conf mmp3_conf = {
-> +	.conf_enable	= 0x20,
-> +	.conf_disable	= 0x0,
-> +	.conf_mask	= MMP2_ICU_INT_ROUTE_PJ4_IRQ |
-> +			  MMP2_ICU_INT_ROUTE_PJ4_FIQ,
-> +	.conf2_mask	= 0xf0,
-> +};
-> +
->  static void __exception_irq_entry mmp_handle_irq(struct pt_regs *regs)
->  {
->  	int hwirq;
-> @@ -364,6 +385,14 @@ static int __init mmp_init_bases(struct device_node *node)
->  		pr_err("Failed to get interrupt controller register\n");
->  		return -ENOMEM;
->  	}
-> +	if (of_device_is_compatible(node, "marvell,mmp3-intc")) {
+John Hubbard <jhubbard@nvidia.com> writes:
+> On 8/7/19 10:42 PM, Michael Ellerman wrote:
+>> Hi John,
+>> 
+>> john.hubbard@gmail.com writes:
+>>> diff --git a/arch/powerpc/mm/book3s64/iommu_api.c b/arch/powerpc/mm/book3s64/iommu_api.c
+>>> index b056cae3388b..e126193ba295 100644
+>>> --- a/arch/powerpc/mm/book3s64/iommu_api.c
+>>> +++ b/arch/powerpc/mm/book3s64/iommu_api.c
+>>> @@ -203,6 +202,7 @@ static void mm_iommu_unpin(struct mm_iommu_table_group_mem_t *mem)
+>>>  {
+>>>  	long i;
+>>>  	struct page *page = NULL;
+>>> +	bool dirty = false;
+>> 
+>> I don't think you need that initialisation do you?
+>> 
+>
+> Nope, it can go. Fixed locally, thanks.
 
-Instead of harcoding the compatible property once more, why don't you
-simply pass a flag from mmpx_of_init()?
+Thanks.
 
-> +		mmp_icu2_base = of_iomap(node, 1);
-> +		if (!mmp_icu2_base) {
-> +			pr_err("Failed to get interrupt controller register #2\n");
-> +			iounmap(mmp_icu_base);
-> +			return -ENOMEM;
-> +		}
-> +	}
->  
->  	icu_data[0].virq_base = 0;
->  	icu_data[0].domain = irq_domain_add_linear(node, nr_irqs,
-> @@ -386,6 +415,8 @@ static int __init mmp_init_bases(struct device_node *node)
->  			irq_dispose_mapping(icu_data[0].virq_base + i);
->  	}
->  	irq_domain_remove(icu_data[0].domain);
-> +	if (of_device_is_compatible(node, "marvell,mmp3-intc"))
-> +		iounmap(mmp_icu2_base);
->  	iounmap(mmp_icu_base);
->  	return -EINVAL;
->  }
-> @@ -428,6 +459,26 @@ static int __init mmp2_of_init(struct device_node *node,
->  }
->  IRQCHIP_DECLARE(mmp2_intc, "mrvl,mmp2-intc", mmp2_of_init);
->  
-> +static int __init mmp3_of_init(struct device_node *node,
-> +			       struct device_node *parent)
-> +{
-> +	int ret;
-> +
-> +	ret = mmp_init_bases(node);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	icu_data[0].conf_enable = mmp3_conf.conf_enable;
-> +	icu_data[0].conf_disable = mmp3_conf.conf_disable;
-> +	icu_data[0].conf_mask = mmp3_conf.conf_mask;
-> +	icu_data[0].conf2_mask = mmp3_conf.conf2_mask;
-> +	irq_set_default_host(icu_data[0].domain);
+> Did you get a chance to look at enough of the other bits to feel comfortable 
+> with the patch, overall?
 
-Why do you need this? On a fully DT-ified platform, there should be no
-notion of a default domain.
+Mostly :) It's not really my area, but all the conversions looked
+correct to me as best as I could tell.
 
-> +	set_handle_irq(mmp2_handle_irq);
-> +	max_icu_nr = 1;
-> +	return 0;
-> +}
-> +IRQCHIP_DECLARE(mmp3_intc, "marvell,mmp3-intc", mmp3_of_init);
-> +
->  static int __init mmp2_mux_of_init(struct device_node *node,
->  				   struct device_node *parent)
->  {
-> 
+So I'm fine for it to go in as part of the series:
 
-Thanks,
+Acked-by: Michael Ellerman <mpe@ellerman.id.au> (powerpc)
 
-	M.
--- 
-Jazz is not dead, it just smells funny...
+cheers
 
 _______________________________________________
 linux-arm-kernel mailing list
