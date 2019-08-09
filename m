@@ -2,63 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A82F787ECC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 18:02:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C964287ED1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 18:03:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0fPUTrUvIvPfDgcc0acioajyM+PruKYa+gPEFjKUBcM=; b=V+w0qW/Cznc6NK
-	hnSfFjRCUDzTn9ilOITei/VUBx7hkd+RnP/hZI8rA5l1WGiufp5sKzN75/UssDYSYLyYMPn1BgCcy
-	W5+4c0nJe9DhGvWPjisbpmEQ6/fQBMLy1fBN8+qtzQkra8ltpVIzk72Ogt94mecYRloMu18XJjvaR
-	1tbkxs4MDsUXeUlEsSqQ/30Grwyh6pbBAZtbuvchofqBiGcvb8zaP96GAENchKJD7m3yJBZDvCCos
-	BvYA0PyUiAcTAwOf1nXqY/AULaSQ/I8xZPCXoeW3savPflYevWEYn5b00OdwPTes8WUiaXYrwi6up
-	7VGk5QHxMYM51ofwAfbw==;
+	List-Owner; bh=xfqo9VstBJ0m7qYO5tsQkJ+roPN1dQb1JeY/JF06Ps0=; b=DjfWkk5gGc+8TO
+	ArkOB6EfchvnN+CpXVokr1WWeNJZKI10tvmBh3vh7IiMrg7vL+XZn4cIVVS1fsUhPbw2EHJIT3EIT
+	sRFUhJcGToNOIBvM02+//4stq85jHMmQIUrfQYHTZk5we9crijvfdzF7eNjsjWAiK+IRh13mpBuly
+	SWNjUcq7u9SGvedTOz3n2xXHRD1Jp1ynLqubMlZ2/Ixrxkaw8lHqeNsh1KLbm+qThcnKkP6I/zN2X
+	D3ypYeCg4YDK3M8he0yHSM1FEcyScpyqbbvWqLTU4Np05FhEWAk8pKaRue3QG0WyKh7k02g5kEf+J
+	3kfWyrWfbPzf8pqXJZAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw7Lg-0004zu-If; Fri, 09 Aug 2019 16:02:36 +0000
-Received: from mga17.intel.com ([192.55.52.151])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw7LX-0004zI-Iq
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 16:02:28 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 09 Aug 2019 09:02:25 -0700
-X-IronPort-AV: E=Sophos;i="5.64,364,1559545200"; d="scan'208";a="166045189"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by orsmga007-auth.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 09 Aug 2019 09:02:21 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id 22D9E20CEA; Fri,  9 Aug 2019 19:01:22 +0300 (EEST)
-Date: Fri, 9 Aug 2019 19:01:21 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Hugues Fruchet <hugues.fruchet@st.com>
-Subject: Re: [PATCH v4 1/3] media: stm32-dcmi: improve sensor subdev naming
-Message-ID: <20190809160121.GA6194@paasikivi.fi.intel.com>
-References: <1564577783-18627-1-git-send-email-hugues.fruchet@st.com>
- <1564577783-18627-2-git-send-email-hugues.fruchet@st.com>
+	id 1hw7MN-00069J-D9; Fri, 09 Aug 2019 16:03:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hw7MD-00067r-O5
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 16:03:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 979B315A2;
+ Fri,  9 Aug 2019 09:03:08 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ C67723F575; Fri,  9 Aug 2019 09:03:03 -0700 (PDT)
+Date: Fri, 9 Aug 2019 17:03:01 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>,
+ Andrew Morton <akpm@linux-foundation.org>
+Subject: Re: [PATCH v19 04/15] mm: untag user pointers passed to memory
+ syscalls
+Message-ID: <20190809160301.GB23083@arrakis.emea.arm.com>
+References: <cover.1563904656.git.andreyknvl@google.com>
+ <aaf0c0969d46b2feb9017f3e1b3ef3970b633d91.1563904656.git.andreyknvl@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1564577783-18627-2-git-send-email-hugues.fruchet@st.com>
+In-Reply-To: <aaf0c0969d46b2feb9017f3e1b3ef3970b633d91.1563904656.git.andreyknvl@google.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_090227_638716_C7A20137 
-X-CRM114-Status: UNSURE (   7.09  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190809_090309_871615_F7198532 
+X-CRM114-Status: GOOD (  22.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,40 +63,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yannick Fertre <yannick.fertre@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Mickael GUENE <mickael.guene@st.com>, linux-kernel@vger.kernel.org,
- Philippe CORNU <philippe.cornu@st.com>, Hans Verkuil <hverkuil@xs4all.nl>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, Dave Hansen <dave.hansen@intel.com>,
+ linux-kernel@vger.kernel.org, Jens Wiklander <jens.wiklander@linaro.org>,
+ Lee Smith <Lee.Smith@arm.com>, Alexander Deucher <Alexander.Deucher@amd.com>,
+ enh <enh@google.com>, Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Hugues,
-
-Thanks for teh update.
-
-On Wed, Jul 31, 2019 at 02:56:21PM +0200, Hugues Fruchet wrote:
-> Rename "subdev" entity struct field to "source"
-> to prepare for several subdev support.
-> Move asd field on top of entity struct.
+On Tue, Jul 23, 2019 at 07:58:41PM +0200, Andrey Konovalov wrote:
+> This patch is a part of a series that extends kernel ABI to allow to pass
+> tagged user pointers (with the top byte set to something else other than
+> 0x00) as syscall arguments.
 > 
-> Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
-> Change-Id: I1545a1a29a8061ee67cc6e4b799e9a69071911e7
+> This patch allows tagged pointers to be passed to the following memory
+> syscalls: get_mempolicy, madvise, mbind, mincore, mlock, mlock2, mprotect,
+> mremap, msync, munlock, move_pages.
+> 
+> The mmap and mremap syscalls do not currently accept tagged addresses.
+> Architectures may interpret the tag as a background colour for the
+> corresponding vma.
+> 
+> Reviewed-by: Khalid Aziz <khalid.aziz@oracle.com>
+> Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> ---
+>  mm/madvise.c   | 2 ++
+>  mm/mempolicy.c | 3 +++
+>  mm/migrate.c   | 2 +-
+>  mm/mincore.c   | 2 ++
+>  mm/mlock.c     | 4 ++++
+>  mm/mprotect.c  | 2 ++
+>  mm/mremap.c    | 7 +++++++
+>  mm/msync.c     | 2 ++
+>  8 files changed, 23 insertions(+), 1 deletion(-)
 
-No Change-Id tags in the kernel, please. Check the other two as well.
+More back and forth discussions on how to specify the exceptions here.
+I'm proposing just dropping the exceptions and folding in the diff
+below.
 
-With that fixed,
+Andrew, if you prefer a standalone patch instead, please let me know:
 
-Acked-by: Sakari Ailus <sakari.ailus@linux.intel.com>
+------------------8<----------------------------
+From 9a5286acaa638c6a917d96986bf28dad35e24a0c Mon Sep 17 00:00:00 2001
+From: Catalin Marinas <catalin.marinas@arm.com>
+Date: Fri, 9 Aug 2019 14:21:33 +0100
+Subject: [PATCH] fixup! mm: untag user pointers passed to memory syscalls
 
--- 
-Sakari Ailus
-sakari.ailus@linux.intel.com
+mmap, mremap, munmap, brk added to the list of syscalls that accept
+tagged pointers.
+
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+---
+ mm/mmap.c   | 5 +++++
+ mm/mremap.c | 6 +-----
+ 2 files changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/mm/mmap.c b/mm/mmap.c
+index 7e8c3e8ae75f..b766b633b7ae 100644
+--- a/mm/mmap.c
++++ b/mm/mmap.c
+@@ -201,6 +201,8 @@ SYSCALL_DEFINE1(brk, unsigned long, brk)
+ 	bool downgraded = false;
+ 	LIST_HEAD(uf);
+ 
++	brk = untagged_addr(brk);
++
+ 	if (down_write_killable(&mm->mmap_sem))
+ 		return -EINTR;
+ 
+@@ -1573,6 +1575,8 @@ unsigned long ksys_mmap_pgoff(unsigned long addr, unsigned long len,
+ 	struct file *file = NULL;
+ 	unsigned long retval;
+ 
++	addr = untagged_addr(addr);
++
+ 	if (!(flags & MAP_ANONYMOUS)) {
+ 		audit_mmap_fd(fd, flags);
+ 		file = fget(fd);
+@@ -2874,6 +2878,7 @@ EXPORT_SYMBOL(vm_munmap);
+ 
+ SYSCALL_DEFINE2(munmap, unsigned long, addr, size_t, len)
+ {
++	addr = untagged_addr(addr);
+ 	profile_munmap(addr);
+ 	return __vm_munmap(addr, len, true);
+ }
+diff --git a/mm/mremap.c b/mm/mremap.c
+index 64c9a3b8be0a..1fc8a29fbe3f 100644
+--- a/mm/mremap.c
++++ b/mm/mremap.c
+@@ -606,12 +606,8 @@ SYSCALL_DEFINE5(mremap, unsigned long, addr, unsigned long, old_len,
+ 	LIST_HEAD(uf_unmap_early);
+ 	LIST_HEAD(uf_unmap);
+ 
+-	/*
+-	 * Architectures may interpret the tag passed to mmap as a background
+-	 * colour for the corresponding vma. For mremap we don't allow tagged
+-	 * new_addr to preserve similar behaviour to mmap.
+-	 */
+ 	addr = untagged_addr(addr);
++	new_addr = untagged_addr(new_addr);
+ 
+ 	if (flags & ~(MREMAP_FIXED | MREMAP_MAYMOVE))
+ 		return ret;
 
 _______________________________________________
 linux-arm-kernel mailing list
