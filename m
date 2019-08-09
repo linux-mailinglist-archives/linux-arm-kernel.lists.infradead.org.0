@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 735268789A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 13:30:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66D358789B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 13:31:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XN5nRMA+iefNjB+hDG9/VBwUt05c/6TLw87vaStfelU=; b=ZcZHAePmnWBxd6
-	Opd3T/BS0n2tCjCgmrja94h5q4W6IzLLV1y6Fl6CT/NfcrcsmRERO7LWD65z3V6CYYw/45EfU41RK
-	6lTLt+dNWOcpnSp5mmAxmPNO9I0yRdW4sdRrZtsxVn+OtbBsg5RSKBDlbGyZ65mggz0YfFwGyesbg
-	EkV8jq0CxlThHiTbjCBBNlahffDtVZATDltH+84x02uZd8kRhocdMT2hVYFPsc3xRKoSVnl2PmWrT
-	jhOZtfbWkTugFnbMBCcgGsiCoREbOhVDvSFEMvpntEKg7lDyhXzRCWJZpFfXAh4+3jjWJfmW62dKv
-	8q7/eOIrJulVhnL2SDzg==;
+	List-Owner; bh=vDX8Rkg6cp970wUE8ArgEegmUd39iP8dy5XlQ0ETP9M=; b=DL3+q3dVdX9C6K
+	XzwNxGB+fPdomzqhOslxr2+W95gwsirZGnQrzsGPhdfdN5scV88BTU0J2JVgy/veG/p1zxUs1aET6
+	oYJkAJ0ICPZpu12uyZt/ANo93hSPAOgMmLlyXiwnWtZ2HUUf2OflZWr9i9v7J31YCu9vX2GPqtUnt
+	udkdkasybK7MCF72XeKxIZUa6KACugmFKFeAkeuFzfDLvl5jtSO8RoEpYWWzKVpnTMibJJ8baVyS2
+	cb/wk0fmh3jHwVv345GW3tKaHXBnTYgCs/vLNFXHosJXHrYMD1YgNHG4GMVzGQL+ldibrBhJ4EhmZ
+	OSQwHXTnBljHr4qP21uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw36Y-0000gK-I6; Fri, 09 Aug 2019 11:30:42 +0000
+	id 1hw36o-0000us-SX; Fri, 09 Aug 2019 11:30:59 +0000
 Received: from mail-eopbgr130047.outbound.protection.outlook.com
  ([40.107.13.47] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw35C-0006rZ-1v
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 11:29:19 +0000
+ id 1hw35E-0006rZ-B4
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 11:29:23 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WvmvfzD3ptaY5T7FR0tCKDUOwMRcJWubHqz+W/WZYEQWjGds5E+g0Ep8/z9cbHFqrEa/EF8dqmVSt5GrRGfIBSQu46771J3vy5ESGrVQdn0ZO3BjqGX/RG46TYoyMBR6vPniRC4Y9Cwf28F6ID0xcrWekDAwQB6ceIJ9IjizuUqaEjDxLOA2v0KYr1d8/xQD6IEOr+ytW8azBq7GigM5F4PF9vvQvdAxDfdxkf8Biqxpa68iPi8fiwGegzxpEm6vxac8C7JR/fAYQRAEwC9HYVTOF4jmtZQ1GkphE/iFOnqdi4F0MCp8Js4c9E2WQwt4nSOsXPU0O7e90U2oue1YXg==
+ b=MTDEnVkG7qygvr0w++WIY2YHDsAfur/vZhk//ip2V1jhm3LatUJHTTN4n3diwSUvtO8igUsBk2W+4vEtvveS99g/hcsWHq44PqqThaDI2yRAOF/AbnETWfIzXdFMA68oNzVywkIhbBGmfnx7EBW07kLFo7ukH2DPK8YPz2qAYtJV0RYb6nyzYco9ldbyXXdksNWV1fTsrP7CHyDSDjqA1WlbIafZ78syVitWXyYu6k647mG7xerdS8tCVOZnRFODDxirCMTTWXkFcGli2BNIFzzjcYUsEjj5E7t5XWm4ZbPnqsrHSu44Q4C7vmY30R8MzlsJgx5yOLXKBRtMmN0Rwg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Qsz5V+1aWaPpbCQ15tKsqIB9J9IX5L3HJRBgrzb9Q8k=;
- b=L0fJLrZ7T9Q9dDNcuyTBRX4+FHsFFUQOkzPLwalLlZSYlMuaza51UxaQpJ8hVAypXhqIEVM4eX04dXbCDXIj+iIkuqcjfN9e2Ga0mT1V+sXXtxFPUAwD5XMldQog3OJ0+YesDILQdtYl1iPObYihxxAjcRzqxB0dXjPeQE3EVuJvn+mRWqv6h3VcqpV9RtKFN0lKaQV6/ZkSUSoMpNrIx0E8po4Auxv//TJbM9P+gsss7u66VvPHHFm6TkSM9AX8vnV0gEO4JLP8kGR8fRUPrvsrMkQzGg6mFzHlcbTBhUO5Qru6gl29y95EDHoba6nWz11CPc8k42CKuLfLw1BCCA==
+ bh=hTWPBLt7N35I6+mc5/CTAlCt2bBtiBjt4o0KenR1c6g=;
+ b=fdnqMw1Yqcucrdzki4L2eWxXrQlDyvMpwod1JPk0VciAL8zSefYjfx9m7AZxMIS3eIfI4y3REEDFALVkthDODhm0U5JSlFZGKoaT7KyCRlvtpzxvD8GjirLck0ncgCjpV5qjunK1A3Zhq2ww+XCktAtFqrGvPNgUK12+rmUywSz9YPlFckcbEVxX3r/IaSY/Xhi6m7siMOuGY7TkEvGqdG/yzhZNzbX5S3YjnNxJ/TTlakCBM9ri5V1PB8ylduaTYmkPeUMHSh84M39mQ9S/T6tP+5+F9P9HLQgTqoPYNcgs+b6UvZ2iVvIlRQ7gqaaQ1g8AcF8O9A/LUY01tdsWZA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Qsz5V+1aWaPpbCQ15tKsqIB9J9IX5L3HJRBgrzb9Q8k=;
- b=JY1Cr6+Z66UGcN/icQVne8c3cZXgXXlafTJ4Lem2tPmnedxsRO2FOlCtvKoJdlaPVFCgvqBpHoSw71Q9Lu0VjjIOd94SGyu2bmFsFmdAFCXFwZSRQqmqxRe4DQgqNHVUqr9Ywi13SlaW1WjVGuuveiZW1+k/zFXbbaZ9DrIM4io=
+ bh=hTWPBLt7N35I6+mc5/CTAlCt2bBtiBjt4o0KenR1c6g=;
+ b=cDAvsf7ZhaWRQEoKZz9yePoUOee4NCnoTvMUJmgI41fYxIU3bHdOSiEwks8zwI+CUrr4APZ9+uYDjxQZTUHal1RU2fyY+t2ZVgrYHum/jQe6AU5OwNtQiXQqMT24KoO/C3Tt6Ff5AVoafoRlhMEPC1twQBK1jO3xPEDlznxMnDM=
 Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com (10.175.20.18) by
  VI1PR0402MB3359.eurprd04.prod.outlook.com (52.134.1.20) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2157.13; Fri, 9 Aug 2019 11:29:14 +0000
+ 15.20.2157.13; Fri, 9 Aug 2019 11:29:16 +0000
 Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com
  ([fe80::7de6:ea4b:9b5d:d023]) by VI1PR0402MB2863.eurprd04.prod.outlook.com
  ([fe80::7de6:ea4b:9b5d:d023%7]) with mapi id 15.20.2157.020; Fri, 9 Aug 2019
- 11:29:14 +0000
+ 11:29:16 +0000
 From: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
 To: "corbet@lwn.net" <corbet@lwn.net>, "robh+dt@kernel.org"
  <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
@@ -53,12 +53,11 @@ To: "corbet@lwn.net" <corbet@lwn.net>, "robh+dt@kernel.org"
  "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "will@kernel.org"
  <will@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>, Leo Li
  <leoyang.li@nxp.com>
-Subject: [PATCH v2 4/6] dt-bindings: serial: Document Freescale LINFlex UART
-Thread-Topic: [PATCH v2 4/6] dt-bindings: serial: Document Freescale LINFlex
- UART
-Thread-Index: AQHVTqWsK9eiDQvZCkSXj9zSiL4EIw==
-Date: Fri, 9 Aug 2019 11:29:14 +0000
-Message-ID: <20190809112853.15846-5-stefan-gabriel.mirea@nxp.com>
+Subject: [PATCH v2 5/6] tty: serial: Add linflexuart driver for S32V234
+Thread-Topic: [PATCH v2 5/6] tty: serial: Add linflexuart driver for S32V234
+Thread-Index: AQHVTqWtXXET2+6xDU23/kc3OkYYnw==
+Date: Fri, 9 Aug 2019 11:29:16 +0000
+Message-ID: <20190809112853.15846-6-stefan-gabriel.mirea@nxp.com>
 References: <20190809112853.15846-1-stefan-gabriel.mirea@nxp.com>
 In-Reply-To: <20190809112853.15846-1-stefan-gabriel.mirea@nxp.com>
 Accept-Language: en-US
@@ -74,7 +73,7 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [212.146.100.6]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 603143c5-5588-4576-d40f-08d71cbcce86
+x-ms-office365-filtering-correlation-id: 690abe05-8d31-4302-84e9-08d71cbccf90
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
@@ -82,30 +81,30 @@ x-microsoft-antispam: BCL:0; PCL:0;
 x-ms-traffictypediagnostic: VI1PR0402MB3359:
 x-ms-exchange-purlcount: 1
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR0402MB33596BEE56EB232EC275E0D4DFD60@VI1PR0402MB3359.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5797;
+x-microsoft-antispam-prvs: <VI1PR0402MB3359562E5AE3967E437DBB06DFD60@VI1PR0402MB3359.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:127;
 x-forefront-prvs: 01244308DF
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(376002)(396003)(39860400002)(136003)(346002)(199004)(189003)(66476007)(66446008)(66556008)(64756008)(5660300002)(6512007)(26005)(186003)(6306002)(2201001)(52116002)(76176011)(8936002)(99286004)(14454004)(50226002)(1076003)(86362001)(66946007)(71190400001)(71200400001)(4326008)(386003)(966005)(6506007)(53936002)(478600001)(102836004)(110136005)(2906002)(256004)(25786009)(8676002)(66066001)(476003)(2616005)(14444005)(54906003)(2501003)(486006)(316002)(36756003)(6116002)(3846002)(6486002)(7736002)(6636002)(7416002)(6436002)(305945005)(81156014)(446003)(11346002)(81166006);
+ SFS:(10009020)(4636009)(366004)(376002)(396003)(39860400002)(136003)(346002)(199004)(189003)(66476007)(66446008)(66556008)(64756008)(5660300002)(6512007)(26005)(186003)(6306002)(2201001)(52116002)(76176011)(8936002)(99286004)(14454004)(50226002)(30864003)(1076003)(86362001)(66946007)(71190400001)(71200400001)(4326008)(386003)(966005)(6506007)(53936002)(478600001)(53946003)(102836004)(110136005)(2906002)(256004)(25786009)(8676002)(66066001)(476003)(2616005)(14444005)(54906003)(2501003)(486006)(316002)(36756003)(6116002)(3846002)(6486002)(7736002)(6636002)(7416002)(6436002)(305945005)(81156014)(446003)(11346002)(81166006)(559001)(579004);
  DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3359;
  H:VI1PR0402MB2863.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: pyJFHjIUEliOyVUYZX+TBq4EgOAByFAAQuNnprOTDNokq1fSHGtovveafIXb6L+8y5pK5CV5DAyB/cOFX1yPfIMUR4J35JwaLQa0rPDG4rQ50OX2vFWNs/b2PidJ0O1+jCVXM0LEcNZ62VP7+mv9/MoESuIcN4uy0TNuBTJS641SdpS1OvmkPmddPFGB5XTeIV9CXrD7XLcPKpZxWxLTxqQ6Oze0LkN1TTTgxONBBCjhxTIt4ewMwFGtO+R8eFVwGD9oU+r99Qx+K/ov8M7wXs8NTvNvoi1We0mQsdgw8KZBXlvgsFKH0KbR6yRgt3QO0u2AgbcMOXTUb18AdLyiwQv1dUyr8+yYS8MEB/2me17RbdnzU6TXdgcDpVw4HstnqCkmlRnJzKWerxKBnbtXBVtQ4xmT8wOImXMXSA80hcE=
+x-microsoft-antispam-message-info: IeCEVP37jN4qKGFJN0b/5vMWoMH06ux8C23Vgrx/cS7DC/5c5px8ZYm8mZzilh04UQk1naXaIzj4tSqOrObYz/vDIm5DTjLhK75xUORX5XcWW2JN2bdlUzSsyXszevfTaUiwprNWmARim+2hcvU91NE1n1QlglWXRo/jmu6u6LqNYmSpA2sSHcfcleV71JFvzRLNsTHMvkej/gHELNNWgI2qvliqlMU+hMittb9hB3GuAKkxA6SiaNJdhAJa2KqBtPtpiB++B4fPvoL6CzM/7cHSjroidTxrRKDOlHY6R29CRyGtyYjKZcSbyoiFmyKSNvkdi3GP8OMA4ck+RxJ79jUAzeT2aasGicgWkjJXvAj/l2kM5z/V3ujG6/IOH/W3HzPh0cbzt7TK0xYLnqB94Q/7O0E+WDaYntRpcKJJbdE=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 603143c5-5588-4576-d40f-08d71cbcce86
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Aug 2019 11:29:14.3255 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 690abe05-8d31-4302-84e9-08d71cbccf90
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Aug 2019 11:29:16.1267 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Qi5aF0Kj8G143MBx3NA8PiRMKlSyetGcHOoVFSxu8Zzrdy6gUoI2mNF8sQ4JeRiTBSeboix1ehcDgkzwynKVGEnzNHYpMxHbXOeDyvJStSQ=
+X-MS-Exchange-CrossTenant-userprincipalname: rFiBcu4N7EQLn1KCfhMI/D7PBKK9iHlxZBseQZfPPGGIg6NiuJTKzp+S0yzP/B24vrsHyrxQGipyrDev7X2ncHEPX7PGO3xoYtT3SOigDw8=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3359
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_042918_162148_26BF1498 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20190809_042920_439140_8A192B28 
+X-CRM114-Status: GOOD (  19.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -146,49 +145,1068 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
+Introduce support for LINFlex driver, based on:
+- the version of Freescale LPUART driver after commit b3e3bf2ef2c7 ("Merge
+  4.0-rc7 into tty-next");
+- commit abf1e0a98083 ("tty: serial: fsl_lpuart: lock port on console
+  write").
+In this basic version, the driver can be tested using initramfs and relies
+on the clocks and pin muxing set up by U-Boot.
 
-Add documentation for the serial communication interface module (LINFlex),
-found in two instances on S32V234.
+Remarks concerning the earlycon support:
+
+- LinFlexD does not allow character transmissions in the INIT mode (see
+  section 47.4.2.1 in the reference manual[1]). Therefore, a mutual
+  exclusion between the first linflex_setup_watermark/linflex_set_termios
+  executions and linflex_earlycon_putchar was employed and the characters
+  normally sent to earlycon during initialization are kept in a buffer and
+  sent afterwards.
+
+- Empirically, character transmission is also forbidden within the last 1-2
+  ms before entering the INIT mode, so we use an explicit timeout
+  (PREINIT_DELAY) between linflex_earlycon_putchar and the first call to
+  linflex_setup_watermark.
+
+- U-Boot currently uses the UART FIFO mode, while this driver makes the
+  transition to the buffer mode. Therefore, the earlycon putchar function
+  matches the U-Boot behavior before initializations and the Linux behavior
+  after.
+
+[1] https://www.nxp.com/webapp/Download?colCode=S32V234RM
 
 Signed-off-by: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
+Signed-off-by: Adrian.Nitu <adrian.nitu@freescale.com>
 Signed-off-by: Larisa Grigore <Larisa.Grigore@nxp.com>
+Signed-off-by: Ana Nedelcu <B56683@freescale.com>
+Signed-off-by: Mihaela Martinas <Mihaela.Martinas@freescale.com>
+Signed-off-by: Matthew Nunez <matthew.nunez@nxp.com>
+[stefan-gabriel.mirea@nxp.com: Reduced for upstreaming and implemented
+                               earlycon support]
 Signed-off-by: Stefan-Gabriel Mirea <stefan-gabriel.mirea@nxp.com>
 ---
- .../bindings/serial/fsl,s32-linflexuart.txt   | 24 +++++++++++++++++++
- 1 file changed, 24 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt
+ .../admin-guide/kernel-parameters.txt         |   6 +
+ drivers/tty/serial/Kconfig                    |  15 +
+ drivers/tty/serial/Makefile                   |   1 +
+ drivers/tty/serial/fsl_linflexuart.c          | 942 ++++++++++++++++++
+ include/uapi/linux/serial_core.h              |   3 +
+ 5 files changed, 967 insertions(+)
+ create mode 100644 drivers/tty/serial/fsl_linflexuart.c
 
-diff --git a/Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt b/Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt
+diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+index 46b826fcb5ad..4d545732aadc 100644
+--- a/Documentation/admin-guide/kernel-parameters.txt
++++ b/Documentation/admin-guide/kernel-parameters.txt
+@@ -1090,6 +1090,12 @@
+ 			the framebuffer, pass the 'ram' option so that it is
+ 			mapped with the correct attributes.
+ 
++		linflex,<addr>
++			Use early console provided by Freescale LinFlex UART
++			serial driver for NXP S32V234 SoCs. A valid base
++			address must be provided, and the serial port must
++			already be setup and configured.
++
+ 	earlyprintk=	[X86,SH,ARM,M68k,S390]
+ 			earlyprintk=vga
+ 			earlyprintk=sclp
+diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
+index fd385c8c53a5..b4fa2f7c96bd 100644
+--- a/drivers/tty/serial/Kconfig
++++ b/drivers/tty/serial/Kconfig
+@@ -1452,6 +1452,21 @@ config SERIAL_FSL_LPUART_CONSOLE
+ 	  If you have enabled the lpuart serial port on the Freescale SoCs,
+ 	  you can make it the console by answering Y to this option.
+ 
++config SERIAL_FSL_LINFLEXUART
++	tristate "Freescale linflexuart serial port support"
++	select SERIAL_CORE
++	help
++	  Support for the on-chip linflexuart on some Freescale SOCs.
++
++config SERIAL_FSL_LINFLEXUART_CONSOLE
++	bool "Console on Freescale linflexuart serial port"
++	depends on SERIAL_FSL_LINFLEXUART=y
++	select SERIAL_CORE_CONSOLE
++	select SERIAL_EARLYCON
++	help
++	  If you have enabled the linflexuart serial port on the Freescale
++	  SoCs, you can make it the console by answering Y to this option.
++
+ config SERIAL_CONEXANT_DIGICOLOR
+ 	tristate "Conexant Digicolor CX92xxx USART serial port support"
+ 	depends on OF
+diff --git a/drivers/tty/serial/Makefile b/drivers/tty/serial/Makefile
+index 7cd7cabfa6c4..7a3d52a453b7 100644
+--- a/drivers/tty/serial/Makefile
++++ b/drivers/tty/serial/Makefile
+@@ -82,6 +82,7 @@ obj-$(CONFIG_SERIAL_EFM32_UART) += efm32-uart.o
+ obj-$(CONFIG_SERIAL_ARC)	+= arc_uart.o
+ obj-$(CONFIG_SERIAL_RP2)	+= rp2.o
+ obj-$(CONFIG_SERIAL_FSL_LPUART)	+= fsl_lpuart.o
++obj-$(CONFIG_SERIAL_FSL_LINFLEXUART)	+= fsl_linflexuart.o
+ obj-$(CONFIG_SERIAL_CONEXANT_DIGICOLOR)	+= digicolor-usart.o
+ obj-$(CONFIG_SERIAL_MEN_Z135)	+= men_z135_uart.o
+ obj-$(CONFIG_SERIAL_SPRD) += sprd_serial.o
+diff --git a/drivers/tty/serial/fsl_linflexuart.c b/drivers/tty/serial/fsl_linflexuart.c
 new file mode 100644
-index 000000000000..957ffeaca9f1
+index 000000000000..26b9601a0952
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt
-@@ -0,0 +1,24 @@
-+* Freescale Linflex UART
++++ b/drivers/tty/serial/fsl_linflexuart.c
+@@ -0,0 +1,942 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Freescale linflexuart serial port driver
++ *
++ * Copyright 2012-2016 Freescale Semiconductor, Inc.
++ * Copyright 2017-2018 NXP
++ */
 +
-+The LINFlexD controller implements several LIN protocol versions, as well as
-+support for full-duplex UART communication through 8-bit and 9-bit frames. The
-+Linflex UART driver enables operation only in UART mode.
++#if defined(CONFIG_SERIAL_FSL_LINFLEXUART_CONSOLE) && \
++	defined(CONFIG_MAGIC_SYSRQ)
++#define SUPPORT_SYSRQ
++#endif
 +
-+See chapter 47 ("LINFlexD") in the reference manual[1].
++#include <linux/console.h>
++#include <linux/io.h>
++#include <linux/irq.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/of_device.h>
++#include <linux/serial_core.h>
++#include <linux/slab.h>
++#include <linux/tty_flip.h>
++#include <linux/delay.h>
 +
-+Required properties:
-+- compatible :
-+  - "fsl,s32-linflexuart" for linflex configured in uart mode which
-+  is compatible with the one integrated on S32V234 SoC
-+- reg : Address and length of the register set for the device
-+- interrupts : Should contain uart interrupt
++/* All registers are 32-bit width */
 +
-+Example:
-+uart0:serial@40053000 {
-+	compatible = "fsl,s32-linflexuart";
-+	reg = <0x0 0x40053000 0x0 0x1000>;
-+	interrupts = <0 59 4>;
-+	status = "disabled";
++#define LINCR1	0x0000	/* LIN control register				*/
++#define LINIER	0x0004	/* LIN interrupt enable register		*/
++#define LINSR	0x0008	/* LIN status register				*/
++#define LINESR	0x000C	/* LIN error status register			*/
++#define UARTCR	0x0010	/* UART mode control register			*/
++#define UARTSR	0x0014	/* UART mode status register			*/
++#define LINTCSR	0x0018	/* LIN timeout control status register		*/
++#define LINOCR	0x001C	/* LIN output compare register			*/
++#define LINTOCR	0x0020	/* LIN timeout control register			*/
++#define LINFBRR	0x0024	/* LIN fractional baud rate register		*/
++#define LINIBRR	0x0028	/* LIN integer baud rate register		*/
++#define LINCFR	0x002C	/* LIN checksum field register			*/
++#define LINCR2	0x0030	/* LIN control register 2			*/
++#define BIDR	0x0034	/* Buffer identifier register			*/
++#define BDRL	0x0038	/* Buffer data register least significant	*/
++#define BDRM	0x003C	/* Buffer data register most significant	*/
++#define IFER	0x0040	/* Identifier filter enable register		*/
++#define IFMI	0x0044	/* Identifier filter match index		*/
++#define IFMR	0x0048	/* Identifier filter mode register		*/
++#define GCR	0x004C	/* Global control register			*/
++#define UARTPTO	0x0050	/* UART preset timeout register			*/
++#define UARTCTO	0x0054	/* UART current timeout register		*/
++
++/*
++ * Register field definitions
++ */
++
++#define LINFLEXD_LINCR1_INIT		BIT(0)
++#define LINFLEXD_LINCR1_MME		BIT(4)
++#define LINFLEXD_LINCR1_BF		BIT(7)
++
++#define LINFLEXD_LINSR_LINS_INITMODE	BIT(12)
++#define LINFLEXD_LINSR_LINS_MASK	(0xF << 12)
++
++#define LINFLEXD_LINIER_SZIE		BIT(15)
++#define LINFLEXD_LINIER_OCIE		BIT(14)
++#define LINFLEXD_LINIER_BEIE		BIT(13)
++#define LINFLEXD_LINIER_CEIE		BIT(12)
++#define LINFLEXD_LINIER_HEIE		BIT(11)
++#define LINFLEXD_LINIER_FEIE		BIT(8)
++#define LINFLEXD_LINIER_BOIE		BIT(7)
++#define LINFLEXD_LINIER_LSIE		BIT(6)
++#define LINFLEXD_LINIER_WUIE		BIT(5)
++#define LINFLEXD_LINIER_DBFIE		BIT(4)
++#define LINFLEXD_LINIER_DBEIETOIE	BIT(3)
++#define LINFLEXD_LINIER_DRIE		BIT(2)
++#define LINFLEXD_LINIER_DTIE		BIT(1)
++#define LINFLEXD_LINIER_HRIE		BIT(0)
++
++#define LINFLEXD_UARTCR_OSR_MASK	(0xF << 24)
++#define LINFLEXD_UARTCR_OSR(uartcr)	(((uartcr) \
++					& LINFLEXD_UARTCR_OSR_MASK) >> 24)
++
++#define LINFLEXD_UARTCR_ROSE		BIT(23)
++
++#define LINFLEXD_UARTCR_RFBM		BIT(9)
++#define LINFLEXD_UARTCR_TFBM		BIT(8)
++#define LINFLEXD_UARTCR_WL1		BIT(7)
++#define LINFLEXD_UARTCR_PC1		BIT(6)
++
++#define LINFLEXD_UARTCR_RXEN		BIT(5)
++#define LINFLEXD_UARTCR_TXEN		BIT(4)
++#define LINFLEXD_UARTCR_PC0		BIT(3)
++
++#define LINFLEXD_UARTCR_PCE		BIT(2)
++#define LINFLEXD_UARTCR_WL0		BIT(1)
++#define LINFLEXD_UARTCR_UART		BIT(0)
++
++#define LINFLEXD_UARTSR_SZF		BIT(15)
++#define LINFLEXD_UARTSR_OCF		BIT(14)
++#define LINFLEXD_UARTSR_PE3		BIT(13)
++#define LINFLEXD_UARTSR_PE2		BIT(12)
++#define LINFLEXD_UARTSR_PE1		BIT(11)
++#define LINFLEXD_UARTSR_PE0		BIT(10)
++#define LINFLEXD_UARTSR_RMB		BIT(9)
++#define LINFLEXD_UARTSR_FEF		BIT(8)
++#define LINFLEXD_UARTSR_BOF		BIT(7)
++#define LINFLEXD_UARTSR_RPS		BIT(6)
++#define LINFLEXD_UARTSR_WUF		BIT(5)
++#define LINFLEXD_UARTSR_4		BIT(4)
++
++#define LINFLEXD_UARTSR_TO		BIT(3)
++
++#define LINFLEXD_UARTSR_DRFRFE		BIT(2)
++#define LINFLEXD_UARTSR_DTFTFF		BIT(1)
++#define LINFLEXD_UARTSR_NF		BIT(0)
++#define LINFLEXD_UARTSR_PE		(LINFLEXD_UARTSR_PE0 |\
++					 LINFLEXD_UARTSR_PE1 |\
++					 LINFLEXD_UARTSR_PE2 |\
++					 LINFLEXD_UARTSR_PE3)
++
++#define LINFLEX_LDIV_MULTIPLIER		(16)
++
++#define DRIVER_NAME	"fsl-linflexuart"
++#define DEV_NAME	"ttyLF"
++#define UART_NR		4
++
++#define EARLYCON_BUFFER_INITIAL_CAP	8
++
++#define PREINIT_DELAY			2000 /* us */
++
++static const struct of_device_id linflex_dt_ids[] = {
++	{
++		.compatible = "fsl,s32-linflexuart",
++	},
++	{ /* sentinel */ }
++};
++MODULE_DEVICE_TABLE(of, linflex_dt_ids);
++
++#ifdef CONFIG_SERIAL_FSL_LINFLEXUART_CONSOLE
++static struct uart_port *earlycon_port;
++static bool linflex_earlycon_same_instance;
++static spinlock_t init_lock;
++static bool during_init;
++
++static struct {
++	char *content;
++	unsigned int len, cap;
++} earlycon_buf;
++#endif
++
++static void linflex_stop_tx(struct uart_port *port)
++{
++	unsigned long ier;
++
++	ier = readl(port->membase + LINIER);
++	ier &= ~(LINFLEXD_LINIER_DTIE);
++	writel(ier, port->membase + LINIER);
++}
++
++static void linflex_stop_rx(struct uart_port *port)
++{
++	unsigned long ier;
++
++	ier = readl(port->membase + LINIER);
++	writel(ier & ~LINFLEXD_LINIER_DRIE, port->membase + LINIER);
++}
++
++static inline void linflex_transmit_buffer(struct uart_port *sport)
++{
++	struct circ_buf *xmit = &sport->state->xmit;
++	unsigned char c;
++	unsigned long status;
++
++	while (!uart_circ_empty(xmit)) {
++		c = xmit->buf[xmit->tail];
++		writeb(c, sport->membase + BDRL);
++
++		/* Waiting for data transmission completed. */
++		while (((status = readl(sport->membase + UARTSR)) &
++					LINFLEXD_UARTSR_DTFTFF) !=
++					LINFLEXD_UARTSR_DTFTFF)
++			;
++
++		xmit->tail = (xmit->tail + 1) & (UART_XMIT_SIZE - 1);
++		sport->icount.tx++;
++
++		writel(status | LINFLEXD_UARTSR_DTFTFF,
++		       sport->membase + UARTSR);
++	}
++
++	if (uart_circ_chars_pending(xmit) < WAKEUP_CHARS)
++		uart_write_wakeup(sport);
++
++	if (uart_circ_empty(xmit))
++		linflex_stop_tx(sport);
++}
++
++static void linflex_start_tx(struct uart_port *port)
++{
++	unsigned long ier;
++
++	linflex_transmit_buffer(port);
++	ier = readl(port->membase + LINIER);
++	writel(ier | LINFLEXD_LINIER_DTIE, port->membase + LINIER);
++}
++
++static irqreturn_t linflex_txint(int irq, void *dev_id)
++{
++	struct uart_port *sport = dev_id;
++	struct circ_buf *xmit = &sport->state->xmit;
++	unsigned long flags;
++	unsigned long status;
++
++	spin_lock_irqsave(&sport->lock, flags);
++
++	if (sport->x_char) {
++		writeb(sport->x_char, sport->membase + BDRL);
++
++		/* waiting for data transmission completed */
++		while (((status = readl(sport->membase + UARTSR)) &
++			LINFLEXD_UARTSR_DTFTFF) != LINFLEXD_UARTSR_DTFTFF)
++			;
++
++		writel(status | LINFLEXD_UARTSR_DTFTFF,
++		       sport->membase + UARTSR);
++
++		goto out;
++	}
++
++	if (uart_circ_empty(xmit) || uart_tx_stopped(sport)) {
++		linflex_stop_tx(sport);
++		goto out;
++	}
++
++	linflex_transmit_buffer(sport);
++
++	if (uart_circ_chars_pending(xmit) < WAKEUP_CHARS)
++		uart_write_wakeup(sport);
++
++out:
++	spin_unlock_irqrestore(&sport->lock, flags);
++	return IRQ_HANDLED;
++}
++
++static irqreturn_t linflex_rxint(int irq, void *dev_id)
++{
++	struct uart_port *sport = dev_id;
++	unsigned int flg;
++	struct tty_port *port = &sport->state->port;
++	unsigned long flags, status;
++	unsigned char rx;
++
++	spin_lock_irqsave(&sport->lock, flags);
++
++	status = readl(sport->membase + UARTSR);
++	while (status & LINFLEXD_UARTSR_RMB) {
++		rx = readb(sport->membase + BDRM);
++		flg = TTY_NORMAL;
++		sport->icount.rx++;
++
++		if (status & (LINFLEXD_UARTSR_BOF | LINFLEXD_UARTSR_SZF |
++			      LINFLEXD_UARTSR_FEF | LINFLEXD_UARTSR_PE)) {
++			if (status & LINFLEXD_UARTSR_SZF)
++				status |= LINFLEXD_UARTSR_SZF;
++			if (status & LINFLEXD_UARTSR_BOF)
++				status |= LINFLEXD_UARTSR_BOF;
++			if (status & LINFLEXD_UARTSR_FEF)
++				status |= LINFLEXD_UARTSR_FEF;
++			if (status & LINFLEXD_UARTSR_PE)
++				status |=  LINFLEXD_UARTSR_PE;
++		}
++
++		writel(status | LINFLEXD_UARTSR_RMB | LINFLEXD_UARTSR_DRFRFE,
++		       sport->membase + UARTSR);
++		status = readl(sport->membase + UARTSR);
++
++		if (uart_handle_sysrq_char(sport, (unsigned char)rx))
++			continue;
++
++#ifdef SUPPORT_SYSRQ
++			sport->sysrq = 0;
++#endif
++		tty_insert_flip_char(port, rx, flg);
++	}
++
++	spin_unlock_irqrestore(&sport->lock, flags);
++
++	tty_flip_buffer_push(port);
++
++	return IRQ_HANDLED;
++}
++
++static irqreturn_t linflex_int(int irq, void *dev_id)
++{
++	struct uart_port *sport = dev_id;
++	unsigned long status;
++
++	status = readl(sport->membase + UARTSR);
++
++	if (status & LINFLEXD_UARTSR_DRFRFE)
++		linflex_rxint(irq, dev_id);
++	if (status & LINFLEXD_UARTSR_DTFTFF)
++		linflex_txint(irq, dev_id);
++
++	return IRQ_HANDLED;
++}
++
++/* return TIOCSER_TEMT when transmitter is not busy */
++static unsigned int linflex_tx_empty(struct uart_port *port)
++{
++	unsigned long status;
++
++	status = readl(port->membase + UARTSR) & LINFLEXD_UARTSR_DTFTFF;
++
++	return status ? TIOCSER_TEMT : 0;
++}
++
++static unsigned int linflex_get_mctrl(struct uart_port *port)
++{
++	return 0;
++}
++
++static void linflex_set_mctrl(struct uart_port *port, unsigned int mctrl)
++{
++}
++
++static void linflex_break_ctl(struct uart_port *port, int break_state)
++{
++}
++
++static void linflex_setup_watermark(struct uart_port *sport)
++{
++	unsigned long cr, ier, cr1;
++
++	/* Disable transmission/reception */
++	ier = readl(sport->membase + LINIER);
++	ier &= ~(LINFLEXD_LINIER_DRIE | LINFLEXD_LINIER_DTIE);
++	writel(ier, sport->membase + LINIER);
++
++	cr = readl(sport->membase + UARTCR);
++	cr &= ~(LINFLEXD_UARTCR_RXEN | LINFLEXD_UARTCR_TXEN);
++	writel(cr, sport->membase + UARTCR);
++
++	/* Enter initialization mode by setting INIT bit */
++
++	/* set the Linflex in master mode and activate by-pass filter */
++	cr1 = LINFLEXD_LINCR1_BF | LINFLEXD_LINCR1_MME
++	      | LINFLEXD_LINCR1_INIT;
++	writel(cr1, sport->membase + LINCR1);
++
++	/* wait for init mode entry */
++	while ((readl(sport->membase + LINSR)
++		& LINFLEXD_LINSR_LINS_MASK)
++		!= LINFLEXD_LINSR_LINS_INITMODE)
++		;
++
++	/*
++	 *	UART = 0x1;		- Linflex working in UART mode
++	 *	TXEN = 0x1;		- Enable transmission of data now
++	 *	RXEn = 0x1;		- Receiver enabled
++	 *	WL0 = 0x1;		- 8 bit data
++	 *	PCE = 0x0;		- No parity
++	 */
++
++	/* set UART bit to allow writing other bits */
++	writel(LINFLEXD_UARTCR_UART, sport->membase + UARTCR);
++
++	cr = (LINFLEXD_UARTCR_RXEN | LINFLEXD_UARTCR_TXEN |
++	      LINFLEXD_UARTCR_WL0 | LINFLEXD_UARTCR_UART);
++
++	writel(cr, sport->membase + UARTCR);
++
++	cr1 &= ~(LINFLEXD_LINCR1_INIT);
++
++	writel(cr1, sport->membase + LINCR1);
++
++	ier = readl(sport->membase + LINIER);
++	ier |= LINFLEXD_LINIER_DRIE;
++	ier |= LINFLEXD_LINIER_DTIE;
++
++	writel(ier, sport->membase + LINIER);
++}
++
++static int linflex_startup(struct uart_port *port)
++{
++	int ret = 0;
++	unsigned long flags;
++
++	spin_lock_irqsave(&port->lock, flags);
++
++	linflex_setup_watermark(port);
++
++	spin_unlock_irqrestore(&port->lock, flags);
++
++	ret = devm_request_irq(port->dev, port->irq, linflex_int, 0,
++			       DRIVER_NAME, port);
++
++	return ret;
++}
++
++static void linflex_shutdown(struct uart_port *port)
++{
++	unsigned long ier;
++	unsigned long flags;
++
++	spin_lock_irqsave(&port->lock, flags);
++
++	/* disable interrupts */
++	ier = readl(port->membase + LINIER);
++	ier &= ~(LINFLEXD_LINIER_DRIE | LINFLEXD_LINIER_DTIE);
++	writel(ier, port->membase + LINIER);
++
++	spin_unlock_irqrestore(&port->lock, flags);
++
++	devm_free_irq(port->dev, port->irq, port);
++}
++
++static void
++linflex_set_termios(struct uart_port *port, struct ktermios *termios,
++		    struct ktermios *old)
++{
++	unsigned long flags;
++	unsigned long cr, old_cr, cr1;
++	unsigned int old_csize = old ? old->c_cflag & CSIZE : CS8;
++
++	cr = readl(port->membase + UARTCR);
++	old_cr = cr;
++
++	/* Enter initialization mode by setting INIT bit */
++	cr1 = readl(port->membase + LINCR1);
++	cr1 |= LINFLEXD_LINCR1_INIT;
++	writel(cr1, port->membase + LINCR1);
++
++	/* wait for init mode entry */
++	while ((readl(port->membase + LINSR)
++		& LINFLEXD_LINSR_LINS_MASK)
++		!= LINFLEXD_LINSR_LINS_INITMODE)
++		;
++
++	/*
++	 * only support CS8 and CS7, and for CS7 must enable PE.
++	 * supported mode:
++	 *	- (7,e/o,1)
++	 *	- (8,n,1)
++	 *	- (8,e/o,1)
++	 */
++	/* enter the UART into configuration mode */
++
++	while ((termios->c_cflag & CSIZE) != CS8 &&
++	       (termios->c_cflag & CSIZE) != CS7) {
++		termios->c_cflag &= ~CSIZE;
++		termios->c_cflag |= old_csize;
++		old_csize = CS8;
++	}
++
++	if ((termios->c_cflag & CSIZE) == CS7) {
++		/* Word length: WL1WL0:00 */
++		cr = old_cr & ~LINFLEXD_UARTCR_WL1 & ~LINFLEXD_UARTCR_WL0;
++	}
++
++	if ((termios->c_cflag & CSIZE) == CS8) {
++		/* Word length: WL1WL0:01 */
++		cr = (old_cr | LINFLEXD_UARTCR_WL0) & ~LINFLEXD_UARTCR_WL1;
++	}
++
++	if (termios->c_cflag & CMSPAR) {
++		if ((termios->c_cflag & CSIZE) != CS8) {
++			termios->c_cflag &= ~CSIZE;
++			termios->c_cflag |= CS8;
++		}
++		/* has a space/sticky bit */
++		cr |= LINFLEXD_UARTCR_WL0;
++	}
++
++	if (termios->c_cflag & CSTOPB)
++		termios->c_cflag &= ~CSTOPB;
++
++	/* parity must be enabled when CS7 to match 8-bits format */
++	if ((termios->c_cflag & CSIZE) == CS7)
++		termios->c_cflag |= PARENB;
++
++	if ((termios->c_cflag & PARENB)) {
++		cr |= LINFLEXD_UARTCR_PCE;
++		if (termios->c_cflag & PARODD)
++			cr = (cr | LINFLEXD_UARTCR_PC0) &
++			     (~LINFLEXD_UARTCR_PC1);
++		else
++			cr = cr & (~LINFLEXD_UARTCR_PC1 &
++				   ~LINFLEXD_UARTCR_PC0);
++	} else {
++		cr &= ~LINFLEXD_UARTCR_PCE;
++	}
++
++	spin_lock_irqsave(&port->lock, flags);
++
++	port->read_status_mask = 0;
++
++	if (termios->c_iflag & INPCK)
++		port->read_status_mask |=	(LINFLEXD_UARTSR_FEF |
++						 LINFLEXD_UARTSR_PE0 |
++						 LINFLEXD_UARTSR_PE1 |
++						 LINFLEXD_UARTSR_PE2 |
++						 LINFLEXD_UARTSR_PE3);
++	if (termios->c_iflag & (IGNBRK | BRKINT | PARMRK))
++		port->read_status_mask |= LINFLEXD_UARTSR_FEF;
++
++	/* characters to ignore */
++	port->ignore_status_mask = 0;
++	if (termios->c_iflag & IGNPAR)
++		port->ignore_status_mask |= LINFLEXD_UARTSR_PE;
++	if (termios->c_iflag & IGNBRK) {
++		port->ignore_status_mask |= LINFLEXD_UARTSR_PE;
++		/*
++		 * if we're ignoring parity and break indicators,
++		 * ignore overruns too (for real raw support).
++		 */
++		if (termios->c_iflag & IGNPAR)
++			port->ignore_status_mask |= LINFLEXD_UARTSR_BOF;
++	}
++
++	writel(cr, port->membase + UARTCR);
++
++	cr1 &= ~(LINFLEXD_LINCR1_INIT);
++
++	writel(cr1, port->membase + LINCR1);
++
++	spin_unlock_irqrestore(&port->lock, flags);
++}
++
++static const char *linflex_type(struct uart_port *port)
++{
++	return "FSL_LINFLEX";
++}
++
++static void linflex_release_port(struct uart_port *port)
++{
++	/* nothing to do */
++}
++
++static int linflex_request_port(struct uart_port *port)
++{
++	return 0;
++}
++
++/* configure/auto-configure the port */
++static void linflex_config_port(struct uart_port *port, int flags)
++{
++	if (flags & UART_CONFIG_TYPE)
++		port->type = PORT_LINFLEXUART;
++}
++
++static const struct uart_ops linflex_pops = {
++	.tx_empty	= linflex_tx_empty,
++	.set_mctrl	= linflex_set_mctrl,
++	.get_mctrl	= linflex_get_mctrl,
++	.stop_tx	= linflex_stop_tx,
++	.start_tx	= linflex_start_tx,
++	.stop_rx	= linflex_stop_rx,
++	.break_ctl	= linflex_break_ctl,
++	.startup	= linflex_startup,
++	.shutdown	= linflex_shutdown,
++	.set_termios	= linflex_set_termios,
++	.type		= linflex_type,
++	.request_port	= linflex_request_port,
++	.release_port	= linflex_release_port,
++	.config_port	= linflex_config_port,
 +};
 +
-+[1] https://www.nxp.com/webapp/Download?colCode=S32V234RM
++static struct uart_port *linflex_ports[UART_NR];
++
++#ifdef CONFIG_SERIAL_FSL_LINFLEXUART_CONSOLE
++static void linflex_console_putchar(struct uart_port *port, int ch)
++{
++	unsigned long cr;
++
++	cr = readl(port->membase + UARTCR);
++
++	writeb(ch, port->membase + BDRL);
++
++	if (!(cr & LINFLEXD_UARTCR_TFBM))
++		while ((readl(port->membase + UARTSR) &
++					LINFLEXD_UARTSR_DTFTFF)
++				!= LINFLEXD_UARTSR_DTFTFF)
++			;
++	else
++		while (readl(port->membase + UARTSR) &
++					LINFLEXD_UARTSR_DTFTFF)
++			;
++
++	if (!(cr & LINFLEXD_UARTCR_TFBM)) {
++		writel((readl(port->membase + UARTSR) |
++					LINFLEXD_UARTSR_DTFTFF),
++					port->membase + UARTSR);
++	}
++}
++
++static void linflex_earlycon_putchar(struct uart_port *port, int ch)
++{
++	unsigned long flags;
++	char *ret;
++
++	if (!linflex_earlycon_same_instance) {
++		linflex_console_putchar(port, ch);
++		return;
++	}
++
++	spin_lock_irqsave(&init_lock, flags);
++	if (!during_init)
++		goto outside_init;
++
++	if (earlycon_buf.len >= 1 << CONFIG_LOG_BUF_SHIFT)
++		goto init_release;
++
++	if (!earlycon_buf.cap) {
++		earlycon_buf.content = kmalloc(EARLYCON_BUFFER_INITIAL_CAP,
++					       GFP_ATOMIC);
++		earlycon_buf.cap = earlycon_buf.content ?
++				   EARLYCON_BUFFER_INITIAL_CAP : 0;
++	} else if (earlycon_buf.len == earlycon_buf.cap) {
++		ret = krealloc(earlycon_buf.content, earlycon_buf.cap << 1,
++			       GFP_ATOMIC);
++		if (ret) {
++			earlycon_buf.content = ret;
++			earlycon_buf.cap <<= 1;
++		}
++	}
++
++	if (earlycon_buf.len < earlycon_buf.cap)
++		earlycon_buf.content[earlycon_buf.len++] = ch;
++
++	goto init_release;
++
++outside_init:
++	linflex_console_putchar(port, ch);
++init_release:
++	spin_unlock_irqrestore(&init_lock, flags);
++}
++
++static void linflex_string_write(struct uart_port *sport, const char *s,
++				 unsigned int count)
++{
++	unsigned long cr, ier = 0;
++
++	ier = readl(sport->membase + LINIER);
++	linflex_stop_tx(sport);
++
++	cr = readl(sport->membase + UARTCR);
++	cr |= (LINFLEXD_UARTCR_TXEN);
++	writel(cr, sport->membase + UARTCR);
++
++	uart_console_write(sport, s, count, linflex_console_putchar);
++
++	writel(ier, sport->membase + LINIER);
++}
++
++static void
++linflex_console_write(struct console *co, const char *s, unsigned int count)
++{
++	struct uart_port *sport = linflex_ports[co->index];
++	unsigned long flags;
++	int locked = 1;
++
++	if (sport->sysrq)
++		locked = 0;
++	else if (oops_in_progress)
++		locked = spin_trylock_irqsave(&sport->lock, flags);
++	else
++		spin_lock_irqsave(&sport->lock, flags);
++
++	linflex_string_write(sport, s, count);
++
++	if (locked)
++		spin_unlock_irqrestore(&sport->lock, flags);
++}
++
++/*
++ * if the port was already initialised (eg, by a boot loader),
++ * try to determine the current setup.
++ */
++static void __init
++linflex_console_get_options(struct uart_port *sport, int *parity, int *bits)
++{
++	unsigned long cr;
++
++	cr = readl(sport->membase + UARTCR);
++	cr &= LINFLEXD_UARTCR_RXEN | LINFLEXD_UARTCR_TXEN;
++
++	if (!cr)
++		return;
++
++	/* ok, the port was enabled */
++
++	*parity = 'n';
++	if (cr & LINFLEXD_UARTCR_PCE) {
++		if (cr & LINFLEXD_UARTCR_PC0)
++			*parity = 'o';
++		else
++			*parity = 'e';
++	}
++
++	if ((cr & LINFLEXD_UARTCR_WL0) && ((cr & LINFLEXD_UARTCR_WL1) == 0)) {
++		if (cr & LINFLEXD_UARTCR_PCE)
++			*bits = 9;
++		else
++			*bits = 8;
++	}
++}
++
++static int __init linflex_console_setup(struct console *co, char *options)
++{
++	struct uart_port *sport;
++	int baud = 115200;
++	int bits = 8;
++	int parity = 'n';
++	int flow = 'n';
++	int ret;
++	int i;
++	unsigned long flags;
++	/*
++	 * check whether an invalid uart number has been specified, and
++	 * if so, search for the first available port that does have
++	 * console support.
++	 */
++	if (co->index == -1 || co->index >= ARRAY_SIZE(linflex_ports))
++		co->index = 0;
++
++	sport = linflex_ports[co->index];
++	if (!sport)
++		return -ENODEV;
++
++	if (options)
++		uart_parse_options(options, &baud, &parity, &bits, &flow);
++	else
++		linflex_console_get_options(sport, &parity, &bits);
++
++	if (earlycon_port && sport->mapbase == earlycon_port->mapbase) {
++		linflex_earlycon_same_instance = true;
++
++		spin_lock_irqsave(&init_lock, flags);
++		during_init = true;
++		spin_unlock_irqrestore(&init_lock, flags);
++
++		/* Workaround for character loss or output of many invalid
++		 * characters, when INIT mode is entered shortly after a
++		 * character has just been printed.
++		 */
++		udelay(PREINIT_DELAY);
++	}
++
++	linflex_setup_watermark(sport);
++
++	ret = uart_set_options(sport, co, baud, parity, bits, flow);
++
++	if (!linflex_earlycon_same_instance)
++		goto done;
++
++	spin_lock_irqsave(&init_lock, flags);
++
++	/* Emptying buffer */
++	if (earlycon_buf.len) {
++		for (i = 0; i < earlycon_buf.len; i++)
++			linflex_console_putchar(earlycon_port,
++				earlycon_buf.content[i]);
++
++		kfree(earlycon_buf.content);
++		earlycon_buf.len = 0;
++	}
++
++	during_init = false;
++	spin_unlock_irqrestore(&init_lock, flags);
++
++done:
++	return ret;
++}
++
++static struct uart_driver linflex_reg;
++static struct console linflex_console = {
++	.name		= DEV_NAME,
++	.write		= linflex_console_write,
++	.device		= uart_console_device,
++	.setup		= linflex_console_setup,
++	.flags		= CON_PRINTBUFFER,
++	.index		= -1,
++	.data		= &linflex_reg,
++};
++
++static void linflex_earlycon_write(struct console *con, const char *s,
++				   unsigned int n)
++{
++	struct earlycon_device *dev = con->data;
++
++	uart_console_write(&dev->port, s, n, linflex_earlycon_putchar);
++}
++
++static int __init linflex_early_console_setup(struct earlycon_device *device,
++					      const char *options)
++{
++	if (!device->port.membase)
++		return -ENODEV;
++
++	device->con->write = linflex_earlycon_write;
++	earlycon_port = &device->port;
++
++	return 0;
++}
++
++OF_EARLYCON_DECLARE(linflex, "fsl,s32-linflexuart",
++		    linflex_early_console_setup);
++
++#define LINFLEX_CONSOLE	(&linflex_console)
++#else
++#define LINFLEX_CONSOLE	NULL
++#endif
++
++static struct uart_driver linflex_reg = {
++	.owner		= THIS_MODULE,
++	.driver_name	= DRIVER_NAME,
++	.dev_name	= DEV_NAME,
++	.nr		= ARRAY_SIZE(linflex_ports),
++	.cons		= LINFLEX_CONSOLE,
++};
++
++static int linflex_probe(struct platform_device *pdev)
++{
++	struct device_node *np = pdev->dev.of_node;
++	struct uart_port *sport;
++	struct resource *res;
++	int ret;
++
++	sport = devm_kzalloc(&pdev->dev, sizeof(*sport), GFP_KERNEL);
++	if (!sport)
++		return -ENOMEM;
++
++	ret = of_alias_get_id(np, "serial");
++	if (ret < 0) {
++		dev_err(&pdev->dev, "failed to get alias id, errno %d\n", ret);
++		return ret;
++	}
++	if (ret >= UART_NR) {
++		dev_err(&pdev->dev, "driver limited to %d serial ports\n",
++			UART_NR);
++		return -ENOMEM;
++	}
++
++	sport->line = ret;
++
++	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++	if (!res)
++		return -ENODEV;
++
++	sport->mapbase = res->start;
++	sport->membase = devm_ioremap_resource(&pdev->dev, res);
++	if (IS_ERR(sport->membase))
++		return PTR_ERR(sport->membase);
++
++	sport->dev = &pdev->dev;
++	sport->type = PORT_LINFLEXUART;
++	sport->iotype = UPIO_MEM;
++	sport->irq = platform_get_irq(pdev, 0);
++	sport->ops = &linflex_pops;
++	sport->flags = UPF_BOOT_AUTOCONF;
++
++	linflex_ports[sport->line] = sport;
++
++	platform_set_drvdata(pdev, sport);
++
++	ret = uart_add_one_port(&linflex_reg, sport);
++	if (ret)
++		return ret;
++
++	return 0;
++}
++
++static int linflex_remove(struct platform_device *pdev)
++{
++	struct uart_port *sport = platform_get_drvdata(pdev);
++
++	uart_remove_one_port(&linflex_reg, sport);
++
++	return 0;
++}
++
++#ifdef CONFIG_PM_SLEEP
++static int linflex_suspend(struct device *dev)
++{
++	struct uart_port *sport = dev_get_drvdata(dev);
++
++	uart_suspend_port(&linflex_reg, sport);
++
++	return 0;
++}
++
++static int linflex_resume(struct device *dev)
++{
++	struct uart_port *sport = dev_get_drvdata(dev);
++
++	uart_resume_port(&linflex_reg, sport);
++
++	return 0;
++}
++#endif
++
++static SIMPLE_DEV_PM_OPS(linflex_pm_ops, linflex_suspend, linflex_resume);
++
++static struct platform_driver linflex_driver = {
++	.probe		= linflex_probe,
++	.remove		= linflex_remove,
++	.driver		= {
++		.name	= DRIVER_NAME,
++		.owner	= THIS_MODULE,
++		.of_match_table	= linflex_dt_ids,
++		.pm	= &linflex_pm_ops,
++	},
++};
++
++static int __init linflex_serial_init(void)
++{
++	int ret;
++
++	ret = uart_register_driver(&linflex_reg);
++	if (ret)
++		return ret;
++
++	ret = platform_driver_register(&linflex_driver);
++	if (ret)
++		uart_unregister_driver(&linflex_reg);
++
++#ifdef CONFIG_SERIAL_FSL_LINFLEXUART_CONSOLE
++	spin_lock_init(&init_lock);
++#endif
++
++	return ret;
++}
++
++static void __exit linflex_serial_exit(void)
++{
++	platform_driver_unregister(&linflex_driver);
++	uart_unregister_driver(&linflex_reg);
++}
++
++module_init(linflex_serial_init);
++module_exit(linflex_serial_exit);
++
++MODULE_DESCRIPTION("Freescale linflex serial port driver");
++MODULE_LICENSE("GPL v2");
+diff --git a/include/uapi/linux/serial_core.h b/include/uapi/linux/serial_core.h
+index 5642c05e0da0..25a3dead4473 100644
+--- a/include/uapi/linux/serial_core.h
++++ b/include/uapi/linux/serial_core.h
+@@ -293,4 +293,7 @@
+ /* SiFive UART */
+ #define PORT_SIFIVE_V0	120
+ 
++/* Freescale Linflex UART */
++#define PORT_LINFLEXUART	121
++
+ #endif /* _UAPILINUX_SERIAL_CORE_H */
 -- 
 2.22.0
 
