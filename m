@@ -2,64 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EEA1882AC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 20:36:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D82D882B7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 20:37:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=B14cK5/bdguAk3fFTo9GKznsUGSXRU7ydc6jnjtnIEo=; b=AaH
-	I44+ulKOSdsoc5pTQGxAOgCN2L5kqzavwP/DYNXeotRqRV7BF31bNvIKfk/jFK5zdpnIxRzU69KbW
-	3uz5VcPglzfiDGTlmjitzgq/vy28bFTWXAYoPFpSin9jFqEs/xFLvPtW3K8jCMqxM9Twi+bukEHxr
-	uKgj2Dpm0xHepmLOSQeiICxFxGLe0cQ0WcpGu+4N+lItEtJ+RZ6vqH7jHOzAGgpe0tL73EnYoxOsi
-	MRBSGjN/aKnsd54U43bWdf6o8T+PZcKMfxB24wsuisn6M5696EvOKswggB8LpO/0UaTG368DV2kc8
-	hqzk7ifEl0DQP4gg3ah58pvGjA21sfA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W6fyfb01qXfCCEbOCKuY7yrpaDniOcIpqTdGME402lQ=; b=fssHqSEsOlrWkZ
+	RVYRtYWCjsoiRxF/OYK++JdFpCixS4zTqtq4DTDeyWmxBXTvLgRZCiGJfg6m2xLa8I65TTADQQaP6
+	9gtNLeZeLuUh+qHsATXn7N7nufKDfJJvCLo53zqVTOwBJ2eenRQHr6rzD5Z6tAPlsNqjSeUDeBpKz
+	ULQIuxoI34l6OYGx1Jr0+5N6PRgpuhQ8Q1ovPjdAzHOKm7Y06prfvclHQdilEdV8SxsavpPps4E/M
+	JOy9vxPMIOykuMgZZO7FQqiTzLP6HEoRXpEwbeI1QEvnk08+6Ns1X5171UwSUs49tdwYSxCmM01Ql
+	9H8sq70kGxbhKfms5k6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw9ko-0000fH-BO; Fri, 09 Aug 2019 18:36:42 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hw9le-0000vx-Ax; Fri, 09 Aug 2019 18:37:34 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw9kf-0000eX-M9
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 18:36:35 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 9CBA0C0B9F;
- Fri,  9 Aug 2019 18:36:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1565375791; bh=nCNzho8v5alI/6i+1aHygJFRglDtTEl398Nq+I6/yIg=;
- h=From:To:Cc:Subject:Date:From;
- b=RN61SRAeyCRovJOdAw3w51pIzr4qX27Evn2Gxk1CVaM57hiZFcd9XGZUG/vwmBudU
- EC7v0tXdh6Y3nAn826Tmywch55W4daNIOp7Is1PWy9ANjOhLxHBfxLxAle+HWj8FAM
- BvucbXYt9OA4DKv/jvd9Qfc5lXmAdhNADV84ow6C0i1yaZP+Qw3ZreOSqLswCX42sS
- 5tOwiEt7847Q+lkFRf+Kq0whtADYQ4VqBAAqncXm8CfQtUazD38g6WyqnCqlOByswC
- qwmdu4MAxM594bAQXHiuTb3dcSH2J61qbwq4h8bJxa4Q/qiKyhdBIAyXyf/36/MqcX
- b/DVojavfeMHg==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 4E0CAA0057;
- Fri,  9 Aug 2019 18:36:27 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net-next 00/12] net: stmmac: Improvements for -next
-Date: Fri,  9 Aug 2019 20:36:08 +0200
-Message-Id: <cover.1565375521.git.joabreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
+ id 1hw9lV-0000uX-Ml
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 18:37:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=IGx1tU/8oZZB3pB47GcI0li+Dcw0am8UumHeTJgqBsA=; b=FI1vTkLp5g159Uj8cKQ9M9yPg
+ 5o1Cnqp19oMJ6nrpK4zw0M1TH8cDtseJ969So98LRY7NxqWnT2GtIvCesWJy5YogAvFlQcwVLFf9m
+ MdzBWgIc6Eqi9mNeGKEbCZ9AbhgxE+I9yycgXHBgxA5104BGeZr1YZid8L4JBbwIYV/BtyAyk1euz
+ KwZgttgdk5EEc6iqpUf2Bvj3Duy/uTnZNEIAJhQsO9IeHKI/u7syQ7tOl0+F2VQniPR2YGbBcT+Ft
+ 8Xy5MdDaQ7/hyU4s3LkVh3XzSZpYapT3CopyQgW0n2gy4ZTERYvKaCunp9i2GpwSUkZmulS+XvQ7r
+ dl2HpuDSQ==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:42960)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1hw9lA-0003Lr-PB; Fri, 09 Aug 2019 19:37:04 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1hw9l4-0003t7-5w; Fri, 09 Aug 2019 19:36:58 +0100
+Date: Fri, 9 Aug 2019 19:36:58 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Dan Williams <dan.j.williams@intel.com>
+Subject: Re: [PATCH 1/7] [RFC] ARM: remove Intel iop33x and iop13xx support
+Message-ID: <20190809183658.GA13294@shell.armlinux.org.uk>
+References: <20190809162956.488941-1-arnd@arndb.de>
+ <20190809163334.489360-1-arnd@arndb.de>
+ <CAA9_cmdDbBm0ookyqGJMcyLVFHkYHuR3mEeawQKS2UqYJoWWaQ@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAA9_cmdDbBm0ookyqGJMcyLVFHkYHuR3mEeawQKS2UqYJoWWaQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_113633_735169_53DAA1A9 
-X-CRM114-Status: UNSURE (   9.25  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190809_113725_740746_A499F2CE 
+X-CRM114-Status: GOOD (  17.52  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -78,62 +88,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-gpio@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, soc@kernel.org,
+ linux-i2c@vger.kernel.org, dmaengine@vger.kernel.org,
+ Martin Michlmayr <tbm@cyrius.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Couple of improvements for -next tree. More info in commit logs.
+On Fri, Aug 09, 2019 at 11:34:12AM -0700, Dan Williams wrote:
+> [ add Martin (if cyrius.com address is still valid) ]
+> 
+> On Fri, Aug 9, 2019 at 9:35 AM Arnd Bergmann <arnd@arndb.de> wrote:
+> >
+> > There are three families of IOP machines we support in Linux: iop32x
+> > (which includes EP80219), iop33x and iop13xx (aka IOP34x aka WP8134x).
+> >
+> > All products we support in the kernel are based on the first of these,
+> > iop32x, the other families only ever supported the Intel reference
+> > boards but no actual machine anyone could ever buy.
+> >
+> > While one could clearly make them all three work in a single kernel
+> > with some work, this takes the easy way out, removing the later two
+> > platforms entirely, under the assumption that there are no remaining
+> > users.
+> >
+> > Earlier versions of OpenWRT and Debian both had support for iop32x
+> > but not the others, and they both dropped iop32x as well in their 2015
+> > releases.
+> >
+> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> > ---
+> > I'm just guessing that iop32x is still needed, and the other two are
+> > not. If anyone disagrees with that assessment, let me know so we
+> > can come up with an alternative approach.
+> 
+> I'm not sure who would scream if iop32x support went away as well, but
+> I have not followed this space in years hence copying Martin.
+> 
+> In any event:
+> 
+> Acked-by: Dan Williams <dan.j.williams@intel.com>
 
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
-
-Jose Abreu (12):
-  net: stmmac: Get correct timestamp values from XGMAC
-  net: stmmac: Prepare to add Split Header support
-  net: stmmac: xgmac: Correctly return that RX descriptor is not last
-    one
-  net: stmmac: Add Split Header support and enable it in XGMAC cores
-  net: stmmac: Add a counter for Split Header packets
-  net: stmmac: dwxgmac: Add Flexible PPS support
-  net: stmmac: Add ethtool register dump for XGMAC cores
-  net: stmmac: Add support for SA Insertion/Replacement in XGMAC cores
-  net: stmmac: selftests: Add tests for SA Insertion/Replacement
-  net: stmmac: xgmac: Add EEE support
-  net: stmmac: Add support for VLAN Insertion Offload
-  net: stmmac: selftests: Add selftest for VLAN TX Offload
-
- drivers/net/ethernet/stmicro/stmmac/common.h       |  10 +
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     |  56 ++++
- .../net/ethernet/stmicro/stmmac/dwxgmac2_core.c    | 189 +++++++++++++-
- .../net/ethernet/stmicro/stmmac/dwxgmac2_descs.c   |  88 ++++++-
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c |  31 ++-
- drivers/net/ethernet/stmicro/stmmac/hwif.h         |  30 +++
- drivers/net/ethernet/stmicro/stmmac/stmmac.h       |  10 +
- .../net/ethernet/stmicro/stmmac/stmmac_ethtool.c   |  25 +-
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  | 282 ++++++++++++++++-----
- .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 194 +++++++++++++-
- 10 files changed, 824 insertions(+), 91 deletions(-)
+Those of us who have and still run Thecus N2100's, for example?
 
 -- 
-2.7.4
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
