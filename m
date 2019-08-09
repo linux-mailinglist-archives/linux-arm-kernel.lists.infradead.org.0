@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF8F58764C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:35:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B052A87650
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:36:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CJzdo4g+5pRnXQbWs4d1ReSMpjyVpge92g5HnT4lds4=; b=akvLHMMPH6A0Cn
-	hTocf3DhIMGkj9WEPKfi3MY9TKD2WDm6rRdcSzMXTQ1dlUdY1CPfxaV1WBtEb4cfXcVR6AsXbFzuF
-	Lk1dZ+q4wUPmB1u1VYQvPeAWzi1CYdYaM/uAu07PYkkPTQkpMW6M6v/MyPG/u/LHFiedMAHbQRNv+
-	VgjU9qE727tUfack4L3PYxGYuWHSQgaEdHYijy25xwN29LxCmzpuZP0ThA26EjyGpsCip9Rq4sYSP
-	WJ7fuagaJRQ3oY6RcWjmK4qLCBUaLtZepmWjJ9RshFRUzIxL8IAmgM31ozYgajE2Ay/CJ8wDgLstQ
-	R7hqtc02azzL5pQqMm9g==;
+	List-Owner; bh=golvp0jluk3y101gXw2Jm2HBrvliXyPFZvpZ8Gc7o4U=; b=GcT7uFwU5U+Dr+
+	VrtxDHwjGLMsyx8pT0D8QguyZRek6Fs7XvURfKn7bjyn2fF/Pen4z5MxV+i3CaeAAoTfja+6hLHri
+	eZfi6kfZD56Z9BbBIYGUglIShO3a0er/b3JIY+Z+jrBG6Sg4HRlkkfYWUd00otM6013yC3KGxJXVo
+	aVjmKE0z3/7oBBXRjttnYjbHenU43KymXbhfTM2Q/k1MRzsm+Ga6IpkLiUOPaEHXSFCDlfeKbXWz6
+	s7J8c+D/5HeFs6JhlvvarW3qSG61y0nWTZnjicBAHqDSfP2nV0TSrBdkdGMA9FeY6ytsNFgfEt7CR
+	Gy96Mm1w/+9l7+5SbrKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw1JK-0007VY-4a; Fri, 09 Aug 2019 09:35:46 +0000
+	id 1hw1K3-0008Fj-4S; Fri, 09 Aug 2019 09:36:31 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw1Gu-0003kF-3T
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:33:17 +0000
+ id 1hw1Gx-0003ns-H7
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:33:21 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 5DFB4D63CB;
- Fri,  9 Aug 2019 11:33:13 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 25D9AD63D9;
+ Fri,  9 Aug 2019 11:33:17 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id vJ9V4MtugYfV; Fri,  9 Aug 2019 11:32:40 +0200 (CEST)
+ with ESMTP id JGSNn_Pw8RHG; Fri,  9 Aug 2019 11:32:43 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 5991FD63D2;
- Fri,  9 Aug 2019 11:32:25 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 75F9FD63DB;
+ Fri,  9 Aug 2019 11:32:28 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id D0045EFrnD-y; Fri,  9 Aug 2019 11:32:18 +0200 (CEST)
+ with ESMTP id vnGR3_IgxWGm; Fri,  9 Aug 2019 11:32:22 +0200 (CEST)
 Received: from furthur.local (ip-37-188-137-236.eurotel.cz [37.188.137.236])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 416E9D63C1;
- Fri,  9 Aug 2019 11:32:16 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 0A8D5D63BD;
+ Fri,  9 Aug 2019 11:32:17 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH 09/19] ARM: l2c: add definition for FWA in PL310 aux register
-Date: Fri,  9 Aug 2019 11:31:48 +0200
-Message-Id: <20190809093158.7969-10-lkundrak@v3.sk>
+Subject: [PATCH 10/19] ARM: mmp: don't select CACHE_TAUROS2 on all ARCH_MMP
+Date: Fri,  9 Aug 2019 11:31:49 +0200
+Message-Id: <20190809093158.7969-11-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190809093158.7969-1-lkundrak@v3.sk>
 References: <20190809093158.7969-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_023316_577475_B839BD3F 
-X-CRM114-Status: UNSURE (   7.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190809_023319_768656_10F7D626 
+X-CRM114-Status: GOOD (  10.13  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -82,27 +81,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PL310 also has a "Force write allocate" bits in the Auxiliary
-Control Register.
+MMP3 has a PJ4B with a Tauros 3 cache controller that uses CACHE_L2X0
+instead, while CACHE_TAUROS2 is present on PJ4 and PJ1 (Mohawk) based
+platforms only.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- arch/arm/include/asm/hardware/cache-l2x0.h | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm/mm/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/include/asm/hardware/cache-l2x0.h b/arch/arm/include/asm/hardware/cache-l2x0.h
-index 32edfadb15935..a6d4ee86ba543 100644
---- a/arch/arm/include/asm/hardware/cache-l2x0.h
-+++ b/arch/arm/include/asm/hardware/cache-l2x0.h
-@@ -118,6 +118,8 @@
- #define L310_AUX_CTRL_STORE_LIMITATION		BIT(11)	/* R2P0+ */
- #define L310_AUX_CTRL_EXCLUSIVE_CACHE		BIT(12)
- #define L310_AUX_CTRL_ASSOCIATIVITY_16		BIT(16)
-+#define L310_AUX_CTRL_FWA_SHIFT			23
-+#define L310_AUX_CTRL_FWA_MASK			(3 << 23)
- #define L310_AUX_CTRL_CACHE_REPLACE_RR		BIT(25)	/* R2P0+ */
- #define L310_AUX_CTRL_NS_LOCKDOWN		BIT(26)
- #define L310_AUX_CTRL_NS_INT_CTRL		BIT(27)
+diff --git a/arch/arm/mm/Kconfig b/arch/arm/mm/Kconfig
+index c54cd7ed90ba5..8dabce4507025 100644
+--- a/arch/arm/mm/Kconfig
++++ b/arch/arm/mm/Kconfig
+@@ -1045,7 +1045,7 @@ endif
+ 
+ config CACHE_TAUROS2
+ 	bool "Enable the Tauros2 L2 cache controller"
+-	depends on (ARCH_DOVE || ARCH_MMP || CPU_PJ4)
++	depends on (CPU_MOHAWK || CPU_PJ4)
+ 	default y
+ 	select OUTER_CACHE
+ 	help
 -- 
 2.21.0
 
