@@ -2,60 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C7EA87181
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 07:32:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E795387195
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 07:37:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ACZbJW30X9C6u839OokWrg+1/rydi6BKiyBCyC6XQy4=; b=N5Lm9ROQODLuPs
-	jIPWnWH0daco2Dswv0Qgz4xY+H6c5ycHXR0XvyPM3qWohhC4GLBXFy5Y0nS52O7lzXghvumb/WgnP
-	w6NrfC+d1mNMWPwWh9pCdLdGnI7rB9TFHhqehBjPHNkuEpXvKocMyzHWy0wpGirWMW49TF/tEpgTS
-	qv840LtTSciI9Rgw2vAs0eqClJg8dGxkHuK4C9MtX9cvoR9F8LAcp/mzu4AI19yL+M4Dwd5N/LXJl
-	D0SMVeM6DFFphn9FDpjS39vEC1EdR+c2/SbdDGe3XKY4pkiLUr17UTB5gnbGVoc9EGOJy/vc90gNx
-	TBGvLeKyydg/dB9en+dw==;
+	List-Owner; bh=HmK73SY/qkgbVsSBvb+ZGkjPB4/xdo+FiXujc6d1yIg=; b=dZ1SHDPyfoy0tM
+	d3ppwpPLKnPR6xypv6Qleljqxt0YithgQwl4ZIT7Jcy+4bRc5vGhg3W9WIPI2GZLkdxilhcw+DRkm
+	zyTiMNKSeJfw0n7bxhb94jUK3NRbzrciK0SFcIPKzNIswtLHQCvPD+GQuSmGsN4mD020J9SRuxQNt
+	9wIbh9FS+jM9f33+j5oMj+7FcDq5ZDHBGtnvg46RUrg9Xs9JtVafhvZeihFaQSP5NRhNnJQe3eSKq
+	grnFXEvyfUVdHnWr7uv8CoFPFzK/Tw+L8FmWEq8SIqcZXuQCVw5h1WoOvyxBOvH9YoAl1bhA8vLuV
+	Sqcob4ICEQ9v952eENrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvxWB-0001Ux-Ph; Fri, 09 Aug 2019 05:32:47 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1hvxa9-00032g-6X; Fri, 09 Aug 2019 05:36:53 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvxVz-0001UI-WA
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 05:32:37 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 08 Aug 2019 22:32:32 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,364,1559545200"; d="scan'208";a="193315385"
-Received: from pipin.fi.intel.com (HELO pipin) ([10.237.72.175])
- by fmsmga001.fm.intel.com with ESMTP; 08 Aug 2019 22:32:29 -0700
-From: Felipe Balbi <felipe.balbi@linux.intel.com>
-To: Arnd Bergmann <arnd@arndb.de>, Tony Lindgren <tony@atomide.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Alan Stern <stern@rowland.harvard.edu>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH 03/22] ARM: omap1: move omap15xx local bus handling to
- usb.c
-In-Reply-To: <20190808212234.2213262-4-arnd@arndb.de>
-References: <20190808212234.2213262-1-arnd@arndb.de>
- <20190808212234.2213262-4-arnd@arndb.de>
-Date: Fri, 09 Aug 2019 08:32:28 +0300
-Message-ID: <87y302ewer.fsf@gmail.com>
+ id 1hvxZv-00031o-PO
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 05:36:41 +0000
+Received: by mail-lj1-x243.google.com with SMTP id t28so90984551lje.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 08 Aug 2019 22:36:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tkESspP4zbr99ojw52v1cXFMI0dDrn0lXHnV6ilVC5Q=;
+ b=atU7IHWXmtnksMrbQ1k8BhvgynR/4zyE9OG6rt3PbzKxYem2YQ+LktsQVrdVxU9YLC
+ 6YS80Puii0arAAtUnabMIGV3zOeVA3ApszU4i/8p8wffKinEejM0dX7NX0PIEsTgMwvO
+ TLzlf48b35qwzLFYgJMSx7ys1Tf0RN+OG8QBquU8whFJhPaB1FkUd42OD9c0OyIJsSHJ
+ KiLi5JgnoeFZjOcc1P0sXibjDkKRUkLk7IMYnOeem0uchFACJ8+T4ZID/+da8ANX2BVu
+ Ko5uHliRhM4w0sAseDx2oJ+M853EwbV2INgH2yf6WehmFBIkH027WuZ/eSEYYm1W4a3G
+ FllQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tkESspP4zbr99ojw52v1cXFMI0dDrn0lXHnV6ilVC5Q=;
+ b=c15O4odq7dY8bAQtob3VR9mWw9Uy2TR4L3SwMdLaqenpX4oOjna3zhJbdpigMIX9NI
+ VM6Mk/rG4Ydwr/rIou5PNqJX73miC0QpfdKRMIkLYNmRKYB0QonR0poOsGfgObrUMQ2N
+ kKndR/uTivpcZjf2KotW/DOh3pgoHgVQTgbnd3fU7+tnTA4B8AvX2BWvpMY8UZRbZK4p
+ RkbPkuRBMok/EPvqJwx/p5MJLtafWuwUEC/1DWV4F14uubFmXZPCFd5cbdkEgcvAiX8w
+ AN8hFYlu275nv2JLR22FPCvRA0jU88XOUe4W200U/UcBqtGzdAQwomETv46o/lD4Z/n0
+ hyUA==
+X-Gm-Message-State: APjAAAVcLuEDKrx9Ct9vBU8+08ptZyXHaitsTvP0Eja1kxlrEaWjm4Db
+ m/VIVxabsWgXf4HIs6atxI9Rg4NIhakZv36ofTqtdA==
+X-Google-Smtp-Source: APXvYqxxy1TTV6QUfZHgTqMprUtqV1APmZ3PZFtZk65sg1r/cmrL6x9y1rC58d2HxqSp7BbfYHFxOnFanGeQ7Y6xGlk=
+X-Received: by 2002:a2e:301a:: with SMTP id w26mr10098807ljw.76.1565328996305; 
+ Thu, 08 Aug 2019 22:36:36 -0700 (PDT)
 MIME-Version: 1.0
+References: <1564489420-677-1-git-send-email-sumit.garg@linaro.org>
+ <1564489420-677-3-git-send-email-sumit.garg@linaro.org>
+ <99777010-db74-096a-ce1a-da30539d6fb5@arm.com>
+In-Reply-To: <99777010-db74-096a-ce1a-da30539d6fb5@arm.com>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Fri, 9 Aug 2019 11:06:24 +0530
+Message-ID: <CAFA6WYPUEUVJqk9E2F6z9oBW3VpC+xeqqpY4YrU9KPL1s0DTyA@mail.gmail.com>
+Subject: Re: [Tee-dev] [RFC v2 2/6] tee: enable support to register kernel
+ memory
+To: Stuart Yoder <stuart.yoder@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_223236_077625_22C8D1AB 
+X-CRM114-CacheID: sfid-20190808_223639_891729_29CF34E9 
 X-CRM114-Status: GOOD (  11.88  )
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,45 +93,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: dhowells@redhat.com, Daniel Thompson <daniel.thompson@linaro.org>,
+ Jonathan Corbet <corbet@lwn.net>, jejb@linux.ibm.com,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Mimi Zohar <zohar@linux.ibm.com>,
+ "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
+ linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
+ Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
+ Casey Schaufler <casey@schaufler-ca.com>, linux-integrity@vger.kernel.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Serge E. Hallyn" <serge@hallyn.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Arnd Bergmann <arnd@arndb.de> writes:
-
-> The mach/memory.h file only exists to implement a dma offset for "Local
-> Bus" devices, and that consists of the OHCI USB controller for practical
-> purposes.
+On Fri, 9 Aug 2019 at 03:57, Stuart Yoder <stuart.yoder@arm.com> wrote:
 >
-> The generic dma-mapping interface has gained this exact feature some
-> years ago and can do it much more efficiently, so replace the complex
-> __arch_virt_to_dma/__arch_dma_to_pfn/... logic with a much simpler boot
-> time initialization.
 >
-> This should also make any code that performs dma mapping calls at
-> runtime much more efficient, by eliminating the strcmp() along with
-> the computation.
 >
-> Similar, a portion of the ohci-omap driver is just there for configuring
-> the memory translation, this too can get moved into usb.c
+> On 7/30/19 7:23 AM, Sumit Garg wrote:
 >
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> > @@ -264,7 +266,17 @@ struct tee_shm *tee_shm_register(struct tee_context *ctx, unsigned long addr,
+> >               goto err;
+> >       }
+> >
+> > -     rc = get_user_pages_fast(start, num_pages, FOLL_WRITE, shm->pages);
+> > +     if (flags & TEE_SHM_USER_MAPPED) {
+> > +             rc = get_user_pages_fast(start, num_pages, FOLL_WRITE,
+> > +                                      shm->pages);
+> > +     } else {
+> > +             const struct kvec kiov = {
+> > +                     .iov_base = (void *)start,
+> > +                     .iov_len = PAGE_SIZE
+> > +             };
+> > +
+> > +             rc = get_kernel_pages(&kiov, num_pages, 0, shm->pages);
+>
+> Passing a single kvec struct is temporary I assume?  Because as currently
+> written this will only work with num_pages==1.
+>
 
-For all of these patches related to usb:
+Ah, thanks Stuart for pointing this out. It should rather be an array
+of kvec struct. Will fix it in next version.
 
-Acked-by: Felipe Balbi <felipe.balbi@linux.intel.com>
+-Sumit
 
-Thanks for cleaning this up, Arnd.
-
--- 
-balbi
+> Stuart
 
 _______________________________________________
 linux-arm-kernel mailing list
