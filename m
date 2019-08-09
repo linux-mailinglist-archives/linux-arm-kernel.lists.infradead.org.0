@@ -2,71 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F222088090
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 18:53:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0AA3E880A5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 18:57:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jNDnofnnXg/rK3VM4lvnldwE7hk50PZJe4ku6wfcToE=; b=BQ+/Z2ooBUkmsS
-	bcjWPu1LZhQVf6JO+YU82GqnfjeO+ybFDIx63yyuyVkxXQVU/k6f1FdR1bZG5MbXFKAJm+JGaQYWl
-	d4y61ahh16oc/XJzS3xEebnSKkQnKHhOaBk4IW28E26TuEdA8yAZgTmjZdDgOss/82dWe8R+m4vGa
-	Dp4Ppmoky45DJrk96htGk8+ssX3ipaNwEgoAHwaBwErNwfro6AoZFY7zWz5OWVFZW9Tkt7LlxSoWd
-	PLeXSiA4GfdXoMCeKRhQw0MDrKinJEyK3iYKqCjXi1M2JZO0VpyUiFJGOXc9xDDUpt5PfzD49sDId
-	YSCYatwCRKedmnXQR3+Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FiC1gZao3+7CGp62iWAle8s+vSYGof/9wS7Mdt0cMgE=; b=gxuI3xLCf2133OY4pewcZyH7/
+	cUFpn/BgTUjaCirOT7m8M91sPsUzrq1ot/OK9EeQZ+AWwBar/vtbz9ztUay2rv+qBkLoiuRBWVSBy
+	U4a9uAbzqu9u/hBRvMwd52x/mzDh+mVV1FjiVlFMY3KdW8sngtzdlkTxUBO/4aqC9ZYAkkxUOKtwM
+	iUIbSRi5jyYSxwPtBJtJKl9VkpdE+k9dlNsO3x7yLq4CQOokUS54nG4VUeAsW2F3HDYO3g2uAoW/E
+	x17Ipas5djZDPCKU7RPlgJ9mNJjo6w0WZ3F0BzKIRBrHDaK6hNV9BeopDFu9t4Wkmp7/na7WeotJl
+	lGgqt3Vtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw89N-0004Pl-Ff; Fri, 09 Aug 2019 16:53:57 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw89E-0004PL-Uu
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 16:53:50 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C199C2086A;
- Fri,  9 Aug 2019 16:53:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565369628;
- bh=9wbSn6LJh7acT2h7wInsGRfEhL2mf1j4PDVBbYpUZnA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Z+srWe8CDYXXEzb9TFTXCqDeHrWV4CWVX3KBcTABLraCCx7n+HYqnsqA+PU/2qDoh
- gb4cvYdg/raT4ftzZNKqAJOoJ3EihmmMgv0RP6qaudGl7djUrhQuka4e34HJakWMnJ
- Qioe7WDnzlhyk7NxU0E86I+cgyy/ndf9faPSpuMM=
-Date: Fri, 9 Aug 2019 17:53:43 +0100
-From: Will Deacon <will@kernel.org>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: Re: [PATCH v2 7/8] arm64: defconfig: Enable the PSCI CPUidle driver
-Message-ID: <20190809165343.5qg3nwgwy6ybms3k@willie-the-truck>
-References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
- <cover.1565348376.git.lorenzo.pieralisi@arm.com>
- <58d9677db3510ed106fe23118090c84f78a44102.1565348376.git.lorenzo.pieralisi@arm.com>
+	id 1hw8D1-0005x6-3w; Fri, 09 Aug 2019 16:57:43 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hw8Cr-0005wJ-1J
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 16:57:34 +0000
+Received: from localhost (p54B333D4.dip0.t-ipconnect.de [84.179.51.212])
+ by pokefinder.org (Postfix) with ESMTPSA id CE01D2C3014;
+ Fri,  9 Aug 2019 18:57:31 +0200 (CEST)
+Date: Fri, 9 Aug 2019 18:57:31 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 1/7] [RFC] ARM: remove Intel iop33x and iop13xx support
+Message-ID: <20190809165731.GD5099@ninjato>
+References: <20190809162956.488941-1-arnd@arndb.de>
+ <20190809163334.489360-1-arnd@arndb.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <58d9677db3510ed106fe23118090c84f78a44102.1565348376.git.lorenzo.pieralisi@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190809163334.489360-1-arnd@arndb.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_095349_011841_136D96FC 
-X-CRM114-Status: GOOD (  15.92  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190809_095733_227878_02AB7EF5 
+X-CRM114-Status: GOOD (  11.67  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,53 +59,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- linux-pm@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Shawn Guo <shawnguo@kernel.org>,
- LAKML <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, soc@kernel.org,
+ Russell King <linux@armlinux.org.uk>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
+ linux-i2c@vger.kernel.org, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5836483378488815178=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 12:03:13PM +0100, Lorenzo Pieralisi wrote:
-> Enable the PSCI CPUidle driver to replace the functionality
-> previously provided by the generic ARM CPUidle driver through
-> CPU operations.
-> 
-> Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Sudeep Holla <sudeep.holla@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> ---
->  arch/arm64/configs/defconfig | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index 0e58ef02880c..c0a7cfe3aebd 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -72,6 +72,7 @@ CONFIG_RANDOMIZE_BASE=y
->  CONFIG_HIBERNATION=y
->  CONFIG_WQ_POWER_EFFICIENT_DEFAULT=y
->  CONFIG_ARM_CPUIDLE=y
-> +CONFIG_ARM_PSCI_CPUIDLE=y
->  CONFIG_CPU_FREQ=y
->  CONFIG_CPU_FREQ_STAT=y
->  CONFIG_CPU_FREQ_GOV_POWERSAVE=m
 
-I'll queue the first 6 patches in this series, but please route this one
-via arm-soc to avoid conflicts:
+--===============5836483378488815178==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Ycz6tD7Th1CMF4v7"
+Content-Disposition: inline
 
-Acked-by: Will Deacon <will@kernel.org>
 
-Failing that, I'm happy to take it at -rc1.
+--Ycz6tD7Th1CMF4v7
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Will
+On Fri, Aug 09, 2019 at 06:33:15PM +0200, Arnd Bergmann wrote:
+> There are three families of IOP machines we support in Linux: iop32x
+> (which includes EP80219), iop33x and iop13xx (aka IOP34x aka WP8134x).
+>=20
+> All products we support in the kernel are based on the first of these,
+> iop32x, the other families only ever supported the Intel reference
+> boards but no actual machine anyone could ever buy.
+>=20
+> While one could clearly make them all three work in a single kernel
+> with some work, this takes the easy way out, removing the later two
+> platforms entirely, under the assumption that there are no remaining
+> users.
+>=20
+> Earlier versions of OpenWRT and Debian both had support for iop32x
+> but not the others, and they both dropped iop32x as well in their 2015
+> releases.
+>=20
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+
+Acked-by: Wolfram Sang <wsa@the-dreams.de> # for I2C parts
+
+
+--Ycz6tD7Th1CMF4v7
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1NpfcACgkQFA3kzBSg
+KbYo3xAAoUFahZppsWnQT+posnK7OdanH8eP9bFsX9jA3vLm1Z8xByrQrxVnTPYp
+97VYfI7Czhue+5wf/ceACt4Q3XkAwKIQXkcqJgdBFfErPboWdL6yvrvIHhLbnfRr
+HBw+/UiJSf7MisT3PutST0VFWRgJ0sv4LphNT+qbRDnX+3olTmhLax9NeETmzvBz
+2MNNUTTerfJGsuORhlubz0TKccORwFqKERhq/NS48U4qdJnHcROBaMd/xyX37YEx
+qBTS7eC5XWD4QiXyG6386DXhoLJi47uBdVuOTde1QF9Vuif/454Gg7uyenHpHndF
+7hGT/5wSCKLFaFJJi1GABp2addD3DYdibkM2rueAbjCjb8d9g6YNFhuDOnSR2L+n
+aV/QXEyTUe6j8JaX50cEeAPLAJ5MjqGRU9csYB16zfTpsty9aPkaEr75eiK+XTjt
+wo6glb84+WYdsX7PZKbzYXmLpoFZAx1zkycp3Cf4DA0fxaDmYVDts0plkwQ7AR5D
+jPG1Q8qxby/Y4yPceGfKHzV0MkMkrPSEDZEeg2NpnQiVRpvRR33okKu6xftMGxc1
+4Z6ovgHtXBP9PUGOcdn0AmGHDNsHDYBEfCQDESQlwWaDEC9Q6IhGD9UTjsnUjLSj
+AwXK137vfKLiWohLLeZbrWquBKJoV6vBJ9ByYrMtgRadv9qA5/Y=
+=zEyv
+-----END PGP SIGNATURE-----
+
+--Ycz6tD7Th1CMF4v7--
+
+
+--===============5836483378488815178==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5836483378488815178==--
+
