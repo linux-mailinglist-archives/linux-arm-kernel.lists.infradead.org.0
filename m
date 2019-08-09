@@ -2,92 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50E8786EE1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 02:38:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D33686F53
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 03:27:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=EpQDggaH4Wg7RWYiq+pDFfu+l/XjcMwAewVr+xZphio=; b=toM7iFFOCQEHs4sw2Mbk+BYnnh
-	rhvl4gN2Gp7xAnejTEFUALmhbNy56S/HGghOZVFGtgPQ4vDBmdYQAisJwEHEnZ79S4COSIvJChM3+
-	qhzEcHHpMguiUsJ9LE3g/hVZrwEenn7b73lLw1a6crGjvjvaH3Y+su3qKDqNNS/PBxseVSX4c4euX
-	HdoY/Z6u4Sl93q/YiTitrmn/JcPvOWOitYE/GgHhr7wnHuzTCPYv5cK3q5LNnzSxKK9tbE/K3uELb
-	szE0X44mQoNgXC4ZKgmtEgBMu4SqBUIGZsdd8Ks4ymRIHpAarMUvpgeEdIHM8GGCPxBRBvOWglf5L
-	nZ0Y8j/g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f3L1dE+8a+Wtqvi7R+7CpZvIaz/T6ZtLw0qbLYIYIJk=; b=Rp+m0ImTTgA65T
+	bAEo76FvFMLMgejO3170izyZ5GbnWbeGcAuk1G1i6PoySd6DpnCxnSZpbKkFY9HbNuUl1mM9aLaii
+	Zwc6Fcd/2+jcH9HeUld/N0gjiuvnuuXIPlkKZ6tK0A1y9nihCXwhLWf/nJtDNbbMjVOhbWraK/XcN
+	hCAEAGKR4wqHM/sjPE91KccomqPkmyrg+XhFDX92jIMPYtsDh8UnzLYIr0P0rrjGdcgBPCsY0xwY8
+	bjy6S8tCRK3JKiPlxFMzwICGC6fboFKtM1ibDoXGAayymPTyIaoWjbyCopVoh8NDRSCBYUb6bxwUm
+	JzeDzvAx3/5Ey6WX5r+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvsvS-0002J3-94; Fri, 09 Aug 2019 00:38:34 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1hvtgU-0008WD-1i; Fri, 09 Aug 2019 01:27:10 +0000
+Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvsvM-0002Ih-0l; Fri, 09 Aug 2019 00:38:28 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id B5AF02687;
- Thu,  8 Aug 2019 20:38:21 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Thu, 08 Aug 2019 20:38:21 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to
- :subject:content-type; s=fm3; bh=qzgxGTZsCJlvV+dr0gENjfvelG+V+hv
- DaK0KMe9R8B0=; b=Ffx6KwVwOmajjT7vxnEXIp+p/A4+WuIBUt6KPvR9e0rnVEw
- 4jTCNBTUskMYYse+3gkG8HSlNZrOYm3boUcw8X3gS87V66Q4qMOlcDnTABC0OYoT
- o7eC9BbkU+ZVI1pdGlj826pZGcKN6kpIqr59yUgTRofmwLGW8hu07IxY3bzCus+a
- 0y3qxmNHBFJxmJCf6pMuRlEty0fbLawuSgKTxmCyH2qfZfdpljWMHDWx5JR5Huts
- 3hwSylwSCA88fB26CybC8wSClOP/Ijt3AOU+/FmlfaW9QoK4NWV4sAL4CXZ42zDE
- 0Z6dLJAZU1BJfGsLoBXA4rY5zwlvbkg+K8pu7bw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=qzgxGT
- ZsCJlvV+dr0gENjfvelG+V+hvDaK0KMe9R8B0=; b=N5RUPgeAxWz+56KbGktHZv
- 9freKvjIoKumB99CKFG0upclkvmCvSdG5Kz4kbZ2scT9qzDdzR5yb84FN/GB1n+6
- UM2K2meYeno617yTwdXi6Bb3v9qRrG5SM86tolzM3d0jJpMQBBLhi6t1oAet/D0f
- X/VOz+vD9q8ASlc4vAGeIHEp/viMN2Xr+5FXQc1flObHrjK9IiATcOj77QglrYvs
- RMFOcqxoiIiM9CCqdFbhWvtiJI940ZJ1IQi6caNF+o5NdM9lO5q+vxCnnJtKrBjN
- Qxtd07hqnCM04oiSgevPQjodFnhe2AWhUz0Jo2ldfHwOBtdxmHWGXorQwasl5OXg
- ==
-X-ME-Sender: <xms:e8BMXakxzKbCeQxN1dJ589Vs7dWxGpbsSHwHOiNQBP-MeR8sI94-dw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudduiedgfeehucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
- rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
- grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgeptd
-X-ME-Proxy: <xmx:e8BMXQQY7GwMuZxOfl3_Dq-J9dvjb6Sq_2N8cvcnEehV9C63rQbzJA>
- <xmx:e8BMXbSBmUk3NhIc9ZUZ_susRr3k3bI0oL74DBvBzCrv7FpOYwuM-A>
- <xmx:e8BMXZ4HSfUlXwVgDHFEdkmhJiaiazPpaPsLfnpciwwMu0bZB2NmJg>
- <xmx:fcBMXVl3zLd7qKFTPNBayx2gKdugbBCuQ8hC0VTcBL6ncmDKaPbrwA>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 64ECEE00A2; Thu,  8 Aug 2019 20:38:19 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-808-g930a1a1-fmstable-20190805v2
-Mime-Version: 1.0
-Message-Id: <7335d5d1-77c7-4cfe-9ba5-2fc81e3e69eb@www.fastmail.com>
-In-Reply-To: <20190808075104.15928-1-nishkadg.linux@gmail.com>
-References: <20190808075104.15928-1-nishkadg.linux@gmail.com>
-Date: Fri, 09 Aug 2019 10:08:45 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Nishka Dasgupta" <nishkadg.linux@gmail.com>, marek.vasut@gmail.com,
- tudor.ambarus@microchip.com, dwmw2@infradead.org,
- computersforpeace@gmail.com, miquel.raynal@bootlin.com, richard@nod.at,
- vigneshr@ti.com, "Joel Stanley" <joel@jms.id.au>,
- linux-mtd@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-aspeed@lists.ozlabs.org
-Subject: Re: [PATCH] mtd: spi-nor: aspeed-smc: Add of_node_put()
+ id 1hvtg4-0008Vm-EG; Fri, 09 Aug 2019 01:26:45 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d4ccbd50000>; Thu, 08 Aug 2019 18:26:45 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Thu, 08 Aug 2019 18:26:43 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Thu, 08 Aug 2019 18:26:43 -0700
+Received: from [10.110.48.28] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 9 Aug
+ 2019 01:26:42 +0000
+Subject: Re: [PATCH v3 38/41] powerpc: convert put_page() to put_user_page*()
+To: Michael Ellerman <mpe@ellerman.id.au>, Andrew Morton
+ <akpm@linux-foundation.org>
+References: <20190807013340.9706-1-jhubbard@nvidia.com>
+ <20190807013340.9706-39-jhubbard@nvidia.com>
+ <87k1botdpx.fsf@concordia.ellerman.id.au>
+From: John Hubbard <jhubbard@nvidia.com>
+X-Nvconfidentiality: public
+Message-ID: <248c9ab2-93cc-6d8b-606d-d85b83e791e5@nvidia.com>
+Date: Thu, 8 Aug 2019 18:26:42 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <87k1botdpx.fsf@concordia.ellerman.id.au>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1565314005; bh=mIo2y95DYwpm5TwfN0ChMwsAj72bzfnkFfj+rLdjqVU=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:X-Nvconfidentiality:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=sN/0osHqfMASG3Gn5uYJsmBevNgkDITrwy5z0XhYDRnSVjTtczC6Zn93vXUVACtgl
+ zsE5J5OQn1U0e8RQtUv/QuY5iXNoztc7U7xk0b8D/XTbbdQX85oERprBP+FlchEBmH
+ cDA/Z0zP30Are5EcBXQtJgaAWOYtGMQytxGRabpoiJwuifLVi+3nH2crRLrU8L/jsz
+ NjANrKoFZE22mpOq52s3fZ9ut+mKAUlAXHfdi2WiqPjr5KVieTASv9oPdSZ5QUx628
+ sL0qbeXqIPI+CnsO9wdJm+9w+qSRY9+X67MIO8EOa4e3TPJTGVb16/VuBW7YteYrzL
+ bdoBRcdIA11ng==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_173828_251277_F745F7FD 
-X-CRM114-Status: UNSURE (   4.23  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190808_182644_497559_D0C5EF32 
+X-CRM114-Status: GOOD (  10.80  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.143 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,26 +94,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
+ ceph-devel@vger.kernel.org, devel@driverdev.osuosl.org,
+ rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@lst.de>,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ xen-devel@lists.xenproject.org, devel@lists.orangefs.org,
+ linux-media@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ linux-block@vger.kernel.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ linux-rpi-kernel@lists.infradead.org, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On Thu, 8 Aug 2019, at 17:21, Nishka Dasgupta wrote:
-> Each iteration of for_each_available_child_of_node puts the previous
-> node, but in the case of a break from the middle of the loop, there is
-> no put, thus causing a memory leak. Upon termination of the loop
-> (whether by break or a natural exit), either ret will have a non-zero
-> value or child will be NULL. Hence add an of_node_put() that will
-> execute only when ret has a non-zero value, as calling of_node_put() on
-> a possible NULL value does not cause any further issues.
-> Issue found with Coccinelle.
+On 8/7/19 10:42 PM, Michael Ellerman wrote:
+> Hi John,
 > 
-> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+> john.hubbard@gmail.com writes:
+>> diff --git a/arch/powerpc/mm/book3s64/iommu_api.c b/arch/powerpc/mm/book3s64/iommu_api.c
+>> index b056cae3388b..e126193ba295 100644
+>> --- a/arch/powerpc/mm/book3s64/iommu_api.c
+>> +++ b/arch/powerpc/mm/book3s64/iommu_api.c
+>> @@ -203,6 +202,7 @@ static void mm_iommu_unpin(struct mm_iommu_table_group_mem_t *mem)
+>>  {
+>>  	long i;
+>>  	struct page *page = NULL;
+>> +	bool dirty = false;
+> 
+> I don't think you need that initialisation do you?
+> 
 
-Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+Nope, it can go. Fixed locally, thanks.
+
+Did you get a chance to look at enough of the other bits to feel comfortable 
+with the patch, overall?
+
+thanks,
+-- 
+John Hubbard
+NVIDIA
 
 _______________________________________________
 linux-arm-kernel mailing list
