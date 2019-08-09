@@ -2,60 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CEFF872B7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 09:09:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 912F8872DF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 09:22:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uKWQZm9Y3pTCmFLHTtKhEJEO1D6hAPwgpzZOAGad1uc=; b=E8gywS/HHHX2Ww
-	0K+kEAJQpfUmxYDucZpF+Ryz7C1GQrdU8irntbx8rAyNrhp6m93SSKnh88Q5osqQXpgQvbrHvzu/p
-	+uRQouA4TyY5SQUr5LkCb/StqEnSSNEvt3yP1c7/A9NY8NqcukerdFEdE8sKKfMnHkS1yfVCoES+P
-	kGSrnOxrH/EPBkpakLvOxRPfJJ/5lRgs7l5qbpfaYov9eR9TRaXVJdm8pEJVE1Wio5D/fpCQdLZCK
-	9ijV0MAcYd+XBanjEK7ad1CwyMjhdGpdBQt2JwlH83tspP35kc3Yq7cBH8maRu7hg7djdvYCXbSWu
-	DvMJyXpwLV6LbAXud7DA==;
+	List-Owner; bh=FoReJ7vuQ8Sf6QUEFwBWKPosBzHTf+MuplB+1T+E4po=; b=DOfz+cRnYKIPE1
+	XP+8A3Vdfog/0EPBkcb8JkpDugvj4y3DApowbIsIYaXon/XpQ3B5OUUhA8S2XPHhUpfpQbOeoU3vA
+	ngStWy2wj7bEeB0QAToz8wQ2WuKkWAmZQdU6gMTuKd3KHm1+G8+CIr00Udt3EUcLnv/5ZN6afNKEm
+	ycqCCfa69ade+1nWcUo31NTx0IxnInnciUuTqY+sRQ9YrO47zWu0ijPLDt7dc/Cn/v6Xzsak0G8sT
+	NcnABJfjSEj47dkwy5o9WJu4jOdIxDzYrxqwYG3xkbKoWJ1JAg0BAxmXbuxcXpDW9Et9ye31XjFBZ
+	1ImOVUi1UNWjyedX/jyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvz1r-0006CR-Ln; Fri, 09 Aug 2019 07:09:35 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1hvzDl-00020o-Ki; Fri, 09 Aug 2019 07:21:53 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvz1N-0006Be-Oi
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 07:09:08 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why)
- by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
- (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1hvz1H-0002zE-LG; Fri, 09 Aug 2019 09:08:59 +0200
-Date: Fri, 9 Aug 2019 08:08:56 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Alexandru Elisei <alexandru.elisei@arm.com>
-Subject: Re: [PATCH] KVM: arm/arm64: vgic: Reevaluate level sensitive
- interrupts on enable
-Message-ID: <20190809080856.61ab570b@why>
-In-Reply-To: <1565171600-11082-1-git-send-email-alexandru.elisei@arm.com>
-References: <1565171600-11082-1-git-send-email-alexandru.elisei@arm.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1hvzDY-000206-NF
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 07:21:42 +0000
+Received: by mail-ot1-f68.google.com with SMTP id n5so129122295otk.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 09 Aug 2019 00:21:40 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=A7mCF4lTq2gFXOvcmY2h+y2/MZQDfsM2+XB9S0QJ6k4=;
+ b=l5iD7cfvgsB5Dh8DyOYR/l6wHzhEMNfUFrA/ZFO0QOzTL3ywHrfHRwySZL2t4eLlRq
+ VZrvgbF/sC2TaKa5UjKuJZUA0l+ysiQcsgLvBSHCLkmlZKKhgXzjlH8iCod6CISsVyih
+ Cb9kLvZxA+mRxIuRvF5VtwszkapUhpJbfBdk5B4vNCBp0qLWSRsa83+/ATG2kWue92Kw
+ XvLhmI6z5n6Memy1IVMFe+/SrrCklm9fYt8dOkQa7XM8rfmXFH5yBdROYwD5fWfmfp+V
+ wp4TUds5MfAI/9i5L1or+/hWsKTRzAZa0D1/u3KFy+wfJkjZPtErQ1+S/64YCnjP7y7A
+ 99hg==
+X-Gm-Message-State: APjAAAUcrvheLeDJr7a3n5zmHiS0WZ2hd+S0pWjMCLlEXOjkMCTjFohj
+ /qq4JB2ru/z8DdAUTls11SJ9ALt8RGlYVzxxZPE=
+X-Google-Smtp-Source: APXvYqyBXPOK98jaQhUmqtFlEEGP/W76NVu4RQ2ZHS+SsKdevOL3KYGUiRHhF15E80P339HCx6FddAsKPmlukbGoIK8=
+X-Received: by 2002:a9d:7a90:: with SMTP id l16mr17247630otn.297.1565335299510; 
+ Fri, 09 Aug 2019 00:21:39 -0700 (PDT)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: alexandru.elisei@arm.com,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org, andre.przywara@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+References: <20190808160005.10325-1-hch@lst.de>
+ <20190808160005.10325-9-hch@lst.de>
+In-Reply-To: <20190808160005.10325-9-hch@lst.de>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 9 Aug 2019 09:21:28 +0200
+Message-ID: <CAMuHMdV0JfZ_K2V7W0FQkobE_zLwe4Uez-EWzMMdTfVffpAWtA@mail.gmail.com>
+Subject: Re: [PATCH 8/8] dma-mapping: remove CONFIG_ARCH_NO_COHERENT_DMA_MMAP
+To: Christoph Hellwig <hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_000905_952234_317A2557 
-X-CRM114-Status: GOOD (  19.61  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190809_002140_760973_08630470 
+X-CRM114-Status: GOOD (  13.29  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,65 +83,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andre.przywara@arm.com, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org
+Cc: linux-xtensa@linux-xtensa.org, Michal Simek <monstr@monstr.eu>,
+ Vladimir Murzin <vladimir.murzin@arm.com>,
+ Parisc List <linux-parisc@vger.kernel.org>,
+ Linux-sh list <linux-sh@vger.kernel.org>, Takashi Iwai <tiwai@suse.de>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>, Helge Deller <deller@gmx.de>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed,  7 Aug 2019 10:53:20 +0100
-Alexandru Elisei <alexandru.elisei@arm.com> wrote:
+Hi Christoph,
 
-> A HW mapped level sensitive interrupt asserted by a device will not be put
-> into the ap_list if it is disabled at the VGIC level. When it is enabled
-> again, it will be inserted into the ap_list and written to a list register
-> on guest entry regardless of the state of the device.
-> 
-> We could argue that this can also happen on real hardware, when the command
-> to enable the interrupt reached the GIC before the device had the chance to
-> de-assert the interrupt signal; however, we emulate the distributor and
-> redistributors in software and we can do better than that.
-> 
-> Signed-off-by: Alexandru Elisei <alexandru.elisei@arm.com>
-> ---
->  virt/kvm/arm/vgic/vgic-mmio.c | 16 ++++++++++++++++
->  1 file changed, 16 insertions(+)
-> 
-> diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
-> index 3ba7278fb533..44efc2ff863f 100644
-> --- a/virt/kvm/arm/vgic/vgic-mmio.c
-> +++ b/virt/kvm/arm/vgic/vgic-mmio.c
-> @@ -113,6 +113,22 @@ void vgic_mmio_write_senable(struct kvm_vcpu *vcpu,
->  		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
->  
->  		raw_spin_lock_irqsave(&irq->irq_lock, flags);
-> +		if (vgic_irq_is_mapped_level(irq)) {
-> +			bool was_high = irq->line_level;
-> +
-> +			/*
-> +			 * We need to update the state of the interrupt because
-> +			 * the guest might have changed the state of the device
-> +			 * while the interrupt was disabled at the VGIC level.
-> +			 */
-> +			irq->line_level = vgic_get_phys_line_level(irq);
-> +			/*
-> +			 * Deactivate the physical interrupt so the GIC will let
-> +			 * us know when it is asserted again.
-> +			 */
-> +			if (!irq->active && was_high && !irq->line_level)
-> +				vgic_irq_set_phys_active(irq, false);
-> +		}
->  		irq->enabled = true;
->  		vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
->  
+On Thu, Aug 8, 2019 at 6:01 PM Christoph Hellwig <hch@lst.de> wrote:
+> CONFIG_ARCH_NO_COHERENT_DMA_MMAP is now functionally identical to
+> !CONFIG_MMU, so remove the separate symbol.  The only difference is that
+> arm did not set it for !CONFIG_MMU, but arm uses a separate dma mapping
+> implementation including its own mmap method, which is handled by moving
+> the CONFIG_MMU check in dma_can_mmap so that is only applies to the
+> dma-direct case, just as the other ifdefs for it.
+>
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
 
+>  arch/m68k/Kconfig       |  1 -
 
-Applied, thanks.
+For m68k:
+Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
 
-	M.
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-Without deviation from the norm, progress is not possible.
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
