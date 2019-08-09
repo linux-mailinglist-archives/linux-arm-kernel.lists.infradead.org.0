@@ -2,96 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36A7588064
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 18:43:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3246A88073
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 18:46:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bIagKeF7knnxXvl+iClfjCBeftajqetnOpZHbRUVWz4=; b=JSSGoErAPW6FFx
-	nep0gh/kQkyMXELGSJdyXLkKMgY67Rhg85G+dK9djjLxVSGpl1L+2J/tC6hp2Q1tbp+dP+z/JEErY
-	jRXclLCqx+7tYLdOAk40AKUkz99kfoKBABKTiGzEDiPRqXonocHV5O2Er6ILoMHBZRqyM5GbBK7+O
-	xUnk6k9Nfywb8GhrrijVP7gGkFBqX7qngZBL0YZ7XvM3+hNQRwr/DB6Iigcwsb9+pKcVNvHl5yzs2
-	J3EroeeBbY6M06NZWh6Inmjekl499qbfEzGEq2pUfh7aUAk6QXAzZ5PfnL0NrOfmz4Rj6Z1yBUvoV
-	hedhEJ7D8gK6iDse7FMA==;
+	List-Owner; bh=XTmeEf9asl1Thp5erDlZzA39wz189jqP5ocfgLFvbYA=; b=rwnPfxsHtLiyvV
+	ZRsWJ1R2ON56PgnF+v594YkTZkICDlxqrPdgdabiFEG4mQMB+tVBh24qWTt9qn0Z/ZTcaWKYL5FSR
+	M6elrC/LMuxztWBXzx0DSC3fsfJaWc8mgXJhZpd8U8f6baEfr1eFYmrhICPf3EPzBPNY9Its9hLcA
+	IO8wqOrmPE9h0Be7VV42/KE9Xpa7nXXJucHOhDf6x++Wxw4zWRtCHn9wq4FOIVMTdqmHOv25G2RBw
+	u3D6mB1VOkbwuyT30dhDrtbZJ3Aqf5yd2kDd80mxY7MUkfkmKD5QWG9ZYOLPq70ov1CSbto3KenDI
+	pRA2QBReUoW54numOUkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw7yk-0000kp-PL; Fri, 09 Aug 2019 16:42:58 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hw81a-0002JY-2y; Fri, 09 Aug 2019 16:45:54 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw7yb-0000kP-F4
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 16:42:50 +0000
-Received: by mail-pf1-x444.google.com with SMTP id g2so46346498pfq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 09:42:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=lQR64lsM2F4GHE16CB+rGeKc+DaWwGBd1G+dV7Mx9vQ=;
- b=KyVK5awF6Kfdm70TtcKte/vbR/UqeyC/LQEtp6sXplFv36hDRFUfnjY/dUtHRt4SGI
- /HoG6wzxkF3lILfFeMSfqggAhIRHHaenBEWEC1z1bGxyUknckb8djkEOc1tMURDE17g6
- ih9F4hpbuqn31LdRl49mXJZI6O7jT6uW/F8BVxQMioRqLROdfNpTtpk+r1FjfFvIvBud
- Yy4wxLPzgcfVx+S8Jk2dmdWAa72kPMmiQfVTZD+uvI8IVRjfzhj7lXesnncnSSCbJfA+
- PU75xc5L+I0WP1cI7q/nCIQyywurDQSTBknAbd2qd7VNxtCI7ggKxcmuh/r8FKa2wzfF
- 1hJA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=lQR64lsM2F4GHE16CB+rGeKc+DaWwGBd1G+dV7Mx9vQ=;
- b=b4VbJUZ+aE1uTcPLAB8qpjr2xMpHHOkWZfs0PK/CoeiFLl9tyE6GJF4dWd35NzcQ7/
- 2UMjQX9/+T2Kem6NJi+VNqDW58pwKizTcDWcr1vNkeXcY/BU4rhoZrPWb5laySciZiTP
- eS/6IHD3rqplosFRD33+EJQuO9bplC+zCJ6I8wx7kCaANKj5jbLQvZqZ+kmZ7Oxsa+p4
- k2NNYGIO6dS0xL+YdLS5nQqswFTSICbkuixn60MxF3UQ2u49EiKzD5htLBfkZudizTj1
- eXXcKsB5nKUn7E63y+91DUZ2ZqOyo9Ac8ywr49VCeyqDwNcBweNyIOsLtUADXLM4Y3F6
- 0iGw==
-X-Gm-Message-State: APjAAAW7kE6MiZ3oRa6EiMhthWnjVGXYqwskBnPnROLqJ+wW7zZDSVqF
- 95muJqOU6S1IajZXH/qGeB04UpO6
-X-Google-Smtp-Source: APXvYqzikkhASYL+yHYO3qlFUUkyWSKcPxDKgLjky1s0KPej6LcMb0qkFFsxJEXHw1pDKKiVJJ0u9w==
-X-Received: by 2002:a65:448a:: with SMTP id l10mr17950446pgq.327.1565368967690; 
- Fri, 09 Aug 2019 09:42:47 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id f12sm82607856pgq.52.2019.08.09.09.42.46
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 09 Aug 2019 09:42:46 -0700 (PDT)
-Date: Fri, 9 Aug 2019 09:42:45 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH 1/4] dt-bindings: watchdog: Add i.MX7ULP bindings
-Message-ID: <20190809164245.GA17136@roeck-us.net>
-References: <1565334842-28161-1-git-send-email-Anson.Huang@nxp.com>
+ id 1hw81O-0002JC-Sh
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 16:45:44 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id 2B1D1FB03;
+ Fri,  9 Aug 2019 18:45:40 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id zG0agjQGW3tZ; Fri,  9 Aug 2019 18:45:38 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id BDFB241D9E; Fri,  9 Aug 2019 18:45:37 +0200 (CEST)
+Date: Fri, 9 Aug 2019 18:45:37 +0200
+From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+To: Ville Baillie <vmbaillie@googlemail.com>
+Subject: Re: [PATCH] mxsfb: allow attachment of display bridges
+Message-ID: <20190809164537.GA4212@bogon.m.sigxcpu.org>
+References: <20190801111853.GA24574@villeb-dev>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1565334842-28161-1-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20190801111853.GA24574@villeb-dev>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_094249_503330_AB830EDD 
-X-CRM114-Status: GOOD (  16.01  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20190809_094543_245849_7ACEF3FA 
+X-CRM114-Status: GOOD (  16.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [24.134.29.49 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,63 +65,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, leonard.crestez@nxp.com,
- schnitzeltony@gmail.com, linux-watchdog@vger.kernel.org,
- otavio@ossystems.com.br, festevam@gmail.com, s.hauer@pengutronix.de,
- jan.tuerk@emtrion.com, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- u.kleine-koenig@pengutronix.de, wim@linux-watchdog.org, shawnguo@kernel.org,
+Cc: marex@denx.de, kernel@pengutronix.de, dri-devel@lists.freedesktop.org,
+ airlied@linux.ie, festevam@gmail.com, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, stefan@agner.ch, linux-imx@nxp.com,
+ daniel@ffwll.ch, Robert Chiras <robert.chiras@nxp.com>, shawnguo@kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 03:13:59PM +0800, Anson Huang wrote:
-> Add the watchdog bindings for Freescale i.MX7ULP.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Hi,
+On Thu, Aug 01, 2019 at 11:18:53AM +0000, Ville Baillie wrote:
 > ---
->  .../bindings/watchdog/fsl-imx7ulp-wdt.txt          | 22 ++++++++++++++++++++++
->  1 file changed, 22 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt
+>  drivers/gpu/drm/mxsfb/mxsfb_drv.c | 20 ++++++++++++++++----
+>  drivers/gpu/drm/mxsfb/mxsfb_drv.h |  1 +
+>  drivers/gpu/drm/mxsfb/mxsfb_out.c | 14 +++++++++++---
+>  3 files changed, 28 insertions(+), 7 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt b/Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt
-> new file mode 100644
-> index 0000000..d83fc5c
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt
-> @@ -0,0 +1,22 @@
-> +* Freescale i.MX7ULP Watchdog Timer (WDT) Controller
-> +
-> +Required properties:
-> +- compatible : Should be "fsl,imx7ulp-wdt"
-> +- reg : Should contain WDT registers location and length
-> +- interrupts : Should contain WDT interrupt
-> +- clocks: Should contain a phandle pointing to the gated peripheral clock.
-
-The driver as submitted does not include clock or interrupt handling.
-Why are those properties listed as mandatory if they are not really
-needed (nor used) ?
-
-> +
-> +Optional properties:
-> +- timeout-sec : Contains the watchdog timeout in seconds
-> +
-> +Examples:
-> +
-> +wdog1: wdog@403d0000 {
-> +	compatible = "fsl,imx7ulp-wdt";
-> +	reg = <0x403d0000 0x10000>;
-> +	interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
-> +	clocks = <&pcc2 IMX7ULP_CLK_WDG1>;
-> +	assigned-clocks = <&pcc2 IMX7ULP_CLK_WDG1>;
-> +	assigned-clocks-parents = <&scg1 IMX7ULP_CLK_FIRC_BUS_CLK>;
-> +	timeout-sec = <40>;
-> +};
+> diff --git a/drivers/gpu/drm/mxsfb/mxsfb_drv.c b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
+> index 6fafc90da4ec..c19a7b7aa3a6 100644
+> --- a/drivers/gpu/drm/mxsfb/mxsfb_drv.c
+> +++ b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
+> @@ -229,10 +229,22 @@ static int mxsfb_load(struct drm_device *drm, unsigned long flags)
+>  		goto err_vblank;
+>  	}
+>  
+> -	ret = drm_panel_attach(mxsfb->panel, &mxsfb->connector);
+> -	if (ret) {
+> -		dev_err(drm->dev, "Cannot connect panel\n");
+> -		goto err_vblank;
+> +	if (mxsfb->panel) {
+> +		ret = drm_panel_attach(mxsfb->panel, &mxsfb->connector);
+> +		if (ret) {
+> +			dev_err(drm->dev, "Cannot connect panel\n");
+> +			goto err_vblank;
+> +		}
+> +	} else if (mxsfb->bridge) {
+> +		ret = drm_bridge_attach(&mxsfb->pipe.encoder, mxsfb->bridge,
+> +				NULL);
+> +		if (ret) {
+> +			dev_err(drm->dev, "Cannot connect bridge\n");
+> +			goto err_vblank;
+> +		}
+> +	} else {
+> +		dev_err(drm->dev, "No panel or bridge\n");
+> +		return -EINVAL;
+>  	}
+>  
+>  	drm->mode_config.min_width	= MXSFB_MIN_XRES;
+> diff --git a/drivers/gpu/drm/mxsfb/mxsfb_drv.h b/drivers/gpu/drm/mxsfb/mxsfb_drv.h
+> index d975300dca05..436fe4bbb47a 100644
+> --- a/drivers/gpu/drm/mxsfb/mxsfb_drv.h
+> +++ b/drivers/gpu/drm/mxsfb/mxsfb_drv.h
+> @@ -29,6 +29,7 @@ struct mxsfb_drm_private {
+>  	struct drm_simple_display_pipe	pipe;
+>  	struct drm_connector		connector;
+>  	struct drm_panel		*panel;
+> +	struct drm_bridge		*bridge;
+>  };
+>  
+>  int mxsfb_setup_crtc(struct drm_device *dev);
+> diff --git a/drivers/gpu/drm/mxsfb/mxsfb_out.c b/drivers/gpu/drm/mxsfb/mxsfb_out.c
+> index 91e76f9cead6..77e03eb0fca6 100644
+> --- a/drivers/gpu/drm/mxsfb/mxsfb_out.c
+> +++ b/drivers/gpu/drm/mxsfb/mxsfb_out.c
+> @@ -78,9 +78,11 @@ int mxsfb_create_output(struct drm_device *drm)
+>  {
+>  	struct mxsfb_drm_private *mxsfb = drm->dev_private;
+>  	struct drm_panel *panel;
+> +	struct drm_bridge *bridge;
+>  	int ret;
+>  
+> -	ret = drm_of_find_panel_or_bridge(drm->dev->of_node, 0, 0, &panel, NULL);
+> +	ret = drm_of_find_panel_or_bridge(drm->dev->of_node, 0, 0, &panel,
+> +			&bridge);
+>  	if (ret)
+>  		return ret;
+>  
+> @@ -91,8 +93,14 @@ int mxsfb_create_output(struct drm_device *drm)
+>  	ret = drm_connector_init(drm, &mxsfb->connector,
+>  				 &mxsfb_panel_connector_funcs,
+>  				 DRM_MODE_CONNECTOR_Unknown);
+> -	if (!ret)
+> -		mxsfb->panel = panel;
+> +	if (!ret) {
+> +		if (panel)
+> +			mxsfb->panel = panel;
+> +		else if (bridge)
+> +			mxsfb->bridge = bridge;
+> +		else
+> +			return -EINVAL;
+> +	}
+>  
+>  	return ret;
+>  }
 > -- 
-> 2.7.4
+> 2.17.1
+
+Robert Chiras posted bridge support for mxsfb back in June:
+
+    https://patchwork.freedesktop.org/patch/314430/?series=62822&rev=1
+
+Cheers,
+ -- Guido
+
 > 
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
 _______________________________________________
 linux-arm-kernel mailing list
