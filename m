@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2CEA87B05
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 15:23:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F09987B04
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 15:23:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=kmAlruSuGVvo7uUAfySTQYSj7NRdb4Ke0wL31srAVus=; b=LQI
-	y7cPNY74v8aMEMwh4LPuHykuap8L9NioKaG5htexXxWyg6CgAssv6avaoEsq47U1sIh/NYOxZc+rU
-	e4dgYKd9S381gA1iUwx+6uHeoj4ljWvzo9WpLi5CvRl3jBV3EE2SJkaR2cXxzyHTg/fSa7WXSvdZd
-	LJ94LDlTtL/VyRAAog88w1uFd2uMf0sb0gbl8noJq1//MHMKuF/kGkMBkheCSqXna0nRD+0LEnpRi
-	y0fNk+yZgMoBv4v3tCqeJ78zvLyjyG27GhkxbZQFDKuN94263bi/mYW1dtIAz95QZV1RDhGUcHWlR
-	GV8daSht4UKGbUhWAHUXDmEBSS8BbqQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=S2N+JwKTbenQXkoBPNNgB4MzMKmWkUlbdAsWUqmyecM=; b=FCRKI2Ao2b9ACG4quupFH2ODsy
+	dpVSEZ3H3NQu8HNfgRfgMF5t0i3DaypABsTzIIu71MFB3yvfcOYjjHnfcOdXYVH6N9Qf6zc1kp3la
+	7G+JNOXhXVleX4m4z1WHe8Ad79YHCpGUisB3DGdCDm8zG0+A6pGQZ+xyGyrhfSXakuugO9dpSUAZk
+	pp62vxZudDfpk1ZRhhca58XsamG/9tsJW6CglPD/Ve2Mx7jnP3qKRTGHF/w6NDz+F4O5Tw0rO6Q2E
+	gQAAtKwb7nc74QNER7QBJXKA/lDEWpy6l/Zbc31nxV0P6j9tUO0MC7Ytk6UJMG3YenIK7Wa0SbzYo
+	BEaKv2LA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw4rc-00019Z-Ut; Fri, 09 Aug 2019 13:23:25 +0000
+	id 1hw4rM-0000zy-Aw; Fri, 09 Aug 2019 13:23:08 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw4rB-0000yt-3C
+ id 1hw4rB-0000yz-3B
  for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 13:22:58 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 83A051596;
- Fri,  9 Aug 2019 06:22:53 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C3ACC15AB;
+ Fri,  9 Aug 2019 06:22:55 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2CB043F706;
- Fri,  9 Aug 2019 06:22:52 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6EA673F706;
+ Fri,  9 Aug 2019 06:22:54 -0700 (PDT)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCHv3 0/6] arm/arm64: SMCCC conduit cleanup
-Date: Fri,  9 Aug 2019 14:22:39 +0100
-Message-Id: <20190809132245.43505-1-mark.rutland@arm.com>
+Subject: [PATCHv3 1/6] arm/arm64: smccc/psci: add arm_smccc_1_1_get_conduit()
+Date: Fri,  9 Aug 2019 14:22:40 +0100
+Message-Id: <20190809132245.43505-2-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20190809132245.43505-1-mark.rutland@arm.com>
+References: <20190809132245.43505-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_062257_182198_C2364546 
-X-CRM114-Status: UNSURE (   7.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190809_062257_182335_30F6B592 
+X-CRM114-Status: GOOD (  11.10  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,49 +69,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently, the cpu errata code goes digging into PSCI internals to
-discover the SMCCC conduit, using the (arguably misnamed) PSCI_CONDUIT_*
-definitions. This lack of abstraction is somewhat unfortunate.
+SMCCC callers are currently amassing a collection of enums for the SMCCC
+conduit, and are having to dig into the PSCI driver's internals in order
+to figure out what to do.
 
-Further, the SDEI code has an almost identical set of CONDUIT_*
-definitions, and the duplication is rather unfortunate.
+Let's clean this up, with common SMCCC_CONDUIT_* definitions, and an
+arm_smccc_1_1_get_conduit() helper that abstracts the PSCI driver's
+internal state.
 
-Let's unify things behind a common set of SMCCC_CONDUIT_* definitions,
-and expose the SMCCCv1.1 conduit via a new helper that hides the PSCI
-driver internals.
+We can kill off the PSCI_CONDUIT_* definitions once we've migrated users
+over to the new interface.
 
-Since v1 [1]:
-* Rebase to the arm64 for-next/core branch, atop of SSBD patches
-* Fold in acks
-Since v2 [2]:
-* Rebase to v5.3-rc3
-* Fix up arm spectre-v2 code
-* Drop acks where significant changes have been made
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Acked-by: Will Deacon <will.deacon@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+---
+ drivers/firmware/psci/psci.c | 15 +++++++++++++++
+ include/linux/arm-smccc.h    | 16 ++++++++++++++++
+ 2 files changed, 31 insertions(+)
 
-Mark.
-
-[1] https://lkml.kernel.org/r/20180503170330.5591-1-mark.rutland@arm.com
-[2] https://lkml.kernel.org/r/20180531173223.9668-1-mark.rutland@arm.com
-
-Mark Rutland (6):
-  arm/arm64: smccc/psci: add arm_smccc_1_1_get_conduit()
-  arm64: errata: use arm_smccc_1_1_get_conduit()
-  arm: spectre-v2: use arm_smccc_1_1_get_conduit()
-  firmware/psci: use common SMCCC_CONDUIT_*
-  firmware: arm_sdei: use common SMCCC_CONDUIT_*
-  smccc: make 1.1 macros value-returning
-
- arch/arm/mm/proc-v7-bugs.c     | 22 ++++++--------
- arch/arm64/kernel/cpu_errata.c | 61 ++++++++++++++++-----------------------
- arch/arm64/kernel/sdei.c       |  3 +-
- arch/arm64/kvm/hyp/switch.c    |  4 +--
- drivers/firmware/arm_sdei.c    | 12 ++++----
- drivers/firmware/psci/psci.c   | 24 ++++++++++------
- include/linux/arm-smccc.h      | 65 ++++++++++++++++++++++++------------------
- include/linux/arm_sdei.h       |  6 ----
- include/linux/psci.h           |  9 ++----
- 9 files changed, 99 insertions(+), 107 deletions(-)
-
+diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+index f82ccd39a913..5f31f1bea1af 100644
+--- a/drivers/firmware/psci/psci.c
++++ b/drivers/firmware/psci/psci.c
+@@ -57,6 +57,21 @@ struct psci_operations psci_ops = {
+ 	.smccc_version = SMCCC_VERSION_1_0,
+ };
+ 
++enum arm_smccc_conduit arm_smccc_1_1_get_conduit(void)
++{
++	if (psci_ops.smccc_version < SMCCC_VERSION_1_1)
++		return SMCCC_CONDUIT_NONE;
++
++	switch (psci_ops.conduit) {
++	case PSCI_CONDUIT_SMC:
++		return SMCCC_CONDUIT_SMC;
++	case PSCI_CONDUIT_HVC:
++		return SMCCC_CONDUIT_HVC;
++	default:
++		return SMCCC_CONDUIT_NONE;
++	}
++}
++
+ typedef unsigned long (psci_fn)(unsigned long, unsigned long,
+ 				unsigned long, unsigned long);
+ static psci_fn *invoke_psci_fn;
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index 080012a6f025..df01a8579034 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -80,6 +80,22 @@
+ 
+ #include <linux/linkage.h>
+ #include <linux/types.h>
++
++enum arm_smccc_conduit {
++	SMCCC_CONDUIT_NONE,
++	SMCCC_CONDUIT_SMC,
++	SMCCC_CONDUIT_HVC,
++};
++
++/**
++ * arm_smccc_1_1_get_conduit()
++ *
++ * Returns the conduit to be used for SMCCCv1.1 or later.
++ *
++ * When SMCCCv1.1 is not present, returns SMCCC_CONDUIT_NONE.
++ */
++enum arm_smccc_conduit arm_smccc_1_1_get_conduit(void);
++
+ /**
+  * struct arm_smccc_res - Result from SMC/HVC call
+  * @a0-a3 result values from registers 0 to 3
 -- 
 2.11.0
 
