@@ -2,68 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 119A4883DF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 22:28:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C50DD8840C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 22:29:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JPOx2pBsntxyOcVYUrNvRNcvhmUq5EW3fP5uOki36QU=; b=WBzRSqQWIDDKzR
-	B15PbbqBI5FB+znnXggorYV+J9y6G0FejawAjFLO21cwCQgEdo9GY1QUFte1M11hIEflIbqtZUZOu
-	f2ojkxQtSaVq5sTTKrpXEYkE8KNtkv9eWPgnAxIoS8G/PiUn4l+roeghaVdZSECxrHXSK8JyC2ENh
-	EM/MKU+XXCX+141XJfAqEs3Q3f5P0evdmil8U8NO4MitVZNQDpBVkWObeucM3oRJcgCkCSv6Izt0c
-	o0FG/dNksTMF0qbdptSIn/mP4z5QXzCKillr4nASII8XGxc0fNIEQAh67+QA2NQDBGpDAllspB0cz
-	VY9lS3FFGDkpKKGQLByQ==;
+	List-Owner; bh=hS5WU2xdmxEAtNbor98/+9ws6eO19YG7GHKa29tLZNo=; b=ZHeXYlsSXaFW2Y
+	5Tindsep1fyR9V4oqQrGwf/YYfDtZ9JdLbjASey82PkU0vwpQjTowvoIHRsyNcyE+7uA1vDQ4QQOr
+	zaIv9vNN4jbqR7YwTNcxkc03Nt7hf/mopZOJ8LCyZR/HNtq6CKI8bFxR7ZotY0jhi0GPkFgV6T0xs
+	2P7RkVTl9E8L5X4g9Eao7X8oyLNcfDASz9FtoqNFch3BHzZ1IOVbknGfIerIAcB5K4UdxAxxLV9Qb
+	cJq0fFudifL3H15SB62dbovFJv+5q6EM0uHIC6U5g4AfM97df2hOUnLcfru0zhkGUNXL4BmRNc2bx
+	YYsQz7xZhMZyvECrV3gA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwBV1-00011K-Kk; Fri, 09 Aug 2019 20:28:31 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1hwBWG-0002DL-AH; Fri, 09 Aug 2019 20:29:48 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwBUo-000109-3Z
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 20:28:25 +0000
+ id 1hwBVz-00023M-Ix
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 20:29:38 +0000
 Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
  (mreue009 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MOzKm-1hfbTW3TbA-00PMlU; Fri, 09 Aug 2019 22:28:15 +0200
+ 1Mwfj0-1iGJee1esk-00y9t0; Fri, 09 Aug 2019 22:29:18 +0200
 From: Arnd Bergmann <arnd@arndb.de>
 To: soc@kernel.org
-Subject: [PATCH 01/16] ARM: remove ks8695 platform
-Date: Fri,  9 Aug 2019 22:27:29 +0200
-Message-Id: <20190809202749.742267-2-arnd@arndb.de>
+Subject: [PATCH 16/16] ARM: remove w90x900 platform
+Date: Fri,  9 Aug 2019 22:27:44 +0200
+Message-Id: <20190809202749.742267-17-arnd@arndb.de>
 X-Mailer: git-send-email 2.20.0
 In-Reply-To: <20190809202749.742267-1-arnd@arndb.de>
 References: <20190809202749.742267-1-arnd@arndb.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:p3iQksRod1HjACdCz5LO1NL9+Gppnd3Nlk0MzAx7vRVrAH36l0i
- 1Bln2Q/wBz9qzzyYNEVTto7XuTrld4tX45r1tl/xDF2CqlyHqDRlmtB59JifOllucCFlSap
- KWe3o9JFHIweP3bQi5UCRbhyJVAb/+NymVJRogr8wL2Quq6ghX97wN1GXTq0D0sG3xSRPj+
- 85WnB6ZlZlC5LvNgi1+cw==
+X-Provags-ID: V03:K1:pprDy3CtzfFfZW0uX91aurJYE3vEFGerW8TlHYQ0t7K0D9DP7g8
+ l+Q79SEf9RjNj8nUdmiCCyrIzzdwpHkbDrupIcxuv7B4Havn6JJ/52Qd0ZbTTlZSHX5qOEM
+ CZAzNpV5dHxFZx4A1FLhkleCggAwDBFEJ/yEW2Z4eo7X3aBl8SkApiIrHH8Hfsm+HprC5MS
+ aa89lrjUqgv3kHoecpb5w==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:fSC2t+hn6yU=:TWmTEcUsU243TuhvprcPr4
- YTV8WOTCCaxOsbSQFq50FFKdm9rqSECVTpGRa3eFRMqogf1nRPqpKTm4vTOR6ElG30Pix84vk
- 8RB6UfxI1uBdwB8z3LIN5NmSkPREZmmhfJDC6ksjllF24lyRKEObQV34WSo7TWQIY0EQLvVS5
- LjSNGU/UpMZYgTwqVk/8IeD42h0SrWHIDUU5Uq1et1+t8tzgeTzatURMj3yRH3vkC7Ro6yvFe
- KrRYzQVsNQtTW5Qk/zzmEx6B3oOu6uTm7d5DRUpU38NPwxM3z56xsNuIcVgl4b3M5YPXj/Yrs
- CKQMSL5IaEvSYCuccuq7hOKyVmpSdU6Xm4d1ts8x0worXAEAWwgp3SG22wy80G8xx4pD+V6Wv
- vI6hrl1DxR9tBqDw1j29tiCTtDmOArePFQMHQDT5QvxlM5NBvJXSAJ5WQf5xMKOJwUBvzlcWs
- 83fAvhSJ9tChgme52zgc19QPIHbWoG7ZySz2QD0/fftpJfIIHiruk5FWsVtgDHhXjrZANkDKF
- RypOqnwLWg9BZgE31N/v7bc13J+QplInzgY9clmf+TK2RIebdZ2J93dbjGCwoG8Gfqa7VWbD2
- cbewgEWEBgqx3wSAtpNf+5bfLhO71ELyQE9OeT+LilnCC3wpdMqmrEhH89q8mXHJlbJhTco+0
- kSZK2hcOFZdxpLlQUCrOqLru4KlHyWsAx3HFsudEmh5Wwv07YfNLEvUuorCEmTzbx4ZNN4E57
- 0YJ9ptj40UFK/3hKGExhAaFT1cJn0l0CKLejRA==
-X-Spam-Note: CRM114 run bypassed due to message size (102293 bytes)
+X-UI-Out-Filterresults: notjunk:1;V03:K0:PJLHs+iU8Zc=:oG22QZyjQnUph8QA18593Q
+ 4kFrWf3pgN9BPjbTt15QNgEb3IayZrd6JNUsjJOG+voWNTB2U6R0EAyXF0G0gsK3siPc2efD6
+ d0IQF4Oyj254R1dKMUqhaVN7TBUMZAah/zqKS5cEI+1YMyWNhN4WI7JyJLtl5sboCkwOLaGfi
+ w4ez4oueBEgugli1tizIIiNvF+jXFmKpPRyITU9X5SOKKLiyUzSr9An2+ZPKAwudG0cSPUUPV
+ 6f2+bcwDT6EE6+i9m/Tx4sjcoP/DKGzV4eymNpCOYpMOst9pFyF96zcJoWYjmynk/pB3gEVxm
+ YdFWJjoPIztrOFJsIRE/S4NGm181DcWoAVIxng9K/lUHgMW+6P2PSWc7IRtwMc8MmJvpijPyN
+ Ud4X7q16rw+YaedUabc+UXKuIPJs0GcQrs8ylkjMP0S8mKVjoHXBLQq2hERwnM+jaNkzbfAiN
+ 08GoshHDgkbzNW6GWCbuceXmPTs4vLOxdcyxbSHGRmUjVjAeMcwne1DPc/iJHyq6MC8xd4sOP
+ jROITAxiDRUzPobbvSQOVakWHRdOClDkpNkMxzOQ0XUacVegNxiUsA4Cx+cGPKo8/w8b9Tra9
+ sSyEZctMP+dHTB0X15MDw4YJ3W+5su3cS7Laojq5vmSpdO7t3AYiSpjUQspGLLvxKhS/DD341
+ EfnCOrEKUBArjnl793NYsC6AbFAe0Tg2BOOvPHmdC5ngR8TcsacCZUKINh33yhMeF/lK803sS
+ ePFLmTyxR+ctpnqZ4Ye0bWbhmBvK3REOalIyLw==
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190809_132932_289748_39719813 
+X-CRM114-Status: GOOD (  14.75  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
+ no trust [212.227.126.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.130 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,3351 +77,3719 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Greg Ungerer <gerg@kernel.org>,
- linux-kernel@vger.kernel.org, Ben Dooks <ben.dooks@codethink.co.uk>,
- Andrew Victor <linux@maxim.org.za>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ "Wanzongshun \(Vincent\)" <wanzongshun@huawei.com>,
+ Arnd Bergmann <arnd@arndb.de>, Russell King <linux@armlinux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ks8695 is an older SoC originally made by Kendin, which was later acquired
-by Micrel, and subsequently by Microchip.
+This removes the old Winbond w90x900 platform, also known
+as Nuvoton NUC900. Wan Zongshun originally contributed
+the port and maintained it since then.
 
-The platform port was originally contributed by Andrew Victor and Ben
-Dooks, and later maintained by Greg Ungerer.
+From all I can tell, this platform is no longer being used
+with modern kernels, based on various indications:
 
-When I recently submitted cleanups, but Greg noted that the platform no
-longer boots and nobody is using it any more, we decided to remove it.
+- The supported chips (nuc910/950/960) are no longer marketed
+  by the manufacturer
 
-Cc: Greg Ungerer <gerg@kernel.org>
-Cc: Andrew Victor <linux@maxim.org.za>
-Cc: Ben Dooks <ben.dooks@codethink.co.uk>
-Link: https://wikidevi.com/wiki/Micrel
-Link: https://lore.kernel.org/linux-arm-kernel/2bc41895-d4f9-896c-0726-0b2862fcbf25@kernel.org/
+- Newer chips from the same family (nuc97x, nuc980, n329x)
+  that are still marketed have Linux BSPs but those were never
+  submitted for upstream inclusion.
+
+- The last patch from the platform maintainer was in 2011.
+
+- All patches to w90x900 platform specific files afterwards
+  are cleanups that were apparently done without access to
+  test hardware.
+
+- Both the website and the email address listed in the
+  MAINTAINERS have become unreachable.
+
+Cc: "Wanzongshun (Vincent)" <wanzongshun@huawei.com>
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- MAINTAINERS                                   |   6 -
- arch/arm/Kconfig                              |  16 +-
- arch/arm/Kconfig.debug                        |   8 -
+ MAINTAINERS                                   |  16 -
+ arch/arm/Kconfig                              |  18 -
  arch/arm/Makefile                             |   1 -
- arch/arm/configs/acs5k_defconfig              |  77 ------
- arch/arm/configs/acs5k_tiny_defconfig         |  69 -----
- arch/arm/configs/ks8695_defconfig             |  67 -----
- arch/arm/include/debug/ks8695.S               |  37 ---
- arch/arm/mach-ks8695/Kconfig                  |  88 -------
- arch/arm/mach-ks8695/Makefile                 |  23 --
- arch/arm/mach-ks8695/Makefile.boot            |   9 -
- arch/arm/mach-ks8695/board-acs5k.c            | 238 -----------------
- arch/arm/mach-ks8695/board-dsm320.c           | 127 ---------
- arch/arm/mach-ks8695/board-micrel.c           |  59 -----
- arch/arm/mach-ks8695/board-og.c               | 197 --------------
- arch/arm/mach-ks8695/board-sg.c               | 118 ---------
- arch/arm/mach-ks8695/cpu.c                    |  60 -----
- arch/arm/mach-ks8695/devices.c                | 197 --------------
- arch/arm/mach-ks8695/devices.h                |  29 --
- arch/arm/mach-ks8695/generic.h                |  12 -
- .../mach-ks8695/include/mach/entry-macro.S    |  47 ----
- .../mach-ks8695/include/mach/gpio-ks8695.h    |  36 ---
- arch/arm/mach-ks8695/include/mach/hardware.h  |  42 ---
- arch/arm/mach-ks8695/include/mach/irqs.h      |  51 ----
- arch/arm/mach-ks8695/include/mach/memory.h    |  51 ----
- arch/arm/mach-ks8695/include/mach/regs-gpio.h |  55 ----
- arch/arm/mach-ks8695/include/mach/regs-irq.h  |  41 ---
- arch/arm/mach-ks8695/include/mach/regs-misc.h |  97 -------
- .../mach-ks8695/include/mach/regs-switch.h    |  66 -----
- arch/arm/mach-ks8695/include/mach/regs-uart.h |  89 -------
- .../arm/mach-ks8695/include/mach/uncompress.h |  33 ---
- arch/arm/mach-ks8695/irq.c                    | 164 ------------
- arch/arm/mach-ks8695/pci.c                    | 247 ------------------
- arch/arm/mach-ks8695/regs-hpna.h              |  25 --
- arch/arm/mach-ks8695/regs-lan.h               |  65 -----
- arch/arm/mach-ks8695/regs-mem.h               |  89 -------
- arch/arm/mach-ks8695/regs-pci.h               |  53 ----
- arch/arm/mach-ks8695/regs-sys.h               |  34 ---
- arch/arm/mach-ks8695/regs-wan.h               |  65 -----
- arch/arm/mach-ks8695/time.c                   | 159 -----------
- arch/arm/mm/Kconfig                           |   2 +-
- 41 files changed, 5 insertions(+), 2944 deletions(-)
- delete mode 100644 arch/arm/configs/acs5k_defconfig
- delete mode 100644 arch/arm/configs/acs5k_tiny_defconfig
- delete mode 100644 arch/arm/configs/ks8695_defconfig
- delete mode 100644 arch/arm/include/debug/ks8695.S
- delete mode 100644 arch/arm/mach-ks8695/Kconfig
- delete mode 100644 arch/arm/mach-ks8695/Makefile
- delete mode 100644 arch/arm/mach-ks8695/Makefile.boot
- delete mode 100644 arch/arm/mach-ks8695/board-acs5k.c
- delete mode 100644 arch/arm/mach-ks8695/board-dsm320.c
- delete mode 100644 arch/arm/mach-ks8695/board-micrel.c
- delete mode 100644 arch/arm/mach-ks8695/board-og.c
- delete mode 100644 arch/arm/mach-ks8695/board-sg.c
- delete mode 100644 arch/arm/mach-ks8695/cpu.c
- delete mode 100644 arch/arm/mach-ks8695/devices.c
- delete mode 100644 arch/arm/mach-ks8695/devices.h
- delete mode 100644 arch/arm/mach-ks8695/generic.h
- delete mode 100644 arch/arm/mach-ks8695/include/mach/entry-macro.S
- delete mode 100644 arch/arm/mach-ks8695/include/mach/gpio-ks8695.h
- delete mode 100644 arch/arm/mach-ks8695/include/mach/hardware.h
- delete mode 100644 arch/arm/mach-ks8695/include/mach/irqs.h
- delete mode 100644 arch/arm/mach-ks8695/include/mach/memory.h
- delete mode 100644 arch/arm/mach-ks8695/include/mach/regs-gpio.h
- delete mode 100644 arch/arm/mach-ks8695/include/mach/regs-irq.h
- delete mode 100644 arch/arm/mach-ks8695/include/mach/regs-misc.h
- delete mode 100644 arch/arm/mach-ks8695/include/mach/regs-switch.h
- delete mode 100644 arch/arm/mach-ks8695/include/mach/regs-uart.h
- delete mode 100644 arch/arm/mach-ks8695/include/mach/uncompress.h
- delete mode 100644 arch/arm/mach-ks8695/irq.c
- delete mode 100644 arch/arm/mach-ks8695/pci.c
- delete mode 100644 arch/arm/mach-ks8695/regs-hpna.h
- delete mode 100644 arch/arm/mach-ks8695/regs-lan.h
- delete mode 100644 arch/arm/mach-ks8695/regs-mem.h
- delete mode 100644 arch/arm/mach-ks8695/regs-pci.h
- delete mode 100644 arch/arm/mach-ks8695/regs-sys.h
- delete mode 100644 arch/arm/mach-ks8695/regs-wan.h
- delete mode 100644 arch/arm/mach-ks8695/time.c
+ arch/arm/configs/nuc910_defconfig             |  51 --
+ arch/arm/configs/nuc950_defconfig             |  67 ---
+ arch/arm/configs/nuc960_defconfig             |  57 --
+ arch/arm/mach-w90x900/Kconfig                 |  50 --
+ arch/arm/mach-w90x900/Makefile                |  20 -
+ arch/arm/mach-w90x900/Makefile.boot           |   4 -
+ arch/arm/mach-w90x900/clksel.c                |  88 ---
+ arch/arm/mach-w90x900/clock.c                 | 121 ----
+ arch/arm/mach-w90x900/clock.h                 |  40 --
+ arch/arm/mach-w90x900/cpu.c                   | 238 --------
+ arch/arm/mach-w90x900/cpu.h                   |  56 --
+ arch/arm/mach-w90x900/dev.c                   | 537 ------------------
+ arch/arm/mach-w90x900/gpio.c                  | 150 -----
+ .../mach-w90x900/include/mach/entry-macro.S   |  26 -
+ arch/arm/mach-w90x900/include/mach/hardware.h |  19 -
+ arch/arm/mach-w90x900/include/mach/irqs.h     |  82 ---
+ arch/arm/mach-w90x900/include/mach/map.h      | 153 -----
+ arch/arm/mach-w90x900/include/mach/mfp.h      |  21 -
+ .../mach-w90x900/include/mach/regs-clock.h    |  49 --
+ arch/arm/mach-w90x900/include/mach/regs-irq.h |  46 --
+ arch/arm/mach-w90x900/include/mach/regs-ldm.h | 248 --------
+ .../mach-w90x900/include/mach/regs-serial.h   |  54 --
+ .../mach-w90x900/include/mach/uncompress.h    |  43 --
+ arch/arm/mach-w90x900/irq.c                   | 212 -------
+ arch/arm/mach-w90x900/mach-nuc910evb.c        |  38 --
+ arch/arm/mach-w90x900/mach-nuc950evb.c        |  42 --
+ arch/arm/mach-w90x900/mach-nuc960evb.c        |  38 --
+ arch/arm/mach-w90x900/mfp.c                   | 197 -------
+ arch/arm/mach-w90x900/nuc910.c                |  58 --
+ arch/arm/mach-w90x900/nuc910.h                |  17 -
+ arch/arm/mach-w90x900/nuc950.c                |  52 --
+ arch/arm/mach-w90x900/nuc950.h                |  17 -
+ arch/arm/mach-w90x900/nuc960.c                |  50 --
+ arch/arm/mach-w90x900/nuc960.h                |  17 -
+ arch/arm/mach-w90x900/nuc9xx.h                |  22 -
+ arch/arm/mach-w90x900/regs-ebi.h              |  29 -
+ arch/arm/mach-w90x900/regs-gcr.h              |  34 --
+ arch/arm/mach-w90x900/regs-timer.h            |  37 --
+ arch/arm/mach-w90x900/regs-usb.h              |  31 -
+ arch/arm/mach-w90x900/time.c                  | 168 ------
+ 43 files changed, 3314 deletions(-)
+ delete mode 100644 arch/arm/configs/nuc910_defconfig
+ delete mode 100644 arch/arm/configs/nuc950_defconfig
+ delete mode 100644 arch/arm/configs/nuc960_defconfig
+ delete mode 100644 arch/arm/mach-w90x900/Kconfig
+ delete mode 100644 arch/arm/mach-w90x900/Makefile
+ delete mode 100644 arch/arm/mach-w90x900/Makefile.boot
+ delete mode 100644 arch/arm/mach-w90x900/clksel.c
+ delete mode 100644 arch/arm/mach-w90x900/clock.c
+ delete mode 100644 arch/arm/mach-w90x900/clock.h
+ delete mode 100644 arch/arm/mach-w90x900/cpu.c
+ delete mode 100644 arch/arm/mach-w90x900/cpu.h
+ delete mode 100644 arch/arm/mach-w90x900/dev.c
+ delete mode 100644 arch/arm/mach-w90x900/gpio.c
+ delete mode 100644 arch/arm/mach-w90x900/include/mach/entry-macro.S
+ delete mode 100644 arch/arm/mach-w90x900/include/mach/hardware.h
+ delete mode 100644 arch/arm/mach-w90x900/include/mach/irqs.h
+ delete mode 100644 arch/arm/mach-w90x900/include/mach/map.h
+ delete mode 100644 arch/arm/mach-w90x900/include/mach/mfp.h
+ delete mode 100644 arch/arm/mach-w90x900/include/mach/regs-clock.h
+ delete mode 100644 arch/arm/mach-w90x900/include/mach/regs-irq.h
+ delete mode 100644 arch/arm/mach-w90x900/include/mach/regs-ldm.h
+ delete mode 100644 arch/arm/mach-w90x900/include/mach/regs-serial.h
+ delete mode 100644 arch/arm/mach-w90x900/include/mach/uncompress.h
+ delete mode 100644 arch/arm/mach-w90x900/irq.c
+ delete mode 100644 arch/arm/mach-w90x900/mach-nuc910evb.c
+ delete mode 100644 arch/arm/mach-w90x900/mach-nuc950evb.c
+ delete mode 100644 arch/arm/mach-w90x900/mach-nuc960evb.c
+ delete mode 100644 arch/arm/mach-w90x900/mfp.c
+ delete mode 100644 arch/arm/mach-w90x900/nuc910.c
+ delete mode 100644 arch/arm/mach-w90x900/nuc910.h
+ delete mode 100644 arch/arm/mach-w90x900/nuc950.c
+ delete mode 100644 arch/arm/mach-w90x900/nuc950.h
+ delete mode 100644 arch/arm/mach-w90x900/nuc960.c
+ delete mode 100644 arch/arm/mach-w90x900/nuc960.h
+ delete mode 100644 arch/arm/mach-w90x900/nuc9xx.h
+ delete mode 100644 arch/arm/mach-w90x900/regs-ebi.h
+ delete mode 100644 arch/arm/mach-w90x900/regs-gcr.h
+ delete mode 100644 arch/arm/mach-w90x900/regs-timer.h
+ delete mode 100644 arch/arm/mach-w90x900/regs-usb.h
+ delete mode 100644 arch/arm/mach-w90x900/time.c
 
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 6426db5198f0..9ac40a896ee6 100644
+index 9ac40a896ee6..38de7f04c39f 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -1921,12 +1921,6 @@ S:	Maintained
- F:	drivers/phy/mediatek/
- F:	Documentation/devicetree/bindings/phy/phy-mtk-*
+@@ -2005,22 +2005,6 @@ F:	drivers/*/*npcm*
+ F:	Documentation/devicetree/bindings/*/*npcm*
+ F:	Documentation/devicetree/bindings/*/*/*npcm*
  
--ARM/MICREL KS8695 ARCHITECTURE
--M:	Greg Ungerer <gerg@uclinux.org>
+-ARM/NUVOTON W90X900 ARM ARCHITECTURE
+-M:	Wan ZongShun <mcuos.com@gmail.com>
 -L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
--F:	arch/arm/mach-ks8695/
--S:	Odd Fixes
+-W:	http://www.mcuos.com
+-S:	Maintained
+-F:	arch/arm/mach-w90x900/
+-F:	drivers/input/keyboard/w90p910_keypad.c
+-F:	drivers/input/touchscreen/w90p910_ts.c
+-F:	drivers/watchdog/nuc900_wdt.c
+-F:	drivers/net/ethernet/nuvoton/w90p910_ether.c
+-F:	drivers/mtd/nand/raw/nuc900_nand.c
+-F:	drivers/rtc/rtc-nuc900.c
+-F:	drivers/spi/spi-nuc900.c
+-F:	drivers/usb/host/ehci-w90x900.c
+-F:	drivers/video/fbdev/nuc900fb.c
 -
- ARM/Microchip (AT91) SoC support
- M:	Nicolas Ferre <nicolas.ferre@microchip.com>
- M:	Alexandre Belloni <alexandre.belloni@bootlin.com>
+ ARM/OPENMOKO NEO FREERUNNER (GTA02) MACHINE SUPPORT
+ L:	openmoko-kernel@lists.openmoko.org (subscribers-only)
+ W:	http://wiki.openmoko.org/wiki/Neo_FreeRunner
 diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index 33b00579beff..61deacf68e13 100644
+index 61deacf68e13..1597c542dc4f 100644
 --- a/arch/arm/Kconfig
 +++ b/arch/arm/Kconfig
-@@ -264,7 +264,6 @@ config PHYS_OFFSET
- 			ARCH_FOOTBRIDGE || \
- 			ARCH_INTEGRATOR || \
- 			ARCH_IOP13XX || \
--			ARCH_KS8695 || \
- 			ARCH_REALVIEW
- 	default 0x10000000 if ARCH_OMAP1 || ARCH_RPC
- 	default 0x20000000 if ARCH_S5PV210
-@@ -451,17 +450,6 @@ config ARCH_DOVE
+@@ -450,22 +450,6 @@ config ARCH_DOVE
  	help
  	  Support for the Marvell Dove SoC 88AP510
  
--config ARCH_KS8695
--	bool "Micrel/Kendin KS8695"
+-config ARCH_W90X900
+-	bool "Nuvoton W90X900 CPU"
+-	select CLKDEV_LOOKUP
 -	select CLKSRC_MMIO
--	select CPU_ARM922T
+-	select CPU_ARM926T
 -	select GENERIC_CLOCKEVENTS
 -	select GPIOLIB
--	select NEED_MACH_MEMORY_H
 -	help
--	  Support for Micrel/Kendin KS8695 "Centaur" (ARM922T) based
--	  System-on-Chip devices.
+-	  Support for Nuvoton (Winbond logic dept.) ARM9 processor,
+-	  At present, the w90x900 has been renamed nuc900, regarding
+-	  the ARM series product line, you can login the following
+-	  link address to know more.
 -
- config ARCH_W90X900
- 	bool "Nuvoton W90X900 CPU"
- 	select CLKDEV_LOOKUP
-@@ -744,7 +732,11 @@ source "arch/arm/mach-ixp4xx/Kconfig"
- 
- source "arch/arm/mach-keystone/Kconfig"
- 
-+<<<<<<< HEAD
- source "arch/arm/mach-ks8695/Kconfig"
-+=======
-+source "arch/arm/mach-lpc32xx/Kconfig"
-+>>>>>>> ARM: remove ks8695 platform
- 
- source "arch/arm/mach-mediatek/Kconfig"
- 
-diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
-index 85710e078afb..2496f1c89b88 100644
---- a/arch/arm/Kconfig.debug
-+++ b/arch/arm/Kconfig.debug
-@@ -509,13 +509,6 @@ choice
- 		  Say Y here if you want the debug print routines to direct
- 		  their output to UART1 serial port on KEYSTONE2 devices.
- 
--	config DEBUG_KS8695_UART
--		bool "KS8695 Debug UART"
--		depends on ARCH_KS8695
--		help
--		  Say Y here if you want kernel low-level debugging support
--		  on KS8695.
+-	  <http://www.nuvoton.com/hq/enu/ProductAndSales/ProductLines/
+-		ConsumerElectronicsIC/ARMMicrocontroller/ARMMicrocontroller>
 -
- 	config DEBUG_LPC18XX_UART0
- 		bool "Kernel low-level debugging via LPC18xx/43xx UART0"
- 		depends on ARCH_LPC18XX
-@@ -1533,7 +1526,6 @@ config DEBUG_LL_INCLUDE
- 				 DEBUG_IMX6SX_UART || \
- 				 DEBUG_IMX6UL_UART || \
- 				 DEBUG_IMX7D_UART
--	default "debug/ks8695.S" if DEBUG_KS8695_UART
- 	default "debug/msm.S" if DEBUG_QCOM_UARTDM
- 	default "debug/omap2plus.S" if DEBUG_OMAP2PLUS_UART
- 	default "debug/renesas-scif.S" if DEBUG_R7S72100_SCIF2
+ config ARCH_LPC32XX
+ 	bool "NXP LPC32XX"
+ 	select ARM_AMBA
+@@ -822,8 +806,6 @@ source "arch/arm/plat-versatile/Kconfig"
+ 
+ source "arch/arm/mach-vt8500/Kconfig"
+ 
+-source "arch/arm/mach-w90x900/Kconfig"
+-
+ source "arch/arm/mach-zx/Kconfig"
+ 
+ source "arch/arm/mach-zynq/Kconfig"
 diff --git a/arch/arm/Makefile b/arch/arm/Makefile
-index c3624ca6c0bc..c9daa4adc6fd 100644
+index c9daa4adc6fd..04e3f2f5a6b4 100644
 --- a/arch/arm/Makefile
 +++ b/arch/arm/Makefile
-@@ -178,7 +178,6 @@ machine-$(CONFIG_ARCH_IOP32X)		+= iop32x
- machine-$(CONFIG_ARCH_IOP33X)		+= iop33x
- machine-$(CONFIG_ARCH_IXP4XX)		+= ixp4xx
- machine-$(CONFIG_ARCH_KEYSTONE)		+= keystone
--machine-$(CONFIG_ARCH_KS8695)		+= ks8695
- machine-$(CONFIG_ARCH_LPC18XX)		+= lpc18xx
- machine-$(CONFIG_ARCH_LPC32XX)		+= lpc32xx
- machine-$(CONFIG_ARCH_MESON)		+= meson
-diff --git a/arch/arm/configs/acs5k_defconfig b/arch/arm/configs/acs5k_defconfig
+@@ -221,7 +221,6 @@ machine-$(CONFIG_ARCH_U8500)		+= ux500
+ machine-$(CONFIG_ARCH_VERSATILE)	+= versatile
+ machine-$(CONFIG_ARCH_VEXPRESS)		+= vexpress
+ machine-$(CONFIG_ARCH_VT8500)		+= vt8500
+-machine-$(CONFIG_ARCH_W90X900)		+= w90x900
+ machine-$(CONFIG_ARCH_ZX)		+= zx
+ machine-$(CONFIG_ARCH_ZYNQ)		+= zynq
+ machine-$(CONFIG_PLAT_SPEAR)		+= spear
+diff --git a/arch/arm/configs/nuc910_defconfig b/arch/arm/configs/nuc910_defconfig
 deleted file mode 100644
-index bcb8bda09158..000000000000
---- a/arch/arm/configs/acs5k_defconfig
+index 63dba62c3326..000000000000
+--- a/arch/arm/configs/nuc910_defconfig
 +++ /dev/null
-@@ -1,77 +0,0 @@
--# CONFIG_SWAP is not set
+@@ -1,51 +0,0 @@
+-# CONFIG_LOCALVERSION_AUTO is not set
 -CONFIG_SYSVIPC=y
--CONFIG_POSIX_MQUEUE=y
--CONFIG_LOG_BUF_SHIFT=14
+-CONFIG_BSD_PROCESS_ACCT=y
 -CONFIG_SYSFS_DEPRECATED_V2=y
+-CONFIG_RELAY=y
+-CONFIG_USER_NS=y
 -CONFIG_BLK_DEV_INITRD=y
+-CONFIG_KALLSYMS_EXTRA_PASS=y
 -CONFIG_SLAB=y
--CONFIG_MODULES=y
--CONFIG_MODULE_UNLOAD=y
--# CONFIG_BLK_DEV_BSG is not set
--# CONFIG_IOSCHED_DEADLINE is not set
--# CONFIG_IOSCHED_CFQ is not set
--CONFIG_ARCH_KS8695=y
--CONFIG_MACH_KS8695=y
--CONFIG_MACH_DSM320=y
--CONFIG_MACH_ACS5K=y
--# CONFIG_ARM_THUMB is not set
--CONFIG_PCI=y
--CONFIG_PCI_DEBUG=y
--CONFIG_PCCARD=y
--CONFIG_YENTA=y
+-CONFIG_ARCH_W90X900=y
+-CONFIG_PREEMPT=y
 -CONFIG_AEABI=y
--CONFIG_ZBOOT_ROM_TEXT=0x0
--CONFIG_ZBOOT_ROM_BSS=0x0
--CONFIG_CMDLINE="mem=32M console=ttyS0,115200 initrd=0x20410000,3145728 root=/dev/ram0 rw"
--CONFIG_NET=y
--CONFIG_PACKET=y
--CONFIG_UNIX=y
--CONFIG_INET=y
--CONFIG_IP_PNP=y
--CONFIG_IP_PNP_DHCP=y
--# CONFIG_IPV6 is not set
+-CONFIG_CMDLINE="root=/dev/ram0 console=ttyS0,115200n8 rdinit=/sbin/init mem=64M"
+-CONFIG_KEXEC=y
+-CONFIG_FPE_NWFPE=y
 -CONFIG_MTD=y
 -CONFIG_MTD_BLOCK=y
 -CONFIG_MTD_CFI=y
--CONFIG_MTD_JEDECPROBE=y
--CONFIG_MTD_CFI_ADV_OPTIONS=y
--CONFIG_MTD_CFI_INTELEXT=y
 -CONFIG_MTD_CFI_AMDSTD=y
 -CONFIG_MTD_PHYSMAP=y
 -CONFIG_BLK_DEV_RAM=y
--CONFIG_BLK_DEV_RAM_SIZE=8192
--CONFIG_NETDEVICES=y
--CONFIG_NET_ETHERNET=y
--CONFIG_ARM_KS8695_ETHER=y
--CONFIG_PRISM54=m
+-CONFIG_BLK_DEV_RAM_SIZE=16384
+-CONFIG_SCSI=y
+-# CONFIG_SCSI_PROC_FS is not set
+-CONFIG_BLK_DEV_SD=y
+-# CONFIG_SCSI_LOWLEVEL is not set
 -# CONFIG_INPUT_MOUSEDEV_PSAUX is not set
 -# CONFIG_INPUT_KEYBOARD is not set
 -# CONFIG_INPUT_MOUSE is not set
 -# CONFIG_SERIO is not set
--CONFIG_SERIAL_KS8695=y
--CONFIG_SERIAL_KS8695_CONSOLE=y
--CONFIG_I2C=y
--CONFIG_I2C_CHARDEV=y
--CONFIG_I2C_GPIO=y
--CONFIG_GPIO_SYSFS=y
--CONFIG_GPIO_PCA953X=y
--CONFIG_WATCHDOG=y
--CONFIG_KS8695_WATCHDOG=y
--# CONFIG_VGA_CONSOLE is not set
--CONFIG_RTC_CLASS=y
--CONFIG_RTC_DRV_PCF8563=y
--CONFIG_EXT2_FS=y
--CONFIG_TMPFS=y
--CONFIG_JFFS2_FS=y
--CONFIG_JFFS2_SUMMARY=y
--CONFIG_JFFS2_COMPRESSION_OPTIONS=y
--CONFIG_JFFS2_RUBIN=y
--CONFIG_CRAMFS=y
--CONFIG_NFS_FS=y
--CONFIG_NFS_V3=y
--CONFIG_ROOT_NFS=y
--CONFIG_DEBUG_KERNEL=y
--CONFIG_DEBUG_MUTEXES=y
--# CONFIG_FTRACE is not set
--CONFIG_DEBUG_USER=y
--CONFIG_DEBUG_LL=y
-diff --git a/arch/arm/configs/acs5k_tiny_defconfig b/arch/arm/configs/acs5k_tiny_defconfig
-deleted file mode 100644
-index e802cdebfd0b..000000000000
---- a/arch/arm/configs/acs5k_tiny_defconfig
-+++ /dev/null
-@@ -1,69 +0,0 @@
--# CONFIG_SWAP is not set
--CONFIG_SYSVIPC=y
--CONFIG_POSIX_MQUEUE=y
--CONFIG_LOG_BUF_SHIFT=14
--CONFIG_SYSFS_DEPRECATED_V2=y
--CONFIG_SLAB=y
--CONFIG_MODULES=y
--CONFIG_MODULE_UNLOAD=y
--# CONFIG_BLK_DEV_BSG is not set
--# CONFIG_IOSCHED_DEADLINE is not set
--# CONFIG_IOSCHED_CFQ is not set
--CONFIG_ARCH_KS8695=y
--CONFIG_MACH_ACS5K=y
--# CONFIG_ARM_THUMB is not set
--CONFIG_AEABI=y
--CONFIG_ZBOOT_ROM_TEXT=0x0
--CONFIG_ZBOOT_ROM_BSS=0x0
--CONFIG_CMDLINE="console=ttyAM0,115200 init=/bin/sh"
--CONFIG_FPE_NWFPE=y
--CONFIG_NET=y
--CONFIG_PACKET=y
--CONFIG_UNIX=y
--CONFIG_INET=y
--# CONFIG_INET_XFRM_MODE_TRANSPORT is not set
--# CONFIG_INET_XFRM_MODE_TUNNEL is not set
--# CONFIG_INET_XFRM_MODE_BEET is not set
--# CONFIG_IPV6 is not set
--CONFIG_MTD=y
--CONFIG_MTD_BLOCK=y
--CONFIG_MTD_CFI=y
--CONFIG_MTD_JEDECPROBE=y
--CONFIG_MTD_CFI_ADV_OPTIONS=y
--CONFIG_MTD_CFI_INTELEXT=y
--CONFIG_MTD_CFI_AMDSTD=y
--CONFIG_MTD_PHYSMAP=y
--# CONFIG_BLK_DEV is not set
--CONFIG_NETDEVICES=y
--CONFIG_NET_ETHERNET=y
--CONFIG_ARM_KS8695_ETHER=y
--# CONFIG_INPUT_MOUSEDEV_PSAUX is not set
--# CONFIG_INPUT_KEYBOARD is not set
--# CONFIG_INPUT_MOUSE is not set
--# CONFIG_SERIO is not set
--CONFIG_SERIAL_KS8695=y
--CONFIG_SERIAL_KS8695_CONSOLE=y
+-# CONFIG_DEVKMEM is not set
+-CONFIG_SERIAL_8250=y
+-CONFIG_SERIAL_8250_CONSOLE=y
+-CONFIG_SERIAL_8250_NR_UARTS=1
+-# CONFIG_LEGACY_PTYS is not set
 -# CONFIG_HW_RANDOM is not set
--CONFIG_I2C=y
--CONFIG_I2C_CHARDEV=y
--CONFIG_I2C_GPIO=y
--CONFIG_GPIO_SYSFS=y
--CONFIG_GPIO_PCA953X=y
 -# CONFIG_HWMON is not set
--CONFIG_WATCHDOG=y
--CONFIG_KS8695_WATCHDOG=y
 -# CONFIG_VGA_CONSOLE is not set
--# CONFIG_USB_SUPPORT is not set
--CONFIG_RTC_CLASS=y
--CONFIG_RTC_DRV_PCF8563=y
+-CONFIG_USB=y
+-CONFIG_USB_MON=y
+-CONFIG_USB_STORAGE=y
+-# CONFIG_DNOTIFY is not set
 -CONFIG_TMPFS=y
--CONFIG_JFFS2_FS=y
--CONFIG_JFFS2_SUMMARY=y
--CONFIG_JFFS2_COMPRESSION_OPTIONS=y
--CONFIG_JFFS2_RUBIN=y
--CONFIG_SQUASHFS=y
--# CONFIG_NETWORK_FILESYSTEMS is not set
--CONFIG_DEBUG_KERNEL=y
--CONFIG_DEBUG_MUTEXES=y
--# CONFIG_FTRACE is not set
--CONFIG_DEBUG_USER=y
-diff --git a/arch/arm/configs/ks8695_defconfig b/arch/arm/configs/ks8695_defconfig
+-CONFIG_TMPFS_POSIX_ACL=y
+-CONFIG_ROMFS_FS=y
+-CONFIG_PARTITION_ADVANCED=y
+-CONFIG_NLS_CODEPAGE_437=y
+-CONFIG_NLS_ISO8859_1=y
+-# CONFIG_ENABLE_MUST_CHECK is not set
+-CONFIG_DEBUG_FS=y
+-# CONFIG_CRC32 is not set
+diff --git a/arch/arm/configs/nuc950_defconfig b/arch/arm/configs/nuc950_defconfig
 deleted file mode 100644
-index df62d4dfbbb7..000000000000
---- a/arch/arm/configs/ks8695_defconfig
+index cb5a8788ebe8..000000000000
+--- a/arch/arm/configs/nuc950_defconfig
 +++ /dev/null
 @@ -1,67 +0,0 @@
--# CONFIG_SWAP is not set
+-# CONFIG_LOCALVERSION_AUTO is not set
 -CONFIG_SYSVIPC=y
--CONFIG_LOG_BUF_SHIFT=14
+-CONFIG_BSD_PROCESS_ACCT=y
 -CONFIG_SYSFS_DEPRECATED_V2=y
+-CONFIG_RELAY=y
+-CONFIG_USER_NS=y
 -CONFIG_BLK_DEV_INITRD=y
+-CONFIG_KALLSYMS_EXTRA_PASS=y
 -CONFIG_SLAB=y
--CONFIG_MODULES=y
--CONFIG_MODULE_UNLOAD=y
--# CONFIG_BLK_DEV_BSG is not set
--# CONFIG_IOSCHED_DEADLINE is not set
--# CONFIG_IOSCHED_CFQ is not set
--CONFIG_ARCH_KS8695=y
--CONFIG_MACH_KS8695=y
--CONFIG_MACH_DSM320=y
--# CONFIG_ARM_THUMB is not set
--CONFIG_PCI=y
--CONFIG_PCI_DEBUG=y
--CONFIG_PCCARD=y
--CONFIG_YENTA=y
+-CONFIG_ARCH_W90X900=y
+-# CONFIG_MACH_W90P910EVB is not set
+-CONFIG_MACH_W90P950EVB=y
+-CONFIG_NO_HZ=y
+-CONFIG_HIGH_RES_TIMERS=y
+-CONFIG_PREEMPT=y
 -CONFIG_AEABI=y
--CONFIG_ZBOOT_ROM_TEXT=0x0
--CONFIG_ZBOOT_ROM_BSS=0x0
--CONFIG_CMDLINE="mem=32M console=ttyS0,115200 initrd=0x20410000,3145728 root=/dev/ram0 rw"
--CONFIG_NET=y
--CONFIG_PACKET=y
--CONFIG_UNIX=y
--CONFIG_INET=y
--CONFIG_IP_PNP=y
--CONFIG_IP_PNP_DHCP=y
--# CONFIG_IPV6 is not set
+-CONFIG_CMDLINE="root=/dev/ram0 console=ttyS0,115200n8 rdinit=/sbin/init mem=64M"
+-CONFIG_KEXEC=y
+-CONFIG_FPE_NWFPE=y
+-CONFIG_BINFMT_AOUT=y
+-CONFIG_BINFMT_MISC=y
 -CONFIG_MTD=y
--CONFIG_MTD_REDBOOT_PARTS=y
--CONFIG_MTD_CMDLINE_PARTS=y
 -CONFIG_MTD_BLOCK=y
 -CONFIG_MTD_CFI=y
--CONFIG_MTD_JEDECPROBE=y
--CONFIG_MTD_CFI_INTELEXT=y
+-CONFIG_MTD_CFI_AMDSTD=y
 -CONFIG_MTD_PHYSMAP=y
 -CONFIG_BLK_DEV_RAM=y
--CONFIG_BLK_DEV_RAM_SIZE=8192
--CONFIG_NETDEVICES=y
--CONFIG_NET_ETHERNET=y
--CONFIG_MII=y
--CONFIG_PRISM54=m
+-CONFIG_BLK_DEV_RAM_SIZE=16384
+-CONFIG_SCSI=y
+-# CONFIG_SCSI_PROC_FS is not set
+-CONFIG_BLK_DEV_SD=y
+-# CONFIG_SCSI_LOWLEVEL is not set
 -# CONFIG_INPUT_MOUSEDEV_PSAUX is not set
 -# CONFIG_INPUT_KEYBOARD is not set
 -# CONFIG_INPUT_MOUSE is not set
 -# CONFIG_SERIO is not set
--CONFIG_SERIAL_KS8695=y
--CONFIG_SERIAL_KS8695_CONSOLE=y
+-# CONFIG_DEVKMEM is not set
+-CONFIG_SERIAL_8250=y
+-CONFIG_SERIAL_8250_CONSOLE=y
+-CONFIG_SERIAL_8250_NR_UARTS=1
+-# CONFIG_LEGACY_PTYS is not set
+-# CONFIG_HW_RANDOM is not set
+-# CONFIG_HWMON is not set
+-CONFIG_FB=y
+-CONFIG_FB_NUC900=y
+-CONFIG_GPM1040A0_320X240=y
+-CONFIG_FB_NUC900_DEBUG=y
+-# CONFIG_VGA_CONSOLE is not set
+-CONFIG_FRAMEBUFFER_CONSOLE=y
+-CONFIG_FRAMEBUFFER_CONSOLE_DETECT_PRIMARY=y
+-CONFIG_FONTS=y
+-CONFIG_FONT_8x16=y
+-CONFIG_LOGO=y
+-# CONFIG_LOGO_LINUX_MONO is not set
+-# CONFIG_LOGO_LINUX_VGA16 is not set
+-CONFIG_USB=y
+-CONFIG_USB_MON=y
+-CONFIG_USB_STORAGE=y
+-# CONFIG_DNOTIFY is not set
+-CONFIG_TMPFS=y
+-CONFIG_TMPFS_POSIX_ACL=y
+-CONFIG_ROMFS_FS=y
+-CONFIG_PARTITION_ADVANCED=y
+-CONFIG_NLS_CODEPAGE_437=y
+-CONFIG_NLS_ISO8859_1=y
+-# CONFIG_ENABLE_MUST_CHECK is not set
+-CONFIG_DEBUG_FS=y
+diff --git a/arch/arm/configs/nuc960_defconfig b/arch/arm/configs/nuc960_defconfig
+deleted file mode 100644
+index f7af84e23a05..000000000000
+--- a/arch/arm/configs/nuc960_defconfig
++++ /dev/null
+@@ -1,57 +0,0 @@
+-# CONFIG_LOCALVERSION_AUTO is not set
+-CONFIG_SYSVIPC=y
+-CONFIG_BSD_PROCESS_ACCT=y
+-CONFIG_SYSFS_DEPRECATED_V2=y
+-CONFIG_RELAY=y
+-CONFIG_USER_NS=y
+-CONFIG_BLK_DEV_INITRD=y
+-CONFIG_KALLSYMS_EXTRA_PASS=y
+-CONFIG_SLAB=y
+-CONFIG_ARCH_W90X900=y
+-# CONFIG_MACH_W90P910EVB is not set
+-CONFIG_MACH_W90N960EVB=y
+-CONFIG_NO_HZ=y
+-CONFIG_HIGH_RES_TIMERS=y
+-CONFIG_PREEMPT=y
+-CONFIG_AEABI=y
+-CONFIG_CMDLINE="root=/dev/ram0 console=ttyS0,115200n8 rdinit=/sbin/init mem=64M"
+-CONFIG_KEXEC=y
+-CONFIG_FPE_NWFPE=y
+-CONFIG_BINFMT_AOUT=y
+-CONFIG_BINFMT_MISC=y
+-CONFIG_MTD=y
+-CONFIG_MTD_BLOCK=y
+-CONFIG_MTD_CFI=y
+-CONFIG_MTD_CFI_AMDSTD=y
+-CONFIG_MTD_PHYSMAP=y
+-CONFIG_BLK_DEV_RAM=y
+-CONFIG_BLK_DEV_RAM_SIZE=16384
+-CONFIG_SCSI=y
+-# CONFIG_SCSI_PROC_FS is not set
+-CONFIG_BLK_DEV_SD=y
+-# CONFIG_SCSI_LOWLEVEL is not set
+-# CONFIG_INPUT_MOUSEDEV_PSAUX is not set
+-# CONFIG_INPUT_KEYBOARD is not set
+-# CONFIG_INPUT_MOUSE is not set
+-# CONFIG_SERIO is not set
+-# CONFIG_DEVKMEM is not set
+-CONFIG_SERIAL_8250=y
+-CONFIG_SERIAL_8250_CONSOLE=y
+-CONFIG_SERIAL_8250_NR_UARTS=1
+-# CONFIG_LEGACY_PTYS is not set
+-# CONFIG_HW_RANDOM is not set
 -# CONFIG_HWMON is not set
 -# CONFIG_VGA_CONSOLE is not set
--CONFIG_EXT2_FS=y
+-CONFIG_USB=y
+-CONFIG_USB_MON=y
+-CONFIG_USB_STORAGE=y
+-# CONFIG_DNOTIFY is not set
 -CONFIG_TMPFS=y
--CONFIG_JFFS2_FS=y
--CONFIG_JFFS2_SUMMARY=y
--CONFIG_JFFS2_COMPRESSION_OPTIONS=y
--CONFIG_JFFS2_RUBIN=y
--CONFIG_CRAMFS=y
--CONFIG_NFS_FS=y
--CONFIG_NFS_V3=y
--CONFIG_ROOT_NFS=y
--CONFIG_DEBUG_KERNEL=y
--CONFIG_DEBUG_MUTEXES=y
--# CONFIG_FTRACE is not set
--CONFIG_DEBUG_USER=y
--CONFIG_DEBUG_LL=y
-diff --git a/arch/arm/include/debug/ks8695.S b/arch/arm/include/debug/ks8695.S
+-CONFIG_TMPFS_POSIX_ACL=y
+-CONFIG_ROMFS_FS=y
+-CONFIG_PARTITION_ADVANCED=y
+-CONFIG_NLS_CODEPAGE_437=y
+-CONFIG_NLS_ISO8859_1=y
+-# CONFIG_ENABLE_MUST_CHECK is not set
+-CONFIG_DEBUG_FS=y
+-# CONFIG_CRC32 is not set
+diff --git a/arch/arm/mach-w90x900/Kconfig b/arch/arm/mach-w90x900/Kconfig
 deleted file mode 100644
-index eb4d371b5eea..000000000000
---- a/arch/arm/include/debug/ks8695.S
+index b16ffc03bbe5..000000000000
+--- a/arch/arm/mach-w90x900/Kconfig
 +++ /dev/null
-@@ -1,37 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0-only */
--/*
-- * arch/arm/include/debug/ks8695.S
-- *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
-- *
-- * KS8695 - Debug macros
-- */
+@@ -1,50 +0,0 @@
+-# SPDX-License-Identifier: GPL-2.0
+-if ARCH_W90X900
 -
--#define KS8695_UART_PA	0x03ffe000
--#define KS8695_UART_VA	0xf00fe000
--#define KS8695_URTH	(0x04)
--#define KS8695_URLS	(0x14)
--#define URLS_URTE	(1 << 6)
--#define URLS_URTHRE	(1 << 5)
--
--	.macro	addruart, rp, rv, tmp
--		ldr	\rp, =KS8695_UART_PA		@ physical base address
--		ldr	\rv, =KS8695_UART_VA		@ virtual base address
--	.endm
--
--	.macro	senduart, rd, rx
--		str	\rd, [\rx, #KS8695_URTH]	@ Write to Transmit Holding Register
--	.endm
--
--	.macro	busyuart, rd, rx
--1001:		ldr	\rd, [\rx, #KS8695_URLS]	@ Read Line Status Register
--		tst	\rd, #URLS_URTE			@ Holding & Shift registers empty?
--		beq	1001b
--	.endm
--
--	.macro	waituart, rd, rx
--1001:		ldr	\rd, [\rx, #KS8695_URLS]	@ Read Line Status Register
--		tst	\rd, #URLS_URTHRE		@ Holding Register empty?
--		beq	1001b
--	.endm
-diff --git a/arch/arm/mach-ks8695/Kconfig b/arch/arm/mach-ks8695/Kconfig
-deleted file mode 100644
-index 724d7d039f74..000000000000
---- a/arch/arm/mach-ks8695/Kconfig
-+++ /dev/null
-@@ -1,88 +0,0 @@
--# SPDX-License-Identifier: GPL-2.0-only
--if ARCH_KS8695
--
--menu "Kendin/Micrel KS8695 Implementations"
--
--config MACH_KS8695
--	bool "KS8695 development board"
--	select HAVE_PCI
+-config CPU_W90P910
+-	bool
 -	help
--	  Say 'Y' here if you want your kernel to run on the original
--	  Kendin-Micrel KS8695 development board.
+-	  Support for W90P910 of Nuvoton W90X900 CPUs.
 -
--config MACH_DSM320
--	bool "DSM-320 Wireless Media Player"
+-config CPU_NUC950
+-	bool
 -	help
--	  Say 'Y' here if you want your kernel to run on the D-Link
--	  DSM-320 Wireless Media Player.
+-	  Support for NUCP950 of Nuvoton NUC900 CPUs.
 -
--config MACH_ACS5K
--	bool "Brivo Systems LLC, ACS-5000 Master board"
+-config CPU_NUC960
+-	bool
 -	help
--	  say 'Y' here if you want your kernel to run on the Brivo
--	  Systems LLC, ACS-5000 Master board.
+-	  Support for NUCP960 of Nuvoton NUC900 CPUs.
 -
--config MACH_LITE300
--	bool "SecureComputing SG300"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  SecureComputing / SnapGear SG300 VPN Internet Router.
--	  See http://www.securecomputing.com for more details.
+-menu "W90P910 Machines"
 -
--config MACH_SG310
--	bool "McAfee SG310"
+-config MACH_W90P910EVB
+-	bool "Nuvoton W90P910 Evaluation Board"
+-	default y
+-	select CPU_W90P910
 -	help
--	  Say 'Y' here if you want your kernel to support the
--	  McAfee / SnapGear SG310 VPN Internet Router.
--	  See http://www.mcafee.com for more details.
+-	   Say Y here if you are using the Nuvoton W90P910EVB
 -
--config MACH_SE4200
--	bool "SecureComputing SE4200"
--	help
--	  Say 'Y' here if you want your kernel to support the
--	  SecureComputing / SnapGear SE4200 Secure Wireless VPN
--	  Internet Router.
--	  See http://www.securecomputing.com for more details.
+-endmenu
 -
--config MACH_CM4002
--	bool "OpenGear CM4002"
--	help
--	  Say 'Y' here if you want your kernel to support the OpenGear
--	  CM4002 Secure Access Server. See http://www.opengear.com for
--	  more details.
+-menu "NUC950 Machines"
 -
--config MACH_CM4008
--	bool "OpenGear CM4008"
--	select HAVE_PCI
+-config MACH_W90P950EVB
+-	bool "Nuvoton NUC950 Evaluation Board"
+-	select CPU_NUC950
 -	help
--	  Say 'Y' here if you want your kernel to support the OpenGear
--	  CM4008 Console Server. See http://www.opengear.com for more
--	  details.
+-	   Say Y here if you are using the Nuvoton NUC950EVB
 -
--config MACH_CM41xx
--	bool "OpenGear CM41xx"
--	select HAVE_PCI
--	help
--	  Say 'Y' here if you want your kernel to support the OpenGear
--	  CM4016 or CM4048 Console Servers. See http://www.opengear.com for
--	  more details.
+-endmenu
 -
--config MACH_IM4004
--	bool "OpenGear IM4004"
--	select HAVE_PCI
--	help
--	  Say 'Y' here if you want your kernel to support the OpenGear
--	  IM4004 Secure Access Server. See http://www.opengear.com for
--	  more details.
+-menu "NUC960 Machines"
 -
--config MACH_IM42xx
--	bool "OpenGear IM42xx"
--	select HAVE_PCI
+-config MACH_W90N960EVB
+-	bool "Nuvoton NUC960 Evaluation Board"
+-	select CPU_NUC960
 -	help
--	  Say 'Y' here if you want your kernel to support the OpenGear
--	  IM4216 or IM4248 Console Servers. See http://www.opengear.com for
--	  more details.
+-	   Say Y here if you are using the Nuvoton NUC960EVB
 -
 -endmenu
 -
 -endif
-diff --git a/arch/arm/mach-ks8695/Makefile b/arch/arm/mach-ks8695/Makefile
+diff --git a/arch/arm/mach-w90x900/Makefile b/arch/arm/mach-w90x900/Makefile
 deleted file mode 100644
-index 439b22255a32..000000000000
---- a/arch/arm/mach-ks8695/Makefile
+index 33b5bf53990f..000000000000
+--- a/arch/arm/mach-w90x900/Makefile
 +++ /dev/null
-@@ -1,23 +0,0 @@
+@@ -1,20 +0,0 @@
 -# SPDX-License-Identifier: GPL-2.0
--# arch/arm/mach-ks8695/Makefile
 -#
--# Makefile for KS8695 architecture support
+-# Makefile for the linux kernel.
 -#
 -
--obj-y				:= cpu.o irq.o time.o devices.o
+-# Object file lists.
 -
--# PCI support is optional
--obj-$(CONFIG_PCI)		+= pci.o
+-obj-y				:= irq.o time.o mfp.o gpio.o clock.o
+-obj-y				+= clksel.o dev.o cpu.o
+-# W90X900 CPU support files
 -
--# Board-specific support
--obj-$(CONFIG_MACH_KS8695)	+= board-micrel.o
--obj-$(CONFIG_MACH_DSM320)	+= board-dsm320.o
--obj-$(CONFIG_MACH_ACS5K)	+= board-acs5k.o
--obj-$(CONFIG_MACH_LITE300)	+= board-sg.o
--obj-$(CONFIG_MACH_SG310)	+= board-sg.o
--obj-$(CONFIG_MACH_SE4200)	+= board-sg.o
--obj-$(CONFIG_MACH_CM4002)	+= board-og.o
--obj-$(CONFIG_MACH_CM4008)	+= board-og.o
--obj-$(CONFIG_MACH_CM41xx)	+= board-og.o
--obj-$(CONFIG_MACH_IM4004)	+= board-og.o
--obj-$(CONFIG_MACH_IM42xx)	+= board-og.o
-diff --git a/arch/arm/mach-ks8695/Makefile.boot b/arch/arm/mach-ks8695/Makefile.boot
+-obj-$(CONFIG_CPU_W90P910)	+= nuc910.o
+-obj-$(CONFIG_CPU_NUC950)	+= nuc950.o
+-obj-$(CONFIG_CPU_NUC960)	+= nuc960.o
+-
+-# machine support
+-
+-obj-$(CONFIG_MACH_W90P910EVB)	+= mach-nuc910evb.o
+-obj-$(CONFIG_MACH_W90P950EVB)	+= mach-nuc950evb.o
+-obj-$(CONFIG_MACH_W90N960EVB)	+= mach-nuc960evb.o
+diff --git a/arch/arm/mach-w90x900/Makefile.boot b/arch/arm/mach-w90x900/Makefile.boot
 deleted file mode 100644
-index cf32eb605bd8..000000000000
---- a/arch/arm/mach-ks8695/Makefile.boot
+index 07d1b3b23ac0..000000000000
+--- a/arch/arm/mach-w90x900/Makefile.boot
 +++ /dev/null
-@@ -1,9 +0,0 @@
+@@ -1,4 +0,0 @@
 -# SPDX-License-Identifier: GPL-2.0-only
--# Note: the following conditions must always be true:
--#   ZRELADDR == virt_to_phys(TEXTADDR)
--#   PARAMS_PHYS must be within 4MB of ZRELADDR
--#   INITRD_PHYS must be in RAM
--
--   zreladdr-y	+= 0x00008000
+-zreladdr-y	+= 0x00008000
 -params_phys-y	:= 0x00000100
--initrd_phys-y	:= 0x00800000
-diff --git a/arch/arm/mach-ks8695/board-acs5k.c b/arch/arm/mach-ks8695/board-acs5k.c
+-
+diff --git a/arch/arm/mach-w90x900/clksel.c b/arch/arm/mach-w90x900/clksel.c
 deleted file mode 100644
-index f319258d1226..000000000000
---- a/arch/arm/mach-ks8695/board-acs5k.c
+index b50577a5a840..000000000000
+--- a/arch/arm/mach-w90x900/clksel.c
++++ /dev/null
+@@ -1,88 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- * linux/arch/arm/mach-w90x900/clksel.c
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
+-
+-#include <linux/module.h>
+-#include <linux/kernel.h>
+-#include <linux/device.h>
+-#include <linux/list.h>
+-#include <linux/errno.h>
+-#include <linux/err.h>
+-#include <linux/string.h>
+-#include <linux/clk.h>
+-#include <linux/mutex.h>
+-#include <linux/io.h>
+-
+-#include <mach/hardware.h>
+-#include <mach/regs-clock.h>
+-
+-#define PLL0		0x00
+-#define PLL1		0x01
+-#define OTHER		0x02
+-#define EXT		0x03
+-#define MSOFFSET	0x0C
+-#define ATAOFFSET	0x0a
+-#define LCDOFFSET	0x06
+-#define AUDOFFSET	0x04
+-#define CPUOFFSET	0x00
+-
+-static DEFINE_MUTEX(clksel_sem);
+-
+-static void clock_source_select(const char *dev_id, unsigned int clkval)
+-{
+-	unsigned int clksel, offset;
+-
+-	clksel = __raw_readl(REG_CLKSEL);
+-
+-	if (strcmp(dev_id, "nuc900-ms") == 0)
+-		offset = MSOFFSET;
+-	else if (strcmp(dev_id, "nuc900-atapi") == 0)
+-		offset = ATAOFFSET;
+-	else if (strcmp(dev_id, "nuc900-lcd") == 0)
+-		offset = LCDOFFSET;
+-	else if (strcmp(dev_id, "nuc900-ac97") == 0)
+-		offset = AUDOFFSET;
+-	else
+-		offset = CPUOFFSET;
+-
+-	clksel &= ~(0x03 << offset);
+-	clksel |= (clkval << offset);
+-
+-	__raw_writel(clksel, REG_CLKSEL);
+-}
+-
+-void nuc900_clock_source(struct device *dev, unsigned char *src)
+-{
+-	unsigned int clkval;
+-	const char *dev_id;
+-
+-	BUG_ON(!src);
+-	clkval = 0;
+-
+-	mutex_lock(&clksel_sem);
+-
+-	if (dev)
+-		dev_id = dev_name(dev);
+-	else
+-		dev_id = "cpufreq";
+-
+-	if (strcmp(src, "pll0") == 0)
+-		clkval = PLL0;
+-	else if (strcmp(src, "pll1") == 0)
+-		clkval = PLL1;
+-	else if (strcmp(src, "ext") == 0)
+-		clkval = EXT;
+-	else if (strcmp(src, "oth") == 0)
+-		clkval = OTHER;
+-
+-	clock_source_select(dev_id, clkval);
+-
+-	mutex_unlock(&clksel_sem);
+-}
+-EXPORT_SYMBOL(nuc900_clock_source);
+-
+diff --git a/arch/arm/mach-w90x900/clock.c b/arch/arm/mach-w90x900/clock.c
+deleted file mode 100644
+index df55aa8ce5ff..000000000000
+--- a/arch/arm/mach-w90x900/clock.c
++++ /dev/null
+@@ -1,121 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- * linux/arch/arm/mach-w90x900/clock.c
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
+-
+-#include <linux/module.h>
+-#include <linux/kernel.h>
+-#include <linux/list.h>
+-#include <linux/errno.h>
+-#include <linux/err.h>
+-#include <linux/string.h>
+-#include <linux/clk.h>
+-#include <linux/spinlock.h>
+-#include <linux/platform_device.h>
+-#include <linux/io.h>
+-
+-#include <mach/hardware.h>
+-
+-#include "clock.h"
+-
+-#define SUBCLK 0x24
+-
+-static DEFINE_SPINLOCK(clocks_lock);
+-
+-int clk_enable(struct clk *clk)
+-{
+-	unsigned long flags;
+-
+-	spin_lock_irqsave(&clocks_lock, flags);
+-	if (clk->enabled++ == 0)
+-		(clk->enable)(clk, 1);
+-	spin_unlock_irqrestore(&clocks_lock, flags);
+-
+-	return 0;
+-}
+-EXPORT_SYMBOL(clk_enable);
+-
+-void clk_disable(struct clk *clk)
+-{
+-	unsigned long flags;
+-
+-	if (!clk)
+-		return;
+-
+-	WARN_ON(clk->enabled == 0);
+-
+-	spin_lock_irqsave(&clocks_lock, flags);
+-	if (--clk->enabled == 0)
+-		(clk->enable)(clk, 0);
+-	spin_unlock_irqrestore(&clocks_lock, flags);
+-}
+-EXPORT_SYMBOL(clk_disable);
+-
+-unsigned long clk_get_rate(struct clk *clk)
+-{
+-	return 15000000;
+-}
+-EXPORT_SYMBOL(clk_get_rate);
+-
+-void nuc900_clk_enable(struct clk *clk, int enable)
+-{
+-	unsigned int clocks = clk->cken;
+-	unsigned long clken;
+-
+-	clken = __raw_readl(W90X900_VA_CLKPWR);
+-
+-	if (enable)
+-		clken |= clocks;
+-	else
+-		clken &= ~clocks;
+-
+-	__raw_writel(clken, W90X900_VA_CLKPWR);
+-}
+-
+-void nuc900_subclk_enable(struct clk *clk, int enable)
+-{
+-	unsigned int clocks = clk->cken;
+-	unsigned long clken;
+-
+-	clken = __raw_readl(W90X900_VA_CLKPWR + SUBCLK);
+-
+-	if (enable)
+-		clken |= clocks;
+-	else
+-		clken &= ~clocks;
+-
+-	__raw_writel(clken, W90X900_VA_CLKPWR + SUBCLK);
+-}
+-
+-/* dummy functions, should not be called */
+-long clk_round_rate(struct clk *clk, unsigned long rate)
+-{
+-	WARN_ON(clk);
+-	return 0;
+-}
+-EXPORT_SYMBOL(clk_round_rate);
+-
+-int clk_set_rate(struct clk *clk, unsigned long rate)
+-{
+-	WARN_ON(clk);
+-	return 0;
+-}
+-EXPORT_SYMBOL(clk_set_rate);
+-
+-int clk_set_parent(struct clk *clk, struct clk *parent)
+-{
+-	WARN_ON(clk);
+-	return 0;
+-}
+-EXPORT_SYMBOL(clk_set_parent);
+-
+-struct clk *clk_get_parent(struct clk *clk)
+-{
+-	WARN_ON(clk);
+-	return NULL;
+-}
+-EXPORT_SYMBOL(clk_get_parent);
+diff --git a/arch/arm/mach-w90x900/clock.h b/arch/arm/mach-w90x900/clock.h
+deleted file mode 100644
+index e81c369430b3..000000000000
+--- a/arch/arm/mach-w90x900/clock.h
++++ /dev/null
+@@ -1,40 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * linux/arch/arm/mach-w90x900/clock.h
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
+-
+-#include <linux/clkdev.h>
+-
+-void nuc900_clk_enable(struct clk *clk, int enable);
+-void nuc900_subclk_enable(struct clk *clk, int enable);
+-
+-struct clk {
+-	unsigned long		cken;
+-	unsigned int		enabled;
+-	void			(*enable)(struct clk *, int enable);
+-};
+-
+-#define DEFINE_CLK(_name, _ctrlbit)			\
+-struct clk clk_##_name = {				\
+-		.enable	= nuc900_clk_enable,		\
+-		.cken	= (1 << _ctrlbit),		\
+-	}
+-
+-#define DEFINE_SUBCLK(_name, _ctrlbit)			\
+-struct clk clk_##_name = {				\
+-		.enable	= nuc900_subclk_enable,	\
+-		.cken	= (1 << _ctrlbit),		\
+-	}
+-
+-
+-#define DEF_CLKLOOK(_clk, _devname, _conname)		\
+-	{						\
+-		.clk		= _clk,			\
+-		.dev_id		= _devname,		\
+-		.con_id		= _conname,		\
+-	}
+-
+diff --git a/arch/arm/mach-w90x900/cpu.c b/arch/arm/mach-w90x900/cpu.c
+deleted file mode 100644
+index aeaafc2ebb01..000000000000
+--- a/arch/arm/mach-w90x900/cpu.c
 +++ /dev/null
 @@ -1,238 +0,0 @@
 -// SPDX-License-Identifier: GPL-2.0-only
 -/*
-- * arch/arm/mach-ks8695/board-acs5k.c
+- * linux/arch/arm/mach-w90x900/cpu.c
 - *
-- * Brivo Systems LLC, ACS-5000 Master Board
+- * Copyright (c) 2009 Nuvoton corporation.
 - *
-- * Copyright 2008 Simtec Electronics
-- *		  Daniel Silverstone <dsilvers@simtec.co.uk>
+- * Wan ZongShun <mcuos.com@gmail.com>
+- *
+- * NUC900 series cpu common support
 - */
--#include <linux/gpio.h>
+-
 -#include <linux/kernel.h>
 -#include <linux/types.h>
 -#include <linux/interrupt.h>
+-#include <linux/list.h>
+-#include <linux/timer.h>
 -#include <linux/init.h>
 -#include <linux/platform_device.h>
--#include <linux/gpio/machine.h>
--#include <linux/i2c.h>
--#include <linux/i2c-algo-bit.h>
--#include <linux/platform_data/i2c-gpio.h>
--#include <linux/platform_data/pca953x.h>
--
--#include <linux/mtd/mtd.h>
--#include <linux/mtd/map.h>
--#include <linux/mtd/physmap.h>
--#include <linux/mtd/partitions.h>
--
--#include <asm/mach-types.h>
+-#include <linux/io.h>
+-#include <linux/serial_8250.h>
+-#include <linux/delay.h>
 -
 -#include <asm/mach/arch.h>
 -#include <asm/mach/map.h>
 -#include <asm/mach/irq.h>
+-#include <asm/irq.h>
+-#include <asm/system_misc.h>
 -
--#include "devices.h"
--#include <mach/gpio-ks8695.h>
+-#include <mach/hardware.h>
+-#include <mach/regs-serial.h>
+-#include <mach/regs-clock.h>
+-#include "regs-ebi.h"
+-#include "regs-timer.h"
 -
--#include "generic.h"
+-#include "cpu.h"
+-#include "clock.h"
+-#include "nuc9xx.h"
 -
--static struct gpiod_lookup_table acs5k_i2c_gpiod_table = {
--	.dev_id		= "i2c-gpio",
--	.table		= {
--		GPIO_LOOKUP_IDX("KS8695", 4, NULL, 0,
--				GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN),
--		GPIO_LOOKUP_IDX("KS8695", 5, NULL, 1,
--				GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN),
+-/* Initial IO mappings */
+-
+-static struct map_desc nuc900_iodesc[] __initdata = {
+-	IODESC_ENT(IRQ),
+-	IODESC_ENT(GCR),
+-	IODESC_ENT(UART),
+-	IODESC_ENT(TIMER),
+-	IODESC_ENT(EBI),
+-	IODESC_ENT(GPIO),
+-};
+-
+-/* Initial clock declarations. */
+-static DEFINE_CLK(lcd, 0);
+-static DEFINE_CLK(audio, 1);
+-static DEFINE_CLK(fmi, 4);
+-static DEFINE_SUBCLK(ms, 0);
+-static DEFINE_SUBCLK(sd, 1);
+-static DEFINE_CLK(dmac, 5);
+-static DEFINE_CLK(atapi, 6);
+-static DEFINE_CLK(emc, 7);
+-static DEFINE_SUBCLK(rmii, 2);
+-static DEFINE_CLK(usbd, 8);
+-static DEFINE_CLK(usbh, 9);
+-static DEFINE_CLK(g2d, 10);
+-static DEFINE_CLK(pwm, 18);
+-static DEFINE_CLK(ps2, 24);
+-static DEFINE_CLK(kpi, 25);
+-static DEFINE_CLK(wdt, 26);
+-static DEFINE_CLK(gdma, 27);
+-static DEFINE_CLK(adc, 28);
+-static DEFINE_CLK(usi, 29);
+-static DEFINE_CLK(ext, 0);
+-static DEFINE_CLK(timer0, 19);
+-static DEFINE_CLK(timer1, 20);
+-static DEFINE_CLK(timer2, 21);
+-static DEFINE_CLK(timer3, 22);
+-static DEFINE_CLK(timer4, 23);
+-
+-static struct clk_lookup nuc900_clkregs[] = {
+-	DEF_CLKLOOK(&clk_lcd, "nuc900-lcd", NULL),
+-	DEF_CLKLOOK(&clk_audio, "nuc900-ac97", NULL),
+-	DEF_CLKLOOK(&clk_fmi, "nuc900-fmi", NULL),
+-	DEF_CLKLOOK(&clk_ms, "nuc900-fmi", "MS"),
+-	DEF_CLKLOOK(&clk_sd, "nuc900-fmi", "SD"),
+-	DEF_CLKLOOK(&clk_dmac, "nuc900-dmac", NULL),
+-	DEF_CLKLOOK(&clk_atapi, "nuc900-atapi", NULL),
+-	DEF_CLKLOOK(&clk_emc, "nuc900-emc", NULL),
+-	DEF_CLKLOOK(&clk_rmii, "nuc900-emc", "RMII"),
+-	DEF_CLKLOOK(&clk_usbd, "nuc900-usbd", NULL),
+-	DEF_CLKLOOK(&clk_usbh, "nuc900-usbh", NULL),
+-	DEF_CLKLOOK(&clk_g2d, "nuc900-g2d", NULL),
+-	DEF_CLKLOOK(&clk_pwm, "nuc900-pwm", NULL),
+-	DEF_CLKLOOK(&clk_ps2, "nuc900-ps2", NULL),
+-	DEF_CLKLOOK(&clk_kpi, "nuc900-kpi", NULL),
+-	DEF_CLKLOOK(&clk_wdt, "nuc900-wdt", NULL),
+-	DEF_CLKLOOK(&clk_gdma, "nuc900-gdma", NULL),
+-	DEF_CLKLOOK(&clk_adc, "nuc900-ts", NULL),
+-	DEF_CLKLOOK(&clk_usi, "nuc900-spi", NULL),
+-	DEF_CLKLOOK(&clk_ext, NULL, "ext"),
+-	DEF_CLKLOOK(&clk_timer0, NULL, "timer0"),
+-	DEF_CLKLOOK(&clk_timer1, NULL, "timer1"),
+-	DEF_CLKLOOK(&clk_timer2, NULL, "timer2"),
+-	DEF_CLKLOOK(&clk_timer3, NULL, "timer3"),
+-	DEF_CLKLOOK(&clk_timer4, NULL, "timer4"),
+-};
+-
+-/* Initial serial platform data */
+-
+-struct plat_serial8250_port nuc900_uart_data[] = {
+-	NUC900_8250PORT(UART0),
+-	{},
+-};
+-
+-struct platform_device nuc900_serial_device = {
+-	.name			= "serial8250",
+-	.id			= PLAT8250_DEV_PLATFORM,
+-	.dev			= {
+-		.platform_data	= nuc900_uart_data,
 -	},
 -};
 -
--static struct i2c_gpio_platform_data acs5k_i2c_device_platdata = {
--	.udelay		= 10,
--};
--
--static struct platform_device acs5k_i2c_device = {
--	.name		= "i2c-gpio",
--	.id		= -1,
--	.num_resources	= 0,
--	.resource	= NULL,
--	.dev		= {
--		.platform_data	= &acs5k_i2c_device_platdata,
--	},
--};
--
--static int acs5k_pca9555_setup(struct i2c_client *client,
--			       unsigned gpio_base, unsigned ngpio,
--			       void *context)
+-/*Set NUC900 series cpu frequence*/
+-static int __init nuc900_set_clkval(unsigned int cpufreq)
 -{
--	static int acs5k_gpio_value[] = {
--		-1, -1, -1, -1, -1, -1, -1, 0, 1, 1, -1, 0, 1, 0, -1, -1
--	};
--	int n;
+-	unsigned int pllclk, ahbclk, apbclk, val;
 -
--	for (n = 0; n < ARRAY_SIZE(acs5k_gpio_value); ++n) {
--		gpio_request(gpio_base + n, "ACS-5000 GPIO Expander");
--		if (acs5k_gpio_value[n] < 0)
--			gpio_direction_input(gpio_base + n);
--		else
--			gpio_direction_output(gpio_base + n,
--					      acs5k_gpio_value[n]);
--		gpio_export(gpio_base + n, 0); /* Export, direction locked down */
+-	pllclk = 0;
+-	ahbclk = 0;
+-	apbclk = 0;
+-
+-	switch (cpufreq) {
+-	case 66:
+-		pllclk = PLL_66MHZ;
+-		ahbclk = AHB_CPUCLK_1_1;
+-		apbclk = APB_AHB_1_2;
+-		break;
+-
+-	case 100:
+-		pllclk = PLL_100MHZ;
+-		ahbclk = AHB_CPUCLK_1_1;
+-		apbclk = APB_AHB_1_2;
+-		break;
+-
+-	case 120:
+-		pllclk = PLL_120MHZ;
+-		ahbclk = AHB_CPUCLK_1_2;
+-		apbclk = APB_AHB_1_2;
+-		break;
+-
+-	case 166:
+-		pllclk = PLL_166MHZ;
+-		ahbclk = AHB_CPUCLK_1_2;
+-		apbclk = APB_AHB_1_2;
+-		break;
+-
+-	case 200:
+-		pllclk = PLL_200MHZ;
+-		ahbclk = AHB_CPUCLK_1_2;
+-		apbclk = APB_AHB_1_2;
+-		break;
 -	}
 -
--	return 0;
+-	__raw_writel(pllclk, REG_PLLCON0);
+-
+-	val = __raw_readl(REG_CLKDIV);
+-	val &= ~(0x03 << 24 | 0x03 << 26);
+-	val |= (ahbclk << 24 | apbclk << 26);
+-	__raw_writel(val, REG_CLKDIV);
+-
+-	return 	0;
 -}
--
--static struct pca953x_platform_data acs5k_i2c_pca9555_platdata = {
--	.gpio_base	= 16, /* Start directly after the CPU's GPIO */
--	.invert		= 0, /* Do not invert */
--	.setup		= acs5k_pca9555_setup,
--};
--
--static struct i2c_board_info acs5k_i2c_devs[] __initdata = {
--	{
--		I2C_BOARD_INFO("pcf8563", 0x51),
--	},
--	{
--		I2C_BOARD_INFO("pca9555", 0x20),
--		.platform_data = &acs5k_i2c_pca9555_platdata,
--	},
--};
--
--static void __init acs5k_i2c_init(void)
+-static int __init nuc900_set_cpufreq(char *str)
 -{
--	/* The gpio interface */
--	gpiod_add_lookup_table(&acs5k_i2c_gpiod_table);
--	platform_device_register(&acs5k_i2c_device);
--	/* I2C devices */
--	i2c_register_board_info(0, acs5k_i2c_devs,
--				ARRAY_SIZE(acs5k_i2c_devs));
--}
+-	unsigned long cpufreq, val;
 -
--static struct mtd_partition acs5k_nor_partitions[] = {
--	[0] = {
--		.name	= "Boot Agent and config",
--		.size	= SZ_256K,
--		.offset	= 0,
--		.mask_flags = MTD_WRITEABLE,
--	},
--	[1] = {
--		.name	= "Kernel",
--		.size	= SZ_1M,
--		.offset	= SZ_256K,
--	},
--	[2] = {
--		.name	= "SquashFS1",
--		.size	= SZ_2M,
--		.offset	= SZ_256K + SZ_1M,
--	},
--	[3] = {
--		.name	= "SquashFS2",
--		.size	= SZ_4M + SZ_2M,
--		.offset	= SZ_256K + SZ_1M + SZ_2M,
--	},
--	[4] = {
--		.name	= "Data",
--		.size	= SZ_16M + SZ_4M + SZ_2M + SZ_512K, /* 22.5 MB */
--		.offset	= SZ_256K + SZ_8M + SZ_1M,
--	}
--};
+-	if (!*str)
+-		return 0;
 -
--static struct physmap_flash_data acs5k_nor_pdata = {
--	.width		= 4,
--	.nr_parts	= ARRAY_SIZE(acs5k_nor_partitions),
--	.parts		= acs5k_nor_partitions,
--};
+-	if (kstrtoul(str, 0, &cpufreq))
+-		return 0;
 -
--static struct resource acs5k_nor_resource[] = {
--	[0] = {
--		.start = SZ_32M, /* We expect the bootloader to map
--				  * the flash here.
--				  */
--		.end   = SZ_32M + SZ_16M - 1,
--		.flags = IORESOURCE_MEM,
--	},
--	[1] = {
--		.start = SZ_32M + SZ_16M,
--		.end   = SZ_32M + SZ_32M - SZ_256K - 1,
--		.flags = IORESOURCE_MEM,
--	}
--};
+-	nuc900_clock_source(NULL, "ext");
 -
--static struct platform_device acs5k_device_nor = {
--	.name		= "physmap-flash",
--	.id		= -1,
--	.num_resources	= ARRAY_SIZE(acs5k_nor_resource),
--	.resource	= acs5k_nor_resource,
--	.dev		= {
--		.platform_data = &acs5k_nor_pdata,
--	},
--};
+-	nuc900_set_clkval(cpufreq);
 -
--static void __init acs5k_register_nor(void)
--{
--	int ret;
+-	mdelay(1);
 -
--	if (acs5k_nor_partitions[0].mask_flags == 0)
--		printk(KERN_WARNING "Warning: Unprotecting bootloader and configuration partition\n");
+-	val = __raw_readl(REG_CKSKEW);
+-	val &= ~0xff;
+-	val |= DEFAULTSKEW;
+-	__raw_writel(val, REG_CKSKEW);
 -
--	ret = platform_device_register(&acs5k_device_nor);
--	if (ret < 0)
--		printk(KERN_ERR "failed to register physmap-flash device\n");
--}
--
--static int __init acs5k_protection_setup(char *s)
--{
--	/* We can't allocate anything here but we should be able
--	 * to trivially parse s and decide if we can protect the
--	 * bootloader partition or not
--	 */
--	if (strcmp(s, "no") == 0)
--		acs5k_nor_partitions[0].mask_flags = 0;
+-	nuc900_clock_source(NULL, "pll0");
 -
 -	return 1;
 -}
 -
--__setup("protect_bootloader=", acs5k_protection_setup);
+-__setup("cpufreq=", nuc900_set_cpufreq);
 -
--static void __init acs5k_init_gpio(void)
+-/*Init NUC900 evb io*/
+-
+-void __init nuc900_map_io(struct map_desc *mach_desc, int mach_size)
 -{
--	int i;
+-	unsigned long idcode = 0x0;
 -
--	ks8695_register_gpios();
--	for (i = 0; i < 4; ++i)
--		gpio_request(i, "ACS5K IRQ");
--	gpio_request(7, "ACS5K KS_FRDY");
--	for (i = 8; i < 16; ++i)
--		gpio_request(i, "ACS5K Unused");
+-	iotable_init(mach_desc, mach_size);
+-	iotable_init(nuc900_iodesc, ARRAY_SIZE(nuc900_iodesc));
 -
--	gpio_request(3, "ACS5K CAN Control");
--	gpio_request(6, "ACS5K Heartbeat");
--	gpio_direction_output(3, 1); /* Default CAN_RESET high */
--	gpio_direction_output(6, 0); /* Default KS8695_ACTIVE low */
--	gpio_export(3, 0); /* export CAN_RESET as output only */
--	gpio_export(6, 0); /* export KS8695_ACTIVE as output only */
+-	idcode = __raw_readl(NUC900PDID);
+-	if (idcode == NUC910_CPUID)
+-		printk(KERN_INFO "CPU type 0x%08lx is NUC910\n", idcode);
+-	else if (idcode == NUC920_CPUID)
+-		printk(KERN_INFO "CPU type 0x%08lx is NUC920\n", idcode);
+-	else if (idcode == NUC950_CPUID)
+-		printk(KERN_INFO "CPU type 0x%08lx is NUC950\n", idcode);
+-	else if (idcode == NUC960_CPUID)
+-		printk(KERN_INFO "CPU type 0x%08lx is NUC960\n", idcode);
 -}
 -
--static void __init acs5k_init(void)
+-/*Init NUC900 clock*/
+-
+-void __init nuc900_init_clocks(void)
 -{
--	acs5k_init_gpio();
--
--	/* Network device */
--	ks8695_add_device_lan();	/* eth0 = LAN */
--	ks8695_add_device_wan();	/* ethX = WAN */
--
--	/* NOR devices */
--	acs5k_register_nor();
--
--	/* I2C bus */
--	acs5k_i2c_init();
+-	clkdev_add_table(nuc900_clkregs, ARRAY_SIZE(nuc900_clkregs));
 -}
 -
--MACHINE_START(ACS5K, "Brivo Systems LLC ACS-5000 Master board")
--	/* Maintainer: Simtec Electronics. */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= acs5k_init,
--	.init_time	= ks8695_timer_init,
--	.restart	= ks8695_restart,
--MACHINE_END
-diff --git a/arch/arm/mach-ks8695/board-dsm320.c b/arch/arm/mach-ks8695/board-dsm320.c
-deleted file mode 100644
-index d5f435cae6e0..000000000000
---- a/arch/arm/mach-ks8695/board-dsm320.c
-+++ /dev/null
-@@ -1,127 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-only
--/*
-- * arch/arm/mach-ks8695/board-dsm320.c
-- *
-- * DSM-320 D-Link Wireless Media Player, board support.
-- *
-- * Copyright 2008 Simtec Electronics
-- *		  Daniel Silverstone <dsilvers@simtec.co.uk>
-- */
--#include <linux/gpio.h>
--#include <linux/kernel.h>
--#include <linux/types.h>
--#include <linux/interrupt.h>
--#include <linux/init.h>
--#include <linux/platform_device.h>
+-#define	WTCR	(TMR_BA + 0x1C)
+-#define	WTCLK	(1 << 10)
+-#define	WTE	(1 << 7)
+-#define	WTRE	(1 << 1)
 -
--#include <linux/mtd/mtd.h>
--#include <linux/mtd/map.h>
--#include <linux/mtd/physmap.h>
--#include <linux/mtd/partitions.h>
--
--#include <asm/mach-types.h>
--
--#include <asm/mach/arch.h>
--#include <asm/mach/map.h>
--#include <asm/mach/irq.h>
--
--#include "devices.h"
--#include <mach/gpio-ks8695.h>
--
--#include "generic.h"
--
--#ifdef CONFIG_PCI
--static int dsm320_pci_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-void nuc9xx_restart(enum reboot_mode mode, const char *cmd)
 -{
--	switch (slot) {
--	case 0:
--		/* PCI-AHB bridge? */
--		return KS8695_IRQ_EXTERN0;
--	case 18:
--		/* Mini PCI slot */
--		return KS8695_IRQ_EXTERN2;
--	case 20:
--		/* RealMAGIC chip */
--		return KS8695_IRQ_EXTERN0;
--	}
--	BUG();
--}
--
--static struct ks8695_pci_cfg __initdata dsm320_pci = {
--	.mode		= KS8695_MODE_MINIPCI,
--	.map_irq	= dsm320_pci_map_irq,
--};
--
--static void __init dsm320_register_pci(void)
--{
--	/* Initialise the GPIO lines for interrupt mode */
--	/* RealMAGIC */
--	ks8695_gpio_interrupt(KS8695_GPIO_0, IRQ_TYPE_LEVEL_LOW);
--	/* MiniPCI Slot */
--	ks8695_gpio_interrupt(KS8695_GPIO_2, IRQ_TYPE_LEVEL_LOW);
--
--	ks8695_init_pci(&dsm320_pci);
--}
--
--#else
--static inline void __init dsm320_register_pci(void) { }
--#endif
--
--static struct physmap_flash_data dsm320_nor_pdata = {
--	.width		= 4,
--	.nr_parts	= 0,
--};
--
--static struct resource dsm320_nor_resource[] = {
--	[0] = {
--		.start = SZ_32M, /* We expect the bootloader to map
--				  * the flash here.
--				  */
--		.end   = SZ_32M + SZ_4M - 1,
--		.flags = IORESOURCE_MEM,
--	}
--};
--
--static struct platform_device dsm320_device_nor = {
--	.name		= "physmap-flash",
--	.id		= -1,
--	.num_resources	= ARRAY_SIZE(dsm320_nor_resource),
--	.resource	= dsm320_nor_resource,
--	.dev		= {
--		.platform_data = &dsm320_nor_pdata,
--	},
--};
--
--void __init dsm320_register_nor(void)
--{
--	int ret;
--
--	ret = platform_device_register(&dsm320_device_nor);
--	if (ret < 0)
--		printk(KERN_ERR "failed to register physmap-flash device\n");
--}
--
--static void __init dsm320_init(void)
--{
--	/* GPIO registration */
--	ks8695_register_gpios();
--
--	/* PCI registration */
--	dsm320_register_pci();
--
--	/* Network device */
--	ks8695_add_device_lan();	/* eth0 = LAN */
--
--	/* NOR devices */
--	dsm320_register_nor();
--}
--
--MACHINE_START(DSM320, "D-Link DSM-320 Wireless Media Player")
--	/* Maintainer: Simtec Electronics. */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= dsm320_init,
--	.init_time	= ks8695_timer_init,
--	.restart	= ks8695_restart,
--MACHINE_END
-diff --git a/arch/arm/mach-ks8695/board-micrel.c b/arch/arm/mach-ks8695/board-micrel.c
-deleted file mode 100644
-index bf8856ce3fbb..000000000000
---- a/arch/arm/mach-ks8695/board-micrel.c
-+++ /dev/null
-@@ -1,59 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-only
--/*
-- * arch/arm/mach-ks8695/board-micrel.c
-- */
--#include <linux/gpio.h>
--#include <linux/kernel.h>
--#include <linux/types.h>
--#include <linux/interrupt.h>
--#include <linux/init.h>
--#include <linux/platform_device.h>
--
--#include <asm/mach-types.h>
--
--#include <asm/mach/arch.h>
--#include <asm/mach/map.h>
--#include <asm/mach/irq.h>
--
--#include <mach/gpio-ks8695.h>
--#include "devices.h"
--
--#include "generic.h"
--
--#ifdef CONFIG_PCI
--static int micrel_pci_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--{
--	return KS8695_IRQ_EXTERN0;
--}
--
--static struct ks8695_pci_cfg __initdata micrel_pci = {
--	.mode		= KS8695_MODE_MINIPCI,
--	.map_irq	= micrel_pci_map_irq,
--};
--#endif
--
--
--static void __init micrel_init(void)
--{
--	printk(KERN_INFO "Micrel KS8695 Development Board initializing\n");
--
--	ks8695_register_gpios();
--
--#ifdef CONFIG_PCI
--	ks8695_init_pci(&micrel_pci);
--#endif
--
--	/* Add devices */
--	ks8695_add_device_wan();	/* eth0 = WAN */
--	ks8695_add_device_lan();	/* eth1 = LAN */
--}
--
--MACHINE_START(KS8695, "KS8695 Centaur Development Board")
--	/* Maintainer: Micrel Semiconductor Inc. */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= micrel_init,
--	.init_time	= ks8695_timer_init,
--	.restart	= ks8695_restart,
--MACHINE_END
-diff --git a/arch/arm/mach-ks8695/board-og.c b/arch/arm/mach-ks8695/board-og.c
-deleted file mode 100644
-index 12ffe9227f9c..000000000000
---- a/arch/arm/mach-ks8695/board-og.c
-+++ /dev/null
-@@ -1,197 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-only
--/*
-- * board-og.c -- support for the OpenGear KS8695 based boards.
-- */
--
--#include <linux/kernel.h>
--#include <linux/types.h>
--#include <linux/interrupt.h>
--#include <linux/init.h>
--#include <linux/delay.h>
--#include <linux/platform_device.h>
--#include <linux/serial_8250.h>
--#include <linux/gpio.h>
--#include <linux/irq.h>
--#include <asm/mach-types.h>
--#include <asm/mach/arch.h>
--#include <asm/mach/map.h>
--#include "devices.h"
--#include <mach/regs-gpio.h>
--#include <mach/gpio-ks8695.h>
--#include "generic.h"
--
--static int og_pci_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--{
--	if (machine_is_im4004() && (slot == 8))
--		return KS8695_IRQ_EXTERN1;
--	return KS8695_IRQ_EXTERN0;
--}
--
--static struct ks8695_pci_cfg __initdata og_pci = {
--	.mode		= KS8695_MODE_PCI,
--	.map_irq	= og_pci_map_irq,
--};
--
--static void __init og_register_pci(void)
--{
--	/* Initialize the GPIO lines for interrupt mode */
--	ks8695_gpio_interrupt(KS8695_GPIO_0, IRQ_TYPE_LEVEL_LOW);
--
--	/* Cardbus Slot */
--	if (machine_is_im4004())
--		ks8695_gpio_interrupt(KS8695_GPIO_1, IRQ_TYPE_LEVEL_LOW);
--
--	if (IS_ENABLED(CONFIG_PCI))
--		ks8695_init_pci(&og_pci);
--}
--
--/*
-- * The PCI bus reset is driven by a dedicated GPIO line. Toggle it here
-- * and bring the PCI bus out of reset.
-- */
--static void __init og_pci_bus_reset(void)
--{
--	unsigned int rstline = 1;
--
--	/* Some boards use a different GPIO as the PCI reset line */
--	if (machine_is_im4004())
--		rstline = 2;
--	else if (machine_is_im42xx())
--		rstline = 0;
--
--	gpio_request(rstline, "PCI reset");
--	gpio_direction_output(rstline, 0);
--
--	/* Drive a reset on the PCI reset line */
--	gpio_set_value(rstline, 1);
--	gpio_set_value(rstline, 0);
--	mdelay(100);
--	gpio_set_value(rstline, 1);
--	mdelay(100);
--}
--
--/*
-- * Direct connect serial ports (non-PCI that is).
-- */
--#define	S8250_PHYS	0x03800000
--#define	S8250_VIRT	0xf4000000
--#define	S8250_SIZE	0x00100000
--
--static struct map_desc og_io_desc[] __initdata = {
--	{
--		.virtual	= S8250_VIRT,
--		.pfn		= __phys_to_pfn(S8250_PHYS),
--		.length		= S8250_SIZE,
--		.type		= MT_DEVICE,
--	}
--};
--
--static struct resource og_uart_resources[] = {
--	{
--		.start		= S8250_VIRT,
--		.end		= S8250_VIRT + S8250_SIZE,
--		.flags		= IORESOURCE_MEM
--	},
--};
--
--static struct plat_serial8250_port og_uart_data[] = {
--	{
--		.mapbase	= S8250_VIRT,
--		.membase	= (char *) S8250_VIRT,
--		.irq		= 3,
--		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--		.iotype		= UPIO_MEM,
--		.regshift	= 2,
--		.uartclk	= 115200 * 16,
--	},
--	{ },
--};
--
--static struct platform_device og_uart = {
--	.name			= "serial8250",
--	.id			= 0,
--	.dev.platform_data	= og_uart_data,
--	.num_resources		= 1,
--	.resource		= og_uart_resources
--};
--
--static struct platform_device *og_devices[] __initdata = {
--	&og_uart
--};
--
--static void __init og_init(void)
--{
--	ks8695_register_gpios();
--
--	if (machine_is_cm4002()) {
--		ks8695_gpio_interrupt(KS8695_GPIO_1, IRQ_TYPE_LEVEL_HIGH);
--		iotable_init(og_io_desc, ARRAY_SIZE(og_io_desc));
--		platform_add_devices(og_devices, ARRAY_SIZE(og_devices));
+-	if (mode == REBOOT_SOFT) {
+-		/* Jump into ROM at address 0 */
+-		soft_restart(0);
 -	} else {
--		og_pci_bus_reset();
--		og_register_pci();
+-		__raw_writel(WTE | WTRE | WTCLK, WTCR);
 -	}
+-}
+diff --git a/arch/arm/mach-w90x900/cpu.h b/arch/arm/mach-w90x900/cpu.h
+deleted file mode 100644
+index a56f36d04bac..000000000000
+--- a/arch/arm/mach-w90x900/cpu.h
++++ /dev/null
+@@ -1,56 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * arch/arm/mach-w90x900/cpu.h
+- *
+- * Based on linux/include/asm-arm/plat-s3c24xx/cpu.h by Ben Dooks
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation
+- * All rights reserved.
+- *
+- * Header file for NUC900 CPU support
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
 -
--	ks8695_add_device_lan();
--	ks8695_add_device_wan();
+-#define IODESC_ENT(y)                                  \
+-{                                                      \
+-       .virtual = (unsigned long)W90X900_VA_##y,       \
+-       .pfn     = __phys_to_pfn(W90X900_PA_##y),       \
+-       .length  = W90X900_SZ_##y,                      \
+-       .type    = MT_DEVICE,                           \
 -}
 -
--#ifdef CONFIG_MACH_CM4002
--MACHINE_START(CM4002, "OpenGear/CM4002")
--	/* OpenGear Inc. */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= og_init,
--	.init_time	= ks8695_timer_init,
--	.restart        = ks8695_restart,
--MACHINE_END
--#endif
+-#define NUC900_8250PORT(name)					\
+-{								\
+-	.membase	= name##_BA,				\
+-	.mapbase	= name##_PA,				\
+-	.irq		= IRQ_##name,				\
+-	.uartclk	= 11313600,				\
+-	.regshift	= 2,					\
+-	.iotype		= UPIO_MEM,				\
+-	.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,	\
+-}
 -
--#ifdef CONFIG_MACH_CM4008
--MACHINE_START(CM4008, "OpenGear/CM4008")
--	/* OpenGear Inc. */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= og_init,
--	.init_time	= ks8695_timer_init,
--	.restart        = ks8695_restart,
--MACHINE_END
--#endif
+-/*Cpu identifier register*/
 -
--#ifdef CONFIG_MACH_CM41xx
--MACHINE_START(CM41XX, "OpenGear/CM41xx")
--	/* OpenGear Inc. */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= og_init,
--	.init_time	= ks8695_timer_init,
--	.restart        = ks8695_restart,
--MACHINE_END
--#endif
+-#define NUC900PDID	W90X900_VA_GCR
+-#define NUC910_CPUID	0x02900910
+-#define NUC920_CPUID	0x02900920
+-#define NUC950_CPUID	0x02900950
+-#define NUC960_CPUID	0x02900960
 -
--#ifdef CONFIG_MACH_IM4004
--MACHINE_START(IM4004, "OpenGear/IM4004")
--	/* OpenGear Inc. */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= og_init,
--	.init_time	= ks8695_timer_init,
--	.restart        = ks8695_restart,
--MACHINE_END
--#endif
+-/* extern file from cpu.c */
 -
--#ifdef CONFIG_MACH_IM42xx
--MACHINE_START(IM42XX, "OpenGear/IM42xx")
--	/* OpenGear Inc. */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= og_init,
--	.init_time	= ks8695_timer_init,
--	.restart        = ks8695_restart,
--MACHINE_END
--#endif
-diff --git a/arch/arm/mach-ks8695/board-sg.c b/arch/arm/mach-ks8695/board-sg.c
+-extern void nuc900_clock_source(struct device *dev, unsigned char *src);
+-extern void nuc900_init_clocks(void);
+-extern void nuc900_map_io(struct map_desc *mach_desc, int mach_size);
+-extern void nuc900_board_init(struct platform_device **device, int size);
+-
+-/* for either public between 910 and 920, or between 920 and 950 */
+-
+-extern struct platform_device nuc900_serial_device;
+-extern struct platform_device nuc900_device_fmi;
+-extern struct platform_device nuc900_device_kpi;
+-extern struct platform_device nuc900_device_rtc;
+-extern struct platform_device nuc900_device_ts;
+-extern struct platform_device nuc900_device_lcd;
+diff --git a/arch/arm/mach-w90x900/dev.c b/arch/arm/mach-w90x900/dev.c
 deleted file mode 100644
-index d5ec85a56375..000000000000
---- a/arch/arm/mach-ks8695/board-sg.c
+index ce5fe400cb99..000000000000
+--- a/arch/arm/mach-w90x900/dev.c
 +++ /dev/null
-@@ -1,118 +0,0 @@
+@@ -1,537 +0,0 @@
 -// SPDX-License-Identifier: GPL-2.0-only
 -/*
-- * board-sg.c -- support for the SnapGear KS8695 based boards
+- * linux/arch/arm/mach-w90x900/dev.c
+- *
+- * Copyright (C) 2009 Nuvoton corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
 - */
 -
 -#include <linux/kernel.h>
 -#include <linux/types.h>
+-#include <linux/interrupt.h>
+-#include <linux/list.h>
+-#include <linux/timer.h>
 -#include <linux/init.h>
 -#include <linux/platform_device.h>
--#include <linux/mtd/mtd.h>
--#include <linux/mtd/map.h>
+-#include <linux/slab.h>
+-#include <linux/cpu.h>
+-
 -#include <linux/mtd/physmap.h>
+-#include <linux/mtd/mtd.h>
 -#include <linux/mtd/partitions.h>
--#include <asm/mach-types.h>
+-
+-#include <linux/spi/spi.h>
+-#include <linux/spi/flash.h>
+-
+-#include <asm/system_misc.h>
 -#include <asm/mach/arch.h>
--#include "devices.h"
--#include "generic.h"
+-#include <asm/mach/map.h>
+-#include <asm/mach/irq.h>
+-#include <asm/mach-types.h>
 -
--/*
-- * The SG310 machine type is fitted with a conventional 8MB Strataflash
-- * device. Define its partitioning.
-- */
--#define	FL_BASE		0x02000000
--#define	FL_SIZE		SZ_8M
+-#include <mach/regs-serial.h>
+-#include <linux/platform_data/spi-nuc900.h>
+-#include <mach/map.h>
+-#include <linux/platform_data/video-nuc900fb.h>
+-#include <mach/regs-ldm.h>
+-#include <linux/platform_data/keypad-w90p910.h>
 -
--static struct mtd_partition sg_mtd_partitions[] = {
+-#include "cpu.h"
+-
+-/*NUC900 evb norflash driver data */
+-
+-#define NUC900_FLASH_BASE	0xA0000000
+-#define NUC900_FLASH_SIZE	0x400000
+-#define SPIOFFSET		0x200
+-#define SPIOREG_SIZE		0x100
+-
+-static struct mtd_partition nuc900_flash_partitions[] = {
+-	{
+-		.name	=	"NOR Partition 1 for kernel (960K)",
+-		.size	=	0xF0000,
+-		.offset	=	0x10000,
+-	},
+-	{
+-		.name	=	"NOR Partition 2 for image (1M)",
+-		.size	=	0x100000,
+-		.offset	=	0x100000,
+-	},
+-	{
+-		.name	=	"NOR Partition 3 for user (2M)",
+-		.size	=	0x200000,
+-		.offset	=	0x00200000,
+-	}
+-};
+-
+-static struct physmap_flash_data nuc900_flash_data = {
+-	.width		=	2,
+-	.parts		=	nuc900_flash_partitions,
+-	.nr_parts	=	ARRAY_SIZE(nuc900_flash_partitions),
+-};
+-
+-static struct resource nuc900_flash_resources[] = {
+-	{
+-		.start	=	NUC900_FLASH_BASE,
+-		.end	=	NUC900_FLASH_BASE + NUC900_FLASH_SIZE - 1,
+-		.flags	=	IORESOURCE_MEM,
+-	}
+-};
+-
+-static struct platform_device nuc900_flash_device = {
+-	.name		=	"physmap-flash",
+-	.id		=	0,
+-	.dev		= {
+-				.platform_data = &nuc900_flash_data,
+-			},
+-	.resource	=	nuc900_flash_resources,
+-	.num_resources	=	ARRAY_SIZE(nuc900_flash_resources),
+-};
+-
+-/* USB EHCI Host Controller */
+-
+-static struct resource nuc900_usb_ehci_resource[] = {
 -	[0] = {
--		.name	= "SnapGear Boot Loader",
--		.size	= SZ_128K,
+-		.start = W90X900_PA_USBEHCIHOST,
+-		.end   = W90X900_PA_USBEHCIHOST + W90X900_SZ_USBEHCIHOST - 1,
+-		.flags = IORESOURCE_MEM,
 -	},
 -	[1] = {
--		.name	= "SnapGear non-volatile configuration",
--		.size	= SZ_512K,
--		.offset	= SZ_256K,
--	},
--	[2] = {
--		.name	= "SnapGear image",
--		.offset	= SZ_512K + SZ_256K,
--	},
--	[3] = {
--		.name	= "SnapGear StrataFlash",
--	},
--	[4] = {
--		.name	= "SnapGear Boot Tags",
--		.size	= SZ_128K,
--		.offset	= SZ_128K,
--	},
+-		.start = IRQ_USBH,
+-		.end   = IRQ_USBH,
+-		.flags = IORESOURCE_IRQ,
+-	}
 -};
 -
--static struct physmap_flash_data sg_mtd_pdata = {
--	.width		= 1,
--	.nr_parts	= ARRAY_SIZE(sg_mtd_partitions),
--	.parts		= sg_mtd_partitions,
+-static u64 nuc900_device_usb_ehci_dmamask = 0xffffffffUL;
+-
+-static struct platform_device nuc900_device_usb_ehci = {
+-	.name		  = "nuc900-ehci",
+-	.id		  = -1,
+-	.num_resources	  = ARRAY_SIZE(nuc900_usb_ehci_resource),
+-	.resource	  = nuc900_usb_ehci_resource,
+-	.dev              = {
+-		.dma_mask = &nuc900_device_usb_ehci_dmamask,
+-		.coherent_dma_mask = 0xffffffffUL
+-	}
 -};
 -
+-/* USB OHCI Host Controller */
 -
--static struct resource sg_mtd_resource[] = {
+-static struct resource nuc900_usb_ohci_resource[] = {
 -	[0] = {
--		.start = FL_BASE,
--		.end   = FL_BASE + FL_SIZE - 1,
+-		.start = W90X900_PA_USBOHCIHOST,
+-		.end   = W90X900_PA_USBOHCIHOST + W90X900_SZ_USBOHCIHOST - 1,
 -		.flags = IORESOURCE_MEM,
 -	},
+-	[1] = {
+-		.start = IRQ_USBH,
+-		.end   = IRQ_USBH,
+-		.flags = IORESOURCE_IRQ,
+-	}
 -};
 -
--static struct platform_device sg_mtd_device = {
--	.name		= "physmap-flash",
--	.id		= 0,
--	.num_resources	= ARRAY_SIZE(sg_mtd_resource),
--	.resource	= sg_mtd_resource,
+-static u64 nuc900_device_usb_ohci_dmamask = 0xffffffffUL;
+-static struct platform_device nuc900_device_usb_ohci = {
+-	.name		  = "nuc900-ohci",
+-	.id		  = -1,
+-	.num_resources	  = ARRAY_SIZE(nuc900_usb_ohci_resource),
+-	.resource	  = nuc900_usb_ohci_resource,
+-	.dev              = {
+-		.dma_mask = &nuc900_device_usb_ohci_dmamask,
+-		.coherent_dma_mask = 0xffffffffUL
+-	}
+-};
+-
+-/* USB Device (Gadget)*/
+-
+-static struct resource nuc900_usbgadget_resource[] = {
+-	[0] = {
+-		.start = W90X900_PA_USBDEV,
+-		.end   = W90X900_PA_USBDEV + W90X900_SZ_USBDEV - 1,
+-		.flags = IORESOURCE_MEM,
+-	},
+-	[1] = {
+-		.start = IRQ_USBD,
+-		.end   = IRQ_USBD,
+-		.flags = IORESOURCE_IRQ,
+-	}
+-};
+-
+-static struct platform_device nuc900_device_usbgadget = {
+-	.name		= "nuc900-usbgadget",
+-	.id		= -1,
+-	.num_resources	= ARRAY_SIZE(nuc900_usbgadget_resource),
+-	.resource	= nuc900_usbgadget_resource,
+-};
+-
+-/* MAC device */
+-
+-static struct resource nuc900_emc_resource[] = {
+-	[0] = {
+-		.start = W90X900_PA_EMC,
+-		.end   = W90X900_PA_EMC + W90X900_SZ_EMC - 1,
+-		.flags = IORESOURCE_MEM,
+-	},
+-	[1] = {
+-		.start = IRQ_EMCTX,
+-		.end   = IRQ_EMCTX,
+-		.flags = IORESOURCE_IRQ,
+-	},
+-	[2] = {
+-		.start = IRQ_EMCRX,
+-		.end   = IRQ_EMCRX,
+-		.flags = IORESOURCE_IRQ,
+-	}
+-};
+-
+-static u64 nuc900_device_emc_dmamask = 0xffffffffUL;
+-static struct platform_device nuc900_device_emc = {
+-	.name		= "nuc900-emc",
+-	.id		= -1,
+-	.num_resources	= ARRAY_SIZE(nuc900_emc_resource),
+-	.resource	= nuc900_emc_resource,
+-	.dev              = {
+-		.dma_mask = &nuc900_device_emc_dmamask,
+-		.coherent_dma_mask = 0xffffffffUL
+-	}
+-};
+-
+-/* SPI device */
+-
+-static struct nuc900_spi_info nuc900_spiflash_data = {
+-	.num_cs		= 1,
+-	.lsb		= 0,
+-	.txneg		= 1,
+-	.rxneg		= 0,
+-	.divider	= 24,
+-	.sleep		= 0,
+-	.txnum		= 0,
+-	.txbitlen	= 8,
+-	.bus_num	= 0,
+-};
+-
+-static struct resource nuc900_spi_resource[] = {
+-	[0] = {
+-		.start = W90X900_PA_I2C + SPIOFFSET,
+-		.end   = W90X900_PA_I2C + SPIOFFSET + SPIOREG_SIZE - 1,
+-		.flags = IORESOURCE_MEM,
+-	},
+-	[1] = {
+-		.start = IRQ_SSP,
+-		.end   = IRQ_SSP,
+-		.flags = IORESOURCE_IRQ,
+-	}
+-};
+-
+-static struct platform_device nuc900_device_spi = {
+-	.name		= "nuc900-spi",
+-	.id		= -1,
+-	.num_resources	= ARRAY_SIZE(nuc900_spi_resource),
+-	.resource	= nuc900_spi_resource,
 -	.dev		= {
--		.platform_data = &sg_mtd_pdata,
+-				.platform_data = &nuc900_spiflash_data,
+-			}
+-};
+-
+-/* spi device, spi flash info */
+-
+-static struct mtd_partition nuc900_spi_flash_partitions[] = {
+-	{
+-		.name = "bootloader(spi)",
+-		.size = 0x0100000,
+-		.offset = 0,
 -	},
 -};
 -
--static void __init sg_init(void)
--{
--	ks8695_add_device_lan();
--	ks8695_add_device_wan();
+-static struct flash_platform_data nuc900_spi_flash_data = {
+-	.name = "m25p80",
+-	.parts =  nuc900_spi_flash_partitions,
+-	.nr_parts = ARRAY_SIZE(nuc900_spi_flash_partitions),
+-	.type = "w25x16",
+-};
 -
--	if (machine_is_sg310())
--		platform_device_register(&sg_mtd_device);
+-static struct spi_board_info nuc900_spi_board_info[] __initdata = {
+-	{
+-		.modalias = "m25p80",
+-		.max_speed_hz = 20000000,
+-		.bus_num = 0,
+-		.chip_select = 0,
+-		.platform_data = &nuc900_spi_flash_data,
+-		.mode = SPI_MODE_0,
+-	},
+-};
+-
+-/* WDT Device */
+-
+-static struct resource nuc900_wdt_resource[] = {
+-	[0] = {
+-		.start = W90X900_PA_TIMER,
+-		.end   = W90X900_PA_TIMER + W90X900_SZ_TIMER - 1,
+-		.flags = IORESOURCE_MEM,
+-	},
+-	[1] = {
+-		.start = IRQ_WDT,
+-		.end   = IRQ_WDT,
+-		.flags = IORESOURCE_IRQ,
+-	}
+-};
+-
+-static struct platform_device nuc900_device_wdt = {
+-	.name		= "nuc900-wdt",
+-	.id		= -1,
+-	.num_resources	= ARRAY_SIZE(nuc900_wdt_resource),
+-	.resource	= nuc900_wdt_resource,
+-};
+-
+-/*
+- * public device definition between 910 and 920, or 910
+- * and 950 or 950 and 960...,their dev platform register
+- * should be in specific file such as nuc950, nuc960 c
+- * files rather than the public dev.c file here. so the
+- * corresponding platform_device definition should not be
+- * static.
+-*/
+-
+-/* RTC controller*/
+-
+-static struct resource nuc900_rtc_resource[] = {
+-	[0] = {
+-		.start = W90X900_PA_RTC,
+-		.end   = W90X900_PA_RTC + 0xff,
+-		.flags = IORESOURCE_MEM,
+-	},
+-	[1] = {
+-		.start = IRQ_RTC,
+-		.end   = IRQ_RTC,
+-		.flags = IORESOURCE_IRQ,
+-	},
+-};
+-
+-struct platform_device nuc900_device_rtc = {
+-	.name		= "nuc900-rtc",
+-	.id		= -1,
+-	.num_resources	= ARRAY_SIZE(nuc900_rtc_resource),
+-	.resource	= nuc900_rtc_resource,
+-};
+-
+-/*TouchScreen controller*/
+-
+-static struct resource nuc900_ts_resource[] = {
+-	[0] = {
+-		.start = W90X900_PA_ADC,
+-		.end   = W90X900_PA_ADC + W90X900_SZ_ADC-1,
+-		.flags = IORESOURCE_MEM,
+-	},
+-	[1] = {
+-		.start = IRQ_ADC,
+-		.end   = IRQ_ADC,
+-		.flags = IORESOURCE_IRQ,
+-	},
+-};
+-
+-struct platform_device nuc900_device_ts = {
+-	.name		= "nuc900-ts",
+-	.id		= -1,
+-	.resource	= nuc900_ts_resource,
+-	.num_resources	= ARRAY_SIZE(nuc900_ts_resource),
+-};
+-
+-/* FMI Device */
+-
+-static struct resource nuc900_fmi_resource[] = {
+-	[0] = {
+-		.start = W90X900_PA_FMI,
+-		.end   = W90X900_PA_FMI + W90X900_SZ_FMI - 1,
+-		.flags = IORESOURCE_MEM,
+-	},
+-	[1] = {
+-		.start = IRQ_FMI,
+-		.end   = IRQ_FMI,
+-		.flags = IORESOURCE_IRQ,
+-	}
+-};
+-
+-struct platform_device nuc900_device_fmi = {
+-	.name		= "nuc900-fmi",
+-	.id		= -1,
+-	.num_resources	= ARRAY_SIZE(nuc900_fmi_resource),
+-	.resource	= nuc900_fmi_resource,
+-};
+-
+-/* KPI controller*/
+-
+-static int nuc900_keymap[] = {
+-	KEY(0, 0, KEY_A),
+-	KEY(0, 1, KEY_B),
+-	KEY(0, 2, KEY_C),
+-	KEY(0, 3, KEY_D),
+-
+-	KEY(1, 0, KEY_E),
+-	KEY(1, 1, KEY_F),
+-	KEY(1, 2, KEY_G),
+-	KEY(1, 3, KEY_H),
+-
+-	KEY(2, 0, KEY_I),
+-	KEY(2, 1, KEY_J),
+-	KEY(2, 2, KEY_K),
+-	KEY(2, 3, KEY_L),
+-
+-	KEY(3, 0, KEY_M),
+-	KEY(3, 1, KEY_N),
+-	KEY(3, 2, KEY_O),
+-	KEY(3, 3, KEY_P),
+-};
+-
+-static struct matrix_keymap_data nuc900_map_data = {
+-	.keymap			= nuc900_keymap,
+-	.keymap_size		= ARRAY_SIZE(nuc900_keymap),
+-};
+-
+-struct w90p910_keypad_platform_data nuc900_keypad_info = {
+-	.keymap_data	= &nuc900_map_data,
+-	.prescale	= 0xfa,
+-	.debounce	= 0x50,
+-};
+-
+-static struct resource nuc900_kpi_resource[] = {
+-	[0] = {
+-		.start = W90X900_PA_KPI,
+-		.end   = W90X900_PA_KPI + W90X900_SZ_KPI - 1,
+-		.flags = IORESOURCE_MEM,
+-	},
+-	[1] = {
+-		.start = IRQ_KPI,
+-		.end   = IRQ_KPI,
+-		.flags = IORESOURCE_IRQ,
+-	}
+-
+-};
+-
+-struct platform_device nuc900_device_kpi = {
+-	.name		= "nuc900-kpi",
+-	.id		= -1,
+-	.num_resources	= ARRAY_SIZE(nuc900_kpi_resource),
+-	.resource	= nuc900_kpi_resource,
+-	.dev		= {
+-				.platform_data = &nuc900_keypad_info,
+-			}
+-};
+-
+-/* LCD controller*/
+-
+-static struct nuc900fb_display nuc900_lcd_info[] = {
+-	/* Giantplus Technology GPM1040A0 320x240 Color TFT LCD */
+-	[0] = {
+-		.type		= LCM_DCCS_VA_SRC_RGB565,
+-		.width		= 320,
+-		.height		= 240,
+-		.xres		= 320,
+-		.yres		= 240,
+-		.bpp		= 16,
+-		.pixclock	= 200000,
+-		.left_margin	= 34,
+-		.right_margin   = 54,
+-		.hsync_len	= 10,
+-		.upper_margin	= 18,
+-		.lower_margin	= 4,
+-		.vsync_len	= 1,
+-		.dccs		= 0x8e00041a,
+-		.devctl		= 0x060800c0,
+-		.fbctrl		= 0x00a000a0,
+-		.scale		= 0x04000400,
+-	},
+-};
+-
+-static struct nuc900fb_mach_info nuc900_fb_info = {
+-#if defined(CONFIG_GPM1040A0_320X240)
+-	.displays		= &nuc900_lcd_info[0],
+-#else
+-	.displays		= nuc900_lcd_info,
+-#endif
+-	.num_displays		= ARRAY_SIZE(nuc900_lcd_info),
+-	.default_display	= 0,
+-	.gpio_dir		= 0x00000004,
+-	.gpio_dir_mask		= 0xFFFFFFFD,
+-	.gpio_data		= 0x00000004,
+-	.gpio_data_mask		= 0xFFFFFFFD,
+-};
+-
+-static struct resource nuc900_lcd_resource[] = {
+-	[0] = {
+-		.start = W90X900_PA_LCD,
+-		.end   = W90X900_PA_LCD + W90X900_SZ_LCD - 1,
+-		.flags = IORESOURCE_MEM,
+-	},
+-	[1] = {
+-		.start = IRQ_LCD,
+-		.end   = IRQ_LCD,
+-		.flags = IORESOURCE_IRQ,
+-	}
+-};
+-
+-static u64 nuc900_device_lcd_dmamask = -1;
+-struct platform_device nuc900_device_lcd = {
+-	.name             = "nuc900-lcd",
+-	.id               = -1,
+-	.num_resources    = ARRAY_SIZE(nuc900_lcd_resource),
+-	.resource         = nuc900_lcd_resource,
+-	.dev              = {
+-		.dma_mask               = &nuc900_device_lcd_dmamask,
+-		.coherent_dma_mask      = -1,
+-		.platform_data = &nuc900_fb_info,
+-	}
+-};
+-
+-/* AUDIO controller*/
+-static u64 nuc900_device_audio_dmamask = -1;
+-static struct resource nuc900_ac97_resource[] = {
+-	[0] = {
+-		.start = W90X900_PA_ACTL,
+-		.end   = W90X900_PA_ACTL + W90X900_SZ_ACTL - 1,
+-		.flags = IORESOURCE_MEM,
+-	},
+-	[1] = {
+-		.start = IRQ_ACTL,
+-		.end   = IRQ_ACTL,
+-		.flags = IORESOURCE_IRQ,
+-	}
+-
+-};
+-
+-struct platform_device nuc900_device_ac97 = {
+-	.name		= "nuc900-ac97",
+-	.id		= -1,
+-	.num_resources	= ARRAY_SIZE(nuc900_ac97_resource),
+-	.resource	= nuc900_ac97_resource,
+-	.dev              = {
+-		.dma_mask               = &nuc900_device_audio_dmamask,
+-		.coherent_dma_mask      = -1,
+-	}
+-};
+-
+-/*Here should be your evb resourse,such as LCD*/
+-
+-static struct platform_device *nuc900_public_dev[] __initdata = {
+-	&nuc900_serial_device,
+-	&nuc900_flash_device,
+-	&nuc900_device_usb_ehci,
+-	&nuc900_device_usb_ohci,
+-	&nuc900_device_usbgadget,
+-	&nuc900_device_emc,
+-	&nuc900_device_spi,
+-	&nuc900_device_wdt,
+-	&nuc900_device_ac97,
+-};
+-
+-/* Provide adding specific CPU platform devices API */
+-
+-void __init nuc900_board_init(struct platform_device **device, int size)
+-{
+-	cpu_idle_poll_ctrl(true);
+-	platform_add_devices(device, size);
+-	platform_add_devices(nuc900_public_dev, ARRAY_SIZE(nuc900_public_dev));
+-	spi_register_board_info(nuc900_spi_board_info,
+-					ARRAY_SIZE(nuc900_spi_board_info));
 -}
 -
--#ifdef CONFIG_MACH_LITE300
--MACHINE_START(LITE300, "SecureComputing/SG300")
--	/* SnapGear */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= sg_init,
--	.init_time	= ks8695_timer_init,
--	.restart	= ks8695_restart,
--MACHINE_END
--#endif
--
--#ifdef CONFIG_MACH_SG310
--MACHINE_START(SG310, "McAfee/SG310")
--	/* SnapGear */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= sg_init,
--	.init_time	= ks8695_timer_init,
--	.restart	= ks8695_restart,
--MACHINE_END
--#endif
--
--#ifdef CONFIG_MACH_SE4200
--MACHINE_START(SE4200, "SecureComputing/SE4200")
--	/* SnapGear */
--	.atag_offset	= 0x100,
--	.map_io		= ks8695_map_io,
--	.init_irq	= ks8695_init_irq,
--	.init_machine	= sg_init,
--	.init_time	= ks8695_timer_init,
--	.restart	= ks8695_restart,
--MACHINE_END
--#endif
-diff --git a/arch/arm/mach-ks8695/cpu.c b/arch/arm/mach-ks8695/cpu.c
+diff --git a/arch/arm/mach-w90x900/gpio.c b/arch/arm/mach-w90x900/gpio.c
 deleted file mode 100644
-index aa6bb0c93aa8..000000000000
---- a/arch/arm/mach-ks8695/cpu.c
+index cb5df211f1ed..000000000000
+--- a/arch/arm/mach-w90x900/gpio.c
 +++ /dev/null
-@@ -1,60 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-or-later
+@@ -1,150 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
 -/*
-- * arch/arm/mach-ks8695/cpu.c
+- * linux/arch/arm/mach-w90x900/gpio.c
 - *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
+- * Generic nuc900 GPIO handling
 - *
-- * KS8695 CPU support
+- *  Wan ZongShun <mcuos.com@gmail.com>
 - */
 -
+-#include <linux/clk.h>
+-#include <linux/errno.h>
+-#include <linux/interrupt.h>
+-#include <linux/irq.h>
+-#include <linux/debugfs.h>
+-#include <linux/seq_file.h>
 -#include <linux/kernel.h>
+-#include <linux/list.h>
 -#include <linux/module.h>
--#include <linux/init.h>
 -#include <linux/io.h>
+-#include <linux/gpio/driver.h>
 -
 -#include <mach/hardware.h>
--#include <asm/mach/arch.h>
--#include <asm/mach/map.h>
 -
--#include "regs-sys.h"
--#include <mach/regs-misc.h>
+-#define GPIO_BASE 		(W90X900_VA_GPIO)
+-#define GPIO_DIR		(0x04)
+-#define GPIO_OUT		(0x08)
+-#define GPIO_IN			(0x0C)
+-#define GROUPINERV		(0x10)
+-#define GPIO_GPIO(Nb)		(0x00000001 << (Nb))
 -
--
--static struct map_desc ks8695_io_desc[] __initdata = {
--	{
--		.virtual	= (unsigned long)KS8695_IO_VA,
--		.pfn		= __phys_to_pfn(KS8695_IO_PA),
--		.length		= KS8695_IO_SIZE,
--		.type		= MT_DEVICE,
+-#define NUC900_GPIO_CHIP(name, base_gpio, nr_gpio)			\
+-	{								\
+-		.chip = {						\
+-			.label		  = name,			\
+-			.direction_input  = nuc900_dir_input,		\
+-			.direction_output = nuc900_dir_output,		\
+-			.get		  = nuc900_gpio_get,		\
+-			.set		  = nuc900_gpio_set,		\
+-			.base		  = base_gpio,			\
+-			.ngpio		  = nr_gpio,			\
+-		}							\
 -	}
+-
+-struct nuc900_gpio_chip {
+-	struct gpio_chip	chip;
+-	void __iomem		*regbase;	/* Base of group register*/
+-	spinlock_t 		gpio_lock;
 -};
 -
--static void __init ks8695_processor_info(void)
+-static int nuc900_gpio_get(struct gpio_chip *chip, unsigned offset)
 -{
--	unsigned long id, rev;
+-	struct nuc900_gpio_chip *nuc900_gpio = gpiochip_get_data(chip);
+-	void __iomem *pio = nuc900_gpio->regbase + GPIO_IN;
+-	unsigned int regval;
 -
--	id = __raw_readl(KS8695_MISC_VA + KS8695_DID);
--	rev = __raw_readl(KS8695_MISC_VA + KS8695_RID);
+-	regval = __raw_readl(pio);
+-	regval &= GPIO_GPIO(offset);
 -
--	printk("KS8695 ID=%04lx  SubID=%02lx  Revision=%02lx\n", (id & DID_ID), (rev & RID_SUBID), (rev & RID_REVISION));
+-	return (regval != 0);
 -}
 -
--static unsigned int sysclk[8] = { 125000000, 100000000, 62500000, 50000000, 41700000, 33300000, 31300000, 25000000 };
--static unsigned int cpuclk[8] = { 166000000, 166000000, 83000000, 83000000, 55300000, 55300000, 41500000, 41500000 };
--
--static void __init ks8695_clock_info(void)
+-static void nuc900_gpio_set(struct gpio_chip *chip, unsigned offset, int val)
 -{
--	unsigned int scdc = __raw_readl(KS8695_SYS_VA + KS8695_CLKCON) & CLKCON_SCDC;
+-	struct nuc900_gpio_chip *nuc900_gpio = gpiochip_get_data(chip);
+-	void __iomem *pio = nuc900_gpio->regbase + GPIO_OUT;
+-	unsigned int regval;
+-	unsigned long flags;
 -
--	printk("Clocks: System %u MHz, CPU %u MHz\n",
--			sysclk[scdc] / 1000000, cpuclk[scdc] / 1000000);
+-	spin_lock_irqsave(&nuc900_gpio->gpio_lock, flags);
+-
+-	regval = __raw_readl(pio);
+-
+-	if (val)
+-		regval |= GPIO_GPIO(offset);
+-	else
+-		regval &= ~GPIO_GPIO(offset);
+-
+-	__raw_writel(regval, pio);
+-
+-	spin_unlock_irqrestore(&nuc900_gpio->gpio_lock, flags);
 -}
 -
--void __init ks8695_map_io(void)
+-static int nuc900_dir_input(struct gpio_chip *chip, unsigned offset)
 -{
--	iotable_init(ks8695_io_desc, ARRAY_SIZE(ks8695_io_desc));
+-	struct nuc900_gpio_chip *nuc900_gpio = gpiochip_get_data(chip);
+-	void __iomem *pio = nuc900_gpio->regbase + GPIO_DIR;
+-	unsigned int regval;
+-	unsigned long flags;
 -
--	ks8695_processor_info();
--	ks8695_clock_info();
--}
-diff --git a/arch/arm/mach-ks8695/devices.c b/arch/arm/mach-ks8695/devices.c
-deleted file mode 100644
-index 61cf20beb45f..000000000000
---- a/arch/arm/mach-ks8695/devices.c
-+++ /dev/null
-@@ -1,197 +0,0 @@
--/*
-- * arch/arm/mach-ks8695/devices.c
-- *
-- * Copyright (C) 2006 Andrew Victor
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License as published by
-- * the Free Software Foundation.
-- *
-- * This program is distributed in the hope that it will be useful,
-- * but WITHOUT ANY WARRANTY; without even the implied warranty of
-- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- * GNU General Public License for more details.
-- *
-- * You should have received a copy of the GNU General Public License
-- * along with this program; if not, write to the Free Software
-- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-- */
+-	spin_lock_irqsave(&nuc900_gpio->gpio_lock, flags);
 -
--#include <asm/mach/arch.h>
--#include <asm/mach/map.h>
+-	regval = __raw_readl(pio);
+-	regval &= ~GPIO_GPIO(offset);
+-	__raw_writel(regval, pio);
 -
--#include <linux/gpio.h>
--#include <linux/platform_device.h>
+-	spin_unlock_irqrestore(&nuc900_gpio->gpio_lock, flags);
 -
--#include <mach/irqs.h>
--#include "regs-wan.h"
--#include "regs-lan.h"
--#include "regs-hpna.h"
--#include <mach/regs-switch.h>
--#include <mach/regs-misc.h>
--
--
--/* --------------------------------------------------------------------
-- *  Ethernet
-- * -------------------------------------------------------------------- */
--
--static u64 eth_dmamask = 0xffffffffUL;
--
--static struct resource ks8695_wan_resources[] = {
--	[0] = {
--		.start	= KS8695_WAN_PA,
--		.end	= KS8695_WAN_PA + 0x00ff,
--		.flags	= IORESOURCE_MEM,
--	},
--	[1] = {
--		.name	= "WAN RX",
--		.start	= KS8695_IRQ_WAN_RX_STATUS,
--		.end	= KS8695_IRQ_WAN_RX_STATUS,
--		.flags	= IORESOURCE_IRQ,
--	},
--	[2] = {
--		.name	= "WAN TX",
--		.start	= KS8695_IRQ_WAN_TX_STATUS,
--		.end	= KS8695_IRQ_WAN_TX_STATUS,
--		.flags	= IORESOURCE_IRQ,
--	},
--	[3] = {
--		.name	= "WAN Link",
--		.start	= KS8695_IRQ_WAN_LINK,
--		.end	= KS8695_IRQ_WAN_LINK,
--		.flags	= IORESOURCE_IRQ,
--	},
--	[4] = {
--		.name	= "WAN PHY",
--		.start	= KS8695_MISC_PA,
--		.end	= KS8695_MISC_PA + 0x1f,
--		.flags	= IORESOURCE_MEM,
--	},
--};
--
--static struct platform_device ks8695_wan_device = {
--	.name		= "ks8695_ether",
--	.id		= 0,
--	.dev		= {
--				.dma_mask		= &eth_dmamask,
--				.coherent_dma_mask	= 0xffffffff,
--	},
--	.resource	= ks8695_wan_resources,
--	.num_resources	= ARRAY_SIZE(ks8695_wan_resources),
--};
--
--
--static struct resource ks8695_lan_resources[] = {
--	[0] = {
--		.start	= KS8695_LAN_PA,
--		.end	= KS8695_LAN_PA + 0x00ff,
--		.flags	= IORESOURCE_MEM,
--	},
--	[1] = {
--		.name	= "LAN RX",
--		.start	= KS8695_IRQ_LAN_RX_STATUS,
--		.end	= KS8695_IRQ_LAN_RX_STATUS,
--		.flags	= IORESOURCE_IRQ,
--	},
--	[2] = {
--		.name	= "LAN TX",
--		.start	= KS8695_IRQ_LAN_TX_STATUS,
--		.end	= KS8695_IRQ_LAN_TX_STATUS,
--		.flags	= IORESOURCE_IRQ,
--	},
--	[3] = {
--		.name	= "LAN SWITCH",
--		.start	= KS8695_SWITCH_PA,
--		.end	= KS8695_SWITCH_PA + 0x4f,
--		.flags	= IORESOURCE_MEM,
--	},
--};
--
--static struct platform_device ks8695_lan_device = {
--	.name		= "ks8695_ether",
--	.id		= 1,
--	.dev		= {
--				.dma_mask		= &eth_dmamask,
--				.coherent_dma_mask	= 0xffffffff,
--	},
--	.resource	= ks8695_lan_resources,
--	.num_resources	= ARRAY_SIZE(ks8695_lan_resources),
--};
--
--
--static struct resource ks8695_hpna_resources[] = {
--	[0] = {
--		.start	= KS8695_HPNA_PA,
--		.end	= KS8695_HPNA_PA + 0x00ff,
--		.flags	= IORESOURCE_MEM,
--	},
--	[1] = {
--		.name	= "HPNA RX",
--		.start	= KS8695_IRQ_HPNA_RX_STATUS,
--		.end	= KS8695_IRQ_HPNA_RX_STATUS,
--		.flags	= IORESOURCE_IRQ,
--	},
--	[2] = {
--		.name	= "HPNA TX",
--		.start	= KS8695_IRQ_HPNA_TX_STATUS,
--		.end	= KS8695_IRQ_HPNA_TX_STATUS,
--		.flags	= IORESOURCE_IRQ,
--	},
--};
--
--static struct platform_device ks8695_hpna_device = {
--	.name		= "ks8695_ether",
--	.id		= 2,
--	.dev		= {
--				.dma_mask		= &eth_dmamask,
--				.coherent_dma_mask	= 0xffffffff,
--	},
--	.resource	= ks8695_hpna_resources,
--	.num_resources	= ARRAY_SIZE(ks8695_hpna_resources),
--};
--
--void __init ks8695_add_device_wan(void)
--{
--	platform_device_register(&ks8695_wan_device);
--}
--
--void __init ks8695_add_device_lan(void)
--{
--	platform_device_register(&ks8695_lan_device);
--}
--
--void __init ks8696_add_device_hpna(void)
--{
--	platform_device_register(&ks8695_hpna_device);
--}
--
--
--/* --------------------------------------------------------------------
-- *  Watchdog
-- * -------------------------------------------------------------------- */
--
--static struct platform_device ks8695_wdt_device = {
--	.name		= "ks8695_wdt",
--	.id		= -1,
--	.num_resources	= 0,
--};
--
--static void __init ks8695_add_device_watchdog(void)
--{
--	platform_device_register(&ks8695_wdt_device);
--}
--
--
--/* -------------------------------------------------------------------- */
--
--/*
-- * These devices are always present and don't need any board-specific
-- * setup.
-- */
--static int __init ks8695_add_standard_devices(void)
--{
--	ks8695_add_device_watchdog();
 -	return 0;
 -}
 -
--arch_initcall(ks8695_add_standard_devices);
-diff --git a/arch/arm/mach-ks8695/devices.h b/arch/arm/mach-ks8695/devices.h
-deleted file mode 100644
-index cc23ee3820ea..000000000000
---- a/arch/arm/mach-ks8695/devices.h
-+++ /dev/null
-@@ -1,29 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0-only */
--/*
-- * arch/arm/mach-ks8695/include/mach/devices.h
-- *
-- * Copyright (C) 2006 Andrew Victor
-- */
+-static int nuc900_dir_output(struct gpio_chip *chip, unsigned offset, int val)
+-{
+-	struct nuc900_gpio_chip *nuc900_gpio = gpiochip_get_data(chip);
+-	void __iomem *outreg = nuc900_gpio->regbase + GPIO_OUT;
+-	void __iomem *pio = nuc900_gpio->regbase + GPIO_DIR;
+-	unsigned int regval;
+-	unsigned long flags;
 -
--#ifndef __ASM_ARCH_DEVICES_H
--#define __ASM_ARCH_DEVICES_H
+-	spin_lock_irqsave(&nuc900_gpio->gpio_lock, flags);
 -
--#include <linux/pci.h>
+-	regval = __raw_readl(pio);
+-	regval |= GPIO_GPIO(offset);
+-	__raw_writel(regval, pio);
 -
-- /* Ethernet */
--extern void __init ks8695_add_device_wan(void);
--extern void __init ks8695_add_device_lan(void);
--extern void __init ks8695_add_device_hpna(void);
+-	regval = __raw_readl(outreg);
 -
-- /* PCI */
--#define KS8695_MODE_PCI		0
--#define KS8695_MODE_MINIPCI	1
--#define KS8695_MODE_CARDBUS	2
+-	if (val)
+-		regval |= GPIO_GPIO(offset);
+-	else
+-		regval &= ~GPIO_GPIO(offset);
 -
--struct ks8695_pci_cfg {
--	short mode;
--	int (*map_irq)(const struct pci_dev *, u8, u8);
+-	__raw_writel(regval, outreg);
+-
+-	spin_unlock_irqrestore(&nuc900_gpio->gpio_lock, flags);
+-
+-	return 0;
+-}
+-
+-static struct nuc900_gpio_chip nuc900_gpio[] = {
+-	NUC900_GPIO_CHIP("GROUPC", 0, 16),
+-	NUC900_GPIO_CHIP("GROUPD", 16, 10),
+-	NUC900_GPIO_CHIP("GROUPE", 26, 14),
+-	NUC900_GPIO_CHIP("GROUPF", 40, 10),
+-	NUC900_GPIO_CHIP("GROUPG", 50, 17),
+-	NUC900_GPIO_CHIP("GROUPH", 67, 8),
+-	NUC900_GPIO_CHIP("GROUPI", 75, 17),
 -};
--extern __init void ks8695_init_pci(struct ks8695_pci_cfg *);
 -
--#endif
-diff --git a/arch/arm/mach-ks8695/generic.h b/arch/arm/mach-ks8695/generic.h
-deleted file mode 100644
-index 9e9cbdd436a9..000000000000
---- a/arch/arm/mach-ks8695/generic.h
-+++ /dev/null
-@@ -1,12 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0-or-later */
--/*
-- * arch/arm/mach-ks8695/generic.h
-- *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
--*/
+-void __init nuc900_init_gpio(int nr_group)
+-{
+-	unsigned	i;
+-	struct nuc900_gpio_chip *gpio_chip;
 -
--extern __init void ks8695_map_io(void);
--extern __init void ks8695_init_irq(void);
--extern void ks8695_restart(enum reboot_mode, const char *);
--extern void ks8695_timer_init(void);
-diff --git a/arch/arm/mach-ks8695/include/mach/entry-macro.S b/arch/arm/mach-ks8695/include/mach/entry-macro.S
+-	for (i = 0; i < nr_group; i++) {
+-		gpio_chip = &nuc900_gpio[i];
+-		spin_lock_init(&gpio_chip->gpio_lock);
+-		gpio_chip->regbase = GPIO_BASE + i * GROUPINERV;
+-		gpiochip_add_data(&gpio_chip->chip, gpio_chip);
+-	}
+-}
+diff --git a/arch/arm/mach-w90x900/include/mach/entry-macro.S b/arch/arm/mach-w90x900/include/mach/entry-macro.S
 deleted file mode 100644
-index 7ff812cb010b..000000000000
---- a/arch/arm/mach-ks8695/include/mach/entry-macro.S
+index 0ff612ac95ba..000000000000
+--- a/arch/arm/mach-w90x900/include/mach/entry-macro.S
 +++ /dev/null
-@@ -1,47 +0,0 @@
+@@ -1,26 +0,0 @@
 -/*
-- * arch/arm/mach-ks8695/include/mach/entry-macro.S
+- * arch/arm/mach-w90x900/include/mach/entry-macro.S
 - *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
-- *
-- * Low-level IRQ helper macros for KS8695
+- * Low-level IRQ helper macros for W90P910-based platforms
 - *
 - * This file is licensed under  the terms of the GNU General Public
 - * License version 2. This program is licensed "as is" without any
 - * warranty of any kind, whether express or implied.
--*/
+- *
+- */
 -
 -#include <mach/hardware.h>
 -#include <mach/regs-irq.h>
 -
 -	.macro  get_irqnr_preamble, base, tmp
--		ldr	\base, =KS8695_IRQ_VA			@ Base address of interrupt controller
 -	.endm
 -
 -	.macro	get_irqnr_and_base, irqnr, irqstat, base, tmp
--		ldr	\irqstat, [\base, #KS8695_INTMS]	@ Mask Status register
 -
--		teq	\irqstat, #0
--		beq	1001f
+-		mov	\base, #AIC_BA
 -
--		mov	\irqnr, #0
+-		ldr	\irqnr, [\base, #AIC_IPER]
+-		ldr	\irqnr, [\base, #AIC_ISNR]
+-		cmp	\irqnr, #0
 -
--		tst	\irqstat, #0xff
--		moveq	\irqstat, \irqstat, lsr #8
--		addeq	\irqnr, \irqnr, #8
--		tsteq	\irqstat, #0xff
--		moveq	\irqstat, \irqstat, lsr #8
--		addeq	\irqnr, \irqnr, #8
--		tsteq	\irqstat, #0xff
--		moveq	\irqstat, \irqstat, lsr #8
--		addeq	\irqnr, \irqnr, #8
--		tst	\irqstat, #0x0f
--		moveq	\irqstat, \irqstat, lsr #4
--		addeq	\irqnr, \irqnr, #4
--		tst	\irqstat, #0x03
--		moveq	\irqstat, \irqstat, lsr #2
--		addeq	\irqnr, \irqnr, #2
--		tst	\irqstat, #0x01
--		addseq	\irqnr, \irqnr, #1
--1001:
 -	.endm
-diff --git a/arch/arm/mach-ks8695/include/mach/gpio-ks8695.h b/arch/arm/mach-ks8695/include/mach/gpio-ks8695.h
+diff --git a/arch/arm/mach-w90x900/include/mach/hardware.h b/arch/arm/mach-w90x900/include/mach/hardware.h
 deleted file mode 100644
-index 600115f48fb3..000000000000
---- a/arch/arm/mach-ks8695/include/mach/gpio-ks8695.h
+index 137403960483..000000000000
+--- a/arch/arm/mach-w90x900/include/mach/hardware.h
 +++ /dev/null
-@@ -1,36 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0-only */
+@@ -1,19 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-or-later */
 -/*
-- * Copyright (C) 2006 Andrew Victor
-- */
--
--#ifndef __MACH_KS8659_GPIO_H
--#define __MACH_KS8659_GPIO_H
--
--#include <linux/kernel.h>
--
--#define KS8695_GPIO_0		0
--#define KS8695_GPIO_1		1
--#define KS8695_GPIO_2		2
--#define KS8695_GPIO_3		3
--#define KS8695_GPIO_4		4
--#define KS8695_GPIO_5		5
--#define KS8695_GPIO_6		6
--#define KS8695_GPIO_7		7
--#define KS8695_GPIO_8		8
--#define KS8695_GPIO_9		9
--#define KS8695_GPIO_10		10
--#define KS8695_GPIO_11		11
--#define KS8695_GPIO_12		12
--#define KS8695_GPIO_13		13
--#define KS8695_GPIO_14		14
--#define KS8695_GPIO_15		15
--
--/*
-- * Configure GPIO pin as external interrupt source.
-- */
--extern int ks8695_gpio_interrupt(unsigned int pin, unsigned int type);
--
--/* Register the GPIOs */
--extern void ks8695_register_gpios(void);
--
--#endif /* __MACH_KS8659_GPIO_H */
-diff --git a/arch/arm/mach-ks8695/include/mach/hardware.h b/arch/arm/mach-ks8695/include/mach/hardware.h
-deleted file mode 100644
-index 0fb889be8112..000000000000
---- a/arch/arm/mach-ks8695/include/mach/hardware.h
-+++ /dev/null
-@@ -1,42 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0-only */
--/*
-- * arch/arm/mach-ks8695/include/mach/hardware.h
+- * arch/arm/mach-w90x900/include/mach/hardware.h
 - *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
+- * Copyright (c) 2008 Nuvoton technology corporation
+- * All rights reserved.
 - *
-- * KS8695 - Memory Map definitions
--*/
+- * Wan ZongShun <mcuos.com@gmail.com>
+- *
+- * Based on arch/arm/mach-s3c2410/include/mach/hardware.h
+- */
 -
 -#ifndef __ASM_ARCH_HARDWARE_H
 -#define __ASM_ARCH_HARDWARE_H
 -
 -#include <linux/sizes.h>
+-#include <mach/map.h>
 -
--/*
-- * Clocks are derived from MCLK, which is 25MHz
-- */
--#define KS8695_CLOCK_RATE	25000000
--
--/*
-- * Physical RAM address.
-- */
--#define KS8695_SDRAM_PA		0x00000000
--
--
--/*
-- * We map an entire MiB with the System Configuration Registers in even
-- * though only 64KiB is needed. This makes it easier for use with the
-- * head debug code as the initial MMU setup only deals in L1 sections.
-- */
--#define KS8695_IO_PA		0x03F00000
--#define KS8695_IO_VA		IOMEM(0xF0000000)
--#define KS8695_IO_SIZE		SZ_1M
--
--#define KS8695_PCIMEM_PA	0x60000000
--#define KS8695_PCIMEM_SIZE	SZ_512M
--
--#define KS8695_PCIIO_PA		0x80000000
--#define KS8695_PCIIO_SIZE	SZ_64K
--
--#endif
-diff --git a/arch/arm/mach-ks8695/include/mach/irqs.h b/arch/arm/mach-ks8695/include/mach/irqs.h
+-#endif /* __ASM_ARCH_HARDWARE_H */
+diff --git a/arch/arm/mach-w90x900/include/mach/irqs.h b/arch/arm/mach-w90x900/include/mach/irqs.h
 deleted file mode 100644
-index 0cbb30672427..000000000000
---- a/arch/arm/mach-ks8695/include/mach/irqs.h
+index 23ea01d97a02..000000000000
+--- a/arch/arm/mach-w90x900/include/mach/irqs.h
 +++ /dev/null
-@@ -1,51 +0,0 @@
+@@ -1,82 +0,0 @@
 -/* SPDX-License-Identifier: GPL-2.0-only */
 -/*
-- * arch/arm/mach-ks8695/include/mach/irqs.h
+- * arch/arm/mach-w90x900/include/mach/irqs.h
 - *
-- * Copyright (C) 2006 Simtec Electronics
-- *   Ben Dooks <ben@simtec.co.uk>
+- * Copyright (c) 2008 Nuvoton technology corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- *
+- * Based on arch/arm/mach-s3c2410/include/mach/irqs.h
 - */
 -
 -#ifndef __ASM_ARCH_IRQS_H
 -#define __ASM_ARCH_IRQS_H
 -
--
--#define NR_IRQS				32
--
 -/*
-- * IRQ definitions
+- * we keep the first set of CPU IRQs out of the range of
+- * the ISA space, so that the PC104 has them to itself
+- * and we don't end up having to do horrible things to the
+- * standard ISA drivers....
+- *
 - */
--#define KS8695_IRQ_COMM_RX		0
--#define KS8695_IRQ_COMM_TX		1
--#define KS8695_IRQ_EXTERN0		2
--#define KS8695_IRQ_EXTERN1		3
--#define KS8695_IRQ_EXTERN2		4
--#define KS8695_IRQ_EXTERN3		5
--#define KS8695_IRQ_TIMER0		6
--#define KS8695_IRQ_TIMER1		7
--#define KS8695_IRQ_UART_TX		8
--#define KS8695_IRQ_UART_RX		9
--#define KS8695_IRQ_UART_LINE_STATUS	10
--#define KS8695_IRQ_UART_MODEM_STATUS	11
--#define KS8695_IRQ_LAN_RX_STOP		12
--#define KS8695_IRQ_LAN_TX_STOP		13
--#define KS8695_IRQ_LAN_RX_BUF		14
--#define KS8695_IRQ_LAN_TX_BUF		15
--#define KS8695_IRQ_LAN_RX_STATUS	16
--#define KS8695_IRQ_LAN_TX_STATUS	17
--#define KS8695_IRQ_HPNA_RX_STOP		18
--#define KS8695_IRQ_HPNA_TX_STOP		19
--#define KS8695_IRQ_HPNA_RX_BUF		20
--#define KS8695_IRQ_HPNA_TX_BUF		21
--#define KS8695_IRQ_HPNA_RX_STATUS	22
--#define KS8695_IRQ_HPNA_TX_STATUS	23
--#define KS8695_IRQ_BUS_ERROR		24
--#define KS8695_IRQ_WAN_RX_STOP		25
--#define KS8695_IRQ_WAN_TX_STOP		26
--#define KS8695_IRQ_WAN_RX_BUF		27
--#define KS8695_IRQ_WAN_TX_BUF		28
--#define KS8695_IRQ_WAN_RX_STATUS	29
--#define KS8695_IRQ_WAN_TX_STATUS	30
--#define KS8695_IRQ_WAN_LINK		31
 -
--#endif
-diff --git a/arch/arm/mach-ks8695/include/mach/memory.h b/arch/arm/mach-ks8695/include/mach/memory.h
+-#define W90X900_IRQ(x)	(x)
+-
+-/* Main cpu interrupts */
+-
+-#define IRQ_WDT		W90X900_IRQ(1)
+-#define IRQ_GROUP0	W90X900_IRQ(2)
+-#define IRQ_GROUP1	W90X900_IRQ(3)
+-#define IRQ_ACTL	W90X900_IRQ(4)
+-#define IRQ_LCD		W90X900_IRQ(5)
+-#define IRQ_RTC		W90X900_IRQ(6)
+-#define IRQ_UART0	W90X900_IRQ(7)
+-#define IRQ_UART1	W90X900_IRQ(8)
+-#define IRQ_UART2	W90X900_IRQ(9)
+-#define IRQ_UART3	W90X900_IRQ(10)
+-#define IRQ_UART4	W90X900_IRQ(11)
+-#define IRQ_TIMER0	W90X900_IRQ(12)
+-#define IRQ_TIMER1	W90X900_IRQ(13)
+-#define IRQ_T_INT_GROUP	W90X900_IRQ(14)
+-#define IRQ_USBH	W90X900_IRQ(15)
+-#define IRQ_EMCTX	W90X900_IRQ(16)
+-#define IRQ_EMCRX	W90X900_IRQ(17)
+-#define IRQ_GDMAGROUP	W90X900_IRQ(18)
+-#define IRQ_DMAC	W90X900_IRQ(19)
+-#define IRQ_FMI		W90X900_IRQ(20)
+-#define IRQ_USBD	W90X900_IRQ(21)
+-#define IRQ_ATAPI	W90X900_IRQ(22)
+-#define IRQ_G2D		W90X900_IRQ(23)
+-#define IRQ_PCI		W90X900_IRQ(24)
+-#define IRQ_SCGROUP	W90X900_IRQ(25)
+-#define IRQ_I2CGROUP	W90X900_IRQ(26)
+-#define IRQ_SSP		W90X900_IRQ(27)
+-#define IRQ_PWM		W90X900_IRQ(28)
+-#define IRQ_KPI		W90X900_IRQ(29)
+-#define IRQ_P2SGROUP	W90X900_IRQ(30)
+-#define IRQ_ADC		W90X900_IRQ(31)
+-#define NR_IRQS		(IRQ_ADC+1)
+-
+-/*for irq group*/
+-
+-#define	IRQ_PS2_PORT0	0x10000000
+-#define	IRQ_PS2_PORT1	0x20000000
+-#define	IRQ_I2C_LINE0	0x04000000
+-#define	IRQ_I2C_LINE1	0x08000000
+-#define	IRQ_SC_CARD0	0x01000000
+-#define	IRQ_SC_CARD1	0x02000000
+-#define	IRQ_GDMA_CH0	0x00100000
+-#define	IRQ_GDMA_CH1	0x00200000
+-#define	IRQ_TIMER2	0x00010000
+-#define	IRQ_TIMER3	0x00020000
+-#define	IRQ_TIMER4	0x00040000
+-#define	IRQ_GROUP0_IRQ0	0x00000001
+-#define	IRQ_GROUP0_IRQ1	0x00000002
+-#define	IRQ_GROUP0_IRQ2	0x00000004
+-#define	IRQ_GROUP0_IRQ3	0x00000008
+-#define	IRQ_GROUP1_IRQ4	0x00000010
+-#define	IRQ_GROUP1_IRQ5	0x00000020
+-#define	IRQ_GROUP1_IRQ6	0x00000040
+-#define	IRQ_GROUP1_IRQ7	0x00000080
+-
+-#endif /* __ASM_ARCH_IRQ_H */
+diff --git a/arch/arm/mach-w90x900/include/mach/map.h b/arch/arm/mach-w90x900/include/mach/map.h
 deleted file mode 100644
-index ab0d27fa8969..000000000000
---- a/arch/arm/mach-ks8695/include/mach/memory.h
+index 570a74e04b1c..000000000000
+--- a/arch/arm/mach-w90x900/include/mach/map.h
 +++ /dev/null
-@@ -1,51 +0,0 @@
+@@ -1,153 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
 -/*
-- * arch/arm/mach-ks8695/include/mach/memory.h
+- * arch/arm/mach-w90x900/include/mach/map.h
 - *
-- * Copyright (C) 2006 Andrew Victor
+- * Copyright (c) 2008 Nuvoton technology corporation.
 - *
-- * KS8695 Memory definitions
+- * Wan ZongShun <mcuos.com@gmail.com>
 - *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
+- * Based on arch/arm/mach-s3c2410/include/mach/map.h
 - */
 -
--#ifndef __ASM_ARCH_MEMORY_H
--#define __ASM_ARCH_MEMORY_H
+-#ifndef __ASM_ARCH_MAP_H
+-#define __ASM_ARCH_MAP_H
 -
--#include <mach/hardware.h>
+-#ifndef __ASSEMBLY__
+-#define W90X900_ADDR(x)		((void __iomem *)(0xF0000000 + (x)))
+-#else
+-#define W90X900_ADDR(x)		(0xF0000000 + (x))
+-#endif
+-
+-#define AHB_IO_BASE		0xB0000000
+-#define APB_IO_BASE		0xB8000000
+-#define CLOCKPW_BASE		(APB_IO_BASE+0x200)
+-#define AIC_IO_BASE		(APB_IO_BASE+0x2000)
+-#define TIMER_IO_BASE		(APB_IO_BASE+0x1000)
+-
+-/*
+- * interrupt controller is the first thing we put in, to make
+- * the assembly code for the irq detection easier
+- */
+-#define W90X900_VA_IRQ		W90X900_ADDR(0x00000000)
+-#define W90X900_PA_IRQ		(0xB8002000)
+-#define W90X900_SZ_IRQ		SZ_4K
+-
+-#define W90X900_VA_GCR		W90X900_ADDR(0x08002000)
+-#define W90X900_PA_GCR		(0xB0000000)
+-#define W90X900_SZ_GCR		SZ_4K
+-
+-/* Clock and Power management */
+-#define W90X900_VA_CLKPWR	(W90X900_VA_GCR+0x200)
+-#define W90X900_PA_CLKPWR	(0xB0000200)
+-#define W90X900_SZ_CLKPWR	SZ_4K
+-
+-/* EBI management */
+-#define W90X900_VA_EBI		W90X900_ADDR(0x00001000)
+-#define W90X900_PA_EBI		(0xB0001000)
+-#define W90X900_SZ_EBI		SZ_4K
+-
+-/* UARTs */
+-#define W90X900_VA_UART		W90X900_ADDR(0x08000000)
+-#define W90X900_PA_UART		(0xB8000000)
+-#define W90X900_SZ_UART		SZ_4K
+-
+-/* Timers */
+-#define W90X900_VA_TIMER	W90X900_ADDR(0x08001000)
+-#define W90X900_PA_TIMER	(0xB8001000)
+-#define W90X900_SZ_TIMER	SZ_4K
+-
+-/* GPIO ports */
+-#define W90X900_VA_GPIO		W90X900_ADDR(0x08003000)
+-#define W90X900_PA_GPIO		(0xB8003000)
+-#define W90X900_SZ_GPIO		SZ_4K
+-
+-/* GDMA control */
+-#define W90X900_VA_GDMA		W90X900_ADDR(0x00004000)
+-#define W90X900_PA_GDMA		(0xB0004000)
+-#define W90X900_SZ_GDMA		SZ_4K
+-
+-/* USB host controller*/
+-#define W90X900_VA_USBEHCIHOST	W90X900_ADDR(0x00005000)
+-#define W90X900_PA_USBEHCIHOST	(0xB0005000)
+-#define W90X900_SZ_USBEHCIHOST	SZ_4K
+-
+-#define W90X900_VA_USBOHCIHOST	W90X900_ADDR(0x00007000)
+-#define W90X900_PA_USBOHCIHOST	(0xB0007000)
+-#define W90X900_SZ_USBOHCIHOST	SZ_4K
+-
+-/* I2C hardware controller */
+-#define W90X900_VA_I2C		W90X900_ADDR(0x08006000)
+-#define W90X900_PA_I2C		(0xB8006000)
+-#define W90X900_SZ_I2C		SZ_4K
+-
+-/* Keypad Interface*/
+-#define W90X900_VA_KPI		W90X900_ADDR(0x08008000)
+-#define W90X900_PA_KPI		(0xB8008000)
+-#define W90X900_SZ_KPI		SZ_4K
+-
+-/* Smart card host*/
+-#define W90X900_VA_SC		W90X900_ADDR(0x08005000)
+-#define W90X900_PA_SC		(0xB8005000)
+-#define W90X900_SZ_SC		SZ_4K
+-
+-/* LCD controller*/
+-#define W90X900_VA_LCD		W90X900_ADDR(0x00008000)
+-#define W90X900_PA_LCD		(0xB0008000)
+-#define W90X900_SZ_LCD		SZ_4K
+-
+-/* 2D controller*/
+-#define W90X900_VA_GE		W90X900_ADDR(0x0000B000)
+-#define W90X900_PA_GE		(0xB000B000)
+-#define W90X900_SZ_GE		SZ_4K
+-
+-/* ATAPI */
+-#define W90X900_VA_ATAPI	W90X900_ADDR(0x0000A000)
+-#define W90X900_PA_ATAPI	(0xB000A000)
+-#define W90X900_SZ_ATAPI	SZ_4K
+-
+-/* ADC */
+-#define W90X900_VA_ADC		W90X900_ADDR(0x0800A000)
+-#define W90X900_PA_ADC		(0xB800A000)
+-#define W90X900_SZ_ADC		SZ_4K
+-
+-/* PS2 Interface*/
+-#define W90X900_VA_PS2		W90X900_ADDR(0x08009000)
+-#define W90X900_PA_PS2		(0xB8009000)
+-#define W90X900_SZ_PS2		SZ_4K
+-
+-/* RTC */
+-#define W90X900_VA_RTC		W90X900_ADDR(0x08004000)
+-#define W90X900_PA_RTC		(0xB8004000)
+-#define W90X900_SZ_RTC		SZ_4K
+-
+-/* Pulse Width Modulation(PWM) Registers */
+-#define W90X900_VA_PWM		W90X900_ADDR(0x08007000)
+-#define W90X900_PA_PWM		(0xB8007000)
+-#define W90X900_SZ_PWM		SZ_4K
+-
+-/* Audio Controller controller */
+-#define W90X900_VA_ACTL		W90X900_ADDR(0x00009000)
+-#define W90X900_PA_ACTL		(0xB0009000)
+-#define W90X900_SZ_ACTL		SZ_4K
+-
+-/* DMA controller */
+-#define W90X900_VA_DMA		W90X900_ADDR(0x0000c000)
+-#define W90X900_PA_DMA		(0xB000c000)
+-#define W90X900_SZ_DMA		SZ_4K
+-
+-/* FMI controller */
+-#define W90X900_VA_FMI		W90X900_ADDR(0x0000d000)
+-#define W90X900_PA_FMI		(0xB000d000)
+-#define W90X900_SZ_FMI		SZ_4K
+-
+-/* USB Device port */
+-#define W90X900_VA_USBDEV	W90X900_ADDR(0x00006000)
+-#define W90X900_PA_USBDEV	(0xB0006000)
+-#define W90X900_SZ_USBDEV	SZ_4K
+-
+-/* External MAC control*/
+-#define W90X900_VA_EMC		W90X900_ADDR(0x00003000)
+-#define W90X900_PA_EMC		(0xB0003000)
+-#define W90X900_SZ_EMC		SZ_4K
+-
+-#endif /* __ASM_ARCH_MAP_H */
+diff --git a/arch/arm/mach-w90x900/include/mach/mfp.h b/arch/arm/mach-w90x900/include/mach/mfp.h
+deleted file mode 100644
+index be5485efab0a..000000000000
+--- a/arch/arm/mach-w90x900/include/mach/mfp.h
++++ /dev/null
+@@ -1,21 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * arch/arm/mach-w90x900/include/mach/mfp.h
+- *
+- * Copyright (c) 2010 Nuvoton technology corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- *
+- * Based on arch/arm/mach-s3c2410/include/mach/map.h
+- */
+-
+-#ifndef __ASM_ARCH_MFP_H
+-#define __ASM_ARCH_MFP_H
+-
+-extern void mfp_set_groupf(struct device *dev);
+-extern void mfp_set_groupc(struct device *dev);
+-extern void mfp_set_groupi(struct device *dev);
+-extern void mfp_set_groupg(struct device *dev, const char *subname);
+-extern void mfp_set_groupd(struct device *dev, const char *subname);
+-
+-#endif /* __ASM_ARCH_MFP_H */
+diff --git a/arch/arm/mach-w90x900/include/mach/regs-clock.h b/arch/arm/mach-w90x900/include/mach/regs-clock.h
+deleted file mode 100644
+index f06245d26bd7..000000000000
+--- a/arch/arm/mach-w90x900/include/mach/regs-clock.h
++++ /dev/null
+@@ -1,49 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * arch/arm/mach-w90x900/include/mach/regs-clock.h
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
+-
+-#ifndef __ASM_ARCH_REGS_CLOCK_H
+-#define __ASM_ARCH_REGS_CLOCK_H
+-
+-/* Clock Control Registers  */
+-#define CLK_BA		W90X900_VA_CLKPWR
+-#define REG_CLKEN	(CLK_BA + 0x00)
+-#define REG_CLKSEL	(CLK_BA + 0x04)
+-#define REG_CLKDIV	(CLK_BA + 0x08)
+-#define REG_PLLCON0	(CLK_BA + 0x0C)
+-#define REG_PLLCON1	(CLK_BA + 0x10)
+-#define REG_PMCON	(CLK_BA + 0x14)
+-#define REG_IRQWAKECON	(CLK_BA + 0x18)
+-#define REG_IRQWAKEFLAG	(CLK_BA + 0x1C)
+-#define REG_IPSRST	(CLK_BA + 0x20)
+-#define REG_CLKEN1	(CLK_BA + 0x24)
+-#define REG_CLKDIV1	(CLK_BA + 0x28)
+-
+-/* Define PLL freq setting */
+-#define PLL_DISABLE		0x12B63
+-#define	PLL_66MHZ		0x2B63
+-#define	PLL_100MHZ		0x4F64
+-#define PLL_120MHZ		0x4F63
+-#define	PLL_166MHZ		0x4124
+-#define	PLL_200MHZ		0x4F24
+-
+-/* Define AHB:CPUFREQ ratio */
+-#define	AHB_CPUCLK_1_1		0x00
+-#define	AHB_CPUCLK_1_2		0x01
+-#define	AHB_CPUCLK_1_4		0x02
+-#define	AHB_CPUCLK_1_8		0x03
+-
+-/* Define APB:AHB ratio */
+-#define APB_AHB_1_2		0x01
+-#define APB_AHB_1_4		0x02
+-#define APB_AHB_1_8		0x03
+-
+-/* Define clock skew */
+-#define DEFAULTSKEW		0x48
+-
+-#endif /*  __ASM_ARCH_REGS_CLOCK_H */
+diff --git a/arch/arm/mach-w90x900/include/mach/regs-irq.h b/arch/arm/mach-w90x900/include/mach/regs-irq.h
+deleted file mode 100644
+index 89fcbc60b60a..000000000000
+--- a/arch/arm/mach-w90x900/include/mach/regs-irq.h
++++ /dev/null
+@@ -1,46 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-or-later */
+-/*
+- * arch/arm/mach-w90x900/include/mach/regs-irq.h
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation
+- * All rights reserved.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- *
+- * Based on arch/arm/mach-s3c2410/include/mach/regs-irq.h
+- */
+-
+-#ifndef ___ASM_ARCH_REGS_IRQ_H
+-#define ___ASM_ARCH_REGS_IRQ_H
+-
+-/* Advance Interrupt Controller (AIC) Registers */
+-
+-#define AIC_BA    		W90X900_VA_IRQ
+-
+-#define REG_AIC_IRQSC		(AIC_BA+0x80)
+-#define REG_AIC_GEN		(AIC_BA+0x84)
+-#define REG_AIC_GASR		(AIC_BA+0x88)
+-#define REG_AIC_GSCR		(AIC_BA+0x8C)
+-#define REG_AIC_IRSR		(AIC_BA+0x100)
+-#define REG_AIC_IASR		(AIC_BA+0x104)
+-#define REG_AIC_ISR		(AIC_BA+0x108)
+-#define REG_AIC_IPER		(AIC_BA+0x10C)
+-#define REG_AIC_ISNR		(AIC_BA+0x110)
+-#define REG_AIC_IMR		(AIC_BA+0x114)
+-#define REG_AIC_OISR		(AIC_BA+0x118)
+-#define REG_AIC_MECR		(AIC_BA+0x120)
+-#define REG_AIC_MDCR		(AIC_BA+0x124)
+-#define REG_AIC_SSCR		(AIC_BA+0x128)
+-#define REG_AIC_SCCR		(AIC_BA+0x12C)
+-#define REG_AIC_EOSCR		(AIC_BA+0x130)
+-#define AIC_IPER		(0x10C)
+-#define AIC_ISNR		(0x110)
+-
+-/*16-18 bits of REG_AIC_GEN define irq(2-4) group*/
+-
+-#define TIMER2_IRQ		(1 << 16)
+-#define TIMER3_IRQ		(1 << 17)
+-#define TIMER4_IRQ		(1 << 18)
+-#define TIME_GROUP_IRQ		(TIMER2_IRQ|TIMER3_IRQ|TIMER4_IRQ)
+-
+-#endif /* ___ASM_ARCH_REGS_IRQ_H */
+diff --git a/arch/arm/mach-w90x900/include/mach/regs-ldm.h b/arch/arm/mach-w90x900/include/mach/regs-ldm.h
+deleted file mode 100644
+index ffe7e67c99de..000000000000
+--- a/arch/arm/mach-w90x900/include/mach/regs-ldm.h
++++ /dev/null
+@@ -1,248 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-or-later */
+-/*
+- * arch/arm/mach-w90x900/include/mach/regs-serial.h
+- *
+- * Copyright (c) 2009 Nuvoton technology corporation
+- * All rights reserved.
+- *
+- *  Description:
+- *     Nuvoton Display, LCM Register list
+- *  Author:  Wang Qiang (rurality.linux@gmail.com) 2009/12/11
+- */
+-
+-
+-#ifndef __ASM_ARM_W90X900_REGS_LDM_H
+-#define __ASM_ARM_W90X900_REGS_LDM_H
+-
+-#include <mach/map.h>
+-
+-/* Display Controller Control/Status Register */
+-#define REG_LCM_DCCS			(0x00)
+-
+-#define LCM_DCCS_ENG_RST		(1 << 0)
+-#define LCM_DCCS_VA_EN			(1 << 1)
+-#define LCM_DCCS_OSD_EN			(1 << 2)
+-#define LCM_DCCS_DISP_OUT_EN		(1 << 3)
+-#define LCM_DCCS_DISP_INT_EN		(1 << 4)
+-#define LCM_DCCS_CMD_ON			(1 << 5)
+-#define LCM_DCCS_FIELD_INTR		(1 << 6)
+-#define LCM_DCCS_SINGLE			(1 << 7)
+-
+-enum LCM_DCCS_VA_SRC {
+-	LCM_DCCS_VA_SRC_YUV422		= (0 << 8),
+-	LCM_DCCS_VA_SRC_YCBCR422	= (1 << 8),
+-	LCM_DCCS_VA_SRC_RGB888		= (2 << 8),
+-	LCM_DCCS_VA_SRC_RGB666		= (3 << 8),
+-	LCM_DCCS_VA_SRC_RGB565		= (4 << 8),
+-	LCM_DCCS_VA_SRC_RGB444LOW	= (5 << 8),
+-	LCM_DCCS_VA_SRC_RGB444HIGH 	= (7 << 8)
+-};
+-
+-
+-/* Display Device Control Register */
+-#define REG_LCM_DEV_CTRL		(0x04)
+-
+-enum LCM_DEV_CTRL_SWAP_YCbCr {
+-	LCM_DEV_CTRL_SWAP_UYVY		= (0 << 1),
+-	LCM_DEV_CTRL_SWAP_YUYV		= (1 << 1),
+-	LCM_DEV_CTRL_SWAP_VYUY		= (2 << 1),
+-	LCM_DEV_CTRL_SWAP_YVYU		= (3 << 1)
+-};
+-
+-enum LCM_DEV_CTRL_RGB_SHIFT {
+-	LCM_DEV_CTRL_RGB_SHIFT_NOT 	= (0 << 3),
+-	LCM_DEV_CTRL_RGB_SHIFT_ONECYCLE = (1 << 3),
+-	LCM_DEV_CTRL_RGB_SHIFT_TWOCYCLE = (2 << 3),
+-	LCM_DEV_CTRL_RGB_SHIFT_NOT_DEF	= (3 << 3)
+-};
+-
+-enum LCM_DEV_CTRL_DEVICE {
+-	LCM_DEV_CTRL_DEVICE_YUV422	= (0 << 5),
+-	LCM_DEV_CTRL_DEVICE_YUV444	= (1 << 5),
+-	LCM_DEV_CTRL_DEVICE_UNIPAC	= (4 << 5),
+-	LCM_DEV_CTRL_DEVICE_SEIKO_EPSON	= (5 << 5),
+-	LCM_DEV_CTRL_DEVICE_HIGH_COLOR	= (6 << 5),
+-	LCM_DEV_CTRL_DEVICE_MPU		= (7 << 5)
+-};
+-
+-#define LCM_DEV_CTRL_LCD_DDA		(8)
+-#define LCM_DEV_CTRL_YUV2CCIR		(16)
+-
+-enum LCM_DEV_CTRL_LCD_SEL {
+-	LCM_DEV_CTRL_LCD_SEL_RGB_GBR	= (0 << 17),
+-	LCM_DEV_CTRL_LCD_SEL_BGR_RBG	= (1 << 17),
+-	LCM_DEV_CTRL_LCD_SEL_GBR_RGB	= (2 << 17),
+-	LCM_DEV_CTRL_LCD_SEL_RBG_BGR	= (3 << 17)
+-};
+-
+-enum LCM_DEV_CTRL_FAL_D {
+-	LCM_DEV_CTRL_FAL_D_FALLING	= (0 << 19),
+-	LCM_DEV_CTRL_FAL_D_RISING	= (1 << 19),
+-};
+-
+-enum LCM_DEV_CTRL_H_POL {
+-	LCM_DEV_CTRL_H_POL_LOW		= (0 << 20),
+-	LCM_DEV_CTRL_H_POL_HIGH		= (1 << 20),
+-};
+-
+-enum LCM_DEV_CTRL_V_POL {
+-	LCM_DEV_CTRL_V_POL_LOW		= (0 << 21),
+-	LCM_DEV_CTRL_V_POL_HIGH		= (1 << 21),
+-};
+-
+-enum LCM_DEV_CTRL_VR_LACE {
+-	LCM_DEV_CTRL_VR_LACE_NINTERLACE	= (0 << 22),
+-	LCM_DEV_CTRL_VR_LACE_INTERLACE	= (1 << 22),
+-};
+-
+-enum LCM_DEV_CTRL_LACE {
+-	LCM_DEV_CTRL_LACE_NINTERLACE	= (0 << 23),
+-	LCM_DEV_CTRL_LACE_INTERLACE	= (1 << 23),
+-};
+-
+-enum LCM_DEV_CTRL_RGB_SCALE {
+-	LCM_DEV_CTRL_RGB_SCALE_4096 	= (0 << 24),
+-	LCM_DEV_CTRL_RGB_SCALE_65536 	= (1 << 24),
+-	LCM_DEV_CTRL_RGB_SCALE_262144 	= (2 << 24),
+-	LCM_DEV_CTRL_RGB_SCALE_16777216 = (3 << 24),
+-};
+-
+-enum LCM_DEV_CTRL_DBWORD {
+-	LCM_DEV_CTRL_DBWORD_HALFWORD	= (0 << 26),
+-	LCM_DEV_CTRL_DBWORD_FULLWORD	= (1 << 26),
+-};
+-
+-enum LCM_DEV_CTRL_MPU68 {
+-	LCM_DEV_CTRL_MPU68_80_SERIES	= (0 << 27),
+-	LCM_DEV_CTRL_MPU68_68_SERIES	= (1 << 27),
+-};
+-
+-enum LCM_DEV_CTRL_DE_POL {
+-	LCM_DEV_CTRL_DE_POL_HIGH	= (0 << 28),
+-	LCM_DEV_CTRL_DE_POL_LOW		= (1 << 28),
+-};
+-
+-#define LCM_DEV_CTRL_CMD16		(29)
+-#define LCM_DEV_CTRL_CM16t18		(30)
+-#define LCM_DEV_CTRL_CMD_LOW		(31)
+-
+-/* MPU-Interface LCD Write Command */
+-#define REG_LCM_MPU_CMD			(0x08)
+-
+-/* Interrupt Control/Status Register */
+-#define REG_LCM_INT_CS			(0x0c)
+-#define LCM_INT_CS_DISP_F_EN		(1 << 0)
+-#define LCM_INT_CS_UNDERRUN_EN   	(1 << 1)
+-#define LCM_INT_CS_BUS_ERROR_INT 	(1 << 28)
+-#define LCM_INT_CS_UNDERRUN_INT  	(1 << 29)
+-#define LCM_INT_CS_DISP_F_STATUS 	(1 << 30)
+-#define LCM_INT_CS_DISP_F_INT		(1 << 31)
+-
+-/* CRTC Display Size Control Register */
+-#define REG_LCM_CRTC_SIZE		(0x10)
+-#define LCM_CRTC_SIZE_VTTVAL(x)		((x) << 16)
+-#define LCM_CRTC_SIZE_HTTVAL(x)		((x) << 0)
+-
+-/* CRTC Display Enable End */
+-#define REG_LCM_CRTC_DEND		(0x14)
+-#define LCM_CRTC_DEND_VDENDVAL(x)	((x) << 16)
+-#define LCM_CRTC_DEND_HDENDVAL(x)	((x) << 0)
+-
+-/* CRTC Internal Horizontal Retrace Control Register */
+-#define REG_LCM_CRTC_HR			(0x18)
+-#define LCM_CRTC_HR_EVAL(x)		((x) << 16)
+-#define LCM_CRTC_HR_SVAL(x)		((x) << 0)
+-
+-/* CRTC Horizontal Sync Control Register */
+-#define REG_LCM_CRTC_HSYNC		(0x1C)
+-#define LCM_CRTC_HSYNC_SHIFTVAL(x)	((x) << 30)
+-#define LCM_CRTC_HSYNC_EVAL(x)		((x) << 16)
+-#define LCM_CRTC_HSYNC_SVAL(x)		((x) << 0)
+-
+-/* CRTC Internal Vertical Retrace Control Register */
+-#define REG_LCM_CRTC_VR			(0x20)
+-#define LCM_CRTC_VR_EVAL(x)		((x) << 16)
+-#define LCM_CRTC_VR_SVAL(x)		((x) << 0)
+-
+-/* Video Stream Frame Buffer-0 Starting Address */
+-#define REG_LCM_VA_BADDR0		(0x24)
+-
+-/* Video Stream Frame Buffer-1 Starting Address */
+-#define REG_LCM_VA_BADDR1		(0x28)
+-
+-/* Video Stream Frame Buffer Control Register */
+-#define REG_LCM_VA_FBCTRL		(0x2C)
+-#define LCM_VA_FBCTRL_IO_REGION_HALF	(1 << 28)
+-#define LCM_VA_FBCTRL_FIELD_DUAL  	(1 << 29)
+-#define LCM_VA_FBCTRL_START_BUF 	(1 << 30)
+-#define LCM_VA_FBCTRL_DB_EN		(1 << 31)
+-
+-/* Video Stream Scaling Control Register */
+-#define REG_LCM_VA_SCALE		(0x30)
+-#define LCM_VA_SCALE_XCOPY_INTERPOLATION (0 << 15)
+-#define LCM_VA_SCALE_XCOPY_DUPLICATION	 (1 << 15)
+-
+-/* Image Stream Active Window Coordinates */
+-#define REG_LCM_VA_WIN			(0x38)
+-
+-/* Image Stream Stuff Pixel */
+-#define REG_LCM_VA_STUFF		(0x3C)
+-
+-/* OSD Window Starting Coordinates */
+-#define REG_LCM_OSD_WINS		(0x40)
+-
+-/* OSD Window Ending Coordinates */
+-#define REG_LCM_OSD_WINE		(0x44)
+-
+-/* OSD Stream Frame Buffer Starting Address */
+-#define REG_LCM_OSD_BADDR		(0x48)
+-
+-/* OSD Stream Frame Buffer Control Register */
+-#define REG_LCM_OSD_FBCTRL		(0x4c)
+-
+-/* OSD Overlay Control Register */
+-#define REG_LCM_OSD_OVERLAY		(0x50)
+-
+-/* OSD Overlay Color-Key Pattern Register */
+-#define REG_LCM_OSD_CKEY		(0x54)
+-
+-/* OSD Overlay Color-Key Mask Register */
+-#define REG_LCM_OSD_CMASK		(0x58)
+-
+-/* OSD Window Skip1 Register */
+-#define REG_LCM_OSD_SKIP1		(0x5C)
+-
+-/* OSD Window Skip2 Register */
+-#define REG_LCM_OSD_SKIP2		(0x60)
+-
+-/* OSD horizontal up scaling control register */
+-#define REG_LCM_OSD_SCALE		(0x64)
+-
+-/* MPU Vsync control register */
+-#define REG_LCM_MPU_VSYNC		(0x68)
+-
+-/* Hardware cursor control Register */
+-#define REG_LCM_HC_CTRL			(0x6C)
+-
+-/* Hardware cursot tip point potison on va picture */
+-#define REG_LCM_HC_POS			(0x70)
+-
+-/* Hardware Cursor Window Buffer Control Register */
+-#define REG_LCM_HC_WBCTRL		(0x74)
+-
+-/* Hardware cursor memory base address register */
+-#define REG_LCM_HC_BADDR		(0x78)
+-
+-/* Hardware cursor color ram register mapped to bpp = 0 */
+-#define REG_LCM_HC_COLOR0		(0x7C)
+-
+-/* Hardware cursor color ram register mapped to bpp = 1 */
+-#define REG_LCM_HC_COLOR1		(0x80)
+-
+-/* Hardware cursor color ram register mapped to bpp = 2 */
+-#define REG_LCM_HC_COLOR2		(0x84)
+-
+-/* Hardware cursor color ram register mapped to bpp = 3 */
+-#define REG_LCM_HC_COLOR3		(0x88)
+-
+-#endif /* __ASM_ARM_W90X900_REGS_LDM_H */
+diff --git a/arch/arm/mach-w90x900/include/mach/regs-serial.h b/arch/arm/mach-w90x900/include/mach/regs-serial.h
+deleted file mode 100644
+index 797c9727a157..000000000000
+--- a/arch/arm/mach-w90x900/include/mach/regs-serial.h
++++ /dev/null
+@@ -1,54 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-or-later */
+-/*
+- * arch/arm/mach-w90x900/include/mach/regs-serial.h
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation
+- * All rights reserved.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- *
+- * Based on arch/arm/mach-s3c2410/include/mach/regs-serial.h
+- */
+-
+-#ifndef __ASM_ARM_REGS_SERIAL_H
+-#define __ASM_ARM_REGS_SERIAL_H
+-
+-#define UART0_BA	W90X900_VA_UART
+-#define UART1_BA	(W90X900_VA_UART+0x100)
+-#define UART2_BA	(W90X900_VA_UART+0x200)
+-#define UART3_BA	(W90X900_VA_UART+0x300)
+-#define UART4_BA	(W90X900_VA_UART+0x400)
+-
+-#define UART0_PA	W90X900_PA_UART
+-#define UART1_PA	(W90X900_PA_UART+0x100)
+-#define UART2_PA	(W90X900_PA_UART+0x200)
+-#define UART3_PA	(W90X900_PA_UART+0x300)
+-#define UART4_PA	(W90X900_PA_UART+0x400)
 -
 -#ifndef __ASSEMBLY__
 -
--#ifdef CONFIG_PCI
+-struct w90x900_uart_clksrc {
+-	const char	*name;
+-	unsigned int	divisor;
+-	unsigned int	min_baud;
+-	unsigned int	max_baud;
+-};
 -
--/* PCI mappings */
--#define __virt_to_bus(x)	((x) - PAGE_OFFSET + KS8695_PCIMEM_PA)
--#define __bus_to_virt(x)	((x) - KS8695_PCIMEM_PA + PAGE_OFFSET)
+-struct w90x900_uartcfg {
+-	unsigned char	hwport;
+-	unsigned char	unused;
+-	unsigned short	flags;
+-	unsigned long	uart_flags;
 -
--/* Platform-bus mapping */
--extern struct bus_type platform_bus_type;
--#define is_lbus_device(dev)		(dev && dev->bus == &platform_bus_type)
--#define __arch_dma_to_virt(dev, x)	({ (void *) (is_lbus_device(dev) ? \
--					__phys_to_virt(x) : __bus_to_virt(x)); })
--#define __arch_virt_to_dma(dev, x)	({ is_lbus_device(dev) ? \
--					(dma_addr_t)__virt_to_phys((unsigned long)x) \
--					: (dma_addr_t)__virt_to_bus(x); })
--#define __arch_pfn_to_dma(dev, pfn)	\
--	({ dma_addr_t __dma = __pfn_to_phys(pfn); \
--	   if (!is_lbus_device(dev)) \
--		__dma = __dma - PHYS_OFFSET + KS8695_PCIMEM_PA; \
--	   __dma; })
+-	unsigned long	ucon;
+-	unsigned long	ulcon;
+-	unsigned long	ufcon;
 -
--#define __arch_dma_to_pfn(dev, x)	\
--	({ dma_addr_t __dma = x;				\
--	   if (!is_lbus_device(dev))				\
--		__dma += PHYS_OFFSET - KS8695_PCIMEM_PA;	\
--	   __phys_to_pfn(__dma);				\
--	})
+-	struct w90x900_uart_clksrc *clocks;
+-	unsigned int	clocks_size;
+-};
 -
--#endif
+-#endif /* __ASSEMBLY__ */
 -
--#endif
+-#endif /* __ASM_ARM_REGS_SERIAL_H */
 -
--#endif
-diff --git a/arch/arm/mach-ks8695/include/mach/regs-gpio.h b/arch/arm/mach-ks8695/include/mach/regs-gpio.h
+diff --git a/arch/arm/mach-w90x900/include/mach/uncompress.h b/arch/arm/mach-w90x900/include/mach/uncompress.h
 deleted file mode 100644
-index 90614a7d0548..000000000000
---- a/arch/arm/mach-ks8695/include/mach/regs-gpio.h
+index 32e92a77ccae..000000000000
+--- a/arch/arm/mach-w90x900/include/mach/uncompress.h
 +++ /dev/null
-@@ -1,55 +0,0 @@
+@@ -1,43 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-or-later */
 -/*
-- * arch/arm/mach-ks8695/include/mach/regs-gpio.h
+- * arch/arm/mach-w90x900/include/mach/uncompress.h
 - *
-- * Copyright (C) 2007 Andrew Victor
+- * Copyright (c) 2008 Nuvoton technology corporation
+- * All rights reserved.
 - *
-- * KS8695 - GPIO control registers and bit definitions.
+- * Wan ZongShun <mcuos.com@gmail.com>
 - *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
-- */
--
--#ifndef KS8695_GPIO_H
--#define KS8695_GPIO_H
--
--#define KS8695_GPIO_OFFSET	(0xF0000 + 0xE600)
--#define KS8695_GPIO_VA		(KS8695_IO_VA + KS8695_GPIO_OFFSET)
--#define KS8695_GPIO_PA		(KS8695_IO_PA + KS8695_GPIO_OFFSET)
--
--
--#define KS8695_IOPM		(0x00)		/* I/O Port Mode Register */
--#define KS8695_IOPC		(0x04)		/* I/O Port Control Register */
--#define KS8695_IOPD		(0x08)		/* I/O Port Data Register */
--
--
--/* Port Mode Register */
--#define IOPM(x)			(1 << (x))	/* Mode for GPIO Pin x */
--
--/* Port Control Register */
--#define IOPC_IOTIM1EN		(1 << 17)	/* GPIO Pin for Timer1 Enable */
--#define IOPC_IOTIM0EN		(1 << 16)	/* GPIO Pin for Timer0 Enable */
--#define IOPC_IOEINT3EN		(1 << 15)	/* GPIO Pin for External/Soft Interrupt 3 Enable */
--#define IOPC_IOEINT3TM		(7 << 12)	/* GPIO Pin for External/Soft Interrupt 3 Trigger Mode */
--#define IOPC_IOEINT3_MODE(x)	((x) << 12)
--#define IOPC_IOEINT2EN		(1 << 11)	/* GPIO Pin for External/Soft Interrupt 2 Enable */
--#define IOPC_IOEINT2TM		(7 << 8)	/* GPIO Pin for External/Soft Interrupt 2 Trigger Mode */
--#define IOPC_IOEINT2_MODE(x)	((x) << 8)
--#define IOPC_IOEINT1EN		(1 << 7)	/* GPIO Pin for External/Soft Interrupt 1 Enable */
--#define IOPC_IOEINT1TM		(7 << 4)	/* GPIO Pin for External/Soft Interrupt 1 Trigger Mode */
--#define IOPC_IOEINT1_MODE(x)	((x) << 4)
--#define IOPC_IOEINT0EN		(1 << 3)	/* GPIO Pin for External/Soft Interrupt 0 Enable */
--#define IOPC_IOEINT0TM		(7 << 0)	/* GPIO Pin for External/Soft Interrupt 0 Trigger Mode */
--#define IOPC_IOEINT0_MODE(x)	((x) << 0)
--
-- /* Trigger Modes */
--#define IOPC_TM_LOW		(0)		/* Level Detection (Active Low) */
--#define IOPC_TM_HIGH		(1)		/* Level Detection (Active High) */
--#define IOPC_TM_RISING		(2)		/* Rising Edge Detection */
--#define IOPC_TM_FALLING		(4)		/* Falling Edge Detection */
--#define IOPC_TM_EDGE		(6)		/* Both Edge Detection */
--
--/* Port Data Register */
--#define IOPD(x)			(1 << (x))	/* Signal Level of GPIO Pin x */
--
--#endif
-diff --git a/arch/arm/mach-ks8695/include/mach/regs-irq.h b/arch/arm/mach-ks8695/include/mach/regs-irq.h
-deleted file mode 100644
-index 352b7e8704d5..000000000000
---- a/arch/arm/mach-ks8695/include/mach/regs-irq.h
-+++ /dev/null
-@@ -1,41 +0,0 @@
--/*
-- * arch/arm/mach-ks8695/include/mach/regs-irq.h
-- *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
-- *
-- * KS8695 - IRQ registers and bit definitions
-- *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
-- */
--
--#ifndef KS8695_IRQ_H
--#define KS8695_IRQ_H
--
--#define KS8695_IRQ_OFFSET	(0xF0000 + 0xE200)
--#define KS8695_IRQ_VA		(KS8695_IO_VA + KS8695_IRQ_OFFSET)
--#define KS8695_IRQ_PA		(KS8695_IO_PA + KS8695_IRQ_OFFSET)
--
--
--/*
-- * Interrupt Controller registers
-- */
--#define KS8695_INTMC		(0x00)		/* Mode Control Register */
--#define KS8695_INTEN		(0x04)		/* Interrupt Enable Register */
--#define KS8695_INTST		(0x08)		/* Interrupt Status Register */
--#define KS8695_INTPW		(0x0c)		/* Interrupt Priority (WAN MAC) */
--#define KS8695_INTPH		(0x10)		/* Interrupt Priority (HPNA) [KS8695 only] */
--#define KS8695_INTPL		(0x14)		/* Interrupt Priority (LAN MAC) */
--#define KS8695_INTPT		(0x18)		/* Interrupt Priority (Timer) */
--#define KS8695_INTPU		(0x1c)		/* Interrupt Priority (UART) */
--#define KS8695_INTPE		(0x20)		/* Interrupt Priority (External Interrupt) */
--#define KS8695_INTPC		(0x24)		/* Interrupt Priority (Communications Channel) */
--#define KS8695_INTPBE		(0x28)		/* Interrupt Priority (Bus Error Response) */
--#define KS8695_INTMS		(0x2c)		/* Interrupt Mask Status Register */
--#define KS8695_INTHPF		(0x30)		/* Interrupt Pending Highest Priority (FIQ) */
--#define KS8695_INTHPI		(0x34)		/* Interrupt Pending Highest Priority (IRQ) */
--
--
--#endif
-diff --git a/arch/arm/mach-ks8695/include/mach/regs-misc.h b/arch/arm/mach-ks8695/include/mach/regs-misc.h
-deleted file mode 100644
-index 2740c52494a0..000000000000
---- a/arch/arm/mach-ks8695/include/mach/regs-misc.h
-+++ /dev/null
-@@ -1,97 +0,0 @@
--/*
-- * arch/arm/mach-ks8695/include/mach/regs-misc.h
-- *
-- * Copyright (C) 2006 Andrew Victor
-- *
-- * KS8695 - Miscellaneous Registers
-- *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
-- */
--
--#ifndef KS8695_MISC_H
--#define KS8695_MISC_H
--
--#define KS8695_MISC_OFFSET	(0xF0000 + 0xEA00)
--#define KS8695_MISC_VA		(KS8695_IO_VA + KS8695_MISC_OFFSET)
--#define KS8695_MISC_PA		(KS8695_IO_PA + KS8695_MISC_OFFSET)
--
--
--/*
-- * Miscellaneous registers
-- */
--#define KS8695_DID		(0x00)		/* Device ID */
--#define KS8695_RID		(0x04)		/* Revision ID */
--#define KS8695_HMC		(0x08)		/* HPNA Miscellaneous Control [KS8695 only] */
--#define KS8695_WMC		(0x0c)		/* WAN Miscellaneous Control */
--#define KS8695_WPPM		(0x10)		/* WAN PHY Power Management */
--#define KS8695_PPS		(0x1c)		/* PHY PowerSave */
--
--/* Device ID Register */
--#define DID_ID			(0xffff << 0)	/* Device ID */
--
--/* Revision ID Register */
--#define RID_SUBID		(0xf << 4)	/* Sub-Device ID */
--#define RID_REVISION		(0xf << 0)	/* Revision ID */
--
--/* HPNA Miscellaneous Control Register */
--#define HMC_HSS			(1 << 1)	/* Speed */
--#define HMC_HDS			(1 << 0)	/* Duplex */
--
--/* WAN Miscellaneous Control Register */
--#define WMC_WANC		(1 << 30)	/* Auto-negotiation complete */
--#define WMC_WANR		(1 << 29)	/* Auto-negotiation restart */
--#define WMC_WANAP		(1 << 28)	/* Advertise Pause */
--#define WMC_WANA100F		(1 << 27)	/* Advertise 100 FDX */
--#define WMC_WANA100H		(1 << 26)	/* Advertise 100 HDX */
--#define WMC_WANA10F		(1 << 25)	/* Advertise 10 FDX */
--#define WMC_WANA10H		(1 << 24)	/* Advertise 10 HDX */
--#define WMC_WLS			(1 << 23)	/* Link status */
--#define WMC_WDS			(1 << 22)	/* Duplex status */
--#define WMC_WSS			(1 << 21)	/* Speed status */
--#define WMC_WLPP		(1 << 20)	/* Link Partner Pause */
--#define WMC_WLP100F		(1 << 19)	/* Link Partner 100 FDX */
--#define WMC_WLP100H		(1 << 18)	/* Link Partner 100 HDX */
--#define WMC_WLP10F		(1 << 17)	/* Link Partner 10 FDX */
--#define WMC_WLP10H		(1 << 16)	/* Link Partner 10 HDX */
--#define WMC_WAND		(1 << 15)	/* Auto-negotiation disable */
--#define WMC_WANF100		(1 << 14)	/* Force 100 */
--#define WMC_WANFF		(1 << 13)	/* Force FDX */
--#define WMC_WLED1S		(7 <<  4)	/* LED1 Select */
--#define		WLED1S_SPEED		(0 << 4)
--#define		WLED1S_LINK		(1 << 4)
--#define		WLED1S_DUPLEX		(2 << 4)
--#define		WLED1S_COLLISION	(3 << 4)
--#define		WLED1S_ACTIVITY		(4 << 4)
--#define		WLED1S_FDX_COLLISION	(5 << 4)
--#define		WLED1S_LINK_ACTIVITY	(6 << 4)
--#define WMC_WLED0S		(7 << 0)	/* LED0 Select */
--#define		WLED0S_SPEED		(0 << 0)
--#define		WLED0S_LINK		(1 << 0)
--#define		WLED0S_DUPLEX		(2 << 0)
--#define		WLED0S_COLLISION	(3 << 0)
--#define		WLED0S_ACTIVITY		(4 << 0)
--#define		WLED0S_FDX_COLLISION	(5 << 0)
--#define		WLED0S_LINK_ACTIVITY	(6 << 0)
--
--/* WAN PHY Power Management Register */
--#define WPPM_WLPBK		(1 << 14)	/* Local Loopback */
--#define WPPM_WRLPKB		(1 << 13)	/* Remove Loopback */
--#define WPPM_WPI		(1 << 12)	/* PHY isolate */
--#define WPPM_WFL		(1 << 10)	/* Force link */
--#define WPPM_MDIXS		(1 << 9)	/* MDIX Status */
--#define WPPM_FEF		(1 << 8)	/* Far End Fault */
--#define WPPM_AMDIXP		(1 << 7)	/* Auto MDIX Parameter */
--#define WPPM_TXDIS		(1 << 6)	/* Disable transmitter */
--#define WPPM_DFEF		(1 << 5)	/* Disable Far End Fault */
--#define WPPM_PD			(1 << 4)	/* Power Down */
--#define WPPM_DMDX		(1 << 3)	/* Disable Auto MDI/MDIX */
--#define WPPM_FMDX		(1 << 2)	/* Force MDIX */
--#define WPPM_LPBK		(1 << 1)	/* MAX Loopback */
--
--/* PHY Power Save Register */
--#define PPS_PPSM		(1 << 0)	/* PHY Power Save Mode */
--
--
--#endif
-diff --git a/arch/arm/mach-ks8695/include/mach/regs-switch.h b/arch/arm/mach-ks8695/include/mach/regs-switch.h
-deleted file mode 100644
-index 97e8acb1cf6c..000000000000
---- a/arch/arm/mach-ks8695/include/mach/regs-switch.h
-+++ /dev/null
-@@ -1,66 +0,0 @@
--/*
-- * arch/arm/mach-ks8695/include/mach/regs-switch.h
-- *
-- * Copyright (C) 2006 Andrew Victor
-- *
-- * KS8695 - Switch Registers and bit definitions.
-- *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
-- */
--
--#ifndef KS8695_SWITCH_H
--#define KS8695_SWITCH_H
--
--#define KS8695_SWITCH_OFFSET	(0xF0000 + 0xe800)
--#define KS8695_SWITCH_VA	(KS8695_IO_VA + KS8695_SWITCH_OFFSET)
--#define KS8695_SWITCH_PA	(KS8695_IO_PA + KS8695_SWITCH_OFFSET)
--
--
--/*
-- * Switch registers
-- */
--#define KS8695_SEC0		(0x00)		/* Switch Engine Control 0 */
--#define KS8695_SEC1		(0x04)		/* Switch Engine Control 1 */
--#define KS8695_SEC2		(0x08)		/* Switch Engine Control 2 */
--
--#define KS8695_SEPXCZ(x,z)	(0x0c + (((x)-1)*3 + ((z)-1))*4)	/* Port Configuration Registers */
--
--#define KS8695_SEP12AN		(0x48)		/* Port 1 & 2 Auto-Negotiation */
--#define KS8695_SEP34AN		(0x4c)		/* Port 3 & 4 Auto-Negotiation */
--#define KS8695_SEIAC		(0x50)		/* Indirect Access Control */
--#define KS8695_SEIADH2		(0x54)		/* Indirect Access Data High 2 */
--#define KS8695_SEIADH1		(0x58)		/* Indirect Access Data High 1 */
--#define KS8695_SEIADL		(0x5c)		/* Indirect Access Data Low */
--#define KS8695_SEAFC		(0x60)		/* Advance Feature Control */
--#define KS8695_SEDSCPH		(0x64)		/* TOS Priority High */
--#define KS8695_SEDSCPL		(0x68)		/* TOS Priority Low */
--#define KS8695_SEMAH		(0x6c)		/* Switch Engine MAC Address High */
--#define KS8695_SEMAL		(0x70)		/* Switch Engine MAC Address Low */
--#define KS8695_LPPM12		(0x74)		/* Port 1 & 2 PHY Power Management */
--#define KS8695_LPPM34		(0x78)		/* Port 3 & 4 PHY Power Management */
--
--
--/* Switch Engine Control 0 */
--#define SEC0_LLED1S		(7 << 25)	/* LED1 Select */
--#define		LLED1S_SPEED		(0 << 25)
--#define		LLED1S_LINK		(1 << 25)
--#define		LLED1S_DUPLEX		(2 << 25)
--#define		LLED1S_COLLISION	(3 << 25)
--#define		LLED1S_ACTIVITY		(4 << 25)
--#define		LLED1S_FDX_COLLISION	(5 << 25)
--#define		LLED1S_LINK_ACTIVITY	(6 << 25)
--#define SEC0_LLED0S		(7 << 22)	/* LED0 Select */
--#define		LLED0S_SPEED		(0 << 22)
--#define		LLED0S_LINK		(1 << 22)
--#define		LLED0S_DUPLEX		(2 << 22)
--#define		LLED0S_COLLISION	(3 << 22)
--#define		LLED0S_ACTIVITY		(4 << 22)
--#define		LLED0S_FDX_COLLISION	(5 << 22)
--#define		LLED0S_LINK_ACTIVITY	(6 << 22)
--#define SEC0_ENABLE		(1 << 0)	/* Enable Switch */
--
--
--
--#endif
-diff --git a/arch/arm/mach-ks8695/include/mach/regs-uart.h b/arch/arm/mach-ks8695/include/mach/regs-uart.h
-deleted file mode 100644
-index 941a542c5f23..000000000000
---- a/arch/arm/mach-ks8695/include/mach/regs-uart.h
-+++ /dev/null
-@@ -1,89 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0-only */
--/*
-- * arch/arm/mach-ks8695/include/mach/regs-uart.h
-- *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
-- *
-- * KS8695 - UART register and bit definitions.
-- */
--
--#ifndef KS8695_UART_H
--#define KS8695_UART_H
--
--#define KS8695_UART_OFFSET	(0xF0000 + 0xE000)
--#define KS8695_UART_VA		(KS8695_IO_VA + KS8695_UART_OFFSET)
--#define KS8695_UART_PA		(KS8695_IO_PA + KS8695_UART_OFFSET)
--
--
--/*
-- * UART registers
-- */
--#define KS8695_URRB	(0x00)		/* Receive Buffer Register */
--#define KS8695_URTH	(0x04)		/* Transmit Holding Register */
--#define KS8695_URFC	(0x08)		/* FIFO Control Register */
--#define KS8695_URLC	(0x0C)		/* Line Control Register */
--#define KS8695_URMC	(0x10)		/* Modem Control Register */
--#define KS8695_URLS	(0x14)		/* Line Status Register */
--#define KS8695_URMS	(0x18)		/* Modem Status Register */
--#define KS8695_URBD	(0x1C)		/* Baud Rate Divisor Register */
--#define KS8695_USR	(0x20)		/* Status Register */
--
--
--/* FIFO Control Register */
--#define URFC_URFRT	(3 << 6)	/* Receive FIFO Trigger Level */
--#define		URFC_URFRT_1	(0 << 6)
--#define		URFC_URFRT_4	(1 << 6)
--#define		URFC_URFRT_8	(2 << 6)
--#define		URFC_URFRT_14	(3 << 6)
--#define URFC_URTFR	(1 << 2)	/* Transmit FIFO Reset */
--#define URFC_URRFR	(1 << 1)	/* Receive FIFO Reset */
--#define URFC_URFE	(1 << 0)	/* FIFO Enable */
--
--/* Line Control Register */
--#define URLC_URSBC	(1 << 6)	/* Set Break Condition */
--#define URLC_PARITY	(7 << 3)	/* Parity */
--#define		URPE_NONE	(0 << 3)
--#define		URPE_ODD	(1 << 3)
--#define		URPE_EVEN	(3 << 3)
--#define		URPE_MARK	(5 << 3)
--#define		URPE_SPACE	(7 << 3)
--#define URLC_URSB	(1 << 2)	/* Stop Bits */
--#define URLC_URCL	(3 << 0)	/* Character Length */
--#define		URCL_5		(0 << 0)
--#define		URCL_6		(1 << 0)
--#define		URCL_7		(2 << 0)
--#define		URCL_8		(3 << 0)
--
--/* Modem Control Register */
--#define URMC_URLB	(1 << 4)	/* Loop-back mode */
--#define URMC_UROUT2	(1 << 3)	/* OUT2 signal */
--#define URMC_UROUT1	(1 << 2)	/* OUT1 signal */
--#define URMC_URRTS	(1 << 1)	/* Request to Send */
--#define URMC_URDTR	(1 << 0)	/* Data Terminal Ready */
--
--/* Line Status Register */
--#define URLS_URRFE	(1 << 7)	/* Receive FIFO Error */
--#define URLS_URTE	(1 << 6)	/* Transmit Empty */
--#define URLS_URTHRE	(1 << 5)	/* Transmit Holding Register Empty */
--#define URLS_URBI	(1 << 4)	/* Break Interrupt */
--#define URLS_URFE	(1 << 3)	/* Framing Error */
--#define URLS_URPE	(1 << 2)	/* Parity Error */
--#define URLS_URROE	(1 << 1)	/* Receive Overrun Error */
--#define URLS_URDR	(1 << 0)	/* Receive Data Ready */
--
--/* Modem Status Register */
--#define URMS_URDCD	(1 << 7)	/* Data Carrier Detect */
--#define URMS_URRI	(1 << 6)	/* Ring Indicator */
--#define URMS_URDSR	(1 << 5)	/* Data Set Ready */
--#define URMS_URCTS	(1 << 4)	/* Clear to Send */
--#define URMS_URDDCD	(1 << 3)	/* Delta Data Carrier Detect */
--#define URMS_URTERI	(1 << 2)	/* Trailing Edge Ring Indicator */
--#define URMS_URDDST	(1 << 1)	/* Delta Data Set Ready */
--#define URMS_URDCTS	(1 << 0)	/* Delta Clear to Send */
--
--/* Status Register */
--#define USR_UTI		(1 << 0)	/* Timeout Indication */
--
--
--#endif
-diff --git a/arch/arm/mach-ks8695/include/mach/uncompress.h b/arch/arm/mach-ks8695/include/mach/uncompress.h
-deleted file mode 100644
-index dc78a29759b5..000000000000
---- a/arch/arm/mach-ks8695/include/mach/uncompress.h
-+++ /dev/null
-@@ -1,33 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0-only */
--/*
-- * arch/arm/mach-ks8695/include/mach/uncompress.h
-- *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
-- *
-- * KS8695 - Kernel uncompressor
+- * Based on arch/arm/mach-s3c2410/include/mach/uncompress.h
 - */
 -
 -#ifndef __ASM_ARCH_UNCOMPRESS_H
 -#define __ASM_ARCH_UNCOMPRESS_H
 -
--#include <linux/io.h>
--#include <mach/regs-uart.h>
+-/* Defines for UART registers */
 -
--static inline void putc(char c)
+-#include <mach/regs-serial.h>
+-#include <mach/map.h>
+-#include <linux/serial_reg.h>
+-
+-#define TX_DONE	(UART_LSR_TEMT | UART_LSR_THRE)
+-static volatile u32 * const uart_base = (u32 *)UART0_PA;
+-
+-static inline void putc(int ch)
 -{
--	while (!(__raw_readl((void __iomem*)KS8695_UART_PA + KS8695_URLS) & URLS_URTHRE))
+-	/* Check THRE and TEMT bits before we transmit the character.
+-	 */
+-	while ((uart_base[UART_LSR] & TX_DONE) != TX_DONE)
 -		barrier();
 -
--	__raw_writel(c, (void __iomem*)KS8695_UART_PA + KS8695_URTH);
+-	*uart_base = ch;
 -}
 -
 -static inline void flush(void)
 -{
--	while (!(__raw_readl((void __iomem*)KS8695_UART_PA + KS8695_URLS) & URLS_URTE))
--		barrier();
 -}
 -
--#define arch_decomp_setup()
+-static void arch_decomp_setup(void)
+-{
+-}
 -
--#endif
-diff --git a/arch/arm/mach-ks8695/irq.c b/arch/arm/mach-ks8695/irq.c
+-#endif/* __ASM_W90X900_UNCOMPRESS_H */
+diff --git a/arch/arm/mach-w90x900/irq.c b/arch/arm/mach-w90x900/irq.c
 deleted file mode 100644
-index 4b7ec8d9300c..000000000000
---- a/arch/arm/mach-ks8695/irq.c
+index 081b0f65477a..000000000000
+--- a/arch/arm/mach-w90x900/irq.c
 +++ /dev/null
-@@ -1,164 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-or-later
+@@ -1,212 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
 -/*
-- * arch/arm/mach-ks8695/irq.c
+- * linux/arch/arm/mach-w90x900/irq.c
 - *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
+- * based on linux/arch/arm/plat-s3c24xx/irq.c by Ben Dooks
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation
+- * All rights reserved.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
 - */
 -
 -#include <linux/init.h>
 -#include <linux/module.h>
 -#include <linux/interrupt.h>
 -#include <linux/ioport.h>
+-#include <linux/ptrace.h>
 -#include <linux/device.h>
 -#include <linux/io.h>
 -
--#include <mach/hardware.h>
 -#include <asm/irq.h>
--
 -#include <asm/mach/irq.h>
 -
+-#include <mach/hardware.h>
 -#include <mach/regs-irq.h>
--#include <mach/regs-gpio.h>
 -
--static void ks8695_irq_mask(struct irq_data *d)
--{
--	unsigned long inten;
+-#include "nuc9xx.h"
 -
--	inten = __raw_readl(KS8695_IRQ_VA + KS8695_INTEN);
--	inten &= ~(1 << d->irq);
+-struct group_irq {
+-	unsigned long		gpen;
+-	unsigned int		enabled;
+-	void			(*enable)(struct group_irq *, int enable);
+-};
 -
--	__raw_writel(inten, KS8695_IRQ_VA + KS8695_INTEN);
--}
+-static DEFINE_SPINLOCK(groupirq_lock);
 -
--static void ks8695_irq_unmask(struct irq_data *d)
--{
--	unsigned long inten;
--
--	inten = __raw_readl(KS8695_IRQ_VA + KS8695_INTEN);
--	inten |= (1 << d->irq);
--
--	__raw_writel(inten, KS8695_IRQ_VA + KS8695_INTEN);
--}
--
--static void ks8695_irq_ack(struct irq_data *d)
--{
--	__raw_writel((1 << d->irq), KS8695_IRQ_VA + KS8695_INTST);
--}
--
--
--static struct irq_chip ks8695_irq_level_chip;
--static struct irq_chip ks8695_irq_edge_chip;
--
--
--static int ks8695_irq_set_type(struct irq_data *d, unsigned int type)
--{
--	unsigned long ctrl, mode;
--	unsigned short level_triggered = 0;
--
--	ctrl = __raw_readl(KS8695_GPIO_VA + KS8695_IOPC);
--
--	switch (type) {
--		case IRQ_TYPE_LEVEL_HIGH:
--			mode = IOPC_TM_HIGH;
--			level_triggered = 1;
--			break;
--		case IRQ_TYPE_LEVEL_LOW:
--			mode = IOPC_TM_LOW;
--			level_triggered = 1;
--			break;
--		case IRQ_TYPE_EDGE_RISING:
--			mode = IOPC_TM_RISING;
--			break;
--		case IRQ_TYPE_EDGE_FALLING:
--			mode = IOPC_TM_FALLING;
--			break;
--		case IRQ_TYPE_EDGE_BOTH:
--			mode = IOPC_TM_EDGE;
--			break;
--		default:
--			return -EINVAL;
+-#define DEFINE_GROUP(_name, _ctrlbit, _num)				\
+-struct group_irq group_##_name = {					\
+-		.enable		= nuc900_group_enable,			\
+-		.gpen		= ((1 << _num) - 1) << _ctrlbit,	\
 -	}
+-
+-static void nuc900_group_enable(struct group_irq *gpirq, int enable);
+-
+-static DEFINE_GROUP(nirq0, 0, 4);
+-static DEFINE_GROUP(nirq1, 4, 4);
+-static DEFINE_GROUP(usbh, 8, 2);
+-static DEFINE_GROUP(ottimer, 16, 3);
+-static DEFINE_GROUP(gdma, 20, 2);
+-static DEFINE_GROUP(sc, 24, 2);
+-static DEFINE_GROUP(i2c, 26, 2);
+-static DEFINE_GROUP(ps2, 28, 2);
+-
+-static int group_irq_enable(struct group_irq *group_irq)
+-{
+-	unsigned long flags;
+-
+-	spin_lock_irqsave(&groupirq_lock, flags);
+-	if (group_irq->enabled++ == 0)
+-		(group_irq->enable)(group_irq, 1);
+-	spin_unlock_irqrestore(&groupirq_lock, flags);
+-
+-	return 0;
+-}
+-
+-static void group_irq_disable(struct group_irq *group_irq)
+-{
+-	unsigned long flags;
+-
+-	WARN_ON(group_irq->enabled == 0);
+-
+-	spin_lock_irqsave(&groupirq_lock, flags);
+-	if (--group_irq->enabled == 0)
+-		(group_irq->enable)(group_irq, 0);
+-	spin_unlock_irqrestore(&groupirq_lock, flags);
+-}
+-
+-static void nuc900_group_enable(struct group_irq *gpirq, int enable)
+-{
+-	unsigned int groupen = gpirq->gpen;
+-	unsigned long regval;
+-
+-	regval = __raw_readl(REG_AIC_GEN);
+-
+-	if (enable)
+-		regval |= groupen;
+-	else
+-		regval &= ~groupen;
+-
+-	__raw_writel(regval, REG_AIC_GEN);
+-}
+-
+-static void nuc900_irq_mask(struct irq_data *d)
+-{
+-	struct group_irq *group_irq;
+-
+-	group_irq = NULL;
+-
+-	__raw_writel(1 << d->irq, REG_AIC_MDCR);
 -
 -	switch (d->irq) {
--		case KS8695_IRQ_EXTERN0:
--			ctrl &= ~IOPC_IOEINT0TM;
--			ctrl |= IOPC_IOEINT0_MODE(mode);
--			break;
--		case KS8695_IRQ_EXTERN1:
--			ctrl &= ~IOPC_IOEINT1TM;
--			ctrl |= IOPC_IOEINT1_MODE(mode);
--			break;
--		case KS8695_IRQ_EXTERN2:
--			ctrl &= ~IOPC_IOEINT2TM;
--			ctrl |= IOPC_IOEINT2_MODE(mode);
--			break;
--		case KS8695_IRQ_EXTERN3:
--			ctrl &= ~IOPC_IOEINT3TM;
--			ctrl |= IOPC_IOEINT3_MODE(mode);
--			break;
--		default:
--			return -EINVAL;
+-	case IRQ_GROUP0:
+-		group_irq = &group_nirq0;
+-		break;
+-
+-	case IRQ_GROUP1:
+-		group_irq = &group_nirq1;
+-		break;
+-
+-	case IRQ_USBH:
+-		group_irq = &group_usbh;
+-		break;
+-
+-	case IRQ_T_INT_GROUP:
+-		group_irq = &group_ottimer;
+-		break;
+-
+-	case IRQ_GDMAGROUP:
+-		group_irq = &group_gdma;
+-		break;
+-
+-	case IRQ_SCGROUP:
+-		group_irq = &group_sc;
+-		break;
+-
+-	case IRQ_I2CGROUP:
+-		group_irq = &group_i2c;
+-		break;
+-
+-	case IRQ_P2SGROUP:
+-		group_irq = &group_ps2;
+-		break;
 -	}
 -
--	if (level_triggered) {
--		irq_set_chip_and_handler(d->irq, &ks8695_irq_level_chip,
--					 handle_level_irq);
--	}
--	else {
--		irq_set_chip_and_handler(d->irq, &ks8695_irq_edge_chip,
--					 handle_edge_irq);
--	}
--
--	__raw_writel(ctrl, KS8695_GPIO_VA + KS8695_IOPC);
--	return 0;
+-	if (group_irq)
+-		group_irq_disable(group_irq);
 -}
 -
--static struct irq_chip ks8695_irq_level_chip = {
--	.irq_ack	= ks8695_irq_mask,
--	.irq_mask	= ks8695_irq_mask,
--	.irq_unmask	= ks8695_irq_unmask,
--	.irq_set_type	= ks8695_irq_set_type,
--};
--
--static struct irq_chip ks8695_irq_edge_chip = {
--	.irq_ack	= ks8695_irq_ack,
--	.irq_mask	= ks8695_irq_mask,
--	.irq_unmask	= ks8695_irq_unmask,
--	.irq_set_type	= ks8695_irq_set_type,
--};
--
--void __init ks8695_init_irq(void)
--{
--	unsigned int irq;
--
--	/* Disable all interrupts initially */
--	__raw_writel(0, KS8695_IRQ_VA + KS8695_INTMC);
--	__raw_writel(0, KS8695_IRQ_VA + KS8695_INTEN);
--
--	for (irq = 0; irq < NR_IRQS; irq++) {
--		switch (irq) {
--			/* Level-triggered interrupts */
--			case KS8695_IRQ_BUS_ERROR:
--			case KS8695_IRQ_UART_MODEM_STATUS:
--			case KS8695_IRQ_UART_LINE_STATUS:
--			case KS8695_IRQ_UART_RX:
--			case KS8695_IRQ_COMM_TX:
--			case KS8695_IRQ_COMM_RX:
--				irq_set_chip_and_handler(irq,
--							 &ks8695_irq_level_chip,
--							 handle_level_irq);
--				break;
--
--			/* Edge-triggered interrupts */
--			default:
--				/* clear pending bit */
--				ks8695_irq_ack(irq_get_irq_data(irq));
--				irq_set_chip_and_handler(irq,
--							 &ks8695_irq_edge_chip,
--							 handle_edge_irq);
--		}
--
--		irq_clear_status_flags(irq, IRQ_NOREQUEST);
--	}
--}
-diff --git a/arch/arm/mach-ks8695/pci.c b/arch/arm/mach-ks8695/pci.c
-deleted file mode 100644
-index 83f330bf07dd..000000000000
---- a/arch/arm/mach-ks8695/pci.c
-+++ /dev/null
-@@ -1,247 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-or-later
 -/*
-- * arch/arm/mach-ks8695/pci.c
-- *
-- *  Copyright (C) 2003, Micrel Semiconductors
-- *  Copyright (C) 2006, Greg Ungerer <gerg@snapgear.com>
-- *  Copyright (C) 2006, Ben Dooks
-- *  Copyright (C) 2007, Andrew Victor
+- * By the w90p910 spec,any irq,only write 1
+- * to REG_AIC_EOSCR for ACK
 - */
 -
+-static void nuc900_irq_ack(struct irq_data *d)
+-{
+-	__raw_writel(0x01, REG_AIC_EOSCR);
+-}
+-
+-static void nuc900_irq_unmask(struct irq_data *d)
+-{
+-	struct group_irq *group_irq;
+-
+-	group_irq = NULL;
+-
+-	__raw_writel(1 << d->irq, REG_AIC_MECR);
+-
+-	switch (d->irq) {
+-	case IRQ_GROUP0:
+-		group_irq = &group_nirq0;
+-		break;
+-
+-	case IRQ_GROUP1:
+-		group_irq = &group_nirq1;
+-		break;
+-
+-	case IRQ_USBH:
+-		group_irq = &group_usbh;
+-		break;
+-
+-	case IRQ_T_INT_GROUP:
+-		group_irq = &group_ottimer;
+-		break;
+-
+-	case IRQ_GDMAGROUP:
+-		group_irq = &group_gdma;
+-		break;
+-
+-	case IRQ_SCGROUP:
+-		group_irq = &group_sc;
+-		break;
+-
+-	case IRQ_I2CGROUP:
+-		group_irq = &group_i2c;
+-		break;
+-
+-	case IRQ_P2SGROUP:
+-		group_irq = &group_ps2;
+-		break;
+-	}
+-
+-	if (group_irq)
+-		group_irq_enable(group_irq);
+-}
+-
+-static struct irq_chip nuc900_irq_chip = {
+-	.irq_ack	= nuc900_irq_ack,
+-	.irq_mask	= nuc900_irq_mask,
+-	.irq_unmask	= nuc900_irq_unmask,
+-};
+-
+-void __init nuc900_init_irq(void)
+-{
+-	int irqno;
+-
+-	__raw_writel(0xFFFFFFFE, REG_AIC_MDCR);
+-
+-	for (irqno = IRQ_WDT; irqno <= IRQ_ADC; irqno++) {
+-		irq_set_chip_and_handler(irqno, &nuc900_irq_chip,
+-					 handle_level_irq);
+-		irq_clear_status_flags(irqno, IRQ_NOREQUEST);
+-	}
+-}
+diff --git a/arch/arm/mach-w90x900/mach-nuc910evb.c b/arch/arm/mach-w90x900/mach-nuc910evb.c
+deleted file mode 100644
+index e6d30af3e35a..000000000000
+--- a/arch/arm/mach-w90x900/mach-nuc910evb.c
++++ /dev/null
+@@ -1,38 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- * linux/arch/arm/mach-w90x900/mach-nuc910evb.c
+- *
+- * Based on mach-s3c2410/mach-smdk2410.c by Jonas Dietsche
+- *
+- * Copyright (C) 2008 Nuvoton technology corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
+-
+-#include <linux/platform_device.h>
+-#include <asm/mach/arch.h>
+-#include <asm/mach/map.h>
+-#include <asm/mach-types.h>
+-#include <mach/map.h>
+-
+-#include "nuc910.h"
+-
+-static void __init nuc910evb_map_io(void)
+-{
+-	nuc910_map_io();
+-	nuc910_init_clocks();
+-}
+-
+-static void __init nuc910evb_init(void)
+-{
+-	nuc910_board_init();
+-}
+-
+-MACHINE_START(W90P910EVB, "W90P910EVB")
+-	/* Maintainer: Wan ZongShun */
+-	.map_io		= nuc910evb_map_io,
+-	.init_irq	= nuc900_init_irq,
+-	.init_machine	= nuc910evb_init,
+-	.init_time	= nuc900_timer_init,
+-	.restart	= nuc9xx_restart,
+-MACHINE_END
+diff --git a/arch/arm/mach-w90x900/mach-nuc950evb.c b/arch/arm/mach-w90x900/mach-nuc950evb.c
+deleted file mode 100644
+index 62547308c344..000000000000
+--- a/arch/arm/mach-w90x900/mach-nuc950evb.c
++++ /dev/null
+@@ -1,42 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- * linux/arch/arm/mach-w90x900/mach-nuc950evb.c
+- *
+- * Based on mach-s3c2410/mach-smdk2410.c by Jonas Dietsche
+- *
+- * Copyright (C) 2008 Nuvoton technology corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- *
+- *   history:
+- *     Wang Qiang (rurality.linux@gmail.com) add LCD support
+- */
+-
+-#include <linux/platform_device.h>
+-#include <asm/mach/arch.h>
+-#include <asm/mach/map.h>
+-#include <asm/mach-types.h>
+-#include <mach/map.h>
+-#include <linux/platform_data/video-nuc900fb.h>
+-
+-#include "nuc950.h"
+-
+-static void __init nuc950evb_map_io(void)
+-{
+-	nuc950_map_io();
+-	nuc950_init_clocks();
+-}
+-
+-static void __init nuc950evb_init(void)
+-{
+-	nuc950_board_init();
+-}
+-
+-MACHINE_START(W90P950EVB, "W90P950EVB")
+-	/* Maintainer: Wan ZongShun */
+-	.map_io		= nuc950evb_map_io,
+-	.init_irq	= nuc900_init_irq,
+-	.init_machine	= nuc950evb_init,
+-	.init_time	= nuc900_timer_init,
+-	.restart	= nuc9xx_restart,
+-MACHINE_END
+diff --git a/arch/arm/mach-w90x900/mach-nuc960evb.c b/arch/arm/mach-w90x900/mach-nuc960evb.c
+deleted file mode 100644
+index 35a53459d0d2..000000000000
+--- a/arch/arm/mach-w90x900/mach-nuc960evb.c
++++ /dev/null
+@@ -1,38 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- * linux/arch/arm/mach-w90x900/mach-nuc960evb.c
+- *
+- * Based on mach-s3c2410/mach-smdk2410.c by Jonas Dietsche
+- *
+- * Copyright (C) 2008 Nuvoton technology corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
+-
+-#include <linux/platform_device.h>
+-#include <asm/mach/arch.h>
+-#include <asm/mach/map.h>
+-#include <asm/mach-types.h>
+-#include <mach/map.h>
+-
+-#include "nuc960.h"
+-
+-static void __init nuc960evb_map_io(void)
+-{
+-	nuc960_map_io();
+-	nuc960_init_clocks();
+-}
+-
+-static void __init nuc960evb_init(void)
+-{
+-	nuc960_board_init();
+-}
+-
+-MACHINE_START(W90N960EVB, "W90N960EVB")
+-	/* Maintainer: Wan ZongShun */
+-	.map_io		= nuc960evb_map_io,
+-	.init_irq	= nuc900_init_irq,
+-	.init_machine	= nuc960evb_init,
+-	.init_time	= nuc900_timer_init,
+-	.restart	= nuc9xx_restart,
+-MACHINE_END
+diff --git a/arch/arm/mach-w90x900/mfp.c b/arch/arm/mach-w90x900/mfp.c
+deleted file mode 100644
+index 05f3779a3618..000000000000
+--- a/arch/arm/mach-w90x900/mfp.c
++++ /dev/null
+@@ -1,197 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- * linux/arch/arm/mach-w90x900/mfp.c
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
+-
+-#include <linux/module.h>
 -#include <linux/kernel.h>
--#include <linux/pci.h>
--#include <linux/mm.h>
--#include <linux/init.h>
--#include <linux/irq.h>
--#include <linux/delay.h>
+-#include <linux/device.h>
+-#include <linux/list.h>
+-#include <linux/errno.h>
+-#include <linux/err.h>
+-#include <linux/string.h>
+-#include <linux/clk.h>
+-#include <linux/mutex.h>
 -#include <linux/io.h>
 -
--#include <asm/signal.h>
--#include <asm/mach/pci.h>
 -#include <mach/hardware.h>
 -
--#include "devices.h"
--#include "regs-pci.h"
+-#define REG_MFSEL	(W90X900_VA_GCR + 0xC)
 -
+-#define GPSELF		(0x01 << 1)
+-#define GPSELC		(0x03 << 2)
+-#define GPSELD		(0x0f << 4)
 -
--static int pci_dbg;
+-#define GPSELEI0	(0x01 << 26)
+-#define GPSELEI1	(0x01 << 27)
 -
--static void ks8695_pci_setupconfig(unsigned int bus_nr, unsigned int devfn, unsigned int where)
+-#define GPIOG0TO1	(0x03 << 14)
+-#define GPIOG2TO3	(0x03 << 16)
+-#define GPIOG22TO23	(0x03 << 22)
+-#define GPIOG18TO20	(0x07 << 18)
+-
+-#define ENSPI		(0x0a << 14)
+-#define ENI2C0		(0x01 << 14)
+-#define ENI2C1		(0x01 << 16)
+-#define ENAC97		(0x02 << 22)
+-#define ENSD1		(0x02 << 18)
+-#define ENSD0		(0x0a << 4)
+-#define ENKPI		(0x02 << 2)
+-#define ENNAND		(0x01 << 2)
+-
+-static DEFINE_MUTEX(mfp_mutex);
+-
+-void mfp_set_groupf(struct device *dev)
 -{
--	unsigned long pbca;
+-	unsigned long mfpen;
+-	const char *dev_id;
 -
--	pbca = PBCA_ENABLE | (where & ~3);
--	pbca |= PCI_SLOT(devfn) << 11 ;
--	pbca |= PCI_FUNC(devfn) << 8;
--	pbca |= bus_nr << 16;
+-	BUG_ON(!dev);
 -
--	if (bus_nr == 0) {
--		/* use Type-0 transaction */
--		__raw_writel(pbca, KS8695_PCI_VA + KS8695_PBCA);
+-	mutex_lock(&mfp_mutex);
+-
+-	dev_id = dev_name(dev);
+-
+-	mfpen = __raw_readl(REG_MFSEL);
+-
+-	if (strcmp(dev_id, "nuc900-emc") == 0)
+-		mfpen |= GPSELF;/*enable mac*/
+-	else
+-		mfpen &= ~GPSELF;/*GPIOF[9:0]*/
+-
+-	__raw_writel(mfpen, REG_MFSEL);
+-
+-	mutex_unlock(&mfp_mutex);
+-}
+-EXPORT_SYMBOL(mfp_set_groupf);
+-
+-void mfp_set_groupc(struct device *dev)
+-{
+-	unsigned long mfpen;
+-	const char *dev_id;
+-
+-	BUG_ON(!dev);
+-
+-	mutex_lock(&mfp_mutex);
+-
+-	dev_id = dev_name(dev);
+-
+-	mfpen = __raw_readl(REG_MFSEL);
+-
+-	if (strcmp(dev_id, "nuc900-lcd") == 0)
+-		mfpen |= GPSELC;/*enable lcd*/
+-	else if (strcmp(dev_id, "nuc900-kpi") == 0) {
+-		mfpen &= (~GPSELC);/*enable kpi*/
+-		mfpen |= ENKPI;
+-	} else if (strcmp(dev_id, "nuc900-nand") == 0) {
+-		mfpen &= (~GPSELC);/*enable nand*/
+-		mfpen |= ENNAND;
+-	} else
+-		mfpen &= (~GPSELC);/*GPIOC[14:0]*/
+-
+-	__raw_writel(mfpen, REG_MFSEL);
+-
+-	mutex_unlock(&mfp_mutex);
+-}
+-EXPORT_SYMBOL(mfp_set_groupc);
+-
+-void mfp_set_groupi(struct device *dev)
+-{
+-	unsigned long mfpen;
+-	const char *dev_id;
+-
+-	BUG_ON(!dev);
+-
+-	mutex_lock(&mfp_mutex);
+-
+-	dev_id = dev_name(dev);
+-
+-	mfpen = __raw_readl(REG_MFSEL);
+-
+-	mfpen &= ~GPSELEI1;/*default gpio16*/
+-
+-	if (strcmp(dev_id, "nuc900-wdog") == 0)
+-		mfpen |= GPSELEI1;/*enable wdog*/
+-	else if (strcmp(dev_id, "nuc900-atapi") == 0)
+-		mfpen |= GPSELEI0;/*enable atapi*/
+-	else if (strcmp(dev_id, "nuc900-keypad") == 0)
+-		mfpen &= ~GPSELEI0;/*enable keypad*/
+-
+-	__raw_writel(mfpen, REG_MFSEL);
+-
+-	mutex_unlock(&mfp_mutex);
+-}
+-EXPORT_SYMBOL(mfp_set_groupi);
+-
+-void mfp_set_groupg(struct device *dev, const char *subname)
+-{
+-	unsigned long mfpen;
+-	const char *dev_id;
+-
+-	BUG_ON((!dev) && (!subname));
+-
+-	mutex_lock(&mfp_mutex);
+-
+-	if (subname != NULL)
+-		dev_id = subname;
+-	else
+-		dev_id = dev_name(dev);
+-
+-	mfpen = __raw_readl(REG_MFSEL);
+-
+-	if (strcmp(dev_id, "nuc900-spi") == 0) {
+-		mfpen &= ~(GPIOG0TO1 | GPIOG2TO3);
+-		mfpen |= ENSPI;/*enable spi*/
+-	} else if (strcmp(dev_id, "nuc900-i2c0") == 0) {
+-		mfpen &= ~(GPIOG0TO1);
+-		mfpen |= ENI2C0;/*enable i2c0*/
+-	} else if (strcmp(dev_id, "nuc900-i2c1") == 0) {
+-		mfpen &= ~(GPIOG2TO3);
+-		mfpen |= ENI2C1;/*enable i2c1*/
+-	} else if (strcmp(dev_id, "nuc900-ac97") == 0) {
+-		mfpen &= ~(GPIOG22TO23);
+-		mfpen |= ENAC97;/*enable AC97*/
+-	} else if (strcmp(dev_id, "nuc900-mmc-port1") == 0) {
+-		mfpen &= ~(GPIOG18TO20);
+-		mfpen |= (ENSD1 | 0x01);/*enable sd1*/
 -	} else {
--		/* use Type-1 transaction */
--		__raw_writel(pbca | PBCA_TYPE1, KS8695_PCI_VA + KS8695_PBCA);
+-		mfpen &= ~(GPIOG0TO1 | GPIOG2TO3);/*GPIOG[3:0]*/
 -	}
--}
 -
--static void __iomem *ks8695_pci_map_bus(struct pci_bus *bus, unsigned int devfn,
--					int where)
+-	__raw_writel(mfpen, REG_MFSEL);
+-
+-	mutex_unlock(&mfp_mutex);
+-}
+-EXPORT_SYMBOL(mfp_set_groupg);
+-
+-void mfp_set_groupd(struct device *dev, const char *subname)
 -{
--	ks8695_pci_setupconfig(bus->number, devfn, where);
--	return KS8695_PCI_VA +  KS8695_PBCD;
--}
+-	unsigned long mfpen;
+-	const char *dev_id;
 -
--static void ks8695_local_writeconfig(int where, u32 value)
--{
--	ks8695_pci_setupconfig(0, 0, where);
--	__raw_writel(value, KS8695_PCI_VA + KS8695_PBCD);
--}
+-	BUG_ON((!dev) && (!subname));
 -
--static struct pci_ops ks8695_pci_ops = {
--	.map_bus = ks8695_pci_map_bus,
--	.read	= pci_generic_config_read32,
--	.write	= pci_generic_config_write32,
+-	mutex_lock(&mfp_mutex);
+-
+-	if (subname != NULL)
+-		dev_id = subname;
+-	else
+-		dev_id = dev_name(dev);
+-
+-	mfpen = __raw_readl(REG_MFSEL);
+-
+-	if (strcmp(dev_id, "nuc900-mmc-port0") == 0) {
+-		mfpen &= ~GPSELD;/*enable sd0*/
+-		mfpen |= ENSD0;
+-	} else
+-		mfpen &= (~GPSELD);
+-
+-	__raw_writel(mfpen, REG_MFSEL);
+-
+-	mutex_unlock(&mfp_mutex);
+-}
+-EXPORT_SYMBOL(mfp_set_groupd);
+diff --git a/arch/arm/mach-w90x900/nuc910.c b/arch/arm/mach-w90x900/nuc910.c
+deleted file mode 100644
+index 45ae8285bfc9..000000000000
+--- a/arch/arm/mach-w90x900/nuc910.c
++++ /dev/null
+@@ -1,58 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- * linux/arch/arm/mach-w90x900/nuc910.c
+- *
+- * Based on linux/arch/arm/plat-s3c24xx/s3c244x.c by Ben Dooks
+- *
+- * Copyright (c) 2009 Nuvoton corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- *
+- * NUC910 cpu support
+- */
+-
+-#include <linux/platform_device.h>
+-#include <asm/mach/map.h>
+-#include <mach/hardware.h>
+-#include "cpu.h"
+-#include "clock.h"
+-
+-/* define specific CPU platform device */
+-
+-static struct platform_device *nuc910_dev[] __initdata = {
+-	&nuc900_device_ts,
+-	&nuc900_device_rtc,
+-	&nuc900_device_lcd,
+-	&nuc900_device_kpi,
 -};
 -
--static struct resource pci_mem = {
--	.name	= "PCI Memory space",
--	.start	= KS8695_PCIMEM_PA,
--	.end	= KS8695_PCIMEM_PA + (KS8695_PCIMEM_SIZE - 1),
--	.flags	= IORESOURCE_MEM,
+-/* define specific CPU platform io map */
+-
+-static struct map_desc nuc910evb_iodesc[] __initdata = {
+-	IODESC_ENT(USBEHCIHOST),
+-	IODESC_ENT(USBOHCIHOST),
+-	IODESC_ENT(KPI),
+-	IODESC_ENT(USBDEV),
+-	IODESC_ENT(ADC),
 -};
 -
--static struct resource pci_io = {
--	.name	= "PCI IO space",
--	.start	= KS8695_PCIIO_PA,
--	.end	= KS8695_PCIIO_PA + (KS8695_PCIIO_SIZE - 1),
--	.flags	= IORESOURCE_IO,
+-/*Init NUC910 evb io*/
+-
+-void __init nuc910_map_io(void)
+-{
+-	nuc900_map_io(nuc910evb_iodesc, ARRAY_SIZE(nuc910evb_iodesc));
+-}
+-
+-/*Init NUC910 clock*/
+-
+-void __init nuc910_init_clocks(void)
+-{
+-	nuc900_init_clocks();
+-}
+-
+-/*Init NUC910 board info*/
+-
+-void __init nuc910_board_init(void)
+-{
+-	nuc900_board_init(nuc910_dev, ARRAY_SIZE(nuc910_dev));
+-}
+diff --git a/arch/arm/mach-w90x900/nuc910.h b/arch/arm/mach-w90x900/nuc910.h
+deleted file mode 100644
+index 53be3323736f..000000000000
+--- a/arch/arm/mach-w90x900/nuc910.h
++++ /dev/null
+@@ -1,17 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * arch/arm/mach-w90x900/nuc910.h
+- *
+- * Copyright (c) 2008 Nuvoton corporation
+- *
+- * Header file for NUC900 CPU support
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
+-#include "nuc9xx.h"
+-
+-/* extern file from nuc910.c */
+-
+-extern void nuc910_board_init(void);
+-extern void nuc910_init_clocks(void);
+-extern void nuc910_map_io(void);
+diff --git a/arch/arm/mach-w90x900/nuc950.c b/arch/arm/mach-w90x900/nuc950.c
+deleted file mode 100644
+index 3be114249cd8..000000000000
+--- a/arch/arm/mach-w90x900/nuc950.c
++++ /dev/null
+@@ -1,52 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- * linux/arch/arm/mach-w90x900/nuc950.c
+- *
+- * Based on linux/arch/arm/plat-s3c24xx/s3c244x.c by Ben Dooks
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- *
+- * NUC950 cpu support
+- */
+-
+-#include <linux/platform_device.h>
+-#include <asm/mach/map.h>
+-#include <mach/hardware.h>
+-
+-#include "cpu.h"
+-
+-/* define specific CPU platform device */
+-
+-static struct platform_device *nuc950_dev[] __initdata = {
+-	&nuc900_device_kpi,
+-	&nuc900_device_fmi,
+-	&nuc900_device_lcd,
 -};
 -
--static int __init ks8695_pci_setup(int nr, struct pci_sys_data *sys)
--{
--	if (nr > 0)
--		return 0;
+-/* define specific CPU platform io map */
 -
--	request_resource(&iomem_resource, &pci_mem);
--	request_resource(&ioport_resource, &pci_io);
--
--	pci_add_resource_offset(&sys->resources, &pci_io, sys->io_offset);
--	pci_add_resource_offset(&sys->resources, &pci_mem, sys->mem_offset);
--
--	/* Assign and enable processor bridge */
--	ks8695_local_writeconfig(PCI_BASE_ADDRESS_0, KS8695_PCIMEM_PA);
--
--	/* Enable bus-master & Memory Space access */
--	ks8695_local_writeconfig(PCI_COMMAND, PCI_COMMAND_MASTER | PCI_COMMAND_MEMORY);
--
--	/* Set cache-line size & latency. */
--	ks8695_local_writeconfig(PCI_CACHE_LINE_SIZE, (32 << 8) | (L1_CACHE_BYTES / sizeof(u32)));
--
--	/* Reserve PCI memory space for PCI-AHB resources */
--	if (!request_mem_region(KS8695_PCIMEM_PA, SZ_64M, "PCI-AHB Bridge")) {
--		printk(KERN_ERR "Cannot allocate PCI-AHB Bridge memory.\n");
--		return -EBUSY;
--	}
--
--	return 1;
--}
--
--static inline unsigned int size_mask(unsigned long size)
--{
--	return (~size) + 1;
--}
--
--static int ks8695_pci_fault(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
--{
--	unsigned long pc = instruction_pointer(regs);
--	unsigned long instr = *(unsigned long *)pc;
--	unsigned long cmdstat;
--
--	cmdstat = __raw_readl(KS8695_PCI_VA + KS8695_CRCFCS);
--
--	printk(KERN_ERR "PCI abort: address = 0x%08lx fsr = 0x%03x PC = 0x%08lx LR = 0x%08lx [%s%s%s%s%s]\n",
--		addr, fsr, regs->ARM_pc, regs->ARM_lr,
--		cmdstat & (PCI_STATUS_SIG_TARGET_ABORT << 16) ? "GenTarget" : " ",
--		cmdstat & (PCI_STATUS_REC_TARGET_ABORT << 16) ? "RecvTarget" : " ",
--		cmdstat & (PCI_STATUS_REC_MASTER_ABORT << 16) ? "MasterAbort" : " ",
--		cmdstat & (PCI_STATUS_SIG_SYSTEM_ERROR << 16) ? "SysError" : " ",
--		cmdstat & (PCI_STATUS_DETECTED_PARITY << 16)  ? "Parity" : " "
--	);
--
--	__raw_writel(cmdstat, KS8695_PCI_VA + KS8695_CRCFCS);
--
--	/*
--	 * If the instruction being executed was a read,
--	 * make it look like it read all-ones.
--	 */
--	if ((instr & 0x0c100000) == 0x04100000) {
--		int reg = (instr >> 12) & 15;
--		unsigned long val;
--
--		if (instr & 0x00400000)
--			val = 255;
--		else
--			val = -1;
--
--		regs->uregs[reg] = val;
--		regs->ARM_pc += 4;
--		return 0;
--	}
--
--	if ((instr & 0x0e100090) == 0x00100090) {
--		int reg = (instr >> 12) & 15;
--
--		regs->uregs[reg] = -1;
--		regs->ARM_pc += 4;
--		return 0;
--	}
--
--	return 1;
--}
--
--static void __init ks8695_pci_preinit(void)
--{
--	/* make software reset to avoid freeze if PCI bus was messed up */
--	__raw_writel(0x80000000, KS8695_PCI_VA + KS8695_PBCS);
--
--	/* stage 1 initialization, subid, subdevice = 0x0001 */
--	__raw_writel(0x00010001, KS8695_PCI_VA + KS8695_CRCSID);
--
--	/* stage 2 initialization */
--	/* prefetch limits with 16 words, retry enable */
--	__raw_writel(0x40000000, KS8695_PCI_VA + KS8695_PBCS);
--
--	/* configure memory mapping */
--	__raw_writel(KS8695_PCIMEM_PA, KS8695_PCI_VA + KS8695_PMBA);
--	__raw_writel(size_mask(KS8695_PCIMEM_SIZE), KS8695_PCI_VA + KS8695_PMBAM);
--	__raw_writel(KS8695_PCIMEM_PA, KS8695_PCI_VA + KS8695_PMBAT);
--	__raw_writel(0, KS8695_PCI_VA + KS8695_PMBAC);
--
--	/* configure IO mapping */
--	__raw_writel(KS8695_PCIIO_PA, KS8695_PCI_VA + KS8695_PIOBA);
--	__raw_writel(size_mask(KS8695_PCIIO_SIZE), KS8695_PCI_VA + KS8695_PIOBAM);
--	__raw_writel(KS8695_PCIIO_PA, KS8695_PCI_VA + KS8695_PIOBAT);
--	__raw_writel(0, KS8695_PCI_VA + KS8695_PIOBAC);
--
--	/* hook in fault handlers */
--	hook_fault_code(8, ks8695_pci_fault, SIGBUS, 0, "external abort on non-linefetch");
--	hook_fault_code(10, ks8695_pci_fault, SIGBUS, 0, "external abort on non-linefetch");
--}
--
--static void ks8695_show_pciregs(void)
--{
--	if (!pci_dbg)
--		return;
--
--	printk(KERN_INFO "PCI: CRCFID = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_CRCFID));
--	printk(KERN_INFO "PCI: CRCFCS = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_CRCFCS));
--	printk(KERN_INFO "PCI: CRCFRV = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_CRCFRV));
--	printk(KERN_INFO "PCI: CRCFLT = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_CRCFLT));
--	printk(KERN_INFO "PCI: CRCBMA = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_CRCBMA));
--	printk(KERN_INFO "PCI: CRCSID = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_CRCSID));
--	printk(KERN_INFO "PCI: CRCFIT = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_CRCFIT));
--
--	printk(KERN_INFO "PCI: PBM    = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_PBM));
--	printk(KERN_INFO "PCI: PBCS   = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_PBCS));
--
--	printk(KERN_INFO "PCI: PMBA   = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_PMBA));
--	printk(KERN_INFO "PCI: PMBAC  = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_PMBAC));
--	printk(KERN_INFO "PCI: PMBAM  = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_PMBAM));
--	printk(KERN_INFO "PCI: PMBAT  = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_PMBAT));
--
--	printk(KERN_INFO "PCI: PIOBA  = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_PIOBA));
--	printk(KERN_INFO "PCI: PIOBAC = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_PIOBAC));
--	printk(KERN_INFO "PCI: PIOBAM = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_PIOBAM));
--	printk(KERN_INFO "PCI: PIOBAT = %08x\n", __raw_readl(KS8695_PCI_VA + KS8695_PIOBAT));
--}
--
--
--static struct hw_pci ks8695_pci __initdata = {
--	.nr_controllers	= 1,
--	.ops		= &ks8695_pci_ops,
--	.preinit	= ks8695_pci_preinit,
--	.setup		= ks8695_pci_setup,
--	.postinit	= NULL,
--	.map_irq	= NULL,
+-static struct map_desc nuc950evb_iodesc[] __initdata = {
 -};
 -
--void __init ks8695_init_pci(struct ks8695_pci_cfg *cfg)
+-/*Init NUC950 evb io*/
+-
+-void __init nuc950_map_io(void)
 -{
--	if (__raw_readl(KS8695_PCI_VA + KS8695_CRCFRV) & CFRV_GUEST) {
--		printk("PCI: KS8695 in guest mode, not initialising\n");
--		return;
--	}
--
--	pcibios_min_io = 0;
--	pcibios_min_mem = 0;
--
--	printk(KERN_INFO "PCI: Initialising\n");
--	ks8695_show_pciregs();
--
--	/* set Mode */
--	__raw_writel(cfg->mode << 29, KS8695_PCI_VA + KS8695_PBM);
--
--	ks8695_pci.map_irq = cfg->map_irq;	/* board-specific map_irq method */
--
--	pci_common_init(&ks8695_pci);
+-	nuc900_map_io(nuc950evb_iodesc, ARRAY_SIZE(nuc950evb_iodesc));
 -}
-diff --git a/arch/arm/mach-ks8695/regs-hpna.h b/arch/arm/mach-ks8695/regs-hpna.h
+-
+-/*Init NUC950 clock*/
+-
+-void __init nuc950_init_clocks(void)
+-{
+-	nuc900_init_clocks();
+-}
+-
+-/*Init NUC950 board info*/
+-
+-void __init nuc950_board_init(void)
+-{
+-	nuc900_board_init(nuc950_dev, ARRAY_SIZE(nuc950_dev));
+-}
+diff --git a/arch/arm/mach-w90x900/nuc950.h b/arch/arm/mach-w90x900/nuc950.h
 deleted file mode 100644
-index 815ce5c2e3b9..000000000000
---- a/arch/arm/mach-ks8695/regs-hpna.h
+index 23cff81ea630..000000000000
+--- a/arch/arm/mach-w90x900/nuc950.h
 +++ /dev/null
-@@ -1,25 +0,0 @@
+@@ -1,17 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
 -/*
-- * arch/arm/mach-ks8695/include/mach/regs-wan.h
+- * arch/arm/mach-w90x900/nuc950.h
 - *
-- * Copyright (C) 2006 Andrew Victor
+- * Copyright (c) 2008 Nuvoton corporation
 - *
-- * KS8695 - HPNA Registers and bit definitions.
+- * Header file for NUC900 CPU support
 - *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
+- * Wan ZongShun <mcuos.com@gmail.com>
 - */
+-#include "nuc9xx.h"
 -
--#ifndef KS8695_HPNA_H
--#define KS8695_HPNA_H
+-/* extern file from nuc950.c */
 -
--#define KS8695_HPNA_OFFSET	(0xF0000 + 0xA000)
--#define KS8695_HPNA_VA		(KS8695_IO_VA + KS8695_HPNA_OFFSET)
--#define KS8695_HPNA_PA		(KS8695_IO_PA + KS8695_HPNA_OFFSET)
--
--
--/*
-- * HPNA registers
-- */
--
--#endif
-diff --git a/arch/arm/mach-ks8695/regs-lan.h b/arch/arm/mach-ks8695/regs-lan.h
+-extern void nuc950_board_init(void);
+-extern void nuc950_init_clocks(void);
+-extern void nuc950_map_io(void);
+diff --git a/arch/arm/mach-w90x900/nuc960.c b/arch/arm/mach-w90x900/nuc960.c
 deleted file mode 100644
-index 82c5f3791afb..000000000000
---- a/arch/arm/mach-ks8695/regs-lan.h
+index 8a27d74b975e..000000000000
+--- a/arch/arm/mach-w90x900/nuc960.c
 +++ /dev/null
-@@ -1,65 +0,0 @@
+@@ -1,50 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
 -/*
-- * arch/arm/mach-ks8695/include/mach/regs-lan.h
+- * linux/arch/arm/mach-w90x900/nuc960.c
 - *
-- * Copyright (C) 2006 Andrew Victor
+- * Based on linux/arch/arm/plat-s3c24xx/s3c244x.c by Ben Dooks
 - *
-- * KS8695 - LAN Registers and bit definitions.
+- * Copyright (c) 2008 Nuvoton technology corporation.
 - *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
+- * Wan ZongShun <mcuos.com@gmail.com>
+- *
+- * NUC960 cpu support
 - */
 -
--#ifndef KS8695_LAN_H
--#define KS8695_LAN_H
+-#include <linux/platform_device.h>
+-#include <asm/mach/map.h>
+-#include <mach/hardware.h>
+-#include "cpu.h"
 -
--#define KS8695_LAN_OFFSET	(0xF0000 + 0x8000)
--#define KS8695_LAN_VA		(KS8695_IO_VA + KS8695_LAN_OFFSET)
--#define KS8695_LAN_PA		(KS8695_IO_PA + KS8695_LAN_OFFSET)
+-/* define specific CPU platform device */
 -
+-static struct platform_device *nuc960_dev[] __initdata = {
+-	&nuc900_device_kpi,
+-	&nuc900_device_fmi,
+-};
 -
--/*
-- * LAN registers
-- */
--#define KS8695_LMDTXC		(0x00)		/* DMA Transmit Control */
--#define KS8695_LMDRXC		(0x04)		/* DMA Receive Control */
--#define KS8695_LMDTSC		(0x08)		/* DMA Transmit Start Command */
--#define KS8695_LMDRSC		(0x0c)		/* DMA Receive Start Command */
--#define KS8695_LTDLB		(0x10)		/* Transmit Descriptor List Base Address */
--#define KS8695_LRDLB		(0x14)		/* Receive Descriptor List Base Address */
--#define KS8695_LMAL		(0x18)		/* MAC Station Address Low */
--#define KS8695_LMAH		(0x1c)		/* MAC Station Address High */
--#define KS8695_LMAAL(n)		(0x80 + ((n)*8))	/* MAC Additional Station Address (0..15) Low */
--#define KS8695_LMAAH(n)		(0x84 + ((n)*8))	/* MAC Additional Station Address (0..15) High */
+-/* define specific CPU platform io map */
 -
+-static struct map_desc nuc960evb_iodesc[] __initdata = {
+-};
 -
--/* DMA Transmit Control Register */
--#define LMDTXC_LMTRST		(1    << 31)	/* Soft Reset */
--#define LMDTXC_LMTBS		(0x3f << 24)	/* Transmit Burst Size */
--#define LMDTXC_LMTUCG		(1    << 18)	/* Transmit UDP Checksum Generate */
--#define LMDTXC_LMTTCG		(1    << 17)	/* Transmit TCP Checksum Generate */
--#define LMDTXC_LMTICG		(1    << 16)	/* Transmit IP Checksum Generate */
--#define LMDTXC_LMTFCE		(1    <<  9)	/* Transmit Flow Control Enable */
--#define LMDTXC_LMTLB		(1    <<  8)	/* Loopback mode */
--#define LMDTXC_LMTEP		(1    <<  2)	/* Transmit Enable Padding */
--#define LMDTXC_LMTAC		(1    <<  1)	/* Transmit Add CRC */
--#define LMDTXC_LMTE		(1    <<  0)	/* TX Enable */
+-/*Init NUC960 evb io*/
 -
--/* DMA Receive Control Register */
--#define LMDRXC_LMRBS		(0x3f << 24)	/* Receive Burst Size */
--#define LMDRXC_LMRUCC		(1    << 18)	/* Receive UDP Checksum check */
--#define LMDRXC_LMRTCG		(1    << 17)	/* Receive TCP Checksum check */
--#define LMDRXC_LMRICG		(1    << 16)	/* Receive IP Checksum check */
--#define LMDRXC_LMRFCE		(1    <<  9)	/* Receive Flow Control Enable */
--#define LMDRXC_LMRB		(1    <<  6)	/* Receive Broadcast */
--#define LMDRXC_LMRM		(1    <<  5)	/* Receive Multicast */
--#define LMDRXC_LMRU		(1    <<  4)	/* Receive Unicast */
--#define LMDRXC_LMRERR		(1    <<  3)	/* Receive Error Frame */
--#define LMDRXC_LMRA		(1    <<  2)	/* Receive All */
--#define LMDRXC_LMRE		(1    <<  1)	/* RX Enable */
+-void __init nuc960_map_io(void)
+-{
+-	nuc900_map_io(nuc960evb_iodesc, ARRAY_SIZE(nuc960evb_iodesc));
+-}
 -
--/* Additional Station Address High */
--#define LMAAH_E			(1    << 31)	/* Address Enabled */
+-/*Init NUC960 clock*/
 -
+-void __init nuc960_init_clocks(void)
+-{
+-	nuc900_init_clocks();
+-}
 -
--#endif
-diff --git a/arch/arm/mach-ks8695/regs-mem.h b/arch/arm/mach-ks8695/regs-mem.h
+-/*Init NUC960 board info*/
+-
+-void __init nuc960_board_init(void)
+-{
+-	nuc900_board_init(nuc960_dev, ARRAY_SIZE(nuc960_dev));
+-}
+diff --git a/arch/arm/mach-w90x900/nuc960.h b/arch/arm/mach-w90x900/nuc960.h
 deleted file mode 100644
-index 55806bc68ce3..000000000000
---- a/arch/arm/mach-ks8695/regs-mem.h
+index 88bb13c971dc..000000000000
+--- a/arch/arm/mach-w90x900/nuc960.h
 +++ /dev/null
-@@ -1,89 +0,0 @@
+@@ -1,17 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
 -/*
-- * arch/arm/mach-ks8695/include/mach/regs-mem.h
+- * arch/arm/mach-w90x900/nuc960.h
 - *
-- * Copyright (C) 2006 Andrew Victor
+- * Copyright (c) 2008 Nuvoton corporation
 - *
-- * KS8695 - Memory Controller registers and bit definitions
+- * Header file for NUC900 CPU support
 - *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
+- * Wan ZongShun <mcuos.com@gmail.com>
 - */
+-#include "nuc9xx.h"
 -
--#ifndef KS8695_MEM_H
--#define KS8695_MEM_H
+-/* extern file from nuc960.c */
 -
--#define KS8695_MEM_OFFSET	(0xF0000 + 0x4000)
--#define KS8695_MEM_VA		(KS8695_IO_VA + KS8695_MEM_OFFSET)
--#define KS8695_MEM_PA		(KS8695_IO_PA + KS8695_MEM_OFFSET)
--
--
--/*
-- * Memory Controller Registers
-- */
--#define KS8695_EXTACON0		(0x00)		/* External I/O 0 Access Control */
--#define KS8695_EXTACON1		(0x04)		/* External I/O 1 Access Control */
--#define KS8695_EXTACON2		(0x08)		/* External I/O 2 Access Control */
--#define KS8695_ROMCON0		(0x10)		/* ROM/SRAM/Flash 1 Control Register */
--#define KS8695_ROMCON1		(0x14)		/* ROM/SRAM/Flash 2 Control Register */
--#define KS8695_ERGCON		(0x20)		/* External I/O and ROM/SRAM/Flash General Register */
--#define KS8695_SDCON0		(0x30)		/* SDRAM Control Register 0 */
--#define KS8695_SDCON1		(0x34)		/* SDRAM Control Register 1 */
--#define KS8695_SDGCON		(0x38)		/* SDRAM General Control */
--#define KS8695_SDBCON		(0x3c)		/* SDRAM Buffer Control */
--#define KS8695_REFTIM		(0x40)		/* SDRAM Refresh Timer */
--
--
--/* External I/O Access Control Registers */
--#define EXTACON_EBNPTR		(0x3ff << 22)		/* Last Address Pointer */
--#define EXTACON_EBBPTR		(0x3ff << 12)		/* Base Pointer */
--#define EXTACON_EBTACT		(7     <<  9)		/* Write Enable/Output Enable Active Time */
--#define EXTACON_EBTCOH		(7     <<  6)		/* Chip Select Hold Time */
--#define EXTACON_EBTACS		(7     <<  3)		/* Address Setup Time before ECSN */
--#define EXTACON_EBTCOS		(7     <<  0)		/* Chip Select Time before OEN */
--
--/* ROM/SRAM/Flash Control Register */
--#define ROMCON_RBNPTR		(0x3ff << 22)		/* Next Pointer */
--#define ROMCON_RBBPTR		(0x3ff << 12)		/* Base Pointer */
--#define ROMCON_RBTACC		(7     <<  4)		/* Access Cycle Time */
--#define ROMCON_RBTPA		(3     <<  2)		/* Page Address Access Time */
--#define ROMCON_PMC		(3     <<  0)		/* Page Mode Configuration */
--#define		PMC_NORMAL		(0 << 0)
--#define		PMC_4WORD		(1 << 0)
--#define		PMC_8WORD		(2 << 0)
--#define		PMC_16WORD		(3 << 0)
--
--/* External I/O and ROM/SRAM/Flash General Register */
--#define ERGCON_TMULT		(3 << 28)		/* Time Multiplier */
--#define ERGCON_DSX2		(3 << 20)		/* Data Width (External I/O Bank 2) */
--#define ERGCON_DSX1		(3 << 18)		/* Data Width (External I/O Bank 1) */
--#define ERGCON_DSX0		(3 << 16)		/* Data Width (External I/O Bank 0) */
--#define ERGCON_DSR1		(3 <<  2)		/* Data Width (ROM/SRAM/Flash Bank 1) */
--#define ERGCON_DSR0		(3 <<  0)		/* Data Width (ROM/SRAM/Flash Bank 0) */
--
--/* SDRAM Control Register */
--#define SDCON_DBNPTR		(0x3ff << 22)		/* Last Address Pointer */
--#define SDCON_DBBPTR		(0x3ff << 12)		/* Base Pointer */
--#define SDCON_DBCAB		(3     <<  8)		/* Column Address Bits */
--#define SDCON_DBBNUM		(1     <<  3)		/* Number of Banks */
--#define SDCON_DBDBW		(3     <<  1)		/* Data Bus Width */
--
--/* SDRAM General Control Register */
--#define SDGCON_SDTRC		(3 << 2)		/* RAS to CAS latency */
--#define SDGCON_SDCAS		(3 << 0)		/* CAS latency */
--
--/* SDRAM Buffer Control Register */
--#define SDBCON_SDESTA		(1 << 31)		/* SDRAM Engine Status */
--#define SDBCON_RBUFBDIS		(1 << 24)		/* Read Buffer Burst Enable */
--#define SDBCON_WFIFOEN		(1 << 23)		/* Write FIFO Enable */
--#define SDBCON_RBUFEN		(1 << 22)		/* Read Buffer Enable */
--#define SDBCON_FLUSHWFIFO	(1 << 21)		/* Flush Write FIFO */
--#define SDBCON_RBUFINV		(1 << 20)		/* Read Buffer Invalidate */
--#define SDBCON_SDINI		(3 << 16)		/* SDRAM Initialization Control */
--#define SDBCON_SDMODE		(0x3fff << 0)		/* SDRAM Mode Register Value Program */
--
--/* SDRAM Refresh Timer Register */
--#define REFTIM_REFTIM		(0xffff << 0)		/* Refresh Timer Value */
--
--
--#endif
-diff --git a/arch/arm/mach-ks8695/regs-pci.h b/arch/arm/mach-ks8695/regs-pci.h
+-extern void nuc960_board_init(void);
+-extern void nuc960_init_clocks(void);
+-extern void nuc960_map_io(void);
+diff --git a/arch/arm/mach-w90x900/nuc9xx.h b/arch/arm/mach-w90x900/nuc9xx.h
 deleted file mode 100644
-index 75a9db6edbd9..000000000000
---- a/arch/arm/mach-ks8695/regs-pci.h
+index 21f6f9c304e8..000000000000
+--- a/arch/arm/mach-w90x900/nuc9xx.h
 +++ /dev/null
-@@ -1,53 +0,0 @@
+@@ -1,22 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
 -/*
-- * arch/arm/mach-ks8695/include/mach/regs-pci.h
+- * arch/arm/mach-w90x900/nuc9xx.h
 - *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
+- * Copied from nuc910.h, which had:
 - *
-- * KS8695 - PCI bridge registers and bit definitions.
+- * Copyright (c) 2008 Nuvoton corporation
 - *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
+- * Header file for NUC900 CPU support
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
 - */
 -
--#define KS8695_PCI_OFFSET	(0xF0000 + 0x2000)
--#define KS8695_PCI_VA		(KS8695_IO_VA + KS8695_PCI_OFFSET)
--#define KS8695_PCI_PA		(KS8695_IO_PA + KS8695_PCI_OFFSET)
+-#include <linux/reboot.h>
 -
+-struct map_desc;
 -
--#define KS8695_CRCFID		(0x000)		/* Configuration: Identification */
--#define KS8695_CRCFCS		(0x004)		/* Configuration: Command and Status */
--#define KS8695_CRCFRV		(0x008)		/* Configuration: Revision */
--#define KS8695_CRCFLT		(0x00C)		/* Configuration: Latency Timer */
--#define KS8695_CRCBMA		(0x010)		/* Configuration: Base Memory Address */
--#define KS8695_CRCSID		(0x02C)		/* Configuration: Subsystem ID */
--#define KS8695_CRCFIT		(0x03C)		/* Configuration: Interrupt */
--#define KS8695_PBCA		(0x100)		/* Bridge Configuration Address */
--#define KS8695_PBCD		(0x104)		/* Bridge Configuration Data */
--#define KS8695_PBM		(0x200)		/* Bridge Mode */
--#define KS8695_PBCS		(0x204)		/* Bridge Control and Status */
--#define KS8695_PMBA		(0x208)		/* Bridge Memory Base Address */
--#define KS8695_PMBAC		(0x20C)		/* Bridge Memory Base Address Control */
--#define KS8695_PMBAM		(0x210)		/* Bridge Memory Base Address Mask */
--#define KS8695_PMBAT		(0x214)		/* Bridge Memory Base Address Translation */
--#define KS8695_PIOBA		(0x218)		/* Bridge I/O Base Address */
--#define KS8695_PIOBAC		(0x21C)		/* Bridge I/O Base Address Control */
--#define KS8695_PIOBAM		(0x220)		/* Bridge I/O Base Address Mask */
--#define KS8695_PIOBAT		(0x224)		/* Bridge I/O Base Address Translation */
+-/* core initialisation functions */
 -
--
--/* Configuration: Identification */
--
--/* Configuration: Command and Status */
--
--/* Configuration: Revision */
--
--
--
--#define CFRV_GUEST		(1 << 23)
--
--#define PBCA_TYPE1		(1)
--#define PBCA_ENABLE		(1 << 31)
--
--
-diff --git a/arch/arm/mach-ks8695/regs-sys.h b/arch/arm/mach-ks8695/regs-sys.h
+-extern void nuc900_init_irq(void);
+-extern void nuc900_timer_init(void);
+-extern void nuc9xx_restart(enum reboot_mode, const char *);
+diff --git a/arch/arm/mach-w90x900/regs-ebi.h b/arch/arm/mach-w90x900/regs-ebi.h
 deleted file mode 100644
-index 57c20be0c129..000000000000
---- a/arch/arm/mach-ks8695/regs-sys.h
+index 3fb22702cfc0..000000000000
+--- a/arch/arm/mach-w90x900/regs-ebi.h
++++ /dev/null
+@@ -1,29 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * arch/arm/mach-w90x900/include/mach/regs-ebi.h
+- *
+- * Copyright (c) 2009 Nuvoton technology corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
+-
+-#ifndef __ASM_ARCH_REGS_EBI_H
+-#define __ASM_ARCH_REGS_EBI_H
+-
+-/* EBI Control Registers */
+-
+-#define EBI_BA		W90X900_VA_EBI
+-#define REG_EBICON	(EBI_BA + 0x00)
+-#define REG_ROMCON	(EBI_BA + 0x04)
+-#define REG_SDCONF0	(EBI_BA + 0x08)
+-#define REG_SDCONF1	(EBI_BA + 0x0C)
+-#define REG_SDTIME0	(EBI_BA + 0x10)
+-#define REG_SDTIME1	(EBI_BA + 0x14)
+-#define REG_EXT0CON	(EBI_BA + 0x18)
+-#define REG_EXT1CON	(EBI_BA + 0x1C)
+-#define REG_EXT2CON	(EBI_BA + 0x20)
+-#define REG_EXT3CON	(EBI_BA + 0x24)
+-#define REG_EXT4CON	(EBI_BA + 0x28)
+-#define REG_CKSKEW	(EBI_BA + 0x2C)
+-
+-#endif /*  __ASM_ARCH_REGS_EBI_H */
+diff --git a/arch/arm/mach-w90x900/regs-gcr.h b/arch/arm/mach-w90x900/regs-gcr.h
+deleted file mode 100644
+index caf1090ecad8..000000000000
+--- a/arch/arm/mach-w90x900/regs-gcr.h
 +++ /dev/null
 @@ -1,34 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-or-later */
 -/*
-- * arch/arm/mach-ks8695/include/mach/regs-sys.h
+- * arch/arm/mach-w90x900/include/mach/regs-gcr.h
 - *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
+- * Copyright (c) 2010 Nuvoton technology corporation
+- * All rights reserved.
 - *
-- * KS8695 - System control registers and bit definitions
-- *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
+- * Wan ZongShun <mcuos.com@gmail.com>
 - */
 -
--#ifndef KS8695_SYS_H
--#define KS8695_SYS_H
+-#ifndef __ASM_ARCH_REGS_GCR_H
+-#define __ASM_ARCH_REGS_GCR_H
 -
--#define KS8695_SYS_OFFSET	(0xF0000 + 0x0000)
--#define KS8695_SYS_VA		(KS8695_IO_VA + KS8695_SYS_OFFSET)
--#define KS8695_SYS_PA		(KS8695_IO_PA + KS8695_SYS_OFFSET)
+-/* Global control registers */
 -
+-#define GCR_BA		W90X900_VA_GCR
+-#define REG_PDID	(GCR_BA+0x000)
+-#define REG_PWRON	(GCR_BA+0x004)
+-#define REG_ARBCON	(GCR_BA+0x008)
+-#define REG_MFSEL	(GCR_BA+0x00C)
+-#define REG_EBIDPE	(GCR_BA+0x010)
+-#define REG_LCDDPE	(GCR_BA+0x014)
+-#define REG_GPIOCPE	(GCR_BA+0x018)
+-#define REG_GPIODPE	(GCR_BA+0x01C)
+-#define REG_GPIOEPE	(GCR_BA+0x020)
+-#define REG_GPIOFPE	(GCR_BA+0x024)
+-#define REG_GPIOGPE	(GCR_BA+0x028)
+-#define REG_GPIOHPE	(GCR_BA+0x02C)
+-#define REG_GPIOIPE	(GCR_BA+0x030)
+-#define REG_GTMP1	(GCR_BA+0x034)
+-#define REG_GTMP2	(GCR_BA+0x038)
+-#define REG_GTMP3	(GCR_BA+0x03C)
 -
--#define KS8695_SYSCFG		(0x00)		/* System Configuration Register */
--#define KS8695_CLKCON		(0x04)		/* System Clock and Bus Control Register */
--
--
--/* System Configuration Register */
--#define SYSCFG_SPRBP		(0x3ff << 16)	/* Register Bank Base Pointer */
--
--/* System Clock and Bus Control Register */
--#define CLKCON_SFMODE		(1 << 8)	/* System Fast Mode for Simulation */
--#define CLKCON_SCDC		(7 << 0)	/* System Clock Divider Select */
--
--
--#endif
-diff --git a/arch/arm/mach-ks8695/regs-wan.h b/arch/arm/mach-ks8695/regs-wan.h
+-#endif /*  __ASM_ARCH_REGS_GCR_H */
+diff --git a/arch/arm/mach-w90x900/regs-timer.h b/arch/arm/mach-w90x900/regs-timer.h
 deleted file mode 100644
-index c475bed22b8e..000000000000
---- a/arch/arm/mach-ks8695/regs-wan.h
+index d12807fd1e3e..000000000000
+--- a/arch/arm/mach-w90x900/regs-timer.h
 +++ /dev/null
-@@ -1,65 +0,0 @@
+@@ -1,37 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-or-later */
 -/*
-- * arch/arm/mach-ks8695/include/mach/regs-wan.h
+- * arch/arm/mach-w90x900/include/mach/regs-timer.h
 - *
-- * Copyright (C) 2006 Andrew Victor
+- * Copyright (c) 2008 Nuvoton technology corporation
+- * All rights reserved.
 - *
-- * KS8695 - WAN Registers and bit definitions.
+- * Wan ZongShun <mcuos.com@gmail.com>
 - *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
+- * Based on arch/arm/mach-s3c2410/include/mach/regs-timer.h
 - */
 -
--#ifndef KS8695_WAN_H
--#define KS8695_WAN_H
+-#ifndef __ASM_ARCH_REGS_TIMER_H
+-#define __ASM_ARCH_REGS_TIMER_H
 -
--#define KS8695_WAN_OFFSET	(0xF0000 + 0x6000)
--#define KS8695_WAN_VA		(KS8695_IO_VA + KS8695_WAN_OFFSET)
--#define KS8695_WAN_PA		(KS8695_IO_PA + KS8695_WAN_OFFSET)
+-/* Timer Registers */
 -
+-#define TMR_BA			W90X900_VA_TIMER
+-#define REG_TCSR0		(TMR_BA+0x00)
+-#define REG_TCSR1		(TMR_BA+0x04)
+-#define REG_TICR0		(TMR_BA+0x08)
+-#define REG_TICR1		(TMR_BA+0x0C)
+-#define REG_TDR0		(TMR_BA+0x10)
+-#define REG_TDR1		(TMR_BA+0x14)
+-#define REG_TISR		(TMR_BA+0x18)
+-#define REG_WTCR		(TMR_BA+0x1C)
+-#define REG_TCSR2		(TMR_BA+0x20)
+-#define REG_TCSR3		(TMR_BA+0x24)
+-#define REG_TICR2		(TMR_BA+0x28)
+-#define REG_TICR3		(TMR_BA+0x2C)
+-#define REG_TDR2		(TMR_BA+0x30)
+-#define REG_TDR3		(TMR_BA+0x34)
+-#define REG_TCSR4		(TMR_BA+0x40)
+-#define REG_TICR4		(TMR_BA+0x48)
+-#define REG_TDR4		(TMR_BA+0x50)
 -
--/*
-- * WAN registers
-- */
--#define KS8695_WMDTXC		(0x00)		/* DMA Transmit Control */
--#define KS8695_WMDRXC		(0x04)		/* DMA Receive Control */
--#define KS8695_WMDTSC		(0x08)		/* DMA Transmit Start Command */
--#define KS8695_WMDRSC		(0x0c)		/* DMA Receive Start Command */
--#define KS8695_WTDLB		(0x10)		/* Transmit Descriptor List Base Address */
--#define KS8695_WRDLB		(0x14)		/* Receive Descriptor List Base Address */
--#define KS8695_WMAL		(0x18)		/* MAC Station Address Low */
--#define KS8695_WMAH		(0x1c)		/* MAC Station Address High */
--#define KS8695_WMAAL(n)		(0x80 + ((n)*8))	/* MAC Additional Station Address (0..15) Low */
--#define KS8695_WMAAH(n)		(0x84 + ((n)*8))	/* MAC Additional Station Address (0..15) High */
--
--
--/* DMA Transmit Control Register */
--#define WMDTXC_WMTRST		(1    << 31)	/* Soft Reset */
--#define WMDTXC_WMTBS		(0x3f << 24)	/* Transmit Burst Size */
--#define WMDTXC_WMTUCG		(1    << 18)	/* Transmit UDP Checksum Generate */
--#define WMDTXC_WMTTCG		(1    << 17)	/* Transmit TCP Checksum Generate */
--#define WMDTXC_WMTICG		(1    << 16)	/* Transmit IP Checksum Generate */
--#define WMDTXC_WMTFCE		(1    <<  9)	/* Transmit Flow Control Enable */
--#define WMDTXC_WMTLB		(1    <<  8)	/* Loopback mode */
--#define WMDTXC_WMTEP		(1    <<  2)	/* Transmit Enable Padding */
--#define WMDTXC_WMTAC		(1    <<  1)	/* Transmit Add CRC */
--#define WMDTXC_WMTE		(1    <<  0)	/* TX Enable */
--
--/* DMA Receive Control Register */
--#define WMDRXC_WMRBS		(0x3f << 24)	/* Receive Burst Size */
--#define WMDRXC_WMRUCC		(1    << 18)	/* Receive UDP Checksum check */
--#define WMDRXC_WMRTCG		(1    << 17)	/* Receive TCP Checksum check */
--#define WMDRXC_WMRICG		(1    << 16)	/* Receive IP Checksum check */
--#define WMDRXC_WMRFCE		(1    <<  9)	/* Receive Flow Control Enable */
--#define WMDRXC_WMRB		(1    <<  6)	/* Receive Broadcast */
--#define WMDRXC_WMRM		(1    <<  5)	/* Receive Multicast */
--#define WMDRXC_WMRU		(1    <<  4)	/* Receive Unicast */
--#define WMDRXC_WMRERR		(1    <<  3)	/* Receive Error Frame */
--#define WMDRXC_WMRA		(1    <<  2)	/* Receive All */
--#define WMDRXC_WMRE		(1    <<  0)	/* RX Enable */
--
--/* Additional Station Address High */
--#define WMAAH_E			(1    << 31)	/* Address Enabled */
--
--
--#endif
-diff --git a/arch/arm/mach-ks8695/time.c b/arch/arm/mach-ks8695/time.c
+-#endif /*  __ASM_ARCH_REGS_TIMER_H */
+diff --git a/arch/arm/mach-w90x900/regs-usb.h b/arch/arm/mach-w90x900/regs-usb.h
 deleted file mode 100644
-index 50561eec0c32..000000000000
---- a/arch/arm/mach-ks8695/time.c
+index 98046c811bf7..000000000000
+--- a/arch/arm/mach-w90x900/regs-usb.h
 +++ /dev/null
-@@ -1,159 +0,0 @@
+@@ -1,31 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * arch/arm/mach-w90x900/include/mach/regs-usb.h
+- *
+- * Copyright (c) 2008 Nuvoton technology corporation.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
+- */
+-
+-#ifndef __ASM_ARCH_REGS_USB_H
+-#define __ASM_ARCH_REGS_USB_H
+-
+-/* usb Control Registers  */
+-#define USBH_BA		W90X900_VA_USBEHCIHOST
+-#define USBD_BA		W90X900_VA_USBDEV
+-#define USBO_BA		W90X900_VA_USBOHCIHOST
+-
+-/* USB Host Control Registers */
+-#define REG_UPSCR0	(USBH_BA+0x064)
+-#define REG_UPSCR1	(USBH_BA+0x068)
+-#define REG_USBPCR0	(USBH_BA+0x0C4)
+-#define REG_USBPCR1	(USBH_BA+0x0C8)
+-
+-/* USBH OHCI Control Registers */
+-#define REG_OpModEn	(USBO_BA+0x204)
+-/*This bit controls the polarity of over
+-*current flag from external power IC.
+-*/
+-#define OCALow		0x08
+-
+-#endif /*  __ASM_ARCH_REGS_USB_H */
+diff --git a/arch/arm/mach-w90x900/time.c b/arch/arm/mach-w90x900/time.c
+deleted file mode 100644
+index dd20fab9a960..000000000000
+--- a/arch/arm/mach-w90x900/time.c
++++ /dev/null
+@@ -1,168 +0,0 @@
 -// SPDX-License-Identifier: GPL-2.0-or-later
 -/*
-- * arch/arm/mach-ks8695/time.c
+- * linux/arch/arm/mach-w90x900/time.c
 - *
-- * Copyright (C) 2006 Ben Dooks <ben@simtec.co.uk>
-- * Copyright (C) 2006 Simtec Electronics
+- * Based on linux/arch/arm/plat-s3c24xx/time.c by Ben Dooks
+- *
+- * Copyright (c) 2009 Nuvoton technology corporation
+- * All rights reserved.
+- *
+- * Wan ZongShun <mcuos.com@gmail.com>
 - */
 -
--#include <linux/init.h>
--#include <linux/interrupt.h>
--#include <linux/irq.h>
 -#include <linux/kernel.h>
 -#include <linux/sched.h>
+-#include <linux/init.h>
+-#include <linux/interrupt.h>
+-#include <linux/err.h>
+-#include <linux/clk.h>
 -#include <linux/io.h>
+-#include <linux/leds.h>
+-#include <linux/clocksource.h>
 -#include <linux/clockchips.h>
 -
+-#include <asm/mach-types.h>
+-#include <asm/mach/irq.h>
 -#include <asm/mach/time.h>
--#include <asm/system_misc.h>
 -
--#include <mach/regs-irq.h>
+-#include <mach/map.h>
+-#include "regs-timer.h"
 -
--#include "generic.h"
+-#include "nuc9xx.h"
 -
--#define KS8695_TMR_OFFSET	(0xF0000 + 0xE400)
--#define KS8695_TMR_VA		(KS8695_IO_VA + KS8695_TMR_OFFSET)
--#define KS8695_TMR_PA		(KS8695_IO_PA + KS8695_TMR_OFFSET)
+-#define RESETINT	0x1f
+-#define PERIOD		(0x01 << 27)
+-#define ONESHOT		(0x00 << 27)
+-#define COUNTEN		(0x01 << 30)
+-#define INTEN		(0x01 << 29)
 -
--/*
-- * Timer registers
-- */
--#define KS8695_TMCON		(0x00)		/* Timer Control Register */
--#define KS8695_T1TC		(0x04)		/* Timer 1 Timeout Count Register */
--#define KS8695_T0TC		(0x08)		/* Timer 0 Timeout Count Register */
--#define KS8695_T1PD		(0x0C)		/* Timer 1 Pulse Count Register */
--#define KS8695_T0PD		(0x10)		/* Timer 0 Pulse Count Register */
+-#define TICKS_PER_SEC	100
+-#define PRESCALE	0x63 /* Divider = prescale + 1 */
 -
--/* Timer Control Register */
--#define TMCON_T1EN		(1 << 1)	/* Timer 1 Enable */
--#define TMCON_T0EN		(1 << 0)	/* Timer 0 Enable */
+-#define	TDR_SHIFT	24
 -
--/* Timer0 Timeout Counter Register */
--#define T0TC_WATCHDOG		(0xff)		/* Enable watchdog mode */
+-static unsigned int timer0_load;
 -
--static int ks8695_set_periodic(struct clock_event_device *evt)
+-static int nuc900_clockevent_shutdown(struct clock_event_device *evt)
 -{
--	u32 rate = DIV_ROUND_CLOSEST(KS8695_CLOCK_RATE, HZ);
--	u32 half = DIV_ROUND_CLOSEST(rate, 2);
--	u32 tmcon;
+-	unsigned int val = __raw_readl(REG_TCSR0) & ~(0x03 << 27);
 -
--	/* Disable timer 1 */
--	tmcon = readl_relaxed(KS8695_TMR_VA + KS8695_TMCON);
--	tmcon &= ~TMCON_T1EN;
--	writel_relaxed(tmcon, KS8695_TMR_VA + KS8695_TMCON);
--
--	/* Both registers need to count down */
--	writel_relaxed(half, KS8695_TMR_VA + KS8695_T1TC);
--	writel_relaxed(half, KS8695_TMR_VA + KS8695_T1PD);
--
--	/* Re-enable timer1 */
--	tmcon |= TMCON_T1EN;
--	writel_relaxed(tmcon, KS8695_TMR_VA + KS8695_TMCON);
+-	__raw_writel(val, REG_TCSR0);
 -	return 0;
 -}
 -
--static int ks8695_set_next_event(unsigned long cycles,
--				 struct clock_event_device *evt)
--
+-static int nuc900_clockevent_set_oneshot(struct clock_event_device *evt)
 -{
--	u32 half = DIV_ROUND_CLOSEST(cycles, 2);
--	u32 tmcon;
+-	unsigned int val = __raw_readl(REG_TCSR0) & ~(0x03 << 27);
 -
--	/* Disable timer 1 */
--	tmcon = readl_relaxed(KS8695_TMR_VA + KS8695_TMCON);
--	tmcon &= ~TMCON_T1EN;
--	writel_relaxed(tmcon, KS8695_TMR_VA + KS8695_TMCON);
+-	val |= (ONESHOT | COUNTEN | INTEN | PRESCALE);
 -
--	/* Both registers need to count down */
--	writel_relaxed(half, KS8695_TMR_VA + KS8695_T1TC);
--	writel_relaxed(half, KS8695_TMR_VA + KS8695_T1PD);
+-	__raw_writel(val, REG_TCSR0);
+-	return 0;
+-}
 -
--	/* Re-enable timer1 */
--	tmcon |= TMCON_T1EN;
--	writel_relaxed(tmcon, KS8695_TMR_VA + KS8695_TMCON);
+-static int nuc900_clockevent_set_periodic(struct clock_event_device *evt)
+-{
+-	unsigned int val = __raw_readl(REG_TCSR0) & ~(0x03 << 27);
+-
+-	__raw_writel(timer0_load, REG_TICR0);
+-	val |= (PERIOD | COUNTEN | INTEN | PRESCALE);
+-	__raw_writel(val, REG_TCSR0);
+-	return 0;
+-}
+-
+-static int nuc900_clockevent_setnextevent(unsigned long evt,
+-		struct clock_event_device *clk)
+-{
+-	unsigned int val;
+-
+-	__raw_writel(evt, REG_TICR0);
+-
+-	val = __raw_readl(REG_TCSR0);
+-	val |= (COUNTEN | INTEN | PRESCALE);
+-	__raw_writel(val, REG_TCSR0);
 -
 -	return 0;
 -}
 -
--static struct clock_event_device clockevent_ks8695 = {
--	.name			= "ks8695_t1tc",
--	/* Reasonably fast and accurate clock event */
+-static struct clock_event_device nuc900_clockevent_device = {
+-	.name			= "nuc900-timer0",
+-	.features		= CLOCK_EVT_FEAT_PERIODIC |
+-				  CLOCK_EVT_FEAT_ONESHOT,
+-	.set_state_shutdown	= nuc900_clockevent_shutdown,
+-	.set_state_periodic	= nuc900_clockevent_set_periodic,
+-	.set_state_oneshot	= nuc900_clockevent_set_oneshot,
+-	.tick_resume		= nuc900_clockevent_shutdown,
+-	.set_next_event		= nuc900_clockevent_setnextevent,
 -	.rating			= 300,
--	.features		= CLOCK_EVT_FEAT_ONESHOT |
--				  CLOCK_EVT_FEAT_PERIODIC,
--	.set_next_event		= ks8695_set_next_event,
--	.set_state_periodic	= ks8695_set_periodic,
 -};
 -
--/*
-- * IRQ handler for the timer.
-- */
--static irqreturn_t ks8695_timer_interrupt(int irq, void *dev_id)
+-/*IRQ handler for the timer*/
+-
+-static irqreturn_t nuc900_timer0_interrupt(int irq, void *dev_id)
 -{
--	struct clock_event_device *evt = &clockevent_ks8695;
+-	struct clock_event_device *evt = &nuc900_clockevent_device;
+-
+-	__raw_writel(0x01, REG_TISR); /* clear TIF0 */
 -
 -	evt->event_handler(evt);
 -	return IRQ_HANDLED;
 -}
 -
--static struct irqaction ks8695_timer_irq = {
--	.name		= "ks8695_tick",
--	.flags		= IRQF_TIMER,
--	.handler	= ks8695_timer_interrupt,
+-static struct irqaction nuc900_timer0_irq = {
+-	.name		= "nuc900-timer0",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= nuc900_timer0_interrupt,
 -};
 -
--static void ks8695_timer_setup(void)
+-static void __init nuc900_clockevents_init(void)
 -{
--	unsigned long tmcon;
+-	unsigned int rate;
+-	struct clk *clk = clk_get(NULL, "timer0");
 -
--	/* Disable timer 0 and 1 */
--	tmcon = readl_relaxed(KS8695_TMR_VA + KS8695_TMCON);
--	tmcon &= ~TMCON_T0EN;
--	tmcon &= ~TMCON_T1EN;
--	writel_relaxed(tmcon, KS8695_TMR_VA + KS8695_TMCON);
+-	BUG_ON(IS_ERR(clk));
 -
--	/*
--	 * Use timer 1 to fire IRQs on the timeline, minimum 2 cycles
--	 * (one on each counter) maximum 2*2^32, but the API will only
--	 * accept up to a 32bit full word (0xFFFFFFFFU).
--	 */
--	clockevents_config_and_register(&clockevent_ks8695,
--					KS8695_CLOCK_RATE, 2,
--					0xFFFFFFFFU);
+-	__raw_writel(0x00, REG_TCSR0);
+-
+-	clk_enable(clk);
+-	rate = clk_get_rate(clk) / (PRESCALE + 1);
+-
+-	timer0_load = (rate / TICKS_PER_SEC);
+-
+-	__raw_writel(RESETINT, REG_TISR);
+-	setup_irq(IRQ_TIMER0, &nuc900_timer0_irq);
+-
+-	nuc900_clockevent_device.cpumask = cpumask_of(0);
+-
+-	clockevents_config_and_register(&nuc900_clockevent_device, rate,
+-					0xf, 0xffffffff);
 -}
 -
--void __init ks8695_timer_init(void)
+-static void __init nuc900_clocksource_init(void)
 -{
--	ks8695_timer_setup();
+-	unsigned int val;
+-	unsigned int rate;
+-	struct clk *clk = clk_get(NULL, "timer1");
 -
--	/* Enable timer interrupts */
--	setup_irq(KS8695_IRQ_TIMER1, &ks8695_timer_irq);
+-	BUG_ON(IS_ERR(clk));
+-
+-	__raw_writel(0x00, REG_TCSR1);
+-
+-	clk_enable(clk);
+-	rate = clk_get_rate(clk) / (PRESCALE + 1);
+-
+-	__raw_writel(0xffffffff, REG_TICR1);
+-
+-	val = __raw_readl(REG_TCSR1);
+-	val |= (COUNTEN | PERIOD | PRESCALE);
+-	__raw_writel(val, REG_TCSR1);
+-
+-	clocksource_mmio_init(REG_TDR1, "nuc900-timer1", rate, 200,
+-		TDR_SHIFT, clocksource_mmio_readl_down);
 -}
 -
--void ks8695_restart(enum reboot_mode reboot_mode, const char *cmd)
+-void __init nuc900_timer_init(void)
 -{
--	unsigned int reg;
--
--	if (reboot_mode == REBOOT_SOFT)
--		soft_restart(0);
--
--	/* disable timer0 */
--	reg = readl_relaxed(KS8695_TMR_VA + KS8695_TMCON);
--	writel_relaxed(reg & ~TMCON_T0EN, KS8695_TMR_VA + KS8695_TMCON);
--
--	/* enable watchdog mode */
--	writel_relaxed((10 << 8) | T0TC_WATCHDOG, KS8695_TMR_VA + KS8695_T0TC);
--
--	/* re-enable timer0 */
--	writel_relaxed(reg | TMCON_T0EN, KS8695_TMR_VA + KS8695_TMCON);
+-	nuc900_clocksource_init();
+-	nuc900_clockevents_init();
 -}
-diff --git a/arch/arm/mm/Kconfig b/arch/arm/mm/Kconfig
-index 820b60a50125..05143ec47d94 100644
---- a/arch/arm/mm/Kconfig
-+++ b/arch/arm/mm/Kconfig
-@@ -106,7 +106,7 @@ config CPU_ARM922T
- 	help
- 	  The ARM922T is a version of the ARM920T, but with smaller
- 	  instruction and data caches. It is used in Altera's
--	  Excalibur XA device family and Micrel's KS8695 Centaur.
-+	  Excalibur XA device family and the ARM Integrator.
- 
- 	  Say Y if you want support for the ARM922T processor.
- 	  Otherwise, say N.
 -- 
 2.20.0
 
