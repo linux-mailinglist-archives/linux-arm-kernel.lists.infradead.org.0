@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AA3E880A5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 18:57:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87FB1880D3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 19:08:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FiC1gZao3+7CGp62iWAle8s+vSYGof/9wS7Mdt0cMgE=; b=gxuI3xLCf2133OY4pewcZyH7/
-	cUFpn/BgTUjaCirOT7m8M91sPsUzrq1ot/OK9EeQZ+AWwBar/vtbz9ztUay2rv+qBkLoiuRBWVSBy
-	U4a9uAbzqu9u/hBRvMwd52x/mzDh+mVV1FjiVlFMY3KdW8sngtzdlkTxUBO/4aqC9ZYAkkxUOKtwM
-	iUIbSRi5jyYSxwPtBJtJKl9VkpdE+k9dlNsO3x7yLq4CQOokUS54nG4VUeAsW2F3HDYO3g2uAoW/E
-	x17Ipas5djZDPCKU7RPlgJ9mNJjo6w0WZ3F0BzKIRBrHDaK6hNV9BeopDFu9t4Wkmp7/na7WeotJl
-	lGgqt3Vtg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oIhChj4B+szwAH3UngOaEsx0heVvIfPJLTWm6lBCd/w=; b=KNHRzKtyhLfrIS
+	oD7C8u/ZvvDRPMWN6uDo+0IVF5TqwWP5SYNOi1qEyKA2vjkEzMopQodzMS5vd30hXxP2adegEfYGW
+	GdStVIDR2OwiRiafhr0raHJyHWl1j8g1Okuld8ecwZSzSJcabU3xqhs4VoA9YMrbsfwcvHQoxig3b
+	zOpFL2KWgUMwtM3jFDeCfxrRZRwiIswRQIeD4RKr98CwX0w28FKEXSq8+xvNzrIhgqs/9kchHjBhU
+	2hHC6IcEjLMzZ5t8an2EqDQdyEty0ZoRj1uiYNsu/RgNWst0BkMTH8Q6I9r6S8F8OatrovhLVqd9+
+	p/J7jkcuRq/SV7dTLcsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw8D1-0005x6-3w; Fri, 09 Aug 2019 16:57:43 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+	id 1hw8NN-00013H-Ju; Fri, 09 Aug 2019 17:08:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw8Cr-0005wJ-1J
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 16:57:34 +0000
-Received: from localhost (p54B333D4.dip0.t-ipconnect.de [84.179.51.212])
- by pokefinder.org (Postfix) with ESMTPSA id CE01D2C3014;
- Fri,  9 Aug 2019 18:57:31 +0200 (CEST)
-Date: Fri, 9 Aug 2019 18:57:31 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 1/7] [RFC] ARM: remove Intel iop33x and iop13xx support
-Message-ID: <20190809165731.GD5099@ninjato>
-References: <20190809162956.488941-1-arnd@arndb.de>
- <20190809163334.489360-1-arnd@arndb.de>
+ id 1hw8ND-000121-Ul
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 17:08:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1093015A2;
+ Fri,  9 Aug 2019 10:08:13 -0700 (PDT)
+Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
+ [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CAA4F3F575;
+ Fri,  9 Aug 2019 10:08:11 -0700 (PDT)
+From: Robin Murphy <robin.murphy@arm.com>
+To: will@kernel.org
+Subject: [PATCH 00/15] Arm SMMU refactoring
+Date: Fri,  9 Aug 2019 18:07:37 +0100
+Message-Id: <cover.1565369764.git.robin.murphy@arm.com>
+X-Mailer: git-send-email 2.21.0.dirty
 MIME-Version: 1.0
-In-Reply-To: <20190809163334.489360-1-arnd@arndb.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_095733_227878_02AB7EF5 
-X-CRM114-Status: GOOD (  11.67  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190809_100816_038577_B55B770D 
+X-CRM114-Status: GOOD (  13.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,83 +58,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, soc@kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- linux-i2c@vger.kernel.org, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5836483378488815178=="
+Cc: robdclark@gmail.com, joro@8bytes.org, bjorn.andersson@linaro.org,
+ iommu@lists.linux-foundation.org, vivek.gautam@codeaurora.org,
+ gregory.clement@bootlin.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi all,
 
---===============5836483378488815178==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Ycz6tD7Th1CMF4v7"
-Content-Disposition: inline
+This is a big refactoring of arm-smmu in order to help cope with the
+various divergent implementation details currently flying around. So
+far we've been accruing various quirks and errata workarounds within
+the main flow of the driver, but given that it's written to an
+architecture rather than any particular hardware implementation, after
+a point these start to become increasingly invasive and potentially
+conflict with each other.
 
+These patches clean up the existing quirks handled by the driver to
+lay a foundation on which we can continue to add more in a maintainable
+fashion. The idea is that major vendor customisations can then be kept
+in arm-smmu-<vendor>.c implementation files out of each others' way.
 
---Ycz6tD7Th1CMF4v7
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+A branch is available at:
 
-On Fri, Aug 09, 2019 at 06:33:15PM +0200, Arnd Bergmann wrote:
-> There are three families of IOP machines we support in Linux: iop32x
-> (which includes EP80219), iop33x and iop13xx (aka IOP34x aka WP8134x).
->=20
-> All products we support in the kernel are based on the first of these,
-> iop32x, the other families only ever supported the Intel reference
-> boards but no actual machine anyone could ever buy.
->=20
-> While one could clearly make them all three work in a single kernel
-> with some work, this takes the easy way out, removing the later two
-> platforms entirely, under the assumption that there are no remaining
-> users.
->=20
-> Earlier versions of OpenWRT and Debian both had support for iop32x
-> but not the others, and they both dropped iop32x as well in their 2015
-> releases.
->=20
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+  git://linux-arm.org/linux-rm  iommu/smmu-impl
 
-Acked-by: Wolfram Sang <wsa@the-dreams.de> # for I2C parts
+which I'll probably keep tweaking until I'm happy with the names of
+things; I just didn't want to delay this initial posting any lomnger.
+
+Robin.
 
 
---Ycz6tD7Th1CMF4v7
-Content-Type: application/pgp-signature; name="signature.asc"
+Robin Murphy (15):
+  iommu/arm-smmu: Convert GR0 registers to bitfields
+  iommu/arm-smmu: Convert GR1 registers to bitfields
+  iommu/arm-smmu: Convert context bank registers to bitfields
+  iommu/arm-smmu: Rework cb_base handling
+  iommu/arm-smmu: Split arm_smmu_tlb_inv_range_nosync()
+  iommu/arm-smmu: Get rid of weird "atomic" write
+  iommu/arm-smmu: Abstract GR1 accesses
+  iommu/arm-smmu: Abstract context bank accesses
+  iommu/arm-smmu: Abstract GR0 accesses
+  iommu/arm-smmu: Rename arm-smmu-regs.h
+  iommu/arm-smmu: Add implementation infrastructure
+  iommu/arm-smmu: Move Secure access quirk to implementation
+  iommu/arm-smmu: Add configuration implementation hook
+  iommu/arm-smmu: Add reset implementation hook
+  iommu/arm-smmu: Add context init implementation hook
 
------BEGIN PGP SIGNATURE-----
+ MAINTAINERS                   |   3 +-
+ drivers/iommu/Makefile        |   2 +-
+ drivers/iommu/arm-smmu-impl.c | 165 ++++++++++
+ drivers/iommu/arm-smmu-regs.h | 210 -------------
+ drivers/iommu/arm-smmu.c      | 570 +++++++++++-----------------------
+ drivers/iommu/arm-smmu.h      | 386 +++++++++++++++++++++++
+ drivers/iommu/qcom_iommu.c    |  15 +-
+ 7 files changed, 743 insertions(+), 608 deletions(-)
+ create mode 100644 drivers/iommu/arm-smmu-impl.c
+ delete mode 100644 drivers/iommu/arm-smmu-regs.h
+ create mode 100644 drivers/iommu/arm-smmu.h
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1NpfcACgkQFA3kzBSg
-KbYo3xAAoUFahZppsWnQT+posnK7OdanH8eP9bFsX9jA3vLm1Z8xByrQrxVnTPYp
-97VYfI7Czhue+5wf/ceACt4Q3XkAwKIQXkcqJgdBFfErPboWdL6yvrvIHhLbnfRr
-HBw+/UiJSf7MisT3PutST0VFWRgJ0sv4LphNT+qbRDnX+3olTmhLax9NeETmzvBz
-2MNNUTTerfJGsuORhlubz0TKccORwFqKERhq/NS48U4qdJnHcROBaMd/xyX37YEx
-qBTS7eC5XWD4QiXyG6386DXhoLJi47uBdVuOTde1QF9Vuif/454Gg7uyenHpHndF
-7hGT/5wSCKLFaFJJi1GABp2addD3DYdibkM2rueAbjCjb8d9g6YNFhuDOnSR2L+n
-aV/QXEyTUe6j8JaX50cEeAPLAJ5MjqGRU9csYB16zfTpsty9aPkaEr75eiK+XTjt
-wo6glb84+WYdsX7PZKbzYXmLpoFZAx1zkycp3Cf4DA0fxaDmYVDts0plkwQ7AR5D
-jPG1Q8qxby/Y4yPceGfKHzV0MkMkrPSEDZEeg2NpnQiVRpvRR33okKu6xftMGxc1
-4Z6ovgHtXBP9PUGOcdn0AmGHDNsHDYBEfCQDESQlwWaDEC9Q6IhGD9UTjsnUjLSj
-AwXK137vfKLiWohLLeZbrWquBKJoV6vBJ9ByYrMtgRadv9qA5/Y=
-=zEyv
------END PGP SIGNATURE-----
+-- 
+2.21.0.dirty
 
---Ycz6tD7Th1CMF4v7--
-
-
---===============5836483378488815178==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5836483378488815178==--
-
