@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D02687104
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 06:48:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE76F87105
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 06:49:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9rzb9bJ0ADBBODck4GUrgGwWFA31/3TV6FSPZ/5DzE4=; b=fJOwy4dWLUrq+8
-	c3PLtrQ0+7IglBnUawxQl0scNYLZQ++CUjnm8PI8FQ68cYLJJW8FFti/JXmSCKbjAsXhhfaqPNL/Y
-	B6K8qJ0dDLeDlFXOl3gKnjPDnAsrGgYdY0FnsQfou3vQlAgt+Z/8vu0dT8tc3gnzVLyO8FTvQd0AS
-	bXoTmRE15liiltZQ8atRSS9rhgyfZ+0iYqHdL27eoPvyXRjFuhhp0VEmq8Xy8gJjfffVTgzvrHbAw
-	mVrJERaLgjjVeR8bGlTzBjG2iMg1qyEGj9Y6uDczgQwNFHoSJ1il4FWjKF1W4re93EYG0R/DUA3Kn
-	zjt7EbcITD8Ten9f235A==;
+	List-Owner; bh=mjFDPybXOSIdfVdXT6+k29U1ntUU/KBuV9cU5dovUwE=; b=erRbvxACZlH2za
+	LXbahmfrt95JCQjy8HtKj82b/CHiiimbdRLeqhtbLP2Q38WRQwz7V2oPK12zHhso7ZRIpIdEcS62T
+	jx5cZlhsZplM9sjwMU8O442Snfm7TbwS3sF8zq9szie187xtF0LiTOaEg3HBzTXpitqR5BCuxbSLM
+	8pOjMQBRt9ZnDqzxfifGMe7Guda1NFxsV5cDCsQGWuesZOzVLuVinc3I/eUzEtX8K7ff5+KD+u0dS
+	noxo7Uktui9pK2vhmU9kgXa7ISzSmaxIDinnXT5DbpTWhWBaXfvXZm130elK3MjMoMWgJfdKSL7uP
+	j1pfU+REMRdPK9VRc7LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvwpi-0003ES-KT; Fri, 09 Aug 2019 04:48:54 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
+	id 1hvwq2-0003V2-43; Fri, 09 Aug 2019 04:49:14 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvwo3-0001vk-97
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 04:47:13 +0000
+ id 1hvwoB-000234-02
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 04:47:20 +0000
 Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d4cfad00001>; Thu, 08 Aug 2019 21:47:12 -0700
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d4cfad70000>; Thu, 08 Aug 2019 21:47:19 -0700
 Received: from hqmail.nvidia.com ([172.20.161.6])
  by hqpgpgate101.nvidia.com (PGP Universal service);
- Thu, 08 Aug 2019 21:47:11 -0700
+ Thu, 08 Aug 2019 21:47:17 -0700
 X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Thu, 08 Aug 2019 21:47:11 -0700
-Received: from HQMAIL111.nvidia.com (172.20.187.18) by HQMAIL104.nvidia.com
- (172.18.146.11) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 9 Aug
- 2019 04:47:10 +0000
-Received: from HQMAIL101.nvidia.com (172.20.187.10) by HQMAIL111.nvidia.com
+ by hqpgpgate101.nvidia.com on Thu, 08 Aug 2019 21:47:17 -0700
+Received: from HQMAIL111.nvidia.com (172.20.187.18) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 9 Aug
+ 2019 04:47:17 +0000
+Received: from HQMAIL105.nvidia.com (172.20.187.12) by HQMAIL111.nvidia.com
  (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 9 Aug
- 2019 04:47:10 +0000
-Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Fri, 9 Aug 2019 04:47:10 +0000
+ 2019 04:47:17 +0000
+Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL105.nvidia.com
+ (172.20.187.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+ Transport; Fri, 9 Aug 2019 04:47:17 +0000
 Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
  hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5d4cfac90001>; Thu, 08 Aug 2019 21:47:10 -0700
+ id <B5d4cfad00001>; Thu, 08 Aug 2019 21:47:16 -0700
 From: Vidya Sagar <vidyas@nvidia.com>
 To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
  <mark.rutland@arm.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
  <kishon@ti.com>, <catalin.marinas@arm.com>, <will.deacon@arm.com>,
  <jingoohan1@gmail.com>, <gustavo.pimentel@synopsys.com>
-Subject: [PATCH V15 08/13] PCI: dwc: Add support to enable CDM register check
-Date: Fri, 9 Aug 2019 10:16:04 +0530
-Message-ID: <20190809044609.20401-9-vidyas@nvidia.com>
+Subject: [PATCH V15 09/13] dt-bindings: Add PCIe supports-clkreq property
+Date: Fri, 9 Aug 2019 10:16:05 +0530
+Message-ID: <20190809044609.20401-10-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190809044609.20401-1-vidyas@nvidia.com>
 References: <20190809044609.20401-1-vidyas@nvidia.com>
 X-NVConfidentiality: public
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1565326032; bh=7Q+575sH/I89eCp70ErWoxV/STR4HCiv5hFcvnUuxUI=;
+ t=1565326039; bh=JaeDFMl3+SezdOM9rq5yR1FviGL5whud/iI/cQ7JkV4=;
  h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
  In-Reply-To:References:X-NVConfidentiality:MIME-Version:
  Content-Type;
- b=XGBVbXHZrvYBFWjlGEwmBP/eXstTvTd2wNogo7UkSsBpFb9La/+h2PXk0T0Otv7/k
- b8YIfsQqCpKEAmWmM5d7yRPyeLqaQjPVJRjc5GT43Q/alkd4WjHxxXcqcKCN/p/Zn7
- 7c4FUkOQad3/KCR/uP7Oi23qxKm6KFxn8zm5ATTqsqehEaJzJDthJ+VN41BhkoBpDS
- JWLLfOE8Sf8fJ2xiD6yEktgsbJ4wvRIYGk50ZdgNJNidytQHHbsbSJ+ggUHeMl7Atm
- hq6BKDR2ajWW3P5Xm5JFx9V5cA2eAj6kC9ZJA+TDbBnrwQoBfcAqAhFs/DtmjVuC08
- FPJipfS36R8nQ==
+ b=WIisXH/iTpeIxmOFKaQl20+vf7aAk4Kp/ltPb/HAGukZgj64cYzJos0lLzHiX/yOq
+ 5ySbLK7gn3vXliS4CU2CfAe5xHtfa5P6guxNSIeRTz+kE3iKW+fl/lau4ANsaVBuaW
+ 33CeCn7AeIdqPtyrgBxTXi+J1JYG7zVgvqojWfLSP0i5qcQzJkkclFOFlfKxAO0twl
+ sY+Ej1Pd2O8nbojN0oRvbnUvcyUmg0NkeSqfv+ljPhX18B4DIrtst4aQ30WhkA+lzn
+ dp1vvbSf5tWXbnr6/XBzy1oP67cnYSMcc7cA8iIwLY/jQT/ArsP+Jyu4402aJzG2yZ
+ ObO7zbMuamHjw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_214711_884651_A543678C 
-X-CRM114-Status: UNSURE (   7.35  )
+X-CRM114-CacheID: sfid-20190808_214719_499251_AEAB3445 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ high trust [216.228.121.65 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -108,24 +108,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support to enable CDM (Configuration Dependent Module) register check
-for any data corruption based on the device-tree flag 'snps,enable-cdm-check'.
+Some host controllers need to know the existence of clkreq signal routing
+to downstream devices to be able to advertise low power features like
+ASPM L1 substates. Without clkreq signal routing being present, enabling
+ASPM L1 substates might lead to downstream devices being disconnected
+from the bus. Hence a new device tree property 'supports-clkreq' is added
+to make such host controllers aware of clkreq signal routing to
+downstream devices.
 
 Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 Reviewed-by: Thierry Reding <treding@nvidia.com>
 ---
 V15:
 * None
 
 V14:
-* None
+* s/falling off the bus/being disconnected from the bus/ in commit message.
 
 V13:
 * None
 
 V12:
-* None
+* Rebased on top of linux-next top of the tree
 
 V11:
 * None
@@ -140,64 +145,42 @@ V8:
 * None
 
 V7:
-* Changed "enable-cdm-check" to "snps,enable-cdm-check"
+* None
 
 V6:
-* None
+* s/Documentation\/devicetree/dt-bindings/ in the subject
 
 V5:
 * None
 
 V4:
-* None
+* Rebased on top of linux-next top of the tree
 
 V3:
-* Changed code and commit description to reflect change in flag from
-  'cdm-check' to 'enable-cdm-check'
+* None
 
 V2:
 * This is a new patch in v2 series
 
- drivers/pci/controller/dwc/pcie-designware.c | 7 +++++++
- drivers/pci/controller/dwc/pcie-designware.h | 9 +++++++++
- 2 files changed, 16 insertions(+)
+ Documentation/devicetree/bindings/pci/pci.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/drivers/pci/controller/dwc/pcie-designware.c b/drivers/pci/controller/dwc/pcie-designware.c
-index 1d87e823de21..59eaeeb21dbe 100644
---- a/drivers/pci/controller/dwc/pcie-designware.c
-+++ b/drivers/pci/controller/dwc/pcie-designware.c
-@@ -547,4 +547,11 @@ void dw_pcie_setup(struct dw_pcie *pci)
- 		break;
- 	}
- 	dw_pcie_writel_dbi(pci, PCIE_LINK_WIDTH_SPEED_CONTROL, val);
-+
-+	if (of_property_read_bool(np, "snps,enable-cdm-check")) {
-+		val = dw_pcie_readl_dbi(pci, PCIE_PL_CHK_REG_CONTROL_STATUS);
-+		val |= PCIE_PL_CHK_REG_CHK_REG_CONTINUOUS |
-+		       PCIE_PL_CHK_REG_CHK_REG_START;
-+		dw_pcie_writel_dbi(pci, PCIE_PL_CHK_REG_CONTROL_STATUS, val);
-+	}
- }
-diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
-index 11c223471416..5a18e94e52c8 100644
---- a/drivers/pci/controller/dwc/pcie-designware.h
-+++ b/drivers/pci/controller/dwc/pcie-designware.h
-@@ -86,6 +86,15 @@
- #define PCIE_MISC_CONTROL_1_OFF		0x8BC
- #define PCIE_DBI_RO_WR_EN		BIT(0)
+diff --git a/Documentation/devicetree/bindings/pci/pci.txt b/Documentation/devicetree/bindings/pci/pci.txt
+index 2a5d91024059..29bcbd88f457 100644
+--- a/Documentation/devicetree/bindings/pci/pci.txt
++++ b/Documentation/devicetree/bindings/pci/pci.txt
+@@ -27,6 +27,11 @@ driver implementation may support the following properties:
+ - reset-gpios:
+    If present this property specifies PERST# GPIO. Host drivers can parse the
+    GPIO and apply fundamental reset to endpoints.
++- supports-clkreq:
++   If present this property specifies that CLKREQ signal routing exists from
++   root port to downstream device and host bridge drivers can do programming
++   which depends on CLKREQ signal existence. For example, programming root port
++   not to advertise ASPM L1 Sub-States support if there is no CLKREQ signal.
  
-+#define PCIE_PL_CHK_REG_CONTROL_STATUS			0xB20
-+#define PCIE_PL_CHK_REG_CHK_REG_START			BIT(0)
-+#define PCIE_PL_CHK_REG_CHK_REG_CONTINUOUS		BIT(1)
-+#define PCIE_PL_CHK_REG_CHK_REG_COMPARISON_ERROR	BIT(16)
-+#define PCIE_PL_CHK_REG_CHK_REG_LOGIC_ERROR		BIT(17)
-+#define PCIE_PL_CHK_REG_CHK_REG_COMPLETE		BIT(18)
-+
-+#define PCIE_PL_CHK_REG_ERR_ADDR			0xB28
-+
- /*
-  * iATU Unroll-specific register definitions
-  * From 4.80 core version the address translation will be made by unroll
+ PCI-PCI Bridge properties
+ -------------------------
 -- 
 2.17.1
 
