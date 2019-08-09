@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0202D880E3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 19:09:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 156FE880E9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 19:09:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DnGQtVtEmzSD1xeoMWb5NhmfXrPqQscwiJZLMUqTEgA=; b=IHn12ceNO9E0Cp
-	lDkEvrh6e4WHdFgYh/tF1bHo0IS6Pxxi1wna/nblmLY7YHOE27X3l8ys/8vKEI7F8x5lH7AdKNcOx
-	zxZveFIIMTKs59TV+5Z1y19W/eaerxolAxu7rg3dmzmLNLm7BFGMrqXl+MoZMCe/Ajnq9e0Q+FfvZ
-	ZsMR0IAmosHvLU8rixljPg/0xP/kHJAlMW42oQAHFovM+7hpSBvjjaGZtke4SkQIag33fhJilxDJy
-	nbqWlMdeQKpobsYIaJ8hs1BnyhLrIyTfNut4OU8S+9njdv7tVOxYwjWxJPMcvrxjEH2ck/9Qzw6AT
-	EvGilsjYxAiPcZr22PaA==;
+	List-Owner; bh=J+gjDFgtxGCOEDr5t36Q6pTMSzFTYJY7UmZALZrFqgs=; b=QZITdPQbzqrPCT
+	B1dpAwLXIfcrXua8+TG3aVBjb5vci3GyRrU+qXVN5dpuWJjAlfv80NysRho0YTqL+9C5MAKrpzywF
+	6x9E0mBk6DmAj1DFLtcXFy/yFzYUgmEj8FTyDTh5+HZcINa09jUACf+I7NutzBJCAyXqHFnAqiGvx
+	9DfjDrMWzXT2oD6i8BWOAqMQ78CGNDB/aQe8HQksV/6YgFU21Fs/HFzih5bqtF5bg0yNGmd+OuDXn
+	uPWtV5cEUv601tCjvGYNrHHe5mT6jlBpMlgYM4gnERqzmF/B1K7xg+gru1h88irCerZ2+jXvJS/MT
+	Y4u65ApWZJdlw2AKFRBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw8O6-0001sG-HW; Fri, 09 Aug 2019 17:09:10 +0000
+	id 1hw8OT-0002L1-L4; Fri, 09 Aug 2019 17:09:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw8NF-00012k-P9
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 17:08:19 +0000
+ id 1hw8NJ-000169-2k
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 17:08:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 633EE15A2;
- Fri,  9 Aug 2019 10:08:17 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D1BA415AB;
+ Fri,  9 Aug 2019 10:08:18 -0700 (PDT)
 Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
  [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2B0A13F575;
- Fri,  9 Aug 2019 10:08:16 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 984B93F575;
+ Fri,  9 Aug 2019 10:08:17 -0700 (PDT)
 From: Robin Murphy <robin.murphy@arm.com>
 To: will@kernel.org
-Subject: [PATCH 03/15] iommu/arm-smmu: Convert context bank registers to
- bitfields
-Date: Fri,  9 Aug 2019 18:07:40 +0100
-Message-Id: <11e2193e21d8a411e2cbc540fae43c1a0eb477bb.1565369764.git.robin.murphy@arm.com>
+Subject: [PATCH 04/15] iommu/arm-smmu: Rework cb_base handling
+Date: Fri,  9 Aug 2019 18:07:41 +0100
+Message-Id: <f4dccad78815ca0a2dd7926be7052759d099b920.1565369764.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.21.0.dirty
 In-Reply-To: <cover.1565369764.git.robin.murphy@arm.com>
 References: <cover.1565369764.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_100817_902703_B952E45C 
-X-CRM114-Status: GOOD (  15.01  )
+X-CRM114-CacheID: sfid-20190809_100821_288049_1873B2ED 
+X-CRM114-Status: GOOD (  15.10  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,219 +68,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Finish the final part of the job, once again updating some names to
-match the current spec.
+To keep register-access quirks manageable, we want to structure things
+to avoid needing too many individual overrides. It seems fairly clean to
+have a single interface which handles both global and context registers
+in terms of the architectural pages, so the first preparatory step is to
+rework cb_base into a page number rather than an absolute address.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/iommu/arm-smmu-regs.h | 86 ++++++++++++++++++-----------------
- drivers/iommu/arm-smmu.c      | 16 +++----
- drivers/iommu/qcom_iommu.c    | 13 +++---
- 3 files changed, 59 insertions(+), 56 deletions(-)
+ drivers/iommu/arm-smmu.c | 22 ++++++++++++----------
+ 1 file changed, 12 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/iommu/arm-smmu-regs.h b/drivers/iommu/arm-smmu-regs.h
-index 671c2d98c9da..75056edad31d 100644
---- a/drivers/iommu/arm-smmu-regs.h
-+++ b/drivers/iommu/arm-smmu-regs.h
-@@ -129,19 +129,59 @@ enum arm_smmu_cbar_type {
- #define CBA2R_VA64			BIT(0)
- 
- #define ARM_SMMU_CB_SCTLR		0x0
-+#define SCTLR_S1_ASIDPNE		BIT(12)
-+#define SCTLR_CFCFG			BIT(7)
-+#define SCTLR_CFIE			BIT(6)
-+#define SCTLR_CFRE			BIT(5)
-+#define SCTLR_E				BIT(4)
-+#define SCTLR_AFE			BIT(2)
-+#define SCTLR_TRE			BIT(1)
-+#define SCTLR_M				BIT(0)
-+
- #define ARM_SMMU_CB_ACTLR		0x4
-+
- #define ARM_SMMU_CB_RESUME		0x8
--#define ARM_SMMU_CB_TTBCR2		0x10
-+#define RESUME_TERMINATE		BIT(0)
-+
-+#define ARM_SMMU_CB_TCR2		0x10
-+#define TCR2_SEP			GENMASK(17, 15)
-+#define TCR2_SEP_UPSTREAM		0x7
-+#define TCR2_AS				BIT(4)
-+
- #define ARM_SMMU_CB_TTBR0		0x20
- #define ARM_SMMU_CB_TTBR1		0x28
--#define ARM_SMMU_CB_TTBCR		0x30
-+#define TTBRn_ASID			GENMASK_ULL(63, 48)
-+
-+#define ARM_SMMU_CB_TCR			0x30
- #define ARM_SMMU_CB_CONTEXTIDR		0x34
- #define ARM_SMMU_CB_S1_MAIR0		0x38
- #define ARM_SMMU_CB_S1_MAIR1		0x3c
-+
- #define ARM_SMMU_CB_PAR			0x50
-+#define CB_PAR_F			BIT(0)
-+
- #define ARM_SMMU_CB_FSR			0x58
-+#define FSR_MULTI			BIT(31)
-+#define FSR_SS				BIT(30)
-+#define FSR_UUT				BIT(8)
-+#define FSR_ASF				BIT(7)
-+#define FSR_TLBLKF			BIT(6)
-+#define FSR_TLBMCF			BIT(5)
-+#define FSR_EF				BIT(4)
-+#define FSR_PF				BIT(3)
-+#define FSR_AFF				BIT(2)
-+#define FSR_TF				BIT(1)
-+
-+#define FSR_IGN				(FSR_AFF | FSR_ASF | \
-+					 FSR_TLBMCF | FSR_TLBLKF)
-+#define FSR_FAULT			(FSR_MULTI | FSR_SS | FSR_UUT | \
-+					 FSR_EF | FSR_PF | FSR_TF | FSR_IGN)
-+
- #define ARM_SMMU_CB_FAR			0x60
-+
- #define ARM_SMMU_CB_FSYNR0		0x68
-+#define FSYNR0_WNR			BIT(4)
-+
- #define ARM_SMMU_CB_S1_TLBIVA		0x600
- #define ARM_SMMU_CB_S1_TLBIASID		0x610
- #define ARM_SMMU_CB_S1_TLBIVAL		0x620
-@@ -150,46 +190,8 @@ enum arm_smmu_cbar_type {
- #define ARM_SMMU_CB_TLBSYNC		0x7f0
- #define ARM_SMMU_CB_TLBSTATUS		0x7f4
- #define ARM_SMMU_CB_ATS1PR		0x800
-+
- #define ARM_SMMU_CB_ATSR		0x8f0
--
--#define SCTLR_S1_ASIDPNE		(1 << 12)
--#define SCTLR_CFCFG			(1 << 7)
--#define SCTLR_CFIE			(1 << 6)
--#define SCTLR_CFRE			(1 << 5)
--#define SCTLR_E				(1 << 4)
--#define SCTLR_AFE			(1 << 2)
--#define SCTLR_TRE			(1 << 1)
--#define SCTLR_M				(1 << 0)
--
--#define CB_PAR_F			(1 << 0)
--
--#define ATSR_ACTIVE			(1 << 0)
--
--#define RESUME_RETRY			(0 << 0)
--#define RESUME_TERMINATE		(1 << 0)
--
--#define TTBCR2_SEP_SHIFT		15
--#define TTBCR2_SEP_UPSTREAM		(0x7 << TTBCR2_SEP_SHIFT)
--#define TTBCR2_AS			(1 << 4)
--
--#define TTBRn_ASID_SHIFT		48
--
--#define FSR_MULTI			(1 << 31)
--#define FSR_SS				(1 << 30)
--#define FSR_UUT				(1 << 8)
--#define FSR_ASF				(1 << 7)
--#define FSR_TLBLKF			(1 << 6)
--#define FSR_TLBMCF			(1 << 5)
--#define FSR_EF				(1 << 4)
--#define FSR_PF				(1 << 3)
--#define FSR_AFF				(1 << 2)
--#define FSR_TF				(1 << 1)
--
--#define FSR_IGN				(FSR_AFF | FSR_ASF | \
--					 FSR_TLBMCF | FSR_TLBLKF)
--#define FSR_FAULT			(FSR_MULTI | FSR_SS | FSR_UUT | \
--					 FSR_EF | FSR_PF | FSR_TF | FSR_IGN)
--
--#define FSYNR0_WNR			(1 << 4)
-+#define ATSR_ACTIVE			BIT(0)
- 
- #endif /* _ARM_SMMU_REGS_H */
 diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index 515fb1ce39ed..d9a93e5f422f 100644
+index d9a93e5f422f..463bc8d98adb 100644
 --- a/drivers/iommu/arm-smmu.c
 +++ b/drivers/iommu/arm-smmu.c
-@@ -628,16 +628,16 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
+@@ -95,7 +95,7 @@
+ #endif
  
- 	cb->cfg = cfg;
+ /* Translation context bank */
+-#define ARM_SMMU_CB(smmu, n)	((smmu)->cb_base + ((n) << (smmu)->pgshift))
++#define ARM_SMMU_CB(smmu, n)	((smmu)->base + (((smmu)->cb_base + (n)) << (smmu)->pgshift))
  
--	/* TTBCR */
-+	/* TCR */
- 	if (stage1) {
- 		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_S) {
- 			cb->tcr[0] = pgtbl_cfg->arm_v7s_cfg.tcr;
- 		} else {
- 			cb->tcr[0] = pgtbl_cfg->arm_lpae_s1_cfg.tcr;
- 			cb->tcr[1] = pgtbl_cfg->arm_lpae_s1_cfg.tcr >> 32;
--			cb->tcr[1] |= TTBCR2_SEP_UPSTREAM;
-+			cb->tcr[1] |= FIELD_PREP(TCR2_SEP, TCR2_SEP_UPSTREAM);
- 			if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH64)
--				cb->tcr[1] |= TTBCR2_AS;
-+				cb->tcr[1] |= TCR2_AS;
- 		}
- 	} else {
- 		cb->tcr[0] = pgtbl_cfg->arm_lpae_s2_cfg.vtcr;
-@@ -650,9 +650,9 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
- 			cb->ttbr[1] = pgtbl_cfg->arm_v7s_cfg.ttbr[1];
- 		} else {
- 			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
--			cb->ttbr[0] |= (u64)cfg->asid << TTBRn_ASID_SHIFT;
-+			cb->ttbr[0] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
- 			cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[1];
--			cb->ttbr[1] |= (u64)cfg->asid << TTBRn_ASID_SHIFT;
-+			cb->ttbr[1] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
- 		}
- 	} else {
- 		cb->ttbr[0] = pgtbl_cfg->arm_lpae_s2_cfg.vttbr;
-@@ -721,13 +721,13 @@ static void arm_smmu_write_context_bank(struct arm_smmu_device *smmu, int idx)
- 	writel_relaxed(reg, gr1_base + ARM_SMMU_GR1_CBAR(idx));
+ #define MSI_IOVA_BASE			0x8000000
+ #define MSI_IOVA_LENGTH			0x100000
+@@ -168,8 +168,8 @@ struct arm_smmu_device {
+ 	struct device			*dev;
  
- 	/*
--	 * TTBCR
-+	 * TCR
- 	 * We must write this before the TTBRs, since it determines the
- 	 * access behaviour of some fields (in particular, ASID[15:8]).
- 	 */
- 	if (stage1 && smmu->version > ARM_SMMU_V1)
--		writel_relaxed(cb->tcr[1], cb_base + ARM_SMMU_CB_TTBCR2);
--	writel_relaxed(cb->tcr[0], cb_base + ARM_SMMU_CB_TTBCR);
-+		writel_relaxed(cb->tcr[1], cb_base + ARM_SMMU_CB_TCR2);
-+	writel_relaxed(cb->tcr[0], cb_base + ARM_SMMU_CB_TCR);
+ 	void __iomem			*base;
+-	void __iomem			*cb_base;
+-	unsigned long			pgshift;
++	unsigned int			cb_base;
++	unsigned int			pgshift;
  
- 	/* TTBRs */
- 	if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_S) {
-diff --git a/drivers/iommu/qcom_iommu.c b/drivers/iommu/qcom_iommu.c
-index 34d0b9783b3e..746bf2a7df05 100644
---- a/drivers/iommu/qcom_iommu.c
-+++ b/drivers/iommu/qcom_iommu.c
-@@ -7,6 +7,7 @@
-  */
+ #define ARM_SMMU_FEAT_COHERENT_WALK	(1 << 0)
+ #define ARM_SMMU_FEAT_STREAM_MATCH	(1 << 1)
+@@ -1815,7 +1815,7 @@ static int arm_smmu_id_size_to_bits(int size)
  
- #include <linux/atomic.h>
-+#include <linux/bitfield.h>
- #include <linux/clk.h>
- #include <linux/delay.h>
- #include <linux/dma-iommu.h>
-@@ -247,16 +248,16 @@ static int qcom_iommu_init_domain(struct iommu_domain *domain,
- 		/* TTBRs */
- 		iommu_writeq(ctx, ARM_SMMU_CB_TTBR0,
- 				pgtbl_cfg.arm_lpae_s1_cfg.ttbr[0] |
--				((u64)ctx->asid << TTBRn_ASID_SHIFT));
-+				FIELD_PREP(TTBRn_ASID, ctx->asid));
- 		iommu_writeq(ctx, ARM_SMMU_CB_TTBR1,
- 				pgtbl_cfg.arm_lpae_s1_cfg.ttbr[1] |
--				((u64)ctx->asid << TTBRn_ASID_SHIFT));
-+				FIELD_PREP(TTBRn_ASID, ctx->asid));
+ static int arm_smmu_device_cfg_probe(struct arm_smmu_device *smmu)
+ {
+-	unsigned long size;
++	unsigned int size;
+ 	void __iomem *gr0_base = ARM_SMMU_GR0(smmu);
+ 	u32 id;
+ 	bool cttw_reg, cttw_fw = smmu->features & ARM_SMMU_FEAT_COHERENT_WALK;
+@@ -1899,7 +1899,7 @@ static int arm_smmu_device_cfg_probe(struct arm_smmu_device *smmu)
+ 			return -ENOMEM;
  
--		/* TTBCR */
--		iommu_writel(ctx, ARM_SMMU_CB_TTBCR2,
-+		/* TCR */
-+		iommu_writel(ctx, ARM_SMMU_CB_TCR2,
- 				(pgtbl_cfg.arm_lpae_s1_cfg.tcr >> 32) |
--				TTBCR2_SEP_UPSTREAM);
--		iommu_writel(ctx, ARM_SMMU_CB_TTBCR,
-+				FIELD_PREP(TCR2_SEP, TCR2_SEP_UPSTREAM));
-+		iommu_writel(ctx, ARM_SMMU_CB_TCR,
- 				pgtbl_cfg.arm_lpae_s1_cfg.tcr);
+ 		dev_notice(smmu->dev,
+-			   "\tstream matching with %lu register groups", size);
++			   "\tstream matching with %u register groups", size);
+ 	}
+ 	/* s2cr->type == 0 means translation, so initialise explicitly */
+ 	smmu->s2crs = devm_kmalloc_array(smmu->dev, size, sizeof(*smmu->s2crs),
+@@ -1925,11 +1925,12 @@ static int arm_smmu_device_cfg_probe(struct arm_smmu_device *smmu)
  
- 		/* MAIRs (stage-1 only) */
+ 	/* Check for size mismatch of SMMU address space from mapped region */
+ 	size = 1 << (FIELD_GET(ID1_NUMPAGENDXB, id) + 1);
+-	size <<= smmu->pgshift;
+-	if (smmu->cb_base != gr0_base + size)
++	if (smmu->cb_base != 2 * size << smmu->pgshift)
+ 		dev_warn(smmu->dev,
+-			"SMMU address space size (0x%lx) differs from mapped region size (0x%tx)!\n",
+-			size * 2, (smmu->cb_base - gr0_base) * 2);
++			"SMMU address space size (0x%x) differs from mapped region size (0x%x)!\n",
++			2 * size << smmu->pgshift, smmu->cb_base);
++	/* Now cb_base can reach its final form: a page number */
++	smmu->cb_base = size;
+ 
+ 	smmu->num_s2_context_banks = FIELD_GET(ID1_NUMS2CB, id);
+ 	smmu->num_context_banks = FIELD_GET(ID1_NUMCB, id);
+@@ -2200,7 +2201,8 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
+ 	smmu->base = devm_ioremap_resource(dev, res);
+ 	if (IS_ERR(smmu->base))
+ 		return PTR_ERR(smmu->base);
+-	smmu->cb_base = smmu->base + resource_size(res) / 2;
++	/* We'll finish calculating this later once we know the page size */
++	smmu->cb_base = resource_size(res);
+ 
+ 	num_irqs = 0;
+ 	while ((res = platform_get_resource(pdev, IORESOURCE_IRQ, num_irqs))) {
 -- 
 2.21.0.dirty
 
