@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65A9887640
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:34:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF8F58764C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:35:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MN9yhwDbd6z986Vo6hgFlY7ysBmVlFxTExLTCgJMzko=; b=rBk9/iVvSdptyH
-	AQAvYU8M+gb45voabHaOhX2uSj1uJpanzrppA9CoiD0hWrlP/CdUcUC5ng/dB5/28sBXAoLZpz6/l
-	DKA3+xTPrEjnO4qwFCIlKUm0IVZa8GQvjoSzAulP3T7cTIPrHmuBZKyMBDgbniyGeJFMsHDxdmcf2
-	kQunXU5S4jyYEqq0sW3KClr+uIyQez3xnt+9GbGk8MXpCJ++bb+o4X8rE4D4zJtuQP/I4DInQBaVa
-	LAmqU6QyMgCl1o1kjYr5/Hr1vZWsr0lOl5PMJHWtcDoUpf1fyxI4sFIQihi3a4ZHT8iIuoeinVpoe
-	yoy5lThCn9ixwRxgGvxw==;
+	List-Owner; bh=CJzdo4g+5pRnXQbWs4d1ReSMpjyVpge92g5HnT4lds4=; b=akvLHMMPH6A0Cn
+	hTocf3DhIMGkj9WEPKfi3MY9TKD2WDm6rRdcSzMXTQ1dlUdY1CPfxaV1WBtEb4cfXcVR6AsXbFzuF
+	Lk1dZ+q4wUPmB1u1VYQvPeAWzi1CYdYaM/uAu07PYkkPTQkpMW6M6v/MyPG/u/LHFiedMAHbQRNv+
+	VgjU9qE727tUfack4L3PYxGYuWHSQgaEdHYijy25xwN29LxCmzpuZP0ThA26EjyGpsCip9Rq4sYSP
+	WJ7fuagaJRQ3oY6RcWjmK4qLCBUaLtZepmWjJ9RshFRUzIxL8IAmgM31ozYgajE2Ay/CJ8wDgLstQ
+	R7hqtc02azzL5pQqMm9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw1I1-0004fN-1P; Fri, 09 Aug 2019 09:34:25 +0000
+	id 1hw1JK-0007VY-4a; Fri, 09 Aug 2019 09:35:46 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw1Gi-0003Xp-WC
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:33:06 +0000
+ id 1hw1Gu-0003kF-3T
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:33:17 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id CAE61D63E5;
- Fri,  9 Aug 2019 11:33:02 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 5DFB4D63CB;
+ Fri,  9 Aug 2019 11:33:13 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id nYp0THkNFEQe; Fri,  9 Aug 2019 11:32:38 +0200 (CEST)
+ with ESMTP id vJ9V4MtugYfV; Fri,  9 Aug 2019 11:32:40 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id B4F1ED63B9;
- Fri,  9 Aug 2019 11:32:23 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 5991FD63D2;
+ Fri,  9 Aug 2019 11:32:25 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id nCBIEilcx3xN; Fri,  9 Aug 2019 11:32:17 +0200 (CEST)
+ with ESMTP id D0045EFrnD-y; Fri,  9 Aug 2019 11:32:18 +0200 (CEST)
 Received: from furthur.local (ip-37-188-137-236.eurotel.cz [37.188.137.236])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 75BB2D63B1;
- Fri,  9 Aug 2019 11:32:15 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 416E9D63C1;
+ Fri,  9 Aug 2019 11:32:16 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH 08/19] irqchip/mmp: coexist with GIC root IRQ controller
-Date: Fri,  9 Aug 2019 11:31:47 +0200
-Message-Id: <20190809093158.7969-9-lkundrak@v3.sk>
+Subject: [PATCH 09/19] ARM: l2c: add definition for FWA in PL310 aux register
+Date: Fri,  9 Aug 2019 11:31:48 +0200
+Message-Id: <20190809093158.7969-10-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190809093158.7969-1-lkundrak@v3.sk>
 References: <20190809093158.7969-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_023305_266392_D0377246 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20190809_023316_577475_B839BD3F 
+X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -81,37 +82,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On MMP3, the GIC can be set as a root IRQ interrupt controller. If the
-device tree indicated that GIC is enabled, avoid hooking up
-mmp2_handle_irq().
-
-The interrupt muxes are still being used.
+The PL310 also has a "Force write allocate" bits in the Auxiliary
+Control Register.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- drivers/irqchip/irq-mmp.c | 9 +++++++--
- 1 file changed, 7 insertions(+), 2 deletions(-)
+ arch/arm/include/asm/hardware/cache-l2x0.h | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/irqchip/irq-mmp.c b/drivers/irqchip/irq-mmp.c
-index 25497c75cc861..28feb0f393056 100644
---- a/drivers/irqchip/irq-mmp.c
-+++ b/drivers/irqchip/irq-mmp.c
-@@ -472,8 +472,13 @@ static int __init mmp3_of_init(struct device_node *node,
- 	icu_data[0].conf_disable = mmp3_conf.conf_disable;
- 	icu_data[0].conf_mask = mmp3_conf.conf_mask;
- 	icu_data[0].conf2_mask = mmp3_conf.conf2_mask;
--	irq_set_default_host(icu_data[0].domain);
--	set_handle_irq(mmp2_handle_irq);
-+
-+	if (!parent) {
-+		/* This is the main interrupt controller. */
-+		irq_set_default_host(icu_data[0].domain);
-+		set_handle_irq(mmp2_handle_irq);
-+	}
-+
- 	max_icu_nr = 1;
- 	return 0;
- }
+diff --git a/arch/arm/include/asm/hardware/cache-l2x0.h b/arch/arm/include/asm/hardware/cache-l2x0.h
+index 32edfadb15935..a6d4ee86ba543 100644
+--- a/arch/arm/include/asm/hardware/cache-l2x0.h
++++ b/arch/arm/include/asm/hardware/cache-l2x0.h
+@@ -118,6 +118,8 @@
+ #define L310_AUX_CTRL_STORE_LIMITATION		BIT(11)	/* R2P0+ */
+ #define L310_AUX_CTRL_EXCLUSIVE_CACHE		BIT(12)
+ #define L310_AUX_CTRL_ASSOCIATIVITY_16		BIT(16)
++#define L310_AUX_CTRL_FWA_SHIFT			23
++#define L310_AUX_CTRL_FWA_MASK			(3 << 23)
+ #define L310_AUX_CTRL_CACHE_REPLACE_RR		BIT(25)	/* R2P0+ */
+ #define L310_AUX_CTRL_NS_LOCKDOWN		BIT(26)
+ #define L310_AUX_CTRL_NS_INT_CTRL		BIT(27)
 -- 
 2.21.0
 
