@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 662AE88565
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 23:59:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9098C885B3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 00:14:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/qRG9CftzI6BGAaqPBlue7W11Lv44k2lxHinbW+ij1E=; b=EYejkRoKpIS9Pw
-	JnqQRqGqDNtIzPtsuGil74ML/MWOkUrRdDIPyX84ZFF6A6/7L10RA1rqlgmxLbK2uZYg6IUR//71V
-	2a4UMGZdqOzzcoz8nFYqi5QUuH+Ag2GSoNJY8yIy6wV0jggQ0EZSPIkofUewOH3Ik7DW1YvnN2/i4
-	0+gygU+WHYZSqS3rRPRCFpSurZAgWm1ynu9GcgoJ/sNd0sOX9ftFGzGIo7g5NzWAiubllFvajIZ6q
-	Rft89ByCphkHwLkL+TTAyVqvsnimHVOFSaI6r7EE4pE3fjqidmpo1CP1Lkhjd969WHv2f3Y3DD2ud
-	84Si69YEhYel0Wn2nPgg==;
+	List-Owner; bh=EWs98BjDFjXEhqbR2FZgK45SeFjSQhiL0Xcz50dPH70=; b=QlEFsM/fb0IwNU
+	lF+NeGR57Euwd/12IBto+YNU0uL05v6sz5f9ct2EdGP3gkLeQGxM7xd2N3RvtskHjEz9HWkajwceg
+	OjdZI02sG2x/Qwy9bYLhK5rPepUmH6cxkokoA/doYdX2JRZxagJrOlHBDdik/cA94odZZ7N0fRUCx
+	CJxn9sevqEmDe1uA4NbFy9E7njC/4b4eQxUYzPX4c2EucgWpcS4jzP1YjsTJwNsMx2xGdRS2x6sXn
+	zeH3LfiL1IXP8JEEIu79R+hdABsdnsMCk77CGwlInado1zjOszTPg3BaJT/QtgNfTyvyNloWdphxd
+	8FeqjAkbdbvI/QG8jbLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwCuz-0008A1-OD; Fri, 09 Aug 2019 21:59:25 +0000
-Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
+	id 1hwD9f-0005vK-Br; Fri, 09 Aug 2019 22:14:35 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwCur-00089H-QQ
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 21:59:19 +0000
-Received: by mail-pf1-x449.google.com with SMTP id 191so62281926pfy.20
+ id 1hwD9U-0005v1-3v
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 22:14:25 +0000
+Received: by mail-pg1-x541.google.com with SMTP id t132so46496074pgb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 14:59:16 -0700 (PDT)
+ Fri, 09 Aug 2019 15:14:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=aHPozI+kRmLZ/MJlV7luwBtUMjEIFkgoeCnOJismWTA=;
- b=XmhQBsfMHALmx6QOLM9UBumnO7+O8bCcXOWfbEhvnKPRZtyZjK8Tox3QlWh+5SsoHo
- nSFWQ4AXRB5rGt1kt3KE4aQEc1I3c3lRuL9npZ/+GiDm5vL+RU7MnPYmUFcMbJyKb6ra
- WcTRcRm2FQ6DDaHqNyLsrOSB632i+21o8ygllWidqV7vliACQwXLx06D5cWErjUfEvvk
- oS6tlLYGXRIUWgi8FZPNnxObKBs0OQf/b3sPOwVn84irLt21e12rwexZf1dIbzAlT4UU
- pC9A8HRAZ1JoHP5xAxw+zFJ7gBhI3E9LOkogGnAloitRhXpmiawVE738kNJQ2UpHPLsi
- ecbA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=sTGM+jKd0j/u9kKivj5QkkT0ws6UqJeC4LOf3qyOSiA=;
+ b=ZPSYG2y1FubHnMCujvzkNF9nNq1g/qGihS3NYDYHfoowc1sONFpcYWNKJOsWswrUN7
+ 8X8J/DAdY5e1GK43gVcXEcONfn6JKlZjPIK/cEJU4xZkkY9E5BlJ6rMEabiwiqyTt5L5
+ rRSCuTe8ibPBWDXs7+ytP5eND2MMvLdBCH/7MAdvGJhqBodhDlT5k3zLaZUh/dI29U1c
+ 6H463+QhLY3jWsJLFnrg2zH2XJPDoMlh1jfs641LcfynH4fwV6mRqFQ+xh+fvDTlBrIa
+ t91uYfy0NeJKWYGCvHaGKnIaHtSOa8x6k5c6o8FGkyvGMWwPrBhNC4OLlUTCaJZDsQM8
+ HUrA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=aHPozI+kRmLZ/MJlV7luwBtUMjEIFkgoeCnOJismWTA=;
- b=m1T22764nJwgWwkgj30IAp1GEjx5CnP+8tej7ZFg2IIW4IIzg9GFk8NPh4x5YkLU9c
- YHHGI14y1Hetk823rH1lnswblhH02l69Ag57b7Dfc7I3HppkoIzpkBW7GoIY5xjFtF3b
- iWdgz84EguoZJh76UQ8joV+rEdQ7Y5wibM5qBd2DmuCO95ZzIR6IribZ3O09CLZGceVf
- wc33nc+ye2GZ7RiBLOzra5z4MVlz03fmBso+7T8ouOUohbu2o9+vN2h2pAYgGwWrk7tm
- XWxyksM+q2CRtYVDSgyxy8ffL1MldwBsoC4+hYIUO2CW5MwDCdconTVUJkEgHTPMZ9Ph
- loBw==
-X-Gm-Message-State: APjAAAUsYq5xQQ2Dwj8V1MCQsukg9UrDQDxYxj6VILg2uEAsGGS3zy9T
- dvuSAvo7ddTTdcr41IFWoYA9hX62Iw==
-X-Google-Smtp-Source: APXvYqyz8CcNShPWSHPO/FAxHKFz6gmTSkkw/fYF/3ATwxbLzpgLwoS9L+u1s86mqzbQrSNfPjRKv0frajw=
-X-Received: by 2002:a63:bf01:: with SMTP id v1mr18841445pgf.278.1565387955717; 
- Fri, 09 Aug 2019 14:59:15 -0700 (PDT)
-Date: Fri,  9 Aug 2019 14:58:48 -0700
-In-Reply-To: <c7ac79dd-c15c-6edf-153f-71dd8f754a93@arm.com>
-Message-Id: <20190809215848.47736-1-yabinc@google.com>
-Mime-Version: 1.0
-References: <c7ac79dd-c15c-6edf-153f-71dd8f754a93@arm.com>
-X-Mailer: git-send-email 2.23.0.rc1.153.gdeed80330f-goog
-Subject: Re: [PATCH] coresight: Serialize enabling/disabling a link device.
-From: Yabin Cui <yabinc@google.com>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, 
- Alexander Shishkin <alexander.shishkin@linux.intel.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=sTGM+jKd0j/u9kKivj5QkkT0ws6UqJeC4LOf3qyOSiA=;
+ b=XeEzAwCuzNz2dVpa2ZTW76Q3HeepLu8+QwGpXD/OCb0233Zsdk4qLIoXCqcrV7U5If
+ ePjrdSeQD5laXHeXI8Zw5hslvAjHO2GRhjnyrUfQTHCx1eFUnbzCG9LbFTl41IqqQvRa
+ 3u3DIrNUosdxyIjU60+6Twjn8+OYwgo3iVvrG1hnK05R5kk2P7HVIU/EFo66Ek5ggbos
+ QbsPpWQQU9bA9QWDIzrzVoZOSIvizWhnLeoR4vYdmZOSfQXkxWfmczaJMHRd1fGd6MiA
+ bzCVhRIAFJZtT5iSIHMie3bTJX/paMVAx7PX/3qQ7bUPslOerYLbXz0UIVlveZ/gh4aT
+ DfMw==
+X-Gm-Message-State: APjAAAUtnWOC+YqYikwaO60nzxJ9Zug6ne/SZykN7Ou9EpDBpOCXoZ+V
+ bmwgXj4+Z0W5X4aJ3TPlwzge4FDjyDQWnx0L2+t1uQ==
+X-Google-Smtp-Source: APXvYqxitIf75C0kIneyrNkgvFG5aI1vCR6XBvjt3uLYaXSyX1fAscaC6qULNBcaWiY/708qdARMbGa5q8vlVOwuBME=
+X-Received: by 2002:aa7:8085:: with SMTP id v5mr6610774pff.165.1565388863281; 
+ Fri, 09 Aug 2019 15:14:23 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190808032916.879-1-cai@lca.pw>
+ <20190808103808.GC46901@lakrids.cambridge.arm.com>
+ <D2A2F2B9-0563-4DF6-8E77-F191A768CE4E@lca.pw>
+ <20190809085332.GB48423@lakrids.cambridge.arm.com>
+In-Reply-To: <20190809085332.GB48423@lakrids.cambridge.arm.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Fri, 9 Aug 2019 15:14:11 -0700
+Message-ID: <CAKwvOdnbZNeCHbvYMgBd-mw0Q3eP-AxM9dqWmM3pZ_BrDaTzbg@mail.gmail.com>
+Subject: Re: [PATCH] arm64/cache: silence -Woverride-init warnings
+To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_145917_883724_AA3A3CB3 
-X-CRM114-Status: UNSURE (   5.47  )
+X-CRM114-CacheID: sfid-20190809_151424_180810_EE647C36 
+X-CRM114-Status: UNSURE (   7.60  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -7.7 (-------)
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,7 +86,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,19 +100,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yabin Cui <yabinc@google.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>, Qian Cai <cai@lca.pw>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->You may also want to protect the refcount checks below with the same lock, just
->to be consistent.
+On Fri, Aug 9, 2019 at 1:53 AM Mark Rutland <mark.rutland@arm.com> wrote:
+> * Find a mechanism to suppress the warning on a per-assignment (not
+>   per-file) basis, without altering the structure of the existing code.
 
-Good suggestion! I didn't protect it because I found other places using refcnt.
-But it turns out they are not link devices.
-I have uploaded patch v2.
+#pragma push/pop can be used to suppress warnings in a localized
+section of a translation unit.
+
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
