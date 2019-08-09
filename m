@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C0DA87E40
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 17:40:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F52E87E56
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 17:43:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XEoyopAEWkVToZs0AWoZcxtpvkMh2WNrwAEKcMRDWLE=; b=cGOZfpCuP/cMnp
-	HMgJmD2pKmiXcXvGoKVmAAqV6v0PKFhMIru7/HNeYarW8Ul/QqWUhH+j6YXmGUHvAKKVVqiReyVEM
-	kZ1Iu5SXtH5Pidq8c4/hYFjeZMoK3jHIXn6VfYxzvtm2bOMGF73lPvsQsFGb6awDG5P6S+wiRon0x
-	UpjIUPH9xWcyQjUrTh5HcYHV93Yv7+LxBzQMur+sxZq9TIJPaVobOblKeIDlLcGpf5eZUSeT4VuoO
-	l2qLpz5xsgPLVl5Jau8e40vj7ivz8TibdHYS8p5RBqeQ4s2+/KWn1OGgfFJyOG46x68JTNA5KDGyk
-	8xhpSeBfBGA4uuLOa4cA==;
+	List-Owner; bh=1x0RQMBRizwBMTX+2taJ2ImBuzoL/3l6JCnlqgKV/aM=; b=evaTOecKhZrVhe
+	gc2ll4p8hV/tEtmqwsSc6nnY6EYhZKYd+1Qt/9X5TvDGcQQpQgA1LGOYMXnR+hyTArOnkMwt92ryW
+	+5Xl/hlWpalVSFDUSGqqaCX1RUhKfL3pNtkhf/MtFFh3xaxT10q1d1DlSOSRWq8CEDrEK+S51tb/Y
+	bMCM8IsnZ+nhPDqupv2Olu8lkUiCl69Vyl5rJegrrN3IIiO9bFsTb4FZpO1Do1uJ+IpvcRNvy9RA9
+	ECwSMVBsMv1lqqGlxzGVfCOFpvmSP/s/8aMPhI4RTarzqj37vujs05+cc68zaPA8STUDLjB6TCsBR
+	Qes0GAP1EZa76k18Nt9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw70C-0004KU-AZ; Fri, 09 Aug 2019 15:40:24 +0000
-Received: from mail-eopbgr10123.outbound.protection.outlook.com
- ([40.107.1.123] helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1hw73A-00051X-Sk; Fri, 09 Aug 2019 15:43:28 +0000
+Received: from mail-eopbgr30120.outbound.protection.outlook.com
+ ([40.107.3.120] helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw700-0004K3-Nn
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 15:40:14 +0000
+ id 1hw731-00050W-Lp
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 15:43:20 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=hUQlXhGZrfSuCTUfAR2MCeePhC5QlarfMN13JyqQ8m8cnxLdukoAidEdtUaxh/5ppWVRaPkqfVHjXMvvAeuIGrdIDNXPBhvYmByP0JWuGsuOa1HPhGwECkfRq/1R293+RFz8V2DXYmRAekJhEVXGNmwn+S6GL8BRk5J7Sky19TYRX1r1BDnxePKGMQM0X56U6YaPFn3bcdi7uAw4JSXVdPTRMN8srnfvltzPr5JFQhXpFPRNzQhSKoJfaVPuVRDlikEhCJXj4ZdxKrBZGpdwklBDsMHrhuXU+s8cpxbxmotLkd5QOXWuB9lg++9WaNfreOvDiUTVnI6hH+DhdX3T5Q==
+ b=FLLVC7nmStCxQTjdNrdGQ8UfwMzx8OAjpMHeDTqUMcwYgXvd0Qo112b+OoBu+XzH8+BCfljhyMXkx9bp5xpJIf6UBlQ3J/nm36RW8KDL8crIgMh7Liqb1Aew8QJDestS0ljodWxnGz/p+K4JxyEZ9ckjaNoB0eBnkZhHUvVIkKB5fDeab+Cw+EVyUSfhnG3fFOK1NGnL+tQJZd94/iOVCraQLL2L1jJkcZYWNIdTdVW40SrRlHT2kij0M3NEciH+OWYf6KHpj0gNTWnDDg/jErGkYgRxFDzM29JXVNGxGMnPdraSR0Voc46XX8noMJ+9Uh/smdX6v+OexLsw2ayQKg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EPUQ8HA6jGSFgKI1iFnaN3afWG286FuCNGftbgFJk9o=;
- b=Cwki9pBlWmXPE7jLh3/tvOpFE7SZLCfbqN6OJTMNsvOCpcohVa3ROAqJNHzMajs5rxd6os94KOVWEWPDX809CXXabIhuM/9CBPjxGNXwHpWMK/dqeufVWiG3XiIa1ieiShDDU3H794QqB/o0PwAAdlmyaaeCjEXG7pynZuE8VFIwqY3UaQwJM5T5ak80WnoRcAGWhZE4Re0aOmU1CkSs618rQfVGfqvciCnstqQx8feQ8O6FXNx3pcQ9eWq4qkgZN+a3MqekTXuWEldYR2IMW61gc52ztd1wSVAoNAxUmDI/o7NjppmuPyWPE6xgNIVY5wFaa0QsgjigX6CdIrMFwQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
- dkim=pass header.d=toradex.com; arc=none
+ bh=Y4y1JdZ9/yl0cE7140GCL8o8T5/ImPXruaQp1egAGZQ=;
+ b=N2Fu+sW7467UaFvdB94YYGvSOAOc8yByVej4BUY4ao8qZF8LY/LUq3Z2fZUfMQWqrfPNVWYGGh94nXbgHxTjqLxlx70Imnp335i6FYQs7jMjEWF/Cpu14w56IHiy6Y6NIVjITCm6bLkHBpfAHOH2aRKOcj8dC/QOe6T+lKykncrr+yeCR4QOPknounduCAiHWS4DktDAOx3IzsPjCES/sD/hQ3/DKqqq162fHBx+boUz0GHYPEFlHOqadRx6DxV9NtSRkM4wbPQUfU4M5hAXVvnsTpTESMJ+CZH+fo4kCmBIxcHR0YyFNABzV7ldbz8CSB091OlKL8emuBJB0rqZhA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
+ smtp.mailfrom=toradex.com;dmarc=pass action=none
+ header.from=toradex.com;dkim=pass header.d=toradex.com;arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EPUQ8HA6jGSFgKI1iFnaN3afWG286FuCNGftbgFJk9o=;
- b=mSFDMEi6iznQhmQFzZQKhRyQ6AxE80BXNf0N5Y3yXHpRVN4eGpPaH9bpysIqoelTJvuYmp1IIkb5xf1JNZwEDzX2Ki3hZQEBbOdOz8zfRxZDpz8c91dy9yIcXCLF81hZNf2Lk3yjN9rlNkzGk/uRGMxm1UuuBN16Hg1CEtBwglw=
+ bh=Y4y1JdZ9/yl0cE7140GCL8o8T5/ImPXruaQp1egAGZQ=;
+ b=XTfDr7+JxZ0iVbrljub9x+UutPNJcl8vh661E9+UVwcM1eaCwvR+R7/AEimLvW3RGjUBylD18/EaR5jMulFQ2rZABn8Onfz+rl3Ov3RwmQDdSZwib7T2OSJCHC0hxGT1Ri/fEAQMN9BZ1SUWkWLY41XjzWxdbm7wCxBMjqMjzqo=
 Received: from VI1PR05MB6415.eurprd05.prod.outlook.com (20.179.27.139) by
- VI1PR05MB4909.eurprd05.prod.outlook.com (20.177.51.18) with Microsoft SMTP
+ VI1PR05MB5823.eurprd05.prod.outlook.com (20.178.122.225) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2157.20; Fri, 9 Aug 2019 15:40:10 +0000
+ 15.20.2136.16; Fri, 9 Aug 2019 15:43:13 +0000
 Received: from VI1PR05MB6415.eurprd05.prod.outlook.com
  ([fe80::f1b2:353a:da9b:c19a]) by VI1PR05MB6415.eurprd05.prod.outlook.com
  ([fe80::f1b2:353a:da9b:c19a%4]) with mapi id 15.20.2157.020; Fri, 9 Aug 2019
- 15:40:10 +0000
+ 15:43:13 +0000
 From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 To: Max Krummenacher <max.krummenacher@toradex.com>, "stefan@agner.ch"
  <stefan@agner.ch>, Philippe Schenker <philippe.schenker@toradex.com>,
@@ -55,16 +55,14 @@ To: Max Krummenacher <max.krummenacher@toradex.com>, "stefan@agner.ch"
  <michal.vokac@ysoft.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "festevam@gmail.com" <festevam@gmail.com>, "robh+dt@kernel.org"
  <robh+dt@kernel.org>
-Subject: Re: [PATCH v3 15/21] ARM: dts: imx6ull-colibri: reduce v_batt current
- in power off
-Thread-Topic: [PATCH v3 15/21] ARM: dts: imx6ull-colibri: reduce v_batt
- current in power off
-Thread-Index: AQHVTPnUAnr1vxWSd0S4SXGdXkHUnaby93+A
-Date: Fri, 9 Aug 2019 15:40:09 +0000
-Message-ID: <b1d05badaf2bfbb09f67be76ccc5a98105222c9f.camel@toradex.com>
+Subject: Re: [PATCH v3 16/21] ARM: dts: imx6ull-colibri: Add watchdog
+Thread-Topic: [PATCH v3 16/21] ARM: dts: imx6ull-colibri: Add watchdog
+Thread-Index: AQHVTPnV79tSXC+1fEesojD6I0AgYaby+FkA
+Date: Fri, 9 Aug 2019 15:43:13 +0000
+Message-ID: <1012c9f70373cb4f87f75d8c636029f0871e55c9.camel@toradex.com>
 References: <20190807082556.5013-1-philippe.schenker@toradex.com>
- <20190807082556.5013-16-philippe.schenker@toradex.com>
-In-Reply-To: <20190807082556.5013-16-philippe.schenker@toradex.com>
+ <20190807082556.5013-17-philippe.schenker@toradex.com>
+In-Reply-To: <20190807082556.5013-17-philippe.schenker@toradex.com>
 Accept-Language: en-GB, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -73,44 +71,43 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=marcel.ziswiler@toradex.com; 
 x-originating-ip: [2a01:2a8:8501:4d00:ca5b:76ff:fedf:3c49]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 684cfe21-de6d-4b13-cd6d-08d71cdfdc92
+x-ms-office365-filtering-correlation-id: 6558519a-f369-4161-6e61-08d71ce049d5
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:VI1PR05MB4909; 
-x-ms-traffictypediagnostic: VI1PR05MB4909:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR05MB4909D561B59D4A5B9D55B6A6FBD60@VI1PR05MB4909.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
+ SRVR:VI1PR05MB5823; 
+x-ms-traffictypediagnostic: VI1PR05MB5823:
+x-microsoft-antispam-prvs: <VI1PR05MB58237FA01D0BD9842349ED8EFBD60@VI1PR05MB5823.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
 x-forefront-prvs: 01244308DF
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(136003)(366004)(346002)(396003)(376002)(39850400004)(199004)(189003)(186003)(256004)(6506007)(446003)(11346002)(102836004)(6116002)(46003)(76176011)(2616005)(118296001)(478600001)(476003)(44832011)(71200400001)(71190400001)(66446008)(8936002)(66476007)(66556008)(486006)(66946007)(64756008)(2906002)(91956017)(76116006)(2501003)(25786009)(4326008)(53936002)(6512007)(86362001)(2201001)(305945005)(99286004)(7736002)(14454004)(7416002)(6436002)(36756003)(6486002)(5660300002)(110136005)(316002)(6246003)(54906003)(229853002)(8676002)(81166006)(81156014)(32563001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB4909;
+ SFS:(10019020)(4636009)(39850400004)(396003)(366004)(346002)(136003)(376002)(189003)(199004)(478600001)(66446008)(2201001)(81156014)(36756003)(46003)(2501003)(446003)(86362001)(7416002)(14454004)(25786009)(8676002)(118296001)(6246003)(99286004)(6116002)(8936002)(81166006)(66556008)(66946007)(76176011)(66476007)(64756008)(6506007)(229853002)(71190400001)(305945005)(110136005)(76116006)(102836004)(53936002)(6486002)(6512007)(91956017)(2906002)(6436002)(11346002)(486006)(476003)(44832011)(4326008)(256004)(71200400001)(54906003)(5660300002)(2616005)(7736002)(186003)(316002)(32563001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB5823;
  H:VI1PR05MB6415.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: toradex.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: lf4YF1WdsApaIECShPBqqnErqz1ztq9XCTZU9ylNEmMSgyo/z6BOVal59TQNGS4OwcpI99ATj32SLPpFpyvQ4JZbipBsp8/AhkoH0eUnuKlqAGy5wwNw9v6ftMdNfh41V6YkFqioZn4rgRK8OTsHVTwbnfbsJsU35lWAWE2PcNqrAIVlEf/l7SqiVPG7HRzrA8HuIH1gYkGJYuwWrkDXBO1IPlIjFgciKwH57hTBkZM5BmcsNwQhcW1FdjdHW1BvijYwlAfCQlFCYhsoP4Q7EhlTKp8/540TvdPjA2bVB4EPi8CPFiegDr/YYMzZoRKJCgAf+JmieSAm5BeUiVGMN+pRQdHVv7dcEyZ1axeq6fSWlwBEU1cDiwTDsNhaZqn34OSkXUHkuAliyni0dPTh7rEmyOjWLSKPCPkCbWkSYY4=
-Content-ID: <9B0DAF92E0C01F4F8AD2F603DABAA167@eurprd05.prod.outlook.com>
+x-microsoft-antispam-message-info: qhSPlkvEBFZLCmenbUFLM7zdKVG5fH6f90mC0m6bhePP1SwWXd/6Z4W/9gDRbZEZBib+RDBh+S4TLCqIaAJ1EC8Ymul6Ioq4lbNCIJU9xdBYbHurHUz1ddoFlfOlbhFVm90lz7+J6Te4VDfkmsI/Iyc0Oja8E4cZP7j5moaB+SqFYFMhWcFhfw8i5HXwfRXcaNkD3T5OQu6bB7DEzGayxuh4Sr2DKWn0jldg9RNQUthnJQczqZI+F2AHVOYl+NICnxWla4L57g1rC7GQP2Uq6WnGCAU/+V3aXTDyjxL2cIcr563uX8SEMP2NMaUqkH50efyUpTZU4gGo6DKN6H/Khhme6vitnFy+VKzNRYMU7ZA2eYy8ExjNaynycQI7SB/vHEO2dmWzYMS0VmbDpfQ4KDHjxApz3s8rKRZSF9YOF7s=
+Content-ID: <9EEF78776F113A40AA7D891B9AAA5C6C@eurprd05.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 684cfe21-de6d-4b13-cd6d-08d71cdfdc92
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Aug 2019 15:40:09.8558 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6558519a-f369-4161-6e61-08d71ce049d5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Aug 2019 15:43:13.2201 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: p77Tpy0oLmSXZoNOn2N6lzR2rHqhXg90jyisO+xpzMnS6iooUvlxiSCjhrXmeRLMiBOadVZu1A82jNCYIU5Yv4jX9PqJLFbgG6mY1VgAXmw=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB4909
+X-MS-Exchange-CrossTenant-userprincipalname: VWYWJXtxSSsaiB2lnaORjIAY2pdTTR//YDKYrHmZngsGlAK4A2sOTngC7grtKK5PihpFztsb9/+xGJ8/tSjLeveceE2VXwBtEldoroq4Tes=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB5823
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_084012_781342_B8B0A47E 
-X-CRM114-Status: GOOD (  17.84  )
+X-CRM114-CacheID: sfid-20190809_084319_718950_9BBCC30C 
+X-CRM114-Status: GOOD (  15.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.123 listed in list.dnswl.org]
+ no trust [40.107.3.120 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -142,17 +139,8 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On Wed, 2019-08-07 at 08:26 +0000, Philippe Schenker wrote:
-> From: Max Krummenacher <max.krummenacher@toradex.com>
+> This patch adds the watchdog to the imx6ull-colibri devicetree
 > 
-> Reduce the current drawn from VCC_BATT when the main power on the 3V3
-> pins to the module are switched off.
-> 
-> This switches off SoC internal pull resistors which are provided on
-> the
-> module for TAMPER7 and TAMPER9 SoC pin and switches on a pull down
-> instead of a pullup for the USBC_DET module pin (TAMPER2).
-> 
-> Signed-off-by: Max Krummenacher <max.krummenacher@toradex.com>
 > Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
 
 Acked-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
@@ -162,43 +150,40 @@ Acked-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 > Changes in v3: None
 > Changes in v2: None
 > 
->  arch/arm/boot/dts/imx6ull-colibri.dtsi | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
+>  arch/arm/boot/dts/imx6ull-colibri.dtsi | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
 > 
 > diff --git a/arch/arm/boot/dts/imx6ull-colibri.dtsi
 > b/arch/arm/boot/dts/imx6ull-colibri.dtsi
-> index 1019ce69a242..1f112ec55e5c 100644
+> index 1f112ec55e5c..e3220298dd6f 100644
 > --- a/arch/arm/boot/dts/imx6ull-colibri.dtsi
 > +++ b/arch/arm/boot/dts/imx6ull-colibri.dtsi
-> @@ -533,19 +533,19 @@
+> @@ -199,6 +199,12 @@
+>  	assigned-clock-rates = <0>, <198000000>;
+>  };
 >  
->  	pinctrl_snvs_ad7879_int: snvs-ad7879-int-grp { /* TOUCH
-> Interrupt */
+> +&wdog1 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_wdog>;
+> +	fsl,ext-reset-output;
+> +};
+> +
+>  &iomuxc {
+>  	pinctrl_can_int: canint-grp {
 >  		fsl,pins = <
-> -			MX6ULL_PAD_SNVS_TAMPER7__GPIO5_IO07	0x1b0
-> b0
-> +			MX6ULL_PAD_SNVS_TAMPER7__GPIO5_IO07	0x100
-> b0
+> @@ -506,6 +512,12 @@
+>  			MX6UL_PAD_GPIO1_IO03__OSC32K_32K_OUT	0x14
 >  		>;
 >  	};
+> +
+> +	pinctrl_wdog: wdog-grp {
+> +		fsl,pins = <
+> +			MX6UL_PAD_LCD_RESET__WDOG1_WDOG_ANY    0x30b0
+> +		>;
+> +	};
+>  };
 >  
->  	pinctrl_snvs_reg_sd: snvs-reg-sd-grp {
->  		fsl,pins = <
-> -			MX6ULL_PAD_SNVS_TAMPER9__GPIO5_IO09	0x400
-> 1b8b0
-> +			MX6ULL_PAD_SNVS_TAMPER9__GPIO5_IO09	0x400
-> 100b0
->  		>;
->  	};
->  
->  	pinctrl_snvs_usbc_det: snvs-usbc-det-grp {
->  		fsl,pins = <
-> -			MX6ULL_PAD_SNVS_TAMPER2__GPIO5_IO02	0x1b0
-> b0
-> +			MX6ULL_PAD_SNVS_TAMPER2__GPIO5_IO02	0x130
-> b0
->  		>;
->  	};
+>  &iomuxc_snvs {
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
