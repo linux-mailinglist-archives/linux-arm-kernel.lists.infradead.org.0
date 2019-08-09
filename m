@@ -2,143 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0817F875FC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:32:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C43F08765B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:38:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1a6XIAA3JSS5adhWx0PWMLEdJcUrIDjp/OfGLJayymg=; b=Ir78iTKlPtucou
-	0hf0QNawnlWx7ES0zY8VZRTuXHk/AOZF1aK9teVt0NCHVxkm2yL+XoLrzqC4eaNL+s9Sd5w7hXOR2
-	aguCvToKv4Ds1Voo1Pf7OusIYcCmRrYjynBOXjcilBgAoqfwoSGRNZU7doHF2z+gra/IZMQLUOhl6
-	/2/JdgA115hl7q2U8FlmA4psvb8SXXAhn7OyiKOFFTaOsc6FPNUy1ftLtbJGmhd7DBxK2fYjGrq3p
-	QVVIOKu+mfgQoJyEjkFORKILTZj89FeQqalNrG0Pn3jrowpjohSBSS9OCb849drhWx2B2CoaTEsRj
-	yhD6scfSJfmWtoRBSnYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=84lTIESC3FSpMpQyV1/fPB8Q3C10GfrwW4bx4oPNG9E=; b=cWEdrgcUDXYFo/
+	40O9VzYtxs7L0r9/7lhG9fOavMQAoPopdqI22thLzV2dI4i2mH9e5h48NltfEn/3SO1/g8v6RgufG
+	jSqxqabjgo7WDZfOTSwQYmiqqfmIMdgDd7TL0FizXjyQfB7ksAYnAMBWyNQsCj1RCS70+DHFGNGpZ
+	ix1Ylg2GepsgooAevo8loJobtgPNdbwaYEIFu802a/hM0NfplxtdW5haw0YvuDCDnqSVm89S1qQWp
+	idD9GTOsfSVrP2d9wImUrFZ/B6dXeJY9qo7DENujhBNZ5wUkVB8QB6t7QX8+5/tGK+VFrr+pILolb
+	e3gFklY+dlW+og1QlVKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw1Ft-00032F-Rn; Fri, 09 Aug 2019 09:32:13 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hw1LY-0001T3-Pt; Fri, 09 Aug 2019 09:38:04 +0000
+Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw1Fh-00030e-99
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:32:02 +0000
-Received: by mail-wr1-x443.google.com with SMTP id b3so5214920wro.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 02:32:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=7xl4Fxz1zkuKhZY0T+DBnZURadM5hWOlSpQpQ4x+iYI=;
- b=zq+sCrrHuP1zwsq5Z24lxPWAOi2UiWGLr0liOc8JGvDoRtsxoeNufIes/YwhMQen4j
- l1hjznGhPLY+PfJoLt+daMcI+S0mdvFjgxs3PeYhy0PhGoQJP2vodAE0KRguFMnO/2yU
- 5KZt1bckXqoy0Np0gHfOoVStkcg1jVLtghC/L7pCt3NLjchm3Aor4hkqQJllJK/oOq/y
- dplcIvZIuO7UkO10kTkbLctD78DjNu2P4FGeXppnAgvth9DjV4cv6rzjzcayTL/HIT6/
- 6Pvf8VxpFBwFnf0OrGk8C2MEU7Lq2zRHSUdyYUR+7fhypDorjMKGZ0EiGRrmOdQobmkA
- DAdA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=7xl4Fxz1zkuKhZY0T+DBnZURadM5hWOlSpQpQ4x+iYI=;
- b=jWGBZFIYhTtybqvt6SDV+gCEy/YUvxcAcfwmSFOSNVpzPpwmN5RmCjIZ9EEutEFRX3
- M70jFltOsCc53QRSFRMuHtdHubESdHpTYZFdzVhHWGVJVI1olGoS957SrVV+ysHL95yq
- +Vhbt6pS0R42zJS53IVRGddkaSxA/8QAgkqzSLscBjPc71Q2g0hzWKj9TWHKsUGI9eKN
- FRoqMb4tbH/KadSBWBj6WY0PyOI9mtc/Ruuu04wQuNfp7RAYd2+8Hi/z9/MD3wvtfg2C
- o5zXLNy1wtWXYLvVGvQEuwaryZ7l8GnJ1WYuOzg0NIuQmAjfeek/t2U9D4iH3lOQ8PsJ
- D1+A==
-X-Gm-Message-State: APjAAAVpi3uuRvaU0ywqVt5BH11uIXB9Gdd1LnTZ7neZQ4nCw/Z91bdC
- 3pBqpcmwoqs8PG2PyiFVcLd7XA==
-X-Google-Smtp-Source: APXvYqw944iPQH2qQN50PmaPHC4lvJ0N0eak5vEu5unZkeS4AMUzsRM5FGRL5u4veWWjxO8395O/Lw==
-X-Received: by 2002:adf:e5c4:: with SMTP id a4mr8213433wrn.87.1565343119382;
- Fri, 09 Aug 2019 02:31:59 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id t10sm491288wru.96.2019.08.09.02.31.58
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 09 Aug 2019 02:31:58 -0700 (PDT)
-Subject: Re: [PATCH v3 0/2] dt-bindings: net: meson-dwmac: convert to yaml
-To: David Miller <davem@davemloft.net>
-References: <20190808114101.29982-1-narmstrong@baylibre.com>
- <20190808.112033.180369877501058953.davem@davemloft.net>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <e39ca095-d68e-7231-f746-2470e16cd2e9@baylibre.com>
-Date: Fri, 9 Aug 2019 11:31:58 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hw1HK-0004Cf-UA
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:33:48 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra.v3.sk (Postfix) with ESMTP id 604C0D63BE;
+ Fri,  9 Aug 2019 11:33:41 +0200 (CEST)
+Received: from shell.v3.sk ([127.0.0.1])
+ by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id TFE3FGQ-rvhL; Fri,  9 Aug 2019 11:33:14 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra.v3.sk (Postfix) with ESMTP id A2766D63C0;
+ Fri,  9 Aug 2019 11:32:38 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at zimbra.v3.sk
+Received: from shell.v3.sk ([127.0.0.1])
+ by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id GNjWBU_CdbXf; Fri,  9 Aug 2019 11:32:33 +0200 (CEST)
+Received: from furthur.local (ip-37-188-137-236.eurotel.cz [37.188.137.236])
+ by zimbra.v3.sk (Postfix) with ESMTPSA id E4165D63D5;
+ Fri,  9 Aug 2019 11:32:25 +0200 (CEST)
+From: Lubomir Rintel <lkundrak@v3.sk>
+To: Olof Johansson <olof@lixom.net>
+Subject: [PATCH 19/19] ARM: dts: mmp3: Add MMP3 SoC dts file
+Date: Fri,  9 Aug 2019 11:31:58 +0200
+Message-Id: <20190809093158.7969-20-lkundrak@v3.sk>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190809093158.7969-1-lkundrak@v3.sk>
+References: <20190809093158.7969-1-lkundrak@v3.sk>
 MIME-Version: 1.0
-In-Reply-To: <20190808.112033.180369877501058953.davem@davemloft.net>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_023201_326864_2ABEA427 
-X-CRM114-Status: GOOD (  13.66  )
+X-CRM114-CacheID: sfid-20190809_023343_337340_8905D3E6 
+X-CRM114-Status: GOOD (  11.17  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,38 +69,571 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, martin.blumenstingl@googlemail.com,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
+ linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Describes most of the hardware found on Marvell MMP3, aka PXA2128, aka
+Armada 620. Missing bits are the LCD controller, HSIC controllers,
+Audio and GPU. Will be completed once bindings and drivers settle.
 
-On 08/08/2019 20:20, David Miller wrote:
-> From: Neil Armstrong <narmstrong@baylibre.com>
-> Date: Thu,  8 Aug 2019 13:40:59 +0200
-> 
->> This patchsets converts the Amlogic Meson DWMAC glue bindings over to
->> YAML schemas using the already converted dwmac bindings.
->>
->> The first patch is needed because the Amlogic glue needs a supplementary
->> reg cell to access the DWMAC glue registers.
->>
->> Changes since v2:
->> - Added review tags
->> - Updated allwinner,sun7i-a20-gmac.yaml reg maxItems
-> 
-> Where is this targetted to be merged, an ARM tree?  Or one of my
-> networking trees?
-> 
+Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
+---
+ arch/arm/boot/dts/mmp3.dtsi | 534 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 534 insertions(+)
+ create mode 100644 arch/arm/boot/dts/mmp3.dtsi
 
-I assume you can take it in one of your net trees.
+diff --git a/arch/arm/boot/dts/mmp3.dtsi b/arch/arm/boot/dts/mmp3.dtsi
+new file mode 100644
+index 0000000000000..5a6275257ebdd
+--- /dev/null
++++ b/arch/arm/boot/dts/mmp3.dtsi
+@@ -0,0 +1,534 @@
++// SPDX-License-Identifier: GPL-2.0+ OR MIT
++/*
++ *  Copyright (C) 2019 Lubomir Rintel <lkundrak@v3.sk>
++ */
++
++#include <dt-bindings/clock/marvell,mmp2.h>
++#include <dt-bindings/interrupt-controller/arm-gic.h>
++
++/ {
++	#address-cells = <1>;
++	#size-cells = <1>;
++
++	aliases {
++		serial0 = &uart1;
++		serial1 = &uart2;
++		serial2 = &uart3;
++		serial3 = &uart4;
++	};
++
++	cpus {
++		#address-cells = <1>;
++		#size-cells = <0>;
++		enable-method = "marvell,mmp3-smp";
++
++		cpu@0 {
++			compatible = "marvell,pj4b";
++			device_type = "cpu";
++			next-level-cache = <&l2>;
++			reg = <0>;
++		};
++
++		cpu@1 {
++			compatible = "marvell,pj4b";
++			device_type = "cpu";
++			next-level-cache = <&l2>;
++			reg = <1>;
++		};
++	};
++
++	soc {
++		#address-cells = <1>;
++		#size-cells = <1>;
++		compatible = "simple-bus";
++		interrupt-parent = <&gic>;
++		ranges;
++
++		axi@d4200000 {
++			compatible = "simple-bus";
++			#address-cells = <1>;
++			#size-cells = <1>;
++			reg = <0xd4200000 0x00200000>;
++			ranges;
++
++			interrupt-controller@d4282000 {
++				compatible = "marvell,mmp3-intc";
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0xd4282000 0x1000>,
++				      <0xd4284000 0x100>;
++				mrvl,intc-nr-irqs = <64>;
++			};
++
++			pmic_mux: interrupt-controller@d4282150 {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x150 0x4>, <0x168 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <4>;
++			};
++
++			rtc_mux: interrupt-controller@d4282154 {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x154 0x4>, <0x16c 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <2>;
++			};
++
++			hsi3_mux: interrupt-controller@d42821bc {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x1bc 0x4>, <0x1a4 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <3>;
++			};
++
++			gpu_mux: interrupt-controller@d42821c0 {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x1c0 0x4>, <0x1a8 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <3>;
++			};
++
++			twsi_mux: interrupt-controller@d4282158 {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x158 0x4>, <0x170 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <5>;
++			};
++
++			hsi2_mux: interrupt-controller@d42821c4 {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x1c4 0x4>, <0x1ac 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <2>;
++			};
++
++			dxo_mux: interrupt-controller@d42821c8 {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x1c8 0x4>, <0x1b0 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <2>;
++			};
++
++			misc1_mux: interrupt-controller@d428215c {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x15c 0x4>, <0x174 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <31>;
++			};
++
++			ci_mux: interrupt-controller@d42821cc {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x1cc 0x4>, <0x1b4 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <2>;
++			};
++
++			ssp_mux: interrupt-controller@d4282160 {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x160 0x4>, <0x178 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <2>;
++			};
++
++			hsi1_mux: interrupt-controller@d4282184 {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x184 0x4>, <0x17c 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <4>;
++			};
++
++			misc2_mux: interrupt-controller@d4282188 {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x188 0x4>, <0x180 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <20>;
++			};
++
++			hsi0_mux: interrupt-controller@d42821d0 {
++				compatible = "mrvl,mmp2-mux-intc";
++				interrupts = <GIC_SPI 58 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <1>;
++				reg = <0x1d0 0x4>, <0x1b8 0x4>;
++				reg-names = "mux status", "mux mask";
++				mrvl,intc-nr-irqs = <5>;
++			};
++
++			usb_otg_phy0: usb-otg-phy@d4207000 {
++				compatible = "marvell,mmp3-usb-phy";
++				reg = <0xd4207000 0x40>;
++				#phy-cells = <0>;
++				status = "disabled";
++			};
++
++			usb_otg0: usb-otg@d4208000 {
++				compatible = "marvell,pxau2o-ehci";
++				reg = <0xd4208000 0x200>;
++				interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&soc_clocks MMP2_CLK_USB>;
++				clock-names = "USBCLK";
++				phys = <&usb_otg_phy0>;
++				phy-names = "usb";
++				status = "disabled";
++			};
++
++			mmc1: mmc@d4280000 {
++				compatible = "mrvl,pxav3-mmc";
++				reg = <0xd4280000 0x120>;
++				clocks = <&soc_clocks MMP2_CLK_SDH0>;
++				clock-names = "io";
++				interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
++			};
++
++			mmc2: mmc@d4280800 {
++				compatible = "mrvl,pxav3-mmc";
++				reg = <0xd4280800 0x120>;
++				clocks = <&soc_clocks MMP2_CLK_SDH1>;
++				clock-names = "io";
++				interrupts = <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
++			};
++
++			mmc3: mmc@d4281000 {
++				compatible = "mrvl,pxav3-mmc";
++				reg = <0xd4281000 0x120>;
++				clocks = <&soc_clocks MMP2_CLK_SDH2>;
++				clock-names = "io";
++				interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
++			};
++
++			mmc4: mmc@d4281800 {
++				compatible = "mrvl,pxav3-mmc";
++				reg = <0xd4281800 0x120>;
++				clocks = <&soc_clocks MMP2_CLK_SDH3>;
++				clock-names = "io";
++				interrupts = <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
++			};
++
++			camera0: camera@d420a000 {
++				compatible = "marvell,mmp2-ccic";
++				reg = <0xd420a000 0x800>;
++				interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&soc_clocks MMP2_CLK_CCIC0>;
++				clock-names = "axi";
++				#clock-cells = <0>;
++				clock-output-names = "mclk";
++				status = "disabled";
++			};
++
++			camera1: camera@d420a800 {
++				compatible = "marvell,mmp2-ccic";
++				reg = <0xd420a800 0x800>;
++				interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&soc_clocks MMP2_CLK_CCIC1>;
++				clock-names = "axi";
++				#clock-cells = <0>;
++				clock-output-names = "mclk";
++				status = "disabled";
++			};
++		};
++
++		apb@d4000000 {
++			compatible = "simple-bus";
++			#address-cells = <1>;
++			#size-cells = <1>;
++			reg = <0xd4000000 0x00200000>;
++			ranges;
++
++			timer: timer@d4014000 {
++				compatible = "mrvl,mmp-timer";
++				reg = <0xd4014000 0x100>;
++				interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&soc_clocks MMP2_CLK_TIMER>;
++			};
++
++			uart1: uart@d4030000 {
++				compatible = "mrvl,mmp-uart";
++				reg = <0xd4030000 0x1000>;
++				interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&soc_clocks MMP2_CLK_UART0>;
++				resets = <&soc_clocks MMP2_CLK_UART0>;
++				reg-shift = <2>;
++				status = "disabled";
++			};
++
++			uart2: uart@d4017000 {
++				compatible = "mrvl,mmp-uart";
++				reg = <0xd4017000 0x1000>;
++				interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&soc_clocks MMP2_CLK_UART1>;
++				resets = <&soc_clocks MMP2_CLK_UART1>;
++				reg-shift = <2>;
++				status = "disabled";
++			};
++
++			uart3: uart@d4018000 {
++				compatible = "mrvl,mmp-uart";
++				reg = <0xd4018000 0x1000>;
++				interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&soc_clocks MMP2_CLK_UART2>;
++				resets = <&soc_clocks MMP2_CLK_UART2>;
++				reg-shift = <2>;
++				status = "disabled";
++			};
++
++			uart4: uart@d4016000 {
++				compatible = "mrvl,mmp-uart";
++				reg = <0xd4016000 0x1000>;
++				interrupts = <GIC_SPI 46 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&soc_clocks MMP2_CLK_UART3>;
++				resets = <&soc_clocks MMP2_CLK_UART3>;
++				reg-shift = <2>;
++				status = "disabled";
++			};
++
++			gpio: gpio@d4019000 {
++				compatible = "marvell,mmp2-gpio";
++				#address-cells = <1>;
++				#size-cells = <1>;
++				reg = <0xd4019000 0x1000>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-names = "gpio_mux";
++				clocks = <&soc_clocks MMP2_CLK_GPIO>;
++				resets = <&soc_clocks MMP2_CLK_GPIO>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++				ranges;
++
++				gcb0: gpio@d4019000 {
++					reg = <0xd4019000 0x4>;
++				};
++
++				gcb1: gpio@d4019004 {
++					reg = <0xd4019004 0x4>;
++				};
++
++				gcb2: gpio@d4019008 {
++					reg = <0xd4019008 0x4>;
++				};
++
++				gcb3: gpio@d4019100 {
++					reg = <0xd4019100 0x4>;
++				};
++
++				gcb4: gpio@d4019104 {
++					reg = <0xd4019104 0x4>;
++				};
++
++				gcb5: gpio@d4019108 {
++					reg = <0xd4019108 0x4>;
++				};
++			};
++
++			twsi1: i2c@d4011000 {
++				compatible = "mrvl,mmp-twsi";
++				reg = <0xd4011000 0x1000>;
++				interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&soc_clocks MMP2_CLK_TWSI0>;
++				resets = <&soc_clocks MMP2_CLK_TWSI0>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				mrvl,i2c-fast-mode;
++				status = "disabled";
++			};
++
++			twsi2: i2c@d4031000 {
++				compatible = "mrvl,mmp-twsi";
++				reg = <0xd4031000 0x1000>;
++				interrupt-parent = <&twsi_mux>;
++				interrupts = <0>;
++				clocks = <&soc_clocks MMP2_CLK_TWSI1>;
++				resets = <&soc_clocks MMP2_CLK_TWSI1>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				status = "disabled";
++			};
++
++			twsi3: i2c@d4032000 {
++				compatible = "mrvl,mmp-twsi";
++				reg = <0xd4032000 0x1000>;
++				interrupt-parent = <&twsi_mux>;
++				interrupts = <1>;
++				clocks = <&soc_clocks MMP2_CLK_TWSI2>;
++				resets = <&soc_clocks MMP2_CLK_TWSI2>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				status = "disabled";
++			};
++
++			twsi4: i2c@d4033000 {
++				compatible = "mrvl,mmp-twsi";
++				reg = <0xd4033000 0x1000>;
++				interrupt-parent = <&twsi_mux>;
++				interrupts = <2>;
++				clocks = <&soc_clocks MMP2_CLK_TWSI3>;
++				resets = <&soc_clocks MMP2_CLK_TWSI3>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				status = "disabled";
++			};
++
++
++			twsi5: i2c@d4033800 {
++				compatible = "mrvl,mmp-twsi";
++				reg = <0xd4033800 0x1000>;
++				interrupt-parent = <&twsi_mux>;
++				interrupts = <3>;
++				clocks = <&soc_clocks MMP2_CLK_TWSI4>;
++				resets = <&soc_clocks MMP2_CLK_TWSI4>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				status = "disabled";
++			};
++
++			twsi6: i2c@d4034000 {
++				compatible = "mrvl,mmp-twsi";
++				reg = <0xd4034000 0x1000>;
++				interrupt-parent = <&twsi_mux>;
++				interrupts = <4>;
++				clocks = <&soc_clocks MMP2_CLK_TWSI5>;
++				resets = <&soc_clocks MMP2_CLK_TWSI5>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				status = "disabled";
++			};
++
++			rtc: rtc@d4010000 {
++				compatible = "mrvl,mmp-rtc";
++				reg = <0xd4010000 0x1000>;
++				interrupts = <1 0>;
++				interrupt-names = "rtc 1Hz", "rtc alarm";
++				interrupt-parent = <&rtc_mux>;
++				clocks = <&soc_clocks MMP2_CLK_RTC>;
++				resets = <&soc_clocks MMP2_CLK_RTC>;
++				status = "disabled";
++			};
++
++			ssp1: spi@d4035000 {
++				compatible = "marvell,mmp2-ssp";
++				reg = <0xd4035000 0x1000>;
++				clocks = <&soc_clocks MMP2_CLK_SSP0>;
++				interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				status = "disabled";
++			};
++
++			ssp2: spi@d4036000 {
++				compatible = "marvell,mmp2-ssp";
++				reg = <0xd4036000 0x1000>;
++				clocks = <&soc_clocks MMP2_CLK_SSP1>;
++				interrupts = <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				status = "disabled";
++			};
++
++			ssp3: spi@d4037000 {
++				compatible = "marvell,mmp2-ssp";
++				reg = <0xd4037000 0x1000>;
++				clocks = <&soc_clocks MMP2_CLK_SSP2>;
++				interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				status = "disabled";
++			};
++
++			ssp4: spi@d4039000 {
++				compatible = "marvell,mmp2-ssp";
++				reg = <0xd4039000 0x1000>;
++				clocks = <&soc_clocks MMP2_CLK_SSP3>;
++				interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
++				#address-cells = <1>;
++				#size-cells = <0>;
++				status = "disabled";
++			};
++		};
++
++		l2: l2-cache-controller@d0020000 {
++			compatible = "marvell,tauros3-cache", "arm,pl310-cache";
++			reg = <0xd0020000 0x1000>;
++			cache-unified;
++			cache-level = <2>;
++		};
++
++		soc_clocks: clocks {
++			compatible = "marvell,mmp2-clock";
++			reg = <0xd4050000 0x1000>,
++			      <0xd4282800 0x400>,
++			      <0xd4015000 0x1000>;
++			reg-names = "mpmu", "apmu", "apbc";
++			#clock-cells = <1>;
++			#reset-cells = <1>;
++			#power-domain-cells = <1>;
++		};
++
++		snoop-control-unit@e0000000 {
++			compatible = "arm,arm11mp-scu";
++			reg = <0xe0000000 0x100>;
++		};
++
++		gic: interrupt-controller@e0001000 {
++			compatible = "arm,arm11mp-gic";
++			interrupt-controller;
++			#interrupt-cells = <3>;
++			reg = <0xe0001000 0x1000>,
++			      <0xe0000100 0x100>;
++		};
++
++		local-timer@e0000600 {
++			compatible = "arm,arm11mp-twd-timer";
++			interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(2) |
++						  IRQ_TYPE_EDGE_RISING)>;
++			reg = <0xe0000600 0x20>;
++		};
++
++		watchdog@2c000620 {
++			compatible = "arm,arm11mp-twd-wdt";
++			reg = <0xe0000620 0x20>;
++			interrupts = <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(2) |
++						  IRQ_TYPE_EDGE_RISING)>;
++		};
++	};
++};
+-- 
+2.21.0
 
-Thanks,
-Neil
 
 _______________________________________________
 linux-arm-kernel mailing list
