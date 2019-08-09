@@ -2,60 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57BA8873DB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 10:15:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00D9F873E5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 10:19:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=68comsCu165P2WeJbPybYEp9v/tCPfo2GjNQrAnTpd8=; b=tQa37IYW0ztwRh
-	rpemicLZvNjm2aSEaMwE5tvRoHXHvMaKWmHxS+DjF565AsoLSdPHUQw88CX9ZfCu6rqb/Yaj6jMJ7
-	sZUFaWxogyiECWdlrtJdFPbslQUVVFjsDFZsmn2e3yGQgPk6doUe3gW7kXZguhvoUKJZkC2hsFIBr
-	rADUTWP9sdOC43b1iIGHtFf53LHW16Km5fh47ddBe8rplDuGi6xGOHYNgjlYITOFHgDwcZkip1Xdm
-	hvfKK6W+xNdi09PLo2b1P1MqAsx/aQJ7dSH9D2o5wzQGHs9ppLg5tqdeNRkxQf1SZd26NisfyVTXo
-	vUmBwgZ0ne3mkN2qcbqQ==;
+	List-Owner; bh=kfdBjkwUh+isrTdxFc+uqmjPXY6t015eSQbP/VtfnbA=; b=IXYs+DsyxRYcXI
+	74fl9zSFovYTCNpkO3PDkYM4bdWtG3SSM4q5YMeuARhmE507SKk5XQoER/sjQ+CWRDwsI8Y4tnu6Q
+	sLjnPnRGlZ9WZxIqURvXvKjz7mbAK9HXnLLvzg/R20M7UNCAKZheF4Qsfgf6SdJlxmjWtNBD6Tqf9
+	ycmU2y/5SaiYY6Hw/4dxYjuNuOfN2kEJs4O6XXfWT1/7C9g77D749OZmq4tmphbg8V9IHXjE5uGrV
+	CAiop9gPE28K9Xl8B3Sh6rKIpb1m/+eVOzHLKkrB7j0T/wqHQdDe5ybATJSFjz9qGuOnPlpvG0Adg
+	kkQ8IH4ORFfAGeK7hbWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw03V-0006nt-Vd; Fri, 09 Aug 2019 08:15:22 +0000
+	id 1hw07H-0007ti-61; Fri, 09 Aug 2019 08:19:15 +0000
 Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw03D-0005td-1R
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 08:15:04 +0000
+ id 1hw074-0007tN-Ey
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 08:19:03 +0000
 Received: by verein.lst.de (Postfix, from userid 2407)
- id 8901768B05; Fri,  9 Aug 2019 10:14:55 +0200 (CEST)
-Date: Fri, 9 Aug 2019 10:14:55 +0200
+ id 2822D68AFE; Fri,  9 Aug 2019 10:18:58 +0200 (CEST)
+Date: Fri, 9 Aug 2019 10:18:57 +0200
 From: Christoph Hellwig <hch@lst.de>
-To: Christoph Hellwig <hch@lst.de>, Rob Clark <robdclark@chromium.org>,
- Rob Clark <robdclark@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Sean Paul <sean@poorly.run>, David Airlie <airlied@linux.ie>,
- Allison Randal <allison@lohutok.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>
+To: Rob Clark <robdclark@chromium.org>
 Subject: Re: [PATCH 1/2] drm: add cache support for arm64
-Message-ID: <20190809081455.GA21967@lst.de>
-References: <20190805211451.20176-1-robdclark@gmail.com>
- <20190806084821.GA17129@lst.de>
+Message-ID: <20190809081857.GB21967@lst.de>
+References: <20190806084821.GA17129@lst.de>
  <CAJs_Fx6eh1w7c=crMoD5XyEOMzP6orLhqUewErE51cPGYmObBQ@mail.gmail.com>
- <20190806155044.GC25050@lst.de>
- <CAJs_Fx6uztwDy2PqRy3Tc9p12k8r_ovS2tAcsMV6HqnAp=Ggug@mail.gmail.com>
- <20190807062545.GF6627@lst.de>
- <CAKMK7uH1O3q8VUftikipGH6ACPoT-8tbV1Zwo-8WL=wUHiqsoQ@mail.gmail.com>
- <20190808095506.GA32621@lst.de> <20190808115808.GN7444@phenom.ffwll.local>
+ <20190806143457.GF475@lakrids.cambridge.arm.com>
+ <CAJs_Fx4h6SWGmDTLBnV4nmWUFAs_Ge1inxd-dW9aDKgKqmc1eQ@mail.gmail.com>
+ <20190807123807.GD54191@lakrids.cambridge.arm.com>
+ <CAJs_Fx5xU2-dn3iOVqWTzAjpTaQ8BBNP_Gn_iMc-eJpOX+iXoQ@mail.gmail.com>
+ <20190807164958.GA44765@lakrids.cambridge.arm.com>
+ <CAJs_Fx71T=kJEgt28TWqzw+jOahSbLQynCg83+szQW7op4xBkQ@mail.gmail.com>
+ <20190808075947.GE30308@lst.de>
+ <CAJs_Fx5fJ31CsFODBgBbhcCvoxSX_D1NHDjQs4LtJ_0GwuxMVA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190808115808.GN7444@phenom.ffwll.local>
+In-Reply-To: <CAJs_Fx5fJ31CsFODBgBbhcCvoxSX_D1NHDjQs4LtJ_0GwuxMVA@mail.gmail.com>
 User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_011503_245579_F274FAE5 
-X-CRM114-Status: GOOD (  18.02  )
+X-CRM114-CacheID: sfid-20190809_011902_656046_27E8FE40 
+X-CRM114-Status: GOOD (  18.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,52 +67,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <sean@poorly.run>,
+ Rob Clark <robdclark@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ Christoph Hellwig <hch@lst.de>, Allison Randal <allison@lohutok.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 08, 2019 at 01:58:08PM +0200, Daniel Vetter wrote:
-> > > We use shmem to get at swappable pages. We generally just assume that
-> > > the gpu can get at those pages, but things fall apart in fun ways:
-> > > - some setups somehow inject bounce buffers. Some drivers just give
-> > > up, others try to allocate a pool of pages with dma_alloc_coherent.
-> > > - some devices are misdesigned and can't access as much as the cpu. We
-> > > allocate using GFP_DMA32 to fix that.
-> > 
-> > Well, for shmem you can't really call allocators directly, right?
+On Thu, Aug 08, 2019 at 09:44:32AM -0700, Rob Clark wrote:
+> > GFP_HIGHUSER basically just means that this is an allocation that could
+> > dip into highmem, in which case it would not have a kernel mapping.
+> > This can happen on arm + LPAE, but not on arm64.
 > 
-> We can pass gfp flags to shmem_read_mapping_page_gfp, which is just about
-> enough for the 2 cases on intel platforms where the gpu can only access
-> 4G, but the cpu has way more.
+> Just a dumb question, but why is *all* memory in the linear map on
+> arm64?  It would seem useful to have a source of pages that is not in
+> the linear map.
+> I guess it is mapped as huge pages (or something larger than 4k pages)?
 
-Right.  And that works for architectures without weird DMA offsets and
-devices that exactly have a 32-bit DMA limit.  It falls flat for all
-the more complex ones unfortunately.
+In general that is just how the Linux kernel always worked, on all
+architectures - we always had a linear mapping for all memory in the
+kernel to make accessing it simple.  That started to break down a bit
+with the 32-bit x86 PAE mode that supported more physical addressing
+that virtual, which required the "high" memory to not be mapped into
+the kernel direct mapping.  Similar schemes later showed up on various
+other 32-bit architectures.
 
-> > But userspace malloc really means dma_map_* anyway, so not really
-> > relevant for memory allocations.
-> 
-> It does tie in, since we'll want a dma_map which fails if a direct mapping
-> isn't possible. It also helps the driver code a lot if we could use the
-> same low-level flushing functions between our own memory (whatever that
-> is) and anon pages from malloc. And in all the cases if it's not possible,
-> we want a failure, not elaborate attempts at hiding the differences
-> between all possible architectures out there.
+There is a patchset called XPFO that ensures memory is either in the
+kernel direct map, or in userspace but not both to work around
+speculation related vulnerabilities, but it has a pretty big performance
+impact.
 
-At the very lowest level all goes down to the same three primitives we
-talked about anyway, but there are different ways how they are combined.
-For the streaming mappins looks at the table in arch/arc/mm/dma.c I
-mentioned earlier.  For memory that is prepared for just mmaping to
-userspace without a kernel user we'll always do a wb+inv.  But as the
-other subthread shows we'll need to eventually look into unmapping
-(or remapping with the same attributes) of that memory in kernel space
-to avoid speculation bugs (or just invalid combination on x86 where
-we check for that), so the API will be a little more complex.
+> Any recommended reading to understand how/why the kernel address space
+> is setup the way it is (so I can ask fewer dumb questions)?
 
-Btw, are all DRM drivers using vmf_insert_* to pre-populate the mapping
-like the MSM case, or are some doing dynamic faulting from
-vm_ops->fault?
+I don't really have a good pointer.  But usually there is just dumb
+answers, not dumb questions.
 
 _______________________________________________
 linux-arm-kernel mailing list
