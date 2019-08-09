@@ -2,78 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B97F878EC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 13:43:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96BE9878F8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 13:45:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NFxyodDolEtRNosp+DY3TT4WCrOTmTLpkgR1+9WxPEo=; b=J/319ySdoVwOMB
-	hu3kAfaQeYKatNv79CzdT5NAaD61h0whpBwZrUlKqupVuUeMa6LJlBReINN9BQEJ4BSTQUuxGV++n
-	664/r3pBsGe4UXiMUi/Tm35AHLCXZPJLL8XkJA9DBSnEYR7c/R89K0sqGrXUL+B5sVTBevjTlNGQk
-	DE/79urCS8dKTc6ybNsd1omIHcXquPNA7+cJYxh/tlHReg1jQI38/P2YfPBqaKWi0yyVHA+t3vyH3
-	1jvtniGyt5sd4zqPmONpkX1DlE8rU0IS9GfpyE4lSifk1Nc31Bh5FOKL9sJN5trkRoQwFkL5gz8Ny
-	jZlMkScCEUk/CkLr584w==;
+	List-Owner; bh=y83uJcnZpzxmm0sidb73pDzU0r6BKNkzEZ/51dy3hb8=; b=e62BqoerdYOY9L
+	sEjHmgTmV+SLuGLDNmcbx9dy4bxnCq8sGflVIEG7hYCraQad65VKzBbKSFzm7w197KoX5Goj92Kfy
+	uo/Rktg2szh7KZfdngo1uzqSZd0ZLIZ5lVccQ4id/BFFPqcpPLdFU7XzqIXr41r3+Sf4iSita0kd3
+	gdRd0cuKvtX2zV6kzDYuMQtlsdae4YN/hvJM/g5LDP4gtGQOmR5bp2tKZLARWAqwWtUK5hMQNcMjP
+	/Ew6+mx5lo8itBsVpnCqRYTaDOl3eCfxXYN6CnsnESW9Pl203CJfPi3UDQH/4htoUU16O1oe3PlDy
+	Jo++F1ASG08Eh5wrGzGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw3J8-0006s6-T5; Fri, 09 Aug 2019 11:43:43 +0000
-Received: from mail-qk1-f194.google.com ([209.85.222.194])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw3Ix-0006rS-1S
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 11:43:32 +0000
-Received: by mail-qk1-f194.google.com with SMTP id 201so71284547qkm.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 04:43:30 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=VVKEn1uhwnct32QQNQWKMMQwz1IKox/lIkY41QXr3n4=;
- b=lTfOcWOqvtBAV/pYfJncSUhMbX7EOQYEu0uTqTdL46dm3rK+ztXCT5eukf77bwcY3y
- aL5YJ1o2R4rMpdOpneVi5h3jTPqtxoo9LLLNtIB+//jJ9CywJLn8WHTJrPtXVBpWES32
- eK7/vIuShFMYqUpY8VsnAGTq+JSckhP5lfs2wWTTg4grAnHLZ6U93YHZmC4eTE37uUoC
- 6AguiqZIc6Yh04oqsR5PsAqLodhgRERm0JoNrmbdzN4OiOPeACiHzeUsydkuZ2kQXSKT
- YK0r5AxCq+tX1Y6sgkV6f8JOU0muMvbeDcCw/RhzgXvGWgo7VgwBeyZ2bRXtaJATNM+I
- Zx5w==
-X-Gm-Message-State: APjAAAXWjvxJl2y7ViYeoNKChUg3CaTCM3avh5GF9RSic48OgZLlXuyJ
- A3b3gGQrzBGv5QsWdRVxuZ/aYLKAvvzA1qd4SPQ=
-X-Google-Smtp-Source: APXvYqz3y2NTzxkuXgdthyLbml49Ah52Sn2rqR//B9FnkAzFwcen/MazMdX5ZFS3FoRo2xISosV/96/4q4XOkHiRGAw=
-X-Received: by 2002:a05:620a:b:: with SMTP id
- j11mr17853054qki.352.1565351009257; 
- Fri, 09 Aug 2019 04:43:29 -0700 (PDT)
+	id 1hw3Kc-00078y-7m; Fri, 09 Aug 2019 11:45:14 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hw3KM-00078a-IG; Fri, 09 Aug 2019 11:44:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C12CD1596;
+ Fri,  9 Aug 2019 04:44:57 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1DD783F575;
+ Fri,  9 Aug 2019 04:44:53 -0700 (PDT)
+Date: Fri, 9 Aug 2019 12:44:51 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Matthew Wilcox <willy@infradead.org>
+Subject: Re: [RFC V2 0/1] mm/debug: Add tests for architecture exported page
+ table helpers
+Message-ID: <20190809114450.GF48423@lakrids.cambridge.arm.com>
+References: <1565335998-22553-1-git-send-email-anshuman.khandual@arm.com>
+ <20190809101632.GM5482@bombadil.infradead.org>
 MIME-Version: 1.0
-References: <20190808212234.2213262-1-arnd@arndb.de>
- <CGME20190808212453epcas2p44ff418662ee1acf428c6842ee4488f9f@epcas2p4.samsung.com>
- <20190808212234.2213262-3-arnd@arndb.de>
- <55c9608d-68c4-17f6-2682-7668d5d7720a@samsung.com>
-In-Reply-To: <55c9608d-68c4-17f6-2682-7668d5d7720a@samsung.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Fri, 9 Aug 2019 13:43:13 +0200
-Message-ID: <CAK8P3a3grFEGr33s327yNMabK5=1kCJc3k7y55dhzQx9sTvkyQ@mail.gmail.com>
-Subject: Re: [PATCH 02/22] ARM: omap1: make omapfb standalone compilable
-To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Content-Disposition: inline
+In-Reply-To: <20190809101632.GM5482@bombadil.infradead.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_044331_086177_41D6A3F3 
-X-CRM114-Status: GOOD (  15.50  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190809_044458_644311_50D9CF79 
+X-CRM114-Status: GOOD (  13.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.194 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,49 +62,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aaro Koskinen <aaro.koskinen@iki.fi>, Tony Lindgren <tony@atomide.com>,
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Michal Hocko <mhocko@kernel.org>, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Steven Price <Steven.Price@arm.com>, Jason Gunthorpe <jgg@ziepe.ca>,
+ linux-arm-kernel@lists.infradead.org, linux-snps-arc@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ Vlastimil Babka <vbabka@suse.cz>, Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Tomi Valkeinen <tomi.valkeinen@ti.com>,
- linux-omap <linux-omap@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Dave Hansen <dave.hansen@intel.com>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Paul Burton <paul.burton@mips.com>, Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 9, 2019 at 1:32 PM Bartlomiej Zolnierkiewicz
-<b.zolnierkie@samsung.com> wrote:
-> On 8/8/19 11:22 PM, Arnd Bergmann wrote:
-> > The omapfb driver is split into platform specific code for omap1, and
-> > driver code that is also specific to omap1.
-> >
-> > Moving both parts into the driver directory simplifies the structure
-> > and avoids the dependency on certain omap machine header files.
-> >
-> > The interrupt numbers in particular however must not be referenced
-> > directly from the driver to allow building in a multiplatform
-> > configuration, so these have to be passed through resources, is
-> > done for all other omap drivers.
-> >
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
->
-> For fbdev part:
->
-> Acked-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+On Fri, Aug 09, 2019 at 03:16:33AM -0700, Matthew Wilcox wrote:
+> On Fri, Aug 09, 2019 at 01:03:17PM +0530, Anshuman Khandual wrote:
+> > Should alloc_gigantic_page() be made available as an interface for general
+> > use in the kernel. The test module here uses very similar implementation from
+> > HugeTLB to allocate a PUD aligned memory block. Similar for mm_alloc() which
+> > needs to be exported through a header.
+> 
+> Why are you allocating memory at all instead of just using some
+> known-to-exist PFNs like I suggested?
 
-Thanks for taking a look.
+IIUC the issue is that there aren't necessarily known-to-exist PFNs that
+are sufficiently aligned -- they may not even exist.
 
-> [ It seems that adding of static inline for omap_set_dma_priority()
->   when ARCH_OMAP=n should be in patch #9 but this is a minor issue. ]
+For example, with 64K pages, a PMD covers 512M. The kernel image is
+(generally) smaller than 512M, and will be mapped at page granularity.
+In that case, any PMD entry for a kernel symbol address will point to
+the PTE level table, and that will only necessarily be page-aligned, as
+any P?D level table is only necessarily page-aligned.
 
-That would have been ok as well, but having the addition here was
-intentional and seems more logical to me as this is where the headers
-get moved around.
+In the same configuration, you could have less than 512M of total
+memory, and none of this memory is necessarily aligned to 512M. So
+beyond the PTE level, I don't think you can guarantee a known-to-exist
+valid PFN.
 
-      Arnd
+I also believe that synthetic PFNs could fail pfn_valid(), so that might
+cause us pain too...
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
