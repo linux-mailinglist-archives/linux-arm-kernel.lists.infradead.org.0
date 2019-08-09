@@ -2,108 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7076087C5C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 16:10:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C77887C7F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 16:19:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BMD01ODdiWFYuFyqYamdtmueSp3FDK0zS/rfz2AabHw=; b=fnc+J1mkKsLnib
-	Gjpx90OD4bxJRKw7hOiC9oVD37ipwswMKAdRts/LJhBaBeSCvBggft8L5LLEbPBHIxgQ99Kqq2XSV
-	dqhCq4lW+Kct2VBGiioO9DyICig9F2NpC18Lxmsc4QpguDLWCrnowwZsRtIJbj3OyY1ss8tn0eEsq
-	qei3wVcSdMivdZ8gq4NhSLy6c5CCIsMFQcRytH/G908XbgTQckUr1ePcWdMazvncd+1eXNgyPsoT4
-	c+vPEK5McgKzpMowxqZNhnvKs90FhsoDUCHAnyx9+xDVNZ/Wi6ZjAAq+l6tw94HPlGRKpfgB3+Lr5
-	bzvlXBCwpUmer6pJJh3A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tVU/GpIjNKU7s+kSiAAO/1ctJ8MKQtiNTjCH3/dJCmY=; b=q3wYIA1kkZiD9v
+	/RSU4u1m3HxcTxlm8CXlfvoXC2QxIJKDgmQWd6rnF2U7tFydoiQv8+VKlIWih1wFv/vPzPPmSHxFt
+	Bp9OdAw9tqPYWSvHLHAPD7EYw4sqD3vRf7bCizhHXfGTmsouQfK7iWn6hjBh7cetjigNG+lX5Ps0i
+	5MmNNLvLN4bmfntN9hQ7+q0JLKgKTqqwiENqzSpVOK8N5bO81eqBcZ4ZUOz3ZjRUUFyMqDYuvMlb9
+	2ZXFpcal2uadxyAbZAB4djwrSDyf2IWRirsDFWDHOPXuLvXddeMjogpE+8mNLyFsbv8BT9CDaUdqt
+	0zuxzM069dBNLAZiYEzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw5bG-00016F-3B; Fri, 09 Aug 2019 14:10:34 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1hw5je-0003FL-MU; Fri, 09 Aug 2019 14:19:14 +0000
+Received: from mail-qk1-f193.google.com ([209.85.222.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw5b4-00015b-Bx
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 14:10:23 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 09 Aug 2019 07:10:20 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,364,1559545200"; d="scan'208";a="182917945"
-Received: from devajeet-mobl2.amr.corp.intel.com (HELO [10.251.27.22])
- ([10.251.27.22])
- by FMSMGA003.fm.intel.com with ESMTP; 09 Aug 2019 07:10:19 -0700
-From: Dave Hansen <dave.hansen@intel.com>
-Subject: Re: [PATCH v7 1/2] arm64: Define
- Documentation/arm64/tagged-address-abi.rst
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <20190807155321.9648-1-catalin.marinas@arm.com>
- <20190807155321.9648-2-catalin.marinas@arm.com>
- <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
- <20190808172730.GC37129@arrakis.emea.arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=dave.hansen@intel.com; keydata=
- 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
-Message-ID: <68354acd-e205-71cb-11c6-74a150178ae0@intel.com>
-Date: Fri, 9 Aug 2019 07:10:18 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hw5jS-0003EH-3v
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 14:19:03 +0000
+Received: by mail-qk1-f193.google.com with SMTP id s145so71745165qke.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 09 Aug 2019 07:19:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=TEfOzDxFX7gDpnqMzrlBGrH3Syt9gXqMdj4yqEybIZo=;
+ b=fVWTgTiuj2/re3JdUGmsltEqvlcvhEgPa+1iLD8UzDajp5IVE4ZaifTiuYiXg1X7GM
+ KJ4JbrfSEgV1qb5qnMagSOJb3ATLdCaGUxex0tfxAm7KRsbMq0/8/TLmFO6TJYcOQLzU
+ 74A+cspcEqBkw6R37uuuWYjmVXRYLKTWqo8mdSYWxcPgszxMWTMJn16zGoZpJc3vJnG+
+ 58g/chm54TnAVxKGbtGwPovGt8l0YMQZsd6vdXuGcVp1ODcxhstkNVdeyOVwlNOAeJDG
+ dlMJQ+Zwi0oH+G8i2ymS2RIfbZB7WP0XTceD/ImedWlnt20OMlmzhz3Pj+uXhIjuPn25
+ rYVg==
+X-Gm-Message-State: APjAAAVUGq5Vrg+23JYOxf+Wj4mWVzCDXpB4ITYSsEUq2F0cjfFeReoi
+ Jl+ZLYBIX23Cv9ZIV6riblRkvjJ4+rHgjYJalAA=
+X-Google-Smtp-Source: APXvYqwdOIIhs7aYJbryOrEuz/1xQSAZBUfsTj7jxd0qGAmaTDwXDUSNUG1kGVNfZ5fjxOBFSW0skDDZmykp0YbSLSg=
+X-Received: by 2002:a37:984:: with SMTP id 126mr12380366qkj.3.1565360340175;
+ Fri, 09 Aug 2019 07:19:00 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190808172730.GC37129@arrakis.emea.arm.com>
-Content-Language: en-US
+References: <20190731195713.3150463-1-arnd@arndb.de>
+ <20190731195713.3150463-6-arnd@arndb.de>
+ <CAMpxmJWFfT_vrDas2fzW5tnxskk9kmgHQpGnGQ-_C20UaS_jhA@mail.gmail.com>
+ <CAK8P3a3KpKvRKXY72toE_5eAp4ER_Mre0GX3guwGeQgsY2HX+g@mail.gmail.com>
+ <CAMpxmJUdSnp0QNwWB0rJ1opFrYs9R2KSVS64Tz8X5GDYAJYLpg@mail.gmail.com>
+In-Reply-To: <CAMpxmJUdSnp0QNwWB0rJ1opFrYs9R2KSVS64Tz8X5GDYAJYLpg@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 9 Aug 2019 16:18:43 +0200
+Message-ID: <CAK8P3a1NT_yoP39y52oJTMsFCb96-bRyuMm=+5HPPsxyq0fJDA@mail.gmail.com>
+Subject: Re: [PATCH 05/14] gpio: lpc32xx: allow building on non-lpc32xx targets
+To: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_071022_455143_F83E4173 
-X-CRM114-Status: GOOD (  34.31  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190809_071902_162236_637AF7B2 
+X-CRM114-Status: GOOD (  19.96  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,154 +85,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will.deacon@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Jason Cooper <jason@lakedaemon.net>,
+ "David S. Miller" <davem@davemloft.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ USB list <linux-usb@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Vladimir Zapolskiy <vz@mleia.com>, linux-gpio <linux-gpio@vger.kernel.org>,
+ soc@kernel.org, netdev <netdev@vger.kernel.org>,
+ Alan Stern <stern@rowland.harvard.edu>, Guenter Roeck <linux@roeck-us.net>,
+ linux-serial@vger.kernel.org, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Lee Jones <lee.jones@linaro.org>, Linus Walleij <linus.walleij@linaro.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/8/19 10:27 AM, Catalin Marinas wrote:
-> On Wed, Aug 07, 2019 at 01:38:16PM -0700, Dave Hansen wrote:
-> Extending the interface is still possible even with the current
-> proposal, by changing arg2 etc. We also don't seem to be consistent in
-> sys_prctl().
-
-We are not consistent because it took a long time to learn this lesson,
-but I think this is a best-practice that we follow for new ones.
-
->> Also, shouldn't this be converted over to an arch_prctl()?
-> 
-> What do you mean by arch_prctl()? We don't have such thing, apart from
-> maybe arch_prctl_spec_ctrl_*(). We achieve the same thing with the
-> {SET,GET}_TAGGED_ADDR_CTRL macros. They could be renamed to
-> arch_prctl_tagged_addr_{set,get} or something but I don't see much
-> point.
-
-Silly me.  We have an x86-specific:
-
-	SYSCALL_DEFINE2(arch_prctl, int , option, unsigned long , arg2)
-
-I guess there's no ARM equivalent so you're stuck with the generic one.
-
-> What would be better (for a separate patch series) is to clean up
-> sys_prctl() and move the arch-specific options into separate
-> arch_prctl() under arch/*/kernel/. But it's not really for this series.
-
-I think it does make sense for truly arch-specific features to stay out
-of the arch-generic prctl().  Yes, I know I've personally violated this
-in the past. :)
-
->> What is the scope of these prctl()'s?  Are they thread-scoped or
->> process-scoped?  Can two threads in the same process run with different
->> tagging ABI modes?
-> 
-> Good point. They are thread-scoped and this should be made clear in the
-> doc. Two threads can have different modes.
-> 
-> The expectation is that this is invoked early during process start (by
-> the dynamic loader or libc init) while in single-thread mode and
-> subsequent threads will inherit the same mode. However, other uses are
-> possible.
-
-If that's the expectation, it would be really nice to codify it.
-Basically, you can't enable the feature if another thread is already
-been forked off.
-
-> That said, do we have a precedent for changing user ABI from the kernel
-> cmd line? 'noexec32', 'vsyscall' I think come close. With the prctl()
-> for opt-in, controlling this from the cmd line is not too bad (though my
-> preference is still for the sysctl).
-
-There are certainly user-visible things like being able to select
-various CPU features.
-
->>> +When a process has successfully enabled the new ABI by invoking
->>> +prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE), the following
->>> +behaviours are guaranteed:
->>> +
->>> +- Every currently available syscall, except the cases mentioned in section
->>> +  3, can accept any valid tagged pointer. The same rule is applicable to
->>> +  any syscall introduced in the future.
->>> +
->>> +- The syscall behaviour is undefined for non valid tagged pointers.
->>
->> Do you really mean "undefined"?  I mean, a bad pointer is a bad pointer.
->>  Why should it matter if it's a tagged bad pointer or an untagged bad
->> pointer?
-> 
-> Szabolcs already replied here. We may have tagged pointers that can be
-> dereferenced just fine but being passed to the kernel may not be well
-> defined (e.g. some driver doing a find_vma() that fails unless it
-> explicitly untags the address). It's as undefined as the current
-> behaviour (without these patches) guarantees.
-
-It might just be nicer to point out what this features *changes* about
-invalid pointer handling, which is nothing. :)  Maybe:
-
-	The syscall behaviour for invalid pointers is the same for both
-	tagged and untagged pointers.
-
->>> +- prctl(PR_SET_MM, ``*``, ...) other than arg2 PR_SET_MM_MAP and
->>> +  PR_SET_MM_MAP_SIZE.
->>> +
->>> +- prctl(PR_SET_MM, PR_SET_MM_MAP{,_SIZE}, ...) struct prctl_mm_map fields.
->>> +
->>> +Any attempt to use non-zero tagged pointers will lead to undefined
->>> +behaviour.
->>
->> I wonder if you want to generalize this a bit.  I think you're saying
->> that parts of the ABI that modify the *layout* of the address space
->> never accept tagged pointers.
-> 
-> I guess our difficulty in specifying this may have been caused by
-> over-generalising. For example, madvise/mprotect came under the same
-> category but there is a use-case for malloc'ed pointers (and tagged) to
-> the kernel (e.g. MADV_DONTNEED). If we can restrict the meaning to
-> address space *layout* manipulation, we'd have mmap/mremap/munmap,
-> brk/sbrk, prctl(PR_SET_MM). Did I miss anything?. Other related syscalls
-> like mprotect/madvise preserve the layout while only changing permissions,
-> backing store, so the would be allowed to accept tags.
-
-shmat() comes to mind.  I also did a quick grep for mmap_sem taken for
-write and didn't see anything else obvious jump out at me.
-
->> It looks like the TAG_SHIFT and tag size are pretty baked into the
->> aarch64 architecture.  But, are you confident that no future
->> implementations will want different positions or sizes?  (obviously
->> controlled by other TCR_EL1 bits)
-> 
-> For the top-byte-ignore (TBI), that's been baked in the architecture
-> since ARMv8.0 and we'll have to keep the backwards compatible mode. As
-> the name implies, it's the top byte of the address and that's what the
-> document above refers to.
-> 
-> With MTE, I can't exclude other configurations in the future but I'd
-> expect the kernel to present the option as a new HWCAP and the user to
-> explicitly opt in via a new prctl() flag. I seriously doubt we'd break
-> existing binaries. So, yes TAG_SHIFT may be different but so would the
-> prctl() above.
-
-Basically, what you have is a "turn tagging on" and "turn tagging off"
-call which are binary: all on or all off.  How about exposing a mask:
-
-	/* Replace hard-coded mask size/position: */
-	unsigned long mask = prctl(GET_POSSIBLE_TAGGED_ADDR_BITS);
-
-	if (mask == 0)
-		// no tagging is supported obviously
-
-	prctl(SET_TAGGED_ADDR_BITS, mask);
-
-	// now userspace knows via 'mask' where the tag bits are
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBBdWcgNSwgMjAxOSBhdCAxMDoyOCBBTSBCYXJ0b3N6IEdvbGFzemV3c2tpCjxiZ29s
+YXN6ZXdza2lAYmF5bGlicmUuY29tPiB3cm90ZToKPgo+IHB0LiwgMiBzaWUgMjAxOSBvIDEzOjIw
+IEFybmQgQmVyZ21hbm4gPGFybmRAYXJuZGIuZGU+IG5hcGlzYcWCKGEpOgo+ID4KPiA+IE9uIEZy
+aSwgQXVnIDIsIDIwMTkgYXQgOToxMCBBTSBCYXJ0b3N6IEdvbGFzemV3c2tpCj4gPiA8YmdvbGFz
+emV3c2tpQGJheWxpYnJlLmNvbT4gd3JvdGU6Cj4gPiA+ID4gLSNpbmNsdWRlIDxtYWNoL2hhcmR3
+YXJlLmg+Cj4gPiA+ID4gLSNpbmNsdWRlIDxtYWNoL3BsYXRmb3JtLmg+Cj4gPiA+ID4gKyNkZWZp
+bmUgX0dQUkVHKHgpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKHgpCj4gPiA+Cj4gPiA+
+IFdoYXQgcHVycG9zZSBkb2VzIHRoaXMgbWFjcm8gc2VydmU/Cj4gPiA+Cj4gPiA+ID4KPiA+ID4g
+PiAgI2RlZmluZSBMUEMzMlhYX0dQSU9fUDNfSU5QX1NUQVRFICAgICAgICAgICAgICBfR1BSRUco
+MHgwMDApCj4gPiA+ID4gICNkZWZpbmUgTFBDMzJYWF9HUElPX1AzX09VVFBfU0VUICAgICAgICAg
+ICAgICAgX0dQUkVHKDB4MDA0KQo+ID4KPiA+IEluIHRoZSBleGlzdGluZyBjb2RlIGJhc2UsIHRo
+aXMgbWFjcm8gY29udmVydHMgYSByZWdpc3RlciBvZmZzZXQgdG8KPiA+IGFuIF9faW9tZW0gcG9p
+bnRlciBmb3IgYSBncGlvIHJlZ2lzdGVyLiBJIGNoYW5nZWQgdGhlIGRlZmluaXRpb24gb2YgdGhl
+Cj4gPiBtYWNybyBoZXJlIHRvIGtlZXAgdGhlIG51bWJlciBvZiBjaGFuZ2VzIGRvd24sIGJ1dCBJ
+IGl0J3MganVzdAo+ID4gYXMgZWFzeSB0byByZW1vdmUgaXQgaWYgeW91IHByZWZlci4KPgo+IENv
+dWxkIHlvdSBqdXN0IGFkZCBhIGNvbW1lbnQgc28gdGhhdCBpdCdzIGNsZWFyIGF0IGZpcnN0IGds
+YW5jZT8KCkkgZW5kZWQgdXAgcmVtb3ZpbmcgdGhlIG1hY3JvLiBXaXRoIHRoZSBjaGFuZ2UgdG8g
+a2VlcCB0aGUgcmVnX2Jhc2UgYXMKYSBzdHJ1Y3QgbWVtYmVyLCB0aGlzIGVuZHMgdXAgYmVpbmcg
+YSByZWxhdGl2ZWx5IHNtYWxsIGNoYW5nZSwgYW5kIGl0J3MKbW9yZSBzdHJhaWdodGZvcndhcmQg
+dGhhdCB3YXkuCgo+ID4gPiA+IEBAIC0xNjcsMTQgKzE2NiwyNiBAQCBzdHJ1Y3QgbHBjMzJ4eF9n
+cGlvX2NoaXAgewo+ID4gPiA+ICAgICAgICAgc3RydWN0IGdwaW9fcmVncyAgICAgICAgKmdwaW9f
+Z3JwOwo+ID4gPiA+ICB9Owo+ID4gPiA+Cj4gPiA+ID4gK3ZvaWQgX19pb21lbSAqZ3Bpb19yZWdf
+YmFzZTsKPiA+ID4KPiA+ID4gQW55IHJlYXNvbiB3aHkgdGhpcyBjYW4ndCBiZSBtYWRlIHBhcnQg
+b2Ygc3RydWN0IGxwYzMyeHhfZ3Bpb19jaGlwPwo+ID4KPiA+IEl0IGNvdWxkIGJlLCBidXQgaXQn
+cyB0aGUgc2FtZSBmb3IgZWFjaCBpbnN0YW5jZSwgYW5kIG5vdCBrbm93biB1bnRpbAo+ID4gcHJv
+YmUoKSB0aW1lLCBzbyB0aGUgc2FtZSBwb2ludGVyIHdvdWxkIG5lZWQgdG8gYmUgY29waWVkIGlu
+dG8gZWFjaAo+ID4gaW5zdGFuY2UgdGhhdCBpcyBvdGhlcndpc2UgcmVhZC1vbmx5Lgo+ID4KPiA+
+IExldCBtZSBrbm93IGlmIHlvdSdkIHByZWZlciBtZSB0byByZXdvcmsgdGhlc2UgdHdvIHRoaW5n
+cyBvciBsZWF2ZQo+ID4gdGhlbSBhcyB0aGV5IGFyZS4KPgo+IEkgd291bGQgcHJlZmVyIG5vdCB0
+byBoYXZlIGdsb2JhbCBzdGF0ZSBpbiB0aGUgZHJpdmVyLCBsZXQncyBqdXN0Cj4gc3RvcmUgdGhl
+IHBvaW50ZXIgaW4gdGhlIGRhdGEgcGFzc2VkIHRvIGdwaW9jaGlwX2FkZF9kYXRhKCkuCgpPaywg
+ZG9uZS4KCiAgICAgICBBcm5kCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
