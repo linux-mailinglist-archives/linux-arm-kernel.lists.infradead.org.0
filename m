@@ -2,79 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17C1587D5A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 16:56:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77B7C87D66
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 17:00:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0itPw8hThxxL0ls7EI8CGVzr5Tyh3x4kBY6G++d78yQ=; b=Njcc1PktR2swXnJV2+W3QMohD
-	lG54faqxH6X6WFV5QMIMqEVRw9ir5ZPtwmTncMmXiDfxWXo0blIe3Q7YhbL10SBDQsL9hoLUpBP8h
-	pqmEQY3M/HBv0pWaZN++7Nn3ZARAZ7LwbznxY/t6JzZlczAc0Llc7cc8uYOb3Mc2MWtrH6e3NiGWE
-	YTxYNVOG6ZflALBcPBX4Iu66YziUb/20qnLk9iupbSS7jy54pfVb6u7ljqO5UP0E/KnguwlU/wnmW
-	vMc3ROlHZnMX1XE1xFgRPdXIdt7H64fqVioHSvx6UPBxhY99BrtpN7eq8UwJUk/iTzfuio+KO6VM+
-	tBYY+zxRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CEPvV0SISLPX24J0aVa0ioEzHT9EKcD7IIXgHR6q4JI=; b=l23N8fhsMKfcUs
+	Hupji4UyG67+Wc36uM8Wr5+CtXihRWFOIGUDGhQKfZPr4t7fHQbBL0wct1mVnonGDtoT6vERgBnv9
+	2iaV5+n8IMLwZNqmNhQjfkqQT8tW81nvbwV+2Ueo7REt5RqrNFP1LuAtPFIJKy38PXjGRPp2LEy1/
+	aSq3haWfoZweTWtVT3QoCG7HFpIHQYvRBaokhyrVYmjRsbcyMrfAL6nuZM4riMZ2TVsYMrHL2BDxM
+	E4A9W6P7PovkNjizgLdcxa31FXJ91beJeJf4lalXRH9FYsL3y46mCRGAxPCCQMgCVvVuHCLtbXDoO
+	ZqUEx5CALzx3EPKVKiPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw6Jw-0005Bu-NY; Fri, 09 Aug 2019 14:56:44 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hw6NP-0005qs-Q3; Fri, 09 Aug 2019 15:00:19 +0000
+Received: from mail-ve1eur02on0712.outbound.protection.outlook.com
+ ([2a01:111:f400:fe06::712]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw6Jf-00055a-1V
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 14:56:28 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x79EuOvr045452;
- Fri, 9 Aug 2019 09:56:24 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1565362584;
- bh=WOf8yBns8ce81Y1JTQ+OLGciZ5jeJWvtnFFxHufBK7E=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=hZq+ljhv0SoklT5IiJrY8jjA4D9m5h6NEEPMZt/4O9gvNePEJXwuKtqS1s33TILt5
- HdSxWFX8LU56HodDmkNrmsetmgzo60zurygWpptJpZK9CEjvzl6LZk1JP+eKJAv6Fr
- ASr6W2NrARuWL4PueHiXODIu1Jqb6oYQZpAxffD0=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x79EuOKj034694
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 9 Aug 2019 09:56:24 -0500
-Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 9 Aug
- 2019 09:56:24 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 9 Aug 2019 09:56:24 -0500
-Received: from [172.24.191.45] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x79EuLmV102066;
- Fri, 9 Aug 2019 09:56:21 -0500
-Subject: Re: [PATCH 6/6] arm64: dts: k3-j721e: Add gpio-keys on common
- processor board
-To: Lokesh Vutla <lokeshvutla@ti.com>, Tero Kristo <t-kristo@ti.com>, Nishanth
- Menon <nm@ti.com>, <linus.walleij@linaro.org>
-References: <20190809082947.30590-1-lokeshvutla@ti.com>
- <20190809082947.30590-7-lokeshvutla@ti.com>
-From: Keerthy <j-keerthy@ti.com>
-Message-ID: <4d923b5f-16ba-2bc1-b195-d6ec7ae496b0@ti.com>
-Date: Fri, 9 Aug 2019 20:26:57 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190809082947.30590-7-lokeshvutla@ti.com>
+ id 1hw6N5-0005pa-OZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 15:00:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QQcVRCkLSAuFQLbaHM6snOZegqWD+nddodcDdi6Pg5hX06e1QKm0cFXg2x5n0jFuhT/yK4vUc1IeTUgzARnsTiokV1mqzgCkPHX4HTgYdOL4K8WZjqvXX0uRZ+38o5FsTBj3zSpYzxynll+8EyZoDs3ZT91bK07Kg7Oz5cr9Wehr2pBqRPc80zYO5C0fYuxImkwjy28KKs37uXT2HdoqZ1fmn9KwbjHQvwyXgA6ZlJmpwiwvfq8Box8czP35cnL5gmW9sq5Cuzbu44EYJC3qwAnJYc8p2kAYBUc/4duaT03v67Ph6JkYgDPhHV6MaQyX8suWuPU2YPSyUD8F58In0Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=y+b6PMlKnRVisR1vKPa8SKNWw0FeTK/r7KD9A+V2r1k=;
+ b=En6LMLzr78IalpQw07bCBf4TQaMWjGTZ7SfPsKDtAmmPer4YvJrnCVMrXQOeTso9dQxKhw60liL6GUK8x5tgGyRgFODd3fYYyLpiiy9r1FMK9yPjHNrT9zzXzkY7o99/DaTiKHauE/FDUpBx5ewlvAEMBYtLHSBJRklGcx6RE1v6qED82gvJzVpuiqXP7monkNQjVhAlgBHfIoFvcok4PEBI1HTMHcOOqHZJB0Psaah1Fl/N2R+6EDgy9ckViK2Ob/oAjMVoBT4v99N2o2AvzyVotuIJmILYRPaiWQOpOqC8ae4Dks6MKUVQRi7hUeRkHR93p4wzDlN6YLwQ2MjhOA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=y+b6PMlKnRVisR1vKPa8SKNWw0FeTK/r7KD9A+V2r1k=;
+ b=EI7MkdMe6X9ZHtoDFM9V3jcYQS8LtrjGL0tXWi1sqq090pg59ytelCea3TgAIvJsI8GI5R1mie3Y6gyiXfls8+apGS/PfxGhG98JyA7Nrda1pM529kWEj3nWuea7ZrajmwXYoEri7dg8LIhZvICAH0bw/hRy8fT9RbG2af5xOwk=
+Received: from VI1PR05MB6415.eurprd05.prod.outlook.com (20.179.27.139) by
+ VI1PR05MB5647.eurprd05.prod.outlook.com (20.178.120.153) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.18; Fri, 9 Aug 2019 14:59:55 +0000
+Received: from VI1PR05MB6415.eurprd05.prod.outlook.com
+ ([fe80::f1b2:353a:da9b:c19a]) by VI1PR05MB6415.eurprd05.prod.outlook.com
+ ([fe80::f1b2:353a:da9b:c19a%4]) with mapi id 15.20.2157.020; Fri, 9 Aug 2019
+ 14:59:55 +0000
+From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+To: Max Krummenacher <max.krummenacher@toradex.com>, "stefan@agner.ch"
+ <stefan@agner.ch>, Philippe Schenker <philippe.schenker@toradex.com>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "michal.vokac@ysoft.com"
+ <michal.vokac@ysoft.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>
+Subject: Re: [PATCH v3 09/21] ARM: dts: imx6qdl-colibri: add phy to fec
+Thread-Topic: [PATCH v3 09/21] ARM: dts: imx6qdl-colibri: add phy to fec
+Thread-Index: AQHVTPnNvl5o8iwvx0yd87LjaXSUiqby7EAA
+Date: Fri, 9 Aug 2019 14:59:55 +0000
+Message-ID: <061b910d01704f736654d8521be431c8aeb946e4.camel@toradex.com>
+References: <20190807082556.5013-1-philippe.schenker@toradex.com>
+ <20190807082556.5013-10-philippe.schenker@toradex.com>
+In-Reply-To: <20190807082556.5013-10-philippe.schenker@toradex.com>
+Accept-Language: en-GB, en-US
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=marcel.ziswiler@toradex.com; 
+x-originating-ip: [2a01:2a8:8501:4d00:ca5b:76ff:fedf:3c49]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f829bf70-c4fd-492e-f0e1-08d71cda3d67
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:VI1PR05MB5647; 
+x-ms-traffictypediagnostic: VI1PR05MB5647:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR05MB5647B4B5BB7E615394D1881BFBD60@VI1PR05MB5647.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1002;
+x-forefront-prvs: 01244308DF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(366004)(39850400004)(396003)(136003)(346002)(376002)(189003)(199004)(53936002)(316002)(66946007)(6246003)(6436002)(86362001)(81166006)(81156014)(8676002)(4326008)(71190400001)(66446008)(229853002)(64756008)(7736002)(66476007)(305945005)(2201001)(91956017)(76116006)(36756003)(66556008)(6506007)(6486002)(102836004)(186003)(118296001)(110136005)(8936002)(76176011)(2616005)(71200400001)(11346002)(446003)(486006)(44832011)(476003)(14454004)(46003)(2501003)(54906003)(5660300002)(7416002)(6512007)(256004)(25786009)(2906002)(99286004)(478600001)(6116002)(32563001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB5647;
+ H:VI1PR05MB6415.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: toradex.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: TxEKHtCJ1QTyWqWXsZ7SnPq2EakKc/gmDeTgMhEeS2Hft5SInOOk//suqR3Aasjpv1dg9UuPqHasON0Syb2k2hVYKdwLz3D6vyvd2wzkc1wmY5GrFscIISRUGD2NjH/FvhXJEdqN4MN9aUOUKFC3p/2wvU4OcRrxPWojMqNYh1CkjHyWRGGlzxFL/zgLmHJoY1MgmSTWw9vwDmCoICyz5YzZzjqXXYxIi+ryj00mZ2vfpdpENzqmwuFZtzmKjWhAF4Y7CvgT66ZRSbu3syaFk/Bxye1/nAMJW/9QsuT+dyVm7foIhLX3x+mBQtbkQsVBRQ4eBOT5vYQHFZUaC/fvIUgVu30tZs0gaoKbdRjLz7QvvmcSW8GmczGJdRgUB+CsFtZs6TvUjTQBpE7mG0uHKhIANhT7M+ZYKBWHGq2iV3M=
+Content-ID: <540785E97C23C84BA88E39C16542BC91@eurprd05.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f829bf70-c4fd-492e-f0e1-08d71cda3d67
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Aug 2019 14:59:55.3395 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: cIOVn8BGUt3GXeTR7+JcXS7wsZaLztd3rnzBYK+vYW4QmQFuiwbGSnhLCc/VCIwO80WLkydISTdD0+hZ+ERfcDBCnLeOWehR6lQlAhOnds0=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB5647
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_075627_181480_94E33999 
-X-CRM114-Status: GOOD (  16.49  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190809_075959_803619_6FB3353A 
+X-CRM114-Status: GOOD (  16.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe06:0:0:0:712 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -82,7 +120,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,89 +131,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>,
- Device Tree Mailing List <devicetree@vger.kernel.org>
+Cc: "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 09/08/19 1:59 PM, Lokesh Vutla wrote:
-> From: Nikhil Devshatwar <nikhil.nd@ti.com>
+On Wed, 2019-08-07 at 08:26 +0000, Philippe Schenker wrote:
+> Add the phy-node and mdio bus to the fec-node, represented as is on
+> hardware.
+> This commit includes micrel,led-mode that is set to the default
+> value, prepared for someone who wants to change this.
 > 
-> Common processor board for K3 J721E platform has two push buttons
-> namely SW10 and SW11.
-> Add a gpio-keys device node to model them as input keys in Linux.
-> Add required pinmux nodes to set GPIO pins as input.
+> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
 
-Reviewed-by: Keerthy <j-keerthy@ti.com>
+Acked-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 
-> 
-> Signed-off-by: Nikhil Devshatwar <nikhil.nd@ti.com>
-> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
 > ---
->   .../dts/ti/k3-j721e-common-proc-board.dts     | 37 +++++++++++++++++++
->   1 file changed, 37 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
-> index 509579ca3db2..d2894d55fbbe 100644
-> --- a/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
-> +++ b/arch/arm64/boot/dts/ti/k3-j721e-common-proc-board.dts
-> @@ -6,12 +6,49 @@
->   /dts-v1/;
->   
->   #include "k3-j721e-som-p0.dtsi"
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/input/input.h>
->   
->   / {
->   	chosen {
->   		stdout-path = "serial2:115200n8";
->   		bootargs = "console=ttyS2,115200n8 earlycon=ns16550a,mmio32,0x02800000";
->   	};
+> Changes in v3: None
+> Changes in v2: None
+> 
+>  arch/arm/boot/dts/imx6qdl-colibri.dtsi | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/imx6qdl-colibri.dtsi
+> b/arch/arm/boot/dts/imx6qdl-colibri.dtsi
+> index 1beac22266ed..019dda6b88ad 100644
+> --- a/arch/arm/boot/dts/imx6qdl-colibri.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-colibri.dtsi
+> @@ -140,7 +140,18 @@
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_enet>;
+>  	phy-mode = "rmii";
+> +	phy-handle = <&ethphy>;
+>  	status = "okay";
 > +
-> +	gpio_keys: gpio-keys {
-> +		compatible = "gpio-keys";
-> +		autorepeat;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&sw10_button_pins_default &sw11_button_pins_default>;
+> +	mdio {
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
 > +
-> +		sw10: sw10 {
-> +			label = "GPIO Key USER1";
-> +			linux,code = <BTN_0>;
-> +			gpios = <&main_gpio0 0 GPIO_ACTIVE_LOW>;
-> +		};
-> +
-> +		sw11: sw11 {
-> +			label = "GPIO Key USER2";
-> +			linux,code = <BTN_1>;
-> +			gpios = <&wkup_gpio0 7 GPIO_ACTIVE_LOW>;
+> +		ethphy: ethernet-phy@0 {
+> +			reg = <0>;
+> +			micrel,led-mode = <0>;
 > +		};
 > +	};
-> +};
-> +
-> +&main_pmx0 {
-> +	sw10_button_pins_default: sw10_button_pins_default {
-> +		pinctrl-single,pins = <
-> +			J721E_IOPAD(0x0, PIN_INPUT, 7) /* (AC18) EXTINTn.GPIO0_0 */
-> +		>;
-> +	};
-> +};
-> +
-> +&wkup_pmx0 {
-> +	sw11_button_pins_default: sw11_button_pins_default {
-> +		pinctrl-single,pins = <
-> +			J721E_WKUP_IOPAD(0xcc, PIN_INPUT, 7) /* (G28) WKUP_GPIO0_7 */
-> +		>;
-> +	};
->   };
->   
->   &wkup_uart0 {
-> 
-
+>  };
+>  
+>  &hdmi {
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
