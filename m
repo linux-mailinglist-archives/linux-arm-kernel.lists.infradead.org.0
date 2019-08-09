@@ -2,48 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85B11875D1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:22:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C271E875EA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:28:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dh772mSfj2t4fVxQwZEp1IrkYksM3KU1v38nv7F5kec=; b=A8vjojexViyENPLEt8+1n+Lbh
-	yRj4Re+gBsg93fUTXB5NESCDK7HyaIUoVCagzdn6gulKGWVH/I36Kws3DffWoNDt/0jdT8Lu31x/N
-	OkO5SfqOvbeJSuncj3uPvHiotNG6DO4j5ifqf7YSB95ODKjtTKXa8uu4kZMr05GlO1cM4WBzSf7fW
-	9GIOytDuUFq/JE9vTdeFiQcpylgYRqXYquiSl1uheziK34QoBgRumN0ZerdlQow07mSv1Bi/UKL1h
-	C8/TrfTarCWT5oika5MCiyqTYTdBZg+AX9N2w4dyjaFo4JXSC4YkCDuWpGRnN3ZrITIAo5OUK/tF/
-	2rg0/BjyQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2SO5+PtqXEjS6WtfevA/bwc1YrlnUpFNGDP2UK/SWsc=; b=gtltzj+J4ZiTcx
+	glUS0q+/QrIAZlVQ91hlUIsVOkdYmYpQsYwUEfJnGtSZ3zhrmXfMHJJf2gcLliplRvkxeiYoOIZU8
+	ZKCJN45kqk2wxoqUe3pgdBOGe/IgkHLbDFSL6sv15xuDVByxvuNSGoYkxOoyb/pSX58RsidwBJbT8
+	Px6k2oRpLHbrwj6YDHbse6s8zgzFLJbYhFaj+3ZBKR4u3f5zkPJXaaGMsKPAByP9sEx9LfhijrZdF
+	DdW0PWtnd6J3JxinEPAGX76NdXck2pKGQJo4rzk5125b+PqwFOdhlXhZWX3MUmFW/VaRIc59iaJPc
+	IX2WG/dqaiioYOsJGzwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw16K-0007WI-EB; Fri, 09 Aug 2019 09:22:20 +0000
+	id 1hw1CG-00012e-Nb; Fri, 09 Aug 2019 09:28:28 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw169-0007Vy-NI
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:22:10 +0000
+ id 1hw1Bw-00011J-Oe
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:28:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2483B15A2;
- Fri,  9 Aug 2019 02:22:09 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6D8F53F575;
- Fri,  9 Aug 2019 02:22:08 -0700 (PDT)
-Subject: Re: [PATCH] coresight: tmc-etr: Remove perf_data check.
-To: yabinc@google.com, mathieu.poirier@linaro.org,
- alexander.shishkin@linux.intel.com
-References: <20190808193122.76679-1-yabinc@google.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <84df6071-ef7e-c3d6-6ffa-fcfcbab0c8e6@arm.com>
-Date: Fri, 9 Aug 2019 10:22:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D4D7415A2;
+ Fri,  9 Aug 2019 02:28:07 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EA7C43F575;
+ Fri,  9 Aug 2019 02:28:02 -0700 (PDT)
+Date: Fri, 9 Aug 2019 10:28:00 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v19 00/15] arm64: untag user pointers passed to the kernel
+Message-ID: <20190809092758.GK10425@arm.com>
+References: <CAAeHK+yc0D_nd7nTRsY4=qcSx+eQR0VLut3uXMf4NEiE-VpeCw@mail.gmail.com>
+ <20190724140212.qzvbcx5j2gi5lcoj@willie-the-truck>
+ <CAAeHK+xXzdQHpVXL7f1T2Ef2P7GwFmDMSaBH4VG8fT3=c_OnjQ@mail.gmail.com>
+ <20190724142059.GC21234@fuggles.cambridge.arm.com>
+ <20190806171335.4dzjex5asoertaob@willie-the-truck>
+ <CAAeHK+zF01mxU+PkEYLkoVu-ZZM6jNfL_OwMJKRwLr-sdU4Myg@mail.gmail.com>
+ <201908081410.C16D2BD@keescook>
+ <20190808153300.09d3eb80772515f0ea062833@linux-foundation.org>
+ <201908081608.A4F6711@keescook>
+ <20190809090016.GA23083@arrakis.emea.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190808193122.76679-1-yabinc@google.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190809090016.GA23083@arrakis.emea.arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_022209_806455_01DCC63A 
-X-CRM114-Status: GOOD (  18.52  )
+X-CRM114-CacheID: sfid-20190809_022808_885032_19E2E97F 
+X-CRM114-Status: GOOD (  24.17  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,60 +69,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, Dave Hansen <dave.hansen@intel.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Yabin,
-
-
-Thank you for the analysis and the patch.
-
-On 08/08/2019 20:31, Yabin Cui wrote:
-> When tracing etm data of multiple threads on multiple cpus through
-> perf interface, each cpu has a unique etr_perf_buffer while sharing
-> the same etr device. There is no guarantee that the last cpu starts
-> etm tracing also stops last. So the perf_data check is no longer valid.
+On Fri, Aug 09, 2019 at 10:00:17AM +0100, Catalin Marinas wrote:
+> On Thu, Aug 08, 2019 at 04:09:04PM -0700, Kees Cook wrote:
+> > On Thu, Aug 08, 2019 at 03:33:00PM -0700, Andrew Morton wrote:
+> > > On Thu, 8 Aug 2019 14:12:19 -0700 Kees Cook <keescook@chromium.org> wrote:
+> > > 
+> > > > > The ones that are left are the mm ones: 4, 5, 6, 7 and 8.
+> > > > > 
+> > > > > Andrew, could you take a look and give your Acked-by or pick them up directly?
+> > > > 
+> > > > Given the subsystem Acks, it seems like 3-10 and 12 could all just go
+> > > > via Andrew? I hope he agrees. :)
+> > > 
+> > > I'll grab everything that has not yet appeared in linux-next.  If more
+> > > of these patches appear in linux-next I'll drop those as well.
+> > > 
+> > > The review discussion against " [PATCH v19 02/15] arm64: Introduce
+> > > prctl() options to control the tagged user addresses ABI" has petered
+> > > out inconclusively.  prctl() vs arch_prctl().
+> > 
+> > I've always disliked arch_prctl() existing at all. Given that tagging is
+> > likely to be a multi-architectural feature, it seems like the controls
+> > should live in prctl() to me.
 > 
-> Signed-off-by: Yabin Cui <yabinc@google.com>
-> ---
->   drivers/hwtracing/coresight/coresight-tmc-etr.c | 9 ---------
->   drivers/hwtracing/coresight/coresight-tmc.h     | 2 --
->   2 files changed, 11 deletions(-)
+> It took a bit of grep'ing to figure out what Dave H meant by
+> arch_prctl(). It's an x86-specific syscall which we do not have on arm64
+> (and possibly any other architecture). Actually, we don't have any arm64
+> specific syscalls, only the generic unistd.h, hence the confusion. For
+> other arm64-specific prctls like SVE we used the generic sys_prctl() and
+> I can see x86 not being consistent either (PR_MPX_ENABLE_MANAGEMENT).
 > 
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> index 17006705287a..0418440e0141 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> @@ -1484,20 +1484,12 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
->   		goto out;
->   	}
->   
-> -	if (WARN_ON(drvdata->perf_data != etr_perf)) {
-> -		lost = true;
-> -		spin_unlock_irqrestore(&drvdata->spinlock, flags);
-> -		goto out;
-> -	}
-> -
+> In general I disagree with adding any arm64-specific syscalls but in
+> this instance it can't even be justified. I'd rather see some clean-up
+> similar to arch_ptrace/ptrace_request than introducing new syscall
+> numbers (but as I suggested in my reply to Dave, that's for another
+> patch series).
 
-I think some sort of sanity check is a good idea to make sure we don't loose the
-context. Even when different CPUs have different etr_perf buffer, the underlying
-etr_buf should be the same. So, we should be able to simply convert the check
-to, something like :
+I had a go at refactoring this a while ago, but it fell by the wayside.
 
-	struct etr_perf_buffer *perf_buf = drvdata->perf_data;
+I can try to resurrect it if it's still considered worthwhile.
 
-	...
-
-	if (WARN_ON(perf_buf->etr_buf != etr_perf->buf)) {
-		....
-	}
-
-Does that solve the problem for you ?
-
-Suzuki
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
