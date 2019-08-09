@@ -2,67 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CCBC87A1B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 14:32:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1180A87A30
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 14:32:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=YukBmqSBZxNA8Zr16nKHVdOCpto+VfwE6lI7DRCsgOg=; b=VO1
-	a3LYqo0WNe7ZnwYPcnnUnpzLKgeVe0KMIvaxh4qPKdOZ2jCY018hM/mcVaPXin0Sylx/z+QhAshYp
-	tiDvdyIQzzuEywEtg08pU/GXbhGv5QjMOiubTcKBRQF1S+Xm+PHGJKGpjHiD9r2wtogMZ/Vgh/Dby
-	0X0N+QxpK6nLu0PknkgqmfhiOTjxs8PqApWpvneR6aKGIoQUUjMPXq0iVR7fnyjnZcAbzQ4tJXFMQ
-	eVmJCnXEHoJmihf7JAjeDscYGXqbchuxRJLFZrDal+4RDG4J7NfO0MzpKQTtHa05c+7CGwsdSutaS
-	MUTiXgpkwO2ocYuLuGHLyQcXR0h3zTA==;
+	List-Owner; bh=EP88M0H+fmF0TNMDJqvH6WE2u57KdCdfO4YBfTsR0LQ=; b=uy7Bzmw2gn9zxz
+	G1d0W4FOPJwUsX1YA/RI/PPFkwO/a3vfUhkinqDHdUKS5EWTlYkEUJUv/BYiAAxeMg/RiJguRUp39
+	UaJOzf19285lR6BcIctdHzZJDQJbogvdR7Zaiba2i2KEQasgiomiMTwVAyWtpGSuwowi9sHGaBa44
+	NcQ24RicbL8fNZq1KEIr7g+xQ7YrSaJb6HBZeGyLGscV7UQtanQPbYeYhMJ8lZw3ZvFZBBU3zAFmM
+	3KPVH4FP+c4jjl732TE9nc8zZX9xht4qlAze42GZUDUwy7+x3RXnfzfPkUELDKd71T/GsDkhCNHlN
+	BpSmHvPv9HIsk8GnavzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw445-0000mY-Pz; Fri, 09 Aug 2019 12:32:13 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw43u-0000m6-Aq; Fri, 09 Aug 2019 12:32:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=KkMWdWdaZPGt8q4/51AC+gNMwtToOnoRdH8VMCOgM9g=; b=O18c1zr3Vr1e
- BraQLZz7D3x4DwmSGP0bu0tuanXkRWnksVm1bAyMpDE4gydDcGA77mL1l0v+UbBgCrTfMatTh0H7j
- d86REthYs9NGJrb/ZSN3hhlvcZXMIoJcpx44MJo3CL/uTXNlaKWsndN9aF56690R6YSnZJi7Y24xV
- vua5Q=;
-Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1hw43l-00061B-Ag; Fri, 09 Aug 2019 12:31:53 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id AA2A0274303D; Fri,  9 Aug 2019 13:31:52 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: YueHaibing <yuehaibing@huawei.com>
-Subject: Applied "ASoC: mt6351: remove unused variable 'mt_lineout_control'"
- to the asoc tree
-In-Reply-To: <20190809080234.23332-1-yuehaibing@huawei.com>
-X-Patchwork-Hint: ignore
-Message-Id: <20190809123152.AA2A0274303D@ypsilon.sirena.org.uk>
-Date: Fri,  9 Aug 2019 13:31:52 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+	id 1hw44k-00016j-KB; Fri, 09 Aug 2019 12:32:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hw44V-00015h-G2
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 12:32:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AFE991596;
+ Fri,  9 Aug 2019 05:32:36 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 24BDD3F706;
+ Fri,  9 Aug 2019 05:32:36 -0700 (PDT)
+Date: Fri, 9 Aug 2019 13:32:34 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v3 02/11] kselftest: arm64: adds first test and common
+ utils
+Message-ID: <20190809123233.GM10425@arm.com>
+References: <20190802170300.20662-1-cristian.marussi@arm.com>
+ <20190802170300.20662-3-cristian.marussi@arm.com>
+ <20278fdd-95d0-060f-088d-aba8ac2b0b01@arm.com>
+ <20190809111635.GL10425@arm.com>
+ <4a73fcdf-911e-b44a-ce6b-f9bcde34eec8@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <4a73fcdf-911e-b44a-ce6b-f9bcde34eec8@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_053202_374832_CAC25A01 
-X-CRM114-Status: GOOD (  11.97  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190809_053239_615868_7F9D4DC5 
+X-CRM114-Status: GOOD (  24.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,81 +65,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: pierre-louis.bossart@linux.intel.com, alsa-devel@alsa-project.org,
- tiwai@suse.com, lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
- Hulk Robot <hulkci@huawei.com>, Mark Brown <broonie@kernel.org>,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com, perex@perex.cz,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Fri, Aug 09, 2019 at 01:20:45PM +0100, Cristian Marussi wrote:
+> 
+> Hi
+> 
+> On 8/9/19 12:16 PM, Dave Martin wrote:
+> >On Fri, Aug 09, 2019 at 11:54:06AM +0100, Cristian Marussi wrote:
+> >>Hi
+> >>
+> >>On 8/2/19 6:02 PM, Cristian Marussi wrote:
+> >>>Added some arm64/signal specific boilerplate and utility code to help
+> >>>further testcase development.
+> >>>
+> >>>A simple testcase and related helpers are also introduced in this commit:
+> >>>mangle_pstate_invalid_compat_toggle is a simple mangle testcase which
+> >>>messes with the ucontext_t from within the sig_handler, trying to toggle
+> >>>PSTATE state bits to switch the system between 32bit/64bit execution state.
+> >>>Expects SIGSEGV on test PASS.
+> >>>
+> >>>Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> >>>---
 
-   ASoC: mt6351: remove unused variable 'mt_lineout_control'
+[...]
 
-has been applied to the asoc tree at
+> >>diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+> >>index 31788a1d33a4..c0f3cd1b560a 100644
+> >>--- a/tools/testing/selftests/arm64/signal/test_signals_utils.c
+> >>+++ b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+> >>@@ -23,21 +23,25 @@ extern struct tdescr *current;
+> >>  static int sig_copyctx = SIGTRAP;
+> >>  static char *feats_store[FMAX_END] = {
+> >>-       "SSBS",
+> >>-       "PAN",
+> >>-       "UAO",
+> >>+       " SSBS ",
+> >>+       " PAN ",
+> >>+       " UAO ",
+> >>  };
+> >>  #define MAX_FEATS_SZ   128
+> >>+static char feats_string[MAX_FEATS_SZ];
+> >>+
+> >>  static inline char *feats_to_string(unsigned long feats)
+> >>  {
+> >>-       static char feats_string[MAX_FEATS_SZ];
+> >>+       for (int i = 0; i < FMAX_END; i++) {
+> >>+               size_t tlen = 0;
+> >>-       for (int i = 0; i < FMAX_END && feats_store[i][0]; i++) {
+> >>-               if (feats & 1UL << i)
+> >>-                       snprintf(feats_string, MAX_FEATS_SZ - 1, "%s %s ",
+> >>-                                feats_string, feats_store[i]);
+> >>+               if (feats & 1UL << i) {
+> >>+                       strncat(feats_string, feats_store[i],
+> >
+> >Should this be feats_string + tlen?
+> >
+> 
+> strncat appends to the end of a NULL terminated string overwriting the NULL itself and
+> appending its own NULL (as long as dest and src do not overlap and fits the max size param),
+> so it must be fed the start of the dest string to which we are appending
+>
+> >>+                               MAX_FEATS_SZ - 1 - tlen);
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.4
+I see.  Yes, you're right -- I was confusing strncat() with strncpy().
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+> >An assert(tlen <= MAX_FEATS_SZ - 1) is probably a good idea here,
+> >in case more features are added to feats_store[] someday.
+> >
+> 
+> Yes in fact...if not it would be simply truncated silently
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+I think MAX_FEATS - 1 - tlen would overflow.  tlen is a size_t, so the
+result would might be a giant unsigned number in this case, leading to a
+potential buffer overrun in strncat().
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
+> 
+> >>+                       tlen += strlen(feats_store[i]);
+> >>+               }
+> >
+> >Don't we need to initialise tlen outside the loop?  Otherwise we just
+> >zero it again after the +=.
+> 
+> ..and that's a bug :<
 
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+OK
 
-Thanks,
-Mark
+> >
+> >>         }
+> >>         return feats_string;
+> >>@@ -190,7 +194,7 @@ static void default_handler(int signum, siginfo_t *si, void *uc)
+> >>                 /* it's a bug in the test code when this assert fail */
+> >>                 assert(!current->sig_trig || current->triggered);
+> >>                 fprintf(stderr,
+> >>-                       "SIG_OK -- SP:%p  si_addr@:0x%p  si_code:%d  token@:0x%p  offset:%ld\n",
+> >>+                       "SIG_OK -- SP:%llX  si_addr@:0x%p  si_code:%d  token@:0x%p  offset:%ld\n",
+> >
+> >For consistency, can we have a "0x" prefix?
+> >
+> >I think %p usually generates a "0x" prefix by itself, so 0x%p might give
+> >a double prefix.
+> >
+> 
+> Yes you are right.
+> 
+> Moreover I'm in doubt what to do generally with all these stderr
+> output, because I optionally discard to null testing standalone, but
+> this is not what the KSFT framework runner script does, so
+> arm64/signal tests end up being overly verbose when run from the
+> framework (even if tests use anyway the KSFT exit codes conventions
+> so all the results are correctly reported); but I suppose I'll
+> receive a clear indication on this matter from the maintainers at the
+> end...
 
-From bc8d9f737fc01cce913f1cc215b7e66f01697e52 Mon Sep 17 00:00:00 2001
-From: YueHaibing <yuehaibing@huawei.com>
-Date: Fri, 9 Aug 2019 16:02:34 +0800
-Subject: [PATCH] ASoC: mt6351: remove unused variable 'mt_lineout_control'
+Sure, keep the prints for now.  If they're potentially useful we can
+always find a way to make them optional.
 
-sound/soc/codecs/mt6351.c:1070:38: warning:
- mt_lineout_control defined but not used [-Wunused-const-variable=]
-
-It is never used, so can be removed.
-
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-Link: https://lore.kernel.org/r/20190809080234.23332-1-yuehaibing@huawei.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- sound/soc/codecs/mt6351.c | 5 -----
- 1 file changed, 5 deletions(-)
-
-diff --git a/sound/soc/codecs/mt6351.c b/sound/soc/codecs/mt6351.c
-index 4b3ce01c5a93..5c0536eb1044 100644
---- a/sound/soc/codecs/mt6351.c
-+++ b/sound/soc/codecs/mt6351.c
-@@ -1066,11 +1066,6 @@ static int mt_mic_bias_2_event(struct snd_soc_dapm_widget *w,
- 	return 0;
- }
- 
--/* DAPM Kcontrols */
--static const struct snd_kcontrol_new mt_lineout_control =
--	SOC_DAPM_SINGLE("Switch", MT6351_AUDDEC_ANA_CON3,
--			RG_AUDLOLPWRUP_VAUDP32_BIT, 1, 0);
--
- /* DAPM Widgets */
- static const struct snd_soc_dapm_widget mt6351_dapm_widgets[] = {
- 	/* Digital Clock */
--- 
-2.20.1
-
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
