@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58A6D8749C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 10:53:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0422D874A5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 10:55:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ly0aHKYZtCTFW/5O4NHJhcJB1Rl+aN7xHa9sSqv+28k=; b=dwLAJT0lfdAns9
-	nDdaVa/XxHgWVEbvF+3JOu23lvphKHZrvONCUMse5zwTlyJaNohwOQ/ihJdVkudgbQH7Fr0oSQGFn
-	EErdl7U9lcf+y7fyP7GBw3UpGdcp+dnAFPgmXRcIhCv7h3oQWjrG5u0JscTkEpbC2yospaVFSqSz8
-	6goPdjtjsnHQ2w+4Y/iMUJMSFxipf0RPBgglxSREghURU04kV3Jrd5DYP2vV5GXaRUNF98JvdB40X
-	3DPBOB7jgxSWn4n9whrO8KBrNeO8cLqcS0sehf96pQ6vAYSTNPeiklVooaQ+Vj/5hrRpy106HTmei
-	7IchC6b18SgV3mXc/+ag==;
+	List-Owner; bh=opKglYMlIdMJDxN+UJol+wXNnyziNZ2at5I0Q7VJ5i4=; b=IhOtWpeaUvz742
+	xVn1bUifSyNdNH8OVjWb6ELtGMrFBweHczmOuvTNFwJ/0XLTTEX50nIDNOHIo7BrupSyTUTSZWcDV
+	rDcNWSlo6Zyno7a87pX6Uayp8/zgp1ncR+Wa99ziX2DukEatfAr6RWLvS2DbdVNQkgPVsuRFirz0S
+	SylayLpjejxdVasa2h9HZuZtNCsVUUO/RD2c0BOKLKfjXUIJsXAxsFHdr14wJpKd31ipi20NWDbX8
+	BaQBD8pp1Q8x/AoRwrV3qwlLN8+Rp4Ouxflgq+cdjHlEcvHCUhQmutv90YNjMp9u6in6ZNuksxIET
+	M1XqdqvTjT5q0omhLNtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw0ek-0004wj-HZ; Fri, 09 Aug 2019 08:53:50 +0000
+	id 1hw0gR-0006Pw-PW; Fri, 09 Aug 2019 08:55:35 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw0eY-0004w1-Ku
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 08:53:40 +0000
+ id 1hw0gH-0006Pa-CT
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 08:55:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B9AA8344;
- Fri,  9 Aug 2019 01:53:35 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7CA5D344;
+ Fri,  9 Aug 2019 01:55:24 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CE65A3F706;
- Fri,  9 Aug 2019 01:53:34 -0700 (PDT)
-Date: Fri, 9 Aug 2019 09:53:32 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5D9333F706;
+ Fri,  9 Aug 2019 01:55:23 -0700 (PDT)
+Date: Fri, 9 Aug 2019 09:55:21 +0100
 From: Mark Rutland <mark.rutland@arm.com>
-To: Qian Cai <cai@lca.pw>
-Subject: Re: [PATCH] arm64/cache: silence -Woverride-init warnings
-Message-ID: <20190809085332.GB48423@lakrids.cambridge.arm.com>
-References: <20190808032916.879-1-cai@lca.pw>
- <20190808103808.GC46901@lakrids.cambridge.arm.com>
- <D2A2F2B9-0563-4DF6-8E77-F191A768CE4E@lca.pw>
+To: Steven Rostedt <rostedt@goodmis.org>
+Subject: Re: [PATCH 1/2 v2] tracing/arm64: Have max stack tracer handle the
+ case of return address after data
+Message-ID: <20190809085520.GC48423@lakrids.cambridge.arm.com>
+References: <20190807172826.352574408@goodmis.org>
+ <20190807172907.155165959@goodmis.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <D2A2F2B9-0563-4DF6-8E77-F191A768CE4E@lca.pw>
+In-Reply-To: <20190807172907.155165959@goodmis.org>
 User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_015338_778279_8A2678CB 
-X-CRM114-Status: GOOD (  26.57  )
+X-CRM114-CacheID: sfid-20190809_015525_471162_FA31DA23 
+X-CRM114-Status: GOOD (  18.02  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,124 +63,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- clang-built-linux <clang-built-linux@googlegroups.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Jiping Ma <jiping.ma2@windriver.com>, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, mingo@redhat.com,
+ Joel Fernandes <joel@joelfernandes.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBBdWcgMDgsIDIwMTkgYXQgMDY6MTg6MzlQTSAtMDQwMCwgUWlhbiBDYWkgd3JvdGU6
-Cj4gPiBPbiBBdWcgOCwgMjAxOSwgYXQgNjozOCBBTSwgTWFyayBSdXRsYW5kIDxtYXJrLnJ1dGxh
-bmRAYXJtLmNvbT4gd3JvdGU6Cj4gPiAKPiA+IE9uIFdlZCwgQXVnIDA3LCAyMDE5IGF0IDExOjI5
-OjE2UE0gLTA0MDAsIFFpYW4gQ2FpIHdyb3RlOgo+ID4+IFRoZSBjb21taXQgMTU1NDMzY2IzNjVl
-ICgiYXJtNjQ6IGNhY2hlOiBSZW1vdmUgc3VwcG9ydCBmb3IgQVNJRC10YWdnZWQKPiA+PiBWSVZU
-IEktY2FjaGVzIikgaW50cm9kdWNlZCBzb21lIGNvbXBpYXRpb24gd2FybmluZ3MgZnJvbSBHQ0Mg
-KGFuZAo+ID4+IENsYW5nKSB3aXRoIC1XaW5pdGlhbGl6ZXItb3ZlcnJpZGVzKSwKPiA+PiAKPiA+
-PiBhcmNoL2FybTY0L2tlcm5lbC9jcHVpbmZvLmM6Mzg6MjY6IHdhcm5pbmc6IGluaXRpYWxpemVk
-IGZpZWxkCj4gPj4gb3ZlcndyaXR0ZW4gWy1Xb3ZlcnJpZGUtaW5pdF0KPiA+PiBbSUNBQ0hFX1BP
-TElDWV9WSVBUXSAgPSAiVklQVCIsCj4gPj4gICAgICAgICAgICAgICAgICAgICAgICBefn5+fn4K
-PiA+PiBhcmNoL2FybTY0L2tlcm5lbC9jcHVpbmZvLmM6Mzg6MjY6IG5vdGU6IChuZWFyIGluaXRp
-YWxpemF0aW9uIGZvcgo+ID4+ICdpY2FjaGVfcG9saWN5X3N0clsyXScpCj4gPj4gYXJjaC9hcm02
-NC9rZXJuZWwvY3B1aW5mby5jOjM5OjI2OiB3YXJuaW5nOiBpbml0aWFsaXplZCBmaWVsZAo+ID4+
-IG92ZXJ3cml0dGVuIFstV292ZXJyaWRlLWluaXRdCj4gPj4gW0lDQUNIRV9QT0xJQ1lfUElQVF0g
-ID0gIlBJUFQiLAo+ID4+ICAgICAgICAgICAgICAgICAgICAgICAgXn5+fn5+Cj4gPj4gYXJjaC9h
-cm02NC9rZXJuZWwvY3B1aW5mby5jOjM5OjI2OiBub3RlOiAobmVhciBpbml0aWFsaXphdGlvbiBm
-b3IKPiA+PiAnaWNhY2hlX3BvbGljeV9zdHJbM10nKQo+ID4+IGFyY2gvYXJtNjQva2VybmVsL2Nw
-dWluZm8uYzo0MDoyNzogd2FybmluZzogaW5pdGlhbGl6ZWQgZmllbGQKPiA+PiBvdmVyd3JpdHRl
-biBbLVdvdmVycmlkZS1pbml0XQo+ID4+IFtJQ0FDSEVfUE9MSUNZX1ZQSVBUXSAgPSAiVlBJUFQi
-LAo+ID4+ICAgICAgICAgICAgICAgICAgICAgICAgIF5+fn5+fn4KPiA+PiBhcmNoL2FybTY0L2tl
-cm5lbC9jcHVpbmZvLmM6NDA6Mjc6IG5vdGU6IChuZWFyIGluaXRpYWxpemF0aW9uIGZvcgo+ID4+
-ICdpY2FjaGVfcG9saWN5X3N0clswXScpCj4gPj4gCj4gPj4gYmVjYXVzZSBpdCBpbml0aWFsaXpl
-cyBpY2FjaGVfcG9saWN5X3N0clswIC4uLiAzXSB0d2ljZS4gU2luY2UKPiA+PiBhcm02NCBkZXZl
-bG9wZXJzIGFyZSBrZWVuIHRvIGtlZXAgdGhlIHN0eWxlIG9mIGluaXRpYWxpemluZyBhIHN0YXRp
-Ywo+ID4+IGFycmF5IHdpdGggYSBub24temVybyBwYXR0ZXJuIGZpcnN0LCBqdXN0IGRpc2FibGUg
-dGhvc2Ugd2FybmluZ3MgZm9yCj4gPj4gYm90aCBHQ0MgYW5kIENsYW5nIG9mIHRoaXMgZmlsZS4K
-PiA+PiAKPiA+PiBGaXhlczogMTU1NDMzY2IzNjVlICgiYXJtNjQ6IGNhY2hlOiBSZW1vdmUgc3Vw
-cG9ydCBmb3IgQVNJRC10YWdnZWQgVklWVCBJLWNhY2hlcyIpCj4gPj4gU2lnbmVkLW9mZi1ieTog
-UWlhbiBDYWkgPGNhaUBsY2EucHc+Cj4gPiAKPiA+IFRoaXMgaXMgX25vdF8gYSBmaXgsIGFuZCBz
-aG91bGQgbm90IHJlcXVpcmUgYmFja3BvcnRpbmcgdG8gc3RhYmxlIHRyZWVzLgo+IAo+IEZyb20g
-bXkgZXhwZXJpZW5jZSwgdGhlIHN0YWJsZSBBSSB3aWxsIHBpY2sgdXAgd2hhdGV2ZXIgdGhleSB3
-YW50IHRvIGJhY2twb3J0Cj4gbm90IG1hdHRlciBpZiB0aGVyZSBJcyBhIOKAnEZpeGVz4oCdIHRh
-ZyBvciBub3QgdW5sZXNzIGl0IGlzIG9uZSBvZiB0aG9zZSBzdWJzeXN0ZW1zIGxpa2UKPiBOZXR3
-b3JraW5nIHRoYXQgZXhjbHVzaXZlbHkgbWFudWFsbHkgZmxhZyBmb3IuIGJhY2twb3J0aW5nIGJ5
-IHRoZSBtYWludGFpbmVyLiAgCgpNeSBwb2ludCBpcyB0aGF0IHRoaXMgcGF0Y2ggZG9lcyBub3Qg
-cmVxdWlyZSBiYWNrcG9ydGluZywgYW5kIGhlbmNlIGRvZXMKbm90IHJlcXVpcmUgYSBmaXhlcyB0
-YWcuIFRoZSBzdGFibGUgQUkgbWF5IGNob29zZSB0aGUgcGF0Y2ggcmVnYXJkbGVzcywKc28gaXQn
-cyBpcnJlbGV2YW50LgoKWy4uLl0KCj4gPiBXaGF0IGFib3V0IGFsbCB0aGUgb3RoZXIgaW5zdGFu
-Y2VzIHRoYXQgd2UgaGF2ZSBpbiBtYWlubGluZT8KPiAKPiBJIGhhdmUgbm90IGhhZCBhIGNoYW5j
-ZSB0byByZXZpZXcgYWxsIGluc3RhbmNlcyB5ZXQuIEl0IGlzIG5vdCB1bnVzdWFsbHkgdG8gZml4
-IG9uZQo+IHdhcm5pbmcgYXQgYSB0aW1lLCBhbmQgdGhlbiBnbyBvbiBmaXhpbmcgc29tZSBtb3Jl
-IGlmIHRpbWUgcGVybWl0LgoKR2l2ZW4gdGhhdDoKCiogQWxsIHRoZSBzdWdnZXN0ZWQgY29kZSBj
-aGFuZ2VzIHNvIGZhciBhcmUgaGFybWZ1bCB0byBsZWdpYmlsaXR5LAogIHJvYnVzdG5lc3MsIGFu
-ZCBtYWludGFpbmFiaWxpdHkgb2YgdGhlIGNvZGUuCgoqIFRoZSBtYWpvcml0eSBvZiB0aGUgd2Fy
-bmluZ3MgKGJ5IG9yZGVycyBvZiBtYWduaXR1ZGUpIG9jY3VyIGZvcgogIGludGVudGlvbmFsIG92
-ZXJyaWRlcywgcmF0aGVyIHRoYW4gdW5pbnRlbnRpb25hbCBvdmVycmlkZXMsIGFzCiAgYXNzaWdu
-aW5nIGRlZmF1bHQgdmFsdWVzIHRvIGFycmF5cyBhbmQgc3RydWN0cyBpcyBhIGNvbW1vbiBpZGlv
-bS4KCiogV2UgaGF2ZSBubyBrbm93biBtZWNoYW5pc20gdG8gc2VsZWN0aXZlbHkgZGlzYWJsZSB0
-aGUgd2FybmluZyBvbiBhCiAgcGVyLWFzc2lnbm1lbnQgYmFzaXMuCgouLi4gSSBkbyBub3QgdGhp
-bmsgdGhhdCBpcyBhbiBhcHByb3ByaWF0ZSBzdHJhdGVneSBoZXJlLgoKRm9yIGV4YW1wbGUsIEkn
-bSBmYWlybHkgY2VydGFpbiB0aGF0IGlmIHlvdSB0cnkgdG8gImZpeCIgdGhlIGluc3RhbmNlcwpp
-biBzeXNjYWxsIHRhYmxlcywgbWFueSBtb3JlIHBlb3BsZSB3aWxsIGNvbXBsYWluLgoKQSBtdWNo
-IGJldHRlciBhcHByb2FjaCB3b3VsZCBiZSB0byBhbmFseXNlIHRoZSB3YXJuaW5ncywgYW5kIGVp
-dGhlcjoKCiogZmluZCB0aGUgX3JlYWxfIGJ1Z3Mgd2hlcmUgd2UgdW5pbnRlbnRpb25hbGx5IG92
-ZXJyaWRlIGZpZWxkcyBhbmQgZml4CiAgdGhvc2UgZmlyc3QsIG9yOgoKKiBGaW5kIHRoZSBpbnN0
-YW5jZXMgdGhhdCBwcm9kdWNlIHRoZSBncmVhdGVzdCBzZXQgb2YgZmFsc2UgcG9zaXRpdmVzCiAg
-KGUuZy4gdGhlIHN5c2NhbGwgdGFibGVzKSwgYW5kIGZpZ3VyZSBvdXQgaG93IHRvIHN1cHByZXNz
-IHRob3NlCiAgd2l0aG91dCBoYXJtaW5nIHRoZSBtYWludGFpbmFiaWxpdHkgb3Igcm9idXN0bmVz
-cyBvZiB0aGUgY29kZS4KCj4gPiBJIHJlYWxseSBkb24ndCB0aGluayB0aGF0IHdlIG5lZWQgdG8g
-Z28gZG93biB0aGlzIHJvYWQ7IHdlJ3JlIGp1c3QgZ29pbmcKPiA+IHRvIGVuZCB1cCBhZGRpbmcg
-dGhpcyB0byBldmVyeSBmaWxlIHRoYXQgaGFwcGVucyB0byBpbmNsdWRlIGEgaGVhZGVyCj4gPiB1
-c2luZyB0aGlzIHNjaGVtZeKApgo+IAo+IEhvdyBhYm91dCBkaXNhYmxlIHRoZW0gdGhpcyB3YXkg
-aW4gYSB0b3AgbGV2ZWwgbGlrZSBhcmNoL2FybTY0L01ha2VmaWxlIG9yCj4gYXJjaC9hcm02NC9r
-ZXJuZWwvTWFrZWZpbGU/IFRoZXJlZm9yZSwgdGhlcmUgaXMgbm8gbmVlZCB0byBhZGQgdGhpcyB0
-bwo+IGV2ZXJ5IGZpbGUsIGJ1dCB3aXRoIGEgZHJhd2JhY2sgdGhhdCBpdCBjb3VsZCBtaXNzIGEg
-ZmV3IHJlYWwgaXNzdWVzIHRoZXJlCj4gaW4gdGhlIGZ1dHVyZSB3aGljaCBwcm9iYWJseSBub3Qg
-bWFueSBwZW9wbGUgYXJlIGNoZWNraW5nIGZvciB0aGVtIG9mCj4gdGhlIGFybTY0IHN1YnN5c3Rl
-bSBub3dhZGF5cy4KClRoaXMgaXNuJ3QgYXJtNjQtc3BlY2lmaWMuIFdlIHZhbGlkbHkgdXNlIGR1
-cGxpY2F0ZSBhc3NpZ25tZW50cyBhbGwgb3Zlcgp0aGUga2VybmVsLCBhbmQgbXkgcG9zaXRpb24g
-aXMgdGhhdCB3ZSBlaXRoZXI6CgoqIEZpbmQgYSBtZWNoYW5pc20gdG8gc3VwcHJlc3MgdGhlIHdh
-cm5pbmcgb24gYSBwZXItYXNzaWdubWVudCAobm90CiAgcGVyLWZpbGUpIGJhc2lzLCB3aXRob3V0
-IGFsdGVyaW5nIHRoZSBzdHJ1Y3R1cmUgb2YgdGhlIGV4aXN0aW5nIGNvZGUuCgoqIERpc2FibGUg
-dGhlIHdhcm5pbmcgdHJlZS13aWRlLgoKSSB3b3VsZCB2YXN0bHkgcHJlZmVyIHRoZSBmb3JtZXIs
-IGFzIEkgZG8gYWdyZWUgdGhhdCB0aGlzIHdhcm5pbmcgX2Nhbl8KZmluZCByZWFsIGJ1Z3MsIGJ1
-dCBzaW1pbGFybHkgc28gY2FuIGEgc2NyaXB0IHRoYXQgd2FybnMgIkxpbmUgJE4gbWF5CmNvbnRh
-aW4gYSBidWciIGZvciBldmVyeSBsaW5lIG9mIGEgQyBmaWxlLgoKPiA+IFBsZWFzZSBqdXN0IHR1
-cm4gdGhpcyBvZmYgYnkgZGVmYXVsdCBmb3IgY2xhbmcuCj4gCj4gQXMgbWVudGlvbmVkIGJlZm9y
-ZSwgaXQgaXMgdmVyeSB2YWx1YWJsZSB0byBydW4g4oCcbWFrZSBXPTHigJ0gZ2l2ZW4gaXQgZm91
-bmQKPiBtYW55IHJlYWwgZGV2ZWxvcGVyIG1pc3Rha2VzIHdoaWNoIHdpbGwgZW5hYmxlIOKAnC1X
-b3ZlcnJpZGUtaW5pdOKAnSBmb3IgYm90aAo+IGNvbXBpbGVycy4gRXZlbiDigJwtV292ZXJyaWRl
-LWluaXTigJ0gaXRzZWxmIGlzIHVzZWZ1bCBmaW5kIHJlYWwgaXNzdWVzIGFzIGluLAo+IAo+IGFl
-NWUwMzNkNjVhICjigJxtZmQ6IHJrODA4OiBGaXggUks4MThfSVJRX0RJU0NIR19JTElNIGluaXRp
-YWxpemVy4oCdKQo+IDMyZGYzNGQ4NzViYiAo4oCcW21lZGlhXSByYzogaW1nLWlyOiBqdmM6IFJl
-bW92ZSB1bnVzZWQgbm8tbGVhZGVyIHRpbWluZ3PigJ0pCj4gCj4gRXNwZWNpYWxseSwgdG8gZmlu
-ZCByZWR1bmRhbnQgaW5pdGlhbGl6YXRpb25zIGluIGxhcmdlIHN0cnVjdHVyZXMuIGUuZy4sCj4g
-Cj4gZTZlYTBiOTE3ODc1ICjigJxbbWVkaWFdIGR2Yl9mcm9udGVuZDogRG9uJ3QgZGVjbGFyZSB2
-YWx1ZXMgdHdpY2UgYXQgYSB0YWJsZeKAnSkKPiAKPiBJdCBpcyBpbXBvcnRhbnQgdG8ga2VlcCB0
-aGUgbm9pc2UtbGV2ZWwgYXMgbG93IGFzIHBvc3NpYmxlIGJ5IGtlZXBpbmcgdGhlCj4gYW1vdW50
-IG9mIGZhbHNlIHBvc2l0aXZlcyB1bmRlciBjb250cm9sIHRvIGJlIHRydWx5IGJlbmVmaXQgZnJv
-bSB0aG9zZQo+IHZhbHVhYmxlIGNvbXBpbGVyIHdhcm5pbmdzLiAKCkkgYWdyZWUgdGhhdCB3ZSB3
-YW50IHRvIG1pbmltaXplIHRoZSBub2lzZSwgYnV0IG5vdCBhdCB0aGUgZXhwZW5zZSBvZgp0aGUg
-bWFpbnRhaW5hYmlsaXR5IGFuZCByb2J1c3RuZXNzIG9mIHRoZSBjb2RlLCBhbmQgbm90IGJ5IGRp
-c2FibGluZwp3YXJuaW5ncyBmb3IgYXJiaXRyYXJ5IGZpbGVzLgoKPiA+IElmIHdlIHdhbnQgdG8g
-ZW5hYmxlIHRoaXMsIHdlIG5lZWQgYSBtZWNoYW5pc20gdG8gcGVybWl0IG92ZXJyaWRhYmxlCj4g
-PiBhc3NpZ25tZW50cyBhcyB3ZSB1c2UgcmFuZ2UgaW5pdGlhbGl6ZXJzIGZvci4KPiAKPiBJIGFt
-IG5vdCBzdXJlIHRoYXQgaXQgaXMgd29ydGggZmlsbGluZyBhIFJGRSBmb3IgY29tcGlsZXJzIG9m
-IHRoYXQgZmVhdHVyZS4KCklmIHRoYXQncyB5b3VyIHBvc2l0aW9uLCB0aGVuIEkgc2VlIG5vIHBv
-aW50IGNvbnRpbnVpbmcgdGhpcyBjb252ZXJzYXRpb24uCgo+IEkgZmVlbCBsaWtlIHRoZSByYW5n
-ZSBpbml0aWFsaXplcnMganVzdCBhbm90aGVyIHdheSB0byBpbml0aWFsaXplIGFuIGFycmF5LCBh
-bmQKPiAgaXQgaXMganVzdCBlYXNpZXIgdG8gbWFrZSBtaXN0YWtlcyB3aXRoIHVuaW50ZW5kZWQg
-ZG91YmxlLWluaXRpYWxpemF0aW9ucy4KPiBUaGUgY29tcGlsZXIgZGV2ZWxvcGVycyBwcm9iYWJs
-eSByZWNvbW1lbmQgdG8gZW5mb3JjZSBtb3JlIG9mCj4g4oCcLVdvdmVycmlkZS1pbml04oCdIGZv
-ciAgdGhlIHJhbmdlIGluaXRpYWxpemVycyByYXRoZXIgdGhhbiBwZXJtaXR0aW5nIGl0LgoKRnJv
-bSBteSBhbmFseXNpcyBpbiBhIHByaW9yIHJlcGx5LCB0aGUgdmFzdCBtYWpvcml0eSBvZiBkdXBs
-aWNhdGUKYXNzaWdubWVudHMgaW4gdGhlIGtlcm5lbCBhcmUgaW50ZW50aW9uYWwuIFdlIGRvIHRo
-YXQgZm9yIGJvdGggYXJyYXlzCmFuZCBzdHJ1Y3R1cmVzIGluIG9yZGVyIHRvIGhhdmUgZGVmYXVs
-dHMgdGhhdCBjYW4gYmUgb3ZlcnJpZGRlbi4KCklmIHRoZSBjb21waWxlciBkZXZlbG9wZXJzIGRv
-bid0IHRoaW5rIHRoYXQncyB3b3J0aCBzdXBwb3J0aW5nLCB0aGVuIHRoZQpmZWF0dXJlIGlzIG5v
-dCB3b3J0aCB1c2luZy4KClRoYW5rcywKTWFyay4KCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
-LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed, Aug 07, 2019 at 01:28:27PM -0400, Steven Rostedt wrote:
+> From: "Steven Rostedt (VMware)" <rostedt@goodmis.org>
+> 
+> Most archs (well at least x86) store the function call return address on the
+> stack before storing the local variables for the function. The max stack
+> tracer depends on this in its algorithm to display the stack size of each
+> function it finds in the back trace.
+> 
+> Some archs (arm64), may store the return address (from its link register)
+> just before calling a nested function. There's no reason to save the link
+> register on leaf functions, as it wont be updated. This breaks the algorithm
+> of the max stack tracer.
+> 
+> Add a new define ARCH_RET_ADDR_AFTER_LOCAL_VARS that an architecture may set
+> if it stores the return address (link register) after it stores the
+> function's local variables, and have the stack trace shift the values of the
+> mapped stack size to the appropriate functions.
+> 
+> Link: 20190802094103.163576-1-jiping.ma2@windriver.com
+> 
+> Reported-by: Jiping Ma <jiping.ma2@windriver.com>
+> Signed-off-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
+> ---
+>  arch/arm64/include/asm/ftrace.h | 13 +++++++++++++
+>  kernel/trace/trace_stack.c      | 14 ++++++++++++++
+>  2 files changed, 27 insertions(+)
+> 
+> diff --git a/arch/arm64/include/asm/ftrace.h b/arch/arm64/include/asm/ftrace.h
+> index 5ab5200b2bdc..961e98618db4 100644
+> --- a/arch/arm64/include/asm/ftrace.h
+> +++ b/arch/arm64/include/asm/ftrace.h
+> @@ -14,6 +14,19 @@
+>  #define MCOUNT_ADDR		((unsigned long)_mcount)
+>  #define MCOUNT_INSN_SIZE	AARCH64_INSN_SIZE
+>  
+> +/*
+> + * Currently, gcc tends to save the link register after the local variables
+> + * on the stack. This causes the max stack tracer to report the function
+> + * frame sizes for the wrong functions. By defining
+> + * ARCH_RET_ADDR_AFTER_LOCAL_VARS, it will tell the stack tracer to expect
+> + * to find the return address on the stack after the local variables have
+> + * been set up.
+> + *
+> + * Note, this may change in the future, and we will need to deal with that
+> + * if it were to happen.
+> + */
+> +#define ARCH_RET_ADDR_AFTER_LOCAL_VARS 1
+
+FWIW (with whatever this got renamed to):
+
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+
+Thanks,
+Mark.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
