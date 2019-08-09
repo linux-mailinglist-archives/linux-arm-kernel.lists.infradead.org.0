@@ -2,49 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0422D874A5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 10:55:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AED83874B8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:00:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=opKglYMlIdMJDxN+UJol+wXNnyziNZ2at5I0Q7VJ5i4=; b=IhOtWpeaUvz742
-	xVn1bUifSyNdNH8OVjWb6ELtGMrFBweHczmOuvTNFwJ/0XLTTEX50nIDNOHIo7BrupSyTUTSZWcDV
-	rDcNWSlo6Zyno7a87pX6Uayp8/zgp1ncR+Wa99ziX2DukEatfAr6RWLvS2DbdVNQkgPVsuRFirz0S
-	SylayLpjejxdVasa2h9HZuZtNCsVUUO/RD2c0BOKLKfjXUIJsXAxsFHdr14wJpKd31ipi20NWDbX8
-	BaQBD8pp1Q8x/AoRwrV3qwlLN8+Rp4Ouxflgq+cdjHlEcvHCUhQmutv90YNjMp9u6in6ZNuksxIET
-	M1XqdqvTjT5q0omhLNtw==;
+	List-Owner; bh=beu1BvUCGrbPeNyAs8INvv6QEcAt36xTmdnx4j1erHU=; b=k0EdyrRZH/zp1w
+	/RELnEtTrvt+nGnz6on7B31NsIxSy+cNwujvTU51sNt7mXWMuJ6/Eb4EjBtSOumljk5mnPYH5ewVG
+	jx4II14CIgwN52dGD6R2HGtsbLR8CJBFngJcAcFl2wGwH3edW9eUdmD1VYtMM1ui3ZU3ojZ8xk0Te
+	PH4dCs/0mxziRkNhhp1FrhwHkmz0QwEJT8dl/qt7FBWFJvdhyLhtJ+wIKZFvZWeZMsfYmZ3aPQy49
+	WefxeamAwUNUyM1eIgiR+TOK1NYwalXKR2syr8yPCRPY4ViMs1l0+cQ4DF0U2ma0izI1DQhHot+ri
+	DYU3HT46YLcD4bftl2MA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw0gR-0006Pw-PW; Fri, 09 Aug 2019 08:55:35 +0000
+	id 1hw0lL-00082p-99; Fri, 09 Aug 2019 09:00:39 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw0gH-0006Pa-CT
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 08:55:26 +0000
+ id 1hw0l7-00082H-RU
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:00:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7CA5D344;
- Fri,  9 Aug 2019 01:55:24 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5D9333F706;
- Fri,  9 Aug 2019 01:55:23 -0700 (PDT)
-Date: Fri, 9 Aug 2019 09:55:21 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Steven Rostedt <rostedt@goodmis.org>
-Subject: Re: [PATCH 1/2 v2] tracing/arm64: Have max stack tracer handle the
- case of return address after data
-Message-ID: <20190809085520.GC48423@lakrids.cambridge.arm.com>
-References: <20190807172826.352574408@goodmis.org>
- <20190807172907.155165959@goodmis.org>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5F595344;
+ Fri,  9 Aug 2019 02:00:24 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 796343F706; Fri,  9 Aug 2019 02:00:19 -0700 (PDT)
+Date: Fri, 9 Aug 2019 10:00:17 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v19 00/15] arm64: untag user pointers passed to the kernel
+Message-ID: <20190809090016.GA23083@arrakis.emea.arm.com>
+References: <cover.1563904656.git.andreyknvl@google.com>
+ <CAAeHK+yc0D_nd7nTRsY4=qcSx+eQR0VLut3uXMf4NEiE-VpeCw@mail.gmail.com>
+ <20190724140212.qzvbcx5j2gi5lcoj@willie-the-truck>
+ <CAAeHK+xXzdQHpVXL7f1T2Ef2P7GwFmDMSaBH4VG8fT3=c_OnjQ@mail.gmail.com>
+ <20190724142059.GC21234@fuggles.cambridge.arm.com>
+ <20190806171335.4dzjex5asoertaob@willie-the-truck>
+ <CAAeHK+zF01mxU+PkEYLkoVu-ZZM6jNfL_OwMJKRwLr-sdU4Myg@mail.gmail.com>
+ <201908081410.C16D2BD@keescook>
+ <20190808153300.09d3eb80772515f0ea062833@linux-foundation.org>
+ <201908081608.A4F6711@keescook>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190807172907.155165959@goodmis.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <201908081608.A4F6711@keescook>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_015525_471162_FA31DA23 
-X-CRM114-Status: GOOD (  18.02  )
+X-CRM114-CacheID: sfid-20190809_020025_977922_9691D3C2 
+X-CRM114-Status: GOOD (  20.22  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,68 +69,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jiping Ma <jiping.ma2@windriver.com>, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, mingo@redhat.com,
- Joel Fernandes <joel@joelfernandes.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
+ Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, Dave Hansen <dave.hansen@intel.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 01:28:27PM -0400, Steven Rostedt wrote:
-> From: "Steven Rostedt (VMware)" <rostedt@goodmis.org>
+On Thu, Aug 08, 2019 at 04:09:04PM -0700, Kees Cook wrote:
+> On Thu, Aug 08, 2019 at 03:33:00PM -0700, Andrew Morton wrote:
+> > On Thu, 8 Aug 2019 14:12:19 -0700 Kees Cook <keescook@chromium.org> wrote:
+> > 
+> > > > The ones that are left are the mm ones: 4, 5, 6, 7 and 8.
+> > > > 
+> > > > Andrew, could you take a look and give your Acked-by or pick them up directly?
+> > > 
+> > > Given the subsystem Acks, it seems like 3-10 and 12 could all just go
+> > > via Andrew? I hope he agrees. :)
+> > 
+> > I'll grab everything that has not yet appeared in linux-next.  If more
+> > of these patches appear in linux-next I'll drop those as well.
+> > 
+> > The review discussion against " [PATCH v19 02/15] arm64: Introduce
+> > prctl() options to control the tagged user addresses ABI" has petered
+> > out inconclusively.  prctl() vs arch_prctl().
 > 
-> Most archs (well at least x86) store the function call return address on the
-> stack before storing the local variables for the function. The max stack
-> tracer depends on this in its algorithm to display the stack size of each
-> function it finds in the back trace.
-> 
-> Some archs (arm64), may store the return address (from its link register)
-> just before calling a nested function. There's no reason to save the link
-> register on leaf functions, as it wont be updated. This breaks the algorithm
-> of the max stack tracer.
-> 
-> Add a new define ARCH_RET_ADDR_AFTER_LOCAL_VARS that an architecture may set
-> if it stores the return address (link register) after it stores the
-> function's local variables, and have the stack trace shift the values of the
-> mapped stack size to the appropriate functions.
-> 
-> Link: 20190802094103.163576-1-jiping.ma2@windriver.com
-> 
-> Reported-by: Jiping Ma <jiping.ma2@windriver.com>
-> Signed-off-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
-> ---
->  arch/arm64/include/asm/ftrace.h | 13 +++++++++++++
->  kernel/trace/trace_stack.c      | 14 ++++++++++++++
->  2 files changed, 27 insertions(+)
-> 
-> diff --git a/arch/arm64/include/asm/ftrace.h b/arch/arm64/include/asm/ftrace.h
-> index 5ab5200b2bdc..961e98618db4 100644
-> --- a/arch/arm64/include/asm/ftrace.h
-> +++ b/arch/arm64/include/asm/ftrace.h
-> @@ -14,6 +14,19 @@
->  #define MCOUNT_ADDR		((unsigned long)_mcount)
->  #define MCOUNT_INSN_SIZE	AARCH64_INSN_SIZE
->  
-> +/*
-> + * Currently, gcc tends to save the link register after the local variables
-> + * on the stack. This causes the max stack tracer to report the function
-> + * frame sizes for the wrong functions. By defining
-> + * ARCH_RET_ADDR_AFTER_LOCAL_VARS, it will tell the stack tracer to expect
-> + * to find the return address on the stack after the local variables have
-> + * been set up.
-> + *
-> + * Note, this may change in the future, and we will need to deal with that
-> + * if it were to happen.
-> + */
-> +#define ARCH_RET_ADDR_AFTER_LOCAL_VARS 1
+> I've always disliked arch_prctl() existing at all. Given that tagging is
+> likely to be a multi-architectural feature, it seems like the controls
+> should live in prctl() to me.
 
-FWIW (with whatever this got renamed to):
+It took a bit of grep'ing to figure out what Dave H meant by
+arch_prctl(). It's an x86-specific syscall which we do not have on arm64
+(and possibly any other architecture). Actually, we don't have any arm64
+specific syscalls, only the generic unistd.h, hence the confusion. For
+other arm64-specific prctls like SVE we used the generic sys_prctl() and
+I can see x86 not being consistent either (PR_MPX_ENABLE_MANAGEMENT).
 
-Acked-by: Mark Rutland <mark.rutland@arm.com>
+In general I disagree with adding any arm64-specific syscalls but in
+this instance it can't even be justified. I'd rather see some clean-up
+similar to arch_ptrace/ptrace_request than introducing new syscall
+numbers (but as I suggested in my reply to Dave, that's for another
+patch series).
 
-Thanks,
-Mark.
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
