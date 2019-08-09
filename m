@@ -2,36 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F3E887709
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 12:16:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A22A18778F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 12:36:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FukNi/xihhPSxZtxhsnqqv9waWMqSkswd4+/hV3MRrI=; b=mIMVHZGP1uZpAY
-	YkNyfFqIDX0Np04eu1FySGKBCZ4C+opVOhoLcDPLhHUB73nj63yxSw71vfT/yy48fiZbJ3pDiheNh
-	zTPT4MNwgcq6Ju6BogX53v85CR1o52T/grkLCPUQFniY/TMFkU7mEHy27YlKrmOurN3sbu/bpMYnM
-	jSBUFbtuIdwZ5+alfnFT4PJEdFHsb63KUsHnQUQ7EOzZH9oc7OOUde5yFbKfdz0wFSSb8UZE4woSL
-	3ExWiZ4XD5nX8PCSrdVzgiLvn1CGUNECCRvS0qSM/fPD+BMsrreDIbdaoscz4ZeD2B7s6+lMGZysW
-	Az/7uVHYxm+YNUcshLSg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bjiuKrTO2PxLaPtZrvNE0xNGe4wOT5quTnqu3OyDCN8=; b=d/26Z0VKso4P2L
+	EwruXm/2GsIrMFVNOQaRmg7P35LbepXQqa7x3k4elZi8PCraoLkmyjQePrDbvmPBLAh3QD9qBnSt2
+	ywXEqMQc5ZK6Zbjlbmruu/eCBD7162wQSqJsnCOznr7RkcFt/etz+dfml03yjO6X5u9lgOAAXBT/v
+	1olL79kk8NiBkCATVx91lJGzGTAbipz9kNu/QcQIGWvMA0q3J0iIwlrAIy0vzm3sMkIyxTqHN0PSg
+	smZeKh3Ynxjaj0+hZSMJYTm5Kk3SCn44+6D1e19EQMop/oHzmwEjdRNDv8D2evSQlZwnmhtc47Aa7
+	odzt7CDRf9iaqb3aPvkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw1x3-0006xp-SJ; Fri, 09 Aug 2019 10:16:49 +0000
-Received: from willy by bombadil.infradead.org with local (Exim 4.92 #3 (Red
- Hat Linux)) id 1hw1wn-0006xR-4P; Fri, 09 Aug 2019 10:16:33 +0000
-Date: Fri, 9 Aug 2019 03:16:33 -0700
-From: Matthew Wilcox <willy@infradead.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
+	id 1hw2FX-0004si-BE; Fri, 09 Aug 2019 10:35:55 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hw2F9-0004rz-9k; Fri, 09 Aug 2019 10:35:32 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0ABCD1596;
+ Fri,  9 Aug 2019 03:35:30 -0700 (PDT)
+Received: from [10.163.1.243] (unknown [10.163.1.243])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 31FBE3F575;
+ Fri,  9 Aug 2019 03:35:11 -0700 (PDT)
 Subject: Re: [RFC V2 0/1] mm/debug: Add tests for architecture exported page
  table helpers
-Message-ID: <20190809101632.GM5482@bombadil.infradead.org>
+To: Matthew Wilcox <willy@infradead.org>
 References: <1565335998-22553-1-git-send-email-anshuman.khandual@arm.com>
+ <20190809101632.GM5482@bombadil.infradead.org>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <a5aab7ff-f7fd-9cc1-6e37-e4185eee65ac@arm.com>
+Date: Fri, 9 Aug 2019 16:05:07 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1565335998-22553-1-git-send-email-anshuman.khandual@arm.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <20190809101632.GM5482@bombadil.infradead.org>
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190809_033531_382367_933F469F 
+X-CRM114-Status: GOOD (  14.33  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,14 +91,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 01:03:17PM +0530, Anshuman Khandual wrote:
-> Should alloc_gigantic_page() be made available as an interface for general
-> use in the kernel. The test module here uses very similar implementation from
-> HugeTLB to allocate a PUD aligned memory block. Similar for mm_alloc() which
-> needs to be exported through a header.
 
-Why are you allocating memory at all instead of just using some
-known-to-exist PFNs like I suggested?
+
+On 08/09/2019 03:46 PM, Matthew Wilcox wrote:
+> On Fri, Aug 09, 2019 at 01:03:17PM +0530, Anshuman Khandual wrote:
+>> Should alloc_gigantic_page() be made available as an interface for general
+>> use in the kernel. The test module here uses very similar implementation from
+>> HugeTLB to allocate a PUD aligned memory block. Similar for mm_alloc() which
+>> needs to be exported through a header.
+> 
+> Why are you allocating memory at all instead of just using some
+> known-to-exist PFNs like I suggested?
+
+We needed PFN to be PUD aligned for pfn_pud() and PMD aligned for mk_pmd().
+Now walking the kernel page table for a known symbol like kernel_init()
+as you had suggested earlier we might encounter page table page entries at PMD
+and PUD which might not be PMD or PUD aligned respectively. It seemed to me
+that alignment requirement is applicable only for mk_pmd() and pfn_pud()
+which create large mappings at those levels but that requirement does not
+exist for page table pages pointing to next level. Is not that correct ? Or
+I am missing something here ?
 
 _______________________________________________
 linux-arm-kernel mailing list
