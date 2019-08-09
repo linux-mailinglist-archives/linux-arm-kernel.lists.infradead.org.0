@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D49A87656
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:37:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4A1F87653
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 11:37:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iwJfYb+9ttMgsPMpfk5vUTyCmhMLUHX2BNlFeOFfO5c=; b=rlBgJn2HbaayQq
-	W3Fz72jbAddYsEYwkCsKHEdjGY/rLSKshrtamhHIFWh8jEmAhRvwDDvpRfPAisLFtVe09C1oOhK9B
-	3LQmuUo23+BEaP68LkBXzkDSpervl1SwyCCfiGxbOX294efZWZEH0Q2Tk+Y3DWJeNJFWyGlfd2RCV
-	CyMTMtO+1uWZn5zB8IuMEKxyFgiLrekEhPXZYkX1A8K4320VbCG4aGXkWnoQlqW6RhLwB2XxRj7IC
-	el7HcI4Sa19/cZnXoKiKWRduylHRx/xQA0qMOZojP7hQhjx6gZNtL1PIwtTzbB87Gl+JmWOjmWSBA
-	9OsLdJRzsK33AwxTM/gg==;
+	List-Owner; bh=dd9LzxpRyQKDxnmteXbjhdbymWBpS4xnoWKOGqml/GA=; b=EmuGZc1kOXcWEp
+	/LmMgHOFhJx0SfrIlKIFPz/oI/P6iLPkpx2mPmLFRkPp9xlJkIIjjzzzRPFBAtYOoZLldhucy6Fru
+	RDxKbgfvQ4no47NmwuWT2SiQ9lRMXKwiOAhbeki/cYf0wNL0FxSl3QLvQGX6M0fiN3mbSXwZkvmRF
+	wiicoLvvuZnUzAdwELRHYCfkKNcDv/JUy9WCd2p3zvL2roYhvzIGMsVfZc2mBDPXB8Se4hsltekF8
+	wonurmzYkiK9MbA//hhfB/+OnsUkjv7JEPvo70f5xkpos6PG5Zyz0Cc5zg4NgBqCcF8cZiirDLV4i
+	qQG2vjFdr+JCCgya7v+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw1L1-0000tM-2n; Fri, 09 Aug 2019 09:37:31 +0000
+	id 1hw1KY-0000R5-BM; Fri, 09 Aug 2019 09:37:02 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw1HC-00044Q-VR
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:33:37 +0000
+ id 1hw1H7-0003zE-OC
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 09:33:34 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 30F9AD63BE;
- Fri,  9 Aug 2019 11:33:33 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 0461CD63CE;
+ Fri,  9 Aug 2019 11:33:28 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id 5hXpVWgVtxot; Fri,  9 Aug 2019 11:33:08 +0200 (CEST)
+ with ESMTP id v27WjyBWDM32; Fri,  9 Aug 2019 11:33:04 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id AA436D63DD;
+ by zimbra.v3.sk (Postfix) with ESMTP id 4EAF4D63D8;
  Fri,  9 Aug 2019 11:32:34 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id Pi9cv-7CHdVJ; Fri,  9 Aug 2019 11:32:29 +0200 (CEST)
+ with ESMTP id X3W2dcg5nWQn; Fri,  9 Aug 2019 11:32:30 +0200 (CEST)
 Received: from furthur.local (ip-37-188-137-236.eurotel.cz [37.188.137.236])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 4CDF9D6350;
- Fri,  9 Aug 2019 11:32:23 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 2D4FAD63CC;
+ Fri,  9 Aug 2019 11:32:24 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH 16/19] ARM: mmp: move cputype.h to include/linux/soc/
-Date: Fri,  9 Aug 2019 11:31:55 +0200
-Message-Id: <20190809093158.7969-17-lkundrak@v3.sk>
+Subject: [PATCH 17/19] ARM: mmp: remove MMP3 USB PHY registers from regs-usb.h
+Date: Fri,  9 Aug 2019 11:31:56 +0200
+Message-Id: <20190809093158.7969-18-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190809093158.7969-1-lkundrak@v3.sk>
 References: <20190809093158.7969-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_023335_415416_3C8F9E67 
-X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-CacheID: sfid-20190809_023330_141385_06A2DB07 
+X-CRM114-Status: UNSURE (   7.72  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -82,145 +82,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Let's move cputype.h away from mach-mmp/ so that the drivers outside that
-directory are able to tell the precise silicon revision. The MMP3 USB OTG
-PHY driver needs this.
+Nothing in mach-mmp/ uses them and they belong to the PHY driver.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- MAINTAINERS                                            | 1 +
- arch/arm/mach-mmp/common.c                             | 2 +-
- arch/arm/mach-mmp/devices.c                            | 2 +-
- arch/arm/mach-mmp/mmp2.c                               | 2 +-
- arch/arm/mach-mmp/pm-mmp2.c                            | 2 +-
- arch/arm/mach-mmp/pm-pxa910.c                          | 2 +-
- arch/arm/mach-mmp/pxa168.c                             | 2 +-
- arch/arm/mach-mmp/pxa910.c                             | 2 +-
- arch/arm/mach-mmp/time.c                               | 2 +-
- {arch/arm/mach-mmp => include/linux/soc/mmp}/cputype.h | 0
- 10 files changed, 9 insertions(+), 8 deletions(-)
- rename {arch/arm/mach-mmp => include/linux/soc/mmp}/cputype.h (100%)
+ arch/arm/mach-mmp/regs-usb.h | 94 ------------------------------------
+ 1 file changed, 94 deletions(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index a2c343ee3b2ca..fb2ceb265a8c3 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -10788,6 +10788,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- S:	Odd Fixes
- F:	arch/arm/boot/dts/mmp*
- F:	arch/arm/mach-mmp/
-+F:	linux/soc/mmp/
+diff --git a/arch/arm/mach-mmp/regs-usb.h b/arch/arm/mach-mmp/regs-usb.h
+index d9f08c1601542..ed0d1aa0ad6c9 100644
+--- a/arch/arm/mach-mmp/regs-usb.h
++++ b/arch/arm/mach-mmp/regs-usb.h
+@@ -121,100 +121,6 @@
  
- MMU GATHER AND TLB INVALIDATION
- M:	Will Deacon <will@kernel.org>
-diff --git a/arch/arm/mach-mmp/common.c b/arch/arm/mach-mmp/common.c
-index 24c689a01ecb7..e94349d4726ca 100644
---- a/arch/arm/mach-mmp/common.c
-+++ b/arch/arm/mach-mmp/common.c
-@@ -13,7 +13,7 @@
- #include <asm/mach/map.h>
- #include <asm/system_misc.h>
- #include "addr-map.h"
--#include "cputype.h"
-+#include <linux/soc/mmp/cputype.h>
+ #define UTMI_OTG_ADDON_OTG_ON			(1 << 0)
  
- #include "common.h"
- 
-diff --git a/arch/arm/mach-mmp/devices.c b/arch/arm/mach-mmp/devices.c
-index 130c1a603ba29..18bee66a671ff 100644
---- a/arch/arm/mach-mmp/devices.c
-+++ b/arch/arm/mach-mmp/devices.c
-@@ -11,7 +11,7 @@
- #include <asm/irq.h>
- #include "irqs.h"
- #include "devices.h"
--#include "cputype.h"
-+#include <linux/soc/mmp/cputype.h>
- #include "regs-usb.h"
- 
- int __init pxa_register_device(struct pxa_device_desc *desc,
-diff --git a/arch/arm/mach-mmp/mmp2.c b/arch/arm/mach-mmp/mmp2.c
-index 18ea3e1a26e69..bbc4c2274de3a 100644
---- a/arch/arm/mach-mmp/mmp2.c
-+++ b/arch/arm/mach-mmp/mmp2.c
-@@ -20,7 +20,7 @@
- #include <asm/mach/time.h>
- #include "addr-map.h"
- #include "regs-apbc.h"
--#include "cputype.h"
-+#include <linux/soc/mmp/cputype.h>
- #include "irqs.h"
- #include "mfp.h"
- #include "devices.h"
-diff --git a/arch/arm/mach-mmp/pm-mmp2.c b/arch/arm/mach-mmp/pm-mmp2.c
-index 2923dd5732a62..2d86381e152d6 100644
---- a/arch/arm/mach-mmp/pm-mmp2.c
-+++ b/arch/arm/mach-mmp/pm-mmp2.c
-@@ -17,7 +17,7 @@
- #include <linux/interrupt.h>
- #include <asm/mach-types.h>
- 
--#include "cputype.h"
-+#include <linux/soc/mmp/cputype.h>
- #include "addr-map.h"
- #include "pm-mmp2.h"
- #include "regs-icu.h"
-diff --git a/arch/arm/mach-mmp/pm-pxa910.c b/arch/arm/mach-mmp/pm-pxa910.c
-index 58535ce206dc5..69ebe18ff209f 100644
---- a/arch/arm/mach-mmp/pm-pxa910.c
-+++ b/arch/arm/mach-mmp/pm-pxa910.c
-@@ -18,7 +18,7 @@
- #include <asm/mach-types.h>
- #include <asm/outercache.h>
- 
--#include "cputype.h"
-+#include <linux/soc/mmp/cputype.h>
- #include "addr-map.h"
- #include "pm-pxa910.h"
- #include "regs-icu.h"
-diff --git a/arch/arm/mach-mmp/pxa168.c b/arch/arm/mach-mmp/pxa168.c
-index 6e02774889679..b642e900727a5 100644
---- a/arch/arm/mach-mmp/pxa168.c
-+++ b/arch/arm/mach-mmp/pxa168.c
-@@ -21,7 +21,7 @@
- #include "addr-map.h"
- #include "clock.h"
- #include "common.h"
--#include "cputype.h"
-+#include <linux/soc/mmp/cputype.h>
- #include "devices.h"
- #include "irqs.h"
- #include "mfp.h"
-diff --git a/arch/arm/mach-mmp/pxa910.c b/arch/arm/mach-mmp/pxa910.c
-index cba31c758dea6..b19a069d9fabe 100644
---- a/arch/arm/mach-mmp/pxa910.c
-+++ b/arch/arm/mach-mmp/pxa910.c
-@@ -18,7 +18,7 @@
- #include <asm/mach/time.h>
- #include "addr-map.h"
- #include "regs-apbc.h"
--#include "cputype.h"
-+#include <linux/soc/mmp/cputype.h>
- #include "irqs.h"
- #include "mfp.h"
- #include "devices.h"
-diff --git a/arch/arm/mach-mmp/time.c b/arch/arm/mach-mmp/time.c
-index 8f4cacbf640e9..110dcb3314d13 100644
---- a/arch/arm/mach-mmp/time.c
-+++ b/arch/arm/mach-mmp/time.c
-@@ -33,7 +33,7 @@
- #include "regs-timers.h"
- #include "regs-apbc.h"
- #include "irqs.h"
--#include "cputype.h"
-+#include <linux/soc/mmp/cputype.h>
- #include "clock.h"
- 
- #define TIMERS_VIRT_BASE	TIMERS1_VIRT_BASE
-diff --git a/arch/arm/mach-mmp/cputype.h b/include/linux/soc/mmp/cputype.h
-similarity index 100%
-rename from arch/arm/mach-mmp/cputype.h
-rename to include/linux/soc/mmp/cputype.h
+-/* For MMP3 USB Phy */
+-#define USB2_PLL_REG0		0x4
+-#define USB2_PLL_REG1		0x8
+-#define USB2_TX_REG0		0x10
+-#define USB2_TX_REG1		0x14
+-#define USB2_TX_REG2		0x18
+-#define USB2_RX_REG0		0x20
+-#define USB2_RX_REG1		0x24
+-#define USB2_RX_REG2		0x28
+-#define USB2_ANA_REG0		0x30
+-#define USB2_ANA_REG1		0x34
+-#define USB2_ANA_REG2		0x38
+-#define USB2_DIG_REG0		0x3C
+-#define USB2_DIG_REG1		0x40
+-#define USB2_DIG_REG2		0x44
+-#define USB2_DIG_REG3		0x48
+-#define USB2_TEST_REG0		0x4C
+-#define USB2_TEST_REG1		0x50
+-#define USB2_TEST_REG2		0x54
+-#define USB2_CHARGER_REG0	0x58
+-#define USB2_OTG_REG0		0x5C
+-#define USB2_PHY_MON0		0x60
+-#define USB2_RESETVE_REG0	0x64
+-#define USB2_ICID_REG0		0x78
+-#define USB2_ICID_REG1		0x7C
+-
+-/* USB2_PLL_REG0 */
+-/* This is for Ax stepping */
+-#define USB2_PLL_FBDIV_SHIFT_MMP3		0
+-#define USB2_PLL_FBDIV_MASK_MMP3		(0xFF << 0)
+-
+-#define USB2_PLL_REFDIV_SHIFT_MMP3		8
+-#define USB2_PLL_REFDIV_MASK_MMP3		(0xF << 8)
+-
+-#define USB2_PLL_VDD12_SHIFT_MMP3		12
+-#define USB2_PLL_VDD18_SHIFT_MMP3		14
+-
+-/* This is for B0 stepping */
+-#define USB2_PLL_FBDIV_SHIFT_MMP3_B0		0
+-#define USB2_PLL_REFDIV_SHIFT_MMP3_B0		9
+-#define USB2_PLL_VDD18_SHIFT_MMP3_B0		14
+-#define USB2_PLL_FBDIV_MASK_MMP3_B0		0x01FF
+-#define USB2_PLL_REFDIV_MASK_MMP3_B0		0x3E00
+-
+-#define USB2_PLL_CAL12_SHIFT_MMP3		0
+-#define USB2_PLL_CALI12_MASK_MMP3		(0x3 << 0)
+-
+-#define USB2_PLL_VCOCAL_START_SHIFT_MMP3	2
+-
+-#define USB2_PLL_KVCO_SHIFT_MMP3		4
+-#define USB2_PLL_KVCO_MASK_MMP3			(0x7<<4)
+-
+-#define USB2_PLL_ICP_SHIFT_MMP3			8
+-#define USB2_PLL_ICP_MASK_MMP3			(0x7<<8)
+-
+-#define USB2_PLL_LOCK_BYPASS_SHIFT_MMP3		12
+-
+-#define USB2_PLL_PU_PLL_SHIFT_MMP3		13
+-#define USB2_PLL_PU_PLL_MASK			(0x1 << 13)
+-
+-#define USB2_PLL_READY_MASK_MMP3		(0x1 << 15)
+-
+-/* USB2_TX_REG0 */
+-#define USB2_TX_IMPCAL_VTH_SHIFT_MMP3		8
+-#define USB2_TX_IMPCAL_VTH_MASK_MMP3		(0x7 << 8)
+-
+-#define USB2_TX_RCAL_START_SHIFT_MMP3		13
+-
+-/* USB2_TX_REG1 */
+-#define USB2_TX_CK60_PHSEL_SHIFT_MMP3		0
+-#define USB2_TX_CK60_PHSEL_MASK_MMP3		(0xf << 0)
+-
+-#define USB2_TX_AMP_SHIFT_MMP3			4
+-#define USB2_TX_AMP_MASK_MMP3			(0x7 << 4)
+-
+-#define USB2_TX_VDD12_SHIFT_MMP3		8
+-#define USB2_TX_VDD12_MASK_MMP3			(0x3 << 8)
+-
+-/* USB2_TX_REG2 */
+-#define USB2_TX_DRV_SLEWRATE_SHIFT		10
+-
+-/* USB2_RX_REG0 */
+-#define USB2_RX_SQ_THRESH_SHIFT_MMP3		4
+-#define USB2_RX_SQ_THRESH_MASK_MMP3		(0xf << 4)
+-
+-#define USB2_RX_SQ_LENGTH_SHIFT_MMP3		10
+-#define USB2_RX_SQ_LENGTH_MASK_MMP3		(0x3 << 10)
+-
+-/* USB2_ANA_REG1*/
+-#define USB2_ANA_PU_ANA_SHIFT_MMP3		14
+-
+-/* USB2_OTG_REG0 */
+-#define USB2_OTG_PU_OTG_SHIFT_MMP3		3
+-
+ /* fsic registers */
+ #define FSIC_MISC			0x4
+ #define FSIC_INT			0x28
 -- 
 2.21.0
 
