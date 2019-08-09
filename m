@@ -2,63 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35BD3878FA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 13:45:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A72ED8792B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 14:00:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hsti2ZXTrkLF/MdTmcBz+RN3rW+Jn99hc5MVe+tXLGk=; b=NG+89Lm62jAU5U
-	4TGNSm84g9ER1iKV6di2/0aGXzu0Ly12Z6c0r/UJOO4kfvm4x538JxUxN7gp7rDsQ8HL/OdzbLqcw
-	RsQqZ4TcbwqN+nqBP+NO2RPRyh4eb2KfAyp1nA2q7jTRb/gVQOlJcWzVoIZi6UdFFgvwnnoXxRduI
-	kJwvd07MQsJuudTGptOkh0CIgKi6jnLfxR+TEezXEZ5vSl8gr/EdyDQOT+H4onChijI1lRD9nmmrL
-	OiiykwlqK+hWhIxFz6YFxsHU+EouNCItUZSAqelLF1EQiY9yLZ2oheQU/qx6SKGB8owJeMCmqHmJ+
-	2FVGNPK2cjuU6EtW6RjQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BOoNVw61/qFEqvfYlMv8jugR5ZcE2O/n3f0ZVQPJsAM=; b=toaPMukBh9Z8pW
+	Ox7gRB5vSBVYKau1nrtFqNhoYPBY1i1QoIMy/Euvpi64ZZ/E0/p7TejyU4TqBIgFPR54qI16jPwTJ
+	BbV9nPttklhrit2GVFAcKgdlcXtQ1UbCxYpM2b8FRwoqcMiQ5r83hSOCERr0iTgM+QqxhC277g0NK
+	+O2iGK7xkJjcwfzy9w/eBq+P8aqj7wqulLUCxOe20bME6MnF8Vk/YnCFaRFrBmMwv+PiULxvg9MSD
+	W7nYvb9lM5eAk6wKVoAha1vNSkQ/UtT6BbrdNBHmBW7vyrxyGYAMoYPjjgZDN23MibH/eypquH7sf
+	7y7Ol3/xb9sErU3C343A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw3Ks-00006Q-SN; Fri, 09 Aug 2019 11:45:31 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw3KP-00078x-8Y
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 11:45:04 +0000
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 3DB4981F07;
- Fri,  9 Aug 2019 11:45:00 +0000 (UTC)
-Received: from kamzik.brq.redhat.com (unknown [10.43.2.160])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 3577260BF3;
- Fri,  9 Aug 2019 11:44:58 +0000 (UTC)
-Date: Fri, 9 Aug 2019 13:44:55 +0200
-From: Andrew Jones <drjones@redhat.com>
-To: Alexandru Elisei <alexandru.elisei@arm.com>
+	id 1hw3ZD-0007t3-76; Fri, 09 Aug 2019 12:00:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hw3Yz-00071m-6b
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 12:00:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 74B561684;
+ Fri,  9 Aug 2019 05:00:04 -0700 (PDT)
+Received: from [10.1.196.217] (e121566-lin.cambridge.arm.com [10.1.196.217])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 686C63F738;
+ Fri,  9 Aug 2019 05:00:03 -0700 (PDT)
 Subject: Re: [PATCH 00/59] KVM: arm64: ARMv8.3 Nested Virtualization support
-Message-ID: <20190809114455.w4jes6z2442vu3py@kamzik.brq.redhat.com>
+To: Andrew Jones <drjones@redhat.com>
 References: <20190621093843.220980-1-marc.zyngier@arm.com>
  <69cf1fe7-912c-1767-ff1b-dfcc7f549e44@arm.com>
  <0d9aa552-fa01-c482-41d7-587acf308259@arm.com>
+ <20190809114455.w4jes6z2442vu3py@kamzik.brq.redhat.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <6dafd748-257e-1d09-aecc-d5a2ab91bdc4@arm.com>
+Date: Fri, 9 Aug 2019 13:00:02 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <0d9aa552-fa01-c482-41d7-587acf308259@arm.com>
-User-Agent: NeoMutt/20180716
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.25]); Fri, 09 Aug 2019 11:45:00 +0000 (UTC)
+In-Reply-To: <20190809114455.w4jes6z2442vu3py@kamzik.brq.redhat.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_044501_453411_90951833 
-X-CRM114-Status: GOOD (  27.77  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190809_050005_354539_6A44727B 
+X-CRM114-Status: GOOD (  17.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,438 +69,407 @@ Cc: "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
  "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
  Dave P Martin <Dave.Martin@arm.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 11:01:51AM +0100, Alexandru Elisei wrote:
-> On 8/2/19 11:11 AM, Alexandru Elisei wrote:
-> > Hi,
-> >
-> > On 6/21/19 10:37 AM, Marc Zyngier wrote:
-> >> I've taken over the maintenance of this series originally written by
-> >> Jintack and Christoffer. Since then, the series has been substantially
-> >> reworked, new features (and most probably bugs) have been added, and
-> >> the whole thing rebased multiple times. If anything breaks, please
-> >> blame me, and nobody else.
-> >>
-> >> As you can tell, this is quite big. It is also remarkably incomplete
-> >> (we're missing many critical bits for fully emulate EL2), but the idea
-> >> is to start merging things early in order to reduce the maintenance
-> >> headache. What we want to achieve is that with NV disabled, there is
-> >> no performance overhead and no regression. The only thing I intend to
-> >> merge ASAP is the first patch in the series, because it should have
-> >> zero effect and is a reasonable cleanup.
-> >>
-> >> The series is roughly divided in 4 parts: exception handling, memory
-> >> virtualization, interrupts and timers. There are of course some
-> >> dependencies, but you'll hopefully get the gist of it.
-> >>
-> >> For the most courageous of you, I've put out a branch[1] containing th=
-is
-> >> and a bit more. Of course, you'll need some userspace. Andre maintains
-> >> a hacked version of kvmtool[1] that takes a --nested option, allowing
-> >> the guest to be started at EL2. You can run the whole stack in the
-> >> Foundation model. Don't be in a hurry ;-).
-> >>
-> >> [1] git://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.gi=
-t kvm-arm64/nv-wip-5.2-rc5
-> >> [2] git://linux-arm.org/kvmtool.git nv/nv-wip-5.2-rc5
-> >>
-> >> Andre Przywara (4):
-> >>   KVM: arm64: nv: Handle virtual EL2 registers in
-> >>     vcpu_read/write_sys_reg()
-> >>   KVM: arm64: nv: Save/Restore vEL2 sysregs
-> >>   KVM: arm64: nv: Handle traps for timer _EL02 and _EL2 sysregs
-> >>     accessors
-> >>   KVM: arm64: nv: vgic: Allow userland to set VGIC maintenance IRQ
-> >>
-> >> Christoffer Dall (16):
-> >>   KVM: arm64: nv: Introduce nested virtualization VCPU feature
-> >>   KVM: arm64: nv: Reset VCPU to EL2 registers if VCPU nested virt is s=
-et
-> >>   KVM: arm64: nv: Allow userspace to set PSR_MODE_EL2x
-> >>   KVM: arm64: nv: Add nested virt VCPU primitives for vEL2 VCPU state
-> >>   KVM: arm64: nv: Handle trapped ERET from virtual EL2
-> >>   KVM: arm64: nv: Emulate PSTATE.M for a guest hypervisor
-> >>   KVM: arm64: nv: Trap EL1 VM register accesses in virtual EL2
-> >>   KVM: arm64: nv: Only toggle cache for virtual EL2 when SCTLR_EL2
-> >>     changes
-> >>   KVM: arm/arm64: nv: Support multiple nested stage 2 mmu structures
-> >>   KVM: arm64: nv: Implement nested Stage-2 page table walk logic
-> >>   KVM: arm64: nv: Handle shadow stage 2 page faults
-> >>   KVM: arm64: nv: Unmap/flush shadow stage 2 page tables
-> >>   KVM: arm64: nv: arch_timer: Support hyp timer emulation
-> >>   KVM: arm64: nv: vgic-v3: Take cpu_if pointer directly instead of vcpu
-> >>   KVM: arm64: nv: vgic: Emulate the HW bit in software
-> >>   KVM: arm64: nv: Add nested GICv3 tracepoints
-> >>
-> >> Dave Martin (1):
-> >>   KVM: arm64: Migrate _elx sysreg accessors to msr_s/mrs_s
-> >>
-> >> Jintack Lim (21):
-> >>   arm64: Add ARM64_HAS_NESTED_VIRT cpufeature
-> >>   KVM: arm64: nv: Add EL2 system registers to vcpu context
-> >>   KVM: arm64: nv: Support virtual EL2 exceptions
-> >>   KVM: arm64: nv: Inject HVC exceptions to the virtual EL2
-> >>   KVM: arm64: nv: Trap SPSR_EL1, ELR_EL1 and VBAR_EL1 from virtual EL2
-> >>   KVM: arm64: nv: Trap CPACR_EL1 access in virtual EL2
-> >>   KVM: arm64: nv: Set a handler for the system instruction traps
-> >>   KVM: arm64: nv: Handle PSCI call via smc from the guest
-> >>   KVM: arm64: nv: Respect virtual HCR_EL2.TWX setting
-> >>   KVM: arm64: nv: Respect virtual CPTR_EL2.TFP setting
-> >>   KVM: arm64: nv: Respect the virtual HCR_EL2.NV bit setting
-> >>   KVM: arm64: nv: Respect virtual HCR_EL2.TVM and TRVM settings
-> >>   KVM: arm64: nv: Respect the virtual HCR_EL2.NV1 bit setting
-> >>   KVM: arm64: nv: Emulate EL12 register accesses from the virtual EL2
-> >>   KVM: arm64: nv: Configure HCR_EL2 for nested virtualization
-> >>   KVM: arm64: nv: Pretend we only support larger-than-host page sizes
-> >>   KVM: arm64: nv: Introduce sys_reg_desc.forward_trap
-> >>   KVM: arm64: nv: Rework the system instruction emulation framework
-> >>   KVM: arm64: nv: Trap and emulate AT instructions from virtual EL2
-> >>   KVM: arm64: nv: Trap and emulate TLBI instructions from virtual EL2
-> >>   KVM: arm64: nv: Nested GICv3 Support
-> >>
-> >> Marc Zyngier (17):
-> >>   KVM: arm64: Move __load_guest_stage2 to kvm_mmu.h
-> >>   KVM: arm64: nv: Reset VMPIDR_EL2 and VPIDR_EL2 to sane values
-> >>   KVM: arm64: nv: Handle SPSR_EL2 specially
-> >>   KVM: arm64: nv: Refactor vcpu_{read,write}_sys_reg
-> >>   KVM: arm64: nv: Don't expose SVE to nested guests
-> >>   KVM: arm64: nv: Hide RAS from nested guests
-> >>   KVM: arm/arm64: nv: Factor out stage 2 page table data from struct k=
-vm
-> >>   KVM: arm64: nv: Move last_vcpu_ran to be per s2 mmu
-> >>   KVM: arm64: nv: Don't always start an S2 MMU search from the beginni=
-ng
-> >>   KVM: arm64: nv: Propagate CNTVOFF_EL2 to the virtual EL1 timer
-> >>   KVM: arm64: nv: Load timer before the GIC
-> >>   KVM: arm64: nv: Implement maintenance interrupt forwarding
-> >>   arm64: KVM: nv: Add handling of EL2-specific timer registers
-> >>   arm64: KVM: nv: Honor SCTLR_EL2.SPAN on entering vEL2
-> >>   arm64: KVM: nv: Handle SCTLR_EL2 RES0/RES1 bits
-> >>   arm64: KVM: nv: Restrict S2 RD/WR permissions to match the guest's
-> >>   arm64: KVM: nv: Allow userspace to request KVM_ARM_VCPU_NESTED_VIRT
-> >>
-> >>  .../admin-guide/kernel-parameters.txt         |    4 +
-> >>  .../virtual/kvm/devices/arm-vgic-v3.txt       |    9 +
-> >>  arch/arm/include/asm/kvm_asm.h                |    5 +-
-> >>  arch/arm/include/asm/kvm_emulate.h            |    3 +
-> >>  arch/arm/include/asm/kvm_host.h               |   31 +-
-> >>  arch/arm/include/asm/kvm_hyp.h                |   25 +-
-> >>  arch/arm/include/asm/kvm_mmu.h                |   83 +-
-> >>  arch/arm/include/asm/kvm_nested.h             |    9 +
-> >>  arch/arm/include/uapi/asm/kvm.h               |    1 +
-> >>  arch/arm/kvm/hyp/switch.c                     |   11 +-
-> >>  arch/arm/kvm/hyp/tlb.c                        |   13 +-
-> >>  arch/arm64/include/asm/cpucaps.h              |    3 +-
-> >>  arch/arm64/include/asm/esr.h                  |    4 +-
-> >>  arch/arm64/include/asm/kvm_arm.h              |   28 +-
-> >>  arch/arm64/include/asm/kvm_asm.h              |    9 +-
-> >>  arch/arm64/include/asm/kvm_coproc.h           |    2 +-
-> >>  arch/arm64/include/asm/kvm_emulate.h          |  157 +-
-> >>  arch/arm64/include/asm/kvm_host.h             |  105 +-
-> >>  arch/arm64/include/asm/kvm_hyp.h              |   82 +-
-> >>  arch/arm64/include/asm/kvm_mmu.h              |   62 +-
-> >>  arch/arm64/include/asm/kvm_nested.h           |   68 +
-> >>  arch/arm64/include/asm/sysreg.h               |  143 +-
-> >>  arch/arm64/include/uapi/asm/kvm.h             |    2 +
-> >>  arch/arm64/kernel/cpufeature.c                |   26 +
-> >>  arch/arm64/kvm/Makefile                       |    4 +
-> >>  arch/arm64/kvm/emulate-nested.c               |  223 +++
-> >>  arch/arm64/kvm/guest.c                        |    6 +
-> >>  arch/arm64/kvm/handle_exit.c                  |   76 +-
-> >>  arch/arm64/kvm/hyp/Makefile                   |    1 +
-> >>  arch/arm64/kvm/hyp/at.c                       |  217 +++
-> >>  arch/arm64/kvm/hyp/switch.c                   |   86 +-
-> >>  arch/arm64/kvm/hyp/sysreg-sr.c                |  267 ++-
-> >>  arch/arm64/kvm/hyp/tlb.c                      |  129 +-
-> >>  arch/arm64/kvm/hyp/vgic-v2-cpuif-proxy.c      |    2 +-
-> >>  arch/arm64/kvm/inject_fault.c                 |   12 -
-> >>  arch/arm64/kvm/nested.c                       |  551 +++++++
-> >>  arch/arm64/kvm/regmap.c                       |    4 +-
-> >>  arch/arm64/kvm/reset.c                        |    7 +
-> >>  arch/arm64/kvm/sys_regs.c                     | 1460 +++++++++++++++--
-> >>  arch/arm64/kvm/sys_regs.h                     |    6 +
-> >>  arch/arm64/kvm/trace.h                        |   58 +-
-> >>  include/kvm/arm_arch_timer.h                  |    6 +
-> >>  include/kvm/arm_vgic.h                        |   28 +-
-> >>  virt/kvm/arm/arch_timer.c                     |  158 +-
-> >>  virt/kvm/arm/arm.c                            |   62 +-
-> >>  virt/kvm/arm/hyp/vgic-v3-sr.c                 |   35 +-
-> >>  virt/kvm/arm/mmio.c                           |   12 +-
-> >>  virt/kvm/arm/mmu.c                            |  445 +++--
-> >>  virt/kvm/arm/trace.h                          |    6 +-
-> >>  virt/kvm/arm/vgic/vgic-init.c                 |   30 +
-> >>  virt/kvm/arm/vgic/vgic-kvm-device.c           |   22 +
-> >>  virt/kvm/arm/vgic/vgic-nested-trace.h         |  137 ++
-> >>  virt/kvm/arm/vgic/vgic-v2.c                   |   10 +-
-> >>  virt/kvm/arm/vgic/vgic-v3-nested.c            |  236 +++
-> >>  virt/kvm/arm/vgic/vgic-v3.c                   |   40 +-
-> >>  virt/kvm/arm/vgic/vgic.c                      |   74 +-
-> >>  56 files changed, 4683 insertions(+), 612 deletions(-)
-> >>  create mode 100644 arch/arm/include/asm/kvm_nested.h
-> >>  create mode 100644 arch/arm64/include/asm/kvm_nested.h
-> >>  create mode 100644 arch/arm64/kvm/emulate-nested.c
-> >>  create mode 100644 arch/arm64/kvm/hyp/at.c
-> >>  create mode 100644 arch/arm64/kvm/nested.c
-> >>  create mode 100644 virt/kvm/arm/vgic/vgic-nested-trace.h
-> >>  create mode 100644 virt/kvm/arm/vgic/vgic-v3-nested.c
-> >>
-> > When working on adding support for EL2 to kvm-unit-tests I was able to =
-trigger
-> > the following warning:
-> >
-> > # ./lkvm run -f psci.flat -m 128 -c 8 --console serial --irqchip gicv3 =
---nested
-> >   # lkvm run --firmware psci.flat -m 128 -c 8 --name guest-151
-> >   Info: Placing fdt at 0x80200000 - 0x80210000
-> >   # Warning: The maximum recommended amount of VCPUs is 4
-> > chr_testdev_init: chr-testdev: can't find a virtio-console
-> > INFO: PSCI version 1.0
-> > PASS: invalid-function
-> > PASS: affinity-info-on
-> > PASS: affinity-info-off
-> > [=A0=A0 24.381266] WARNING: CPU: 3 PID: 160 at
-> > arch/arm64/kvm/../../../virt/kvm/arm/arch_timer.c:170
-> > kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.381366] Modules linked in:
-> > [=A0=A0 24.381466] CPU: 3 PID: 160 Comm: kvm-vcpu-1 Not tainted
-> > 5.2.0-rc5-00060-g7dbce63bd1c7 #145
-> > [=A0=A0 24.381566] Hardware name: Foundation-v8A (DT)
-> > [=A0=A0 24.381566] pstate: 40400009 (nZcv daif +PAN -UAO)
-> > [=A0=A0 24.381666] pc : kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.381766] lr : timer_emulate+0x24/0x98
-> > [=A0=A0 24.381766] sp : ffff000013d8b780
-> > [=A0=A0 24.381866] x29: ffff000013d8b780 x28: ffff80087a639b80
-> > [=A0=A0 24.381966] x27: ffff000010ba8648 x26: ffff000010b71b40
-> > [=A0=A0 24.382066] x25: ffff80087a63a100 x24: 0000000000000000
-> > [=A0=A0 24.382111] x23: 000080086ca54000 x22: ffff0000100ce260
-> > [=A0=A0 24.382166] x21: ffff800875e7c918 x20: ffff800875e7a800
-> > [=A0=A0 24.382275] x19: ffff800875e7ca08 x18: 0000000000000000
-> > [=A0=A0 24.382366] x17: 0000000000000000 x16: 0000000000000000
-> > [=A0=A0 24.382466] x15: 0000000000000000 x14: 0000000000002118
-> > [=A0=A0 24.382566] x13: 0000000000002190 x12: 0000000000002280
-> > [=A0=A0 24.382566] x11: 0000000000002208 x10: 0000000000000040
-> > [=A0=A0 24.382666] x9 : ffff000012dc3b38 x8 : 0000000000000000
-> > [=A0=A0 24.382766] x7 : 0000000000000000 x6 : ffff80087ac00248
-> > [=A0=A0 24.382866] x5 : 000080086ca54000 x4 : 0000000000002118
-> > [=A0=A0 24.382966] x3 : eeeeeeeeeeeeeeef x2 : ffff800875e7c918
-> > [=A0=A0 24.383066] x1 : 0000000000000001 x0 : ffff800875e7ca08
-> > [=A0=A0 24.383066] Call trace:
-> > [=A0=A0 24.383166]=A0 kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.383266]=A0 kvm_timer_vcpu_load+0x9c/0x1a0
-> > [=A0=A0 24.383366]=A0 kvm_arch_vcpu_load+0xb0/0x1f0
-> > [=A0=A0 24.383366]=A0 kvm_sched_in+0x1c/0x28
-> > [=A0=A0 24.383466]=A0 finish_task_switch+0xd8/0x1d8
-> > [=A0=A0 24.383566]=A0 __schedule+0x248/0x4a0
-> > [=A0=A0 24.383666]=A0 preempt_schedule_irq+0x60/0x90
-> > [=A0=A0 24.383666]=A0 el1_irq+0xd0/0x180
-> > [=A0=A0 24.383766]=A0 kvm_handle_guest_abort+0x0/0x3a0
-> > [=A0=A0 24.383866]=A0 kvm_arch_vcpu_ioctl_run+0x41c/0x688
-> > [=A0=A0 24.383866]=A0 kvm_vcpu_ioctl+0x4c0/0x838
-> > [=A0=A0 24.383966]=A0 do_vfs_ioctl+0xb8/0x878
-> > [=A0=A0 24.384077]=A0 ksys_ioctl+0x84/0x90
-> > [=A0=A0 24.384166]=A0 __arm64_sys_ioctl+0x18/0x28
-> > [=A0=A0 24.384166]=A0 el0_svc_common.constprop.0+0xb0/0x168
-> > [=A0=A0 24.384266]=A0 el0_svc_handler+0x28/0x78
-> > [=A0=A0 24.384366]=A0 el0_svc+0x8/0xc
-> > [=A0=A0 24.384366] ---[ end trace 37a32293e43ac12c ]---
-> > [=A0=A0 24.384666] WARNING: CPU: 3 PID: 160 at
-> > arch/arm64/kvm/../../../virt/kvm/arm/arch_timer.c:170
-> > kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.384766] Modules linked in:
-> > [=A0=A0 24.384866] CPU: 3 PID: 160 Comm: kvm-vcpu-1 Tainted: G        W
-> > 5.2.0-rc5-00060-g7dbce63bd1c7 #145
-> > [=A0=A0 24.384966] Hardware name: Foundation-v8A (DT)
-> > [=A0=A0 24.384966] pstate: 40400009 (nZcv daif +PAN -UAO)
-> > [=A0=A0 24.385066] pc : kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.385166] lr : timer_emulate+0x24/0x98
-> > [=A0=A0 24.385166] sp : ffff000013d8b780
-> > [=A0=A0 24.385266] x29: ffff000013d8b780 x28: ffff80087a639b80
-> > [=A0=A0 24.385366] x27: ffff000010ba8648 x26: ffff000010b71b40
-> > [=A0=A0 24.385466] x25: ffff80087a63a100 x24: 0000000000000000
-> > [=A0=A0 24.385466] x23: 000080086ca54000 x22: ffff0000100ce260
-> > [=A0=A0 24.385566] x21: ffff800875e7c918 x20: ffff800875e7a800
-> > [=A0=A0 24.385666] x19: ffff800875e7ca80 x18: 0000000000000000
-> > [=A0=A0 24.385766] x17: 0000000000000000 x16: 0000000000000000
-> > [=A0=A0 24.385866] x15: 0000000000000000 x14: 0000000000002118
-> > [=A0=A0 24.385966] x13: 0000000000002190 x12: 0000000000002280
-> > [=A0=A0 24.385966] x11: 0000000000002208 x10: 0000000000000040
-> > [=A0=A0 24.386066] x9 : ffff000012dc3b38 x8 : 0000000000000000
-> > [=A0=A0 24.386166] x7 : 0000000000000000 x6 : ffff80087ac00248
-> > [=A0=A0 24.386266] x5 : 000080086ca54000 x4 : 0000000000002118
-> > [=A0=A0 24.386366] x3 : eeeeeeeeeeeeeeef x2 : ffff800875e7c918
-> > [=A0=A0 24.386466] x1 : 0000000000000001 x0 : ffff800875e7ca80
-> > [=A0=A0 24.386466] Call trace:
-> > [=A0=A0 24.386566]=A0 kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.386666]=A0 kvm_timer_vcpu_load+0xa8/0x1a0
-> > [=A0=A0 24.386666]=A0 kvm_arch_vcpu_load+0xb0/0x1f0
-> > [=A0=A0 24.386898]=A0 kvm_sched_in+0x1c/0x28
-> > [=A0=A0 24.386966]=A0 finish_task_switch+0xd8/0x1d8
-> > [=A0=A0 24.387166]=A0 __schedule+0x248/0x4a0
-> > [=A0=A0 24.387354]=A0 preempt_schedule_irq+0x60/0x90
-> > [=A0=A0 24.387366]=A0 el1_irq+0xd0/0x180
-> > [=A0=A0 24.387466]=A0 kvm_handle_guest_abort+0x0/0x3a0
-> > [=A0=A0 24.387566]=A0 kvm_arch_vcpu_ioctl_run+0x41c/0x688
-> > [=A0=A0 24.387566]=A0 kvm_vcpu_ioctl+0x4c0/0x838
-> > [=A0=A0 24.387666]=A0 do_vfs_ioctl+0xb8/0x878
-> > [=A0=A0 24.387766]=A0 ksys_ioctl+0x84/0x90
-> > [=A0=A0 24.387866]=A0 __arm64_sys_ioctl+0x18/0x28
-> > [=A0=A0 24.387866]=A0 el0_svc_common.constprop.0+0xb0/0x168
-> > [=A0=A0 24.387966]=A0 el0_svc_handler+0x28/0x78
-> > [=A0=A0 24.388066]=A0 el0_svc+0x8/0xc
-> > [=A0=A0 24.388066] ---[ end trace 37a32293e43ac12d ]---
-> > PASS: cpu-on
-> > SUMMARY: 4 te[=A0=A0 24.390266] WARNING: CPU: 3 PID: 160 at
-> > arch/arm64/kvm/../../../virt/kvm/arm/arch_timer.c:170
-> > kvm_timer_irq_can_fire+0xc/0x30
-> > s[=A0=A0 24.390366] Modules linked in:
-> > ts[=A0=A0 24.390366] CPU: 3 PID: 160 Comm: kvm-vcpu-1 Tainted: G       =
- W
-> > 5.2.0-rc5-00060-g7dbce63bd1c7 #145
-> > [=A0=A0 24.390566] Hardware name: Foundation-v8A (DT)
-> >
-> > [=A0=A0 24.390795] pstate: 40400009 (nZcv daif +PAN -UAO)
-> > [=A0=A0 24.390866] pc : kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.390966] lr : timer_emulate+0x24/0x98
-> > [=A0=A0 24.391066] sp : ffff000013d8b780
-> > [=A0=A0 24.391066] x29: ffff000013d8b780 x28: ffff80087a639b80
-> > [=A0=A0 24.391166] x27: ffff000010ba8648 x26: ffff000010b71b40
-> > [=A0=A0 24.391266] x25: ffff80087a63a100 x24: 0000000000000000
-> > [=A0=A0 24.391366] x23: 000080086ca54000 x22: 0000000000000003
-> > [=A0=A0 24.391466] x21: ffff800875e7c918 x20: ffff800875e7a800
-> > [=A0=A0 24.391466] x19: ffff800875e7ca08 x18: 0000000000000000
-> > [=A0=A0 24.391566] x17: 0000000000000000 x16: 0000000000000000
-> > [=A0=A0 24.391666] x15: 0000000000000000 x14: 0000000000002118
-> > [=A0=A0 24.391766] x13: 0000000000002190 x12: 0000000000002280
-> > [=A0=A0 24.391866] x11: 0000000000002208 x10: 0000000000000040
-> > [=A0=A0 24.391942] x9 : ffff000012dc3b38 x8 : 0000000000000000
-> > [=A0=A0 24.391966] x7 : 0000000000000000 x6 : ffff80087ac00248
-> > [=A0=A0 24.392066] x5 : 000080086ca54000 x4 : 0000000000002118
-> > [=A0=A0 24.392166] x3 : eeeeeeeeeeeeeeef x2 : ffff800875e7c918
-> > [=A0=A0 24.392269] x1 : 0000000000000001 x0 : ffff800875e7ca08
-> > [=A0=A0 24.392366] Call trace:
-> > [=A0=A0 24.392433]=A0 kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.392466]=A0 kvm_timer_vcpu_load+0x9c/0x1a0
-> > [=A0=A0 24.392597]=A0 kvm_arch_vcpu_load+0xb0/0x1f0
-> > [=A0=A0 24.392666]=A0 kvm_sched_in+0x1c/0x28
-> > [=A0=A0 24.392766]=A0 finish_task_switch+0xd8/0x1d8
-> > [=A0=A0 24.392766]=A0 __schedule+0x248/0x4a0
-> > [=A0=A0 24.392866]=A0 preempt_schedule_irq+0x60/0x90
-> > [=A0=A0 24.392966]=A0 el1_irq+0xd0/0x180
-> > [=A0=A0 24.392966]=A0 kvm_handle_guest_abort+0x0/0x3a0
-> > [=A0=A0 24.393066]=A0 kvm_arch_vcpu_ioctl_run+0x41c/0x688
-> > [=A0=A0 24.393166]=A0 kvm_vcpu_ioctl+0x4c0/0x838
-> > [=A0=A0 24.393266]=A0 do_vfs_ioctl+0xb8/0x878
-> > [=A0=A0 24.393266]=A0 ksys_ioctl+0x84/0x90
-> > [=A0=A0 24.393366]=A0 __arm64_sys_ioctl+0x18/0x28
-> > [=A0=A0 24.393466]=A0 el0_svc_common.constprop.0+0xb0/0x168
-> > [=A0=A0 24.393566]=A0 el0_svc_handler+0x28/0x78
-> > [=A0=A0 24.393566]=A0 el0_svc+0x8/0xc
-> > [=A0=A0 24.393666] ---[ end trace 37a32293e43ac12e ]---
-> > [=A0=A0 24.393866] WARNING: CPU: 3 PID: 160 at
-> > arch/arm64/kvm/../../../virt/kvm/arm/arch_timer.c:170
-> > kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.394066] Modules linked in:
-> > [=A0=A0 24.394266] CPU: 3 PID: 160 Comm: kvm-vcpu-1 Tainted: G        W
-> > 5.2.0-rc5-00060-g7dbce63bd1c7 #145
-> > [=A0=A0 24.394366] Hardware name: Foundation-v8A (DT)
-> > [=A0=A0 24.394466] pstate: 40400009 (nZcv daif +PAN -UAO)
-> > [=A0=A0 24.394466] pc : kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.394566] lr : timer_emulate+0x24/0x98
-> > [=A0=A0 24.394666] sp : ffff000013d8b780
-> > [=A0=A0 24.394727] x29: ffff000013d8b780 x28: ffff80087a639b80
-> > [=A0=A0 24.394766] x27: ffff000010ba8648 x26: ffff000010b71b40
-> > [=A0=A0 24.394866] x25: ffff80087a63a100 x24: 0000000000000000
-> > [=A0=A0 24.394966] x23: 000080086ca54000 x22: 0000000000000003
-> > [=A0=A0 24.394966] x21: ffff800875e7c918 x20: ffff800875e7a800
-> > [=A0=A0 24.395066] x19: ffff800875e7ca80 x18: 0000000000000000
-> > [=A0=A0 24.395166] x17: 0000000000000000 x16: 0000000000000000
-> > [=A0=A0 24.395266] x15: 0000000000000000 x14: 0000000000002118
-> > [=A0=A0 24.395383] x13: 0000000000002190 x12: 0000000000002280
-> > [=A0=A0 24.395466] x11: 0000000000002208 x10: 0000000000000040
-> > [=A0=A0 24.395547] x9 : ffff000012dc3b38 x8 : 0000000000000000
-> > [=A0=A0 24.395666] x7 : 0000000000000000 x6 : ffff80087ac00248
-> > [=A0=A0 24.395866] x5 : 000080086ca54000 x4 : 0000000000002118
-> > [=A0=A0 24.395966] x3 : eeeeeeeeeeeeeeef x2 : ffff800875e7c918
-> > [=A0=A0 24.396066] x1 : 0000000000000001 x0 : ffff800875e7ca80
-> > [=A0=A0 24.396066] Call trace:
-> > [=A0=A0 24.396166]=A0 kvm_timer_irq_can_fire+0xc/0x30
-> > [=A0=A0 24.396266]=A0 kvm_timer_vcpu_load+0xa8/0x1a0
-> > [=A0=A0 24.396366]=A0 kvm_arch_vcpu_load+0xb0/0x1f0
-> > [=A0=A0 24.396366]=A0 kvm_sched_in+0x1c/0x28
-> > [=A0=A0 24.396466]=A0 finish_task_switch+0xd8/0x1d8
-> > [=A0=A0 24.396566]=A0 __schedule+0x248/0x4a0
-> > [=A0=A0 24.396666]=A0 preempt_schedule_irq+0x60/0x90
-> > [=A0=A0 24.396666]=A0 el1_irq+0xd0/0x180
-> > [=A0=A0 24.396766]=A0 kvm_handle_guest_abort+0x0/0x3a0
-> > [=A0=A0 24.396866]=A0 kvm_arch_vcpu_ioctl_run+0x41c/0x688
-> > [=A0=A0 24.396866]=A0 kvm_vcpu_ioctl+0x4c0/0x838
-> > [=A0=A0 24.397021]=A0 do_vfs_ioctl+0xb8/0x878
-> > [=A0=A0 24.397066]=A0 ksys_ioctl+0x84/0x90
-> > [=A0=A0 24.397166]=A0 __arm64_sys_ioctl+0x18/0x28
-> > [=A0=A0 24.397348]=A0 el0_svc_common.constprop.0+0xb0/0x168
-> > [=A0=A0 24.397366]=A0 el0_svc_handler+0x28/0x78
-> > [=A0=A0 24.397566]=A0 el0_svc+0x8/0xc
-> > [=A0=A0 24.397676] ---[ end trace 37a32293e43ac12f ]---
-> >
-> >   # KVM compatibility warning.
-> >     virtio-9p device was not detected.
-> >     While you have requested a virtio-9p device, the guest kernel did n=
-ot
-> > initialize it.
-> >     Please make sure that the guest kernel was compiled with
-> > CONFIG_NET_9P_VIRTIO=3Dy enabled in .config.
-> >
-> >   # KVM compatibility warning.
-> >     virtio-net device was not detected.
-> >     While you have requested a virtio-net device, the guest kernel did =
-not
-> > initialize it.
-> >     Please make sure that the guest kernel was compiled with CONFIG_VIR=
-TIO_NET=3Dy
-> > enabled in .config.
-> >
-> > [..]
-> =
-
-> Did some investigating and this was caused by a bug in kvm-unit-tests (th=
-e fix
-> for it will be part of the EL2 patches for kvm-unit-tests). The guest was=
- trying
-> to fetch an instruction from address 0x200, which KVM interprets as a pre=
-fetch
-> abort on an I/O address and ends up calling kvm_inject_pabt. The code from
-> arch/arm64/kvm/inject_fault.c doesn't know anything about nested virtuali=
-zation,
-> and it sets the VCPU mode directly to PSR_MODE_EL1h. This makes_hyp_ctxt =
-return
-> false, and get_timer_map will return an incorrect mapping.
-> =
-
-> On next kvm_timer_vcpu_put, the direct timers will be {p,v}timer, and
-> h{p,v}timer->loaded will not be set to false. In the corresponding call to
-> kvm_timer_vcpu_load, KVM will try to emulate the hptimer and hvtimer, whi=
-ch
-> still have loaded =3D true. And this causes the warning I saw.
->
-
-Hi Alexandru,
-
-While a unit test in kvm-unit-tests may not do what it should in order to
-exercise the code it's targeting appropriately, and therefore need to be
-fixed in order to do that, I'd argue that if a guest can induce a host
-warning then that's a host bug. Indeed now that you've analyzed the
-issue you could write a kvm-unit-tests test to specifically reproduce the
-warning and then use that test to test any host fix candidates.
-
-Thanks,
-drew
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQW5kcmV3LAoKT24gOC85LzE5IDEyOjQ0IFBNLCBBbmRyZXcgSm9uZXMgd3JvdGU6Cj4gT24g
+RnJpLCBBdWcgMDksIDIwMTkgYXQgMTE6MDE6NTFBTSArMDEwMCwgQWxleGFuZHJ1IEVsaXNlaSB3
+cm90ZToKPj4gT24gOC8yLzE5IDExOjExIEFNLCBBbGV4YW5kcnUgRWxpc2VpIHdyb3RlOgo+Pj4g
+SGksCj4+Pgo+Pj4gT24gNi8yMS8xOSAxMDozNyBBTSwgTWFyYyBaeW5naWVyIHdyb3RlOgo+Pj4+
+IEkndmUgdGFrZW4gb3ZlciB0aGUgbWFpbnRlbmFuY2Ugb2YgdGhpcyBzZXJpZXMgb3JpZ2luYWxs
+eSB3cml0dGVuIGJ5Cj4+Pj4gSmludGFjayBhbmQgQ2hyaXN0b2ZmZXIuIFNpbmNlIHRoZW4sIHRo
+ZSBzZXJpZXMgaGFzIGJlZW4gc3Vic3RhbnRpYWxseQo+Pj4+IHJld29ya2VkLCBuZXcgZmVhdHVy
+ZXMgKGFuZCBtb3N0IHByb2JhYmx5IGJ1Z3MpIGhhdmUgYmVlbiBhZGRlZCwgYW5kCj4+Pj4gdGhl
+IHdob2xlIHRoaW5nIHJlYmFzZWQgbXVsdGlwbGUgdGltZXMuIElmIGFueXRoaW5nIGJyZWFrcywg
+cGxlYXNlCj4+Pj4gYmxhbWUgbWUsIGFuZCBub2JvZHkgZWxzZS4KPj4+Pgo+Pj4+IEFzIHlvdSBj
+YW4gdGVsbCwgdGhpcyBpcyBxdWl0ZSBiaWcuIEl0IGlzIGFsc28gcmVtYXJrYWJseSBpbmNvbXBs
+ZXRlCj4+Pj4gKHdlJ3JlIG1pc3NpbmcgbWFueSBjcml0aWNhbCBiaXRzIGZvciBmdWxseSBlbXVs
+YXRlIEVMMiksIGJ1dCB0aGUgaWRlYQo+Pj4+IGlzIHRvIHN0YXJ0IG1lcmdpbmcgdGhpbmdzIGVh
+cmx5IGluIG9yZGVyIHRvIHJlZHVjZSB0aGUgbWFpbnRlbmFuY2UKPj4+PiBoZWFkYWNoZS4gV2hh
+dCB3ZSB3YW50IHRvIGFjaGlldmUgaXMgdGhhdCB3aXRoIE5WIGRpc2FibGVkLCB0aGVyZSBpcwo+
+Pj4+IG5vIHBlcmZvcm1hbmNlIG92ZXJoZWFkIGFuZCBubyByZWdyZXNzaW9uLiBUaGUgb25seSB0
+aGluZyBJIGludGVuZCB0bwo+Pj4+IG1lcmdlIEFTQVAgaXMgdGhlIGZpcnN0IHBhdGNoIGluIHRo
+ZSBzZXJpZXMsIGJlY2F1c2UgaXQgc2hvdWxkIGhhdmUKPj4+PiB6ZXJvIGVmZmVjdCBhbmQgaXMg
+YSByZWFzb25hYmxlIGNsZWFudXAuCj4+Pj4KPj4+PiBUaGUgc2VyaWVzIGlzIHJvdWdobHkgZGl2
+aWRlZCBpbiA0IHBhcnRzOiBleGNlcHRpb24gaGFuZGxpbmcsIG1lbW9yeQo+Pj4+IHZpcnR1YWxp
+emF0aW9uLCBpbnRlcnJ1cHRzIGFuZCB0aW1lcnMuIFRoZXJlIGFyZSBvZiBjb3Vyc2Ugc29tZQo+
+Pj4+IGRlcGVuZGVuY2llcywgYnV0IHlvdSdsbCBob3BlZnVsbHkgZ2V0IHRoZSBnaXN0IG9mIGl0
+Lgo+Pj4+Cj4+Pj4gRm9yIHRoZSBtb3N0IGNvdXJhZ2VvdXMgb2YgeW91LCBJJ3ZlIHB1dCBvdXQg
+YSBicmFuY2hbMV0gY29udGFpbmluZyB0aGlzCj4+Pj4gYW5kIGEgYml0IG1vcmUuIE9mIGNvdXJz
+ZSwgeW91J2xsIG5lZWQgc29tZSB1c2Vyc3BhY2UuIEFuZHJlIG1haW50YWlucwo+Pj4+IGEgaGFj
+a2VkIHZlcnNpb24gb2Yga3ZtdG9vbFsxXSB0aGF0IHRha2VzIGEgLS1uZXN0ZWQgb3B0aW9uLCBh
+bGxvd2luZwo+Pj4+IHRoZSBndWVzdCB0byBiZSBzdGFydGVkIGF0IEVMMi4gWW91IGNhbiBydW4g
+dGhlIHdob2xlIHN0YWNrIGluIHRoZQo+Pj4+IEZvdW5kYXRpb24gbW9kZWwuIERvbid0IGJlIGlu
+IGEgaHVycnkgOy0pLgo+Pj4+Cj4+Pj4gWzFdIGdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20v
+bGludXgva2VybmVsL2dpdC9tYXovYXJtLXBsYXRmb3Jtcy5naXQga3ZtLWFybTY0L252LXdpcC01
+LjItcmM1Cj4+Pj4gWzJdIGdpdDovL2xpbnV4LWFybS5vcmcva3ZtdG9vbC5naXQgbnYvbnYtd2lw
+LTUuMi1yYzUKPj4+Pgo+Pj4+IEFuZHJlIFByenl3YXJhICg0KToKPj4+PiAgIEtWTTogYXJtNjQ6
+IG52OiBIYW5kbGUgdmlydHVhbCBFTDIgcmVnaXN0ZXJzIGluCj4+Pj4gICAgIHZjcHVfcmVhZC93
+cml0ZV9zeXNfcmVnKCkKPj4+PiAgIEtWTTogYXJtNjQ6IG52OiBTYXZlL1Jlc3RvcmUgdkVMMiBz
+eXNyZWdzCj4+Pj4gICBLVk06IGFybTY0OiBudjogSGFuZGxlIHRyYXBzIGZvciB0aW1lciBfRUww
+MiBhbmQgX0VMMiBzeXNyZWdzCj4+Pj4gICAgIGFjY2Vzc29ycwo+Pj4+ICAgS1ZNOiBhcm02NDog
+bnY6IHZnaWM6IEFsbG93IHVzZXJsYW5kIHRvIHNldCBWR0lDIG1haW50ZW5hbmNlIElSUQo+Pj4+
+Cj4+Pj4gQ2hyaXN0b2ZmZXIgRGFsbCAoMTYpOgo+Pj4+ICAgS1ZNOiBhcm02NDogbnY6IEludHJv
+ZHVjZSBuZXN0ZWQgdmlydHVhbGl6YXRpb24gVkNQVSBmZWF0dXJlCj4+Pj4gICBLVk06IGFybTY0
+OiBudjogUmVzZXQgVkNQVSB0byBFTDIgcmVnaXN0ZXJzIGlmIFZDUFUgbmVzdGVkIHZpcnQgaXMg
+c2V0Cj4+Pj4gICBLVk06IGFybTY0OiBudjogQWxsb3cgdXNlcnNwYWNlIHRvIHNldCBQU1JfTU9E
+RV9FTDJ4Cj4+Pj4gICBLVk06IGFybTY0OiBudjogQWRkIG5lc3RlZCB2aXJ0IFZDUFUgcHJpbWl0
+aXZlcyBmb3IgdkVMMiBWQ1BVIHN0YXRlCj4+Pj4gICBLVk06IGFybTY0OiBudjogSGFuZGxlIHRy
+YXBwZWQgRVJFVCBmcm9tIHZpcnR1YWwgRUwyCj4+Pj4gICBLVk06IGFybTY0OiBudjogRW11bGF0
+ZSBQU1RBVEUuTSBmb3IgYSBndWVzdCBoeXBlcnZpc29yCj4+Pj4gICBLVk06IGFybTY0OiBudjog
+VHJhcCBFTDEgVk0gcmVnaXN0ZXIgYWNjZXNzZXMgaW4gdmlydHVhbCBFTDIKPj4+PiAgIEtWTTog
+YXJtNjQ6IG52OiBPbmx5IHRvZ2dsZSBjYWNoZSBmb3IgdmlydHVhbCBFTDIgd2hlbiBTQ1RMUl9F
+TDIKPj4+PiAgICAgY2hhbmdlcwo+Pj4+ICAgS1ZNOiBhcm0vYXJtNjQ6IG52OiBTdXBwb3J0IG11
+bHRpcGxlIG5lc3RlZCBzdGFnZSAyIG1tdSBzdHJ1Y3R1cmVzCj4+Pj4gICBLVk06IGFybTY0OiBu
+djogSW1wbGVtZW50IG5lc3RlZCBTdGFnZS0yIHBhZ2UgdGFibGUgd2FsayBsb2dpYwo+Pj4+ICAg
+S1ZNOiBhcm02NDogbnY6IEhhbmRsZSBzaGFkb3cgc3RhZ2UgMiBwYWdlIGZhdWx0cwo+Pj4+ICAg
+S1ZNOiBhcm02NDogbnY6IFVubWFwL2ZsdXNoIHNoYWRvdyBzdGFnZSAyIHBhZ2UgdGFibGVzCj4+
+Pj4gICBLVk06IGFybTY0OiBudjogYXJjaF90aW1lcjogU3VwcG9ydCBoeXAgdGltZXIgZW11bGF0
+aW9uCj4+Pj4gICBLVk06IGFybTY0OiBudjogdmdpYy12MzogVGFrZSBjcHVfaWYgcG9pbnRlciBk
+aXJlY3RseSBpbnN0ZWFkIG9mIHZjcHUKPj4+PiAgIEtWTTogYXJtNjQ6IG52OiB2Z2ljOiBFbXVs
+YXRlIHRoZSBIVyBiaXQgaW4gc29mdHdhcmUKPj4+PiAgIEtWTTogYXJtNjQ6IG52OiBBZGQgbmVz
+dGVkIEdJQ3YzIHRyYWNlcG9pbnRzCj4+Pj4KPj4+PiBEYXZlIE1hcnRpbiAoMSk6Cj4+Pj4gICBL
+Vk06IGFybTY0OiBNaWdyYXRlIF9lbHggc3lzcmVnIGFjY2Vzc29ycyB0byBtc3Jfcy9tcnNfcwo+
+Pj4+Cj4+Pj4gSmludGFjayBMaW0gKDIxKToKPj4+PiAgIGFybTY0OiBBZGQgQVJNNjRfSEFTX05F
+U1RFRF9WSVJUIGNwdWZlYXR1cmUKPj4+PiAgIEtWTTogYXJtNjQ6IG52OiBBZGQgRUwyIHN5c3Rl
+bSByZWdpc3RlcnMgdG8gdmNwdSBjb250ZXh0Cj4+Pj4gICBLVk06IGFybTY0OiBudjogU3VwcG9y
+dCB2aXJ0dWFsIEVMMiBleGNlcHRpb25zCj4+Pj4gICBLVk06IGFybTY0OiBudjogSW5qZWN0IEhW
+QyBleGNlcHRpb25zIHRvIHRoZSB2aXJ0dWFsIEVMMgo+Pj4+ICAgS1ZNOiBhcm02NDogbnY6IFRy
+YXAgU1BTUl9FTDEsIEVMUl9FTDEgYW5kIFZCQVJfRUwxIGZyb20gdmlydHVhbCBFTDIKPj4+PiAg
+IEtWTTogYXJtNjQ6IG52OiBUcmFwIENQQUNSX0VMMSBhY2Nlc3MgaW4gdmlydHVhbCBFTDIKPj4+
+PiAgIEtWTTogYXJtNjQ6IG52OiBTZXQgYSBoYW5kbGVyIGZvciB0aGUgc3lzdGVtIGluc3RydWN0
+aW9uIHRyYXBzCj4+Pj4gICBLVk06IGFybTY0OiBudjogSGFuZGxlIFBTQ0kgY2FsbCB2aWEgc21j
+IGZyb20gdGhlIGd1ZXN0Cj4+Pj4gICBLVk06IGFybTY0OiBudjogUmVzcGVjdCB2aXJ0dWFsIEhD
+Ul9FTDIuVFdYIHNldHRpbmcKPj4+PiAgIEtWTTogYXJtNjQ6IG52OiBSZXNwZWN0IHZpcnR1YWwg
+Q1BUUl9FTDIuVEZQIHNldHRpbmcKPj4+PiAgIEtWTTogYXJtNjQ6IG52OiBSZXNwZWN0IHRoZSB2
+aXJ0dWFsIEhDUl9FTDIuTlYgYml0IHNldHRpbmcKPj4+PiAgIEtWTTogYXJtNjQ6IG52OiBSZXNw
+ZWN0IHZpcnR1YWwgSENSX0VMMi5UVk0gYW5kIFRSVk0gc2V0dGluZ3MKPj4+PiAgIEtWTTogYXJt
+NjQ6IG52OiBSZXNwZWN0IHRoZSB2aXJ0dWFsIEhDUl9FTDIuTlYxIGJpdCBzZXR0aW5nCj4+Pj4g
+ICBLVk06IGFybTY0OiBudjogRW11bGF0ZSBFTDEyIHJlZ2lzdGVyIGFjY2Vzc2VzIGZyb20gdGhl
+IHZpcnR1YWwgRUwyCj4+Pj4gICBLVk06IGFybTY0OiBudjogQ29uZmlndXJlIEhDUl9FTDIgZm9y
+IG5lc3RlZCB2aXJ0dWFsaXphdGlvbgo+Pj4+ICAgS1ZNOiBhcm02NDogbnY6IFByZXRlbmQgd2Ug
+b25seSBzdXBwb3J0IGxhcmdlci10aGFuLWhvc3QgcGFnZSBzaXplcwo+Pj4+ICAgS1ZNOiBhcm02
+NDogbnY6IEludHJvZHVjZSBzeXNfcmVnX2Rlc2MuZm9yd2FyZF90cmFwCj4+Pj4gICBLVk06IGFy
+bTY0OiBudjogUmV3b3JrIHRoZSBzeXN0ZW0gaW5zdHJ1Y3Rpb24gZW11bGF0aW9uIGZyYW1ld29y
+awo+Pj4+ICAgS1ZNOiBhcm02NDogbnY6IFRyYXAgYW5kIGVtdWxhdGUgQVQgaW5zdHJ1Y3Rpb25z
+IGZyb20gdmlydHVhbCBFTDIKPj4+PiAgIEtWTTogYXJtNjQ6IG52OiBUcmFwIGFuZCBlbXVsYXRl
+IFRMQkkgaW5zdHJ1Y3Rpb25zIGZyb20gdmlydHVhbCBFTDIKPj4+PiAgIEtWTTogYXJtNjQ6IG52
+OiBOZXN0ZWQgR0lDdjMgU3VwcG9ydAo+Pj4+Cj4+Pj4gTWFyYyBaeW5naWVyICgxNyk6Cj4+Pj4g
+ICBLVk06IGFybTY0OiBNb3ZlIF9fbG9hZF9ndWVzdF9zdGFnZTIgdG8ga3ZtX21tdS5oCj4+Pj4g
+ICBLVk06IGFybTY0OiBudjogUmVzZXQgVk1QSURSX0VMMiBhbmQgVlBJRFJfRUwyIHRvIHNhbmUg
+dmFsdWVzCj4+Pj4gICBLVk06IGFybTY0OiBudjogSGFuZGxlIFNQU1JfRUwyIHNwZWNpYWxseQo+
+Pj4+ICAgS1ZNOiBhcm02NDogbnY6IFJlZmFjdG9yIHZjcHVfe3JlYWQsd3JpdGV9X3N5c19yZWcK
+Pj4+PiAgIEtWTTogYXJtNjQ6IG52OiBEb24ndCBleHBvc2UgU1ZFIHRvIG5lc3RlZCBndWVzdHMK
+Pj4+PiAgIEtWTTogYXJtNjQ6IG52OiBIaWRlIFJBUyBmcm9tIG5lc3RlZCBndWVzdHMKPj4+PiAg
+IEtWTTogYXJtL2FybTY0OiBudjogRmFjdG9yIG91dCBzdGFnZSAyIHBhZ2UgdGFibGUgZGF0YSBm
+cm9tIHN0cnVjdCBrdm0KPj4+PiAgIEtWTTogYXJtNjQ6IG52OiBNb3ZlIGxhc3RfdmNwdV9yYW4g
+dG8gYmUgcGVyIHMyIG1tdQo+Pj4+ICAgS1ZNOiBhcm02NDogbnY6IERvbid0IGFsd2F5cyBzdGFy
+dCBhbiBTMiBNTVUgc2VhcmNoIGZyb20gdGhlIGJlZ2lubmluZwo+Pj4+ICAgS1ZNOiBhcm02NDog
+bnY6IFByb3BhZ2F0ZSBDTlRWT0ZGX0VMMiB0byB0aGUgdmlydHVhbCBFTDEgdGltZXIKPj4+PiAg
+IEtWTTogYXJtNjQ6IG52OiBMb2FkIHRpbWVyIGJlZm9yZSB0aGUgR0lDCj4+Pj4gICBLVk06IGFy
+bTY0OiBudjogSW1wbGVtZW50IG1haW50ZW5hbmNlIGludGVycnVwdCBmb3J3YXJkaW5nCj4+Pj4g
+ICBhcm02NDogS1ZNOiBudjogQWRkIGhhbmRsaW5nIG9mIEVMMi1zcGVjaWZpYyB0aW1lciByZWdp
+c3RlcnMKPj4+PiAgIGFybTY0OiBLVk06IG52OiBIb25vciBTQ1RMUl9FTDIuU1BBTiBvbiBlbnRl
+cmluZyB2RUwyCj4+Pj4gICBhcm02NDogS1ZNOiBudjogSGFuZGxlIFNDVExSX0VMMiBSRVMwL1JF
+UzEgYml0cwo+Pj4+ICAgYXJtNjQ6IEtWTTogbnY6IFJlc3RyaWN0IFMyIFJEL1dSIHBlcm1pc3Np
+b25zIHRvIG1hdGNoIHRoZSBndWVzdCdzCj4+Pj4gICBhcm02NDogS1ZNOiBudjogQWxsb3cgdXNl
+cnNwYWNlIHRvIHJlcXVlc3QgS1ZNX0FSTV9WQ1BVX05FU1RFRF9WSVJUCj4+Pj4KPj4+PiAgLi4u
+L2FkbWluLWd1aWRlL2tlcm5lbC1wYXJhbWV0ZXJzLnR4dCAgICAgICAgIHwgICAgNCArCj4+Pj4g
+IC4uLi92aXJ0dWFsL2t2bS9kZXZpY2VzL2FybS12Z2ljLXYzLnR4dCAgICAgICB8ICAgIDkgKwo+
+Pj4+ICBhcmNoL2FybS9pbmNsdWRlL2FzbS9rdm1fYXNtLmggICAgICAgICAgICAgICAgfCAgICA1
+ICstCj4+Pj4gIGFyY2gvYXJtL2luY2x1ZGUvYXNtL2t2bV9lbXVsYXRlLmggICAgICAgICAgICB8
+ICAgIDMgKwo+Pj4+ICBhcmNoL2FybS9pbmNsdWRlL2FzbS9rdm1faG9zdC5oICAgICAgICAgICAg
+ICAgfCAgIDMxICstCj4+Pj4gIGFyY2gvYXJtL2luY2x1ZGUvYXNtL2t2bV9oeXAuaCAgICAgICAg
+ICAgICAgICB8ICAgMjUgKy0KPj4+PiAgYXJjaC9hcm0vaW5jbHVkZS9hc20va3ZtX21tdS5oICAg
+ICAgICAgICAgICAgIHwgICA4MyArLQo+Pj4+ICBhcmNoL2FybS9pbmNsdWRlL2FzbS9rdm1fbmVz
+dGVkLmggICAgICAgICAgICAgfCAgICA5ICsKPj4+PiAgYXJjaC9hcm0vaW5jbHVkZS91YXBpL2Fz
+bS9rdm0uaCAgICAgICAgICAgICAgIHwgICAgMSArCj4+Pj4gIGFyY2gvYXJtL2t2bS9oeXAvc3dp
+dGNoLmMgICAgICAgICAgICAgICAgICAgICB8ICAgMTEgKy0KPj4+PiAgYXJjaC9hcm0va3ZtL2h5
+cC90bGIuYyAgICAgICAgICAgICAgICAgICAgICAgIHwgICAxMyArLQo+Pj4+ICBhcmNoL2FybTY0
+L2luY2x1ZGUvYXNtL2NwdWNhcHMuaCAgICAgICAgICAgICAgfCAgICAzICstCj4+Pj4gIGFyY2gv
+YXJtNjQvaW5jbHVkZS9hc20vZXNyLmggICAgICAgICAgICAgICAgICB8ICAgIDQgKy0KPj4+PiAg
+YXJjaC9hcm02NC9pbmNsdWRlL2FzbS9rdm1fYXJtLmggICAgICAgICAgICAgIHwgICAyOCArLQo+
+Pj4+ICBhcmNoL2FybTY0L2luY2x1ZGUvYXNtL2t2bV9hc20uaCAgICAgICAgICAgICAgfCAgICA5
+ICstCj4+Pj4gIGFyY2gvYXJtNjQvaW5jbHVkZS9hc20va3ZtX2NvcHJvYy5oICAgICAgICAgICB8
+ICAgIDIgKy0KPj4+PiAgYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9rdm1fZW11bGF0ZS5oICAgICAg
+ICAgIHwgIDE1NyArLQo+Pj4+ICBhcmNoL2FybTY0L2luY2x1ZGUvYXNtL2t2bV9ob3N0LmggICAg
+ICAgICAgICAgfCAgMTA1ICstCj4+Pj4gIGFyY2gvYXJtNjQvaW5jbHVkZS9hc20va3ZtX2h5cC5o
+ICAgICAgICAgICAgICB8ICAgODIgKy0KPj4+PiAgYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9rdm1f
+bW11LmggICAgICAgICAgICAgIHwgICA2MiArLQo+Pj4+ICBhcmNoL2FybTY0L2luY2x1ZGUvYXNt
+L2t2bV9uZXN0ZWQuaCAgICAgICAgICAgfCAgIDY4ICsKPj4+PiAgYXJjaC9hcm02NC9pbmNsdWRl
+L2FzbS9zeXNyZWcuaCAgICAgICAgICAgICAgIHwgIDE0MyArLQo+Pj4+ICBhcmNoL2FybTY0L2lu
+Y2x1ZGUvdWFwaS9hc20va3ZtLmggICAgICAgICAgICAgfCAgICAyICsKPj4+PiAgYXJjaC9hcm02
+NC9rZXJuZWwvY3B1ZmVhdHVyZS5jICAgICAgICAgICAgICAgIHwgICAyNiArCj4+Pj4gIGFyY2gv
+YXJtNjQva3ZtL01ha2VmaWxlICAgICAgICAgICAgICAgICAgICAgICB8ICAgIDQgKwo+Pj4+ICBh
+cmNoL2FybTY0L2t2bS9lbXVsYXRlLW5lc3RlZC5jICAgICAgICAgICAgICAgfCAgMjIzICsrKwo+
+Pj4+ICBhcmNoL2FybTY0L2t2bS9ndWVzdC5jICAgICAgICAgICAgICAgICAgICAgICAgfCAgICA2
+ICsKPj4+PiAgYXJjaC9hcm02NC9rdm0vaGFuZGxlX2V4aXQuYyAgICAgICAgICAgICAgICAgIHwg
+ICA3NiArLQo+Pj4+ICBhcmNoL2FybTY0L2t2bS9oeXAvTWFrZWZpbGUgICAgICAgICAgICAgICAg
+ICAgfCAgICAxICsKPj4+PiAgYXJjaC9hcm02NC9rdm0vaHlwL2F0LmMgICAgICAgICAgICAgICAg
+ICAgICAgIHwgIDIxNyArKysKPj4+PiAgYXJjaC9hcm02NC9rdm0vaHlwL3N3aXRjaC5jICAgICAg
+ICAgICAgICAgICAgIHwgICA4NiArLQo+Pj4+ICBhcmNoL2FybTY0L2t2bS9oeXAvc3lzcmVnLXNy
+LmMgICAgICAgICAgICAgICAgfCAgMjY3ICsrLQo+Pj4+ICBhcmNoL2FybTY0L2t2bS9oeXAvdGxi
+LmMgICAgICAgICAgICAgICAgICAgICAgfCAgMTI5ICstCj4+Pj4gIGFyY2gvYXJtNjQva3ZtL2h5
+cC92Z2ljLXYyLWNwdWlmLXByb3h5LmMgICAgICB8ICAgIDIgKy0KPj4+PiAgYXJjaC9hcm02NC9r
+dm0vaW5qZWN0X2ZhdWx0LmMgICAgICAgICAgICAgICAgIHwgICAxMiAtCj4+Pj4gIGFyY2gvYXJt
+NjQva3ZtL25lc3RlZC5jICAgICAgICAgICAgICAgICAgICAgICB8ICA1NTEgKysrKysrKwo+Pj4+
+ICBhcmNoL2FybTY0L2t2bS9yZWdtYXAuYyAgICAgICAgICAgICAgICAgICAgICAgfCAgICA0ICst
+Cj4+Pj4gIGFyY2gvYXJtNjQva3ZtL3Jlc2V0LmMgICAgICAgICAgICAgICAgICAgICAgICB8ICAg
+IDcgKwo+Pj4+ICBhcmNoL2FybTY0L2t2bS9zeXNfcmVncy5jICAgICAgICAgICAgICAgICAgICAg
+fCAxNDYwICsrKysrKysrKysrKysrKy0tCj4+Pj4gIGFyY2gvYXJtNjQva3ZtL3N5c19yZWdzLmgg
+ICAgICAgICAgICAgICAgICAgICB8ICAgIDYgKwo+Pj4+ICBhcmNoL2FybTY0L2t2bS90cmFjZS5o
+ICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDU4ICstCj4+Pj4gIGluY2x1ZGUva3ZtL2FybV9h
+cmNoX3RpbWVyLmggICAgICAgICAgICAgICAgICB8ICAgIDYgKwo+Pj4+ICBpbmNsdWRlL2t2bS9h
+cm1fdmdpYy5oICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDI4ICstCj4+Pj4gIHZpcnQva3Zt
+L2FybS9hcmNoX3RpbWVyLmMgICAgICAgICAgICAgICAgICAgICB8ICAxNTggKy0KPj4+PiAgdmly
+dC9rdm0vYXJtL2FybS5jICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgICA2MiArLQo+Pj4+
+ICB2aXJ0L2t2bS9hcm0vaHlwL3ZnaWMtdjMtc3IuYyAgICAgICAgICAgICAgICAgfCAgIDM1ICst
+Cj4+Pj4gIHZpcnQva3ZtL2FybS9tbWlvLmMgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAg
+MTIgKy0KPj4+PiAgdmlydC9rdm0vYXJtL21tdS5jICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IHwgIDQ0NSArKystLQo+Pj4+ICB2aXJ0L2t2bS9hcm0vdHJhY2UuaCAgICAgICAgICAgICAgICAg
+ICAgICAgICAgfCAgICA2ICstCj4+Pj4gIHZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtaW5pdC5jICAg
+ICAgICAgICAgICAgICB8ICAgMzAgKwo+Pj4+ICB2aXJ0L2t2bS9hcm0vdmdpYy92Z2ljLWt2bS1k
+ZXZpY2UuYyAgICAgICAgICAgfCAgIDIyICsKPj4+PiAgdmlydC9rdm0vYXJtL3ZnaWMvdmdpYy1u
+ZXN0ZWQtdHJhY2UuaCAgICAgICAgIHwgIDEzNyArKwo+Pj4+ICB2aXJ0L2t2bS9hcm0vdmdpYy92
+Z2ljLXYyLmMgICAgICAgICAgICAgICAgICAgfCAgIDEwICstCj4+Pj4gIHZpcnQva3ZtL2FybS92
+Z2ljL3ZnaWMtdjMtbmVzdGVkLmMgICAgICAgICAgICB8ICAyMzYgKysrCj4+Pj4gIHZpcnQva3Zt
+L2FybS92Z2ljL3ZnaWMtdjMuYyAgICAgICAgICAgICAgICAgICB8ICAgNDAgKy0KPj4+PiAgdmly
+dC9rdm0vYXJtL3ZnaWMvdmdpYy5jICAgICAgICAgICAgICAgICAgICAgIHwgICA3NCArLQo+Pj4+
+ICA1NiBmaWxlcyBjaGFuZ2VkLCA0NjgzIGluc2VydGlvbnMoKyksIDYxMiBkZWxldGlvbnMoLSkK
+Pj4+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtL2luY2x1ZGUvYXNtL2t2bV9uZXN0ZWQu
+aAo+Pj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9rdm1fbmVz
+dGVkLmgKPj4+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtNjQva3ZtL2VtdWxhdGUtbmVz
+dGVkLmMKPj4+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtNjQva3ZtL2h5cC9hdC5jCj4+
+Pj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNoL2FybTY0L2t2bS9uZXN0ZWQuYwo+Pj4+ICBjcmVh
+dGUgbW9kZSAxMDA2NDQgdmlydC9rdm0vYXJtL3ZnaWMvdmdpYy1uZXN0ZWQtdHJhY2UuaAo+Pj4+
+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdmlydC9rdm0vYXJtL3ZnaWMvdmdpYy12My1uZXN0ZWQuYwo+
+Pj4+Cj4+PiBXaGVuIHdvcmtpbmcgb24gYWRkaW5nIHN1cHBvcnQgZm9yIEVMMiB0byBrdm0tdW5p
+dC10ZXN0cyBJIHdhcyBhYmxlIHRvIHRyaWdnZXIKPj4+IHRoZSBmb2xsb3dpbmcgd2FybmluZzoK
+Pj4+Cj4+PiAjIC4vbGt2bSBydW4gLWYgcHNjaS5mbGF0IC1tIDEyOCAtYyA4IC0tY29uc29sZSBz
+ZXJpYWwgLS1pcnFjaGlwIGdpY3YzIC0tbmVzdGVkCj4+PiAgICMgbGt2bSBydW4gLS1maXJtd2Fy
+ZSBwc2NpLmZsYXQgLW0gMTI4IC1jIDggLS1uYW1lIGd1ZXN0LTE1MQo+Pj4gICBJbmZvOiBQbGFj
+aW5nIGZkdCBhdCAweDgwMjAwMDAwIC0gMHg4MDIxMDAwMAo+Pj4gICAjIFdhcm5pbmc6IFRoZSBt
+YXhpbXVtIHJlY29tbWVuZGVkIGFtb3VudCBvZiBWQ1BVcyBpcyA0Cj4+PiBjaHJfdGVzdGRldl9p
+bml0OiBjaHItdGVzdGRldjogY2FuJ3QgZmluZCBhIHZpcnRpby1jb25zb2xlCj4+PiBJTkZPOiBQ
+U0NJIHZlcnNpb24gMS4wCj4+PiBQQVNTOiBpbnZhbGlkLWZ1bmN0aW9uCj4+PiBQQVNTOiBhZmZp
+bml0eS1pbmZvLW9uCj4+PiBQQVNTOiBhZmZpbml0eS1pbmZvLW9mZgo+Pj4gW8KgwqAgMjQuMzgx
+MjY2XSBXQVJOSU5HOiBDUFU6IDMgUElEOiAxNjAgYXQKPj4+IGFyY2gvYXJtNjQva3ZtLy4uLy4u
+Ly4uL3ZpcnQva3ZtL2FybS9hcmNoX3RpbWVyLmM6MTcwCj4+PiBrdm1fdGltZXJfaXJxX2Nhbl9m
+aXJlKzB4Yy8weDMwCj4+PiBbwqDCoCAyNC4zODEzNjZdIE1vZHVsZXMgbGlua2VkIGluOgo+Pj4g
+W8KgwqAgMjQuMzgxNDY2XSBDUFU6IDMgUElEOiAxNjAgQ29tbToga3ZtLXZjcHUtMSBOb3QgdGFp
+bnRlZAo+Pj4gNS4yLjAtcmM1LTAwMDYwLWc3ZGJjZTYzYmQxYzcgIzE0NQo+Pj4gW8KgwqAgMjQu
+MzgxNTY2XSBIYXJkd2FyZSBuYW1lOiBGb3VuZGF0aW9uLXY4QSAoRFQpCj4+PiBbwqDCoCAyNC4z
+ODE1NjZdIHBzdGF0ZTogNDA0MDAwMDkgKG5aY3YgZGFpZiArUEFOIC1VQU8pCj4+PiBbwqDCoCAy
+NC4zODE2NjZdIHBjIDoga3ZtX3RpbWVyX2lycV9jYW5fZmlyZSsweGMvMHgzMAo+Pj4gW8KgwqAg
+MjQuMzgxNzY2XSBsciA6IHRpbWVyX2VtdWxhdGUrMHgyNC8weDk4Cj4+PiBbwqDCoCAyNC4zODE3
+NjZdIHNwIDogZmZmZjAwMDAxM2Q4Yjc4MAo+Pj4gW8KgwqAgMjQuMzgxODY2XSB4Mjk6IGZmZmYw
+MDAwMTNkOGI3ODAgeDI4OiBmZmZmODAwODdhNjM5YjgwCj4+PiBbwqDCoCAyNC4zODE5NjZdIHgy
+NzogZmZmZjAwMDAxMGJhODY0OCB4MjY6IGZmZmYwMDAwMTBiNzFiNDAKPj4+IFvCoMKgIDI0LjM4
+MjA2Nl0geDI1OiBmZmZmODAwODdhNjNhMTAwIHgyNDogMDAwMDAwMDAwMDAwMDAwMAo+Pj4gW8Kg
+wqAgMjQuMzgyMTExXSB4MjM6IDAwMDA4MDA4NmNhNTQwMDAgeDIyOiBmZmZmMDAwMDEwMGNlMjYw
+Cj4+PiBbwqDCoCAyNC4zODIxNjZdIHgyMTogZmZmZjgwMDg3NWU3YzkxOCB4MjA6IGZmZmY4MDA4
+NzVlN2E4MDAKPj4+IFvCoMKgIDI0LjM4MjI3NV0geDE5OiBmZmZmODAwODc1ZTdjYTA4IHgxODog
+MDAwMDAwMDAwMDAwMDAwMAo+Pj4gW8KgwqAgMjQuMzgyMzY2XSB4MTc6IDAwMDAwMDAwMDAwMDAw
+MDAgeDE2OiAwMDAwMDAwMDAwMDAwMDAwCj4+PiBbwqDCoCAyNC4zODI0NjZdIHgxNTogMDAwMDAw
+MDAwMDAwMDAwMCB4MTQ6IDAwMDAwMDAwMDAwMDIxMTgKPj4+IFvCoMKgIDI0LjM4MjU2Nl0geDEz
+OiAwMDAwMDAwMDAwMDAyMTkwIHgxMjogMDAwMDAwMDAwMDAwMjI4MAo+Pj4gW8KgwqAgMjQuMzgy
+NTY2XSB4MTE6IDAwMDAwMDAwMDAwMDIyMDggeDEwOiAwMDAwMDAwMDAwMDAwMDQwCj4+PiBbwqDC
+oCAyNC4zODI2NjZdIHg5IDogZmZmZjAwMDAxMmRjM2IzOCB4OCA6IDAwMDAwMDAwMDAwMDAwMDAK
+Pj4+IFvCoMKgIDI0LjM4Mjc2Nl0geDcgOiAwMDAwMDAwMDAwMDAwMDAwIHg2IDogZmZmZjgwMDg3
+YWMwMDI0OAo+Pj4gW8KgwqAgMjQuMzgyODY2XSB4NSA6IDAwMDA4MDA4NmNhNTQwMDAgeDQgOiAw
+MDAwMDAwMDAwMDAyMTE4Cj4+PiBbwqDCoCAyNC4zODI5NjZdIHgzIDogZWVlZWVlZWVlZWVlZWVl
+ZiB4MiA6IGZmZmY4MDA4NzVlN2M5MTgKPj4+IFvCoMKgIDI0LjM4MzA2Nl0geDEgOiAwMDAwMDAw
+MDAwMDAwMDAxIHgwIDogZmZmZjgwMDg3NWU3Y2EwOAo+Pj4gW8KgwqAgMjQuMzgzMDY2XSBDYWxs
+IHRyYWNlOgo+Pj4gW8KgwqAgMjQuMzgzMTY2XcKgIGt2bV90aW1lcl9pcnFfY2FuX2ZpcmUrMHhj
+LzB4MzAKPj4+IFvCoMKgIDI0LjM4MzI2Nl3CoCBrdm1fdGltZXJfdmNwdV9sb2FkKzB4OWMvMHgx
+YTAKPj4+IFvCoMKgIDI0LjM4MzM2Nl3CoCBrdm1fYXJjaF92Y3B1X2xvYWQrMHhiMC8weDFmMAo+
+Pj4gW8KgwqAgMjQuMzgzMzY2XcKgIGt2bV9zY2hlZF9pbisweDFjLzB4MjgKPj4+IFvCoMKgIDI0
+LjM4MzQ2Nl3CoCBmaW5pc2hfdGFza19zd2l0Y2grMHhkOC8weDFkOAo+Pj4gW8KgwqAgMjQuMzgz
+NTY2XcKgIF9fc2NoZWR1bGUrMHgyNDgvMHg0YTAKPj4+IFvCoMKgIDI0LjM4MzY2Nl3CoCBwcmVl
+bXB0X3NjaGVkdWxlX2lycSsweDYwLzB4OTAKPj4+IFvCoMKgIDI0LjM4MzY2Nl3CoCBlbDFfaXJx
+KzB4ZDAvMHgxODAKPj4+IFvCoMKgIDI0LjM4Mzc2Nl3CoCBrdm1faGFuZGxlX2d1ZXN0X2Fib3J0
+KzB4MC8weDNhMAo+Pj4gW8KgwqAgMjQuMzgzODY2XcKgIGt2bV9hcmNoX3ZjcHVfaW9jdGxfcnVu
+KzB4NDFjLzB4Njg4Cj4+PiBbwqDCoCAyNC4zODM4NjZdwqAga3ZtX3ZjcHVfaW9jdGwrMHg0YzAv
+MHg4MzgKPj4+IFvCoMKgIDI0LjM4Mzk2Nl3CoCBkb192ZnNfaW9jdGwrMHhiOC8weDg3OAo+Pj4g
+W8KgwqAgMjQuMzg0MDc3XcKgIGtzeXNfaW9jdGwrMHg4NC8weDkwCj4+PiBbwqDCoCAyNC4zODQx
+NjZdwqAgX19hcm02NF9zeXNfaW9jdGwrMHgxOC8weDI4Cj4+PiBbwqDCoCAyNC4zODQxNjZdwqAg
+ZWwwX3N2Y19jb21tb24uY29uc3Rwcm9wLjArMHhiMC8weDE2OAo+Pj4gW8KgwqAgMjQuMzg0MjY2
+XcKgIGVsMF9zdmNfaGFuZGxlcisweDI4LzB4NzgKPj4+IFvCoMKgIDI0LjM4NDM2Nl3CoCBlbDBf
+c3ZjKzB4OC8weGMKPj4+IFvCoMKgIDI0LjM4NDM2Nl0gLS0tWyBlbmQgdHJhY2UgMzdhMzIyOTNl
+NDNhYzEyYyBdLS0tCj4+PiBbwqDCoCAyNC4zODQ2NjZdIFdBUk5JTkc6IENQVTogMyBQSUQ6IDE2
+MCBhdAo+Pj4gYXJjaC9hcm02NC9rdm0vLi4vLi4vLi4vdmlydC9rdm0vYXJtL2FyY2hfdGltZXIu
+YzoxNzAKPj4+IGt2bV90aW1lcl9pcnFfY2FuX2ZpcmUrMHhjLzB4MzAKPj4+IFvCoMKgIDI0LjM4
+NDc2Nl0gTW9kdWxlcyBsaW5rZWQgaW46Cj4+PiBbwqDCoCAyNC4zODQ4NjZdIENQVTogMyBQSUQ6
+IDE2MCBDb21tOiBrdm0tdmNwdS0xIFRhaW50ZWQ6IEcgICAgICAgIFcKPj4+IDUuMi4wLXJjNS0w
+MDA2MC1nN2RiY2U2M2JkMWM3ICMxNDUKPj4+IFvCoMKgIDI0LjM4NDk2Nl0gSGFyZHdhcmUgbmFt
+ZTogRm91bmRhdGlvbi12OEEgKERUKQo+Pj4gW8KgwqAgMjQuMzg0OTY2XSBwc3RhdGU6IDQwNDAw
+MDA5IChuWmN2IGRhaWYgK1BBTiAtVUFPKQo+Pj4gW8KgwqAgMjQuMzg1MDY2XSBwYyA6IGt2bV90
+aW1lcl9pcnFfY2FuX2ZpcmUrMHhjLzB4MzAKPj4+IFvCoMKgIDI0LjM4NTE2Nl0gbHIgOiB0aW1l
+cl9lbXVsYXRlKzB4MjQvMHg5OAo+Pj4gW8KgwqAgMjQuMzg1MTY2XSBzcCA6IGZmZmYwMDAwMTNk
+OGI3ODAKPj4+IFvCoMKgIDI0LjM4NTI2Nl0geDI5OiBmZmZmMDAwMDEzZDhiNzgwIHgyODogZmZm
+ZjgwMDg3YTYzOWI4MAo+Pj4gW8KgwqAgMjQuMzg1MzY2XSB4Mjc6IGZmZmYwMDAwMTBiYTg2NDgg
+eDI2OiBmZmZmMDAwMDEwYjcxYjQwCj4+PiBbwqDCoCAyNC4zODU0NjZdIHgyNTogZmZmZjgwMDg3
+YTYzYTEwMCB4MjQ6IDAwMDAwMDAwMDAwMDAwMDAKPj4+IFvCoMKgIDI0LjM4NTQ2Nl0geDIzOiAw
+MDAwODAwODZjYTU0MDAwIHgyMjogZmZmZjAwMDAxMDBjZTI2MAo+Pj4gW8KgwqAgMjQuMzg1NTY2
+XSB4MjE6IGZmZmY4MDA4NzVlN2M5MTggeDIwOiBmZmZmODAwODc1ZTdhODAwCj4+PiBbwqDCoCAy
+NC4zODU2NjZdIHgxOTogZmZmZjgwMDg3NWU3Y2E4MCB4MTg6IDAwMDAwMDAwMDAwMDAwMDAKPj4+
+IFvCoMKgIDI0LjM4NTc2Nl0geDE3OiAwMDAwMDAwMDAwMDAwMDAwIHgxNjogMDAwMDAwMDAwMDAw
+MDAwMAo+Pj4gW8KgwqAgMjQuMzg1ODY2XSB4MTU6IDAwMDAwMDAwMDAwMDAwMDAgeDE0OiAwMDAw
+MDAwMDAwMDAyMTE4Cj4+PiBbwqDCoCAyNC4zODU5NjZdIHgxMzogMDAwMDAwMDAwMDAwMjE5MCB4
+MTI6IDAwMDAwMDAwMDAwMDIyODAKPj4+IFvCoMKgIDI0LjM4NTk2Nl0geDExOiAwMDAwMDAwMDAw
+MDAyMjA4IHgxMDogMDAwMDAwMDAwMDAwMDA0MAo+Pj4gW8KgwqAgMjQuMzg2MDY2XSB4OSA6IGZm
+ZmYwMDAwMTJkYzNiMzggeDggOiAwMDAwMDAwMDAwMDAwMDAwCj4+PiBbwqDCoCAyNC4zODYxNjZd
+IHg3IDogMDAwMDAwMDAwMDAwMDAwMCB4NiA6IGZmZmY4MDA4N2FjMDAyNDgKPj4+IFvCoMKgIDI0
+LjM4NjI2Nl0geDUgOiAwMDAwODAwODZjYTU0MDAwIHg0IDogMDAwMDAwMDAwMDAwMjExOAo+Pj4g
+W8KgwqAgMjQuMzg2MzY2XSB4MyA6IGVlZWVlZWVlZWVlZWVlZWYgeDIgOiBmZmZmODAwODc1ZTdj
+OTE4Cj4+PiBbwqDCoCAyNC4zODY0NjZdIHgxIDogMDAwMDAwMDAwMDAwMDAwMSB4MCA6IGZmZmY4
+MDA4NzVlN2NhODAKPj4+IFvCoMKgIDI0LjM4NjQ2Nl0gQ2FsbCB0cmFjZToKPj4+IFvCoMKgIDI0
+LjM4NjU2Nl3CoCBrdm1fdGltZXJfaXJxX2Nhbl9maXJlKzB4Yy8weDMwCj4+PiBbwqDCoCAyNC4z
+ODY2NjZdwqAga3ZtX3RpbWVyX3ZjcHVfbG9hZCsweGE4LzB4MWEwCj4+PiBbwqDCoCAyNC4zODY2
+NjZdwqAga3ZtX2FyY2hfdmNwdV9sb2FkKzB4YjAvMHgxZjAKPj4+IFvCoMKgIDI0LjM4Njg5OF3C
+oCBrdm1fc2NoZWRfaW4rMHgxYy8weDI4Cj4+PiBbwqDCoCAyNC4zODY5NjZdwqAgZmluaXNoX3Rh
+c2tfc3dpdGNoKzB4ZDgvMHgxZDgKPj4+IFvCoMKgIDI0LjM4NzE2Nl3CoCBfX3NjaGVkdWxlKzB4
+MjQ4LzB4NGEwCj4+PiBbwqDCoCAyNC4zODczNTRdwqAgcHJlZW1wdF9zY2hlZHVsZV9pcnErMHg2
+MC8weDkwCj4+PiBbwqDCoCAyNC4zODczNjZdwqAgZWwxX2lycSsweGQwLzB4MTgwCj4+PiBbwqDC
+oCAyNC4zODc0NjZdwqAga3ZtX2hhbmRsZV9ndWVzdF9hYm9ydCsweDAvMHgzYTAKPj4+IFvCoMKg
+IDI0LjM4NzU2Nl3CoCBrdm1fYXJjaF92Y3B1X2lvY3RsX3J1bisweDQxYy8weDY4OAo+Pj4gW8Kg
+wqAgMjQuMzg3NTY2XcKgIGt2bV92Y3B1X2lvY3RsKzB4NGMwLzB4ODM4Cj4+PiBbwqDCoCAyNC4z
+ODc2NjZdwqAgZG9fdmZzX2lvY3RsKzB4YjgvMHg4NzgKPj4+IFvCoMKgIDI0LjM4Nzc2Nl3CoCBr
+c3lzX2lvY3RsKzB4ODQvMHg5MAo+Pj4gW8KgwqAgMjQuMzg3ODY2XcKgIF9fYXJtNjRfc3lzX2lv
+Y3RsKzB4MTgvMHgyOAo+Pj4gW8KgwqAgMjQuMzg3ODY2XcKgIGVsMF9zdmNfY29tbW9uLmNvbnN0
+cHJvcC4wKzB4YjAvMHgxNjgKPj4+IFvCoMKgIDI0LjM4Nzk2Nl3CoCBlbDBfc3ZjX2hhbmRsZXIr
+MHgyOC8weDc4Cj4+PiBbwqDCoCAyNC4zODgwNjZdwqAgZWwwX3N2YysweDgvMHhjCj4+PiBbwqDC
+oCAyNC4zODgwNjZdIC0tLVsgZW5kIHRyYWNlIDM3YTMyMjkzZTQzYWMxMmQgXS0tLQo+Pj4gUEFT
+UzogY3B1LW9uCj4+PiBTVU1NQVJZOiA0IHRlW8KgwqAgMjQuMzkwMjY2XSBXQVJOSU5HOiBDUFU6
+IDMgUElEOiAxNjAgYXQKPj4+IGFyY2gvYXJtNjQva3ZtLy4uLy4uLy4uL3ZpcnQva3ZtL2FybS9h
+cmNoX3RpbWVyLmM6MTcwCj4+PiBrdm1fdGltZXJfaXJxX2Nhbl9maXJlKzB4Yy8weDMwCj4+PiBz
+W8KgwqAgMjQuMzkwMzY2XSBNb2R1bGVzIGxpbmtlZCBpbjoKPj4+IHRzW8KgwqAgMjQuMzkwMzY2
+XSBDUFU6IDMgUElEOiAxNjAgQ29tbToga3ZtLXZjcHUtMSBUYWludGVkOiBHICAgICAgICBXCj4+
+PiA1LjIuMC1yYzUtMDAwNjAtZzdkYmNlNjNiZDFjNyAjMTQ1Cj4+PiBbwqDCoCAyNC4zOTA1NjZd
+IEhhcmR3YXJlIG5hbWU6IEZvdW5kYXRpb24tdjhBIChEVCkKPj4+Cj4+PiBbwqDCoCAyNC4zOTA3
+OTVdIHBzdGF0ZTogNDA0MDAwMDkgKG5aY3YgZGFpZiArUEFOIC1VQU8pCj4+PiBbwqDCoCAyNC4z
+OTA4NjZdIHBjIDoga3ZtX3RpbWVyX2lycV9jYW5fZmlyZSsweGMvMHgzMAo+Pj4gW8KgwqAgMjQu
+MzkwOTY2XSBsciA6IHRpbWVyX2VtdWxhdGUrMHgyNC8weDk4Cj4+PiBbwqDCoCAyNC4zOTEwNjZd
+IHNwIDogZmZmZjAwMDAxM2Q4Yjc4MAo+Pj4gW8KgwqAgMjQuMzkxMDY2XSB4Mjk6IGZmZmYwMDAw
+MTNkOGI3ODAgeDI4OiBmZmZmODAwODdhNjM5YjgwCj4+PiBbwqDCoCAyNC4zOTExNjZdIHgyNzog
+ZmZmZjAwMDAxMGJhODY0OCB4MjY6IGZmZmYwMDAwMTBiNzFiNDAKPj4+IFvCoMKgIDI0LjM5MTI2
+Nl0geDI1OiBmZmZmODAwODdhNjNhMTAwIHgyNDogMDAwMDAwMDAwMDAwMDAwMAo+Pj4gW8KgwqAg
+MjQuMzkxMzY2XSB4MjM6IDAwMDA4MDA4NmNhNTQwMDAgeDIyOiAwMDAwMDAwMDAwMDAwMDAzCj4+
+PiBbwqDCoCAyNC4zOTE0NjZdIHgyMTogZmZmZjgwMDg3NWU3YzkxOCB4MjA6IGZmZmY4MDA4NzVl
+N2E4MDAKPj4+IFvCoMKgIDI0LjM5MTQ2Nl0geDE5OiBmZmZmODAwODc1ZTdjYTA4IHgxODogMDAw
+MDAwMDAwMDAwMDAwMAo+Pj4gW8KgwqAgMjQuMzkxNTY2XSB4MTc6IDAwMDAwMDAwMDAwMDAwMDAg
+eDE2OiAwMDAwMDAwMDAwMDAwMDAwCj4+PiBbwqDCoCAyNC4zOTE2NjZdIHgxNTogMDAwMDAwMDAw
+MDAwMDAwMCB4MTQ6IDAwMDAwMDAwMDAwMDIxMTgKPj4+IFvCoMKgIDI0LjM5MTc2Nl0geDEzOiAw
+MDAwMDAwMDAwMDAyMTkwIHgxMjogMDAwMDAwMDAwMDAwMjI4MAo+Pj4gW8KgwqAgMjQuMzkxODY2
+XSB4MTE6IDAwMDAwMDAwMDAwMDIyMDggeDEwOiAwMDAwMDAwMDAwMDAwMDQwCj4+PiBbwqDCoCAy
+NC4zOTE5NDJdIHg5IDogZmZmZjAwMDAxMmRjM2IzOCB4OCA6IDAwMDAwMDAwMDAwMDAwMDAKPj4+
+IFvCoMKgIDI0LjM5MTk2Nl0geDcgOiAwMDAwMDAwMDAwMDAwMDAwIHg2IDogZmZmZjgwMDg3YWMw
+MDI0OAo+Pj4gW8KgwqAgMjQuMzkyMDY2XSB4NSA6IDAwMDA4MDA4NmNhNTQwMDAgeDQgOiAwMDAw
+MDAwMDAwMDAyMTE4Cj4+PiBbwqDCoCAyNC4zOTIxNjZdIHgzIDogZWVlZWVlZWVlZWVlZWVlZiB4
+MiA6IGZmZmY4MDA4NzVlN2M5MTgKPj4+IFvCoMKgIDI0LjM5MjI2OV0geDEgOiAwMDAwMDAwMDAw
+MDAwMDAxIHgwIDogZmZmZjgwMDg3NWU3Y2EwOAo+Pj4gW8KgwqAgMjQuMzkyMzY2XSBDYWxsIHRy
+YWNlOgo+Pj4gW8KgwqAgMjQuMzkyNDMzXcKgIGt2bV90aW1lcl9pcnFfY2FuX2ZpcmUrMHhjLzB4
+MzAKPj4+IFvCoMKgIDI0LjM5MjQ2Nl3CoCBrdm1fdGltZXJfdmNwdV9sb2FkKzB4OWMvMHgxYTAK
+Pj4+IFvCoMKgIDI0LjM5MjU5N13CoCBrdm1fYXJjaF92Y3B1X2xvYWQrMHhiMC8weDFmMAo+Pj4g
+W8KgwqAgMjQuMzkyNjY2XcKgIGt2bV9zY2hlZF9pbisweDFjLzB4MjgKPj4+IFvCoMKgIDI0LjM5
+Mjc2Nl3CoCBmaW5pc2hfdGFza19zd2l0Y2grMHhkOC8weDFkOAo+Pj4gW8KgwqAgMjQuMzkyNzY2
+XcKgIF9fc2NoZWR1bGUrMHgyNDgvMHg0YTAKPj4+IFvCoMKgIDI0LjM5Mjg2Nl3CoCBwcmVlbXB0
+X3NjaGVkdWxlX2lycSsweDYwLzB4OTAKPj4+IFvCoMKgIDI0LjM5Mjk2Nl3CoCBlbDFfaXJxKzB4
+ZDAvMHgxODAKPj4+IFvCoMKgIDI0LjM5Mjk2Nl3CoCBrdm1faGFuZGxlX2d1ZXN0X2Fib3J0KzB4
+MC8weDNhMAo+Pj4gW8KgwqAgMjQuMzkzMDY2XcKgIGt2bV9hcmNoX3ZjcHVfaW9jdGxfcnVuKzB4
+NDFjLzB4Njg4Cj4+PiBbwqDCoCAyNC4zOTMxNjZdwqAga3ZtX3ZjcHVfaW9jdGwrMHg0YzAvMHg4
+MzgKPj4+IFvCoMKgIDI0LjM5MzI2Nl3CoCBkb192ZnNfaW9jdGwrMHhiOC8weDg3OAo+Pj4gW8Kg
+wqAgMjQuMzkzMjY2XcKgIGtzeXNfaW9jdGwrMHg4NC8weDkwCj4+PiBbwqDCoCAyNC4zOTMzNjZd
+wqAgX19hcm02NF9zeXNfaW9jdGwrMHgxOC8weDI4Cj4+PiBbwqDCoCAyNC4zOTM0NjZdwqAgZWww
+X3N2Y19jb21tb24uY29uc3Rwcm9wLjArMHhiMC8weDE2OAo+Pj4gW8KgwqAgMjQuMzkzNTY2XcKg
+IGVsMF9zdmNfaGFuZGxlcisweDI4LzB4NzgKPj4+IFvCoMKgIDI0LjM5MzU2Nl3CoCBlbDBfc3Zj
+KzB4OC8weGMKPj4+IFvCoMKgIDI0LjM5MzY2Nl0gLS0tWyBlbmQgdHJhY2UgMzdhMzIyOTNlNDNh
+YzEyZSBdLS0tCj4+PiBbwqDCoCAyNC4zOTM4NjZdIFdBUk5JTkc6IENQVTogMyBQSUQ6IDE2MCBh
+dAo+Pj4gYXJjaC9hcm02NC9rdm0vLi4vLi4vLi4vdmlydC9rdm0vYXJtL2FyY2hfdGltZXIuYzox
+NzAKPj4+IGt2bV90aW1lcl9pcnFfY2FuX2ZpcmUrMHhjLzB4MzAKPj4+IFvCoMKgIDI0LjM5NDA2
+Nl0gTW9kdWxlcyBsaW5rZWQgaW46Cj4+PiBbwqDCoCAyNC4zOTQyNjZdIENQVTogMyBQSUQ6IDE2
+MCBDb21tOiBrdm0tdmNwdS0xIFRhaW50ZWQ6IEcgICAgICAgIFcKPj4+IDUuMi4wLXJjNS0wMDA2
+MC1nN2RiY2U2M2JkMWM3ICMxNDUKPj4+IFvCoMKgIDI0LjM5NDM2Nl0gSGFyZHdhcmUgbmFtZTog
+Rm91bmRhdGlvbi12OEEgKERUKQo+Pj4gW8KgwqAgMjQuMzk0NDY2XSBwc3RhdGU6IDQwNDAwMDA5
+IChuWmN2IGRhaWYgK1BBTiAtVUFPKQo+Pj4gW8KgwqAgMjQuMzk0NDY2XSBwYyA6IGt2bV90aW1l
+cl9pcnFfY2FuX2ZpcmUrMHhjLzB4MzAKPj4+IFvCoMKgIDI0LjM5NDU2Nl0gbHIgOiB0aW1lcl9l
+bXVsYXRlKzB4MjQvMHg5OAo+Pj4gW8KgwqAgMjQuMzk0NjY2XSBzcCA6IGZmZmYwMDAwMTNkOGI3
+ODAKPj4+IFvCoMKgIDI0LjM5NDcyN10geDI5OiBmZmZmMDAwMDEzZDhiNzgwIHgyODogZmZmZjgw
+MDg3YTYzOWI4MAo+Pj4gW8KgwqAgMjQuMzk0NzY2XSB4Mjc6IGZmZmYwMDAwMTBiYTg2NDggeDI2
+OiBmZmZmMDAwMDEwYjcxYjQwCj4+PiBbwqDCoCAyNC4zOTQ4NjZdIHgyNTogZmZmZjgwMDg3YTYz
+YTEwMCB4MjQ6IDAwMDAwMDAwMDAwMDAwMDAKPj4+IFvCoMKgIDI0LjM5NDk2Nl0geDIzOiAwMDAw
+ODAwODZjYTU0MDAwIHgyMjogMDAwMDAwMDAwMDAwMDAwMwo+Pj4gW8KgwqAgMjQuMzk0OTY2XSB4
+MjE6IGZmZmY4MDA4NzVlN2M5MTggeDIwOiBmZmZmODAwODc1ZTdhODAwCj4+PiBbwqDCoCAyNC4z
+OTUwNjZdIHgxOTogZmZmZjgwMDg3NWU3Y2E4MCB4MTg6IDAwMDAwMDAwMDAwMDAwMDAKPj4+IFvC
+oMKgIDI0LjM5NTE2Nl0geDE3OiAwMDAwMDAwMDAwMDAwMDAwIHgxNjogMDAwMDAwMDAwMDAwMDAw
+MAo+Pj4gW8KgwqAgMjQuMzk1MjY2XSB4MTU6IDAwMDAwMDAwMDAwMDAwMDAgeDE0OiAwMDAwMDAw
+MDAwMDAyMTE4Cj4+PiBbwqDCoCAyNC4zOTUzODNdIHgxMzogMDAwMDAwMDAwMDAwMjE5MCB4MTI6
+IDAwMDAwMDAwMDAwMDIyODAKPj4+IFvCoMKgIDI0LjM5NTQ2Nl0geDExOiAwMDAwMDAwMDAwMDAy
+MjA4IHgxMDogMDAwMDAwMDAwMDAwMDA0MAo+Pj4gW8KgwqAgMjQuMzk1NTQ3XSB4OSA6IGZmZmYw
+MDAwMTJkYzNiMzggeDggOiAwMDAwMDAwMDAwMDAwMDAwCj4+PiBbwqDCoCAyNC4zOTU2NjZdIHg3
+IDogMDAwMDAwMDAwMDAwMDAwMCB4NiA6IGZmZmY4MDA4N2FjMDAyNDgKPj4+IFvCoMKgIDI0LjM5
+NTg2Nl0geDUgOiAwMDAwODAwODZjYTU0MDAwIHg0IDogMDAwMDAwMDAwMDAwMjExOAo+Pj4gW8Kg
+wqAgMjQuMzk1OTY2XSB4MyA6IGVlZWVlZWVlZWVlZWVlZWYgeDIgOiBmZmZmODAwODc1ZTdjOTE4
+Cj4+PiBbwqDCoCAyNC4zOTYwNjZdIHgxIDogMDAwMDAwMDAwMDAwMDAwMSB4MCA6IGZmZmY4MDA4
+NzVlN2NhODAKPj4+IFvCoMKgIDI0LjM5NjA2Nl0gQ2FsbCB0cmFjZToKPj4+IFvCoMKgIDI0LjM5
+NjE2Nl3CoCBrdm1fdGltZXJfaXJxX2Nhbl9maXJlKzB4Yy8weDMwCj4+PiBbwqDCoCAyNC4zOTYy
+NjZdwqAga3ZtX3RpbWVyX3ZjcHVfbG9hZCsweGE4LzB4MWEwCj4+PiBbwqDCoCAyNC4zOTYzNjZd
+wqAga3ZtX2FyY2hfdmNwdV9sb2FkKzB4YjAvMHgxZjAKPj4+IFvCoMKgIDI0LjM5NjM2Nl3CoCBr
+dm1fc2NoZWRfaW4rMHgxYy8weDI4Cj4+PiBbwqDCoCAyNC4zOTY0NjZdwqAgZmluaXNoX3Rhc2tf
+c3dpdGNoKzB4ZDgvMHgxZDgKPj4+IFvCoMKgIDI0LjM5NjU2Nl3CoCBfX3NjaGVkdWxlKzB4MjQ4
+LzB4NGEwCj4+PiBbwqDCoCAyNC4zOTY2NjZdwqAgcHJlZW1wdF9zY2hlZHVsZV9pcnErMHg2MC8w
+eDkwCj4+PiBbwqDCoCAyNC4zOTY2NjZdwqAgZWwxX2lycSsweGQwLzB4MTgwCj4+PiBbwqDCoCAy
+NC4zOTY3NjZdwqAga3ZtX2hhbmRsZV9ndWVzdF9hYm9ydCsweDAvMHgzYTAKPj4+IFvCoMKgIDI0
+LjM5Njg2Nl3CoCBrdm1fYXJjaF92Y3B1X2lvY3RsX3J1bisweDQxYy8weDY4OAo+Pj4gW8KgwqAg
+MjQuMzk2ODY2XcKgIGt2bV92Y3B1X2lvY3RsKzB4NGMwLzB4ODM4Cj4+PiBbwqDCoCAyNC4zOTcw
+MjFdwqAgZG9fdmZzX2lvY3RsKzB4YjgvMHg4NzgKPj4+IFvCoMKgIDI0LjM5NzA2Nl3CoCBrc3lz
+X2lvY3RsKzB4ODQvMHg5MAo+Pj4gW8KgwqAgMjQuMzk3MTY2XcKgIF9fYXJtNjRfc3lzX2lvY3Rs
+KzB4MTgvMHgyOAo+Pj4gW8KgwqAgMjQuMzk3MzQ4XcKgIGVsMF9zdmNfY29tbW9uLmNvbnN0cHJv
+cC4wKzB4YjAvMHgxNjgKPj4+IFvCoMKgIDI0LjM5NzM2Nl3CoCBlbDBfc3ZjX2hhbmRsZXIrMHgy
+OC8weDc4Cj4+PiBbwqDCoCAyNC4zOTc1NjZdwqAgZWwwX3N2YysweDgvMHhjCj4+PiBbwqDCoCAy
+NC4zOTc2NzZdIC0tLVsgZW5kIHRyYWNlIDM3YTMyMjkzZTQzYWMxMmYgXS0tLQo+Pj4KPj4+ICAg
+IyBLVk0gY29tcGF0aWJpbGl0eSB3YXJuaW5nLgo+Pj4gICAgIHZpcnRpby05cCBkZXZpY2Ugd2Fz
+IG5vdCBkZXRlY3RlZC4KPj4+ICAgICBXaGlsZSB5b3UgaGF2ZSByZXF1ZXN0ZWQgYSB2aXJ0aW8t
+OXAgZGV2aWNlLCB0aGUgZ3Vlc3Qga2VybmVsIGRpZCBub3QKPj4+IGluaXRpYWxpemUgaXQuCj4+
+PiAgICAgUGxlYXNlIG1ha2Ugc3VyZSB0aGF0IHRoZSBndWVzdCBrZXJuZWwgd2FzIGNvbXBpbGVk
+IHdpdGgKPj4+IENPTkZJR19ORVRfOVBfVklSVElPPXkgZW5hYmxlZCBpbiAuY29uZmlnLgo+Pj4K
+Pj4+ICAgIyBLVk0gY29tcGF0aWJpbGl0eSB3YXJuaW5nLgo+Pj4gICAgIHZpcnRpby1uZXQgZGV2
+aWNlIHdhcyBub3QgZGV0ZWN0ZWQuCj4+PiAgICAgV2hpbGUgeW91IGhhdmUgcmVxdWVzdGVkIGEg
+dmlydGlvLW5ldCBkZXZpY2UsIHRoZSBndWVzdCBrZXJuZWwgZGlkIG5vdAo+Pj4gaW5pdGlhbGl6
+ZSBpdC4KPj4+ICAgICBQbGVhc2UgbWFrZSBzdXJlIHRoYXQgdGhlIGd1ZXN0IGtlcm5lbCB3YXMg
+Y29tcGlsZWQgd2l0aCBDT05GSUdfVklSVElPX05FVD15Cj4+PiBlbmFibGVkIGluIC5jb25maWcu
+Cj4+Pgo+Pj4gWy4uXQo+PiBEaWQgc29tZSBpbnZlc3RpZ2F0aW5nIGFuZCB0aGlzIHdhcyBjYXVz
+ZWQgYnkgYSBidWcgaW4ga3ZtLXVuaXQtdGVzdHMgKHRoZSBmaXgKPj4gZm9yIGl0IHdpbGwgYmUg
+cGFydCBvZiB0aGUgRUwyIHBhdGNoZXMgZm9yIGt2bS11bml0LXRlc3RzKS4gVGhlIGd1ZXN0IHdh
+cyB0cnlpbmcKPj4gdG8gZmV0Y2ggYW4gaW5zdHJ1Y3Rpb24gZnJvbSBhZGRyZXNzIDB4MjAwLCB3
+aGljaCBLVk0gaW50ZXJwcmV0cyBhcyBhIHByZWZldGNoCj4+IGFib3J0IG9uIGFuIEkvTyBhZGRy
+ZXNzIGFuZCBlbmRzIHVwIGNhbGxpbmcga3ZtX2luamVjdF9wYWJ0LiBUaGUgY29kZSBmcm9tCj4+
+IGFyY2gvYXJtNjQva3ZtL2luamVjdF9mYXVsdC5jIGRvZXNuJ3Qga25vdyBhbnl0aGluZyBhYm91
+dCBuZXN0ZWQgdmlydHVhbGl6YXRpb24sCj4+IGFuZCBpdCBzZXRzIHRoZSBWQ1BVIG1vZGUgZGly
+ZWN0bHkgdG8gUFNSX01PREVfRUwxaC4gVGhpcyBtYWtlc19oeXBfY3R4dCByZXR1cm4KPj4gZmFs
+c2UsIGFuZCBnZXRfdGltZXJfbWFwIHdpbGwgcmV0dXJuIGFuIGluY29ycmVjdCBtYXBwaW5nLgo+
+Pgo+PiBPbiBuZXh0IGt2bV90aW1lcl92Y3B1X3B1dCwgdGhlIGRpcmVjdCB0aW1lcnMgd2lsbCBi
+ZSB7cCx2fXRpbWVyLCBhbmQKPj4gaHtwLHZ9dGltZXItPmxvYWRlZCB3aWxsIG5vdCBiZSBzZXQg
+dG8gZmFsc2UuIEluIHRoZSBjb3JyZXNwb25kaW5nIGNhbGwgdG8KPj4ga3ZtX3RpbWVyX3ZjcHVf
+bG9hZCwgS1ZNIHdpbGwgdHJ5IHRvIGVtdWxhdGUgdGhlIGhwdGltZXIgYW5kIGh2dGltZXIsIHdo
+aWNoCj4+IHN0aWxsIGhhdmUgbG9hZGVkID0gdHJ1ZS4gQW5kIHRoaXMgY2F1c2VzIHRoZSB3YXJu
+aW5nIEkgc2F3Lgo+Pgo+IEhpIEFsZXhhbmRydSwKPgo+IFdoaWxlIGEgdW5pdCB0ZXN0IGluIGt2
+bS11bml0LXRlc3RzIG1heSBub3QgZG8gd2hhdCBpdCBzaG91bGQgaW4gb3JkZXIgdG8KPiBleGVy
+Y2lzZSB0aGUgY29kZSBpdCdzIHRhcmdldGluZyBhcHByb3ByaWF0ZWx5LCBhbmQgdGhlcmVmb3Jl
+IG5lZWQgdG8gYmUKPiBmaXhlZCBpbiBvcmRlciB0byBkbyB0aGF0LCBJJ2QgYXJndWUgdGhhdCBp
+ZiBhIGd1ZXN0IGNhbiBpbmR1Y2UgYSBob3N0Cj4gd2FybmluZyB0aGVuIHRoYXQncyBhIGhvc3Qg
+YnVnLiBJbmRlZWQgbm93IHRoYXQgeW91J3ZlIGFuYWx5emVkIHRoZQo+IGlzc3VlIHlvdSBjb3Vs
+ZCB3cml0ZSBhIGt2bS11bml0LXRlc3RzIHRlc3QgdG8gc3BlY2lmaWNhbGx5IHJlcHJvZHVjZSB0
+aGUKPiB3YXJuaW5nIGFuZCB0aGVuIHVzZSB0aGF0IHRlc3QgdG8gdGVzdCBhbnkgaG9zdCBmaXgg
+Y2FuZGlkYXRlcy4KPgo+IFRoYW5rcywKPiBkcmV3Cj4KSXQgd2FzIGEgaG9zdCBidWcgdHJpZ2dl
+cmVkIGJ5IGEgYnVnIGluIGt2bS11bml0LXRlc3RzLiBUaGUga3ZtLXVuaXQtdGVzdHMgYnVnCmlz
+IGEgcmVhbCBidWcgYmVjYXVzZSBpdCBnb2VzIGFnYWluc3QgdGhlIGludGVudCBvZiB0aGUgcHNj
+aSB0ZXN0LiBJdCB3YXNuJ3QKZGlzY292ZXJlZCB1bnRpbCBub3cgYmVjYXVzZSB3aXRoIHRoZSB1
+cHN0cmVhbSB2ZXJzaW9uIG9mIExpbnV4IHdlIGRvbid0IGdldCBhbnkKbWVzc2FnZXMgYWJvdXQg
+aXQuIEknbGwgcG9zdCBhIHBhdGNoIGZvciBpdCBhcyBzb29uIGFzIEkgY2FuIGFuZCB3ZSBjYW4g
+ZGlzY3Vzcwpob3cgd2Ugd2FudCB0byBmaXggaXQgOikKClRoYW5rcywKQWxleAoKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
+YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
