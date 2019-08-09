@@ -2,87 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8041E88295
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 20:34:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5EEA1882AC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 20:36:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G5uyjNwCJIJYFiabfLv8XcUZ04aXeQ6YzLIDQAhvKfo=; b=Fb1hf/1bJoAPsG
-	8IbNt2BU44M+sINTXq/61qx9KmDzyTWuuWycXVJ1Vpz6cxnlVjwSDKFiptjAOZg2Nh5+qvT0R8X5f
-	4CpL6IOYUkSeuhK8T1DEhX+6UXmxQ+GO0QqsA/algDb1OZ+rFSuFN1YEUoRRUjb2GmRts75TJpBi+
-	mNCrfZ/24zvrnkLwbPQ6Ak/Cc8CdOUwuZ7njPIMjnDuOsxvkHNQgjD40pq+uSyscvqAk2VpWfovSY
-	EvwN8pNQHJg8goem//zZBRTfW+JbjfMzQJ6eJPs+tXXAQZKPBCiiLLEnEpiDyFwpAxHNHa5yDUVKb
-	GWP2Zg2C62j0OC43m8nQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=B14cK5/bdguAk3fFTo9GKznsUGSXRU7ydc6jnjtnIEo=; b=AaH
+	I44+ulKOSdsoc5pTQGxAOgCN2L5kqzavwP/DYNXeotRqRV7BF31bNvIKfk/jFK5zdpnIxRzU69KbW
+	3uz5VcPglzfiDGTlmjitzgq/vy28bFTWXAYoPFpSin9jFqEs/xFLvPtW3K8jCMqxM9Twi+bukEHxr
+	uKgj2Dpm0xHepmLOSQeiICxFxGLe0cQ0WcpGu+4N+lItEtJ+RZ6vqH7jHOzAGgpe0tL73EnYoxOsi
+	MRBSGjN/aKnsd54U43bWdf6o8T+PZcKMfxB24wsuisn6M5696EvOKswggB8LpO/0UaTG368DV2kc8
+	hqzk7ifEl0DQP4gg3ah58pvGjA21sfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw9im-0007V4-Dw; Fri, 09 Aug 2019 18:34:36 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1hw9ko-0000fH-BO; Fri, 09 Aug 2019 18:36:42 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw9ic-0007Tp-87
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 18:34:30 +0000
-Received: by mail-ot1-x344.google.com with SMTP id q20so136113006otl.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 11:34:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=intel-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AKmwT4Oi8XTfOBRZ+EHljM27mGDbATZqErOPdgBZ4Co=;
- b=uNRSX3SRj+xP7NvVoVokIMCRX8HCckf6BPeA7+psneOxE6/T6dicMcRo/VV/vCJxhH
- 2ah1jUGPfiEAX0QZe8uTSWR6gFWhgEkVpd7BLRD+hlm1cr791u27ba3ZV816f72C1ok8
- DJvRUpLPV43j5Uaws2WuWHOl5aDZAhlefm6RklI/GKafNpFMkZ7uGhbJLlx6oN0VDFGK
- p9qsSUzTb1aagLcVK1DFaMoBq3cp8E+gw3IHnqJRv0XMMx6N9H/htf+j/p8DpyKdONPx
- 7eeraJq2zzFsYaU+6cMltnQHj6kObut6IugXtD7G6VOMY3hT8BtTcsGD9yo4ss/GdWjx
- jZcA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AKmwT4Oi8XTfOBRZ+EHljM27mGDbATZqErOPdgBZ4Co=;
- b=KMpotreOcZoOqN6wMKMmmQB9g9urRZAd2CizM274NgYyDii2uk+OUSHxPT5/YKiQ9G
- Uc42c6EiHME+ncS9iCQUb7d2qjbln2lpcDYHaW8W7sxccuz4qZsgdy0YHGgakLyLYc9d
- Zumx764Dmt3Yw43To2/IkfTCWJrnHpWP1dBv0p8eQo/iR28OoaEyPJONL9pate+umfsm
- 6hI4dtW36Ufr0ldiL91l7twnLfjwYvj5sUTR0MBYItAiOqzsbqCa1qXCYAGQY/5iCuaQ
- nOxcFPpuNDbqP4oLgfyTu31hVG1d/7wbMeeYB7fUr5txGVZfCQ2yv/cw2bRv89wk/1M7
- bd0Q==
-X-Gm-Message-State: APjAAAVXT0SDPP7pAoQ2GfW40hA353mtmYQGzJYHILQCAkiRNTsGsJzQ
- L3eU6W7w+69kdiMeoiDP7FKYAyTpU3vLIug5nwA=
-X-Google-Smtp-Source: APXvYqxeNb9oXB+s8Utamw3Uuce2Zu+9B+X1DtgWilPG1ZjoTGNqEEBHw02QzXop4CuNga1GSGo5G+1XOzKOUdUwEcY=
-X-Received: by 2002:a5d:9a04:: with SMTP id s4mr22651344iol.19.1565375663936; 
- Fri, 09 Aug 2019 11:34:23 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190809162956.488941-1-arnd@arndb.de>
- <20190809163334.489360-1-arnd@arndb.de>
-In-Reply-To: <20190809163334.489360-1-arnd@arndb.de>
-From: Dan Williams <dan.j.williams@intel.com>
-Date: Fri, 9 Aug 2019 11:34:12 -0700
-Message-ID: <CAA9_cmdDbBm0ookyqGJMcyLVFHkYHuR3mEeawQKS2UqYJoWWaQ@mail.gmail.com>
-Subject: Re: [PATCH 1/7] [RFC] ARM: remove Intel iop33x and iop13xx support
-To: Arnd Bergmann <arnd@arndb.de>
+ id 1hw9kf-0000eX-M9
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 18:36:35 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 9CBA0C0B9F;
+ Fri,  9 Aug 2019 18:36:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1565375791; bh=nCNzho8v5alI/6i+1aHygJFRglDtTEl398Nq+I6/yIg=;
+ h=From:To:Cc:Subject:Date:From;
+ b=RN61SRAeyCRovJOdAw3w51pIzr4qX27Evn2Gxk1CVaM57hiZFcd9XGZUG/vwmBudU
+ EC7v0tXdh6Y3nAn826Tmywch55W4daNIOp7Is1PWy9ANjOhLxHBfxLxAle+HWj8FAM
+ BvucbXYt9OA4DKv/jvd9Qfc5lXmAdhNADV84ow6C0i1yaZP+Qw3ZreOSqLswCX42sS
+ 5tOwiEt7847Q+lkFRf+Kq0whtADYQ4VqBAAqncXm8CfQtUazD38g6WyqnCqlOByswC
+ qwmdu4MAxM594bAQXHiuTb3dcSH2J61qbwq4h8bJxa4Q/qiKyhdBIAyXyf/36/MqcX
+ b/DVojavfeMHg==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 4E0CAA0057;
+ Fri,  9 Aug 2019 18:36:27 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net-next 00/12] net: stmmac: Improvements for -next
+Date: Fri,  9 Aug 2019 20:36:08 +0200
+Message-Id: <cover.1565375521.git.joabreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_113428_671259_08F6ED53 
-X-CRM114-Status: GOOD (  13.80  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190809_113633_735169_53DAA1A9 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dan.j.williams[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,50 +78,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, soc@kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- linux-i2c@vger.kernel.org, dmaengine@vger.kernel.org,
- Martin Michlmayr <tbm@cyrius.com>, linux-arm-kernel@lists.infradead.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ add Martin (if cyrius.com address is still valid) ]
+Couple of improvements for -next tree. More info in commit logs.
 
-On Fri, Aug 9, 2019 at 9:35 AM Arnd Bergmann <arnd@arndb.de> wrote:
->
-> There are three families of IOP machines we support in Linux: iop32x
-> (which includes EP80219), iop33x and iop13xx (aka IOP34x aka WP8134x).
->
-> All products we support in the kernel are based on the first of these,
-> iop32x, the other families only ever supported the Intel reference
-> boards but no actual machine anyone could ever buy.
->
-> While one could clearly make them all three work in a single kernel
-> with some work, this takes the easy way out, removing the later two
-> platforms entirely, under the assumption that there are no remaining
-> users.
->
-> Earlier versions of OpenWRT and Debian both had support for iop32x
-> but not the others, and they both dropped iop32x as well in their 2015
-> releases.
->
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
-> I'm just guessing that iop32x is still needed, and the other two are
-> not. If anyone disagrees with that assessment, let me know so we
-> can come up with an alternative approach.
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
 
-I'm not sure who would scream if iop32x support went away as well, but
-I have not followed this space in years hence copying Martin.
+Jose Abreu (12):
+  net: stmmac: Get correct timestamp values from XGMAC
+  net: stmmac: Prepare to add Split Header support
+  net: stmmac: xgmac: Correctly return that RX descriptor is not last
+    one
+  net: stmmac: Add Split Header support and enable it in XGMAC cores
+  net: stmmac: Add a counter for Split Header packets
+  net: stmmac: dwxgmac: Add Flexible PPS support
+  net: stmmac: Add ethtool register dump for XGMAC cores
+  net: stmmac: Add support for SA Insertion/Replacement in XGMAC cores
+  net: stmmac: selftests: Add tests for SA Insertion/Replacement
+  net: stmmac: xgmac: Add EEE support
+  net: stmmac: Add support for VLAN Insertion Offload
+  net: stmmac: selftests: Add selftest for VLAN TX Offload
 
-In any event:
+ drivers/net/ethernet/stmicro/stmmac/common.h       |  10 +
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     |  56 ++++
+ .../net/ethernet/stmicro/stmmac/dwxgmac2_core.c    | 189 +++++++++++++-
+ .../net/ethernet/stmicro/stmmac/dwxgmac2_descs.c   |  88 ++++++-
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c |  31 ++-
+ drivers/net/ethernet/stmicro/stmmac/hwif.h         |  30 +++
+ drivers/net/ethernet/stmicro/stmmac/stmmac.h       |  10 +
+ .../net/ethernet/stmicro/stmmac/stmmac_ethtool.c   |  25 +-
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  | 282 ++++++++++++++++-----
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 194 +++++++++++++-
+ 10 files changed, 824 insertions(+), 91 deletions(-)
 
-Acked-by: Dan Williams <dan.j.williams@intel.com>
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
