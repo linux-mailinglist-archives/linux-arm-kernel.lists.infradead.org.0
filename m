@@ -2,126 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86C5A87C48
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 16:07:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7076087C5C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 16:10:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X+7R19zMZ/QbAKddDRrlsGZvfn0EDl+uBYDCMRfTglg=; b=Ri2LD4YkMnX7tP
-	monGuNqRrhsUdsGVkNq/Mc0r9DUHJThZwAM/wS/Me1asAU6x9IFQhSDkOjPY04bCcnI764V9h+2Jv
-	0xXPWrU9r66R28NS30tpVyW7Jw/udQxvi8Jyb2BHlbCIzGz4Sz7uvkwFYLQlM9aKC4ycYwsSDb0FL
-	4dBZA2oyTpaAvk9rNzVjdoVEQswCnyAEDzqjReFRBfTSaCOGYxOaZ6tHWOviGmUFHX90Z9QP7NoSk
-	9u/j5YxM5VBHal7goEvm0aDV/79eOPPyyLICv6VpveOA9BaNquLKozz0edIRg3GTV0m4HQcxnAVBT
-	i0Fah6ilIlZsNJadIgsQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BMD01ODdiWFYuFyqYamdtmueSp3FDK0zS/rfz2AabHw=; b=fnc+J1mkKsLnib
+	Gjpx90OD4bxJRKw7hOiC9oVD37ipwswMKAdRts/LJhBaBeSCvBggft8L5LLEbPBHIxgQ99Kqq2XSV
+	dqhCq4lW+Kct2VBGiioO9DyICig9F2NpC18Lxmsc4QpguDLWCrnowwZsRtIJbj3OyY1ss8tn0eEsq
+	qei3wVcSdMivdZ8gq4NhSLy6c5CCIsMFQcRytH/G908XbgTQckUr1ePcWdMazvncd+1eXNgyPsoT4
+	c+vPEK5McgKzpMowxqZNhnvKs90FhsoDUCHAnyx9+xDVNZ/Wi6ZjAAq+l6tw94HPlGRKpfgB3+Lr5
+	bzvlXBCwpUmer6pJJh3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw5YH-0007w2-1a; Fri, 09 Aug 2019 14:07:29 +0000
-Received: from mail-db5eur01on0707.outbound.protection.outlook.com
- ([2a01:111:f400:fe02::707]
- helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1hw5bG-00016F-3B; Fri, 09 Aug 2019 14:10:34 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw5Y6-0007va-Jo
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 14:07:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=hqkx+/q2LHvTWC/7/mAi8Vkh9vkWwbcBmH2ChQEo4T7ejP109BmWm18U+XVNLdqyShdqCjpfS2cjHHrGMRHHvYWvs+zyVfEx7+Cnwqim+o826vNQJu1PW+XDJ+vBaaaXi2pfBDWiflxvJ0Tx+oGrffDElU5wHPH+7tv2i9+qf53x/fCP5RSNn8IvPynQAv25GrsbCnvpDoAFBEE3DGqOzCWqvbAk4rfnl8t5Rprpe3D12lwGg5Wxo2A5TLTrZ6Gj0tIQSueYmtzcuLd2NhRKfIOVMdU/fiJkHwwp6VSNwbVNYyY+6MVw2hNoJvDwp4HRAbz6Y9kxGnibllfb/58ymg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=chH+Y3xHAG2dV/7GhshlkXVzB3+JwtEP8Rbx90LLk9c=;
- b=N5gjj1ScDnT7pE9MbyhJDX0ZWVfgcf9yR6Bj2raHGrMLLWMajqDn4V78hhb3skWsC9Vt2IRtGj3qn3XPzwR5jmWFVuykZ6JYqzTk+iE5OewfW35AEOYjM5co/Ra3mJq+X66PEwnfymtwQIuX5q3IFuIOkohwfUxmjqvnZhJmOUzk2aL8URhUkbXQwcziByCyZer/9tvZmIxVoTucMbdQtdu2zRrYjmu+5Z6Tv3JLPHswRJcZ+klqsNzmtx4SRD+uHS5XbSDfzPbndooiI+aDT0KJkiHCGPN/jGh+gTF+5XmTe/TzWDeMlBq00H+EHJek71B3I9VirSW5uQuGHIxeJg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
- dkim=pass header.d=toradex.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=chH+Y3xHAG2dV/7GhshlkXVzB3+JwtEP8Rbx90LLk9c=;
- b=agef0fGBCorV9fEIWVTlORsG3l0GEGB7dRxYYVPHTQa8DnWgDCZunyVSSKJ6w4MXvY/OfQfskC+OaEokoiQPmR8dcP6M/wdk3Sn62YmNIR87sOxhEyz6CQ2puOpBwcsKGp9od4iYBtLMKpymyEbRYXdH+X8dR1fFqeG0PQvFKlQ=
-Received: from VI1PR05MB6415.eurprd05.prod.outlook.com (20.179.27.139) by
- VI1PR05MB4157.eurprd05.prod.outlook.com (10.171.182.148) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2157.18; Fri, 9 Aug 2019 14:07:14 +0000
-Received: from VI1PR05MB6415.eurprd05.prod.outlook.com
- ([fe80::f1b2:353a:da9b:c19a]) by VI1PR05MB6415.eurprd05.prod.outlook.com
- ([fe80::f1b2:353a:da9b:c19a%4]) with mapi id 15.20.2157.020; Fri, 9 Aug 2019
- 14:07:14 +0000
-From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-To: Max Krummenacher <max.krummenacher@toradex.com>, "stefan@agner.ch"
- <stefan@agner.ch>, Philippe Schenker <philippe.schenker@toradex.com>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "michal.vokac@ysoft.com"
- <michal.vokac@ysoft.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>
-Subject: Re: [PATCH v3 03/21] ARM: dts: imx7-colibri: prepare module device
- tree for FlexCAN
-Thread-Topic: [PATCH v3 03/21] ARM: dts: imx7-colibri: prepare module device
- tree for FlexCAN
-Thread-Index: AQHVTPnGbE9U8cUOTEK0ccFwNcLdGaby3YiA
-Date: Fri, 9 Aug 2019 14:07:14 +0000
-Message-ID: <84c580aadaf4e3007cc43e5f73163bf24af4a1ca.camel@toradex.com>
-References: <20190807082556.5013-1-philippe.schenker@toradex.com>
- <20190807082556.5013-4-philippe.schenker@toradex.com>
-In-Reply-To: <20190807082556.5013-4-philippe.schenker@toradex.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=marcel.ziswiler@toradex.com; 
-x-originating-ip: [2a01:2a8:8501:4d00:ca5b:76ff:fedf:3c49]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c17acd6a-0c2e-4afd-b468-08d71cd2e134
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:VI1PR05MB4157; 
-x-ms-traffictypediagnostic: VI1PR05MB4157:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR05MB41575A346C4E36E0FEE32C89FBD60@VI1PR05MB4157.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4303;
-x-forefront-prvs: 01244308DF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(346002)(376002)(396003)(366004)(136003)(39850400004)(199004)(189003)(86362001)(8936002)(446003)(6512007)(53936002)(118296001)(25786009)(99286004)(7736002)(476003)(71190400001)(71200400001)(46003)(6246003)(76176011)(102836004)(6506007)(44832011)(256004)(36756003)(14444005)(2501003)(486006)(4326008)(2616005)(11346002)(186003)(66946007)(66476007)(66556008)(64756008)(66446008)(91956017)(76116006)(5660300002)(7416002)(14454004)(2201001)(81166006)(6116002)(2906002)(81156014)(6436002)(6486002)(110136005)(316002)(54906003)(229853002)(305945005)(8676002)(478600001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB4157;
- H:VI1PR05MB6415.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: toradex.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 4dpXwK0L1wxprrwEX70C2vZBXsIz3mOFSW4iZDdk1NaCFNLNhvl5x5gyc2jR8kcLH3C0IQd/RxQwswPSZy00HKcq+2xAvDZk3OPdoZMWpBTWWhazn93hpMYzYpoMmHIQAqOipztHfA68PZxXCvwAZa3AYV3QdcdB2ew7pD+QWEci+ELqx0PA8vMtqYfescK4nFITahylgjWQdlxGztvJ8hL+a02QIdZroavM0mMAZXZFFyFcpattXq4xViU1VAVX+S0ta5ZPe+Fd897wlsflWxSgBokUfcrnU/NVO3DHROMAtsBFLnfG95TaG7RO9EP8vztF1ffNbISFBGbbmmxL8XniPg4vlsOFBidv2X+pxC+HHdW2FA+mBH7wRlY0n5Xc+TYZcihtajdsQmlqEBy+tnVwfFfZAk0R30gXM8jGxO0=
-Content-ID: <DCEC0E53FD0F3D46901555E1035A3587@eurprd05.prod.outlook.com>
+ id 1hw5b4-00015b-Bx
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 14:10:23 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 09 Aug 2019 07:10:20 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,364,1559545200"; d="scan'208";a="182917945"
+Received: from devajeet-mobl2.amr.corp.intel.com (HELO [10.251.27.22])
+ ([10.251.27.22])
+ by FMSMGA003.fm.intel.com with ESMTP; 09 Aug 2019 07:10:19 -0700
+From: Dave Hansen <dave.hansen@intel.com>
+Subject: Re: [PATCH v7 1/2] arm64: Define
+ Documentation/arm64/tagged-address-abi.rst
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <20190807155321.9648-1-catalin.marinas@arm.com>
+ <20190807155321.9648-2-catalin.marinas@arm.com>
+ <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
+ <20190808172730.GC37129@arrakis.emea.arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=dave.hansen@intel.com; keydata=
+ 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
+Message-ID: <68354acd-e205-71cb-11c6-74a150178ae0@intel.com>
+Date: Fri, 9 Aug 2019 07:10:18 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c17acd6a-0c2e-4afd-b468-08d71cd2e134
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Aug 2019 14:07:14.2242 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 0qRZo+2E0KYhfqC6t8qG+xC6mhvxFCz2a/j44ABgMIF6klOxTyu4B9DChCJL2oQiwWqNJLxUpvm/A49LrW4Yy20myjckenR8vUkjCeOL3po=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB4157
+In-Reply-To: <20190808172730.GC37129@arrakis.emea.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_070718_652703_7C5281D0 
-X-CRM114-Status: GOOD (  16.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190809_071022_455143_F83E4173 
+X-CRM114-Status: GOOD (  34.31  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe02:0:0:0:707 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -133,120 +115,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-imx@nxp.com" <linux-imx@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-08-07 at 08:26 +0000, Philippe Schenker wrote:
-> Prepare FlexCAN use on SODIMM 55/63 178/188. Those SODIMM pins are
-> compatible for CAN bus use with several modules from the Colibri
-> family.
-> Add Better drivestrength and also add flexcan2.
-> 
-> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
+On 8/8/19 10:27 AM, Catalin Marinas wrote:
+> On Wed, Aug 07, 2019 at 01:38:16PM -0700, Dave Hansen wrote:
+> Extending the interface is still possible even with the current
+> proposal, by changing arg2 etc. We also don't seem to be consistent in
+> sys_prctl().
 
-Acked-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+We are not consistent because it took a long time to learn this lesson,
+but I think this is a best-practice that we follow for new ones.
 
-> ---
+>> Also, shouldn't this be converted over to an arch_prctl()?
 > 
-> Changes in v3: None
-> Changes in v2: None
+> What do you mean by arch_prctl()? We don't have such thing, apart from
+> maybe arch_prctl_spec_ctrl_*(). We achieve the same thing with the
+> {SET,GET}_TAGGED_ADDR_CTRL macros. They could be renamed to
+> arch_prctl_tagged_addr_{set,get} or something but I don't see much
+> point.
+
+Silly me.  We have an x86-specific:
+
+	SYSCALL_DEFINE2(arch_prctl, int , option, unsigned long , arg2)
+
+I guess there's no ARM equivalent so you're stuck with the generic one.
+
+> What would be better (for a separate patch series) is to clean up
+> sys_prctl() and move the arch-specific options into separate
+> arch_prctl() under arch/*/kernel/. But it's not really for this series.
+
+I think it does make sense for truly arch-specific features to stay out
+of the arch-generic prctl().  Yes, I know I've personally violated this
+in the past. :)
+
+>> What is the scope of these prctl()'s?  Are they thread-scoped or
+>> process-scoped?  Can two threads in the same process run with different
+>> tagging ABI modes?
 > 
->  arch/arm/boot/dts/imx7-colibri.dtsi | 35 ++++++++++++++++++++++++---
-> --
->  1 file changed, 30 insertions(+), 5 deletions(-)
+> Good point. They are thread-scoped and this should be made clear in the
+> doc. Two threads can have different modes.
 > 
-> diff --git a/arch/arm/boot/dts/imx7-colibri.dtsi
-> b/arch/arm/boot/dts/imx7-colibri.dtsi
-> index f7c9ce5bed47..52046085ce6f 100644
-> --- a/arch/arm/boot/dts/imx7-colibri.dtsi
-> +++ b/arch/arm/boot/dts/imx7-colibri.dtsi
-> @@ -117,6 +117,18 @@
->  	fsl,magic-packet;
->  };
->  
-> +&flexcan1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_flexcan1>;
-> +	status = "disabled";
-> +};
-> +
-> +&flexcan2 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_flexcan2>;
-> +	status = "disabled";
-> +};
-> +
->  &gpmi {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_gpmi_nand>;
-> @@ -330,12 +342,11 @@
->  
->  &iomuxc {
->  	pinctrl-names = "default";
-> -	pinctrl-0 = <&pinctrl_gpio1 &pinctrl_gpio2 &pinctrl_gpio3
-> &pinctrl_gpio4>;
-> +	pinctrl-0 = <&pinctrl_gpio1 &pinctrl_gpio2 &pinctrl_gpio3
-> &pinctrl_gpio4
-> +		     &pinctrl_gpio7>;
->  
->  	pinctrl_gpio1: gpio1-grp {
->  		fsl,pins = <
-> -			MX7D_PAD_ENET1_RGMII_RD3__GPIO7_IO3	0x74
-> /* SODIMM 55 */
-> -			MX7D_PAD_ENET1_RGMII_RD2__GPIO7_IO2	0x74
-> /* SODIMM 63 */
->  			MX7D_PAD_SAI1_RX_SYNC__GPIO6_IO16	0x14 /*
-> SODIMM 77 */
->  			MX7D_PAD_EPDC_DATA09__GPIO2_IO9		0x14
-> /* SODIMM 89 */
->  			MX7D_PAD_EPDC_DATA08__GPIO2_IO8		0x74
-> /* SODIMM 91 */
-> @@ -416,6 +427,13 @@
->  		>;
->  	};
->  
-> +	pinctrl_gpio7: gpio7-grp { /* Alternatively CAN1 */
-> +		fsl,pins = <
-> +			MX7D_PAD_ENET1_RGMII_RD3__GPIO7_IO3	0x14
-> /* SODIMM 55 */
-> +			MX7D_PAD_ENET1_RGMII_RD2__GPIO7_IO2	0x14
-> /* SODIMM 63 */
-> +		>;
-> +	};
-> +
->  	pinctrl_i2c1_int: i2c1-int-grp { /* PMIC / TOUCH */
->  		fsl,pins = <
->  			MX7D_PAD_GPIO1_IO13__GPIO1_IO13	0x79
-> @@ -459,10 +477,17 @@
->  		>;
->  	};
->  
-> +	pinctrl_flexcan1: flexcan1-grp {
-> +		fsl,pins = <
-> +			MX7D_PAD_ENET1_RGMII_RD3__FLEXCAN1_TX	0x79
-> /* SODIMM 55 */
-> +			MX7D_PAD_ENET1_RGMII_RD2__FLEXCAN1_RX	0x79
-> /* SODIMM 63 */
-> +		>;
-> +	};
-> +
->  	pinctrl_flexcan2: flexcan2-grp {
->  		fsl,pins = <
-> -			MX7D_PAD_GPIO1_IO14__FLEXCAN2_RX	0x59
-> -			MX7D_PAD_GPIO1_IO15__FLEXCAN2_TX	0x59
-> +			MX7D_PAD_GPIO1_IO14__FLEXCAN2_RX	0x79 /*
-> SODIMM 188 */
-> +			MX7D_PAD_GPIO1_IO15__FLEXCAN2_TX	0x79 /*
-> SODIMM 178 */
->  		>;
->  	};
+> The expectation is that this is invoked early during process start (by
+> the dynamic loader or libc init) while in single-thread mode and
+> subsequent threads will inherit the same mode. However, other uses are
+> possible.
+
+If that's the expectation, it would be really nice to codify it.
+Basically, you can't enable the feature if another thread is already
+been forked off.
+
+> That said, do we have a precedent for changing user ABI from the kernel
+> cmd line? 'noexec32', 'vsyscall' I think come close. With the prctl()
+> for opt-in, controlling this from the cmd line is not too bad (though my
+> preference is still for the sysctl).
+
+There are certainly user-visible things like being able to select
+various CPU features.
+
+>>> +When a process has successfully enabled the new ABI by invoking
+>>> +prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE), the following
+>>> +behaviours are guaranteed:
+>>> +
+>>> +- Every currently available syscall, except the cases mentioned in section
+>>> +  3, can accept any valid tagged pointer. The same rule is applicable to
+>>> +  any syscall introduced in the future.
+>>> +
+>>> +- The syscall behaviour is undefined for non valid tagged pointers.
+>>
+>> Do you really mean "undefined"?  I mean, a bad pointer is a bad pointer.
+>>  Why should it matter if it's a tagged bad pointer or an untagged bad
+>> pointer?
+> 
+> Szabolcs already replied here. We may have tagged pointers that can be
+> dereferenced just fine but being passed to the kernel may not be well
+> defined (e.g. some driver doing a find_vma() that fails unless it
+> explicitly untags the address). It's as undefined as the current
+> behaviour (without these patches) guarantees.
+
+It might just be nicer to point out what this features *changes* about
+invalid pointer handling, which is nothing. :)  Maybe:
+
+	The syscall behaviour for invalid pointers is the same for both
+	tagged and untagged pointers.
+
+>>> +- prctl(PR_SET_MM, ``*``, ...) other than arg2 PR_SET_MM_MAP and
+>>> +  PR_SET_MM_MAP_SIZE.
+>>> +
+>>> +- prctl(PR_SET_MM, PR_SET_MM_MAP{,_SIZE}, ...) struct prctl_mm_map fields.
+>>> +
+>>> +Any attempt to use non-zero tagged pointers will lead to undefined
+>>> +behaviour.
+>>
+>> I wonder if you want to generalize this a bit.  I think you're saying
+>> that parts of the ABI that modify the *layout* of the address space
+>> never accept tagged pointers.
+> 
+> I guess our difficulty in specifying this may have been caused by
+> over-generalising. For example, madvise/mprotect came under the same
+> category but there is a use-case for malloc'ed pointers (and tagged) to
+> the kernel (e.g. MADV_DONTNEED). If we can restrict the meaning to
+> address space *layout* manipulation, we'd have mmap/mremap/munmap,
+> brk/sbrk, prctl(PR_SET_MM). Did I miss anything?. Other related syscalls
+> like mprotect/madvise preserve the layout while only changing permissions,
+> backing store, so the would be allowed to accept tags.
+
+shmat() comes to mind.  I also did a quick grep for mmap_sem taken for
+write and didn't see anything else obvious jump out at me.
+
+>> It looks like the TAG_SHIFT and tag size are pretty baked into the
+>> aarch64 architecture.  But, are you confident that no future
+>> implementations will want different positions or sizes?  (obviously
+>> controlled by other TCR_EL1 bits)
+> 
+> For the top-byte-ignore (TBI), that's been baked in the architecture
+> since ARMv8.0 and we'll have to keep the backwards compatible mode. As
+> the name implies, it's the top byte of the address and that's what the
+> document above refers to.
+> 
+> With MTE, I can't exclude other configurations in the future but I'd
+> expect the kernel to present the option as a new HWCAP and the user to
+> explicitly opt in via a new prctl() flag. I seriously doubt we'd break
+> existing binaries. So, yes TAG_SHIFT may be different but so would the
+> prctl() above.
+
+Basically, what you have is a "turn tagging on" and "turn tagging off"
+call which are binary: all on or all off.  How about exposing a mask:
+
+	/* Replace hard-coded mask size/position: */
+	unsigned long mask = prctl(GET_POSSIBLE_TAGGED_ADDR_BITS);
+
+	if (mask == 0)
+		// no tagging is supported obviously
+
+	prctl(SET_TAGGED_ADDR_BITS, mask);
+
+	// now userspace knows via 'mask' where the tag bits are
+
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
