@@ -2,56 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFDF587805
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 12:56:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D283C87826
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 13:04:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O/E2X3hMRXC8cmKNV7rJraw1jJ4JEguA3YHw5ynNL0E=; b=g8lrcgQhdM30ag
-	Bnzhm2cOiFVQ4IVciKjOkaV+fSZsNNuDAU/JIAlhAjtkmsNLt3CQRh+j+ecymYrbzSpJLvTZh8e3A
-	G2Fwx5LScH/mnsZpu9ny1iSqgwbEN9xSz9K/fjqlZ/tX+M69ggfc/9Gw/YOX5FxDdDNxvybT2AKK3
-	EZaZGjbcOYIf6QUstJzIiswkOD1eorjE6mbkzYqyotGZEuX1NpYT8/1aHAq44p/tzppd5vXMh+bXL
-	JVTFr21hPBirpoO31mf8K1f6X7UEsBV/j56MXeg83g87yBDJZMpirgXJw4OadgoIw+l9c/Idu1MBg
-	sw1RFpgPcWdj4ggOUdww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AtzltFqsM76dE6PQ8s0R8aXSHZF4vSDYY4E54f5EfAE=; b=c1iQlkDLGYm6qn
+	kxxkx7YHGDTVTlPZi1gu2zGzMCA24V/SqgJMytzOkl2EmDCxGSTycFJcHLhWbeEqScZmUN4mwcjHG
+	P1vWBJRc3sDJBIE5AGJYrPtub5MDjnfG6rv/6dBQhjv95ChNrTetuMMNC28M2yWTejoSxQ2PGpr9D
+	0A3KXkozQ1JNvxldcqflw5n1EwuDOO27H9P4Rq+XyvEThg4VOgf6ffZ29nTqMqMRDqC/qt+eTj0Np
+	b9MMkNVWKBT3pVN5Dztrg9dm/lxxL7CyAxn6FI3sHnqI4bGt1DjEFwfS4uYs1tupOxA/4lt+HXLfE
+	6h3EaXbThv4ivnM6r3gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw2Zc-0003Hp-58; Fri, 09 Aug 2019 10:56:40 +0000
+	id 1hw2gk-0005Du-86; Fri, 09 Aug 2019 11:04:02 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw2ZM-0003HT-Kr
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 10:56:26 +0000
+ id 1hw2g8-0004zM-4H
+ for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 11:03:25 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 15F3B1596;
- Fri,  9 Aug 2019 03:56:24 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 60D033F575; Fri,  9 Aug 2019 03:56:22 -0700 (PDT)
-Subject: Re: [PATCH 06/19] irqchip/mmp: add missing chained_irq_{enter, exit}()
-To: Lubomir Rintel <lkundrak@v3.sk>, Olof Johansson <olof@lixom.net>
-References: <20190809093158.7969-1-lkundrak@v3.sk>
- <20190809093158.7969-7-lkundrak@v3.sk>
-From: Marc Zyngier <maz@kernel.org>
-Organization: Approximate
-Message-ID: <319ebbbc-2231-42c9-faec-731ad81eb485@kernel.org>
-Date: Fri, 9 Aug 2019 11:56:21 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE7EA1596;
+ Fri,  9 Aug 2019 04:03:20 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2357D3F575;
+ Fri,  9 Aug 2019 04:03:19 -0700 (PDT)
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: linux-pm@vger.kernel.org
+Subject: [PATCH v2 0/8] ARM: psci: cpuidle: PSCI CPUidle rework
+Date: Fri,  9 Aug 2019 12:03:06 +0100
+Message-Id: <cover.1565348376.git.lorenzo.pieralisi@arm.com>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
+References: <20190722153745.32446-1-lorenzo.pieralisi@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190809093158.7969-7-lkundrak@v3.sk>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_035624_731871_050F7CCF 
-X-CRM114-Status: GOOD (  19.53  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190809_040324_260468_2F84D27C 
+X-CRM114-Status: GOOD (  17.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,83 +59,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Shawn Guo <shawnguo@kernel.org>,
+ LAKML <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/08/2019 10:31, Lubomir Rintel wrote:
-> The lack of chained_irq_exit() leaves the muxed interrupt masked on MMP3.
-> For reasons unknown this is not a problem on MMP2.
-> 
-> Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
-> ---
->  drivers/irqchip/irq-mmp.c | 9 ++++++++-
->  1 file changed, 8 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/irqchip/irq-mmp.c b/drivers/irqchip/irq-mmp.c
-> index af9cba4a51c2e..cd8d2253f56d1 100644
-> --- a/drivers/irqchip/irq-mmp.c
-> +++ b/drivers/irqchip/irq-mmp.c
-> @@ -13,6 +13,7 @@
->  #include <linux/init.h>
->  #include <linux/irq.h>
->  #include <linux/irqchip.h>
-> +#include <linux/irqchip/chained_irq.h>
->  #include <linux/irqdomain.h>
->  #include <linux/io.h>
->  #include <linux/ioport.h>
-> @@ -132,11 +133,14 @@ struct irq_chip icu_irq_chip = {
->  static void icu_mux_irq_demux(struct irq_desc *desc)
->  {
->  	unsigned int irq = irq_desc_get_irq(desc);
-> +	struct irq_chip *chip = irq_get_chip(irq);
+v2 of a previous posting:
 
-Consider using irq_desc_get_chip() instead, which avoids going through
-the irq->desc again.
+v1: https://lore.kernel.org/linux-pm/20190722153745.32446-1-lorenzo.pieralisi@arm.com/
 
->  	struct irq_domain *domain;
->  	struct icu_chip_data *data;
->  	int i;
->  	unsigned long mask, status, n;
->  
-> +	chained_irq_enter(chip, desc);
-> +
->  	for (i = 1; i < max_icu_nr; i++) {
->  		if (irq == icu_data[i].cascade_irq) {
->  			domain = icu_data[i].domain;
-> @@ -146,7 +150,7 @@ static void icu_mux_irq_demux(struct irq_desc *desc)
->  	}
->  	if (i >= max_icu_nr) {
->  		pr_err("Spurious irq %d in MMP INTC\n", irq);
-> -		return;
-> +		goto out;
->  	}
->  
->  	mask = readl_relaxed(data->reg_mask);
-> @@ -158,6 +162,9 @@ static void icu_mux_irq_demux(struct irq_desc *desc)
->  			generic_handle_irq(icu_data[i].virq_base + n);
->  		}
->  	}
-> +
-> +out:
-> +	chained_irq_exit(chip, desc);
->  }
->  
->  static int mmp_irq_domain_map(struct irq_domain *d, unsigned int irq,
-> 
+v1->v2:
 
-Otherwise looks OK.
+- Split config files updates into separate patches
+- Fixed minor memory leaks/bisectability issues
 
-	M.
+Original cover letter
+---
+
+Current PSCI CPUidle driver is built on top of the generic ARM
+CPUidle infrastructure that relies on the architectural back-end
+idle operations to initialize and enter idle states.
+
+On ARM64 systems, PSCI is the only interface the kernel ever uses
+to enter idle states, so, having to rely on a generic ARM CPUidle
+driver when there is and there will always be only one method
+for entering idle states proved to be overkill, more so given
+that on ARM 32-bit systems (that can also enable the generic
+ARM CPUidle driver) only one additional idle back-end was
+ever added:
+
+drivers/soc/qcom/spm.c
+
+and it can be easily converted to a full-fledged CPUidle driver
+without requiring the generic ARM CPUidle framework.
+
+Furthermore, the generic ARM CPUidle infrastructure forces the
+PSCI firmware layer to keep CPUidle specific information in it,
+which does not really fit its purpose that should be kernel
+control/data structure agnostic.
+
+Lastly, the interface between the generic ARM CPUidle driver and
+the arch back-end requires an idle state index to be passed to
+suspend operations, with idle states back-end internals (such
+as idle state parameters) hidden in architectural back-ends and
+not available to the generic ARM CPUidle driver.
+
+To improve the above mentioned shortcomings, implement a stand
+alone PSCI CPUidle driver; this improves the current kernel
+code from several perspective:
+
+- Move CPUidle internal knowledge into CPUidle driver out of
+  the PSCI firmware interface
+- Give the PSCI CPUidle driver control over power state parameters,
+  in particular in preparation for PSCI OSI support
+- Remove generic CPUidle operations infrastructure from the kernel
+
+This patchset does not go as far as removing the generic ARM CPUidle
+infrastructure in order to collect feedback on the new approach
+before completing the removal from the kernel, the generic and PSCI
+CPUidle driver are left to co-exist.
+
+Tested on Juno platform with both DT and ACPI boot firmwares.
+
+Cc: Will Deacon <will@kernel.org>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>
+Cc: Sudeep Holla <sudeep.holla@arm.com>
+Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+
+Lorenzo Pieralisi (8):
+  ARM: cpuidle: Remove useless header include
+  ARM: cpuidle: Remove overzealous error logging
+  drivers: firmware: psci: Decouple checker from generic ARM CPUidle
+  ARM: psci: cpuidle: Introduce PSCI CPUidle driver
+  ARM: psci: cpuidle: Enable PSCI CPUidle driver
+  PSCI: cpuidle: Refactor CPU suspend power_state parameter handling
+  arm64: defconfig: Enable the PSCI CPUidle driver
+  ARM: imx_v6_v7_defconfig: Enable the PSCI CPUidle driver
+
+ MAINTAINERS                          |   8 +
+ arch/arm/configs/imx_v6_v7_defconfig |   1 +
+ arch/arm64/configs/defconfig         |   1 +
+ arch/arm64/kernel/cpuidle.c          |  50 +++++-
+ arch/arm64/kernel/psci.c             |   4 -
+ drivers/cpuidle/Kconfig.arm          |  10 ++
+ drivers/cpuidle/Makefile             |   1 +
+ drivers/cpuidle/cpuidle-arm.c        |  13 +-
+ drivers/cpuidle/cpuidle-psci.c       | 236 +++++++++++++++++++++++++++
+ drivers/firmware/psci/psci.c         | 167 +------------------
+ drivers/firmware/psci/psci_checker.c |  16 +-
+ include/linux/cpuidle.h              |  17 +-
+ include/linux/psci.h                 |   4 +-
+ 13 files changed, 342 insertions(+), 186 deletions(-)
+ create mode 100644 drivers/cpuidle/cpuidle-psci.c
+
 -- 
-Jazz is not dead, it just smells funny...
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
