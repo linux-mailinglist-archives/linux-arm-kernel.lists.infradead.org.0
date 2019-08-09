@@ -2,87 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B21CE881BB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 19:55:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2717881C2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 19:56:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2LyNFTfDnYpNYeEJs1FM/4ieT2fguAdxRGESIeJ4Sd8=; b=Gi41ZZlLielb4A
-	Buo8xJoKtQot1SvNQ+XnihibrBFhJ+s1TvddyjI/k0T7y5N2h3aY+SjNnlg7AcfBZ1PBCbTtxZpIK
-	K+Dhu3jJLU+zFQYI6w5fTbIeeKJyxKYud1wU3ZYIB2PmxEDlngIT+a6PTEdcAyyPF3AO1WVDDMaiD
-	Z0Rauulb+sLyRjIDkbwpLs0xYGT3eC4b7uoUPd/YmiW/IkhFd2E1f94eec7RKhCzEdCtaMoFDOOxB
-	LYcUFyFCC3oWlXh7Rijzz+gA5d5dmAktkJQIYvLnw6QlpQfSE/O4VhL2AD5+PPyjK1sgrQwqu2/bC
-	L/mM+FfRfNQ3rpNHkSpA==;
+	List-Owner; bh=Qtw7m05VR7cN+yUM7d4zk9FOZaOXo663lPUTATuoIv0=; b=Q5+850SKKit0Xe
+	8IJHl8d17VvQGk8Q0KRZ4iG8JzOLPDNfdjYiEltbCuHmiaU2rSg7VXFnuAF16d3I9VF4y7lcMXB/K
+	dYr4W883nu+gCMTOydQxhw9bdwQbthEJ+ihKBaGPa32IgAsG9YJIcUhR8MhefzDujyr+xcQK4wjTy
+	evYzT7Yp43LYuxlGor/0uUrI9Fe+L81ieLD1snAeiAsGq8mO3gTMEKvY7mPTxWwG7IMrPnAu9meY2
+	C87DjOKdRbWzfacNQ9h7WFwDXwzJdkhMwu/MhBVHYv/x9ftcVAnSTdOr/Py4yZSHED72wV4sF2pr5
+	BPlrNCZ8x1TU+hk4Z58g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw97B-0004V7-Qd; Fri, 09 Aug 2019 17:55:46 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hw985-0004no-Ea; Fri, 09 Aug 2019 17:56:41 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw970-0004UP-83
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 17:55:36 +0000
-Received: by mail-pl1-x641.google.com with SMTP id m12so6631430plt.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 10:55:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=k0JW1MLLNsJwJlBlpJuuU0x2nZPPO+9mm49FYZVazao=;
- b=OA/UGs56YQC+yyIr42CyZFxmzgMazL51eytKigu93E+h3M3jx1SUQiWiF2xWk/IvJc
- Q2jev5fwjGsrjHCQYryT6wDWbu5un0fcb5sdT8qg/CF0brDZK8w3+cZX9toQy9nepy2n
- syvs8gglTWIuvi3BOXS8JqMrhG9URrL7AtZtNZH9xaxgTvcGU4ewWmf/aBrNKiC3sB0R
- 1hyJCFehJSlr9sDErNnlBchuHyiv3Znqbg/Vjpmuq3XjjantHGUcH1i5za2dSzi7pl6K
- WJh1lWbPp+pxypCQx/oWGviqfHxV5K2wqQT3iP9DbAc3Zi+c1FVe/YKm/Y4l0+as8B6Y
- Ii1w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=k0JW1MLLNsJwJlBlpJuuU0x2nZPPO+9mm49FYZVazao=;
- b=MKHtkthg2BKfNRelWWjri6ryktnCeru6D/Oigzwvm901dcC/VS+El+Ifln315bC8VS
- gqJrg9hK/lBb5R7Gpmq7kYYEAduv5hE8GIvU9BeJpdWj53zCCYtm1XslPWcEtTV5WDGV
- O0dSKsKOGdi5tc5qIpIRkjnLS+QqsyHNpHqDdi/RmOI13hbGh7qFDp9D8h8YkFb5KW9d
- bofbBf7fiGDNPxz4ATfL7KOUOrEJdS+C6mfomrMwubZUAIfwvIGRmXrH95A5CAgVHJTq
- BOA+P8xEkCcWppaqIvwr2DJaXfPQ/fEhIcxuy2f3c+qsyDRWlP4nnb/1BF0KKxQbqsA8
- Jp0w==
-X-Gm-Message-State: APjAAAUIDN7l+QKx8JEkfVx3YEqvDP2+BztWrKFFm2DBR2ArVhSBsmWr
- yL5FbRtzXATkJz/PCj/t4R5/bQ==
-X-Google-Smtp-Source: APXvYqysFBcmJohUVIoX2xKUnTFNTQhCkCVi2y06fMeHjJJpEKticMBmoCDL0iUgxQ747LXHcXRg/g==
-X-Received: by 2002:a17:902:6b81:: with SMTP id
- p1mr20019532plk.91.1565373333064; 
- Fri, 09 Aug 2019 10:55:33 -0700 (PDT)
-Received: from localhost ([2601:602:9200:a1a5:b873:707a:e893:cdb3])
- by smtp.gmail.com with ESMTPSA id i15sm103848714pfd.160.2019.08.09.10.55.31
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 09 Aug 2019 10:55:32 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Jerome Brunet <jbrunet@baylibre.com>,
- Neil Armstrong <narmstrong@baylibre.com>, sboyd@kernel.org
-Subject: Re: [PATCH v2 0/4] clk: meson: g12a: add support for DVFS
-In-Reply-To: <1jy302o5j7.fsf@starbuckisacylon.baylibre.com>
-References: <20190731084019.8451-1-narmstrong@baylibre.com>
- <7hzhkje4ov.fsf@baylibre.com> <1jy302o5j7.fsf@starbuckisacylon.baylibre.com>
-Date: Fri, 09 Aug 2019 10:55:30 -0700
-Message-ID: <7h8ss24419.fsf@baylibre.com>
+ id 1hw97s-0004n1-8J; Fri, 09 Aug 2019 17:56:30 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 09 Aug 2019 10:56:24 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,366,1559545200"; d="scan'208";a="350560074"
+Received: from fmsmsx106.amr.corp.intel.com ([10.18.124.204])
+ by orsmga005.jf.intel.com with ESMTP; 09 Aug 2019 10:56:24 -0700
+Received: from crsmsx151.amr.corp.intel.com (172.18.7.86) by
+ FMSMSX106.amr.corp.intel.com (10.18.124.204) with Microsoft SMTP Server (TLS)
+ id 14.3.439.0; Fri, 9 Aug 2019 10:56:23 -0700
+Received: from crsmsx101.amr.corp.intel.com ([169.254.1.115]) by
+ CRSMSX151.amr.corp.intel.com ([169.254.3.186]) with mapi id 14.03.0439.000;
+ Fri, 9 Aug 2019 11:56:21 -0600
+From: "Weiny, Ira" <ira.weiny@intel.com>
+To: Jan Kara <jack@suse.cz>
+Subject: RE: [PATCH 00/34] put_user_pages(): miscellaneous call sites
+Thread-Topic: [PATCH 00/34] put_user_pages(): miscellaneous call sites
+Thread-Index: AQHVSNjU1EYxEMQcyke2Y16AlWiV+abn98YAgAA6ZwCAABzEgIAAB8CAgABJHoCABynCAIAAAqCAgAC1jYCAAmuxgIAANKMg
+Date: Fri, 9 Aug 2019 17:56:20 +0000
+Message-ID: <2807E5FD2F6FDA4886F6618EAC48510E79E7F367@CRSMSX101.amr.corp.intel.com>
+References: <20190802022005.5117-1-jhubbard@nvidia.com>
+ <20190802091244.GD6461@dhcp22.suse.cz>
+ <20190802124146.GL25064@quack2.suse.cz>
+ <20190802142443.GB5597@bombadil.infradead.org>
+ <20190802145227.GQ25064@quack2.suse.cz>
+ <076e7826-67a5-4829-aae2-2b90f302cebd@nvidia.com>
+ <20190807083726.GA14658@quack2.suse.cz>
+ <20190807084649.GQ11812@dhcp22.suse.cz>
+ <20190808023637.GA1508@iweiny-DESK2.sc.intel.com>
+ <20190809083435.GA17568@quack2.suse.cz>
+In-Reply-To: <20190809083435.GA17568@quack2.suse.cz>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-titus-metadata-40: eyJDYXRlZ29yeUxhYmVscyI6IiIsIk1ldGFkYXRhIjp7Im5zIjoiaHR0cDpcL1wvd3d3LnRpdHVzLmNvbVwvbnNcL0ludGVsMyIsImlkIjoiMjgzZWFlNTQtZDMwNC00YTZiLThiNDktMzI0ZWY3MGNjMDdiIiwicHJvcHMiOlt7Im4iOiJDVFBDbGFzc2lmaWNhdGlvbiIsInZhbHMiOlt7InZhbHVlIjoiQ1RQX05UIn1dfV19LCJTdWJqZWN0TGFiZWxzIjpbXSwiVE1DVmVyc2lvbiI6IjE3LjEwLjE4MDQuNDkiLCJUcnVzdGVkTGFiZWxIYXNoIjoiY2tWUXpQWXg4RTZvTlVIZFwvOFVSVWNwbCs3V2JDTG5GcHNpZTB3bzRRaEhFUExOQzZXZGtLeFkzNUhuNjVBOEYifQ==
+x-ctpclassification: CTP_NT
+dlp-product: dlpe-windows
+dlp-version: 11.2.0.6
+dlp-reaction: no-action
+x-originating-ip: [172.18.205.10]
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_105534_317279_28B98E15 
-X-CRM114-Status: GOOD (  10.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190809_105628_391391_0939AF4C 
+X-CRM114-Status: GOOD (  33.44  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.24 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,59 +89,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: "linux-fbdev@vger.kernel.org" <linux-fbdev@vger.kernel.org>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ Michal Hocko <mhocko@kernel.org>, "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "amd-gfx@lists.freedesktop.org" <amd-gfx@lists.freedesktop.org>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>, "Williams,
+ Dan J" <dan.j.williams@intel.com>,
+ "devel@driverdev.osuosl.org" <devel@driverdev.osuosl.org>,
+ "rds-devel@oss.oracle.com" <rds-devel@oss.oracle.com>,
+ "linux-rdma@vger.kernel.org" <linux-rdma@vger.kernel.org>,
+ "x86@kernel.org" <x86@kernel.org>, Matthew Wilcox <willy@infradead.org>,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ "xen-devel@lists.xenproject.org" <xen-devel@lists.xenproject.org>,
+ "devel@lists.orangefs.org" <devel@lists.orangefs.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
+ John Hubbard <jhubbard@nvidia.com>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ "john.hubbard@gmail.com" <john.hubbard@gmail.com>,
+ "linux-block@vger.kernel.org" <linux-block@vger.kernel.org>,
+ =?iso-8859-1?Q?J=E9r=F4me_Glisse?= <jglisse@redhat.com>,
+ "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
+ "ceph-devel@vger.kernel.org" <ceph-devel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-nfs@vger.kernel.org" <linux-nfs@vger.kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>,
+ "linux-xfs@vger.kernel.org" <linux-xfs@vger.kernel.org>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
+ "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Jerome Brunet <jbrunet@baylibre.com> writes:
+> 
+> On Wed 07-08-19 19:36:37, Ira Weiny wrote:
+> > On Wed, Aug 07, 2019 at 10:46:49AM +0200, Michal Hocko wrote:
+> > > > So I think your debug option and my suggested renaming serve a bit
+> > > > different purposes (and thus both make sense). If you do the
+> > > > renaming, you can just grep to see unconverted sites. Also when
+> > > > someone merges new GUP user (unaware of the new rules) while you
+> > > > switch GUP to use pins instead of ordinary references, you'll get
+> > > > compilation error in case of renaming instead of hard to debug
+> > > > refcount leak without the renaming. And such conflict is almost
+> > > > bound to happen given the size of GUP patch set... Also the
+> > > > renaming serves against the "coding inertia" - i.e., GUP is around for
+> ages so people just use it without checking any documentation or comments.
+> > > > After switching how GUP works, what used to be correct isn't
+> > > > anymore so renaming the function serves as a warning that
+> > > > something has really changed.
+> > >
+> > > Fully agreed!
+> >
+> > Ok Prior to this I've been basing all my work for the RDMA/FS DAX
+> > stuff in Johns put_user_pages()...  (Including when I proposed failing
+> > truncate with a lease in June [1])
+> >
+> > However, based on the suggestions in that thread it became clear that
+> > a new interface was going to need to be added to pass in the "RDMA
+> > file" information to GUP to associate file pins with the correct processes...
+> >
+> > I have many drawings on my white board with "a whole lot of lines" on
+> > them to make sure that if a process opens a file, mmaps it, pins it
+> > with RDMA, _closes_ it, and ummaps it; that the resulting file pin can
+> > still be traced back to the RDMA context and all the processes which
+> > may have access to it....  No matter where the original context may
+> > have come from.  I believe I have accomplished that.
+> >
+> > Before I go on, I would like to say that the "imbalance" of
+> > get_user_pages() and put_page() bothers me from a purist standpoint...
+> > However, since this discussion cropped up I went ahead and ported my
+> > work to Linus' current master
+> > (5.3-rc3+) and in doing so I only had to steal a bit of Johns code...
+> > Sorry John...  :-(
+> >
+> > I don't have the commit messages all cleaned up and I know there may
+> > be some discussion on these new interfaces but I wanted to throw this
+> > series out there because I think it may be what Jan and Michal are
+> > driving at (or at least in that direction.
+> >
+> > Right now only RDMA and DAX FS's are supported.  Other users of GUP
+> > will still fail on a DAX file and regular files will still be at
+> > risk.[2]
+> >
+> > I've pushed this work (based 5.3-rc3+ (33920f1ec5bf)) here[3]:
+> >
+> > https://github.com/weiny2/linux-kernel/tree/linus-rdmafsdax-b0-v3
+> >
+> > I think the most relevant patch to this conversation is:
+> >
+> > https://github.com/weiny2/linux-
+> kernel/commit/5d377653ba5cf11c3b716f90
+> > 4b057bee6641aaf6
+> >
+> > I stole Jans suggestion for a name as the name I used while
+> > prototyping was pretty bad...  So Thanks Jan...  ;-)
+> 
+> For your function, I'd choose a name like vaddr_pin_leased_pages() so that
+> association with a lease is clear from the name :)
 
-> On Thu 08 Aug 2019 at 14:18, Kevin Hilman <khilman@baylibre.com> wrote:
->
->> Neil Armstrong <narmstrong@baylibre.com> writes:
->>
->>> The G12A/G12B Socs embeds a specific clock tree for each CPU cluster :
->>> cpu_clk / cpub_clk
->>> |   \- cpu_clk_dyn
->>> |      |  \- cpu_clk_premux0
->>> |      |        |- cpu_clk_postmux0
->>> |      |        |    |- cpu_clk_dyn0_div
->>> |      |        |    \- xtal/fclk_div2/fclk_div3
->>> |      |        \- xtal/fclk_div2/fclk_div3
->>> |      \- cpu_clk_premux1
->>> |            |- cpu_clk_postmux1
->>> |            |    |- cpu_clk_dyn1_div
->>> |            |    \- xtal/fclk_div2/fclk_div3
->>> |            \- xtal/fclk_div2/fclk_div3
->>> \ sys_pll / sys1_pll
->>>
->>> This patchset adds notifiers on cpu_clk / cpub_clk, cpu_clk_dyn,
->>> cpu_clk_premux0 and sys_pll / sys1_pll to permit change frequency of
->>> the CPU clock in a safe way as recommended by the vendor Documentation
->>> and reference code.
->>>
->>> This patchset :
->>> - introduces needed core and meson clk changes
->>> - adds the clock notifiers
->>>
->>> Dependencies:
->>> - None
->>
->> nit: this doesn't apply to v5.3-rc, but appears to apply on
->> clk-meson/v5.4/drivers, so it appears to be dependent on the cleanups
->> from Alex.
->
-> Indeed, Applied on top of this.
->
+My gut was to just change this as you suggested.  But the fact is that these calls can get used on anonymous pages as well.  So the "leased" semantic may not apply...  OTOH if a file is encountered it will fail the pin...  :-/  I'm going to leave it for now and get the patches submitted to the list...
 
-Please let me know when you have a stable tag for this.  I wont' be able
-to apply the odroid-n2 DVFS patch until I have this.
+> Also I'd choose the
+> counterpart to be vaddr_unpin_leased_page[s](). Especially having put_page
+> in the name looks confusing to me...
 
-Kevin
+Ah yes, totally agree with the "pin/unpin" symmetry.  I've changed from "put" to "unpin"...
 
+Thanks,
+Ira
+
+> 
+> 								Honza
+> 
+> --
+> Jan Kara <jack@suse.com>
+> SUSE Labs, CR
 
 _______________________________________________
 linux-arm-kernel mailing list
