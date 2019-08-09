@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 156FE880E9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 19:09:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42161880E7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  9 Aug 2019 19:09:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J+gjDFgtxGCOEDr5t36Q6pTMSzFTYJY7UmZALZrFqgs=; b=QZITdPQbzqrPCT
-	B1dpAwLXIfcrXua8+TG3aVBjb5vci3GyRrU+qXVN5dpuWJjAlfv80NysRho0YTqL+9C5MAKrpzywF
-	6x9E0mBk6DmAj1DFLtcXFy/yFzYUgmEj8FTyDTh5+HZcINa09jUACf+I7NutzBJCAyXqHFnAqiGvx
-	9DfjDrMWzXT2oD6i8BWOAqMQ78CGNDB/aQe8HQksV/6YgFU21Fs/HFzih5bqtF5bg0yNGmd+OuDXn
-	uPWtV5cEUv601tCjvGYNrHHe5mT6jlBpMlgYM4gnERqzmF/B1K7xg+gru1h88irCerZ2+jXvJS/MT
-	Y4u65ApWZJdlw2AKFRBg==;
+	List-Owner; bh=U5PM7xHNGBd7m53iu1zVFZ21MbGmtZe135aq1zXaflI=; b=BzANL1hXrRJsr/
+	srOWAF872AykAmWtIVfFZ21CUozAOEw+9koYQeFIqaGRAiXBCg/3CNptU+vdLf2YU6AP/oQqVgvaj
+	M+dcL3v1DJkfvyHXP3SFMZ69XEwbsYfGIyIXpga4QxXH5OCFTq6XwTZMCH08C2o9Wo8g50kfzHVvr
+	TOLmALYmXaSYJILjkfiBmajyp3T2Szihfn8Xqwa8shXtDIc6jUMZpW+SIOW9+O1UDhrDzQ5qTm+JZ
+	u2e/Ml9lO3oPnMVY5LAPfx4v8xRH3BMc22twBXDetoa1BafUYGIJeQsbqCubVREqDRFBa2B/f2EJv
+	JTxSPhK9c5yEqHg1uCHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw8OT-0002L1-L4; Fri, 09 Aug 2019 17:09:33 +0000
+	id 1hw8OI-000277-HO; Fri, 09 Aug 2019 17:09:22 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hw8NJ-000169-2k
+ id 1hw8NI-00012k-Ff
  for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 17:08:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D1BA415AB;
- Fri,  9 Aug 2019 10:08:18 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4C6391688;
+ Fri,  9 Aug 2019 10:08:20 -0700 (PDT)
 Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
  [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 984B93F575;
- Fri,  9 Aug 2019 10:08:17 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 124E63F575;
+ Fri,  9 Aug 2019 10:08:18 -0700 (PDT)
 From: Robin Murphy <robin.murphy@arm.com>
 To: will@kernel.org
-Subject: [PATCH 04/15] iommu/arm-smmu: Rework cb_base handling
-Date: Fri,  9 Aug 2019 18:07:41 +0100
-Message-Id: <f4dccad78815ca0a2dd7926be7052759d099b920.1565369764.git.robin.murphy@arm.com>
+Subject: [PATCH 05/15] iommu/arm-smmu: Split arm_smmu_tlb_inv_range_nosync()
+Date: Fri,  9 Aug 2019 18:07:42 +0100
+Message-Id: <33a49ca158509c95d50b0d3f9cba03bba2facdf3.1565369764.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.21.0.dirty
 In-Reply-To: <cover.1565369764.git.robin.murphy@arm.com>
 References: <cover.1565369764.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_100821_288049_1873B2ED 
-X-CRM114-Status: GOOD (  15.10  )
+X-CRM114-CacheID: sfid-20190809_100820_669531_37457F21 
+X-CRM114-Status: GOOD (  15.73  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,86 +68,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To keep register-access quirks manageable, we want to structure things
-to avoid needing too many individual overrides. It seems fairly clean to
-have a single interface which handles both global and context registers
-in terms of the architectural pages, so the first preparatory step is to
-rework cb_base into a page number rather than an absolute address.
+Since we now use separate iommu_gather_ops for stage 1 and stage 2
+contexts, we may as well divide up the monolithic callback into its
+respective stage 1 and stage 2 parts.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/iommu/arm-smmu.c | 22 ++++++++++++----------
- 1 file changed, 12 insertions(+), 10 deletions(-)
+ drivers/iommu/arm-smmu.c | 66 ++++++++++++++++++++++------------------
+ 1 file changed, 37 insertions(+), 29 deletions(-)
 
 diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index d9a93e5f422f..463bc8d98adb 100644
+index 463bc8d98adb..a681e000e704 100644
 --- a/drivers/iommu/arm-smmu.c
 +++ b/drivers/iommu/arm-smmu.c
-@@ -95,7 +95,7 @@
- #endif
+@@ -490,46 +490,54 @@ static void arm_smmu_tlb_inv_context_s2(void *cookie)
+ 	arm_smmu_tlb_sync_global(smmu);
+ }
  
- /* Translation context bank */
--#define ARM_SMMU_CB(smmu, n)	((smmu)->cb_base + ((n) << (smmu)->pgshift))
-+#define ARM_SMMU_CB(smmu, n)	((smmu)->base + (((smmu)->cb_base + (n)) << (smmu)->pgshift))
- 
- #define MSI_IOVA_BASE			0x8000000
- #define MSI_IOVA_LENGTH			0x100000
-@@ -168,8 +168,8 @@ struct arm_smmu_device {
- 	struct device			*dev;
- 
- 	void __iomem			*base;
--	void __iomem			*cb_base;
--	unsigned long			pgshift;
-+	unsigned int			cb_base;
-+	unsigned int			pgshift;
- 
- #define ARM_SMMU_FEAT_COHERENT_WALK	(1 << 0)
- #define ARM_SMMU_FEAT_STREAM_MATCH	(1 << 1)
-@@ -1815,7 +1815,7 @@ static int arm_smmu_id_size_to_bits(int size)
- 
- static int arm_smmu_device_cfg_probe(struct arm_smmu_device *smmu)
+-static void arm_smmu_tlb_inv_range_nosync(unsigned long iova, size_t size,
+-					  size_t granule, bool leaf, void *cookie)
++static void arm_smmu_tlb_inv_range_s1(unsigned long iova, size_t size,
++				      size_t granule, bool leaf, void *cookie)
  {
--	unsigned long size;
-+	unsigned int size;
- 	void __iomem *gr0_base = ARM_SMMU_GR0(smmu);
- 	u32 id;
- 	bool cttw_reg, cttw_fw = smmu->features & ARM_SMMU_FEAT_COHERENT_WALK;
-@@ -1899,7 +1899,7 @@ static int arm_smmu_device_cfg_probe(struct arm_smmu_device *smmu)
- 			return -ENOMEM;
+ 	struct arm_smmu_domain *smmu_domain = cookie;
++	struct arm_smmu_device *smmu = smmu_domain->smmu;
+ 	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+-	bool stage1 = cfg->cbar != CBAR_TYPE_S2_TRANS;
+-	void __iomem *reg = ARM_SMMU_CB(smmu_domain->smmu, cfg->cbndx);
++	void __iomem *reg = ARM_SMMU_CB(smmu, cfg->cbndx);
  
- 		dev_notice(smmu->dev,
--			   "\tstream matching with %lu register groups", size);
-+			   "\tstream matching with %u register groups", size);
+-	if (smmu_domain->smmu->features & ARM_SMMU_FEAT_COHERENT_WALK)
++	if (smmu->features & ARM_SMMU_FEAT_COHERENT_WALK)
+ 		wmb();
+ 
+-	if (stage1) {
+-		reg += leaf ? ARM_SMMU_CB_S1_TLBIVAL : ARM_SMMU_CB_S1_TLBIVA;
++	reg += leaf ? ARM_SMMU_CB_S1_TLBIVAL : ARM_SMMU_CB_S1_TLBIVA;
+ 
+-		if (cfg->fmt != ARM_SMMU_CTX_FMT_AARCH64) {
+-			iova &= ~12UL;
+-			iova |= cfg->asid;
+-			do {
+-				writel_relaxed(iova, reg);
+-				iova += granule;
+-			} while (size -= granule);
+-		} else {
+-			iova >>= 12;
+-			iova |= (u64)cfg->asid << 48;
+-			do {
+-				writeq_relaxed(iova, reg);
+-				iova += granule >> 12;
+-			} while (size -= granule);
+-		}
+-	} else {
+-		reg += leaf ? ARM_SMMU_CB_S2_TLBIIPAS2L :
+-			      ARM_SMMU_CB_S2_TLBIIPAS2;
+-		iova >>= 12;
++	if (cfg->fmt != ARM_SMMU_CTX_FMT_AARCH64) {
++		iova &= ~12UL;
++		iova |= cfg->asid;
+ 		do {
+-			smmu_write_atomic_lq(iova, reg);
++			writel_relaxed(iova, reg);
++			iova += granule;
++		} while (size -= granule);
++	} else {
++		iova >>= 12;
++		iova |= (u64)cfg->asid << 48;
++		do {
++			writeq_relaxed(iova, reg);
+ 			iova += granule >> 12;
+ 		} while (size -= granule);
  	}
- 	/* s2cr->type == 0 means translation, so initialise explicitly */
- 	smmu->s2crs = devm_kmalloc_array(smmu->dev, size, sizeof(*smmu->s2crs),
-@@ -1925,11 +1925,12 @@ static int arm_smmu_device_cfg_probe(struct arm_smmu_device *smmu)
+ }
  
- 	/* Check for size mismatch of SMMU address space from mapped region */
- 	size = 1 << (FIELD_GET(ID1_NUMPAGENDXB, id) + 1);
--	size <<= smmu->pgshift;
--	if (smmu->cb_base != gr0_base + size)
-+	if (smmu->cb_base != 2 * size << smmu->pgshift)
- 		dev_warn(smmu->dev,
--			"SMMU address space size (0x%lx) differs from mapped region size (0x%tx)!\n",
--			size * 2, (smmu->cb_base - gr0_base) * 2);
-+			"SMMU address space size (0x%x) differs from mapped region size (0x%x)!\n",
-+			2 * size << smmu->pgshift, smmu->cb_base);
-+	/* Now cb_base can reach its final form: a page number */
-+	smmu->cb_base = size;
++static void arm_smmu_tlb_inv_range_s2(unsigned long iova, size_t size,
++				      size_t granule, bool leaf, void *cookie)
++{
++	struct arm_smmu_domain *smmu_domain = cookie;
++	struct arm_smmu_device *smmu = smmu_domain->smmu;
++	void __iomem *reg = ARM_SMMU_CB(smmu, smmu_domain->cfg.cbndx);
++
++	if (smmu->features & ARM_SMMU_FEAT_COHERENT_WALK)
++		wmb();
++
++	reg += leaf ? ARM_SMMU_CB_S2_TLBIIPAS2L : ARM_SMMU_CB_S2_TLBIIPAS2;
++	iova >>= 12;
++	do {
++		smmu_write_atomic_lq(iova, reg);
++		iova += granule >> 12;
++	} while (size -= granule);
++}
++
+ /*
+  * On MMU-401 at least, the cost of firing off multiple TLBIVMIDs appears
+  * almost negligible, but the benefit of getting the first one in as far ahead
+@@ -550,13 +558,13 @@ static void arm_smmu_tlb_inv_vmid_nosync(unsigned long iova, size_t size,
  
- 	smmu->num_s2_context_banks = FIELD_GET(ID1_NUMS2CB, id);
- 	smmu->num_context_banks = FIELD_GET(ID1_NUMCB, id);
-@@ -2200,7 +2201,8 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
- 	smmu->base = devm_ioremap_resource(dev, res);
- 	if (IS_ERR(smmu->base))
- 		return PTR_ERR(smmu->base);
--	smmu->cb_base = smmu->base + resource_size(res) / 2;
-+	/* We'll finish calculating this later once we know the page size */
-+	smmu->cb_base = resource_size(res);
+ static const struct iommu_gather_ops arm_smmu_s1_tlb_ops = {
+ 	.tlb_flush_all	= arm_smmu_tlb_inv_context_s1,
+-	.tlb_add_flush	= arm_smmu_tlb_inv_range_nosync,
++	.tlb_add_flush	= arm_smmu_tlb_inv_range_s1,
+ 	.tlb_sync	= arm_smmu_tlb_sync_context,
+ };
  
- 	num_irqs = 0;
- 	while ((res = platform_get_resource(pdev, IORESOURCE_IRQ, num_irqs))) {
+ static const struct iommu_gather_ops arm_smmu_s2_tlb_ops_v2 = {
+ 	.tlb_flush_all	= arm_smmu_tlb_inv_context_s2,
+-	.tlb_add_flush	= arm_smmu_tlb_inv_range_nosync,
++	.tlb_add_flush	= arm_smmu_tlb_inv_range_s2,
+ 	.tlb_sync	= arm_smmu_tlb_sync_context,
+ };
+ 
 -- 
 2.21.0.dirty
 
