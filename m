@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19A59888A2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 07:32:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2461E888A3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 07:32:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,67 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=TmkrJCXSNr5hQPHk3z1JxVC1856np1Q4PxHGuJ0CUrY=; b=ncirm9TxnUedKDqswayUCkKcOz
-	TDf+PUm2oX1F4i+ZKiopOWb14TsGYusJUs4G+GjZ36sXqzVlZJVxHp6ao38aCZLid45IY/5351ePB
-	DGgxP4S+TbzO6afs5/FH0Fy6wF54J79fk8xOzSbgSEOClK9spXK25Gb6+1D5O6ibrq+Dx6gajSupj
-	Tts97lfiYjJimhEsO9h358cEcXFFa1FM7R/uKL9zbaEmta8IEpMy+OTuUiV2YslhhkOd6hqaUbZta
-	jTiNiKmqktGed4HBHn6XFUBFScxRwjt037E/rH6DC7lSaIgwPxMHe17SEUtSgp7ciMQpxkTxMdwH+
-	lNHlCk3Q==;
+	bh=d6+3LkT9AX9HHn6YGF0iQQ4o4054tVL9XcEihR/5Q9w=; b=ZJAVoohJFr4bDt+cs7H85D0ZtA
+	da0CHaHEf6zuJU9OpRFVycbIKxdNBE4Jb9b2Mm79T/Pr6O7itiuePgpoVUzlvvd+mMHCtfI+Uu0YD
+	J5efxJkicSN1SGwpunmGs0dp3CgSm1PJOSaqAnBD5uIiBsOAsIDLCIZFFmCGcFpP7zmGKZGFwLV8Y
+	14pnJvkDQc+OhQoEcVtBpcB/4YYV5VjtERFEr9qUtriEfBYRsA+EM96Kdt6MVaG0V6q+jBLPtV0IG
+	Zjvw5OaSHBAbKrYWPhbjWQJJ0oVfdpcHhBd4E9Z0K1QoL8G4nCEvE2B+03thOI6l/7/XhQXpPnqWq
+	Q7MDnd4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwJz9-0004Hk-3C; Sat, 10 Aug 2019 05:32:11 +0000
+	id 1hwJzQ-0004VL-F1; Sat, 10 Aug 2019 05:32:28 +0000
 Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwJwt-0001FV-2s
- for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 05:29:52 +0000
-Received: by mail-pf1-x442.google.com with SMTP id i189so47121173pfg.10
+ id 1hwJww-0001O5-Qz
+ for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 05:29:56 +0000
+Received: by mail-pf1-x442.google.com with SMTP id f17so43126137pfn.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 22:29:50 -0700 (PDT)
+ Fri, 09 Aug 2019 22:29:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=OgfjFUuoODNFVR0ZkvXZDxeFbZPjLqSi2JIeoavOMgw=;
- b=MJc3rDZPoveXjHTdN7LEH2hpFio/XloP5QHsQGg4GMD0LCzGAz+jZSCHG50z1LvXaH
- WxRdKkPluVG8Rxm1vvFvttyqFiEBhh5iRxJiPn9BLstbW9LTuN8jej5YcGRl4UOxHmYJ
- CX3mjXj4KVcB5IdyZuVkEEuPe6fBn4rPvPGLj13Ezl08ch19+EJ9IE5oRzoBIK27S2t9
- dtJm9b+iXCbqWT/gZTmPLnyiP/9+fsV/jVGgSXGXNf5x4pe+aQ9Xft6UHuP61Qvha0/O
- 1hzCp82QsTbhbZMdC+vEBCCy2BcyldfSQqjIm9dCp0i7OtoPysbMIBLTdXskwuUdhB23
- Oq/Q==
+ bh=wjQ5RBMUscwhPovbCKs/X+MccsfEX8ouNnM/eU9tQdY=;
+ b=owjCa9lXzv2/DwkfhVrhXGPfLgD8hjoGMaHzNtHK8q9nZFQLhg0aAuY2svLpXwtORD
+ NcaMD7Xoi1eTrqSTeWXAdJTm6w7xsh3+ekzHVnQlUd6evrD1UaF0V5jA0xR0susVtGqK
+ 0E9Dqep2V9kZz9TJplT0xU6lPOE608vmJZCkcy4tFplb4Pr+b7RWp8661wdtUQBuYhmT
+ cSlJV9R/IpJ8+PGtAooQJrVzgnoV9ux306PKcqD/2x4HLWnw4Om/JHW2XKA+lY2y+sYZ
+ WNIQvi0mzQCMkjOUGMYYLFBoz6oocY6mck/do2zFdCcA3JJcNwATwqlbhtQ8u6d2A155
+ hUQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=OgfjFUuoODNFVR0ZkvXZDxeFbZPjLqSi2JIeoavOMgw=;
- b=OqDKU7MhoEq4jBhujAZcU3ccz+FI2B7GMwS0LcJsV4l/EmX76sxdk6nh1Fte50ox1K
- s4Rm3uylIRrjVw50048nQL8FGN6dR6nPQgUBiaAZa6MVgu1uVQvctMdpS6YAG62tvFgy
- OvcJpWAk/VjydCm+kbpeDnbhdW1SoP2Cbe9EJK+fEwtiR2IHPE/FsPQRSJkai/HsjNt3
- L+jqQ4mpzfLQva3TUvbJC3mRpS1DS2v+9VB8DZY1iZWo/BpCrWroxWTcx7az2Dk9YJZL
- H1wDzk/FIE1fpYUmW21jbO0CcD05Wh7rh6A+BoZW57pQttUm29Ba1EmAz+AsGVfCNyNY
- o0/g==
-X-Gm-Message-State: APjAAAXdQ4jwdXDOrdeuXrZv3w0W8g7pvFuKq/pXoOuhZKky/c7gZblW
- FaaFZ2+l7D97OtD3YoJ4hts=
-X-Google-Smtp-Source: APXvYqwC4638wzZl+8v+psyBs+EeT0oA2gS/8mge82pBrAdHJeehqHQxiVbpjzKmAwzQqbXgrXp7+Q==
-X-Received: by 2002:a17:90a:1785:: with SMTP id
- q5mr12858514pja.106.1565414990372; 
- Fri, 09 Aug 2019 22:29:50 -0700 (PDT)
+ bh=wjQ5RBMUscwhPovbCKs/X+MccsfEX8ouNnM/eU9tQdY=;
+ b=QOdvo69DYL3mhdSr8wiPbazhiIHTaoEbWiV6EOl8znnOpAPpMEt65BrV4BdC17JjKo
+ ncPbwMvkeZXHtdsPA+kckLc6oU15r9yDa5ubmUkcAiarhD20APQ3+oTAESDG14iiEhr+
+ aPab0105gTJDVpm0XWrCK1JGk2O/UrX5M/nNu2hWuKiPAMF559TrI7ZxyoeI0ZPJJu/e
+ mPW4SXR1a+90f7RUf2s1k6XHnD18/kcRhjSfnO1HA3JxhG4pt5JnKsRsGEFCjHdyb7op
+ 5vAhBqI41QEwgDTTnJsbUtLpdFHZgyb10/Emws1hof7eWFr6LZwjN6dS0xP2ZxUAhTgn
+ 6OqA==
+X-Gm-Message-State: APjAAAU1XZe4I9aswHgGU+nRfxFrn5sPmQ73Nvtb0bu1kDVuEemVf8WK
+ Mza35UenYlIBkwfmah5tcQk=
+X-Google-Smtp-Source: APXvYqw8vs8pLZBSxmUAg7iqaM6hn9kfidzUufWlKeYMFwYYXWPhKeZ2pwcEdEyO8GNSSc0MtJ7W1w==
+X-Received: by 2002:a62:7a0f:: with SMTP id v15mr6362442pfc.35.1565414994464; 
+ Fri, 09 Aug 2019 22:29:54 -0700 (PDT)
 Received: from localhost ([202.182.106.211])
- by smtp.gmail.com with ESMTPSA id i7sm8395873pjk.24.2019.08.09.22.29.49
+ by smtp.gmail.com with ESMTPSA id s24sm62023523pgm.3.2019.08.09.22.29.53
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 09 Aug 2019 22:29:49 -0700 (PDT)
+ Fri, 09 Aug 2019 22:29:53 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
  robh+dt@kernel.org, mark.rutland@arm.com, maxime.ripard@bootlin.com,
  wens@csie.org, mchehab+samsung@kernel.org, davem@davemloft.net,
  gregkh@linuxfoundation.org, Jonathan.Cameron@huawei.com,
  nicolas.ferre@microchip.com
-Subject: [PATCH v5 09/18] thermal: sun8i: rework for ths calibrate func
-Date: Sat, 10 Aug 2019 05:28:20 +0000
-Message-Id: <20190810052829.6032-10-tiny.windzz@gmail.com>
+Subject: [PATCH v5 10/18] dt-bindings: thermal: add binding document for h3
+ thermal controller
+Date: Sat, 10 Aug 2019 05:28:21 +0000
+Message-Id: <20190810052829.6032-11-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190810052829.6032-1-tiny.windzz@gmail.com>
 References: <20190810052829.6032-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_222951_451403_232424F9 
-X-CRM114-Status: GOOD (  19.17  )
+X-CRM114-CacheID: sfid-20190809_222955_118486_FF743E8C 
+X-CRM114-Status: GOOD (  11.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -111,148 +111,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Here, we do something to prepare for the subsequent
-support of multiple platforms.
-
-1) rename sun50i_ths_calibrate to sun8i_ths_calibrate, because
-   this function should be suitable for all platforms now.
-
-2) introduce calibrate callback to mask calibration method
-   differences.
+This patch adds binding document for allwinner h3 thermal controller.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/thermal/sun8i_thermal.c | 86 ++++++++++++++++++---------------
- 1 file changed, 48 insertions(+), 38 deletions(-)
+ .../bindings/thermal/sun8i-thermal.yaml       | 81 ++++++++++++++++++-
+ 1 file changed, 78 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
-index 6f4294c2aba7..47c20c4c69e7 100644
---- a/drivers/thermal/sun8i_thermal.c
-+++ b/drivers/thermal/sun8i_thermal.c
-@@ -60,6 +60,8 @@ struct ths_thermal_chip {
- 	int		scale;
- 	int		ft_deviation;
- 	int		temp_data_base;
-+	int		(*calibrate)(struct ths_device *tmdev,
-+				     u16 *caldata, int callen);
- 	int		(*init)(struct ths_device *tmdev);
- 	int             (*irq_ack)(struct ths_device *tmdev);
- };
-@@ -152,45 +154,14 @@ static irqreturn_t sun8i_irq_thread(int irq, void *data)
- 	return IRQ_HANDLED;
- }
+diff --git a/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+index e0973199ba3c..6624cf6b1ce8 100644
+--- a/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
++++ b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+@@ -16,6 +16,7 @@ description: |-
+ properties:
+   compatible:
+     enum:
++      - allwinner,sun8i-h3-ths
+       - allwinner,sun50i-h6-ths
  
--static int sun50i_ths_calibrate(struct ths_device *tmdev)
-+static int sun50i_h6_ths_calibrate(struct ths_device *tmdev,
-+				   u16 *caldata, int callen)
- {
--	struct nvmem_cell *calcell;
- 	struct device *dev = tmdev->dev;
--	u16 *caldata;
--	size_t callen;
--	int ft_temp;
--	int i, ret = 0;
--
--	calcell = devm_nvmem_cell_get(dev, "calib");
--	if (IS_ERR(calcell)) {
--		if (PTR_ERR(calcell) == -EPROBE_DEFER)
--			return -EPROBE_DEFER;
--		/*
--		 * Even if the external calibration data stored in sid is
--		 * not accessible, the THS hardware can still work, although
--		 * the data won't be so accurate.
--		 *
--		 * The default value of calibration register is 0x800 for
--		 * every sensor, and the calibration value is usually 0x7xx
--		 * or 0x8xx, so they won't be away from the default value
--		 * for a lot.
--		 *
--		 * So here we do not return error if the calibartion data is
--		 * not available, except the probe needs deferring.
--		 */
--		goto out;
--	}
-+	int i, ft_temp;
+   reg:
+@@ -28,13 +29,21 @@ properties:
+     maxItems: 1
  
--	caldata = nvmem_cell_read(calcell, &callen);
--	if (IS_ERR(caldata)) {
--		ret = PTR_ERR(caldata);
--		goto out;
--	}
--
--	if (!caldata[0] || callen < 2 + 2 * tmdev->chip->sensor_num) {
--		ret = -EINVAL;
--		goto out_free;
--	}
-+	if (!caldata[0] || callen < 2 + 2 * tmdev->chip->sensor_num)
-+		return -EINVAL;
+   clocks:
+-    maxItems: 1
++    minItems: 1
++    maxItems: 2
++    items:
++      - description: ths bus clock
++      - description: ths mod clock
  
- 	/*
- 	 * efuse layout:
-@@ -245,7 +216,45 @@ static int sun50i_ths_calibrate(struct ths_device *tmdev)
- 				   cdata << offset);
- 	}
+   clock-names:
+-    const: bus
++    minItems: 1
++    maxItems: 2
++    items:
++      - const: bus
++      - const: mod
  
--out_free:
-+	return 0;
-+}
+   "#thermal-sensor-cells":
+-    const: 1
++    enum: [ 0, 1 ]
+ 
+   nvmem-cells:
+     description: ths calibrate data
+@@ -51,9 +60,75 @@ required:
+   - interrupts
+   - "#thermal-sensor-cells"
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: allwinner,sun50i-h6-ths
 +
-+static int sun8i_ths_calibrate(struct ths_device *tmdev)
-+{
-+	struct nvmem_cell *calcell;
-+	struct device *dev = tmdev->dev;
-+	u16 *caldata;
-+	size_t callen;
-+	int ret = 0;
++    then:
++      properties:
++        clocks:
++          minItems: 1
++          maxItems: 1
 +
-+	calcell = devm_nvmem_cell_get(dev, "calib");
-+	if (IS_ERR(calcell)) {
-+		if (PTR_ERR(calcell) == -EPROBE_DEFER)
-+			return -EPROBE_DEFER;
-+		/*
-+		 * Even if the external calibration data stored in sid is
-+		 * not accessible, the THS hardware can still work, although
-+		 * the data won't be so accurate.
-+		 *
-+		 * The default value of calibration register is 0x800 for
-+		 * every sensor, and the calibration value is usually 0x7xx
-+		 * or 0x8xx, so they won't be away from the default value
-+		 * for a lot.
-+		 *
-+		 * So here we do not return error if the calibartion data is
-+		 * not available, except the probe needs deferring.
-+		 */
-+		goto out;
-+	}
++        clock-names:
++          minItems: 1
++          maxItems: 1
 +
-+	caldata = nvmem_cell_read(calcell, &callen);
-+	if (IS_ERR(caldata)) {
-+		ret = PTR_ERR(caldata);
-+		goto out;
-+	}
++    else:
++      properties:
++        clocks:
++          minItems: 2
++          maxItems: 2
 +
-+	tmdev->chip->calibrate(tmdev, caldata, callen);
++        clock-names:
++          minItems: 2
++          maxItems: 2
 +
- 	kfree(caldata);
- out:
- 	return ret;
-@@ -294,7 +303,7 @@ static int sun8i_ths_resource_init(struct ths_device *tmdev)
- 	if (ret)
- 		goto bus_disable;
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: allwinner,sun8i-h3-ths
++
++    then:
++      properties:
++        "#thermal-sensor-cells":
++          const: 0
++
++    else:
++      properties:
++        "#thermal-sensor-cells":
++          const: 1
++
+ additionalProperties: false
  
--	ret = sun50i_ths_calibrate(tmdev);
-+	ret = sun8i_ths_calibrate(tmdev);
- 	if (ret)
- 		goto mod_disable;
- 
-@@ -422,6 +431,7 @@ static const struct ths_thermal_chip sun50i_h6_ths = {
- 	.scale = -67,
- 	.ft_deviation = SUN50I_H6_FT_DEVIATION,
- 	.temp_data_base = SUN50I_H6_THS_TEMP_DATA,
-+	.calibrate = sun50i_h6_ths_calibrate,
- 	.init = sun50i_h6_thermal_init,
- 	.irq_ack = sun50i_h6_irq_ack,
- };
+ examples:
++  - |
++    ths: ths@1c25000 {
++        compatible = "allwinner,sun8i-h3-ths";
++        reg = <0x01c25000 0x400>;
++        clocks = <&ccu CLK_BUS_THS>, <&ccu CLK_THS>;
++        clock-names = "bus", "mod";
++        resets = <&ccu RST_BUS_THS>;
++        interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
++        nvmem-cells = <&tsen_calib>;
++        nvmem-cell-names = "calib";
++        #thermal-sensor-cells = <0>;
++    };
++
++    sid: sid@1c14000 {
++        compatible = "allwinner,sun8i-h3-sid";
++        reg = <0x1c14000 0x400>;
++        #address-cells = <1>;
++        #size-cells = <1>;
++        tsen_calib: calib@34 {
++                reg = <0x34 2>;
++        };
++    };
++
+   - |
+     ths: ths@5070400 {
+         compatible = "allwinner,sun50i-h6-ths";
 -- 
 2.17.1
 
