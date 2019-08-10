@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE774888AB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 07:34:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7D51888AC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 07:34:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,75 +11,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=RITx/LEFtU0dTei1kXayEDVzMPKzr8h7VK7pFtkrLdU=; b=rCWbSD3I6mvWZ9bgB/KGbblAut
-	5HlN+AQ5OtMWHXiEw++7v7LZh0y/K15KBGHZ5akP7y1TkT991ywgSFGUXhABAmGSCTxAVkIV+0p5u
-	BNddgKU7UrCA/e+7XEYTuLwXP23R1+8CjrOWkmfHW0YkVXkUm0UucnIlPLDa8KwcLVfh/Wbl44u+C
-	dVUWRZsIFY1tv3D+xS60Wqxtc7LZWSQ3ZzyV6TdEAuIvipWpwfskTPahipDJGMWdHB7nrwgcINNoy
-	lytTLtoE4dijRF9cLqFGRX04U0bSfnTBUmX+W0CMuvNS735hwk6hTIln2AP6biYNGL0PI4/s0oM+z
-	od3lIrGQ==;
+	bh=zznhl0fpkTa3Qhk3YosyfIjoyvG/NyEDfanPcj0vBOc=; b=iuUBhRl2+ImOzQYujc0RUaCBz4
+	aypnrY4uCnj7vbc42CDuiGJiXjvq/OGLUx3VjhiFN+0nMgSLCbE30xvePRlpX++hx9lYdMo7IJpEt
+	lc4VUQG8SOHkRqzIaclTYEIvwDkVQpEq7XnB7byS0H1aeGZV0dqhMMy26CoHpaj3AgLdK0ZET7OKz
+	ujgy7/iQCn3nwZDSUHRLxjTG629o/2ro3Ubnq67vJRJSj7o+FrnXJfiFJt+PKPkB0iFvPyimHyWVR
+	KrxZqZtOXUFBXD5OHd15xslKEAlT1qdQN1a8VNvPBbGqLRV49/mkqz8edtGL5W97S04GkhvMB+pLl
+	Vd9I3wqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwK0p-0005i2-5k; Sat, 10 Aug 2019 05:33:55 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hwK14-0005ve-Sf; Sat, 10 Aug 2019 05:34:10 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwJxI-0002s5-VP
- for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 05:30:18 +0000
-Received: by mail-pl1-x643.google.com with SMTP id 4so38767642pld.10
+ id 1hwJxM-0002vG-I0
+ for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 05:30:22 +0000
+Received: by mail-pf1-x444.google.com with SMTP id m30so47130663pff.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 22:30:16 -0700 (PDT)
+ Fri, 09 Aug 2019 22:30:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=iiVQJk9D8CfuggMoVj1p+aqwNp2abkAIMeZ4iA8Pj/0=;
- b=ZPRFOqHEq7Cw2ufw3Mm2fY9Oaz3hac0l3Xu5PsEOGPLF7COULFq05vg+XsWinezM2a
- DZ0T6vL1hWwTe2xwQZll89TldlAUZRYW405qeLdMQcjU3/IGu+ZWJJew0nSuWonus/zJ
- 3JLaJenIBmaVCH5FZrduNe0PsSup6K0UKslPlWsK8BA/E8H8JA9+iYl6ErJ8ZnZ29/fe
- OZOCVbAzbxScW9VeRy7Gh84k7HOBfX5j1DeoW/PqwkCJtokhft4JzptwnZPYRzsKe0PT
- 0A4y/DS2aRJJGlOsoMiG5W01lR8r2O5CEj7S5GST3f7YsPykvQ1a66hOE3UM1BDrjdfZ
- UZtw==
+ bh=jx9rIdpPyDLrhQcjiIIVEfnMNx20+ROJhWSfoScLHXY=;
+ b=peecNcquOPiuM7iIKtsSfIA1I0Dxu7JsVnKQotHt1q+Qce3IacmQ6yTeBvqDkBGzFK
+ LzS43cgpuHmXz4JUUzyyjL28zKH05Hc+2tWuKxa9+XG17jDecW7H3y/Yukd5Eun3pzjD
+ Y1nMgLP4jLja2J7JfsK372ktppt4/glNQQnBM5n8jaLqHYkXYD4u0zPgqEExCMGBMsge
+ 9uRL/Ql1tMDwoxOL8+uY5G+vOfKhNxuYmZCf7sV3CNvy60MB/wZ3He2UICmbP4y7bUKq
+ E3lfGBjaax6Hk+MJNiUR3wLCAOGmM7G5LihcqWEEp3kS26SR+bvwS3pEAX+z9pAF80BD
+ n3Pw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=iiVQJk9D8CfuggMoVj1p+aqwNp2abkAIMeZ4iA8Pj/0=;
- b=Okev9ifSDqBs53DalvaEsQD1aWUkCbhjzlLe9hcuwQwHnGjnG8gfUugzosMGeX5x1N
- nZced8laoljfk7Tpvnd39ZgpK4r4qren/hx6C4Xvbg4CrFCtjlZNUELmFmYwAt1nzRiU
- oI8E5Gq5Im6qcaOXcS5GUvH8nj8wT8aomK96jff66b3j83rO1yespZLi4PS4cDt9/K0h
- f7eFiwiA9guKUmOr+XX4axu/RGpEUuixj/YZW2pOJTLpj00sLfe5dOAYzGC5KOiBM3fJ
- h4uuE4KYZiwPKlh/5JXuGGJNP1fgXchw4BM5S383S4Rle3c8t6vtVJmlEzAflU2NdnKC
- 1/vw==
-X-Gm-Message-State: APjAAAV1NQ0ynJ461z2Ya46+GOesRG9V2YeZVUeGTo32gtvvegVYpduM
- aevF9t+Hd8qXnLPMMyinc+o=
-X-Google-Smtp-Source: APXvYqyJvqnqpxM/3lHUXCDIW0XlM04lSny/PBrutlyVaXbNaFDXGDzHAnGo7L7W6ut3mw/ucA2TpA==
-X-Received: by 2002:a17:902:1101:: with SMTP id
- d1mr22881836pla.212.1565415016564; 
- Fri, 09 Aug 2019 22:30:16 -0700 (PDT)
+ bh=jx9rIdpPyDLrhQcjiIIVEfnMNx20+ROJhWSfoScLHXY=;
+ b=prSXEBA0umoUMXhQ5ft2cDxUEVzev9KgAiHOphri7c7OR23JHfUGG1NvY4plGUpZEB
+ 19Y9OMp4v+RbYgmgZSdpAQzPYUx9P7uqD4QqNWI9LOLV6X0cBJV/aq0bweDfsD8GRkA/
+ y7Ms4m+iwG5kmd+LnxEW6wOmjYCVEm4oYOIC4Xfli96gB/rRkoKLQtuxWv5fTWV6fzw2
+ Kx6FQQVVWD2KlWIimJPcw9seRMpKwrz4YF+Si3GtF6U5zjwU2esZife1ewWJ7I/QdFS1
+ zJfshMlOsP6Hw/7mwCzKmBUGHF5Pgsi9LN93O7i1mnFLcJd9jOfeDHo7vQBXTj8xUerR
+ qnRg==
+X-Gm-Message-State: APjAAAXvthc3Nimoi1a6vp3per4ta3EVhh+cCNdMUjQIgEQPJFMeeNbu
+ 4PEeQ9zP1qSM2TmV5JJK+pY=
+X-Google-Smtp-Source: APXvYqyWKOzcWX7HwlY+V4ut7VgR7PSWiZa3XTBvcf7JoCfOdZzsBeq8k/QGs9LtRDC5/kVc58/k9g==
+X-Received: by 2002:a63:5945:: with SMTP id j5mr20501987pgm.452.1565415019890; 
+ Fri, 09 Aug 2019 22:30:19 -0700 (PDT)
 Received: from localhost ([202.182.106.211])
- by smtp.gmail.com with ESMTPSA id z4sm86286175pgp.80.2019.08.09.22.30.15
+ by smtp.gmail.com with ESMTPSA id e189sm86883416pgc.15.2019.08.09.22.30.19
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 09 Aug 2019 22:30:16 -0700 (PDT)
+ Fri, 09 Aug 2019 22:30:19 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
  robh+dt@kernel.org, mark.rutland@arm.com, maxime.ripard@bootlin.com,
  wens@csie.org, mchehab+samsung@kernel.org, davem@davemloft.net,
  gregkh@linuxfoundation.org, Jonathan.Cameron@huawei.com,
  nicolas.ferre@microchip.com
-Subject: [PATCH v5 15/18] thermal: sun8i: allow to use custom temperature
- calculation function
-Date: Sat, 10 Aug 2019 05:28:26 +0000
-Message-Id: <20190810052829.6032-16-tiny.windzz@gmail.com>
+Subject: [PATCH v5 16/18] thermal: sun8i: add support for Allwinner H5 thermal
+ sensor
+Date: Sat, 10 Aug 2019 05:28:27 +0000
+Message-Id: <20190810052829.6032-17-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190810052829.6032-1-tiny.windzz@gmail.com>
 References: <20190810052829.6032-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_223017_162183_5BCC9341 
-X-CRM114-Status: GOOD (  14.08  )
+X-CRM114-CacheID: sfid-20190809_223020_821375_B59EABE7 
+X-CRM114-Status: GOOD (  12.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -114,63 +113,62 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Icenowy Zheng <icenowy@aosc.io>
 
-The H5 temperature calculation function is strange. Firstly, it's
-segmented. Secondly, the formula of two sensors are different in the
-second segment.
+The thermal sensor in Allwinner H5 has 2 sensors, and they have a
+special segmented temperature calculation formula.
 
-Allow to use a custom temperature calculation function, in case of
-the function is complex.
+Add support for this thermal sensor.
 
 Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 ---
- drivers/thermal/sun8i_thermal.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
+ drivers/thermal/sun8i_thermal.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
 diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
-index 3259081da841..a761e2afda08 100644
+index a761e2afda08..78a888d85cba 100644
 --- a/drivers/thermal/sun8i_thermal.c
 +++ b/drivers/thermal/sun8i_thermal.c
-@@ -76,6 +76,7 @@ struct ths_thermal_chip {
- 				     u16 *caldata, int callen);
- 	int		(*init)(struct ths_device *tmdev);
- 	int             (*irq_ack)(struct ths_device *tmdev);
-+	int		(*calc_temp)(int id, int reg);
- };
- 
- struct ths_device {
-@@ -90,9 +91,12 @@ struct ths_device {
- 
- /* Temp Unit: millidegree Celsius */
- static int sun8i_ths_reg2temp(struct ths_device *tmdev,
--			      int reg)
-+			      int id, int reg)
- {
--	return (reg + tmdev->chip->offset) * tmdev->chip->scale;
-+	if (tmdev->chip->calc_temp)
-+		return tmdev->chip->calc_temp(id, reg);
-+	else
-+		return (reg + tmdev->chip->offset) * tmdev->chip->scale;
+@@ -99,6 +99,16 @@ static int sun8i_ths_reg2temp(struct ths_device *tmdev,
+ 		return (reg + tmdev->chip->offset) * tmdev->chip->scale;
  }
  
++static int sun50i_h5_calc_temp(int id, int reg)
++{
++	if (reg >= 0x500)
++		return -1191 * reg / 10 + 223000;
++	else if (!id)
++		return -1452 * reg / 10 + 259000;
++	else
++		return -1590 * reg / 10 + 276000;
++}
++
  static int sun8i_ths_get_temp(void *data, int *temp)
-@@ -108,7 +112,7 @@ static int sun8i_ths_get_temp(void *data, int *temp)
- 	if (!val)
- 		return -EAGAIN;
+ {
+ 	struct tsensor *s = data;
+@@ -530,6 +540,16 @@ static const struct ths_thermal_chip sun50i_a64_ths = {
+ 	.irq_ack = sun8i_h3_irq_ack,
+ };
  
--	*temp = sun8i_ths_reg2temp(tmdev, val);
-+	*temp = sun8i_ths_reg2temp(tmdev, s->id, val);
- 	/*
- 	 * XX - According to the original sdk, there are some platforms(rarely)
- 	 * that add a fixed offset value after calculating the temperature
-@@ -232,7 +236,7 @@ static int sun50i_h6_ths_calibrate(struct ths_device *tmdev,
- 
- 	for (i = 0; i < tmdev->chip->sensor_num; i++) {
- 		int reg = (int)caldata[i + 1];
--		int sensor_temp = sun8i_ths_reg2temp(tmdev, reg);
-+		int sensor_temp = sun8i_ths_reg2temp(tmdev, i, reg);
- 		int delta, cdata, offset;
- 
- 		/*
++static const struct ths_thermal_chip sun50i_h5_ths = {
++	.sensor_num = 2,
++	.has_mod_clk = true,
++	.temp_data_base = SUN8I_THS_TEMP_DATA,
++	.calibrate = sun8i_h3_ths_calibrate,
++	.init = sun8i_h3_thermal_init,
++	.irq_ack = sun8i_h3_irq_ack,
++	.calc_temp = sun50i_h5_calc_temp,
++};
++
+ static const struct ths_thermal_chip sun50i_h6_ths = {
+ 	.sensor_num = 2,
+ 	.offset = -2794,
+@@ -544,6 +564,7 @@ static const struct ths_thermal_chip sun50i_h6_ths = {
+ static const struct of_device_id of_ths_match[] = {
+ 	{ .compatible = "allwinner,sun8i-h3-ths", .data = &sun8i_h3_ths },
+ 	{ .compatible = "allwinner,sun50i-a64-ths", .data = &sun50i_a64_ths },
++	{ .compatible = "allwinner,sun50i-h5-ths", .data = &sun50i_h5_ths },
+ 	{ .compatible = "allwinner,sun50i-h6-ths", .data = &sun50i_h6_ths },
+ 	{ /* sentinel */ },
+ };
 -- 
 2.17.1
 
