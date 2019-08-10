@@ -2,83 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 207EF888AE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 07:34:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B1E5888AF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 07:35:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Cmt839Br3kYrTG4STSQ7O2VeWnOD5PjyTDGGvKFvbjk=; b=HMpKN6wa+lRgj8Dt0/PsfJAj0A
-	nDJ5vH4+wfLPL0RZThXcPL9i7osyyyZOf+6K2DSMMmVmQGaMPobyBLfucMJyBEIo/XxQYJTPVdVwc
-	lufUKctrYQDAVPiWD+kuptgfGBysV5dMG/5M24TYEuoucB5O4PvEDx95A87n5Zul4mSoo4XA6qrae
-	5SVmlfC2RrVU6FQkPFKcofg07cZ9HveFQk5uoEUBdHRWFbadu0zeDpev0g+ZPPAnOij5AjaAx9cdo
-	ynUtfvof/axC9Ez+p6EcWsdoGDzcdfVs30oMO3pxCMKxCIdUTAEDdpUNm5g7VWamD1xVm4Pjxa6Ig
-	4ro/nevw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=02h9IEdFdFBsx/LWWP6mofsNtpr9gkUOQaCCmYDc33k=; b=qjq
+	+LejXeCp794gT08JBR/UTrf1D34VR1lrUQmhZ7aCdCzB56Sa8L4Vq8T55gwrQNb+o/pWSM3g67M7u
+	/wSFFhdapmQZzOUYdaZQct/BHd1gbK+cMzRZ+yFmYY9cdHp7ocoKYr/Mu92rTyJwthQiMj+NQsXpX
+	nWtzg1nhd9eZgVUD2wTLsIZ8bQqPDLp2CKuTmdLRMQc0MBCbp2S+D3OhtyErP/NM2MKNbHNidonLJ
+	C5kHfwQr0Ae+7G9NqjaiZk2MSPlDakHEYgF1se16BpM4vepCUjgJhggawS8JvHa3/0t6mZGDSUs1G
+	bqhKMhxdAtMD4FkTVBRsCgwvEUNmu3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwK1d-0006QH-Ir; Sat, 10 Aug 2019 05:34:45 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hwK1t-0006eb-KJ; Sat, 10 Aug 2019 05:35:01 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwJxW-00034g-3i
- for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 05:30:31 +0000
-Received: by mail-pf1-x443.google.com with SMTP id b13so47118286pfo.1
+ id 1hwJzY-0004ok-Hy
+ for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 05:32:37 +0000
+Received: by mail-pl1-x641.google.com with SMTP id ay6so45819910plb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 22:30:30 -0700 (PDT)
+ Fri, 09 Aug 2019 22:32:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=N97E8/sjLzhDk5t0PaLYKP9s4xc14haiY7F1jTT8rvA=;
- b=ZRbyXiUF6gmLzn1OgJc7h/Hf+DW3O8LRQKGyeBgbf6cqioGR47ZdLTH5+11AfvdCyw
- LKGQlCR3NKbdJNpn0FF82vptUjuhz65HyJEUwbSyswVoS7XeEMR9BBewfeZ5YihKwcR0
- dyTwCU8PO3jfRvxduaepqLwpC8rv3pxjzlTECubkKfxGhMDxhWgFulkJcbki9tbr/x+Q
- 1i1D6xhTKJK4sqe/TzvhCLOgmdy6cf9YUhRbidBKHpn+pSD3x/rsNfvtjPnyY93A6eg2
- heBRqnvyzd304Vgkt1CKz6HpVF1wmxDQ3zm0mVfsaVMZ210ACYsWhKp7p02Wz40JhgNV
- A/SA==
+ h=from:to:cc:subject:date:message-id;
+ bh=71DUVtj5Cvg/Wok9dZsUDEqRY7qzU/CKNT9zSocN+ao=;
+ b=oH/Pf9MtSMDZkluj4qQKlvh6Kv8FriGzPN9CjiWS1WBhMkpRogJ5AYRzjRkOt+MO9y
+ DensadzKBFHj3agCJgnb3xMpazh9MI43ilUc0NXpzI7eyC0gmIAhzJp5zvR0IQrsdymo
+ nJIPKVISeubH+rufmf3Lc/KYui2pUCc3Zyhu8DXu9KDooJesZmLnC+5g1bJlVOetHSS1
+ Woq5wOdnef8MHDFi4DP/rUQLksb2NhiKvjWqfWI6ehlkuoq12Kn+A80ApJodRlFiTsUR
+ 1fy4fS7ySH71Gaelyza0+EmuwftY6JgenWu8GsFN/nwMdBTweYeMYDt6TksRya0JxO5C
+ 3SCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=N97E8/sjLzhDk5t0PaLYKP9s4xc14haiY7F1jTT8rvA=;
- b=gH9hm4kJyWM70lv19gqeQ0y5wK23NFi+gnBr/PO+I1/Ugq+SZICZ53KWXb2P16JKk0
- 1ZKSfOXTZONwylDuoqNEiKudjV8Jho6fydTYku1eyJsi5UrtZqkCib8Ck3PdAksPQRo8
- lg7O+ozU86gXmIPGqQoK1L27aCy3P1EbpvqZ16bPxcbQ6hPex0+/Nd4iFXw30BXgFAJd
- Yh89XZstjSqNpYkBn1XYDDD85uM4+gOXO8OzpsrX0I69aAUSxMt8KfDtAkw/v9v3xoiS
- qPU4fWfED5cypLXpdR1HoZWSUY2jOLiiYgbl09M5Km/zJSPhbHK4d9zAtUJqsRABkxrs
- IdPg==
-X-Gm-Message-State: APjAAAVs2EOlVoaclauiEtlV/hFLFQST7cOz6Qmlc9E9o0rQqGkamitm
- ZmTG7rJ6SRKOIPJRRghVpZo=
-X-Google-Smtp-Source: APXvYqxQJC2cov0AZI9Zc6L1PoOKHIqa7mOVzuvWNzU+GwSLSgVq2r0q65Ii4MJWgZcDi6gXhannTw==
-X-Received: by 2002:a62:e315:: with SMTP id g21mr26135824pfh.225.1565415029673; 
- Fri, 09 Aug 2019 22:30:29 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=71DUVtj5Cvg/Wok9dZsUDEqRY7qzU/CKNT9zSocN+ao=;
+ b=GBd6yejhGJOh3qBewKnJ1ZRSsA4iF/BPqAxuP75OSSlXWcFd4I8o+ivpQCToTiug/T
+ +pTmwaS7OXlQKNipYNybWisdRsXp/kIjVvicpaO5XV2WBVFXNKtjtPjPBeTQ5toD38d5
+ iKJh/aByaQnX56ysT7f/F9GQ9FX6ORnB0JZZUaosOOk4M4WXluFGFsHLUQuQkT8fIhYB
+ 2IOhfxwcPr6r7DT2TgiVT+c1OTvX5lYD5SeZEWJ5yXNTQTmv5aoyTGb/CNcPIE+vOwfb
+ grqdcv5IyTY5PiRt5RuTncfKeeeBYAXWMkwPORKSeMk9hiNaF2ZIIq+Y3RiSl+P/L7m/
+ dUtg==
+X-Gm-Message-State: APjAAAVH1nnta1yzIntNr5uEuy8/pZfPPF6X407+C/z+jSlWKuwc26gC
+ uqSe9uW2UlKzZe3WjDEZ/pU=
+X-Google-Smtp-Source: APXvYqzx2x2due+dcKfhyyCVT9miXzJYXimf/VWFq0pAMOqAFhvOtdO+BDXCCX1MutojsCyob5lLGg==
+X-Received: by 2002:a17:902:4383:: with SMTP id
+ j3mr16103296pld.69.1565415155840; 
+ Fri, 09 Aug 2019 22:32:35 -0700 (PDT)
 Received: from localhost ([202.182.106.211])
- by smtp.gmail.com with ESMTPSA id z13sm6999252pjn.32.2019.08.09.22.30.28
+ by smtp.gmail.com with ESMTPSA id 16sm26554443pfc.66.2019.08.09.22.32.34
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 09 Aug 2019 22:30:29 -0700 (PDT)
+ Fri, 09 Aug 2019 22:32:35 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
  robh+dt@kernel.org, mark.rutland@arm.com, maxime.ripard@bootlin.com,
  wens@csie.org, mchehab+samsung@kernel.org, davem@davemloft.net,
  gregkh@linuxfoundation.org, Jonathan.Cameron@huawei.com,
  nicolas.ferre@microchip.com
-Subject: [PATCH v5 18/18] thermal: sun8i: add support for Allwinner R40
- thermal sensor
-Date: Sat, 10 Aug 2019 05:28:29 +0000
-Message-Id: <20190810052829.6032-19-tiny.windzz@gmail.com>
+Subject: [PATCH v5 13/18] thermal: sun8i: add thermal driver for A64
+Date: Sat, 10 Aug 2019 05:32:32 +0000
+Message-Id: <20190810053232.6125-1-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190810052829.6032-1-tiny.windzz@gmail.com>
-References: <20190810052829.6032-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_223030_339845_BEC22A91 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20190809_223236_634032_05371939 
+X-CRM114-Status: GOOD (  10.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,38 +98,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Icenowy Zheng <icenowy@aosc.io>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Icenowy Zheng <icenowy@aosc.io>
+From: Vasily Khoruzhick <anarsoul@gmail.com>
 
-The thermal sensor in Allwinner R40 SoC is quite similar to the one in
-Allwinner A64 SoC, with only slightly different temperature calculation
-formula.
+Thermal sensor controller in A64 is similar to H3, but it has 3 sensors.
+Extend H3 functions to add support for multiple sensors.
 
-Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 ---
  drivers/thermal/sun8i_thermal.c | 12 ++++++++++++
  1 file changed, 12 insertions(+)
 
 diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
-index 78a888d85cba..0de9a56c3775 100644
+index 41ce8cdc0546..3259081da841 100644
 --- a/drivers/thermal/sun8i_thermal.c
 +++ b/drivers/thermal/sun8i_thermal.c
-@@ -529,6 +529,17 @@ static const struct ths_thermal_chip sun8i_h3_ths = {
+@@ -515,6 +515,17 @@ static const struct ths_thermal_chip sun8i_h3_ths = {
  	.irq_ack = sun8i_h3_irq_ack,
  };
  
-+static const struct ths_thermal_chip sun8i_r40_ths = {
++static const struct ths_thermal_chip sun50i_a64_ths = {
 +	.sensor_num = 3,
-+	.offset = -2222,
-+	.scale = -113,
++	.offset = -2170,
++	.scale = -117,
 +	.has_mod_clk = true,
 +	.temp_data_base = SUN8I_THS_TEMP_DATA,
 +	.calibrate = sun8i_h3_ths_calibrate,
@@ -141,17 +135,17 @@ index 78a888d85cba..0de9a56c3775 100644
 +	.irq_ack = sun8i_h3_irq_ack,
 +};
 +
- static const struct ths_thermal_chip sun50i_a64_ths = {
- 	.sensor_num = 3,
- 	.offset = -2170,
-@@ -563,6 +574,7 @@ static const struct ths_thermal_chip sun50i_h6_ths = {
+ static const struct ths_thermal_chip sun50i_h6_ths = {
+ 	.sensor_num = 2,
+ 	.offset = -2794,
+@@ -528,6 +539,7 @@ static const struct ths_thermal_chip sun50i_h6_ths = {
  
  static const struct of_device_id of_ths_match[] = {
  	{ .compatible = "allwinner,sun8i-h3-ths", .data = &sun8i_h3_ths },
-+	{ .compatible = "allwinner,sun8i-r40-ths", .data = &sun8i_r40_ths },
- 	{ .compatible = "allwinner,sun50i-a64-ths", .data = &sun50i_a64_ths },
- 	{ .compatible = "allwinner,sun50i-h5-ths", .data = &sun50i_h5_ths },
++	{ .compatible = "allwinner,sun50i-a64-ths", .data = &sun50i_a64_ths },
  	{ .compatible = "allwinner,sun50i-h6-ths", .data = &sun50i_h6_ths },
+ 	{ /* sentinel */ },
+ };
 -- 
 2.17.1
 
