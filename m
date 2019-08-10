@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2461E888A3
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 07:32:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D874888A4
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 07:32:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=d6+3LkT9AX9HHn6YGF0iQQ4o4054tVL9XcEihR/5Q9w=; b=ZJAVoohJFr4bDt+cs7H85D0ZtA
-	da0CHaHEf6zuJU9OpRFVycbIKxdNBE4Jb9b2Mm79T/Pr6O7itiuePgpoVUzlvvd+mMHCtfI+Uu0YD
-	J5efxJkicSN1SGwpunmGs0dp3CgSm1PJOSaqAnBD5uIiBsOAsIDLCIZFFmCGcFpP7zmGKZGFwLV8Y
-	14pnJvkDQc+OhQoEcVtBpcB/4YYV5VjtERFEr9qUtriEfBYRsA+EM96Kdt6MVaG0V6q+jBLPtV0IG
-	Zjvw5OaSHBAbKrYWPhbjWQJJ0oVfdpcHhBd4E9Z0K1QoL8G4nCEvE2B+03thOI6l/7/XhQXpPnqWq
-	Q7MDnd4A==;
+	bh=JQDhOVLC+jhcpVasbJbDVV5Ni80RckTMCCIYbFQZrmk=; b=GG4t9jNaA0eqf5p2bAHN9T+Iu7
+	xCjqXxrsWkMzBlzvmDQi5T8yTlfEHH8nqWWisceFe/RX3wXcgLbNIW9aN4Gkr2mPwIPo9Tse0AQYK
+	kTTnt9gxUhmdYlJmGMgA7DbpHYE2XcfL5xgd2oLLsmLxIIJqkGf5HWMg+FpeIIPYsvyq5pX7ilb9c
+	s2YnWvoY+VQM7/0qXrFWuLzZe+ycmf8ICgr3fqWihXz5WOSxjKp2tILXU3Tgd81+uLqmJALgUHHr3
+	s593C+0BPg3e5odzFfIqGuhxYde52MqdqE1tJ7XNVqn5T+0eka+4QNGd5KMITo8pOo5ISI4g6xEC4
+	LYaLqDGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwJzQ-0004VL-F1; Sat, 10 Aug 2019 05:32:28 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hwJzh-0004jU-2p; Sat, 10 Aug 2019 05:32:45 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwJww-0001O5-Qz
- for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 05:29:56 +0000
-Received: by mail-pf1-x442.google.com with SMTP id f17so43126137pfn.6
+ id 1hwJx1-0001SD-FD
+ for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 05:30:00 +0000
+Received: by mail-pf1-x441.google.com with SMTP id t16so47087741pfe.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 22:29:54 -0700 (PDT)
+ Fri, 09 Aug 2019 22:29:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=wjQ5RBMUscwhPovbCKs/X+MccsfEX8ouNnM/eU9tQdY=;
- b=owjCa9lXzv2/DwkfhVrhXGPfLgD8hjoGMaHzNtHK8q9nZFQLhg0aAuY2svLpXwtORD
- NcaMD7Xoi1eTrqSTeWXAdJTm6w7xsh3+ekzHVnQlUd6evrD1UaF0V5jA0xR0susVtGqK
- 0E9Dqep2V9kZz9TJplT0xU6lPOE608vmJZCkcy4tFplb4Pr+b7RWp8661wdtUQBuYhmT
- cSlJV9R/IpJ8+PGtAooQJrVzgnoV9ux306PKcqD/2x4HLWnw4Om/JHW2XKA+lY2y+sYZ
- WNIQvi0mzQCMkjOUGMYYLFBoz6oocY6mck/do2zFdCcA3JJcNwATwqlbhtQ8u6d2A155
- hUQQ==
+ bh=/+Vypp949GcHqEyKcL0IQIX2nnfIDii+9qZvEhV9QRs=;
+ b=qb2+3+aAvlwnHlCP2Xkzp0vO5+lpxhwIt29tHwACLZjiEaWeHHtOy+k5OqeJSM82EK
+ A/wNHR5BcT5mi7UnUkyrNAfHfBJcnY86ecuF2XbOfQ15gvfjKCrcUBfQrUS1tXiRNXV1
+ jclQDEOR4yiDZVGPB69eqFnKhXa2vvBkmc91uLH5SFcApz9Fl7rQ1wchvH7ZJP3rBFr5
+ Oob/8kSekXKJKsqc04pZKMdXzGqgfG79cV93WFjdUs6qAw08HOwNZyX4eq0xPMrbhrAN
+ kTLoqPepxUoopH4KbYyYfodNfrRczjDlqKv20DxJuxJJR1o043mSIl72yDUZuIEqP5LG
+ RUZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=wjQ5RBMUscwhPovbCKs/X+MccsfEX8ouNnM/eU9tQdY=;
- b=QOdvo69DYL3mhdSr8wiPbazhiIHTaoEbWiV6EOl8znnOpAPpMEt65BrV4BdC17JjKo
- ncPbwMvkeZXHtdsPA+kckLc6oU15r9yDa5ubmUkcAiarhD20APQ3+oTAESDG14iiEhr+
- aPab0105gTJDVpm0XWrCK1JGk2O/UrX5M/nNu2hWuKiPAMF559TrI7ZxyoeI0ZPJJu/e
- mPW4SXR1a+90f7RUf2s1k6XHnD18/kcRhjSfnO1HA3JxhG4pt5JnKsRsGEFCjHdyb7op
- 5vAhBqI41QEwgDTTnJsbUtLpdFHZgyb10/Emws1hof7eWFr6LZwjN6dS0xP2ZxUAhTgn
- 6OqA==
-X-Gm-Message-State: APjAAAU1XZe4I9aswHgGU+nRfxFrn5sPmQ73Nvtb0bu1kDVuEemVf8WK
- Mza35UenYlIBkwfmah5tcQk=
-X-Google-Smtp-Source: APXvYqw8vs8pLZBSxmUAg7iqaM6hn9kfidzUufWlKeYMFwYYXWPhKeZ2pwcEdEyO8GNSSc0MtJ7W1w==
-X-Received: by 2002:a62:7a0f:: with SMTP id v15mr6362442pfc.35.1565414994464; 
- Fri, 09 Aug 2019 22:29:54 -0700 (PDT)
+ bh=/+Vypp949GcHqEyKcL0IQIX2nnfIDii+9qZvEhV9QRs=;
+ b=Bd+XOSoEd6l6gu22tBqUH+6RticWXj15W0BHYYdVtG5OGnWrdRtxBFmaGbz3+cSJv3
+ MsPnYoBImU3zsovNZxMB+yWBZMBDOESFaZYQFLb2hvRpD6nhyOmob+XMUZxfU/aHxoZV
+ AR3wymF0NOU6OcZTkgE4bP0GrbJ0Qzev+akgx0i3I1OQ0tETJiWu9f1MZKtFWBxzINEO
+ dem58gkphec/0iGUe7z2ohyaww8s4o+uDIbVzO2pspeJDciBcAb9o+t1ThUtby2yf4XF
+ dM15vpF6Iszb5vQHLMKQXA0pYRgg1cOHB0G6I5BrcxnhZSGzhPWGllFX8rrrvFsW9rxf
+ gzvg==
+X-Gm-Message-State: APjAAAXanRe/T6mjA1+0JwJaN3p3sDclQnU2QhqfojCJiwKKg7QRkTGY
+ hz6slmrbArFTiZcKQ8xCDNs=
+X-Google-Smtp-Source: APXvYqwCZdkfHsbnXnHBnBca8U9pGcrxvUpyCmRvFdcutvKvt/oH+EgoT1C/Ajn6NWK2up6ZUgbiFQ==
+X-Received: by 2002:a65:614a:: with SMTP id o10mr20265723pgv.407.1565414998644; 
+ Fri, 09 Aug 2019 22:29:58 -0700 (PDT)
 Received: from localhost ([202.182.106.211])
- by smtp.gmail.com with ESMTPSA id s24sm62023523pgm.3.2019.08.09.22.29.53
+ by smtp.gmail.com with ESMTPSA id c12sm7848842pfc.22.2019.08.09.22.29.57
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 09 Aug 2019 22:29:53 -0700 (PDT)
+ Fri, 09 Aug 2019 22:29:57 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
  robh+dt@kernel.org, mark.rutland@arm.com, maxime.ripard@bootlin.com,
  wens@csie.org, mchehab+samsung@kernel.org, davem@davemloft.net,
  gregkh@linuxfoundation.org, Jonathan.Cameron@huawei.com,
  nicolas.ferre@microchip.com
-Subject: [PATCH v5 10/18] dt-bindings: thermal: add binding document for h3
- thermal controller
-Date: Sat, 10 Aug 2019 05:28:21 +0000
-Message-Id: <20190810052829.6032-11-tiny.windzz@gmail.com>
+Subject: [PATCH v5 11/18] thermal: sun8i: add thermal driver for h3
+Date: Sat, 10 Aug 2019 05:28:22 +0000
+Message-Id: <20190810052829.6032-12-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190810052829.6032-1-tiny.windzz@gmail.com>
 References: <20190810052829.6032-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_222955_118486_FF743E8C 
-X-CRM114-Status: GOOD (  11.62  )
+X-CRM114-CacheID: sfid-20190809_222959_540413_DE3B47BA 
+X-CRM114-Status: GOOD (  16.26  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,126 +110,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds binding document for allwinner h3 thermal controller.
+This patch adds the support for allwinner h3 thermal sensor.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- .../bindings/thermal/sun8i-thermal.yaml       | 81 ++++++++++++++++++-
- 1 file changed, 78 insertions(+), 3 deletions(-)
+ drivers/thermal/sun8i_thermal.c | 91 +++++++++++++++++++++++++++++++++
+ 1 file changed, 91 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-index e0973199ba3c..6624cf6b1ce8 100644
---- a/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-+++ b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-@@ -16,6 +16,7 @@ description: |-
- properties:
-   compatible:
-     enum:
-+      - allwinner,sun8i-h3-ths
-       - allwinner,sun50i-h6-ths
+diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
+index 47c20c4c69e7..41ce8cdc0546 100644
+--- a/drivers/thermal/sun8i_thermal.c
++++ b/drivers/thermal/sun8i_thermal.c
+@@ -27,6 +27,14 @@
+ #define TEMP_TO_REG				672
+ #define CALIBRATE_DEFAULT			0x800
  
-   reg:
-@@ -28,13 +29,21 @@ properties:
-     maxItems: 1
++#define SUN8I_THS_CTRL0				0x00
++#define SUN8I_THS_CTRL2				0x40
++#define SUN8I_THS_IC				0x44
++#define SUN8I_THS_IS				0x48
++#define SUN8I_THS_MFC				0x70
++#define SUN8I_THS_TEMP_CALIB			0x74
++#define SUN8I_THS_TEMP_DATA			0x80
++
+ #define SUN50I_THS_CTRL0			0x00
+ #define SUN50I_H6_THS_ENABLE			0x04
+ #define SUN50I_H6_THS_PC			0x08
+@@ -36,6 +44,10 @@
+ #define SUN50I_H6_THS_TEMP_CALIB		0xa0
+ #define SUN50I_H6_THS_TEMP_DATA			0xc0
  
-   clocks:
--    maxItems: 1
-+    minItems: 1
-+    maxItems: 2
-+    items:
-+      - description: ths bus clock
-+      - description: ths mod clock
++#define SUN8I_THS_CTRL0_T_ACQ0(x)		(GENMASK(15, 0) & (x))
++#define SUN8I_THS_CTRL2_T_ACQ1(x)		((GENMASK(15, 0) & (x)) << 16)
++#define SUN8I_THS_DATA_IRQ_STS(x)		BIT(x + 8)
++
+ #define SUN50I_THS_CTRL0_T_ACQ(x)		((GENMASK(15, 0) & (x)) << 16)
+ #define SUN50I_THS_FILTER_EN			BIT(2)
+ #define SUN50I_THS_FILTER_TYPE(x)		(GENMASK(1, 0) & (x))
+@@ -121,6 +133,23 @@ static const struct regmap_config config = {
+ 	.fast_io = true,
+ };
  
-   clock-names:
--    const: bus
-+    minItems: 1
-+    maxItems: 2
-+    items:
-+      - const: bus
-+      - const: mod
++static int sun8i_h3_irq_ack(struct ths_device *tmdev)
++{
++	int i, state, ret = 0;
++
++	regmap_read(tmdev->regmap, SUN8I_THS_IS, &state);
++
++	for (i = 0; i < tmdev->chip->sensor_num; i++) {
++		if (state & SUN8I_THS_DATA_IRQ_STS(i)) {
++			regmap_write(tmdev->regmap, SUN8I_THS_IS,
++				     SUN8I_THS_DATA_IRQ_STS(i));
++			ret |= BIT(i);
++		}
++	}
++
++	return ret;
++}
++
+ static int sun50i_h6_irq_ack(struct ths_device *tmdev)
+ {
+ 	int i, state, ret = 0;
+@@ -154,6 +183,26 @@ static irqreturn_t sun8i_irq_thread(int irq, void *data)
+ 	return IRQ_HANDLED;
+ }
  
-   "#thermal-sensor-cells":
--    const: 1
-+    enum: [ 0, 1 ]
++static int sun8i_h3_ths_calibrate(struct ths_device *tmdev,
++				  u16 *caldata, int callen)
++{
++	int i;
++
++	if (!caldata[0] || callen < 2 * tmdev->chip->sensor_num)
++		return -EINVAL;
++
++	for (i = 0; i < tmdev->chip->sensor_num; i++) {
++		int offset = (i % 2) << 4;
++
++		regmap_update_bits(tmdev->regmap,
++				   SUN8I_THS_TEMP_CALIB + (4 * (i >> 1)),
++				   0xfff << offset,
++				   caldata[i] << offset);
++	}
++
++	return 0;
++}
++
+ static int sun50i_h6_ths_calibrate(struct ths_device *tmdev,
+ 				   u16 *caldata, int callen)
+ {
+@@ -319,6 +368,36 @@ static int sun8i_ths_resource_init(struct ths_device *tmdev)
+ 	return ret;
+ }
  
-   nvmem-cells:
-     description: ths calibrate data
-@@ -51,9 +60,75 @@ required:
-   - interrupts
-   - "#thermal-sensor-cells"
++static int sun8i_h3_thermal_init(struct ths_device *tmdev)
++{
++	int val;
++
++	/* average over 4 samples */
++	regmap_write(tmdev->regmap, SUN8I_THS_MFC,
++		     SUN50I_THS_FILTER_EN |
++		     SUN50I_THS_FILTER_TYPE(1));
++	/*
++	 * period = (x + 1) * 4096 / clkin; ~10ms
++	 * enable data interrupt
++	 */
++	val = GENMASK(7 + tmdev->chip->sensor_num, 8);
++	regmap_write(tmdev->regmap, SUN8I_THS_IC,
++		     SUN50I_H6_THS_PC_TEMP_PERIOD(58) | val);
++	/*
++	 * clkin = 24MHz
++	 * T acquire = clkin / (x + 1)
++	 *           = 20us
++	 * enable sensor
++	 */
++	regmap_write(tmdev->regmap, SUN8I_THS_CTRL0,
++		     SUN8I_THS_CTRL0_T_ACQ0(479));
++	val = GENMASK(tmdev->chip->sensor_num - 1, 0);
++	regmap_write(tmdev->regmap, SUN8I_THS_CTRL2,
++		     SUN8I_THS_CTRL2_T_ACQ1(479) | val);
++
++	return 0;
++}
++
+ static int sun50i_h6_thermal_init(struct ths_device *tmdev)
+ {
+ 	int val;
+@@ -425,6 +504,17 @@ static int sun8i_ths_remove(struct platform_device *pdev)
+ 	return 0;
+ }
  
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: allwinner,sun50i-h6-ths
++static const struct ths_thermal_chip sun8i_h3_ths = {
++	.sensor_num = 1,
++	.offset = -1794,
++	.scale = -121,
++	.has_mod_clk = true,
++	.temp_data_base = SUN8I_THS_TEMP_DATA,
++	.calibrate = sun8i_h3_ths_calibrate,
++	.init = sun8i_h3_thermal_init,
++	.irq_ack = sun8i_h3_irq_ack,
++};
 +
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 1
-+          maxItems: 1
-+
-+        clock-names:
-+          minItems: 1
-+          maxItems: 1
-+
-+    else:
-+      properties:
-+        clocks:
-+          minItems: 2
-+          maxItems: 2
-+
-+        clock-names:
-+          minItems: 2
-+          maxItems: 2
-+
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: allwinner,sun8i-h3-ths
-+
-+    then:
-+      properties:
-+        "#thermal-sensor-cells":
-+          const: 0
-+
-+    else:
-+      properties:
-+        "#thermal-sensor-cells":
-+          const: 1
-+
- additionalProperties: false
+ static const struct ths_thermal_chip sun50i_h6_ths = {
+ 	.sensor_num = 2,
+ 	.offset = -2794,
+@@ -437,6 +527,7 @@ static const struct ths_thermal_chip sun50i_h6_ths = {
+ };
  
- examples:
-+  - |
-+    ths: ths@1c25000 {
-+        compatible = "allwinner,sun8i-h3-ths";
-+        reg = <0x01c25000 0x400>;
-+        clocks = <&ccu CLK_BUS_THS>, <&ccu CLK_THS>;
-+        clock-names = "bus", "mod";
-+        resets = <&ccu RST_BUS_THS>;
-+        interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
-+        nvmem-cells = <&tsen_calib>;
-+        nvmem-cell-names = "calib";
-+        #thermal-sensor-cells = <0>;
-+    };
-+
-+    sid: sid@1c14000 {
-+        compatible = "allwinner,sun8i-h3-sid";
-+        reg = <0x1c14000 0x400>;
-+        #address-cells = <1>;
-+        #size-cells = <1>;
-+        tsen_calib: calib@34 {
-+                reg = <0x34 2>;
-+        };
-+    };
-+
-   - |
-     ths: ths@5070400 {
-         compatible = "allwinner,sun50i-h6-ths";
+ static const struct of_device_id of_ths_match[] = {
++	{ .compatible = "allwinner,sun8i-h3-ths", .data = &sun8i_h3_ths },
+ 	{ .compatible = "allwinner,sun50i-h6-ths", .data = &sun50i_h6_ths },
+ 	{ /* sentinel */ },
+ };
 -- 
 2.17.1
 
