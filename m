@@ -2,73 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9098C885B3
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 00:14:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3739788724
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 02:11:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EWs98BjDFjXEhqbR2FZgK45SeFjSQhiL0Xcz50dPH70=; b=QlEFsM/fb0IwNU
-	lF+NeGR57Euwd/12IBto+YNU0uL05v6sz5f9ct2EdGP3gkLeQGxM7xd2N3RvtskHjEz9HWkajwceg
-	OjdZI02sG2x/Qwy9bYLhK5rPepUmH6cxkokoA/doYdX2JRZxagJrOlHBDdik/cA94odZZ7N0fRUCx
-	CJxn9sevqEmDe1uA4NbFy9E7njC/4b4eQxUYzPX4c2EucgWpcS4jzP1YjsTJwNsMx2xGdRS2x6sXn
-	zeH3LfiL1IXP8JEEIu79R+hdABsdnsMCk77CGwlInado1zjOszTPg3BaJT/QtgNfTyvyNloWdphxd
-	8FeqjAkbdbvI/QG8jbLA==;
+	List-Owner; bh=YzVdGqxAC5Ae8MVuKv2SZQHWXZp3wkSjMTc4kmkBy8w=; b=a6L2aFInzmNTyh
+	KXU4bPd8lKVpP77EJnF9plTzibISdCKg2vFHLNDgKF9e+BRWbY8gNtnNHFftSITOb2U+2OMZZKNu/
+	vVPTBO83FTObJjzfTCRqU8VupYdL1FuqW8w+T1Zy2W7TiC6O69B6AWUMQYDGzkBa/zruC+5iJW9bW
+	AouimZAqMjaLPkSTRbqzamkJVD5fMewmGnMtFGgHQ6t6sjN5ves/gprmyQdPoM1zunyOeVVRivvGK
+	OZrbpRcVsbv7w3PjrttcKS+Kq9p1cbIoFCLZIsiRyUROaEVi1eMMHA/t/heV2uQC96wAfQfQeDaeo
+	dYu/r7x5H0IOiGmlqMng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwD9f-0005vK-Br; Fri, 09 Aug 2019 22:14:35 +0000
+	id 1hwEz9-0007kT-UG; Sat, 10 Aug 2019 00:11:51 +0000
 Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwD9U-0005v1-3v
- for linux-arm-kernel@lists.infradead.org; Fri, 09 Aug 2019 22:14:25 +0000
-Received: by mail-pg1-x541.google.com with SMTP id t132so46496074pgb.9
+ id 1hwEyz-0007jP-Ab
+ for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 00:11:43 +0000
+Received: by mail-pg1-x541.google.com with SMTP id n4so4881123pgv.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 15:14:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=sTGM+jKd0j/u9kKivj5QkkT0ws6UqJeC4LOf3qyOSiA=;
- b=ZPSYG2y1FubHnMCujvzkNF9nNq1g/qGihS3NYDYHfoowc1sONFpcYWNKJOsWswrUN7
- 8X8J/DAdY5e1GK43gVcXEcONfn6JKlZjPIK/cEJU4xZkkY9E5BlJ6rMEabiwiqyTt5L5
- rRSCuTe8ibPBWDXs7+ytP5eND2MMvLdBCH/7MAdvGJhqBodhDlT5k3zLaZUh/dI29U1c
- 6H463+QhLY3jWsJLFnrg2zH2XJPDoMlh1jfs641LcfynH4fwV6mRqFQ+xh+fvDTlBrIa
- t91uYfy0NeJKWYGCvHaGKnIaHtSOa8x6k5c6o8FGkyvGMWwPrBhNC4OLlUTCaJZDsQM8
- HUrA==
+ Fri, 09 Aug 2019 17:11:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=EuQ/R3CppOBh2T1D6FSE6/gAUMLd+emlPXZ8P0KlK4E=;
+ b=KECCdmknzaH0Ve1akzRhLGqPfYzLSqiQZzqIGqUTh+SAcO6Q19ScBeUTVGmT9Kn2fi
+ wuc/H+9Zvt1RiYlS2YMjELwda9ElQG3tetwgpwSLKyc3GMze7p3oJ/iAFf+mlr04fS3p
+ 4SoG8g9Vg49LMc+XN9CN2yjxwMYkHbcBup94eMKinNVLCmVJIOstAPR1bTlg+BvjkpIY
+ cd36ZXrgFEWiqQp6BRzMLy0rpNVl0ji479pxHPF2OWsm4aIthkJshQrCEUBBzGGR6KqN
+ xCB5+OxoXjeEhzq/eUA6LgN2F98/tP71hoMrI7Rz306vlRZd504t0Hj1N10xjJOIG5GQ
+ EZNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=sTGM+jKd0j/u9kKivj5QkkT0ws6UqJeC4LOf3qyOSiA=;
- b=XeEzAwCuzNz2dVpa2ZTW76Q3HeepLu8+QwGpXD/OCb0233Zsdk4qLIoXCqcrV7U5If
- ePjrdSeQD5laXHeXI8Zw5hslvAjHO2GRhjnyrUfQTHCx1eFUnbzCG9LbFTl41IqqQvRa
- 3u3DIrNUosdxyIjU60+6Twjn8+OYwgo3iVvrG1hnK05R5kk2P7HVIU/EFo66Ek5ggbos
- QbsPpWQQU9bA9QWDIzrzVoZOSIvizWhnLeoR4vYdmZOSfQXkxWfmczaJMHRd1fGd6MiA
- bzCVhRIAFJZtT5iSIHMie3bTJX/paMVAx7PX/3qQ7bUPslOerYLbXz0UIVlveZ/gh4aT
- DfMw==
-X-Gm-Message-State: APjAAAUtnWOC+YqYikwaO60nzxJ9Zug6ne/SZykN7Ou9EpDBpOCXoZ+V
- bmwgXj4+Z0W5X4aJ3TPlwzge4FDjyDQWnx0L2+t1uQ==
-X-Google-Smtp-Source: APXvYqxitIf75C0kIneyrNkgvFG5aI1vCR6XBvjt3uLYaXSyX1fAscaC6qULNBcaWiY/708qdARMbGa5q8vlVOwuBME=
-X-Received: by 2002:aa7:8085:: with SMTP id v5mr6610774pff.165.1565388863281; 
- Fri, 09 Aug 2019 15:14:23 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=EuQ/R3CppOBh2T1D6FSE6/gAUMLd+emlPXZ8P0KlK4E=;
+ b=OD9hbW93I/dPD5YgRsX437zRBJ15kRUkFBlbaNDRUwk9RB6GztIYA69Qvph2SNQYzl
+ 6bPJtHKb3vsIETdbVqw/5otF5mbZCC1yRG8yfdLwF97q9Z2HgpOt6DK3wjCGdkJfJA+j
+ A1B+qVUHdlvYPys4NQAc3mgX9JQLhhlWU0jCh4lBDO2+kpQtMYp7UttcIkMJCK/vxxPB
+ 1kjryTSJmMYJa0xKLjylo+8bInz46hhYY8CRwQzevy3DwD1+qb8hCVcumtPD2L0uvZ0O
+ etAFyUA+cg2XWw/7HhGle4s6B7U2phTbKxE8VpJtXsrfd8H0oJiL/4DuVfLbm1Ca8b+G
+ jFQg==
+X-Gm-Message-State: APjAAAVMnYAJDKfSuuT6/GLxtY7/sdFGy31wtCAcYJJEEGukke0u17Fl
+ DSfaW/K3/EWWJ7cSlbRK/3q3fg==
+X-Google-Smtp-Source: APXvYqwfo3bJUKvTH7g4ZfJhFp6Q9sQXhh6NsNs21MEaB/aVJYLW2l4lX40Zlrs3JJt56T2EbsbNBA==
+X-Received: by 2002:a62:82c1:: with SMTP id w184mr24770723pfd.8.1565395899475; 
+ Fri, 09 Aug 2019 17:11:39 -0700 (PDT)
+Received: from localhost ([2601:602:9200:a1a5:b873:707a:e893:cdb3])
+ by smtp.gmail.com with ESMTPSA id k14sm25201452pgb.78.2019.08.09.17.11.38
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 09 Aug 2019 17:11:38 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Guillaume La Roque <glaroque@baylibre.com>, daniel.lezcano@linaro.org
+Subject: Re: [PATCH v3 0/6] Add support of New Amlogic temperature sensor for
+ G12 SoCs
+In-Reply-To: <20190806130506.8753-1-glaroque@baylibre.com>
+References: <20190806130506.8753-1-glaroque@baylibre.com>
+Date: Fri, 09 Aug 2019 17:11:37 -0700
+Message-ID: <7hd0hd3mme.fsf@baylibre.com>
 MIME-Version: 1.0
-References: <20190808032916.879-1-cai@lca.pw>
- <20190808103808.GC46901@lakrids.cambridge.arm.com>
- <D2A2F2B9-0563-4DF6-8E77-F191A768CE4E@lca.pw>
- <20190809085332.GB48423@lakrids.cambridge.arm.com>
-In-Reply-To: <20190809085332.GB48423@lakrids.cambridge.arm.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Fri, 9 Aug 2019 15:14:11 -0700
-Message-ID: <CAKwvOdnbZNeCHbvYMgBd-mw0Q3eP-AxM9dqWmM3pZ_BrDaTzbg@mail.gmail.com>
-Subject: Re: [PATCH] arm64/cache: silence -Woverride-init warnings
-To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_151424_180810_EE647C36 
-X-CRM114-Status: UNSURE (   7.60  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190809_171141_449982_099ABB14 
+X-CRM114-Status: GOOD (  14.69  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
@@ -76,19 +78,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,26 +92,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>, Qian Cai <cai@lca.pw>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 9, 2019 at 1:53 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> * Find a mechanism to suppress the warning on a per-assignment (not
->   per-file) basis, without altering the structure of the existing code.
+Guillaume La Roque <glaroque@baylibre.com> writes:
 
-#pragma push/pop can be used to suppress warnings in a localized
-section of a translation unit.
+> This patchs series add support of New Amlogic temperature sensor and minimal
+> thermal zone for SEI510 and ODROID-N2 boards.
+>
+> First implementation was doing on IIO[1] but after comments i move on thermal framework.
+> Formulas and calibration values come from amlogic.
+>
+> Changes since v2:
+>   - fix yaml documention 
+>   - remove unneeded status variable for temperature-sensor node
+>   - rework driver after Martin review
+>   - add some information in commit message
+>
+> Changes since v1:
+>   - fix enum vs const in documentation
+>   - fix error with thermal-sensor-cells value set to 1 instead of 0
+>   - add some dependencies needed to add cooling-maps
+>
+> Dependencies :
+> - patch 3,4 & 5: depends on Neil's patch and series :
+>               - missing dwc2 phy-names[2]
+>               - patchsets to add DVFS on G12a[3] which have deps on [4] and [5]
+>
+> [1] https://lore.kernel.org/linux-amlogic/20190604144714.2009-1-glaroque@baylibre.com/
+> [2] https://lore.kernel.org/linux-amlogic/20190625123647.26117-1-narmstrong@baylibre.com/
+> [3] https://lore.kernel.org/linux-amlogic/20190729132622.7566-1-narmstrong@baylibre.com/
+> [4] https://lore.kernel.org/linux-amlogic/20190731084019.8451-5-narmstrong@baylibre.com/
+> [5] https://lore.kernel.org/linux-amlogic/20190729132622.7566-3-narmstrong@baylibre.com/
 
--- 
-Thanks,
-~Nick Desaulniers
+Thank you for the detailed list of dependencies!  Much appreciated.
+
+With all the deps, I tested this on sei510 and odroid-n2, and basic
+functionality seems to work.
+
+As discussed off-list: it would be nice to have an example of how
+cpufreq could be used as a cooling device for hot temperatures.  The
+vendor kernel has some trip points that could be included as examples,
+or even included as extra patches.
+
+Also the driver patch is missing the two main thermal maintainers, so
+please resend at least the driver and bindings including them.
+
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
