@@ -2,58 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C8AE8895A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 09:59:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B25D688967
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 09:59:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8MJExcdu+T2ILjQKKg9+QexhbnLDuDsHfU/K0VlDtVM=; b=I3xSqvTuPxIJi9
-	6FvVHAjgCZpRjju+rZjkiDDLoTpjBPHjSTQWT0I2cbgP8LGq8s0NYkQgiFPPAymz8Bm4SU/XrN+dg
-	Yl1IvcDTId981JzLprKjUp4iGAjpa9VKXR3Cehsh7UKvppAcpRwbbPfokhkDukiDb4jtTRRPyCpES
-	wnlGrTnvJnaV9CGE+tQJmffRKzQW8vc8XpgaCaNbADfvbmHakDhYrMzjNwoq6ljsSqIovGTBqQ4L0
-	i3W2zklrKwkadWUkT8M8/3MYNuUkglwm2Dlhon9/3vyEZA5Nv8O6ZoUlLNnOG8QxEVmhIKzk6xllO
-	q5UYoB3UWNqx2Jc9QyQw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9hZC5h6tZpQIbkACBnsgMqY9gszoy/a3ziZsUM+u7FU=; b=NKA0m0fMBUPuyD
+	M3bccY7zoEMS/ejNdUrWmdX0SmFXVGQ5GPItJhc/iTou5cX4K3E6TK2uXZAG74Od28IOYtcpBBj3j
+	YNxVQMR0r6ftrlN7VFlkwlY0H9c61Sc/8U4U1psPya9/AehLSlA+Qp46WiTOp2U3Y0wdtv0c7xsTi
+	vY5Kculypa5ZGzeElAwUpVJ9uV6ADd7PVFVQL4+7Np9xQNecL4uCn3BaytJiHuihrlP7d0nFQrMpm
+	fvXJa1MkIzw2orbfzNnjTA999OdbpQu0vNGVYFMfztXnN279EVK/g04UDf7lb3Q6CLGAadLcAetgf
+	UXk7K9b3cMhUV6GweK3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwMHT-0003gN-D1; Sat, 10 Aug 2019 07:59:15 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hwMHu-000426-Lr; Sat, 10 Aug 2019 07:59:42 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwMHC-0003e4-Vk; Sat, 10 Aug 2019 07:59:02 +0000
-X-UUID: 11b0fbcd12364a96b76f53221a54ef63-20190809
-X-UUID: 11b0fbcd12364a96b76f53221a54ef63-20190809
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ id 1hwMHa-0003ue-U5; Sat, 10 Aug 2019 07:59:25 +0000
+X-UUID: ebbc8457fa3a4490838f4089cc265bda-20190809
+X-UUID: ebbc8457fa3a4490838f4089cc265bda-20190809
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1268540851; Fri, 09 Aug 2019 23:58:49 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ with ESMTP id 432116586; Fri, 09 Aug 2019 23:59:15 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 10 Aug 2019 00:58:48 -0700
+ 15.0.1395.4; Sat, 10 Aug 2019 00:59:13 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 10 Aug 2019 15:58:46 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 10 Aug 2019 15:59:12 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sat, 10 Aug 2019 15:58:45 +0800
+ Transport; Sat, 10 Aug 2019 15:59:10 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
  Robin Murphy <robin.murphy@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH v9 00/21] MT8183 IOMMU SUPPORT
-Date: Sat, 10 Aug 2019 15:58:00 +0800
-Message-ID: <1565423901-17008-1-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v9 02/21] iommu/mediatek: Use a struct as the platform data
+Date: Sat, 10 Aug 2019 15:58:02 +0800
+Message-ID: <1565423901-17008-3-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
+In-Reply-To: <1565423901-17008-1-git-send-email-yong.wu@mediatek.com>
+References: <1565423901-17008-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190810_005859_031657_19E9187B 
-X-CRM114-Status: GOOD (  15.92  )
+X-CRM114-CacheID: sfid-20190810_005923_548025_6182AE4E 
+X-CRM114-Status: GOOD (  13.02  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -82,176 +86,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset mainly adds support for mt8183 IOMMU and SMI.
+Use a struct as the platform special data instead of the enumeration.
+This is a prepare patch for adding mt8183 iommu support.
 
-mt8183 has only one M4U like mt8173 and is also MTK IOMMU gen2 which
-uses ARM Short-Descriptor translation table format.
+Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+Reviewed-by: Evan Green <evgreen@chromium.org>
+---
+ drivers/iommu/mtk_iommu.c | 24 ++++++++++++++++--------
+ drivers/iommu/mtk_iommu.h |  6 +++++-
+ 2 files changed, 21 insertions(+), 9 deletions(-)
 
-The mt8183 M4U-SMI HW diagram is as below:
-
-                          EMI
-                           |
-                          M4U
-                           |
-                       ----------
-                       |        |
-                   gals0-rx   gals1-rx
-                       |        |
-                       |        |
-                   gals0-tx   gals1-tx
-                       |        |
-                      ------------
-                       SMI Common
-                      ------------
-                           |
-  +-----+-----+--------+-----+-----+-------+-------+
-  |     |     |        |     |     |       |       |
-  |     |  gals-rx  gals-rx  |   gals-rx gals-rx gals-rx
-  |     |     |        |     |     |       |       |
-  |     |     |        |     |     |       |       |
-  |     |  gals-tx  gals-tx  |   gals-tx gals-tx gals-tx
-  |     |     |        |     |     |       |       |
-larb0 larb1  IPU0    IPU1  larb4  larb5  larb6    CCU
-disp  vdec   img     cam    venc   img    cam
-
-All the connections are HW fixed, SW can NOT adjust it.
-
-Compared with mt8173, we add a GALS(Global Async Local Sync) module
-between SMI-common and M4U, and additional GALS between larb2/3/5/6
-and SMI-common. GALS can help synchronize for the modules in different
-clock frequency, it can be seen as a "asynchronous fifo".
-
-GALS can only help transfer the command/data while it doesn't have
-the configuring register, thus it has the special "smi" clock and it
-doesn't have the "apb" clock. From the diagram above, we add "gals0"
-and "gals1" clocks for smi-common and add a "gals" clock for smi-larb.
-
-From the diagram above, IPU0/IPU1(Image Processor Unit) and CCU(Camera
-Control Unit) is connected with smi-common directly, we can take them
-as "larb2", "larb3" and "larb7", and their register spaces are
-different with the normal larb.
-
-The dtsi was sent at: [1] https://lore.kernel.org/patchwork/patch/1054099/
-
-Change notes:
-v9:
-   1) rebase on v5.3-rc1.
-   2) In v7s, Use oas to implement MTK 4GB mode. It nearly reconstruct the
-      patch, so I don't keep the R-b.
-
-v8: https://lists.linuxfoundation.org/pipermail/iommu/2019-June/037095.html
-   1) From the 4GB mode:
-      a. Move the patch sequency(Move "iommu/mediatek: Fix iova_to_phys PA
-      start for 4GB mode" before "iommu/io-pgtable-arm-v7s: Extend MediaTek
-      4G Mode").
-      b. Remove the patch "Rename enable_4GB to dram_is_4gb" and Use Evan's
-      suggestion.
-   2) add a "union" for smi gen1/gen2 base.
-   3) Clean up the structure "struct mtk_smi_iommu" since it have only one item,
-      suggested from Matthias.
-
-v7: https://lists.linuxfoundation.org/pipermail/iommu/2019-June/036552.html
-   1) rebase on v5.2-rc1.
-   2) Add fixed tags in patch 20.
-   3) Remove shutdown patch. I will send it independently if necessary.
-
-v6: https://lists.linuxfoundation.org/pipermail/iommu/2019-February/033685.html
-    1) rebase on v5.0-rc1.
-    2) About the register name (VLD_PA_RNG), Keep consistent in the patches.
-    3) In the 4GB mode, Always add MTK_4GB_quirk.
-    4) Reword some commit message helped from Evan. like common->smi_ao_base is
-       completely different from common->base; STANDARD_AXI_MODE reg is completely
-       different from CTRL_MISC; commit in the shutdown patch.
-    5) Add 2 new patches again:
-       iommu/mediatek: Rename enable_4GB to dram_is_4gb
-       iommu/mediatek: Fix iova_to_phys PA start for 4GB mode
-
-v5: https://lists.linuxfoundation.org/pipermail/iommu/2019-January/032387.html
-    1) Remove this patch "iommu/mediatek: Constify iommu_ops" from here as it
-       was applied for v5.0.
-    2) Again, add 3 preparing patches. Move two property into the plat_data.
-       iommu/mediatek: Move vld_pa_rng into plat_data
-       iommu/mediatek: Move reset_axi into plat_data
-       iommu/mediatek: Refine protect memory definition
-    3) Add shutdown callback for mtk_iommu_v1 in patch[19/20].
-
-v4: http://lists.infradead.org/pipermail/linux-mediatek/2018-December/016205.html
-    1) Add 3 preparing patches. Seperate some minor meaningful code into
-       a new patch according to Matthias's suggestion.
-       memory: mtk-smi: Add gals support         
-       iommu/mediatek: Add larb-id remapped support 
-       iommu/mediatek: Add bclk can be supported optionally       
-    2) rebase on "iommu/mediatek: Make it explicitly non-modular"
-       which was applied.
-       https://lore.kernel.org/patchwork/patch/1020125/
-    3) add some comment about "mediatek,larb-id" in the commit message of
-       the patch "mtk-smi: Get rid of need_larbid".
-    4) Fix bus_sel value.
-
-v3: https://lists.linuxfoundation.org/pipermail/iommu/2018-November/031121.html
-    1) rebase on v4.20-rc1.
-    2) In the dt-binding, add a minor string "mt7623" which also use gen1
-       since Matthias added it in v4.20.
-    3) About v7s:
-       a) for paddr_to_pte, change the param from "arm_v7s_io_pgtable" to
-          "arm_pgtable_cfg", according to Robin suggestion.
-       b) Don't use CONFIG_PHYS_ADDR_T_64BIT.
-       c) add a little comment(pgtable address still don't over 4GB) in the
-          commit message of the patch "Extend MediaTek 4GB Mode".
-    4) add "iommu/mediatek: Constify iommu_ops" into this patchset. this may
-       be helpful for review and merge.
-       https://lists.linuxfoundation.org/pipermail/iommu/2018-October/030637.html
-
-v2: https://lists.linuxfoundation.org/pipermail/iommu/2018-September/030164.html
-    1) Fix typo in the commit message of dt-binding.
-    2) Change larb2/larb3 to the special larbs.
-    3) Refactor the larb-id remapped array(larbid_remapped), then we
-    don't need add the new function(mtk_iommu_get_larbid).
-    4) Add a new patch for v7s two helpers(paddr_to_iopte and
-    iopte_to_paddr).
-    5) Change some comment for MTK 4GB mode.
-
-v1: base on v4.19-rc1.
-http://lists.infradead.org/pipermail/linux-mediatek/2018-September/014881.html
-
-Yong Wu (21):
-  dt-bindings: mediatek: Add binding for mt8183 IOMMU and SMI
-  iommu/mediatek: Use a struct as the platform data
-  memory: mtk-smi: Use a general config_port interface
-  memory: mtk-smi: Use a struct for the platform data for smi-common
-  iommu/io-pgtable-arm-v7s: Add paddr_to_iopte and iopte_to_paddr
-    helpers
-  iommu/io-pgtable-arm-v7s: Use ias/oas to check the valid iova/pa
-  iommu/io-pgtable-arm-v7s: Rename 4GB quirk to QUIRK_MTK_EXT
-  iommu/io-pgtable-arm-v7s: Extend MediaTek 4GB Mode
-  iommu/mediatek: Add bclk can be supported optionally
-  iommu/mediatek: Add larb-id remapped support
-  iommu/mediatek: Refine protect memory definition
-  iommu/mediatek: Move reset_axi into plat_data
-  iommu/mediatek: Move vld_pa_rng into plat_data
-  memory: mtk-smi: Add gals support
-  iommu/mediatek: Add mt8183 IOMMU support
-  iommu/mediatek: Add mmu1 support
-  memory: mtk-smi: Invoke pm runtime_callback to enable clocks
-  memory: mtk-smi: Add bus_sel for mt8183
-  iommu/mediatek: Fix VLD_PA_RNG register backup when suspend
-  memory: mtk-smi: Get rid of need_larbid
-  iommu/mediatek: Clean up struct mtk_smi_iommu
-
- .../devicetree/bindings/iommu/mediatek,iommu.txt   |  30 ++-
- .../memory-controllers/mediatek,smi-common.txt     |  12 +-
- .../memory-controllers/mediatek,smi-larb.txt       |   4 +
- drivers/iommu/io-pgtable-arm-v7s.c                 |  84 +++++--
- drivers/iommu/mtk_iommu.c                          | 143 +++++++----
- drivers/iommu/mtk_iommu.h                          |  21 +-
- drivers/iommu/mtk_iommu_v1.c                       |   6 +-
- drivers/memory/mtk-smi.c                           | 268 ++++++++++++++-------
- include/dt-bindings/memory/mt8183-larb-port.h      | 130 ++++++++++
- include/linux/io-pgtable.h                         |  11 +-
- include/soc/mediatek/smi.h                         |   5 -
- 11 files changed, 533 insertions(+), 181 deletions(-)
- create mode 100644 include/dt-bindings/memory/mt8183-larb-port.h
-
+diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+index 82e4be4..c6e6dc3 100644
+--- a/drivers/iommu/mtk_iommu.c
++++ b/drivers/iommu/mtk_iommu.c
+@@ -46,7 +46,7 @@
+ #define REG_MMU_CTRL_REG			0x110
+ #define F_MMU_PREFETCH_RT_REPLACE_MOD		BIT(4)
+ #define F_MMU_TF_PROTECT_SEL_SHIFT(data) \
+-	((data)->m4u_plat == M4U_MT2712 ? 4 : 5)
++	((data)->plat_data->m4u_plat == M4U_MT2712 ? 4 : 5)
+ /* It's named by F_MMU_TF_PROT_SEL in mt2712. */
+ #define F_MMU_TF_PROTECT_SEL(prot, data) \
+ 	(((prot) & 0x3) << F_MMU_TF_PROTECT_SEL_SHIFT(data))
+@@ -512,7 +512,7 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
+ 	}
+ 
+ 	regval = F_MMU_TF_PROTECT_SEL(2, data);
+-	if (data->m4u_plat == M4U_MT8173)
++	if (data->plat_data->m4u_plat == M4U_MT8173)
+ 		regval |= F_MMU_PREFETCH_RT_REPLACE_MOD;
+ 	writel_relaxed(regval, data->base + REG_MMU_CTRL_REG);
+ 
+@@ -533,14 +533,14 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
+ 		F_INT_PRETETCH_TRANSATION_FIFO_FAULT;
+ 	writel_relaxed(regval, data->base + REG_MMU_INT_MAIN_CONTROL);
+ 
+-	if (data->m4u_plat == M4U_MT8173)
++	if (data->plat_data->m4u_plat == M4U_MT8173)
+ 		regval = (data->protect_base >> 1) | (data->enable_4GB << 31);
+ 	else
+ 		regval = lower_32_bits(data->protect_base) |
+ 			 upper_32_bits(data->protect_base);
+ 	writel_relaxed(regval, data->base + REG_MMU_IVRP_PADDR);
+ 
+-	if (data->enable_4GB && data->m4u_plat != M4U_MT8173) {
++	if (data->enable_4GB && data->plat_data->m4u_plat != M4U_MT8173) {
+ 		/*
+ 		 * If 4GB mode is enabled, the validate PA range is from
+ 		 * 0x1_0000_0000 to 0x1_ffff_ffff. here record bit[32:30].
+@@ -551,7 +551,7 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
+ 	writel_relaxed(0, data->base + REG_MMU_DCM_DIS);
+ 
+ 	/* It's MISC control register whose default value is ok except mt8173.*/
+-	if (data->m4u_plat == M4U_MT8173)
++	if (data->plat_data->m4u_plat == M4U_MT8173)
+ 		writel_relaxed(0, data->base + REG_MMU_STANDARD_AXI_MODE);
+ 
+ 	if (devm_request_irq(data->dev, data->irq, mtk_iommu_isr, 0,
+@@ -584,7 +584,7 @@ static int mtk_iommu_probe(struct platform_device *pdev)
+ 	if (!data)
+ 		return -ENOMEM;
+ 	data->dev = dev;
+-	data->m4u_plat = (enum mtk_iommu_plat)of_device_get_match_data(dev);
++	data->plat_data = of_device_get_match_data(dev);
+ 
+ 	/* Protect memory. HW will access here while translation fault.*/
+ 	protect = devm_kzalloc(dev, MTK_PROTECT_PA_ALIGN * 2, GFP_KERNEL);
+@@ -732,9 +732,17 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
+ 	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(mtk_iommu_suspend, mtk_iommu_resume)
+ };
+ 
++static const struct mtk_iommu_plat_data mt2712_data = {
++	.m4u_plat     = M4U_MT2712,
++};
++
++static const struct mtk_iommu_plat_data mt8173_data = {
++	.m4u_plat     = M4U_MT8173,
++};
++
+ static const struct of_device_id mtk_iommu_of_ids[] = {
+-	{ .compatible = "mediatek,mt2712-m4u", .data = (void *)M4U_MT2712},
+-	{ .compatible = "mediatek,mt8173-m4u", .data = (void *)M4U_MT8173},
++	{ .compatible = "mediatek,mt2712-m4u", .data = &mt2712_data},
++	{ .compatible = "mediatek,mt8173-m4u", .data = &mt8173_data},
+ 	{}
+ };
+ 
+diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+index 59337323..9725b08 100644
+--- a/drivers/iommu/mtk_iommu.h
++++ b/drivers/iommu/mtk_iommu.h
+@@ -32,6 +32,10 @@ enum mtk_iommu_plat {
+ 	M4U_MT8173,
+ };
+ 
++struct mtk_iommu_plat_data {
++	enum mtk_iommu_plat m4u_plat;
++};
++
+ struct mtk_iommu_domain;
+ 
+ struct mtk_iommu_data {
+@@ -48,7 +52,7 @@ struct mtk_iommu_data {
+ 	bool				tlb_flush_active;
+ 
+ 	struct iommu_device		iommu;
+-	enum mtk_iommu_plat		m4u_plat;
++	const struct mtk_iommu_plat_data *plat_data;
+ 
+ 	struct list_head		list;
+ };
 -- 
 1.9.1
 
