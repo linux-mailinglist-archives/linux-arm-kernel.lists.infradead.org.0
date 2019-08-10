@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51701888A8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 07:33:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 065BF888A9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 10 Aug 2019 07:33:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=V/94v4YPBmTW5ESZwdwLGiqdZ1rleLb5vSLyXu7Vzlk=; b=eJGWiEZxbBVRgDOUX0tBQTPqZr
-	XHePKT2z6uRQBPb1TD7NXvn2TrG1HDTUHfVEkkm1S1/ULAGNvqr3tRfaMzsoHCet7Hojfx75aHWbj
-	M5QAzWtH4KtVo0AcyRJBwIkRzyTRs6uBEF2+jHjxid9ZfVJORDHxH2LltMxRi+15sHfrzPmGBVudY
-	Doo5LbZ6TBqDtuIw3l2eG+uPRPkdZq/sPdw5jyGj6Ff752AdbGVXjDI5CR875pbYlTHQTelG0pp6F
-	xluatCAp7Vs/eLMKSnsUVtRHHmuuL8k7YWE9NUYswyrp5KAuZGCAaYoKzxk5tYkQd2bHzqhKsJbCp
-	bzFuvJ8w==;
+	bh=02h9IEdFdFBsx/LWWP6mofsNtpr9gkUOQaCCmYDc33k=; b=H6ebvJCD01BK4i7zLYRNtPKe5T
+	HkIoQADFJs7qoICpCgEs1MPYOJyWOFGz14Q1mfN3NVYjFTCcnf2YAqMpR46T4DlBGj4n6ko5lltJd
+	perzyEAnvmGr6TX8DUWWkHOiTXthfXiODw3mQpUr5kW++sddyiWt7hyP+GtA8Ngx3WOK91TY0/cia
+	J4RoH6BkLBA8qwbLdnrgIIcEXYyspIZg5+ZlBzl/4RI/xUCr324z2OgEa9xNW2TBA9Da1wbcW4FrJ
+	gm7EX4XwgbhgpoEidYdUOFi6nKw39IS87mkz82978dLpk5K51uLHrVXzPPrAqh0ER4sM//lwZDy2+
+	UYqtYKTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwK01-00050V-0P; Sat, 10 Aug 2019 05:33:05 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hwK0H-0005GQ-5r; Sat, 10 Aug 2019 05:33:21 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwJx5-0001fw-QP
- for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 05:30:06 +0000
-Received: by mail-pf1-x444.google.com with SMTP id f17so43126252pfn.6
+ id 1hwJxA-0002Cm-GJ
+ for linux-arm-kernel@lists.infradead.org; Sat, 10 Aug 2019 05:30:10 +0000
+Received: by mail-pg1-x543.google.com with SMTP id w3so9648521pgt.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 09 Aug 2019 22:30:03 -0700 (PDT)
+ Fri, 09 Aug 2019 22:30:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=mDKOJXA/ys1npDjXBTQ2s0rGwBbMEHrF7ffvpNaphqY=;
- b=rsarVL0KdYe7Il/Tpaw1MIVKtFiR0Y2kuIrFSMBz5fojZCq1sgccTdo1ozHTVdD8y1
- mfMc9r955mHTdwEeKcbiyCugDa6k7IC3GoTyvxUqkEeEl+h0unaFWnC+QjvpLgxHtXX0
- 99C42B+QCDpqqwwQcgn1jBc3UlwLB/KAqVTJS4THZPjKa2fQPzGa/yhfjwxb9LngoAkc
- 4JGi4JCJ1jdb2+2+oCMlrs1LOc66trOuznPVR4bE0EoM9TGXilRjQ0yG1KcSR1qBrG8B
- ra+er8sAtFIPxl6HNIoKJq42HGwRe6rFx8silSqCqs+OoiOZA7TixdSAPDum+RgMN1Uo
- EcEQ==
+ bh=71DUVtj5Cvg/Wok9dZsUDEqRY7qzU/CKNT9zSocN+ao=;
+ b=AHZ5OqTYDdsovC5n1BNsaS8kgOU6oa6y2cAM5Wbguuqk5X5JFfCB99NyHGj1db+4X6
+ MdEl7N+AOMFOoTs6oYVoU/1LtNcBNYKSFh/+dcZryJAp6056TKQKoZKWgELUPsA/t+RU
+ 7mZeZnDlpJoV8qs/Fekb/eNC5INfy6h3z9PXVNwktXZjAtaIRvOAuFQTodDeVeyRTMMI
+ c9sYeO6khNfyyoCr0gwVC/M6JZvyLAbXKVKzHnkA7bJSqXHlBS3k7WTu0XfCnBu1tJ5J
+ dGASctZiWvoOEgrrTdIyvM1NBcDFX4TzCg75DRXDb7lYZiGB2YcX6EfvWA9XSIXjpFD0
+ r70A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=mDKOJXA/ys1npDjXBTQ2s0rGwBbMEHrF7ffvpNaphqY=;
- b=jISbPj3c9dloWd5w+/U1anCxGkDeOlaVYU2NlQzeNYylOq27Z3olV2K0cANnd4qTo9
- P46H43W9bt30rmNg6D69GIj7lIdpnY9QIx0reaUiG7NkO3Wr95Z4sBDHCjWPh1gqTBu3
- PQ0s5H55aHN8xWhyftOXyifS+XyWUWsjCr/9nO7IGYE8z3C2IBMwC4RczAPqzGxLLTJB
- l2++JCj5FMdp1G89w10oElVZYD79dHA8W5StJR5lzNDpmH5EAD/VRALuRVWLXZBc7Dzj
- ovaMw+IlRK7JrmexokjlMUnZeRvyHfgg9MZcU1fB3eXApkgV1AgXKbQP9TNtQbh9cnrv
- KtgQ==
-X-Gm-Message-State: APjAAAVdrVRbfCLUAsmYbGes0mrR3a8tCHN4h0mMuOiBBj5HRb5NGP9a
- geoSIuPdQFHgSHCdleZ5V6U=
-X-Google-Smtp-Source: APXvYqwAkVuLdow5oO8itFrdem+xM/Zhwse/76vid6q2uk8MGOkz2hXbK0XNT0eZiUWzl0KdwWjjtw==
-X-Received: by 2002:a63:7b18:: with SMTP id w24mr20690940pgc.328.1565415002991; 
- Fri, 09 Aug 2019 22:30:02 -0700 (PDT)
+ bh=71DUVtj5Cvg/Wok9dZsUDEqRY7qzU/CKNT9zSocN+ao=;
+ b=KiOqV5S+0T4AwyTDslZUnO40K/C+4NhPo8m6yQjCgdMStkWK3P72C2E/gNWwv/JKol
+ FgCNJKD8X3ApWOy9hTo4s0Dx5uQ8+vKeXn2Jqv7Sn09PlmI8S5PodVO75yMht8icinYC
+ WGsdTeR/zhmi9sggkTc+q4tUfLHG0uNKOiijsioeam7OxrbSl/uA7mD0cC5sa4qPsmXI
+ iiJdlBOKfRQr0OzE1YqTtkFND4AYQ0ypJn2LVK4IBxRmVzsuQQD1JVtHGmcAOxRJD8Ii
+ hDiZbE79q40tFANRBjoBFLmuMEGsn1eoEEbvu+VKfTWF8BABFhfvIi6KYNMeToDBsqNR
+ XRSw==
+X-Gm-Message-State: APjAAAXYlf1wpN3siw43emyTgLt3z82cLJ5rPaG/e5DMJkDRJxG1g25t
+ b+ZC/YNZJTZqmX2B1Zh3Hpo=
+X-Google-Smtp-Source: APXvYqy0SbXHrw7PFXc5NqzKKuYBZBqpPz4Kx438X2kv6H5qephacghobTnQMk+4EBLFALhrbhee5Q==
+X-Received: by 2002:aa7:8d98:: with SMTP id i24mr25671345pfr.199.1565415007779; 
+ Fri, 09 Aug 2019 22:30:07 -0700 (PDT)
 Received: from localhost ([202.182.106.211])
- by smtp.gmail.com with ESMTPSA id n128sm55019042pfn.46.2019.08.09.22.30.01
+ by smtp.gmail.com with ESMTPSA id o12sm6113304pjr.22.2019.08.09.22.30.06
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 09 Aug 2019 22:30:02 -0700 (PDT)
+ Fri, 09 Aug 2019 22:30:07 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
  robh+dt@kernel.org, mark.rutland@arm.com, maxime.ripard@bootlin.com,
  wens@csie.org, mchehab+samsung@kernel.org, davem@davemloft.net,
  gregkh@linuxfoundation.org, Jonathan.Cameron@huawei.com,
  nicolas.ferre@microchip.com
-Subject: [PATCH v5 12/18] dt-bindings: thermal: add binding document for a64
- thermal controller
-Date: Sat, 10 Aug 2019 05:28:23 +0000
-Message-Id: <20190810052829.6032-13-tiny.windzz@gmail.com>
+Subject: [PATCH v5 13/18] thermal: sun8i: add thermal driver for A64
+Date: Sat, 10 Aug 2019 05:28:24 +0000
+Message-Id: <20190810052829.6032-14-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190810052829.6032-1-tiny.windzz@gmail.com>
 References: <20190810052829.6032-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_223004_104670_6D9D8FAF 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20190809_223008_902222_BBFA34A9 
+X-CRM114-Status: GOOD (  11.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,34 +101,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yangtao Li <tiny.windzz@gmail.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds binding document for allwinner a64 thermal controller.
+From: Vasily Khoruzhick <anarsoul@gmail.com>
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+Thermal sensor controller in A64 is similar to H3, but it has 3 sensors.
+Extend H3 functions to add support for multiple sensors.
+
+Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 ---
- Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/thermal/sun8i_thermal.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-index 6624cf6b1ce8..f935b4fab8ec 100644
---- a/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-+++ b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-@@ -17,6 +17,7 @@ properties:
-   compatible:
-     enum:
-       - allwinner,sun8i-h3-ths
-+      - allwinner,sun50i-a64-ths
-       - allwinner,sun50i-h6-ths
+diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
+index 41ce8cdc0546..3259081da841 100644
+--- a/drivers/thermal/sun8i_thermal.c
++++ b/drivers/thermal/sun8i_thermal.c
+@@ -515,6 +515,17 @@ static const struct ths_thermal_chip sun8i_h3_ths = {
+ 	.irq_ack = sun8i_h3_irq_ack,
+ };
  
-   reg:
++static const struct ths_thermal_chip sun50i_a64_ths = {
++	.sensor_num = 3,
++	.offset = -2170,
++	.scale = -117,
++	.has_mod_clk = true,
++	.temp_data_base = SUN8I_THS_TEMP_DATA,
++	.calibrate = sun8i_h3_ths_calibrate,
++	.init = sun8i_h3_thermal_init,
++	.irq_ack = sun8i_h3_irq_ack,
++};
++
+ static const struct ths_thermal_chip sun50i_h6_ths = {
+ 	.sensor_num = 2,
+ 	.offset = -2794,
+@@ -528,6 +539,7 @@ static const struct ths_thermal_chip sun50i_h6_ths = {
+ 
+ static const struct of_device_id of_ths_match[] = {
+ 	{ .compatible = "allwinner,sun8i-h3-ths", .data = &sun8i_h3_ths },
++	{ .compatible = "allwinner,sun50i-a64-ths", .data = &sun50i_a64_ths },
+ 	{ .compatible = "allwinner,sun50i-h6-ths", .data = &sun50i_h6_ths },
+ 	{ /* sentinel */ },
+ };
 -- 
 2.17.1
 
