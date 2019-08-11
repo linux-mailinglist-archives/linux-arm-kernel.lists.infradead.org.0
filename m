@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 145788926F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 11 Aug 2019 18:03:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D82978929C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 11 Aug 2019 18:31:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KKugPBSsMV+1wzAhJB2oEyqC9vuLKPPhRkrNaejs0WY=; b=pORHJx23gkJntn
-	Rx7Tlm4ztZ8QkyXay6CnypBUlAfATbFD1wI7OZU9OrvcpKBeNAaEoUwh+97eDXJA1Osevu/dvVsjV
-	DreaxZ6Zce8XfVIe2wX0w/7JBX+QApHRY5Cr5VTAErd+rXiktjoWTXqPpDzoAb/mLoq3yQLVnklJv
-	88knUyoGw7oiYrYfBzuCizNfV4MdFKMNJx8VjGPOUtqPXb48TFWcDu58C5K6n7S18zw69sg8iuLE0
-	GcX7wRKgnLPzcvlnRcalUpTALoGgTBZsTxdoVAN9dC2HKPY3jGiLouvgb3xEwiiguWv9Tb6gpoLvd
-	dhZ8knNgXBffMdvOWWhA==;
+	List-Owner; bh=ldkkRonrTELKHDgcmOneUU85bDZNPZGUcjyIGpXuYI8=; b=Q03quxGY+Lnrb4
+	xx1LFvUPpwSgl8k5tAGDwQe6oJNCinFkJPTN3SDSaYaohokQCMQ0dpqNFnJJrWm6nfSt5Bp1G34id
+	2wBpgaec/cvqCxup3+K5wcVy1dhoEM+dESVvdpK873YheWPn2jLJGfuBeR7PzbRf0td6/ssBI2f2E
+	ieXnmLyHMShArlL6R99Z/YLKLTvr57kerpCMcY3/QueTvKBDGBHsj2AUrdGv3NRSWpseDQ6hqzbar
+	XGJAVLo+BkNSim02roNUDW27sjUS5i/Tqp4hDxM8dYpfoMMXJ6e9Ad1NIWZtjJhUNK2zSaiH4YBnC
+	K5iTsxV7iP2PjU33Osag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwqJQ-0003FH-Jj; Sun, 11 Aug 2019 16:03:16 +0000
+	id 1hwqkV-0004Av-V3; Sun, 11 Aug 2019 16:31:15 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwqJL-0003Et-1T
- for linux-arm-kernel@lists.infradead.org; Sun, 11 Aug 2019 16:03:12 +0000
+ id 1hwqkP-0004Aa-0f
+ for linux-arm-kernel@lists.infradead.org; Sun, 11 Aug 2019 16:31:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=X8vY8SU32ylGHmsaMJSxRXMQ4AplM5ck8Z9fOiI/VVU=; b=he7g9m19SQBkXvaTUxHONOAJB9
- SgctLxfkW1E3PRFxDIdwX02eIxoJHJygoovruMY/dLF6ZD3Aj7hWCzT4lm1NNQ1dO6IShokyz+3bp
- 82gI7kyReD7cZ5tdwPAljDzP41MQf+L0CF8mIetKufw2zYO66rGvxRzfHr8MaccsQHZY=;
+ bh=lozDe2KJhIZbEGQBfmlQNXhoJltngcT+6KrAJ7pHjU0=; b=y8xe1vCIbnoaJUi+9k8+FHNKe0
+ xmZz6pGIaArP2t6zvIo7fcabjWTH6JZVjl+a4OSS9SFMmgI57ryRebUmrEOHziyz+M6NYGxB9YNIC
+ om+/lQntAlqUi7jhH/OZdwGE9jqIeEPGGdSEOaPpvZ7q9hxv2FDk/OgDjDv0XaJ8UW5w=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
  (envelope-from <andrew@lunn.ch>)
- id 1hwqJE-00046n-BI; Sun, 11 Aug 2019 18:03:04 +0200
-Date: Sun, 11 Aug 2019 18:03:04 +0200
+ id 1hwqkN-0004Bz-Ao; Sun, 11 Aug 2019 18:31:07 +0200
+Date: Sun, 11 Aug 2019 18:31:07 +0200
 From: Andrew Lunn <andrew@lunn.ch>
-To: Vladimir Oltean <olteanv@gmail.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 Subject: Re: [BUG] fec mdio times out under system stress
-Message-ID: <20190811160304.GD14290@lunn.ch>
+Message-ID: <20190811163107.GE14290@lunn.ch>
 References: <20190811133707.GC13294@shell.armlinux.org.uk>
- <CA+h21hqkVoQWRweKKCFdvLLOLyP4gEtXQvJ9CO_J7i+YQW+TWw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CA+h21hqkVoQWRweKKCFdvLLOLyP4gEtXQvJ9CO_J7i+YQW+TWw@mail.gmail.com>
+In-Reply-To: <20190811133707.GC13294@shell.armlinux.org.uk>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190811_090311_236920_1236F152 
-X-CRM114-Status: GOOD (  10.63  )
+X-CRM114-CacheID: sfid-20190811_093109_214271_F02AA0F2 
+X-CRM114-Status: GOOD (  14.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -76,43 +75,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, netdev <netdev@vger.kernel.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Hubert Feurstein <h.feurstein@gmail.com>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Heiner Kallweit <hkallweit1@gmail.com>
+Cc: netdev@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> I think a better question is why is the FEC MDIO controller configured
-> to emit interrupts anyway (especially since the API built on top does
-> not benefit in any way from this)? Hubert (copied) sent an interesting
-> email very recently where he pointed out that this is one of the main
-> sources of jitter when reading the PTP clock on a Marvell switch
-> attached over MDIO.
+On Sun, Aug 11, 2019 at 02:37:07PM +0100, Russell King - ARM Linux admin wrote:
+> Hi Fabio,
+> 
+> When I woke up this morning, I found that one of the Hummingboards
+> had gone offline (as in, lost network link) during the night.
+> Investigating, I find that the system had gone into OOM, and at
+> that time, triggered an unrelated:
+> 
+> [4111697.698776] fec 2188000.ethernet eth0: MDIO read timeout
+> [4111697.712996] MII_DATA: 0x6006796d
+> [4111697.729415] MII_SPEED: 0x0000001a
+> [4111697.745232] IEVENT: 0x00000000
+> [4111697.745242] IMASK: 0x0a8000aa
+> [4111698.002233] Atheros 8035 ethernet 2188000.ethernet-1:00: PHY state change RUNNING -> HALTED
+> [4111698.009882] fec 2188000.ethernet eth0: Link is Down
+> 
+> This is on a dual-core iMX6.
+> 
+> It looks like the read actually completed (since MII_DATA contains
+> the register data) but we somehow lost the interrupt (or maybe
+> received the interrupt after wait_for_completion_timeout() timed
+> out.)
 
-Hi Vladimir
+Hi Russell
 
-One reason is runtime power management.
+The timeout is quite short,
 
-For a write operation, you could set it going and return
-immediately. Many drivers do, and then when the next read/write
-operation comes along, they poll in a loop waiting for the device to
-go idle, if it was still busy from the last operation.
+#define FEC_MII_TIMEOUT         30000 /* us */
 
-However, FEC supports runtime PM. When an MDIO read/write call is
-made, it calls runtime PM functions to indicate the device is active.
-Once it has completed the MDIO transaction, it calls runtime PM
-functions to indicate the device is inactive. These transitions can
-cause clocks to be enabled/disabled. If we don't wait around for the
-operation to complete, the clock could be disabled too early, and bad
-things would happen.
+Looking at the Vybrid datasheet, there does not appear to be any way
+to determine if the hardware is busy other than waiting for the
+interrupt. There is no 'busy' bit which gets cleared on completion.
 
-You could replace the interrupt with a sleeping poll, but my guess
-would be, that has more jitter than using an interrupt.
+So about the only option is to make the timeout bigger.
 
-      Andrew
+   Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
