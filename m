@@ -2,33 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00F5189066
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 11 Aug 2019 10:06:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2C4E89051
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 11 Aug 2019 10:06:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4RnnV/O4vthKTk7An5ELIYjuok/3S355FP/2MYksmzQ=; b=U9wNATGHdLH3fC
-	xx+XFlgjUztwDRvTYDZbEEnDsREgxbK3EEo+NOLlvkYxznTOVHSaZS0iMMH7wIocUinihCP1ODlXr
-	pLg1jzAt9l2qkxqc/Midqp81VF1fERI1VwVa1qxQtfdLOSAjQhpeJM0og8XOIesme3XHByI9N2JEG
-	fYx0J7VhFPrH0FpYwe8tnkg3Y4BUk1cuRdx3eyD6cKso5SED0piPyICrAI7QKdvdY7ML/CKX09ZSl
-	C/ZCJ7cXydvp1RTelVgFn7tuykRZSRKS3E+Zoadta7JSRaLNBDVGxa7J8VqWkxdzsloMGJNfemPsW
-	wUWywGuy19yaiuuzpMAw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+QTUfXHIfcT/YArLTVjRypoDM3+02H9iHbo7HPPgkyI=; b=pHDc426CPk6Tgq
+	5CRvGiNfmgJteosC+yvonABqT6uugBeNVtkP3xg8vu5+0DNCrSUY57jJwFxIBhnB5fWSbOLF3JgGZ
+	leo+DPmBcP/pXIpzsUO2wAhp0cKH0NDyUbQ8te1j/u4/8qe1d3Ag7YzefNt/CwOwjxhhQAn9qRA/i
+	aKFSFexXCs5bJNmNkErnEXc6JTh87uqwaRr2dfXBvHUNVBMeQGiJr0K2eHm6apCgEVb0jOzXgWcEd
+	yxB8/F+1ceKz4B0RW4pxempANLhbyipqEsqxQuvNJLsVtkvzAv87B8n/sQZgaM9BuWXQHZOCHWnXR
+	oT6gr0R2djeU+aSzrF4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwis0-0002Pc-KK; Sun, 11 Aug 2019 08:06:28 +0000
+	id 1hwirg-00025e-Ue; Sun, 11 Aug 2019 08:06:09 +0000
 Received: from [2001:4bb8:180:1ec3:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hwir0-0001uh-74; Sun, 11 Aug 2019 08:05:27 +0000
+ id 1hwir3-0001um-Fz; Sun, 11 Aug 2019 08:05:30 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Maxime Chevallier <maxime.chevallier@bootlin.com>
-Subject: next take at setting up a dma mask by default for platform devices
-Date: Sun, 11 Aug 2019 10:05:14 +0200
-Message-Id: <20190811080520.21712-1-hch@lst.de>
+Subject: [PATCH 1/6] usb: don't create dma pools for HCDs with a localmem_pool
+Date: Sun, 11 Aug 2019 10:05:15 +0200
+Message-Id: <20190811080520.21712-2-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190811080520.21712-1-hch@lst.de>
+References: <20190811080520.21712-1-hch@lst.de>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -58,23 +60,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+If the HCD provides a localmem pool we will never use the DMA pools, so
+don't create them.
 
-this is another attempt to make sure the dma_mask pointer is always
-initialized for platform devices.  Not doing so lead to lots of
-boilerplate code, and makes platform devices different from all our
-major busses like PCI where we always set up a dma_mask.  In the long
-run this should also help to eventually make dma_mask a scalar value
-instead of a pointer and remove even more cruft.
+Fixes: b0310c2f09bb ("USB: use genalloc for USB HCs with local memory")
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ drivers/usb/core/buffer.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-The bigger blocker for this last time was the fact that the usb
-subsystem uses the presence or lack of a dma_mask to check if the core
-should do dma mapping for the driver, which is highly unusual.  So we
-fix this first.  Note that this has some overlap with the pending
-desire to use the proper dma_mmap_coherent helper for mapping usb
-buffers.  The first two patches from this series should probably
-go into 5.3 and then uses as the basis for the decision to use
-dma_mmap_coherent.
+diff --git a/drivers/usb/core/buffer.c b/drivers/usb/core/buffer.c
+index 1359b78a624e..1a5b3dcae930 100644
+--- a/drivers/usb/core/buffer.c
++++ b/drivers/usb/core/buffer.c
+@@ -66,9 +66,9 @@ int hcd_buffer_create(struct usb_hcd *hcd)
+ 	char		name[16];
+ 	int		i, size;
+ 
+-	if (!IS_ENABLED(CONFIG_HAS_DMA) ||
+-	    (!is_device_dma_capable(hcd->self.sysdev) &&
+-	     !hcd->localmem_pool))
++	if (hcd->localmem_pool ||
++	    !IS_ENABLED(CONFIG_HAS_DMA) ||
++	    !is_device_dma_capable(hcd->self.sysdev))
+ 		return 0;
+ 
+ 	for (i = 0; i < HCD_BUFFER_POOLS; i++) {
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
