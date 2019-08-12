@@ -2,41 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2024E8A83B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 22:16:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0ED028A84F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 22:23:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=myeRwS/zfSmtAGzrRMyk5ucsetf4ysglGDfC0CMcmg8=; b=uZeWloEErmTXWt
-	KhMpNWxbrltazeWAidPd7OqXoLOGYGVfJp1MP/uH8ddSUidaTuOf2CYv626GF8Rg5i2VIkA9UE6eg
-	AA2V3kqnEgHdEyA/sxNDTbjYdZl2QXydgbVJe6Qt+1pq1b0h7UeIsmlztSdciHPE4/3uQTG8ToWKo
-	9ht+kqWCAX+M0FiJtsxKqjfNRtPlELdP8qqhcE8lvVturgXUlnpVxBuUxPmap6MyIMqgzN5sR8M64
-	aYiGVMkJK/38qvkKDEybZ75NoxmMHLn+IcBtUtWmcuerOxa1/dC1buvCIM4TSdhcqFsDu71X+CEXk
-	/RCJ1KbBTr9Udhlwe43Q==;
+	List-Owner; bh=To7jeo98XYxkmJ0ugLO46lGkpXnFZcYGCUwyGdGvXyE=; b=pjArH8HXy3UuII
+	h0ttMC5VQeizsOBFmnmUoB3VccMCK/mpcyk7rDY5aWVsS5rmhiRfQrxzyQc+J35M15pFYpNGwONOM
+	38d8ZPnyXBbrYRjRxVfAiU4LgJKtg7WkrTQDLEVyoVun3bzApZAfw7i6/rCw9shwC8QK37MvX02LD
+	Mf0aPPpEyr9a73wGzvsB1RZrACHkD0hpqmBdCHwZLHhqOz9nbvol/QjRNgvd/QjmFZToCl3vfz1da
+	uUt11s0HkZQR4SuLb9lc0Segm/65tkATnR9obLe8PbPCstNl0uFYjZuAyrlNKkArQZVns0iCGxaB8
+	R1+dnEDpbfeB6cjB3v0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxGjn-0003Ni-H0; Mon, 12 Aug 2019 20:16:15 +0000
+	id 1hxGqj-0005W9-0W; Mon, 12 Aug 2019 20:23:25 +0000
 Received: from 187-26-98-68.3g.claro.net.br ([187.26.98.68]
  helo=quaco.ghostprotocols.net)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hxGjY-0003Nb-57; Mon, 12 Aug 2019 20:16:01 +0000
+ id 1hxGqD-0005Vr-AL; Mon, 12 Aug 2019 20:22:53 +0000
 Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 7243E40340; Mon, 12 Aug 2019 17:15:57 -0300 (-03)
-Date: Mon, 12 Aug 2019 17:15:57 -0300
+ id 3F25040340; Mon, 12 Aug 2019 17:22:51 -0300 (-03)
+Date: Mon, 12 Aug 2019 17:22:51 -0300
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Igor Lubashev <ilubashe@akamai.com>
-Subject: Re: [PATCH v3 2/4] perf: Use CAP_SYS_ADMIN with perf_event_paranoid
- checks
-Message-ID: <20190812201557.GF9280@kernel.org>
+Subject: Re: [PATCH v3 4/4] perf: Use CAP_SYS_ADMIN instead of euid==0 with
+ ftrace
+Message-ID: <20190812202251.GG9280@kernel.org>
 References: <cover.1565188228.git.ilubashe@akamai.com>
- <ad56df5452eeafb99dda9fc3d30f0f487aace503.1565188228.git.ilubashe@akamai.com>
- <20190812200134.GE9280@kernel.org>
+ <bd8763b72ed4d58d0b42d44fbc7eb474d32e53a3.1565188228.git.ilubashe@akamai.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190812200134.GE9280@kernel.org>
+In-Reply-To: <bd8763b72ed4d58d0b42d44fbc7eb474d32e53a3.1565188228.git.ilubashe@akamai.com>
 X-Url: http://acmel.wordpress.com
 User-Agent: Mutt/1.12.0 (2019-05-25)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,88 +62,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Mon, Aug 12, 2019 at 05:01:34PM -0300, Arnaldo Carvalho de Melo escreveu:
-> Em Wed, Aug 07, 2019 at 10:44:15AM -0400, Igor Lubashev escreveu:
-> > +++ b/tools/perf/util/evsel.c
-> > @@ -279,7 +279,7 @@ struct evsel *perf_evsel__new_idx(struct perf_event_attr *attr, int idx)
->   
-> >  static bool perf_event_can_profile_kernel(void)
-> >  {
-> > -	return geteuid() == 0 || perf_event_paranoid() == -1;
-> > +	return perf_event_paranoid_check(-1);
-> >  }
+Em Wed, Aug 07, 2019 at 10:44:17AM -0400, Igor Lubashev escreveu:
+> Kernel requires CAP_SYS_ADMIN instead of euid==0 to mount debugfs for ftrace.
+> Make perf do the same.
 > 
-> While looking at your changes I think the pre-existing code is wrong,
-> i.e. the check in sys_perf_event_open(), in the kernel is:
+> Signed-off-by: Igor Lubashev <ilubashe@akamai.com>
+> ---
+>  tools/perf/builtin-ftrace.c | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
->         if (!attr.exclude_kernel) {
->                 if (perf_paranoid_kernel() && !capable(CAP_SYS_ADMIN))
->                         return -EACCES;
->         }
-> 
-> And:
-> 
-> static inline bool perf_paranoid_kernel(void)
-> {
->         return sysctl_perf_event_paranoid > 1;
-> }
-> 
-> So we have to change that perf_event_paranoit_check(-1) to pass 1
-> instead?
-> 
-> bool perf_event_paranoid_check(int max_level)
-> {
->         return perf_cap__capable(CAP_SYS_ADMIN) ||
->                         perf_event_paranoid() <= max_level;
-> }
-> 
-> Also you defined perf_cap__capable(anything) as:
-> 
-> #ifdef HAVE_LIBCAP_SUPPORT
-> 
-> #include <sys/capability.h>
-> 
-> bool perf_cap__capable(cap_value_t cap);
->         
-> #else   
-> 
-> static inline bool perf_cap__capable(int cap __maybe_unused)
-> {               
->         return false;
-> }       
->                 
-> #endif /* HAVE_LIBCAP_SUPPORT */
-> 
-> 
-> I think we should have:
-> 
-> #else
-> 
-> static inline bool perf_cap__capable(int cap __maybe_unused)
-> {
->         return geteuid() == 0;
-> }
-> 
-> #endif /* HAVE_LIBCAP_SUPPORT */
-> 
-> Right?
-> 
-> So I am removing the introduction of perf_cap__capable() from the first
-> patch you sent, leaving it with _only_ the feature detection part, using
-> that feature detection to do anything is then moved to a separate patch,
-> after we finish this discussion about what we should fallback to when
-> libcap-devel isn't available, i.e. we should use the previous checks,
-> etc.
+> diff --git a/tools/perf/builtin-ftrace.c b/tools/perf/builtin-ftrace.c
+> index ae1466aa3b26..d09eac8a6d57 100644
+> --- a/tools/perf/builtin-ftrace.c
+> +++ b/tools/perf/builtin-ftrace.c
+> @@ -13,6 +13,7 @@
+>  #include <signal.h>
+>  #include <fcntl.h>
+>  #include <poll.h>
+> +#include <linux/capability.h>
+>  
+>  #include "debug.h"
+>  #include <subcmd/parse-options.h>
+> @@ -21,6 +22,7 @@
+>  #include "target.h"
+>  #include "cpumap.h"
+>  #include "thread_map.h"
+> +#include "util/cap.h"
+>  #include "util/config.h"
+>  
+>  
+> @@ -281,7 +283,7 @@ static int __cmd_ftrace(struct perf_ftrace *ftrace, int argc, const char **argv)
+>  		.events = POLLIN,
+>  	};
+>  
+> -	if (geteuid() != 0) {
+> +	if (!perf_cap__capable(CAP_SYS_ADMIN)) {
+>  		pr_err("ftrace only works for root!\n");
 
-So, please take a look at the tmp.perf/cap branch in my git repo:
+I guess we should update the error message too? 
 
-https://git.kernel.org/pub/scm/linux/kernel/git/acme/linux.git/log/?h=tmp.perf/cap
+>  		return -1;
+>  	}
+> -- 
+> 2.7.4
 
-I split the patch and made perf_cap__capable() fallback to 'return
-geteuid() == 0;' when libcap-devel isn't available, i.e. keep the
-checks made prior to your patchset.
-
-Jiri, can I keep your Acked-by?
+-- 
 
 - Arnaldo
 
