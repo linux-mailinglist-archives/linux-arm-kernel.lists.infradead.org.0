@@ -2,86 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6E408A597
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 20:22:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BE718A699
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 20:50:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Content-ID:MIME-Version
-	:References:In-reply-to:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BnWCFjUnlcAmHXqczBYSO0Ef4wwFJdNCWUkA60Ddm+s=; b=Zy6g42g4cwUSqZ
-	LCVD0EWSD9JCaL6IIgEdQgDm1dheqEufM6NwynAhWjIGZkV3WftvXyyb/h+icgE5Up8OkXVYVVi90
-	XkPXv4p3WyHvZyiDnWn8WV2mulHI9nY426JUxtT1ckxj/nTxC8nrS1MoiCvzRbn7v4kIUbMrB0w8h
-	+cPz50aK1XxxNpke7c/n0cuN4KiuUO6qISSlcNa8E3vUVZSaHXJ9dZaX8fWPueMvfawei+qpR8Mn9
-	WbBC7sI2pdbVClJPbKq1G+NAHSBzRCZJAdZRalQRNZCkzIQXsNhhV7NAyyxNi5+W/aRl5fjjj5NjK
-	F2wrmw01eeIcFV6VCupQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=bE2OkzOEDjf0k+f5WwW5cPXEkPOSS6xywWU+Ky13bLE=; b=Kdz
+	E7rfVvx/u7AOKKA1AT0Z1t01DoQHVEnv5UsOvmRJq8oTAcy9LVLvYLeW/GM3mZvrYUvQqQ4k9fvxK
+	faYlCc+X9hEnwex81OaeMv/BTRbwOQY2Wa8Gy77auv5rBwSDBW4wJMjvgb7/wkS5cKfULMC/oSf7m
+	7CpPA4Q5i0JQIaYLymRaNeuviEDN48UtO8/Tb4Vc33errahMHdbqsRmG/AMeCnTCi4uRdQMglZP1I
+	4KlvgrOURLm2sjYccN7aj+lQ1gqOKDMroa5IrWs5g4PgJ3a8RPM3gU9EroevCXPQgYgxHNaVFX27G
+	I401Q9Rm1MED37thV5Rqyn47VgF7MmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxExu-0003CR-Sg; Mon, 12 Aug 2019 18:22:42 +0000
-Received: from h1.radempa.de ([176.9.142.194] helo=mail.cosmopool.net)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxExj-0003C2-O9
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 18:22:34 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.cosmopool.net (Postfix) with ESMTP id 28F2D9015B3;
- Mon, 12 Aug 2019 20:22:26 +0200 (CEST)
-Received: from mail.cosmopool.net ([127.0.0.1])
- by localhost (mail.b.radempa.de [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 4hjgN7k4gbJC; Mon, 12 Aug 2019 20:22:25 +0200 (CEST)
-Received: from stardust.g4.wien.funkfeuer.at
- (77.117.157.197.wireless.dyn.drei.com [77.117.157.197])
- by mail.cosmopool.net (Postfix) with ESMTPSA id E3A73900A78;
- Mon, 12 Aug 2019 20:22:24 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=ccbib.org; s=201902;
- t=1565634145; bh=YrhzTzt/Mu0KjVU/f+O9Ej/nusykzxNs4OSCY7R9K/0=;
- h=From:To:cc:Subject:In-reply-to:References:Date:From;
- b=CazKyEzkkG473S618bt/N9eryEZp7G8i2ZqbSJq2gsvjyTjU7aMngrwE6FOWmJjSp
- /V6ePVxXrIInoQNrfUTOwFgPBmOYFh6++1h+wJVcH/Gijy4nLfsWjXw+m3Cnl/yJBI
- 6g441hrQ466GBbDSbPLZsODDq+j1XtEUFoxvlPNY=
-Received: from lambda by stardust.g4.wien.funkfeuer.at with local (Exim 4.89)
- (envelope-from <harald@ccbib.org>)
- id 1hxExZ-0000O7-46; Mon, 12 Aug 2019 20:22:21 +0200
-From: Harald Geyer <harald@ccbib.org>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH] arm64: dts: allwinner: a64: Drop PMU node
-In-reply-to: <CA+E=qVchsqOF_hVD-qBuKwi7PTMYtUR-LE2dD_mpptFJcWE_yw@mail.gmail.com>
-References: <89402d22-d432-9551-e787-c8ede16dbe5f@arm.com>
- <CA+E=qVfh7mirJhRsDTeuAVgG55ia936uFSFVKR0N5Pn4GCF1UA@mail.gmail.com>
- <E1hv5vZ-0000jN-M8@stardust.g4.wien.funkfeuer.at>
- <CA+E=qVdHOtebR6xjpwTY_Whp0cHLtv82YULmxLPSEzdLN9TnVg@mail.gmail.com>
- <36e60078-7dd5-9c07-ffa1-6092d8c70fa8@arm.com>
- <CA+E=qVeAR4AFN99ZVy8EZLW6p_8ucTewOdMis37wnpV3DObaGg@mail.gmail.com>
- <20190807115614.phm7sbyae6yajkug@flea>
- <CA+E=qVdh3MHMsEC9XKe5-7O8fGTHFh76WLOgVf+PZPv7c4JE9w@mail.gmail.com>
- <20190808162628.pthvy3tgf3naj76s@flea>
- <CA+E=qVeiWoRGn05HpMzx_5yidit4GM18tBrziW5MBo00f_-PKQ@mail.gmail.com>
- <20190812080420.saelmqb36vkelxn4@flea>
- <CA+E=qVchsqOF_hVD-qBuKwi7PTMYtUR-LE2dD_mpptFJcWE_yw@mail.gmail.com>
-Comments: In-reply-to Vasily Khoruzhick <anarsoul@gmail.com>
- message dated "Mon, 12 Aug 2019 11:01:51 -0700."
-MIME-Version: 1.0
-Content-ID: <1493.1565634140.1@stardust.g4.wien.funkfeuer.at>
-Date: Mon, 12 Aug 2019 20:22:20 +0200
-Message-Id: <E1hxExZ-0000O7-46@stardust.g4.wien.funkfeuer.at>
+	id 1hxFOu-0004Bl-DN; Mon, 12 Aug 2019 18:50:36 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxFOJ-00040J-W1
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 18:50:01 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 49584200696;
+ Mon, 12 Aug 2019 20:49:55 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 31398200692;
+ Mon, 12 Aug 2019 20:49:55 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id C3EC12060E;
+ Mon, 12 Aug 2019 20:49:53 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH 0/7] PM / devfreq: Add initial imx support
+Date: Mon, 12 Aug 2019 21:49:44 +0300
+Message-Id: <cover.1565633880.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_112231_934208_DEF2E8B0 
-X-CRM114-Status: UNSURE (   6.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190812_115000_307349_0BFDD414 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,31 +65,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- "Jared D . McNeill" <jmcneill@netbsd.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- arm-linux <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Dong Aisheng <aisheng.dong@nxp.com>,
+ =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ Anson Huang <Anson.Huang@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-pm@vger.kernel.org,
+ linux-imx@nxp.com, Krzysztof Kozlowski <krzk@kernel.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>, Will Deacon <will@kernel.org>,
+ Alexandre Bailon <abailon@baylibre.com>, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Georgi Djakov <georgi.djakov@linaro.org>,
+ devicetree@vger.kernel.org, Jacky Bai <ping.bai@nxp.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VmFzaWx5IEtob3J1emhpY2sgd3JpdGVzOgo+IE9LLCBzbyB3aGF0IHNob3VsZCB3ZSBkbz8gJ3Bl
-cmYgdG9wJy8ncGVyZiByZWNvcmQnIHdvcmsgZmluZSBpZiBQTVUKPiBub2RlIGlzIGRyb3BwZWQs
-IGJ1dCB0aGV5IGRvbid0IHdvcmsgaWYgUE1VIG5vZGUgaXMgcHJlc2VudCAoZXZlbiB3aXRoCj4g
-aW50ZXJydXB0cyBkcm9wcGVkKS4KClJlYWxseT8gRXZlbiBpZiB5b3UgdGVsbCBpdCB0byBvbmx5
-IGxpc3RlbiB0byBzb2Z0d2FyZSBldmVudHM/IChXaGljaAppcyB0aGUgb25seSB0aGluZyB5b3Ug
-Z2V0IHdpdGhvdXQgYSBQTVUgYW55d2F5LCBJIGJlbGlldmUuKQoKPiBJJ2QgcHJlZmVyIHRvIGhh
-dmUgJ3BlcmYgdG9wJyBhbmQgJ3BlcmYgcmVjb3JkJwo+IHdvcmtpbmcgaW5zdGVhZCBvZiAncGVy
-ZiBzdGF0JwoKSSB0aGluaywgaWYgYSBicm9rZW4gUE1VIGNvbmZ1c2VzICdwZXJmIHRvcCcgYmV5
-b25kIHVzYWJpbGl0eSwgaXQKc2hvdWxkIGJlIGZpeGVkLgoKSGFyYWxkCgotLSAKTmF0aW9uYWxy
-YXRzd2FobDogSWNoIHRyZXRlIGFscyB1bmFiaMOkbmdpZ2VyIEV4cGVydGUgZsO8ciBLbGltYXNj
-aHV0egp1bmQgZnJlaWUgU29mdHdhcmUgYW4hIEljaCB3aWxsIG1pdCBWb3J6dWdzc3RpbW1lbiBp
-bnMgUGFybGFtZW50IGtvbW1lbiwKd2VpbCB3ZW5uIGljaCBlcyBuaWNodCBtYWNoZSwga8O8bW1l
-cnQgc2ljaCB3b23DtmdsaWNoIG5pZW1hbmQgZGFydW0uCmh0dHBzOi8vaGFyYWxkZ2V5ZXIuYXQK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+This adds devfreq support for imx8mm, covering dynamic scaling of
+internal NOC and DDR Controller
+
+Scaling for simple busses (NIC/NOC) is done through the clk framework
+while DRAM scaling is performed in firmware with an "imx-ddrc" wrapper
+for devfreq.
+
+Changes since RFCv3:
+ * Implement passive support and set NOC parent to DDRC
+ * Drop scaling AHB/AXI for now (NOC/DDRC use most power anyway)
+ * Split into two devreq drivers (and bindings) because the ddrc is
+really a distinct piece of hardware.
+ * Stop relying on clk_min_rate
+ * Fetch info about dram clk parents from firmware instead of
+hardcoding in driver. This can more easily support additional rates.
+ * Perform DRAM frequency inside devfreq instead of clk, mostly due to
+objections to earlier RFCs for "imx8m-dram-clk"
+ * Link: https://patchwork.kernel.org/cover/11056779/
+ * Link: https://patchwork.kernel.org/patch/11049429/
+
+Stephen: It would be very helpful if you could comment on the dram
+frequency switching code. I moved it outside of clk but now I have to
+use provider APIs outside of drivers/clk for parent manipulation. Few
+other drivers do that so maybe it's OK?
+
+Scaling buses can cause problems for devices with realtime bandwith
+requirements such as display, the intention is to use the interconnect
+framework to make DEV_PM_QOS_MIN_FREQUENCY to devfreq. There are
+separate patches for that:
+
+ * https://patchwork.kernel.org/patch/11084279/
+ * https://patchwork.kernel.org/cover/11078671/
+
+Leonard Crestez (7):
+  clk: imx8m: Set CLK_GET_RATE_NOCACHE on dram_alt/apb
+  dt-bindings: devfreq: Add bindings for generic imx buses
+  PM / devfreq: Add generic imx bus driver
+  dt-bindings: devfreq: Add bindings for imx ddr controller
+  PM / devfreq: Add dynamic scaling for imx ddr controller
+  PM / devfreq: imx-ddrc: Measure bandwidth with perf
+  arm64: dts: imx8mm: Add devfreq nodes
+
+ .../devicetree/bindings/devfreq/imx-ddrc.yaml |  53 ++
+ .../devicetree/bindings/devfreq/imx.yaml      |  50 ++
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi     |  51 +-
+ drivers/clk/imx/clk-imx8mm.c                  |   6 +-
+ drivers/clk/imx/clk-imx8mn.c                  |   6 +-
+ drivers/clk/imx/clk-imx8mq.c                  |   7 +-
+ drivers/devfreq/Kconfig                       |  12 +
+ drivers/devfreq/Makefile                      |   1 +
+ drivers/devfreq/imx-ddrc.c                    | 511 ++++++++++++++++++
+ drivers/devfreq/imx-devfreq.c                 | 148 +++++
+ 10 files changed, 837 insertions(+), 8 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml
+ create mode 100644 Documentation/devicetree/bindings/devfreq/imx.yaml
+ create mode 100644 drivers/devfreq/imx-ddrc.c
+ create mode 100644 drivers/devfreq/imx-devfreq.c
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
