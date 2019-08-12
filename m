@@ -2,69 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1920F89871
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 10:08:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6100789886
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 10:15:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HOLl53ZqLBfb+9E+pOaYeKb8+IR0z5iVrdXq6/xdxig=; b=NSvwoeAt7amVMH2/adoGHWW6u
-	AAm0xYAaOBUejqYqDAQjNCQa4EZqtd996Iy2Kk41EHsJtAoWUG1RFABG54K+YEblH29NFiSG3KYLu
-	dqMjlP6r40rOtfzNan5E9H+beA+VJ+n8Nf6xZVmSqkkKH1SidBk6sUuf+QPukfY4ZySD/Av4CKlFk
-	DdxzAiTNdKokeBTt1qqBi17AxgQ0+RlxFoWjk0DpIICJeFXGFWvmZNaNRNYfoBrBGs5NEVZMpe1Ot
-	8naB6XFUyNBMJy1UaroXGGYI/QO3UgovaOVjLzE6a22Q7yFCFpWU3LD+vtb/CuZpPfN5jpW6uIEjZ
-	hVqAitPkA==;
+	 bh=uekkMe3WyWu29onBCio4tmd84gX/FjniMLs00q20Xno=; b=U1P4TNNQaPdu4Vwn6An7Jf13N
+	PaqdoJNtr8eOupZEk0DeYTvHnNshJY0FedmEpaF4eBcy3l54BhaiJi4PSMq0aUaapD5Td3Prswe/j
+	S6zJO4pmrPp+ZLgTapcc1+dgeX/QGKJ5ZcDUNdLarMpnEKdF1nRMMQHYzz69oPqNnMc85XNz8LMzi
+	DGY/hq7s5ytKrOzGjgACXd7kcYCsPvEbY+taXL1ALZf9luH0sQ8GycTkYYmaj0+JSRkFfPI64iiQb
+	rfn3cSv3tbon2aAKT89HPyHnXUxALY+/U0Dovv3VhhlzXd9XBWc9RF+7AOXHwewMfBH7y9+z56vxl
+	B8TKra93A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx5ND-0002E6-4K; Mon, 12 Aug 2019 08:08:11 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hx5U6-0005Fq-N3; Mon, 12 Aug 2019 08:15:18 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx5Mz-0002DZ-Tm
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 08:07:59 +0000
+ id 1hx5Tr-0004Nc-CE
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 08:15:05 +0000
+X-Originating-IP: 86.250.200.211
 Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 62E70206C2;
- Mon, 12 Aug 2019 08:07:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565597276;
- bh=rfwD66AedIpA/3YE2dWFn8YCpnEehefOryrXd0y6bio=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=TH581SWmFX5Vu6WBmaibZ4b8HqpSesdZ9B8gRjIiM+ftqFvUWyIG4J9oD/o8xDBaZ
- 4EOPkWYiJUWIBlolpVAenfFXazLeuyXQ4Owqj3+RBAyWEqHZvQyniCnt3m88lmuzbd
- tnmIHtFxQyKlmk+kt7gW0A7xtcnNrGAQZcF73pBo=
-Date: Mon, 12 Aug 2019 10:07:54 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Icenowy Zheng <icenowy@aosc.io>
-Subject: Re: [PATCH v5 0/6] Support for Allwinner V3/S3L and Sochip S3
-Message-ID: <20190812080754.n7dgogopm3ytd6h5@flea>
-References: <20190728031227.49140-1-icenowy@aosc.io>
+ [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 6446E20011;
+ Mon, 12 Aug 2019 08:14:46 +0000 (UTC)
+Date: Mon, 12 Aug 2019 10:14:45 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Re: [linux-sunxi] [PATCH v8 0/4] Add support for Orange Pi 3
+Message-ID: <20190812081445.kfsbikfrt3pmsh6d@flea>
+References: <20190806155744.10263-1-megous@megous.com>
+ <2218280.0sI6yjypBf@jernej-laptop>
+ <CAGb2v67JVG2rhOdUwBmfsO0+RYb4DNOPmUo=Q_UhL3N+niLiEg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190728031227.49140-1-icenowy@aosc.io>
+In-Reply-To: <CAGb2v67JVG2rhOdUwBmfsO0+RYb4DNOPmUo=Q_UhL3N+niLiEg@mail.gmail.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_010757_984452_A2391F3F 
-X-CRM114-Status: GOOD (  14.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190812_011503_583327_E8E80EF3 
+X-CRM114-Status: GOOD (  18.85  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,50 +62,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2194499274270635388=="
+Cc: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
+ Mark Rutland <mark.rutland@arm.com>, devicetree <devicetree@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============8917652046405112651=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2194499274270635388==
+--===============8917652046405112651==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="he4xln2tfu7hadbz"
+	protocol="application/pgp-signature"; boundary="wnuh5gs25vfqywb6"
 Content-Disposition: inline
 
 
---he4xln2tfu7hadbz
-Content-Type: text/plain; charset=us-ascii
+--wnuh5gs25vfqywb6
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On Sun, Jul 28, 2019 at 11:12:21AM +0800, Icenowy Zheng wrote:
-> This patchset tries to add support for Allwinner V3/S3L and Sochip S3.
+On Mon, Aug 12, 2019 at 03:54:03PM +0800, Chen-Yu Tsai wrote:
+> On Mon, Aug 12, 2019 at 3:45 PM Jernej =C5=A0krabec <jernej.skrabec@gmail=
+=2Ecom> wrote:
+> >
+> > Dne torek, 06. avgust 2019 ob 17:57:39 CEST je megous@megous.com napisa=
+l(a):
+> > > From: Ondrej Jirman <megous@megous.com>
+> > >
+> > > This series implements support for Xunlong Orange Pi 3 board. There
+> > > are only a few patches remaining.
+> > >
+> > > - ethernet support - just a DT change (patch 1)
+> > > - HDMI support (patches 2-4)
+> > >
+> > > For some people, ethernet doesn't work after reboot because u-boot do=
+esn't
+> > > support AXP805 PMIC, and will not turn off the etherent PHY regulator=
+s.
+> > > So the regulator controlled by gpio will be shut down, but the other =
+one
+> > > controlled by the AXP PMIC will not.
+> > >
+> > > This is a problem only when running with a builtin driver. This needs
+> > > to be fixed in u-boot.
+> > >
+> > >
+> > > Please take a look.
+> >
+> > Is there anything missing? It would be nice to get this in 5.4. There i=
+s a lot
+> > of H6 boards which needs DDC bus enable mechanism (part of H6 reference
+> > design), including Beelink GS1 which already has HDMI node in mainline =
+kernel
+> > DT, but due to disabled DDC lines works only with 1024x768 (fallback
+> > resolution in DRM core).
 >
-> Allwinner V3/V3s/S3L and Sochip S3 share the same die, but with
-> different package. V3 is BGA w/o co-packaged DDR, V3s is QFP w/ DDR2,
-> S3L is BGA w/ DDR2 and S3 is BGA w/ DDR3. (S3 and S3L is compatible
-> for pinout, but because of different DDR, DDR voltage is different
-> between the two variants). Because of the pin count of V3s is
-> restricted due to the package, some pins are not bound on V3s, but
-> they're bound on V3/S3/S3L.
+> I have a few minor comments about patch 1.
 >
-> Currently the kernel is only prepared for the features available on V3s.
-> This patchset adds the features missing on V3s for using them on
-> V3/S3/S3L, and add bindings for V3/S3/S3L. It also adds a S3 SoM by
-> Sipeed, called Lichee Zero Plus.
->
-> Icenowy Zheng (6):
->   pinctrl: sunxi: v3s: introduce support for V3
->   clk: sunxi-ng: v3s: add missing clock slices for MMC2 module clocks
->   clk: sunxi-ng: v3s: add Allwinner V3 support
->   ARM: sunxi: dts: s3/s3l/v3: add DTSI files for S3/S3L/V3 SoCs
->   dt-bindings: arm: sunxi: add binding for Lichee Zero Plus core board
->   ARM: dts: sun8i: s3: add devicetree for Lichee zero plus w/ S3
+> I think the HDMI bits are good, but I don't have maintainership / commit
+> permissions for drm-misc, so I'll have to wait until someone applies patc=
+hes
+> 2 and 3 before I apply patch 4.
 
-Applied the patches 2 to 6, thanks!
+I've applied 2,3 and 4
+
+Thanks!
 Maxime
 
 --
@@ -127,21 +138,21 @@ Maxime Ripard, Bootlin
 Embedded Linux and Kernel engineering
 https://bootlin.com
 
---he4xln2tfu7hadbz
+--wnuh5gs25vfqywb6
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVEeWgAKCRDj7w1vZxhR
-xc1HAQC4pz8qSqTprqKaHx4vMzq28Cpy8SSZNQyYzojW9ba9VQEAuyb7C8zQZ1Qn
-xIEmEbly3ZpRq6N6RP/EFwfX+rg2HgM=
-=3RxS
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVEf9QAKCRDj7w1vZxhR
+xXlgAP9MFKL3iPUwZUiy1/l5hoQrktuJFTIedDN9ko3r/H6TDAD/RZg3u4WBh6O3
+tteR/L/slzyHzMHsyD72abKseY8/IQE=
+=i2m2
 -----END PGP SIGNATURE-----
 
---he4xln2tfu7hadbz--
+--wnuh5gs25vfqywb6--
 
 
---===============2194499274270635388==
+--===============8917652046405112651==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -152,5 +163,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============2194499274270635388==--
+--===============8917652046405112651==--
 
