@@ -2,160 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E763489924
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:00:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 392078994A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:04:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OENCvkd8UkQmw+wy/NOoJgdOAwkQXGIBaHUyYgnGpj0=; b=Ozpzhu0dLVnWiI
-	OKu/EbSjan/BqMcxV/C/5tioS3WQykcIOC9LzcjHOMQTIxelceXTGnMg7g64Ndj5WMoqZ8kpF3l2E
-	NT83vNYx4UmpixHQGQgty1Q7InUQ2Q04XmbDaX3B1KFzChe5IYxEnp6sixa21u6drXZjADTOXhYBU
-	agAvhhsRztqa6LFz2ITbIPBJW30L45Lfz1r1PwW0TH+OiIhEh1WvL7THuNZvzHELMGx/MszKm++jf
-	6+3mNSquBaifE40Frd7rXL0mG3H1P74ZLYKnRTknuKOm+0IaPDb+dk7uPk5lMdW7ALuwRFcKCJMcC
-	pddn/z9u9i0DWiR6wMYA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:Subject:From:References:To:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=p3dZUllMa7j4cGALYH/QcGEYXShc39Rup9+Tqob0Aus=; b=VIco44xe+HYnbQ9HW+UV9/i6K
+	Rfytgpo6mG0rAUvPujZFprlonvW5uCyojXNbP6L+DA/PrXTaU8DT97NsHBEzM19sSMSDFXjE6400z
+	yWH1xYw883yFyycM2vfUaTeqcNLlaAXuWJGT08Jp/UqY6JJO4LfsdSW0/P4wJYH8L6T90TZLERgS6
+	ls8rxtixzNkrsHTdp8FxAd+Pt/7W4m2EzJkA8uVbOREciAnrM3j8vKZIaFVpIqzXkdUJm6T7C7WW7
+	0aMuD2+lNJjIHtiP73pgcrR27PMc7jz2TYzUk93vuJgVC2jh8npPzqiHb180VUhLxY/5olkd+CzpH
+	s+8cw6/Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx6BV-00075m-Qk; Mon, 12 Aug 2019 09:00:09 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hx6Fd-0001RE-B5; Mon, 12 Aug 2019 09:04:25 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx6BH-00075N-DM
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 08:59:56 +0000
-Received: by mail-wm1-x342.google.com with SMTP id g67so11060244wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 01:59:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=P7tAn4RfmA3Hkvnel0vQR0QWhM1TTO6CGeljBZb83WM=;
- b=QD+wPb5nnHATggXdPBO7gvP3TpuWyyEegPENKbmwMgB7xFRp5FKglq19kkvbmXnoAR
- 0/UnthsLjcLwWjNlmaygLfjm1pCEEnLXASIxqEP6QnEFrXuc9Wri1w6nEJz3eoOwKU85
- b6VVMNtfqzq5oguGbjCHU+iOrUrWR4lhNfKiiyQQIg/gxeDmKUkQ8DbyHeU9FuVPidbx
- 7mfaBThiilGbHTZqtlrkHtrM/U4T5ZWNI/4lMWimjl4iPylF/C8h4DaHJPyLjLERIgyR
- aMxLNLSCpgTYoO8LgWvencU3OlsnM04LsIInqxNkUhcyA4KJS/Upjpe1a3TYibB09B5/
- SrBA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=P7tAn4RfmA3Hkvnel0vQR0QWhM1TTO6CGeljBZb83WM=;
- b=jLhnvJfnjdN2PYuGGIW6v0a/Je6Zvrh1Rq+RCcZwtQ2/rNRiZ/G7L4Yw+OLYvuMdkm
- kchXXHpcXNBR7FZuNBbqDVQYzw4R+g8XwJEqA85MISKCEiWOWPW2bSXV0DGSO5vawUjT
- TLiOhYu5ymcpZJ/VjX8jExcDy62m5WPDoWVH+fO3h/TnrSeiwwJNEAMyetKv5sHJt0bS
- W0Rlol5JPHfzlkW9/hs3ovCKdmeUR09u2hO0BknmsJDV3y+axbyYPY6LIBf1cOJoVwFG
- 5y0XLrVqCdszvThpJyPFptTcVzkNAZEKW5QkX0aakoym7V6/QvCg7jDiKSyCCvzqCU1M
- GbYQ==
-X-Gm-Message-State: APjAAAXL6lq3EktqPgZSACX+nsZanz83oHyvsxW8iNadcM1OsAfPDkK7
- 03Q2eakFQnYiTUssgUCJKQAPBF9EDNY=
-X-Google-Smtp-Source: APXvYqwLK6mpQcQoB2Z/BmnfoNAICTCDyL0K1glklzIIts4Y1ROUsrPgayCoawMrGyOwGwaSe2ScWg==
-X-Received: by 2002:a1c:4d05:: with SMTP id o5mr25636029wmh.129.1565600392885; 
- Mon, 12 Aug 2019 01:59:52 -0700 (PDT)
-Received: from ?IPv6:2a01:e34:ed2f:f020:48cc:ae99:b746:39d8?
- ([2a01:e34:ed2f:f020:48cc:ae99:b746:39d8])
- by smtp.googlemail.com with ESMTPSA id
- f134sm29405032wmg.20.2019.08.12.01.59.51
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 12 Aug 2019 01:59:52 -0700 (PDT)
-Subject: Re: [PATCH 03/11] clocksource: sun4i: Add missing compatibles
-To: Maxime Ripard <maxime.ripard@bootlin.com>,
- Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- tglx@linutronix.de
-References: <20190722081229.22422-1-maxime.ripard@bootlin.com>
- <20190722081229.22422-3-maxime.ripard@bootlin.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
+ id 1hx6Eb-0000Jd-8K
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:03:23 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mkl@pengutronix.de>)
+ id 1hx6EX-0004ub-35; Mon, 12 Aug 2019 11:03:17 +0200
+Received: from [IPv6:2001:67c:670:202:595f:209f:a34b:fbc1] (unknown
+ [IPv6:2001:67c:670:202:595f:209f:a34b:fbc1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256 client-signature RSA-PSS (4096 bits) client-digest SHA256)
+ (Client CN "mkl@blackshift.org",
+ Issuer "StartCom Class 1 Client CA" (not verified))
+ (Authenticated sender: mkl@blackshift.org)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id 1B0584430C6;
+ Mon, 12 Aug 2019 09:03:13 +0000 (UTC)
+To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com
+References: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
+ <1565594914-18999-2-git-send-email-appana.durga.rao@xilinx.com>
+From: Marc Kleine-Budde <mkl@pengutronix.de>
 Openpgp: preference=signencrypt
-Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
- mQINBFv/yykBEADDdW8RZu7iZILSf3zxq5y8YdaeyZjI/MaqgnvG/c3WjFaunoTMspeusiFE
- sXvtg3ehTOoyD0oFjKkHaia1Zpa1m/gnNdT/WvTveLfGA1gH+yGes2Sr53Ht8hWYZFYMZc8V
- 2pbSKh8wepq4g8r5YI1XUy9YbcTdj5mVrTklyGWA49NOeJz2QbfytMT3DJmk40LqwK6CCSU0
- 9Ed8n0a+vevmQoRZJEd3Y1qXn2XHys0F6OHCC+VLENqNNZXdZE9E+b3FFW0lk49oLTzLRNIq
- 0wHeR1H54RffhLQAor2+4kSSu8mW5qB0n5Eb/zXJZZ/bRiXmT8kNg85UdYhvf03ZAsp3qxcr
- xMfMsC7m3+ADOtW90rNNLZnRvjhsYNrGIKH8Ub0UKXFXibHbafSuq7RqyRQzt01Ud8CAtq+w
- P9EftUysLtovGpLSpGDO5zQ++4ZGVygdYFr318aGDqCljKAKZ9hYgRimPBToDedho1S1uE6F
- 6YiBFnI3ry9+/KUnEP6L8Sfezwy7fp2JUNkUr41QF76nz43tl7oersrLxHzj2dYfWUAZWXva
- wW4IKF5sOPFMMgxoOJovSWqwh1b7hqI+nDlD3mmVMd20VyE9W7AgTIsvDxWUnMPvww5iExlY
- eIC0Wj9K4UqSYBOHcUPrVOKTcsBVPQA6SAMJlt82/v5l4J0pSQARAQABtCpEYW5pZWwgTGV6
- Y2FubyA8ZGFuaWVsLmxlemNhbm9AbGluYXJvLm9yZz6JAlcEEwEIAEECGwEFCwkIBwIGFQoJ
- CAsCBBYCAwECHgECF4ACGQEWIQQk1ibyU76eh+bOW/SP9LjScWdVJwUCXAkeagUJDRnjhwAK
- CRCP9LjScWdVJ+vYEACStDg7is2JdE7xz1PFu7jnrlOzoITfw05BurgJMqlvoiFYt9tEeUMl
- zdU2+r0cevsmepqSUVuUvXztN8HA/Ep2vccmWnCXzlE56X1AK7PRRdaQd1SK/eVsJVaKbQTr
- ii0wjbs6AU1uo0LdLINLjwwItnQ83/ttbf1LheyN8yknlch7jn6H6J2A/ORZECTfJbG4ecVr
- 7AEm4A/G5nyPO4BG7dMKtjQ+crl/pSSuxV+JTDuoEWUO+YOClg6azjv8Onm0cQ46x9JRtahw
- YmXdIXD6NsJHmMG9bKmVI0I7o5Q4XL52X6QxkeMi8+VhvqXXIkIZeizZe5XLTYUvFHLdexzX
- Xze0LwLpmMObFLifjziJQsLP2lWwOfg6ZiH8z8eQJFB8bYTSMqmfTulB61YO0mhd676q17Y7
- Z7u3md3CLH7rh61wU1g7FcLm9p5tXXWWaAud9Aa2kne2O3sirO0+JhsKbItz3d9yXuWgv6w3
- heOIF0b91JyrY6tjz42hvyjxtHywRr4cdAEQa2S7HeQkw48BQOG6PqQ9d3FYU34pt3WFJ19V
- A5qqAiEjqc4N0uPkC79W32yLGdyg0EEe8v0Uhs3CxM9euGg37kr5fujMm+akMtR1ENITo+UI
- fgsxdwjBD5lNb/UGodU4QvPipB/xx4zz7pS5+2jGimfLeoe7mgGJxrkBDQRb/8z6AQgAvSkg
- 5w7dVCSbpP6nXc+i8OBz59aq8kuL3YpxT9RXE/y45IFUVuSc2kuUj683rEEgyD7XCf4QKzOw
- +XgnJcKFQiACpYAowhF/XNkMPQFspPNM1ChnIL5KWJdTp0DhW+WBeCnyCQ2pzeCzQlS/qfs3
- dMLzzm9qCDrrDh/aEegMMZFO+reIgPZnInAcbHj3xUhz8p2dkExRMTnLry8XXkiMu9WpchHy
- XXWYxXbMnHkSRuT00lUfZAkYpMP7La2UudC/Uw9WqGuAQzTqhvE1kSQe0e11Uc+PqceLRHA2
- bq/wz0cGriUrcCrnkzRmzYLoGXQHqRuZazMZn2/pSIMZdDxLbwARAQABiQI2BBgBCAAgFiEE
- JNYm8lO+nofmzlv0j/S40nFnVScFAlv/zPoCGwwACgkQj/S40nFnVSf4OhAAhWJPjgUu6VfS
- mV53AUGIyqpOynPvSaMoGJzhNsDeNUDfV5dEZN8K4qjuz2CTNvGIyt4DE/IJbtasvi5dW4wW
- Fl85bF6xeLM0qpCaZtXAsU5gzp3uT7ut++nTPYW+CpfYIlIpyOIzVAmw7rZbfgsId2Lj7g1w
- QCjvGHw19mq85/wiEiZZNHeJQ3GuAr/uMoiaRBnf6wVcdpUTFMXlkE8/tYHPWbW0YKcKFwJ3
- uIsNxZUe6coNzYnL0d9GK2fkDoqKfKbFjNhW9TygfeL2Qhk949jMGQudFS3zlwvN9wwVaC0i
- KC/D303DiTnB0WFPT8CltMAZSbQ1WEWfwqxhY26di3k9pj+X3BfOmDL9GBlnRTSgwjqjqzpG
- VZsWouuTfXd9ZPPzvYdUBrlTKgojk1C8v4fhSqb+ard+bZcwNp8Tzl/EI9ygw6lYEATGCUYI
- Wco+fjehCgG1FWvWavMU+jLNs8/8uwj1u+BtRpWFj4ug/VaDDIuiApKPwl1Ge+zoC7TLMtyb
- c00W5/8EckjmNgLDIINEsOsidMH61ZOlwDKCxo2lbV+Ij078KHBIY76zuHlwonEQaHLCAdqm
- WiI95pYZNruAJEqZCpvXDdClmBVMZRDRePzSljCvoHxn7ArEt3F14mabn2RRq/hqB8IhC6ny
- xAEPQIZaxxginIFYEziOjR65AQ0EW//NCAEIALcJqSmQdkt04vIBD12dryF6WcVWYvVwhspt
- RlZbZ/NZ6nzarzEYPFcXaYOZCOCv+Xtm6hB8fh5XHd7Y8CWuZNDVp3ozuqwTkzQuux/aVdNb
- Fe4VNeKGN2FK1aNlguAXJNCDNRCpWgRHuU3rWwGUMgentJogARvxfex2/RV/5mzYG/N1DJKt
- F7g1zEcQD3JtK6WOwZXd+NDyke3tdG7vsNRFjMDkV4046bOOh1BKbWYu8nL3UtWBxhWKx3Pu
- 1VOBUVwL2MJKW6umk+WqUNgYc2bjelgcTSdz4A6ZhJxstUO4IUfjvYRjoqle+dQcx1u+mmCn
- 8EdKJlbAoR4NUFZy7WUAEQEAAYkDbAQYAQgAIBYhBCTWJvJTvp6H5s5b9I/0uNJxZ1UnBQJb
- /80IAhsCAUAJEI/0uNJxZ1UnwHQgBBkBCAAdFiEEGn3N4YVz0WNVyHskqDIjiipP6E8FAlv/
- zQgACgkQqDIjiipP6E+FuggAl6lkO7BhTkrRbFhrcjCm0bEoYWnCkQtX9YFvElQeA7MhxznO
- BY/r1q2Uf6Ifr3YGEkLnME/tQQzUwznydM94CtRJ8KDSa1CxOseEsKq6B38xJtjgYSxNdgQb
- EIfCzUHIGfk94AFKPdV6pqqSU5VpPUagF+JxiAkoEPOdFiQCULFNRLMsOtG7yp8uSyJRp6Tz
- cQ+0+1QyX1krcHBUlNlvfdmL9DM+umPtbS9F6oRph15mvKVYiPObI1z8ymHoc68ReWjhUuHc
- IDQs4w9rJVAyLypQ0p+ySDcTc+AmPP6PGUayIHYX63Q0KhJFgpr1wH0pHKpC78DPtX1a7HGM
- 7MqzQ4NbD/4oLKKwByrIp12wLpSe3gDQPxLpfGgsJs6BBuAGVdkrdfIx2e6ENnwDoF0Veeji
- BGrVmjVgLUWV9nUP92zpyByzd8HkRSPNZNlisU4gnz1tKhQl+j6G/l2lDYsqKeRG55TXbu9M
- LqJYccPJ85B0PXcy63fL9U5DTysmxKQ5RgaxcxIZCM528ULFQs3dfEx5euWTWnnh7pN30RLg
- a+0AjSGd886Bh0kT1Dznrite0dzYlTHlacbITZG84yRk/gS7DkYQdjL8zgFr/pxH5CbYJDk0
- tYUhisTESeesbvWSPO5uNqqy1dAFw+dqRcF5gXIh3NKX0gqiAA87NM7nL5ym/CNpJ7z7nRC8
- qePOXubgouxumi5RQs1+crBmCDa/AyJHKdG2mqCt9fx5EPbDpw6Zzx7hgURh4ikHoS7/tLjK
- iqWjuat8/HWc01yEd8rtkGuUcMqbCi1XhcAmkaOnX8FYscMRoyyMrWClRZEQRokqZIj79+PR
- adkDXtr4MeL8BaB7Ij2oyRVjXUwhFQNKi5Z5Rve0a3zvGkkqw8Mz20BOksjSWjAF6g9byukl
- CUVjC03PdMSufNLK06x5hPc/c4tFR4J9cLrV+XxdCX7r0zGos9SzTPGNuIk1LK++S3EJhLFj
- 4eoWtNhMWc1uiTf9ENza0ntqH9XBWEQ6IA1gubCniGG+Xg==
-Message-ID: <9df53981-d1b2-433c-e61f-7c000c71bc55@linaro.org>
-Date: Mon, 12 Aug 2019 10:59:51 +0200
+Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
+ 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
+Subject: Re: [PATCH 1/5] can: xilinx_can: defer the probe if clock is not found
+Message-ID: <144fdbc7-982a-f50d-3bf1-dd9ee2ad282c@pengutronix.de>
+Date: Mon, 12 Aug 2019 11:03:02 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190722081229.22422-3-maxime.ripard@bootlin.com>
-Content-Language: en-US
+In-Reply-To: <1565594914-18999-2-git-send-email-appana.durga.rao@xilinx.com>
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_015955_449965_A1AADB57 
-X-CRM114-Status: GOOD (  17.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190812_020321_510002_8C0CC3E7 
+X-CRM114-Status: GOOD (  19.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -167,35 +138,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: netdev@vger.kernel.org,
+ Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-can@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============6405560934007316699=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjIvMDcvMjAxOSAxMDoxMiwgTWF4aW1lIFJpcGFyZCB3cm90ZToKPiBOZXdlciBBbGx3aW5u
-ZXIgU29DcyBoYXZlIGRpZmZlcmVudCBudW1iZXIgb2YgaW50ZXJydXB0cywgbGV0J3MgYWRkCj4g
-ZGlmZmVyZW50IGNvbXBhdGlibGVzIGZvciBhbGwgb2YgdGhlbSB0byBkZWFsIHdpdGggdGhpcyBw
-cm9wZXJseS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBNYXhpbWUgUmlwYXJkIDxtYXhpbWUucmlwYXJk
-QGJvb3RsaW4uY29tPgoKQWNrZWQtYnk6IERhbmllbCBMZXpjYW5vIDxkYW5pZWwubGV6Y2Fub0Bs
-aW5hcm8ub3JnPgoKPiAtLS0KPiAgZHJpdmVycy9jbG9ja3NvdXJjZS90aW1lci1zdW40aS5jIHwg
-NCArKysrCj4gIDEgZmlsZSBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKykKPiAKPiBkaWZmIC0tZ2l0
-IGEvZHJpdmVycy9jbG9ja3NvdXJjZS90aW1lci1zdW40aS5jIGIvZHJpdmVycy9jbG9ja3NvdXJj
-ZS90aW1lci1zdW40aS5jCj4gaW5kZXggNjVmMzhmNmNhNzE0Li4wYmE4MTU1YjgyODcgMTAwNjQ0
-Cj4gLS0tIGEvZHJpdmVycy9jbG9ja3NvdXJjZS90aW1lci1zdW40aS5jCj4gKysrIGIvZHJpdmVy
-cy9jbG9ja3NvdXJjZS90aW1lci1zdW40aS5jCj4gQEAgLTIxOSw1ICsyMTksOSBAQCBzdGF0aWMg
-aW50IF9faW5pdCBzdW40aV90aW1lcl9pbml0KHN0cnVjdCBkZXZpY2Vfbm9kZSAqbm9kZSkKPiAg
-fQo+ICBUSU1FUl9PRl9ERUNMQVJFKHN1bjRpLCAiYWxsd2lubmVyLHN1bjRpLWExMC10aW1lciIs
-Cj4gIAkJICAgICAgIHN1bjRpX3RpbWVyX2luaXQpOwo+ICtUSU1FUl9PRl9ERUNMQVJFKHN1bjhp
-X2EyMywgImFsbHdpbm5lcixzdW44aS1hMjMtdGltZXIiLAo+ICsJCSBzdW40aV90aW1lcl9pbml0
-KTsKPiArVElNRVJfT0ZfREVDTEFSRShzdW44aV92M3MsICJhbGx3aW5uZXIsc3VuOGktdjNzLXRp
-bWVyIiwKPiArCQkgc3VuNGlfdGltZXJfaW5pdCk7Cj4gIFRJTUVSX09GX0RFQ0xBUkUoc3VuaXYs
-ICJhbGx3aW5uZXIsc3VuaXYtZjFjMTAwcy10aW1lciIsCj4gIAkJICAgICAgIHN1bjRpX3RpbWVy
-X2luaXQpOwo+IAoKCi0tIAogPGh0dHA6Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSC
-IE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRw
-Oi8vd3d3LmZhY2Vib29rLmNvbS9wYWdlcy9MaW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0
-dGVyLmNvbS8jIS9saW5hcm9vcmc+IFR3aXR0ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xp
-bmFyby1ibG9nLz4gQmxvZwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============6405560934007316699==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="51D0MuM3ytfH1LDWHaqy6DV3mBVWaOrIZ"
+
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--51D0MuM3ytfH1LDWHaqy6DV3mBVWaOrIZ
+Content-Type: multipart/mixed; boundary="RsHBNlp1OJyfsXm7JxAsUbJhWddkinLpv";
+ protected-headers="v1"
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com
+Cc: linux-can@vger.kernel.org, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>
+Message-ID: <144fdbc7-982a-f50d-3bf1-dd9ee2ad282c@pengutronix.de>
+Subject: Re: [PATCH 1/5] can: xilinx_can: defer the probe if clock is not
+ found
+References: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
+ <1565594914-18999-2-git-send-email-appana.durga.rao@xilinx.com>
+In-Reply-To: <1565594914-18999-2-git-send-email-appana.durga.rao@xilinx.com>
+
+--RsHBNlp1OJyfsXm7JxAsUbJhWddkinLpv
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-GB
+Content-Transfer-Encoding: quoted-printable
+
+On 8/12/19 9:28 AM, Appana Durga Kedareswara rao wrote:
+> From: Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>
+>=20
+> It's not always the case that clock is already available when can
+> driver get probed at the first time, e.g. the clock is provided by
+> clock wizard which may be probed after can driver. So let's defer
+> the probe when devm_clk_get() call fails and give it chance to
+> try later.
+
+Technically the patch changes the error message to not being printed in
+case of EPROBE_DEFER. This patch doesn't change any behaviour apart from
+that. Please adjust the patch description accordingly.
+
+Marc
+
+>=20
+> Signed-off-by: Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>=
+
+> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+> ---
+>  drivers/net/can/xilinx_can.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+>=20
+> diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.=
+c
+> index bd95cfa..ac175ab 100644
+> --- a/drivers/net/can/xilinx_can.c
+> +++ b/drivers/net/can/xilinx_can.c
+> @@ -1791,7 +1791,8 @@ static int xcan_probe(struct platform_device *pde=
+v)
+>  	/* Getting the CAN can_clk info */
+>  	priv->can_clk =3D devm_clk_get(&pdev->dev, "can_clk");
+>  	if (IS_ERR(priv->can_clk)) {
+> -		dev_err(&pdev->dev, "Device clock not found.\n");
+> +		if (PTR_ERR(priv->can_clk) !=3D -EPROBE_DEFER)
+> +			dev_err(&pdev->dev, "Device clock not found.\n");
+>  		ret =3D PTR_ERR(priv->can_clk);
+>  		goto err_free;
+>  	}
+>=20
+
+
+--=20
+Pengutronix e.K.                  | Marc Kleine-Budde           |
+Industrial Linux Solutions        | Phone: +49-231-2826-924     |
+Vertretung West/Dortmund          | Fax:   +49-5121-206917-5555 |
+Amtsgericht Hildesheim, HRA 2686  | http://www.pengutronix.de   |
+
+
+--RsHBNlp1OJyfsXm7JxAsUbJhWddkinLpv--
+
+--51D0MuM3ytfH1LDWHaqy6DV3mBVWaOrIZ
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEmvEkXzgOfc881GuFWsYho5HknSAFAl1RK0YACgkQWsYho5Hk
+nSCcWAf/TTxEXEPqm/i50bMWWrbMFTugughoNEEJHhereVPzdx/gi2Rcoi78mJds
+pRfNsMx6sX7VcnZfoIIIs9l46hELfcywm25y6bQRN0Hr/VKeVpxiNreGDWvmUCVB
+IthAFEact5CBS/Be4OfGRrVx0tlKCqjAGm2oi2wkq++/PQKyKcSjcIDdlMRGHLyu
+3Zr5bDLDF9PY3Ln2lKf7zRJoV27Y4xXTCnwk9PiIv+mY0Hrn9Lt3HXSeH2Wqc8d9
+2lvLJsYYj1qzd5JaqYV7KkjPPS175Mg4O4TV/lUCmfYvBkCGogbn2W7EwYGCUjOT
+sbRLpnSphQJ9m9p2apZGlXNvDcUEpQ==
+=HnQW
+-----END PGP SIGNATURE-----
+
+--51D0MuM3ytfH1LDWHaqy6DV3mBVWaOrIZ--
+
+
+--===============6405560934007316699==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6405560934007316699==--
+
