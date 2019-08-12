@@ -2,127 +2,148 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 334C2899B9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:21:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33999899C4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:23:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=97itcacCx9cjLcWjQ97S1DxJsMRmMBAUbBvyRN9judQ=; b=Ogz1Ln691RYZpM
-	z1yP5wGns8IND7gHqVINfp2etPf/EEoHdIaI8uJVICe4W/aBYtZPBPtVo9tNdm2yuc2MICJttNHqZ
-	1E4aPGPJ7PW79y0vIvN1fAzGGI30WH+WGxQEpBSa4wZ6JB35azUDedSygeEeLpngoZicLap5JJmKy
-	QLk5eIZVsuawc6rC7UWXnlRXPyAWJwBGFbfS9EM8UlsaanQ2rs21I9dcUJeSIRcyjVBLQsA7kQjK7
-	cyimLhPWNFJ9cLMMJ4BkxZ9n5wm+N6/U3JpwKM/4Y88i/fmgPpR/MYA1SncyAFK6WfUKQKnMoPFtH
-	Q/fzf6p5aY1qURGaW+Nw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xgnwwVeA9Ss1Bz02/fAGf/2otxCDFyBmLqqQsx10oTY=; b=IRLbFMkixzfCyN1RSMXFCuHmo
+	WDz15d2jrxgvn8OFVtlfuvdQ0Lw9SY+YoCr+lmTrpRgRXlM7dwbL8n8SoupZ+ubzJL0TZmdJtHhy1
+	hpJr/SH88g+RK0/aADNtvZ/C/4gB5CNopPwFmotdxpct6qqNjoQAypfFVNRKyMcFksRaCFfd2bvrk
+	jqhYiBnhbhcOg5hJitQncToUC9B/Q+EYjanPsNSnZP9Y08nKsorqtpeenqiip0Dm7XrlhrCaVEcNl
+	HWHR5+AoO0Oz+VqmxFFSHlrxkJkZWQ4B4g0hvD5W4la9/N9U2QJE+5J9ut0SG8FTxOH86PPXOazpe
+	inEhMr7Dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx6W8-00026K-Fv; Mon, 12 Aug 2019 09:21:28 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1hx6XU-0002OJ-Ew; Mon, 12 Aug 2019 09:22:52 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx6Vx-00025C-9g
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:21:19 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190812092110euoutp01d3a5d99f5c10f2c4b5dc30869948613a~6Imy1WZFc0508505085euoutp01v
+ id 1hx6XJ-0002NZ-JP
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:22:43 +0000
+Received: by mail-wm1-x342.google.com with SMTP id l2so11123108wmg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 09:21:10 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190812092110euoutp01d3a5d99f5c10f2c4b5dc30869948613a~6Imy1WZFc0508505085euoutp01v
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1565601670;
- bh=XADl3E0ocFQktGQLli+F4PApnzQiN9HeNOsiSPxkCBc=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=JxMMK1A9ww1W6OL8JciMBpBYm6OpY4smWIogbXNv2VZUc413rdU1EpHnt5LOir/M5
- LtZlZ3pgZwjqEPEQ2xZvjBkqdSPSdLr4ZZ6OkSMhe80kD7PSf3Mg/Q++Y+trcX0/WD
- HnOVa8OGMDwafwXJ2D+FMMNeQ4r/uo0WoPmgysGc=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190812092109eucas1p1a8c70054cf60f6f7891e5329afb42db6~6ImyHmub80898908989eucas1p11;
- Mon, 12 Aug 2019 09:21:09 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id 3A.B2.04469.58F215D5; Mon, 12
- Aug 2019 10:21:09 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190812092108eucas1p2484e38c892c4efd7d84aa26efd6b3b4e~6ImxHzFCL3275032750eucas1p2G;
- Mon, 12 Aug 2019 09:21:08 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190812092108eusmtrp19368d65c7cbbab771e52de4cbaa9d227~6Imw4vXoB1828418284eusmtrp1F;
- Mon, 12 Aug 2019 09:21:08 +0000 (GMT)
-X-AuditID: cbfec7f2-54fff70000001175-7e-5d512f859754
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id C4.F2.04117.48F215D5; Mon, 12
- Aug 2019 10:21:08 +0100 (BST)
-Received: from [106.120.51.71] (unknown [106.120.51.71]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190812092108eusmtip1694326cce266e2d779ea087f823c0236~6ImwV-gVd0771907719eusmtip1g;
- Mon, 12 Aug 2019 09:21:08 +0000 (GMT)
-Subject: Re: [PATCH 02/22] ARM: omap1: make omapfb standalone compilable
-To: Arnd Bergmann <arnd@arndb.de>
-From: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Message-ID: <9b2b4623-f1cb-0e50-691e-e18f8f864c8f@samsung.com>
-Date: Mon, 12 Aug 2019 11:21:05 +0200
+ Mon, 12 Aug 2019 02:22:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to;
+ bh=K5BX9+YZUEu8MatNrYVdTkATjUfiYN9YLEkfaO6lueQ=;
+ b=vMeJUZJWI6l4JG2AA5MoEdcETS0TIforwD6Zlyim9PSfGwbasymc+RWjcbkaP/00S7
+ +th/cMK38BGDY5LQ4EsoF2q6uja/7NVhQIoZVNbyJtbf4naQwib/ihb0TqrBsM28Z3LU
+ Hb9wy3maNHAVrfMkDGMxOn/rWsLDAJns2iBAYtc4b9XbHdV9Q5asJsflg8mpGwJkNljz
+ ARcpJJiZoxDHklsltz48o8DjIeCsXiVeXWRvwPBFsEIwoTqRScc58XM7lZ+JofS9kM70
+ ud4Hy1wS7qWS0YNlMFTqhEwsWTzJRdZvWyykIJtQBxkwF7UYDntm0NEkTTnWwvN9Fo5A
+ 171w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to;
+ bh=K5BX9+YZUEu8MatNrYVdTkATjUfiYN9YLEkfaO6lueQ=;
+ b=MDl/I7Z6wPiuHXIPTZj8K+BjSwWTR/ezKFmbRPwL1ReGc7QOBJGkx1xsWjbTsW++sL
+ ZQceaKVojcIE36LWXe3/d66kV2IgWm9ieVo+WmI7kxASwY5PX9lriPsZo6qP3G3YzI8r
+ LnHl3oe6U57Y8rsKob1xPuiSnqkMQui20koE1siyZa3Yxnv97oKTHVm5sPrFimWCoeTQ
+ uZn92QabXJROREjASh25jQg1wq0h0okfOeZ/iYb+cqXYnE+ASetqRZBaTMULhk9NKOYN
+ 9EiiptfxHi/BsXfP6XhVaqUoaSdQsODzuh/p5Ytp93QQ37AV52Cd+oVtICq5jKQN8WuP
+ pGYw==
+X-Gm-Message-State: APjAAAXT21//D6eUbsr8JnEBuIwO6Cdo2Z0WScGrr3VVHbIUd44wd8p5
+ mhD2SMpv3olloVCmSzutrztJQE2R7WQ=
+X-Google-Smtp-Source: APXvYqwAhkgPLd7grTOboLFQcTS62XkcvHngVWe3e/r7OM7vJvrDzi1mqkQqQIk5PC7cyQW4dO0oPQ==
+X-Received: by 2002:a7b:cf0b:: with SMTP id l11mr28094548wmg.143.1565601759930; 
+ Mon, 12 Aug 2019 02:22:39 -0700 (PDT)
+Received: from ?IPv6:2a01:e34:ed2f:f020:48cc:ae99:b746:39d8?
+ ([2a01:e34:ed2f:f020:48cc:ae99:b746:39d8])
+ by smtp.googlemail.com with ESMTPSA id s2sm11538299wmj.33.2019.08.12.02.22.38
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 12 Aug 2019 02:22:39 -0700 (PDT)
+Subject: Re: [PATCH 03/11] clocksource: sun4i: Add missing compatibles
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+References: <20190722081229.22422-1-maxime.ripard@bootlin.com>
+ <20190722081229.22422-3-maxime.ripard@bootlin.com>
+ <9df53981-d1b2-433c-e61f-7c000c71bc55@linaro.org>
+ <20190812091631.j2pr7i2zeput3hrc@flea>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Openpgp: preference=signencrypt
+Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <42ee55ee-258c-7588-fea3-db3c661a0156@linaro.org>
+Date: Mon, 12 Aug 2019 11:21:50 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <CAK8P3a0_v1XM-fH5TOr-osrdLOsfYGbG8VCqktuSgUU7jKtgNQ@mail.gmail.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Se0hTcRj1t3t3dx1OrtPyy8pqmJWUj0i5pJiFwS0qHPVHFGIrLyrq1E0t
- LcjIUkzQZiW+C82pWC7fTwxHrvARltoSSTMRjSzTJvmY5HYn+d/5zncO53zwkZi4j+9ERsjj
- WYVcFiUhhHhj99L7Q/c8pMGeb8v309XTAbRR1S2gBw2/CPpuaQ1BP1pV8+jab8N8+mNrIUEX
- lGXhdE3JCEF3Dp4OEDIryyrELBpUOKM1PMOZ0eF2guksqhYwYw90PKau7Daj0zfxmIVa5yDr
- S0K/UDYqIpFVePhfEYY3lxZjsQ3uNwYWM7EU9MQlA1mTQB2B0cEpXgYSkmKqAkF7Qy3BDX8Q
- LHX3I25YQLAwPklsWApmJywLNYI6wzDGDbMI0lf+IpPKnmIgrb1HYMIO1B54PD1lFmFUHgZv
- XrXwTQuCOgoP06rMBhHlD3PqVDOPU3thLbXfzG+hLsJYt4bPaezgXd4kbsLWlBRSC4zmShjl
- CCOTJTwO74Km2UJzGFAzAijLu2PpHQg5RRMCDtvDd129Be+AnpxMnDO8RGBMn7a4mxCoc9Ys
- bl/Q6gbWa5DrEQegptWDo4/Dz9UaZKKBsgX9rB1XwhZUjbkYR4sg/b6YU7uCplxDbMRmtFRi
- 2UiSv+m0/E3n5G86J/9/7lOEVyFHNkEZHcYqveTsdXelLFqZIA9zvxYTXYvWn6xnTTffjAwf
- rnYhikQSG5FmJShYzJclKpOiuxCQmMRBFG9cp0ShsqRkVhETokiIYpVdaDuJSxxFN63GL4up
- MFk8G8mysaxiY8sjrZ1SUPyFc3a7bZ7beb7O7WjLkeuTNd6+q+ywNK7wls3gwU+ey8KFfSHn
- ez0Olw4N9RY1nvA2hmrPuqu+bN05x/9tpd/GnNS1+8gCXUojs91KpGc0qx36H83auUpjYfHK
- vOsMljUQ9Zms8HOjTzm7+rw41haZpXXVdfnlxdX3TfYK0FcJrgyXeblhCqXsH6J5AkNgAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrLIsWRmVeSWpSXmKPExsVy+t/xu7ot+oGxBuc3qViseeFg8XfSMXaL
- K1/fs1k0L17PZjHlz3Imi02Pr7FaXN41h81i9pJ+Fov182+xWey/4uXA5fH71yRGj29fJ7F4
- HP66kMXjzrU9bB77565h97jffZzJY/OSeo/jN7YzeXzeJBfAGaVnU5RfWpKqkJFfXGKrFG1o
- YaRnaGmhZ2RiqWdobB5rZWSqpG9nk5Kak1mWWqRvl6CXsWPxPOaCrXoVF7/1MDcwTlPpYuTk
- kBAwkZj99hFjFyMXh5DAUkaJvqkX2LsYOYASMhLH15dB1AhL/LnWxQZR85pRYtbml4wgCWEB
- D4n2PafZQWwRAUWJqS+eMYMUMQvMZZZY9ugyWEJIYDWzxIalwiA2m4CVxMT2VWDNvAJ2Eh+W
- t7CC2CwCqhL/Ws6BxUUFIiTOvF/BAlEjKHFy5hMwm1MgUKJl9l82EJtZQF3iz7xLzBC2uMSt
- J/OZIGx5ie1v5zBPYBSahaR9FpKWWUhaZiFpWcDIsopRJLW0ODc9t9hIrzgxt7g0L10vOT93
- EyMwarcd+7llB2PXu+BDjAIcjEo8vBE/A2KFWBPLiitzDzFKcDArifCW/AUK8aYkVlalFuXH
- F5XmpBYfYjQFem4is5Rocj4woeSVxBuaGppbWBqaG5sbm1koifN2CByMERJITyxJzU5NLUgt
- gulj4uCUamC05Ir9tXx7rcfizUs+qK/g2nX+8N+ko2fTWiod/P6pfPL2Zzv1+9xujo2b2s4e
- 2tyj8X+JS5di2LFwl+uJ1U3id8wiVXvviEZ3LWb4yD1zVVS0SdmB/x/3fZ3w/uoXv11JbH92
- JVw6Z/r/+9mA7yYNBv9XOCpMvW9w9oXacukp8w679wU+TG9yUWIpzkg01GIuKk4EAJ7Ifh7w
- AgAA
-X-CMS-MailID: 20190812092108eucas1p2484e38c892c4efd7d84aa26efd6b3b4e
-X-Msg-Generator: CA
-X-RootMTR: 20190808212453epcas2p44ff418662ee1acf428c6842ee4488f9f
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190808212453epcas2p44ff418662ee1acf428c6842ee4488f9f
-References: <20190808212234.2213262-1-arnd@arndb.de>
- <CGME20190808212453epcas2p44ff418662ee1acf428c6842ee4488f9f@epcas2p4.samsung.com>
- <20190808212234.2213262-3-arnd@arndb.de>
- <55c9608d-68c4-17f6-2682-7668d5d7720a@samsung.com>
- <CAK8P3a3grFEGr33s327yNMabK5=1kCJc3k7y55dhzQx9sTvkyQ@mail.gmail.com>
- <487da98d-a862-0207-289a-bca8ff18e51a@samsung.com>
- <CAK8P3a0_v1XM-fH5TOr-osrdLOsfYGbG8VCqktuSgUU7jKtgNQ@mail.gmail.com>
+In-Reply-To: <20190812091631.j2pr7i2zeput3hrc@flea>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_022117_544664_1F3CA8D4 
-X-CRM114-Status: GOOD (  29.84  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190812_022241_656008_3CCAF857 
+X-CRM114-Status: GOOD (  15.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -130,7 +151,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -142,175 +162,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aaro Koskinen <aaro.koskinen@iki.fi>, Tony Lindgren <tony@atomide.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Tomi Valkeinen <tomi.valkeinen@ti.com>,
- linux-omap <linux-omap@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ tglx@linutronix.de, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2651066816955346400=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============2651066816955346400==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="J5t4Xuso7hExK4OnyELpFiIVNIijAUrC9"
 
-On 8/9/19 9:55 PM, Arnd Bergmann wrote:
-> On Fri, Aug 9, 2019 at 4:36 PM Bartlomiej Zolnierkiewicz
-> <b.zolnierkie@samsung.com> wrote:
->> On 8/9/19 1:43 PM, Arnd Bergmann wrote:
-> 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--J5t4Xuso7hExK4OnyELpFiIVNIijAUrC9
+Content-Type: multipart/mixed; boundary="D0kDJw0PVFwc6SAbaWFoLZpXkyX6gGyBK";
+ protected-headers="v1"
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
+ tglx@linutronix.de, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Message-ID: <42ee55ee-258c-7588-fea3-db3c661a0156@linaro.org>
+Subject: Re: [PATCH 03/11] clocksource: sun4i: Add missing compatibles
+References: <20190722081229.22422-1-maxime.ripard@bootlin.com>
+ <20190722081229.22422-3-maxime.ripard@bootlin.com>
+ <9df53981-d1b2-433c-e61f-7c000c71bc55@linaro.org>
+ <20190812091631.j2pr7i2zeput3hrc@flea>
+In-Reply-To: <20190812091631.j2pr7i2zeput3hrc@flea>
+
+--D0kDJw0PVFwc6SAbaWFoLZpXkyX6gGyBK
+Content-Type: text/plain; charset=UTF-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
+
+On 12/08/2019 11:16, Maxime Ripard wrote:
+> Hi,
+>=20
+> On Mon, Aug 12, 2019 at 10:59:51AM +0200, Daniel Lezcano wrote:
+>> On 22/07/2019 10:12, Maxime Ripard wrote:
+>>> Newer Allwinner SoCs have different number of interrupts, let's add
+>>> different compatibles for all of them to deal with this properly.
 >>>
->>> That would have been ok as well, but having the addition here was
->>> intentional and seems more logical to me as this is where the headers
->>> get moved around.
->> I see that this is an optimization for making the patch series more
->> compact but I think that this addition logically belongs to patch #9
->> (which adds support for COMPILE_TEST) where the new code is required.
+>>> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 >>
->> Moreover patch description for patch #2 lacks any comment about this
->> addition being a preparation for changes in patch #9 so I was quite
->> puzzled about its purpose when seeing it first.
->>
->> Therefore please have mercy on the poor/stupid reviewer and don't do
->> such optimizations intentionally (or at least describe them properly
->> somewhere).. ;-)
-> 
-> Ok, I looked at it some more and agree that you are right. I've split it
-> up further now into patches that make more sense by themselves:
-> 
-> commit ad71cdc54404ecde2e88678ee6bc7ae7fb8aec97
-> Author: Arnd Bergmann <arnd@arndb.de>
-> Date:   Tue Aug 6 16:08:34 2019 +0200
-> 
->     fbdev: omap: avoid using mach/*.h files
-> 
->     All the headers we actually need are now in include/linux/soc,
->     so use those versions instead and allow compile-testing on
->     other architectures.
-> 
->     Acked-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
->     Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> 
->  drivers/video/backlight/Kconfig          | 4 ++--
->  drivers/video/backlight/omap1_bl.c       | 4 ++--
->  drivers/video/fbdev/omap/Kconfig         | 4 ++--
->  drivers/video/fbdev/omap/lcd_ams_delta.c | 2 +-
->  drivers/video/fbdev/omap/lcd_dma.c       | 3 ++-
->  drivers/video/fbdev/omap/lcd_inn1510.c   | 2 +-
->  drivers/video/fbdev/omap/lcd_osk.c       | 4 ++--
->  drivers/video/fbdev/omap/lcdc.c          | 2 ++
->  drivers/video/fbdev/omap/omapfb_main.c   | 3 +--
->  drivers/video/fbdev/omap/sossi.c         | 1 +
->  10 files changed, 16 insertions(+), 13 deletions(-)
-> 
-> commit 959e0d68751757e84dd703f60405c7268763dba4
-> Author: Arnd Bergmann <arnd@arndb.de>
-> Date:   Fri Aug 9 21:27:01 2019 +0200
-> 
->     fbdev: omap: pass irqs as resource
-> 
->     To avoid relying on the mach/irqs.h header, stop using
->     OMAP_LCDC_IRQ and INT_1610_SoSSI_MATCH directly in the driver
->     code, but instead pass these as resources.
-> 
->     Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> 
->  arch/arm/mach-omap1/fb.c               | 19 ++++++++++++++++++-
->  drivers/video/fbdev/omap/lcdc.c        |  6 +++---
->  drivers/video/fbdev/omap/omapfb.h      |  2 ++
->  drivers/video/fbdev/omap/omapfb_main.c | 16 +++++++++++++++-
->  drivers/video/fbdev/omap/sossi.c       |  2 +-
->  5 files changed, 39 insertions(+), 6 deletions(-)
-> 
-> 
-> commit 6643f7a7da3ca7ce8f2ff094fecab7a0fd706acf
-> Author: Arnd Bergmann <arnd@arndb.de>
-> Date:   Fri Aug 9 21:42:31 2019 +0200
-> 
->     ARM: omap1: declare a dummy omap_set_dma_priority
-> 
->     omapfb calls directly into the omap_set_dma_priority() function in
->     the DMA driver. This prevents compile-testing omapfb on other
->     architectures. Add an inline function next to the other ones
->     for non-omap configurations.
-> 
->     Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> 
->  include/linux/omap-dma.h | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> commit 154bfb7ddcecdbca66d9a086776a3108831ef0b9
-> Author: Arnd Bergmann <arnd@arndb.de>
-> Date:   Mon Aug 5 23:15:37 2019 +0200
-> 
->     ARM: omap1: move lcd_dma code into omapfb driver
-> 
->     The omapfb driver is split into platform specific code for omap1, and
->     driver code that is also specific to omap1.
-> 
->     Moving both parts into the driver directory simplifies the structure
->     and avoids the dependency on certain omap machine header files.
-> 
->     As mach/lcd_dma.h can not be included from include/linux/omap-dma.h
->     any more now, move the omap_lcd_dma_running() declaration into the
->     omap-dma header, which matches where it is defined.
-> 
->     Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> 
->  arch/arm/mach-omap1/Makefile
->    |  4 ----
->  arch/arm/mach-omap1/include/mach/lcdc.h
->    | 44 --------------------------------------------
->  drivers/video/fbdev/Makefile
->    |  2 +-
->  drivers/video/fbdev/omap/Makefile
->    |  5 +++++
->  {arch/arm/mach-omap1 => drivers/video/fbdev/omap}/lcd_dma.c
->    |  4 +++-
->  {arch/arm/mach-omap1/include/mach =>
-> drivers/video/fbdev/omap}/lcd_dma.h |  2 --
->  drivers/video/fbdev/omap/lcdc.c
->    |  2 +-
->  drivers/video/fbdev/omap/lcdc.h
->    | 35 +++++++++++++++++++++++++++++++++++
->  drivers/video/fbdev/omap/sossi.c                                         |  1 +
->  include/linux/omap-dma.h
->    |  4 ++--
->  10 files changed, 48 insertions(+), 55 deletions(-)
-> 
-> commit b8ddb98d29a43fecb4387d0d8218935cb1997a28
-> Author: Arnd Bergmann <arnd@arndb.de>
-> Date:   Tue Aug 6 14:59:00 2019 +0200
-> 
->     ARM: omap1: innovator: pass lcd control address as pdata
-> 
->     To avoid using the mach/omap1510.h header file, pass the correct
->     address as platform data.
-> 
->     Acked-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
->     Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> 
->  arch/arm/mach-omap1/board-innovator.c  | 3 +++
->  drivers/video/fbdev/omap/lcd_inn1510.c | 7 +++++--
->  2 files changed, 8 insertions(+), 2 deletions(-)
+>> Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+>=20
+> Thanks!
+>=20
+> Can you merge this through your tree (along with the bindings)? I'll
+> merge the DT patches
 
-Thank you for reworking the patch series.
+patches 1-4 then ?
 
-> The resulting code is the same as before, I'll post that again along
-> the rest of the series next week. Should I add your Ack to each
-> patch already?
 
-Yes, please do.
 
-Best regards,
---
-Bartlomiej Zolnierkiewicz
-Samsung R&D Institute Poland
-Samsung Electronics
+--=20
+ <http://www.linaro.org/> Linaro.org =E2=94=82 Open source software for A=
+RM SoCs
+
+Follow Linaro:  <http://www.facebook.com/pages/Linaro> Facebook |
+<http://twitter.com/#!/linaroorg> Twitter |
+<http://www.linaro.org/linaro-blog/> Blog
+
+
+
+--D0kDJw0PVFwc6SAbaWFoLZpXkyX6gGyBK--
+
+--J5t4Xuso7hExK4OnyELpFiIVNIijAUrC9
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEGn3N4YVz0WNVyHskqDIjiipP6E8FAl1RL94ACgkQqDIjiipP
+6E8lXQgAn9iSp6L2MmsxYQMmKt1ELiCKSXQq5gaZcoQDq9ayxAkCU+k6OPaeisKm
+RnDR8ntTmlKOF5Ht4BQroHEKOC/WElmB3/35X4gkF1IHtUxk0OLdkPTjmGKPiE0f
+mHKe1FrKiceWxXCDWav5sOCbVWINWsb0Dqf8YBXqFoiTU30njvdb5WMlZZfBEq9w
+G6k6/dRkj8nMEIPL4hxSnqzeprsZDxZrw9Jdux6hH+8Ea0cO+pWeWBeXV5LB6JFa
+xeUaSU4sPDjSOVeqRLVPvcwTb//m7zTHoM56POFAnfVM30JfjZylCkPTnmr9oPdV
+c5LWor4UhP8jMV7r8Uely/ZoBv1Nmg==
+=R5Td
+-----END PGP SIGNATURE-----
+
+--J5t4Xuso7hExK4OnyELpFiIVNIijAUrC9--
+
+
+--===============2651066816955346400==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2651066816955346400==--
+
