@@ -2,87 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6722D897CD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 09:29:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD640897DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 09:30:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3EoebHqEmYfC5s+YZnY6cLAqMQGq9/idknwx0GJ1eb4=; b=UxI/ZE5VWxw9jo
-	TD/R8UBnFGh5zZz7div51+a2SNCcpd1rTS0gonejl9g1UIhpD4Nyl3PZnA72yd7kZZE1G8I6dRhqn
-	Ob2p5g9zmgB3AspPOrQRu8hJbpOVWt/tI6YE4Ba+3Oh9XmMLzwt7sqKiRv1b+/9zb8Z7rOoWxdGsL
-	16XMdo8WgNBtaF7qU9unCb3GLZa6VXBvdLR5we6LhfVTq+zbdFGZ5HzLcLv57n5yifHxOQPw5R/1B
-	+QGraMNCDfnV8LOB/C9JmwPBBjP5kFIYv/VgY8Vv+TLW9f0htAkRM9C8JYkQI2QVBkfbjC3SmyGsW
-	5f/fNySdooABaXgkxWNg==;
+	List-Owner; bh=7AxZM1obpX9YqCLWcIK2Iqhoj7SBNfMNaOCTndeyHC8=; b=cCkGhRy5nIZAbv
+	52E2JhapzVNwstREutZMYFJ7KisalfntqKr9a/wAy3ifce95qJZqlLEdKdL1k4KxSkweKoZdbvTjm
+	l7BBjKThU2lL5KrEasZZKw0HmPNSo/C/+6zJ4pJvCvyfuOozRqNOwgKpDv8TcRlHJndomqB3xkgSm
+	7NP8H9PgjVljAk+HRYV5hjgLSaumZY83YDZxKXvUthgOkqjQ5UyrxZUZQNjzeY6yZIGH5U5l7ZPLt
+	W3G2Wxmh3nHE0Yhh3SsbyeHZI3GoCd2vZdaVvGWQvHJuqC45plswn2LxPn4BM4XUnzbv1wZZlI2Vm
+	dF6t1U03fq1ebhyVcNxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx4lz-0002ik-Mv; Mon, 12 Aug 2019 07:29:43 +0000
+	id 1hx4mc-0003nz-B7; Mon, 12 Aug 2019 07:30:22 +0000
 Received: from mail-eopbgr800057.outbound.protection.outlook.com
  ([40.107.80.57] helo=NAM03-DM3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx4lM-0002MP-1a
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 07:29:05 +0000
+ id 1hx4lN-0002Ou-U2
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 07:29:07 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Dvkh/FTUE1le5E6g5S9IbPKito31gSo8d6gbQLKwFhSvkMIJ+gZC0MKc0w220WqAu82K+H40LL/+t3sdSeMGyyVeFkIQFcsW3adIqxomn/Hhlo7xSNcQiTFhb84+pmztNGhgAEGwH8VI2pmQDmmwsFj4HLODVTw4MbvrFkryfJ76Z0drQOOCasf+sHu1pSGBsHRM5nezLSGgtoCn5zdxOGJpzTv1DNDJ4GalIXUXQnxc/0y72/50CdVNSnznzAGZv7XAfmosn/H+5Pm31+khkG0vrWmXsMB2aj5L/j3qsAZYRCw23liBVQ5I1FIZc45UQNJvVhGpihnsnFemBpjY5g==
+ b=oHv4uihfxWAQ4p7kBFhMe5AqIs87/l/TEgZxm/IxJ8mtbPmrujOSS7PHHgvPrZ7sIPOlhpt6+XZxM69RWM8OvDpRY0wCUJ51Bf2UzLXmDwCm8CiyEHKPCiNaUnwgXxWIWQ/pRvSCGARX5QX0Gxs2tW2N0TYoGa7/go5GnVvAx1vLjT/Jjmx3BNaKhVot65vvUX/55cNLBV2g/4mjoP9vYinqfWWrlym/dEmrfWoSREvO1vhDXEmV19NZeRDe+OJBnQYHMYxXzKKRoHA/UH7YhEq7N0ATw4OLOCZ9pjvNnnNIcMWB3ZrqnCTNxSVOuvhAmHmiDjPeax3c3xe/y1Ev8g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=/qVZ0wFDVKK80MuPDiwvZsmQAaAhZEwv2iP05Jp3938=;
- b=TSSbKcc8vd0sNd+oabV59j+fm+r8hwQUVZKCsecq2gwYDSsGpUwrI6ixI8XtcTsU7j4PrMjC+wmPd0PH34Q8sLOgvwAvgY/tkCUKM6RE6obkC/0iwbrHIJU4qr8G2gxYMLudn8X4FVcnb1eDEhDceTAgHEIVOA8v4nxsJD0PxShjxtdbzOsYoc2HNPEnJaErMWm+sKmSXOJyPHk97zyh82Im0CA7WZYljpvD0gcc9JOxri3JWZeYXAhBJ0J2+8NKtBym3HwBQwybVXf7ITLe3rwpo+62WlSKpARj7yp94HPVhMYk12avEthofG15dZgJQn66lnl4OrtAbOWz3jefsw==
+ bh=7XSGZwcTzQF1bLhmOV2mLxLRC5K+S177LYiWGvO4Lns=;
+ b=WAvrHe9OUaLnKHshgBrBCwIZKlyf1rR5niuAdox09bxjObAUWhK5MnDbTsc64ISF/DctbgS4A6iTkasJBqrfKyo3G6FG0upa4gex0u2L1/1xZfWZdLC4YlbR0IjWkBgjxrcXyLxqKUs7mz61XxqHvurZ7RDSICuK0jhd9a308pzTmipDUXVYHtorajS8LMI080i6GdiVdyBzRag3ih1GfPxOiy9R/7opqxsxrypl+KAzTw832vS7CSrb2aBvPHgzbajd3emUgn5T2r8mmGj81LV03Z1YubY0rJ73TVWFMzDWtm+u8rX34rYgB//dIIwmzgxm7m33rPsBMvTxaFnaXg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.100) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
  dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
  not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=/qVZ0wFDVKK80MuPDiwvZsmQAaAhZEwv2iP05Jp3938=;
- b=A/no516jOFhiMMviOb4I3MdqBbLgCYAhsKdFfdTO7MM7qJaa9tZveLNphiLnmbMUFS0jZAklsCXQx04YaxjOnkQFe1nvtj7+ntVtj66YkjGauBljTJ2L4jdFxbt2b4gl3qfTeXuJDqMM2NyVknu73bQ28WtK1jFkTE2/0iImNio=
-Received: from BYAPR02CA0023.namprd02.prod.outlook.com (2603:10b6:a02:ee::36)
- by SN6PR02MB4830.namprd02.prod.outlook.com (2603:10b6:805:98::16)
+ bh=7XSGZwcTzQF1bLhmOV2mLxLRC5K+S177LYiWGvO4Lns=;
+ b=R6RO7XnsvluC7QMgM7I28cp6JOoi7+VCie51e1NKTFb/1KCA+EwSN635weeGW05DQr1BgAIfxGq5oWhO4+ArNpc6FG58x2ItRAQENWj02n/vcVKBKO3wrA6WEQfZd3p4uJGEgY8fPxxbpz+6SH3k303/HlTFKleQJ/i+549PI5w=
+Received: from BN7PR02CA0006.namprd02.prod.outlook.com (2603:10b6:408:20::19)
+ by DM5PR0201MB3622.namprd02.prod.outlook.com (2603:10b6:4:78::10)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.21; Mon, 12 Aug
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.18; Mon, 12 Aug
  2019 07:29:02 +0000
-Received: from CY1NAM02FT031.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e45::202) by BYAPR02CA0023.outlook.office365.com
- (2603:10b6:a02:ee::36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2157.15 via Frontend
+Received: from CY1NAM02FT045.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e45::207) by BN7PR02CA0006.outlook.office365.com
+ (2603:10b6:408:20::19) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2157.18 via Frontend
  Transport; Mon, 12 Aug 2019 07:29:01 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.100)
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
  smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
  header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
  header.from=xilinx.com;
 Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
-Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
- CY1NAM02FT031.mail.protection.outlook.com (10.152.75.180) with Microsoft SMTP
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ CY1NAM02FT045.mail.protection.outlook.com (10.152.75.111) with Microsoft SMTP
  Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2157.15
  via Frontend Transport; Mon, 12 Aug 2019 07:29:00 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66]:47674
- helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
  (envelope-from <appana.durga.rao@xilinx.com>)
- id 1hx4lI-00072S-Aj; Mon, 12 Aug 2019 00:29:00 -0700
+ id 1hx4lI-0001ga-1r; Mon, 12 Aug 2019 00:29:00 -0700
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <appana.durga.rao@xilinx.com>)
- id 1hx4lD-0000eU-7S; Mon, 12 Aug 2019 00:28:55 -0700
-Received: from xsj-pvapsmtp01 (mailhub.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x7C7SpOX019453; 
- Mon, 12 Aug 2019 00:28:52 -0700
+ id 1hx4lC-0000eU-Uv; Mon, 12 Aug 2019 00:28:54 -0700
+Received: from xsj-pvapsmtp01 (mail.xilinx.com [149.199.38.66] (may be forged))
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x7C7SksL021531; 
+ Mon, 12 Aug 2019 00:28:46 -0700
 Received: from [10.140.6.6] (helo=xhdappanad40.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <appana.durga.rao@xilinx.com>)
- id 1hx4l9-0000d9-5e; Mon, 12 Aug 2019 00:28:51 -0700
+ id 1hx4l3-0000d9-KS; Mon, 12 Aug 2019 00:28:46 -0700
 From: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>
 To: wg@grandegger.com, mkl@pengutronix.de, davem@davemloft.net,
  michal.simek@xilinx.com
-Subject: [PATCH 4/5] can: xilinx_can: Fix FSR register FL and RI mask values
- for canfd 2.0
-Date: Mon, 12 Aug 2019 12:58:33 +0530
-Message-Id: <1565594914-18999-5-git-send-email-appana.durga.rao@xilinx.com>
+Subject: [PATCH 2/5] can: xilinx_can: Fix FSR register handling in the rx path
+Date: Mon, 12 Aug 2019 12:58:31 +0530
+Message-Id: <1565594914-18999-3-git-send-email-appana.durga.rao@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
 References: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
@@ -91,35 +90,35 @@ X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
 X-TM-AS-User-Approved-Sender: Yes;Yes
 X-EOPAttributedMessage: 0
 X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
  SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(39860400002)(396003)(376002)(136003)(2980300002)(189003)(199004)(50466002)(316002)(16586007)(446003)(6636002)(126002)(48376002)(486006)(106002)(11346002)(2616005)(476003)(5660300002)(186003)(26005)(305945005)(51416003)(8676002)(81166006)(81156014)(76176011)(14444005)(47776003)(7696005)(9786002)(36386004)(8936002)(4326008)(63266004)(50226002)(36756003)(70206006)(70586007)(426003)(2906002)(356004)(478600001)(6666004)(336012)(107886003)(5001870100001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:SN6PR02MB4830; H:xsj-pvapsmtpgw02; FPR:;
- SPF:Pass; LANG:en; PTR:xapps1.xilinx.com,unknown-60-100.xilinx.com; MX:1; A:1;
+ SFS:(10009020)(979002)(4636009)(346002)(376002)(396003)(39860400002)(136003)(2980300002)(189003)(199004)(76176011)(186003)(5660300002)(51416003)(7696005)(446003)(336012)(426003)(2616005)(476003)(126002)(486006)(36386004)(305945005)(63266004)(11346002)(50466002)(6636002)(356004)(6666004)(2906002)(48376002)(26005)(478600001)(4326008)(70586007)(50226002)(8936002)(81156014)(14444005)(8676002)(70206006)(9786002)(81166006)(16586007)(106002)(316002)(47776003)(36756003)(107886003)(42866002)(969003)(989001)(999001)(1009001)(1019001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR0201MB3622; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: f726ddd1-b75a-4e33-8235-08d71ef6bf22
+X-MS-Office365-Filtering-Correlation-Id: 9e4d64cc-72c4-4bb6-75bf-08d71ef6befe
 X-Microsoft-Antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
- SRVR:SN6PR02MB4830; 
-X-MS-TrafficTypeDiagnostic: SN6PR02MB4830:
-X-Microsoft-Antispam-PRVS: <SN6PR02MB48308EB17B10F8C80D99B491DCD30@SN6PR02MB4830.namprd02.prod.outlook.com>
+ SRVR:DM5PR0201MB3622; 
+X-MS-TrafficTypeDiagnostic: DM5PR0201MB3622:
+X-Microsoft-Antispam-PRVS: <DM5PR0201MB3622A7AB2841E484BE034700DCD30@DM5PR0201MB3622.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:4714;
+X-MS-Oob-TLC-OOBClassifiers: OLM:758;
 X-Forefront-PRVS: 012792EC17
 X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: 9oaaFPU+q35fRnWzanvrewqMFRwZvwl7asF0odbBtFv2c6ASxfxvNFI54+vdbr0aug8IjXIiRloES0wwc9LzcZDCwWeb5q35uZk0Vs9+OZQEQd97vtCBfq0dvLkyucwCWM6/Eoq3IQ7D9yT0IUmFwrL2EnBdwYpNxgtl6Ag2/AZv4ZUpcB+5uUFB7zcbhniMPnQIpcn5Fp5bUvP5VJM+5u/wqbEgWMIyGs0nS3teBRQvWki7RxCuPH5cYGZRKgn2Zu092kBpi6q/M2XmBH/8fkIUxXoGPc2nloJVgEHgUQXlYVlV9nkbig5pe6pqStYqBeaFAresIGnvlEopNTffsVMK4H4onnfIc9ykGW6aW2uO65G0rbQpcKnOAejjsk8vwh0WfJ/9Ea9elv9aG9XGR3mUodxyXj3LrCitnFPqD9E=
+X-Microsoft-Antispam-Message-Info: ARslWlvPvCEKDBgQl9yM6boH9DdtstbRADjPl/WGJKvkArsiUS0L70qzb8t5+2hUovtiwxn4B30vWDgTXT+fddPQ+mOXqUzF5LxrgZme/5IqHPuNA7ZgyqcoXflWKCD0OFdeu/6nEW5wbP9ZagC3Z40bWwDi8jzGCjdUZmzWQDb9mq62Cl66tQlosz+ypCadbiKZCeREM4d/noHQXoa5qogus9YmzTy9dDw5fAbfL0KOpfiweTDgKPWiltmtpRHzQNXCXS2LP8Mw/lrW3/fQ3Xf78MxwA/Puuyaf2fStPPwamFpIRUHdgw29/ppULxj42x0T7RJxeWkSz/PLICzHaM0pZNzaxTxRQ0D7lAiJWN+QXxpdq/d+5g5zJMDMeKUBwERnmodlgYjvL8jEPC7Z43ge+p3EhYjkEvLVHoCOa/o=
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Aug 2019 07:29:00.9350 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: f726ddd1-b75a-4e33-8235-08d71ef6bf22
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Aug 2019 07:29:00.6366 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9e4d64cc-72c4-4bb6-75bf-08d71ef6befe
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
- Helo=[xsj-pvapsmtpgw02]
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR02MB4830
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR0201MB3622
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_002904_263282_C29CD287 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20190812_002906_013589_B545A7CD 
+X-CRM114-Status: GOOD (  13.62  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -152,60 +151,180 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For CANFD 2.0 IP configuration existing driver is using incorrect mask
-values for FSR register FL and RI fields.
+After commit c223da689324 ("can: xilinx_can: Add support for
+CANFD FD frames") Driver is updating the FSR IRI index multiple
+times(i.e in xcanfd_rx() and xcan_rx_fifo_get_next_frame()),
+It should be updated once per rx packet this patch fixes this issue,
+also this patch removes the unnecessary fsr register checks in
+xcanfd_rx() API.
 
+Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
+Reviewed-by: Shubhrajyoti Datta <Shubhrajyoti.datta@xilinx.com>
 Signed-off-by: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>
-Acked-by: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 ---
- drivers/net/can/xilinx_can.c | 13 ++++++++++---
- 1 file changed, 10 insertions(+), 3 deletions(-)
+ drivers/net/can/xilinx_can.c | 139 ++++++++++++++++++++-----------------------
+ 1 file changed, 63 insertions(+), 76 deletions(-)
 
 diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.c
-index c9b951b..4cb8c1c9 100644
+index ac175ab..2d3399e 100644
 --- a/drivers/net/can/xilinx_can.c
 +++ b/drivers/net/can/xilinx_can.c
-@@ -123,8 +123,10 @@ enum xcan_reg {
- #define XCAN_IDR_RTR_MASK		0x00000001 /* Remote TX request */
- #define XCAN_DLCR_DLC_MASK		0xF0000000 /* Data length code */
- #define XCAN_FSR_FL_MASK		0x00003F00 /* RX Fill Level */
-+#define XCAN_2_FSR_FL_MASK		0x00007F00 /* RX Fill Level */
- #define XCAN_FSR_IRI_MASK		0x00000080 /* RX Increment Read Index */
- #define XCAN_FSR_RI_MASK		0x0000001F /* RX Read Index */
-+#define XCAN_2_FSR_RI_MASK		0x0000003F /* RX Read Index */
- #define XCAN_DLCR_EDL_MASK		0x08000000 /* EDL Mask in DLC */
- #define XCAN_DLCR_BRS_MASK		0x04000000 /* BRS Mask in DLC */
+@@ -819,91 +819,78 @@ static int xcanfd_rx(struct net_device *ndev, int frame_base)
+ 	u32 id_xcan, dlc, data[2] = {0, 0}, dwindex = 0, i, fsr, readindex;
  
-@@ -1138,7 +1140,7 @@ static int xcan_rx_fifo_get_next_frame(struct xcan_priv *priv)
- 	int offset;
+ 	fsr = priv->read_reg(priv, XCAN_FSR_OFFSET);
+-	if (fsr & XCAN_FSR_FL_MASK) {
+-		readindex = fsr & XCAN_FSR_RI_MASK;
+-		id_xcan = priv->read_reg(priv,
+-					 XCAN_FRAME_ID_OFFSET(frame_base));
+-		dlc = priv->read_reg(priv, XCAN_FRAME_DLC_OFFSET(frame_base));
+-		if (dlc & XCAN_DLCR_EDL_MASK)
+-			skb = alloc_canfd_skb(ndev, &cf);
+-		else
+-			skb = alloc_can_skb(ndev, (struct can_frame **)&cf);
++	readindex = fsr & XCAN_FSR_RI_MASK;
++	id_xcan = priv->read_reg(priv, XCAN_FRAME_ID_OFFSET(frame_base));
++	dlc = priv->read_reg(priv, XCAN_FRAME_DLC_OFFSET(frame_base));
++	if (dlc & XCAN_DLCR_EDL_MASK)
++		skb = alloc_canfd_skb(ndev, &cf);
++	else
++		skb = alloc_can_skb(ndev, (struct can_frame **)&cf);
  
- 	if (priv->devtype.flags & XCAN_FLAG_RX_FIFO_MULTI) {
--		u32 fsr;
-+		u32 fsr, mask;
+-		if (unlikely(!skb)) {
+-			stats->rx_dropped++;
+-			return 0;
+-		}
++	if (unlikely(!skb)) {
++		stats->rx_dropped++;
++		return 0;
++	}
  
- 		/* clear RXOK before the is-empty check so that any newly
- 		 * received frame will reassert it without a race
-@@ -1148,12 +1150,17 @@ static int xcan_rx_fifo_get_next_frame(struct xcan_priv *priv)
- 		fsr = priv->read_reg(priv, XCAN_FSR_OFFSET);
+-		/* Change Xilinx CANFD data length format to socketCAN data
+-		 * format
+-		 */
+-		if (dlc & XCAN_DLCR_EDL_MASK)
+-			cf->len = can_dlc2len((dlc & XCAN_DLCR_DLC_MASK) >>
++	/* Change Xilinx CANFD data length format to socketCAN data
++	 * format
++	 */
++	if (dlc & XCAN_DLCR_EDL_MASK)
++		cf->len = can_dlc2len((dlc & XCAN_DLCR_DLC_MASK) >>
++				  XCAN_DLCR_DLC_SHIFT);
++	else
++		cf->len = get_can_dlc((dlc & XCAN_DLCR_DLC_MASK) >>
+ 					  XCAN_DLCR_DLC_SHIFT);
+-		else
+-			cf->len = get_can_dlc((dlc & XCAN_DLCR_DLC_MASK) >>
+-						  XCAN_DLCR_DLC_SHIFT);
+-
+-		/* Change Xilinx CAN ID format to socketCAN ID format */
+-		if (id_xcan & XCAN_IDR_IDE_MASK) {
+-			/* The received frame is an Extended format frame */
+-			cf->can_id = (id_xcan & XCAN_IDR_ID1_MASK) >> 3;
+-			cf->can_id |= (id_xcan & XCAN_IDR_ID2_MASK) >>
+-					XCAN_IDR_ID2_SHIFT;
+-			cf->can_id |= CAN_EFF_FLAG;
+-			if (id_xcan & XCAN_IDR_RTR_MASK)
+-				cf->can_id |= CAN_RTR_FLAG;
+-		} else {
+-			/* The received frame is a standard format frame */
+-			cf->can_id = (id_xcan & XCAN_IDR_ID1_MASK) >>
+-					XCAN_IDR_ID1_SHIFT;
+-			if (!(dlc & XCAN_DLCR_EDL_MASK) && (id_xcan &
+-						XCAN_IDR_SRR_MASK))
+-				cf->can_id |= CAN_RTR_FLAG;
+-		}
  
- 		/* check if RX FIFO is empty */
--		if (!(fsr & XCAN_FSR_FL_MASK))
-+		if (priv->devtype.flags & XCAN_FLAG_CANFD_2)
-+			mask = XCAN_2_FSR_FL_MASK;
-+		else
-+			mask = XCAN_FSR_FL_MASK;
+-		/* Check the frame received is FD or not*/
+-		if (dlc & XCAN_DLCR_EDL_MASK) {
+-			for (i = 0; i < cf->len; i += 4) {
+-				if (priv->devtype.flags & XCAN_FLAG_CANFD_2)
+-					data[0] = priv->read_reg(priv,
++	/* Change Xilinx CAN ID format to socketCAN ID format */
++	if (id_xcan & XCAN_IDR_IDE_MASK) {
++		/* The received frame is an Extended format frame */
++		cf->can_id = (id_xcan & XCAN_IDR_ID1_MASK) >> 3;
++		cf->can_id |= (id_xcan & XCAN_IDR_ID2_MASK) >>
++				XCAN_IDR_ID2_SHIFT;
++		cf->can_id |= CAN_EFF_FLAG;
++		if (id_xcan & XCAN_IDR_RTR_MASK)
++			cf->can_id |= CAN_RTR_FLAG;
++	} else {
++		/* The received frame is a standard format frame */
++		cf->can_id = (id_xcan & XCAN_IDR_ID1_MASK) >>
++				XCAN_IDR_ID1_SHIFT;
++		if (!(dlc & XCAN_DLCR_EDL_MASK) && (id_xcan &
++					XCAN_IDR_SRR_MASK))
++			cf->can_id |= CAN_RTR_FLAG;
++	}
 +
-+		if (!(fsr & mask))
- 			return -ENOENT;
++	/* Check the frame received is FD or not*/
++	if (dlc & XCAN_DLCR_EDL_MASK) {
++		for (i = 0; i < cf->len; i += 4) {
++			if (priv->devtype.flags & XCAN_FLAG_CANFD_2)
++				data[0] = priv->read_reg(priv,
+ 					(XCAN_RXMSG_2_FRAME_OFFSET(readindex) +
+ 					(dwindex * XCANFD_DW_BYTES)));
+-				else
+-					data[0] = priv->read_reg(priv,
++			else
++				data[0] = priv->read_reg(priv,
+ 					(XCAN_RXMSG_FRAME_OFFSET(readindex) +
+-						(dwindex * XCANFD_DW_BYTES)));
+-				*(__be32 *)(cf->data + i) =
+-						cpu_to_be32(data[0]);
+-				dwindex++;
+-			}
+-		} else {
+-			for (i = 0; i < cf->len; i += 4) {
+-				if (priv->devtype.flags & XCAN_FLAG_CANFD_2)
+-					data[0] = priv->read_reg(priv,
+-						XCAN_RXMSG_2_FRAME_OFFSET(readindex) + i);
+-				else
+-					data[0] = priv->read_reg(priv,
+-						XCAN_RXMSG_FRAME_OFFSET(readindex) + i);
+-				*(__be32 *)(cf->data + i) =
+-						cpu_to_be32(data[0]);
+-			}
++					(dwindex * XCANFD_DW_BYTES)));
++			*(__be32 *)(cf->data + i) = cpu_to_be32(data[0]);
++			dwindex++;
++		}
++	} else {
++		for (i = 0; i < cf->len; i += 4) {
++			if (priv->devtype.flags & XCAN_FLAG_CANFD_2)
++				data[0] = priv->read_reg(priv,
++					XCAN_RXMSG_2_FRAME_OFFSET(readindex) +
++								  i);
++			else
++				data[0] = priv->read_reg(priv,
++					XCAN_RXMSG_FRAME_OFFSET(readindex) + i);
++			*(__be32 *)(cf->data + i) = cpu_to_be32(data[0]);
+ 		}
+-		/* Update FSR Register so that next packet will save to
+-		 * buffer
+-		 */
+-		fsr = priv->read_reg(priv, XCAN_FSR_OFFSET);
+-		fsr |= XCAN_FSR_IRI_MASK;
+-		priv->write_reg(priv, XCAN_FSR_OFFSET, fsr);
+-		fsr = priv->read_reg(priv, XCAN_FSR_OFFSET);
+-		stats->rx_bytes += cf->len;
+-		stats->rx_packets++;
+-		netif_receive_skb(skb);
+-
+-		return 1;
+ 	}
+-	/* If FSR Register is not updated with fill level */
+-	return 0;
++	stats->rx_bytes += cf->len;
++	stats->rx_packets++;
++	netif_receive_skb(skb);
++
++	return 1;
+ }
  
- 		if (priv->devtype.flags & XCAN_FLAG_CANFD_2)
- 			offset =
--			  XCAN_RXMSG_2_FRAME_OFFSET(fsr & XCAN_FSR_RI_MASK);
-+			  XCAN_RXMSG_2_FRAME_OFFSET(fsr & XCAN_2_FSR_RI_MASK);
- 		else
- 			offset =
- 			  XCAN_RXMSG_FRAME_OFFSET(fsr & XCAN_FSR_RI_MASK);
+ /**
 -- 
 2.7.4
 
