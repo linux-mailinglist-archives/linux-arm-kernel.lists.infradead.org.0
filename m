@@ -2,55 +2,135 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC2A489AC9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 12:06:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C582489AD1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 12:07:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KjEOGuMSPQJT8sb55SQg4K4FbtvzXOwN3lv4ss3IvF8=; b=XYwVHj7p0YbH0W
-	a55b72uBazw8TwwLq0/g1+3sBhKscabQzVcrV5yzmvWBCTQtQUzNygrR4IjbYFQgObCMHBkn67USO
-	I4zBBpUohCIeSkuzHLOMbg358S6oNTr1DHoaqhcLU92FR8CdzADuKLlOiQcztf7xWbI2DBLzMhZoW
-	+Ku14Z24t28EMvUr79jC1FAVrZF26OyOZ4HHql7CvYXdzxex933iUAtorms0h6geQQlANiDGk5XkJ
-	Oqr1HGhnj7X46MXOx8RLCNDalg5Zh170QKg+BAejjyqVTNyg7SXGX25LAbmZJN40z9N2qH2NpqfiZ
-	uqkvzAaexyLyOl81yqIA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3+/WAZbUmX0XIPo4+/chtGuUquoBKtXggIX1bBnY5AM=; b=LjlweNVy0ywpOH
+	jR+G2usMFWnQjQZCPFf5y5mYXl92vR/eklmfdNzQfXu/1Ml1T+h5PjGOmrHV7qSI8YadrIypvIHVu
+	fEONfppHrUxKm2pONHEYXmo1tWyjbRfj09Wfr9gifOqFhx9XKkWb+2xEqOfmr+lELveSiq4FT9QSU
+	7G88xus75SKllnuQO1ljw3ZP2FpODIWnaLbLlvwfGP/d9oJFCdlyEuoNvh+CJM6eIugGp1T7s2+lu
+	SDfhxHgP+TMYw6mtwBm5/ItbSjdOi4jEjaH2TyaUOn73FiMwF/OfCM+Kl1fGpxtC1xBx91z4fG7+U
+	XHK+vTXrA2JXcKKHgXZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx7DZ-00052B-6A; Mon, 12 Aug 2019 10:06:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hx7DP-00050u-2T
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 10:06:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 13F0115A2;
- Mon, 12 Aug 2019 03:06:08 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 98CE53F718;
- Mon, 12 Aug 2019 03:06:05 -0700 (PDT)
-Date: Mon, 12 Aug 2019 11:06:00 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Xiaowei Bao <xiaowei.bao@nxp.com>
-Subject: Re: [PATCHv3 2/2] PCI: layerscape: Add CONFIG_PCI_LAYERSCAPE_EP to
- build EP/RC separately
-Message-ID: <20190812100600.GA20861@e121166-lin.cambridge.arm.com>
-References: <20190628013826.4705-1-xiaowei.bao@nxp.com>
- <20190628013826.4705-2-xiaowei.bao@nxp.com>
+	id 1hx7EN-0005It-SB; Mon, 12 Aug 2019 10:07:12 +0000
+Received: from mail-eopbgr770040.outbound.protection.outlook.com
+ ([40.107.77.40] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hx7EE-0005Ib-JT
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 10:07:03 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=F14PKUYDbliNZs/E+3AkeBuMT5rtyFVqTaoZVR60M3+Vyojm56aQob3+oYowVzxHfQ/lES7S9iUM0odhoM07+VJ8vK7ZrN6c2sd4uAi98OviFi6Dm+ZrnO0YmBpDiVtbD+31yvF/m5ritPFovdQO5t/ATUXMHuQ/TrHyo2qmCyC4E1RGihGBXbphPL+j5UV0cN2j79nZsAw8Yt+OXiCUbHtltbf/5JNdZHGa9CbY77CcXuf5GIf0PqqxZXL3IuhB69yTUIt0bTZjGZX/3aHEi2gxnNviMbJkDUNalhS429X7F3eTbVOZlDvm3UvuRWuLJY5q9FYvRgS9IrI0shePmg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=XEzoY0em8tcyd3SujX5IHtKC6ikj6UNssIrG7GpE20M=;
+ b=QH4AMC5QZ3+nSOEthNuby0M5pxgIHDNnlMHRpo2jnCNXRYj/DvG8UE6up4aId+R9QFGkgDKQtBGZDRa4K2DbeluvNZvmVE1lb6rxua6/Kpgu4M0tIFsP718p5PkOd1WBtJJbTi5W4oufBhWuVK5g8wAD63KIGV2JIhd7zE3WvXwRduLHZ8dB/JLmcbIRTh+DUIr/2vo+N3SWiJ9EwfGLtZmZ2+ZHF8rm1lccpeWvXeiJ8QZVw8SBQgVgbuhcB2hcAaJuHSoCLSKs95tEa7JdUVf1LeL7Xs4qnj/jtbqbvtk4h+GsG0HEBzQ2TANBRDeBEduL++l9NmMDnv1Im7BmiQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=XEzoY0em8tcyd3SujX5IHtKC6ikj6UNssIrG7GpE20M=;
+ b=tUbIJyXo8Retmbspgnn/7VqmXzf0tWTCUJ1yjHbJXUNx1zfIVMIV0Ht6g1lmFP9J9iHDDJSrNqVD3ktOKPitTKXtjkC+opKI/9b56Y4zDiicDgOAWvysw7zgBUlAla4I3+gnJVzTPfekQMLXxAkENi4VmT2lkCYUy5ews0TT0hc=
+Received: from SN4PR0201CA0037.namprd02.prod.outlook.com
+ (2603:10b6:803:2e::23) by SN1PR02MB3808.namprd02.prod.outlook.com
+ (2603:10b6:802:31::33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.21; Mon, 12 Aug
+ 2019 10:07:00 +0000
+Received: from CY1NAM02FT012.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e45::201) by SN4PR0201CA0037.outlook.office365.com
+ (2603:10b6:803:2e::23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.14 via Frontend
+ Transport; Mon, 12 Aug 2019 10:07:00 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ CY1NAM02FT012.mail.protection.outlook.com (10.152.75.158) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2157.15
+ via Frontend Transport; Mon, 12 Aug 2019 10:06:58 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <appana.durga.rao@xilinx.com>)
+ id 1hx7EA-0002PA-5n; Mon, 12 Aug 2019 03:06:58 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <appana.durga.rao@xilinx.com>)
+ id 1hx7E5-0004P8-1x; Mon, 12 Aug 2019 03:06:53 -0700
+Received: from xsj-pvapsmtp01 (xsj-smtp.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x7CA6oEb003599; 
+ Mon, 12 Aug 2019 03:06:51 -0700
+Received: from [10.140.6.6] (helo=xhdappanad40.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <appana.durga.rao@xilinx.com>)
+ id 1hx7E2-0004OP-AF; Mon, 12 Aug 2019 03:06:50 -0700
+From: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>
+To: wg@grandegger.com, mkl@pengutronix.de, davem@davemloft.net,
+ michal.simek@xilinx.com
+Subject: [PATCH v2 0/5] can: xilinx_can: Bug fixes
+Date: Mon, 12 Aug 2019 15:36:41 +0530
+Message-Id: <1565604406-4920-1-git-send-email-appana.durga.rao@xilinx.com>
+X-Mailer: git-send-email 2.7.4
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(346002)(376002)(396003)(136003)(2980300002)(199004)(189003)(356004)(478600001)(14444005)(6666004)(16586007)(106002)(48376002)(316002)(36386004)(107886003)(81166006)(81156014)(8676002)(6636002)(4326008)(305945005)(5660300002)(4744005)(186003)(2906002)(26005)(36756003)(63266004)(70206006)(70586007)(50226002)(8936002)(476003)(336012)(126002)(47776003)(50466002)(2616005)(7696005)(51416003)(486006)(9786002)(426003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:SN1PR02MB3808; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190628013826.4705-2-xiaowei.bao@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 2e5259a4-bb52-4adf-2eef-08d71f0cd049
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
+ SRVR:SN1PR02MB3808; 
+X-MS-TrafficTypeDiagnostic: SN1PR02MB3808:
+X-Microsoft-Antispam-PRVS: <SN1PR02MB38080D876B3BC8068D286823DCD30@SN1PR02MB3808.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:1122;
+X-Forefront-PRVS: 012792EC17
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: 5Fu+XKACbIE6R4b9bEJGCldsrPjzKSTMk7TNEW70ZgM0P3r3rYnQZFjRMhdFfcmT5blrEWzS0+5g1mSWfIyujibMflkD30hCcK7NoK6R6ls3BBTPuZX5A06s2XPwkMWMqtRWfCX5gsU0PwbJIPA7IDhnsIBGc1858S5PiqtIceZ2LFEHUsOYx9i182Dz91hj2UfSeCmj35ehw31pAV6KgriPokAMm55vE8UitqT3BXsREzh81634wEZ1YjW2PCmgTzMKDcZkP2I1O6e2t0AA03thUoVlcmBpubZ8Ik4SbbNQIfUEvYlZSRdU7FAD59rTL5k8kFUMZbKvUk+xWoDKUvxH5NYv24xM+ffCJW0UZZ/I8KDgf+LpM7ajPdLHSqgRmuXiQX+ss6HgQ2bzZcu+uzBB/ougpU2/JMVivEP6tPI=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Aug 2019 10:06:58.6867 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2e5259a4-bb52-4adf-2eef-08d71f0cd049
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN1PR02MB3808
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_030611_204579_9403985A 
-X-CRM114-Status: GOOD (  15.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190812_030702_644688_2B56C376 
+X-CRM114-Status: UNSURE (   6.89  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.8 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (2.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.77.40 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 2.8 AC_FROM_MANY_DOTS      Multiple periods in From user name
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,92 +142,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, roy.zang@nxp.com, arnd@arndb.de,
- devicetree@vger.kernel.org, gregkh@linuxfoundation.org,
- kstewart@linuxfoundation.org, linuxppc-dev@lists.ozlabs.org,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, kishon@ti.com,
- minghuan.Lian@nxp.com, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, pombredanne@nexb.com,
- bhelgaas@google.com, leoyang.li@nxp.com, shawnguo@kernel.org,
- shawn.lin@rock-chips.com, mingkai.hu@nxp.com
+Cc: netdev@vger.kernel.org,
+ Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-can@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 28, 2019 at 09:38:26AM +0800, Xiaowei Bao wrote:
-> Add CONFIG_PCI_LAYERSCAPE_EP to build EP/RC separately.
-> 
-> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-> ---
-> v2:
->  - No change.
-> v3:
->  - modify the commit message.
-> 
->  drivers/pci/controller/dwc/Kconfig  |   20 ++++++++++++++++++--
->  drivers/pci/controller/dwc/Makefile |    3 ++-
->  2 files changed, 20 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/dwc/Kconfig
-> index a6ce1ee..a41ccf5 100644
-> --- a/drivers/pci/controller/dwc/Kconfig
-> +++ b/drivers/pci/controller/dwc/Kconfig
-> @@ -131,13 +131,29 @@ config PCI_KEYSTONE_EP
->  	  DesignWare core functions to implement the driver.
->  
->  config PCI_LAYERSCAPE
-> -	bool "Freescale Layerscape PCIe controller"
-> +	bool "Freescale Layerscape PCIe controller - Host mode"
->  	depends on OF && (ARM || ARCH_LAYERSCAPE || COMPILE_TEST)
->  	depends on PCI_MSI_IRQ_DOMAIN
->  	select MFD_SYSCON
->  	select PCIE_DW_HOST
->  	help
-> -	  Say Y here if you want PCIe controller support on Layerscape SoCs.
-> +	  Say Y here if you want to enable PCIe controller support on Layerscape
-> +	  SoCs to work in Host mode.
-> +	  This controller can work either as EP or RC. The RCW[HOST_AGT_PEX]
+This patch series fixes below issues
+--> Bugs in the driver w.r.to CANFD 2.0 IP support
+--> Defer the probe if clock is not found
 
-What's "The RCW" ? This entry should explain why a kernel configuration
-should enable it.
+Changes for v2:
+[1/5]:
+--> Improved commit description
+[1/5] and [5/5]:
+--> Added sob line
+[1/5], [2/5], [3/5], [4/5], [5/5]:
+--> Added Fixes tag in the commit description
 
-Lorenzo
+Appana Durga Kedareswara rao (3):
+  can: xilinx_can: Fix FSR register handling in the rx path
+  can: xilinx_can: Fix the data updation logic for CANFD FD frames
+  can: xilinx_can: Fix FSR register FL and RI mask values for canfd 2.0
 
-> +	  determines which PCIe controller works in EP mode and which PCIe
-> +	  controller works in RC mode.
-> +
-> +config PCI_LAYERSCAPE_EP
-> +	bool "Freescale Layerscape PCIe controller - Endpoint mode"
-> +	depends on OF && (ARM || ARCH_LAYERSCAPE || COMPILE_TEST)
-> +	depends on PCI_ENDPOINT
-> +	select PCIE_DW_EP
-> +	help
-> +	  Say Y here if you want to enable PCIe controller support on Layerscape
-> +	  SoCs to work in Endpoint mode.
-> +	  This controller can work either as EP or RC. The RCW[HOST_AGT_PEX]
-> +	  determines which PCIe controller works in EP mode and which PCIe
-> +	  controller works in RC mode.
->  
->  config PCI_HISI
->  	depends on OF && (ARM64 || COMPILE_TEST)
-> diff --git a/drivers/pci/controller/dwc/Makefile b/drivers/pci/controller/dwc/Makefile
-> index b085dfd..824fde7 100644
-> --- a/drivers/pci/controller/dwc/Makefile
-> +++ b/drivers/pci/controller/dwc/Makefile
-> @@ -8,7 +8,8 @@ obj-$(CONFIG_PCI_EXYNOS) += pci-exynos.o
->  obj-$(CONFIG_PCI_IMX6) += pci-imx6.o
->  obj-$(CONFIG_PCIE_SPEAR13XX) += pcie-spear13xx.o
->  obj-$(CONFIG_PCI_KEYSTONE) += pci-keystone.o
-> -obj-$(CONFIG_PCI_LAYERSCAPE) += pci-layerscape.o pci-layerscape-ep.o
-> +obj-$(CONFIG_PCI_LAYERSCAPE) += pci-layerscape.o
-> +obj-$(CONFIG_PCI_LAYERSCAPE_EP) += pci-layerscape-ep.o
->  obj-$(CONFIG_PCIE_QCOM) += pcie-qcom.o
->  obj-$(CONFIG_PCIE_ARMADA_8K) += pcie-armada8k.o
->  obj-$(CONFIG_PCIE_ARTPEC6) += pcie-artpec6.o
-> -- 
-> 1.7.1
-> 
+Srinivas Neeli (1):
+  can: xilinx_can: Fix the data phase btr1 calculation
+
+Venkatesh Yadav Abbarapu (1):
+  can: xilinx_can: Skip error message on deferred probe
+
+ drivers/net/can/xilinx_can.c | 162 +++++++++++++++++++------------------------
+ 1 file changed, 72 insertions(+), 90 deletions(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
