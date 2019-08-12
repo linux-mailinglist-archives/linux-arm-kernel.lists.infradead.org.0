@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80BA28A8AF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 22:55:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 799AE8A8BB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 22:58:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PeYbBbizTa1jvGNOU5FqJ9kszedHa35xECX2vxvAEoM=; b=iMOu6PVtw55GsN
-	z45EIsR9C4YmkTPquVDy5yXZ/iYnhYI4ixSSn6aZUepsm4tgfzL2lTWZw4N3i6IfeuLxrh8r03pCj
-	ze8y5lhY8V5jZfO6Oqi+v9dVs67NSQLtaCY7pTpMvnD95bt1RW9WAELdc5HPBAGJ4slmQfZDKoIQk
-	bp10QFqPi6X98GZ4xh3zA72m0IyQANCd9wji5hYCc9cnlVxdlQDSRIoVEFr7wCiIRo7affSeFOTAz
-	+/BhH7+YUVcqlN/l66QnSF1BBKwwrlFOfqoexOYxzD6wl2YadPm+87HdClRU74ZZN3BNKwthOrXoN
-	bAT4nMEDYlNoow8CPkjA==;
+	List-Owner; bh=azvwOiXqWRaSwXlVfVK8YIOcpllBJzfo6uAUA01E0OU=; b=ew1x9X/K5+IFPm
+	+oZDmLMOR/dE4vSKNd2uvH11AVio2jWVDO5ZRr7anm5iDwg5t/WAc+iP1CY5vD0u8xDqyXxEArOuO
+	w2hjt73Jxc2H+xQ4cHKUYZfDV0j3RRs0sVY7WTLyQuCGOokQMRjLoobopvxCagITADbmXBa/iQgI1
+	DGWD0monS7yfRWRoqfRK174LEM6QxG0/xYlTjZ5ng/hpPwmHe6D8hxG3IKt3va17CBwjIxWczLhya
+	q2uAoJBHx00b+0qiQYBkCpccfv4fVTv67c09Vp1z0++AVgrhaX7RFqqUfdrcxpRy9DaORXGhg4cvB
+	kCDJGj+xeIYj9oal34PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxHLS-0005dq-JV; Mon, 12 Aug 2019 20:55:11 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hxHOG-0007Du-Re; Mon, 12 Aug 2019 20:58:05 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxHL3-0005cT-Ql
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 20:54:48 +0000
-Received: by mail-pf1-x442.google.com with SMTP id b13so50303965pfo.1
+ id 1hxHNz-0007C5-Cx
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 20:57:48 +0000
+Received: by mail-pg1-x544.google.com with SMTP id l21so50085601pgm.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 13:54:45 -0700 (PDT)
+ Mon, 12 Aug 2019 13:57:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=G96ttrylkozavtp+GkCFPZaZpJ1CXYrccgmyLzpILSM=;
- b=2MsEqrq6jeAHonuDnFidSEMvA40eV2EV9rHP09a8PVmfQV2q1l2rUXiOBofFeJytCi
- yI+eiJfH2QzC7hIdvHRPsVJrkoZa71GBYet+8I26skuXpSKSI6mp1hI99ctHa29GprZ2
- D/4QHSTBBh999SSdtRaZg4Rga9dfc1HV1AYHPPnxvfQKvLeYaRfUTi4mGfAxKSdbp0xQ
- xRoZd/5mUSybTsWNHCDHg3TkIxncgGBdxcipbrzEf7yrtBKbhoA2r8VNePoJpE/r4e0E
- Y6Id0y55Va4n6Rzm1NfozTcxT848JRvEm9+JoESTp70CMatneEjveslZJC4XPk6RIZqy
- O17Q==
+ :mime-version; bh=SP/9CzjkRvY0IAQnRlslEa5+7OIaKNdwjFiyaogAY4o=;
+ b=koihRlA8DkC1jPEjiuBto/yHr73waYw8INi81cjQ8wYgQvncxRWlxOnqf3LquySrVR
+ cfJm2VSGHuP2gNoWHpQyi/yr2rQLoe7A9hocNYNrDTJG70pDaV3nLUpD9wt99mW/miM4
+ jIwBHs1dKOU+mVfLoaLkekb1jiGrypYtGT3buec3jV8kl8/xY5+zpSP4o25OXv0vNQsV
+ DrEbo+i+OGkpzC3cssC2o1MDNX3z3h2dUCZ0OlCwSGaouGSVVumgfSQq0cFQDdTXDweu
+ WnN/xwplCeQSuZ3XMqfsetYgX+QlUUwFyLqe/R0SE2ueJg4hVmjE7uBmovCYVaLtN1RW
+ foug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
  :message-id:mime-version;
- bh=G96ttrylkozavtp+GkCFPZaZpJ1CXYrccgmyLzpILSM=;
- b=inlj46xi+acZRCVlla4UsoLSs/XEKy36Gv7+rkZKx7p3F5h6nKovQ7nHuN96Se4UaA
- q0Z7w7gg6NFpMPlTtf59if5UdOQlPc4YSRgw/Msm+oLnAd/OVrE6mR44/AVnPs65xEmr
- gHHpC2WZ/ML+Ij0RtgBqSs8HDIEzzzOqh1V/KkPDH/ycZ+gz9oh6/UPF4B/7nq23eU5v
- C4A5oT8zPaMwBaBXX2GmFKMvrDgBuI4m8FKC4rAijlT++CCs8t3A+Cu92E10S5Gh/TJO
- rstuMXS1u/pWoTpEsI1i4hG/ouxlL3vJpG4mSi4JG/476iVoVreSeKXXopQTdKNjG9oq
- eUiA==
-X-Gm-Message-State: APjAAAVC6PqfoKYkqLC07EyAIMdRmJg9kT6l2QxjfUz7Hny/6CdzHDEJ
- ObU7EgIckVZIbM5wcGf/1jW5Kg==
-X-Google-Smtp-Source: APXvYqzbET0UNtAEOW/tFOjsj6Fj901cwmJjrYlflO9pmbo1TxhTMwyLzIaz0Ye07PH9P2f/B/glkw==
-X-Received: by 2002:a62:f245:: with SMTP id y5mr3845900pfl.156.1565643285235; 
- Mon, 12 Aug 2019 13:54:45 -0700 (PDT)
+ bh=SP/9CzjkRvY0IAQnRlslEa5+7OIaKNdwjFiyaogAY4o=;
+ b=DzxCaCrxmA+QNwpOi2JQVLYdG6pn4nrtE0/El+c6AM82okM003zOkn/tkSqnEg3yPN
+ /sZqi4dChktg1kfTuHH/6E1pH10488KPC+U6iGlMoeUW62rMqn7KTPRDt1YK4RTboOzg
+ GJFss3iPub7NRPJoKPHixPjwRw+qQnVb+No33cAgJT4hGyHTj8LwufCYJMQ+WX4q//Og
+ eWRlREqt1erizlqpw3YfTVSMELVyFFxoPp8pSdaNN2giOI/4fA4LmA05GQv7NuI2B/CP
+ SyMP36Yp6dMsvjzbuoBHLN4qFz1VeQiy11fpIoStEgizEkKoX8RjWWvxvWX1QyC6Qc/u
+ UZPA==
+X-Gm-Message-State: APjAAAV1iQeZPhkgZnoeIBwIfIj3zkYlGAC6juR8cDHEpvWMYL4dosvz
+ JReHYl0bKXNVOp/SRAAFt+iNig==
+X-Google-Smtp-Source: APXvYqy5zQMAbf6dfIFvVZ18Z29/TOUHQy1GHM+YU4DdeyuN/HLmGdxiI8MOSOYzdFXUuKm9K0FFuQ==
+X-Received: by 2002:aa7:92d2:: with SMTP id k18mr37367965pfa.153.1565643466826; 
+ Mon, 12 Aug 2019 13:57:46 -0700 (PDT)
 Received: from localhost ([2601:602:9200:a1a5:14bb:580e:e4d6:b3a8])
- by smtp.gmail.com with ESMTPSA id cx22sm405480pjb.25.2019.08.12.13.54.44
+ by smtp.gmail.com with ESMTPSA id i17sm12125252pfo.28.2019.08.12.13.57.46
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 12 Aug 2019 13:54:44 -0700 (PDT)
+ Mon, 12 Aug 2019 13:57:46 -0700 (PDT)
 From: Kevin Hilman <khilman@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH 0/6] arm64: g12a: add support for DVFS
-In-Reply-To: <7hk1bn43fq.fsf@baylibre.com>
-References: <20190729132622.7566-1-narmstrong@baylibre.com>
- <7hwofrh1md.fsf@baylibre.com> <7hk1bn43fq.fsf@baylibre.com>
-Date: Mon, 12 Aug 2019 13:54:43 -0700
-Message-ID: <7hpnla14vg.fsf@baylibre.com>
+To: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH] arm64: cpufeature: Don't treat granule sizes as strict
+In-Reply-To: <20190812150225.25386-1-will@kernel.org>
+References: <20190812150225.25386-1-will@kernel.org>
+Date: Mon, 12 Aug 2019 13:57:45 -0700
+Message-ID: <7himr214qe.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_135445_988121_AC158829 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20190812_135747_443206_32BE7C16 
+X-CRM114-Status: GOOD (  11.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,58 +91,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-amlogic@lists.infradead.org,
+ Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Kevin Hilman <khilman@baylibre.com> writes:
+Will Deacon <will@kernel.org> writes:
 
-> Kevin Hilman <khilman@baylibre.com> writes:
+> If a CPU doesn't support the page size for which the kernel is
+> configured, then we will complain and refuse to bring it online. For
+> secondary CPUs (and the boot CPU on a system booting with EFI), we will
+> also print an error identifying the mismatch.
 >
->> Neil Armstrong <narmstrong@baylibre.com> writes:
->>
->>> The G12A & G12B SoCs has kernel controllable CPU clocks and PWMs for
->>> voltage regulators.
->>>
->>> This patchsets moves the meson-g12a.dtsi to meson-g12-common.dtsi to simplify
->>> handling the G12A & G12B differences in the meson-g12a.dtsi & meson-g12b.dtsi
->>> files, like the OPPs and CPU nodes.
->>>
->>> Then G12A & G12B OPP tables are added, followed by the CPU voltages regulators
->>> in each boards DT.
->>>
->>> It was voluntary chosen to enabled DVFS (CPU regulator and CPU clocks) only
->>> in boards, to make sure only tested boards has DVFS enabled.
->>>
->>> This patchset :
->>> - moves the G12A DT to a common g12a-common dtsi
->>> - adds the G12A and G12B OPPs
->>> - enables DVFS on all supported boards
->>>
->>> Dependencies:
->>> - None
->>
->> Not quite.  The last patch to enable DVFS on odroid-n2 has a build-time
->> dependency on the clock series that adds the CPUB clock.
->>
->> I'll apply the rest of the series to v5.4/dt64 until there's a stable
->> clock tag I can use for the clocks.
+> Consequently, the only time that the cpufeature code can detect a
+> granule size mismatch is for a granule other than the one that is
+> currently being used. Although we would rather such systems didn't
+> exist, we've unfortunately lost that battle and Kevin reports that
+> on his amlogic S922X (odroid-n2 board) we end up warning and taining
+> with defconfig because 16k pages are not supported by all of the CPUs.
 >
-> In order to test this, I noticed another dependency needed for the PWM
-> regulators to work:
+> In such a situation, we don't actually care about the feature mismatch,
+> particularly now that KVM only exposes the sanitised view of the CPU
+> registers. Treat the granule fields as non-strict and let Kevin run
+> without a tainted kernel.
 >
->    https://lore.kernel.org/linux-amlogic/20190729125838.6498-1-narmstrong@baylibre.com/
->
-> With that and the clock deps, it's working well on my odroid-n2.
->
-> Tested-by: Kevin Hilman <khilman@baylibre.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Marc Zyngier <maz@kernel.org>
+> Cc: Suzuki Poulose <suzuki.poulose@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Reported-by: Kevin Hilman <khilman@baylibre.com>
+> Signed-off-by: Will Deacon <will@kernel.org>
 
-After merging Jerome's tag for clk DT, I've queued this for v5.4,
+Tested-by: Kevin Hilman <khilman@baylibre.com>
 
-Thanks,
+Thanks for the fix Will!
 
 Kevin
 
