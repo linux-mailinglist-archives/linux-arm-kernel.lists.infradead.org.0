@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B0578A142
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 16:37:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A1FC8A144
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 16:37:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BmA3N3bHOYr7/73SeZ+VDUVdWeYWCQwcNyXKs7b18Ls=; b=fiSQeEIEUkv5ie
-	MnedgrV6yw8ew0YHfevzjlVihOps4tWEdhpThMZRbRdDCdYDqV9e9ETiiY0LTOzaoXxnhDIxkuN3d
-	zCLHfRSeq9lvSOjeUNJbgoa2LAdFW0mP6N2C3Z3hG9jZEzjxVDUv7FvHTj+vy1bOvqAhuGYwURYLH
-	Z+E48oJ+lwyc4N563kPf+zwKSLxoqUrw6OzG5krH56n01lqNdQ76FFSOjd/qwe7FqHSQgi4gsduq5
-	06dOCPQ7Zj257x/XfMVlalaAIlPv1x/pxgWsVnkya6HzLvzUvSuF+blr7M6VDTTbN3vwBGOc6f8u1
-	gtJZvU/hWTvkYrTtiBYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ouoWpL5M5v0GA5f2rcPoXLSViUDVZhjLcFDj+ewIyCc=; b=tHY1syw0+xpdXy
+	p2hR8omnG67LZ2fTbdegWmglx9NM/6UH6xSe1dxD4vyEL+c2iseGPNmQiBEMpmQa+GPfTVH8iVJVt
+	Th+9K2e2GHIzRcYfgjrtwaooxWdSa8qyb+xDpfXK+iOBAExl7KDCarjiHgG8w9krc7cuEvFptqXXo
+	jtXO8rCzcLDmZT5ZrBN4AoIc74CJ85dGBDW4OX6/Z3mL78kWj7c4zWN67Ly9ELTQ+o0c7RhMJG8p1
+	VFFKvGhjmrCjfQ4lgS3KqzYEQvURFWDirV9QTyo2bGJLno5xOOOEEtt5kYW8I1HBri3ao8VTQiJ9J
+	pCTNUXD7yUFIgxlhenow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxBRK-0003jF-DE; Mon, 12 Aug 2019 14:36:50 +0000
+	id 1hxBRZ-0003ww-7J; Mon, 12 Aug 2019 14:37:05 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxBR4-0003iM-1x
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 14:36:35 +0000
+ id 1hxBR5-0003in-Hr
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 14:36:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6B50F15A2;
- Mon, 12 Aug 2019 07:36:33 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 29D421715;
+ Mon, 12 Aug 2019 07:36:35 -0700 (PDT)
 Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BF44F3F718;
- Mon, 12 Aug 2019 07:36:31 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B564D3F718;
+ Mon, 12 Aug 2019 07:36:33 -0700 (PDT)
 From: Andrew Murray <andrew.murray@arm.com>
 To: Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will.deacon@arm.com>, Peter Zijlstra <peterz@infradead.org>,
  Ard.Biesheuvel@arm.com
-Subject: [PATCH v3 0/5] arm64: avoid out-of-line ll/sc atomics
-Date: Mon, 12 Aug 2019 15:36:20 +0100
-Message-Id: <20190812143625.42745-1-andrew.murray@arm.com>
+Subject: [PATCH v3 1/5] jump_label: Don't warn on __exit jump entries
+Date: Mon, 12 Aug 2019 15:36:21 +0100
+Message-Id: <20190812143625.42745-2-andrew.murray@arm.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190812143625.42745-1-andrew.murray@arm.com>
+References: <20190812143625.42745-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_073634_191047_7E928697 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20190812_073635_632637_566977E3 
+X-CRM114-Status: GOOD (  11.25  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,170 +68,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
-or toolchain doesn't support it the existing code will fallback to ll/sc
-atomics. It achieves this by branching from inline assembly to a function
-that is built with specical compile flags. Further this results in the
-clobbering of registers even when the fallback isn't used increasing
-register pressure.
+On architectures that discard .exit.* sections at runtime, a
+warning is printed for each jump label that is used within an
+in-kernel __exit annotated function:
 
-Let's improve this by providing inline implementatins of both LSE and
-ll/sc and use a static key to select between them. This allows for the
-compiler to generate better atomics code.
+can't patch jump_label at ehci_hcd_cleanup+0x8/0x3c
+WARNING: CPU: 0 PID: 1 at kernel/jump_label.c:410 __jump_label_update+0x12c/0x138
 
-Whilst it may be difficult to understand the performance impact, we gain
-improved code readability, ability to use Clang, and improved backtrace
-reliability.
+As these functions will never get executed (they are free'd along
+with the rest of initmem) - we do not need to patch them and should
+not display any warnings.
 
-Build and boot tested, along with atomic_64_test.
+The warning is displayed because the test required to satisfy
+jump_entry_is_init is based on init_section_contains (__init_begin to
+__init_end) whereas the test in __jump_label_update is based on
+init_kernel_text (_sinittext to _einittext) via kernel_text_address).
 
-Following is the assembly of a function that has three consecutive
-atomic_add calls when built with LSE and this patchset:
+In addition to fixing this, we also remove an out-of-date comment
+and use a WARN instead of a WARN_ONCE.
 
-Dump of assembler code for function atomics_test:
-   0xffff000010084338 <+0>:     b       0xffff000010084388 <atomics_test+80>
-   0xffff00001008433c <+4>:     b       0xffff000010084388 <atomics_test+80>
-   0xffff000010084340 <+8>:     adrp    x0, 0xffff0000118d5000 <reset_devices>
-   0xffff000010084344 <+12>:    add     x2, x0, #0x0
-   0xffff000010084348 <+16>:    mov     w1, #0x1                        // #1
-   0xffff00001008434c <+20>:    add     x3, x2, #0x28
-   0xffff000010084350 <+24>:    stadd   w1, [x3]
-   0xffff000010084354 <+28>:    b       0xffff00001008439c <atomics_test+100>
-   0xffff000010084358 <+32>:    b       0xffff00001008439c <atomics_test+100>
-   0xffff00001008435c <+36>:    add     x1, x0, #0x0
-   0xffff000010084360 <+40>:    mov     w2, #0x1                        // #1
-   0xffff000010084364 <+44>:    add     x3, x1, #0x28
-   0xffff000010084368 <+48>:    stadd   w2, [x3]
-   0xffff00001008436c <+52>:    b       0xffff0000100843ac <atomics_test+116>
-   0xffff000010084370 <+56>:    b       0xffff0000100843ac <atomics_test+116>
-   0xffff000010084374 <+60>:    add     x0, x0, #0x0
-   0xffff000010084378 <+64>:    mov     w1, #0x1                        // #1
-   0xffff00001008437c <+68>:    add     x2, x0, #0x28
-   0xffff000010084380 <+72>:    stadd   w1, [x2]
-   0xffff000010084384 <+76>:    ret
-   0xffff000010084388 <+80>:    adrp    x0, 0xffff0000118d5000 <reset_devices>
-   0xffff00001008438c <+84>:    add     x1, x0, #0x0
-   0xffff000010084390 <+88>:    add     x1, x1, #0x28
-   0xffff000010084394 <+92>:    b       0xffff000010084570
-   0xffff000010084398 <+96>:    b       0xffff000010084354 <atomics_test+28>
-   0xffff00001008439c <+100>:   add     x1, x0, #0x0
-   0xffff0000100843a0 <+104>:   add     x1, x1, #0x28
-   0xffff0000100843a4 <+108>:   b       0xffff000010084588
-   0xffff0000100843a8 <+112>:   b       0xffff00001008436c <atomics_test+52>
-   0xffff0000100843ac <+116>:   add     x0, x0, #0x0
-   0xffff0000100843b0 <+120>:   add     x0, x0, #0x28
-   0xffff0000100843b4 <+124>:   b       0xffff0000100845a0
-   0xffff0000100843b8 <+128>:   ret
-End of assembler dump.
+Fixes: 19483677684b ("jump_label: Annotate entries that operate on __init code earlier")
+Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
+---
+ kernel/jump_label.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-ffff000010084570:       f9800031        prfm    pstl1strm, [x1]
-ffff000010084574:       885f7c22        ldxr    w2, [x1]
-ffff000010084578:       11000442        add     w2, w2, #0x1
-ffff00001008457c:       88037c22        stxr    w3, w2, [x1]
-ffff000010084580:       35ffffa3        cbnz    w3, ffff000010084574 <do_one_initcall+0x1b4>
-ffff000010084584:       17ffff85        b       ffff000010084398 <atomics_test+0x60>
-ffff000010084588:       f9800031        prfm    pstl1strm, [x1]
-ffff00001008458c:       885f7c22        ldxr    w2, [x1]
-ffff000010084590:       11000442        add     w2, w2, #0x1
-ffff000010084594:       88037c22        stxr    w3, w2, [x1]
-ffff000010084598:       35ffffa3        cbnz    w3, ffff00001008458c <do_one_initcall+0x1cc>
-ffff00001008459c:       17ffff83        b       ffff0000100843a8 <atomics_test+0x70>
-ffff0000100845a0:       f9800011        prfm    pstl1strm, [x0]
-ffff0000100845a4:       885f7c01        ldxr    w1, [x0]
-ffff0000100845a8:       11000421        add     w1, w1, #0x1
-ffff0000100845ac:       88027c01        stxr    w2, w1, [x0]
-ffff0000100845b0:       35ffffa2        cbnz    w2, ffff0000100845a4 <do_one_initcall+0x1e4>
-ffff0000100845b4:       17ffff81        b       ffff0000100843b8 <atomics_test+0x80>
-
-The two branches before each section of atomics relates to the two static
-keys which both become nop's when LSE is available. When LSE isn't
-available the branches are used to run the slowpath fallback LL/SC atomics.
-
-In v1 of this series, due to the use of likely/unlikely for the LSE code,
-the fallback code ended up in one place at the end of the function. In this
-v2 patchset we move the fallback code into its own subsection, this moves
-any atomics code to the end of each compilation unit. It is felt that this
-may improve icache performance for both LSE and LL/SC.
-
-Where CONFIG_ARM64_LSE_ATOMICS isn't enabled then the same function is as
-follows:
-
-Dump of assembler code for function atomics_test:
-   0xffff000010084338 <+0>:     adrp    x0, 0xffff000011865000 <reset_devices>
-   0xffff00001008433c <+4>:     add     x0, x0, #0x0
-   0xffff000010084340 <+8>:     add     x3, x0, #0x28
-   0xffff000010084344 <+12>:    prfm    pstl1strm, [x3]
-   0xffff000010084348 <+16>:    ldxr    w1, [x3]
-   0xffff00001008434c <+20>:    add     w1, w1, #0x1
-   0xffff000010084350 <+24>:    stxr    w2, w1, [x3]
-   0xffff000010084354 <+28>:    cbnz    w2, 0xffff000010084348 <atomics_test+16>
-   0xffff000010084358 <+32>:    prfm    pstl1strm, [x3]
-   0xffff00001008435c <+36>:    ldxr    w1, [x3]
-   0xffff000010084360 <+40>:    add     w1, w1, #0x1
-   0xffff000010084364 <+44>:    stxr    w2, w1, [x3]
-   0xffff000010084368 <+48>:    cbnz    w2, 0xffff00001008435c <atomics_test+36>
-   0xffff00001008436c <+52>:    prfm    pstl1strm, [x3]
-   0xffff000010084370 <+56>:    ldxr    w1, [x3]
-   0xffff000010084374 <+60>:    add     w1, w1, #0x1
-   0xffff000010084378 <+64>:    stxr    w2, w1, [x3]
-   0xffff00001008437c <+68>:    cbnz    w2, 0xffff000010084370 <atomics_test+56>
-   0xffff000010084380 <+72>:    ret
-End of assembler dump.
-
-These changes add some bloat on defconfig according to bloat-o-meter:
-
-For LSE build (text):
-  add/remove: 4/109 grow/shrink: 3398/67 up/down: 151556/-4940
-  Total: Before=12759457, After=12906073, chg +1.15%
-
-For LL/LSC only build (text):
-  add/remove: 2/2 grow/shrink: 1423/57 up/down: 12224/-564 (11660)
-  Total: Before=12836417, After=12848077, chg +0.09%
-
-The bloat for LSE is due to the provision of LL/SC fallback atomics no longer
-being !inline.
-
-The bloat for LL/SC seems to be due to patch 2, which changes some assembly
-constraints (i.e. moving an intermediate to a register).
-
-When comparing the number of data transfer instructions (those starting or
-ending with ld or st) in vmlinux we see a reduction from 30.8% to 30.6% when
-applying this series. And no change when CONFIG_ARM64_LSE_ATOMICS isn't
-enabled (30.9%). This was a feable attempt to measure register spilling.
-
-Changes since v2:
-
- - Ensure _{relaxed,acquire,release} qualifers are used
-
- - Rebased onto arm64/for-next/fixes (v5.3-rc3)
-
-Changes since v1:
-
- - Move LL/SC atomics to a subsection when being used as a fallback
-
- - Rebased onto arm64/for-next/fixes
-
-
-Andrew Murray (5):
-  jump_label: Don't warn on __exit jump entries
-  arm64: Use correct ll/sc atomic constraints
-  arm64: atomics: avoid out-of-line ll/sc atomics
-  arm64: avoid using hard-coded registers for LSE atomics
-  arm64: atomics: remove atomic_ll_sc compilation unit
-
- arch/arm64/include/asm/atomic.h       |  11 +-
- arch/arm64/include/asm/atomic_arch.h  | 154 ++++++++++
- arch/arm64/include/asm/atomic_ll_sc.h | 200 ++++++-------
- arch/arm64/include/asm/atomic_lse.h   | 395 +++++++++-----------------
- arch/arm64/include/asm/cmpxchg.h      |   2 +-
- arch/arm64/include/asm/lse.h          |  11 -
- arch/arm64/lib/Makefile               |  19 --
- arch/arm64/lib/atomic_ll_sc.c         |   3 -
- kernel/jump_label.c                   |   4 +-
- 9 files changed, 398 insertions(+), 401 deletions(-)
- create mode 100644 arch/arm64/include/asm/atomic_arch.h
- delete mode 100644 arch/arm64/lib/atomic_ll_sc.c
-
+diff --git a/kernel/jump_label.c b/kernel/jump_label.c
+index df3008419a1d..cdb3ffab128b 100644
+--- a/kernel/jump_label.c
++++ b/kernel/jump_label.c
+@@ -407,7 +407,9 @@ static bool jump_label_can_update(struct jump_entry *entry, bool init)
+ 		return false;
+ 
+ 	if (!kernel_text_address(jump_entry_code(entry))) {
+-		WARN_ONCE(1, "can't patch jump_label at %pS", (void *)jump_entry_code(entry));
++		WARN_ONCE(!jump_entry_is_init(entry),
++			  "can't patch jump_label at %pS",
++			  (void *)jump_entry_code(entry));
+ 		return false;
+ 	}
+ 
 -- 
 2.21.0
 
