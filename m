@@ -2,77 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 290B089A29
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:45:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A49589A5E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:48:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=tJRlt4U2UrWT07H5Far6ykFi1b9KoglxdgD7uzGaLwk=; b=qkixjkdVyQTvXdCPjpOwd5STJL
-	VTlYvE8xBZUrs8hlWvvvotI5A0kMN8ZO46epDKZqna7msUe08+ktTliN1j/kaXVU0BuyGOZtTo4hq
-	wrQYB9x0YkA7eYyS0izVYT0TlEXISSVYFfbVhVYgiqpNLzUKWksZlOM/p425p84IHNTaN88DsZOGF
-	XpaYojQspRINH78IHmaiLrU+nHjiFNgsMXEsGPBkGGNPGW5RWuyNXOVq7IBJsDe9TcLtXEM5x5+Jf
-	DxYjoe7m6Igb/rKKSYeFIT5VHSs/zL+JTfDKTfcDDIawrB/8Ce3stP+eeDVfcqABV8AOFVFroOJ2N
-	qrB/PgoA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z9zG6axylhoZ7n4DFeKllKFl2L3PFtdA77DnWUmiSLA=; b=VYigy65/UMNDar
+	o/yEJ4QHkcsus2gG+AieS0DIITygrePuglmIgQDuFJwNQJdRn15JtH3UFQVG8gaQqE3a8w/AIny9o
+	QdrolYlf+onryFFYiCE7/vQG5dcMw6U3UmKTc2MiXVVBD0U+CGux3fW4vWPV1wiM/lMqTzXzhzM2B
+	A3XSFbR6YgEd2qHJSFRiB7PugdN/9ylVRH5syAQp+bVEG1Wr2V9mpkw91JdFppV9k31P2kP2P2fG+
+	C+8rFkqS0Qa5LbVu7ywkGx1zzxm+m7DJQCoGQiBkWdAZxIXVTzhlcsaZxurAbhBmkC91N5GXC25HD
+	v8XpIdOlmhFUEuQyZ7aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx6tK-0002Cp-DQ; Mon, 12 Aug 2019 09:45:26 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hx6w1-0005u5-2K; Mon, 12 Aug 2019 09:48:13 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx6sM-0001Pf-G5
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:44:29 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
- [10.225.0.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id E1A33C2175;
- Mon, 12 Aug 2019 09:44:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1565603065; bh=RVdfzAnkLd2cFbezBg+5+IcJ5jUr94r8t2wC6fXWHBw=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=PfYYqanjxndnblrG+5DUrlPCPx78aCvQKQrKzaxzuM0oVmpysCGkOeEy9Fbqi+D6m
- jIeXVjq0pS44wsVXB4COBy46rmizPN8NbubE71zuBTXaDMcPcjhkKeE/u7GEQr1xyA
- gBMmG+FaAyfR77rZscSmTEeU5OR1di3nbHtcZo5nYNYdOk1Xz8zxaUhsJ0lAWEfktI
- 8/OemqVooL/Zf1uFOrjQLf5JOuEV3k6tDnXuGkU6onlEidwvlGr5k/nUNmueF+qLy6
- Adst0rMiegyubL1VA0VXK2R4kTfeIukJ2X9nJ58oDcRSp3kkMTDfFpjrXCXW6EFs0f
- UeBLibNXme6IQ==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 9B060A0080;
- Mon, 12 Aug 2019 09:44:23 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net-next v2 12/12] net: stmmac: selftests: Add selftest for
- VLAN TX Offload
-Date: Mon, 12 Aug 2019 11:44:11 +0200
-Message-Id: <6ca59f405df8632e00fb4cae360f013bf0c289c6.1565602974.git.joabreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1565602974.git.joabreu@synopsys.com>
-References: <cover.1565602974.git.joabreu@synopsys.com>
-In-Reply-To: <cover.1565602974.git.joabreu@synopsys.com>
-References: <cover.1565602974.git.joabreu@synopsys.com>
+ id 1hx6sy-0001uk-0s
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:45:06 +0000
+X-Originating-IP: 91.118.195.70
+Received: from jirafa.cyrius.com (91-118-195-70.static.upcbusiness.at
+ [91.118.195.70]) (Authenticated sender: tbm@cyrius.com)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id DA1BF40003;
+ Mon, 12 Aug 2019 09:44:56 +0000 (UTC)
+Received: by jirafa.cyrius.com (Postfix, from userid 1000)
+ id 58518A887E; Mon, 12 Aug 2019 11:44:56 +0200 (CEST)
+Date: Mon, 12 Aug 2019 11:44:56 +0200
+From: Martin Michlmayr <tbm@cyrius.com>
+To: Dan Williams <dan.j.williams@intel.com>
+Subject: Re: [PATCH 1/7] [RFC] ARM: remove Intel iop33x and iop13xx support
+Message-ID: <20190812094456.GI10598@jirafa.cyrius.com>
+References: <20190809162956.488941-1-arnd@arndb.de>
+ <20190809163334.489360-1-arnd@arndb.de>
+ <CAA9_cmdDbBm0ookyqGJMcyLVFHkYHuR3mEeawQKS2UqYJoWWaQ@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAA9_cmdDbBm0ookyqGJMcyLVFHkYHuR3mEeawQKS2UqYJoWWaQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_024426_548246_F918284A 
-X-CRM114-Status: GOOD (  15.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190812_024504_269689_486E60BE 
+X-CRM114-Status: GOOD (  14.15  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,182 +65,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Peter Teichmann <lists@peter-teichmann.de>, Arnd Bergmann <arnd@arndb.de>,
+ linux-gpio@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, soc@kernel.org,
+ Russell King <linux@armlinux.org.uk>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
+ linux-i2c@vger.kernel.org, dmaengine@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add 2 new selftests for VLAN Insertion offloading. Tests are for inner
-and outer VLAN offloading.
+* Dan Williams <dan.j.williams@intel.com> [2019-08-09 11:34]:
+> > Earlier versions of OpenWRT and Debian both had support for iop32x
+> > but not the others, and they both dropped iop32x as well in their 2015
+> > releases.
+> >
+> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> > ---
+> > I'm just guessing that iop32x is still needed, and the other two are
+> > not. If anyone disagrees with that assessment, let me know so we
+> > can come up with an alternative approach.
+> 
+> I'm not sure who would scream if iop32x support went away as well, but
+> I have not followed this space in years hence copying Martin.
 
-Signed-off-by: Jose Abreu <joabreu@synopsys.com>
+I believe iop13xx were mostly Intel dev boards.  I'm not aware of any
+major devices based on iop33x.
 
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 96 +++++++++++++++++++++-
- 1 file changed, 94 insertions(+), 2 deletions(-)
+As Arnd points out, Debian used to have support for various iop32x
+devices.  While Debian hasn't supported iop32x in a number of years,
+these devices are still usable and in use (RMK being a prime example).
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-index acfab86431b1..ecc8602c6799 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-@@ -296,7 +296,9 @@ static int __stmmac_test_loopback(struct stmmac_priv *priv,
- 	tpriv->pt.dev = priv->dev;
- 	tpriv->pt.af_packet_priv = tpriv;
- 	tpriv->packet = attr;
--	dev_add_pack(&tpriv->pt);
-+
-+	if (!attr->dont_wait)
-+		dev_add_pack(&tpriv->pt);
- 
- 	skb = stmmac_test_get_udp_skb(priv, attr);
- 	if (!skb) {
-@@ -319,7 +321,8 @@ static int __stmmac_test_loopback(struct stmmac_priv *priv,
- 	ret = !tpriv->ok;
- 
- cleanup:
--	dev_remove_pack(&tpriv->pt);
-+	if (!attr->dont_wait)
-+		dev_remove_pack(&tpriv->pt);
- 	kfree(tpriv);
- 	return ret;
- }
-@@ -731,6 +734,9 @@ static int stmmac_test_vlan_validate(struct sk_buff *skb,
- 	struct ethhdr *ehdr;
- 	struct udphdr *uhdr;
- 	struct iphdr *ihdr;
-+	u16 proto;
-+
-+	proto = tpriv->double_vlan ? ETH_P_8021AD : ETH_P_8021Q;
- 
- 	skb = skb_unshare(skb, GFP_ATOMIC);
- 	if (!skb)
-@@ -740,6 +746,12 @@ static int stmmac_test_vlan_validate(struct sk_buff *skb,
- 		goto out;
- 	if (skb_headlen(skb) < (STMMAC_TEST_PKT_SIZE - ETH_HLEN))
- 		goto out;
-+	if (tpriv->vlan_id) {
-+		if (skb->vlan_proto != htons(proto))
-+			goto out;
-+		if (skb->vlan_tci != tpriv->vlan_id)
-+			goto out;
-+	}
- 
- 	ehdr = (struct ethhdr *)skb_mac_header(skb);
- 	if (!ether_addr_equal(ehdr->h_dest, tpriv->packet->dst))
-@@ -1084,6 +1096,78 @@ static int stmmac_test_reg_sar(struct stmmac_priv *priv)
- 	return ret;
- }
- 
-+static int stmmac_test_vlanoff_common(struct stmmac_priv *priv, bool svlan)
-+{
-+	struct stmmac_packet_attrs attr = { };
-+	struct stmmac_test_priv *tpriv;
-+	struct sk_buff *skb = NULL;
-+	int ret = 0;
-+	u16 proto;
-+
-+	if (!priv->dma_cap.vlins)
-+		return -EOPNOTSUPP;
-+
-+	tpriv = kzalloc(sizeof(*tpriv), GFP_KERNEL);
-+	if (!tpriv)
-+		return -ENOMEM;
-+
-+	proto = svlan ? ETH_P_8021AD : ETH_P_8021Q;
-+
-+	tpriv->ok = false;
-+	tpriv->double_vlan = svlan;
-+	init_completion(&tpriv->comp);
-+
-+	tpriv->pt.type = svlan ? htons(ETH_P_8021Q) : htons(ETH_P_IP);
-+	tpriv->pt.func = stmmac_test_vlan_validate;
-+	tpriv->pt.dev = priv->dev;
-+	tpriv->pt.af_packet_priv = tpriv;
-+	tpriv->packet = &attr;
-+	tpriv->vlan_id = 0x123;
-+	dev_add_pack(&tpriv->pt);
-+
-+	ret = vlan_vid_add(priv->dev, htons(proto), tpriv->vlan_id);
-+	if (ret)
-+		goto cleanup;
-+
-+	attr.dst = priv->dev->dev_addr;
-+
-+	skb = stmmac_test_get_udp_skb(priv, &attr);
-+	if (!skb) {
-+		ret = -ENOMEM;
-+		goto vlan_del;
-+	}
-+
-+	__vlan_hwaccel_put_tag(skb, htons(proto), tpriv->vlan_id);
-+	skb->protocol = htons(proto);
-+
-+	skb_set_queue_mapping(skb, 0);
-+	ret = dev_queue_xmit(skb);
-+	if (ret)
-+		goto vlan_del;
-+
-+	wait_for_completion_timeout(&tpriv->comp, STMMAC_LB_TIMEOUT);
-+	ret = tpriv->ok ? 0 : -ETIMEDOUT;
-+
-+vlan_del:
-+	vlan_vid_del(priv->dev, htons(proto), tpriv->vlan_id);
-+cleanup:
-+	dev_remove_pack(&tpriv->pt);
-+	kfree(tpriv);
-+	return ret;
-+}
-+
-+static int stmmac_test_vlanoff(struct stmmac_priv *priv)
-+{
-+	return stmmac_test_vlanoff_common(priv, false);
-+}
-+
-+static int stmmac_test_svlanoff(struct stmmac_priv *priv)
-+{
-+	if (!priv->dma_cap.dvlan)
-+		return -EOPNOTSUPP;
-+	return stmmac_test_vlanoff_common(priv, true);
-+}
-+
- #define STMMAC_LOOPBACK_NONE	0
- #define STMMAC_LOOPBACK_MAC	1
- #define STMMAC_LOOPBACK_PHY	2
-@@ -1161,6 +1245,14 @@ static const struct stmmac_test {
- 		.name = "SA Replacement (reg)",
- 		.lb = STMMAC_LOOPBACK_PHY,
- 		.fn = stmmac_test_reg_sar,
-+	}, {
-+		.name = "VLAN TX Insertion   ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_vlanoff,
-+	}, {
-+		.name = "SVLAN TX Insertion  ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_svlanoff,
- 	},
- };
- 
+So I think it's safe to drop iop33x/iop13xx while retaining support
+for iop32x.
+
+As I was looking at my email archives, I saw an email from Peter
+Teichmann who was working on an iop33x based platform (around 2009) so
+I've copied him as well.
+
+> In any event:
+> 
+> Acked-by: Dan Williams <dan.j.williams@intel.com>
+
+Acked-by: Martin Michlmayr <tbm@cyrius.com>
+
 -- 
-2.7.4
-
+Martin Michlmayr
+https://www.cyrius.com/
 
 _______________________________________________
 linux-arm-kernel mailing list
