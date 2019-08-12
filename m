@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8399D89A25
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:44:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE1D389A46
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:45:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=x17q8HmZSsh0rklOMCFHf+Y/33egrobQX6tCvlp23Os=; b=uusZJBR6vNzJkpxJbPEZLnJCE4
-	2F/H7NEQ93w/5gDnh75cGRvaEJx9Z06FD/pr/COWbyXDPMv9xpqb/ECbGa+Ri1JSnyllCFbS2qwrG
-	oMv/11l2VMNBmZQrdXU6L9jkKB1qYTHsrbnpwz5HoKZv0MjgAaTWEnE7TgzmDhMl9by8a93ehabwe
-	qzHkYqHjAVHmufo5G8SsPDKYupwqkqLMxG/rwxZz2Y7/JGqSsYHjri7yZDmoNMHKKKm6RbG3ZHxle
-	kfsenazRJvb7TgBhoP+/tzDRsKtDQm5axSZrTbzTIjcG+QBCNCOVu2pEEX0i8nnUr1NaCgDNyljxg
-	6EGaGCug==;
+	bh=lztoYWcRDehd7qnLNKj7QsvPEX8XVsOHMd7gARGa46k=; b=MulaXW/TSPlKRS9UXdZFZlVJHs
+	Pbd0AdeBuxkHO936SlPkJ9CdH64B1iSMvjvaNfJ2MjuYB9Q05OWUcrC+ucm423RnY9MKHPbE+GVLG
+	uMBti/2KyHK+3RNrJwSu2xWolxRe/L9Hd1FuZmIj7EoE91eZAqEmwP5lTUkLizTx/+7yCSTxRzdC0
+	gB7u0N72dknPSoOzLhjdzcR77p+muiTqMf+OYaFzLHxDRAA9nywm92Ty3csMCnFfTRxuGpFPkoxTh
+	HijrrhZcfsrbp57X8A6ceFNbt0h5GEPw4ZX6SOgUq5xemusPnP33Oa9kEGUnWWrfBqt6phdb1LyP8
+	zzRnNDTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx6sb-0001Se-O5; Mon, 12 Aug 2019 09:44:41 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hx6te-0003Q6-Ss; Mon, 12 Aug 2019 09:45:47 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx6sM-0001PZ-F3
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:44:28 +0000
+ id 1hx6sM-0001Pb-GZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:44:30 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A89E4C217A;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id B28D2C2172;
  Mon, 12 Aug 2019 09:44:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1565603065; bh=Xz26BZZOJit3JigreKorMytvcGTIkOB52bvcggv67Lw=;
+ t=1565603065; bh=Yqqy98nccpQa2Xd9tZBNqR9lQ/hDKyKO5COzb0xnQ24=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=kbZnSoMlV92kdKGrYFP0CIA2sN6SAaMudZih4qxbknYOjqvaObeRr6xhwyb0T8wB2
- BK4o1WMhMwN+bexQ9RGtyByc1+rbyPbiZ8LlGuZT8WSN8umuKiKNRBQQU8adcb+qRV
- z/ve3Ld0cWZNqpbjTOxLLi5+wVIXs/sacxPaUqkvliuovUcVSuomH+gn/ZvQi9VNCK
- K+8oDlp+b6advi6COtQVk+zLjKvBP3yNOjIGG6cMo9i0ytzF0uvjmL2BemB+W5995Z
- DNidgIwykwmW6YCfFU3H0q5ts6k/92hvMB/JQpxoQKXCuYPLyrMIMWtEg1eClYJPbe
- z/ANH8cJ/pgiw==
+ b=dHCmdW0co3ydW4lLvy73jmWETZDP9a5m27Bg5Uf/Ld3dkWDpSX3RNCTlhUtUUxHsL
+ MIHI8XRYyAM2McHC6dlbZMPMOUXF12BDQ9DHK6LIavz+OMgGi116W5xCTYI5qaplxU
+ bZTeLbliiOX8d23AjAsFnBja+FtaTnH3WSgpH3QU43n6WL+YVCsPtbumHMQECZpb8J
+ jdDyRM5mti72gk36odNe0IXpdGedWEoY0+UT+3Hvz0e019Be9cpZjsQNoqVfabsMFR
+ r2G63sPXR/mFKsAR79O1mVSoR0b59TmDpWhVXs4nba+L1MvfYpEbCKwLil/4ZFXN5m
+ 33s12fnl9HDmg==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 63EF9A0077;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 78A20A007A;
  Mon, 12 Aug 2019 09:44:23 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next v2 09/12] net: stmmac: selftests: Add tests for SA
- Insertion/Replacement
-Date: Mon, 12 Aug 2019 11:44:08 +0200
-Message-Id: <2acbcc5f51060d570a714c64ccd8a4dff2c4ccfa.1565602974.git.joabreu@synopsys.com>
+Subject: [PATCH net-next v2 10/12] net: stmmac: xgmac: Add EEE support
+Date: Mon, 12 Aug 2019 11:44:09 +0200
+Message-Id: <870480f81d0146d6615fdae351a63e06adc59d1b.1565602974.git.joabreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1565602974.git.joabreu@synopsys.com>
 References: <cover.1565602974.git.joabreu@synopsys.com>
 In-Reply-To: <cover.1565602974.git.joabreu@synopsys.com>
 References: <cover.1565602974.git.joabreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_024426_523847_3E56E56D 
-X-CRM114-Status: GOOD (  13.63  )
+X-CRM114-CacheID: sfid-20190812_024426_561699_FDD19AC5 
+X-CRM114-Status: GOOD (  15.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,11 +94,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add 4 new tests:
-	- SA Insertion (register based)
-	- SA Insertion (descriptor based)
-	- SA Replacament (register based)
-	- SA Replacement (descriptor based)
+Add support for EEE in XGMAC cores by implementing the necessary
+callbacks.
 
 Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 
@@ -115,139 +110,164 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 98 +++++++++++++++++++++-
- 1 file changed, 97 insertions(+), 1 deletion(-)
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     | 12 ++++
+ .../net/ethernet/stmicro/stmmac/dwxgmac2_core.c    | 75 ++++++++++++++++++++--
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c |  1 +
+ 3 files changed, 83 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-index abab84f2ef8b..acfab86431b1 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-@@ -45,6 +45,7 @@ struct stmmac_packet_attrs {
- 	int size;
- 	int remove_sa;
- 	u8 id;
-+	int sarc;
- };
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
+index 3fb023953023..79c145ba25a8 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
+@@ -71,6 +71,7 @@
+ #define XGMAC_PSRQ(x)			GENMASK((x) * 8 + 7, (x) * 8)
+ #define XGMAC_PSRQ_SHIFT(x)		((x) * 8)
+ #define XGMAC_INT_STATUS		0x000000b0
++#define XGMAC_LPIIS			BIT(5)
+ #define XGMAC_PMTIS			BIT(4)
+ #define XGMAC_INT_EN			0x000000b4
+ #define XGMAC_TSIE			BIT(12)
+@@ -88,10 +89,21 @@
+ #define XGMAC_RWKPKTEN			BIT(2)
+ #define XGMAC_MGKPKTEN			BIT(1)
+ #define XGMAC_PWRDWN			BIT(0)
++#define XGMAC_LPI_CTRL			0x000000d0
++#define XGMAC_TXCGE			BIT(21)
++#define XGMAC_LPITXA			BIT(19)
++#define XGMAC_PLS			BIT(17)
++#define XGMAC_LPITXEN			BIT(16)
++#define XGMAC_RLPIEX			BIT(3)
++#define XGMAC_RLPIEN			BIT(2)
++#define XGMAC_TLPIEX			BIT(1)
++#define XGMAC_TLPIEN			BIT(0)
++#define XGMAC_LPI_TIMER_CTRL		0x000000d4
+ #define XGMAC_HW_FEATURE0		0x0000011c
+ #define XGMAC_HWFEAT_SAVLANINS		BIT(27)
+ #define XGMAC_HWFEAT_RXCOESEL		BIT(16)
+ #define XGMAC_HWFEAT_TXCOESEL		BIT(14)
++#define XGMAC_HWFEAT_EEESEL		BIT(13)
+ #define XGMAC_HWFEAT_TSSEL		BIT(12)
+ #define XGMAC_HWFEAT_AVSEL		BIT(11)
+ #define XGMAC_HWFEAT_RAVSEL		BIT(10)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+index d0e7b62cc2ae..d8483d088711 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+@@ -253,6 +253,7 @@ static int dwxgmac2_host_irq_status(struct mac_device_info *hw,
+ {
+ 	void __iomem *ioaddr = hw->pcsr;
+ 	u32 stat, en;
++	int ret = 0;
  
- static u8 stmmac_test_next_id;
-@@ -230,7 +231,10 @@ static int stmmac_test_loopback_validate(struct sk_buff *skb,
- 		if (!ether_addr_equal(ehdr->h_dest, tpriv->packet->dst))
- 			goto out;
+ 	en = readl(ioaddr + XGMAC_INT_EN);
+ 	stat = readl(ioaddr + XGMAC_INT_STATUS);
+@@ -264,7 +265,24 @@ static int dwxgmac2_host_irq_status(struct mac_device_info *hw,
+ 		readl(ioaddr + XGMAC_PMT);
  	}
--	if (tpriv->packet->src) {
-+	if (tpriv->packet->sarc) {
-+		if (!ether_addr_equal(ehdr->h_source, ehdr->h_dest))
-+			goto out;
-+	} else if (tpriv->packet->src) {
- 		if (!ether_addr_equal(ehdr->h_source, tpriv->packet->src))
- 			goto out;
- 	}
-@@ -1004,6 +1008,82 @@ static int stmmac_test_rxp(struct stmmac_priv *priv)
+ 
+-	return 0;
++	if (stat & XGMAC_LPIIS) {
++		u32 lpi = readl(ioaddr + XGMAC_LPI_CTRL);
++
++		if (lpi & XGMAC_TLPIEN) {
++			ret |= CORE_IRQ_TX_PATH_IN_LPI_MODE;
++			x->irq_tx_path_in_lpi_mode_n++;
++		}
++		if (lpi & XGMAC_TLPIEX) {
++			ret |= CORE_IRQ_TX_PATH_EXIT_LPI_MODE;
++			x->irq_tx_path_exit_lpi_mode_n++;
++		}
++		if (lpi & XGMAC_RLPIEN)
++			x->irq_rx_path_in_lpi_mode_n++;
++		if (lpi & XGMAC_RLPIEX)
++			x->irq_rx_path_exit_lpi_mode_n++;
++	}
++
++	return ret;
  }
- #endif
  
-+static int stmmac_test_desc_sai(struct stmmac_priv *priv)
-+{
-+	unsigned char src[ETH_ALEN] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-+	struct stmmac_packet_attrs attr = { };
-+	int ret;
-+
-+	attr.remove_sa = true;
-+	attr.sarc = true;
-+	attr.src = src;
-+	attr.dst = priv->dev->dev_addr;
-+
-+	priv->sarc_type = 0x1;
-+
-+	ret = __stmmac_test_loopback(priv, &attr);
-+
-+	priv->sarc_type = 0x0;
-+	return ret;
-+}
-+
-+static int stmmac_test_desc_sar(struct stmmac_priv *priv)
-+{
-+	unsigned char src[ETH_ALEN] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-+	struct stmmac_packet_attrs attr = { };
-+	int ret;
-+
-+	attr.sarc = true;
-+	attr.src = src;
-+	attr.dst = priv->dev->dev_addr;
-+
-+	priv->sarc_type = 0x2;
-+
-+	ret = __stmmac_test_loopback(priv, &attr);
-+
-+	priv->sarc_type = 0x0;
-+	return ret;
-+}
-+
-+static int stmmac_test_reg_sai(struct stmmac_priv *priv)
-+{
-+	unsigned char src[ETH_ALEN] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-+	struct stmmac_packet_attrs attr = { };
-+	int ret;
-+
-+	attr.remove_sa = true;
-+	attr.sarc = true;
-+	attr.src = src;
-+	attr.dst = priv->dev->dev_addr;
-+
-+	if (stmmac_sarc_configure(priv, priv->ioaddr, 0x2))
-+		return -EOPNOTSUPP;
-+
-+	ret = __stmmac_test_loopback(priv, &attr);
-+
-+	stmmac_sarc_configure(priv, priv->ioaddr, 0x0);
-+	return ret;
-+}
-+
-+static int stmmac_test_reg_sar(struct stmmac_priv *priv)
-+{
-+	unsigned char src[ETH_ALEN] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-+	struct stmmac_packet_attrs attr = { };
-+	int ret;
-+
-+	attr.sarc = true;
-+	attr.src = src;
-+	attr.dst = priv->dev->dev_addr;
-+
-+	if (stmmac_sarc_configure(priv, priv->ioaddr, 0x3))
-+		return -EOPNOTSUPP;
-+
-+	ret = __stmmac_test_loopback(priv, &attr);
-+
-+	stmmac_sarc_configure(priv, priv->ioaddr, 0x0);
-+	return ret;
-+}
-+
- #define STMMAC_LOOPBACK_NONE	0
- #define STMMAC_LOOPBACK_MAC	1
- #define STMMAC_LOOPBACK_PHY	2
-@@ -1065,6 +1145,22 @@ static const struct stmmac_test {
- 		.name = "Flexible RX Parser   ",
- 		.lb = STMMAC_LOOPBACK_PHY,
- 		.fn = stmmac_test_rxp,
-+	}, {
-+		.name = "SA Insertion (desc)  ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_desc_sai,
-+	}, {
-+		.name = "SA Replacement (desc)",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_desc_sar,
-+	}, {
-+		.name = "SA Insertion (reg)  ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_reg_sai,
-+	}, {
-+		.name = "SA Replacement (reg)",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_reg_sar,
- 	},
- };
+ static int dwxgmac2_host_mtl_irq_status(struct mac_device_info *hw, u32 chan)
+@@ -357,6 +375,53 @@ static void dwxgmac2_get_umac_addr(struct mac_device_info *hw,
+ 	addr[5] = (hi_addr >> 8) & 0xff;
+ }
  
++static void dwxgmac2_set_eee_mode(struct mac_device_info *hw,
++				  bool en_tx_lpi_clockgating)
++{
++	void __iomem *ioaddr = hw->pcsr;
++	u32 value;
++
++	value = readl(ioaddr + XGMAC_LPI_CTRL);
++
++	value |= XGMAC_LPITXEN | XGMAC_LPITXA;
++	if (en_tx_lpi_clockgating)
++		value |= XGMAC_TXCGE;
++
++	writel(value, ioaddr + XGMAC_LPI_CTRL);
++}
++
++static void dwxgmac2_reset_eee_mode(struct mac_device_info *hw)
++{
++	void __iomem *ioaddr = hw->pcsr;
++	u32 value;
++
++	value = readl(ioaddr + XGMAC_LPI_CTRL);
++	value &= ~(XGMAC_LPITXEN | XGMAC_LPITXA | XGMAC_TXCGE);
++	writel(value, ioaddr + XGMAC_LPI_CTRL);
++}
++
++static void dwxgmac2_set_eee_pls(struct mac_device_info *hw, int link)
++{
++	void __iomem *ioaddr = hw->pcsr;
++	u32 value;
++
++	value = readl(ioaddr + XGMAC_LPI_CTRL);
++	if (link)
++		value |= XGMAC_PLS;
++	else
++		value &= ~XGMAC_PLS;
++	writel(value, ioaddr + XGMAC_LPI_CTRL);
++}
++
++static void dwxgmac2_set_eee_timer(struct mac_device_info *hw, int ls, int tw)
++{
++	void __iomem *ioaddr = hw->pcsr;
++	u32 value;
++
++	value = (tw & 0xffff) | ((ls & 0x3ff) << 16);
++	writel(value, ioaddr + XGMAC_LPI_TIMER_CTRL);
++}
++
+ static void dwxgmac2_set_mchash(void __iomem *ioaddr, u32 *mcfilterbits,
+ 				int mcbitslog2)
+ {
+@@ -1105,10 +1170,10 @@ const struct stmmac_ops dwxgmac210_ops = {
+ 	.pmt = dwxgmac2_pmt,
+ 	.set_umac_addr = dwxgmac2_set_umac_addr,
+ 	.get_umac_addr = dwxgmac2_get_umac_addr,
+-	.set_eee_mode = NULL,
+-	.reset_eee_mode = NULL,
+-	.set_eee_timer = NULL,
+-	.set_eee_pls = NULL,
++	.set_eee_mode = dwxgmac2_set_eee_mode,
++	.reset_eee_mode = dwxgmac2_reset_eee_mode,
++	.set_eee_timer = dwxgmac2_set_eee_timer,
++	.set_eee_pls = dwxgmac2_set_eee_pls,
+ 	.pcs_ctrl_ane = NULL,
+ 	.pcs_rane = NULL,
+ 	.pcs_get_adv_lp = NULL,
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+index 42c13d144203..f2d5901fbaff 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+@@ -361,6 +361,7 @@ static void dwxgmac2_get_hw_feature(void __iomem *ioaddr,
+ 	hw_cap = readl(ioaddr + XGMAC_HW_FEATURE0);
+ 	dma_cap->rx_coe = (hw_cap & XGMAC_HWFEAT_RXCOESEL) >> 16;
+ 	dma_cap->tx_coe = (hw_cap & XGMAC_HWFEAT_TXCOESEL) >> 14;
++	dma_cap->eee = (hw_cap & XGMAC_HWFEAT_EEESEL) >> 13;
+ 	dma_cap->atime_stamp = (hw_cap & XGMAC_HWFEAT_TSSEL) >> 12;
+ 	dma_cap->av = (hw_cap & XGMAC_HWFEAT_AVSEL) >> 11;
+ 	dma_cap->av &= (hw_cap & XGMAC_HWFEAT_RAVSEL) >> 10;
 -- 
 2.7.4
 
