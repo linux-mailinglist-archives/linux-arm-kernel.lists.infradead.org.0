@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B71489E54
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 14:31:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DEEA89E70
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 14:33:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=notsFuiOBDsxcw+Q9uvFs62Q2GEKw5de1VzbQIoAFvs=; b=l5/0FEPlAMTRA/
-	TKNzOMjkHlwcZH9Y6uUdDL4u3YrvgIKkJ55gFmK2hhi1Ug/Z5D7t2yGF+lUjFrKs1bMMaGUO5ELnw
-	q54nC7PdNKSbIDTbd6Cw/y0+n67A5hlzz1Gw7wKTNttfwy4lomfUCqR1fsEXX9Sc/v8ndp8X8tZUV
-	cXqWO7H4Squxs1QJNFqkaGbAgzCuY2fBPYG8WBjk3XayijSfrveBResend0txaccXh6NMgB+pT9/5
-	Ba7OypJbSlcwBw/wIICfdzLU9qu0KI6lNEz2KS4B0jR31Cxy42lORhJoMnQsj+xIZdRzBj7xrfPRy
-	lqJ4ETaF3gYbFNtYIRfA==;
+	List-Owner; bh=zDkfGRj2Jir6jlYVhWdxm5jARjq3pEz8qvdqSg8Nw8w=; b=jIEwRRDknd44zm
+	SwrBFtCMDxTCYCw26Z+v9rkQJUQfIeJjoWBivEJVK8U2+2W+Pr9R53nWBKG4V5rlvXcvPvpxnpOLW
+	3p3aFQpQPW/2tkX0BoHbO7kRRcd1YXTfuCQGR0A3QpVElcJXYWDJPVlJtHRYKYdDFEhsrljzx3xLc
+	GfB4KVDrwv0cJuixplzRGOhS01D5HmyRc0wxcRzBzBcQyk/e3kfxI9e2xlksg+F91PUNdobf/mu6S
+	RtuNQKo2tIEgkonu2gXVVSIsc8blWOZ1EtmyjOuL3UKYLVTXewfIwI+NPil2C3r2tU58igm7CCuJn
+	7HxgO+yIyGUAHvYo/FBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx9TX-0002rn-Tq; Mon, 12 Aug 2019 12:31:00 +0000
+	id 1hx9Vq-0003BG-Pd; Mon, 12 Aug 2019 12:33:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx9TL-0002qw-3p
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 12:30:48 +0000
+ id 1hx9VT-0003AG-OD
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 12:33:00 +0000
 Received: from X250 (37.80-203-192.nextgentel.com [80.203.192.37])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E61D021744;
- Mon, 12 Aug 2019 12:30:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E5359214C6;
+ Mon, 12 Aug 2019 12:32:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565613043;
- bh=Ijmr7L4rj9fAdpDTeN+I568sFcwLmUT8CgsOo/en4AA=;
+ s=default; t=1565613179;
+ bh=aLWVPZtEhIC0ZToFy8HKYrFEJRZhfGRRAZIOZ4qH66w=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=S4GKmEuU3TYlyUYRKAnckZZb1Qg5JvWhhhH8O5Io14pQ48FHhe12HFwxtUuZ3BNdu
- ez6RpxAdFpRTHYvheWx7FPUhY1lC76AZL6SSJARrmIXW+34fMtPid+LMjcRkNZd4Bh
- HF/vN8apPq1sJgZbMgDe36lbuDhZq6p/TcEpc8EI=
-Date: Mon, 12 Aug 2019 14:30:28 +0200
+ b=CyNEbnKcMBrF2RJKc3B5a3Jk2xvrM16+jGHdh6O/axkKJbUjtLWcFxPzuL+1P+EXy
+ RUqVEMkW/BX+X6DdWbt9T9XIlYy4sR4Sg4ZU7swKek01UB5EMxVvitRgJAOXyn6spw
+ VyojDy8iaxt8KMXx8ctdioAEApEYP9VGAwJD6Gao=
+Date: Mon, 12 Aug 2019 14:32:46 +0200
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson.Huang@nxp.com
-Subject: Re: [PATCH V4 4/4] dt-bindings: arm: imx: Add the soc binding for
- i.MX8MQ
-Message-ID: <20190812123026.GA27041@X250>
+Subject: Re: [PATCH V4 1/4] dt-bindings: arm: imx: Add the soc binding for
+ i.MX8MN
+Message-ID: <20190812123245.GB27041@X250>
 References: <20190619022145.42398-1-Anson.Huang@nxp.com>
- <20190619022145.42398-4-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190619022145.42398-4-Anson.Huang@nxp.com>
+In-Reply-To: <20190619022145.42398-1-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_053047_186142_BA78AACA 
-X-CRM114-Status: GOOD (  14.86  )
+X-CRM114-CacheID: sfid-20190812_053259_807702_1EA998C0 
+X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,45 +91,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 10:21:45AM +0800, Anson.Huang@nxp.com wrote:
+On Wed, Jun 19, 2019 at 10:21:42AM +0800, Anson.Huang@nxp.com wrote:
 > From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> This patch adds the soc & board binding for i.MX8MQ.
+> This patch adds the soc & board binding for i.MX8MN.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > Reviewed-by: Rob Herring <robh@kernel.org>
-> ---
-> No changes.
-> ---
->  Documentation/devicetree/bindings/arm/fsl.yaml | 6 ++++++
->  1 file changed, 6 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-> index b35abb1..f944df8 100644
-> --- a/Documentation/devicetree/bindings/arm/fsl.yaml
-> +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-> @@ -183,6 +183,12 @@ properties:
->                - fsl,imx8mn-ddr4-evk            # i.MX8MN DDR4 EVK Board
->            - const: fsl,imx8mn
->  
-> +      - description: i.MX8MQ based Boards
-> +        items:
-> +          - enum:
-> +              - fsl,imx8mq-evk            # i.MX8MQ EVK Board
-> +          - const: fsl,imx8mq
-> +
 
-We already have this with e126417ff1b1 (dt-bindings: arm: fsl: Add the
-imx8mq boards).
-
-Shawn
-
->        - description: i.MX8QXP based Boards
->          items:
->            - enum:
-> -- 
-> 2.7.4
-> 
+Applied 1 ~ 3, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
