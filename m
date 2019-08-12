@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D773C8A1DF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 17:05:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CAFB8A1F3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 17:07:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vJJSZYUcmtwOrTqROVJfmgaAvjPARQU96q5yIThBB4Y=; b=VgigtWBOwkn7Bi
-	aUjnp1KhfA4tAwzBvpP4BusMaybRQA0NHbpNPqR1BF8FQo4DJIMPIUwQ85i5VzGceDYaCQFiqpS4+
-	LLSI4tLdPJqOVIYd00/knBn9i+3BBDTcIiHsZP1fFWtgnvbL/qmGKLtF3f32syvH4fP7ONAv4466O
-	gTZzF1vAGm+IMDgPcW4kD6JXxBlLJKtWxasqkR2YLPkyKD9d7Xc+lMiCU/rFbC7vzfKEIfERQQJve
-	NyFsyk4BMvw/f3cd6w7ZgrMAmUk7hqZ27A4bK5sQQKqTsrLc1FGdigUVOsFPj4yTCIncgreIjOy6w
-	Pah9zHV2vBc2t3jUGWyQ==;
+	List-Owner; bh=SegonyD8KB2azfWh/Qw6dLTQarJeKb2aSZFkQ1+UCss=; b=W3MN7evqiQjmTG
+	cl0pAOJcGsVp7dRvGCA39iHuZTRFPge4jWqkvalsQZjt51m6fASdgmy4zoiRk1h5eNNOSlsne0sxP
+	PqIDzokdUKuri9/qlVnvf4v+5R0ufS5IRryLnHLNhE5F9NunKnyTEF8HOlK3UEjj/sufMnDoF2pJO
+	enEDVii4k1q+ZlivWKZRryQKtEHl7K1zqcdvyDO5+sqqlSdGC/L+DL7bQjNTzIAFvgLRCoxbxBxQY
+	4VzD8P4qLi/kDAbwDqkP8ZgFOCrblR2qL/bQ5bKaOiZg+WqI5KB0s8ieTu7QzZgtCEn5rcsyxlOEQ
+	xCYSavsTAzCcesyBw5Pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxBtF-00080J-9f; Mon, 12 Aug 2019 15:05:41 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxBt1-0007z1-Iw
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 15:05:29 +0000
-X-Originating-IP: 92.137.69.152
-Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
- [92.137.69.152])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id D09B9C0002;
- Mon, 12 Aug 2019 15:05:15 +0000 (UTC)
-Date: Mon, 12 Aug 2019 17:05:15 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Colin King <colin.king@canonical.com>
-Subject: Re: [PATCH] tty/serial: atmel: remove redundant assignment to ret
-Message-ID: <20190812150515.GQ3600@piout.net>
-References: <20190809174042.6276-1-colin.king@canonical.com>
+	id 1hxBuO-0008GY-KH; Mon, 12 Aug 2019 15:06:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxBuA-0008Ft-VL
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 15:06:40 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 777E515A2;
+ Mon, 12 Aug 2019 08:06:38 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 22BE23F718;
+ Mon, 12 Aug 2019 08:06:37 -0700 (PDT)
+Date: Mon, 12 Aug 2019 16:06:35 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCHv3 1/6] arm/arm64: smccc/psci: add
+ arm_smccc_1_1_get_conduit()
+Message-ID: <20190812150634.GB52896@lakrids.cambridge.arm.com>
+References: <20190809132245.43505-1-mark.rutland@arm.com>
+ <20190809132245.43505-2-mark.rutland@arm.com>
+ <20190812150326.GT10425@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190809174042.6276-1-colin.king@canonical.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+In-Reply-To: <20190812150326.GT10425@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_080527_774668_2C83C5A0 
-X-CRM114-Status: GOOD (  14.57  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190812_080639_049909_679F7868 
+X-CRM114-Status: GOOD (  20.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,53 +64,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Genoud <richard.genoud@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+Cc: lorenzo.pieralisi@arm.com, suzuki.poulose@arm.com, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux@armlinux.org.uk,
+ james.morse@arm.com, robin.murphy@arm.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/08/2019 18:40:42+0100, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
+On Mon, Aug 12, 2019 at 04:03:29PM +0100, Dave Martin wrote:
+> On Fri, Aug 09, 2019 at 02:22:40PM +0100, Mark Rutland wrote:
+> > SMCCC callers are currently amassing a collection of enums for the SMCCC
+> > conduit, and are having to dig into the PSCI driver's internals in order
+> > to figure out what to do.
+> > 
+> > Let's clean this up, with common SMCCC_CONDUIT_* definitions, and an
+> > arm_smccc_1_1_get_conduit() helper that abstracts the PSCI driver's
+> > internal state.
+> > 
+> > We can kill off the PSCI_CONDUIT_* definitions once we've migrated users
+> > over to the new interface.
+> > 
+> > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> > Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > Acked-by: Will Deacon <will.deacon@arm.com>
+> > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > ---
+> >  drivers/firmware/psci/psci.c | 15 +++++++++++++++
+> >  include/linux/arm-smccc.h    | 16 ++++++++++++++++
+> >  2 files changed, 31 insertions(+)
+> > 
+> > diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+> > index f82ccd39a913..5f31f1bea1af 100644
+> > --- a/drivers/firmware/psci/psci.c
+> > +++ b/drivers/firmware/psci/psci.c
+> > @@ -57,6 +57,21 @@ struct psci_operations psci_ops = {
+> >  	.smccc_version = SMCCC_VERSION_1_0,
+> >  };
+> >  
+> > +enum arm_smccc_conduit arm_smccc_1_1_get_conduit(void)
 > 
-> Variable ret is initialized to a value that is never read and it
-> is re-assigned later. The initialization is redundant and can be
-> removed.
-> 
-> Addresses-Coverity: ("Unused value")
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
-Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> Do we expect this to be specific to SMCCC v1.1?
 
-> ---
->  drivers/tty/serial/atmel_serial.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/tty/serial/atmel_serial.c b/drivers/tty/serial/atmel_serial.c
-> index 0b4f36905321..19a85d6fe3d2 100644
-> --- a/drivers/tty/serial/atmel_serial.c
-> +++ b/drivers/tty/serial/atmel_serial.c
-> @@ -2888,7 +2888,7 @@ static int atmel_serial_probe(struct platform_device *pdev)
->  	struct atmel_uart_port *atmel_port;
->  	struct device_node *np = pdev->dev.parent->of_node;
->  	void *data;
-> -	int ret = -ENODEV;
-> +	int ret;
->  	bool rs485_enabled;
->  
->  	BUILD_BUG_ON(ATMEL_SERIAL_RINGSIZE & (ATMEL_SERIAL_RINGSIZE - 1));
-> -- 
-> 2.20.1
-> 
+I intend it to be 1.1+
 
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+> > +{
+> > +	if (psci_ops.smccc_version < SMCCC_VERSION_1_1)
+> > +		return SMCCC_CONDUIT_NONE;
+> > +
+> > +	switch (psci_ops.conduit) {
+> > +	case PSCI_CONDUIT_SMC:
+> > +		return SMCCC_CONDUIT_SMC;
+> > +	case PSCI_CONDUIT_HVC:
+> > +		return SMCCC_CONDUIT_HVC;
+> > +	default:
+> > +		return SMCCC_CONDUIT_NONE;
+> > +	}
+> > +}
+> > +
+> >  typedef unsigned long (psci_fn)(unsigned long, unsigned long,
+> >  				unsigned long, unsigned long);
+> >  static psci_fn *invoke_psci_fn;
+> > diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+> > index 080012a6f025..df01a8579034 100644
+> > --- a/include/linux/arm-smccc.h
+> > +++ b/include/linux/arm-smccc.h
+> > @@ -80,6 +80,22 @@
+> >  
+> >  #include <linux/linkage.h>
+> >  #include <linux/types.h>
+> > +
+> > +enum arm_smccc_conduit {
+> > +	SMCCC_CONDUIT_NONE,
+> 
+> If this is intended to have the value 0, is it worth making that
+> explicit?  I can never remember whether enums start at 1 or 0 by
+> default...
+
+They start at 0. I intend that checks are done explicitly against an
+enum value, so I'm not sure that matters.
+
+Thanks,
+Mark.
+
+> 
+> > +	SMCCC_CONDUIT_SMC,
+> > +	SMCCC_CONDUIT_HVC,
+> > +};
+> 
+> [...]
+> 
+> Cheers
+> ---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
