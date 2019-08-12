@@ -2,51 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EDA089C86
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:24:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9924A89C8F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:24:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sU1ZsI4GLb321ltAfRaNksPUHa8u0sukzHB19/lal2U=; b=f0MwbBCaYPcq4i5PwyxcxxG/J
-	oGgNlGwH3s/6wsNccd0R0JbKKqY6x0i5dcsca5cXoIAqqBmvj/OvVrLog/DwRBbOEj75WpKoyZHne
-	gJIPrij6Q/u1YP3gbh711nSdqZ03bPAyKxDUum57/5t8DcPgO+N4GGLRBONgdnaTpq1/jrmRZnd/m
-	Le3ZnO+lBUszJB3swIOWEVIfZuLRxXEGpKWEssJAcEJudbbH3LuqHgyf13bZbFjjgEYYCf71/B3US
-	Uj3+ud0wRpbQIb6var7C0PPUPCpQkJ+OgmE9oL2ASNaTa1QoEmDH0IB7y6RyfLOymqKOa1KynUQiK
-	Pu/jfftWg==;
+	 bh=CroCOO88FIu2XVBXaYgHuEnU2jmajWebKrGSk2r2Mt4=; b=TwWcODNBUaHmV3CtjAy1SWnDK
+	MH69OZEkSWpkAVSDaELFMGf5jkBTl2Zg8Ofm2bW5yQz7S1RSiG3XnuXfGENxnnUS/2xUPWS9P5+We
+	d8qYA/g9lsuoe/AZBSLuGebzvBE+IN0QPKzpAU8eqTeitFNrznEBoYVwFOJeAjmBzwiYF8yYSEmui
+	cvR0tCDmWF7y1lIwN6APSKwGF9/woyzVAmAg1WRa8iVDIfcJtrUAgGyhpml8DLtmb8jJdkKrfMuyY
+	wGhz3i9sEFzzb7Yn2NNm21Bbf7mbsdnzeABjKbkImt5HMU0sF5kX5zbdOwB33UQWXsRiA2YgaI9l6
+	zrhnxfe/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx8Qh-0005lH-H7; Mon, 12 Aug 2019 11:23:59 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1hx8RO-00061k-7j; Mon, 12 Aug 2019 11:24:42 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx8QM-0005ka-RJ
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 11:23:40 +0000
+ id 1hx8R5-00060d-TQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 11:24:25 +0000
 X-Originating-IP: 86.250.200.211
 Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 75E3C20008;
- Mon, 12 Aug 2019 11:23:28 +0000 (UTC)
-Date: Mon, 12 Aug 2019 13:23:28 +0200
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id D35D31C0002;
+ Mon, 12 Aug 2019 11:24:11 +0000 (UTC)
+Date: Mon, 12 Aug 2019 13:24:11 +0200
 From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v6 0/2] Allwinner H6 SPDIF support
-Message-ID: <20190812112328.o6xznp2mvnuchswe@flea>
-References: <20190812105115.26676-1-peron.clem@gmail.com>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
+Subject: Re: [PATCH 03/11] clocksource: sun4i: Add missing compatibles
+Message-ID: <20190812112411.ty3npkq6ztbushhm@flea>
+References: <20190722081229.22422-1-maxime.ripard@bootlin.com>
+ <20190722081229.22422-3-maxime.ripard@bootlin.com>
+ <9df53981-d1b2-433c-e61f-7c000c71bc55@linaro.org>
+ <20190812091631.j2pr7i2zeput3hrc@flea>
+ <42ee55ee-258c-7588-fea3-db3c661a0156@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20190812105115.26676-1-peron.clem@gmail.com>
+In-Reply-To: <42ee55ee-258c-7588-fea3-db3c661a0156@linaro.org>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_042339_037347_15DAA245 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20190812_042424_129169_AD2073D0 
+X-CRM114-Status: GOOD (  11.69  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ low trust [217.70.183.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,38 +64,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
- Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ tglx@linutronix.de, Frank Rowand <frowand.list@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3272474765980125971=="
+Content-Type: multipart/mixed; boundary="===============2267208261649099083=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3272474765980125971==
+--===============2267208261649099083==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="jy2mseu76lv4s422"
+	protocol="application/pgp-signature"; boundary="chbync4osl7cj5bo"
 Content-Disposition: inline
 
 
---jy2mseu76lv4s422
-Content-Type: text/plain; charset=iso-8859-1
+--chbync4osl7cj5bo
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-On Mon, Aug 12, 2019 at 12:51:13PM +0200, Cl=E9ment P=E9ron wrote:
-> Allwinner H6 SoC has a SPDIF controller called One Wire Audio (OWA) which
-> is different from the previous H3 generation and not compatible.
+On Mon, Aug 12, 2019 at 11:21:50AM +0200, Daniel Lezcano wrote:
+> On 12/08/2019 11:16, Maxime Ripard wrote:
+> > Hi,
+> >
+> > On Mon, Aug 12, 2019 at 10:59:51AM +0200, Daniel Lezcano wrote:
+> >> On 22/07/2019 10:12, Maxime Ripard wrote:
+> >>> Newer Allwinner SoCs have different number of interrupts, let's add
+> >>> different compatibles for all of them to deal with this properly.
+> >>>
+> >>> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> >>
+> >> Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+> >
+> > Thanks!
+> >
+> > Can you merge this through your tree (along with the bindings)? I'll
+> > merge the DT patches
 >
-> Difference are an increase of fifo sizes, some memory mapping are differe=
-nt
-> and there is now the possibility to output the master clock on a pin.
->
-> Actually all these features are unused and only a bit for flushing the TX
-> fifo is required.
+> patches 1-4 then ?
 
-Applied both, thanks
-
+Yep, thanks!
 Maxime
 
 --
@@ -99,21 +111,21 @@ Maxime Ripard, Bootlin
 Embedded Linux and Kernel engineering
 https://bootlin.com
 
---jy2mseu76lv4s422
+--chbync4osl7cj5bo
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVFMLwAKCRDj7w1vZxhR
-xcPRAP0ebGBO67tqWojTHkbb+BtT7hi+/h6+hwFFzFt8mCG2RQD9GxoAuuARoreO
-CEPXNNW5FHOEKlw26Jh57e6Xkr2X1A8=
-=n+Qt
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVFMWwAKCRDj7w1vZxhR
+xRg7AP9AGyLnuIz1tKYeJZXcdHCdmVcPwADY+KkLmegiEm4mkwD/R7lwmli2RLhK
+8NMsjP1LNwEklTeR3aMbTsfrI1uvTw4=
+=0T8v
 -----END PGP SIGNATURE-----
 
---jy2mseu76lv4s422--
+--chbync4osl7cj5bo--
 
 
---===============3272474765980125971==
+--===============2267208261649099083==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -124,5 +136,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3272474765980125971==--
+--===============2267208261649099083==--
 
