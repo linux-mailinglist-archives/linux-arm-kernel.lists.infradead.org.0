@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BEF68A77A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 21:47:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 707718A790
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 21:52:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qGT4crlnsEy59rR0C/vBhYAIPXpVwV05G5VUXVtnjSI=; b=gXWrCvt6VI+IvU
-	fupoSHi1w4ZRwcH5LRqAiOXySKDeQN6H11aFHZyUatoNxJYwJ1T9EF1sYwSKZp6bEYLBo6v8u2yfP
-	CZw9vjddtVc/BHlpv55B2O7Xf/JXamnoewmb2pLb4KORhOgGNTBhPxIm71dQQ9sckiYtxyW/yoWE1
-	ml5DJjNnWX5UbXHOUe91X7jJ9Nf5mN19cqFMr4ERmCnkBare7mJ6P6nB8nvToOFR3iy/e8FhE6N5N
-	UTWn8zTKQMbA9CDmtXFSOWNNaLawsGw8L6aZj7TyA3cA8Qq1KCFD4awKp2TZeRDpwWb9E2t+GzlNg
-	2N52mRGQrhR/hX8gJ0gw==;
+	List-Owner; bh=4F9Xyw3D7pTryFyOp0G53q63sCOMuL6DjooLg1L5Pdk=; b=e0zItIHM8s8JXb
+	yHlyxO9tqTxXXtAtcjigZ2pmJ8VeFYAX3Sq4ONfY9g+SzzVHN4S3Uc5rjtGTRtlT7Btf9JYyM85hX
+	rmb4AhLktnzY5sAkJKE6LHAv/nzmvDgZ3VoQtam5hbjEHq2xzLjEM45b9ZJweQq/DiLMTLv4SDkSM
+	TFRv/c08GvPCpUdtgmNsX3FCI5E/SLDG8AC/IVkA6dI9LTA+OgRCm+Ebo874oMqbjAQUlU3rgA2xD
+	aygWu4XwuVAU3/t12rI39IVUl7KyNlQhSGiY1N8xxH5ONxT5y1MH8ZIQHxPWKY1K/31cA+CIOWLKT
+	CXl1Yi1ud1nsWtbrmWqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxGHk-00010q-9L; Mon, 12 Aug 2019 19:47:16 +0000
+	id 1hxGMy-0002gC-Mt; Mon, 12 Aug 2019 19:52:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxGHY-00010I-Bw
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 19:47:05 +0000
-Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
- [209.85.160.170])
+ id 1hxGMU-0002fh-U6
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 19:52:12 +0000
+Received: from mail-qk1-f177.google.com (mail-qk1-f177.google.com
+ [209.85.222.177])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5C29E2085A
+ by mail.kernel.org (Postfix) with ESMTPSA id 6D6CD2075B
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 19:47:03 +0000 (UTC)
+ Mon, 12 Aug 2019 19:52:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565639223;
- bh=gbsmrMPddSxxadzx4LbWD73OWFywYXXRX4TrDQhuD34=;
+ s=default; t=1565639530;
+ bh=9uCqcZ7pE/p3iqj1BkvfAc1CGK2aQmF1BjqLAbmYehU=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=qeaq8oDKtFymRNc+PylRKzYspbegh+5NF8+13536zkBIQX00uF/TGUGv7ERys+Wgx
- OZaZEocFaDzwcR3N/3q6nhsrkdHhWU6CoYRQC1D7ws8QhEd6H0ONmK9pnLGfMsQMD3
- u48aCx7G7GSfaaZ1DCbDuxjMk2OzzQg4t2Jd5HrM=
-Received: by mail-qt1-f170.google.com with SMTP id q4so6900703qtp.1
+ b=fI7mxdeUfP7enoyrkJfamrxaSYCetiUpXD/K6TL5jtbawK9oqvwBGKea29PJwcXdy
+ mCMN+twO+4ip1BHBbmFpBxxGPT3dPJ83XltPbqS5WeAgvOqxY5KX35eOcay26pLFFQ
+ CG0fKil0uRkV+tb9VnHR7Nme9fIZ6SoHAFLA3RQQ=
+Received: by mail-qk1-f177.google.com with SMTP id 125so4870300qkl.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 12:47:03 -0700 (PDT)
-X-Gm-Message-State: APjAAAU+pDfiv6/6/zB88xXFrtqjSbnJlvxj6mJ0ZiiNqv5g+JtDQp8O
- gOqOVgd+NE5pJ2NOQrGfY5epCEcn4bOBK5ClZQ==
-X-Google-Smtp-Source: APXvYqx9uWEvSTWXRvuMQbtv/sqVk/coICqllSDh3WmkM5dZr4ZJb/kPYXz6IcU9nLuN6tc97SrlM/c6aW08otez3Hc=
-X-Received: by 2002:ad4:4050:: with SMTP id r16mr6580061qvp.200.1565639222506; 
- Mon, 12 Aug 2019 12:47:02 -0700 (PDT)
+ Mon, 12 Aug 2019 12:52:10 -0700 (PDT)
+X-Gm-Message-State: APjAAAWOy1RZrNqiAScR6UlEoO2Zjt0D57Ydzsd9Tt74Uq5KEJ0I5nuw
+ bXjTlCuQjFkP4Sx/ZJJ0PgV/OXz6sF+Ol3IUbw==
+X-Google-Smtp-Source: APXvYqwwLQrQl/3qr9l9hCi32QT/QmiDSaWwPfSaBPzEWwjlgQK/Oh9Wo1UWaCQ3HzMu9T4YG8bY9Q3DTx5u+6Olp/Q=
+X-Received: by 2002:a37:a44a:: with SMTP id n71mr30534758qke.393.1565639529456; 
+ Mon, 12 Aug 2019 12:52:09 -0700 (PDT)
 MIME-Version: 1.0
 References: <cover.1565633880.git.leonard.crestez@nxp.com>
- <97b0bff95ddb85b06ef3d2f8079faa36562a956d.1565633880.git.leonard.crestez@nxp.com>
-In-Reply-To: <97b0bff95ddb85b06ef3d2f8079faa36562a956d.1565633880.git.leonard.crestez@nxp.com>
+ <4cbddd75652c63aab19866c93faa0b784b56d53f.1565633880.git.leonard.crestez@nxp.com>
+In-Reply-To: <4cbddd75652c63aab19866c93faa0b784b56d53f.1565633880.git.leonard.crestez@nxp.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 12 Aug 2019 13:46:50 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJWpQN2oTm8Q2_Gzd0GJ+YZoc9j-zh-U1s4eGhMxDEmEA@mail.gmail.com>
-Message-ID: <CAL_JsqJWpQN2oTm8Q2_Gzd0GJ+YZoc9j-zh-U1s4eGhMxDEmEA@mail.gmail.com>
-Subject: Re: [PATCH 2/7] dt-bindings: devfreq: Add bindings for generic imx
- buses
+Date: Mon, 12 Aug 2019 13:51:57 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+5zp1nW=sNtU_+wdUO9KJ4ABWjdX=R9DHjBsgygTxV6g@mail.gmail.com>
+Message-ID: <CAL_Jsq+5zp1nW=sNtU_+wdUO9KJ4ABWjdX=R9DHjBsgygTxV6g@mail.gmail.com>
+Subject: Re: [PATCH 4/7] dt-bindings: devfreq: Add bindings for imx ddr
+ controller
 To: Leonard Crestez <leonard.crestez@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_124704_455322_64DE422E 
-X-CRM114-Status: GOOD (  21.45  )
+X-CRM114-CacheID: sfid-20190812_125211_272320_B6938BE5 
+X-CRM114-Status: GOOD (  18.78  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -107,98 +107,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 12:49 PM Leonard Crestez
+On Mon, Aug 12, 2019 at 12:50 PM Leonard Crestez
 <leonard.crestez@nxp.com> wrote:
 >
-> Add initial dt bindings for the interconnects inside i.MX chips.
-> Multiple external IPs are involved but SOC integration means the
-> software controllable interfaces are very similar.
->
-> This is initially only for imx8mm but add an "fsl,imx8m-nic" fallback
-> similar to exynos-bus.
+> Add devicetree bindings for the i.MX DDR Controller on imx8m series
+> chips. It supports dynamic frequency switching between multiple data
+> rates and this is exposed to Linux via the devfreq subsystem.
 >
 > Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 > ---
->  .../devicetree/bindings/devfreq/imx.yaml      | 50 +++++++++++++++++++
->  1 file changed, 50 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/devfreq/imx.yaml
+>  .../devicetree/bindings/devfreq/imx-ddrc.yaml | 53 +++++++++++++++++++
+>  1 file changed, 53 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml
 >
-> diff --git a/Documentation/devicetree/bindings/devfreq/imx.yaml b/Documentation/devicetree/bindings/devfreq/imx.yaml
+> diff --git a/Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml b/Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml
 > new file mode 100644
-> index 000000000000..0e2ee3a5205e
+> index 000000000000..fa20280a682f
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/devfreq/imx.yaml
-> @@ -0,0 +1,50 @@
+> +++ b/Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml
+> @@ -0,0 +1,53 @@
 > +# SPDX-License-Identifier: GPL-2.0
 > +%YAML 1.2
 > +---
 > +$id: http://devicetree.org/schemas/devfreq/imx.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: Generic i.MX bus frequency device
+> +title: i.MX DDR Controller
 > +
 > +maintainers:
 > +  - Leonard Crestez <leonard.crestez@nxp.com>
 > +
-> +description: |
-> +  The i.MX SoC family has multiple buses for which clock frequency (and sometimes
-> +  voltage) can be adjusted.
-> +
-> +  Some of those buses expose register areas mentioned in the memory maps as GPV
-> +  ("Global Programmers View") but not all. Access to this area might be denied for
-> +  normal world.
-> +
-> +  The buses are based on externally licensed IPs such as ARM NIC-301 and Arteris
-> +  FlexNOC but DT bindings are specific to the integration of these bus
-> +  interconnect IPs into imx SOCs.
-
-No need to use the interconnect binding?
-
-> +
 > +properties:
 > +  compatible:
 > +    contains:
+
+Don't use 'contains'.
+
 > +      enum:
-> +       - fsl,imx8m-noc
-> +       - fsl,imx8m-nic
-
-This means any combination of these 2 strings is valid. I suspect you
-want a given node to have only one of them, so drop 'contains'
-
+> +       - fsl,imx8m-ddrc
 > +
 > +  reg:
 > +    maxItems: 1
-> +    description: GPV area
+> +    description: DDR Controller registers
+
+Don't really need a description for a standard property with a single item.
+
 > +
 > +  clocks:
-> +    maxItems: 1
+> +    minItems: 5
+
+Just maxItems is sufficient unless there's a variable number of items.
+
+> +    maxItems: 5
+> +
+> +  clock-names:
+> +    items:
+> +      - const: dram_core
+> +      - const: dram_pll
+> +      - const: dram_alt_root
+> +      - const: dram_alt
+> +      - const: dram_apb
 > +
 > +required:
+> +  - reg
 > +  - compatible
 > +  - clocks
+> +  - clock-names
 
-reg?
+You should add an 'additionalProperties: false' here.
 
 > +
 > +examples:
 > +  - |
 > +    #include <dt-bindings/clock/imx8mm-clock.h>
-> +    noc: noc@32700000 {
-> +            compatible = "fsl,imx8mm-noc", "fsl,imx8m-noc";
+> +    ddrc: dram-controller@3d400000 {
+> +        compatible = "fsl,imx8mm-ddrc", "fsl,imx8m-ddrc";
+> +        reg = <0x3d400000 0x400000>;
+> +        clock-names = "dram_core", "dram_pll", "dram_alt_root", "dram_alt", "dram_apb";
+> +        clocks = <&clk IMX8MM_CLK_DRAM_CORE>,
+> +                 <&clk IMX8MM_DRAM_PLL>,
+> +                 <&clk IMX8MM_CLK_DRAM_ALT_ROOT>,
+> +                 <&clk IMX8MM_CLK_DRAM_ALT>,
+> +                 <&clk IMX8MM_CLK_DRAM_APB>;
+> +        operating-points-v2 = <&ddrc_opp_table>;
 
-Doesn't match the schema. (Well, it does with 'contains', but
-fsl,imx8mm-noc is not documented.)
+Not documented. You can assume a common property has a type definition
+already (this one doesn't yet), so just this is enough:
 
-> +            reg = <0x32700000 0x100000>;
-> +            clocks = <&clk IMX8MM_CLK_NOC>;
-> +            operating-points-v2 = <&noc_opp_table>;
-
-Not documented.
-
-> +    };
-> --
-> 2.17.1
->
+operating-points-v2: true
 
 _______________________________________________
 linux-arm-kernel mailing list
