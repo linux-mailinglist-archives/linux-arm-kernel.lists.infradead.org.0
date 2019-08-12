@@ -2,75 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B393589A99
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:57:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B9A789ABF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 12:03:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Cz24F/my4yiXRVOCSM/XI0l2M3KqhUoK3mnoj4uCJiU=; b=Jiu5ZSSONO+a0Z4JHCQ886h3T
-	4hgNCQG8GW/D4SCgHDYKP37CArMUwSbFFzEiixTvnK4t95s0dldC/7pMbFhzFbB/uFs0Nju1uqnsO
-	vTEtPUUrx05myJjyOacgnJnwdb5X7nXMlMszEYs+SN5j+ButpXMjYpeAUO5n4Vrxca137zwWalwZL
-	3BTRGDn5AKn6n2Lq1B/BphTjVoyf7FCnMlh5M+5JDk76nXGnU6hwtXBKqpw6yDGiycfBAeCoKixar
-	/cSqnjmUiZ7i7EHw9i6hHhNn4qXGXOa0zm0DHXOJC9almanDXAcMernoE9RUgaBpvabd3vZPQa9/6
-	W4RdBwvPg==;
+	 bh=SECTUE8PE887FY0PnzKH5A848/uio8syYfFV0AP8EwM=; b=JwSiLm8adDB5+zbUy/Y8xqw1R
+	SA4g3qkbkbfqegDMAIhF2cCG+xOzIWgyPc8iGZNjJzEX2kdn24Gdxt9hwSRuRV3rHZV2lgifqXYG9
+	5eM1i4O3HMEoSPq0ttse668A4F/oeBQcN5YvDeVjtqqXsBvvb/vVQC8BYI3hT7QxQwTH9DeJtk9n1
+	/Xj3r/bg5DYvSozmPibezZ76a1H4jjnWAmIFPlYciyeGc+vvDBFpyYJ5Yknjg9ZZTCrMt/b4t94Yn
+	YxuxZsW5FZBNxFVmP92Z7EwBEaZA88E0WgOrPRzS4v/1MKaZbAUgcuTtFBbsNmhietDNe/J6NlIl3
+	8VY5gfhuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx74X-0000u3-Vg; Mon, 12 Aug 2019 09:57:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hx7AK-0003TV-Ov; Mon, 12 Aug 2019 10:03:00 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx74N-0000tj-7h
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:56:52 +0000
+ id 1hx7A3-0003T4-1v
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 10:02:45 +0000
+X-Originating-IP: 86.250.200.211
 Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 566DF20684;
- Mon, 12 Aug 2019 09:56:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565603810;
- bh=A/SJfvATSN4T2NeYtNmguvU9gqhiJKXOJJn0Qjv6oQE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=iItkMi36gaqy4MhKshF+dGQNN0Zz+ZyUELM2LtQSLosN6wpAzb1ebD/H5Hg0gejle
- WCA8vVQE/s/0A7QtiRWiXQPCaZPw4VjwAzC0VvlmAmQQbe++cXcoFzouq2/vmwKqKS
- X2ZQ9kpI83x/JoKAafPqQWYYJ6SS/otgQMBRG5CU=
-Date: Mon, 12 Aug 2019 11:56:48 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [linux-sunxi] Re: [PATCH 4/6] pwm: sun4i: Add support for H6 PWM
-Message-ID: <20190812095648.wuefcr2mep3dpkth@flea>
-References: <20190726184045.14669-1-jernej.skrabec@siol.net>
- <173825848.1FZsmuHfpq@jernej-laptop>
- <20190729185108.tpilwoooxvi2z72e@pengutronix.de>
- <2452836.v7ux4bnEjb@jernej-laptop>
- <20190730080900.hhxrqun7vk4nsj2h@pengutronix.de>
- <20190730170601.a7ei43wku6jsjanu@flea>
- <20190731065230.mqbtn5sfoxrkevw5@pengutronix.de>
+ [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 0A47560008;
+ Mon, 12 Aug 2019 10:02:31 +0000 (UTC)
+Date: Mon, 12 Aug 2019 12:02:31 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Re: [linux-sunxi] Re: [PATCH v4 6/9] ASoC: sun4i-i2s: Add multi-lane
+ functionality
+Message-ID: <20190812100231.wlxitekfojr4jaki@flea>
+References: <20190603174735.21002-1-codekipper@gmail.com>
+ <2092329.vleAuWJ0xl@jernej-laptop>
+ <20190731122953.2u3iabd6gkn7jv7k@flea>
+ <1589203.0AjJVEASy3@jernej-laptop>
+ <CAGb2v66D4-QvWYPXE=rf6Zv93X1LjnxUgpk+5wdAL_b7MM3vaA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190731065230.mqbtn5sfoxrkevw5@pengutronix.de>
+In-Reply-To: <CAGb2v66D4-QvWYPXE=rf6Zv93X1LjnxUgpk+5wdAL_b7MM3vaA@mail.gmail.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_025651_325988_857B1FAB 
-X-CRM114-Status: GOOD (  41.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190812_030243_402604_D79FCB99 
+X-CRM114-Status: GOOD (  34.88  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,170 +67,222 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
- Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>,
- devicetree <devicetree@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, linux-sunxi@googlegroups.com,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- kernel@pengutronix.de, Frank Rowand <frowand.list@gmail.com>,
+Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
+ "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
+ Christopher Obbard <chris@64studio.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@gmail.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Code Kipper <codekipper@gmail.com>, linux-sunxi <linux-sunxi@googlegroups.com>,
+ Mark Brown <broonie@kernel.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1313817414640285454=="
+Content-Type: multipart/mixed; boundary="===============6081365439834097528=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1313817414640285454==
+--===============6081365439834097528==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="y6c37fu3l6pxfrzu"
+	protocol="application/pgp-signature"; boundary="4tzqsccmfdz6gxrw"
 Content-Disposition: inline
 
 
---y6c37fu3l6pxfrzu
-Content-Type: text/plain; charset=iso-8859-1
+--4tzqsccmfdz6gxrw
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Jul 31, 2019 at 08:52:30AM +0200, Uwe Kleine-K=F6nig wrote:
-> On Tue, Jul 30, 2019 at 07:06:01PM +0200, Maxime Ripard wrote:
-> > On Tue, Jul 30, 2019 at 10:09:00AM +0200, Uwe Kleine-K=F6nig wrote:
-> > > Hello Rob and Frank,
+On Tue, Aug 06, 2019 at 02:22:13PM +0800, Chen-Yu Tsai wrote:
+> On Thu, Aug 1, 2019 at 1:32 PM Jernej =C5=A0krabec <jernej.skrabec@gmail.=
+com> wrote:
+> >
+> > Dne sreda, 31. julij 2019 ob 14:29:53 CEST je Maxime Ripard napisal(a):
+> > > On Tue, Jul 30, 2019 at 07:57:10PM +0200, Jernej =C5=A0krabec wrote:
+> > > > Dne torek, 04. junij 2019 ob 11:38:44 CEST je Code Kipper napisal(a=
+):
+> > > > > On Tue, 4 Jun 2019 at 11:02, Christopher Obbard <chris@64studio.c=
+om>
+> > wrote:
+> > > > > > On Tue, 4 Jun 2019 at 09:43, Code Kipper <codekipper@gmail.com>=
+ wrote:
+> > > > > > > On Tue, 4 Jun 2019 at 09:58, Maxime Ripard
+> > > > > > > <maxime.ripard@bootlin.com>
+> > > >
+> > > > wrote:
+> > > > > > > > On Mon, Jun 03, 2019 at 07:47:32PM +0200, codekipper@gmail.=
+com
+> > wrote:
+> > > > > > > > > From: Marcus Cooper <codekipper@gmail.com>
+> > > > > > > > >
+> > > > > > > > > The i2s block supports multi-lane i2s output however this
+> > > > > > > > > functionality
+> > > > > > > > > is only possible in earlier SoCs where the pins are expos=
+ed and
+> > > > > > > > > for
+> > > > > > > > > the i2s block used for HDMI audio on the later SoCs.
+> > > > > > > > >
+> > > > > > > > > To enable this functionality, an optional property has be=
+en
+> > > > > > > > > added to
+> > > > > > > > > the bindings.
+> > > > > > > > >
+> > > > > > > > > Signed-off-by: Marcus Cooper <codekipper@gmail.com>
+> > > > > > > >
+> > > > > > > > I'd like to have Mark's input on this, but I'm really worri=
+ed
+> > > > > > > > about
+> > > > > > > > the interaction with the proper TDM support.
+> > > > > > > >
+> > > > > > > > Our fundamental issue is that the controller can have up to=
+ 8
+> > > > > > > > channels, but either on 4 lines (instead of 1), or 8 channe=
+ls on 1
+> > > > > > > > (like proper TDM) (or any combination between the two, but =
+that
+> > > > > > > > should
+> > > > > > > > be pretty rare).
+> > > > > > >
+> > > > > > > I understand...maybe the TDM needs to be extended to support =
+this to
+> > > > > > > consider channel mapping and multiple transfer lines. I was t=
+hinking
+> > > > > > > about the later when someone was requesting support on IIRC a=
+ while
+> > > > > > > ago, I thought masking might of been a solution. These can wa=
+it as
+> > > > > > > the
+> > > > > > > only consumer at the moment is LibreELEC and we can patch it =
+there.
+> > > > > >
+> > > > > > Hi Marcus,
+> > > > > >
+> > > > > > FWIW, the TI McASP driver has support for TDM & (i think?) mult=
+iple
+> > > > > > transfer lines which are called serializers.
+> > > > > > Maybe this can help with inspiration?
+> > > > > > see
+> > > > > > https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.=
+git/tre
+> > > > > > e/s
+> > > > > > ound/soc/ti/davinci-mcasp.c sample DTS:
+> > > > > >
+> > > > > > &mcasp0 {
+> > > > > >
+> > > > > >     #sound-dai-cells =3D <0>;
+> > > > > >     status =3D "okay";
+> > > > > >     pinctrl-names =3D "default";
+> > > > > >     pinctrl-0 =3D <&mcasp0_pins>;
+> > > > > >
+> > > > > >     op-mode =3D <0>;
+> > > > > >     tdm-slots =3D <8>;
+> > > > > >     serial-dir =3D <
+> > > > > >
+> > > > > >         2 0 1 0
+> > > > > >         0 0 0 0
+> > > > > >         0 0 0 0
+> > > > > >         0 0 0 0
+> > > > > >     >
+> > > > > >     >;
+> > > > > >
+> > > > > >     tx-num-evt =3D <1>;
+> > > > > >     rx-num-evt =3D <1>;
+> > > > > >
+> > > > > > };
+> > > > > >
+> > > > > > Cheers!
+> > > > >
+> > > > > Thanks, this looks good.
+> > > >
+> > > > I would really like to see this issue resolved, because HDMI audio =
+support
+> > > > in mainline Linux for those SoCs is long overdue.
+> > > >
+> > > > However, there is a possibility to still add HDMI audio suport (ste=
+reo
+> > > > only) even if this issue is not completely solved. If we agree that
+> > > > configuration of channels would be solved with additional property =
+as
+> > > > Christopher suggested, support for >2 channels can be left for a la=
+ter
+> > > > time when support for that property would be implemented. Currently,
+> > > > stereo HDMI audio support can be added with a few patches.
+> > > >
+> > > > I think all I2S cores are really the same, no matter if internally
+> > > > connected to HDMI controller or routed to pins, so it would make se=
+nse to
+> > > > use same compatible for all of them. It's just that those I2S cores=
+ which
+> > > > are routed to pins can use only one lane and >2 channels can be use=
+d only
+> > > > in TDM mode of operation, if I understand this correctly.
+> > > >
+> > > > New property would have to be optional, so it's omission would resu=
+lt in
+> > > > same channel configuration as it is already present, to preserve
+> > > > compatibility with old device trees. And this mode is already suffi=
+cient
+> > > > for stereo HDMI audio support.
 > > >
-> > > Maxime and Jernej on one side and me on the other cannot agree about a
-> > > detail in the change to the bindings here. I'm trying to objectively
-> > > summarize the situation for you to help deciding what is the right th=
-ing
-> > > to do here.
+> > > Yeah, it looks like a good plan.
 > > >
-> > > TLDR: The sun4i pwm driver is extended to support a new variant of th=
-at
-> > > device on the H6 SoC. Compared to the earlier supported variants
-> > > allwinner,sun50i-h6-pwm on H6 needs to handle a reset controller and =
-an
-> > > additional clock.
+> > > > Side note: HDMI audio with current sun4i-i2s driver has a delay (ab=
+out a
+> > > > second), supposedly because DW HDMI controller automatically genera=
+tes CTS
+> > > > value based on I2S clock (auto CTS value generation is enabled per
+> > > > DesignWare recomendation for DW HDMI I2S interface).
 > > >
-> > > The two positions are:
+> > > Is that a constant delay during the audio playback, or only at startu=
+p?
+> >
+> > I think it's just at startup, e.g. if you're watching movie, audio is i=
+n sync,
+> > it's just that first second or so is silent.
+> >
 > > >
-> > >  - We need a new compatible because only then the driver and/or the dt
-> > >    schema checker can check that each "allwinner,sun50i-h6-pwm" device
-> > >    has a reset property and a "bus" clock; and the earlier variants
-> > >    don't.
+> > > > I2S driver from BSP Linux solves that by having I2S clock output
+> > > > enabled all the time. Should this be flagged with some additional
+> > > > property in DT?
+> > >
+> > > I'd say that if the codec has that requirement, then it should be
+> > > between the codec and the DAI, the DT doesn't really have anything to
+> > > do with this.
 > >
-> > There is two topics here, really. The binding itself really must have
-> > those properties as required.
-> >
-> > You had an analogy before that we shouldn't really do that, since it
-> > would be verification and that it would be similar to checking whether
-> > the register range was right. This analogy isn't correct, a better one
-> > would be checking that the register range exists in the first place.
+> > Ok, but how to communicate that fact to I2S driver then? BSP driver sol=
+ves
+> > that by using different compatible, but as I said before, I2S cores are=
+ not
+> > really different, so this seems wrong.
 >
-> The relevant difference is that *all* devices supported by the driver
-> have to have a register range. Compared to that only a subset of the
-> devices have to have a bus clock.
+> Maybe we could make the DW-HDMI I2S driver require the I2S clock be on all
+> the time? You wouldn't need any changes to the DT.
 
-That's true, but it still have nothing to do with validating its
-presence vs its content. We never even mentionned the latter.
+That's an option, but I'd really like to avoid it if possible.
 
-> > Indeed, if you don't have a register range, you have no register to
-> > write to, and that's a showstopper for any driver. I'm pretty sure we
-> > all agree on that. But on those SoCs, like Chen-Yu said, having no
-> > resets or clocks properties result in an equally bad result: either
-> > any write to that device is completely ignored (missing reset), or the
-> > system completely (and silently) locks up (missing bus clock).
-> >
-> > We *have* to catch that somehow and not let anything like that happen.
->
-> IIUC both the clock and the reset stuff is SoC specific, so it's the
-> same for all machines with the H6, right?
+I guess we could also just add a delay in the powerup path in the HDMI
+case? Would it work?
 
-Indeed
-
-> So assuming this is correctly contained in the h6.dtsi, in which
-> cases can this go wrong? I only see the cases that the dts author
-> includes the wrong dtsi or overrides stuff.
-
-The bootloader passed by the bootloader is not meant for Linux but for
-another OS, the bootloader loaded a DT not meant for mainline but some
-BSP that happen to have the same compatible, the user has applied a
-work in progress patch to its DT, and then updates the kernel, the
-user applied a poorly written overlay, etc...
-
-We really shouldn't support those cases in the first place, but a
-silent lockup of the system is the worst way to treat those errors.
-
-> In the first case a non-working PWM is probably one of the smaller
-> problems and the second is something we're not really able to catch.
->
-> But even if each machine's dts author has to get this right, I don't
-> think the dts schema is the right place to assert this.
-
-We shouldn't assert this *only* in the schema, but if it's cheap and
-it can catch some mistakes, then why not?
-
-Worst case scenario, the DTSI will be correct all the time, and it
-will never generate any error. Just like 90% of all the constraints in
-the schemas.
-
-> > That being said, we can't really validate that the clock pointed is
-> > the right one, just like we can't really check that the register range
-> > is the proper one. Or rather, we could, but it's completely
-> > impractical and we do agree on that as well.
-> >
-> > Having the bus clock and reset line being required however is only a
-> > few lines in the binding though, and is very practical.
-> >
-> > >  - The driver can be simpler and the device specific knowledge is only
-> > >    in a single place (the dt) if the device tree is considered valid =
-and
-> > >    a reset property and "bus" clock is used iff it's provided in the
-> > >    device tree without additional comparison for the compatible.
-> >
-> > And now we have the discussion on how it's implemented in a
-> > driver. Since it's pretty cheap to implement (only a couple of lines:
-> > two for the if block, one for the additional field in the structure,
-> > one for each SoC using that) and have huge benefits (not silently
-> > locking up the system at boot), then I'd say we should go for it.
->
-> Right, it's only a few lines. Still it (IMHO needlessly) complicates the
-> driver. From the driver's POV the device tree defines the
-> characteristics of the device and if the dts defines an h6-pwm without a
-> bus clock then maybe this is the PWM on the next generation SoC that
-> doesn't need it. And maybe you're happy in a few year's time when you
-> don't have to touch the driver again for this next generation SoC
-> because the driver is not only simpler but also flexible enough to
-> handle the new PWM without adaptions.
-
-You've been doing SoC support for a while, how many times did this
-truly happen to you, whithout a single change to the driver?
-
-> All in all I don't care much about the dt schema stuff, I want to keep
-> the driver simple. So if we agree that the schema ensures that the h6
-> pwms have a reset and a bus clock and we just use reset_get_optional and
-> clk_get_optional that's a compromise I can agree to.
-
-Fine, let's do that then
-
-Maxime
+maxime
 
 --
 Maxime Ripard, Bootlin
 Embedded Linux and Kernel engineering
 https://bootlin.com
 
---y6c37fu3l6pxfrzu
+--4tzqsccmfdz6gxrw
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVE34AAKCRDj7w1vZxhR
-xfjsAQCi9p+sgp4RxEbNUMzq8rb2Y4T0OeR6wlO/kDxLFLmeSwEAymvqet93MIGN
-uZGgT9hgrlKJk45BOiroEe9Jc98oBgA=
-=VVaB
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVE5NwAKCRDj7w1vZxhR
+xaLkAP9Dau8CFZaqjfYlG8eEMwwmDGnmJ3Qb+OfrtRI9IxfL8AEA9pf3QqqQHWty
+49bPYoHYZSaMSKd3MPMDdPL5aONO1Q8=
+=l/Kl
 -----END PGP SIGNATURE-----
 
---y6c37fu3l6pxfrzu--
+--4tzqsccmfdz6gxrw--
 
 
---===============1313817414640285454==
+--===============6081365439834097528==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -256,5 +293,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1313817414640285454==--
+--===============6081365439834097528==--
 
