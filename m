@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54DE58A6B0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 20:58:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AD878A6B7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 20:58:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hVU5XF6RPAniWa2qkZydtAelUFuPfRL5vCBk9cLMtpY=; b=mu5lDzCC7rq6ER
-	X2GABMQC6wHrY+Q6twmc91KtPAMlMwTGz7XatUl0Gv74+tIpJfeXJdOvwSWshkZxgnY+rqpDRqxod
-	QPyngDuIYgxi3gDW33Gvfk4wji/+KskhFfnruyeHmGC3l7T4nSq2TLhxoFN8sm/r7xthzLfTi6bpP
-	jrkDUkQ3/crecpj28y/qltNCdumVKOo2TbPdNA4TvJ1JozeS+x+KfIZUGpS/ErqS+fEhOukbuDV2o
-	kBa/4QhT8OkgCDAZFiWCS1+zd1yuygCuMjvDpOfP9p3F8nK4A9+Ku6sueDNOD/JmVcN8i/GFQKaQH
-	uHI5w7A0exAOJgv5bVfQ==;
+	List-Owner; bh=zHEQytxiWs2yMRSTz/jUDlCbXzc8HpZ6WquhbCxPx8w=; b=Zv1VAwjkE/CyCx
+	H0+z7scGDMlTnPqECf9+0JqCuPLG4uY1qNdqRkzSI9dzJ4sBamvvVHI44okEc5JAJWXj/fxdADEBY
+	Ze9feOy7fEHWdm14fdkkYnziZFi5qZF2W8ZElbBtM7qSMwoZ5QNYAa/vxhdSbObBYW82c4rxtb26Y
+	v8ZcqYsPYts2KS3Xf1BgS/ztpziaEBefH2rADzn3AkwYLjy6psA6ZiFlUJmznfFzXCVaNWxVaQ0C7
+	4V0S6ug+zbrFelYhtx3kD/oR0sHB0NEvr+lsYssr+ufouHjjtV0Ql8Nj0t3bXVR0RrYFBSn5eBtKs
+	DoqRdFpMghwP4Q9ls1yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxFWP-0000fe-8h; Mon, 12 Aug 2019 18:58:21 +0000
+	id 1hxFWt-0000yl-Cb; Mon, 12 Aug 2019 18:58:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxFW9-0000ee-Qp
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 18:58:07 +0000
-Received: from mail-qt1-f173.google.com (mail-qt1-f173.google.com
- [209.85.160.173])
+ id 1hxFWd-0000y8-K5
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 18:58:36 +0000
+Received: from mail-qt1-f171.google.com (mail-qt1-f171.google.com
+ [209.85.160.171])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 55D4521874
+ by mail.kernel.org (Postfix) with ESMTPSA id 2ED5C206C1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 18:58:02 +0000 (UTC)
+ Mon, 12 Aug 2019 18:58:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565636282;
- bh=/KjUbN4S4cg6Wx088EupOk/aYRMhP1qDGEYMVvueRVE=;
+ s=default; t=1565636315;
+ bh=R7sUkUsIyBVyM0xgwC6ssrjHDpSaec6rd52f5BsBnQI=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=D9qYsj5LWfjHJ6CObn5s8xYmjgy/0hM3xZQLPkyi+bEQMpTUOB11WHBj+7uTsOGWK
- +XFIipl/LQjiE/0WJwZ09DwMmBmLh1K8rBHS8DYmzSFSKtJggAcXh6Du24YE6yfpba
- yQm9lmLzh1eWiOh1Gx4T+IxnWgs47wpfsdd1TAkk=
-Received: by mail-qt1-f173.google.com with SMTP id v38so11525215qtb.0
+ b=Q/p1uiloLNDD1JaGaTSp7kW8zk6vGVCwMeJHmjWRFZ8xwSTKj2dI3Ll9JxRE/wjhA
+ 0vRCmaNuDX7okExuF58HoslSn7oeke6LU1HaWU5rDPsFMYcd3uQH/hUXkooSdx8cB1
+ vpIN7FKvtlyV9vVkX4BVNAmJyb9jELe++tKI/mho=
+Received: by mail-qt1-f171.google.com with SMTP id b11so4127621qtp.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 11:58:02 -0700 (PDT)
-X-Gm-Message-State: APjAAAU8g2RI4MFT93irsFZZCXKPbevDyvvO1oqrQtbAWQAUtqvm9RGO
- 0+b83WxRdtCGsnr7at6f2DuvBvn5G1ExpBSwXg==
-X-Google-Smtp-Source: APXvYqyRqIRy/JRTGiKAgusS3nr3ls85FyjwyvVTVo4EiRNmt609rPVypfT2vXE1taQf0kjr/XZde/uV4mb154zysxo=
-X-Received: by 2002:aed:24f4:: with SMTP id u49mr3150956qtc.110.1565636281433; 
- Mon, 12 Aug 2019 11:58:01 -0700 (PDT)
+ Mon, 12 Aug 2019 11:58:35 -0700 (PDT)
+X-Gm-Message-State: APjAAAWFoDxG2dfl+hmytfwnI0t6nALgOJR7IrbO5zO8pjkNC/7R+VuU
+ bLIwzirN+5F/FS/ios8jqo4/VUsE49tHK4N6Fw==
+X-Google-Smtp-Source: APXvYqzFjlTyS2m8jvSL/rEOx3inN5YXegwV3lD2MVMO9vmnvZIOtTu5uyTMAAy7H8+QyiC/chnN1YS23chwygY3KUU=
+X-Received: by 2002:ac8:44c4:: with SMTP id b4mr19765999qto.224.1565636314436; 
+ Mon, 12 Aug 2019 11:58:34 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190809093158.7969-1-lkundrak@v3.sk>
- <20190809093158.7969-2-lkundrak@v3.sk>
-In-Reply-To: <20190809093158.7969-2-lkundrak@v3.sk>
+References: <20190809112853.15846-1-stefan-gabriel.mirea@nxp.com>
+ <20190809112853.15846-2-stefan-gabriel.mirea@nxp.com>
+In-Reply-To: <20190809112853.15846-2-stefan-gabriel.mirea@nxp.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 12 Aug 2019 12:57:48 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLyQjRNONDQT=RM0kYzztd4PdsSZssjiVfd8WUwCjFUVA@mail.gmail.com>
-Message-ID: <CAL_JsqLyQjRNONDQT=RM0kYzztd4PdsSZssjiVfd8WUwCjFUVA@mail.gmail.com>
-Subject: Re: [PATCH 01/19] dt-bindings: arm: cpu: Add Marvell MMP3 SMP enable
- method
-To: Lubomir Rintel <lkundrak@v3.sk>
+Date: Mon, 12 Aug 2019 12:58:22 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJkTzcUnDCoWH9DP9LpwpdBh3wWHzPVfg=ieTTZet92pw@mail.gmail.com>
+Message-ID: <CAL_JsqJkTzcUnDCoWH9DP9LpwpdBh3wWHzPVfg=ieTTZet92pw@mail.gmail.com>
+Subject: Re: [PATCH v2 1/6] dt-bindings: arm: fsl: Add the S32V234-EVB board
+To: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_115805_892069_853F9246 
-X-CRM114-Status: GOOD (  11.88  )
+X-CRM114-CacheID: sfid-20190812_115835_677851_05375662 
+X-CRM114-Status: GOOD (  10.38  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,31 +86,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
- Marc Zyngier <maz@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Olof Johansson <olof@lixom.net>,
- Thomas Gleixner <tglx@linutronix.de>, linux-clk <linux-clk@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Eddy Petrisor <eddy.petrisor@nxp.com>, "will@kernel.org" <will@kernel.org>,
+ "corbet@lwn.net" <corbet@lwn.net>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "jslaby@suse.com" <jslaby@suse.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>,
+ "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 9, 2019 at 3:32 AM Lubomir Rintel <lkundrak@v3.sk> wrote:
->
-> Add the enable method for the second PJ4B core of the Marvell MMP3 SoC.
->
-> Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
-> ---
->  Documentation/devicetree/bindings/arm/cpus.yaml | 1 +
->  1 file changed, 1 insertion(+)
-
-Reviewed-by: Rob Herring <robh@kernel.org>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCBBdWcgOSwgMjAxOSBhdCA1OjI5IEFNIFN0ZWZhbi1nYWJyaWVsIE1pcmVhCjxzdGVm
+YW4tZ2FicmllbC5taXJlYUBueHAuY29tPiB3cm90ZToKPgo+IEZyb206IEVkZHkgUGV0cmnImW9y
+IDxlZGR5LnBldHJpc29yQG54cC5jb20+Cj4KPiBBZGQgZW50cnkgZm9yIHRoZSBOWFAgUzMyVjIz
+NCBDdXN0b21lciBFdmFsdWF0aW9uIEJvYXJkIHRvIHRoZSBib2FyZC9Tb0MKPiBiaW5kaW5ncy4K
+Pgo+IFNpZ25lZC1vZmYtYnk6IEVkZHkgUGV0cmnImW9yIDxlZGR5LnBldHJpc29yQG54cC5jb20+
+Cj4gU2lnbmVkLW9mZi1ieTogU3RlZmFuLUdhYnJpZWwgTWlyZWEgPHN0ZWZhbi1nYWJyaWVsLm1p
+cmVhQG54cC5jb20+Cj4gLS0tCj4gIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9h
+cm0vZnNsLnlhbWwgfCA2ICsrKysrKwo+ICAxIGZpbGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCsp
+CgpSZXZpZXdlZC1ieTogUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4KCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
