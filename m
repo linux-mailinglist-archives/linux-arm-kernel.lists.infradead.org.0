@@ -2,55 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F3088A947
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 23:26:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 237298A94B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 23:28:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R1DWGJjkEoXnvpPiRmmwFH8krpNqM0j/0nkhKxSfr+E=; b=lhRyFw/jv5NgU3
-	GCfq/bTyOAWyH95hEwKz+ogPLI/7e+4jOBxgmq17pn1ont8VBwW8ohcP1cX/0wzyeUn64nHhqQ1TV
-	bqp4lNZ+Cd4CZLw43HSWcTremt6QGr7pYiNw7vI2iRL1FORiHO1JYigeO6XImSpKN8ZG4oVXH1oEn
-	DOcwOIdqhygKPDoJS64daYGSsHLImPpijmPv5ZhPebmQ6PEm3UnV+tfj6c21m1vDIj0EAMvVB5FE1
-	aMhTyY1ELMN2+XIZaAYzcfArXg90Pdlmpsczz48Cx+nYJUfw4NrCbsL/myPIvYOtF0hgLiKMTAa2V
-	Fw/TxyxPsNN31QRtW8rA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NsMh5MiAM5+L14DVmm004NCPqZWYKQBghRqXPWApwv8=; b=dXI7W6wpjXCXBO
+	eQQj1InWR8HaG0QQBnHBHXBfdhF8waw6r6LBqjqhX4vPEpeq6QJC/kS197ey0pUv9lC0C6hH+zZle
+	sdWSWMXeHjtaUyIgTrcY2A6nNlnbIfqeeKq+Zxv1Qbz6mcvRPSo5ghyyPmiQy61Lcqlmhuc/fmOVD
+	/Cmhb7wnjTRSL5chvU+vR4xVgVOnjoAMECatk85wG4wnFFlmoo31t1wgXBgqnQ42LHxsBSrZE8/aj
+	vf4CDSaDqYsW/yAAPIo5tVLQiyyM/QtpOXdE8g3Nk8iOFwUWoUipnLtfL6dXPA96EAocmyvHZ/9M+
+	IC7QyEeRXScuNIb95Deg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxHpj-0000ux-3g; Mon, 12 Aug 2019 21:26:27 +0000
-Received: from ms.lwn.net ([45.79.88.28])
+	id 1hxHrh-0001CH-Oi; Mon, 12 Aug 2019 21:28:30 +0000
+Received: from antares.kleine-koenig.org ([94.130.110.236])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxHpU-0000u1-9c
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 21:26:13 +0000
-Received: from lwn.net (localhost [127.0.0.1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ms.lwn.net (Postfix) with ESMTPSA id EEAA6737;
- Mon, 12 Aug 2019 21:26:11 +0000 (UTC)
-Date: Mon, 12 Aug 2019 15:26:11 -0600
-From: Jonathan Corbet <corbet@lwn.net>
-To: Jonathan =?UTF-8?B?TmV1c2Now6RmZXI=?= <j.neuschaefer@gmx.net>
-Subject: Re: [PATCH] Documentation/arm/samsung-s3c24xx: Remove stray U+FEFF
- character to fix title
-Message-ID: <20190812152611.3e8f5e9d@lwn.net>
-In-Reply-To: <20190808164811.15645-1-j.neuschaefer@gmx.net>
-References: <20190808164811.15645-1-j.neuschaefer@gmx.net>
-Organization: LWN.net
+ id 1hxHrU-0001BN-D0
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 21:28:18 +0000
+Received: by antares.kleine-koenig.org (Postfix, from userid 1000)
+ id C47BE763AF1; Mon, 12 Aug 2019 23:28:10 +0200 (CEST)
+From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>
+To: Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>
+Subject: [PATCH 1/9] ARM: dts: at91: Add label for sam9x5's internal RTC
+Date: Mon, 12 Aug 2019 23:27:49 +0200
+Message-Id: <20190812212757.23432-1-uwe@kleine-koenig.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_142612_334928_A46912D9 
-X-CRM114-Status: UNSURE (   8.42  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190812_142816_592221_B77B976D 
+X-CRM114-Status: GOOD (  10.11  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [45.79.88.28 listed in list.dnswl.org]
+ no trust [94.130.110.236 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,23 +57,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-doc@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCAgOCBBdWcgMjAxOSAxODo0ODowOSArMDIwMApKb25hdGhhbiBOZXVzY2jDpGZlciA8
-ai5uZXVzY2hhZWZlckBnbXgubmV0PiB3cm90ZToKCj4gSXQgc2VlbXMgYSBVVEYtOCBieXRlIG9y
-ZGVyIG1hcmsgKHRoZSBsZWFzdCB1c2VmdWwga2luZCBvZiBCT00uLi4pIHNudWNrCj4gaW50byB0
-aGUgZmlsZSBhbmQgYnJva2UgU3BoaW54J3MgZGV0ZWN0aW9uIG9mIHRoZSB0aXRsZSBsaW5lLgo+
-IAo+IEJlc2lkZXMgbWFraW5nIGFybS9zYW1zdW5nLXMzYzI0eHgvaW5kZXguaHRtbCBsb29rIGEg
-bGl0dGxlIGJldHRlciwgdGhpcwo+IHBhdGNoIGFsc28gY29uZmluZXMgdGhlIG5vbi1pbmRleCBw
-YWdlcyBpbiBhcm0vc2Ftc3VuZy1zM2MyNHh4IHRvIHRoZWlyCj4gb3duIHRhYmxlIG9mIGNvbnRl
-bnRzLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEpvbmF0aGFuIE5ldXNjaMOkZmVyIDxqLm5ldXNjaGFl
-ZmVyQGdteC5uZXQ+CgpBcHBsaWVkLCB0aGFua3MuCgpqb24KCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+VGhpcyBhbGxvd3MgdG8gc2ltcGxpZnkgc2V2ZXJhbCBtYWNoaW5lIGRldmljZSB0cmVlcyB1c2lu
+ZyB0aGlzIGxhYmVsCmluc3RlYWQgb2YgZHVwbGljYXRpbmcgdGhlIFNvQydzIGhpZXJhcmNoeS4K
+ClNpZ25lZC1vZmYtYnk6IFV3ZSBLbGVpbmUtS8O2bmlnIDx1d2VAa2xlaW5lLWtvZW5pZy5vcmc+
+Ci0tLQogYXJjaC9hcm0vYm9vdC9kdHMvYXQ5MXNhbTl4NS5kdHNpIHwgMiArLQogMSBmaWxlIGNo
+YW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0tZ2l0IGEvYXJjaC9h
+cm0vYm9vdC9kdHMvYXQ5MXNhbTl4NS5kdHNpIGIvYXJjaC9hcm0vYm9vdC9kdHMvYXQ5MXNhbTl4
+NS5kdHNpCmluZGV4IGVmNDdjMDA1ZWYwMy4uN2MyZWI5M2Y4Y2FjIDEwMDY0NAotLS0gYS9hcmNo
+L2FybS9ib290L2R0cy9hdDkxc2FtOXg1LmR0c2kKKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvYXQ5
+MXNhbTl4NS5kdHNpCkBAIC05NDEsNyArOTQxLDcgQEAKIAkJCQlzdGF0dXMgPSAiZGlzYWJsZWQi
+OwogCQkJfTsKIAotCQkJcnRjQGZmZmZmZWIwIHsKKwkJCXJ0YzogcnRjQGZmZmZmZWIwIHsKIAkJ
+CQljb21wYXRpYmxlID0gImF0bWVsLGF0OTFzYW05eDUtcnRjIjsKIAkJCQlyZWcgPSA8MHhmZmZm
+ZmViMCAweDQwPjsKIAkJCQlpbnRlcnJ1cHRzID0gPDEgSVJRX1RZUEVfTEVWRUxfSElHSCA3PjsK
+LS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
