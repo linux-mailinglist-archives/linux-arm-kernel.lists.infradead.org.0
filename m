@@ -2,61 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B71089D04
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:29:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09D9D89D34
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:36:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=m6wD2mAOuxwUEro0NKQCs2Op6l4VTGsTM2f4DW3quI8=; b=qfjEmme3xW+yNbzWsaehfvQXIg
-	wDHfqzZa9lsbVQPrK+STgPuT1HF3V0Wp8oTeIo+U4NZ34o7C56jDwpnGeTPDlaeHddv2Iqcfbo4cs
-	qWSf2TBjMmAuVcjB+UqP3Thel8e5QZKYIGPwoycW6UAEexIhDyyw1FPJkuTsull5JOgVBJeepoEJc
-	/WQNJ0cEXRW2M2jbCPdLAljlNpJy+/TN5emiWsJGZg8sG9rTycEqDcU5rkVRJu/4dOPXpkjGV7jDW
-	pCq6sjgiiQYLV4LClkkqajdrRwrLAQRNUUQXSjNWZ4sRytetnm3r69I8eigjBj9cE4MmMthbI1xAY
-	22IZiQcw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eTvEzaCAiCSH3j8ZstxxdHjYiNPNgu8vh/9UQ/yd5GA=; b=fupUaJyh3Jndu9
+	VtjhYn91KK1TSa+VnL7HR7tMEEYiFpR6wQLUoUAkk0LmDw3OTullfaSNN3/yH40bviwm2dIcbTvED
+	fxrYjNtryLB5EAAWxTSx+Kue8UaK7J0+xWkhsYmDLW/eWpSH61dbZyg6KVb0KdS8+mw7zIvZz/l21
+	opKvZ3w3Dele3qcxKXvBIfW+OSKghFFZnhcOB/SCDGXXoWSXNMmuHJkc0/ZB9YS562JUhCGGz8aJo
+	07cYnsSmgmPxkW6BY06MEm0lhgohTivM3b71cQ8K3lmFqftcBn+yYLQvaHDrYO9izqF+cFiLl9tBt
+	zPBtChn/J0gSUU5S12xA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx8Vv-0001jB-PL; Mon, 12 Aug 2019 11:29:23 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx8VZ-0001dv-8x
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 11:29:05 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 988ECB04B9D23C81953D;
- Mon, 12 Aug 2019 19:28:56 +0800 (CST)
-Received: from [127.0.0.1] (10.57.101.250) by DGGEMS402-HUB.china.huawei.com
- (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Mon, 12 Aug 2019
- 19:28:47 +0800
-To: <linux-gpio@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, <linus.walleij@linaro.org>
-From: Wei Xu <xuwei5@hisilicon.com>
-Subject: [PATCH] gpio: pl061: Fix the issue failed to register the ACPI
- interruption
-Message-ID: <5D514D6F.4090904@hisilicon.com>
-Date: Mon, 12 Aug 2019 19:28:47 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
- Thunderbird/38.2.0
+	id 1hx8cP-0004nc-5R; Mon, 12 Aug 2019 11:36:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hx8cC-0004mo-TQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 11:35:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B3FC615AB;
+ Mon, 12 Aug 2019 04:35:50 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4384D3F706;
+ Mon, 12 Aug 2019 04:35:48 -0700 (PDT)
+Date: Mon, 12 Aug 2019 12:35:43 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Xiaowei Bao <xiaowei.bao@nxp.com>
+Subject: Re: [EXT] Re: [PATCHv3 1/2] PCI: layerscape: Add the bar_fixed_64bit
+ property in EP driver.
+Message-ID: <20190812113543.GA25040@e121166-lin.cambridge.arm.com>
+References: <20190628013826.4705-1-xiaowei.bao@nxp.com>
+ <20190812101213.GB20861@e121166-lin.cambridge.arm.com>
+ <AM5PR04MB329929A0B046F6BEB94B0120F5D30@AM5PR04MB3299.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.57.101.250]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <AM5PR04MB329929A0B046F6BEB94B0120F5D30@AM5PR04MB3299.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_042902_976699_42A4F562 
-X-CRM114-Status: UNSURE (   9.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20190812_043553_041470_9687C5FF 
+X-CRM114-Status: GOOD (  25.42  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,100 +63,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Salil Mehta <salil.mehta@huawei.com>, jinying@hisilicon.com,
- Tangkunshan <tangkunshan@huawei.com>, huangdaode <huangdaode@hisilicon.com>,
- John Garry <john.garry@huawei.com>, Linuxarm <linuxarm@huawei.com>,
- xuwei5@hisilicon.com, Shameerali
- Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Jonathan Cameron <jonathan.cameron@huawei.com>, "Liguozhu
- \(Kenneth\)" <liguozhu@hisilicon.com>, Zhangyi ac <zhangyi.ac@huawei.com>,
- Shiju Jose <shiju.jose@huawei.com>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>, Roy Zang <roy.zang@nxp.com>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "pombredanne@nexb.com" <pombredanne@nexb.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>, "kishon@ti.com" <kishon@ti.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "shawn.lin@rock-chips.com" <shawn.lin@rock-chips.com>,
+ Mingkai Hu <mingkai.hu@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Invoke acpi_gpiochip_request_interrupts after the acpi data has been
-attached to the pl061 acpi node to register interruption.
-
-Otherwise it will be failed to register interruption for the ACPI case.
-Because in the gpiochip_add_data_with_key, acpi_gpiochip_add is invoked
-after gpiochip_add_irqchip but at that time the acpi data has not been
-attached yet.
-
-Tested with below steps on QEMU v4.1.0-rc3 and Linux kernel v5.3-rc4,
-and found pl061 interruption is missed in the /proc/interrupts:
-1.
-qemu-system-aarch64 \
--machine virt,gic-version=3 -cpu cortex-a57 \
--m 1G,maxmem=4G,slots=4 \
--kernel Image -initrd rootfs.cpio.gz \
--net none -nographic  \
--bios QEMU_EFI.fd  \
--append "console=ttyAMA0 acpi=force earlycon=pl011,0x9000000"
-
-2. cat /proc/interrupts in the guest console:
-estuary:/$ cat /proc/interrupts
-CPU0
-2:       3228     GICv3  27 Level     arch_timer
-4:         15     GICv3  33 Level     uart-pl011
-42:          0     GICv3  23 Level     arm-pmu
-IPI0:         0       Rescheduling interrupts
-IPI1:         0       Function call interrupts
-IPI2:         0       CPU stop interrupts
-IPI3:         0       CPU stop (for crash dump) interrupts
-IPI4:         0       Timer broadcast interrupts
-IPI5:         0       IRQ work interrupts
-IPI6:         0       CPU wake-up interrupts
-Err:          0
-
-Fixes: 04ce935c6b2a ("gpio: pl061: Pass irqchip when adding gpiochip")
-Signed-off-by: Wei Xu <xuwei5@hisilicon.com>
----
-  drivers/gpio/gpio-pl061.c | 7 +++++++
-  1 file changed, 7 insertions(+)
-
-diff --git a/drivers/gpio/gpio-pl061.c b/drivers/gpio/gpio-pl061.c
-index 722ce5c..e1a434e 100644
---- a/drivers/gpio/gpio-pl061.c
-+++ b/drivers/gpio/gpio-pl061.c
-@@ -8,6 +8,7 @@
-   *
-   * Data sheet: ARM DDI 0190B, September 2000
-   */
-+#include <linux/acpi.h>
-  #include <linux/spinlock.h>
-  #include <linux/errno.h>
-  #include <linux/init.h>
-@@ -24,6 +25,9 @@
-  #include <linux/pinctrl/consumer.h>
-  #include <linux/pm.h>
-
-+#include "gpiolib.h"
-+#include "gpiolib-acpi.h"
-+
-  #define GPIODIR 0x400
-  #define GPIOIS  0x404
-  #define GPIOIBE 0x408
-@@ -345,6 +349,9 @@ static int pl061_probe(struct amba_device *adev, 
-const struct amba_id *id)
-      if (ret)
-          return ret;
-
-+    if (has_acpi_companion(dev))
-+        acpi_gpiochip_request_interrupts(&pl061->gc);
-+
-      amba_set_drvdata(adev, pl061);
-      dev_info(dev, "PL061 GPIO chip registered\n");
-
--- 
-2.8.1
-
-
-.
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBBdWcgMTIsIDIwMTkgYXQgMTA6Mzk6MDBBTSArMDAwMCwgWGlhb3dlaSBCYW8gd3Jv
+dGU6Cj4gCj4gCj4gPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+ID4gRnJvbTogTG9yZW56
+byBQaWVyYWxpc2kgPGxvcmVuem8ucGllcmFsaXNpQGFybS5jb20+Cj4gPiBTZW50OiAyMDE55bm0
+OOaciDEy5pelIDE4OjEyCj4gPiBUbzogWGlhb3dlaSBCYW8gPHhpYW93ZWkuYmFvQG54cC5jb20+
+OyBraXNob25AdGkuY29tCj4gPiBDYzogYmhlbGdhYXNAZ29vZ2xlLmNvbTsgcm9iaCtkdEBrZXJu
+ZWwub3JnOyBtYXJrLnJ1dGxhbmRAYXJtLmNvbTsKPiA+IHNoYXduZ3VvQGtlcm5lbC5vcmc7IExl
+byBMaSA8bGVveWFuZy5saUBueHAuY29tPjsgYXJuZEBhcm5kYi5kZTsKPiA+IGdyZWdraEBsaW51
+eGZvdW5kYXRpb24ub3JnOyBNLmguIExpYW4gPG1pbmdodWFuLmxpYW5AbnhwLmNvbT47IE1pbmdr
+YWkKPiA+IEh1IDxtaW5na2FpLmh1QG54cC5jb20+OyBSb3kgWmFuZyA8cm95LnphbmdAbnhwLmNv
+bT47Cj4gPiBrc3Rld2FydEBsaW51eGZvdW5kYXRpb24ub3JnOyBwb21icmVkYW5uZUBuZXhiLmNv
+bTsKPiA+IHNoYXduLmxpbkByb2NrLWNoaXBzLmNvbTsgbGludXgtcGNpQHZnZXIua2VybmVsLm9y
+ZzsKPiA+IGRldmljZXRyZWVAdmdlci5rZXJuZWwub3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJu
+ZWwub3JnOwo+ID4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOyBsaW51eHBw
+Yy1kZXZAbGlzdHMub3psYWJzLm9yZwo+ID4gU3ViamVjdDogW0VYVF0gUmU6IFtQQVRDSHYzIDEv
+Ml0gUENJOiBsYXllcnNjYXBlOiBBZGQgdGhlIGJhcl9maXhlZF82NGJpdAo+ID4gcHJvcGVydHkg
+aW4gRVAgZHJpdmVyLgo+ID4gCj4gPiBDYXV0aW9uOiBFWFQgRW1haWwKPiA+IAo+ID4gRmlyc3Qg
+b2ZmOgo+ID4gCj4gPiBUcmltIHRoZSBDQyBsaXN0LCB5b3UgQ0MnZWQgbWFpbnRhaW5lcnMgKGFu
+ZCBtYWlsaW5nIGxpc3RzKSBmb3Igbm8gcmVhc29ucwo+ID4gd2hhdHNvdmVyLgo+IFtYaWFvd2Vp
+IEJhb11IaSBMb3JlbnpvLCBJIGFtIG5vdCBjbGVhciB3aHkgdGhlIG1haWwgbGlzdCBpcyB0aGUg
+Q0MsIEkgdXNlIHRoZSBjb21tYW5kICJnaXQgc2VuZC1lbWFpbCAtLXRvIiwgSSB3aWxsIHRyeSB0
+byBzZW5kIHRoZSBwYXRjaCBhZ2FpbiwgZG8gSSBuZWVkIHRvIG1vZGlmeSB0aGUgdmVyc2lvbiBp
+cyB2NCB3aGVuIEkgc2VuZCB0aGlzIHBhdGNoIGFnYWluPwoKWWVzIHlvdSBkby4KCldyYXAgbGlu
+ZXMgdG8gbWF4IDgwIGNoYXJhY3RlcnMuIFRoZXJlIGlzIG5vIG5lZWQgdG8gYWRkIFtYaWFvd2Vp
+IEJhb10uCgoxKSBSZWFkLCBlbWFpbCBldGlxdWV0dGUKCmh0dHBzOi8va2VybmVsbmV3Ymllcy5v
+cmcvUGF0Y2hDdWx0dXJlCgoyKSBnZXRfbWFpbnRhaW5lci5wbCAtZiBkcml2ZXJzL3BjaS9jb250
+cm9sbGVyL2R3Yy9wY2ktbGF5ZXJzY2FwZS5jCgpDb21wYXJlIHRoZSBvdXRwdXQgdG8gdGhlIHBl
+b3BsZSBpbiBDQywgdHJpbSBpdCBhY2NvcmRpbmdseS4KCjMpIFRoZSBOWFAgbWFpbnRhaW5lcnMg
+aW4gdGhlIE1BSU5UQUlORVJTIGZpbGUgaGF2ZSBub3QgZ2l2ZW4gYSBzaW5nbGUKICAgY29tbWVu
+dCBmb3IgdGhpcyBwYXRjaHNldC4gRWl0aGVyIHRoZXkgc2hvdyB1cCBvciBJIHdpbGwgcmVtb3Zl
+IHRoZW0KICAgZnJvbSB0aGUgTUFJTlRBSU5FUlMgbGlzdC4KCjQpIEJlZm9yZSBzdWJtaXR0aW5n
+IHBhdGNoZXMsIHRhbGsgdG8gc29tZW9uZSBhdCBOWFAgd2hvIGNhbiBoZWxwIHlvdQogICBmb3Jt
+YXQgdGhlbSBpbiBwcmVwYXJhdGlvbiBmb3IgcG9zdGluZywgSSBkbyBub3QgaGF2ZSB0aW1lIHRv
+IHdyaXRlCiAgIGd1aWRlbGluZXMgZm9yIGV2ZXJ5b25lIHBvc3Rpbmcgb24gbGludXgtcGNpLCBz
+b3JyeSwgdGhlIGluZm9ybWF0aW9uCiAgIGlzIG91dCB0aGVyZSBpZiB5b3UgY2FyZSB0byByZWFk
+IGl0LgoKVGhhbmtzLApMb3JlbnpvCgo+ID4gCj4gPiBUaGVuLCByZWFkIHRoaXM6Cj4gPiAKPiA+
+IGh0dHBzOi8vZXVyMDEuc2FmZWxpbmtzLnByb3RlY3Rpb24ub3V0bG9vay5jb20vP3VybD1odHRw
+cyUzQSUyRiUyRmxvcmUua2UKPiA+IHJuZWwub3JnJTJGbGludXgtcGNpJTJGMjAxNzEwMjYyMjM3
+MDEuR0EyNTY0OSU0MGJoZWxnYWFzLWdsYXB0b3Aucm9hCj4gPiBtLmNvcnAuZ29vZ2xlLmNvbSUy
+RiZhbXA7ZGF0YT0wMiU3QzAxJTdDeGlhb3dlaS5iYW8lNDBueHAuY29tJTcKPiA+IEMxYzU4NjE3
+OGUyM2M0MjNhMGU4ODA4ZDcxZjBkOGY2ZiU3QzY4NmVhMWQzYmMyYjRjNmZhOTJjZDk5YzVjMzAK
+PiA+IDE2MzUlN0MwJTdDMCU3QzYzNzAxMjAxNTQyNjc4ODU3NSZhbXA7c2RhdGE9M2J4MWJERkl6
+aWs4Rm5EMHdsCj4gPiBkdUFVdjd3dExkRDFKM2hRM3hOSDJ4bUZZJTNEJmFtcDtyZXNlcnZlZD0w
+Cj4gPiAKPiA+IGFuZCBtYWtlIHlvdXIgcGF0Y2hlcyBjb21wbGlhbnQgcGxlYXNlLgo+ID4gCj4g
+PiBPbiBGcmksIEp1biAyOCwgMjAxOSBhdCAwOTozODoyNUFNICswODAwLCBYaWFvd2VpIEJhbyB3
+cm90ZToKPiA+ID4gVGhlIFBDSWUgY29udHJvbGxlciBvZiBsYXllcnNjYXBlIGp1c3QgaGF2ZSA0
+IEJBUnMsIEJBUjAgYW5kIEJBUjEgaXMKPiA+ID4gMzJiaXQsIEJBUjMgYW5kIEJBUjQgaXMgNjRi
+aXQsIHRoaXMgaXMgZGV0ZXJtaW5lZCBieSBoYXJkd2FyZSwgc28gc2V0Cj4gPiA+IHRoZSBiYXJf
+Zml4ZWRfNjRiaXQgd2l0aCAweDE0Lgo+ID4gPgo+ID4gPiBTaWduZWQtb2ZmLWJ5OiBYaWFvd2Vp
+IEJhbyA8eGlhb3dlaS5iYW9AbnhwLmNvbT4KPiA+ID4gLS0tCj4gPiA+IHYyOgo+ID4gPiAgLSBS
+ZXBsYWNlIHZhbHVlIDB4MTQgd2l0aCBhIG1hY3JvLgo+ID4gPiB2MzoKPiA+ID4gIC0gTm8gY2hh
+bmdlLgo+ID4gPgo+ID4gPiAgZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpLWxheWVyc2Nh
+cGUtZXAuYyB8ICAgIDEgKwo+ID4gPiAgMSBmaWxlcyBjaGFuZ2VkLCAxIGluc2VydGlvbnMoKyks
+IDAgZGVsZXRpb25zKC0pCj4gPiA+Cj4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BjaS9jb250
+cm9sbGVyL2R3Yy9wY2ktbGF5ZXJzY2FwZS1lcC5jCj4gPiA+IGIvZHJpdmVycy9wY2kvY29udHJv
+bGxlci9kd2MvcGNpLWxheWVyc2NhcGUtZXAuYwo+ID4gPiBpbmRleCBiZTYxZDk2Li4yMjdjMzNi
+IDEwMDY0NAo+ID4gPiAtLS0gYS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9wY2ktbGF5ZXJz
+Y2FwZS1lcC5jCj4gPiA+ICsrKyBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaS1sYXll
+cnNjYXBlLWVwLmMKPiA+ID4gQEAgLTQ0LDYgKzQ0LDcgQEAgc3RhdGljIGludCBsc19wY2llX2Vz
+dGFibGlzaF9saW5rKHN0cnVjdCBkd19wY2llICpwY2kpCj4gPiA+ICAgICAgIC5saW5rdXBfbm90
+aWZpZXIgPSBmYWxzZSwKPiA+ID4gICAgICAgLm1zaV9jYXBhYmxlID0gdHJ1ZSwKPiA+ID4gICAg
+ICAgLm1zaXhfY2FwYWJsZSA9IGZhbHNlLAo+ID4gPiArICAgICAuYmFyX2ZpeGVkXzY0Yml0ID0g
+KDEgPDwgQkFSXzIpIHwgKDEgPDwgQkFSXzQpLAo+ID4gCj4gPiBJIHdvdWxkIGFwcHJlY2lhdGUg
+S2lzaG9uJ3MgQUNLIG9uIHRoaXMuCj4gPiAKPiA+IExvcmVuem8KPiA+IAo+ID4gPiAgfTsKPiA+
+ID4KPiA+ID4gIHN0YXRpYyBjb25zdCBzdHJ1Y3QgcGNpX2VwY19mZWF0dXJlcyoKPiA+ID4gLS0K
+PiA+ID4gMS43LjEKPiA+ID4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
