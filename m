@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4ABC08A0B0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 16:23:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF53D8A0AC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 16:22:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZuosO8wShH00qhOxh7Pk9n96LsKGz6ZnLFXmyU8TLVs=; b=lbYOLRIqOfsI/y
-	XCIjrNt+Fh5sZIsBd0DRQevPca+o/hjs5mdWetdULf9ZeFrQR2n0iL5Ut/HRY6TtBpJcaiIqHR05I
-	mBVB2jb8Gl7KF63jSAwqjMlw6iGlcHfC80afgqBanIFRXdKR2KVlSvbRfqtrc/zh4kiDP/8Lvow3z
-	KhQjIiqMiFSRC5BSyiuAG5twGURL3wgm4JfGSaKM5YpDktvIeNT9KLZXEO/7s94uNnNpfrlpAYEE3
-	4jVt6fXIBXNysXIsD5eskCOYdES8VI1ZPQ9zJljctcOtsvPcZdGKxVBDa9hT8/k4ko5BtNKSjDKyu
-	xlAIS8j77AddwedFU11g==;
+	List-Owner; bh=Z7gDZR3qfbXP1fZ3ZLkGOEEQs5rPo2ZGXz5/wUq0HAQ=; b=O9aev3cTtXmgt+
+	bIMiy1x+N8R34o17T+ahZjCtU+Z0yPiXJJcJRbyM2XRlxG5cbW3IlorkCuIJ7mIsAI0iuGZukQx1Z
+	IUdhEdge+x7eCIrF3NxRGmw79YUaGCVeTicll+R1HyUP7g9k2DW/yuZG9oPG7G+j2lwN66pFyi+I/
+	XvEUbLfIv1dLst94h7rF5DGC+9Jc28UhMls3VLEG1rWDGWNPNM3Z5+lJ2+GJbkEn6jZMoLBE+03bU
+	5HH05VRk6ayhKapfoWBrSCOR3ZL5rWDBGg7R6+vylZ16czAWq0jRxtoklIOakeu/PERC0Q6Vb+L1v
+	sDfBMOAxSXpIi9xf3wkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxBDy-0002Yj-PC; Mon, 12 Aug 2019 14:23:02 +0000
-Received: from mail-ve1eur01on0711.outbound.protection.outlook.com
- ([2a01:111:f400:fe1f::711]
- helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1hxBDK-0001zW-Jd; Mon, 12 Aug 2019 14:22:22 +0000
+Received: from mail-eopbgr70122.outbound.protection.outlook.com
+ ([40.107.7.122] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxBCP-0001e3-I2
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 14:21:27 +0000
+ id 1hxBCN-0001en-DY
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 14:21:24 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HGUgQnJo3Q43KGB3FQ7CieoIMHUa55WKHQdekrod3VYQsEC599fF35SHFKD7QYLp1qrOQm674XFwQPr8Rwyc03NHLVouRicyy4AK+M2JsoOAkmd1LwkMqBn3/581+Apsqbd382bHvzzwGGTELYPvX9SwD6dtyc1w7qRPOBkhZsgsa9NEweCJp32XoL72f79n+PC3BT0fKdCgTwpCXiVebJ+3jkyPDRzdIEdRCfGtkcICbWDpA1WbPZimmto/hP+MZwMdzLKm3ntwOj2IHLJ+PJZejWwnkelNMUHJBsp3dDcvmGFkmJCcdEaL56xbAnFBcxnwAyW9wUTHOJRF27u2TQ==
+ b=ebTRz4M3Kaw05LsVn/QV7oh3D4fZc6JfwrtA77E/GjkeoZZ1PKelW3DxWReaobzfXwZxabLA6f7vkZLIU5LpLPPk85TeOGZZi1dSys+w/Vz6IrV9wjmXq//BPUido10djTlB50sxLiASUiHKQD+890II+RJSUID2u3EOyIdQ7bpOovsllp7GQrzNL5bO2vF96FDOwZI1YkRTZArfiGE1tTa/VAX7a5D0Ww4Sr4yYUfcbfK13pbW7G8KK4isff+0rNqUQ+zhAZ6HoY9L18WWbiLwrBXWNBcpDXpatgKfufPfcQUlRfm9c45dV5l4zN08/BeI57RR6Zc4JtS13tWkrzg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WJKB/KlXUrEXOzbpFKR85GHHuORNdZYUD6R5zrDCCsU=;
- b=Q6LRqCtbt2nXFuSDaQI+EFL51HCAbSIKSzm0sfrQHpi1LubtNC/YU0VpFOHaDGQb1nh4E0ZBzwEq2xwGiXTSsN4QNwVX+ciplDmRnN80okWGCaB/82e7RG070M33kiMny1I3e2bLh8T/54TO1E97RxoSqoH1BDVmCcpjvJG68V1i76Zr+bv9VkpnW9HGxTs1xzmszJbMMONcd1WKomoEQDHbUec1PnLBcMqEIFRu+y4dLXU83bpzsUvtQFu+dXvy70x726OCP4jVJnUGOFSvbxYKYVJhipXaBAgEo+7vKYNhD9/Y+lJL5R0pqv+6djKnZOM6P6RF5EI6XBOMVeGsdg==
+ bh=6WhBnZxB+3Hn6umCyMsJDKrRJrre26Pve5F9n5SsD8U=;
+ b=NkvMwaxxP8/T1EgcQfGmYdlGCw4LxAyXISThTjbwJfJOodTLmATejK+3nvAizKJuqzudsQcYPy3HPn9Wu5xsU8E29dLCpejygHPVSrZTi9sF7ZqyRDjwpnmewgvx8qTzEUXl5/gT1Hvc8lTGleV6tHcXtKD18AgQCRDw8qNCFxx7HYovjL18JI74Ux8sK8eqv/qFJmPWWYKQWqVwriaZtFd1ciBBbbo6MGQ6bKeitL9IXQbEBCR/8g/kPFdHyx0rq+48mAhAAHfrrtCLTc6ndeIX5MxWTj7ElDHvwPnh09CZ//O1OQVvAIezkLpWB/I81Jp5jxkLPcNJ3fCEzMgzXQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
  dkim=pass header.d=toradex.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WJKB/KlXUrEXOzbpFKR85GHHuORNdZYUD6R5zrDCCsU=;
- b=eoMPfarjXotCequWea5avOcEBmzS7UH2JVLQap+eUpaszww/784SGjG+u9hLyKbqljfxgt9mwGV9i8Fk/6bBDHws/by+5DKriKKgXQ3uJtq5hMnXN000F6N+zfkmDvnQDtXJ0eexPB2eMptQC2xDD4QUPqO8i5E8vvvecSH660U=
+ bh=6WhBnZxB+3Hn6umCyMsJDKrRJrre26Pve5F9n5SsD8U=;
+ b=NgUcDmnIX7AJmjKr1OhhS7btysS1PBaTjkvdllzU/I8j9cEdlDGZW9deCA5AbBodUYBXWOAIirjTRyvq+vonkmG/PbRcrUZPQIsOKY0LnMNe/vAx7T2a/MPa4rocHFIRMvtausmQaNtrzvr6hPMZ5/qp7C6zdG3dg963GRHjkfY=
 Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com (52.134.17.157) by
- VI1PR0502MB2942.eurprd05.prod.outlook.com (10.175.26.20) with Microsoft SMTP
+ VI1PR0502MB3998.eurprd05.prod.outlook.com (52.134.18.28) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2157.21; Mon, 12 Aug 2019 14:21:17 +0000
+ 15.20.2157.20; Mon, 12 Aug 2019 14:21:18 +0000
 Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com
  ([fe80::8405:5b51:b25d:39a2]) by VI1PR0502MB3965.eurprd05.prod.outlook.com
  ([fe80::8405:5b51:b25d:39a2%6]) with mapi id 15.20.2157.022; Mon, 12 Aug 2019
- 14:21:17 +0000
+ 14:21:18 +0000
 From: Philippe Schenker <philippe.schenker@toradex.com>
 To: Marcel Ziswiler <marcel.ziswiler@toradex.com>, Max Krummenacher
  <max.krummenacher@toradex.com>, "stefan@agner.ch" <stefan@agner.ch>,
@@ -55,11 +54,13 @@ To: Marcel Ziswiler <marcel.ziswiler@toradex.com>, Max Krummenacher
  <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>, Mark Rutland
  <mark.rutland@arm.com>, =?iso-8859-2?Q?Michal_Vok=E1=E8?=
  <michal.vokac@ysoft.com>, Fabio Estevam <festevam@gmail.com>
-Subject: [PATCH v4 02/21] ARM: dts: imx7-colibri: disable HS400
-Thread-Topic: [PATCH v4 02/21] ARM: dts: imx7-colibri: disable HS400
-Thread-Index: AQHVURk0iDp9zOnvgka28q+w6ZrWzw==
-Date: Mon, 12 Aug 2019 14:21:17 +0000
-Message-ID: <20190812142105.1995-3-philippe.schenker@toradex.com>
+Subject: [PATCH v4 03/21] ARM: dts: imx7-colibri: prepare module device tree
+ for FlexCAN
+Thread-Topic: [PATCH v4 03/21] ARM: dts: imx7-colibri: prepare module device
+ tree for FlexCAN
+Thread-Index: AQHVURk1RFYhwM5lNEGqu2Ft+OOp9g==
+Date: Mon, 12 Aug 2019 14:21:18 +0000
+Message-ID: <20190812142105.1995-4-philippe.schenker@toradex.com>
 References: <20190812142105.1995-1-philippe.schenker@toradex.com>
 In-Reply-To: <20190812142105.1995-1-philippe.schenker@toradex.com>
 Accept-Language: en-GB, en-US
@@ -75,45 +76,43 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-mailer: git-send-email 2.22.0
 x-originating-ip: [46.140.72.82]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c23784aa-d077-41f8-5100-08d71f3056c7
+x-ms-office365-filtering-correlation-id: 4d843c7c-5cba-4e3d-4b8c-08d71f305792
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:VI1PR0502MB2942; 
-x-ms-traffictypediagnostic: VI1PR0502MB2942:
+ SRVR:VI1PR0502MB3998; 
+x-ms-traffictypediagnostic: VI1PR0502MB3998:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR0502MB29428A7A1EBB290431BA9BFAF4D30@VI1PR0502MB2942.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5797;
+x-microsoft-antispam-prvs: <VI1PR0502MB3998DF0A2ABC35FC8E76E7FCF4D30@VI1PR0502MB3998.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2399;
 x-forefront-prvs: 012792EC17
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(376002)(136003)(39840400004)(346002)(366004)(396003)(199004)(189003)(5660300002)(54906003)(110136005)(316002)(478600001)(6486002)(86362001)(2201001)(66066001)(53936002)(6116002)(1076003)(3846002)(2906002)(4326008)(25786009)(66446008)(64756008)(66556008)(66946007)(66476007)(6436002)(8676002)(11346002)(476003)(2616005)(446003)(256004)(81166006)(81156014)(2501003)(44832011)(6512007)(14444005)(486006)(50226002)(71200400001)(71190400001)(7416002)(8936002)(36756003)(52116002)(7736002)(305945005)(99286004)(102836004)(386003)(14454004)(76176011)(186003)(6506007)(26005);
- DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR0502MB2942;
+ SFS:(10019020)(4636009)(346002)(39840400004)(136003)(396003)(376002)(366004)(189003)(199004)(2501003)(6436002)(6512007)(478600001)(52116002)(71200400001)(71190400001)(53936002)(4326008)(486006)(81166006)(81156014)(36756003)(14444005)(256004)(2201001)(2906002)(66476007)(66556008)(64756008)(446003)(66446008)(386003)(6486002)(76176011)(66946007)(6506007)(1076003)(476003)(2616005)(86362001)(14454004)(11346002)(8676002)(7416002)(5660300002)(50226002)(316002)(66066001)(7736002)(186003)(102836004)(8936002)(26005)(54906003)(110136005)(25786009)(6116002)(305945005)(3846002)(99286004)(44832011);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR0502MB3998;
  H:VI1PR0502MB3965.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: toradex.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: TwiMqcf0xnQoZzQb2j7TIbbQM7d/i+Onz+W4WoYIyZzxA4pXXfO68rK5gzcsBSrFmfg744vQQBNV6zeJyc6qEsPM3JBhpdswVrE62nzwyT+45R6RsAomBoGx7+LBPT80Kbl7zfFR5AChi3jAm4TEiqo8AMq+PX+QoyyX4uFUEEB7og6EYDjg3kd+RWx55h0lHSDVNeYzG7WJv1meBWJD4LMBW/7hqTMWzYv/YRhAHuGHjyNs+3Ew5HROJWy2DBFIKh8xKZ6lzAU2NdkZo/rj4ak2A/blpado3lVWWXl/2vkDgYLlcklJm5PFkzaxIQDp/29Owc25mVSOYUu6AMZ4p4ysK6btmLf4Ceej1SxXMS81z24Q694WW3f9KU33qXEqm3mFC5tVgqrCQM2f6WwMHeyPXqeHGNL4Ts5v4SoDID4=
+x-microsoft-antispam-message-info: TOTGy7oFu/EySy9MNetWO1ph1fon5jodT3jsddfNqEPMV5sTXxtbUXUGBY8XZpKOqxxMhbwhFeqhLMbGAP5M7GoMO/ARInIRoMiFqnFzAHHGPdxW+73H2+c9Gmxwql22EebF+z4hxRQKAH1Qtd8De+X/NeV+vRbdvn/bpW1DJ04nEbFFGkBzUzOs0jkNZOlKLbwBgBL47KqJeHX1C/EPJRcfiZGZeVQLdIxmQmyMIimydPNYJqhlavn2eLYdp82WK2diK8U3jHc9DdM2XMORFdKl9JQjd7bRxROb2w6VOuDw1WJSjX8uq2Z3R4PXTmV7eyrP5+d8NE2UZkfF+6S03Rcd1d3xx6NDUQ+pIIiCsO3YD/8Kmr0ahPYcLes17jplYzGsXcPpTfhvFGlormHmFmGObtiZp0fxecs3JfQarkI=
 MIME-Version: 1.0
 X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c23784aa-d077-41f8-5100-08d71f3056c7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Aug 2019 14:21:17.3537 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4d843c7c-5cba-4e3d-4b8c-08d71f305792
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Aug 2019 14:21:18.6389 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 6jrWz+4C+v9FlVg/TjQS4Lj0CvyCrzYbf4dAXo8d6p3i2LJ69jM6cDfpKnk27S5XzeTcvBqbbuG6zSgJsCh/0UU3yp5UWLoQSjKtV6q3Zvs=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0502MB2942
+X-MS-Exchange-CrossTenant-userprincipalname: cShbNHJkULFUdiv1FXEJmc4sp3bSHtHFVrH7vTkGoBw242kG4MminWNTzuM50Vbniyavi1O1+WKIBseryE/3/Clc1ntkAW9ApcoxjTHdRgM=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0502MB3998
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_072125_840064_26F76954 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190812_072123_457949_6EC3EDED 
+X-CRM114-Status: GOOD (  12.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe1f:0:0:0:711 listed in]
- [list.dnswl.org]
+ no trust [40.107.7.122 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -134,8 +133,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan.agner@toradex.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
+Cc: Sascha Hauer <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Philippe Schenker <philippe.schenker@toradex.com>,
  NXP Linux Team <linux-imx@nxp.com>,
@@ -146,42 +144,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stefan Agner <stefan.agner@toradex.com>
+Prepare FlexCAN use on SODIMM 55/63 178/188. Those SODIMM pins are
+compatible for CAN bus use with several modules from the Colibri
+family.
+Add Better drivestrength and also add flexcan2.
 
-Force HS200 by masking bit 63 of the SDHCI capability register.
-The i.MX ESDHC driver uses SDHCI_QUIRK2_CAPS_BIT63_FOR_HS400. With
-that the stack checks bit 63 to descide whether HS400 is available.
-Using sdhci-caps-mask allows to mask bit 63. The stack then selects
-HS200 as operating mode.
-
-This prevents rare communication errors with minimal effect on
-performance:
-	sdhci-esdhc-imx 30b60000.usdhc: warning! HS400 strobe DLL
-		status REF not lock!
-
-Signed-off-by: Stefan Agner <stefan.agner@toradex.com>
 Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
+Acked-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+
 ---
 
-Changes in v4: None
+Changes in v4:
+- Added Marcel Ziswiler's Ack
+
 Changes in v3: None
 Changes in v2: None
 
- arch/arm/boot/dts/imx7-colibri.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/imx7-colibri.dtsi | 35 ++++++++++++++++++++++++-----
+ 1 file changed, 30 insertions(+), 5 deletions(-)
 
 diff --git a/arch/arm/boot/dts/imx7-colibri.dtsi b/arch/arm/boot/dts/imx7-colibri.dtsi
-index f1c1971f2160..f7c9ce5bed47 100644
+index f7c9ce5bed47..52046085ce6f 100644
 --- a/arch/arm/boot/dts/imx7-colibri.dtsi
 +++ b/arch/arm/boot/dts/imx7-colibri.dtsi
-@@ -325,6 +325,7 @@
- 	vmmc-supply = <&reg_module_3v3>;
- 	vqmmc-supply = <&reg_DCDC3>;
- 	non-removable;
-+	sdhci-caps-mask = <0x80000000 0x0>;
+@@ -117,6 +117,18 @@
+ 	fsl,magic-packet;
  };
  
++&flexcan1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_flexcan1>;
++	status = "disabled";
++};
++
++&flexcan2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_flexcan2>;
++	status = "disabled";
++};
++
+ &gpmi {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_gpmi_nand>;
+@@ -330,12 +342,11 @@
+ 
  &iomuxc {
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&pinctrl_gpio1 &pinctrl_gpio2 &pinctrl_gpio3 &pinctrl_gpio4>;
++	pinctrl-0 = <&pinctrl_gpio1 &pinctrl_gpio2 &pinctrl_gpio3 &pinctrl_gpio4
++		     &pinctrl_gpio7>;
+ 
+ 	pinctrl_gpio1: gpio1-grp {
+ 		fsl,pins = <
+-			MX7D_PAD_ENET1_RGMII_RD3__GPIO7_IO3	0x74 /* SODIMM 55 */
+-			MX7D_PAD_ENET1_RGMII_RD2__GPIO7_IO2	0x74 /* SODIMM 63 */
+ 			MX7D_PAD_SAI1_RX_SYNC__GPIO6_IO16	0x14 /* SODIMM 77 */
+ 			MX7D_PAD_EPDC_DATA09__GPIO2_IO9		0x14 /* SODIMM 89 */
+ 			MX7D_PAD_EPDC_DATA08__GPIO2_IO8		0x74 /* SODIMM 91 */
+@@ -416,6 +427,13 @@
+ 		>;
+ 	};
+ 
++	pinctrl_gpio7: gpio7-grp { /* Alternatively CAN1 */
++		fsl,pins = <
++			MX7D_PAD_ENET1_RGMII_RD3__GPIO7_IO3	0x14 /* SODIMM 55 */
++			MX7D_PAD_ENET1_RGMII_RD2__GPIO7_IO2	0x14 /* SODIMM 63 */
++		>;
++	};
++
+ 	pinctrl_i2c1_int: i2c1-int-grp { /* PMIC / TOUCH */
+ 		fsl,pins = <
+ 			MX7D_PAD_GPIO1_IO13__GPIO1_IO13	0x79
+@@ -459,10 +477,17 @@
+ 		>;
+ 	};
+ 
++	pinctrl_flexcan1: flexcan1-grp {
++		fsl,pins = <
++			MX7D_PAD_ENET1_RGMII_RD3__FLEXCAN1_TX	0x79 /* SODIMM 55 */
++			MX7D_PAD_ENET1_RGMII_RD2__FLEXCAN1_RX	0x79 /* SODIMM 63 */
++		>;
++	};
++
+ 	pinctrl_flexcan2: flexcan2-grp {
+ 		fsl,pins = <
+-			MX7D_PAD_GPIO1_IO14__FLEXCAN2_RX	0x59
+-			MX7D_PAD_GPIO1_IO15__FLEXCAN2_TX	0x59
++			MX7D_PAD_GPIO1_IO14__FLEXCAN2_RX	0x79 /* SODIMM 188 */
++			MX7D_PAD_GPIO1_IO15__FLEXCAN2_TX	0x79 /* SODIMM 178 */
+ 		>;
+ 	};
+ 
 -- 
 2.22.0
 
