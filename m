@@ -2,83 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04F818A9AF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 23:50:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0F748A9DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 23:52:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cXoXt/a5gXxC0JKLWQ+XCbp4ZHInZCwD324SOkeFOFg=; b=IaXMKhaPAvJ0YD
-	gLt8E/mqzpfqNu9gFwvoG4us9GKvRbzCFZQbG/PkagtQpSyh8QsgQ8PXmHruDPJ8DL7pTojefLm5W
-	os0Taq9vymC2aQ+UIRz8FPrqdNTG75ZyPt9oHLXitL+zsR7SWjv28Lz5ioAtfWu/MPMrUqIf45OI+
-	8dzCHDZ3Erbm3isph90PYhSwFRjejPOl/NlhKNqHqg75F/NOZKcjc37WhvPxrFNrE70NqStZkcgtv
-	W/kNtILydMeVpMAcPNSWNNyB3UuqD/JJ4GrWJkdlPVJ8lYK2RWaTXBwGGLte3wmSH/SMzM6Ipby2U
-	Z244iIGioja8PNLnQamQ==;
+	List-Owner; bh=FZC8B1zTjHRmBS4vpV4gDcGx8wPYZBTmjPNNNDgCFLY=; b=FlniZAuqzfqWnl
+	2d0X2n/EIlhx41MPki3AxUmsM4ye5UwpE4oTOdAoDOoqfN4OITi8yrN8ALWhPriu0u5OOo4XJY84l
+	NeaoJ0SflLLejIr2R5zTBjYR5oaI+jyIJOPewpE1EZ1Kycw9VLtcuw1cCTO7sOft1MBx9dbA6cH3/
+	mH2I74BYGwbo5qavPh/+RDEVJVYhm3xR++kisrvC4uYHHdjyr2Esh2f8I/4XIWKcbgmOWF1BbN3hw
+	4WqKa6VIi3O6kojmEipDQzrGLXWHkZGSlnifdoEI/87P+TBWQj0CN9AgH1PLTgOve2/CTHWdAL0Pd
+	p6oqRt9Lol3ainOeCsjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxICL-0002E6-Ps; Mon, 12 Aug 2019 21:49:49 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1hxIEn-0004O9-Aj; Mon, 12 Aug 2019 21:52:21 +0000
+Received: from mail-qk1-x74a.google.com ([2607:f8b0:4864:20::74a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxIC8-0002DF-B3; Mon, 12 Aug 2019 21:49:38 +0000
-Received: by mail-ot1-f66.google.com with SMTP id k18so32668640otr.3;
- Mon, 12 Aug 2019 14:49:36 -0700 (PDT)
+ id 1hxIEY-0004Mu-C9
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 21:52:07 +0000
+Received: by mail-qk1-x74a.google.com with SMTP id c79so94768952qkg.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 12 Aug 2019 14:52:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=4H9PWcGFWTnQRRpR6qzftNQ0lP7jmcpJc1z5bvKXC0c=;
+ b=GOYts8y62z5hDG5UBvKTyRA53eo64IPfTWzoj20oJPWRcHrTKxwsvLxh3a4n5gbZEv
+ PEmhfuyQJErUyzHsQgmc+BxiQ+0zaHqdQPYkHNoGmXn1M/p3nNSyCS4YS+QnjsSu15e/
+ 4p9ECmVJbtW52/m719Gd9XDThtFlJaVi8EAw8eYS5rrF7pNdIpC8S3YQAtKU4R/HoM1y
+ BQi3xcPQqrL81dRaMBvh/8Aty6jeE0XDlyzQopxkixPirRMhNQ2BW7dcG4t34N56iTRJ
+ t5GaJvbA2lpJTkd80ffPOg6j49O1q9MIvTWyeV3HEdK0REH1ZKW2JM3VYuddT4rKkiLa
+ 91eg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=bId57j+xCMgHmNke4H/rs1zm5GrySxRkVxKOzngNvUM=;
- b=PrQkr6WCEafbVLsbj1z6Cb0ZrlCi8lnmoTvcfOeinCIxXllIbNPIC1FSoSJS+z9Q3V
- IWisykehFhRlN5NJ4a82Gvhc/7ORFpSmfgAOW+MK79XSmQ6bQynDFZwtiHgkT1TS987A
- ehMwHgaJPoLqB/iXzWhguk9rP9y6YZTUWLV3IIWxkNGLH4j8mzXqtkUXJe1iAoe5J6vF
- RU8yjONIB2fh3bYnlBBtPQUIwMlZZUeYXPmQk++i9sy1965bhnLGLv7ofG2ji8QSjTTE
- 86wFNVSJKKfUUdvTXQ3hR80euYVbmxQNIgFNu6HVLMv7tc6HlGc4TOQ6/4lkOA0tjQYn
- imxw==
-X-Gm-Message-State: APjAAAWd0e1zW/fldBHAo84+ltvMLEmPyidRA05OtZx760Viz4t+Iq+J
- VQabXXhHRh+8v18oX1yaNg==
-X-Google-Smtp-Source: APXvYqydXCuTRQqJ+qulK7XUYr9oCHuac1Wfp89EYjWA89p2UUzerGucxvamiLfRUxWnafYzdRe2lA==
-X-Received: by 2002:a6b:fd10:: with SMTP id c16mr34339686ioi.217.1565646575229; 
- Mon, 12 Aug 2019 14:49:35 -0700 (PDT)
-Received: from localhost ([74.118.88.158])
- by smtp.gmail.com with ESMTPSA id r5sm86648270iom.42.2019.08.12.14.49.34
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 12 Aug 2019 14:49:34 -0700 (PDT)
-Date: Mon, 12 Aug 2019 15:49:33 -0600
-From: Rob Herring <robh@kernel.org>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Subject: Re: [PATCH v5 1/4] dt-bindings: display: mediatek: update dpi
- supported chips
-Message-ID: <20190812214933.GA5954@bogus>
-References: <20190807060257.57007-1-jitao.shi@mediatek.com>
- <20190807060257.57007-2-jitao.shi@mediatek.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190807060257.57007-2-jitao.shi@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=4H9PWcGFWTnQRRpR6qzftNQ0lP7jmcpJc1z5bvKXC0c=;
+ b=CUkmKHhLAJjZ4LGYJW/tUVlHeu0r2asKPkPT0S8Y3YYd2PHoz1Z6FxCpPhK42UlFk0
+ c7l7SVfaZt6ZozwTQ4uGatbsfzYrnN1piVN+P04CW4+/IKD/Lk6LtGxnf85G5DGTopMY
+ T7hFZ+WuWW0aKw3ewbdZdBkdjuHy9XJhEhx47704kpPt0G4Ka49ZNoMfXNwLFO/r5do6
+ eS1Wn9iRxd6PwgKQDzuZ1cBqClpL59NrVBJoGpYcCG2oz1UftIyWro/BONLK6G2KjLob
+ RCuW+zpBGYH2hTlGCEi+oeDWmj8gvwi8MlxxezaEBGTCSiksYhx/sAoYrCn+GK54TUpg
+ kiXw==
+X-Gm-Message-State: APjAAAVHJCbP3Y6HlLqpSkO/uDHa3orgMRUSW7tnDX6V6//eJQV89gtS
+ E9DTa+EHxEvE+5l+kcPqNbFGN4e1EYTir/iAYaA=
+X-Google-Smtp-Source: APXvYqwes1gV2IDw+8Qi/1BZf+2RvRVqWZMirG+2WSzT6D2Sl6v9dobOMCg6A6UD4p/INQTsMrciAWtKuTDBsrcdsyU=
+X-Received: by 2002:ac8:45d2:: with SMTP id e18mr6288417qto.241.1565646724122; 
+ Mon, 12 Aug 2019 14:52:04 -0700 (PDT)
+Date: Mon, 12 Aug 2019 14:50:40 -0700
+In-Reply-To: <20190812215052.71840-1-ndesaulniers@google.com>
+Message-Id: <20190812215052.71840-7-ndesaulniers@google.com>
+Mime-Version: 1.0
+References: <20190812215052.71840-1-ndesaulniers@google.com>
+X-Mailer: git-send-email 2.23.0.rc1.153.gdeed80330f-goog
+Subject: [PATCH 07/16] arm: prefer __section from compiler_attributes.h
+From: Nick Desaulniers <ndesaulniers@google.com>
+To: akpm@linux-foundation.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_144936_979893_4E32228F 
-X-CRM114-Status: GOOD (  13.97  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190812_145206_409580_842D6ABC 
+X-CRM114-Status: GOOD (  11.63  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2607:f8b0:4864:20:0:0:0:74a listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,60 +94,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, stonea168@163.com,
- dri-devel@lists.freedesktop.org, yingjoe.chen@mediatek.com,
- Ajay Kumar <ajaykumar.rs@samsung.com>, Vincent Palatin <vpalatin@chromium.org>,
- cawa.cheng@mediatek.com, bibby.hsieh@mediatek.com, ck.hu@mediatek.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- Thierry Reding <treding@nvidia.com>, linux-pwm@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, Pawel Moll <pawel.moll@arm.com>,
- Ian Campbell <ijc+devicetree@hellion.org.uk>, Inki Dae <inki.dae@samsung.com>,
- linux-mediatek@lists.infradead.org, Andy Yan <andy.yan@rock-chips.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Sascha Hauer <kernel@pengutronix.de>, Sean Paul <seanpaul@chromium.org>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Song Liu <songliubraving@fb.com>, linux-kernel@vger.kernel.org,
+ bpf@vger.kernel.org, Daniel Borkmann <daniel@iogearbox.net>,
+ miguel.ojeda.sandonis@gmail.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Russell King <linux@armlinux.org.uk>, Alexei Starovoitov <ast@kernel.org>,
+ netdev@vger.kernel.org, clang-built-linux@googlegroups.com,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, jpoimboe@redhat.com,
+ sedat.dilek@gmail.com, yhs@fb.com, Thomas Gleixner <tglx@linutronix.de>,
+ Enrico Weigelt <info@metux.net>, Martin KaFai Lau <kafai@fb.com>,
+ Allison Randal <allison@lohutok.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 07, 2019 at 02:02:54PM +0800, Jitao Shi wrote:
-> Add decriptions about supported chips, including MT2701 & MT8173 &
-> mt8183
-> 
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> ---
->  .../bindings/display/mediatek/mediatek,dpi.txt        | 11 +++++++++++
->  1 file changed, 11 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-> index b6a7e7397b8b..cd6a1469c8b7 100644
-> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-> @@ -7,6 +7,7 @@ output bus.
->  
->  Required properties:
->  - compatible: "mediatek,<chip>-dpi"
-> +  the supported chips are mt2701 , mt8173 and mt8183.
->  - reg: Physical base address and length of the controller's registers
->  - interrupts: The interrupt signal from the function block.
->  - clocks: device clocks
-> @@ -16,6 +17,11 @@ Required properties:
->    Documentation/devicetree/bindings/graph.txt. This port should be connected
->    to the input port of an attached HDMI or LVDS encoder chip.
->  
-> +Optional properties:
-> +- dpi_pin_mode_swap: Swap the pin mode between dpi mode and gpio mode.
-> +- pinctrl-names: Contain "gpiomode" and "dpimode".
-> +- dpi_dual_edge: Control the RGB 24bit data on 12 pins or 24 pins.
+Reported-by: Sedat Dilek <sedat.dilek@gmail.com>
+Suggested-by: Josh Poimboeuf <jpoimboe@redhat.com>
+Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
+---
+ arch/arm/include/asm/cache.h     | 2 +-
+ arch/arm/include/asm/mach/arch.h | 4 ++--
+ arch/arm/include/asm/setup.h     | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
 
-Nothing about this in the commit msg...
+diff --git a/arch/arm/include/asm/cache.h b/arch/arm/include/asm/cache.h
+index 1d65ed3a2755..cc06079600e0 100644
+--- a/arch/arm/include/asm/cache.h
++++ b/arch/arm/include/asm/cache.h
+@@ -24,6 +24,6 @@
+ #define ARCH_SLAB_MINALIGN 8
+ #endif
+ 
+-#define __read_mostly __attribute__((__section__(".data..read_mostly")))
++#define __read_mostly __section(.data..read_mostly)
+ 
+ #endif
+diff --git a/arch/arm/include/asm/mach/arch.h b/arch/arm/include/asm/mach/arch.h
+index e7df5a822cab..2986f6b4862d 100644
+--- a/arch/arm/include/asm/mach/arch.h
++++ b/arch/arm/include/asm/mach/arch.h
+@@ -81,7 +81,7 @@ extern const struct machine_desc __arch_info_begin[], __arch_info_end[];
+ #define MACHINE_START(_type,_name)			\
+ static const struct machine_desc __mach_desc_##_type	\
+  __used							\
+- __attribute__((__section__(".arch.info.init"))) = {	\
++ __section(.arch.info.init) = {	\
+ 	.nr		= MACH_TYPE_##_type,		\
+ 	.name		= _name,
+ 
+@@ -91,7 +91,7 @@ static const struct machine_desc __mach_desc_##_type	\
+ #define DT_MACHINE_START(_name, _namestr)		\
+ static const struct machine_desc __mach_desc_##_name	\
+  __used							\
+- __attribute__((__section__(".arch.info.init"))) = {	\
++ __section(.arch.info.init) = {	\
+ 	.nr		= ~0,				\
+ 	.name		= _namestr,
+ 
+diff --git a/arch/arm/include/asm/setup.h b/arch/arm/include/asm/setup.h
+index 67d20712cb48..00190f1f0574 100644
+--- a/arch/arm/include/asm/setup.h
++++ b/arch/arm/include/asm/setup.h
+@@ -14,7 +14,7 @@
+ #include <uapi/asm/setup.h>
+ 
+ 
+-#define __tag __used __attribute__((__section__(".taglist.init")))
++#define __tag __used __section(.taglist.init)
+ #define __tagtable(tag, fn) \
+ static const struct tagtable __tagtable_##fn __tag = { tag, fn }
+ 
+-- 
+2.23.0.rc1.153.gdeed80330f-goog
 
-The dpi* properties need vendor prefixes and use '-' rather than '_'.
-
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
