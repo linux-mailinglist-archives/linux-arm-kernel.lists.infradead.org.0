@@ -2,87 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B04A8AA34
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 00:12:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E94A8AA45
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 00:15:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uT17VQnxnWTjHxeNBF6Nd8C5SRDu0ZJjGuLRN+brSNU=; b=VhfnZXsPRGmzMi
-	uemYCISsAt0uymGidKZ3U5qXKMHSEOozLqOFy9C0nZmh5ar/Hf1+m7Ra1DOst61ysBN6C8Nu8YHBo
-	LBYjMpD4Wsv7qt6ucw2ryVJnsxLOPGqOz8ytvqZWnsesm5v08+T/zMwqbTly8K0r13uPLnYPNbGXe
-	O56g7cNOLMP4z8X/+7Z+xo/JLhnROa3OBMR6g0yJ60pVR+c1N/9n3pZQiRJBxZTBXZPYc3GLpM1L5
-	EvYUhoKGLnmj1VOq5sZLcrtmNrZKBBYlYPU7N4Fa+rv8cwso8iKdVdFda0yDD6OvAhY2EEHWGQzUJ
-	1ObjtZthXNM+3Sey/JNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nbCzzi1Mn9SiDN7McRYp6ec7fzZ0CUgiIGprGa5tSeY=; b=S1XKLpP0kuo5ol
+	ABNHECwssjUoWv3S4rzJvhpox3NZSUvdi146s5nUIjeyo82Ph3oalf+C4KpZR3l2XwiuMtk8xYl53
+	2DH14VOLBvoMlls5R/TK/sV4uk8I6vfqRzge6Q43PJlYiHQ3zaucwCNLbX0rUG79AR+xcQYH4NCcV
+	F2EsRVLlttUQFtTogZ4jUq73crVcgQWatUpdun0wk/ZaizbjvRs2T6q0L0eX4HNG7teZmcYi/eyWG
+	R8wZVSsDXi8O6P1MTKzrmPkfY+delT3PBK1coJraqIMjhw7KuG6E2jNWrooDSr/k/tGAMfsiHawCS
+	Z8iCG18TsyFXOGdVLcQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxIXz-0002ZR-GN; Mon, 12 Aug 2019 22:12:11 +0000
-Received: from mail-qt1-x84a.google.com ([2607:f8b0:4864:20::84a])
+	id 1hxIbD-0004Bq-2E; Mon, 12 Aug 2019 22:15:31 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxIXp-0002Yl-Bc
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 22:12:02 +0000
-Received: by mail-qt1-x84a.google.com with SMTP id e2so15291455qtm.19
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 15:11:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=Jw1cj/+ww6TfMtRSJmzTU59qtmGQEsSIwrvBNo/N7vI=;
- b=iChCTuWckrWOil+NdSVQAXCes8B5y+65GYvCV0IakAqJktJmI/dqtiIt7UiI2ePUeJ
- uX7GWHA/fOMjJ9EroA9KTPBKBpIqHm34x/LpQfBTFSUtiQHqfLalCNCotPDpR94Y0nJo
- o1mh/M3dFf1EC0+hT6IcWPTi5U/HnvRqWstHp4Dmzei8hxvRLLPLpeIzU5wadrIp7tI3
- wUjQgUPE5yzFkpb0NUVdDmaB5oOs/vdE3L1ZCWhniXfrVEiu4W+xhpdxOHBazvyNtiDy
- LnocJc9ECkP4GZmBtQ+yX8mBiYSTItXKBf9JTH/hOBQ3k7Jz7er1kzgVuECju5/jFzLc
- RVBw==
+ id 1hxIax-0004BO-F5; Mon, 12 Aug 2019 22:15:16 +0000
+Received: by mail-ot1-f68.google.com with SMTP id b7so114749811otl.11;
+ Mon, 12 Aug 2019 15:15:14 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=Jw1cj/+ww6TfMtRSJmzTU59qtmGQEsSIwrvBNo/N7vI=;
- b=XABquo+gg7ETi3s3Ufdqc8KH/FAW6XlXIxF9lmhIoUoKonY6ebKgqHg9+xKkLCgypE
- o+hROpNHP25+WZn6Ch6OspytgM4syoLtLfg/puhAsfpSmHMnQd6TBHaz8CMOwqE1ibcs
- mFtywR145jUbd0tO73rCB/1tOf0SxBqd8REiGh0KOnit6WadsNiKlRZijJYk/9xBqatS
- eXqLyhHqjZyUplowXHKulJHhFJTEHG1LGpF0DArjuMyNGRcQl7vFWIBJglLPT6Qbb5YC
- ys79lriNpTc5h6SRGiN9tDEss4t4PiMHAV5aUZfWYwm+V42t3OjajlknLd39xrMF6RlC
- WAlg==
-X-Gm-Message-State: APjAAAXGI5turYHarLJ7lzYTf1hlMkjN7pHRjHJrmx7dM6UJ2UWazqVb
- MVYxcC+C9V8Vi1++X3OL/uWB7mQimw==
-X-Google-Smtp-Source: APXvYqwy1+a3pvBSx5ME8Bu1yYQnHk1MVG9t0R+bkukKv0wVXu23I1/UVkAiABDKs9aR157Lqsy4jBTtGqk=
-X-Received: by 2002:ae9:e007:: with SMTP id m7mr2877964qkk.87.1565647918275;
- Mon, 12 Aug 2019 15:11:58 -0700 (PDT)
-Date: Mon, 12 Aug 2019 15:11:54 -0700
-Message-Id: <20190812221154.46875-1-yabinc@google.com>
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.23.0.rc1.153.gdeed80330f-goog
-Subject: [PATCH v2] coresight: tmc-etr: Fix updating buffer in not-snapshot
- mode.
-From: Yabin Cui <yabinc@google.com>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, 
- Alexander Shishkin <alexander.shishkin@linux.intel.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=5Hl8Ot2aSHBMEKcD9YMEz708iweSmdqsv8l8Mi9vl6U=;
+ b=X5i/RSbOn848C5DvAy+X9iR4dU8Ei7DGcuBbdBb5T6LHacAboUZ8q73WX/zpji0gkc
+ wPzBJv1/hdgh292T0Ygl7I5hGTRgLLpvMOJJbk87VuaJVLKRp0Vw4HyKTknEzhh2AcVF
+ MIJHuykxX1l+/YWrmbzjUkUtr5TsGCfaVnuhiuG5RzgEwFPpIXIUyPTmINcLH99L4tMh
+ LJT/8OTyYWsozOGFUgzxri62lC9EzonzF1uheJFnJ81qdI/jd8xtBK33+sBfM/db7L/M
+ DER63j5qq20VPQs/rrryJymKDQQnjmooBrWYbacH5ms/PAmzavNIn4LaCiE2sL2KebZ1
+ n9UA==
+X-Gm-Message-State: APjAAAVywAq5fqLVxOamadQpT/K2abuU2supHcYLyPzfxL5OllkCBACu
+ 9wLEShMzGk8g3i4xaVsoHAOWzm0=
+X-Google-Smtp-Source: APXvYqxITl4/8wD2qF1OX3crvab5FCfVn+l0zPlE0D/ekVjf18e2o5f8bw/6PsZEPiWUQhTL3E0zOg==
+X-Received: by 2002:a02:c996:: with SMTP id b22mr16399239jap.39.1565648113681; 
+ Mon, 12 Aug 2019 15:15:13 -0700 (PDT)
+Received: from localhost ([64.188.179.254])
+ by smtp.gmail.com with ESMTPSA id w23sm90581004ioa.51.2019.08.12.15.15.12
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 12 Aug 2019 15:15:13 -0700 (PDT)
+Date: Mon, 12 Aug 2019 16:15:12 -0600
+From: Rob Herring <robh@kernel.org>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Subject: Re: [PATCH wn 3/4] dt-bindings: display: panel: add auo
+ kd101n80-45na panel bindings
+Message-ID: <20190812221512.GA24378@bogus>
+References: <20190811091001.49555-1-jitao.shi@mediatek.com>
+ <20190811091001.49555-4-jitao.shi@mediatek.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190811091001.49555-4-jitao.shi@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_151201_425012_FAC35632 
-X-CRM114-Status: GOOD (  13.32  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20190812_151515_508793_58BE7CAF 
+X-CRM114-Status: GOOD (  10.56  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:84a listed in]
- [list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,93 +90,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yabin Cui <yabinc@google.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, stonea168@163.com,
+ dri-devel@lists.freedesktop.org, yingjoe.chen@mediatek.com,
+ Sam Ravnborg <sam@ravnborg.org>, Ajay Kumar <ajaykumar.rs@samsung.com>,
+ Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
+ bibby.hsieh@mediatek.com, ck.hu@mediatek.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ Thierry Reding <treding@nvidia.com>, linux-pwm@vger.kernel.org,
+ Jitao Shi <jitao.shi@mediatek.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Pawel Moll <pawel.moll@arm.com>, Ian Campbell <ijc+devicetree@hellion.org.uk>,
+ Inki Dae <inki.dae@samsung.com>, linux-mediatek@lists.infradead.org,
+ Andy Yan <andy.yan@rock-chips.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ Rahul Sharma <rahul.sharma@samsung.com>, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Sean Paul <seanpaul@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TMC etr always copies all available data to perf aux buffer, which
-may exceed the available space in perf aux buffer. It isn't suitable
-for not-snapshot mode, because:
-1) It may overwrite previously written data.
-2) It may make the perf_event_mmap_page->aux_head report having more
-or less data than the reality.
+On Sun, 11 Aug 2019 17:10:00 +0800, Jitao Shi wrote:
+> Add documentation for auo kd101n80-45na panel.
+> 
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
+> ---
+>  .../display/panel/auo,kd101n80-45na.txt       | 34 +++++++++++++++++++
+>  1 file changed, 34 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/panel/auo,kd101n80-45na.txt
+> 
 
-So change to only copy the latest data fitting the available space in
-perf aux buffer.
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
 
-Signed-off-by: Yabin Cui <yabinc@google.com>
----
-
-v1 -> v2: copy the latest data instead of the earliest data.
-
----
- .../hwtracing/coresight/coresight-tmc-etr.c    | 18 +++++++++++-------
- 1 file changed, 11 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index 17006705287a..676dcb4cf0e2 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -1410,9 +1410,10 @@ static void tmc_free_etr_buffer(void *config)
-  * tmc_etr_sync_perf_buffer: Copy the actual trace data from the hardware
-  * buffer to the perf ring buffer.
-  */
--static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf)
-+static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf,
-+				     unsigned long to_copy)
- {
--	long bytes, to_copy;
-+	long bytes;
- 	long pg_idx, pg_offset, src_offset;
- 	unsigned long head = etr_perf->head;
- 	char **dst_pages, *src_buf;
-@@ -1422,8 +1423,7 @@ static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf)
- 	pg_idx = head >> PAGE_SHIFT;
- 	pg_offset = head & (PAGE_SIZE - 1);
- 	dst_pages = (char **)etr_perf->pages;
--	src_offset = etr_buf->offset;
--	to_copy = etr_buf->len;
-+	src_offset = etr_buf->offset + etr_buf->len - to_copy;
- 
- 	while (to_copy > 0) {
- 		/*
-@@ -1434,6 +1434,8 @@ static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf)
- 		 *  3) what is available in the destination page.
- 		 * in one iteration.
- 		 */
-+		if (src_offset >= etr_buf->size)
-+			src_offset -= etr_buf->size;
- 		bytes = tmc_etr_buf_get_data(etr_buf, src_offset, to_copy,
- 					     &src_buf);
- 		if (WARN_ON_ONCE(bytes <= 0))
-@@ -1454,8 +1456,6 @@ static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf)
- 
- 		/* Move source pointers */
- 		src_offset += bytes;
--		if (src_offset >= etr_buf->size)
--			src_offset -= etr_buf->size;
- 	}
- }
- 
-@@ -1501,7 +1501,11 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
- 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
- 
- 	size = etr_buf->len;
--	tmc_etr_sync_perf_buffer(etr_perf);
-+	if (!etr_perf->snapshot && size > handle->size) {
-+		size = handle->size;
-+		lost = true;
-+	}
-+	tmc_etr_sync_perf_buffer(etr_perf, size);
- 
- 	/*
- 	 * In snapshot mode we simply increment the head by the number of byte
--- 
-2.23.0.rc1.153.gdeed80330f-goog
-
+If a tag was not added on purpose, please state why and what changed.
 
 _______________________________________________
 linux-arm-kernel mailing list
