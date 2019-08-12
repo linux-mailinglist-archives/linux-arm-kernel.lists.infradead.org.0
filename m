@@ -2,93 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 293FB89CB9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:25:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1813189CC2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:26:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
+	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NW8QrUb46/zOxA6U3a9acEvDhBSayWrlYsyWmm/Z1YQ=; b=DgZXK6NDHppANS
-	qXH+Y6afDq0IWpPHrV1k4gbQqRmQ9NRlUOBFpSPei5dVB8blK/ZxHVwTXJ2tmg86gaSP6z9Khy9WA
-	kOC1txMKM+kDrD9xS/y2xi5bfm/HCg997XD5vuIk3Jm5os1mxOXh2WFqH74UVeuVihMgc+BqT6f7w
-	dtvs0eGpF3oeQqzxe9r110EtjL9k3eCoQ23WNumBmkAu+9uA6QPAyy4uHaHJ9LB6EvT0qr6Yhbe1x
-	PhZ7gHp8kjmdlpwQk2BaRdKTcCQeSx4f6o32qRNZIS8tZo1fakcgtcN6e8GxU1t0mVh9bHbWpef/O
-	M1mWg1OpDH6mcwD+Tp8Q==;
+	List-Owner; bh=Xl33BSmwBbt/yqochZ0jvJLmuuDk0HGRTXVPRUPAscw=; b=UOr04tZpMABa25
+	GoeBuDKnxJLPQ3AJ1JO7EeGBBcXLTwTlZObZK4Dyd5SxlZXuEd4r5Hl9lh60nB+bXXXbZ+SROYMrT
+	z0DG8D4kSo5nveQE/VyKSx1AuQJHWMJ41hDndzYhVuyfRA41rgg99tl9LppytIcs4Yj1bLT/XUPXI
+	xiIT8FQRr550ktFDTxcb7J7Iol/yO0+1+0J3hgbmVs3p4Ith+l5A2xNpKwr+CyaHpc5YBq1RSi7WS
+	aXToVK2yfs+R9oY53WonraC3dPQOmXHhQhk6XAg3sGO3fK6QAQynljqwtFec8C4yBYBG+wkm+LXRr
+	AQcPo//0lEi6TfU5HUEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx8SS-0007lz-Lv; Mon, 12 Aug 2019 11:25:48 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hx8TI-00084l-Iz; Mon, 12 Aug 2019 11:26:40 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx8S9-0007l0-Cf
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 11:25:30 +0000
-Received: by mail-wr1-x443.google.com with SMTP id j16so1968600wrr.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 04:25:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=49CBW8Jmx90YcYNx8wReWcg2SN7UmhhfHSj1OE9VGKY=;
- b=nJ4FxnH+8fGcZOZSrqQVAYBMKxnGE4IOx3TnqukSR1QQoo0UyYYxDXtMV35wZjt1T1
- kOiRqFryRBep6h9A+GS0gUtCjdc29Cw9Zn0te2tYLhcDO6+yWJLE0Q8M2UfOZnm6N1+k
- 9A/Jm1GA87/N6JAYm+u0a8MTphDzyByR51rMQzKJJF1EEfcESoB6h02+UME8QDWsSxL/
- nZCt75lbnJWXN6gdUUyEnE8RuOjewzGhcv9xMe0lDG6r4ylRrRLNF5fNITAf2pQDYeYZ
- eAK4CwWpXLSMAW7mmqFTRgeCIng78potcp33k04z6fQ825NXNrbb7L8Jb+y4V0KG7UA9
- hBfw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=49CBW8Jmx90YcYNx8wReWcg2SN7UmhhfHSj1OE9VGKY=;
- b=qB7Z6BoGRBbAv4hQZNdf1Au0vQdH9Uibjidk0CZ+DOc7h2fHg830VcKwKVo80j2+x2
- jgL7j4VvQf5BQ84aqMLW7F+bumVEDYSiyJMcWRfMS9no5+dUg4CJmgEmPzwR9NanyNTS
- Dnv09krspMGonbS2Bi6cAKnF5RNYg5W7Wjs2Yoda7rlYK27YjHrzRlmbgc7MuuvaiN4e
- iIslC9SXXH8DYlp4hCp5Ii4XU7ce8Wu2uKIxv14QXnODqUB8Gx52ug+jxSTZMtGlEGIc
- bhjSApWcBPNmqW8vzIZirZN9mIsKpFjoATUroDwddB9bnf44dihPuSGvSSg9wkN9cNUK
- 9KPA==
-X-Gm-Message-State: APjAAAXJiVEOMu+tgAIdxTc4kzPU7TAhWuGyWDpl3ZphiJZ5PfDsuIzl
- 9ubFjSn1KdRSdAUka8bEcLZbtQ==
-X-Google-Smtp-Source: APXvYqy6WbRf37/8vVpsj8slsd6qhrcT26PVhm1zZSyanYDyMDDJ2/CALUfqVjfjKV/6kEIUhtVDLA==
-X-Received: by 2002:adf:ed4a:: with SMTP id u10mr42749044wro.284.1565609127998; 
- Mon, 12 Aug 2019 04:25:27 -0700 (PDT)
-Received: from dell ([2.27.35.255])
- by smtp.gmail.com with ESMTPSA id o17sm13057600wrx.60.2019.08.12.04.25.24
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 12 Aug 2019 04:25:27 -0700 (PDT)
-Date: Mon, 12 Aug 2019 12:25:07 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Frank Wunderlich <frank-w@public-files.de>
-Subject: Re: Re: [PATCH v3 01/10] dt-bindings: add powercontroller
-Message-ID: <20190812112507.GR26727@dell>
-References: <20190729174154.4335-1-frank-w@public-files.de>
- <20190729174154.4335-2-frank-w@public-files.de>
- <20190812102035.GH26727@dell>
- <trinity-a6c06411-16d3-40ab-a4fb-3494131c8ed6-1565608221532@3c-app-gmx-bs80>
+ id 1hx8Su-00084C-9R; Mon, 12 Aug 2019 11:26:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1565609116;
+ bh=v7b7BvrXciV3NBubwOpaemt2kAsPrl1BPe/Nz2NswBU=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=MGnSkv10s6bJr+2LYe0Vg+T5aQQgWun0XdWZhVJjH0OTeFdRRlBmS6Ih2lFLvyv5L
+ vWF5UvQnSdqCZULmjwQ9RVEYSZYOAIXomyeYoAZIvUPv/MqCc2QtBZUOL0fxHIZnVy
+ VqBXryDgJhswl2xOlxSt0waDs6QiYE7+ZufmluR4=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [217.61.152.193] ([217.61.152.193]) by web-mail.gmx.net
+ (3c-app-gmx-bs80.server.lan [172.19.170.228]) (via HTTP); Mon, 12 Aug 2019
+ 13:25:16 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <trinity-a6c06411-16d3-40ab-a4fb-3494131c8ed6-1565608221532@3c-app-gmx-bs80>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Message-ID: <trinity-0fa641df-f7bb-4627-a9ab-aac3cabc90ba-1565609115974@3c-app-gmx-bs80>
+From: "Frank Wunderlich" <frank-w@public-files.de>
+To: "Lee Jones" <lee.jones@linaro.org>
+Subject: Aw: Re: [PATCH v3 06/10] mfd: mt6323: some improvements of mt6397-core
+Date: Mon, 12 Aug 2019 13:25:16 +0200
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <20190812102209.GI26727@dell>
+References: <20190729174154.4335-1-frank-w@public-files.de>
+ <20190729174154.4335-7-frank-w@public-files.de>
+ <20190812102209.GI26727@dell>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:+H+zrFxbX3u65Kz8Q14UR+W2QL6KWeuqbqDXcd/mwlEXxknDmP8VniBO4dlsPO8lvzAXn
+ 3Y5NyGNEFcxG/hiDEMdhlb6mGUuC2oM0phOjueOu2MDtHhyNSzKa7zzri7AaOrLyXgls+u8sTwPQ
+ oAV/CbSBYlmUVInmmRiS2kzjJFgTPVlFkzP+Rwz8lHdNBK149VceMK36vw/RyB+IoFv+U8FKiztO
+ yMwrHuIbMWrhlGq1Uj1J+0nxuOtWnyd5GyKRFUYsqojA8ecuYK6tOXNnVm1cb1FrnaNST1QYDBxU
+ Mg=
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:8Yj7l7CH0Mw=:gZd+QnMoJMQ46IbcpRg+69
+ uYQ9PWSHzCb4jiQPAL0RN4XqGKUkZP7au9BlZu0WeAXvh2moFGkS+Qh6H/UHvlfwoK/zckQts
+ cSjLWlFMupqJc7aAKUQfYQeemHELWiYqn7OHSi3fCzZ5BWFF4A3nQ4g4yoiqnt0pEuncDClxD
+ qyoAVq9ArjxiVhYQYJA+PBrs7RziX5GkbBGDbwU5A9oGzVXvGiaDnBv6dUZOnhrW42dabqHS0
+ lXU6xDXmrEAtePWxyeJZ40FbZOUl2nBhcn0Ctq5enGlq6vSuThfpLhU/cMvkVj9nHxdUkAeqy
+ ASvjyoO1IKTe/Leg8l0X6YSD2sTyzyv7YXtP0U0sEOo1WUBWGayxs4gAzARxamymbaBjlhfx/
+ OUyC1XD9pmsdx+kOvL61uobd2H29U8aF9pvGk1JBGdzDPzbNvzGqg7Oc1VOkBk9gGzSzeaCdw
+ EWqUYj0GKkc5wRo4mB/yfqKK3ymFbRVrkA8YxocvAnR/cXIcxS+jvKmY2YyDG6p2BMGEPvXKZ
+ 7xzezeddUuOzzBfMo3wupso6yj2SDGjeO5OPEwTvJNjgdfUr8uCyYRFquSH5DsOvA7C4xYYjT
+ gN3DvuN67PPM5sP0cvLOSC6YEijq4vcf44N36E+tBQs7z/K5g6lA0LQzCD7+B4ZjLv1wdYjDw
+ 06kiD9astcDCR5QcII++ExU97eegbwccVgVGX0HqIddrKtQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_042529_455257_7A30A358 
-X-CRM114-Status: GOOD (  12.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190812_042616_620506_056B47E3 
+X-CRM114-Status: UNSURE (   5.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [212.227.15.19 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -103,8 +93,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Kate Stewart <kstewart@linuxfoundation.org>,
  Mark Rutland <mark.rutland@arm.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-kernel@vger.kernel.org, Richard Fontana <rfontana@redhat.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, Richard
+ Fontana <rfontana@redhat.com>,
  Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, linux-rtc@vger.kernel.org,
  Allison Randal <allison@lohutok.net>, devicetree@vger.kernel.org,
  linux-pm@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
@@ -112,30 +102,29 @@ Cc: Kate Stewart <kstewart@linuxfoundation.org>,
  Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
  Jonathan Cameron <Jonathan.Cameron@huawei.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, Alessandro Zummo <a.zummo@towertech.it>,
- Josef Friedl <josef.friedl@speed.at>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie
+ Huang <eddie.huang@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ Alessandro Zummo <a.zummo@towertech.it>, Josef Friedl <josef.friedl@speed.at>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
  Sebastian Reichel <sre@kernel.org>, "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCAxMiBBdWcgMjAxOSwgRnJhbmsgV3VuZGVybGljaCB3cm90ZToKCj4gPiBHZXNlbmRl
-dDogTW9udGFnLCAxMi4gQXVndXN0IDIwMTkgdW0gMTI6MjAgVWhyCj4gPiBWb246ICJMZWUgSm9u
-ZXMiIDxsZWUuam9uZXNAbGluYXJvLm9yZz4KPiAKPiA+ID4gLS0tIGEvRG9jdW1lbnRhdGlvbi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL21mZC9tdDYzOTcudHh0Cj4gLi4uCj4gPiA+ICsJRm9yIGRldGFp
-bHMsIHNlZSBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcnRjL3J0Yy1tdDYzOTcu
-dHh0Cj4gPgo+ID4gUGxlYXNlIHVzZSByZWxhdGl2ZSBwYXRocy4KPiA+Cj4gPiBFLmc6IC4uL2Jp
-bmRpbmdzL3J0Yy9ydGMtbXQ2Mzk3LnR4dAo+IAo+IEhpLAo+IAo+IGFzIHdlIGFyZSBpbiBEb2N1
-bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbWZkLyBpdCBzaG91bGQgYmUKPiAuLi8uLi9i
-aW5kaW5ncy8uLi4sIHJpZ2h0PyBvciAuLi9ydGMvcnRjLW10NjM5Ny50eHQgPwoKSXQgd2FzIGFu
-IGV4YW1wbGUgKGhlbmNlIHRoZSAiRS5nLiIpLgoKWW91IHdpbGwgbmVlZCB0byBhZGFwdCBpdCBk
-ZXBlbmRpbmcgb24gd2hlcmUgdGhlIGZpbGUgZW5kcyB1cC4KCi0tIApMZWUgSm9uZXMgW+adjueQ
-vOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4g
-c291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3
-aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+> Gesendet: Montag, 12. August 2019 um 12:22 Uhr
+> Von: "Lee Jones" <lee.jones@linaro.org>
+
+> > - * Copyright (c) 2014 MediaTek Inc.
+> > + * Copyright (c) 2014-2018 MediaTek Inc.
+>
+> This is out of date.  Please update it.
+
+maybe i should drop change of this line completely (else it needs to be adjusted every year)
+
+regards Frank
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
