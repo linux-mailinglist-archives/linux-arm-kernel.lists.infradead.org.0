@@ -2,85 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A7558A1FB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 17:10:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 863538A200
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 17:11:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nCOBie3PtYuzRf5iik8ffwCGuO1M6voO331ykfOc8h4=; b=EDlifwhJ9TsBZx
-	Yr8w/mguThP0P4Ict/3LfSAYAKhmeJQk+6wIPZ1rdlKf8tdd/L4wFN6All3sQ+pNLY7pWbpM8802o
-	nEl7FerfPkT9+s1niPh3BdP2JuKh2j7CuxD/I116jtwL0PEHD24bVC0Khnojx26EgLc+5av5VW47I
-	2+lJCpd5J33KGR4VFh5vtoudH5uJrWyQCSuAfB/r17gQatb9wOIIraFO6RDhtApqlBjEpSBHE1IW0
-	iKDipApeBSwCvI/6vxbMeMFXoXG0cR6GS30JhfMMwG+eDJW479vN+Q7wZbn75S51L69zh5QALoQ41
-	rwS4P4RRupKSC+5Na7lw==;
+	List-Owner; bh=6zcWBf1FNHY2JFr+0gGaHQLPs4Cy9d9wwGNe4FKYdzw=; b=AK8vGf2YBLImYp
+	DqbU+/Vtr2FWi6brQytkdncjznNOTiI9y+NqVNP/N1NxcsMaqK190QVvzLdJRBe2/x/02JEnmLQDi
+	fhrfKdCrMZpJroQ9Z24VNMKN/jlSZMelxhDZjS0hi+zD3FB7JjanUXlyoPinVhxGYSMoynXoe1ajk
+	UGcaWTNccxflKraOrmJkEnsVb9TUMD2+y3ah6zmWf03TUemROLDTLHnyvTgIwPmEuvidket3togna
+	DiZE5jqPkMiH4w06C62SRrn/2tRz3QKg0lzn32C8tPES8/S+Y+at3rCQnVlE2t8KUVreK4Kpygrdh
+	xoR16AzBExr8SMw3WmnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxBxX-00006g-NS; Mon, 12 Aug 2019 15:10:07 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxBxM-000060-24
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 15:09:57 +0000
-Received: by mail-lj1-x241.google.com with SMTP id 15so6852403ljr.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 08:09:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=t1V8mqCBoCuSvxrNXOIb8cs51g3I5htO8SXqEzVW8X8=;
- b=n1QSWsyssZRjTp5iO7oJPWuTI2ZaJpwixEgzfyflZDttCKEF+JE8H0vovRd8fEJy5F
- l4mLA0x0c/Wl3Ri1chRWipsiac2k/g0407PeuzESEg686zlA0HQqAj3oNhQRsFeLx+Ca
- L/C1qM0Ksb5EDsrdYkywNPfHZ4T4Zn7lCUNuLr5ZVagc2KqSBZOdkTqK7XFpCNq36tnv
- xIjHOkC6kXyU/ri3rGDYAW/h/Eq+Rlkr4rqmVjleG/MmO6l4bleAXUr0Xhny40zkKT57
- 549CwiLTjT2Kph2g8sUmOtjgYBgNVlSBoGsTnDQ83BVHeqIdZHkMAq9naoYfMxoBzJgY
- 1WUA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=t1V8mqCBoCuSvxrNXOIb8cs51g3I5htO8SXqEzVW8X8=;
- b=Ka8btU1cSC3GeNUjyoAsqLKqmz28L7oTaBX3duWJPVK09+OvLalNAh2bAIkGg0r604
- SBmh0GdCDfI/7YG4IsJffK1D5Yc0e+sK2B2FciRrH7jo++roaK9D2W2VapDgLeC7scp5
- 3YtECs3/MtLg5bixnOnDXNx+qRSFKvr9NO/FlqaRO9weOh4TvmTY05BglEmOkHPVwS/A
- nYF5mwWCjTZm98Ms9otz2iEZYVVYfTUlrrgGnknNR8h+KPJKzUOV9MQxMBzxWndbkl1T
- 3pzgc19XcjDYIyP2vAmAD8quKW3EmuFlBMmWyIyJjaE8jot03Zi3erAyZaOPGzGMM//v
- 60aw==
-X-Gm-Message-State: APjAAAXKJ2OscoU7BwMAuzrY+r4Rme4C7k8N9XbLFhJA59ZLppB95kbR
- FFwNYFaK1XEUVP0M088UlqIa7KF2uqMug6t1E9U=
-X-Google-Smtp-Source: APXvYqzZpoyvhmC+QB37WE13tQdqAWo1VGdA91KCXsz3B1pcZkpZeWArAHP4cRIYpkm3PmWGOaB9p0kbOy5ElWiOxqU=
-X-Received: by 2002:a2e:5dc6:: with SMTP id v67mr19358346lje.240.1565622590807; 
- Mon, 12 Aug 2019 08:09:50 -0700 (PDT)
+	id 1hxByW-0001gJ-Lt; Mon, 12 Aug 2019 15:11:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxByB-0001fi-O1
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 15:10:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 072B115A2;
+ Mon, 12 Aug 2019 08:10:47 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A6CDC3F718;
+ Mon, 12 Aug 2019 08:10:45 -0700 (PDT)
+Date: Mon, 12 Aug 2019 16:10:43 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCHv3 1/6] arm/arm64: smccc/psci: add
+ arm_smccc_1_1_get_conduit()
+Message-ID: <20190812151043.GU10425@arm.com>
+References: <20190809132245.43505-1-mark.rutland@arm.com>
+ <20190809132245.43505-2-mark.rutland@arm.com>
+ <20190812150326.GT10425@arm.com>
+ <20190812150634.GB52896@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-References: <20190811133707.GC13294@shell.armlinux.org.uk>
-In-Reply-To: <20190811133707.GC13294@shell.armlinux.org.uk>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Mon, 12 Aug 2019 12:10:21 -0300
-Message-ID: <CAOMZO5BeaNysZA2CWoXb5cbz_hKFZEyb0sDmsLxRQukziXoSxw@mail.gmail.com>
-Subject: Re: [BUG] fec mdio times out under system stress
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Content-Disposition: inline
+In-Reply-To: <20190812150634.GB52896@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_080956_135130_E0CC7A6A 
-X-CRM114-Status: GOOD (  17.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190812_081047_866443_93BACFE1 
+X-CRM114-Status: GOOD (  23.79  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,68 +64,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev <netdev@vger.kernel.org>, Heiner Kallweit <hkallweit1@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Andrew Lunn <andrew@lunn.ch>
+Cc: lorenzo.pieralisi@arm.com, suzuki.poulose@arm.com, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux@armlinux.org.uk,
+ james.morse@arm.com, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
+On Mon, Aug 12, 2019 at 04:06:35PM +0100, Mark Rutland wrote:
+> On Mon, Aug 12, 2019 at 04:03:29PM +0100, Dave Martin wrote:
+> > On Fri, Aug 09, 2019 at 02:22:40PM +0100, Mark Rutland wrote:
+> > > SMCCC callers are currently amassing a collection of enums for the SMCCC
+> > > conduit, and are having to dig into the PSCI driver's internals in order
+> > > to figure out what to do.
+> > > 
+> > > Let's clean this up, with common SMCCC_CONDUIT_* definitions, and an
+> > > arm_smccc_1_1_get_conduit() helper that abstracts the PSCI driver's
+> > > internal state.
+> > > 
+> > > We can kill off the PSCI_CONDUIT_* definitions once we've migrated users
+> > > over to the new interface.
+> > > 
+> > > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> > > Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > > Acked-by: Will Deacon <will.deacon@arm.com>
+> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > > ---
+> > >  drivers/firmware/psci/psci.c | 15 +++++++++++++++
+> > >  include/linux/arm-smccc.h    | 16 ++++++++++++++++
+> > >  2 files changed, 31 insertions(+)
+> > > 
+> > > diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+> > > index f82ccd39a913..5f31f1bea1af 100644
+> > > --- a/drivers/firmware/psci/psci.c
+> > > +++ b/drivers/firmware/psci/psci.c
+> > > @@ -57,6 +57,21 @@ struct psci_operations psci_ops = {
+> > >  	.smccc_version = SMCCC_VERSION_1_0,
+> > >  };
+> > >  
+> > > +enum arm_smccc_conduit arm_smccc_1_1_get_conduit(void)
+> > 
+> > Do we expect this to be specific to SMCCC v1.1?
+> 
+> I intend it to be 1.1+
 
-On Sun, Aug 11, 2019 at 10:37 AM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> Hi Fabio,
->
-> When I woke up this morning, I found that one of the Hummingboards
-> had gone offline (as in, lost network link) during the night.
-> Investigating, I find that the system had gone into OOM, and at
-> that time, triggered an unrelated:
->
-> [4111697.698776] fec 2188000.ethernet eth0: MDIO read timeout
-> [4111697.712996] MII_DATA: 0x6006796d
-> [4111697.729415] MII_SPEED: 0x0000001a
-> [4111697.745232] IEVENT: 0x00000000
-> [4111697.745242] IMASK: 0x0a8000aa
-> [4111698.002233] Atheros 8035 ethernet 2188000.ethernet-1:00: PHY state change RUNNING -> HALTED
-> [4111698.009882] fec 2188000.ethernet eth0: Link is Down
->
-> This is on a dual-core iMX6.
->
-> It looks like the read actually completed (since MII_DATA contains
-> the register data) but we somehow lost the interrupt (or maybe
-> received the interrupt after wait_for_completion_timeout() timed
-> out.)
->
-> From what I can see, the OOM events happened on CPU1, CPU1 was
-> allocated the FEC interrupt, and the PHY polling that suffered the
-> MDIO timeout was on CPU0.
->
-> Given that IEVENT is zero, it seems that CPU1 had read serviced the
-> interrupt, but it is not clear how far through processing that it
-> was - it may be that fec_enet_interrupt() had been delayed by the
-> OOM condition.
->
-> This seems rather fragile - as the system slowing down due to OOM
-> triggers the network to completely collapse by phylib taking the
-> PHY offline, making the system inaccessible except through the
-> console.
->
-> In my case, even serial console wasn't operational (except for
-> magic sysrq).  Not sure what agetty was playing at... so the only
-> way I could recover any information from the system was to connect
-> the HDMI and plug in a USB keyboard.
->
-> Any thoughts on how FEC MDIO accesses could be made more robust?
+It seems overspecific, but I guess we can address this later if it
+becomes an issue.  This is an internal API for now (at worst I might
+envisage it being EXPORT_SYMBOL_GPL()).
 
-Sorry for the delay. I am currently on vacation with limited e-mail access.
+> > > +{
+> > > +	if (psci_ops.smccc_version < SMCCC_VERSION_1_1)
+> > > +		return SMCCC_CONDUIT_NONE;
+> > > +
+> > > +	switch (psci_ops.conduit) {
+> > > +	case PSCI_CONDUIT_SMC:
+> > > +		return SMCCC_CONDUIT_SMC;
+> > > +	case PSCI_CONDUIT_HVC:
+> > > +		return SMCCC_CONDUIT_HVC;
+> > > +	default:
+> > > +		return SMCCC_CONDUIT_NONE;
+> > > +	}
+> > > +}
+> > > +
+> > >  typedef unsigned long (psci_fn)(unsigned long, unsigned long,
+> > >  				unsigned long, unsigned long);
+> > >  static psci_fn *invoke_psci_fn;
+> > > diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+> > > index 080012a6f025..df01a8579034 100644
+> > > --- a/include/linux/arm-smccc.h
+> > > +++ b/include/linux/arm-smccc.h
+> > > @@ -80,6 +80,22 @@
+> > >  
+> > >  #include <linux/linkage.h>
+> > >  #include <linux/types.h>
+> > > +
+> > > +enum arm_smccc_conduit {
+> > > +	SMCCC_CONDUIT_NONE,
+> > 
+> > If this is intended to have the value 0, is it worth making that
+> > explicit?  I can never remember whether enums start at 1 or 0 by
+> > default...
+> 
+> They start at 0. I intend that checks are done explicitly against an
+> enum value, so I'm not sure that matters.
 
-I think it is worth trying Andrew's suggestion to increase FEC_MII_TIMEOUT.
+Not really.
 
-Thanks
+It depends whether code like if (!arm_smccc_1_1_get_conduit()) { ... }
+is considered sane or not.
+
+If we don't think people should be doing this, omitting the explicit
+value specifier seems fine.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
