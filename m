@@ -2,52 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 029DD898FB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 10:50:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 721248990B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 10:54:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Jcyd5TzxrTwXwJOIuHbjSZj4wHmtQadx60bUTEByT7s=; b=pXS+81aeUFxPEd3RRlndN4ukX
-	9kQ/ALbCOIdoWOI2uAao2yVdsUwLMgqANUNaq/EvyRFF3lq5Lhc7Qsvnigik9tsKgrmmRl6ZoviJh
-	/qmNxnxaUV43LiTOF8o3o+3wGLJ4gNDn4U2bPhcvL2WcOpwtOlyoT9X4hl9hfnDhhR+vnDx8QoLPN
-	d8N29b9F9IhpdP2I2UkkFG0rXEd6/i9TIpnMChIcBLPGlyesIvxmP80Xw6tFhcTMuRTw2Tts7sST+
-	SZYaoJRGYaF5KRPonqfECZN0GUBWiXCqKknEA4rlBG4Gfw6Ml+QPhoCtIOjmael/9KQYEPee9lCYH
-	aHB35/Mqw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=q8rh3oSiEGBkaGDcxgQj82sFQ/XUdLchhcI1O1U6Ets=; b=Hjt
+	sY0guJi6KwLJRaEswISyFHEE28iG+59CVjkkS+8300Ooa5+qz6T9qt3W3mAQkERgZHHVgdz8RX6pB
+	zMioUZ3KeBtvvV50CUjmyiGv+n7Of1Cp8BDvzuIbZUFNPYeS2deoskXtDQFQKm+lEvKlM/ZH7zHKu
+	aIg1+QzobadrFDDxFlh4x3VGfVWW9uWLPi9VgizoSo67KoqUpEZeagK1BU3PYsX6ByJd4yYdZcKeD
+	19mNcY7G0/jgkas648kWl52txyU3lvzoHz+sGARjlXtmDtL6ybT5uN58QaCJnOrO5Gao3X4g9pxP6
+	HF364ANk12Gvt6QhQKzR5vU2c5s961Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx61W-000294-7J; Mon, 12 Aug 2019 08:49:50 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1hx66A-0004A0-Mk; Mon, 12 Aug 2019 08:54:38 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx61J-000283-Iz
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 08:49:39 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 8E8D6200006;
- Mon, 12 Aug 2019 08:49:16 +0000 (UTC)
-Date: Mon, 12 Aug 2019 10:49:15 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH v5 15/18] thermal: sun8i: allow to use custom temperature
- calculation function
-Message-ID: <20190812084915.lasb4dh25bfeoigr@flea>
-References: <20190810052829.6032-1-tiny.windzz@gmail.com>
- <20190810052829.6032-16-tiny.windzz@gmail.com>
-MIME-Version: 1.0
-In-Reply-To: <20190810052829.6032-16-tiny.windzz@gmail.com>
-User-Agent: NeoMutt/20180716
+ id 1hx65y-00049C-7W
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 08:54:28 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C60F12002FB;
+ Mon, 12 Aug 2019 10:54:20 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1EE902002DF;
+ Mon, 12 Aug 2019 10:54:16 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 0D067402D2;
+ Mon, 12 Aug 2019 16:54:09 +0800 (SGT)
+From: Anson.Huang@nxp.com
+To: wim@linux-watchdog.org, linux@roeck-us.net, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-watchdog@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] watchdog: imx_sc: Remove unnecessary error log
+Date: Mon, 12 Aug 2019 16:44:34 +0800
+Message-Id: <20190812084434.13316-1-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.9.5
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_014937_778271_E3E35C0F 
-X-CRM114-Status: GOOD (  19.62  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190812_015426_405716_D626D4F8 
+X-CRM114-Status: UNSURE (   7.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,114 +67,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- gregkh@linuxfoundation.org, daniel.lezcano@linaro.org,
- linux-kernel@vger.kernel.org, edubezval@gmail.com, wens@csie.org,
- robh+dt@kernel.org, Jonathan.Cameron@huawei.com, mchehab+samsung@kernel.org,
- rui.zhang@intel.com, davem@davemloft.net, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============0698463189167144123=="
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Anson Huang <Anson.Huang@nxp.com>
 
---===============0698463189167144123==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="f4uotbkobwqxzt7r"
-Content-Disposition: inline
+An error message is already displayed by watchdog_register_device()
+when failed, so no need to have error log again for failure of
+calling devm_watchdog_register_device().
 
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/watchdog/imx_sc_wdt.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
 
---f4uotbkobwqxzt7r
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+diff --git a/drivers/watchdog/imx_sc_wdt.c b/drivers/watchdog/imx_sc_wdt.c
+index 78eaaf7..9260475 100644
+--- a/drivers/watchdog/imx_sc_wdt.c
++++ b/drivers/watchdog/imx_sc_wdt.c
+@@ -175,11 +175,8 @@ static int imx_sc_wdt_probe(struct platform_device *pdev)
+ 	watchdog_stop_on_unregister(wdog);
+ 
+ 	ret = devm_watchdog_register_device(dev, wdog);
+- 
+- 	if (ret) {
+- 		dev_err(dev, "Failed to register watchdog device\n");
++	if (ret)
+  		return ret;
+- 	}
+  
+ 	ret = imx_scu_irq_group_enable(SC_IRQ_GROUP_WDOG,
+ 				       SC_IRQ_WDOG,
+-- 
+2.7.4
 
-Hi,
-
-On Sat, Aug 10, 2019 at 05:28:26AM +0000, Yangtao Li wrote:
-> From: Icenowy Zheng <icenowy@aosc.io>
->
-> The H5 temperature calculation function is strange. Firstly, it's
-> segmented. Secondly, the formula of two sensors are different in the
-> second segment.
->
-> Allow to use a custom temperature calculation function, in case of
-> the function is complex.
->
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-
-When you send a patch on someone else's behalf, you need to put your
-Signed-off-by as well.
-
-> ---
->  drivers/thermal/sun8i_thermal.c | 12 ++++++++----
->  1 file changed, 8 insertions(+), 4 deletions(-)
->
-> diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
-> index 3259081da841..a761e2afda08 100644
-> --- a/drivers/thermal/sun8i_thermal.c
-> +++ b/drivers/thermal/sun8i_thermal.c
-> @@ -76,6 +76,7 @@ struct ths_thermal_chip {
->  				     u16 *caldata, int callen);
->  	int		(*init)(struct ths_device *tmdev);
->  	int             (*irq_ack)(struct ths_device *tmdev);
-> +	int		(*calc_temp)(int id, int reg);
->  };
->
->  struct ths_device {
-> @@ -90,9 +91,12 @@ struct ths_device {
->
->  /* Temp Unit: millidegree Celsius */
->  static int sun8i_ths_reg2temp(struct ths_device *tmdev,
-> -			      int reg)
-> +			      int id, int reg)
->  {
-> -	return (reg + tmdev->chip->offset) * tmdev->chip->scale;
-> +	if (tmdev->chip->calc_temp)
-> +		return tmdev->chip->calc_temp(id, reg);
-> +	else
-> +		return (reg + tmdev->chip->offset) * tmdev->chip->scale;
-
-You're not consistent here compared to the other callbacks you have
-introduced: calibrate, init and irq_ack all need to be set and will
-fail (hard) if you don't set them, yet this one will have a different
-behaviour (that behaviour being to use the H6 formula, which is the
-latest SoC, which is a bit odd in itself).
-
-I guess we should either make it mandatory as the rest of the
-callbacks, or document which callbacks are mandatory and which are
-optional (and the behaviour when it's optional).
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---f4uotbkobwqxzt7r
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVEoCwAKCRDj7w1vZxhR
-xfQmAP9xX6EXk3hDLg/bBSbrnJp6QkeJeiCQrfENROxox3MBTQD/Xm0PpUdxbQaF
-HD4uZ6W1In3fv39oufKd/j0DlKZ5Lwc=
-=i8aL
------END PGP SIGNATURE-----
-
---f4uotbkobwqxzt7r--
-
-
---===============0698463189167144123==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0698463189167144123==--
-
