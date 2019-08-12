@@ -2,83 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1813189CC2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:26:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C9C689CD3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:27:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
-	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xl33BSmwBbt/yqochZ0jvJLmuuDk0HGRTXVPRUPAscw=; b=UOr04tZpMABa25
-	GoeBuDKnxJLPQ3AJ1JO7EeGBBcXLTwTlZObZK4Dyd5SxlZXuEd4r5Hl9lh60nB+bXXXbZ+SROYMrT
-	z0DG8D4kSo5nveQE/VyKSx1AuQJHWMJ41hDndzYhVuyfRA41rgg99tl9LppytIcs4Yj1bLT/XUPXI
-	xiIT8FQRr550ktFDTxcb7J7Iol/yO0+1+0J3hgbmVs3p4Ith+l5A2xNpKwr+CyaHpc5YBq1RSi7WS
-	aXToVK2yfs+R9oY53WonraC3dPQOmXHhQhk6XAg3sGO3fK6QAQynljqwtFec8C4yBYBG+wkm+LXRr
-	AQcPo//0lEi6TfU5HUEw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FdYu6Q+y7cbTyhECcqbspzkeNlrAxpdDuwM0gczvPgM=; b=uQEA+GT8gl3J02
+	S3NgtGB2Rt3R5Upimcid9SnTZhMg9tyfUUEMTENgF11E4rm1UqUSXmf4TdrdVaAr5Yew2PQzwav7h
+	z6im+5321MLjG0TeNqWzI/HS0J9A9fNFroxl+/LzQUVaAJUq+OCXhdyigaED3WAhF10Ce8QGG65PM
+	kgMDnt7Uf/AqQgs21/LE2gOuNmT/NkLoGmN2fNSXGRZmdH82vHLSTt2GWEUwWA2l9GVBg5IgTAgnM
+	xg9r1XeiPi7Wigjl8BttyW++1DvtrfoZNdG2grBIvvLL2NfkSmCAW8Dj+hf0Z3WtESSwlXvpZ/Phh
+	MYDHPmUNgBihQUFQTNzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx8TI-00084l-Iz; Mon, 12 Aug 2019 11:26:40 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1hx8U4-000083-4C; Mon, 12 Aug 2019 11:27:28 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx8Su-00084C-9R; Mon, 12 Aug 2019 11:26:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1565609116;
- bh=v7b7BvrXciV3NBubwOpaemt2kAsPrl1BPe/Nz2NswBU=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=MGnSkv10s6bJr+2LYe0Vg+T5aQQgWun0XdWZhVJjH0OTeFdRRlBmS6Ih2lFLvyv5L
- vWF5UvQnSdqCZULmjwQ9RVEYSZYOAIXomyeYoAZIvUPv/MqCc2QtBZUOL0fxHIZnVy
- VqBXryDgJhswl2xOlxSt0waDs6QiYE7+ZufmluR4=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [217.61.152.193] ([217.61.152.193]) by web-mail.gmx.net
- (3c-app-gmx-bs80.server.lan [172.19.170.228]) (via HTTP); Mon, 12 Aug 2019
- 13:25:16 +0200
+ id 1hx8Td-0008Sb-TY
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 11:27:04 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x7CBQ9HZ030376; Mon, 12 Aug 2019 13:26:54 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=zlh7K383b0/baRSXK9AetsCSDAYAXrVto6VkTMETb8M=;
+ b=njQ4vSBdF762AlZmByPJVB4a3oSKNsIvykfbYXElFkCr1LQ+gJqT3ucuq+wv7vhoXz85
+ t7Y/RIWvClw9CMbO8hg2dSGi00vC3+XPmRAq2xJoBL8RGIQyUSsCSkMMxb24f+o6Fw/G
+ HiGPcG/fFWXR9Z7E+LDj9KcdRQqOEQ6kHFK+pkgSA6SZc2zbhCx1wYL2vzab1KH2ATW6
+ UKfNzERiocUUP/QzqCm8VtfzRfXm01SyZP2zotJPZfqJjw3QEQdwQ1GWmsClINsDiOyq
+ cNxf+KpYTfAHz0xeb+/bSqgT2dc61Y1CVv1TWjU3ZzF/OlWHLKoCfGCutfDHI40Q9Sws PA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2u9kpujh04-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 12 Aug 2019 13:26:54 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 573C33F;
+ Mon, 12 Aug 2019 11:26:53 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3D8FB2F56E7;
+ Mon, 12 Aug 2019 13:26:53 +0200 (CEST)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS21.st.com
+ (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 12 Aug
+ 2019 13:26:53 +0200
+Received: from localhost (10.201.23.19) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 12 Aug 2019 13:26:52
+ +0200
+From: Hugues Fruchet <hugues.fruchet@st.com>
+To: Alexandre Torgue <alexandre.torgue@st.com>, Mauro Carvalho Chehab
+ <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Sakari Ailus
+ <sakari.ailus@linux.intel.com>
+Subject: [PATCH v5 0/3] DCMI bridge support
+Date: Mon, 12 Aug 2019 13:26:43 +0200
+Message-ID: <1565609206-27101-1-git-send-email-hugues.fruchet@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Message-ID: <trinity-0fa641df-f7bb-4627-a9ab-aac3cabc90ba-1565609115974@3c-app-gmx-bs80>
-From: "Frank Wunderlich" <frank-w@public-files.de>
-To: "Lee Jones" <lee.jones@linaro.org>
-Subject: Aw: Re: [PATCH v3 06/10] mfd: mt6323: some improvements of mt6397-core
-Date: Mon, 12 Aug 2019 13:25:16 +0200
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <20190812102209.GI26727@dell>
-References: <20190729174154.4335-1-frank-w@public-files.de>
- <20190729174154.4335-7-frank-w@public-files.de>
- <20190812102209.GI26727@dell>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:+H+zrFxbX3u65Kz8Q14UR+W2QL6KWeuqbqDXcd/mwlEXxknDmP8VniBO4dlsPO8lvzAXn
- 3Y5NyGNEFcxG/hiDEMdhlb6mGUuC2oM0phOjueOu2MDtHhyNSzKa7zzri7AaOrLyXgls+u8sTwPQ
- oAV/CbSBYlmUVInmmRiS2kzjJFgTPVlFkzP+Rwz8lHdNBK149VceMK36vw/RyB+IoFv+U8FKiztO
- yMwrHuIbMWrhlGq1Uj1J+0nxuOtWnyd5GyKRFUYsqojA8ecuYK6tOXNnVm1cb1FrnaNST1QYDBxU
- Mg=
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:8Yj7l7CH0Mw=:gZd+QnMoJMQ46IbcpRg+69
- uYQ9PWSHzCb4jiQPAL0RN4XqGKUkZP7au9BlZu0WeAXvh2moFGkS+Qh6H/UHvlfwoK/zckQts
- cSjLWlFMupqJc7aAKUQfYQeemHELWiYqn7OHSi3fCzZ5BWFF4A3nQ4g4yoiqnt0pEuncDClxD
- qyoAVq9ArjxiVhYQYJA+PBrs7RziX5GkbBGDbwU5A9oGzVXvGiaDnBv6dUZOnhrW42dabqHS0
- lXU6xDXmrEAtePWxyeJZ40FbZOUl2nBhcn0Ctq5enGlq6vSuThfpLhU/cMvkVj9nHxdUkAeqy
- ASvjyoO1IKTe/Leg8l0X6YSD2sTyzyv7YXtP0U0sEOo1WUBWGayxs4gAzARxamymbaBjlhfx/
- OUyC1XD9pmsdx+kOvL61uobd2H29U8aF9pvGk1JBGdzDPzbNvzGqg7Oc1VOkBk9gGzSzeaCdw
- EWqUYj0GKkc5wRo4mB/yfqKK3ymFbRVrkA8YxocvAnR/cXIcxS+jvKmY2YyDG6p2BMGEPvXKZ
- 7xzezeddUuOzzBfMo3wupso6yj2SDGjeO5OPEwTvJNjgdfUr8uCyYRFquSH5DsOvA7C4xYYjT
- gN3DvuN67PPM5sP0cvLOSC6YEijq4vcf44N36E+tBQs7z/K5g6lA0LQzCD7+B4ZjLv1wdYjDw
- 06kiD9astcDCR5QcII++ExU97eegbwccVgVGX0HqIddrKtQ==
+X-Originating-IP: [10.201.23.19]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-08-12_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_042616_620506_056B47E3 
-X-CRM114-Status: UNSURE (   5.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190812_042702_404425_0EC18327 
+X-CRM114-Status: GOOD (  11.79  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.19 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -91,38 +93,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, Richard
- Fontana <rfontana@redhat.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, linux-rtc@vger.kernel.org,
- Allison Randal <allison@lohutok.net>, devicetree@vger.kernel.org,
- linux-pm@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
- "Tianping . Fang" <tianping.fang@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie
- Huang <eddie.huang@mediatek.com>, linux-arm-kernel@lists.infradead.org,
- Alessandro Zummo <a.zummo@towertech.it>, Josef Friedl <josef.friedl@speed.at>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Sebastian Reichel <sre@kernel.org>, "David S. Miller" <davem@davemloft.net>
+Cc: Mickael GUENE <mickael.guene@st.com>, linux-kernel@vger.kernel.org,
+ Philippe CORNU <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>, Hugues
+ Fruchet <hugues.fruchet@st.com>, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Gesendet: Montag, 12. August 2019 um 12:22 Uhr
-> Von: "Lee Jones" <lee.jones@linaro.org>
+This patch serie allows to connect non-parallel camera sensor to
+DCMI thanks to a bridge connected in between such as STMIPID02 [1].
 
-> > - * Copyright (c) 2014 MediaTek Inc.
-> > + * Copyright (c) 2014-2018 MediaTek Inc.
->
-> This is out of date.  Please update it.
+Media controller support is introduced first, then support of
+several sub-devices within pipeline with dynamic linking
+between them.
+In order to keep backward compatibility with applications
+relying on V4L2 interface only, format set on video node
+is propagated to all sub-devices connected to camera interface.
 
-maybe i should drop change of this line completely (else it needs to be adjusted every year)
+[1] https://www.spinics.net/lists/devicetree/msg278002.html
 
-regards Frank
+===========
+= history =
+===========
+version 5:
+  - Remove remaining Change-Id
+  - Add Acked-by: Sakari Ailus <sakari.ailus@linux.intel.com>
+
+version 4:
+  - Also drop subdev nodes registry as suggested by Hans:
+    https://www.spinics.net/lists/arm-kernel/msg743375.html
+
+version 3:
+  - Drop media device registry to not expose media controller
+    interface to userspace as per Laurent' suggestion:
+    https://www.spinics.net/lists/linux-media/msg153417.html
+  - Prefer "source" instead of "sensor" and keep it in 
+    dcmi_graph_entity struct, move asd as first member
+    of struct as per Sakari' suggestion:
+    https://www.spinics.net/lists/linux-media/msg153119.html
+  - Drop dcmi_graph_deinit() as per Sakari' suggestion:
+    https://www.spinics.net/lists/linux-media/msg153417.html
+
+version 2:
+  - Fix bus_info not consistent between media and V4L:
+    https://www.spinics.net/lists/arm-kernel/msg717676.html
+  - Propagation of format set on video node to the sub-devices
+    chain connected on camera interface
+
+version 1:
+  - Initial submission
+
+Hugues Fruchet (3):
+  media: stm32-dcmi: improve sensor subdev naming
+  media: stm32-dcmi: add media controller support
+  media: stm32-dcmi: add support of several sub-devices
+
+ drivers/media/platform/Kconfig            |   2 +-
+ drivers/media/platform/stm32/stm32-dcmi.c | 283 +++++++++++++++++++++++++-----
+ 2 files changed, 236 insertions(+), 49 deletions(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
