@@ -2,106 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D5C48A4B0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 19:34:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CB0B8A4C3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 19:36:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CJo8Igd9LqtqE6QwVepYsDZ57iy4DOFObNvTEw7lUes=; b=DA9kfPgf//kWYrbHaSysA7xP4
-	lX7gJKYybm3K3X4ZOwZQp67ol4GvOt2NXS86pZTc4b515hmq4ZuIzSjtRR+HwVgxna0NcyeTdJFYi
-	2rBH9AyLfa/NwK+5c4p93RYAMQHOdamQ3AduMHym3nhXjM/mPXQ1dQaO/N1Dh+2vh5lfNdtQ/d2lu
-	Qi8erh8991d11oXEC07F9bJSF0jnx9r4Ln/U5Yba2ITPZQtOQH8LPcmUinCY0r2fQpDzx6GB5Vdkw
-	v4hMT3svantgDKWQ3UApXEA18TjNDwMnnrTO3vt2vxGI9moY7q+m5KWaa/eexoaAXCf7FT6bzT8Pw
-	32IFo7YOg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8ypbcXE8Lss8tb/zudKnGggMEaE+fijGyAq5HlrphWg=; b=RSQfZiWFjPn8fy
+	ygV90znEtYj+qgTyUUGh7Hqb19y1Pp2krZ5SgVnKibjUGUSN7vslQaDf7zVmZaAEAbsT90jUEjd0F
+	As2kuPFr5lqHtj7gvqo5sZfPRiHkhiU1KHRXgqCmAkwJalIFuWrsJyGl8PwNRZQDELvxlP3Gu4XIs
+	CTWStpu5POTyx2fxFfhzwlBxf6JpRguAsCjbPxiEXzOtjpgWU1A9pZhYQqDmzRYUbrUuap8F251rk
+	ALqX4xtV3TIL5vCFsZkRin+7kAKXkOa+rTBltIN5wca0vsX6pRWuAO0JjxNgYaWGBaSi6zwgbpVq8
+	f/ntvTKrxV9XgczQ1CaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxED9-00013D-Eb; Mon, 12 Aug 2019 17:34:23 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxECh-0000pI-3k
- for linux-arm-kernel@bombadil.infradead.org; Mon, 12 Aug 2019 17:33:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=cAgtYZHgV6xUR+yC/VEEeHLdtqd6juyZ2ABBZdUumQE=; b=j8vDBTBP4avXoVkrMkF6yA8SNf
- 9/cpVOwWOFEJX8APhqFzMhbR4jjcifHswhOQbd6WiY9hGKpnGSr1tT6dTndyi/hR9Apa9y8d8po1+
- KoqzKqA09kniUZw9TlEQFLB+J5SF3ITM82WckMeQ51v1QdpmMyZ1NirCvfh2u2ic7sk+BosChXS4G
- v6ocLlzKeIr0jCdzz8hW0PMp/PhgPrgUbjg7fHz6XK9FJu0/F0dJu/e6ACV7tZ8BOTwbY3+JmeKqp
- EaqgGv5FPt/WjBXA2JbuH35FHWIOoIKUt7KrUoRtapMUUApoUwMclVEH7B4cyciogAj3ySBptxZRS
- FCO32Hrg==;
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxECe-0002rR-8Z
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 17:33:53 +0000
-Received: by mail-wm1-x342.google.com with SMTP id z23so310981wmf.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 10:33:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=cAgtYZHgV6xUR+yC/VEEeHLdtqd6juyZ2ABBZdUumQE=;
- b=FkOMMl3g4RPI0502AjI9JhmjFGhx8iEHR6MXlhd7QQb38nkD5pmT0wlZ6B3cwjdfkR
- a4w1WS5ORSm542pGKgVcQXmLXR4jP/kFGbW6sQYIOny5xVRPsj5D3HEidrrZ5iJVn8JP
- u+CpTzQoxr5Pe+QSU9KvI1UUpxSr9VhDPwGOA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=cAgtYZHgV6xUR+yC/VEEeHLdtqd6juyZ2ABBZdUumQE=;
- b=EfEPSf1BdhiQnoV78pSeXNCoKJBVGt/PkppYyNeo75GQWZ6Jz/shCRigRQ+r/WIeHf
- RBXIOjXV9aJvyacCJIxBzVs1JKxjQwLyC3nwuIh72D1DLdhshq1SEiCQVbetv7eMuYWm
- PadFAFRCvOGaiuRFu59VX20pBNfGDOCXMXSFlJWxfKMhUOcvnMacjYSd0lMol+eHfUTO
- h+3Bba3ifUYK8+WvpmXmF+q+dm7/FhPJqxaK4QwyX+g5ylHpBlQYpJsYLsJFNDjiFl/G
- kxXZmY/VVlcHPNwFexR0bVOB5TrO+/2nj/gDsr4TJ3Z4qZXSz+BEpjsMf8TqZd7LFk89
- 0dXQ==
-X-Gm-Message-State: APjAAAWkhPAwBV1QEVSBlz2tP2yuA8G2txQK0ysQqyUYGi8M5gmsTDP1
- /DiYCwUUa4gDKPaakk4KxqlWlg==
-X-Google-Smtp-Source: APXvYqzl9ysVhJW+R47AyXAx8TEcPlPa5dLrHEwezvxULcJifU7LOO2WC9NW3PQshBaROW+6GP8lMw==
-X-Received: by 2002:a7b:c95a:: with SMTP id i26mr402521wml.175.1565631227782; 
- Mon, 12 Aug 2019 10:33:47 -0700 (PDT)
-Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id j10sm183930432wrd.26.2019.08.12.10.33.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 12 Aug 2019 10:33:47 -0700 (PDT)
-Subject: Re: [PATCH v1 1/1] i2c: iproc: Add i2c repeated start capability
-To: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
- Wolfram Sang <wsa@the-dreams.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-References: <1565150941-27297-1-git-send-email-rayagonda.kokatanur@broadcom.com>
-From: Ray Jui <ray.jui@broadcom.com>
-Message-ID: <a2b0ccc1-63d5-177d-2b54-d79c65057907@broadcom.com>
-Date: Mon, 12 Aug 2019 10:33:42 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hxEF8-0002sl-NB; Mon, 12 Aug 2019 17:36:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxEEy-0002sF-Ne
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 17:36:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 99B4A15AB;
+ Mon, 12 Aug 2019 10:36:15 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 459F33F706; Mon, 12 Aug 2019 10:36:14 -0700 (PDT)
+Date: Mon, 12 Aug 2019 18:36:12 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Hansen <dave.hansen@intel.com>
+Subject: Re: [PATCH v7 1/2] arm64: Define
+ Documentation/arm64/tagged-address-abi.rst
+Message-ID: <20190812173611.GD62772@arrakis.emea.arm.com>
+References: <20190807155321.9648-1-catalin.marinas@arm.com>
+ <20190807155321.9648-2-catalin.marinas@arm.com>
+ <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
+ <20190808172730.GC37129@arrakis.emea.arm.com>
+ <68354acd-e205-71cb-11c6-74a150178ae0@intel.com>
 MIME-Version: 1.0
-In-Reply-To: <1565150941-27297-1-git-send-email-rayagonda.kokatanur@broadcom.com>
-Content-Language: en-US
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.2 points)
+Content-Disposition: inline
+In-Reply-To: <68354acd-e205-71cb-11c6-74a150178ae0@intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190812_103616_861600_24B38AF0 
+X-CRM114-Status: GOOD (  38.83  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,199 +65,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lori Hikichi <lori.hikichi@broadcom.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Shivaraj Shetty <sshetty1@broadcom.com>, linux-kernel@vger.kernel.org,
- Icarus Chau <icarus.chau@broadcom.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Dave P Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Wolfram,
-
-On 8/6/19 9:09 PM, Rayagonda Kokatanur wrote:
-> From: Lori Hikichi <lori.hikichi@broadcom.com>
+On Fri, Aug 09, 2019 at 07:10:18AM -0700, Dave Hansen wrote:
+> On 8/8/19 10:27 AM, Catalin Marinas wrote:
+> > On Wed, Aug 07, 2019 at 01:38:16PM -0700, Dave Hansen wrote:
+> >> Also, shouldn't this be converted over to an arch_prctl()?
+> > 
+> > What do you mean by arch_prctl()? We don't have such thing, apart from
+> > maybe arch_prctl_spec_ctrl_*(). We achieve the same thing with the
+> > {SET,GET}_TAGGED_ADDR_CTRL macros. They could be renamed to
+> > arch_prctl_tagged_addr_{set,get} or something but I don't see much
+> > point.
 > 
-> Enable handling of i2c repeated start. The current code
-> handles a multi msg i2c transfer as separate i2c bus
-> transactions. This change will now handle this case
-> using the i2c repeated start protocol. The number of msgs
-> in a transfer is limited to two, and must be a write
-> followed by a read.
+> Silly me.  We have an x86-specific:
 > 
-> Signed-off-by: Lori Hikichi <lori.hikichi@broadcom.com>
-> Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-> Signed-off-by: Icarus Chau <icarus.chau@broadcom.com>
-> Signed-off-by: Ray Jui <ray.jui@broadcom.com>
-> Signed-off-by: Shivaraj Shetty <sshetty1@broadcom.com>
-> ---
-
-Note this patch has gone through internal review and testing on various 
-I2C slave devices. It is introduced to work around limitation of our I2C 
-controller and allows it to work on certain I2C slave devices that are 
-sensitive and requires repeated start between transactions instead of a 
-stop.
-
-Given that my name is also on the Signed-off-by since I helped to 
-rewrite part of the patch, I'm not going to add my Reviewed-by tag here.
-
-Please help to review.
-
-Thanks,
-
-Ray
-
->   drivers/i2c/busses/i2c-bcm-iproc.c | 70 +++++++++++++++++++++++++++++++-------
->   1 file changed, 57 insertions(+), 13 deletions(-)
+> 	SYSCALL_DEFINE2(arch_prctl, int , option, unsigned long , arg2)
 > 
-> diff --git a/drivers/i2c/busses/i2c-bcm-iproc.c b/drivers/i2c/busses/i2c-bcm-iproc.c
-> index d7fd76b..15fedcf 100644
-> --- a/drivers/i2c/busses/i2c-bcm-iproc.c
-> +++ b/drivers/i2c/busses/i2c-bcm-iproc.c
-> @@ -81,6 +81,7 @@
->   #define M_CMD_PROTOCOL_MASK          0xf
->   #define M_CMD_PROTOCOL_BLK_WR        0x7
->   #define M_CMD_PROTOCOL_BLK_RD        0x8
-> +#define M_CMD_PROTOCOL_PROCESS       0xa
->   #define M_CMD_PEC_SHIFT              8
->   #define M_CMD_RD_CNT_SHIFT           0
->   #define M_CMD_RD_CNT_MASK            0xff
-> @@ -675,13 +676,20 @@ static int bcm_iproc_i2c_xfer_wait(struct bcm_iproc_i2c_dev *iproc_i2c,
->   	return 0;
->   }
->   
-> -static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
-> -					 struct i2c_msg *msg)
-> +/*
-> + * If 'process_call' is true, then this is a multi-msg transfer that requires
-> + * a repeated start between the messages.
-> + * More specifically, it must be a write (reg) followed by a read (data).
-> + * The i2c quirks are set to enforce this rule.
-> + */
-> +static int bcm_iproc_i2c_xfer_internal(struct bcm_iproc_i2c_dev *iproc_i2c,
-> +					struct i2c_msg *msgs, bool process_call)
->   {
->   	int i;
->   	u8 addr;
->   	u32 val, tmp, val_intr_en;
->   	unsigned int tx_bytes;
-> +	struct i2c_msg *msg = &msgs[0];
->   
->   	/* check if bus is busy */
->   	if (!!(iproc_i2c_rd_reg(iproc_i2c,
-> @@ -707,14 +715,29 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
->   			val = msg->buf[i];
->   
->   			/* mark the last byte */
-> -			if (i == msg->len - 1)
-> -				val |= BIT(M_TX_WR_STATUS_SHIFT);
-> +			if (!process_call && (i == msg->len - 1))
-> +				val |= 1 << M_TX_WR_STATUS_SHIFT;
->   
->   			iproc_i2c_wr_reg(iproc_i2c, M_TX_OFFSET, val);
->   		}
->   		iproc_i2c->tx_bytes = tx_bytes;
->   	}
->   
-> +	/* Process the read message if this is process call */
-> +	if (process_call) {
-> +		msg++;
-> +		iproc_i2c->msg = msg;  /* point to second msg */
-> +
-> +		/*
-> +		 * The last byte to be sent out should be a slave
-> +		 * address with read operation
-> +		 */
-> +		addr = msg->addr << 1 | 1;
-> +		/* mark it the last byte out */
-> +		val = addr | (1 << M_TX_WR_STATUS_SHIFT);
-> +		iproc_i2c_wr_reg(iproc_i2c, M_TX_OFFSET, val);
-> +	}
-> +
->   	/* mark as incomplete before starting the transaction */
->   	if (iproc_i2c->irq)
->   		reinit_completion(&iproc_i2c->done);
-> @@ -733,7 +756,7 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
->   	 * underrun interrupt, which will be triggerred when the TX FIFO is
->   	 * empty. When that happens we can then pump more data into the FIFO
->   	 */
-> -	if (!(msg->flags & I2C_M_RD) &&
-> +	if (!process_call && !(msg->flags & I2C_M_RD) &&
->   	    msg->len > iproc_i2c->tx_bytes)
->   		val_intr_en |= BIT(IE_M_TX_UNDERRUN_SHIFT);
->   
-> @@ -743,6 +766,8 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
->   	 */
->   	val = BIT(M_CMD_START_BUSY_SHIFT);
->   	if (msg->flags & I2C_M_RD) {
-> +		u32 protocol;
-> +
->   		iproc_i2c->rx_bytes = 0;
->   		if (msg->len > M_RX_FIFO_MAX_THLD_VALUE)
->   			iproc_i2c->thld_bytes = M_RX_FIFO_THLD_VALUE;
-> @@ -758,7 +783,10 @@ static int bcm_iproc_i2c_xfer_single_msg(struct bcm_iproc_i2c_dev *iproc_i2c,
->   		/* enable the RX threshold interrupt */
->   		val_intr_en |= BIT(IE_M_RX_THLD_SHIFT);
->   
-> -		val |= (M_CMD_PROTOCOL_BLK_RD << M_CMD_PROTOCOL_SHIFT) |
-> +		protocol = process_call ?
-> +				M_CMD_PROTOCOL_PROCESS : M_CMD_PROTOCOL_BLK_RD;
-> +
-> +		val |= (protocol << M_CMD_PROTOCOL_SHIFT) |
->   		       (msg->len << M_CMD_RD_CNT_SHIFT);
->   	} else {
->   		val |= (M_CMD_PROTOCOL_BLK_WR << M_CMD_PROTOCOL_SHIFT);
-> @@ -774,17 +802,31 @@ static int bcm_iproc_i2c_xfer(struct i2c_adapter *adapter,
->   			      struct i2c_msg msgs[], int num)
->   {
->   	struct bcm_iproc_i2c_dev *iproc_i2c = i2c_get_adapdata(adapter);
-> -	int ret, i;
-> +	bool process_call = false;
-> +	int ret;
->   
-> -	/* go through all messages */
-> -	for (i = 0; i < num; i++) {
-> -		ret = bcm_iproc_i2c_xfer_single_msg(iproc_i2c, &msgs[i]);
-> -		if (ret) {
-> -			dev_dbg(iproc_i2c->device, "xfer failed\n");
-> -			return ret;
-> +	if (num > 2) {
-> +		dev_err(iproc_i2c->device,
-> +			"Only support up to 2 messages. Current msg count %d\n",
-> +			num);
-> +		return -EOPNOTSUPP;
-> +	}
-> +
-> +	if (num == 2) {
-> +		/* Repeated start, use process call */
-> +		process_call = true;
-> +		if (msgs[1].flags & I2C_M_NOSTART) {
-> +			dev_err(iproc_i2c->device, "Invalid repeated start\n");
-> +			return -EOPNOTSUPP;
->   		}
->   	}
->   
-> +	ret = bcm_iproc_i2c_xfer_internal(iproc_i2c, msgs, process_call);
-> +	if (ret) {
-> +		dev_dbg(iproc_i2c->device, "xfer failed\n");
-> +		return ret;
-> +	}
-> +
->   	return num;
->   }
->   
-> @@ -806,6 +848,8 @@ static uint32_t bcm_iproc_i2c_functionality(struct i2c_adapter *adap)
->   };
->   
->   static struct i2c_adapter_quirks bcm_iproc_i2c_quirks = {
-> +	.flags = I2C_AQ_COMB_WRITE_THEN_READ,
-> +	.max_comb_1st_msg_len = M_TX_RX_FIFO_SIZE,
->   	.max_read_len = M_RX_MAX_READ_LEN,
->   };
->   
+> I guess there's no ARM equivalent so you're stuck with the generic one.
 > 
+> > What would be better (for a separate patch series) is to clean up
+> > sys_prctl() and move the arch-specific options into separate
+> > arch_prctl() under arch/*/kernel/. But it's not really for this series.
+> 
+> I think it does make sense for truly arch-specific features to stay out
+> of the arch-generic prctl().  Yes, I know I've personally violated this
+> in the past. :)
+
+Maybe Dave M could revive his prctl() clean-up patches which moves the
+arch specific cases to the corresponding arch/*/ code
+
+> >> What is the scope of these prctl()'s?  Are they thread-scoped or
+> >> process-scoped?  Can two threads in the same process run with different
+> >> tagging ABI modes?
+> > 
+> > Good point. They are thread-scoped and this should be made clear in the
+> > doc. Two threads can have different modes.
+> > 
+> > The expectation is that this is invoked early during process start (by
+> > the dynamic loader or libc init) while in single-thread mode and
+> > subsequent threads will inherit the same mode. However, other uses are
+> > possible.
+> 
+> If that's the expectation, it would be really nice to codify it.
+> Basically, you can't enable the feature if another thread is already
+> been forked off.
+
+Well, that's my expectation but I'm not a userspace developer. I don't
+think there is any good reason to prevent it. It doesn't cost us
+anything to support in the kernel, other than making the documentation
+clearer.
+
+> >>> +When a process has successfully enabled the new ABI by invoking
+> >>> +prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE), the following
+> >>> +behaviours are guaranteed:
+> >>> +
+> >>> +- Every currently available syscall, except the cases mentioned in section
+> >>> +  3, can accept any valid tagged pointer. The same rule is applicable to
+> >>> +  any syscall introduced in the future.
+> >>> +
+> >>> +- The syscall behaviour is undefined for non valid tagged pointers.
+> >>
+> >> Do you really mean "undefined"?  I mean, a bad pointer is a bad pointer.
+> >>  Why should it matter if it's a tagged bad pointer or an untagged bad
+> >> pointer?
+> > 
+> > Szabolcs already replied here. We may have tagged pointers that can be
+> > dereferenced just fine but being passed to the kernel may not be well
+> > defined (e.g. some driver doing a find_vma() that fails unless it
+> > explicitly untags the address). It's as undefined as the current
+> > behaviour (without these patches) guarantees.
+> 
+> It might just be nicer to point out what this features *changes* about
+> invalid pointer handling, which is nothing. :)  Maybe:
+> 
+> 	The syscall behaviour for invalid pointers is the same for both
+> 	tagged and untagged pointers.
+
+Good point.
+
+> >>> +- prctl(PR_SET_MM, ``*``, ...) other than arg2 PR_SET_MM_MAP and
+> >>> +  PR_SET_MM_MAP_SIZE.
+> >>> +
+> >>> +- prctl(PR_SET_MM, PR_SET_MM_MAP{,_SIZE}, ...) struct prctl_mm_map fields.
+> >>> +
+> >>> +Any attempt to use non-zero tagged pointers will lead to undefined
+> >>> +behaviour.
+> >>
+> >> I wonder if you want to generalize this a bit.  I think you're saying
+> >> that parts of the ABI that modify the *layout* of the address space
+> >> never accept tagged pointers.
+> > 
+> > I guess our difficulty in specifying this may have been caused by
+> > over-generalising. For example, madvise/mprotect came under the same
+> > category but there is a use-case for malloc'ed pointers (and tagged) to
+> > the kernel (e.g. MADV_DONTNEED). If we can restrict the meaning to
+> > address space *layout* manipulation, we'd have mmap/mremap/munmap,
+> > brk/sbrk, prctl(PR_SET_MM). Did I miss anything?. Other related syscalls
+> > like mprotect/madvise preserve the layout while only changing permissions,
+> > backing store, so the would be allowed to accept tags.
+> 
+> shmat() comes to mind.  I also did a quick grep for mmap_sem taken for
+> write and didn't see anything else obvious jump out at me.
+
+I'll document shmat() as not supported, together with the prctl().
+
+As I submitted a fixup already, I propose that we allow tagged pointers
+on mmap/munmap/mremap/brk. It makes the documentation simpler ;) (and
+the user understanding of what is and is not allowed).
+
+> >> It looks like the TAG_SHIFT and tag size are pretty baked into the
+> >> aarch64 architecture.  But, are you confident that no future
+> >> implementations will want different positions or sizes?  (obviously
+> >> controlled by other TCR_EL1 bits)
+> > 
+> > For the top-byte-ignore (TBI), that's been baked in the architecture
+> > since ARMv8.0 and we'll have to keep the backwards compatible mode. As
+> > the name implies, it's the top byte of the address and that's what the
+> > document above refers to.
+> > 
+> > With MTE, I can't exclude other configurations in the future but I'd
+> > expect the kernel to present the option as a new HWCAP and the user to
+> > explicitly opt in via a new prctl() flag. I seriously doubt we'd break
+> > existing binaries. So, yes TAG_SHIFT may be different but so would the
+> > prctl() above.
+> 
+> Basically, what you have is a "turn tagging on" and "turn tagging off"
+> call which are binary: all on or all off.  How about exposing a mask:
+> 
+> 	/* Replace hard-coded mask size/position: */
+> 	unsigned long mask = prctl(GET_POSSIBLE_TAGGED_ADDR_BITS);
+> 
+> 	if (mask == 0)
+> 		// no tagging is supported obviously
+> 
+> 	prctl(SET_TAGGED_ADDR_BITS, mask);
+> 
+> 	// now userspace knows via 'mask' where the tag bits are
+
+For the actual hardware memory tagging, maybe we could get the possible
+bits but for TBI, as I said above, that's baked into the architecture. I
+don't think it's worth the effort of getting a mask as I don't see ARM
+changing this without breaking existing software. Even compiler support
+like hwasan relies on the 8-bit TBI.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
