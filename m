@@ -2,76 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0AB08AB53
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 01:41:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A3918AB68
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 01:47:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ib2KkUqMl7pxtxnvWTiVwMiHsd1MifVsi4hO4lLlXrs=; b=PuV/uaHLPzSP6W
-	oqh/2BG+OqM6L4VXBgzqCkDCo8syt0CuKp84p4lJwnPn5FGZgJrU96ZiTiTaF7ZorzWfYQVs8xnFc
-	4GSHpWcwnz+M4Blrhq5PIZC21Ot2+vYuqUynzBFtc7ork7OxM2RKMHOx22uDqzZwlenvxCMB6RgQY
-	eOzefAbXAf0iRsDk18RE3X+EJa5ceKOKSuluwEK+e7VbuXsQ7xEusoQkp6d1Fs2QQwSvMJS37vXWS
-	uiw1B6+boppywpNWSgTHhcMcq5qlkcqO+Cuh2T8Oc3sIckzp3hs8i+qzp2LHxTFPC0c80gp0pFBBt
-	HjbtJew3IcMNrS56TG8w==;
+	List-Owner; bh=MLwM3vIOh8RSt2Z4vqWVUOHzt5W4KX7KKUJY/cYtKno=; b=HpqqweCJWSN9Dj
+	1TwxFbTGWQaB6dUbFgjL93nByNCwtWgqFdbaWYgDs1oX0DGb+XjL57WJBa6l9W4gK3GpoQodP/dXF
+	stj/Y2ivlUZvjwNkojJC0o2fFsxymHcKAr77oQ9cPrmUa1GjqKyexwZO8kiuJYZuMWMO5r/OcFiRS
+	cd7BegfGCiLNJe7PkpDAJLOhaBB+M2yFyy9puQRdXEENkUojKAgt2uiWB6t4rjWoeYOQucS5YquCB
+	5Dcc41amjSllzgWQHcBUsRqON81IthVJH9ho+4NVGd2lT/g+eTcSIK77Ytdqk495ShPb5eWWxCppf
+	T2/iZq15zqTJEeiyyjGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxJw6-0000iw-Ii; Mon, 12 Aug 2019 23:41:10 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1hxK1o-0002fP-1b; Mon, 12 Aug 2019 23:47:04 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxJvt-0000i6-T5
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 23:40:59 +0000
-Received: by mail-ot1-x341.google.com with SMTP id k18so33570663otr.3
+ id 1hxK1c-0002dx-Fs
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 23:46:54 +0000
+Received: by mail-ot1-x343.google.com with SMTP id b7so115459080otl.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 16:40:56 -0700 (PDT)
+ Mon, 12 Aug 2019 16:46:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pPEYAuAye+0GqC7OnP9046qaqHZYqZpPqW1iRwks6UA=;
- b=Az/KAHeXWMTK6hZoEHd2o4MQYecAB/NgvnMRDnUZzVhXDkbMTvsthJSrrVcLyIVGuQ
- LVzU0ExEzwQNwWcILcnqpux7LRq7Pd1qSkB6eC+g6fwszr9wFB4ErXIhaGXDPYoCO0rv
- pMTcAXFbhCOg1XGFgjerQ+dc+mqA0hzjGc7BXUkfO6eMyx/1piKi9i9vK/U/kw6GE4gD
- 773IvbSspzM4MSxA3WRpuHbv+AfIXIq4oeBOCH7MdYMlswP0aaiDugAkwcyxCvWhnBRv
- n0HaEonKGwLDsQznMyf3w0/GPE5m7PEZs6cCaPGYJy8lmgi5gsjsZxHu8AgF0+1x6gfL
- fVNQ==
+ :cc; bh=vEM0WhT9KiGV+XzQ8g0ACsk29KSJO4/VurYJJqZPp1s=;
+ b=fvfn+YRWH317swlTo7hCPy+eX8eEw/abKK+fMBhLIYnM8OjH86td55IXA8ix7SQbF5
+ hvvGOEUBAhdjtfcpEf5pmVFoa1NtP4COg618jqD+zN1L0pDB8VjjcEuJwCc0iSLIe2Cb
+ n+FuhOTWDugB5dRMhur5Ns2NX+syHET6SxeYowRsUaNElv6kVkop6c4o1W7Du4D6mB5q
+ uTUoLELtMZ3fekQJuPNtEqr8mnsCtuRokYSI2NqZMAPtFUYYEeSJoOk5d6uw+JbnxC2x
+ ZmvjPf7ES3PzdZNwPVG8iEIcjbDilYpXVVn3lnf9g2Q9tYKgi0KmhSA9ghx99su/HHsj
+ Meuw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=pPEYAuAye+0GqC7OnP9046qaqHZYqZpPqW1iRwks6UA=;
- b=GMr/eADUPN05RU8T+OrNBV/qU5gWqBiWP9RXPUCY+2FbVIOOpVpcB6OdFjE/+rc+3R
- IelH3G4sUKfmd9shMoSlqut7nuR028u0FR9B/Uw0q3Z/Y4oUh2Z+0g9vfXtusvPxC5IP
- 99ec81uSNK5Cy6U3SisGIWmkUKLdTnkO9MLmQWBl31IKN9w9TCN7inZzdyQBX79XoJZF
- WOhhvQKq4xu982iyBoutuP7DPbQlMGH68g4U6yLUxajX/ydhFsRudZzyGWok1LOBEqaz
- aISzFlc2X7gXvEQUKoVoA/rRL7F9QgfH3K7JEB/Iap/n12oqEdPilXeZvFOuxHfHBjaN
- uEwg==
-X-Gm-Message-State: APjAAAXqWJj7TZuHUIIyRl4cz/R/KtMrVF4TRgs2MwdNPYzaDh4fmJYs
- gcp7qVY7ayr61vmreTZnMlIWq5KsSe6c2J6yym4=
-X-Google-Smtp-Source: APXvYqwdCwEVUV+9iATbwHthiTuqT8FRW51Zis4SYydD2va0Jx7WyHS0BxXBm3kCBot3qcQDULuG0pks3KT0NGUUszE=
-X-Received: by 2002:a6b:fd13:: with SMTP id c19mr12236684ioi.168.1565653256193; 
- Mon, 12 Aug 2019 16:40:56 -0700 (PDT)
+ bh=vEM0WhT9KiGV+XzQ8g0ACsk29KSJO4/VurYJJqZPp1s=;
+ b=Ja63M6LQA5mtLDEXj1KngJ+s6gV/8e7yhdYN0waGwsXIuHpYSFMuQc6GME6IBJOBE8
+ 4Hlp/vmCk2LtMPhc448VAsE0uryptNa/gKdFA5PAotZGx1SisdkNKvHY/PXkF9qf9WkA
+ QG1DD1iQ5HCEDCANK2gq2x3CME96X2EVjbM9Vc5ki76xELCTPOG37JI7RqG5QB9FJyJx
+ /79KwjAxaGoaLaNtMy4X9YfZO6wbO0cMBgsRpBRmqiGRhq3UlarNv7F4vvCjjW0mYCCm
+ vsngZnkMOVF9ZX++JpLiNekywT9js2qWDuW166LNhdjWrCyCeTZ5EN/0ihk9QNn55Lp8
+ hOvw==
+X-Gm-Message-State: APjAAAUzCufpBnDyqutapjbgEa6P5swgy8hpEA0WAnJsmnXHbnJCuix9
+ ubouWrMof4BWe8sh5MjW3P5HMKBVXteqxgYksv8=
+X-Google-Smtp-Source: APXvYqxgnXw3/hTVBwv8iDNhwE1yPX+hGlamB9R+ygkZWpAtXLSQV6s2CpUv+ICng0kTSrIM+MBId9mZ5Wuia3348wE=
+X-Received: by 2002:a6b:f002:: with SMTP id w2mr257922ioc.104.1565653610461;
+ Mon, 12 Aug 2019 16:46:50 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190810052829.6032-1-tiny.windzz@gmail.com>
- <20190810052829.6032-3-tiny.windzz@gmail.com>
- <20190812085604.ozhl35wwm3ehlvqn@flea>
-In-Reply-To: <20190812085604.ozhl35wwm3ehlvqn@flea>
+ <20190810052829.6032-9-tiny.windzz@gmail.com>
+ <CA+E=qVfp-rProxOwX__J6jM-pZ9g_SmeuOCOgvC_5DJVQw4OGw@mail.gmail.com>
+In-Reply-To: <CA+E=qVfp-rProxOwX__J6jM-pZ9g_SmeuOCOgvC_5DJVQw4OGw@mail.gmail.com>
 From: Frank Lee <tiny.windzz@gmail.com>
-Date: Tue, 13 Aug 2019 07:40:44 +0800
-Message-ID: <CAEExFWswLiFknVpBEKF9c5yoFvvA4np-ivWYkQLcteYoM8qjfg@mail.gmail.com>
-Subject: Re: [PATCH v5 02/18] dt-bindings: thermal: add binding document for
- h6 thermal controller
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Date: Tue, 13 Aug 2019 07:46:39 +0800
+Message-ID: <CAEExFWubLqtPZ=ZKJTCb6x2-PeYebXb3sr-t-XvtrLJTRiUU1A@mail.gmail.com>
+Subject: Re: [PATCH v5 08/18] thermal: sun8i: support mod clocks
+To: Vasily Khoruzhick <anarsoul@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_164057_965280_E8A058D2 
-X-CRM114-Status: GOOD (  23.34  )
+X-CRM114-CacheID: sfid-20190812_164652_551906_C6E3708F 
+X-CRM114-Status: GOOD (  22.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (tiny.windzz[at]gmail.com)
@@ -97,133 +96,127 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
  devicetree <devicetree@vger.kernel.org>, Linux PM <linux-pm@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
  Eduardo Valentin <edubezval@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, Jonathan.Cameron@huawei.com,
  Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, rui.zhang@intel.com,
- David Miller <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ "David S. Miller" <davem@davemloft.net>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 4:56 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+HI Vasily,
+
+On Sat, Aug 10, 2019 at 2:17 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
 >
-> On Sat, Aug 10, 2019 at 05:28:13AM +0000, Yangtao Li wrote:
-> > This patch adds binding document for allwinner h6 thermal controller.
+> On Fri, Aug 9, 2019 at 10:31 PM Yangtao Li <tiny.windzz@gmail.com> wrote:
+> >
+> > H3 has extra clock, so introduce something in ths_thermal_chip/ths_device
+> > and adds the process of the clock.
+> >
+> > This is pre-work for supprt it.
 > >
 > > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 > > ---
-> >  .../bindings/thermal/sun8i-thermal.yaml       | 79 +++++++++++++++++++
-> >  1 file changed, 79 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+> >  drivers/thermal/sun8i_thermal.c | 17 ++++++++++++++++-
+> >  1 file changed, 16 insertions(+), 1 deletion(-)
 > >
-> > diff --git a/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-> > new file mode 100644
-> > index 000000000000..e0973199ba3c
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+> > diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
+> > index b934bc81eba7..6f4294c2aba7 100644
+> > --- a/drivers/thermal/sun8i_thermal.c
+> > +++ b/drivers/thermal/sun8i_thermal.c
+> > @@ -54,6 +54,7 @@ struct tsensor {
+> >  };
+> >
+> >  struct ths_thermal_chip {
+> > +       bool            has_mod_clk;
+> >         int             sensor_num;
+> >         int             offset;
+> >         int             scale;
+> > @@ -69,6 +70,7 @@ struct ths_device {
+> >         struct regmap                           *regmap;
+> >         struct reset_control                    *reset;
+> >         struct clk                              *bus_clk;
+> > +       struct clk                              *mod_clk;
+> >         struct tsensor                          sensor[MAX_SENSOR_NUM];
+> >  };
+> >
+> > @@ -274,6 +276,12 @@ static int sun8i_ths_resource_init(struct ths_device *tmdev)
+> >         if (IS_ERR(tmdev->bus_clk))
+> >                 return PTR_ERR(tmdev->bus_clk);
+> >
+> > +       if (tmdev->chip->has_mod_clk) {
+> > +               tmdev->mod_clk = devm_clk_get(&pdev->dev, "mod");
+> > +               if (IS_ERR(tmdev->mod_clk))
+> > +                       return PTR_ERR(tmdev->mod_clk);
+> > +       }
+> > +
+> >         ret = reset_control_deassert(tmdev->reset);
+> >         if (ret)
+> >                 return ret;
+> > @@ -282,12 +290,18 @@ static int sun8i_ths_resource_init(struct ths_device *tmdev)
+> >         if (ret)
+> >                 goto assert_reset;
+> >
+> > -       ret = sun50i_ths_calibrate(tmdev);
+> > +       ret = clk_prepare_enable(tmdev->mod_clk);
 >
-> We've used so far for the schemas the first compatible to introduce
-> that controller as the filename, we should be consistent here. In that
-> case that would be allwinner,sun8i-a23-ths.yaml
+> You have to set rate of modclk before enabling it since you can't rely
+> on whatever bootloader left for you.
 >
-> > @@ -0,0 +1,79 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/thermal/sun8i-thermal.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Allwinner SUN8I Thermal Controller Device Tree Bindings
-> > +
-> > +maintainers:
-> > +  - Yangtao Li <tiny.windzz@gmail.com>
-> > +
-> > +description: |-
-> > +  This describes the device tree binding for the Allwinner thermal
-> > +  controller which measures the on-SoC temperatures.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - allwinner,sun50i-h6-ths
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  interrupts:
-> > +    maxItems: 1
-> > +
-> > +  resets:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    maxItems: 1
-> > +
-> > +  clock-names:
-> > +    const: bus
-> > +
-> > +  "#thermal-sensor-cells":
-> > +    const: 1
-> > +
-> > +  nvmem-cells:
->
-> You need a maxItems here too
->
-> > +    description: ths calibrate data
->
-> What about something like this:
->
-> Calibration data for the thermal sensor
->
-> > +
-> > +  nvmem-cell-names:
-> > +    const: calib
->
-> I'm not sure we need a abbreviation here, calibration would be more
-> explicit
->
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - reset
-> > +  - clocks
-> > +  - clock-names
-> > +  - interrupts
-> > +  - "#thermal-sensor-cells"
-> > +
-> > +additionalProperties: false
-> > +
-> > +examples:
-> > +  - |
-> > +    ths: ths@5070400 {
-> > +        compatible = "allwinner,sun50i-h6-ths";
-> > +        reg = <0x05070400 0x100>;
-> > +        clocks = <&ccu CLK_BUS_THS>;
-> > +        clock-names = "bus";
-> > +        resets = <&ccu RST_BUS_THS>;
-> > +        interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
->
-> Those examples won't compile.
+> Also I found that parameters you're using for PC_TEMP_PERIOD, ACQ0 and
+> ACQ1 are too aggressive and may result in high interrupt rate to the
+> point when it may stall RCU. I changed driver a bit to use params from
+> Philipp Rossak's work (modclk set to 4MHz, PC_TEMP_PERIOD is 7, ACQ0
+> is 255, ACQ1 is 63) and it fixed RCU stalls for me, see [1] for
+> details.
 
-Emmm, I have some questions about this.
-I added this information and it can be compiled.
+Why is the RCU stall happening, is it caused by a deadlock?
+Can you provide log information and your configuration?
+I am a bit curious.
 
-Yours,
+Thx,
 Yangtao
 
 >
-> Maxime
+> [1] https://github.com/anarsoul/linux-2.6/commit/46b8bb0fe2ccd1cd88fa9181a2ecbf79e8d513b2
 >
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
+>
+> >         if (ret)
+> >                 goto bus_disable;
+> >
+> > +       ret = sun50i_ths_calibrate(tmdev);
+> > +       if (ret)
+> > +               goto mod_disable;
+> > +
+> >         return 0;
+> >
+> > +mod_disable:
+> > +       clk_disable_unprepare(tmdev->mod_clk);
+> >  bus_disable:
+> >         clk_disable_unprepare(tmdev->bus_clk);
+> >  assert_reset:
+> > @@ -395,6 +409,7 @@ static int sun8i_ths_remove(struct platform_device *pdev)
+> >  {
+> >         struct ths_device *tmdev = platform_get_drvdata(pdev);
+> >
+> > +       clk_disable_unprepare(tmdev->mod_clk);
+> >         clk_disable_unprepare(tmdev->bus_clk);
+> >         reset_control_assert(tmdev->reset);
+> >
+> > --
+> > 2.17.1
+> >
+> >
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
