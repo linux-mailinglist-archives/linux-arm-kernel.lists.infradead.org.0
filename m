@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1EA989940
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:04:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A89D08994B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:04:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=JV30NP+c9d/PZcESC4FwahX6OuJ0BsNGzorD378tp8c=; b=q9/C8AfB0pImFidyh9/RxCoJt6
-	GG24ZBuqpJdzqiZ3fYpb4zQUMFexNm7qc4Tilj9t3ZJzPu7T4HrHvB2AyR/QpxipdTPCKIRJylxfu
-	OueA61KcCCnSk+qoFlxHGxLskOBuDXslEjbm8eHnov4nli+ZlJjZnf0KLChLLXpg4+nQPMkFEWrrg
-	Vh5o9JiBnWEVFV+yu/zW8tyLpuyB8QylrV/xBnEv7yqdVtAFR4aUHoLEzzzZ7FBpUIrFTjK0ntVBS
-	UzwVC8cLo+WXQP8Msq2uvskkLWYDIcPAf+is2emuoxoNISpv3iGwNBO/yeeM32MfZ/iUQ84NqkMLY
-	8e80O8KQ==;
+	bh=eoKdQewx1H8/tHMqcOx1m2MbkRgTV2CJEp23uQ+RXaM=; b=kG91etS7Mmzteou9Xe4gm7BoG5
+	Tfh/+u3VnsYFo/NqMEDd8lRi2MLYZYRPWXUcgEqYEdLYpbIWEVqpvvaY3WtXiQpltHo+xkN3d+Kt6
+	W+0Kpx+K6nWRasIRx06c26h4Z6R56iPa+762juijZw+jxVX3eroKLWKDeynd2UDa0d+y8mcqiOkSo
+	/ZHwSEywgJcoaxYZ9vRG4fIZh8zTTpTzknXR6b+r0EAZpUptPdMZtJi3lxuyNupB0kocUWYHbp5Yz
+	aEdRe8xp/0nI5bw08kqhu1SnQakd5sUtNd1gvUMDKD8XzNiEFaro0+hV7Wfxr8VjsA4xqURTyB3CI
+	La4LZWdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx6FN-0000qz-3F; Mon, 12 Aug 2019 09:04:09 +0000
+	id 1hx6Fv-0001qN-Uo; Mon, 12 Aug 2019 09:04:44 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx6Ea-0000K4-Ln
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:03:22 +0000
+ id 1hx6Ec-0000LN-CS
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:03:23 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6BBFD200097;
- Mon, 12 Aug 2019 11:03:19 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 314A920020D;
+ Mon, 12 Aug 2019 11:03:21 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 21B9F20020D;
- Mon, 12 Aug 2019 11:03:11 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DC5D62002FB;
+ Mon, 12 Aug 2019 11:03:12 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id BB3F54030E;
- Mon, 12 Aug 2019 17:03:00 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8424B40313;
+ Mon, 12 Aug 2019 17:03:02 +0800 (SGT)
 From: Anson.Huang@nxp.com
 To: wim@linux-watchdog.org, linux@roeck-us.net, robh+dt@kernel.org,
  mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
@@ -43,17 +43,16 @@ To: wim@linux-watchdog.org, linux@roeck-us.net, robh+dt@kernel.org,
  jan.tuerk@emtrion.com, linux-watchdog@vger.kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH V2 3/4] ARM: imx_v6_v7_defconfig: Enable CONFIG_IMX7ULP_WDT by
- default
-Date: Mon, 12 Aug 2019 16:53:20 +0800
-Message-Id: <20190812085321.13823-3-Anson.Huang@nxp.com>
+Subject: [PATCH V2 4/4] ARM: dts: imx7ulp: Add wdog1 node
+Date: Mon, 12 Aug 2019 16:53:21 +0800
+Message-Id: <20190812085321.13823-4-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20190812085321.13823-1-Anson.Huang@nxp.com>
 References: <20190812085321.13823-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_020320_864671_3C2B5A79 
-X-CRM114-Status: UNSURE (   6.69  )
+X-CRM114-CacheID: sfid-20190812_020322_604744_B338F8FC 
+X-CRM114-Status: UNSURE (   8.27  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -84,27 +83,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Anson Huang <Anson.Huang@nxp.com>
 
-Select CONFIG_IMX7ULP_WDT by default to support i.MX7ULP watchdog.
+Add wdog1 node to support watchdog driver.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No changes.
 ---
- arch/arm/configs/imx_v6_v7_defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/imx7ulp.dtsi | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
-index bd2e2f5..f69075b 100644
---- a/arch/arm/configs/imx_v6_v7_defconfig
-+++ b/arch/arm/configs/imx_v6_v7_defconfig
-@@ -235,6 +235,7 @@ CONFIG_DA9062_WATCHDOG=y
- CONFIG_DA9063_WATCHDOG=m
- CONFIG_RN5T618_WATCHDOG=y
- CONFIG_IMX2_WDT=y
-+CONFIG_IMX7ULP_WDT=y
- CONFIG_MFD_DA9052_I2C=y
- CONFIG_MFD_DA9062=y
- CONFIG_MFD_DA9063=y
+diff --git a/arch/arm/boot/dts/imx7ulp.dtsi b/arch/arm/boot/dts/imx7ulp.dtsi
+index 6859a3a..1fdb5a35 100644
+--- a/arch/arm/boot/dts/imx7ulp.dtsi
++++ b/arch/arm/boot/dts/imx7ulp.dtsi
+@@ -264,6 +264,16 @@
+ 			#clock-cells = <1>;
+ 		};
+ 
++		wdog1: wdog@403d0000 {
++			compatible = "fsl,imx7ulp-wdt";
++			reg = <0x403d0000 0x10000>;
++			interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&pcc2 IMX7ULP_CLK_WDG1>;
++			assigned-clocks = <&pcc2 IMX7ULP_CLK_WDG1>;
++			assigned-clocks-parents = <&scg1 IMX7ULP_CLK_FIRC_BUS_CLK>;
++			timeout-sec = <40>;
++		};
++
+ 		pcc2: clock-controller@403f0000 {
+ 			compatible = "fsl,imx7ulp-pcc2";
+ 			reg = <0x403f0000 0x10000>;
 -- 
 2.7.4
 
