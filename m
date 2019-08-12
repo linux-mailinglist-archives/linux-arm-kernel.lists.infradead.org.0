@@ -2,141 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB6CF89C51
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:06:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21FBB89C70
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:12:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cnobiY65UfqwqRYXOwrBxJhhazBR5atnnbCcTpzSc+U=; b=dPl5byluGL7E31
-	IsMnk6aVNzvhDPwf8D/tnef2jgyWc8wi4SN2LiHG9KCDwLWorqlhQiJyEyYboqkpMy65EwcHG2FSn
-	QY9GHWg7/5vRIrvxxSNet6RhLjiaem8eRmZLwuMxHLZWtj52XAmzgQ/6p5fy5nKZHlJ+XjbcJVHB8
-	NejEBbm204dLcmKG2USQ7P4m09cR7uAWVSd7b5oiEzN1uaVpiGvxa3LaXu9pLtNrksfe+dCImdCqa
-	uRj1NvqD3WU25ED+hRtmJN0xK9aRa4+2BmW14ed3dh7RIev+vNuiXeuWOzEpGh48iwnWbCgE5KKoH
-	EWMjWDU0An/1U5p4wopg==;
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
+	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2HsUKBB3tHdZoz4spN1EBfgHhWHlWfEk4iCZkObiIaw=; b=KtiTf+T5/8bI2u
+	AbJ5sRLYZPEQgnu9r9qz6ZKTncT+ZRKPA2IiAcvoga+Vb/KGn+fkeXbXQYUXcIEwZm1Cg4nuI+9ou
+	JqR5ziKKZagM2PAUaomos1kd+Xc0Llr4Ai86pMzxQBGhlBsGnAk37eYJ69CDfYjMS2BwdUePsNxkn
+	VG16qrJvJwAsMClS76LP/7gSsW7FlZ7yEdxCvYw8DAFBVF8nacoqwGwAGcl6jGMukpW1aAY193BFi
+	i2aBMs5N75GsM8KJqKFQeQcsLBu2l4CvfmSh4kmIdq+mWN12N3knsEU6yWg2QD7PkKN+yvcX+a9sT
+	wrgWq1RsrP4Yx9/vbboA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx89R-0000VM-Tn; Mon, 12 Aug 2019 11:06:10 +0000
-Received: from mail-eopbgr820075.outbound.protection.outlook.com
- ([40.107.82.75] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
+	id 1hx8F8-0002Xv-CG; Mon, 12 Aug 2019 11:12:02 +0000
+Received: from mout.gmx.net ([212.227.17.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx89F-0000Uq-Df
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 11:05:58 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=C9I1JVB3IxqEueiu3W1zXK1XjOESmskvxxcQFkNmhsHzc4RYW7YTLTNKDPcW74n6SIF+xH9uBJ1cm6PCqhijFA39O8HY6iSVmJnxVRGaEqtSs1lyWgxUzPXZDwGnnKDlWzOULriLa6kub0YIfJvP10blziUXIiTFOyQmRviRPNcHnN2p23g+ptQyyB+QpkddKScUVNrWHA785VlHigHRToaoEkBpGlIUcx/CZLAEYDRAFPNWA8ciQ+EeXP0j+Mco7qy7ZjwFfQTnBRywZNx62yaL9AsonWiSceLZ7OHBG/cQdGJZ/9I6909+CZZdawIV2A4qSn/DJny/6TWbV250ZQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=w0yC7c27b03C8UOQUep5urDnwYrr1WM479GAlFkcZf4=;
- b=acvBeimMvLvRoC559x0170s9bxrQToWS0cNb93D0qCQNgvpjjmsuWtAfbbVBKe7f7+4Qu969d9F5ajJowsJJasZidvNXK/PCOvmJg+JLZmDyUbCY/TOF7PuGeMV8gf4U6AftAoaseyBjtRDGc5IWQ3DP3yU1o8Xm5SYkaSjEdlVUGMBIYlVrIlu7zs3lpFqwRQa/0oKb7/y7EbXdW36CncD2jmsje9bDRyzkfDNF2dBdZmkD2GMAur+0Ea/rTRBfxxWcEPLJ0bCb0YjtF2mCvw+oO2WycHQOhuSRIAkxqHpTqDqctE+yfxKcPuEKOmiKUJMFWJ3nroiay+MDkc95ow==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.100) smtp.rcpttodomain=pengutronix.de smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=w0yC7c27b03C8UOQUep5urDnwYrr1WM479GAlFkcZf4=;
- b=IaBMqPtz7mUfQtHzTbM6RucIfOg7vW1YV04pZ4INvhtZ/Zo+S3w5S0uTezimPjH49KoDItjRPNdyFExj0MG7riCdnljpWu35l6ToWYBnTmOqN/bJaTrKDh+n8H8oeTJiI63OVgPGdaRxXkajAtBw0Lw9P8hrERwlJof8B4jVokg=
-Received: from BN6PR02CA0099.namprd02.prod.outlook.com (2603:10b6:405:60::40)
- by BL0PR02MB3795.namprd02.prod.outlook.com (2603:10b6:207:3e::21)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.18; Mon, 12 Aug
- 2019 11:05:54 +0000
-Received: from BL2NAM02FT062.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e46::200) by BN6PR02CA0099.outlook.office365.com
- (2603:10b6:405:60::40) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.15 via Frontend
- Transport; Mon, 12 Aug 2019 11:05:54 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.100)
- smtp.mailfrom=xilinx.com; pengutronix.de; dkim=none (message not signed)
- header.d=none;pengutronix.de; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
-Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
- BL2NAM02FT062.mail.protection.outlook.com (10.152.77.57) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2157.15
- via Frontend Transport; Mon, 12 Aug 2019 11:05:54 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66]:40585
- helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1hx89B-0008Dg-Uq; Mon, 12 Aug 2019 04:05:53 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1hx896-0007np-Pg; Mon, 12 Aug 2019 04:05:48 -0700
-Received: from xsj-pvapsmtp01 (xsj-pvapsmtp01.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x7CB5fqU020034; 
- Mon, 12 Aug 2019 04:05:42 -0700
-Received: from [172.30.17.116] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1hx88z-0007mq-IP; Mon, 12 Aug 2019 04:05:41 -0700
-Subject: Re: [PATCH 0/5] can: xilinx_can: Bug fixes
-To: Marc Kleine-Budde <mkl@pengutronix.de>,
- Michal Simek <michal.simek@xilinx.com>,
- Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
- wg@grandegger.com, davem@davemloft.net
-References: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
- <7ecaa7df-3202-21d8-de93-5f6af3582964@pengutronix.de>
- <5571da8a-de1f-f420-f6b7-81c6d8932430@pengutronix.de>
- <f0e3360d-7c9a-a455-f63c-7fb584dfad2f@xilinx.com>
- <cb8f91b5-174f-79e5-d476-b01da2f3a65c@pengutronix.de>
- <c09ae89a-509d-55e7-a2d6-44ca2543f333@xilinx.com>
- <6b36bbcb-06e3-63aa-8861-c07c8840e25e@pengutronix.de>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <d8e17519-9cc4-cdf8-2acc-215592782625@xilinx.com>
-Date: Mon, 12 Aug 2019 13:05:39 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hx8EY-0002WM-V8; Mon, 12 Aug 2019 11:11:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1565608221;
+ bh=+ophfXLwLk+afBtB/rZc1lujr07rFNbL1cd41/w8NW8=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=f4roB1GSu0EC7x8wBJIJJzCRhVE+r7l9qEGONpTMKMQkSTEJndIJ2DkyaySRdMbE4
+ uC9PJmvvvDVY44rAP4mhUEhbd6yS6DULQFCqTgWMHk1WzoptJjKWINn9+4FYbWeiPB
+ 4Lk5EAVgpctClPLFIg82nvB9GZGBFnIiJrswpCk4=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [217.61.152.193] ([217.61.152.193]) by web-mail.gmx.net
+ (3c-app-gmx-bs80.server.lan [172.19.170.228]) (via HTTP); Mon, 12 Aug 2019
+ 13:10:21 +0200
 MIME-Version: 1.0
-In-Reply-To: <6b36bbcb-06e3-63aa-8861-c07c8840e25e@pengutronix.de>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(39860400002)(346002)(136003)(376002)(2980300002)(199004)(189003)(26005)(76176011)(2486003)(23676004)(230700001)(65806001)(336012)(426003)(53546011)(6246003)(446003)(11346002)(2616005)(476003)(126002)(486006)(36386004)(44832011)(50466002)(36756003)(47776003)(65956001)(229853002)(81166006)(8676002)(81156014)(52146003)(356004)(478600001)(4326008)(31696002)(63266004)(316002)(5660300002)(58126008)(2906002)(31686004)(64126003)(65826007)(305945005)(8936002)(9786002)(186003)(106002)(70206006)(110136005)(70586007)(5001870100001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB3795; H:xsj-pvapsmtpgw02; FPR:;
- SPF:Pass; LANG:en; PTR:xapps1.xilinx.com,unknown-60-100.xilinx.com; A:1; MX:1;
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 25f147a3-3701-4bee-5f9d-08d71f150ba9
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
- SRVR:BL0PR02MB3795; 
-X-MS-TrafficTypeDiagnostic: BL0PR02MB3795:
-X-Microsoft-Antispam-PRVS: <BL0PR02MB37958907277BFC58CDC2A8E2C6D30@BL0PR02MB3795.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:5797;
-X-Forefront-PRVS: 012792EC17
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: 6Oku2ovMeXoQRS3BnaQ7PjYzFH8h/SaF3+3Ac/2BwCC+KE70LJTe2dWgs58DyZa/DXGV3B7btuWrOVoxtzQF4od/mwxie4zOlV7Tm6ush1rE0B3Xpy/s30otNkld/QsuV0LshwlqVajuRCnrEpDzTi+tfksb5ay1Rogi2kJhQUkyHvlDOVkacJNM/AE+ZzTouDyP1VDPUk/pdXSVyhgL1Z6HVAvn9htSC5woMW9xcseef2D3TCmqI930YcoEE1Wk8VN2ZSvVKAroQB9ZoZPmomC99nRLyojFtIwPgR7rlDxmwhNMm9FPe1d5cpdmkZ+VRWcvf0bTJD9hdMrY8B91s3VqVVIoJ8MGHhnE4OVPse2f0t07COjr7sOW5E3cEiMCVFsb+gGP3/zBQ72QpBjz1ch0/LlWiXzNJ9vvi+CnpbE=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Aug 2019 11:05:54.4856 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 25f147a3-3701-4bee-5f9d-08d71f150ba9
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
- Helo=[xsj-pvapsmtpgw02]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB3795
+Message-ID: <trinity-a6c06411-16d3-40ab-a4fb-3494131c8ed6-1565608221532@3c-app-gmx-bs80>
+From: "Frank Wunderlich" <frank-w@public-files.de>
+To: "Lee Jones" <lee.jones@linaro.org>
+Subject: Aw: Re: [PATCH v3 01/10] dt-bindings: add powercontroller
+Date: Mon, 12 Aug 2019 13:10:21 +0200
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <20190812102035.GH26727@dell>
+References: <20190729174154.4335-1-frank-w@public-files.de>
+ <20190729174154.4335-2-frank-w@public-files.de>
+ <20190812102035.GH26727@dell>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:nmdxPcpv1uAOSEOZCdIb1nl5oNguyNi/HmeC9XNP24VaugxXHLpA6tNoOAQIMo5Ml3UaJ
+ rcZhVH+eXTXdQH6ssIrYGfZcT3d4yzf/5JkQk6WCFLvKMu8gB+B1ODR+edpsCxnfqhEEm9NEFI0F
+ g4Ckmv50XbLP3/CD6UmQJoTzSbwzW708cDXF9GxXCF4wEprhYo1oGq92t+QFDy1dK0KvCT2W0Eoe
+ uRg5lyq5dID/788y8Bk+kjVYTaJEes1YnZ7JiQtlL6YXF1YnqVrVk6JWvYbB7DIuRcQVK9/wyFTk
+ Zc=
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:DKMdH5KOymc=:wFlnzZoxQYlkTeKilc2o8z
+ ZKPFO1aEtPBUtCYeEYH0JYWfXRncpmZa90VgSB/0Li6bsMB1bDCDnJzLX+s316Dyj19o4Yx5t
+ WhXIsEglja9h8cl7hzoXfT9j1XlWHiHrlIWfUXb0IaEIz6nYgH6dgnHw+F8drX+7jTPYK6AS2
+ +LgANMVZ+WAwDmggyHu+sLC4AwwKtxIvpcDptf0pu5h+0iaJp5RqOeY+OJY0WvoZKE4n8qG5y
+ KYHYI8oB6pgJ9rMcJkp41EehcbnLa5zZGJgsTyu3huxkrokQ4EMHLuVvbb04jF4k5t/cRieNM
+ TKWPjlcELVzCP7Xoemr8cPXR9TO4I4E32UovuH3qKOJ0BEZyLbQTSWmy7QAhmvwKpvIIi99sF
+ iI9ykpe883a/ZB0UilkL9cTQSMD9KpZ6EAYbcbzdpeI21KWj2XOxtilSotJ/Lt+oclI8YqFPo
+ bM6EsFZEPrIlLtOa7ssV+RcYLfOwncnOE5CjuiNANd/OeaCU0wncbxjt8oeBVmgux3+vV73zk
+ Qtmx3BWz/unEnrNuv6wv0/QP4eWwRX9nxIBTI5MKJ8BxL3vx7/UUoYOVma4qHEnMoegaQWKyX
+ OR8vXp74oIz89XgGc7OcKdx1UdmWcWFtaJ2EigBRrMJhxRkdkqiIfQEoBqjPYSx6RfD9PpIrU
+ lgvCg8Xv5d/Az0oQHW0WnG/9tzpIjUhDNgsKPs54wtUAP6Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_040557_467311_42F589F0 
-X-CRM114-Status: GOOD (  13.24  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190812_041127_378066_9632076F 
+X-CRM114-Status: UNSURE (   5.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.82.75 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -151,74 +91,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-can@vger.kernel.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org, Richard Fontana <rfontana@redhat.com>, Mauro
+ Carvalho Chehab <mchehab+samsung@kernel.org>, linux-rtc@vger.kernel.org,
+ Allison Randal <allison@lohutok.net>, devicetree@vger.kernel.org,
+ linux-pm@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ "Tianping . Fang" <tianping.fang@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie
+ Huang <eddie.huang@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ Alessandro Zummo <a.zummo@towertech.it>, Josef Friedl <josef.friedl@speed.at>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sebastian Reichel <sre@kernel.org>, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12. 08. 19 12:59, Marc Kleine-Budde wrote:
-> On 8/12/19 12:57 PM, Michal Simek wrote:
->> On 12. 08. 19 12:47, Marc Kleine-Budde wrote:
->>> On 8/12/19 12:18 PM, Michal Simek wrote:
->>>> On 12. 08. 19 11:10, Marc Kleine-Budde wrote:
->>>>> On 8/12/19 11:05 AM, Marc Kleine-Budde wrote:
->>>>>> On 8/12/19 9:28 AM, Appana Durga Kedareswara rao wrote:
->>>>>>> This patch series fixes below issues
->>>>>>> --> Bugs in the driver w.r.to CANFD 2.0 IP support
->>>>>>> --> Defer the probe if clock is not found
->>>>>>>
->>>>>>> Appana Durga Kedareswara rao (3):
->>>>>>>   can: xilinx_can: Fix FSR register handling in the rx path
->>>>>>>   can: xilinx_can: Fix the data updation logic for CANFD FD frames
->>>>>>>   can: xilinx_can: Fix FSR register FL and RI mask values for canfd 2.0
->>>>>>>
->>>>>>> Srinivas Neeli (1):
->>>>>>>   can: xilinx_can: Fix the data phase btr1 calculation
->>>>>>>
->>>>>>> Venkatesh Yadav Abbarapu (1):
->>>>>>>   can: xilinx_can: defer the probe if clock is not found
->>>>>>
->>>>>> Please add your S-o-b to patches 4+5.
->>>>>>
->>>>>> As these all are bugfixes please add a reference to the commit it fixes:
->>>>>>
->>>>>>     Fixes: commitish ("description")
->>>>>
->>>>> Add this to your ~/.gitconfig:
->>>>>
->>>>> [alias]
->>>>>         lfixes = log --pretty=fixes
->>>>> [pretty]
->>>>>         fixes = Fixes: %h (\"%s\")
->>>>
->>>> This is understandable and I have this in my .gitconfig for quite a long
->>>> time. And this is just log
->>>>
->>>>> and then use $(git lfixes $commitish).
->>>>
->>>> But what do you mean by this? Are you able to add this to commit message
->>>> just with sha1?
->>>
->>> First identify the commit that this patch fixes then go to the command
->>> line and enter
->>>
->>>     git lfixes $committish
->>>
->>> and git will print out the line that you can copy directly to the commit
->>> message.
->>
->> ok. I thought you have any nice way to directly add it to commit message
->> without c&p.
-> 
-> You can insert the output from a console command in vim by adding a "!"
-> in front of it in the command mode.
+> Gesendet: Montag, 12. August 2019 um 12:20 Uhr
+> Von: "Lee Jones" <lee.jones@linaro.org>
 
-ok.
-M
+> > --- a/Documentation/devicetree/bindings/mfd/mt6397.txt
+...
+> > +	For details, see Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
+>
+> Please use relative paths.
+>
+> E.g: ../bindings/rtc/rtc-mt6397.txt
 
+Hi,
 
+as we are in Documentation/devicetree/bindings/mfd/ it should be ../../bindings/..., right? or ../rtc/rtc-mt6397.txt ?
+
+regards Frank
 
 _______________________________________________
 linux-arm-kernel mailing list
