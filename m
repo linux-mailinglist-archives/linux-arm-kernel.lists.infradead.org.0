@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BB3B8AB21
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 01:29:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 597D88AB24
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 01:29:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7R+790GuK9toJMzFZhaDPoCikdgxAE6Mbj6xaicIfuo=; b=TbpPyAqPgQjQW1
-	Ggh20vIcJ1GKchCXs7kROq3MQcPpd73bRAKPIYIjLQFhESZp9xdSBZ4Fk51JCOUAWD7kacPi0s6VI
-	Hz8cUfM+lFvclGpKxp3XYUqJsMeP6VbkgvVIYHm/vYXyfHJN/qs1KkYGgLpjfGzo4p1U2G6RqwOsc
-	4sEw7BgojmAqYfinWVNTLSR3TMWYuCTkUZHZNIoJ9YJ+fOFqzwI6/wPoiUGQ2AwhCEaMK2O/rznWN
-	EI13dsfVEQzTx3H8EhtLkV6Ubz7FYzEut4jmz2untriiZd17kXt9vTsnvGCx0xJgIfr97kE4yjesb
-	HdO+DR8W0PpSFHhEp2wA==;
+	List-Owner; bh=y20/Qv6pwQblMZVgFZ49Nvvcg/Zv4f4wJsjcWHPmhKI=; b=CG4HNulQ75c3y2
+	5EWdZCyE1esFzcIr3D211zwEtD7LR6vYb2JuBZk4xDxKZeacVioUipUYehRIhLO3FNXsOLn1xEtdY
+	QXWGsxg7uOjw6Eo/2NzSFw+uhDE3h9mjhYDFZgig3uxWdboWaghImz8jSC4RuNC+DcuyjzrpRRSCR
+	ll8WI2atHSv1M8sVF9XFjQMD/boNJ/07qnntgbyx4Bibmid8C4dGYLbiL86u9zLFjUm6980MRTBW/
+	frPekYNUR36uiYO4wD0UjmfChjzFpOFl6fe32/rMAEO+Nr/+2cnQqekh4lzldH5HHrZXnvOblsByo
+	pGeYhWbhyhSmnQZYd63Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxJko-0003X3-Qc; Mon, 12 Aug 2019 23:29:30 +0000
+	id 1hxJl4-0003zR-Ov; Mon, 12 Aug 2019 23:29:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxJkF-0003Ci-JN; Mon, 12 Aug 2019 23:28:56 +0000
+ id 1hxJkI-0003F3-1o; Mon, 12 Aug 2019 23:28:59 +0000
 Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net
  [71.197.186.152])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4246220665;
- Mon, 12 Aug 2019 23:28:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id ABD3B2070C;
+ Mon, 12 Aug 2019 23:28:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565652535;
- bh=o501tcSZ8iwEdK+K1S+CV9iMf5gZNuQYUaXGpk1a0Yk=;
+ s=default; t=1565652537;
+ bh=8DGYsZ2vpwHRKpuHggefj6/H5D3EzUYWO9120Yp/h0k=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fhcs+cU9QcwB87J3Vj953PKrW2TYjyRygJOYfxP1LOzTzRG9HBIrZ1QRbnREbUjW9
- 4PyFx6h+i2MgDMscGpwWA+R5bQk8fpjTv6kEzSW4yh6iP3DLx2NJ705vBuTDjYeZB/
- wN6Zefwp4c0kpOMEg9Cql01iPmbuivK+OrXF/2bQ=
+ b=0+YYfz1zJ/m+zWzz8czp4mTt82CPqhqbRI6XkD2KzPKeYZOdwBxgshULUS5KciOsH
+ 78VMjZJKurXfvGNjIFQ0b71bmk6t/mwNreR5SspAmP3Dupc39G75CGTQKEJTpML6qJ
+ PkatQ8DCC+v9alprNV2+EldgGAytz5c2ptn+7qd4=
 From: Kevin Hilman <khilman@kernel.org>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  linux-rtc@vger.kernel.org
-Subject: [PATCH v3 1/2] dt-bindings: rtc: new binding for Amlogic VRTC
-Date: Mon, 12 Aug 2019 16:28:49 -0700
-Message-Id: <20190812232850.8016-2-khilman@kernel.org>
+Subject: [PATCH v3 2/2] rtc: Add Amlogic Virtual Wake RTC
+Date: Mon, 12 Aug 2019 16:28:50 -0700
+Message-Id: <20190812232850.8016-3-khilman@kernel.org>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190812232850.8016-1-khilman@kernel.org>
 References: <20190812232850.8016-1-khilman@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_162855_655756_B1E24F1C 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20190812_162858_198070_900E10EB 
+X-CRM114-Status: GOOD (  18.32  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,47 +83,234 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Kevin Hilman <khilman@baylibre.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
 
-Add binding fo the new VRTC driver for Amlogic SoCs.  The 64-bit
-family of SoCs only has an RTC managed by firmware, and this VRTC
-driver provides the simple, one-register firmware interface.
+The Amlogic Meson GX SoCs uses a special register to store the
+time in seconds to wakeup after a system suspend.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+In order to be able to reuse the RTC wakealarm feature, this
+driver implements a fake RTC device which uses the system time
+to deduce a suspend delay.
+
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+[khilman: rebase to v5.3-rc, rework and modernization]
 Signed-off-by: Kevin Hilman <khilman@baylibre.com>
 ---
- .../bindings/rtc/rtc-meson-vrtc.txt           | 22 +++++++++++++++++++
- 1 file changed, 22 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/rtc/rtc-meson-vrtc.txt
+ MAINTAINERS                  |   1 +
+ drivers/rtc/Kconfig          |  11 +++
+ drivers/rtc/Makefile         |   1 +
+ drivers/rtc/rtc-meson-vrtc.c | 156 +++++++++++++++++++++++++++++++++++
+ 4 files changed, 169 insertions(+)
+ create mode 100644 drivers/rtc/rtc-meson-vrtc.c
 
-diff --git a/Documentation/devicetree/bindings/rtc/rtc-meson-vrtc.txt b/Documentation/devicetree/bindings/rtc/rtc-meson-vrtc.txt
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 783569e3c4b4..2ae83e1acb05 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1443,6 +1443,7 @@ F:	arch/arm64/boot/dts/amlogic/
+ F:	drivers/pinctrl/meson/
+ F:	drivers/mmc/host/meson*
+ F:	drivers/soc/amlogic/
++F:	drivers/rtc/rtc-meson*
+ N:	meson
+ 
+ ARM/Amlogic Meson SoC Sound Drivers
+diff --git a/drivers/rtc/Kconfig b/drivers/rtc/Kconfig
+index e72f65b61176..7cd325ecc10b 100644
+--- a/drivers/rtc/Kconfig
++++ b/drivers/rtc/Kconfig
+@@ -373,6 +373,17 @@ config RTC_DRV_MAX77686
+ 	  This driver can also be built as a module. If so, the module
+ 	  will be called rtc-max77686.
+ 
++config RTC_DRV_MESON_VRTC
++	tristate "Amlogic Meson Virtual RTC"
++	depends on ARCH_MESON || COMPILE_TEST
++	default m if ARCH_MESON
++	help
++	  If you say yes here you will get support for the
++	  Virtual RTC of Amlogic SoCs.
++
++	  This driver can also be built as a module. If so, the module
++	  will be called rtc-meson-vrtc.
++
+ config RTC_DRV_RK808
+ 	tristate "Rockchip RK805/RK808/RK809/RK817/RK818 RTC"
+ 	depends on MFD_RK808
+diff --git a/drivers/rtc/Makefile b/drivers/rtc/Makefile
+index 6b09c21dc1b6..b50fd3aa81b3 100644
+--- a/drivers/rtc/Makefile
++++ b/drivers/rtc/Makefile
+@@ -102,6 +102,7 @@ obj-$(CONFIG_RTC_DRV_MAX8907)	+= rtc-max8907.o
+ obj-$(CONFIG_RTC_DRV_MAX8925)	+= rtc-max8925.o
+ obj-$(CONFIG_RTC_DRV_MAX8997)	+= rtc-max8997.o
+ obj-$(CONFIG_RTC_DRV_MAX8998)	+= rtc-max8998.o
++obj-$(CONFIG_RTC_DRV_MESON_VRTC)+= rtc-meson-vrtc.o
+ obj-$(CONFIG_RTC_DRV_MC13XXX)	+= rtc-mc13xxx.o
+ obj-$(CONFIG_RTC_DRV_MCP795)	+= rtc-mcp795.o
+ obj-$(CONFIG_RTC_DRV_MESON)	+= rtc-meson.o
+diff --git a/drivers/rtc/rtc-meson-vrtc.c b/drivers/rtc/rtc-meson-vrtc.c
 new file mode 100644
-index 000000000000..c014f54a9853
+index 000000000000..4621a4715179
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/rtc/rtc-meson-vrtc.txt
-@@ -0,0 +1,22 @@
-+* Amlogic Virtual RTC (VRTC)
++++ b/drivers/rtc/rtc-meson-vrtc.c
+@@ -0,0 +1,156 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2019 BayLibre, SAS
++ * Author: Neil Armstrong <narmstrong@baylibre.com>
++ * Copyright (C) 2015 Amlogic, Inc. All rights reserved.
++ */
++#include <linux/module.h>
++#include <linux/platform_device.h>
++#include <linux/rtc.h>
++#include <linux/io.h>
++#include <linux/of.h>
++#include <linux/time64.h>
 +
-+This is a Linux interface to an RTC managed by firmware, hence it's
-+virtual from a Linux perspective.  The interface is 1 register where
-+an alarm time (in seconds) is to be written.
++struct meson_vrtc_data {
++	void __iomem *io_alarm;
++	struct rtc_device *rtc;
++	unsigned long alarm_time;
++	bool enabled;
++};
 +
-+Required properties:
-+- compatible: should be "amlogic,meson-vrtc"
-+- reg: physical address for the alarm register
++static int meson_vrtc_read_time(struct device *dev, struct rtc_time *tm)
++{
++	struct timespec64 time;
 +
-+The alarm register is a simple scratch register shared between the
-+application processors (AP) and the secure co-processor (SCP.)  When
-+the AP suspends, the SCP will use the value of this register to
-+program an always-on timer before going sleep. When the timer expires,
-+the SCP will wake up and will then wake the AP.
++	dev_dbg(dev, "%s\n", __func__);
++	ktime_get_raw_ts64(&time);
++	rtc_time64_to_tm(time.tv_sec, tm);
 +
-+Example:
++	return 0;
++}
 +
-+	vrtc: rtc@0a8 {
-+		compatible = "amlogic,meson-vrtc";
-+		reg = <0x0 0x000a8 0x0 0x4>;
-+	};
++static void meson_vrtc_set_wakeup_time(struct meson_vrtc_data *vrtc,
++				       unsigned long time)
++{
++	writel_relaxed(time, vrtc->io_alarm);
++}
++
++static int meson_vrtc_set_alarm(struct device *dev, struct rtc_wkalrm *alarm)
++{
++	struct meson_vrtc_data *vrtc = dev_get_drvdata(dev);
++
++	dev_dbg(dev, "%s: alarm->enabled=%d\n", __func__, alarm->enabled);
++	if (alarm->enabled)
++		vrtc->alarm_time = rtc_tm_to_time64(&alarm->time);
++	else
++		vrtc->alarm_time = 0;
++
++	return 0;
++}
++
++static int meson_vrtc_alarm_irq_enable(struct device *dev, unsigned int enabled)
++{
++	struct meson_vrtc_data *vrtc = dev_get_drvdata(dev);
++
++	vrtc->enabled = enabled;
++	return 0;
++}
++
++static const struct rtc_class_ops meson_vrtc_ops = {
++	.read_time = meson_vrtc_read_time,
++	.set_alarm = meson_vrtc_set_alarm,
++	.alarm_irq_enable = meson_vrtc_alarm_irq_enable,
++};
++
++static int meson_vrtc_probe(struct platform_device *pdev)
++{
++	struct meson_vrtc_data *vrtc;
++	int ret;
++
++	vrtc = devm_kzalloc(&pdev->dev, sizeof(*vrtc), GFP_KERNEL);
++	if (!vrtc)
++		return -ENOMEM;
++
++	vrtc->io_alarm = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(vrtc->io_alarm))
++		return PTR_ERR(vrtc->io_alarm);
++
++	device_init_wakeup(&pdev->dev, 1);
++
++	platform_set_drvdata(pdev, vrtc);
++
++	vrtc->rtc = devm_rtc_allocate_device(&pdev->dev);
++	if (IS_ERR(vrtc->rtc))
++		return PTR_ERR(vrtc->rtc);
++
++	vrtc->rtc->ops = &meson_vrtc_ops;
++	ret = rtc_register_device(vrtc->rtc);
++	if (ret)
++		return ret;
++
++	return 0;
++}
++
++#ifdef CONFIG_PM_SLEEP
++static int meson_vrtc_suspend(struct device *dev)
++{
++	struct meson_vrtc_data *vrtc = dev_get_drvdata(dev);
++
++	dev_dbg(dev, "%s\n", __func__);
++	if (vrtc->alarm_time) {
++		unsigned long local_time;
++		long alarm_secs;
++		struct timespec64 time;
++
++		ktime_get_raw_ts64(&time);
++		local_time = time.tv_sec;
++
++		dev_dbg(dev, "alarm_time = %lus, local_time=%lus\n",
++			vrtc->alarm_time, local_time);
++		alarm_secs = vrtc->alarm_time - local_time;
++		if (alarm_secs > 0) {
++			meson_vrtc_set_wakeup_time(vrtc, alarm_secs);
++			dev_dbg(dev, "system will wakeup in %lds.\n",
++				alarm_secs);
++		} else {
++			dev_err(dev, "alarm time already passed: %lds.\n",
++				alarm_secs);
++		}
++	}
++
++	return 0;
++}
++
++static int meson_vrtc_resume(struct device *dev)
++{
++	struct meson_vrtc_data *vrtc = dev_get_drvdata(dev);
++
++	dev_dbg(dev, "%s\n", __func__);
++
++	vrtc->alarm_time = 0;
++	meson_vrtc_set_wakeup_time(vrtc, 0);
++	return 0;
++}
++#endif
++static SIMPLE_DEV_PM_OPS(meson_vrtc_pm_ops,
++			 meson_vrtc_suspend, meson_vrtc_resume);
++
++static const struct of_device_id meson_vrtc_dt_match[] = {
++	{ .compatible = "amlogic,meson-vrtc"},
++	{},
++};
++MODULE_DEVICE_TABLE(of, meson_vrtc_dt_match);
++
++static struct platform_driver meson_vrtc_driver = {
++	.probe = meson_vrtc_probe,
++	.driver = {
++		.name = "meson-vrtc",
++		.of_match_table = meson_vrtc_dt_match,
++		.pm = &meson_vrtc_pm_ops,
++	},
++};
++
++module_platform_driver(meson_vrtc_driver);
++
++MODULE_DESCRIPTION("Amlogic Virtual Wakeup RTC Timer driver");
++MODULE_LICENSE("GPL");
 -- 
 2.22.0
 
