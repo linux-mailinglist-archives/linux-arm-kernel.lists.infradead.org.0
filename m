@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 392078994A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:04:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DFE18995D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:06:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:Subject:From:References:To:Reply-To:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=p3dZUllMa7j4cGALYH/QcGEYXShc39Rup9+Tqob0Aus=; b=VIco44xe+HYnbQ9HW+UV9/i6K
-	Rfytgpo6mG0rAUvPujZFprlonvW5uCyojXNbP6L+DA/PrXTaU8DT97NsHBEzM19sSMSDFXjE6400z
-	yWH1xYw883yFyycM2vfUaTeqcNLlaAXuWJGT08Jp/UqY6JJO4LfsdSW0/P4wJYH8L6T90TZLERgS6
-	ls8rxtixzNkrsHTdp8FxAd+Pt/7W4m2EzJkA8uVbOREciAnrM3j8vKZIaFVpIqzXkdUJm6T7C7WW7
-	0aMuD2+lNJjIHtiP73pgcrR27PMc7jz2TYzUk93vuJgVC2jh8npPzqiHb180VUhLxY/5olkd+CzpH
-	s+8cw6/Cg==;
+	 bh=Uo2mvdNHnX6HoS4ZuzlssBKTC1iyOFhbwUMsgp++bCA=; b=PF0OeSMTO9fswgCpJnw7qJfmL
+	yH3Ku/M9/Wklq+akhRUP4EIgPeRJhUlrpcsqvm1Ljn1EIFAIVIv8OLX5/NGbSZLbdmsOiJW5BukSI
+	bFmNv1Cx0Q/8bMUHZJKahLNmLpXagNRRJlvW6wQ9leeHXmVmZXIiFyLF3nSjmsRoub5mKraLt5lm9
+	/dkAjS5CBOmlpabDob1EvwIbsogHoYekjnvFcyoFPQELZq35FqWVqWB+s2MyZu9wO+11GEaUVJ4Cq
+	fTuwdGnAdbLfVqXWnpG4CCxmRpnbwp38kMYomvrDqe2v21yjOjCNkkmLEVHtTXV4cRPq6PrzTvddv
+	VEcwcvejQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx6Fd-0001RE-B5; Mon, 12 Aug 2019 09:04:25 +0000
+	id 1hx6HG-0003Sx-Sc; Mon, 12 Aug 2019 09:06:06 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx6Eb-0000Jd-8K
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:03:23 +0000
+ id 1hx6H5-0003Sa-Q6
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:05:57 +0000
 Received: from gallifrey.ext.pengutronix.de
  ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
  by metis.ext.pengutronix.de with esmtps
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <mkl@pengutronix.de>)
- id 1hx6EX-0004ub-35; Mon, 12 Aug 2019 11:03:17 +0200
+ id 1hx6H3-0005oO-RV; Mon, 12 Aug 2019 11:05:53 +0200
 Received: from [IPv6:2001:67c:670:202:595f:209f:a34b:fbc1] (unknown
  [IPv6:2001:67c:670:202:595f:209f:a34b:fbc1])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
- SHA256 client-signature RSA-PSS (4096 bits) client-digest SHA256)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits)
+ client-signature RSA-PSS (4096 bits))
  (Client CN "mkl@blackshift.org",
  Issuer "StartCom Class 1 Client CA" (not verified))
  (Authenticated sender: mkl@blackshift.org)
- by smtp.blackshift.org (Postfix) with ESMTPSA id 1B0584430C6;
- Mon, 12 Aug 2019 09:03:13 +0000 (UTC)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id B6FF34430E2;
+ Mon, 12 Aug 2019 09:05:51 +0000 (UTC)
+Subject: Re: [PATCH 0/5] can: xilinx_can: Bug fixes
 To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
  wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com
 References: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
- <1565594914-18999-2-git-send-email-appana.durga.rao@xilinx.com>
 From: Marc Kleine-Budde <mkl@pengutronix.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
@@ -105,21 +105,20 @@ Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
  WATP4wFI8QktNBqF3VY47HFwF9PtNuOZIqeAquKezywUc5KqKdqEWCPx9pfLxBAh3GW2Zfjp
  lP6A5upKs2ktDZOC2HZXP4IJ1GTk8hnfS4ade8s9FNcwu9m3JlxcGKLPq5DnIbPVQI1UUR4F
  QyAqTtIdSpeFYbvH8D7pO4lxLSz2ZyBMk+aKKs6GL5MqEci8OcFW
-Subject: Re: [PATCH 1/5] can: xilinx_can: defer the probe if clock is not found
-Message-ID: <144fdbc7-982a-f50d-3bf1-dd9ee2ad282c@pengutronix.de>
-Date: Mon, 12 Aug 2019 11:03:02 +0200
+Message-ID: <7ecaa7df-3202-21d8-de93-5f6af3582964@pengutronix.de>
+Date: Mon, 12 Aug 2019 11:05:48 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <1565594914-18999-2-git-send-email-appana.durga.rao@xilinx.com>
+In-Reply-To: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
 X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
 X-SA-Exim-Mail-From: mkl@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_020321_510002_8C0CC3E7 
-X-CRM114-Status: GOOD (  19.58  )
+X-CRM114-CacheID: sfid-20190812_020556_011226_248E1D1E 
+X-CRM114-Status: GOOD (  12.96  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -138,83 +137,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org,
- Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-can@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============6405560934007316699=="
+Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-can@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============6311060570846688697=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============6405560934007316699==
+--===============6311060570846688697==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="51D0MuM3ytfH1LDWHaqy6DV3mBVWaOrIZ"
+ boundary="sagdrJZ59M6nkFUf5xCavfQsFxYSrlJdg"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---51D0MuM3ytfH1LDWHaqy6DV3mBVWaOrIZ
-Content-Type: multipart/mixed; boundary="RsHBNlp1OJyfsXm7JxAsUbJhWddkinLpv";
+--sagdrJZ59M6nkFUf5xCavfQsFxYSrlJdg
+Content-Type: multipart/mixed; boundary="XU6lLjqMQHKkznFu7DXacI3ue2hegnNB3";
  protected-headers="v1"
 From: Marc Kleine-Budde <mkl@pengutronix.de>
 To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
  wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com
 Cc: linux-can@vger.kernel.org, netdev@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>
-Message-ID: <144fdbc7-982a-f50d-3bf1-dd9ee2ad282c@pengutronix.de>
-Subject: Re: [PATCH 1/5] can: xilinx_can: defer the probe if clock is not
- found
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Message-ID: <7ecaa7df-3202-21d8-de93-5f6af3582964@pengutronix.de>
+Subject: Re: [PATCH 0/5] can: xilinx_can: Bug fixes
 References: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
- <1565594914-18999-2-git-send-email-appana.durga.rao@xilinx.com>
-In-Reply-To: <1565594914-18999-2-git-send-email-appana.durga.rao@xilinx.com>
+In-Reply-To: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
 
---RsHBNlp1OJyfsXm7JxAsUbJhWddkinLpv
+--XU6lLjqMQHKkznFu7DXacI3ue2hegnNB3
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-GB
 Content-Transfer-Encoding: quoted-printable
 
 On 8/12/19 9:28 AM, Appana Durga Kedareswara rao wrote:
-> From: Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>
+> This patch series fixes below issues
+> --> Bugs in the driver w.r.to CANFD 2.0 IP support
+> --> Defer the probe if clock is not found
 >=20
-> It's not always the case that clock is already available when can
-> driver get probed at the first time, e.g. the clock is provided by
-> clock wizard which may be probed after can driver. So let's defer
-> the probe when devm_clk_get() call fails and give it chance to
-> try later.
+> Appana Durga Kedareswara rao (3):
+>   can: xilinx_can: Fix FSR register handling in the rx path
+>   can: xilinx_can: Fix the data updation logic for CANFD FD frames
+>   can: xilinx_can: Fix FSR register FL and RI mask values for canfd 2.0=
 
-Technically the patch changes the error message to not being printed in
-case of EPROBE_DEFER. This patch doesn't change any behaviour apart from
-that. Please adjust the patch description accordingly.
+>=20
+> Srinivas Neeli (1):
+>   can: xilinx_can: Fix the data phase btr1 calculation
+>=20
+> Venkatesh Yadav Abbarapu (1):
+>   can: xilinx_can: defer the probe if clock is not found
+
+Please add your S-o-b to patches 4+5.
+
+As these all are bugfixes please add a reference to the commit it fixes:
+
+    Fixes: commitish ("description")
 
 Marc
-
->=20
-> Signed-off-by: Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>=
-
-> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> ---
->  drivers/net/can/xilinx_can.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
->=20
-> diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.=
-c
-> index bd95cfa..ac175ab 100644
-> --- a/drivers/net/can/xilinx_can.c
-> +++ b/drivers/net/can/xilinx_can.c
-> @@ -1791,7 +1791,8 @@ static int xcan_probe(struct platform_device *pde=
-v)
->  	/* Getting the CAN can_clk info */
->  	priv->can_clk =3D devm_clk_get(&pdev->dev, "can_clk");
->  	if (IS_ERR(priv->can_clk)) {
-> -		dev_err(&pdev->dev, "Device clock not found.\n");
-> +		if (PTR_ERR(priv->can_clk) !=3D -EPROBE_DEFER)
-> +			dev_err(&pdev->dev, "Device clock not found.\n");
->  		ret =3D PTR_ERR(priv->can_clk);
->  		goto err_free;
->  	}
->=20
-
 
 --=20
 Pengutronix e.K.                  | Marc Kleine-Budde           |
@@ -223,29 +200,29 @@ Vertretung West/Dortmund          | Fax:   +49-5121-206917-5555 |
 Amtsgericht Hildesheim, HRA 2686  | http://www.pengutronix.de   |
 
 
---RsHBNlp1OJyfsXm7JxAsUbJhWddkinLpv--
+--XU6lLjqMQHKkznFu7DXacI3ue2hegnNB3--
 
---51D0MuM3ytfH1LDWHaqy6DV3mBVWaOrIZ
+--sagdrJZ59M6nkFUf5xCavfQsFxYSrlJdg
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEmvEkXzgOfc881GuFWsYho5HknSAFAl1RK0YACgkQWsYho5Hk
-nSCcWAf/TTxEXEPqm/i50bMWWrbMFTugughoNEEJHhereVPzdx/gi2Rcoi78mJds
-pRfNsMx6sX7VcnZfoIIIs9l46hELfcywm25y6bQRN0Hr/VKeVpxiNreGDWvmUCVB
-IthAFEact5CBS/Be4OfGRrVx0tlKCqjAGm2oi2wkq++/PQKyKcSjcIDdlMRGHLyu
-3Zr5bDLDF9PY3Ln2lKf7zRJoV27Y4xXTCnwk9PiIv+mY0Hrn9Lt3HXSeH2Wqc8d9
-2lvLJsYYj1qzd5JaqYV7KkjPPS175Mg4O4TV/lUCmfYvBkCGogbn2W7EwYGCUjOT
-sbRLpnSphQJ9m9p2apZGlXNvDcUEpQ==
-=HnQW
+iQEzBAEBCgAdFiEEmvEkXzgOfc881GuFWsYho5HknSAFAl1RK+wACgkQWsYho5Hk
+nSD1iwf/cx5osypGvF69/hTY7cVJveyYYou0gzGEDicu7r8hBO4NrzPu1Bew52DG
+ktwAOqELBNDvHXTNZNXk+6wbOUfBpgTVt+jkGqZV67I1W6RL9H85mvE1AUPaJQZN
+5l0Vj0FPgbtcM0ERo009PAgGUoW1zYEZTHTqh7ZUqCQ8DXDN4rhL2F1SPe1O2tC3
+khy2JD/m6kYb1YAMR7eDmvliM1fAnPJ6ZGpuxIfFrZTr3iX6hACTTxb/CYV0+Pf4
+AzH31YtflWXAmjn0001MFmwTW3phfPXwS0qB+gjwBQspjzt4wpMxCRLLSE0nImD/
+z6NdxAEEC/xXts1l5F3iRSSAMUDQeQ==
+=fZEP
 -----END PGP SIGNATURE-----
 
---51D0MuM3ytfH1LDWHaqy6DV3mBVWaOrIZ--
+--sagdrJZ59M6nkFUf5xCavfQsFxYSrlJdg--
 
 
---===============6405560934007316699==
+--===============6311060570846688697==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -256,5 +233,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6405560934007316699==--
+--===============6311060570846688697==--
 
