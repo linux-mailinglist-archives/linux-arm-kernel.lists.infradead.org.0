@@ -2,81 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AED689B7E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 12:30:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BCD589B80
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 12:30:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fs51dfeonM2skXC4BaIfvsaEiQdKBp5W6RVb7/p7iw4=; b=Oqy8myFPuOupjFirAEn+nzwyq
-	rRfAONcU4zAFD6zQl4C3eSJvAU6AAM/j8vIRDhO4Lz4nqhtYFbPSLrpGiT1kRPZDlMbgVSBQkjdHU
-	WXEZ+5EkEqcy2SBW8qrpZolvrLWIzD4dkilwoxsqEW341XWhteyEJLjYUE4tPDH1N5wYpsStTMhKq
-	RtTs478Fgo1VvtcT9vxXtTjxHnkrC2aoH2DoBg6Hg8FG1fKL49KGK4ey7oAJH7ZVkcXB2mXQ88fyE
-	8gjoBBk42TXCwnZz798YZ2B6I1VhmlBILLIGZM8zSuAUhPw32cJhji+vW7BN9PUhVerRTyZtu7uQo
-	OeecgAW2Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dD2Zc2u/vJ7UH3qYmAGgaQMNLJH3ZQWrme9jg5nSlwc=; b=RB3EGchs5kPEw/
+	xjxCZnVbSCmXcHeUNU3B2gS8DF+JxB2MTfsMQpsICOrft9ZGfll4383qmlLWpab3YhQhAZB3GgTjj
+	VkYXDbuaiRobG4/uJJK1JnrkBY9MJnA5PED9Tml/y3w94gPxr1/dIDLhMR82S94Jx6Rdwg5rX6VCf
+	EMCxeB0UnjqAVf/IvLITgRhViUV9V2pgRTDZvvVvK3MTEstmEezD96MCnEBciMfDKc09eLx6mu/Aa
+	/cQWCFeXzMeuPnZldpzPc2bJCa42xuirw/TECiHqjpF65sIQNEfDQWssVVTue5QLhhGNu4kyuBMuV
+	sNb5wxf/jh4UpVm9+aig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx7aT-0007hS-DS; Mon, 12 Aug 2019 10:30:01 +0000
-Received: from hqemgate16.nvidia.com ([216.228.121.65])
+	id 1hx7au-0000fh-9X; Mon, 12 Aug 2019 10:30:28 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx7aJ-0007gn-A4
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 10:29:52 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d513f9e0000>; Mon, 12 Aug 2019 03:29:50 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Mon, 12 Aug 2019 03:29:48 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Mon, 12 Aug 2019 03:29:48 -0700
-Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL104.nvidia.com
- (172.18.146.11) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 12 Aug
- 2019 10:29:47 +0000
-Received: from [10.24.47.35] (10.124.1.5) by DRHQMAIL107.nvidia.com
- (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 12 Aug
- 2019 10:29:41 +0000
-Subject: Re: [PATCH V15 00/13] PCI: tegra: Add Tegra194 PCIe support
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20190809044609.20401-1-vidyas@nvidia.com>
- <20190812102519.GN8903@ulmo>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <aa666d78-43b3-dbea-dac6-386deaca3e12@nvidia.com>
-Date: Mon, 12 Aug 2019 15:59:39 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hx7af-0000ev-0g
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 10:30:14 +0000
+Received: by mail-wr1-x443.google.com with SMTP id t16so13978587wra.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 12 Aug 2019 03:30:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=/xJkw3HJipqZsGqksy3Y3Kh8Zd6FZDx8Lzcx83UAp1E=;
+ b=ClsxrPQnDz+StEaMCZFcJZvBHropFOtgMNmG2NxTqoUDwh6xgtGinyNwjek/gGcDsb
+ QP1OJM6Xd1F2+jtVWeFLi1FSsRcufM8taxrEwcf0QUaqX+LUqCR3UVrdQTaqW2LpQ1y3
+ dsDIJaW+Js6+nyJmMmkLZcAHA2Op1QVU1Zz2KJtwS5ol4eh1LyS+b6Wmj6TYA8FAvXWD
+ 8cfVzTGdcHIaSf4XbL3iIGj9rO5BeaiZuA8wzFzzEJc68yQgXpSSXAN0sTUNkAeyBUoj
+ Q+kMB94rY4bxav5iCDcv+Z52AxWXy7i9GHlFR5KcPojz5YMEn3iZ+w/apQKAo6E42J5I
+ Ux1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=/xJkw3HJipqZsGqksy3Y3Kh8Zd6FZDx8Lzcx83UAp1E=;
+ b=WMtYZp5lGcmpNv2HrPheOi4PP4w8QM0WJSvqZ4RAUEufycBUiq3b+oNHgAYQhVvMna
+ oW/mms/CPSht2724jWUkKttlBqCcNEjT+NQ/JKXUEXJY/rq7OrGKNWoIjE49ngBGTEy/
+ NJKXn1LUg55QdAyWiIAFta1NHsnlPBSYnUI1SmtFTMzLXl/JKxqQKaiDpLyL04f/i2Yh
+ C3VqEc0XYAn7nFcycF4fa8aWN55TvYX0bZTBgx540MKOhlIzlLgxPbIMlojcYhPu5nsI
+ /aaReNaYFu8+FHoJFdLXuzZXl0gnV+rNUYYQyubtUeU1U5hyhxtRSRTN+or51DB1QsVW
+ cIBQ==
+X-Gm-Message-State: APjAAAXUTjD7gTp0dlvwBuHec7tfADXtqowKmv7kxmn1lPVtbyfMOk6/
+ BLhtwKr8N6BUBC9lX8zS6uLyqP0ooys=
+X-Google-Smtp-Source: APXvYqysIRjAaDtd2ibOzQb9fjpi50O1qhEVT0kIXTChSIdIo1wq0xFRIV2BJs//0/kavloNGsljaA==
+X-Received: by 2002:adf:ef07:: with SMTP id e7mr21348509wro.242.1565605811394; 
+ Mon, 12 Aug 2019 03:30:11 -0700 (PDT)
+Received: from dell ([2.27.35.255])
+ by smtp.gmail.com with ESMTPSA id n8sm90185885wro.89.2019.08.12.03.30.10
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 12 Aug 2019 03:30:10 -0700 (PDT)
+Date: Mon, 12 Aug 2019 11:30:09 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+Subject: Re: [PATCH] mfd: db8500-prcmu: Mark expected switch fall-throughs
+Message-ID: <20190812103009.GL26727@dell>
+References: <20190728235614.GA23618@embeddedor>
 MIME-Version: 1.0
-In-Reply-To: <20190812102519.GN8903@ulmo>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL104.nvidia.com (172.18.146.11) To
- DRHQMAIL107.nvidia.com (10.27.9.16)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1565605790; bh=1tG5zYeqXj8gIs6w5lyT32kz+7+NUeIz90VCrmxkBbc=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=FHAqDme4CmBe+T+ICvgSDgfiTDrKnpaWceizTG4rWtUZc3n8VecOch5oN0Grc4LwZ
- 53haw51XUeac/Y+r2Mq4SW5WHXTFDonCEWVJ3QpiWzjIvPGvz5gorgr/nqQwiWF6E0
- 51MvK0t+bRdcIKQaZiB78sxIRC2DoTq+no9hoZqEMnfTQWCNltW0s45UwDYX1BD3M9
- ddQDztvPDkm39p/8WMZD+H0V+aPPU5645XM+DPb/Um33WDhWZpgU18ElSiEESHZcBe
- MNaZtOjnvQU2IzzBuD+hkJE2TYUgScp5lErVEEoivDQUNbfRweiJOkhT8BQwGsfdx4
- PoivvVBnBXP2Q==
+Content-Disposition: inline
+In-Reply-To: <20190728235614.GA23618@embeddedor>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_032951_367687_EAD45C55 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190812_033013_064683_80FDE235 
+X-CRM114-Status: GOOD (  10.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,56 +98,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
- robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Kees Cook <keescook@chromium.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/12/2019 3:55 PM, Thierry Reding wrote:
-> On Fri, Aug 09, 2019 at 10:15:56AM +0530, Vidya Sagar wrote:
->> Tegra194 has six PCIe controllers based on Synopsys DesignWare core.
->> There are two Universal PHY (UPHY) blocks with each supporting 12(HSIO:
->> Hisg Speed IO) and 8(NVHS: NVIDIA High Speed) lanes respectively.
->> Controllers:0~4 use UPHY lanes from HSIO brick whereas Controller:5 uses
->> UPHY lanes from NVHS brick. Lane mapping in HSIO UPHY brick to each PCIe
->> controller (0~4) is controlled in XBAR module by BPMP-FW. Since PCIe
->> core has PIPE interface, a glue module called PIPE-to-UPHY (P2U) is used
->> to connect each UPHY lane (applicable to both HSIO and NVHS UPHY bricks)
->> to PCIe controller
->> This patch series
->> - Adds support for P2U PHY driver
->> - Adds support for PCIe host controller
->> - Adds device tree nodes each PCIe controllers
->> - Enables nodes applicable to p2972-0000 platform
->> - Adds helper APIs in Designware core driver to get capability regs offset
->> - Adds defines for new feature registers of PCIe spec revision 4
->> - Makes changes in DesignWare core driver to get Tegra194 PCIe working
->>
->> Testing done on P2972-0000 platform
->> - Able to get PCIe link up with on-board Marvel eSATA controller
->> - Able to get PCIe link up with NVMe cards connected to M.2 Key-M slot
->> - Able to do data transfers with both SATA drives and NVMe cards
->> - Able to perform suspend-resume sequence
-> 
-> Do you happen to have a patch for P2972-0000 PCI support? I don't see it
-> in this series.
-It is already merged.
-V10 link @ http://patchwork.ozlabs.org/patch/1114445/
-
-- Vidya Sagar
-> 
-> Thierry
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU3VuLCAyOCBKdWwgMjAxOSwgR3VzdGF2byBBLiBSLiBTaWx2YSB3cm90ZToKCj4gTWFyayBz
+d2l0Y2ggY2FzZXMgd2hlcmUgd2UgYXJlIGV4cGVjdGluZyB0byBmYWxsIHRocm91Z2guCj4gCj4g
+VGhpcyBwYXRjaCBmaXhlcyB0aGUgZm9sbG93aW5nIHdhcm5pbmdzOgo+IAo+IGRyaXZlcnMvbWZk
+L2RiODUwMC1wcmNtdS5jOiBJbiBmdW5jdGlvbiAnZHNpY2xrX3JhdGUnOgo+IGRyaXZlcnMvbWZk
+L2RiODUwMC1wcmNtdS5jOjE1OTI6Nzogd2FybmluZzogdGhpcyBzdGF0ZW1lbnQgbWF5IGZhbGwg
+dGhyb3VnaCBbLVdpbXBsaWNpdC1mYWxsdGhyb3VnaD1dCj4gICAgZGl2ICo9IDI7Cj4gICAgfn5+
+fl5+fn4KPiBkcml2ZXJzL21mZC9kYjg1MDAtcHJjbXUuYzoxNTkzOjI6IG5vdGU6IGhlcmUKPiAg
+IGNhc2UgUFJDTV9EU0lfUExMT1VUX1NFTF9QSElfMjoKPiAgIF5+fn4KPiBkcml2ZXJzL21mZC9k
+Yjg1MDAtcHJjbXUuYzoxNTk0Ojc6IHdhcm5pbmc6IHRoaXMgc3RhdGVtZW50IG1heSBmYWxsIHRo
+cm91Z2ggWy1XaW1wbGljaXQtZmFsbHRocm91Z2g9XQo+ICAgIGRpdiAqPSAyOwo+ICAgIH5+fn5e
+fn5+Cj4gZHJpdmVycy9tZmQvZGI4NTAwLXByY211LmM6MTU5NToyOiBub3RlOiBoZXJlCj4gICBj
+YXNlIFBSQ01fRFNJX1BMTE9VVF9TRUxfUEhJOgo+ICAgXn5+fgo+IAo+IFJlcG9ydGVkLWJ5OiBT
+dGVwaGVuIFJvdGh3ZWxsIDxzZnJAY2FuYi5hdXVnLm9yZy5hdT4KPiBTaWduZWQtb2ZmLWJ5OiBH
+dXN0YXZvIEEuIFIuIFNpbHZhIDxndXN0YXZvQGVtYmVkZGVkb3IuY29tPgo+IC0tLQo+ICBkcml2
+ZXJzL21mZC9kYjg1MDAtcHJjbXUuYyB8IDIgKysKPiAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0
+aW9ucygrKQoKQXBwbGllZCwgdGhhbmtzLgoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQpMaW5h
+cm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29m
+dHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJs
+b2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
