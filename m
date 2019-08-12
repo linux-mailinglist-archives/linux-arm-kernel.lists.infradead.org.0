@@ -2,72 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53CC48A1C6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 16:59:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 284A88A1D2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 17:03:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UkAFjLis2uxU1YH1T/lcg/kLxapMWVtcP2ysiSReJ/E=; b=l8CbHwqOup7y36
-	ejNSuV1iWCpUuiqULqKEJFK5QP+JSdD8DbZ3l1vrMHmbBqOGDJMjKwSdTjwW8m2VejQ3+c2rtNyKh
-	Z+EyZsZqjJeO3+TBINifXKxTdt4m+Wd0hQwxEjbGXnttsmvOZAfhClN8HznhXOLFjqkdEQQ51bKO1
-	mZqjzmtzo4JOqYwja1nCxylH8OEeCU4lUSqQLvMoyLw+Y0OA8wlHmdnw27+lFr/YAi4dTtfH09C+n
-	bQhx5F8C6fzszRlvkvkqXnbHQ9XxLVge+RIhdeqJD5+74rKlixipCduh5CZMHiWeZzhDf753knsD/
-	pITeoO7vW/JP0pd5rEOA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=nP+EMm1nKpN6eT5pWL+Ym/Hto/cOogj2nSeCV/OV0Hs=; b=CHg
+	URVALZOXZ8YDDlQ6qhq/yMrWzc3+SupNEYLFxy27c2eJsmowaN12oPH5x7gEUDq9cVZmGzm92pNGV
+	hIn/ynO18D09f1D1YwKHJUMU7bVoSzCFn4gxdrEnr1ZCZGJ9FR5iKOZ6ndnRwiLdIQm9K8xJA7qod
+	AGi0cXkebJRYiqNQXPoR2kaTWEFgAKStZZfcYQtkz4YlOfs0hDgpmd9jZVBhD4cH+gYCLu5T249cB
+	05bQlxtPDLcMLEulko4MPNx3E2asnFLjrQMTBuTPZkNeHcIRYOUflZ5P+GstyW7Z6HPccByMWym9r
+	KzENq2TpeB5h6cfXkf/CvkX19dORqQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxBnU-0003rD-NQ; Mon, 12 Aug 2019 14:59:44 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxBnK-0003qd-0Q
- for linux-arm-kernel@bombadil.infradead.org; Mon, 12 Aug 2019 14:59:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=QNpzkg1uPJbCffqVBxWwoKvRb4/zkNtXhYxQCQjxzH0=; b=CC+8UdPfAW2c+kRjH7FggGFem
- BUQnvYXTYPN7Koi2VfaisuUntb3Kty5oQXuDSBgJFR/9IBF7vopKfSbcCzuW9A2EDU5m2GqUsNeDo
- Q9WL0FO/X1clzGh7zwWJOXBKKd2SbpFBP9yyYeO6hCeMA9Bxn7gbybbmBi6X57NTyvjPiJOiv/L7i
- Q9CcXgGYiqprfLI/jCH7dxU9V+m6wLRCodoUWlWgZCsv2vSaY4ys1PG7/JiqjuNu9FVTjwohOxGeh
- jCOWpNC39m+kyxIAluiwJKySCS7OpxeMSa5AAR0ccRfjdfgQ+lo8ASH0U5TtTKIgKcv2jxkTKVKQY
- hgK4YsZcw==;
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxBnZ-0000UN-2t
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 14:59:51 +0000
-X-Originating-IP: 92.137.69.152
-Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
- [92.137.69.152])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 11982FF807;
- Mon, 12 Aug 2019 14:58:53 +0000 (UTC)
-Date: Mon, 12 Aug 2019 16:58:53 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-Subject: Re: [PATCH] usb: gadget: atmel_usba_udc: Mark expected switch
- fall-through
-Message-ID: <20190812145853.GP3600@piout.net>
-References: <20190805184842.GA8627@embeddedor>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190805184842.GA8627@embeddedor>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+	id 1hxBqm-0005op-9u; Mon, 12 Aug 2019 15:03:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxBqK-0005cw-Pi
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 15:02:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4D3CB15A2;
+ Mon, 12 Aug 2019 08:02:39 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 48FA73F718;
+ Mon, 12 Aug 2019 08:02:38 -0700 (PDT)
+From: Will Deacon <will@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: cpufeature: Don't treat granule sizes as strict
+Date: Mon, 12 Aug 2019 16:02:25 +0100
+Message-Id: <20190812150225.25386-1-will@kernel.org>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_155949_147181_B66F1CFD 
-X-CRM114-Status: GOOD (  14.83  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190812_080240_872450_ADE7FCC0 
+X-CRM114-Status: GOOD (  14.18  )
+X-Spam-Score: 1.0 (+)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,51 +57,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Felipe Balbi <balbi@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Cristian Birsan <cristian.birsan@microchip.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Suzuki Poulose <suzuki.poulose@arm.com>, khilman@baylibre.com,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/08/2019 13:48:42-0500, Gustavo A. R. Silva wrote:
-> Mark switch cases where we are expecting to fall through.
-> 
-> This patch fixes the following warning (Building: at91_dt_defconfig arm):
-> 
-> drivers/usb/gadget/udc/atmel_usba_udc.c:329:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
-> 
-> Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
-Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+If a CPU doesn't support the page size for which the kernel is
+configured, then we will complain and refuse to bring it online. For
+secondary CPUs (and the boot CPU on a system booting with EFI), we will
+also print an error identifying the mismatch.
 
-> ---
->  drivers/usb/gadget/udc/atmel_usba_udc.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/usb/gadget/udc/atmel_usba_udc.c b/drivers/usb/gadget/udc/atmel_usba_udc.c
-> index 503d275bc4c4..86ffc8307864 100644
-> --- a/drivers/usb/gadget/udc/atmel_usba_udc.c
-> +++ b/drivers/usb/gadget/udc/atmel_usba_udc.c
-> @@ -327,6 +327,7 @@ static int usba_config_fifo_table(struct usba_udc *udc)
->  	switch (fifo_mode) {
->  	default:
->  		fifo_mode = 0;
-> +		/* fall through */
->  	case 0:
->  		udc->fifo_cfg = NULL;
->  		n = 0;
-> -- 
-> 2.22.0
-> 
+Consequently, the only time that the cpufeature code can detect a
+granule size mismatch is for a granule other than the one that is
+currently being used. Although we would rather such systems didn't
+exist, we've unfortunately lost that battle and Kevin reports that
+on his amlogic S922X (odroid-n2 board) we end up warning and taining
+with defconfig because 16k pages are not supported by all of the CPUs.
 
+In such a situation, we don't actually care about the feature mismatch,
+particularly now that KVM only exposes the sanitised view of the CPU
+registers. Treat the granule fields as non-strict and let Kevin run
+without a tainted kernel.
+
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: Suzuki Poulose <suzuki.poulose@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Reported-by: Kevin Hilman <khilman@baylibre.com>
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ arch/arm64/kernel/cpufeature.c | 14 +++++++++++---
+ 1 file changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index d19d14ba9ae4..b1fdc486aed8 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -184,9 +184,17 @@ static const struct arm64_ftr_bits ftr_id_aa64zfr0[] = {
+ };
+ 
+ static const struct arm64_ftr_bits ftr_id_aa64mmfr0[] = {
+-	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN4_SHIFT, 4, ID_AA64MMFR0_TGRAN4_NI),
+-	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN64_SHIFT, 4, ID_AA64MMFR0_TGRAN64_NI),
+-	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN16_SHIFT, 4, ID_AA64MMFR0_TGRAN16_NI),
++	/*
++	 * We already refuse to boot CPUs that don't support our configured
++	 * page size, so we can only detect mismatches for a page size other
++	 * than the one we're currently using. Unfortunately, SoCs like this
++	 * exist in the wild so, even though we don't like it, we'll have to go
++	 * along with it and treat them as non-strict.
++	 */
++	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN4_SHIFT, 4, ID_AA64MMFR0_TGRAN4_NI),
++	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN64_SHIFT, 4, ID_AA64MMFR0_TGRAN64_NI),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_TGRAN16_SHIFT, 4, ID_AA64MMFR0_TGRAN16_NI),
++
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_BIGENDEL0_SHIFT, 4, 0),
+ 	/* Linux shouldn't care about secure memory */
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR0_SNSMEM_SHIFT, 4, 0),
 -- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
