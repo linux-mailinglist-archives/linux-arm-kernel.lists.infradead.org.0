@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A49589A5E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:48:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C901289A88
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 11:54:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z9zG6axylhoZ7n4DFeKllKFl2L3PFtdA77DnWUmiSLA=; b=VYigy65/UMNDar
-	o/yEJ4QHkcsus2gG+AieS0DIITygrePuglmIgQDuFJwNQJdRn15JtH3UFQVG8gaQqE3a8w/AIny9o
-	QdrolYlf+onryFFYiCE7/vQG5dcMw6U3UmKTc2MiXVVBD0U+CGux3fW4vWPV1wiM/lMqTzXzhzM2B
-	A3XSFbR6YgEd2qHJSFRiB7PugdN/9ylVRH5syAQp+bVEG1Wr2V9mpkw91JdFppV9k31P2kP2P2fG+
-	C+8rFkqS0Qa5LbVu7ywkGx1zzxm+m7DJQCoGQiBkWdAZxIXVTzhlcsaZxurAbhBmkC91N5GXC25HD
-	v8XpIdOlmhFUEuQyZ7aA==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:Date:To:From:Subject:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3A0jMKb/LSIWK8FVF0o0efe20UhVfZSNZ8B63y5e6Fw=; b=boLLxnPNEB4bT6
+	5mzKmLjGE4Ap4kCjfG4oDm94AaLO0rs/gwcra9XrT0LNT0nsmJviidiQ5cLkFJp1byMAQiuresflF
+	nAY5caug//1vOUB9G8yO1FZLnIK1JEK1aDxOOlVqFgt436fyCxDONNK0ps6QBnSf7dd5ZcFZufD9D
+	v2Xh1murbUrKvzb43IHEv/5s95de9Ls5WCYaJIpSR2iRUT/9hecAo4pk3Sm51tjvSH4tl/cpXUEek
+	HITEzY+v8CGi1Asy5KO8rmLJvsRL5sNP/87FWtYZJVAKVaRZAetNaFCQPf7zx36mo4miSrVAQB0Ce
+	9hHN3dybI40KpcIESwLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx6w1-0005u5-2K; Mon, 12 Aug 2019 09:48:13 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1hx72K-0007mF-0G; Mon, 12 Aug 2019 09:54:44 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx6sy-0001uk-0s
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:45:06 +0000
-X-Originating-IP: 91.118.195.70
-Received: from jirafa.cyrius.com (91-118-195-70.static.upcbusiness.at
- [91.118.195.70]) (Authenticated sender: tbm@cyrius.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id DA1BF40003;
- Mon, 12 Aug 2019 09:44:56 +0000 (UTC)
-Received: by jirafa.cyrius.com (Postfix, from userid 1000)
- id 58518A887E; Mon, 12 Aug 2019 11:44:56 +0200 (CEST)
-Date: Mon, 12 Aug 2019 11:44:56 +0200
-From: Martin Michlmayr <tbm@cyrius.com>
-To: Dan Williams <dan.j.williams@intel.com>
-Subject: Re: [PATCH 1/7] [RFC] ARM: remove Intel iop33x and iop13xx support
-Message-ID: <20190812094456.GI10598@jirafa.cyrius.com>
-References: <20190809162956.488941-1-arnd@arndb.de>
- <20190809163334.489360-1-arnd@arndb.de>
- <CAA9_cmdDbBm0ookyqGJMcyLVFHkYHuR3mEeawQKS2UqYJoWWaQ@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAA9_cmdDbBm0ookyqGJMcyLVFHkYHuR3mEeawQKS2UqYJoWWaQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hx72A-0007lo-Kc
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 09:54:35 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1hx724-0002xU-VO; Mon, 12 Aug 2019 11:54:28 +0200
+Received: from pza by lupine with local (Exim 4.89)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1hx724-0008T7-Mr; Mon, 12 Aug 2019 11:54:28 +0200
+Message-ID: <1565603668.5017.2.camel@pengutronix.de>
+Subject: [GIT PULL] Reset controller changes for v5.4
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: arm@kernel.org, soc@kernel.org
+Date: Mon, 12 Aug 2019 11:54:28 +0200
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_024504_269689_486E60BE 
-X-CRM114-Status: GOOD (  14.15  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190812_025434_680425_64E3BBAB 
+X-CRM114-Status: GOOD (  10.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,58 +65,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Teichmann <lists@peter-teichmann.de>, Arnd Bergmann <arnd@arndb.de>,
- linux-gpio@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, soc@kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- linux-i2c@vger.kernel.org, dmaengine@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Dan Williams <dan.j.williams@intel.com> [2019-08-09 11:34]:
-> > Earlier versions of OpenWRT and Debian both had support for iop32x
-> > but not the others, and they both dropped iop32x as well in their 2015
-> > releases.
-> >
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> > ---
-> > I'm just guessing that iop32x is still needed, and the other two are
-> > not. If anyone disagrees with that assessment, let me know so we
-> > can come up with an alternative approach.
-> 
-> I'm not sure who would scream if iop32x support went away as well, but
-> I have not followed this space in years hence copying Martin.
-
-I believe iop13xx were mostly Intel dev boards.  I'm not aware of any
-major devices based on iop33x.
-
-As Arnd points out, Debian used to have support for various iop32x
-devices.  While Debian hasn't supported iop32x in a number of years,
-these devices are still usable and in use (RMK being a prime example).
-
-So I think it's safe to drop iop33x/iop13xx while retaining support
-for iop32x.
-
-As I was looking at my email archives, I saw an email from Peter
-Teichmann who was working on an iop33x based platform (around 2009) so
-I've copied him as well.
-
-> In any event:
-> 
-> Acked-by: Dan Williams <dan.j.williams@intel.com>
-
-Acked-by: Martin Michlmayr <tbm@cyrius.com>
-
--- 
-Martin Michlmayr
-https://www.cyrius.com/
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RGVhciBhcm0tc29jIG1haW50YWluZXJzLAoKVGhlIGZvbGxvd2luZyBjaGFuZ2VzIHNpbmNlIGNv
+bW1pdCA1ZjllODMyYzEzNzA3NTA0NWQxNWNkNjg5OWFiMDUwNWNmYjJjYTRiOgoKICBMaW51cyA1
+LjMtcmMxICgyMDE5LTA3LTIxIDE0OjA1OjM4IC0wNzAwKQoKYXJlIGF2YWlsYWJsZSBpbiB0aGUg
+R2l0IHJlcG9zaXRvcnkgYXQ6CgogIGdpdDovL2dpdC5wZW5ndXRyb25peC5kZS9naXQvcHphL2xp
+bnV4LmdpdCB0YWdzL3Jlc2V0LWZvci12NS40Cgpmb3IgeW91IHRvIGZldGNoIGNoYW5nZXMgdXAg
+dG8gZWE2NTFmZmQ0ZjdmZWJkNGEwYjNmZGI5OGUzOWE2OTgwZTk3OGEyYzoKCiAgcmVzZXQ6IEFk
+ZCBEZXNpZ25XYXJlIElQIHN1cHBvcnQgdG8gc2ltcGxlIHJlc2V0ICgyMDE5LTA4LTA2IDE1OjMx
+OjEzICswMjAwKQoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLQpSZXNldCBjb250cm9sbGVyIGNoYW5nZXMgZm9yIHY1LjQKClRo
+aXMgdGFnIGFkZHMgc3VwcG9ydCBmb3IgdGhlIGkuTVg4TU0gU1JDIHZpYSB0aGUgcmVzZXQtaW14
+NyBkcml2ZXIKYW5kIGZvciBEZXNpZ25XYXJlIElQIHJlc2V0IGNvbnRyb2xsZXJzIHZpYSB0aGUg
+cmVzZXQtc2ltcGxlIGRyaXZlci4KQSB0eXBvIGluIHRoZSBpLk1YOE1RIERTSSByZXNldCBkZWZp
+bml0aW9ucyBpcyBmaXhlZCwgYW5kIHRoZSBNZXNvbgpyZXNldCBkcml2ZXIgYW5kIGJpbmRpbmcg
+aGVhZGVycyBhcmUgdXBkYXRlZCB0byBTUERYIGxpY2Vuc2UKaWRlbnRpZmllcnMuCgotLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+CkFuc29uIEh1YW5nICgxKToKICAgICAgZHQtYmluZGluZ3M6IHJlc2V0OiBpbXg3OiBBZGQgc3Vw
+cG9ydCBmb3IgaS5NWDhNTQoKR3VpZG8gR8O8bnRoZXIgKDEpOgogICAgICBkdC1iaW5kaW5nczog
+cmVzZXQ6IEZpeCB0eXBvIGluIGlteDhtcSByZXNldHMKCkd1c3Rhdm8gUGltZW50ZWwgKDEpOgog
+ICAgICByZXNldDogQWRkIERlc2lnbldhcmUgSVAgc3VwcG9ydCB0byBzaW1wbGUgcmVzZXQKCkx1
+aXMgT2xpdmVpcmEgKDEpOgogICAgICBkdC1iaW5kaW5nczogRG9jdW1lbnQgdGhlIERlc2lnbldh
+cmUgSVAgcmVzZXQgYmluZGluZ3MKCk5laWwgQXJtc3Ryb25nICgzKToKICAgICAgcmVzZXQ6IHJl
+c2V0LW1lc29uOiB1cGRhdGUgd2l0aCBTUERYIExpY2VuY2UgaWRlbnRpZmllcgogICAgICBkdC1i
+aW5kaW5nczogcmVzZXQ6IGFtbG9naWMsbWVzb24tZ3hiYi1yZXNldDogdXBkYXRlIHdpdGggU1BE
+WCBMaWNlbmNlIGlkZW50aWZpZXIKICAgICAgZHQtYmluZGluZ3M6IHJlc2V0OiBhbWxvZ2ljLG1l
+c29uOGItcmVzZXQ6IHVwZGF0ZSB3aXRoIFNQRFggTGljZW5jZSBpZGVudGlmaWVyCgogLi4uL2Rl
+dmljZXRyZWUvYmluZGluZ3MvcmVzZXQvZnNsLGlteDctc3JjLnR4dCAgICAgfCAgNiArKy0KIC4u
+Li9kZXZpY2V0cmVlL2JpbmRpbmdzL3Jlc2V0L3NucHMsZHctcmVzZXQudHh0ICAgIHwgMzAgKysr
+KysrKysrKysrKwogZHJpdmVycy9yZXNldC9LY29uZmlnICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgfCAgMiArLQogZHJpdmVycy9yZXNldC9yZXNldC1pbXg3LmMgICAgICAgICAgICAgICAg
+ICAgICAgICAgfCAxMiArKy0tLQogZHJpdmVycy9yZXNldC9yZXNldC1tZXNvbi5jICAgICAgICAg
+ICAgICAgICAgICAgICAgfCA1MSArLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiBkcml2ZXJzL3Jlc2V0
+L3Jlc2V0LXNpbXBsZS5jICAgICAgICAgICAgICAgICAgICAgICB8ICAzICsrCiAuLi4vZHQtYmlu
+ZGluZ3MvcmVzZXQvYW1sb2dpYyxtZXNvbi1neGJiLXJlc2V0LmggICB8IDUxICstLS0tLS0tLS0t
+LS0tLS0tLS0tLS0KIGluY2x1ZGUvZHQtYmluZGluZ3MvcmVzZXQvYW1sb2dpYyxtZXNvbjhiLXJl
+c2V0LmggIHwgNTEgKy0tLS0tLS0tLS0tLS0tLS0tLS0tLQogaW5jbHVkZS9kdC1iaW5kaW5ncy9y
+ZXNldC9pbXg4bXEtcmVzZXQuaCAgICAgICAgICAgfCAzNCArKysrKysrLS0tLS0tLS0KIDkgZmls
+ZXMgY2hhbmdlZCwgNjQgaW5zZXJ0aW9ucygrKSwgMTc2IGRlbGV0aW9ucygtKQogY3JlYXRlIG1v
+ZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9yZXNldC9zbnBzLGR3
+LXJlc2V0LnR4dAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
