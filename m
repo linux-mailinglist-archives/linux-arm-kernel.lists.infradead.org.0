@@ -2,135 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0392897E0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 09:30:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 916F389813
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 09:45:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N0ycp66VnSzD+Fk4u87XVZMscHzVEk43bMnC8/lFEKE=; b=ajkg6U/5H53z8T
-	0Ag0I4IJ9vwm7ASImr0ZfOCMTbWJyzRK7uAW6eWz2BX+bbzOI3dgjoX8HZLmH27DhF+rJ1jCvaxwg
-	sw7IBsxl0TszIndRgyGGdn90fsU/5BAsUie5wmS9b782IAo5eZjSsTN18pm5NJePV6H+T3GkLf6Xl
-	rkGz6MTrSR9hxDw43tCyluI32j5p1ZsOgBMB4AYcttK5VigIaFcAg1o5YHyNqYmfmaGXiOyFmzKqr
-	aJrVFIaflaXVXguosFupkSfsuXP1XpRYpwTK4CSCOpn1gm+UDE1D1WIhxJEA74lFVUnzX/yeIDwMH
-	70XJucdWQCm7Nt387tRw==;
+	List-Owner; bh=0/Bovtr7iVm6P4MUPQbExEvS5yikoGjKTU7tKucsTh0=; b=gBHT5Lh4YtUnMw
+	61KH+E17fLCw5LFXpNHmyBhVS5Oy58R72qY6Hu8XfvG1tVqrhhh5K9+MiE3qun69Bhai99EHuLRiE
+	U+CvjiDbz46wffgTgDv6CkA2yoMHga1T24LLpfFxZ/MEU5VGu5Md+W0PN2i2TeA8z6Ll35arEoOtX
+	QPVS/acltWDZbsf1fKQAUyLMcj9/9f7LMiLaXmetgGcw3sXDsxANVFuHMwJJu4gHMqWoZJTkNh8ti
+	Ov4knCDBPyxInZrLGNBjSBS+FeZFUEOmnyqmgfxPzUzzA9HFwktbnEdfciymzX0N8puKuj3w+8P5a
+	/EDAzhaL+dmoPXvOn41g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx4mt-0004eg-PF; Mon, 12 Aug 2019 07:30:39 +0000
-Received: from mail-eopbgr690065.outbound.protection.outlook.com
- ([40.107.69.65] helo=NAM04-CO1-obe.outbound.protection.outlook.com)
+	id 1hx51D-0001Al-S3; Mon, 12 Aug 2019 07:45:28 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx4lW-0002X1-TB
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 07:29:16 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Y48GWkyDWbU8hsGUymZsZAkFH98ENCsXe7Uu1pJjJ0iJ7d3a57OrDPDbXTwqbwZIUhfhK6Trb7FZOnxcBUimpT1/8WHvIbelZcu4ZisMKLwZnwAOf/kPtZAhL9H/+QAhqyXBOOj7tM+HfO9yTbD6y4SeMIajf5GXfx9qCIEWcXkYLIvHuSfJbkVIB7RHNCeJcw2JBCkWIuVorkwghX574GA36MpSVjjf5vuLCFkUvyGPapg/e3D8r/oCQwPCwPpuop021hs/KOHP5YFDAAZTOh9tJ8fee7AVZRuN0cQtH/nz9vJ13yv/YQVtB412wBUEFpVGb2D7LgWE4sPB17SdgQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XmYCJiOPkOguhih9u3keBjFyHQJiwN9tjcr4KkyQS/E=;
- b=c1I7khnjAmmJ0Ivl+rRp150Y65L9C0ehlbFi4EWRba84NFW9JlX72hvkB7Fs1zXi0xfHTw3R6e+tWxYSyDelR2ePytkAltmS9Nw+9AysNlHptK9fM/4JRPgpUkqJ9Hkxx0+YrDgryXX1c+/ayaoDNC5LCflzw59ELqtpDTEzDCtaMxSUn6qXbZJrrXuCX0vRZbC88IKYRsN0WT+RpHPajgOFZWrRYbmuGh6+6ddzULcuyat11Lj9tqZuYFvoVq2wftjAZflLX4gn+xMGTnNB8nKCKo6/nk0lcMe1coSTo2r4DOXXhE7RUXlItvtJYJXFDcg4fn7lZ4Pl6TopfLHy7A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.100) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XmYCJiOPkOguhih9u3keBjFyHQJiwN9tjcr4KkyQS/E=;
- b=ZJd1+i9Mz2pvMWsU/JLU7I8QtuKA3SI46fml0wSCFwpqI0EcA1q0Wp4sQyupMwHTYxkAkicfEOKkQgbORpxz4bOHY/i/IoJJjhMoEFP2jsvrJl0HX5r0rJRB5//EM0HIVfsvMWGwMGHqx/7meRpFWP8kSedu5LEXOiog495cBww=
-Received: from CY4PR02CA0017.namprd02.prod.outlook.com (2603:10b6:903:18::27)
- by MWHPR0201MB3626.namprd02.prod.outlook.com (2603:10b6:301:77::39)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.18; Mon, 12 Aug
- 2019 07:29:12 +0000
-Received: from SN1NAM02FT032.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::209) by CY4PR02CA0017.outlook.office365.com
- (2603:10b6:903:18::27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.14 via Frontend
- Transport; Mon, 12 Aug 2019 07:29:12 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.100)
- smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
- header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
-Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
- SN1NAM02FT032.mail.protection.outlook.com (10.152.72.126) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2157.15
- via Frontend Transport; Mon, 12 Aug 2019 07:29:11 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66]:47951
- helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
- (envelope-from <appana.durga.rao@xilinx.com>)
- id 1hx4lS-00072d-FV; Mon, 12 Aug 2019 00:29:10 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <appana.durga.rao@xilinx.com>)
- id 1hx4lN-0000hp-CK; Mon, 12 Aug 2019 00:29:05 -0700
-Received: from xsj-pvapsmtp01 (smtp3.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x7C7SsGs021540; 
- Mon, 12 Aug 2019 00:28:54 -0700
-Received: from [10.140.6.6] (helo=xhdappanad40.xilinx.com)
- by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <appana.durga.rao@xilinx.com>)
- id 1hx4lC-0000d9-5D; Mon, 12 Aug 2019 00:28:54 -0700
-From: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>
-To: wg@grandegger.com, mkl@pengutronix.de, davem@davemloft.net,
- michal.simek@xilinx.com
-Subject: [PATCH 5/5] can: xilinx_can: Fix the data phase btr1 calculation
-Date: Mon, 12 Aug 2019 12:58:34 +0530
-Message-Id: <1565594914-18999-6-git-send-email-appana.durga.rao@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
-References: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(346002)(396003)(136003)(39850400004)(2980300002)(199004)(189003)(8676002)(70206006)(70586007)(63266004)(81156014)(48376002)(81166006)(478600001)(6636002)(186003)(4326008)(486006)(305945005)(126002)(426003)(9786002)(336012)(76176011)(6666004)(356004)(7696005)(51416003)(106002)(16586007)(446003)(316002)(4744005)(36386004)(2616005)(476003)(5660300002)(47776003)(14444005)(2906002)(11346002)(50226002)(107886003)(36756003)(50466002)(8936002)(26005)(5001870100001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR0201MB3626; H:xsj-pvapsmtpgw02; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-100.xilinx.com,xapps1.xilinx.com; A:1; MX:1;
+ id 1hx50k-0000MF-UG
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 07:45:00 +0000
+Received: by mail-wr1-x444.google.com with SMTP id 31so103738362wrm.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 12 Aug 2019 00:44:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=axx5t1pQziCogZokCRaPN9srE7gDApf+a9vIu6w+Yk4=;
+ b=tfgUI5T++M6iHqMqem1ZMPsuh/DJUBAIUNiuHKoVjVd/Hzq+a1Kzo4lGqVWrLZ6Zo3
+ ZAr6IbA8x/pfpaIsqMJ4y0C5+6gfu+KHaPY4a1+SATevORrUdRBOMRnl3gCYx3NW0pzt
+ 2dwgAhpbjA4E3S5QqPpBjA2dEuPdRA3upEDbEYqH45NEoIMxRDDjIJdjShklUkqU5x+i
+ szOgZI/XhsxE5X+ipK8CG6PmICu3SV5/6fk5W03NyiYpeFt8v6GGJmfw7yqNMFteISlC
+ txROC1BLOs9by1xXiLAWQq3n/F9F7sAmhaEtJt2XLESE8eT4DRXHPQPUIXQtrU0oeYuT
+ Mulw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=axx5t1pQziCogZokCRaPN9srE7gDApf+a9vIu6w+Yk4=;
+ b=Jeuo2sLx0eLcXX+eOCuqKtvaKpPegqTvb1B/A/YRua5zf7wFmNLOnwL9gfBawB7jEs
+ L1RZx0ZFXxpq9PrOMm4TscLsO5LkHwNLJtmbDbjyzGzGO1uOctd0f//xvjkaJQFynU5S
+ AxBGQM8ugjkoLwjWdc6Qz1paQb3aqw7kduCaKC9NYV4uXiH5SNk5yQFug9bUlVMUfFbg
+ nX3FGNLb/QFg5+TIxnVBgJesPQRQCwctLy4HrJmAj1BLQUM5v3WwiB00MS91itBcmKPn
+ gM0tDH4GUtnZDdHhw3I4kPCAf5xn0+OuUPas7iD15Fp7mymzeZmcPDQpkaZmshKAq4A9
+ gcIA==
+X-Gm-Message-State: APjAAAXtsm1z2sWo0yNoAE+ZUwLjjq09ajo7gAtifXJCgUIoFBcmgGSK
+ fq/t+LXnWPMApfpU3fYAUJlNtl1n
+X-Google-Smtp-Source: APXvYqwimf6/yTeGd34WQ+E48bgUvFXw45Oi2gN+Lu+PXH39ryjbfIhfxq7h9T3upcatBs1YMoVbwg==
+X-Received: by 2002:adf:f48d:: with SMTP id l13mr33506400wro.190.1565595896607; 
+ Mon, 12 Aug 2019 00:44:56 -0700 (PDT)
+Received: from jernej-laptop.localnet (89-212-178-211.dynamic.t-2.net.
+ [89.212.178.211])
+ by smtp.gmail.com with ESMTPSA id a81sm5050776wma.3.2019.08.12.00.44.54
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 12 Aug 2019 00:44:55 -0700 (PDT)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
+To: linux-sunxi@googlegroups.com, megous@megous.com
+Subject: Re: [linux-sunxi] [PATCH v8 0/4] Add support for Orange Pi 3
+Date: Mon, 12 Aug 2019 09:44:53 +0200
+Message-ID: <2218280.0sI6yjypBf@jernej-laptop>
+In-Reply-To: <20190806155744.10263-1-megous@megous.com>
+References: <20190806155744.10263-1-megous@megous.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 6b36ce4f-5e3e-4a94-2a69-08d71ef6c594
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
- SRVR:MWHPR0201MB3626; 
-X-MS-TrafficTypeDiagnostic: MWHPR0201MB3626:
-X-Microsoft-Antispam-PRVS: <MWHPR0201MB3626DEEBD9112FDC4B32EEF7DCD30@MWHPR0201MB3626.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:4303;
-X-Forefront-PRVS: 012792EC17
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: XVvaD0A9dfnjEGSqvWcz0IQo+v4oaUiALxBC5skXGnJw1MKtsO2yp/Nv4H1ZO49r7KIVGlj+9GU9Y3rWCjyUmvScdX7ic70POl7mrSGPdEsiHGkv9EA6Vek8ZkFwun7DakwCvIecYEFtq9L9tvSG/lSxdUKNQsl1AixEw6LrfXfaLlRgFQfmT9ke+M9eQgZUyGxXuXcO2MerVg0H5c2aY2mNWpG/96C3WOgWZeH0vI0tFVw8qXLiy9cvBGOpUZjzrjIbH8zoqtR0fItBOQyakQlNNK9NLjPhpQFXfk4m7F37fnmizHykXtbnnCWlg/+IJEz2upTvLHLVlagMlyl3LtdI7GDdbX9C5CJXnsyOXaXQFv+5GkCLPgorZRk5rSHnZqe1Y9RvrQv3SIOR+BWA6LztRsfIV5Pg5ueA6QjKDf8=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Aug 2019 07:29:11.8932 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6b36ce4f-5e3e-4a94-2a69-08d71ef6c594
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
- Helo=[xsj-pvapsmtpgw02]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR0201MB3626
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_002915_050020_7C5A7C9D 
-X-CRM114-Status: GOOD (  10.86  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190812_004459_053307_A369267D 
+X-CRM114-Status: GOOD (  24.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.69.65 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jernej.skrabec[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -142,41 +99,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, Srinivas Neeli <srinivas.neeli@xilinx.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-can@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Maxime Ripard <maxime.ripard@bootlin.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Srinivas Neeli <srinivas.neeli@xilinx.com>
+Dne torek, 06. avgust 2019 ob 17:57:39 CEST je megous@megous.com napisal(a):
+> From: Ondrej Jirman <megous@megous.com>
+> 
+> This series implements support for Xunlong Orange Pi 3 board. There
+> are only a few patches remaining.
+> 
+> - ethernet support - just a DT change (patch 1)
+> - HDMI support (patches 2-4)
+> 
+> For some people, ethernet doesn't work after reboot because u-boot doesn't
+> support AXP805 PMIC, and will not turn off the etherent PHY regulators.
+> So the regulator controlled by gpio will be shut down, but the other one
+> controlled by the AXP PMIC will not.
+> 
+> This is a problem only when running with a builtin driver. This needs
+> to be fixed in u-boot.
+> 
+> 
+> Please take a look.
 
-While calculating bitrate for the data phase, the driver is using phase
-segment 1 of the arbitration phase instead of the data phase.
+Is there anything missing? It would be nice to get this in 5.4. There is a lot 
+of H6 boards which needs DDC bus enable mechanism (part of H6 reference 
+design), including Beelink GS1 which already has HDMI node in mainline kernel 
+DT, but due to disabled DDC lines works only with 1024x768 (fallback 
+resolution in DRM core).
 
-Signed-off-by: Srinivas Neeli <srinivas.neeli@xilinx.com>
-Acked-by: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
----
- drivers/net/can/xilinx_can.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Best regards,
+Jernej
 
-diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.c
-index 4cb8c1c9..ab26691 100644
---- a/drivers/net/can/xilinx_can.c
-+++ b/drivers/net/can/xilinx_can.c
-@@ -425,7 +425,7 @@ static int xcan_set_bittiming(struct net_device *ndev)
- 		btr0 = dbt->brp - 1;
- 
- 		/* Setting Time Segment 1 in BTR Register */
--		btr1 = dbt->prop_seg + bt->phase_seg1 - 1;
-+		btr1 = dbt->prop_seg + dbt->phase_seg1 - 1;
- 
- 		/* Setting Time Segment 2 in BTR Register */
- 		btr1 |= (dbt->phase_seg2 - 1) << priv->devtype.btr_ts2_shift;
--- 
-2.7.4
+> 
+> thank you and regards,
+>   Ondrej Jirman
+> 
+> Changes in v8:
+> - added reviewed-by tags
+> - dropped already applied patches
+> - added more info about the phy initialization issue after reset
+> 
+> Changes in v7:
+> - dropped stored reference to connector_pdev as suggested by Jernej
+> - added forgotten dt-bindings reviewed-by tag
+> 
+> Changes in v6:
+> - added dt-bindings reviewed-by tag
+> - fix wording in stmmac commit (as suggested by Sergei)
+> 
+> Changes in v5:
+> - dropped already applied patches (pinctrl patches, mmc1 pinconf patch)
+> - rename GMAC-3V3 -> GMAC-3V to match the schematic (Jagan)
+> - changed hdmi-connector's ddc-supply property to ddc-en-gpios
+>   (Rob Herring)
+> 
+> Changes in v4:
+> - fix checkpatch warnings/style issues
+> - use enum in struct sunxi_desc_function for io_bias_cfg_variant
+> - collected acked-by's
+> - fix compile error in drivers/pinctrl/sunxi/pinctrl-sun9i-a80-r.c:156
+>   caused by missing conversion from has_io_bias_cfg struct member
+>   (I've kept the acked-by, because it's a trivial change, but feel free
+>   to object.) (reported by Martin A. on github)
+>   I did not have A80 pinctrl enabled for some reason, so I did not catch
+>   this sooner.
+> - dropped brcm firmware patch (was already applied)
+> - dropped the wifi dts patch (will re-send after H6 RTC gets merged,
+>   along with bluetooth support, in a separate series)
+> 
+> Changes in v3:
+> - dropped already applied patches
+> - changed pinctrl I/O bias selection constants to enum and renamed
+> - added /omit-if-no-ref/ to mmc1_pins
+> - made mmc1_pins default pinconf for mmc1 in H6 dtsi
+> - move ddc-supply to HDMI connector node, updated patch descriptions,
+>   changed dt-bindings docs
+> 
+> Changes in v2:
+> - added dt-bindings documentation for the board's compatible string
+>   (suggested by Clement)
+> - addressed checkpatch warnings and code formatting issues (on Maxime's
+>   suggestions)
+> - stmmac: dropped useless parenthesis, reworded description of the patch
+>   (suggested by Sergei)
+> - drop useles dev_info() about the selected io bias voltage
+> - docummented io voltage bias selection variant macros
+> - wifi: marked WiFi DTS patch and realted mmc1_pins as "DO NOT MERGE",
+>   because wifi depends on H6 RTC support that's not merged yet (suggested
+>   by Clement)
+> - added missing signed-of-bys
+> - changed &usb2otg dr_mode to otg, and added a note about VBUS
+> - improved wording of HDMI driver's DDC power supply patch
+> 
+> Ondrej Jirman (4):
+>   arm64: dts: allwinner: orange-pi-3: Enable ethernet
+>   dt-bindings: display: hdmi-connector: Support DDC bus enable
+>   drm: sun4i: Add support for enabling DDC I2C bus to sun8i_dw_hdmi glue
+>   arm64: dts: allwinner: orange-pi-3: Enable HDMI output
+> 
+>  .../display/connector/hdmi-connector.txt      |  1 +
+>  .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 70 +++++++++++++++++++
+>  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c         | 54 ++++++++++++--
+>  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h         |  2 +
+>  4 files changed, 123 insertions(+), 4 deletions(-)
+
+
+
 
 
 _______________________________________________
