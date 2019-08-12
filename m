@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB0108A07F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 16:16:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A01E58A08E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 16:17:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WZ4M8QrV7fb0IUpUUO7NLOAV41Vhy0cwfeUnEc8fnRc=; b=PHgDJguw5BlWee
-	xgGxp+X1BFFxypRKeT+GlCZW9xlZTu0gh5kZRcdohAge6RIDrC3Z+abjFRv0eMuUIwf41+HpVwHQk
-	sJ1QZT2Xh2qWx5HUvb0r2xg3E7k6XRisLtZLFy7iiOqUE0Lppz7pw0kZykuwko/3RgLoFVMOUfP+6
-	/YVYh/x1bLZfif67B2Qm6bBOWgO5WnQnXCMQP4NRw57DV0IVs2FVcbHFDwgJ5QafctFCZbV8GuMav
-	gLfNJlCcTv29At1jv3s+mov2K3EXwIFefgb6T53Q/8xzmMX9j9/Y8pmS38/u+6rmPduLWMOEkhpfO
-	Xf94s31lBiUyaq6cbDYg==;
+	List-Owner; bh=p1fbRcv4mV7qlOU91fTLVeXKzVU3JyDx5mlJpdVruOQ=; b=UVsVnyejZ5FWPL
+	Vvc5PYNPfQbvoyy569IxDTtfhcgvGBFzGBRb+WJ6OTSjfVnWjq6kzMkDVEZm4a9japhlN5SpUI/7O
+	FTbLdRRLONzdcPervHqMqeWWDL9EtpnU5zeYRukTnSNTlm/ynel8XJRzVdYvN62G2dyOEM++SIg1r
+	gxlDhXEALa7F84AQFDHzfxZUyB2dBPAqV+FHVl2jnJkNqYcKvTVrvNxDxXHZNwD90nwHE2U0OPsCR
+	+BhmFB7c9x094fNDKVzSJOPOKwmfpcFeDu79AN3j9BplXVC3u6Kw3YlwDHwKyhxv2R8+RW3wZs/nx
+	/QXK0JBq7likU6bhOJvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxB7k-0007uT-Tm; Mon, 12 Aug 2019 14:16:36 +0000
+	id 1hxB8u-0008Om-PC; Mon, 12 Aug 2019 14:17:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxB7Z-0007uB-7P
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 14:16:26 +0000
+ id 1hxB8f-0008O9-Jx
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 14:17:35 +0000
 Received: from X250 (37.80-203-192.nextgentel.com [80.203.192.37])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B1BCC20679;
- Mon, 12 Aug 2019 14:16:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7AAFE20679;
+ Mon, 12 Aug 2019 14:17:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565619384;
- bh=Z71CRfrqFcWUNSp2uxgfxbY+qKDDqxbG0/qNWSzb678=;
+ s=default; t=1565619453;
+ bh=29VUEDM2dmCIL10kGZLjVx43mBJDQtDwf0Ic1S1sTGo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=SN3tN9owjAVMrj3guehbcdfyKXwFfF0j7L49FjewsGpTTFil0j3dhMyhNhQcrMvnH
- pDb7mTvpQUOfL7S1CqG8PMuZ3q+si0aM9M9bZC93UeXmLYyAEs3OLIqctRiZjxjHjR
- LqDbwpkrsJ++C4fJV0h2SmaLuelf8gu5SRxPQh6k=
-Date: Mon, 12 Aug 2019 16:16:13 +0200
+ b=iPo9emimkCnzzzAxb2H8E560aYiHwJHh7Psl/fziDqjGoLkHs3vb6blwqkwcN46JF
+ b598yTAgaD/nRH7UskzS1p9KKlDV3iu8DQFYZcnUWXeBfEQC9MYMyAIR7vO3xjjOrB
+ eyhELkzHxw5Q82A/CMvAK9eCWpNLgKGgZfhpChH0=
+Date: Mon, 12 Aug 2019 16:17:24 +0200
 From: Shawn Guo <shawnguo@kernel.org>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH 1/2] clk: imx8mm: Unregister clks when
- of_clk_add_provider failed
-Message-ID: <20190812141611.GI27041@X250>
-References: <20190806064614.20294-1-Anson.Huang@nxp.com>
+To: Chuanhua Han <chuanhua.han@nxp.com>
+Subject: Re: [PATCH 1/4] arm64: dts: ls1088a: Fix incorrect I2C clock divider
+Message-ID: <20190812141722.GJ27041@X250>
+References: <20190806084223.23543-1-chuanhua.han@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190806064614.20294-1-Anson.Huang@nxp.com>
+In-Reply-To: <20190806084223.23543-1-chuanhua.han@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_071625_297287_F80C76A3 
-X-CRM114-Status: UNSURE (   7.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190812_071733_670291_79D60F9C 
+X-CRM114-Status: GOOD (  14.09  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,25 +76,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peng.fan@nxp.com, abel.vesa@nxp.com, sboyd@kernel.org,
- mturquette@baylibre.com, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, jun.li@nxp.com, agx@sigxcpu.org,
- Linux-imx@nxp.com, kernel@pengutronix.de, chen.fang@nxp.com,
- leonard.crestez@nxp.com, festevam@gmail.com, s.hauer@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, ping.bai@nxp.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, leoyang.li@nxp.com, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 06, 2019 at 02:46:13PM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On Tue, Aug 06, 2019 at 04:42:20PM +0800, Chuanhua Han wrote:
+> Ls1088a platform, the i2c input clock is actually platform pll CLK / 8
+> (this is the hardware connection), other clock divider can not get the
+> correct i2c clock, resulting in the output of SCL pin clock is not
+> accurate.
 > 
-> When of_clk_add_provider failed, all clks should be unregistered.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
 
-Applied both, thanks.
+@Leo, looks good?
+
+Shawn
+
+> ---
+>  arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> index 20f5ebd..30b760e 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> @@ -324,7 +324,7 @@
+>  			#size-cells = <0>;
+>  			reg = <0x0 0x2000000 0x0 0x10000>;
+>  			interrupts = <0 34 IRQ_TYPE_LEVEL_HIGH>;
+> -			clocks = <&clockgen 4 3>;
+> +			clocks = <&clockgen 4 7>;
+>  			status = "disabled";
+>  		};
+>  
+> @@ -334,7 +334,7 @@
+>  			#size-cells = <0>;
+>  			reg = <0x0 0x2010000 0x0 0x10000>;
+>  			interrupts = <0 34 IRQ_TYPE_LEVEL_HIGH>;
+> -			clocks = <&clockgen 4 3>;
+> +			clocks = <&clockgen 4 7>;
+>  			status = "disabled";
+>  		};
+>  
+> @@ -344,7 +344,7 @@
+>  			#size-cells = <0>;
+>  			reg = <0x0 0x2020000 0x0 0x10000>;
+>  			interrupts = <0 35 IRQ_TYPE_LEVEL_HIGH>;
+> -			clocks = <&clockgen 4 3>;
+> +			clocks = <&clockgen 4 7>;
+>  			status = "disabled";
+>  		};
+>  
+> @@ -354,7 +354,7 @@
+>  			#size-cells = <0>;
+>  			reg = <0x0 0x2030000 0x0 0x10000>;
+>  			interrupts = <0 35 IRQ_TYPE_LEVEL_HIGH>;
+> -			clocks = <&clockgen 4 3>;
+> +			clocks = <&clockgen 4 7>;
+>  			status = "disabled";
+>  		};
+>  
+> -- 
+> 2.9.5
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
