@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1419A8A8E6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 23:03:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B45D88A8EC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 23:04:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tGhhjKDIiGkTjnu/+ta1ltDefv5+PYEO2zkjXa5KUg0=; b=VHsBw91dNVV7IK
-	uuxm2TF/B4oB3kinrkUwoZcLaipRxsyrnUbOMWt9IDBCEJcJdZZpZh1IVLFe0x3HWGeO/HpPeD3xf
-	n8NX/BSnhicTcDBD/LvXjEJNjaDgmFCLPlEpq6lBf6XrOiyygrgjqY2U1+H/rW4qZyXj4ADzK85h0
-	2hv2/uMkPPeIwWiCOQvNIBvsm0AB+mvSLOv7WwM2wDMTjhfM2gkc6hv9+Z3YTWMF3gjtEjxMJYB6+
-	stX+SV1dsez46vzdDZlONrEKd37VjeM29PnGCNMmcXbGMxSd8sNZIGpFD5WRo919XcsMH+WDxEJKb
-	WczPKG8G4OMFEZu5Zq5A==;
+	List-Owner; bh=XRMRkbZr2tHjMzpjdX0Szgy4B3qaLfHY/V2y3ZzTW3Y=; b=gibu9KEMNKrcgL
+	7IT7VIjaKwKjTSPYuRikJI+lZxdP30qFnoUCKgvuWu/AqAfdPIUQd/wtWGfbdXRzzzjTYQoa7gtVX
+	48nBqxUqmR7s3YQhVXPmCajqZqCpy1B/qRSqXBDvwcNm69IRunoyGKjpTTsp/qZPGQZe9pVkysg68
+	2njJ6vDQww59z+sdgaBZZ3AGNqBa+0XewqDyMU4dU17Gt+YrYBbzanmGGnBC8QjDOB8ADrg5z0eGb
+	lzP2DkkTQJlHJtvX9cjJ65HDtO5aYfn2/WzeiAnDDVmxhxdeHctjzmdcB/wWARfq5omc3YseGp0m6
+	X6ey0Te0e7ahvRKoHv5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxHTU-0001CH-Sm; Mon, 12 Aug 2019 21:03:28 +0000
+	id 1hxHU9-0001Ru-Mj; Mon, 12 Aug 2019 21:04:09 +0000
 Received: from mout.gmx.net ([212.227.15.18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxHTH-0001Bx-EI; Mon, 12 Aug 2019 21:03:16 +0000
+ id 1hxHTv-0001RU-Lj; Mon, 12 Aug 2019 21:03:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1565643767;
- bh=WvBCUiocoyigiLp0Fi/IoYgHQyq8r4DYjzlDtLDbMUA=;
+ s=badeba3b8450; t=1565643821;
+ bh=Z4dob6QFbBn2pjPUd/UPBrkeB6mcJHKlMV0DqcboR08=;
  h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=b6MO8jthbtqz838yEij/t1eD6ilGnGqgZxdFCdnbWYIQcAK6zNwDy/5pGeuYf/I4L
- 8KEFZYWNzFeMiK65JwQ2LlKVHmtdLcbLzFbkvfaXGCMnDCGVpxC11GQiiovkxu/yy5
- dqHkckKUEA1Fut9jzyJ8X6V1CUtCdI7thVjHbk90=
+ b=B4NG0dM8FysyLubkeDJwulk//hiefE+vWC0zHl0jeJUr4J/wKse1+Ie3RPn+YYT7t
+ 4ZBAfJyOqSwGvQlPB7Ker8RPVXP8aphQmmVEhdHMSBLmT1i6DPszA4zi5JBr91K21y
+ K0GzfZoThtVjl9dCddbRLIlTosEFax2tc9KW6S2M=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.106]) by mail.gmx.com (mrgmx003
- [212.227.17.190]) with ESMTPSA (Nemesis) id 0MbxJ8-1hhGTp1uxa-00JLT4; Mon, 12
- Aug 2019 23:02:47 +0200
-Subject: Re: [PATCH 05/18] ARM: dts: bcm283x: Define memory at board level
+Received: from [192.168.1.162] ([37.4.249.106]) by mail.gmx.com (mrgmx002
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0MUZG7-1hoj2U0bBb-00RFGz; Mon, 12
+ Aug 2019 23:03:41 +0200
+Subject: Re: [PATCH 04/18] ARM: dts: bcm283x: Define MMC interfaces at board
+ level
 To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
@@ -43,42 +44,41 @@ To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Stephen Boyd <sboyd@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
  Adrian Hunter <adrian.hunter@intel.com>
 References: <1563774880-8061-1-git-send-email-wahrenst@gmx.net>
- <1563774880-8061-6-git-send-email-wahrenst@gmx.net>
+ <1563774880-8061-5-git-send-email-wahrenst@gmx.net>
 From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <22482ae9-0239-560e-ad4a-4ab13d864e15@gmx.net>
-Date: Mon, 12 Aug 2019 23:02:44 +0200
+Message-ID: <b9ed2030-25de-4e21-7fc0-9382f6250630@gmx.net>
+Date: Mon, 12 Aug 2019 23:03:38 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <1563774880-8061-6-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <1563774880-8061-5-git-send-email-wahrenst@gmx.net>
 Content-Language: en-US
-X-Provags-ID: V03:K1:ARo3+Icmnx/PndUhQU2k0e2sY26OWqJ3C06fIrGFTm+kAkDNG3G
- /yJoK2PKsy0heqEo+0iLJsZDm8SHprriMFTVYNr4S4GohYtz7Bt5Ic3UALXus+A2dUASB9r
- /HIbAgxcttGcBjfeQs2pvctMptxBI6X3eqrUOtrqTj8nDEUpCalYS0mG3tZ7Su3bloL9iFC
- f4VrxLoKxlDpwFianZf+w==
+X-Provags-ID: V03:K1:uXhaVTZBIdtkgpQUvDbG0jujSsYTCHrV4MMU4Fp2mY1BMnzmFcu
+ dj2zho2p1mWt4W8P9ca6cb4FZqTkfvwYrgsdpjsbunb2+OCQ26HuB5DQvg48g0xDpcdlvKS
+ PKWvKVNaDW0nB3RUbs8GYcGeMbePtCkVYxcbQ/bcw7SN/CGkwcrSxiZq7HYkHxdcU9wlpbU
+ 5oKyiopkh2L982OwP3whA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:U1G1cJg8HDI=:Gr24C988FzpO7UmnSYRIHP
- fZAXIbOnrujKZUos5erQKmFbz2JLuhxjdQsW0Eq3tRZlpQiB4wgFHPx4qH39e41KCK3uldRTj
- Lq3ZPMvtsE1gW2XtEYtccKMQzVBuLAc0KfQFfVp+J1QHNDzr5aq75HjYedGm9K2ER1KWDDcyg
- ovsKRLAN/9CHkBSto1TqtpMwqd18M3DaLo0gCXqX2tFfL8XfSlCGBpfYZWM6ciTa8WUbml9+l
- 5bGLDN0UBSahZf1Gg2Px19DUDlWtwRKZ6/fmQQtosIEdX2uAgnIKpu55t/VvseuxkAGeHqpzg
- M2QEFC4gMFjNsmQC4S4kWAJ9u9ygE6IyrkuQK8ZVoFN2sJVQPmLI1H4K5aeaN6CKmlc0DdCGn
- 2gMK+JsTmEGWDAXrUBkc2GqKhkVdHUS6qiltNJvOQeAuLvUh5XzYqVOtcLxoyUMKOw5ovmfNi
- E8LfggB7C0qCu7u/geoBpNHvc7+goG75jXN9KNd/EuRk8JexEQLwX+fxwXFYENr9v1z2GBPcI
- PZkPM1xIJi7hYNjznE+QiXWDKFQvj+Upw/0cqq6QVCtj4t1pmlOSx2K57WzG2wnUTRjqXmtWD
- esMHGYzZAD9vz82CsFfRrzDkS7F7M8NqzMParFjaaDCq+1mhWe8l4sfTPwGET6kqzESBFmjti
- q3g8hYxP4yZYPPXDBxSzrUJBB+yF0txpQICSDHR9Uz7yO+kPAkiHRQk0VK3rWVAKPldAnaPQD
- 2SQTMgh11n+mX/NE6wWa03E+vGUMWRulx2FIeI9AKO9wdxTiP5QTpDdOXnTSUSZH8rGOSILFj
- 8bUm4RBiweNE8uTni/gUhdbXzGRYRvcXF4vvoAMja2n6guzt5R+o/X1aPLyVr+FrjVarDrWYj
- 51R9R+E10zQsemR5ImCGmy0HSv295FbjTOHNcteWcS6RYvn0113PSbVwjfmPn17ZnnPnV/ld1
- hpNq9fZWyC4wohHrUk/kcb0xnU0ZEgRFeTE60pG4zU3VGwFiDxA4HSsE+mqPg+VZin5xycyho
- u23g8jNw6FVRNMMnQ4ECGVDs3yyzDJZ4k6MtoN4ETusqezDo7X/OXikML4UKeTgg1s+xPpftY
- gaPAjiLOA0eOGkGiBU3PITEE0fWPZtmpVLzl9idsV9LI5p3eZndsrAtqywSIZucX2BJ/bUuBV
- 8Btl8=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:m77DRGs/jQw=:SUOdNsS/ZqhCJsJlR6MruL
+ UMB+vVPWVjHskJr9GgrZboRMpxMbTP5+ajj+wh17Rb8Xrpm5qOdmm/sgaalaJQmiYcuOJA8B0
+ ZFQ7m/CYO7oj78rnADsnr6FsDNvMRFEPJIDYDzq/mrIdtoFYBptRWmfVZY3KcAoOcljhOlpMj
+ f9cisBARzc7TjkABHr7cgOjOQ1UvAFSDSetanMqSorRtK970Mzv1LyEMvP+0oDi81ACfXJTyj
+ tgRgb8WO/d2Qei9frV1O3ILKY0zP3u9UoBON+WRlsn4RWh/MX/xvtr/ctgIfa2F0TKN+yHuxz
+ VvGar7T1VwWLaGdDZSlV5bOrEVJIpDQMKJ92LMYNyF4q5xS5P6bdsFV/czPqcxlV8d7jQP93K
+ U2MPwt6vWCqTUW4mONbuErQ2USTKHq7kfn2OnlIdyGqjALEnt6aQ5G5fA9znnqU44ZEI2UdTx
+ CxrTPuIha5Y4b0vkb2XnXWyPv6oHgm4fE6ufHW8HT2I5HUM4ATpNE+BC8EP7t11NiqrDd4C5p
+ WmiXgHlU198hAIxp+XeUd9qCRk7msfUWEDqCun4JcCklGHpYBEWjfpbHgZEQFAlZW5dMu1dt3
+ ZZBM4KuWfKktyXqephuS9NeWQGDzkFaTYIKLlYqq3uBZt52lpo364MWDT05PVM3FOpRq7N0jZ
+ tRUEOWhyHvGOYnTD0X+4JkZ6nzfUQTIJn05ln8AZTFI3SuywiJbwOXKQHgZyCpk4cmVHtC++s
+ TO7IW2E/scQ7zwVraGsChU6QKlR6z5Vl53zGL78cHNah8fJTxWNcd3sOTxpncrLErZy5EqIP6
+ om551ZL2ZtLz5VrfiTooZHHFrm0i4W8r3K7GBJFIm8g7zxSCE0evcnEtbAe2KI8l4JQAdjZ7I
+ BnT3ais0cuF/FUCmJD8tg9Tdrk2CRfPMd7IsF+zYM1lalHCWGKjRigq8WwcFmRt8BVJM2pl9f
+ +GQf0QRXDNQUGS6ImJGNFEJd9SE9sfgDwMeND3ZKI75uvqSA/5Em4VY4Q2dgTEMJyRR1d7C5E
+ legBB0PgKurO3SDe3zf4uwZ+5l8Zo0meuYjB4bm/zG27xbuEfk0A+ecfa3/T/zy7VeHNhg8I2
+ 1YkyUA7vsdAygpN9A4xIIyd9SISAvtTBASpIbRxdZ6QUA+jsqDdhpkcUI1H+cPCo2JNllosGt
+ Lx3Hc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_140315_816776_7A7E1192 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190812_140356_007858_2A21B88E 
+X-CRM114-Status: GOOD (  11.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -117,9 +117,10 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Am 22.07.19 um 07:54 schrieb Stefan Wahren:
-> Now with the varity of several RPi boards, the memory should be defined
-> at board level. This step gives us the chance to fix the memory size
-> of the RPi 1 B+, Zero (incl. W) and Compute Module 1.
+> Starting with RPi 4 this is the first board, which doesn't use sdhost
+> as default SD interface. So the MMC interfaces should be defined finally at
+> board level. Since all boards using sdhci already does this, we can drop the
+> pinctrl part from bcm2835-rpi.dtsi.
 >
 > Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 Applied to bcm2835-dt-next
