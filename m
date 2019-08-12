@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90BC88AB1E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 01:29:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BB3B8AB21
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 01:29:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dBR3kl5pOUzjEcixCVv7l4HsR0ALBYluonhnv/MLXYY=; b=uSnxRj2gCynuZL
-	5tdv231/2IY3epmjGOPrMyf4da914cmtA5/uqVFAxHrJlf0vfVxyUGwHUIozSzXCuaknj3v6AHc5H
-	6ZR5L9moBpItLEjqVh/Fq2T9WOIODUqQmiPqKaZLbir7ySdqqihOpzCREVa+laOySiEOGkUUp29kB
-	MwvOjKI+EJh5vicmvE63tVvN3e0Y63AjRta6GHEuY5wuiF9cXVYCTsI1+kH6zcjYf+MCc4e3zMZLq
-	QchaopUxWOZpGUOoaxJmWODRM37JJB7xBVxOzDXxAahSmcOia4zr1igi+3IRXV7Nqqf0HU+4NdzNS
-	ZEnNIm9Bbd4690f6m5GA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7R+790GuK9toJMzFZhaDPoCikdgxAE6Mbj6xaicIfuo=; b=TbpPyAqPgQjQW1
+	Ggh20vIcJ1GKchCXs7kROq3MQcPpd73bRAKPIYIjLQFhESZp9xdSBZ4Fk51JCOUAWD7kacPi0s6VI
+	Hz8cUfM+lFvclGpKxp3XYUqJsMeP6VbkgvVIYHm/vYXyfHJN/qs1KkYGgLpjfGzo4p1U2G6RqwOsc
+	4sEw7BgojmAqYfinWVNTLSR3TMWYuCTkUZHZNIoJ9YJ+fOFqzwI6/wPoiUGQ2AwhCEaMK2O/rznWN
+	EI13dsfVEQzTx3H8EhtLkV6Ubz7FYzEut4jmz2untriiZd17kXt9vTsnvGCx0xJgIfr97kE4yjesb
+	HdO+DR8W0PpSFHhEp2wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxJkS-0003E1-S6; Mon, 12 Aug 2019 23:29:08 +0000
+	id 1hxJko-0003X3-Qc; Mon, 12 Aug 2019 23:29:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxJkE-0003CO-12; Mon, 12 Aug 2019 23:28:55 +0000
+ id 1hxJkF-0003Ci-JN; Mon, 12 Aug 2019 23:28:56 +0000
 Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net
  [71.197.186.152])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CA3F620665;
- Mon, 12 Aug 2019 23:28:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4246220665;
+ Mon, 12 Aug 2019 23:28:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565652532;
- bh=ahoNLQPnX82nGz86Y7FW3a1cpXocBYRKZ1y2smEqp9A=;
- h=From:To:Cc:Subject:Date:From;
- b=SgRawVWOSYB+zs6GRhqN0CAZz+chFVi+ssW8Bfm5yd2twCRJEsMoVGuyJ3Z6aUSFU
- eJ+T6/YYkUkqs+sdXgx9YMhB4k4QkyMQHc44qM4jTCyAlK4bormafrCFgWhr2zhcxz
- Agqf5Ba9N/0iGYbhfQDN1m5mSeXM1yChtFD/51mM=
+ s=default; t=1565652535;
+ bh=o501tcSZ8iwEdK+K1S+CV9iMf5gZNuQYUaXGpk1a0Yk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=fhcs+cU9QcwB87J3Vj953PKrW2TYjyRygJOYfxP1LOzTzRG9HBIrZ1QRbnREbUjW9
+ 4PyFx6h+i2MgDMscGpwWA+R5bQk8fpjTv6kEzSW4yh6iP3DLx2NJ705vBuTDjYeZB/
+ wN6Zefwp4c0kpOMEg9Cql01iPmbuivK+OrXF/2bQ=
 From: Kevin Hilman <khilman@kernel.org>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  linux-rtc@vger.kernel.org
-Subject: [PATCH v3 0/2] rtc: add new Amlogic Virtual Wake RTC
-Date: Mon, 12 Aug 2019 16:28:48 -0700
-Message-Id: <20190812232850.8016-1-khilman@kernel.org>
+Subject: [PATCH v3 1/2] dt-bindings: rtc: new binding for Amlogic VRTC
+Date: Mon, 12 Aug 2019 16:28:49 -0700
+Message-Id: <20190812232850.8016-2-khilman@kernel.org>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190812232850.8016-1-khilman@kernel.org>
+References: <20190812232850.8016-1-khilman@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_162854_097001_06CBD2DC 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20190812_162855_655756_B1E24F1C 
+X-CRM114-Status: GOOD (  11.18  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,46 +85,45 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Kevin Hilman <khilman@baylibre.com>
 
-Add a new driver for the virtual wake RTC on Amlogic SoCs.
+Add binding fo the new VRTC driver for Amlogic SoCs.  The 64-bit
+family of SoCs only has an RTC managed by firmware, and this VRTC
+driver provides the simple, one-register firmware interface.
 
-The RTC is virtual from the Linux side because it's a hardware timer
-managed by firmware on the secure co-processor (SCP.)  The interface
-is 1 register where a wakeup time (in seconds) is written.  The SCP then
-uses this value to program an always-on timer.
-
-Changes since v2:
-- switch to devm_platform_ioremap_resource()
-- switch to devm_rtc_allocate_device() and rtc_register_device()
-
-Changes since v1:
-- add MAINTAINERS entry
-- add nop ->alarm_irq_enable() (workaround for RTC core
-  limitation pointed out by Alexandre Belloni)
-- remove unused ->read_alarm()
-- fix statics
-- move resume to dev_pm_ops
-- add suspend hook
-- don't calculate (or write) the alarm timer value until suspend time
-
-Changes since Neil's original version
-- move from do_gettimeofday() to ktime_get()
-
-
-Kevin Hilman (1):
-  dt-bindings: rtc: new binding for Amlogic VRTC
-
-Neil Armstrong (1):
-  rtc: Add Amlogic Virtual Wake RTC
-
- .../bindings/rtc/rtc-meson-vrtc.txt           |  22 +++
- MAINTAINERS                                   |   1 +
- drivers/rtc/Kconfig                           |  11 ++
- drivers/rtc/Makefile                          |   1 +
- drivers/rtc/rtc-meson-vrtc.c                  | 156 ++++++++++++++++++
- 5 files changed, 191 insertions(+)
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+---
+ .../bindings/rtc/rtc-meson-vrtc.txt           | 22 +++++++++++++++++++
+ 1 file changed, 22 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/rtc/rtc-meson-vrtc.txt
- create mode 100644 drivers/rtc/rtc-meson-vrtc.c
 
+diff --git a/Documentation/devicetree/bindings/rtc/rtc-meson-vrtc.txt b/Documentation/devicetree/bindings/rtc/rtc-meson-vrtc.txt
+new file mode 100644
+index 000000000000..c014f54a9853
+--- /dev/null
++++ b/Documentation/devicetree/bindings/rtc/rtc-meson-vrtc.txt
+@@ -0,0 +1,22 @@
++* Amlogic Virtual RTC (VRTC)
++
++This is a Linux interface to an RTC managed by firmware, hence it's
++virtual from a Linux perspective.  The interface is 1 register where
++an alarm time (in seconds) is to be written.
++
++Required properties:
++- compatible: should be "amlogic,meson-vrtc"
++- reg: physical address for the alarm register
++
++The alarm register is a simple scratch register shared between the
++application processors (AP) and the secure co-processor (SCP.)  When
++the AP suspends, the SCP will use the value of this register to
++program an always-on timer before going sleep. When the timer expires,
++the SCP will wake up and will then wake the AP.
++
++Example:
++
++	vrtc: rtc@0a8 {
++		compatible = "amlogic,meson-vrtc";
++		reg = <0x0 0x000a8 0x0 0x4>;
++	};
 -- 
 2.22.0
 
