@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C3F08A034
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 15:56:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B2038A035
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 15:56:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XMd1HbAr8nZ+MgGV0zMrT2p/ZubSyGNFMF+aCB/+0l4=; b=Kd1CzJE7YL58foH26Z0CFNTS2
-	Y7T3oPGkklS7c7qPW1+cHrq8L1QmtONKWIIfknuTPjzzbdmSHUJpnOWZi8XAZ2ih+bNyF28yFUlOU
-	pzhEXw5iMeZUOnR/ogrRQj/qlJ33AZAsHW6IrWYXISyzJzKUHe3tqyItVseo+/3Zr8Q4E//1mKWwO
-	YYTu0FvC6snMS4CeZbSQ4H2ey+xGlLRqnQ4eJNgJEhylQUeVblBQPOAlo1SvZmRrQriocbEFids/O
-	SrQqk4O322nbQO7/QwK6+vjaonMR+y1aZBTqIphCKytfwf7+N9TIENa29Xoi1OTd5DY0go8UPxaur
-	YoFREGX2A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MnWvg3L51dvO7DvdMNLPzLwdeaff94NETTiHl706Z9o=; b=aOma5MSmXH4f7l
+	UCCDjg0u55D1I1JiYUUAVqlnU9OslcMK+CC/kCd0mgx+vUi9ta8+8yetgXJFPja8X0xz+jkG3gtEi
+	oScvWnB7i83o5Tpl79y1hvhBlQ0o+JPUvgX43zQNAUFToCEQdi3LASj3Ry60D1edq+7eore6rrXJG
+	OS22Wgx4meFFapb+zWDuQT6MFxvQMMJRKQTIFnAe+rONl9BM/K/MU52Ard2K5xuudB9TtoYE8Rcpb
+	onahsrgmepRDKFmg061K83i8smVbF1tXUzm/3EKyP08Y3eM3zGM6tpTdhoE9m5n0WUUoV+d1Yo4hN
+	8NhUxoLnyquFJ9MzuITA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxAoE-0000dm-DH; Mon, 12 Aug 2019 13:56:26 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hxAoT-0000uZ-4Q; Mon, 12 Aug 2019 13:56:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxAnx-0000dK-Ly
- for linux-arm-kernel@bombadil.infradead.org; Mon, 12 Aug 2019 13:56:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=RunPSQRypBE4GSMQC6r7DT97Gu1IHMMIOQr/iwYIAsk=; b=ftnRzj0FjlePH7DU8MLUFfaTy
- RRDbtle3XWZB1X9rjIMTgHwkyflh2c3WwYmo3xlI7M6TAx1z5X1IFWNo3glY1kA98Iq7OeTWW5Vf3
- u+wVrWnlDBX+ji5EWDqm3O1ruPr+zBxyvgGLRlt7B9Ac6/Rc4wy3LbftQVbrY8iU8xUPzZFYxv1AH
- JBmAJtwq/TkiwQEv7dZVk9lJPTtHpfHqbz53XuuQFK0B/rTN9M1sYDt6yY8JSoiZsia7My/C0zVFj
- UAklfaRbpzygoFVqG9DxvL93JwzVrv7Q2jXszVJ6+fvAV10FlGw+2ZuF83nGua3GNd06s5vwpfx4b
- Qv7T2j+9Q==;
-Received: from relay10.mail.gandi.net ([217.70.178.230])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxAnr-0000e1-RQ
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 13:56:06 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id AD3FC240003;
- Mon, 12 Aug 2019 13:55:19 +0000 (UTC)
-Date: Mon, 12 Aug 2019 15:55:19 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Hans Verkuil <hverkuil@xs4all.nl>
-Subject: Re: [PATCH 0/7] media: cedrus: Improvements/cleanup
-Message-ID: <20190812135519.ysmqytkhtln7sknc@flea>
-References: <20190530211516.1891-1-jernej.skrabec@siol.net>
- <274221f1-b2d2-83aa-d84b-e1c572a1b832@xs4all.nl>
+ id 1hxAnx-0000dM-Pg
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 13:56:11 +0000
+Received: from X250 (37.80-203-192.nextgentel.com [80.203.192.37])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AAC9020684;
+ Mon, 12 Aug 2019 13:56:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565618169;
+ bh=Rnpz2gfo/cmld6mdLNQ9CgYpB9S8DKG9sxArptaImhE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=c0g0G7ylCN34wslN5FzloLxtVcKILiuGVQNsHbkMZCHOJ66a9bAYR+RWpRh8Sk6+Z
+ +jtxcogP3ka/c8kZ7xIzH3acga9W7VyetXtqvn5YuX6V3ezEPIsRD+hRJi0OuJxbby
+ O49yjG8ZiVInZeQQBpJHnik9268uRynhVOodTEb8=
+Date: Mon, 12 Aug 2019 15:55:59 +0200
+From: Shawn Guo <shawnguo@kernel.org>
+To: Yinbo Zhu <yinbo.zhu@nxp.com>
+Subject: Re: [PATCH v4] arm64: dts: ls1028a: Add esdhc node in dts
+Message-ID: <20190812135556.GG27041@X250>
+References: <20190805102641.3732-1-yinbo.zhu@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <274221f1-b2d2-83aa-d84b-e1c572a1b832@xs4all.nl>
-User-Agent: NeoMutt/20180716
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+Content-Disposition: inline
+In-Reply-To: <20190805102641.3732-1-yinbo.zhu@nxp.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190812_065609_881952_F0C7477B 
+X-CRM114-Status: GOOD (  16.95  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,77 +76,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- paul.kocialkowski@bootlin.com, wens@csie.org, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============0259850066495332439=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ashish Kumar <Ashish.Kumar@nxp.com>, linux-kernel@vger.kernel.org,
+ linux-mmc@vger.kernel.org, xiaobo.xie@nxp.com, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, yangbo.lu@nxp.com, jiafei.pan@nxp.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Aug 05, 2019 at 06:26:41PM +0800, Yinbo Zhu wrote:
+> From: Ashish Kumar <Ashish.Kumar@nxp.com>
+> 
+> This patch is to add esdhc node and enable SD UHS-I,
+> eMMC HS200 for ls1028ardb/ls1028aqds board.
+> 
+> Signed-off-by: Ashish Kumar <Ashish.Kumar@nxp.com>
+> Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
+> Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
+> ---
+> Change in v4:
+> 		put esdhc 'status' at end of property list.
+> 		sort the nodes in unit-address
+> 		Use IRQ_TYPE_LEVEL_HIGH represent 0x4 in "interrupts = <0 28 0x4>"
+> 
+>  arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts |  8 +++++++
+>  arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts | 13 +++++++++++
+>  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi    | 27 +++++++++++++++++++++++
+>  3 files changed, 48 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
+> index de6ef39..5e14e5a 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
+> @@ -95,6 +95,14 @@
+>  	status = "okay";
+>  };
+>  
+> +&esdhc {
+> +	status = "okay";
+> +};
+> +
+> +&esdhc1 {
+> +	status = "okay";
+> +};
+> +
+>  &i2c0 {
+>  	status = "okay";
+>  
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+> index 9fb9113..12c9cd3 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+> @@ -83,6 +83,19 @@
+>  	};
+>  };
+>  
+> +&esdhc {
+> +	sd-uhs-sdr104;
+> +	sd-uhs-sdr50;
+> +	sd-uhs-sdr25;
+> +	sd-uhs-sdr12;
+> +	status = "okay";
+> +	};
 
---===============0259850066495332439==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="5ghcmst6jaoa4kn7"
-Content-Disposition: inline
+Fix indent.
 
+> +
+> +&esdhc1 {
+> +	mmc-hs200-1_8v;
+> +	status = "okay";
+> +	};
 
---5ghcmst6jaoa4kn7
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Ditto
 
-Hi!
+Shawn
 
-On Mon, Aug 12, 2019 at 02:12:21PM +0200, Hans Verkuil wrote:
-> On 5/30/19 11:15 PM, Jernej Skrabec wrote:
-> > Here is first batch of random Cedrus improvements/cleanups. Only patch 2
-> > has a change which raises a question about H264 controls.
-> >
-> > Changes were tested on H3 SoC using modified ffmpeg and Kodi.
-> >
-> > Please take a look.
->
-> This has been sitting in patchwork for quite some time. I've updated the
-> status of the various patches and most needed extra work.
->
-> It seems that patches 4/7 and 5/7 are OK. Maxime, can you please confirm
-> that these two are still valid? They apply cleanly on the latest master
-> at least, but since they are a bit old I prefer to have confirmation that
-> it's OK to merge them.
-
-Yes, you can definitely merge those.
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---5ghcmst6jaoa4kn7
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVFvxwAKCRDj7w1vZxhR
-xaNLAPsEGPiyqOdRajYEA4cGxVY18jjPs7B80tUGLwn7y/lX7QEA1hoN114NPrjR
-odSkIRw1Cs9MkNQXMbozY4cjiWx8ZAs=
-=JSLg
------END PGP SIGNATURE-----
-
---5ghcmst6jaoa4kn7--
-
-
---===============0259850066495332439==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +
+>  &i2c0 {
+>  	status = "okay";
+>  
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> index 7975519..f299075 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> @@ -245,6 +245,33 @@
+>  			status = "disabled";
+>  		};
+>  
+> +		esdhc: mmc@2140000 {
+> +			compatible = "fsl,ls1028a-esdhc", "fsl,esdhc";
+> +			reg = <0x0 0x2140000 0x0 0x10000>;
+> +			interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
+> +			clock-frequency = <0>; /* fixed up by bootloader */
+> +			clocks = <&clockgen 2 1>;
+> +			voltage-ranges = <1800 1800 3300 3300>;
+> +			sdhci,auto-cmd12;
+> +			little-endian;
+> +			bus-width = <4>;
+> +			status = "disabled";
+> +		};
+> +
+> +		esdhc1: mmc@2150000 {
+> +			compatible = "fsl,ls1028a-esdhc", "fsl,esdhc";
+> +			reg = <0x0 0x2150000 0x0 0x10000>;
+> +			interrupts = <GIC_SPI 63 IRQ_TYPE_LEVEL_HIGH>;
+> +			clock-frequency = <0>; /* fixed up by bootloader */
+> +			clocks = <&clockgen 2 1>;
+> +			voltage-ranges = <1800 1800 3300 3300>;
+> +			sdhci,auto-cmd12;
+> +			broken-cd;
+> +			little-endian;
+> +			bus-width = <4>;
+> +			status = "disabled";
+> +		};
+> +
+>  		duart0: serial@21c0500 {
+>  			compatible = "fsl,ns16550", "ns16550a";
+>  			reg = <0x00 0x21c0500 0x0 0x100>;
+> -- 
+> 2.9.5
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0259850066495332439==--
-
