@@ -2,70 +2,141 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8ABD589C3E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:02:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB6CF89C51
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 13:06:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fkaIx/ptzMc4eXD6ZWpMV1BgNnrF2Q6AP0Bl+8AMaaI=; b=axPt6+LhrA5DME1tM+ct8Ypye
-	lY6nXeyNy1SNxqaxQ9zxlEAlEm29HTaKmIwofoJQxgxyutygO+rUAvsvmxsUQAStmQFgg3LdF3kiV
-	Ud+mmnQzHmr4IjzSRs6xq59rWF/hxVZtiOrxD+H0KmMELYI4iWTNsuLBotOWq+T/Mu4LC/Jvmfm15
-	M4/NgzPNBBTBrBw0my0wycbil0AYAEno+ffba2D6OewpJiFa0tEBPje96M6LTUvFaSLWrgzXXslEi
-	T7WlrsTs0oU20pSgzdCnSggjFXD6itlNdLmyv+HNG7ACiaV6hmuqlkeCATFEB6hoM+o5LGzufyQ+x
-	yPtgJpwNA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cnobiY65UfqwqRYXOwrBxJhhazBR5atnnbCcTpzSc+U=; b=dPl5byluGL7E31
+	IsMnk6aVNzvhDPwf8D/tnef2jgyWc8wi4SN2LiHG9KCDwLWorqlhQiJyEyYboqkpMy65EwcHG2FSn
+	QY9GHWg7/5vRIrvxxSNet6RhLjiaem8eRmZLwuMxHLZWtj52XAmzgQ/6p5fy5nKZHlJ+XjbcJVHB8
+	NejEBbm204dLcmKG2USQ7P4m09cR7uAWVSd7b5oiEzN1uaVpiGvxa3LaXu9pLtNrksfe+dCImdCqa
+	uRj1NvqD3WU25ED+hRtmJN0xK9aRa4+2BmW14ed3dh7RIev+vNuiXeuWOzEpGh48iwnWbCgE5KKoH
+	EWMjWDU0An/1U5p4wopg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx85U-00079b-8v; Mon, 12 Aug 2019 11:02:04 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hx89R-0000VM-Tn; Mon, 12 Aug 2019 11:06:10 +0000
+Received: from mail-eopbgr820075.outbound.protection.outlook.com
+ ([40.107.82.75] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx84k-0006j9-Ms
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 11:01:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=jvTQU0/ncqqXZDApf5L3Jww+4/vfyT4p+hACaV7a4bM=; b=kkqMmOPduW+sLbd1PSVVdomcK
- Zkfy5Q6CbT3E9jxZYRj6CawNRtzGVSoW+0Z4abnGmutl7WeeYJFlKlRbNxR0meLNSCeIb378NCWxR
- d3Ms2GYtWOqD6r6VMQWwgNViFFJVaKVhyt8BwRuycxEk8oEo8InmjCfvzIsFF8h8BMOFQ=;
-Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1hx84W-0000yA-VK; Mon, 12 Aug 2019 11:01:05 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id B6FE127430B7; Mon, 12 Aug 2019 12:01:03 +0100 (BST)
-Date: Mon, 12 Aug 2019 12:01:03 +0100
-From: Mark Brown <broonie@kernel.org>
-To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v4 0/7] Allwinner H6 SPDIF support
-Message-ID: <20190812110103.GD4592@sirena.co.uk>
-References: <20190527200627.8635-1-peron.clem@gmail.com>
- <CAJiuCcfUhBxEr=o7VVpPROQZadQh7z1QC0SkWSYt-53Sj3H2qw@mail.gmail.com>
- <CAJiuCcc3_1jZWV7G3+fFQYRZ8b6qcAbnH+K6pkRvww6_D=OMAw@mail.gmail.com>
- <20190715193842.GC4503@sirena.org.uk>
- <CAJiuCceYDnyxRLLLLy6Dn6DLTZ+NmSaUnoX1Vmzvgiy0XvF_Fw@mail.gmail.com>
+ id 1hx89F-0000Uq-Df
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 11:05:58 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=C9I1JVB3IxqEueiu3W1zXK1XjOESmskvxxcQFkNmhsHzc4RYW7YTLTNKDPcW74n6SIF+xH9uBJ1cm6PCqhijFA39O8HY6iSVmJnxVRGaEqtSs1lyWgxUzPXZDwGnnKDlWzOULriLa6kub0YIfJvP10blziUXIiTFOyQmRviRPNcHnN2p23g+ptQyyB+QpkddKScUVNrWHA785VlHigHRToaoEkBpGlIUcx/CZLAEYDRAFPNWA8ciQ+EeXP0j+Mco7qy7ZjwFfQTnBRywZNx62yaL9AsonWiSceLZ7OHBG/cQdGJZ/9I6909+CZZdawIV2A4qSn/DJny/6TWbV250ZQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=w0yC7c27b03C8UOQUep5urDnwYrr1WM479GAlFkcZf4=;
+ b=acvBeimMvLvRoC559x0170s9bxrQToWS0cNb93D0qCQNgvpjjmsuWtAfbbVBKe7f7+4Qu969d9F5ajJowsJJasZidvNXK/PCOvmJg+JLZmDyUbCY/TOF7PuGeMV8gf4U6AftAoaseyBjtRDGc5IWQ3DP3yU1o8Xm5SYkaSjEdlVUGMBIYlVrIlu7zs3lpFqwRQa/0oKb7/y7EbXdW36CncD2jmsje9bDRyzkfDNF2dBdZmkD2GMAur+0Ea/rTRBfxxWcEPLJ0bCb0YjtF2mCvw+oO2WycHQOhuSRIAkxqHpTqDqctE+yfxKcPuEKOmiKUJMFWJ3nroiay+MDkc95ow==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.100) smtp.rcpttodomain=pengutronix.de smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=w0yC7c27b03C8UOQUep5urDnwYrr1WM479GAlFkcZf4=;
+ b=IaBMqPtz7mUfQtHzTbM6RucIfOg7vW1YV04pZ4INvhtZ/Zo+S3w5S0uTezimPjH49KoDItjRPNdyFExj0MG7riCdnljpWu35l6ToWYBnTmOqN/bJaTrKDh+n8H8oeTJiI63OVgPGdaRxXkajAtBw0Lw9P8hrERwlJof8B4jVokg=
+Received: from BN6PR02CA0099.namprd02.prod.outlook.com (2603:10b6:405:60::40)
+ by BL0PR02MB3795.namprd02.prod.outlook.com (2603:10b6:207:3e::21)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.18; Mon, 12 Aug
+ 2019 11:05:54 +0000
+Received: from BL2NAM02FT062.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e46::200) by BN6PR02CA0099.outlook.office365.com
+ (2603:10b6:405:60::40) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.15 via Frontend
+ Transport; Mon, 12 Aug 2019 11:05:54 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.100)
+ smtp.mailfrom=xilinx.com; pengutronix.de; dkim=none (message not signed)
+ header.d=none;pengutronix.de; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
+Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
+ BL2NAM02FT062.mail.protection.outlook.com (10.152.77.57) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2157.15
+ via Frontend Transport; Mon, 12 Aug 2019 11:05:54 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66]:40585
+ helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1hx89B-0008Dg-Uq; Mon, 12 Aug 2019 04:05:53 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1hx896-0007np-Pg; Mon, 12 Aug 2019 04:05:48 -0700
+Received: from xsj-pvapsmtp01 (xsj-pvapsmtp01.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x7CB5fqU020034; 
+ Mon, 12 Aug 2019 04:05:42 -0700
+Received: from [172.30.17.116] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1hx88z-0007mq-IP; Mon, 12 Aug 2019 04:05:41 -0700
+Subject: Re: [PATCH 0/5] can: xilinx_can: Bug fixes
+To: Marc Kleine-Budde <mkl@pengutronix.de>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ wg@grandegger.com, davem@davemloft.net
+References: <1565594914-18999-1-git-send-email-appana.durga.rao@xilinx.com>
+ <7ecaa7df-3202-21d8-de93-5f6af3582964@pengutronix.de>
+ <5571da8a-de1f-f420-f6b7-81c6d8932430@pengutronix.de>
+ <f0e3360d-7c9a-a455-f63c-7fb584dfad2f@xilinx.com>
+ <cb8f91b5-174f-79e5-d476-b01da2f3a65c@pengutronix.de>
+ <c09ae89a-509d-55e7-a2d6-44ca2543f333@xilinx.com>
+ <6b36bbcb-06e3-63aa-8861-c07c8840e25e@pengutronix.de>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <d8e17519-9cc4-cdf8-2acc-215592782625@xilinx.com>
+Date: Mon, 12 Aug 2019 13:05:39 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <CAJiuCceYDnyxRLLLLy6Dn6DLTZ+NmSaUnoX1Vmzvgiy0XvF_Fw@mail.gmail.com>
-X-Cookie: Decaffeinated coffee?  Just Say No.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <6b36bbcb-06e3-63aa-8861-c07c8840e25e@pengutronix.de>
+Content-Language: en-US
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(39860400002)(346002)(136003)(376002)(2980300002)(199004)(189003)(26005)(76176011)(2486003)(23676004)(230700001)(65806001)(336012)(426003)(53546011)(6246003)(446003)(11346002)(2616005)(476003)(126002)(486006)(36386004)(44832011)(50466002)(36756003)(47776003)(65956001)(229853002)(81166006)(8676002)(81156014)(52146003)(356004)(478600001)(4326008)(31696002)(63266004)(316002)(5660300002)(58126008)(2906002)(31686004)(64126003)(65826007)(305945005)(8936002)(9786002)(186003)(106002)(70206006)(110136005)(70586007)(5001870100001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB3795; H:xsj-pvapsmtpgw02; FPR:;
+ SPF:Pass; LANG:en; PTR:xapps1.xilinx.com,unknown-60-100.xilinx.com; A:1; MX:1;
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 25f147a3-3701-4bee-5f9d-08d71f150ba9
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
+ SRVR:BL0PR02MB3795; 
+X-MS-TrafficTypeDiagnostic: BL0PR02MB3795:
+X-Microsoft-Antispam-PRVS: <BL0PR02MB37958907277BFC58CDC2A8E2C6D30@BL0PR02MB3795.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:5797;
+X-Forefront-PRVS: 012792EC17
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: 6Oku2ovMeXoQRS3BnaQ7PjYzFH8h/SaF3+3Ac/2BwCC+KE70LJTe2dWgs58DyZa/DXGV3B7btuWrOVoxtzQF4od/mwxie4zOlV7Tm6ush1rE0B3Xpy/s30otNkld/QsuV0LshwlqVajuRCnrEpDzTi+tfksb5ay1Rogi2kJhQUkyHvlDOVkacJNM/AE+ZzTouDyP1VDPUk/pdXSVyhgL1Z6HVAvn9htSC5woMW9xcseef2D3TCmqI930YcoEE1Wk8VN2ZSvVKAroQB9ZoZPmomC99nRLyojFtIwPgR7rlDxmwhNMm9FPe1d5cpdmkZ+VRWcvf0bTJD9hdMrY8B91s3VqVVIoJ8MGHhnE4OVPse2f0t07COjr7sOW5E3cEiMCVFsb+gGP3/zBQ72QpBjz1ch0/LlWiXzNJ9vvi+CnpbE=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Aug 2019 11:05:54.4856 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 25f147a3-3701-4bee-5f9d-08d71f150ba9
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
+ Helo=[xsj-pvapsmtpgw02]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB3795
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_040118_781415_E0717775 
-X-CRM114-Status: UNSURE (   9.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190812_040557_467311_42F589F0 
+X-CRM114-Status: GOOD (  13.24  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.82.75 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -80,79 +151,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Linux-ALSA <alsa-devel@alsa-project.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Takashi Iwai <tiwai@suse.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============8498895595746108374=="
+Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-can@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 12. 08. 19 12:59, Marc Kleine-Budde wrote:
+> On 8/12/19 12:57 PM, Michal Simek wrote:
+>> On 12. 08. 19 12:47, Marc Kleine-Budde wrote:
+>>> On 8/12/19 12:18 PM, Michal Simek wrote:
+>>>> On 12. 08. 19 11:10, Marc Kleine-Budde wrote:
+>>>>> On 8/12/19 11:05 AM, Marc Kleine-Budde wrote:
+>>>>>> On 8/12/19 9:28 AM, Appana Durga Kedareswara rao wrote:
+>>>>>>> This patch series fixes below issues
+>>>>>>> --> Bugs in the driver w.r.to CANFD 2.0 IP support
+>>>>>>> --> Defer the probe if clock is not found
+>>>>>>>
+>>>>>>> Appana Durga Kedareswara rao (3):
+>>>>>>>   can: xilinx_can: Fix FSR register handling in the rx path
+>>>>>>>   can: xilinx_can: Fix the data updation logic for CANFD FD frames
+>>>>>>>   can: xilinx_can: Fix FSR register FL and RI mask values for canfd 2.0
+>>>>>>>
+>>>>>>> Srinivas Neeli (1):
+>>>>>>>   can: xilinx_can: Fix the data phase btr1 calculation
+>>>>>>>
+>>>>>>> Venkatesh Yadav Abbarapu (1):
+>>>>>>>   can: xilinx_can: defer the probe if clock is not found
+>>>>>>
+>>>>>> Please add your S-o-b to patches 4+5.
+>>>>>>
+>>>>>> As these all are bugfixes please add a reference to the commit it fixes:
+>>>>>>
+>>>>>>     Fixes: commitish ("description")
+>>>>>
+>>>>> Add this to your ~/.gitconfig:
+>>>>>
+>>>>> [alias]
+>>>>>         lfixes = log --pretty=fixes
+>>>>> [pretty]
+>>>>>         fixes = Fixes: %h (\"%s\")
+>>>>
+>>>> This is understandable and I have this in my .gitconfig for quite a long
+>>>> time. And this is just log
+>>>>
+>>>>> and then use $(git lfixes $commitish).
+>>>>
+>>>> But what do you mean by this? Are you able to add this to commit message
+>>>> just with sha1?
+>>>
+>>> First identify the commit that this patch fixes then go to the command
+>>> line and enter
+>>>
+>>>     git lfixes $committish
+>>>
+>>> and git will print out the line that you can copy directly to the commit
+>>> message.
+>>
+>> ok. I thought you have any nice way to directly add it to commit message
+>> without c&p.
+> 
+> You can insert the output from a console command in vim by adding a "!"
+> in front of it in the command mode.
 
---===============8498895595746108374==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="d01dLTUuW90fS44H"
-Content-Disposition: inline
+ok.
+M
 
 
---d01dLTUuW90fS44H
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Sat, Aug 10, 2019 at 10:45:23AM +0200, Cl=E9ment P=E9ron wrote:
-
-> Hi,
-
-Please don't top post, reply in line with needed context.  This allows
-readers to readily follow the flow of conversation and understand what
-you are talking about and also helps ensure that everything in the
-discussion is being addressed.
-
-> Sorry, I just discovered that the ASoC patches have been merged into
-> the broonie and linus tree in 5.3.
-
-> I'm still quite new in the sending of patches to the Kernel but
-> souldn't be a ack or a mail sent to warn the sender when the series
-> are accepted?
-
-Not every maintainer will send those, I do but you might find they've
-gone into your spam folder if you're using gmail.
-
---d01dLTUuW90fS44H
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1RRu4ACgkQJNaLcl1U
-h9BDaAf+JGgo/qiKbJdNE79u2FwpthOgmKAEpcOVw6Z0Lrx2YvRMtW86kCYYDdmh
-La5nF6FUWArR10NnVlhJNeSshE4iSF8iGIBtN/lNJGzb3mprdBrCReGkJzcGoHdI
-LnpzXGf+ixSv5om2cqAGZ9a6Wh0l4uNdigwEmH3fNv+K+HT4jdO67g78VFHuaB96
-mNlhbXTJ36FtGR6ZNiXjpbzCsRiRwT4r0WtGIoEYO5uPzL3zXV467CbGKmMBpjbD
-XlUl7rNzdCRu4eqmnQNVFUcToCt4ZVZYGUZmBrIFS1FW7LVaGQRAjf46gC4WEq/R
-Ui9Pyp92dWkr76RNhU29bXkdhz8tcA==
-=uNoD
------END PGP SIGNATURE-----
-
---d01dLTUuW90fS44H--
-
-
---===============8498895595746108374==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8498895595746108374==--
-
