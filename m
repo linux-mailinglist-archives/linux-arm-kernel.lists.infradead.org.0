@@ -2,89 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 928AF895F9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 06:19:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38AC389607
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 06:22:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xeBQjw2d/G6m3+g4uHbt09oKAXJWZ6h08wucnLMd40s=; b=Awo6Qm6ESV7J+L
-	el2EujEjFUDv4nNnwPkZaissRUiJK818S0BJT3jEsgK0yySCYtJVPsg8kXdii9PzE332DxwCtoCSW
-	UvG9gjiBK2ddBiSWc8iJjAF/HRUYZmYXOTUIt+dAjpbkxaORlomiILPiZaiXFVmyivOcepnmN0rFP
-	y4eNWYldBN2PsN3hp7TFT+zFaeqnh0mpu2Vl6/rw0RYhVUYXW0Rn4haDbuNpUV6M6nRxPRdHd9i1n
-	bffPTdzPVDDVf4f2JmalArFu3T/dtsVvYdHD+ynrMJB9n/2RG6kIBQuhebFlDBxJtlSLImLmSvaOd
-	0ICPQKFXIquCLE6KhdHw==;
+	List-Owner; bh=5xKdtnP8QQnnfVeZvMQzYA2IRk7IXPWah2/YOOW21L8=; b=NUq6letVfErKru
+	Q8O+BOyHMllfhvxavlpXGp8hZGHiH8kRqORl3bz6FZYhcG/k7Jylgifj1jS/BfX5p7DOwc/UgSHvw
+	cc2SuP0yJVkouv2O2ZrGDkoTJ4jwiHQaxvG93JlQEJ3PRV4FH57TpvhIGG2PAwVwrEx8SmjRFrmQS
+	BivMa7BnXeb4yYWoIq8h64o4XrLamMT1XW9djcLlWZ/3eX71u4lN1YN7a4G8kNvCAG0VrCZFBxNNg
+	J2gNWfLxoosvuN6P56i27jmt56Sf7gnLhf6lvwNwf6hucfs+3mNZSTS11pz2AQ/KJuUev+k290X8W
+	6frWyF70J8jw3sntiYbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx1o8-0003Iz-5B; Mon, 12 Aug 2019 04:19:44 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1hx1ql-0004nw-P1; Mon, 12 Aug 2019 04:22:27 +0000
+Received: from mail-eopbgr80040.outbound.protection.outlook.com ([40.107.8.40]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx1nu-0003Ia-Uk
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 04:19:32 +0000
-Received: by mail-ed1-f66.google.com with SMTP id w5so13962277edl.8
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 11 Aug 2019 21:19:30 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Z4s3JUibN+WGVLqaHsLHxXIi1D8VvPq6c/60ITp5nIA=;
- b=taLl4DBtF5sBK1raQeooSbh20+yCtVBMOsrbRy0S71Au7dF3GBCN2XjLN+EU35bH6y
- Pjpqk/oQEhQ1dEDshJmWllXlipIJtIJsG9aveD3/0dnkbzF849/W/CjOP8mU6CAk7TeS
- kSbqYUq7QOpQvkrv6vq56658hKRw4hYuV3e5KI9MiZm82eHfoog48Lt/yIpnuZQYn3FL
- KjH6LCc3OOllIB+pqMKKK281ov2JdrftCM8yyrCNgxRMFv4djUmmv3c+lYEcjbn9Qb6J
- 2PtKUdzOv5Y6jNiFeVtYAXjvIEHlrMWZiNqrAuH2lZs0TL8/A/FNTrhmjVCcT9uI1ovf
- bwcg==
-X-Gm-Message-State: APjAAAXKTrSI48rPp3noH+9MuybuwzfkluUI7NuOLZymOKRcq4ujF3tz
- Qn1TNJp82UxEfxYtFhPui19GFPB7KdM=
-X-Google-Smtp-Source: APXvYqyGCIRo5IsOmVUvGxUdSAlEfVjfV6ywwV+BO8zBxREG+7krt7dqD6QhtLme3unThNII3/TQuQ==
-X-Received: by 2002:a17:906:e2c2:: with SMTP id
- gr2mr29305260ejb.284.1565583569259; 
- Sun, 11 Aug 2019 21:19:29 -0700 (PDT)
-Received: from mail-wm1-f48.google.com (mail-wm1-f48.google.com.
- [209.85.128.48])
- by smtp.gmail.com with ESMTPSA id b18sm2006307eju.0.2019.08.11.21.19.28
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Sun, 11 Aug 2019 21:19:28 -0700 (PDT)
-Received: by mail-wm1-f48.google.com with SMTP id e8so9733493wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 11 Aug 2019 21:19:28 -0700 (PDT)
-X-Received: by 2002:a05:600c:292:: with SMTP id
- 18mr25156704wmk.51.1565583568180; 
- Sun, 11 Aug 2019 21:19:28 -0700 (PDT)
+ id 1hx1qS-0004nB-7R
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 04:22:12 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QJPR/Iprftl0Hzn4iRkXSABnt+q6ldrH8Cyj8AcKdAM1O850iWbhzeN0GRcXmLGwqtm+Krt4hy+MDbY31qjOiP+SWq1vu/IUsnPLg9YIxFFqEtDIQc/0ooenkmjiglRAxyoTkhYU+PGKdngpXedgAMosKwVsfsK51+tou2r/lDWBld8zHNyqMzV+FRTxBUpUQpgj01A9fLKNX81G45ncAwIiIA/QUMlqsn9Q0CUuUkCCcp4jOR2J6x9RH/kqf7Pv99rnisWhgCeIUYLttKxlguGmYxy/QcH/+p7y6FESD1Sr9SoPzsR0IBkQ3CINrxqG7I5qiHtkNKpv/KIGvpSo5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zsUeZjdA1z7V5yP7VwtYCbnE0+ZJa3q+KpMnCwx0Haw=;
+ b=HwkdOxvwcHrlQJ0e45rxV6fNn5mKY7CkqE3jBB1MbPtd1ykXzfCN4IQcjcrfQI2dFGYNyUSlTr+3Hv/O20Q81hIIvKNOg9lJcUrFqUM4vR3gdhnBry2JnTOAwrfbIIwG0XeQ6O0vVZ5kezBmgbMsrfnuL8NeudPcYZkbx6zAxdFLPe09cPYUvNmcflhxwFRgiI8T1UXNVHQTI/raSYeAA9OBCtSeW8C8F+9/jC7M2XpzQPw9fxQLwPcm2qE6ZqKm6y7v/IUNI7fDUa4Lq3fj6vkPYeNw3Wgz7vnJRgm86Ry37db6YZTa5MGzIZr9N7LVMtp6dT2DBPtkzkWroGyb5g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zsUeZjdA1z7V5yP7VwtYCbnE0+ZJa3q+KpMnCwx0Haw=;
+ b=gJMeUqz2YuexvozcwNHKwd7RhPPRrlQHBLWuHAfppy5/HLrSk2zNYwjnK/KqyKpFmKVTj1RqwYB3G5R+osk8Ul+0T8a0PjtM94oc9tA1RujPwLh3nkoaBj/io09Rg2vMACV7YToAd1xZj4rA2vFVyvZdq9c4epxhshzm7IZpjR4=
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com (52.135.138.150) by
+ DB7PR04MB5515.eurprd04.prod.outlook.com (20.178.106.12) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.23; Mon, 12 Aug 2019 04:22:03 +0000
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::ccc8:8:c071:8283]) by DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::ccc8:8:c071:8283%5]) with mapi id 15.20.2157.022; Mon, 12 Aug 2019
+ 04:22:03 +0000
+From: Biwen Li <biwen.li@nxp.com>
+To: Wolfram Sang <wsa@the-dreams.de>, Leo Li <leoyang.li@nxp.com>
+Subject: RE: [EXT] Re: i2c: imx: support slave mode for imx I2C driver
+Thread-Topic: [EXT] Re: i2c: imx: support slave mode for imx I2C driver
+Thread-Index: AQHVTZ48m9LP8x07tUuNIj/REJ9fGqbxrQ0AgAB2tSCAAMoxgIAD/bIQ
+Date: Mon, 12 Aug 2019 04:22:03 +0000
+Message-ID: <DB7PR04MB44909B080A8C8D53416F34058FD30@DB7PR04MB4490.eurprd04.prod.outlook.com>
+References: <20190808035343.34120-1-biwen.li@nxp.com>
+ <20190808200202.GA6609@ninjato>
+ <VI1PR04MB4495EA1A44120654B494EB3D8FD60@VI1PR04MB4495.eurprd04.prod.outlook.com>
+ <20190809151035.GB5099@ninjato>
+In-Reply-To: <20190809151035.GB5099@ninjato>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=biwen.li@nxp.com; 
+x-originating-ip: [119.31.174.73]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b5889917-5d7b-4685-2c8f-08d71edca096
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB7PR04MB5515; 
+x-ms-traffictypediagnostic: DB7PR04MB5515:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7PR04MB5515D9DDB6C12E4F0906E8438FD30@DB7PR04MB5515.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2000;
+x-forefront-prvs: 012792EC17
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(366004)(396003)(39860400002)(376002)(346002)(189003)(199004)(53936002)(74316002)(6636002)(4326008)(33656002)(2906002)(25786009)(229853002)(8936002)(6246003)(5660300002)(4744005)(52536014)(66066001)(256004)(14444005)(14454004)(71190400001)(71200400001)(966005)(8676002)(81156014)(81166006)(6116002)(478600001)(7736002)(86362001)(305945005)(55016002)(66946007)(66476007)(66556008)(64756008)(99286004)(11346002)(6306002)(76116006)(66446008)(26005)(7696005)(6506007)(110136005)(186003)(54906003)(476003)(102836004)(9686003)(486006)(76176011)(316002)(44832011)(6436002)(446003)(3846002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB5515;
+ H:DB7PR04MB4490.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: kgIBb5+Cr23OIGg3EeZUGIxIG6ON+fB0KvZkhkxcNjVWDwpU4Ie3ZkMYO4bPYYNhYJCNY2KsqL67+cIs/+3txhQksiuHttFG3yhzCtMhvCtySjh0z44KxD5Xh2TCZYex7MG27+GQ7n94rLWMRqfViVhQu59FatZQiVUNHJNlyIP//yKFaneNW3yzVzkjzq3vup2nWlIqioNvDBlOlbBM6VdyiDFpDizp0l5Cvav3ourxUa30Lwjay5W/DzS7RpuVcfrjWZ0anum2BRW3gobiNZfe/fe1qNbo+hO97dukZGtLr+3ratykG9VioudoDuC1gFlxDV4P7JpBH75UjlX6+W7f23D/2+pRM6IxsnHyBmk3DcVNgJCLsUmHN5dLa6uvbkz0Nd4COBK4326mn0tMABC+aFWPFokSr23ELEqrmZg=
 MIME-Version: 1.0
-References: <20190811090503.32396-1-bshah@kde.org>
- <20190811090503.32396-3-bshah@kde.org>
-In-Reply-To: <20190811090503.32396-3-bshah@kde.org>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Mon, 12 Aug 2019 12:19:17 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65xDCNywexZGW=EBrsJwm-KwANxpdCv-AM2sgVNbz6qQQ@mail.gmail.com>
-Message-ID: <CAGb2v65xDCNywexZGW=EBrsJwm-KwANxpdCv-AM2sgVNbz6qQQ@mail.gmail.com>
-Subject: Re: [PATCH 2/2] arm64: allwinner: h6: enable i2c0 in PineH64
-To: Bhushan Shah <bshah@kde.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b5889917-5d7b-4685-2c8f-08d71edca096
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Aug 2019 04:22:03.1279 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: opi5C0tfeAe7q/l/XiNjsRSNZquJLLrjUcQxw9jFozQsczhfosFVrFFPqjNfS21aDEcu8neQiEDQF17Q3rPOTw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB5515
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190811_211930_992728_81C2B271 
-X-CRM114-Status: GOOD (  15.59  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190811_212208_373284_7A98D982 
+X-CRM114-Status: GOOD (  11.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
+ no trust [40.107.8.40 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,59 +125,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Joshua Frkuska <joshua_frkuska@mentor.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 11, 2019 at 5:05 PM Bhushan Shah <bshah@kde.org> wrote:
->
-> i2c0 bus is exposed by PI-2 BUS in the PineH64, model B.
->
-> Signed-off-by: Bhushan Shah <bshah@kde.org>
-> ---
->  arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts | 8 ++++++++
->  1 file changed, 8 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
-> index 684d1daa3081..a184361bc10d 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
-> @@ -160,6 +160,14 @@
->         vcc-pg-supply = <&reg_aldo1>;
->  };
->
-> +&i2c0 {
-> +       status = "okay";
+> On Fri, Aug 09, 2019 at 03:18:01AM +0000, Biwen Li wrote:
+> > > > The patch supports slave mode for imx I2C driver
+> > > >
+> > > > Signed-off-by: Biwen Li <biwen.li@nxp.com>
+> > >
+> > > Wow, this is much simpler than the other approach flying around:
+> > >
+> > > http://patchwork.ozlabs.org/patch/1124048/
+> > >
+> > > Can this one be master and slave on the same bus, too?
+> > At the same time, the same bus is in master mode or slave mode.
+> 
+> So, can someone kindly point out the key differences to me?
+The I2C module cannot be a master and a slave simultaneously.
+Such as: if the i2c module is used in slave mode with command
+'echo slave-24c02 0x64 > /sys/bus/i2c/devices/i2c-0/new_device',
+At the mean time, you cannot do master operations(i2cset/i2cget). 
+You can switch mode from slave to master with command 'echo 0x64
+ > /sys/bus/i2c/devices/i2c-0/delete_device', then you can do master
+operations.
 
-We don't enable interfaces that are exposed on the extension headers
-by default. Instead we let the users enable it themselves, by modifying
-the device tree either with overlays or through U-boot commands.
-
-Please set this to "disabled", and add a comment mentioning that it is
-on the PI-2 BUS. Having it explicitly listed in the source serves as a
-pointer to people looking at how to enable stuff.
-
-ChenYu
-
-> +};
-> +
-> +&i2c0_pins {
-> +       bias-pull-up;
-> +};
-> +
->  &r_i2c {
->         status = "okay";
->
-> --
-> 2.17.1
->
+Adding Leo to this version too.
 
 _______________________________________________
 linux-arm-kernel mailing list
