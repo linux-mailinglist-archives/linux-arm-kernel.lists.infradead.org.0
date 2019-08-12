@@ -2,56 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0739989BDF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 12:48:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B77089BEE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 12:51:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rizrJv04c95pV7X+lNwl2dfiPpCewvlgycrtisvKzuw=; b=MsQJNaNS7OVPme9nDtr9gr/rE
-	Wh5rjA1XXoRIYH7sF3C9MNx0I8QXi7si7gTfjxQFbl9tSrHeWblwUsvjk4I6LLN8SNJbvdoFIdZIJ
-	hbkrXeQ8TDsL6aZPYk01qp2JDw13usXCLdzp4fxcYhv0P6mEBEF1lGGQevwnJpbTr04fTdC+9uXcB
-	huzlKNXYwkfT3hAQwWVlwnauPO+fXdiDaGZmML3X9IPsnz+WxbZFb6vmr6PaE37+GP59QfoimtCsW
-	GDXfoUygAiT3Axk4r41e8eVekatjJQ7tYkQOSKhEs67qF3+88g5ameBa3h7SYfcC78kUkSxWD+bNY
-	P8uh2Hp6g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fpz7oUhbsuriMSo7og0kJXCQCoGhdeg4ouXYQovJ9Bg=; b=KsMxnBu2i2KWas
+	bcyUIA6dCLuC1I4s3Wpm3olCft0FlBolZddtnYuy9nMPH/nMvWfxyJuqu5hO8C/nZ9sYZcEzfEKEa
+	wSFnXiF7xZ6qsjq0bhTNe6Tnl8qCTu12OLR/9WxuZX8uh6u0rpdO+LA0KrE/2CCWzCqcQXcBbJWxE
+	6BoNRQjvG2x4H7us3ANsitz6G3yBQh3IqqSIrNf5As4AQTSF0bh9BCV/v4wwTSbsLMtKpXFvK8vbC
+	FAyEHosOhuan11NunUgo8CCy7dhwvv8NIEG4fP8mj5bynM85ErtmyiubFS/O1Oz0U67ma94mfhlv4
+	Hm30yupgeqdHHg5SFgrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx7sh-0007uN-8Y; Mon, 12 Aug 2019 10:48:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hx7sE-0007mW-Gr
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 10:48:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C5A5A15AB;
- Mon, 12 Aug 2019 03:48:21 -0700 (PDT)
-Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 111603F706;
- Mon, 12 Aug 2019 03:48:20 -0700 (PDT)
-Subject: Re: [PATCH v2] coresight: Serialize enabling/disabling a link device.
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-To: yabinc@google.com, mathieu.poirier@linaro.org,
- alexander.shishkin@linux.intel.com
-References: <20190809214538.29677-1-yabinc@google.com>
- <056f411f-eef2-752e-0c02-2e5ed803cc62@arm.com>
-Message-ID: <606aaae4-3f26-7a58-3276-f4c5e3f8d17d@arm.com>
-Date: Mon, 12 Aug 2019 11:48:20 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hx7vJ-00016h-Cp; Mon, 12 Aug 2019 10:51:33 +0000
+Received: from mailoutvs60.siol.net ([185.57.226.251] helo=mail.siol.net)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hx7v4-00015Y-Hx
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 10:51:20 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 837F7523530;
+ Mon, 12 Aug 2019 12:51:07 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id t6JWQo8cCAfO; Mon, 12 Aug 2019 12:51:07 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 2C631521B92;
+ Mon, 12 Aug 2019 12:51:07 +0200 (CEST)
+Received: from jernej-laptop.localnet (89-212-178-211.dynamic.t-2.net
+ [89.212.178.211]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id AA26E522124;
+ Mon, 12 Aug 2019 12:51:05 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Uwe =?ISO-8859-1?Q?Kleine=2DK=F6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [linux-sunxi] Re: [PATCH 4/6] pwm: sun4i: Add support for H6 PWM
+Date: Mon, 12 Aug 2019 12:51:05 +0200
+Message-ID: <2877943.4JjSNuc4x8@jernej-laptop>
+In-Reply-To: <20190812104700.vzpdxx3yddthiif5@pengutronix.de>
+References: <20190726184045.14669-1-jernej.skrabec@siol.net>
+ <20190812095648.wuefcr2mep3dpkth@flea>
+ <20190812104700.vzpdxx3yddthiif5@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <056f411f-eef2-752e-0c02-2e5ed803cc62@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_034822_612797_EFB3EC5F 
-X-CRM114-Status: GOOD (  12.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190812_035118_753307_5CB118EB 
+X-CRM114-Status: UNSURE (   6.19  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.251 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,47 +73,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ devicetree <devicetree@vger.kernel.org>, linux-sunxi@googlegroups.com,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ kernel@pengutronix.de, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Yabin,
+Dne ponedeljek, 12. avgust 2019 ob 12:47:00 CEST je Uwe Kleine-K=F6nig =
 
-On 12/08/2019 11:38, Suzuki K Poulose wrote:
-> 
-> Hi Yabin,
-> 
-> On 09/08/2019 22:45, Yabin Cui wrote:
->> When tracing etm data of multiple threads on multiple cpus through perf
->> interface, some link devices are shared between paths of different cpus.
->> It creates race conditions when different cpus wants to enable/disable
->> the same link device at the same time.
->>
->> Example 1:
->> Two cpus want to enable different ports of a coresight funnel, thus
->> calling the funnel enable operation at the same time. But the funnel
->> enable operation isn't reentrantable.
->>
->> Example 2:
->> For an enabled coresight dynamic replicator with refcnt=1, one cpu wants
->> to disable it, while another cpu wants to enable it. Ideally we still have
->> an enabled replicator with refcnt=1 at the end. But in reality the result
->> is uncertain.
->>
->> Since coresight devices claim themselves when enabled for self-hosted
->> usage, the race conditions above usually make the link devices not usable
->> after many cycles.
->>
->> To fix the race conditions, this patch adds a spinlock to serialize
->> enabling/disabling a link device.
+napisal(a):
+> Hello Maxime,
+> =
 
-Please could you also add :
+> the idea of my mail was to summarize quickly the discussion for the dt
+> people to give their judgement to stop us circling in a discussion about
+> the always same points.
+> =
 
-Fixes : a06ae8609b3dd ("coresight: add CoreSight core layer framework")
+> I suggest we stop the discussion here now and wait for a reply from them
+> instead.
 
-Suzuki
+Shouldn't we just go with compromise solution you suggested and Maxime =
+
+accepted? I would like to send new version in time for 5.4.
+
+Best regards,
+Jernej
+
+> =
+
+> Best regards
+> Uwe
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
