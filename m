@@ -2,103 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6842089FB9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 15:30:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C858C89FF1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 12 Aug 2019 15:43:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/ZAFusEfvBKech17+cpzSCbvcaVPfKtOYqtCDiMO93U=; b=iZ2xenvTXxmgZIRFE87ScZlsz
-	RfNXmMXAh9fwcMcPbZCzw3D7z0N98Rr8Y/x03RFTlHndRExPKWAzXmzX2fxLDrlPafC1bIsvOQfHm
-	J1tb2FEk5Iu3HGXxKOSmXzdHuad06aggxbNKnSCUKRGr/IgkrvGXiJ8zEPj7ffGbdZJ1UmOYUEnBV
-	4x4d1qmHZ7mJT82G0kgAMH3AhMR0kCGhnR0lduGVRE2K2EyN0L//9PXOod6eVlZXWtDvIPIAzgJNn
-	n9XCHhcaJA8+p+DWO5rIL8wBNg+oj0MYxBpVV1c22wEO2P8l+LKHfuieCSltYIxQACS9h5g1QhGNe
-	YDj6I0vdA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=meJ9ftChbg3CpWAm9VKFy49K9ff8vxX5dvQmQlo6LA8=; b=r908NtZMHwwR1p
+	3SDddzyYUORqBFZCYTg/bcMpT1p1VTBEwTMNbTcQGJzUtOT9JWZXWUBYqU0Rl1K45w0qs5ax2ka3U
+	vdW/EMSGi63/zjPrC5oRSISuRV4J3ZWC3Ak6YsSi6kIKjTz+wMaSCtTY4zkuaehPOsLOzowgUertW
+	0j8HYQROUi6FeXYDC8uj2NA9YQ5c/RTJa4Kbdi917tmxrfUKwXWi7Za/LCI+BkBVsBs3Y18n+c+r6
+	8G7dW3MbNOvjWfAKCjPqGN3xFdxlzCPOpOawGa96Ruikxo13X/1pLWiqk0TpTDCVw5Nhcw+CYdOPX
+	i5y8qCi1eNvyP7WY+ZnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxAP7-0000dn-17; Mon, 12 Aug 2019 13:30:29 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hxAbK-0003uF-Hz; Mon, 12 Aug 2019 13:43:06 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxAOs-0000d0-C0
- for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 13:30:15 +0000
-Received: by mail-pl1-x643.google.com with SMTP id a93so47824828pla.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 12 Aug 2019 06:30:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=LzmsQjTfCAGfzgibtgJwWGGyOUUejcSfXVXPD/fec0Q=;
- b=amI4Hi4DT6040meOqfNQLY2WyBYscAzRYwN6NIwGbgHq5vJuPvt+GjCO+OqaZbS5+n
- VVRYwOqdCv125crYWfUlXLIkcpJyFTzEn+cOmfGegKjmOQiKXSQdHODgyXXfUqGLN3WB
- KmB8ODgHLEy6fGHVju3bNibRry7jW2hRVi0tPH8nR4gPHY7wEbh80/DMsTpSJRG32aNu
- s8i/zn/do1aJfY2rnIdINvOmhe+NdjskEzgNgJJ43pnhTRzW3TcNfGejpmvRGHZSiQ+1
- X2estHNsOoeeEddAwvLDkmejJmzYZH6W8tsj0/6N6PT1f18MhXmQeJfLGUfTMWpVY5sz
- jNqQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=LzmsQjTfCAGfzgibtgJwWGGyOUUejcSfXVXPD/fec0Q=;
- b=H16kyIHn3SceN2NACefWJL3sNHw4kkhaQcy140eNNVqDrVlboK8eY+fXDkQxC85mIo
- BJu512V//6xeOHRImb89dY3xahk29SjF21svcL0sdfNTfr5sRNnxeJoFL3VymRC5A/EF
- a7B4pJwUxF+HldvgWxcuFCKyRhlUEaqvsBE/HtuhVwp94b2p8CzmQIcaNqpmlv9FXuP6
- C3/AVYS4r8etPj+opiClbuUqqey7IXWXK0O/3eZweSGWF10c385svANpWrYXUaxFNkl+
- tXbtMVn3xEP28Oi8NR+iDK145Uh70QP9rlxpiTQWNZ5w8b5IOsd2aix7nU/Ri+Hpm3XZ
- 74UA==
-X-Gm-Message-State: APjAAAW1m4k7TOfIYUtxTdG16Y82eyUkIKglXmUS1cM/XFW9vYLxQtFU
- f5EfmZFpgehc1i7VZAQQPew=
-X-Google-Smtp-Source: APXvYqzopTD9eHQVPq9aezbMoLuvpwalDJYSit6Z18zj7hBJORCL//WTJigjX27R5vaD8/VkptKZXg==
-X-Received: by 2002:a17:902:d917:: with SMTP id
- c23mr32901603plz.248.1565616612021; 
- Mon, 12 Aug 2019 06:30:12 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- v138sm120654857pfc.15.2019.08.12.06.30.10
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 12 Aug 2019 06:30:11 -0700 (PDT)
-Subject: Re: [PATCH] watchdog: imx_sc: Remove unnecessary error log
-To: Anson.Huang@nxp.com, wim@linux-watchdog.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-watchdog@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20190812084434.13316-1-Anson.Huang@nxp.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <611fe8c6-f907-d022-3484-ff53b2bd4331@roeck-us.net>
-Date: Mon, 12 Aug 2019 06:30:10 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hxAb8-0003ss-9Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 12 Aug 2019 13:42:55 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 4686C28B0CA
+Message-ID: <9374a16516e61978d58bff4d8721bff2f511c5c9.camel@collabora.com>
+Subject: Re: [PATCH 4/7] media: cedrus: Remove dst_bufs from context
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Jernej Skrabec <jernej.skrabec@siol.net>, paul.kocialkowski@bootlin.com,
+ maxime.ripard@bootlin.com
+Date: Mon, 12 Aug 2019 10:42:44 -0300
+In-Reply-To: <20190530211516.1891-5-jernej.skrabec@siol.net>
+References: <20190530211516.1891-1-jernej.skrabec@siol.net>
+ <20190530211516.1891-5-jernej.skrabec@siol.net>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-In-Reply-To: <20190812084434.13316-1-Anson.Huang@nxp.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_063014_413234_150651EF 
-X-CRM114-Status: GOOD (  18.38  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20190812_064254_462765_6FAA28E4 
+X-CRM114-Status: GOOD (  14.21  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,45 +62,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
+Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, wens@csie.org, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/12/19 1:44 AM, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On Thu, 2019-05-30 at 23:15 +0200, Jernej Skrabec wrote:
+> This array is just duplicated capture buffer queue. Remove it and adjust
+> code to look into capture buffer queue instead.
 > 
-> An error message is already displayed by watchdog_register_device()
-> when failed, so no need to have error log again for failure of
-> calling devm_watchdog_register_device().
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-
-Reviewed-by: Guenter Roeck <linux@roeck-us.net>
-
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 > ---
->   drivers/watchdog/imx_sc_wdt.c | 5 +----
->   1 file changed, 1 insertion(+), 4 deletions(-)
+>  drivers/staging/media/sunxi/cedrus/cedrus.h   |  4 +---
+>  .../staging/media/sunxi/cedrus/cedrus_h264.c  |  4 ++--
+>  .../staging/media/sunxi/cedrus/cedrus_video.c | 22 -------------------
+>  3 files changed, 3 insertions(+), 27 deletions(-)
 > 
-> diff --git a/drivers/watchdog/imx_sc_wdt.c b/drivers/watchdog/imx_sc_wdt.c
-> index 78eaaf7..9260475 100644
-> --- a/drivers/watchdog/imx_sc_wdt.c
-> +++ b/drivers/watchdog/imx_sc_wdt.c
-> @@ -175,11 +175,8 @@ static int imx_sc_wdt_probe(struct platform_device *pdev)
->   	watchdog_stop_on_unregister(wdog);
->   
->   	ret = devm_watchdog_register_device(dev, wdog);
+> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
+> index 3f476d0fd981..d8e6777e5e27 100644
+> --- a/drivers/staging/media/sunxi/cedrus/cedrus.h
+> +++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
+> @@ -100,8 +100,6 @@ struct cedrus_ctx {
+>  	struct v4l2_ctrl_handler	hdl;
+>  	struct v4l2_ctrl		**ctrls;
+>  
+> -	struct vb2_buffer		*dst_bufs[VIDEO_MAX_FRAME];
 > -
-> - 	if (ret) {
-> - 		dev_err(dev, "Failed to register watchdog device\n");
-> +	if (ret)
->    		return ret;
-> - 	}
->    
->   	ret = imx_scu_irq_group_enable(SC_IRQ_GROUP_WDOG,
->   				       SC_IRQ_WDOG,
-> 
+>  	union {
+>  		struct {
+>  			void		*mv_col_buf;
+> @@ -187,7 +185,7 @@ static inline dma_addr_t cedrus_dst_buf_addr(struct cedrus_ctx *ctx,
+>  	if (index < 0)
+>  		return 0;
+>  
+> -	buf = ctx->dst_bufs[index];
+> +	buf = ctx->fh.m2m_ctx->cap_q_ctx.q.bufs[index];
+
+I think you can use v4l2_m2m_get_dst_vq() to access the queue,
+and vb2_get_buffer() to access buffers in a vb2 queue.
+
+>  	return buf ? cedrus_buf_addr(buf, &ctx->dst_fmt, plane) : 0;
+>  }
+>  
+> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+> index d0ee3f90ff46..b2290f98d81a 100644
+> --- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+> @@ -119,7 +119,7 @@ static void cedrus_write_frame_list(struct cedrus_ctx *ctx,
+>  		if (buf_idx < 0)
+>  			continue;
+>  
+> -		cedrus_buf = vb2_to_cedrus_buffer(ctx->dst_bufs[buf_idx]);
+> +		cedrus_buf = vb2_to_cedrus_buffer(cap_q->bufs[buf_idx]);
+
+Ditto about vb2_get_buffer.
+
+>  		position = cedrus_buf->codec.h264.position;
+>  		used_dpbs |= BIT(position);
+>  
+> @@ -194,7 +194,7 @@ static void _cedrus_write_ref_list(struct cedrus_ctx *ctx,
+>  		if (buf_idx < 0)
+>  			continue;
+>  
+> -		ref_buf = to_vb2_v4l2_buffer(ctx->dst_bufs[buf_idx]);
+> +		ref_buf = to_vb2_v4l2_buffer(cap_q->bufs[buf_idx]);
+
+Ditto about vb2_get_buffer.
+
+With those changes:
+
+Reviewed-by: Ezequiel Garcia <ezequiel@collabora.com>
+
+Thanks,
+Ezequiel
 
 
 _______________________________________________
