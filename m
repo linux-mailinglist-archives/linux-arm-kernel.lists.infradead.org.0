@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D56DF8BE94
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:29:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 976C18BE99
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:30:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KK9r8yeGcMRBOzIdp9Y/lS5brRxjbe0HuEJDb4yhnZE=; b=lRYb/C6pmd+LxI
-	BxdVAemdPQUvowJlX3waDzvxhJ/+NfPIq/NZRs4R3ctbHOOKapdqobkPYI4MCHs0SSOtKLwKMSdoH
-	hl3e5LbH+9C/Mk0ISkjf56CaaNo1EefxMimb7z88brwg2zwx0p5btoRiP8tq1RemEuY7AzVDOr7hf
-	iwLOzA+HADYN4ijs3Jo3ARtI7NLWd9mNZJMCSe/AlaMfOVYlllhmKLYCVboNe1O8BqSqLldzudCXj
-	R+RxWbBhtoude5D/TuSu4w6V82i4ZaoxzkALyXlhHmOfJtQe6DgDt/9yI/F+Chn4iVksgSOxGAkH4
-	ZkI71s2z6ggsvmIlXbhQ==;
+	List-Owner; bh=dulB0NUz4T+Xd3w29FHW9Yywfy7i3U9iLR83E4HcQe8=; b=D++/S0FTuk+MBN
+	63Dqscz6k4XO15XZC/wnXsbhrof9m5FBmCu3aio/CDI1esynpJJb2FShCSd7ofGIDq3EnTMJ1SGh0
+	WaXIc6aixvcSF6BWtF05Cr3e+tRvDdJtgcSKHoMaw9jQEKeI8U/olJo3REYmKHNhqtqX6v/+/WAXn
+	hwm0Znc3nV1taNjBiz28wdLLViXWhOAz+gJrmNV9r2efbOecNjAcF9WkfEwPEoueE//YbW68aCsv1
+	g2zQkvm4sn8mN4WBxOR/i5E8P+FnwVR3rJjUReZsTUkYV1eIOFtPRxEzQ/6typCccjRMnUCeV/6VN
+	RhtOJiIdyZGf/JgMW9Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxZg9-0001Db-Nv; Tue, 13 Aug 2019 16:29:45 +0000
+	id 1hxZgP-0001TA-MT; Tue, 13 Aug 2019 16:30:01 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxZdJ-0006XN-Mn
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 16:26:54 +0000
+ id 1hxZeR-0007pP-L5
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 16:28:01 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0A5D6337;
- Tue, 13 Aug 2019 09:26:49 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3CCD0337;
+ Tue, 13 Aug 2019 09:27:59 -0700 (PDT)
 Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D2423F706;
- Tue, 13 Aug 2019 09:26:48 -0700 (PDT)
-Date: Tue, 13 Aug 2019 17:26:46 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 70D053F706;
+ Tue, 13 Aug 2019 09:27:58 -0700 (PDT)
+Date: Tue, 13 Aug 2019 17:27:56 +0100
 From: Dave Martin <Dave.Martin@arm.com>
 To: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH v3 10/11] kselftest: arm64: fake_sigreturn_bad_size
-Message-ID: <20190813162646.GH10425@arm.com>
+Subject: Re: [PATCH v3 11/11] kselftest: arm64: fake_sigreturn_misaligned_sp
+Message-ID: <20190813162756.GI10425@arm.com>
 References: <20190802170300.20662-1-cristian.marussi@arm.com>
- <20190802170300.20662-11-cristian.marussi@arm.com>
+ <20190802170300.20662-12-cristian.marussi@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190802170300.20662-11-cristian.marussi@arm.com>
+In-Reply-To: <20190802170300.20662-12-cristian.marussi@arm.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_092649_870289_2123C09B 
-X-CRM114-Status: GOOD (  20.68  )
+X-CRM114-CacheID: sfid-20190813_092759_809442_C11558C3 
+X-CRM114-Status: GOOD (  21.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,43 +68,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 02, 2019 at 06:02:59PM +0100, Cristian Marussi wrote:
-> Added a simple fake_sigreturn testcase which builds a ucontext_t
+On Fri, Aug 02, 2019 at 06:03:00PM +0100, Cristian Marussi wrote:
+> Added a simple fake_sigreturn testcase which places a valid
 
 Add
 
-> with a badly sized header that causes a overrun in the __reserved
-> area and place it onto the stack. Expects a SIGSEGV on test PASS.
+> sigframe on a non-16 bytes aligned SP.
+> fake_sigretrun() helper function has been patched accordingly
+> to support placing a sigframe on a non-16 bytes aligned address.
+> Expects a SIGSEGV on test PASS.
 > 
+> Adds also a test TODO lists holding some further test ideas.
+
+Adds -> Also add
+lists -> list
+
 > Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 > ---
->  .../arm64/signal/testcases/.gitignore         |  1 +
->  .../testcases/fake_sigreturn_bad_size.c       | 85 +++++++++++++++++++
->  2 files changed, 86 insertions(+)
->  create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
+> Re-added this text after fixing the forced misaglinment procedure in
+> fake_sigreturn() itself: require a ZERO alignment and you'll get
+> your sigframe placed on a misaligned SP (2-bytes off the 16-align)
+> ---
+>  .../testing/selftests/arm64/signal/signals.S  | 21 +++++++++----
+>  .../arm64/signal/testcases/TODO.readme        |  8 +++++
+>  .../testcases/fake_sigreturn_misaligned_sp.c  | 30 +++++++++++++++++++
+>  3 files changed, 53 insertions(+), 6 deletions(-)
+>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/TODO.readme
+>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
 > 
-> diff --git a/tools/testing/selftests/arm64/signal/testcases/.gitignore b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-> index 94f9baaf638c..3408e0f5ba98 100644
-> --- a/tools/testing/selftests/arm64/signal/testcases/.gitignore
-> +++ b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-> @@ -8,3 +8,4 @@ fake_sigreturn_bad_magic
->  fake_sigreturn_bad_size_for_magic0
->  fake_sigreturn_missing_fpsimd
->  fake_sigreturn_duplicated_fpsimd
-> +fake_sigreturn_bad_size
-> diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
+> diff --git a/tools/testing/selftests/arm64/signal/signals.S b/tools/testing/selftests/arm64/signal/signals.S
+> index 6262b877400b..2099871176ed 100644
+> --- a/tools/testing/selftests/arm64/signal/signals.S
+> +++ b/tools/testing/selftests/arm64/signal/signals.S
+> @@ -13,19 +13,28 @@ call_fmt:
+>  
+>  .globl fake_sigreturn
+>  
+> -/*	fake_sigreturn	x0:&sigframe,  x1:sigframe_size,  x2:alignment_SP */
+> +/*	fake_sigreturn	x0:&sigframe, x1:sigframe_sz, x2:align */
+>  fake_sigreturn:
+> -	mov x20, x0
+> -	mov x21, x1
+> -	mov x22, x2
+> -	mov x23, sp
+>  
+> -	/* create space on the stack for fake sigframe..."x22"-aligned */
+> +	/* Save args and decide which aligment to enforce */
+> +	mov 	x23, sp
+> +	mov	x20, x0
+> +	mov 	x21, x1
+> +	/* x22 and x24 used for forcing alignment or misalignment */
+> +	mov	x22, x2
+> +	mov	x24, #0
+> +	cbnz	x22, 1f
+> +	mov	x22, #16
+> +	mov	x24, #2
+> +
+> +1:	/* create space on the stack for fake sigframe..."x22"-aligned */
+>  	mov x0, #0
+>  	add x0, x21, x22
+>  	sub x22, x22, #1
+>  	bic x0, x0, x22
+>  	sub x23, x23, x0
+> +	/* force misaligned by x24 bytes if required alignment was zero */
+> +	add x23, x23, x24
+>  
+>  	ldr x0, =call_fmt
+>  	mov x1, x21
+
+Would it be simpler for the third argument to specify a number of bytes
+to subtract from SP after allocating 16-byte aligned storage to
+accommodate sigframe_sz?
+
+Then 0 gives an aligned frame, 1 gives a frame misaligned by 1 byte,
+etc.
+
+
+Also if all this is a fix to the original fake_sigreturn, can we merge
+it into the original patch instead?
+
+> diff --git a/tools/testing/selftests/arm64/signal/testcases/TODO.readme b/tools/testing/selftests/arm64/signal/testcases/TODO.readme
 > new file mode 100644
-> index 000000000000..1467fb534d8b
+> index 000000000000..5c949492e7ab
 > --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
-> @@ -0,0 +1,85 @@
+> +++ b/tools/testing/selftests/arm64/signal/testcases/TODO.readme
+> @@ -0,0 +1,8 @@
+> +Some more possible ideas for signals tests:
+> +
+> +- fake_sigreturn_unmapped_sp
+> +- fake_sigreturn_kernelspace_sp
+> +- fake_sigreturn_sve_bad_extra_context
+> +- mangle_sve_invalid_extra_context
+> +- mangle_pstate_invalid_el for H modes (+ macroization ?)
+> +- fake_sigreturn_overflow_reserved
+
+This seems a reasonable list, but it occurs to me that it will tend to
+go out of sync as tests get added.  So maybe just put this list in the
+cover letter instead of including it in the patch.
+
+We should probably have a one-line description of each proposed test,
+since the names are a bit cryptic.
+
+> diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
+> new file mode 100644
+> index 000000000000..3ee8c500c7d1
+> --- /dev/null
+> +++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
+> @@ -0,0 +1,30 @@
 > +/* SPDX-License-Identifier: GPL-2.0 */
 > +/* Copyright (C) 2019 ARM Limited */
 > +
 
 signal.h?
 
-> +#include <stdio.h>
 > +#include <ucontext.h>
 > +
 > +#include "test_signals_utils.h"
@@ -112,79 +188,20 @@ signal.h?
 > +
 > +struct fake_sigframe sf;
 > +
-> +#define MIN_SZ_ALIGN	16
-> +
-> +static int fake_sigreturn_bad_size_run(struct tdescr *td,
-> +				       siginfo_t *si, ucontext_t *uc)
+> +static int fake_sigreturn_misaligned_run(struct tdescr *td,
+> +				         siginfo_t *si, ucontext_t *uc)
 > +{
-> +	size_t resv_sz, need_sz, offset;
-> +	struct _aarch64_ctx *shead = GET_SF_RESV_HEAD(sf), *head;
-> +
 > +	/* just to fill the ucontext_t with something real */
 > +	if (!get_current_context(td, &sf.uc))
 > +		return 1;
 > +
-> +	resv_sz = GET_SF_RESV_SIZE(sf);
-> +	/*
-> +	 * find the terminator, preserving existing headers
-> +	 * and verify amount of spare room in __reserved area.
-> +	 */
-> +	head = get_terminator(shead, resv_sz, &offset);
-> +	/*
-> +	 * try stripping extra_context header when low on space:
-> +	 * we need at least  for the bad sized esr_context.
-
-double space
-
-> +	 */
-> +	need_sz = HDR_SZ + sizeof(struct esr_context);
-> +	if (head && resv_sz - offset < need_sz) {
-> +		fprintf(stderr, "Low on space:%zd. Discarding extra_context.\n",
-> +			resv_sz - offset);
-> +		head = get_header(shead, EXTRA_MAGIC, resv_sz, &offset);
-> +	}
-> +	/* just give up and timeout if still not enough space */
-> +	if (head && resv_sz - offset >= need_sz) {
-> +		fprintf(stderr, "Mangling template header. Spare space:%zd\n",
-> +			resv_sz - offset);
-> +		/*
-> +		 * Use an esr_context to build a fake header with a
-> +		 * size greater then the free __reserved area minus HDR_SZ;
-> +		 * using ESR_MAGIC here since it is not checked for size nor
-> +		 * is limited to one instance.
-> +		 *
-> +		 * At first inject an additional normal esr_context
-> +		 */
-> +		head->magic = ESR_MAGIC;
-> +		head->size = sizeof(struct esr_context);
-> +		/* and terminate properly */
-> +		write_terminator_record(GET_RESV_NEXT_HEAD(head));
-> +		ASSERT_GOOD_CONTEXT(&sf.uc);
-> +
-> +		/*
-> +		 * now mess with fake esr_context size: leaving less space than
-> +		 * neededwhile keeping size value 16-aligned
-> +		 *
-> +		 * It must trigger a SEGV from Kernel on:
-> +		 *
-> +		 *	resv_sz - offset < sizeof(*head)
-> +		 */
-> +		/* at first set the maximum good 16-aligned size */
-> +		head->size = (resv_sz - offset - need_sz + MIN_SZ_ALIGN) & ~0xfUL;
-> +		/* plus a bit more of 16-aligned sized stuff */
-> +		head->size += MIN_SZ_ALIGN;
-> +		/* and terminate properly */
-> +		write_terminator_record(GET_RESV_NEXT_HEAD(head));
-> +		ASSERT_BAD_CONTEXT(&sf.uc);
-> +		fake_sigreturn(&sf, sizeof(sf), 16);
-> +	}
+> +	/* Forcing sigframe on misaligned (=!16) SP */
+> +	fake_sigreturn(&sf, sizeof(sf), 0);
 > +
 > +	return 1;
 > +}
 
 [...]
-
-Otherwise looks reasonable.
 
 Cheers
 ---Dave
