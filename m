@@ -2,69 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05E068AEB1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 07:24:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 172418AEDF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 07:39:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m+ibASeKQTZsmow9NkMn5aPPwkDKMTMDWpf5yDNBFsA=; b=esNmOxbEOt73WY
-	JCZd9wFZuSDdhlUUonV9m2VZ/opu3Dm7ur3Awj3ah8/Y3iLWtoLo9WPuqOHNiaMb31+Y16r6j6dhG
-	+M/pSXsAiG85FvnmciLkdrXxDYV+nIgpIBKGPsHaVwYxCwDTfLUennqatLKBY21x5gjbuR4L5vkze
-	t4SPQq0mCqWSjl9/ym0vGCwFseR2l3B7uGvcdgJcWNsloHawXqODonH9741QP9dzcjFkbrnyVEhij
-	HHydEIKNwOPOWPkHlDTiR5lxvs38uUPIqF8HiI92r2n1xDieZpHsubLvxuaMYI49vMedFhnI8mpZW
-	Ag08lfy+0vA/EiWMNzWQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MeqU8ordg4DjObfNxhxHzXlqrcNtqqqVhCcu45zdv1I=; b=CvJP0VpUchlSXk
+	XtTmtgMIEfEvC5aKWLSAVH2d7eJ0NexAPw31E3m8pjocqkXiquudXZuPuy2dTCqwxZRY59BXg8x7e
+	8bqUKPur4rlXOzJypuf8KK/6XAzNlg+9hmWtlLAvKMOrQbT7UTQfKSTdaEIf4b2imYGHds+zv68VD
+	yJ2dfb6c9SKKg+kt8ZxlIvwEynjYRj4DVqusL24V044V2GKqlxYAdOeUhH2hvp7bRm2DrG20XsIPe
+	46nnOR2kEJRFa6p75YBpNo7Jx7K2vagLnUaGuDhEg/ZOh7+QVT38r3PXZfKytRcGzawHzcXzEabCa
+	2TfDCEi1yt5KpG0UJLLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxPIg-0003Xj-8A; Tue, 13 Aug 2019 05:24:50 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1hxPWw-0007wV-Cn; Tue, 13 Aug 2019 05:39:34 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxPIO-0003XJ-55; Tue, 13 Aug 2019 05:24:34 +0000
-Received: from [192.168.178.60] ([109.104.47.130]) by mrelayeu.kundenserver.de
- (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MPGiR-1hevT50O45-00PbYR; Tue, 13 Aug 2019 07:23:46 +0200
-Subject: Re: [PATCH v2 15/34] staging/vc04_services: convert put_page() to
- put_user_page*()
-To: john.hubbard@gmail.com, Andrew Morton <akpm@linux-foundation.org>
-References: <20190804224915.28669-1-jhubbard@nvidia.com>
- <20190804224915.28669-16-jhubbard@nvidia.com>
-From: Stefan Wahren <stefan.wahren@i2se.com>
-Message-ID: <f92a9b35-072c-a452-3248-ded047a9ee7e@i2se.com>
-Date: Tue, 13 Aug 2019 07:23:36 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hxPWc-0007w1-G8
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 05:39:17 +0000
+X-Originating-IP: 90.89.68.76
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 8C05940004;
+ Tue, 13 Aug 2019 05:39:06 +0000 (UTC)
+Date: Tue, 13 Aug 2019 07:39:05 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: Re: [PATCH] arm64: dts: allwinner: a64: Drop PMU node
+Message-ID: <20190813053905.hu2hyi7fah2vujzz@flea>
+References: <E1hv5vZ-0000jN-M8@stardust.g4.wien.funkfeuer.at>
+ <CA+E=qVdHOtebR6xjpwTY_Whp0cHLtv82YULmxLPSEzdLN9TnVg@mail.gmail.com>
+ <36e60078-7dd5-9c07-ffa1-6092d8c70fa8@arm.com>
+ <CA+E=qVeAR4AFN99ZVy8EZLW6p_8ucTewOdMis37wnpV3DObaGg@mail.gmail.com>
+ <20190807115614.phm7sbyae6yajkug@flea>
+ <CA+E=qVdh3MHMsEC9XKe5-7O8fGTHFh76WLOgVf+PZPv7c4JE9w@mail.gmail.com>
+ <20190808162628.pthvy3tgf3naj76s@flea>
+ <CA+E=qVeiWoRGn05HpMzx_5yidit4GM18tBrziW5MBo00f_-PKQ@mail.gmail.com>
+ <20190812080420.saelmqb36vkelxn4@flea>
+ <CA+E=qVchsqOF_hVD-qBuKwi7PTMYtUR-LE2dD_mpptFJcWE_yw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190804224915.28669-16-jhubbard@nvidia.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:WLtnGHSdIdsSOgSCw9gLWN/He07a3vhG8P/jw9q/ZsKCLbsJUeS
- 5llVNlt7KE/tvHn+5EOmDYYv4pX1cHVWKOXHtrw4HQWAHuCkTohFsgxlEY0fExapDm8vR8t
- zVIsUr/Bms6Kvxj5sCY8IbKiNL01LBum+j6x95pPZHXG9iG9KDUI7QIiVK2/58tc3NB1jnX
- y7VHJG/KIA+fGCfAbINIQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:e2tiG/LoUCE=:MfCllk8c06iYHLUWJWcKAL
- cdQ1fi1ypP4tC6pu8XAt4M+fU5mGlkjM5ziFPw9nAP5+ICbjFLhxsiDLATVpll3xwUgna69cS
- Ev9bpFgmBYRqbHsiOVM335kNgAU19xY/LXN/GzEuigzotpDhc5IdC4FGsNTdqmIYi0Bx4dgCw
- bLM/SrMXG40Mg1UArtxdqWQvHnINj7yK6JacwPswBAo33CV5S5U4U1PS67DpEMKA7dX0oduGb
- 5fQtkN1kvCZEg2/ekJnnb+PAR6KRS8Eu0zqK7cwQwWxs+nxHFNvcdfFolT7waPuKj24rhpnjW
- ZntPcErm15w8EJ72vFuARtCUk4Lh4jU+zYNtoDE6B8RJqr/+yxycmwEDucEbNXrujkaPH72RU
- fWCHjlXjsJS29DRMlBs91cqiKMaK/ktbzSpegz+iLEJq/HkDuPh/jiz/b8w2crkMXTYEXfcIb
- WqkuI5hHrAdEh99xa/X99FupD8F6iZ52Pv/g2glNHL9WlKL41btCn/KodqBqy/glIqHZeYzq2
- SXjRol/t4oy36qgSCQmUGiCt1lssYLkBWOzcxjui5lZUL2V9O7wn91tHl7G+DbqjQzgMyVtBP
- 60iHHkwkWe3su3M3o+o4m8sWd9OG5XIToU/4cSDhBQohrRIKKqoUbXAyCJH96bxaYdq/zseIf
- oMsHaN/31pBaLs6MtsAa2tu5PRj9qlBX5kso+Y5up4mj5gl7CfIWyGwpM4gPWtVKv1En5k3ZR
- HR/0MJ6spaP8P86u5+VALfxj2aM5bbcj+ZVczoVE2BIVl4lPQEesVoHHwFc=
+Content-Disposition: inline
+In-Reply-To: <CA+E=qVchsqOF_hVD-qBuKwi7PTMYtUR-LE2dD_mpptFJcWE_yw@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_222432_488830_EFAC8C5F 
-X-CRM114-Status: GOOD (  12.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190812_223914_841692_A42FC4D1 
+X-CRM114-Status: GOOD (  30.54  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,57 +70,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- sparclinux@vger.kernel.org, Suniel Mahesh <sunil.m@techveda.org>,
- Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org,
- Ira Weiny <ira.weiny@intel.com>, x86@kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- John Hubbard <jhubbard@nvidia.com>, xen-devel@lists.xenproject.org,
- devel@lists.orangefs.org, linux-media@vger.kernel.org,
- Mihaela Muraru <mihaela.muraru21@gmail.com>, intel-gfx@lists.freedesktop.org,
- linux-block@vger.kernel.org,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- linux-rpi-kernel@lists.infradead.org, ceph-devel@vger.kernel.org,
- Sidong Yang <realwakka@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-nfs@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
- linux-xfs@vger.kernel.org, linux-crypto@vger.kernel.org,
- Kishore KP <kishore.p@techveda.org>, linux-fsdevel@vger.kernel.org,
- Al Viro <viro@zeniv.linux.org.uk>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ "Jared D . McNeill" <jmcneill@netbsd.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Harald Geyer <harald@ccbib.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05.08.19 00:48, john.hubbard@gmail.com wrote:
-> From: John Hubbard <jhubbard@nvidia.com>
+On Mon, Aug 12, 2019 at 11:01:51AM -0700, Vasily Khoruzhick wrote:
+> On Mon, Aug 12, 2019 at 1:04 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> >
+> > On Thu, Aug 08, 2019 at 12:59:07PM -0700, Vasily Khoruzhick wrote:
+> > > On Thu, Aug 8, 2019 at 9:26 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > >
+> > > > On Wed, Aug 07, 2019 at 10:36:08AM -0700, Vasily Khoruzhick wrote:
+> > > > > On Wed, Aug 7, 2019 at 4:56 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > > > >
+> > > > > > On Tue, Aug 06, 2019 at 07:39:26PM -0700, Vasily Khoruzhick wrote:
+> > > > > > > On Tue, Aug 6, 2019 at 2:14 PM Robin Murphy <robin.murphy@arm.com> wrote:
+> > > > > > > >
+> > > > > > > > On 2019-08-06 9:52 pm, Vasily Khoruzhick wrote:
+> > > > > > > > > On Tue, Aug 6, 2019 at 1:19 PM Harald Geyer <harald@ccbib.org> wrote:
+> > > > > > > > >>
+> > > > > > > > >> Vasily Khoruzhick writes:
+> > > > > > > > >>> On Tue, Aug 6, 2019 at 7:35 AM Robin Murphy <robin.murphy@arm.com> wrote:
+> > > > > > > > >>>>
+> > > > > > > > >>>> On 06/08/2019 15:01, Vasily Khoruzhick wrote:
+> > > > > > > > >>>>> Looks like PMU in A64 is broken, it generates no interrupts at all and
+> > > > > > > > >>>>> as result 'perf top' shows no events.
+> > > > > > > > >>>>
+> > > > > > > > >>>> Does something like 'perf stat sleep 1' at least count cycles correctly?
+> > > > > > > > >>>> It could well just be that the interrupt numbers are wrong...
+> > > > > > > > >>>
+> > > > > > > > >>> Looks like it does, at least result looks plausible:
+> > > > > > > > >>
+> > > > > > > > >> I'm using perf stat regularly (cache benchmarks) and it works fine.
+> > > > > > > > >>
+> > > > > > > > >> Unfortunately I wasn't aware that perf stat is a poor test for
+> > > > > > > > >> the interrupts part of the node, when I added it. So I'm not too
+> > > > > > > > >> surprised I got it wrong.
+> > > > > > > > >>
+> > > > > > > > >> However, it would be unfortunate if the node got removed completely,
+> > > > > > > > >> because perf stat would not work anymore. Maybe we can only remove
+> > > > > > > > >> the interrupts or just fix them even if the HW doesn't work?
+> > > > > > > > >
+> > > > > > > > > I'm not familiar with PMU driver. Is it possible to get it working
+> > > > > > > > > without interrupts?
+> > > > > > > >
+> > > > > > > > Yup - you get a grumpy message from the driver, it will refuse sampling
+> > > > > > > > events (the ones which weren't working anyway), and if you measure
+> > > > > > > > anything for long enough that a counter overflows you'll get wonky
+> > > > > > > > results. But for counting hardware events over relatively short periods
+> > > > > > > > it'll still do the job.
+> > > > > > >
+> > > > > > > I tried to drop interrupts completely from the node but 'perf top' is
+> > > > > > > still broken. Though now in different way: it complains "cycles: PMU
+> > > > > > > Hardware doesn't support sampling/overflow-interrupts. Try 'perf
+> > > > > > > stat'"
+> > > > > >
+> > > > > > I have no idea if that's the culprit, but what is the state of the
+> > > > > > 0x09010000 register?
+> > > > >
+> > > > > What register is that and how do I check it?
+> > > >
+> > > > It's in the CPUX Configuration block, and the bits are labelled as CPU
+> > > > Debug Reset.
+> > > >
+> > > > And if you have busybox, you can use devmem.
+> > >
+> > > CPUX configuration block is at 0x01700000 according to A64 user
+> > > manual, and particular register you're interested in is at 0x01700080,
+> > > its value is 0x1110110F.
+> > >
+> > > Bits 16-19 are not defined in user manual and are not set.
+> >
+> > Sorry, I somehow thought this was for the H6...
+> >
+> > I don't have any idea then :/
 >
-> For pages that were retained via get_user_pages*(), release those pages
-> via the new put_user_page*() routines, instead of via put_page() or
-> release_pages().
->
-> This is part a tree-wide conversion, as described in commit fc1d8e7cca2d
-> ("mm: introduce put_user_page*(), placeholder versions").
->
-> Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
->
-> Cc: Eric Anholt <eric@anholt.net>
-> Cc: Stefan Wahren <stefan.wahren@i2se.com>
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: Mihaela Muraru <mihaela.muraru21@gmail.com>
-> Cc: Suniel Mahesh <sunil.m@techveda.org>
-> Cc: Al Viro <viro@zeniv.linux.org.uk>
-> Cc: Sidong Yang <realwakka@gmail.com>
-> Cc: Kishore KP <kishore.p@techveda.org>
-> Cc: linux-rpi-kernel@lists.infradead.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: devel@driverdev.osuosl.org
-> Signed-off-by: John Hubbard <jhubbard@nvidia.com>
-Acked-by: Stefan Wahren <stefan.wahren@i2se.com>
+> OK, so what should we do? 'perf top'/'perf record' work fine if PMU
+> node is dropped, but they don't work if PMU node is present (even with
+> interrupts dropped). I'd prefer to have 'perf top' and 'perf record'
+> working instead of 'perf stat'
+
+Well, it doesn't work so we should just remove the node, and if
+someone wants it back, they should figure it out.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
