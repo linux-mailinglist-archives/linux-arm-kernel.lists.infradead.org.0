@@ -2,76 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2823D8B438
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 11:34:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06C548B458
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 11:38:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vw5x5Ys3A0z4Be4pYhMi1U6+ZR35XPFEb5ZkGDSw6PY=; b=DuiA/KgZ4TuKZ9
-	RTGl0ls/xs1YS/3vEVtErSGVjxr1m0BZSATGWVx9uJQVyGra1b7g47xBT/fJ/Q6EWki8alncxaAr4
-	zQccTkAbfQlKCj1Ooygem3ezL/ESIO+aF4fsewgYy+LktYRpC1SVQwjE0FSuPS/Hixw5Tne8pisXr
-	XvSc+BVs1fSUVu6fIxEND2yUk7C0Io+ncuxeSLc6xoMIORCOpxkIypNO0VG/Dt9wFLOk2Fxm/Q1GU
-	Wqxo69jt8VgY/X1PrlhndNchcoH1xwDv0HdBSiz/k2c8B7LpF3WsS1adn5EdbKy6FLIevD9mXet4f
-	uFUI88VmDZ1xrJ097VCw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ip1fjWh47g0i9m2MDiEUHMyHaNxsccHqbkr+LIF8DRg=; b=d3aibGk9nC3pzN
+	7v1UPWGz/WsA5H9bgeCQ2cnUn9cFfn6xwLp+1nmz+RAtNadK8LAE59sCOW2doks+/jC4UP9v9nNM/
+	L8yN4QIs8h4yO0I8erh4GtGK17eGJCSieJkmXnCHnPgwTP+EycZbIAXdkGLPqd+CNwXRyiDklDtBa
+	kHeHkOaaD49GEkIVsR+Ms5bwoRODbFu4yENSvQSEgkqHjkIbU9sc9gq06Bi1sYWKZHw5/Tex+Oy8t
+	Yj1zHwLhMewiH+ILd6ujtXM4Ny2Nsq/gVOPFSDGtEhBkkIo32rJ+bMUNEGwPf2aVlNgWGfJTUo0xX
+	h7DxWKSiwx7soLTulLOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxTC8-0003Zj-QS; Tue, 13 Aug 2019 09:34:21 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1hxTGO-0005Rn-5z; Tue, 13 Aug 2019 09:38:44 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxTBb-0003XG-1p; Tue, 13 Aug 2019 09:33:48 +0000
-Received: by mail-ot1-f66.google.com with SMTP id n5so170078490otk.1;
- Tue, 13 Aug 2019 02:33:44 -0700 (PDT)
+ id 1hxTGA-0005RR-4v
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 09:38:31 +0000
+Received: by mail-pf1-x441.google.com with SMTP id v12so3494823pfn.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 02:38:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=RaD6A+K4/8jdvOIsXluiNkAgL7M1+kFjGExIzAUXUW8=;
+ b=P9qJfWwQxPZfidskchVBFJ6nzdSG06wa9bYO4Ka8Z3FpbaIb/pOM0nWavs1Rp0cmwE
+ avzBz1VE8gXB7z8yFrZriS82QzSv0+jDDzi0wloLQEWVaq4cFhu7k0W3SFCupnzo7Awb
+ ok5s05HaN62VYRuFe331qpIqNLxTOiLF3gKl4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=fe2+dAApvC1/VPt5qF5G9PQvhNevUg8+Cv3+qUMDu8o=;
- b=KbYpvxfZ6RAeVerhkv3CZdm1FxV2OWevNTwmYuvYXRI8h/veFe4gKuhNXdeBjL6vWR
- 6gT8/LWjm9gHvGwFoLPm2iAYBhcPePIfJcp//rhN9lcSAIwZGezLmrKb33yD4r2ttV+T
- PFGh2L89JNaYlIQ6KC5jSF03RWf/56k/jCLCSXoTHQ7N11lQrEjtmo7YfKyN4Wclmgyh
- k0OhiKgTurQJ4Zt4G4JvUGmJz3EyRAfo5rhv/YdMy3RyEskcup7E9+y20C0FyP6GriZa
- I5WxcMCduoMNpfkTfJE0WCN+T9DTqPWdmWO4KGjrgSxT40HabkMp2DNfGNxVnhrE1ZoB
- t7lw==
-X-Gm-Message-State: APjAAAUh0vw2kTkTKDBbu9JiCxyf3c1ftbu76d8rGlLtG4XeAGJjfjqs
- n5w1a1/tRGX3C7ffr7FD/3EwY0ec4omQp7rbfp0=
-X-Google-Smtp-Source: APXvYqwEtEvl7H6vDy32xA+A2TjXiepeEmCEppGcjO6tLj2iPxuIL4+T4ZepBvzdNwRLEXhv/kpaoXuvNsmrqAGDsHI=
-X-Received: by 2002:a9d:68c5:: with SMTP id i5mr73710oto.250.1565688823565;
- Tue, 13 Aug 2019 02:33:43 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=RaD6A+K4/8jdvOIsXluiNkAgL7M1+kFjGExIzAUXUW8=;
+ b=UqKWOWaigVhBIp5a/t4KGZlERiU9D5XTrS98d5vehCikjBT/sMWsHjgiipu+WeGBIp
+ BhEQRfH4+FcL9sc27bLz5Pn6VkqQtdpE6zLsrTOf4OUfbfkj3ZFWRJO+6EdQUMazk7h2
+ AetAP86O8ouVnksl+C3BGPB1Dj3M2OvJXP47dBP8t4lKUHkO9YYyUVQ4JrSx4yNpuaQe
+ b7IiY35g+VSp267c9e7XAkwyGRTvhM9VyHkZfseOGEkrwfqM+9E+qnOLODNLwXbPap02
+ JBKCFUQuUiMfjLjSIFhQvO2ML81pEheDW+WiVQCYM7iXMbAz5vU9P9YawhEaqEbK14Dv
+ bESQ==
+X-Gm-Message-State: APjAAAWiQ8nZR51oqNjTQhy3tXzdINzxgwSnz/N476Sf5K7wMSuEEO3G
+ BBAjpTjIurtcENezdHCRFM+qGjrNn1QmIQ==
+X-Google-Smtp-Source: APXvYqy+sJLrmolDFV0o4Mz+fxfscm7CXTjw8yiXTupKIB8qVuUNk3Kz27oocXNCPBU7aDi5xwq5dA==
+X-Received: by 2002:a17:90a:be06:: with SMTP id
+ a6mr1383491pjs.92.1565689108872; 
+ Tue, 13 Aug 2019 02:38:28 -0700 (PDT)
+Received: from fshao-glinux.tpe.corp.google.com
+ ([2401:fa00:1:10:c4f0:9345:d0e8:a355])
+ by smtp.gmail.com with ESMTPSA id d2sm993283pjs.21.2019.08.13.02.38.26
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 13 Aug 2019 02:38:28 -0700 (PDT)
+From: Fei Shao <fshao@chromium.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] Input: cros_ec_keyb: Add back missing mask for event_type
+Date: Tue, 13 Aug 2019 17:38:21 +0800
+Message-Id: <20190813093821.74158-1-fshao@chromium.org>
+X-Mailer: git-send-email 2.23.0.rc1.153.gdeed80330f-goog
 MIME-Version: 1.0
-References: <cover.1564161140.git.andrzej.p@collabora.com>
- <ebb75e71b8b7c8d65d54a947a03fd21b8969fb3a.1564161140.git.andrzej.p@collabora.com>
- <20190808034208.GA31284@roeck-us.net>
-In-Reply-To: <20190808034208.GA31284@roeck-us.net>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 13 Aug 2019 11:33:32 +0200
-Message-ID: <CAMuHMdXyGtogEfyFP1RnG2kM504WZ=nzfN_3z6rk4wJZqHaJQw@mail.gmail.com>
-Subject: Re: [PATCH v6 19/24] drm/bridge: dumb-vga-dac: Provide ddc symlink in
- connector sysfs directory
-To: Guenter Roeck <linux@roeck-us.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_023347_097443_596A852B 
-X-CRM114-Status: GOOD (  14.06  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190813_023830_216523_01BAFFD2 
+X-CRM114-Status: GOOD (  10.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,80 +94,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- Douglas Anderson <dianders@chromium.org>,
- linux-tegra <linux-tegra@vger.kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, kernel@collabora.com,
- Sam Ravnborg <sam@ravnborg.org>, linux-samsung-soc@vger.kernel.org,
- Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Dave Airlie <airlied@redhat.com>,
- freedreno@lists.freedesktop.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>, linux-arm-msm@vger.kernel.org,
- Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Jyri Sarha <jsarha@ti.com>, Mamta Shukla <mamtashukla555@gmail.com>,
- linux-mediatek@lists.infradead.org, Maxime Ripard <mripard@kernel.org>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, amd-gfx@lists.freedesktop.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>, Enrico Weigelt <info@metux.net>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- Todor Tomov <todor.tomov@linaro.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Huang Rui <ray.huang@amd.com>,
- Thomas Zimmermann <tzimmermann@suse.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Alex Deucher <alexander.deucher@amd.com>, Shawn Guo <shawnguo@kernel.org>,
- =?UTF-8?Q?Christian_K=C3=B6nig?= <christian.koenig@amd.com>,
- Gerd Hoffmann <kraxel@redhat.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Brian Norris <briannorris@chromium.org>, Fei Shao <fshao@chromium.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>, linux-kernel@vger.kernel.org,
+ Ting Shen <phoenixshen@chromium.org>, Guenter Roeck <groeck@chromium.org>,
+ linux-input@vger.kernel.org,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Benson Leung <bleung@chromium.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgR8O8bnRlciwKCk9uIFRodSwgQXVnIDgsIDIwMTkgYXQgNTo0MiBBTSBHdWVudGVyIFJvZWNr
-IDxsaW51eEByb2Vjay11cy5uZXQ+IHdyb3RlOgo+IE9uIEZyaSwgSnVsIDI2LCAyMDE5IGF0IDA3
-OjIzOjEzUE0gKzAyMDAsIEFuZHJ6ZWogUGlldHJhc2lld2ljeiB3cm90ZToKPiA+IFVzZSB0aGUg
-ZGRjIHBvaW50ZXIgcHJvdmlkZWQgYnkgdGhlIGdlbmVyaWMgY29ubmVjdG9yLgo+ID4KPiA+IFNp
-Z25lZC1vZmYtYnk6IEFuZHJ6ZWogUGlldHJhc2lld2ljeiA8YW5kcnplai5wQGNvbGxhYm9yYS5j
-b20+Cj4gPiBSZXZpZXdlZC1ieTogTmVpbCBBcm1zdHJvbmcgPG5hcm1zdHJvbmdAYmF5bGlicmUu
-Y29tPgo+Cj4gVGhpcyBwYXRjaCByZXN1bHRzIGluIGEgY3Jhc2ggd2hlbiBydW5uaW5nIHFlbXU6
-dmVyc2F0aWxlcGIuCj4KPiBVbmFibGUgdG8gaGFuZGxlIGtlcm5lbCBOVUxMIHBvaW50ZXIgZGVy
-ZWZlcmVuY2UgYXQgdmlydHVhbCBhZGRyZXNzIDAwMDAwMGM1Cj4gcGdkID0gKHB0cnZhbCkKPiBb
-MDAwMDAwYzVdICpwZ2Q9MDAwMDAwMDAKPiBJbnRlcm5hbCBlcnJvcjogT29wczogNSBbIzFdIEFS
-TQo+IE1vZHVsZXMgbGlua2VkIGluOgo+IENQVTogMCBQSUQ6IDEgQ29tbTogc3dhcHBlciBOb3Qg
-dGFpbnRlZCA1LjMuMC1yYzErICMxCj4gSGFyZHdhcmUgbmFtZTogQVJNLVZlcnNhdGlsZSAoRGV2
-aWNlIFRyZWUgU3VwcG9ydCkKPiBQQyBpcyBhdCBzeXNmc19kb19jcmVhdGVfbGlua19zZCsweDM4
-LzB4ZDgKPiBMUiBpcyBhdCBzeXNmc19kb19jcmVhdGVfbGlua19zZCsweDM4LzB4ZDgKCj4gWzxj
-MDFhYzk0Yz5dIChzeXNmc19kb19jcmVhdGVfbGlua19zZCkgZnJvbSBbPGMwNGM3ZmMwPl0gKGRy
-bV9jb25uZWN0b3JfcmVnaXN0ZXIucGFydC4xKzB4NDAvMHhhMCkKPiBbPGMwNGM3ZmMwPl0gKGRy
-bV9jb25uZWN0b3JfcmVnaXN0ZXIucGFydC4xKSBmcm9tIFs8YzA0Yzg3ZTA+XSAoZHJtX2Nvbm5l
-Y3Rvcl9yZWdpc3Rlcl9hbGwrMHg5MC8weGI4KQo+IFs8YzA0Yzg3ZTA+XSAoZHJtX2Nvbm5lY3Rv
-cl9yZWdpc3Rlcl9hbGwpIGZyb20gWzxjMDRjZWZjYz5dIChkcm1fbW9kZXNldF9yZWdpc3Rlcl9h
-bGwrMHg0NC8weDZjKQo+IFs8YzA0Y2VmY2M+XSAoZHJtX21vZGVzZXRfcmVnaXN0ZXJfYWxsKSBm
-cm9tIFs8YzA0YjRlYmM+XSAoZHJtX2Rldl9yZWdpc3RlcisweDE1Yy8weDFjMCkKPiBbPGMwNGI0
-ZWJjPl0gKGRybV9kZXZfcmVnaXN0ZXIpIGZyb20gWzxjMDRkZjJmOD5dIChwbDExMV9hbWJhX3By
-b2JlKzB4MmUwLzB4NGFjKQo+IFs8YzA0ZGYyZjg+XSAocGwxMTFfYW1iYV9wcm9iZSkgZnJvbSBb
-PGMwNDVlOGQ4Pl0gKGFtYmFfcHJvYmUrMHg5Yy8weDExOCkKClNlZWluZyB0aGUgc2FtZSB0aGlu
-ZyBvbiBTYWx2YXRvci1YUywgZHVlIHRvIHZnYS0+ZGRjIGJlaW5nIC1FTk9ERVYuCgo+ICMgZmly
-c3QgYmFkIGNvbW1pdDogW2E0ZjkwODdlODVkZTE0MWU0ZTZkMjFhYzJjNTgzYWUwOTZjYzlhYmFd
-IGRybS9icmlkZ2U6IGR1bWItdmdhLWRhYzogUHJvdmlkZSBkZGMgc3ltbGluayBpbiBjb25uZWN0
-b3Igc3lzZnMgZGlyZWN0b3J5CgpGaXggc2VudApodHRwczovL2xvcmUua2VybmVsLm9yZy9sa21s
-LzIwMTkwODEzMDkzMDQ2LjQ5NzYtMS1nZWVydCtyZW5lc2FzQGdsaWRlci5iZS8KCkdye29ldGpl
-LGVldGluZ31zLAoKICAgICAgICAgICAgICAgICAgICAgICAgR2VlcnQKCi0tIApHZWVydCBVeXR0
-ZXJob2V2ZW4gLS0gVGhlcmUncyBsb3RzIG9mIExpbnV4IGJleW9uZCBpYTMyIC0tIGdlZXJ0QGxp
-bnV4LW02OGsub3JnCgpJbiBwZXJzb25hbCBjb252ZXJzYXRpb25zIHdpdGggdGVjaG5pY2FsIHBl
-b3BsZSwgSSBjYWxsIG15c2VsZiBhIGhhY2tlci4gQnV0CndoZW4gSSdtIHRhbGtpbmcgdG8gam91
-cm5hbGlzdHMgSSBqdXN0IHNheSAicHJvZ3JhbW1lciIgb3Igc29tZXRoaW5nIGxpa2UgdGhhdC4K
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSBMaW51cyBUb3J2YWxkcwoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+In the previous patch we didn't mask out event_type in case statement,
+so switches are always picked instead of buttons, which results in
+ChromeOS devices misbehaving when power button is pressed.
+This patch adds back the missing mask.
+
+Fixes: d096aa3eb604 ("Input: cros_ec_keyb: mask out extra flags in event_type")
+Signed-off-by: Fei Shao <fshao@chromium.org>
+---
+ drivers/input/keyboard/cros_ec_keyb.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/input/keyboard/cros_ec_keyb.c b/drivers/input/keyboard/cros_ec_keyb.c
+index 38cb6d82d8fe..bef7bee6f05e 100644
+--- a/drivers/input/keyboard/cros_ec_keyb.c
++++ b/drivers/input/keyboard/cros_ec_keyb.c
+@@ -226,6 +226,8 @@ static int cros_ec_keyb_work(struct notifier_block *nb,
+ {
+ 	struct cros_ec_keyb *ckdev = container_of(nb, struct cros_ec_keyb,
+ 						  notifier);
++	uint8_t mkbp_event_type = ckdev->ec->event_data.event_type &
++				  EC_MKBP_EVENT_TYPE_MASK;
+ 	u32 val;
+ 	unsigned int ev_type;
+
+@@ -237,7 +239,7 @@ static int cros_ec_keyb_work(struct notifier_block *nb,
+ 	if (queued_during_suspend && !device_may_wakeup(ckdev->dev))
+ 		return NOTIFY_OK;
+
+-	switch (ckdev->ec->event_data.event_type & EC_MKBP_EVENT_TYPE_MASK) {
++	switch (mkbp_event_type) {
+ 	case EC_MKBP_EVENT_KEY_MATRIX:
+ 		pm_wakeup_event(ckdev->dev, 0);
+
+@@ -264,7 +266,7 @@ static int cros_ec_keyb_work(struct notifier_block *nb,
+ 	case EC_MKBP_EVENT_SWITCH:
+ 		pm_wakeup_event(ckdev->dev, 0);
+
+-		if (ckdev->ec->event_data.event_type == EC_MKBP_EVENT_BUTTON) {
++		if (mkbp_event_type == EC_MKBP_EVENT_BUTTON) {
+ 			val = get_unaligned_le32(
+ 					&ckdev->ec->event_data.data.buttons);
+ 			ev_type = EV_KEY;
+--
+2.23.0.rc1.153.gdeed80330f-goog
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
