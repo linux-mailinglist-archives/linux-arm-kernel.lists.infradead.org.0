@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1521F8BF29
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 19:03:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D79E8BF2B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 19:03:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=izl+0JJ3Cdey0oIrZq3wgRjXC2TpxIENXs4WOiAI6kE=; b=aLwafVEg5/GhHp2FtcTX+kepuc
-	BnVaBXTyqEY3Xc4/gteTIQaxUWnmq3M5o/5zf3m22M47Mkt557tN2KOjyy2Cy7d99c3oDBofPgW3b
-	A34P649OlefgpsdaEw7pKhvF+ZUt5ZGl3asp4H3yUQXAzQ2REq6S/v/4W4BxuX3aA3uGermqRHmjF
-	Z5534ImS5q27D6Z2h3zUx2Qrn2FFO3OyMmbLKcI/1LPrx+GoWtVS8eRIA2VrLbPKK/TzRb0d/weYn
-	fzpqTAtPBBVAkmCfIR8fHJpCPQ5frcCrvlqEPoB8gc4+2gt/HCadTcZw025mIW2638Jk+M08twyf3
-	hNxIsz8A==;
+	bh=j2Mt6rtvxvRTa+EL0GP4wXRk8WwlPNt1nIg4O/mxMQ4=; b=sQfmAvDaT8xPp2vkFzffxQ5NOC
+	Cqpnnx8u2nmvLC3gtW2FEplRw8yOEAQC9cUhlwoOdtJmKELMraJHSa/DL8XzdiP1NDQkj3cfpvY4p
+	XkUX7sdX/XJCXicV5n3PGByHMgmL1pqrw9vfm5/9Ke4Wh4hejLscwZyiUjgJ6+XF0SqE+Laz7IjPj
+	MrMelyr8VXkjx1Y4CCEUt9oABfNXL+2UgrrT0fRKZtVVmGUU+U+2By4KcDDS/HaobUVDhCOXOQJEH
+	pU5jt5Pl6c6uO79qetjk9HZAIpS0CuYkuQCs7fhNCUvGqXEzOn/UVleOklijQZ7xTIiplApTUHJWz
+	OtRGkq3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxaCO-0000dG-Ib; Tue, 13 Aug 2019 17:03:04 +0000
+	id 1hxaCq-00019a-4A; Tue, 13 Aug 2019 17:03:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxaBL-0008MO-S4
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 17:02:01 +0000
+ id 1hxaBN-0008Pm-CS
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 17:02:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6F9015A2;
- Tue, 13 Aug 2019 10:01:59 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0F9CF15AB;
+ Tue, 13 Aug 2019 10:02:01 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 804103F706;
- Tue, 13 Aug 2019 10:01:58 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id DCDD13F706;
+ Tue, 13 Aug 2019 10:01:59 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 4/8] arm64: memory: Simplify virt_to_page() implementation
-Date: Tue, 13 Aug 2019 18:01:45 +0100
-Message-Id: <20190813170149.26037-5-will@kernel.org>
+Subject: [PATCH 5/8] arm64: memory: Simplify _VA_START and _PAGE_OFFSET
+ definitions
+Date: Tue, 13 Aug 2019 18:01:46 +0100
+Message-Id: <20190813170149.26037-6-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190813170149.26037-1-will@kernel.org>
 References: <20190813170149.26037-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_100200_069574_E1647BF1 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20190813_100201_492663_AAA880CD 
+X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -70,27 +72,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Build virt_to_page() on top of virt_to_pfn() so we can avoid the need
-for explicit shifting.
+Rather than subtracting from -1 and then adding 1, we can simply
+subtract from 0.
 
+Cc: Steve Capper <steve.capper@arm.com>
 Signed-off-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/memory.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/include/asm/memory.h | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-index 77074b3a1025..56be462c69ce 100644
+index 56be462c69ce..5552c8cba1e2 100644
 --- a/arch/arm64/include/asm/memory.h
 +++ b/arch/arm64/include/asm/memory.h
-@@ -311,7 +311,7 @@ static inline void *phys_to_virt(phys_addr_t x)
- #define ARCH_PFN_OFFSET		((unsigned long)PHYS_PFN_OFFSET)
- 
- #if !defined(CONFIG_SPARSEMEM_VMEMMAP) || defined(CONFIG_DEBUG_VIRTUAL)
--#define virt_to_page(kaddr)	pfn_to_page(__pa(kaddr) >> PAGE_SHIFT)
-+#define virt_to_page(kaddr)	pfn_to_page(virt_to_pfn(kaddr))
+@@ -44,8 +44,7 @@
+  * VA_START - the first kernel virtual address.
+  */
+ #define VA_BITS			(CONFIG_ARM64_VA_BITS)
+-#define _PAGE_OFFSET(va)	(UL(0xffffffffffffffff) - \
+-					(UL(1) << (va)) + 1)
++#define _PAGE_OFFSET(va)	(-(UL(1) << (va)))
+ #define PAGE_OFFSET		(_PAGE_OFFSET(VA_BITS))
+ #define KIMAGE_VADDR		(MODULES_END)
+ #define BPF_JIT_REGION_START	(KASAN_SHADOW_END)
+@@ -63,8 +62,7 @@
  #else
- #define page_to_virt(x)	({						\
- 	__typeof__(x) __page = x;					\
+ #define VA_BITS_MIN		(VA_BITS)
+ #endif
+-#define _VA_START(va)		(UL(0xffffffffffffffff) - \
+-				(UL(1) << ((va) - 1)) + 1)
++#define _VA_START(va)		(-(UL(1) << ((va) - 1)))
+ 
+ #define KERNEL_START      _text
+ #define KERNEL_END        _end
 -- 
 2.11.0
 
