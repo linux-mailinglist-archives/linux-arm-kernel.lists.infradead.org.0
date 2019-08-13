@@ -2,51 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C739B8B92B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 14:52:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 839BF8B96D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 15:03:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mTwTDDqo7aFT+KrKfmJYkaq0KGvI5E9zABRijup5O24=; b=rEvC2mrfbar/TM
-	fG3IczI7Z64swY7bZJKBNZDtIKv80KiLqbcXcFDt9oPt59f/vOsO2swrT24QujthHEF3pyjfkA+ih
-	xT1duZ1xiEMb9KDOgdCfHvHydbZ/nuLiG/6xJSA4bz7GC7Vdy/5cvAUUnxJfmFVYjC77qeAuL+DgE
-	BQ2nW9OGHI4QUOoG/IW5ZZz1F7LetGcEiSp3iwuKNyRDo8qznKszfCLxLiLYLf6y5mqkxjWQBT5qH
-	9XNwL2XdHz0K/Va/XCZKNv6epAnBizTO5Q5x7tu5PP29DdqlQEP7W3BBPPEGQhQSlPtz14kFgf+/C
-	MhEneXGiYborjcdOBfKQ==;
+	List-Owner; bh=Maq6fCZ1uvyP2j4tkP1YumEnd3rVxg8L0Lezu00Und0=; b=nBVI+5+5Mr5zrJ
+	B4jjvGhzQRh6MW1Q/yzvcG7nFtP/7wwx1DncNW3PvEnVTMD1ceC4C49VlQoHkQpkZmieGAdR7tjon
+	36Nz0drh8wmie5ZjzeH7U6gglkUZIpYRCRICVH0QzGmdf2z6TtuBrUB9v5oBWiarmZE0goyf7Jyf4
+	mVSQwKEydem2cVUAHBwt7TgVRKI+dN4QD7VnOme3Mo/pEeVgaBhX58WbHQiHgvh+QKZD+mzhJOxrj
+	Fwjf6mm0rBO4fRO3vC3ELoSzTHBX7CA9mJjJGwo50hwCc5UJgzrDIeb7xbpvHaqdiKl4Emk+UnVXz
+	IKS0X4OJJC+eB1ji1xOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxWHb-0008Ro-3G; Tue, 13 Aug 2019 12:52:11 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hxWSY-0003dY-MC; Tue, 13 Aug 2019 13:03:30 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxWHQ-0008QH-C1
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 12:52:01 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id DF87028A5AE
-From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-To: dafna.hirschfeld@collabora.com
-Subject: [PATCH v3 1/2] dt-bindings: arm: imx: add imx8mq nitrogen support
-Date: Tue, 13 Aug 2019 14:51:47 +0200
-Message-Id: <20190813125147.29605-2-dafna.hirschfeld@collabora.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190813125147.29605-1-dafna.hirschfeld@collabora.com>
-References: <20190813125147.29605-1-dafna.hirschfeld@collabora.com>
+ id 1hxWSN-0003NU-Oz; Tue, 13 Aug 2019 13:03:20 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 13 Aug 2019 06:01:16 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,381,1559545200"; d="scan'208";a="194190251"
+Received: from kuha.fi.intel.com ([10.237.72.189])
+ by fmsmga001.fm.intel.com with SMTP; 13 Aug 2019 06:01:11 -0700
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation);
+ Tue, 13 Aug 2019 16:01:10 +0300
+Date: Tue, 13 Aug 2019 16:01:10 +0300
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Subject: Re: [PATCH next v9 07/11] usb: roles: Add
+ fwnode_usb_role_switch_get() function
+Message-ID: <20190813130110.GE4691@kuha.fi.intel.com>
+References: <1565695634-9711-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1565695634-9711-8-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1565695634-9711-8-git-send-email-chunfeng.yun@mediatek.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_055200_543278_CE291FCE 
-X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-CacheID: sfid-20190813_060319_823996_D179F7B6 
+X-CRM114-Status: UNSURE (   9.95  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,38 +70,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ezequiel@collabora.com,
- s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- Troy Kisky <troy.kisky@boundarydevices.com>,
- Gary Bisson <gary.bisson@boundarydevices.com>, robh+dt@kernel.org,
- kernel@pengutronix.de, kernel@collabora.com, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>,
+ Badhri Jagan Sridharan <badhri@google.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Nagarjuna Kristam <nkristam@nvidia.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogR2FyeSBCaXNzb24gPGdhcnkuYmlzc29uQGJvdW5kYXJ5ZGV2aWNlcy5jb20+CgpUaGUg
-Tml0cm9nZW44TSBpcyBhbiBBUk0gYmFzZWQgc2luZ2xlIGJvYXJkIGNvbXB1dGVyIChTQkMpCmRl
-c2lnbmVkIHRvIGxldmVyYWdlIHRoZSBmdWxsIGNhcGFiaWxpdGllcyBvZiBOWFDigJlzIGkuTVg4
-TQpRdWFkIHByb2Nlc3Nvci4KClNpZ25lZC1vZmYtYnk6IEdhcnkgQmlzc29uIDxnYXJ5LmJpc3Nv
-bkBib3VuZGFyeWRldmljZXMuY29tPgpTaWduZWQtb2ZmLWJ5OiBUcm95IEtpc2t5IDx0cm95Lmtp
-c2t5QGJvdW5kYXJ5ZGV2aWNlcy5jb20+CltEYWZuYTogcG9ydGluZyB2ZW5kb3IncyBjb2RlIHRv
-IG1haW5saW5lXQpTaWduZWQtb2ZmLWJ5OiBEYWZuYSBIaXJzY2hmZWxkIDxkYWZuYS5oaXJzY2hm
-ZWxkQGNvbGxhYm9yYS5jb20+Ci0tLQogRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdz
-L2FybS9mc2wueWFtbCB8IDEgKwogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspCgpkaWZm
-IC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9mc2wueWFtbCBi
-L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vZnNsLnlhbWwKaW5kZXggMzYy
-YmY4MjdjYWQxLi4xNmRiMWM2OTliYTcgMTAwNjQ0Ci0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNl
-dHJlZS9iaW5kaW5ncy9hcm0vZnNsLnlhbWwKKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
-L2JpbmRpbmdzL2FybS9mc2wueWFtbApAQCAtMjI0LDYgKzIyNCw3IEBAIHByb3BlcnRpZXM6CiAg
-ICAgICAtIGRlc2NyaXB0aW9uOiBpLk1YOE1RIGJhc2VkIEJvYXJkcwogICAgICAgICBpdGVtczoK
-ICAgICAgICAgICAtIGVudW06CisgICAgICAgICAgICAgIC0gYm91bmRhcnksaW14OG1xLW5pdHJv
-Z2VuOG0gIyBpLk1YOE1RIE5JVFJPR0VOIEJvYXJkCiAgICAgICAgICAgICAgIC0gZnNsLGlteDht
-cS1ldmsgICAgICAgICAgICAjIGkuTVg4TVEgRVZLIEJvYXJkCiAgICAgICAgICAgICAgIC0gcHVy
-aXNtLGxpYnJlbTUtZGV2a2l0ICAgICAjIFB1cmlzbSBMaWJyZW01IGRldmtpdAogICAgICAgICAg
-ICAgICAtIHRlY2huZXhpb24scGljby1waS1pbXg4bSAgIyBUZWNoTmV4aW9uIFBJQ08tUEktOE0g
-ZXZrCi0tIAoyLjIwLjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Tue, Aug 13, 2019 at 07:27:10PM +0800, Chunfeng Yun wrote:
+> From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+> 
+> The fwnode_usb_role_switch_get() function is exactly the
+> same as usb_role_switch_get(), except that it takes struct
+> fwnode_handle as parameter instead of struct device.
+> 
+> Suggested-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+
+Why is my SoB replaced with Suggested-by tag in this patch?
+
+thanks,
+
+-- 
+heikki
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
