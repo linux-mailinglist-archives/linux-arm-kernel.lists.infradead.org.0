@@ -2,84 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01C6D8BC2B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 16:55:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 867928BC4D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 17:00:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fEpIPIdNZMZCcqPCXFd4kF9bOiHfxaICl9plTy8jldI=; b=lz1nL8a/rSIsIc
-	7oyRi+rg/7PYohZsDQhscwnzFelNw0i+GxvacWzpw02alBcbQvcsozbn0mMGs9EKa2FwZebcK/sTl
-	Lsx0+tjKgSLhOtGOSaz5hcIHwYIO527fiPZRtdAoLLzliMW9OoFxFkoWBINaPlICtSE0dUjjNN/1R
-	aV/tpC7VxHHSpOlO2eFhup6d9xC536oPDewoD4edZnb9EqtBGl1LaaTv22N7+v3Rjvp+6u21Uai4+
-	9YSasUz9SSiagNAaq+2U4az2i07diSqPiqZK5RxYna6N02QTUeqTyqumvBtbEellHzxmu66riwafe
-	U+UZHp3+0YjgLqIhyZyA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=n9XfVeT4AARa8swQDJnQI0AiMMUYJE8dYv9q3B73i1g=; b=CZpRhRrM1ARQvm
+	JmK91yI1zORSqbTRomiFLfmCXu4xVMFihIKAIxFu1Yq4zcqDnina3CC1n7YPPZSTJYB1PCJk4sHHE
+	yh5EGYQYtqwJuLHbeFVHYA6I46BveOX2/ArVnGLYQAMRXH6D7w2urwyBxEC0jGka03U5ikpglvG57
+	yz3OYx/Ki1S4YQWgvczzH0NLk+nevD119E8y6FbH2u8j4k+coO9dMFp1bakXE3B7GDoqf+9jdVNZg
+	i+pie+ag+mFPpbv2BRj6Y/tWy0EMFKKMl6zxDmXLIuoSJFPQigha/u4uaf9Ybh1u8LR0nlRk5KfFf
+	+VtBfbQxqJJxAkYWR3tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxYCQ-0003wA-Pc; Tue, 13 Aug 2019 14:54:59 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hxYHa-0007RB-PP; Tue, 13 Aug 2019 15:00:18 +0000
+Received: from mail-eopbgr40048.outbound.protection.outlook.com ([40.107.4.48]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxYBM-00036T-NM
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 14:53:54 +0000
-Received: by mail-lj1-x241.google.com with SMTP id x4so9697735ljj.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 07:53:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Gzz+ec+CQ/JmfDyh3zryc1RUlCYNkhZA/jLenY/9FBY=;
- b=JinqJSomS137wvecn5MBycFgmWUud91UGX1KFeRUACPtFtnuMCoa61SyIPfAFLjNlp
- ZfuT3KplnGEkwWi+rWnqswK07W3bCma3zOQiec5bGpmq4PlVDQGn4yRfc/HgcFTEWSUm
- EjyyIPo78KLvpn22HFXyavf/HPeY04dicPsE/65H1gxlql+Q4QgmuRBFqYGqbXf9XNe5
- e/g7qtPXIgoaCpT9X+LtTACZ4ztwPmZsSx1iGs5pDr6JyjmE0wzxEEiFeYXeYORGdC3w
- ntbDTmtKZkxrVTjDAsGDvoUf7yva4yCLbEropkBV8nHWzfT+GoGSOzXWHYfWUgds876u
- WRmw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Gzz+ec+CQ/JmfDyh3zryc1RUlCYNkhZA/jLenY/9FBY=;
- b=I8nNl7uXcwB9Rq+AvrAgqTjMppiGdjd3332k5jiIy3AYzmobO89qAjdIfL2FmRjNfs
- ZW7lYIVMTHGozhPwVG2xKz3yA6s8rr55mEPtogBU8mIgVq98q6bR1PXhcOmvVgMghMwv
- 0ioDM4wzI3fP6rYKac7vLRGkZDBmXSS7VdrLA4ywZGSyEPHjLxDg+r3D+NRSxbCELgew
- 5b7/F4F05L+TMdsg0eOurSnin/Gviv8niRCzZ7EE95qzt/ySRfybCPWrYu09j6kwDWAD
- B+lG1NJEC3nRzNaQjsHLV+j05S2UOB0RUnnvpXzqmX7CXFP1Wr2jCXHvjKF1TQ9xzi04
- ZUIA==
-X-Gm-Message-State: APjAAAXpeSOOfdFe84v2QrUWfLZz8J89wqPAZx7Gwt0FrfE1alVldz7l
- xFVXQqE6wY8q00RnrT9ZQhfbxw==
-X-Google-Smtp-Source: APXvYqywXgesvLBRphbRdAtiIfErF4a7WtDYN4D4kA+x58uxGeWKphlR/Rl7Yu69KPNItZj6rTIohA==
-X-Received: by 2002:a2e:4b12:: with SMTP id y18mr21169249lja.238.1565708031019; 
- Tue, 13 Aug 2019 07:53:51 -0700 (PDT)
-Received: from localhost.localdomain ([212.45.67.2])
- by smtp.googlemail.com with ESMTPSA id r68sm19628100lff.52.2019.08.13.07.53.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 13 Aug 2019 07:53:50 -0700 (PDT)
-From: Georgi Djakov <georgi.djakov@linaro.org>
-To: linux-pm@vger.kernel.org,
-	evgreen@chromium.org
-Subject: [PATCH v4 3/3] interconnect: qcom: Add tagging and wake/sleep support
- for sdm845
-Date: Tue, 13 Aug 2019 17:53:41 +0300
-Message-Id: <20190813145341.28530-4-georgi.djakov@linaro.org>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190813145341.28530-1-georgi.djakov@linaro.org>
-References: <20190813145341.28530-1-georgi.djakov@linaro.org>
+ id 1hxYHI-0007Ar-Kc
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 15:00:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=a/b1AE7vjIJqNqPNdlUquZJzsx45yqlq3MhhaN+/uD3i+EKm1H3sH6E6pQdbkhkgOZOGYUlxPeXysTKqfeu20pdGSMAbb4w2r7FLaMgc+uvHvGH73lMEONkH0SuCQPavG25zZ7reVMxb5MFk97VurCyZYRezGkYtIdWDZlmJ5+KmTmBs/D+j/HRzyagHKP4H6k6kf/dpcjB+QnDMCVBJ2ZTcgHgPP8j8CiUohwgAkzJ5yUAvViIozzsFT8q5EqFOGFzvLEO4dZY2YHqj+cbiKAsH2Ief0+5oKxIGFKXDmowEm5WBkZnUXoSNO/ZppguWLuWyHGgffpb9+/FB+DTYNg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mDiILO7SooLmClTeL9XDv9DJ76g+A5SreUDfpe+zN4I=;
+ b=AC7xpxg6fUrOannUh5rWXCEzg7lDvrfuleI9f0d3Izf9Gwt0gaRI9aUAaPC50Vq63ZqwfM+0IUDcC3B8a+UdKtBKN3vpODaR2rX+WMv3c9mDXF9URyVfymaRCqGsELQM6HzzuWCOFPmYZtPDcRvt6mxEGAH+L7L1jCbuxSqBN6AeNYwAc/olieLTOb7MbTYJFfOMxFr7ODdSkIzoucK15j+9DgJcTKmJKVJnXgHujbw5jgpGc6zxYUHEjQ7bDemaYP7ztkKffy6R60giVjG4FLSytqEvp6KfOjRRkbioCn0tsABloF7HY7+ySm+WfyhZCCbqF2bIxvYkk0eqTQr4WQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mDiILO7SooLmClTeL9XDv9DJ76g+A5SreUDfpe+zN4I=;
+ b=eCchaYVjbxb1tj2sx7I6c+U3tzvwvvwZTdTd4h3kX8OaEq1ojBIFoMEcTK/+A14UIlA/FCW64FV+kT27rwFytPtj3IWs0jmD8Gm13M4katpUu6xn/P7FhAzXlD1fWF9GmtLZCwfvzvbYxi+fKCp9lEI92NRf8jjwTI29JziPd+o=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB5231.eurprd04.prod.outlook.com (20.177.51.208) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.23; Tue, 13 Aug 2019 14:59:56 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::e53d:e6a9:79bd:f970]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::e53d:e6a9:79bd:f970%2]) with mapi id 15.20.2157.022; Tue, 13 Aug 2019
+ 14:59:56 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Rob Herring <robh+dt@kernel.org>, =?iso-8859-2?Q?Artur_=A6wigo=F1?=
+ <a.swigon@partner.samsung.com>, Georgi Djakov <georgi.djakov@linaro.org>
+Subject: Re: [PATCH 2/7] dt-bindings: devfreq: Add bindings for generic imx
+ buses
+Thread-Topic: [PATCH 2/7] dt-bindings: devfreq: Add bindings for generic imx
+ buses
+Thread-Index: AQHVUT6+xLIyJJ3RiUKs8c+X3Pwpzw==
+Date: Tue, 13 Aug 2019 14:59:56 +0000
+Message-ID: <VI1PR04MB70237460E84C4F8AC9EBE582EED20@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1565633880.git.leonard.crestez@nxp.com>
+ <97b0bff95ddb85b06ef3d2f8079faa36562a956d.1565633880.git.leonard.crestez@nxp.com>
+ <CAL_JsqJWpQN2oTm8Q2_Gzd0GJ+YZoc9j-zh-U1s4eGhMxDEmEA@mail.gmail.com>
+ <VI1PR04MB702300C8C78BC033D16EDB85EED20@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <CAL_Jsq+BDO-J12BddWw-KbhjTx95p58qqpUhhKzUHED6vFK2TA@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: c39602a3-02da-404d-71bd-08d71ffee7ac
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB5231; 
+x-ms-traffictypediagnostic: VI1PR04MB5231:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB52316504812CE809F110E4CBEED20@VI1PR04MB5231.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 01283822F8
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(346002)(396003)(39860400002)(376002)(136003)(189003)(199004)(66946007)(99286004)(91956017)(33656002)(71200400001)(71190400001)(305945005)(14454004)(74316002)(7736002)(66446008)(8936002)(66476007)(66556008)(64756008)(76116006)(7416002)(478600001)(86362001)(66066001)(81156014)(6116002)(14444005)(53936002)(55016002)(256004)(8676002)(5660300002)(9686003)(316002)(2906002)(6246003)(6436002)(3846002)(229853002)(25786009)(446003)(76176011)(476003)(4326008)(486006)(7696005)(110136005)(6506007)(26005)(53546011)(102836004)(186003)(54906003)(81166006)(52536014)(44832011)(41533002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5231;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: +oivDm7qkUVaNWKCnrwGa50AJ3OiLZat36kPCpfPuotVYL9Hy4LhV+aOEbUPh/31WPjiHbL8ti+6tNnv00cz+Z3W7ecZnh7tmLyHw4wKAWRNoZJ+KLnBGSzz5NqVVOyB4ZG2IGghT6symAah0cn69QAR2dHmBODmgA7TRDpc6S4BZXKhT5mbgsh8eYPvFNdFHBSu0VlXwOvyEi9V4KcsijXufw1JMrzSrWWE9A/q57RZ0RyfY1ZNk0tQ6HEE9T/KU2A8jLv2b7Gwbz3mK7xAv1CmKuyPCDMddkgEHZS61HfzjN/A7eqP1D5D8nTDiG4vXa9d13AkuoO1stmGsPuvkYj4W6x0xKfnrqAIYjgW6fp2wkhkyI+oh1Y3WcfMVTiTYCOA4cALQxqAZx9uxKGZh4Fno51F2Rin2Ieqc4f/OWU=
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c39602a3-02da-404d-71bd-08d71ffee7ac
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Aug 2019 14:59:56.2705 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: qiInde8124Kwa7NBBs23Kt/FEE434S4IjjBy8vPBb/r6S1s2kFZ+caytrxh8/G1HI+hcZoUCCj5mfOL0tU2Q9Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5231
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_075352_812475_9E9575E1 
-X-CRM114-Status: GOOD (  19.98  )
+X-CRM114-CacheID: sfid-20190813_080000_760776_CCDFD804 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ no trust [40.107.4.48 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,254 +127,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: seansw@qti.qualcomm.com, linux-kernel@vger.kernel.org,
- daidavid1@codeaurora.org, dianders@chromium.org, amit.kucheria@linaro.org,
- bjorn.andersson@linaro.org, linux-arm-msm@vger.kernel.org,
- georgi.djakov@linaro.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Jacky Bai <ping.bai@nxp.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Alexandre Bailon <abailon@baylibre.com>, Will Deacon <will@kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, "open
+ list:THERMAL" <linux-pm@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC
+ ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Stephen Boyd <sboyd@kernel.org>, Kyungmin Park <kyungmin.park@samsung.com>,
+ Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: David Dai <daidavid1@codeaurora.org>
+On 13.08.2019 17:06, Rob Herring wrote:
+> On Mon, Aug 12, 2019 at 7:32 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
+>> On 8/12/2019 10:47 PM, Rob Herring wrote:
+>>> On Mon, Aug 12, 2019 at 12:49 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
 
-Add support for wake and sleep commands by using a tag to indicate
-whether or not the aggregate and set requests fall into execution
-state specific bucket.
+>>>> Add initial dt bindings for the interconnects inside i.MX chips.
+>>>> Multiple external IPs are involved but SOC integration means the
+>>>> software controllable interfaces are very similar.
+>>>>
+>>>> +description: |
+>>>> +  The i.MX SoC family has multiple buses for which clock frequency (and sometimes
+>>>> +  voltage) can be adjusted.
+>>>> +
+>>>> +  Some of those buses expose register areas mentioned in the memory maps as GPV
+>>>> +  ("Global Programmers View") but not all. Access to this area might be denied for
+>>>> +  normal world.
+>>>> +
+>>>> +  The buses are based on externally licensed IPs such as ARM NIC-301 and Arteris
+>>>> +  FlexNOC but DT bindings are specific to the integration of these bus
+>>>> +  interconnect IPs into imx SOCs.
+>>>
+>>> No need to use the interconnect binding?
+>>
+>> The interconnect is represented by a separate "virtual" node which might
+>> not be OK. There was also a recent RFC from samsung which turns devfreq
+>> nodes into interconnect providers:
+>>
+>> Is that preferable?
+> 
+> Virtual nodes are not OK.
 
-Signed-off-by: David Dai <daidavid1@codeaurora.org>
-Signed-off-by: Georgi Djakov <georgi.djakov@linaro.org>
----
- drivers/interconnect/qcom/sdm845.c | 139 ++++++++++++++++++++++-------
- 1 file changed, 108 insertions(+), 31 deletions(-)
+Then I'll try to make the "interconnect" device probe from a soc driver 
+and turn devfreq nodes into interconnect providers backed by this same 
+singleton device.
 
-diff --git a/drivers/interconnect/qcom/sdm845.c b/drivers/interconnect/qcom/sdm845.c
-index fb526004c82e..93df67345b39 100644
---- a/drivers/interconnect/qcom/sdm845.c
-+++ b/drivers/interconnect/qcom/sdm845.c
-@@ -66,6 +66,22 @@ struct bcm_db {
- #define SDM845_MAX_BCM_PER_NODE	2
- #define SDM845_MAX_VCD		10
- 
-+/*
-+ * The AMC bucket denotes constraints that are applied to hardware when
-+ * icc_set_bw() completes, whereas the WAKE and SLEEP constraints are applied
-+ * when the execution environment transitions between active and low power mode.
-+ */
-+#define QCOM_ICC_BUCKET_AMC		0
-+#define QCOM_ICC_BUCKET_WAKE		1
-+#define QCOM_ICC_BUCKET_SLEEP		2
-+#define QCOM_ICC_NUM_BUCKETS		3
-+#define QCOM_ICC_TAG_AMC		BIT(QCOM_ICC_BUCKET_AMC)
-+#define QCOM_ICC_TAG_WAKE		BIT(QCOM_ICC_BUCKET_WAKE)
-+#define QCOM_ICC_TAG_SLEEP		BIT(QCOM_ICC_BUCKET_SLEEP)
-+#define QCOM_ICC_TAG_ACTIVE_ONLY	(QCOM_ICC_TAG_AMC | QCOM_ICC_TAG_WAKE)
-+#define QCOM_ICC_TAG_ALWAYS		(QCOM_ICC_TAG_AMC | QCOM_ICC_TAG_WAKE |\
-+					 QCOM_ICC_TAG_SLEEP)
-+
- /**
-  * struct qcom_icc_node - Qualcomm specific interconnect nodes
-  * @name: the node name used in debugfs
-@@ -86,8 +102,8 @@ struct qcom_icc_node {
- 	u16 num_links;
- 	u16 channels;
- 	u16 buswidth;
--	u64 sum_avg;
--	u64 max_peak;
-+	u64 sum_avg[QCOM_ICC_NUM_BUCKETS];
-+	u64 max_peak[QCOM_ICC_NUM_BUCKETS];
- 	struct qcom_icc_bcm *bcms[SDM845_MAX_BCM_PER_NODE];
- 	size_t num_bcms;
- };
-@@ -112,8 +128,8 @@ struct qcom_icc_bcm {
- 	const char *name;
- 	u32 type;
- 	u32 addr;
--	u64 vote_x;
--	u64 vote_y;
-+	u64 vote_x[QCOM_ICC_NUM_BUCKETS];
-+	u64 vote_y[QCOM_ICC_NUM_BUCKETS];
- 	bool dirty;
- 	bool keepalive;
- 	struct bcm_db aux_data;
-@@ -555,7 +571,7 @@ inline void tcs_cmd_gen(struct tcs_cmd *cmd, u64 vote_x, u64 vote_y,
- 		cmd->wait = true;
- }
- 
--static void tcs_list_gen(struct list_head *bcm_list,
-+static void tcs_list_gen(struct list_head *bcm_list, int bucket,
- 			 struct tcs_cmd tcs_list[SDM845_MAX_VCD],
- 			 int n[SDM845_MAX_VCD])
- {
-@@ -573,8 +589,8 @@ static void tcs_list_gen(struct list_head *bcm_list,
- 			commit = true;
- 			cur_vcd_size = 0;
- 		}
--		tcs_cmd_gen(&tcs_list[idx], bcm->vote_x, bcm->vote_y,
--			    bcm->addr, commit);
-+		tcs_cmd_gen(&tcs_list[idx], bcm->vote_x[bucket],
-+			    bcm->vote_y[bucket], bcm->addr, commit);
- 		idx++;
- 		n[batch]++;
- 		/*
-@@ -595,37 +611,55 @@ static void tcs_list_gen(struct list_head *bcm_list,
- 
- static void bcm_aggregate(struct qcom_icc_bcm *bcm)
- {
--	size_t i;
--	u64 agg_avg = 0;
--	u64 agg_peak = 0;
-+	size_t i, bucket;
-+	u64 agg_avg[QCOM_ICC_NUM_BUCKETS] = {0};
-+	u64 agg_peak[QCOM_ICC_NUM_BUCKETS] = {0};
- 	u64 temp;
- 
--	for (i = 0; i < bcm->num_nodes; i++) {
--		temp = bcm->nodes[i]->sum_avg * bcm->aux_data.width;
--		do_div(temp, bcm->nodes[i]->buswidth * bcm->nodes[i]->channels);
--		agg_avg = max(agg_avg, temp);
-+	for (bucket = 0; bucket < QCOM_ICC_NUM_BUCKETS; bucket++) {
-+		for (i = 0; i < bcm->num_nodes; i++) {
-+			temp = bcm->nodes[i]->sum_avg[bucket] * bcm->aux_data.width;
-+			do_div(temp, bcm->nodes[i]->buswidth * bcm->nodes[i]->channels);
-+			agg_avg[bucket] = max(agg_avg[bucket], temp);
- 
--		temp = bcm->nodes[i]->max_peak * bcm->aux_data.width;
--		do_div(temp, bcm->nodes[i]->buswidth);
--		agg_peak = max(agg_peak, temp);
--	}
-+			temp = bcm->nodes[i]->max_peak[bucket] * bcm->aux_data.width;
-+			do_div(temp, bcm->nodes[i]->buswidth);
-+			agg_peak[bucket] = max(agg_peak[bucket], temp);
-+		}
- 
--	temp = agg_avg * 1000ULL;
--	do_div(temp, bcm->aux_data.unit);
--	bcm->vote_x = temp;
-+		temp = agg_avg[bucket] * 1000ULL;
-+		do_div(temp, bcm->aux_data.unit);
-+		bcm->vote_x[bucket] = temp;
- 
--	temp = agg_peak * 1000ULL;
--	do_div(temp, bcm->aux_data.unit);
--	bcm->vote_y = temp;
-+		temp = agg_peak[bucket] * 1000ULL;
-+		do_div(temp, bcm->aux_data.unit);
-+		bcm->vote_y[bucket] = temp;
-+	}
- 
--	if (bcm->keepalive && bcm->vote_x == 0 && bcm->vote_y == 0) {
--		bcm->vote_x = 1;
--		bcm->vote_y = 1;
-+	if (bcm->keepalive && bcm->vote_x[QCOM_ICC_BUCKET_AMC] == 0 &&
-+	    bcm->vote_y[QCOM_ICC_BUCKET_AMC] == 0) {
-+		bcm->vote_x[QCOM_ICC_BUCKET_AMC] = 1;
-+		bcm->vote_x[QCOM_ICC_BUCKET_WAKE] = 1;
-+		bcm->vote_y[QCOM_ICC_BUCKET_AMC] = 1;
-+		bcm->vote_y[QCOM_ICC_BUCKET_WAKE] = 1;
- 	}
- 
- 	bcm->dirty = false;
- }
- 
-+static void qcom_icc_pre_aggregate(struct icc_node *node)
-+{
-+	size_t i;
-+	struct qcom_icc_node *qn;
-+
-+	qn = node->data;
-+
-+	for (i = 0; i < QCOM_ICC_NUM_BUCKETS; i++) {
-+		qn->sum_avg[i] = 0;
-+		qn->max_peak[i] = 0;
-+	}
-+}
-+
- static int qcom_icc_aggregate(struct icc_node *node, u32 tag, u32 avg_bw,
- 			      u32 peak_bw, u32 *agg_avg, u32 *agg_peak)
- {
-@@ -634,12 +668,19 @@ static int qcom_icc_aggregate(struct icc_node *node, u32 tag, u32 avg_bw,
- 
- 	qn = node->data;
- 
-+	if (!tag)
-+		tag = QCOM_ICC_TAG_ALWAYS;
-+
-+	for (i = 0; i < QCOM_ICC_NUM_BUCKETS; i++) {
-+		if (tag & BIT(i)) {
-+			qn->sum_avg[i] += avg_bw;
-+			qn->max_peak[i] = max_t(u32, qn->max_peak[i], peak_bw);
-+		}
-+	}
-+
- 	*agg_avg += avg_bw;
- 	*agg_peak = max_t(u32, *agg_peak, peak_bw);
- 
--	qn->sum_avg = *agg_avg;
--	qn->max_peak = *agg_peak;
--
- 	for (i = 0; i < qn->num_bcms; i++)
- 		qn->bcms[i]->dirty = true;
- 
-@@ -675,7 +716,7 @@ static int qcom_icc_set(struct icc_node *src, struct icc_node *dst)
- 	 * Construct the command list based on a pre ordered list of BCMs
- 	 * based on VCD.
- 	 */
--	tcs_list_gen(&commit_list, cmds, commit_idx);
-+	tcs_list_gen(&commit_list, QCOM_ICC_BUCKET_AMC, cmds, commit_idx);
- 
- 	if (!commit_idx[0])
- 		return ret;
-@@ -693,6 +734,41 @@ static int qcom_icc_set(struct icc_node *src, struct icc_node *dst)
- 		return ret;
- 	}
- 
-+	INIT_LIST_HEAD(&commit_list);
-+
-+	for (i = 0; i < qp->num_bcms; i++) {
-+		/*
-+		 * Only generate WAKE and SLEEP commands if a resource's
-+		 * requirements change as the execution environment transitions
-+		 * between different power states.
-+		 */
-+		if (qp->bcms[i]->vote_x[QCOM_ICC_BUCKET_WAKE] !=
-+		    qp->bcms[i]->vote_x[QCOM_ICC_BUCKET_SLEEP] ||
-+		    qp->bcms[i]->vote_y[QCOM_ICC_BUCKET_WAKE] !=
-+		    qp->bcms[i]->vote_y[QCOM_ICC_BUCKET_SLEEP]) {
-+			list_add_tail(&qp->bcms[i]->list, &commit_list);
-+		}
-+	}
-+
-+	if (list_empty(&commit_list))
-+		return ret;
-+
-+	tcs_list_gen(&commit_list, QCOM_ICC_BUCKET_WAKE, cmds, commit_idx);
-+
-+	ret = rpmh_write_batch(qp->dev, RPMH_WAKE_ONLY_STATE, cmds, commit_idx);
-+	if (ret) {
-+		pr_err("Error sending WAKE RPMH requests (%d)\n", ret);
-+		return ret;
-+	}
-+
-+	tcs_list_gen(&commit_list, QCOM_ICC_BUCKET_SLEEP, cmds, commit_idx);
-+
-+	ret = rpmh_write_batch(qp->dev, RPMH_SLEEP_STATE, cmds, commit_idx);
-+	if (ret) {
-+		pr_err("Error sending SLEEP RPMH requests (%d)\n", ret);
-+		return ret;
-+	}
-+
- 	return ret;
- }
- 
-@@ -738,6 +814,7 @@ static int qnoc_probe(struct platform_device *pdev)
- 	provider = &qp->provider;
- 	provider->dev = &pdev->dev;
- 	provider->set = qcom_icc_set;
-+	provider->pre_aggregate = qcom_icc_pre_aggregate;
- 	provider->aggregate = qcom_icc_aggregate;
- 	provider->xlate = of_icc_xlate_onecell;
- 	INIT_LIST_HEAD(&provider->nodes);
+Still separate from this series.
+
+>>>> +required:
+>>>> +  - compatible
+>>>> +  - clocks
+>>>
+>>> reg?
+>>
+>> This is deliberately optional: for some NICs the GPV register area is
+>> not exposed in the memory map. This is unusual but an accurate
+>> description of the hardware.
+> 
+> Different h/w blocks should have different compatibles. GPV is an Arm
+> thing and I'd expect FlexNOC to be different.
+
+The imx reference manuals call them both "GPV" though layout is indeed 
+quite different (and for FlexNoC it's not even documented).
+
+The h/w blocks do have different compat strings (imx8m-nic and 
+imx8m-noc). They have a single binding document because didn't want to 
+create two nearly-identical bindings, I assume it would be fine to split 
+later if needed.
+
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
