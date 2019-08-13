@@ -2,62 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59B0A8C386
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 23:21:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C0108C38F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 23:22:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V1xv9oFM2mpLHhFFQxfIoQL+OywtKhnyjs5aq8RiJsc=; b=GLFMv0Qbp/dFHR
-	z6PghCJeo4FBi1x4Sbwq7JyTQZ7SxzTzpVTNC2/4krAbKIv01JX+xtE4iDMuqqXIEq4zPAP21K39B
-	MLw/OMhnABEEFNDgbnaiO060C6TFVW/xpQJDXvEFizrnlnUrPmgNWbj8suSgBibSJ8a8sDrLfNuYK
-	hNm2Ou8eELpmqYTn39nbQmZBqXFVuMjL/rcxI4jVCQmNSYIPqRyQnHst13jZAD1S+e0CadIUlbEaQ
-	CMdJBmGqJ1Fg5k5PLmV59PPC6kN0UFfd0n3uqn3P0Jl55MMuUnnCD0pmZZTAydsESGNaPfMwY+jy5
-	BRLY4uNAmOYWB8fZDHmA==;
+	List-Owner; bh=s5W5RgeQacqGU67ZWOBZFqXzdJv7mkeGx3+zfZkshjw=; b=URMP2vqoYrtw3H
+	Z8PwdDybcMKDpbplyAj0sSQPcZiQ1cGP+jFZidw+fTRvx0tIfGiVHJYeAZp2cp+83fX/4w45CHfmz
+	ErUF7ttjK1wRUEjh+fPdfOEEkyrnYHsppJOkDqCUZWlo75G7i5QmDmfNvSGgk26MEeseTyqDjYe5J
+	Yk2SJkCRi2Qw8fnJxaCMpKrkhuTahVX/fgX9V7Xnm9InscPp405nIa5BY/8ykHBqYNb8WKx/4/U13
+	zsEekKwM6pNvQfM9u34fEykrpO4u+MVeW6kdsayeev/+sUbprpU8lvU2KMjJWjXBPayveNxJ4m9gJ
+	NZWClUEUB/g0KMFe27lQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxeEL-00051X-Vp; Tue, 13 Aug 2019 21:21:22 +0000
-Received: from smtp04.smtpout.orange.fr ([80.12.242.126]
- helo=smtp.smtpout.orange.fr)
+	id 1hxeFb-0005HJ-R9; Tue, 13 Aug 2019 21:22:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxeEC-00050I-1l
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 21:21:13 +0000
-Received: from belgarion ([90.76.53.202]) by mwinf5d80 with ME
- id olM4200044MlyVm03lM4ry; Tue, 13 Aug 2019 23:21:07 +0200
-X-ME-Helo: belgarion
-X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
-X-ME-Date: Tue, 13 Aug 2019 23:21:07 +0200
-X-ME-IP: 90.76.53.202
-From: Robert Jarzmik <robert.jarzmik@free.fr>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH 4/6] dma: pxa_dma: no need to check return value of
- debugfs_create functions
-References: <20190612122557.24158-1-gregkh@linuxfoundation.org>
- <20190612122557.24158-4-gregkh@linuxfoundation.org>
- <87tvaorfc1.fsf@belgarion.home> <20190811070350.GA28202@kroah.com>
-X-URL: http://belgarath.falguerolles.org/
-Date: Tue, 13 Aug 2019 23:21:04 +0200
-In-Reply-To: <20190811070350.GA28202@kroah.com> (Greg Kroah-Hartman's message
- of "Sun, 11 Aug 2019 09:03:50 +0200")
-Message-ID: <87o90srccf.fsf@belgarion.home>
-User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
+ id 1hxeFQ-0005Ga-Ps
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 21:22:29 +0000
+Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com
+ [209.85.160.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5928320665
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 21:22:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565731348;
+ bh=61BEBiism8+ah6KfYnPIAoueUmImP8BoQp3cWp1WYxw=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=QO927A/DHs15dKgl0uKA8E/PQY35yt2Fo1OFYfRmf998P122pPT5lvN4KSBMGd4sM
+ XEaopRMIrtZESspUSyXgCBciNM/mvRbOqVtaLvj030AuZRit3cEVm7YYH6AGG3pYMK
+ Ri24fFbSGjzGbbGIUswMvcQNC80RaWVAunXzAklM=
+Received: by mail-qt1-f174.google.com with SMTP id l9so107853089qtu.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 14:22:28 -0700 (PDT)
+X-Gm-Message-State: APjAAAUll9s9xn0j+nkpfEAw+LSdAziYfQ7UopptF0/aahcS45v7WrhR
+ 0HQwCz0IlDFsEp2U3RILlkybeARR+RZxLQcNUQ==
+X-Google-Smtp-Source: APXvYqxSBfgtU0Qq0DmuHIKF4215omaq3x32du27czWIrPeuK1YLiDC7YDd/MNctQx5C2gGeVR82JMJ4pAiB4fPkMXY=
+X-Received: by 2002:ac8:7593:: with SMTP id s19mr27846131qtq.136.1565731347578; 
+ Tue, 13 Aug 2019 14:22:27 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190813125147.29605-1-dafna.hirschfeld@collabora.com>
+ <20190813125147.29605-2-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20190813125147.29605-2-dafna.hirschfeld@collabora.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 13 Aug 2019 15:22:16 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJxQu1CYG3ZTFDME13cUwWgCt7hkQg41bdJKvY27JcCZQ@mail.gmail.com>
+Message-ID: <CAL_JsqJxQu1CYG3ZTFDME13cUwWgCt7hkQg41bdJKvY27JcCZQ@mail.gmail.com>
+Subject: Re: [PATCH v3 1/2] dt-bindings: arm: imx: add imx8mq nitrogen support
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_142112_389102_22628A34 
-X-CRM114-Status: GOOD (  15.80  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190813_142228_860099_DC040D19 
+X-CRM114-Status: GOOD (  12.30  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [80.12.242.126 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robert.jarzmik[at]free.fr)
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,46 +86,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
- vkoul@kernel.org, linux-arm-kernel@lists.infradead.org,
- dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- Daniel Mack <daniel@zonque.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Troy Kisky <troy.kisky@boundarydevices.com>,
+ Gary Bisson <gary.bisson@boundarydevices.com>,
+ Sascha Hauer <kernel@pengutronix.de>, kernel@collabora.com,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Greg Kroah-Hartman <gregkh@linuxfoundation.org> writes:
-
-> On Sat, Aug 10, 2019 at 09:27:26PM +0200, Robert Jarzmik wrote:
->> Greg Kroah-Hartman <gregkh@linuxfoundation.org> writes:
->> 
->> This is not strictly equivalent.
->> Imagine that the debugfs_create_dir() fails and returns NULL :
-> How can that happen?
-Well in v5.0-rc1 that could happen ... unfortunately that's also the code I
-checked ...
-
->>  - in the former case, neither "state", "descriptors" nor "requesters" would be
->>    created
->>  - in the new code, "state", "descriptors" nor "requesters" will be created in
->>    the debugfs root directory
->
-> I agree, but debugfs_create_dir() does not return a NULL on an error
-> since many kernel releases.  Neither can debugfs_create_file() so really
-> this test is not working at all as-is :)
-Ah yes, you're right, I wasn't aware of the debugfs changes ...
-
-But checking a bit further, your original mail is 2 monthes old, and this patch
-was already merged in v5.2. I probably fell in a time-space anomaly, as I
-received this mail only a couple of days ago.
-
-Have a nice day.
-
--- 
-Robert
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBBdWcgMTMsIDIwMTkgYXQgNjo1MSBBTSBEYWZuYSBIaXJzY2hmZWxkCjxkYWZuYS5o
+aXJzY2hmZWxkQGNvbGxhYm9yYS5jb20+IHdyb3RlOgo+Cj4gRnJvbTogR2FyeSBCaXNzb24gPGdh
+cnkuYmlzc29uQGJvdW5kYXJ5ZGV2aWNlcy5jb20+Cj4KPiBUaGUgTml0cm9nZW44TSBpcyBhbiBB
+Uk0gYmFzZWQgc2luZ2xlIGJvYXJkIGNvbXB1dGVyIChTQkMpCj4gZGVzaWduZWQgdG8gbGV2ZXJh
+Z2UgdGhlIGZ1bGwgY2FwYWJpbGl0aWVzIG9mIE5YUOKAmXMgaS5NWDhNCj4gUXVhZCBwcm9jZXNz
+b3IuCj4KPiBTaWduZWQtb2ZmLWJ5OiBHYXJ5IEJpc3NvbiA8Z2FyeS5iaXNzb25AYm91bmRhcnlk
+ZXZpY2VzLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBUcm95IEtpc2t5IDx0cm95Lmtpc2t5QGJvdW5k
+YXJ5ZGV2aWNlcy5jb20+Cj4gW0RhZm5hOiBwb3J0aW5nIHZlbmRvcidzIGNvZGUgdG8gbWFpbmxp
+bmVdCj4gU2lnbmVkLW9mZi1ieTogRGFmbmEgSGlyc2NoZmVsZCA8ZGFmbmEuaGlyc2NoZmVsZEBj
+b2xsYWJvcmEuY29tPgo+IC0tLQo+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
+YXJtL2ZzbC55YW1sIHwgMSArCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQoKUmV2
+aWV3ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+CgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
