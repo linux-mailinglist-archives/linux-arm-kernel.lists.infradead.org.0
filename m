@@ -2,92 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2407D8B5F5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 12:55:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75BF48B606
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 12:58:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7hR6dL1kA06MlW+F4MhxZaECCpPfK+kcy0mF0e5RDX0=; b=RrTbqKmE3izqVj
-	uIdA6+IrcrvjFP4vT3H4y7ACByN6TIXNHPrD0t/kH9q9jpBc69sWOms/9pFP34UDTAk7zAkxwbRUe
-	5t5g+Egf8gJpvDRBm8UBScs8hnorRMUAKy6S4AyDvkXQUOG8EKnGqO6iJf42gDu8GIYyGQVMWPfnD
-	S+Lvc6zn7pUZCNSlrebPAD5BTYPdPs1yckrG/T4X0434crGoQefwVWB+RRmY/AmosLkz0XLF9adve
-	e1h8piibhRlit9J2p24Dkxl1w8wivV5QTqZkpEWfqy67fM0w+89J8ali+BsCtz1P93RglXLJ+oJZd
-	ZI0FHlX8D9r4mQLnpkMg==;
+	List-Owner; bh=zs/idhqrsrlrxTgKlFU7wFiG/zWXiFAHfTosMNBwA7Q=; b=oNhK7c5BFO9DPL
+	MQa53dyy5ymZQMjkAVwYauHnpP03CpbKTl9q5My0vrIKGX624E8Qz1ey/ZUW8NiVAiGsRZjsOtXnM
+	m6murrAW8s5hrnesHIMA+DByVEXIzaIh6cKn4CgxQdpqgPZ/TtA6BAg6DAu98OG1uOomTEwQxS7zb
+	24tydBIm4AjmCBWif9LRLBFKUJqNtV0kNBkDvA3/i4MiTgG769lLTE95oIOEqrBK2+Fdf4IsLcKtw
+	KWP4JfQB63CTMdE8fS6TpSloghqsBxxx65DYDS4nWgk62aGRPd3Bv3odSgy7EcqWjfzTdIULB8oDR
+	nTZCqZiRc0qPtx5NBBjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxUSq-0001Fl-Qu; Tue, 13 Aug 2019 10:55:40 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxUSe-0001FO-O5
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 10:55:30 +0000
-Received: by mail-ot1-x343.google.com with SMTP id k18so38604014otr.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 03:55:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=M7GJCS2+nN7LzL0hVAu7+fXi7vAKyLZ5WbkP+JMkhsQ=;
- b=U5Z+j7P31wD8dPVO64/0OxRcrGzm1Nkuum4danFLl3rR5rwBxQtxqjmrpj67lws/HO
- WJ9Hk317T/VuwSRfhyIoxcGb6RY00LPS4R+KZaiXYRGwjfdta+MWJxRB+RRvHpLwJXkG
- lcvHfORPBd/RJerSrocc3YR8HzfWlOqUgrd6hIZJKWfnhn6kEc2qFoWkvaACdVRFgmjO
- 3KnCytP9xLnYKB3PrxFDbNJxe6x18j3VYR0DIvWYYfPDiQV3po/9ciOt+p9YOIUu4YmL
- WenyOMs+d0EtSNkvFXXSzO14tWT5umMTH5QRQoutGEc+61NNwV+2Vy6OmZ64+6RyIpdW
- YCww==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=M7GJCS2+nN7LzL0hVAu7+fXi7vAKyLZ5WbkP+JMkhsQ=;
- b=EGxOr9JGHjo+8IDE0PGAfUkQyUNowJWZOCbx9AaaBszX/1c16JR+xb3wxGIPjsfsqA
- BInZVV/+XyprszBx+B0thDnDTUoIxIZnUqkayyo2wBqWYZ70CFU85IicJxZFE0txxm++
- dYaGGEnEbWTlZpYP5G56R/a3F+T1G5ogpXmoYHYJoCJ4A0AYjSMWn+2X0Un3vk8UAFT5
- l9CzKHDg0mGWm85Aa9WPpYiiePohmwoZSsBEJH38pBvGAMqwEmby+PY4xe5EajQxpB+A
- wg9AW5a0J+UYEO5eE1zFH1z3Xkmu1HJkWVRUkcvizseEMIuHU74Yob1RPnvC8ylKpVyF
- Vsaw==
-X-Gm-Message-State: APjAAAVQ68tTBpD6iOxIy3F4cnH/gqw4AbI0EHWFQ53npxAliySoHcT4
- Oy3a1RO8KpKWKc1VsvQj0YRlr2LgGNC+JHGDNvQ=
-X-Google-Smtp-Source: APXvYqxgbxmd+WfNqrdwdnfKbYW9LnWtCKNG0kC5nUYYQUHlfGbUvepYSqlRr3sYzlWQr+hJELeoLVFAZkOA0tTJ6mw=
-X-Received: by 2002:a6b:6f06:: with SMTP id k6mr15215680ioc.232.1565693727255; 
- Tue, 13 Aug 2019 03:55:27 -0700 (PDT)
+	id 1hxUV7-0001ek-G0; Tue, 13 Aug 2019 10:58:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxUUu-0001dW-11
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 10:57:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 88BA3344;
+ Tue, 13 Aug 2019 03:57:44 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F27DC3F694;
+ Tue, 13 Aug 2019 03:57:41 -0700 (PDT)
+Date: Tue, 13 Aug 2019 11:57:39 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Vidya Sagar <vidyas@nvidia.com>
+Subject: Re: [PATCH V15 13/13] PCI: tegra: Add Tegra194 PCIe support
+Message-ID: <20190813105739.GC14977@e121166-lin.cambridge.arm.com>
+References: <20190809044609.20401-1-vidyas@nvidia.com>
+ <20190809044609.20401-14-vidyas@nvidia.com>
 MIME-Version: 1.0
-References: <1563873380-2003-1-git-send-email-gkulkarni@marvell.com>
- <1563873380-2003-3-git-send-email-gkulkarni@marvell.com>
- <20190812120125.GA50712@lakrids.cambridge.arm.com>
-In-Reply-To: <20190812120125.GA50712@lakrids.cambridge.arm.com>
-From: Ganapatrao Kulkarni <gklkml16@gmail.com>
-Date: Tue, 13 Aug 2019 16:25:15 +0530
-Message-ID: <CAKTKpr7juHd9Bgam28LESadihFadEAevRAhc-7w3PTMYY7HLNw@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] drivers/perf: Add CCPI2 PMU support in ThunderX2
- UNCORE driver.
-To: Mark Rutland <mark.rutland@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190809044609.20401-14-vidyas@nvidia.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_035528_813596_F6CDA13B 
-X-CRM114-Status: GOOD (  33.07  )
-X-Spam-Score: 1.7 (+)
+X-CRM114-CacheID: sfid-20190813_035748_167672_A87D986C 
+X-CRM114-Status: GOOD (  19.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 1.0 HK_RANDOM_FROM         From username looks random
- 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (gklkml16[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (gklkml16[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,250 +61,668 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapatrao Kulkarni <gkulkarni@marvell.com>,
- "corbet@lwn.net" <corbet@lwn.net>, Jan Glauber <jglauber@marvell.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Robert Richter <rrichter@marvell.com>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, mperttunen@nvidia.com,
+ mmaddireddy@nvidia.com, linux-pci@vger.kernel.org, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, kthota@nvidia.com,
+ kishon@ti.com, linux-tegra@vger.kernel.org, robh+dt@kernel.org,
+ thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
+Some style comments - we have time to fix them.
 
-On Mon, Aug 12, 2019 at 5:31 PM Mark Rutland <mark.rutland@arm.com> wrote:
->
-> On Tue, Jul 23, 2019 at 09:16:28AM +0000, Ganapatrao Kulkarni wrote:
-> > CCPI2 is a low-latency high-bandwidth serial interface for connecting
-> > ThunderX2 processors. This patch adds support to capture CCPI2 perf events.
->
-> It would be worth pointing out in the commit message how the CCPI2
-> counters differ from the others. I realise you have that in the body of
-> patch 1, but it's critical information when reviewing this patch...
+On Fri, Aug 09, 2019 at 10:16:09AM +0530, Vidya Sagar wrote:
 
-Ok, I will add in next version.
->
-> >
-> > Signed-off-by: Ganapatrao Kulkarni <gkulkarni@marvell.com>
-> > ---
-> >  drivers/perf/thunderx2_pmu.c | 248 ++++++++++++++++++++++++++++++-----
-> >  1 file changed, 214 insertions(+), 34 deletions(-)
-> >
-> > diff --git a/drivers/perf/thunderx2_pmu.c b/drivers/perf/thunderx2_pmu.c
-> > index 43d76c85da56..a4e1273eafa3 100644
-> > --- a/drivers/perf/thunderx2_pmu.c
-> > +++ b/drivers/perf/thunderx2_pmu.c
-> > @@ -17,22 +17,31 @@
-> >   */
-> >
-> >  #define TX2_PMU_MAX_COUNTERS         4
->
-> Shouldn't this be 8 now?
+[...]
 
-It is kept unchanged to 4(as suggested by Will), which is same for
-both L3 and DMC.
-For CCPI2 this macro is not used.
+I do not know why up to here the line spacing is OK and here
+you started cramming code all together :)
 
->
-> [...]
->
-> >  /*
-> > - * pmu on each socket has 2 uncore devices(dmc and l3c),
-> > - * each device has 4 counters.
-> > + * pmu on each socket has 3 uncore devices(dmc, l3ci and ccpi2),
-> > + * dmc and l3c has 4 counters and ccpi2 8.
-> >   */
->
-> How about:
->
-> /*
->  * Each socket has 3 uncore device associated with a PMU. The DMC and
->  * L3C have 4 32-bit counters, and the CCPI2 has 8 64-bit counters.
->  */
+Just a matter of consistency, thanks for fixing them up.
 
-Thanks.
->
-> >  struct tx2_uncore_pmu {
-> >       struct hlist_node hpnode;
-> > @@ -69,12 +86,14 @@ struct tx2_uncore_pmu {
-> >       int node;
-> >       int cpu;
-> >       u32 max_counters;
-> > +     u32 counters_mask;
-> >       u32 prorate_factor;
-> >       u32 max_events;
-> > +     u32 events_mask;
-> >       u64 hrtimer_interval;
-> >       void __iomem *base;
-> >       DECLARE_BITMAP(active_counters, TX2_PMU_MAX_COUNTERS);
->
-> This bitmap isn't big enough for the 4 new counters.
->
-> > -     struct perf_event *events[TX2_PMU_MAX_COUNTERS];
-> > +     struct perf_event **events;
->
-> As above, can't we bump TX2_PMU_MAX_COUNTERS to 8 rather than making
-> this a dynamic allocation?
+> +static void tegra_pcie_downstream_dev_to_D0(struct tegra_pcie_dw *pcie)
+> +{
+> +	struct pcie_port *pp = &pcie->pci.pp;
+> +	struct pci_bus *child;
+> +	struct pci_dev *pdev;
+> +
+> +	/*
+> +	 * link doesn't go into L2 state with some of the endpoints with Tegra
+> +	 * if they are not in D0 state. So, need to make sure that immediate
+> +	 * downstream devices are in D0 state before sending PME_TurnOff to put
+> +	 * link into L2 state.
+> +	 * This is as per PCI Express Base r4.0 v1.0 September 27-2017,
+> +	 * 5.2 Link State Power Management (Page #428).
+> +	 */
+> +
+> +	list_for_each_entry(child, &pp->root_bus->children, node) {
+> +		/* Bring downstream devices to D0 if they are not already in */
+> +		if (child->parent == pp->root_bus)
+> +			break;
+> +	}
 
-events is only relevant for L3 and DMC since they use timer callbacks.
-This is done as per previous review comments.
+Add empty line.
 
->
-> [...]
->
-> >  static inline u32 reg_readl(unsigned long addr)
-> >  {
-> >       return readl((void __iomem *)addr);
-> >  }
-> >
-> > +static inline u32 reg_readq(unsigned long addr)
-> > +{
-> > +     return readq((void __iomem *)addr);
-> > +}
->
-> Presumably reg_readq() should return a u64.
+> +	list_for_each_entry(pdev, &child->devices, bus_list) {
+> +		if (PCI_SLOT(pdev->devfn) == 0) {
+> +			if (pci_set_power_state(pdev, PCI_D0))
+> +				dev_err(pcie->dev,
+> +					"Failed to transition %s to D0 state\n",
+> +					dev_name(&pdev->dev));
+> +		}
+> +	}
+> +}
+> +
+> +static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
+> +					bool en_hw_hot_rst)
+> +{
+> +	int ret;
+> +	u32 val;
+> +
+> +	ret = tegra_pcie_bpmp_set_ctrl_state(pcie, true);
+> +	if (ret) {
+> +		dev_err(pcie->dev,
+> +			"Failed to enable controller %u: %d\n", pcie->cid, ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = regulator_enable(pcie->pex_ctl_supply);
+> +	if (ret < 0) {
+> +		dev_err(pcie->dev, "Failed to enable regulator: %d\n", ret);
+> +		goto fail_reg_en;
+> +	}
+> +
+> +	ret = clk_prepare_enable(pcie->core_clk);
+> +	if (ret) {
+> +		dev_err(pcie->dev, "Failed to enable core clock: %d\n", ret);
+> +		goto fail_core_clk;
+> +	}
+> +
+> +	ret = reset_control_deassert(pcie->core_apb_rst);
+> +	if (ret) {
+> +		dev_err(pcie->dev, "Failed to deassert core APB reset: %d\n",
+> +			ret);
+> +		goto fail_core_apb_rst;
+> +	}
+> +
+> +	if (en_hw_hot_rst) {
+> +		/* Enable HW_HOT_RST mode */
+> +		val = appl_readl(pcie, APPL_CTRL);
+> +		val &= ~(APPL_CTRL_HW_HOT_RST_MODE_MASK <<
+> +			 APPL_CTRL_HW_HOT_RST_MODE_SHIFT);
+> +		val |= APPL_CTRL_HW_HOT_RST_EN;
+> +		appl_writel(pcie, val, APPL_CTRL);
+> +	}
+> +
+> +	ret = tegra_pcie_enable_phy(pcie);
+> +	if (ret) {
+> +		dev_err(pcie->dev, "Failed to enable PHY: %d\n", ret);
+> +		goto fail_phy;
+> +	}
+> +
+> +	/* Update CFG base address */
+> +	appl_writel(pcie, pcie->dbi_res->start & APPL_CFG_BASE_ADDR_MASK,
+> +		    APPL_CFG_BASE_ADDR);
+> +
+> +	/* Configure this core for RP mode operation */
+> +	appl_writel(pcie, APPL_DM_TYPE_RP, APPL_DM_TYPE);
+> +
+> +	appl_writel(pcie, 0x0, APPL_CFG_SLCG_OVERRIDE);
+> +
+> +	val = appl_readl(pcie, APPL_CTRL);
+> +	appl_writel(pcie, val | APPL_CTRL_SYS_PRE_DET_STATE, APPL_CTRL);
+> +
+> +	val = appl_readl(pcie, APPL_CFG_MISC);
+> +	val |= (APPL_CFG_MISC_ARCACHE_VAL << APPL_CFG_MISC_ARCACHE_SHIFT);
+> +	appl_writel(pcie, val, APPL_CFG_MISC);
+> +
+> +	if (!pcie->supports_clkreq) {
+> +		val = appl_readl(pcie, APPL_PINMUX);
+> +		val |= APPL_PINMUX_CLKREQ_OUT_OVRD_EN;
+> +		val |= APPL_PINMUX_CLKREQ_OUT_OVRD;
+> +		appl_writel(pcie, val, APPL_PINMUX);
+> +	}
+> +
+> +	/* Update iATU_DMA base address */
+> +	appl_writel(pcie,
+> +		    pcie->atu_dma_res->start & APPL_CFG_IATU_DMA_BASE_ADDR_MASK,
+> +		    APPL_CFG_IATU_DMA_BASE_ADDR);
+> +
+> +	reset_control_deassert(pcie->core_rst);
+> +
+> +	pcie->pcie_cap_base = dw_pcie_find_capability(&pcie->pci,
+> +						      PCI_CAP_ID_EXP);
+> +
+> +	/* Disable ASPM-L1SS advertisement as there is no CLKREQ routing */
+> +	if (!pcie->supports_clkreq) {
+> +		disable_aspm_l11(pcie);
+> +		disable_aspm_l12(pcie);
+> +	}
+> +
+> +	return ret;
+> +
+> +fail_phy:
+> +	reset_control_assert(pcie->core_apb_rst);
+> +fail_core_apb_rst:
+> +	clk_disable_unprepare(pcie->core_clk);
+> +fail_core_clk:
+> +	regulator_disable(pcie->pex_ctl_supply);
+> +fail_reg_en:
+> +	tegra_pcie_bpmp_set_ctrl_state(pcie, false);
+> +
+> +	return ret;
+> +}
+> +
+> +static int __deinit_controller(struct tegra_pcie_dw *pcie)
+> +{
+> +	int ret;
+> +
+> +	ret = reset_control_assert(pcie->core_rst);
+> +	if (ret) {
+> +		dev_err(pcie->dev, "Failed to assert \"core\" reset: %d\n",
+> +			ret);
+> +		return ret;
+> +	}
 
-Yes,  My bad.
+Add empty line.
 
->
-> [...]
->
-> > +static void uncore_start_event_ccpi2(struct perf_event *event, int flags)
-> > +{
-> > +     u32 emask;
-> > +     struct hw_perf_event *hwc = &event->hw;
-> > +     struct tx2_uncore_pmu *tx2_pmu;
-> > +
-> > +     tx2_pmu = pmu_to_tx2_pmu(event->pmu);
-> > +     emask = tx2_pmu->events_mask;
-> > +
-> > +     /* Bit [09:00] to set event id, set level and type to 1 */
-> > +     reg_writel((3 << 10) |
->
-> Do you mean that bits [11:10] are level and type?
+> +	tegra_pcie_disable_phy(pcie);
 
-Yes, i will change the comment.
->
-> What exactly are 'level' and 'type'?
+Add empty line.
 
-They are for other settings which are not relevant for software/kernel.
->
-> Can we give those bits mnemonics?
->
-> > +                     GET_EVENTID(event, emask), hwc->config_base);
-> > +     /* reset[4], enable[0] and start[1] counters */
->
-> Rather than using magic numbers everywhere, please give these mnemonics,
-> e.g.
->
-> #define CCPI2_PERF_CTL_ENABLE   BIT(0)
-> #define CCPI2_PERF_CTL_START    BIT(1)
-> #define CCPI2_PERF_CTL_RESET    BIT(4)
+> +	ret = reset_control_assert(pcie->core_apb_rst);
+> +	if (ret) {
+> +		dev_err(pcie->dev, "Failed to assert APB reset: %d\n", ret);
+> +		return ret;
+> +	}
 
-not used everywhere, only in this function.
-I can add these macros.
+Add empty line.
 
->
-> > +     reg_writel(0x13, hwc->event_base + CCPI2_PERF_CTL);
->
-> ... and then you can OR them in here:
+> +	clk_disable_unprepare(pcie->core_clk);
 
-OK
->
->         ctl = CCPI2_PERF_CTL_ENABLE |
->               CCPI2_PERF_CTL_START |
->               CCPI2_PERF_CTL_RESET;
->         reg_writel(ctl, hwc->event_base + CCPI2_PERF_CTL);
->
-> [...]
->
-> > @@ -456,8 +603,9 @@ static void tx2_uncore_event_start(struct perf_event *event, int flags)
-> >       tx2_pmu->start_event(event, flags);
-> >       perf_event_update_userpage(event);
-> >
-> > -     /* Start timer for first event */
-> > -     if (bitmap_weight(tx2_pmu->active_counters,
-> > +     /* Start timer for first non ccpi2 event */
-> > +     if (tx2_pmu->type != PMU_TYPE_CCPI2 &&
-> > +                     bitmap_weight(tx2_pmu->active_counters,
-> >                               tx2_pmu->max_counters) == 1) {
-> >               hrtimer_start(&tx2_pmu->hrtimer,
-> >                       ns_to_ktime(tx2_pmu->hrtimer_interval),
->
-> This would be easier to read as two statements:
->
->         /* No hrtimer needed with 64-bit counters */
->         if (tx2_pmu->type == PMU_TYPE_CCPI2)
->                 return;
->
->         /* Start timer for first event */
->         if (bitmap_weight(tx2_pmu->active_counters,
->             tx2_pmu->max_counters) != 1) {
->                 ...
->         }
->
+Add empty line.
 
-OK, makes sense.
+> +	ret = regulator_disable(pcie->pex_ctl_supply);
+> +	if (ret) {
+> +		dev_err(pcie->dev, "Failed to disable regulator: %d\n", ret);
+> +		return ret;
+> +	}
 
-> > @@ -495,7 +643,8 @@ static int tx2_uncore_event_add(struct perf_event *event, int flags)
-> >       if (hwc->idx < 0)
-> >               return -EAGAIN;
-> >
-> > -     tx2_pmu->events[hwc->idx] = event;
-> > +     if (tx2_pmu->events)
-> > +             tx2_pmu->events[hwc->idx] = event;
->
-> So this is NULL for CCPI2?
+Add empty line.
 
-Yes.
->
-> I guess we don't strictly need the if we don't have a hrtimer to update
-> event counts, but this makes the code more complicated than it needs to
-> be.
+> +	ret = tegra_pcie_bpmp_set_ctrl_state(pcie, false);
+> +	if (ret) {
+> +		dev_err(pcie->dev, "Failed to disable controller %d: %d\n",
+> +			pcie->cid, ret);
+> +		return ret;
+> +	}
 
-Yes I am using tx2_pmu->events to differentiate the type, it is NULL for CCPI2.
-I can extend same to tx2_uncore_event_start().
->
-> [...]
->
-> > @@ -580,8 +732,12 @@ static int tx2_uncore_pmu_add_dev(struct tx2_uncore_pmu *tx2_pmu)
-> >                       cpu_online_mask);
-> >
-> >       tx2_pmu->cpu = cpu;
-> > -     hrtimer_init(&tx2_pmu->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
-> > -     tx2_pmu->hrtimer.function = tx2_hrtimer_callback;
-> > +     /* CCPI2 counters are 64 bit counters, no overflow  */
-> > +     if (tx2_pmu->type != PMU_TYPE_CCPI2) {
-> > +             hrtimer_init(&tx2_pmu->hrtimer,
-> > +                             CLOCK_MONOTONIC, HRTIMER_MODE_REL);
-> > +             tx2_pmu->hrtimer.function = tx2_hrtimer_callback;
-> > +     }
->
-> Hmmm... this means that tx2_pmu->hrtimer.function is NULL for the CCPI2
-> PMU. I think it would be best to check that when (re)programming the
-> counters rather than the PMU type. For example, in
-> tx2_uncore_event_start() we could have:
->
->         if (!tx2_pmu->hrtimer.function)
->                 return;
->         if (bitmap_weight(tx2_pmu->active_counters,
->             tx2_pmu->max_counters) != 1) {
->                 ...
->         }
->
+Add empty line.
 
-Yes it is NULL for CCPI2.
-Ok, I can use tx2_pmu->events instead(like other places).
+> +	return ret;
+> +}
+> +
+> +static int tegra_pcie_init_controller(struct tegra_pcie_dw *pcie)
+> +{
+> +	struct dw_pcie *pci = &pcie->pci;
+> +	struct pcie_port *pp = &pci->pp;
+> +	int ret;
+> +
+> +	ret = tegra_pcie_config_controller(pcie, false);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	pp->ops = &tegra_pcie_dw_host_ops;
+> +
+> +	ret = dw_pcie_host_init(pp);
+> +	if (ret < 0) {
+> +		dev_err(pcie->dev, "Failed to add PCIe port: %d\n", ret);
+> +		goto fail_host_init;
+> +	}
+> +
+> +	return 0;
+> +
+> +fail_host_init:
+> +	return __deinit_controller(pcie);
+> +}
+> +
+> +static int tegra_pcie_try_link_l2(struct tegra_pcie_dw *pcie)
+> +{
+> +	u32 val;
+> +
+> +	if (!tegra_pcie_dw_link_up(&pcie->pci))
+> +		return 0;
+> +
+> +	val = appl_readl(pcie, APPL_RADM_STATUS);
+> +	val |= APPL_PM_XMT_TURNOFF_STATE;
+> +	appl_writel(pcie, val, APPL_RADM_STATUS);
+> +
+> +	return readl_poll_timeout_atomic(pcie->appl_base + APPL_DEBUG, val,
+> +				 val & APPL_DEBUG_PM_LINKST_IN_L2_LAT,
+> +				 1, PME_ACK_TIMEOUT);
+> +}
+> +
+> +static void tegra_pcie_dw_pme_turnoff(struct tegra_pcie_dw *pcie)
+> +{
+> +	u32 data;
+> +	int err;
+> +
+> +	if (!tegra_pcie_dw_link_up(&pcie->pci)) {
+> +		dev_dbg(pcie->dev, "PCIe link is not up...!\n");
+> +		return;
+> +	}
+> +
+> +	if (tegra_pcie_try_link_l2(pcie)) {
+> +		dev_info(pcie->dev, "Link didn't transition to L2 state\n");
+> +		/*
+> +		 * TX lane clock freq will reset to Gen1 only if link is in L2
+> +		 * or detect state.
+> +		 * So apply pex_rst to end point to force RP to go into detect
+> +		 * state
+> +		 */
+> +		data = appl_readl(pcie, APPL_PINMUX);
+> +		data &= ~APPL_PINMUX_PEX_RST;
+> +		appl_writel(pcie, data, APPL_PINMUX);
+> +
+> +		err = readl_poll_timeout_atomic(pcie->appl_base + APPL_DEBUG,
+> +						data,
+> +						((data &
+> +						APPL_DEBUG_LTSSM_STATE_MASK) >>
+> +						APPL_DEBUG_LTSSM_STATE_SHIFT) ==
+> +						LTSSM_STATE_PRE_DETECT,
+> +						1, LTSSM_TIMEOUT);
+> +		if (err) {
+> +			dev_info(pcie->dev, "Link didn't go to detect state\n");
+> +		} else {
+> +			/* Disable LTSSM after link is in detect state */
+> +			data = appl_readl(pcie, APPL_CTRL);
+> +			data &= ~APPL_CTRL_LTSSM_EN;
+> +			appl_writel(pcie, data, APPL_CTRL);
+> +		}
+> +	}
+> +	/*
+> +	 * DBI registers may not be accessible after this as PLL-E would be
+> +	 * down depending on how CLKREQ is pulled by end point
+> +	 */
+> +	data = appl_readl(pcie, APPL_PINMUX);
+> +	data |= (APPL_PINMUX_CLKREQ_OVERRIDE_EN | APPL_PINMUX_CLKREQ_OVERRIDE);
+> +	/* Cut REFCLK to slot */
+> +	data |= APPL_PINMUX_CLK_OUTPUT_IN_OVERRIDE_EN;
+> +	data &= ~APPL_PINMUX_CLK_OUTPUT_IN_OVERRIDE;
+> +	appl_writel(pcie, data, APPL_PINMUX);
+> +}
+> +
+> +static int tegra_pcie_deinit_controller(struct tegra_pcie_dw *pcie)
+> +{
+> +	tegra_pcie_downstream_dev_to_D0(pcie);
+> +	dw_pcie_host_deinit(&pcie->pci.pp);
+> +	tegra_pcie_dw_pme_turnoff(pcie);
 
-> Thanks,
-> Mark.
+Add empty line.
+
+> +	return __deinit_controller(pcie);
+> +}
+> +
+> +static int tegra_pcie_config_rp(struct tegra_pcie_dw *pcie)
+> +{
+> +	struct pcie_port *pp = &pcie->pci.pp;
+> +	struct device *dev = pcie->dev;
+> +	char *name;
+> +	int ret;
+> +
+> +	if (IS_ENABLED(CONFIG_PCI_MSI)) {
+> +		pp->msi_irq = of_irq_get_byname(dev->of_node, "msi");
+> +		if (!pp->msi_irq) {
+> +			dev_err(dev, "Failed to get MSI interrupt\n");
+> +			return -ENODEV;
+> +		}
+> +	}
+> +
+> +	pm_runtime_enable(dev);
+> +	ret = pm_runtime_get_sync(dev);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Failed to get runtime sync for PCIe dev: %d\n",
+> +			ret);
+> +		pm_runtime_disable(dev);
+> +		return ret;
+> +	}
+> +
+> +	tegra_pcie_init_controller(pcie);
+> +
+> +	pcie->link_state = tegra_pcie_dw_link_up(&pcie->pci);
+> +
+> +	if (!pcie->link_state) {
+> +		ret = -ENOMEDIUM;
+> +		goto fail_host_init;
+> +	}
+> +
+> +	name = devm_kasprintf(dev, GFP_KERNEL, "%pOFP", dev->of_node);
+> +	if (!name) {
+> +		ret = -ENOMEM;
+> +		goto fail_host_init;
+> +	}
+> +
+> +	pcie->debugfs = debugfs_create_dir(name, NULL);
+> +	if (!pcie->debugfs)
+> +		dev_err(dev, "Failed to create debugfs\n");
+> +	else
+> +		init_debugfs(pcie);
+> +
+> +	return ret;
+> +
+> +fail_host_init:
+> +	tegra_pcie_deinit_controller(pcie);
+> +	pm_runtime_put_sync(dev);
+> +	pm_runtime_disable(dev);
+> +	return ret;
+> +}
+> +
+> +static int tegra_pcie_dw_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct resource *atu_dma_res;
+> +	struct tegra_pcie_dw *pcie;
+> +	struct resource *dbi_res;
+> +	struct pcie_port *pp;
+> +	struct dw_pcie *pci;
+> +	struct phy **phys;
+> +	char *name;
+> +	int ret;
+> +	u32 i;
+> +
+> +	pcie = devm_kzalloc(dev, sizeof(*pcie), GFP_KERNEL);
+> +	if (!pcie)
+> +		return -ENOMEM;
+> +
+> +	pci = &pcie->pci;
+> +	pci->dev = &pdev->dev;
+> +	pci->ops = &tegra_dw_pcie_ops;
+> +	pp = &pci->pp;
+> +	pcie->dev = &pdev->dev;
+> +
+> +	ret = tegra_pcie_dw_parse_dt(pcie);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Failed to parse device tree: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	pcie->pex_ctl_supply = devm_regulator_get(dev, "vddio-pex-ctl");
+> +	if (IS_ERR(pcie->pex_ctl_supply)) {
+> +		dev_err(dev, "Failed to get regulator: %ld\n",
+> +			PTR_ERR(pcie->pex_ctl_supply));
+> +		return PTR_ERR(pcie->pex_ctl_supply);
+> +	}
+> +
+> +	pcie->core_clk = devm_clk_get(dev, "core");
+> +	if (IS_ERR(pcie->core_clk)) {
+> +		dev_err(dev, "Failed to get core clock: %ld\n",
+> +			PTR_ERR(pcie->core_clk));
+> +		return PTR_ERR(pcie->core_clk);
+> +	}
+> +
+> +	pcie->appl_res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
+> +						      "appl");
+> +	if (!pcie->appl_res) {
+> +		dev_err(dev, "Failed to find \"appl\" region\n");
+> +		return PTR_ERR(pcie->appl_res);
+> +	}
+> +
+> +	pcie->appl_base = devm_ioremap_resource(dev, pcie->appl_res);
+> +	if (IS_ERR(pcie->appl_base))
+> +		return PTR_ERR(pcie->appl_base);
+> +
+> +	pcie->core_apb_rst = devm_reset_control_get(dev, "apb");
+> +	if (IS_ERR(pcie->core_apb_rst)) {
+> +		dev_err(dev, "Failed to get APB reset: %ld\n",
+> +			PTR_ERR(pcie->core_apb_rst));
+> +		return PTR_ERR(pcie->core_apb_rst);
+> +	}
+> +
+> +	phys = devm_kcalloc(dev, pcie->phy_count, sizeof(*phys), GFP_KERNEL);
+> +	if (!phys)
+> +		return PTR_ERR(phys);
+> +
+> +	for (i = 0; i < pcie->phy_count; i++) {
+> +		name = kasprintf(GFP_KERNEL, "p2u-%u", i);
+> +		if (!name) {
+> +			dev_err(dev, "Failed to create P2U string\n");
+> +			return -ENOMEM;
+> +		}
+> +		phys[i] = devm_phy_get(dev, name);
+> +		kfree(name);
+> +		if (IS_ERR(phys[i])) {
+> +			ret = PTR_ERR(phys[i]);
+> +			dev_err(dev, "Failed to get PHY: %d\n", ret);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	pcie->phys = phys;
+> +
+> +	dbi_res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dbi");
+> +	if (!dbi_res) {
+> +		dev_err(dev, "Failed to find \"dbi\" region\n");
+> +		return PTR_ERR(dbi_res);
+> +	}
+> +	pcie->dbi_res = dbi_res;
+> +
+> +	pci->dbi_base = devm_ioremap_resource(dev, dbi_res);
+> +	if (IS_ERR(pci->dbi_base))
+> +		return PTR_ERR(pci->dbi_base);
+> +
+> +	/* Tegra HW locates DBI2 at a fixed offset from DBI */
+> +	pci->dbi_base2 = pci->dbi_base + 0x1000;
+> +
+> +	atu_dma_res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
+> +						   "atu_dma");
+> +	if (!atu_dma_res) {
+> +		dev_err(dev, "Failed to find \"atu_dma\" region\n");
+> +		return PTR_ERR(atu_dma_res);
+> +	}
+> +	pcie->atu_dma_res = atu_dma_res;
+> +
+> +	pci->atu_base = devm_ioremap_resource(dev, atu_dma_res);
+> +	if (IS_ERR(pci->atu_base))
+> +		return PTR_ERR(pci->atu_base);
+> +
+> +	pcie->core_rst = devm_reset_control_get(dev, "core");
+> +	if (IS_ERR(pcie->core_rst)) {
+> +		dev_err(dev, "Failed to get core reset: %ld\n",
+> +			PTR_ERR(pcie->core_rst));
+> +		return PTR_ERR(pcie->core_rst);
+> +	}
+> +
+> +	pp->irq = platform_get_irq_byname(pdev, "intr");
+> +	if (!pp->irq) {
+> +		dev_err(dev, "Failed to get \"intr\" interrupt\n");
+> +		return -ENODEV;
+> +	}
+> +
+> +	ret = devm_request_irq(dev, pp->irq, tegra_pcie_irq_handler,
+> +			       IRQF_SHARED, "tegra-pcie-intr", pcie);
+> +	if (ret) {
+> +		dev_err(dev, "Failed to request IRQ %d: %d\n", pp->irq, ret);
+> +		return ret;
+> +	}
+> +
+> +	pcie->bpmp = tegra_bpmp_get(dev);
+> +	if (IS_ERR(pcie->bpmp))
+> +		return PTR_ERR(pcie->bpmp);
+> +
+> +	platform_set_drvdata(pdev, pcie);
+> +
+> +	ret = tegra_pcie_config_rp(pcie);
+> +	if (ret && ret != -ENOMEDIUM)
+> +		goto fail;
+> +	else
+> +		return 0;
+> +
+> +fail:
+> +	tegra_bpmp_put(pcie->bpmp);
+> +	return ret;
+> +}
+> +
+> +static int tegra_pcie_dw_remove(struct platform_device *pdev)
+> +{
+> +	struct tegra_pcie_dw *pcie = platform_get_drvdata(pdev);
+> +
+> +	if (!pcie->link_state)
+> +		return 0;
+> +
+> +	debugfs_remove_recursive(pcie->debugfs);
+> +	tegra_pcie_deinit_controller(pcie);
+> +	pm_runtime_put_sync(pcie->dev);
+> +	pm_runtime_disable(pcie->dev);
+> +	tegra_bpmp_put(pcie->bpmp);
+> +
+> +	return 0;
+> +}
+> +
+> +static int tegra_pcie_dw_suspend_late(struct device *dev)
+> +{
+> +	struct tegra_pcie_dw *pcie = dev_get_drvdata(dev);
+> +	u32 val;
+> +
+> +	if (!pcie->link_state)
+> +		return 0;
+> +
+> +	/* Enable HW_HOT_RST mode */
+> +	val = appl_readl(pcie, APPL_CTRL);
+> +	val &= ~(APPL_CTRL_HW_HOT_RST_MODE_MASK <<
+> +		 APPL_CTRL_HW_HOT_RST_MODE_SHIFT);
+> +	val |= APPL_CTRL_HW_HOT_RST_EN;
+> +	appl_writel(pcie, val, APPL_CTRL);
+> +
+> +	return 0;
+> +}
+> +
+> +static int tegra_pcie_dw_suspend_noirq(struct device *dev)
+> +{
+> +	struct tegra_pcie_dw *pcie = dev_get_drvdata(dev);
+> +
+> +	if (!pcie->link_state)
+> +		return 0;
+> +
+> +	/* Save MSI interrupt vector */
+> +	pcie->msi_ctrl_int = dw_pcie_readl_dbi(&pcie->pci,
+> +					       PORT_LOGIC_MSI_CTRL_INT_0_EN);
+> +	tegra_pcie_downstream_dev_to_D0(pcie);
+> +	tegra_pcie_dw_pme_turnoff(pcie);
+
+Add empty line.
+
+> +	return __deinit_controller(pcie);
+> +}
+> +
+> +static int tegra_pcie_dw_resume_noirq(struct device *dev)
+> +{
+> +	struct tegra_pcie_dw *pcie = dev_get_drvdata(dev);
+> +	int ret;
+> +
+> +	if (!pcie->link_state)
+> +		return 0;
+> +
+> +	ret = tegra_pcie_config_controller(pcie, true);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	ret = tegra_pcie_dw_host_init(&pcie->pci.pp);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Failed to init host: %d\n", ret);
+> +		goto fail_host_init;
+> +	}
+> +
+> +	/* Restore MSI interrupt vector */
+> +	dw_pcie_writel_dbi(&pcie->pci, PORT_LOGIC_MSI_CTRL_INT_0_EN,
+> +			   pcie->msi_ctrl_int);
+> +
+> +	return 0;
+
+Add empty line.
 
 Thanks,
-Ganapat
+Lorenzo
+
+> +fail_host_init:
+> +	return __deinit_controller(pcie);
+> +}
+> +
+> +static int tegra_pcie_dw_resume_early(struct device *dev)
+> +{
+> +	struct tegra_pcie_dw *pcie = dev_get_drvdata(dev);
+> +	u32 val;
+> +
+> +	if (!pcie->link_state)
+> +		return 0;
+> +
+> +	/* Disable HW_HOT_RST mode */
+> +	val = appl_readl(pcie, APPL_CTRL);
+> +	val &= ~(APPL_CTRL_HW_HOT_RST_MODE_MASK <<
+> +		 APPL_CTRL_HW_HOT_RST_MODE_SHIFT);
+> +	val |= APPL_CTRL_HW_HOT_RST_MODE_IMDT_RST <<
+> +	       APPL_CTRL_HW_HOT_RST_MODE_SHIFT;
+> +	val &= ~APPL_CTRL_HW_HOT_RST_EN;
+> +	appl_writel(pcie, val, APPL_CTRL);
+> +
+> +	return 0;
+> +}
+> +
+> +static void tegra_pcie_dw_shutdown(struct platform_device *pdev)
+> +{
+> +	struct tegra_pcie_dw *pcie = platform_get_drvdata(pdev);
+> +
+> +	if (!pcie->link_state)
+> +		return;
+> +
+> +	debugfs_remove_recursive(pcie->debugfs);
+> +	tegra_pcie_downstream_dev_to_D0(pcie);
+> +
+> +	disable_irq(pcie->pci.pp.irq);
+> +	if (IS_ENABLED(CONFIG_PCI_MSI))
+> +		disable_irq(pcie->pci.pp.msi_irq);
+> +
+> +	tegra_pcie_dw_pme_turnoff(pcie);
+> +	__deinit_controller(pcie);
+> +}
+> +
+> +static const struct of_device_id tegra_pcie_dw_of_match[] = {
+> +	{
+> +		.compatible = "nvidia,tegra194-pcie",
+> +	},
+> +	{},
+> +};
+> +
+> +static const struct dev_pm_ops tegra_pcie_dw_pm_ops = {
+> +	.suspend_late = tegra_pcie_dw_suspend_late,
+> +	.suspend_noirq = tegra_pcie_dw_suspend_noirq,
+> +	.resume_noirq = tegra_pcie_dw_resume_noirq,
+> +	.resume_early = tegra_pcie_dw_resume_early,
+> +};
+> +
+> +static struct platform_driver tegra_pcie_dw_driver = {
+> +	.probe = tegra_pcie_dw_probe,
+> +	.remove = tegra_pcie_dw_remove,
+> +	.shutdown = tegra_pcie_dw_shutdown,
+> +	.driver = {
+> +		.name	= "tegra194-pcie",
+> +		.pm = &tegra_pcie_dw_pm_ops,
+> +		.of_match_table = tegra_pcie_dw_of_match,
+> +	},
+> +};
+> +module_platform_driver(tegra_pcie_dw_driver);
+> +
+> +MODULE_DEVICE_TABLE(of, tegra_pcie_dw_of_match);
+> +
+> +MODULE_AUTHOR("Vidya Sagar <vidyas@nvidia.com>");
+> +MODULE_DESCRIPTION("NVIDIA PCIe host controller driver");
+> +MODULE_LICENSE("GPL v2");
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
