@@ -2,82 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4586B8BB29
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 16:06:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 221008BB2E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 16:08:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sW1dwQ80CzF0O03vD3eLlioq1z1AXEFoG18XGsvK9Ac=; b=FVk40gCVnFAOG9
-	4aZrWTDTyMEV0a+WnIEu3VY3wgY2WseanYwVyxPXdRPAdlCGxBXuE1ivyIIhbzXUKOkfr6JEkyNUC
-	AnZWJz68SDMTCsD0iyoHUk6+76GP5bM2l6SAG6hnvBVuSnjDiwy7C0tazdGJeVVCs6anst6k5u+ou
-	zR1FYTYLDBJ4khTOCjtanrX+wMiZ7Ie+E6Ijb+vz3YMI7H3539RwfFOUU9wuid3RWHvw6whrR9nR2
-	67C3zIBUB9I00h1bcNy3rf01m0Z70rkZtrYYQW9ZgV27jqo0CgxN9lJiNAaAOnwzzZiB1f3gWWcvm
-	ccQnO8vtts3llOHbixJA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=hR9JUwmbf/e4bQ0+wSYqBIjB+K4x2oWVdZiOU/H/CHA=; b=iA2d6oeUHVATkEEicqKG41/P/
+	EpfcFNdSwA66B/V7JOItPAcspezPMNJXgsE7he4wei4+wYD/kbQoJnszZvDDGEounEgD3cNQ4tPzk
+	FmyEuWYnrKVr4J5niGXuWQtde3ESpAQdyjApnT0syoVdyplSrcyIo0NERXxKe2MFFu8gPC4ORtBfg
+	5OhZ4gbKuwR8NEjR0iTpTzKQ9TRJ1pRQGmuPbicwjWZ99+Ov4jFyyF1g7q2MG4I17m1eN5wJtf/f5
+	tgv3wvwy8Egd9IB22jpbbOVxZIERWwErB2Mr7BMwsxI+9PYGf8idSSCUIo9ymZ4c8qngvJAobpZfc
+	RKgJ0LnsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxXRV-0001po-Cr; Tue, 13 Aug 2019 14:06:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hxXSv-000269-0h; Tue, 13 Aug 2019 14:07:57 +0000
+Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxXRE-0001pM-Nt
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 14:06:14 +0000
-Received: from mail-qt1-f181.google.com (mail-qt1-f181.google.com
- [209.85.160.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 314B52084D
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 14:06:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565705172;
- bh=O/fCUAPwaNaOOD9s9pkmueTj8itaAZFGU/uvEuU6kgc=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=HpR0kTzh0L+1HCy1Trd3qsQrbjZn52IPfyQt3g5Y8VCr7jeQ4xAJGXgARJUR1xzUP
- klqdwHVZdgDWaLEyuO5irst9vm8D+yBfjbDxpDfpaPy5IwtXu8xDHljvjkBzTYqGfd
- 9qbk3phoAnuJjqVtWEPfHlqqv0nRh2ShRjc21dNs=
-Received: by mail-qt1-f181.google.com with SMTP id d17so27472139qtj.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 07:06:12 -0700 (PDT)
-X-Gm-Message-State: APjAAAWPDQaEE0vrYJogpf+QDyMgoxMwPuDv8DfIZc/wndAmaOQGHbaI
- fkslFhM/pQpumSNuG5/yBTc4bPkaE7Okk10vqg==
-X-Google-Smtp-Source: APXvYqx3FMdHhwFr0AVbpQ+Lxot0AwypTnxtWq13JJOC5ylQw8YnX1DEfhh/V+OPrUwvGuTcbKUoILzXiL4zskKDN5g=
-X-Received: by 2002:aed:24f4:: with SMTP id u49mr6124643qtc.110.1565705171397; 
- Tue, 13 Aug 2019 07:06:11 -0700 (PDT)
+ id 1hxXSh-000259-JL
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 14:07:45 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+ by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 13 Aug 2019 07:07:41 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,381,1559545200"; d="scan'208";a="170405185"
+Received: from linux.intel.com ([10.54.29.200])
+ by orsmga008.jf.intel.com with ESMTP; 13 Aug 2019 07:07:41 -0700
+Received: from dalyrusx-mobl.amr.corp.intel.com (unknown [10.251.3.205])
+ by linux.intel.com (Postfix) with ESMTP id E8ECD5800FE;
+ Tue, 13 Aug 2019 07:07:40 -0700 (PDT)
+Subject: Re: [alsa-devel] Regression in next with codec unload and
+ snd_soc_component_get/put
+To: Mark Brown <broonie@kernel.org>, Tony Lindgren <tony@atomide.com>
+References: <20190809070003.GA52127@atomide.com>
+ <s5hwofmhkbs.wl-tiwai@suse.de> <20190809074643.GB52127@atomide.com>
+ <s5hv9v6hhm9.wl-tiwai@suse.de> <20190813102451.GJ52127@atomide.com>
+ <20190813112920.GC5093@sirena.co.uk>
+From: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
+Message-ID: <76dbd0ed-bbba-1a11-376e-7bf28c78ad9c@linux.intel.com>
+Date: Tue, 13 Aug 2019 09:07:59 -0500
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:60.0)
+ Gecko/20100101 Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <cover.1565633880.git.leonard.crestez@nxp.com>
- <97b0bff95ddb85b06ef3d2f8079faa36562a956d.1565633880.git.leonard.crestez@nxp.com>
- <CAL_JsqJWpQN2oTm8Q2_Gzd0GJ+YZoc9j-zh-U1s4eGhMxDEmEA@mail.gmail.com>
- <VI1PR04MB702300C8C78BC033D16EDB85EED20@VI1PR04MB7023.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR04MB702300C8C78BC033D16EDB85EED20@VI1PR04MB7023.eurprd04.prod.outlook.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 13 Aug 2019 08:06:00 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+BDO-J12BddWw-KbhjTx95p58qqpUhhKzUHED6vFK2TA@mail.gmail.com>
-Message-ID: <CAL_Jsq+BDO-J12BddWw-KbhjTx95p58qqpUhhKzUHED6vFK2TA@mail.gmail.com>
-Subject: Re: [PATCH 2/7] dt-bindings: devfreq: Add bindings for generic imx
- buses
-To: Leonard Crestez <leonard.crestez@nxp.com>
+In-Reply-To: <20190813112920.GC5093@sirena.co.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_070612_823636_AB90F5AD 
-X-CRM114-Status: GOOD (  24.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190813_070743_672059_D020105D 
+X-CRM114-Status: GOOD (  12.53  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.20 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,127 +73,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Alexandre Bailon <abailon@baylibre.com>, Will Deacon <will@kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Aisheng Dong <aisheng.dong@nxp.com>,
- Anson Huang <anson.huang@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Georgi Djakov <georgi.djakov@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: alsa-devel@alsa-project.org,
+ Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Takashi Iwai <tiwai@suse.de>, linux-kernel@vger.kernel.org,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 7:32 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
->
-> On 8/12/2019 10:47 PM, Rob Herring wrote:
-> > On Mon, Aug 12, 2019 at 12:49 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
->
-> >> Add initial dt bindings for the interconnects inside i.MX chips.
-> >> Multiple external IPs are involved but SOC integration means the
-> >> software controllable interfaces are very similar.
-> >>
-> >> +description: |
-> >> +  The i.MX SoC family has multiple buses for which clock frequency (and sometimes
-> >> +  voltage) can be adjusted.
-> >> +
-> >> +  Some of those buses expose register areas mentioned in the memory maps as GPV
-> >> +  ("Global Programmers View") but not all. Access to this area might be denied for
-> >> +  normal world.
-> >> +
-> >> +  The buses are based on externally licensed IPs such as ARM NIC-301 and Arteris
-> >> +  FlexNOC but DT bindings are specific to the integration of these bus
-> >> +  interconnect IPs into imx SOCs.
-> >
-> > No need to use the interconnect binding?
->
-> Separate RFC: https://patchwork.kernel.org/patch/11078673/
->
-> The interconnect is represented by a separate "virtual" node which might
-> not be OK. There was also a recent RFC from samsung which turns devfreq
-> nodes into interconnect providers:
->      https://patchwork.kernel.org/cover/11054417/
->
-> Is that preferable?
+On 8/13/19 6:29 AM, Mark Brown wrote:
+> On Tue, Aug 13, 2019 at 03:24:51AM -0700, Tony Lindgren wrote:
+>> * Takashi Iwai <tiwai@suse.de> [190809 08:24]:
+> 
+>>> ... and it was already fixed in the later commit 0e36f36b04e7
+>>> "ASoC: soc-core: fix module_put() warning in soc_cleanup_component".
+> 
+>> Mark, looks like this commit is still not in Linux next, forgot
+>> to push out something?
+> 
+> There's a build failure the Intel guys haven't fixed.
 
-Virtual nodes are not OK.
+see ('ASoC: SOF: fix HDA direct MMIO access') posted on alsa-devel 
+yesterday
 
->
-> >> +required:
-> >> +  - compatible
-> >> +  - clocks
-> >
-> > reg?
->
-> This is deliberately optional: for some NICs the GPV register area is
-> not exposed in the memory map. This is unusual but an accurate
-> description of the hardware.
+https://mailman.alsa-project.org/pipermail/alsa-devel/2019-August/153914.html
 
-Different h/w blocks should have different compatibles. GPV is an Arm
-thing and I'd expect FlexNOC to be different.
 
-> The current driver doesn't even attempt to map registers, it only
-> adjusts the clock.
-
-Irrelevant to the binding...
-
->
-> >> +examples:
-> >> +  - |
-> >> +    #include <dt-bindings/clock/imx8mm-clock.h>
-> >> +    noc: noc@32700000 {
-> >> +            compatible = "fsl,imx8mm-noc", "fsl,imx8m-noc";
-> >
-> > Doesn't match the schema. (Well, it does with 'contains', but
-> > fsl,imx8mm-noc is not documented.)
->
-> I'm confused about how per-SOC compatible strings works with validation.
-> There is a rule that every SOC dtsi needs to add soc prefix to all
-> device nodes but of_device_id in driver code doesn't need to be updated.
->
-> Without using "contains" on the "compatible" property then all
-> SOC-specific compatible strings would need to be mentioned in every yaml
-> files. Unless I'm missing something this means updating update every
-> binding file for each new SOC?
-
-Yes. The main exception is if various SoCs are just packaging,
-binning, or fuse differences.
-
->
-> I guess it can be useful because it also validates the compatible
-> sequence itself.
-
-Right. Order matters.
-
->
-> For this current example something like this seems to work:
->
->    compatible:
->      oneOf:
->        - items:
->          - enum:
->            - fsl,imx8mm-nic
->            - fsl,imx8mq-nic
->          - const: fsl,imx8m-nic
->        - items:
->          - enum:
->            - fsl,imx8mm-noc
->            - fsl,imx8mq-noc
->          - const: fsl,imx8m-noc
-
-Looks correct.
-
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
