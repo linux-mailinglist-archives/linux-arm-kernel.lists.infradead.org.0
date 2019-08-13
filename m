@@ -2,67 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF0758B005
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 08:39:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36BEC8AFF7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 08:33:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=/nUDrZ9mXJtya4u3GKLb7/+BBWhvmZtpMAkbgxHU61A=; b=uLjYDY4hQudsihAkliiw0W7tjs
-	LjJnYFNfxQVNoGTeixbCLD/tnyrNomScX4o0TLTFdM5tSsZls8z23GQCkDNKQVWZHYJ8gONX0bVNU
-	32cG94MBUt4mJZN34+2Gsy5HMEp3Ci15c6+itaQZSF2GFpsfOmtHUWs3a5j/ivS1De/4ZQ/4inOER
-	wU6EQ68k8n3IkFm2Q2ozygiuy6D3cydZeW5aDL/OX3b/Vvi8rgeQUDInW0rKe1+EsAJtPIBZDklEV
-	0WAgsl1OQz+2F5Jre/OD1ZnpaAVgYCH4S7asuMN8FMXizdXaMZl8bin9gOUVgKaSsl45ITZQwN6WX
-	/vZQ6jFQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yF1gAp/Nj0TP87/GAfDRV4ORBPRKajmXNik3jBw7gUA=; b=NgxwNamGQ8Zdeo
+	Sd9X9/nn8N5axDX7lhOmXszAix3iGtwIdYbA/VKa9IL0UqjdP4vzrxq7LaO+2/tBLEKn51YCq+nM5
+	kdqyCMX5bXL3S/pj4x1KrG9ENLXiF/TwrA+1bUdd2623Xr0huSgJd4wL66tgu96PdFg9npAP247NL
+	Bs7n0QEz2x0J166VPxCvDw52bZ3EsT0uOf2hCOQwMQgbYwO1Ho4rH/2Mt2jf3MKrivCx8pb1+Kymh
+	aHGtoyc3kRth3xubEU6iaH2pTomrdoezASxhiAvPzI0YdjSre2NjB00RemTh4LR5GvL8MRD7C34f8
+	kKl95TsyxY+uv0ZIv3qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxQT1-0004VO-Cn; Tue, 13 Aug 2019 06:39:35 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hxQN5-0001t4-Ki; Tue, 13 Aug 2019 06:33:27 +0000
+Received: from mail-wm1-f67.google.com ([209.85.128.67])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxQSE-0004I4-Gn
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 06:38:48 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 705381A02E1;
- Tue, 13 Aug 2019 08:38:43 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2665A1A0135;
- Tue, 13 Aug 2019 08:38:35 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id CD44B40305;
- Tue, 13 Aug 2019 14:38:24 +0800 (SGT)
-From: Xiaowei Bao <xiaowei.bao@nxp.com>
-To: lorenzo.pieralisi@arm.com, bhelgaas@google.com, minghuan.Lian@nxp.com,
- mingkai.hu@nxp.com, roy.zang@nxp.com, l.stach@pengutronix.de,
- kishon@ti.com, tpiepho@impinj.com, leonard.crestez@nxp.com,
- andrew.smirnov@gmail.com, yue.wang@amlogic.com,
- hayashi.kunihiko@socionext.com, dwmw@amazon.co.uk, jonnyc@amazon.com,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCHv5 2/2] PCI: layerscape: Add CONFIG_PCI_LAYERSCAPE_EP to build
- EP/RC separately
-Date: Tue, 13 Aug 2019 14:28:40 +0800
-Message-Id: <20190813062840.2733-2-xiaowei.bao@nxp.com>
-X-Mailer: git-send-email 2.9.5
-In-Reply-To: <20190813062840.2733-1-xiaowei.bao@nxp.com>
-References: <20190813062840.2733-1-xiaowei.bao@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hxQMq-0001sU-8h
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 06:33:13 +0000
+Received: by mail-wm1-f67.google.com with SMTP id m125so401070wmm.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 12 Aug 2019 23:33:11 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=sz3hBlZrKToKuC257EuHXyI7IFd+9vCG5NtLH+UK5dE=;
+ b=W2sjXcgPTdsqNyVV7EYTgKuOCO9lzwOvBxDomzzWT9xJO4SAWtkwDCrC6nceERcCZl
+ qFrgFSSIkw/HMUPpQ97ZeYIqFFTrpA6pfVhI5iEEKdZGXMysAiwTsJHwJ8/cSXV+gAOl
+ beA48vHuIHl7WhPUlzUpU9mRxq85vSz6/XT3ODsom0JqaDBgyoS3AFP/+TZYExR55Rfc
+ V9jUkK17m98xWIuEsvj+9AkvOY1pk3W48ZACxobIfngp3B10dPolfGS05WfSfUdleHGt
+ O0Rkm8HGe8TlT0R1maxC/FXrJM4XyLUMw4vUGZ1l4jK0I35GNT317nrROXXaZT0CnKQm
+ z3pA==
+X-Gm-Message-State: APjAAAX7z1RN3y0KKeECsOMzF/+TBjVHTBJ6K5/qS1z7Wv8HVO8SOZKE
+ bnhHzwvXWz30y0W5QuPnIr8=
+X-Google-Smtp-Source: APXvYqxMgeV+8orhH6cQ52RcH1PBjaI1BCrIQSLyKerSVwcKSkQ3fLMDFSOHumSk0HLOz0nQgV+MIA==
+X-Received: by 2002:a1c:9e4b:: with SMTP id h72mr1097686wme.99.1565677990805; 
+ Mon, 12 Aug 2019 23:33:10 -0700 (PDT)
+Received: from localhost.localdomain (broadband-188-32-48-208.ip.moscow.rt.ru.
+ [188.32.48.208])
+ by smtp.googlemail.com with ESMTPSA id v124sm488763wmf.23.2019.08.12.23.33.09
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 12 Aug 2019 23:33:10 -0700 (PDT)
+From: Denis Efremov <efremov@linux.com>
+To: linux-kernel@vger.kernel.org
+Subject: [RESEND PATCH] MAINTAINERS: Update path to physmap-versatile.c
+Date: Tue, 13 Aug 2019 09:32:51 +0300
+Message-Id: <20190813063251.21842-1-efremov@linux.com>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190813061024.15428-1-efremov@linux.com>
+References: <20190813061024.15428-1-efremov@linux.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_233846_834842_96B465D6 
-X-CRM114-Status: UNSURE (   8.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190812_233312_302009_3346B922 
+X-CRM114-Status: GOOD (  12.70  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.67 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (yefremov.denis[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.67 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,82 +87,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Xiaowei Bao <xiaowei.bao@nxp.com>
-MIME-Version: 1.0
+Cc: Boris Brezillon <bbrezillon@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Denis Efremov <efremov@linux.com>,
+ joe@perches.com, Ricardo Ribalda Delgado <ricardo.ribalda@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add CONFIG_PCI_LAYERSCAPE_EP to build EP/RC separately.
+Update MAINTAINERS record to reflect the filename change
+from physmap_of_versatile.c to physmap-versatile.c
 
-Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
+Cc: Boris Brezillon <bbrezillon@kernel.org>
+Cc: Ricardo Ribalda Delgado <ricardo.ribalda@gmail.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: linux-arm-kernel@lists.infradead.org
+Fixes: 6ca15cfa0788 ("mtd: maps: Rename physmap_of_{versatile, gemini} into physmap-{versatile, gemini}")
+Signed-off-by: Denis Efremov <efremov@linux.com>
 ---
-v2:
- - No change.
-v3:
- - modify the commit message.
-v4:
- - send the patch again with '--to'.
-v5:
- - No change.
+ MAINTAINERS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- drivers/pci/controller/dwc/Kconfig  | 20 ++++++++++++++++++--
- drivers/pci/controller/dwc/Makefile |  3 ++-
- 2 files changed, 20 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/dwc/Kconfig
-index 6ea778a..869c645 100644
---- a/drivers/pci/controller/dwc/Kconfig
-+++ b/drivers/pci/controller/dwc/Kconfig
-@@ -131,13 +131,29 @@ config PCI_KEYSTONE_EP
- 	  DesignWare core functions to implement the driver.
+diff --git a/MAINTAINERS b/MAINTAINERS
+index d42b478f2673..eeeb4097d5bd 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1221,7 +1221,7 @@ F:	arch/arm/boot/dts/versatile*
+ F:	drivers/clk/versatile/
+ F:	drivers/i2c/busses/i2c-versatile.c
+ F:	drivers/irqchip/irq-versatile-fpga.c
+-F:	drivers/mtd/maps/physmap_of_versatile.c
++F:	drivers/mtd/maps/physmap-versatile.c
+ F:	drivers/power/reset/arm-versatile-reboot.c
+ F:	drivers/soc/versatile/
  
- config PCI_LAYERSCAPE
--	bool "Freescale Layerscape PCIe controller"
-+	bool "Freescale Layerscape PCIe controller - Host mode"
- 	depends on OF && (ARM || ARCH_LAYERSCAPE || COMPILE_TEST)
- 	depends on PCI_MSI_IRQ_DOMAIN
- 	select MFD_SYSCON
- 	select PCIE_DW_HOST
- 	help
--	  Say Y here if you want PCIe controller support on Layerscape SoCs.
-+	  Say Y here if you want to enable PCIe controller support on Layerscape
-+	  SoCs to work in Host mode.
-+	  This controller can work either as EP or RC. The RCW[HOST_AGT_PEX]
-+	  determines which PCIe controller works in EP mode and which PCIe
-+	  controller works in RC mode.
-+
-+config PCI_LAYERSCAPE_EP
-+	bool "Freescale Layerscape PCIe controller - Endpoint mode"
-+	depends on OF && (ARM || ARCH_LAYERSCAPE || COMPILE_TEST)
-+	depends on PCI_ENDPOINT
-+	select PCIE_DW_EP
-+	help
-+	  Say Y here if you want to enable PCIe controller support on Layerscape
-+	  SoCs to work in Endpoint mode.
-+	  This controller can work either as EP or RC. The RCW[HOST_AGT_PEX]
-+	  determines which PCIe controller works in EP mode and which PCIe
-+	  controller works in RC mode.
- 
- config PCI_HISI
- 	depends on OF && (ARM64 || COMPILE_TEST)
-diff --git a/drivers/pci/controller/dwc/Makefile b/drivers/pci/controller/dwc/Makefile
-index b085dfd..824fde7 100644
---- a/drivers/pci/controller/dwc/Makefile
-+++ b/drivers/pci/controller/dwc/Makefile
-@@ -8,7 +8,8 @@ obj-$(CONFIG_PCI_EXYNOS) += pci-exynos.o
- obj-$(CONFIG_PCI_IMX6) += pci-imx6.o
- obj-$(CONFIG_PCIE_SPEAR13XX) += pcie-spear13xx.o
- obj-$(CONFIG_PCI_KEYSTONE) += pci-keystone.o
--obj-$(CONFIG_PCI_LAYERSCAPE) += pci-layerscape.o pci-layerscape-ep.o
-+obj-$(CONFIG_PCI_LAYERSCAPE) += pci-layerscape.o
-+obj-$(CONFIG_PCI_LAYERSCAPE_EP) += pci-layerscape-ep.o
- obj-$(CONFIG_PCIE_QCOM) += pcie-qcom.o
- obj-$(CONFIG_PCIE_ARMADA_8K) += pcie-armada8k.o
- obj-$(CONFIG_PCIE_ARTPEC6) += pcie-artpec6.o
 -- 
-2.9.5
+2.21.0
 
 
 _______________________________________________
