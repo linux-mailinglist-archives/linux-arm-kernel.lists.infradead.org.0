@@ -2,111 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 867928BC4D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 17:00:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23D738BC7F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 17:09:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-Id:Date
 	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=n9XfVeT4AARa8swQDJnQI0AiMMUYJE8dYv9q3B73i1g=; b=CZpRhRrM1ARQvm
-	JmK91yI1zORSqbTRomiFLfmCXu4xVMFihIKAIxFu1Yq4zcqDnina3CC1n7YPPZSTJYB1PCJk4sHHE
-	yh5EGYQYtqwJuLHbeFVHYA6I46BveOX2/ArVnGLYQAMRXH6D7w2urwyBxEC0jGka03U5ikpglvG57
-	yz3OYx/Ki1S4YQWgvczzH0NLk+nevD119E8y6FbH2u8j4k+coO9dMFp1bakXE3B7GDoqf+9jdVNZg
-	i+pie+ag+mFPpbv2BRj6Y/tWy0EMFKKMl6zxDmXLIuoSJFPQigha/u4uaf9Ybh1u8LR0nlRk5KfFf
-	+VtBfbQxqJJxAkYWR3tw==;
+	List-Owner; bh=G0dFLzTAvJU07NW0Zq9Uhfm6FzdL7QfZh0frD1V0h9U=; b=kg30s0eOQEKpxa
+	D10HqV/c32WdekW9xC+/vzMUXO4njM5we6UOLBxbbVpp5OngDZw0+7Ww417MoSKMQS82VQ8aIaDtb
+	1gl1MN3qKuWj336KqYlPauwJ9+jqludOa6NfNKdCNXWIwByJE0QdO8FJYu8TVPuKSKh6T/ouGuqTK
+	M/yQg1kk++bWpmfmahRRIoZrV6uOMQOfIHqZf/K/gS9c30bxr0PHsdHji4HnnL0FgajhmZPXnM4L3
+	jCnnwr4ARb7Uv4gKbLZ2OO4LaCkt/LCNHojOELXXtjePGWVrRjYt9Oj+URraxfhFiU2NcznLhN8Wk
+	xpVrpFxNDrsD290t8W7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxYHa-0007RB-PP; Tue, 13 Aug 2019 15:00:18 +0000
-Received: from mail-eopbgr40048.outbound.protection.outlook.com ([40.107.4.48]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hxYQ1-00034n-OF; Tue, 13 Aug 2019 15:09:01 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxYHI-0007Ar-Kc
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 15:00:02 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=a/b1AE7vjIJqNqPNdlUquZJzsx45yqlq3MhhaN+/uD3i+EKm1H3sH6E6pQdbkhkgOZOGYUlxPeXysTKqfeu20pdGSMAbb4w2r7FLaMgc+uvHvGH73lMEONkH0SuCQPavG25zZ7reVMxb5MFk97VurCyZYRezGkYtIdWDZlmJ5+KmTmBs/D+j/HRzyagHKP4H6k6kf/dpcjB+QnDMCVBJ2ZTcgHgPP8j8CiUohwgAkzJ5yUAvViIozzsFT8q5EqFOGFzvLEO4dZY2YHqj+cbiKAsH2Ief0+5oKxIGFKXDmowEm5WBkZnUXoSNO/ZppguWLuWyHGgffpb9+/FB+DTYNg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mDiILO7SooLmClTeL9XDv9DJ76g+A5SreUDfpe+zN4I=;
- b=AC7xpxg6fUrOannUh5rWXCEzg7lDvrfuleI9f0d3Izf9Gwt0gaRI9aUAaPC50Vq63ZqwfM+0IUDcC3B8a+UdKtBKN3vpODaR2rX+WMv3c9mDXF9URyVfymaRCqGsELQM6HzzuWCOFPmYZtPDcRvt6mxEGAH+L7L1jCbuxSqBN6AeNYwAc/olieLTOb7MbTYJFfOMxFr7ODdSkIzoucK15j+9DgJcTKmJKVJnXgHujbw5jgpGc6zxYUHEjQ7bDemaYP7ztkKffy6R60giVjG4FLSytqEvp6KfOjRRkbioCn0tsABloF7HY7+ySm+WfyhZCCbqF2bIxvYkk0eqTQr4WQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mDiILO7SooLmClTeL9XDv9DJ76g+A5SreUDfpe+zN4I=;
- b=eCchaYVjbxb1tj2sx7I6c+U3tzvwvvwZTdTd4h3kX8OaEq1ojBIFoMEcTK/+A14UIlA/FCW64FV+kT27rwFytPtj3IWs0jmD8Gm13M4katpUu6xn/P7FhAzXlD1fWF9GmtLZCwfvzvbYxi+fKCp9lEI92NRf8jjwTI29JziPd+o=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB5231.eurprd04.prod.outlook.com (20.177.51.208) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2157.23; Tue, 13 Aug 2019 14:59:56 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::e53d:e6a9:79bd:f970]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::e53d:e6a9:79bd:f970%2]) with mapi id 15.20.2157.022; Tue, 13 Aug 2019
- 14:59:56 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Rob Herring <robh+dt@kernel.org>, =?iso-8859-2?Q?Artur_=A6wigo=F1?=
- <a.swigon@partner.samsung.com>, Georgi Djakov <georgi.djakov@linaro.org>
-Subject: Re: [PATCH 2/7] dt-bindings: devfreq: Add bindings for generic imx
- buses
-Thread-Topic: [PATCH 2/7] dt-bindings: devfreq: Add bindings for generic imx
- buses
-Thread-Index: AQHVUT6+xLIyJJ3RiUKs8c+X3Pwpzw==
-Date: Tue, 13 Aug 2019 14:59:56 +0000
-Message-ID: <VI1PR04MB70237460E84C4F8AC9EBE582EED20@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <cover.1565633880.git.leonard.crestez@nxp.com>
- <97b0bff95ddb85b06ef3d2f8079faa36562a956d.1565633880.git.leonard.crestez@nxp.com>
- <CAL_JsqJWpQN2oTm8Q2_Gzd0GJ+YZoc9j-zh-U1s4eGhMxDEmEA@mail.gmail.com>
- <VI1PR04MB702300C8C78BC033D16EDB85EED20@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <CAL_Jsq+BDO-J12BddWw-KbhjTx95p58qqpUhhKzUHED6vFK2TA@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c39602a3-02da-404d-71bd-08d71ffee7ac
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB5231; 
-x-ms-traffictypediagnostic: VI1PR04MB5231:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB52316504812CE809F110E4CBEED20@VI1PR04MB5231.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 01283822F8
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(346002)(396003)(39860400002)(376002)(136003)(189003)(199004)(66946007)(99286004)(91956017)(33656002)(71200400001)(71190400001)(305945005)(14454004)(74316002)(7736002)(66446008)(8936002)(66476007)(66556008)(64756008)(76116006)(7416002)(478600001)(86362001)(66066001)(81156014)(6116002)(14444005)(53936002)(55016002)(256004)(8676002)(5660300002)(9686003)(316002)(2906002)(6246003)(6436002)(3846002)(229853002)(25786009)(446003)(76176011)(476003)(4326008)(486006)(7696005)(110136005)(6506007)(26005)(53546011)(102836004)(186003)(54906003)(81166006)(52536014)(44832011)(41533002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5231;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: +oivDm7qkUVaNWKCnrwGa50AJ3OiLZat36kPCpfPuotVYL9Hy4LhV+aOEbUPh/31WPjiHbL8ti+6tNnv00cz+Z3W7ecZnh7tmLyHw4wKAWRNoZJ+KLnBGSzz5NqVVOyB4ZG2IGghT6symAah0cn69QAR2dHmBODmgA7TRDpc6S4BZXKhT5mbgsh8eYPvFNdFHBSu0VlXwOvyEi9V4KcsijXufw1JMrzSrWWE9A/q57RZ0RyfY1ZNk0tQ6HEE9T/KU2A8jLv2b7Gwbz3mK7xAv1CmKuyPCDMddkgEHZS61HfzjN/A7eqP1D5D8nTDiG4vXa9d13AkuoO1stmGsPuvkYj4W6x0xKfnrqAIYjgW6fp2wkhkyI+oh1Y3WcfMVTiTYCOA4cALQxqAZx9uxKGZh4Fno51F2Rin2Ieqc4f/OWU=
+ id 1hxYPo-00033n-ET
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 15:08:50 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190813150844euoutp026f951cadd486c405db12e5706e41f52d~6g-idozkl1875518755euoutp02T
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 15:08:44 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190813150844euoutp026f951cadd486c405db12e5706e41f52d~6g-idozkl1875518755euoutp02T
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1565708924;
+ bh=7ATlolmKB2vLAwWlEKLrEMvaSHiuKCWTBcweaWIHNYc=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=FihvMt4lSk7Hj2Nd8IkQjvu2q/vtJ4BP4vj/J7R/E9nfnFIMxQybD7P0PLdUlyFq8
+ juH4xaZB+0ydCehHmjahW3xUZer6TfD4Ul6vdLJsWHgU6X+P9/NHYRp/1REBIefxh1
+ OaoJBW5U7q/NhZOxX4CFBs7Xbf9iPeFvptqJ3G6s=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190813150843eucas1p19382c776b90dd8a959dbfabde955d639~6g-h5XLUT0898208982eucas1p1J;
+ Tue, 13 Aug 2019 15:08:43 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id C2.9E.04309.B72D25D5; Tue, 13
+ Aug 2019 16:08:43 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190813150842eucas1p2c248537d9cd593073e12abeac2cacab5~6g-g7bwt52657926579eucas1p2u;
+ Tue, 13 Aug 2019 15:08:42 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190813150842eusmtrp15fcd0a834058ad23143a20e535a97203~6g-grdCL91601316013eusmtrp1j;
+ Tue, 13 Aug 2019 15:08:42 +0000 (GMT)
+X-AuditID: cbfec7f4-ae1ff700000010d5-d9-5d52d27b5da6
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 06.C1.04166.A72D25D5; Tue, 13
+ Aug 2019 16:08:42 +0100 (BST)
+Received: from AMDC3061.DIGITAL.local (unknown [106.120.51.75]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190813150841eusmtip2c0cefc9844cbef5bf5c605e8884af6ed~6g-gC7cEV1406314063eusmtip2X;
+ Tue, 13 Aug 2019 15:08:41 +0000 (GMT)
+From: Sylwester Nawrocki <s.nawrocki@samsung.com>
+To: krzk@kernel.org
+Subject: [PATCH v3 0/9] Exynos Adaptive Supply Voltage support
+Date: Tue, 13 Aug 2019 17:08:18 +0200
+Message-Id: <20190813150827.31972-1-s.nawrocki@samsung.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c39602a3-02da-404d-71bd-08d71ffee7ac
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Aug 2019 14:59:56.2705 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: qiInde8124Kwa7NBBs23Kt/FEE434S4IjjBy8vPBb/r6S1s2kFZ+caytrxh8/G1HI+hcZoUCCj5mfOL0tU2Q9Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5231
+X-Brightmail-Tracker: H4sIAAAAAAAAA01SfSyUcRzv97zc8zDHzyHfXaa6MquWl9CepolV223WMrU2lenKM4zDnvOS
+ /JHNVIRUW6RaSnbnTDhHIta8zlTCZrcpydtCkVxbRcl5KP99Xr6f7+/z3X4sKWug5WxMfBIv
+ xKviFBJrqr7zZ+/e9P7QcK8q02aupqiK5h62v6G5G2MzJNfbW81whrFBmhtovC/hFvLaEVfU
+ 20Jwle3vGe5xnZnhsprbGa7t81Waqx3plARKlQZ9tkRZ++SyMt+oR8oFg2sIddr6YCQfF5PC
+ C54B56yjOxeqqMRCp4vNS8/IDPQW5yArFrAvvCv+TuQga1aGdQgymyrWiBlBf3UNI5IFBFPd
+ HWg9Mv7rFS0aWgQfJ7X0v0iGScdYpiTYG/I68lcTjtgBhsu0q6tIPExAz8RrwmI44AAYH10m
+ LZjCbmB8sbiCWVaK/aHsQYL42laoqH65OiLF9tB9d5yyYHJFz6y7R1p2An7KQNtoPiMGjsDk
+ w1ZaxA4w3WVc012g53YuJQYyEeQ2DTEiKUDwoatk7Th/aOvqoy0tSLwLqho9RTkIimp1EosM
+ 2BZMX+zFErZwq76QFGUpXLsiE6d3wqK+kBCxHK6PL1MiVsLs4PJqHRkOh2HzDFGAthVvOK14
+ w2nF/zuUIFKPnPlkjTqK1+yL51M9NCq1Jjk+yuNCgtqAVv5Tz58ucwNqXDrfijCLFDbSEGNo
+ uIxWpWjS1K0IWFLhKC3oW5Gkkaq0S7yQECEkx/GaVrSFpRTO0vRNI2dkOEqVxMfyfCIvrLsE
+ ayXPQMHTi8+VXn7aJhfnww4FYNIKFS5BSwduHpoLTZ1yfUTg2RNJgkHi3u8e9tu3xfUU53gs
+ f3bMXOrm0xTett9mPrC8LBup7bzCVNvLf+woFbqHvpqD6z75SHQzcyePH5Urzwb4yearnTrs
+ vnlOyF1jAwci9tgOjt7x6B5trkwishSUJlrlvZsUNKq/gyHdpEsDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrIIsWRmVeSWpSXmKPExsVy+t/xe7pVl4JiDdbe4LfYOGM9q8X8I+dY
+ Lfofv2a2OH9+A7vFpsfXWC0u75rDZvG59wijxYzz+5gs1h65y26xaOsXdovWvUfYLQ6/aWe1
+ 2PzgGJsDr8emVZ1sHpuX1Hv0bVnF6PF5k1wAS5SeTVF+aUmqQkZ+cYmtUrShhZGeoaWFnpGJ
+ pZ6hsXmslZGpkr6dTUpqTmZZapG+XYJexrHP61kKpotW7P2znbmB8YJAFyMnh4SAicSTX2dY
+ QWwhgaWMEg2tMl2MHEBxKYn5LUoQJcISf651sXUxcgGVfGKUmDHpFiNIgk3AUKL3aB+YLQJU
+ dG/pcnaQImaBV0wSt+f9ZwJJCAvYSTx59J8ZxGYRUJXYsuc3M8gCXgFriaVz8yEWyEus3nAA
+ rIRXQFDi5MwnLCAlzALqEuvnCYGEmYFKmrfOZp7AyD8LSdUshKpZSKoWMDKvYhRJLS3OTc8t
+ NtQrTswtLs1L10vOz93ECIyebcd+bt7BeGlj8CFGAQ5GJR7egC1BsUKsiWXFlbmHGCU4mJVE
+ eCdcBArxpiRWVqUW5ccXleakFh9iNAX6YCKzlGhyPjCy80riDU0NzS0sDc2NzY3NLJTEeTsE
+ DsYICaQnlqRmp6YWpBbB9DFxcEo1MJaah3wSb63vzrd/acX6UM5vefZ1074yda/UTbNeb37e
+ f9vQWnhbxyvODUs47mocXrSQIZv3zMVzXNtZrO+KrpOKZ/3ZKvz2mN7KZY7TbTcnC/3YcTeo
+ f3uEu9Jl3dIDD6TmSnhHhZ5LtRfYrv757aJ0Oe+iuN3X6ty4H/ysDTm4/v8vx+6lj5RYijMS
+ DbWYi4oTAY4cMiK0AgAA
+X-CMS-MailID: 20190813150842eucas1p2c248537d9cd593073e12abeac2cacab5
+X-Msg-Generator: CA
+X-RootMTR: 20190813150842eucas1p2c248537d9cd593073e12abeac2cacab5
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190813150842eucas1p2c248537d9cd593073e12abeac2cacab5
+References: <CGME20190813150842eucas1p2c248537d9cd593073e12abeac2cacab5@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_080000_760776_CCDFD804 
-X-CRM114-Status: GOOD (  13.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190813_080848_625221_7C765FB9 
+X-CRM114-Status: GOOD (  16.96  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.48 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -116,6 +120,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,89 +132,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jacky Bai <ping.bai@nxp.com>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Alexandre Bailon <abailon@baylibre.com>, Will Deacon <will@kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, "open
- list:THERMAL" <linux-pm@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC
- ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Kyungmin Park <kyungmin.park@samsung.com>,
- Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, pankaj.dubey@samsung.com, b.zolnierkie@samsung.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, kgene@kernel.org,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, vireshk@kernel.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13.08.2019 17:06, Rob Herring wrote:
-> On Mon, Aug 12, 2019 at 7:32 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
->> On 8/12/2019 10:47 PM, Rob Herring wrote:
->>> On Mon, Aug 12, 2019 at 12:49 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
-
->>>> Add initial dt bindings for the interconnects inside i.MX chips.
->>>> Multiple external IPs are involved but SOC integration means the
->>>> software controllable interfaces are very similar.
->>>>
->>>> +description: |
->>>> +  The i.MX SoC family has multiple buses for which clock frequency (and sometimes
->>>> +  voltage) can be adjusted.
->>>> +
->>>> +  Some of those buses expose register areas mentioned in the memory maps as GPV
->>>> +  ("Global Programmers View") but not all. Access to this area might be denied for
->>>> +  normal world.
->>>> +
->>>> +  The buses are based on externally licensed IPs such as ARM NIC-301 and Arteris
->>>> +  FlexNOC but DT bindings are specific to the integration of these bus
->>>> +  interconnect IPs into imx SOCs.
->>>
->>> No need to use the interconnect binding?
->>
->> The interconnect is represented by a separate "virtual" node which might
->> not be OK. There was also a recent RFC from samsung which turns devfreq
->> nodes into interconnect providers:
->>
->> Is that preferable?
-> 
-> Virtual nodes are not OK.
-
-Then I'll try to make the "interconnect" device probe from a soc driver 
-and turn devfreq nodes into interconnect providers backed by this same 
-singleton device.
-
-Still separate from this series.
-
->>>> +required:
->>>> +  - compatible
->>>> +  - clocks
->>>
->>> reg?
->>
->> This is deliberately optional: for some NICs the GPV register area is
->> not exposed in the memory map. This is unusual but an accurate
->> description of the hardware.
-> 
-> Different h/w blocks should have different compatibles. GPV is an Arm
-> thing and I'd expect FlexNOC to be different.
-
-The imx reference manuals call them both "GPV" though layout is indeed 
-quite different (and for FlexNoC it's not even documented).
-
-The h/w blocks do have different compat strings (imx8m-nic and 
-imx8m-noc). They have a single binding document because didn't want to 
-create two nearly-identical bindings, I assume it would be fine to split 
-later if needed.
-
---
-Regards,
-Leonard
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhpcyBpcyB0aGlyZCBpdGVyYXRpb24gb2YgbXkgcGF0Y2ggc2VyaWVzIGFkZGluZyBBU1YgKEFk
+YXB0aXZlIFN1cHBseSAKVm9sdGFnZSkgc3VwcG9ydCBmb3IgRXh5bm9zIFNvQ3MuIFRoZSBwcmV2
+aW91cyBvbmUgY2FuIGJlIGZvdW5kIGF0OgpodHRwczovL2xvcmUua2VybmVsLm9yZy9sa21sLzIw
+MTkwNzE4MTQzMDQ0LjI1MDY2LTEtcy5uYXdyb2NraUBzYW1zdW5nLmNvbQoKVGhlcmUgaXMgbm8g
+bWFqb3IgY2hhbmdlcyBpbiB0aGlzIHNlcmllcyBjb21wYXJpbmcgdG8gdjIsIG9ubHkgbWlub3IK
+Y29ycmVjdGlvbnMgYWRkcmVzc2luZyByZXZpZXcgY29tbWVudHMuCgpJIHdhcyBub3Qgc3VyZSBp
+dCB3YXMgYSBnb29kIGlkZWEgdG8gdHJ5IHRvIGV4dGVuZCB0aGUgT1BQIGJpbmRpbmcgCnNvIGFz
+IHRvIGluY2x1ZGUgdGhlIEFTViBkYXRhIHRhYmxlcyBpbiBEVCwgc28gdGhlIHRhYmxlcyBhcmUg
+bGVmdAppbiB0aGUgZHJpdmVyLgoKVGhpcyBwYXRjaCBzZXQgaW5jbHVkZXMgRXh5bm9zIENISVBJ
+RCBkcml2ZXIgcG9zdGVkIGJ5IFBhbmthaiBEdWJleSBhbmQKZnV0aGVyIGltcHJvdmVkIGJ5IEJh
+cnTFgm9taWVqIMW7b8WCbmllcmtpZXdpY3ogWzFdLgoKVGVzdGVkIG9uIE9kcm9pZCBYVTMsIFhV
+MyBMaXRlLCBYVTQuCgpPbmUgb2YgdGhlIHRoaW5ncyBvbiBUT0RPIGxpc3QgaXMgc3VwcG9ydCBm
+b3IgdGhlIEFkYXB0aXZlIEJvZHkgQmlhcy4KVGhpcyB3aWxsIHJlcXVpcmUgbW9kaWZpY2F0aW9u
+cyBvbiB0aGUgY3B1ZnJlcSBkcml2ZXIgc2lkZSBpbiBvcmRlciB0byAKc3VwcG9ydCBtdWx0aXBs
+ZSB2b2x0YWdlIHJlZ3VsYXRvcnMgYW5kIGNoYW5nZXMgaW4gdGhlIE9QUCBmcmFtZXdvcmsgCnRv
+IHN1cHBvcnQgYWRkaW5nIE9QUHMgd2l0aCBtdWx0aXBsZSB2b2x0YWdlcy4KClsxXSBodHRwczov
+L2xrbWwub3JnL2xrbWwvMjAxOC8xMS8xNS85MDgKClBhbmthaiBEdWJleSAoMyk6CiAgc29jOiBz
+YW1zdW5nOiBBZGQgZXh5bm9zIGNoaXBpZCBkcml2ZXIgc3VwcG9ydAogIEFSTTogRVhZTk9TOiBl
+bmFibGUgZXh5bm9zX2NoaXBpZCBmb3IgQVJDSF9FWFlOT1MKICBBUk02NDogRVhZTk9TOiBlbmFi
+bGUgZXh5bm9zX2NoaXBpZCBmb3IgQVJDSF9FWFlOT1MKClN5bHdlc3RlciBOYXdyb2NraSAoNik6
+CiAgc29jOiBzYW1zdW5nOiBDb252ZXJ0IGV4eW5vcy1jaGlwaWQgZHJpdmVyIHRvIHVzZSB0aGUg
+cmVnbWFwIEFQSQogIHNvYzogc2Ftc3VuZzogQWRkIEV4eW5vcyBBZGFwdGl2ZSBTdXBwbHkgVm9s
+dGFnZSBkcml2ZXIKICBBUk06IEVYWU5PUzogRW5hYmxlIGV4eW5vcy1hc3YgZHJpdmVyIGZvciBB
+UkNIX0VYWU5PUwogIHNvYzogc2Ftc3VuZzogVXBkYXRlIHRoZSBDSElQIElEIERUIGJpbmRpbmcg
+ZG9jdW1lbnRhdGlvbgogIEFSTTogZHRzOiBBZGQgInN5c2NvbiIgY29tcGF0aWJsZSBzdHJpbmcg
+dG8gY2hpcGlkIG5vZGUKICBBUk06IGR0czogQWRkIHNhbXN1bmcsYXN2LWJpbiBwcm9wZXJ0eSBm
+b3Igb2Ryb2lkeHUzLWxpdGUKCiAuLi4vYmluZGluZ3MvYXJtL3NhbXN1bmcvZXh5bm9zLWNoaXBp
+ZC50eHQgICAgfCAgMTAgKy0KIGFyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczUuZHRzaSAgICAgICAg
+ICAgICAgICB8ICAgNCArLQogLi4uL2Jvb3QvZHRzL2V4eW5vczU0MjItb2Ryb2lkeHUzLWxpdGUu
+ZHRzICAgIHwgICA0ICsKIGFyY2gvYXJtL21hY2gtZXh5bm9zL0tjb25maWcgICAgICAgICAgICAg
+ICAgICB8ICAgMiArCiBhcmNoL2FybTY0L0tjb25maWcucGxhdGZvcm1zICAgICAgICAgICAgICAg
+ICAgfCAgIDEgKwogZHJpdmVycy9zb2Mvc2Ftc3VuZy9LY29uZmlnICAgICAgICAgICAgICAgICAg
+IHwgIDE1ICsKIGRyaXZlcnMvc29jL3NhbXN1bmcvTWFrZWZpbGUgICAgICAgICAgICAgICAgICB8
+ICAgNSArCiBkcml2ZXJzL3NvYy9zYW1zdW5nL2V4eW5vcy1hc3YuYyAgICAgICAgICAgICAgfCAx
+ODQgKysrKysrKwogZHJpdmVycy9zb2Mvc2Ftc3VuZy9leHlub3MtYXN2LmggICAgICAgICAgICAg
+IHwgIDgyICsrKwogZHJpdmVycy9zb2Mvc2Ftc3VuZy9leHlub3MtY2hpcGlkLmMgICAgICAgICAg
+IHwgMTAxICsrKysKIGRyaXZlcnMvc29jL3NhbXN1bmcvZXh5bm9zNTQyMi1hc3YuYyAgICAgICAg
+ICB8IDQ5OCArKysrKysrKysrKysrKysrKysKIGRyaXZlcnMvc29jL3NhbXN1bmcvZXh5bm9zNTQy
+Mi1hc3YuaCAgICAgICAgICB8ICAyNSArCiBpbmNsdWRlL2xpbnV4L3NvYy9zYW1zdW5nL2V4eW5v
+cy1jaGlwaWQuaCAgICAgfCAgNTIgKysKIDEzIGZpbGVzIGNoYW5nZWQsIDk3OSBpbnNlcnRpb25z
+KCspLCA0IGRlbGV0aW9ucygtKQogY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvc29jL3NhbXN1
+bmcvZXh5bm9zLWFzdi5jCiBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9zb2Mvc2Ftc3VuZy9l
+eHlub3MtYXN2LmgKIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3NvYy9zYW1zdW5nL2V4eW5v
+cy1jaGlwaWQuYwogY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvc29jL3NhbXN1bmcvZXh5bm9z
+NTQyMi1hc3YuYwogY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvc29jL3NhbXN1bmcvZXh5bm9z
+NTQyMi1hc3YuaAogY3JlYXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvbGludXgvc29jL3NhbXN1bmcv
+ZXh5bm9zLWNoaXBpZC5oCgotLSAKMi4xNy4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
