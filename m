@@ -2,117 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 897758B61D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 13:02:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57B0B8B62C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 13:04:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QiKUMD94W0Q/v+9mFirx1/FOw6/vLO0ALrPDChYhvzI=; b=Hu8K3glw42fs+I
-	BhVz0anNMdcnLT+tHh8glKu+9JQjZBgFyqySxDWsV+iJxdzJZXlO9X2NiCOxFe85KX3gZD5S4gMqZ
-	CHbHLTJzERZDafiiAmXhfn2VCDE3TyUVbwJOIjp+qa7dDJDqB7+ez6mmXvxJjaW0ZWfyuIgLAKtsD
-	kderGVp7I3PIRiXEb4qs5bcnYmz2brzSmjq2drwjGzCG8TCAdcU3s0a5lwkvCgQgzeWPqVQTkayoX
-	NZlBGSuZMsQQMvR+gDdO7CwvR+UGeRCURd9Gq6OSd0xbj6Se9NzNK1N0GH/VuffQRCXy8cX3akjFJ
-	Tn6maL7XSH+3Lvdg+ydA==;
+	List-Owner; bh=01zJQtCt5ZM8/tjBxVGi4uvRwKBRm+3oCbW/Eeko+ho=; b=ZQPdhfR2h/UqNi
+	26yvVaqxMk3nwMb6Sy5bF5EteSJWVUxUXBmNKGqJB8CDVt2YW8iUIkZJhKJd/bmAD/SEg8SLG/MAK
+	Y3AfW8716PeJt+xlVj9pJlArIzS7CDG5DzFAR93exxxfN0zK3dO0JvIsFUNdDBzC8G5YKQ3K3o5nS
+	PL65MjLR5txmBB2g++fupJZZjy/PctS6wtua1/Mkm2/mOAawnFgk/rqB9dqllEp61HDccxQvLOjYC
+	a87BT/C5lI5djJFQ9+/YVyIOrnxSZYYhRsSQYAxN7LhdcGFO596ONeEnmOgQtq8t6HtK1tcP4DrrK
+	j7cQohVIZtpckb5H9xIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxUZY-0003lj-Sv; Tue, 13 Aug 2019 11:02:36 +0000
-Received: from mail-eopbgr80080.outbound.protection.outlook.com ([40.107.8.80]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxUZN-0003lE-QO
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 11:02:27 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cu4QekkGaYQ3nhviXGoRLCrLj9eMms8Ke7D5DThgMIR21RsRrK3sZ5WPGkDu9rj5UfY/vGuyoxIMBm30Zh0n1Ck+pLSFiG2Gv6/al8srunNw/qRhBhJKcPol4NwawotTPv+GbtEfi5DTr25CbOnQDgcJGZ0ahxnueUb1gmlC6a0Zuc8Zffg/gGCpuLapCzN9Omhu+4aKV1w/6QcDwNu6SnXTOS5jXeZAR2qM3AkQPqLffmjx7lYslQZmWlOAeyBtpY1EcJgLBX8NgLz6BYPaVib6yH7RepbALPWBoOOq2tr2GXrf26DrzSvJZONhP0Yf2jSnXTFSnWlu+eYfjD6APA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4nDGezeV1UjdK0Fo4A5Hn2h2YZL/DfS8au5Bnwgoe3Y=;
- b=Yr+b2v6XkrvqCrJQJisN7FSGHxv9ZsoStOEZV+iZbm3EruCqtaKBYWm9SsvaZ9M0lkQtphce4wHpyNh0fm/go/bvHAh7J3Ym2bAFvOJm19Rikr/gQcHEYhMnkDPkIrDKZt+3lyyOeyeOBQjEzo33QmmkaVRIWMIuyEfbfPgfrknF2sYkbhm9taUdh4ht5XJzmKbXKylrTAmANi+S0qqYOM5l/if3hX9rbkdVGG9k1wGATE6lPTgHulRwl1H2iynI51SvQnLxFFzzxiWJc2nSrhAIdwVk4jThFtCrLpo2XpX1saVJ2GNq1U3HvSem9sh1wypgQE0K/CphabRfbkCgfQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4nDGezeV1UjdK0Fo4A5Hn2h2YZL/DfS8au5Bnwgoe3Y=;
- b=qmgH3iXoAM0AZNkEWvINcncBePHap4DHAdP4TGh1dsEW2RUvIocznVjlJz6kGQ1HMPotxHEX+FHwAfZeLnb1bmwUWW1kcLMeK4rleOe/zRusxPJ/UBYvICoSTDw7f4B8hTwS8rIpDC6PLsS8xuq1o088Hh9bUc8tJ6Z1y7A2vU0=
-Received: from AM5PR04MB3299.eurprd04.prod.outlook.com (10.173.255.158) by
- AM5PR04MB3268.eurprd04.prod.outlook.com (10.167.171.31) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2157.21; Tue, 13 Aug 2019 11:02:20 +0000
-Received: from AM5PR04MB3299.eurprd04.prod.outlook.com
- ([fe80::5012:d47a:1f5d:9b84]) by AM5PR04MB3299.eurprd04.prod.outlook.com
- ([fe80::5012:d47a:1f5d:9b84%5]) with mapi id 15.20.2157.022; Tue, 13 Aug 2019
- 11:02:20 +0000
-From: Xiaowei Bao <xiaowei.bao@nxp.com>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: RE: [EXT] Re: [PATCHv5 1/2] PCI: layerscape: Add the bar_fixed_64bit
- property in EP driver.
-Thread-Topic: [EXT] Re: [PATCHv5 1/2] PCI: layerscape: Add the bar_fixed_64bit
- property in EP driver.
-Thread-Index: AQHVUaHA8E+uV7sB3kSdNrIxtC9aDKb42aKAgAAIM1A=
-Date: Tue, 13 Aug 2019 11:02:19 +0000
-Message-ID: <AM5PR04MB32995F572C3FB85B35E52563F5D20@AM5PR04MB3299.eurprd04.prod.outlook.com>
-References: <20190813062840.2733-1-xiaowei.bao@nxp.com>
- <20190813100409.GB10070@red-moon>
-In-Reply-To: <20190813100409.GB10070@red-moon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=xiaowei.bao@nxp.com; 
-x-originating-ip: [119.31.174.73]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a63507ec-10dd-4428-ab9b-08d71fddb627
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM5PR04MB3268; 
-x-ms-traffictypediagnostic: AM5PR04MB3268:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM5PR04MB3268D5C3454AC1D01264F97CF5D20@AM5PR04MB3268.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2512;
-x-forefront-prvs: 01283822F8
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(346002)(366004)(396003)(136003)(376002)(189003)(199004)(13464003)(71190400001)(33656002)(25786009)(99286004)(7416002)(54906003)(256004)(53936002)(478600001)(316002)(6246003)(81166006)(81156014)(8676002)(55016002)(4326008)(71200400001)(5660300002)(9686003)(305945005)(64756008)(74316002)(6506007)(2906002)(186003)(66446008)(7736002)(52536014)(66476007)(66556008)(6916009)(76176011)(229853002)(26005)(14454004)(53546011)(8936002)(86362001)(66946007)(476003)(102836004)(44832011)(6116002)(76116006)(486006)(66066001)(446003)(3846002)(7696005)(11346002)(6436002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM5PR04MB3268;
- H:AM5PR04MB3299.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: clh7wvxuDryNhG2xgurm4SYYjrHT3WKwwR56I20jsYNmMSYzTAVA3nIVYsVLXBC3LuOSzj0bwMS/BEAr/fXUKBxEF4Xdnc3x3bY+dt42X9+YotePdrPNnr13xQpQTETJD3DMsFYF85ba0QGyvsU8FtTzOKjVtjzLiXoSvZcawe0+6m2WUWITTdOfYK4zriE/ER+1tnP7sgzcrqHYHHDt/t6+ESEYeac94BKRZm2WunHoSBC/PS3rZW21rkz/RlB8XZ3gyrRMJ3rOmtTJzkAH3Uwi7QmxiV9/1MpgqO1nzWd5n/gSCKyJH1xA3chLfV1jOa7reoUPGLkVO0IMlpYsLjyzGAG+Gs+0uJIOWGMRsZYp4hSr7NYn7AngH7j5Vbd3bdre7wN9SQ5UvqU2vm7DoWRbdpzTuZndcyoYKzzpYNg=
+	id 1hxUaz-0005TI-Cq; Tue, 13 Aug 2019 11:04:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxUaj-0005Lw-Tm
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 11:03:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4CAEB344;
+ Tue, 13 Aug 2019 04:03:49 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E76203F694;
+ Tue, 13 Aug 2019 04:03:47 -0700 (PDT)
+Date: Tue, 13 Aug 2019 12:03:45 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Ganapatrao Kulkarni <gklkml16@gmail.com>
+Subject: Re: [PATCH v3 2/2] drivers/perf: Add CCPI2 PMU support in ThunderX2
+ UNCORE driver.
+Message-ID: <20190813110345.GD866@lakrids.cambridge.arm.com>
+References: <1563873380-2003-1-git-send-email-gkulkarni@marvell.com>
+ <1563873380-2003-3-git-send-email-gkulkarni@marvell.com>
+ <20190812120125.GA50712@lakrids.cambridge.arm.com>
+ <CAKTKpr7juHd9Bgam28LESadihFadEAevRAhc-7w3PTMYY7HLNw@mail.gmail.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a63507ec-10dd-4428-ab9b-08d71fddb627
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Aug 2019 11:02:19.8801 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: S4DwoGpS2CpG+fYsOTnrqCu0XVg3eeqc8RGqd46TfH+Iby7U9rtxBwWNV6aG9zQqOZzIikRhqhxGepodVHBsHQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR04MB3268
+Content-Disposition: inline
+In-Reply-To: <CAKTKpr7juHd9Bgam28LESadihFadEAevRAhc-7w3PTMYY7HLNw@mail.gmail.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_040225_861030_D17C616D 
-X-CRM114-Status: GOOD (  21.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190813_040350_006416_7D60A8D8 
+X-CRM114-Status: GOOD (  21.54  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.80 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,78 +65,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, Roy Zang <roy.zang@nxp.com>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "hayashi.kunihiko@socionext.com" <hayashi.kunihiko@socionext.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+Cc: Ganapatrao Kulkarni <gkulkarni@marvell.com>,
+ "corbet@lwn.net" <corbet@lwn.net>, Jan Glauber <jglauber@marvell.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "yue.wang@amlogic.com" <yue.wang@amlogic.com>, "kishon@ti.com" <kishon@ti.com>,
- "M.h. Lian" <minghuan.lian@nxp.com>, "dwmw@amazon.co.uk" <dwmw@amazon.co.uk>,
- "jonnyc@amazon.com" <jonnyc@amazon.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "tpiepho@impinj.com" <tpiepho@impinj.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- Mingkai Hu <mingkai.hu@nxp.com>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+ Robert Richter <rrichter@marvell.com>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogTG9yZW56byBQaWVyYWxp
-c2kgPGxvcmVuem8ucGllcmFsaXNpQGFybS5jb20+DQo+IFNlbnQ6IDIwMTnE6jjUwjEzyNUgMTg6
-MDQNCj4gVG86IFhpYW93ZWkgQmFvIDx4aWFvd2VpLmJhb0BueHAuY29tPg0KPiBDYzogYmhlbGdh
-YXNAZ29vZ2xlLmNvbTsgTS5oLiBMaWFuIDxtaW5naHVhbi5saWFuQG54cC5jb20+OyBNaW5na2Fp
-IEh1DQo+IDxtaW5na2FpLmh1QG54cC5jb20+OyBSb3kgWmFuZyA8cm95LnphbmdAbnhwLmNvbT47
-DQo+IGwuc3RhY2hAcGVuZ3V0cm9uaXguZGU7IGtpc2hvbkB0aS5jb207IHRwaWVwaG9AaW1waW5q
-LmNvbTsgTGVvbmFyZA0KPiBDcmVzdGV6IDxsZW9uYXJkLmNyZXN0ZXpAbnhwLmNvbT47IGFuZHJl
-dy5zbWlybm92QGdtYWlsLmNvbTsNCj4geXVlLndhbmdAYW1sb2dpYy5jb207IGhheWFzaGkua3Vu
-aWhpa29Ac29jaW9uZXh0LmNvbTsNCj4gZHdtd0BhbWF6b24uY28udWs7IGpvbm55Y0BhbWF6b24u
-Y29tOyBsaW51eC1wY2lAdmdlci5rZXJuZWwub3JnOw0KPiBsaW51eC1rZXJuZWxAdmdlci5rZXJu
-ZWwub3JnOyBsaW51eHBwYy1kZXZAbGlzdHMub3psYWJzLm9yZzsNCj4gbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnDQo+IFN1YmplY3Q6IFtFWFRdIFJlOiBbUEFUQ0h2NSAxLzJd
-IFBDSTogbGF5ZXJzY2FwZTogQWRkIHRoZSBiYXJfZml4ZWRfNjRiaXQNCj4gcHJvcGVydHkgaW4g
-RVAgZHJpdmVyLg0KPiANCj4gQ2F1dGlvbjogRVhUIEVtYWlsDQo+IA0KPiBnaXQgbG9nIC0tb25l
-bGluZSAtLWZvbGxvdyBkcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9wY2ktbGF5ZXJzY2FwZS5j
-DQo+IA0KPiBEbyB5b3Ugc2VlIGFueSBjb21taXQgd2l0aCBhICRTVUJKRUNUIGVuZGluZyB3aXRo
-IGEgcGVyaW9kID8NCj4gDQo+IFRoZXJlIGlzIG5vdC4gU28gcmVtb3ZlIGl0IGZyb20geW91cnMg
-dG9vLg0KT0ssIHRoYW5rcyBhIGxvdCwgSSB3aWxsIHJlbW92ZSBpdCBpbiB0aGUgbmV4dCB2ZXJz
-aW9uIHBhdGNoLCBJIGhhdmUgdG8gZ2V0IHRoZSBhcHByb3ZlZA0KRm9ybSBJVCB0ZWFtIG9mIG91
-ciBjb21wYW55LiANCj4gDQo+IE9uIFR1ZSwgQXVnIDEzLCAyMDE5IGF0IDAyOjI4OjM5UE0gKzA4
-MDAsIFhpYW93ZWkgQmFvIHdyb3RlOg0KPiA+IFRoZSBQQ0llIGNvbnRyb2xsZXIgb2YgbGF5ZXJz
-Y2FwZSBqdXN0IGhhdmUgNCBCQVJzLCBCQVIwIGFuZCBCQVIxIGlzDQo+ID4gMzJiaXQsIEJBUjIg
-YW5kIEJBUjQgaXMgNjRiaXQsIHRoaXMgaXMgZGV0ZXJtaW5lZCBieSBoYXJkd2FyZSwgc28gc2V0
-DQo+ID4gdGhlIGJhcl9maXhlZF82NGJpdCB3aXRoIDB4MTQuDQo+ID4NCj4gPiBTaWduZWQtb2Zm
-LWJ5OiBYaWFvd2VpIEJhbyA8eGlhb3dlaS5iYW9AbnhwLmNvbT4NCj4gPiAtLS0NCj4gPiB2MjoN
-Cj4gPiAgLSBSZXBsYWNlIHZhbHVlIDB4MTQgd2l0aCBhIG1hY3JvLg0KPiA+IHYzOg0KPiA+ICAt
-IE5vIGNoYW5nZS4NCj4gPiB2NDoNCj4gPiAgLSBzZW5kIHRoZSBwYXRjaCBhZ2FpbiB3aXRoICct
-LXRvJy4NCj4gPiB2NToNCj4gPiAgLSBmaXggdGhlIGNvbW1pdCBtZXNzYWdlLg0KPiA+DQo+ID4g
-IGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaS1sYXllcnNjYXBlLWVwLmMgfCAxICsNCj4g
-PiAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspDQo+IA0KPiBzY3JpcHRzL2dldF9tYWlu
-dGFpbmVyLnBsIC1mIGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaS1sYXllcnNjYXBlLWVw
-LmMNCj4gTm93LCB3aXRoIHRoZSBvdXRwdXQgeW91IGdldCBqdXN0aWZ5IGFsbCB0aGUgcGVvcGxl
-IHlvdSBzZW5kIHRoaXMgZW1haWwgdG8uDQo+IA0KPiBTbywgYWdhaW4sIHRyaW0gdGhlIENDIGxp
-c3QgYW5kIGl0IGlzIHRoZSBsYXN0IHRpbWUgSSB0ZWxsIHlvdS4NCkRvIHlvdSBtZWFuIHRoYXQg
-SSB1c2Ugc2NyaXB0cy9nZXRfbWFpbnRhaW5lci5wbCAtZiBkcml2ZXJzL3BjaS9jb250cm9sbGVy
-Lw0KZHdjL3BjaS1sYXllcnNjYXBlLWVwLmMgdG8gZ2V0IHRoZSBtYWlsIGxpc3Qgd2hvIEkgbmVl
-ZCB0byBzZW5kPyBJIHVzZSB0aGUNCmNvbW1hbmQgb2YgJyBzY3JpcHRzL2dldF9tYWludGFpbmVy
-LnBsICoucGF0Y2gnIHRvIGdldCB0aGUgbWFpbCBsaXN0IGJlZm9yZS4NCklmIHllcywgSSB3aWxs
-IHVzZSB0aGUgY29tbWFuZCB0aGF0IHlvdSBwcm92aWRlZC4gVGhhbmtzIGEgbG90Lg0KPiANCj4g
-QmVmb3JlIHNlbmRpbmcgcGF0Y2hlcyBvbiBtYWlsaW5nIGxpc3RzIHVzZSBnaXQgLS1kcnktcnVu
-IHRvIGNoZWNrIHRoZSBlbWFpbHMNCj4geW91IGFyZSBzZW5kaW5nLg0KPiANCj4gVGhhbmtzLA0K
-PiBMb3JlbnpvDQo+IA0KPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3
-Yy9wY2ktbGF5ZXJzY2FwZS1lcC5jDQo+ID4gYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9w
-Y2ktbGF5ZXJzY2FwZS1lcC5jDQo+ID4gaW5kZXggYmU2MWQ5Ni4uY2E5YWE0NSAxMDA2NDQNCj4g
-PiAtLS0gYS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9wY2ktbGF5ZXJzY2FwZS1lcC5jDQo+
-ID4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpLWxheWVyc2NhcGUtZXAuYw0K
-PiA+IEBAIC00NCw2ICs0NCw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgcGNpX2VwY19mZWF0dXJl
-cw0KPiBsc19wY2llX2VwY19mZWF0dXJlcyA9IHsNCj4gPiAgICAgICAubGlua3VwX25vdGlmaWVy
-ID0gZmFsc2UsDQo+ID4gICAgICAgLm1zaV9jYXBhYmxlID0gdHJ1ZSwNCj4gPiAgICAgICAubXNp
-eF9jYXBhYmxlID0gZmFsc2UsDQo+ID4gKyAgICAgLmJhcl9maXhlZF82NGJpdCA9ICgxIDw8IEJB
-Ul8yKSB8ICgxIDw8IEJBUl80KSwNCj4gPiAgfTsNCj4gPg0KPiA+ICBzdGF0aWMgY29uc3Qgc3Ry
-dWN0IHBjaV9lcGNfZmVhdHVyZXMqDQo+ID4gLS0NCj4gPiAyLjkuNQ0KPiA+DQpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Tue, Aug 13, 2019 at 04:25:15PM +0530, Ganapatrao Kulkarni wrote:
+> Hi Mark,
+> 
+> On Mon, Aug 12, 2019 at 5:31 PM Mark Rutland <mark.rutland@arm.com> wrote:
+> >
+> > On Tue, Jul 23, 2019 at 09:16:28AM +0000, Ganapatrao Kulkarni wrote:
+> > > CCPI2 is a low-latency high-bandwidth serial interface for connecting
+> > > ThunderX2 processors. This patch adds support to capture CCPI2 perf events.
+> >
+> > It would be worth pointing out in the commit message how the CCPI2
+> > counters differ from the others. I realise you have that in the body of
+> > patch 1, but it's critical information when reviewing this patch...
+> 
+> Ok, I will add in next version.
+> >
+> > >
+> > > Signed-off-by: Ganapatrao Kulkarni <gkulkarni@marvell.com>
+> > > ---
+> > >  drivers/perf/thunderx2_pmu.c | 248 ++++++++++++++++++++++++++++++-----
+> > >  1 file changed, 214 insertions(+), 34 deletions(-)
+> > >
+> > > diff --git a/drivers/perf/thunderx2_pmu.c b/drivers/perf/thunderx2_pmu.c
+> > > index 43d76c85da56..a4e1273eafa3 100644
+> > > --- a/drivers/perf/thunderx2_pmu.c
+> > > +++ b/drivers/perf/thunderx2_pmu.c
+> > > @@ -17,22 +17,31 @@
+> > >   */
+> > >
+> > >  #define TX2_PMU_MAX_COUNTERS         4
+> >
+> > Shouldn't this be 8 now?
+> 
+> It is kept unchanged to 4(as suggested by Will), which is same for
+> both L3 and DMC.
+> For CCPI2 this macro is not used.
+
+Hmmm....
+
+I disagree with that suggestion given that this also affects the
+active_counters bitmap size (and thus it is not correctly sized as of
+this patch), and it doesn't really save us much.
+
+I think it would be better to bump this to 8 and always update the
+events array, even though it will be unused for CCPI2. That's less
+surprising, needs fewer special-cases, and we can use the hrtimer
+function pointer alone to determine if we need to do any hrtimer work.
+
+Thanks,
+Mark.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
