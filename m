@@ -2,75 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0F758B09E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 09:21:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 228FF8B11A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 09:28:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hCBOobWjf1iPvR3sful3F5+ymyQV34J8+ZAUowtoF7U=; b=hF1cJt/iy55syn
-	zYQHJE4lPBJx4MeAZO9IfQGUtfiH3zpXRNwSXIhv+ZbxiY9yFbmakgfeogVorYSSWxGL3LBvN3LGa
-	SK+OJgLb+TeBUTBsUWsJQJPzQTFntxWXHERiqLsdy/Di7YO4Upq/3PNu74DUaLNkUmWRrCuhOwe2/
-	aVcBQoK91aAGedXzJN2Mh7ZWYLXvTR7Rvf2dI5ycfF6qsRKyDHCqAT/E2OAWAw2It/cVsm05HlL6D
-	BvoodrzLynCUdzO6VmpY8kS4lJca+RqCUCGKmJAT0/EmmEb9syDVZSsrqABlKL0xbY1HYA390y19d
-	DOllSW/95ST4rA+Bb9nw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WJqcatAe8zH9cuslNTgOgnWvUzcX5t5HPXUDUD7uyEg=; b=qiG/teP4HIVa2M
+	8CozloYfdcBZh+tpTkuAbn0dWENzKxeHUnh7y8k3YTNOpoA+5OAtdcOJo1yNROL6Ot/OdaCM4Xdxs
+	XSqCaODHQ3soJNqbzAr+lXJQSIicaRw+k9DoIQl3KBtqM3QAr6yJ1iSGUWaDm9hhtJC3Q7IS2qNPA
+	iqMBxvUTK+zZJznAnSzei2JeKhA1tk3Hyo1lLl4vSBV4THbVBZdbIgYqr7/KY3TJfj4cYA1psnk7k
+	50N5MBrUgyOgqHoYSje7475JofI+oe4gd8oRkKZsjBwMiXj4Lm/rWVfrHonXDXcDX6PybIyZPwgXV
+	el1NCPQ12Chei3hJSqiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxR7M-0004Gn-5N; Tue, 13 Aug 2019 07:21:16 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hxRDj-0007u7-Lh; Tue, 13 Aug 2019 07:27:51 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxR6q-0004Ap-7q
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 07:20:45 +0000
-Received: by mail-lj1-x243.google.com with SMTP id t3so12053992ljj.12
+ id 1hxRDU-0007t1-Ev
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 07:27:37 +0000
+Received: by mail-lj1-x241.google.com with SMTP id t3so12069498ljj.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 00:20:41 -0700 (PDT)
+ Tue, 13 Aug 2019 00:27:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KzvQR20lPoeZjhurVT6RSVppuCsYxsd66Yq17XgsMlQ=;
- b=FN6Gp6LngiMd8Ivm0OmPalHTogtRAH5WDU0i4gzDyH2/pA7v/HGPMI9xSigL6xOC3V
- 7SJ8SsB5pAocpjRBt3NywRc2gIuZ/apy2oMMrRpbMc15jy4hvtmUROE+IKpS16/EhQSw
- FPdAZ8VvR3g/ON21wN9r4295rqlExYuhztI/awfbIQvyKeyta0Kb3ES/s5ypZV+5AuDK
- Dd6kVZJiis4RyeRYDSHQSfmQ8MzomMb8tIXCIOBw8GQV/egYZUzFaGuSh6SRdhnZVBs8
- CyIVpwY5rEDu8+j2idiXG/GjVar4sqgxTxgpn7BULkfQVlOmvrHbb5dtGiQ9qLl+GHTn
- q4cA==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Gxw6O48J9qRmzDYXvAWMeWAUk3rGowLbkm5cB//pjK8=;
+ b=Z82dKHpy5Gu4J7/N3lAkpPg8JsM19vCbBE5kstbntzk0Dfl/5x1fEMljqq5Msxk2/J
+ nZcH+vOfcvml6lkbtjPiuJH1HKH013l+xCy4vm8XvxUo6OQQTIJv5is/9j9WyZ5AH30C
+ BiccQwyF/pbJYLDOJ7b3Cro5RR+UM0GFiWIubSQD8VO08COAur8HqvQDXOvDCE74k0tP
+ IESgy8IOLHUR7QJeNfb3U2ta6NgALwNLoy8FTll0is2n2+8cn+AE4n3exqYIx/Khj/L7
+ uh7rHt7wrMicG8DUcR+8OiwubLvfjvV4MRdef3/wBJrK0RYJh6qx2JLNbMUGDZtgV8Sr
+ TnWQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=KzvQR20lPoeZjhurVT6RSVppuCsYxsd66Yq17XgsMlQ=;
- b=JGRsBDccZluwoAnSCrVl57aefUnZHO78HzgryF+KKq93c7NZQBJ0OMELGcNs3PaJLG
- nhLEAem9/DaWX5yx7urgum9RX8pQxSGa+NuPv6jyXJf7J54OOpgyLczz6Y5y3QsB6pJU
- diLdBsQbsOt9ZvjW4V5noUvzfzUusgrwiZdrhzGC/bs4JPe/X6ovozE5O0A1h+amEFJk
- TPBCYWdlO6CMuOHLkvhu2EfInk1BQ75s+G77lQC5Ki5ZnI0jdMdbLK5sFWlQEmj2TQN0
- fGB8x2UiIJgX87OE1ecJP8GT7krprmz5nOjsI74ttU+HVApTzIq/EWGx1YXkwwBRFN9a
- P4vA==
-X-Gm-Message-State: APjAAAWJGGWQDP/p42KKTBGWhUVFYuTkD0Elrxi3RPaM3KOGLoKEtGcP
- xMJVIrgLo8U6nScCAYJwxgkE3dI8XwkZgzewfEsjfw==
-X-Google-Smtp-Source: APXvYqyNLDWKtInyLdMbW6jcx0sLa6zFjReLxUWdmVjMxzkJyd2bv8KdS95o0lBKkrmBODn2zhHKJct1YL8t4+Zp5LQ=
-X-Received: by 2002:a2e:9f0f:: with SMTP id u15mr11580891ljk.54.1565680839664; 
- Tue, 13 Aug 2019 00:20:39 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190813061024.15428-1-efremov@linux.com>
- <20190813063251.21842-1-efremov@linux.com>
-In-Reply-To: <20190813063251.21842-1-efremov@linux.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Gxw6O48J9qRmzDYXvAWMeWAUk3rGowLbkm5cB//pjK8=;
+ b=Jl8u7WwB51hqE09niWb5K5NqQplIzzeGCyFP+ghD+mullOgh1xfO+Z/UmFIioMoUW3
+ FW3+Qn3VAc5n06DZcUEqGu+DBYhahGOM1wW2E4nhYGYOigqCRWWKiKqFFaPAWu6Ns/UL
+ u2W+pAl5cUqUUG93OOtWK46NucFhnmmCtvEDbXrIrKDQIZRCf4odPUkXvJggU0Z+LiJu
+ 5BqdKHE6lklLMPSoQefe9M2L1YTCSQCbv/ufSXDRI0f6BiuEOacrC5tGlqV7BkqsjLF+
+ PbVRvuN9HLkiSoi9YmzxKdxBoEZNZp87LW6NX8YEiCifIq+4RVvk2gWEAQmYuIzLrqlq
+ BCnw==
+X-Gm-Message-State: APjAAAUlod1VeEz42fIGTe3Dt7VI1fQ3IHYeSPgqbWJacMtZA8FRh9Fr
+ dIiQ7fGivQ8tjiDws4J2pdZ0kQ==
+X-Google-Smtp-Source: APXvYqysE1zoOaMXVVrhPhIBzgFCPB3jNNndUZAP7c+tNqs2RgHpaFLlNgeFmS76jP1fiEV3l22XOg==
+X-Received: by 2002:a05:651c:95:: with SMTP id
+ 21mr2819969ljq.128.1565681255104; 
+ Tue, 13 Aug 2019 00:27:35 -0700 (PDT)
+Received: from localhost.bredbandsbolaget
+ (c-2ccd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.44])
+ by smtp.gmail.com with ESMTPSA id r23sm737884lji.3.2019.08.13.00.27.33
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 13 Aug 2019 00:27:34 -0700 (PDT)
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 13 Aug 2019 09:20:27 +0200
-Message-ID: <CACRpkdZRW1fpjf=vQbuDdSC1ZU9o2tq2C2bL0GonQbnPWc06-A@mail.gmail.com>
-Subject: Re: [RESEND PATCH] MAINTAINERS: Update path to physmap-versatile.c
-To: Denis Efremov <efremov@linux.com>
+To: arm@kernel.org,
+	soc@kernel.org
+Subject: [PATCH] ARM: dts: nomadik: Set up the CS GPIO right
+Date: Tue, 13 Aug 2019 09:27:31 +0200
+Message-Id: <20190813072731.4558-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_002044_380560_E29B464B 
-X-CRM114-Status: UNSURE (   8.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190813_002736_500216_A0698742 
+X-CRM114-Status: GOOD (  11.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,32 +97,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joe Perches <joe@perches.com>,
- Ricardo Ribalda Delgado <ricardo.ribalda@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Boris Brezillon <bbrezillon@kernel.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 8:33 AM Denis Efremov <efremov@linux.com> wrote:
+Now that the SPI GPIO driver knows how to handle these
+chip select GPIOs and we get nasty messages about the
+core having to enforce active low on the GPIO, fix this
+up by actually requesting the CS GPIO line as active
+low.
 
-> Update MAINTAINERS record to reflect the filename change
-> from physmap_of_versatile.c to physmap-versatile.c
->
-> Cc: Boris Brezillon <bbrezillon@kernel.org>
-> Cc: Ricardo Ribalda Delgado <ricardo.ribalda@gmail.com>
-> Cc: Linus Walleij <linus.walleij@linaro.org>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Fixes: 6ca15cfa0788 ("mtd: maps: Rename physmap_of_{versatile, gemini} into physmap-{versatile, gemini}")
-> Signed-off-by: Denis Efremov <efremov@linux.com>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ARM SoC folks: please apply this directly for v5.4, I do
+not plan to send more Nomadik patches this merge window.
+---
+ arch/arm/boot/dts/ste-nomadik-nhk15.dts | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
 
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+diff --git a/arch/arm/boot/dts/ste-nomadik-nhk15.dts b/arch/arm/boot/dts/ste-nomadik-nhk15.dts
+index 04066f9cb8a3..41ed21a4fdc1 100644
+--- a/arch/arm/boot/dts/ste-nomadik-nhk15.dts
++++ b/arch/arm/boot/dts/ste-nomadik-nhk15.dts
+@@ -212,13 +212,7 @@
+ 		 */
+ 		gpio-sck = <&gpio0 5 GPIO_ACTIVE_HIGH>;
+ 		gpio-mosi = <&gpio0 4 GPIO_ACTIVE_HIGH>;
+-		/*
+-		 * It's not actually active high, but the frameworks assume
+-		 * the polarity of the passed-in GPIO is "normal" (active
+-		 * high) then actively drives the line low to select the
+-		 * chip.
+-		 */
+-		cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
++		cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+ 		num-chipselects = <1>;
+ 
+ 		/*
+-- 
+2.21.0
 
-Yours,
-Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
