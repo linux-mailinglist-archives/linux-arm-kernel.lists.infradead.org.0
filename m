@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D86918BF2C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 19:03:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 681348BF2D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 19:04:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=FR/M6A5JId12IlLwv6WVugML5rgMq1bwOOaVOtnoIGY=; b=BINNFt4ymXJOfMeAU+EI/HxI1q
-	AzyyhK1b9nID7/9ab0mx/jLERFhCKA2pUHlXbzQ24PNtFaj+zaoowlK3ZPhYv87z9g/5fbXnFZnrj
-	/WgMJuDeUni4nwPsByns/nVAivfCAQXOiHi12MiLiND1roEs2rU31SoxMV2bfmuFhGm7sbtxDtJUn
-	otTFtXKwesa4v5EULDwlT4vH67Xa2FPMBLZxH53+6Eg7WZiAAOnUCgMqUvYCQBzvZWFOBXp6CAHMc
-	/ExeQQ97tunXTOD9lTb6KgbXi5D6FL9iiR0PQ90EzDjE75WwhiEBn/dBtB0EAm82s+8JIXl6i5AbV
-	+Fj+unsg==;
+	bh=LJ6QhD6AnDQQyuzvOzhkjxmfQ3/sXJXz1GK77j9+kgw=; b=vAaXky8cObw0/Ri+Uomvex/fwZ
+	eVNq/j81e8IYA0XVz0P1suGlAon4JyJ3MhgZ7Pg0LSgxf9T5XGwjkwEnrMsR+jxHyORYyf7LreD67
+	5TZunJFGFL25+p0MbBRlP4Sq+8MgBBSqTtq+8+TUA9dNGXgNtxOhishXiDGASvKfysvRS29UdbHZv
+	XYnriL3hsHzoiQjj8H/FdLeM+wbVDjJbSHzIdi+Q4GQ/wuIlu6ilw7nzbp0oOVenLxuEGEivZdgmb
+	HRjFfMe9OG7dtz/g9LcUOFtZdgPO797Obj6voXoadb+r3HRWmsSwpSYWcxZn7kJAuIvMwm30mCOqa
+	5eZB9Jgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxaD6-0001Ni-Br; Tue, 13 Aug 2019 17:03:48 +0000
+	id 1hxaDK-0001d5-Pw; Tue, 13 Aug 2019 17:04:02 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxaBO-0008NH-Gs
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 17:02:04 +0000
+ id 1hxaBP-0008Pm-ST
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 17:02:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 63272337;
- Tue, 13 Aug 2019 10:02:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B6C4115A2;
+ Tue, 13 Aug 2019 10:02:03 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4525A3F706;
- Tue, 13 Aug 2019 10:02:01 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 989463F706;
+ Tue, 13 Aug 2019 10:02:02 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 6/8] arm64: memory: Implement __tag_set() as common function
-Date: Tue, 13 Aug 2019 18:01:47 +0100
-Message-Id: <20190813170149.26037-7-will@kernel.org>
+Subject: [PATCH 7/8] arm64: memory: Add comments to end of non-trivial #ifdef
+ blocks
+Date: Tue, 13 Aug 2019 18:01:48 +0100
+Message-Id: <20190813170149.26037-8-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190813170149.26037-1-will@kernel.org>
 References: <20190813170149.26037-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_100202_625389_EB4EB0ED 
-X-CRM114-Status: GOOD (  10.28  )
+X-CRM114-CacheID: sfid-20190813_100204_040478_F723B6E6 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -70,47 +71,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There's no need for __tag_set() to be a complicated macro when
-CONFIG_KASAN_SW_TAGS=y and a simple static inline otherwise. Rewrite
-the thing as a common static inline function.
+Commenting the #endif of a multi-statement #ifdef block with the
+condition which guards it is useful and can save having to scroll back
+through the file to figure out which set of Kconfig options apply to
+a particular piece of code.
 
 Signed-off-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/memory.h | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ arch/arm64/include/asm/memory.h | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
 
 diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-index 5552c8cba1e2..e902132b808c 100644
+index e902132b808c..d31e4b6e349f 100644
 --- a/arch/arm64/include/asm/memory.h
 +++ b/arch/arm64/include/asm/memory.h
-@@ -218,20 +218,20 @@ static inline unsigned long kaslr_offset(void)
- 
- #ifdef CONFIG_KASAN_SW_TAGS
- #define __tag_shifted(tag)	((u64)(tag) << 56)
--#define __tag_set(addr, tag)	(__typeof__(addr))( \
--		((u64)(addr) & ~__tag_shifted(0xff)) | __tag_shifted(tag))
- #define __tag_reset(addr)	untagged_addr(addr)
- #define __tag_get(addr)		(__u8)((u64)(addr) >> 56)
+@@ -57,11 +57,13 @@
+ #define PCI_IO_END		(VMEMMAP_START - SZ_2M)
+ #define PCI_IO_START		(PCI_IO_END - PCI_IO_SIZE)
+ #define FIXADDR_TOP		(PCI_IO_START - SZ_2M)
++
+ #if VA_BITS > 48
+ #define VA_BITS_MIN		(48)
  #else
--static inline const void *__tag_set(const void *addr, u8 tag)
--{
--	return addr;
--}
--
-+#define __tag_shifted(tag)	0UL
+ #define VA_BITS_MIN		(VA_BITS)
+ #endif
++
+ #define _VA_START(va)		(-(UL(1) << ((va) - 1)))
+ 
+ #define KERNEL_START      _text
+@@ -86,7 +88,7 @@
+ #else
+ #define KASAN_THREAD_SHIFT	0
+ #define KASAN_SHADOW_END	(_VA_START(VA_BITS_MIN))
+-#endif
++#endif /* CONFIG_KASAN */
+ 
+ #define MIN_THREAD_SHIFT	(14 + KASAN_THREAD_SHIFT)
+ 
+@@ -224,7 +226,7 @@ static inline unsigned long kaslr_offset(void)
+ #define __tag_shifted(tag)	0UL
  #define __tag_reset(addr)	(addr)
  #define __tag_get(addr)		0
- #endif
+-#endif
++#endif /* CONFIG_KASAN_SW_TAGS */
  
-+static inline const void *__tag_set(const void *addr, u8 tag)
-+{
-+	u64 __addr = (u64)addr & ~__tag_shifted(0xff);
-+	return (const void *)(__addr | __tag_shifted(tag));
-+}
-+
+ static inline const void *__tag_set(const void *addr, u8 tag)
+ {
+@@ -263,7 +265,7 @@ extern phys_addr_t __phys_addr_symbol(unsigned long x);
+ #else
+ #define __virt_to_phys(x)	__virt_to_phys_nodebug(x)
+ #define __phys_addr_symbol(x)	__pa_symbol_nodebug(x)
+-#endif
++#endif /* CONFIG_DEBUG_VIRTUAL */
+ 
+ #define __phys_to_virt(x)	((unsigned long)((x) - physvirt_offset))
+ #define __phys_to_kimg(x)	((unsigned long)((x) + kimage_voffset))
+@@ -323,14 +325,14 @@ static inline void *phys_to_virt(phys_addr_t x)
+ 	u64 __addr = VMEMMAP_START + (__idx * sizeof(struct page));	\
+ 	(struct page *)__addr;						\
+ })
+-#endif
++#endif /* !CONFIG_SPARSEMEM_VMEMMAP || CONFIG_DEBUG_VIRTUAL */
+ 
+ #define virt_addr_valid(addr)	({					\
+ 	__typeof__(addr) __addr = addr;					\
+ 	__is_lm_address(__addr) && pfn_valid(virt_to_pfn(__addr));	\
+ })
+ 
+-#endif
++#endif /* !ASSEMBLY */
+ 
  /*
-  * Physical vs virtual RAM address space conversion.  These are
-  * private definitions which should NOT be used outside memory.h
+  * Given that the GIC architecture permits ITS implementations that can only be
+@@ -345,4 +347,4 @@ static inline void *phys_to_virt(phys_addr_t x)
+ 
+ #include <asm-generic/memory_model.h>
+ 
+-#endif
++#endif /* __ASM_MEMORY_H */
 -- 
 2.11.0
 
