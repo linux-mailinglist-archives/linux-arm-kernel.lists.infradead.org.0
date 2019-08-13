@@ -2,80 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 223158C3BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 23:32:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12D8D8C3F0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 23:48:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JCGDcyNxss0nOFjeqvWCI1/zIBwB39YeIxTuzIziuWQ=; b=E8P3F/imVdp5c6
-	gk73HAeXfgV+s/2qVmzX1uIsLKr1OLDfKolBcmDDZInNVCI7M8WzZRIJOkkuHA65dRMZ5i/QOcxd3
-	hzzoW/rOcKNQRr0ATOUxN0jNde2ZkC6FQcfo/kAKj5KxSdcwkeVlvBY2uSdLWZcoVC0Dwxjeos1Gu
-	9EBQ6992f8tU0C79j3xtUEYMy0HlmqtaJlA3XJ7bD4OFrw5HFAfTcsV07E9oM8NuAJvWcgtePaQXH
-	u7Y5Wnx737BAJo7cKc866AEA/nZ1SMqyiKqTMJebZ+o+mQaeLqrI9shBYTOkBj1VJpo1xTLQBCgwj
-	qvcZz1WZi0+PDycDoOBQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8p5JkDLzYCObZrQ2pA7mZ+68IlaM/BNEP7NKhTzsgxw=; b=jFZYwJKpQ8g7yoJAeX56BWilu
+	991v1/WmEtw4eiqSgjoiNFVPoeub2ejfiWYuJNez9u/wczqS2U83JdslfrheBpB/h+c5G/QPgYnCL
+	KS6DHSvf8Nsrhdz9ic172hxo5/kIyHI8SbGC59rQVW8NDQIzI9cNA7iUlTQ4bhSA6/ql8XGGM/u01
+	LX50LANybvHd7uiLdc651JxpLMPNYtDDRY6C21nMakpMWop6vSnj/zfaa435QHQsifEbKuiQoG/Ub
+	tTrj6R7LNlcQPDWCtm11U7eXsQL0S0f3I5BzMSn0X7GMmc8OSKPnUqk0IvN3tfeNa1zAPy5BNTuO6
+	pTT4NxiEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxePU-00017K-AI; Tue, 13 Aug 2019 21:32:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hxee8-0006LD-HD; Tue, 13 Aug 2019 21:48:00 +0000
+Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxePL-00016v-Te
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 21:32:45 +0000
-Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
- [209.85.160.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 78EBA20665
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 21:32:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565731963;
- bh=ocGtIgTgq9tRn05MEA2AseiewpPV58nDV6Bz5EJeVWk=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Ryp35nFyB4LnjvwmcCk+mgcBlhlO9BoGGEbJqCuysxgMYE3QrXhMpNU3pFzcephid
- 2eNvhTsz6fl6tXCc9h5oWhr8XJ2JVTIdVMNyhKFCFQNvMRXbeO3LBh7o0ekIv+8Jvk
- RiHcWeAQT0plw55xtzmZyqe1cwYGYxCeQwnApwjo=
-Received: by mail-qt1-f179.google.com with SMTP id y26so107982380qto.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 14:32:43 -0700 (PDT)
-X-Gm-Message-State: APjAAAU7g4AW7OJorb+H678oBfEk6eun2/qVUM1It+FAOANUY/yqyoQ8
- xhF1LSJwkXJ3fGv0Wwtlj7Eg+82BPUdSANbaMw==
-X-Google-Smtp-Source: APXvYqx48HpN2WmRdaQx2jqeMfSS99pR9DuL4bLmyJdzDJvvyzz7a7PeTjZtWFPiQUCpm5ztHYxh1a0HIsggmFI0ZZU=
-X-Received: by 2002:ac8:368a:: with SMTP id a10mr35482240qtc.143.1565731962734; 
- Tue, 13 Aug 2019 14:32:42 -0700 (PDT)
+ id 1hxedz-0006FO-2N
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 21:47:52 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 467RCR1CFYz9sN1;
+ Wed, 14 Aug 2019 07:47:46 +1000 (AEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1565732868;
+ bh=QNIv9/6eYXhe8lrjk0V6PjDA+j0hqVyK+NifzMBwZ9g=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=X0vPxBRBVx4GZvtdeNIBS5TwRzUE9VdY8PakxLLs9DQTof5g2UE0Yawy1UgZOW/+1
+ co6oKswBUEvNqNhRe+vv02dphHV9rzKOVZQVL8rig0SjxVNnkONihrvd7Ezi9JJxdu
+ KvnQvc3jSzA703grE1UvbcoBHeAYDRVT+DIXd2N31GrcGggT6rrLvaumz3k8JosDY7
+ I+L6DuJRnlkuX1VjUFuvQCR97PkzlA2fYjz6C7heDoboivM5WNRhqSUU0/Q9gxQtRc
+ wlrURbPLykVPUkNDHQd6q41Ky62hdqUNRkW/hgiQZdKo0ebvpe4IEdim9x3pG/+MdD
+ z3CRHMUNqkyWA==
+Date: Wed, 14 Aug 2019 07:47:30 +1000
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: linux-next: Fixes tags need some work in the arm-soc tree
+Message-ID: <20190814074730.402ec3ec@canb.auug.org.au>
+In-Reply-To: <CAK8P3a2q1mShg-EQhiAFUOAET8UEMHfLJV-+HoLTaSQY+M7yBQ@mail.gmail.com>
+References: <20190814002836.4b6aa14b@canb.auug.org.au>
+ <CAK8P3a2q1mShg-EQhiAFUOAET8UEMHfLJV-+HoLTaSQY+M7yBQ@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190813124744.32614-1-mripard@kernel.org>
- <20190813124744.32614-3-mripard@kernel.org>
-In-Reply-To: <20190813124744.32614-3-mripard@kernel.org>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 13 Aug 2019 15:32:31 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqL5v1nd85FuuU1aHDDvojnWqs-4aDZAUDm0iCR0akhF9g@mail.gmail.com>
-Message-ID: <CAL_JsqL5v1nd85FuuU1aHDDvojnWqs-4aDZAUDm0iCR0akhF9g@mail.gmail.com>
-Subject: Re: [PATCH 3/5] dt-bindings: watchdog: sun4i: Add the watchdog
- interrupts
-To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_143243_977068_E4297031 
-X-CRM114-Status: GOOD (  14.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190813_144751_338060_8557B4CF 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.4 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,42 +77,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Frank Rowand <frowand.list@gmail.com>, Guenter Roeck <linux@roeck-us.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Olof Johansson <olof@lixom.net>, Fabrice Gasnier <fabrice.gasnier@st.com>,
+ ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============6220224295542326440=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 6:47 AM Maxime Ripard <mripard@kernel.org> wrote:
+--===============6220224295542326440==
+Content-Type: multipart/signed; boundary="Sig_/1D3ZSLx=5BUi2IVapoKt=A=";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
+
+--Sig_/1D3ZSLx=5BUi2IVapoKt=A=
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
+
+Hi Arnd,
+
+On Tue, 13 Aug 2019 21:35:58 +0200 Arnd Bergmann <arnd@arndb.de> wrote:
 >
-> From: Maxime Ripard <maxime.ripard@bootlin.com>
->
-> The Allwinner watchdog has an interrupt, either shared or dedicated
-> depending on the SoC, that has been described in some DT, but not all of
-> them.
->
-> The binding is also completely missing that description. Let's add that
-> property to be consistent.
+> On Tue, Aug 13, 2019 at 4:28 PM Stephen Rothwell <sfr@canb.auug.org.au> w=
+rote:
+>=20
+> >
+> > Please do not split Fixes tags over more than one line.  Also, please
+> > keep them with the rest of the other tags. =20
+>=20
+> Thanks for the report. How bad is this? Should I undo the merge and
+> wait for an updated pull request?
 
-I'm fine with fixing errors like this in the conversion patch.
+Its probably ok to leave as long as lessons are learnt :-)
 
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> ---
->  .../bindings/watchdog/allwinner,sun4i-a10-wdt.yaml           | 5 +++++
->  1 file changed, 5 insertions(+)
+--=20
+Cheers,
+Stephen Rothwell
 
-Either way:
+--Sig_/1D3ZSLx=5BUi2IVapoKt=A=
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl1TL/IACgkQAVBC80lX
+0GwzZwf/ZHu3Y/RLybUWFbYGivFgC09NytPbhm8+y9llOajMYD7Al1Pasg+kI1Mo
+yhH9K1vQRjXybFR7l2M9F/ikcraK8C12qj1TmAMTJ6fFleMlXn6fEKhNqw1O8VMz
+KcM8IY1Z23Lom8fMBhjjyGz9Wkv7r1b3mZugCUoZhsIeXKCYfcOW00RVm13RU/MP
+3/uEKFHqWTSHMncKKkMPIgKCHckdiNQhS/mzck3P8aSapCBviOWg1NqJ2o18xg17
+E8oglbj5WZVXZW8R6Uvf4Vo2ntaDjCVSX523je0ymMJvDju98pTURVZft20NlPPw
+Vdnj8KVJ0QuSlWptoEGzS2Lt2K/rwA==
+=0beZ
+-----END PGP SIGNATURE-----
+
+--Sig_/1D3ZSLx=5BUi2IVapoKt=A=--
+
+
+--===============6220224295542326440==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6220224295542326440==--
+
