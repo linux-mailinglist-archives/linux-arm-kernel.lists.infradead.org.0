@@ -2,61 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A2D18B473
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 11:46:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D95088B485
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 11:47:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qGYsbnSgyCLvV1YjNEI1kGJyziYZHPd7zy9rlNCF0ZM=; b=GGTzEmvKuyweZd
-	wGXacyOHRTwXKCunZYknNg1MxQdX/B0p4YigUB1l8IQC+//IGFNcEADLeAssirLrbf0e3xuaK6VHD
-	qh0hTcBCS//OgAfILsjdXFjluEL/nMzsg1MEgywbJW6MPR7DLOIGIBangJcAxr9stC/QRqbUdsLmL
-	diM8zqSNhz9COA/o0XZo8ZBafOpQMcChTI/yYmjI+SJrzcMNAmZrEJCegdIy7UoHR2kyf8u+arO1g
-	iSsRHl8elXmVikLERbRUtjzryIgQomI8IvnyUMk2Qxvvj1gRHhcSRxzpYEHTHSDfD+9jkBng+jFZq
-	abN7tO/kClxqfYS1H0rQ==;
+	List-Owner; bh=TXvIk5mMze+vKfe1Guz0KmeWRgLh/wyqZ2erWl2nr7Q=; b=YDasnC2re2PUcA
+	Mrll+OR8iV3+xKkfTUtIjEcv9TN/gr6AyqYiKTHnFA94wZJHlc8ycWaue4L1BOGskITBsJrVodwXO
+	TUrN6byUV7jY8wWIfxzIOaaMS3by51Bo2CS+WhViGgNC564XAjbD9wp/6mXht6KboGQ0ObHBqlEmw
+	3hKANLl189Gd3X1KttN5joU1BNc/U42oWJdPBLP8IczHnpw4drRQPcOJRfCLEGKNDw8TkNLykUdIU
+	zDIZ5xvxBOwLzNuy3UkwryzAz1DBXGvT/LvhhkgdIgGIJ7hKc1wAGQ44yCWbvnck8vd2LAcqNwwXM
+	cYlJSB/JX2ItrvljvIWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxTNO-0008Mm-C2; Tue, 13 Aug 2019 09:45:58 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
+	id 1hxTPB-0000Ey-JO; Tue, 13 Aug 2019 09:47:49 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxTN5-0008Lu-Oq
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 09:45:41 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id A0346634C88;
- Tue, 13 Aug 2019 12:45:27 +0300 (EEST)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1hxTMt-0000eI-0b; Tue, 13 Aug 2019 12:45:27 +0300
-Date: Tue, 13 Aug 2019 12:45:26 +0300
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: Re: [PATCH v2 1/3] dt-bindings: media: i2c: Add IMX290 CMOS sensor
- binding
-Message-ID: <20190813094526.GG835@valkosipuli.retiisi.org.uk>
-References: <20190806130938.19916-1-manivannan.sadhasivam@linaro.org>
- <20190806130938.19916-2-manivannan.sadhasivam@linaro.org>
+ id 1hxTOy-0000EJ-Di
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 09:47:37 +0000
+Received: by mail-qk1-x741.google.com with SMTP id m2so5301806qki.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 02:47:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kc38QbcHV7pkptm5fiPW3dVekfJJ+xCxwUWXKBIaN8U=;
+ b=RWWrNVi9zhN6jA53rD5YyEnuQ3736IwlQbfyNGthICPxreJz/TAJi7/YoKrFormYA3
+ xXViBLLAdVjnrUBe82FiPrJrV871oPvdim/1uM1KHWarwvpyontipCCoptsjCa6GSN3C
+ JXL97YxRXUApdUZCHhynLD4frQIcK6FPX9pp0=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kc38QbcHV7pkptm5fiPW3dVekfJJ+xCxwUWXKBIaN8U=;
+ b=K+aw4RCr66v/N8n3M2JsxuUnq1PBwJYv5yrR5KMhxGnmPk7MZeaWMiARUmKP+CG3nY
+ 2k67zbp8qIAUdHmiogIWBtaIebcfJ8J919iAfQUViX4OIJNEiCW4aHQ5sRkcq74DmcKR
+ 5ra4VhD0WVfV2S9+E8+e1jPM1YkjI71WVrusVYgWL5e5WltBax86Hi585nS2jfThhZa0
+ a1GupwYCibDZE9YuVDq6YN6gZ/qXdX+VrfiH+JEkVREpBxXgIK556WscnLlz8PXw2aqY
+ HJ0ZxgQlnm2WN026kQVMRvU2BEHK4XXwi7q5G2p6YkszQggY7NI2ELloEeqSXiCCuoIN
+ Czkg==
+X-Gm-Message-State: APjAAAUU61uaF+ZNxmKlGCgHyPJnw9bTPH9eZPMFZgCcNJzF7Mh34vAp
+ mqP25RSp/xyKKiNNP7GAjlnz2oGP/RNyitg9+FFnYg==
+X-Google-Smtp-Source: APXvYqxXFONLv0MJfh+N2hROFpIG7VWcScq3DFuMkmvG7aRa+F5ZRj+wqMfPnVrfEPQp0iLTZ1ClWWx1CBcp6Ze1N0c=
+X-Received: by 2002:a37:5ec7:: with SMTP id
+ s190mr22499051qkb.299.1565689654858; 
+ Tue, 13 Aug 2019 02:47:34 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190806130938.19916-2-manivannan.sadhasivam@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190813093821.74158-1-fshao@chromium.org>
+In-Reply-To: <20190813093821.74158-1-fshao@chromium.org>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Tue, 13 Aug 2019 17:47:22 +0800
+Message-ID: <CANMq1KCNFfWA=ApVUFoPctgTftHDSAvGjtk-Xu2hcKWBq9R1zw@mail.gmail.com>
+Subject: Re: [PATCH] Input: cros_ec_keyb: Add back missing mask for event_type
+To: Fei Shao <fshao@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_024540_167987_C4236A9F 
-X-CRM114-Status: GOOD (  18.42  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190813_024736_487422_B6074208 
+X-CRM114-Status: GOOD (  16.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,107 +89,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, robh+dt@kernel.org,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Brian Norris <briannorris@chromium.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ lkml <linux-kernel@vger.kernel.org>, Ting Shen <phoenixshen@chromium.org>,
+ Guenter Roeck <groeck@chromium.org>,
+ "open list:HID CORE LAYER" <linux-input@vger.kernel.org>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Benson Leung <bleung@chromium.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Manivannan,
+On Tue, Aug 13, 2019 at 5:38 PM Fei Shao <fshao@chromium.org> wrote:
+>
+> In the previous patch we didn't mask out event_type in case statement,
+> so switches are always picked instead of buttons, which results in
+> ChromeOS devices misbehaving when power button is pressed.
+> This patch adds back the missing mask.
+>
+> Fixes: d096aa3eb604 ("Input: cros_ec_keyb: mask out extra flags in event_type")
+> Signed-off-by: Fei Shao <fshao@chromium.org>
 
-On Tue, Aug 06, 2019 at 06:39:36PM +0530, Manivannan Sadhasivam wrote:
-> Add devicetree binding for IMX290 CMOS image sensor.
-> 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
+
 > ---
->  .../devicetree/bindings/media/i2c/imx290.txt  | 51 +++++++++++++++++++
->  1 file changed, 51 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx290.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/media/i2c/imx290.txt b/Documentation/devicetree/bindings/media/i2c/imx290.txt
-> new file mode 100644
-> index 000000000000..7535b5b5b24b
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/i2c/imx290.txt
-> @@ -0,0 +1,51 @@
-> +* Sony IMX290 1/2.8-Inch CMOS Image Sensor
-> +
-> +The Sony IMX290 is a 1/2.8-Inch CMOS Solid-state image sensor with
-> +Square Pixel for Color Cameras. It is programmable through I2C and 4-wire
-> +interfaces. The sensor output is available via CMOS logic parallel SDR output,
-> +Low voltage LVDS DDR output and CSI-2 serial data output.
-
-If there are three to choose from, then you should specify which one is in
-use. Given that I think chances remain slim we'd add support for the other
-two (it's certainly not ruled out though), CSI-2 could be the default. But
-this needs to be documented.
-
-> +
-> +Required Properties:
-> +- compatible: Should be "sony,imx290"
-> +- reg: I2C bus address of the device
-> +- clocks: Reference to the xclk clock.
-> +- clock-names: Should be "xclk".
-> +- clock-frequency: Frequency of the xclk clock.
-
-...in Hz.
-
-> +- vdddo-supply: Sensor digital IO regulator.
-> +- vdda-supply: Sensor analog regulator.
-> +- vddd-supply: Sensor digital core regulator.
-> +
-> +Optional Properties:
-> +- reset-gpios: Sensor reset GPIO
-> +
-> +The imx290 device node should contain one 'port' child node with
-> +an 'endpoint' subnode. For further reading on port node refer to
-> +Documentation/devicetree/bindings/media/video-interfaces.txt.
-
-Which other properties are relevant for the device? I suppose you can't
-change the lane order, so clock-lanes is redundant (don't use it in the
-example) and data-lanes should be monotonically incrementing series from 1
-to 4.
-
-> +
-> +Example:
-> +	&i2c1 {
-> +		...
-> +		imx290: imx290@1a {
-
-imx290: camera-sensor@1a {
-
-> +			compatible = "sony,imx290";
-> +			reg = <0x1a>;
-> +
-> +			reset-gpios = <&msmgpio 35 GPIO_ACTIVE_LOW>;
-> +			pinctrl-names = "default";
-> +			pinctrl-0 = <&camera_rear_default>;
-> +
-> +			clocks = <&gcc GCC_CAMSS_MCLK0_CLK>;
-> +			clock-names = "xclk";
-> +			clock-frequency = <37125000>;
-> +
-> +			vdddo-supply = <&camera_vdddo_1v8>;
-> +			vdda-supply = <&camera_vdda_2v8>;
-> +			vddd-supply = <&camera_vddd_1v5>;
-> +
-> +			port {
-> +				imx290_ep: endpoint {
-> +					clock-lanes = <1>;
-> +					data-lanes = <0 2 3 4>;
-> +					remote-endpoint = <&csiphy0_ep>;
-> +				};
-> +			};
-> +		};
-
--- 
-Regards,
-
-Sakari Ailus
+>  drivers/input/keyboard/cros_ec_keyb.c | 6 ++++--
+>  1 file changed, 4 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/input/keyboard/cros_ec_keyb.c b/drivers/input/keyboard/cros_ec_keyb.c
+> index 38cb6d82d8fe..bef7bee6f05e 100644
+> --- a/drivers/input/keyboard/cros_ec_keyb.c
+> +++ b/drivers/input/keyboard/cros_ec_keyb.c
+> @@ -226,6 +226,8 @@ static int cros_ec_keyb_work(struct notifier_block *nb,
+>  {
+>         struct cros_ec_keyb *ckdev = container_of(nb, struct cros_ec_keyb,
+>                                                   notifier);
+> +       uint8_t mkbp_event_type = ckdev->ec->event_data.event_type &
+> +                                 EC_MKBP_EVENT_TYPE_MASK;
+>         u32 val;
+>         unsigned int ev_type;
+>
+> @@ -237,7 +239,7 @@ static int cros_ec_keyb_work(struct notifier_block *nb,
+>         if (queued_during_suspend && !device_may_wakeup(ckdev->dev))
+>                 return NOTIFY_OK;
+>
+> -       switch (ckdev->ec->event_data.event_type & EC_MKBP_EVENT_TYPE_MASK) {
+> +       switch (mkbp_event_type) {
+>         case EC_MKBP_EVENT_KEY_MATRIX:
+>                 pm_wakeup_event(ckdev->dev, 0);
+>
+> @@ -264,7 +266,7 @@ static int cros_ec_keyb_work(struct notifier_block *nb,
+>         case EC_MKBP_EVENT_SWITCH:
+>                 pm_wakeup_event(ckdev->dev, 0);
+>
+> -               if (ckdev->ec->event_data.event_type == EC_MKBP_EVENT_BUTTON) {
+> +               if (mkbp_event_type == EC_MKBP_EVENT_BUTTON) {
+>                         val = get_unaligned_le32(
+>                                         &ckdev->ec->event_data.data.buttons);
+>                         ev_type = EV_KEY;
+> --
+> 2.23.0.rc1.153.gdeed80330f-goog
 
 _______________________________________________
 linux-arm-kernel mailing list
