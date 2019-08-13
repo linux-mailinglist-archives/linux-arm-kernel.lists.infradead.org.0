@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08F578B33B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 11:02:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C0288B33F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 11:02:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X4wbT6Sbti0qDy+3uwQb+PDgbn52p+7BXkLxnptGqKE=; b=ucnl5oiNooh9nY
-	JQuOZB98R2u5cGdyP3xsZnvi5l+J0D9AUWipLDPrl1/0VeIq+hNtGxaH459I+uqNw6qqRtzuw0z/J
-	3wLO4P+pwyb8OZpbldvyyIwtd1WHdy0R/kSw/DGTGeG+8gCJqq3oVgHjjKJqHts6ppTPfftlAEqfe
-	lgvzxQp07h9/RhQP00gBW8BC/MMJwtRHX04xhRUa7LMU/8APMWZ/1MJyJwdt83vv0i4OIBeWrgrDw
-	bXwdeFJqLtzTJ0y56aqOoA8xLzLbc33SInhRxhcAZvzAR9oI+fDCHEzv3GqNXfdSKQZe7r05CtwcV
-	7rSJP2YLjl5gfNJYO8jQ==;
+	List-Owner; bh=ruQOe4sqta/3J1XQoMlFaFbfVMwfTaxyxS7xme2iDlA=; b=YDDjlPCK/fJhnl
+	w4xSKuEXxGFpCusopKxxx4M4ske8oijhgau9QgmEu3ecb6LMAlhuCWR11hMYq+2SPQwJ7KYofjGsD
+	HeCNHImmAURz/2sxPQ27dMdtsbIMETznPYA1IAkJFWYSVib9gW6FqkFVD8YfnMeaAJ/yfn+PKrRLX
+	KFoV33yx1zJ/BfypFMmowFcJpkt7Fg5H/uEO2xQB/5KmJEMXi+E3IPbtNJcI5lPGpUkMa5wYIOpqm
+	mNiw1gN+aDu5OjM0+jnABoau+DdMRStbZHW+AC2p045JTpHJJAhdL0B5MAryologqXuyhGBWe2fU3
+	JHH4W5kDdvtvtKdNfgbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxShF-0006bP-91; Tue, 13 Aug 2019 09:02:25 +0000
+	id 1hxShX-0006tj-MA; Tue, 13 Aug 2019 09:02:43 +0000
 Received: from [2001:4bb8:180:1ec3:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hxSgj-0006Ox-70; Tue, 13 Aug 2019 09:01:53 +0000
+ id 1hxSgl-0006Px-MH; Tue, 13 Aug 2019 09:01:56 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  x86@kernel.org
-Subject: [PATCH 1/6] arm64: unexport set_memory_x and set_memory_nx
-Date: Tue, 13 Aug 2019 11:01:41 +0200
-Message-Id: <20190813090146.26377-2-hch@lst.de>
+Subject: [PATCH 2/6] x86: unexport set_memory_x and set_memory_nx
+Date: Tue, 13 Aug 2019 11:01:42 +0200
+Message-Id: <20190813090146.26377-3-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190813090146.26377-1-hch@lst.de>
 References: <20190813090146.26377-1-hch@lst.de>
@@ -57,28 +57,28 @@ permission of kernel memory, and none really should.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/arm64/mm/pageattr.c | 2 --
+ arch/x86/mm/pageattr.c | 2 --
  1 file changed, 2 deletions(-)
 
-diff --git a/arch/arm64/mm/pageattr.c b/arch/arm64/mm/pageattr.c
-index 03c53f16ee77..9ce7bd9d4d9c 100644
---- a/arch/arm64/mm/pageattr.c
-+++ b/arch/arm64/mm/pageattr.c
-@@ -128,7 +128,6 @@ int set_memory_nx(unsigned long addr, int numpages)
- 					__pgprot(PTE_PXN),
- 					__pgprot(0));
- }
--EXPORT_SYMBOL_GPL(set_memory_nx);
+diff --git a/arch/x86/mm/pageattr.c b/arch/x86/mm/pageattr.c
+index 6a9a77a403c9..a02ca8986299 100644
+--- a/arch/x86/mm/pageattr.c
++++ b/arch/x86/mm/pageattr.c
+@@ -1967,7 +1967,6 @@ int set_memory_x(unsigned long addr, int numpages)
  
- int set_memory_x(unsigned long addr, int numpages)
+ 	return change_page_attr_clear(&addr, numpages, __pgprot(_PAGE_NX), 0);
+ }
+-EXPORT_SYMBOL(set_memory_x);
+ 
+ int set_memory_nx(unsigned long addr, int numpages)
  {
-@@ -136,7 +135,6 @@ int set_memory_x(unsigned long addr, int numpages)
- 					__pgprot(0),
- 					__pgprot(PTE_PXN));
- }
--EXPORT_SYMBOL_GPL(set_memory_x);
+@@ -1976,7 +1975,6 @@ int set_memory_nx(unsigned long addr, int numpages)
  
- int set_memory_valid(unsigned long addr, int numpages, int enable)
+ 	return change_page_attr_set(&addr, numpages, __pgprot(_PAGE_NX), 0);
+ }
+-EXPORT_SYMBOL(set_memory_nx);
+ 
+ int set_memory_ro(unsigned long addr, int numpages)
  {
 -- 
 2.20.1
