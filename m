@@ -2,37 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 221828BE67
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:24:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5DB28BE51
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:21:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9Z0GVlVcSMhdVOEXts912DfatsXvQjP4StjE59MnIcU=; b=PqN
-	DFMi3OCFWiqk8ZdvPtn8iOhgLcpIlzwB2NJiDdxpKjMQxBG5dody0CRTDl53B89EBAPXTwFNEDgBh
-	bon9uA5OQSj993Mqz3JmSevqIUxvBZvn0Y0Mk+Im5HRetufqgm+175Lsba9dpBP6dikelh2NonnTq
-	MadRp1eL340edGIjkYI48o0ivOSgjpfx42XyO5AvqDMBBDqFh3qXnwJy6oune7nFPBELwr1xZP2Cg
-	7Z4QYxqiNpboGgTqRHpdC5JA9f/ufijCfu+vSso6voumGeurMXFJ07G6BNXKWOjGgBvMPk0nu2Wfr
-	BRzsKi42fBJDH5nTRerfUdzim1oiW9w==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Fm+L0Uuk8auTbU0jUlFYbOEEhzRwI9vy3JwInftabDU=; b=i37FQdmC6N9wPEF3bVTLjXpOee
+	3l0yndHxJMDZDrYAYtIlG0dIP9WwQxgkfpxBiUa1PeFoUv8gMkXbL8+fA43ZP0C9Ussr74gJXl49f
+	ZSlf40wECcCDSU/Dn8kttwM3taG4ye7GpwPcAuzrDzp+/UadnzqkAwgBU/JmptlkMUzd5/M1MSwe2
+	LIO1bAktNGkFiJD41uMrqOmC6DfrBHvtYK+RlYsDDGyEdhEOb0JEJV8uMnYYa41HLWtFsWpOS79Fs
+	C0bLWUt2eg39qeeKwsArzhyUuVUde1xgjHdO3qI+JnN9Dcp1ouGs+ovWZy51cJWWsa/HRcv5NEuKE
+	Wz3cURMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxZb6-0002Px-Me; Tue, 13 Aug 2019 16:24:32 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1hxZYS-00009x-C4; Tue, 13 Aug 2019 16:21:48 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxZXo-0008N5-2x; Tue, 13 Aug 2019 16:21:15 +0000
+ id 1hxZXm-0008Mq-Sj; Tue, 13 Aug 2019 16:21:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1565713256;
- bh=dUBlT9Xxrn/3cLif2R6aatleNAWiZ7l31/AxHu5ssns=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=MztWCiiBtmdH4Sb0M3d5URvOceAhk5qSPqzBKjKjgQkYRkShQJ8BlvBfZE1UCO1yJ
- ibQy0NYozhSm+yVsGLbR76/l0OOLttQ/KLQokUqKSRjMcp40D09NwjYbuJ+19ecpA8
- cmXO0fQ1dxQBXIAYYOmnh4PdTQKh1VFnkEP0ewp0=
+ s=badeba3b8450; t=1565713257;
+ bh=iDUcfRWgj6xMZ6ufkHWxUXFO8H+8dzKn12ZcmJVMWeI=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=dCCwDtMigstSqGI9gP6G2PaZPNT5E4d3jocGaFRRFzopTdUVIYfODuCd04Y9grOhM
+ fw2AB4t0MVxKCr3o4tdT0O4Hro1D+Aj4jbA5bpj0KChoG9/4F3EnTbPXUO0Dv5GHgo
+ PjaC1CmUMOxf50c0Yg+IVNQGGlIWLQGSfxtFqQxk=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.106]) by mail.gmx.com
  (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1MSt8W-1hrQiE1GHO-00UGxW; Tue, 13 Aug 2019 18:20:56 +0200
+ 1M3lc9-1hxIIF3UNH-000xKJ; Tue, 13 Aug 2019 18:20:56 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
@@ -40,43 +41,44 @@ To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Mark Rutland <mark.rutland@arm.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH V2 00/13] ARM: Add minimal Raspberry Pi 4 support
-Date: Tue, 13 Aug 2019 18:20:35 +0200
-Message-Id: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V2 01/13] ARM: dts: bcm283x: Enable HDMI at board level
+Date: Tue, 13 Aug 2019 18:20:36 +0200
+Message-Id: <1565713248-4906-2-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
-X-Provags-ID: V03:K1:omgWgWBXYFvuPOX6q9fI7KNy5K8f42ZRB+xeRxWYdkKzXFVCQ1l
- MqXRbXyZh0HlU14WNpWih9FJIyCoqS89MysLx6bguRh5tkxToeMCOtc8cPokyn1q/T9lFug
- AUTGI5tp2nmtUNhujij/sI89MaOSREKci6JFVdkwSoeyNCkXqZTyjqmES4VDNnGIznakzSc
- BkYiYhHSgXf0i+c6wgFCw==
+In-Reply-To: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
+References: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
+X-Provags-ID: V03:K1:YeUUJDIN5zMfxRBinVGGPBzmrODzPMlVYsAXObRVUltuHVuiyj/
+ PB/mvRpGBXubvAnEdwOGqM10roF2Q5/iYO0jGY2RtHz42ErMNzJkUIXjscRrf+knxTd4mmK
+ B9buV8kkhs0YVT91EkuamKADVi7RIJ7gV1Ejlqxd9MlGN4tKoVUXnrMyc9fZ6gSyrnyCU1U
+ 3qut7AU+rBD+AOd114wpA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Sx08nM0KaTc=:/5FhSM3w71RuIBd5P052cY
- I2adqVoXok+QKFpL76+25Cv4drVurWMR0MhQm3v2sqGKMbY5FEVaE/V5LNaFsT7Bi/Okuu8dk
- 3wHKlXF140nlPUeuNwd3pYnFaC2BheayNkd/xiqE0hQEYSd2baMi8ycW8MfKuFQmiZI77zP7g
- pMScfRjs4p3Nh40CMjrFCOut0NmLOQtI7bROUfzEVw5r3A51Mrp1/iys447a46TiFnPdRiDSQ
- BkjASIFHMTuxSkO7ahuFs/+3QGZfhtlu+TuwwvTzPLN0iQkNqM/Cd9V2sVpSu6rV7kADb7V4/
- R+xTxVPWuo45byw/g0AKJFX4yLDdwnNH7Ii/Tp1ByqsL8Rdic5lZW69KmUpeV704VxPWyUHpI
- 1mdLo5QhQ0HwI1OGiaNoESLvwDeegn/Kx1RyskKTxK6vuDcjx8txVRpBNcUoi3h0DiAV9aycA
- JR2tM/nUowQEUHG+3CYRIufU1XDLf+ZPgLwkrDLL6YKENvgGGPPypbuc4RSNIZrBHaOwE4oHW
- 9YL+aaGWPTZUn7EuEYD1WxJcnSB4+LkKzsj/Sunp0NoiQBa08kR1Hj268TLmdI1JAWDkw8vOz
- NLX8V6K3vBQfj14bRf/BeoRtsTDlLPe1hmlG5bFgxowYv9GGmRwagA6aigx6XmR4PxsHIzxF8
- eVn4NM+7lCUs2MDq4bqn3I+yua7DDQ8itpbVAoveQ1mj5ANFhpUVY9c7YH1xw0MiD0iBjCsG4
- Kv+OZyKqeB91VhKVCtNC+lNb/J1VrT4WpAAgHpghdLHW5t5eb54ECWlERJQVQqU6wSkq6XTwr
- eFbMz4iBMIADTI+S3M44wWesDQWJ1tMD12r/NdAn+/VaxncIdNPccDh1uV1lRO3HMmvdwiDAz
- cEWsuMCDXpLNNRkjEZDvi9GAYNpx/hZ6zSuXa6jhTQQCo332S+FSay2fv5SAISzAVGEGsyfIA
- dByFeJr1T89V+nvMhp94TVyGQohzNuKt9TCugVAHtFpy++ad52mm9BEf1XLYF62//IQ03DB1D
- JdmRgAedBUFqlJ/1f4t07AGL0mPXZGtg+rkKdNnRKBm8LLJjpZ187LlxQAWlMPvdWoWPo7JH1
- 2ekdj8HwzycljYzcd6fJrP5WXazZVfyDh34hghS/4o3zELCRi2KxZE/1hzVIpMW27txwERHji
- QJAFzjdQhAZFg4fPzdNoTafC5hEbqzdiSxNvJTx3qx2NsJtw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:fNRUHP566jo=:GTXSW49JCETG09U/9GoNNk
+ A/UQoeRsY1ChScmzOVh5PnI0AZRjP6v3u/2EaepghWRoswOKqMo9RcAGsF/AA3+p5Fa2pRedS
+ m90GqZY1f85W3Olw4YF5Y49us7+ztI0l/L86X89Wu3aA9a7XzLE++W8mGxQubtq9qiXTEIr5j
+ DPRpdUr6uVyg0oPw2HUf843PpTE59IMdqnB689C5Vcsx4UKEP4nKyXeF9CGHOl5OrMZFOa1FG
+ Yu/NybQNj/aMJY84EWv0JXEdPDPB5GzGNVUw67zbbtM8f4AUMHaSgeDOjZ7qM5A3FbW9O9XmC
+ HGFyhBXWRYik+LjnZEjm6zQJ3xbbwtrFyVfdqsTTVZpC0Djk+JmsRePirxn4EVzkOPQHpoFFb
+ ZZ5Wklbr2KsBd/9/67gERBAdcgs0TiDfys2ENJm183jIaRQcLsvSRNFIygwQizB5uAMyjdfzd
+ bE+wZfzYixUnDcx+vWGTyaOLAmUf+dG8IXCxcxTM0N6XX1+9ai93aCiu4vBXRvQUOpEGDmvkD
+ KNyr5gP1GpKxs8njI5Rr5pZ5NppDDU0X9+X3WPSICv1IgNYmvYaw0YIZvMsM5rzitoLQzA1Cl
+ 2yPNdae/e2E0LbEJfhrU8GhhrZZ3zeg2xRTH5jlgqLF9gqPU4OZwS9qkEBzu5s9GqihFo0QRG
+ sNuJcUYwUMCarZjgZVg8ENvZ6I7oLADRsZyS0cASCAu5BSFZ9nY2WPLmUxTmgQudYPUvBJAZh
+ JNGAC5v5pmPa0fLopxi5Bt0CVtJmQDlHQekpI7baUS6QMSRGGIBXO9dCfM9Va3EkpNBolxtCd
+ jl6O5xn9KiBaRcGWCobQic7I+bl91lMMWOb4oHpS53s/OwxpgmOMo352Iki+EVfZe/QSRchYr
+ V6fpzpDCp/Ja/vBtXACJLKj2kZ4nWQ1zhnpmlpIVrOyFxy03tkbNq+vuHKteZiqoGDIlsHGu1
+ 1q+TJeJNaLVXkaDXj6JjpIcnog+igGXWrPd2Soovl+ExD0ef6XAwiLQyaGBWR27oZTDUXKylq
+ uzEy7qf39vJmO8aQ6rBnBjeWwqPGsPUJ6wAz8ZV24AAKxbIxp423HZzyn4B59DqyxXi5S3CGx
+ Np+9NfcMbBkXMRAn7iloX1KYBIJAAJF+0F5Ks1SL8vBIrNKrHuolH3Udg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_092108_418838_637AC8CD 
-X-CRM114-Status: GOOD (  19.01  )
+X-CRM114-CacheID: sfid-20190813_092107_231354_2C5AF232 
+X-CRM114-Status: GOOD (  11.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.18 listed in list.dnswl.org]
+ no trust [212.227.15.19 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wahrenst[at]gmx.net)
@@ -109,115 +111,213 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds minimal support for the new Raspberry Pi 4, so we are able
-to login via debug UART.
+There might be headless setups of the Compute Module without HDMI,
+so better enable HDMI at board level. Btw this allows moving HDMI
+into bcm2835-common.dtsi.
 
-Patch 1-2:   Prepare platform and DTS for the new SoC BMC2711
-Patch 3-6:   Enable clock support for BCM2711
-Patch 7-8:   Add I2C support for BCM2711
-Patch 9-12:  Add Raspberry Pi 4 DTS support
-Patch 13:    Update MAINTAINERS
+Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+---
+ arch/arm/boot/dts/bcm2835-rpi-a-plus.dts   | 2 ++
+ arch/arm/boot/dts/bcm2835-rpi-a.dts        | 2 ++
+ arch/arm/boot/dts/bcm2835-rpi-b-plus.dts   | 2 ++
+ arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts   | 2 ++
+ arch/arm/boot/dts/bcm2835-rpi-b.dts        | 2 ++
+ arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts  | 2 ++
+ arch/arm/boot/dts/bcm2835-rpi-zero-w.dts   | 2 ++
+ arch/arm/boot/dts/bcm2835-rpi-zero.dts     | 2 ++
+ arch/arm/boot/dts/bcm2835-rpi.dtsi         | 5 -----
+ arch/arm/boot/dts/bcm2836-rpi-2-b.dts      | 2 ++
+ arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts | 2 ++
+ arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts | 2 ++
+ arch/arm/boot/dts/bcm2837-rpi-3-b.dts      | 2 ++
+ arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts  | 2 ++
+ 14 files changed, 26 insertions(+), 5 deletions(-)
 
-Unfortunately the Raspberry Pi Foundation didn't released a
-peripheral documentation for the new SoC yet. So we only have a preliminary
-datasheet [1] and reduced schematics [2].
+diff --git a/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts b/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts
+index 5b42e9a..6c8ce39 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts
++++ b/arch/arm/boot/dts/bcm2835-rpi-a-plus.dts
+@@ -104,6 +104,8 @@
 
-Known issues:
-Since Linux 5.3-rc1 DMA doesn't work properly on that platform.
-Nicolas Saenz Julienne investigates on that issue. As a temporary workaround
-i reverted the following patch to test this series:
+ &hdmi {
+ 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_LOW>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
 
-79a98672 "dma-mapping: remove dma_max_pfn"
-7559d612 "mmc: core: let the dma map ops handle bouncing"
+ &pwm {
+diff --git a/arch/arm/boot/dts/bcm2835-rpi-a.dts b/arch/arm/boot/dts/bcm2835-rpi-a.dts
+index b716214..17fdd48 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi-a.dts
++++ b/arch/arm/boot/dts/bcm2835-rpi-a.dts
+@@ -99,6 +99,8 @@
 
-Changes in V2:
-- use separate board file for BCM2711
-- enable ARM_GIC for ARCH_BCM2835
-- add Acked-by and Reviewed-by
-- fix arm-pmu and timer nodes for BCM2711 reported by Marc Zyngier
-- enable HDMI at board level
-- move HDMI and pixelvalve into bcm2835-common.dtsi as suggested by Eric Anholt
-- fix DWC2 probing warning by setting USB role to peripheral
-- fix order of node references in bcm2711.dtsi
-- disable I2C clock stretching quirk for BCM2711
-- mark PLLD_PER as critical clock
-- make PLLH clock unavailable on BCM2711
-- fix compile warning in clk-bcm2835 for arm64
+ &hdmi {
+ 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_HIGH>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
 
-Changes since RFC:
-- change BCM2838 -> BCM2711 as discussed in RFC
-- update MAINTAINERS accordingly
-- drop "spi: bcm2835: enable shared interrupt support" from series
-- squash all pinctrl-bcm2835 changes into one patch
-- introduce SoC specific clock registration as suggested by Florian
-- fix watchdog probing for Raspberry Pi 4
-- convert brcm,bcm2835.txt to json-schema
-- move VC4 node to bcm2835-common.dtsi
-- fallback to legacy pull config for Raspberry Pi 4
-- revert unintended change of mailbox in bcm283x.dtsi
-- add reference for arm64
+ &pwm {
+diff --git a/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts b/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts
+index 3318082..b0355c2 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts
++++ b/arch/arm/boot/dts/bcm2835-rpi-b-plus.dts
+@@ -106,6 +106,8 @@
 
-[1] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/rpi_DATA_2711_1p0_preliminary.pdf
-[2] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_4b_4p0_reduced.pdf
+ &hdmi {
+ 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_LOW>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
 
-Stefan Wahren (13):
-  ARM: dts: bcm283x: Enable HDMI at board level
-  ARM: dts: bcm283x: Move BCM2835/6/7 specific to bcm2835-common.dtsi
-  dt-bindings: bcm2835-cprman: Add bcm2711 support
-  clk: bcm2835: Introduce SoC specific clock registration
-  clk: bcm2835: Add BCM2711_CLOCK_EMMC2 support
-  clk: bcm2835: Mark PLLD_PER as CRITICAL
-  dt-bindings: i2c: bcm2835: Add brcm,bcm2711 compatible
-  i2c: bcm2835: Avoid clk stretch quirk for BCM2711
-  dt-bindings: arm: Convert BCM2835 board/soc bindings to json-schema
-  dt-bindings: arm: bcm2835: Add Raspberry Pi 4 to DT schema
-  ARM: bcm: Add support for BCM2711 SoC
-  ARM: dts: Add minimal Raspberry Pi 4 support
-  MAINTAINERS: Add BCM2711 to BCM2835 ARCH
+ &pwm {
+diff --git a/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts b/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts
+index 97d7eb5..33b3b5c 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts
++++ b/arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts
+@@ -99,6 +99,8 @@
 
- .../devicetree/bindings/arm/bcm/bcm2835.yaml       |  51 ++
- .../devicetree/bindings/arm/bcm/brcm,bcm2835.txt   |  67 ---
- .../bindings/clock/brcm,bcm2835-cprman.txt         |   4 +-
- .../devicetree/bindings/i2c/brcm,bcm2835-i2c.txt   |   4 +-
- MAINTAINERS                                        |   3 +-
- arch/arm/boot/dts/Makefile                         |   1 +
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts              | 121 ++++
- arch/arm/boot/dts/bcm2711.dtsi                     | 662 +++++++++++++++++++++
- arch/arm/boot/dts/bcm2835-common.dtsi              | 183 ++++++
- arch/arm/boot/dts/bcm2835-rpi-a-plus.dts           |   2 +
- arch/arm/boot/dts/bcm2835-rpi-a.dts                |   2 +
- arch/arm/boot/dts/bcm2835-rpi-b-plus.dts           |   2 +
- arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts           |   2 +
- arch/arm/boot/dts/bcm2835-rpi-b.dts                |   2 +
- arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts          |   2 +
- arch/arm/boot/dts/bcm2835-rpi-zero-w.dts           |   2 +
- arch/arm/boot/dts/bcm2835-rpi-zero.dts             |   2 +
- arch/arm/boot/dts/bcm2835-rpi.dtsi                 |   5 -
- arch/arm/boot/dts/bcm2835.dtsi                     |   1 +
- arch/arm/boot/dts/bcm2836-rpi-2-b.dts              |   2 +
- arch/arm/boot/dts/bcm2836.dtsi                     |   1 +
- arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts         |   2 +
- arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts         |   2 +
- arch/arm/boot/dts/bcm2837-rpi-3-b.dts              |   2 +
- arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts          |   2 +
- arch/arm/boot/dts/bcm2837.dtsi                     |   1 +
- arch/arm/boot/dts/bcm283x-rpi-usb-peripheral.dtsi  |   7 +
- arch/arm/boot/dts/bcm283x.dtsi                     | 168 +-----
- arch/arm/mach-bcm/Kconfig                          |   3 +-
- arch/arm/mach-bcm/Makefile                         |   3 +-
- arch/arm/mach-bcm/bcm2711.c                        |  22 +
- drivers/clk/bcm/clk-bcm2835.c                      | 133 ++++-
- drivers/i2c/busses/i2c-bcm2835.c                   |  16 +-
- include/dt-bindings/clock/bcm2835.h                |   2 +
- 34 files changed, 1221 insertions(+), 263 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm2835.txt
- create mode 100644 arch/arm/boot/dts/bcm2711-rpi-4-b.dts
- create mode 100644 arch/arm/boot/dts/bcm2711.dtsi
- create mode 100644 arch/arm/boot/dts/bcm2835-common.dtsi
- create mode 100644 arch/arm/boot/dts/bcm283x-rpi-usb-peripheral.dtsi
- create mode 100644 arch/arm/mach-bcm/bcm2711.c
+ &hdmi {
+ 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_HIGH>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
 
+ &pwm {
+diff --git a/arch/arm/boot/dts/bcm2835-rpi-b.dts b/arch/arm/boot/dts/bcm2835-rpi-b.dts
+index 37e02a1..2b69957 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi-b.dts
++++ b/arch/arm/boot/dts/bcm2835-rpi-b.dts
+@@ -94,6 +94,8 @@
+
+ &hdmi {
+ 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_HIGH>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
+
+ &pwm {
+diff --git a/arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts b/arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts
+index 41afea4..a75c882 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts
++++ b/arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts
+@@ -79,6 +79,8 @@
+
+ &hdmi {
+ 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_LOW>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
+
+ &sdhost {
+diff --git a/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts b/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
+index f38f388..09a088f 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
++++ b/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
+@@ -105,6 +105,8 @@
+
+ &hdmi {
+ 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_LOW>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
+
+ &sdhci {
+diff --git a/arch/arm/boot/dts/bcm2835-rpi-zero.dts b/arch/arm/boot/dts/bcm2835-rpi-zero.dts
+index 5fd0686..6dd93c6 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi-zero.dts
++++ b/arch/arm/boot/dts/bcm2835-rpi-zero.dts
+@@ -101,6 +101,8 @@
+
+ &hdmi {
+ 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_LOW>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
+
+ &sdhost {
+diff --git a/arch/arm/boot/dts/bcm2835-rpi.dtsi b/arch/arm/boot/dts/bcm2835-rpi.dtsi
+index f5125b7..6c6a7f6 100644
+--- a/arch/arm/boot/dts/bcm2835-rpi.dtsi
++++ b/arch/arm/boot/dts/bcm2835-rpi.dtsi
+@@ -67,11 +67,6 @@
+ 	power-domains = <&power RPI_POWER_DOMAIN_USB>;
+ };
+
+-&hdmi {
+-	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
+-	status = "okay";
+-};
+-
+ &vec {
+ 	power-domains = <&power RPI_POWER_DOMAIN_VEC>;
+ 	status = "okay";
+diff --git a/arch/arm/boot/dts/bcm2836-rpi-2-b.dts b/arch/arm/boot/dts/bcm2836-rpi-2-b.dts
+index 6a89999..0455a68 100644
+--- a/arch/arm/boot/dts/bcm2836-rpi-2-b.dts
++++ b/arch/arm/boot/dts/bcm2836-rpi-2-b.dts
+@@ -106,6 +106,8 @@
+
+ &hdmi {
+ 	hpd-gpios = <&gpio 46 GPIO_ACTIVE_LOW>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
+
+ &pwm {
+diff --git a/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts b/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts
+index 0e29aaa..66ab35e 100644
+--- a/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts
++++ b/arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts
+@@ -118,6 +118,8 @@
+
+ &hdmi {
+ 	hpd-gpios = <&gpio 28 GPIO_ACTIVE_LOW>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
+
+ &pwm {
+diff --git a/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts b/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts
+index a1487ae..74ed6d0 100644
+--- a/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts
++++ b/arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts
+@@ -125,6 +125,8 @@
+
+ &hdmi {
+ 	hpd-gpios = <&gpio 28 GPIO_ACTIVE_LOW>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
+
+ &pwm {
+diff --git a/arch/arm/boot/dts/bcm2837-rpi-3-b.dts b/arch/arm/boot/dts/bcm2837-rpi-3-b.dts
+index a36bfdb..054ecaa 100644
+--- a/arch/arm/boot/dts/bcm2837-rpi-3-b.dts
++++ b/arch/arm/boot/dts/bcm2837-rpi-3-b.dts
+@@ -126,6 +126,8 @@
+
+ &hdmi {
+ 	hpd-gpios = <&expgpio 4 GPIO_ACTIVE_LOW>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
+
+ /* uart0 communicates with the BT module */
+diff --git a/arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts b/arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts
+index 433e306..588d941 100644
+--- a/arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts
++++ b/arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts
+@@ -78,6 +78,8 @@
+
+ &hdmi {
+ 	hpd-gpios = <&expgpio 1 GPIO_ACTIVE_LOW>;
++	power-domains = <&power RPI_POWER_DOMAIN_HDMI>;
++	status = "okay";
+ };
+
+ &sdhost {
 --
 2.7.4
 
