@@ -2,88 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8BB98B4D3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 12:01:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2DDF8B4BF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 12:00:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xv/FDFYosudBdpHViuMrL3s0wM4Ocjh27yecdfehOdQ=; b=NrRU2QPd+PYviT
-	53JoKHWBDMdqHcBDrOjqFtelI0a2KyrCrAhEbpBIlCujxiSyl95ENBBd3tFBhh1ADOe2WR06WHCbK
-	3kVGzGj2tbVB1VI9A3y8aBUd2rK2TBZxd5sZzYmLteuUSJYN+wwVIy0fuEt5KAYTKfhOv2IKNM2lf
-	xZxHYHRI21wGvy1qjhqL612vk+ggCBY9Yn5DQPbWoi8CehNFrnEICIFXmqzf5dZebr+np12GHLvrn
-	hFzKL7RAWHUufZt0EJZ9n8FIMBHcijqPoEM1KTCVwSq+tnZWhJmZhFG8/lrozgJuG8Y3Un/7QN7oo
-	GSe/ncgSDIxVJVNqKS/w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/geTHvmyy8KazeINfnFRTsG42yqCTnH1drmGQjcmBMQ=; b=tZkRIljO9cKDyRnYPnrdPlOjb
+	6zpTWZczd2dHCXhrU9YesPcaKEytOCGuEzJaSPcUBPF7kaceIREt88QIqHk6EBpUEuazHcTh/N1D8
+	U3xmWBDxR00HOv9SKDOrjf58CkuugG+JZNO7Cj8I6ezYiWyA8kTr431gzXXb0XvaEypBz6PGAv0A2
+	GxFtgv1sOp0xj8OKn5nQ4SNY5halidEOQAWgRfCQaIgdZOwUyLiU+8ODMvLGyqDMqVJeSGqDLUotV
+	VeU/I+QHqooJIe0FGsaoXCXQgYVC8yW+ygoxhAcVXkYg3DpvfIry/lvE1101dAxBIaThH0/OZ7QXY
+	1yFU2oqkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxTcZ-0005oV-K3; Tue, 13 Aug 2019 10:01:39 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxTbP-000511-Ol
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 10:00:29 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7D9uvqx019950; Tue, 13 Aug 2019 12:00:21 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=Ew0jpCMbOhB8LJL0i2smq1Jsu/IjtJ4+t0EckSDmj7s=;
- b=vb/ucef+X+hg73LkawoYQfoCed3ejnD4d/mbq55LGlU4sWrxvvDUJIstPrhovBdrbS9I
- SrNkhWIIaM/LRJMD4WGd7LC4TacuSPc/8MBsF4VvSKy4Dh4OBTvHGMeZVqoiSR/TBJF6
- FSXXFFJ04FRNIQKEGtywQYRtwrTs/hHyrY99Q+A6sbt/HsnTxuFDN7QDHo+hoPoTzQXb
- k3GJFr2VHTJ3zgfnvlPSIEVt/YzjOT4VMoCmEm7hcerchypN349F/8Vw1uBBH0qMCy3V
- wK3FR6twZS3la5n1cEpn3eeg4W+8G1ePoU4XhPmW8YNecF6xEs9eFRy/OlJKE57ciLy3 1w== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2u9mtky9vp-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 13 Aug 2019 12:00:21 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1041234;
- Tue, 13 Aug 2019 10:00:20 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EC7F32CC9D3;
- Tue, 13 Aug 2019 12:00:19 +0200 (CEST)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 13 Aug
- 2019 12:00:19 +0200
-Received: from lmecxl0923.lme.st.com (10.48.0.237) by webmail-ga.st.com
- (10.75.90.48) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 13 Aug
- 2019 12:00:18 +0200
-From: Ludovic Barre <ludovic.Barre@st.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH V5 3/3] mmc: mmci: sdmmc: add busy_complete callback
-Date: Tue, 13 Aug 2019 11:59:51 +0200
-Message-ID: <20190813095951.26275-4-ludovic.Barre@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190813095951.26275-1-ludovic.Barre@st.com>
-References: <20190813095951.26275-1-ludovic.Barre@st.com>
+	id 1hxTbD-0004Qs-9F; Tue, 13 Aug 2019 10:00:15 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxTb0-0003cB-FP
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 10:00:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C4342337;
+ Tue, 13 Aug 2019 03:00:00 -0700 (PDT)
+Received: from dawn-kernel.cambridge.arm.com (unknown [10.1.197.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E18F3F706;
+ Tue, 13 Aug 2019 03:00:00 -0700 (PDT)
+Subject: Re: [PATCH 1/2] arm64: Add initial support for E0PD
+To: broonie@kernel.org, catalin.marinas@arm.com, will@kernel.org
+References: <20190812125738.17388-1-broonie@kernel.org>
+ <20190812125738.17388-2-broonie@kernel.org>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <0e5014d6-83b0-36df-ce6e-f491edffd4f9@arm.com>
+Date: Tue, 13 Aug 2019 10:59:59 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Originating-IP: [10.48.0.237]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-13_04:, , signatures=0
+In-Reply-To: <20190812125738.17388-2-broonie@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_030028_102338_91874215 
-X-CRM114-Status: GOOD (  19.61  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190813_030002_567258_B01B6E42 
+X-CRM114-Status: GOOD (  17.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,126 +62,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- srinivas.kandagatla@linaro.org, Ludovic Barre <ludovic.barre@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ludovic Barre <ludovic.barre@st.com>
 
-This patch adds a specific busy_complete callback for sdmmc variant.
 
-sdmmc has 2 status flags:
--busyd0: This is a hardware status flag (inverted value of d0 line).
-it does not generate an interrupt.
--busyd0end: This indicates only end of busy following a CMD response.
-On busy to Not busy changes, an interrupt is generated (if unmask)
-and BUSYD0END status flag is set. Status flag is cleared by writing
-corresponding interrupt clear bit in MMCICLEAR.
+On 12/08/2019 13:57, Mark Brown wrote:
+> Kernel Page Table Isolation (KPTI) is used to mitigate some speculation
+> based security issues by ensuring that the kernel is not mapped when
+> userspace is running but this approach is expensive and is incompatible
+> with SPE.  E0PD, introduced in the ARMv8.5 extensions, provides an
+> alternative to this which ensures that accesses from userspace to the
+> kernel's half of the memory map to always fault with constant time,
+> preventing timing attacks without requiring constant unmapping and
+> remapping or preventing legitimate accesses.
+> 
+> This initial patch does not yet integrate with KPTI, this will be dealt
+> with in followup patches.  Ideally we could ensure that by default we
+> don't use KPTI on CPUs where E0PD is present.
+> 
+> Signed-off-by: Mark Brown <broonie@kernel.org>
+> ---
+>   arch/arm64/Kconfig                     | 14 +++++++++++++
+>   arch/arm64/include/asm/cpucaps.h       |  3 ++-
+>   arch/arm64/include/asm/pgtable-hwdef.h |  2 ++
+>   arch/arm64/include/asm/sysreg.h        |  1 +
+>   arch/arm64/kernel/cpufeature.c         | 27 ++++++++++++++++++++++++++
+>   5 files changed, 46 insertions(+), 1 deletion(-)
+> 
 
-The legacy busy completion monitors step by step the busy progression
-start/in-progress/end. On sdmmc variant, the monitoring of busy steps
-is difficult and not adapted (the software can miss a step and locks
-the monitoring), the sdmmc has just need to wait the busyd0end bit
-without monitoring all the changes.
-
-Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
----
- drivers/mmc/host/mmci.c             |  3 +++
- drivers/mmc/host/mmci.h             |  1 +
- drivers/mmc/host/mmci_stm32_sdmmc.c | 38 +++++++++++++++++++++++++++++
- 3 files changed, 42 insertions(+)
-
-diff --git a/drivers/mmc/host/mmci.c b/drivers/mmc/host/mmci.c
-index 9eac3f482119..9bec82d2dbf7 100644
---- a/drivers/mmc/host/mmci.c
-+++ b/drivers/mmc/host/mmci.c
-@@ -260,6 +260,9 @@ static struct variant_data variant_stm32_sdmmc = {
- 	.datalength_bits	= 25,
- 	.datactrl_blocksz	= 14,
- 	.stm32_idmabsize_mask	= GENMASK(12, 5),
-+	.busy_timeout		= true,
-+	.busy_detect_flag	= MCI_STM32_BUSYD0,
-+	.busy_detect_mask	= MCI_STM32_BUSYD0ENDMASK,
- 	.init			= sdmmc_variant_init,
- };
- 
-diff --git a/drivers/mmc/host/mmci.h b/drivers/mmc/host/mmci.h
-index 733f9a035b06..841c5281beb5 100644
---- a/drivers/mmc/host/mmci.h
-+++ b/drivers/mmc/host/mmci.h
-@@ -164,6 +164,7 @@
- #define MCI_ST_CARDBUSY		(1 << 24)
- /* Extended status bits for the STM32 variants */
- #define MCI_STM32_BUSYD0	BIT(20)
-+#define MCI_STM32_BUSYD0END	BIT(21)
- 
- #define MMCICLEAR		0x038
- #define MCI_CMDCRCFAILCLR	(1 << 0)
-diff --git a/drivers/mmc/host/mmci_stm32_sdmmc.c b/drivers/mmc/host/mmci_stm32_sdmmc.c
-index 8e83ae6920ae..bb5499cc9e81 100644
---- a/drivers/mmc/host/mmci_stm32_sdmmc.c
-+++ b/drivers/mmc/host/mmci_stm32_sdmmc.c
-@@ -282,6 +282,43 @@ static u32 sdmmc_get_dctrl_cfg(struct mmci_host *host)
- 	return datactrl;
- }
- 
-+bool sdmmc_busy_complete(struct mmci_host *host, u32 status, u32 err_msk)
-+{
-+	void __iomem *base = host->base;
-+	u32 busy_d0, busy_d0end, mask;
-+
-+	mask = readl_relaxed(base + MMCIMASK0);
-+	busy_d0end = readl_relaxed(base + MMCISTATUS) & MCI_STM32_BUSYD0END;
-+	busy_d0 = readl_relaxed(base + MMCISTATUS) & MCI_STM32_BUSYD0;
-+
-+	/* complete if there is an error or busy_d0end */
-+	if ((status & err_msk) || busy_d0end)
-+		goto complete;
-+
-+	/*
-+	 * On response the busy signaling is reflected in the BUSYD0 flag.
-+	 * if busy_d0 is in-progress we must activate busyd0end interrupt
-+	 * to wait this completion. Else this request has no busy step.
-+	 */
-+	if (busy_d0) {
-+		if (!host->busy_status) {
-+			writel_relaxed(mask | host->variant->busy_detect_mask,
-+				       base + MMCIMASK0);
-+			host->busy_status = status &
-+				(MCI_CMDSENT | MCI_CMDRESPEND);
-+		}
-+		return false;
-+	}
-+
-+complete:
-+	writel_relaxed(mask & ~host->variant->busy_detect_mask,
-+		       base + MMCIMASK0);
-+	writel_relaxed(host->variant->busy_detect_mask, base + MMCICLEAR);
-+	host->busy_status = 0;
-+
-+	return true;
-+}
-+
- static struct mmci_host_ops sdmmc_variant_ops = {
- 	.validate_data = sdmmc_idma_validate_data,
- 	.prep_data = sdmmc_idma_prep_data,
-@@ -292,6 +329,7 @@ static struct mmci_host_ops sdmmc_variant_ops = {
- 	.dma_finalize = sdmmc_idma_finalize,
- 	.set_clkreg = mmci_sdmmc_set_clkreg,
- 	.set_pwrreg = mmci_sdmmc_set_pwrreg,
-+	.busy_complete = sdmmc_busy_complete,
- };
- 
- void sdmmc_variant_init(struct mmci_host *host)
--- 
-2.17.1
-
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
