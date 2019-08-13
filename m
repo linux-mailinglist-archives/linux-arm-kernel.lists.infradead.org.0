@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C0108C38F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 23:22:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22E2D8C397
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 23:24:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s5W5RgeQacqGU67ZWOBZFqXzdJv7mkeGx3+zfZkshjw=; b=URMP2vqoYrtw3H
-	Z8PwdDybcMKDpbplyAj0sSQPcZiQ1cGP+jFZidw+fTRvx0tIfGiVHJYeAZp2cp+83fX/4w45CHfmz
-	ErUF7ttjK1wRUEjh+fPdfOEEkyrnYHsppJOkDqCUZWlo75G7i5QmDmfNvSGgk26MEeseTyqDjYe5J
-	Yk2SJkCRi2Qw8fnJxaCMpKrkhuTahVX/fgX9V7Xnm9InscPp405nIa5BY/8ykHBqYNb8WKx/4/U13
-	zsEekKwM6pNvQfM9u34fEykrpO4u+MVeW6kdsayeev/+sUbprpU8lvU2KMjJWjXBPayveNxJ4m9gJ
-	NZWClUEUB/g0KMFe27lQ==;
+	List-Owner; bh=TgOqu/Wb/jfLlrtrqxrqusfU4xM/UjUKvug4EM8rPyo=; b=lEzt3d2GqPQrPn
+	S5DlYpQT+BSoIjhbuESWPNVyhNUQ0nNDV2rOyH6iqH0yqBrMDLZeLlGiqg1RKqMMo0/PPcT5WlTcH
+	HmgwjAPEPZf4FF2r25134/3ihj2oDTMOcnHIRSWp31cRyfvb9PCwaSLToFKC8myY/b1SMdSPigbr7
+	zOxXYilxevGhoivYRoz1rOwoQgZLpIYaxGoTjxTUeh7ax2KslBSpLs//+yngT5YkajhKZjHDo6O/L
+	XuXj+bWYf6pPAv1wIHfu6tNZYEGqDtRz82LpRLVy8z8XK/HAT0gP4+fcPs8rQVuU2JlJiYOBECTVW
+	/VKvgdX0nUas9HyuJFRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxeFb-0005HJ-R9; Tue, 13 Aug 2019 21:22:39 +0000
+	id 1hxeHD-0005aq-OC; Tue, 13 Aug 2019 21:24:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxeFQ-0005Ga-Ps
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 21:22:29 +0000
-Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com
- [209.85.160.174])
+ id 1hxeH4-0005aQ-2X
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 21:24:12 +0000
+Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com
+ [209.85.160.182])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5928320665
+ by mail.kernel.org (Postfix) with ESMTPSA id 9F7F22085A
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 21:22:28 +0000 (UTC)
+ Tue, 13 Aug 2019 21:24:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565731348;
- bh=61BEBiism8+ah6KfYnPIAoueUmImP8BoQp3cWp1WYxw=;
+ s=default; t=1565731449;
+ bh=R5Yh9wFJPtJIKxbptxdaKPDiX/ZNZf1g/oJL8un702U=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=QO927A/DHs15dKgl0uKA8E/PQY35yt2Fo1OFYfRmf998P122pPT5lvN4KSBMGd4sM
- XEaopRMIrtZESspUSyXgCBciNM/mvRbOqVtaLvj030AuZRit3cEVm7YYH6AGG3pYMK
- Ri24fFbSGjzGbbGIUswMvcQNC80RaWVAunXzAklM=
-Received: by mail-qt1-f174.google.com with SMTP id l9so107853089qtu.6
+ b=MiH5H3LCM2A75FvZHCjHYqJ7oaK3Hwwla30yyL6yij7D9l51oJfnojqROrQffWVas
+ h2XULaadDYcbeM7LNjIAzIuOJkw/52DQHUs/vLmfMQ1r0rjsLlBVjNCrd/b6X2RLvI
+ dU4bAw9iuhkZRIK6H1L/4zgMNHRgSa8+PksNZHqQ=
+Received: by mail-qt1-f182.google.com with SMTP id 44so76857402qtg.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 14:22:28 -0700 (PDT)
-X-Gm-Message-State: APjAAAUll9s9xn0j+nkpfEAw+LSdAziYfQ7UopptF0/aahcS45v7WrhR
- 0HQwCz0IlDFsEp2U3RILlkybeARR+RZxLQcNUQ==
-X-Google-Smtp-Source: APXvYqxSBfgtU0Qq0DmuHIKF4215omaq3x32du27czWIrPeuK1YLiDC7YDd/MNctQx5C2gGeVR82JMJ4pAiB4fPkMXY=
-X-Received: by 2002:ac8:7593:: with SMTP id s19mr27846131qtq.136.1565731347578; 
- Tue, 13 Aug 2019 14:22:27 -0700 (PDT)
+ Tue, 13 Aug 2019 14:24:09 -0700 (PDT)
+X-Gm-Message-State: APjAAAWtg+98oT+SkdNHJiAf5o+l1cgs+V2zbKk6tPv4BtqjXJq0dLsM
+ HLsEX0aj+te6sHXlAxVWuiITzqzn9DYuer8lBg==
+X-Google-Smtp-Source: APXvYqyDoMF5kcqlkAQ276qRzcr1OCkIYQIe1bsUEqWU0awHa7ShjdR60+MD54WSwZGK3ztXNw5WmKIXTDoa+P8D+Ws=
+X-Received: by 2002:ac8:386f:: with SMTP id r44mr18216092qtb.300.1565731448864; 
+ Tue, 13 Aug 2019 14:24:08 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190813125147.29605-1-dafna.hirschfeld@collabora.com>
- <20190813125147.29605-2-dafna.hirschfeld@collabora.com>
-In-Reply-To: <20190813125147.29605-2-dafna.hirschfeld@collabora.com>
+References: <20190813124513.31413-1-mripard@kernel.org>
+In-Reply-To: <20190813124513.31413-1-mripard@kernel.org>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 13 Aug 2019 15:22:16 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJxQu1CYG3ZTFDME13cUwWgCt7hkQg41bdJKvY27JcCZQ@mail.gmail.com>
-Message-ID: <CAL_JsqJxQu1CYG3ZTFDME13cUwWgCt7hkQg41bdJKvY27JcCZQ@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] dt-bindings: arm: imx: add imx8mq nitrogen support
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Date: Tue, 13 Aug 2019 15:23:56 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLUfQdtXZMNTLJX9uMpdCY0NNN=AEDqGiemrdDazB8HeA@mail.gmail.com>
+Message-ID: <CAL_JsqLUfQdtXZMNTLJX9uMpdCY0NNN=AEDqGiemrdDazB8HeA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] dt-bindings: media: Add YAML schemas for the generic
+ RC bindings
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_142228_860099_DC040D19 
-X-CRM114-Status: GOOD (  12.30  )
+X-CRM114-CacheID: sfid-20190813_142410_140901_7FD7065A 
+X-CRM114-Status: GOOD (  14.62  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,32 +87,35 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ezequiel Garcia <ezequiel@collabora.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
+ Sean Young <sean@mess.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Troy Kisky <troy.kisky@boundarydevices.com>,
- Gary Bisson <gary.bisson@boundarydevices.com>,
- Sascha Hauer <kernel@pengutronix.de>, kernel@collabora.com,
- Shawn Guo <shawnguo@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBBdWcgMTMsIDIwMTkgYXQgNjo1MSBBTSBEYWZuYSBIaXJzY2hmZWxkCjxkYWZuYS5o
-aXJzY2hmZWxkQGNvbGxhYm9yYS5jb20+IHdyb3RlOgo+Cj4gRnJvbTogR2FyeSBCaXNzb24gPGdh
-cnkuYmlzc29uQGJvdW5kYXJ5ZGV2aWNlcy5jb20+Cj4KPiBUaGUgTml0cm9nZW44TSBpcyBhbiBB
-Uk0gYmFzZWQgc2luZ2xlIGJvYXJkIGNvbXB1dGVyIChTQkMpCj4gZGVzaWduZWQgdG8gbGV2ZXJh
-Z2UgdGhlIGZ1bGwgY2FwYWJpbGl0aWVzIG9mIE5YUOKAmXMgaS5NWDhNCj4gUXVhZCBwcm9jZXNz
-b3IuCj4KPiBTaWduZWQtb2ZmLWJ5OiBHYXJ5IEJpc3NvbiA8Z2FyeS5iaXNzb25AYm91bmRhcnlk
-ZXZpY2VzLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBUcm95IEtpc2t5IDx0cm95Lmtpc2t5QGJvdW5k
-YXJ5ZGV2aWNlcy5jb20+Cj4gW0RhZm5hOiBwb3J0aW5nIHZlbmRvcidzIGNvZGUgdG8gbWFpbmxp
-bmVdCj4gU2lnbmVkLW9mZi1ieTogRGFmbmEgSGlyc2NoZmVsZCA8ZGFmbmEuaGlyc2NoZmVsZEBj
-b2xsYWJvcmEuY29tPgo+IC0tLQo+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-YXJtL2ZzbC55YW1sIHwgMSArCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQoKUmV2
-aWV3ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+CgpfX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
-bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Tue, Aug 13, 2019 at 6:45 AM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> From: Maxime Ripard <maxime.ripard@bootlin.com>
+>
+> The RC controllers have a bunch of generic properties that are needed in a
+> device tree. Add a YAML schemas for those.
+>
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> ---
+>  .../devicetree/bindings/media/rc.txt          | 118 +--------------
+>  .../devicetree/bindings/media/rc.yaml         | 135 ++++++++++++++++++
+>  2 files changed, 136 insertions(+), 117 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/media/rc.yaml
+
+Reviewed-by: Rob Herring <robh@kernel.org>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
