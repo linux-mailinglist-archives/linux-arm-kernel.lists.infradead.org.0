@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C28978BE58
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:23:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA6DD8BE62
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:23:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fXzJSbaKGODN/SvSy5TWPPdvZjSJIaMHMmH/KOuDhW4=; b=JxfMJIGSX6dHJLwVc8Bwr8usww
-	lCXXP7FJXB4kH4EkDgYlVqO5CJtrSHcrpQeZCj02YQ0glLvCt6cosiylCT43xcm+GcBX9s1Iq9M3m
-	xSJnjDvwLQpPw4EpsMtaitBtg0Rhv/rHgRLE93iUSe4eeDzp0IUXmjUe+3ZS3xUHdJjS9cg59PNGp
-	V3mbvHYynkyComOL9nsMZwXrGJk3TpFcw6egxZssCktw5tynBw3ngBMcy2WH1bRQYPx1nqRtyieN4
-	SWUxdajd6oECLz2XfKGnmh3b181+UOc1DgDZBgQ9k6z08HylRiRaG8uOXMDd68ZBKbl6enbXa2RgJ
-	wSEjUvAA==;
+	bh=J1kBAxuVNvLwR3Ixv36weMHUzBNv/jSHQx/ode+cgvo=; b=HCyZdvg7wKmTRiKUlLJoAomc3m
+	PCxu5irwgYs5Mln+J30dXflo9CSzkbmcw9SQ6x4L2kOeZHncMCHgB0UGQB+5wbos/zAAFSOjVr8RR
+	TRVrxpYnrDQ5VkUo+CzWWcuLAa5Hj0jTGaibJbVeaOQ0E5xRW0lnlTUPhEU9PsGv1Zo0EBigNWX9o
+	YobssYHwzrj7sLkwree+H+oLgcfyBFwLkQCLMAsNu2wEIX6U80wq72R3TfoxGTdUVFC27DYGwWMDb
+	Og2BuhfEj+4+sYQPqKZ4HsWek5l8kEwzjb6D/E+CFXuBmqoGOtBdKYS0ywpr02IgZfwW0XebVtxwG
+	UnkTpMNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxZZd-0001I6-BV; Tue, 13 Aug 2019 16:23:01 +0000
+	id 1hxZaR-0001xN-Us; Tue, 13 Aug 2019 16:23:52 +0000
 Received: from mout.gmx.net ([212.227.15.18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxZXn-0008Mu-LV; Tue, 13 Aug 2019 16:21:13 +0000
+ id 1hxZXn-0008Mz-LX; Tue, 13 Aug 2019 16:21:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1565713260;
- bh=uRHDvL3TndR8wGBn8RWaBtvuYQCKr4j/BBz8Ga9FesQ=;
+ bh=Y5aGEI9G/hsaduQVg6mAPiwmIIHBg3hjSpNANdv++sg=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=FD4Yg2lq/EwvFJdKqcle/04/mM9YxkFkhJBujTJPAx7L4Tg7folHXQuavb+A0FUeL
- 1p4LTYdw5W9/Wngcwog1CjPRTZ375rJdL75CG6B03kqa5CgihYalh1HP/seJi2P6M2
- AGbtQTjjKOCXRjNB2LSOc9yv+fV1dMpESbOfKFWw=
+ b=AEEPLeS20UcPjgOac3mgYrID9haAhFjV3cGIkOXHOX4NxWyTb9VWiNzHLU3/i7I5e
+ G/RLON8Yi2iZ0x+jyWryAWYYWdOahJ0ryvlypMiySkmYaPSbQazF6Q2FarCZgI9Kgq
+ ckXIrfsGQw+lILB247R7iUqI0RQVSgVKt/e65VIo=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.106]) by mail.gmx.com
  (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1MUGi9-1hoOJE43pT-00RFcV; Tue, 13 Aug 2019 18:21:00 +0200
+ 1N3bWr-1iNS51247n-010aN5; Tue, 13 Aug 2019 18:21:00 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
@@ -41,39 +41,38 @@ To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
  Mark Rutland <mark.rutland@arm.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH V2 07/13] dt-bindings: i2c: bcm2835: Add brcm,
- bcm2711 compatible
-Date: Tue, 13 Aug 2019 18:20:42 +0200
-Message-Id: <1565713248-4906-8-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V2 08/13] i2c: bcm2835: Avoid clk stretch quirk for BCM2711
+Date: Tue, 13 Aug 2019 18:20:43 +0200
+Message-Id: <1565713248-4906-9-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
 References: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:0cRHZfQHKeaAt4ouWJuDoL7IzMS/0ykCsxm1ArsSFkmJwmbdWdv
- SoPXQAAsZXksgG77tAe3/UJGlqPk1jl0LKXDwsgQQoY0xvsHgzUlNWnErDNfwZtWG5n3Q6a
- NFZzMIZctTNntz7XfsE22RrJYddL45W6QLlFIeMeGJOlmNDx1WOCRPmvk0on4sPrtGDhybQ
- IaYaLlCG6JWIw83K6kEvA==
+X-Provags-ID: V03:K1:Pnlk69KrwCk9LvgrYJTYiJBIKI8o4JVBFM4dQ0wgTfUJNXIHwvE
+ sNswh1Zm0es1wlgCP4X/1hGtxTHDFRiyNKKKsNzjCe79bHc1596yEHIsObjFFgI63RWhgMi
+ Ob+Xn89m0mUMcFifQTaP+brmvGmYUeHcThDn0CHmuJ7Tu+er+BM+WFDBMcNcGuggrkTPKa4
+ jDtfu+lyZqFfNAfJcCI4A==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:/rvAzAeYiA0=:FN5M4wjfBAy5hu8tlP0v3T
- FDXwcxrxr5zUVQI1XKkrTKoFJDyzFHJE2XLGPoynZYwgpmok/hiG9urc2+ZmfO8oPUmqF9t3R
- jhfJqvhL1oXDDMeJHraVwQ4IP0YvBNIgluqw1j9Orb9gG1vHYFySZFu/y2DhDw54sVO101twT
- 7k5XaACYS2Rmkfp7kdV+at/RaA4pMiYuuDm6Z5tRaYlzlCnNoP4XtIYatwsBSedjl1YVfIs6M
- PnCjrSVG1U4aP3BAfHEhVWkeQS6z/ElBY96JSOtMFRqWdanSnKZWTZWEZw0LnR4mm4GPWfQsJ
- ZRfbCAmJFpVZiii8BNl8Vt3fPhd7q68knKrzKeeEb3UVYZvqjkG1KIODDW0ijaJjhu1VuLW57
- CmC7tEA7tEyOI6Tc1NOb/5KoltbZBh0lyaM8kjdssXev+bF/ydu9qiEjQCQExQtMwBfe5IfbD
- ryZVglojt6AFGhzEajt2v2FdNg/OJt9+h1SOHhpg4Qt6Q2O19yKfgQ8ywfq061c27nSaPxxDx
- Mu9pjb5/n8Qhsg+ngZPkKX583i3z56fDyjgN+DyKAU/SECDEzxYsLZJzYRzZPdLSMuN9Nubhx
- UP6tN2J5RMCsQf6B/QtXNJoU41dDF35RJ8Nt0pAGKYqME13v2gKttZeKfmQ2SEoOvd2HHkjSZ
- WqFl8OIpdlmr6sPb8KTTjUZ2RfCQUa6RmOkrImsDWwwznSUxxkTf4TnfsRz2Ytc4ww+TE97L7
- 5MP045jdalgfg383oDhnpX2NrDr3/BSoGqnksQR9SwsmvN+4xCraLL9BDJiD3p8/ystQvZzlP
- sU0zsVvkyzp3ouKy3cpuW8bfOKd0Mk3qT+5Iz585hXEUJ/yD07jbpAwnRA8eNcPC68Gd5FP78
- tBABbJcRmIvZb6Uj3GyRh6RWzlxgorRUFPfqpLm0S72X8nLVCC68mnoKu3v39MNlSqR4ZgtCM
- BGEWqEAtFCD/5zJnFYng56lRFT6ogZ9yLw3qagJ744nTNiPATpbRKzGIoVcS2bfFKa9gU+2qx
- Vn89/SYLzVRbrNQotYZ001sXafDKZKJOI7/BMnH+JD6cv3gz4bM0XdJ9j8yia4w0FdOxNSz8t
- 24s1j29sZd81dTWe/fR9Ih4qMQHNr5xM6StHJcMG7qfkoROPEFMaz2oIqN/FqBcyZva9Gtu48
- SZSYvQV6mKYjiLq0IaTDwvIKJ7bfuOsSl297QSEoTUe+9WTA==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:MElBaoq2NOo=:NgQcO7MtpiaVPB+cYEBP4v
+ +zQaSwTPLexJsZbZCFqVKXX4MFzR4yg1nqveO7UEo59M7zRIY4/Qn2Y4IEDrmNPRY9eTV5scB
+ HtOvTa7bOkwai9Mt8g103rGzoRPv2GE1ZdDLSY9Q6ba7qRWFVHt2R5EzMlG+Q47YHCq0HN81Z
+ oWL/VOgvAlM9Yqww4eT1TUxduRt8IKhJLc7uqxA3m7MMm6HqTKePBOHM6NoOnnXYLSqZi45Jd
+ MyNTnH0NiIEf+LrOUK91Ec2Pqt7KzR534tbIXYOhZ84TTrruRNJuNDVDKp61JkCf1MH4Bi/tD
+ 8iqMyPVByOns1KBOauE5gKD8z/qSb/Y99+7JGcoFT2DiPks7vnE5ZofPyoPUUudLmL5kpYncj
+ ghdwWZmPZuNk1eQ+wmTEULXvTj0T4pMXqxaEeCx/OCPq1n/1e75oirptZuChAXfqm7woIYD4+
+ O200/efAFL79CtszzYo/pmVHrhCJQW41Ag9ukNXNb6soyQNCbzEWun9VnnJFWW8bj1MeD7MIt
+ wilIC8R3ZjM6Vu/kVdhAYCaHszNAMhNTJnxvd7alY3llHvQ5mJtAyRuj78M/1SmMNB3VElFer
+ oUamxL+vLUUswFtVT3fkpoOpTnzXfc8yVmnKPqgQTe8AMRYiw7tUJhZEImCj7NHrRmoL14NC1
+ s6/58jPmjkMisoZ55C/yS5/SOrMTB8bIruWSpgGDYlfqseu+L//sy1PjdbdW/iO+HYj0QP/0x
+ JMMr7SbbI+5nNP94Oq8P+k3DICT/h+ZhmYeH3ddmOZCdkLZvUJxE5GOLThg/Uc9edffEhRzqX
+ ZfsmyeXZE4e1Ks/kMGqu0RVgcvt8k0C9JA4EJYnl+MufrnU28rRRaSuDyyeuGxZH+O5lX4uRN
+ 2HMhJv39uu00i3lY4R2EsdUXppMzvnH8fMjl9hbWJW/+p7F/Y7H1H0xMUQtbvznJ1oic98Mq0
+ UiuigsDCL4fpgj6i3hpBgzKYS5Q0QRpPLp230mEujkscBoOLGuMR/F/Y5F51MI050KmHyyPbI
+ YsAcLKB/WcRHq3t+Zrsaqd5Q7PIEg6yxC2xB7S/b2RlKpRdWE4MZMVc2YPIEAvVjZT27aIFwo
+ jmZIAKyArntL7YVJUGy6prK24LZ14pW09xCvTVfTRWhDBidvCszKsCgTHXoJXoueb5wQyvjZy
+ NXXyBl7CZL1tP/yDKz5xEu3T3EvlLmX0VqD3aUoldKdp3z6w==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_092108_000367_41918565 
-X-CRM114-Status: GOOD (  11.77  )
+X-CRM114-CacheID: sfid-20190813_092108_009547_52616B30 
+X-CRM114-Status: GOOD (  13.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -113,28 +112,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a new compatible for the BCM2711, which hasn't the clock stretch bug.
+The I2C block on the BCM2711 isn't affected by the clock stretching bug.
+So there is no need to apply the corresponding quirk.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 ---
- Documentation/devicetree/bindings/i2c/brcm,bcm2835-i2c.txt | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/i2c/busses/i2c-bcm2835.c | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/i2c/brcm,bcm2835-i2c.txt b/Documentation/devicetree/bindings/i2c/brcm,bcm2835-i2c.txt
-index e9de375..c9a6587 100644
---- a/Documentation/devicetree/bindings/i2c/brcm,bcm2835-i2c.txt
-+++ b/Documentation/devicetree/bindings/i2c/brcm,bcm2835-i2c.txt
-@@ -1,7 +1,9 @@
- Broadcom BCM2835 I2C controller
+diff --git a/drivers/i2c/busses/i2c-bcm2835.c b/drivers/i2c/busses/i2c-bcm2835.c
+index 67752f7..340da70 100644
+--- a/drivers/i2c/busses/i2c-bcm2835.c
++++ b/drivers/i2c/busses/i2c-bcm2835.c
+@@ -12,6 +12,7 @@
+ #include <linux/interrupt.h>
+ #include <linux/io.h>
+ #include <linux/module.h>
++#include <linux/of_device.h>
+ #include <linux/platform_device.h>
+ #include <linux/slab.h>
 
- Required properties:
--- compatible : Should be "brcm,bcm2835-i2c".
-+- compatible : Should be one of:
-+	"brcm,bcm2711-i2c"
-+	"brcm,bcm2835-i2c"
- - reg: Should contain register location and length.
- - interrupts: Should contain interrupt.
- - clocks : The clock feeding the I2C controller.
+@@ -50,6 +51,9 @@
+ #define BCM2835_I2C_CDIV_MIN	0x0002
+ #define BCM2835_I2C_CDIV_MAX	0xFFFE
+
++#define NO_STRETCH_BUG	false
++#define STRETCH_BUG	true
++
+ struct bcm2835_i2c_dev {
+ 	struct device *dev;
+ 	void __iomem *regs;
+@@ -389,7 +393,7 @@ static const struct i2c_algorithm bcm2835_i2c_algo = {
+ };
+
+ /*
+- * This HW was reported to have problems with clock stretching:
++ * The BCM2835 was reported to have problems with clock stretching:
+  * http://www.advamation.com/knowhow/raspberrypi/rpi-i2c-bug.html
+  * https://www.raspberrypi.org/forums/viewtopic.php?p=146272
+  */
+@@ -406,6 +410,9 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+ 	struct clk *bus_clk;
+ 	struct clk *mclk;
+ 	u32 bus_clk_rate;
++	bool clk_stretch_bug;
++
++	clk_stretch_bug = (bool)of_device_get_match_data(&pdev->dev);
+
+ 	i2c_dev = devm_kzalloc(&pdev->dev, sizeof(*i2c_dev), GFP_KERNEL);
+ 	if (!i2c_dev)
+@@ -475,7 +482,9 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+ 	adap->algo = &bcm2835_i2c_algo;
+ 	adap->dev.parent = &pdev->dev;
+ 	adap->dev.of_node = pdev->dev.of_node;
+-	adap->quirks = &bcm2835_i2c_quirks;
++
++	if (clk_stretch_bug)
++		adap->quirks = &bcm2835_i2c_quirks;
+
+ 	bcm2835_i2c_writel(i2c_dev, BCM2835_I2C_C, 0);
+
+@@ -501,7 +510,8 @@ static int bcm2835_i2c_remove(struct platform_device *pdev)
+ }
+
+ static const struct of_device_id bcm2835_i2c_of_match[] = {
+-	{ .compatible = "brcm,bcm2835-i2c" },
++	{ .compatible = "brcm,bcm2711-i2c", .data = (void *)NO_STRETCH_BUG },
++	{ .compatible = "brcm,bcm2835-i2c", .data = (void *)STRETCH_BUG },
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, bcm2835_i2c_of_match);
 --
 2.7.4
 
