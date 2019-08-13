@@ -2,44 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F0598BF21
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 19:02:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CBB98BF26
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 19:02:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=h6I7Ez+meqRhEg1uPuho2kCsgQauDxxMFVoLqfZ6LWY=; b=bVp
-	VuU3VmXc97EQwJ81TmODPoBkejMUXLJuNgQchzKQs26AOhQj89sMzy8JiiW+xXIT2uodymrg4DtEh
-	PffTG+4x7PEVTlBGJ+9c9GWc6WbuvL9gsC3FdPe/2ndyd+grtPw2+3kmu3eBXLYPVw6KNOxdZ91s/
-	FJbHtLgaKex+K6uVki0X34hPLbP7YWIyV9Sld1EkZUFwI7EFp87M6agg2pS0WmbdGpRfBcNXX+q3D
-	tNcN4sVViZ2P1b7dE1Ll/Z8L+0OvCO0h1B9NJXp8sLmchC9mLNCrcLrf1U1GjtywQ+Ja2b4q9JQYd
-	mgvnLH/XzKj3aa+jENVN38z5x4KLXPA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=f9ugGE9C8Q8skteS3vaPuQhaXZn9ePwHK+1CTRodhek=; b=BHwUpr92NaQq4pZ6QqeeLoFK3s
+	9IP1PXM/g23jpRwBUOOt28wp7Qohbpzp14cEz4/De90TqxER8+ekF8h5+u0D6uNO/TctXvVmTIiTT
+	OXMM38Py15k/G5mzxUvgJORgpBO3N7QTwRtmhBB6Pph6S6bgTblmEdyW/D8tNprTGIrzBdFXLZG7Q
+	25ourV0oOaRkNgDaDyNTvRynvKRQm6/KiQPcTDcsg+1M1KtSBu2lVaBWLIcSgMnkltrg9nsEfWtDQ
+	sLc7PD9YbMGjj8S+c1kHSmbdNiaCMAqOFm+G1z6lB9wgWgFydV88xRH3GmZptI29oL31GH+P9gPh2
+	K/d+SW7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxaBa-0008OA-7G; Tue, 13 Aug 2019 17:02:14 +0000
+	id 1hxaBu-0000Ac-LQ; Tue, 13 Aug 2019 17:02:34 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxaBG-0008JF-R4
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 17:01:56 +0000
+ id 1hxaBH-0008Kb-Tx
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 17:01:57 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 454B0337;
- Tue, 13 Aug 2019 10:01:54 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 97BA315A2;
+ Tue, 13 Aug 2019 10:01:55 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 244F53F706;
- Tue, 13 Aug 2019 10:01:53 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 79D333F706;
+ Tue, 13 Aug 2019 10:01:54 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/8] Fix issues with 52-bit kernel virtual addressing
-Date: Tue, 13 Aug 2019 18:01:41 +0100
-Message-Id: <20190813170149.26037-1-will@kernel.org>
+Subject: [PATCH 1/8] arm64: memory: Fix virt_addr_valid() using
+ __is_lm_address()
+Date: Tue, 13 Aug 2019 18:01:42 +0100
+Message-Id: <20190813170149.26037-2-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20190813170149.26037-1-will@kernel.org>
+References: <20190813170149.26037-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_100154_944287_E3A97C91 
-X-CRM114-Status: UNSURE (   8.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190813_100156_093345_3A379A0E 
+X-CRM114-Status: GOOD (  11.23  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -68,43 +71,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+virt_addr_valid() is intended to test whether or not the passed address
+is a valid linear map address. Unfortunately, it relies on
+_virt_addr_is_linear() which is broken because it assumes the linear
+map is at the top of the address space, which it no longer is.
 
-This patch series addresses some issues with 52-bit kernel VAs reported
-by Qian Cai and Geert. It's all confined to asm/memory.h and I got a bit
-carried away cleaning that thing up so the patches get more worthless
-as you go through the series. Still, I'd like to queue this on top of
-the 52-bit VA stuff currently sitting in -next.
+Reimplement virt_addr_valid() using __is_lm_address() and remove
+_virt_addr_is_linear() entirely. At the same time, ensure we evaluate
+the macro parameter only once and move it within the __ASSEMBLY__ block.
 
-Although Geert and Steve tested my initial hacks, I dropped the tags
-because I've split things up and could've easily broken things again.
+Reported-by: Qian Cai <cai@lca.pw>
+Reported-by: Geert Uytterhoeven <geert@linux-m68k.org>
+Fixes: 14c127c957c1 ("arm64: mm: Flip kernel VA space")
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ arch/arm64/include/asm/memory.h | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
-Cheers,
-
-Will
-
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Steve Capper <steve.capper@arm.com>
-Cc: Qian Cai <cai@lca.pw>
-Cc: Andrey Konovalov <andreyknvl@google.com>
-Cc: Geert Uytterhoeven <geert@linux-m68k.org>
-
---->8
-
-Will Deacon (8):
-  arm64: memory: Fix virt_addr_valid() using __is_lm_address()
-  arm64: memory: Ensure address tag is masked in conversion macros
-  arm64: memory: Rewrite default page_to_virt()/virt_to_page()
-  arm64: memory: Simplify virt_to_page() implementation
-  arm64: memory: Simplify _VA_START and _PAGE_OFFSET definitions
-  arm64: memory: Implement __tag_set() as common function
-  arm64: memory: Add comments to end of non-trivial #ifdef blocks
-  arm64: memory: Cosmetic cleanups
-
- arch/arm64/include/asm/memory.h | 89 ++++++++++++++++++++---------------------
- 1 file changed, 44 insertions(+), 45 deletions(-)
-
+diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+index afaf512c0e1b..442ab861cab8 100644
+--- a/arch/arm64/include/asm/memory.h
++++ b/arch/arm64/include/asm/memory.h
+@@ -244,9 +244,9 @@ static inline const void *__tag_set(const void *addr, u8 tag)
+ /*
+  * The linear kernel range starts in the middle of the virtual adddress
+  * space. Testing the top bit for the start of the region is a
+- * sufficient check.
++ * sufficient check and avoids having to worry about the tag.
+  */
+-#define __is_lm_address(addr)	(!((addr) & BIT(vabits_actual - 1)))
++#define __is_lm_address(addr)	(!(((u64)addr) & BIT(vabits_actual - 1)))
+ 
+ #define __lm_to_phys(addr)	(((addr) + physvirt_offset))
+ #define __kimg_to_phys(addr)	((addr) - kimage_voffset)
+@@ -326,13 +326,13 @@ static inline void *phys_to_virt(phys_addr_t x)
+ 
+ #define virt_to_page(vaddr)	((struct page *)((__virt_to_pgoff(vaddr)) + VMEMMAP_START))
+ #endif
+-#endif
+ 
+-#define _virt_addr_is_linear(kaddr)	\
+-	(__tag_reset((u64)(kaddr)) >= PAGE_OFFSET)
++#define virt_addr_valid(addr)	({					\
++	__typeof__(addr) __addr = addr;					\
++	__is_lm_address(__addr) && pfn_valid(virt_to_pfn(__addr));	\
++})
+ 
+-#define virt_addr_valid(kaddr)		\
+-	(_virt_addr_is_linear(kaddr) && pfn_valid(virt_to_pfn(kaddr)))
++#endif
+ 
+ /*
+  * Given that the GIC architecture permits ITS implementations that can only be
 -- 
 2.11.0
 
