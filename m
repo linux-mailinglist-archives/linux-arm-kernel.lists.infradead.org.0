@@ -2,62 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CDD08BF5C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 19:08:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51CC08BF63
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 19:09:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x08gpcqFPrLS8aPPLBOk/i1WF4M2FErntTzc5EaWH9g=; b=GL+vZCqP40Z66Q
-	rfOhEx8P7LSE7XxgJgg+PQEhIKPTtrj3Er0af84jANVmogAcQthYGvRMqmeq6C+Nw8Gjyej2LP8GJ
-	xkGSNKOTEJCE1D4U/rUWpRl2tox1Fu9YoUADNaZ9wMAVQRoyv8YSRMyZ9OPq7+D/yN5wxbynf5VjH
-	7O/N5NroTa39MfZfTR9SEvrBSqQzgWtWWJqMIkM/GBLhIAODskOwGbgtwF5kyLm23k409ZvuMwdAh
-	rGxWKLa8yfTVHsq2OYoVrikFncRp1rcKM+DHnZSgWx4qem3KNwPdM4I69lUx75wYBbMyxEaIDiSaH
-	2wo8aIejWbasHqjpttOg==;
+	List-Owner; bh=bnrwyyv8Gv66WN4uxIHSTaGzRjTYv5ik6p5wALBoO6U=; b=arzr2ZRWkmTMAD
+	vcUyykrny8vvQe9fMP4NiYb4pAm1x7t9kvIxqsx448uytEVTBszTG0GP9VJcEzBFeeNCuUv7kdszB
+	gxpXqqUtYNubhMe8uHZ7i1j2yBWsmHG74iySgl47YBlr96PVnuzqOYy03r+G8Rl41iDvGjoy078K4
+	kXuPPB3vQy2ghPt5C5fFWzqoHCFmTzO/dN1yca8AFxDCf/Sxo/wtM1gJeJx8Fai0J1qKMPA2eeZdt
+	i9nbFHF804VjUqIgzrFW32khw1SMwOyORRnQtvlze4bUBRT2rsN9//u9/L6jiXUjzsE3BKamxDKjP
+	nsuRyHwtzd+eklE2L6MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxaHz-0005PF-Ki; Tue, 13 Aug 2019 17:08:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hxaIh-0005ot-H9; Tue, 13 Aug 2019 17:09:35 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxaHl-0005OS-H0
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 17:08:41 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 50A5020679;
- Tue, 13 Aug 2019 17:08:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565716117;
- bh=65STqoKxZejhRA8D9TwQa+K2PAMisn1xsEutBY/kUY0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=e8o5cKrg0h7l3Es4XUW2/tElqvpgDv1p8yDzOCq5FdWQnf1aMYy0Xzef2T/tELhCD
- s0upFTQQ5MtnqWUt7HUvO/2NRH2JQikPkh4tk9SAzwfYzOGXhtLhiE0lh5gNu7Nibj
- fm3edf+JH5WVs5yzATU7sOHcbCWCbW1hmNJjWplI=
-Date: Tue, 13 Aug 2019 18:08:30 +0100
-From: Will Deacon <will@kernel.org>
-To: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-Subject: Re: [PATCH 12/16] arm64: prefer __section from compiler_attributes.h
-Message-ID: <20190813170829.c3lryb6va3eopxd7@willie-the-truck>
-References: <20190812215052.71840-1-ndesaulniers@google.com>
- <20190812215052.71840-12-ndesaulniers@google.com>
- <20190813082744.xmzmm4j675rqiz47@willie-the-truck>
- <CANiq72mAfJ23PyWzZAELgbKQDCX2nvY0z+dmOMe14qz=wa6eFg@mail.gmail.com>
+ id 1hxaIS-0005o9-N4
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 17:09:22 +0000
+Received: by mail-lj1-x241.google.com with SMTP id u15so7273357ljl.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 10:09:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=GVzAnVzEMjxkSBqu8V9mlBdGqDjrrYQzVhEjxzd+3hI=;
+ b=I4qWR+mzqRT7c1SEkHGhKmL6s1EYBMsgtyPriDKNziH+B4FMxlEGuvrJH5HcS4lcUd
+ oEuShorJ4j1kTmfzSPRIGn/stYQAr97GOiXpjAyAAXj4cxkN8Dy0uFFDrdXb/ecYQt9m
+ 1yniZalDerzD5yTNTTGHitP5LFfOrIUdgwpGE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=GVzAnVzEMjxkSBqu8V9mlBdGqDjrrYQzVhEjxzd+3hI=;
+ b=O18YqwMdasmXmblqLmZ5gVO5EJplHnDGehAkHgnRb4m2ejdZJpZA/R9fkxIPCX+fD1
+ u7h+EgUthNqlsvUxY3Zz0hkmpdM4hSBZhoah2/MEMOkLSAoOO4+0WHWK+XCCz7VaLfSi
+ K+uJa1cPWR81qQgL606qSST5LWTZF9hsbb+LVPz8dwrrmgmANufqoeV8KRg+/JZTYuF/
+ ontP5TABjmrLJT/Y3LPydCdyL/bQUUraM4bNnixqCyzgmAObRj3vCFNHPXXPYIllIEjp
+ rYn7XZlNwKJK40zKrrZ+edRrdZcK89/XGuV4G3F3drlK5fUm+bE1WmtbRxxuwQSbaZ4b
+ 3+EQ==
+X-Gm-Message-State: APjAAAUs3u2UzYypqdImMF9TjeQzlduuaTcpGpIvsiZjbv+8h8jSOB/A
+ z9s6jjdCIn4DED98lunR0PtT1Y3gU+w=
+X-Google-Smtp-Source: APXvYqy5ufXXfePSMEPEr469UhCX7g0r+CSms/QUAtvrOO4B8R2A+ODPfGG/BrjKMoxYCPF9VZjzUA==
+X-Received: by 2002:a2e:b0cb:: with SMTP id g11mr5169840ljl.76.1565716158242; 
+ Tue, 13 Aug 2019 10:09:18 -0700 (PDT)
+Received: from mail-lf1-f50.google.com (mail-lf1-f50.google.com.
+ [209.85.167.50])
+ by smtp.gmail.com with ESMTPSA id b1sm21739180ljj.26.2019.08.13.10.09.17
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Tue, 13 Aug 2019 10:09:17 -0700 (PDT)
+Received: by mail-lf1-f50.google.com with SMTP id b29so70028611lfq.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 10:09:17 -0700 (PDT)
+X-Received: by 2002:a19:641a:: with SMTP id y26mr22803433lfb.29.1565716156648; 
+ Tue, 13 Aug 2019 10:09:16 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANiq72mAfJ23PyWzZAELgbKQDCX2nvY0z+dmOMe14qz=wa6eFg@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20190813145341.28530-1-georgi.djakov@linaro.org>
+ <20190813145341.28530-4-georgi.djakov@linaro.org>
+In-Reply-To: <20190813145341.28530-4-georgi.djakov@linaro.org>
+From: Evan Green <evgreen@chromium.org>
+Date: Tue, 13 Aug 2019 10:08:40 -0700
+X-Gmail-Original-Message-ID: <CAE=gft6ZpM6x21X+SxCbNDdNS5B51yYAFA0XBbViqLmr99n5SQ@mail.gmail.com>
+Message-ID: <CAE=gft6ZpM6x21X+SxCbNDdNS5B51yYAFA0XBbViqLmr99n5SQ@mail.gmail.com>
+Subject: Re: [PATCH v4 3/3] interconnect: qcom: Add tagging and wake/sleep
+ support for sdm845
+To: Georgi Djakov <georgi.djakov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_100837_581886_7F7414A6 
-X-CRM114-Status: GOOD (  19.23  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190813_100920_770311_0C0736EF 
+X-CRM114-Status: GOOD (  10.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -79,65 +102,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Alexei Starovoitov <ast@kernel.org>, Daniel Borkmann <daniel@iogearbox.net>,
- clang-built-linux@googlegroups.com, Allison Randal <allison@lohutok.net>,
- yhs@fb.com, Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
- Josh Poimboeuf <jpoimboe@redhat.com>, Sedat Dilek <sedat.dilek@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, bpf@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Nick Desaulniers <ndesaulniers@google.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Network Development <netdev@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, Enrico Weigelt <info@metux.net>,
- Martin KaFai Lau <kafai@fb.com>
+Cc: linux-pm@vger.kernel.org, Sean Sweeney <seansw@qti.qualcomm.com>,
+ LKML <linux-kernel@vger.kernel.org>, David Dai <daidavid1@codeaurora.org>,
+ Doug Anderson <dianders@chromium.org>, amit.kucheria@linaro.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 02:36:06PM +0200, Miguel Ojeda wrote:
-> On Tue, Aug 13, 2019 at 10:27 AM Will Deacon <will@kernel.org> wrote:
-> > On Mon, Aug 12, 2019 at 02:50:45PM -0700, Nick Desaulniers wrote:
-> > > GCC unescapes escaped string section names while Clang does not. Because
-> > > __section uses the `#` stringification operator for the section name, it
-> > > doesn't need to be escaped.
-> > >
-> > > This antipattern was found with:
-> > > $ grep -e __section\(\" -e __section__\(\" -r
-> > >
-> > > Reported-by: Sedat Dilek <sedat.dilek@gmail.com>
-> > > Suggested-by: Josh Poimboeuf <jpoimboe@redhat.com>
-> > > Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
-> > > ---
-> > >  arch/arm64/include/asm/cache.h     | 2 +-
-> > >  arch/arm64/kernel/smp_spin_table.c | 2 +-
-> > >  2 files changed, 2 insertions(+), 2 deletions(-)
-> >
-> > Does this fix a build issue, or is it just cosmetic or do we end up with
-> > duplicate sections or something else?
-> 
-> This should be cosmetic -- basically we are trying to move all users
-> of current available __attribute__s in compiler_attributes.h to the
-> __attr forms. I am also adding (slowly) new attributes that are
-> already used but we don't have them yet in __attr form.
-> 
-> > Happy to route it via arm64, just having trouble working out whether it's
-> > 5.3 material!
-> 
-> As you prefer! Those that are not taken by a maintainer I will pick up
-> and send via compiler-attributes.
-> 
-> I would go for 5.4, since there is no particular rush anyway.
+On Tue, Aug 13, 2019 at 7:53 AM Georgi Djakov <georgi.djakov@linaro.org> wrote:
+>
+> From: David Dai <daidavid1@codeaurora.org>
+>
+> Add support for wake and sleep commands by using a tag to indicate
+> whether or not the aggregate and set requests fall into execution
+> state specific bucket.
+>
+> Signed-off-by: David Dai <daidavid1@codeaurora.org>
+> Signed-off-by: Georgi Djakov <georgi.djakov@linaro.org>
 
-Okey doke, I'll pick this one up for 5.4 then. Thanks for the explanation!
-
-Will
+Reviewed-by: Evan Green <evgreen@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
