@@ -2,78 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88F7C8B65C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 13:08:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81E998B667
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 13:10:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YaN39TZEnPo0/L+rqKDZknE9oUeIkIeqcloZLp0LShc=; b=YLBSeVAYgvJlJh
-	NLh4woZFDjzvaHzTf/7lLf3f29H1Ozq6IaHMP+t6iXwn/FKlOrmD/DY+HUrRZ3zRROr6fNVnyz4Je
-	rSQLpzD3ldD8IDtDLIqWhnFaXQ2mvMcmGCci+IHo33BPAEQMhau1gaZrGXvcFLe2cI+RgyZ1zA9Uy
-	U76Vjq7j19FHioGscTUm8/zOgvqZE/VdXZBP1TLQkDU4XwMODnCKPa2aY/2HkxEOgpRbKCOn14VJp
-	e8OiSPcLB1PANXNzlH6dYlgLIfoTGvEGQsB8lr9HQOGuZ2o6xj36IhecNIUSZEciowWap3U7vnxam
-	/naas1pJFpuV+IO99u3Q==;
+	List-Owner; bh=0gUGICaofft/EiZWEfZ8WxUO59VJuZ2TLGm8zCZauSY=; b=ArM/MGNl9Ajkcm
+	6Op2glZvIa4S8qgi/kanKnalne/lZOD9zHG04yiApkfBOTTvuvR4LF/2hGburc8JYh6Yt7J/GZEgk
+	IrVqudIe1A6mPlRxjKNA9owPapD6nnO7Ch+uaAPXKJRibDaAeWpmmnsMG+mBPOiCSwa+ovmAV0H9D
+	aP+KC6FDS5jYp/UpGLvP6rHrtMIUYY3vgfXnq2+qwJj0N9diqIlL8xp1O3TnZZL1tchmxH3QsNuQ1
+	hU7n7hmQDmGf/eZ5N2iLC8LylbluuU8xO1qapluU1RPTO0GH2i8lspp3mHVwQJCDS1sqvABbG1Jxw
+	iNFVBeUulY86eiArFfcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxUfF-0001Gg-0B; Tue, 13 Aug 2019 11:08:29 +0000
-Received: from mail-qt1-f194.google.com ([209.85.160.194])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxUew-0001Fw-QS
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 11:08:12 +0000
-Received: by mail-qt1-f194.google.com with SMTP id d17so26926129qtj.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 04:08:09 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=HIB1FeBMw0kT4n5nY36MOBb0YBcd6Z0mN5e+AnqNyZE=;
- b=Ua2xuurii2oinMKKjGr7NxvPknRu88ZncVkxXYap1kElRi1DGJtTGTGJcbd7bc7USR
- AoZrgBQmxGz+kNnOTGsyC4ZlxKt/OUQXxwCY+BSZ9I++RH6sk9+3bvgJ2L735zsLIHaP
- 2cKzpd3qFddp/o3mVHsb8c7eTdP/jlzN5tdfbsGrpIJH2/XxXOgnwWA6r9YFNbAz666M
- SJHlptrMov8wGjMq1cm9UZW3277bTS4AcCgakAwCgyVX1nyYLgDvyrYVqKZUYsFVRJ7p
- TU4o6+xeW2LIhPMancnn5Pqm4GmQYQlGetzhj6HQHKWiqYU5n9YqrWFkIKxC0kOZtIZD
- 4nVw==
-X-Gm-Message-State: APjAAAVkuBCxctuj7yB8ROZ5Vx7hQIRYZFwgbXrVqJv+iKyjHI61nd9n
- +7k5OE+C5Ig2sBWoF+yxW892Olf3Ei7Ebzsx9LI=
-X-Google-Smtp-Source: APXvYqx/nZIPgpCg9fJQAkQukfWpNlMRwI/isdIkz0cHDQdJwM+9xSo+AwlCQhvXJshxqmstDvAO0AUSd3UXwUs7kpw=
-X-Received: by 2002:ad4:53cb:: with SMTP id k11mr1250357qvv.93.1565694488565; 
- Tue, 13 Aug 2019 04:08:08 -0700 (PDT)
+	id 1hxUh9-0003AJ-6i; Tue, 13 Aug 2019 11:10:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxUgr-000398-Gb
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 11:10:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 62C26344;
+ Tue, 13 Aug 2019 04:10:08 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A12C3F694;
+ Tue, 13 Aug 2019 04:10:06 -0700 (PDT)
+Date: Tue, 13 Aug 2019 12:10:04 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v7 1/2] arm64: Define
+ Documentation/arm64/tagged-address-abi.rst
+Message-ID: <20190813111004.GV10425@arm.com>
+References: <20190807155321.9648-1-catalin.marinas@arm.com>
+ <20190807155321.9648-2-catalin.marinas@arm.com>
+ <826a9ace-feac-c019-843e-07e23c9fd46c@intel.com>
+ <20190808172730.GC37129@arrakis.emea.arm.com>
+ <68354acd-e205-71cb-11c6-74a150178ae0@intel.com>
+ <20190812173611.GD62772@arrakis.emea.arm.com>
 MIME-Version: 1.0
-References: <cover.1565367567.git.agx@sigxcpu.org>
- <e0562d8bb4098dc4cdb4023b41fb75b312be22a5.1565367567.git.agx@sigxcpu.org>
- <CAK8P3a3Vrd+sttJrQwD-jA9p_egG4x-hc41eGK8H-_aVm-uoYw@mail.gmail.com>
- <20190813101057.GB10751@bogon.m.sigxcpu.org>
-In-Reply-To: <20190813101057.GB10751@bogon.m.sigxcpu.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 13 Aug 2019 13:07:52 +0200
-Message-ID: <CAK8P3a1q9G8VKgNKh+6khzoW3bFTVR_Zorygy=Qqsq-PYzM4=g@mail.gmail.com>
-Subject: Re: [PATCH v2 1/3] arm64: imx8mq: add imx8mq iomux-gpr field defines
-To: =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>
+Content-Disposition: inline
+In-Reply-To: <20190812173611.GD62772@arrakis.emea.arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_040810_858831_F8C31606 
-X-CRM114-Status: GOOD (  19.76  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190813_041009_643558_78560419 
+X-CRM114-Status: GOOD (  26.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.194 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,68 +66,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
- David Airlie <airlied@linux.ie>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Andrzej Hajda <a.hajda@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Daniel Vetter <daniel@ffwll.ch>,
- Robert Chiras <robert.chiras@nxp.com>, Lee Jones <lee.jones@linaro.org>,
- Shawn Guo <shawnguo@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Dave Hansen <dave.hansen@intel.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBBdWcgMTMsIDIwMTkgYXQgMTI6MTAgUE0gR3VpZG8gR8O8bnRoZXIgPGFneEBzaWd4
-Y3B1Lm9yZz4gd3JvdGU6Cj4gT24gVHVlLCBBdWcgMTMsIDIwMTkgYXQgMTA6MDg6NDRBTSArMDIw
-MCwgQXJuZCBCZXJnbWFubiB3cm90ZToKPiA+IE9uIEZyaSwgQXVnIDksIDIwMTkgYXQgNjoyNCBQ
-TSBHdWlkbyBHw7xudGhlciA8YWd4QHNpZ3hjcHUub3JnPiB3cm90ZToKPiA+ID4KPiA+ID4gVGhp
-cyBhZGRzIGFsbCB0aGUgZ3ByIHJlZ2lzdGVycyBhbmQgdGhlIGRlZmluZSBuZWVkZWQgZm9yIHNl
-bGVjdGluZwo+ID4gPiB0aGUgaW5wdXQgc291cmNlIGluIHRoZSBpbXgtbndsIGRybSBicmlkZ2Uu
-Cj4gPiA+Cj4gPiA+IFNpZ25lZC1vZmYtYnk6IEd1aWRvIEfDvG50aGVyIDxhZ3hAc2lneGNwdS5v
-cmc+Cj4gPiA+ICsKPiA+ID4gKyNkZWZpbmUgSU9NVVhDX0dQUjAgICAgMHgwMAo+ID4gPiArI2Rl
-ZmluZSBJT01VWENfR1BSMSAgICAweDA0Cj4gPiA+ICsjZGVmaW5lIElPTVVYQ19HUFIyICAgIDB4
-MDgKPiA+ID4gKyNkZWZpbmUgSU9NVVhDX0dQUjMgICAgMHgwYwo+ID4gPiArI2RlZmluZSBJT01V
-WENfR1BSNCAgICAweDEwCj4gPiA+ICsjZGVmaW5lIElPTVVYQ19HUFI1ICAgIDB4MTQKPiA+ID4g
-KyNkZWZpbmUgSU9NVVhDX0dQUjYgICAgMHgxOAo+ID4gPiArI2RlZmluZSBJT01VWENfR1BSNyAg
-ICAweDFjCj4gPiAobW9yZSBvZiB0aGUgc2FtZSkKPiA+Cj4gPiBodWg/Cj4KPiBUaGVzZSBhcmUg
-dGhlIG5hbWVzIGZyb20gdGhlIGlteDhNUSByZWZlcmVuY2UgbWFudWFsIChnZW5lcmFsIHB1cnBv
-c2UKPiByZWdpc3RlcnMsIHRoZXkgbHVtcCB0b2dldGhlciBhbGwgc29ydHMgb2YgdGhpbmdzKSwg
-aXQncyB0aGUgc2FtZSBvbgo+IGlteDYvaW14Nyk6Cj4KPiAgICAgaHR0cHM6Ly9naXQua2VybmVs
-Lm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvdG9ydmFsZHMvbGludXguZ2l0L3RyZWUvaW5j
-bHVkZS9saW51eC9tZmQvc3lzY29uL2lteDZxLWlvbXV4Yy1ncHIuaAo+ICAgICBodHRwczovL2dp
-dC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQv
-dHJlZS9pbmNsdWRlL2xpbnV4L21mZC9zeXNjb24vaW14Ny1pb211eGMtZ3ByLmgKPgo+ID4gPiAr
-LyogaS5NWDhNcSBpb211eCBncHIgcmVnaXN0ZXIgZmllbGQgZGVmaW5lcyAqLwo+ID4gPiArI2Rl
-ZmluZSBJTVg4TVFfR1BSMTNfTUlQSV9NVVhfU0VMICAgICAgICAgICAgICBCSVQoMikKPiA+Cj4g
-PiBJIHRoaW5rIHRoaXMgZGVmaW5lIHNob3VsZCBwcm9iYWJseSBiZSBsb2NhbCB0byB0aGUgcGlu
-Y3RybCBkcml2ZXIsIHRvCj4gPiBlbnN1cmUgdGhhdCBubyBvdGhlciBkcml2ZXJzIGZpZGRsZSB3
-aXRoIHRoZSByZWdpc3RlcnMgbWFudWFsbHkuCj4KPiBUaGUgcHVycG9zZSBvZiB0aGVzZSBiaXRz
-IGlzIGZvciBhIGRyaXZlciB0byBmaWRkbGUgd2l0aCB0aGVtIHRvIHNlbGVjdAo+IHRoZSBpbnB1
-dCBzb3VyY2UuIFNpbWlsYXIgb24gaW14NyBpdCdzIGFscmVhZHkgdXNlZCBmb3IgZS5nLiB0aGUg
-cGh5Cj4gcmVmY2xrIGluIHRoZSBwY2kgY29udHJvbGxlcjoKPgo+ICAgICBodHRwczovL2dpdC5r
-ZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQvdHJl
-ZS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9wY2ktaW14Ni5jI242MzgKClRoYXQgb25lIHNo
-b3VsZCBsaWtlbHkgdXNlIGVpdGhlciB0aGUgY2xrIGludGVyZmFjZSBvciB0aGUgcGh5CmludGVy
-ZmFjZSBpbnN0ZWFkLgoKPiBUaGUgR1BScyBhcmUgbm90IGFib3V0IHBhZCBjb25maWd1cmF0aW9u
-IGJ1dCBnYXRoZXIgYWxsIHNvcnRzIG9mIHRoaW5ncwo+IChzZWN0aW9uIDguMi40IG9mIHRoZSBp
-bXg4bXEgcmVmZXJlbmNlIG1hbnVhbCk6IHBjaWUgc2V0dXAsIGRzaSByZWxhdGVkCj4gYml0cyBz
-byBJIGRvbid0IHRoaW5rIHRoaXMgc2hvdWxkIGJlIGRvbmUgdmlhIGEgcGluY3RybAo+IGRyaXZl
-ci4gU2hvdWxkIHdlIGhhbmRsZSB0aGF0IGRpZmZlcmVudGx5IHRoYW4gb24gaW14Ni83PwoKSXQg
-d291bGQgYmUgbmljZSB0byBmaXggdGhlIGV4aXN0aW5nIGNvZGUgYXMgd2VsbCwgYnV0IGZvciB0
-aGUgbW9tZW50LApJIG9ubHkgdGhpbmsgd2Ugc2hvdWxkIG5vdCBhZGQgbW9yZSBvZiB0aGF0LgoK
-R2VuZXJhbGx5IHNwZWFraW5nLCB3ZSBjYW4gdXNlIHN5c2NvbiB0byBkbyByYW5kb20gdGhpbmdz
-IHRoYXQgZG9uJ3QKaGF2ZSBhIHN1YnN5c3RlbSBvZiB0aGVpciBvd24sIGJ1dCB3ZSBzaG91bGQg
-bm90IHVzZSBpdCB0byBkbyB0aGluZ3MKdGhhdCBoYXZlIGFuIGV4aXN0aW5nIGRyaXZlciBmcmFt
-ZXdvcmsgbGlrZSBwaW5jdHJsLCBjbG9jaywgcmVzZXQsIHBoeQpldGMuCgogICAgICAgQXJuZAoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+On Mon, Aug 12, 2019 at 06:36:12PM +0100, Catalin Marinas wrote:
+> On Fri, Aug 09, 2019 at 07:10:18AM -0700, Dave Hansen wrote:
+> > On 8/8/19 10:27 AM, Catalin Marinas wrote:
+> > > On Wed, Aug 07, 2019 at 01:38:16PM -0700, Dave Hansen wrote:
+> > >> Also, shouldn't this be converted over to an arch_prctl()?
+> > > 
+> > > What do you mean by arch_prctl()? We don't have such thing, apart from
+> > > maybe arch_prctl_spec_ctrl_*(). We achieve the same thing with the
+> > > {SET,GET}_TAGGED_ADDR_CTRL macros. They could be renamed to
+> > > arch_prctl_tagged_addr_{set,get} or something but I don't see much
+> > > point.
+> > 
+> > Silly me.  We have an x86-specific:
+> > 
+> > 	SYSCALL_DEFINE2(arch_prctl, int , option, unsigned long , arg2)
+> > 
+> > I guess there's no ARM equivalent so you're stuck with the generic one.
+> > 
+> > > What would be better (for a separate patch series) is to clean up
+> > > sys_prctl() and move the arch-specific options into separate
+> > > arch_prctl() under arch/*/kernel/. But it's not really for this series.
+> > 
+> > I think it does make sense for truly arch-specific features to stay out
+> > of the arch-generic prctl().  Yes, I know I've personally violated this
+> > in the past. :)
+> 
+> Maybe Dave M could revive his prctl() clean-up patches which moves the
+> arch specific cases to the corresponding arch/*/ code
+
+I'll try to take a look at it.
+
+> > >> What is the scope of these prctl()'s?  Are they thread-scoped or
+> > >> process-scoped?  Can two threads in the same process run with different
+> > >> tagging ABI modes?
+> > > 
+> > > Good point. They are thread-scoped and this should be made clear in the
+> > > doc. Two threads can have different modes.
+> > > 
+> > > The expectation is that this is invoked early during process start (by
+> > > the dynamic loader or libc init) while in single-thread mode and
+> > > subsequent threads will inherit the same mode. However, other uses are
+> > > possible.
+> > 
+> > If that's the expectation, it would be really nice to codify it.
+> > Basically, you can't enable the feature if another thread is already
+> > been forked off.
+> 
+> Well, that's my expectation but I'm not a userspace developer. I don't
+> think there is any good reason to prevent it. It doesn't cost us
+> anything to support in the kernel, other than making the documentation
+> clearer.
+
+This came up for SVE and eventually we didn't bother, partly because the
+kernel doesn't fully know what userspace is trying to do, in general.
+
+If userspace has some kind of worker threads that run specific code,
+they could legitimately interface differently with the kernel compared
+with, say, the main thread.  This model already exists for e.g.,
+seccomp.
+
+In any case, I think it's not up to the kernel to dictate how user
+runtimes initialise themselves.
+
+[...]
+
+Cheers
+---Dave
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
