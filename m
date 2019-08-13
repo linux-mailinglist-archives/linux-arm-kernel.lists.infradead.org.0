@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6C1C8BA4C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 15:33:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C0058BA61
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 15:34:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FjYqu15c+NLZ6zAQYKaYD+Wo7J8nlCgNjR4kyqAEhIA=; b=Ww0U3mh872vodA
-	dKjS9zd7m+CFWYz3MYHoMZkgtSOacUn8w/lV7b2Oaa0IupEzhEBFg6uNzhrie7qWf6FJ2DIHlWCaI
-	4JhS11IAiXZiVs3PleANzIX+RylvmGmfi5NAPHtSB7wv34SempYbFaE5x1ZlwJYhbY8fZsFzwugT4
-	8vt6qOuLQYUlWelnx5uVsUBvYpKw03EdHrKQnHMDYL0PpDulSuf3fXYcumrP53pX0j+2hUK/Kx9JQ
-	XUUV0q+ivbMsMH9mIUZdSsxvyHh2wSkipCZ1gnJ430i//bsMp9esm82/MK104lxbt1v5xjCx1KMyU
-	fiBEDB+z3HeTEJ4YSfIQ==;
+	List-Owner; bh=jgniAnodhtuEuzjFFaRiUlWNAr9GaUASUVZV33Swq0o=; b=agRjJAHba2nFSt
+	pTaXSGrZGKqS2i6GAdB4+aELArCtAiCu24Mmz8L9fA+B0tb1Dm54tJiA1gULtA1FaMmtbm4iq8eVg
+	1+Nmf5Tc1ODGTs/lDvmcOZ01pjtUVgYorPt/oRYShLna9XPxfqFeKObX7RHYVtK0qWt1OAEM39QEe
+	XLRpBmuqmfbq0AaLvd1ottId0qQ0axIYXX8Vo1iUoKNLe9W2IbUIxmE8b8eEWBVBDTQspIY/Xg8bb
+	cTMYgg+6HS7m9y1ZX//WoFOeuMWjA+Q32TNr9k5HOS1qWL8QFMip7+yrFK6t6BA3rzp6ShAmpIX0M
+	a4P1zqlB7tVdxxIC+m3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxWvT-0005Jm-5v; Tue, 13 Aug 2019 13:33:23 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hxWwG-0006Ah-Nk; Tue, 13 Aug 2019 13:34:12 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxWv2-00054W-US; Tue, 13 Aug 2019 13:32:58 +0000
-X-UUID: 7208ead665c64668b068df05a2477cc8-20190813
-X-UUID: 7208ead665c64668b068df05a2477cc8-20190813
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ id 1hxWvT-0005TG-6g; Tue, 13 Aug 2019 13:33:24 +0000
+X-UUID: 2b81d6cf5016405fb721a10db36b2038-20190813
+X-UUID: 2b81d6cf5016405fb721a10db36b2038-20190813
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <andrew-sh.cheng@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1489096052; Tue, 13 Aug 2019 05:32:12 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ with ESMTP id 1071446298; Tue, 13 Aug 2019 05:32:07 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 13 Aug 2019 06:32:11 -0700
+ 15.0.1395.4; Tue, 13 Aug 2019 06:32:06 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 13 Aug 2019 21:32:04 +0800
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 13 Aug 2019 21:32:00 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 13 Aug 2019 21:32:03 +0800
+ Frontend Transport; Tue, 13 Aug 2019 21:32:04 +0800
 From: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
 To: MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
  <kyungmin.park@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, "Rob
@@ -44,23 +44,24 @@ To: MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
  Brugger" <matthias.bgg@gmail.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
  Viresh Kumar <viresh.kumar@linaro.org>, Nishanth Menon <nm@ti.com>, "Stephen
  Boyd" <sboyd@kernel.org>
-Subject: [v4, 6/8] PM / OPP: Support adjusting OPP voltages at runtime
-Date: Tue, 13 Aug 2019 21:31:51 +0800
-Message-ID: <1565703113-31479-7-git-send-email-andrew-sh.cheng@mediatek.com>
+Subject: [v4, 7/8] cpufreq: mediatek: add opp notification for SVS support
+Date: Tue, 13 Aug 2019 21:31:52 +0800
+Message-ID: <1565703113-31479-8-git-send-email-andrew-sh.cheng@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1565703113-31479-1-git-send-email-andrew-sh.cheng@mediatek.com>
 References: <1565703113-31479-1-git-send-email-andrew-sh.cheng@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 45C891B5CDE799B39BBD36E00A2DD157FFB30200B7A1D213CDF68F7B0F153F442000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_063257_079846_CC9E34BD 
-X-CRM114-Status: GOOD (  16.49  )
+X-CRM114-CacheID: sfid-20190813_063323_263919_13410E34 
+X-CRM114-Status: GOOD (  13.43  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -76,150 +77,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- linux-pm@vger.kernel.org, Roger Lu <roger.lu@mediatek.com>,
- Stephen Boyd <sboyd@codeaurora.org>, linux-kernel@vger.kernel.org,
- fan.chen@mediatek.com, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>, srv_heupstream@mediatek.com,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, fan.chen@mediatek.com,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stephen Boyd <sboyd@codeaurora.org>
+From: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
 
-On some SoCs the Adaptive Voltage Scaling (AVS) technique is
-employed to optimize the operating voltage of a device. At a
-given frequency, the hardware monitors dynamic factors and either
-makes a suggestion for how much to adjust a voltage for the
-current frequency, or it automatically adjusts the voltage
-without software intervention. Add an API to the OPP library for
-the former case, so that AVS type devices can update the voltages
-for an OPP when the hardware determines the voltage should
-change. The assumption is that drivers like CPUfreq or devfreq
-will register for the OPP notifiers and adjust the voltage
-according to suggestions that AVS makes.
+cpufreq should listen opp notification and do proper actions
+when receiving disable and voltage adjustment events,
+which are triggered when SVS is enabled.
 
-This patch is devired from [1] submitted by Stephen.
-[1] https://lore.kernel.org/patchwork/patch/599279/
-
-Signed-off-by: Stephen Boyd <sboyd@codeaurora.org>
-Signed-off-by: Roger Lu <roger.lu@mediatek.com>
+Signed-off-by: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
 ---
- drivers/opp/core.c     | 63 ++++++++++++++++++++++++++++++++++++++++++++++++++
- include/linux/pm_opp.h | 11 +++++++++
- 2 files changed, 74 insertions(+)
+ drivers/cpufreq/mediatek-cpufreq.c | 78 ++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 78 insertions(+)
 
-diff --git a/drivers/opp/core.c b/drivers/opp/core.c
-index c094d5d20fd7..407a07f29b12 100644
---- a/drivers/opp/core.c
-+++ b/drivers/opp/core.c
-@@ -2054,6 +2054,69 @@ static int _opp_set_availability(struct device *dev, unsigned long freq,
+diff --git a/drivers/cpufreq/mediatek-cpufreq.c b/drivers/cpufreq/mediatek-cpufreq.c
+index 4dce41b18369..9820c8003507 100644
+--- a/drivers/cpufreq/mediatek-cpufreq.c
++++ b/drivers/cpufreq/mediatek-cpufreq.c
+@@ -42,6 +42,10 @@ struct mtk_cpu_dvfs_info {
+ 	struct list_head list_head;
+ 	int intermediate_voltage;
+ 	bool need_voltage_tracking;
++	struct mutex lock; /* avoid notify and policy race condition */
++	struct notifier_block opp_nb;
++	int opp_cpu;
++	unsigned long opp_freq;
+ };
+ 
+ static LIST_HEAD(dvfs_info_list);
+@@ -231,6 +235,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+ 	vproc = dev_pm_opp_get_voltage(opp);
+ 	dev_pm_opp_put(opp);
+ 
++	mutex_lock(&info->lock);
+ 	/*
+ 	 * If the new voltage or the intermediate voltage is higher than the
+ 	 * current voltage, scale up voltage first.
+@@ -242,6 +247,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+ 			pr_err("cpu%d: failed to scale up voltage!\n",
+ 			       policy->cpu);
+ 			mtk_cpufreq_set_voltage(info, old_vproc);
++			mutex_unlock(&info->lock);
+ 			return ret;
+ 		}
+ 	}
+@@ -253,6 +259,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+ 		       policy->cpu);
+ 		mtk_cpufreq_set_voltage(info, old_vproc);
+ 		WARN_ON(1);
++		mutex_unlock(&info->lock);
+ 		return ret;
+ 	}
+ 
+@@ -263,6 +270,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+ 		       policy->cpu);
+ 		clk_set_parent(cpu_clk, armpll);
+ 		mtk_cpufreq_set_voltage(info, old_vproc);
++		mutex_unlock(&info->lock);
+ 		return ret;
+ 	}
+ 
+@@ -273,6 +281,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+ 		       policy->cpu);
+ 		mtk_cpufreq_set_voltage(info, inter_vproc);
+ 		WARN_ON(1);
++		mutex_unlock(&info->lock);
+ 		return ret;
+ 	}
+ 
+@@ -288,15 +297,74 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+ 			clk_set_parent(cpu_clk, info->inter_clk);
+ 			clk_set_rate(armpll, old_freq_hz);
+ 			clk_set_parent(cpu_clk, armpll);
++			mutex_unlock(&info->lock);
+ 			return ret;
+ 		}
+ 	}
+ 
++	info->opp_freq = freq_hz;
++	mutex_unlock(&info->lock);
++
+ 	return 0;
  }
  
- /**
-+ * dev_pm_opp_adjust_voltage() - helper to change the voltage of an OPP
-+ * @dev:		device for which we do this operation
-+ * @freq:		OPP frequency to adjust voltage of
-+ * @u_volt:		new OPP voltage
-+ *
-+ * Return: -EINVAL for bad pointers, -ENOMEM if no memory available for the
-+ * copy operation, returns 0 if no modifcation was done OR modification was
-+ * successful.
-+ */
-+int dev_pm_opp_adjust_voltage(struct device *dev, unsigned long freq,
-+			      unsigned long u_volt)
+ #define DYNAMIC_POWER "dynamic-power-coefficient"
+ 
++static int mtk_cpufreq_opp_notifier(struct notifier_block *nb,
++				    unsigned long event, void *data)
 +{
-+	struct opp_table *opp_table;
-+	struct dev_pm_opp *tmp_opp, *opp = ERR_PTR(-ENODEV);
-+	int r = 0;
++	struct dev_pm_opp *opp = data;
++	struct dev_pm_opp *opp_item;
++	struct mtk_cpu_dvfs_info *info =
++		container_of(nb, struct mtk_cpu_dvfs_info, opp_nb);
++	unsigned long freq, volt;
++	struct cpufreq_policy *policy;
++	int ret = 0;
 +
-+	/* Find the opp_table */
-+	opp_table = _find_opp_table(dev);
-+	if (IS_ERR(opp_table)) {
-+		r = PTR_ERR(opp_table);
-+		dev_warn(dev, "%s: Device OPP not found (%d)\n", __func__, r);
-+		return r;
-+	}
++	if (event == OPP_EVENT_ADJUST_VOLTAGE) {
++		freq = dev_pm_opp_get_freq(opp);
 +
-+	mutex_lock(&opp_table->lock);
++		mutex_lock(&info->lock);
++		if (info->opp_freq == freq) {
++			volt = dev_pm_opp_get_voltage(opp);
++			ret = mtk_cpufreq_set_voltage(info, volt);
++			if (ret)
++				dev_err(info->cpu_dev, "failed to scale voltage: %d\n",
++					ret);
++		}
++		mutex_unlock(&info->lock);
++	} else if (event == OPP_EVENT_DISABLE) {
++		freq = info->opp_freq;
++		opp_item = dev_pm_opp_find_freq_ceil(info->cpu_dev, &freq);
++		if (!IS_ERR(opp_item))
++			dev_pm_opp_put(opp_item);
++		else
++			freq = 0;
 +
-+	/* Do we have the frequency? */
-+	list_for_each_entry(tmp_opp, &opp_table->opp_list, node) {
-+		if (tmp_opp->rate == freq) {
-+			opp = tmp_opp;
-+			break;
++		/* case of current opp is disabled */
++		if (freq == 0 || freq != info->opp_freq) {
++			// find an enable opp item
++			freq = 1;
++			opp_item = dev_pm_opp_find_freq_ceil(info->cpu_dev,
++							     &freq);
++			if (!IS_ERR(opp_item)) {
++				dev_pm_opp_put(opp_item);
++				policy = cpufreq_cpu_get(info->opp_cpu);
++				if (policy) {
++					cpufreq_driver_target(policy,
++						freq / 1000,
++						CPUFREQ_RELATION_L);
++					cpufreq_cpu_put(policy);
++				}
++			} else
++				pr_err("%s: all opp items are disabled\n",
++				       __func__);
 +		}
 +	}
 +
-+	if (IS_ERR(opp)) {
-+		r = PTR_ERR(opp);
-+		goto adjust_unlock;
++	return notifier_from_errno(ret);
++}
++
+ static int mtk_cpu_dvfs_info_init(struct mtk_cpu_dvfs_info *info, int cpu)
+ {
+ 	struct device *cpu_dev;
+@@ -383,11 +451,21 @@ static int mtk_cpu_dvfs_info_init(struct mtk_cpu_dvfs_info *info, int cpu)
+ 	info->intermediate_voltage = dev_pm_opp_get_voltage(opp);
+ 	dev_pm_opp_put(opp);
+ 
++	info->opp_cpu = cpu;
++	info->opp_nb.notifier_call = mtk_cpufreq_opp_notifier;
++	ret = dev_pm_opp_register_notifier(cpu_dev, &info->opp_nb);
++	if (ret) {
++		pr_warn("cannot register opp notification\n");
++		goto out_free_opp_table;
 +	}
 +
-+	/* Is update really needed? */
-+	if (opp->supplies->u_volt == u_volt)
-+		goto adjust_unlock;
-+
-+	opp->supplies->u_volt = u_volt;
-+
-+	dev_pm_opp_get(opp);
-+	mutex_unlock(&opp_table->lock);
-+
-+	/* Notify the voltage change of the OPP */
-+	blocking_notifier_call_chain(&opp_table->head, OPP_EVENT_ADJUST_VOLTAGE,
-+				     opp);
-+
-+	dev_pm_opp_put(opp);
-+	goto adjust_put_table;
-+
-+adjust_unlock:
-+	mutex_unlock(&opp_table->lock);
-+adjust_put_table:
-+	dev_pm_opp_put_opp_table(opp_table);
-+	return r;
-+}
-+
-+/**
-  * dev_pm_opp_enable() - Enable a specific OPP
-  * @dev:	device for which we do this operation
-  * @freq:	OPP frequency to enable
-diff --git a/include/linux/pm_opp.h b/include/linux/pm_opp.h
-index af5021f27cb7..86947d53e8c4 100644
---- a/include/linux/pm_opp.h
-+++ b/include/linux/pm_opp.h
-@@ -22,6 +22,7 @@ struct opp_table;
++	mutex_init(&info->lock);
+ 	info->cpu_dev = cpu_dev;
+ 	info->proc_reg = proc_reg;
+ 	info->sram_reg = IS_ERR(sram_reg) ? NULL : sram_reg;
+ 	info->cpu_clk = cpu_clk;
+ 	info->inter_clk = inter_clk;
++	info->opp_freq = clk_get_rate(cpu_clk);
  
- enum dev_pm_opp_event {
- 	OPP_EVENT_ADD, OPP_EVENT_REMOVE, OPP_EVENT_ENABLE, OPP_EVENT_DISABLE,
-+	OPP_EVENT_ADJUST_VOLTAGE,
- };
- 
- /**
-@@ -111,6 +112,9 @@ int dev_pm_opp_add(struct device *dev, unsigned long freq,
- void dev_pm_opp_remove(struct device *dev, unsigned long freq);
- void dev_pm_opp_remove_all_dynamic(struct device *dev);
- 
-+int dev_pm_opp_adjust_voltage(struct device *dev, unsigned long freq,
-+			      unsigned long u_volt);
-+
- int dev_pm_opp_enable(struct device *dev, unsigned long freq);
- 
- int dev_pm_opp_disable(struct device *dev, unsigned long freq);
-@@ -234,6 +238,13 @@ static inline void dev_pm_opp_remove_all_dynamic(struct device *dev)
- {
- }
- 
-+static inline int
-+dev_pm_opp_adjust_voltage(struct device *dev, unsigned long freq,
-+			  unsigned long u_volt)
-+{
-+	return 0;
-+}
-+
- static inline int dev_pm_opp_enable(struct device *dev, unsigned long freq)
- {
- 	return 0;
+ 	/*
+ 	 * If SRAM regulator is present, software "voltage tracking" is needed
 -- 
 2.12.5
 
