@@ -2,53 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C25E98BEAA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:33:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 089328BEB2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:35:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6m8UCzCYqeG+CY/KO3XksvKEJTq+f3mJTatFAXd/YVA=; b=c8I/NRPyQcwF6p
-	39w8ktUtt7gTsosIgXkJynwWTPaM6Da9PTpwcOc69FhdCPEkuggCOINg3sW479JqywJeJx60+H+Rv
-	cvlxO6iu0uH5jz7nN8QV/9cT/al20ys6dYiK8MMf/1yeHZU/+ntUISLn7kofs+eqvb6sdX6nP8ekB
-	C19qvMVhik3rmT4IXe+m3glYy6fizsuLKV5MFljrvBtqRmHk/JY8HX/EMnklSVxUVoaP9vnckqIdn
-	xb21cDzAklgsmSf3l/5+fm853ZOyJxW0Qu6D1faKK/3FLYrG8WJTbOSeYQb7xk55D3DxQ7sefeO8J
-	4vRxbP1aZLapIYS0dHjw==;
+	List-Owner; bh=j2bubDO7j01vbNAmXQgBiyg9NxSZoGkGCGyubhjxGYo=; b=pu2pyV+HgSJsb+
+	OCyRMSCxYC/y6VzBzvyumxRnMdSE218l4QHz/wt7LDCcynNJzJ2a0n5YBIecrVxs/9Njx8X88LqHp
+	b4gE+hNzoaO91eayvohgTkNTzvJSsftvDeKIgoJowSPX/GHRQpXr/ouG2Yqkts9ssPMCBzsrnI5O0
+	5ozWvfelEW0Pjov9GF/5cP1mVJNjv/prATAF0qL+446Nct3TaT7zeQI2q2UUNx/HdNwkvDc/PuDGd
+	SWC944r+pL7Y7hSlRizr5gpIztoSxnush22V0Bx9e4WW+pFQs4CGNOpYyALSx7eButOMIJ45MBN6g
+	5XbcIICywrcTCBjH06Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxZjw-0004tc-Ut; Tue, 13 Aug 2019 16:33:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxZjg-0004sl-JP
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 16:33:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5AFD3337;
- Tue, 13 Aug 2019 09:33:23 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C64A03F706;
- Tue, 13 Aug 2019 09:33:20 -0700 (PDT)
-Date: Tue, 13 Aug 2019 17:33:18 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V16 00/13] PCI: tegra: Add Tegra194 PCIe support
-Message-ID: <20190813163318.GB5070@e121166-lin.cambridge.arm.com>
-References: <20190813113627.27251-1-vidyas@nvidia.com>
+	id 1hxZm6-0006To-Ml; Tue, 13 Aug 2019 16:35:54 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxZlr-0006Sw-7b
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 16:35:41 +0000
+Received: by mail-ot1-x341.google.com with SMTP id c7so2314836otp.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 09:35:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=fzB2ggJlh0N+RbsH1azT+YPoxdzqG3zdG3CDP2iDq1A=;
+ b=Wi9/mC5yulWJWA8OL9yRNSdmg86TTwQRjHIxZgGJXQXTXWY1RgB04RHBGtJxkRO4bf
+ urA+4xmvrgqERtVC6H7eu+h5dVTMCARHxeQqDkRF1tLCPjkKRIsCuHG0lKKCNrHaUnkW
+ /UQ4QUxNS6u7FJbT2Zi43xADWGN8MoHdbgIzlKE+23bXsr6b2pBuMC3t3QMg60kPmYuz
+ XFT1Ty4iiip+itZNva+5vrjez+FVS2GTlhSu8/7siDOzLuE55bkcKGD/Rt+GrBqi7LKu
+ pTAhxdDZ+Zi06m8SACepkm/xn8AgSnB7uOx3/C+KNAEJ9bbikNEfuY9hP8TPCF3e6qic
+ l25w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fzB2ggJlh0N+RbsH1azT+YPoxdzqG3zdG3CDP2iDq1A=;
+ b=Gfkzkljjt+qfcNBr5AnRmXlB+vDMKrkznoD4jMRm+KUHZ+qCgQ2zmuaB82QN4qgyBa
+ 6z3ed+BwjNwbyxcCZAe/UP8Nfq2WgVA1yHjPCDleu8x9Se2fqg94MpLQYarBXIFt66a4
+ NseeK6hlkytoxL/aHKhZt8ifMPig5q1VqS1BJbr0/ptiI1P8DQCwRMI2ZKrhVAxMoc6C
+ R6vwO6+b4W1qfbfFwQP0LVKbkGqsWE/g0X9m+o/jCOOAqmcu22A++sc10L35gkBn1tWn
+ LdsKnnOsf1FRucUPtPY7AtrRQgxxFFwYE7xaaUHpotrMRbWn1JiujDox1NiSPhy0Urhj
+ tgkg==
+X-Gm-Message-State: APjAAAV/43OhHbeYpsEefHX0wtDKUJ9AzFd+qZ5iqxo9r332f8gKvqSj
+ AuUqUVNcLoBgNNIZXGmdPsegMf8iTIeXX5fSQspSlnTrDcc=
+X-Google-Smtp-Source: APXvYqyxL+jripQJqwIkVPl+ZCHAArNKcyrcvRHPfSZDGGG/wGq0OQGkJKpNIB8aKn/fDZQh37VaPdgNU4AcXI3pybc=
+X-Received: by 2002:a6b:720e:: with SMTP id n14mr42955425ioc.139.1565714137167; 
+ Tue, 13 Aug 2019 09:35:37 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190813113627.27251-1-vidyas@nvidia.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <cover.1565188228.git.ilubashe@akamai.com>
+ <bd8763b72ed4d58d0b42d44fbc7eb474d32e53a3.1565188228.git.ilubashe@akamai.com>
+ <20190812202251.GG9280@kernel.org> <20190812202706.GH9280@kernel.org>
+ <20190812202947.GI9280@kernel.org>
+ <CANLsYkwjdhzVMwrWboTTOw+P3NajtoswxfxhodK0DdeexFCR3w@mail.gmail.com>
+ <20190813132349.GB12299@kernel.org>
+In-Reply-To: <20190813132349.GB12299@kernel.org>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Tue, 13 Aug 2019 10:35:26 -0600
+Message-ID: <CANLsYkynrTs4TouDs2=beEigOh6Ptatga_-WjE-FdC1ecKWyWg@mail.gmail.com>
+Subject: Re: [PATCH v3 4/4] perf: Use CAP_SYS_ADMIN instead of euid==0 with
+ ftrace
+To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_093324_737145_28F06901 
-X-CRM114-Status: GOOD (  23.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190813_093539_308274_2337DC62 
+X-CRM114-Status: GOOD (  27.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,162 +96,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, mperttunen@nvidia.com,
- mmaddireddy@nvidia.com, linux-pci@vger.kernel.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, kthota@nvidia.com,
- kishon@ti.com, linux-tegra@vger.kernel.org, robh+dt@kernel.org,
- thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Alexey Budankov <alexey.budankov@linux.intel.com>,
+ Igor Lubashev <ilubashe@akamai.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ James Morris <jmorris@namei.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 05:06:14PM +0530, Vidya Sagar wrote:
-> Tegra194 has six PCIe controllers based on Synopsys DesignWare core.
-> There are two Universal PHY (UPHY) blocks with each supporting 12(HSIO:
-> Hisg Speed IO) and 8(NVHS: NVIDIA High Speed) lanes respectively.
-> Controllers:0~4 use UPHY lanes from HSIO brick whereas Controller:5 uses
-> UPHY lanes from NVHS brick. Lane mapping in HSIO UPHY brick to each PCIe
-> controller (0~4) is controlled in XBAR module by BPMP-FW. Since PCIe
-> core has PIPE interface, a glue module called PIPE-to-UPHY (P2U) is used
-> to connect each UPHY lane (applicable to both HSIO and NVHS UPHY bricks)
-> to PCIe controller
-> This patch series
-> - Adds support for P2U PHY driver
-> - Adds support for PCIe host controller
-> - Adds device tree nodes each PCIe controllers
-> - Enables nodes applicable to p2972-0000 platform
-> - Adds helper APIs in Designware core driver to get capability regs offset
-> - Adds defines for new feature registers of PCIe spec revision 4
-> - Makes changes in DesignWare core driver to get Tegra194 PCIe working
-> 
-> Testing done on P2972-0000 platform
-> - Able to get PCIe link up with on-board Marvel eSATA controller
-> - Able to get PCIe link up with NVMe cards connected to M.2 Key-M slot
-> - Able to do data transfers with both SATA drives and NVMe cards
-> - Able to perform suspend-resume sequence
-> 
-> Note
-> - Enabling x8 slot on P2972-0000 platform requires pinmux driver for Tegra194.
->   It is being worked on currently and hence Controller:5 (i.e. x8 slot) is
->   disabled in this patch series. A future patch series would enable this.
-> - This series is based on top of the following series
->   Jisheng's patches to add support to .remove() in Designware sub-system
->   https://patchwork.kernel.org/project/linux-pci/list/?series=98559
->   (Update: Jisheng's patches are now accepted and applied for v5.2)
->   My patches made on top of Jisheng's patches to export various symbols
->   http://patchwork.ozlabs.org/project/linux-pci/list/?series=115671
->   (Update: My above patch series is accepted and applied for v5.3)
->   Another patch of mine to enable BPMP-FW resume in noirq phase
->   http://patchwork.ozlabs.org/patch/1140973/
->   (This is already accepted)
-> 
-> V16:
-> * Added empty lines (cosmetic changes) where required in pcie-tegra194.c file
->   to address Lorenzo's review comments.
-> 
-> V15:
-> * Refactored pcie-tegra194.c code to call only tegra_bpmp_transfer() API
->   in both .probe() path and .resume_noirq() path.
-> 
-> V14:
-> * Addressed Lorenzo's review comments in pcie-tegra194.c file (Patch 13/13)
-> * Added a new patch to export dw_pcie_wait_for_link() API
-> 
-> V13:
-> * Addressed Bjorn's review comments for adding Gen-4 specific defines to pci_regs.h header file
-> 
-> V12:
-> * Modified the commit message of patch-3 in this series to address review
->   comments from Lorenzo
-> 
-> V11:
-> * Removed device-tree patches from the series as they are applied to relevant
->   Tegra specific trees by Thierry Reding.
-> * Included older Tegra chips to extend quirk that disables MSI interrupt being
->   used for Tegra PCIe root ports.
-> * Addressed review comments in P2U driver file.
-> 
-> V10:
-> * Used _relaxed() versions of readl() & writel()
-> 
-> V9:
-> * Made the drivers dependent on ARCH_TEGRA_194_SOC directly
-> * Addressed review comments from Dmitry
-> 
-> V8:
-> * Changed P2U driver file name from pcie-p2u-tegra194.c to phy-tegra194-p2u.c
-> * Addressed review comments from Thierry and Rob
-> 
-> V7:
-> * Took care of review comments from Rob
-> * Added a quirk to disable MSI for root ports
-> * Removed using pcie_pme_disable_msi() API in host controller driver
-> 
-> V6:
-> * Removed patch that exports pcie_bus_config symbol
-> * Took care of review comments from Thierry and Rob
-> 
-> V5:
-> * Removed redundant APIs in pcie-designware-ep.c file after moving them
->   to pcie-designware.c file based on Bjorn's review comments
-> 
-> V4:
-> * Rebased on top of linux-next top of the tree
-> * Addressed Gustavo's comments and added his Ack for some of the changes.
-> 
-> V3:
-> * Addressed review comments from Thierry
-> 
-> V2:
-> * Addressed review comments from Bjorn, Thierry, Jonathan, Rob & Kishon
-> * Added more patches in v2 series
-> 
-> Vidya Sagar (13):
->   PCI: Add #defines for some of PCIe spec r4.0 features
->   PCI: Disable MSI for Tegra root ports
->   PCI: dwc: Perform dbi regs write lock towards the end
->   PCI: dwc: Move config space capability search API
->   PCI: dwc: Add ext config space capability search API
->   PCI: dwc: Export dw_pcie_wait_for_link() API
->   dt-bindings: PCI: designware: Add binding for CDM register check
->   PCI: dwc: Add support to enable CDM register check
->   dt-bindings: Add PCIe supports-clkreq property
->   dt-bindings: PCI: tegra: Add device tree support for Tegra194
->   dt-bindings: PHY: P2U: Add Tegra194 P2U block
->   phy: tegra: Add PCIe PIPE2UPHY support
->   PCI: tegra: Add Tegra194 PCIe support
-> 
->  .../bindings/pci/designware-pcie.txt          |    5 +
->  .../bindings/pci/nvidia,tegra194-pcie.txt     |  155 ++
->  Documentation/devicetree/bindings/pci/pci.txt |    5 +
->  .../bindings/phy/phy-tegra194-p2u.txt         |   28 +
->  drivers/pci/controller/dwc/Kconfig            |   10 +
->  drivers/pci/controller/dwc/Makefile           |    1 +
->  .../pci/controller/dwc/pcie-designware-ep.c   |   37 +-
->  .../pci/controller/dwc/pcie-designware-host.c |   14 +-
->  drivers/pci/controller/dwc/pcie-designware.c  |   88 +
->  drivers/pci/controller/dwc/pcie-designware.h  |   12 +
->  drivers/pci/controller/dwc/pcie-tegra194.c    | 1631 +++++++++++++++++
->  drivers/pci/quirks.c                          |   53 +
->  drivers/phy/tegra/Kconfig                     |    7 +
->  drivers/phy/tegra/Makefile                    |    1 +
->  drivers/phy/tegra/phy-tegra194-p2u.c          |  120 ++
->  include/uapi/linux/pci_regs.h                 |   14 +-
->  16 files changed, 2139 insertions(+), 42 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
->  create mode 100644 Documentation/devicetree/bindings/phy/phy-tegra194-p2u.txt
->  create mode 100644 drivers/pci/controller/dwc/pcie-tegra194.c
->  create mode 100644 drivers/phy/tegra/phy-tegra194-p2u.c
-> 
+Hi Arnaldo,
 
-I have applied it to pci/tegra, subject to kbuild test validation,
-for v5.4.
+On Tue, 13 Aug 2019 at 07:23, Arnaldo Carvalho de Melo
+<arnaldo.melo@gmail.com> wrote:
+>
+> Em Mon, Aug 12, 2019 at 03:42:17PM -0600, Mathieu Poirier escreveu:
+> > On Mon, 12 Aug 2019 at 14:29, Arnaldo Carvalho de Melo
+> > <arnaldo.melo@gmail.com> wrote:
+> > >
+> > > Em Mon, Aug 12, 2019 at 05:27:06PM -0300, Arnaldo Carvalho de Melo escreveu:
+> > > > Em Mon, Aug 12, 2019 at 05:22:51PM -0300, Arnaldo Carvalho de Melo escreveu:
+> > > > > Em Wed, Aug 07, 2019 at 10:44:17AM -0400, Igor Lubashev escreveu:
+> > > > > > @@ -281,7 +283,7 @@ static int __cmd_ftrace(struct perf_ftrace *ftrace, int argc, const char **argv)
+> > > > > >           .events = POLLIN,
+> > > > > >   };
+> > > > > >
+> > > > > > - if (geteuid() != 0) {
+> > > > > > + if (!perf_cap__capable(CAP_SYS_ADMIN)) {
+> > > > > >           pr_err("ftrace only works for root!\n");
+> > > > >
+> > > > > I guess we should update the error message too?
+> > > > >
+> > > >
+> > > > I.e. I applied this as a follow up patch:
+> > > >
+> > > > diff --git a/tools/perf/builtin-ftrace.c b/tools/perf/builtin-ftrace.c
+> > > > index 01a5bb58eb04..ba8b65c2f9dc 100644
+> > > > --- a/tools/perf/builtin-ftrace.c
+> > > > +++ b/tools/perf/builtin-ftrace.c
+> > > > @@ -284,7 +284,12 @@ static int __cmd_ftrace(struct perf_ftrace *ftrace, int argc, const char **argv)
+> > > >       };
+> > > >
+> > > >       if (!perf_cap__capable(CAP_SYS_ADMIN)) {
+> > > > -             pr_err("ftrace only works for root!\n");
+> > > > +             pr_err("ftrace only works for %s!\n",
+> > > > +#ifdef HAVE_LIBCAP_SUPPORT
+> > > > +             "users with the SYS_ADMIN capability"
+> > > > +#else
+> > > > +             "root"
+> > > > +#endif
+> > >
+> > >                 );
+> > >
+> > > :-)
+> > >
+> > > >               return -1;
+> > > >       }
+> > > >
+> > >
+> > > I've pushed the whole set to my tmp.perf/cap branch, please chec
+> >
+> > Please hold on before moving further - I'm getting a segmentation
+> > fault on ARM64 that I'm still trying to figure out.
+>
+> This is just sitting in my tmp branch, and in my local perf/core branch,
+> so that I can test it with the containers, etc.
+>
+> Is this related to the following fix?
 
-Thanks,
-Lorenzo
+That is the first thing I thought about but no, it has nothing to do
+with it.  Patch 3/4 is where the problem shows up.  The code in the
+patch is fine, it is the repercussion it has on other part that needs
+to be investigated.
+
+Right now I see that kmap->ref_reloc_sym is NULL here [1] when tracing
+with anything else than the 'u' option.  I am currently investigating
+the problem.
+
+Igor, please see if you can reproduce on QEMU or an ARM64 based platform.
+
+[1] https://elixir.bootlin.com/linux/v5.3-rc4/source/tools/perf/util/event.c#L945
+
+>
+> commit 3e70008a6021fffd2cd1614734603ea970773060
+> Author: Leo Yan <leo.yan@linaro.org>
+> Date:   Fri Aug 9 18:47:52 2019 +0800
+>
+>     perf trace: Fix segmentation fault when access syscall info on arm64
+>
+>     'perf trace' reports the segmentation fault as below on Arm64:
+>
+>       # perf trace -e string -e augmented_raw_syscalls.c
+>       LLVM: dumping tools/perf/examples/bpf/augmented_raw_syscalls.o
+>       perf: Segmentation fault
+>       Obtained 12 stack frames.
+>       perf(sighandler_dump_stack+0x47) [0xaaaaac96ac87]
+>       linux-vdso.so.1(+0x5b7) [0xffffadbeb5b7]
+>       /lib/aarch64-linux-gnu/libc.so.6(strlen+0x10) [0xfffface7d5d0]
+>       /lib/aarch64-linux-gnu/libc.so.6(_IO_vfprintf+0x1ac7) [0xfffface49f97]
+>       /lib/aarch64-linux-gnu/libc.so.6(__vsnprintf_chk+0xc7) [0xffffacedfbe7]
+>       perf(scnprintf+0x97) [0xaaaaac9ca3ff]
+>       perf(+0x997bb) [0xaaaaac8e37bb]
+>       perf(cmd_trace+0x28e7) [0xaaaaac8ec09f]
+>       perf(+0xd4a13) [0xaaaaac91ea13]
+>       perf(main+0x62f) [0xaaaaac8a147f]
+>       /lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0xe3) [0xfffface22d23]
+>       perf(+0x57723) [0xaaaaac8a1723]
+>       Segmentation fault
+>
+>     This issue is introduced by commit 30a910d7d3e0 ("perf trace:
+>     Preallocate the syscall table"), it allocates trace->syscalls.table[]
+>     array and the element count is 'trace->sctbl->syscalls.nr_entries'; but
+>     on Arm64, the system call number is not continuously used; e.g. the
+>     syscall maximum id is 436 but the real entries is only 281.
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
