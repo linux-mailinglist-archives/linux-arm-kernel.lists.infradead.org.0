@@ -2,61 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37D0B8BA09
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 15:24:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 471468BA32
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 15:31:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=60SrPSqlYIbbUZNSeWSCmuRRDDp5s7xCR0785bVv3M8=; b=Ji2Dzag+n89Dor
-	8Pn6qb8rJF38LExCPTJ1g88lsT7nlqIRV7bct0y8UlyyzLT75aYn1jmUCVr7PnDCH7JzoNyfWsrdM
-	HNGjGq1inhgo/QoR2A2vPnCD3Ojj0acaK/0Rq7EMtxTMMa8WOZ20NA0pPf4Y1w42dr/oYnM6cv32y
-	S67BMtF9Y5arqIwTwjqOvNt+uvJQ1EIFkn9rLVe/Lcrl/mGI+QzopjvQTn4pNCO1Ix72cotmYXLLD
-	fXsuy+2MY/ksWFaovz0dqy43cx5pbrCDwxfdkFMfuNeA2B99UXMHn8oPFMsfIY4raFRn8px0KOJJZ
-	yWQ+Zrn+7lIOJqoVx6Dw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QHofXpmtijF6EP83nmI78Zh8YDH+KRVTzdMXYwuj/Hw=; b=qpY3+c/S2F0U4M
+	sEME5xyDF+V5UJTrzD3Jt1RBE9F2Ci+uEZVOU4e3cI8u/V1Z/JPULnObxM7mhK9XzGzlJrHmOIHwg
+	LO6nOAjbtYojYGz9pLhawZq+cEutSTxJ/WhbGcgmKM72VcF8ej/aLPreAsv5DXI/C/0IUbJhVOY46
+	DUA5BsoAY0cP6uivjf7jOAt2nXrCnA7PpvYR0X7pY4U3m5IImHkAh8bGBTF5Za9P4hl1m5GmO9dWE
+	R0SdVVnEsm7C4Nx0A7yLISO7pGMi7OtYai4XZpmL2YzCs6S9iEZ+H5JdvB+l2ki+0pC30zrY05xxk
+	A5jDNbJxT17fIju7Wn7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxWmY-0006CV-P0; Tue, 13 Aug 2019 13:24:10 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hxWtO-0003x9-Jh; Tue, 13 Aug 2019 13:31:14 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxWmN-0006CO-I3
- for linux-arm-kernel@bombadil.infradead.org; Tue, 13 Aug 2019 13:23:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=S1SWiFkQPLZW+Dt7K4dnQXpIbGcb4i0q4bJIJoaJpxY=; b=bLLw2tq7Z/yx1vXpfdaxQdlnN
- GX7L1UBsuaSgBGy9iDMOmYwmOkNYffkKOaQR6S3mOqddAapuDEMCtaycVta8Fcnty2YGX30AcRJn5
- jWexVhSCNbkw8WMQZMz02fKRD+vTn9aVu65tEvOVlEKzc3gNFaF/FgBnXjomMgg3A5M1kbDv/YNIQ
- BNwCWgPQDkE/x0GLBx6YKXy8eHr6e2HHSOq3Odycfnn6DmhPvocdz3VRQ8OB8gQMo3RYg6BaqF0Fl
- Wg3eL0f49hU/B8GkPmmDnchxU8Mx+tR9N/8ZSH9i8rwfILQlLWa6nltFsnhHZyO6lKq33MpvF4vSi
- O58+BkEaQ==;
-Received: from [179.97.35.50] (helo=quaco.ghostprotocols.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hxWmJ-0002jc-Sa; Tue, 13 Aug 2019 13:23:57 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 7E2A340340; Tue, 13 Aug 2019 10:23:49 -0300 (-03)
-Date: Tue, 13 Aug 2019 10:23:49 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH v3 4/4] perf: Use CAP_SYS_ADMIN instead of euid==0 with
- ftrace
-Message-ID: <20190813132349.GB12299@kernel.org>
-References: <cover.1565188228.git.ilubashe@akamai.com>
- <bd8763b72ed4d58d0b42d44fbc7eb474d32e53a3.1565188228.git.ilubashe@akamai.com>
- <20190812202251.GG9280@kernel.org>
- <20190812202706.GH9280@kernel.org>
- <20190812202947.GI9280@kernel.org>
- <CANLsYkwjdhzVMwrWboTTOw+P3NajtoswxfxhodK0DdeexFCR3w@mail.gmail.com>
+ id 1hxWtD-0003wl-GI
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 13:31:05 +0000
+X-Originating-IP: 92.137.69.152
+Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
+ [92.137.69.152])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 5B75740007;
+ Tue, 13 Aug 2019 13:30:52 +0000 (UTC)
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
+Subject: [PATCH v2] clocksource/drivers/tcb_clksrc: register delay timer
+Date: Tue, 13 Aug 2019 15:30:50 +0200
+Message-Id: <20190813133050.20482-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANLsYkwjdhzVMwrWboTTOw+P3NajtoswxfxhodK0DdeexFCR3w@mail.gmail.com>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.12.0 (2019-05-25)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190813_063103_693946_C7AA9357 
+X-CRM114-Status: GOOD (  12.39  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.7 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.194 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,107 +59,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Alexey Budankov <alexey.budankov@linux.intel.com>,
- Igor Lubashev <ilubashe@akamai.com>,
- Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- James Morris <jmorris@namei.org>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Alexander Dahl <ada@thorsis.com>,
+ Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
+ linux-kernel@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Mon, Aug 12, 2019 at 03:42:17PM -0600, Mathieu Poirier escreveu:
-> On Mon, 12 Aug 2019 at 14:29, Arnaldo Carvalho de Melo
-> <arnaldo.melo@gmail.com> wrote:
-> >
-> > Em Mon, Aug 12, 2019 at 05:27:06PM -0300, Arnaldo Carvalho de Melo escreveu:
-> > > Em Mon, Aug 12, 2019 at 05:22:51PM -0300, Arnaldo Carvalho de Melo escreveu:
-> > > > Em Wed, Aug 07, 2019 at 10:44:17AM -0400, Igor Lubashev escreveu:
-> > > > > @@ -281,7 +283,7 @@ static int __cmd_ftrace(struct perf_ftrace *ftrace, int argc, const char **argv)
-> > > > >           .events = POLLIN,
-> > > > >   };
-> > > > >
-> > > > > - if (geteuid() != 0) {
-> > > > > + if (!perf_cap__capable(CAP_SYS_ADMIN)) {
-> > > > >           pr_err("ftrace only works for root!\n");
-> > > >
-> > > > I guess we should update the error message too?
-> > > >
-> > >
-> > > I.e. I applied this as a follow up patch:
-> > >
-> > > diff --git a/tools/perf/builtin-ftrace.c b/tools/perf/builtin-ftrace.c
-> > > index 01a5bb58eb04..ba8b65c2f9dc 100644
-> > > --- a/tools/perf/builtin-ftrace.c
-> > > +++ b/tools/perf/builtin-ftrace.c
-> > > @@ -284,7 +284,12 @@ static int __cmd_ftrace(struct perf_ftrace *ftrace, int argc, const char **argv)
-> > >       };
-> > >
-> > >       if (!perf_cap__capable(CAP_SYS_ADMIN)) {
-> > > -             pr_err("ftrace only works for root!\n");
-> > > +             pr_err("ftrace only works for %s!\n",
-> > > +#ifdef HAVE_LIBCAP_SUPPORT
-> > > +             "users with the SYS_ADMIN capability"
-> > > +#else
-> > > +             "root"
-> > > +#endif
-> >
-> >                 );
-> >
-> > :-)
-> >
-> > >               return -1;
-> > >       }
-> > >
-> >
-> > I've pushed the whole set to my tmp.perf/cap branch, please chec
-> 
-> Please hold on before moving further - I'm getting a segmentation
-> fault on ARM64 that I'm still trying to figure out.
+Implement and register delay timer to allow get_cycles() to work properly.
 
-This is just sitting in my tmp branch, and in my local perf/core branch,
-so that I can test it with the containers, etc.
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+---
 
-Is this related to the following fix?
+Change in v2:
+ - depend on ARM to prevent build issue
 
-commit 3e70008a6021fffd2cd1614734603ea970773060
-Author: Leo Yan <leo.yan@linaro.org>
-Date:   Fri Aug 9 18:47:52 2019 +0800
+ drivers/clocksource/Kconfig           |  2 +-
+ drivers/clocksource/timer-atmel-tcb.c | 18 ++++++++++++++++++
+ 2 files changed, 19 insertions(+), 1 deletion(-)
 
-    perf trace: Fix segmentation fault when access syscall info on arm64
-
-    'perf trace' reports the segmentation fault as below on Arm64:
-
-      # perf trace -e string -e augmented_raw_syscalls.c
-      LLVM: dumping tools/perf/examples/bpf/augmented_raw_syscalls.o
-      perf: Segmentation fault
-      Obtained 12 stack frames.
-      perf(sighandler_dump_stack+0x47) [0xaaaaac96ac87]
-      linux-vdso.so.1(+0x5b7) [0xffffadbeb5b7]
-      /lib/aarch64-linux-gnu/libc.so.6(strlen+0x10) [0xfffface7d5d0]
-      /lib/aarch64-linux-gnu/libc.so.6(_IO_vfprintf+0x1ac7) [0xfffface49f97]
-      /lib/aarch64-linux-gnu/libc.so.6(__vsnprintf_chk+0xc7) [0xffffacedfbe7]
-      perf(scnprintf+0x97) [0xaaaaac9ca3ff]
-      perf(+0x997bb) [0xaaaaac8e37bb]
-      perf(cmd_trace+0x28e7) [0xaaaaac8ec09f]
-      perf(+0xd4a13) [0xaaaaac91ea13]
-      perf(main+0x62f) [0xaaaaac8a147f]
-      /lib/aarch64-linux-gnu/libc.so.6(__libc_start_main+0xe3) [0xfffface22d23]
-      perf(+0x57723) [0xaaaaac8a1723]
-      Segmentation fault
-
-    This issue is introduced by commit 30a910d7d3e0 ("perf trace:
-    Preallocate the syscall table"), it allocates trace->syscalls.table[]
-    array and the element count is 'trace->sctbl->syscalls.nr_entries'; but
-    on Arm64, the system call number is not continuously used; e.g. the
-    syscall maximum id is 436 but the real entries is only 281.
-
+diff --git a/drivers/clocksource/Kconfig b/drivers/clocksource/Kconfig
+index 5e9317dc3d39..a642c23b2fba 100644
+--- a/drivers/clocksource/Kconfig
++++ b/drivers/clocksource/Kconfig
+@@ -429,7 +429,7 @@ config ATMEL_ST
+ 
+ config ATMEL_TCB_CLKSRC
+ 	bool "Atmel TC Block timer driver" if COMPILE_TEST
+-	depends on HAS_IOMEM
++	depends on ARM && HAS_IOMEM
+ 	select TIMER_OF if OF
+ 	help
+ 	  Support for Timer Counter Blocks on Atmel SoCs.
+diff --git a/drivers/clocksource/timer-atmel-tcb.c b/drivers/clocksource/timer-atmel-tcb.c
+index 6ed31f9def7e..7427b07495a8 100644
+--- a/drivers/clocksource/timer-atmel-tcb.c
++++ b/drivers/clocksource/timer-atmel-tcb.c
+@@ -6,6 +6,7 @@
+ #include <linux/irq.h>
+ 
+ #include <linux/clk.h>
++#include <linux/delay.h>
+ #include <linux/err.h>
+ #include <linux/ioport.h>
+ #include <linux/io.h>
+@@ -125,6 +126,18 @@ static u64 notrace tc_sched_clock_read32(void)
+ 	return tc_get_cycles32(&clksrc);
+ }
+ 
++static struct delay_timer tc_delay_timer;
++
++static unsigned long tc_delay_timer_read(void)
++{
++	return tc_get_cycles(&clksrc);
++}
++
++static unsigned long notrace tc_delay_timer_read32(void)
++{
++	return tc_get_cycles32(&clksrc);
++}
++
+ #ifdef CONFIG_GENERIC_CLOCKEVENTS
+ 
+ struct tc_clkevt_device {
+@@ -432,6 +445,7 @@ static int __init tcb_clksrc_init(struct device_node *node)
+ 		/* setup ony channel 0 */
+ 		tcb_setup_single_chan(&tc, best_divisor_idx);
+ 		tc_sched_clock = tc_sched_clock_read32;
++		tc_delay_timer.read_current_timer = tc_delay_timer_read32;
+ 	} else {
+ 		/* we have three clocks no matter what the
+ 		 * underlying platform supports.
+@@ -444,6 +458,7 @@ static int __init tcb_clksrc_init(struct device_node *node)
+ 		/* setup both channel 0 & 1 */
+ 		tcb_setup_dual_chan(&tc, best_divisor_idx);
+ 		tc_sched_clock = tc_sched_clock_read;
++		tc_delay_timer.read_current_timer = tc_delay_timer_read;
+ 	}
+ 
+ 	/* and away we go! */
+@@ -458,6 +473,9 @@ static int __init tcb_clksrc_init(struct device_node *node)
+ 
+ 	sched_clock_register(tc_sched_clock, 32, divided_rate);
+ 
++	tc_delay_timer.freq = divided_rate;
++	register_current_timer_delay(&tc_delay_timer);
++
+ 	return 0;
+ 
+ err_unregister_clksrc:
+-- 
+2.21.0
 
 
 _______________________________________________
