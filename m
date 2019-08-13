@@ -2,56 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7328E8C036
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 20:12:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E32E48C05E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 20:18:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HI5q/Q67C+YAKq6S5a68JXlgXLaPXVwExmS4w2dA9HY=; b=DfoKyrcGhF6dTb
-	DXAJG5ET4xWfxOT6c5iwuKKFp7aTZ8OmGTEY6ifu1Gg3wpuDEWV2EzyCpsD1R5vpw83pP+LZU5oTu
-	duUbP5EAZ9BJBNKQDs8ifNP5/w3iSlVplapsLDwGdIMmHhJ6rwHnwy7tMwGyyAKs7MljZfgzoCix9
-	Yvfm8ob1ww4cbPEuVuppV1eY3BaTX5G5jSZrDBgX5tr1uBSP8PZ7Bz8qdo4zw7/cQDZ9AEBhtWYAq
-	tCveyeW0w5knH2NM6TeMR1gbFb5069yb77ZnOQUEombzCGHkGxb9/Z3F7ZlRNVQ3617K8uD+SnBLG
-	q3cEndohcpyHvam1+APQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=YD4LKjQ+A0FmbHHinSHmahEG6LQN4JuZSsfUZQxjbQA=; b=mXX
+	mMgZYZIYSSxG2mQv5XO5wZq1xTuRp1/g6n5PaQs36Z0+YGwqgT3vu0uRsDYGauDbtsin7FjZWq06o
+	4F6qnfj4a2IIYn1zonQWYobwwMTmDoOVfbzu8eO5pWm8AAa+4h3v6n6mJZcXKlOXWzbqSPmwT1UfQ
+	exjg0meLe+xhCALK8VDK+fjhH9gPLIDLpjcn9/vZtUkg//BqoWEIC8l1RI85BTyBWlhhbL9CRFVQ8
+	HA0QCzHGMz3sNsH3ZBb/4HG7Swfp0SaVbwdThYkYMmDyDle5f7nIlpn6CQbxHfCiLLlptTL7I9VxW
+	IH+Hh/BeniCHLPHfXKDL5wUJkRIGujw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxbHP-0003bm-8X; Tue, 13 Aug 2019 18:12:19 +0000
-Received: from emh06.mail.saunalahti.fi ([62.142.5.116])
+	id 1hxbNi-0005jP-FX; Tue, 13 Aug 2019 18:18:50 +0000
+Received: from mout.gmx.net ([212.227.17.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxbHC-0003bH-L2
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 18:12:09 +0000
-Received: from darkstar.musicnaut.iki.fi (85-76-96-82-nat.elisa-mobile.fi
- [85.76.96.82])
- by emh06.mail.saunalahti.fi (Postfix) with ESMTP id 3918430016;
- Tue, 13 Aug 2019 21:11:59 +0300 (EEST)
-Date: Tue, 13 Aug 2019 21:11:58 +0300
-From: Aaro Koskinen <aaro.koskinen@iki.fi>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 14/22] ARM: omap1: use pci_ioremap_io() for omap_cf
-Message-ID: <20190813181158.GA26798@darkstar.musicnaut.iki.fi>
-References: <20190808212234.2213262-1-arnd@arndb.de>
- <20190808212234.2213262-15-arnd@arndb.de>
- <20190813103605.GL52127@atomide.com>
- <CAK8P3a0E+QUn9wcP5Obv-FitWyXCFwcp+oPConeO2p-NV1rqsw@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a0E+QUn9wcP5Obv-FitWyXCFwcp+oPConeO2p-NV1rqsw@mail.gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+ id 1hxbNY-0005ii-HZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 18:18:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1565720284;
+ bh=Vq2Rwn6ZpDvdbJzC++Agdo9RfM34OqXBHgokRaHCjmc=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=WTj/ir7EWEPBhjOfci3nIob7y7Q1LoWiIMlCuv24p4jOapHe13C8kQP1MU3RQP9xU
+ vVQ+vqLusWjOoEXRPfVS9EXx7wyyJTTjfgTSEPwe9oZdokO58Uz1A2VYizXKlaN7Dg
+ x2cv1Dd1xOY0LA4dMH2gYzdZ2M9ztOBzoOuXZECc=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from localhost.localdomain ([37.4.249.106]) by mail.gmx.com
+ (mrgmx102 [212.227.17.168]) with ESMTPSA (Nemesis) id
+ 0MSY2q-1hpnKh3mBI-00Ragk; Tue, 13 Aug 2019 20:18:04 +0200
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Jean Delvare <jdelvare@suse.com>, Guenter Roeck <linux@roeck-us.net>,
+ "David S. Miller" <davem@davemloft.net>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>
+Subject: [PATCH 1/3] nvmem: mxs-ocotp: update MODULE_AUTHOR() email address
+Date: Tue, 13 Aug 2019 20:17:27 +0200
+Message-Id: <1565720249-6549-1-git-send-email-wahrenst@gmx.net>
+X-Mailer: git-send-email 2.7.4
+X-Provags-ID: V03:K1:ggoDPxD3GY7PepSw+ctdpLrl9Y0S1aRCjm4mFCxJFfmatdyhLMv
+ gQKCUttMR8MgugL3SYZ2iq96h7Lf+bYGIB4yBaRwN5Vk8ECnW/3ra/jpu88CzXnkGskboOV
+ tt1BYCRwY4h5TfJGVwZObZWKs/kHuVwwLogYL8GQRhwOnNMB7WBC2c04E8ZGgxUXDpSBYJE
+ inPKHKeIaVdlIIdO493Hw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:FquO+c5eQAc=:oWHph4cQRWLnygCC2s+DAJ
+ KzLKi4uLouuuF8GVsW+JuZf+JT8qOhhX+M8HHg4ISWTwTggQ/88i4v1z1L8rOqtpjr8FzQbqn
+ tVzN8dsDs0Qs0INEuJB9JoAjZZgABQJ/8GoLzf4fkrHSHchjM8tZscYGdedU5Hcz82pMq2x3B
+ LhnwImhLhZauw1zbCReTPhleCxPzUvHj7Slg4Jy8Hr03QA5s0W/YdOuU8xtVe5Y0EHxC7LsT7
+ Dn22kRzsngfOIV3iP93/WslGLrF57bApI+gdn9AlsKkaWWG8mMuD3Lu7HGumX1ld5zTgWhJc1
+ Ml/bU6gCCn3RaAz3tWW8UGL1qjNHfJRpLVA3Ig3vVsdQX2UKQFQK2jTWL80Qo+3JNq8HWAbDA
+ Ow9zEBqHmFVMn3k4x6DRCwL+kDFl+CZQKTjJ1Q085MPNb2Qrvu0/3u2MZEEADTdQpDIdmkT3I
+ eemDTG7WQOEaqgSxTJXGrrez3WVBTQzA/lbFulhiyM9uygyRxNx0L75EydKZB/qSwqjZKaS5z
+ JgSgoHIiUZeFPADSUKUNpoyhSHcZsJc6lIGRqbH4HfO7/SZzPc4d6KhPBdWgZtizGC+IQL3NO
+ yViNAEzK0E3o05spkTh6ShkHhlyXt1gGNePwvNo1Ie42g7VzJ0GmVaLpesQJJjYlRi013xGH/
+ uZ7PVe6J0JTGLL5yq8EyOkhn8A1dJxm13EUijNTtX8LT5lYCJ9yQaTcnE6OpkKQO4DzPDzqpC
+ QakBF27rkY1YIq0r1xBTS12aspTRWi2q7ac/0QZHYZypPKXU8Oyr5jAMDJw/o7rL4NrP3/3qR
+ vxaU+UMgImqd69i65UMH+jNhNXgsXWVGBV2J7HpEXN/oOI0kg8NeWCLWiX/UXFmRtLRQX43Ax
+ Vxz6RqcJvqQ6JtmBQycSd5/iplhipnsShUUbvTn0wM5ImSI8qSJ+83ksDxUw5p+cyQJbq8YQ1
+ SvG1+vMhd2hlk/LujgOnultEYTWu2V7UlrcdGYBOAsKmFC0C1SKDoIKV+FoKtcaNHsdSFoy3E
+ 2wqSi6pmgWoKFmF/UqpSLXe6ZbE0XaOweQ0V0CHPz+RRziCNhCeEzkxPjHBB5O4vt9v+TXJaA
+ AJZAdQDsOtgICLm8SCTzJimj0pkZVXbbQL077tNPeQ8zAomIyHyv0bs1tOY7lqrEahzfNvBSP
+ EAa1T7vDowUaDmVZ+SJ49fZkOmfm+aagWgAslo6bf+tAFP+g==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_111207_028116_01A94950 
-X-CRM114-Status: GOOD (  18.85  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190813_111840_994699_59A9FF3E 
+X-CRM114-Status: GOOD (  10.39  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [62.142.5.116 listed in list.dnswl.org]
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.20 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,99 +100,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Tony Lindgren <tony@atomide.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Dominik Brodowski <linux@dominikbrodowski.net>,
- Tomi Valkeinen <tomi.valkeinen@ti.com>,
- linux-omap <linux-omap@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-hwmon@vger.kernel.org, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Stefan Wahren <wahrenst@gmx.net>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+The email address listed in MODULE_AUTHOR() will be disabled in the
+near future. Replace it with my private one.
 
-On Tue, Aug 13, 2019 at 01:02:16PM +0200, Arnd Bergmann wrote:
-> On Tue, Aug 13, 2019 at 12:36 PM Tony Lindgren <tony@atomide.com> wrote:
-> > * Arnd Bergmann <arnd@arndb.de> [190808 21:34]:
-> > > The ISA I/O space handling in omap_cf is incompatible with
-> > > PCI drivers in a multiplatform kernel, and requires a custom
-> > > mach/io.h.
-> > >
-> > > Change the driver to use pci_ioremap_io() like PCI drivers do,
-> > > so the generic ioport access can work across platforms.
-> > >
-> > > To actually use that code, we have to select CONFIG_PCI
-> > > here.
-> > >
-> > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> >
-> > Looks like this series boots for me on 5912osk up to this
-> > patch
-> 
-> Ok, that's something. Thanks for testing!
-> 
-> >, but this patch breaks booting somehow.
-> >
-> > Any ideas for fixes?
-> 
-> I can think of multiple possible issues:
-> 
-> - I force CONFIG_PCI to be enabled here in order to keep the
->   asm/io.h logic unchanged. If PCI support in itself is an issue,
->   then turning on CONFIG_PCI without the rest of this patch
->   should also break.
+Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+---
+ drivers/nvmem/mxs-ocotp.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-The board dies early, probably in pci_reserve_io():
+diff --git a/drivers/nvmem/mxs-ocotp.c b/drivers/nvmem/mxs-ocotp.c
+index c34d9fe..8e4898d 100644
+--- a/drivers/nvmem/mxs-ocotp.c
++++ b/drivers/nvmem/mxs-ocotp.c
+@@ -200,6 +200,6 @@ static struct platform_driver mxs_ocotp_driver = {
+ };
 
-Starting kernel ...
+ module_platform_driver(mxs_ocotp_driver);
+-MODULE_AUTHOR("Stefan Wahren <stefan.wahren@i2se.com>");
++MODULE_AUTHOR("Stefan Wahren <wahrenst@gmx.net");
+ MODULE_DESCRIPTION("driver for OCOTP in i.MX23/i.MX28");
+ MODULE_LICENSE("GPL v2");
+--
+2.7.4
 
-[    0.000000] Booting Linux on physical CPU 0x0
-[    0.000000] Linux version 5.3.0-rc4-osk-los_80efa+-00028-g09f6f22a63e9 (aaro@amd-fx-6350) (gcc version 8.3.0 (GCC)) #1 Tue Aug 13 20:50:11 EEST 2019
-[    0.000000] CPU: ARM926EJ-S [41069263] revision 3 (ARMv5TEJ), cr=0005317f
-[    0.000000] CPU: VIVT data cache, VIVT instruction cache
-[    0.000000] Machine: TI-OSK
-[    0.000000] Ignoring tag cmdline (using the default kernel command line)
-[    0.000000] printk: bootconsole [earlycon0] enabled
-[    0.000000] Memory policy: Data cache writeback
-[    0.000000] Internal error: Oops - undefined instruction: 0 [#1] ARM
-[    0.000000] CPU: 0 PID: 0 Comm: swapper Not tainted 5.3.0-rc4-osk-los_80efa+-00028-g09f6f22a63e9 #1
-[    0.000000] Hardware name: TI-OSK
-[    0.000000] PC is at vm_area_add_early+0x1c/0x74
-[    0.000000] LR is at 0x200000
-[    0.000000] pc : [<c0419310>]    lr : [<00200000>]    psr: 800000d3
-[    0.000000] sp : c05b5f14  ip : ff000000  fp : c05bad68
-[    0.000000] r10: fefb0000  r9 : ffe00000  r8 : 001fffff
-[    0.000000] r7 : c05bad88  r6 : c05db3d4  r5 : c05ca678  r4 : c1ffcf60
-[    0.000000] r3 : c1ffcfd8  r2 : c1ffcfb0  r1 : fefb0000  r0 : c1ffcf60
-[    0.000000] Flags: Nzcv  IRQs off  FIQs off  Mode SVC_32  ISA ARM  Segment none
-[    0.000000] Control: 0005317f  Table: 10004000  DAC: 00000053
-[    0.000000] Process swapper (pid: 0, stack limit = 0x(ptrval))
-[    0.000000] Stack: (0xc05b5f14 to 0xc05b6000)
-[    0.000000] 5f00:                                              c0411724 ff000000 c041260c
-[    0.000000] 5f20: 00010000 00010600 c0428794 c05b7008 c042b000 00600000 00000000 ffff1000
-[    0.000000] 5f40: 00011fff 00001000 00000007 00000000 00000000 c0428794 c0008000 c060ba7c
-[    0.000000] 5f60: c0429a38 c05b5fc4 c05ca818 00053177 00000001 c04101fc 0000006c 0005317f
-[    0.000000] 5f80: 00000000 00000000 00000053 00003135 c05b7008 c05b7000 41069263 00053177
-[    0.000000] 5fa0: 00000001 c040da10 00000000 00000000 00000000 00000000 00000000 00000000
-[    0.000000] 5fc0: 00000000 c0429a38 00000000 00000000 00000000 c040d330 00000053 00003135
-[    0.000000] 5fe0: 00000203 10000100 41069263 00053177 00000000 00000000 00000000 00000000
-[    0.000000] [<c0419310>] (vm_area_add_early) from [<c0411724>] (add_static_vm_early+0xc/0x5c)
-[    0.000000] [<c0411724>] (add_static_vm_early) from [<c041260c>] (paging_init+0x2e0/0x5b4)
-[    0.000000] [<c041260c>] (paging_init) from [<c04101fc>] (setup_arch+0x4c8/0x7cc)
-[    0.000000] [<c04101fc>] (setup_arch) from [<c040da10>] (start_kernel+0x58/0x478)
-[    0.000000] [<c040da10>] (start_kernel) from [<00000000>] (0x0)
-[    0.000000] Code: e3530000 059f2058 05923000 0a000006 (e7f001f2) 
-[    0.000000] random: get_random_bytes called from init_oops_id+0x20/0x3c with crng_init=0
-[    0.000000] ---[ end trace 0000000000000000 ]---
-[    0.000000] Kernel panic - not syncing: Attempted to kill the idle task!
-[    0.000000] ---[ end Kernel panic - not syncing: Attempted to kill the idle task! ]---
-
-A.
 
 _______________________________________________
 linux-arm-kernel mailing list
