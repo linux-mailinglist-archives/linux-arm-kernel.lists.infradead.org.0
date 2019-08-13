@@ -2,84 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E013F8BDF2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:05:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 221828BE67
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:24:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BWOlvNVKAsRXpj6RkTAwfhZtLngEoACJ6kMMbnH822Y=; b=Ni19gDYlrOwGGX
-	8XUUclS0ptvb5fE6VW5f7FGaFLwUuFcUeIjJt3WdPuCAkORGDKeM5Q/xjplkakhwaSMXmWh1EGipo
-	KweOfhG21GDHf3syTUzD+m/JJZQNN+UjXZpFX7ArYY6flGHxXadMU6G5W++KxxqKmv6Lz6rqRfj89
-	rFvqU52ymYhcCxKkWwzgiSiAqLpXf8EJfst0msLoGwprzdUWJR0lSfHpy3SLQM1xHxQ2ELz+F7fFi
-	y1tJ7FhX/WCUW+DxY/wTN6/KUMdpbJYb9A2P5b2zlZaiUC8bOyL2CJNpddFVGTQae8W0Y0k7yFMxs
-	hmaKaPcBs1stovTBiiHA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9Z0GVlVcSMhdVOEXts912DfatsXvQjP4StjE59MnIcU=; b=PqN
+	DFMi3OCFWiqk8ZdvPtn8iOhgLcpIlzwB2NJiDdxpKjMQxBG5dody0CRTDl53B89EBAPXTwFNEDgBh
+	bon9uA5OQSj993Mqz3JmSevqIUxvBZvn0Y0Mk+Im5HRetufqgm+175Lsba9dpBP6dikelh2NonnTq
+	MadRp1eL340edGIjkYI48o0ivOSgjpfx42XyO5AvqDMBBDqFh3qXnwJy6oune7nFPBELwr1xZP2Cg
+	7Z4QYxqiNpboGgTqRHpdC5JA9f/ufijCfu+vSso6voumGeurMXFJ07G6BNXKWOjGgBvMPk0nu2Wfr
+	BRzsKi42fBJDH5nTRerfUdzim1oiW9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxZIG-00027d-UL; Tue, 13 Aug 2019 16:05:05 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1hxZb6-0002Px-Me; Tue, 13 Aug 2019 16:24:32 +0000
+Received: from mout.gmx.net ([212.227.15.18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxZI4-00026y-CN
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 16:04:53 +0000
-Received: by mail-ot1-f66.google.com with SMTP id g17so23526346otl.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 09:04:50 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Yg/tdFt298Hyk/OxrmEU7+mFLMHSrwTggBrmycRWebA=;
- b=MEBGIQPrPdalvCGNQbWmbsXSRx2ACMjQY5XgDXpS2imviY7cONuXVljAetnhzJFEon
- fb3YccTG9CdNV101pwSzyQyefG/apmwA3fzoccQ8LRxaBuOhaWur+hKSgAoVXXS1pPBm
- HZF/jgDP5OzLFWmYeWhHFbPxSB4GIoF0v5DVjMvF79oD5QHL1C7TYK9qIhCJSpNf+IFf
- Q2zr9SMoWGmTRlasSkkcLaQtttMGbZT9mtDdCaytY/gepb+pzn7OImR8GvGkI5HDFXpc
- Ls+wfki9zL0wVjzzHZigMggHLV9xkSeaRBwfnXVLqeJMRaqnu7Kqx6uu/eIvw51r53Bm
- Hbcw==
-X-Gm-Message-State: APjAAAUXc1RdbedcBmLpMYFzVv/FY/nqXMxZajnK+IAx3Z5sQPF2t6CU
- R15c0G1xk+1QOvzlXgvgYw==
-X-Google-Smtp-Source: APXvYqysIOYL/gXYF6/LQ0CkFVBddSF7hzJ2kMCDtw7RVQKrbAXD64plvuQNUfr+HZ96QtSKg4f7Vw==
-X-Received: by 2002:a6b:8b0b:: with SMTP id n11mr41354893iod.101.1565712289907; 
- Tue, 13 Aug 2019 09:04:49 -0700 (PDT)
-Received: from localhost ([64.188.179.254])
- by smtp.gmail.com with ESMTPSA id w17sm2608740ior.23.2019.08.13.09.04.48
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 13 Aug 2019 09:04:49 -0700 (PDT)
-Date: Tue, 13 Aug 2019 10:04:48 -0600
-From: Rob Herring <robh@kernel.org>
-To: Stefan Riedmueller <s.riedmueller@phytec.de>
-Subject: Re: [PATCH 1/2] dt-bindings: arm: fsl: Add PHYTEC i.MX6 UL/ULL
- devicetree bindings
-Message-ID: <20190813160448.GA27548@bogus>
-References: <1563954573-370205-1-git-send-email-s.riedmueller@phytec.de>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1563954573-370205-1-git-send-email-s.riedmueller@phytec.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hxZXo-0008N5-2x; Tue, 13 Aug 2019 16:21:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1565713256;
+ bh=dUBlT9Xxrn/3cLif2R6aatleNAWiZ7l31/AxHu5ssns=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=MztWCiiBtmdH4Sb0M3d5URvOceAhk5qSPqzBKjKjgQkYRkShQJ8BlvBfZE1UCO1yJ
+ ibQy0NYozhSm+yVsGLbR76/l0OOLttQ/KLQokUqKSRjMcp40D09NwjYbuJ+19ecpA8
+ cmXO0fQ1dxQBXIAYYOmnh4PdTQKh1VFnkEP0ewp0=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from localhost.localdomain ([37.4.249.106]) by mail.gmx.com
+ (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
+ 1MSt8W-1hrQiE1GHO-00UGxW; Tue, 13 Aug 2019 18:20:56 +0200
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ Wolfram Sang <wsa@the-dreams.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>
+Subject: [PATCH V2 00/13] ARM: Add minimal Raspberry Pi 4 support
+Date: Tue, 13 Aug 2019 18:20:35 +0200
+Message-Id: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
+X-Mailer: git-send-email 2.7.4
+X-Provags-ID: V03:K1:omgWgWBXYFvuPOX6q9fI7KNy5K8f42ZRB+xeRxWYdkKzXFVCQ1l
+ MqXRbXyZh0HlU14WNpWih9FJIyCoqS89MysLx6bguRh5tkxToeMCOtc8cPokyn1q/T9lFug
+ AUTGI5tp2nmtUNhujij/sI89MaOSREKci6JFVdkwSoeyNCkXqZTyjqmES4VDNnGIznakzSc
+ BkYiYhHSgXf0i+c6wgFCw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Sx08nM0KaTc=:/5FhSM3w71RuIBd5P052cY
+ I2adqVoXok+QKFpL76+25Cv4drVurWMR0MhQm3v2sqGKMbY5FEVaE/V5LNaFsT7Bi/Okuu8dk
+ 3wHKlXF140nlPUeuNwd3pYnFaC2BheayNkd/xiqE0hQEYSd2baMi8ycW8MfKuFQmiZI77zP7g
+ pMScfRjs4p3Nh40CMjrFCOut0NmLOQtI7bROUfzEVw5r3A51Mrp1/iys447a46TiFnPdRiDSQ
+ BkjASIFHMTuxSkO7ahuFs/+3QGZfhtlu+TuwwvTzPLN0iQkNqM/Cd9V2sVpSu6rV7kADb7V4/
+ R+xTxVPWuo45byw/g0AKJFX4yLDdwnNH7Ii/Tp1ByqsL8Rdic5lZW69KmUpeV704VxPWyUHpI
+ 1mdLo5QhQ0HwI1OGiaNoESLvwDeegn/Kx1RyskKTxK6vuDcjx8txVRpBNcUoi3h0DiAV9aycA
+ JR2tM/nUowQEUHG+3CYRIufU1XDLf+ZPgLwkrDLL6YKENvgGGPPypbuc4RSNIZrBHaOwE4oHW
+ 9YL+aaGWPTZUn7EuEYD1WxJcnSB4+LkKzsj/Sunp0NoiQBa08kR1Hj268TLmdI1JAWDkw8vOz
+ NLX8V6K3vBQfj14bRf/BeoRtsTDlLPe1hmlG5bFgxowYv9GGmRwagA6aigx6XmR4PxsHIzxF8
+ eVn4NM+7lCUs2MDq4bqn3I+yua7DDQ8itpbVAoveQ1mj5ANFhpUVY9c7YH1xw0MiD0iBjCsG4
+ Kv+OZyKqeB91VhKVCtNC+lNb/J1VrT4WpAAgHpghdLHW5t5eb54ECWlERJQVQqU6wSkq6XTwr
+ eFbMz4iBMIADTI+S3M44wWesDQWJ1tMD12r/NdAn+/VaxncIdNPccDh1uV1lRO3HMmvdwiDAz
+ cEWsuMCDXpLNNRkjEZDvi9GAYNpx/hZ6zSuXa6jhTQQCo332S+FSay2fv5SAISzAVGEGsyfIA
+ dByFeJr1T89V+nvMhp94TVyGQohzNuKt9TCugVAHtFpy++ad52mm9BEf1XLYF62//IQ03DB1D
+ JdmRgAedBUFqlJ/1f4t07AGL0mPXZGtg+rkKdNnRKBm8LLJjpZ187LlxQAWlMPvdWoWPo7JH1
+ 2ekdj8HwzycljYzcd6fJrP5WXazZVfyDh34hghS/4o3zELCRi2KxZE/1hzVIpMW27txwERHji
+ QJAFzjdQhAZFg4fPzdNoTafC5hEbqzdiSxNvJTx3qx2NsJtw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_090452_423239_FF1FB9E4 
-X-CRM114-Status: GOOD (  14.20  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190813_092108_418838_637AC8CD 
+X-CRM114-Status: GOOD (  19.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [212.227.15.18 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ provider (wahrenst[at]gmx.net)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,62 +99,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Andrew Smirnov <andrew.smirnov@gmail.com>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Stefan Wahren <wahrenst@gmx.net>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 24, 2019 at 09:49:32AM +0200, Stefan Riedmueller wrote:
-> Add devicetree bindings for i.MX6 UL/ULL based phyCORE-i.MX6 UL/ULL and
-> phyBOARD-Segin.
-> 
-> Signed-off-by: Stefan Riedmueller <s.riedmueller@phytec.de>
-> ---
->  Documentation/devicetree/bindings/arm/fsl.yaml | 8 ++++++++
->  1 file changed, 8 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-> index 7294ac36f4c0..40f007859092 100644
-> --- a/Documentation/devicetree/bindings/arm/fsl.yaml
-> +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-> @@ -161,12 +161,20 @@ properties:
->          items:
->            - enum:
->                - fsl,imx6ul-14x14-evk      # i.MX6 UltraLite 14x14 EVK Board
-> +              - phytec,imx6ul-pbacd10     # PHYTEC phyBOARD-Segin with i.MX6 UL
-> +              - phytec,imx6ul-pbacd10-emmc  # PHYTEC phyBOARD-Segin eMMC Kit
-> +              - phytec,imx6ul-pbacd10-nand  # PHYTEC phyBOARD-Segin NAND Kit
-> +              - phytec,imx6ul-pcl063      # PHYTEC phyCORE-i.MX 6UL
+This series adds minimal support for the new Raspberry Pi 4, so we are able
+to login via debug UART.
 
-This doesn't match what is in the dts files:
+Patch 1-2:   Prepare platform and DTS for the new SoC BMC2711
+Patch 3-6:   Enable clock support for BCM2711
+Patch 7-8:   Add I2C support for BCM2711
+Patch 9-12:  Add Raspberry Pi 4 DTS support
+Patch 13:    Update MAINTAINERS
 
-arch/arm/boot/dts/imx6ul-phytec-pcl063.dtsi:    compatible = "phytec,imx6ul-pcl063", "fsl,imx6ul";                    
-arch/arm/boot/dts/imx6ul-phytec-phyboard-segin-full.dts:      compatible = "phytec,imx6ul-pbacd10", "phytec,imx6ul-pcl063", 
-"fsl,imx6ul";
-arch/arm/boot/dts/imx6ul-phytec-phyboard-segin.dtsi:    compatible = "phytec,imx6ul-pbacd-10", "phytec,imx6ul-pcl063",
-"fsl,imx6ul";
+Unfortunately the Raspberry Pi Foundation didn't released a
+peripheral documentation for the new SoC yet. So we only have a preliminary
+datasheet [1] and reduced schematics [2].
 
->            - const: fsl,imx6ul
->  
->        - description: i.MX6ULL based Boards
->          items:
->            - enum:
->                - fsl,imx6ull-14x14-evk     # i.MX6 UltraLiteLite 14x14 EVK Board
-> +              - phytec,imx6ull-pbacd10    # PHYTEC phyBOARD-Segin with i.MX6 ULL
-> +              - phytec,imx6ull-pbacd10-emmc # PHYTEC phyBOARD-Segin eMMC Kit
-> +              - phytec,imx6ull-pbacd10-nand # PHYTEC phyBOARD-Segin NAND Kit
-> +              - phytec,imx6ull-pcl063     # PHYTEC phyCORE-i.MX 6ULL
->            - const: fsl,imx6ull
->  
->        - description: i.MX6ULZ based Boards
-> -- 
-> 2.7.4
-> 
+Known issues:
+Since Linux 5.3-rc1 DMA doesn't work properly on that platform.
+Nicolas Saenz Julienne investigates on that issue. As a temporary workaround
+i reverted the following patch to test this series:
+
+79a98672 "dma-mapping: remove dma_max_pfn"
+7559d612 "mmc: core: let the dma map ops handle bouncing"
+
+Changes in V2:
+- use separate board file for BCM2711
+- enable ARM_GIC for ARCH_BCM2835
+- add Acked-by and Reviewed-by
+- fix arm-pmu and timer nodes for BCM2711 reported by Marc Zyngier
+- enable HDMI at board level
+- move HDMI and pixelvalve into bcm2835-common.dtsi as suggested by Eric Anholt
+- fix DWC2 probing warning by setting USB role to peripheral
+- fix order of node references in bcm2711.dtsi
+- disable I2C clock stretching quirk for BCM2711
+- mark PLLD_PER as critical clock
+- make PLLH clock unavailable on BCM2711
+- fix compile warning in clk-bcm2835 for arm64
+
+Changes since RFC:
+- change BCM2838 -> BCM2711 as discussed in RFC
+- update MAINTAINERS accordingly
+- drop "spi: bcm2835: enable shared interrupt support" from series
+- squash all pinctrl-bcm2835 changes into one patch
+- introduce SoC specific clock registration as suggested by Florian
+- fix watchdog probing for Raspberry Pi 4
+- convert brcm,bcm2835.txt to json-schema
+- move VC4 node to bcm2835-common.dtsi
+- fallback to legacy pull config for Raspberry Pi 4
+- revert unintended change of mailbox in bcm283x.dtsi
+- add reference for arm64
+
+[1] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/rpi_DATA_2711_1p0_preliminary.pdf
+[2] - https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_4b_4p0_reduced.pdf
+
+Stefan Wahren (13):
+  ARM: dts: bcm283x: Enable HDMI at board level
+  ARM: dts: bcm283x: Move BCM2835/6/7 specific to bcm2835-common.dtsi
+  dt-bindings: bcm2835-cprman: Add bcm2711 support
+  clk: bcm2835: Introduce SoC specific clock registration
+  clk: bcm2835: Add BCM2711_CLOCK_EMMC2 support
+  clk: bcm2835: Mark PLLD_PER as CRITICAL
+  dt-bindings: i2c: bcm2835: Add brcm,bcm2711 compatible
+  i2c: bcm2835: Avoid clk stretch quirk for BCM2711
+  dt-bindings: arm: Convert BCM2835 board/soc bindings to json-schema
+  dt-bindings: arm: bcm2835: Add Raspberry Pi 4 to DT schema
+  ARM: bcm: Add support for BCM2711 SoC
+  ARM: dts: Add minimal Raspberry Pi 4 support
+  MAINTAINERS: Add BCM2711 to BCM2835 ARCH
+
+ .../devicetree/bindings/arm/bcm/bcm2835.yaml       |  51 ++
+ .../devicetree/bindings/arm/bcm/brcm,bcm2835.txt   |  67 ---
+ .../bindings/clock/brcm,bcm2835-cprman.txt         |   4 +-
+ .../devicetree/bindings/i2c/brcm,bcm2835-i2c.txt   |   4 +-
+ MAINTAINERS                                        |   3 +-
+ arch/arm/boot/dts/Makefile                         |   1 +
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts              | 121 ++++
+ arch/arm/boot/dts/bcm2711.dtsi                     | 662 +++++++++++++++++++++
+ arch/arm/boot/dts/bcm2835-common.dtsi              | 183 ++++++
+ arch/arm/boot/dts/bcm2835-rpi-a-plus.dts           |   2 +
+ arch/arm/boot/dts/bcm2835-rpi-a.dts                |   2 +
+ arch/arm/boot/dts/bcm2835-rpi-b-plus.dts           |   2 +
+ arch/arm/boot/dts/bcm2835-rpi-b-rev2.dts           |   2 +
+ arch/arm/boot/dts/bcm2835-rpi-b.dts                |   2 +
+ arch/arm/boot/dts/bcm2835-rpi-cm1-io1.dts          |   2 +
+ arch/arm/boot/dts/bcm2835-rpi-zero-w.dts           |   2 +
+ arch/arm/boot/dts/bcm2835-rpi-zero.dts             |   2 +
+ arch/arm/boot/dts/bcm2835-rpi.dtsi                 |   5 -
+ arch/arm/boot/dts/bcm2835.dtsi                     |   1 +
+ arch/arm/boot/dts/bcm2836-rpi-2-b.dts              |   2 +
+ arch/arm/boot/dts/bcm2836.dtsi                     |   1 +
+ arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts         |   2 +
+ arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts         |   2 +
+ arch/arm/boot/dts/bcm2837-rpi-3-b.dts              |   2 +
+ arch/arm/boot/dts/bcm2837-rpi-cm3-io3.dts          |   2 +
+ arch/arm/boot/dts/bcm2837.dtsi                     |   1 +
+ arch/arm/boot/dts/bcm283x-rpi-usb-peripheral.dtsi  |   7 +
+ arch/arm/boot/dts/bcm283x.dtsi                     | 168 +-----
+ arch/arm/mach-bcm/Kconfig                          |   3 +-
+ arch/arm/mach-bcm/Makefile                         |   3 +-
+ arch/arm/mach-bcm/bcm2711.c                        |  22 +
+ drivers/clk/bcm/clk-bcm2835.c                      | 133 ++++-
+ drivers/i2c/busses/i2c-bcm2835.c                   |  16 +-
+ include/dt-bindings/clock/bcm2835.h                |   2 +
+ 34 files changed, 1221 insertions(+), 263 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm2835.txt
+ create mode 100644 arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+ create mode 100644 arch/arm/boot/dts/bcm2711.dtsi
+ create mode 100644 arch/arm/boot/dts/bcm2835-common.dtsi
+ create mode 100644 arch/arm/boot/dts/bcm283x-rpi-usb-peripheral.dtsi
+ create mode 100644 arch/arm/mach-bcm/bcm2711.c
+
+--
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
