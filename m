@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22E2D8C397
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 23:24:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ED3C8C3A0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 23:26:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TgOqu/Wb/jfLlrtrqxrqusfU4xM/UjUKvug4EM8rPyo=; b=lEzt3d2GqPQrPn
-	S5DlYpQT+BSoIjhbuESWPNVyhNUQ0nNDV2rOyH6iqH0yqBrMDLZeLlGiqg1RKqMMo0/PPcT5WlTcH
-	HmgwjAPEPZf4FF2r25134/3ihj2oDTMOcnHIRSWp31cRyfvb9PCwaSLToFKC8myY/b1SMdSPigbr7
-	zOxXYilxevGhoivYRoz1rOwoQgZLpIYaxGoTjxTUeh7ax2KslBSpLs//+yngT5YkajhKZjHDo6O/L
-	XuXj+bWYf6pPAv1wIHfu6tNZYEGqDtRz82LpRLVy8z8XK/HAT0gP4+fcPs8rQVuU2JlJiYOBECTVW
-	/VKvgdX0nUas9HyuJFRQ==;
+	List-Owner; bh=Wime3P9A+ssdBnwZpqMzhLNrkhQ4WeOoiMl3XniFyEo=; b=TXrdNccn8NddxI
+	kECjzU6q1hoefgaS/4SbYYqwpVLS3rl0CP4azt4aZ+gUSi6946UId7dtaibbZMqT149GiEwjcrWXl
+	K1nv35iOlZY0t0aNlM0EJEFhCNAqhncitXzsDmezliLVe20FTVZsKpHwXL/iIUD4PofLJ8PuOeimq
+	PQc6JCIcZZD8k7oSWV0pGORbi/S8kOx0JNWroP3Thg22YZH33U6wVeevimZhVEtoOFQwJkTM9hdwr
+	W1OqM2OXDUuX8c+vChOn4FFF/ReC9YffVIB/1JBaAQV/O0RVTUNHGaNOZ9/rSuAO1xkDb+iVu5Kbf
+	dL0pg6EvECzeJUz2psRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxeHD-0005aq-OC; Tue, 13 Aug 2019 21:24:19 +0000
+	id 1hxeJ7-00072m-6h; Tue, 13 Aug 2019 21:26:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxeH4-0005aQ-2X
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 21:24:12 +0000
-Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com
- [209.85.160.182])
+ id 1hxeIx-00072J-I2
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 21:26:08 +0000
+Received: from mail-qk1-f171.google.com (mail-qk1-f171.google.com
+ [209.85.222.171])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9F7F22085A
+ by mail.kernel.org (Postfix) with ESMTPSA id 1ADCA20665
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 21:24:09 +0000 (UTC)
+ Tue, 13 Aug 2019 21:26:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565731449;
- bh=R5Yh9wFJPtJIKxbptxdaKPDiX/ZNZf1g/oJL8un702U=;
+ s=default; t=1565731567;
+ bh=GM23DGhyg+mtBCE8YlRJbCakPF/+Hq09zu3D+TE+XK4=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=MiH5H3LCM2A75FvZHCjHYqJ7oaK3Hwwla30yyL6yij7D9l51oJfnojqROrQffWVas
- h2XULaadDYcbeM7LNjIAzIuOJkw/52DQHUs/vLmfMQ1r0rjsLlBVjNCrd/b6X2RLvI
- dU4bAw9iuhkZRIK6H1L/4zgMNHRgSa8+PksNZHqQ=
-Received: by mail-qt1-f182.google.com with SMTP id 44so76857402qtg.11
+ b=VxkNvHzW5zFD9wl7s36dXRTvfAss97andtV1hadpeobFxj5vhBypMZHkF24mLp/1H
+ rWBgnA98YgmnYDGLxMU91+UCVUqy2r+pIhrusWyKwIlM6WRraIuKtRs0ILti79Befk
+ d4dP2GbwhwL3JXhQK1P1FV5Fjhqq82IW+MmiARak=
+Received: by mail-qk1-f171.google.com with SMTP id m2so7083727qki.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 14:24:09 -0700 (PDT)
-X-Gm-Message-State: APjAAAWtg+98oT+SkdNHJiAf5o+l1cgs+V2zbKk6tPv4BtqjXJq0dLsM
- HLsEX0aj+te6sHXlAxVWuiITzqzn9DYuer8lBg==
-X-Google-Smtp-Source: APXvYqyDoMF5kcqlkAQ276qRzcr1OCkIYQIe1bsUEqWU0awHa7ShjdR60+MD54WSwZGK3ztXNw5WmKIXTDoa+P8D+Ws=
-X-Received: by 2002:ac8:386f:: with SMTP id r44mr18216092qtb.300.1565731448864; 
- Tue, 13 Aug 2019 14:24:08 -0700 (PDT)
+ Tue, 13 Aug 2019 14:26:07 -0700 (PDT)
+X-Gm-Message-State: APjAAAWjxn5xRGjOonfP/Un6gYhljJa6L28m5IuF6eIjiKDaR9eBh+0g
+ 5QSCaig7sNsPNCq5mQc0mmHJCVzWMluS69gpPw==
+X-Google-Smtp-Source: APXvYqww0rswwh3lSXwVgzazVtv7axCmSc4uhEaJfwxBqHXdcPCfjRZvDPnHTIKk86sXYyVlAWoAz/lP9mYw9zUw0OU=
+X-Received: by 2002:a37:a010:: with SMTP id j16mr35848216qke.152.1565731566318; 
+ Tue, 13 Aug 2019 14:26:06 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190813124513.31413-1-mripard@kernel.org>
-In-Reply-To: <20190813124513.31413-1-mripard@kernel.org>
+ <20190813124513.31413-2-mripard@kernel.org>
+In-Reply-To: <20190813124513.31413-2-mripard@kernel.org>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 13 Aug 2019 15:23:56 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLUfQdtXZMNTLJX9uMpdCY0NNN=AEDqGiemrdDazB8HeA@mail.gmail.com>
-Message-ID: <CAL_JsqLUfQdtXZMNTLJX9uMpdCY0NNN=AEDqGiemrdDazB8HeA@mail.gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: media: Add YAML schemas for the generic
- RC bindings
+Date: Tue, 13 Aug 2019 15:25:55 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJKw=UaZPzXZu7jCvzeVO7zNcb4mCC-eVmn8DMxsm5cXA@mail.gmail.com>
+Message-ID: <CAL_JsqJKw=UaZPzXZu7jCvzeVO7zNcb4mCC-eVmn8DMxsm5cXA@mail.gmail.com>
+Subject: Re: [PATCH 2/2] dt-bindings: media: Convert Allwinner A10 IR to a
+ schema
 To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_142410_140901_7FD7065A 
-X-CRM114-Status: GOOD (  14.62  )
+X-CRM114-CacheID: sfid-20190813_142607_619243_FBB4FB7B 
+X-CRM114-Status: GOOD (  14.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,15 +104,19 @@ On Tue, Aug 13, 2019 at 6:45 AM Maxime Ripard <mripard@kernel.org> wrote:
 >
 > From: Maxime Ripard <maxime.ripard@bootlin.com>
 >
-> The RC controllers have a bunch of generic properties that are needed in a
-> device tree. Add a YAML schemas for those.
+> The older Allwinner SoCs have a IR receiver supported in Linux, with a
+> matching Device Tree binding.
+>
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
 >
 > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 > ---
->  .../devicetree/bindings/media/rc.txt          | 118 +--------------
->  .../devicetree/bindings/media/rc.yaml         | 135 ++++++++++++++++++
->  2 files changed, 136 insertions(+), 117 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/media/rc.yaml
+>  .../media/allwinner,sun4i-a10-ir.yaml         | 80 +++++++++++++++++++
+>  .../devicetree/bindings/media/sunxi-ir.txt    | 35 --------
+>  2 files changed, 80 insertions(+), 35 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun4i-a10-ir.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/media/sunxi-ir.txt
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
