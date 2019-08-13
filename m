@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EBFF8ADC8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 06:34:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1301A8ADCD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 06:35:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YgVFaJYOzvfSyAeMTZRDwVf94y/qVq7NESeQZWrsm2Y=; b=eJ76ZMcdSrgkea
-	Pcw7c6GzbRWLln/PJb4bT4YpqL+xf+1KRuPPixHb+p8hW/ee+qhzzovGMoqoVorA9IJX2wIvFqlkB
-	RD7pis/1MbuH6KyXsdSCuvIBjWg4byGQBATQ8sR3MAX5fR1WRfEWF+2V1eP906fqSsymfncXG//QU
-	p1MxYQ0OOgOJszv+vG7XobMdoDg/bZofaEn8Rwn4FbKHzq++ODL9Iz03pJLMzHlLLAKx3OrxfsSrU
-	pZ1xqex0AxY107th9+Ovi0ZoeiOE7+yUtGQxYOW4YmlUoYn45ANFTyVZJM2WkUeJ0UpBIJnrQ6/Zx
-	X+W0kkWsZt0BiK3Un19Q==;
+	List-Owner; bh=vS2SROnO0T+m+9KRE3gD2hr6s+/qDZhcEfzT8odOulE=; b=VHyzBDuXbpSPM1
+	ytde04vwo4BBowBV3SyaBSLP+GUsbiCG8SbL/cjMqbxqaFMn0JHoVG3foR3z53m96hSdZLKBb+Spo
+	K8AzpTM7Yc5MTgil6hFrKzWumN79NSmnlIgvGwJU26ew2MfkdJep5muK2S5TxCbT1jg/x9EgBGvgv
+	QQ2IcDMF3GxD6hAu9lRV5klKdQWG1l4AT5jYR1mNtiLas/QDrjws33wz0LFrGzLNhu/yPIg2g85lS
+	/VzNPsrok2zpYfnPv+M2C5j+qSLg4K7+MtHZ7jHA7mqetV0Dv03hH8Cr8kU89n40c5+W1bafXKQvx
+	oCqKwYx+K9tRqyS/e6qA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxOWI-0004wQ-25; Tue, 13 Aug 2019 04:34:50 +0000
+	id 1hxOWr-0006N2-RU; Tue, 13 Aug 2019 04:35:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxOW5-0004vz-Mt
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 04:34:38 +0000
+ id 1hxOWa-0006MF-3f
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 04:35:09 +0000
 Received: from localhost (unknown [106.201.103.22])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D145A20644;
- Tue, 13 Aug 2019 04:34:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0CF7F20644;
+ Tue, 13 Aug 2019 04:35:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565670876;
- bh=LeDopwTuWI+vg3sAxESkUP1Ad5woiNmLizqxL2IUUjM=;
+ s=default; t=1565670907;
+ bh=1QF8LnDZ64amqs4h5il803zrynaMgoHJi17yPftxaSg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2m6MPJ5tm+CEzskDxqHh9F5ecwuPmPFOBWaBViK3MhhhWAkFnTetCXd5ZZllNn9EW
- EvujBk4rI/uez+gJqjt7AKpovUYUPsV8xcNohYbUEs89CXz7wyihUSeXqeEWSDZQ6a
- gd+NmLgXwRhYiYmrZZWdTko2muDs9IZgs4W+WBH0=
-Date: Tue, 13 Aug 2019 10:03:24 +0530
+ b=WiNrdly0SGH+qgh7K05jjboaTUe0d97OVHB2yZqrF9QRXStmPvvlV1CdeRylT5m6O
+ 7X/TZ/tIzOTEvhZIHlQWgkCuzoYMVehzc96AxQqLIizHy4Ng8RBdCZFS4kMY7CHJWz
+ CKNCmf4LrQlAd7LYAoPa38aQR2pDUl5IEy7Oq1tY=
+Date: Tue, 13 Aug 2019 10:03:55 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 2/7] dma: iop-adma: include prefetch.h
-Message-ID: <20190813043324.GN12733@vkoul-mobl.Dlink>
+Subject: Re: [PATCH 3/7] dma: iop-adma: use correct printk format strings
+Message-ID: <20190813043355.GO12733@vkoul-mobl.Dlink>
 References: <20190809162956.488941-1-arnd@arndb.de>
  <20190809163334.489360-1-arnd@arndb.de>
- <20190809163334.489360-2-arnd@arndb.de>
+ <20190809163334.489360-3-arnd@arndb.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190809163334.489360-2-arnd@arndb.de>
+In-Reply-To: <20190809163334.489360-3-arnd@arndb.de>
 User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_213437_773158_638B1029 
-X-CRM114-Status: GOOD (  12.96  )
+X-CRM114-CacheID: sfid-20190812_213508_190821_3C8EC293 
+X-CRM114-Status: GOOD (  15.30  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,10 +78,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild test robot <lkp@intel.com>, linux-gpio@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- soc@kernel.org, linux-i2c@vger.kernel.org, dmaengine@vger.kernel.org,
+Cc: linux-gpio@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, soc@kernel.org,
+ linux-i2c@vger.kernel.org, dmaengine@vger.kernel.org,
  Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -89,33 +89,105 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 09-08-19, 18:33, Arnd Bergmann wrote:
-> Compile-testing this driver fails on m68k without the
-> extra header inclusion.
+> When compile-testing on other architectures, we get lots of warnings
+> about incorrect format strings, like:
+> 
+>    drivers/dma/iop-adma.c: In function 'iop_adma_alloc_slots':
+>    drivers/dma/iop-adma.c:307:6: warning: format '%x' expects argument of type 'unsigned int', but argument 6 has type 'dma_addr_t {aka long long unsigned int}' [-Wformat=]
+> 
+>    drivers/dma/iop-adma.c: In function 'iop_adma_prep_dma_memcpy':
+> >> drivers/dma/iop-adma.c:518:40: warning: format '%u' expects argument of type 'unsigned int', but argument 5 has type 'size_t {aka long unsigned int}' [-Wformat=]
+> 
+> Use %zu for printing size_t as required, and cast the dma_addr_t
+> arguments to 'u64' for printing with %llx. Ideally this should use
+> the %pad format string, but that requires an lvalue argument that
+> doesn't work here.
 
-Please change title to "dmaengine: iop-adma: include prefetch.h"
+Please change title to "dmaengine: iop-adma: use correct printk format strings"
 
 After that:
 
 Acked-by: Vinod Koul <vkoul@kernel.org>
 
-> Reported-by: kbuild test robot <lkp@intel.com>
+> 
 > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 > ---
->  drivers/dma/iop-adma.c | 1 +
->  1 file changed, 1 insertion(+)
+>  drivers/dma/iop-adma.c | 18 +++++++++---------
+>  1 file changed, 9 insertions(+), 9 deletions(-)
 > 
 > diff --git a/drivers/dma/iop-adma.c b/drivers/dma/iop-adma.c
-> index c6c0143670d9..7857b54770d1 100644
+> index 7857b54770d1..aebdd671651a 100644
 > --- a/drivers/dma/iop-adma.c
 > +++ b/drivers/dma/iop-adma.c
-> @@ -16,6 +16,7 @@
->  #include <linux/spinlock.h>
->  #include <linux/interrupt.h>
->  #include <linux/platform_device.h>
-> +#include <linux/prefetch.h>
->  #include <linux/memory.h>
->  #include <linux/ioport.h>
->  #include <linux/raid/pq.h>
+> @@ -117,9 +117,9 @@ static void __iop_adma_slot_cleanup(struct iop_adma_chan *iop_chan)
+>  	list_for_each_entry_safe(iter, _iter, &iop_chan->chain,
+>  					chain_node) {
+>  		pr_debug("\tcookie: %d slot: %d busy: %d "
+> -			"this_desc: %#x next_desc: %#x ack: %d\n",
+> +			"this_desc: %#x next_desc: %#llx ack: %d\n",
+>  			iter->async_tx.cookie, iter->idx, busy,
+> -			iter->async_tx.phys, iop_desc_get_next_desc(iter),
+> +			iter->async_tx.phys, (u64)iop_desc_get_next_desc(iter),
+>  			async_tx_test_ack(&iter->async_tx));
+>  		prefetch(_iter);
+>  		prefetch(&_iter->async_tx);
+> @@ -307,9 +307,9 @@ iop_adma_alloc_slots(struct iop_adma_chan *iop_chan, int num_slots,
+>  				int i;
+>  				dev_dbg(iop_chan->device->common.dev,
+>  					"allocated slot: %d "
+> -					"(desc %p phys: %#x) slots_per_op %d\n",
+> +					"(desc %p phys: %#llx) slots_per_op %d\n",
+>  					iter->idx, iter->hw_desc,
+> -					iter->async_tx.phys, slots_per_op);
+> +					(u64)iter->async_tx.phys, slots_per_op);
+>  
+>  				/* pre-ack all but the last descriptor */
+>  				if (num_slots != slots_per_op)
+> @@ -517,7 +517,7 @@ iop_adma_prep_dma_memcpy(struct dma_chan *chan, dma_addr_t dma_dest,
+>  		return NULL;
+>  	BUG_ON(len > IOP_ADMA_MAX_BYTE_COUNT);
+>  
+> -	dev_dbg(iop_chan->device->common.dev, "%s len: %u\n",
+> +	dev_dbg(iop_chan->device->common.dev, "%s len: %zu\n",
+>  		__func__, len);
+>  
+>  	spin_lock_bh(&iop_chan->lock);
+> @@ -550,7 +550,7 @@ iop_adma_prep_dma_xor(struct dma_chan *chan, dma_addr_t dma_dest,
+>  	BUG_ON(len > IOP_ADMA_XOR_MAX_BYTE_COUNT);
+>  
+>  	dev_dbg(iop_chan->device->common.dev,
+> -		"%s src_cnt: %d len: %u flags: %lx\n",
+> +		"%s src_cnt: %d len: %zu flags: %lx\n",
+>  		__func__, src_cnt, len, flags);
+>  
+>  	spin_lock_bh(&iop_chan->lock);
+> @@ -583,7 +583,7 @@ iop_adma_prep_dma_xor_val(struct dma_chan *chan, dma_addr_t *dma_src,
+>  	if (unlikely(!len))
+>  		return NULL;
+>  
+> -	dev_dbg(iop_chan->device->common.dev, "%s src_cnt: %d len: %u\n",
+> +	dev_dbg(iop_chan->device->common.dev, "%s src_cnt: %d len: %zu\n",
+>  		__func__, src_cnt, len);
+>  
+>  	spin_lock_bh(&iop_chan->lock);
+> @@ -621,7 +621,7 @@ iop_adma_prep_dma_pq(struct dma_chan *chan, dma_addr_t *dst, dma_addr_t *src,
+>  	BUG_ON(len > IOP_ADMA_XOR_MAX_BYTE_COUNT);
+>  
+>  	dev_dbg(iop_chan->device->common.dev,
+> -		"%s src_cnt: %d len: %u flags: %lx\n",
+> +		"%s src_cnt: %d len: %zu flags: %lx\n",
+>  		__func__, src_cnt, len, flags);
+>  
+>  	if (dmaf_p_disabled_continue(flags))
+> @@ -684,7 +684,7 @@ iop_adma_prep_dma_pq_val(struct dma_chan *chan, dma_addr_t *pq, dma_addr_t *src,
+>  		return NULL;
+>  	BUG_ON(len > IOP_ADMA_XOR_MAX_BYTE_COUNT);
+>  
+> -	dev_dbg(iop_chan->device->common.dev, "%s src_cnt: %d len: %u\n",
+> +	dev_dbg(iop_chan->device->common.dev, "%s src_cnt: %d len: %zu\n",
+>  		__func__, src_cnt, len);
+>  
+>  	spin_lock_bh(&iop_chan->lock);
 > -- 
 > 2.20.0
 
