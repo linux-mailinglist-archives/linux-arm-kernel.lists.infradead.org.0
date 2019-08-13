@@ -2,87 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5581E8B8A7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 14:36:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 192428B8E3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 14:43:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EWi98Ilc6EhX7xm5M9Of4NlTPd5vl4DAqDXa48eKwAM=; b=rDHsVaY3Z8xmzj
-	tUz5ZL6+kIqp8HdjVGI4uk2ZXZ3StOKbPwJQ97g28ujCObnqg569oSoZwgOTnQlrSWjrJus3ldgS1
-	hYFViooJkeaqHOrJOKJcFO1KNMt2hndLMaXUnkcBPMBeHJoEJ7DclUtbiFNf+76AIbSlbsJJ1XDD2
-	gTkig2+ZhC6ZGnT1tavebTByZ3/Y2fePEhpgaOU0EZpwdVg0f/YkX2L2M8FEP6or1G2mQCqjt5DUb
-	EweRFuiqRDzQj/uUHZetK4QIcmmqwP1jUucRkrnksl1aWqdiVoSM8pD7khbIGV/kuFbY9atwULh6u
-	88l8ClTIh9PVc9yEYOYQ==;
+	List-Owner; bh=2+w01weohMAb9i3bTjjklJZNjABhw6nz+qIn0//GCNk=; b=IsmUOFpx57MEb3
+	jJ3Tvspsjp2iTMB42EHPN0kFHU/dONXjbHJPigmPvv20hP4jr1RP12xIBIOWJLDu3BwixwrPQh5Ce
+	y1sKAP0tJyaxkP8s9nCaKDFzLR3zJ8TE0+m4EEZBQof3jGt1bQTGi8s8hYL+cNKfxEKTprQo8pH46
+	+DLdIuoclxZEo3z00JYBDSh2Q/TGm/nIRa+6w6XZvuFxbkvqsIZzcM4Ost6fQXQV6mtkkThjEi7uS
+	FktMHELYaOvjsSRcD5ima99pAdyABfFukwNOnSw4b/Ev0KxcwOs9Oyp5Fnl1cZm1PXcAESXNASDDG
+	I10hFATf7cTWRLMIsVWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxW2R-0000Cq-18; Tue, 13 Aug 2019 12:36:31 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hxW9X-0003dh-Or; Tue, 13 Aug 2019 12:43:51 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxW2H-0000C6-Ls
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 12:36:22 +0000
-Received: by mail-lj1-x241.google.com with SMTP id z28so47176962ljn.4
+ id 1hxW9H-0003d0-1y
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 12:43:36 +0000
+Received: by mail-ot1-f68.google.com with SMTP id r20so21971773ota.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 05:36:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/4zbvSpEn2DpmCJ6tMtDBdGBohm95LMSJu2Rb3mH21k=;
- b=lrApJRtm6GOhWs3fCFPJSlcSNogP0GznPdE24vcG3Z/F5ysBIyHK4jr3TmLyVAenyu
- h+reeHqoCtu5DnUOonZfy2rp0wqpy0QvIWd1egLjw9T+fHOo9bX4D5YJplkiBANlzg+Z
- YxoJvdWuGbwSks5nTFsOOCwSZvZqkTUwflPOvOlwIZSX4gGr1CPhFztABch0yEq1LGEz
- niMncc0gUHJSPmGlCnp7eYd+vKKI1m13mmcPqKSQd33YlT2b2H8DFXOYUkcC6lFgsZvv
- RCcC5ce0ZlXrJuUsDAAaXHftEs3Uc66lwJtN2oFXfWLTEOEySRPJVNo9EtMHQqBQljfF
- I95w==
+ Tue, 13 Aug 2019 05:43:34 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=/4zbvSpEn2DpmCJ6tMtDBdGBohm95LMSJu2Rb3mH21k=;
- b=YuhGYbDsJgifk/do9Kj7BjJFXUKuRAGgQTSBIA4qrYK2YCsI7vzFyg8CloP0XthhF2
- YN2QN7HSW1pcsG/LfSpUgW+4Krl68u4fKFbwV2/qVbo3kKQyOL3vFlairfPQOMEZHrBX
- PcwPndozNyz62vOZeK92Fcm3ktsGJL+Pzx1iW3WHQBuNekdzCBehkgx+QiD/v/ATZzDg
- 68798wxctnkrcNLiTxLpNnG1UywySWYMpwvtzVKRrHVI+ft2jzOQDbchXmNgCPadhkro
- UtQMTOt2C0zSbV45DWNGGSmd8JCL+pHPzPD52ild5iMtqem8GpHpuDaJUzafYwjSzoTH
- kcYw==
-X-Gm-Message-State: APjAAAX0Ng52g4LG2i6mf5PdBBAkvFwE4K58QDDcVNA2pt4Kep3INXbk
- QKRLIBkn35stXp3u1H+B6kbKhepwfO7C3sgNNBY=
-X-Google-Smtp-Source: APXvYqw9QQj9Ti8WKyo8gjlKSpGsqLRG2B9QmRI3Fs3vQL04NHHaPG06xFKmK+ZntPzsDk7jUfioPFAqkeTU3Op2eJs=
-X-Received: by 2002:a2e:3a13:: with SMTP id h19mr21421766lja.220.1565699777265; 
- Tue, 13 Aug 2019 05:36:17 -0700 (PDT)
+ bh=E+p+zmPurLbMEu2az+xH3AuHi82plJbCMSnO5w/IE6s=;
+ b=SnhszppXM0MJ2xEz7ZKyd3YaTrcm448DscWjbzsTWolIE1m6umYQdvacv5oD7GjqbJ
+ LE+2dB6BSYt/Q9NAjQJfOyrTr7q459VckrHXYRMs7iJQt0R/WYR/8/abBwhGFTUlAql+
+ Px0CMMyQwkaZoEDZdXZWzGiysnRIQBZjG8BasYZhTZhJo6XhPb4b/lKDH1XHs9vv+HUh
+ NL1ih2e6AeC78C8MHPFYLTyWzMHjAzxEuh5PbwfFxTU5uSXF5W0e3xWf6wwjm4+VRrBL
+ QGa6YgGkU/G7zHtglDIeHGNVA50kgSF7rd/Laardzv4a5g8yJSSLKqZWbVvzIMUgsuir
+ slUg==
+X-Gm-Message-State: APjAAAVhZGMrUcdnSdAJP9FwL4wbukW0/U1a/H98OPEclMNxVlbkJ4PD
+ T9t0Qpx70asDKKyjOBDmLr0y58Kr2iwkHYazSOE6h1E5
+X-Google-Smtp-Source: APXvYqx1GQeKyaJsgXsivZqtT+ZWF3j7jl8KtNnj/46bOhi5OBabwhYF49mxUFMveHbU3gpyphWP34Gqnyc+EeluMJk=
+X-Received: by 2002:a9d:459d:: with SMTP id x29mr20332510ote.39.1565700214109; 
+ Tue, 13 Aug 2019 05:43:34 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190812215052.71840-1-ndesaulniers@google.com>
- <20190812215052.71840-12-ndesaulniers@google.com>
- <20190813082744.xmzmm4j675rqiz47@willie-the-truck>
-In-Reply-To: <20190813082744.xmzmm4j675rqiz47@willie-the-truck>
-From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-Date: Tue, 13 Aug 2019 14:36:06 +0200
-Message-ID: <CANiq72mAfJ23PyWzZAELgbKQDCX2nvY0z+dmOMe14qz=wa6eFg@mail.gmail.com>
-Subject: Re: [PATCH 12/16] arm64: prefer __section from compiler_attributes.h
-To: Will Deacon <will@kernel.org>
+References: <20190807155524.5112-1-steve.capper@arm.com>
+ <20190809164716.qtt7zizfbqyjukwe@willie-the-truck>
+In-Reply-To: <20190809164716.qtt7zizfbqyjukwe@willie-the-truck>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 13 Aug 2019 14:43:23 +0200
+Message-ID: <CAMuHMdWvkWGoNC5HbWoZwtpg5VXxTZqRZqQy4BLPgQXZJtKnsQ@mail.gmail.com>
+Subject: Re: [PATCH V5 00/12] 52-bit kernel + user VAs
+To: Will Deacon <will@kernel.org>, Steve Capper <steve.capper@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_053621_746922_085CC4BE 
-X-CRM114-Status: GOOD (  16.09  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190813_054335_102033_1ECAAA73 
+X-CRM114-Status: GOOD (  12.59  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (miguel.ojeda.sandonis[at]gmail.com)
+ provider (geert.uytterhoeven[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,66 +83,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Alexei Starovoitov <ast@kernel.org>, Daniel Borkmann <daniel@iogearbox.net>,
- clang-built-linux@googlegroups.com, Allison Randal <allison@lohutok.net>,
- yhs@fb.com, Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
- Josh Poimboeuf <jpoimboe@redhat.com>, Sedat Dilek <sedat.dilek@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, bpf@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Nick Desaulniers <ndesaulniers@google.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Network Development <netdev@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, Enrico Weigelt <info@metux.net>,
- Martin KaFai Lau <kafai@fb.com>
+Cc: crecklin@redhat.com, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, bhsharma@redhat.com,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>, maz@kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 10:27 AM Will Deacon <will@kernel.org> wrote:
+Hi Will, Steve,
+
+On Fri, Aug 9, 2019 at 6:47 PM Will Deacon <will@kernel.org> wrote:
+> On Wed, Aug 07, 2019 at 04:55:12PM +0100, Steve Capper wrote:
+> > This patch series adds support for 52-bit kernel VAs using some of the
+> > machinery already introduced by the 52-bit userspace VA code in 5.0.
 >
-> Hi Nick,
->
-> On Mon, Aug 12, 2019 at 02:50:45PM -0700, Nick Desaulniers wrote:
-> > GCC unescapes escaped string section names while Clang does not. Because
-> > __section uses the `#` stringification operator for the section name, it
-> > doesn't need to be escaped.
-> >
-> > This antipattern was found with:
-> > $ grep -e __section\(\" -e __section__\(\" -r
-> >
-> > Reported-by: Sedat Dilek <sedat.dilek@gmail.com>
-> > Suggested-by: Josh Poimboeuf <jpoimboe@redhat.com>
-> > Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
-> > ---
-> >  arch/arm64/include/asm/cache.h     | 2 +-
-> >  arch/arm64/kernel/smp_spin_table.c | 2 +-
-> >  2 files changed, 2 insertions(+), 2 deletions(-)
->
-> Does this fix a build issue, or is it just cosmetic or do we end up with
-> duplicate sections or something else?
+> Cheers, I've pushed this out on a for-next/52-bit-kva branch with one
+> small patch on top and Catalin's tags added.
 
-This should be cosmetic -- basically we are trying to move all users
-of current available __attribute__s in compiler_attributes.h to the
-__attr forms. I am also adding (slowly) new attributes that are
-already used but we don't have them yet in __attr form.
+As of commit 14c127c957c1c607 ("arm64: mm: Flip kernel VA space"), the
+kernel log is spammed with
 
-> Happy to route it via arm64, just having trouble working out whether it's
-> 5.3 material!
+    virt_to_phys used for non-linear address: (____ptrval____)
+(__func__.6603+0x14d681/0x17fb3d)
+    WARNING: CPU: 0 PID: 264 at arch/arm64/mm/physaddr.c:15
+__virt_to_phys+0x28/0x58
+    Modules linked in:
+    CPU: 0 PID: 264 Comm: mdev Not tainted
+5.3.0-rc3-rcar3-initrd-00002-g14c127c957c1c607 #38
+    Hardware name: Renesas Ebisu-4D board based on r8a77990 (DT)
+    pstate: 60000005 (nZCv daif -PAN -UAO)
+    pc : __virt_to_phys+0x28/0x58
+    lr : __virt_to_phys+0x28/0x58
+    sp : ffffffc011953c80
+    x29: ffffffc011953c80 x28: ffffff8078790140
+    x27: 0000000000000000 x26: 0000000000000000
+    x25: ffffffc010a539b9 x24: ffffffc010a86000
+    x23: ffffffc010a539ba x22: 0000000000000001
+    x21: 0000000000202038 x20: 0000000000000001
+    x19: ffffffc010a539b9 x18: 000000000000000a
+    x17: 0000000000000000 x16: 0000000000000000
+    x15: 00000000000ca51d x14: 0720072007200720
+    x13: 0720072007200720 x12: 0720072007200720
+    x11: 0720072007200720 x10: 0720072007200720
+    x9 : 0720072007200720 x8 : 0000000000000001
+    x7 : 0000000000000007 x6 : ffffff8079824f00
+    x5 : 0000000000000140 x4 : 0000000000000000
+    x3 : 0000000000000000 x2 : 00000000ffffffff
+    x1 : 0713abbc9281cf00 x0 : 0000000000000000
+    Call trace:
+     __virt_to_phys+0x28/0x58
+     __check_object_size+0xd0/0x1e0
+     filldir64+0x1d8/0x2b0
+     kernfs_fop_readdir+0x64/0x200
+     iterate_dir+0x68/0x144
+     ksys_getdents64+0x88/0x154
+     __arm64_sys_getdents64+0x18/0x24
+     el0_svc_common.constprop.0+0x84/0xe8
+     el0_svc_compat_handler+0x18/0x20
+     el0_svc_compat+0x8/0x10
+    ---[ end trace 6980a45f636e18be ]---
 
-As you prefer! Those that are not taken by a maintainer I will pick up
-and send via compiler-attributes.
+as soon as userspace starts.
 
-I would go for 5.4, since there is no particular rush anyway.
+As this commit cannot be reverted easily, I had to revert the full branch with
+"git revert -m 1 6ce0dc725177e9856c9a67f2e2cabb3f7a3d90d7".
 
-Cheers,
-Miguel
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
