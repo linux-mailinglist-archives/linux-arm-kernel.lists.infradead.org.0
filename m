@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40A008BF2A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 19:03:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1521F8BF29
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 19:03:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=VyIiBcbh9Z/YCW74Z+M+5pZVY2ZVXC+KT0D87i0CYNY=; b=cOZILJt7BC/F0753UNwlOFhooj
-	c213U2QuNiMFH359/r9EL5t17lfmV5Lrj+8TDmetumWx7JkU/lhxVOmCoVQ+zVgJ8ymOKUU8w2rd/
-	cHsBRL+UI5dDazlz2kXA7bvvmmCNVKY7GkodPqdQzjc4gQTi+Phea5+NpF4UavtPoi3XKNtFdTB7G
-	d43SnPtWJ2EnxevHU4XML4eZwXhKa2/ee/hBir6gyBrx5DgdfltrwK/JdWmLJnubuqRrS7Kvksisz
-	iusfJR2xOWO+eGo3d5QtW2RMwhIjPweMMPD4vcDgcbxOcXy4ENH/iBpYJwy2hv2WTrVbufAUHjcn/
-	eXQfTOaA==;
+	bh=izl+0JJ3Cdey0oIrZq3wgRjXC2TpxIENXs4WOiAI6kE=; b=aLwafVEg5/GhHp2FtcTX+kepuc
+	BnVaBXTyqEY3Xc4/gteTIQaxUWnmq3M5o/5zf3m22M47Mkt557tN2KOjyy2Cy7d99c3oDBofPgW3b
+	A34P649OlefgpsdaEw7pKhvF+ZUt5ZGl3asp4H3yUQXAzQ2REq6S/v/4W4BxuX3aA3uGermqRHmjF
+	Z5534ImS5q27D6Z2h3zUx2Qrn2FFO3OyMmbLKcI/1LPrx+GoWtVS8eRIA2VrLbPKK/TzRb0d/weYn
+	fzpqTAtPBBVAkmCfIR8fHJpCPQ5frcCrvlqEPoB8gc4+2gt/HCadTcZw025mIW2638Jk+M08twyf3
+	hNxIsz8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxaCc-0000wH-LO; Tue, 13 Aug 2019 17:03:18 +0000
+	id 1hxaCO-0000dG-Ib; Tue, 13 Aug 2019 17:03:04 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxaBK-0008NH-H8
+ id 1hxaBL-0008MO-S4
  for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 17:02:01 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4AAF1337;
- Tue, 13 Aug 2019 10:01:58 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6F9015A2;
+ Tue, 13 Aug 2019 10:01:59 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2CC343F706;
- Tue, 13 Aug 2019 10:01:57 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 804103F706;
+ Tue, 13 Aug 2019 10:01:58 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/8] arm64: memory: Rewrite default
- page_to_virt()/virt_to_page()
-Date: Tue, 13 Aug 2019 18:01:44 +0100
-Message-Id: <20190813170149.26037-4-will@kernel.org>
+Subject: [PATCH 4/8] arm64: memory: Simplify virt_to_page() implementation
+Date: Tue, 13 Aug 2019 18:01:45 +0100
+Message-Id: <20190813170149.26037-5-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190813170149.26037-1-will@kernel.org>
 References: <20190813170149.26037-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_100158_930227_6D20F608 
-X-CRM114-Status: GOOD (  10.44  )
+X-CRM114-CacheID: sfid-20190813_100200_069574_E1647BF1 
+X-CRM114-Status: GOOD (  11.24  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -71,52 +70,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The default implementations of page_to_virt() and virt_to_page() are
-fairly confusing to read and the former evaluates its 'page' parameter
-twice in the macro
-
-Rewrite them so that the computation is expressed as 'base + index' in
-both cases and the parameter is always evaluated exactly once.
+Build virt_to_page() on top of virt_to_pfn() so we can avoid the need
+for explicit shifting.
 
 Signed-off-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/memory.h | 21 ++++++++++-----------
- 1 file changed, 10 insertions(+), 11 deletions(-)
+ arch/arm64/include/asm/memory.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-index 47b4dc73b8bf..77074b3a1025 100644
+index 77074b3a1025..56be462c69ce 100644
 --- a/arch/arm64/include/asm/memory.h
 +++ b/arch/arm64/include/asm/memory.h
-@@ -313,19 +313,18 @@ static inline void *phys_to_virt(phys_addr_t x)
+@@ -311,7 +311,7 @@ static inline void *phys_to_virt(phys_addr_t x)
+ #define ARCH_PFN_OFFSET		((unsigned long)PHYS_PFN_OFFSET)
+ 
  #if !defined(CONFIG_SPARSEMEM_VMEMMAP) || defined(CONFIG_DEBUG_VIRTUAL)
- #define virt_to_page(kaddr)	pfn_to_page(__pa(kaddr) >> PAGE_SHIFT)
+-#define virt_to_page(kaddr)	pfn_to_page(__pa(kaddr) >> PAGE_SHIFT)
++#define virt_to_page(kaddr)	pfn_to_page(virt_to_pfn(kaddr))
  #else
--#define __virt_to_pgoff(kaddr)	(((u64)(kaddr) - PAGE_OFFSET) / PAGE_SIZE * sizeof(struct page))
--#define __page_to_voff(kaddr)	(((u64)(kaddr) - VMEMMAP_START) * PAGE_SIZE / sizeof(struct page))
--
--#define page_to_virt(page)	({					\
--	unsigned long __addr =						\
--		((__page_to_voff(page)) + PAGE_OFFSET);			\
--	const void *__addr_tag =					\
--		__tag_set((void *)__addr, page_kasan_tag(page));	\
--	((void *)__addr_tag);						\
-+#define page_to_virt(x)	({						\
-+	__typeof__(x) __page = x;					\
-+	u64 __idx = ((u64)__page - VMEMMAP_START) / sizeof(struct page);\
-+	u64 __addr = PAGE_OFFSET + (__idx * PAGE_SIZE);			\
-+	(void *)__tag_set((const void *)__addr, page_kasan_tag(__page));\
- })
- 
--#define virt_to_page(vaddr)	\
--	((struct page *)((__virt_to_pgoff(__tag_reset(vaddr))) + VMEMMAP_START))
-+#define virt_to_page(x)	({						\
-+	u64 __idx = (__tag_reset((u64)x) - PAGE_OFFSET) / PAGE_SIZE;	\
-+	u64 __addr = VMEMMAP_START + (__idx * sizeof(struct page));	\
-+	(struct page *)__addr;						\
-+})
- #endif
- 
- #define virt_addr_valid(addr)	({					\
+ #define page_to_virt(x)	({						\
+ 	__typeof__(x) __page = x;					\
 -- 
 2.11.0
 
