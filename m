@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE2968BE84
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:27:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E23E08BE86
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 18:28:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XWzxzi2BrEffsrJ5rod5mrYdmA2/chfLl7o1cm9rljM=; b=CJ8jXwPmxMVBnr
-	3PG8/pkpAW3akII+k+z2Ok69nGUE+PEuklLGX/f5qSX29jClBrw5S1zzCQ6Oxq9H5ZmIKGFeffJWP
-	urnpr+2UrIPYfn7KfpQ+zxwACItiGQT5aJlHE8y/89TB9CVY/miaVpB5TmDlq5YskJJJLR5hhqKAJ
-	rtWDD3WLs61Err8xmUfB4LeoliNJu0/JUhwHciiV6JoAXT4NioiywIC2uDTiMR80ZicKzLSyaWIiR
-	8BFDDo4K7AkZXbn9ayj+wWqwaJAh784s1exk9Jru2HeV+1RysTaC3Cn8X9IntzlxDNfOWk+9Pf1Tq
-	ONOlsODnq0mni1YMH3oQ==;
+	List-Owner; bh=HKJ0QhhRci1bKBUdL5ACStblgaYwyr/edJJPHAQPn/s=; b=MIt4dL7BHXEvPn
+	aVVNzzavZCwHL+D+AURlg6X9wIjLJ/4FmyR9AyL+pUa5Ru0r+1vwaRbcAbtEWTd1/dMRQroUEYp+X
+	kIMdpK5ggGo3HqsxXe0F0Wxo/cpXB6UsCJ8Thj2d9iX7tIZXGFJOmCuILMvT6qwevQL9FdMThl3dg
+	fgcF/UHeCaJQBCQxWLo4pWkdszmcSlL8N+VomEhKYNWRCE6b190oGZX0JPMDke/ujeTvtssVbFzLg
+	B2gAneVri1PV1AaVCsmIpM5kN+CuGiK6PcZhY5MUhBz6VqLc5zEUdHsAMT0StG7FIyIR04BxaDCHy
+	GgtRXCUP+ylgemPDiBHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxZe8-0007DQ-Go; Tue, 13 Aug 2019 16:27:40 +0000
+	id 1hxZeM-0007Ze-VO; Tue, 13 Aug 2019 16:27:54 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxZbC-0002tc-1x
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 16:24:39 +0000
+ id 1hxZbS-0003PO-VR
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 16:24:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6DFCF337;
- Tue, 13 Aug 2019 09:24:37 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7CB2F337;
+ Tue, 13 Aug 2019 09:24:54 -0700 (PDT)
 Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A1E2D3F7D8;
- Tue, 13 Aug 2019 09:24:36 -0700 (PDT)
-Date: Tue, 13 Aug 2019 17:24:34 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B01F23F706;
+ Tue, 13 Aug 2019 09:24:53 -0700 (PDT)
+Date: Tue, 13 Aug 2019 17:24:51 +0100
 From: Dave Martin <Dave.Martin@arm.com>
 To: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH v3 03/11] kselftest: arm64: mangle_pstate_invalid_daif_bits
-Message-ID: <20190813162434.GA10425@arm.com>
+Subject: Re: [PATCH v3 04/11] kselftest: arm64: mangle_pstate_invalid_mode_el
+Message-ID: <20190813162451.GB10425@arm.com>
 References: <20190802170300.20662-1-cristian.marussi@arm.com>
- <20190802170300.20662-4-cristian.marussi@arm.com>
+ <20190802170300.20662-5-cristian.marussi@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190802170300.20662-4-cristian.marussi@arm.com>
+In-Reply-To: <20190802170300.20662-5-cristian.marussi@arm.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_092438_164402_B163A6A2 
-X-CRM114-Status: GOOD (  17.41  )
+X-CRM114-CacheID: sfid-20190813_092455_107899_766AE488 
+X-CRM114-Status: GOOD (  17.37  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,37 +68,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 02, 2019 at 06:02:52PM +0100, Cristian Marussi wrote:
-> Added a simple mangle testcase which messes with the ucontext_t
+On Fri, Aug 02, 2019 at 06:02:53PM +0100, Cristian Marussi wrote:
+> Added 3 simple mangle testcases that mess with the ucontext_t
 
-Strange past tense?  How about "Add"?
+Add
 
-> from within the sig_handler, trying to set PSTATE DAIF bits to an
+> from within the sig_handler, trying to toggle PSTATE mode bits to
 
-"signal handler"?
+signal handler
 
-> invalid value (masking everything). Expects SIGSEGV on test PASS.
+> trick the system into switching to EL1/EL2/EL3. Expects SIGSEGV
+> on test PASS.
 > 
 > Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 > ---
->  .../arm64/signal/testcases/.gitignore         |  1 +
->  .../mangle_pstate_invalid_daif_bits.c         | 28 +++++++++++++++++++
->  2 files changed, 29 insertions(+)
->  create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_daif_bits.c
+>  .../arm64/signal/testcases/.gitignore         |  3 ++
+>  .../mangle_pstate_invalid_mode_el1.c          | 29 +++++++++++++++++++
+>  .../mangle_pstate_invalid_mode_el2.c          | 29 +++++++++++++++++++
+>  .../mangle_pstate_invalid_mode_el3.c          | 29 +++++++++++++++++++
+>  4 files changed, 90 insertions(+)
+>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1.c
+>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2.c
+>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3.c
 > 
 > diff --git a/tools/testing/selftests/arm64/signal/testcases/.gitignore b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-> index 8651272e3cfc..8a0a29f0cc2a 100644
+> index 8a0a29f0cc2a..226bb179b673 100644
 > --- a/tools/testing/selftests/arm64/signal/testcases/.gitignore
 > +++ b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-> @@ -1 +1,2 @@
+> @@ -1,2 +1,5 @@
 >  mangle_pstate_invalid_compat_toggle
-> +mangle_pstate_invalid_daif_bits
-> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_daif_bits.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_daif_bits.c
+>  mangle_pstate_invalid_daif_bits
+> +mangle_pstate_invalid_mode_el1
+> +mangle_pstate_invalid_mode_el2
+> +mangle_pstate_invalid_mode_el3
+
+What about having
+
+	!*.[ch]
+	mangle_*
+
+rather than having to update .gitignore to list every test executable?
+
+> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1.c
 > new file mode 100644
-> index 000000000000..af899d4bb655
+> index 000000000000..07aed7624383
 > --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_daif_bits.c
-> @@ -0,0 +1,28 @@
+> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1.c
+> @@ -0,0 +1,29 @@
 > +/* SPDX-License-Identifier: GPL-2.0 */
 > +/* Copyright (C) 2019 ARM Limited */
 > +
@@ -111,16 +127,38 @@ Strange past tense?  How about "Add"?
 > +	ASSERT_GOOD_CONTEXT(uc);
 > +
 > +	/*
-> +	 * This config should trigger a SIGSEGV by Kernel when it checks
-> +	 * the sigframe consistency in valid_user_regs() routine.
+> +	 * This config should trigger a SIGSEGV by Kernel
+> +	 * when checking valid_user_regs()
 > +	 */
-> +	uc->uc_mcontext.pstate |= PSR_D_BIT | PSR_A_BIT | PSR_I_BIT | PSR_F_BIT;
+> +	uc->uc_mcontext.pstate &= ~PSR_MODE_MASK;
+> +	uc->uc_mcontext.pstate |= PSR_MODE_EL1t;
 > +
 > +	return 1;
 > +}
+> +
+> +struct tdescr tde = {
+> +		.sanity_disabled = true,
+> +		.name = "MANGLE_PSTATE_INVALID_MODE_EL1t",
+> +		.descr = "Mangling uc_mcontext with INVALID MODE EL1t",
+> +		.sig_trig = SIGUSR1,
+> +		.sig_ok = SIGSEGV,
+> +		.run = mangle_invalid_pstate_run,
+> +};
 
-Hmmm, there was a lot of common framework code, but it seems like a good
-investment if adding a new test is as simple as this :)
+These tests seem identical except for the EL number.
+Can we macro-ise them?
+
+mangle_pstate_invalid_mode_el1.c could become
+
+--8<--
+
+#include "mangle_pstate_invalid_mode.h"
+
+DEFINE_TESTCASE_MANGLE_PSTATE_INVALID_MODE(1)
+
+-->8--
+
+(for example).
 
 [...]
 
