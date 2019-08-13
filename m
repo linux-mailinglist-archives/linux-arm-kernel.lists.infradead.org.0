@@ -2,65 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C3C38B87A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 14:22:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5581E8B8A7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 14:36:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0sn1mt/OaI/nVXvMfEXEfKoF9H2g51smddh3UqA4198=; b=OAU+jATOOZO5AD
-	wDSr6D4zXDFlQ6OFklS4mV6V1ICOB0FlUtyJ70C/6i5e1Mq/l9drdUyAEaMCf+2/0IqUSj8C6hezH
-	FsuqEjZL8mgVY1MgNkQ99k5yLtTywTz0ciNHADlKFQMojOEY0jpPFPBbYnDIpY5A4JRpnMZ99aW1A
-	QvOQkp1zx+5mA63z6gtHYB4bUi3JPzRidR4yNe1kkerFCDJvDkjuVrA/6ruF/aAephZr5vNOxOJio
-	uXDgjrRq9Y2aGM0Og7DwRZFF2W29O6ybPGU4A3ohG466WXk2SWzp+X0xlSDt3iva+C2fFEWuUAj5/
-	peLWZgd2Oad6I1+mgRIQ==;
+	List-Owner; bh=EWi98Ilc6EhX7xm5M9Of4NlTPd5vl4DAqDXa48eKwAM=; b=rDHsVaY3Z8xmzj
+	tUz5ZL6+kIqp8HdjVGI4uk2ZXZ3StOKbPwJQ97g28ujCObnqg569oSoZwgOTnQlrSWjrJus3ldgS1
+	hYFViooJkeaqHOrJOKJcFO1KNMt2hndLMaXUnkcBPMBeHJoEJ7DclUtbiFNf+76AIbSlbsJJ1XDD2
+	gTkig2+ZhC6ZGnT1tavebTByZ3/Y2fePEhpgaOU0EZpwdVg0f/YkX2L2M8FEP6or1G2mQCqjt5DUb
+	EweRFuiqRDzQj/uUHZetK4QIcmmqwP1jUucRkrnksl1aWqdiVoSM8pD7khbIGV/kuFbY9atwULh6u
+	88l8ClTIh9PVc9yEYOYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxVp1-0004Q9-0c; Tue, 13 Aug 2019 12:22:39 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
+	id 1hxW2R-0000Cq-18; Tue, 13 Aug 2019 12:36:31 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxVom-0004P9-DE
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 12:22:27 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id D73A0634C88;
- Tue, 13 Aug 2019 15:22:12 +0300 (EEST)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1hxVoa-0000g3-6a; Tue, 13 Aug 2019 15:22:12 +0300
-Date: Tue, 13 Aug 2019 15:22:12 +0300
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: Re: [PATCH v2 1/3] dt-bindings: media: i2c: Add IMX290 CMOS sensor
- binding
-Message-ID: <20190813122212.GE2527@valkosipuli.retiisi.org.uk>
-References: <20190806130938.19916-1-manivannan.sadhasivam@linaro.org>
- <20190806130938.19916-2-manivannan.sadhasivam@linaro.org>
- <20190813094526.GG835@valkosipuli.retiisi.org.uk>
- <20190813113358.GA28877@Mani-XPS-13-9360>
- <20190813114643.GA2527@valkosipuli.retiisi.org.uk>
- <20190813121400.GA29378@Mani-XPS-13-9360>
+ id 1hxW2H-0000C6-Ls
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 12:36:22 +0000
+Received: by mail-lj1-x241.google.com with SMTP id z28so47176962ljn.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 05:36:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/4zbvSpEn2DpmCJ6tMtDBdGBohm95LMSJu2Rb3mH21k=;
+ b=lrApJRtm6GOhWs3fCFPJSlcSNogP0GznPdE24vcG3Z/F5ysBIyHK4jr3TmLyVAenyu
+ h+reeHqoCtu5DnUOonZfy2rp0wqpy0QvIWd1egLjw9T+fHOo9bX4D5YJplkiBANlzg+Z
+ YxoJvdWuGbwSks5nTFsOOCwSZvZqkTUwflPOvOlwIZSX4gGr1CPhFztABch0yEq1LGEz
+ niMncc0gUHJSPmGlCnp7eYd+vKKI1m13mmcPqKSQd33YlT2b2H8DFXOYUkcC6lFgsZvv
+ RCcC5ce0ZlXrJuUsDAAaXHftEs3Uc66lwJtN2oFXfWLTEOEySRPJVNo9EtMHQqBQljfF
+ I95w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/4zbvSpEn2DpmCJ6tMtDBdGBohm95LMSJu2Rb3mH21k=;
+ b=YuhGYbDsJgifk/do9Kj7BjJFXUKuRAGgQTSBIA4qrYK2YCsI7vzFyg8CloP0XthhF2
+ YN2QN7HSW1pcsG/LfSpUgW+4Krl68u4fKFbwV2/qVbo3kKQyOL3vFlairfPQOMEZHrBX
+ PcwPndozNyz62vOZeK92Fcm3ktsGJL+Pzx1iW3WHQBuNekdzCBehkgx+QiD/v/ATZzDg
+ 68798wxctnkrcNLiTxLpNnG1UywySWYMpwvtzVKRrHVI+ft2jzOQDbchXmNgCPadhkro
+ UtQMTOt2C0zSbV45DWNGGSmd8JCL+pHPzPD52ild5iMtqem8GpHpuDaJUzafYwjSzoTH
+ kcYw==
+X-Gm-Message-State: APjAAAX0Ng52g4LG2i6mf5PdBBAkvFwE4K58QDDcVNA2pt4Kep3INXbk
+ QKRLIBkn35stXp3u1H+B6kbKhepwfO7C3sgNNBY=
+X-Google-Smtp-Source: APXvYqw9QQj9Ti8WKyo8gjlKSpGsqLRG2B9QmRI3Fs3vQL04NHHaPG06xFKmK+ZntPzsDk7jUfioPFAqkeTU3Op2eJs=
+X-Received: by 2002:a2e:3a13:: with SMTP id h19mr21421766lja.220.1565699777265; 
+ Tue, 13 Aug 2019 05:36:17 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190813121400.GA29378@Mani-XPS-13-9360>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190812215052.71840-1-ndesaulniers@google.com>
+ <20190812215052.71840-12-ndesaulniers@google.com>
+ <20190813082744.xmzmm4j675rqiz47@willie-the-truck>
+In-Reply-To: <20190813082744.xmzmm4j675rqiz47@willie-the-truck>
+From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+Date: Tue, 13 Aug 2019 14:36:06 +0200
+Message-ID: <CANiq72mAfJ23PyWzZAELgbKQDCX2nvY0z+dmOMe14qz=wa6eFg@mail.gmail.com>
+Subject: Re: [PATCH 12/16] arm64: prefer __section from compiler_attributes.h
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_052224_820061_0D0C4992 
-X-CRM114-Status: GOOD (  32.66  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190813_053621_746922_085CC4BE 
+X-CRM114-Status: GOOD (  16.09  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (miguel.ojeda.sandonis[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,109 +94,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, robh+dt@kernel.org,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Song Liu <songliubraving@fb.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Alexei Starovoitov <ast@kernel.org>, Daniel Borkmann <daniel@iogearbox.net>,
+ clang-built-linux@googlegroups.com, Allison Randal <allison@lohutok.net>,
+ yhs@fb.com, Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, Sedat Dilek <sedat.dilek@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, bpf@vger.kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Network Development <netdev@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Enrico Weigelt <info@metux.net>,
+ Martin KaFai Lau <kafai@fb.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Manivannan,
+On Tue, Aug 13, 2019 at 10:27 AM Will Deacon <will@kernel.org> wrote:
+>
+> Hi Nick,
+>
+> On Mon, Aug 12, 2019 at 02:50:45PM -0700, Nick Desaulniers wrote:
+> > GCC unescapes escaped string section names while Clang does not. Because
+> > __section uses the `#` stringification operator for the section name, it
+> > doesn't need to be escaped.
+> >
+> > This antipattern was found with:
+> > $ grep -e __section\(\" -e __section__\(\" -r
+> >
+> > Reported-by: Sedat Dilek <sedat.dilek@gmail.com>
+> > Suggested-by: Josh Poimboeuf <jpoimboe@redhat.com>
+> > Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
+> > ---
+> >  arch/arm64/include/asm/cache.h     | 2 +-
+> >  arch/arm64/kernel/smp_spin_table.c | 2 +-
+> >  2 files changed, 2 insertions(+), 2 deletions(-)
+>
+> Does this fix a build issue, or is it just cosmetic or do we end up with
+> duplicate sections or something else?
 
-On Tue, Aug 13, 2019 at 05:44:00PM +0530, Manivannan Sadhasivam wrote:
-> Hi Sakari,
-> 
-> On Tue, Aug 13, 2019 at 02:46:43PM +0300, Sakari Ailus wrote:
-> > Hi Manivannan,
-> > 
-> > On Tue, Aug 13, 2019 at 05:03:58PM +0530, Manivannan Sadhasivam wrote:
-> > > Hi Sakari,
-> > > 
-> > > Thanks for the review!
-> > > 
-> > > On Tue, Aug 13, 2019 at 12:45:26PM +0300, Sakari Ailus wrote:
-> > > > Hi Manivannan,
-> > > > 
-> > > > On Tue, Aug 06, 2019 at 06:39:36PM +0530, Manivannan Sadhasivam wrote:
-> > > > > Add devicetree binding for IMX290 CMOS image sensor.
-> > > > > 
-> > > > > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> > > > > Reviewed-by: Rob Herring <robh@kernel.org>
-> > > > > ---
-> > > > >  .../devicetree/bindings/media/i2c/imx290.txt  | 51 +++++++++++++++++++
-> > > > >  1 file changed, 51 insertions(+)
-> > > > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/imx290.txt
-> > > > > 
-> > > > > diff --git a/Documentation/devicetree/bindings/media/i2c/imx290.txt b/Documentation/devicetree/bindings/media/i2c/imx290.txt
-> > > > > new file mode 100644
-> > > > > index 000000000000..7535b5b5b24b
-> > > > > --- /dev/null
-> > > > > +++ b/Documentation/devicetree/bindings/media/i2c/imx290.txt
-> > > > > @@ -0,0 +1,51 @@
-> > > > > +* Sony IMX290 1/2.8-Inch CMOS Image Sensor
-> > > > > +
-> > > > > +The Sony IMX290 is a 1/2.8-Inch CMOS Solid-state image sensor with
-> > > > > +Square Pixel for Color Cameras. It is programmable through I2C and 4-wire
-> > > > > +interfaces. The sensor output is available via CMOS logic parallel SDR output,
-> > > > > +Low voltage LVDS DDR output and CSI-2 serial data output.
-> > > > 
-> > > > If there are three to choose from, then you should specify which one is in
-> > > > use. Given that I think chances remain slim we'd add support for the other
-> > > > two (it's certainly not ruled out though), CSI-2 could be the default. But
-> > > > this needs to be documented.
-> > > > 
-> > > 
-> > > Hmm... I'm not sure here. Bindings should describe the hardware and not the
-> > > limitations of the driver. Here as you said, the sensor can output frames
-> > > in 3 different modes/formats but the driver only supports CSI2. I can add a
-> > > note in the driver but not sure whether dt-binding is the right place or not!
-> > 
-> > I guess alternatively you could document the necessary bindings for the
-> > other two busses.
-> > 
-> > But what I'm saying here is that it's highly unlikely they'll be ever
-> > needed, and it'd be mostly a waste of time to implement that. (That said, I
-> > have nothing against the use of these busses, but I've never seen anyone
-> > using them.) Many other devices use defaults for more contentious settings.
-> > 
-> 
-> Agree with you but my question was, whether I could document the supported
-> mode in bindings or not! I have seen comments from Rob in the past that the
-> binding should not document the limitations of the driver. But anyway, one
-> can infer from the current binding that only CSI2 is supported for now, it's
-> just stating it explicitly makes me doubtful!
+This should be cosmetic -- basically we are trying to move all users
+of current available __attribute__s in compiler_attributes.h to the
+__attr forms. I am also adding (slowly) new attributes that are
+already used but we don't have them yet in __attr form.
 
-I think it could be e.g.:
+> Happy to route it via arm64, just having trouble working out whether it's
+> 5.3 material!
 
-The CSI-2 bus is the default. No bindings have been defined for the other
-busses.
+As you prefer! Those that are not taken by a maintainer I will pick up
+and send via compiler-attributes.
 
-...
+I would go for 5.4, since there is no particular rush anyway.
 
-> > > > I suppose you can't change the lane order, so clock-lanes is redundant
-> > > > (don't use it in the example) and data-lanes should be monotonically
-> > > > incrementing series from 1 to 4.
-> > > > 
-> > > 
-> > > We can change the order and the example here illustrates how it has been
-> > > wired in FRAMOS module. If I change the lane order like you said, it won't
-> > > work.
-> > 
-> > I highly doubt that. Neither the driver nor the sensor uses the lane
-> > ordering information.
-> > 
-> 
-> Agree but CSI2 host will need this informtion, right? Please correct me if
-> I'm wrong!
-
-The CSI-2 receiver may need that configuration, but it's not addressed by a
-sensor's binding documentation (it's configured in the endpoint on the
-receiver's side).
-
--- 
-Sakari Ailus
+Cheers,
+Miguel
 
 _______________________________________________
 linux-arm-kernel mailing list
