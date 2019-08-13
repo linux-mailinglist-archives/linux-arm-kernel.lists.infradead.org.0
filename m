@@ -2,82 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 597818BB85
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 16:29:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BEDF8BB87
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 13 Aug 2019 16:29:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=K/NYqjbcc/vBmTLY9b95dw3bTzDNvkF7H0jwytljB50=; b=nXsIy2TpZsVQZceAYGP+gC2ZC
-	gqSqxg+v5QfMMnq63otRd2iUIChQJVpyQ9R9m2tVF4Mhqj4H/J/veSYK9DOzP2gseqGWf/Wbpd1y+
-	wT6iJHhoIAV0SZA48/AQm5dMeEtiQZAuOHUHq/qh1+nmoYBBroL5j5oOoGJZVwo/0CaXJdWxFzWjt
-	hcWVBUqhggmdB6/rEDog8JERcGMFaaO49vh9CljVMMD3AYLB0i89gPdvw+ef7fHvh8PpOkrJcxcOI
-	WbkVyTA8Z46GuS4aBmSyWnpbgJ5O84LZBtoFIJqTUAVJaQkPvnbmfZAhFc8HTdlhmYnz6qkQPF4O7
-	FA+QbX9OQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xlk8B5QkoCmwb4NcgeAg7c4Rnd6hZnvmBeq345bV7TQ=; b=E0E
+	RHm10Ly1Lg6n+Gs8RogLk4XRbKQ4LUu2zIpXrz7XxOGZ7NNtmSdr/vvAwyaTOS42vL7aGhm/521gl
+	smYvklndHewZ5QNmO48SWkCkzelJrxapVg1esX6JmBbT1IMK1LLPz+BojhnmFd6AFaCnaZ2Nv7DO3
+	tqfsl3oxWxLQ96YaCyYgz5WB2/nEniUM8LirAi9m1CfpfzmuVamZS79j3nxyROMijIaU2ktrHnflT
+	Zgd1+9MNkLmTpVfvwdV7g3awFrHmMDH1LC66jKAEDAmwX+SUTc3ZtVRt+GEBVOEr3jP8fSI28BZvf
+	wE00IFgPc6GMLOnIQTZHKPmgEMZBekg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxXn3-0001PT-5H; Tue, 13 Aug 2019 14:28:45 +0000
-Received: from vern.gendns.com ([98.142.107.122])
+	id 1hxXng-0001ho-KP; Tue, 13 Aug 2019 14:29:24 +0000
+Received: from ozlabs.org ([203.11.71.1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxXly-0001HE-BW
- for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 14:27:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=eyW2kvR5Exa0mfMjjExkFPqx97Nxe7382YhDJSTHDSY=; b=WIvsweW4CHtS7NPHBlwgjR5qyZ
- BLAWjVlCim78VGWE+OVOgkj7X4012/CwOo7R4sOnMlHQlp3dGIa/eaS83RV6JmlKyBFOJcvXID2IU
- PxeOrvyXddNCO2ifG/d60a5azAH4aavM5AKJuW1UlxRE1zbTkFYl8J+xcAEfrGQ3SByeq2ajwoMnY
- 8Nw6l/VpqotyhHTSHK96jnCtEUmhDIli1KZjj9fs2KPZktu1KJrH0kPjlyHSC+WuAQqNp6/5WOL17
- JJ7GuFj1jvapRuzNC07ThzuEEXp+o4ppxAcxyvGbEuVgkgPR1vLNoSLa93+qtzJcpnSPhfiqvIhsR
- fEUQqabQ==;
-Received: from 108-198-5-147.lightspeed.okcbok.sbcglobal.net
- ([108.198.5.147]:38866 helo=[192.168.0.134])
- by vern.gendns.com with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
- (Exim 4.92) (envelope-from <david@lechnology.com>)
- id 1hxXlD-0007l4-9e; Tue, 13 Aug 2019 10:26:51 -0400
-Subject: Re: [PATCH v2 4/6] irqchip/irq-pruss-intc: Add helper functions to
- configure internal mapping
-To: Suman Anna <s-anna@ti.com>, Marc Zyngier <maz@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>
-References: <20190731224149.11153-1-s-anna@ti.com>
- <20190731224149.11153-5-s-anna@ti.com>
- <1a63eb50-7c5c-eb3d-3cbe-bd1cc59ce3fe@kernel.org>
- <89abc27f-5d02-a8ce-df0e-b185c2a647cd@ti.com>
- <1ac233f6-f3a3-6cec-9ad2-49e985fdfaca@lechnology.com>
- <6c17875e-496d-1277-278f-239d3a9d8ca2@ti.com>
- <124b03b8-f8e7-682b-8767-13a739329da2@lechnology.com>
- <fed95ae1-86a5-af75-c017-08b19e8e743b@ti.com>
-From: David Lechner <david@lechnology.com>
-Message-ID: <de94d398-4768-17b0-b9ef-a66d43d34ae3@lechnology.com>
-Date: Tue, 13 Aug 2019 09:26:50 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hxXn5-0001ax-98
+ for linux-arm-kernel@lists.infradead.org; Tue, 13 Aug 2019 14:28:50 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 467FSk6gMhz9sN1;
+ Wed, 14 Aug 2019 00:28:38 +1000 (AEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1565706520;
+ bh=ACE+9ye8XX94fLyYzZSFwCW0VwuWvHwCQooSP/F/dgA=;
+ h=Date:From:To:Cc:Subject:From;
+ b=QuEotmz3ddb1SAqTbT/1noT8q4953fVbA6IR3DZF9nlzqSon4Opid/AVKjcLuFrGt
+ W3LeFDjcH1DyNW7chYSCr4ZD9qSUzdaBJ0tgS169qtmZy2IPkbunv5eqwVC1/Z9P5c
+ nIlhKcM7YFPKitGRZ0ujJ+JDhl3HPMs6oAPE4bsj97bp2+6dVQID2AGFIB3VraP8G1
+ kFvi1PgipJRC3kOt/+bGxgOBh4lk7VUNZda8Do7EhdV3LzJMKONdkdLnUypvXryn0i
+ qt7CJZAlDcb3W0/yf4DBbIUmCCj5LCiCUIrmp8lrmiJ+nBOmoF/+YLOuaUrpQDb6ob
+ j6TxFnSTPHu+g==
+Date: Wed, 14 Aug 2019 00:28:36 +1000
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>, ARM
+ <linux-arm-kernel@lists.infradead.org>
+Subject: linux-next: Fixes tags need some work in the arm-soc tree
+Message-ID: <20190814002836.4b6aa14b@canb.auug.org.au>
 MIME-Version: 1.0
-In-Reply-To: <fed95ae1-86a5-af75-c017-08b19e8e743b@ti.com>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - vern.gendns.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lechnology.com
-X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id:
- davidmain+lechnology.com/only user confirmed/virtual account not confirmed
-X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_072738_563928_09A3EB14 
-X-CRM114-Status: GOOD (  28.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190813_072849_361049_A56A52E9 
+X-CRM114-Status: UNSURE (   6.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -85,8 +60,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -100,111 +73,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
- Tony Lindgren <tony@atomide.com>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org, "Andrew F. Davis" <afd@ti.com>,
- Lokesh Vutla <lokeshvutla@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Murali Karicheri <m-karicheri2@ti.com>, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Fabrice Gasnier <fabrice.gasnier@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>
+Content-Type: multipart/mixed; boundary="===============8405970818435131111=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/12/19 2:39 PM, Suman Anna wrote:
-> Hi David,
-> 
-> On 8/8/19 12:09 PM, David Lechner wrote:
->> On 8/2/19 4:26 PM, Suman Anna wrote:
->>> Point is different applications might use mapping differently as per
->>> their firmware and driver/application design and their split across one
->>> or more PRUs (design by contract). And we need to set this up at runtime
->>> when the application driver is getting run. We will have either the Soft
->>> UART or the Ethernet running at a time depending on the end goal desired
->>>
->>>> I have an idea that we can use multiple struct irq_domains to make
->>>> this work in the existing IRQ framework, but it would be helpful to
->>>> know more about the bigger picture first.
->>>
->>> Yeah, would be great if there is a way this can be solved without having
->>> to introduce additional API.
->>>
->>
->>
->> Here is what I came up with to use existing IRQ APIs to implement event
->> mapping.
->> Basically it is the same as my previous suggestion [1], with the
->> addition of
->> multiple IRQ domains.
-> 
-> First of all, many thanks for looking into the problem and providing
-> patches for the alternate solutions. If we were to not use any exported
-> functions, this approach does seem to be a viable solution. I am going
-> to play around with both [1] and this patch with all our existing
-> usecases and see if I run into any issues.
-> 
-> So, w.r.t this patch compared to [1], is the multiple IRQ domain solving
-> anything specifically? Our main issue is the re-purposing of a event
-> (and its mapping depending on the application), and the same issue will
-> remain whether we have multiple domains or not. Also, now we would
-> expect an event to migrate between different domains based on its usage.
+--===============8405970818435131111==
+Content-Type: multipart/signed; boundary="Sig_/kz85xgv1foK0yj0LRJkbu.m";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
 
-The only thing using multiple IRQ domains gets us is that it allows us to
-have multiple IRQ descriptors (virq) for a single PRU event. In other
-words, if we needed to map a single system event to both a PRU core and
-the MCU interrupt controller at the same time, then we would need separate
-IRQ domains to do this. I we would never need to do something like this,
-then we don't the IRQ domains.
+--Sig_/kz85xgv1foK0yj0LRJkbu.m
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-Previously, you said "We can have two different applications use the same
-event with different mappings." So I took this to mean that the events
-would actually be mapped in hardware at the same time, but now I
-understand it to just mean that a single firmware blob could contain
-multiple mappings that contain the same events, but won't actually be used
-at the same time. So if this is the case, then we probably don't need to
-mess with IRQ domains.
+Hi all,
+
+In commit
+
+  4f0f89dd9060 ("ARM: dts: stm32: add pwm cells to stm32f746")
+
+Fixes tag
+
+  Fixes: 9bd7b77af8e4 ("ARM: dts: stm32: add Timers driver for stm32f746
+
+has these problem(s):
+
+  - Subject has leading but no trailing parentheses
+  - Subject has leading but no trailing quotes
+
+In commit
+
+  289459737869 ("ARM: dts: stm32: add pwm cells to stm32f429")
+
+Fixes tag
+
+  Fixes: c0e14fc712d9 ("ARM: dts: stm32: add Timers driver for stm32f429
+
+has these problem(s):
+
+  - Subject has leading but no trailing parentheses
+  - Subject has leading but no trailing quotes
+
+In commit
+
+  493e84c5dc4d ("ARM: dts: stm32: add missing vdda-supply to adc on stm32h7=
+43i-eval")
+
+Fixes tag
+
+  Fixes: 090992a9ca54 ("ARM: dts: stm32: enable ADC on stm32h743i-eval
+
+has these problem(s):
+
+  - Subject has leading but no trailing parentheses
+  - Subject has leading but no trailing quotes
+
+In commit
+
+  1425d00aff01 ("ARM: dts: stm32: add missing vdda-supply to adc on stm3242=
+9i-eval")
+
+Fixes tag
+
+  Fixes: 7465d81191a1 ("ARM: dts: stm32: enable ADC on stm32f429i-eval
+
+has these problem(s):
+
+  - Subject has leading but no trailing parentheses
+  - Subject has leading but no trailing quotes
+
+In commit
+
+  bb06b54721fb ("ARM: dts: stm32: remove fixed regulator unit address on st=
+m32429i-eval")
+
+Fixes tag
+
+  Fixes: 7465d81191a1 ("ARM: dts: stm32: enable ADC on stm32f429i-eval
+
+has these problem(s):
+
+  - Subject has leading but no trailing parentheses
+  - Subject has leading but no trailing quotes
+
+Please do not split Fixes tags over more than one line.  Also, please
+keep them with the rest of the other tags.
+
+--=20
+Cheers,
+Stephen Rothwell
+
+--Sig_/kz85xgv1foK0yj0LRJkbu.m
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl1SyRQACgkQAVBC80lX
+0GzZDwf+IsrJGu+m4VjHCnQut8LJ5UjoXaH00xOp7YoLUwH3HrpZUoK3LioqIoXO
+yZqQHgRSdjSZCvb3CfAzMKHks9CjbMHPzd6YMzMg06c2oRHvzk8Yhhjg4Pe+s8uG
+q1J/L9QC4w9dchq44h0bjgXMe5EQcvgeCvLk9INrbX3Tj1lgYHq3wGHaytMba8vI
+6Y90Mhy+0F5RnzRM5+NU8PizWeigM0P1qUpMbvPc41YNknE/uD+qrFYqYad/XJxn
+NQhRiLJFJLewtIOvNMdzwrjAFEmANR+yi34Ut+UrOZC60cNhW1jw/oc3qcMnY/kL
+/BHY681uQ2Vnn1R3PcnRdKwu1snuWA==
+=fN5O
+-----END PGP SIGNATURE-----
+
+--Sig_/kz85xgv1foK0yj0LRJkbu.m--
 
 
-> 
->>
->> The idea is that each external interrupt controller (or DMA controller,
->> etc.)
->> that is connected to the PRUSS interrupt controller is considered an
->> interrupt
->> domain. One of the objections to my previous patch was that we could
->> only have
->> one IRQ descriptor per event. Now we can have one descriptor per event per
->> domain.
->>
->> I am still proposing that we use the interrupt-cells and identical vendor
->> resource data structures in the PRU firmware be used to provide the mapping
->> information. (As a side note, I still think it is important to include
->> EVTSEL
->> on AM18xx in order to fully describe the event.)
-> 
-> W.r.t EVTSEL, it is a global value and applies to a range of events. I
-> have another equivalent register/functionality on most of the other SoCs
-> as well (a register in PRUSS_CFG space) that muxes standard events vs
-> MII_RT events. Again, that is limited to only a subset of all the system
-> events. So, should this continue to be a per event specifier, it will be
-> yet another mapping configuration data item (my idea was to manage this
-> once per application within the PRU remoteproc driver along with the
-> fwspec mapping).
-
-I guess it just seems a bit fragile to me to specify EVTSEL elsewhere. My
-thinking is that the first event registered that requires a specific EVTSEL
-value "wins" and if any other events are registered with a different EVTSEL
-value, then we will get an error. Likewise, if all users of a specific
-EVTSEL value are unmapped, then it is up for grabs for any value again.
-
-On the other hand, with a global value as you have proposed, we can just
-leave comments in the device tree and the firmware about which EVTSEL value
-is required for a specific event number. We won't be able to catch mistakes
-at runtime, but at least there will be something to remind us what we did
-wrong. So, I suppose that is good enough.
-
+--===============8405970818435131111==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8405970818435131111==--
+
