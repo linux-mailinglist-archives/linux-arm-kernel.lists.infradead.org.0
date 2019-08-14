@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 302618D62B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:32:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F15F18D628
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:31:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S4Xe5slL6duEQi+thGM6mP7lSi3KF4Sz06buhXwDkN4=; b=rYcfxq9Cq1aSTh
-	WYcrCOnx2qBsB/1hiTIiUIXsytrcfVHm0B4K63LRb0f677O3Vl/Mz1PDhDeOhOPozuJJAqPQFCHWf
-	VQl7RpMdR5FkFzYLjzHRm+gjTQFfvmIfocdKnTSFFcCdygHKmwUOyKGyn7kvvbdVaRSMTuKvPioz0
-	0NJur3PNX00x/CSY4B6vRkbaY/N9JHP6RdgUGOE2sa7xO0cPZj6DE+kZR7sTjQlF0ZFF1vPezuLQu
-	JGGYC4oRdxcr5rn/EOxZ8CaGhRT2Uyfx1pIAbEHzU8dV0m1N+pYaPBpTTygJXiiSg0solDA8cwTJj
-	jP3Iz8tTNpJnPeZQFhZg==;
+	List-Owner; bh=MzxS+j+3jvJKqzBjluwO4iL9AO/wFt1GcIMCJR3DPJo=; b=Cauty9RLcjcNaf
+	eI/Qqe5fywzbP0Y0BKWbjQ9rGP5WJyT86dwDOTeRzhBKl/EhyPGN9LMP2hxvknEkeM2olvA+644Nr
+	Uhu+7FSY1+9finaiG3Nk+9XPbtwDyQOapbpcVn1a1e+Q7SVNFeqQuZEHRNYu9O1+6fYKTvbDymSsB
+	4cG0x0JBSOyYExl9OFvzLSivlvfCe4qc+gdY0E0i0+OQ9wx/1eNHK0HHKKrDyQsFFoDbSmUNnrfLC
+	V9bRyBcLGyeHsGITzmZL2rS2m3hQBB5lqzTIKWCRmP2o7CrVHrRngz5o3r1dbioh/BCfjJy20+mKy
+	B+ZAhip61DE+6eOOeQTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxuJt-000623-P6; Wed, 14 Aug 2019 14:32:09 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hxuJY-0005in-Ab; Wed, 14 Aug 2019 14:31:48 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxuHN-0002dn-Tw
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:29:35 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z23so4664748wmf.2
+ id 1hxuHM-0002ex-FD
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:29:34 +0000
+Received: by mail-wr1-x443.google.com with SMTP id u16so275641wrr.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 07:29:31 -0700 (PDT)
+ Wed, 14 Aug 2019 07:29:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=d9R5lD+eyPtty/EDRB0dxvoT1lDKjG0Cf5Gg/5QaCyE=;
- b=GNzT3FnIRl2b3ybIdQLPxMtE9bcdJkCqUB/3O8hct7afWdURosTJPbMY96tVMfIvjk
- CvSVfwooKZNsxNPcBIFpagBc7IfYBvJbbOm9x39Q21Edp8unNSxuRrFEj/wi8Csdg947
- sTs2lsUyNp+YcFPbIPC4T870vz13/0JgLc5vL2d+x/lvaNrPSrQ3BqJO+++YihV+v0+/
- E6zpiWoSI7G2EHzpnYIo8UjuCCXin2rui80fisFkDcYBofOR9AFj9Qicfqfery2wgEvJ
- Dfcjd2GvMzLSUSpu3skeR3k4ucBm17R9M21hyFtnKt5Tr+qWa30wSPfVSvOqaKC2JGVA
- XSKA==
+ bh=VoiyEoznGsebSQriKSg2X1Svm8xxDWhM6W5MAaVlZfM=;
+ b=jVWJmx+y2kT3aUx0SBHcmJEyZLxN5wNHbfobgwLdEmu9GOF4E2zVIvj0kNud4Neakn
+ r4R7ia+Bd2OZkcCwGHL65pU7hUFJMgtqCT21SoS9wIonU1OYjghZkmWIp5LG5UhnMjy4
+ aphvTnLzuIjuzgZkMGHtcxjPODJxi/uVgkDuL4qTTHSM3AJQNhJDfW5eg8PDwNzLZL9H
+ xf5ShTMpRmYZO5y6lcdNjn8FjLI6BmNp43rDtnu5kmKrPZecoVStxfTI/C11YJp28bwu
+ wA6ZVmC4j8wJpBEpOOSTyYBEZb8STMFtzKYUHat6zc+01hNQb8bmQnOqU3xvByzrtftX
+ PUOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=d9R5lD+eyPtty/EDRB0dxvoT1lDKjG0Cf5Gg/5QaCyE=;
- b=Sc+EWIJprqWa783e3+D7dZC9l2QkCwfuitx+u0hBy1wJ3gvyb6r5uc+HGpIz6dIW1W
- xqZtx5mjcNgERShdLoiYeWVGNy3viFqmeqwuEhVl+SD6qUN46Jl/7Gz6L9klML0jA8gY
- VNEgLOXfUrm1qBD3YMPzBpkviCs/UxE/UFYS3xoZWFhxC8zRuRUOPhzwuWkvxRSVhVYW
- Yv+wK5AP2DquwDslw8730NhWuj9ynjgneRGO2SGR4y6P/6HgiOfZmAgVVbCQnJrW13EV
- 7Z1baC3+IdtZ6534l4oihyH3mT3xKSNJycbH2EJwiCLFe+PsBUI8hyk8s+vmA7cizXys
- rAiA==
-X-Gm-Message-State: APjAAAWcAYg9r7asCxw0N6tVIILLQBYPlW3a6zCto+Yf0LIv1EgZQSYc
- 2FJCkXSUKUIsHZVP0LbMGFcUUQ==
-X-Google-Smtp-Source: APXvYqw9hNnn1+mAsquSAj/R9n5028pqU8HwYAJy2MdmuUrEF/+GoIdhBFhAN4poaGz3c4MgOPxF/g==
-X-Received: by 2002:a1c:9696:: with SMTP id y144mr8796545wmd.73.1565792969990; 
- Wed, 14 Aug 2019 07:29:29 -0700 (PDT)
+ bh=VoiyEoznGsebSQriKSg2X1Svm8xxDWhM6W5MAaVlZfM=;
+ b=enUJLQ0jCupvhauH6QYQftClytFuVf7O9D17oBUKNLjooZGQxZVoG/VO6AMQExgWov
+ vWBNYRGYPMsMZKl62wej8sjYEJL5BEq+QPPHj45Rxo4SMYCwSJ58y9+kMpaeFf9nedL1
+ 6p2luDtNHhm+0qIE5PTrYSIbwBAjrLxxr9xBsPUwjSNGFPFQlG1pvlXhVedJpEeR3Oov
+ iees/Nmg+BUWRWuIYPniJ0QzhCoZeIKmk/7TVIaVu1nZViS4g1EGMopIULsxGQ8TLaZj
+ o8frM9uOFSi6jFozLhbHjlPU3HRaye3ixN4S+LekjFEepCIdZq8vKpPjsvMc2N1sFd1R
+ gRYw==
+X-Gm-Message-State: APjAAAXGyFgEnsR+PFomNd5wy3A5KfDKk6SJM1xhShHwWp+F75UWkjGN
+ JmZ5D8Ntcb5FcVVLOTluY6ZO+A==
+X-Google-Smtp-Source: APXvYqzxlOMYI2lLiopD9DUTgVJHaln/oI01siPstd8Ym3P4VYWq9U2IwostDoeJEXuI843drXHC1Q==
+X-Received: by 2002:adf:a2cd:: with SMTP id t13mr33117115wra.251.1565792971007; 
+ Wed, 14 Aug 2019 07:29:31 -0700 (PDT)
 Received: from bender.baylibre.local
  (wal59-h01-176-150-251-154.dsl.sta.abo.bbox.fr. [176.150.251.154])
- by smtp.gmail.com with ESMTPSA id o7sm4202908wmc.36.2019.08.14.07.29.29
+ by smtp.gmail.com with ESMTPSA id o7sm4202908wmc.36.2019.08.14.07.29.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 14 Aug 2019 07:29:29 -0700 (PDT)
+ Wed, 14 Aug 2019 07:29:30 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com
-Subject: [PATCH 07/14] arm64: dts: meson-gx: fix periphs bus node name
-Date: Wed, 14 Aug 2019 16:29:11 +0200
-Message-Id: <20190814142918.11636-8-narmstrong@baylibre.com>
+Subject: [PATCH 08/14] arm64: dts: meson-gxl: fix internal phy compatible
+Date: Wed, 14 Aug 2019 16:29:12 +0200
+Message-Id: <20190814142918.11636-9-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190814142918.11636-1-narmstrong@baylibre.com>
 References: <20190814142918.11636-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_072934_070826_DA31D228 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20190814_072932_536248_4D81BF49 
+X-CRM114-Status: GOOD (  11.71  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,27 +103,26 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This fixes the following DT schemas check errors:
-meson-gxbb-nanopi-k2.dt.yaml: periphs@c8834000: $nodename:0: 'periphs@c8834000' does not match '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
-meson-gxl-s805x-libretech-ac.dt.yaml: periphs@c8834000: $nodename:0: 'periphs@c8834000' does not match '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
+meson-gxl-s805x-libretech-ac.dt.yaml: ethernet-phy@8: compatible: ['ethernet-phy-id0181.4400', 'ethernet-phy-ieee802.3-c22'] is not valid under any of the given schemas
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-gx.dtsi | 2 +-
+ arch/arm64/boot/dts/amlogic/meson-gxl.dtsi | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-index d8127f863b55..a7735d2f0037 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-gx.dtsi
-@@ -437,7 +437,7 @@
- 			};
- 		};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
+index ee1ecdbcc958..43eb158bee24 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
+@@ -709,7 +709,7 @@
+ 			#size-cells = <0>;
  
--		periphs: periphs@c8834000 {
-+		periphs: bus@c8834000 {
- 			compatible = "simple-bus";
- 			reg = <0x0 0xc8834000 0x0 0x2000>;
- 			#address-cells = <2>;
+ 			internal_phy: ethernet-phy@8 {
+-				compatible = "ethernet-phy-id0181.4400", "ethernet-phy-ieee802.3-c22";
++				compatible = "ethernet-phy-id0181.4400";
+ 				interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>;
+ 				reg = <8>;
+ 				max-speed = <100>;
 -- 
 2.22.0
 
