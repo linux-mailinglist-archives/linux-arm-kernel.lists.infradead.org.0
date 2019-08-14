@@ -2,66 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2ACC8D306
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 14:25:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADF768D308
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 14:25:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sZKuhm3FDhZqOtRBBt7hNBbxft43Dq3S2MZnfDMDOm0=; b=ZqGaslyLI5tooV
-	bRLMxkFtAh+fJ7g5q/fLFf3lWWZyHdZKTyB72ySuTIfWW273RQcNR2Uyaj6dBTIWBy9Te4iXAOd+R
-	qWZyNKc2F11ZWPJB3J+jo0GfGfYOSieHFSmBYAGCW0t540PpQ62LeVLSXvSWls+vvl5gV2FbSG+35
-	B20fSu4EfmVc9jZ3KniCTA2TRHnpviol9E43uEQi2qI3wi/savycq1eNB7ZwapP9qkXYvI4GjnoAD
-	wCmn9b4yWk4Fm4A4hZdLGfQGcxW3syp9AggJO0YZp1RyTBGWVUIDAY1j8egGsFKCbeH2fs46sw+u/
-	6QzNrtWlslA2vFqwL3bA==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n2edcnUJYa073c+mdkEsB/xmz5g5Ff/CSwEWJrDanbM=; b=fWV2J7kwbSOAcz
+	aUNGs566k4en4MxPzEsP/tJI8hnRcVvgIX4gpy2Cv7tH1osz8fSwWG1ALMq1yitMDKPOgvFadEdC1
+	ty1lkP586aS3Wl6N0WJgiAT74qD8jyk0fzBPjpYy9p5WeCBFHOvQyGWqDN5K7xTfsnC4OHDfdxobP
+	vJIcDjbR/fOTMvoblGRggntgKlVawhHo+VWdUMErd0vDveR0w8L1RRkNyvtP/SwSxvnn5mjPzYOZR
+	RKKtPlJI7u7NIJ7Tst9MrbMc/LBenSZJRMkt13e/tCYNMohvpuZlLPLtjEM/Exaxh3lTA+SWn1ZTW
+	vTPH0vW8uIT1/Hat7Fgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxsKq-0004pp-5s; Wed, 14 Aug 2019 12:25:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hxsLX-0006Je-7C; Wed, 14 Aug 2019 12:25:43 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxsKW-0004pV-7W
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 12:24:41 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 90EFB2084D;
- Wed, 14 Aug 2019 12:24:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565785479;
- bh=ksI/AlDOVITNJQjT7DMo+H2Yw3KjU59frpSXmb68Aw0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jBb3cXETjZGhGpg1EvHTUi/kwlRQR/AR9LUd4d1CLou4JeQRgmNoBge7u6Woj0ACI
- LHeidbZ+DI9voV7dvfT1PSWKLEjbacS/9L5Ot8YJvLTQFlLY3/OjgUrFr7EPRtDPQr
- jVjQjorRdxy5cYEBffrdzu2I7SUajFO2s782z+lg=
-Date: Wed, 14 Aug 2019 13:24:34 +0100
-From: Will Deacon <will@kernel.org>
-To: Bhupesh Sharma <bhsharma@redhat.com>
-Subject: Re: [PATCH V5 00/12] 52-bit kernel + user VAs
-Message-ID: <20190814122434.tmnh6twmfidpfni4@willie-the-truck>
-References: <20190807155524.5112-1-steve.capper@arm.com>
- <20190809164716.qtt7zizfbqyjukwe@willie-the-truck>
- <CAMuHMdWvkWGoNC5HbWoZwtpg5VXxTZqRZqQy4BLPgQXZJtKnsQ@mail.gmail.com>
- <20190813131013.vpc5a2vlxwghizxa@willie-the-truck>
- <CAMuHMdXr+S2QeOSEXZoGGDOB_PrgENPbVXFjS=pEfbHfvN2zhw@mail.gmail.com>
- <CACi5LpNhh0a0ktLeDDCO4K3-mBx0D8QZ344juAzbHeP4QFtGDw@mail.gmail.com>
- <20190814082137.mnk242lp2vw5b4ot@willie-the-truck>
- <CACi5LpMNC2h-JAmT3gc8wt6rwPBzQaAUZq_P18D3Atjg9CNS5A@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACi5LpMNC2h-JAmT3gc8wt6rwPBzQaAUZq_P18D3Atjg9CNS5A@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+ id 1hxsKn-0004yO-Ev; Wed, 14 Aug 2019 12:24:59 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 207so4437829wma.1;
+ Wed, 14 Aug 2019 05:24:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:subject:from:in-reply-to:date:cc
+ :content-transfer-encoding:message-id:references:to;
+ bh=qvNyqHPxqM17Hgwfx7q6qGcw30LiEL2kP6HeS6GNFVk=;
+ b=TqzSu3r+JKdRwqwXMxKNEjktlIzFuuB5McOF228N/8JIw1F4JBLqzzcwneQE0o/cKd
+ 5wICaY7S25HNHsrXXue6xGmC/UviD83CsaZUd5bmETUNFATYt+hI3S4aWmBtSy/tfrti
+ mLWrd/+elniaPpb8c2fO8Pacmccxbwnyj1zAT6xIhqUABTnFzaEyj5vUVry4ox1btx48
+ tZ07Sy+405SyHtQ836cmoYhbMr11W7XVn2IN28dRLJXmcMHcsRklcyxI3km9skDhRESw
+ 7Kgu4fYoqdNCbWNoSslPkVJic79u2dD57kRyyGJg3Ru0/JWungE8E8+oing9AgfoHDIk
+ lmpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
+ :content-transfer-encoding:message-id:references:to;
+ bh=qvNyqHPxqM17Hgwfx7q6qGcw30LiEL2kP6HeS6GNFVk=;
+ b=KDPD4bOfeXwNNbGt6jNfJK6GZNFUx504SCWIvFAvbMjPuNAnAC2r9VmwIXMjsDREKd
+ o6kDpY8JnH8b4pCxm83OFMBVrKJ/g4k2rvS5zhNbaqKnG/rGMTVcjiBL1UX2LGQW3K/H
+ vbBqYNDrttSZzuuU6JgaEAlezZupFjpDWiK0qGSHiQkZvwt+q01Qg3AjpjO+YqFGho+X
+ rJz279rHIcR+ncCn6CE73OXSS2kPERlEdWRyR8dX4YTYFDGjVAqjvB0Laphg0GArbjyS
+ SgsVCyVreAXE37PoZluFJQWzvRp4Lr2cYAa46to0Em9iurma+qUQ8QYZlodZqiHN4oEl
+ T70g==
+X-Gm-Message-State: APjAAAW+dqG6fRLrV/W0sgPX9uJsLgtHrUaROtEc7/JI/hhLeMFGb9T2
+ gl+lY47xvoB6Csct5DvAQlE8Yadikt8=
+X-Google-Smtp-Source: APXvYqzkK3WQL9KYB1TyBBzuH6MQ5nCwZyYjF7EGNKE+AniVd85uZ9BfFF8sWaTFPPOyfIqxvfmzrg==
+X-Received: by 2002:a1c:e90d:: with SMTP id q13mr8649524wmc.89.1565785495404; 
+ Wed, 14 Aug 2019 05:24:55 -0700 (PDT)
+Received: from [192.168.1.169] ([87.201.30.26])
+ by smtp.gmail.com with ESMTPSA id l62sm4544230wml.13.2019.08.14.05.24.53
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 14 Aug 2019 05:24:54 -0700 (PDT)
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+Subject: Re: [PATCH v3 0/6] Add support of New Amlogic temperature sensor for
+ G12 SoCs
+From: Christian Hewitt <christianshewitt@gmail.com>
+In-Reply-To: <20190806130506.8753-1-glaroque@baylibre.com>
+Date: Wed, 14 Aug 2019 16:24:51 +0400
+Message-Id: <357FACA6-6EAC-4E9D-B6F7-4D8D0D59A20A@gmail.com>
+References: <20190806130506.8753-1-glaroque@baylibre.com>
+To: Guillaume La Roque <glaroque@baylibre.com>
+X-Mailer: Apple Mail (2.3445.104.11)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_052440_292901_775264BB 
-X-CRM114-Status: GOOD (  13.49  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190814_052457_563995_B9E9DFAD 
+X-CRM114-Status: GOOD (  13.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (christianshewitt[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -71,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,64 +97,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Christoph von Recklinghausen <crecklin@redhat.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Steve Capper <steve.capper@arm.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>, maz@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org, khilman@baylibre.com,
+ daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[+Mark]
-
-On Wed, Aug 14, 2019 at 05:29:09PM +0530, Bhupesh Sharma wrote:
-> On Wed, Aug 14, 2019 at 1:51 PM Will Deacon <will@kernel.org> wrote:
-> >
-> > On Wed, Aug 14, 2019 at 01:34:49PM +0530, Bhupesh Sharma wrote:
-> > > I still see the following issue on a 48-bit hardware (i.e. _non_
-> > > ARMv8.2 hardware) with branch 'for-next/52-bit-kva' with commit
-> > > d2d73d2fef421ca0d4 as the HEAD:
-> >
-> > Have you tried the patches I posted here:
-> >
-> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-August/673315.html
-> >
-> > ?
-> >
-> > Whilst they're being reviewed, I've dropped the 52-bit branch from
-> > linux-next (for-next/core) so that people don't keep running into this.
-> 
-> Thanks will try the above and get back with my results.
-> 
-> However just to make sure that the 52-bit changes are tested properly
-> (before landing up linux-next) - as we had issues with the 52-bit User
-> space VA + PA changes in the past (which broke userspace), I was
-> wondering if we can have a dedicated branch to have the v5 patches
-> from Steve + fixes, so that they can be easily tested and issues (if
-> any) reported with easy reference.
-> 
-> Or, if such a branch already exists, kindly share the pointer to the
-> same as well.
-
-I've pushed the current round of fixes on top of:
-
-https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/52-bit-kva
-
-Mark has spotted a couple of other issues, but they shoudn't hold up your
-testing (although I'm going to hold off putting this back into -next until
-we've got them resolved).
-
-Mark -- please use the branch above as a basis for any additional fixes.
-HEAD should be d0b3c32ed922.
-
-Thanks,
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gNiBBdWcgMjAxOSwgYXQgNTowNSBwbSwgR3VpbGxhdW1lIExhIFJvcXVlIDxnbGFyb3F1ZUBi
+YXlsaWJyZS5jb20+IHdyb3RlOgo+IAo+IFRoaXMgcGF0Y2hzIHNlcmllcyBhZGQgc3VwcG9ydCBv
+ZiBOZXcgQW1sb2dpYyB0ZW1wZXJhdHVyZSBzZW5zb3IgYW5kIG1pbmltYWwKPiB0aGVybWFsIHpv
+bmUgZm9yIFNFSTUxMCBhbmQgT0RST0lELU4yIGJvYXJkcy4KPiAKPiBGaXJzdCBpbXBsZW1lbnRh
+dGlvbiB3YXMgZG9pbmcgb24gSUlPWzFdIGJ1dCBhZnRlciBjb21tZW50cyBpIG1vdmUgb24gdGhl
+cm1hbCBmcmFtZXdvcmsuCj4gRm9ybXVsYXMgYW5kIGNhbGlicmF0aW9uIHZhbHVlcyBjb21lIGZy
+b20gYW1sb2dpYy4KPiAKPiBDaGFuZ2VzIHNpbmNlIHYyOgo+ICAtIGZpeCB5YW1sIGRvY3VtZW50
+aW9uIAo+ICAtIHJlbW92ZSB1bm5lZWRlZCBzdGF0dXMgdmFyaWFibGUgZm9yIHRlbXBlcmF0dXJl
+LXNlbnNvciBub2RlCj4gIC0gcmV3b3JrIGRyaXZlciBhZnRlciBNYXJ0aW4gcmV2aWV3Cj4gIC0g
+YWRkIHNvbWUgaW5mb3JtYXRpb24gaW4gY29tbWl0IG1lc3NhZ2UKPiAKPiBDaGFuZ2VzIHNpbmNl
+IHYxOgo+ICAtIGZpeCBlbnVtIHZzIGNvbnN0IGluIGRvY3VtZW50YXRpb24KPiAgLSBmaXggZXJy
+b3Igd2l0aCB0aGVybWFsLXNlbnNvci1jZWxscyB2YWx1ZSBzZXQgdG8gMSBpbnN0ZWFkIG9mIDAK
+PiAgLSBhZGQgc29tZSBkZXBlbmRlbmNpZXMgbmVlZGVkIHRvIGFkZCBjb29saW5nLW1hcHMKPiAK
+PiBEZXBlbmRlbmNpZXMgOgo+IC0gcGF0Y2ggMyw0ICYgNTogZGVwZW5kcyBvbiBOZWlsJ3MgcGF0
+Y2ggYW5kIHNlcmllcyA6Cj4gICAgICAgICAgICAgIC0gbWlzc2luZyBkd2MyIHBoeS1uYW1lc1sy
+XQo+ICAgICAgICAgICAgICAtIHBhdGNoc2V0cyB0byBhZGQgRFZGUyBvbiBHMTJhWzNdIHdoaWNo
+IGhhdmUgZGVwcyBvbiBbNF0gYW5kIFs1XQo+IAo+IFsxXSBodHRwczovL2xvcmUua2VybmVsLm9y
+Zy9saW51eC1hbWxvZ2ljLzIwMTkwNjA0MTQ0NzE0LjIwMDktMS1nbGFyb3F1ZUBiYXlsaWJyZS5j
+b20vCj4gWzJdIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LWFtbG9naWMvMjAxOTA2MjUx
+MjM2NDcuMjYxMTctMS1uYXJtc3Ryb25nQGJheWxpYnJlLmNvbS8KPiBbM10gaHR0cHM6Ly9sb3Jl
+Lmtlcm5lbC5vcmcvbGludXgtYW1sb2dpYy8yMDE5MDcyOTEzMjYyMi43NTY2LTEtbmFybXN0cm9u
+Z0BiYXlsaWJyZS5jb20vCj4gWzRdIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LWFtbG9n
+aWMvMjAxOTA3MzEwODQwMTkuODQ1MS01LW5hcm1zdHJvbmdAYmF5bGlicmUuY29tLwo+IFs1XSBo
+dHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC1hbWxvZ2ljLzIwMTkwNzI5MTMyNjIyLjc1NjYt
+My1uYXJtc3Ryb25nQGJheWxpYnJlLmNvbS8KPiAKPiBHdWlsbGF1bWUgTGEgUm9xdWUgKDYpOgo+
+ICBkdC1iaW5kaW5nczogdGhlcm1hbDogQWRkIERUIGJpbmRpbmdzIGRvY3VtZW50YXRpb24gZm9y
+IEFtbG9naWMKPiAgICBUaGVybWFsCj4gIHRoZXJtYWw6IGFtbG9naWM6IEFkZCB0aGVybWFsIGRy
+aXZlciB0byBzdXBwb3J0IEcxMiBTb0NzCj4gIGFybTY0OiBkdHM6IGFtbG9naWM6IGcxMjogYWRk
+IHRlbXBlcmF0dXJlIHNlbnNvcgo+ICBhcm02NDogZHRzOiBtZXNvbjogc2VpNTEwOiBBZGQgbWlu
+aW1hbCB0aGVybWFsIHpvbmUKPiAgYXJtNjQ6IGR0czogYW1sb2dpYzogb2Ryb2lkLW4yOiBhZGQg
+bWluaW1hbCB0aGVybWFsIHpvbmUKPiAgTUFJTlRBSU5FUlM6IGFkZCBlbnRyeSBmb3IgQW1sb2dp
+YyBUaGVybWFsIGRyaXZlcgoKVGVzdGVkLWJ5OiBDaHJpc3RpYW4gSGV3aXR0IDxjaHJpc3RpYW5z
+aGV3aXR0QGdtYWlsLmNvbT4KCknigJl2ZSB0ZXN0ZWQgdGhpcyBzZXJpZXMgd2l0aCBPZHJvaWQg
+TjIgYW5kIEtoYWRhcyBWSU0zLCBYOTYtTWF4LiBQYXRjaGVzIHRvIGFkZApzdXBwb3J0IGZvciBW
+SU0zL1g5Ni1tYXggd2lsbCBiZSBzdWJtaXR0ZWQgb25jZSB0aGUgZHJpdmVyIGlzIG1lcmdlZC4K
+ClZJTTM6fiAjIGRtZXNnIHwgZ3JlcCB0aGVybWFsClsgICAgMC4wNDYzNzVdIHRoZXJtYWxfc3lz
+OiBSZWdpc3RlcmVkIHRoZXJtYWwgZ292ZXJub3IgJ3N0ZXBfd2lzZScKClZJTTM6fiAjIGNhdCAv
+c3lzL2RldmljZXMvdmlydHVhbC90aGVybWFsL3RoZXJtYWxfem9uZTAvdGVtcAo1MTMwMAoKVklN
+Mzp+ICMgY2F0IC9zeXMvZGV2aWNlcy92aXJ0dWFsL3RoZXJtYWwvdGhlcm1hbF96b25lMS90ZW1w
+CjUyODAwCgpDaHJpc3RpYW4KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
