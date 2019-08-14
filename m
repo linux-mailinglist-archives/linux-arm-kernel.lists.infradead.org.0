@@ -2,54 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B8748D381
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 14:50:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C76408D3B6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 14:53:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gAhGknEj2UC/kVo1jxkzT7FtyZaVzeZVNVZ/aYuJ/ZI=; b=jOwWgEjOzJy70r
-	FBmQubi+ifVFATfXDsWfJOanW0Yx2oZhbqB5v/MBvj67vnYBJOJn2UKVaEFbX2Zwr1IQh6Urm/Huw
-	kDD0fPt3syj/AjqDvX7jA9DrnEHFnZZyV/wRRASkSD1ey0mqNNv17n+CUBVWkOMMiL7YgCowUDLCG
-	qWvIJ5urT60qdh4gpb4S+2+mmNuhZRIzfqoKnlAAc2r1Cc9u7xAmQX1JdD8BcJxd5+zKUlwBQNhHF
-	fDe4wBGKiRnS2ew29w2eY7MCvZubnGRmbKEHrcGe6mxCa12zhZFP82oUG4KSSv5+3ct2BsoyabKkp
-	J4LCy1rLVGI3CAE4zKRg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wLTdOPp3q4c5WcuHsg1uCuAGjSDLaCtX+rFEUuSKxt8=; b=DQ7572+sx40XTz
+	2YcwNQA5pqqAzIqoosjDMJY85Ol1lHecq94CC+uE39wLtobbYLDehHziZLi+NE/CTB+TYGmpYcdFW
+	ser0UNDGjQL7hEYCwL2XgtD7yqEwYVROehnD2r8RkNfu8B07EVMXVOWyb3HOcvFKB95/F61caGnKr
+	42qFJYEdjrAaWl10iWAEkKoMxIBYomVd9jVs2WibWttD1BDwDb3nFb+pQ5V5wuHeCGKAGQETlbqGR
+	7Q/ya7oe1pasZqr7qpNCl/FWVBTuTdcnqndQ5ZHAl5fRv3CNQA2Ep4Nk/tP2Q/KvCuaNMWYIr3+CR
+	V3/yUcR9s54bUqMOG2GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxsjL-0004hV-Ni; Wed, 14 Aug 2019 12:50:20 +0000
+	id 1hxsm0-0006IU-Ia; Wed, 14 Aug 2019 12:53:05 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxsiz-0004hA-AR
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 12:49:58 +0000
+ id 1hxsln-0006H7-4L
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 12:52:52 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2705028;
- Wed, 14 Aug 2019 05:49:54 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 99F413F706;
- Wed, 14 Aug 2019 05:49:53 -0700 (PDT)
-Date: Wed, 14 Aug 2019 13:49:52 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH v4 6/6] dt-bindings: arm: coresight: Add support for
- coresight-needs-save-restore
-Message-ID: <20190814124951.GD43882@e119886-lin.cambridge.arm.com>
-References: <20190730125157.884-1-andrew.murray@arm.com>
- <20190730125157.884-7-andrew.murray@arm.com>
- <9df0eea2-a9bd-3a93-ca51-9c3d2391a1cf@arm.com>
- <20190802143751.GP56241@e119886-lin.cambridge.arm.com>
- <CANLsYkyVMRh_L5BfwWk=s-obh+xiZfjwqXUJkwgaZYWmc6Kuww@mail.gmail.com>
- <20190814100152.GB43882@e119886-lin.cambridge.arm.com>
- <CAJ9a7Vj+bo2PMnh2fbMJnaHRwJm9jU689P+iZ4q8_Vg7-3SnDg@mail.gmail.com>
- <718b5bdf-9828-f215-9a81-637308be3b49@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A3B9A28;
+ Wed, 14 Aug 2019 05:52:48 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4F0623F706;
+ Wed, 14 Aug 2019 05:52:47 -0700 (PDT)
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: soc@kernel.org
+Subject: [PATCH 0/2] ARM: psci: cpuidle: defconfig updates
+Date: Wed, 14 Aug 2019 13:52:37 +0100
+Message-Id: <20190814125239.6270-1-lorenzo.pieralisi@arm.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <718b5bdf-9828-f215-9a81-637308be3b49@arm.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_054957_452675_2A0DACAA 
-X-CRM114-Status: GOOD (  37.12  )
+X-CRM114-CacheID: sfid-20190814_055251_217022_8C97FFDB 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,130 +58,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al.Grant@arm.com, mathieu.poirier@linaro.org,
- alexander.shishkin@linux.intel.com, coresight@lists.linaro.org,
- leo.yan@linaro.org, Sudeep.Holla@arm.com, linux-arm-kernel@lists.infradead.org,
- mike.leach@linaro.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Shawn Guo <shawnguo@kernel.org>,
+ LAKML <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 01:35:27PM +0100, Suzuki K Poulose wrote:
-> Hi Mike,
-> 
-> On 14/08/2019 12:06, Mike Leach wrote:
-> > Hi,
-> > 
-> > On Wed, 14 Aug 2019 at 11:01, Andrew Murray <andrew.murray@arm.com> wrote:
-> > > 
-> > > On Sun, Aug 04, 2019 at 07:13:45AM -0600, Mathieu Poirier wrote:
-> > > > On Fri, 2 Aug 2019 at 08:37, Andrew Murray <andrew.murray@arm.com> wrote:
-> > > > > 
-> > > > > On Fri, Aug 02, 2019 at 11:40:54AM +0100, Suzuki K Poulose wrote:
-> > > > > > Hi Andrew,
-> > > > > > 
-> > > > > > On 30/07/2019 13:51, Andrew Murray wrote:
-> > > > > > > Some coresight components, because of choices made during hardware
-> > > > > > > integration, require their state to be saved and restored across CPU low
-> > > > > > > power states.
-> 
-> ...
-> 
-> > > > > > > --- a/Documentation/devicetree/bindings/arm/coresight.txt
-> > > > > > > +++ b/Documentation/devicetree/bindings/arm/coresight.txt
-> > > > > > > @@ -92,6 +92,9 @@ its hardware characteristcs.
-> > > > > > >      * arm,cp14: must be present if the system accesses ETM/PTM management
-> > > > > > >        registers via co-processor 14.
-> > > > > > > +   * arm,coresight-needs-save-restore: boolean. Indicates that software
-> > > > > > > +     should save/restore state across power down.
-> > > > > > > +
-> > > > > > 
-> > > > > > Do you think we could be a bit more descriptive here about when people could add
-> > > > > > it to the DT ? Here we don't mention when someone should use this property and
-> > > > > > it may be added to platforms where it may be absolutely unnecessary. How about :
-> > > > > > 
-> > > > > > "Indicates that the hardware implementation may not honor the Powerup request
-> > > > > > from the software and thus might loose the register context on CPU power
-> > > > > > down (e.g, during CPUIdle). Software must save/restore the context during a
-> > > > > > CPU power transition cycle."
-> > > > > 
-> > > > > How about the following:
-> > > > > 
-> > > > > "Indicates that the hardware will loose register context on CPU power down (e.g.
-> > > > > CPUIdle), despite the TRCPDCR.PU bit being set."
-> > > > > 
-> > > > > I'm keen to avoid making suggestions about what the kernel will do when it sees
-> > > > > this flag and thus prefer to focus on describing what the hardware does. So I
-> > > > > dropped your last sentence. However the name of the flag still implies policy
-> > > > > which I don't like.
-> > > > > 
-> > > > > I also changed the 'may not honor' wording, I'm not sure if this is really the
-> > > > > case or if the spec is open to interpretation.
-> > > > > 
-> > > > > It would great for this wording to also apply to other CS components though I
-> > > > > haven't investigated if these have a PU bit or something different.
-> > > > 
-> > > > Exactly - the definition needs to be broad enough to apply to other CS
-> > > > components.  Mike what do you think would be appropriate for CTIs?
-> > > 
-> > CTIs have no power control at all - i.e. no PU bit to request we stay
-> > up - and reside in the debug power domain. So they are coupled to the
-> > CS/CPU/ETM/ power domains and reliant on outside forces to request
-> > power.
-> > The expectation is that for a PE bound CTI, if debug is powered then
-> > it will be fully powered - so an ETM with PU respected, or the
-> > external debug logic with DBGNOPWRDWN respected should be sufficient
-> > for CTI to stay alive.
-> 
-> I am trying to understand why we need this property for CTI.
-> Don't we always need to save-restore the CTI controls on a CPU_DOWN for the
-> associated CTI ? Since it may not be really tied to an ETM (e.g, if the CTI is
-> purely used to handle CPU triggers, PMU etc,). If that is the case, do we need
-> this property for CTI at all ?
-> 
-> > 
-> > > How about we keep this short and simple:
-> > > 
-> > > * arm,coresight-loses-context-with-cpu : boolean. Indicates that the hardware
-> 
-> nit: s/loses/looses ?
+Rerouting defconfig updates related to this patch series:
 
-Given that lose refers to missing something and loose refers to something not fitting
-well, I'd have thought the pural is loses. Though I've now looked at these words for
-too long and nothing makes sense any more... 
+https://lore.kernel.org/linux-arm-kernel/cover.1565348376.git.lorenzo.pieralisi@arm.com/
 
-> 
-> > >    will lose register context on CPU power down (e.g. CPUIdle).
-> > > 
-> > 
-> > So the above name is generic enough to encompass the CTI as well.
-> > 
-> > > I could have added something like "... despite TRCPDCR.PU being set", or to
-> > > apply more generically: "... despite available register controls being set to
-> > > prevent such context loss". However whilst these are more informative - they
-> > > elude to some of reasons as to why context is lost and as we cannot be
-> > > exhaustive I'd rather not give a limited example.
-> > > 
-> > > However if a longer explaination is required:
-> > > 
-> > > * arm,coresight-loses-context-with-cpu : boolean. Indicates that the hardware
-> > >    will lose register context on CPU power down (e.g. CPUIdle). An example of
-> > >    where this may be needed are systems which contain a coresight component and
-> > >    CPU in the same power domain. When the CPU powers down the coresight
-> > >    component also powers down and loses its context.
-> 
-> This looks fine for me. But I am trying to understand the rationale behind
-> using this for CTI
+to arm-soc, as agreed in:
 
-Thanks.
+https://lore.kernel.org/linux-arm-kernel/58d9677db3510ed106fe23118090c84f78a44102.1565348376.git.lorenzo.pieralisi@arm.com/
 
-Thanks,
+Patches [1-6] are already queued in the ARM64 tree.
 
-Andrew Murray
+Please consider pulling these defconfig changes, thank you very much.
 
-> 
-> Suzuki
+Cc: Will Deacon <will@kernel.org>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>
+Cc: Sudeep Holla <sudeep.holla@arm.com>
+Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+
+Lorenzo Pieralisi (2):
+  arm64: defconfig: Enable the PSCI CPUidle driver
+  ARM: imx_v6_v7_defconfig: Enable the PSCI CPUidle driver
+
+ arch/arm/configs/imx_v6_v7_defconfig | 1 +
+ arch/arm64/configs/defconfig         | 1 +
+ 2 files changed, 2 insertions(+)
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
