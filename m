@@ -2,70 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68D5B8CA69
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 06:34:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B68058CA76
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 06:39:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uKI/+6+p6v/0K+FFwJYgcPG9o0jy/orcywf/N2NW4vs=; b=M41TwKjo6XJZcu
-	plRZ8Xq3lPLLghRa+QpmGmqgr/4CKAGeExFub1uWkkl71hTcXbtV4WQJiVzKrPR9WfYDMmajHzJOP
-	x5B2NE00JepNt2DrPRESyJUva2SX79BYMh/hbnamNBNLFuNt7vucnAKJD12zS2NOSidr3atcUV9EH
-	hRnnI38q0HOewJpMPaevgICsLQxW68AVsQDGVd/XBVA5AvoHAxuAqj9flvKm0QqH2+n/Eth/KWTwG
-	QLKQP4SbHaXhi/2gwK1fDtagdse1xRjedHc+s1j1hO3wRmdUS8Z6ZEujiiErgDfPbET1xeyCfUt14
-	MLMYX8m+6dfMTiFHQXaw==;
+	List-Owner; bh=T2RdHdMCY3R2gvL1P4TiQmpOblFDY2gndtLZ9whUz6E=; b=srkjmqBJNQaYJN
+	ieNvfQAJZyA6cdgiiGXoqDewmge7qDRA2QxnQ1SeACMKQHDPtOo2SSZ+eaXJpO5t9YG56pCJcFGxe
+	ooMBzuXrCeSFAM2Jr24O20ij4HOvBYmjStuAsgW7g/GF9Q7SDlCLeZCDQZweBJURhf0z66t6y74+c
+	XXGhVCkNokao4Vy96lh+sFHcKZTTjawNssSrA+KxE/ebc7E/c20VdWbaH8ghnFt/+dlvvWX37Nj2W
+	IPKtwTgD0r9qhldCn5u8mLKwD48NBAp+SpxCKxwHg0ruYaWMoTD/3TIAjmBZu5pR5BzPRqUW2scuE
+	9UpJkQjfClQ4Er0/nOkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxkz8-0005te-IE; Wed, 14 Aug 2019 04:34:06 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hxl4C-0007nz-K7; Wed, 14 Aug 2019 04:39:20 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxkyt-0005tD-OW; Wed, 14 Aug 2019 04:33:53 +0000
-X-UUID: 9c14c92789874eea9857a22151d37342-20190813
-X-UUID: 9c14c92789874eea9857a22151d37342-20190813
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1530934842; Tue, 13 Aug 2019 20:33:40 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 13 Aug 2019 21:33:39 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Wed, 14 Aug 2019 12:33:36 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 14 Aug 2019 12:33:36 +0800
-Message-ID: <1565757215.7317.15.camel@mhfsdcap03>
-Subject: Re: [PATCH next v9 07/11] usb: roles: Add
- fwnode_usb_role_switch_get() function
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Date: Wed, 14 Aug 2019 12:33:35 +0800
-In-Reply-To: <20190813130110.GE4691@kuha.fi.intel.com>
-References: <1565695634-9711-1-git-send-email-chunfeng.yun@mediatek.com>
- <1565695634-9711-8-git-send-email-chunfeng.yun@mediatek.com>
- <20190813130110.GE4691@kuha.fi.intel.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hxl3y-0007ng-Or
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 04:39:08 +0000
+Received: by mail-ed1-f65.google.com with SMTP id x19so102829889eda.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 21:39:06 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tOFzth/1t3h2J4LDht3H6+aj/CXIWQiypTJlHhUjEtg=;
+ b=C8rPI5i744+K3/h6gchEk3o9z0dueAqFqDmCrumCl1ZpwB8tz+ZtSpdVFIvHC25ufS
+ TVcdXlIYrgDEeWe+cICOWR6bJg6lBUH3Wc8O9iCmBOpbIb3dz78wWBk6z2DNRCz+I+YV
+ 8TMbqkzkV+DfV7avWxSbAxuPY1QRWxW80AoFzJ3WIxt8KYyA7quBV82bP9hRtVrna+ie
+ rjpwuxIaOJazsFTORsA/bcGn6OnO7OkbpwAjtS4lEgPXmVSv6epgpKRZqAxHqUG8f7t9
+ IqUalDZmNxYFa9xyRuVrGC2Ou2X7v0fXL298x8vcyCaLIE4oFlDJviQVInDAcSHa6yEE
+ kD8w==
+X-Gm-Message-State: APjAAAVKDjO/BoBjfbpIbcC0KSJjQeomIbwE/1ZKoBlba0bo9pJWb8s8
+ lJL36EJy7PyzSNS36kUOokMZGNNo4v8=
+X-Google-Smtp-Source: APXvYqywzmNpJgcv8KjQ4Ps+PZXIZ+/2BL8keIkdvW5Dcu9R6Xr52JQKLC4PmXinKSsdiEg1MwMzag==
+X-Received: by 2002:a17:906:797:: with SMTP id
+ l23mr4865899ejc.228.1565757544630; 
+ Tue, 13 Aug 2019 21:39:04 -0700 (PDT)
+Received: from mail-wm1-f43.google.com (mail-wm1-f43.google.com.
+ [209.85.128.43])
+ by smtp.gmail.com with ESMTPSA id gw11sm1760522ejb.29.2019.08.13.21.39.03
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Tue, 13 Aug 2019 21:39:04 -0700 (PDT)
+Received: by mail-wm1-f43.google.com with SMTP id o4so3202024wmh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 13 Aug 2019 21:39:03 -0700 (PDT)
+X-Received: by 2002:a7b:c21a:: with SMTP id x26mr5533924wmi.61.1565757543807; 
+ Tue, 13 Aug 2019 21:39:03 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 4CA480A775488A034C17FADD4441FFF8772F99EADAA5F19D81249A977504955E2000:8
-X-MTK: N
+References: <20190813124744.32614-1-mripard@kernel.org>
+ <20190813124744.32614-4-mripard@kernel.org>
+In-Reply-To: <20190813124744.32614-4-mripard@kernel.org>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Wed, 14 Aug 2019 12:38:51 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66mp-=T=-zDYMf6Qw-vaiR3OB5Xhxie39jeKWS+Kvmecw@mail.gmail.com>
+Message-ID: <CAGb2v66mp-=T=-zDYMf6Qw-vaiR3OB5Xhxie39jeKWS+Kvmecw@mail.gmail.com>
+Subject: Re: [PATCH 4/5] ARM: dts: sun8i: a83t: Remove the watchdog clock
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_213351_804441_8E58B57C 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190813_213906_810545_5AAF52D4 
+X-CRM114-Status: GOOD (  17.04  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [209.85.208.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ -0.4 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,43 +97,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Hans de Goede <hdegoede@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>,
- Badhri Jagan Sridharan <badhri@google.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Nagarjuna Kristam <nkristam@nvidia.com>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Frank Rowand <frowand.list@gmail.com>, Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-08-13 at 16:01 +0300, Heikki Krogerus wrote:
-> On Tue, Aug 13, 2019 at 07:27:10PM +0800, Chunfeng Yun wrote:
-> > From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-> > 
-> > The fwnode_usb_role_switch_get() function is exactly the
-> > same as usb_role_switch_get(), except that it takes struct
-> > fwnode_handle as parameter instead of struct device.
-> > 
-> > Suggested-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-> 
-> Why is my SoB replaced with Suggested-by tag in this patch?
-Sorry, my mistake, I misunderstand what you mean, you suggest use
-Suggested-by in [v8 08/11], but I replaced it all for [06, 07, 08], 
-will abandon the changes of [06,07] in next version.
+On Tue, Aug 13, 2019 at 8:47 PM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> From: Maxime Ripard <maxime.ripard@bootlin.com>
+>
+> The watchdog binding doesn't define a clock, and it indeed looks like
+> there's no explicit clock feeding it.
 
-> 
-> thanks,
-> 
+The diagram on page 133 of the manual shows OSC24M / 750 feeding the watchdog.
 
+Other manuals, such as the A10 one, mention:
 
+    Watchdog clock source is OSC24M. if the OSC24M is turned off, the watchdog
+    will not work.
+
+So in fact it does use a clock signal. It's just that we've been lazy, since
+the clock rate is fixed and is always on.
+
+ChenYu
+
+> Let's remove it from our DT.
+>
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> ---
+>  arch/arm/boot/dts/sun8i-a83t.dtsi | 1 -
+>  1 file changed, 1 deletion(-)
+>
+> diff --git a/arch/arm/boot/dts/sun8i-a83t.dtsi b/arch/arm/boot/dts/sun8i-a83t.dtsi
+> index 523be6611c50..15f8c80f69a5 100644
+> --- a/arch/arm/boot/dts/sun8i-a83t.dtsi
+> +++ b/arch/arm/boot/dts/sun8i-a83t.dtsi
+> @@ -817,7 +817,6 @@
+>                         compatible = "allwinner,sun6i-a31-wdt";
+>                         reg = <0x01c20ca0 0x20>;
+>                         interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+> -                       clocks = <&osc24M>;
+>                 };
+>
+>                 spdif: spdif@1c21000 {
+> --
+> 2.21.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
