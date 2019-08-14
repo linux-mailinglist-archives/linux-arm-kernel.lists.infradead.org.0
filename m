@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD0EC8D870
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 18:50:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F6148DAE6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 19:21:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LUlCnMintRjRYMeMEnhAIfh5F+CjK5XhLf0wiF+WTm0=; b=m4XRC+Sf7NbxAL
-	2tLcnOzFYvmbr3Pe/lb+pQD03zRuW1P7ofebwpwft0pYoqqfpPzqnulzlgc4iUOtM6lyx+pBAvTmP
-	d8XVlrXT9QchcOS5BdcIUNZ5HvmqgROA1bSerSez4pPW1dSOZfkcxcyUQVYu+fGcMlTcw9K6I+Jc0
-	osGfvVO7NVZvvLNMJhrlMxRet6UCJEEGCJB7Su7GwcTDyax+s2pbiWprTIZQrwJ7xBUX8X8xY0P/k
-	HhDhwlXytBBwtgkJrnALER1DCOjOB+xdlYOulGEek1O372lczkg1lvjMcwDCmajLJdOv52Rqndq9K
-	RhMK17/t5YPmfH8+xGUQ==;
+	List-Owner; bh=sU/2KR7c/h2xWALjcmlmLk9tLTrMeT3A5vtREUzfj/U=; b=F8DbhgHBqMjquq
+	/JVyw8RINANNHHkDVUmfeiD0DK1IHr33QRuh0GQfurMrCT7lD9nsT5yyPuWha5SAs8idbG9Bek5gD
+	IWurjvCNLQmBpeuLuFKWdLeRVkrPkc65Uh0SJjCuyczjYZTy+eBj1clAoIeQxg0eFoIkNcYSd1DS0
+	H49RgLTtRMoVSDEyS3AjdaG4K9YEC30uYOdnw8ztDEwl7m63iLKpLGm1jw1r84N9C3qGPBQq88CoT
+	oDAJ1nfk5+Vmoe0QyShd8IKfmq+b3NFeIA1WsKk4z4mb4rUn5Azi3s3QdDrFq2CLbA4XU9+uiQFEU
+	5laBXKOrrDryu+WITQwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxwU0-0001Jo-Mb; Wed, 14 Aug 2019 16:50:44 +0000
+	id 1hxwxW-0005WN-5l; Wed, 14 Aug 2019 17:21:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxwTq-0001JR-IQ
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 16:50:35 +0000
+ id 1hxwwu-0005W3-1m
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 17:20:37 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D9E3620665;
- Wed, 14 Aug 2019 16:50:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C575B2084D;
+ Wed, 14 Aug 2019 17:20:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565801434;
- bh=rr5Yx5jWWXjv1elleVvNixlj9ZG6FWWLR96+BvLKJTs=;
+ s=default; t=1565803235;
+ bh=dt28HiKeDA9L5mGvly1JScUvZrWg1DeQplEWd5mOXVE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=zBfq3Ps7UwSWeCBHg3Nhawrm70s4X1Ue1TkGDjnU3dH4GLcUTa5FVXhY96bYLfpB8
- tRUlGr9jER91hBRTzXAdKwH74CVEhNn+wG6BowZd/CrQDTszU23WMSsrbNDPq+QLAt
- Vf28F+ZsRzV3ndHNS3F6DKCdEHuQm7I+TYv2MDF0=
-Date: Wed, 14 Aug 2019 17:50:29 +0100
+ b=x2iO+k3qoVbzAWsj9n4cmCZJpdzYPI/bRqvYH5bbDp/N0s2sKO6LvHdfx/1XWmbNW
+ Bk8/fUmRIQ7U9AqwZDhyub7FlgLSvSb8wGg/FtwC1CEF6pjFd3Gm/ktqXgn0Z5FmXa
+ ZvutSr2KnRj5UzSjttcADHwPeZqs9Qj+v0SPIpS8=
+Date: Wed, 14 Aug 2019 18:20:30 +0100
 From: Will Deacon <will@kernel.org>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 1/6] arm64: unexport set_memory_x and set_memory_nx
-Message-ID: <20190814165029.yfmpopn34vxpnmte@willie-the-truck>
-References: <20190813090146.26377-1-hch@lst.de>
- <20190813090146.26377-2-hch@lst.de>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 01/15] iommu/arm-smmu: Convert GR0 registers to bitfields
+Message-ID: <20190814172030.accr7azgkkkwumt2@willie-the-truck>
+References: <cover.1565369764.git.robin.murphy@arm.com>
+ <910cad718be01904db20ce73d8d54e7481290136.1565369764.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190813090146.26377-2-hch@lst.de>
+In-Reply-To: <910cad718be01904db20ce73d8d54e7481290136.1565369764.git.robin.murphy@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_095034_631986_4E97257E 
-X-CRM114-Status: GOOD (  13.93  )
+X-CRM114-CacheID: sfid-20190814_102036_119988_1AB55445 
+X-CRM114-Status: GOOD (  12.55  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,45 +77,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dave Hansen <dave.hansen@linux.intel.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, Andy Lutomirski <luto@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: robdclark@gmail.com, joro@8bytes.org, bjorn.andersson@linaro.org,
+ iommu@lists.linux-foundation.org, vivek.gautam@codeaurora.org,
+ gregory.clement@bootlin.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 11:01:41AM +0200, Christoph Hellwig wrote:
-> No module currently messed with clearing or setting the execute
-> permission of kernel memory, and none really should.
+On Fri, Aug 09, 2019 at 06:07:38PM +0100, Robin Murphy wrote:
+> FIELD_PREP remains a terrible name, but the overall simplification will
+> make further work on this stuff that much more manageable. This also
+> serves as an audit of the header, wherein we can impose a consistent
+> grouping and ordering of the offset and field definitions
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 > ---
->  arch/arm64/mm/pageattr.c | 2 --
->  1 file changed, 2 deletions(-)
+>  drivers/iommu/arm-smmu-regs.h | 126 ++++++++++++++++------------------
+>  drivers/iommu/arm-smmu.c      |  51 +++++++-------
+>  2 files changed, 84 insertions(+), 93 deletions(-)
 > 
-> diff --git a/arch/arm64/mm/pageattr.c b/arch/arm64/mm/pageattr.c
-> index 03c53f16ee77..9ce7bd9d4d9c 100644
-> --- a/arch/arm64/mm/pageattr.c
-> +++ b/arch/arm64/mm/pageattr.c
-> @@ -128,7 +128,6 @@ int set_memory_nx(unsigned long addr, int numpages)
->  					__pgprot(PTE_PXN),
->  					__pgprot(0));
->  }
-> -EXPORT_SYMBOL_GPL(set_memory_nx);
+> diff --git a/drivers/iommu/arm-smmu-regs.h b/drivers/iommu/arm-smmu-regs.h
+> index 1c278f7ae888..d189f025537a 100644
+> --- a/drivers/iommu/arm-smmu-regs.h
+> +++ b/drivers/iommu/arm-smmu-regs.h
+> @@ -10,111 +10,101 @@
+>  #ifndef _ARM_SMMU_REGS_H
+>  #define _ARM_SMMU_REGS_H
 >  
->  int set_memory_x(unsigned long addr, int numpages)
->  {
-> @@ -136,7 +135,6 @@ int set_memory_x(unsigned long addr, int numpages)
->  					__pgprot(0),
->  					__pgprot(PTE_PXN));
->  }
-> -EXPORT_SYMBOL_GPL(set_memory_x);
+> +#include <linux/bits.h>
+> +
+>  /* Configuration registers */
+>  #define ARM_SMMU_GR0_sCR0		0x0
+> -#define sCR0_CLIENTPD			(1 << 0)
+> -#define sCR0_GFRE			(1 << 1)
+> -#define sCR0_GFIE			(1 << 2)
+> -#define sCR0_EXIDENABLE			(1 << 3)
+> -#define sCR0_GCFGFRE			(1 << 4)
+> -#define sCR0_GCFGFIE			(1 << 5)
+> -#define sCR0_USFCFG			(1 << 10)
+> -#define sCR0_VMIDPNE			(1 << 11)
+> -#define sCR0_PTM			(1 << 12)
+> -#define sCR0_FB				(1 << 13)
+> -#define sCR0_VMID16EN			(1 << 31)
+> -#define sCR0_BSU_SHIFT			14
+> -#define sCR0_BSU_MASK			0x3
+> +#define sCR0_VMID16EN			BIT(31)
+> +#define sCR0_BSU			GENMASK(15, 14)
+> +#define sCR0_FB				BIT(13)
+> +#define sCR0_PTM			BIT(12)
+> +#define sCR0_VMIDPNE			BIT(11)
+> +#define sCR0_USFCFG			BIT(10)
+> +#define sCR0_GCFGFIE			BIT(5)
+> +#define sCR0_GCFGFRE			BIT(4)
+> +#define sCR0_EXIDENABLE			BIT(3)
+> +#define sCR0_GFIE			BIT(2)
+> +#define sCR0_GFRE			BIT(1)
+> +#define sCR0_CLIENTPD			BIT(0)
+>  
+>  /* Auxiliary Configuration register */
+>  #define ARM_SMMU_GR0_sACR		0x10
+>  
+>  /* Identification registers */
+>  #define ARM_SMMU_GR0_ID0		0x20
+> +#define ID0_S1TS			BIT(30)
+> +#define ID0_S2TS			BIT(29)
+> +#define ID0_NTS				BIT(28)
+> +#define ID0_SMS				BIT(27)
+> +#define ID0_ATOSNS			BIT(26)
+> +#define ID0_PTFS_NO_AARCH32		BIT(25)
+> +#define ID0_PTFS_NO_AARCH32S		BIT(24)
+> +#define ID0_CTTW			BIT(14)
+> +#define ID0_NUMIRPT			GENMASK(23, 16)
 
-arm64 allmodconfig and defconfig are happy with this, so I'll pick it up
-for 5.4 if that's ok with you?
+nit: assuming this should be above ID0_CTTW so things are in descending
+bit order?
+
+Other than that, looks good to me.
 
 Will
 
