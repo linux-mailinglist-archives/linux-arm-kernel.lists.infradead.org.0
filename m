@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9B1E8CBB2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 08:13:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 455958CBB5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 08:13:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VpOikxA7iRST6DBEQv2zNSOmcxg3Sm65vhe9lDN6Nnw=; b=Sp4pdGWd7hSzp4
-	rPdShq6k5Qik/xbyPv+2LmzvI/+RylugszZscUnyeoTp/pnX/rT+yUMQk4EjOL0jsHgCnLgosmu1a
-	USkR8qbgo3g/NeUGmHMZ1bQsjUAQycNDZQ031DWdV8EdEibtwMjlSNwVUkJksBQ1EGYM9PKQvxIck
-	m3UnmOk4sNB3CzkU69b1hEuDJa6curkqbMoDiv6h9hyYmJvA0QwdwQOF6HEmITEljwmDFhnjq4NtD
-	9aY7UX7RS4bwVe0cxbJlCU8lnhuWD9kOsGg/zRmfo3HnLFOMRBgITe+Jr13wP4/shC1xog2Kh6PRU
-	l3VH1A09Y1j9PLrK8aBw==;
+	List-Owner; bh=AKz/+0WuEdLBSzN1lw0lpAbjoYgv8DBknVQzIvCcF80=; b=lZyCCjSgDC3S9L
+	T8nHQmk3mUhsW1czMEzNSJdYNJ/iX01fLup6fmPwj81UJm18Pk/mNTOlpiOzjlx/hJiJ73VRHn3uT
+	R3y2dKkInITdVc/qk3wcNpc6R7AB4DUCRJGk3/CNhOzVkBGFhLt3tSK876OtkNI4Fxzj3VBYn02FS
+	hEe2KaiNQ5KR52XDUmtGA0NHOBIeZAGJO7qHo9U4wZMLoV8L4Uk2wBqhLUH0oy07E1NNgW44qFn+X
+	zUpg9UOWekY+Uf+MbRFj+FAE1GvFiyOtRgPCLRBuqx3yZ+pYflPwucAdIgXS419+qVqH97qwn/P03
+	ktPEFEjHMrkq8ge4Me8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxmWi-0003x6-EN; Wed, 14 Aug 2019 06:12:52 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hxmX0-0004C8-Mw; Wed, 14 Aug 2019 06:13:10 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxmTC-0008Jb-LX
+ id 1hxmTD-0008KU-9Y
  for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 06:09:16 +0000
-Received: by mail-lj1-x241.google.com with SMTP id r9so103703981ljg.5
+Received: by mail-lf1-x143.google.com with SMTP id j17so24448689lfp.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 23:09:13 -0700 (PDT)
+ Tue, 13 Aug 2019 23:09:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=go+1BvHiZ551s7lZZtvzU+7HaWl7o/QBHe+MvPdzMnE=;
- b=DB2uNyqKpzDzXvdgtr4TdYqx4FJ1xEsqNOfYwtyOdiyN8bmElVFNz5Y0QHN1tZwHJL
- ZXY6ddKq6RNyTtLEScnryGITuQ2rSc7wS22yci9vy2R9CSaQkY8MKwQFjpeteP/M/Omw
- tFid6mUmH+6ES71/fxOTcUTKhdvsMaMffcuT3R5VQabk+OkUA2QSwkWXOOuWJv5KDTW0
- 6116/1ms5skkFH9i9nYOIHmFg9rbrfrl9fNN29VHkWjywexztmApeKsSGr0jpCHcZTk2
- dDqGTu0sAKnTbkJI25Cx1tuShn5R9x6mjRiPrbgg/FTD4nmEJRMr+CHxt3UqAKqmfSXN
- yzOg==
+ bh=8xlhGnlcLyXPojY0bRPSDLMcy+hJZFPi39TOyTS/wBU=;
+ b=LDjG+Z8mIhS5zgHxWzmnF037zhntmBJl5zKjHirJ7skqEwESZ/9TPssPMun9VHd2gJ
+ paoyDg16Hp50SSAZN7dwo2ODWuSrTe3rFjXzjteC4kXfai6KEhoTk5mEPSbXAOmNftnk
+ mXGruXqtXay0ByyQKbpWP+ihz0ogwxrIp6ZmEKdCPOwSl0tYSW0pcFhNKIQ8vlbnPl3T
+ 5W8QHXnGS/Q9C/oSNSp9ON/H+4+u67fPjkyRotDsZDaGrizdtLuzOBuxd2VnHjgEjYrr
+ Ovzwa8TmuLte801MqTa06cGHKe8YtzbV1XAPsjES+LYOL3nA7flEEaNGdXfEFp/gY6ws
+ Yk3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=go+1BvHiZ551s7lZZtvzU+7HaWl7o/QBHe+MvPdzMnE=;
- b=LmzEwoXhGQBKcO4/FxGCR+qLb4u+6YcqHLUOIjWcuFGVnO1ek61T35W4D0tL871mKA
- xYoKSUi7otwIrLWv+Q2zQT/Rvo7Atez3SOoP3qX2vbQwJxk937kk1QckOE047HyQrov6
- xukJpxKTumsLSnP73rEsW73CKX3OzJQFbF8GAR0tJa08L850tUyZEAt+Za8qVCc2Y80C
- vWyuneP6vwN6x68HW66esr//Fkquk1HlK7VePPhpI7HDkdZbiFIR9VEjDyd2qHEXhn1Z
- U6GRyESOGg4uaAdbeX9V8Ix8GS/kEvcmXkSkfRejsYlUZvOArCZmHjEsn0mrGtSK943t
- L82g==
-X-Gm-Message-State: APjAAAXaXN1MLY/9GfVLEDnWGcuIu+YqLjTyExvVXY8CloF6VHFD0Rus
- nxPWFzVEWbYBoYzZT9igGp4=
-X-Google-Smtp-Source: APXvYqxke6on79/JFb/mW5nqF0uOU5tx+pV8+KsdaUpiYfd+xIeG5MpxPdARsgAB0SJSFsZtf1z0sw==
-X-Received: by 2002:a2e:9b84:: with SMTP id z4mr24044973lji.75.1565762952729; 
- Tue, 13 Aug 2019 23:09:12 -0700 (PDT)
+ bh=8xlhGnlcLyXPojY0bRPSDLMcy+hJZFPi39TOyTS/wBU=;
+ b=E6sr/qMuC1784lL2O8uCM9tATJzzh0WArG7F69dWZdBsE820LdgRzi+/PqdNXWL2HP
+ ftrR/SW0tNfaKzd9m1WpAuDcgC0ftLpcovR05K5xB6HT/USOpYbZVm7H8d2UsgoEfi8h
+ ziwIn1xvpheldvAllEm2tp65zssrkI44jG9wa/Uge+K503iSQ+gH5UQMnazVQcj64/YV
+ 0pGzCkJ+Sb0hZ+WDYPWn4soDQEexW1hOiMKyc4+yCBAtVVxiPLqxbW23VREtLV+iM/B1
+ ZiYcxNCCjvN8fe8EcKsUWsKW2tTroWr20UjYq3qtv8bIgvhuhKDi4HFo4i7e2PM6dq5A
+ 7FpA==
+X-Gm-Message-State: APjAAAU/CrDzgyJjnLKZ4YDj+M9335SMMXSkC9U5ITIvrjEEo8SMkwML
+ jxn3rJuecIziLgRPN+3kmzY=
+X-Google-Smtp-Source: APXvYqyZgq101jMRdi4NBQz/E+rmMXrIu0bWV/oCYTnoMBDnWs6w3jX6We+jj/pMt68nDXYjRzfYqw==
+X-Received: by 2002:ac2:48bc:: with SMTP id u28mr26657795lfg.126.1565762954043; 
+ Tue, 13 Aug 2019 23:09:14 -0700 (PDT)
 Received: from localhost.localdomain (c213-102-74-69.bredband.comhem.se.
  [213.102.74.69])
- by smtp.gmail.com with ESMTPSA id s10sm3124235ljm.35.2019.08.13.23.09.11
+ by smtp.gmail.com with ESMTPSA id s10sm3124235ljm.35.2019.08.13.23.09.13
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 13 Aug 2019 23:09:11 -0700 (PDT)
+ Tue, 13 Aug 2019 23:09:13 -0700 (PDT)
 From: codekipper@gmail.com
 To: maxime.ripard@free-electrons.com, wens@csie.org,
  linux-sunxi@googlegroups.com
-Subject: [PATCH v5 09/15] clk: sunxi-ng: h6: Allow I2S to change parent rate
-Date: Wed, 14 Aug 2019 08:08:48 +0200
-Message-Id: <20190814060854.26345-10-codekipper@gmail.com>
+Subject: [PATCH v5 10/15] dt-bindings: ASoC: sun4i-i2s: Add H6 compatible
+Date: Wed, 14 Aug 2019 08:08:49 +0200
+Message-Id: <20190814060854.26345-11-codekipper@gmail.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190814060854.26345-1-codekipper@gmail.com>
 References: <20190814060854.26345-1-codekipper@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_230915_056056_29E0821E 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20190813_230915_435205_1900B124 
+X-CRM114-Status: UNSURE (   9.79  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -110,56 +111,34 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 
-I2S doesn't work if parent rate couldn't be change. Difference between
-wanted and actual rate is too big.
-
-Fix this by adding CLK_SET_RATE_PARENT flag to I2S clocks.
+H6 I2S is very similar to H3, except that it supports up to 16 channels
+and thus few registers have fields on different position.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- drivers/clk/sunxi-ng/ccu-sun50i-h6.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ .../devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml      | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-h6.c b/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-index aebef4af9861..d89353a3cdec 100644
---- a/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-@@ -505,7 +505,7 @@ static struct ccu_div i2s3_clk = {
- 		.hw.init	= CLK_HW_INIT_PARENTS("i2s3",
- 						      audio_parents,
- 						      &ccu_div_ops,
--						      0),
-+						      CLK_SET_RATE_PARENT),
- 	},
- };
+diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
+index eb3992138eec..6928d0a1dcc8 100644
+--- a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
++++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
+@@ -24,6 +24,7 @@ properties:
+       - items:
+           - const: allwinner,sun50i-a64-i2s
+           - const: allwinner,sun8i-h3-i2s
++      - const: allwinner,sun50i-h6-i2s
  
-@@ -518,7 +518,7 @@ static struct ccu_div i2s0_clk = {
- 		.hw.init	= CLK_HW_INIT_PARENTS("i2s0",
- 						      audio_parents,
- 						      &ccu_div_ops,
--						      0),
-+						      CLK_SET_RATE_PARENT),
- 	},
- };
+   reg:
+     maxItems: 1
+@@ -59,6 +60,7 @@ allOf:
+               - allwinner,sun8i-a83t-i2s
+               - allwinner,sun8i-h3-i2s
+               - allwinner,sun50i-a64-codec-i2s
++              - allwinner,sun50i-h6-i2s
  
-@@ -531,7 +531,7 @@ static struct ccu_div i2s1_clk = {
- 		.hw.init	= CLK_HW_INIT_PARENTS("i2s1",
- 						      audio_parents,
- 						      &ccu_div_ops,
--						      0),
-+						      CLK_SET_RATE_PARENT),
- 	},
- };
- 
-@@ -544,7 +544,7 @@ static struct ccu_div i2s2_clk = {
- 		.hw.init	= CLK_HW_INIT_PARENTS("i2s2",
- 						      audio_parents,
- 						      &ccu_div_ops,
--						      0),
-+						      CLK_SET_RATE_PARENT),
- 	},
- };
- 
+     then:
+       required:
 -- 
 2.22.0
 
