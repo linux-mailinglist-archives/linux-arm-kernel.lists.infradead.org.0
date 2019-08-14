@@ -2,54 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86BDC8D225
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 13:29:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC9BB8D22D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 13:31:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wg5Fae3HvmU7slMJVCZdDfrxkxIbZiC5J7OXLlk0QIg=; b=a08oJwi+qrDWrW
-	d7qauReBI5Zq87ybF6iqRQs/puqLheJlBMdUoiEjt3yt3PhIsThCfYbeuiKaNrd48gYjXQNHtpX+i
-	95Ad5168DQzgaD8OCpMLJDUtMgbiDSi4aWmSi223jlpBGvnMc46D0jQQv7H9T8Bpqd9gC2F9ETxpH
-	wP4cemNx6HXdaR8NmPQji4hlnGp7kglEzIGDo368rwfFPBUa/tIlxUYSTNP1x6aAY4sTAPEIKt0+m
-	14OkN8AD/YiTPqVu2HSrwpeg2c8rMYeLaHqk5nmFKwGZ42rh21Q3AlwCsHh+mhV9WAaEnbuz6kEsn
-	iVVUNVTI6RoVKlZMp6IA==;
+	List-Owner; bh=F8iIy34RElli5bxVYB5Z4/W1dweBGQJVmCu4s1NNrDU=; b=YiOrqRhTdAvAWi
+	qTXWo2tLYH9oRd6/m9CQ61cV7tMFKXfhsHW4T4kje0nYujMKD5LG1Lm+5ADMa5vYd3I5BmTeLjkr6
+	GiI4W/83EPDPLsOY5/O2ngt9bmEKKrwkO6MgNOgsqXHbl4ok7/dIlm8RsfgVG8wNI3kDkrEUgLm9j
+	c6aEPzQbGLVMBwm88dItzQO67bSUNTSMdJqI5pkPHc0m1ILqWY6BwDXiNjMXJedQI5UjmpGceBNPM
+	X1v+zplHf/7OHQXr7pz5CmpTTPF7MUppvMIMQqiRjzNRj1ksBMgpYOmCogk95vITnUGuIP+Hb7dd9
+	71AWlNBo7dCg+kGwmDkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxrTJ-0008JK-T7; Wed, 14 Aug 2019 11:29:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxrT6-0008J0-Sq
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 11:29:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 10E3928;
- Wed, 14 Aug 2019 04:29:28 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D45B3F706;
- Wed, 14 Aug 2019 04:29:26 -0700 (PDT)
-Date: Wed, 14 Aug 2019 12:29:24 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 0/8] Fix issues with 52-bit kernel virtual addressing
-Message-ID: <20190814112924.GD17931@lakrids.cambridge.arm.com>
-References: <20190813170149.26037-1-will@kernel.org>
+	id 1hxrUy-0001Yr-3w; Wed, 14 Aug 2019 11:31:24 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxrUj-0001YB-As
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 11:31:10 +0000
+Received: by mail-wm1-x343.google.com with SMTP id p77so3125303wme.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 14 Aug 2019 04:31:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=vpgdRd/asOikWKpcYOp7GCtusnJpkP9qaZJO14nOi54=;
+ b=hfTFjhzlmuNszaG+J2XzDCFC9aCurGRC0kLthghagIg+0PJ20Dx7kf2nNkG9JU3ERX
+ sMqGce+Qf4BDhgEUPK4Rd4vEZCpbmQC7K1/6RZzfY31Yp3haEq0Js3ELAwSBr9/nA2iD
+ GhyVpqwCGQyu+Jhti41HcgsIDNhvWeTYe8EGzhknBYSr9WC8t5KgB1iHXZZaKT6PHkhe
+ FuAELBI2DEa7WfzxP/VFy/LtihhymwQhun/vKe6/XpqccxmxnBDjxBiHIYhVqBDg+HqX
+ 0JwWXfqaDZu0VuZuScYKhzuItc+tUInwwQqP+t+INn6cOvKuXjpC4eEpvKJAMb201k1H
+ iTdA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=vpgdRd/asOikWKpcYOp7GCtusnJpkP9qaZJO14nOi54=;
+ b=pyxfS4dhboefU6YJG5+VVZtNsNgg/lReF9zVvvclKuZnQJDHWLi6G5i7A9nb7v4Gp8
+ 9kWUxDeYr9qefZh248xXJfzzdOGYNZ35Z+ovZU7U44IS3ftMS/JtivN8nAYZJpHrJyBh
+ 5MgzM7wrA7rxujGle4MJFXb2Ns9NQkfe8+7NEuzDVFkC50KZPeIO3TS1sgtbbiz+gPQT
+ pT931qqYqmQdg0HeTxn1PK3cIAzjTuQ36e0YN3bVLPHWs9yMYFXVVCxWed2vCN3YARef
+ GmOakUD05l73DrGW5AcvS8CDaLTDOpXKCFQI2BAhQsF+cUKXALJh3tH7eaQBaah4cPeB
+ yJew==
+X-Gm-Message-State: APjAAAWiN4nTspjaYpciQyaobrYgF3zXFsr3crpgiNOV9falmHM2njvH
+ JU+1cDZT7rlsbMsFGUV5MR4=
+X-Google-Smtp-Source: APXvYqzoN/SFNr2n82+7oK/p1XvBt/QNrznmv2OOYTSvMxrNYtuX4Mj5uXeLY4ZZiHdavFSt3jiBfg==
+X-Received: by 2002:a7b:c148:: with SMTP id z8mr8368403wmi.168.1565782267282; 
+ Wed, 14 Aug 2019 04:31:07 -0700 (PDT)
+Received: from jernej-laptop.localnet (89-212-178-211.dynamic.t-2.net.
+ [89.212.178.211])
+ by smtp.gmail.com with ESMTPSA id 12sm3824512wmi.34.2019.08.14.04.31.05
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 14 Aug 2019 04:31:06 -0700 (PDT)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
+To: linux-sunxi@googlegroups.com, maxime.ripard@bootlin.com
+Subject: Re: [linux-sunxi] Re: [PATCH v5 15/15] ASoC: sun4i-i2s: Adjust regmap
+ settings
+Date: Wed, 14 Aug 2019 13:31:04 +0200
+Message-ID: <4005451.bVnTXbg3Co@jernej-laptop>
+In-Reply-To: <20190814072007.6tfvhzsw4oxbwpc2@flea>
+References: <20190814060854.26345-1-codekipper@gmail.com>
+ <20190814060854.26345-16-codekipper@gmail.com>
+ <20190814072007.6tfvhzsw4oxbwpc2@flea>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190813170149.26037-1-will@kernel.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_042928_976203_0B51E1D0 
-X-CRM114-Status: GOOD (  14.93  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190814_043109_402664_BFF6E45F 
+X-CRM114-Status: GOOD (  12.16  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jernej.skrabec[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,68 +102,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Steve Capper <steve.capper@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Qian Cai <cai@lca.pw>,
- linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, be17068@iperbole.bo.it, lgirdwood@gmail.com,
+ linux-kernel@vger.kernel.org, codekipper@gmail.com, wens@csie.org,
+ broonie@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 06:01:41PM +0100, Will Deacon wrote:
-> Hi all,
+Dne sreda, 14. avgust 2019 ob 09:20:07 CEST je Maxime Ripard napisal(a):
+> On Wed, Aug 14, 2019 at 08:08:54AM +0200, codekipper@gmail.com wrote:
+> > From: Marcus Cooper <codekipper@gmail.com>
+> > 
+> > Bypass the regmap cache when flushing the i2s FIFOs and modify the tables
+> > to reflect this.
+> > 
+> > Signed-off-by: Marcus Cooper <codekipper@gmail.com>
 > 
-> This patch series addresses some issues with 52-bit kernel VAs reported
-> by Qian Cai and Geert. It's all confined to asm/memory.h and I got a bit
-> carried away cleaning that thing up so the patches get more worthless
-> as you go through the series. Still, I'd like to queue this on top of
-> the 52-bit VA stuff currently sitting in -next.
-> 
-> Although Geert and Steve tested my initial hacks, I dropped the tags
-> because I've split things up and could've easily broken things again.
-> 
-> Cheers,
-> 
-> Will
-> 
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Steve Capper <steve.capper@arm.com>
-> Cc: Qian Cai <cai@lca.pw>
-> Cc: Andrey Konovalov <andreyknvl@google.com>
-> Cc: Geert Uytterhoeven <geert@linux-m68k.org>
+> This patch looks like it's fixing something while the commit log
+> doesn't mention what is being fixed.
 
-Other than the comments I've made, for the series:
+Main issue addressed here is that SUN4I_I2S_FIFO_CTRL_REG has two self-clear 
+registers (SUN4I_I2S_FIFO_CTRL_FLUSH_RX and SUN4I_I2S_FIFO_CTRL_FLUSH_TX) and 
+thus it should be marked as volatile.
 
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-
-If you want, I can spin a fix / cleanup for the VA_START issues I
-mentioned atop of this series.
-
-Thanks,
-Mark.
+Best regards,
+Jernej
 
 > 
-> --->8
+> Having some context here would be great.
 > 
-> Will Deacon (8):
->   arm64: memory: Fix virt_addr_valid() using __is_lm_address()
->   arm64: memory: Ensure address tag is masked in conversion macros
->   arm64: memory: Rewrite default page_to_virt()/virt_to_page()
->   arm64: memory: Simplify virt_to_page() implementation
->   arm64: memory: Simplify _VA_START and _PAGE_OFFSET definitions
->   arm64: memory: Implement __tag_set() as common function
->   arm64: memory: Add comments to end of non-trivial #ifdef blocks
->   arm64: memory: Cosmetic cleanups
+> Maxime
 > 
->  arch/arm64/include/asm/memory.h | 89 ++++++++++++++++++++---------------------
->  1 file changed, 44 insertions(+), 45 deletions(-)
-> 
-> -- 
-> 2.11.0
-> 
+> --
+> Maxime Ripard, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
