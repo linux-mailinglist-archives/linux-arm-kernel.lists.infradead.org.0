@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 580888CF7A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 11:28:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEF978CF8A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 11:30:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=UTP/xuDj+CRn1q4RRwjq1iH8Ga/XUjumA3xlF2Qes4A=; b=jNs2VPRWxQGaMKVgvnnVH1ul1X
-	+7t5xoy6gTnwDDEoE/9X5G4JnzpQrRWW+8pa/as6ULdap+Byt+M+e4myaCXKBq3IaKXZ+ajE7PA5B
-	Drgnm4wN/zDADu25+ZYCpFHWlPLhbvYCmLlicleqzUFGItCONro4oLWNUIF15irv7CDyiWOrw0hKk
-	NzSgoyQivLeyVGu4a+T9qQa1GXPL2H4d6L5uauHQ0Rgz07PVzkpBt8YzozEWwMr8VyrFoayuJNh9P
-	x+sOVB/RrFjaSl1E9R6LSwSIbmoGf14WZQ5TDvRTQBoAgYKsnkERLW5IpdyvaLbCDMplw64djFfXA
-	hxXoX6Jg==;
+	bh=lc1W/eeNbwNp4JpJHTlPZBTAt4+UnDN8cmH7CnBVZQw=; b=EFOFiGUR2xRadVSppMYKKYcRAh
+	R3i41kYVon/WNXOPCfJCjSD8B/JV9jtuCpnO5y4+WzMlsy/0Dt5tstpPFeduJKaRp5vkhZsi0FfhK
+	Jh4HaAF27ExiL33qmBWZ69hvRhTKtluDz8UKu6HrwENbzBok9MhWmjJCQyEyYVtBAfpNpatKckUaw
+	T7vcQ7BNLC7mrhQXcaW0DaPUbd35CqDf1TRoLigLl3TtewlMWSXCNV9+bPoucLuCqMbTs4zvDP/yc
+	2nG3WGnC1nBHq8WRPcsObSOhF76qutQK8036Gw/ZdYwVDzZsxm+DOzUUW/ezMD6j9mg91aAaxVDUS
+	9urSe9jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxpaO-0002d5-NH; Wed, 14 Aug 2019 09:28:52 +0000
+	id 1hxpbM-0003XG-UB; Wed, 14 Aug 2019 09:29:53 +0000
 Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxpZi-0002PX-GS
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 09:28:12 +0000
+ id 1hxpb2-0003UE-1W
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 09:29:34 +0000
 Received: from ramsan ([84.194.98.4]) by baptiste.telenet-ops.be with bizsmtp
- id oxTy2000Y05gfCL01xTy1o; Wed, 14 Aug 2019 11:28:03 +0200
+ id oxVS2000605gfCL01xVSG3; Wed, 14 Aug 2019 11:29:30 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1hxpZW-0003Us-RA; Wed, 14 Aug 2019 11:27:58 +0200
+ id 1hxpaw-0003VP-4g; Wed, 14 Aug 2019 11:29:26 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1hxpZW-0003aV-Pk; Wed, 14 Aug 2019 11:27:58 +0200
+ id 1hxpaw-0003cM-38; Wed, 14 Aug 2019 11:29:26 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Jiri Slaby <jslaby@suse.com>
-Subject: [PATCH 3/3] serial: sh-sci: Don't check for mctrl_gpio_to_gpiod()
+Subject: [PATCH 2/3] serial: mxs-auart: Don't check for mctrl_gpio_to_gpiod()
  returning error
-Date: Wed, 14 Aug 2019 11:27:57 +0200
-Message-Id: <20190814092757.13726-4-geert+renesas@glider.be>
+Date: Wed, 14 Aug 2019 11:29:23 +0200
+Message-Id: <20190814092924.13857-3-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190814092757.13726-1-geert+renesas@glider.be>
+In-Reply-To: <20190814092924.13857-1-geert+renesas@glider.be>
 References: <20190814092757.13726-1-geert+renesas@glider.be>
+ <20190814092924.13857-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_022810_721519_D97C0D69 
-X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-CacheID: sfid-20190814_022932_249596_F23B1690 
+X-CRM114-Status: UNSURE (   7.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,9 +72,11 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-serial@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
  Richard Genoud <richard.genoud@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-renesas-soc@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Frieder Schrempf <frieder.schrempf@kontron.de>,
+ linux-renesas-soc@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
+ =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -95,42 +98,26 @@ drop usages of IS_ERR_OR_NULL") in the mctrl-gpio core.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
- drivers/tty/serial/sh-sci.c | 12 +++++-------
- 1 file changed, 5 insertions(+), 7 deletions(-)
+ drivers/tty/serial/mxs-auart.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/tty/serial/sh-sci.c b/drivers/tty/serial/sh-sci.c
-index 7f565fcbf1ca4c5e..4e754a4850e6db63 100644
---- a/drivers/tty/serial/sh-sci.c
-+++ b/drivers/tty/serial/sh-sci.c
-@@ -2099,12 +2099,12 @@ static unsigned int sci_get_mctrl(struct uart_port *port)
- 	if (s->autorts) {
- 		if (sci_get_cts(port))
- 			mctrl |= TIOCM_CTS;
--	} else if (IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(gpios, UART_GPIO_CTS))) {
-+	} else if (!mctrl_gpio_to_gpiod(gpios, UART_GPIO_CTS)) {
- 		mctrl |= TIOCM_CTS;
- 	}
--	if (IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(gpios, UART_GPIO_DSR)))
-+	if (!mctrl_gpio_to_gpiod(gpios, UART_GPIO_DSR))
- 		mctrl |= TIOCM_DSR;
--	if (IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(gpios, UART_GPIO_DCD)))
-+	if (!mctrl_gpio_to_gpiod(gpios, UART_GPIO_DCD))
- 		mctrl |= TIOCM_CAR;
+diff --git a/drivers/tty/serial/mxs-auart.c b/drivers/tty/serial/mxs-auart.c
+index 4c188f4079b3ea68..e3452597068292f9 100644
+--- a/drivers/tty/serial/mxs-auart.c
++++ b/drivers/tty/serial/mxs-auart.c
+@@ -969,10 +969,8 @@ static int mxs_auart_dma_init(struct mxs_auart_port *s)
  
- 	return mctrl;
-@@ -3285,10 +3285,8 @@ static int sci_probe_single(struct platform_device *dev,
- 		return PTR_ERR(sciport->gpios);
+ }
  
- 	if (sciport->has_rtscts) {
--		if (!IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(sciport->gpios,
--							UART_GPIO_CTS)) ||
--		    !IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(sciport->gpios,
--							UART_GPIO_RTS))) {
-+		if (mctrl_gpio_to_gpiod(sciport->gpios, UART_GPIO_CTS) ||
-+		    mctrl_gpio_to_gpiod(sciport->gpios, UART_GPIO_RTS)) {
- 			dev_err(&dev->dev, "Conflicting RTS/CTS config\n");
- 			return -EINVAL;
- 		}
+-#define RTS_AT_AUART()	IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(s->gpios,	\
+-							UART_GPIO_RTS))
+-#define CTS_AT_AUART()	IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(s->gpios,	\
+-							UART_GPIO_CTS))
++#define RTS_AT_AUART()	!mctrl_gpio_to_gpiod(s->gpios, UART_GPIO_RTS)
++#define CTS_AT_AUART()	!mctrl_gpio_to_gpiod(s->gpios, UART_GPIO_CTS)
+ static void mxs_auart_settermios(struct uart_port *u,
+ 				 struct ktermios *termios,
+ 				 struct ktermios *old)
 -- 
 2.17.1
 
