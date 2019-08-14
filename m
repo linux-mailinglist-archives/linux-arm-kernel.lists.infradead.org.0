@@ -2,65 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DC948D2AC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 14:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3224A8D2B1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 14:04:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RP1wPPYSrUgDqXWkcYLTlRf9E1HK37UXqc1jeBpjNYU=; b=i0sD49bYFZdWX0
-	vaDvgmqLGyO07euDuCy5JewI6Sm3tGzRNFiEtA/FgAgwl8sHcAycHqnsZ0C8chuHsHZzwwoseewBY
-	qbq6U8yEvNcRLBtBceo+TtrABJl8LBZ5VKs5NTxSsZR4YU1HLSKaX7hMRh72umleIOp/yFEV9gy49
-	W0Y5b6Hbh5e1W6W4ckb1JpOObbQ3ox9EBmX/luTAIwoNozLoMQVwU64I6DpIDlKZ6CNnDRm7jFQNV
-	iRwcm4yczH3Yz7pIbEbKhwacvVdAj20ZcOMvi9QUnMP0zulQjP0mrYSubFCkM4MaPI46w1i9cpATr
-	jSozi3B82VGb1hQbqbKA==;
+	List-Owner; bh=yPelWkqcQ2twBZG/8KObmyWx8wTe5AcQ/ZsRvVtCGqc=; b=ohkC8Tu3raSetl
+	+Njduh/FoF4IgT9qR5d2qH1pkzc3p/KyBtSWZMRdLswuCGM8EkCcgNYUmGe44nS2iGaQPJ1t2BoUS
+	iT3WBsVd5dNEfTFCeK8GoS/P9HjsyxfWpHbmTi76H1wy82Pxg2angN6r/TdBr5zNOGreze8B2RlvS
+	GceYJbIGKUkYJld7cMnub1dgBIJOibSWI3+mV2ALZY5YcSHZA2aaG5LKsmVdqakOBlvcNvuJLn3Qm
+	yiFpQqIn00Y0VgBKY2KjExPVoMeWUhRz1VeK6lkJ9y/kWqu7I7SGUbV2K3HmJeBJhyeRUtcoRCYrk
+	g7uYGEXwqpPyY+WvCCBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxrzW-0003i8-Q4; Wed, 14 Aug 2019 12:02:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hxs0f-00043Z-Am; Wed, 14 Aug 2019 12:04:09 +0000
+Received: from mail-eopbgr20041.outbound.protection.outlook.com ([40.107.2.41]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxrz0-0003hf-7M
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 12:02:27 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 95D952083B;
- Wed, 14 Aug 2019 12:02:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565784145;
- bh=72va8Gi4pOhpfpzk4mD/PEMy0g/X9+kT34ErtIuy8tk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=G2XQwKkoFQ+dHKhkM27CpkipH3QuNPy3M4HOS9YTLhxJuVx8C07ZaWAuA3XvddCGq
- lPLdUa4SYFD2pa/3fW9Q3lvtEmSeXjhwdwr6GkDlNbln05wjZlcZplcbbxxFEZgVYi
- Iu2157btaNV3646VMQRfJOCMmPiDjjufAAY3mGR8=
-Date: Wed, 14 Aug 2019 13:02:21 +0100
-From: Will Deacon <will@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH 1/8] arm64: memory: Fix virt_addr_valid() using
- __is_lm_address()
-Message-ID: <20190814120221.zuguyh6tpku3nvtt@willie-the-truck>
-References: <20190813170149.26037-1-will@kernel.org>
- <20190813170149.26037-2-will@kernel.org>
- <20190814091942.GA50688@arrakis.emea.arm.com>
- <20190814094819.4bdqaubqmbcm3zax@willie-the-truck>
- <20190814104022.GI50688@arrakis.emea.arm.com>
+ id 1hxs0R-00043D-Sg
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 12:03:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cnw/fBu+c4SlYSEoqOchRpXhvaOfR2HoO9prSmbGMVA2thxHNlS77mcc/RCRjHu0bOEmPTcNIHSTSM4tIX4vSxOazOHajj5mbTjEFiVlitPEmjUDu4HBGg2JbefcVWoM/y5nRRjPYtDDXv6VYWkNhXyryIIpSMCFTJu8USVs754G8Y+Ls+VPGOPvYo4ltUb42TyB9s0fDt3mArwHuA2695ypBSyxX8wgEyu+6o8Bin+G7GBJevlxpY/gUjnXkqMTXEF31QsIWwajOXcVe8oW35AkrnJ/aTmVhW2akzWg4MiczrIAE+htMOsHl6KwfX6eRvE08Jnhg0NYHzdbaAdj0Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sIGYa83jI9xgPwJLHYcF6ge5UfVPaSHW9i7ux4fOhr4=;
+ b=Rb2YKhqXTA0le1c3Fjia+OoO3fCa+yffaF8lqqOJQEVY8Inih8Gu/1eSTr1uLLq4cwxCQ4xt9ikoduF6YnFZ0zmtuMt3W4XMg8mwywWQkGXpJyZknmeath1bkitSpAN10/Me1Wp8RVV9GNg7Oo9mapO+0DGgLq/wTeIOLLZiiD6KMXazETUsJRwdFoH7bLcZ0UXr9y/TOlcGde0v156PeUjKplb+wKEjq6Kp/ot0Dn3gP0KvcUL+0oR1nnZGa6d/3NqmQtLCCfWPaIRBuvCit9z6mPKPEkrfDLUkyeUAWjhmLjnDhLb2Zdd0+RZBOIIVoLFxbtmP4WccGIbDJleEQg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sIGYa83jI9xgPwJLHYcF6ge5UfVPaSHW9i7ux4fOhr4=;
+ b=AenAOkddWgcaZOn0hMjx5/P78jQpdCLnHel6I85gKX8RigyvJ+KyXKPYxobWV6IwxmSApCOcW/rhsuultEoZF57ELGJH0gcjUxcmwJT3rjqahrTY9a68lUsejFKezkJU3v9QqMjUxZ7CnF4Vo5qF8frszpGHAWY4XNPz3JrV548=
+Received: from DB8PR04MB6715.eurprd04.prod.outlook.com (20.179.251.14) by
+ DB8PR04MB5867.eurprd04.prod.outlook.com (20.179.11.22) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.20; Wed, 14 Aug 2019 12:03:51 +0000
+Received: from DB8PR04MB6715.eurprd04.prod.outlook.com
+ ([fe80::b0ab:d127:ca27:e1fa]) by DB8PR04MB6715.eurprd04.prod.outlook.com
+ ([fe80::b0ab:d127:ca27:e1fa%7]) with mapi id 15.20.2157.022; Wed, 14 Aug 2019
+ 12:03:51 +0000
+From: Robert Chiras <robert.chiras@nxp.com>
+To: "stefan@agner.ch" <stefan@agner.ch>
+Subject: Re: [EXT] Re: [PATCH v2 09/15] dt-bindings: display: Add max-res
+ property for mxsfb
+Thread-Topic: [EXT] Re: [PATCH v2 09/15] dt-bindings: display: Add max-res
+ property for mxsfb
+Thread-Index: AQHVUo3mMmhKJOP0h0GajC46r83SHKb6esqAgAAC3ICAAAMVgIAACtWA
+Date: Wed, 14 Aug 2019 12:03:51 +0000
+Message-ID: <1565784231.3209.74.camel@nxp.com>
+References: <1565779731-1300-1-git-send-email-robert.chiras@nxp.com>
+ <1565779731-1300-10-git-send-email-robert.chiras@nxp.com>
+ <491aff3d08f24ab4d79a4f8c139d2e44@agner.ch>
+ <1565781243.3209.55.camel@nxp.com>
+ <33feedd20e0fc154c5b736f882d24569@agner.ch>
+In-Reply-To: <33feedd20e0fc154c5b736f882d24569@agner.ch>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.18.5.2-0ubuntu3.2 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=robert.chiras@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 5e851788-dffb-44cb-0160-08d720af78e6
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB8PR04MB5867; 
+x-ms-traffictypediagnostic: DB8PR04MB5867:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB8PR04MB5867A6ECBDDCA2AB1B6FEC04E3AD0@DB8PR04MB5867.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 01294F875B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(39860400002)(366004)(376002)(396003)(346002)(199004)(189003)(86362001)(81156014)(81166006)(6246003)(102836004)(305945005)(7416002)(26005)(53546011)(5660300002)(76176011)(6506007)(186003)(66556008)(66476007)(66946007)(2351001)(66446008)(91956017)(64756008)(1730700003)(8676002)(7736002)(14454004)(2501003)(76116006)(53936002)(44832011)(4326008)(2616005)(446003)(99286004)(476003)(25786009)(486006)(256004)(11346002)(6512007)(478600001)(54906003)(66066001)(50226002)(3846002)(6116002)(229853002)(103116003)(6916009)(14444005)(2906002)(8936002)(36756003)(6436002)(71200400001)(71190400001)(6486002)(5640700003)(316002)(99106002)(17423001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR04MB5867;
+ H:DB8PR04MB6715.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: qX57KmA4wPJpWnsRuzX7Mnqu30ZTg5qqMKB9rT/YskcEKi+D5nTRAh5i6pSH/voqbzMZw4ucIE7+7pRMsQCVST1R85kkH7HfJk4ckHJs0oPnCf1uJnkWGNXLqHG6Aem3/3oJspFCh6zmhAiIrj+6ToHXpQjP1ocbNC9eyjBZ5Nu/HcIM0MHfZU9dKn2B+92QMqaIGl1ghsIVIgKp4gw83/HWmatEcA8DA+Zz3NNUfQfhlBvEkoFUi5nY3t6hwhLAhB2U9L+4qAHlPLT475LpUbNXf0YQqAWn7Ix647N3E+HmZ0fcrFNNqlJRTvggF/yOsOydcK+mgGy//xlarhpY89KeKDTAXEtvs9JAbXpXEmg5btb8X4eeyIr89eAM2+MLdxDOxljq6UdThHcDBpbTDvJRRb+iqmF6HR5Okfy00zc=
+Content-ID: <4CB1B8C993E68742BADA05B1ABF60A5A@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190814104022.GI50688@arrakis.emea.arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5e851788-dffb-44cb-0160-08d720af78e6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Aug 2019 12:03:51.5040 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: GyQSSwOPhftv6oPj43p9vZ5a7uhcwNCLa6oUC4z98wJayRvNGta1pmGTBSG9lKFUrHXMoSPHPeKlg574iY10Nw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB5867
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_050226_377859_3C7993F6 
-X-CRM114-Status: GOOD (  21.37  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190814_050355_935066_EFCEB98D 
+X-CRM114-Status: GOOD (  30.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.2.41 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -69,7 +118,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,69 +129,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Steve Capper <steve.capper@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Qian Cai <cai@lca.pw>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "marex@denx.de" <marex@denx.de>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "airlied@linux.ie" <airlied@linux.ie>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "agx@sigxcpu.org" <agx@sigxcpu.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "daniel@ffwll.ch" <daniel@ffwll.ch>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 11:40:23AM +0100, Catalin Marinas wrote:
-> On Wed, Aug 14, 2019 at 10:48:20AM +0100, Will Deacon wrote:
-> > On Wed, Aug 14, 2019 at 10:19:42AM +0100, Catalin Marinas wrote:
-> > > On Tue, Aug 13, 2019 at 06:01:42PM +0100, Will Deacon wrote:
-> > > > -#define _virt_addr_is_linear(kaddr)	\
-> > > > -	(__tag_reset((u64)(kaddr)) >= PAGE_OFFSET)
-> > > > +#define virt_addr_valid(addr)	({					\
-> > > > +	__typeof__(addr) __addr = addr;					\
-> > > > +	__is_lm_address(__addr) && pfn_valid(virt_to_pfn(__addr));	\
-> > > > +})
-> > > 
-> > > There is a slight change of semantics here but I don't think it's an
-> > > issue currently. __is_lm_address() is true even for a user address, so
-> > > at least the first part of virt_addr_valid() now accepts such addresses.
-> > > The pfn would be wrong eventually because of the virt-to-phys offsetting
-> > > and pfn_valid() false but we rely on this rather than checking it's a
-> > > kernel address. Slight concern as this macro is called from drivers.
-> > > 
-> > > Should we keep the PAGE_OFFSET check as well?
-> > 
-> > In virt_addr_valid() or __is_lm_address()?
-> > 
-> > To be honest with you, I'm not even sure what virt_addr_valid() is supposed
-> > to do with non-linear kernel addresses: look at powerpc and riscv, who
-> > appear to convert the address straight to a pfn. Many callers check against
-> > is_vmalloc_addr() first, but not all of them.
-> 
-> Even if they call is_vmalloc_addr(), it would return false for user
-> address. Anyway, at a quick look, I couldn't find any virt_addr_valid()
-> where it would be an issue.
-
-Sure, but my point was more that it would be crazy to have a macro that
-accepted user and linear addresses, but not vmalloc addresses!
-
-> > I think passing in a *user* address would be a huge bug in the caller,
-> > just like it would be if you called virt_to_phys() on a user address.
-> > If we care about that, then I think __is_lm_address() should be the one
-> > doing the check against PAGE_OFFSET.
-> > 
-> > Thoughts? I'd be inclined to leave this patch as it is.
-> 
-> Leave it as it is. The way pfn_valid() is written it wouldn't return
-> true for a user address due to the fact that virt_to_phys() cannot
-> return the same physical address for a user and linear map one.
-> 
-> For this patch:
-> 
-> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-
-Ta,
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgU3RlZmFubiwNCk9uIE1pLCAyMDE5LTA4LTE0IGF0IDEzOjI1ICswMjAwLCBTdGVmYW4gQWdu
+ZXIgd3JvdGU6DQo+IE9uIDIwMTktMDgtMTQgMTM6MTQsIFJvYmVydCBDaGlyYXMgd3JvdGU6DQo+
+ID4gDQo+ID4gSGkgU3RlZmFuLA0KPiA+IE9uIE1pLCAyMDE5LTA4LTE0IGF0IDEzOjAzICswMjAw
+LCBTdGVmYW4gQWduZXIgd3JvdGU6DQo+ID4gPiANCj4gPiA+IE9uIDIwMTktMDgtMTQgMTI6NDgs
+IFJvYmVydCBDaGlyYXMgd3JvdGU6DQo+ID4gPiA+IA0KPiA+ID4gPiANCj4gPiA+ID4gQWRkIG5l
+dyBvcHRpb25hbCBwcm9wZXJ0eSAnbWF4LXJlcycsIHRvIGxpbWl0IHRoZSBtYXhpbXVtDQo+ID4g
+PiA+IHN1cHBvcnRlZA0KPiA+ID4gPiByZXNvbHV0aW9uIGJ5IHRoZSBNWFNGQl9EUk0gZHJpdmVy
+Lg0KPiA+ID4gSSB3b3VsZCBhbHNvIG1lbnRpb24gdGhlIHJlYXNvbiB3aHkgd2UgbmVlZCB0aGlz
+Lg0KPiA+ID4gDQo+ID4gPiBJIGd1ZXNzIHRoaXMgbmVlZHMgYSB2ZW5kb3IgcHJlZml4IGFzIHdl
+bGwgKGZzbCxtYXgtcmVzKS4gSSBhbHNvDQo+ID4gPiB3b3VsZA0KPiA+ID4gbGlrZSB0byBoYXZl
+IHRoZSBhY2sgb2YgdGhlIGRldmljZSB0cmVlIGZvbGtzIGhlcmUuDQo+ID4gUm9iIEhlcnJpbmcg
+YWxzbyBha2VkIGJlIGFib3V0IHRoaXMsIGFuZCBJJ2xsIGNvcHkgaGVyZSB0aGUgcmVwbHksDQo+
+ID4gd2l0aA0KPiA+IGV4cGxhbmF0aW9uczoNCj4gPiANCj4gPiBJbmRlZWQsIHRoaXMgbGltaXRh
+dGlvbiBpcyBhY3R1YWxseSBkdWUgdG8gYmFuZHdpZHRoIGxpbWl0YXRpb24sDQo+ID4gYnV0DQo+
+ID4gdGhlIHByb2JsZW0gaXMgdGhhdCB0aGlzIGxpbWl0YXRpb24gY29tZXMgb24gaS5NWDhNIChr
+bm93biBhcw0KPiA+IG1TY2FsZQ0KPiA+IDg1MEQpLCB3aGVyZSB0aGUgbWVtb3J5IGJhbmR3aWR0
+aCBjYW5ub3Qgc3VwcG9ydDogR1BVL1ZQVSB3b3JrbG9hZA0KPiA+IGluDQo+ID4gdGhlIHNhbWUg
+dGltZSB3aXRoIGJvdGggRENTUyBkcml2aW5nIDRrQDYwIGFuZCBlTENESUYgZHJpdmluZyAxMDgw
+cA0KPiA+IEA2MC4NCj4gPiBTaW5jZSBlTENESUYgaXMgYSBzZWNvbmRhcnkgZGlzcGxheSB3ZSB0
+aG91Z2ggdG8gYWRkIHRoZSBwb3NpYmlsaXR5DQo+ID4gdG8NCj4gPiBsaW1pdCBpdCdzIGJhbmR3
+aWR0aCBieSBsaW1pdGluZyB0aGUgcmVzb2x1dGlvbi4NCj4gPiBJZiB5b3Ugc2F5IHRoYXQgbW9y
+ZSBkZXRhaWxzIGFyZSBuZWVkZWQsIEkgY2FuIGFkZCB0aGVtIGluIHRoZQ0KPiA+IGRlc2NyaXB0
+aW9uLg0KPiBPaCBzb3JyeSBJIG1pc3NlZCB0aGF0Lg0KPiANCj4gUm9iIEhlcnJpbmcgYWxzbyB3
+cm90ZToNCj4gPiANCj4gPiBJIHN1cHBvc2Ugd2hhdCB5b3UgYXJlIGFmdGVyIGlzIGJhbmR3aWR0
+aCBsaW1pdHM/IElJUkMsIHRoZXJlJ3MNCj4gPiBhbHJlYWR5DQo+ID4gc29tZSBiaW5kaW5ncyBl
+eHByZXNzaW5nIHN1Y2ggbGltaXRzLiBBbHNvLCB3b3VsZG4ndCB5b3UgbmVlZCB0bw0KPiA+IGFj
+Y291bnQNCj4gPiBmb3IgYnBwIGFuZCB1c2luZyB0aGUgMm5kIHBsYW5lIChJSVJDIHRoYXQgdGhl
+cmUgaXMgb25lKS4NCj4gSSBndWVzcyB0aGUgYmluZGluZyBoZSByZWZlcnMgdG8gaXMgbWF4LW1l
+bW9yeS1iYW5kd2lkdGgsIHdoaWNoIGlzDQo+IHVzZWQNCj4gaW4gbXVsdGlwbGUgZHJpdmVyIGFs
+cmVhZHkuIEl0IG1ha2VzIHNlbnNlIHRvIHJldXNlIHRoaXMgcHJvcGVydHkNCj4gaW5zdGVhZCBv
+ZiBpbnZlbnRpbmcgYSBuZXcgc2V0IG9mIHByb3BlcnR5IHdoaWNoIGlzIGFsc28gbm90IHRha2lu
+Zw0KPiBicHANCj4gaW50byBhY2NvdW50Li4uDQpBY3R1YWxseSBJIHNhdyB0aGlzIGJpbmRpbmcs
+IGJ1dCBJIHRob3VnaHQgaXQgaXMgc3RyaWN0bHkgcmVsYXRlZCB0bw0KdGhhdCBkcml2ZXIsIHdo
+ZXJlIGl0IGlzIGRvY3VtZW50ZWQuIE5vdywgdGhhdCB5b3Ugc2F5IHRoaXMgb25lIGlzIHVzZWQN
+CmluIG1hbnkgZHJpdmVycyAoYW5kIHJlY2FsbGluZyB0aGF0IHlvdSBzdWdnZXN0ZWQgZm9yIG15
+ICdtYXgtcmVzJyB0bw0KYWRkIGEgcHJlZml4KSwgSSBnZXQgaXQgbm93Lg0KPiANCj4gVGhlIHBs
+MTExIGRyaXZlciBpbXBsZW1lbnRzIHRoaXMgcHJvcGVydHksIGl0IHNob3VsZCBiZSBmYWlybHkg
+ZWFzeQ0KPiB0bw0KPiBhZG9wdCB0aGF0IGNvZGUuDQpTdXJlLCBJIHdpbGwgZG8gc29tZXRoaW5n
+IHNpbWlsYXIgaGVyZSwgdG9vLg0KPiANCj4gLS0NCj4gU3RlZmFuDQo+IA0KPiANCj4gDQo+ID4g
+DQo+ID4gPiANCj4gPiA+IA0KPiA+ID4gLS0NCj4gPiA+IFN0ZWZhbg0KPiA+ID4gDQo+ID4gPiA+
+IA0KPiA+ID4gPiANCj4gPiA+ID4gDQo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IFJvYmVydCBDaGly
+YXMgPHJvYmVydC5jaGlyYXNAbnhwLmNvbT4NCj4gPiA+ID4gLS0tDQo+ID4gPiA+IMKgRG9jdW1l
+bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvbXhzZmIudHh0IHwgNiArKysrKysN
+Cj4gPiA+ID4gwqAxIGZpbGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCspDQo+ID4gPiA+IA0KPiA+
+ID4gPiBkaWZmIC0tZ2l0DQo+ID4gPiA+IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRp
+bmdzL2Rpc3BsYXkvbXhzZmIudHh0DQo+ID4gPiA+IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL2Rpc3BsYXkvbXhzZmIudHh0DQo+ID4gPiA+IGluZGV4IDQ3MmUxZWEuLjU1ZTIy
+ZWQgMTAwNjQ0DQo+ID4gPiA+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
+cy9kaXNwbGF5L214c2ZiLnR4dA0KPiA+ID4gPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRy
+ZWUvYmluZGluZ3MvZGlzcGxheS9teHNmYi50eHQNCj4gPiA+ID4gQEAgLTE3LDYgKzE3LDEyIEBA
+IFJlcXVpcmVkIHByb3BlcnRpZXM6DQo+ID4gPiA+IMKgUmVxdWlyZWQgc3ViLW5vZGVzOg0KPiA+
+ID4gPiDCoMKgwqAtIHBvcnQ6IFRoZSBjb25uZWN0aW9uIHRvIGFuIGVuY29kZXIgY2hpcC4NCj4g
+PiA+ID4gDQo+ID4gPiA+ICtPcHRpb25hbCBwcm9wZXJ0aWVzOg0KPiA+ID4gPiArLSBtYXgtcmVz
+OsKgwqDCoGFuIGFycmF5IHdpdGggYSBtYXhpbXVtIG9mIHR3byBpbnRlZ2VycywNCj4gPiA+ID4g
+cmVwcmVzZW50aW5nDQo+ID4gPiA+IHRoZQ0KPiA+ID4gPiArwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqBtYXhpbXVtIHN1cHBvcnRlZCByZXNvbHV0aW9uLCBpbiB0aGUgZm9ybSBvZg0KPiA+ID4g
+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqA8bWF4WD4sIDxtYXhZPjsgaWYgb25lIG9mIHRo
+ZSBpdGVtIGlzIDwwPiwgdGhlDQo+ID4gPiA+IGRlZmF1bHQNCj4gPiA+ID4gK8KgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgZHJpdmVyLWRlZmluZWQgbWF4aW11bSByZXNvbHV0aW9uIGZvciB0aGF0
+IGF4aXMNCj4gPiA+ID4gaXMNCj4gPiA+ID4gdXNlZA0KPiA+ID4gPiArDQo+ID4gPiA+IMKgRXhh
+bXBsZToNCj4gPiA+ID4gDQo+ID4gPiA+IMKgwqDCoMKgwqDCoGxjZGlmMTogZGlzcGxheS1jb250
+cm9sbGVyQDIyMjAwMDAgew0KPiA+IFRoYW5rcywNCj4gPiBSb2JlcnQKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
