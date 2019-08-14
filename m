@@ -2,87 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B92C88D231
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 13:32:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 459508D23E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 13:34:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MXGfOod5slTFTu0OS7qA/1LlMf78LpJ3zYZUW0JPLDU=; b=Bz9eQnQ2D3n8R3
-	EFyyK29kunD3kF3HGHB1AA4jcgaRxtdrqwk+Bxd6O8Jrf8XGZViGQIq7810f0ITMcttvNSpq9TnXD
-	C4leQKt+1yvkzjeAsxzlUp0ysiwbX0Oi4vYAjxazBaudTzkANLPGyDcNjpaR47E5nPv9SBKXuHyih
-	Enkmx2QZno8ep/NbEq5CthnQP6KE3/AimYrnOA6QolvQ5HGNUfVl581n705VCP9HifAi2aMLKicT7
-	L8eEr7kOCLG46bwSRfD1u6dqf97jLs1D4ggbVz5mgtsUGaMT2ui7SShSb1Slj3W4nkJQ1nHoccjIQ
-	l1FzUrYYqCdLFNV9ThDA==;
+	List-Owner; bh=YA+JBzIFfHE0m8Q+oSYwZsBliHn6VCB0liLSbEHeQ30=; b=N+mfcTnZb2D+pv
+	L2PeKZ/JVCLFCGslTUjXAPEb9jkCizJJggZDjynzw2jR6rML60Tphp+D4fTn/qCBUe46cfu/c15y8
+	ITFWTmxU+EduQor4NmKQQv4CccfDyFVGv0dZ6vkbNV8lm4SKncx1tpVMgXRx2QvrfDrGR+6GCYvpH
+	tH0vanAGbn24tMxavjHxR4lOSCCZBAJXoC1o6ptCoODV+1s08kaOOWXV/oPgANuvSzaz18Tcv7alC
+	JElrJFN8hTa67LqxQGQrJpoS5jkgYrHej8KZr4wTKwFt46MbygMD3AJ82p1eT7Nc92ZguEeE44UfD
+	sBYB7gYe8hRcdNMa+4/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxrVV-0001sG-9b; Wed, 14 Aug 2019 11:31:57 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1hxrXm-0002C3-Iy; Wed, 14 Aug 2019 11:34:18 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxrVG-0001rf-GS
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 11:31:45 +0000
-Received: by mail-ed1-f66.google.com with SMTP id m44so6762803edd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 04:31:42 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jnH5gEWlUPqTFMc04DMHRK5rlUo9OFLR8LpIJiKaA88=;
- b=g6Ck11nsav/mLAThkQP8xObrmmD+jiwDzO4gq0OVBxotaklVJYrJ5yqaZx32+oM66x
- A/BVKPIpTrjawxKkihk0Hp4Q3e5Uun/80AASINrAs8XYTZFKmj163wt3+uh2DsYSVcha
- xXTd2Cx0U4viJIGztuTDYJM+WPL0p83uyjN5L5PiIE1qU0Q/tqycZpSB24ZNzoflRlXw
- CJJIMsMMphRTlxezWfBbdT2/mroKux7fSh63egkFwwBQ2LeZGEg9xtpBTYTsXwkXY5Vn
- ibJ7S9DSY0R2taLol0JJlR6EPcbqDZeHnhWVbrnNzVeKdkf+EzRL0y155RNco2S+SJkk
- nPrA==
-X-Gm-Message-State: APjAAAXsXyTUZxDGtB41OCV6iSJG2MU/dJkn4S9u8t0P4dUcPShuaDPI
- 7w8E6zWwR9q+qVy1ShmGmvzcdudFjT4=
-X-Google-Smtp-Source: APXvYqzL6DwSbAmxbAWDitYMFxoiT2Ky7/TFF+kxXEeNPkqsL9Zvi46Qh/ZmTXZWoSG83pnAxWJGDw==
-X-Received: by 2002:aa7:c68f:: with SMTP id n15mr18075971edq.43.1565782300186; 
- Wed, 14 Aug 2019 04:31:40 -0700 (PDT)
-Received: from mail-wm1-f42.google.com (mail-wm1-f42.google.com.
- [209.85.128.42])
- by smtp.gmail.com with ESMTPSA id j30sm25258930edb.8.2019.08.14.04.31.39
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Wed, 14 Aug 2019 04:31:39 -0700 (PDT)
-Received: by mail-wm1-f42.google.com with SMTP id l2so4148915wmg.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 04:31:39 -0700 (PDT)
-X-Received: by 2002:a1c:4c06:: with SMTP id z6mr7844443wmf.47.1565782298812;
- Wed, 14 Aug 2019 04:31:38 -0700 (PDT)
+ id 1hxrXP-0002BH-40
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 11:33:57 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hxrXF-00013H-3s; Wed, 14 Aug 2019 13:33:45 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hxrXE-0001HE-D6; Wed, 14 Aug 2019 13:33:44 +0200
+Date: Wed, 14 Aug 2019 13:33:44 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Wolfram Sang <wsa@the-dreams.de>
+Subject: Re: [PATCH v1] MAINTAINERS: i2c-imx: take over maintainership
+Message-ID: <20190814113344.5j7zh37nm36rlagr@pengutronix.de>
+References: <20190812050817.23279-1-o.rempel@pengutronix.de>
+ <20190812064811.427cy7ahim54odkk@pengutronix.de>
+ <20190814100224.GE1511@ninjato>
 MIME-Version: 1.0
-References: <20190814060854.26345-1-codekipper@gmail.com>
- <20190814060854.26345-16-codekipper@gmail.com>
-In-Reply-To: <20190814060854.26345-16-codekipper@gmail.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Wed, 14 Aug 2019 19:31:27 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65OdwwDg0Ezc0eXShvp1crQfmt6ZKAkWpOH9Dz94HFrEw@mail.gmail.com>
-Message-ID: <CAGb2v65OdwwDg0Ezc0eXShvp1crQfmt6ZKAkWpOH9Dz94HFrEw@mail.gmail.com>
-Subject: Re: [PATCH v5 15/15] ASoC: sun4i-i2s: Adjust regmap settings
-To: Code Kipper <codekipper@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20190814100224.GE1511@ninjato>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_043142_543235_69EE3587 
-X-CRM114-Status: GOOD (  18.66  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190814_043355_157269_9B229BF3 
+X-CRM114-Status: GOOD (  10.43  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,134 +69,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>,
- "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Mark Brown <broonie@kernel.org>,
- Maxime Ripard <maxime.ripard@free-electrons.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Oleksij Rempel <o.rempel@pengutronix.de>, linux-i2c@vger.kernel.org,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Chris Healy <cphealy@gmail.com>, NXP Linux Team <linux-imx@nxp.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 2:09 PM <codekipper@gmail.com> wrote:
->
-> From: Marcus Cooper <codekipper@gmail.com>
->
-> Bypass the regmap cache when flushing the i2s FIFOs and modify the tables
-> to reflect this.
->
-> Signed-off-by: Marcus Cooper <codekipper@gmail.com>
-> ---
->  sound/soc/sunxi/sun4i-i2s.c | 31 ++++++++++---------------------
->  1 file changed, 10 insertions(+), 21 deletions(-)
->
-> diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-> index d3c8789f70bb..ecfc1ed79379 100644
-> --- a/sound/soc/sunxi/sun4i-i2s.c
-> +++ b/sound/soc/sunxi/sun4i-i2s.c
-> @@ -876,9 +876,11 @@ static int sun4i_i2s_set_fmt(struct snd_soc_dai *dai, unsigned int fmt)
->  static void sun4i_i2s_start_capture(struct sun4i_i2s *i2s)
->  {
->         /* Flush RX FIFO */
-> +       regcache_cache_bypass(i2s->regmap, true);
->         regmap_update_bits(i2s->regmap, SUN4I_I2S_FIFO_CTRL_REG,
->                            SUN4I_I2S_FIFO_CTRL_FLUSH_RX,
->                            SUN4I_I2S_FIFO_CTRL_FLUSH_RX);
-> +       regcache_cache_bypass(i2s->regmap, false);
->
->         /* Clear RX counter */
->         regmap_write(i2s->regmap, SUN4I_I2S_RX_CNT_REG, 0);
-> @@ -897,9 +899,11 @@ static void sun4i_i2s_start_capture(struct sun4i_i2s *i2s)
->  static void sun4i_i2s_start_playback(struct sun4i_i2s *i2s)
->  {
->         /* Flush TX FIFO */
-> +       regcache_cache_bypass(i2s->regmap, true);
->         regmap_update_bits(i2s->regmap, SUN4I_I2S_FIFO_CTRL_REG,
->                            SUN4I_I2S_FIFO_CTRL_FLUSH_TX,
->                            SUN4I_I2S_FIFO_CTRL_FLUSH_TX);
-> +       regcache_cache_bypass(i2s->regmap, false);
->
->         /* Clear TX counter */
->         regmap_write(i2s->regmap, SUN4I_I2S_TX_CNT_REG, 0);
-> @@ -1053,13 +1057,7 @@ static const struct snd_soc_component_driver sun4i_i2s_component = {
->
->  static bool sun4i_i2s_rd_reg(struct device *dev, unsigned int reg)
->  {
-> -       switch (reg) {
-> -       case SUN4I_I2S_FIFO_TX_REG:
-> -               return false;
-> -
-> -       default:
-> -               return true;
-> -       }
-> +       return true;
+On Wed, Aug 14, 2019 at 12:02:25PM +0200, Wolfram Sang wrote:
+> =
 
-The commit log needs to explain why this is relevant. And I'm not sure why one
-would read back the TX FIFO. Also, if it's always true, just drop the callback.
+> > Even without this patch the generic "ARM/FREESCALE IMX / MXC ARM
+> > ARCHITECTURE" entry matches the i2c-imx driver.
+> =
 
-ChenYu
+> It matches, but it didn't work well, I am afraid.
 
->  }
->
->  static bool sun4i_i2s_wr_reg(struct device *dev, unsigned int reg)
-> @@ -1078,6 +1076,8 @@ static bool sun4i_i2s_volatile_reg(struct device *dev, unsigned int reg)
->  {
->         switch (reg) {
->         case SUN4I_I2S_FIFO_RX_REG:
-> +       case SUN4I_I2S_FIFO_TX_REG:
-> +       case SUN4I_I2S_FIFO_STA_REG:
->         case SUN4I_I2S_INT_STA_REG:
->         case SUN4I_I2S_RX_CNT_REG:
->         case SUN4I_I2S_TX_CNT_REG:
-> @@ -1088,23 +1088,12 @@ static bool sun4i_i2s_volatile_reg(struct device *dev, unsigned int reg)
->         }
->  }
->
-> -static bool sun8i_i2s_rd_reg(struct device *dev, unsigned int reg)
-> -{
-> -       switch (reg) {
-> -       case SUN8I_I2S_FIFO_TX_REG:
-> -               return false;
-> -
-> -       default:
-> -               return true;
-> -       }
-> -}
-> -
->  static bool sun8i_i2s_volatile_reg(struct device *dev, unsigned int reg)
->  {
->         if (reg == SUN8I_I2S_INT_STA_REG)
->                 return true;
->         if (reg == SUN8I_I2S_FIFO_TX_REG)
-> -               return false;
-> +               return true;
->
->         return sun4i_i2s_volatile_reg(dev, reg);
->  }
-> @@ -1175,7 +1164,7 @@ static const struct regmap_config sun8i_i2s_regmap_config = {
->         .reg_defaults   = sun8i_i2s_reg_defaults,
->         .num_reg_defaults       = ARRAY_SIZE(sun8i_i2s_reg_defaults),
->         .writeable_reg  = sun4i_i2s_wr_reg,
-> -       .readable_reg   = sun8i_i2s_rd_reg,
-> +       .readable_reg   = sun4i_i2s_rd_reg,
->         .volatile_reg   = sun8i_i2s_volatile_reg,
->  };
->
-> @@ -1188,7 +1177,7 @@ static const struct regmap_config sun50i_i2s_regmap_config = {
->         .reg_defaults   = sun50i_i2s_reg_defaults,
->         .num_reg_defaults       = ARRAY_SIZE(sun50i_i2s_reg_defaults),
->         .writeable_reg  = sun4i_i2s_wr_reg,
-> -       .readable_reg   = sun8i_i2s_rd_reg,
-> +       .readable_reg   = sun4i_i2s_rd_reg,
->         .volatile_reg   = sun8i_i2s_volatile_reg,
->  };
->
-> --
-> 2.22.0
->
+I didn't intend to imply it worked well. Just thought it was sensible to
+point out that even with the newly added entry in MAINTAINERS the old
+entry still matches.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
