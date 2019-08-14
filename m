@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77B538D0BD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:31:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F28F8D0C7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:37:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L9fopT/UL+oEnWE8Bsio41HtCVYw40yu7nQWDxR296g=; b=BJ0hhNrHafS3er
-	uapy3388HSSaIJoYcVHYwrYfxGCW2qiInm+fCV6qEi8vIR6ZzXAvbqWlvraXLtEp0rVCX4Ce/UurL
-	eDzfvu3MJu2EfZHGhrT80dFESMOhhfk5vNr2ks6sGWmNlgAayksUpX0kd2HewP3FDdyGsK4NP9YJd
-	cF7n9X1JOUeNNDZpV/tMnmZ+pID5OgtGCc3OmrZSdUe3g5K0+GhGMUqfc5oWwbCUZ+hfIPdqwzfs4
-	oaeN2b0LKNkkCp2kiA4kF3E4x3oap6LCrUHAehMpY9OYKFmLckP+FXqbk/Da0mUgewMSmVhyHrCkU
-	H7LYT0jBfMXs8u0K2MHA==;
+	List-Owner; bh=Sg3MQkqif4M5puQywBPvLfl2lovieD+8bQc9GnXXdkc=; b=p0v1Zh/HiM17Um
+	H6DewwK+rwxY5O4ttFRiKZ1qdP40NhcZYILuikp1ceRydwybtzoPp6cAlRBpan9Exmx2JaynUo1o8
+	pqIcyvx0EfYQ2aloJA1ErKNnRbTDkijpIXhik3/Gp0iiwpaR7DTeI2EoC02tRzQknpUp8zJthVohz
+	qWbBRnEuT+bMbg/rLQosRAXjIvcI10yc6OjShei+BSOdk6YUszDrrLoy1OEZuoFDP+gLtEkFnCKAz
+	8gEyRJLGcEqJLlbhnF4FhhiOlNVMSHeqqNkev5/xI9FtNp0m5yK6/WSWWFptSUN8+ehGrcbY2NA2n
+	y4LwgtZZcANun7m/ni3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxqZC-0005Ht-Dg; Wed, 14 Aug 2019 10:31:42 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1hxqeQ-0006nc-Ab; Wed, 14 Aug 2019 10:37:06 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxqZ5-0005HT-D5
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 10:31:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=vIn3VrH7ocwDZwAAstv4Z1w3Iw6dyOjCurgY/OY+iMg=; b=vVh2LAglzEG++FwqN4KSlYc3e
- r1btgKmDEiOv85fXEZ+HfeiKQBXj02w1pCssYPOmHUYKWhHS2i274oG8l7lzAZQyzqLikkkKa2/cn
- WqMl1l0IGoprA+wUx5VYjOFf8yY23van8tZYvi6GupNDAe5pITc2JQ3GiWymo+Kc7VaMu2DZ6jqsM
- 2q0ZsPP+7DcgBWAlSUisioPDmWaF5tS9lO/A5V44fXMDcQMBLxm+bdNYuCMutScF2l2wOZXilNUAC
- Y22OnCoc77oDHHMtZ+EIAfsKBwK6Mcu/2EPbieFfdGiXbXawu/8aRhm05G6xCnRbCDDFMmJ3m/ak/
- ulXIvjO9w==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:56468)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hxqYb-0005uy-JR; Wed, 14 Aug 2019 11:31:05 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hxqYR-0008OC-2C; Wed, 14 Aug 2019 11:30:55 +0100
-Date: Wed, 14 Aug 2019 11:30:55 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Steve Longerbeam <slongerbeam@gmail.com>
-Subject: Re: [PATCH 04/22] media: Move v4l2_fwnode_parse_link from v4l2 to
- driver base
-Message-ID: <20190814103054.GI13294@shell.armlinux.org.uk>
-References: <20190805233505.21167-1-slongerbeam@gmail.com>
- <20190805233505.21167-5-slongerbeam@gmail.com>
- <CAHp75VcOh8bOf_s6t0ehwGtcYn64QFGj303SVvpHrztEOhTRgg@mail.gmail.com>
- <4750b347-b421-6569-600f-0ced8406460e@gmail.com>
+ id 1hxqeI-0006mw-Ne
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 10:37:00 +0000
+Received: by mail-qt1-f196.google.com with SMTP id j15so15963917qtl.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 14 Aug 2019 03:36:58 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=LDEbTyIJnFa3pozet2GSZKuiwciqafTCxiRFUe/ZD/o=;
+ b=saVfqu4LufB8S9wEuc9kTpJnCIC3jHu+2fPaMJO753MnPdllTMond2+52chWu/RKBs
+ PTs0DPGI7KL2cF6b0qLR+LrAyh5CAFpdDSjuRdqCRmcFEXh3hLFEh+BHEz7E2b6tjYjq
+ GvRZhvTpRP3iPEQHUIzhemqWR4izP7o29J9giESOJi/zqt/A5TEkb+NjPPVDGbp/EulG
+ r0agjzn9CshMjXmbSB24LBf3HdCuR723hzzXlbfBVQPhNiWUhTloweu3wiW5PotwIPS2
+ RJO9RqHCSkInr8JQ7Om3k/cOiiTFN/OMtJj3vzjF/sq91x6BcgsArgg0ZgmTjwSJev+v
+ TzWA==
+X-Gm-Message-State: APjAAAXuTWDm7TZEr0eTAmwTIh2QOCSwyLFYE/NlBczKnvE1W3WZeqJh
+ KaJsB8d3b/A8hpniuESK+BSjVmhIiS9iyAFEBT4=
+X-Google-Smtp-Source: APXvYqwV2TBabqJ9UAr2y8hQJw2m2az45KCTEx2a/C7amkL7cSDfPFgfYqeUqWRJZyqYCM2uSOekI8sS/0dFywJPLYg=
+X-Received: by 2002:ac8:239d:: with SMTP id q29mr8646894qtq.304.1565779017271; 
+ Wed, 14 Aug 2019 03:36:57 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4750b347-b421-6569-600f-0ced8406460e@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190808212234.2213262-1-arnd@arndb.de>
+ <20190808212234.2213262-15-arnd@arndb.de>
+ <20190813103605.GL52127@atomide.com>
+ <CAK8P3a0E+QUn9wcP5Obv-FitWyXCFwcp+oPConeO2p-NV1rqsw@mail.gmail.com>
+ <20190813181158.GA26798@darkstar.musicnaut.iki.fi>
+ <CAK8P3a0LjKrc+7c5Ht9OL7LfYyLnG9=y7u+w24ujA1xAid_yCQ@mail.gmail.com>
+ <20190814074918.GA52127@atomide.com>
+In-Reply-To: <20190814074918.GA52127@atomide.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 14 Aug 2019 12:36:40 +0200
+Message-ID: <CAK8P3a3k_HOGqzMGjtc+7NSaK0Bsa_vxxRFLzY8aP6ev4wa9iA@mail.gmail.com>
+Subject: Re: [PATCH 14/22] ARM: omap1: use pci_ioremap_io() for omap_cf
+To: Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_033135_445900_49C333F4 
-X-CRM114-Status: GOOD (  10.60  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190814_033658_771960_81398BE4 
+X-CRM114-Status: GOOD (  14.17  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,50 +88,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Fabio Estevam <festevam@gmail.com>,
- "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Michal Simek <michal.simek@xilinx.com>,
- "open list:ACPI" <linux-acpi@vger.kernel.org>,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, Len Brown <lenb@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Sascha Hauer <s.hauer@pengutronix.de>,
- Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- "moderated list:ARM/ZYNQ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- Enrico Weigelt <info@metux.net>, Hyun Kwon <hyun.kwon@xilinx.com>,
+Cc: Aaro Koskinen <aaro.koskinen@iki.fi>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- open list <linux-kernel@vger.kernel.org>,
- Jacopo Mondi <jacopo+renesas@jmondi.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
+ Linus Walleij <linus.walleij@linaro.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Dominik Brodowski <linux@dominikbrodowski.net>,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ linux-omap <linux-omap@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 06, 2019 at 09:53:41AM -0700, Steve Longerbeam wrote:
-> The full patchset doesn't seem to be up yet, but see [1] for the cover
-> letter.
+On Wed, Aug 14, 2019 at 9:49 AM Tony Lindgren <tony@atomide.com> wrote:
+> * Arnd Bergmann <arnd@arndb.de> [190813 19:34]:
+> > On Tue, Aug 13, 2019 at 8:12 PM Aaro Koskinen <aaro.koskinen@iki.fi> wrote:
+> > diff --git a/arch/arm/mach-omap1/hardware.h b/arch/arm/mach-omap1/hardware.h
+> > index 232b8deef907..9fc76a3c9e57 100644
+> > --- a/arch/arm/mach-omap1/hardware.h
+> > +++ b/arch/arm/mach-omap1/hardware.h
+> > @@ -61,7 +61,7 @@ static inline u32 omap_cs3_phys(void)
+> >
+> >  #endif /* ifndef __ASSEMBLER__ */
+> >
+> > -#define OMAP1_IO_OFFSET                0x01000000      /* Virtual IO
+> > = 0xfefb0000 */
+> > +#define OMAP1_IO_OFFSET                0x00fb0000      /* Virtual IO
+> > = 0xff000000 */
+> >  #define OMAP1_IO_ADDRESS(pa)   IOMEM((pa) - OMAP1_IO_OFFSET)
+> >
+> >  #include "serial.h"
+>
+> Oh OK yeah sounds like that's the issue.
+>
+> > There may be additional locations that hardcode the virtual address.
+>
+> Those should be in mach-omap1/io.c, and I recall innovator had some
+> hardcoded fpga address that should also be checked.
 
-Was the entire series copied to the mailing lists, or just selected
-patches?  I only saw 4, 9, 11 and 13-22 via lakml.
+I see four boards with hardcoded I/O addresses, but they are all below
+the PCI I/O virtual address range, and are not affected by that change.
 
-In the absence of the other patches, will this solve imx-media binding
-the internal subdevs of sensor devices to the CSI2 interface?
+For the innovator FPGA access, this was ok, it uses the correct address
+in the OMAP1_IO_OFFSET range.
 
-Thanks.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
