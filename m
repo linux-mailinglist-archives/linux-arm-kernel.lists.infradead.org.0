@@ -2,90 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B49C8D713
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 17:18:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D2A98D71F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 17:20:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2CN/l+0AojH3fictlA6Xe2Dc4DI979ARln5q7fYTNeI=; b=CWa/SthsTfo+eH
-	yUWEJr/oPcGGBXRVWt4uB0z2zS7yfRjewVapnBWtKSUCIonODAeC0yq2BhCkF8FOgIlBM5HZwgKrY
-	nS3ArK629IM7qh3zFac4bjQ/NEFRVWHVAwAhFM5b7JqV20lWUzWq2c1AOhjNa9TrTzlk551V/JXLH
-	0A8IYJUBzdxiBKRFrXVCG2hhEqLLVH9RgEznctPPHXXmSiK1lKTBAjTiA6GV9GqnGdDKRF1A8xRZu
-	4f5r8K9l4usMzeJJnSbipYpeFf5yNLD6WfnMbj849FGFG4FBC6ad1QW6Js0De4EMkCtP2PCsNXGYw
-	8c0F2GVssrVFH3MhptNw==;
+	List-Owner; bh=lWZoecQZHFMn2xrir6IbqbWBDHgvi7kkzWH1xiKz/ts=; b=RV7YTeqVyRzUyy
+	eesJqRDZBSAi67wEi/nK+iuRdPC1uv2npYUuton5cA6CUmv4MUI/LvBGa5EcFK7Ssc6GBSoCAnkrT
+	uyxIxqnoli1AYK3LirUTti5j+SjZsvCI647LohI5dbShYrjoIPHWKfgQMRQk0KEEY5cIfOsrob9LW
+	MxXLdhwQLd+mODUdLiclGxzDICKzYT6KZTUubM4PAOMihkJwP/a89XStg33yCfSEQfmwpAb0IyfXx
+	pyFgPZc7qks2TyHPxtc/VFBhth0x6X6KiAsucQNqwohYmEuuUyX5divH4MLbPuIV8AJm1gv00sLs4
+	E/8PSPmTT6xEPu+5p90A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxv2E-0002Iw-RM; Wed, 14 Aug 2019 15:17:59 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxv22-0002IJ-Iy
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 15:17:48 +0000
-Received: by mail-wm1-x341.google.com with SMTP id v19so4808775wmj.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 08:17:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=r9q3s9VwvLyAntilbnUXJMH4tTubIleBBy+fMQksP+s=;
- b=eZxehvMcm/5qAzM0pp1kWdxRuHNMaJIaUKaFSL9Wsk1i+MX1fjNEw4/uOaW6VapArS
- S07rwnX/vF6XaVnaBj0Uk0qvncvgVxK7/rkEuHQINnXlizUATE99+IBcMbvj6pKRYdX9
- udcJLeWtb+JaJbgG7z7spbUBH43x2FHejm8+ib9oMjn8/1f4igkDKY089HkC2Ar5C1Uk
- 3Acn2/3nIHSxRQqVhh+VrjUjMHrkQ2ZPggxNOa2xjV+uJNYePXEsZiN72HkxbnDDN/Rt
- bh85OYlLl0z3jU2SctCbkSljBOU09NQqUUe+pTxOSW7K4kkQbZbswkXQ/eIzbrep6x4W
- 8KWg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=r9q3s9VwvLyAntilbnUXJMH4tTubIleBBy+fMQksP+s=;
- b=bJnmjCrm6NmELDTOIT/1WVfU0y2RP92GdFova00bqB9XHOMoriaUF5s8um4r2s4s2D
- UPSxM4fOmwAL+apVaeQig9n2YWXrsdoot5GpportwdjoTbmOWx2t0NA69pYj1/Rj/oUJ
- yWhcQH1VroUILBcc62NQpJu3zFBDKS75k7MjfjhJlf9ARtx3D/VwSmYBPMs+eYjdCUx2
- nZbIuOi0aS0PW0Je2M0Jxnbrdacvrcyo+Vl5iuaV5WoDGr17TTdCCaop+OBFGb6WGXUF
- FQU0KGwo/8Bi0Pd5Nf3R90TZTATsOUQ5FAbNRTnFMF7JIAr1wNTT26kQLdveK229MwMT
- jE+g==
-X-Gm-Message-State: APjAAAVa3a9z4bLm5cSA7Gn3pYQHF/+mexje44wsCgGiBlWZDVR8STKP
- crIabXg6V+1rc0h7o7TzS5sELKv7lAJSVc5fMIH+hA==
-X-Google-Smtp-Source: APXvYqyykrAr7JGW2a9LXybP330lJLrU7U1zgClHC/UlBuPJHJEZxDBPa2KCCqPE27D+QJlbuMXqQa6OqljhTAxLg6A=
-X-Received: by 2002:a05:600c:231a:: with SMTP id
- 26mr8541053wmo.136.1565795864694; 
- Wed, 14 Aug 2019 08:17:44 -0700 (PDT)
+	id 1hxv4q-0004P1-CJ; Wed, 14 Aug 2019 15:20:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxv4b-0004Od-Ae
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 15:20:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3597928;
+ Wed, 14 Aug 2019 08:20:21 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1535E3F694;
+ Wed, 14 Aug 2019 08:20:19 -0700 (PDT)
+Date: Wed, 14 Aug 2019 16:20:18 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Steve Capper <steve.capper@arm.com>, will@kernel.org
+Subject: [PATCH] arm64: fix CONFIG_KASAN_SW_TAGS && CONFIG_KASAN_INLINE (was:
+ Re: [PATCH V5 03/12] arm64: kasan: Switch to using)
+ KASAN_SHADOW_OFFSET
+Message-ID: <20190814152017.GD51963@lakrids.cambridge.arm.com>
+References: <20190807155524.5112-1-steve.capper@arm.com>
+ <20190807155524.5112-4-steve.capper@arm.com>
 MIME-Version: 1.0
-References: <20190813170149.26037-1-will@kernel.org>
- <20190813170149.26037-2-will@kernel.org>
- <CAKv+Gu8Gws2MVE5ck1-rjm06X2nOUzRRQL_rCuoXd2Fyp-cOyw@mail.gmail.com>
- <20190813191124.GA21406@capper-ampere.manchester.arm.com>
- <CAKv+Gu-VBwXH+n7A0vr9xXm43HmFqsHOazQA-BuJKSqNhngR2A@mail.gmail.com>
- <20190813203412.GA22563@capper-ampere.manchester.arm.com>
-In-Reply-To: <20190813203412.GA22563@capper-ampere.manchester.arm.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 14 Aug 2019 18:17:33 +0300
-Message-ID: <CAKv+Gu-zRageFrtRVkrLDBcSQXLLD05864fenDrDwj6eoX9j-A@mail.gmail.com>
-Subject: Re: [PATCH 1/8] arm64: memory: Fix virt_addr_valid() using
- __is_lm_address()
-To: Steve Capper <Steve.Capper@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190807155524.5112-4-steve.capper@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_081746_637812_34346229 
-X-CRM114-Status: GOOD (  32.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_082025_458087_7DFDE508 
+X-CRM114-Status: GOOD (  17.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,131 +64,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- Catalin Marinas <Catalin.Marinas@arm.com>, Qian Cai <cai@lca.pw>,
- Andrey Konovalov <andreyknvl@google.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, nd <nd@arm.com>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, catalin.marinas@arm.com,
+ bhsharma@redhat.com, maz@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 13 Aug 2019 at 23:34, Steve Capper <Steve.Capper@arm.com> wrote:
->
-> On Tue, Aug 13, 2019 at 10:25:14PM +0300, Ard Biesheuvel wrote:
-> > On Tue, 13 Aug 2019 at 22:11, Steve Capper <Steve.Capper@arm.com> wrote:
-> > >
-> > > Hi Ard,
-> > >
-> > > On Tue, Aug 13, 2019 at 09:09:16PM +0300, Ard Biesheuvel wrote:
-> > > > On Tue, 13 Aug 2019 at 20:02, Will Deacon <will@kernel.org> wrote:
-> > > > >
-> > > > > virt_addr_valid() is intended to test whether or not the passed address
-> > > > > is a valid linear map address. Unfortunately, it relies on
-> > > > > _virt_addr_is_linear() which is broken because it assumes the linear
-> > > > > map is at the top of the address space, which it no longer is.
-> > > > >
-> > > > > Reimplement virt_addr_valid() using __is_lm_address() and remove
-> > > > > _virt_addr_is_linear() entirely. At the same time, ensure we evaluate
-> > > > > the macro parameter only once and move it within the __ASSEMBLY__ block.
-> > > > >
-> > > > > Reported-by: Qian Cai <cai@lca.pw>
-> > > > > Reported-by: Geert Uytterhoeven <geert@linux-m68k.org>
-> > > > > Fixes: 14c127c957c1 ("arm64: mm: Flip kernel VA space")
-> > > > > Signed-off-by: Will Deacon <will@kernel.org>
-> > > > > ---
-> > > > >  arch/arm64/include/asm/memory.h | 14 +++++++-------
-> > > > >  1 file changed, 7 insertions(+), 7 deletions(-)
-> > > > >
-> > > > > diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-> > > > > index afaf512c0e1b..442ab861cab8 100644
-> > > > > --- a/arch/arm64/include/asm/memory.h
-> > > > > +++ b/arch/arm64/include/asm/memory.h
-> > > > > @@ -244,9 +244,9 @@ static inline const void *__tag_set(const void *addr, u8 tag)
-> > > > >  /*
-> > > > >   * The linear kernel range starts in the middle of the virtual adddress
-> > > > >   * space.
-> > > >
-> > > > This is no longer true either.
-> > > >
-> > >
-> > > Whoops agreed.
-> > >
-> > > > > Testing the top bit for the start of the region is a
-> > > > > - * sufficient check.
-> > > > > + * sufficient check and avoids having to worry about the tag.
-> > > > >   */
-> > > > > -#define __is_lm_address(addr)  (!((addr) & BIT(vabits_actual - 1)))
-> > > > > +#define __is_lm_address(addr)  (!(((u64)addr) & BIT(vabits_actual - 1)))
-> > > > >
-> > > >
-> > > > ... and this assumes that the VA space is split evenly between linear
-> > > > and vmalloc/vmemmap/etc, which is no longer true when running with
-> > > > 52-bit VAs
-> > > >
-> > >
-> > > For 52-bit VAs we have two possibilities:
-> > >   Start                 End                     Size            Use
-> > >   -----------------------------------------------------------------------
-> > >   0000000000000000      000fffffffffffff           4PB          user
-> > >   fff0000000000000      fff7ffffffffffff           2PB          kernel logical memory map
-> > >   fff8000000000000      fffd9fffffffffff        1440TB          [gap]
-> >
-> > Right. I missed the part where we throw away 1/3 of the VA space:
-> > IIRC, the idea was that keeping the size of the upper half of the
-> > 48-bit VA space fixed for 52-bit not only allowed compile time
-> > constant addresses to be used for many of the things that populate it,
-> > it also makes a lot more VA space available to the linear region,
-> > which is where we need it the most.
-> >
-> > >   fffda00000000000      ffff9fffffffffff         512TB          kasan shadow region
-> > >
-> > > and
-> > >   Start                        End                     Size            Use
-> > >   -----------------------------------------------------------------------
-> > >   0000000000000000     0000ffffffffffff         256TB          user
-> > >   ffff000000000000     ffff7fffffffffff         128TB          kernel logical memory map
-> > >   ffff800000000000     ffff9fffffffffff          32TB          kasan shadow region
-> > >   ffffa00000000000     ffffa00007ffffff         128MB          bpf jit region
-> > >
-> > > IIUC the definition for __is_lm_address is correct for these cases?
-> > > (it's based off vabits_actual).
-> > >
-> >
-> > With the gap taken into account, it is correct. But throwing away 1440
-> > TB of address space seems suboptimal to me.
->
-> When getting the 52-bit kernel VA support ready, I was trying to achieve
-> functional and performant support in as few steps as possible to avoid risk of
-> breaking things (unfortunately I missed a couple of things between
-> rebases with the SW KASAN). The big gain from that series is support for
-> a much larger linear mapping.
->
+Hi Steve,
 
-Sure.
+On Wed, Aug 07, 2019 at 04:55:15PM +0100, Steve Capper wrote:
+> +config KASAN_SHADOW_OFFSET
+> +	hex
+> +	depends on KASAN
+> +	default 0xdfffa00000000000 if (ARM64_VA_BITS_48 || ARM64_USER_VA_BITS_52) && !KASAN_SW_TAGS
+> +	default 0xdfffd00000000000 if ARM64_VA_BITS_47 && !KASAN_SW_TAGS
+> +	default 0xdffffe8000000000 if ARM64_VA_BITS_42 && !KASAN_SW_TAGS
+> +	default 0xdfffffd000000000 if ARM64_VA_BITS_39 && !KASAN_SW_TAGS
+> +	default 0xdffffffa00000000 if ARM64_VA_BITS_36 && !KASAN_SW_TAGS
+> +	default 0xefff900000000000 if (ARM64_VA_BITS_48 || ARM64_USER_VA_BITS_52) && KASAN_SW_TAGS
+> +	default 0xefffc80000000000 if ARM64_VA_BITS_47 && KASAN_SW_TAGS
+> +	default 0xeffffe4000000000 if ARM64_VA_BITS_42 && KASAN_SW_TAGS
+> +	default 0xefffffc800000000 if ARM64_VA_BITS_39 && KASAN_SW_TAGS
+> +	default 0xeffffff900000000 if ARM64_VA_BITS_36 && KASAN_SW_TAGS
+> +	default 0xffffffffffffffff
+> +
+>  source "arch/arm64/Kconfig.platforms"
+>  
+>  menu "Kernel Features"
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index b2400f9c1213..2b7db0d41498 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -126,14 +126,6 @@ KBUILD_CFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+>  KBUILD_CPPFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+>  KBUILD_AFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+>  
+> -# KASAN_SHADOW_OFFSET = VA_START + (1 << (VA_BITS - KASAN_SHADOW_SCALE_SHIFT))
+> -#				 - (1 << (64 - KASAN_SHADOW_SCALE_SHIFT))
+> -# in 32-bit arithmetic
+> -KASAN_SHADOW_OFFSET := $(shell printf "0x%08x00000000\n" $$(( \
+> -	(0xffffffff & (-1 << ($(CONFIG_ARM64_VA_BITS) - 1 - 32))) \
+> -	+ (1 << ($(CONFIG_ARM64_VA_BITS) - 32 - $(KASAN_SHADOW_SCALE_SHIFT))) \
+> -	- (1 << (64 - 32 - $(KASAN_SHADOW_SCALE_SHIFT))) )) )
+> -
+>  export	TEXT_OFFSET GZFLAGS
+>  
+>  core-y		+= arch/arm64/kernel/ arch/arm64/mm/
 
-> The best way I can think of to get rid of the gap is to use it for
-> vmalloc space which means changes to VMALLOC_START and VMALLOC_END. I
-> think it would be better to make this change incrementally and I'm more
-> than happy to get hacking on a patch. Or maybe there's a better use for
-> the gap in other areas...
->
+I've just spotted this breaks build using CONFIG_KASAN_SW_TAGS &&
+CONFIG_KASAN_INLINE, as scripts/Makefile.kasan only propagates
+CONFIG_KASAN_SHADOW_OFFSET into KASAN_SHADOW_OFFSET when
+CONFIG_KASAN_GENERIC is selected, but consumes KASAN_SHADOW_OFFSET
+regardless.
 
-Given that it is only the MMU hardware that is preventing us from
-running a 52-bit VA kernel on 48-bit VA hardware, I still don't follow
-100% why we have all these moving parts. If we start the address space
-at 0xfff0_... and start the vmalloc/vmemmap/etc space at 0xffff_8....
-(and make sure the vmemmap space is sized so it can cover the entire
-span), all we should need to do is make sure we don't map any memory
-below 0xffff_0... if the hardware does not support that. I don't think
-there is any need to make the start of physical memory coincide with
-the lowest kernel VA supported by the hardware, or have other variable
-quantities that assume different values based on the actual h/w
-config.
+I think that's by accident rather than by design, but to
+minimize/localize the fixup, how about the below? I can send a cleanup
+patch for scripts/Makefile.kasan later.
 
-[Apologies for not bringing this up earlier. I am not actually working atm :-)]
+Build and boot tested with CONFIG_KASAN_{SW_TAGS,GENERIC} and
+VA_BITS_52 (on a 48-bit VA system).
+
+Thanks,
+Mark.
+
+---->8----
+From b1a6f2dd5aa30d874c4bd97a20ea1330607da624 Mon Sep 17 00:00:00 2001
+From: Mark Rutland <mark.rutland@arm.com>
+Date: Wed, 14 Aug 2019 15:51:14 +0100
+Subject: [PATCH] arm64: fix CONFIG_KASAN_SW_TAGS && CONFIG_KASAN_INLINE
+
+Since commit:
+
+  6bd1d0be0e97936d ("arm64: kasan: Switch to using KASAN_SHADOW_OFFSET")
+
+... attempting to build with CONFIG_KASAN_SW_TAGS && CONFIG_KASAN_INLINE
+results ins splat:
+
+| [mark@lakrids:~/src/linux]% usellvm 8.0.1 usekorg 8.1.0  make ARCH=arm64 CROSS_COMPILE=aarch64-linux- CC=clang
+| scripts/kconfig/conf  --syncconfig Kconfig
+|   CC      scripts/mod/empty.o
+| clang (LLVM option parsing): for the -hwasan-mapping-offset option: '' value invalid for uint argument!
+| scripts/Makefile.build:273: recipe for target 'scripts/mod/empty.o' failed
+| make[1]: *** [scripts/mod/empty.o] Error 1
+| Makefile:1123: recipe for target 'prepare0' failed
+| make: *** [prepare0] Error 2
+
+... since Makefile.kasan only consumes CONFIG_KASAN_SHADOW_OFFSET when
+CONFIG_KASAN_GENERIC is selected, and for CONFIG_KASAN_SW_TAGS it consumes
+KASAN_SHADOW_OFFSET (without a CONFIG_ prefix).
+
+For the moment, let's always propagate CONFIG_KASAN_SHADOW_OFFSET into
+KASAN_SHADOW_OFFSET via the arm64 Makefile. We can clean up the generic kasan
+Makefile later down the line.
+
+Fixes: 6bd1d0be0e97936d ("arm64: kasan: Switch to using KASAN_SHADOW_OFFSET")
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Steve Capper <steve.capper@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
+ arch/arm64/Makefile | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index a8d2a241ac58..a0c733f93b5b 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -126,6 +126,8 @@ KBUILD_CFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+ KBUILD_CPPFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+ KBUILD_AFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+ 
++KASAN_SHADOW_OFFSET := $(CONFIG_KASAN_SHADOW_OFFSET)
++
+ export	TEXT_OFFSET GZFLAGS
+ 
+ core-y		+= arch/arm64/kernel/ arch/arm64/mm/
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
