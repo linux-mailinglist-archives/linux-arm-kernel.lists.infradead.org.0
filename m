@@ -2,53 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64C578D4B7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 15:30:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75AB38D4D1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 15:33:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9zRLgKHlE7ejeVEP6zs+FZWzuneKGdABhDQq8aBIJgM=; b=dHrXhDP+c8fuoKd7RDex7HB0hC
-	DAsdw/a04YNi5YzuIsobRk+LRd3otdqt87lLz9Hb8Ur/bQNJWnXWZ2vu2s+OGQ/xMvvAku6lUY8hJ
-	K3lvmW3fhSEF0dlxX5obDf/JDq+7OuEqRmYEl1bYUpJfRCfcBB1KXGw5s0uDUjoNz1ljODRDuNzqB
-	TcaTsKe/UdwIYxvsjDDriWcgvfMphO1fhqVK11OLCLcjFdnweyap/3v0MOFy4GVs4e4w+huvqY1Ux
-	peSwWhSjfrXK2CJWot8W8/bJ5foXTNQUJ9XtcdvgVN37+H4tY9yGRDUhi7ZN5YUWy6Ri9edY4nR0m
-	2mK3oxCg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=K4iWChKtR5P4QcqeBbN58LbvFDYuYpG7obk6fQERWkE=; b=ARzp/+7IgkyjeCPrSZH661RAc
+	q8zIxAXy/JNnvyQh23BTnHzkZxWwja+biHVOOPgA2ZbqC2sw991scshTb/PbOhA51moP4cjKpNJ2T
+	hcsD0aWLiHnZ5m9so9kIU24ydC7Rdno2e3re/DN4uAWoo/rMRMLB/3E8mck8MUrROQpAE1lnmzdFK
+	9uWoArgecL4DW8kRn68I1HQt4SSfClkbEkFM/zR0jgEZ93WzApM6x3NdcgjregWvY8pdXlGTLNilv
+	ZWuNaoda39Od+YXKgTK9lZFyXpxUr9GgGzgACDUilzP20UzRwWg2i1DL2n2UCDxkxNVvHiVDj8gGI
+	/jZcg4BCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxtM3-00058Q-HF; Wed, 14 Aug 2019 13:30:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxtL1-0004Eo-4U
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 13:29:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0612628;
- Wed, 14 Aug 2019 06:29:14 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 39C313F706;
- Wed, 14 Aug 2019 06:29:13 -0700 (PDT)
-From: Mark Rutland <mark.rutland@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] arm64: memory: rename VA_START to PAGE_END
-Date: Wed, 14 Aug 2019 14:28:48 +0100
-Message-Id: <20190814132848.24295-3-mark.rutland@arm.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20190814132848.24295-1-mark.rutland@arm.com>
-References: <20190814132848.24295-1-mark.rutland@arm.com>
+	id 1hxtPI-0006TX-Tl; Wed, 14 Aug 2019 13:33:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxtP4-0006Sm-E9
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 13:33:28 +0000
+Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E2E20206C2;
+ Wed, 14 Aug 2019 13:33:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565789605;
+ bh=zlMOkJBdmi2gPUlrd7C9NUTOKbMwTG3hN1hXwIzYsG0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=dWebABrtTutybc0F50w0sWkki47iTK1/wE4Cv9q0a1SkaYz7qNFdogv25dQKDBorx
+ ByU+RzvCcwRYMVJwauL36kt1byP5goGenSWlw0WxX+XqnwPVce8hjVewrnFeczxBPV
+ AwGe0/9w3MyqW8gu2zUSb5bjhPtFBikSlUEo+Z+o=
+Date: Wed, 14 Aug 2019 15:33:22 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: [PATCH] ARM64: dts: allwinner: Add devicetree for pine H64
+ modelA evaluation board
+Message-ID: <20190814133322.dawzv3ityakxtqs4@flea>
+References: <20190808084253.10573-1-clabbe.montjoie@gmail.com>
+ <20190812094000.ebdmhyxx7xzbevef@flea> <20190814131741.GB24324@Red>
+MIME-Version: 1.0
+In-Reply-To: <20190814131741.GB24324@Red>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_062915_569984_CD7A7B96 
-X-CRM114-Status: GOOD (  18.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190814_063326_523645_6843FBC6 
+X-CRM114-Status: GOOD (  22.63  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,203 +78,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
- steve.capper@arm.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, wens@csie.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3983864952834210152=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Prior to commit:
 
-  14c127c957c1c607 ("arm64: mm: Flip kernel VA space")
+--===============3983864952834210152==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="pnw3csfbr4joiprs"
+Content-Disposition: inline
 
-... VA_START described the start of the TTBR1 address space for a given
-VA size described by VA_BITS, where all kernel mappings began.
 
-Since that commit, VA_START described a portion midway through the
-address space, where the linear map ends and other kernel mappings
-begin.
+--pnw3csfbr4joiprs
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-To avoid confusion, let's rename VA_START to PAGE_END, making it clear
-that it's not the start of the TTBR1 address space and implying that
-it's related to PAGE_OFFSET. Comments and other mnemonics are updated
-accordingly, along with a typo fix in the decription of VMEMMAP_SIZE.
+On Wed, Aug 14, 2019 at 03:17:41PM +0200, Corentin Labbe wrote:
+> On Mon, Aug 12, 2019 at 11:40:00AM +0200, Maxime Ripard wrote:
+> > On Thu, Aug 08, 2019 at 10:42:53AM +0200, Corentin Labbe wrote:
+> > > This patch adds the evaluation variant of the model A of the PineH64.
+> > > The model A has the same size of the pine64 and has a PCIE slot.
+> > >
+> > > The only devicetree difference with current pineH64, is the PHY
+> > > regulator.
+> > >
+> > > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> > > ---
+> > >  arch/arm64/boot/dts/allwinner/Makefile        |  1 +
+> > >  .../sun50i-h6-pine-h64-modelA-eval.dts        | 26 +++++++++++++++++++
+> > >  2 files changed, 27 insertions(+)
+> > >  create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts
+> > >
+> > > diff --git a/arch/arm64/boot/dts/allwinner/Makefile b/arch/arm64/boot/dts/allwinner/Makefile
+> > > index f6db0611cb85..9a02166cbf72 100644
+> > > --- a/arch/arm64/boot/dts/allwinner/Makefile
+> > > +++ b/arch/arm64/boot/dts/allwinner/Makefile
+> > > @@ -25,3 +25,4 @@ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-3.dtb
+> > >  dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-lite2.dtb
+> > >  dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-one-plus.dtb
+> > >  dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-pine-h64.dtb
+> > > +dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-pine-h64-modelA-eval.dtb
+> > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts
+> > > new file mode 100644
+> > > index 000000000000..d8ff02747efe
+> > > --- /dev/null
+> > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts
+> > > @@ -0,0 +1,26 @@
+> > > +// SPDX-License-Identifier: (GPL-2.0+ or MIT)
+> > > +/*
+> > > + * Copyright (C) 2019 Corentin Labbe <clabbe.montjoie@gmail.com>
+> > > + */
+> > > +
+> > > +#include "sun50i-h6-pine-h64.dts"
+> > > +
+> > > +/ {
+> > > +	model = "Pine H64 model A evaluation board";
+> > > +	compatible = "pine64,pine-h64-modelA-eval", "allwinner,sun50i-h6";
+> > > +
+> > > +	reg_gmac_3v3: gmac-3v3 {
+> > > +		compatible = "regulator-fixed";
+> > > +		regulator-name = "vcc-gmac-3v3";
+> > > +		regulator-min-microvolt = <3300000>;
+> > > +		regulator-max-microvolt = <3300000>;
+> > > +		startup-delay-us = <100000>;
+> > > +		gpio = <&pio 2 16 GPIO_ACTIVE_HIGH>;
+> > > +		enable-active-high;
+> > > +	};
+> > > +
+> > > +};
+> > > +
+> > > +&emac {
+> > > +	phy-supply = <&reg_gmac_3v3>;
+> > > +};
+> >
+> > I might be missing some context here, but I'm pretty sure that the
+> > initial intent of the pine h64 DTS was to support the model A all
+> > along.
+> >
+>
+> The regulator changed between modelA and B.
+> See this old patchset (supporting modelA) https://patchwork.kernel.org/patch/10539149/ for example.
 
-There should be no functional change as a result of this patch.
+I'm not sure what your point is, but mine is that everything about the
+model A should be in sun50i-h6-pine-h64.dts.
 
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Steve Capper <steve.capper@arm.com>
-Cc: Will Deacon <will@kernel.org>
----
- arch/arm64/include/asm/memory.h  | 20 ++++++++++----------
- arch/arm64/include/asm/pgtable.h |  4 ++--
- arch/arm64/kernel/hibernate.c    |  2 +-
- arch/arm64/mm/dump.c             |  6 +++---
- arch/arm64/mm/kasan_init.c       |  2 +-
- arch/arm64/mm/mmu.c              |  4 ++--
- 6 files changed, 19 insertions(+), 19 deletions(-)
+Maxime
 
-diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-index d69c2865ae40..a713bad71db5 100644
---- a/arch/arm64/include/asm/memory.h
-+++ b/arch/arm64/include/asm/memory.h
-@@ -28,20 +28,20 @@
-  *                a struct page array
-  *
-  * If we are configured with a 52-bit kernel VA then our VMEMMAP_SIZE
-- * neads to cover the memory region from the beginning of the 52-bit
-- * PAGE_OFFSET all the way to VA_START for 48-bit. This allows us to
-+ * needs to cover the memory region from the beginning of the 52-bit
-+ * PAGE_OFFSET all the way to PAGE_END for 48-bit. This allows us to
-  * keep a constant PAGE_OFFSET and "fallback" to using the higher end
-  * of the VMEMMAP where 52-bit support is not available in hardware.
-  */
--#define VMEMMAP_SIZE ((_VA_START(VA_BITS_MIN) - PAGE_OFFSET) \
-+#define VMEMMAP_SIZE ((_PAGE_END(VA_BITS_MIN) - PAGE_OFFSET) \
- 			>> (PAGE_SHIFT - STRUCT_PAGE_MAX_SHIFT))
- 
- /*
-- * PAGE_OFFSET - the virtual address of the start of the linear map (top
-- *		 (VA_BITS - 1))
-- * KIMAGE_VADDR - the virtual address of the start of the kernel image
-+ * PAGE_OFFSET - the virtual address of the start of the linear map, at the
-+ *               start of the TTBR1 address space.
-+ * PAGE_END - the end of the linear map, where all other kernel mappings begin.
-+ * KIMAGE_VADDR - the virtual address of the start of the kernel image.
-  * VA_BITS - the maximum number of bits for virtual addresses.
-- * VA_START - the first kernel virtual address.
-  */
- #define VA_BITS			(CONFIG_ARM64_VA_BITS)
- #define _PAGE_OFFSET(va)	(-(UL(1) << (va)))
-@@ -64,7 +64,7 @@
- #define VA_BITS_MIN		(VA_BITS)
- #endif
- 
--#define _VA_START(va)		(-(UL(1) << ((va) - 1)))
-+#define _PAGE_END(va)		(-(UL(1) << ((va) - 1)))
- 
- #define KERNEL_START		_text
- #define KERNEL_END		_end
-@@ -87,7 +87,7 @@
- #define KASAN_THREAD_SHIFT	1
- #else
- #define KASAN_THREAD_SHIFT	0
--#define KASAN_SHADOW_END	(_VA_START(VA_BITS_MIN))
-+#define KASAN_SHADOW_END	(_PAGE_END(VA_BITS_MIN))
- #endif /* CONFIG_KASAN */
- 
- #define MIN_THREAD_SHIFT	(14 + KASAN_THREAD_SHIFT)
-@@ -173,7 +173,7 @@
- 
- #ifndef __ASSEMBLY__
- extern u64			vabits_actual;
--#define VA_START		(_VA_START(vabits_actual))
-+#define PAGE_END		(_PAGE_END(vabits_actual))
- 
- #include <linux/bitops.h>
- #include <linux/mmdebug.h>
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 4a695b9ee0f0..979e24fadf35 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -856,8 +856,8 @@ static inline void update_mmu_cache(struct vm_area_struct *vma,
- 
- #define update_mmu_cache_pmd(vma, address, pmd) do { } while (0)
- 
--#define kc_vaddr_to_offset(v)	((v) & ~VA_START)
--#define kc_offset_to_vaddr(o)	((o) | VA_START)
-+#define kc_vaddr_to_offset(v)	((v) & ~PAGE_END)
-+#define kc_offset_to_vaddr(o)	((o) | PAGE_END)
- 
- #ifdef CONFIG_ARM64_PA_BITS_52
- #define phys_to_ttbr(addr)	(((addr) | ((addr) >> 46)) & TTBR_BADDR_MASK_52)
-diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-index e130db05d932..e0a7fce0e01c 100644
---- a/arch/arm64/kernel/hibernate.c
-+++ b/arch/arm64/kernel/hibernate.c
-@@ -496,7 +496,7 @@ int swsusp_arch_resume(void)
- 		rc = -ENOMEM;
- 		goto out;
- 	}
--	rc = copy_page_tables(tmp_pg_dir, PAGE_OFFSET, VA_START);
-+	rc = copy_page_tables(tmp_pg_dir, PAGE_OFFSET, PAGE_END);
- 	if (rc)
- 		goto out;
- 
-diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
-index 8e10b4ba215a..93f9f77582ae 100644
---- a/arch/arm64/mm/dump.c
-+++ b/arch/arm64/mm/dump.c
-@@ -28,7 +28,7 @@
- 
- enum address_markers_idx {
- 	PAGE_OFFSET_NR = 0,
--	VA_START_NR,
-+	PAGE_END_NR,
- #ifdef CONFIG_KASAN
- 	KASAN_START_NR,
- #endif
-@@ -36,7 +36,7 @@ enum address_markers_idx {
- 
- static struct addr_marker address_markers[] = {
- 	{ PAGE_OFFSET,			"Linear Mapping start" },
--	{ 0 /* VA_START */,		"Linear Mapping end" },
-+	{ 0 /* PAGE_END */,		"Linear Mapping end" },
- #ifdef CONFIG_KASAN
- 	{ 0 /* KASAN_SHADOW_START */,	"Kasan shadow start" },
- 	{ KASAN_SHADOW_END,		"Kasan shadow end" },
-@@ -411,7 +411,7 @@ void ptdump_check_wx(void)
- 
- static int ptdump_init(void)
- {
--	address_markers[VA_START_NR].start_address = VA_START;
-+	address_markers[PAGE_END_NR].start_address = PAGE_END;
- #ifdef CONFIG_KASAN
- 	address_markers[KASAN_START_NR].start_address = KASAN_SHADOW_START;
- #endif
-diff --git a/arch/arm64/mm/kasan_init.c b/arch/arm64/mm/kasan_init.c
-index 725222271474..f87a32484ea8 100644
---- a/arch/arm64/mm/kasan_init.c
-+++ b/arch/arm64/mm/kasan_init.c
-@@ -226,7 +226,7 @@ void __init kasan_init(void)
- 	kasan_map_populate(kimg_shadow_start, kimg_shadow_end,
- 			   early_pfn_to_nid(virt_to_pfn(lm_alias(_text))));
- 
--	kasan_populate_early_shadow(kasan_mem_to_shadow((void *) VA_START),
-+	kasan_populate_early_shadow(kasan_mem_to_shadow((void *)PAGE_END),
- 				   (void *)mod_shadow_start);
- 	kasan_populate_early_shadow((void *)kimg_shadow_end,
- 				   (void *)KASAN_SHADOW_END);
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index 0c8f7e55f859..8e4b7eaff8ce 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -399,7 +399,7 @@ static phys_addr_t pgd_pgtable_alloc(int shift)
- static void __init create_mapping_noalloc(phys_addr_t phys, unsigned long virt,
- 				  phys_addr_t size, pgprot_t prot)
- {
--	if ((virt >= VA_START) && (virt < VMALLOC_START)) {
-+	if ((virt >= PAGE_END) && (virt < VMALLOC_START)) {
- 		pr_warn("BUG: not creating mapping for %pa at 0x%016lx - outside kernel range\n",
- 			&phys, virt);
- 		return;
-@@ -426,7 +426,7 @@ void __init create_pgd_mapping(struct mm_struct *mm, phys_addr_t phys,
- static void update_mapping_prot(phys_addr_t phys, unsigned long virt,
- 				phys_addr_t size, pgprot_t prot)
- {
--	if ((virt >= VA_START) && (virt < VMALLOC_START)) {
-+	if ((virt >= PAGE_END) && (virt < VMALLOC_START)) {
- 		pr_warn("BUG: not updating mapping for %pa at 0x%016lx - outside kernel range\n",
- 			&phys, virt);
- 		return;
--- 
-2.11.0
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
+--pnw3csfbr4joiprs
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVQNogAKCRDj7w1vZxhR
+xT3OAP4oNFqLOfs3vnBPuOIi+wCdRxEWrgoK0NnCtdFdQ/WijwD/b3IA7ktlzjkW
+QWsPV6u/3hNUu1l1GBxa8MRTSnkLbgQ=
+=Tdd5
+-----END PGP SIGNATURE-----
+
+--pnw3csfbr4joiprs--
+
+
+--===============3983864952834210152==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3983864952834210152==--
+
