@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8378A8D6A5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:53:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F5F68D6BA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:57:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Q9tY18ewvOqhAB3DQaiEuPInj1f9aeTrxEEtI6xsyfc=; b=LNkKTNFKgrM29MitdcsO1c6S1
-	8FDz1tfVPNSPOLcUe83LzUMD8tFtqXyvx9s1zjdp2yLsmEm+JzNTnUNPGl+3FTRTl0rA1kOrXEioa
-	t15ktbjaoUHWaTXnDUDYN0Jr3+KqWwQMfecq8NTXPmgq3T7UFI51Y8NUENLm66jLRXcUsVkQyAJ/H
-	ASNHjVIhwPbbOhD99zuZGjXFCZszsDx68uYWagCq1QNS/AvjLI6XyUsx4l07GTAZqFnqRF6TbQNGT
-	6UnTvCF32GRYsrWalgiE6ghNsXRfhARKgprXUXKdRlN9BG1TGrsUHIUWFBHvNqPgXxfIaR6pvOyvv
-	BlVfjwWcg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Date:To:From:Subject:References:
+	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3KK3wkC96PjcGnIRwcY044/wnBJr2u/S76iscY0andw=; b=ewi/v1yvq4+8jl
+	VOxy/duLGrXhL6a6XkJ8aZ0Kg2FLA+uD8dO2ZXoAeLnke4+LOxr4Y2OyWGdJup5fEYj+oYfypSWKj
+	XcVglGVwz3eyUcgL/R+fOEvwO0D9M6p4TNl6Y2kDrgPTKP+adFpkvkZTzJZk5ovFcRkcHjD/8EN5V
+	IvrWvhtIYlacpCvmdXK4jiC3ko1eJmo3B/uprMO5DtZkIx+2t+QyeLL9IgftYVIEXhisnRwmi/oVA
+	eRllyXPVB7IKEXrR2hUi4rKYKSpfVhAewTeyEUob4FMCIoOBoxG1pfiVA46DF/2m6QBZ5QC8LQT+9
+	G5JVkppE668bdHEQjDFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxueI-0001ST-9j; Wed, 14 Aug 2019 14:53:14 +0000
-Received: from smtp-fw-9102.amazon.com ([207.171.184.29])
+	id 1hxuhz-0003Tr-Cg; Wed, 14 Aug 2019 14:57:03 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxudt-0001Rb-8N
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:52:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
- t=1565794369; x=1597330369;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=uU2vXqQn2xE4aIoP2zRUvSscT0xOogCLYBrPAGfZQmY=;
- b=BTZzkE7ujQ9xQCn7gVwbZp3Uv/XGL/ZQbSGDEl0BSMU9fFWXpNShRCVn
- TloqmBg4xa/JqdSUMuM2ZjBoAGnCcxAsL6qKKkq6dhPEUbU7a1TF8b6Aq
- smoUGpErMa6LuLC9mHO2NUnO7vkVbRh1Fnq/ZWVJA1+MMnx2b2Lpol/pK 8=;
-X-IronPort-AV: E=Sophos;i="5.64,385,1559520000"; d="scan'208";a="693828962"
-Received: from sea3-co-svc-lb6-vlan3.sea.amazon.com (HELO
- email-inbound-relay-1a-e34f1ddc.us-east-1.amazon.com) ([10.47.22.38])
- by smtp-border-fw-out-9102.sea19.amazon.com with ESMTP;
- 14 Aug 2019 14:52:41 +0000
-Received: from EX13MTAUWC001.ant.amazon.com
- (iad55-ws-svc-p15-lb9-vlan2.iad.amazon.com [10.40.159.162])
- by email-inbound-relay-1a-e34f1ddc.us-east-1.amazon.com (Postfix) with ESMTPS
- id 65391A21DD; Wed, 14 Aug 2019 14:52:38 +0000 (UTC)
-Received: from EX13D20UWC001.ant.amazon.com (10.43.162.244) by
- EX13MTAUWC001.ant.amazon.com (10.43.162.135) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Wed, 14 Aug 2019 14:52:37 +0000
-Received: from 38f9d3867b82.ant.amazon.com (10.43.160.245) by
- EX13D20UWC001.ant.amazon.com (10.43.162.244) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Wed, 14 Aug 2019 14:52:34 +0000
-Subject: Re: [UNVERIFIED SENDER] Re: [PATCH 0/9] arm64: Stolen time support
-To: Marc Zyngier <maz@kernel.org>
-References: <20190802145017.42543-1-steven.price@arm.com>
- <20190803190522.5fec8f7d@why> <6789f477-8ab5-cc54-1ad2-8627917b07c9@arm.com>
- <8ca5c106-7c12-4c6e-6d81-a90f281a9894@amazon.com>
- <8636i3omnd.wl-maz@kernel.org>
-From: Alexander Graf <graf@amazon.com>
-Message-ID: <bda4e0f7-e5f4-32af-e998-00b6240b5260@amazon.com>
-Date: Wed, 14 Aug 2019 16:52:33 +0200
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.8.0
+ id 1hxuho-0003TA-Nn
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:56:54 +0000
+Received: by mail-pg1-x544.google.com with SMTP id n190so12400924pgn.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 14 Aug 2019 07:56:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=message-id:mime-version:content-transfer-encoding:in-reply-to
+ :references:subject:from:cc:to:user-agent:date;
+ bh=F1GjfCc2krRsyUeVwEv+ETsarz/0iBe3cVZ9IWqsuE4=;
+ b=OgoALIDSa27QJkQOovdQN7tDVvKvC7JT/uR0Vr77J4sHjRPiIQf5z29tSucW9dpJtS
+ 5D+1w5dhaBHMcUc8M6WnqmqTFJZQk9d/X5a17RFGhlPYkBFRWI+fK+n15xoATY7dPaLv
+ z06mTqEstQHnYhwgdNnyuXEYaygB+jTBbFzp4=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:mime-version
+ :content-transfer-encoding:in-reply-to:references:subject:from:cc:to
+ :user-agent:date;
+ bh=F1GjfCc2krRsyUeVwEv+ETsarz/0iBe3cVZ9IWqsuE4=;
+ b=m5temkfwl2AFYPHeLGRHU6l0Ac1LNH8tOqIc30UVeY7WeQbXpKblkwBOYVOB+DgWb0
+ IHeVAfvp1JDa+05dPn8CHyjJnrskHIozCeOd84RiInUZMksArssM/qUlXTFYUKGGOvjI
+ p2Z333kuVfr56Rrm8yfj7QE3dCXAOBnKmxyQhouE2KPXAA0U6duOxJi0TZ5mdCi/CqDG
+ PDKlZxTPYnwiVzHFefquW0/9EL6SrlkH3fV1dqTe7QaNC5F6FqvpQnbHUMFqC8Rw5yZ9
+ khwjinEjOx3rdtPA90OA7ACaT9eGVQr4JxIACSRCQhBdSlstVac+OqOQwxHtqi5wLDeO
+ 4gWA==
+X-Gm-Message-State: APjAAAUfjrLfCgthNEl2ACSHJ3VBhi6Q/e0CjzJsX5PB8gNe9nMxdA2t
+ y3hH6QLUsvILbvKAvYCi2FZrAFJ1fsh2jw==
+X-Google-Smtp-Source: APXvYqwQBr4lyDRs7b6AInnwp0mZfbr70TLkQcTPjskS6KrON2YWuEVTwXqWbAwfbbq6CAKITZkU4w==
+X-Received: by 2002:a65:52ca:: with SMTP id z10mr40206305pgp.424.1565794611658; 
+ Wed, 14 Aug 2019 07:56:51 -0700 (PDT)
+Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
+ by smtp.gmail.com with ESMTPSA id c5sm16888pfo.175.2019.08.14.07.56.50
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 14 Aug 2019 07:56:51 -0700 (PDT)
+Message-ID: <5d542133.1c69fb81.f5f57.0098@mx.google.com>
 MIME-Version: 1.0
-In-Reply-To: <8636i3omnd.wl-maz@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.43.160.245]
-X-ClientProxiedBy: EX13D18UWA002.ant.amazon.com (10.43.160.199) To
- EX13D20UWC001.ant.amazon.com (10.43.162.244)
-Precedence: Bulk
+In-Reply-To: <20190814073234.GZ52127@atomide.com>
+References: <20190814063803.GY52127@atomide.com>
+ <5d53b378.1c69fb81.31b2e.5077@mx.google.com>
+ <20190814073234.GZ52127@atomide.com>
+Subject: Re: Regression in Linux next with show wakeup sources stats in sysfs
+From: Stephen Boyd <swboyd@chromium.org>
+To: Tony Lindgren <tony@atomide.com>
+User-Agent: alot/0.8.1
+Date: Wed, 14 Aug 2019 07:56:50 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_075249_361055_F62B3C07 
-X-CRM114-Status: GOOD (  36.20  )
-X-Spam-Score: -12.7 (------------)
+X-CRM114-CacheID: sfid-20190814_075652_802216_5B3C8489 
+X-CRM114-Status: GOOD (  13.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-12.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [207.171.184.29 listed in list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,6 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
+Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -97,193 +97,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org, Catalin
- Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, Paolo Bonzini <pbonzini@redhat.com>,
- Steven Price <steven.price@arm.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Tri Vo <trong@android.com>, linux-pm@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>, linux-kernel@vger.kernel.org,
+ Sebastian Reichel <sre@kernel.org>, Kalesh Singh <kaleshsingh@google.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 14.08.19 16:19, Marc Zyngier wrote:
-> On Wed, 14 Aug 2019 14:02:25 +0100,
-> Alexander Graf <graf@amazon.com> wrote:
->>
->>
->>
->> On 05.08.19 15:06, Steven Price wrote:
->>> On 03/08/2019 19:05, Marc Zyngier wrote:
->>>> On Fri,  2 Aug 2019 15:50:08 +0100
->>>> Steven Price <steven.price@arm.com> wrote:
->>>>
->>>> Hi Steven,
->>>>
->>>>> This series add support for paravirtualized time for arm64 guests and
->>>>> KVM hosts following the specification in Arm's document DEN 0057A:
->>>>>
->>>>> https://developer.arm.com/docs/den0057/a
->>>>>
->>>>> It implements support for stolen time, allowing the guest to
->>>>> identify time when it is forcibly not executing.
->>>>>
->>>>> It doesn't implement support for Live Physical Time (LPT) as there are
->>>>> some concerns about the overheads and approach in the above
->>>>> specification, and I expect an updated version of the specification to
->>>>> be released soon with just the stolen time parts.
->>>>
->>>> Thanks for posting this.
->>>>
->>>> My current concern with this series is around the fact that we allocate
->>>> memory from the kernel on behalf of the guest. It is the first example
->>>> of such thing in the ARM port, and I can't really say I'm fond of it.
->>>>
->>>> x86 seems to get away with it by having the memory allocated from
->>>> userspace, why I tend to like more. Yes, put_user is more
->>>> expensive than a straight store, but this isn't done too often either.
->>>>
->>>> What is the rational for your current approach?
->>>
->>> As I see it there are 3 approaches that can be taken here:
->>>
->>> 1. Hypervisor allocates memory and adds it to the virtual machine. This
->>> means that everything to do with the 'device' is encapsulated behind the
->>> KVM_CREATE_DEVICE / KVM_[GS]ET_DEVICE_ATTR ioctls. But since we want the
->>> stolen time structure to be fast it cannot be a trapping region and has
->>> to be backed by real memory - in this case allocated by the host kernel.
->>>
->>> 2. Host user space allocates memory. Similar to above, but this time
->>> user space needs to manage the memory region as well as the usual
->>> KVM_CREATE_DEVICE dance. I've no objection to this, but it means
->>> kvmtool/QEMU needs to be much more aware of what is going on (e.g. how
->>> to size the memory region).
->>
->> You ideally want to get the host overhead for a VM to as little as you
->> can. I'm not terribly fond of the idea of reserving a full page just
->> because we're too afraid of having the guest donate memory.
+Quoting Tony Lindgren (2019-08-14 00:32:34)
+> * Stephen Boyd <swboyd@chromium.org> [190814 07:09]:
+> > Quoting Tony Lindgren (2019-08-13 23:38:03)
+> > > Hi all,
+> > > 
+> > > Looks like commit 986845e747af ("PM / wakeup: Show wakeup sources stats
+> > > in sysfs") has caused a regression in Linux next where I can now get
+> > > some errors like this during the boot:
+> > > 
+> > > kobject_add_internal failed for wakeup10 (error: -2 parent: usb)
+> > > 
+> > > Any ideas why this might be happening? Maybe some deferred probe
+> > > related issue?
+> > > 
+> > 
+> > Yeah! Take a look at this thread[1] and please test out patches I'm
+> > throwing out there like a total cowboy(d).
+> > 
+> > [1] https://lkml.kernel.org/r/1565731976.8572.16.camel@lca.pw
 > 
-> Well, reduce the amount of memory you give to the guest by one page,
-> and allocate that page to the stolen time device. Problem solved!
+> Oh OK thanks, looks like I'm a bit behind then. My test case turned
+> out to be caused by device_init_wakeup() called before device_add() for
+> power_supply in case that helps. In that case create_dir() will fail
+> for kobject_add_internal(). Doing something like below fixes the
+> issue, but seems like we probably have other similar issues as well.
+> Adding Sebastian to Cc in case this might be a real problem despite
+> the other issues.
 > 
-> Seriously, if you're worried about the allocation of a single page,
-> you should first look at how many holes we have in the vcpu structure,
-> for example (even better, with the 8.4 NV patches applied). Just
-> fixing that would give you that page back *per vcpu*.
 
-I'm worried about additional memory slots, about fragmenting the 
-cachable guest memory regions, about avoidable HV taxes.
+Ah yeah. I sent a patch for power supply earlier[2], but now I'm
+thinking that it would be better to take the approach in the thread I
+mentioned where we just don't add sysfs stuff until when device_add() is
+called.
 
-I think we need to distinguish here between the KVM implementation and 
-the hypervisor/guest interface. Just because in KVM we can save overhead 
-today doesn't mean that the HV interface should be built around the 
-assumption that "memory is free".
-
-> 
->>> 3. Guest kernel "donates" the memory to the hypervisor for the
->>> structure. As far as I'm aware this is what x86 does. The problems I see
->>> this approach are:
->>>
->>>    a) kexec becomes much more tricky - there needs to be a disabling
->>> mechanism for the guest to stop the hypervisor scribbling on memory
->>> before starting the new kernel.
->>
->> I wouldn't call "quiesce a device" much more tricky. We have to do
->> that for other devices as well today.
-> 
-> And since there is no standard way of doing it, we keep inventing
-> weird and wonderful ways of doing so -- cue the terrible GICv3 LPI
-> situation, and all the various hacks to keep existing IOMMU mappings
-> around across firmware/kernel handovers as well as kexec.
-
-Well, the good news here is that we don't have to keep it around ;).
-
-> 
->>
->>>    b) If there is more than one entity that is interested in the
->>> information (e.g. firmware and kernel) then this requires some form of
->>> arbitration in the guest because the hypervisor doesn't want to have to
->>> track an arbitrary number of regions to update.
->>
->> Why would FW care?
-> 
-> Exactly. It doesn't care. Not caring means it doesn't know about the
-> page the guest has allocated for stolen time, and starts using it for
-> its own purposes. Hello, memory corruption. Same thing goes if you
-> reboot into a non stolen time aware kernel.
-
-If you reboot, you go via the vcpu reset path which clears the map, no? 
-Same goes for FW entry. If you enter firmware that does not set up the 
-map, you never see it.
-
-> 
->>
->>>    c) Performance can suffer if the host kernel doesn't have a suitably
->>> aligned/sized area to use. As you say - put_user() is more expensive.
->>
->> Just define the interface to always require natural alignment when
->> donating a memory location?
->>
->>> The structure is updated on every return to the VM.
->>
->> If you really do suffer from put_user(), there are alternatives. You
->> could just map the page on the registration hcall and then leave it
->> pinned until the vcpu gets destroyed again.
-> 
-> put_user() should be cheap enough. It is one of the things we tend to
-> optimise anyway. And yes, worse case, we pin the page.
-> 
->>
->>> Of course x86 does prove the third approach can work, but I'm not sure
->>> which is actually better. Avoid the kexec cancellation requirements was
->>> the main driver of the current approach. Although many of the
->>
->> I really don't understand the problem with kexec cancellation. Worst
->> case, let guest FW set it up for you and propagate only the address
->> down via ACPI/DT. That way you can mark the respective memory as
->> reserved too.
-> 
-> We already went down that road with the LPI hack. I'm not going there
-> again if we can avoid it. And it turn out that we can. Just allocate
-> the stolen time page as a separate memblock, give it to KVM for that
-> purpose.
-> 
-> Your suggestion of letting the guest firmware set something up only
-> works if whatever you're booting after that understands it. If it
-> doesn't, you're screwed.
-
-Why? For UEFI, mark the region as reserved in the memory map. For DT, 
-just mark it straight on reserved.
-
-That said, I'm not advocating for doing it in the FW. I think this can 
-be solved really easily with a simple guest driver to enable and a vcpu 
-reset hook to disable the map.
-
-> 
->> But even with a Linux only mechanism, just take a look at
->> arch/x86/kernel/kvmclock.c. All they do to remove the map is to hook
->> into machine_crash_shutdown() and machine_shutdown().
-> 
-> I'm not going to take something that is Linux specific. It has to work
-> for all guests, at all times, whether they know about the hypervisor
-> service or not.
-
-If they don't know about the HV service, they don't register the writer, 
-so they don't see corruption.
-
-If they know about the HV service and they don't support kexec, they 
-don't have to worry because a vcpu reset should also clear the map.
-
-If they do support kexec, they already have a mechanism to quiesce devices.
-
-So I don't understand how this is Linux specific? The question was Linux 
-specific, so I answered with precedence to show that disabling on kexec 
-is not all that hard :).
-
-
-Alex
+[2] https://lkml.kernel.org/r/20190801213330.81079-1-swboyd@chromium.org
 
 _______________________________________________
 linux-arm-kernel mailing list
