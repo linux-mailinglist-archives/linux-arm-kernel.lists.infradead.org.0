@@ -2,70 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2989C8DCBA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 20:06:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BDFA8DCE5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 20:23:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LGV4DsdmSQoRaKfnem1t8+Q4Q0WGT7bA0+JM+sh6e0o=; b=eGc4t1onw7EHCu
-	BYxE3ecMEvWL5inBicKJNbd8Pif7OoRLPjYf5vTUaIkaLcD9zNvsAl6s+BagPOK4F8HZ8HtKapJOj
-	dxSWKQ6/8sWItJ/JHKqBhJiPmiY0MgRThxN5jNNAtR/KZ1vdnJE48FaC80fmxe5eC6RFxXQBAN40W
-	QO65BHkjRPCOri777NeaCTTbB7XUgm5jAM8FHjrJE8eNfFZWrebzXN/sice/l1cggj55t4eqbxXQe
-	Ta/01Ba80hijaf31PiitGpfpt5Z1BPDgEbLe0pUISJO0JDyRETJFQ4lb8LAV3AsDOWmuarmvcUQau
-	7WPjqfArM6wvodKfR9QA==;
+	List-Owner; bh=xXq9ayh0Sf0njWlucbX7+GsjSKaRU7ZnvRk11/KBmFw=; b=KViqcY4eLUG/uR
+	jR7dt41Y5SEWGYNz7Y8ewz0ux+ywh9Ri/y8W9Q8+lRaeazatENhz2tfakcu1omgz3/sCcSJE5pzyq
+	WF8sO9MaVVLqmzQN5MUjrC6JoqA6PJfhpu5aEMxmwkraeWlsXjIn+bNPb3/nEoFOjL9f1yqC0d2bv
+	Fshz759A7gKpcmBiCZ8tVE29i6mMCJn1+wkrMGAnHeM8FZjRk/Olm00mAgr+1vX/rUV2Wd7zG7Yau
+	OqTy3JaZo2fzBib2DAzSIG6HJY6gb/I9wL2tElZ6swFnudWwcWAIVp3IjCOqgRQaTOD2HzWW7Ly7y
+	v9aSoUzt+7QNdrahOUOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxxf8-0001BN-A0; Wed, 14 Aug 2019 18:06:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hxxvH-0005tq-6y; Wed, 14 Aug 2019 18:23:00 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxxes-0001B3-3k
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 18:06:03 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 00F632084F;
- Wed, 14 Aug 2019 18:05:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565805961;
- bh=puKdRnZ9LG6uknCkDTCLnECmpG0XfmA88XteJcC0jh4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vaMyS1BJywCuDwrnch6OBd8r5eplRXAp4jPYZAuzOJ7M2Q7m57u/Q3LLBrxhyTg4t
- zPflWXiqZbT87UNk22LqQOg8kMAO5LgWrwosJI3QzshH1I43CmAVV85deRIvPqgGdd
- P7pWTMZwpaVohqULOWsxSX4oRe6JjKSd6yaRjMgw=
-Date: Wed, 14 Aug 2019 19:05:57 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 04/15] iommu/arm-smmu: Rework cb_base handling
-Message-ID: <20190814180556.5asp5qflrxxjipal@willie-the-truck>
-References: <cover.1565369764.git.robin.murphy@arm.com>
- <f4dccad78815ca0a2dd7926be7052759d099b920.1565369764.git.robin.murphy@arm.com>
+ id 1hxxuu-0005t8-J5
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 18:22:38 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 314CD68B02; Wed, 14 Aug 2019 20:22:29 +0200 (CEST)
+Date: Wed, 14 Aug 2019 20:22:28 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 1/6] arm64: unexport set_memory_x and set_memory_nx
+Message-ID: <20190814182228.GA18779@lst.de>
+References: <20190813090146.26377-1-hch@lst.de>
+ <20190813090146.26377-2-hch@lst.de>
+ <20190814165029.yfmpopn34vxpnmte@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <f4dccad78815ca0a2dd7926be7052759d099b920.1565369764.git.robin.murphy@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190814165029.yfmpopn34vxpnmte@willie-the-truck>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_110602_178026_A62BA0C5 
-X-CRM114-Status: GOOD (  14.33  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190814_112236_777458_B8C458B8 
+X-CRM114-Status: UNSURE (   7.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,53 +61,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robdclark@gmail.com, joro@8bytes.org, bjorn.andersson@linaro.org,
- iommu@lists.linux-foundation.org, vivek.gautam@codeaurora.org,
- gregory.clement@bootlin.com, linux-arm-kernel@lists.infradead.org
+Cc: Dave Hansen <dave.hansen@linux.intel.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, Andy Lutomirski <luto@kernel.org>,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 06:07:41PM +0100, Robin Murphy wrote:
-> To keep register-access quirks manageable, we want to structure things
-> to avoid needing too many individual overrides. It seems fairly clean to
-> have a single interface which handles both global and context registers
-> in terms of the architectural pages, so the first preparatory step is to
-> rework cb_base into a page number rather than an absolute address.
-> 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
->  drivers/iommu/arm-smmu.c | 22 ++++++++++++----------
->  1 file changed, 12 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> index d9a93e5f422f..463bc8d98adb 100644
-> --- a/drivers/iommu/arm-smmu.c
-> +++ b/drivers/iommu/arm-smmu.c
-> @@ -95,7 +95,7 @@
->  #endif
->  
->  /* Translation context bank */
-> -#define ARM_SMMU_CB(smmu, n)	((smmu)->cb_base + ((n) << (smmu)->pgshift))
-> +#define ARM_SMMU_CB(smmu, n)	((smmu)->base + (((smmu)->cb_base + (n)) << (smmu)->pgshift))
->  
->  #define MSI_IOVA_BASE			0x8000000
->  #define MSI_IOVA_LENGTH			0x100000
-> @@ -168,8 +168,8 @@ struct arm_smmu_device {
->  	struct device			*dev;
->  
->  	void __iomem			*base;
-> -	void __iomem			*cb_base;
-> -	unsigned long			pgshift;
-> +	unsigned int			cb_base;
+On Wed, Aug 14, 2019 at 05:50:29PM +0100, Will Deacon wrote:
+> arm64 allmodconfig and defconfig are happy with this, so I'll pick it up
+> for 5.4 if that's ok with you?
 
-I think this is now a misnomer. Would you be able to rename it cb_pfn or
-something, please?
-
-Otherwise, this seems fine.
-
-Will
+Sounds great.
 
 _______________________________________________
 linux-arm-kernel mailing list
