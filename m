@@ -2,87 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A9C48CEAD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 10:42:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 473508CEEA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 11:02:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nIa8BYyD8zl201rQiRnbZSHwnD4mW4gdqs/xjRi5iaU=; b=VytfHYenCbg9o/
-	PMcVTDUhDCc7l1Ym6nPr3d/9udswYiiseeQUMCNg26B0omVcyP6R2tUBZVYlM0kAphjo+7kz88erW
-	aAVXt95Q7TRgwNk6vvl7pC6WG3ANoGzg5aSARI5mjDXABZEJVVojU+cIkp+J7r7/hkD380tCtoCZy
-	svqv2lwOeGROCcOlNQHjlwlDwCfnj1EN74jkHHfeEmrOch/2/Gw826E6zlnAZmmVl1WdEKLIzeybN
-	POO2mnb9myCkiXhcJvFGB1gC8KOqISCqqj4RmTNLvU5iFONR0bc6ts7dWm8byo/sHoDYzVZFxBlKO
-	pLKxAfpWRHtlOy2CvyRQ==;
+	List-Owner; bh=5fzcXR4Z3XuVhFRPldtj6gM/Jcly9QZijPnarnvQkmE=; b=meQFgd9ORMVMvT
+	roJ6Jf993lIJe24XmSwR4RMqr0ZBqBuDc6bw6BTlDg7PTO8c/kDHeJor229379ynlt/VcNDzInA4b
+	jBIFaaONy3aUeNYqozWlfVXSpkKvgHWjJMBCU1yQOUJH4bVnYMn65JwqvWLsUX1j4qU5uMy6xnOkz
+	NfnWUxlww6AF5TkEtyggoPwA4T4432mELuQb3iCdsa8utjULAvsMhJr+gr/GGr3mFz+CWVnlFhjVi
+	TlwIuB9NSwQmspFz95wlZ2GBSHiMt/peFAr4NFgRSsBEQB3dUPZjMsW/LatP6LjcZ836fTeYFMYW9
+	BRPCWJn5aTi3gtsF3l2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxoqr-0001Id-Af; Wed, 14 Aug 2019 08:41:49 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hxpAD-000062-40; Wed, 14 Aug 2019 09:01:49 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxoqY-0001IF-M8
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 08:41:31 +0000
-Received: by mail-lf1-x141.google.com with SMTP id h28so78682928lfj.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 01:41:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KzpALMQhsAYiuMs6y6iJLV3dLZWeIJlGmnisMykIAis=;
- b=r2pSn+KrIj0p/r1Jh1Qa8oRX30gNZzgGkBpwKkDEJNczG7E+VnEvwitjkTtXDi+iiY
- 4quGEaWmppl+rGwEtCxpw/UZ3hBqlm+OVntmnenzCFo/I6+LXJxNE7F5nzZUYPGfUZiM
- xiG/6RYIi+mV1854OvRiWUXHkXNDPIzy+8pHNKtKmSgN6mwGISjCmBFoX1/xBh582HPF
- 0rE/0WduaDy2igRu2LN3eXNSIweY7DEhtBe8nqhlALJP8Xv3yu9U1R/0vGBigFAmvlLa
- PAsFJPhwguzevp0v5g/p6gMTOOiq08hxCCU/MhScC+UZSJVOlkN0kzs35xo7Oo+fvBp+
- LgMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=KzpALMQhsAYiuMs6y6iJLV3dLZWeIJlGmnisMykIAis=;
- b=HPLtCZ7Q89JrF4tQ4EO8gkZcnLeKxHjDTdHEKfrTots+6O8XuvHaJd5tRO425dY3V4
- YRMjYiww0Jm/20L1mU4ODnbbvkyNzynNXnzYrLx981ImgoDBJjym5t+uPyAdKQLsVad2
- LebKfLT3NvHAIe2+17/QKuBGA/8gT3Gs8LLJgUYzGUe1woc1tR0LTDGuKmbrEN7V8+Dn
- 7zTCS/HyFzI4C5Z4O4hmGkEXzMJLxb99WRjcYItaUoG3moEMGXLHQ4WiYVm3dKA17sTs
- qSUtPwrjUqGgTeq0Mak51HgHL+o2AMy6ODwtYrQFKCmhq25BpeMNtpDYsO16d68AM+Tq
- oC3Q==
-X-Gm-Message-State: APjAAAWyPpVpkSy5i2y9RycFATWFyAkKeJD+97U35fpfgUNbWY2Ynh/+
- kMlz19Y6mVaQxku0hJuXEqoCrXCWlh8QPhxiihl3Kw==
-X-Google-Smtp-Source: APXvYqx5nqnXeVYMCMOMXqQ9fV6cH2bSPFPCrhICg/SdR9VyEVww1xueQTgGw2t8u9djOnijC0ljUID4vf6sSeDgNCQ=
-X-Received: by 2002:ac2:4c07:: with SMTP id t7mr22886155lfq.152.1565772089303; 
- Wed, 14 Aug 2019 01:41:29 -0700 (PDT)
+ id 1hxpA0-00005K-JT; Wed, 14 Aug 2019 09:01:38 +0000
+Received: from wf0413.dip.tu-dresden.de ([141.76.181.157] helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <heiko@sntech.de>)
+ id 1hxp9u-0004Ye-Dp; Wed, 14 Aug 2019 11:01:30 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Kevin Hilman <khilman@baylibre.com>
+Subject: Re: CPUfreq fail on rk3399-firefly (was: next/master boot: 285 boots:
+ 16 failed, 264 passed with 3 offline, 1 untried/unknown,
+ 1 conflict (next-20190718))
+Date: Wed, 14 Aug 2019 11:01:29 +0200
+Message-ID: <2314814.WbdfqDVNqK@phil>
+In-Reply-To: <7hmugdynmk.fsf@baylibre.com>
+References: <5d3057c8.1c69fb81.c6489.8ad2@mx.google.com>
+ <20190718162005.GF5761@sirena.org.uk> <7hmugdynmk.fsf@baylibre.com>
 MIME-Version: 1.0
-References: <20190724081313.12934-1-andrew@aj.id.au>
- <20190724081313.12934-4-andrew@aj.id.au>
- <CACRpkdZCJWeZO6CFvkq4uhnX+o_q_AfkDZ=a2kmUgbS3JtDqfA@mail.gmail.com>
- <20190812101504.GF26727@dell>
-In-Reply-To: <20190812101504.GF26727@dell>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 14 Aug 2019 10:41:17 +0200
-Message-ID: <CACRpkdapA_-yp4ihY3S+CHMmDMKU2b0u=sj2UhJ-cvv39Dji_g@mail.gmail.com>
-Subject: Re: [PATCH 3/3] dt-bindings: aspeed: Remove mention of deprecated
- compatibles
-To: Lee Jones <lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_014130_730508_329A4CF3 
-X-CRM114-Status: GOOD (  11.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_020136_793237_620475A9 
+X-CRM114-Status: GOOD (  24.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,41 +59,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- Andrew Jeffery <andrew@aj.id.au>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ linux-next@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kernel-build-reports@lists.linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 12:15 PM Lee Jones <lee.jones@linaro.org> wrote:
-> On Mon, 05 Aug 2019, Linus Walleij wrote:
->
-> > On Wed, Jul 24, 2019 at 10:13 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+Hi,
+
+Am Dienstag, 13. August 2019, 19:35:31 CEST schrieb Kevin Hilman:
+> [ resent with correct addr for linux-rockchip list ]
+> 
+> Mark Brown <broonie@kernel.org> writes:
+> 
+> > On Thu, Jul 18, 2019 at 04:28:08AM -0700, kernelci.org bot wrote:
 > >
-> > > Guide readers away from using the aspeed,g[45].* compatible patterns.
-> > >
-> > > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> > Today's -next started failing to boot defconfig on rk3399-firefly:
 > >
-> > Patch applied to the pinctrl tree.
->
-> With my Ack?
+> >> arm64:
+> >
+> >>     defconfig:
+> >>         gcc-8:
+> >>             rk3399-firefly: 1 failed lab
+> >
+> > It hits a BUG() trying to set up cpufreq:
+> >
+> > [   87.381606] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 200000 KHz
+> > [   87.393244] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 408000 KHz
+> > [   87.469777] cpufreq: cpufreq_online: CPU4: Running at unlisted freq: 12000 KHz
+> > [   87.488595] cpu cpu4: _generic_set_opp_clk_only: failed to set clock rate: -22
+> > [   87.491881] cpufreq: __target_index: Failed to change cpu frequency: -22
+> > [   87.495335] ------------[ cut here ]------------
+> > [   87.496821] kernel BUG at drivers/cpufreq/cpufreq.c:1438!
+> > [   87.498462] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
+> >
+> > I'm struggling to see anything relevant in the diff from yesterday, the
+> > unlisted frequency warnings were there in the logs yesterday but no oops
+> > and I'm not seeing any changes in cpufreq, clk or anything relevant
+> > looking.
+> >
+> > Full bootlog and other info can be found here:
+> >
+> > 	https://kernelci.org/boot/id/5d302d8359b51498d049e983/
+> 
+> I confirm that disabling CPUfreq in the defconfig (CONFIG_CPU_FREQ=n)
+> makes the firefly board start working again.
+> 
+> Note that the default defconfig enables the "performance" CPUfreq
+> governor as the default governor, so during kernel boot, it will always
+> switch to the max frequency.
+> 
+> For fun, I set the default governor to "userspace" so the kernel
+> wouldn't make any OPP changes, and that leads to a slightly more
+> informative splat[1]
+> 
+> There is still an OPP change happening because the detected OPP is not
+> one that's listed in the table, so it tries to change to a listed OPP
+> and fails in the bowels of clk_set_rate()
 
-Sorry no. :( Was I too trigger-happy?
+Though I think that might only be a symptom as well.
+Both the PLL setting code as well as the actual cpu-clock implementation
+is unchanged since 2017 (and runs just fine on all boards in my farm).
 
-Usually I take Rob's ACK as authoritative for anything under
-Documentation/devicetree but if you have concerns about the
-patch from an MFD point of view I will revert it pending further
-discussion.
+One source for these issues is often the regulator supplying the cpu
+going haywire - aka the voltage not matching the opp.
 
-Yours,
-Linus Walleij
+As in this error-case it's CPU4 being set, this would mean it might
+be the big cluster supplied by the external syr825 (fan5355 clone)
+that might act up. In the Firefly-rk3399 case this is even stranger.
+
+There is a discrepancy between the "fcs,suspend-voltage-selector"
+between different bootloader versions (how the selection-pin is set up),
+so the kernel might actually write his requested voltage to the wrong
+register (not the one for actual voltage, but the second set used for
+the suspend voltage).
+
+Did you by chance swap bootloaders at some point in recent past?
+
+I'd assume [2] might actually be the same issue last year, though
+the CI-logs are not available anymore it seems.
+
+
+Could you try to set the vdd_cpu_b regulator to disabled, so that
+cpufreq for this cluster defers and see what happens?
+
+I don't really have a Firefly in my boardfarm, so I let 5.3-rc run on
+a Theobroma Puma which has the same regulator setup as the Firefly
+and all including the performance governor did run nicely, so it really
+looks like some sort of Firefly specific issue.
+
+Heiko
+
+> [1] https://termbin.com/3oum
+
+[2] https://lkml.org/lkml/2018/6/19/1167
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
