@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B73D18CF90
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 11:30:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CEA98CF91
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 11:30:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,41 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WTbvNL/qkhXh5jb36eqhy0zbER4GJe/tWdih+Yzt7bE=; b=tIVTPZfXRx9EyEIyu3xw+kvh1G
-	hSrqr/jOf2epIIgvHevBB9X4LocqnTmIPx2eupfllQEAs1wjmuAFRFSXebCfzLZ8/FEKZPYZ9L55C
-	JVvsS6SYhhr9h7zEP6Kw9rADILQEOdPqXB9PC+rLYl933uZMThnKR6qZkfraa5tsiI+dyWJ1San7j
-	UiBUQfaeEQxOXEynzkeUjZ9nCan/PWRZKG35sqxU6n5OszJmbRmQB39ccaz/V/Y23BmAjOYD4+Bc9
-	5bHBCpNDz2XDL3wB1jX1yV2s0z5zCWRq7GNvbvyucu7WzMooQWR8+RdXmEArjbHbi9JkvXEmApKQO
-	rx7Ap/Ew==;
+	bh=UTP/xuDj+CRn1q4RRwjq1iH8Ga/XUjumA3xlF2Qes4A=; b=aVB998dgfsG4DusNxGsRoEF4dE
+	1VhL2kgFrs0HqD/AJeeO7Hkj0NKySR3A0FCmu0RHLDCBTFXyJpj255gX/UItd9xBI8MCyUuUdfj2J
+	+F8ghiVcHMyUi6d2ZKhB8aSVbHCy8RbrAX0lzjtKdld3aw94ZYUHTSjhgX1UYyX6BeEV365L0yW4R
+	V9Theh3Wn8MS3bVrxc+9IN+f/1o7GZI7FXbNPH5+0u5nA7khY6SUsniLbWmvlRyS/Akg5oDnly62I
+	CKV2ngrZ3INOCg9ixd2cpgrGcrj0bqWqOWiOvVXOL9szPkRZg0HbiIjgmFOiOv/PikLv3x7obiBlQ
+	vnJWfWPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxpc5-0005Ck-CM; Wed, 14 Aug 2019 09:30:37 +0000
-Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
+	id 1hxpcN-0005QL-KA; Wed, 14 Aug 2019 09:30:55 +0000
+Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxpb2-0003UJ-31
+ id 1hxpb2-0003UH-1w
  for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 09:29:34 +0000
-Received: from ramsan ([84.194.98.4]) by xavier.telenet-ops.be with bizsmtp
- id oxVS2000605gfCL01xVSWU; Wed, 14 Aug 2019 11:29:30 +0200
+Received: from ramsan ([84.194.98.4]) by baptiste.telenet-ops.be with bizsmtp
+ id oxVS2000805gfCL01xVSG4; Wed, 14 Aug 2019 11:29:30 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1hxpaw-0003VM-3a; Wed, 14 Aug 2019 11:29:26 +0200
+ id 1hxpaw-0003VT-68; Wed, 14 Aug 2019 11:29:26 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1hxpaw-0003cJ-1U; Wed, 14 Aug 2019 11:29:26 +0200
+ id 1hxpaw-0003cQ-4F; Wed, 14 Aug 2019 11:29:26 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Jiri Slaby <jslaby@suse.com>
-Subject: [PATCH 1/3] serial: atmel: Don't check for mctrl_gpio_to_gpiod()
+Subject: [PATCH 3/3] serial: sh-sci: Don't check for mctrl_gpio_to_gpiod()
  returning error
-Date: Wed, 14 Aug 2019 11:29:22 +0200
-Message-Id: <20190814092924.13857-2-geert+renesas@glider.be>
+Date: Wed, 14 Aug 2019 11:29:24 +0200
+Message-Id: <20190814092924.13857-4-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190814092924.13857-1-geert+renesas@glider.be>
 References: <20190814092757.13726-1-geert+renesas@glider.be>
  <20190814092924.13857-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_022932_324318_60FF9773 
-X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-CacheID: sfid-20190814_022932_294378_7E4246DD 
+X-CRM114-Status: UNSURE (   9.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -53,7 +53,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:14 listed in]
+ low trust [2a02:1800:120:4:0:0:f00:13 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -98,50 +98,42 @@ drop usages of IS_ERR_OR_NULL") in the mctrl-gpio core.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
- drivers/tty/serial/atmel_serial.c | 12 ++++--------
- 1 file changed, 4 insertions(+), 8 deletions(-)
+ drivers/tty/serial/sh-sci.c | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/tty/serial/atmel_serial.c b/drivers/tty/serial/atmel_serial.c
-index 19a85d6fe3d20541..e9620a81166b7dc1 100644
---- a/drivers/tty/serial/atmel_serial.c
-+++ b/drivers/tty/serial/atmel_serial.c
-@@ -303,32 +303,28 @@ static unsigned int atmel_get_lines_status(struct uart_port *port)
- 
- 	mctrl_gpio_get(atmel_port->gpios, &ret);
- 
--	if (!IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(atmel_port->gpios,
--						UART_GPIO_CTS))) {
-+	if (mctrl_gpio_to_gpiod(atmel_port->gpios, UART_GPIO_CTS)) {
- 		if (ret & TIOCM_CTS)
- 			status &= ~ATMEL_US_CTS;
- 		else
- 			status |= ATMEL_US_CTS;
+diff --git a/drivers/tty/serial/sh-sci.c b/drivers/tty/serial/sh-sci.c
+index 7f565fcbf1ca4c5e..4e754a4850e6db63 100644
+--- a/drivers/tty/serial/sh-sci.c
++++ b/drivers/tty/serial/sh-sci.c
+@@ -2099,12 +2099,12 @@ static unsigned int sci_get_mctrl(struct uart_port *port)
+ 	if (s->autorts) {
+ 		if (sci_get_cts(port))
+ 			mctrl |= TIOCM_CTS;
+-	} else if (IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(gpios, UART_GPIO_CTS))) {
++	} else if (!mctrl_gpio_to_gpiod(gpios, UART_GPIO_CTS)) {
+ 		mctrl |= TIOCM_CTS;
  	}
+-	if (IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(gpios, UART_GPIO_DSR)))
++	if (!mctrl_gpio_to_gpiod(gpios, UART_GPIO_DSR))
+ 		mctrl |= TIOCM_DSR;
+-	if (IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(gpios, UART_GPIO_DCD)))
++	if (!mctrl_gpio_to_gpiod(gpios, UART_GPIO_DCD))
+ 		mctrl |= TIOCM_CAR;
  
--	if (!IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(atmel_port->gpios,
--						UART_GPIO_DSR))) {
-+	if (mctrl_gpio_to_gpiod(atmel_port->gpios, UART_GPIO_DSR)) {
- 		if (ret & TIOCM_DSR)
- 			status &= ~ATMEL_US_DSR;
- 		else
- 			status |= ATMEL_US_DSR;
- 	}
+ 	return mctrl;
+@@ -3285,10 +3285,8 @@ static int sci_probe_single(struct platform_device *dev,
+ 		return PTR_ERR(sciport->gpios);
  
--	if (!IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(atmel_port->gpios,
--						UART_GPIO_RI))) {
-+	if (mctrl_gpio_to_gpiod(atmel_port->gpios, UART_GPIO_RI)) {
- 		if (ret & TIOCM_RI)
- 			status &= ~ATMEL_US_RI;
- 		else
- 			status |= ATMEL_US_RI;
- 	}
- 
--	if (!IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(atmel_port->gpios,
--						UART_GPIO_DCD))) {
-+	if (mctrl_gpio_to_gpiod(atmel_port->gpios, UART_GPIO_DCD)) {
- 		if (ret & TIOCM_CD)
- 			status &= ~ATMEL_US_DCD;
- 		else
+ 	if (sciport->has_rtscts) {
+-		if (!IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(sciport->gpios,
+-							UART_GPIO_CTS)) ||
+-		    !IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(sciport->gpios,
+-							UART_GPIO_RTS))) {
++		if (mctrl_gpio_to_gpiod(sciport->gpios, UART_GPIO_CTS) ||
++		    mctrl_gpio_to_gpiod(sciport->gpios, UART_GPIO_RTS)) {
+ 			dev_err(&dev->dev, "Conflicting RTS/CTS config\n");
+ 			return -EINVAL;
+ 		}
 -- 
 2.17.1
 
