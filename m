@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38E6A8DD3F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 20:44:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 082708DD26
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 20:41:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qInAQJzUOmatI0VBQivBsdgyYM0dhf6v8X+A67rQrKQ=; b=L9ZO42FuB8FhHS
-	GS84OA6EW0KjLq8iHI8Ds/a90VjYWBwgWjIVKJLALIqHi3+TGBnzw7rxKRiG2igrN7Xdy81YKN3gw
-	+6sap1xFaJHJLWDHm9ngTiDF2694OwAhEqRx/I3e8VCm6GAAgRZvz+QxajoThADILQy6XKqq6V6QO
-	aIjPh+3AtbgZ8ZT26DS4z59FTRri6NgZpnxafSVPV+it+Mpoja7m1+1LMQNAgy3TqtOhtdjRh9jLr
-	K0OkN1fhPqUNNWmPx0G0x1S9pidD3ItiKoAVNEbyS5CMkZlCf3RdIjlXwhJFy7Br7PRjxxBJCHD0e
-	a0aCZ/NCHWm7/Kc4pUgg==;
+	List-Owner; bh=3xO5qvuObFVEQRXBXlzIofoiMnRtEe+cT/MTXeo+KRU=; b=e9UESEqi1mTilg
+	9oRrJ/dTLBFW30dJb3AMx0nb+/2FBl2se9NT7mzqYvmiaEiDeNNTRhBGOOT2UERSYquFLIGd5Z01N
+	Yt5FezffwcCliCHApmF2+H/YPkvBj88MkBLTzNLfKPn8SlOI0JXlzr0M8OH6cEXn8qFkVkcmTrEPW
+	+gpQZf7AXAab8LOdA4NCOEW7EzuDL1bCRNkUwh1ts9kNgiDDeZ4t5v97rBHJ8J2BT4ozxLVoTJKvh
+	0K4jMkN84C2+6Z3k+lQnr/FFASrzaVCRjvfnXZqfb0NOAvPf8PlUmyXi6L5Pc/O1Dh6PX0npqCJhW
+	N7/6UljjdKOU3S3V2VIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxyGM-0003L7-Cz; Wed, 14 Aug 2019 18:44:46 +0000
+	id 1hxyD2-0002d7-Th; Wed, 14 Aug 2019 18:41:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxyG8-0003Kn-Vi
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 18:44:34 +0000
-Received: from quaco.ghostprotocols.net (unknown [177.195.212.110])
+ id 1hxyCp-0002cg-Kw
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 18:41:08 +0000
+Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C007E2064A;
- Wed, 14 Aug 2019 18:44:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9BE372084F;
+ Wed, 14 Aug 2019 18:41:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565808272;
- bh=rALSgB5DyqpzsfuTaocLyvXXUFv8NIwbvmoDKsPDAOo=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=yRiGT9rfGeKptHZBnam88x474QLPR45bsduMMcW8DpAAyGY/GCfA/8xAQjvAqc+HH
- 6j05PaMCqwj6wzLBc1lGjxP5HZsEdYr1r8dHt5avvbGlFVtTiZSHwPVbm5AHRgtR/t
- E8bw7lWEw41Xb1U5W9j8cgXQbTjlf2HecpWqARtc=
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Ingo Molnar <mingo@kernel.org>,
-	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 16/28] perf ftrace: Use CAP_SYS_ADMIN instead of euid==0
-Date: Wed, 14 Aug 2019 15:40:39 -0300
-Message-Id: <20190814184051.3125-17-acme@kernel.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190814184051.3125-1-acme@kernel.org>
-References: <20190814184051.3125-1-acme@kernel.org>
+ s=default; t=1565808066;
+ bh=rhwHtgh2/fDbYktm6AuNEWakyqGXppoxtIRS7xf4wlM=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=DbTh5ns5su7SAOgV6S1k6SuCGatax5uiRRfnXs0DQX+RUFVqVGBiG3STZG8Cv20CT
+ Rnh+ijJhh+kpujLqWowUCnZF8msKVM0ofvSSU4FN3Y3n05Zav38fpHOsVhC7I1/7fy
+ 5e+XsoDb0nOAv+nfCvw2zPPjlcN6KvlJLJ4B/3LY=
 MIME-Version: 1.0
+In-Reply-To: <20190727105330.44cc7f2f@xps13>
+References: <20190108161940.4814-1-miquel.raynal@bootlin.com>
+ <155502565678.20095.10517989462650657961@swboyd.mtv.corp.google.com>
+ <20190521114644.7000a751@xps13> <20190617115703.642d9967@xps13>
+ <20190727105330.44cc7f2f@xps13>
+Subject: Re: [PATCH v4 0/4] Add device links to clocks
+From: Stephen Boyd <sboyd@kernel.org>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+User-Agent: alot/0.8.1
+Date: Wed, 14 Aug 2019 11:41:05 -0700
+Message-Id: <20190814184106.9BE372084F@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_114433_038199_E5F05EB0 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20190814_114107_709988_3A7C07C3 
+X-CRM114-Status: GOOD (  12.10  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,72 +78,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnaldo Carvalho de Melo <acme@redhat.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki Poulouse <suzuki.poulose@arm.com>, Clark Williams <williams@redhat.com>,
- Alexey Budankov <alexey.budankov@linux.intel.com>,
- Igor Lubashev <ilubashe@akamai.com>, linux-kernel@vger.kernel.org,
- James Morris <jmorris@namei.org>, linux-perf-users@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
- Namhyung Kim <namhyung@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Gregory Clement <gregory.clement@bootlin.com>,
+ Antoine Tenart <antoine.tenart@bootlin.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, Nadav Haklai <nadavh@marvell.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Igor Lubashev <ilubashe@akamai.com>
+Quoting Miquel Raynal (2019-07-27 01:53:30)
+> 
+> I know this series might have side effects despite the consequent
+> amount of time spent to write and test it, but I also think the
+> clk subsystem would really benefit from such change and handling
+> suspend to RAM support would be greatly enhanced. You seemed
+> interested at first and now not anymore, could I know why? I got
+> inspired by the regulators subsystem. It is not an idea of mine
+> that device links should be bring to clocks. Regulators are almost
+> as used as clocks so I really understand your fears but why not
+> applying this to -next very early during the -rc cycles and see
+> what happens? You'll have plenty of time to ask me to fix things
+> or even drop it off.
+> 
 
-The kernel requires CAP_SYS_ADMIN instead of euid==0 to mount debugfs
-for ftrace.  Make perf do the same.
-
-Signed-off-by: Igor Lubashev <ilubashe@akamai.com>
-Acked-by: Jiri Olsa <jolsa@kernel.org>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Alexey Budankov <alexey.budankov@linux.intel.com>
-Cc: James Morris <jmorris@namei.org>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Namhyung Kim <namhyung@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/bd8763b72ed4d58d0b42d44fbc7eb474d32e53a3.1565188228.git.ilubashe@akamai.com
-Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
----
- tools/perf/builtin-ftrace.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/tools/perf/builtin-ftrace.c b/tools/perf/builtin-ftrace.c
-index 20d4c0ce8b53..01a5bb58eb04 100644
---- a/tools/perf/builtin-ftrace.c
-+++ b/tools/perf/builtin-ftrace.c
-@@ -13,6 +13,7 @@
- #include <signal.h>
- #include <fcntl.h>
- #include <poll.h>
-+#include <linux/capability.h>
- 
- #include "debug.h"
- #include <subcmd/parse-options.h>
-@@ -21,6 +22,7 @@
- #include "target.h"
- #include "cpumap.h"
- #include "thread_map.h"
-+#include "util/cap.h"
- #include "util/config.h"
- 
- 
-@@ -281,7 +283,7 @@ static int __cmd_ftrace(struct perf_ftrace *ftrace, int argc, const char **argv)
- 		.events = POLLIN,
- 	};
- 
--	if (geteuid() != 0) {
-+	if (!perf_cap__capable(CAP_SYS_ADMIN)) {
- 		pr_err("ftrace only works for root!\n");
- 		return -1;
- 	}
--- 
-2.21.0
+Ok, I'm back on this topic. Let me look at the latest code and see how
+it works on a qcom platform I have in hand. If the device links look OK
+then it should be good. I also want to make sure we're not holding a
+nested pile of locks when we're adding the device links so that we don't
+get some weird lockdep problems.
 
 
 _______________________________________________
