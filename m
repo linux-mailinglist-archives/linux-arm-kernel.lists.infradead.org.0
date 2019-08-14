@@ -2,73 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18AB78D561
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 15:50:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2813D8D5C8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:17:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CFgCBI+cuQOdtVRzK/xe9uD8bNWAEyjTO8DErLHwgyo=; b=cuFvj67hvTvYjR
-	bkB2sDHU3izlt5gocjW0RcYkzX7PXsAh4X1W04dMYN5nEUWAGjnzSgfUSpxDd3XUhGK5/Gdxk3tY8
-	djAdz7FGD0Fx1Pa6U+Wo3Ba7tVMk6u3c0kzqU8oz5XIbIuuER6kdqQE0OmcqsM64u1fHEbyfsDj34
-	wZaacApDk86T4R+94Anci+7GKLzYzEt+EJz+8ogiHDdKKFrTGNoVv7B7zmW0XGuC2OulPH9ugB/Q9
-	BenUIaUg0D4xvgyGJw0SGlDdrMcEAJe3B9qtItPI76koq2fvsK5ic+kpTK/eJa8AIltU1rM4rMC3l
-	7FbDmH8YF05KGGzyA5Pw==;
+	List-Owner; bh=ZTwxfCFekWdF4VuRrXvfO0BEhgoWWe3XR81Zt+kEIBI=; b=jGJQ2lTq1OqMIB
+	D2Uh1ZxXa9RNA77IWJMUDr23hsueih8gTnxWK/HduHPCj6awm6oDjus1DdK3j2rxfPzNxDfdTIAKm
+	7TQDDilyvChrrhVbEreRO/x1mJeFXoBViY5SoNmHE2aA0u3bjeBSGUzdBCJRud+C6KzZLDSevNBAg
+	2Uamc7o6FuWpeEWHx+baciWGrSJ8xM1n5SZcVpkXAqB4QIMShbeQNaOM67Rev0IDt8Jxgl5+uRLFe
+	2KxrRCiiOf8+ruCawWCPdzP7zdi4De0TnfPfplygugX+H9PVo95840uyaXgPjGgsFmjL5hFz1+U/g
+	Dm28qSxDbCyaZi5KiQAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxtfN-0004WJ-I1; Wed, 14 Aug 2019 13:50:17 +0000
+	id 1hxu5p-00060a-5v; Wed, 14 Aug 2019 14:17:37 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxteG-0003lH-4U
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 13:49:11 +0000
+ id 1hxu5Z-000603-3r
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:17:22 +0000
 Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7EDl6Re001860; Wed, 14 Aug 2019 15:49:02 +0200
+ x7EEBQT5021331; Wed, 14 Aug 2019 16:17:14 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=sfCnkx4tLQaIEjciY7gRgFcHIoH09rocSb7WeOhwB6g=;
- b=WeKFdN86XLOTtie2PYTmS/3eb4paSxO+1xaOdvkHrpVMwSMpSWXv5A5zX+7VcYTk1v8D
- EKziryCDryyj70kOPGW89UEc/I90/+bXE+jig3YZDBxAIuLXcnuCqgO6TVyf+NcRxks5
- AQhKb1Vy8U6ygFPlbGzB0U2XJ7E7l2eDqdRExMC5E1hIMmpt0HiY0t0kCzYycSb/P8UJ
- xelf1hspARZP0rxOXmuD03xpbdKEY27dhw0Xdb9wK+kICDfJ74XkgjE3CJgo+o3YR53W
- uXD16l5e8KvyCPLqjl+fK1mdwKvUVTiIxJQSSHTtsPKKog8uVFOniTNstYLrw1X+nMQZ CQ== 
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=864BMKlRVFujYQCq26+1g0K4hmq2aALb8dEnOteiolo=;
+ b=J174bcZrkmVeJ7AJOl9VCKXBznmKRNGKuDznEEXShutR8zIKsYb3zZoJjmj7dK6hhK86
+ pa2BHJKexcG++kpNZuT8ZtR3NgdSxFyIVq9wwvVFLbzz3smt+NVNYNSMNPz4yFx+41DE
+ ARk9qY87/HMVJkZkFzWdH4htlaFv8ubQe8cLNPkXvh0nO4z1+2A/pa7zefqWKmafwPFx
+ jyZvovgQIZXEd3rDaFel6SwqEZvhDThUrlZcBFE7yTwlDRUCQvKmyFumyleQApn39Dj2
+ cEq8L+o0Xnx9k1l32qgFnjOWTRQ3vsPwt48I7z3O+7TwRnV2noQXt0wn56rdHAzUyzh3 TA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2u9kpuwpqn-1
+ by mx07-00178001.pphosted.com with ESMTP id 2u9kpuwtjn-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Wed, 14 Aug 2019 15:49:02 +0200
+ Wed, 14 Aug 2019 16:17:14 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8F6DF41;
- Wed, 14 Aug 2019 13:49:01 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7E7FB2FFE88;
- Wed, 14 Aug 2019 15:49:01 +0200 (CEST)
-Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 14 Aug
- 2019 15:49:01 +0200
-Received: from localhost (10.201.23.19) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 14 Aug 2019 15:49:00
- +0200
-From: Hugues Fruchet <hugues.fruchet@st.com>
-To: Alexandre Torgue <alexandre.torgue@st.com>, Mauro Carvalho Chehab
- <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Sakari Ailus
- <sakari.ailus@linux.intel.com>
-Subject: [PATCH v6 4/4] media: stm32-dcmi: add support of several sub-devices
-Date: Wed, 14 Aug 2019 15:48:53 +0200
-Message-ID: <1565790533-10043-5-git-send-email-hugues.fruchet@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1565790533-10043-1-git-send-email-hugues.fruchet@st.com>
-References: <1565790533-10043-1-git-send-email-hugues.fruchet@st.com>
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D312534;
+ Wed, 14 Aug 2019 14:17:13 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id C0FDC2B910C;
+ Wed, 14 Aug 2019 16:17:13 +0200 (CEST)
+Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG6NODE3.st.com
+ (10.75.127.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 14 Aug
+ 2019 16:17:13 +0200
+Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
+ SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
+ 15.00.1473.003; Wed, 14 Aug 2019 16:17:13 +0200
+From: Hugues FRUCHET <hugues.fruchet@st.com>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>, Hans Verkuil
+ <hverkuil@xs4all.nl>
+Subject: Re: [PATCH v4 1/3] media: stm32-dcmi: improve sensor subdev naming
+Thread-Topic: [PATCH v4 1/3] media: stm32-dcmi: improve sensor subdev naming
+Thread-Index: AQHVTsvbNiH8ciXV5ESmNTxaXVzk1ab6ls8A
+Date: Wed, 14 Aug 2019 14:17:13 +0000
+Message-ID: <ca92a856-98fc-f82b-fa0a-62b9f44e266c@st.com>
+References: <1564577783-18627-1-git-send-email-hugues.fruchet@st.com>
+ <1564577783-18627-2-git-send-email-hugues.fruchet@st.com>
+ <20190809160121.GA6194@paasikivi.fi.intel.com>
+In-Reply-To: <20190809160121.GA6194@paasikivi.fi.intel.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.51]
+Content-ID: <EDF4C1A0C930AF4EB3EB2E6088AF5865@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.19]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-08-14_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_064908_468770_6FBE8228 
-X-CRM114-Status: GOOD (  25.15  )
+X-CRM114-CacheID: sfid-20190814_071721_531028_69954B65 
+X-CRM114-Status: GOOD (  15.56  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -96,329 +107,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mickael GUENE <mickael.guene@st.com>, linux-kernel@vger.kernel.org,
- Philippe CORNU <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>, Hugues
- Fruchet <hugues.fruchet@st.com>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
+ Mickael GUENE <mickael.guene@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Philippe CORNU <philippe.cornu@st.com>, Yannick FERTRE <yannick.fertre@st.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support of several sub-devices within pipeline instead
-of a single one.
-This allows to support a CSI-2 camera sensor connected
-through a CSI-2 to parallel bridge.
+Hi Sakari, Hans,
 
-Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
----
- drivers/media/platform/stm32/stm32-dcmi.c | 217 +++++++++++++++++++++++++++---
- 1 file changed, 198 insertions(+), 19 deletions(-)
+I've just pushed a v6 with the FIXME we discussed on IRC about
+"parallel" mbus code versus "serial" mbus code. I have also added
+some traces to help in debugging if such case occurs.
 
-diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-index 302c40e..b6ef229 100644
---- a/drivers/media/platform/stm32/stm32-dcmi.c
-+++ b/drivers/media/platform/stm32/stm32-dcmi.c
-@@ -172,6 +172,7 @@ struct stm32_dcmi {
- 
- 	struct media_device		mdev;
- 	struct media_pad		vid_cap_pad;
-+	struct media_pipeline		pipeline;
- };
- 
- static inline struct stm32_dcmi *notifier_to_dcmi(struct v4l2_async_notifier *n)
-@@ -583,6 +584,144 @@ static void dcmi_buf_queue(struct vb2_buffer *vb)
- 	spin_unlock_irq(&dcmi->irqlock);
- }
- 
-+static struct media_entity *dcmi_find_source(struct stm32_dcmi *dcmi)
-+{
-+	struct media_entity *entity = &dcmi->vdev->entity;
-+	struct media_pad *pad;
-+
-+	/* Walk searching for entity having no sink */
-+	while (1) {
-+		pad = &entity->pads[0];
-+		if (!(pad->flags & MEDIA_PAD_FL_SINK))
-+			break;
-+
-+		pad = media_entity_remote_pad(pad);
-+		if (!pad || !is_media_entity_v4l2_subdev(pad->entity))
-+			break;
-+
-+		entity = pad->entity;
-+	}
-+
-+	return entity;
-+}
-+
-+static int dcmi_pipeline_s_fmt(struct stm32_dcmi *dcmi,
-+			       struct v4l2_subdev_pad_config *pad_cfg,
-+			       struct v4l2_subdev_format *format)
-+{
-+	struct media_entity *entity = &dcmi->entity.source->entity;
-+	struct v4l2_subdev *subdev;
-+	struct media_pad *sink_pad = NULL;
-+	struct media_pad *src_pad = NULL;
-+	struct media_pad *pad = NULL;
-+	struct v4l2_subdev_format fmt = *format;
-+	bool found = false;
-+	int ret;
-+
-+	/*
-+	 * Starting from sensor subdevice, walk within
-+	 * pipeline and set format on each subdevice
-+	 */
-+	while (1) {
-+		unsigned int i;
-+
-+		/* Search if current entity has a source pad */
-+		for (i = 0; i < entity->num_pads; i++) {
-+			pad = &entity->pads[i];
-+			if (pad->flags & MEDIA_PAD_FL_SOURCE) {
-+				src_pad = pad;
-+				found = true;
-+				break;
-+			}
-+		}
-+		if (!found)
-+			break;
-+
-+		subdev = media_entity_to_v4l2_subdev(entity);
-+
-+		/* Propagate format on sink pad if any, otherwise source pad */
-+		if (sink_pad)
-+			pad = sink_pad;
-+
-+		dev_dbg(dcmi->dev, "\"%s\":%d pad format set to 0x%x %ux%u\n",
-+			subdev->name, pad->index, format->format.code,
-+			format->format.width, format->format.height);
-+
-+		fmt.pad = pad->index;
-+		ret = v4l2_subdev_call(subdev, pad, set_fmt, pad_cfg, &fmt);
-+		if (ret < 0) {
-+			dev_err(dcmi->dev, "%s: Failed to set format 0x%x %ux%u on \"%s\":%d pad (%d)\n",
-+				__func__, format->format.code,
-+				format->format.width, format->format.height,
-+				subdev->name, pad->index, ret);
-+			return ret;
-+		}
-+
-+		if (fmt.format.code != format->format.code ||
-+		    fmt.format.width != format->format.width ||
-+		    fmt.format.height != format->format.height) {
-+			dev_dbg(dcmi->dev, "\"%s\":%d pad format has been changed to 0x%x %ux%u\n",
-+				subdev->name, pad->index, fmt.format.code,
-+				fmt.format.width, fmt.format.height);
-+		}
-+
-+		/* Walk to next entity */
-+		sink_pad = media_entity_remote_pad(src_pad);
-+		if (!sink_pad || !is_media_entity_v4l2_subdev(sink_pad->entity))
-+			break;
-+
-+		entity = sink_pad->entity;
-+	}
-+	*format = fmt;
-+
-+	return 0;
-+}
-+
-+static int dcmi_pipeline_s_stream(struct stm32_dcmi *dcmi, int state)
-+{
-+	struct media_entity *entity = &dcmi->vdev->entity;
-+	struct v4l2_subdev *subdev;
-+	struct media_pad *pad;
-+	int ret;
-+
-+	/* Start/stop all entities within pipeline */
-+	while (1) {
-+		pad = &entity->pads[0];
-+		if (!(pad->flags & MEDIA_PAD_FL_SINK))
-+			break;
-+
-+		pad = media_entity_remote_pad(pad);
-+		if (!pad || !is_media_entity_v4l2_subdev(pad->entity))
-+			break;
-+
-+		entity = pad->entity;
-+		subdev = media_entity_to_v4l2_subdev(entity);
-+
-+		ret = v4l2_subdev_call(subdev, video, s_stream, state);
-+		if (ret < 0 && ret != -ENOIOCTLCMD) {
-+			dev_err(dcmi->dev, "%s: \"%s\" failed to %s streaming (%d)\n",
-+				__func__, subdev->name,
-+				state ? "start" : "stop", ret);
-+			return ret;
-+		}
-+
-+		dev_dbg(dcmi->dev, "\"%s\" is %s\n",
-+			subdev->name, state ? "started" : "stopped");
-+	}
-+
-+	return 0;
-+}
-+
-+static int dcmi_pipeline_start(struct stm32_dcmi *dcmi)
-+{
-+	return dcmi_pipeline_s_stream(dcmi, 1);
-+}
-+
-+static void dcmi_pipeline_stop(struct stm32_dcmi *dcmi)
-+{
-+	dcmi_pipeline_s_stream(dcmi, 0);
-+}
-+
- static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- {
- 	struct stm32_dcmi *dcmi = vb2_get_drv_priv(vq);
-@@ -597,14 +736,17 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- 		goto err_release_buffers;
- 	}
- 
--	/* Enable stream on the sub device */
--	ret = v4l2_subdev_call(dcmi->entity.source, video, s_stream, 1);
--	if (ret && ret != -ENOIOCTLCMD) {
--		dev_err(dcmi->dev, "%s: Failed to start streaming, subdev streamon error",
--			__func__);
-+	ret = media_pipeline_start(&dcmi->vdev->entity, &dcmi->pipeline);
-+	if (ret < 0) {
-+		dev_err(dcmi->dev, "%s: Failed to start streaming, media pipeline start error (%d)\n",
-+			__func__, ret);
- 		goto err_pm_put;
- 	}
- 
-+	ret = dcmi_pipeline_start(dcmi);
-+	if (ret)
-+		goto err_media_pipeline_stop;
-+
- 	spin_lock_irq(&dcmi->irqlock);
- 
- 	/* Set bus width */
-@@ -676,7 +818,7 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- 	if (ret) {
- 		dev_err(dcmi->dev, "%s: Start streaming failed, cannot start capture\n",
- 			__func__);
--		goto err_subdev_streamoff;
-+		goto err_pipeline_stop;
- 	}
- 
- 	/* Enable interruptions */
-@@ -687,8 +829,11 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- 
- 	return 0;
- 
--err_subdev_streamoff:
--	v4l2_subdev_call(dcmi->entity.source, video, s_stream, 0);
-+err_pipeline_stop:
-+	dcmi_pipeline_stop(dcmi);
-+
-+err_media_pipeline_stop:
-+	media_pipeline_stop(&dcmi->vdev->entity);
- 
- err_pm_put:
- 	pm_runtime_put(dcmi->dev);
-@@ -713,13 +858,10 @@ static void dcmi_stop_streaming(struct vb2_queue *vq)
- {
- 	struct stm32_dcmi *dcmi = vb2_get_drv_priv(vq);
- 	struct dcmi_buf *buf, *node;
--	int ret;
- 
--	/* Disable stream on the sub device */
--	ret = v4l2_subdev_call(dcmi->entity.source, video, s_stream, 0);
--	if (ret && ret != -ENOIOCTLCMD)
--		dev_err(dcmi->dev, "%s: Failed to stop streaming, subdev streamoff error (%d)\n",
--			__func__, ret);
-+	dcmi_pipeline_stop(dcmi);
-+
-+	media_pipeline_stop(&dcmi->vdev->entity);
- 
- 	spin_lock_irq(&dcmi->irqlock);
- 
-@@ -937,8 +1079,7 @@ static int dcmi_set_fmt(struct stm32_dcmi *dcmi, struct v4l2_format *f)
- 	mf->width = sd_framesize.width;
- 	mf->height = sd_framesize.height;
- 
--	ret = v4l2_subdev_call(dcmi->entity.source, pad,
--			       set_fmt, NULL, &format);
-+	ret = dcmi_pipeline_s_fmt(dcmi, NULL, &format);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -1412,6 +1553,12 @@ static int dcmi_set_default_fmt(struct stm32_dcmi *dcmi)
- 	return 0;
- }
- 
-+/*
-+ * FIXME: For the time being we only support subdevices
-+ * which expose RGB & YUV "parallel form" mbus code (_2X8).
-+ * Nevertheless, this allows to support serial source subdevices
-+ * and serial to parallel bridges which conform to this.
-+ */
- static const struct dcmi_format dcmi_formats[] = {
- 	{
- 		.fourcc = V4L2_PIX_FMT_RGB565,
-@@ -1537,7 +1684,20 @@ static int dcmi_graph_notify_complete(struct v4l2_async_notifier *notifier)
- 	struct stm32_dcmi *dcmi = notifier_to_dcmi(notifier);
- 	int ret;
- 
-+	/*
-+	 * Now that the graph is complete,
-+	 * we search for the source subdevice
-+	 * in order to expose it through V4L2 interface
-+	 */
-+	dcmi->entity.source =
-+		media_entity_to_v4l2_subdev(dcmi_find_source(dcmi));
-+	if (!dcmi->entity.source) {
-+		dev_err(dcmi->dev, "Source subdevice not found\n");
-+		return -ENODEV;
-+	}
-+
- 	dcmi->vdev->ctrl_handler = dcmi->entity.source->ctrl_handler;
-+
- 	ret = dcmi_formats_init(dcmi);
- 	if (ret) {
- 		dev_err(dcmi->dev, "No supported mediabus format found\n");
-@@ -1582,12 +1742,31 @@ static int dcmi_graph_notify_bound(struct v4l2_async_notifier *notifier,
- 				   struct v4l2_async_subdev *asd)
- {
- 	struct stm32_dcmi *dcmi = notifier_to_dcmi(notifier);
-+	unsigned int ret;
-+	int src_pad;
- 
--	dev_dbg(dcmi->dev, "Subdev %s bound\n", subdev->name);
-+	dev_dbg(dcmi->dev, "Subdev \"%s\" bound\n", subdev->name);
- 
--	dcmi->entity.source = subdev;
-+	/*
-+	 * Link this sub-device to DCMI, it could be
-+	 * a parallel camera sensor or a bridge
-+	 */
-+	src_pad = media_entity_get_fwnode_pad(&subdev->entity,
-+					      subdev->fwnode,
-+					      MEDIA_PAD_FL_SOURCE);
-+
-+	ret = media_create_pad_link(&subdev->entity, src_pad,
-+				    &dcmi->vdev->entity, 0,
-+				    MEDIA_LNK_FL_IMMUTABLE |
-+				    MEDIA_LNK_FL_ENABLED);
-+	if (ret)
-+		dev_err(dcmi->dev, "Failed to create media pad link with subdev \"%s\"\n",
-+			subdev->name);
-+	else
-+		dev_dbg(dcmi->dev, "DCMI is now linked to \"%s\"\n",
-+			subdev->name);
- 
--	return 0;
-+	return ret;
- }
- 
- static const struct v4l2_async_notifier_operations dcmi_graph_notify_ops = {
--- 
-2.7.4
+version 6:
+   - As per Sakari remark: add a FIXME explaining that this
+     version only supports subdevices which expose RGB & YUV
+     "parallel form" mbus code (_2X8)
+   - Add some trace around subdev_call(s_fmt) error & format
+     changes to debug subdev which only expose serial mbus code
+   - Conform to "<name>":<pad index> when tracing subdev infos
 
 
+Best regards,
+Hugues.
+
+On 8/9/19 6:01 PM, Sakari Ailus wrote:
+> Hi Hugues,
+> 
+> Thanks for teh update.
+> 
+> On Wed, Jul 31, 2019 at 02:56:21PM +0200, Hugues Fruchet wrote:
+>> Rename "subdev" entity struct field to "source"
+>> to prepare for several subdev support.
+>> Move asd field on top of entity struct.
+>>
+>> Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
+>> Change-Id: I1545a1a29a8061ee67cc6e4b799e9a69071911e7
+> 
+> No Change-Id tags in the kernel, please. Check the other two as well.
+> 
+> With that fixed,
+> 
+> Acked-by: Sakari Ailus <sakari.ailus@linux.intel.com>
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
