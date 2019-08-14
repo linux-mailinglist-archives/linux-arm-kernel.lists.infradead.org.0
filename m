@@ -2,89 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC49B8D1B7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 13:08:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEEF28D1C7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 13:10:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uqCLggkIcfGDhaYd4sbfdT6qsOKW605ld89HBQoc0fI=; b=JnHjA6uF8Xa9II
-	scrytOdwdhK0kMWK/9O8PPXGFwp70mZjfz9XMnYCoGPNNwGENqhTa+5SCF5FY5LQvQvwxT+sIGx0f
-	Et2jumztBjEl9YOAgDPV8mNz9p6QSPXbZQWJEWIcQb4hpbl9C6atY2om08PAnWuw+hmF8ou+45FJL
-	jbk39wri4Rys2TD1GS5yVptW23kh/azODGQ0cnHT+QL8hedeBxHNIrPjwXrddqpImnDBa/jRNz6Kf
-	zStN921DX6XKiV8OQiWz8jvQWLAyjyj6FbYWYBPPwlwyMqLzO7gq8Dc9ESpPaL4yiWd7RXRZer08Q
-	jNL5CcfA9fNtQfYq+uTA==;
+	List-Owner; bh=5s6c4e4boBCC+1I8/owDwcW4Fug8HOqIoCUNbfflaHc=; b=ajBBJAfEx5fGG3
+	EbwJrHyQmVffkZRFwEaWFER7h1eIpyHyAR0nhs6H1GjFFFrxowVm42cNvpTCCQKAkTvD0M1VEQsnA
+	LFNXQhqMjFxTZA4GCFRhRsRVQSvJ3RnFyytwE72nYWQSkJ8vB/50Ea4WyQHhla94IF5hXluYVQEXy
+	JKJyBLJ8vbdohWHKQLywbHKSzECLV+TmkFpypBUWhuWtBfSyNY1RwdcMxMCqOTCt69t2e2stafoE+
+	SnzMd89S/cJZ/JaeGo5pjL++3wjXCNihYzAEMKr5iQkbubBKe4LkJFBQrA5r5KDXxSTgwJzEXAThB
+	+blLSCwvrNUtrf56wlvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxr8B-000624-9T; Wed, 14 Aug 2019 11:07:51 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1hxrA8-0006SH-04; Wed, 14 Aug 2019 11:09:52 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxr6g-000611-P1
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 11:06:24 +0000
-Received: by mail-qt1-x841.google.com with SMTP id y26so109658986qto.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 04:06:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=fRJMc9uYmRAo2MIcDUP/qwCpNYHg3b2mNU+bPSGNRlg=;
- b=YvIEps3ePORM1oQIG3JG+75UFHTRJHX8snjBuaIDZqzEV/9hqzBOynHHHig20/qjl8
- NrA0JMgK7an9/PAxJ2TGnd2Z7Jg4SAl3PzcW816aBaLyu9yLlkfIgE/HjmXFIIh8Byw/
- y3WlZyWDdcMYizU4dmjPPNiTjBc/FExbSpp6boLHpXMBoBcXTcelMgBE1zjZr28IXRK+
- N/NQrnPf8XVtU9vXlUUIjnQ+cj+Q3RtKNdZFFAUEqUgK7cBMLATKxYg1Jz7crlSzfSWM
- ex1KLEqPXzWRHchghF7hsUcjJki+6pQyfxHGZg4+qMrefmUwsA0I5DaLYvkMuCdW7jz4
- ogeg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=fRJMc9uYmRAo2MIcDUP/qwCpNYHg3b2mNU+bPSGNRlg=;
- b=pJIPPzOVJojLkvhqar2mODoyEhUt0mFcPm+8D7S0idf4V/wDNigoHpm4VRM5NAmuIQ
- yZhhDE0AHXd3BuM14hxETk/ZcyDFC3ovTfodTUbXVqxHqHurMY3i1hPwn5VXp43ndSTj
- ZiBAh4jhnqLL2oMoP/1rEAfZF6ybLzW66JpCieDJjZdBndaa8CNU5+sr2CnOGQnmyWKq
- b6n91uaw5Qgudkr9N/jdqw90iNLPnx/tcPocfLQSk2iV9nyy18O9AJIZ3YMgIzdSKzYH
- wt9nb2Wllp1Vz+zNAlxkoP//PeL28LHCzZznJreQj4Qp1jdXlRJUVSnJanw7WF2mvFlm
- bvag==
-X-Gm-Message-State: APjAAAWzTY4bdd+mMRcTW5nOGTtWAltkXSPDTYH3KDP69RVlq2gANzo+
- mKs5ycAbJ2sVtJ2jA98vgANPal/jLz+iSVv0ZYHB/g==
-X-Google-Smtp-Source: APXvYqxAUaRNn9KQ0WLSkZB8h+jzjImrm4GKTXicTV4YjcRNgcclLzp/RKJ9IpDXJj8mshiNoTY1Zpjn9NN/5Y2ZnTI=
-X-Received: by 2002:ac8:6b8f:: with SMTP id z15mr8879486qts.62.1565780776084; 
- Wed, 14 Aug 2019 04:06:16 -0700 (PDT)
+ id 1hxr8Z-0006KE-Pr
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 11:08:17 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hxr8R-0006S4-9I; Wed, 14 Aug 2019 13:08:07 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hxr8O-0000eI-EU; Wed, 14 Aug 2019 13:08:04 +0200
+Date: Wed, 14 Aug 2019 13:08:04 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH 1/3] serial: atmel: Don't check for mctrl_gpio_to_gpiod()
+ returning error
+Message-ID: <20190814110804.2ceo2upc3su7muup@pengutronix.de>
+References: <20190814092757.13726-1-geert+renesas@glider.be>
+ <20190814092924.13857-1-geert+renesas@glider.be>
+ <20190814092924.13857-2-geert+renesas@glider.be>
+ <20190814093558.xlx5ck54dw2dgb6k@pengutronix.de>
+ <CAMuHMdWNj-H9B8E9=NeCgLracBuJODfPyBYJERh=vt4oNFUkGw@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190730125157.884-1-andrew.murray@arm.com>
- <20190730125157.884-7-andrew.murray@arm.com>
- <9df0eea2-a9bd-3a93-ca51-9c3d2391a1cf@arm.com>
- <20190802143751.GP56241@e119886-lin.cambridge.arm.com>
- <CANLsYkyVMRh_L5BfwWk=s-obh+xiZfjwqXUJkwgaZYWmc6Kuww@mail.gmail.com>
- <20190814100152.GB43882@e119886-lin.cambridge.arm.com>
-In-Reply-To: <20190814100152.GB43882@e119886-lin.cambridge.arm.com>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Wed, 14 Aug 2019 12:06:05 +0100
-Message-ID: <CAJ9a7Vj+bo2PMnh2fbMJnaHRwJm9jU689P+iZ4q8_Vg7-3SnDg@mail.gmail.com>
-Subject: Re: [PATCH v4 6/6] dt-bindings: arm: coresight: Add support for
- coresight-needs-save-restore
-To: Andrew Murray <andrew.murray@arm.com>
+Content-Disposition: inline
+In-Reply-To: <CAMuHMdWNj-H9B8E9=NeCgLracBuJODfPyBYJERh=vt4oNFUkGw@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_040619_664542_6B4370E4 
-X-CRM114-Status: GOOD (  35.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_040816_069804_7D199702 
+X-CRM114-Status: GOOD (  22.92  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,138 +72,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al Grant <Al.Grant@arm.com>, Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Coresight ML <coresight@lists.linaro.org>, Leo Yan <leo.yan@linaro.org>,
- Sudeep Holla <Sudeep.Holla@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Richard Genoud <richard.genoud@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Frieder Schrempf <frieder.schrempf@kontron.de>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ Jiri Slaby <jslaby@suse.com>, Shawn Guo <shawnguo@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Wed, Aug 14, 2019 at 12:20:33PM +0200, Geert Uytterhoeven wrote:
+> Hi Uwe,
+> =
 
-On Wed, 14 Aug 2019 at 11:01, Andrew Murray <andrew.murray@arm.com> wrote:
->
-> On Sun, Aug 04, 2019 at 07:13:45AM -0600, Mathieu Poirier wrote:
-> > On Fri, 2 Aug 2019 at 08:37, Andrew Murray <andrew.murray@arm.com> wrote:
+> On Wed, Aug 14, 2019 at 11:36 AM Uwe Kleine-K=F6nig
+> <u.kleine-koenig@pengutronix.de> wrote:
+> > On Wed, Aug 14, 2019 at 11:29:22AM +0200, Geert Uytterhoeven wrote:
+> > > Since commit 1d267ea6539f2663 ("serial: mctrl-gpio: simplify init
+> > > routine"), mctrl_gpio_init() returns failure if the assignment to any
+> > > member of the gpio array results in an error pointer.
+> > > Since commit c359522194593815 ("serial: mctrl_gpio: Avoid probe failu=
+res
+> > > in case of missing gpiolib"), mctrl_gpio_to_gpiod() returns NULL in t=
+he
+> > > !CONFIG_GPIOLIB case.
+> > > Hence there is no longer a need to check for mctrl_gpio_to_gpiod()
+> > > returning an error value.  A simple NULL check is sufficient.
 > > >
-> > > On Fri, Aug 02, 2019 at 11:40:54AM +0100, Suzuki K Poulose wrote:
-> > > > Hi Andrew,
-> > > >
-> > > > On 30/07/2019 13:51, Andrew Murray wrote:
-> > > > > Some coresight components, because of choices made during hardware
-> > > > > integration, require their state to be saved and restored across CPU low
-> > > > > power states.
-> > > > >
-> > > > > The software has no reliable method of detecting when save/restore is
-> > > > > required thus let's add a binding to inform the kernel.
-> > > > >
-> > > > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > > > > ---
-> > > > >   Documentation/devicetree/bindings/arm/coresight.txt | 3 +++
-> > > > >   1 file changed, 3 insertions(+)
-> > > > >
-> > > > > diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
-> > > > > index fcc3bacfd8bc..7cbdb7893af8 100644
-> > > > > --- a/Documentation/devicetree/bindings/arm/coresight.txt
-> > > > > +++ b/Documentation/devicetree/bindings/arm/coresight.txt
-> > > > > @@ -92,6 +92,9 @@ its hardware characteristcs.
-> > > > >     * arm,cp14: must be present if the system accesses ETM/PTM management
-> > > > >       registers via co-processor 14.
-> > > > > +   * arm,coresight-needs-save-restore: boolean. Indicates that software
-> > > > > +     should save/restore state across power down.
-> > > > > +
-> > > >
-> > > > Do you think we could be a bit more descriptive here about when people could add
-> > > > it to the DT ? Here we don't mention when someone should use this property and
-> > > > it may be added to platforms where it may be absolutely unnecessary. How about :
-> > > >
-> > > > "Indicates that the hardware implementation may not honor the Powerup request
-> > > > from the software and thus might loose the register context on CPU power
-> > > > down (e.g, during CPUIdle). Software must save/restore the context during a
-> > > > CPU power transition cycle."
+> > > This follows the spirit of commit 445df7ff3fd1a0a9 ("serial: mctrl-gp=
+io:
+> > > drop usages of IS_ERR_OR_NULL") in the mctrl-gpio core.
 > > >
-> > > How about the following:
+> > > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> > > ---
+> > >  drivers/tty/serial/atmel_serial.c | 12 ++++--------
+> > >  1 file changed, 4 insertions(+), 8 deletions(-)
 > > >
-> > > "Indicates that the hardware will loose register context on CPU power down (e.g.
-> > > CPUIdle), despite the TRCPDCR.PU bit being set."
+> > > diff --git a/drivers/tty/serial/atmel_serial.c b/drivers/tty/serial/a=
+tmel_serial.c
+> > > index 19a85d6fe3d20541..e9620a81166b7dc1 100644
+> > > --- a/drivers/tty/serial/atmel_serial.c
+> > > +++ b/drivers/tty/serial/atmel_serial.c
+> > > @@ -303,32 +303,28 @@ static unsigned int atmel_get_lines_status(stru=
+ct uart_port *port)
 > > >
-> > > I'm keen to avoid making suggestions about what the kernel will do when it sees
-> > > this flag and thus prefer to focus on describing what the hardware does. So I
-> > > dropped your last sentence. However the name of the flag still implies policy
-> > > which I don't like.
+> > >       mctrl_gpio_get(atmel_port->gpios, &ret);
 > > >
-> > > I also changed the 'may not honor' wording, I'm not sure if this is really the
-> > > case or if the spec is open to interpretation.
-> > >
-> > > It would great for this wording to also apply to other CS components though I
-> > > haven't investigated if these have a PU bit or something different.
+> > > -     if (!IS_ERR_OR_NULL(mctrl_gpio_to_gpiod(atmel_port->gpios,
+> > > -                                             UART_GPIO_CTS))) {
+> > > +     if (mctrl_gpio_to_gpiod(atmel_port->gpios, UART_GPIO_CTS)) {
+> > >               if (ret & TIOCM_CTS)
+> > >                       status &=3D ~ATMEL_US_CTS;
+> > >               else
+> > >                       status |=3D ATMEL_US_CTS;
+> > >       }
 > >
-> > Exactly - the definition needs to be broad enough to apply to other CS
-> > components.  Mike what do you think would be appropriate for CTIs?
->
-CTIs have no power control at all - i.e. no PU bit to request we stay
-up - and reside in the debug power domain. So they are coupled to the
-CS/CPU/ETM/ power domains and reliant on outside forces to request
-power.
-The expectation is that for a PE bound CTI, if debug is powered then
-it will be fully powered - so an ETM with PU respected, or the
-external debug logic with DBGNOPWRDWN respected should be sufficient
-for CTI to stay alive.
+> > The change is fine, but it seems the atmel driver doesn't use mctrl_gpio
+> > as expected (at least as expected by me). IMHO driving the hardware
+> > function of the CTS pin shouldn't be conditional on the presence of a
+> > cts-gpio. Is there a reason not to just drop the if completely?
+> =
 
-> How about we keep this short and simple:
->
-> * arm,coresight-loses-context-with-cpu : boolean. Indicates that the hardware
->   will lose register context on CPU power down (e.g. CPUIdle).
->
+> The above code returns the hardware status if CTS is not a GPIO, and
+> returns (overrides with) the GPIO status if CTS is a GPIO.
+> Isn't that correct, or am I missing something?
 
-So the above name is generic enough to encompass the CTI as well.
+I took a deeper look into this driver now. The task for
+atmel_get_lines_status() isn't to implement the get_mctrl() callback.
 
-> I could have added something like "... despite TRCPDCR.PU being set", or to
-> apply more generically: "... despite available register controls being set to
-> prevent such context loss". However whilst these are more informative - they
-> elude to some of reasons as to why context is lost and as we cannot be
-> exhaustive I'd rather not give a limited example.
->
-> However if a longer explaination is required:
->
-> * arm,coresight-loses-context-with-cpu : boolean. Indicates that the hardware
->   will lose register context on CPU power down (e.g. CPUIdle). An example of
->   where this may be needed are systems which contain a coresight component and
->   CPU in the same power domain. When the CPU powers down the coresight
->   component also powers down and loses its context.
->
-> Any objections/preference? :)
->
+Instead this is called in the irqhandler to set ATMEL_US_RI in a
+"pending" value that then later in atmel_handle_status() is translated
+to a "ring" event that is handled there.
 
-Don't really care about length of explanation - but shouldn't mention
-ETM specific features.
+So the right cleanup would be to let atmel_get_lines_status() just be
 
-Mike
+	return atmel_uart_readl(port, ATMEL_US_CSR);
 
-> Thanks,
->
-> Andrew Murray
->
-> >
-> > >
-> > > Thanks,
-> > >
-> > > Andrew Murray
-> > >
-> > > >
-> > > > Cheers
-> > > > Suzuki
+. If something happend on the lines implemented as gpio the driver's irq
+function isn't called anyhow.
 
+Best regards
+Uwe
 
+-- =
 
--- 
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
