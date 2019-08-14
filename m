@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AB8A8D176
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:51:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70B858D174
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:50:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2Fkb2tRtW1Jey7IaCJqhum7XUUFLN0s3buocJJwE5s8=; b=mHQDNI9NdKjsujyeNIgpXF+wu1
-	vnMipe81x9m5KpBUPCuyplBdNYeK+DHCteNWD0OOcZjmfoLndDuXvBGpSpGe5OP5YcKG5O//5waEX
-	fagUqz0XG+sZ5SDW/fOUYBsL5Syo8nlVBA42qcoothLfCv6oH9zyPAWtBXa18pBwcbSTMU7jk4TGZ
-	2LpZrlCOztEw2AnsRhH5eRLyVSHQiLvXIsb97hBugYBm1JQY8AEI8r1fzK23ihUuy7V9KZtguiHm/
-	bZ0///5Z21I12928zPLz45abK/4ShHYkEPEnn8KAgTUFignZRhOgDQVU8365zGZeoAA6+jgwfvW58
-	zSN39JDQ==;
+	bh=3N8bI38k/9i3ZmjSUjczcqxRsJ1/MxBqPswRTvElUXI=; b=pJjDXNhxHBlrcV4KFgIP3C2/LN
+	Y5RqX/kFE+r7+C6dBtM1tF/Otd/yceHqzvZ20+WwhjWnB67pcHfsH3RNLbBSC3GIskzIEBnTdB6Uk
+	bVNmVCnDKubX2VHpC6NeAL0ct375Bhq4AKVJ8LkCrN6xX0RZIEPtz1NaHGGC5mQzGtsnVrFhEiPt6
+	AI/4MCt+yKT9SMogLpgn8RSooZx5k0BhMvHAYBjDzN9800rF4bggR4qq664JX1XM5UyXmVPuC51D5
+	5jsIloKpSB+D7o+1eNXrE7LXwErJZyYjXdK2e5ya3Ua4XkM6y9WBeorA3APyZrpCTat5rnWMvQlpM
+	/AXyN9Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxqru-00078z-Kf; Wed, 14 Aug 2019 10:51:02 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hxqrd-0006kt-Q0; Wed, 14 Aug 2019 10:50:45 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxqq2-0003na-5x
+ id 1hxqq3-0003pD-9f
  for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 10:49:08 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C80971A0395;
- Wed, 14 Aug 2019 12:49:04 +0200 (CEST)
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F080F200352;
+ Wed, 14 Aug 2019 12:49:05 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id BB6A81A039B;
- Wed, 14 Aug 2019 12:49:04 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id EE0D02007FC;
+ Wed, 14 Aug 2019 12:49:05 +0200 (CEST)
 Received: from fsr-ub1664-120.ea.freescale.net
  (fsr-ub1664-120.ea.freescale.net [10.171.82.81])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id C3F0C2060E;
- Wed, 14 Aug 2019 12:49:03 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id D782D2060E;
+ Wed, 14 Aug 2019 12:49:04 +0200 (CEST)
 From: Robert Chiras <robert.chiras@nxp.com>
 To: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
  Marek Vasut <marex@denx.de>, Stefan Agner <stefan@agner.ch>,
@@ -42,23 +42,24 @@ To: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>
-Subject: [PATCH v2 08/15] drm/mxsfb: Signal mode changed when bpp changed
-Date: Wed, 14 Aug 2019 13:48:44 +0300
-Message-Id: <1565779731-1300-9-git-send-email-robert.chiras@nxp.com>
+Subject: [PATCH v2 09/15] dt-bindings: display: Add max-res property for mxsfb
+Date: Wed, 14 Aug 2019 13:48:45 +0300
+Message-Id: <1565779731-1300-10-git-send-email-robert.chiras@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1565779731-1300-1-git-send-email-robert.chiras@nxp.com>
 References: <1565779731-1300-1-git-send-email-robert.chiras@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_034906_526022_3113B349 
-X-CRM114-Status: GOOD (  13.85  )
+X-CRM114-CacheID: sfid-20190814_034907_497338_9FB84597 
+X-CRM114-Status: UNSURE (   7.56  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,83 +83,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mirela Rabulea <mirela.rabulea@nxp.com>
+Add new optional property 'max-res', to limit the maximum supported
+resolution by the MXSFB_DRM driver.
 
-Add mxsfb_atomic_helper_check to signal mode changed when bpp changed.
-This will trigger the execution of disable/enable on
-a modeset with different bpp than the current one.
-
-Signed-off-by: Mirela Rabulea <mirela.rabulea@nxp.com>
 Signed-off-by: Robert Chiras <robert.chiras@nxp.com>
 ---
- drivers/gpu/drm/mxsfb/mxsfb_drv.c | 45 ++++++++++++++++++++++++++++++++++++++-
- 1 file changed, 44 insertions(+), 1 deletion(-)
+ Documentation/devicetree/bindings/display/mxsfb.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/drivers/gpu/drm/mxsfb/mxsfb_drv.c b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
-index 829abec..59c8ba7 100644
---- a/drivers/gpu/drm/mxsfb/mxsfb_drv.c
-+++ b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
-@@ -26,6 +26,7 @@
- #include <drm/drm_drv.h>
- #include <drm/drm_fb_cma_helper.h>
- #include <drm/drm_fb_helper.h>
-+#include <drm/drm_fourcc.h>
- #include <drm/drm_gem_cma_helper.h>
- #include <drm/drm_gem_framebuffer_helper.h>
- #include <drm/drm_irq.h>
-@@ -108,9 +109,51 @@ void mxsfb_disable_axi_clk(struct mxsfb_drm_private *mxsfb)
- 		clk_disable_unprepare(mxsfb->clk_axi);
- }
+diff --git a/Documentation/devicetree/bindings/display/mxsfb.txt b/Documentation/devicetree/bindings/display/mxsfb.txt
+index 472e1ea..55e22ed 100644
+--- a/Documentation/devicetree/bindings/display/mxsfb.txt
++++ b/Documentation/devicetree/bindings/display/mxsfb.txt
+@@ -17,6 +17,12 @@ Required properties:
+ Required sub-nodes:
+   - port: The connection to an encoder chip.
  
-+/**
-+ * mxsfb_atomic_helper_check - validate state object
-+ * @dev: DRM device
-+ * @state: the driver state object
-+ *
-+ * On top of the drm imlementation drm_atomic_helper_check,
-+ * check if the bpp is changed, if so, signal mode_changed,
-+ * this will trigger disable/enable
-+ *
-+ * RETURNS:
-+ * Zero for success or -errno
-+ */
-+static int mxsfb_atomic_helper_check(struct drm_device *dev,
-+				     struct drm_atomic_state *state)
-+{
-+	struct drm_crtc *crtc;
-+	struct drm_crtc_state *new_state;
-+	int i, ret;
++Optional properties:
++- max-res:	an array with a maximum of two integers, representing the
++		maximum supported resolution, in the form of
++		<maxX>, <maxY>; if one of the item is <0>, the default
++		driver-defined maximum resolution for that axis is used
 +
-+	ret = drm_atomic_helper_check(dev, state);
-+	if (ret)
-+		return ret;
-+
-+	for_each_new_crtc_in_state(state, crtc, new_state, i) {
-+		struct drm_plane_state *primary_state;
-+		int old_bpp = 0;
-+		int new_bpp = 0;
-+
-+		if (!crtc->primary || !crtc->primary->old_fb)
-+			continue;
-+		primary_state =
-+			drm_atomic_get_plane_state(state, crtc->primary);
-+		if (!primary_state || !primary_state->fb)
-+			continue;
-+		old_bpp = crtc->primary->old_fb->format->depth;
-+		new_bpp = primary_state->fb->format->depth;
-+		if (old_bpp != new_bpp)
-+			new_state->mode_changed = true;
-+	}
-+	return ret;
-+}
-+
- static const struct drm_mode_config_funcs mxsfb_mode_config_funcs = {
- 	.fb_create		= drm_gem_fb_create,
--	.atomic_check		= drm_atomic_helper_check,
-+	.atomic_check		= mxsfb_atomic_helper_check,
- 	.atomic_commit		= drm_atomic_helper_commit,
- };
+ Example:
  
+ 	lcdif1: display-controller@2220000 {
 -- 
 2.7.4
 
