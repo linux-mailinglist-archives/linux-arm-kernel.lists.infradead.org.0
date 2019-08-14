@@ -2,179 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D8388D69C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:52:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8378A8D6A5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:53:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UbxU25BUsu6LzW3gl883TzMYiID+1/d9PVZYnlYBrVw=; b=gkYlq4ffuiprE+
-	ZtPi8wgbhpfH+P26Dz7qSjYao8CqHpx0egd5t1P+f3rrU8GA2Xg0dXU5GnLq1shtVotUulUh5xioC
-	Efs+XK/xRBBftw8MfacDVyg95R3JInv0MpHPTNtrb3fPpU0DiZdKyrcPJAMs+roBU/oDAQXNcS1tB
-	Cx02/H8hGvVGHhJpk7Gh1XHBZNNvS5lnovPbXSAy3T2jZSuBAvF7ywrfN92ydOcOgMFXNkwmq2Nck
-	g2P15z/X+ZxZwH6h5gZp5LmY6FP1ZXavUkleddNZItpsFHxCAsqZFnW9pr3lO9GTaf88TDDmyRs/w
-	zw4pwapU0P5wQKKKBjew==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Q9tY18ewvOqhAB3DQaiEuPInj1f9aeTrxEEtI6xsyfc=; b=LNkKTNFKgrM29MitdcsO1c6S1
+	8FDz1tfVPNSPOLcUe83LzUMD8tFtqXyvx9s1zjdp2yLsmEm+JzNTnUNPGl+3FTRTl0rA1kOrXEioa
+	t15ktbjaoUHWaTXnDUDYN0Jr3+KqWwQMfecq8NTXPmgq3T7UFI51Y8NUENLm66jLRXcUsVkQyAJ/H
+	ASNHjVIhwPbbOhD99zuZGjXFCZszsDx68uYWagCq1QNS/AvjLI6XyUsx4l07GTAZqFnqRF6TbQNGT
+	6UnTvCF32GRYsrWalgiE6ghNsXRfhARKgprXUXKdRlN9BG1TGrsUHIUWFBHvNqPgXxfIaR6pvOyvv
+	BlVfjwWcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxudT-00019g-6W; Wed, 14 Aug 2019 14:52:23 +0000
-Received: from mail-eopbgr130072.outbound.protection.outlook.com
- ([40.107.13.72] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1hxueI-0001ST-9j; Wed, 14 Aug 2019 14:53:14 +0000
+Received: from smtp-fw-9102.amazon.com ([207.171.184.29])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxud9-00011u-KN
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:52:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+/NbnY7p2u3c7qcpw+EwyGAaqpRATfhBOFOTgWFXZv8=;
- b=Z2Meh5sNfsl48POKkQJ6UbvzcRpPBa6LwctlYGZKc17UnHuS+yg1mCzXZh+ybnaka3GYkS2BVZ4NpynjARuwm1ee9cJH4T/9ybB88x17nNSfNwyeKVuEzt0/fAl/q6aI87e2thdzgig9ztCGwJ1ub7EFWbctfkFBwOpJJJTw+Ts=
-Received: from VE1PR08CA0010.eurprd08.prod.outlook.com (20.179.29.23) by
- VI1PR0801MB1856.eurprd08.prod.outlook.com (10.168.65.135) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2157.14; Wed, 14 Aug 2019 14:51:57 +0000
-Received: from AM5EUR03FT019.eop-EUR03.prod.protection.outlook.com
- (2a01:111:f400:7e08::206) by VE1PR08CA0010.outlook.office365.com
- (2603:10a6:803:104::23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.14 via Frontend
- Transport; Wed, 14 Aug 2019 14:51:57 +0000
-Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=temperror
- action=none header.from=arm.com;
-Received-SPF: TempError (protection.outlook.com: error in processing during
- lookup of arm.com: DNS Timeout)
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- AM5EUR03FT019.mail.protection.outlook.com (10.152.16.104) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2115.18 via Frontend Transport; Wed, 14 Aug 2019 14:51:56 +0000
-Received: ("Tessian outbound 220137ab7b0b:v26");
- Wed, 14 Aug 2019 14:51:55 +0000
-X-CheckRecipientChecked: true
-X-CR-MTA-CID: 02ad7fe7ba3efddb
-X-CR-MTA-TID: 64aa7808
-Received: from 397d22aadcfc.1 (cr-mta-lb-1.cr-mta-net [104.47.5.52])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- D0F4C63D-F9C4-4A11-A590-5A4C66370566.1; 
- Wed, 14 Aug 2019 14:51:50 +0000
-Received: from EUR02-HE1-obe.outbound.protection.outlook.com
- (mail-he1eur02lp2052.outbound.protection.outlook.com [104.47.5.52])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 397d22aadcfc.1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384);
- Wed, 14 Aug 2019 14:51:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=oHyDnRb8j5k0gyzB+W4FaJ23I4VJ2zvlKcw1mSxMZ/R74wjoja9QGg5PKbDlULBWDeRsw7TnFtJIXfjbDD2ftUfKYDyQzU+cZUVlXOBdQVrueEVP+Li9eIpXnhIIk1HeBEq67xXcwajWPDWsSff2M7+hcnW32MDc1H+z5oll20MFM05OdLMSYAqQ67Zldc49NfqIMVufNcb3NgdKfzm2Wk9BeLlHXNMkuhN9lCeWY6qTCynhOtJOYlfBpM734Is+MqwNC/OgMqrNqjma1Zbjl/8lHdVF4GDIRHphbDfXunAYfSnpx3IH3shj/ezbZk/A7Zobamu9qHL6n641FS8wCA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+/NbnY7p2u3c7qcpw+EwyGAaqpRATfhBOFOTgWFXZv8=;
- b=baK8rUlvnX3QfjZ5mgJUu+po+gQamzlWM89oUYjNvE5RWVJkb4X7Zycktaqquixh2uEE7XT8Grv98pxT1MqmXroPLgeLys6/oL9kq/lzx7/M0jZ3ULzS+vEBG+K8BMEPch4Ew3EIXPZ79WXI7BAYurTTYPeVY0PkWjxpZCmw+AKq74sokto7Dc5ZO9tHzyfqQfWVe22QkZfPQCyn5E8WW2zJYvjAfcOXn80yi85rjboPG+HotYMGrbTrpUABUCVT9ROw8L3I1klI2EhRWm0Y4LgP0sIlg8is1opre0W413zIzrNhPHZftALnZI89yJTogXagUPaHp6emXjcs/bCyVA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+/NbnY7p2u3c7qcpw+EwyGAaqpRATfhBOFOTgWFXZv8=;
- b=Z2Meh5sNfsl48POKkQJ6UbvzcRpPBa6LwctlYGZKc17UnHuS+yg1mCzXZh+ybnaka3GYkS2BVZ4NpynjARuwm1ee9cJH4T/9ybB88x17nNSfNwyeKVuEzt0/fAl/q6aI87e2thdzgig9ztCGwJ1ub7EFWbctfkFBwOpJJJTw+Ts=
-Received: from DB8PR08MB4105.eurprd08.prod.outlook.com (20.179.12.12) by
- DB8PR08MB5481.eurprd08.prod.outlook.com (52.133.240.201) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2157.18; Wed, 14 Aug 2019 14:51:48 +0000
-Received: from DB8PR08MB4105.eurprd08.prod.outlook.com
- ([fe80::f558:a6c5:f71c:491]) by DB8PR08MB4105.eurprd08.prod.outlook.com
- ([fe80::f558:a6c5:f71c:491%5]) with mapi id 15.20.2157.022; Wed, 14 Aug 2019
- 14:51:48 +0000
-From: Steve Capper <Steve.Capper@arm.com>
-To: Mark Rutland <Mark.Rutland@arm.com>
-Subject: Re: [PATCH 0/2] arm64: memory: VA_START fixups
-Thread-Topic: [PATCH 0/2] arm64: memory: VA_START fixups
-Thread-Index: AQHVUqRJruBcqjxsZUy5qqOF9F6Qeqb6uk0A
-Date: Wed, 14 Aug 2019 14:51:47 +0000
-Message-ID: <20190814145145.GC3646@capper-ampere.manchester.arm.com>
-References: <20190814132848.24295-1-mark.rutland@arm.com>
-In-Reply-To: <20190814132848.24295-1-mark.rutland@arm.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mutt/1.10.1 (2018-07-13)
-x-originating-ip: [217.140.106.32]
-x-clientproxiedby: LO2P265CA0216.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:9e::36) To DB8PR08MB4105.eurprd08.prod.outlook.com
- (2603:10a6:10:b0::12)
-Authentication-Results-Original: spf=none (sender IP is )
- smtp.mailfrom=Steve.Capper@arm.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-Correlation-Id: 93300ac4-dace-40f0-0aa0-08d720c6f3f1
-X-MS-Office365-Filtering-HT: Tenant
-X-Microsoft-Antispam-Untrusted: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB8PR08MB5481; 
-X-MS-TrafficTypeDiagnostic: DB8PR08MB5481:|VI1PR0801MB1856:
-x-ms-exchange-transport-forked: True
-X-Microsoft-Antispam-PRVS: <VI1PR0801MB18562BFEAA286D19AD170D7F81AD0@VI1PR0801MB1856.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-x-ms-oob-tlc-oobclassifiers: OLM:8273;OLM:8273;
-x-forefront-prvs: 01294F875B
-X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(376002)(366004)(346002)(136003)(39860400002)(199004)(53754006)(189003)(3846002)(446003)(25786009)(86362001)(4744005)(476003)(6512007)(7736002)(14454004)(316002)(11346002)(229853002)(6246003)(8936002)(6862004)(5660300002)(26005)(66066001)(53936002)(256004)(2906002)(54906003)(58126008)(478600001)(6636002)(386003)(6506007)(71190400001)(81166006)(102836004)(186003)(66476007)(64756008)(71200400001)(44832011)(4326008)(6436002)(66946007)(81156014)(99286004)(8676002)(76176011)(6486002)(52116002)(1076003)(6116002)(66556008)(305945005)(33656002)(486006)(66446008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR08MB5481;
- H:DB8PR08MB4105.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info-Original: E3MubMfXLlOFXZSuHsS6mECYyks/85hN7Y8OXRRR3SVNL7odZHdaspt5CyWaGgdWxFKqsQIU1ijdi5E7R+EP9hNEqKX68hGjaVOI8ZCMj46n0vlN9OT+0hA0aKvge3dP7WaDAfzghQMCjI7LU5Jjt0zr09vIXp/hcjLb/Aim4P5Vfpx67LS7AHBJ9uplhpYdzb/Oq3UJ5FU/1avnIz8YK5/g/sEy8EIfCafkB3WHfmaPLYjBOFzBxSwKC5s4vYggiFhHJp5+Ks8aTRnJHL0Dqtxvox9yQvedUEVYdGGmp7n/TDwQLFqkdhuTllcXAden4jGo18D348kdebSJS/gc98BzBost6TZ1oC5uuFiAbgv1n7ndZoxVBV+kmjBnTrZafDHvPX1NtIdOp1+al3PSqT90P/sXhuYYryvQnQ4yuRc=
-Content-ID: <E3222A457E52B94BA027AD25DCF639F2@eurprd08.prod.outlook.com>
+ id 1hxudt-0001Rb-8N
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:52:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1565794369; x=1597330369;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=uU2vXqQn2xE4aIoP2zRUvSscT0xOogCLYBrPAGfZQmY=;
+ b=BTZzkE7ujQ9xQCn7gVwbZp3Uv/XGL/ZQbSGDEl0BSMU9fFWXpNShRCVn
+ TloqmBg4xa/JqdSUMuM2ZjBoAGnCcxAsL6qKKkq6dhPEUbU7a1TF8b6Aq
+ smoUGpErMa6LuLC9mHO2NUnO7vkVbRh1Fnq/ZWVJA1+MMnx2b2Lpol/pK 8=;
+X-IronPort-AV: E=Sophos;i="5.64,385,1559520000"; d="scan'208";a="693828962"
+Received: from sea3-co-svc-lb6-vlan3.sea.amazon.com (HELO
+ email-inbound-relay-1a-e34f1ddc.us-east-1.amazon.com) ([10.47.22.38])
+ by smtp-border-fw-out-9102.sea19.amazon.com with ESMTP;
+ 14 Aug 2019 14:52:41 +0000
+Received: from EX13MTAUWC001.ant.amazon.com
+ (iad55-ws-svc-p15-lb9-vlan2.iad.amazon.com [10.40.159.162])
+ by email-inbound-relay-1a-e34f1ddc.us-east-1.amazon.com (Postfix) with ESMTPS
+ id 65391A21DD; Wed, 14 Aug 2019 14:52:38 +0000 (UTC)
+Received: from EX13D20UWC001.ant.amazon.com (10.43.162.244) by
+ EX13MTAUWC001.ant.amazon.com (10.43.162.135) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Wed, 14 Aug 2019 14:52:37 +0000
+Received: from 38f9d3867b82.ant.amazon.com (10.43.160.245) by
+ EX13D20UWC001.ant.amazon.com (10.43.162.244) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Wed, 14 Aug 2019 14:52:34 +0000
+Subject: Re: [UNVERIFIED SENDER] Re: [PATCH 0/9] arm64: Stolen time support
+To: Marc Zyngier <maz@kernel.org>
+References: <20190802145017.42543-1-steven.price@arm.com>
+ <20190803190522.5fec8f7d@why> <6789f477-8ab5-cc54-1ad2-8627917b07c9@arm.com>
+ <8ca5c106-7c12-4c6e-6d81-a90f281a9894@amazon.com>
+ <8636i3omnd.wl-maz@kernel.org>
+From: Alexander Graf <graf@amazon.com>
+Message-ID: <bda4e0f7-e5f4-32af-e998-00b6240b5260@amazon.com>
+Date: Wed, 14 Aug 2019 16:52:33 +0200
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR08MB5481
-Original-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=Steve.Capper@arm.com; 
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM5EUR03FT019.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
- EFV:NLI; SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(39860400002)(376002)(346002)(2980300002)(189003)(199004)(53754006)(476003)(1076003)(336012)(229853002)(25786009)(7736002)(446003)(14454004)(47776003)(102836004)(26826003)(4326008)(33656002)(4744005)(6862004)(305945005)(66066001)(186003)(6116002)(478600001)(63350400001)(486006)(63370400001)(126002)(23726003)(8676002)(386003)(6506007)(22756006)(3846002)(26005)(76176011)(11346002)(58126008)(97756001)(316002)(50466002)(81156014)(70206006)(5660300002)(6486002)(76130400001)(356004)(36906005)(81166006)(8936002)(2906002)(86362001)(46406003)(99286004)(6246003)(54906003)(6512007)(6636002)(70586007)(8746002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0801MB1856;
- H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:TempError; LANG:en;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; MX:1; A:1; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 5761481d-9812-4a64-906d-08d720c6eeb6
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(710020)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:VI1PR0801MB1856; 
-NoDisclaimer: True
-X-Forefront-PRVS: 01294F875B
-X-Microsoft-Antispam-Message-Info: CPyU4SDJrvrGSfbW93E3O6kxpOVHm1ygwoC94jYkQ88ulkmRY7Y5yyW1A+JnEe5DxZ9rlsJDOWFyTTqsL+E8qF24zvUqWXJQZRH7Pf3iwgZi7zPXC6czbb0yfTAz7XGnty8zhiWncZOpIRAjnBqnmykEi3zp4YjX3tPJvFkKPLwXRKYU23OizDw1RkqxW/XC3w+7TzLTAduvvpcTVelsZ7k6tBYlIloNqAIcvMbLb+u2csGRJCa4Ociuna079Szk0YbOAvIXPBMU8SE3Rn5a5XdVvFJTt66KaPGWEroe/XE8zPUytccQLPZxjbDNMlUb86YD6Y7ZTrZfYDiycNg82vy03yie/npG0t3c0cSLmjV3KYIoYzAagUKBgowlbdv75QHnJbmj6jIDRBx2ju4/NAy4t4Bd37ojbLZ5L82DPcI=
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Aug 2019 14:51:56.3737 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 93300ac4-dace-40f0-0aa0-08d720c6f3f1
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0801MB1856
+In-Reply-To: <8636i3omnd.wl-maz@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.43.160.245]
+X-ClientProxiedBy: EX13D18UWA002.ant.amazon.com (10.43.160.199) To
+ EX13D20UWC001.ant.amazon.com (10.43.162.244)
+Precedence: Bulk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_075203_786214_7E0E7047 
-X-CRM114-Status: UNSURE (   9.36  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190814_075249_361055_F62B3C07 
+X-CRM114-Status: GOOD (  36.20  )
+X-Spam-Score: -12.7 (------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-12.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.72 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [207.171.184.29 listed in list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -183,43 +97,193 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <Catalin.Marinas@arm.com>, nd <nd@arm.com>,
- "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org, Catalin
+ Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, Paolo Bonzini <pbonzini@redhat.com>,
+ Steven Price <steven.price@arm.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 02:28:46PM +0100, Mark Rutland wrote:
-> Hi all,
 
-Hi Mark,
+
+On 14.08.19 16:19, Marc Zyngier wrote:
+> On Wed, 14 Aug 2019 14:02:25 +0100,
+> Alexander Graf <graf@amazon.com> wrote:
+>>
+>>
+>>
+>> On 05.08.19 15:06, Steven Price wrote:
+>>> On 03/08/2019 19:05, Marc Zyngier wrote:
+>>>> On Fri,  2 Aug 2019 15:50:08 +0100
+>>>> Steven Price <steven.price@arm.com> wrote:
+>>>>
+>>>> Hi Steven,
+>>>>
+>>>>> This series add support for paravirtualized time for arm64 guests and
+>>>>> KVM hosts following the specification in Arm's document DEN 0057A:
+>>>>>
+>>>>> https://developer.arm.com/docs/den0057/a
+>>>>>
+>>>>> It implements support for stolen time, allowing the guest to
+>>>>> identify time when it is forcibly not executing.
+>>>>>
+>>>>> It doesn't implement support for Live Physical Time (LPT) as there are
+>>>>> some concerns about the overheads and approach in the above
+>>>>> specification, and I expect an updated version of the specification to
+>>>>> be released soon with just the stolen time parts.
+>>>>
+>>>> Thanks for posting this.
+>>>>
+>>>> My current concern with this series is around the fact that we allocate
+>>>> memory from the kernel on behalf of the guest. It is the first example
+>>>> of such thing in the ARM port, and I can't really say I'm fond of it.
+>>>>
+>>>> x86 seems to get away with it by having the memory allocated from
+>>>> userspace, why I tend to like more. Yes, put_user is more
+>>>> expensive than a straight store, but this isn't done too often either.
+>>>>
+>>>> What is the rational for your current approach?
+>>>
+>>> As I see it there are 3 approaches that can be taken here:
+>>>
+>>> 1. Hypervisor allocates memory and adds it to the virtual machine. This
+>>> means that everything to do with the 'device' is encapsulated behind the
+>>> KVM_CREATE_DEVICE / KVM_[GS]ET_DEVICE_ATTR ioctls. But since we want the
+>>> stolen time structure to be fast it cannot be a trapping region and has
+>>> to be backed by real memory - in this case allocated by the host kernel.
+>>>
+>>> 2. Host user space allocates memory. Similar to above, but this time
+>>> user space needs to manage the memory region as well as the usual
+>>> KVM_CREATE_DEVICE dance. I've no objection to this, but it means
+>>> kvmtool/QEMU needs to be much more aware of what is going on (e.g. how
+>>> to size the memory region).
+>>
+>> You ideally want to get the host overhead for a VM to as little as you
+>> can. I'm not terribly fond of the idea of reserving a full page just
+>> because we're too afraid of having the guest donate memory.
+> 
+> Well, reduce the amount of memory you give to the guest by one page,
+> and allocate that page to the stolen time device. Problem solved!
+> 
+> Seriously, if you're worried about the allocation of a single page,
+> you should first look at how many holes we have in the vcpu structure,
+> for example (even better, with the 8.4 NV patches applied). Just
+> fixing that would give you that page back *per vcpu*.
+
+I'm worried about additional memory slots, about fragmenting the 
+cachable guest memory regions, about avoidable HV taxes.
+
+I think we need to distinguish here between the KVM implementation and 
+the hypervisor/guest interface. Just because in KVM we can save overhead 
+today doesn't mean that the HV interface should be built around the 
+assumption that "memory is free".
 
 > 
-> These patches address my concerns with the new VA_START semantic as I
-> spotted while reviewing Will's 52-bit VA cleanup. The first patch
-> corrects the newly broken usage of VA_START, and the second renames
-> VA_START to PAGE_END to make the new semantic clearer.
+>>> 3. Guest kernel "donates" the memory to the hypervisor for the
+>>> structure. As far as I'm aware this is what x86 does. The problems I see
+>>> this approach are:
+>>>
+>>>    a) kexec becomes much more tricky - there needs to be a disabling
+>>> mechanism for the guest to stop the hypervisor scribbling on memory
+>>> before starting the new kernel.
+>>
+>> I wouldn't call "quiesce a device" much more tricky. We have to do
+>> that for other devices as well today.
 > 
-> Both patches are based on the arm64 for-next/52-bit-kva branch, and I've
-> given a 52-bit VA configuration a build+boot test (on HW without 52-bit
-> VA support).
+> And since there is no standard way of doing it, we keep inventing
+> weird and wonderful ways of doing so -- cue the terrible GICv3 LPI
+> situation, and all the various hacks to keep existing IOMMU mappings
+> around across firmware/kernel handovers as well as kexec.
+
+Well, the good news here is that we don't have to keep it around ;).
+
 > 
+>>
+>>>    b) If there is more than one entity that is interested in the
+>>> information (e.g. firmware and kernel) then this requires some form of
+>>> arbitration in the guest because the hypervisor doesn't want to have to
+>>> track an arbitrary number of regions to update.
+>>
+>> Why would FW care?
+> 
+> Exactly. It doesn't care. Not caring means it doesn't know about the
+> page the guest has allocated for stolen time, and starts using it for
+> its own purposes. Hello, memory corruption. Same thing goes if you
+> reboot into a non stolen time aware kernel.
 
-A big thank you for this!
-I have applied this series and tested it with CONFIG_DEBUG_VIRTUAL,
-CONFIG_DEBUG_VM and KASAN SW TAGS.
+If you reboot, you go via the vcpu reset path which clears the map, no? 
+Same goes for FW entry. If you enter firmware that does not set up the 
+map, you never see it.
 
-I've tested this with 52-bit and have given the kernel page table dumper
-a go too.
+> 
+>>
+>>>    c) Performance can suffer if the host kernel doesn't have a suitably
+>>> aligned/sized area to use. As you say - put_user() is more expensive.
+>>
+>> Just define the interface to always require natural alignment when
+>> donating a memory location?
+>>
+>>> The structure is updated on every return to the VM.
+>>
+>> If you really do suffer from put_user(), there are alternatives. You
+>> could just map the page on the registration hcall and then leave it
+>> pinned until the vcpu gets destroyed again.
+> 
+> put_user() should be cheap enough. It is one of the things we tend to
+> optimise anyway. And yes, worse case, we pin the page.
+> 
+>>
+>>> Of course x86 does prove the third approach can work, but I'm not sure
+>>> which is actually better. Avoid the kexec cancellation requirements was
+>>> the main driver of the current approach. Although many of the
+>>
+>> I really don't understand the problem with kexec cancellation. Worst
+>> case, let guest FW set it up for you and propagate only the address
+>> down via ACPI/DT. That way you can mark the respective memory as
+>> reserved too.
+> 
+> We already went down that road with the LPI hack. I'm not going there
+> again if we can avoid it. And it turn out that we can. Just allocate
+> the stolen time page as a separate memblock, give it to KVM for that
+> purpose.
+> 
+> Your suggestion of letting the guest firmware set something up only
+> works if whatever you're booting after that understands it. If it
+> doesn't, you're screwed.
 
-FWIW:
-Tested-by: Steve Capper <steve.capper@arm.com>
+Why? For UEFI, mark the region as reserved in the memory map. For DT, 
+just mark it straight on reserved.
 
-Cheers,
--- 
-Steve
+That said, I'm not advocating for doing it in the FW. I think this can 
+be solved really easily with a simple guest driver to enable and a vcpu 
+reset hook to disable the map.
+
+> 
+>> But even with a Linux only mechanism, just take a look at
+>> arch/x86/kernel/kvmclock.c. All they do to remove the map is to hook
+>> into machine_crash_shutdown() and machine_shutdown().
+> 
+> I'm not going to take something that is Linux specific. It has to work
+> for all guests, at all times, whether they know about the hypervisor
+> service or not.
+
+If they don't know about the HV service, they don't register the writer, 
+so they don't see corruption.
+
+If they know about the HV service and they don't support kexec, they 
+don't have to worry because a vcpu reset should also clear the map.
+
+If they do support kexec, they already have a mechanism to quiesce devices.
+
+So I don't understand how this is Linux specific? The question was Linux 
+specific, so I answered with precedence to show that disabling on kexec 
+is not all that hard :).
+
+
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
