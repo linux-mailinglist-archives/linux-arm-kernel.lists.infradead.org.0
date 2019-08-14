@@ -2,57 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0245D8CD31
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 09:49:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E857A8CD4D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 09:57:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mi/EZGHbprz5PdJaAEyTT908DpsRLiDpKpicxSjqCak=; b=kIzlNt6v1S6gHH
-	qoXYB291mqGupAW6E6iwUDNQfZoUDl0foBpUT4rXEHTjGm/pky36C2I/OdsvHkjVPvSNTd82pIaox
-	VrSQbwPVE2hS8tj0NLwXGG/5Ey5korY4ZiHtcJzw7KBUGzYpctVgkHtQpZPzj+PV0ZlwJq2eRZm0r
-	U38nvPlDHf2UYMpvKjdxE95/BmqOUv0VS7HFU5oM+q6FNHqlz271/k0W+D1HlD4oOIA41pNYhhtgA
-	90xPGrhXP/lqDWic77auck6/emCcnRkKbluxyL2TPh2Ww8W17mf58Tv1qNXgP1hNvNrdAbyb59ix5
-	JNIu3YOOLCdrm9FRxCqg==;
+	List-Owner; bh=TWayNADYhuOhSKkCqhH/x2J+b1nxhuNZtMpUfDfWSbc=; b=sTJKvS20Sy7q71
+	P6EpwhQR+NhGUyafVL8XKFVLC122h+8Hp5WQ7iZjBnmnCeEZkLqF88/JsonLAjbLFf7qJXzG/C/gn
+	ksr1rgmeYLA8pH0BaNswIH5vEuQfnqXxH6VL2cuSxpFhfFtYcct8x3oOftq9c6OXK1QsA1YAXpOcN
+	2w2Nna8zFGvR7kSyE7YgBeuHjATM3zGuyEGIgZBmy0xC6DN2bzcFcEQX1Lz97u9sPYQ5lp6cg3b6e
+	E/n1coRw0aVwuO8IXIkhfOAMYcmVy5LbgTnzpB4R6OkH1SmqN16sc065zxGdR3vvl6/HtjzdG6uH8
+	sE8icY+x/Rp1llYKsdxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxo2N-0004dW-99; Wed, 14 Aug 2019 07:49:39 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxo27-0004d5-UW
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 07:49:25 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 6ADF980C8;
- Wed, 14 Aug 2019 07:49:49 +0000 (UTC)
-Date: Wed, 14 Aug 2019 00:49:18 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 14/22] ARM: omap1: use pci_ioremap_io() for omap_cf
-Message-ID: <20190814074918.GA52127@atomide.com>
-References: <20190808212234.2213262-1-arnd@arndb.de>
- <20190808212234.2213262-15-arnd@arndb.de>
- <20190813103605.GL52127@atomide.com>
- <CAK8P3a0E+QUn9wcP5Obv-FitWyXCFwcp+oPConeO2p-NV1rqsw@mail.gmail.com>
- <20190813181158.GA26798@darkstar.musicnaut.iki.fi>
- <CAK8P3a0LjKrc+7c5Ht9OL7LfYyLnG9=y7u+w24ujA1xAid_yCQ@mail.gmail.com>
+	id 1hxoA0-0007Uc-5E; Wed, 14 Aug 2019 07:57:32 +0000
+Received: from mailoutvs34.siol.net ([185.57.226.225] helo=mail.siol.net)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxo9l-0007TR-EQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 07:57:19 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 7965752410F;
+ Wed, 14 Aug 2019 09:57:06 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id bAnz3fg4eXxG; Wed, 14 Aug 2019 09:57:05 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id C9244524113;
+ Wed, 14 Aug 2019 09:57:05 +0200 (CEST)
+Received: from jernej-laptop.localnet (89-212-178-211.dynamic.t-2.net
+ [89.212.178.211]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id 6A438524109;
+ Wed, 14 Aug 2019 09:57:03 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: codekipper@gmail.com
+Subject: Re: [PATCH v5 11/15] ASoC: sun4i-i2s: Add support for H6 I2S
+Date: Wed, 14 Aug 2019 09:57:02 +0200
+Message-ID: <13079463.kjevBeenX1@jernej-laptop>
+In-Reply-To: <20190814060854.26345-12-codekipper@gmail.com>
+References: <20190814060854.26345-1-codekipper@gmail.com>
+ <20190814060854.26345-12-codekipper@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a0LjKrc+7c5Ht9OL7LfYyLnG9=y7u+w24ujA1xAid_yCQ@mail.gmail.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_004924_030985_5CD96FFA 
-X-CRM114-Status: GOOD (  21.54  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190814_005717_649391_A55EF511 
+X-CRM114-Status: GOOD (  14.91  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.225 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,105 +71,270 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aaro Koskinen <aaro.koskinen@iki.fi>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Dominik Brodowski <linux@dominikbrodowski.net>,
- Tomi Valkeinen <tomi.valkeinen@ti.com>,
- linux-omap <linux-omap@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org, wens@csie.org,
+ lgirdwood@gmail.com, be17068@iperbole.bo.it, linux-sunxi@googlegroups.com,
+ broonie@kernel.org, maxime.ripard@free-electrons.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Arnd Bergmann <arnd@arndb.de> [190813 19:34]:
-> On Tue, Aug 13, 2019 at 8:12 PM Aaro Koskinen <aaro.koskinen@iki.fi> wrote:
-> > On Tue, Aug 13, 2019 at 01:02:16PM +0200, Arnd Bergmann wrote:
-> > > On Tue, Aug 13, 2019 at 12:36 PM Tony Lindgren <tony@atomide.com> wrote:
-> >
-> > > - I force CONFIG_PCI to be enabled here in order to keep the
-> > >   asm/io.h logic unchanged. If PCI support in itself is an issue,
-> > >   then turning on CONFIG_PCI without the rest of this patch
-> > >   should also break.
-> >
-> > The board dies early, probably in pci_reserve_io():
-> >
-> > Starting kernel ...
-> >
-> > [    0.000000] Booting Linux on physical CPU 0x0
-> > [    0.000000] Linux version 5.3.0-rc4-osk-los_80efa+-00028-g09f6f22a63e9 (aaro@amd-fx-6350) (gcc version 8.3.0 (GCC)) #1 Tue Aug 13 20:50:11 EEST 2019
-> > [    0.000000] CPU: ARM926EJ-S [41069263] revision 3 (ARMv5TEJ), cr=0005317f
-> > [    0.000000] CPU: VIVT data cache, VIVT instruction cache
-> > [    0.000000] Machine: TI-OSK
-> > [    0.000000] Ignoring tag cmdline (using the default kernel command line)
-> > [    0.000000] printk: bootconsole [earlycon0] enabled
-> > [    0.000000] Memory policy: Data cache writeback
-> > [    0.000000] Internal error: Oops - undefined instruction: 0 [#1] ARM
-> > [    0.000000] CPU: 0 PID: 0 Comm: swapper Not tainted 5.3.0-rc4-osk-los_80efa+-00028-g09f6f22a63e9 #1
-> > [    0.000000] Hardware name: TI-OSK
-> > [    0.000000] PC is at vm_area_add_early+0x1c/0x74
-> 
-> That sounds like an address conflict in the virtual addres space.
-> 
-> In multiplatform kernels, PCI I/O space is hardwired to addresses
-> 0xfee00000-0xfeffffff,
-> which happened to be available on all the other machines that needed it so far.
-> 
-> OMAP1_IO_VIRT is 0xfefb0000-0xfefeffff, which clearly overlaps with the end of
-> the PCI I/O area.
-> 
-> We only really need 4KB of I/O space rather than the full 2MB, but it
-> would also be
-> good not to make this too machine specific.
-> 
-> Could we change OMAP1_IO_OFFSET to stay out of that area? Something like
-> 
-> diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
-> index 97c114c1ef80..3b66d203dc98 100644
-> --- a/arch/arm/Kconfig.debug
-> +++ b/arch/arm/Kconfig.debug
-> @@ -1794,9 +1794,9 @@ config DEBUG_UART_VIRT
->         default 0xfef00000 if ARCH_IXP4XX && !CPU_BIG_ENDIAN
->         default 0xfef00003 if ARCH_IXP4XX && CPU_BIG_ENDIAN
->         default 0xfef36000 if DEBUG_HIGHBANK_UART
-> -       default 0xfefb0000 if DEBUG_OMAP1UART1 || DEBUG_OMAP7XXUART1
-> -       default 0xfefb0800 if DEBUG_OMAP1UART2 || DEBUG_OMAP7XXUART2
-> -       default 0xfefb9800 if DEBUG_OMAP1UART3 || DEBUG_OMAP7XXUART3
-> +       default 0xff000000 if DEBUG_OMAP1UART1 || DEBUG_OMAP7XXUART1
-> +       default 0xff000800 if DEBUG_OMAP1UART2 || DEBUG_OMAP7XXUART2
-> +       default 0xff009800 if DEBUG_OMAP1UART3 || DEBUG_OMAP7XXUART3
->         default 0xff003000 if DEBUG_U300_UART
->         default 0xffd01000 if DEBUG_HIP01_UART
->         default DEBUG_UART_PHYS if !MMU
-> diff --git a/arch/arm/mach-omap1/hardware.h b/arch/arm/mach-omap1/hardware.h
-> index 232b8deef907..9fc76a3c9e57 100644
-> --- a/arch/arm/mach-omap1/hardware.h
-> +++ b/arch/arm/mach-omap1/hardware.h
-> @@ -61,7 +61,7 @@ static inline u32 omap_cs3_phys(void)
-> 
->  #endif /* ifndef __ASSEMBLER__ */
-> 
-> -#define OMAP1_IO_OFFSET                0x01000000      /* Virtual IO
-> = 0xfefb0000 */
-> +#define OMAP1_IO_OFFSET                0x00fb0000      /* Virtual IO
-> = 0xff000000 */
->  #define OMAP1_IO_ADDRESS(pa)   IOMEM((pa) - OMAP1_IO_OFFSET)
-> 
->  #include "serial.h"
+Hi!
 
-Oh OK yeah sounds like that's the issue.
+Dne sreda, 14. avgust 2019 ob 08:08:50 CEST je codekipper@gmail.com 
+napisal(a):
+> From: Jernej Skrabec <jernej.skrabec@siol.net>
+> 
+> H6 I2S is very similar to that in H3, except it supports up to 16
+> channels.
+> 
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 
-> There may be additional locations that hardcode the virtual address.
+Your Signed-off-by is missing here and on all other patches made originally by 
+me.
 
-Those should be in mach-omap1/io.c, and I recall innovator had some
-hardcoded fpga address that should also be checked.
+Best regards,
+Jernej
 
-Regards,
+> ---
+>  sound/soc/sunxi/sun4i-i2s.c | 148 ++++++++++++++++++++++++++++++++++++
+>  1 file changed, 148 insertions(+)
+> 
+> diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+> index 6de3cb41aaf6..a8d98696fe7c 100644
+> --- a/sound/soc/sunxi/sun4i-i2s.c
+> +++ b/sound/soc/sunxi/sun4i-i2s.c
+> @@ -121,6 +121,21 @@
+>  #define SUN8I_I2S_RX_CHAN_SEL_REG	0x54
+>  #define SUN8I_I2S_RX_CHAN_MAP_REG	0x58
+> 
+> +/* Defines required for sun50i-h6 support */
+> +#define SUN50I_H6_I2S_TX_CHAN_SEL_OFFSET_MASK	GENMASK(21, 20)
+> +#define SUN50I_H6_I2S_TX_CHAN_SEL_OFFSET(offset)	((offset) << 20)
+> +#define SUN50I_H6_I2S_TX_CHAN_SEL_MASK		GENMASK(19, 16)
+> +#define SUN50I_H6_I2S_TX_CHAN_SEL(chan)		((chan - 1) << 16)
+> +#define SUN50I_H6_I2S_TX_CHAN_EN_MASK		GENMASK(15, 0)
+> +#define SUN50I_H6_I2S_TX_CHAN_EN(num_chan)	(((1 << num_chan) - 1))
+> +
+> +#define SUN50I_H6_I2S_TX_CHAN_MAP0_REG	0x44
+> +#define SUN50I_H6_I2S_TX_CHAN_MAP1_REG	0x48
+> +
+> +#define SUN50I_H6_I2S_RX_CHAN_SEL_REG	0x64
+> +#define SUN50I_H6_I2S_RX_CHAN_MAP0_REG	0x68
+> +#define SUN50I_H6_I2S_RX_CHAN_MAP1_REG	0x6C
+> +
+>  struct sun4i_i2s;
+> 
+>  /**
+> @@ -440,6 +455,25 @@ static void sun8i_i2s_set_rxchanoffset(const struct
+> sun4i_i2s *i2s) SUN8I_I2S_TX_CHAN_OFFSET(i2s->offset));
+>  }
+> 
+> +static void sun50i_h6_i2s_set_txchanoffset(const struct sun4i_i2s *i2s, int
+> output) +{
+> +	if (output >= 0 && output < 4) {
+> +		regmap_update_bits(i2s->regmap,
+> +				   SUN8I_I2S_TX_CHAN_SEL_REG + 
+(output * 4),
+> +				   
+SUN50I_H6_I2S_TX_CHAN_SEL_OFFSET_MASK,
+> +				   
+SUN50I_H6_I2S_TX_CHAN_SEL_OFFSET(i2s->offset));
+> +	}
+> +
+> +}
+> +
+> +static void sun50i_h6_i2s_set_rxchanoffset(const struct sun4i_i2s *i2s)
+> +{
+> +	regmap_update_bits(i2s->regmap,
+> +			   SUN50I_H6_I2S_RX_CHAN_SEL_REG,
+> +			   SUN50I_H6_I2S_TX_CHAN_SEL_OFFSET_MASK,
+> +			   SUN50I_H6_I2S_TX_CHAN_SEL_OFFSET(i2s-
+>offset));
+> +}
+> +
+>  static void sun8i_i2s_set_txchanen(const struct sun4i_i2s *i2s, int output,
+> int channel)
+>  {
+> @@ -459,6 +493,26 @@ static void sun8i_i2s_set_rxchanen(const struct
+> sun4i_i2s *i2s, int channel) SUN8I_I2S_TX_CHAN_EN(channel));
+>  }
+> 
+> +
+> +static void sun50i_h6_i2s_set_txchanen(const struct sun4i_i2s *i2s, int
+> output, +				       int channel)
+> +{
+> +	if (output >= 0 && output < 4) {
+> +		regmap_update_bits(i2s->regmap,
+> +				   SUN8I_I2S_TX_CHAN_SEL_REG + 
+(output * 4),
+> +				   SUN50I_H6_I2S_TX_CHAN_EN_MASK,
+> +				   
+SUN50I_H6_I2S_TX_CHAN_EN(channel));
+> +	}
+> +}
+> +
+> +static void sun50i_h6_i2s_set_rxchanen(const struct sun4i_i2s *i2s, int
+> channel) +{
+> +	regmap_update_bits(i2s->regmap,
+> +			   SUN50I_H6_I2S_RX_CHAN_SEL_REG,
+> +			   SUN50I_H6_I2S_TX_CHAN_EN_MASK,
+> +			   SUN50I_H6_I2S_TX_CHAN_EN(channel));
+> +}
+> +
+>  static void sun4i_i2s_set_txchansel(const struct sun4i_i2s *i2s, int
+> output, int channel)
+>  {
+> @@ -495,6 +549,25 @@ static void sun8i_i2s_set_rxchansel(const struct
+> sun4i_i2s *i2s, int channel) SUN8I_I2S_TX_CHAN_SEL(channel));
+>  }
+> 
+> +static void sun50i_h6_i2s_set_txchansel(const struct sun4i_i2s *i2s, int
+> output, +				       int channel)
+> +{
+> +	if (output >= 0 && output < 4) {
+> +		regmap_update_bits(i2s->regmap,
+> +				   SUN8I_I2S_TX_CHAN_SEL_REG + 
+(output * 4),
+> +				   SUN50I_H6_I2S_TX_CHAN_SEL_MASK,
+> +				   
+SUN50I_H6_I2S_TX_CHAN_SEL(channel));
+> +	}
+> +}
+> +
+> +static void sun50i_h6_i2s_set_rxchansel(const struct sun4i_i2s *i2s, int
+> channel) +{
+> +	regmap_update_bits(i2s->regmap,
+> +			   SUN50I_H6_I2S_RX_CHAN_SEL_REG,
+> +			   SUN50I_H6_I2S_TX_CHAN_SEL_MASK,
+> +			   SUN50I_H6_I2S_TX_CHAN_SEL(channel));
+> +}
+> +
+>  static void sun4i_i2s_set_txchanmap(const struct sun4i_i2s *i2s, int
+> output, int channel)
+>  {
+> @@ -520,6 +593,20 @@ static void sun8i_i2s_set_rxchanmap(const struct
+> sun4i_i2s *i2s, int channel) regmap_write(i2s->regmap,
+> SUN8I_I2S_RX_CHAN_MAP_REG, channel);
+>  }
+> 
+> +static void sun50i_h6_i2s_set_txchanmap(const struct sun4i_i2s *i2s, int
+> output, +				       int channel)
+> +{
+> +	if (output >= 0 && output < 4) {
+> +		regmap_write(i2s->regmap,
+> +			     SUN50I_H6_I2S_TX_CHAN_MAP1_REG + (output 
+* 8), channel);
+> +	}
+> +}
+> +
+> +static void sun50i_h6_i2s_set_rxchanmap(const struct sun4i_i2s *i2s, int
+> channel) +{
+> +	regmap_write(i2s->regmap, SUN50I_H6_I2S_RX_CHAN_MAP1_REG, channel);
+> +}
+> +
+>  static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
+>  			       struct snd_pcm_hw_params *params,
+>  			       struct snd_soc_dai *dai)
+> @@ -996,6 +1083,22 @@ static const struct reg_default
+> sun8i_i2s_reg_defaults[] = { { SUN8I_I2S_RX_CHAN_MAP_REG, 0x00000000 },
+>  };
+> 
+> +static const struct reg_default sun50i_i2s_reg_defaults[] = {
+> +	{ SUN4I_I2S_CTRL_REG, 0x00060000 },
+> +	{ SUN4I_I2S_FMT0_REG, 0x00000033 },
+> +	{ SUN4I_I2S_FMT1_REG, 0x00000030 },
+> +	{ SUN4I_I2S_FIFO_CTRL_REG, 0x000400f0 },
+> +	{ SUN4I_I2S_DMA_INT_CTRL_REG, 0x00000000 },
+> +	{ SUN4I_I2S_CLK_DIV_REG, 0x00000000 },
+> +	{ SUN8I_I2S_CHAN_CFG_REG, 0x00000000 },
+> +	{ SUN8I_I2S_TX_CHAN_SEL_REG, 0x00000000 },
+> +	{ SUN50I_H6_I2S_TX_CHAN_MAP0_REG, 0x00000000 },
+> +	{ SUN50I_H6_I2S_TX_CHAN_MAP1_REG, 0x00000000 },
+> +	{ SUN50I_H6_I2S_RX_CHAN_SEL_REG, 0x00000000 },
+> +	{ SUN50I_H6_I2S_RX_CHAN_MAP0_REG, 0x00000000 },
+> +	{ SUN50I_H6_I2S_RX_CHAN_MAP1_REG, 0x00000000 },
+> +};
+> +
+>  static const struct regmap_config sun4i_i2s_regmap_config = {
+>  	.reg_bits	= 32,
+>  	.reg_stride	= 4,
+> @@ -1023,6 +1126,19 @@ static const struct regmap_config
+> sun8i_i2s_regmap_config = { .volatile_reg	= sun8i_i2s_volatile_reg,
+>  };
+> 
+> +static const struct regmap_config sun50i_i2s_regmap_config = {
+> +	.reg_bits	= 32,
+> +	.reg_stride	= 4,
+> +	.val_bits	= 32,
+> +	.max_register	= SUN50I_H6_I2S_RX_CHAN_MAP1_REG,
+> +	.cache_type	= REGCACHE_FLAT,
+> +	.reg_defaults	= sun50i_i2s_reg_defaults,
+> +	.num_reg_defaults	= ARRAY_SIZE(sun50i_i2s_reg_defaults),
+> +	.writeable_reg	= sun4i_i2s_wr_reg,
+> +	.readable_reg	= sun8i_i2s_rd_reg,
+> +	.volatile_reg	= sun8i_i2s_volatile_reg,
+> +};
+> +
+>  static int sun4i_i2s_runtime_resume(struct device *dev)
+>  {
+>  	struct sun4i_i2s *i2s = dev_get_drvdata(dev);
+> @@ -1197,6 +1313,34 @@ static const struct sun4i_i2s_quirks
+> sun50i_a64_codec_i2s_quirks = { .set_rxchanmap		= 
+sun4i_i2s_set_rxchanmap,
+>  };
+> 
+> +static const struct sun4i_i2s_quirks sun50i_h6_i2s_quirks = {
+> +	.has_reset		= true,
+> +	.reg_offset_txdata	= SUN8I_I2S_FIFO_TX_REG,
+> +	.sun4i_i2s_regmap	= &sun50i_i2s_regmap_config,
+> +	.has_fmt_set_lrck_period = true,
+> +	.has_chcfg		= true,
+> +	.has_chsel_tx_chen	= true,
+> +	.has_chsel_offset	= true,
+> +	.field_clkdiv_mclk_en	= REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 8, 8),
+> +	.field_fmt_wss		= REG_FIELD(SUN4I_I2S_FMT0_REG, 
+0, 2),
+> +	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
+> +	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 
+7, 7),
+> +	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 19, 19),
+> +	.field_fmt_mode		= REG_FIELD(SUN4I_I2S_CTRL_REG, 4, 
+5),
+> +	.field_fmt_sext		= REG_FIELD(SUN4I_I2S_FMT1_REG, 
+4, 5),
+> +	.get_sr			= sun8i_i2s_get_sr_wss,
+> +	.get_wss		= sun8i_i2s_get_sr_wss,
+> +	.set_format		= sun8i_i2s_set_format,
+> +	.set_txchanoffset	= sun50i_h6_i2s_set_txchanoffset,
+> +	.set_rxchanoffset	= sun50i_h6_i2s_set_rxchanoffset,
+> +	.set_txchanen		= sun50i_h6_i2s_set_txchanen,
+> +	.set_rxchanen		= sun50i_h6_i2s_set_rxchanen,
+> +	.set_txchansel		= sun50i_h6_i2s_set_txchansel,
+> +	.set_rxchansel		= sun50i_h6_i2s_set_rxchansel,
+> +	.set_txchanmap		= sun50i_h6_i2s_set_txchanmap,
+> +	.set_rxchanmap		= sun50i_h6_i2s_set_rxchanmap,
+> +};
+> +
+>  static int sun4i_i2s_init_regmap_fields(struct device *dev,
+>  					struct sun4i_i2s *i2s)
+>  {
+> @@ -1389,6 +1533,10 @@ static const struct of_device_id sun4i_i2s_match[] =
+> { .compatible = "allwinner,sun50i-a64-codec-i2s",
+>  		.data = &sun50i_a64_codec_i2s_quirks,
+>  	},
+> +	{
+> +		.compatible = "allwinner,sun50i-h6-i2s",
+> +		.data = &sun50i_h6_i2s_quirks,
+> +	},
+>  	{}
+>  };
+>  MODULE_DEVICE_TABLE(of, sun4i_i2s_match);
 
-Tony
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
