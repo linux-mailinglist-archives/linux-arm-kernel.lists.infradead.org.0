@@ -2,90 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EE7B8D5D8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:21:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C46C8D5FD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:29:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PqBBq4rLdLv5UG+SX5plfKbTRGqLE6Okw6R2tUo8KEs=; b=DJXfRv1hxvSp3e
-	AhbvWOvhdmlK0GypRXE+KVxRgTr3W9D5e0woOPLhmv0E380p5AysyLIA2+EHBEFTREans0QE4nZ88
-	aYsWKblAoeuK0gEVa7Ob5V46cnxdHiL0LDtSw4KmqKtGXnKE9saDyTQkaUpsoNY/Tap/dH3Vx/r/B
-	DU+h4vZ1+v2yCk7EGtNLtHj9dL3evztE3ow7tkuV7gZ4ibrA8JBjYWn598WEkZdvaZbZF2m4if4kt
-	bt0PuVxHQwRW0B+OpwtPjKZTlb2iGJlJDfn3uhL7C2V7vz5PwZJJ2UVq0OcaFEft3ITeOeWOrwrEN
-	o5b4T1WuA+9MJ6R3cYbg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oEPAheu8vqf2uZGL9Rw+XvkxzbrbXqtwKxGbkH109AQ=; b=PKbgiKFAUmyXi+
+	HDQmd0ojbEghkjKHvPs8BeUVMBAWoXRdE+UhUr3DY/AU+BY4pCk8/7+7hx9dYDpKtq/zFTEu/7tKD
+	KX4dXDf4z58n7PoM3Cqf93iW8hosrNixM+pXFRT/pl95ffUAOsoLP/C68m/Wbb3nAimiWH7qiNiDI
+	JqYpxA4vAqP9Cy0bCaxPHKSweg7BWnb+3Rx/Fba/j/FyIkgxcMgi2gBn+aXgK1RnaBE9RM8eyPV9b
+	vXB3TIZ/ku3yA7EUNTETjXKpkitSBAFvIUgd/vFo9wTGxcXAhw9tWBDPGTfN4tCS66aKKDnnMV//h
+	SSApNLatkDctU4hGoHvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxu93-0007kw-Qk; Wed, 14 Aug 2019 14:20:58 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hxuHZ-0002b1-3y; Wed, 14 Aug 2019 14:29:45 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxu8o-0007ka-9a
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:20:47 +0000
-Received: by mail-qt1-x843.google.com with SMTP id i4so1798590qtj.8
+ id 1hxuHE-0002YQ-KA
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:29:27 +0000
+Received: by mail-wr1-x443.google.com with SMTP id g17so111306133wrr.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 07:20:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=WBo/HAvgLVR+GuvcFL8AWtBEXFxc73hq5wxQvMS0iWE=;
- b=o4NX1cbFwDRO/wW30mOBpfdaHXM48xAs9xDhQzeGC872DrQNUo0TydPWnYYZT0sNeg
- AaHSVBN6ZKMph6g6VDMu4Rhkm+VWCxYUPW0teMnbWR0E8zXYAHz7LBlJL6Ug1+oO9z/R
- Q+YXCc9n7UafUB9nJntiLWU1vUWRrQa7UB/ah4Iv8Q8QNCv1k+o7mgKL0kEuBBO8Ph+F
- kR6Q53NCrqfBi2SxKzoqOMTM/wBIh/qXNVVT+8B4BoIgUOSqVmpMUPRlcuKBkrsNLQIN
- rjIW1Rta9VQPX/swFKnlX+oiN/QKfPb0bT1fSmwYiBVzTux0DztYG19IQDXlCkeOtNEQ
- cLWQ==
+ Wed, 14 Aug 2019 07:29:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=2IzMeyCw4b+7DKgb/SLhUrPAysAZa9vx3wztCpi4ATU=;
+ b=VAPOmbqxGPwOnu/ahhV4JorGqlJkzO90cqNgECVmwc2YqbZP4mROMy3dXJ/1sfFI2J
+ jpBnqHM3N6+eifsigJK3AM8SWvVHh4wWhSehha9PO4sAK1anbFSn/RGHNHxq7dvKwqTy
+ 3waODWYiIhnsP9Qs3ebrS22URajl2LL9ObAK0jz+9ntmB3EaVgVpsMlH3xLqe6dYn/ac
+ C5xCtCa6nzJbuFhbESygbFQb8Q8Twmz0CT0wMj7r4ZhgGWS35T2jXiBnmdRZqpIFo5PD
+ eXitIImiYDiCADlNI6CfhY4pRc5db7iQCHmxtlXUjG2D1ZCcjZt6OBQlqsBYf9Gd5FU6
+ F7eA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=WBo/HAvgLVR+GuvcFL8AWtBEXFxc73hq5wxQvMS0iWE=;
- b=lFLKkyjvulobezDvjSqlGjoAXppgkjhD7q6AqgpW0ez1pbF3iLEBWeBBD+APxeiOZq
- IlUYaMUAQm+FD7ra9NuBo6t8prm1pzyod8qAh2oCzXvQEYgEKd9f8ZKZqVjJfCUXj8mB
- cUQomZIWHkI4OO4HxPxe0kSm2g/lKoZ5zVn2+lUzjW6PbLDI7mikdFJN/RtHdOMXgEvF
- YWtK5WHlyO+WvwbdY90L7eR5J7JwhKUQQaQ/X9SAVZWjT69d0gdVXOEoPqAeVjjDuZty
- MVCSWtydz8Ij6o5VWSGWlsziavUNiNhwhdn7GzxEuXMY2loJ3gd1HVPe7GiVvBico/1D
- +8uA==
-X-Gm-Message-State: APjAAAXjvV2E7E8/FMYDhQ6zu5reVX6M7dXj+w73B0g4GoIJzYKycYDA
- 5oJjQIpeBMWQmWwRsFxntkRO+eAfTkxymhUfnxgSKtjt
-X-Google-Smtp-Source: APXvYqx3w/U13E2Bzz04tJn8vVTFDiPURbjJ8ktSKZxkIe8a+7h3Zp1peVQV3tj2aSOaui750oKinobpFd8BZJIpsdI=
-X-Received: by 2002:ac8:4794:: with SMTP id k20mr30925344qtq.2.1565792437862; 
- Wed, 14 Aug 2019 07:20:37 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=2IzMeyCw4b+7DKgb/SLhUrPAysAZa9vx3wztCpi4ATU=;
+ b=pldFDuYOmJwuTC0WeZCg2Vh9ROXbmapGK1Y83VMDPEwWyRJRKPh4wUEocshKIlM0hR
+ 45LgXn7yunpGW4lR53loVYxmA1zdevrWODno2SgGWV7ALTFnIwSlZCVXSUskmhzv/ib9
+ yzCD8DIKWAwAz8Xv4Js6eqdM1bgNO4hSKIiqvdLjMlOv03gSLWr1IBN3GJa/OFL+Brjt
+ Yxe9vhjN/OsWCnpI8bZIfi1QKjKIFMhWAepbEp095dKpI/riAApyZXMTsmdNAkLIgkNQ
+ O86lpqWgds35hK8wWtp3d6z2SCyj/SbNn9j32keV7qB38gdlxxxYL1jCPrD3QvOdegPA
+ LEtg==
+X-Gm-Message-State: APjAAAVyvlNCBjUYAaZRjs5GCH+GJpzMsXgWjKMLAHo/pBisGxjgrSEn
+ pOpldca2FykgOBmHDwtGzE1rTA==
+X-Google-Smtp-Source: APXvYqytAei+jJQfHJhChYLVNukfzd1vwskFZJVslXGn3U/8AlBoTjX7g3J6RtLDiVTl/Q6LfDLoGw==
+X-Received: by 2002:adf:fa42:: with SMTP id y2mr53881666wrr.170.1565792962947; 
+ Wed, 14 Aug 2019 07:29:22 -0700 (PDT)
+Received: from bender.baylibre.local
+ (wal59-h01-176-150-251-154.dsl.sta.abo.bbox.fr. [176.150.251.154])
+ by smtp.gmail.com with ESMTPSA id o7sm4202908wmc.36.2019.08.14.07.29.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 14 Aug 2019 07:29:22 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: khilman@baylibre.com
+Subject: [PATCH 00/14] arm64: dts: meson: fixes following YAML bindings
+ schemas conversion
+Date: Wed, 14 Aug 2019 16:29:04 +0200
+Message-Id: <20190814142918.11636-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-References: <20190730125157.884-1-andrew.murray@arm.com>
- <20190730125157.884-7-andrew.murray@arm.com>
- <9df0eea2-a9bd-3a93-ca51-9c3d2391a1cf@arm.com>
- <20190802143751.GP56241@e119886-lin.cambridge.arm.com>
- <CANLsYkyVMRh_L5BfwWk=s-obh+xiZfjwqXUJkwgaZYWmc6Kuww@mail.gmail.com>
- <20190814100152.GB43882@e119886-lin.cambridge.arm.com>
- <CAJ9a7Vj+bo2PMnh2fbMJnaHRwJm9jU689P+iZ4q8_Vg7-3SnDg@mail.gmail.com>
- <718b5bdf-9828-f215-9a81-637308be3b49@arm.com>
-In-Reply-To: <718b5bdf-9828-f215-9a81-637308be3b49@arm.com>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Wed, 14 Aug 2019 15:20:27 +0100
-Message-ID: <CAJ9a7ViVAsYnCyr4unE3OjGwxLSfnbcpAHUQ+FNSg7BEMdMxgg@mail.gmail.com>
-Subject: Re: [PATCH v4 6/6] dt-bindings: arm: coresight: Add support for
- coresight-needs-save-restore
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_072045_862777_CBDDF649 
-X-CRM114-Status: GOOD (  36.42  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_072924_658767_47A26CD2 
+X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -98,161 +94,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al Grant <Al.Grant@arm.com>, Mathieu Poirier <mathieu.poirier@linaro.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Coresight ML <coresight@lists.linaro.org>, Sudeep Holla <Sudeep.Holla@arm.com>,
- Leo Yan <leo.yan@linaro.org>, Andrew Murray <andrew.murray@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-amlogic@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
+This is the first set of DT fixes following the first YAML bindings conversion
+at [1], [2] and [3].
 
-On Wed, 14 Aug 2019 at 13:35, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
->
-> Hi Mike,
->
-> On 14/08/2019 12:06, Mike Leach wrote:
-> > Hi,
-> >
-> > On Wed, 14 Aug 2019 at 11:01, Andrew Murray <andrew.murray@arm.com> wrote:
-> >>
-> >> On Sun, Aug 04, 2019 at 07:13:45AM -0600, Mathieu Poirier wrote:
-> >>> On Fri, 2 Aug 2019 at 08:37, Andrew Murray <andrew.murray@arm.com> wrote:
-> >>>>
-> >>>> On Fri, Aug 02, 2019 at 11:40:54AM +0100, Suzuki K Poulose wrote:
-> >>>>> Hi Andrew,
-> >>>>>
-> >>>>> On 30/07/2019 13:51, Andrew Murray wrote:
-> >>>>>> Some coresight components, because of choices made during hardware
-> >>>>>> integration, require their state to be saved and restored across CPU low
-> >>>>>> power states.
->
-> ...
->
-> >>>>>> --- a/Documentation/devicetree/bindings/arm/coresight.txt
-> >>>>>> +++ b/Documentation/devicetree/bindings/arm/coresight.txt
-> >>>>>> @@ -92,6 +92,9 @@ its hardware characteristcs.
-> >>>>>>      * arm,cp14: must be present if the system accesses ETM/PTM management
-> >>>>>>        registers via co-processor 14.
-> >>>>>> +   * arm,coresight-needs-save-restore: boolean. Indicates that software
-> >>>>>> +     should save/restore state across power down.
-> >>>>>> +
-> >>>>>
-> >>>>> Do you think we could be a bit more descriptive here about when people could add
-> >>>>> it to the DT ? Here we don't mention when someone should use this property and
-> >>>>> it may be added to platforms where it may be absolutely unnecessary. How about :
-> >>>>>
-> >>>>> "Indicates that the hardware implementation may not honor the Powerup request
-> >>>>> from the software and thus might loose the register context on CPU power
-> >>>>> down (e.g, during CPUIdle). Software must save/restore the context during a
-> >>>>> CPU power transition cycle."
-> >>>>
-> >>>> How about the following:
-> >>>>
-> >>>> "Indicates that the hardware will loose register context on CPU power down (e.g.
-> >>>> CPUIdle), despite the TRCPDCR.PU bit being set."
-> >>>>
-> >>>> I'm keen to avoid making suggestions about what the kernel will do when it sees
-> >>>> this flag and thus prefer to focus on describing what the hardware does. So I
-> >>>> dropped your last sentence. However the name of the flag still implies policy
-> >>>> which I don't like.
-> >>>>
-> >>>> I also changed the 'may not honor' wording, I'm not sure if this is really the
-> >>>> case or if the spec is open to interpretation.
-> >>>>
-> >>>> It would great for this wording to also apply to other CS components though I
-> >>>> haven't investigated if these have a PU bit or something different.
-> >>>
-> >>> Exactly - the definition needs to be broad enough to apply to other CS
-> >>> components.  Mike what do you think would be appropriate for CTIs?
-> >>
-> > CTIs have no power control at all - i.e. no PU bit to request we stay
-> > up - and reside in the debug power domain. So they are coupled to the
-> > CS/CPU/ETM/ power domains and reliant on outside forces to request
-> > power.
-> > The expectation is that for a PE bound CTI, if debug is powered then
-> > it will be fully powered - so an ETM with PU respected, or the
-> > external debug logic with DBGNOPWRDWN respected should be sufficient
-> > for CTI to stay alive.
->
-> I am trying to understand why we need this property for CTI.
-> Don't we always need to save-restore the CTI controls on a CPU_DOWN for the
-> associated CTI ? Since it may not be really tied to an ETM (e.g, if the CTI is
-> purely used to handle CPU triggers, PMU etc,). If that is the case, do we need
-> this property for CTI at all ?
->
+After this set of fixes, the remaining errors are :
+meson-axg-s400.dt.yaml: sound: 'clocks' is a dependency of 'assigned-clocks'
+meson-g12a-sei510.dt.yaml: sound: 'clocks' is a dependency of 'assigned-clocks'
+meson-g12b-odroid-n2.dt.yaml: usb-hub: gpios:0:0: 20 is not valid under any of the given schemas
+meson-g12b-odroid-n2.dt.yaml: sound: 'clocks' is a dependency of 'assigned-clocks'
+meson-g12a-x96-max.dt.yaml: sound: 'clocks' is a dependency of 'assigned-clocks'
 
-CTI will be in use for one of two reasons:-
-1) External Debug - in which case the DBGNOPOWERDOWN bit should be set
-and the debug domain remains powered.
-2) Trace (self hosted or external) - so we have an ETM and PU is set
-and the debug power domain remains powered.
+These are only cosmetic changes, and should not break drivers implementation
+following the bindings.
 
-In these ideal cases we never need to save and restore as the debug
-power domain remains powered.
+Neil Armstrong (14):
+  arm64: dts: meson: fix ethernet mac reg format
+  arm64: dts: meson-gx: drop the vpu dmc memory cell
+  arm64: dts: meson-gx: fix reset controller compatible
+  arm64: dts: meson-gx: fix spifc compatible
+  arm64: dts: meson-gx: fix watchdog compatible
+  arm64: dts: meson-gx: fix mhu compatible
+  arm64: dts: meson-gx: fix periphs bus node name
+  arm64: dts: meson-gxl: fix internal phy compatible
+  arm64: dts: meson-axg: fix MHU compatible
+  arm64: dts: meson-g12a: fix reset controller compatible
+  arm64: dts: meson-g12a-x96-max: fix compatible
+  arm64: dts: meson-gxbb-nanopi-k2: add missing model
+  arm64: dts: meson-gxbb-p201: fix snps,reset-delays-us format
+  arm64: dts: meson: fix boards regulators states format
 
-Now in this phase of development we are disregarding external debug
-and trace. So we are only in self hosted trace mode - which is
-probably the most common use case for a linux system.
-
-Therefore the CTI will only be in use if there is an ETM tracing self
-hosted. If PU is not working and the parameter is set then we know we
-need to hook  CPUIdle notifications and save and restore (thought in
-the case of CTI it is really restore only for self hosted as there are
-no dynamic registers.). If we are not saving and restoring then we do
-not need to register for CPUIdle notifiers (which like hotplug need to
-be centralised, not re-implemented in each and every driver), saving
-some latency.
-
-The architecture specifically precludes using the CTI PMU trigger to
-the generic CTI PE interrupt - so the PMU overflow trigger will only
-ever be used to activate some debug event (e.g. debug halt, trace halt
-etc).
-
-Regards
-
-Mike
-
-> >
-> >> How about we keep this short and simple:
-> >>
-> >> * arm,coresight-loses-context-with-cpu : boolean. Indicates that the hardware
->
-> nit: s/loses/looses ?
->
-> >>    will lose register context on CPU power down (e.g. CPUIdle).
-> >>
-> >
-> > So the above name is generic enough to encompass the CTI as well.
-> >
-> >> I could have added something like "... despite TRCPDCR.PU being set", or to
-> >> apply more generically: "... despite available register controls being set to
-> >> prevent such context loss". However whilst these are more informative - they
-> >> elude to some of reasons as to why context is lost and as we cannot be
-> >> exhaustive I'd rather not give a limited example.
-> >>
-> >> However if a longer explaination is required:
-> >>
-> >> * arm,coresight-loses-context-with-cpu : boolean. Indicates that the hardware
-> >>    will lose register context on CPU power down (e.g. CPUIdle). An example of
-> >>    where this may be needed are systems which contain a coresight component and
-> >>    CPU in the same power domain. When the CPU powers down the coresight
-> >>    component also powers down and loses its context.
->
-> This looks fine for me. But I am trying to understand the rationale behind
-> using this for CTI
->
-> Suzuki
-
-
+ arch/arm64/boot/dts/amlogic/meson-axg.dtsi    |  6 +++---
+ .../boot/dts/amlogic/meson-g12a-x96-max.dts   |  2 +-
+ arch/arm64/boot/dts/amlogic/meson-g12a.dtsi   |  7 +++----
+ .../boot/dts/amlogic/meson-g12b-odroid-n2.dts |  4 ++--
+ arch/arm64/boot/dts/amlogic/meson-gx.dtsi     | 19 +++++++++----------
+ .../boot/dts/amlogic/meson-gxbb-nanopi-k2.dts |  1 +
+ .../dts/amlogic/meson-gxbb-nexbox-a95x.dts    |  4 ++--
+ .../boot/dts/amlogic/meson-gxbb-odroidc2.dts  |  4 ++--
+ .../boot/dts/amlogic/meson-gxbb-p201.dts      |  2 +-
+ .../boot/dts/amlogic/meson-gxbb-p20x.dtsi     |  4 ++--
+ .../meson-gxl-s905x-hwacom-amazetv.dts        |  4 ++--
+ .../amlogic/meson-gxl-s905x-nexbox-a95x.dts   |  4 ++--
+ arch/arm64/boot/dts/amlogic/meson-gxl.dtsi    |  5 +----
+ 13 files changed, 31 insertions(+), 35 deletions(-)
 
 -- 
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
