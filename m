@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 391868DD68
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 20:49:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3DC18DD90
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 20:52:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V/dHdlHxTcq4IZcfcbzhgOLZn1j+Vp/1SJllV82QkOY=; b=IT++kt+YksOUzP
-	ZaoG8Wd57EbmNXIUjwde69ngAfEWI2WeGG3BzG9aYPbvulsYMsX/DhKJab0/tBM4HYBXmxm7JVC4q
-	TkxNzAvL2RsemA65o5CPUSCDQPZaWc/DDbtOtm9KKJ0yowVQzU3b/9HPE2BanKzk2WMyuafGqvUyj
-	9/YPp6oVX9MpPGQTgbDw8KqykTBWWAP6nss+5qegGHBjyLuTAqKLjdIEz5/KA8V8nEqpu1VNdYwTd
-	slvEsijzXz38fn8c6bgOhFbT5cR7KZpzgPjiZ4oyqVKyJkE+0kkinVGfqSXHkAs11UKmYPpGoOGcD
-	q7aeWYsdLfOapmD7xo/w==;
+	List-Owner; bh=+FNsHD6LBhgt49lvHS9jC6c5K1e1D2TO1hrudhNcumk=; b=nTtGTsuglwv65U
+	UJd4thFtDMAUVt4wFuM8CYyXPZqQaJiLBew7qTj1RTRVO7KZMe0kNxOBw+WnSc74zCkYDfzaCg8LV
+	JLslT990GMMgcBntUBep102S7GJ38wOTyF6hKFE7KNbiP9Pi0hxF9CLaCHYQg9yHUv8osQBbhJVHv
+	SSj377AUAJACutF9MMRYgY0Nlbykh+lk/X0798QB4IWKhk2YvAwq87A8PNc/naG0GDw4QfOrWzbai
+	WuRNBnlVSWRBnoPuKhYKdKaMuiCo6t+gBxAXSvmE5do9h8t8CZGYuJlOYUvZiG/l6RLeE8vjh2O9+
+	q6QLWIIsc20rKiZO9A6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxyKT-00055T-N8; Wed, 14 Aug 2019 18:49:01 +0000
+	id 1hxyO6-0006ao-P6; Wed, 14 Aug 2019 18:52:46 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxyK9-000552-FV
- for linux-arm-kernel@bombadil.infradead.org; Wed, 14 Aug 2019 18:48:41 +0000
+ id 1hxyNt-0006ag-9X
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 14 Aug 2019 18:52:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=+sR6B4cibYHHnwu3bpvdAPRMk/urhyGa01jZXxbES1Q=; b=J/LIPhBmZkO0FG0ZeJtQLiM8t
- 9KhtNppapT22fHrGzP23VbTaT+SSpnNMVI5u0V8jwZkL7oQ5sPo8vfoEErF9dGOoUGV6O+/GBnRVm
- 2Yrn6kPU8XOERXp3N3OXkyVh02sxAoVzOZ0R+qpQQ/doQ5qReFHnrBIGGxCJj6IrQkN7PJCBKt90u
- ll5Vw15a5EENf8mSp4Dzul4Qq18bhBkQMY7V3BL4BrMJW+OZOD5uilUjDQ0Wfov5FMez985NtTv9L
- Pr9BaeqwRFHmxrqELQBzA8jLWPdq9UCyLBD5oZUh8ZzNXnM7+GKVnJNa7Zl4i77ZfokR0x94Z7G9b
- Q/B5Yof9w==;
+ bh=fgFFBrhVtUGKZZbJJolYXsdk6eeUI4H6Yby6s8HsxXA=; b=weWpQnLTcsjhrZtL3n0fZWLNj
+ KkSdI1T9sXuS5C7hRf1bTGO5kF2Nxx5fbkVdfvvKhvcTEFTcyDRe0OEYSrp5G4kHHzvXYdIe5KmmJ
+ 1InwCEAuNPiPXpQgwUIp9K7N5wYKWpXm+w5+a0eHAmAaCc3Bu9RS0B6PKW+PnaPxT3J5jnQnMJzhI
+ WOO+wuCGQgYRr8SrR1QtwPidTBXmyQ9wa4kE6uwRV5IeTN+UkZhDFGbu+TVg0rYYxd4oNrC7Xaw2e
+ 8stNiGGZu5Cv33toBbpd2BhOIrnFs4OYDVdaAroLF4rgneMAkSLhYki/6pe678xL5y/jU/aI9h9af
+ rsLkx3qXg==;
 Received: from [177.195.212.110] (helo=quaco.ghostprotocols.net)
  by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hxyK0-0001w6-1m; Wed, 14 Aug 2019 18:48:39 +0000
+ id 1hxyNo-0001xr-OJ; Wed, 14 Aug 2019 18:52:31 +0000
 Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 6029B40857; Wed, 14 Aug 2019 15:48:14 -0300 (-03)
-Date: Wed, 14 Aug 2019 15:48:14 -0300
+ id 9170840857; Wed, 14 Aug 2019 15:52:13 -0300 (-03)
+Date: Wed, 14 Aug 2019 15:52:13 -0300
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>
 Subject: Re: [PATCH v3 3/4] perf: Use CAP_SYSLOG with kptr_restrict checks
-Message-ID: <20190814184814.GM9280@kernel.org>
+Message-ID: <20190814185213.GN9280@kernel.org>
 References: <cover.1565188228.git.ilubashe@akamai.com>
  <291d2cda6ee75b4cd4c9ce717c177db18bf03a31.1565188228.git.ilubashe@akamai.com>
  <CANLsYkxZE0CQJKQ-bFi=zFV5vTCbL2v76+x1fmCpqNruqWiFXg@mail.gmail.com>
+ <20190814184814.GM9280@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CANLsYkxZE0CQJKQ-bFi=zFV5vTCbL2v76+x1fmCpqNruqWiFXg@mail.gmail.com>
+In-Reply-To: <20190814184814.GM9280@kernel.org>
 X-Url: http://acmel.wordpress.com
 User-Agent: Mutt/1.12.0 (2019-05-25)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,82 +80,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Wed, Aug 14, 2019 at 12:04:33PM -0600, Mathieu Poirier escreveu:
-> On Wed, 7 Aug 2019 at 08:44, Igor Lubashev <ilubashe@akamai.com> wrote:
-> >
-> > Kernel is using CAP_SYSLOG capability instead of uid==0 and euid==0 when
-> > checking kptr_restrict. Make perf do the same.
-> >
-> > Also, the kernel is a more restrictive than "no restrictions" in case of
-> > kptr_restrict==0, so add the same logic to perf.
-> >
-> > Signed-off-by: Igor Lubashev <ilubashe@akamai.com>
-> > ---
-> >  tools/perf/util/symbol.c | 15 +++++++++++----
-> >  1 file changed, 11 insertions(+), 4 deletions(-)
-> >
-> > diff --git a/tools/perf/util/symbol.c b/tools/perf/util/symbol.c
-> > index 173f3378aaa0..046271103499 100644
-> > --- a/tools/perf/util/symbol.c
-> > +++ b/tools/perf/util/symbol.c
-> > @@ -4,6 +4,7 @@
-> >  #include <stdlib.h>
-> >  #include <stdio.h>
-> >  #include <string.h>
-> > +#include <linux/capability.h>
-> >  #include <linux/kernel.h>
-> >  #include <linux/mman.h>
-> >  #include <linux/time64.h>
-> > @@ -15,8 +16,10 @@
-> >  #include <inttypes.h>
-> >  #include "annotate.h"
-> >  #include "build-id.h"
-> > +#include "cap.h"
-> >  #include "util.h"
-> >  #include "debug.h"
-> > +#include "event.h"
-> >  #include "machine.h"
-> >  #include "map.h"
-> >  #include "symbol.h"
-> > @@ -890,7 +893,11 @@ bool symbol__restricted_filename(const char *filename,
-> >  {
-> >         bool restricted = false;
-> >
-> > -       if (symbol_conf.kptr_restrict) {
-> > +       /* Per kernel/kallsyms.c:
-> > +        * we also restrict when perf_event_paranoid > 1 w/o CAP_SYSLOG
-> > +        */
-> > +       if (symbol_conf.kptr_restrict ||
-> > +           (perf_event_paranoid() > 1 && !perf_cap__capable(CAP_SYSLOG))) {
-> >                 char *r = realpath(filename, NULL);
-> >
+Em Wed, Aug 14, 2019 at 03:48:14PM -0300, Arnaldo Carvalho de Melo escreveu:
+> Em Wed, Aug 14, 2019 at 12:04:33PM -0600, Mathieu Poirier escreveu:
+> > # echo 0 > /proc/sys/kernel/kptr_restrict
+> > # ./tools/perf/perf record -e instructions:k uname
+> > perf: Segmentation fault
+> > Obtained 10 stack frames.
+> > ./tools/perf/perf(sighandler_dump_stack+0x44) [0x55af9e5da5d4]
+> > /lib/x86_64-linux-gnu/libc.so.6(+0x3ef20) [0x7fd31efb6f20]
+> > ./tools/perf/perf(perf_event__synthesize_kernel_mmap+0xa7) [0x55af9e590337]
+> > ./tools/perf/perf(+0x1cf5be) [0x55af9e50c5be]
+> > ./tools/perf/perf(cmd_record+0x1022) [0x55af9e50dff2]
+> > ./tools/perf/perf(+0x23f98d) [0x55af9e57c98d]
+> > ./tools/perf/perf(+0x23fc9e) [0x55af9e57cc9e]
+> > ./tools/perf/perf(main+0x369) [0x55af9e4f6bc9]
+> > /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7) [0x7fd31ef99b97]
+> > ./tools/perf/perf(_start+0x2a) [0x55af9e4f704a]
+> > Segmentation fault
+> > 
+> > I can reproduce this on both x86 and ARM64.
 > 
-> # echo 0 > /proc/sys/kernel/kptr_restrict
-> # ./tools/perf/perf record -e instructions:k uname
-> perf: Segmentation fault
-> Obtained 10 stack frames.
-> ./tools/perf/perf(sighandler_dump_stack+0x44) [0x55af9e5da5d4]
-> /lib/x86_64-linux-gnu/libc.so.6(+0x3ef20) [0x7fd31efb6f20]
-> ./tools/perf/perf(perf_event__synthesize_kernel_mmap+0xa7) [0x55af9e590337]
-> ./tools/perf/perf(+0x1cf5be) [0x55af9e50c5be]
-> ./tools/perf/perf(cmd_record+0x1022) [0x55af9e50dff2]
-> ./tools/perf/perf(+0x23f98d) [0x55af9e57c98d]
-> ./tools/perf/perf(+0x23fc9e) [0x55af9e57cc9e]
-> ./tools/perf/perf(main+0x369) [0x55af9e4f6bc9]
-> /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7) [0x7fd31ef99b97]
-> ./tools/perf/perf(_start+0x2a) [0x55af9e4f704a]
-> Segmentation fault
+> I don't see this with these two csets removed:
 > 
-> I can reproduce this on both x86 and ARM64.
+> 7ff5b5911144 perf symbols: Use CAP_SYSLOG with kptr_restrict checks
+> d7604b66102e perf tools: Use CAP_SYS_ADMIN with perf_event_paranoid checks
+> 
+> Which were the ones I guessed were related to the problem you reported,
+> so they are out of my ongoing perf/core pull request to Ingo/Thomas, now
+> trying with these applied and your instructions...
 
-I don't see this with these two csets removed:
+Can't repro:
 
-7ff5b5911144 perf symbols: Use CAP_SYSLOG with kptr_restrict checks
+[root@quaco ~]# cat /proc/sys/kernel/kptr_restrict
+0
+[root@quaco ~]# perf record -e instructions:k uname
+Linux
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0.024 MB perf.data (1 samples) ]
+[root@quaco ~]# echo 1 > /proc/sys/kernel/kptr_restrict
+[root@quaco ~]# perf record -e instructions:k uname
+Linux
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0.024 MB perf.data (1 samples) ]
+[root@quaco ~]# echo 0 > /proc/sys/kernel/kptr_restrict
+[root@quaco ~]# perf record -e instructions:k uname
+Linux
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0.024 MB perf.data (1 samples) ]
+[root@quaco ~]#
+
+[acme@quaco perf]$ git log --oneline --author Lubashev tools/
+7ff5b5911144 (HEAD -> perf/cap, acme.korg/tmp.perf/cap, acme.korg/perf/cap) perf symbols: Use CAP_SYSLOG with kptr_restrict checks
 d7604b66102e perf tools: Use CAP_SYS_ADMIN with perf_event_paranoid checks
-
-Which were the ones I guessed were related to the problem you reported,
-so they are out of my ongoing perf/core pull request to Ingo/Thomas, now
-trying with these applied and your instructions...
+c766f3df635d perf ftrace: Use CAP_SYS_ADMIN instead of euid==0
+c22e150e3afa perf tools: Add helpers to use capabilities if present
+74d5f3d06f70 tools build: Add capability-related feature detection
+perf version 5.3.rc4.g7ff5b5911144
+[acme@quaco perf]$
 
 - Arnaldo
 
