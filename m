@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1723A8D145
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:49:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F8888D146
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:49:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2wcdr1hCuqrFHtTMPSNJdGIVO4FxXZuZ9D2dM0XpJuk=; b=dt3edKpWx+BuKE
-	syDwuWzU07jJ8sotNfXc3Qn8shT2ezHlzXKzZUAXu8DcBTjx495HXm1nRU/OAk0GAX0D6KwWFHrmE
-	YlwUCkLXw2a4oxYYn7Fup12MIMZHleDvRGO5WABFozFVwrCMhkr6noZTasDXgk0eTBJAsGi3jpzP7
-	6wGNKqgdOIb7rtoTZnQY/NCLiAnkcINMQritEkEMvqp3UHwCYrcgjyWEpln1UGQhReI1RuHwvdLsL
-	v/hlugd8ULXG2uodN5/k5qLtJZ0HLSCPOnzE4Ul3/F1UqbXbCra7R0680czbj6PXeSfo1+rhGro28
-	m7AcLCeBVAHELercv6lQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=yfKAnQdgyx0MObK+ft/DOtuRdfk8MjJw/bDALrgWJEE=; b=YkU+uUVeNf3n5uz6kIOv1u+DXj
+	2YNLCu24OmmgmwNohXKSUZ7giyCV7qpVp6OBCOicX81Ff4p/IHfqvVSvO+jsg5BEEoRWyXbrDoWWa
+	o0eQmGrF8LPUR0SF9g9+o7Xg/LY7Uuf2wnTDt8ptz+GaO+es63qNOJYBiL8oQKfqVysHYrN0LI2+k
+	wuzou+CGOWYs/iv6nWmS7POvVRUHTfdfwYqySPW+rugE084GBgepLoEvWbQYcOfOrONBgt5rPwRcN
+	4fsbmn6NgjEs+NSUQPgrQjbSfmwD9NKAHsaVqeiLZ/27oBOTiKxrYQu5fHx5tM4G3c52OUz38bRL0
+	qDRcCreA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxqqK-00040o-Ly; Wed, 14 Aug 2019 10:49:24 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hxqqY-0004F9-Uq; Wed, 14 Aug 2019 10:49:38 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxqpy-0003jd-Ml
+ id 1hxqpy-0003k9-De
  for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 10:49:05 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3DAD21A037B;
- Wed, 14 Aug 2019 12:48:58 +0200 (CEST)
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 56199200223;
+ Wed, 14 Aug 2019 12:48:59 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 30A621A038F;
- Wed, 14 Aug 2019 12:48:58 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 46296200220;
+ Wed, 14 Aug 2019 12:48:59 +0200 (CEST)
 Received: from fsr-ub1664-120.ea.freescale.net
  (fsr-ub1664-120.ea.freescale.net [10.171.82.81])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 382DA2060E;
- Wed, 14 Aug 2019 12:48:57 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 475672060E;
+ Wed, 14 Aug 2019 12:48:58 +0200 (CEST)
 From: Robert Chiras <robert.chiras@nxp.com>
 To: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
  Marek Vasut <marex@denx.de>, Stefan Agner <stefan@agner.ch>,
@@ -41,24 +42,24 @@ To: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>
-Subject: [PATCH v2 02/15] drm/mxsfb: Read bus flags from bridge if present
-Date: Wed, 14 Aug 2019 13:48:38 +0300
-Message-Id: <1565779731-1300-3-git-send-email-robert.chiras@nxp.com>
+Subject: [PATCH v2 03/15] drm/mxsfb: Add defines for the rest of registers
+Date: Wed, 14 Aug 2019 13:48:39 +0300
+Message-Id: <1565779731-1300-4-git-send-email-robert.chiras@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1565779731-1300-1-git-send-email-robert.chiras@nxp.com>
 References: <1565779731-1300-1-git-send-email-robert.chiras@nxp.com>
-MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_034902_876745_45E42940 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20190814_034902_613259_E9D28949 
+X-CRM114-Status: UNSURE (   8.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,35 +77,78 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  dri-devel@lists.freedesktop.org, NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogR3VpZG8gR8O8bnRoZXIgPGFneEBzaWd4Y3B1Lm9yZz4KClRoZSBicmlkZ2UgbWlnaHQg
-aGF2ZSBzcGVjaWFsIHJlcXVpcm1lbnRlcyBvbiB0aGUgaW5wdXQgYnVzLiBUaGlzCmlzIGUuZy4g
-dXNlZCBieSB0aGUgaW14LW53bCBicmlkZ2UuCgpTaWduZWQtb2ZmLWJ5OiBHdWlkbyBHw7xudGhl
-ciA8YWd4QHNpZ3hjcHUub3JnPgpSZXZpZXdlZC1ieTogU3RlZmFuIEFnbmVyIDxzdGVmYW5AYWdu
-ZXIuY2g+Ci0tLQogZHJpdmVycy9ncHUvZHJtL214c2ZiL214c2ZiX2NydGMuYyB8IDUgKysrKy0K
-IDEgZmlsZSBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1n
-aXQgYS9kcml2ZXJzL2dwdS9kcm0vbXhzZmIvbXhzZmJfY3J0Yy5jIGIvZHJpdmVycy9ncHUvZHJt
-L214c2ZiL214c2ZiX2NydGMuYwppbmRleCBkZTA5YjkzLi5iNjlhY2U4IDEwMDY0NAotLS0gYS9k
-cml2ZXJzL2dwdS9kcm0vbXhzZmIvbXhzZmJfY3J0Yy5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS9t
-eHNmYi9teHNmYl9jcnRjLmMKQEAgLTIwOSw3ICsyMDksNyBAQCBzdGF0aWMgdm9pZCBteHNmYl9j
-cnRjX21vZGVfc2V0X25vZmIoc3RydWN0IG14c2ZiX2RybV9wcml2YXRlICpteHNmYikKIHsKIAlz
-dHJ1Y3QgZHJtX2RldmljZSAqZHJtID0gbXhzZmItPnBpcGUuY3J0Yy5kZXY7CiAJc3RydWN0IGRy
-bV9kaXNwbGF5X21vZGUgKm0gPSAmbXhzZmItPnBpcGUuY3J0Yy5zdGF0ZS0+YWRqdXN0ZWRfbW9k
-ZTsKLQljb25zdCB1MzIgYnVzX2ZsYWdzID0gbXhzZmItPmNvbm5lY3Rvci0+ZGlzcGxheV9pbmZv
-LmJ1c19mbGFnczsKKwl1MzIgYnVzX2ZsYWdzID0gbXhzZmItPmNvbm5lY3Rvci0+ZGlzcGxheV9p
-bmZvLmJ1c19mbGFnczsKIAl1MzIgdmRjdHJsMCwgdnN5bmNfcHVsc2VfbGVuLCBoc3luY19wdWxz
-ZV9sZW47CiAJaW50IGVycjsKIApAQCAtMjMzLDYgKzIzMyw5IEBAIHN0YXRpYyB2b2lkIG14c2Zi
-X2NydGNfbW9kZV9zZXRfbm9mYihzdHJ1Y3QgbXhzZmJfZHJtX3ByaXZhdGUgKm14c2ZiKQogCiAJ
-Y2xrX3NldF9yYXRlKG14c2ZiLT5jbGssIG0tPmNydGNfY2xvY2sgKiAxMDAwKTsKIAorCWlmICht
-eHNmYi0+YnJpZGdlICYmIG14c2ZiLT5icmlkZ2UtPnRpbWluZ3MpCisJCWJ1c19mbGFncyA9IG14
-c2ZiLT5icmlkZ2UtPnRpbWluZ3MtPmlucHV0X2J1c19mbGFnczsKKwogCURSTV9ERVZfREVCVUdf
-RFJJVkVSKGRybS0+ZGV2LCAiUGl4ZWwgY2xvY2s6ICVka0h6IChhY3R1YWw6ICVka0h6KVxuIiwK
-IAkJCSAgICAgbS0+Y3J0Y19jbG9jaywKIAkJCSAgICAgKGludCkoY2xrX2dldF9yYXRlKG14c2Zi
-LT5jbGspIC8gMTAwMCkpOwotLSAKMi43LjQKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
-cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Some of the existing registers in this controller are not defined, but
+also not used. Add them to the register definitions, so that they can be
+easily used in future improvements or fixes.
+
+Signed-off-by: Robert Chiras <robert.chiras@nxp.com>
+---
+ drivers/gpu/drm/mxsfb/mxsfb_regs.h | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/drivers/gpu/drm/mxsfb/mxsfb_regs.h b/drivers/gpu/drm/mxsfb/mxsfb_regs.h
+index 932d7ea..71426aa 100644
+--- a/drivers/gpu/drm/mxsfb/mxsfb_regs.h
++++ b/drivers/gpu/drm/mxsfb/mxsfb_regs.h
+@@ -14,19 +14,31 @@
+ 
+ #define LCDC_CTRL			0x00
+ #define LCDC_CTRL1			0x10
++#define LCDC_V4_CTRL2			0x20
+ #define LCDC_V3_TRANSFER_COUNT		0x20
+ #define LCDC_V4_TRANSFER_COUNT		0x30
+ #define LCDC_V4_CUR_BUF			0x40
+ #define LCDC_V4_NEXT_BUF		0x50
+ #define LCDC_V3_CUR_BUF			0x30
+ #define LCDC_V3_NEXT_BUF		0x40
++#define LCDC_TIMING			0x60
+ #define LCDC_VDCTRL0			0x70
+ #define LCDC_VDCTRL1			0x80
+ #define LCDC_VDCTRL2			0x90
+ #define LCDC_VDCTRL3			0xa0
+ #define LCDC_VDCTRL4			0xb0
++#define LCDC_DVICTRL0			0xc0
++#define LCDC_DVICTRL1			0xd0
++#define LCDC_DVICTRL2			0xe0
++#define LCDC_DVICTRL3			0xf0
++#define LCDC_DVICTRL4			0x100
++#define LCDC_V4_DATA			0x180
++#define LCDC_V3_DATA			0x1b0
+ #define LCDC_V4_DEBUG0			0x1d0
+ #define LCDC_V3_DEBUG0			0x1f0
++#define LCDC_AS_CTRL			0x210
++#define LCDC_AS_BUF			0x220
++#define LCDC_AS_NEXT_BUF		0x230
+ 
+ #define CTRL_SFTRST			(1 << 31)
+ #define CTRL_CLKGATE			(1 << 30)
+@@ -45,12 +57,15 @@
+ #define CTRL_DF24			(1 << 1)
+ #define CTRL_RUN			(1 << 0)
+ 
++#define CTRL1_RECOVERY_ON_UNDERFLOW	(1 << 24)
+ #define CTRL1_FIFO_CLEAR		(1 << 21)
+ #define CTRL1_SET_BYTE_PACKAGING(x)	(((x) & 0xf) << 16)
+ #define CTRL1_GET_BYTE_PACKAGING(x)	(((x) >> 16) & 0xf)
+ #define CTRL1_CUR_FRAME_DONE_IRQ_EN	(1 << 13)
+ #define CTRL1_CUR_FRAME_DONE_IRQ	(1 << 9)
+ 
++#define CTRL2_OUTSTANDING_REQS__REQ_16		(4 << 21)
++
+ #define TRANSFER_COUNT_SET_VCOUNT(x)	(((x) & 0xffff) << 16)
+ #define TRANSFER_COUNT_GET_VCOUNT(x)	(((x) >> 16) & 0xffff)
+ #define TRANSFER_COUNT_SET_HCOUNT(x)	((x) & 0xffff)
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
