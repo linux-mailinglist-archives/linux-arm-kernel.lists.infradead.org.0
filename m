@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AAE98E055
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 00:06:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0873B8E067
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 00:13:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=myz3u/ImXVeQa+j57TbUNH/ujTCE45Na2JnvT5gHFhA=; b=u47Ym3i/1I6kxf
-	9mOuDd6WUM1AOje/3LCRSvTRtFqBlr7E9gYsHq4l2KrgTJP2o5O6VQ0bx1uHtrO+gGPNHJRePHUMM
-	whiFicC7iKtuOJZIoYdfgRc2WexMpRTn3oTdC3EKQQx8QpZd/uOJTxNJua+r0TCbbWDo3MMjH5mQI
-	6VZBwUlPfA3n+jaEfHgFPrDuQe5sFS4Wh/hTwIaTGUEsFfc66hZ1qEgTJp+7Vz6MRrw6TAIdWPmma
-	6CQB5wAg2joLNBcAMrkQPuPmX4awG4rA9g9MPX6KL61cwR+01TsCjd3ArODfACugB15CezK5vy1IQ
-	pD1nqAN4z7DAhhDEW+mg==;
+	List-Owner; bh=ayz0n6mw0ufVU42n9ICXEzcUBvwQX7NvU4BlndA0tWI=; b=MpzBUJETdKZj/T
+	O9u08ROb/he9T1aYvmlLHW1eo2kAT5hnZof8T+Si/lh+HKZr7gdNad3M3P7Zmb1irZiXyhO+8b8kp
+	WY1h+fAu3SK/jfnn2t15l/ahYQS7mdFJwpi+XXwzpk5tN0i6JqyMblzAhZ+haXYPF8eMUT3la84Aw
+	1LoZ+8CEWOSfk3Uu7qBqQEOXPbcEQb+CMWOht7qcGJniJgzDT6xvTwiXnMh2TvZHTGhrog+McdvIb
+	7oMd9Ld1ZKzlTIpW0NK1EU1uJeIV72G2VKAC5uhmQJmj1QJ+iqKZQGtgVAsCQSsjftvOCSjZFpYFS
+	T/vSsrnf+WWO6hRr31VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy1Pm-0003ir-7b; Wed, 14 Aug 2019 22:06:42 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hy1WR-0006Sx-7A; Wed, 14 Aug 2019 22:13:35 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy1PZ-0003iQ-NJ
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 22:06:31 +0000
-Received: by mail-pg1-x543.google.com with SMTP id e11so289682pga.5
+ id 1hy1WD-0006Sb-JO
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 22:13:22 +0000
+Received: by mail-pl1-x642.google.com with SMTP id y8so214549plr.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 15:06:29 -0700 (PDT)
+ Wed, 14 Aug 2019 15:13:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=FLFblGnxzQ1wI2QM5HelENy2vNVHmhf51uAkZDB+jpI=;
- b=T6rUo53R9JDRHIkMfoGdrnDrsfMPkMGgqRTP3o5lVIOOcp2qrBarQDVb1rpfBmja8n
- hb29IYPLiS+4SjkOcCclg6MMZoxlIVyTqswgEgSR7V8KdraVWdIS/Y9f7EuAGynkNAUW
- q7mxLhX+gUtvRob9dALNvXjLvJG5SmqDsEzgqhzg+mcldPILPgMEgQ9DisII1gmhy1CL
- btdIuPVtWn3qLlsf15RY2HYGl/QYNwAKfpBflkrRimTHbAPcEzBdlCUpDqEI8N1wIQSP
- Xy9dZAyXPOS14n1PtzcJdAys2fGt8RKD+ZON5r/jZSwRi0T4BB1FTRf33dgs6plfiXK6
- LSHA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=o3iTgpB3GXZ+kQcPnDKxJUeeBPOFZQS1HDP+dtSl8iI=;
+ b=HEFmOTX7vqz6H06xnoRwJnyjwS4ngqlcblSxxBe9uJf91C2C3l3H3afY81WwkxEetJ
+ EbUuQcyViX1xj4UfRyAAAdKQkMJMp+A+qWSGvq1zWUQw8DQ77jCsLpCgcMhfLo6nNVda
+ wPT3QzNUctnrmjktXM3EnsOkJ9WFmmfmF6P3JP5768lVtArSlAJdr5XkaQydkdBmUDdH
+ uDi58nt19hPwUpCeJaQPKGXa/z2gZnqlXC+ryopFfLScSWgENEVIXSevTZyjazE3ppis
+ zLF2GWdAmdB59Sq/EJsbTmRz5IiKtqn37DU/qrZVhnWBWkDLht8AheY3rvNIjk4LdN7S
+ 2yNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=FLFblGnxzQ1wI2QM5HelENy2vNVHmhf51uAkZDB+jpI=;
- b=W6Cv3LSkyNwaHqnUkZ8/r6fuyMWxID2TXj4+rj/4uxCXWXDipbLpgTx5wSaAlH8oJv
- q5leszqkJshWeZyRDkfYLXZ5SRm8ty2f9H1qFdpKSLwPLVRqZ+wPY67PD6f47Qt9PqmG
- lyxcCJct5SDB6mYEkNyGvOr77ACIB125G2RvsWdX2qto+PUYmvAareT3Wy5Y41F3UsC6
- QTQiLSeh4iHLQgSKJl4JEgvi7ui3IrB+VNdMoHrwXMqW9stauGec/zLJtKTIFVl7ezYc
- wkjM4MXvU6vj/fjSqNPsP/qoPTvzyRtsC3tB78/QFTORDdZC1djCUqPGDjOSheOTbzLu
- 1VOw==
-X-Gm-Message-State: APjAAAWI+FveW47w55iQWT33xVc8DoHG5STnzq8i3Pbyuz7Rs7u44QWY
- 4Ia0CKaIIDhBkjxWvHeLo5Q=
-X-Google-Smtp-Source: APXvYqxOv2+QJT56iITOcewqwm/svzN0f2xI1RFG9HZpdRwcds+DscI/HKfjP2Yj28OcgA1qHhUUzg==
-X-Received: by 2002:a63:40a:: with SMTP id 10mr1072437pge.317.1565820388356;
- Wed, 14 Aug 2019 15:06:28 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id i9sm5475pjj.2.2019.08.14.15.06.27
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 14 Aug 2019 15:06:27 -0700 (PDT)
-Date: Wed, 14 Aug 2019 15:06:25 -0700
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Nicolas Boichat <drinkcat@chromium.org>
-Subject: Re: [PATCH] Input: cros_ec_keyb: Add back missing mask for event_type
-Message-ID: <20190814220625.GD121898@dtor-ws>
-References: <20190813093821.74158-1-fshao@chromium.org>
- <CANMq1KCNFfWA=ApVUFoPctgTftHDSAvGjtk-Xu2hcKWBq9R1zw@mail.gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=o3iTgpB3GXZ+kQcPnDKxJUeeBPOFZQS1HDP+dtSl8iI=;
+ b=Z2tbELAFr62/vc6nn/M94ozC6ystyHYzUxFoDYnoGJxy/q0XKKotOOLn1BSlTMSQkn
+ NMOjig2iig2DmVlF0FzX0Wj3+k9ejchosSJaN3Zl7xwej9CLvS5pGJIANja8i0aV4XhS
+ cHi3iSRRcEHPown4sLLzSchs2muJJ4bqvQgvdfLgrquLuJV2Rd8U+NczmXAEtPYWyeDj
+ Ic4Mfw7zT0KnDgg4WyjpOIDOXXc9+dBPuJycMzbczK9F/GRjzKUXBbHxDHCH9OY85V5e
+ 9Mr/8ZGud6EelAzfzYm72Hgb+ogHM6830zLIJkzrIOS+HzC/j0Dq+TXpUvAPTOw7C/RH
+ EFxA==
+X-Gm-Message-State: APjAAAXtt7ns9DI68MA/1eAfxHnFOFmgL94ddBYfrPaDHqkXXHkluCym
+ UNb4xd4WRPhLJO386NTrN5Y=
+X-Google-Smtp-Source: APXvYqyti+vq96Q0pE8Yd5FkzLw83ZjuNfSd6SNA8pgDAWZgNSvONObYFjog77tG3BgdbQT4MUollQ==
+X-Received: by 2002:a17:902:ac87:: with SMTP id
+ h7mr1561600plr.36.1565820800768; 
+ Wed, 14 Aug 2019 15:13:20 -0700 (PDT)
+Received: from localhost ([100.118.89.196])
+ by smtp.gmail.com with ESMTPSA id g1sm633892pgg.27.2019.08.14.15.13.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 14 Aug 2019 15:13:20 -0700 (PDT)
+From: Rob Clark <robdclark@gmail.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH 4/6] arm: add arch_sync_dma_for_*()
+Date: Wed, 14 Aug 2019 14:59:59 -0700
+Message-Id: <20190814220011.26934-5-robdclark@gmail.com>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190814220011.26934-1-robdclark@gmail.com>
+References: <20190814220011.26934-1-robdclark@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANMq1KCNFfWA=ApVUFoPctgTftHDSAvGjtk-Xu2hcKWBq9R1zw@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_150629_759763_BDEDB9B6 
-X-CRM114-Status: GOOD (  18.64  )
+X-CRM114-CacheID: sfid-20190814_151321_642676_B8AF44E2 
+X-CRM114-Status: GOOD (  13.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dmitry.torokhov[at]gmail.com)
+ provider (robdclark[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,74 +99,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fei Shao <fshao@chromium.org>, Brian Norris <briannorris@chromium.org>,
- lkml <linux-kernel@vger.kernel.org>, Ting Shen <phoenixshen@chromium.org>,
- Guenter Roeck <groeck@chromium.org>,
- "open list:HID CORE LAYER" <linux-input@vger.kernel.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Benson Leung <bleung@chromium.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Wolfram Sang <wsa@the-dreams.de>, Linus Walleij <linus.walleij@linaro.org>,
+ "Wolfram Sang \(Renesas\)" <wsa+renesas@sang-engineering.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Christoph Hellwig <hch@lst.de>, Rob Clark <robdclark@chromium.org>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Vladimir Murzin <vladimir.murzin@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Doug Anderson <armlinux@m.disordat.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Vlastimil Babka <vbabka@suse.cz>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ linux-kernel@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
+ Souptick Joarder <jrdr.linux@gmail.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 05:47:22PM +0800, Nicolas Boichat wrote:
-> On Tue, Aug 13, 2019 at 5:38 PM Fei Shao <fshao@chromium.org> wrote:
-> >
-> > In the previous patch we didn't mask out event_type in case statement,
-> > so switches are always picked instead of buttons, which results in
-> > ChromeOS devices misbehaving when power button is pressed.
-> > This patch adds back the missing mask.
-> >
-> > Fixes: d096aa3eb604 ("Input: cros_ec_keyb: mask out extra flags in event_type")
-> > Signed-off-by: Fei Shao <fshao@chromium.org>
-> 
-> Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
+From: Rob Clark <robdclark@chromium.org>
 
-Applied, thank you.
+Signed-off-by: Rob Clark <robdclark@chromium.org>
+---
+ arch/arm/Kconfig                |  2 ++
+ arch/arm/mm/dma-mapping-nommu.c | 14 ++++++++++++++
+ arch/arm/mm/dma-mapping.c       | 28 ++++++++++++++++++++++++++++
+ 3 files changed, 44 insertions(+)
 
-> 
-> > ---
-> >  drivers/input/keyboard/cros_ec_keyb.c | 6 ++++--
-> >  1 file changed, 4 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/drivers/input/keyboard/cros_ec_keyb.c b/drivers/input/keyboard/cros_ec_keyb.c
-> > index 38cb6d82d8fe..bef7bee6f05e 100644
-> > --- a/drivers/input/keyboard/cros_ec_keyb.c
-> > +++ b/drivers/input/keyboard/cros_ec_keyb.c
-> > @@ -226,6 +226,8 @@ static int cros_ec_keyb_work(struct notifier_block *nb,
-> >  {
-> >         struct cros_ec_keyb *ckdev = container_of(nb, struct cros_ec_keyb,
-> >                                                   notifier);
-> > +       uint8_t mkbp_event_type = ckdev->ec->event_data.event_type &
-> > +                                 EC_MKBP_EVENT_TYPE_MASK;
-> >         u32 val;
-> >         unsigned int ev_type;
-> >
-> > @@ -237,7 +239,7 @@ static int cros_ec_keyb_work(struct notifier_block *nb,
-> >         if (queued_during_suspend && !device_may_wakeup(ckdev->dev))
-> >                 return NOTIFY_OK;
-> >
-> > -       switch (ckdev->ec->event_data.event_type & EC_MKBP_EVENT_TYPE_MASK) {
-> > +       switch (mkbp_event_type) {
-> >         case EC_MKBP_EVENT_KEY_MATRIX:
-> >                 pm_wakeup_event(ckdev->dev, 0);
-> >
-> > @@ -264,7 +266,7 @@ static int cros_ec_keyb_work(struct notifier_block *nb,
-> >         case EC_MKBP_EVENT_SWITCH:
-> >                 pm_wakeup_event(ckdev->dev, 0);
-> >
-> > -               if (ckdev->ec->event_data.event_type == EC_MKBP_EVENT_BUTTON) {
-> > +               if (mkbp_event_type == EC_MKBP_EVENT_BUTTON) {
-> >                         val = get_unaligned_le32(
-> >                                         &ckdev->ec->event_data.data.buttons);
-> >                         ev_type = EV_KEY;
-> > --
-> > 2.23.0.rc1.153.gdeed80330f-goog
-
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 33b00579beff..a48a7263a2c1 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -18,6 +18,8 @@ config ARM
+ 	select ARCH_HAS_SET_MEMORY
+ 	select ARCH_HAS_STRICT_KERNEL_RWX if MMU && !XIP_KERNEL
+ 	select ARCH_HAS_STRICT_MODULE_RWX if MMU
++	select ARCH_HAS_SYNC_DMA_FOR_DEVICE
++	select ARCH_HAS_SYNC_DMA_FOR_CPU
+ 	select ARCH_HAS_TEARDOWN_DMA_OPS if MMU
+ 	select ARCH_HAS_TICK_BROADCAST if GENERIC_CLOCKEVENTS_BROADCAST
+ 	select ARCH_HAVE_CUSTOM_GPIO_H
+diff --git a/arch/arm/mm/dma-mapping-nommu.c b/arch/arm/mm/dma-mapping-nommu.c
+index 52b82559d99b..4a3df952151f 100644
+--- a/arch/arm/mm/dma-mapping-nommu.c
++++ b/arch/arm/mm/dma-mapping-nommu.c
+@@ -84,6 +84,13 @@ static void __dma_page_cpu_to_dev(phys_addr_t paddr, size_t size,
+ 		outer_clean_range(paddr, paddr + size);
+ }
+ 
++void arch_sync_dma_for_device(struct device *dev, phys_addr_t paddr,
++		size_t size, enum dma_data_direction dir)
++{
++	__dma_page_cpu_to_dev(paddr, size, dir);
++}
++EXPORT_SYMBOL_GPL(arch_sync_dma_for_device);
++
+ static void __dma_page_dev_to_cpu(phys_addr_t paddr, size_t size,
+ 				  enum dma_data_direction dir)
+ {
+@@ -93,6 +100,13 @@ static void __dma_page_dev_to_cpu(phys_addr_t paddr, size_t size,
+ 	}
+ }
+ 
++void arch_sync_dma_for_cpu(struct device *dev, phys_addr_t paddr,
++		size_t size, enum dma_data_direction dir)
++{
++	__dma_page_dev_to_cpu(paddr, size, dir);
++}
++EXPORT_SYMBOL_GPL(arch_sync_dma_for_cpu);
++
+ static dma_addr_t arm_nommu_dma_map_page(struct device *dev, struct page *page,
+ 					 unsigned long offset, size_t size,
+ 					 enum dma_data_direction dir,
+diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
+index 6774b03aa405..8ead93196194 100644
+--- a/arch/arm/mm/dma-mapping.c
++++ b/arch/arm/mm/dma-mapping.c
+@@ -979,6 +979,13 @@ static void __dma_page_cpu_to_dev(struct page *page, unsigned long off,
+ 	/* FIXME: non-speculating: flush on bidirectional mappings? */
+ }
+ 
++void arch_sync_dma_for_device(struct device *dev, phys_addr_t paddr,
++		size_t size, enum dma_data_direction dir)
++{
++	__dma_page_cpu_to_dev(phys_to_page(paddr), paddr % PAGE_SIZE, size, dir);
++}
++EXPORT_SYMBOL_GPL(arch_sync_dma_for_device);
++
+ static void __dma_page_dev_to_cpu(struct page *page, unsigned long off,
+ 	size_t size, enum dma_data_direction dir)
+ {
+@@ -1013,6 +1020,27 @@ static void __dma_page_dev_to_cpu(struct page *page, unsigned long off,
+ 	}
+ }
+ 
++void arch_sync_dma_for_cpu(struct device *dev, phys_addr_t paddr,
++		size_t size, enum dma_data_direction dir)
++{
++	__dma_page_dev_to_cpu(phys_to_page(paddr), paddr % PAGE_SIZE, size, dir);
++}
++EXPORT_SYMBOL_GPL(arch_sync_dma_for_cpu);
++
++/*
++ * arch_dma_{alloc,free} fail-stubs needed to avoid link-errors in dma/direct.c
++ * (which is not actually used on arch/arm)
++ */
++void *arch_dma_alloc(struct device *dev, size_t size, dma_addr_t *dma_handle,
++		gfp_t flags, unsigned long attrs)
++{
++	return NULL;
++}
++void arch_dma_free(struct device *dev, size_t size, void *vaddr,
++		dma_addr_t dma_handle, unsigned long attrs)
++{
++}
++
+ /**
+  * arm_dma_map_sg - map a set of SG buffers for streaming mode DMA
+  * @dev: valid struct device pointer, or NULL for ISA and EISA-like devices
 -- 
-Dmitry
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
