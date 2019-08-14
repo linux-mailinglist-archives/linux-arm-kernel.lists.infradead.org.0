@@ -2,92 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 699278E10C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 01:01:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E7748E11B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 01:07:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XkYUHjSIWn4A3jj+I3WxemMPJ7t2+mNJsSQ9Dk1Jzow=; b=WtyIL0+6s1LMGjhAvkA6x8dwY
-	/ja/wnEcmoEbKg0Fb9m9ye8ENMACodMdAtSCNgGSFmr3hQa704cfpy+JMevpwLoP+w/ni0XcnatWA
-	fGAcMHWgQoPgBuV63rSS/nZ39wY4yt540gGuquJPXlj/rorCZ7hkSgRGjCN4Eb3wxAVqFQDnrysoV
-	68B9aMgH1StBFVVtxmImYUu7SSVIDNuaD4hEzVTdCkWUdhzdGBZTqynGnuMHNlV1Lu/myiv778wDJ
-	P2KvEWoNy0d30N/Hz5OCQ5odmd37tGZ4WVpbmGKZeyH0o74XwkEOeGCbsONzRJspTTttVEpVahMI5
-	8RADmU3GQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Mtjhzr+IUtgqhfsY3EOC5LVvtXBXihpxKsy6wLDLGk8=; b=cKvMddeSZeNnuG
+	Vnw9ig7I6JnulYn+H6is/aai0q7wvfhZtwbCm5ug/MLdw1rwyn3xqpadkGsNv7glUqoyjSxOaxVOF
+	igH8utdLnspbfmd7oVotYfH4bJ/oTko6wH325NhCTaR0cp+3sW9qQOPiPqQT1zB3YJCNXhw+MPn1Z
+	VoF32Meyt3uddCoIAOHsZ6rrobkXAc55AT62+507XwE4JVgkWd+Jcux0Ssmn7JdQA6CmA18AjCNNZ
+	VbS0olRzfU6nPoQcnSAHaiylavRga3yBPBCEpE4x0nWAswX3FrzjYiD6d11QOLXR5+vtZX3rsfkph
+	Ho0Jgo86s4D8afvDEchw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy2GH-0006OQ-Nj; Wed, 14 Aug 2019 23:00:57 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hy2M9-0008KT-GA; Wed, 14 Aug 2019 23:07:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy2G0-0006No-SH
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 23:00:42 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j16so607887wrr.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 16:00:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=LQeCebufkkpC6WKzESrg64pDAh48aV2VR4IeDbj6/L8=;
- b=N7B99RfDJqtudXxJ12iE/11Z9YHhp85VfKeZYP2Eg1yxBgprn1LE3EN/cNoOR0SNiN
- BNomQm6AsRUPr5xxMPC3yZuovmJrSQ9SQRyxEUJU0HomC3BrzYtIGC4RE0nrXV81FPwF
- Qxl7GutRvuRPfS3tpLVyeRdhIBEM7gPJ/r/Vl+YSt0gjfsB3GOACTiFiFmKQ/6dLvQz4
- VWJbewtH7gy1GyB4ACiemd9XYNFMpvxrUYI8TgIaWsXaIALtd11cFFGpriHaj7Lk7iZL
- iFhja2RdtSCThVqqRznoOe5VtD8fGVVDhpyjilGx66CsJyPaDiX/7YQxKQNdj+xRnXQ+
- 4D+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=LQeCebufkkpC6WKzESrg64pDAh48aV2VR4IeDbj6/L8=;
- b=UDqA/teBW3AysP1Ii5viCpCQ+gKtK6Db+uCQEo0uQ6k+8VlMrvO7tsBMzqVM+ZO/z+
- n5CiJ3A9mi3sckKjq3uRY+SGJRRw+bMbUDePaxyn4ijrDX7jJXtHhm4z/guyu/71BBUx
- J1u5OuIXYUPUTcFCnJ3b5d7XhRJkOxVLOmOb+OOVYUXWFlqFSMOWgREiZqY0SpqpH0dg
- 26s8OVBBFvn+j+cATg1x3E+27AEytS8aVZBUvl78+38g7o7TwH10f7UY51ctAO5OTzKd
- lWlZaGzP0a1KNapRxmWOwCa5OqfX5pBpe22TxlIhQ9Ep4OBTGoLYJDtMeJ4u0mZ7iDMN
- SF5A==
-X-Gm-Message-State: APjAAAV7FbuiVdgUlARxwxno0mS0jEDW+DzZVuAD06t5IFaR+2ZLuJq8
- m23E0NHW0AV1jaHO93VCg2k=
-X-Google-Smtp-Source: APXvYqy/+/XdeQktv/fI48rKLISc8GH28SdlH+mrdeysQ6Kcvq+nTphnRe5OL5sSxp3kPcLQ8LJALA==
-X-Received: by 2002:adf:fc87:: with SMTP id g7mr1798905wrr.319.1565823638173; 
- Wed, 14 Aug 2019 16:00:38 -0700 (PDT)
-Received: from [172.30.88.90] (sjewanfw1-nat.mentorg.com. [139.181.7.34])
- by smtp.gmail.com with ESMTPSA id o9sm777435wrj.17.2019.08.14.16.00.32
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 14 Aug 2019 16:00:37 -0700 (PDT)
-Subject: Re: [PATCH 04/22] media: Move v4l2_fwnode_parse_link from v4l2 to
- driver base
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <20190805233505.21167-1-slongerbeam@gmail.com>
- <20190805233505.21167-5-slongerbeam@gmail.com>
- <CAHp75VcOh8bOf_s6t0ehwGtcYn64QFGj303SVvpHrztEOhTRgg@mail.gmail.com>
- <4750b347-b421-6569-600f-0ced8406460e@gmail.com>
- <20190814103054.GI13294@shell.armlinux.org.uk>
- <e0a19469-af9d-d9de-499f-4ffbf04542b3@gmail.com>
- <20190814220437.GJ13294@shell.armlinux.org.uk>
-From: Steve Longerbeam <slongerbeam@gmail.com>
-Message-ID: <1842bf8f-4f97-6294-41db-74f9f8e2befd@gmail.com>
-Date: Wed, 14 Aug 2019 16:00:30 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hy2Lw-0008K1-DS; Wed, 14 Aug 2019 23:06:50 +0000
+Received: from mail-qk1-f174.google.com (mail-qk1-f174.google.com
+ [209.85.222.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8A209206C1;
+ Wed, 14 Aug 2019 23:06:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565824007;
+ bh=Osh2kIuzBECV/4S+fO2LBnSrGcK/tQ0alxa/uWeuFQc=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=nm/3Un5cw9DqG26s8lndjrQy4y2i5O4k9Le+Va9KzaVBLHkQWa5BePc6YLarGxMDd
+ l1r9kj3JqmTIe30/oF8+XWBDoo73fGcBKRp/gU6ABiTymb+WxoeX6P37zn2u6G2fRC
+ t4g3qxD1yzo9RzZ3u9caxTeU2xPr2kTmyVFD+6m0=
+Received: by mail-qk1-f174.google.com with SMTP id p13so423514qkg.13;
+ Wed, 14 Aug 2019 16:06:47 -0700 (PDT)
+X-Gm-Message-State: APjAAAWDJUZpgcRunJ73wZYUd3bWIsxa9gdn2FLvHDNmy+g6wIScvdEW
+ Mev/3tw+dj3jLPC3bFhz+XnLW8uiMGZj7jQg8g==
+X-Google-Smtp-Source: APXvYqwIIiPLiCSpGiUOEsKR6pt4CN+4KUYglGKUJR5D8HxVpco/SEBiFVf0WJecJv6krnzu3KPOTMEHV9O3FwuOBSs=
+X-Received: by 2002:a37:6944:: with SMTP id e65mr1447045qkc.119.1565824006678; 
+ Wed, 14 Aug 2019 16:06:46 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190814220437.GJ13294@shell.armlinux.org.uk>
-Content-Language: en-US
+References: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
+ <1565713248-4906-10-git-send-email-wahrenst@gmx.net>
+ <CAL_Jsq+01vXQpf_ZuAvetWvcGLhK4EiiB1qFqhRkM3PQWAzdsA@mail.gmail.com>
+ <f9acf678-854d-720d-3c84-d9a05766c02e@gmx.net>
+In-Reply-To: <f9acf678-854d-720d-3c84-d9a05766c02e@gmx.net>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 14 Aug 2019 17:06:35 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+=0Jvz+xx8sn9v_Q-WYCn5fACBhwSGORcMNXXxocCkpQ@mail.gmail.com>
+Message-ID: <CAL_Jsq+=0Jvz+xx8sn9v_Q-WYCn5fACBhwSGORcMNXXxocCkpQ@mail.gmail.com>
+Subject: Re: [PATCH V2 09/13] dt-bindings: arm: Convert BCM2835 board/soc
+ bindings to json-schema
+To: Stefan Wahren <wahrenst@gmx.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_160040_942607_83B8BC8C 
-X-CRM114-Status: GOOD (  18.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_160648_497967_88ADACF0 
+X-CRM114-Status: GOOD (  26.00  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (slongerbeam[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,68 +86,200 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Michal Simek <michal.simek@xilinx.com>,
- "open list:ACPI" <linux-acpi@vger.kernel.org>,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, Len Brown <lenb@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Sascha Hauer <s.hauer@pengutronix.de>,
- Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- "moderated list:ARM/ZYNQ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- Hyun Kwon <hyun.kwon@xilinx.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- open list <linux-kernel@vger.kernel.org>,
- Jacopo Mondi <jacopo+renesas@jmondi.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- Enrico Weigelt <info@metux.net>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Wolfram Sang <wsa@the-dreams.de>, Stephen Boyd <sboyd@kernel.org>,
+ Ray Jui <rjui@broadcom.com>, Michael Turquette <mturquette@baylibre.com>,
+ Eric Anholt <eric@anholt.net>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>, Linux I2C <linux-i2c@vger.kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Aug 14, 2019 at 1:21 PM Stefan Wahren <wahrenst@gmx.net> wrote:
+>
+> Hi Rob,
+>
+> Am 13.08.19 um 19:22 schrieb Rob Herring:
+> > On Tue, Aug 13, 2019 at 10:21 AM Stefan Wahren <wahrenst@gmx.net> wrote:
+> >> Convert the BCM2835/6/7 SoC bindings to DT schema format using json-schema.
+> >> All the other Broadcom boards are maintained by Florian Fainelli.
+> >>
+> >> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+> >> Acked-by: Eric Anholt <eric@anholt.net>
+> >> ---
+> >>  .../devicetree/bindings/arm/bcm/bcm2835.yaml       | 46 +++++++++++++++
+> >>  .../devicetree/bindings/arm/bcm/brcm,bcm2835.txt   | 67 ----------------------
+> >>  2 files changed, 46 insertions(+), 67 deletions(-)
+> >>  create mode 100644 Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
+> >>  delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm2835.txt
+> >>
+> >> diff --git a/Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml b/Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
+> >> new file mode 100644
+> >> index 0000000..1a4be26
+> >> --- /dev/null
+> >> +++ b/Documentation/devicetree/bindings/arm/bcm/bcm2835.yaml
+> >> @@ -0,0 +1,46 @@
+> >> +# SPDX-License-Identifier: GPL-2.0
+> >> +%YAML 1.2
+> >> +---
+> >> +$id: http://devicetree.org/schemas/arm/bcm/bcm2835.yaml#
+> >> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> >> +
+> >> +title: Broadcom BCM2711/BCM2835 Platforms Device Tree Bindings
+> >> +
+> >> +maintainers:
+> >> +  - Eric Anholt <eric@anholt.net>
+> >> +  - Stefan Wahren <wahrenst@gmx.net>
+> >> +
+> >> +properties:
+> >> +  $nodename:
+> >> +    const: '/'
+> >> +  compatible:
+> >> +    oneOf:
+> >> +      - description: BCM2835 based Boards
+> >> +        items:
+> >> +          - enum:
+> >> +              - raspberrypi,model-a
+> >> +              - raspberrypi,model-a-plus
+> >> +              - raspberrypi,model-b
+> >> +              - raspberrypi,model-b-i2c0  # Raspberry Pi Model B (no P5)
+> >> +              - raspberrypi,model-b-rev2
+> >> +              - raspberrypi,model-b-plus
+> >> +              - raspberrypi,compute-module
+> >> +              - raspberrypi,model-zero
+> >> +              - raspberrypi,model-zero-w
+> >> +          - const: brcm,bcm2835
+> >> +
+> >> +      - description: BCM2836 based Boards
+> >> +        items:
+> >> +          - enum:
+> >> +              - raspberrypi,2-model-b
+> > Don't you need brcm,bcm2836 here?
+> >
+> >> +
+> >> +      - description: BCM2837 based Boards
+> >> +        items:
+> >> +          - enum:
+> >> +              - raspberrypi,3-model-a-plus
+> >> +              - raspberrypi,3-model-b
+> >> +              - raspberrypi,3-model-b-plus
+> >> +              - raspberrypi,3-compute-module
+> >> +              - raspberrypi,3-compute-module-lite
+> > Don't you need brcm,bcm2837 here?
+> >
+> > Please run 'dtbs_check' and make sure there aren't warnings (in the root node).
+>
+> thanks, after addressing your comments the root node doesn't have
+> warnings anymore.
+>
+> Beside that there a lot of other warnings:
+>
+>   DTC     arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml
+>   CHECK   arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> arm-pmu: compatible: ['arm,cortex-a72-pmu', 'arm,armv8-pmuv3'] is too long
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> arm-pmu: compatible: Additional items are not allowed ('arm,armv8-pmuv3'
+> was unexpected)
+>
+> I think the schema is a little bit too strict by prohibit a fallback
+> compatible.
 
-
-On 8/14/19 3:04 PM, Russell King - ARM Linux admin wrote:
-> On Wed, Aug 14, 2019 at 12:04:41PM -0700, Steve Longerbeam wrote:
->>
->> On 8/14/19 3:30 AM, Russell King - ARM Linux admin wrote:
->>> On Tue, Aug 06, 2019 at 09:53:41AM -0700, Steve Longerbeam wrote:
->>>> The full patchset doesn't seem to be up yet, but see [1] for the cover
->>>> letter.
->>> Was the entire series copied to the mailing lists, or just selected
->>> patches?  I only saw 4, 9, 11 and 13-22 via lakml.
->> The whole series was posted to the linux-media ML, see [1]. At the time,
->> none of the linux-media ML archives had the whole series.
->>
->>> In the absence of the other patches, will this solve imx-media binding
->>> the internal subdevs of sensor devices to the CSI2 interface?
->> "internal subdevs of sensor devices" ?? That doesn't make any sense.
-> Sorry, but it makes complete sense when you consider that sensor
-> devices may have more than one subdev, but there should be only one
-> that is the "output" to whatever the camera is attached to.  The
-> other subdevs are internal to the sensor.
-
-Ah, thanks for the clarification. Yes, by "internal subdevs" I 
-understand what you mean now. The adv748x and smiapp are examples.
+IIRC, Will Deacon said there wasn't any point to fallbacks as every
+cpu has its own list of events. Or if we want a fallback, then add it
+to the schema.
 
 >
-> subdevs are not purely the remit of SoC drivers.
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> serial@7e201800: Additional properties are not allowed
+> ('arm,primecell-periphid' was unexpected)
+>
+> In the old txt version this was an allowed property.
 
-So there is no binding of internal subdevs to the receiver CSI-2. The 
-receiver CSI-2 subdev will create media links to the subdev that has an 
-externally exposed fwnode endpoint that connects with the CSI-2 sink pad.
+You really need an override? Haven't seen that in a while. We can drop
+'additionalProperties: false' in the pl011 schema.
 
-Steve
+>
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> firmware: $nodename:0: 'firmware' does not match
+> '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> firmware: '#address-cells' is a required property
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> firmware: '#size-cells' is a required property
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> firmware: 'ranges' is a required property
+>
+> I suggest to fix this by removing the "simple-bus".
 
+Probably. 'firmware' doesn't sound like a bus.
+
+>
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> serial@7e201a00: Additional properties are not allowed
+> ('arm,primecell-periphid' was unexpected)
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> gpio@7e200000: 'pinctrl-0' is a dependency of 'pinctrl-names'
+>
+> This could be fixed by removing pinctrl-names.
+>
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> serial@7e201600: Additional properties are not allowed
+> ('arm,primecell-periphid' was unexpected)
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> gic400@40041000: $nodename:0: 'gic400@40041000' does not match
+> '^interrupt-controller(@[0-9a-f,]+)*$'
+>
+> I will rename gic400 to interrupt-controller.
+>
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> serial@7e201400: Additional properties are not allowed
+> ('arm,primecell-periphid' was unexpected)
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> serial@7e201000: compatible: ['brcm,bcm2835-pl011', 'arm,pl011',
+> 'arm,primecell'] is not valid under any of the given schemas
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> serial@7e201000: Additional properties are not allowed ('bluetooth',
+> 'arm,primecell-periphid' were unexpected)
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> sd_io_1v8_reg: states:0: [1800000, 1, 3300000, 0] is too long
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> sd_io_1v8_reg: states:0: Additional items are not allowed (3300000, 0
+> were unexpected)
+>
+> No idea what is wrong here
+
+The schema is stricter about <> groupings is my guess. Looks like this
+should be 2 entries with 2 cells each.
+
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml: clocks:
+> #size-cells:0:0: 0 is not one of [1, 2]
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml: clocks:
+> $nodename:0: 'clocks' does not match '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml: clocks:
+> clock@3:reg:0: [3] is too short
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml: clocks:
+> clock@4:reg:0: [4] is too short
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml: clocks:
+> 'ranges' is a required property
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> clock@3: 'reg' does not match any of the regexes: 'pinctrl-[0-9]+'
+> /home/stefan/torvalds/arch/arm/boot/dts/bcm2711-rpi-4-b.dt.yaml:
+> clock@4: 'reg' does not match any of the regexes: 'pinctrl-[0-9]+'
+>
+> This could be fixed by avoiding a simple-bus for the fixed clocks.
+
+Right, they are not a bus.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
