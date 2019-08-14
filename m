@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CAFD8CF07
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 11:07:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6B408CF11
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 11:09:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=25tQ/oDSO3bZMtRAgkbIYkvnC0EdUR4jmo4AuRJVsog=; b=JedNFyKAIxA4bD
-	L2xwLCujhz/G32a+8AeOa16cuPdWokTueNJdM5WfV94Ds+drEggJfFPLYycP1CCmxCkLw0rzqRZLQ
-	gh3OUFBcQrW0E7FcV0tLTApm2Fiq03tYxyhaqmhdywsh/Qr0QeosuIKBvZMgtlNtAJMZ7KNb0GCeE
-	SiPgh3bP6yDEmze/o/SV0/oDvW7RUEjOVb10jpIUOByaPaBmarx7xH2hupdokw3nYpSp875uAwVEw
-	qNmRmfENXC0oj39sX0ecQaF/dkJxX1okm4Ucu9aB+CRQwMUs6nClH6mLdWVeF+efAiPEX1HPDGlh1
-	bDUrMgqwthdh2KXkRX3Q==;
+	List-Owner; bh=rSICoMhPbMv0cvdDUG1rVtX6d+iZmI8Qxgm6BYPzjOY=; b=W4K5WK6i5Mlhrf
+	X9HjzMu3N/Z1DI9q4zz6P9O4JbQtj1FwOVGxeIhquWPcaGtuensw4uJJPTqb+t8Xw0maE2uxV/NBj
+	i4GQaG1Y+U9Fs4bPiPP023Lr0XKY2GfJlXMA+PR41v8RnO4PY6PBPsMTiBQSmh7wHj6C0uhb9HcQJ
+	iZBA3qjBWJkKZbn2FKpHBBxUQO6GfCs2GCmUgzU8qnTm4QU2QeDOStCX3JntbolEvF/rGV2DUSms6
+	UdfGOUG2xhhTEjpxNoGXL33vRdyMgBrYN9woY7i9gptYIx+Siv3/2Ko3nf2EO4oP0hV/Z3CPYbb9A
+	vNKnRCcOleK0x+TGuN7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxpFi-00035r-Sb; Wed, 14 Aug 2019 09:07:30 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxpFR-00035U-DR
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 09:07:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E37CB344;
- Wed, 14 Aug 2019 02:07:12 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3E2523F694;
- Wed, 14 Aug 2019 02:07:12 -0700 (PDT)
-Date: Wed, 14 Aug 2019 10:07:10 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 1/3] arm64: constify icache_policy_str[]
-Message-ID: <20190814090709.GK10425@arm.com>
-References: <20190813141639.13476-1-mark.rutland@arm.com>
- <20190813141639.13476-2-mark.rutland@arm.com>
+	id 1hxpHc-0003ZG-Px; Wed, 14 Aug 2019 09:09:28 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxpHK-0003YP-Vt
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 09:09:12 +0000
+Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
+ [92.137.69.152])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 30601200010;
+ Wed, 14 Aug 2019 09:08:58 +0000 (UTC)
+Date: Wed, 14 Aug 2019 11:08:58 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Nicolas.Ferre@microchip.com
+Subject: Re: [PATCH] MAINTAINERS: Update path to tcb_clksrc.c
+Message-ID: <20190814090858.GF3600@piout.net>
+References: <7cd8d12f59bcacd18a78f599b46dac555f7f16c0.camel@perches.com>
+ <20190813061046.15712-1-efremov@linux.com>
+ <efb86032-7547-dbc1-19ac-11dc9aff1521@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190813141639.13476-2-mark.rutland@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <efb86032-7547-dbc1-19ac-11dc9aff1521@microchip.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_020713_497834_79211402 
-X-CRM114-Status: GOOD (  15.30  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190814_020911_175118_A4A67CCB 
+X-CRM114-Status: GOOD (  17.56  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,48 +63,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will.deacon@arm.com,
+Cc: joe@perches.com, Ludovic.Desroches@microchip.com,
+ linux-kernel@vger.kernel.org, efremov@linux.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 03:16:37PM +0100, Mark Rutland wrote:
-> The icache_policy_str[] array contains compile-time constant data, and
-> is never intentionally modified, so let's mark it as const.
+On 13/08/2019 08:11:23+0000, Nicolas Ferre wrote:
+> On 13/08/2019 at 08:10, Denis Efremov wrote:
+> > Update MAINTAINERS record to reflect the filename change
+> > from tcb_clksrc.c to timer-atmel-tcb.c
+> > 
+> > Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
 > 
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> ---
->  arch/arm64/kernel/cpuinfo.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+> But, while you're at it, I would add another line: see below...
 > 
-> diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
-> index 876055e37352..05933c065732 100644
-> --- a/arch/arm64/kernel/cpuinfo.c
-> +++ b/arch/arm64/kernel/cpuinfo.c
-> @@ -33,7 +33,7 @@
->  DEFINE_PER_CPU(struct cpuinfo_arm64, cpu_data);
->  static struct cpuinfo_arm64 boot_cpu_data;
->  
-> -static char *icache_policy_str[] = {
-> +static const char *icache_policy_str[] = {
+> > Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> > Cc: linux-arm-kernel@lists.infradead.org
+> > Fixes: a7aae768166e ("clocksource/drivers/tcb_clksrc: Rename the file for consistency")
+> > Signed-off-by: Denis Efremov <efremov@linux.com>
+> > ---
+> >   MAINTAINERS | 2 +-
+> >   1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/MAINTAINERS b/MAINTAINERS
+> > index c9ad38a9414f..3ec8154e4630 100644
+> > --- a/MAINTAINERS
+> > +++ b/MAINTAINERS
+> > @@ -10637,7 +10637,7 @@ M:	Nicolas Ferre <nicolas.ferre@microchip.com>
+> 
+> +M:      Alexandre Belloni <alexandre.belloni@bootlin.com>
+> 
+> But Alexandre have to agree, of course.
+> 
+> >   L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+> >   S:	Supported
+> >   F:	drivers/misc/atmel_tclib.c
+> > -F:	drivers/clocksource/tcb_clksrc.c
+> > +F:	drivers/clocksource/timer-atmel-tcb.c
+> >   
+> >   MICROCHIP USBA UDC DRIVER
+> >   M:	Cristian Birsan <cristian.birsan@microchip.com>
+> 
+> We could also remove this entry and mix it with:
+> "ARM/Microchip (AT91) SoC support"
+> 
+> But I prefer to keep it separated like this for various reasons.
+> 
 
-Can this be const char *const ?
+I would simply remove this entry because all the files are already
+matching the SoC entry (it has N: atmel) and atmel_tclib will go away (I
+have a series to do that).
 
-The strings will be in .rodata and can't be modified anyway, but I
-presume we don't modify the array elements either...
+If you want to keep a separate entry, maybe we should then add the
+system timer and pit drivers.
 
->  	[0 ... ICACHE_POLICY_PIPT]	= "RESERVED/UNKNOWN",
->  	[ICACHE_POLICY_VIPT]		= "VIPT",
->  	[ICACHE_POLICY_PIPT]		= "PIPT",
 
-[...]
-
-Cheers
----Dave
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
