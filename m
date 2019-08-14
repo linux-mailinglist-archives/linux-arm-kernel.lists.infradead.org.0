@@ -2,83 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0873B8E067
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 00:13:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BABAE8E064
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 00:13:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ayz0n6mw0ufVU42n9ICXEzcUBvwQX7NvU4BlndA0tWI=; b=MpzBUJETdKZj/T
-	O9u08ROb/he9T1aYvmlLHW1eo2kAT5hnZof8T+Si/lh+HKZr7gdNad3M3P7Zmb1irZiXyhO+8b8kp
-	WY1h+fAu3SK/jfnn2t15l/ahYQS7mdFJwpi+XXwzpk5tN0i6JqyMblzAhZ+haXYPF8eMUT3la84Aw
-	1LoZ+8CEWOSfk3Uu7qBqQEOXPbcEQb+CMWOht7qcGJniJgzDT6xvTwiXnMh2TvZHTGhrog+McdvIb
-	7oMd9Ld1ZKzlTIpW0NK1EU1uJeIV72G2VKAC5uhmQJmj1QJ+iqKZQGtgVAsCQSsjftvOCSjZFpYFS
-	T/vSsrnf+WWO6hRr31VA==;
+	List-Owner; bh=ElXtFqt8a/T/SDkuQFZd6YADr/dw8OEMRpwd9rrJMbM=; b=kXoqSnPePQP46d
+	7ODQwUepPNbwTbu9QPLV6/RBcLjjCYyDTl6qJ6LFvRBDlGXNH4Zilt2+16LDSIA4GnUBUez+OpGBQ
+	oxX5Hm47QFXCCKm1t5uye6wbfdcAvwYEVgKGeh/Z5q4AW0orei4zTMJ9q+nvlkhkVenoxh3Ig2ckD
+	0H2ToE9jzNuQYjfgGGNaXbFBGqcG3aB2FaNDyszCG6qlDswD0jZkXqpSqMUSnib9HVScPpJy8rvqC
+	L24IagOEmUvFIkReMBpNXVdOWmzD9d/0mCoEzbGDAUFy3U20b9dUfK9CtB6i46L05G++t3Oa7H40s
+	il1NAVLNkPfAz45IT6CQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy1WR-0006Sx-7A; Wed, 14 Aug 2019 22:13:35 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hy1Vq-0006BE-JB; Wed, 14 Aug 2019 22:12:58 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy1WD-0006Sb-JO
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 22:13:22 +0000
-Received: by mail-pl1-x642.google.com with SMTP id y8so214549plr.12
+ id 1hy1Ve-0006AY-Jo
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 22:12:47 +0000
+Received: by mail-oi1-x242.google.com with SMTP id o6so297438oic.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 15:13:21 -0700 (PDT)
+ Wed, 14 Aug 2019 15:12:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=o3iTgpB3GXZ+kQcPnDKxJUeeBPOFZQS1HDP+dtSl8iI=;
- b=HEFmOTX7vqz6H06xnoRwJnyjwS4ngqlcblSxxBe9uJf91C2C3l3H3afY81WwkxEetJ
- EbUuQcyViX1xj4UfRyAAAdKQkMJMp+A+qWSGvq1zWUQw8DQ77jCsLpCgcMhfLo6nNVda
- wPT3QzNUctnrmjktXM3EnsOkJ9WFmmfmF6P3JP5768lVtArSlAJdr5XkaQydkdBmUDdH
- uDi58nt19hPwUpCeJaQPKGXa/z2gZnqlXC+ryopFfLScSWgENEVIXSevTZyjazE3ppis
- zLF2GWdAmdB59Sq/EJsbTmRz5IiKtqn37DU/qrZVhnWBWkDLht8AheY3rvNIjk4LdN7S
- 2yNQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=fyqtiLbzf0B7EEuufXwlvVGQQuhpbnOj2sCLQecaeOA=;
+ b=BzFVJ5u6T9n90c7pBUGG2W/PYxhbxig7Uj4ekhFiygJPJOXLLgkQH0CnbSKqfH/8ZC
+ UE2W5h8jX9oSA377C53B1im+o74UWsm+XKOxd6726LqaaWGPDBgxwNhE3mUHX1w1qIC9
+ /nkyM1FFI7mtW+uuEV4QB8p74qCRBZmjT9lb375mw15aVkMx9MqLgfyohNQSZdNXfLzY
+ /lT7HKO0DymhH/Oazl37LYmfVMDy+mAlM3PXmUlF93mCJrk1GCVE92gUFRfHzZnqz4DS
+ PwNk5o/PjFLJHddu4yEUrroPsJC1TR4CVCsGF9vx1u09TgKO+44P+IHGrenLVd9rsZPu
+ Xkbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=o3iTgpB3GXZ+kQcPnDKxJUeeBPOFZQS1HDP+dtSl8iI=;
- b=Z2tbELAFr62/vc6nn/M94ozC6ystyHYzUxFoDYnoGJxy/q0XKKotOOLn1BSlTMSQkn
- NMOjig2iig2DmVlF0FzX0Wj3+k9ejchosSJaN3Zl7xwej9CLvS5pGJIANja8i0aV4XhS
- cHi3iSRRcEHPown4sLLzSchs2muJJ4bqvQgvdfLgrquLuJV2Rd8U+NczmXAEtPYWyeDj
- Ic4Mfw7zT0KnDgg4WyjpOIDOXXc9+dBPuJycMzbczK9F/GRjzKUXBbHxDHCH9OY85V5e
- 9Mr/8ZGud6EelAzfzYm72Hgb+ogHM6830zLIJkzrIOS+HzC/j0Dq+TXpUvAPTOw7C/RH
- EFxA==
-X-Gm-Message-State: APjAAAXtt7ns9DI68MA/1eAfxHnFOFmgL94ddBYfrPaDHqkXXHkluCym
- UNb4xd4WRPhLJO386NTrN5Y=
-X-Google-Smtp-Source: APXvYqyti+vq96Q0pE8Yd5FkzLw83ZjuNfSd6SNA8pgDAWZgNSvONObYFjog77tG3BgdbQT4MUollQ==
-X-Received: by 2002:a17:902:ac87:: with SMTP id
- h7mr1561600plr.36.1565820800768; 
- Wed, 14 Aug 2019 15:13:20 -0700 (PDT)
-Received: from localhost ([100.118.89.196])
- by smtp.gmail.com with ESMTPSA id g1sm633892pgg.27.2019.08.14.15.13.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 14 Aug 2019 15:13:20 -0700 (PDT)
-From: Rob Clark <robdclark@gmail.com>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 4/6] arm: add arch_sync_dma_for_*()
-Date: Wed, 14 Aug 2019 14:59:59 -0700
-Message-Id: <20190814220011.26934-5-robdclark@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190814220011.26934-1-robdclark@gmail.com>
-References: <20190814220011.26934-1-robdclark@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fyqtiLbzf0B7EEuufXwlvVGQQuhpbnOj2sCLQecaeOA=;
+ b=tolDCATj2W7yn7G/DYURMK5/FH4nsE571+fBAVrhxJqUW3I2zOLPDr/bDX7WFklSpb
+ AqkzHbK+MViwLtxgaZNVwSZW5AfOiVGHYgIOLoMsC1oatCvbnM+QorjRgGHJOfuwA+FO
+ TrGondgjUqfrpDYczhKqPdaySh8wJGWcwGF5CHz5lxY4lipmlmXimsmZmAzMDe6Af5cg
+ D+He83N3nRg5BdHOiaHeq/PybdUQCYlDRix3kR30JtzHJJGdThk1JsFa8PhDR9fnAMVc
+ x7972fUD6vSKOjyu3Lgkv7Kh047T6Y+PUfcFM47qeON6+MfsYylzsNaM8qO5uPGJDb/R
+ uFVA==
+X-Gm-Message-State: APjAAAXO+As/omJ1XJ7ATlPYXOySbWRQnD1QVfbgCfCKVjT8Dhs/v0JN
+ qoqpskMmbqUVQwRDsxbqS+6gJjZdqqjD++J/lMc=
+X-Google-Smtp-Source: APXvYqwlvuw12f5lw9fJpzGHCs9IjxCkWVfv0r3UGHD3THhT3ik9lOmV+44RtNITkDQKYXIEMzjTe97zwNxCpTzDqYc=
+X-Received: by 2002:a02:9981:: with SMTP id a1mr1736754jal.17.1565820764529;
+ Wed, 14 Aug 2019 15:12:44 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190814193536.15088-1-andrew.smirnov@gmail.com>
+In-Reply-To: <20190814193536.15088-1-andrew.smirnov@gmail.com>
+From: Chris Healy <cphealy@gmail.com>
+Date: Wed, 14 Aug 2019 15:12:32 -0700
+Message-ID: <CAFXsbZoRhy1OtsybHJQDef09gS1UGBhU8a+ZrF31O1THBGgeCA@mail.gmail.com>
+Subject: Re: [PATCH] ARM: vf610-zii-cfu1: Add node for switch watchdog
+To: Andrey Smirnov <andrew.smirnov@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_151321_642676_B8AF44E2 
-X-CRM114-Status: GOOD (  13.28  )
+X-CRM114-CacheID: sfid-20190814_151246_678981_5557F0AC 
+X-CRM114-Status: GOOD (  13.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robdclark[at]gmail.com)
+ provider (cphealy[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,130 +92,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Wolfram Sang <wsa@the-dreams.de>, Linus Walleij <linus.walleij@linaro.org>,
- "Wolfram Sang \(Renesas\)" <wsa+renesas@sang-engineering.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Christoph Hellwig <hch@lst.de>, Rob Clark <robdclark@chromium.org>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- linux-arm-kernel@lists.infradead.org,
- Vladimir Murzin <vladimir.murzin@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Doug Anderson <armlinux@m.disordat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Vlastimil Babka <vbabka@suse.cz>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- linux-kernel@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
- Souptick Joarder <jrdr.linux@gmail.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>
+Cc: Cory Tusar <cory.tusar@zii.aero>, Fabio Estevam <festevam@gmail.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
+ linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Rob Clark <robdclark@chromium.org>
+Tested-by: Chris Healy <cphealy@gmail.com>
 
-Signed-off-by: Rob Clark <robdclark@chromium.org>
----
- arch/arm/Kconfig                |  2 ++
- arch/arm/mm/dma-mapping-nommu.c | 14 ++++++++++++++
- arch/arm/mm/dma-mapping.c       | 28 ++++++++++++++++++++++++++++
- 3 files changed, 44 insertions(+)
 
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index 33b00579beff..a48a7263a2c1 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -18,6 +18,8 @@ config ARM
- 	select ARCH_HAS_SET_MEMORY
- 	select ARCH_HAS_STRICT_KERNEL_RWX if MMU && !XIP_KERNEL
- 	select ARCH_HAS_STRICT_MODULE_RWX if MMU
-+	select ARCH_HAS_SYNC_DMA_FOR_DEVICE
-+	select ARCH_HAS_SYNC_DMA_FOR_CPU
- 	select ARCH_HAS_TEARDOWN_DMA_OPS if MMU
- 	select ARCH_HAS_TICK_BROADCAST if GENERIC_CLOCKEVENTS_BROADCAST
- 	select ARCH_HAVE_CUSTOM_GPIO_H
-diff --git a/arch/arm/mm/dma-mapping-nommu.c b/arch/arm/mm/dma-mapping-nommu.c
-index 52b82559d99b..4a3df952151f 100644
---- a/arch/arm/mm/dma-mapping-nommu.c
-+++ b/arch/arm/mm/dma-mapping-nommu.c
-@@ -84,6 +84,13 @@ static void __dma_page_cpu_to_dev(phys_addr_t paddr, size_t size,
- 		outer_clean_range(paddr, paddr + size);
- }
- 
-+void arch_sync_dma_for_device(struct device *dev, phys_addr_t paddr,
-+		size_t size, enum dma_data_direction dir)
-+{
-+	__dma_page_cpu_to_dev(paddr, size, dir);
-+}
-+EXPORT_SYMBOL_GPL(arch_sync_dma_for_device);
-+
- static void __dma_page_dev_to_cpu(phys_addr_t paddr, size_t size,
- 				  enum dma_data_direction dir)
- {
-@@ -93,6 +100,13 @@ static void __dma_page_dev_to_cpu(phys_addr_t paddr, size_t size,
- 	}
- }
- 
-+void arch_sync_dma_for_cpu(struct device *dev, phys_addr_t paddr,
-+		size_t size, enum dma_data_direction dir)
-+{
-+	__dma_page_dev_to_cpu(paddr, size, dir);
-+}
-+EXPORT_SYMBOL_GPL(arch_sync_dma_for_cpu);
-+
- static dma_addr_t arm_nommu_dma_map_page(struct device *dev, struct page *page,
- 					 unsigned long offset, size_t size,
- 					 enum dma_data_direction dir,
-diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
-index 6774b03aa405..8ead93196194 100644
---- a/arch/arm/mm/dma-mapping.c
-+++ b/arch/arm/mm/dma-mapping.c
-@@ -979,6 +979,13 @@ static void __dma_page_cpu_to_dev(struct page *page, unsigned long off,
- 	/* FIXME: non-speculating: flush on bidirectional mappings? */
- }
- 
-+void arch_sync_dma_for_device(struct device *dev, phys_addr_t paddr,
-+		size_t size, enum dma_data_direction dir)
-+{
-+	__dma_page_cpu_to_dev(phys_to_page(paddr), paddr % PAGE_SIZE, size, dir);
-+}
-+EXPORT_SYMBOL_GPL(arch_sync_dma_for_device);
-+
- static void __dma_page_dev_to_cpu(struct page *page, unsigned long off,
- 	size_t size, enum dma_data_direction dir)
- {
-@@ -1013,6 +1020,27 @@ static void __dma_page_dev_to_cpu(struct page *page, unsigned long off,
- 	}
- }
- 
-+void arch_sync_dma_for_cpu(struct device *dev, phys_addr_t paddr,
-+		size_t size, enum dma_data_direction dir)
-+{
-+	__dma_page_dev_to_cpu(phys_to_page(paddr), paddr % PAGE_SIZE, size, dir);
-+}
-+EXPORT_SYMBOL_GPL(arch_sync_dma_for_cpu);
-+
-+/*
-+ * arch_dma_{alloc,free} fail-stubs needed to avoid link-errors in dma/direct.c
-+ * (which is not actually used on arch/arm)
-+ */
-+void *arch_dma_alloc(struct device *dev, size_t size, dma_addr_t *dma_handle,
-+		gfp_t flags, unsigned long attrs)
-+{
-+	return NULL;
-+}
-+void arch_dma_free(struct device *dev, size_t size, void *vaddr,
-+		dma_addr_t dma_handle, unsigned long attrs)
-+{
-+}
-+
- /**
-  * arm_dma_map_sg - map a set of SG buffers for streaming mode DMA
-  * @dev: valid struct device pointer, or NULL for ISA and EISA-like devices
--- 
-2.21.0
-
+On Wed, Aug 14, 2019 at 12:35 PM Andrey Smirnov
+<andrew.smirnov@gmail.com> wrote:
+>
+> Add I2C child node for switch watchdog present on CFU1.
+>
+> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+> Signed-off-by: Cory Tusar <cory.tusar@zii.aero>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: Chris Healy <cphealy@gmail.com>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> ---
+>  arch/arm/boot/dts/vf610-zii-cfu1.dts | 19 +++++++++++++++++++
+>  1 file changed, 19 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/vf610-zii-cfu1.dts b/arch/arm/boot/dts/vf610-zii-cfu1.dts
+> index 7267873b5369..18c19c092dd1 100644
+> --- a/arch/arm/boot/dts/vf610-zii-cfu1.dts
+> +++ b/arch/arm/boot/dts/vf610-zii-cfu1.dts
+> @@ -239,6 +239,18 @@
+>         };
+>  };
+>
+> +&i2c1 {
+> +       clock-frequency = <100000>;
+> +       pinctrl-names = "default";
+> +       pinctrl-0 = <&pinctrl_i2c1>;
+> +       status = "okay";
+> +
+> +       watchdog@38 {
+> +               compatible = "zii,rave-wdt";
+> +               reg = <0x38>;
+> +       };
+> +};
+> +
+>  &snvsrtc {
+>         status = "disabled";
+>  };
+> @@ -324,6 +336,13 @@
+>                 >;
+>         };
+>
+> +       pinctrl_i2c1: i2c1grp {
+> +               fsl,pins = <
+> +                       VF610_PAD_PTB16__I2C1_SCL               0x37ff
+> +                       VF610_PAD_PTB17__I2C1_SDA               0x37ff
+> +               >;
+> +       };
+> +
+>         pinctrl_leds_debug: pinctrl-leds-debug {
+>                 fsl,pins = <
+>                         VF610_PAD_PTD3__GPIO_82                 0x31c2
+> --
+> 2.21.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
