@@ -2,53 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C27A18D21B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 13:26:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86BDC8D225
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 13:29:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lAPG7xVKvD9Tv4c0cmEes2kerKU6Y6XGtBbUx7IZgUk=; b=XaWAFucBQNHEBl
-	FPL/i9OT5ya3uPwLn8DZvzXmsVgT8A+aXhTkjeGJsbE+FORMQwwVerdqmTemYvHoR0pYBRRCMsr3g
-	H1yTh69H9FqDCC3Ck7E8UUgwdWQggufZlIYG3EqWsPMUbV8bchlEAeeizxx7h2RqNB9n4XOdQ+gPk
-	NrRNSC1fcQQtM5qQA+tGPEcce1Ivh7xraJc94g0hwSN0+9AvPvXybSoqD2E0a5uS4HOwV5zpjI6fh
-	k55+/TQwVBeEr+mhWdq2/SdyGxuI3h+TpGBUfLvMGmjCuQq0VpN38y6A42XtAKeB/9iR+wYV73tYs
-	xoTBvPrBEQXnLyyWtNEw==;
+	List-Owner; bh=wg5Fae3HvmU7slMJVCZdDfrxkxIbZiC5J7OXLlk0QIg=; b=a08oJwi+qrDWrW
+	d7qauReBI5Zq87ybF6iqRQs/puqLheJlBMdUoiEjt3yt3PhIsThCfYbeuiKaNrd48gYjXQNHtpX+i
+	95Ad5168DQzgaD8OCpMLJDUtMgbiDSi4aWmSi223jlpBGvnMc46D0jQQv7H9T8Bpqd9gC2F9ETxpH
+	wP4cemNx6HXdaR8NmPQji4hlnGp7kglEzIGDo368rwfFPBUa/tIlxUYSTNP1x6aAY4sTAPEIKt0+m
+	14OkN8AD/YiTPqVu2HSrwpeg2c8rMYeLaHqk5nmFKwGZ42rh21Q3AlwCsHh+mhV9WAaEnbuz6kEsn
+	iVVUNVTI6RoVKlZMp6IA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxrQS-0007yS-6h; Wed, 14 Aug 2019 11:26:44 +0000
+	id 1hxrTJ-0008JK-T7; Wed, 14 Aug 2019 11:29:42 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxrQB-0007y3-CZ
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 11:26:28 +0000
+ id 1hxrT6-0008J0-Sq
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 11:29:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2A86828;
- Wed, 14 Aug 2019 04:26:26 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 10E3928;
+ Wed, 14 Aug 2019 04:29:28 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 270AD3F706;
- Wed, 14 Aug 2019 04:26:25 -0700 (PDT)
-Date: Wed, 14 Aug 2019 12:26:23 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D45B3F706;
+ Wed, 14 Aug 2019 04:29:26 -0700 (PDT)
+Date: Wed, 14 Aug 2019 12:29:24 +0100
 From: Mark Rutland <mark.rutland@arm.com>
 To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 3/8] arm64: memory: Rewrite default
- page_to_virt()/virt_to_page()
-Message-ID: <20190814112622.GC17931@lakrids.cambridge.arm.com>
+Subject: Re: [PATCH 0/8] Fix issues with 52-bit kernel virtual addressing
+Message-ID: <20190814112924.GD17931@lakrids.cambridge.arm.com>
 References: <20190813170149.26037-1-will@kernel.org>
- <20190813170149.26037-4-will@kernel.org>
- <20190814093019.GC50688@arrakis.emea.arm.com>
- <20190814094119.4g5lxywwiypxafjb@willie-the-truck>
- <20190814105638.GA17931@lakrids.cambridge.arm.com>
- <20190814111722.r5xomirfanmxcor6@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190814111722.r5xomirfanmxcor6@willie-the-truck>
+In-Reply-To: <20190813170149.26037-1-will@kernel.org>
 User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_042627_472839_E7701FB6 
-X-CRM114-Status: GOOD (  15.41  )
+X-CRM114-CacheID: sfid-20190814_042928_976203_0B51E1D0 
+X-CRM114-Status: GOOD (  14.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,49 +71,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 12:17:22PM +0100, Will Deacon wrote:
-> On Wed, Aug 14, 2019 at 11:56:39AM +0100, Mark Rutland wrote:
-> > On Wed, Aug 14, 2019 at 10:41:19AM +0100, Will Deacon wrote:
-> > > On Wed, Aug 14, 2019 at 10:30:19AM +0100, Catalin Marinas wrote:
-> > > > On Tue, Aug 13, 2019 at 06:01:44PM +0100, Will Deacon wrote:
-> > > > > diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-> > > > > index 47b4dc73b8bf..77074b3a1025 100644
-> > > > > --- a/arch/arm64/include/asm/memory.h
-> > > > > +++ b/arch/arm64/include/asm/memory.h
-> > > > > @@ -313,19 +313,18 @@ static inline void *phys_to_virt(phys_addr_t x)
-> > > > >  #if !defined(CONFIG_SPARSEMEM_VMEMMAP) || defined(CONFIG_DEBUG_VIRTUAL)
-> > > > >  #define virt_to_page(kaddr)	pfn_to_page(__pa(kaddr) >> PAGE_SHIFT)
-> > > > >  #else
-> > > > > -#define __virt_to_pgoff(kaddr)	(((u64)(kaddr) - PAGE_OFFSET) / PAGE_SIZE * sizeof(struct page))
-> > > > > -#define __page_to_voff(kaddr)	(((u64)(kaddr) - VMEMMAP_START) * PAGE_SIZE / sizeof(struct page))
-> > > > > -
-> > > > > -#define page_to_virt(page)	({					\
-> > > > > -	unsigned long __addr =						\
-> > > > > -		((__page_to_voff(page)) + PAGE_OFFSET);			\
-> > > > > -	const void *__addr_tag =					\
-> > > > > -		__tag_set((void *)__addr, page_kasan_tag(page));	\
-> > > > > -	((void *)__addr_tag);						\
-> > > > > +#define page_to_virt(x)	({						\
-> > > > > +	__typeof__(x) __page = x;					\
-> > > > 
-> > > > Why not struct page * directly here?
-> > > 
-> > > I started out with that, but then you have to deal with const struct page *
-> > > as well and it gets pretty messy.
-> > 
-> > What goes wrong if you always use const struct page *__page?
+On Tue, Aug 13, 2019 at 06:01:41PM +0100, Will Deacon wrote:
+> Hi all,
 > 
-> It would probably work, but then I wondered about the possibility of
-> volatile and decided that __typeof__ was cleaner.
+> This patch series addresses some issues with 52-bit kernel VAs reported
+> by Qian Cai and Geert. It's all confined to asm/memory.h and I got a bit
+> carried away cleaning that thing up so the patches get more worthless
+> as you go through the series. Still, I'd like to queue this on top of
+> the 52-bit VA stuff currently sitting in -next.
+> 
+> Although Geert and Steve tested my initial hacks, I dropped the tags
+> because I've split things up and could've easily broken things again.
+> 
+> Cheers,
+> 
+> Will
+> 
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Steve Capper <steve.capper@arm.com>
+> Cc: Qian Cai <cai@lca.pw>
+> Cc: Andrey Konovalov <andreyknvl@google.com>
+> Cc: Geert Uytterhoeven <geert@linux-m68k.org>
 
-Ok, but I'd suggest that volatile struct page * that's never sane to use
-in the first place.
+Other than the comments I've made, for the series:
 
-If you don't want to change this, then no worries -- I just can't
-follow.
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+
+If you want, I can spin a fix / cleanup for the VA_START issues I
+mentioned atop of this series.
 
 Thanks,
 Mark.
+
+> 
+> --->8
+> 
+> Will Deacon (8):
+>   arm64: memory: Fix virt_addr_valid() using __is_lm_address()
+>   arm64: memory: Ensure address tag is masked in conversion macros
+>   arm64: memory: Rewrite default page_to_virt()/virt_to_page()
+>   arm64: memory: Simplify virt_to_page() implementation
+>   arm64: memory: Simplify _VA_START and _PAGE_OFFSET definitions
+>   arm64: memory: Implement __tag_set() as common function
+>   arm64: memory: Add comments to end of non-trivial #ifdef blocks
+>   arm64: memory: Cosmetic cleanups
+> 
+>  arch/arm64/include/asm/memory.h | 89 ++++++++++++++++++++---------------------
+>  1 file changed, 44 insertions(+), 45 deletions(-)
+> 
+> -- 
+> 2.11.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
