@@ -2,72 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BF898CB99
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 08:09:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C9A68CB9D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 08:10:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZsvHS+9WKzvpQnr+IXPNjPIajkxIoxieU3Ud4152rgc=; b=aQ1zp7bkQdt8zS
-	viEUU6lIR4tcv/XWYxewsIiXJ4vhPil8DBFrpeCXFq4l6EE9DEM9VK1r6h0FihU1KJeWCS4vaTqr8
-	GJpre3VKERKOCxIHGyte42Nz9OS4AkoXf0i/0FlG/kmorl9OKCDzj7GH6HB5oJKFpEbAAMx/A8w5i
-	dztyL+KsUaTH0Afgc8DnMzeEX7R1MJtV5jHeKduBnspT28BRe/b/uuYyA+ZdjdB7N2zqRxSZcdvlE
-	p/2ppwSuMsG5vmbfj/tcW6Xroah+3kTHkaynvmwZ8lGFw9iK8HsAYxH1OZ8nwtIEb0ElAT5MhBpw5
-	hrUUQSsrckDaam+QFYzQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RWbfer+TMhyAmGUtqiYo8qST+S2OLniCOnTybMRHZv0=; b=WnMWWS0A2YEhJL
+	sM7HSEf/KwBdG6STSLwJiSZwf4vxcxNpqblxJD37oUZNlB05XxdtE6RhUFXr0gT+ZImt9TFaolMXp
+	gBHa1r5zhs2aOhs7nAOuDyjY1/myj2033BWKR/u2yozDt+RW2S8ZOrT73hdIaFARAqX6HLF/Pf9nn
+	wvUr/2SFuhcjd+ES3p7IdSlh0ldgk0dEYyKQ60S5hCZBykJ54Hs4dRb+vBJw1MxbbuN72DYIUpaS/
+	yuLJ4kUO/jzXFd8ITw1e1jgKxPF4XNZC+Xg8/8/fqgSXyVxYMF1hkw/v2rhOZjRo73NI7K2ZDxZMc
+	PtiJzmbQsJCY6fcYgxgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxmTY-0008E7-3T; Wed, 14 Aug 2019 06:09:36 +0000
+	id 1hxmTz-000063-2j; Wed, 14 Aug 2019 06:10:03 +0000
 Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxmSx-0008DJ-JH
+ id 1hxmSy-0008DR-E6
  for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 06:09:01 +0000
-Received: by mail-lf1-x142.google.com with SMTP id b17so78468048lff.7
+Received: by mail-lf1-x142.google.com with SMTP id h28so78398300lfj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 13 Aug 2019 23:08:58 -0700 (PDT)
+ Tue, 13 Aug 2019 23:09:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vSksoEM6AOP7H4nx5slyJOwVx6G+Lfd4yTDhKXFI4kw=;
- b=Of6jkP71r4l9hIWGhjXEn6k3ZQXEbpaIaO3H210UOh4VYtJCUbtF5QhSlMuKHIEWiF
- PPxk4tArZlRxJ4MWvamV/A6gUDEmTLgaMLTAeX+/oeNbUnGIeHxfJcr8CZg2y3Kjad0q
- t9VO5xOqidl9/XWlGmNmmLWvK2UO+1wDsI6BK4jRzJdgbDMFGaGkqmXNF8Ah0De7S8Hk
- tCujzldHtTcr4Se4O1SKV61TCZG7M71GzDoXhDMgIej8v5mywFfBi+LTACNiVPh+3bQh
- OEBwfx0fzGE6wsRVJlcTUy1/fBTbe/L53aY/QPzWikBip14hwF3Eugg4Ng7LW+kA6OCm
- Ebig==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=WcXLpkWRNvSxcqtatiiekWehZjraN19gKJu3w8caFTE=;
+ b=k+iVAlO1Ic0+XyC1XvdM9+B5qmVcF4DbIhOV66/zc6fLSEACgC8aDdct29YKugVIx0
+ qrHZOY9Kerz6/msxIrbCmYxJLdDN/WAUFKPe6e4mmVeNZRA2PF3G6FG5ozyyQOGlP29J
+ 21Y7qFUcumZe8ICuj/hcmK+5CMBcmMj19c4eGbW3FDTvEycMD99NEoXzIONsjoOnFf5w
+ yl4q/TdHBNaMg33U4ElrAs3H0IsacPH2G5SXug//bAXCcnd6wWrliaA5cBRBBru2ClqC
+ scIOuz7SOPceYpELkdPmDdPJtJZ03vZDZxRoyP3+sR91cCTKTivYkKZdQXLxkQdIjCif
+ DI6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vSksoEM6AOP7H4nx5slyJOwVx6G+Lfd4yTDhKXFI4kw=;
- b=daaHmatkfASEFcNnJRLHh0kp5mblclMlb3TZOdQtgSovl4o7iBUO1IciBvq9qKkwpc
- HjlIQ2MHXnOfkRE4gZ0kW2SBsijytLgO3gf5h8BQl48THudANS+ki64CAIORuRSmgtFQ
- wCN5p0jETpvGAyB3YLKRDQMDMaE6rA2el1+Zsj5kKeQEhfDzRp1TLsY9ZME0GEqHtAmz
- fSv46bxjVA21RynBCM6CgCJPBywZ2JzDGdmizH7Tb1Ve5QDUUkRGVAq7o1Jp4RGm8kWt
- g0I8YcsD25A5FJ+ZrG5V1OTxDBBoch23qigxNhQ1Cgy9gFfTBDu9L2Mv7hyeUClh7eAa
- Sx5g==
-X-Gm-Message-State: APjAAAXJgz4xZnRHFIkzy/ei+QdDGjcKi1fPeVqTm9PDku9mhxOk/Nrc
- QprXmkQ63rI0aQnH/mEv6Xo=
-X-Google-Smtp-Source: APXvYqzDEhoiObAivBRlNhvLf+Jr5rb2KVMNEytoFIqeDJzvNkvCX+VS8HpTMDqFXbrqfHV7pZRBgg==
-X-Received: by 2002:a19:c1cc:: with SMTP id r195mr24200422lff.95.1565762936954; 
- Tue, 13 Aug 2019 23:08:56 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=WcXLpkWRNvSxcqtatiiekWehZjraN19gKJu3w8caFTE=;
+ b=Em/+DCf4QPqvJkGLPy+AyZxH/KeiObLsbWJihuTrvsXdg3sZLoQWHoAdRgSllaJmvP
+ UwhyRo8XET7pVJfnhPGUfxs+S15jpPmgGGOQSXk7YXEGbefKbx7QphA0Q86j8o4BotiS
+ ioUaJyjuVF9xgrJXjHb3u8xGuCbrLQzBBq31XT81O0+rPl7aZlVOke6zoZ7Gp9K/MOGU
+ JBe/3AnsHgS8ry3cyME9XgBfKUyfWmaI5RuBDEn0117nxCKrEq+mzHXDDkKnU0ZnkaMp
+ HRqh0iMmvd/bKPbvTaZ1MpLu/2cs1j8B8zJ2cnhtlMzqqkXJjUya0JnKj1rvRao/Pjjl
+ VoTw==
+X-Gm-Message-State: APjAAAWOg8xpXqmJnRWFo1qX0Gs6t/uh476HKnYRNG3QQ59ozU2BRQnS
+ HB6TMnh2WBF8Kx4v1SyqfvqkmbwY
+X-Google-Smtp-Source: APXvYqwmMWklUafWvExc8ln+h6QK3icrAo1rccIWwK8zH40gwWfhjO8Dt20C+Ik4Ie+hiUktsf4BtQ==
+X-Received: by 2002:ac2:54a3:: with SMTP id w3mr25207168lfk.169.1565762939167; 
+ Tue, 13 Aug 2019 23:08:59 -0700 (PDT)
 Received: from localhost.localdomain (c213-102-74-69.bredband.comhem.se.
  [213.102.74.69])
- by smtp.gmail.com with ESMTPSA id s10sm3124235ljm.35.2019.08.13.23.08.54
+ by smtp.gmail.com with ESMTPSA id s10sm3124235ljm.35.2019.08.13.23.08.57
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 13 Aug 2019 23:08:55 -0700 (PDT)
+ Tue, 13 Aug 2019 23:08:58 -0700 (PDT)
 From: codekipper@gmail.com
 To: maxime.ripard@free-electrons.com, wens@csie.org,
  linux-sunxi@googlegroups.com
-Subject: [PATCH v5 00/15] ASoC: sun4i-i2s: Updates to the driver
-Date: Wed, 14 Aug 2019 08:08:39 +0200
-Message-Id: <20190814060854.26345-1-codekipper@gmail.com>
+Subject: [PATCH v5 01/15] ASoC: sun4i-i2s: Add regmap field to sign extend
+ sample
+Date: Wed, 14 Aug 2019 08:08:40 +0200
+Message-Id: <20190814060854.26345-2-codekipper@gmail.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190814060854.26345-1-codekipper@gmail.com>
+References: <20190814060854.26345-1-codekipper@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_230859_663559_E8AFFAC3 
-X-CRM114-Status: GOOD (  22.36  )
+X-CRM114-CacheID: sfid-20190813_230900_493691_3F4B5C4A 
+X-CRM114-Status: GOOD (  13.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -108,105 +111,104 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marcus Cooper <codekipper@gmail.com>
 
-Hi All,
+On the newer SoCs such as the H3 and A64 this is set by default
+to transfer a 0 after each sample in each slot. However the A10
+and A20 SoCs that this driver was developed on had a default
+setting where it padded the audio gain with zeros.
 
-here is a patch series to add some improvements to the sun4i-i2s driver
-found whilst getting slave clocking and hdmi audio working on the newer
-SoCs. As the LibreELEC project is progressing extremely well then there
-has been some activity getting H6 SoC support with surround sound
-working and these changes are also included.
+This isn't a problem whilst we have only support for 16bit audio
+but with larger sample resolution rates in the pipeline then SEXT
+bits should be cleared so that they also pad at the LSB. Without
+this the audio gets distorted.
 
-The functionality included with the new patch set has been extended to
-cover more sample resolutions, multi-lane data output for HDMI audio
-and some bug fixes that have been discovered along the way. I have
-changed some of the original reg fields into function calls as this made
-it easier to setup for multi-channel audio especially across different
-SoCs.
-
-I can see more usage of the tdm property since I last attempted to push
-these patches and the examples currently in mainline sort of the opposite
-to what I'm trying to achieve. When we first started looking at the i2s
-driver, the codecs that we were using allowed for the frame width to be
-determined based on the sampling resolution but in most use cases it
-seems that a fixed width is required(my highest priority should be to get
-HDMI audio support in). We're using the tdm property to override the old
-way to calculate the frame width. What I've seen in what has already been
-mainlined is that the i2s driver has a frame width that is fixed to 32
-bits and this can be overridden using the tdm property.
-
-My test branch for this can be found at
-https://github.com/codekipper/linux-sunxi/commits/upstream-i2s , I've been
-using a Pine64 to test with; validating the new SoC block with HDMI audio
-and ensuring that I've not broken the old block by making sure that the audio
-codec still works. If we able to get the first three patches delivered then
-that is enough for HDMI audio support on the newer SoCs(H3, A64 etc).
-
-I still need to investigate the FIFO syncing issues which i've not had a
-chance to change or address the concerns that broonie and wens brought up.
-This change has been moved to the top of the patch stack. I would also like
-to make the multi-channel audio and audio mapping more configurable via the
-device tree. Currently what is implemented suites our current needs.
-
-BR,
-CK
-
+Signed-off-by: Marcus Cooper <codekipper@gmail.com>
 ---
-v5 changes compared to v4 are:
-- removed delivered patches.
-- Added more details to commit messages.
-- replaced some reg fields with function calls.
-- Added DSP_A and DSP_B support for H3 and later SoCs.
-- Added support for the Allwinner H6.
+ sound/soc/sunxi/sun4i-i2s.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
-v4 changes compared to v3 are:
-- Moved patches around so that the more controversial of patches are
-  at the top of the stack.
-- Added more details to commit messages.
-- Fixed 20bit audio PCM format to use 4 bytes.
-- Reduced number of flags used to indicate a new SoC.
-
-v3 changes compared to v2 are:
- - added back slave mode changes
- - added back the use of tdm properties
- - changes to regmap and caching
- - removed loopback functionality
- - fixes to the channel offset mask
-
-v2 changes compared to v1 are:
- - removed slave mode changes which didn't set mclk and bclk div.
- - removed use of tdm and now use a dedicated property.
- - fix commit message to better explain reason for sign extending
- - add divider calculations for newer SoCs.
- - add support for multi-lane i2s data output.
- - add support for 20, 24 and 32 bit samples.
- - add loopback property so blocks can be tested without a codec.
-
-
----
-Jernej Skrabec (3):
-  clk: sunxi-ng: h6: Allow I2S to change parent rate
-  dt-bindings: ASoC: sun4i-i2s: Add H6 compatible
-  ASoC: sun4i-i2s: Add support for H6 I2S
-
-Marcus Cooper (12):
-  ASoC: sun4i-i2s: Add regmap field to sign extend sample
-  ASoC: sun4i-i2s: Add set_tdm_slot functionality
-  ASoC: sun4i-i2s: Correct divider calculations
-  ASoC: sun4i-i2s: Support more formats on newer SoCs
-  ASoC: sun4i-i2s: Add functions for RX and TX channel offsets
-  ASoC: sun4i-i2s: Add functions for RX and TX channel enables
-  ASoC: sun4i-i2s: Add functions for RX and TX channel selects
-  ASoC: sun4i-i2s: Add functions for channel mapping
-  ASoC: sun4i-i2s: Add multi-lane functionality
-  ASoC: sun4i-i2s: Add multichannel functionality
-  ASoc: sun4i-i2s: Add 20, 24 and 32 bit support
-  ASoC: sun4i-i2s: Adjust regmap settings
-
- .../sound/allwinner,sun4i-a10-i2s.yaml        |   2 +
- drivers/clk/sunxi-ng/ccu-sun50i-h6.c          |   8 +-
- sound/soc/sunxi/sun4i-i2s.c                   | 690 ++++++++++++++----
- 3 files changed, 542 insertions(+), 158 deletions(-)
-
+diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+index 793457394efe..8201334a059b 100644
+--- a/sound/soc/sunxi/sun4i-i2s.c
++++ b/sound/soc/sunxi/sun4i-i2s.c
+@@ -135,6 +135,7 @@ struct sun4i_i2s;
+  * @field_fmt_bclk: regmap field to set clk polarity.
+  * @field_fmt_lrclk: regmap field to set frame polarity.
+  * @field_fmt_mode: regmap field to set the operational mode.
++ * @field_fmt_sext: regmap field to set the sign extension.
+  * @field_txchanmap: location of the tx channel mapping register.
+  * @field_rxchanmap: location of the rx channel mapping register.
+  * @field_txchansel: location of the tx channel select bit fields.
+@@ -159,6 +160,7 @@ struct sun4i_i2s_quirks {
+ 	struct reg_field		field_fmt_bclk;
+ 	struct reg_field		field_fmt_lrclk;
+ 	struct reg_field		field_fmt_mode;
++	struct reg_field		field_fmt_sext;
+ 	struct reg_field		field_txchanmap;
+ 	struct reg_field		field_rxchanmap;
+ 	struct reg_field		field_txchansel;
+@@ -186,6 +188,7 @@ struct sun4i_i2s {
+ 	struct regmap_field	*field_fmt_bclk;
+ 	struct regmap_field	*field_fmt_lrclk;
+ 	struct regmap_field	*field_fmt_mode;
++	struct regmap_field	*field_fmt_sext;
+ 	struct regmap_field	*field_txchanmap;
+ 	struct regmap_field	*field_rxchanmap;
+ 	struct regmap_field	*field_txchansel;
+@@ -345,6 +348,9 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+ 				   SUN8I_I2S_FMT0_LRCK_PERIOD_MASK,
+ 				   SUN8I_I2S_FMT0_LRCK_PERIOD(32));
+ 
++	/* Set sign extension to pad out LSB with 0 */
++	regmap_field_write(i2s->field_fmt_sext, 0);
++
+ 	return 0;
+ }
+ 
+@@ -917,6 +923,7 @@ static const struct sun4i_i2s_quirks sun4i_a10_i2s_quirks = {
+ 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
+ 	.has_slave_select_bit	= true,
+ 	.field_fmt_mode		= REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 1),
++	.field_fmt_sext		= REG_FIELD(SUN4I_I2S_FMT1_REG, 8, 8),
+ 	.field_txchanmap	= REG_FIELD(SUN4I_I2S_TX_CHAN_MAP_REG, 0, 31),
+ 	.field_rxchanmap	= REG_FIELD(SUN4I_I2S_RX_CHAN_MAP_REG, 0, 31),
+ 	.field_txchansel	= REG_FIELD(SUN4I_I2S_TX_CHAN_SEL_REG, 0, 2),
+@@ -936,6 +943,7 @@ static const struct sun4i_i2s_quirks sun6i_a31_i2s_quirks = {
+ 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
+ 	.has_slave_select_bit	= true,
+ 	.field_fmt_mode		= REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 1),
++	.field_fmt_sext		= REG_FIELD(SUN4I_I2S_FMT1_REG, 8, 8),
+ 	.field_txchanmap	= REG_FIELD(SUN4I_I2S_TX_CHAN_MAP_REG, 0, 31),
+ 	.field_rxchanmap	= REG_FIELD(SUN4I_I2S_RX_CHAN_MAP_REG, 0, 31),
+ 	.field_txchansel	= REG_FIELD(SUN4I_I2S_TX_CHAN_SEL_REG, 0, 2),
+@@ -979,6 +987,7 @@ static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
+ 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
+ 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 19, 19),
+ 	.field_fmt_mode		= REG_FIELD(SUN4I_I2S_CTRL_REG, 4, 5),
++	.field_fmt_sext		= REG_FIELD(SUN4I_I2S_FMT1_REG, 4, 5),
+ 	.field_txchanmap	= REG_FIELD(SUN8I_I2S_TX_CHAN_MAP_REG, 0, 31),
+ 	.field_rxchanmap	= REG_FIELD(SUN8I_I2S_RX_CHAN_MAP_REG, 0, 31),
+ 	.field_txchansel	= REG_FIELD(SUN8I_I2S_TX_CHAN_SEL_REG, 0, 2),
+@@ -998,6 +1007,7 @@ static const struct sun4i_i2s_quirks sun50i_a64_codec_i2s_quirks = {
+ 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 6, 6),
+ 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
+ 	.field_fmt_mode		= REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 1),
++	.field_fmt_sext		= REG_FIELD(SUN4I_I2S_FMT1_REG, 8, 8),
+ 	.field_txchanmap	= REG_FIELD(SUN4I_I2S_TX_CHAN_MAP_REG, 0, 31),
+ 	.field_rxchanmap	= REG_FIELD(SUN4I_I2S_RX_CHAN_MAP_REG, 0, 31),
+ 	.field_txchansel	= REG_FIELD(SUN4I_I2S_TX_CHAN_SEL_REG, 0, 2),
+@@ -1045,6 +1055,12 @@ static int sun4i_i2s_init_regmap_fields(struct device *dev,
+ 	if (IS_ERR(i2s->field_fmt_mode))
+ 		return PTR_ERR(i2s->field_fmt_mode);
+ 
++	i2s->field_fmt_sext =
++			devm_regmap_field_alloc(dev, i2s->regmap,
++						i2s->variant->field_fmt_sext);
++	if (IS_ERR(i2s->field_fmt_sext))
++		return PTR_ERR(i2s->field_fmt_sext);
++
+ 	i2s->field_txchanmap =
+ 			devm_regmap_field_alloc(dev, i2s->regmap,
+ 						i2s->variant->field_txchanmap);
 -- 
 2.22.0
 
