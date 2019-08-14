@@ -2,89 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04B298D129
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:46:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41D598D143
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:48:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SB5PORG5dMnh+4CGTILiloYHfni4yxMnXULREFn4kh0=; b=jtg/VLkta73ZGU
-	v5jn4cM/MbecwIold6QCKM6P3x7oAgg9uZjU7BZe6Xxt2b0Fi79yPVc82vWr8Y1rGZn1nXYrkceGs
-	Bet4RWNdYyXpJdvJuctSdrOnalACUIbvZtW1AZyfTmXq4ItfV/qjpG7ro6duChhgHSUsn0hJXSV8x
-	HD91j4KHKyWIDX/jT4W2+jZo9L0R8JOdw+x3/nli2s7ETeLm14UMB1gM6NjAmHmm0kNAQ12iMJoAW
-	1rhr0VZ41HgkEmXp2xDDZeOxuT44MQfJH0jGv0liBQ6hJuqLpFTLtYucD83uXsTImdV/qwquCGQcL
-	5fk6Z3elzGLf5xZ1oGFQ==;
+	List-Owner; bh=uvXUGRsZZhrxDGmeLOLAEUkQWOdIeUp/JziAtLTGeS8=; b=XNl1gjZD52BrIu
+	gAEq+ZW+NGoBY4QDU0lBrVnpxHVm/yNuBcaQ5+AAj5D2UPUbmRdG1VNvQKyrcxeYc2hG8YXPsxq3m
+	oaUd7ZDIDTWk4EGq/pXXiLCF424WI23JtSAjXCiAc+X/xI+hyPKM3R5ZL0PnI4dGQ96wemUkcyBx0
+	DzFSDJuDpdG3BGjvwZ5IdJw13YLH+kIqBrXO+KMK65uEkGNyS3J039biOfQePCekz0arRcn5LDRwX
+	eF5rMZbjz1EnTrmsZET+uj4tdeDmHe1j6uujw51h784ELLPBFuARCpQqq8nzPPKKmprdzrW29/5SZ
+	xPGtCsW9acj9Bnb4IUzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxqnV-00031N-JI; Wed, 14 Aug 2019 10:46:29 +0000
-Received: from mail-vk1-xa49.google.com ([2607:f8b0:4864:20::a49])
+	id 1hxqpn-0003WP-SK; Wed, 14 Aug 2019 10:48:51 +0000
+Received: from mail-qk1-f196.google.com ([209.85.222.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxqnP-0002zM-Gj
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 10:46:24 +0000
-Received: by mail-vk1-xa49.google.com with SMTP id s80so5417730vkb.17
+ id 1hxqpg-0003VP-EO
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 10:48:45 +0000
+Received: by mail-qk1-f196.google.com with SMTP id m10so6917883qkk.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 03:46:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=4SGVKzSfOWWb5eHKsBAlwwo8FxZigEPwWxwM+lh0QRU=;
- b=jsibvCEaVrpw/TIVu7voxbDfejQBHrmB5WikoOLqMXW3Sz6KSshq9AHg5uJF+51H7A
- BzZGy+I1w9PPt7wVhSUK1mLfrAROtdLA6BauC8IvBF3UYhGVr/xbBxog/ugoCPM08jgm
- RMlTYL2a2K6mkw858Ip783T1xBDXOaH3+AcaRHMUV7TcYiCYF6fTPu7GjLFmxSHARTgm
- LedOl5171OM4hR+KhMB2EWKKFvjnL99MoEryuXx36fhWtPGML6nkft+ugutYtG9IS063
- f74pWb3nL7BZ1SXUsllZ71l9xdLWb1j9bQeDEa5Oba66jqEZ8cwGCnOWBlCxSYXjQBAe
- Eq7Q==
+ Wed, 14 Aug 2019 03:48:44 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=4SGVKzSfOWWb5eHKsBAlwwo8FxZigEPwWxwM+lh0QRU=;
- b=tIZkryEc2E2+DG8fpoCsQbLdDH29xpYovDs3L7OFJDgU1Fj6A2vhNCjIeEuZ8OGgm5
- VeBrBYEsz9iAyRFTX0UF7OtMxsuCP9Zu3Nw0RAeqLEg3fIDORtri5gETZij+1IXjCx+h
- oezsOPQ5/iKvtsMVE7D8uEeVs3PSAY9xxrHbSR3FwJf4yztmg07XDhRZxlKLXJoQSYb2
- E4dtvuuAnpHzHIs6DAG4DQJjKhoPbUdR/6vKNh3dltEf9ydvQ4iL28wv0yYYEgYwqnkG
- bbJpWW4p56uGQfOlutUPjG0mqiQCgRJywUSdDRT6RJ0/wArYdCZgZ8gPrx4otTaaEMmR
- smbA==
-X-Gm-Message-State: APjAAAUe8ebjVkkfQZCHxiuYgHgQ9aSXKqQ0bJ13ktLsrT+Xqgu2Rkf6
- Z45KYTddqFCGbiIwM2qhkU4UOWoHpkY=
-X-Google-Smtp-Source: APXvYqwXZ7fmlU6P4H/oUbMNN/nO/AXuHUc6uhtW6sQQPOnLTG3uAvcrMDgfHUcNa4GJlUXADTntNKvmw/Q=
-X-Received: by 2002:a1f:7c0e:: with SMTP id x14mr6828024vkc.0.1565779581300;
- Wed, 14 Aug 2019 03:46:21 -0700 (PDT)
-Date: Wed, 14 Aug 2019 12:45:07 +0200
-In-Reply-To: <20190814104520.6001-1-darekm@google.com>
-Message-Id: <20190814104520.6001-10-darekm@google.com>
-Mime-Version: 1.0
-References: <20190814104520.6001-1-darekm@google.com>
-X-Mailer: git-send-email 2.23.0.rc1.153.gdeed80330f-goog
-Subject: [PATCH v7 9/9] drm: exynos: exynos_hdmi: use
- cec_notifier_conn_(un)register
-From: Dariusz Marcinkiewicz <darekm@google.com>
-To: dri-devel@lists.freedesktop.org, linux-media@vger.kernel.org, 
- hverkuil-cisco@xs4all.nl
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=6Pd2kynJ3XCWkX4RKcVEYfgPLi/9H/DDd0NVl7yQPeo=;
+ b=rpspFc1H7HmSVNFuho7fSv1i66JMPWyjsC5QowgUH/K7a3qF63NLqIgDlJIoaFJq/n
+ N3F9Nku7z9uEGghgsm98MhofHZaXFSBxeQbVI44/s0vsIcB4EhL1Nh6PzJPaoiSfWRGK
+ tdhqcB4vciAfG9D2d3QALs0TvXi8QgsEiV3Y7CBATZtrRfnnuxFYZ8ZbBVMO36ja2uDN
+ zjxgzj9jRFCEIlu4ra+AuKH2IIlUUtPItOfp0SFaYv8/u7Yg2QmNsdgP3t0NeUfGNUkq
+ 21SvZ/QTz0TYoehev9JV3uXGG5yeYvpwy45s9dLRSB2WNHpOTHJImd6vUHjTdFVALX+H
+ QIIg==
+X-Gm-Message-State: APjAAAVjfOXoRC5UA1gZR/ElwO1DeMGYHaAKWsOonQHTzyFkVUCCFkX2
+ tHwY5dZ8XeSbBgfOVOhE/p2MdmTPT8SyZQ/+z+c=
+X-Google-Smtp-Source: APXvYqzJchKTdX84186eS/GRemJU2ycIuCn2KmHcwgWMevAGnRcm51YC1Y0PGo9zYEARmcpYhVr0785iqWnXPMYbu7s=
+X-Received: by 2002:a37:4ac3:: with SMTP id
+ x186mr36177300qka.138.1565779720761; 
+ Wed, 14 Aug 2019 03:48:40 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190809162956.488941-1-arnd@arndb.de>
+ <20190809163334.489360-1-arnd@arndb.de>
+ <CAA9_cmdDbBm0ookyqGJMcyLVFHkYHuR3mEeawQKS2UqYJoWWaQ@mail.gmail.com>
+ <20190812094456.GI10598@jirafa.cyrius.com>
+ <CACRpkdao8LF8g5qi_h+9BT9cHwmB4OadabkdGfP0sEFeLbmiLw@mail.gmail.com>
+In-Reply-To: <CACRpkdao8LF8g5qi_h+9BT9cHwmB4OadabkdGfP0sEFeLbmiLw@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 14 Aug 2019 12:48:23 +0200
+Message-ID: <CAK8P3a3Jtc-hgP+st=oDUF2hWkLK7CCM461YSA2ks3dqcv-W7g@mail.gmail.com>
+Subject: Re: [PATCH 1/7] [RFC] ARM: remove Intel iop33x and iop13xx support
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_034623_558344_D08B0D19 
-X-CRM114-Status: GOOD (  15.11  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20190814_034844_485696_5CBB7A7A 
+X-CRM114-Status: GOOD (  15.77  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a49 listed in]
- [list.dnswl.org]
+ no trust [209.85.222.196 listed in list.dnswl.org]
+ -0.2 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,132 +86,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
- David Airlie <airlied@linux.ie>, Seung-Woo Kim <sw0312.kim@samsung.com>,
- linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Inki Dae <inki.dae@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>,
- Kukjin Kim <kgene@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Dariusz Marcinkiewicz <darekm@google.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Peter Teichmann <lists@peter-teichmann.de>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, soc@kernel.org,
+ linux-i2c <linux-i2c@vger.kernel.org>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, Martin Michlmayr <tbm@cyrius.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the new cec_notifier_conn_(un)register() functions to
-(un)register the notifier for the HDMI connector, and fill in
-the cec_connector_info.
+On Wed, Aug 14, 2019 at 10:36 AM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> On Mon, Aug 12, 2019 at 11:45 AM Martin Michlmayr <tbm@cyrius.com> wrote:
+>
+> > As Arnd points out, Debian used to have support for various iop32x
+> > devices.  While Debian hasn't supported iop32x in a number of years,
+> > these devices are still usable and in use (RMK being a prime example).
+>
+> I suppose it could be a good idea to add support for iop32x to
+> OpenWrt and/or OpenEmbedded, both of which support some
+> pretty constrained systems. I am personally using these
+> distributions to support elder ARM hardware these days.
 
-Changes since v2:
-	- removed unnecessary call to invalidate phys address before
-	deregistering the notifier,
-	- use cec_notifier_phys_addr_invalidate instead of setting
-	invalid address on a notifier.
+OpenWRT also had support in the past and dropped it around the
+same time as Debian. The way I understand it, a couple of platforms
+including iop32x were moved out of the main openwrt source tree
+into https://github.com/openwrt/targets/ because there was little
+interest in keeping them running.
 
-Signed-off-by: Dariusz Marcinkiewicz <darekm@google.com>
-Tested-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
----
- drivers/gpu/drm/exynos/exynos_hdmi.c | 31 ++++++++++++++++------------
- 1 file changed, 18 insertions(+), 13 deletions(-)
+The idea was that any remaining users could add that feed to get
+minimal support, but I'm not sure if would still work. In particular,
+iop33x appears to be based on linux-3.3 plus three patches that
+are no longer needed in mainline. Building a mainline kernel without
+those patches may or may not work.
 
-diff --git a/drivers/gpu/drm/exynos/exynos_hdmi.c b/drivers/gpu/drm/exynos/exynos_hdmi.c
-index bc1565f1822ab..d532b468d9af5 100644
---- a/drivers/gpu/drm/exynos/exynos_hdmi.c
-+++ b/drivers/gpu/drm/exynos/exynos_hdmi.c
-@@ -852,6 +852,10 @@ static enum drm_connector_status hdmi_detect(struct drm_connector *connector,
- 
- static void hdmi_connector_destroy(struct drm_connector *connector)
- {
-+	struct hdmi_context *hdata = connector_to_hdmi(connector);
-+
-+	cec_notifier_conn_unregister(hdata->notifier);
-+
- 	drm_connector_unregister(connector);
- 	drm_connector_cleanup(connector);
- }
-@@ -935,6 +939,7 @@ static int hdmi_create_connector(struct drm_encoder *encoder)
- {
- 	struct hdmi_context *hdata = encoder_to_hdmi(encoder);
- 	struct drm_connector *connector = &hdata->connector;
-+	struct cec_connector_info conn_info;
- 	int ret;
- 
- 	connector->interlace_allowed = true;
-@@ -957,6 +962,15 @@ static int hdmi_create_connector(struct drm_encoder *encoder)
- 			DRM_DEV_ERROR(hdata->dev, "Failed to attach bridge\n");
- 	}
- 
-+	cec_fill_conn_info_from_drm(&conn_info, connector);
-+
-+	hdata->notifier = cec_notifier_conn_register(hdata->dev, NULL,
-+						     &conn_info);
-+	if (hdata->notifier == NULL) {
-+		ret = -ENOMEM;
-+		DRM_DEV_ERROR(hdata->dev, "Failed to allocate CEC notifier\n");
-+	}
-+
- 	return ret;
- }
- 
-@@ -1528,8 +1542,8 @@ static void hdmi_disable(struct drm_encoder *encoder)
- 		 */
- 		mutex_unlock(&hdata->mutex);
- 		cancel_delayed_work(&hdata->hotplug_work);
--		cec_notifier_set_phys_addr(hdata->notifier,
--					   CEC_PHYS_ADDR_INVALID);
-+		if (hdata->notifier)
-+			cec_notifier_phys_addr_invalidate(hdata->notifier);
- 		return;
- 	}
- 
-@@ -2006,12 +2020,6 @@ static int hdmi_probe(struct platform_device *pdev)
- 		}
- 	}
- 
--	hdata->notifier = cec_notifier_get(&pdev->dev);
--	if (hdata->notifier == NULL) {
--		ret = -ENOMEM;
--		goto err_hdmiphy;
--	}
--
- 	pm_runtime_enable(dev);
- 
- 	audio_infoframe = &hdata->audio.infoframe;
-@@ -2023,7 +2031,7 @@ static int hdmi_probe(struct platform_device *pdev)
- 
- 	ret = hdmi_register_audio_device(hdata);
- 	if (ret)
--		goto err_notifier_put;
-+		goto err_runtime_disable;
- 
- 	ret = component_add(&pdev->dev, &hdmi_component_ops);
- 	if (ret)
-@@ -2034,8 +2042,7 @@ static int hdmi_probe(struct platform_device *pdev)
- err_unregister_audio:
- 	platform_device_unregister(hdata->audio.pdev);
- 
--err_notifier_put:
--	cec_notifier_put(hdata->notifier);
-+err_runtime_disable:
- 	pm_runtime_disable(dev);
- 
- err_hdmiphy:
-@@ -2054,12 +2061,10 @@ static int hdmi_remove(struct platform_device *pdev)
- 	struct hdmi_context *hdata = platform_get_drvdata(pdev);
- 
- 	cancel_delayed_work_sync(&hdata->hotplug_work);
--	cec_notifier_set_phys_addr(hdata->notifier, CEC_PHYS_ADDR_INVALID);
- 
- 	component_del(&pdev->dev, &hdmi_component_ops);
- 	platform_device_unregister(hdata->audio.pdev);
- 
--	cec_notifier_put(hdata->notifier);
- 	pm_runtime_disable(&pdev->dev);
- 
- 	if (!IS_ERR(hdata->reg_hdmi_en))
--- 
-2.23.0.rc1.153.gdeed80330f-goog
-
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
