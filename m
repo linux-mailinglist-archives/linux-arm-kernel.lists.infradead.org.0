@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34C0B8D55E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 15:49:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 214658D562
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 15:50:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j+ASQIdCLhZhmoep25hXk1oZmB8JhuFndZtWLrvat5Q=; b=O81vy7fBFLU8pR
-	rTUzGAjqV6uPvVJWPNCbJjbcg/rFucTsmzB7rnlC/1sHUM/TAkZVcBsQNknDQZgulDLWqx1NfYak6
-	uCg85iep67ScFoy+OtiA+2OJ9vjOE1+bNxtu77mNTCfRos2T0DpCH9zPqDO235UXWdprvNJs02Lwi
-	5foDCWhrTSDOpKaFqYOUQYLwaQMdNZ/mPDFcUZAetbs/GAwoo++0d/H+MTqzv+nehnE4sRxMvvyNL
-	Q4o3mX+kyGDJy78Y8Vbqyr7YWthhIGjPfWH/cUAXjjRq2cunhNr0GxGydrzsshw98IOgggpA1pExP
-	6flgLDBm64EBf/F15UHg==;
+	List-Owner; bh=tcu1J+Q2YdVBbtrqHOiA2BiCLOSWSRRK6ba4sVH0xcc=; b=kqXfRRLMGRdPKr
+	ZeEtQGsETShnXtU82SZjoUNrQ7/7HEgaRkQDviY0CWfqrnegYW3xGB0GQ1o/cPzps7NC3NfVHCRax
+	BNwvShJ0UOmIGvtmouHrBsnsWdY92PsvB2R/xYGuiiCl2eEIYp9jEIIe2ZnpyCLCtOHNErjl72F2h
+	YaP1egti6QzjryUDiVUiK6FF3s1kIfwqtQx9SCIHfq2gjku41wSPxgksnVNUwyu51AGF6zUjlJD9R
+	WnpIZjhfRrdDWb5We4/i25hsBkBWqEdgpXdmyyMw5tr2eX1JlfWEfl2cgZM6lzVKTYH4wwOh9Db06
+	t4YqKz/Id0E9xAB1C7Lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxtf2-0004Hi-8k; Wed, 14 Aug 2019 13:49:56 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hxtfc-0005wm-OO; Wed, 14 Aug 2019 13:50:32 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxteF-0003lF-Rm
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 13:49:10 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7EDkcHo006975; Wed, 14 Aug 2019 15:49:00 +0200
+ id 1hxteH-0003lE-Pd
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 13:49:11 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x7EDkmsH020415; Wed, 14 Aug 2019 15:49:01 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=slMLXdPQoz50nbYXXEAIS+qRi2WwHJGTB8Kau2ylpuA=;
- b=sKoioVNIJcFY7eIQaZMla6zyN/Zfw4zwH23x5OhAJLLmz4TkrEV/AeaUT+VVHVGKET/I
- 1JD+/GcQULhZCrbqSpXHrSAT/FXjRYrUiiv2Xx2DMdl+z2c0wQd9kFI6lH3VYcoEFyiy
- HCxeaWvwyfX/DYGT3IPysatJXu6Tfhuckl/tkOKSTHBKcY/w/KzmWPIN/8dHDFBxX0Qr
- z9XG6oI05OMcxPkiFpheeCbkhtRPgej1ZoF+WZSa1c5D8IepmfAhvbBemDg3qdkLQhqH
- YDCMJRjuxMPYvgf1HzgPJwb/kTZpIziFLEQ4DxB9crEhjym8TvwALrf3mqHE5hX6L1jN fQ== 
+ bh=NLCHhd75JSHx4e77HaCWpWqj90Jx61g+TCKyoiYVG5s=;
+ b=EZQl9+NnCTTbyhj4Xi9XUab1qkxpKQntfgaOy93bW8RagqNoBMzAU7IAXe8d8hGQLw1t
+ JjMzvV7kQAISTH0FmexBCep66k2iT/tJjWKEzGnSr71wV4bKSEsobwFTuK5LwGHwJj8x
+ aw5mzaozisNjVCjT8exSrxerE+WnWl1aZhS0P5MJeBa8fuO0UpD7iYNbIt31JRr0QOUu
+ an/qFuHsvUR4DJ1HedR0DCJHhF01L1hkxaoP/Z+M+I3PZ7YwX+5D30MCB2OsH4wMFErt
+ ktoM4yysT2/nFng84ww5iiY0Zz6uekAXG1Wca0aCupg+DgM5KSC7xmTaobn21mKw1JtE Ug== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2ub679ue8m-1
+ by mx08-00178001.pphosted.com with ESMTP id 2u9mtm5qk9-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Wed, 14 Aug 2019 15:48:59 +0200
+ Wed, 14 Aug 2019 15:49:01 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 69A2434;
- Wed, 14 Aug 2019 13:48:59 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5A90F2FFE88;
- Wed, 14 Aug 2019 15:48:59 +0200 (CEST)
-Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 14 Aug
- 2019 15:48:59 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8100E31;
+ Wed, 14 Aug 2019 13:49:00 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 760B22FFE88;
+ Wed, 14 Aug 2019 15:49:00 +0200 (CEST)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS21.st.com
+ (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 14 Aug
+ 2019 15:49:00 +0200
 Received: from localhost (10.201.23.19) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 14 Aug 2019 15:48:58
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 14 Aug 2019 15:48:59
  +0200
 From: Hugues Fruchet <hugues.fruchet@st.com>
 To: Alexandre Torgue <alexandre.torgue@st.com>, Mauro Carvalho Chehab
  <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Sakari Ailus
  <sakari.ailus@linux.intel.com>
-Subject: [PATCH v6 2/4] media: stm32-dcmi: trace the supported fourcc/mbus_code
-Date: Wed, 14 Aug 2019 15:48:51 +0200
-Message-ID: <1565790533-10043-3-git-send-email-hugues.fruchet@st.com>
+Subject: [PATCH v6 3/4] media: stm32-dcmi: add media controller support
+Date: Wed, 14 Aug 2019 15:48:52 +0200
+Message-ID: <1565790533-10043-4-git-send-email-hugues.fruchet@st.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1565790533-10043-1-git-send-email-hugues.fruchet@st.com>
 References: <1565790533-10043-1-git-send-email-hugues.fruchet@st.com>
@@ -67,15 +68,15 @@ X-Originating-IP: [10.201.23.19]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-08-14_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_064908_204695_A9E61B7C 
-X-CRM114-Status: GOOD (  14.68  )
+X-CRM114-CacheID: sfid-20190814_064910_113703_999ADB40 
+X-CRM114-Status: GOOD (  19.54  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -106,41 +107,145 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a trace of the set of supported fourcc/mbus_code which
-intersect between DCMI and source sub-device.
+Add media controller support to dcmi in order
+to walk within remote subdevices pipeline.
 
 Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
 ---
- drivers/media/platform/stm32/stm32-dcmi.c | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
+ drivers/media/platform/Kconfig            |  2 +-
+ drivers/media/platform/stm32/stm32-dcmi.c | 52 ++++++++++++++++++++++++-------
+ 2 files changed, 41 insertions(+), 13 deletions(-)
 
+diff --git a/drivers/media/platform/Kconfig b/drivers/media/platform/Kconfig
+index 8a19654..de7e21f 100644
+--- a/drivers/media/platform/Kconfig
++++ b/drivers/media/platform/Kconfig
+@@ -121,7 +121,7 @@ config VIDEO_S3C_CAMIF
+ 
+ config VIDEO_STM32_DCMI
+ 	tristate "STM32 Digital Camera Memory Interface (DCMI) support"
+-	depends on VIDEO_V4L2 && OF
++	depends on VIDEO_V4L2 && OF && MEDIA_CONTROLLER
+ 	depends on ARCH_STM32 || COMPILE_TEST
+ 	select VIDEOBUF2_DMA_CONTIG
+ 	select V4L2_FWNODE
 diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-index b462f71..18acecf 100644
+index 18acecf..302c40e 100644
 --- a/drivers/media/platform/stm32/stm32-dcmi.c
 +++ b/drivers/media/platform/stm32/stm32-dcmi.c
-@@ -1447,12 +1447,20 @@ static int dcmi_formats_init(struct stm32_dcmi *dcmi)
- 			/* Code supported, have we got this fourcc yet? */
- 			for (j = 0; j < num_fmts; j++)
- 				if (sd_fmts[j]->fourcc ==
--						dcmi_formats[i].fourcc)
-+						dcmi_formats[i].fourcc) {
- 					/* Already available */
-+					dev_dbg(dcmi->dev, "Skipping fourcc/code: %4.4s/0x%x\n",
-+						(char *)&sd_fmts[j]->fourcc,
-+						mbus_code.code);
- 					break;
--			if (j == num_fmts)
-+				}
-+			if (j == num_fmts) {
- 				/* New */
- 				sd_fmts[num_fmts++] = dcmi_formats + i;
-+				dev_dbg(dcmi->dev, "Supported fourcc/code: %4.4s/0x%x\n",
-+					(char *)&sd_fmts[num_fmts - 1]->fourcc,
-+					sd_fmts[num_fmts - 1]->mbus_code);
-+			}
- 		}
- 		mbus_code.index++;
+@@ -169,6 +169,9 @@ struct stm32_dcmi {
+ 
+ 	/* Ensure DMA operations atomicity */
+ 	struct mutex			dma_lock;
++
++	struct media_device		mdev;
++	struct media_pad		vid_cap_pad;
+ };
+ 
+ static inline struct stm32_dcmi *notifier_to_dcmi(struct v4l2_async_notifier *n)
+@@ -1559,14 +1562,6 @@ static int dcmi_graph_notify_complete(struct v4l2_async_notifier *notifier)
+ 		return ret;
  	}
+ 
+-	ret = video_register_device(dcmi->vdev, VFL_TYPE_GRABBER, -1);
+-	if (ret) {
+-		dev_err(dcmi->dev, "Failed to register video device\n");
+-		return ret;
+-	}
+-
+-	dev_dbg(dcmi->dev, "Device registered as %s\n",
+-		video_device_node_name(dcmi->vdev));
+ 	return 0;
+ }
+ 
+@@ -1759,10 +1754,19 @@ static int dcmi_probe(struct platform_device *pdev)
+ 
+ 	q = &dcmi->queue;
+ 
++	dcmi->v4l2_dev.mdev = &dcmi->mdev;
++
++	/* Initialize media device */
++	strscpy(dcmi->mdev.model, DRV_NAME, sizeof(dcmi->mdev.model));
++	snprintf(dcmi->mdev.bus_info, sizeof(dcmi->mdev.bus_info),
++		 "platform:%s", DRV_NAME);
++	dcmi->mdev.dev = &pdev->dev;
++	media_device_init(&dcmi->mdev);
++
+ 	/* Initialize the top-level structure */
+ 	ret = v4l2_device_register(&pdev->dev, &dcmi->v4l2_dev);
+ 	if (ret)
+-		goto err_dma_release;
++		goto err_media_device_cleanup;
+ 
+ 	dcmi->vdev = video_device_alloc();
+ 	if (!dcmi->vdev) {
+@@ -1782,6 +1786,25 @@ static int dcmi_probe(struct platform_device *pdev)
+ 				  V4L2_CAP_READWRITE;
+ 	video_set_drvdata(dcmi->vdev, dcmi);
+ 
++	/* Media entity pads */
++	dcmi->vid_cap_pad.flags = MEDIA_PAD_FL_SINK;
++	ret = media_entity_pads_init(&dcmi->vdev->entity,
++				     1, &dcmi->vid_cap_pad);
++	if (ret) {
++		dev_err(dcmi->dev, "Failed to init media entity pad\n");
++		goto err_device_release;
++	}
++	dcmi->vdev->entity.flags |= MEDIA_ENT_FL_DEFAULT;
++
++	ret = video_register_device(dcmi->vdev, VFL_TYPE_GRABBER, -1);
++	if (ret) {
++		dev_err(dcmi->dev, "Failed to register video device\n");
++		goto err_media_entity_cleanup;
++	}
++
++	dev_dbg(dcmi->dev, "Device registered as %s\n",
++		video_device_node_name(dcmi->vdev));
++
+ 	/* Buffer queue */
+ 	q->type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+ 	q->io_modes = VB2_MMAP | VB2_READ | VB2_DMABUF;
+@@ -1797,12 +1820,12 @@ static int dcmi_probe(struct platform_device *pdev)
+ 	ret = vb2_queue_init(q);
+ 	if (ret < 0) {
+ 		dev_err(&pdev->dev, "Failed to initialize vb2 queue\n");
+-		goto err_device_release;
++		goto err_media_entity_cleanup;
+ 	}
+ 
+ 	ret = dcmi_graph_init(dcmi);
+ 	if (ret < 0)
+-		goto err_device_release;
++		goto err_media_entity_cleanup;
+ 
+ 	/* Reset device */
+ 	ret = reset_control_assert(dcmi->rstc);
+@@ -1829,11 +1852,14 @@ static int dcmi_probe(struct platform_device *pdev)
+ 
+ err_cleanup:
+ 	v4l2_async_notifier_cleanup(&dcmi->notifier);
++err_media_entity_cleanup:
++	media_entity_cleanup(&dcmi->vdev->entity);
+ err_device_release:
+ 	video_device_release(dcmi->vdev);
+ err_device_unregister:
+ 	v4l2_device_unregister(&dcmi->v4l2_dev);
+-err_dma_release:
++err_media_device_cleanup:
++	media_device_cleanup(&dcmi->mdev);
+ 	dma_release_channel(dcmi->dma_chan);
+ 
+ 	return ret;
+@@ -1847,7 +1873,9 @@ static int dcmi_remove(struct platform_device *pdev)
+ 
+ 	v4l2_async_notifier_unregister(&dcmi->notifier);
+ 	v4l2_async_notifier_cleanup(&dcmi->notifier);
++	media_entity_cleanup(&dcmi->vdev->entity);
+ 	v4l2_device_unregister(&dcmi->v4l2_dev);
++	media_device_cleanup(&dcmi->mdev);
+ 
+ 	dma_release_channel(dcmi->dma_chan);
+ 
 -- 
 2.7.4
 
