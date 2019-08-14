@@ -2,86 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0599F8CD66
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 10:00:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DE948CD7E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 10:02:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L3CMPT2y2Wxp4JAejqe+UiwHegedQX43JMGY5ykYdQc=; b=uyCA1s2KblUvtI
-	wP/tabZpk5nEdj0kIvpULRxwnF6DIUAnnxIsFlZYmYn3Yr9cxg6yrvtqUFhVyWZSMilJokizCVDBI
-	0mKlhe8tbE5B0HukaFqTRWBdgqkYaUGX6l/DzwEIP0ygQUfZxAP2GE2v7drgIVFhLCwA1N7Ebs58V
-	/ROSAd53vharZsvCWpJdpeZceaEL1XgdEr9RPtQbBUNXfO1480uIuC+ZczE2oLOQv2FxuSgXQpI2r
-	vBPOux5+kJ5bv3edDjgG3AVm5C+jhac2fWJo0/c97b4b2tkcGaYJv0LHt+nEYDcYwQkNB027X/uu4
-	3x/njCwARBD8NL0oRq3A==;
+	List-Owner; bh=kJpIYUaU8EcCvvZJXgCDDVXdDRCGqCeObIqDwfW/KnU=; b=Uxx15zTd5hed80
+	WER02HYPaMjxUdFD8IbaPoKEcQlu6ruj9CExra8z1tDjPBf5XNezWvHbiGZihLzprfKln9LgT2upA
+	k/hvd9gTr88Fiez4EoO4AMKQOJ9w29yjfuI2AFbgeK9M/yQ8bdC2sQA8YvdYqlNE61NCJHn7Vwh++
+	3htpPZxtPjGs2NjKVvpzf0IHa8WJR3KwUEF1MCos9NcNp3ajOE++sqqzCpKH+YG3CWsWVpEXDxoWH
+	xSWI9rrBYeGCGjYl3TFTd9JVl0QOErzqcu2HJHu0rJY+u3DVYmY2pTECZ5hxC/Dqq6y3/EfqUjkEw
+	PvHlk4qcFtn2lXolW60g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxoCY-00083Z-6R; Wed, 14 Aug 2019 08:00:10 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hxoEi-0001XA-Oi; Wed, 14 Aug 2019 08:02:24 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxoC0-0007xq-EF
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 07:59:37 +0000
-Received: by mail-lj1-x241.google.com with SMTP id t14so1688083lji.4
+ id 1hxoET-0001Wi-1J
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 08:02:10 +0000
+Received: by mail-ot1-f66.google.com with SMTP id g17so29337326otl.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 00:59:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vktWgJym3yCRgx3u45+g969459no7O3RZoGUxegUaEA=;
- b=vv74GiiskJwY6lBYmg6l4Zu9bHeALT4JI0bsJH4KFIuDlc1IIX6AEDJZ50lghMVEX9
- WKFFLzL6FyE3/Rs/Tf1xpXrnZanOyGWbjge1UfMjdE3r9+SVchOzBvMZFj18Zvih5p2z
- nncsdqMtWCBV2cMJxXNWcJzLzD5rgb3Y8SujIq/WjWvCRb0VaSFSiqYGIDUhgva3k6Li
- tC8RsunDocuTF/tvfbMzW6gazz1TVpdAWr4aCsEYOOwSmqwb9ukuI3vLqpnJvDEwCxpK
- Q61KnvPx9eCK8RsiX4fD7sKaYovdCd/FEf7RZ5l+HOwc3mlUsK/wRWSb1So/EgnyAI9L
- xSBw==
+ Wed, 14 Aug 2019 01:02:08 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=vktWgJym3yCRgx3u45+g969459no7O3RZoGUxegUaEA=;
- b=REIm4mnEI4sIb6ek6i+icAI5ZpZU32SBq6khTWAITT9VcU4Yu7OS3Ka1WNibjrW/Vb
- hfd5L58AVpuWMXsiAjqYGvPCHbO8AU13SZY4+VGWUJkjZkAQ9jZFBOHfoUqbkyfrJgH6
- irSrisZD5UDjts3tn4U4InCeocEzNEHi3N0GhSfnL8PQ5VLtDXOi1dB0ijg1qy8aFK2Z
- /dU5oTEkhL2FNNOWpbcuh8NKw5+7eJDyK1sCQo6Yedz79rs17LDhkJ5T/vWTBoMpdd52
- Ew+aeEKQeRiw1A8z5rQcx5onECVHrHur1qTtGAWJvtlMInbCIecP1c9Kw3AtWF8kGr5i
- WG+w==
-X-Gm-Message-State: APjAAAWiP09B4no9LtznAwDVGRca5ccWisva7EMCXUvX+ba9vk3T6l0C
- AqhF4MaTOzVdScYJa6/bqxIBiSRSNrXPe3r/9EyJTw==
-X-Google-Smtp-Source: APXvYqyu0HbKHviVbPJdDWFqmy4PxLilmJoLtCGqXaaggcm5lCdH90/gDgxNiL8hStl1RMJZCYuS/NRIVXNAMlY2Kq0=
-X-Received: by 2002:a05:651c:28c:: with SMTP id
- b12mr18693136ljo.69.1565769574230; 
- Wed, 14 Aug 2019 00:59:34 -0700 (PDT)
+ bh=zSuJzD8umYXn0IIBBnnNKod2o3AaDfv/ajhWktxIh1k=;
+ b=V2Y71HaaOtnpxPSgsJ6etoQYnIeRW859E3GnZrzhODD8O0mSFLLAW5dFzzxNmVFg9i
+ GSrsCte6ifGGCyVu48wMOLH8RpQ2+CsXMaajHoy8ICfgFqbAoH+qzgAPgf4gfUrf40dx
+ Z3+IFl9tB+LIDZpP0DT2nvS19nLiImb2w11yMGhtNcHQWRiLt66kiSaIDDsKgspyTYev
+ LwMhUd5FJVx0I9KHlvGUkivDvdlcyQhoSSMFGhtNnWM5/N2NHvqiuGulZ6pPVCMnpkVV
+ Wox4V1BVO0ZyVe9gE89r8AbUP9fi9q1WdZa7/B8zplxRFqyfIQtgxUzSoRZFSr+GUEyn
+ HzqQ==
+X-Gm-Message-State: APjAAAVyGT3m5nVTc9Ry8IQ0MPmsuGgk4s4TswjBKtb6YynAbf+kDhXA
+ ATc6dtwDANSCrYIic7bSRM4GzxXijSxl+gffj+k=
+X-Google-Smtp-Source: APXvYqy5mqwitlEa+VFoIekcOPkPGw2ezkc3aURzd4TR3WGAn3r+K4v0elusm+p1errgljgC3rvH2tesdE3IoVIUyNM=
+X-Received: by 2002:a9d:459d:: with SMTP id x29mr23996052ote.39.1565769727508; 
+ Wed, 14 Aug 2019 01:02:07 -0700 (PDT)
 MIME-Version: 1.0
-References: <1564603297-1391-1-git-send-email-hongweiz@ami.com>
- <1564603297-1391-2-git-send-email-hongweiz@ami.com>
-In-Reply-To: <1564603297-1391-2-git-send-email-hongweiz@ami.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 14 Aug 2019 09:59:22 +0200
-Message-ID: <CACRpkdaGe4G17Pv0+X=zcgfwikv8sr+m55NZNZu5JMtLOYjaAQ@mail.gmail.com>
-Subject: Re: [v7 1/2] dt-bindings: gpio: aspeed: Add SGPIO support
-To: Hongwei Zhang <hongweiz@ami.com>
+References: <20190813170149.26037-1-will@kernel.org>
+In-Reply-To: <20190813170149.26037-1-will@kernel.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 14 Aug 2019 10:01:56 +0200
+Message-ID: <CAMuHMdV-7G9OpGcuPK3iEPzyD_ZyEBW=DsCuDYdUCRmiKkuXBg@mail.gmail.com>
+Subject: Re: [PATCH 0/8] Fix issues with 52-bit kernel virtual addressing
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_005936_511777_EBF32E41 
-X-CRM114-Status: UNSURE (   7.47  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_010209_078811_9D568234 
+X-CRM114-Status: GOOD (  13.21  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,32 +82,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Andrew Jeffery <andrew@aj.id.au>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Steve Capper <steve.capper@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Qian Cai <cai@lca.pw>,
+ Andrey Konovalov <andreyknvl@google.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 10:01 PM Hongwei Zhang <hongweiz@ami.com> wrote:
+Hi Will,
 
-> Add bindings to support SGPIO on AST2400 or AST2500.
+On Tue, Aug 13, 2019 at 7:01 PM Will Deacon <will@kernel.org> wrote:
+> This patch series addresses some issues with 52-bit kernel VAs reported
+> by Qian Cai and Geert. It's all confined to asm/memory.h and I got a bit
+> carried away cleaning that thing up so the patches get more worthless
+> as you go through the series. Still, I'd like to queue this on top of
+> the 52-bit VA stuff currently sitting in -next.
 >
-> Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
-> Reviewed-by:   Andrew Jeffery <andrew@aj.id.au>
+> Although Geert and Steve tested my initial hacks, I dropped the tags
+> because I've split things up and could've easily broken things again.
 
-OK timeout for further DT binding review. I adjusted a bunch
-of things like whitespace and referencing other files when
-applying.
+Thanks, this fixes the problem I was seeing, so
+Tested-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
-Yours,
-Linus Walleij
+> Will Deacon (8):
+>   arm64: memory: Fix virt_addr_valid() using __is_lm_address()
+>   arm64: memory: Ensure address tag is masked in conversion macros
+>   arm64: memory: Rewrite default page_to_virt()/virt_to_page()
+>   arm64: memory: Simplify virt_to_page() implementation
+>   arm64: memory: Simplify _VA_START and _PAGE_OFFSET definitions
+>   arm64: memory: Implement __tag_set() as common function
+>   arm64: memory: Add comments to end of non-trivial #ifdef blocks
+>   arm64: memory: Cosmetic cleanups
+>
+>  arch/arm64/include/asm/memory.h | 89 ++++++++++++++++++++---------------------
+>  1 file changed, 44 insertions(+), 45 deletions(-)
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
