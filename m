@@ -2,58 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C820A8D76D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 17:49:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 008328D783
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 17:57:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9tKAXY9ACTpYM4hJREhyPAHKyOfuU+lH8U5pALT63dk=; b=ksKgBe7ONnq5ixA9ML8P2Bq0l
-	2AaHIt76+WPxz1oI0ERqoVpGvWUl0/lZx5/gVp5BAElAO8G7R46rBfopvGtj2F4U48xhxoTL0YHsV
-	Taip9kTQsffO9kVVbpo4p1M5EFdn7QfqiBAbQab6PzTKTJVzvwMBHnu0t/yeL4Owr0go8R/sMVDKW
-	gXUIC/zcLHgw08vW4ysvrh4uwGm8k5JAF31EEkYpYsToVF9K7iuSO81ACVziQKK65z0RDjfjCR/e/
-	rtB4sL1uv2C8maQg5W+0mtXhi1QNc9l1d7u/Zt5THkDDcK4Dkt1vXXi+0gzDfS9wPa32IRwGS2W91
-	SYeEZ0UjQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OlEgIqvPQbplKbkraktSTa3+uK6dr4Bwp30uF80tLH0=; b=KH43GKQENQoI3O
+	6WS7CsmUyM77gNrfsIBKbUhb22m6JOrxecciozuZ1gGWemoJT/Jv/GZBOYLLoxC4gO0SIk+hQ2Xr3
+	fBKwsvjBtAOqkuxyO7ZIjhUFI1QCDrZYfKB1ooRqWRRtvom0RmvC8N9R349vV3qB5VkK90H3pcfv8
+	eJGHOeMcq7PF4NPdYKBmKmrd4Few+6YHerfQMbLI2XfKzOrUpRjYgXsqNSC6GzvKIZJaN5Ljf/mk9
+	C4pSd3qgh7vCDaDhiNHkRkWynZgoDf4S5Cz3+1/QAx5PWJsB8//YttreIqxsWYgBuClKqwBYXyDbd
+	yZp7BIxA5biWAj0mAizQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxvWj-0003mW-Hm; Wed, 14 Aug 2019 15:49:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxvWY-0003mA-T8
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 15:49:20 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E0B2328;
- Wed, 14 Aug 2019 08:49:17 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A26C3F694;
- Wed, 14 Aug 2019 08:49:14 -0700 (PDT)
-Subject: Re: [PATCH 6/6] driver core: initialize a default DMA mask for
- platform device
-To: Christoph Hellwig <hch@lst.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>
-References: <20190811080520.21712-1-hch@lst.de>
- <20190811080520.21712-7-hch@lst.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <fbea6e6d-7721-b51d-0501-582e8446e9c9@arm.com>
-Date: Wed, 14 Aug 2019 16:49:13 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hxveY-0006dn-VW; Wed, 14 Aug 2019 15:57:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxveI-0006dQ-DD
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 15:57:19 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EC8772083B;
+ Wed, 14 Aug 2019 15:57:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565798236;
+ bh=kD4R9MPW+plc44mNsmxQhrCknU+a4Qizqp5C50Zzo0Y=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ZNF+cGgTqHEsrysReKZCrtiCLwZxnzCp5Baw9hZhtYF0iMQO/xVIGECO/zVHcR1mQ
+ zKQTLqMWjVWyY1jdyhsJwa7dLfkxBw3V+i0r4zceSiBF5bDf4yIlrVug1KQeSv263I
+ IfQvDQZt8Wv+SsMvMN77MrlBDKdlFLNEhjZBrdac=
+Date: Wed, 14 Aug 2019 16:57:11 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH] arm64: fix CONFIG_KASAN_SW_TAGS && CONFIG_KASAN_INLINE
+ (was: Re: [PATCH V5 03/12] arm64: kasan: Switch to using)
+ KASAN_SHADOW_OFFSET
+Message-ID: <20190814155711.ldwot7ezrrqjlswc@willie-the-truck>
+References: <20190807155524.5112-1-steve.capper@arm.com>
+ <20190807155524.5112-4-steve.capper@arm.com>
+ <20190814152017.GD51963@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190811080520.21712-7-hch@lst.de>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20190814152017.GD51963@lakrids.cambridge.arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_084919_031586_D96C3A51 
-X-CRM114-Status: GOOD (  24.13  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190814_085718_494257_4D4383A7 
+X-CRM114-Status: GOOD (  21.11  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,112 +80,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Gavin Li <git@thegavinli.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Mathias Nyman <mathias.nyman@intel.com>, Geoff Levand <geoff@infradead.org>,
- Olav Kongas <ok@artecdesign.ee>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-usb@vger.kernel.org, Michal Simek <michal.simek@xilinx.com>,
- linux-kernel@vger.kernel.org, Tony Prisk <linux@prisktech.co.nz>,
- iommu@lists.linux-foundation.org, Alan Stern <stern@rowland.harvard.edu>,
- NXP Linux Team <linux-imx@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- Minas Harutyunyan <hminas@synopsys.com>, Shawn Guo <shawnguo@kernel.org>,
- linuxppc-dev@lists.ozlabs.org, Bin Liu <b-liu@ti.com>,
+Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, catalin.marinas@arm.com,
+ bhsharma@redhat.com, Steve Capper <steve.capper@arm.com>, maz@kernel.org,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/08/2019 09:05, Christoph Hellwig wrote:
-> We still treat devices without a DMA mask as defaulting to 32-bits for
-> both mask, but a few releases ago we've started warning about such
-> cases, as they require special cases to work around this sloppyness.
-> Add a dma_mask field to struct platform_object so that we can initialize
-
-s/object/device/
-
-> the dma_mask pointer in struct device and initialize both masks to
-> 32-bits by default.  Architectures can still override this in
-> arch_setup_pdev_archdata if needed.
+On Wed, Aug 14, 2019 at 04:20:18PM +0100, Mark Rutland wrote:
+> On Wed, Aug 07, 2019 at 04:55:15PM +0100, Steve Capper wrote:
+> > diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> > index b2400f9c1213..2b7db0d41498 100644
+> > --- a/arch/arm64/Makefile
+> > +++ b/arch/arm64/Makefile
+> > @@ -126,14 +126,6 @@ KBUILD_CFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+> >  KBUILD_CPPFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+> >  KBUILD_AFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+> >  
+> > -# KASAN_SHADOW_OFFSET = VA_START + (1 << (VA_BITS - KASAN_SHADOW_SCALE_SHIFT))
+> > -#				 - (1 << (64 - KASAN_SHADOW_SCALE_SHIFT))
+> > -# in 32-bit arithmetic
+> > -KASAN_SHADOW_OFFSET := $(shell printf "0x%08x00000000\n" $$(( \
+> > -	(0xffffffff & (-1 << ($(CONFIG_ARM64_VA_BITS) - 1 - 32))) \
+> > -	+ (1 << ($(CONFIG_ARM64_VA_BITS) - 32 - $(KASAN_SHADOW_SCALE_SHIFT))) \
+> > -	- (1 << (64 - 32 - $(KASAN_SHADOW_SCALE_SHIFT))) )) )
+> > -
+> >  export	TEXT_OFFSET GZFLAGS
+> >  
+> >  core-y		+= arch/arm64/kernel/ arch/arm64/mm/
 > 
-> Note that the code looks a little odd with the various conditionals
-> because we have to support platform_device structures that are
-> statically allocated.
+> I've just spotted this breaks build using CONFIG_KASAN_SW_TAGS &&
+> CONFIG_KASAN_INLINE, as scripts/Makefile.kasan only propagates
+> CONFIG_KASAN_SHADOW_OFFSET into KASAN_SHADOW_OFFSET when
+> CONFIG_KASAN_GENERIC is selected, but consumes KASAN_SHADOW_OFFSET
+> regardless.
+> 
+> I think that's by accident rather than by design, but to
+> minimize/localize the fixup, how about the below? I can send a cleanup
+> patch for scripts/Makefile.kasan later.
 
-This would be a good point to also get rid of the long-standing bodge in 
-platform_device_register_full().
+How much work is that? I've dropped this stuff from -next for now, so we
+have time to fix it properly as long as it's not going to take weeks.
 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---->8----
+> From b1a6f2dd5aa30d874c4bd97a20ea1330607da624 Mon Sep 17 00:00:00 2001
+> From: Mark Rutland <mark.rutland@arm.com>
+> Date: Wed, 14 Aug 2019 15:51:14 +0100
+> Subject: [PATCH] arm64: fix CONFIG_KASAN_SW_TAGS && CONFIG_KASAN_INLINE
+> 
+> Since commit:
+> 
+>   6bd1d0be0e97936d ("arm64: kasan: Switch to using KASAN_SHADOW_OFFSET")
+> 
+> ... attempting to build with CONFIG_KASAN_SW_TAGS && CONFIG_KASAN_INLINE
+> results ins splat:
+> 
+> | [mark@lakrids:~/src/linux]% usellvm 8.0.1 usekorg 8.1.0  make ARCH=arm64 CROSS_COMPILE=aarch64-linux- CC=clang
+> | scripts/kconfig/conf  --syncconfig Kconfig
+> |   CC      scripts/mod/empty.o
+> | clang (LLVM option parsing): for the -hwasan-mapping-offset option: '' value invalid for uint argument!
+> | scripts/Makefile.build:273: recipe for target 'scripts/mod/empty.o' failed
+> | make[1]: *** [scripts/mod/empty.o] Error 1
+> | Makefile:1123: recipe for target 'prepare0' failed
+> | make: *** [prepare0] Error 2
+> 
+> ... since Makefile.kasan only consumes CONFIG_KASAN_SHADOW_OFFSET when
+> CONFIG_KASAN_GENERIC is selected, and for CONFIG_KASAN_SW_TAGS it consumes
+> KASAN_SHADOW_OFFSET (without a CONFIG_ prefix).
+> 
+> For the moment, let's always propagate CONFIG_KASAN_SHADOW_OFFSET into
+> KASAN_SHADOW_OFFSET via the arm64 Makefile. We can clean up the generic kasan
+> Makefile later down the line.
+> 
+> Fixes: 6bd1d0be0e97936d ("arm64: kasan: Switch to using KASAN_SHADOW_OFFSET")
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Steve Capper <steve.capper@arm.com>
+> Cc: Will Deacon <will@kernel.org>
 > ---
->   drivers/base/platform.c         | 15 +++++++++++++--
->   include/linux/platform_device.h |  1 +
->   2 files changed, 14 insertions(+), 2 deletions(-)
+>  arch/arm64/Makefile | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> diff --git a/drivers/base/platform.c b/drivers/base/platform.c
-> index ec974ba9c0c4..b216fcb0a8af 100644
-> --- a/drivers/base/platform.c
-> +++ b/drivers/base/platform.c
-> @@ -264,6 +264,17 @@ struct platform_object {
->   	char name[];
->   };
->   
-> +static void setup_pdev_archdata(struct platform_device *pdev)
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index a8d2a241ac58..a0c733f93b5b 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -126,6 +126,8 @@ KBUILD_CFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+>  KBUILD_CPPFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+>  KBUILD_AFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+>  
+> +KASAN_SHADOW_OFFSET := $(CONFIG_KASAN_SHADOW_OFFSET)
 
-Bikeshed: painting the generic DMA API properties as "archdata" feels a 
-bit off-target :/
+This needs a comment explaining what it's doing and that it's a dirty,
+temporary hack.
 
-> +{
-> +	if (!pdev->dev.coherent_dma_mask)
-> +		pdev->dev.coherent_dma_mask = DMA_BIT_MASK(32);
-> +	if (!pdev->dma_mask)
-> +		pdev->dma_mask = DMA_BIT_MASK(32);
-> +	if (!pdev->dev.dma_mask)
-> +		pdev->dev.dma_mask = &pdev->dma_mask;
-> +	arch_setup_pdev_archdata(pdev);
-
-AFAICS m68k's implementation of that arch hook becomes entirely 
-redundant after this change, so may as well go. That would just leave 
-powerpc's actual archdata, which at a glance looks like it could 
-probably be cleaned up with not *too* much trouble.
-
-Robin.
-
-> +};
-> +
->   /**
->    * platform_device_put - destroy a platform device
->    * @pdev: platform device to free
-> @@ -310,7 +321,7 @@ struct platform_device *platform_device_alloc(const char *name, int id)
->   		pa->pdev.id = id;
->   		device_initialize(&pa->pdev.dev);
->   		pa->pdev.dev.release = platform_device_release;
-> -		arch_setup_pdev_archdata(&pa->pdev);
-> +		setup_pdev_archdata(&pa->pdev);
->   	}
->   
->   	return pa ? &pa->pdev : NULL;
-> @@ -512,7 +523,7 @@ EXPORT_SYMBOL_GPL(platform_device_del);
->   int platform_device_register(struct platform_device *pdev)
->   {
->   	device_initialize(&pdev->dev);
-> -	arch_setup_pdev_archdata(pdev);
-> +	setup_pdev_archdata(pdev);
->   	return platform_device_add(pdev);
->   }
->   EXPORT_SYMBOL_GPL(platform_device_register);
-> diff --git a/include/linux/platform_device.h b/include/linux/platform_device.h
-> index 9bc36b589827..a2abde2aef25 100644
-> --- a/include/linux/platform_device.h
-> +++ b/include/linux/platform_device.h
-> @@ -24,6 +24,7 @@ struct platform_device {
->   	int		id;
->   	bool		id_auto;
->   	struct device	dev;
-> +	u64		dma_mask;
->   	u32		num_resources;
->   	struct resource	*resource;
->   
-> 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
