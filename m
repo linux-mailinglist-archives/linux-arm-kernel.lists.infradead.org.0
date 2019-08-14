@@ -2,53 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BA4A8D036
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:03:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC3CB8D04F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:07:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xgTxyrMSDqan0Nd+Tc9TdO351FnWM8CIJG8u1LYS8/Q=; b=DcWHXNC79DJcOdp7XWYE51V0w
-	JfvYLT5J8sxL1WU75KYB6pajhDrpfYyvLw/UQVl/v70zCmLdEYW5NJI8aWkg2mJVu0TBLZoyqKlTd
-	7bhr/T9m5cEYI4W5zUMX1PkcsKiY2/uFfpdH4G0KW+tiyxAnudhTpg+CqEN+1UhiSLYz1X6qhorFn
-	wqXHMoFhutaODj7Pau45JBhpRkA5Aed4r4hM3CFted+M6UfBjrmoO0njiFXRcK4F1aZjL+S9OiT5v
-	l+oQKqRxhH1SxOEwIOeKEPRojLHGXkX0DuQzDV7WJmNqbcxPb77XrEyuzT2u3HCy8G1QhmyUwJsAA
-	yYFQPphWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zQsaFZzmvt/z/0q2fSS30wSoWn54EZmP8UldATYZbNs=; b=ixeCyJ6vZ8NMvY
+	nDVmWDRgcojYSNp5sSd5OcXDvv6BnCPWERyBdajxhhGfELrCipyIuTK1rMt/fE4YILsivWHpUtp1G
+	mu5OX+6yh03U+mC9a5hhGJz6f2PO9h2JscIDSlwG9g140V1URYiHgghPHXPF5kO23RUtp4dbX81sg
+	2oItj0wXKEfJNgQkKxtGS4TTRZxprCG/EILZvuuPLLHKtsdMhSPcSkaqKRAswBqj+jTS2/RSprbj4
+	NGlXDXz8WU3Cfn/7O6wxKKB4ZDl1oplL9Z9ZAUpyaeHkFON3XzjIoNsBeTMDujjdRYW0ENQ9Suw1N
+	KlJONOb6VSvPt2Bd/N/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxq7s-0001t4-De; Wed, 14 Aug 2019 10:03:28 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxq6s-0001kG-Ba
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 10:02:32 +0000
-Received: from localhost (p54B33326.dip0.t-ipconnect.de [84.179.51.38])
- by pokefinder.org (Postfix) with ESMTPSA id 5060F2C311C;
- Wed, 14 Aug 2019 12:02:25 +0200 (CEST)
-Date: Wed, 14 Aug 2019 12:02:25 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH v1] MAINTAINERS: i2c-imx: take over maintainership
-Message-ID: <20190814100224.GE1511@ninjato>
-References: <20190812050817.23279-1-o.rempel@pengutronix.de>
- <20190812064811.427cy7ahim54odkk@pengutronix.de>
+	id 1hxqBu-0003W2-VW; Wed, 14 Aug 2019 10:07:39 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxqBQ-0003RD-3p; Wed, 14 Aug 2019 10:07:09 +0000
+X-UUID: 4506d8738cad4769b11d2d2dd9ebe6cc-20190814
+X-UUID: 4506d8738cad4769b11d2d2dd9ebe6cc-20190814
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <michael.kao@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 192779111; Wed, 14 Aug 2019 02:06:55 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 14 Aug 2019 03:06:53 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 14 Aug 2019 18:06:53 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 14 Aug 2019 18:06:52 +0800
+From: Michael Kao <michael.kao@mediatek.com>
+To: Zhang Rui <rui.zhang@intel.com>, Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
+ Mark Rutland <mark.rutland@arm.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, <hsinyi@chromium.org>
+Subject: [PATCH 0/4] add dts for Mediatek MT8183 thermal functions
+Date: Wed, 14 Aug 2019 18:06:45 +0800
+Message-ID: <1565777209-21869-1-git-send-email-michael.kao@mediatek.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-In-Reply-To: <20190812064811.427cy7ahim54odkk@pengutronix.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_030227_696267_94B0E7F0 
-X-CRM114-Status: UNSURE (   7.04  )
+X-CRM114-CacheID: sfid-20190814_030708_224014_819D2C7A 
+X-CRM114-Status: UNSURE (   6.75  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,73 +72,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- Andrey Smirnov <andrew.smirnov@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Oleksij Rempel <o.rempel@pengutronix.de>, linux-i2c@vger.kernel.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, NXP Linux Team <linux-imx@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Chris Healy <cphealy@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6882891228784259974=="
+Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Splitting the dtsi part from [1] and sending it again.
 
---===============6882891228784259974==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="ZRyEpB+iJ+qUx0kp"
-Content-Disposition: inline
+Add tzts1~5 and tztsABB from thermal sensor in SoC for
+another get temperatrue. They don't need to thermal throttle.
+And we bind coolers for thermal zone nodes of cpu_thermal.
 
+Refernece:
+[1] [v2,0/8] Add Mediatek thermal dirver and dtsi (https://patchwork.kernel.org/cover/10938809/)
 
---ZRyEpB+iJ+qUx0kp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Matthias Kaehlcke (1):
+  arm64: dts: mt8183: Configure CPU cooling
 
+michael.kao (3):
+  arm64: dts: mt8183: add thermal zone node
+  arm64: dts: mt8183: add dynamic power coefficients
+  arm64: dts: mt8183: Add #cooling-cells to CPU nodes
 
-> Even without this patch the generic "ARM/FREESCALE IMX / MXC ARM
-> ARCHITECTURE" entry matches the i2c-imx driver.
-
-It matches, but it didn't work well, I am afraid. Quite some IMX patches
-in patchwork waiting for attention:
-
-http://patchwork.ozlabs.org/project/linux-i2c/list/?series=&submitter=&state=&q=imx&archive=&delegate=
-
-
---ZRyEpB+iJ+qUx0kp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1T3CwACgkQFA3kzBSg
-KbajTQ//VgglyM7CZxyc+Ld+REfPtwJNbH4MOU3yt3/ZblEZli85uYDYMuJvdPvA
-8ujNPD7em/qfmwlnrhzNOCeNmdwGXFcs+T9e8qKwqZIazJ/2xZ11Ub9KeR5gixk+
-+udm0DqRtnx5q019zanKGsuXsNDIjyOCKOkcU0v+dA4qZVw7cEv7OECGvMg6Z0gM
-UyW9Qp0l39DsKJqRdwT/ei7K+tQl6slFi1kpMvZsiIEX+GIUK4nCHdjnc86uAIoZ
-82ZlrciTgBMmMAqydTFOdGkp6NV3+2iiSZ/58Kqj2THHGVo2VxR2eMUrLyNn2Z1O
-GPid13ndoVd6DOuevS6Bn/E1OovR6hIeZ3PetslltKmW/XKRbWwXsyayQxyH1Tqb
-Jsey2AN8YXmNPKNyTUnYTKg6zkvvvtfCvrtKMIlAvEIEEQd1KShBPpEbPUqlLUv8
-6XnmQsjuuiDytZAETbdOs3edV/hZJebz9/WH60qJlXmAzFLdnLgcn7Mv2zlZh6jn
-wkLE3CEa+JG4hcYgzMsL68I1ccwXM8yVuzKOrEVuFILNjgA47yJFYqwb5f7eLk3G
-wHuIN15QyeJ5LWslyr1LsSP7ekGq18qYKTvf8/qNx0nFF5w088AlKunLVoAqJwlI
-TwoMZhdY0qfi3SGXmUQEt3oz8i9d1pW0nK/maZqmXS/I6Vp6UKw=
-=m4xx
------END PGP SIGNATURE-----
-
---ZRyEpB+iJ+qUx0kp--
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 139 +++++++++++++++++++++++++++++++
+ 1 file changed, 139 insertions(+)
 
 
---===============6882891228784259974==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6882891228784259974==--
-
