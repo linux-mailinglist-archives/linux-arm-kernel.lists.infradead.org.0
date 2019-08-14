@@ -2,77 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 839348E043
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 00:02:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3E7B8E04C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 00:05:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vkSr+4kK0h0lGsB2F4/gea9thwHA8+8tWptpCXBIb6M=; b=u7aM5MGyzUChCE
-	PKYp+PtqnUrl2oQXHQ1LgUGfjkJ/n7K1f1QV8uoPAaely4W4D7CmM6WxPwj7RP1BLZZyIRvbWhu8l
-	j6e+b/1LauJrOYbF4GEZQ3m2NZDtIYyI9vPf8sQcAG7t3MaT0sHYDd42l6MThCjia940/scTArhDH
-	Nl+egwgMu21dGwD4xf1o2ABF1mzvErdAcnFXUGnr4huJTTMU0R1GP3GDEp50eNDkEWopRPw8ZxqTx
-	Ce2RuWc15eKqdXAvjBW2UwhFLSb5OdOi9l++pAkMBzi9yqeJMUtCoZG/iV+zGx/HQz0jYQ09Cwpo3
-	YBFtOIIMYm3dpzNI7ujw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jFylpyQ2588ru+2Cf5f0cJ/vGxTQU+/tPL1xSgH0pfE=; b=U2MNQkGSd44Ele
+	oBP62OIAFtqH41GLoexVC7MzR6/ddOd9AQPh7C1tziiqymjtmneSq4bcZF+vQ4tdiWO/6gVszwEdn
+	oh1Auur2d8yzSMfIj0XW8S5pRU/9rhLFuEmQe9UUyJXZkV3I+/Ufgj/X3ZsN4UWuka4qkkjqTVXGs
+	Cg72pXqz++sp8c17V3iC3hwHlPK08U81bPNhBAvoH0QzaUpHruy7Sa27d2tUTo4c2mLzWW0xZjJsx
+	hCiAeEoSGURdBDhbEvtk7ykhd1UHZsFKai45poSQRFRDI3z5zIAAeCp1lV7kiwYZMH8rFl4o5kOT9
+	BkHQOIVrf44RTC1UgVXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy1Ly-0001uH-Fc; Wed, 14 Aug 2019 22:02:46 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hy1Oa-0003RW-1C; Wed, 14 Aug 2019 22:05:28 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy1Ln-0001ts-8s
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 22:02:36 +0000
-Received: by mail-pf1-x443.google.com with SMTP id g2so196090pfq.0
+ id 1hy1OM-0003Qn-2u
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 22:05:15 +0000
+Received: by mail-pg1-x543.google.com with SMTP id e11so288010pga.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 15:02:34 -0700 (PDT)
+ Wed, 14 Aug 2019 15:05:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=3oPlzvlPf3Rzc4cpgcIkobJmF5pbYWdwPlsySxjkAj0=;
- b=QsFDkKjaHSdT6ZUi+JJ7HPBAsxs4M45zVvakOMVd/f1v8yDy4Pe2ktVQIi6TcbQGs4
- +0rdap1k9RPnLJwD5sJG3RNHYDxiRp0DpzJa5rPFrWQYYZMFBDR8URhlW4LyWGSqLgDi
- v3nOVWGRXtObRIix2efxPL/FTSeXBV1Vh2bbPdS8+IInFkXk++Du4gd7sLVkXZIY9UIM
- oYSDp2D5AqVVqNwWUutnIu0wP3/+nwxYcTorj1iRwjtVLn7UIscolWVJf7FLpK6z/dax
- WEJZB9Z60/rNmcFNC4/QIfBMeYoSOqxs+6j8XIafhDh0BI51LPUU+2Cx0JIDhTMJ/+No
- RmDw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=zGCahEylBwx9+hrUl6JBv64qJITZ7AIfmMEaH7B2Nfg=;
+ b=KNxFr9QT2oHk0ee5GI2IjIkLTldwP57yZGwcnjUEsIx3OB6B0cmtOER71JKAynaxAl
+ tI28WVuAQNFlKsPnyqKGlZnvq7stwRv5qOx8V+A8CfeEzpCSJrEDgGxpC76R/mjugfZV
+ cfj3AMX5FF04HK8PouDp/LkA+AYBdKeqGW7mI9yywFHfFa+D9mW3dX3slJb9DT3Vb2nB
+ z1VC/a8ZneW4oXJPYnEqJeDKPyPYqbkfh/2OJgcLihAGqC7Bk8dISekepsMevjddKfwG
+ JwbAp2kne42JJ1D+FPohAKaeYVSHgGwpEG5iS4sn8vtrJGrv6DbWWHa+MfhexA3EwLHf
+ RGjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=3oPlzvlPf3Rzc4cpgcIkobJmF5pbYWdwPlsySxjkAj0=;
- b=P7hFqHDIcPbyUPkMvfOCIjTkxsl5lgpCpJXuPlSCYTaFAuCjPwHdt+sN4gyrlDiGxs
- H3oX4aWlKxmBnJ1N3iyabPltOqrn7bTOlnAzPC15KesI6YpN44m+5IWxrvkhDCPxvmvR
- SfjCoG9TvQG4oNCxARqnowwLM3AEdL44trKHy6pUI4vS1cWvcWCHuegLos7JrMchgppQ
- PFiziMRlEFDp+pQC0kjyc06YLzYrAodc66Bw5mX3ETtKBe4nLlQK3bs33xBStIHMQ6zk
- o+7ApXUgUlcIofeQlFIu8fHRizuq0ZmkpNUrN0+KpDRZ/5IT6K2wq/7nTIXt2WSlsSwZ
- lKfA==
-X-Gm-Message-State: APjAAAWlczcjX9Fu/MwGSNgDcdP94nbFkvOA+dR8k0lV5b/5Va/0poEa
- 5bR1ww6k0hAi5PjIwZz1mXw=
-X-Google-Smtp-Source: APXvYqzCBQPKmpeFEXKLaI6VKfcy6SgcaxLxPzYa/x4WSu39Iu3WSkxBPKAcusu6di8joy6ZTM5XDQ==
-X-Received: by 2002:a62:4e09:: with SMTP id c9mr2268787pfb.130.1565820153895; 
- Wed, 14 Aug 2019 15:02:33 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=zGCahEylBwx9+hrUl6JBv64qJITZ7AIfmMEaH7B2Nfg=;
+ b=HyrhnNG4MifipjiYlB70N5mfPsYVq0iLkgGh/11KAepLVn/kdymPRxkbHOe0DPKDfE
+ Ax8AEuVPrGN5zh8A8S7wEoGo5LQfLg/LcDq4PoHq2IDTM1PVppFAFt5DHR4XWfDz86gp
+ jo+mcDbKQcMDHZ3vHuBBgNY9witWdiutB+dcXj8Ffxo4v4A/lKT3xrrIbzLYHYVuR4RK
+ pHLHfJO9OkZ21+fz+WUgeXitaVrhnaBhSHlaUNKHiLHWgPlxjOPqs7ydk3e1vToXC9Yb
+ Rs0c1QRQaPRnUSlSl2DMV38jPn/Ck/6hCYbIQV5oS7enu3mgEAQ+M57Sgd+6ayKMUTDW
+ +O8g==
+X-Gm-Message-State: APjAAAWRmOVMCeDmqrkTcUVa/BTGWS2c+CkymWleci59ue82guVA0ilE
+ p7RlGAxodkeftT1/AoeMJWs=
+X-Google-Smtp-Source: APXvYqwdj2exVMetPPaW54oofiik0neX5PkaF4gcffTO1xCR5P3KzJE/Uy1GZgX/vn90YM4nR9bKlw==
+X-Received: by 2002:a62:e901:: with SMTP id j1mr2192946pfh.189.1565820313296; 
+ Wed, 14 Aug 2019 15:05:13 -0700 (PDT)
 Received: from localhost ([100.118.89.196])
- by smtp.gmail.com with ESMTPSA id d129sm896504pfc.168.2019.08.14.15.02.32
+ by smtp.gmail.com with ESMTPSA id g19sm968879pfk.0.2019.08.14.15.05.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 14 Aug 2019 15:02:33 -0700 (PDT)
+ Wed, 14 Aug 2019 15:05:12 -0700 (PDT)
 From: Rob Clark <robdclark@gmail.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 0/6] drm+dma: cache support for arm, etc
-Date: Wed, 14 Aug 2019 14:59:55 -0700
-Message-Id: <20190814220011.26934-1-robdclark@gmail.com>
+Subject: [PATCH 1/6] arm64: export arch_sync_dma_for_*()
+Date: Wed, 14 Aug 2019 14:59:56 -0700
+Message-Id: <20190814220011.26934-2-robdclark@gmail.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190814220011.26934-1-robdclark@gmail.com>
+References: <20190814220011.26934-1-robdclark@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_150235_341602_A1CED8A9 
-X-CRM114-Status: GOOD (  11.66  )
+X-CRM114-CacheID: sfid-20190814_150514_132183_A1042418 
+X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robdclark[at]gmail.com)
@@ -96,39 +99,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
- "Maciej W. Rozycki" <macro@linux-mips.org>, Eric Biggers <ebiggers@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Imre Deak <imre.deak@intel.com>,
- Chris Wilson <chris@chris-wilson.co.uk>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+Cc: Rob Clark <robdclark@chromium.org>,
+ Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>, Joerg Roedel <jroedel@suse.de>,
+ Catalin Marinas <catalin.marinas@arm.com>, Robin Murphy <robin.murphy@arm.com>,
+ linux-kernel@vger.kernel.org, Jesper Dangaard Brouer <brouer@redhat.com>,
  Will Deacon <will@kernel.org>, Christoph Hellwig <hch@lst.de>,
- Emil Velikov <emil.velikov@collabora.com>, Rob Clark <robdclark@chromium.org>,
- Michael Ellerman <mpe@ellerman.id.au>, Mike Rapoport <rppt@linux.ibm.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- "moderated list:ARM64 PORT AARCH64 ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- "open list:MIPS" <linux-mips@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, Robin Murphy <robin.murphy@arm.com>,
- "open list:DRM DRIVER FOR MSM ADRENO GPU" <linux-arm-msm@vger.kernel.org>,
- Deepak Sharma <deepak.sharma@amd.com>, Joerg Roedel <jroedel@suse.de>,
- Arnd Bergmann <arnd@arndb.de>, Anshuman Khandual <anshuman.khandual@arm.com>,
- Hauke Mehrtens <hauke@hauke-m.de>, Jesper Dangaard Brouer <brouer@redhat.com>,
- "Wolfram Sang \(Renesas\)" <wsa+renesas@sang-engineering.com>,
- "open list:LINUX FOR POWERPC 32-BIT AND 64-BIT"
- <linuxppc-dev@lists.ozlabs.org>, Alexios Zavras <alexios.zavras@intel.com>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Doug Anderson <armlinux@m.disordat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Sean Paul <sean@poorly.run>, Allison Randal <allison@lohutok.net>,
- Christophe Leroy <christophe.leroy@c-s.fr>, Enrico Weigelt <info@metux.net>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- open list <linux-kernel@vger.kernel.org>, Paul Burton <paul.burton@mips.com>,
- Souptick Joarder <jrdr.linux@gmail.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- "open list:DRM DRIVER FOR MSM ADRENO GPU" <freedreno@lists.freedesktop.org>
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -136,43 +112,30 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Rob Clark <robdclark@chromium.org>
 
-This is a replacement for a previous patches[1] that was adding arm64
-support for drm_clflush.  I've also added a patch to solve a similar
-cache issue in vgem.
+Signed-off-by: Rob Clark <robdclark@chromium.org>
+---
+ arch/arm64/mm/dma-mapping.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-The first few patches just export arch_sync_dma_for_*().  Possibly
-instead the EXPORT_SYMBOL_GPL() should be somewere central, rather
-than per-arch (but where would make sense?)
-
-The fourth adds (and exports) these ops for arch/arm.  (Arnd Bergmann
-mentioned on IRC that Christoph Hellwig was working on this already
-for arch/arm which could replace the fourth patch.)
-
-The last two patches actually fix things.
-
-[1] https://patchwork.freedesktop.org/series/64732/
-
-Rob Clark (6):
-  arm64: export arch_sync_dma_for_*()
-  mips: export arch_sync_dma_for_*()
-  powerpc: export arch_sync_dma_for_*()
-  arm: add arch_sync_dma_for_*()
-  drm/msm: stop abusing DMA API
-  drm/vgem: fix cache synchronization on arm/arm64 (take two)
-
- arch/arm/Kconfig                  |   2 +
- arch/arm/mm/dma-mapping-nommu.c   |  14 +++
- arch/arm/mm/dma-mapping.c         |  28 ++++++
- arch/arm64/mm/dma-mapping.c       |   2 +
- arch/arm64/mm/flush.c             |   2 +
- arch/mips/mm/dma-noncoherent.c    |   2 +
- arch/powerpc/mm/dma-noncoherent.c |   2 +
- drivers/gpu/drm/drm_cache.c       |  20 ++++-
- drivers/gpu/drm/msm/msm_gem.c     |  37 +++-----
- drivers/gpu/drm/vgem/vgem_drv.c   | 145 ++++++++++++++++++++----------
- include/drm/drm_cache.h           |   4 +
- 11 files changed, 182 insertions(+), 76 deletions(-)
-
+diff --git a/arch/arm64/mm/dma-mapping.c b/arch/arm64/mm/dma-mapping.c
+index 1d3f0b5a9940..ea5ae11d07f7 100644
+--- a/arch/arm64/mm/dma-mapping.c
++++ b/arch/arm64/mm/dma-mapping.c
+@@ -24,12 +24,14 @@ void arch_sync_dma_for_device(struct device *dev, phys_addr_t paddr,
+ {
+ 	__dma_map_area(phys_to_virt(paddr), size, dir);
+ }
++EXPORT_SYMBOL_GPL(arch_sync_dma_for_device);
+ 
+ void arch_sync_dma_for_cpu(struct device *dev, phys_addr_t paddr,
+ 		size_t size, enum dma_data_direction dir)
+ {
+ 	__dma_unmap_area(phys_to_virt(paddr), size, dir);
+ }
++EXPORT_SYMBOL_GPL(arch_sync_dma_for_cpu);
+ 
+ void arch_dma_prep_coherent(struct page *page, size_t size)
+ {
 -- 
 2.21.0
 
