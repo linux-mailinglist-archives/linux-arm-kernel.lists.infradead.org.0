@@ -2,79 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC6EA8D82B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 18:35:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD0EC8D870
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 18:50:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jtxq3z3zWTbcCUvmzCvnM83eOLhbUeBjnqAT4ob7mOk=; b=qBhummjgvR0YU9
-	i4anWGdGxH+OrYqPVJfi8Rq3dHekdPNTYcwfFSsPRON3bzmgqVfv+yBalzO+5jl6uC+goBjyP967o
-	hKAuFxF5gixsAtlZSb++PJZs8bwFXpmUmhHzf6x0VewSCz7omdtb9Pvm9efh91PEL3BCMV6Nno6zm
-	lAIgArzFTKH/UMIlhIuh1C72fpOOvKNthlJYYWNXFf/sZebqUgnHksBX7yE6yWAI6OL+zLfonzPoY
-	0/k1bJ2PM45RUokfoWUvB5D4SR3/eCvJasN+20lU8eoPXeptXOdKXCmitVQZ6ey4LSjgHy/Ude7zM
-	D9H+jqxkCUejIKR0AnDg==;
+	List-Owner; bh=LUlCnMintRjRYMeMEnhAIfh5F+CjK5XhLf0wiF+WTm0=; b=m4XRC+Sf7NbxAL
+	2tLcnOzFYvmbr3Pe/lb+pQD03zRuW1P7ofebwpwft0pYoqqfpPzqnulzlgc4iUOtM6lyx+pBAvTmP
+	d8XVlrXT9QchcOS5BdcIUNZ5HvmqgROA1bSerSez4pPW1dSOZfkcxcyUQVYu+fGcMlTcw9K6I+Jc0
+	osGfvVO7NVZvvLNMJhrlMxRet6UCJEEGCJB7Su7GwcTDyax+s2pbiWprTIZQrwJ7xBUX8X8xY0P/k
+	HhDhwlXytBBwtgkJrnALER1DCOjOB+xdlYOulGEek1O372lczkg1lvjMcwDCmajLJdOv52Rqndq9K
+	RhMK17/t5YPmfH8+xGUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxwFH-0004FW-CZ; Wed, 14 Aug 2019 16:35:31 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hxwU0-0001Jo-Mb; Wed, 14 Aug 2019 16:50:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxwF7-0004F4-27
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 16:35:22 +0000
-Received: by mail-pf1-x441.google.com with SMTP id c81so4880671pfc.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 09:35:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=sgLlHTTuUxU1TwC5AIX4GAGBSYyQo1G2RL+k215Pzxc=;
- b=DYvtsrHoh73ChIryiTu79IhXFnVOAtXr5wkwZiRRnzDdis6DamABae4iW6mpD/Fb/6
- yPGE0qFEUwZOAzpMocMUZV/qSweQ0rHQufN3k5O8RCl9t/lmPwqMziy5+ghKCB7aTm0a
- i7ooEZZpP9E075iTqWpM83ggynQh3YHQjwLcs=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=sgLlHTTuUxU1TwC5AIX4GAGBSYyQo1G2RL+k215Pzxc=;
- b=TcLz08KIpnUVLWTiV6wPTThYU37XgWt6GGheDvBV2NDi+yhCjgIll/S1mLAdoSeyVG
- X43zIm1HoPIrCckSEBGCCCb2chprRrB1HpEvzSBUEQAEDwVY3tWQvxDNWSDIn76O5YBP
- BEoR2n0nU/1HE+V2vlkTnrW2Aqhj3tboGAqYlLWV5VxJPsQ47JyZ2I31OjqWTjrDI72T
- R+jaURygBQdF2+pvlP+k6yCNEc2VdcP1HK4WgQ2X1gUJiGPKRC9oU2pFluqt3hcesPxd
- N+A+ogtec7ycpBVtcd6jaMgFfNevnIwiLz8kimBkRFr3S/lWa3lNCx2FKJ40UEr3IQCU
- YF4A==
-X-Gm-Message-State: APjAAAUpVapPuy5HWkC4VimS1E8h43vSfq3l4X37i/HHxo3MqwGdYmu5
- dkkFPuVzy4MrBuwf/JuwA7sPvg==
-X-Google-Smtp-Source: APXvYqycw/abNQyrJ20WHTvnYMXT+MiGHrimEtScjwcWEsjxA1Y1OxrMod0D7w4jf+K0gJ5a4ygZ9w==
-X-Received: by 2002:a65:49cc:: with SMTP id t12mr57952pgs.83.1565800519967;
- Wed, 14 Aug 2019 09:35:19 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id 3sm261591pfg.186.2019.08.14.09.35.18
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 14 Aug 2019 09:35:19 -0700 (PDT)
-Date: Wed, 14 Aug 2019 09:35:18 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64/efi: Move variable assignments after SECTIONS
-Message-ID: <201908140934.C3F1F7151E@keescook>
-References: <201908131602.6E858DEC@keescook>
- <CAKv+Gu9fEAG3CqmORyO2X_Uqse09nnXEQiB1kTL-xBqLWsy8Xg@mail.gmail.com>
- <20190814161904.55jgaxnhd4ujyh2h@willie-the-truck>
+ id 1hxwTq-0001JR-IQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 16:50:35 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D9E3620665;
+ Wed, 14 Aug 2019 16:50:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565801434;
+ bh=rr5Yx5jWWXjv1elleVvNixlj9ZG6FWWLR96+BvLKJTs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=zBfq3Ps7UwSWeCBHg3Nhawrm70s4X1Ue1TkGDjnU3dH4GLcUTa5FVXhY96bYLfpB8
+ tRUlGr9jER91hBRTzXAdKwH74CVEhNn+wG6BowZd/CrQDTszU23WMSsrbNDPq+QLAt
+ Vf28F+ZsRzV3ndHNS3F6DKCdEHuQm7I+TYv2MDF0=
+Date: Wed, 14 Aug 2019 17:50:29 +0100
+From: Will Deacon <will@kernel.org>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 1/6] arm64: unexport set_memory_x and set_memory_nx
+Message-ID: <20190814165029.yfmpopn34vxpnmte@willie-the-truck>
+References: <20190813090146.26377-1-hch@lst.de>
+ <20190813090146.26377-2-hch@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190814161904.55jgaxnhd4ujyh2h@willie-the-truck>
+In-Reply-To: <20190813090146.26377-2-hch@lst.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_093521_129631_649BF70E 
-X-CRM114-Status: GOOD (  18.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_095034_631986_4E97257E 
+X-CRM114-Status: GOOD (  13.93  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,68 +77,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fangrui Song <maskray@google.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Peter Smith <peter.smith@linaro.org>,
- Nathan Chancellor <natechancellor@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Dave Hansen <dave.hansen@linux.intel.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, Andy Lutomirski <luto@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 05:19:04PM +0100, Will Deacon wrote:
-> On Wed, Aug 14, 2019 at 07:14:42PM +0300, Ard Biesheuvel wrote:
-> > On Wed, 14 Aug 2019 at 02:04, Kees Cook <keescook@chromium.org> wrote:
-> > >
-> > > It seems that LLVM's linker does not correctly handle variable assignments
-> > > involving section positions that are updated during the SECTIONS
-> > > parsing. Commit aa69fb62bea1 ("arm64/efi: Mark __efistub_stext_offset as
-> > > an absolute symbol explicitly") ran into this too, but found a different
-> > > workaround.
-> > >
-> > > However, this was not enough, as other variables were also miscalculated
-> > > which manifested as boot failures under UEFI where __efistub__end was
-> > > not taking the correct _end value (they should be the same):
-> > >
-> > > $ ld.lld -EL -maarch64elf --no-undefined -X -shared \
-> > >         -Bsymbolic -z notext -z norelro --no-apply-dynamic-relocs \
-> > >         -o vmlinux.lld -T poc.lds --whole-archive vmlinux.o && \
-> > >   readelf -Ws vmlinux.lld | egrep '\b(__efistub_|)_end\b'
-> > > 368272: ffff000002218000     0 NOTYPE  LOCAL  HIDDEN    38 __efistub__end
-> > > 368322: ffff000012318000     0 NOTYPE  GLOBAL DEFAULT   38 _end
-> > >
-> > > $ aarch64-linux-gnu-ld.bfd -EL -maarch64elf --no-undefined -X -shared \
-> > >         -Bsymbolic -z notext -z norelro --no-apply-dynamic-relocs \
-> > >         -o vmlinux.bfd -T poc.lds --whole-archive vmlinux.o && \
-> > >   readelf -Ws vmlinux.bfd | egrep '\b(__efistub_|)_end\b'
-> > > 338124: ffff000012318000     0 NOTYPE  LOCAL  DEFAULT  ABS __efistub__end
-> > > 383812: ffff000012318000     0 NOTYPE  GLOBAL DEFAULT 15325 _end
-> > >
-> > > To work around this, all of the __efistub_-prefixed variable assignments
-> > > need to be moved after the linker script's SECTIONS entry. As it turns
-> > > out, this also solves the problem fixed in commit aa69fb62bea1, so those
-> > > changes are reverted here.
-> > >
-> > > Link: https://github.com/ClangBuiltLinux/linux/issues/634
-> > > Link: https://bugs.llvm.org/show_bug.cgi?id=42990
-> > > Signed-off-by: Kees Cook <keescook@chromium.org>
-> > 
-> > Although it is slightly disappointing that we need to work around this
-> > kind of bugs when adding support for a new toolchain, I don't see
-> > anything wrong with this patch, so
-> > 
-> > Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+On Tue, Aug 13, 2019 at 11:01:41AM +0200, Christoph Hellwig wrote:
+> No module currently messed with clearing or setting the execute
+> permission of kernel memory, and none really should.
 > 
-> Yup, it's gross, but I'll queue it with your ack.
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/arm64/mm/pageattr.c | 2 --
+>  1 file changed, 2 deletions(-)
+> 
+> diff --git a/arch/arm64/mm/pageattr.c b/arch/arm64/mm/pageattr.c
+> index 03c53f16ee77..9ce7bd9d4d9c 100644
+> --- a/arch/arm64/mm/pageattr.c
+> +++ b/arch/arm64/mm/pageattr.c
+> @@ -128,7 +128,6 @@ int set_memory_nx(unsigned long addr, int numpages)
+>  					__pgprot(PTE_PXN),
+>  					__pgprot(0));
+>  }
+> -EXPORT_SYMBOL_GPL(set_memory_nx);
+>  
+>  int set_memory_x(unsigned long addr, int numpages)
+>  {
+> @@ -136,7 +135,6 @@ int set_memory_x(unsigned long addr, int numpages)
+>  					__pgprot(0),
+>  					__pgprot(PTE_PXN));
+>  }
+> -EXPORT_SYMBOL_GPL(set_memory_x);
 
-Thanks, and agreed. :)
+arm64 allmodconfig and defconfig are happy with this, so I'll pick it up
+for 5.4 if that's ok with you?
 
--- 
-Kees Cook
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
