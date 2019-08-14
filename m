@@ -2,75 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5D9E8D29E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 13:59:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 474048D2A0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 14:00:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Op9OMzrFFaAiZiS0cmOTryrpMU8nS7RKfiKQX/Qccc0=; b=jwuvz+qeG+uUpM
-	+OO4carg2wxHCsbTg/5iUwZ+y1CSanoN7KpkM8z58zu72o1gRB7iYZoooa0vXzPBzSFvm2BGtvSL5
-	NQwaZe1ABnFolC/fMk1IyF8H0vABA5VttwSWfr6qJmZzY7icMOFiFnWuHY8YuWTHe2eKfehC/Cjr9
-	49mCHR40qnX53Fna4zTYRjjxP1MnaD6YpImTHJNiZ4a+wZdODzdh7IR7Ha/1Z1iKlEaERtnmhXJj4
-	4vtgoYv0CtlYfmvGw9AjIxnQiTTt3Cdg6puWLLpxcfrrp7pQ/69ozVta/+y3vCgT2vbEuhCuTR7pS
-	37yEO/zk++pVDGG4zp/A==;
+	List-Owner; bh=sHUSNTjbK2k5u3p63BghrTQS77ufGyZWMZQ//N1fehU=; b=sP/OieGF8lxG7x
+	Ttd1du6HLVBhd19igKZXVddHNbuS7qkkBetSOPYuCg+hEsrLsXayBsQ4GvcNhQ89df0GAGnOdP3vP
+	BCE1NEYrWz3dexRPYEBT80sR/H/1H/LZtehAeK2/JNhrd78gQ7GwqCirIt98K/XU8hRV/1NErToGk
+	SnDjB5aJGMeVPE5w0FhVfUCtRAkzT/VDdeX49VNXrWBmNMG/ATPCSExiLveaf/V/fQpfZqGjeNT9d
+	uCYckPdxhhDMuZ3K31BrBjoyzGsacPlKyhHa/VLtge7G5hKch2pfoNZm50KNzCVGpetC5K69Y34ox
+	woxl1gJHHGQiTbw0wa4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxrwM-0001ji-O6; Wed, 14 Aug 2019 11:59:42 +0000
-Received: from mail-lf1-f66.google.com ([209.85.167.66])
+	id 1hxrx0-000341-KN; Wed, 14 Aug 2019 12:00:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxrw2-0001j6-Uh
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 11:59:24 +0000
-Received: by mail-lf1-f66.google.com with SMTP id x3so79243368lfc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 04:59:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8NHuBBys1AqC0nWO0pn74jgJq6YD6r7LGRtWjE6jmtU=;
- b=Q3VFkfB34yf8lErJy7UQWm6hLqm+uycRrlLtmNNbewD1+P3uWra4JKeOqi4ZPddNKK
- 3Bl24K7j29XrPhg0jfARP/Ku3L4d5pDtSiXsTK3t1FhfcYPz8U7H4ssHi4nB2eLX/N1B
- dU1ZVCxJ5f3JKI3XupOZWcShoB7kw1rkbshZqA2wAnra6Aw2SrECAktrdadSxTf3uK3Q
- ncEkUieFQqdHHb/8yCG1uCzJ9/ZToLnqkUzGQG9h2SizgS+FW239an2gYc0biM6hQjQG
- ZOTzJKhDFjFtDnDy2cCwsgyBzfj0qBe0t18B7yWE7haySRaGU7FKE1tleu/k+pNc8AfP
- en5Q==
-X-Gm-Message-State: APjAAAXAZLCFMKLR/GEcIBDxyMK6wdYifwxWIa9PaPSxPl8S3jN6tECX
- DlTRgYdOMj+4XzdAl5M01uc1U3VEvIzWjAliKTr1Rg==
-X-Google-Smtp-Source: APXvYqwt29cWpLQGx1e5xNjYiebOwubUJzPfj3n565rGPBKWVO7WzrR+LmQgdrv/ffvPLkVlo11c/UO8AGm+MUsLVgk=
-X-Received: by 2002:a19:4aca:: with SMTP id
- x193mr24921779lfa.146.1565783961175; 
- Wed, 14 Aug 2019 04:59:21 -0700 (PDT)
+ id 1hxrwj-0002Oz-5r
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 12:00:06 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id ECA592083B;
+ Wed, 14 Aug 2019 12:00:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565784004;
+ bh=ZluCO9gwDZksctlwNdr8Ly8ceVpQfCpDoGpu957UvXY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=SnC7h5bAcLaAH5g/YStWfKEocVz0znk3TV3RSut5n2d0q+Es09B0Up365a4P0sajW
+ TAnaIHy9JsNPsikMgwZwicSviHqZQwIYtuSWo4HxaDh/EsintL3MtKCF2DoXxUU9yd
+ g7gY3bIuweWSSS4d7/R/2f3n27fgtuxb0mQa1xBg=
+Date: Wed, 14 Aug 2019 13:00:00 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH 5/8] arm64: memory: Simplify _VA_START and _PAGE_OFFSET
+ definitions
+Message-ID: <20190814115959.7epzszx53bidti7m@willie-the-truck>
+References: <20190813170149.26037-1-will@kernel.org>
+ <20190813170149.26037-6-will@kernel.org>
+ <20190814112337.GB17931@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-References: <20190807155524.5112-1-steve.capper@arm.com>
- <20190809164716.qtt7zizfbqyjukwe@willie-the-truck>
- <CAMuHMdWvkWGoNC5HbWoZwtpg5VXxTZqRZqQy4BLPgQXZJtKnsQ@mail.gmail.com>
- <20190813131013.vpc5a2vlxwghizxa@willie-the-truck>
- <CAMuHMdXr+S2QeOSEXZoGGDOB_PrgENPbVXFjS=pEfbHfvN2zhw@mail.gmail.com>
- <CACi5LpNhh0a0ktLeDDCO4K3-mBx0D8QZ344juAzbHeP4QFtGDw@mail.gmail.com>
- <20190814082137.mnk242lp2vw5b4ot@willie-the-truck>
-In-Reply-To: <20190814082137.mnk242lp2vw5b4ot@willie-the-truck>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Wed, 14 Aug 2019 17:29:09 +0530
-Message-ID: <CACi5LpMNC2h-JAmT3gc8wt6rwPBzQaAUZq_P18D3Atjg9CNS5A@mail.gmail.com>
-Subject: Re: [PATCH V5 00/12] 52-bit kernel + user VAs
-To: Will Deacon <will@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20190814112337.GB17931@lakrids.cambridge.arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_045922_994366_951B483F 
-X-CRM114-Status: GOOD (  10.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_050005_248506_200C9271 
+X-CRM114-Status: GOOD (  19.55  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.66 listed in list.dnswl.org]
- -0.2 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.66 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,47 +79,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christoph von Recklinghausen <crecklin@redhat.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Steve Capper <steve.capper@arm.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>, maz@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Steve Capper <steve.capper@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Qian Cai <cai@lca.pw>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 1:51 PM Will Deacon <will@kernel.org> wrote:
->
-> On Wed, Aug 14, 2019 at 01:34:49PM +0530, Bhupesh Sharma wrote:
-> > I still see the following issue on a 48-bit hardware (i.e. _non_
-> > ARMv8.2 hardware) with branch 'for-next/52-bit-kva' with commit
-> > d2d73d2fef421ca0d4 as the HEAD:
->
-> Have you tried the patches I posted here:
->
-> http://lists.infradead.org/pipermail/linux-arm-kernel/2019-August/673315.html
->
-> ?
->
-> Whilst they're being reviewed, I've dropped the 52-bit branch from
-> linux-next (for-next/core) so that people don't keep running into this.
+On Wed, Aug 14, 2019 at 12:23:39PM +0100, Mark Rutland wrote:
+> On Tue, Aug 13, 2019 at 06:01:46PM +0100, Will Deacon wrote:
+> > Rather than subtracting from -1 and then adding 1, we can simply
+> > subtract from 0.
+> > 
+> > Cc: Steve Capper <steve.capper@arm.com>
+> > Signed-off-by: Will Deacon <will@kernel.org>
+> > ---
+> >  arch/arm64/include/asm/memory.h | 6 ++----
+> >  1 file changed, 2 insertions(+), 4 deletions(-)
+> > 
+> > diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+> > index 56be462c69ce..5552c8cba1e2 100644
+> > --- a/arch/arm64/include/asm/memory.h
+> > +++ b/arch/arm64/include/asm/memory.h
+> > @@ -44,8 +44,7 @@
+> >   * VA_START - the first kernel virtual address.
+> >   */
+> >  #define VA_BITS			(CONFIG_ARM64_VA_BITS)
+> > -#define _PAGE_OFFSET(va)	(UL(0xffffffffffffffff) - \
+> > -					(UL(1) << (va)) + 1)
+> > +#define _PAGE_OFFSET(va)	(-(UL(1) << (va)))
+> >  #define PAGE_OFFSET		(_PAGE_OFFSET(VA_BITS))
+> >  #define KIMAGE_VADDR		(MODULES_END)
+> >  #define BPF_JIT_REGION_START	(KASAN_SHADOW_END)
+> > @@ -63,8 +62,7 @@
+> >  #else
+> >  #define VA_BITS_MIN		(VA_BITS)
+> >  #endif
+> > -#define _VA_START(va)		(UL(0xffffffffffffffff) - \
+> > -				(UL(1) << ((va) - 1)) + 1)
+> > +#define _VA_START(va)		(-(UL(1) << ((va) - 1)))
+> 
+> This didn't make any sense to me until I realised that we changed the
+> meaning of VA_START when flippnig the VA space. Given that, this cleanup
+> looks sound to me.
+> 
+> However...
+> 
+> VA_START used to be the start of the TTBR1 address space, which was what
+> the "first kernel virtual address" comment was trying to say. Now it's
+> the first non-linear kernel virtual addres, which I think is very
+> confusing.
+> 
+> AFAICT, that change breaks at least:
+> 
+> * is_ttbr1_addr() -- now returns false for linear map addresses
+> * ptdump_check_wx() -- now skips the linear map
+> * ptdump_init() -- initialises start_address inccorrectly.
+> 
+> ... so could we please find a new name for the first non-linear address,
+> e.g. PAGE_END, and leave VA_START as the first TTBR1 address?
 
-Thanks will try the above and get back with my results.
+I think VA_START becomes PAGE_END and then things like is_ttbr1_addr()
+just refer to PAGE_OFFSET instead. ptdump_init() looks ok to me, but I could
+be missing something.
 
-However just to make sure that the 52-bit changes are tested properly
-(before landing up linux-next) - as we had issues with the 52-bit User
-space VA + PA changes in the past (which broke userspace), I was
-wondering if we can have a dedicated branch to have the v5 patches
-from Steve + fixes, so that they can be easily tested and issues (if
-any) reported with easy reference.
+Anyway, these seem to be comments on the original patches from Steve rather
+than my fixes, so please send additional fixes on top. I'll push out an
+updated branch for you to work with...
 
-Or, if such a branch already exists, kindly share the pointer to the
-same as well.
-
-Thanks,
-Bhupesh
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
