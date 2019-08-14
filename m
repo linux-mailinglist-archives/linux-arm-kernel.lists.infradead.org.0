@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F4F68E126
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 01:16:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87ABB8E15E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 01:51:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6s00mYusmi3e+IFZkUjHLBHJ8BygriPmxK1QgtAJP/I=; b=gRH5re/YRqmRSV
-	JhPwFLK6tNpCC3S5hXnQOcVvIB3N14G9aoxkS5dt1TJxFLScdP/ieog2QOXXpIteP1RuhOoSSzUiF
-	AmRc+KjqS6Fthi27Ci4z/BUKVEJ5rEZ3pBK94CXQv0s9jww+zQDyRmarDyaF/kKus+NgVanWYC1jl
-	zXXEl/vBopzaoqoS/oTe+SfJlyq56JRcFYJP6BuhzVCAhwn6QnUslvi6Mi+cS+c181JCLgFeU3Z0i
-	5UiHbagVK9tXgwwTJUmHHQS70SV6RIqAobb7kNIVEyCDoEWbJyExejIJx0vZ9KkuN4Yde3XYsNSmP
-	t0vkNu7i5QgS4C9IkHwQ==;
+	List-Owner; bh=zF5mXTOyq1hvCacnap0Qu1kCm2yJm7AAhwy0K0o/+y0=; b=Uay3WxpN5Xb62S
+	742Ucb2icFr6Es8tyHtt2ZyuqRGhXTw8XU2YwCkI1AikF9cbeITvDhpYtCia8S0fHqJ8ZmhAj1/SK
+	bTT7s8+XJ8g2qKH9mCTFVQXCb7P3mqVAfUvomzDNYLZ6l/Fg9U+S2Uq7A76lPoYP96DEbgr5gyMIP
+	qfqNdoze858V00VUtdXRAOoBp7YYCj9QpN5vV9yhZ2ikxTu/8As/dFfPTn+cBgMvY3c2XxYX+4xCY
+	QCEuAD06Xu5Kywy+carCsdmC3HJ71RgO0oRVy6m3vUuIBXAY5/vrEZPdl1Ur9Tzadu9bYHupKSMMQ
+	yqH2f3kuFm2et6d6nXFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy2Um-0003KA-7J; Wed, 14 Aug 2019 23:15:56 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1hy32y-0004lP-5B; Wed, 14 Aug 2019 23:51:16 +0000
+Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy2UY-0003Jq-9w
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 23:15:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Sv8Sj/ixrwVpwf8DeTHbHSgly+psCtFNDpFCJOhRNgI=; b=VXD0g4V281rMfgDBwNQrhqToY
- Rofd7NDIEbm3Vz1ioV6aWOUztfLTHdbu08ljSYbtOj3zmAfuRTHxMp4Sza+dVWS4MDh0tylqLZK6p
- DaXZT08DU/9+3eRcHB93R8gX/PvCcoMQatqBg48tSQV/rN+ce7/hZbzc9xeJ+qZdlnywyACGXInXL
- c5v/opELXGIvgAHbro/ay9sd2K+Kit77hOSyOn9DjyI5mJeVJ/m5ajijKWuJx0AQmEoyKXRb1D7N+
- DEJfLqTuLbyw/+TpBSEMhlYx3YCqL4AmfFig06YzZXim8D1rHnOYIHn0hxYxJRm7Hf8OOswEJ1/T8
- QDjOCAWlQ==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:56690)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hy2U8-0000f6-8R; Thu, 15 Aug 2019 00:15:16 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hy2U1-0000Pe-LG; Thu, 15 Aug 2019 00:15:09 +0100
-Date: Thu, 15 Aug 2019 00:15:09 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Steve Longerbeam <slongerbeam@gmail.com>
-Subject: Re: [PATCH 04/22] media: Move v4l2_fwnode_parse_link from v4l2 to
- driver base
-Message-ID: <20190814231509.GK13294@shell.armlinux.org.uk>
-References: <20190805233505.21167-1-slongerbeam@gmail.com>
- <20190805233505.21167-5-slongerbeam@gmail.com>
- <CAHp75VcOh8bOf_s6t0ehwGtcYn64QFGj303SVvpHrztEOhTRgg@mail.gmail.com>
- <4750b347-b421-6569-600f-0ced8406460e@gmail.com>
- <20190814103054.GI13294@shell.armlinux.org.uk>
- <e0a19469-af9d-d9de-499f-4ffbf04542b3@gmail.com>
- <20190814220437.GJ13294@shell.armlinux.org.uk>
- <1842bf8f-4f97-6294-41db-74f9f8e2befd@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1842bf8f-4f97-6294-41db-74f9f8e2befd@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hy32n-0004l4-K0
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 23:51:07 +0000
+Received: by mail-pg1-x54a.google.com with SMTP id l11so268403pgc.14
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 14 Aug 2019 16:51:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=mCCHjAlFO5vAUYuV0pCQwN/48vRzFq+YkLLf8FK8aNk=;
+ b=G9Al7jqBBI41vvj+P2TFIYHmTeK4JuIVUzUNnvWpI/c+YcsaiX3h+JT3tdTS6X5Opc
+ kAYlb9p4SKnw8DgbDCx+LpcimPK8C68h5/K+lVbuq0M7F5eIV6rfRL1xuz+j7G+ip6Vh
+ RZMtWaJzLPg4FKl6BNENo618JCDxuHq2mGhmrlacvzf+eWFxRzzNdig1eCrg/blI1LJu
+ 2x6x7SnN9RiUXFPycEY9XiEM1qkzYe59zFwUZRKYMIgedOLfg53VHus55qOkD4k9gyVD
+ 8uXyBC8NzgfGeGFcrZmj15kI+1F7/cbAZweQBLvyQ+wDcsQG3KHaa7FCr1DGTNymyM3H
+ C1tA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=mCCHjAlFO5vAUYuV0pCQwN/48vRzFq+YkLLf8FK8aNk=;
+ b=b76PWpmzh4QQ2aYssUOk2s4GerhGZwY0oC5SggbtTKDW36jpUHwt5XV0wCuLyTAqN0
+ cwRdEkk6VSzCJS/I+rduZTy0eI9aQ0gcNUZXzsszLmE9lTSBkFv8kWQ8qP9tMnYPZh6O
+ uudMXnOv3PZXJw9ENOiEXg165mTP9qbaxsM2TYCx/2XS5N1nV51mVJ3YnQR5wR4oKyon
+ oJKlPWlpPKGECO/soRAfxIz3mc+j/cGB0E/1lrvv/FpL9Sxi7RsulCPXrurbz8VEdUIg
+ geLposAEo63sedjRASd50pevgOCQXAeO8w35w6++k0Zl+uLj+vJcb+nQLVu2QFFIpUsN
+ fJJA==
+X-Gm-Message-State: APjAAAXOtMw+BE2WmoAKUVsDhr5Yt1UjZNX8lZC1nzuaY8eK7K63Ut+I
+ FdbRg3b2J1VNICZhdmZcb5n5GmIlEg==
+X-Google-Smtp-Source: APXvYqwQ7ZXfkseheaq9a7yygbzrcKzjgwsKviofG2LNhIBKUnkwv4PaV9kndL49aji1M5iN0KAYlk6+lgk=
+X-Received: by 2002:a63:7709:: with SMTP id s9mr1334272pgc.296.1565826661481; 
+ Wed, 14 Aug 2019 16:51:01 -0700 (PDT)
+Date: Wed, 14 Aug 2019 16:50:58 -0700
+In-Reply-To: <CANLsYkz3_bzRCQEVb00Tbf3Rdww13mePN-woncctOu7OanF00A@mail.gmail.com>
+Message-Id: <20190814235058.184204-1-yabinc@google.com>
+Mime-Version: 1.0
+References: <CANLsYkz3_bzRCQEVb00Tbf3Rdww13mePN-woncctOu7OanF00A@mail.gmail.com>
+X-Mailer: git-send-email 2.23.0.rc1.153.gdeed80330f-goog
+Subject: Re: [PATCH v2] coresight: tmc-etr: Fix perf_data check.
+From: Yabin Cui <yabinc@google.com>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, 
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_161542_349926_32282AD3 
-X-CRM114-Status: GOOD (  21.35  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190814_165105_685637_A8687F4D 
+X-CRM114-Status: GOOD (  12.44  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,6 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,104 +96,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Michal Simek <michal.simek@xilinx.com>,
- "open list:ACPI" <linux-acpi@vger.kernel.org>,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, Len Brown <lenb@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Sascha Hauer <s.hauer@pengutronix.de>,
- Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- "moderated list:ARM/ZYNQ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- Hyun Kwon <hyun.kwon@xilinx.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- open list <linux-kernel@vger.kernel.org>,
- Jacopo Mondi <jacopo+renesas@jmondi.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- Enrico Weigelt <info@metux.net>
+Cc: Yabin Cui <yabinc@google.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 04:00:30PM -0700, Steve Longerbeam wrote:
-> 
-> 
-> On 8/14/19 3:04 PM, Russell King - ARM Linux admin wrote:
-> > On Wed, Aug 14, 2019 at 12:04:41PM -0700, Steve Longerbeam wrote:
-> > > 
-> > > On 8/14/19 3:30 AM, Russell King - ARM Linux admin wrote:
-> > > > On Tue, Aug 06, 2019 at 09:53:41AM -0700, Steve Longerbeam wrote:
-> > > > > The full patchset doesn't seem to be up yet, but see [1] for the cover
-> > > > > letter.
-> > > > Was the entire series copied to the mailing lists, or just selected
-> > > > patches?  I only saw 4, 9, 11 and 13-22 via lakml.
-> > > The whole series was posted to the linux-media ML, see [1]. At the time,
-> > > none of the linux-media ML archives had the whole series.
-> > > 
-> > > > In the absence of the other patches, will this solve imx-media binding
-> > > > the internal subdevs of sensor devices to the CSI2 interface?
-> > > "internal subdevs of sensor devices" ?? That doesn't make any sense.
-> > Sorry, but it makes complete sense when you consider that sensor
-> > devices may have more than one subdev, but there should be only one
-> > that is the "output" to whatever the camera is attached to.  The
-> > other subdevs are internal to the sensor.
-> 
-> Ah, thanks for the clarification. Yes, by "internal subdevs" I understand
-> what you mean now. The adv748x and smiapp are examples.
-> 
-> > 
-> > subdevs are not purely the remit of SoC drivers.
-> 
-> So there is no binding of internal subdevs to the receiver CSI-2. The
-> receiver CSI-2 subdev will create media links to the subdev that has an
-> externally exposed fwnode endpoint that connects with the CSI-2 sink pad.
+> Did you actually see the check fail or is this a theoretical thing?
+> I'm really perplex here has I have tested this scenario many times
+> without issues.
+>
+I have seen this warning in dmesg output, that's how I find the problem.
 
-Maybe - with 5.2, I get:
+> In CPU wide scenarios each perf event (one per CPU) is associated with
+> an event_data during the setup process.  The event_data is the
+> etr_perf holding a reference to the perf ring buffer for that specific
+> event along with the etr_buf, regardless of who created the latter.
 
-- entity 15: imx6-mipi-csi2 (5 pads, 6 links)
-             type V4L2 subdev subtype Unknown flags 0
-             device node name /dev/v4l-subdev2
-        pad0: Sink
-...
-                <- "imx219 0-0010":0 []
-                <- "imx219 pixel 0-0010":0 []
+Agree.
 
-Adding some debug in gives:
+> From there, when the event is installed on a CPU, the csdev for that
+> CPU is given a reference to the event_data of that event[1].  Before
+> going further notice how there is a per CPU csdev and event handle to
+> keep track of event specifics[2]. As such both (per CPU) csdev and
+> event handle carry the exact same reference to the etr_perf.
+>
+On my test device (Pixel 3), there is an ETM device on each cpu, but only
+one ETR device for the whole device. So there is only one instance of etr
+csdev in the kernel. If multiple cpus are scheduling on etm perf events at
+the same time, all of them are trying to set their event_data to the same
+etr csdev. And different perf events have different event_data. A warning
+situation is as below:
 
-[   11.963362] imx-media: imx_media_create_of_links() for imx6-mipi-csi2
-[   11.963396] imx-media: create_of_link(): /soc/aips-bus@2000000/iomuxc-gpr@20e0000/ipu1_csi0_mux
-[   11.963422] imx-media: create_of_link(): /soc/ipu@2400000
-[   11.963450] imx-media: create_of_link(): /soc/ipu@2800000
-[   11.963478] imx-media: create_of_link(): /soc/aips-bus@2000000/iomuxc-gpr@20e0000/ipu2_csi1_mux
-[   11.963489] imx-media: imx6-mipi-csi2:4 -> ipu2_csi1_mux:0
-[   11.963522] imx-media: create_of_link(): /soc/aips-bus@2100000/i2c@21a0000/camera@10
-[   11.963533] imx-media: imx219 0-0010:0 -> imx6-mipi-csi2:0
-[   11.963549] imx-media: imx_media_create_of_links() for imx219 pixel 0-0010
-[   11.963577] imx-media: create_of_link(): /soc/aips-bus@2100000/mipi@21dc000
-[   11.963587] imx-media: imx219 pixel 0-0010:0 -> imx6-mipi-csi2:0
-[   11.963602] imx-media: imx_media_create_of_links() for imx219 0-0010
+   cpu 0
+   schedule on event A (set etr csdev->perf_data to event_a.etr_perf)
 
-Note that it's not created by imx6-mipi-csi2, but by imx-media delving
-around in the imx219 subdevs.
+   cpu 1
+   schedule on event B (set etr csdev->perf_data to event_b.etr_perf)
 
-From what I can see, smiapp does the same thing that I do in imx219 -
-sets the subdev->dev member to point at the struct device, which then
-means that v4l2_device_register_subdev() will associate the same fwnode
-with both "imx219 pixel 0-0010" and "imx219 0-0010".
+   cpu 1
+   schedule off event B (update buffer, does nothing since csdev->refcnt != 1)
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+   cpu 0
+   schedule off event A (update buffer, but etr csdev->perf_data check fail)
 
 _______________________________________________
 linux-arm-kernel mailing list
