@@ -2,57 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF5958D035
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:03:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BA4A8D036
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 12:03:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xXfhSXC491m2/f/oDRkfOuSt7GD1HoWPsaAEVa/LTcU=; b=hgPrJ617l/K9WQ
-	LhDDgy2rN404Zl1YYPk6NxuDjdyQjC+8/EuXPFv9xBIklTJ5TrMfdzTKhsombyq1ESi99maR/lDzu
-	7pCPUgP/ajc/Jlp7SRRTxfLrX+l1B+T1N3K+TmACOx/gHalKlmlLjyXqfXOGDzWWmtceXQ3jU7uoE
-	Rtg/T8527UfGno3caK+VJgVWSV6AJnUiRuZBztF0gxJqpbtvZk2RjXyCzl2PFMGzX94vOJSIfqOTr
-	xORKyssybmToyIeN1XJ23B8+Eh70VEDFei3mAmvUM6cd3UqWDZw/prcuO2rr2Bsk54ge1D+GcNkY9
-	6uEKZh2l1n48IN1qkrwQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xgTxyrMSDqan0Nd+Tc9TdO351FnWM8CIJG8u1LYS8/Q=; b=DcWHXNC79DJcOdp7XWYE51V0w
+	JfvYLT5J8sxL1WU75KYB6pajhDrpfYyvLw/UQVl/v70zCmLdEYW5NJI8aWkg2mJVu0TBLZoyqKlTd
+	7bhr/T9m5cEYI4W5zUMX1PkcsKiY2/uFfpdH4G0KW+tiyxAnudhTpg+CqEN+1UhiSLYz1X6qhorFn
+	wqXHMoFhutaODj7Pau45JBhpRkA5Aed4r4hM3CFted+M6UfBjrmoO0njiFXRcK4F1aZjL+S9OiT5v
+	l+oQKqRxhH1SxOEwIOeKEPRojLHGXkX0DuQzDV7WJmNqbcxPb77XrEyuzT2u3HCy8G1QhmyUwJsAA
+	yYFQPphWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxq79-0001dE-P9; Wed, 14 Aug 2019 10:02:44 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1hxq7s-0001t4-De; Wed, 14 Aug 2019 10:03:28 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxq6O-0001cp-7P
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 10:01:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 992A2344;
- Wed, 14 Aug 2019 03:01:55 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1690F3F694;
- Wed, 14 Aug 2019 03:01:54 -0700 (PDT)
-Date: Wed, 14 Aug 2019 11:01:53 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH v4 6/6] dt-bindings: arm: coresight: Add support for
- coresight-needs-save-restore
-Message-ID: <20190814100152.GB43882@e119886-lin.cambridge.arm.com>
-References: <20190730125157.884-1-andrew.murray@arm.com>
- <20190730125157.884-7-andrew.murray@arm.com>
- <9df0eea2-a9bd-3a93-ca51-9c3d2391a1cf@arm.com>
- <20190802143751.GP56241@e119886-lin.cambridge.arm.com>
- <CANLsYkyVMRh_L5BfwWk=s-obh+xiZfjwqXUJkwgaZYWmc6Kuww@mail.gmail.com>
+ id 1hxq6s-0001kG-Ba
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 10:02:32 +0000
+Received: from localhost (p54B33326.dip0.t-ipconnect.de [84.179.51.38])
+ by pokefinder.org (Postfix) with ESMTPSA id 5060F2C311C;
+ Wed, 14 Aug 2019 12:02:25 +0200 (CEST)
+Date: Wed, 14 Aug 2019 12:02:25 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [PATCH v1] MAINTAINERS: i2c-imx: take over maintainership
+Message-ID: <20190814100224.GE1511@ninjato>
+References: <20190812050817.23279-1-o.rempel@pengutronix.de>
+ <20190812064811.427cy7ahim54odkk@pengutronix.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANLsYkyVMRh_L5BfwWk=s-obh+xiZfjwqXUJkwgaZYWmc6Kuww@mail.gmail.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <20190812064811.427cy7ahim54odkk@pengutronix.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_030156_355993_DC7CDF8A 
-X-CRM114-Status: GOOD (  30.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190814_030227_696267_94B0E7F0 
+X-CRM114-Status: UNSURE (   7.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -65,111 +60,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al Grant <Al.Grant@arm.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Coresight ML <coresight@lists.linaro.org>, Sudeep Holla <Sudeep.Holla@arm.com>,
- Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Mike Leach <mike.leach@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Oleksij Rempel <o.rempel@pengutronix.de>, linux-i2c@vger.kernel.org,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Chris Healy <cphealy@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6882891228784259974=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 04, 2019 at 07:13:45AM -0600, Mathieu Poirier wrote:
-> On Fri, 2 Aug 2019 at 08:37, Andrew Murray <andrew.murray@arm.com> wrote:
-> >
-> > On Fri, Aug 02, 2019 at 11:40:54AM +0100, Suzuki K Poulose wrote:
-> > > Hi Andrew,
-> > >
-> > > On 30/07/2019 13:51, Andrew Murray wrote:
-> > > > Some coresight components, because of choices made during hardware
-> > > > integration, require their state to be saved and restored across CPU low
-> > > > power states.
-> > > >
-> > > > The software has no reliable method of detecting when save/restore is
-> > > > required thus let's add a binding to inform the kernel.
-> > > >
-> > > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > > > ---
-> > > >   Documentation/devicetree/bindings/arm/coresight.txt | 3 +++
-> > > >   1 file changed, 3 insertions(+)
-> > > >
-> > > > diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
-> > > > index fcc3bacfd8bc..7cbdb7893af8 100644
-> > > > --- a/Documentation/devicetree/bindings/arm/coresight.txt
-> > > > +++ b/Documentation/devicetree/bindings/arm/coresight.txt
-> > > > @@ -92,6 +92,9 @@ its hardware characteristcs.
-> > > >     * arm,cp14: must be present if the system accesses ETM/PTM management
-> > > >       registers via co-processor 14.
-> > > > +   * arm,coresight-needs-save-restore: boolean. Indicates that software
-> > > > +     should save/restore state across power down.
-> > > > +
-> > >
-> > > Do you think we could be a bit more descriptive here about when people could add
-> > > it to the DT ? Here we don't mention when someone should use this property and
-> > > it may be added to platforms where it may be absolutely unnecessary. How about :
-> > >
-> > > "Indicates that the hardware implementation may not honor the Powerup request
-> > > from the software and thus might loose the register context on CPU power
-> > > down (e.g, during CPUIdle). Software must save/restore the context during a
-> > > CPU power transition cycle."
-> >
-> > How about the following:
-> >
-> > "Indicates that the hardware will loose register context on CPU power down (e.g.
-> > CPUIdle), despite the TRCPDCR.PU bit being set."
-> >
-> > I'm keen to avoid making suggestions about what the kernel will do when it sees
-> > this flag and thus prefer to focus on describing what the hardware does. So I
-> > dropped your last sentence. However the name of the flag still implies policy
-> > which I don't like.
-> >
-> > I also changed the 'may not honor' wording, I'm not sure if this is really the
-> > case or if the spec is open to interpretation.
-> >
-> > It would great for this wording to also apply to other CS components though I
-> > haven't investigated if these have a PU bit or something different.
-> 
-> Exactly - the definition needs to be broad enough to apply to other CS
-> components.  Mike what do you think would be appropriate for CTIs?
 
-How about we keep this short and simple:
+--===============6882891228784259974==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="ZRyEpB+iJ+qUx0kp"
+Content-Disposition: inline
 
-* arm,coresight-loses-context-with-cpu : boolean. Indicates that the hardware
-  will lose register context on CPU power down (e.g. CPUIdle).
 
-I could have added something like "... despite TRCPDCR.PU being set", or to
-apply more generically: "... despite available register controls being set to
-prevent such context loss". However whilst these are more informative - they
-elude to some of reasons as to why context is lost and as we cannot be
-exhaustive I'd rather not give a limited example.
+--ZRyEpB+iJ+qUx0kp
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-However if a longer explaination is required:
 
-* arm,coresight-loses-context-with-cpu : boolean. Indicates that the hardware
-  will lose register context on CPU power down (e.g. CPUIdle). An example of
-  where this may be needed are systems which contain a coresight component and
-  CPU in the same power domain. When the CPU powers down the coresight
-  component also powers down and loses its context.
+> Even without this patch the generic "ARM/FREESCALE IMX / MXC ARM
+> ARCHITECTURE" entry matches the i2c-imx driver.
 
-Any objections/preference? :)
+It matches, but it didn't work well, I am afraid. Quite some IMX patches
+in patchwork waiting for attention:
 
-Thanks,
+http://patchwork.ozlabs.org/project/linux-i2c/list/?series=&submitter=&state=&q=imx&archive=&delegate=
 
-Andrew Murray
 
-> 
-> >
-> > Thanks,
-> >
-> > Andrew Murray
-> >
-> > >
-> > > Cheers
-> > > Suzuki
+--ZRyEpB+iJ+qUx0kp
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1T3CwACgkQFA3kzBSg
+KbajTQ//VgglyM7CZxyc+Ld+REfPtwJNbH4MOU3yt3/ZblEZli85uYDYMuJvdPvA
+8ujNPD7em/qfmwlnrhzNOCeNmdwGXFcs+T9e8qKwqZIazJ/2xZ11Ub9KeR5gixk+
++udm0DqRtnx5q019zanKGsuXsNDIjyOCKOkcU0v+dA4qZVw7cEv7OECGvMg6Z0gM
+UyW9Qp0l39DsKJqRdwT/ei7K+tQl6slFi1kpMvZsiIEX+GIUK4nCHdjnc86uAIoZ
+82ZlrciTgBMmMAqydTFOdGkp6NV3+2iiSZ/58Kqj2THHGVo2VxR2eMUrLyNn2Z1O
+GPid13ndoVd6DOuevS6Bn/E1OovR6hIeZ3PetslltKmW/XKRbWwXsyayQxyH1Tqb
+Jsey2AN8YXmNPKNyTUnYTKg6zkvvvtfCvrtKMIlAvEIEEQd1KShBPpEbPUqlLUv8
+6XnmQsjuuiDytZAETbdOs3edV/hZJebz9/WH60qJlXmAzFLdnLgcn7Mv2zlZh6jn
+wkLE3CEa+JG4hcYgzMsL68I1ccwXM8yVuzKOrEVuFILNjgA47yJFYqwb5f7eLk3G
+wHuIN15QyeJ5LWslyr1LsSP7ekGq18qYKTvf8/qNx0nFF5w088AlKunLVoAqJwlI
+TwoMZhdY0qfi3SGXmUQEt3oz8i9d1pW0nK/maZqmXS/I6Vp6UKw=
+=m4xx
+-----END PGP SIGNATURE-----
+
+--ZRyEpB+iJ+qUx0kp--
+
+
+--===============6882891228784259974==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6882891228784259974==--
+
