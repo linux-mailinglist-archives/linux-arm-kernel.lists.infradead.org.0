@@ -2,43 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B66FE8D69B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:52:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D8388D69C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 16:52:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rc9yur2jQYjvmKg84VTEQecx2hW/LGo2CBrBC9fzWJY=; b=imDox//8JFaz1B
-	j37YZEup0vWo0PuHrNalI6g2aLWW638Kir56DysF/NvdHHfz7ZPZmWHlOpR57684MG5XQnWIbGHfh
-	Wks/mLOJKv6hwaP/gcePDL8QNphYOhf9LgCgxpjJZc5nlpX3K5BVaAU866R38SoMYIyLlqRdVo4VY
-	pRCH+6vHKpMo3C6Rvo5CQa/clF4UuM6Axe3J6sx/WV77WgaS2CopQjJXUO58ZZ0PykIdM4tldQfSD
-	PG7EUQH0A7NEQoi0aZD0PgjBJDjd+JKH6Nlgg8N+HG3I4QQf4OwKAztBYzmAgkSZUSTYaPu29of9u
-	6mGkWlmFBCf6h0DL3b/g==;
+	List-Owner; bh=UbxU25BUsu6LzW3gl883TzMYiID+1/d9PVZYnlYBrVw=; b=gkYlq4ffuiprE+
+	ZtPi8wgbhpfH+P26Dz7qSjYao8CqHpx0egd5t1P+f3rrU8GA2Xg0dXU5GnLq1shtVotUulUh5xioC
+	Efs+XK/xRBBftw8MfacDVyg95R3JInv0MpHPTNtrb3fPpU0DiZdKyrcPJAMs+roBU/oDAQXNcS1tB
+	Cx02/H8hGvVGHhJpk7Gh1XHBZNNvS5lnovPbXSAy3T2jZSuBAvF7ywrfN92ydOcOgMFXNkwmq2Nck
+	g2P15z/X+ZxZwH6h5gZp5LmY6FP1ZXavUkleddNZItpsFHxCAsqZFnW9pr3lO9GTaf88TDDmyRs/w
+	zw4pwapU0P5wQKKKBjew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxudB-0000tD-KR; Wed, 14 Aug 2019 14:52:05 +0000
-Received: from mail-eopbgr00041.outbound.protection.outlook.com ([40.107.0.41]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1hxudT-00019g-6W; Wed, 14 Aug 2019 14:52:23 +0000
+Received: from mail-eopbgr130072.outbound.protection.outlook.com
+ ([40.107.13.72] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxucs-0000fn-Nm
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:51:48 +0000
+ id 1hxud9-00011u-KN
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 14:52:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
  s=selector2-armh-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=um20CfsORHLRXIuNSUEEwzAMUDuIEC2Yot6fsuqfCTA=;
- b=0YcOiYHoGl2wmkDfdeMgeq04qD40gLClJyn9bDaUADqEtv9v3aoMuWnCzbTx1V3PebArUpRJG994gfs40fB7cGhAKQaNfORs4ID/1AZP90vks1tQNKhdLksmRoaexYlmX4vQxSl1oJt0NDAT00/+Dta2vpuOjJqJ6NQu0KoKGeU=
-Received: from DB6PR0801CA0043.eurprd08.prod.outlook.com (2603:10a6:4:2b::11)
- by VI1PR0801MB1853.eurprd08.prod.outlook.com (2603:10a6:800:5a::22)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.13; Wed, 14 Aug
- 2019 14:51:42 +0000
-Received: from DB5EUR03FT031.eop-EUR03.prod.protection.outlook.com
- (2a01:111:f400:7e0a::204) by DB6PR0801CA0043.outlook.office365.com
- (2603:10a6:4:2b::11) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.13 via Frontend
- Transport; Wed, 14 Aug 2019 14:51:42 +0000
+ bh=+/NbnY7p2u3c7qcpw+EwyGAaqpRATfhBOFOTgWFXZv8=;
+ b=Z2Meh5sNfsl48POKkQJ6UbvzcRpPBa6LwctlYGZKc17UnHuS+yg1mCzXZh+ybnaka3GYkS2BVZ4NpynjARuwm1ee9cJH4T/9ybB88x17nNSfNwyeKVuEzt0/fAl/q6aI87e2thdzgig9ztCGwJ1ub7EFWbctfkFBwOpJJJTw+Ts=
+Received: from VE1PR08CA0010.eurprd08.prod.outlook.com (20.179.29.23) by
+ VI1PR0801MB1856.eurprd08.prod.outlook.com (10.168.65.135) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.14; Wed, 14 Aug 2019 14:51:57 +0000
+Received: from AM5EUR03FT019.eop-EUR03.prod.protection.outlook.com
+ (2a01:111:f400:7e08::206) by VE1PR08CA0010.outlook.office365.com
+ (2603:10a6:803:104::23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2157.14 via Frontend
+ Transport; Wed, 14 Aug 2019 14:51:57 +0000
 Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
  smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
  verified) header.d=armh.onmicrosoft.com;lists.infradead.org; dmarc=temperror
@@ -46,128 +45,128 @@ Authentication-Results: spf=temperror (sender IP is 63.35.35.123)
 Received-SPF: TempError (protection.outlook.com: error in processing during
  lookup of arm.com: DNS Timeout)
 Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- DB5EUR03FT031.mail.protection.outlook.com (10.152.20.142) with
+ AM5EUR03FT019.mail.protection.outlook.com (10.152.16.104) with
  Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2115.18 via Frontend Transport; Wed, 14 Aug 2019 14:51:41 +0000
-Received: ("Tessian outbound 40a263b748b4:v26");
- Wed, 14 Aug 2019 14:51:41 +0000
+ 15.20.2115.18 via Frontend Transport; Wed, 14 Aug 2019 14:51:56 +0000
+Received: ("Tessian outbound 220137ab7b0b:v26");
+ Wed, 14 Aug 2019 14:51:55 +0000
 X-CheckRecipientChecked: true
-X-CR-MTA-CID: 4d8056d28a65e8a7
+X-CR-MTA-CID: 02ad7fe7ba3efddb
 X-CR-MTA-TID: 64aa7808
-Received: from 08461fe34580.2 (cr-mta-lb-1.cr-mta-net [104.47.5.57])
+Received: from 397d22aadcfc.1 (cr-mta-lb-1.cr-mta-net [104.47.5.52])
  by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- 6D818700-CA63-46C6-9592-4BB7754206E7.1; 
- Wed, 14 Aug 2019 14:51:36 +0000
+ D0F4C63D-F9C4-4A11-A590-5A4C66370566.1; 
+ Wed, 14 Aug 2019 14:51:50 +0000
 Received: from EUR02-HE1-obe.outbound.protection.outlook.com
- (mail-he1eur02lp2057.outbound.protection.outlook.com [104.47.5.57])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 08461fe34580.2
+ (mail-he1eur02lp2052.outbound.protection.outlook.com [104.47.5.52])
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 397d22aadcfc.1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384);
- Wed, 14 Aug 2019 14:51:36 +0000
+ Wed, 14 Aug 2019 14:51:50 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GPDgs+MWhaVdERlHxctWm2YhmvyNddtmU1zTSOTjGkDXecJF5PJ0eyaVwxy/uITYqplfmnIqWDbnK6F2f43EZgKJfLYorPO3pEiMkg66VPm4KydjIp47VYQ4ws2sbxRh2zMNbju4mMUn4KEKo3sWPPB3pCmPOTcNMzl7mBH4D3DD9BpmQQfSnVEOPPcRLpnsBoJpDyj07SiuMDhkmxs0jfYGGFNC2uCx0Cuos8PJeWfCl3WMoCn+e1EWvyq2E4218eHRuEme1HN2blxD2MM4dA7tywKLlaOu51z1t0WkVfiyxJHCm4b7fikxCVbFzC11fKf+TnTq/C1KXDQgonLkqg==
+ b=oHyDnRb8j5k0gyzB+W4FaJ23I4VJ2zvlKcw1mSxMZ/R74wjoja9QGg5PKbDlULBWDeRsw7TnFtJIXfjbDD2ftUfKYDyQzU+cZUVlXOBdQVrueEVP+Li9eIpXnhIIk1HeBEq67xXcwajWPDWsSff2M7+hcnW32MDc1H+z5oll20MFM05OdLMSYAqQ67Zldc49NfqIMVufNcb3NgdKfzm2Wk9BeLlHXNMkuhN9lCeWY6qTCynhOtJOYlfBpM734Is+MqwNC/OgMqrNqjma1Zbjl/8lHdVF4GDIRHphbDfXunAYfSnpx3IH3shj/ezbZk/A7Zobamu9qHL6n641FS8wCA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=um20CfsORHLRXIuNSUEEwzAMUDuIEC2Yot6fsuqfCTA=;
- b=CsYSJh+UA+vNJcpXr4bfR7zqYqqlN0/dwXmOgz/ZvOMAqeGRCADA5MasNDijQQkFX7LBZ+Ch65EolDWKBLtf4oEZoxP7eA330+M22iJwoPzxwpcEpjucuv20qeW2vUVu9jH/ydQrLoqHIFSgbv6x9BNrW9qwDnceMgEL57OEy86neN2//9/etTyTtxhpubOYxfH4zNhTkbJrX37CItLa9LvoOKYxIa3JQ8C/1HzmwD8NG6wdU2uSxkW/FYqqisNq54GUEx3KVP1f9rk+M3lHjDieE5f5Pd5uSRhUiSJyW9Wnp4SNvlzsTxaqJFcIoasaIO9MSMAS7VBrVE928TcoRw==
+ bh=+/NbnY7p2u3c7qcpw+EwyGAaqpRATfhBOFOTgWFXZv8=;
+ b=baK8rUlvnX3QfjZ5mgJUu+po+gQamzlWM89oUYjNvE5RWVJkb4X7Zycktaqquixh2uEE7XT8Grv98pxT1MqmXroPLgeLys6/oL9kq/lzx7/M0jZ3ULzS+vEBG+K8BMEPch4Ew3EIXPZ79WXI7BAYurTTYPeVY0PkWjxpZCmw+AKq74sokto7Dc5ZO9tHzyfqQfWVe22QkZfPQCyn5E8WW2zJYvjAfcOXn80yi85rjboPG+HotYMGrbTrpUABUCVT9ROw8L3I1klI2EhRWm0Y4LgP0sIlg8is1opre0W413zIzrNhPHZftALnZI89yJTogXagUPaHp6emXjcs/bCyVA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
  header.d=arm.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
  s=selector2-armh-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=um20CfsORHLRXIuNSUEEwzAMUDuIEC2Yot6fsuqfCTA=;
- b=0YcOiYHoGl2wmkDfdeMgeq04qD40gLClJyn9bDaUADqEtv9v3aoMuWnCzbTx1V3PebArUpRJG994gfs40fB7cGhAKQaNfORs4ID/1AZP90vks1tQNKhdLksmRoaexYlmX4vQxSl1oJt0NDAT00/+Dta2vpuOjJqJ6NQu0KoKGeU=
+ bh=+/NbnY7p2u3c7qcpw+EwyGAaqpRATfhBOFOTgWFXZv8=;
+ b=Z2Meh5sNfsl48POKkQJ6UbvzcRpPBa6LwctlYGZKc17UnHuS+yg1mCzXZh+ybnaka3GYkS2BVZ4NpynjARuwm1ee9cJH4T/9ybB88x17nNSfNwyeKVuEzt0/fAl/q6aI87e2thdzgig9ztCGwJ1ub7EFWbctfkFBwOpJJJTw+Ts=
 Received: from DB8PR08MB4105.eurprd08.prod.outlook.com (20.179.12.12) by
  DB8PR08MB5481.eurprd08.prod.outlook.com (52.133.240.201) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2157.18; Wed, 14 Aug 2019 14:51:34 +0000
+ 15.20.2157.18; Wed, 14 Aug 2019 14:51:48 +0000
 Received: from DB8PR08MB4105.eurprd08.prod.outlook.com
  ([fe80::f558:a6c5:f71c:491]) by DB8PR08MB4105.eurprd08.prod.outlook.com
  ([fe80::f558:a6c5:f71c:491%5]) with mapi id 15.20.2157.022; Wed, 14 Aug 2019
- 14:51:34 +0000
+ 14:51:48 +0000
 From: Steve Capper <Steve.Capper@arm.com>
 To: Mark Rutland <Mark.Rutland@arm.com>
-Subject: Re: [PATCH 1/2] arm64: memory: fix flipped VA space fallout
-Thread-Topic: [PATCH 1/2] arm64: memory: fix flipped VA space fallout
-Thread-Index: AQHVUqRLu54G1fiH9EapCFsua65twab6uj0A
-Date: Wed, 14 Aug 2019 14:51:34 +0000
-Message-ID: <20190814145131.GB3646@capper-ampere.manchester.arm.com>
+Subject: Re: [PATCH 0/2] arm64: memory: VA_START fixups
+Thread-Topic: [PATCH 0/2] arm64: memory: VA_START fixups
+Thread-Index: AQHVUqRJruBcqjxsZUy5qqOF9F6Qeqb6uk0A
+Date: Wed, 14 Aug 2019 14:51:47 +0000
+Message-ID: <20190814145145.GC3646@capper-ampere.manchester.arm.com>
 References: <20190814132848.24295-1-mark.rutland@arm.com>
- <20190814132848.24295-2-mark.rutland@arm.com>
-In-Reply-To: <20190814132848.24295-2-mark.rutland@arm.com>
+In-Reply-To: <20190814132848.24295-1-mark.rutland@arm.com>
 Accept-Language: en-GB, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 user-agent: Mutt/1.10.1 (2018-07-13)
 x-originating-ip: [217.140.106.32]
-x-clientproxiedby: LO2P265CA0437.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:e::17) To DB8PR08MB4105.eurprd08.prod.outlook.com
+x-clientproxiedby: LO2P265CA0216.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:9e::36) To DB8PR08MB4105.eurprd08.prod.outlook.com
  (2603:10a6:10:b0::12)
 Authentication-Results-Original: spf=none (sender IP is )
  smtp.mailfrom=Steve.Capper@arm.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
 x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-Correlation-Id: 288e4d82-9921-4cb8-dc4d-08d720c6eb1a
+X-MS-Office365-Filtering-Correlation-Id: 93300ac4-dace-40f0-0aa0-08d720c6f3f1
 X-MS-Office365-Filtering-HT: Tenant
 X-Microsoft-Antispam-Untrusted: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
  SRVR:DB8PR08MB5481; 
-X-MS-TrafficTypeDiagnostic: DB8PR08MB5481:|VI1PR0801MB1853:
+X-MS-TrafficTypeDiagnostic: DB8PR08MB5481:|VI1PR0801MB1856:
 x-ms-exchange-transport-forked: True
-X-Microsoft-Antispam-PRVS: <VI1PR0801MB1853D98AE7C5E49462D7CB2981AD0@VI1PR0801MB1853.eurprd08.prod.outlook.com>
+X-Microsoft-Antispam-PRVS: <VI1PR0801MB18562BFEAA286D19AD170D7F81AD0@VI1PR0801MB1856.eurprd08.prod.outlook.com>
 x-checkrecipientrouted: true
-x-ms-oob-tlc-oobclassifiers: OLM:8882;OLM:8882;
+x-ms-oob-tlc-oobclassifiers: OLM:8273;OLM:8273;
 x-forefront-prvs: 01294F875B
 X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(376002)(366004)(346002)(136003)(39860400002)(199004)(189003)(3846002)(446003)(25786009)(86362001)(476003)(6512007)(7736002)(14454004)(316002)(11346002)(229853002)(6246003)(8936002)(6862004)(5660300002)(26005)(66066001)(53936002)(256004)(2906002)(54906003)(58126008)(478600001)(6636002)(386003)(6506007)(71190400001)(81166006)(102836004)(186003)(66476007)(64756008)(71200400001)(44832011)(4326008)(6436002)(66946007)(81156014)(99286004)(8676002)(76176011)(6486002)(52116002)(1076003)(6116002)(66556008)(305945005)(33656002)(486006)(66446008);
+ SFS:(10009020)(4636009)(396003)(376002)(366004)(346002)(136003)(39860400002)(199004)(53754006)(189003)(3846002)(446003)(25786009)(86362001)(4744005)(476003)(6512007)(7736002)(14454004)(316002)(11346002)(229853002)(6246003)(8936002)(6862004)(5660300002)(26005)(66066001)(53936002)(256004)(2906002)(54906003)(58126008)(478600001)(6636002)(386003)(6506007)(71190400001)(81166006)(102836004)(186003)(66476007)(64756008)(71200400001)(44832011)(4326008)(6436002)(66946007)(81156014)(99286004)(8676002)(76176011)(6486002)(52116002)(1076003)(6116002)(66556008)(305945005)(33656002)(486006)(66446008);
  DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR08MB5481;
  H:DB8PR08MB4105.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: arm.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info-Original: mp5yt3t1l7cXIVBk7x9ewmqp0A42YmZoX3T3CaLn489ysINRZYpJ579Tly5g1Mlv+/3ZaIPQ2zGPaAYBY04itjLd7HAP/W0mCb/c5Ak0Y/u5xcf74acbehl/SyPsubT2CyUAWRyskdk6b8CpSIWvi8uDBoCw6RJRZ+0BW2roDekvZtJulDMc5m/Fo+9LLFBBre358Xdmx8PjXtwkSWBfcdP1pg8OAjev++WITxlNFv1GiLUemH1tXG1pesadlX9Jhhn5KFYtZK+n7QfFpvhH0FXA/8/EQbBa3NjPqSxaQ8UMwsl6g8LX6x0r5yxvigV9DPdTuJxB/muEGbfbbssDY5Hsfv/Eka4ozmOkPTPuv5XW8Lo7SgWNN7uAsBF5nk5vEwNK3G+1DkPGU6nIHxolwhg38IpRCozP5B0qdiReIcQ=
-Content-ID: <7BE883C183AF374D9ED11E557BE5DA12@eurprd08.prod.outlook.com>
+X-Microsoft-Antispam-Message-Info-Original: E3MubMfXLlOFXZSuHsS6mECYyks/85hN7Y8OXRRR3SVNL7odZHdaspt5CyWaGgdWxFKqsQIU1ijdi5E7R+EP9hNEqKX68hGjaVOI8ZCMj46n0vlN9OT+0hA0aKvge3dP7WaDAfzghQMCjI7LU5Jjt0zr09vIXp/hcjLb/Aim4P5Vfpx67LS7AHBJ9uplhpYdzb/Oq3UJ5FU/1avnIz8YK5/g/sEy8EIfCafkB3WHfmaPLYjBOFzBxSwKC5s4vYggiFhHJp5+Ks8aTRnJHL0Dqtxvox9yQvedUEVYdGGmp7n/TDwQLFqkdhuTllcXAden4jGo18D348kdebSJS/gc98BzBost6TZ1oC5uuFiAbgv1n7ndZoxVBV+kmjBnTrZafDHvPX1NtIdOp1+al3PSqT90P/sXhuYYryvQnQ4yuRc=
+Content-ID: <E3222A457E52B94BA027AD25DCF639F2@eurprd08.prod.outlook.com>
 MIME-Version: 1.0
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR08MB5481
 Original-Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=Steve.Capper@arm.com; 
 X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: DB5EUR03FT031.eop-EUR03.prod.protection.outlook.com
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM5EUR03FT019.eop-EUR03.prod.protection.outlook.com
 X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
  EFV:NLI; SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(346002)(39860400002)(396003)(376002)(2980300002)(199004)(189003)(6246003)(76176011)(102836004)(14454004)(6862004)(5660300002)(6512007)(3846002)(23726003)(81166006)(229853002)(81156014)(6116002)(86362001)(8936002)(336012)(6636002)(25786009)(76130400001)(2906002)(8676002)(26826003)(46406003)(126002)(476003)(11346002)(446003)(8746002)(97756001)(99286004)(478600001)(316002)(47776003)(33656002)(22756006)(70206006)(4326008)(70586007)(186003)(66066001)(58126008)(63370400001)(63350400001)(1076003)(486006)(54906003)(386003)(6506007)(356004)(26005)(305945005)(50466002)(7736002)(6486002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0801MB1853;
+ SFS:(10009020)(4636009)(136003)(396003)(39860400002)(376002)(346002)(2980300002)(189003)(199004)(53754006)(476003)(1076003)(336012)(229853002)(25786009)(7736002)(446003)(14454004)(47776003)(102836004)(26826003)(4326008)(33656002)(4744005)(6862004)(305945005)(66066001)(186003)(6116002)(478600001)(63350400001)(486006)(63370400001)(126002)(23726003)(8676002)(386003)(6506007)(22756006)(3846002)(26005)(76176011)(11346002)(58126008)(97756001)(316002)(50466002)(81156014)(70206006)(5660300002)(6486002)(76130400001)(356004)(36906005)(81166006)(8936002)(2906002)(86362001)(46406003)(99286004)(6246003)(54906003)(6512007)(6636002)(70586007)(8746002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0801MB1856;
  H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:TempError; LANG:en;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; A:1; MX:1; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 7ac0fdc7-1d45-4b88-af87-08d720c6e680
+ PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; MX:1; A:1; 
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 5761481d-9812-4a64-906d-08d720c6eeb6
 X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(710020)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:VI1PR0801MB1853; 
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(710020)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:VI1PR0801MB1856; 
 NoDisclaimer: True
 X-Forefront-PRVS: 01294F875B
-X-Microsoft-Antispam-Message-Info: ptEelvaYVT5O00BKwL3eG33Cr2qMo8uN0F1YHsV4QdNbS5pUxaoLZ4l2vWNoIDfNPBlut4qEfCZo1vKmj1lVNp0ogfYW2zy4UfIYOLgxMEJi76ICqp9jSMdb3XHywhE2fqaXCSd1JQvb5r+egi5klMPzkw1EdPetlbjJ+9Md3umExH+fcr2wrrn/gf5xzFJjcAJI0fYP+RRcpwBW7J034kKrOWqlFC7arcUJk6iqgtZP69uwZmkYHTiRRuQXdIDOWr5jkg66DWh1+QnwTB3UZvyOD/iiGRwKYKhf5GHVYWJ61pn4T7cF2fHYIUcltircdKFRS584tOlHqCZvp086NwwvBDtLlcppmdDR/BImJga/Qfj2pSaY4+i/AuPVELsCeYB3aku0dc27hGQEF86E6GFInnb0kT4rz1VNP/hchN8=
+X-Microsoft-Antispam-Message-Info: CPyU4SDJrvrGSfbW93E3O6kxpOVHm1ygwoC94jYkQ88ulkmRY7Y5yyW1A+JnEe5DxZ9rlsJDOWFyTTqsL+E8qF24zvUqWXJQZRH7Pf3iwgZi7zPXC6czbb0yfTAz7XGnty8zhiWncZOpIRAjnBqnmykEi3zp4YjX3tPJvFkKPLwXRKYU23OizDw1RkqxW/XC3w+7TzLTAduvvpcTVelsZ7k6tBYlIloNqAIcvMbLb+u2csGRJCa4Ociuna079Szk0YbOAvIXPBMU8SE3Rn5a5XdVvFJTt66KaPGWEroe/XE8zPUytccQLPZxjbDNMlUb86YD6Y7ZTrZfYDiycNg82vy03yie/npG0t3c0cSLmjV3KYIoYzAagUKBgowlbdv75QHnJbmj6jIDRBx2ju4/NAy4t4Bd37ojbLZ5L82DPcI=
 X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Aug 2019 14:51:41.5703 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 288e4d82-9921-4cb8-dc4d-08d720c6eb1a
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Aug 2019 14:51:56.3737 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 93300ac4-dace-40f0-0aa0-08d720c6f3f1
 X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
  Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0801MB1853
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0801MB1856
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_075146_995793_F65E51E9 
-X-CRM114-Status: GOOD (  13.89  )
+X-CRM114-CacheID: sfid-20190814_075203_786214_7E0E7047 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.41 listed in list.dnswl.org]
+ no trust [40.107.13.72 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -192,54 +191,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 02:28:47PM +0100, Mark Rutland wrote:
-> VA_START used to be the start of the TTBR1 address space, but now it's a
-> point midway though. In a couple of places we still use VA_START to get
-> the start of the TTBR1 address space, so let's fix these up to use
-> PAGE_OFFSET instead.
-> 
-> Fixes: 14c127c957c1c607 ("arm64: mm: Flip kernel VA space")
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Steve Capper <steve.capper@arm.com>
-> Cc: Will Deacon <will@kernel.org>
+On Wed, Aug 14, 2019 at 02:28:46PM +0100, Mark Rutland wrote:
+> Hi all,
 
-Reviewed-by: Steve Capper <steve.capper@arm.com>
+Hi Mark,
 
-> ---
->  arch/arm64/mm/dump.c  | 2 +-
->  arch/arm64/mm/fault.c | 2 +-
->  2 files changed, 2 insertions(+), 2 deletions(-)
 > 
-> diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
-> index 6ec75305828e..8e10b4ba215a 100644
-> --- a/arch/arm64/mm/dump.c
-> +++ b/arch/arm64/mm/dump.c
-> @@ -400,7 +400,7 @@ void ptdump_check_wx(void)
->  		.check_wx = true,
->  	};
->  
-> -	walk_pgd(&st, &init_mm, VA_START);
-> +	walk_pgd(&st, &init_mm, PAGE_OFFSET);
->  	note_page(&st, 0, 0, 0);
->  	if (st.wx_pages || st.uxn_pages)
->  		pr_warn("Checked W+X mappings: FAILED, %lu W+X pages found, %lu non-UXN pages found\n",
-> diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-> index 75eff57bd9ef..bb4e4f3fffd8 100644
-> --- a/arch/arm64/mm/fault.c
-> +++ b/arch/arm64/mm/fault.c
-> @@ -109,7 +109,7 @@ static inline bool is_ttbr0_addr(unsigned long addr)
->  static inline bool is_ttbr1_addr(unsigned long addr)
->  {
->  	/* TTBR1 addresses may have a tag if KASAN_SW_TAGS is in use */
-> -	return arch_kasan_reset_tag(addr) >= VA_START;
-> +	return arch_kasan_reset_tag(addr) >= PAGE_OFFSET;
->  }
->  
->  /*
-> -- 
-> 2.11.0
+> These patches address my concerns with the new VA_START semantic as I
+> spotted while reviewing Will's 52-bit VA cleanup. The first patch
+> corrects the newly broken usage of VA_START, and the second renames
+> VA_START to PAGE_END to make the new semantic clearer.
 > 
+> Both patches are based on the arm64 for-next/52-bit-kva branch, and I've
+> given a 52-bit VA configuration a build+boot test (on HW without 52-bit
+> VA support).
+> 
+
+A big thank you for this!
+I have applied this series and tested it with CONFIG_DEBUG_VIRTUAL,
+CONFIG_DEBUG_VM and KASAN SW TAGS.
+
+I've tested this with 52-bit and have given the kernel page table dumper
+a go too.
+
+FWIW:
+Tested-by: Steve Capper <steve.capper@arm.com>
+
+Cheers,
+-- 
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
