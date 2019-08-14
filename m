@@ -2,70 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F6148DAE6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 19:21:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C11BE8DB58
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 14 Aug 2019 19:24:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sU/2KR7c/h2xWALjcmlmLk9tLTrMeT3A5vtREUzfj/U=; b=F8DbhgHBqMjquq
-	/JVyw8RINANNHHkDVUmfeiD0DK1IHr33QRuh0GQfurMrCT7lD9nsT5yyPuWha5SAs8idbG9Bek5gD
-	IWurjvCNLQmBpeuLuFKWdLeRVkrPkc65Uh0SJjCuyczjYZTy+eBj1clAoIeQxg0eFoIkNcYSd1DS0
-	H49RgLTtRMoVSDEyS3AjdaG4K9YEC30uYOdnw8ztDEwl7m63iLKpLGm1jw1r84N9C3qGPBQq88CoT
-	oDAJ1nfk5+Vmoe0QyShd8IKfmq+b3NFeIA1WsKk4z4mb4rUn5Azi3s3QdDrFq2CLbA4XU9+uiQFEU
-	5laBXKOrrDryu+WITQwg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=gYp0os+3+sTA8DL30kPQVJ7eQTuAxeaOjhYVIK8lI8o=; b=WT4
+	VX/505BRGTZq6qnTdul+HL1l/vWU+ZFoF8m5IUOQlG+W80dj2BUcggfzgaAQHIJ4U9BX2eF77MUdm
+	yPu+U9xoY/Xc5hOFz8n7A9ynQZQdmZsklwgcxgsC+lhcQF6GS8BmbOppelU91aGWV/z7tzYdeN/iH
+	+JHVrGmppc12joHCJAEmGth6gyClUKUXpTf8NYecka3u+pyy1e8HS1iGOR44Anhkr60K/FDPNA7LZ
+	w8CqNEEHDGWXUu8WHduuUVfrlG9nrCF5K/Pt3BalnR7gm56aq+A4hEW9I3WBzq/9tAHo/rax2w6t6
+	io4XjvgVNzfz+B0M1wMR03QcleKRyhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxwxW-0005WN-5l; Wed, 14 Aug 2019 17:21:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxwwu-0005W3-1m
- for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 17:20:37 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C575B2084D;
- Wed, 14 Aug 2019 17:20:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565803235;
- bh=dt28HiKeDA9L5mGvly1JScUvZrWg1DeQplEWd5mOXVE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=x2iO+k3qoVbzAWsj9n4cmCZJpdzYPI/bRqvYH5bbDp/N0s2sKO6LvHdfx/1XWmbNW
- Bk8/fUmRIQ7U9AqwZDhyub7FlgLSvSb8wGg/FtwC1CEF6pjFd3Gm/ktqXgn0Z5FmXa
- ZvutSr2KnRj5UzSjttcADHwPeZqs9Qj+v0SPIpS8=
-Date: Wed, 14 Aug 2019 18:20:30 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 01/15] iommu/arm-smmu: Convert GR0 registers to bitfields
-Message-ID: <20190814172030.accr7azgkkkwumt2@willie-the-truck>
-References: <cover.1565369764.git.robin.murphy@arm.com>
- <910cad718be01904db20ce73d8d54e7481290136.1565369764.git.robin.murphy@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <910cad718be01904db20ce73d8d54e7481290136.1565369764.git.robin.murphy@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+	id 1hxx0n-0007Pp-KM; Wed, 14 Aug 2019 17:24:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hxx0X-0007OU-M0
+ for linux-arm-kernel@lists.infradead.org; Wed, 14 Aug 2019 17:24:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 15D7D344;
+ Wed, 14 Aug 2019 10:24:19 -0700 (PDT)
+Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E1BC93F694;
+ Wed, 14 Aug 2019 10:24:17 -0700 (PDT)
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: ARM SoC Team <arm@kernel.org>, SoC Team <soc@kernel.org>,
+ ALKML <linux-arm-kernel@lists.infradead.org>
+Subject: [GIT PULL] arm64: dts: juno: updates for v5.4
+Date: Wed, 14 Aug 2019 18:24:08 +0100
+Message-Id: <20190814172408.25995-1-sudeep.holla@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_102036_119988_1AB55445 
-X-CRM114-Status: GOOD (  12.55  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190814_102421_765115_EB7B8488 
+X-CRM114-Status: UNSURE (   8.08  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,85 +58,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robdclark@gmail.com, joro@8bytes.org, bjorn.andersson@linaro.org,
- iommu@lists.linux-foundation.org, vivek.gautam@codeaurora.org,
- gregory.clement@bootlin.com, linux-arm-kernel@lists.infradead.org
+Cc: Olof Johansson <olof@lixom.net>, Kevin Hilman <khilman@kernel.org>,
+ Liviu Dudau <liviu.dudau@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Sudeep Holla <sudeep.holla@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 06:07:38PM +0100, Robin Murphy wrote:
-> FIELD_PREP remains a terrible name, but the overall simplification will
-> make further work on this stuff that much more manageable. This also
-> serves as an audit of the header, wherein we can impose a consistent
-> grouping and ordering of the offset and field definitions
-> 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
->  drivers/iommu/arm-smmu-regs.h | 126 ++++++++++++++++------------------
->  drivers/iommu/arm-smmu.c      |  51 +++++++-------
->  2 files changed, 84 insertions(+), 93 deletions(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu-regs.h b/drivers/iommu/arm-smmu-regs.h
-> index 1c278f7ae888..d189f025537a 100644
-> --- a/drivers/iommu/arm-smmu-regs.h
-> +++ b/drivers/iommu/arm-smmu-regs.h
-> @@ -10,111 +10,101 @@
->  #ifndef _ARM_SMMU_REGS_H
->  #define _ARM_SMMU_REGS_H
->  
-> +#include <linux/bits.h>
-> +
->  /* Configuration registers */
->  #define ARM_SMMU_GR0_sCR0		0x0
-> -#define sCR0_CLIENTPD			(1 << 0)
-> -#define sCR0_GFRE			(1 << 1)
-> -#define sCR0_GFIE			(1 << 2)
-> -#define sCR0_EXIDENABLE			(1 << 3)
-> -#define sCR0_GCFGFRE			(1 << 4)
-> -#define sCR0_GCFGFIE			(1 << 5)
-> -#define sCR0_USFCFG			(1 << 10)
-> -#define sCR0_VMIDPNE			(1 << 11)
-> -#define sCR0_PTM			(1 << 12)
-> -#define sCR0_FB				(1 << 13)
-> -#define sCR0_VMID16EN			(1 << 31)
-> -#define sCR0_BSU_SHIFT			14
-> -#define sCR0_BSU_MASK			0x3
-> +#define sCR0_VMID16EN			BIT(31)
-> +#define sCR0_BSU			GENMASK(15, 14)
-> +#define sCR0_FB				BIT(13)
-> +#define sCR0_PTM			BIT(12)
-> +#define sCR0_VMIDPNE			BIT(11)
-> +#define sCR0_USFCFG			BIT(10)
-> +#define sCR0_GCFGFIE			BIT(5)
-> +#define sCR0_GCFGFRE			BIT(4)
-> +#define sCR0_EXIDENABLE			BIT(3)
-> +#define sCR0_GFIE			BIT(2)
-> +#define sCR0_GFRE			BIT(1)
-> +#define sCR0_CLIENTPD			BIT(0)
->  
->  /* Auxiliary Configuration register */
->  #define ARM_SMMU_GR0_sACR		0x10
->  
->  /* Identification registers */
->  #define ARM_SMMU_GR0_ID0		0x20
-> +#define ID0_S1TS			BIT(30)
-> +#define ID0_S2TS			BIT(29)
-> +#define ID0_NTS				BIT(28)
-> +#define ID0_SMS				BIT(27)
-> +#define ID0_ATOSNS			BIT(26)
-> +#define ID0_PTFS_NO_AARCH32		BIT(25)
-> +#define ID0_PTFS_NO_AARCH32S		BIT(24)
-> +#define ID0_CTTW			BIT(14)
-> +#define ID0_NUMIRPT			GENMASK(23, 16)
+Hi ARM SoC Team,
 
-nit: assuming this should be above ID0_CTTW so things are in descending
-bit order?
+Please pull !
 
-Other than that, looks good to me.
+Regards,
+Sudeep
 
-Will
+-->8
+
+The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+
+  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git tags/juno-update-5.4
+
+for you to fetch changes up to a24810673638d5da0336ccae5407c3fd59da14ac:
+
+  arm64: dts: fast models: Remove clcd's max-memory-bandwidth (2019-08-05 11:44:00 +0100)
+
+----------------------------------------------------------------
+ARMv8 Juno/FVP update for v5.4
+
+Single patch removing optional 'max-memory-bandwidth' property for CLCD
+that enables to allocate and use 32bpp buffers(used on FVP for Android
+development)
+
+----------------------------------------------------------------
+Kevin Brodsky (1):
+      arm64: dts: fast models: Remove clcd's max-memory-bandwidth
+
+ arch/arm64/boot/dts/arm/fvp-base-revc.dts        | 8 --------
+ arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi | 2 --
+ 2 files changed, 10 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
