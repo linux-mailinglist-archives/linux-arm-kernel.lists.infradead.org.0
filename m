@@ -2,95 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4A878F119
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 18:43:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 770498F121
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 18:46:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pFkm90M9+Y6U+IuHRCB9+VYi1uWKQUSz1IDN4BTfXKs=; b=ULKQHNnwMAaFHbLxi9D3xLniG
-	IOMEibMzwTVTU/sThfJbqnqfhzOJVsu93t0brp/5jr7P+ApEb2iFDOo7uVCKzc4HfZpHEmalwkTmj
-	clBpwX7+ADIRfVcsiwOaLPheMv+obU13zEDiUBCaY4qTZacQJhWm3X17k+fm6tLtheK5AGfLYrcVq
-	AJFPq3FTrrfoAqk6CQoQvQbkq0keK4ZIZkTZvF1fTtKfM0xVPOUOUXWflqcYfa2J2s3tf5kbYWDEh
-	1cHziY3HxmdnjGrAAHcj9Ed+1w7feZbaevRrVe/tzXF202GmHxBr9/mt9WBse55tbhV5+RIIGzTfh
-	+CAJfvdqg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fQgfAjMrWcENf1j8TfqPa1FWMXKKMm7iNKITFLMBoH4=; b=lDNbpARVVxAyEA
+	uwP1ccrf8Ta1zJb2dX6QRvjNOErmr4q24PtgFMB1isid92BXUbTk0WLuMiqnEYfvDvyTz5mPCozHN
+	qlByuSyFfev+mzjEA/ZURqQnViorFKB+BYUUitolLWnDAfnf5l82Z4uc2C0h7TEZQ1Z6Y/Gt1rPgd
+	joq5pmS4TzcUhucIqZJALDenyEgPJNTtEgrIjjJbFzEmsqxKMrol0wXTnP9qjzCyiBCWLI6k+mhyx
+	WkTGK44RFSMKA5UM2/PKFj43h8OPLm7s4xpVowbiL8WJSsymiVnLue1N45LHnWVsyBUpvNhj6Zhh+
+	p5/2Lh0Dl/ask6OkLubg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyIqV-0008Kg-Pb; Thu, 15 Aug 2019 16:43:28 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyIqB-0008GQ-VF
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 16:43:14 +0000
-Received: by mail-pg1-x542.google.com with SMTP id w10so1524196pgj.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 09:43:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=RDP6dCH5SfbePXj50Yif9P0DeSA7UpHTBf1zvPFWOKs=;
- b=CCU74OVLrLaosPhbhlWUvm/fK344mtCf8+8LUVUjq11XQdbsdrcBpxuBasG+4dcLxk
- iNOVq5P9Ta2MM1OBqw4OTlhpq9lk9k2P8j4ElxzhsLM9qgcsq7yg45xJTpWr7SwkSIBo
- B9/XWFBlccxgCvJB3KUE5OUm2YJOK0RlcZKDM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=RDP6dCH5SfbePXj50Yif9P0DeSA7UpHTBf1zvPFWOKs=;
- b=tGHgpvOVZ0HtKYRMOkiWK0/jkUJU/N1Dw8+Ywl9+rNG6X4DeuJQdDqigkoOopGx0n4
- qEVWpkaXJ6Q+lWoJZvPJGXewu+Psa/73SNztIcxsuYtkHhRD1VcVZYtRe7oLr8YM5ShX
- 0Vj96i4+tI/017qlEAujabiWTr8CaRFNxeYPEJiNbgQP0O70at/iiImVjUxzEi4jjDfW
- QzquVqXNKufkstGzWti0jJ6RTjZLZpZ+MbmmSOoAc1JSfTiX3RObCS0WjTXbxKBWq3mu
- vJZZ1oGwwB1w7fIjaOfU6Aw9YOxvtawOKLJLyrsZC8h2F2EVRxRnS/hp/Fu5eIMr1z7v
- l5qQ==
-X-Gm-Message-State: APjAAAUFzPFsB8r0KaOOOYMOoJs1OfXR+Wgic3ibnv0fzsFZTLn4eZwj
- JeQhFYQcCYh0O44IUX4KmSpnKtezDt67idDg7njVAKZNOO8LTBBM9b4EZcRZ2z26N01nv65+9II
- 58zhQntABXoIb+W3dlSShgvrGNM8sRAyUsD/0qrqd3NADcIsikjDGtFXIaIe8bkMz0Lacu3YIf5
- 7hgtykoPatP8k=
-X-Google-Smtp-Source: APXvYqyO/A5C+feWKubTl5Y5Nbg7TZpKOd/uYePnUOe+USwqkcuzntM3zu9WjAvZpaD+PLDWAUGONQ==
-X-Received: by 2002:a17:90a:bb91:: with SMTP id
- v17mr2937162pjr.84.1565887385590; 
- Thu, 15 Aug 2019 09:43:05 -0700 (PDT)
-Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id s6sm3142547pfs.122.2019.08.15.09.43.04
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 15 Aug 2019 09:43:04 -0700 (PDT)
-Subject: Re: [PATCH] i2c: iproc: Make bcm_iproc_i2c_quirks constant
-To: Nishka Dasgupta <nishkadg.linux@gmail.com>, rjui@broadcom.com,
- sbranden@broadcom.com, bcm-kernel-feedback-list@broadcom.com,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <20190815055550.1588-1-nishkadg.linux@gmail.com>
-From: Ray Jui <ray.jui@broadcom.com>
-Message-ID: <4f71a174-9ded-172e-9c34-c492aee3c3e8@broadcom.com>
-Date: Thu, 15 Aug 2019 09:43:03 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hyItV-0001SW-5W; Thu, 15 Aug 2019 16:46:33 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hyItE-0001S1-0S
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 16:46:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 61DE0360;
+ Thu, 15 Aug 2019 09:46:12 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 444BB3F706;
+ Thu, 15 Aug 2019 09:46:11 -0700 (PDT)
+Date: Thu, 15 Aug 2019 17:46:09 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: Zhangshaokun <zhangshaokun@hisilicon.com>
+Subject: Re: [PATCH] arm64: do_csum: implement accelerated scalar version
+Message-ID: <20190815164609.GI2015@fuggles.cambridge.arm.com>
+References: <20190218230842.11448-1-ard.biesheuvel@linaro.org>
+ <d7a16ebd-073f-f50e-9651-68606d10b01c@hisilicon.com>
+ <20190412095243.GA27193@fuggles.cambridge.arm.com>
+ <41b30c72-c1c5-14b2-b2e1-3507d552830d@arm.com>
+ <20190515094704.GC24357@fuggles.cambridge.arm.com>
+ <440eb674-0e59-a97e-4a90-0026e2327069@hisilicon.com>
 MIME-Version: 1.0
-In-Reply-To: <20190815055550.1588-1-nishkadg.linux@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <440eb674-0e59-a97e-4a90-0026e2327069@hisilicon.com>
+User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_094308_007385_96A5D886 
-X-CRM114-Status: GOOD (  17.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190815_094616_098108_C3AF9463 
+X-CRM114-Status: GOOD (  14.37  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,43 +66,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, netdev@vger.kernel.org,
+ ilias.apalodimas@linaro.org, "huanglingyan \(A\)" <huanglingyan2@huawei.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org,
+ steve.capper@arm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Nishka,
-
-On 8/14/19 10:55 PM, Nishka Dasgupta wrote:
-> Static structure bcm_iproc_i2c_quirks, of type i2c_adapter_quirks, is
-> only used when being assigned to constant field quirks of a variable
-> having type i2c_adapter. Hence make bcm_iproc_i2c_quirks constant as
-> well to prevent it from unintended modification.
-> Issue found with Coccinelle.
+On Thu, May 16, 2019 at 11:14:35AM +0800, Zhangshaokun wrote:
+> On 2019/5/15 17:47, Will Deacon wrote:
+> > On Mon, Apr 15, 2019 at 07:18:22PM +0100, Robin Murphy wrote:
+> >> On 12/04/2019 10:52, Will Deacon wrote:
+> >>> I'm waiting for Robin to come back with numbers for a C implementation.
+> >>>
+> >>> Robin -- did you get anywhere with that?
+> >>
+> >> Still not what I would call finished, but where I've got so far (besides an
+> >> increasingly elaborate test rig) is as below - it still wants some unrolling
+> >> in the middle to really fly (and actual testing on BE), but the worst-case
+> >> performance already equals or just beats this asm version on Cortex-A53 with
+> >> GCC 7 (by virtue of being alignment-insensitive and branchless except for
+> >> the loop). Unfortunately, the advantage of C code being instrumentable does
+> >> also come around to bite me...
+> > 
+> > Is there any interest from anybody in spinning a proper patch out of this?
+> > Shaokun?
 > 
-> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
-> ---
->   drivers/i2c/busses/i2c-bcm-iproc.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/i2c/busses/i2c-bcm-iproc.c b/drivers/i2c/busses/i2c-bcm-iproc.c
-> index d7fd76baec92..e9f0e5b6eadc 100644
-> --- a/drivers/i2c/busses/i2c-bcm-iproc.c
-> +++ b/drivers/i2c/busses/i2c-bcm-iproc.c
-> @@ -805,7 +805,7 @@ static struct i2c_algorithm bcm_iproc_algo = {
->   	.unreg_slave = bcm_iproc_i2c_unreg_slave,
->   };
->   
-> -static struct i2c_adapter_quirks bcm_iproc_i2c_quirks = {
-> +static const struct i2c_adapter_quirks bcm_iproc_i2c_quirks = {
->   	.max_read_len = M_RX_MAX_READ_LEN,
->   };
->   
-> 
+> HiSilicon's Kunpeng920(Hi1620) benefits from do_csum optimization, if Ard and
+> Robin are ok, Lingyan or I can try to do it.
+> Of course, if any guy posts the patch, we are happy to test it.
+> Any will be ok.
 
-This looks good to me. Thanks!
+I don't mind who posts it, but Robin is super busy with SMMU stuff at the
+moment so it probably makes more sense for you or Lingyan to do it.
 
-Reviewed-by: Ray Jui <ray.jui@broadcom.com>
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
