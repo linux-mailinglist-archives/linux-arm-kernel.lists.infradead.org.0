@@ -2,80 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0CD08E657
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:30:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C7728E665
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:31:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=FwozIXzBY+xE/gt673WRlnsH4pBSAfXnUX3pJtnu4vw=; b=jK3
-	46FHtkIQjK9qEHUWfHYTbSsJL19LHvdFbIudoPogqrQXY+DYS7tvFU2iYW4C0h+KLxWyschdOTX4Y
-	v1L7AcPLt557e9Alj7RS3fP3vOH+ZTeNXoQgoEl1dkUYwBV7RRAp6ffki9jUvLr3HPC3EBwafVCUL
-	3DPZ7ZLB6qeJKywte5MrP24cUHyQ40beRXXtf0h1HJ2WLFo4Jl/OD+EaY2bsnHQJiMgP7aYwwSSW4
-	6TsdyET7t50vRMIYCIG9GP3eUv89Ts7LktYpLdD8KknuwXTT1tRiws+qCAzEBHJvZ1bwuCyH8z5c0
-	jAo/t9ZvxaEpBW9pmx9sfsPZ7TK2A6A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IjRI+OgPEBWkJfQlkv84aayu3fUNFHhNr/ftmeqo9Wk=; b=mk3sdk3/moBIsf
+	uOwngJUeZQd9nWqUA9P5e26uQX2HClrByVOi3bJvuCOT3jLat1Bg1ZmfmF6/zWIQtgvUp0HF99XYv
+	tFlJ7PBhrzeAIKoTmfAy3uEzlno78BCWl+vcQn6K4IGUwDsyf1K/Apr9qsuwQfnrcGLCOaILpKY1l
+	EZ2cfXKBmPqwfCBOLiQGJq2cITla71eEpPGOuanJA3tEbc+RwNikmMjgznYFlr6IbN84CWY5nlX6G
+	cP+xkKHfb/qt1GrjC1/hjQ+Vvmba6R4zPtOyQLEE+KBIy0/CMWc1jkHWIK6sKAeMBFRNmeaObojR6
+	nBT7dp+tL/7Y0hpI659A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyB9V-0008Un-L6; Thu, 15 Aug 2019 08:30:33 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hyBAb-0000RN-Ms; Thu, 15 Aug 2019 08:31:41 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyB9I-0008R8-OS
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:30:22 +0000
-Received: by mail-pf1-x442.google.com with SMTP id d85so1030733pfd.2
+ id 1hyBAN-0000R5-JF
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:31:28 +0000
+Received: by mail-lj1-x242.google.com with SMTP id e27so1548565ljb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 01:30:20 -0700 (PDT)
+ Thu, 15 Aug 2019 01:31:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=+667Tp6aRb+fNZrEkEuQBATyuYVr9DkCsoqrznJa5gI=;
- b=E4+0ImEEmPUTDK4fbSUSMUuBr6/4JC/FSu2THIDBKuiY0uw4dfY0PcLLac2NKV4fdL
- Lu1s/lkKD6MbnYfJbTSSjBaxItiA+hRYtey95pRKPsZFxiDVxCF+8bajbx72J0ES0vBX
- pw2uYBoIHgnFvVUqdEeY+QSlr0JVcAWvI0ZUCVn5QLLkqpMUIu0b0qmLyTkVxEgnKLNs
- 5n1am8WziPrOPbM3o96E1pU2e62cCZawGs89rgQNOoSHQi3RHy5j6Nn1ZLXeSZQGMgw9
- n7VCHaPMlt545E535ERJLwEchIyLatWHMEwcKBg9P6MYEwMGt073PlwjDm5xDeuIKQCz
- 4DNQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=i/yfx5NeV3piU61gQdhfpnzlq/6GHBCfJ8yX0HleDDU=;
+ b=rild4YlbRJU5wL1IgqlE2vanKqYTSRQWlpn+ut7lNDUUlySGDV7+Y8nqmVm+tCwfxP
+ fF1pS/jvkhsXhDQfovqqUYoMMEuBrEOoaEvG9VehZ0mOPwEwFthyG/8t4T9NhYyj+9z7
+ FzROK9y8F90mbOlCBpBB3Cs0Wsy2z2VXmF2A6AIthCV1UjCJy3cWW4NUevVl6c7gzRFE
+ lhuLhtLiW5z6R3PgaVYhzlPmCe/GYpAoE3SKp03R8Th06dkcUEhoaSCZMhVg87OOSPKi
+ C2YXbDeXfFo9O6FWqdUSAYbCNXAkpH48L0fivxYoziaZy8TFVo0Sel5vSyvt7y6cgRW6
+ L1UA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=+667Tp6aRb+fNZrEkEuQBATyuYVr9DkCsoqrznJa5gI=;
- b=E7IHHAjnqoQywUpkniVAOtdKbfBJVdHZyfENoTvNUQRo96ikTQZlJZwD7e1YW3xy5w
- ivCZYpjDPIL3lJoRztmnF4WSust23qbIPk1ty1hPQdEpW98ojBof2q2GZJac60mZc+JF
- QrWm81LE8NlqOfczRK8zoOgNuyKUyjSJQoxYijdYWczrL8ZJKeQOrfdjN+jrYiCXF0TY
- TtDKmwgsmgiggFDij390t12MnMrtMvTR6lC2opPAwsgT5rHtzisA2RZvGzlX2idfJATd
- 8bpbiVhDqzBjOOWKt0U9y4nOTSC4UfHU/dBSIUAY3qmRSdFJIzR55B2LFPfkHwIp/xZi
- im8A==
-X-Gm-Message-State: APjAAAVutYb9Q06an61byRgOUfRuuqbsyLzPbUze6ASWLc1WB7b5tIer
- lVS5Djqv70ls+HKFdOJJBdJOtg==
-X-Google-Smtp-Source: APXvYqwEan4dWW0vagWBHt1IU/UkTTnvsCHImQm26AyFYF184BYwU6WZnfEB7b72g23UQobubOoXHA==
-X-Received: by 2002:a65:690f:: with SMTP id s15mr2562324pgq.432.1565857819808; 
- Thu, 15 Aug 2019 01:30:19 -0700 (PDT)
-Received: from localhost.localdomain (li456-16.members.linode.com.
- [50.116.10.16])
- by smtp.gmail.com with ESMTPSA id 1sm2217413pfx.56.2019.08.15.01.30.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 15 Aug 2019 01:30:19 -0700 (PDT)
-From: Leo Yan <leo.yan@linaro.org>
-To: Arnaldo Carvalho de Melo <acme@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] perf cs-etm: Support sample flags 'insn' and 'insnlen'
-Date: Thu, 15 Aug 2019 16:28:54 +0800
-Message-Id: <20190815082854.18191-1-leo.yan@linaro.org>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=i/yfx5NeV3piU61gQdhfpnzlq/6GHBCfJ8yX0HleDDU=;
+ b=Q77wBjL43AzrTf/GIr7g7CJ5bX5zo9xTsFUa/YMZ8gKbZ0Byimq+XiMglxzfQ8z9bh
+ hogis/00Z5fAxuPJwHno5Aj5pbw1/K4fX9L+3rpHnQPnAp0FYLNfhOVNKaDXxYVHuyX8
+ 55Y9yfUP23DHYfEkhKsT6XTYyobHKzryn1IWrB1BOeyyStMmwlEcsGoX/LGaXjbm/Tdm
+ HZtP7XLCQGzdW+1lj5SFbLAVmIGInxOV1jdh93OTjtrspiRTaZzIbqUROAhU+8UTVEXd
+ zVVlSTBpr0HBpC68UoY/ANTNlqE8a8WCfKNmEw4ZBvxJv+z+OLaon7nilH7UGnQHS/7j
+ 3ftA==
+X-Gm-Message-State: APjAAAXErRAhuYYeHFoaq6q3ADpDrS34IxNPdyh0HDRpio8xu1SJKTDG
+ xyoffj8hIyid9sZmCWjxdQDdGH8SP5RANnAoNk8AEA==
+X-Google-Smtp-Source: APXvYqzsrobqE4nMFnjhW6qVN2v/WuS6+a4azs9xd0z0wQrNczcpbiWvts190l19juTT3G+lBBGs1PS8c9qSK1SDMvQ=
+X-Received: by 2002:a2e:3a0e:: with SMTP id h14mr2084652lja.180.1565857886156; 
+ Thu, 15 Aug 2019 01:31:26 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190815004854.19860-1-masneyb@onstation.org>
+ <20190815004854.19860-12-masneyb@onstation.org>
+In-Reply-To: <20190815004854.19860-12-masneyb@onstation.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 15 Aug 2019 10:31:14 +0200
+Message-ID: <CACRpkdYSHHqY50=3yo0QDinTaXbO9GzHoOFqMS4K3SiNghssGA@mail.gmail.com>
+Subject: Re: [PATCH RFC 11/11] ARM: dts: qcom: msm8974-hammerhead: add support
+ for external display
+To: Brian Masney <masneyb@onstation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_013020_811228_FAF88959 
-X-CRM114-Status: GOOD (  13.30  )
+X-CRM114-CacheID: sfid-20190815_013127_634594_54E820C0 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -97,134 +93,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robert Walker <robert.walker@arm.com>, Mike Leach <mike.leach@linaro.org>,
- coresight@lists.linaro.org, Leo Yan <leo.yan@linaro.org>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Neil Armstrong <narmstrong@baylibre.com>, Dave Airlie <airlied@linux.ie>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jonas Karlman <jonas@kwiboo.se>, Andy Gross <agross@kernel.org>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Rob Clark <robdclark@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, MSM <linux-arm-msm@vger.kernel.org>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ freedreno <freedreno@lists.freedesktop.org>, Sean Paul <sean@poorly.run>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The synthetic branch and instruction samples are missed to set
-instruction related info, thus perf tool fails to display samples with
-flags '-F,+insn,+insnlen'.
+On Thu, Aug 15, 2019 at 2:49 AM Brian Masney <masneyb@onstation.org> wrote:
 
-CoreSight trace decoder has provided sufficient information to decide
-the instruction size based on the isa type: A64/A32 instruction are
-32-bit size, but one exception is the T32 instruction size, which might
-be 32-bit or 16-bit.
+> Add HDMI nodes and other supporting infrastructure in order to support
+> the external display. This is based on work from Jonathan Marek.
+>
+> Signed-off-by: Brian Masney <masneyb@onstation.org>
 
-This patch handles for these cases and it reads the instruction values
-from DSO file; thus can support flags '-F,+insn,+insnlen'.
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-Before:
-
-  # perf script -F,insn,insnlen,ip,sym
-                0 [unknown] ilen: 0
-     ffff97174044 _start ilen: 0
-     ffff97174938 _dl_start ilen: 0
-     ffff97174938 _dl_start ilen: 0
-     ffff97174938 _dl_start ilen: 0
-     ffff97174938 _dl_start ilen: 0
-     ffff97174938 _dl_start ilen: 0
-     ffff97174938 _dl_start ilen: 0
-     ffff97174938 _dl_start ilen: 0
-     ffff97174938 _dl_start ilen: 0
-
-  [...]
-
-After:
-
-  # perf script -F,insn,insnlen,ip,sym
-                0 [unknown] ilen: 0
-     ffff97174044 _start ilen: 4 insn: 2f 02 00 94
-     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
-     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
-     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
-     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
-     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
-     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
-     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
-     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
-
-  [...]
-
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
-Cc: Mike Leach <mike.leach@linaro.org>
-Cc: Robert Walker <robert.walker@arm.com>
-Cc: coresight@lists.linaro.org
-Cc: linux-arm-kernel@lists.infradead.org
-Signed-off-by: Leo Yan <leo.yan@linaro.org>
----
- tools/perf/util/cs-etm.c | 35 ++++++++++++++++++++++++++++++++++-
- 1 file changed, 34 insertions(+), 1 deletion(-)
-
-diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index ed6f7fd5b90b..b3a5daaf1a8f 100644
---- a/tools/perf/util/cs-etm.c
-+++ b/tools/perf/util/cs-etm.c
-@@ -1076,6 +1076,35 @@ bool cs_etm__etmq_is_timeless(struct cs_etm_queue *etmq)
- 	return !!etmq->etm->timeless_decoding;
- }
- 
-+static void cs_etm__copy_insn(struct cs_etm_queue *etmq,
-+			      u64 trace_chan_id,
-+			      const struct cs_etm_packet *packet,
-+			      struct perf_sample *sample)
-+{
-+	/*
-+	 * It's pointless to read instructions for the CS_ETM_DISCONTINUITY
-+	 * packet, so directly bail out with 'insn_len' = 0.
-+	 */
-+	if (packet->sample_type == CS_ETM_DISCONTINUITY) {
-+		sample->insn_len = 0;
-+		return;
-+	}
-+
-+	/*
-+	 * T32 instruction size might be 32-bit or 16-bit, decide by calling
-+	 * cs_etm__t32_instr_size().
-+	 */
-+	if (packet->isa == CS_ETM_ISA_T32)
-+		sample->insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id,
-+							  sample->ip);
-+	/* Otherwise, A64 and A32 instruction size are always 32-bit. */
-+	else
-+		sample->insn_len = 4;
-+
-+	cs_etm__mem_access(etmq, trace_chan_id, sample->ip,
-+			   sample->insn_len, (void *)sample->insn);
-+}
-+
- static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
- 					    struct cs_etm_traceid_queue *tidq,
- 					    u64 addr, u64 period)
-@@ -1097,9 +1126,10 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
- 	sample.period = period;
- 	sample.cpu = tidq->packet->cpu;
- 	sample.flags = tidq->prev_packet->flags;
--	sample.insn_len = 1;
- 	sample.cpumode = event->sample.header.misc;
- 
-+	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->packet, &sample);
-+
- 	if (etm->synth_opts.last_branch) {
- 		cs_etm__copy_last_branch_rb(etmq, tidq);
- 		sample.branch_stack = tidq->last_branch;
-@@ -1159,6 +1189,9 @@ static int cs_etm__synth_branch_sample(struct cs_etm_queue *etmq,
- 	sample.flags = tidq->prev_packet->flags;
- 	sample.cpumode = event->sample.header.misc;
- 
-+	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->prev_packet,
-+			  &sample);
-+
- 	/*
- 	 * perf report cannot handle events without a branch stack
- 	 */
--- 
-2.17.1
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
