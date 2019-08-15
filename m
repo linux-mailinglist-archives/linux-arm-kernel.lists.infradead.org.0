@@ -2,47 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CD568E979
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 13:03:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5E0D8E9A1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 13:09:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3WUF9lbK64WPTmUSx02TY3wYNuZ3ZDE2mEUL/+AbpRQ=; b=TvsJ0FG8vlkaao
-	E5fZIpFe0xRfxOhTMYStAklUglaicOdGxdNExCkpsP11R79IcUGKMOoCiVp2N3VeTalu+P4ZxiHy4
-	IyeN3ZLL3fDvIuTEuuozWHm/shyIsbOQj85Me8bduFRiRZpcGzuGMz9RXvgd4D2W1gB3ZDI18iD81
-	vdshiiD/rmGYgvwx/omjtL3hrzYEw2g0hiLiy05IrHhHOKL96cMdemv89QzkI353Fqv/HL85rfQEq
-	tjg80yBfdwiNifO/2rogbvO/LmUhZTn6lkkXPDCmDeblGiRr153jJ6GoWUATEyITzX/4xcK5CNu5F
-	6uTVQ7qCNLXWqlWoi6Vw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IidMk4iTAZ57bDGW4Ytv5wn70gA5zAcJJkBfQONNAkY=; b=rmNZGg6ExZRfpaV+PVwWQL82g
+	kMbbb5IXpQ6pMD8/SAWJDTnJ6v2yF7HTVcp0rD+6iiwrDQ0aK1TB75bcfBxfDKxL9Qs6+h5ejO49n
+	I4/zhPN/7VCB2Z2Aa6hrPNcTLrYCMkYaxf07a5v8gQsdKYDISobm75Gqpbpmj7yiyoikQZdrOoMdE
+	2VOjJxy8PhSpMgiyS2+pqFOlADyVUSseR2Aqgk4E76zbwnghJZF/D9u/b0VRy3EQ+5ZSjy3vsXyVW
+	TsA0RYTodbEeDho6wLiP+xnF1emFompRtsJU7fa4sQXy3wl61CrZvJiWIxApbPApMq2RqqWTFkxDn
+	KEgsr8kTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyDXU-0001AT-Np; Thu, 15 Aug 2019 11:03:28 +0000
+	id 1hyDdY-00038z-Du; Thu, 15 Aug 2019 11:09:44 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hyDXK-0001AA-3G
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 11:03:19 +0000
+ id 1hyDdK-00038V-Hs; Thu, 15 Aug 2019 11:09:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 00E0328;
- Thu, 15 Aug 2019 04:03:17 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4E66D3F694;
- Thu, 15 Aug 2019 04:03:16 -0700 (PDT)
-Date: Thu, 15 Aug 2019 12:03:09 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: skodde <skodde@gmail.com>
-Subject: Re: arm64/efistub boot error with CONFIG_GCC_PLUGIN_STACKLEAK
-Message-ID: <20190815110308.GA22153@lakrids.cambridge.arm.com>
-References: <CAJrUJt_HV+8MCGxv4=bq97JFiKqPtgN4ntfei0TmxGhDT-bCQg@mail.gmail.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 866DC28;
+ Thu, 15 Aug 2019 04:09:29 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D5AD3F694;
+ Thu, 15 Aug 2019 04:09:27 -0700 (PDT)
+Subject: Re: kexec on rk3399
+To: Felipe Balbi <balbi@kernel.org>, Vicente Bergas <vicencb@gmail.com>
+References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
+ <c6993a1e-6fc2-44ab-b59e-152142e2ff4d@gmail.com>
+ <0408cb6c-1b16-eacb-d47e-17f4ff89e2b8@arm.com>
+ <59055782-7fc2-4b16-af8b-a56fb845a43f@gmail.com> <87pnl7t12t.fsf@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <4d18d4f7-a00e-bd60-6361-51054eba3bca@arm.com>
+Date: Thu, 15 Aug 2019 12:09:25 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJrUJt_HV+8MCGxv4=bq97JFiKqPtgN4ntfei0TmxGhDT-bCQg@mail.gmail.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <87pnl7t12t.fsf@gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_040318_182350_A9942B51 
-X-CRM114-Status: GOOD (  12.05  )
+X-CRM114-CacheID: sfid-20190815_040930_683817_2F2F13FE 
+X-CRM114-Status: GOOD (  28.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,45 +63,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 05:56:27AM -0400, skodde wrote:
+On 15/08/2019 07:06, Felipe Balbi wrote:
+> 
 > Hi,
 > 
-> I've enabled CONFIG_GCC_PLUGIN_STACKLEAK on 5.2.8 for an arm64
-> macchiatobin board and I get the following error when loading the
-> kernel (using grub-efi on top of edk ii):
+> Vicente Bergas <vicencb@gmail.com> writes:
 > 
-> EFI stub: Booting Linux Kernel...
-> EFI stub: ERROR: efi_get_random_bytes() failed
-> EFI stub: ERROR: Failed to relocate kernel
+>> On Wednesday, August 14, 2019 3:12:26 PM CEST, Robin Murphy wrote:
+>>> On 14/08/2019 13:53, Vicente Bergas wrote:
+>>>> On Monday, July 22, 2019 4:31:27 PM CEST, Vicente Bergas wrote: ...
+>>>
+>>> This particular change looks like it's implicitly specific to
+>>> RK3399, which wouldn't be ideal. Presumably if the core dwc3
+>>> driver implemented shutdown correctly (echoing parts of
+>>> dwc3_remove(), I guess) then the glue layers shouldn't need
+>>> anything special anyway.
+>>>
+>>> Robin.
+>>
+>> I just checked simple->resets from dwc3-of-simple.c and it is an array
+>> with multiple resets whereas dwc->reset from core.c is NULL.
+>> So the reset seems specific to the glue layers.
+>> Is there another way than resetting the thing that is
+>> generic enough to go to core.c and allows kexec?
 > 
-> The kernel boots fine with that option disabled, but strangely
-> presents the same error when disabling only CONFIG_RANDOMIZE_BASE.
+> This is a really odd 'failure'. We do full soft reset during driver
+> initialization on dwc3. We shouldn't need to assert reset on shutdown,
+> really.
 
-That shouldn't be possible, given the IS_ENABLED(CONFIG_RANDOMIZE_BASE)
-guard around the efi_get_random_bytes() call, so something sounds wrong.
+Probing/initialisation has never been the problem. The issue for the 
+kexec case is that when the first kernel shuts down, there is currently 
+nothing to quiesce the controller (since only driver->shutdown gets 
+called, not driver->remove), and thus (presumably) external USB activity 
+causes it to keep writing back over the memory where the 
+descriptors/command ring used to be while the second kernel boots. The 
+second kernel will eventually probe and reset it appropriately, but by 
+that time the damage is already done.
 
-Are you certain that you're running the same kernel Image that you
-rebuilt?
+Yanking on a hardware reset line when the first kernel shuts down is 
+certainly one way to stop any memory accesses if such a control is 
+available, but presumably there's a general software way to gracefully 
+disable the controller's DMA functions until a subsequent probe can 
+fully reset it again - I think that would be the preferable solution.
 
-Ard, do you reckon it would be worth adding the UTS_RELEASE and
-UTS_VERSION to the " Booting Linux Kernel..." string? It would make
-debugging that potential issue easier.
+Robin.
 
-> Let me know if I can provide more info or do some tests.
-
-Maybe there's a problem with stale objects. If you're not doing so
-already, could you try a clean build with CONFIG_RANDOMIZE_BASE
-deselected?
-
-Thanks,
-Mark.
+> I think the problem is here:
+> 
+> 	if (simple->pulse_resets) {
+> 		ret = reset_control_reset(simple->resets);
+> 		if (ret)
+> 			goto err_resetc_put;
+> 	} else {
+> 		ret = reset_control_deassert(simple->resets);
+> 		if (ret)
+> 			goto err_resetc_put;
+> 	}
+> 
+> Note that if pulse_resets is set, we will run a reset. But if
+> pulse_resets is false and need_reset is true, we deassert the reset.
+> 
+> I think below patch is enough:
+> 
+> diff --git a/drivers/usb/dwc3/dwc3-of-simple.c b/drivers/usb/dwc3/dwc3-of-simple.c
+> index bdac3e7d7b18..9a2f3e09aa2e 100644
+> --- a/drivers/usb/dwc3/dwc3-of-simple.c
+> +++ b/drivers/usb/dwc3/dwc3-of-simple.c
+> @@ -72,7 +72,15 @@ static int dwc3_of_simple_probe(struct platform_device *pdev)
+>   		ret = reset_control_reset(simple->resets);
+>   		if (ret)
+>   			goto err_resetc_put;
+> -	} else {
+> +	}
+> +
+> +	if (simple->need_reset) {
+> +		ret = reset_control_assert(simple->resets);
+> +		if (ret)
+> +			goto err_resetc_put;
+> +
+> +		usleep_range(1000, 2000);
+> +
+>   		ret = reset_control_deassert(simple->resets);
+>   		if (ret)
+>   			goto err_resetc_put;
+> @@ -121,9 +129,6 @@ static int dwc3_of_simple_remove(struct platform_device *pdev)
+>   	clk_bulk_put_all(simple->num_clocks, simple->clks);
+>   	simple->num_clocks = 0;
+>   
+> -	if (!simple->pulse_resets)
+> -		reset_control_assert(simple->resets);
+> -
+>   	reset_control_put(simple->resets);
+>   
+>   	pm_runtime_disable(dev);
+> 
+> Can you test?
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
