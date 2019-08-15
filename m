@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DEF68E226
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:51:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 780318E224
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:50:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=slb4Rvm+sba5n+u7IaeBNe+XSOEX5Y9qXgcEF8tULCM=; b=DY40Kwyef2d/68
-	yQ9hqSXai9oI9czrZc6IyhD/ZkJIzigzQrVFCtB1aL8/l2GJjlwgMOsdTTFQCY3dXmNvAFkz+7A8a
-	U91XeglgxYs0O9USCUO4BgNbtZDtdyneWUJ2x9kkUQVs/rOi9dyNVF29mCIBNOSewrFPMgbXugTXw
-	XVM5PFCNg0QFC36V1nkAbEDC3uGfVQ1MZ/sz6oZYXnELxTWnThZ+2erlwLyawv0etilLUzUibzOee
-	33rcJ8cPknZZD/FXVFh0oJirrcFhTU43jLoJB+xaouEcP6SDYJDBg77/WfL792iCAv5sDIa7x0irR
-	Xb+rIrRoU1L1sZPv/h+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VPcciSTzNpTmr3HWa7xqHobEgBJZXeSpBVU/sBwZvwo=; b=tFdw21hOn6L6C8
+	3ejvJP3uOaNh3wAmCUJTr2AwOlQWbqRalC3mprDKSDuiyTIRhod5hs8KYrWuzgOxQYdNvIPY4ejrS
+	Xc1YBDytZYt0PATdzBk0oFi0697ZdYXiCg1L9gBJVfGW4Ode5qz1h9pUev9psZJwrclRF7Mq20KkC
+	sJTw9uu35cEiSyoj3Xd56zU/ZWT57WY3xq34UgY2sZ8BAg1Q+tcd+UCzrg8E0XJKHdun81Iu4fEDJ
+	VtN4ydBaecM1cfRXzS0tQSixfdVPaZPDeIIdgNw5AvqhlxjplcOGqtFSAWoJ6TDQh+OGIHdG1/Egf
+	RfpLPH1ij6MRNchIZUhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy3yf-0006Xu-U1; Thu, 15 Aug 2019 00:50:54 +0000
+	id 1hy3y3-0004qL-8g; Thu, 15 Aug 2019 00:50:15 +0000
 Received: from onstation.org ([52.200.56.107])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy3x4-0004Zw-5C
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 00:49:17 +0000
+ id 1hy3x4-0004Zx-5U
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 00:49:15 +0000
 Received: from localhost.localdomain (c-98-239-145-235.hsd1.wv.comcast.net
  [98.239.145.235])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id 351503E95F;
- Thu, 15 Aug 2019 00:49:08 +0000 (UTC)
+ by onstation.org (Postfix) with ESMTPSA id 7006E3E998;
+ Thu, 15 Aug 2019 00:49:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
- s=default; t=1565830151;
- bh=PCy1j7MQudvJstVSVlYc4cRcJStkAE4OqJRndsZJOI0=;
- h=From:To:Cc:Subject:Date:From;
- b=q+P4dvnY8kCbSHP6/cQeJNcM49HQS1+tGPc+xTcR+NwY72Dg4KvVyK6FG5xTEo6OD
- Y0IU/xMhrkp5ILcJF73dQBeXzhK6vqkhotTJU3BhwoVHVXfT7SDH+vnJ/YUcDoyfct
- XVblgW3CGsQv/S/J6MMGbtBm1olh/8loyiE9N9b0=
+ s=default; t=1565830152;
+ bh=onikNoreFBf7Lir0NTdw9PrR2YRnHxeCYQkeZbJ3YvQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=KSVmUNaF+Q0K6DwjQyjqoeBvOn/EcvL1UgZjHTVMHSqL77RES/N9Fzns/3ZaSBAka
+ 1oJVk0pjCCNXe/yEt7U5E2IviJzpSqcT64KjnIKFDfDN2DRWKC++aqaxd9oZv0ipmF
+ JbeS94gZj7/gRoZF8kun4tUDaM/udwWxjGLuyn1E=
 From: Brian Masney <masneyb@onstation.org>
 To: bjorn.andersson@linaro.org, robh+dt@kernel.org, agross@kernel.org,
  a.hajda@samsung.com, narmstrong@baylibre.com, robdclark@gmail.com,
  sean@poorly.run
-Subject: [PATCH 00/11] ARM: dts: qcom: msm8974: add support for external
- display
-Date: Wed, 14 Aug 2019 20:48:43 -0400
-Message-Id: <20190815004854.19860-1-masneyb@onstation.org>
+Subject: [PATCH 01/11] dt-bindings: drm/bridge: analogix-anx78xx: add new
+ variants
+Date: Wed, 14 Aug 2019 20:48:44 -0400
+Message-Id: <20190815004854.19860-2-masneyb@onstation.org>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190815004854.19860-1-masneyb@onstation.org>
+References: <20190815004854.19860-1-masneyb@onstation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_174914_274975_A74FFEB9 
-X-CRM114-Status: GOOD (  13.78  )
+X-CRM114-CacheID: sfid-20190814_174914_274602_812A6EBC 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -87,52 +89,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series begins to add support for the external display over
-HDMI that is supported on msm8974 SoCs. I'm testing this series on the
-Nexus 5, and I'm able to communicate with the HDMI bridge via the
-analogix-anx78xx driver, however the external display is not working
-yet.
+Add support for the analogix,anx7808, analogix,anx7812, and
+analogix,anx7818 variants.
 
-When I plug in the HDMI cable, the monitor detects that a device is
-hooked up, but nothing is shown on the external monitor. The hot plug
-detect GPIO (hpd-gpios) on the analogix-anx78xx bridge and MSM HDMI
-drivers do not change state when the slimport adapter or HDMI cable is
-plugged in or removed. I wonder if a regulator is not enabled somewhere?
-I have a comment in patch 10 regarding 'hpd-gdsc-supply' that may
-potentially be an issue.
+Signed-off-by: Brian Masney <masneyb@onstation.org>
+---
+ .../devicetree/bindings/display/bridge/anx7814.txt          | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-I'm still digging in on this, however I'd appreciate any feedback if
-anyone has time. Most of these patches are ready now, so I marked the
-ones that aren't ready with 'PATCH RFC'.
-
-I'm using an Analogix Semiconductor SP6001 SlimPort Micro-USB to 4K HDMI
-Adapter to connect my phone to an external display via a standard HDMI
-cable. This works just fine with the downstream MSM kernel using
-Android.
-
-Brian Masney (11):
-  dt-bindings: drm/bridge: analogix-anx78xx: add new variants
-  drm/bridge: analogix-anx78xx: add new variants
-  drm/bridge: analogix-anx78xx: silence -EPROBE_DEFER warnings
-  drm/bridge: analogix-anx78xx: convert to i2c_new_dummy_device
-  drm/bridge: analogix-anx78xx: correct value of TX_P0
-  drm/bridge: analogix-anx78xx: add support for avdd33 regulator
-  ARM: qcom_defconfig: add CONFIG_DRM_ANALOGIX_ANX78XX
-  drm/msm/hdmi: silence -EPROBE_DEFER warning
-  ARM: dts: qcom: pm8941: add 5vs2 regulator node
-  ARM: dts: qcom: msm8974: add HDMI nodes
-  ARM: dts: qcom: msm8974-hammerhead: add support for external display
-
- .../bindings/display/bridge/anx7814.txt       |   6 +-
- .../qcom-msm8974-lge-nexus5-hammerhead.dts    | 140 ++++++++++++++++++
- arch/arm/boot/dts/qcom-msm8974.dtsi           |  80 ++++++++++
- arch/arm/boot/dts/qcom-pm8941.dtsi            |  10 ++
- arch/arm/configs/qcom_defconfig               |   1 +
- drivers/gpu/drm/bridge/analogix-anx78xx.c     |  60 +++++++-
- drivers/gpu/drm/bridge/analogix-anx78xx.h     |   2 +-
- drivers/gpu/drm/msm/hdmi/hdmi_phy.c           |   8 +-
- 8 files changed, 295 insertions(+), 12 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/display/bridge/anx7814.txt b/Documentation/devicetree/bindings/display/bridge/anx7814.txt
+index dbd7c84ee584..17258747fff6 100644
+--- a/Documentation/devicetree/bindings/display/bridge/anx7814.txt
++++ b/Documentation/devicetree/bindings/display/bridge/anx7814.txt
+@@ -6,7 +6,11 @@ designed for portable devices.
+ 
+ Required properties:
+ 
+- - compatible		: "analogix,anx7814"
++ - compatible		: Must be one of:
++			  "analogix,anx7808"
++			  "analogix,anx7812"
++			  "analogix,anx7814"
++			  "analogix,anx7818"
+  - reg			: I2C address of the device
+  - interrupts		: Should contain the INTP interrupt
+  - hpd-gpios		: Which GPIO to use for hpd
 -- 
 2.21.0
 
