@@ -2,117 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 974AC8F6F9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 00:29:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 320CF8F71C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 00:40:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SXlDQLEq4Zg3IcgfeR4wH7E59rOc/27aaLwnZFzd16A=; b=Su+YbohqwnC1fY
-	+2ufmE3kEq/WD+Jg7in6//fihav93FLFFzzEDXioZUz84GBMteCQXEmitlc0IodBZ3A+jU8Y/oh1V
-	NgORzSUE+lB/XdEjyPeH8lzZKPwkstfdIytksp5Epj8GTVVXhLPv/dl9iljNtA2VkuzEv/Pqn6Rnj
-	ns3/+vI6h0DOfkPBWmojeRPQRpRc1z18MMnfbfveenkq9n6p9cqeJKU9crPbmYcKmOduo7e7OUjj2
-	P3pnY07633xPiSh+hRAukE1Z5Ae+1qmrvmozFDr278XoFSeaMtg7dNnkkGYbDAs/xeIUo8KkJoUEv
-	Iafz0DDaPoVMiKssTWOw==;
+	List-Owner; bh=ypxqTmxHdOOxJfwB9+3aDdQn1bTbh73mQ6XgAAEI/Rg=; b=FI3Y2zB2SRz+wV
+	UgzB8JS5oCmo03xq3L8MgJdwB0RnJVeHqT8Gal2uA6tjYLf52+gd/Y6+8f6HMFOyyptlP0aGEqqcE
+	WN41oatKSQnuKgezQ/INb54rYS7VQLB9XcLCKAPs09JPEtSM9HZp8blgEJ/r+IZP4neXvMU0Sj1fZ
+	FV9htse0QS/WwcH0btbQP2SLPXA7UmhQ4OAVAcsZ+nRMB0vputdAHHzrbP6TpRMochcV0cMJxQw5+
+	SWztyNO/MK85rVRnTLltVp235UDbIH8Jbo/Ynvf/9vJca8fey/R83FZPTVIZOJI2HEPSqlO+AaAut
+	28P2aPUw86nzHW1/U5hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyOF1-0004Xg-LM; Thu, 15 Aug 2019 22:29:07 +0000
-Received: from mx0a-00190b01.pphosted.com ([2620:100:9001:583::1])
+	id 1hyOQ9-0000FY-PX; Thu, 15 Aug 2019 22:40:37 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyOEn-0004X1-GK
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 22:28:55 +0000
-Received: from pps.filterd (m0122332.ppops.net [127.0.0.1])
- by mx0a-00190b01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x7FMQsrX024284; Thu, 15 Aug 2019 23:27:24 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akamai.com;
- h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=jan2016.eng;
- bh=eNGkOMmlGAHQ4O+Bd+HCbMMkrJlmJlqVe+wt+fkp6Tg=;
- b=ZKTxSefYzNDdwyp8HlbBjB34sYPYXnFzud8P8VMuzN9LZ6zpN8syxx3r//Z2Rqzvh3xz
- 55/Gf3yB/E8mBZoEPUnUG/RgMtSzG2GxIVQ5W62CW2emYNG3IDF+oei6t4vpIGfOWsMT
- WgJaBNgBYf3kZR9Vxaq0IXdP4HIgYjJrBz81kABBm/XOIB1mFzWFhX+TSmpRVLMf6S3g
- SCuFq7LTtCI3P4SHO/MFPYmaG9vkEmugpoD0TcUAdqM3AjAE4L0HqjzbMj06dKa3XxOd
- Syq5fmTRyMocvuOlS8yBPqPH/fRtSd6Vta0RyXDxYqXMrzIPRyXen1nW56BKqEE986y0 Gg== 
-Received: from prod-mail-ppoint5 (prod-mail-ppoint5.akamai.com [184.51.33.60]
- (may be forged))
- by mx0a-00190b01.pphosted.com with ESMTP id 2ubf94g83n-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 15 Aug 2019 23:27:24 +0100
-Received: from pps.filterd (prod-mail-ppoint5.akamai.com [127.0.0.1])
- by prod-mail-ppoint5.akamai.com (8.16.0.27/8.16.0.27) with SMTP id
- x7FMHbXA024377; Thu, 15 Aug 2019 15:27:22 -0700
-Received: from email.msg.corp.akamai.com ([172.27.123.34])
- by prod-mail-ppoint5.akamai.com with ESMTP id 2u9uw9hdyh-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Thu, 15 Aug 2019 15:27:21 -0700
-Received: from USMA1EX-DAG1MB5.msg.corp.akamai.com (172.27.123.105) by
- usma1ex-dag3mb4.msg.corp.akamai.com (172.27.123.56) with Microsoft SMTP
- Server (TLS) id 15.0.1473.3; Thu, 15 Aug 2019 18:27:21 -0400
-Received: from usma1ex-dag1mb6.msg.corp.akamai.com (172.27.123.65) by
- usma1ex-dag1mb5.msg.corp.akamai.com (172.27.123.105) with Microsoft SMTP
- Server (TLS) id 15.0.1473.3; Thu, 15 Aug 2019 18:27:21 -0400
-Received: from usma1ex-dag1mb6.msg.corp.akamai.com ([172.27.123.65]) by
- usma1ex-dag1mb6.msg.corp.akamai.com ([172.27.123.65]) with mapi id
- 15.00.1473.005; Thu, 15 Aug 2019 18:27:20 -0400
-From: "Lubashev, Igor" <ilubashe@akamai.com>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: RE: [PATCH v3 3/4] perf: Use CAP_SYSLOG with kptr_restrict checks
-Thread-Topic: [PATCH v3 3/4] perf: Use CAP_SYSLOG with kptr_restrict checks
-Thread-Index: AQHVTS6ohXVeHma7aEyJ5mLyFs0geab7PiSAgAAMNACAAAEdgP//yqiwgAHfTwD//80DsA==
-Date: Thu, 15 Aug 2019 22:27:20 +0000
-Message-ID: <930a59730c0d495f8c5acf4f99048e8d@usma1ex-dag1mb6.msg.corp.akamai.com>
-References: <cover.1565188228.git.ilubashe@akamai.com>
- <291d2cda6ee75b4cd4c9ce717c177db18bf03a31.1565188228.git.ilubashe@akamai.com>
- <CANLsYkxZE0CQJKQ-bFi=zFV5vTCbL2v76+x1fmCpqNruqWiFXg@mail.gmail.com>
- <20190814184814.GM9280@kernel.org> <20190814185213.GN9280@kernel.org>
- <23f7b8c7616a467c93ee2c77e8ffd3cf@usma1ex-dag1mb6.msg.corp.akamai.com>
- <CANLsYkxqBcJq8QJq+aLZXQas1VBg_wGh_p5WTUuRVFCYEQWiQw@mail.gmail.com>
-In-Reply-To: <CANLsYkxqBcJq8QJq+aLZXQas1VBg_wGh_p5WTUuRVFCYEQWiQw@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [172.19.36.150]
+ id 1hyOPx-0000ET-D2
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 22:40:26 +0000
+Received: by mail-oi1-f194.google.com with SMTP id c15so3455102oic.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 15 Aug 2019 15:40:23 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=5N0BrmR1Tjy4UAxxe/8xM6uCYUxnCI+4Zt+Yt4/wBa0=;
+ b=fH305wBSMjJXE0p7+/Rgrb74YSNM9idqx9eZkAmsO5G6grHvkNVKcIbZAhZHXoAZHR
+ P2U5NbZwyHgrlcGIPpP9YWZWxrJg+8NLtLyAXPlXNADn4jgchOxkuiABy0n6NP0SFn6E
+ t4BLElymX8tnDJFPiot4nKhh8B6S+vSz1JRrMr3iOTyv012kTREehbbkoTd7csL5Esx5
+ 4sYf5x4PEHrjCIIHXPxWC/J2MN8w8u81Q/H9tk/1Soj64FmFgYEuOPpLVlwMYZGHcuOQ
+ X8zlnkNNhvmfcgnAE3V+tmzk3RV7A7jr0v/1piIw3xFsLQP43lE0YHe8mm2uHIhB2cix
+ +SVg==
+X-Gm-Message-State: APjAAAW6dKcCxwBRQeM98FUglyAJxbR6k4AbQUs50QWCnR8kG1xY9csn
+ 2BP3/BAmvyMUnMFOPpjgXDh95avZXig=
+X-Google-Smtp-Source: APXvYqyj+VAsDxlyJfYk+5kwAY9mv63tbMr1/PyEBogpHlUszeNpbBxr9eVf69ugCl9qMGO45WmbfQ==
+X-Received: by 2002:aca:b755:: with SMTP id h82mr3132898oif.129.1565908822444; 
+ Thu, 15 Aug 2019 15:40:22 -0700 (PDT)
+Received: from mail-oi1-f177.google.com (mail-oi1-f177.google.com.
+ [209.85.167.177])
+ by smtp.gmail.com with ESMTPSA id t10sm1024274otb.13.2019.08.15.15.40.21
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 15 Aug 2019 15:40:21 -0700 (PDT)
+Received: by mail-oi1-f177.google.com with SMTP id a127so3465248oii.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 15 Aug 2019 15:40:21 -0700 (PDT)
+X-Received: by 2002:a54:4191:: with SMTP id 17mr2851640oiy.175.1565908820908; 
+ Thu, 15 Aug 2019 15:40:20 -0700 (PDT)
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-15_10:, , signatures=0
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1906280000 definitions=main-1908150210
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
- definitions=2019-08-15_10:2019-08-14,2019-08-15 signatures=0
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
- lowpriorityscore=0
- adultscore=0 clxscore=1011 malwarescore=0 mlxlogscore=999 phishscore=0
- suspectscore=0 bulkscore=0 impostorscore=0 spamscore=0 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-1906280000
- definitions=main-1908150212
+References: <20190814072649.8237-1-yinbo.zhu@nxp.com>
+ <20190814072649.8237-2-yinbo.zhu@nxp.com>
+In-Reply-To: <20190814072649.8237-2-yinbo.zhu@nxp.com>
+From: Li Yang <leoyang.li@nxp.com>
+Date: Thu, 15 Aug 2019 17:40:09 -0500
+X-Gmail-Original-Message-ID: <CADRPPNSW4A0gkbzcPD=y-J_YHSnbAgP7p=RQnS6i0U-Ze=L6qA@mail.gmail.com>
+Message-ID: <CADRPPNSW4A0gkbzcPD=y-J_YHSnbAgP7p=RQnS6i0U-Ze=L6qA@mail.gmail.com>
+Subject: Re: [PATCH v1 2/4] soc: fsl: guts: Add definition for LS1028A
+To: Yinbo Zhu <yinbo.zhu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_152853_557259_DE1366F3 
-X-CRM114-Status: GOOD (  31.70  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190815_154025_442904_4A1C0317 
+X-CRM114-Status: GOOD (  16.50  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2620:100:9001:583:0:0:0:1 listed in] [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pku.leo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,198 +92,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>, Alexey
- Budankov <alexey.budankov@linux.intel.com>,
- Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>, Linux Kernel Mailing
- List <linux-kernel@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, James Morris <jmorris@namei.org>,
- Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Catalin Horghidan <catalin.horghidan@nxp.com>, linux-mmc@vger.kernel.org,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Rajesh Bhagat <rajesh.bhagat@nxp.com>,
+ Alison Wang <alison.wang@nxp.com>, Ashish Kumar <Ashish.Kumar@nxp.com>,
+ Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Vabhav Sharma <vabhav.sharma@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Amit Jain <amit.jain_1@nxp.com>,
+ Alex Marginean <alexandru.marginean@nxp.com>,
+ lkml <linux-kernel@vger.kernel.org>,
+ Rajat Srivastava <rajat.srivastava@nxp.com>, Yangbo Lu <yangbo.lu@nxp.com>,
+ Jiafei Pan <jiafei.pan@nxp.com>, linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ Xiaobo Xie <xiaobo.xie@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, August 15, 2019 at 4:17 PM Mathieu Poirier <mathieu.poirier@linaro.org> wrote:
-> On Wed, 14 Aug 2019 at 14:02, Lubashev, Igor <ilubashe@akamai.com>
-> wrote:
-> >
-> > > On Wed, August 14, 2019 at 2:52 PM Arnaldo Carvalho de Melo
-> <arnaldo.melo@gmail.com> wrote:
-> > > Em Wed, Aug 14, 2019 at 03:48:14PM -0300, Arnaldo Carvalho de Melo
-> > > escreveu:
-> > > > Em Wed, Aug 14, 2019 at 12:04:33PM -0600, Mathieu Poirier escreveu:
-> > > > > # echo 0 > /proc/sys/kernel/kptr_restrict # ./tools/perf/perf
-> > > > > record -e instructions:k uname
-> > > > > perf: Segmentation fault
-> > > > > Obtained 10 stack frames.
-> > > > > ./tools/perf/perf(sighandler_dump_stack+0x44) [0x55af9e5da5d4]
-> > > > > /lib/x86_64-linux-gnu/libc.so.6(+0x3ef20) [0x7fd31efb6f20]
-> > > > > ./tools/perf/perf(perf_event__synthesize_kernel_mmap+0xa7)
-> > > > > [0x55af9e590337]
-> > > > > ./tools/perf/perf(+0x1cf5be) [0x55af9e50c5be]
-> > > > > ./tools/perf/perf(cmd_record+0x1022) [0x55af9e50dff2]
-> > > > > ./tools/perf/perf(+0x23f98d) [0x55af9e57c98d]
-> > > > > ./tools/perf/perf(+0x23fc9e) [0x55af9e57cc9e]
-> > > > > ./tools/perf/perf(main+0x369) [0x55af9e4f6bc9]
-> > > > > /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7)
-> > > > > [0x7fd31ef99b97]
-> > > > > ./tools/perf/perf(_start+0x2a) [0x55af9e4f704a] Segmentation
-> > > > > fault
-> > > > >
-> > > > > I can reproduce this on both x86 and ARM64.
-> > > >
-> > > > I don't see this with these two csets removed:
-> > > >
-> > > > 7ff5b5911144 perf symbols: Use CAP_SYSLOG with kptr_restrict
-> > > > checks d7604b66102e perf tools: Use CAP_SYS_ADMIN with
-> > > > perf_event_paranoid checks
-> > > >
-> > > > Which were the ones I guessed were related to the problem you
-> > > > reported, so they are out of my ongoing perf/core pull request to
-> > > > Ingo/Thomas, now trying with these applied and your instructions...
+On Wed, Aug 14, 2019 at 2:26 AM Yinbo Zhu <yinbo.zhu@nxp.com> wrote:
+>
+> Adding compatible string "ls1028a-dcfg" to initialize guts driver
+> for ls1028 and SoC die attribute definition for LS1028A
+>
+> Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
 
-SNIP
+Applied for next.
 
-> I isolated the problem to libcap-dev - if it is not installed a segmentation fault
-> will occur.  Since this set is about using capabilities it is obvious that not
-> having it on a system should fail a trace session, but it should not crash it.
-> 
-> If libcap-dev is not installed function symbol__restricted_filename() will
-> return true, which in turn will prevent symbol_name to be set in
-> machine__get_running_kernel_start().  That prevents function
-> map__set_kallsyms_ref_reloc_sym() from being called in
-> machine__create_kernel_maps(), resulting in kmap->ref_reloc_sym being
-> NULL in _perf_event__synthesize_kernel_mmap() and a segmentation fault.
+> ---
+>  drivers/soc/fsl/guts.c | 6 ++++++
+>  1 file changed, 6 insertions(+)
+>
+> diff --git a/drivers/soc/fsl/guts.c b/drivers/soc/fsl/guts.c
+> index 1ef8068c8dd3..34810f9bb2ee 100644
+> --- a/drivers/soc/fsl/guts.c
+> +++ b/drivers/soc/fsl/guts.c
+> @@ -102,6 +102,11 @@ static const struct fsl_soc_die_attr fsl_soc_die[] = {
+>           .svr          = 0x87360000,
+>           .mask         = 0xff3f0000,
+>         },
+> +       /* Die: LS1028A, SoC: LS1028A */
+> +       { .die          = "LS1028A",
+> +         .svr          = 0x870b0000,
+> +         .mask         = 0xff3f0000,
+> +       },
+>         { },
+>  };
+>
+> @@ -224,6 +229,7 @@ static const struct of_device_id fsl_guts_of_match[] = {
+>         { .compatible = "fsl,ls1012a-dcfg", },
+>         { .compatible = "fsl,ls1046a-dcfg", },
+>         { .compatible = "fsl,lx2160a-dcfg", },
+> +       { .compatible = "fsl,ls1028a-dcfg", },
+>         {}
+>  };
+>  MODULE_DEVICE_TABLE(of, fsl_guts_of_match);
+> --
+> 2.17.1
+>
 
-Thank you, great find.
-
-> I am not sure how this can be fixed.  I counted a total of 19 instances where
-> kmap->ref_reloc_sym->XYZ is called, only 2 of wich care to check if kmap-
-> >ref_reloc_sym is valid before proceeding.  As such I must hope that in the
-> 17 other cases, kmap->ref_reloc_sym is guaranteed to be valid.  If I am
-> correct then all we need is to check for a valid pointer in
-> _perf_event__synthesize_kernel_mmap().
-> Otherwise it will be a little harder.
-
-I also see 19 instances in 5 files, but by my inspection all cases but one are ok (the code checks for NULL earlier in the function or in a helper function).
-
-The not ok case is __perf_event__synthesize_kermel_mmap(), which simply checks symbol_conf.kptr_restrict.
-
-==== Option 1 =====
-Fix __perf_event__synthesize_kermel_mmap().  This probably should be done regardless.
-
-diff --git a/tools/perf/util/event.c b/tools/perf/util/event.c
-index f440fdc3e953..b84f5f3c9651 100644
---- a/tools/perf/util/event.c
-+++ b/tools/perf/util/event.c
-@@ -913,11 +913,13 @@ static int __perf_event__synthesize_kernel_mmap(struct perf_tool *tool,
-        int err;
-        union perf_event *event;
-
--       if (symbol_conf.kptr_restrict)
--               return -1;
-        if (map == NULL)
-                return -1;
-
-+       kmap = map__kmap(map);
-+       if (!kmap->ref_reloc_sym)
-+               return -1;
-+
-        /*
-         * We should get this from /sys/kernel/sections/.text, but till that is
-         * available use this, and after it is use this as a fallback for older
-@@ -940,7 +942,6 @@ static int __perf_event__synthesize_kernel_mmap(struct perf_tool *tool,
-                event->header.misc = PERF_RECORD_MISC_GUEST_KERNEL;
-        }
-
--       kmap = map__kmap(map);
-        size = snprintf(event->mmap.filename, sizeof(event->mmap.filename),
-                        "%s%s", machine->mmap_name, kmap->ref_reloc_sym->name) + 1;
-        size = PERF_ALIGN(size, sizeof(u64));
---
-
-==== Option 2 =====
-Move the new perf_event_paranoid() check from symbol__restricted_filename() to symbol__read_kptr_restrict().
-Other than the use above, kptr_restrict is only used for printing warnings.
-
-diff --git a/tools/perf/util/symbol.c b/tools/perf/util/symbol.c
-index 7409d2facd5b..035f2e75728c 100644
---- a/tools/perf/util/symbol.c
-+++ b/tools/perf/util/symbol.c
-@@ -898,11 +898,7 @@ bool symbol__restricted_filename(const char *filename,
- {
-        bool restricted = false;
-
--       /* Per kernel/kallsyms.c:
--        * we also restrict when perf_event_paranoid > 1 w/o CAP_SYSLOG
--        */
--       if (symbol_conf.kptr_restrict ||
--           (perf_event_paranoid() > 1 && !perf_cap__capable(CAP_SYSLOG))) {
-+       if (symbol_conf.kptr_restrict) {
-                char *r = realpath(filename, NULL);
-
-                if (r != NULL) {
-@@ -2209,6 +2205,12 @@ static bool symbol__read_kptr_restrict(void)
-                fclose(fp);
-        }
-
-+       /* Per kernel/kallsyms.c:
-+        * we also restrict when perf_event_paranoid > 1 w/o CAP_SYSLOG
-+        */
-+       if (perf_event_paranoid() > 1 && !perf_cap__capable(CAP_SYSLOG))
-+               value = true;
-+
-        return value;
- }
-
---------- And then update the warnings. -----------
-
-diff --git a/tools/perf/builtin-record.c b/tools/perf/builtin-record.c
-index f71631f2bcb5..18505d92ff69 100644
---- a/tools/perf/builtin-record.c
-+++ b/tools/perf/builtin-record.c
-@@ -2372,7 +2372,7 @@ int cmd_record(int argc, const char **argv)
-        if (symbol_conf.kptr_restrict && !perf_evlist__exclude_kernel(rec->evlist))
-                pr_warning(
- "WARNING: Kernel address maps (/proc/{kallsyms,modules}) are restricted,\n"
--"check /proc/sys/kernel/kptr_restrict.\n\n"
-+"check /proc/sys/kernel/kptr_restrict and /proc/sys/kernel/perf_event_paranoid.\n\n"
- "Samples in kernel functions may not be resolved if a suitable vmlinux\n"
- "file is not found in the buildid cache or in the vmlinux path.\n\n"
- "Samples in kernel modules won't be resolved at all.\n\n"
-diff --git a/tools/perf/builtin-top.c b/tools/perf/builtin-top.c
-index 5970723cd55a..29e910fb2d9a 100644
---- a/tools/perf/builtin-top.c
-+++ b/tools/perf/builtin-top.c
-@@ -770,7 +770,7 @@ static void perf_event__process_sample(struct perf_tool *tool,
-                if (!perf_evlist__exclude_kernel(top->session->evlist)) {
-                        ui__warning(
- "Kernel address maps (/proc/{kallsyms,modules}) are restricted.\n\n"
--"Check /proc/sys/kernel/kptr_restrict.\n\n"
-+"Check /proc/sys/kernel/kptr_restrict and /proc/sys/kernel/perf_event_paranoid.\n\n"
- "Kernel%s samples will not be resolved.\n",
-                          al.map && map__has_symbols(al.map) ?
-                          " modules" : "");
-diff --git a/tools/perf/builtin-trace.c b/tools/perf/builtin-trace.c
-index bc44ed29e05a..9443b8e05810 100644
---- a/tools/perf/builtin-trace.c
-+++ b/tools/perf/builtin-trace.c
-@@ -1381,7 +1381,7 @@ static char *trace__machine__resolve_kernel_addr(void *vmachine, unsigned long l
-
-        if (symbol_conf.kptr_restrict) {
-                pr_warning("Kernel address maps (/proc/{kallsyms,modules}) are restricted.\n\n"
--                          "Check /proc/sys/kernel/kptr_restrict.\n\n"
-+                          "Check /proc/sys/kernel/kptr_restrict and /proc/sys/kernel/perf_event_paranoid.\n\n"
-                           "Kernel samples will not be resolved.\n");
-                machine->kptr_restrict_warned = true;
-                return NULL;
-
-
-- Igor
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
