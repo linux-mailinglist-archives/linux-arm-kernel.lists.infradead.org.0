@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97C6E8F214
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 19:23:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B77A8F262
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 19:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jcI8RFJ8BvlpJtGKGVDLZxjhFsKem/uNQHPwjRvSf64=; b=OihUd+2p8kWFcM
-	uzkHRVSW1HthpMALDKLopl1trLJzup5ltb22GIjsb+Vp/frjh/Cnv293DBr2lNDQH2IjpQrIX9Jon
-	rw4OmYmefjtjJwFR7BBvjFrpqXk0xbCLgY3o2wiMkQfLIYzYBEzB+lulxSLFtNUnVkZ3cnrvhLyf3
-	yEgeDQlvqaXbgQiK43RpA7DmKfguJert3l4S9PVQVKlLS004PY1LNcCNrP9reN3MErSeI5igtkeQ8
-	JOS1joEn8UyXykih1sK1l9353ystDPlP9Nox7fyTrRhT44xn+eb2S7ZTyRooqIJ7slggr6RRiTGL2
-	5ECM/E6Yi7W3Px2Ybvkw==;
+	List-Owner; bh=y3f2fqv2F8Dea2LECB+ZHSavR0yGbiccpNYeGUvD38o=; b=EcbuTEDpbCUeaN
+	BUXaQF4DfmOf7uvrytih6NiMn95zSTdHUCzK/fp/EfTjDoYMUBrgl2vXysfwZEcBC9r4nCbK4DsR+
+	YDB7zF7nW3HIBS6erU0H/X0kkPFE2NFloNZWXFF0/1LfdQPN1/pUrkEs0R6vajB8lAL9pkC4qDwVD
+	FxHmq4CUj4unzG1KGu1HsOfO7mzufH8OY5zgADeoxPwPUYTNJvjVnSfGIp7NiFHHLNiOpfF46qbgJ
+	2AY2qVsl03f/IkG8Q+1dWJcBHE0MmginXwY1vghsHyeWnoMZ9jjq4oiOBlKsyxpcROPH7vSY1JJlE
+	sLkSHYpN6FtFhgbcQIpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyJSv-0002SG-Av; Thu, 15 Aug 2019 17:23:09 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hyJhc-000749-Ac; Thu, 15 Aug 2019 17:38:20 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyJSa-0002Qm-QE
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 17:22:56 +0000
-Received: by mail-io1-xd44.google.com with SMTP id t3so655240ioj.12
+ id 1hyJhH-00073R-SF
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 17:38:03 +0000
+Received: by mail-io1-xd41.google.com with SMTP id t3so750023ioj.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 10:22:48 -0700 (PDT)
+ Thu, 15 Aug 2019 10:37:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=YPHDIOljV5hQaERK4FC6PgOmZFfQHVVab+DpiSEe62s=;
- b=lX/+/pbPgVYuikGECsCt+M8bkwOrFQVZRfUmqOQPaMX1z9CL2Yc1cjJHNpNYU4Sbrn
- bz3T9KHyos41p1xP12MdWHQX26nF9Y3GlGKfhpewxe2Rc3ijwD8hHHyukD99wq6Q2x6v
- PgL5MVdMZXWnZDtH/3OHfqd9z9BqsKmkGgd2jnQsyqV4EciddEOt4ubAYIPB/hUmpsTg
- KO3sU3cRyCNUpTzwGC0S7Hi46ohz4Vv3cJJoKy0STcxJwuDqx7wiQVo7bxAxKtLhDDnW
- 3APvUEGu/YYpyL2u8P1u9hln1OTcnmmvcAsICdmLl598yRShpj6b5MVHjQoVglmpk2rD
- 2b3w==
+ :cc; bh=W/qaXV9S7EqSXjJ9HVVNAqMBd3/53HT0f+nyTBIWkjQ=;
+ b=wUeoX1uPuGsbMGnSpUBVS62MFU9GgL7ic0/36SPnwOTAguBfWA5Gak5iU8UcYL+6Dq
+ eGzLlIckv3K1bz2qreTGE3JfD/5nCYhPO/tTJhCS/6LuqmPYxQj6ZwKSdD2VrjUKqbA9
+ cF2gjQykZblgqUg090nE4cyIWH4OSJX1WMpYqrhjWe1o4KMHHqH1EHezZg37KrkJo5BF
+ cL27sbU6YsXo3SELPEd7nMTo41502vReAZTx1EIqEBrmtKQi0wmLGx2pZ35M1iUIds9p
+ 9/NT5Q+9z7VMWJiJdQBCojS5ovGK4mfJLU7cI8ikaLIhf8fn56Ap8BsjZj11gMu94O9S
+ 2pAA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=YPHDIOljV5hQaERK4FC6PgOmZFfQHVVab+DpiSEe62s=;
- b=HwXcVivMXCgwGz3tzvXmmX8agK4HQdYvVT7M9q71f7uctzxEl1+kxgzSJJj/KNAmMO
- CWWz+Kfqd4QgTaN11iom34+OzkE0Qr6tk/o6zxjfv0C5SRe64ocILg1Bqfd7BEfBxaSQ
- 7PcCcMVGem/+j620nRFldwecLggKp4vwrGJtMbZLUYCIcKVulPvovsnRjt0nHdht+42L
- XRvIAOzs67Nu+/QeosCqdoZ/J+ABowXepsCQNcetilRukSdoQw7boCb277xoH++EIMDk
- +ei48FP8Tf9Ox/6ZdeowOt+wrLlBlEGLvl5aQwugFcllAxKYyQ52OKW4Qi1i1TiZN3Wf
- aCoQ==
-X-Gm-Message-State: APjAAAXNAvkINSvHbbUTCWU5Sf9RS/YvTTnXWPQrao+dph+5FG8DdmWv
- LzLZU4h/ZbVLnjwPo5efCvJ2OLpg93mC510POt4bQQ==
-X-Google-Smtp-Source: APXvYqyM8y6XV3ud8k+ti2yuhyZmBt2wQ3LZoMTRTv3ex/apV+hFyTyTpYDw/Dstjey1CnvaQ1AzxIqk9gDnK49wd9Y=
-X-Received: by 2002:a5e:c601:: with SMTP id f1mr6364484iok.57.1565889767438;
- Thu, 15 Aug 2019 10:22:47 -0700 (PDT)
+ bh=W/qaXV9S7EqSXjJ9HVVNAqMBd3/53HT0f+nyTBIWkjQ=;
+ b=QqZefdQrtDS3KrNlWcwvDoCfiEOLgEmBbbJjTsMKINLEt/iItek/hJ2sSbQQ+UDc23
+ 2rymitiIL90yo+vY70RV4F1Sut5c+YvWzGTnliztvMQHH6Co+xIcoNrpgMfBWTDwA5iv
+ LerbAYSgcKjSi3ZHhMK9jbyVuxMN9d/+gp1B9pPNSSk7kdOpYNuOIcjNNyg0cwTAiXld
+ cEC7NdlNIlYBJiL660g4hm10+KrP3VgOscTTL3OopySoG285QStwDSXh36T+3+BBcMw6
+ 1cceO2DnA6gn9x3693eLyqTdEXdBklN2AE7TiwPOG3LHz5WttvqirPssyEaYDao+upF6
+ t6uQ==
+X-Gm-Message-State: APjAAAXseDYGkYK0KARUclc6yBWkIj1118avTQQBtAZI7YFAaDbus6/t
+ 5QPNGILqWNjKCC+cfdG8wx3u62LDjg/mGufYKtsgI86tEEw=
+X-Google-Smtp-Source: APXvYqzXDH761xotArU4aND1o5POeE8CAePCGs7xEh0u4TRFQawyaT1FFjR38e/5ItDgOAYVLnQdcE3hNtMTm5//Ma8=
+X-Received: by 2002:a6b:7d49:: with SMTP id d9mr6742403ioq.50.1565890677021;
+ Thu, 15 Aug 2019 10:37:57 -0700 (PDT)
 MIME-Version: 1.0
-References: <CANLsYkz3_bzRCQEVb00Tbf3Rdww13mePN-woncctOu7OanF00A@mail.gmail.com>
- <20190814235058.184204-1-yabinc@google.com>
-In-Reply-To: <20190814235058.184204-1-yabinc@google.com>
+References: <20190812190320.209988-1-yabinc@google.com>
+In-Reply-To: <20190812190320.209988-1-yabinc@google.com>
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Thu, 15 Aug 2019 11:22:36 -0600
-Message-ID: <CANLsYkwG-nCzomcr2n8T5NaFp-y_Efft+4mbH0Fb1yNE=Lgepg@mail.gmail.com>
+Date: Thu, 15 Aug 2019 11:37:46 -0600
+Message-ID: <CANLsYkxRVvWUxEAmRQ7nCuS-NaOogN4sYOipxBW5zsozyu+y2g@mail.gmail.com>
 Subject: Re: [PATCH v2] coresight: tmc-etr: Fix perf_data check.
 To: Yabin Cui <yabinc@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_102248_874493_F0FA010C 
-X-CRM114-Status: GOOD (  18.53  )
+X-CRM114-CacheID: sfid-20190815_103759_919393_54CA9807 
+X-CRM114-Status: GOOD (  18.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,55 +99,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 14 Aug 2019 at 17:51, Yabin Cui <yabinc@google.com> wrote:
+On Mon, 12 Aug 2019 at 13:03, Yabin Cui <yabinc@google.com> wrote:
 >
-> > Did you actually see the check fail or is this a theoretical thing?
-> > I'm really perplex here has I have tested this scenario many times
-> > without issues.
-> >
-> I have seen this warning in dmesg output, that's how I find the problem.
+> When tracing etm data of multiple threads on multiple cpus through
+> perf interface, each cpu has a unique etr_perf_buffer while sharing
+> the same etr device. There is no guarantee that the last cpu starts
+> etm tracing also stops last. This makes perf_data check fail.
 >
-> > In CPU wide scenarios each perf event (one per CPU) is associated with
-> > an event_data during the setup process.  The event_data is the
-> > etr_perf holding a reference to the perf ring buffer for that specific
-> > event along with the etr_buf, regardless of who created the latter.
+> Fix it by checking etr_buf instead of etr_perf_buffer.
 >
-> Agree.
+> Fixes: 3147da92a8a8 ("coresight: tmc-etr: Allocate and free ETR memory buffers for CPU-wide scenarios")
+> Signed-off-by: Yabin Cui <yabinc@google.com>
+> ---
 >
-> > From there, when the event is installed on a CPU, the csdev for that
-> > CPU is given a reference to the event_data of that event[1].  Before
-> > going further notice how there is a per CPU csdev and event handle to
-> > keep track of event specifics[2]. As such both (per CPU) csdev and
-> > event handle carry the exact same reference to the etr_perf.
-> >
-> On my test device (Pixel 3), there is an ETM device on each cpu, but only
-> one ETR device for the whole device. So there is only one instance of etr
-> csdev in the kernel. If multiple cpus are scheduling on etm perf events at
-> the same time, all of them are trying to set their event_data to the same
-> etr csdev. And different perf events have different event_data. A warning
-> situation is as below:
+> v1 -> v2: rename perf_data to perf_buf. Add fixes tag.
 >
->    cpu 0
->    schedule on event A (set etr csdev->perf_data to event_a.etr_perf)
+> ---
+>  drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 +++---
+>  drivers/hwtracing/coresight/coresight-tmc.h     | 6 +++---
+>  2 files changed, 6 insertions(+), 6 deletions(-)
 >
->    cpu 1
->    schedule on event B (set etr csdev->perf_data to event_b.etr_perf)
+> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+> index 17006705287a..90d1548ad268 100644
+> --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
+> +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+> @@ -1484,7 +1484,7 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
+>                 goto out;
+>         }
 >
+> -       if (WARN_ON(drvdata->perf_data != etr_perf)) {
+> +       if (WARN_ON(drvdata->perf_buf != etr_buf)) {
+>                 lost = true;
+>                 spin_unlock_irqrestore(&drvdata->spinlock, flags);
+>                 goto out;
+> @@ -1497,7 +1497,7 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
+>
+>         CS_LOCK(drvdata->base);
+>         /* Reset perf specific data */
+> -       drvdata->perf_data = NULL;
+> +       drvdata->perf_buf = NULL;
+>         spin_unlock_irqrestore(&drvdata->spinlock, flags);
+>
+>         size = etr_buf->len;
+> @@ -1556,7 +1556,7 @@ static int tmc_enable_etr_sink_perf(struct coresight_device *csdev, void *data)
+>         }
+>
+>         etr_perf->head = PERF_IDX2OFF(handle->head, etr_perf);
+> -       drvdata->perf_data = etr_perf;
+> +       drvdata->perf_buf = etr_perf->etr_buf;
 
-You are 100% right and looking at it again this morning it just jumped
-at me.  I simply can't understand how it did not manifest itself
-during all the hammering I did on it.
-
-Please see details in my other (and upcoming) email.
+Ok for the fix.  Looking a things again I don't see a need to do the
+assignment for each event - this needs to be done only when the device
+is assocated with a monitored process.  Please move it here [1].
 
 Thanks,
 Mathieu
 
->    cpu 1
->    schedule off event B (update buffer, does nothing since csdev->refcnt != 1)
+[1]. https://elixir.bootlin.com/linux/v5.3-rc4/source/drivers/hwtracing/coresight/coresight-tmc-etr.c#L1572
 >
->    cpu 0
->    schedule off event A (update buffer, but etr csdev->perf_data check fail)
+>         /*
+>          * No HW configuration is needed if the sink is already in
+> diff --git a/drivers/hwtracing/coresight/coresight-tmc.h b/drivers/hwtracing/coresight/coresight-tmc.h
+> index 1ed50411cc3c..f9a0c95e9ba2 100644
+> --- a/drivers/hwtracing/coresight/coresight-tmc.h
+> +++ b/drivers/hwtracing/coresight/coresight-tmc.h
+> @@ -178,8 +178,8 @@ struct etr_buf {
+>   *             device configuration register (DEVID)
+>   * @idr:       Holds etr_bufs allocated for this ETR.
+>   * @idr_mutex: Access serialisation for idr.
+> - * @perf_data: PERF buffer for ETR.
+> - * @sysfs_data:        SYSFS buffer for ETR.
+> + * @sysfs_buf: SYSFS buffer for ETR.
+> + * @perf_buf:  PERF buffer for ETR.
+>   */
+>  struct tmc_drvdata {
+>         void __iomem            *base;
+> @@ -202,7 +202,7 @@ struct tmc_drvdata {
+>         struct idr              idr;
+>         struct mutex            idr_mutex;
+>         struct etr_buf          *sysfs_buf;
+> -       void                    *perf_data;
+> +       struct etr_buf          *perf_buf;
+>  };
+>
+>  struct etr_buf_operations {
+> --
+> 2.23.0.rc1.153.gdeed80330f-goog
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
