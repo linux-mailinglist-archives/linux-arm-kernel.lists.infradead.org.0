@@ -2,54 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 430E08F2EF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 20:12:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0CEE8F2FC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 20:14:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q+7ay4W0mi+ANM1RV/4EBYk7Ik2jiEtlrhjtd4ruVxk=; b=ubQlGSjjAvGb/V
-	ChQd36uN6IKmHvZdt11xTm94fAGvk3Y1gn7DKaLZFwtaQOhFA7tjYoxpzoC9zLI7plJc3yaT2GYnw
-	vd8h+t1vE4xa3G/jBV6trLxQsjaP7c68Mk8UABP0kcrmuJivvo/Jpp0NSmrCiTZQoYb+hiLUke7vj
-	rGN5IPVNcNAWonYHJwQXrb4USXdL/xmC3/ETOIzc+1Vwg51UERG78nX437W2xAIpf4hCj3GEEKYq+
-	gwwU6p1eivRcJ1QwqBHxKjZZkWyv8Uh8F0aq4Kh0bVxxNYNr9iVOty1v0UWeG8BTD3mYvkVdynqjp
-	AZGivY6rQ4b2Q8+8WNLg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/f12VlziNDRHFxrvhTUV+qCu6ia0zvIleXsg1KvMZ4s=; b=a5POxP2Khv/fV/
+	egxkqhr/hrRsT9mTKwP7iAbUlm67hmvZkdaqaO+/7ZRD+7UMQUnzp59DQLiKg+AcV2mfLCqIoxdip
+	NFv5qEsBj4vZVRfgOCT+VaMdEmz4yFzTrqErjblLY+SCemR/nWJgHBlWTiK0/lsnYhtlgJVqmy4m9
+	Gy+mNapmwDwuhpL6+8TqYiYQo0TyJh7YDqbriE/WqdgOEWuwt1yhotIxpqLcsY86oDjq+bsoHYQ5w
+	JOMqCMezPYrBvKvOFLuwuArK6Z5XfAwAsdHPCznC/9hCkN+tFhNj2Q3g93Jqinf4Zqtp7BueQIvGI
+	nxwUo38tmZiFfy7frkjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyKEU-0002Nh-7K; Thu, 15 Aug 2019 18:12:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hyKDX-0001z9-9V; Thu, 15 Aug 2019 18:11:20 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DCD94360;
- Thu, 15 Aug 2019 11:11:18 -0700 (PDT)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DD89B3F694;
- Thu, 15 Aug 2019 11:11:16 -0700 (PDT)
-Subject: Re: [PATCH v1 2/8] arm64, mm: transitional tables
-To: Pavel Tatashin <pasha.tatashin@soleen.com>
-References: <20190801152439.11363-1-pasha.tatashin@soleen.com>
- <20190801152439.11363-3-pasha.tatashin@soleen.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <e00455af-a9f6-82e1-4c0d-78fae01ae00a@arm.com>
-Date: Thu, 15 Aug 2019 19:11:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1hyKGe-0002gK-PC; Thu, 15 Aug 2019 18:14:32 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hyKGR-0002fe-Aq; Thu, 15 Aug 2019 18:14:20 +0000
+Received: from pendragon.ideasonboard.com
+ (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
+ [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 71DDB2AF;
+ Thu, 15 Aug 2019 20:14:17 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1565892857;
+ bh=PywuWClfJh3Sq1lkgyHqHLet8t64SevKcOFacHlNbNo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=XSaAqhgyTXoRy4Ne5hd+JH48p6twbV+RWWuhcrrGbHEAPxB+p+arrDgJtFnpRyOVj
+ gQclbHy+09zseRLnoNSglCm9r3Yr6Fme88FQ5wyPhMC/97JikIbdngJR7t1rVgFhTG
+ 65N0VxzrsTWu9FqSH/6LxlqNaDE/M/edOovgxdqs=
+Date: Thu, 15 Aug 2019 21:14:13 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Helen Koike <helen.koike@collabora.com>
+Subject: Re: [PATCH v8 11/14] dt-bindings: Document the Rockchip MIPI RX
+ D-PHY bindings
+Message-ID: <20190815181413.GZ5011@pendragon.ideasonboard.com>
+References: <20190730184256.30338-1-helen.koike@collabora.com>
+ <20190730184256.30338-12-helen.koike@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20190801152439.11363-3-pasha.tatashin@soleen.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20190730184256.30338-12-helen.koike@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_111119_461434_2ECF231E 
-X-CRM114-Status: GOOD (  16.60  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190815_111419_677699_8FDB47C4 
+X-CRM114-Status: GOOD (  18.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,98 +74,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sashal@kernel.org, vladimir.murzin@arm.com, corbet@lwn.net,
- marc.zyngier@arm.com, catalin.marinas@arm.com, bhsharma@redhat.com,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org, jmorris@namei.org,
- linux-mm@kvack.org, ebiederm@xmission.com, matthias.bgg@gmail.com,
- will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
+ heiko@sntech.de, Rob Herring <robh@kernel.org>, jacob2.chen@rock-chips.com,
+ jeffy.chen@rock-chips.com, zyc@rock-chips.com, linux-kernel@vger.kernel.org,
+ tfiga@chromium.org, linux-rockchip@lists.infradead.org, hans.verkuil@cisco.com,
+ sakari.ailus@linux.intel.com, zhengsq@rock-chips.com, mchehab@kernel.org,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pavel,
+Hi Helen,
 
-On 01/08/2019 16:24, Pavel Tatashin wrote:
-> There are cases where normal kernel pages tables, i.e. idmap_pg_dir
-> and swapper_pg_dir are not sufficient because they may be overwritten.
+Thank you for the patch.
+
+On Tue, Jul 30, 2019 at 03:42:53PM -0300, Helen Koike wrote:
+> From: Jacob Chen <jacob2.chen@rock-chips.com>
 > 
-> This happens when we transition from one world to another: for example
-> during kexec kernel relocation transition, and also during hibernate
-> kernel restore transition.
+> Add DT bindings documentation for Rockchip MIPI D-PHY RX
 > 
-> In these cases, if MMU is needed, the page table memory must be allocated
-> from a safe place. Transitional tables is intended to allow just that.
+> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> [update for upstream]
+> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> 
+> ---
+> 
+> Changes in v8: None
+> Changes in v7:
+> - updated doc with new design and tested example
+> 
+>  .../bindings/media/rockchip-mipi-dphy.txt     | 38 +++++++++++++++++++
 
-> diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
-> index db92950bb1a0..dcb4f13c7888 100644
-> --- a/arch/arm64/include/asm/pgtable-hwdef.h
-> +++ b/arch/arm64/include/asm/pgtable-hwdef.h
-> @@ -110,6 +110,7 @@
->  #define PUD_TABLE_BIT		(_AT(pudval_t, 1) << 1)
->  #define PUD_TYPE_MASK		(_AT(pudval_t, 3) << 0)
->  #define PUD_TYPE_SECT		(_AT(pudval_t, 1) << 0)
-> +#define PUD_SECT_RDONLY		(_AT(pudval_t, 1) << 7)		/* AP[2] */
+Shouldn't this go to bindings/phy/ ?
 
-This shouldn't be needed. As far as I'm aware, we only get read-only pages in the linear
-map from debug-pagealloc, and the module aliases. Both of which require the linear map to
-be made of page-size mappings.
-
-Where are you seeing these?
-
-
-> diff --git a/arch/arm64/include/asm/trans_table.h b/arch/arm64/include/asm/trans_table.h
+>  1 file changed, 38 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt b/Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
 > new file mode 100644
-> index 000000000000..c7aef70587a1
+> index 000000000000..2305d44d92db
 > --- /dev/null
-> +++ b/arch/arm64/include/asm/trans_table.h
-> @@ -0,0 +1,68 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
+> +++ b/Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
+> @@ -0,0 +1,38 @@
+> +Rockchip SoC MIPI RX D-PHY
+> +-------------------------------------------------------------
+
+How about already converting the bindings to yaml ? There's one example
+in bindings/phy/ that looks quite similar to what you need here. Make
+sure to have a look at Documentation/devicetree/writing-schema.md, and
+in particular to run make dt_binding_check.
+
 > +
-> +/*
-> + * Copyright (c) 2019, Microsoft Corporation.
-> + * Pavel Tatashin <patatash@linux.microsoft.com>
-> + */
+> +Required properties:
+> +- compatible: value should be one of the following
+> +	"rockchip,rk3288-mipi-dphy"
+> +	"rockchip,rk3399-mipi-dphy"
+> +- clocks : list of clock specifiers, corresponding to entries in
+> +	clock-names property;
+> +- clock-names: required clock name.
+> +- #phy-cells: Number of cells in a PHY specifier; Should be 0.
 > +
-> +#ifndef _ASM_TRANS_TABLE_H
-> +#define _ASM_TRANS_TABLE_H
+> +MIPI RX D-PHY use registers in "general register files", it
+> +should be a child of the GRF.
 > +
-> +#include <linux/bits.h>
-> +#include <asm/pgtable-types.h>
+> +Optional properties:
+> +- reg: offset and length of the register set for the device.
+> +- rockchip,grf: MIPI TX1RX1 D-PHY not only has its own register but also
+> +		the GRF, so it is only necessary for MIPI TX1RX1 D-PHY.
 > +
-> +/*
-> + * trans_alloc_page
-> + *	- Allocator that should return exactly one uninitilaized page, if this
-> + *	 allocator fails, trans_table returns -ENOMEM error.
-> + *
-> + * trans_alloc_arg
-> + *	- Passed to trans_alloc_page as an argument
-> + *
-> + * trans_flags
-> + *	- bitmap with flags that control how page table is filled.
-> + *	  TRANS_MKWRITE: during page table copy make PTE, PME, and PUD page
-> + *			 writeable by removing RDONLY flag from PTE.
-> + *	  TRANS_MKVALID: during page table copy, if PTE present, but not valid,
-> + *			 make it valid.
-> + *	  TRANS_CHECKPFN: During page table copy, for every PTE entry check that
-> + *			  PFN that this PTE points to is valid. Otherwise return
-> + *			  -ENXIO
+> +Device node example
+> +-------------------
+> +
+> +grf: syscon@ff770000 {
+> +	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+> +
+> +...
+> +
+> +	dphy: mipi-dphy {
+> +		compatible = "rockchip,rk3399-mipi-dphy";
+> +		clocks = <&cru SCLK_MIPIDPHY_REF>,
+> +			<&cru SCLK_DPHY_RX0_CFG>,
+> +			<&cru PCLK_VIO_GRF>;
+> +		clock-names = "dphy-ref", "dphy-cfg", "grf";
+> +		power-domains = <&power RK3399_PD_VIO>;
+> +		#phy-cells = <0>;
+> +	};
+> +};
 
-Adding top-level global knobs to manipulate the copied linear map is going to lead to
-bugs. The existing code will only change the PTE in specific circumstances, that it tests
-for, that only happen at the PTE level.
+-- 
+Regards,
 
-
-> + *	  TRANS_FORCEMAP: During page map, if translation exists, force
-> + *			  overwrite it. Otherwise -ENXIO may be returned by
-> + *			  trans_table_map_* functions if conflict is detected.
-
-This one, sounds like a very bad idea.
-
-
-Thanks,
-
-James
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
