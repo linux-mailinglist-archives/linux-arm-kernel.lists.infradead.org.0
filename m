@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A0948F0AF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 18:36:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 641828F117
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 18:43:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ecDyuOnzjb9X8XdwgBBpS9EDEg2/mk8FXck0hy4JtRg=; b=dYQ0wsbpOJMlP+
-	YSlLOt6K4KjobBwvhl8u43erA3lc2VTBi0TQDQijBLwQgHJJzoCVeeRgWWa8io2sPRTvD/4QGCEo2
-	sqVP7PwjYtbmUiYgN7tkVBLQa3v8J7KyyP7Syqh95vFDbDlmIXR/Z+cvPf2UMxdJjQ8CUml5LZedB
-	rDEbzsPGXYMtPmPzG6ZaRAGqOSNc0w9nTW6CzXsBXniNwlFY7c/XZe+k9EJBXZmvSvuvDFHX+VhYD
-	J1MbmoShu7AIA8X5IPPHhBtd7amAA7R6BDtGkM9NHTff+lsqUpXglyHT0o55//xXWexLj6Kez+b8M
-	otjCcXMjOUihc9Fo2Xxg==;
+	List-Owner; bh=gOT7Bg2TD2+dEzeBFxamsosA1WfG1K/Gm3Y3ivpCoJs=; b=rv7TkNo8tTR/2k
+	pD0pZco3C+1zg0vETN9kIVGzvois2g5l7UmfcNnA5S0EZMweJsL5Yp2yP5+kG0B5D2TiD5F8IuHc2
+	+T53KwzyzyKF2WwutkhRg2EccXY9jPr+q+bPVRw9D1fUfEh35DawGq209PdlaAd0/5XwmpwEDGN50
+	mg3iKJqxhGhrecaAluVCQXm2As+iGeQtcckNQaHKSaQtus0B5hjfEePY3+Cp42v9ZnyAYa30Km5lS
+	ZWo3e6e7osVb4YcXhFxbqtYY6q/CnuZZBPzgWm74JbAMlma+PlE6zCBeJ90WNbbOBBOStMw7/79JQ
+	RxQ/3pakCPV8oBeoyG1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyIjO-0005Ey-La; Thu, 15 Aug 2019 16:36:06 +0000
+	id 1hyIqA-000879-NN; Thu, 15 Aug 2019 16:43:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyIj8-0005Cr-1y
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 16:35:56 +0000
+ id 1hyIpt-00086l-6r
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 16:42:54 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5C1F520578;
- Thu, 15 Aug 2019 16:35:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 334C320578;
+ Thu, 15 Aug 2019 16:42:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565886948;
- bh=2/C9dweay0QJVT9H48n+05J/5vsY45PrfGi+6ZHPCxY=;
+ s=default; t=1565887368;
+ bh=lJCSEpemCXYmezfTiJSeFRryIbklhWwdBEzpEIXqQ9U=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=u9iRb8JtfZjMZxhOFLWTJefqtwDQF9RmG+kOiNtzVfGQVAEHfwKOy+jxXqzFC779j
- y48MwvxQjsAosXozs1nMg+lJq/Z3o03AT5wwoukRHaKY5KjNRpJ3/ypeR3G9U1Gjd5
- wVeia17fQN//CfpoDjaE46YLVQvv788aZp7mk0bA=
-Date: Thu, 15 Aug 2019 17:35:42 +0100
+ b=pXKhtqlDdFd9y3dUpB51RCna5UYbMCphyrQWqmx5SJvGikNN8Yz+H39Gxu2KvZzMM
+ Z7fNx7P1pkN6H7sLjdHle0h8YAAFBK47qaeQR3ShrxBIgyHW3bDW0yHo9c8r4DG8oK
+ Ib2LJ+7EPa/dH6kq9YrJMzqle1ugkEEJ4EudXJQU=
+Date: Thu, 15 Aug 2019 17:42:44 +0100
 From: Will Deacon <will@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v2 2/2] arm64: Don't use KPTI where we have E0PD
-Message-ID: <20190815163541.yngqvjmehpuf74ye@willie-the-truck>
-References: <20190814183103.33707-1-broonie@kernel.org>
- <20190814183103.33707-3-broonie@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCHv3 6/6] smccc: make 1.1 macros value-returning
+Message-ID: <20190815164243.2hzydvjly6iwr3jf@willie-the-truck>
+References: <20190809132245.43505-1-mark.rutland@arm.com>
+ <20190809132245.43505-7-mark.rutland@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190814183103.33707-3-broonie@kernel.org>
+In-Reply-To: <20190809132245.43505-7-mark.rutland@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_093550_124970_7AC4C7DD 
-X-CRM114-Status: GOOD (  19.77  )
+X-CRM114-CacheID: sfid-20190815_094249_267694_7681984F 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -77,76 +78,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: lorenzo.pieralisi@arm.com, suzuki.poulose@arm.com, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux@armlinux.org.uk,
+ james.morse@arm.com, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
+On Fri, Aug 09, 2019 at 02:22:45PM +0100, Mark Rutland wrote:
+> The arm_smccc_1_1_{smc,hvc}() macros for inline invocation take a res
+> pointer as their final argument, matching the out-of-line SMCCC
+> invocation functions.
+> 
+> However, the inline invocation macros are variadic, so it's easy to mess
+> up passsing the correct parameters.
 
-Thanks for respinning. Comments below...
+passing
 
-On Wed, Aug 14, 2019 at 07:31:03PM +0100, Mark Brown wrote:
-> diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
-> index fd6161336653..85552f6fceda 100644
-> --- a/arch/arm64/include/asm/mmu.h
-> +++ b/arch/arm64/include/asm/mmu.h
-> @@ -38,6 +38,7 @@ static inline bool arm64_kernel_unmapped_at_el0(void)
->  static inline bool arm64_kernel_use_ng_mappings(void)
->  {
->  	bool tx1_bug;
-> +	u64 ftr;
->  
->  	/* What's a kpti? Use global mappings if we don't know. */
->  	if (!IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0))
-> @@ -59,7 +60,7 @@ static inline bool arm64_kernel_use_ng_mappings(void)
->  	 * KASLR is enabled so we're going to be enabling kpti on non-broken
->  	 * CPUs regardless of their susceptibility to Meltdown. Rather
->  	 * than force everybody to go through the G -> nG dance later on,
-> -	 * just put down non-global mappings from the beginning.
-> +	 * just put down non-global mappings from the beginning...
->  	 */
->  	if (!IS_ENABLED(CONFIG_CAVIUM_ERRATUM_27456)) {
->  		tx1_bug = false;
-> @@ -74,6 +75,16 @@ static inline bool arm64_kernel_use_ng_mappings(void)
->  		tx1_bug = __cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_27456);
->  	}
->  
-> +	/*
-> +	 * ...unless we have E0PD in which case we may use that in
-> +	 * preference to unmapping the kernel.
-> +	 */
-> +	if (IS_ENABLED(CONFIG_ARM64_E0PD)) {
-> +		ftr = read_sysreg_s(SYS_ID_AA64MMFR2_EL1);
-> +		if ((ftr >> ID_AA64MMFR2_E0PD_SHIFT) & 0xf)
-> +			return false;
-> +	}
-> +
->  	return !tx1_bug && kaslr_offset() > 0;
+> Instead, let's make them value-returning, which is less confusing.
 
-I'm still unsure as to how this works with the kaslr check in
-kpti_install_ng_mappings(). Imagine you have a big.LITTLE system using
-kaslr where the boot CPU has E0PD but the secondary CPU doesn't, and
-requires kpti.
+I'm not completely sure I agree with you here because, as far as I can
+tell, it means that we have a different calling convention for 1.0 (i.e.
+arm_smccc_smc()) and 1.1 (i.e. arm_smccc_1_1_smc).
 
-In this case, I think we'll:
-
-	1. Start off with global mappings installed by the boot CPU
-	2. Detect KPTI as being required on the secondary CPU
-	3. Avoid rewriting the page tables because kaslr_offset > 0
-
-At this point, we've got exposed global mappings on the secondary CPU.
-
-Thinking about this further, I think we can simply move all of the
-'kaslr_offset() > 0' checks used by the kpti code (i.e. in
-arm64_kernel_unmapped_at_el0(), kpti_install_ng_mappings() and
-unmap_kernel_at_el0()) into a helper function which does the check for
-E0PD as well. Perhaps 'kaslr_requires_kpti()' ?
-
-I think that should simplify your patch as well. What do you think?
+Can we do the same for 1.0 as well or am I missing something?
 
 Will
 
