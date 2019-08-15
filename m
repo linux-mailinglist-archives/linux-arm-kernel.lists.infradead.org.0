@@ -2,88 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 368EA8EA5C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 13:33:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 985FF8EA82
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 13:42:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/so+7tgloKdum7TIpEc7Gnh5MT+EyLE6OKKBLoWQtUs=; b=DlKP70wlTNwWdU
-	82/sZw99ZD10783MeuGfUB3dLfj/MyKn/xlB9XG/7a4qU2JDoB0d9wVqmmakk56+VTVGb8UG3jCVh
-	wcldaSR4qL/61wk/3htTljsPgpVKp/1Ly2vCNtNJMQnAUKmFoiPerO5fLPz3R/1PCLU1Nly558ZA9
-	FPYHgOr3MPP2B/AcKwj3yx6VkHCY5JmR1dPOVcCK7Glxh1udxeCQe3uNMmWk+8+/rZ5PnHdXe1Lw+
-	ZF+5aio5QT7XCAqPfX4jCd4gutVPnspwjcBBpkbQhFYq1/hC1skfOdQM82OhkGDVloUbmeD4Rb8bE
-	dhEZO41cw5kvNcfaqtIA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bzIPRd6p7kqEHRC30FJFdf0c+qXSBHQneymPIfwq60E=; b=IYzs7PSQ5uHQr1tGFglOnCjHW
+	GRsmPY7DasrsYdvrGXk9r2Jgl7OmZuzLWHlX3sepue/ZLXsi8sY7AyuqDC1leYykPTtLtOeejXtF6
+	B8WbMSyMMuULQx6TuNvPkCSN/7D6BMZpVpViNAsaf++pWplq4Z1w8Bmmy+QCtEolSdtWJVN65Fttn
+	qBpaLcsML5xoXaIlVSlmYZNMnitLVMZQCWRqnnydltzHqDKOd/kFlod02TdbU8dk2LvtKfqXf1Qzf
+	bktK4g7SocGG3kTZrBPoMkWslxX2GATUBYs+kE7QbnHx/OeCSk3ZVbEfQ1IG23UDHVnYdGmbvVwo+
+	KjtIrtlng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyE0a-0008TW-9q; Thu, 15 Aug 2019 11:33:32 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyE07-0008Ey-LE
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 11:33:06 +0000
-Received: by mail-wm1-x341.google.com with SMTP id m125so995358wmm.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 04:33:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=L4TfjyGxufGf0FtghnaQnBzQMHXr/pk4Qyrt6eBQkcI=;
- b=MP1794phXQvZTu9a0KyLtHnX7MXRHe5U29KVsNcUfvowuJo4pVtHA9RZ8dOKnLz00b
- L2W2IsPDdCEVli7QHemdMbKaz3Yx5ZfpqTK5ifJ6+G5uCj8ogx3Vwk2O9idvd3csh5iT
- ClH3HLkXaStj+qGT+6ESY7o2oa9PueBzFFWwefjxjVq6o+8jfokdlTTNaWER72CcTQjD
- KQI0lHs15WDnK7PHLRKCdF1bQvQL4WoVTxn3F8Q3kFlAlRu2lzq2v8t1THxAsnTKfXZJ
- pGGgHT+P+PNgW3LZ8Hckfv0koYrathAEtslEqx4+haDE1GeOvbV9CafSCO9BL+DES7eH
- JXLw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=L4TfjyGxufGf0FtghnaQnBzQMHXr/pk4Qyrt6eBQkcI=;
- b=L84gVMx+XmU/eyMn5cAX3TuGe7HYvUfrE+Fdcf/uE0esEG8LqUSBmz945f6Vzes0oU
- 257lT3jqwySQzbBsqAK412f3us2jK2s2aUY4splfRQXemZfFp6bMGw5jdFDd4j7PcjbO
- gg/nqIMMUlV089YXN4Xb5iIJYog2lf8k2LvJUcJT8NlDIIRpDBVFqN44RENK8OAFdgvJ
- 9MWoB/Dx3QQUAlXEakS80hOX7VcsKdPcI987Jx+5aYH/kwy1vdFNtqXDBa7yipx3tUOZ
- W0OBf2Fooox8lrTpsW1GneYKcDWG2efMb97dkNrGDq2/CUDzylCn0MyPfSA/XZcDAUs4
- LBqg==
-X-Gm-Message-State: APjAAAUosFQyI21fwnJQeZNBYD2Tv3rkMTL5LqZrAcsKfkjneAvXSt1C
- IGJ5P/uw5CeHzn3tdJ3cJehfbkvNZuy02bVT+V2w3yfbv/AqDw==
-X-Google-Smtp-Source: APXvYqxjs8Jr9JMDmzuCHHS6WN6uMOWSEFtnu2iqYQX2ClToWSYmowYDaX7RzY/jXDbB7FLyHizp0g7Y2ZoG8N7A51E=
-X-Received: by 2002:a05:600c:2255:: with SMTP id
- a21mr2267705wmm.119.1565868782081; 
- Thu, 15 Aug 2019 04:33:02 -0700 (PDT)
+	id 1hyE8u-0003Q5-1v; Thu, 15 Aug 2019 11:42:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hyE8h-0003Pm-Ez
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 11:41:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2870E28;
+ Thu, 15 Aug 2019 04:41:54 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5643F3F694;
+ Thu, 15 Aug 2019 04:41:52 -0700 (PDT)
+Subject: Re: [PATCH 08/15] iommu/arm-smmu: Abstract context bank accesses
+To: Will Deacon <will@kernel.org>
+References: <cover.1565369764.git.robin.murphy@arm.com>
+ <1051d7568c96142ff90b004a2ec61e3b5dbe770e.1565369764.git.robin.murphy@arm.com>
+ <20190815105611.fk7ouis2cs3uzvew@willie-the-truck>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <721e3f61-89f2-174a-da30-7aacc8c8865f@arm.com>
+Date: Thu, 15 Aug 2019 12:41:49 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190802053744.5519-1-clin@suse.com>
- <CAKv+Gu-yaNYsLQOOcr8srW91-nt-w0e+RBqxXGOagiGGT69n1Q@mail.gmail.com>
- <CAKv+Gu8uwbY-JtjNbgoyY230X_M6xLchVM3OUg_oNWOJrF=iCg@mail.gmail.com>
- <20190815111543.GA4728@linux-8mug>
-In-Reply-To: <20190815111543.GA4728@linux-8mug>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Thu, 15 Aug 2019 14:32:50 +0300
-Message-ID: <CAKv+Gu-5M-4=SbOzbqbLUYnfFw29vhfcrVD=N9j_APYpKjq2wQ@mail.gmail.com>
-Subject: Re: [PATCH] efi/arm: fix allocation failure when reserving the kernel
- base
-To: Chester Lin <clin@suse.com>, Mike Rapoport <rppt@linux.ibm.com>
+In-Reply-To: <20190815105611.fk7ouis2cs3uzvew@willie-the-truck>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_043303_883635_C32A144F 
-X-CRM114-Status: GOOD (  35.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190815_044155_598710_AAADF5F2 
+X-CRM114-Status: GOOD (  20.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,350 +63,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Juergen Gross <JGross@suse.com>,
- "linux-efi@vger.kernel.org" <linux-efi@vger.kernel.org>,
- "guillaume.gardet@arm.com" <guillaume.gardet@arm.com>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Joey Lee <JLee@suse.com>, "geert@linux-m68k.org" <geert@linux-m68k.org>,
- "ren_guo@c-sky.com" <ren_guo@c-sky.com>, Gary Lin <GLin@suse.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "mingo@kernel.org" <mingo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: robdclark@gmail.com, joro@8bytes.org, bjorn.andersson@linaro.org,
+ iommu@lists.linux-foundation.org, vivek.gautam@codeaurora.org,
+ gregory.clement@bootlin.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-(adding Mike)
+On 15/08/2019 11:56, Will Deacon wrote:
+> On Fri, Aug 09, 2019 at 06:07:45PM +0100, Robin Murphy wrote:
+>> Context bank accesses are fiddly enough to deserve a number of extra
+>> helpers to keep the callsites looking sane, even though there are only
+>> one or two of each.
+>>
+>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+>> ---
+>>   drivers/iommu/arm-smmu.c | 137 ++++++++++++++++++++-------------------
+>>   1 file changed, 72 insertions(+), 65 deletions(-)
+>>
+>> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+>> index 72505647b77d..abdcc3f52e2e 100644
+>> --- a/drivers/iommu/arm-smmu.c
+>> +++ b/drivers/iommu/arm-smmu.c
+>> @@ -82,9 +82,6 @@
+>>   		((smmu->options & ARM_SMMU_OPT_SECURE_CFG_ACCESS)	\
+>>   			? 0x400 : 0))
+>>   
+>> -/* Translation context bank */
+>> -#define ARM_SMMU_CB(smmu, n)	((smmu)->base + (((smmu)->cb_base + (n)) << (smmu)->pgshift))
+>> -
+>>   #define MSI_IOVA_BASE			0x8000000
+>>   #define MSI_IOVA_LENGTH			0x100000
+>>   
+>> @@ -265,9 +262,29 @@ static void arm_smmu_writel(struct arm_smmu_device *smmu, int page, int offset,
+>>   	writel_relaxed(val, arm_smmu_page(smmu, page) + offset);
+>>   }
+>>   
+>> +static u64 arm_smmu_readq(struct arm_smmu_device *smmu, int page, int offset)
+>> +{
+>> +	return readq_relaxed(arm_smmu_page(smmu, page) + offset);
+>> +}
+>> +
+>> +static void arm_smmu_writeq(struct arm_smmu_device *smmu, int page, int offset,
+>> +			    u64 val)
+>> +{
+>> +	writeq_relaxed(val, arm_smmu_page(smmu, page) + offset);
+>> +}
+>> +
+>>   #define arm_smmu_read_gr1(s, r)		arm_smmu_readl((s), 1, (r))
+>>   #define arm_smmu_write_gr1(s, r, v)	arm_smmu_writel((s), 1, (r), (v))
+>>   
+>> +#define arm_smmu_read_cb(s, n, r)				\
+>> +	arm_smmu_readl((s), (s)->cb_base + (n), (r))
+>> +#define arm_smmu_write_cb(s, n, r, v)				\
+>> +	arm_smmu_writel((s), (s)->cb_base + (n), (r), (v))
+>> +#define arm_smmu_read_cb_q(s, n, r)				\
+>> +	arm_smmu_readq((s), (s)->cb_base + (n), (r))
+>> +#define arm_smmu_write_cb_q(s, n, r, v)				\
+>> +	arm_smmu_writeq((s), (s)->cb_base + (n), (r), (v))
+> 
+> 'r' for 'offset'? (maybe just rename offset => register in the helpers).
 
-On Thu, 15 Aug 2019 at 14:28, Chester Lin <clin@suse.com> wrote:
->
-> Hi Ard,
->
-> On Thu, Aug 15, 2019 at 10:59:43AM +0300, Ard Biesheuvel wrote:
-> > On Sun, 4 Aug 2019 at 10:57, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
-> > >
-> > > Hello Chester,
-> > >
-> > > On Fri, 2 Aug 2019 at 08:40, Chester Lin <clin@suse.com> wrote:
-> > > >
-> > > > In some cases the arm32 efistub could fail to allocate memory for
-> > > > uncompressed kernel. For example, we got the following error message when
-> > > > verifying EFI stub on Raspberry Pi-2 [kernel-5.2.1 + grub-2.04] :
-> > > >
-> > > >   EFI stub: Booting Linux Kernel...
-> > > >   EFI stub: ERROR: Unable to allocate memory for uncompressed kernel.
-> > > >   EFI stub: ERROR: Failed to relocate kernel
-> > > >
-> > > > After checking the EFI memory map we found that the first page [0 - 0xfff]
-> > > > had been reserved by Raspberry Pi-2's firmware, and the efistub tried to
-> > > > set the dram base at 0, which was actually in a reserved region.
-> > > >
-> > >
-> > > This by itself is a violation of the Linux boot protocol for 32-bit
-> > > ARM when using the decompressor. The decompressor rounds down its own
-> > > base address to a multiple of 128 MB, and assumes the whole area is
-> > > available for the decompressed kernel and related data structures.
-> > > (The first TEXT_OFFSET bytes are no longer used in practice, which is
-> > > why putting a reserved region of 4 KB bytes works at the moment, but
-> > > this is fragile). Note that the decompressor does not look at any DT
-> > > or EFI provided memory maps *at all*.
-> > >
-> > > So unfortunately, this is not something we can fix in the kernel, but
-> > > we should fix it in the bootloader or in GRUB, so it does not put any
-> > > reserved regions in the first 128 MB of memory,
-> > >
-> >
-> > OK, perhaps we can fix this by taking TEXT_OFFSET into account. The
-> > ARM boot protocol docs are unclear about whether this memory should be
-> > used or not, but it is no longer used for its original purpose (page
-> > tables), and the RPi loader already keeps data there.
-> >
-> > Can you check whether the following patch works for you?
-> >
-> > diff --git a/drivers/firmware/efi/libstub/Makefile
-> > b/drivers/firmware/efi/libstub/Makefile
-> > index 0460c7581220..ee0661ddb25b 100644
-> > --- a/drivers/firmware/efi/libstub/Makefile
-> > +++ b/drivers/firmware/efi/libstub/Makefile
-> > @@ -52,6 +52,7 @@ lib-$(CONFIG_EFI_ARMSTUB)     += arm-stub.o fdt.o
-> > string.o random.o \
-> >
-> >  lib-$(CONFIG_ARM)              += arm32-stub.o
-> >  lib-$(CONFIG_ARM64)            += arm64-stub.o
-> > +CFLAGS_arm32-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
-> >  CFLAGS_arm64-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
-> >
-> >  #
-> > diff --git a/drivers/firmware/efi/libstub/arm32-stub.c
-> > b/drivers/firmware/efi/libstub/arm32-stub.c
-> > index e8f7aefb6813..66ff0c8ec269 100644
-> > --- a/drivers/firmware/efi/libstub/arm32-stub.c
-> > +++ b/drivers/firmware/efi/libstub/arm32-stub.c
-> > @@ -204,7 +204,7 @@ efi_status_t
-> > handle_kernel_image(efi_system_table_t *sys_table,
-> >          * loaded. These assumptions are made by the decompressor,
-> >          * before any memory map is available.
-> >          */
-> > -       dram_base = round_up(dram_base, SZ_128M);
-> > +       dram_base = round_up(dram_base, SZ_128M) + TEXT_OFFSET;
-> >
-> >         status = reserve_kernel_base(sys_table, dram_base, reserve_addr,
-> >                                      reserve_size);
-> >
->
-> I tried your patch on rpi2 and got the following panic. Just a reminder that I
-> have replaced some log messages with "......" since it might be too long to
-> post all.
->
+I think this all represents the mangled remains of an underlying notion 
+of 'register offset' ;)
 
-OK. Good to know that this change helps you to get past the EFI stub boot issue.
+>>   struct arm_smmu_option_prop {
+>>   	u32 opt;
+>>   	const char *prop;
+>> @@ -423,15 +440,17 @@ static void __arm_smmu_free_bitmap(unsigned long *map, int idx)
+>>   }
+>>   
+>>   /* Wait for any pending TLB invalidations to complete */
+>> -static void __arm_smmu_tlb_sync(struct arm_smmu_device *smmu,
+>> -				void __iomem *sync, void __iomem *status)
+>> +static void __arm_smmu_tlb_sync(struct arm_smmu_device *smmu, int page,
+>> +				int sync, int status)
+>>   {
+>>   	unsigned int spin_cnt, delay;
+>> +	u32 reg;
+>>   
+>> -	writel_relaxed(QCOM_DUMMY_VAL, sync);
+>> +	arm_smmu_writel(smmu, page, sync, QCOM_DUMMY_VAL);
+>>   	for (delay = 1; delay < TLB_LOOP_TIMEOUT; delay *= 2) {
+>>   		for (spin_cnt = TLB_SPIN_COUNT; spin_cnt > 0; spin_cnt--) {
+>> -			if (!(readl_relaxed(status) & sTLBGSTATUS_GSACTIVE))
+>> +			reg = arm_smmu_readl(smmu, page, status);
+>> +			if (!(reg & sTLBGSTATUS_GSACTIVE))
+>>   				return;
+>>   			cpu_relax();
+>>   		}
+>> @@ -443,12 +462,11 @@ static void __arm_smmu_tlb_sync(struct arm_smmu_device *smmu,
+>>   
+>>   static void arm_smmu_tlb_sync_global(struct arm_smmu_device *smmu)
+>>   {
+>> -	void __iomem *base = ARM_SMMU_GR0(smmu);
+>>   	unsigned long flags;
+>>   
+>>   	spin_lock_irqsave(&smmu->global_sync_lock, flags);
+>> -	__arm_smmu_tlb_sync(smmu, base + ARM_SMMU_GR0_sTLBGSYNC,
+>> -			    base + ARM_SMMU_GR0_sTLBGSTATUS);
+>> +	__arm_smmu_tlb_sync(smmu, 0, ARM_SMMU_GR0_sTLBGSYNC,
+> 
+> Can we have a #define for page zero, please?
 
-> In this case the kernel failed to reserve cma, which should hit the issue of
-> memblock_limit=0x1000 as I had mentioned in my patch description. The first
-> block [0-0xfff] was scanned in adjust_lowmem_bounds(), but it did not align
-> with PMD_SIZE so the cma reservation failed because the memblock.current_limit
-> was extremely low. That's why I expand the first reservation from 1 PAGESIZE to
-> 1 PMD_SIZE in my patch in order to avoid this issue. Please kindly let me know
-> if any suggestion, thank you.
->
+Again, now I recall pondering the exact same thought, so clearly I don't 
+have any grounds to object. I guess it's worth reworking the previous 
+ARM_SMMU_{GR0,GR1,CB()} macros into the page number scheme rather than 
+just killing them off - let me give that a try.
 
-This looks like it is a separate issue. The memblock/cma code should
-not choke on a reserved page of memory at 0x0.
-
-Perhaps Russell or Mike (cc'ed) have an idea how to address this?
-
-
-
-> boot-log:
-> --------
->
-> Loading Linux test ...
-> EFI stub: Booting Linux Kernel...
-> EFI stub: Using DTB from configuration table
-> EFI stub: Exiting boot services and installing virtual address map...
-> Uncompressing Linux... done, booting the kernel.
-> [    0.000000] Booting Linux on physical CPU 0xf00
-> [    0.000000] Linux version 5.2.1-lpae (chester@linux-8mug) (......)
-> [    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=30c5387d
-> [    0.000000] CPU: div instructions available: patching division code
-> [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
-> [    0.000000] OF: fdt: Machine model: Raspberry Pi 2 Model B Rev 1.1
-> [    0.000000] printk: bootconsole [earlycon0] enabled
-> [    0.000000] Memory policy: Data cache writealloc
-> [    0.000000] efi: Getting EFI parameters from FDT:
-> [    0.000000] efi:   System Table: 0x000000003df757c0
-> [    0.000000] efi:   MemMap Address: 0x000000002c1c5040
-> [    0.000000] efi:   MemMap Size: 0x000003c0
-> [    0.000000] efi:   MemMap Desc. Size: 0x00000028
-> [    0.000000] efi:   MemMap Desc. Version: 0x00000001
-> [    0.000000] efi: EFI v2.70 by Das U-Boot
-> [    0.000000] efi:  SMBIOS=0x3cb62000  MEMRESERVE=0x3cb3d040
-> [    0.000000] memblock_reserve: [0x000000003cb3d040-0x000000003cb3d04f] efi_config_parse_tables+0x25c/0x2d8
-> [    0.000000] efi: Processing EFI memory map:
-> [    0.000000] MEMBLOCK configuration:
-> [    0.000000]  memory size = 0x000000003e000000 reserved size = 0x0000000000000010
-> [    0.000000]  memory.cnt  = 0x1
-> [    0.000000]  memory[0x0]     [0x0000000000000000-0x000000003dffffff], 0x000000003e000000 bytes flags: 0x0
-> [    0.000000]  reserved.cnt  = 0x1
-> [    0.000000]  reserved[0x0]   [0x000000003cb3d040-0x000000003cb3d04f], 0x0000000000000010 bytes flags: 0x0
-> [    0.000000] memblock_remove: [0x0000000000000000-0xfffffffffffffffe] reserve_regions+0x68/0x23c
-> [    0.000000] efi:   0x000000000000-0x000000000fff [Reserved           |   |  |  |  |  |  |  |   |WB|  |  |  ]
-> [    0.000000] memblock_add: [0x0000000000000000-0x0000000000000fff] early_init_dt_add_memory_arch+0x164/0x178
-> [    0.000000] efi:   0x000000001000-0x000000307fff [Conventional Memory|   |  |  |  |  |  |  |   |WB|  |  |  ]
-> [    0.000000] memblock_add: [0x0000000000001000-0x0000000000307fff] early_init_dt_add_memory_arch+0x164/0x178
-> [    0.000000] efi:   0x000000308000-0x000002307fff [Boot Data          |   |  |  |  |  |  |  |   |WB|  |  |  ]
-> [    0.000000] memblock_add: [0x0000000000308000-0x0000000002307fff] early_init_dt_add_memory_arch+0x164/0x178
-> [    0.000000] efi:   0x000002308000-0x000002a93fff [Loader Data        |   |  |  |  |  |  |  |   |WB|  |  |  ]
-> [    0.000000] memblock_add: [0x0000000002308000-0x0000000002a93fff] early_init_dt_add_memory_arch+0x164/0x178
-> [    0.000000] efi:   0x000002a94000-0x000007cf5fff [Conventional Memory|   |  |  |  |  |  |  |   |WB|  |  |  ]
-> [    0.000000] memblock_add: [0x0000000002a94000-0x0000000007cf5fff] early_init_dt_add_memory_arch+0x164/0x178
-> ......
-> ......
-> [    0.000000] memblock_add: [0x000000003df76000-0x000000003dffffff] early_init_dt_add_memory_arch+0x164/0x178
-> [    0.000000] efi:   0x00003f100000-0x00003f100fff [Memory Mapped I/O  |RUN|  |  |  |  |  |  |   |  |  |  |  ]
-> [    0.000000] memblock_reserve: [0x000000002c1c5000-0x000000002c1c5fff] efi_init+0xd8/0x1c8
-> [    0.000000] memblock_reserve: [0x0000000000400000-0x0000000001df2cef] arm_memblock_init+0x44/0x19c
-> [    0.000000] memblock_reserve: [0x0000000000303000-0x0000000000307fff] arm_mm_memblock_reserve+0x30/0x38
-> [    0.000000] memblock_reserve: [0x0000000007cf6000-0x0000000007cfc5c4] early_init_dt_reserve_memory_arch+0x2c/0x30
-> [    0.000000] cma: Failed to reserve 64 MiB
-> [    0.000000] MEMBLOCK configuration:
-> [    0.000000]  memory size = 0x000000003e000000 reserved size = 0x00000000019ff2c5
-> [    0.000000]  memory.cnt  = 0xa
-> [    0.000000]  memory[0x0]     [0x0000000000000000-0x0000000000000fff], 0x0000000000001000 bytes flags: 0x4
-> [    0.000000]  memory[0x1]     [0x0000000000001000-0x0000000007ef5fff], 0x0000000007ef5000 bytes flags: 0x0
-> [    0.000000]  memory[0x2]     [0x0000000007ef6000-0x0000000007f09fff], 0x0000000000014000 bytes flags: 0x4
-> [    0.000000]  memory[0x3]     [0x0000000007f0a000-0x000000003cb3efff], 0x0000000034c35000 bytes flags: 0x0
-> [    0.000000]  memory[0x4]     [0x000000003cb3f000-0x000000003cb3ffff], 0x0000000000001000 bytes flags: 0x4
-> [    0.000000]  memory[0x5]     [0x000000003cb40000-0x000000003cb5ffff], 0x0000000000020000 bytes flags: 0x0
-> [    0.000000]  memory[0x6]     [0x000000003cb60000-0x000000003cb68fff], 0x0000000000009000 bytes flags: 0x4
-> [    0.000000]  memory[0x7]     [0x000000003cb69000-0x000000003df74fff], 0x000000000140c000 bytes flags: 0x0
-> [    0.000000]  memory[0x8]     [0x000000003df75000-0x000000003df75fff], 0x0000000000001000 bytes flags: 0x4
-> [    0.000000]  memory[0x9]     [0x000000003df76000-0x000000003dffffff], 0x000000000008a000 bytes flags: 0x0
-> [    0.000000]  reserved.cnt  = 0x5
-> [    0.000000]  reserved[0x0]   [0x0000000000303000-0x0000000000307fff], 0x0000000000005000 bytes flags: 0x0
-> [    0.000000]  reserved[0x1]   [0x0000000000400000-0x0000000001df2cef], 0x00000000019f2cf0 bytes flags: 0x0
-> [    0.000000]  reserved[0x2]   [0x0000000007cf6000-0x0000000007cfc5c4], 0x00000000000065c5 bytes flags: 0x0
-> [    0.000000]  reserved[0x3]   [0x000000002c1c5000-0x000000002c1c5fff], 0x0000000000001000 bytes flags: 0x0
-> [    0.000000]  reserved[0x4]   [0x000000003cb3d040-0x000000003cb3d04f], 0x0000000000000010 bytes flags: 0x0
-> [    0.000000] memblock_alloc_try_nid: 4096 bytes align=0x1000 nid=-1 from=0x0000000000000000 max_addr=0x0000000000000000 early_alloc+0x44/0x70
-> [    0.000000] Kernel panic - not syncing: early_alloc: Failed to allocate 4096 bytes align=0x1000
-> [    0.000000] CPU: 0 PID: 0 Comm: swapper Not tainted 5.2.1-lpae #1 openSUSE Tumbleweed (unreleased)
-> [    0.000000] Hardware name: BCM2835
-> [    0.000000] Backtrace:
-> [    0.000000] [<c043fafc>] (dump_backtrace) from [<c043fd84>] (show_stack+0x20/0x24)
-> [    0.000000]  r7:c1800000 r6:00000000 r5:600001d3 r4:c1901ba0
-> [    0.000000] [<c043fd64>] (show_stack) from [<c0df9400>] (dump_stack+0xd0/0x104)
-> [    0.000000] [<c0df9330>] (dump_stack) from [<c048061c>] (panic+0xf8/0x32c)
-> [    0.000000]  r10:c0307000 r9:c0001000 r8:00000003 r7:00000000 r6:00000000 r5:c181df04
-> [    0.000000]  r4:c192b8d8 r3:00000001
-> [    0.000000] [<c0480528>] (panic) from [<c1609728>] (early_alloc+0x60/0x70)
-> [    0.000000]  r3:00001000 r2:00001000 r1:c10037e8 r0:c12fe64c
-> [    0.000000]  r7:00000000
-> [    0.000000] [<c16096c8>] (early_alloc) from [<c1609114>] (arm_pte_alloc+0x34/0x94)
-> [    0.000000]  r7:00000000 r6:00000000 r4:c0307000
-> [    0.000000] [<c16090e0>] (arm_pte_alloc) from [<c1609384>] (__create_mapping+0x210/0x2c0)
-> [    0.000000]  r9:c0001000 r8:c0001000 r7:00000001 r6:c13f22e0 r5:c0200000 r4:c0400000
-> [    0.000000] [<c1609174>] (__create_mapping) from [<c160951c>] (create_mapping+0xe8/0x108)
-> [    0.000000]  r10:c0400000 r9:c16a2110 r8:c19c7a80 r7:00000000 r6:00400000 r5:c13f2000
-> [    0.000000]  r4:c1801ef0
-> [    0.000000] [<c1609434>] (create_mapping) from [<c1609f50>] (paging_init+0x350/0x75c)
-> [    0.000000]  r4:c1842d40
->
->
-> > >
-> > > >   grub> lsefimmap
-> > > >   Type      Physical start  - end             #Pages        Size Attributes
-> > > >   reserved  0000000000000000-0000000000000fff 00000001      4KiB WB
-> > > >   conv-mem  0000000000001000-0000000007ef5fff 00007ef5 130004KiB WB
-> > > >   RT-data   0000000007ef6000-0000000007f09fff 00000014     80KiB RT WB
-> > > >   conv-mem  0000000007f0a000-000000002d871fff 00025968 615840KiB WB
-> > > >   .....
-> > > >
-> > > > To avoid a reserved address, we have to ignore the memory regions which are
-> > > > marked as EFI_RESERVED_TYPE, and only conventional memory regions can be
-> > > > chosen. If the region before the kernel base is unaligned, it will be
-> > > > marked as EFI_RESERVED_TYPE and let kernel ignore it so that memblock_limit
-> > > > will not be sticked with a very low address such as 0x1000.
-> > > >
-> >
-> > This is a separate issue, so it should be handled in a separate patch.
-> >
-> > > > Signed-off-by: Chester Lin <clin@suse.com>
-> > > > ---
-> > > >  arch/arm/mm/mmu.c                         |  3 ++
-> > > >  drivers/firmware/efi/libstub/arm32-stub.c | 43 ++++++++++++++++++-----
-> > > >  2 files changed, 37 insertions(+), 9 deletions(-)
-> > > >
-> > > > diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
-> > > > index f3ce34113f89..909b11ba48d8 100644
-> > > > --- a/arch/arm/mm/mmu.c
-> > > > +++ b/arch/arm/mm/mmu.c
-> > > > @@ -1184,6 +1184,9 @@ void __init adjust_lowmem_bounds(void)
-> > > >                 phys_addr_t block_start = reg->base;
-> > > >                 phys_addr_t block_end = reg->base + reg->size;
-> > > >
-> > > > +               if (memblock_is_nomap(reg))
-> > > > +                       continue;
-> > > > +
-> > > >                 if (reg->base < vmalloc_limit) {
-> > > >                         if (block_end > lowmem_limit)
-> > > >                                 /*
-> > > > diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
-> > > > index e8f7aefb6813..10d33d36df00 100644
-> > > > --- a/drivers/firmware/efi/libstub/arm32-stub.c
-> > > > +++ b/drivers/firmware/efi/libstub/arm32-stub.c
-> > > > @@ -128,7 +128,7 @@ static efi_status_t reserve_kernel_base(efi_system_table_t *sys_table_arg,
-> > > >
-> > > >         for (l = 0; l < map_size; l += desc_size) {
-> > > >                 efi_memory_desc_t *desc;
-> > > > -               u64 start, end;
-> > > > +               u64 start, end, spare, kernel_base;
-> > > >
-> > > >                 desc = (void *)memory_map + l;
-> > > >                 start = desc->phys_addr;
-> > > > @@ -144,27 +144,52 @@ static efi_status_t reserve_kernel_base(efi_system_table_t *sys_table_arg,
-> > > >                 case EFI_BOOT_SERVICES_DATA:
-> > > >                         /* Ignore types that are released to the OS anyway */
-> > > >                         continue;
-> > > > -
-> > > > +               case EFI_RESERVED_TYPE:
-> > > > +                       /* Ignore reserved regions */
-> > > > +                       continue;
-> > > >                 case EFI_CONVENTIONAL_MEMORY:
-> > > >                         /*
-> > > >                          * Reserve the intersection between this entry and the
-> > > >                          * region.
-> > > >                          */
-> > > >                         start = max(start, (u64)dram_base);
-> > > > -                       end = min(end, (u64)dram_base + MAX_UNCOMP_KERNEL_SIZE);
-> > > > +                       kernel_base = round_up(start, PMD_SIZE);
-> > > > +                       spare = kernel_base - start;
-> > > > +                       end = min(end, kernel_base + MAX_UNCOMP_KERNEL_SIZE);
-> > > > +
-> > > > +                       status = efi_call_early(allocate_pages,
-> > > > +                                       EFI_ALLOCATE_ADDRESS,
-> > > > +                                       EFI_LOADER_DATA,
-> > > > +                                       MAX_UNCOMP_KERNEL_SIZE / EFI_PAGE_SIZE,
-> > > > +                                       &kernel_base);
-> > > > +                       if (status != EFI_SUCCESS) {
-> > > > +                               pr_efi_err(sys_table_arg,
-> > > > +                                       "reserve_kernel_base: alloc failed.\n");
-> > > > +                               goto out;
-> > > > +                       }
-> > > > +                       *reserve_addr = kernel_base;
-> > > >
-> > > > +                       if (!spare)
-> > > > +                               break;
-> > > > +                       /*
-> > > > +                        * If there's a gap between start and kernel_base,
-> > > > +                        * it needs be reserved so that the memblock_limit
-> > > > +                        * will not fall on a very low address when running
-> > > > +                        * adjust_lowmem_bounds(), wchich could eventually
-> > > > +                        * cause CMA reservation issue.
-> > > > +                        */
-> > > >                         status = efi_call_early(allocate_pages,
-> > > >                                                 EFI_ALLOCATE_ADDRESS,
-> > > > -                                               EFI_LOADER_DATA,
-> > > > -                                               (end - start) / EFI_PAGE_SIZE,
-> > > > +                                               EFI_RESERVED_TYPE,
-> > > > +                                               spare / EFI_PAGE_SIZE,
-> > > >                                                 &start);
-> > > >                         if (status != EFI_SUCCESS) {
-> > > >                                 pr_efi_err(sys_table_arg,
-> > > > -                                       "reserve_kernel_base(): alloc failed.\n");
-> > > > +                                       "reserve spare-region failed\n");
-> > > >                                 goto out;
-> > > >                         }
-> > > > -                       break;
-> > > >
-> > > > +                       break;
-> > > >                 case EFI_LOADER_CODE:
-> > > >                 case EFI_LOADER_DATA:
-> > > >                         /*
-> > > > @@ -220,7 +245,7 @@ efi_status_t handle_kernel_image(efi_system_table_t *sys_table,
-> > > >         *image_size = image->image_size;
-> > > >         status = efi_relocate_kernel(sys_table, image_addr, *image_size,
-> > > >                                      *image_size,
-> > > > -                                    dram_base + MAX_UNCOMP_KERNEL_SIZE, 0);
-> > > > +                                    *reserve_addr + MAX_UNCOMP_KERNEL_SIZE, 0);
-> > > >         if (status != EFI_SUCCESS) {
-> > > >                 pr_efi_err(sys_table, "Failed to relocate kernel.\n");
-> > > >                 efi_free(sys_table, *reserve_size, *reserve_addr);
-> > > > @@ -233,7 +258,7 @@ efi_status_t handle_kernel_image(efi_system_table_t *sys_table,
-> > > >          * in memory. The kernel determines the base of DRAM from the
-> > > >          * address at which the zImage is loaded.
-> > > >          */
-> > > > -       if (*image_addr + *image_size > dram_base + ZIMAGE_OFFSET_LIMIT) {
-> > > > +       if (*image_addr + *image_size > *reserve_addr + ZIMAGE_OFFSET_LIMIT) {
-> > > >                 pr_efi_err(sys_table, "Failed to relocate kernel, no low memory available.\n");
-> > > >                 efi_free(sys_table, *reserve_size, *reserve_addr);
-> > > >                 *reserve_size = 0;
-> > > > --
-> > > > 2.22.0
-> > > >
-> >
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
