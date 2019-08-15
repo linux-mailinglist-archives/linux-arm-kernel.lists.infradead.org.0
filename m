@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B0FC8E22B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:52:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71A988E22C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:52:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4p2kbYxQwYcrWje0dkpUvNXThkjAqOoTpuvFSs/eOJY=; b=Ta6/Fw+5+bJP0R
-	/TGecMZRhBJM9P5JvA2JRkBc9RUhs6wuOjwJu32KZmyazEseSs7ljd91Je1W08rJFD6RjaDPLA0wL
-	tm7fpvWwXNTp/Cq9yj1VvSUg7oxBdLXkb5MKC6VX9s+YBamWswTfY/7IkgKW2yBp5F4ylHhJj4EkP
-	7l9sP1x2hhmNshkwgpzB5d/jE4/sR9KS4GOE0WSY1VR1fhnX5Iwygb5f/Xo30InSxzLmAn7/cLf2V
-	3AA7QFHHOeHuMaEvMI3woAggnR7cLHzoZCbiyITnbZSxhLtlEfODObkdOWSNSWhz8MvRD9O24LWXW
-	ueeAk7BkT/S0XVmAI4kA==;
+	List-Owner; bh=g6FRhWoBjWHaz2W4CW0s31jPbpE5TZ5fUslOwu6ycL4=; b=bw4Obgd4pRl4KR
+	xV5mp9zDhXpU/CFVMfX90tOiCt8j8q19rHzLHZix98GfnXbxTpyaKTBr6eHf1jC8dYwJU3GAihO8J
+	kHsw3gAjJsTJynvKYK+OJ/HodjuU9Ij7QwWbytv6zKEGX88ZT2zXbmzh1WDzqFf//6yKeI34HGy9T
+	yuzJrlamdKgnpzTtFvFd/yjyfraJspZeY9DeL/YRsd5f0bZvGM7ejdMaTv4WizHmPM6NTq2XAzsTE
+	E3HqsMuiaUZvbcjpQAXWeiYpXU4hWqkUGMma0plOb0z1zqo+k6GKN6MJQtiT02QQwR7xqScT8Z6FF
+	yKE9yqq5a8Kr4WmgIUAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy3zo-0007QW-E4; Thu, 15 Aug 2019 00:52:04 +0000
+	id 1hy403-0007eR-MY; Thu, 15 Aug 2019 00:52:19 +0000
 Received: from onstation.org ([52.200.56.107])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy3x6-0004cG-Kc
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 00:49:18 +0000
+ id 1hy3x7-0004cT-Ag
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 00:49:19 +0000
 Received: from localhost.localdomain (c-98-239-145-235.hsd1.wv.comcast.net
  [98.239.145.235])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id 718363EA1E;
- Thu, 15 Aug 2019 00:49:15 +0000 (UTC)
+ by onstation.org (Postfix) with ESMTPSA id 26AB63EA22;
+ Thu, 15 Aug 2019 00:49:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
  s=default; t=1565830156;
- bh=RQi7NgzWoBfqg8AYplLP5izcyVgpI38ozyAN9bUXL0o=;
+ bh=d3q75pXkjIXM1QryEInKZPabWpuCo5QQR2U68bge2+A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EWhD6+a7wngQEzTa1GokP9KHGWvgK5XoZo2l4cdMlZVpQDtOEpWl3pik4MKSVH/9W
- QX8TFjUKALlS3Q+3aEv2im8IE1HpEngE04TtzouMNESZmwd34RuXUoKDy8ululGHJ3
- h9MqhZZoYUJIY8DJDykIjtu7akNaFybaiMmq82fc=
+ b=NJdtoh3/ImfhdTmSEd85mj5KPu2ZKI0+UpUzJUTokWtV70S3liqeW3s4dbfky+wr4
+ LolisNgSRIh+ji/BEC/+LNt4IZWePqwWkQ0lf99WfPMtT+plnIZnwpj94J+7JjQ06J
+ WoLNwQj3TpHlok1OzDecQd2NzU7BUwa+XkPAjiD8=
 From: Brian Masney <masneyb@onstation.org>
 To: bjorn.andersson@linaro.org, robh+dt@kernel.org, agross@kernel.org,
  a.hajda@samsung.com, narmstrong@baylibre.com, robdclark@gmail.com,
  sean@poorly.run
-Subject: [PATCH 07/11] ARM: qcom_defconfig: add CONFIG_DRM_ANALOGIX_ANX78XX
-Date: Wed, 14 Aug 2019 20:48:50 -0400
-Message-Id: <20190815004854.19860-8-masneyb@onstation.org>
+Subject: [PATCH 08/11] drm/msm/hdmi: silence -EPROBE_DEFER warning
+Date: Wed, 14 Aug 2019 20:48:51 -0400
+Message-Id: <20190815004854.19860-9-masneyb@onstation.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190815004854.19860-1-masneyb@onstation.org>
 References: <20190815004854.19860-1-masneyb@onstation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_174916_740597_8B949A02 
-X-CRM114-Status: UNSURE (   9.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190814_174917_450041_E36492C7 
+X-CRM114-Status: GOOD (  11.79  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -89,26 +88,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add CONFIG_DRM_ANALOGIX_ANX78XX as a module so that the external display
-can be used on the Nexus 5 phones.
+Silence a warning message due to an -EPROBE_DEFER error to help cleanup
+the system boot log.
 
 Signed-off-by: Brian Masney <masneyb@onstation.org>
 ---
- arch/arm/configs/qcom_defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/gpu/drm/msm/hdmi/hdmi_phy.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/configs/qcom_defconfig b/arch/arm/configs/qcom_defconfig
-index 34433bf5885d..139e6610f034 100644
---- a/arch/arm/configs/qcom_defconfig
-+++ b/arch/arm/configs/qcom_defconfig
-@@ -148,6 +148,7 @@ CONFIG_REGULATOR_QCOM_SPMI=y
- CONFIG_MEDIA_SUPPORT=y
- CONFIG_DRM=y
- CONFIG_DRM_PANEL_SIMPLE=y
-+CONFIG_DRM_ANALOGIX_ANX78XX=m
- CONFIG_FB=y
- CONFIG_FRAMEBUFFER_CONSOLE=y
- # CONFIG_LCD_CLASS_DEVICE is not set
+diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_phy.c b/drivers/gpu/drm/msm/hdmi/hdmi_phy.c
+index 1697e61f9c2f..8a38d4b95102 100644
+--- a/drivers/gpu/drm/msm/hdmi/hdmi_phy.c
++++ b/drivers/gpu/drm/msm/hdmi/hdmi_phy.c
+@@ -29,8 +29,12 @@ static int msm_hdmi_phy_resource_init(struct hdmi_phy *phy)
+ 		reg = devm_regulator_get(dev, cfg->reg_names[i]);
+ 		if (IS_ERR(reg)) {
+ 			ret = PTR_ERR(reg);
+-			DRM_DEV_ERROR(dev, "failed to get phy regulator: %s (%d)\n",
+-				cfg->reg_names[i], ret);
++			if (ret != -EPROBE_DEFER) {
++				DRM_DEV_ERROR(dev,
++					      "failed to get phy regulator: %s (%d)\n",
++					      cfg->reg_names[i], ret);
++			}
++
+ 			return ret;
+ 		}
+ 
 -- 
 2.21.0
 
