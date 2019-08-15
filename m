@@ -2,83 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71AC08E645
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:26:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0CD08E657
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:30:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=XhzWQ6hz98c6lHv46xjiq5+mM1cOqfG9mZ0Y+DGnzOQ=; b=MiT
-	GdzdK/kWzJXUzOKbOPtMilOdwRQVoNsvDFwWl4WxrKSfIi7fWdhVUhmd0SE2J1KOpbzybkVgA8M2d
-	PECkV6TACrQpDmYw3hwm/vcl69q3mWis8ijxwFRJPOXRR1TCPhr2w5fBONxwTBOD/dlQnfUnCow4h
-	wMijHzrr5hhgDUOzIClBo+0dzB9AN2PLFIS9zbiMx0KLHqFVj4xHD3EFMGRi4vrRQ37l/qUTczOLk
-	zJwJZwo5F+IE3fQNHGMOH4Sgwt49J1HKooiFIPam7etqcWaHh5zHTkknLeeqKKjNQTWZ2PQnhqi9X
-	6fE7BnQJKzDyCzK8LdsIOnAy/YHGetw==;
+	References:List-Owner; bh=FwozIXzBY+xE/gt673WRlnsH4pBSAfXnUX3pJtnu4vw=; b=jK3
+	46FHtkIQjK9qEHUWfHYTbSsJL19LHvdFbIudoPogqrQXY+DYS7tvFU2iYW4C0h+KLxWyschdOTX4Y
+	v1L7AcPLt557e9Alj7RS3fP3vOH+ZTeNXoQgoEl1dkUYwBV7RRAp6ffki9jUvLr3HPC3EBwafVCUL
+	3DPZ7ZLB6qeJKywte5MrP24cUHyQ40beRXXtf0h1HJ2WLFo4Jl/OD+EaY2bsnHQJiMgP7aYwwSSW4
+	6TsdyET7t50vRMIYCIG9GP3eUv89Ts7LktYpLdD8KknuwXTT1tRiws+qCAzEBHJvZ1bwuCyH8z5c0
+	jAo/t9ZvxaEpBW9pmx9sfsPZ7TK2A6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyB5N-0005oc-Dk; Thu, 15 Aug 2019 08:26:17 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hyB9V-0008Un-L6; Thu, 15 Aug 2019 08:30:33 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyB4u-0005dl-1y
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:25:50 +0000
-Received: by mail-pf1-x443.google.com with SMTP id i30so1000286pfk.9
+ id 1hyB9I-0008R8-OS
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:30:22 +0000
+Received: by mail-pf1-x442.google.com with SMTP id d85so1030733pfd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 01:25:46 -0700 (PDT)
+ Thu, 15 Aug 2019 01:30:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id;
- bh=30cHDPSODRjzx60oee0Lo4biVeqVEQUgsOye86CZdQ0=;
- b=ujE9YZn8x6/VcmU/0Z+b4S3X6Cc16ZsAIPvkqSVtQwq16OT9HflIeTaqoSW2FR/Ke7
- pu0uhXzPhdpX9DiT3XQgShPJlpuqBxJdNZs8Aaj4cB7dfExAZzxyM39q8LLWdC+UpKOz
- k90c82vCno8LxDjEONoJFd2bg3U4bdlt53Fjr9zXU3s7TlwjqTN4SbME2Rzl7e8n0ylT
- gi2S+9nTPjn00Unn9INJNJx7m+ofE0Y8KoJqrT5whrrkCi72chH938iGwKZsohAywF77
- TKe7KYSqgpYalJHvwHRD5S4s2yVrMCYUwk9A3QGiG047eiYL1AX6eLc0rqvqgn2Wj0MD
- qFjA==
+ bh=+667Tp6aRb+fNZrEkEuQBATyuYVr9DkCsoqrznJa5gI=;
+ b=E4+0ImEEmPUTDK4fbSUSMUuBr6/4JC/FSu2THIDBKuiY0uw4dfY0PcLLac2NKV4fdL
+ Lu1s/lkKD6MbnYfJbTSSjBaxItiA+hRYtey95pRKPsZFxiDVxCF+8bajbx72J0ES0vBX
+ pw2uYBoIHgnFvVUqdEeY+QSlr0JVcAWvI0ZUCVn5QLLkqpMUIu0b0qmLyTkVxEgnKLNs
+ 5n1am8WziPrOPbM3o96E1pU2e62cCZawGs89rgQNOoSHQi3RHy5j6Nn1ZLXeSZQGMgw9
+ n7VCHaPMlt545E535ERJLwEchIyLatWHMEwcKBg9P6MYEwMGt073PlwjDm5xDeuIKQCz
+ 4DNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=30cHDPSODRjzx60oee0Lo4biVeqVEQUgsOye86CZdQ0=;
- b=Ayf9EdWGDKSw9oOUPiVnLnIZbuUkZJ2DWtdTOe2hKMCu207op3k9v1JIyhr8TQ41bj
- E9rf4XgBQRmifBzJqlAzqYuyVlFGgiuFm2AMzZA5JECLavSgbrx2BIe7GoUEGU2iOSCm
- Xb3uyULgu4UAmbgVj6p/kwynpqAKQROkVtQYFxqXJQbAQ8z2bRidHZOCJnFLjrSsSmsP
- L08tL5hdGWTNicRft8Z/29i91AC2Had3vMisIGSH5XMUQWnYd3Q7Zx+N7/+2zoOWBXhp
- ZvqY6BlJyODPwrwC6es02mmQCGFYVwWDJN+t7BD8uddNsJc89j5hPnOfrXmlgZnnUe7E
- ASUA==
-X-Gm-Message-State: APjAAAU/ibnBVhep450odnEYh54jdOceDPuvvRE8WGKLwVh0w6scZwoE
- OP8cQElNiiE0dwcRPgN8Cps1aA==
-X-Google-Smtp-Source: APXvYqwjBEsniOi5hJVUrh23+U47HSZ1lTJaoKAz8PwNLCTH7NTTuxiXAdNbrYWwQMmDwCRhuMpAuQ==
-X-Received: by 2002:aa7:87d5:: with SMTP id i21mr4259475pfo.70.1565857546207; 
- Thu, 15 Aug 2019 01:25:46 -0700 (PDT)
+ bh=+667Tp6aRb+fNZrEkEuQBATyuYVr9DkCsoqrznJa5gI=;
+ b=E7IHHAjnqoQywUpkniVAOtdKbfBJVdHZyfENoTvNUQRo96ikTQZlJZwD7e1YW3xy5w
+ ivCZYpjDPIL3lJoRztmnF4WSust23qbIPk1ty1hPQdEpW98ojBof2q2GZJac60mZc+JF
+ QrWm81LE8NlqOfczRK8zoOgNuyKUyjSJQoxYijdYWczrL8ZJKeQOrfdjN+jrYiCXF0TY
+ TtDKmwgsmgiggFDij390t12MnMrtMvTR6lC2opPAwsgT5rHtzisA2RZvGzlX2idfJATd
+ 8bpbiVhDqzBjOOWKt0U9y4nOTSC4UfHU/dBSIUAY3qmRSdFJIzR55B2LFPfkHwIp/xZi
+ im8A==
+X-Gm-Message-State: APjAAAVutYb9Q06an61byRgOUfRuuqbsyLzPbUze6ASWLc1WB7b5tIer
+ lVS5Djqv70ls+HKFdOJJBdJOtg==
+X-Google-Smtp-Source: APXvYqwEan4dWW0vagWBHt1IU/UkTTnvsCHImQm26AyFYF184BYwU6WZnfEB7b72g23UQobubOoXHA==
+X-Received: by 2002:a65:690f:: with SMTP id s15mr2562324pgq.432.1565857819808; 
+ Thu, 15 Aug 2019 01:30:19 -0700 (PDT)
 Received: from localhost.localdomain (li456-16.members.linode.com.
  [50.116.10.16])
- by smtp.gmail.com with ESMTPSA id e6sm2399223pfl.37.2019.08.15.01.25.39
+ by smtp.gmail.com with ESMTPSA id 1sm2217413pfx.56.2019.08.15.01.30.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 15 Aug 2019 01:25:45 -0700 (PDT)
+ Thu, 15 Aug 2019 01:30:19 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- Alexei Starovoitov <ast@kernel.org>,
- Daniel Borkmann <daniel@iogearbox.net>, Martin KaFai Lau <kafai@fb.com>,
- Song Liu <songliubraving@fb.com>, Yonghong Song <yhs@fb.com>,
- linux-kernel@vger.kernel.org, netdev@vger.kernel.org, bpf@vger.kernel.org,
- clang-built-linux@googlegroups.com
-Subject: [PATCH v5] perf machine: arm/arm64: Improve completeness for kernel
- address space
-Date: Thu, 15 Aug 2019 16:25:21 +0800
-Message-Id: <20190815082521.16885-1-leo.yan@linaro.org>
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] perf cs-etm: Support sample flags 'insn' and 'insnlen'
+Date: Thu, 15 Aug 2019 16:28:54 +0800
+Message-Id: <20190815082854.18191-1-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_012548_355534_0F8E12C9 
-X-CRM114-Status: GOOD (  18.75  )
+X-CRM114-CacheID: sfid-20190815_013020_811228_FAF88959 
+X-CRM114-Status: GOOD (  13.30  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,204 +97,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki Poulouse <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>, coresight@lists.linaro.org,
- Adrian Hunter <adrian.hunter@intel.com>, Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Robert Walker <robert.walker@arm.com>, Mike Leach <mike.leach@linaro.org>,
+ coresight@lists.linaro.org, Leo Yan <leo.yan@linaro.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Arm and arm64 architecture reserve some memory regions prior to the
-symbol '_stext' and these memory regions later will be used by device
-module and BPF jit.  The current code misses to consider these memory
-regions thus any address in the regions will be taken as user space
-mode, but perf cannot find the corresponding dso with the wrong CPU
-mode so we misses to generate samples for device module and BPF
-related trace data.
+The synthetic branch and instruction samples are missed to set
+instruction related info, thus perf tool fails to display samples with
+flags '-F,+insn,+insnlen'.
 
-This patch parse the link scripts to get the memory size prior to start
-address and reduce this size from 'machine>->kernel_start', then can
-get a fixed up kernel start address which contain memory regions for
-device module and BPF.  Finally, machine__get_kernel_start() can reflect
-more complete kernel memory regions and perf can successfully generate
-samples.
+CoreSight trace decoder has provided sufficient information to decide
+the instruction size based on the isa type: A64/A32 instruction are
+32-bit size, but one exception is the T32 instruction size, which might
+be 32-bit or 16-bit.
 
-The reason for parsing the link scripts is Arm architecture changes text
-offset dependent on different platforms, which define multiple text
-offsets in $kernel/arch/arm/Makefile.  This offset is decided when build
-kernel and the final value is extended in the link script, so we can
-extract the used value from the link script.  We use the same way to
-parse arm64 link script as well.  If fail to find the link script, the
-pre start memory size is assumed as zero, in this case it has no any
-change caused with this patch.
+This patch handles for these cases and it reads the instruction values
+from DSO file; thus can support flags '-F,+insn,+insnlen'.
 
-Below is detailed info for testing this patch:
+Before:
 
-- Install or build LLVM/Clang;
+  # perf script -F,insn,insnlen,ip,sym
+                0 [unknown] ilen: 0
+     ffff97174044 _start ilen: 0
+     ffff97174938 _dl_start ilen: 0
+     ffff97174938 _dl_start ilen: 0
+     ffff97174938 _dl_start ilen: 0
+     ffff97174938 _dl_start ilen: 0
+     ffff97174938 _dl_start ilen: 0
+     ffff97174938 _dl_start ilen: 0
+     ffff97174938 _dl_start ilen: 0
+     ffff97174938 _dl_start ilen: 0
 
-- Configure perf with ~/.perfconfig:
+  [...]
 
-  root@debian:~# cat ~/.perfconfig
-  # this file is auto-generated.
-  [llvm]
-          clang-path = /mnt/build/llvm-build/build/install/bin/clang
-          kbuild-dir = /mnt/linux-kernel/linux-cs-dev/
-          clang-opt = "-g"
-          dump-obj = true
+After:
 
-  [trace]
-          show_zeros = yes
-          show_duration = no
-          no_inherit = yes
-          show_timestamp = no
-          show_arg_names = no
-          args_alignment = 40
-          show_prefix = yes
+  # perf script -F,insn,insnlen,ip,sym
+                0 [unknown] ilen: 0
+     ffff97174044 _start ilen: 4 insn: 2f 02 00 94
+     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+     ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
 
-- Run 'perf trace' command with eBPF event:
-
-  root@debian:~# perf trace -e string \
-      -e $kernel/tools/perf/examples/bpf/augmented_raw_syscalls.c
-
-- Read eBPF program memory mapping in kernel:
-
-  root@debian:~# echo 1 > /proc/sys/net/core/bpf_jit_kallsyms
-  root@debian:~# cat /proc/kallsyms | grep -E "bpf_prog_.+_sys_[enter|exit]"
-  ffff00000008a0d0 t bpf_prog_e470211b846088d5_sys_enter  [bpf]
-  ffff00000008c6a4 t bpf_prog_29c7ae234d79bd5c_sys_exit   [bpf]
-
-- Launch any program which accesses file system frequently so can hit
-  the system calls trace flow with eBPF event;
-
-- Capture CoreSight trace data with filtering eBPF program:
-
-  root@debian:~# perf record -e cs_etm/@tmc_etr0/ \
-	--filter 'filter 0xffff00000008a0d0/0x800' -a sleep 5s
-
-- Decode the eBPF program symbol 'bpf_prog_f173133dc38ccf87_sys_enter':
-
-  root@debian:~# perf script -F,ip,sym
-  Frame deformatter: Found 4 FSYNCS
-                  0 [unknown]
-   ffff00000008a1ac bpf_prog_e470211b846088d5_sys_enter
-   ffff00000008a250 bpf_prog_e470211b846088d5_sys_enter
-                  0 [unknown]
-   ffff00000008a124 bpf_prog_e470211b846088d5_sys_enter
-                  0 [unknown]
-   ffff00000008a14c bpf_prog_e470211b846088d5_sys_enter
-   ffff00000008a13c bpf_prog_e470211b846088d5_sys_enter
-   ffff00000008a14c bpf_prog_e470211b846088d5_sys_enter
-                  0 [unknown]
-   ffff00000008a180 bpf_prog_e470211b846088d5_sys_enter
-                  0 [unknown]
-   ffff00000008a1ac bpf_prog_e470211b846088d5_sys_enter
-   ffff00000008a190 bpf_prog_e470211b846088d5_sys_enter
-   ffff00000008a1ac bpf_prog_e470211b846088d5_sys_enter
-   ffff00000008a250 bpf_prog_e470211b846088d5_sys_enter
-                  0 [unknown]
-   ffff00000008a124 bpf_prog_e470211b846088d5_sys_enter
-                  0 [unknown]
-   ffff00000008a14c bpf_prog_e470211b846088d5_sys_enter
-                  0 [unknown]
-   ffff00000008a180 bpf_prog_e470211b846088d5_sys_enter
-   [...]
+  [...]
 
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Namhyung Kim <namhyung@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
-Cc: Adrian Hunter <adrian.hunter@intel.com>
+Cc: Mike Leach <mike.leach@linaro.org>
+Cc: Robert Walker <robert.walker@arm.com>
 Cc: coresight@lists.linaro.org
 Cc: linux-arm-kernel@lists.infradead.org
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- tools/perf/Makefile.config | 22 ++++++++++++++++++++++
- tools/perf/util/machine.c  | 15 ++++++++++++++-
- 2 files changed, 36 insertions(+), 1 deletion(-)
+ tools/perf/util/cs-etm.c | 35 ++++++++++++++++++++++++++++++++++-
+ 1 file changed, 34 insertions(+), 1 deletion(-)
 
-diff --git a/tools/perf/Makefile.config b/tools/perf/Makefile.config
-index e4988f49ea79..d7ff839d8b20 100644
---- a/tools/perf/Makefile.config
-+++ b/tools/perf/Makefile.config
-@@ -48,9 +48,20 @@ ifeq ($(SRCARCH),x86)
-   NO_PERF_REGS := 0
- endif
- 
-+ARM_PRE_START_SIZE := 0
-+
- ifeq ($(SRCARCH),arm)
-   NO_PERF_REGS := 0
-   LIBUNWIND_LIBS = -lunwind -lunwind-arm
-+  ifneq ($(wildcard $(srctree)/arch/$(SRCARCH)/kernel/vmlinux.lds),)
-+    # Extract info from lds:
-+    #   . = ((0xC0000000)) + 0x00208000;
-+    # ARM_PRE_START_SIZE := 0x00208000
-+    ARM_PRE_START_SIZE := $(shell egrep ' \. \= \({2}0x[0-9a-fA-F]+\){2}' \
-+      $(srctree)/arch/$(SRCARCH)/kernel/vmlinux.lds | \
-+      sed -e 's/[(|)|.|=|+|<|;|-]//g' -e 's/ \+/ /g' -e 's/^[ \t]*//' | \
-+      awk -F' ' '{printf "0x%x", $$2}' 2>/dev/null)
-+  endif
- endif
- 
- ifeq ($(SRCARCH),arm64)
-@@ -58,8 +69,19 @@ ifeq ($(SRCARCH),arm64)
-   NO_SYSCALL_TABLE := 0
-   CFLAGS += -I$(OUTPUT)arch/arm64/include/generated
-   LIBUNWIND_LIBS = -lunwind -lunwind-aarch64
-+  ifneq ($(wildcard $(srctree)/arch/$(SRCARCH)/kernel/vmlinux.lds),)
-+    # Extract info from lds:
-+    #  . = ((((((((0xffffffffffffffff)) - (((1)) << (48)) + 1) + (0)) + (0x08000000))) + (0x08000000))) + 0x00080000;
-+    # ARM_PRE_START_SIZE := (0x08000000 + 0x08000000 + 0x00080000) = 0x10080000
-+    ARM_PRE_START_SIZE := $(shell egrep ' \. \= \({8}0x[0-9a-fA-F]+\){2}' \
-+      $(srctree)/arch/$(SRCARCH)/kernel/vmlinux.lds | \
-+      sed -e 's/[(|)|.|=|+|<|;|-]//g' -e 's/ \+/ /g' -e 's/^[ \t]*//' | \
-+      awk -F' ' '{printf "0x%x", $$6+$$7+$$8}' 2>/dev/null)
-+  endif
- endif
- 
-+CFLAGS += -DARM_PRE_START_SIZE=$(ARM_PRE_START_SIZE)
-+
- ifeq ($(SRCARCH),csky)
-   NO_PERF_REGS := 0
- endif
-diff --git a/tools/perf/util/machine.c b/tools/perf/util/machine.c
-index f6ee7fbad3e4..e993f891bb82 100644
---- a/tools/perf/util/machine.c
-+++ b/tools/perf/util/machine.c
-@@ -2687,13 +2687,26 @@ int machine__get_kernel_start(struct machine *machine)
- 	machine->kernel_start = 1ULL << 63;
- 	if (map) {
- 		err = map__load(map);
-+		if (err)
-+			return err;
-+
- 		/*
- 		 * On x86_64, PTI entry trampolines are less than the
- 		 * start of kernel text, but still above 2^63. So leave
- 		 * kernel_start = 1ULL << 63 for x86_64.
- 		 */
--		if (!err && !machine__is(machine, "x86_64"))
-+		if (!machine__is(machine, "x86_64"))
- 			machine->kernel_start = map->start;
-+
-+		/*
-+		 * On arm/arm64, the kernel uses some memory regions which are
-+		 * prior to '_stext' symbol; to reflect the complete kernel
-+		 * address space, compensate these pre-defined regions for
-+		 * kernel start address.
-+		 */
-+		if (!strcmp(perf_env__arch(machine->env), "arm") ||
-+		    !strcmp(perf_env__arch(machine->env), "arm64"))
-+			machine->kernel_start -= ARM_PRE_START_SIZE;
- 	}
- 	return err;
+diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+index ed6f7fd5b90b..b3a5daaf1a8f 100644
+--- a/tools/perf/util/cs-etm.c
++++ b/tools/perf/util/cs-etm.c
+@@ -1076,6 +1076,35 @@ bool cs_etm__etmq_is_timeless(struct cs_etm_queue *etmq)
+ 	return !!etmq->etm->timeless_decoding;
  }
+ 
++static void cs_etm__copy_insn(struct cs_etm_queue *etmq,
++			      u64 trace_chan_id,
++			      const struct cs_etm_packet *packet,
++			      struct perf_sample *sample)
++{
++	/*
++	 * It's pointless to read instructions for the CS_ETM_DISCONTINUITY
++	 * packet, so directly bail out with 'insn_len' = 0.
++	 */
++	if (packet->sample_type == CS_ETM_DISCONTINUITY) {
++		sample->insn_len = 0;
++		return;
++	}
++
++	/*
++	 * T32 instruction size might be 32-bit or 16-bit, decide by calling
++	 * cs_etm__t32_instr_size().
++	 */
++	if (packet->isa == CS_ETM_ISA_T32)
++		sample->insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id,
++							  sample->ip);
++	/* Otherwise, A64 and A32 instruction size are always 32-bit. */
++	else
++		sample->insn_len = 4;
++
++	cs_etm__mem_access(etmq, trace_chan_id, sample->ip,
++			   sample->insn_len, (void *)sample->insn);
++}
++
+ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+ 					    struct cs_etm_traceid_queue *tidq,
+ 					    u64 addr, u64 period)
+@@ -1097,9 +1126,10 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+ 	sample.period = period;
+ 	sample.cpu = tidq->packet->cpu;
+ 	sample.flags = tidq->prev_packet->flags;
+-	sample.insn_len = 1;
+ 	sample.cpumode = event->sample.header.misc;
+ 
++	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->packet, &sample);
++
+ 	if (etm->synth_opts.last_branch) {
+ 		cs_etm__copy_last_branch_rb(etmq, tidq);
+ 		sample.branch_stack = tidq->last_branch;
+@@ -1159,6 +1189,9 @@ static int cs_etm__synth_branch_sample(struct cs_etm_queue *etmq,
+ 	sample.flags = tidq->prev_packet->flags;
+ 	sample.cpumode = event->sample.header.misc;
+ 
++	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->prev_packet,
++			  &sample);
++
+ 	/*
+ 	 * perf report cannot handle events without a branch stack
+ 	 */
 -- 
 2.17.1
 
