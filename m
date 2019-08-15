@@ -2,92 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AF358E4AB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 07:59:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 274558E4B5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 08:00:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uySn9bZO28G19EYMi19O0kA3n3j+394iAlbbLR0UNBI=; b=YxnaZYKBNUkZJh
-	v8dsF8rfmgd3M1YAMaJCGs7z4b9o5rrJxx4j20tCPplJxTBVPsm1qL+faHjr9327fAbzFiz0DqQGq
-	k9DoK4wnzpMQYkWAg2JNvOBCvoeg4ANTGH+ocAg5mNTRYS15JtSv2k6t+o6weBQTDz1sA3xSuCE7f
-	parbEafDue+Ur537nNpnsROONMe1RarlqHpne3QHohn1TyENDr5GCazelXwguWXYhe6Tv2r5LqlaM
-	THPfJSgfJOfDNu1tnc2ICBRU+SEfAebQG42GNy4LrTYXVVePzr+mjxE+zA9DhmBsiqDX8xB7NyAbk
-	wxZ0K9lv65HIcv85PKVg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jsJzT7besz0hL0J3/9BbAEB8e20XC39JJN55bEEEyMs=; b=WhEck1vlaANCoc
+	8kFT484tulHf79lDojc+9v/n0DdhtC0H+OOR6WvLz+JhbfMLJ617p6iHsf11iTvjB90V0A9MeJxlV
+	D7/xdL/az+XJ0X8m+z8Npt7NJLoBeWN6OO9++5rlbaU9mJbL/wYD907q0enRYRyIM6bUkjxSc29a/
+	b9EiPDu9YWVVlmHpBqQ4CUjvEYpnTbnLt5cIdhUcmXm/8KvJvRMGDi2fsna4OoN3H68DZqIZBVrHM
+	tt+Tr/GVlDUkK1pNuolv9vVEmErpqnEOzeDURO6tsB3f2S1T1gPPMSplCKLFhDnekEc9plj46ahLr
+	mS30DWssnzel+i+OUafA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy8nD-0003Wl-Oj; Thu, 15 Aug 2019 05:59:23 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hy8oQ-0004z9-Ai; Thu, 15 Aug 2019 06:00:38 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy8n1-0003W5-Qs
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 05:59:13 +0000
-Received: by mail-pg1-x542.google.com with SMTP id l21so869177pgm.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 22:59:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=wIN/3e7DmCq2KFrr2GT8E+NTKTLGporkmHFbvr6BdEw=;
- b=ltx3L04WJuOQgF1LYju3dlRn4Cyjnm4+zW2PdzjSOCef1GRhhmpg5YB9ot7HJ0qAX2
- v5UPvV4kcgPEkdP2QisSksYt35mUkjT0ap+xbT+++wFbuXd3iLCedKgZLoMhncCYykx8
- qLi8S9OScvOEQw2uQ3ckPj+nZChss+Sa7PSgOfmWibcvWr65mWWd4Khz7J1FnIr6ZWt3
- NMRusJXN/zBwQpXL3hNc55bSpvg3UUN+AzhQ89RiYQGYL5UwixAHZmbz5i/PPgvdwKBU
- xAr6jneyWsGHPHAfQG5GqDTvgjC3Y7NKMahmlEMwdQEJtj6UuCaMZW27wJ7uOiRua90r
- VYhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=wIN/3e7DmCq2KFrr2GT8E+NTKTLGporkmHFbvr6BdEw=;
- b=ApH5pKxoOXfWDbNpL+tZlYJmGoujYsJeecXybCbhKDPoPyaNrI2lskpNywHL3Ve5lJ
- z6T65ii7LO3UJNmnUbS0B0zGXz3+fYoQI+iutazo+ZKx/YCu5uaf/tfTwoDhw+TEk8P9
- w7UdU60aWjxLUM4gV9IMzCqZ8YSWbunhVT8Uw1SRDaDIghLIPnMg4dqxchH1B+s4S56Z
- vsz/Y37jgamehEalOQgTZqFopscLzXA+bb/5n7P/s3b3h2S0l6bx6rPV9+xQTvn51qKy
- LJs8Kdqbts/wPCAOwMmZVFyJ1YMz/W/dbRRM2+Q/SdOWrCicHQ7emSZI7GaWV4BcLUaD
- XsLw==
-X-Gm-Message-State: APjAAAVkrxZMT/R1rWIUjjHQlfMDD5ZLkdAQ/WqHTzV28va6HocvGTpb
- r49Q/oaMrQ8OLKkBK4/tNPA=
-X-Google-Smtp-Source: APXvYqwPn7IfU6NrEFx18uQV6dXjBy9Te4NIGALiRj5uKRtJOZxdgllt72zHYP3InxW6dokx9buRiA==
-X-Received: by 2002:a63:e48:: with SMTP id 8mr2211940pgo.389.1565848749290;
- Wed, 14 Aug 2019 22:59:09 -0700 (PDT)
-Received: from localhost.localdomain ([110.225.3.176])
- by smtp.gmail.com with ESMTPSA id e7sm1760010pfn.72.2019.08.14.22.59.06
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 14 Aug 2019 22:59:08 -0700 (PDT)
-From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: pierre-yves.mordret@st.com, mcoquelin.stm32@gmail.com,
- alexandre.torgue@st.com, linux-i2c@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] i2c: stm32f7: Make structure stm32f7_i2c_algo constant
-Date: Thu, 15 Aug 2019 11:28:57 +0530
-Message-Id: <20190815055857.1944-1-nishkadg.linux@gmail.com>
-X-Mailer: git-send-email 2.19.1
+ id 1hy8o9-0004xx-8r; Thu, 15 Aug 2019 06:00:22 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 14 Aug 2019 23:00:20 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,388,1559545200"; d="scan'208";a="352148825"
+Received: from pipin.fi.intel.com (HELO pipin) ([10.237.72.175])
+ by orsmga005.jf.intel.com with ESMTP; 14 Aug 2019 23:00:17 -0700
+From: Felipe Balbi <balbi@kernel.org>
+To: Vicente Bergas <vicencb@gmail.com>
+Subject: Re: kexec on rk3399
+In-Reply-To: <4fc3e5b5-31fe-41f6-8031-b37454f21437@gmail.com>
+References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
+ <c6993a1e-6fc2-44ab-b59e-152142e2ff4d@gmail.com> <87v9uzaocj.fsf@gmail.com>
+ <4fc3e5b5-31fe-41f6-8031-b37454f21437@gmail.com>
+Date: Thu, 15 Aug 2019 09:00:16 +0300
+Message-ID: <87sgq3t1cf.fsf@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_225911_894145_C4748A9C 
-X-CRM114-Status: GOOD (  10.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_230021_355232_89FA40F5 
+X-CRM114-Status: GOOD (  14.64  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (nishkadg.linux[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,39 +64,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
+Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Static structure stm32f7_i2c_algo, of type i2c_algorithm, is used only
-when it is assigned to constant field algo of a variable having type
-i2c_adapter. As stm32f7_i2c_algo is therefore never modified, make it
-const as well to protect it from unintended modification.
-Issue found with Coccinelle.
 
-Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
----
- drivers/i2c/busses/i2c-stm32f7.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Hi,
 
-diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
-index 266d1c269b83..d36cf08461f7 100644
---- a/drivers/i2c/busses/i2c-stm32f7.c
-+++ b/drivers/i2c/busses/i2c-stm32f7.c
-@@ -1809,7 +1809,7 @@ static u32 stm32f7_i2c_func(struct i2c_adapter *adap)
- 		I2C_FUNC_SMBUS_I2C_BLOCK;
- }
- 
--static struct i2c_algorithm stm32f7_i2c_algo = {
-+static const struct i2c_algorithm stm32f7_i2c_algo = {
- 	.master_xfer = stm32f7_i2c_xfer,
- 	.smbus_xfer = stm32f7_i2c_smbus_xfer,
- 	.functionality = stm32f7_i2c_func,
+Vicente Bergas <vicencb@gmail.com> writes:
+>> Vicente Bergas <vicencb@gmail.com> writes:
+>>> On Monday, July 22, 2019 4:31:27 PM CEST, Vicente Bergas wrote:
+>>>> Hi, i have been running linux on rk3399 booted with kexec fine until 5.2
+>>>> From 5.2 onwards, there are memory corruption issues as reported here:
+>>>> http://lkml.iu.edu/hypermail/linux/kernel/1906.2/07211.html
+>>>> kexec has been identified as the principal reason for the issues.
+>>>> 
+>>>> It turns out that kexec has never worked reliably on this platform, ...
+>>> 
+>>> Thank you all for your suggestions on where the issue could be.
+>>> 
+>>> It seems that it was the USB driver.
+>>> Now using v5.2.8 booted with kexec from v5.2.8 with a workaround and
+>>> so far so good. It is being tested on the Sapphire board.
+>>> 
+>>> The workaround is:
+>>> --- a/drivers/usb/dwc3/dwc3-of-simple.c
+>>> +++ b/drivers/usb/dwc3/dwc3-of-simple.c
+>>> @@ -133,6 +133,13 @@
+>>>  	return 0;
+>>>  }
+>>>  
+>>> +static void dwc3_of_simple_shutdown(struct platform_device *pdev)
+>>> +{
+>>> +	struct dwc3_of_simple *simple = platform_get_drvdata(pdev);
+>>> +
+>>> +	reset_control_assert(simple->resets);
+>>> +}
+>>> +
+>>>  static int __maybe_unused dwc3_of_simple_runtime_suspend(struct device 
+>>> *dev)
+>>>  {
+>>>  	struct dwc3_of_simple	*simple = dev_get_drvdata(dev);
+>>> @@ -190,6 +197,7 @@
+>>>  static struct platform_driver dwc3_of_simple_driver = {
+>>>  	.probe		= dwc3_of_simple_probe,
+>>>  	.remove		= dwc3_of_simple_remove,
+>>> +	.shutdown	= dwc3_of_simple_shutdown,
+>>>  	.driver		= {
+>>>  		.name	= "dwc3-of-simple",
+>>>  		.of_match_table = of_dwc3_simple_match,
+>>> 
+>>> If this patch is OK after review i can resubmit it as a pull request.
+>>
+>> not a pull request, just send a patch using git send-email
+>>
+>>> Should a similar change be applied to drivers/usb/dwc3/core.c ?
+>>
+>> Is it necessary? We haven't had any bug reports regarding that. Also, if
+>> we have reset control support in the core driver, why do we need it in
+>> of_simple? Seems like of_simple could just rely on what core does.
+>
+> the workaround has been tested patching only core.c with
+> --- a/drivers/usb/dwc3/core.c
+> +++ b/drivers/usb/dwc3/core.c
+> @@ -1561,6 +1561,13 @@
+>  	return 0;
+>  }
+>  
+> +static void dwc3_shutdown(struct platform_device *pdev)
+> +{
+> +	struct dwc3 *dwc = platform_get_drvdata(pdev);
+> +
+> +	reset_control_assert(dwc->reset);
+> +}
+> +
+>  #ifdef CONFIG_PM
+>  static int dwc3_core_init_for_resume(struct dwc3 *dwc)
+>  {
+> @@ -1866,6 +1873,7 @@
+>  static struct platform_driver dwc3_driver = {
+>  	.probe		= dwc3_probe,
+>  	.remove		= dwc3_remove,
+> +	.shutdown	= dwc3_shutdown,
+>  	.driver		= {
+>  		.name	= "dwc3",
+>  		.of_match_table	= of_match_ptr(of_dwc3_match),
+>
+> and leaving dwc3-of-simple.c as is, the issue persisted.
+
+That's because your reset controller is not passed to dwc3 core, only to
+your glue layer.
+
 -- 
-2.19.1
-
+balbi
 
 _______________________________________________
 linux-arm-kernel mailing list
