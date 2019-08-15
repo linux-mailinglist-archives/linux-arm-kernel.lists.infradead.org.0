@@ -2,79 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F35EA8F4D7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 21:39:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DB6D8F52E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 21:56:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0SBXt1+M6xhJO4QtkjDM3Lfs4pVRSqZEBXm439UQpkc=; b=VaVS7IfTHJh0CE
-	flyYIDWTs0JB2uyn6R9VZqGF7o1BTOJMU/FaLT3KfpUw+NXn2MrxyVYgxD47iLG2pY2aYtQo/Y3Cr
-	4EIrviOq26r+XMlexe1bIJ3Ey+XKBsrbd9vcyWaayMfGA7z6JJmuCaMzPMNjGSwbUj0lBcitn3VBM
-	AZwv4xOnHECJ8Xr/pa4/0InxDsYVyTp5tq4o+ecVwMAf41t7VLR7QNtUKbZB21N7J6U2zKJXwU/7O
-	d1MUF3fs38YrnxmgTRAkQ7PeGP8IkJXROb7LPJaZSPExNNbohgUOFaVid3xgTeyRp5gczTHfvZNgB
-	IL1InmBQjRlzNN/6OJxA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CsAKR8vgIT+//A/Au72njn0ckf9ZqGzxWBIxq7LHau4=; b=kJN/T2gZGp3nCNU80jcDyugEd
+	p3kqIXdpMMMK6HXxflrI6wlZqJaKBYpHKQkUBNEkOeItKhshOTU10pBAM1+qh8nxJoqp0LBL60R6q
+	3j0IkQ9auUSDaqBZSgAO/qsKNFX+t+wWFn779MVhoL0F5PZS6tHiE2Z+SgmsnnnFB5FOxRA2Up4Eo
+	2Npg6PjXmtIEN6QK5hqcZzdlKg6Yx0KdnmkYcnMjfY3YUIxgtkOlNZUB+090SFgw1MQNiUGti2N4q
+	7BKGixsJYBkpvj5AdnTuk7MSJnFnreC4HPARjj2KP6m5fQPaCbgByKLd9n8xl1vCU9Bxr1SoAlL2E
+	QumKygxRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyLap-0002pt-Ma; Thu, 15 Aug 2019 19:39:27 +0000
-Received: from mail-qt1-f193.google.com ([209.85.160.193])
+	id 1hyLrW-0008WQ-2p; Thu, 15 Aug 2019 19:56:42 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyLaT-0002p8-KT
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 19:39:07 +0000
-Received: by mail-qt1-f193.google.com with SMTP id z4so3592998qtc.3
+ id 1hyLrG-0008VT-Mn
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 19:56:30 +0000
+Received: by mail-wr1-x443.google.com with SMTP id k2so3273575wrq.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 12:39:03 -0700 (PDT)
+ Thu, 15 Aug 2019 12:56:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=g9gYXoDI8x/e6fYrmXGn/1ayuYBgMKowuhsSXyNfgGk=;
+ b=BxFVHZYKa5FJrzI4dPgxhphpWrPJX2/swt830QW256gBUwXxM+yJC5IcwYLsVK7nDX
+ YJfjPvRIeaA5/1BBNJXoqsgHTewr/PGetGNR+nY8LcUb106z3sVc1BGnzwC66iGgyvBi
+ +mZLEhnELdlHg5W9w2aWb5ElMS7FgSEkhszGxlzux9iKt0MowKuNOJLEMUsF+38EitOx
+ aWGA01aulScsS+DFbHrtKj7iyTuIPYhoHtdzLh8PvOBthQUYT/SsM7uXPDDj4Q1D9eSV
+ 8Sy3e80DmLJG96aLV8uckZ39ffojhwRHHccpX8EVLTaFDo7W+D2mPyxmub0qfUW0foGm
+ Ocvg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=E1uPy8KdAoiEgff6O2fYBXQ3Fn6UlM0L6zfIpxvfPBI=;
- b=Jqozibn0mcFnmWKWM4wUSO4iLYV/M/DeoBHawx+lqgCGDfedynh70sfOeFrLHn0Z1f
- QfoVA0dW+gRf/+wmnCGgg/c/4jjIccpqJiNlxhOChZn0LuIvsXScgcG4M9yBf2gTSwLe
- d65kGo2yMKRIqo8YPsrBYsk7vuLzq7YsegcYQ5AnB2+kkQofS7m7/rQzAJIgTyuFYidM
- b/45vv4rHntG5jnQBf/VPOllPePzDccNo3YtPV2ebZJCAq9R+05BAITracHX2v7icb9l
- avtvsW4zhgLovlvQYZe3OGYoYQNxYjsPG0az9AsTPT/2fxmeveI49gYxaTtewSEY4gb1
- E7Ng==
-X-Gm-Message-State: APjAAAWnMt0SicM6BaZKNE23gtnYB2vG63yHcuhdDKOoXfQUsom85AB1
- E6yq6iuX+WHtlDUxQeOBYRfmeQSk1HdydXG6+Ac=
-X-Google-Smtp-Source: APXvYqxqTY8ftYo1EUWFqO+wE8ZQTXXaXX7aeplKk/nDWAyNr8WQSB0twRkA82A5Gyv2tMBQ6tV5GMhK78egWxkdSCU=
-X-Received: by 2002:ac8:f99:: with SMTP id b25mr5374344qtk.142.1565897942632; 
- Thu, 15 Aug 2019 12:39:02 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=g9gYXoDI8x/e6fYrmXGn/1ayuYBgMKowuhsSXyNfgGk=;
+ b=bV4jZ6FGQXg0jPmGz689PerstajvJGtG0esG4/s6WwdDGR0dy/WC8cHuWRYGOBf9Gd
+ 81vLxWJdNnodVNsUEuX45UsiFCtjE7Ruk9a/y4mdwaF/s6GtBBIPI7W6sMuQkvXVF+Sm
+ izNLjiho0PGGf2j5JBOnUh7h4sxrVmAej0BbPvRNSYdP2xifbgUkWjvZVAOtwTxvpH70
+ YUYZXfQOFjfKf5XRyohnyFR+niypWFvAGuLiqgQqBuudhCgzEJGWU+9orm8ZNoPLgMz7
+ 6pB5QfzT/AA69xBhAwjjK2Q2s+X1dyy/DKp8iBOnbARS7P4mNIjY7OXfaA4Cl2NGBElr
+ D1yw==
+X-Gm-Message-State: APjAAAW5SK7usl13/4smzYyPOsDqvhSbI3mvucQVZKJVNMnASjIVRYJW
+ 96fl8NuY/wbAOJ6jE4762aM=
+X-Google-Smtp-Source: APXvYqxCRww3HZkI3tRakEQwmbHT9qSGZgIG7df34SLn3B0yW2ltqN9deIrgqnjQ87uU/8wJDAOtvQ==
+X-Received: by 2002:adf:ffc2:: with SMTP id x2mr3219310wrs.338.1565898984599; 
+ Thu, 15 Aug 2019 12:56:24 -0700 (PDT)
+Received: from [172.30.88.191] (sjewanfw1-nat.mentorg.com. [139.181.7.34])
+ by smtp.gmail.com with ESMTPSA id h2sm1762739wmb.28.2019.08.15.12.56.17
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 15 Aug 2019 12:56:23 -0700 (PDT)
+Subject: Re: [PATCH 04/22] media: Move v4l2_fwnode_parse_link from v4l2 to
+ driver base
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <20190805233505.21167-1-slongerbeam@gmail.com>
+ <20190805233505.21167-5-slongerbeam@gmail.com>
+ <CAHp75VcOh8bOf_s6t0ehwGtcYn64QFGj303SVvpHrztEOhTRgg@mail.gmail.com>
+ <4750b347-b421-6569-600f-0ced8406460e@gmail.com>
+ <20190814103054.GI13294@shell.armlinux.org.uk>
+ <e0a19469-af9d-d9de-499f-4ffbf04542b3@gmail.com>
+ <20190814220437.GJ13294@shell.armlinux.org.uk>
+ <1842bf8f-4f97-6294-41db-74f9f8e2befd@gmail.com>
+ <20190814231509.GK13294@shell.armlinux.org.uk>
+From: Steve Longerbeam <slongerbeam@gmail.com>
+Message-ID: <9b9ca684-9309-cadd-2e58-9ae73162a807@gmail.com>
+Date: Thu, 15 Aug 2019 12:56:15 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190731195713.3150463-1-arnd@arndb.de>
- <20190731225303.GC1330@shell.armlinux.org.uk>
- <CAK8P3a1Lgbz9RwVaOgNq=--gwvEG70tUi67XwsswjgnXAX6EhA@mail.gmail.com>
- <CAK8P3a0=GrjM_HOBgqy5V3pOsA6w1EDOtEQO9dZG2Cw+-2niaw@mail.gmail.com>
- <b43c3d60-b675-442c-c549-25530cfbffe3@gmail.com>
-In-Reply-To: <b43c3d60-b675-442c-c549-25530cfbffe3@gmail.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 15 Aug 2019 21:38:46 +0200
-Message-ID: <CAK8P3a3ry0S-yhE75hZx1SawYuVzY=NgnNBei101F6+HxBfE3g@mail.gmail.com>
-Subject: Re: [PATCH 00/14] ARM: move lpc32xx and dove to multiplatform
-To: Sylvain Lemieux <slemieux.tyco@gmail.com>
+In-Reply-To: <20190814231509.GK13294@shell.armlinux.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_123905_672781_3312DE05 
-X-CRM114-Status: GOOD (  12.90  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190815_125626_770069_D460E5ED 
+X-CRM114-Status: GOOD (  25.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.193 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.193 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
+ provider (slongerbeam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,38 +110,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
- Jason Cooper <jason@lakedaemon.net>, "David S. Miller" <davem@davemloft.net>,
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Michal Simek <michal.simek@xilinx.com>,
+ "open list:ACPI" <linux-acpi@vger.kernel.org>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Len Brown <lenb@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ "moderated list:ARM/ZYNQ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Hyun Kwon <hyun.kwon@xilinx.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Gregory Clement <gregory.clement@bootlin.com>,
- USB list <linux-usb@vger.kernel.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Vladimir Zapolskiy <vz@mleia.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- SoC Team <soc@kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
- Guenter Roeck <linux@roeck-us.net>, linux-serial@vger.kernel.org,
- Networking <netdev@vger.kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+ open list <linux-kernel@vger.kernel.org>,
+ Jacopo Mondi <jacopo+renesas@jmondi.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>,
+ Enrico Weigelt <info@metux.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 8:32 PM Sylvain Lemieux <slemieux.tyco@gmail.com> wrote:
-> On 8/15/19 9:11 AM, Arnd Bergmann wrote:
-> > On Thu, Aug 1, 2019 at 9:33 AM Arnd Bergmann <arnd@arndb.de> wrote:
-> > I applied patches 12 and 13 into the soc tree now. There are some
-> > other pending multiplatform conversions (iop32x, ep93xx, lpc32xx,
-> > omap1), but it looks like none of those will be complete for 5.4.
+
+
+On 8/14/19 4:15 PM, Russell King - ARM Linux admin wrote:
+> On Wed, Aug 14, 2019 at 04:00:30PM -0700, Steve Longerbeam wrote:
+>>
+>> On 8/14/19 3:04 PM, Russell King - ARM Linux admin wrote:
+>>> On Wed, Aug 14, 2019 at 12:04:41PM -0700, Steve Longerbeam wrote:
+>>>> On 8/14/19 3:30 AM, Russell King - ARM Linux admin wrote:
+>>>>> On Tue, Aug 06, 2019 at 09:53:41AM -0700, Steve Longerbeam wrote:
+>>>>>> The full patchset doesn't seem to be up yet, but see [1] for the cover
+>>>>>> letter.
+>>>>> Was the entire series copied to the mailing lists, or just selected
+>>>>> patches?  I only saw 4, 9, 11 and 13-22 via lakml.
+>>>> The whole series was posted to the linux-media ML, see [1]. At the time,
+>>>> none of the linux-media ML archives had the whole series.
+>>>>
+>>>>> In the absence of the other patches, will this solve imx-media binding
+>>>>> the internal subdevs of sensor devices to the CSI2 interface?
+>>>> "internal subdevs of sensor devices" ?? That doesn't make any sense.
+>>> Sorry, but it makes complete sense when you consider that sensor
+>>> devices may have more than one subdev, but there should be only one
+>>> that is the "output" to whatever the camera is attached to.  The
+>>> other subdevs are internal to the sensor.
+>> Ah, thanks for the clarification. Yes, by "internal subdevs" I understand
+>> what you mean now. The adv748x and smiapp are examples.
+>>
+>>> subdevs are not purely the remit of SoC drivers.
+>> So there is no binding of internal subdevs to the receiver CSI-2. The
+>> receiver CSI-2 subdev will create media links to the subdev that has an
+>> externally exposed fwnode endpoint that connects with the CSI-2 sink pad.
+> Maybe - with 5.2, I get:
 >
-> I think the patchset (v2) for the LPC32xx is ready for 5.4
-> ([PATCH v2 00/13] v2: ARM: move lpc32xx to multiplatform)
+> - entity 15: imx6-mipi-csi2 (5 pads, 6 links)
+>               type V4L2 subdev subtype Unknown flags 0
+>               device node name /dev/v4l-subdev2
+>          pad0: Sink
+> ...
+>                  <- "imx219 0-0010":0 []
+>                  <- "imx219 pixel 0-0010":0 []
+>
+> Adding some debug in gives:
+>
+> [   11.963362] imx-media: imx_media_create_of_links() for imx6-mipi-csi2
+> [   11.963396] imx-media: create_of_link(): /soc/aips-bus@2000000/iomuxc-gpr@20e0000/ipu1_csi0_mux
+> [   11.963422] imx-media: create_of_link(): /soc/ipu@2400000
+> [   11.963450] imx-media: create_of_link(): /soc/ipu@2800000
+> [   11.963478] imx-media: create_of_link(): /soc/aips-bus@2000000/iomuxc-gpr@20e0000/ipu2_csi1_mux
+> [   11.963489] imx-media: imx6-mipi-csi2:4 -> ipu2_csi1_mux:0
+> [   11.963522] imx-media: create_of_link(): /soc/aips-bus@2100000/i2c@21a0000/camera@10
+> [   11.963533] imx-media: imx219 0-0010:0 -> imx6-mipi-csi2:0
+> [   11.963549] imx-media: imx_media_create_of_links() for imx219 pixel 0-0010
+> [   11.963577] imx-media: create_of_link(): /soc/aips-bus@2100000/mipi@21dc000
+> [   11.963587] imx-media: imx219 pixel 0-0010:0 -> imx6-mipi-csi2:0
+> [   11.963602] imx-media: imx_media_create_of_links() for imx219 0-0010
+>
+> Note that it's not created by imx6-mipi-csi2, but by imx-media delving
+> around in the imx219 subdevs.
+>
+>  From what I can see, smiapp does the same thing that I do in imx219 -
+> sets the subdev->dev member to point at the struct device, which then
+> means that v4l2_device_register_subdev() will associate the same fwnode
+> with both "imx219 pixel 0-0010" and "imx219 0-0010".
 
-Good point. I've merged these into the arm/soc branch now.
+Ok, understood.
 
-     Arnd
+I realize imx_media_create_of_link() is a bit intrusive, and that's one 
+of the things I'm trying to get rid of in this patchset. Unfortunately 
+it's there for a reason which is described in patch 0021. But to explain 
+here, the imx6-mipi-csi2 receiver outputs its four virtual channels on 
+four separate source pads, and those connect to four different 
+subdevices (video mux's and CSI's), and the problem is that only the 
+first subdev that adds imx6-mipi-csi2 to its notifier asd list will get 
+a notifier bind() callback (where links can be created to 
+imx6-mipi-csi2) -- the other subdevs don't contain it in their asd lists 
+so they never create the links to imx6-mipi-csi2. So until the 
+requirement in v4l2-async that no notifiers can contain the same asd in 
+its list is relaxed, this function will have to remain, but I can make 
+it less intrusive (only create the missing links from imx6-mipi-csi2). 
+I'm not able to find a cleaner workaround at the moment.
+
+Steve
+
 
 _______________________________________________
 linux-arm-kernel mailing list
