@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 907708E76A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:51:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFA7D8E784
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:56:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iC6//qN7UHEBCdiG95UricqINvD2k45KLt1ZKSw/1Xg=; b=CzYd3j8Bbc+7kv
-	3JKwKyzsbGAwp1r9XMe6ZfN2F6H7humgUKMaDMixQTI7OmDAE/L8HmmQ/m73+LzyiXGi7q/pJ87/c
-	sH6MRjUZQLKESV613mg0/OIab4QKQbDifaLw48EAEvjjcHRajhZM4iCV1oyN6H78KasQihOP1WYsV
-	ZsqG7ragqIhDmmFslVIs9dDTgpB+bcXPG8JsabYEBv1bP+ICxmZJRiH0FRvppNOSBvSvgqnIM2Fx8
-	QeFK3qlV1QmFxxh4CkjoR7pdv15qWjSvA5BtYDuoZTr5eMR7/+MhlNK5IJmCTBAskr/ZIGgB/XTUJ
-	2IlO/T2REFi7IAMuotPw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+ZGHJZXJ/yJe4nnB76colIqAXwEPCnNe9vNwjMJFq/I=; b=rKqa3wYyGy2B4s
+	YPSYX2aOHkQJSDvNv/3ImE1BfGeInPlrYGKLghMh8dX5arUMg3Gsesam9NR4vatCXk/niPCKgsQjJ
+	7Zw8PKuZqX7W/PxOBw5xqycPCHie8movLrKNqFgQLE87vVnPEDn32Lt27poPpJLHqGDB2AE43wFzG
+	pDuoOUxhRHVLBfyw2Q952oyvE+G+KY8w9B/jKgGxw6N0i1g3rJMzqcgzRRiG76rzFKSSOy0JCST5X
+	ivkvRes0rxGRZZt+eP2zo1FgNxtPBQb7Moudbb2CPinrLW3LYGPsN0H/MLn1FM11WAZ+54D3V+k0w
+	M03zq9r9VgNL5hW7Z6Hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyBTG-0001vg-Hz; Thu, 15 Aug 2019 08:50:58 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hyBYT-0003p5-6W; Thu, 15 Aug 2019 08:56:21 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyBQm-00075E-IP; Thu, 15 Aug 2019 08:48:26 +0000
-X-UUID: 8f03fac413c842349b801813fe5e565d-20190815
-X-UUID: 8f03fac413c842349b801813fe5e565d-20190815
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <yong.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1661633930; Thu, 15 Aug 2019 00:47:59 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 15 Aug 2019 01:47:58 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 15 Aug 2019 16:47:53 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 15 Aug 2019 16:47:50 +0800
-Message-ID: <1565858869.12818.51.camel@mhfsdcap03>
-Subject: Re: [PATCH v9 08/21] iommu/io-pgtable-arm-v7s: Extend MediaTek 4GB
- Mode
-From: Yong Wu <yong.wu@mediatek.com>
-To: Will Deacon <will@kernel.org>
-Date: Thu, 15 Aug 2019 16:47:49 +0800
-In-Reply-To: <20190814144059.ruyc45yoqkwpbuga@willie-the-truck>
-References: <1565423901-17008-1-git-send-email-yong.wu@mediatek.com>
- <1565423901-17008-9-git-send-email-yong.wu@mediatek.com>
- <20190814144059.ruyc45yoqkwpbuga@willie-the-truck>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hyBYH-0003oh-PP
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:56:11 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 15 Aug 2019 01:56:08 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,388,1559545200"; d="scan'208";a="181821709"
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.122])
+ ([10.237.72.122])
+ by orsmga006.jf.intel.com with ESMTP; 15 Aug 2019 01:56:03 -0700
+Subject: Re: [PATCH v5] perf machine: arm/arm64: Improve completeness for
+ kernel address space
+To: Leo Yan <leo.yan@linaro.org>, Arnaldo Carvalho de Melo <acme@kernel.org>, 
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ Alexei Starovoitov <ast@kernel.org>, Daniel Borkmann <daniel@iogearbox.net>,
+ Martin KaFai Lau <kafai@fb.com>, Song Liu <songliubraving@fb.com>,
+ Yonghong Song <yhs@fb.com>, linux-kernel@vger.kernel.org,
+ netdev@vger.kernel.org, bpf@vger.kernel.org,
+ clang-built-linux@googlegroups.com
+References: <20190815082521.16885-1-leo.yan@linaro.org>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <d874e6b3-c115-6c8c-bb12-160cfd600505@intel.com>
+Date: Thu, 15 Aug 2019 11:54:54 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 5D5FC90C041DBBD20C3DCD33A1B62E596CBBC6711A0F58C204785566B9B413132000:8
-X-MTK: N
+In-Reply-To: <20190815082521.16885-1-leo.yan@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_014824_657797_31914765 
-X-CRM114-Status: GOOD (  36.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190815_015609_835932_643C5F43 
+X-CRM114-Status: GOOD (  31.62  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,250 +77,209 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream@mediatek.com, chao.hao@mediatek.com,
- Joerg Roedel <joro@8bytes.org>, linux-kernel@vger.kernel.org, Evan
- Green <evgreen@chromium.org>, Tomasz Figa <tfiga@google.com>,
- iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- ming-fan.chen@mediatek.com, anan.sun@mediatek.com,
- Robin Murphy <robin.murphy@arm.com>, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Peter Zijlstra <peterz@infradead.org>, coresight@lists.linaro.org,
+ linux-arm-kernel@lists.infradead.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-08-14 at 15:41 +0100, Will Deacon wrote:
-> Hi Yong Wu,
+On 15/08/19 11:25 AM, Leo Yan wrote:
+> Arm and arm64 architecture reserve some memory regions prior to the
+> symbol '_stext' and these memory regions later will be used by device
+> module and BPF jit.  The current code misses to consider these memory
+> regions thus any address in the regions will be taken as user space
+> mode, but perf cannot find the corresponding dso with the wrong CPU
+> mode so we misses to generate samples for device module and BPF
+> related trace data.
 > 
-> Sorry, but I'm still deeply confused by this patch.
-
-Sorry for this. the "4GB mode" really is a bit odd...
-
+> This patch parse the link scripts to get the memory size prior to start
+> address and reduce this size from 'machine>->kernel_start', then can
+> get a fixed up kernel start address which contain memory regions for
+> device module and BPF.  Finally, machine__get_kernel_start() can reflect
+> more complete kernel memory regions and perf can successfully generate
+> samples.
 > 
-> On Sat, Aug 10, 2019 at 03:58:08PM +0800, Yong Wu wrote:
-> > MediaTek extend the arm v7s descriptor to support the dram over 4GB.
-> > 
-> > In the mt2712 and mt8173, it's called "4GB mode", the physical address
-> > is from 0x4000_0000 to 0x1_3fff_ffff, but from EMI point of view, it
-> > is remapped to high address from 0x1_0000_0000 to 0x1_ffff_ffff, the
-> > bit32 is always enabled. thus, in the M4U, we always enable the bit9
-> > for all PTEs which means to enable bit32 of physical address. Here is
-> > the detailed remap relationship in the "4GB mode":
-> > CPU PA         ->    HW PA
-> > 0x4000_0000          0x1_4000_0000 (Add bit32)
-> > 0x8000_0000          0x1_8000_0000 ...
-> > 0xc000_0000          0x1_c000_0000 ...
-> > 0x1_0000_0000        0x1_0000_0000 (No change)
+> The reason for parsing the link scripts is Arm architecture changes text
+> offset dependent on different platforms, which define multiple text
+> offsets in $kernel/arch/arm/Makefile.  This offset is decided when build
+> kernel and the final value is extended in the link script, so we can
+> extract the used value from the link script.  We use the same way to
+> parse arm64 link script as well.  If fail to find the link script, the
+> pre start memory size is assumed as zero, in this case it has no any
+> change caused with this patch.
 > 
-> So in this example, there are no PAs below 0x4000_0000 yet you later
-> add code to deal with that:
+> Below is detailed info for testing this patch:
 > 
-> > +	/* Workaround for MTK 4GB Mode: Add BIT32 only when PA < 0x4000_0000.*/
-> > +	if (cfg->oas == ARM_V7S_MTK_4GB_OAS && paddr < 0x40000000UL)
-> > +		paddr |= BIT_ULL(32);
+> - Install or build LLVM/Clang;
 > 
-> Why? Mainline currently doesn't do anything like this for the "4gb mode"
-> support as far as I can tell. In fact, we currently unconditionally set
-> bit 32 in the physical address returned by iova_to_phys() which wouldn't
-> match your CPU PAs listed above, so I'm confused about how this is supposed
-> to work.
-
-Actually current mainline have a bug for this. So I tried to use another
-special patch[1] for it in v8.
-
-But the issue is not critical since MediaTek multimedia consumer(v4l2
-and drm) don't call iommu_iova_to_phys currently.
-
+> - Configure perf with ~/.perfconfig:
 > 
-> The way I would like this quirk to work is that the io-pgtable code
-> basically sets bit 9 in the pte when bit 32 is set in the physical address,
-> and sets bit 4 in the pte when bit 33 is set in the physical address. It
-> would then do the opposite when converting a pte to a physical address.
+>   root@debian:~# cat ~/.perfconfig
+>   # this file is auto-generated.
+>   [llvm]
+>           clang-path = /mnt/build/llvm-build/build/install/bin/clang
+>           kbuild-dir = /mnt/linux-kernel/linux-cs-dev/
+>           clang-opt = "-g"
+>           dump-obj = true
 > 
-> That way, your driver can call the page table code directly with the high
-> addresses and we don't have to do any manual offsetting or range checking
-> in the page table code.
-
-In this case, the mt8183 can work successfully while the "4gb
-mode"(mt8173/mt2712) can not.
-
-In the "4gb mode", As the remap relationship above, we should always add
-bit32 in pte as we did in [2]. and need add bit32 in the
-"iova_to_phys"(Not always add.). That means the "4gb mode" has a special
-flow:
-a. Always add bit32 in paddr_to_iopte.
-b. Add bit32 only when PA < 0x40000000 in iopte_to_paddr.
-
+>   [trace]
+>           show_zeros = yes
+>           show_duration = no
+>           no_inherit = yes
+>           show_timestamp = no
+>           show_arg_names = no
+>           args_alignment = 40
+>           show_prefix = yes
 > 
-> Please can you explain to me why the diff below doesn't work on top of
-> this series?
-
-The diff below is just I did in v8[3]. The different is that I move the
-"4gb mode" special flow in the mtk_iommu.c in v8, the code is like
-[4]below. When I sent v9, I found that I can distinguish the "4gb mode"
-with "oas == 33" in v7s. then I can "simply" add the 4gb special flow[5]
-based on your diff.
-
-
->  I'm happy to chat on IRC if you think it would be easier,
-> because I have a horrible feeling that we've been talking past each other
-> and I'd like to see this support merged for 5.4.
-
-Thanks very much for your view, I'm sorry that I don't have IRC. I will
-send the next version quickly if we have a conclusion here. Then Which
-way is better? If you'd like keep the pagetable code clean, I will add
-the "4gb mode" special flow into mtk_iommu.c.
-
-Thanks.
-
-
-[1]http://lists.infradead.org/pipermail/linux-mediatek/2019-June/020988.html
-[2]
-https://elixir.bootlin.com/linux/v5.3-rc4/source/drivers/iommu/io-pgtable-arm-v7s.c#L299
-[3]http://lists.infradead.org/pipermail/linux-mediatek/2019-June/020991.html
-
-[4]======4gb mode special flow in mtk_iommu.c======================
-
-+#define MTK_IOMMU_4GB_MODE_REMAP_BASE	 0x140000000UL
-
-@@ -380,12 +379,16 @@ static int mtk_iommu_map(struct iommu_domain
-*domain, unsigned long iova,
- 			 phys_addr_t paddr, size_t size, int prot)
- {
- 	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
-+	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
- 	unsigned long flags;
- 	int ret;
- 
-+	/* The "4GB mode" M4U physically can not use the lower remap of Dram.
-*/
-+	if (data->enable_4GB)
-+		paddr |= BIT_ULL(32);
-+
- 	spin_lock_irqsave(&dom->pgtlock, flags);
--	ret = dom->iop->map(dom->iop, iova, paddr & DMA_BIT_MASK(32),
--			    size, prot);
-+	ret = dom->iop->map(dom->iop, iova, paddr, size, prot);
- 	spin_unlock_irqrestore(&dom->pgtlock, flags);
- 
- 	return ret;
-@@ -422,8 +425,8 @@ static phys_addr_t mtk_iommu_iova_to_phys(struct
-iommu_domain *domain,
- 	pa = dom->iop->iova_to_phys(dom->iop, iova);
- 	spin_unlock_irqrestore(&dom->pgtlock, flags);
- 
--	if (data->enable_4GB && pa < MTK_IOMMU_4GB_MODE_REMAP_BASE)
--		pa |= BIT_ULL(32);
-+	if (data->enable_4GB && pa >= MTK_IOMMU_4GB_MODE_REMAP_BASE)
-+		pa &= ~BIT_ULL(32);
- 
- 	return pa;
- }
-=============================================================
-
-[5]:
-=========================================================
-diff --git a/drivers/iommu/io-pgtable-arm-v7s.c
-b/drivers/iommu/io-pgtable-arm-v7s.c
-index 78fd11e..8e974a5 100644
---- a/drivers/iommu/io-pgtable-arm-v7s.c
-+++ b/drivers/iommu/io-pgtable-arm-v7s.c
-@@ -184,7 +184,7 @@ static arm_v7s_iopte paddr_to_iopte(phys_addr_t
-paddr, int lvl,
- 	arm_v7s_iopte pte = paddr & ARM_V7S_LVL_MASK(lvl);
- 
- 	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB) {
--		if (paddr & BIT_ULL(32))
-+		if (paddr & BIT_ULL(32) || cfg->oas == 33)
- 			pte |= ARM_V7S_ATTR_MTK_PA_BIT32;
- 		if (paddr & BIT_ULL(33))
- 			pte |= ARM_V7S_ATTR_MTK_PA_BIT33;
-@@ -207,7 +207,9 @@ static phys_addr_t iopte_to_paddr(arm_v7s_iopte pte,
-int lvl,
- 
- 	paddr = pte & mask;
- 	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB) {
--		if (pte & ARM_V7S_ATTR_MTK_PA_BIT32)
-+		if (cfg->oas == 33 && paddr < 0x40000000UL)
-+			paddr |= BIT_ULL(32);
-+		else if (pte & ARM_V7S_ATTR_MTK_PA_BIT32)
- 			paddr |= BIT_ULL(32);
- 		if (pte & ARM_V7S_ATTR_MTK_PA_BIT33)
- 			paddr |= BIT_ULL(33);
-============================================================
-
+> - Run 'perf trace' command with eBPF event:
 > 
-> Will
+>   root@debian:~# perf trace -e string \
+>       -e $kernel/tools/perf/examples/bpf/augmented_raw_syscalls.c
 > 
-> --->8
+> - Read eBPF program memory mapping in kernel:
 > 
-> diff --git a/drivers/iommu/io-pgtable-arm-v7s.c b/drivers/iommu/io-pgtable-arm-v7s.c
-> index ab12ef5f8b03..d8d84617c822 100644
-> --- a/drivers/iommu/io-pgtable-arm-v7s.c
-> +++ b/drivers/iommu/io-pgtable-arm-v7s.c
-> @@ -184,7 +184,7 @@ static arm_v7s_iopte paddr_to_iopte(phys_addr_t paddr, int lvl,
->  	arm_v7s_iopte pte = paddr & ARM_V7S_LVL_MASK(lvl);
+>   root@debian:~# echo 1 > /proc/sys/net/core/bpf_jit_kallsyms
+>   root@debian:~# cat /proc/kallsyms | grep -E "bpf_prog_.+_sys_[enter|exit]"
+>   ffff00000008a0d0 t bpf_prog_e470211b846088d5_sys_enter  [bpf]
+>   ffff00000008c6a4 t bpf_prog_29c7ae234d79bd5c_sys_exit   [bpf]
+> 
+> - Launch any program which accesses file system frequently so can hit
+>   the system calls trace flow with eBPF event;
+> 
+> - Capture CoreSight trace data with filtering eBPF program:
+> 
+>   root@debian:~# perf record -e cs_etm/@tmc_etr0/ \
+> 	--filter 'filter 0xffff00000008a0d0/0x800' -a sleep 5s
+> 
+> - Decode the eBPF program symbol 'bpf_prog_f173133dc38ccf87_sys_enter':
+> 
+>   root@debian:~# perf script -F,ip,sym
+>   Frame deformatter: Found 4 FSYNCS
+>                   0 [unknown]
+>    ffff00000008a1ac bpf_prog_e470211b846088d5_sys_enter
+>    ffff00000008a250 bpf_prog_e470211b846088d5_sys_enter
+>                   0 [unknown]
+>    ffff00000008a124 bpf_prog_e470211b846088d5_sys_enter
+>                   0 [unknown]
+>    ffff00000008a14c bpf_prog_e470211b846088d5_sys_enter
+>    ffff00000008a13c bpf_prog_e470211b846088d5_sys_enter
+>    ffff00000008a14c bpf_prog_e470211b846088d5_sys_enter
+>                   0 [unknown]
+>    ffff00000008a180 bpf_prog_e470211b846088d5_sys_enter
+>                   0 [unknown]
+>    ffff00000008a1ac bpf_prog_e470211b846088d5_sys_enter
+>    ffff00000008a190 bpf_prog_e470211b846088d5_sys_enter
+>    ffff00000008a1ac bpf_prog_e470211b846088d5_sys_enter
+>    ffff00000008a250 bpf_prog_e470211b846088d5_sys_enter
+>                   0 [unknown]
+>    ffff00000008a124 bpf_prog_e470211b846088d5_sys_enter
+>                   0 [unknown]
+>    ffff00000008a14c bpf_prog_e470211b846088d5_sys_enter
+>                   0 [unknown]
+>    ffff00000008a180 bpf_prog_e470211b846088d5_sys_enter
+>    [...]
+> 
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+> Cc: Jiri Olsa <jolsa@redhat.com>
+> Cc: Namhyung Kim <namhyung@kernel.org>
+> Cc: Peter Zijlstra <peterz@infradead.org>
+> Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+> Cc: Adrian Hunter <adrian.hunter@intel.com>
+> Cc: coresight@lists.linaro.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> ---
+>  tools/perf/Makefile.config | 22 ++++++++++++++++++++++
+>  tools/perf/util/machine.c  | 15 ++++++++++++++-
+>  2 files changed, 36 insertions(+), 1 deletion(-)
+> 
+> diff --git a/tools/perf/Makefile.config b/tools/perf/Makefile.config
+> index e4988f49ea79..d7ff839d8b20 100644
+> --- a/tools/perf/Makefile.config
+> +++ b/tools/perf/Makefile.config
+> @@ -48,9 +48,20 @@ ifeq ($(SRCARCH),x86)
+>    NO_PERF_REGS := 0
+>  endif
 >  
->  	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT) {
-> -		if ((paddr & BIT_ULL(32)) || cfg->oas == ARM_V7S_MTK_4GB_OAS)
-> +		if (paddr & BIT_ULL(32))
->  			pte |= ARM_V7S_ATTR_MTK_PA_BIT32;
->  		if (paddr & BIT_ULL(33))
->  			pte |= ARM_V7S_ATTR_MTK_PA_BIT33;
-> @@ -206,17 +206,14 @@ static phys_addr_t iopte_to_paddr(arm_v7s_iopte pte, int lvl,
->  		mask = ARM_V7S_LVL_MASK(lvl);
+> +ARM_PRE_START_SIZE := 0
+> +
+>  ifeq ($(SRCARCH),arm)
+>    NO_PERF_REGS := 0
+>    LIBUNWIND_LIBS = -lunwind -lunwind-arm
+> +  ifneq ($(wildcard $(srctree)/arch/$(SRCARCH)/kernel/vmlinux.lds),)
+> +    # Extract info from lds:
+> +    #   . = ((0xC0000000)) + 0x00208000;
+> +    # ARM_PRE_START_SIZE := 0x00208000
+> +    ARM_PRE_START_SIZE := $(shell egrep ' \. \= \({2}0x[0-9a-fA-F]+\){2}' \
+> +      $(srctree)/arch/$(SRCARCH)/kernel/vmlinux.lds | \
+> +      sed -e 's/[(|)|.|=|+|<|;|-]//g' -e 's/ \+/ /g' -e 's/^[ \t]*//' | \
+> +      awk -F' ' '{printf "0x%x", $$2}' 2>/dev/null)
+> +  endif
+>  endif
 >  
->  	paddr = pte & mask;
-> -	if (cfg->oas == 32 || !(cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT))
-> -		return paddr;
+>  ifeq ($(SRCARCH),arm64)
+> @@ -58,8 +69,19 @@ ifeq ($(SRCARCH),arm64)
+>    NO_SYSCALL_TABLE := 0
+>    CFLAGS += -I$(OUTPUT)arch/arm64/include/generated
+>    LIBUNWIND_LIBS = -lunwind -lunwind-aarch64
+> +  ifneq ($(wildcard $(srctree)/arch/$(SRCARCH)/kernel/vmlinux.lds),)
+> +    # Extract info from lds:
+> +    #  . = ((((((((0xffffffffffffffff)) - (((1)) << (48)) + 1) + (0)) + (0x08000000))) + (0x08000000))) + 0x00080000;
+> +    # ARM_PRE_START_SIZE := (0x08000000 + 0x08000000 + 0x00080000) = 0x10080000
+> +    ARM_PRE_START_SIZE := $(shell egrep ' \. \= \({8}0x[0-9a-fA-F]+\){2}' \
+> +      $(srctree)/arch/$(SRCARCH)/kernel/vmlinux.lds | \
+> +      sed -e 's/[(|)|.|=|+|<|;|-]//g' -e 's/ \+/ /g' -e 's/^[ \t]*//' | \
+> +      awk -F' ' '{printf "0x%x", $$6+$$7+$$8}' 2>/dev/null)
+> +  endif
+
+So, that is not going to work if you take a perf.data file to a non-arm machine?
+
+How come you cannot use kallsyms to get the information?
+
+>  endif
 >  
-> -	if (pte & ARM_V7S_ATTR_MTK_PA_BIT33)
-> -		paddr |= BIT_ULL(33);
-> +	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT) {
-> +		if (pte & ARM_V7S_ATTR_MTK_PA_BIT32)
-> +			paddr |= BIT_ULL(32);
-> +		if (pte & ARM_V7S_ATTR_MTK_PA_BIT33)
-> +			paddr |= BIT_ULL(33);
-> +	}
->  
-> -	/* Workaround for MTK 4GB Mode: Add BIT32 only when PA < 0x4000_0000.*/
-> -	if (cfg->oas == ARM_V7S_MTK_4GB_OAS && paddr < 0x40000000UL)
-> -		paddr |= BIT_ULL(32);
-> -	else if (pte & ARM_V7S_ATTR_MTK_PA_BIT32)
-> -		paddr |= BIT_ULL(32);
->  	return paddr;
+> +CFLAGS += -DARM_PRE_START_SIZE=$(ARM_PRE_START_SIZE)
+> +
+>  ifeq ($(SRCARCH),csky)
+>    NO_PERF_REGS := 0
+>  endif
+> diff --git a/tools/perf/util/machine.c b/tools/perf/util/machine.c
+> index f6ee7fbad3e4..e993f891bb82 100644
+> --- a/tools/perf/util/machine.c
+> +++ b/tools/perf/util/machine.c
+> @@ -2687,13 +2687,26 @@ int machine__get_kernel_start(struct machine *machine)
+>  	machine->kernel_start = 1ULL << 63;
+>  	if (map) {
+>  		err = map__load(map);
+> +		if (err)
+> +			return err;
+> +
+>  		/*
+>  		 * On x86_64, PTI entry trampolines are less than the
+>  		 * start of kernel text, but still above 2^63. So leave
+>  		 * kernel_start = 1ULL << 63 for x86_64.
+>  		 */
+> -		if (!err && !machine__is(machine, "x86_64"))
+> +		if (!machine__is(machine, "x86_64"))
+>  			machine->kernel_start = map->start;
+> +
+> +		/*
+> +		 * On arm/arm64, the kernel uses some memory regions which are
+> +		 * prior to '_stext' symbol; to reflect the complete kernel
+> +		 * address space, compensate these pre-defined regions for
+> +		 * kernel start address.
+> +		 */
+> +		if (!strcmp(perf_env__arch(machine->env), "arm") ||
+> +		    !strcmp(perf_env__arch(machine->env), "arm64"))
+> +			machine->kernel_start -= ARM_PRE_START_SIZE;
+>  	}
+>  	return err;
 >  }
->  
-> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-> index d5b9454352fd..3ae54dedede0 100644
-> --- a/drivers/iommu/mtk_iommu.c
-> +++ b/drivers/iommu/mtk_iommu.c
-> @@ -286,7 +286,7 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
->  	if (!IS_ENABLED(CONFIG_PHYS_ADDR_T_64BIT))
->  		dom->cfg.oas = 32;
->  	else if (data->enable_4GB)
-> -		dom->cfg.oas = ARM_V7S_MTK_4GB_OAS;
-> +		dom->cfg.oas = 33;
->  	else
->  		dom->cfg.oas = 34;
->  
-> diff --git a/include/linux/io-pgtable.h b/include/linux/io-pgtable.h
-> index 27337395bd42..a2a52c349fe4 100644
-> --- a/include/linux/io-pgtable.h
-> +++ b/include/linux/io-pgtable.h
-> @@ -113,8 +113,6 @@ struct io_pgtable_cfg {
->  	};
->  };
->  
-> -#define ARM_V7S_MTK_4GB_OAS			33
-> -
->  /**
->   * struct io_pgtable_ops - Page table manipulation API for IOMMU drivers.
->   *
-
+> 
 
 
 _______________________________________________
