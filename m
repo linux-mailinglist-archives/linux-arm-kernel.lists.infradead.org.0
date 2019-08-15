@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21DC98E22F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:52:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C68238E231
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:53:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=35SJxw0NB+9QOnNkYNgLyyWpxnC9Sj3yNTAIQF99g1M=; b=EeOwL7yZ/Zp50v
-	IqEag9Wu+eA78GFTa5ZHjoiQhJ2CKQsAyeV1OMWFg26juDNpnb/Z20u3mQzgiVUFpc4OMZd37H5aP
-	rtugNpqYQ5GCyqidXNvO5UJm6UMBTLR+jQUbeDcXeVDlpy43K3GuhC6Tj+dEG7FjngFOOrRgV3Uf7
-	CjPlw6bicNic2HGspj51R08LUwIZ3ZtYhU4hBYsfHsmVl6emn/byT7o2ItNDJM991OfsuKjyUqvCC
-	2xQurjQ1YCL4zqn1Im+hDjPEEV4Y0T3GIeDj8wY+Xd52t+cze2MALm9uUiHpePWFOz1OSRui/y+bP
-	FZ9sUoKIxMEBYGgNiRVw==;
+	List-Owner; bh=eBSYMTpS5uQ/buWsh8ii9TxUb/fomTQOqCBzp9nriX8=; b=qXyiCZfiwj/8wf
+	+Br2qrBu8B8mN/Ub9zI6q3EDM68P3ozI5+C2E12CxgMkghGGs1SwRNT/t6vlZr+utfzABKrQN+dhV
+	zXDVgP1voAVrRawRYkooOv00vHVvva3HD9XYY4l+GjhDMnG3Y7miGFlgzcB+xI8zSs1X52zOvRz4l
+	fjfLv8DZGEAz7YJy8sp9ROq8fHjPniWgQNb1Vorcq3igP/8xz+QhynPWfnptL20tWkL1IhVURMCJM
+	DkK62h7MXEbTGVdOue7mfw2TF8XV3GgS7IFIDIgJIZ1ro8G/aMUkPl+boOGugTLmr0EXbZVQ2B4G6
+	qSr7AMopSaLKs+w1GZpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy40c-00086d-HW; Thu, 15 Aug 2019 00:52:54 +0000
+	id 1hy40u-0008KM-7O; Thu, 15 Aug 2019 00:53:12 +0000
 Received: from onstation.org ([52.200.56.107])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy3x8-0004dd-Oo
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 00:49:20 +0000
+ id 1hy3x9-0004ea-Bd
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 00:49:21 +0000
 Received: from localhost.localdomain (c-98-239-145-235.hsd1.wv.comcast.net
  [98.239.145.235])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id 794583EA24;
- Thu, 15 Aug 2019 00:49:17 +0000 (UTC)
+ by onstation.org (Postfix) with ESMTPSA id 29F333EE6C;
+ Thu, 15 Aug 2019 00:49:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
  s=default; t=1565830158;
- bh=SH5QC5W6ScpXRbQk/bxm6ycmyn+BwV2nQJz7QhBnCZ0=;
+ bh=n4ARTSBkbN2lUiYlrE3XPu66+fGDnp75QmhjLIvJkZA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=CoHO95m541ra2JxESP14PeSWxmMgK/RpMhhr8BrHGVhrPUGGDrqK37N8b/0jiTLDW
- youqx3ITy0pDNSmzOq6fYOzWmozzih25HM3gNXN/FqaFK1jeYz+EIFR847fXVrQnCR
- YgR2Aw7pxnkRi1q/6SxJbh/X8xATgknLqCIchHQ4=
+ b=k4WaCnVKNMUmQ03E4G+N8DZNHpC+W3ALAIivM+W/PFI0Dgnw4Sb3/HAclfy9shlG4
+ veTWURgtvu7LCoiJ6aAg6p74byAqS4owyirSIoJtpEmIhCBbpwF8JU//7CeoG6pn6E
+ A48YNmoTXQFRz1Sjf0fAJZe7KWKVxanQZnmqYnOA=
 From: Brian Masney <masneyb@onstation.org>
 To: bjorn.andersson@linaro.org, robh+dt@kernel.org, agross@kernel.org,
  a.hajda@samsung.com, narmstrong@baylibre.com, robdclark@gmail.com,
  sean@poorly.run
-Subject: [PATCH RFC 10/11] ARM: dts: qcom: msm8974: add HDMI nodes
-Date: Wed, 14 Aug 2019 20:48:53 -0400
-Message-Id: <20190815004854.19860-11-masneyb@onstation.org>
+Subject: [PATCH RFC 11/11] ARM: dts: qcom: msm8974-hammerhead: add support for
+ external display
+Date: Wed, 14 Aug 2019 20:48:54 -0400
+Message-Id: <20190815004854.19860-12-masneyb@onstation.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190815004854.19860-1-masneyb@onstation.org>
 References: <20190815004854.19860-1-masneyb@onstation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_174918_960661_12DF9ECF 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20190814_174919_557369_B51B744A 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -88,115 +89,196 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add HDMI tx and phy nodes to support an external display that can be
-connected over the SlimPort. This is based on work from Jonathan Marek.
+Add HDMI nodes and other supporting infrastructure in order to support
+the external display. This is based on work from Jonathan Marek.
 
 Signed-off-by: Brian Masney <masneyb@onstation.org>
 ---
 The hdmi-tx node in the downstream MSM sources:
 https://github.com/AICP/kernel_lge_hammerhead/blob/n7.1/arch/arm/boot/dts/msm8974-mdss.dtsi#L101
 
- arch/arm/boot/dts/qcom-msm8974.dtsi | 80 +++++++++++++++++++++++++++++
- 1 file changed, 80 insertions(+)
+ .../qcom-msm8974-lge-nexus5-hammerhead.dts    | 140 ++++++++++++++++++
+ 1 file changed, 140 insertions(+)
 
-diff --git a/arch/arm/boot/dts/qcom-msm8974.dtsi b/arch/arm/boot/dts/qcom-msm8974.dtsi
-index 369e58f64145..35c51336a9d4 100644
---- a/arch/arm/boot/dts/qcom-msm8974.dtsi
-+++ b/arch/arm/boot/dts/qcom-msm8974.dtsi
-@@ -1139,6 +1139,13 @@
+diff --git a/arch/arm/boot/dts/qcom-msm8974-lge-nexus5-hammerhead.dts b/arch/arm/boot/dts/qcom-msm8974-lge-nexus5-hammerhead.dts
+index 3487daf98e81..83416b6d6634 100644
+--- a/arch/arm/boot/dts/qcom-msm8974-lge-nexus5-hammerhead.dts
++++ b/arch/arm/boot/dts/qcom-msm8974-lge-nexus5-hammerhead.dts
+@@ -234,6 +234,34 @@
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&wlan_regulator_pin>;
+ 	};
++
++	anx_avdd33: avdd33 {
++		compatible = "regulator-fixed";
++
++		regulator-name = "avdd-3p3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++
++		gpio = <&pm8941_gpios 26 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&anx_avdd33_pin>;
++	};
++
++	anx_vdd10: vdd10 {
++		compatible = "regulator-fixed";
++
++		regulator-name = "vdd-1p0";
++		regulator-min-microvolt = <1000000>;
++		regulator-max-microvolt = <1000000>;
++
++		gpio = <&pm8941_gpios 8 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&anx_vdd10_pin>;
++	};
+ };
  
- 					port@0 {
- 						reg = <0>;
-+						mdp5_intf3_out: endpoint {
-+							remote-endpoint = <&hdmi_in>;
-+						};
-+					};
-+
-+					port@1 {
-+						reg = <1>;
- 						mdp5_intf1_out: endpoint {
- 							remote-endpoint = <&dsi0_in>;
- 						};
-@@ -1216,6 +1223,79 @@
- 				clocks = <&mmcc MDSS_AHB_CLK>;
- 				clock-names = "iface";
+ &soc {
+@@ -355,6 +383,40 @@
+ 				bias-disable;
  			};
+ 		};
 +
-+			hdmi: hdmi-tx@fd922100 {
-+				status = "disabled";
++		hdmi_pin: hdmi {
++			cec {
++				pins = "gpio31";
++				function = "hdmi_cec";
++			};
 +
-+				compatible = "qcom,hdmi-tx-8974";
-+				reg = <0xfd922100 0x35c>,
-+				      <0xfc4b8000 0x60f0>;
-+				reg-names = "core_physical",
-+				            "qfprom_physical";
++			ddc {
++				pins = "gpio32", "gpio33";
++				function = "hdmi_ddc";
++			};
 +
-+				interrupt-parent = <&mdss>;
-+				interrupts = <8 IRQ_TYPE_LEVEL_HIGH>;
++			hpd {
++				pins = "gpio34";
++				function = "hdmi_hpd";
++			};
++		};
 +
-+				power-domains = <&mmcc MDSS_GDSC>;
++		anx_msm_pin: anx {
++			irq {
++				pins = "gpio28";
++				function = "gpio";
++				drive-strength = <8>;
++				bias-pull-up;
++				input-enable;
++			};
 +
-+				clocks = <&mmcc MDSS_MDP_CLK>,
-+				         <&mmcc MDSS_AHB_CLK>,
-+				         <&mmcc MDSS_HDMI_CLK>,
-+				         <&mmcc MDSS_HDMI_AHB_CLK>,
-+				         <&mmcc MDSS_EXTPCLK_CLK>;
-+				clock-names = "mdp_core",
-+				              "iface",
-+				              "core",
-+				              "alt_iface",
-+				              "extp";
++			reset {
++				pins = "gpio68";
++				function = "gpio";
++				drive-strength = <8>;
++				bias-pull-up;
++			};
++		};
+ 	};
+ 
+ 	sdhci@f9824900 {
+@@ -440,6 +502,28 @@
+ 				default-brightness = <200>;
+ 			};
+ 		};
 +
-+				hpd-5v-supply = <&pm8941_5vs2>;
-+				core-vdda-supply = <&pm8941_l12>;
-+				core-vcc-supply = <&pm8941_s3>;
++		anx7808@72 {
++			compatible = "analogix,anx7808";
++			reg = <0x72>;
++			interrupts-extended = <&msmgpio 28 IRQ_TYPE_EDGE_RISING>;
 +
-+				/*
-+				 * FIXME - drivers/gpu/drm/msm/hdmi/hdmi.c via hpd_reg_names_8x74
-+				 * looks for hpd-gdsc-supply. What should be used here? Shouldn't
-+				 * this functionality be provided by the power-domains above?
-+				 */
++			hpd-gpios = <&pm8941_gpios 13 GPIO_ACTIVE_HIGH>;
++			pd-gpios = <&pm8941_gpios 14 GPIO_ACTIVE_HIGH>;
++			reset-gpios = <&msmgpio 68 GPIO_ACTIVE_LOW>;
 +
-+				phys = <&hdmi_phy>;
-+				phy-names = "hdmi_phy";
++			pinctrl-names = "default";
++			pinctrl-0 = <&anx_msm_pin>, <&anx_pin>;
 +
-+				ports {
-+					#address-cells = <1>;
-+					#size-cells = <0>;
++			dvdd10-supply = <&anx_vdd10>;
++			avdd33-supply = <&anx_avdd33>;
 +
-+					port@0 {
-+						reg = <0>;
-+						hdmi_in: endpoint {
-+							remote-endpoint = <&mdp5_intf3_out>;
-+						};
-+					};
++			port {
++				anx7808_in: endpoint {
++					remote-endpoint = <&hdmi_out>;
++				};
++			};
++		};
+ 	};
+ 
+ 	i2c@f9968000 {
+@@ -621,6 +705,29 @@
+ 
+ 			vddio-supply = <&pm8941_l12>;
+ 		};
 +
-+					port@1 {
-+						reg = <1>;
++		hdmi-tx@fd922100 {
++			status = "ok";
++
++			pinctrl-names = "default";
++			pinctrl-0 = <&hdmi_pin>;
++
++			qcom,hdmi-tx-ddc-clk = <&msmgpio 32 GPIO_ACTIVE_HIGH>;
++			qcom,hdmi-tx-ddc-data = <&msmgpio 33 GPIO_ACTIVE_HIGH>;
++			qcom,hdmi-tx-hpd = <&msmgpio 34 GPIO_ACTIVE_HIGH>;
++
++			ports {
++				port@1 {
++					hdmi_out: endpoint {
++						remote-endpoint = <&anx7808_in>;
 +					};
 +				};
 +			};
++		};
 +
-+			hdmi_phy: hdmi-phy@fd922500 {
-+				status = "disabled";
++		hdmi-phy@fd922500 {
++			status = "ok";
++		};
+ 	};
+ };
+ 
+@@ -657,6 +764,39 @@
+ 				output-high;
+ 				line-name = "otg-gpio";
+ 			};
 +
-+				compatible = "qcom,hdmi-phy-8974";
-+				reg = <0xfd922500 0x7c>;
-+				reg-names = "hdmi_phy";
++			anx_pin: anx {
++				cbldet {
++					pins = "gpio13";
++					function = "normal";
++					input-enable;
++					bias-pull-down;
++					power-source = <PM8941_GPIO_S3>;
++				};
 +
-+				clocks = <&mmcc MDSS_AHB_CLK>,
-+				         <&mmcc MDSS_HDMI_AHB_CLK>;
-+				clock-names = "iface",
-+				              "alt_iface";
++				pd {
++					pins = "gpio14";
++					function = "normal";
++					bias-disable;
++					power-source = <PM8941_GPIO_S3>;
++				};
++			};
 +
-+				core-vdda-supply = <&pm8941_l12>;
-+				vddio-supply = <&pm8941_s3>;
++			anx_avdd33_pin: anxvdd3  {
++				pins = "gpio26";
++				function = "normal";
 +
-+				#phy-cells = <0>;
++				bias-disable;
++				power-source = <PM8941_GPIO_S3>;
++			};
++
++			anx_vdd10_pin: anxvdd1 {
++				pins = "gpio8";
++				function = "normal";
++
++				bias-disable;
++				power-source = <PM8941_GPIO_S3>;
 +			};
  		};
  	};
- 
+ };
 -- 
 2.21.0
 
