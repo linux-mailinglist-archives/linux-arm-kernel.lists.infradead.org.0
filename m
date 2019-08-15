@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39A208E961
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 12:56:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E260C8E962
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 12:56:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4CaEzePegb2Ttk/L+Hf3p0zuMUYtWyLFpa0IxdGIyS8=; b=hNZZJgfteGPVdG
-	mvXwsJLWJeX0dOMiLDD6P7tAZZkg9+JNXJNgJtVOD4GEn0rM8BK35IeUlkmT8dOSkdvYCJleYJBpA
-	0QICQwpUTwXZHIY5C2iF9Xe2F0rYeLlEHrloTLbQEJBsDjB7D3ZvfceJD9z/BXRegmOiAsASCDcNc
-	ltDm9GmvI8Ty//XyVuEk7tIEaA/ojUcsHHkyKKABEFvbS8T3/qVRCEyWyVpZnQdfUf8gubfwE3114
-	h6AuUKi/6ZefBBt3oH2e9Ru5jEDsCy1MfAx549+esCLbO4xr/EfW1IW0c3L+k59OBcoNiJ/E40IOX
-	HfIgQXVyqzw/HhkOCb0Q==;
+	List-Owner; bh=9Cnfsk7ntcNe14Yk0chQV8O8t6DhfSk+mm9eV6AM0pA=; b=aAxw2xLraLF2Wy
+	q12PLyE8F673psyHhLqsr5/7jlTazjyVihlPCqAF8g3pyycauY7qZPk+rp9Wj4KB7F/hzm9+86GXp
+	BKDb1jU+M08a3BxuCPDYypMY/PopaPgRNUAqAXfR2VGwL8lYSFfBC/Azl8QR6CGOBBEtnCbRL51Iw
+	4cZdshlj7IcZnwnQ5Vlgla29tuo++c1HesCwimFS8KFgDCbJXcdNv4nmm7D+HGmIpqOMhASvtpXIv
+	Jd0Q1dBaq01/Bfsby6r5oNJNKHs17UIl5lVs6hjRgd9+RvTgmvZ3hRRHIVXPIFhn/yG28vbXnoCwO
+	u2OXRds74cCZluA8lZTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyDQl-0006PZ-PT; Thu, 15 Aug 2019 10:56:31 +0000
+	id 1hyDR2-0006eO-U0; Thu, 15 Aug 2019 10:56:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyDQD-0006Cg-EO
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 10:55:59 +0000
+ id 1hyDQN-0006KY-T1
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 10:56:09 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 266BA21744;
- Thu, 15 Aug 2019 10:55:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 06C0121744;
+ Thu, 15 Aug 2019 10:56:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565866556;
- bh=7cf4u3cY/l0YA9m9qv/SdhxS5YxC0bDqvVYfflUHsl0=;
+ s=default; t=1565866567;
+ bh=dsvbwhM91K+mxTLiSJ4SAk9JzF9IdMrk/WuDkDXupdo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OdK2muyFm8nJoIib88QYXlUtuWPQjraO7qRKkgYePLXqu7zRAu8CWQP8blWFK+Vkk
- 5Jd+6oSmObvX5FAiL8BV2Ls2FBN4h1pitzYI91Xw+CAkNkvJ5yh/JbARLLgtwxBjyS
- RtFyOm/+pNSIMLnK6LNa+etZmvUQ2z3p+/NdoqvY=
-Date: Thu, 15 Aug 2019 11:55:52 +0100
+ b=WyVS7gmVGAYle4zAnMuu8ny0ra2EWnqmRiJmr4nsudfTE5drfVcZE5fOFnV6CnpOz
+ yjWUHEmkCXY/4Y5EARRa0EHcijYz5hzweyCdvJipEDSXGzIZybaFEdkM9ongJKDagE
+ 4Ym2PB//p4/6y8bdgZZUtIn43dL6NgX8TWYKPl+Y=
+Date: Thu, 15 Aug 2019 11:56:03 +0100
 From: Will Deacon <will@kernel.org>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 00/15] Arm SMMU refactoring
-Message-ID: <20190815105551.zqn45le3kd3f3jee@willie-the-truck>
+Subject: Re: [PATCH 05/15] iommu/arm-smmu: Split
+ arm_smmu_tlb_inv_range_nosync()
+Message-ID: <20190815105602.hk53orjumysfezff@willie-the-truck>
 References: <cover.1565369764.git.robin.murphy@arm.com>
+ <33a49ca158509c95d50b0d3f9cba03bba2facdf3.1565369764.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <cover.1565369764.git.robin.murphy@arm.com>
+In-Reply-To: <33a49ca158509c95d50b0d3f9cba03bba2facdf3.1565369764.git.robin.murphy@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_035557_789844_744C68B2 
-X-CRM114-Status: GOOD (  14.32  )
+X-CRM114-CacheID: sfid-20190815_035608_394260_22FF4B15 
+X-CRM114-Status: GOOD (  13.83  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,38 +86,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin,
-
-On Fri, Aug 09, 2019 at 06:07:37PM +0100, Robin Murphy wrote:
-> This is a big refactoring of arm-smmu in order to help cope with the
-> various divergent implementation details currently flying around. So
-> far we've been accruing various quirks and errata workarounds within
-> the main flow of the driver, but given that it's written to an
-> architecture rather than any particular hardware implementation, after
-> a point these start to become increasingly invasive and potentially
-> conflict with each other.
+On Fri, Aug 09, 2019 at 06:07:42PM +0100, Robin Murphy wrote:
+> Since we now use separate iommu_gather_ops for stage 1 and stage 2
+> contexts, we may as well divide up the monolithic callback into its
+> respective stage 1 and stage 2 parts.
 > 
-> These patches clean up the existing quirks handled by the driver to
-> lay a foundation on which we can continue to add more in a maintainable
-> fashion. The idea is that major vendor customisations can then be kept
-> in arm-smmu-<vendor>.c implementation files out of each others' way.
-> 
-> A branch is available at:
-> 
->   git://linux-arm.org/linux-rm  iommu/smmu-impl
-> 
-> which I'll probably keep tweaking until I'm happy with the names of
-> things; I just didn't want to delay this initial posting any lomnger.
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  drivers/iommu/arm-smmu.c | 66 ++++++++++++++++++++++------------------
+>  1 file changed, 37 insertions(+), 29 deletions(-)
 
-Thanks, this all looks pretty decent to me. I've mainly left you a bunch
-of nits (hey, it's a refactoring series!) but I did spot one pre-existing
-howler that we should address.
+This will conflict with my iommu API batching stuff, but I can sort that
+out if/when it gets queued by Joerg.
 
-When do you think you'll have stopped tweaking this so that I can pick it
-up? I'd really like to see it in 5.4 so that others can start working on
-top of it.
+> -		if (cfg->fmt != ARM_SMMU_CTX_FMT_AARCH64) {
+> -			iova &= ~12UL;
+> -			iova |= cfg->asid;
+> -			do {
+> -				writel_relaxed(iova, reg);
+> -				iova += granule;
+> -			} while (size -= granule);
+> -		} else {
+> -			iova >>= 12;
+> -			iova |= (u64)cfg->asid << 48;
+> -			do {
+> -				writeq_relaxed(iova, reg);
+> -				iova += granule >> 12;
+> -			} while (size -= granule);
+> -		}
+> -	} else {
+> -		reg += leaf ? ARM_SMMU_CB_S2_TLBIIPAS2L :
+> -			      ARM_SMMU_CB_S2_TLBIIPAS2;
+> -		iova >>= 12;
+> +	if (cfg->fmt != ARM_SMMU_CTX_FMT_AARCH64) {
+> +		iova &= ~12UL;
 
-Cheers,
+Oh baby. You should move code around more often, so I'm forced to take a
+second look!
+
+Can you cook a fix for this that we can route separately, please? I see
+it also made its way into qcom_iommu.c...
 
 Will
 
