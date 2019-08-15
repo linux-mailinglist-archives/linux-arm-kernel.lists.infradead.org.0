@@ -2,61 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9259C8F691
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 23:43:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F13598F693
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 23:43:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zIW6Ly0VdCJTIfEsJiivt0edLO92WziOBEXWOP748qs=; b=YC1jUOlU7I3S3k
-	fit3fWVdNozNZ8RdsIabcDHLXdkiETJcLdaFMUYEwNECr7yaNdNCrXldMk62W9txs4qCWiUbM6rP2
-	S6Z/kdc3pRMcxD6tDzzVvhtGWWpTNu1WdT8cKgqt/qJ3mZ8WQB3LpOdX5wej93Ye2+U7JXyKv5vM6
-	m8L4jetfPxi9t+D+ZF1MSCrhnMnyUh4C/AdZi72QRphxvqPsr3qlc4ABWuyjjp4Oo7mi6L8yiLhp0
-	dTz10/Ci0JGPUzyKA8Ka69o8nh2Oco+RZG95lWQOdQzkYVsFy9VoMxC3B85xnkE3++fRd2gurxRSj
-	kt8aZkJz6fTBQq/9vq+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=2fvBQ5Z/GdYmLwwxUcR2PdKN0kPJ4uUvrdCdqo+dMh0=; b=lv1
+	0c2OwbKDaXVESvg0ZQxglJOe9I4ngGsGJKpJtK7XTpPbsw7G0xr8bRHXLPdauCIWG2G/q7Gjs+JQg
+	urB8mJj5b/PtpweOz6jGMMelnbCfJnsAAP/Qwxcr/szyqsriLEgeZfomrlPGjdANLQWoep++OIDXr
+	RZuxwg9TWaIWezrb8qplAmqH12eb6/YSJIwbsqoZpnArpEtNLfcX6YrWkMmIP8RCkriBXjxG3R+fz
+	1T+vuxAdoaXcZKtc7IMZinJTnzJvc5Zn9bBEsvkNmhQFBYmTmEJQVW0Nx8ZygQmllZrMDxVtyEmC/
+	Sw03BV+phylObBYAYYgPMSVkWf/6b2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyNWT-0004Wb-LL; Thu, 15 Aug 2019 21:43:05 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hyNWn-0004nY-PO; Thu, 15 Aug 2019 21:43:26 +0000
+Received: from ozlabs.org ([2401:3900:2:1::2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyNW7-0004RZ-0K
- for linux-arm-kernel@bombadil.infradead.org; Thu, 15 Aug 2019 21:42:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Pqnw68C8RNt8CVX8dl8gN5I3loi0jS1XviHSDg/bmq4=; b=n277OsgueegUCayLh4JDMyocL
- ISsnXUYOcIyt6kbf9lMyInFbG8eVaOmRgcR9fqpWdDkN2vYYzknz04QGT8vzXYuc/5BbIvuRBSnEs
- nzcMjFVzU+7RBAoO/YkWxgXVhLD4PSlDFE453habGhn99dfRvSNQUa4UFeJaaLxQX23o+yFNGakLz
- TZJt+ToiqM2hfuJoTFCmNRjLpPQPa5GpsJZ3aiu0nz8DDi4dnbn4LeqcJKEWYI5b5ioHRDxeMAjUk
- CBIukFOzqLQJx3k1uAMdBXU+YtMjXXr/VV5ZU01w8nEDDc5cVnobTOjxpW5NhipjU2DoRQ737FgW8
- +wN7VBHkw==;
-Received: from [177.135.11.83] (helo=quaco.ghostprotocols.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hyNW4-000396-TS; Thu, 15 Aug 2019 21:42:41 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 12B1A40858; Thu, 15 Aug 2019 18:42:36 -0300 (-03)
-Date: Thu, 15 Aug 2019 18:42:36 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH v3 3/4] perf: Use CAP_SYSLOG with kptr_restrict checks
-Message-ID: <20190815214236.GA3929@kernel.org>
-References: <cover.1565188228.git.ilubashe@akamai.com>
- <291d2cda6ee75b4cd4c9ce717c177db18bf03a31.1565188228.git.ilubashe@akamai.com>
- <CANLsYkxZE0CQJKQ-bFi=zFV5vTCbL2v76+x1fmCpqNruqWiFXg@mail.gmail.com>
- <20190814184814.GM9280@kernel.org>
- <20190814185213.GN9280@kernel.org>
- <23f7b8c7616a467c93ee2c77e8ffd3cf@usma1ex-dag1mb6.msg.corp.akamai.com>
- <CANLsYkxqBcJq8QJq+aLZXQas1VBg_wGh_p5WTUuRVFCYEQWiQw@mail.gmail.com>
+ id 1hyNWV-0004ic-7T
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 21:43:09 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 468g140fvwz9s3Z;
+ Fri, 16 Aug 2019 07:43:04 +1000 (AEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
+ s=201702; t=1565905384;
+ bh=MsZwqAxaGQ8nQeIeHtBo7cPYHvMCXyDlUc9DQt1kJeU=;
+ h=Date:From:To:Cc:Subject:From;
+ b=nzzDkZtVtYYP3llCdqKskl4Wjv94obTfup+jgUPatHsPH5vO1meDMEwcppJqODJX+
+ fewY2RO1Kza3B0wKdgKTPcrjAIOfFAXh1uNfLRD5iFyGoP6fao1U5qAhLU+tk/9Cip
+ S24/GARqQSmK8FCWc3LlgmlfnEb3g5mWrfqDihfT1sVdIdaJ4WmiWwTsrEgbVs0NIL
+ vxheA0gX08dYhkZ0jIVUTxHT4NISfBDfFaRM8kxdiHT5aIjn7kCze2ErwY8Lxf9M+c
+ a2gqWvLoHb3OE1VoTDAUiS2BBe9J8rbeOhenyqwKZykMCJKTlbljk294OzReOOtBRH
+ Gh3jXdcVFIvjQ==
+Date: Fri, 16 Aug 2019 07:43:01 +1000
+From: Stephen Rothwell <sfr@canb.auug.org.au>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>, ARM
+ <linux-arm-kernel@lists.infradead.org>
+Subject: linux-next: Fixes tag needs some work in the arm-soc tree
+Message-ID: <20190816074301.619b80e7@canb.auug.org.au>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANLsYkxqBcJq8QJq+aLZXQas1VBg_wGh_p5WTUuRVFCYEQWiQw@mail.gmail.com>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.12.0 (2019-05-25)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190815_144307_537170_26ADC759 
+X-CRM114-Status: UNSURE (   6.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.4 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.4 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,180 +75,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Alexey Budankov <alexey.budankov@linux.intel.com>, "Lubashev,
- Igor" <ilubashe@akamai.com>, Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
+Cc: Linux Next Mailing List <linux-next@vger.kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, James Morris <jmorris@namei.org>,
- Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ kbuild test robot <lkp@intel.com>
+Content-Type: multipart/mixed; boundary="===============0204981583201240846=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Thu, Aug 15, 2019 at 02:16:48PM -0600, Mathieu Poirier escreveu:
-> On Wed, 14 Aug 2019 at 14:02, Lubashev, Igor <ilubashe@akamai.com> wrote:
-> >
-> > > On Wed, August 14, 2019 at 2:52 PM Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com> wrote:
-> > > Em Wed, Aug 14, 2019 at 03:48:14PM -0300, Arnaldo Carvalho de Melo
-> > > escreveu:
-> > > > Em Wed, Aug 14, 2019 at 12:04:33PM -0600, Mathieu Poirier escreveu:
-> > > > > # echo 0 > /proc/sys/kernel/kptr_restrict # ./tools/perf/perf record
-> > > > > -e instructions:k uname
-> > > > > perf: Segmentation fault
-> > > > > Obtained 10 stack frames.
-> > > > > ./tools/perf/perf(sighandler_dump_stack+0x44) [0x55af9e5da5d4]
-> > > > > /lib/x86_64-linux-gnu/libc.so.6(+0x3ef20) [0x7fd31efb6f20]
-> > > > > ./tools/perf/perf(perf_event__synthesize_kernel_mmap+0xa7)
-> > > > > [0x55af9e590337]
-> > > > > ./tools/perf/perf(+0x1cf5be) [0x55af9e50c5be]
-> > > > > ./tools/perf/perf(cmd_record+0x1022) [0x55af9e50dff2]
-> > > > > ./tools/perf/perf(+0x23f98d) [0x55af9e57c98d]
-> > > > > ./tools/perf/perf(+0x23fc9e) [0x55af9e57cc9e]
-> > > > > ./tools/perf/perf(main+0x369) [0x55af9e4f6bc9]
-> > > > > /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7)
-> > > > > [0x7fd31ef99b97]
-> > > > > ./tools/perf/perf(_start+0x2a) [0x55af9e4f704a] Segmentation fault
-> > > > >
-> > > > > I can reproduce this on both x86 and ARM64.
-> > > >
-> > > > I don't see this with these two csets removed:
-> > > >
-> > > > 7ff5b5911144 perf symbols: Use CAP_SYSLOG with kptr_restrict checks
-> > > > d7604b66102e perf tools: Use CAP_SYS_ADMIN with perf_event_paranoid
-> > > > checks
-> > > >
-> > > > Which were the ones I guessed were related to the problem you
-> > > > reported, so they are out of my ongoing perf/core pull request to
-> > > > Ingo/Thomas, now trying with these applied and your instructions...
-> > >
-> > > Can't repro:
-> > >
-> > > [root@quaco ~]# cat /proc/sys/kernel/kptr_restrict
-> > > 0
-> > > [root@quaco ~]# perf record -e instructions:k uname Linux [ perf record:
-> > > Woken up 1 times to write data ] [ perf record: Captured and wrote 0.024 MB
-> > > perf.data (1 samples) ] [root@quaco ~]# echo 1 >
-> > > /proc/sys/kernel/kptr_restrict [root@quaco ~]# perf record -e instructions:k
-> > > uname Linux [ perf record: Woken up 1 times to write data ] [ perf record:
-> > > Captured and wrote 0.024 MB perf.data (1 samples) ] [root@quaco ~]# echo
-> > > 0 > /proc/sys/kernel/kptr_restrict [root@quaco ~]# perf record -e
-> > > instructions:k uname Linux [ perf record: Woken up 1 times to write data ] [
-> > > perf record: Captured and wrote 0.024 MB perf.data (1 samples) ]
-> > > [root@quaco ~]#
-> > >
-> > > [acme@quaco perf]$ git log --oneline --author Lubashev tools/
-> > > 7ff5b5911144 (HEAD -> perf/cap, acme.korg/tmp.perf/cap,
-> > > acme.korg/perf/cap) perf symbols: Use CAP_SYSLOG with kptr_restrict
-> > > checks d7604b66102e perf tools: Use CAP_SYS_ADMIN with
-> > > perf_event_paranoid checks c766f3df635d perf ftrace: Use CAP_SYS_ADMIN
-> > > instead of euid==0 c22e150e3afa perf tools: Add helpers to use capabilities if
-> > > present
-> > > 74d5f3d06f70 tools build: Add capability-related feature detection perf
-> > > version 5.3.rc4.g7ff5b5911144 [acme@quaco perf]$
-> >
-> > I got an ARM64 cloud VM, but I cannot reproduce.
-> > # cat /proc/sys/kernel/kptr_restrict
-> > 0
-> >
-> > Perf trace works fine (does not die):
-> > # ./perf trace -a
-> >
-> > Here is my setup:
-> > Repo: git://git.kernel.org/pub/scm/linux/kernel/git/acme/linux.git
-> > Branch: tmp.perf/cap
-> > Commit: 7ff5b5911 "perf symbols: Use CAP_SYSLOG with kptr_restrict checks"
-> > gcc --version: gcc (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) 7.4.0
-> > uname -a: Linux arm-4-par-1 4.9.93-mainline-rev1 #1 SMP Tue Apr 10 09:54:46 UTC 2018 aarch64 aarch64 aarch64 GNU/Linux
-> > lsb_release -a: Ubuntu 18.04.3 LTS
-> >
-> > Auto-detecting system features:
-> > ...                         dwarf: [ on  ]
-> > ...            dwarf_getlocations: [ on  ]
-> > ...                         glibc: [ on  ]
-> > ...                          gtk2: [ on  ]
-> > ...                      libaudit: [ on  ]
-> > ...                        libbfd: [ on  ]
-> > ...                        libcap: [ on  ]
-> > ...                        libelf: [ on  ]
-> > ...                       libnuma: [ on  ]
-> > ...        numa_num_possible_cpus: [ on  ]
-> > ...                       libperl: [ on  ]
-> > ...                     libpython: [ on  ]
-> > ...                     libcrypto: [ on  ]
-> > ...                     libunwind: [ on  ]
-> > ...            libdw-dwarf-unwind: [ on  ]
-> > ...                          zlib: [ on  ]
-> > ...                          lzma: [ on  ]
-> > ...                     get_cpuid: [ OFF ]
-> > ...                           bpf: [ on  ]
-> > ...                        libaio: [ on  ]
-> > ...                       libzstd: [ on  ]
-> > ...        disassembler-four-args: [ on  ]
-> >
-> > I also could not reproduce on x86:
-> > lsb_release -a: Ubuntu 18.04.1 LTS
-> > gcc --version: gcc (Ubuntu 7.4.0-1ubuntu1~18.04aka10.0.0) 7.4.0
-> > uname -r: 4.4.0-154-generic
-> 
-> I isolated the problem to libcap-dev - if it is not installed a
-> segmentation fault will occur.  Since this set is about using
-> capabilities it is obvious that not having it on a system should fail
-> a trace session, but it should not crash it.
+--===============0204981583201240846==
+Content-Type: multipart/signed; boundary="Sig_/gg_YmVflBc=Gx6pTe1ADh2S";
+ protocol="application/pgp-signature"; micalg=pgp-sha256
 
-It shouldn't crash on x86_64:
+--Sig_/gg_YmVflBc=Gx6pTe1ADh2S
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-root@quaco ~]# sysctl kernel.kptr_restrict
-kernel.kptr_restrict = 0
-[root@quaco ~]# perf record -e instructions:k uname
-Linux
-[ perf record: Woken up 1 times to write data ]
-[ perf record: Captured and wrote 0.023 MB perf.data (5 samples) ]
-[root@quaco ~]# ldd ~/bin/perf | grep libcap
-[root@quaco ~]# perf -v
-perf version 5.3.rc4.g329ca330bf8b
-[root@quaco ~]#
-[acme@quaco perf]$ git log --oneline -4
-329ca330bf8b (HEAD -> perf/cap) perf symbols: Use CAP_SYSLOG with kptr_restrict checks
-f7b9999387af perf tools: Use CAP_SYS_ADMIN with perf_event_paranoid checks
-4d0489cf1c47 (acme.korg/tmp.perf/script-switch-on-off, perf/core) perf report: Add --switch-on/--switch-off events
-2f53ae347f59 perf top: Add --switch-on/--switch-off events
-[acme@quaco perf]$
- 
-> If libcap-dev is not installed function symbol__restricted_filename()
-> will return true, which in turn will prevent symbol_name to be set in
-> machine__get_running_kernel_start().  That prevents function
-> map__set_kallsyms_ref_reloc_sym() from being called in
-> machine__create_kernel_maps(), resulting in kmap->ref_reloc_sym being
-> NULL in _perf_event__synthesize_kernel_mmap() and a segmentation
-> fault.
+Hi all,
 
-Can you please try with my perf/cap branch? Perhaps you're using Igor's
-original set of patches? I made changes to the fallback, he was making
-it return false while I made it fallback to geteuid() == 0, as was
-before his patches.
+In commit
 
-- Arnaldo
- 
-> I am not sure how this can be fixed.  I counted a total of 19
-> instances where kmap->ref_reloc_sym->XYZ is called, only 2 of wich
-> care to check if kmap->ref_reloc_sym is valid before proceeding.  As
-> such I must hope that in the 17 other cases, kmap->ref_reloc_sym is
-> guaranteed to be valid.  If I am correct then all we need is to check
-> for a valid pointer in _perf_event__synthesize_kernel_mmap().
-> Otherwise it will be a little harder.
-> 
-> Mathieu
+  772775c1dfe0 ("net: lpc-enet: fix badzero.cocci warnings")
 
--- 
+Fixes tag
 
-- Arnaldo
+  Fixes: e42016eb3844 ("net: lpc-enet: allow compile testing")
+
+has these problem(s):
+
+  - Target SHA1 does not exist
+
+I can't quickly find which commit was meant :-(
+
+--=20
+Cheers,
+Stephen Rothwell
+
+--Sig_/gg_YmVflBc=Gx6pTe1ADh2S
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl1V0eUACgkQAVBC80lX
+0GzNxwf/Wn6cWTIb4CSTcLtAUP71YmIqt8UWIxksx9w/0l1R8T2BZPdB/PQDJqQ2
+APiTCKmqIKtYao6cG2ogSK4X/hWmSzXliQCXoaSU0C5hSSnzrPeGubQNVqgyj49j
+2x/yrAlZcTrWrgJljOadrLCWqRvniyEc6CwklKQjYvuDWDENrCYrzli9YvTFHwwb
+PwpyGaElSyf2SUaOpZxpQLObhxZlwkodZxCT/5DPL4Ih+LZR7k6fHWoBLLKfZf7S
+fH+avN0Kit5aa6w/5ONDKTb++Am0V/EnA89GevuwV5u7i7YgLpntlQuuWPDEgqME
+7HO73spQXnE9eSIZoUb7zxDMDZ2Gfg==
+=Edrq
+-----END PGP SIGNATURE-----
+
+--Sig_/gg_YmVflBc=Gx6pTe1ADh2S--
+
+
+--===============0204981583201240846==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0204981583201240846==--
+
