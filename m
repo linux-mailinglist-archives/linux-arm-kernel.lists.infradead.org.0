@@ -2,83 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E35F8E4CC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 08:09:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A5C38E4D9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 08:16:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sAzVpLMcqb5z3kGlg860dMICt5+uxAJEeYVMAOL3Fso=; b=LtiL0DLrS+OUpu
-	xfRWM45lMvZIErOTsT1BgM2zokWI0dNiry93tIRU16hjeJ+L4J7mEy+hJusvENkF45isbsofNSgnC
-	CfbbaW+XOUoJ8RH0WqZikbsX4hBe2O1D0oqM0djewWPWJuKPeG1FQeSYeai6S/DFeQyJ+gBw+NRSb
-	FHPqWwNDWW1CiT+gbgpGEkkHlSDKOsp4/+20UwiLSYjkAAHYVdDV8bqNv9A/rtA3e8fxh3xpsij4V
-	wz++aDwKK0Dg1oze2Hv/ndp0vG3ErPRQw5BXV0ILKKxo4nLBKcY3f+juakykZagFv7kAfbbOVdSVf
-	sQ7P1CVUJ+CLDcFNXgeA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OxGleFQeAyLQSATV0eR7HF/6hvFAoz5RcTKUmJ2RqRM=; b=tmYmDCnTJmdgpO
+	Jm4qLL4OU6PLqHAXNh8DpFkSn1tVZQ7RsY6At4D40Zfwr69c7nm/TWEwEIyxRmfjJV8lStSv9cKZD
+	4ZiUXzITkh6Fljp68sKhZxJD58CBjvy4dst+rOEc5lb+5PBkv3JYbRSVm09FAA22dxpZc91I3fllI
+	1y1S/DNs49G1oC+ODnlpWtXxtuvqWJv1UZ3NEy4QdiWyy39TqqvjfmSikMHB1V3gqEeyHgzBJwfsv
+	7GHZqSvWgjKDqG6w8jRfsC2gxAUTmB/gGIKr5SaujVVqYmOkzSUqf+qsDdELmhO+1sx0sngZZGmer
+	PkiM1nFE9fLRDQwHg4hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy8xC-0007gL-AD; Thu, 15 Aug 2019 06:09:42 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hy93S-0002LC-5H; Thu, 15 Aug 2019 06:16:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy8wz-0007fw-Jy
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 06:09:30 +0000
-Received: by mail-pf1-x443.google.com with SMTP id o70so857423pfg.5
+ id 1hy93E-0002Ks-TU
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 06:15:58 +0000
+Received: from mail-lj1-f180.google.com (mail-lj1-f180.google.com
+ [209.85.208.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A8F1F2171F
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 23:09:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=VonLxeXzm4d5qgoc9ChWSBtiaAORF6M5FiOxTHR0FaY=;
- b=J2iP5iutURjJjQKpPhMsqotyTVgy4kaEFsVG9SvobCSwa9cvGquNPu+HKjcvHSBB40
- p2fTpi2c3dGpZePogrVcYQ0OKFRhZI1sKd4MR7oYXud8K3I5DNus262O6idvIv+NJHg2
- hHjccjcf3+UW89L/iN0R4T1oDOm1A4sJwaDRkbkfoertZ8smI/P0fO4pEopyRNSfdV5r
- tJNE0lvLNUbtIMeZCihZ7iFWaZA/NgOZdtg2V+CGIGsK9WxDtWMfCV48NV4dEUGXtzgt
- 8oEm4ucMguBG0OdPAq4Hi8CF7opkW8lGwZZN7oS87Z/rcb5ZQWe2Afj2M37inNHrkDb+
- lhSA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=VonLxeXzm4d5qgoc9ChWSBtiaAORF6M5FiOxTHR0FaY=;
- b=QY+gkbymVwuWRjqJ8zKMRzq6SsSbLxZCRAO263fhGAvSU+bBEGbDYCg0pqVm7s00HA
- sqGAozfXfhKMAHkk4+YfSt/0FVtYmIQ+Qv+IkWn+wG1nqby6wZv6VJgGr6iDVZjPclo/
- tTAP+YI0yOTvNRnRQejYXSP9rXsryaqi90GFf54rpGGIl7IYo1znxFHRyl/sXXDV0k38
- RUqYBHSvqkQRxuUHjwNjnI8cyc4mbc/Mo2d+1vq8VW4ImIgsP3djNvLzR/WjjH1RMFz9
- qBCb59xGQd+hL3p0/b3yiuxw/DuW5dOa112bXW/fBj4p65qOuqrUAEN8/W8j3KgSwdOP
- SYcg==
-X-Gm-Message-State: APjAAAWWKgLdNxWM8NrfhE+l0Uym5GxyifSZtucDkkQCbRlk/kG+uafR
- xaSC9xYsY/ExUKYZEvL3goE=
-X-Google-Smtp-Source: APXvYqxUhefp2R8HfrMdPrwR2ARx5U4c5Cb1brTLU/ukqF6cLxx2E3cxlLle/qkuYMoOqkdd+FV0Sw==
-X-Received: by 2002:a17:90a:1b0d:: with SMTP id
- q13mr831549pjq.102.1565849367548; 
- Wed, 14 Aug 2019 23:09:27 -0700 (PDT)
-Received: from localhost.localdomain ([110.225.3.176])
- by smtp.gmail.com with ESMTPSA id ce20sm728846pjb.16.2019.08.14.23.09.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 14 Aug 2019 23:09:27 -0700 (PDT)
-From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: tomasz.figa@gmail.com, krzk@kernel.org, linus.walleij@linaro.org,
- linux-arm-kernel@lists.infradead.org, linux-gpio@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org
-Subject: [PATCH] pinctrl: samsung: samsung: Add of_node_put() before return
-Date: Thu, 15 Aug 2019 11:39:14 +0530
-Message-Id: <20190815060914.3572-1-nishkadg.linux@gmail.com>
-X-Mailer: git-send-email 2.19.1
+ Thu, 15 Aug 2019 06:15:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565849756;
+ bh=UdS63mi586+/lEO9WpbHVnhGDiXc8WFsWXVUrVKqli4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=hyUFe4azQclyComi59PT8+Kby66Jv3PaMtN63HzWTHy4EWA/UfsV8YRNa/xUj0GL9
+ 1Bv68TTO26hdiNLdjYc74BncODUUcEeIMYPjzmXh0LS8HLH+/XHsaIMqbKY0/+FWUf
+ QN30HeTeemMFAYLF+kh3XrtRPAhhPe+uOJrphYDc=
+Received: by mail-lj1-f180.google.com with SMTP id t3so1261893ljj.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 14 Aug 2019 23:15:55 -0700 (PDT)
+X-Gm-Message-State: APjAAAVB98UIXuhEDn2oThXW7HAmV7BtuJRT/cVCMh5h+Nm7ao/cFXhf
+ b9BSPE7D2fi4hm1yRFV7NI3FlDg8ZzPO8djPDT4=
+X-Google-Smtp-Source: APXvYqymA0m6g6FYEkt+jvTS/lHA6LXkadvpzAJfqn2n+NzLPIJ0NX5IscY500yE+VMSEdPLNeQTT4pSQY1UMVm/F7Q=
+X-Received: by 2002:a2e:7818:: with SMTP id t24mr298678ljc.210.1565849753812; 
+ Wed, 14 Aug 2019 23:15:53 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190815060914.3572-1-nishkadg.linux@gmail.com>
+In-Reply-To: <20190815060914.3572-1-nishkadg.linux@gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Thu, 15 Aug 2019 08:15:42 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfxV9SZrjpQ1=fRcRrkE_4vYRMKPzr3+GJ6cyktZeZtYw@mail.gmail.com>
+Message-ID: <CAJKOXPfxV9SZrjpQ1=fRcRrkE_4vYRMKPzr3+GJ6cyktZeZtYw@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: samsung: samsung: Add of_node_put() before return
+To: Nishka Dasgupta <nishkadg.linux@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_230929_660652_17F00F5F 
-X-CRM114-Status: GOOD (  11.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_231556_978042_1BF84620 
+X-CRM114-Status: GOOD (  12.37  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (nishkadg.linux[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,6 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,62 +85,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
+Cc: linux-gpio@vger.kernel.org, linus.walleij@linaro.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ Tomasz Figa <tomasz.figa@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Each iteration of for_each_child_of_node puts the previous node, but in
-the case of a return from the middle of the loop, there is no put, thus
-causing a memory leak. Hence add an of_node_put before the return in
-three places.
-Issue found with Coccinelle.
+On Thu, 15 Aug 2019 at 08:09, Nishka Dasgupta <nishkadg.linux@gmail.com> wrote:
+>
+> Each iteration of for_each_child_of_node puts the previous node, but in
+> the case of a return from the middle of the loop, there is no put, thus
+> causing a memory leak. Hence add an of_node_put before the return in
+> three places.
+> Issue found with Coccinelle.
+>
+> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+> ---
+>  drivers/pinctrl/samsung/pinctrl-samsung.c | 9 +++++++--
+>  1 file changed, 7 insertions(+), 2 deletions(-)
 
-Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
----
- drivers/pinctrl/samsung/pinctrl-samsung.c | 9 +++++++--
- 1 file changed, 7 insertions(+), 2 deletions(-)
+This is already fixed. You can base your patches on top of linux-next
+to avoid duplicating effort.
 
-diff --git a/drivers/pinctrl/samsung/pinctrl-samsung.c b/drivers/pinctrl/samsung/pinctrl-samsung.c
-index de0477bb469d..b24ac8f61ccd 100644
---- a/drivers/pinctrl/samsung/pinctrl-samsung.c
-+++ b/drivers/pinctrl/samsung/pinctrl-samsung.c
-@@ -272,6 +272,7 @@ static int samsung_dt_node_to_map(struct pinctrl_dev *pctldev,
- 						&reserved_maps, num_maps);
- 		if (ret < 0) {
- 			samsung_dt_free_map(pctldev, *map, *num_maps);
-+			of_node_put(np);
- 			return ret;
- 		}
- 	}
-@@ -785,8 +786,10 @@ static struct samsung_pmx_func *samsung_pinctrl_create_functions(
- 		if (!of_get_child_count(cfg_np)) {
- 			ret = samsung_pinctrl_create_function(dev, drvdata,
- 							cfg_np, func);
--			if (ret < 0)
-+			if (ret < 0) {
-+				of_node_put(cfg_np);
- 				return ERR_PTR(ret);
-+			}
- 			if (ret > 0) {
- 				++func;
- 				++func_cnt;
-@@ -797,8 +800,10 @@ static struct samsung_pmx_func *samsung_pinctrl_create_functions(
- 		for_each_child_of_node(cfg_np, func_np) {
- 			ret = samsung_pinctrl_create_function(dev, drvdata,
- 						func_np, func);
--			if (ret < 0)
-+			if (ret < 0) {
-+				of_node_put(func_np);
- 				return ERR_PTR(ret);
-+			}
- 			if (ret > 0) {
- 				++func;
- 				++func_cnt;
--- 
-2.19.1
-
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
