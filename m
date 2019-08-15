@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EC268E229
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:51:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B8088E22A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:51:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lg7OkbzgbdWtCuPh/TKIfrDpy5dls522zS/B4lfMp50=; b=ftp6SqC/6Kdy9/
-	u412AdZ55Sd/e3Q0RGBDGg2QF3Xb++TFaVkv1JIAuo0BFyhn0xOiU0kF9+F7IFb/ULNqia9VZ1V6d
-	RgnLx66or+xeup7ZNBXoQ8BrkfwhAM5FfUPKBAcePgSHosKefzq311ifJgD4fbIV5Sn+0gwQXX2oB
-	wyvFboDCSO6fQf9lwFBS45j/LKXA/409s10IRSMX7nfpBdCwQO+wUfPLjvT3omuRX7NxPw8gbbHux
-	S3Dn5jx9tovI1eW4nRRPX2XNcg8sYJNUlp4lPUP5/uIkV4mNammyHz4UJaGz2fX3BcMVF/ffDL3Q0
-	WOTG38JEokWv0LIA/7TA==;
+	List-Owner; bh=W0U6ogC3xKNCKw68gv3DneQ7VBmBic4BqZxd9VXC0mI=; b=MxaKBSRu1azcjA
+	bGnBUt4GpV3pLsn4T8G2z90Et5gDqfJhdxihBUb4H8VX4u0kiHs8eKO2GHI6LLS7VOOTSKTxj/Om+
+	droHBstjskBw89Trba+cyuYklGVtP6hewXMnVpqxyhjRvCdiY3XhZUOhOB4qTpZ1Q5/TGrYGFG3nZ
+	JYy7N/lv7Gco4QlxPtGyjzYDzowYoABZXZbIz4KfIbv4TOzdGjCQ2rSMnrGH9k50o4x9JNbCnx798
+	6dpXmlk8s3bdxRIotQqUmORkGVygK4jPXm4w/YcdM3OCwRvJUloZcXcX7HZwqqwof37COi9hKDv4B
+	9zv4FHD2RcVrgB4vKN3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy3zH-0006zV-87; Thu, 15 Aug 2019 00:51:31 +0000
+	id 1hy3zX-0007Ch-Cq; Thu, 15 Aug 2019 00:51:47 +0000
 Received: from onstation.org ([52.200.56.107])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy3x6-0004bT-1X
+ id 1hy3x6-0004bS-1R
  for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 00:49:17 +0000
 Received: from localhost.localdomain (c-98-239-145-235.hsd1.wv.comcast.net
  [98.239.145.235])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id 1D6D03EA1D;
+ by onstation.org (Postfix) with ESMTPSA id C4EEE3EA18;
  Thu, 15 Aug 2019 00:49:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
- s=default; t=1565830154;
- bh=vvUbQvnJ/4OGyTU3jR+k5h+lF40i8YqgCaHr7dOl1Qg=;
+ s=default; t=1565830155;
+ bh=DC5vyeikJaV2JnfcQHCSqPpy7s9WUUfxIAq5L9wP3LQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=GNUjU00qmOaQpH/H6nGA9HmdDwtETr0KGIReNXp+26ch2MMd1z4kyfQvyaMbZt+HT
- xecw9TYCY+UOayRIlV9u0VzL3URggiPjeSxlavZeF0NQM+UJ3yXYsIJO+ZD9DOLJ5d
- AYCIS3i/+uvfkd3WekVOviCLXubzK8/+7Khmrp0Y=
+ b=vjNJnlZ8n/UZaPOd7acB6r2zozVALV/w0H9lqBa1P0XLgtR4Q+Zujaw5Hn7jkRNoj
+ rUf/jsrnmCF2mU3kjVTQxl3A0854aZ0MRGCX0rhU1DmJPlLfoNHk+vAQZuFDBaXba3
+ LXlEaTrh9oHiy/f6XnfwufapRSZ8iT+ztXoC6t2w=
 From: Brian Masney <masneyb@onstation.org>
 To: bjorn.andersson@linaro.org, robh+dt@kernel.org, agross@kernel.org,
  a.hajda@samsung.com, narmstrong@baylibre.com, robdclark@gmail.com,
  sean@poorly.run
-Subject: [PATCH 05/11] drm/bridge: analogix-anx78xx: correct value of TX_P0
-Date: Wed, 14 Aug 2019 20:48:48 -0400
-Message-Id: <20190815004854.19860-6-masneyb@onstation.org>
+Subject: [PATCH RFC 06/11] drm/bridge: analogix-anx78xx: add support for
+ avdd33 regulator
+Date: Wed, 14 Aug 2019 20:48:49 -0400
+Message-Id: <20190815004854.19860-7-masneyb@onstation.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190815004854.19860-1-masneyb@onstation.org>
 References: <20190815004854.19860-1-masneyb@onstation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_174916_152930_EC83124B 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20190814_174916_152444_99FDEA04 
+X-CRM114-Status: GOOD (  14.54  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -88,32 +89,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When attempting to configure this driver on a Nexus 5 phone (msm8974),
-setting up the dummy i2c bus for TX_P0 would fail due to an -EBUSY
-error. The downstream MSM kernel sources [1] shows that the proper value
-for TX_P0 is 0x78, not 0x70, so correct the value to allow device
-probing to succeed.
+Add support for the avdd33 regulator to the analogix-anx78xx driver.
+Note that the regulator is currently enabled during driver probe and
+disabled when the driver is removed. This is currently how the
+downstream MSM kernel sources do this.
 
-[1] https://github.com/AICP/kernel_lge_hammerhead/blob/n7.1/drivers/video/slimport/slimport_tx_reg.h
+Let's not merge this upstream for the mean time until I get the external
+display fully working on the Nexus 5 and then I can submit proper
+support then that powers down this regulator in the power off function.
 
 Signed-off-by: Brian Masney <masneyb@onstation.org>
 ---
- drivers/gpu/drm/bridge/analogix-anx78xx.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/gpu/drm/bridge/analogix-anx78xx.c | 33 +++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
 
-diff --git a/drivers/gpu/drm/bridge/analogix-anx78xx.h b/drivers/gpu/drm/bridge/analogix-anx78xx.h
-index 25e063bcecbc..bc511fc605c9 100644
---- a/drivers/gpu/drm/bridge/analogix-anx78xx.h
-+++ b/drivers/gpu/drm/bridge/analogix-anx78xx.h
-@@ -6,7 +6,7 @@
- #ifndef __ANX78xx_H
- #define __ANX78xx_H
+diff --git a/drivers/gpu/drm/bridge/analogix-anx78xx.c b/drivers/gpu/drm/bridge/analogix-anx78xx.c
+index 8daee6b1fa88..48adf010816c 100644
+--- a/drivers/gpu/drm/bridge/analogix-anx78xx.c
++++ b/drivers/gpu/drm/bridge/analogix-anx78xx.c
+@@ -48,6 +48,7 @@ static const u8 anx78xx_i2c_addresses[] = {
  
--#define TX_P0				0x70
-+#define TX_P0				0x78
- #define TX_P1				0x7a
- #define TX_P2				0x72
+ struct anx78xx_platform_data {
+ 	struct regulator *dvdd10;
++	struct regulator *avdd33;
+ 	struct gpio_desc *gpiod_hpd;
+ 	struct gpio_desc *gpiod_pd;
+ 	struct gpio_desc *gpiod_reset;
+@@ -707,10 +708,42 @@ static int anx78xx_start(struct anx78xx *anx78xx)
+ 	return err;
+ }
  
++static void anx78xx_disable_regulator_action(void *_data)
++{
++	struct anx78xx_platform_data *pdata = _data;
++
++	regulator_disable(pdata->avdd33);
++}
++
+ static int anx78xx_init_pdata(struct anx78xx *anx78xx)
+ {
+ 	struct anx78xx_platform_data *pdata = &anx78xx->pdata;
+ 	struct device *dev = &anx78xx->client->dev;
++	int err;
++
++	/* 3.3V digital core power regulator  */
++	pdata->avdd33 = devm_regulator_get(dev, "avdd33");
++	if (IS_ERR(pdata->avdd33)) {
++		err = PTR_ERR(pdata->avdd33);
++		if (err != -EPROBE_DEFER)
++			DRM_ERROR("avdd33 regulator not found\n");
++
++		return err;
++	}
++
++	err = regulator_enable(pdata->avdd33);
++	if (err) {
++		DRM_ERROR("Failed to enable avdd33 regulator: %d\n", err);
++		return err;
++	}
++
++	err = devm_add_action(dev, anx78xx_disable_regulator_action,
++			      pdata);
++	if (err < 0) {
++		dev_err(dev, "Failed to setup regulator cleanup action %d\n",
++			err);
++		return err;
++	}
+ 
+ 	/* 1.0V digital core power regulator  */
+ 	pdata->dvdd10 = devm_regulator_get(dev, "dvdd10");
 -- 
 2.21.0
 
