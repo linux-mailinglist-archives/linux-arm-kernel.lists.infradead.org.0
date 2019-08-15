@@ -2,68 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25B0C8E695
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:35:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86F278E6AA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:36:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W5d8w/n2mCoiCHVyYuFbGEbp60q8iZG/WRWyh5mm6Y8=; b=hHpe6dbGquD7Hf
-	Ytgj1oqPw43QATt4ZZ3eI3y10TjWxgoQVdHv1HlyJ01ELx/Vg8AbVwpN9WSpe7CNShgtlkYy9+mUJ
-	wv03BCcTtEKZv2sFldSHDgfmfqQ7tdU+fNRsmYZdPOYDpShKDDe9Rbhsxme0DrnW0RwakDO9SD2zc
-	hCBmY/9mECSR2p6n8fuf3GUR/Tx42viOjnY+fsB1LCxSPN3wZdzWUjSvhKj90rNkCjC1CEpw+bUgT
-	weW19bzxMJFHaQy2LkNnOb1Jx5jOTEKp7i6MNkvpmArQvBGkzYyBzah+h8QJwjM7g2lYQP58ojzxU
-	ncYALZB3wmf0xK/91qlQ==;
+	List-Owner; bh=sh1zpVqq9wTFxZTTGIHpOKHcodTVbuUNUJDW+9J9qHw=; b=QNWhQY0Wv3S0xc
+	cMnsThD17qd+k9SGJ43z3Pn464ny0dRCoLoN2SL82w+ObZaa67S35g/Y7P67hr2YMHFDEZ8vljRPY
+	4C6aOdKGrCHvAyv5Ec3sMu/C5Cxgqj6tjAUVbMkX+n/OCqhUKJ0Y6gOy9mkRSgq0pcq1axRboyp5C
+	dysr7aiwYZ83V+kvaR3AmhiN0Q1wZhNW/K0qRkOsFuLiJLlSyKr8z5c2XAkD5jfkMgUB9j7tb5bAt
+	Wrg0I52HYlnMt+yPjSyR5/vq2wGfReQ/wvTzsbWi6cE0RkUivOqYAz1ap9zI6o9B20saC+3Hxi/XP
+	+rRgxO+s5y7EbXfx3/gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyBEQ-0002nw-2L; Thu, 15 Aug 2019 08:35:38 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hyBEm-00033L-Cn; Thu, 15 Aug 2019 08:36:00 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyBEC-0002nY-3o
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:35:25 +0000
-Received: by mail-lf1-x144.google.com with SMTP id c19so1129914lfm.10
+ id 1hyBEX-00031h-4b
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:35:46 +0000
+Received: by mail-lf1-x142.google.com with SMTP id j17so1161871lfp.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 01:35:23 -0700 (PDT)
+ Thu, 15 Aug 2019 01:35:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=rIQuHahZHT61N3pBhyPaMSRx0lDKJTzgLeGkPUGpwnw=;
- b=Y+FH2yajTgKkaI7nsmE3WEZkZeDokd2RUNA2EldWJj3L3ayjASGWVw8k2Ij/OubaDA
- M5j0TR6ZH7t2zzUaVTqdINB8m5lZjQKpnPOSypEFo2alm8nos9NKEpcKFvMeG4r1uAGP
- 8AaHAOiGbMsxK4DiqokN1Oe/6ULi7Td0OYQaU6PgDrUrliFei/NY6KsdXRXQTJ6grcA2
- +XXBHx1lgL1P0ofcfjauBj28vKllqp7gfVIDQ8OSvDzcvPiPEFztsRnRSqMrrh/2PyyG
- Dd0SqjtUzV6NYaebRMJOREUG+7ff7D1na1lXslQREjafp/2W4q53ICtF5IW5iS9XRfz6
- bsYg==
+ :cc; bh=LckeMEL++L98xkE6bRHUomn8itgtRqdrAYiiSW7aPt8=;
+ b=jPedfFTQpgM6N16VFCMmcxfHRcTAvQLEVyl2L+pi2uNbG2bAZTYPJy6zsyYd/zsq75
+ qLGM6kd/VOPA6/+zGy4f2K6XHTk26IBdEHY/QLWxecOs/9lvtdbmOJfZwKIQJ7DlE+sE
+ YPADIXmnziNit+bcqcv1rMbb3OPAfelMCc27OtpaNVFdT2cms0GzvMd1b8R0vzNSkYZj
+ 89bhsFLRmjCXBeGnfb0+txiyL5JPTobZE1xPE4SJnCl4HZqvVhB6UcxWPwOK7DObetSQ
+ fffSbk6TjILxq9Q88zUiRn1VeY8FagM25tADUr0X8nG874svkQvTRhpsxvLxr4M5G22L
+ rQ2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=rIQuHahZHT61N3pBhyPaMSRx0lDKJTzgLeGkPUGpwnw=;
- b=JPT1gR59S8FIYYjv+X80FDLcL7ud9qyFy745XYt7/K5GS7wFj7YsdcSuEe2WwJ1IFz
- iX3nzkpOqy3B2QHVjTApvppr++Lh2EeYaf0kC9U0+OWCUisSER9HKDEFQd0l5NDJEywd
- bSMOFBi4TZJFdSnED+1yB34429IPWoAtZvb0l/vngutC4xKhXm7JRrFbojP88g8k2Pel
- d5pXsZcfCUvnN02qCN4JTSV2BY8wcwTTg6zTXKHljqUxPzJwNi+PNYW0SkDEJiUSWElu
- TcnaTQanghRURITFY5E1U9wQC+pCAI2YIqSSPsurGaWfNQ6mHv2ABVx8alQ+nFAzJvN1
- s3BA==
-X-Gm-Message-State: APjAAAWktSTD47h8iBP8ANMv+OnQ8Eyy7czDC+0/cdypd/3yGmm5q/b7
- 7/BEnm1eFKAOFiH9G1eA43gpodJFYCTewkEA1WXbjQ==
-X-Google-Smtp-Source: APXvYqy4JWhaSExzEs8fNpyvhhFIffJYnQjxDmgWOFMcNEneP7xcjaUdbR6c+1Du9tQXJhhtHsvVS1Z3y4aDb+ws8Qs=
-X-Received: by 2002:ac2:5939:: with SMTP id v25mr1829550lfi.115.1565858122600; 
- Thu, 15 Aug 2019 01:35:22 -0700 (PDT)
+ bh=LckeMEL++L98xkE6bRHUomn8itgtRqdrAYiiSW7aPt8=;
+ b=ZTZoZLCfgK9DnVeP42hpdgXrGlJGhInC8ab5n+aHaZkep2yRwDl/fIhRZLFmSsDX2R
+ Z0NpF/Xr5u6a8USgu2ZjOM9MORiAc+zE7rh1D8jpOvcDeBk7XaBapiT6MwAsTNnBr9Xa
+ 55d/wWrDfcbUwXjbKYxQrGLmkGtucEEjiJiAmf7KgDcZCqZovuyy9PPGQFedWKELEDPr
+ 7wgG6o2txvZVGjINGHKJMmHKdSK8O7Llm94PFhe5XpPeMmL63cpff/ch+Mj3iMGCvAZG
+ +4FKfvnrOFn54JrytvVkHkrCY2MOH9cPdbjFoh+dm7ay9Lp4YS3oO//UjCRLS2c7vBn6
+ mOjw==
+X-Gm-Message-State: APjAAAX8SmYsKSw2NJDnUBlnqW8Y2xQcjWID7ZxkzARGRet2VOtLENJR
+ PnXLQemwQe18pKEstiWuCdHBl5WBSkaW6iUXpOdHGA==
+X-Google-Smtp-Source: APXvYqwK1EXF1OlxOI1zDtBRCI1LlnDOnp15wcax8wzG7tnNStvRwTaXt1N5txPI2Ni93wI6DJH8/9XBc1qmOdGdFeU=
+X-Received: by 2002:a19:ed11:: with SMTP id y17mr1783154lfy.141.1565858143676; 
+ Thu, 15 Aug 2019 01:35:43 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190815004854.19860-1-masneyb@onstation.org>
- <20190815004854.19860-4-masneyb@onstation.org>
-In-Reply-To: <20190815004854.19860-4-masneyb@onstation.org>
+ <20190815004854.19860-9-masneyb@onstation.org>
+In-Reply-To: <20190815004854.19860-9-masneyb@onstation.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 15 Aug 2019 10:35:10 +0200
-Message-ID: <CACRpkdbCwUbn68trGZTN8pe8rF8x6SeAW1gd7bwFTs3z-6vK=A@mail.gmail.com>
-Subject: Re: [PATCH 03/11] drm/bridge: analogix-anx78xx: silence -EPROBE_DEFER
- warnings
+Date: Thu, 15 Aug 2019 10:35:31 +0200
+Message-ID: <CACRpkdavMPW1gv8jGUJb-48+=9XCmT=_bsMQFEx3Tk06aQNcAA@mail.gmail.com>
+Subject: Re: [PATCH 08/11] drm/msm/hdmi: silence -EPROBE_DEFER warning
 To: Brian Masney <masneyb@onstation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_013524_150514_DF5B3101 
-X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-CacheID: sfid-20190815_013545_179063_87B1243B 
+X-CRM114-Status: UNSURE (   8.98  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -115,8 +114,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, Aug 15, 2019 at 2:49 AM Brian Masney <masneyb@onstation.org> wrote:
 
-> Silence two warning messages that occur due to -EPROBE_DEFER errors to
-> help cleanup the system boot log.
+> Silence a warning message due to an -EPROBE_DEFER error to help cleanup
+> the system boot log.
 >
 > Signed-off-by: Brian Masney <masneyb@onstation.org>
 
