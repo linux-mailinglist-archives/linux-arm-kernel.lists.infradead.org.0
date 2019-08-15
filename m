@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5AA48E7D3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 11:09:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E0398E7DF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 11:12:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0JbCqSUIOgXWPUJj4SfUvyN53QDnt9T9oXtr4M/TOS8=; b=C9RqeI4Jn8tqLA
-	IknhDbQPk+hoRUQUnm1P///BUUTEpHf2ucxa7WJPiU912tqan0RYSNZVqrQ13Clyezxrez+qU8pZR
-	V6ive9XcY+sdsDbFfwkqQh7vIDOR2o1p5LaIuOhCEl2jdlWcB2XR/9zPTTL14bowedZ1O0QFL6a+O
-	XbLe7i3qcriauMWmygFtJshP0Eqr+CKrJNRQ1NLih13xkxhcaZWVvV8zOkGDjMTWMk++h7SvCHbAy
-	Xi2Ld5w2gv2QYbyO4pBAfOOlo5d3VUJCO+EoNd972Z3V1de3xYRB/S79EzdYWyS00bDHx3GcqLiFU
-	ZDgS/5SVkmHhsdZ8ZOVQ==;
+	List-Owner; bh=h4YFTQ2H4hGg5nkj/O3ZAwmYlw3h/Y18PEbrtCRxOKs=; b=lKau4sKUy6zUiy
+	YWV3jCasqy6oI4y/MC0SPU5l869giDJ7mmU+xQUClbVt7G86VzjDqiyCrTBCYVJP0Zn5qN6s0Z/hF
+	hxyJn2crlSikKZTPqexGFOYJ1+0CWWkHvJlQcgPHleMb5jWts8p8ijjSEbPFN8bk6rg1kd2LRHdLR
+	xhGA+sMXa+GOk0p/pZFl9nP+Vx8LNYTk4qLhx0zkRu9eG9Kb6W2ByCFWXYnTBbSf1pJO2J57FWHtf
+	yzaxWGWXck0RSTaZEiG1/+ieSNeMUesyU3hvtLJFSMzMkgSFr4OS/uCgVJ4wo/2K7fFTKVInWxQiK
+	ijUmGPoEkFF+Ysp+nhhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyBl3-0007DL-Pi; Thu, 15 Aug 2019 09:09:22 +0000
+	id 1hyBoI-0000Fp-OV; Thu, 15 Aug 2019 09:12:42 +0000
 Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyBkY-0007D1-1M
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 09:08:51 +0000
-Received: by mail-lj1-x243.google.com with SMTP id e27so1626998ljb.7
+ id 1hyBo3-0000FU-Ix
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 09:12:29 +0000
+Received: by mail-lj1-x243.google.com with SMTP id e27so1635180ljb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 02:08:49 -0700 (PDT)
+ Thu, 15 Aug 2019 02:12:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0UE6srbxTSzeQEGUqQmtIA5ElC0/7wYx3fPkt29gctA=;
- b=XlyDTQw/LApnV+/jl3INSQ0k5kkAC/D/oC26vZ9uWE9MEg3xW3781+knczAv4Aaf2a
- dDTP8F6TCi/OyI8bPVdVCN57ntl7atgf2pmtMC4foq3XyLYv54jwaSDTyigDmaFJTuLN
- HTYTpKOlcK2VdKCMk8hfpSwDNOy1+V/tesvKx3CEkop4q6eSIwmZjdmvxmfgW0VLzJpo
- VpiFsTYq9biPd7m6Uq3jDpyl2233BEL5+bvbFpJGe+zqxEAugwnqxL34d4WJhoZJQ/2G
- QKS1ERct7SoOBMBQ65iClNzCB5N9LYZ54uUvZj8xrYylAk3KOoTygKBs5tRFQQ6eXQyL
- LmQQ==
+ :cc; bh=/iZpzZ2apqtPNAYN3rBQkZr4GG5AMuxH/SW/Plc3ffA=;
+ b=QElReFqQP1GK1jybq9AdaL5hGB8HmAAs0wfsjh6CmTuxeo6TEfpfCDoP/+HHCVw2A1
+ 3i3+mnn+llz0xTIikJA14Xpr1gVhFAfaTwJmRt5SqcsiF1KeM0jPzS5lvDKb8OMOh+GY
+ i1vgJaEZIKCh8lSCkUui0aAgkjIg4L206m/sGzk9t6O6QQvrLU8yWFknvH19qAjVW4Fd
+ nF9QzblURTEbZ/R1/afeTL+rln+KXYM3Ne/zhEr90OEO3jzL4Ikq8WJTHukdGQn/wyhN
+ adWSLc2bj5U6uGjvYIJzNFyX46OWUcpQmn4mMK+8HUZ346uWMznEAPX5nqG0MRJz032l
+ rD3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=0UE6srbxTSzeQEGUqQmtIA5ElC0/7wYx3fPkt29gctA=;
- b=qMA2UnkOToJKJRAWV2A5wE3mKPZT31IUqiPsh3FBKxLz5RPs2Xa/z9HcX6YcIRPZ7a
- +XJv5v0oNwsOoUiS+6jBPIp7Nh2GazpR/kj0K80bWw/cX6ewbcX2gxS7VLWRGKw21fmS
- 66TJuH+SEOvIVUm7uaGeOjRLqZOUx3ZALK7vOEWSOFfEw+cT+g4XtMXwwiqL/KBsXF4W
- OUBX0plAI8E35NXA8dLeSD+3q4VKaeLSfp5yGpyXh/T7rR0gF3rJHOx5nMc9Eh5CdkHP
- /A+t5DD1tRBQjJAW2i7uyUtj1V6n6fteo2g+cA42/p0chiFRpP0A1O/iAm/O61vnd64N
- fjgQ==
-X-Gm-Message-State: APjAAAXHDA1jiyGxbss5/YTfjvfiXiQYXswcdANfOai81yWMwdv6QLcV
- cGSJQlYWLDBECtJhpKgg0+sBohEJSjJE6lnjgwk=
-X-Google-Smtp-Source: APXvYqwMEUAJffcAHkjsEhd8NMusg/7M2UPC/oaiZA76NFZ6YUgtOx0nJ3OvlVQjfSslMzS/Nsbw4g+olqzqauqWEC8=
-X-Received: by 2002:a2e:9252:: with SMTP id v18mr1033100ljg.93.1565860127855; 
- Thu, 15 Aug 2019 02:08:47 -0700 (PDT)
+ bh=/iZpzZ2apqtPNAYN3rBQkZr4GG5AMuxH/SW/Plc3ffA=;
+ b=PBkJWljYjfPwm8DEoSa8yk5+c8XO7ff+b8nNuwtzOoQYVL+x6AAvB1BlMpggb8zQ7f
+ QwrVzB6wAKocU+yTibxJr8S5TpUU7xVS5rYdxDSbod1Pb7RRu6pqxGLl95RGaFIcEMkt
+ tVfgUKQykGMXKm1NlZBS7O6C+4NhOzG9j/J50GBuxw1vg6F2MJLW1acaXzx84ODGpWq6
+ rQyjJ8MjZf+r9aojTRcNdBl0N+fBc79SFDriOIzP4WnOPWaUM8fX2bY5CbGsvVZ0scJg
+ xrvDqBsJdmpedoQUw9edv+hnTjqSEEX81qmJP3MGsrceNur1shVooXWAz6l9hh7/LzrP
+ VYSw==
+X-Gm-Message-State: APjAAAU+SfPzlvVdPmjayD+EDeHNS0eLUw7NBGMWHQp9PvaZV6q1wZfi
+ 1YwjQDi6jkEnYjDmemsp395W1LfhyJBVtJ8q+So=
+X-Google-Smtp-Source: APXvYqyGUoGw9duO+xloOL4EihgDXFOKCU7bXBE4DDDHi6q2U92avBXabuArt3Vzj00ddjUnjW901Y7mAjAa9KYeXcg=
+X-Received: by 2002:a05:651c:ca:: with SMTP id
+ 10mr2132619ljr.144.1565860346166; 
+ Thu, 15 Aug 2019 02:12:26 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190812215052.71840-1-ndesaulniers@google.com>
  <20190812215052.71840-12-ndesaulniers@google.com>
@@ -58,15 +59,16 @@ References: <20190812215052.71840-1-ndesaulniers@google.com>
  <CANiq72mAfJ23PyWzZAELgbKQDCX2nvY0z+dmOMe14qz=wa6eFg@mail.gmail.com>
  <20190813170829.c3lryb6va3eopxd7@willie-the-truck>
  <CAKwvOdk4hca8WzWzhcPEvxXnJVLbXGnhBdDZbeL_W_H91Ttjqw@mail.gmail.com>
-In-Reply-To: <CAKwvOdk4hca8WzWzhcPEvxXnJVLbXGnhBdDZbeL_W_H91Ttjqw@mail.gmail.com>
+ <CANiq72mGoGpx7EAVUPcGuhVkLit8sB3bR-k1XBDyeM8HBUaDZw@mail.gmail.com>
+In-Reply-To: <CANiq72mGoGpx7EAVUPcGuhVkLit8sB3bR-k1XBDyeM8HBUaDZw@mail.gmail.com>
 From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-Date: Thu, 15 Aug 2019 11:08:36 +0200
-Message-ID: <CANiq72mGoGpx7EAVUPcGuhVkLit8sB3bR-k1XBDyeM8HBUaDZw@mail.gmail.com>
+Date: Thu, 15 Aug 2019 11:12:15 +0200
+Message-ID: <CANiq72nUyT-q3A9mTrYzPZ+J9Ya7Lns5MyTK7W7-7yXgFWc2xA@mail.gmail.com>
 Subject: Re: [PATCH 12/16] arm64: prefer __section from compiler_attributes.h
 To: Nick Desaulniers <ndesaulniers@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_020850_106879_B8FEE8BF 
-X-CRM114-Status: GOOD (  14.14  )
+X-CRM114-CacheID: sfid-20190815_021227_627470_086C9EFA 
+X-CRM114-Status: GOOD (  12.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -120,32 +122,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 12:20 AM Nick Desaulniers
-<ndesaulniers@google.com> wrote:
+On Thu, Aug 15, 2019 at 11:08 AM Miguel Ojeda
+<miguel.ojeda.sandonis@gmail.com> wrote:
 >
-> This lone patch of the series is just cosmetic, but patch 14/16 fixes
-> a real boot issue:
-> https://github.com/ClangBuiltLinux/linux/issues/619
-> Miguel, I'd like to get that one landed ASAP; the rest are just for consistency.
+> On Thu, Aug 15, 2019 at 12:20 AM Nick Desaulniers
+> <ndesaulniers@google.com> wrote:
+> >
+> > This lone patch of the series is just cosmetic, but patch 14/16 fixes
+> > a real boot issue:
+> > https://github.com/ClangBuiltLinux/linux/issues/619
+> > Miguel, I'd like to get that one landed ASAP; the rest are just for consistency.
+>
+> Ah, interesting. It would be best to have sent that one independently
+> to the others, plus adding a commit message mentioning this in
+> particular. Let's talk about that in the thread.
 
-Ah, interesting. It would be best to have sent that one independently
-to the others, plus adding a commit message mentioning this in
-particular. Let's talk about that in the thread.
-
-> Miguel, how do you want to take the rest of these patches? Will picked
-> up the arm64 one, I think the SuperH one got picked up.  There was
-> feedback to add more info to individual commits' commit messages.
-
-Yes, I told Will I would pick up whatever is not already picked up by
-individual maintainers.
-
-> I kept these tree wide changes separate to improve the likelihood that
-> they'd backport to stable cleanly, but could always squash if you'd
-> prefer to have 1 patch instead of a series.  Just let me know.
-
-Since you already did the splitting work, let's take advantage of it.
-I prefer them to be split anyway, since that gives maintainers a
-chance to pick them up individually if they prefer to do so.
+Btw, I guess that is the Oops you were mentioning in the cover letter?
 
 Cheers,
 Miguel
