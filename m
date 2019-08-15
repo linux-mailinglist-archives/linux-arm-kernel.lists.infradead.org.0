@@ -2,68 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 178D68F794
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 01:26:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2AC48F79D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 01:32:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=K6H9FzH2WxJg8IJ7waoreyPefUi3p9IqRKX1C5U8AZA=; b=eou
-	WGxLb3tffkigzx20STZhY8BXyP5+uoN2Ur9PlIN1+qEZlCx2h6oFs6TIZbicsEJO/RmJz3tX9Uz4x
-	tl/yWA8pixWPVJ9KAux60eeiT4D/9dP2aebzbEaF9znMe3q16EKR6bgD2/O0WngWO6aGIp3wXTCuK
-	uZEWkr6i9K9qNGu/hATvqlmKAxpuBEQvDTBELtFhEDTmwZA4TcDeZL2foCK7SpPgsTDKUL9MY5gkY
-	lD4d7OJ0Xxv8R8ROPPQymY6XdeiYNyjT3HA7IBzrH7AGJoFwb/ABym3eMEZ2Mw5vOkz6RixKe8k9Q
-	/AaNg23agYoJVviADHlQKF4fXsE6mqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a9O4lruhFE3Z4MlvozRsfrO/+4rN4Jp5N4cmQGX5xek=; b=JBwCnwCXwsOViO
+	ysCIhcxGMwaXQjSQievh5MR6pcCCgVTkpMaVpi6OhNLAB03+/Cdu9mPwnwHMEjBHB7sGAqFq5zxdz
+	/cTJH7P1fIOGpihvfV73QxxM8VxKLC7lLELR+55rnUNvsL8VoSaVVZnO6bMTOZsc5tmC+JBjnHNAC
+	12g1vPjkWAIUaDq7JC99itXeXXDd8crYF01LiKrI8SDBVcIp1sSRI25CpPaT7bGpQOrozYxt296Hn
+	2yZSRssU5D52O2KWQ3I3eXAvbKVM383H1HXzmBtIYmDmJOkVGw/GpWsnow6iLDYUvcEGH47D3q1Tr
+	ybGslGrnDKsnM3ot0vFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyP8D-0006uM-07; Thu, 15 Aug 2019 23:26:09 +0000
-Received: from ozlabs.org ([2401:3900:2:1::2])
+	id 1hyPE5-0000Cr-AR; Thu, 15 Aug 2019 23:32:13 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyP7z-0006tV-8k
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 23:25:56 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 468jHj0HkNz9sDB;
- Fri, 16 Aug 2019 09:25:53 +1000 (AEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
- s=201702; t=1565911553;
- bh=PFHOp5lVQ4g6t48neVfmLKb7P6Y4cLJoqXxp1EbfGsw=;
- h=Date:From:To:Cc:Subject:From;
- b=u7DWt6RZSOWrSt4EmVMN2aMFLJB0VUpjRYDG1CbZzypUz1xhT9ynceFxqdN1I/1cs
- aE4MUE3rd3l8Cq/yTaZuCP6UY1zNovn/nAp0UhY7Hr/byHk4/xOxrEcdVpMUA7WjM3
- MCkbK90NJL2xcLP6CNgp5h9Ki/P8Wpn93Rn84mMc2ReMRxowa8c4yPuC8TYW5pCMBL
- C4hqw81w6SsRJ/xLd1QX//fETSmKzvw93xNFo6txLGFSqwCeLeTaD3QgLMTKSPN+Kf
- HlOylMz5XHlfZnbCNeCdVYgf6lvqOG9RGcBJTdFu7fgiL59pPQuAnBs85gYdPpr2dB
- xKHK+/nPrVgpg==
-Date: Fri, 16 Aug 2019 09:25:52 +1000
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>, ARM
- <linux-arm-kernel@lists.infradead.org>
-Subject: linux-next: build warning after merge of the arm-soc tree
-Message-ID: <20190816092552.2db24732@canb.auug.org.au>
+ id 1hyPDr-0000CA-UD
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 23:32:01 +0000
+Received: by mail-oi1-f194.google.com with SMTP id l12so3545061oil.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 15 Aug 2019 16:31:59 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=3W/JXRczT4e7iKML5rUyQ8eYma8iSWGGWO86RntEySo=;
+ b=aokbTUDOlGdmuMP713qZAiAm/es2NWgR0r9YsEJMHQ50OFxd5GDoBtgaBeOrL5fPW7
+ kY9ucJgrBKUwSZm/mzON5LUkz2XZayBc73QtgTVQ02ysg285jDr8y7UrK+WCjRD10OSe
+ k9x/7f46cWaofKd24RhyM8JmVML/ndPIjHlaEUKYa7+NddQL9Cg8JSZ9KQl8u1iC7DjF
+ e8CNWO74AnEPVj5V/8R+ZTqIRAyaph9HXtjknv1f7LaV/XZRqvstr6cDB+nrsi8AWdGT
+ +etXiIPABpecq7hQffDk/qGffwiVBk4yiDpQRaPeYyNFq0pC1UjzQkOUEN0b7DR6uKS3
+ garA==
+X-Gm-Message-State: APjAAAX/jxXG1SMeDRNEfTQHi0YwkdPKHsyvLwXCKgDFDFQloHxjJuev
+ op083phF9Be21xf0CRL03CLuJU33knU=
+X-Google-Smtp-Source: APXvYqyuCiphX5ULmL2kQqvQwz9sBTEDuimwGeqVKg1qtCdW/beiJOqpIFUosKh8xJwyHWSKPvZf+w==
+X-Received: by 2002:aca:b485:: with SMTP id d127mr3374787oif.34.1565911918414; 
+ Thu, 15 Aug 2019 16:31:58 -0700 (PDT)
+Received: from mail-ot1-f44.google.com (mail-ot1-f44.google.com.
+ [209.85.210.44])
+ by smtp.gmail.com with ESMTPSA id q24sm1531429otl.31.2019.08.15.16.31.57
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 15 Aug 2019 16:31:57 -0700 (PDT)
+Received: by mail-ot1-f44.google.com with SMTP id z17so7924933otk.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 15 Aug 2019 16:31:57 -0700 (PDT)
+X-Received: by 2002:a9d:6b84:: with SMTP id b4mr5482166otq.63.1565911917418;
+ Thu, 15 Aug 2019 16:31:57 -0700 (PDT)
 MIME-Version: 1.0
+References: <1564690599-29713-1-git-send-email-roy.pledge@nxp.com>
+In-Reply-To: <1564690599-29713-1-git-send-email-roy.pledge@nxp.com>
+From: Li Yang <leoyang.li@nxp.com>
+Date: Thu, 15 Aug 2019 18:31:46 -0500
+X-Gmail-Original-Message-ID: <CADRPPNQ_3muAr_tVYOThhtPmGXk2gh4qMhhZK402HiHh4fO-Fw@mail.gmail.com>
+Message-ID: <CADRPPNQ_3muAr_tVYOThhtPmGXk2gh4qMhhZK402HiHh4fO-Fw@mail.gmail.com>
+Subject: Re: [PATCH v3 0/7] soc/fsl/qbman: Enable Kexec for DPAA1 devices
+To: Roy Pledge <roy.pledge@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_162555_543582_5DD842DA 
-X-CRM114-Status: UNSURE (   5.66  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.4 (--)
+X-CRM114-CacheID: sfid-20190815_163159_973169_042A757A 
+X-CRM114-Status: GOOD (  15.57  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.4 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pku.leo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,81 +91,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Next Mailing List <linux-next@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Content-Type: multipart/mixed; boundary="===============2524551943939287364=="
+Cc: Madalin-cristian Bucur <madalin.bucur@nxp.com>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============2524551943939287364==
-Content-Type: multipart/signed; boundary="Sig_/PS/=YMWaCZM9rHzFA5FlDSJ";
- protocol="application/pgp-signature"; micalg=pgp-sha256
+On Thu, Aug 1, 2019 at 3:20 PM Roy Pledge <roy.pledge@nxp.com> wrote:
+>
+> Most DPAA1 devices do not support a soft reset which is an issue if
+> Kexec starts a new kernel. This patch series allows Kexec to function
+> by detecting that the QBMan device was previously initialized.
+>
+> The patches fix some issues with device cleanup as well as ensuring
+> that the location of the QBMan private memories has not changed
+> after the execution of the Kexec.
+>
+> Changes since v1:
+>         - Removed a bug fix and sent it separately to ease backporting
+> Changes since v2:
+>         - Expliciitly flush FQD memory from cache on PPC before unmapping
+>
+> Roy Pledge (7):
+>   soc/fsl/qbman: Rework QBMan private memory setup
+>   soc/fsl/qbman: Cleanup buffer pools if BMan was initialized prior to
+>     bootup
+>   soc/fsl/qbman: Cleanup QMan queues if device was already initialized
+>   soc/fsl/qbman: Fix drain_mr_fqni()
+>   soc/fsl/qbman: Disable interrupts during portal recovery
+>   soc/fsl/qbman: Fixup qman_shutdown_fq()
+>   soc/fsl/qbman: Update device tree with reserved memory
 
---Sig_/PS/=YMWaCZM9rHzFA5FlDSJ
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
+Series applied for next.  Thanks!
 
-Hi all,
-
-After merging the arm-soc tree, today's linux-next build (x86_64
-allmodconfig) produced this warning:
-
-drivers/usb/gadget/udc/lpc32xx_udc.c: In function 'udc_pop_fifo':
-drivers/usb/gadget/udc/lpc32xx_udc.c:1156:11: warning: cast from pointer to=
- integer of different size [-Wpointer-to-int-cast]
-  switch (((u32) data) & 0x3) {
-           ^
-drivers/usb/gadget/udc/lpc32xx_udc.c: In function 'udc_stuff_fifo':
-drivers/usb/gadget/udc/lpc32xx_udc.c:1257:11: warning: cast from pointer to=
- integer of different size [-Wpointer-to-int-cast]
-  switch (((u32) data) & 0x3) {
-           ^
-drivers/usb/gadget/udc/lpc32xx_udc.c: In function 'udc_handle_ep0_setup':
-drivers/usb/gadget/udc/lpc32xx_udc.c:2230:3: warning: this statement may fa=
-ll through [-Wimplicit-fallthrough=3D]
-   switch (reqtype) {
-   ^~~~~~
-drivers/usb/gadget/udc/lpc32xx_udc.c:2269:2: note: here
-  case USB_REQ_SET_ADDRESS:
-  ^~~~
-
-Exposed by commit
-
-  50ad15282e7c ("usb: udc: lpc32xx: allow compile-testing")
-
---=20
-Cheers,
-Stephen Rothwell
-
---Sig_/PS/=YMWaCZM9rHzFA5FlDSJ
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl1V6gAACgkQAVBC80lX
-0GzbXggAgQcbe6PiiKiz41iZdVjWSP6qLiYI9RWoUAiLo3dK6LpQ7z2QZBVB8u9H
-TbW90qgKFEAtrDh0dzXFEVQXFecmHaXOmNDWvQKe6ja6qf/burnKbtKgE901luO+
-rrf6GMlQCzid/nOo/r6Ikp0e5s64Dvv0h2llH9THvQUbPE+9xkpqJ8WYbJL/ASE7
-r8rcSzTG2ebhqdM/Ysel60/rEmu7hyjxvLvVpFZUE5Fa/+Sfgg4xh7bDDcqt2dpo
-UlmqyhTzfsy+ilMvL9xX/ldjuDOISoQFwBh8X6S5b4Uix7/qPUV3KqDw23RD0QDJ
-NGRc9PIPTU/LXWS6mLBsfzZ5xpBNUw==
-=Axde
------END PGP SIGNATURE-----
-
---Sig_/PS/=YMWaCZM9rHzFA5FlDSJ--
-
-
---===============2524551943939287364==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>
+>  drivers/soc/fsl/qbman/bman.c        | 17 ++++----
+>  drivers/soc/fsl/qbman/bman_ccsr.c   | 36 +++++++++++++++-
+>  drivers/soc/fsl/qbman/bman_portal.c | 18 +++++++-
+>  drivers/soc/fsl/qbman/bman_priv.h   |  5 +++
+>  drivers/soc/fsl/qbman/dpaa_sys.c    | 63 ++++++++++++++++------------
+>  drivers/soc/fsl/qbman/qman.c        | 83 +++++++++++++++++++++++++++++--------
+>  drivers/soc/fsl/qbman/qman_ccsr.c   | 68 +++++++++++++++++++++++++++---
+>  drivers/soc/fsl/qbman/qman_portal.c | 18 +++++++-
+>  drivers/soc/fsl/qbman/qman_priv.h   |  8 ++++
+>  9 files changed, 255 insertions(+), 61 deletions(-)
+>
+> --
+> 2.7.4
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2524551943939287364==--
-
