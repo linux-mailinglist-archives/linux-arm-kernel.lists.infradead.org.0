@@ -2,55 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE9748EBF0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 14:51:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE6E38EBF5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 14:52:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pf7fsfyxS+Vor5EJbZMtdQwKWobYpUMYAwXd8shDHRE=; b=aFT0+oPciIdKit
-	Xp1vohF2e94VEyQWw/57e6C0d0BBmlcoTc3o7J893uImkFGGiehpijtXGNMOKrfNttIaIDKYp4jSh
-	emEvwP869kKgIkqxzRXPm0Dc0/zKaMAnkuL2r3T/fKTb878VvearqZ7UFNd3rA1obUk4DLVvMccNu
-	lCG4MCUBjyhHafp8dL/mBk6YLqalZCv9mzEiCuFDU4WJPq/KTqQ0d+76K1l5FzQEF3CJkz9o7KE6+
-	rX83sFtTpoUgG/9EdRzyMSIKxGG58OahaUIhMpqMatedGjY26SZt956yPb8StzxGwFeXmvF2+UvbU
-	IFSYPYqoOX0orUt/gxjQ==;
+	List-Owner; bh=oaHMCT4llNOWXxp9IbKReZMK5leotmEYhMHbuCazaGA=; b=HQ/QUFn3BvNQ86
+	V6hUHvMKHdv9mxlKV8D9DqA5WiNP5qf99JnxJx8sSAqTJHgwQo1feWNW0h4cni/tk6Z50NbMF5ps2
+	tclkoqmbhtkIMzLM2EjxXov0tJWbcVxvPoqCOJZIiJ6UbB8jT8syvFJDeRdULb9igGub8N5NC7hXc
+	ijl7qUoGbc2YgCNOt25tD2bAVOnvKPQYlVTTWSuyEU0YyUW3KR2ByGsAz0Mm9gFTRsYD0uXBq37ur
+	z467WEia1yJauqNRdRkShubQbm6RofSTgA3vVck4XKttUtTqoYW/bqh/GgP0LVZqXqBaeRdva2M5H
+	oz/wCbUX5v45hyOsiNCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyFEF-0004VC-8J; Thu, 15 Aug 2019 12:51:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hyFDe-0004F9-WF
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 12:51:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B30E8344;
- Thu, 15 Aug 2019 05:51:05 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0AB473F694;
- Thu, 15 Aug 2019 05:51:05 -0700 (PDT)
-Date: Thu, 15 Aug 2019 13:51:03 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Xiaowei Bao <xiaowei.bao@nxp.com>
-Subject: Re: [PATCH 05/10] PCI: layerscape: Modify the way of getting
- capability with different PEX
-Message-ID: <20190815125103.GH43882@e119886-lin.cambridge.arm.com>
-References: <20190815083716.4715-1-xiaowei.bao@nxp.com>
- <20190815083716.4715-5-xiaowei.bao@nxp.com>
+	id 1hyFFI-0004qg-3D; Thu, 15 Aug 2019 12:52:48 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hyFF5-0004qJ-8p
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 12:52:36 +0000
+Received: by mail-qt1-f194.google.com with SMTP id e8so2157679qtp.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 15 Aug 2019 05:52:34 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1Xc60awoglWGqYxV4vax3gDJCjS6PmNYtaCl2hENAic=;
+ b=AtEnuDhwqNjG82Iy1XyW+SZ8vHTIzOGYjh/zM1ll0jT6Ojy3/TcRK88cb87B0gFBbl
+ 3Fr7KFUFASW5LKk9Oj0K6dDzFjlFvjj2GbPR8t6y5io6UcbtTB7HMO43GheyUxboniX+
+ KzCtVQpD7b0rAc9rVLTOCNhF9PX6fffPmUUdMLFUl0F88oupuZf5t9JORytOoIBqpwno
+ Lceo/WMO2TTwG1s0CmTqBnemLeLUhzgnuu3GqBOKJWYoFv1h7fXn5pboumFPKb1F90tV
+ nurjs8cK8p6CFh6MzVs79uxyLSgTF3zhYyN9/X8PQk4vIqqXLtOYLhUZIpaXPY0YVnu3
+ sW9w==
+X-Gm-Message-State: APjAAAUXqhMWsFDo10DH3ViN/ZhXOCY0nhObruFtkupxqNHhG2MNy17D
+ 2lEF65e5J6c8Fp9sPGE+B2LL8BErExce+9OeJ+Q=
+X-Google-Smtp-Source: APXvYqw/USb3bIXmHYcRk91qUDC+Wuqhs9+4i1uly7IotAhyQbZvnWWxlpAnsqEGX5LFoHefTXTiSle6YUgyiCgItEY=
+X-Received: by 2002:ac8:117:: with SMTP id e23mr3729022qtg.18.1565873554077;
+ Thu, 15 Aug 2019 05:52:34 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190815083716.4715-5-xiaowei.bao@nxp.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+References: <CACRpkdbH-h5fRwuidcpeOp8mtRoKUW65SAk8a4A==BCDzn3QMA@mail.gmail.com>
+In-Reply-To: <CACRpkdbH-h5fRwuidcpeOp8mtRoKUW65SAk8a4A==BCDzn3QMA@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 15 Aug 2019 14:52:18 +0200
+Message-ID: <CAK8P3a2Djs2gA9zvTMbBdUn3DEQMh0OY6E0=KVpmOQ+UEGzW6g@mail.gmail.com>
+Subject: Re: [GIT PULL] Ux500 updates for v5.4 take one
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_055107_121698_DB23389E 
-X-CRM114-Status: GOOD (  19.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190815_055235_309301_BAF73AC9 
+X-CRM114-Status: GOOD (  14.00  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.194 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,118 +82,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, roy.zang@nxp.com, lorenzo.pieralisi@arm.com,
- arnd@arndb.de, gregkh@linuxfoundation.org, jingoohan1@gmail.com,
- linuxppc-dev@lists.ozlabs.org, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com, minghuan.Lian@nxp.com,
- devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, gustavo.pimentel@synopsys.com,
- bhelgaas@google.com, kishon@ti.com, shawnguo@kernel.org, mingkai.hu@nxp.com
+Cc: SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Nicholas Mc Guire <hofrat@osadl.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 04:37:11PM +0800, Xiaowei Bao wrote:
-> The different PCIe controller in one board may be have different
-> capability of MSI or MSIX, so change the way of getting the MSI
-> capability, make it more flexible.
-> 
-> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-> ---
->  drivers/pci/controller/dwc/pci-layerscape-ep.c | 28 +++++++++++++++++++-------
->  1 file changed, 21 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pci-layerscape-ep.c b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-> index be61d96..9404ca0 100644
-> --- a/drivers/pci/controller/dwc/pci-layerscape-ep.c
-> +++ b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-> @@ -22,6 +22,7 @@
->  
->  struct ls_pcie_ep {
->  	struct dw_pcie		*pci;
-> +	struct pci_epc_features	*ls_epc;
->  };
->  
->  #define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
-> @@ -40,25 +41,26 @@ static const struct of_device_id ls_pcie_ep_of_match[] = {
->  	{ },
->  };
->  
-> -static const struct pci_epc_features ls_pcie_epc_features = {
-> -	.linkup_notifier = false,
-> -	.msi_capable = true,
-> -	.msix_capable = false,
-> -};
-> -
->  static const struct pci_epc_features*
->  ls_pcie_ep_get_features(struct dw_pcie_ep *ep)
->  {
-> -	return &ls_pcie_epc_features;
-> +	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-> +	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
-> +
-> +	return pcie->ls_epc;
->  }
->  
->  static void ls_pcie_ep_init(struct dw_pcie_ep *ep)
->  {
->  	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-> +	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
->  	enum pci_barno bar;
->  
->  	for (bar = BAR_0; bar <= BAR_5; bar++)
->  		dw_pcie_ep_reset_bar(pci, bar);
-> +
-> +	pcie->ls_epc->msi_capable = ep->msi_cap ? true : false;
-> +	pcie->ls_epc->msix_capable = ep->msix_cap ? true : false;
->  }
->  
->  static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
-> @@ -118,6 +120,7 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
->  	struct device *dev = &pdev->dev;
->  	struct dw_pcie *pci;
->  	struct ls_pcie_ep *pcie;
-> +	struct pci_epc_features *ls_epc;
->  	struct resource *dbi_base;
->  	int ret;
->  
-> @@ -129,6 +132,10 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
->  	if (!pci)
->  		return -ENOMEM;
->  
-> +	ls_epc = devm_kzalloc(dev, sizeof(*ls_epc), GFP_KERNEL);
-> +	if (!ls_epc)
-> +		return -ENOMEM;
-> +
->  	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
->  	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
->  	if (IS_ERR(pci->dbi_base))
-> @@ -139,6 +146,13 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
->  	pci->ops = &ls_pcie_ep_ops;
->  	pcie->pci = pci;
->  
-> +	ls_epc->linkup_notifier = false,
-> +	ls_epc->msi_capable = true,
-> +	ls_epc->msix_capable = true,
+On Sun, Jul 28, 2019 at 11:42 AM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> Hi ARM SoC folks,
+>
+> here are some initial patches for Ux500 targeted for the v5.4 kernel
+> cycle.
+>
+> Please pull it in! Details in the signed tag.
+>
+> Yours,
+> Linus Walleij
+>
+> The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+>
+>   Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+>
+> are available in the Git repository at:
+>
+>   git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-stericsson.git
+> tags/ux500-v5.4-1
+>
+> for you to fetch changes up to 163ce24a435061f9ff7e1673fec5be0868bdb7d3:
+>
+>   MAINTAINERS: add soc/ux500 (2019-07-23 10:44:14 +0200)
+>
+> ----------------------------------------------------------------
+> This is a slew of Ux500 updates for the v5.4 kernel cycle:
+>
+> - Stop populating the PRCMU devices from the core CPU
+>   file, it works just fine at device_initcall() level.
+>
+> - Add a missing of_node_put() in the core file.
+>
+> - Simplify the debug UART code.
+>
+> - Add myself to MAINTAINERS
+>
 
-As [msi,msix]_capable is shortly set from ls_pcie_ep_init - is there any
-reason to set them here (to potentially incorrect values)?
+Pulled into arm/soc, thanks!
 
-Thanks,
-
-Andrew Murray
-
-> +	ls_epc->bar_fixed_64bit = (1 << BAR_2) | (1 << BAR_4),
-> +
-> +	pcie->ls_epc = ls_epc;
-> +
->  	platform_set_drvdata(pdev, pcie);
->  
->  	ret = ls_add_pcie_ep(pcie, pdev);
-> -- 
-> 2.9.5
-> 
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
