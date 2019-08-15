@@ -2,65 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6349E8E936
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 12:46:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE5B18E947
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 12:50:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=unfkbouQOjpd3ZY17bB2KAM2Dsb9SekFiM5NPLxfzbw=; b=DpVQbd1zYnuafZ
-	PiDHZOsBHUu7Y+kJoq+IK8/fRloqRKCXfG9s0YGpsLngO/V56+jgjuVdCo1izUwP7l1yg58PFUdRV
-	NWg8JLpc2uZrAPYXBmouLuwcSImuqfGDRzp1IfKnotqgKfMj2OupcuDPSPCKD4yxMEHnK55cGVfcB
-	F9IgdC53V3bWe8mdt6seFlHLp/6tgCWbmseCjfmH0qwEUwY8XSWLSK91iovBOjYlPJYdSPFu0m6w2
-	nw9Rp9bvJxsD25crH7hjrlm3uGI50idsD2Ey6kG0XA49hUr+gCJoAFpG6vuzMebfLETkuoS32P2oj
-	DSMo+OxFT+k7GUoi/orA==;
+	List-Owner; bh=R4y0XMpDwYKEAspv64b31rHsx68VtDIN4Rpp3mSxV6M=; b=JVq4hTiqVOR7wQ
+	BCotriUJJGKFZDKhdY0oNo20qYrkYuBIJh6FZjRRl42MEDgaKHJBn3Tn0Bm8KH5a9mjo4L5aY9zHV
+	KGtFV+hLV/K1vwqVQDp8FhiqS58wU1/9BV3wJNp8G7qNdwy7X04qhikfzWodIBsl/t9H0Im9NmDkP
+	2jjpLWROJpA6iyYoYXqeTjoT5KPdTcQvO8HsesZZslpXezb94GzqYnD9hPX1qxxplnsEf0IXMHizH
+	1qcyl33D8wPd2XJS3Y2rjghE1rD7Kvdvnq3I8ieMQ9wq/I1GNXetdEpkaYGDi5v8MGSydp3C1tbNs
+	IhGhyAUT5wQabO1AcCgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyDHL-0002od-Li; Thu, 15 Aug 2019 10:46:47 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1hyDKq-0004Lr-KZ; Thu, 15 Aug 2019 10:50:24 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyDH2-0002oF-Aa; Thu, 15 Aug 2019 10:46:30 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga003.jf.intel.com ([10.7.209.27])
- by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 15 Aug 2019 03:46:27 -0700
-X-IronPort-AV: E=Sophos;i="5.64,389,1559545200"; d="scan'208";a="179338295"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by orsmga003-auth.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 15 Aug 2019 03:46:22 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id 091E520F68; Thu, 15 Aug 2019 13:45:16 +0300 (EEST)
-Date: Thu, 15 Aug 2019 13:45:15 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Subject: Re: [PATCH v8 05/14] media: rkisp1: add Rockchip ISP1 subdev driver
-Message-ID: <20190815104515.GO6133@paasikivi.fi.intel.com>
-References: <20190730184256.30338-1-helen.koike@collabora.com>
- <20190730184256.30338-6-helen.koike@collabora.com>
- <20190808091406.GQ21370@paasikivi.fi.intel.com>
- <da6c1d01-e3f6-ad73-db55-145d7832a665@collabora.com>
- <20190815082422.GM6133@paasikivi.fi.intel.com>
- <CAAFQd5Cd2k5ZCDfu=a281NLOa88vpm-P7ZPWF4Nnx==iyEkn7A@mail.gmail.com>
+ id 1hyDKb-0004Bm-0W
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 10:50:10 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 9FC9468AFE; Thu, 15 Aug 2019 12:50:03 +0200 (CEST)
+Date: Thu, 15 Aug 2019 12:50:02 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: James Bottomley <James.Bottomley@HansenPartnership.com>
+Subject: Re: [PATCH 7/8] parisc: don't set ARCH_NO_COHERENT_DMA_MMAP
+Message-ID: <20190815105002.GA30805@lst.de>
+References: <20190808160005.10325-1-hch@lst.de>
+ <20190808160005.10325-8-hch@lst.de>
+ <1565861152.2963.7.camel@HansenPartnership.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAAFQd5Cd2k5ZCDfu=a281NLOa88vpm-P7ZPWF4Nnx==iyEkn7A@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1565861152.2963.7.camel@HansenPartnership.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_034628_377818_88660C1F 
-X-CRM114-Status: GOOD (  31.53  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190815_035009_209961_2D281CCE 
+X-CRM114-Status: GOOD (  16.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,120 +60,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Eddie Cai <eddie.cai.linux@gmail.com>,
- kernel@collabora.com, Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
- Chen Jacob <jacob2.chen@rock-chips.com>, Jeffy <jeffy.chen@rock-chips.com>,
- =?utf-8?B?6ZKf5Lul5bSH?= <zyc@rock-chips.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Allon Huang <allon.huang@rock-chips.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Helen Koike <helen.koike@collabora.com>, Jacob Chen <cc@rock-chips.com>,
- Hans Verkuil <hans.verkuil@cisco.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Shunqian Zheng <zhengsq@rock-chips.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: linux-xtensa@linux-xtensa.org, Michal Simek <monstr@monstr.eu>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, linux-parisc@vger.kernel.org,
+ linux-sh@vger.kernel.org, Takashi Iwai <tiwai@suse.de>,
+ linuxppc-dev@lists.ozlabs.org, Helge Deller <deller@gmx.de>, x86@kernel.org,
+ linux-m68k@lists.linux-m68k.org, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 07:29:59PM +0900, Tomasz Figa wrote:
-> On Thu, Aug 15, 2019 at 5:25 PM Sakari Ailus
-> <sakari.ailus@linux.intel.com> wrote:
-> >
-> > Hi Helen,
-> >
-> > On Wed, Aug 14, 2019 at 09:58:05PM -0300, Helen Koike wrote:
-> >
-> > ...
-> >
-> > > >> +static int rkisp1_isp_sd_set_fmt(struct v4l2_subdev *sd,
-> > > >> +                           struct v4l2_subdev_pad_config *cfg,
-> > > >> +                           struct v4l2_subdev_format *fmt)
-> > > >> +{
-> > > >> +  struct rkisp1_device *isp_dev = sd_to_isp_dev(sd);
-> > > >> +  struct rkisp1_isp_subdev *isp_sd = &isp_dev->isp_sdev;
-> > > >> +  struct v4l2_mbus_framefmt *mf = &fmt->format;
-> > > >> +
-> > > >
-> > > > Note that for sub-device nodes, the driver is itself responsible for
-> > > > serialising the access to its data structures.
-> > >
-> > > But looking at subdev_do_ioctl_lock(), it seems that it serializes the
-> > > ioctl calls for subdevs, no? Or I'm misunderstanding something (which is
-> > > most probably) ?
-> >
-> > Good question. I had missed this change --- subdev_do_ioctl_lock() is
-> > relatively new. But setting that lock is still not possible as the struct
-> > is allocated in the framework and the device is registered before the
-> > driver gets hold of it. It's a good idea to provide the same serialisation
-> > for subdevs as well.
-> >
-> > I'll get back to this later.
-> >
-> > ...
-> >
-> > > >> +static int rkisp1_isp_sd_s_power(struct v4l2_subdev *sd, int on)
-> > > >
-> > > > If you support runtime PM, you shouldn't implement the s_power op.
-> > >
-> > > Is is ok to completly remove the usage of runtime PM then?
-> > > Like this http://ix.io/1RJb ?
-> >
-> > Please use runtime PM instead. In the long run we should get rid of the
-> > s_power op. Drivers themselves know better when the hardware they control
-> > should be powered on or off.
-> >
+On Thu, Aug 15, 2019 at 10:25:52AM +0100, James Bottomley wrote:
+> >  which means exporting normally cachable memory to userspace is
+> > relatively dangrous due to cache aliasing.
+> > 
+> > But normally cachable memory is only allocated by dma_alloc_coherent
+> > on parisc when using the sba_iommu or ccio_iommu drivers, so just
+> > remove the .mmap implementation for them so that we don't have to set
+> > ARCH_NO_COHERENT_DMA_MMAP, which I plan to get rid of.
 > 
-> One also needs to use runtime PM to handle power domains and power
-> dependencies on auxiliary devices, e.g. IOMMU.
+> So I don't think this is quite right.  We have three architectural
+> variants essentially (hidden behind about 12 cpu types):
 > 
-> > >
-> > > tbh I'm not that familar with runtime PM and I'm not sure what is the
-> > > difference of it and using s_power op (and Documentation/power/runtime_pm.rst
-> > > is not being that helpful tbh).
-> >
-> > You can find a simple example e.g. in
-> > drivers/media/platform/atmel/atmel-isi.c .
-> >
-> > >
-> > > >
-> > > > You'll still need to call s_power on external subdevs though.
-> > > >
-> > > >> +{
-> > > >> +  struct rkisp1_device *isp_dev = sd_to_isp_dev(sd);
-> > > >> +  int ret;
-> > > >> +
-> > > >> +  v4l2_dbg(1, rkisp1_debug, &isp_dev->v4l2_dev, "s_power: %d\n", on);
-> > > >> +
-> > > >> +  if (on) {
-> > > >> +          ret = pm_runtime_get_sync(isp_dev->dev);
-> > >
-> > > If this is not ok to remove suport for runtime PM, then where should I put
-> > > the call to pm_runtime_get_sync() if not in this s_power op ?
-> >
-> > Basically the runtime_resume and runtime_suspend callbacks are where the
-> > device power state changes are implemented, and pm_runtime_get_sync and
-> > pm_runtime_put are how the driver controls the power state.
-> >
-> > So you no longer need the s_power() op at all. The op needs to be called on
-> > the pipeline however, as there are drivers that still use it.
-> >
+>    1. pa70xx: These can't turn off page caching, so they were the non
+>       coherent problem case
+>    2. pa71xx: These can manufacture coherent memory simply by turning off
+>       the cache on a per page basis
+>    3. pa8xxx: these have a full cache flush coherence mechanism.
 > 
-> For this driver, I suppose we would _get_sync() when we start
-> streaming (in the hardware, i.e. we want the ISP to start capturing
-> frames) and _put() when we stop and the driver shouldn't perform any
-> access to the hardware when the streaming is not active.
+> (I might have this slightly wrong: I vaguely remember the pa71xxlc
+> variants have some weird cache quirks for DMA as well)
+> 
+> So I think pa70xx we can't mmap.  pa71xx we can provided we mark the
+> page as uncached ... which should already have happened in the allocate
+> and pa8xxx which can always mmap dma memory without any special tricks.
 
-Agreed.
+Except for the different naming scheme vs the code this matches my
+assumptions.
 
--- 
-Sakari Ailus
-sakari.ailus@linux.intel.com
+In the code we have three cases (and a fourth EISA case mention in
+comments, but not actually implemented as far as I can tell):
+
+arch/parisc/kernel/pci-dma.c says in the top of file comments:
+
+** AFAIK, all PA7100LC and PA7300LC platforms can use this code.
+
+and the handles two different case.  for cpu_type == pcxl or pcxl2
+it maps the memory as uncached for dma_alloc_coherent, and for all
+other cpu types it fails the coherent allocations.
+
+In addition to that there are the ccio and sba iommu drivers, of which
+according to your above comment one is always present for pa8xxx.
+
+Which brings us back to this patch, which ensures that no cacheable
+memory is exported to userspace by removing ->mmap from ccio and sba.
+It then enabled dma_mmap_coherent for the pcxl or pcxl2 case that
+allocates uncached memory, which dma_mmap_coherent does not work
+because dma_alloc_coherent already failed for the !pcxl && !pcxl2
+and thus there is no memory to mmap.
+
+So if the description is too confusing please suggest a better
+one, I'm a little lost between all these code names and product
+names (arch/parisc/include/asm/dma-mapping.h uses yet another set).
 
 _______________________________________________
 linux-arm-kernel mailing list
