@@ -2,82 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BC148F36C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 20:30:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5C9E8F374
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 20:32:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8jTzgO4LSoUqwzI4cGKD+4lENqBW+yX6bwApCZyqxRY=; b=uJ83omAW+dg17H
-	bg5z194FYet0IbSvyKxcyfbtw9tm8G6fSE6vqod+tPx/w9CY1L25QXpTm8kZfw3mP1Y9+yna0CcJZ
-	epazAQZpejPI66sSaxkG1sGQq1Fr7XkCmkrssdWi6oIJiYPbwVc7PrrNNtXlK1nOxh/6Z99VP6tGO
-	tjELjpQOxCRrk5FN5WFNENDL8MnED1bEfadpt03FSzZ3h8zGf9sIRBpwR2dbZMGDSSfzXv3RLfXmH
-	veJqw655rUReadB1Mtcmq3XxJ6yZbT+X/hvrf9+BPpTUDS2RgST2cUBOYiz3YJu8AruXswF46zbnz
-	PNyS3cDhZDXYOEN1Czuw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=iYXDrSYvnR1inMZpaemLZA2ni9MP8+QHVt/Xh92rBcY=; b=nTPScy4SQvAnuP8NmZSR9XG+1
+	jiGCJAOrWeyt2dzZ5lCu1iLE9CPafx2++INJY60anoFHDnSsRcSS7VnyedlJ7y5jC50JRnHl9un4K
+	avI8TyIg+ZoE2WEwLglMoBSbbQFLzwCuWW7kfDhUXfTooQwj2r1DdfiYO488UibkW4hB0sTdFHZNW
+	XMwu9BHGoHX/W0fW2Q3u3oaLSz8RN0NwgXfoVhwUDNZolueSTpCS/ybHlgtsnkheK24S5x89zqYhp
+	izhZdc/bQhhPVWdQui+nFtMu2zKMGb7WHiMaMQN+obFOXY8EMu3Mz9siqMjDufZ4MNU9N6JDAkciL
+	s3vzuq7iA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyKVi-0000p4-W1; Thu, 15 Aug 2019 18:30:07 +0000
-Received: from mail-wr1-f66.google.com ([209.85.221.66])
+	id 1hyKYA-0002Ky-EW; Thu, 15 Aug 2019 18:32:38 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyKVN-0000ds-4s
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 18:29:47 +0000
-Received: by mail-wr1-f66.google.com with SMTP id z1so3012434wru.13
+ id 1hyKXt-0002KO-Ce
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 18:32:24 +0000
+Received: by mail-oi1-x243.google.com with SMTP id c15so2957545oic.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 11:29:44 -0700 (PDT)
+ Thu, 15 Aug 2019 11:32:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=zr7m4pwTZtuvjpeiIC/jYJKmr4TJLJV4XhMln9ZPv+4=;
+ b=QhoIDVYdejOyWyiUAfCz1XWolONEWbCa4OOpGFtUQnKIGhnLyEC0/WGR5DefUSe1mR
+ i3zN3r2Q/fvJSZDwrKzaRdvzv43fsSPU0X21BNHiS2Yqh+NKiqKBv6Ii+RH2I3llRllE
+ byC/IWheGYP6LEWHOEThfHTWTKIJJf+uR547l94H3w3AmvHSXHgGTk25MdOCZrvH2vOm
+ xHVEnRuf1yAPoEGvBmZTWcabaDcqGkwohIXbc60Uis39tG3aq01SVHfE16g3nGRTQp5j
+ fFt/E1AjMR0bRMXf2g86K2ujhMJd+JgLRDunGS64polTLVj9Z+V7jNNFV0rN5tUK+OI4
+ jJgg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=G+ti5MoYAXo5Gey/THUpmV9/n/MyYAX4cVlRNM3ewyk=;
- b=Hv6oDJ6zl+JdvGaIl5DrZUQv60dURXqDQv/U/4Bu5sik+/WCBvuEm4XJTwtY5VRFG1
- GT7m9XcYsJcW/RJjkkSG81YnuOmzOqn9thfsn3PNIFJ9+rvy9jDxR+q0x6k0wQ6bJoap
- QNx1M6ZXWzzpZAaFC/bePXtzZdBTJPzTs4EXHltOKpftz9knDhbAyO9fPCZlihxH7/sA
- 222zd7RhcnI9q1wHRgKOxeqmHlwtz85ICf1Ja/pHBzblB776/q5tNr5LNb/iPidLCX3q
- T9PUWH36FMZtLRNKxyVSVKfyogEPe4fGt9Qv4FzkGvFX360mtTs44IXNmV8tlsyxwY7d
- NvpQ==
-X-Gm-Message-State: APjAAAWqwjAGdZ+nsOQjBCzLDYO8XyqoP8vWGJq5GP3IXlXf0xGHhHBf
- QZUUWxEhDtQmJYfALZ2vbzg=
-X-Google-Smtp-Source: APXvYqzcm8U/A1Qgplcw2RiLILIE0EgMkCH1v2MhQN4StF7iqTRUm9rJjXSeZuEZ0RWP8wo36QOmyw==
-X-Received: by 2002:adf:fd8b:: with SMTP id d11mr6497885wrr.300.1565893783407; 
- Thu, 15 Aug 2019 11:29:43 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.124])
- by smtp.googlemail.com with ESMTPSA id h97sm9341511wrh.74.2019.08.15.11.29.42
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 15 Aug 2019 11:29:42 -0700 (PDT)
-Date: Thu, 15 Aug 2019 20:29:40 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Re: [PATCH v3 5/9] ARM64: EXYNOS: enable exynos_chipid for ARCH_EXYNOS
-Message-ID: <20190815182940.GF14360@kozik-lap>
-References: <20190813150827.31972-1-s.nawrocki@samsung.com>
- <CGME20190813150856eucas1p1a8957cfe50e3b421ccbc3084404de43b@eucas1p1.samsung.com>
- <20190813150827.31972-6-s.nawrocki@samsung.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=zr7m4pwTZtuvjpeiIC/jYJKmr4TJLJV4XhMln9ZPv+4=;
+ b=SbYEa/0gqW6VQQEZwMVJEraM1zvKIzXFazIlvTmPaKna2abC6LyM1ofy3H86RBeGq8
+ 3IY4i/Z/rF0Zgy8w8BzAGJSxcBsNExo4HM90X8psS+cymPyf2A4XbYRKE1eRxw0zXy3g
+ WAW515eFBCtkUH4dh57xReXVVFzYmX6IlSt2dkBdIMiWiMaNVxNJVL3RF2rcK/zolTRF
+ h6iXFd/bo9AR3/yGWDrwZgiW/5dmS/Mgh7DKS7Z4x5HEPaxv7qHxW6KPA4CseMkBihQN
+ UkiMhExIUtSuxliQlZ7hKhro3ngfPgH1QQVBd7vJ51NhCsVmiFf3s1b8hl2EMcv9pQyt
+ /6LQ==
+X-Gm-Message-State: APjAAAVxV2i3keFyluTuhY2cOarOCvt1bU2zRwKNT9ICGyr1PZ0C1mMT
+ G77dEXAvFOWY9BzYt1N9Zmw=
+X-Google-Smtp-Source: APXvYqyUNRL91dzBCJhtveiCufmLdZI/X5yNhmzj2dzOWTVqlPUlee32crL4pNFIQyUM9g4pdq2Yow==
+X-Received: by 2002:a05:6808:49a:: with SMTP id
+ z26mr2630733oid.177.1565893938759; 
+ Thu, 15 Aug 2019 11:32:18 -0700 (PDT)
+Received: from [10.15.211.16] ([74.51.240.241])
+ by smtp.gmail.com with ESMTPSA id t81sm686205oie.48.2019.08.15.11.32.17
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 15 Aug 2019 11:32:18 -0700 (PDT)
+Subject: Re: [PATCH 00/14] ARM: move lpc32xx and dove to multiplatform
+To: Arnd Bergmann <arnd@arndb.de>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <20190731195713.3150463-1-arnd@arndb.de>
+ <20190731225303.GC1330@shell.armlinux.org.uk>
+ <CAK8P3a1Lgbz9RwVaOgNq=--gwvEG70tUi67XwsswjgnXAX6EhA@mail.gmail.com>
+ <CAK8P3a0=GrjM_HOBgqy5V3pOsA6w1EDOtEQO9dZG2Cw+-2niaw@mail.gmail.com>
+From: Sylvain Lemieux <slemieux.tyco@gmail.com>
+Message-ID: <b43c3d60-b675-442c-c549-25530cfbffe3@gmail.com>
+Date: Thu, 15 Aug 2019 14:32:15 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190813150827.31972-6-s.nawrocki@samsung.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <CAK8P3a0=GrjM_HOBgqy5V3pOsA6w1EDOtEQO9dZG2Cw+-2niaw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_112945_352369_00E7ECC0 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190815_113221_458880_6C31E78C 
+X-CRM114-Status: GOOD (  24.66  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.66 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [74.51.240.241 listed in dnsbl.sorbs.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
+ provider (slemieux.tyco[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,36 +108,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-pm@vger.kernel.org, pankaj.dubey@samsung.com, b.zolnierkie@samsung.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, kgene@kernel.org,
- vireshk@kernel.org, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ Jason Cooper <jason@lakedaemon.net>, "David S. Miller" <davem@davemloft.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, USB list <linux-usb@vger.kernel.org>,
+ Vladimir Zapolskiy <vz@mleia.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ SoC Team <soc@kernel.org>, Alan Stern <stern@rowland.harvard.edu>,
+ Guenter Roeck <linux@roeck-us.net>, linux-serial@vger.kernel.org,
+ Networking <netdev@vger.kernel.org>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 05:08:23PM +0200, Sylwester Nawrocki wrote:
-> From: Pankaj Dubey <pankaj.dubey@samsung.com>
+Hi Arnd,
+
+On 8/15/19 9:11 AM, Arnd Bergmann wrote:
+> On Thu, Aug 1, 2019 at 9:33 AM Arnd Bergmann <arnd@arndb.de> wrote:
+>>
+>> On Thu, Aug 1, 2019 at 12:53 AM Russell King - ARM Linux admin
+>> <linux@armlinux.org.uk> wrote:
+>>>
+>>> On Wed, Jul 31, 2019 at 09:56:42PM +0200, Arnd Bergmann wrote:
+>>>> For dove, the patches are basically what I had proposed back in
+>>>> 2015 when all other ARMv6/ARMv7 machines became part of a single
+>>>> kernel build. I don't know what the state is mach-dove support is,
+>>>> compared to the DT based support in mach-mvebu for the same
+>>>> hardware. If they are functionally the same, we could also just
+>>>> remove mach-dove rather than applying my patches.
+>>>
+>>> Well, the good news is that I'm down to a small board support file
+>>> for the Dove Cubox now - but the bad news is, that there's still a
+>>> board support file necessary to support everything the Dove SoC has
+>>> to offer.
+>>>
+>>> Even for a DT based Dove Cubox, I'm still using mach-dove, but it
+>>> may be possible to drop most of mach-dove now.  Without spending a
+>>> lot of time digging through it, it's impossible to really know.
+>>
+>> Ok, so we won't remove it then, but I'd like to merge my patches to
+>> at least get away from the special case of requiring a separate kernel
+>> image for it.
+>>
+>> Can you try if applying patches 12 and 14 from my series causes
+>> problems for you? (it may be easier to apply the entire set
+>> or pull from [1] to avoid rebase conflicts).
 > 
-> This patch enables exynos_chipid driver for ARCH_EXYNOS
-> based SoC.
+> I applied patches 12 and 13 into the soc tree now. There are some
+> other pending multiplatform conversions (iop32x, ep93xx, lpc32xx,
+> omap1), but it looks like none of those will be complete for 5.4.
+
+I think the patchset (v2) for the LPC32xx is ready for 5.4
+([PATCH v2 00/13] v2: ARM: move lpc32xx to multiplatform)
+ >
+> I now expect that we can get most of the preparation into 5.4,
+> and maybe move them all over together in 5.5 after some more
+> testing. If someone finds a problem with the one of the
+> preparation steps, that we can revert the individual patches
+> more easily.
 > 
-> Signed-off-by: Pankaj Dubey <pankaj.dubey@samsung.com>
-> Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
-> ---
-> Changes since v1 (RFC):
->  - none
-> ---
->  arch/arm64/Kconfig.platforms | 1 +
-
-Thanks, applied.
-
-Best regards,
-Krzysztof
-
+>        Arnd
+> 
+Sylvain
 
 _______________________________________________
 linux-arm-kernel mailing list
