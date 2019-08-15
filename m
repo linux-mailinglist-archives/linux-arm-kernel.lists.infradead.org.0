@@ -2,93 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 846588E246
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 03:16:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D6968E275
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 03:41:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RwPCeDhLj30WnM1xvzLkjhdE++3uR/AiYZMaCNEGWE4=; b=fJmHJp3JLbB40s7iRkZB5az0M
-	dGN1UYf9szlid+P8ekvN+EsNe3TsRZ3OJRT/LuxNo05GBZG21e26SswxCGvcQN09MjpHSnBK0CR/8
-	TfGvwICPprqOMhhoZH27ui3TjDGZm/scAv/z+h6PMQlm7/bGP4KaIF/f1UFiNL6v3Moo87N1CCEud
-	tYOupPHaMefy5b6ha9UrjvrRWFVQ39xbKfS+5bCk9yV7s+qMAZp9hpiJUS9pGx84kRXaguokhLb6F
-	XpIibd4M1jzn3IXDKKht3FhsHSlpx8I14vDO6pJIKS4c1DMYDqd2sjK7e51v/jenOl5+JI2jvNfVQ
-	HWBT/QBzw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JaiBpUNwoNCKi24C3oZCi93BgqGUUoAF9DP7/fOIj3I=; b=l/nkDH04eQPfxz
+	cc7p4CEzQCTl4ovFrInv9xAd+XrLYNpru27p2Wa9zRlwBCSyQ73qPCxbTAWW+yD+FC7TsGMuWF+wl
+	WXhYNqBz9Gr8M83gIYj8hr7qbKcdq0SBCML0Z85haYIZ977y1tlSS7dCOERILyb8M36/yClm7Z+8U
+	C5WvvnBtYh6Fp1RbR9I+jBBAKJanj4RjYmdZXKfZtqMpRc7m7117yfmDJDpsDcbRtXr44Zx2KvNu1
+	IbSIff0AGHuB3SXvYLj5Q98PQDbeg6b0fnMJCwsKUdAFfPbQKuvHnDVgWIj+TEOS0Sv5TEI9JVZxl
+	1+uxPAhuWrdKit9jw9Fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy4NC-0007Ji-Gg; Thu, 15 Aug 2019 01:16:14 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1hy4l9-0005kD-E3; Thu, 15 Aug 2019 01:40:59 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy4My-0007JN-EI; Thu, 15 Aug 2019 01:16:01 +0000
-Received: by mail-wm1-x330.google.com with SMTP id i63so299766wmg.4;
- Wed, 14 Aug 2019 18:15:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
- :references:user-agent:content-transfer-encoding;
- bh=YGuDiErQQ42Hc0nLZo7ea/SJqM4FxFI42R5TjzsfJsA=;
- b=tGN1QWR2w94STNXJ5XAm9NQnmk4cgErc0cbTOGHK2TyDKczEPSCJgPdL6RavLSXgr7
- Qej4aTK7MHDvw5ynyhPqvrEWJVGfTjyARQxigG+3Lu/JtcRq6grSb9hBTsPommEsCWTF
- eHsNJqO5LC/eslqFmmk7s8rlMiIxvMD9ceXz+2Vep79zwTTOmovB4+GgrJ0R3LqLstib
- qZCpOQ9kf0rtayH0DfiUwDM3ftdMuL9+kTnTYFp0Z6+rYaHm/wdFejUSZG1ltjxXNUL5
- r/0AeT7OaPXtVxQ2l3IzEsGMp7Eaq8eLYuOMpeiNTg2EPAdAPI6LEZQaJJG3yEkz4fyW
- a6Mw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
- :in-reply-to:references:user-agent:content-transfer-encoding;
- bh=YGuDiErQQ42Hc0nLZo7ea/SJqM4FxFI42R5TjzsfJsA=;
- b=r8E4uQi/RlknANObETeH4WcCVFFmVwifq9SrK1KrIfD+7G/o+oa7iCQDQEqlPIaX2T
- Y+Z9q11avvmtnTxU4EL6rBQX/OXH2UkeC5dX41ag2m7fHg9gErfnYUcsCgB3K4VTqyaR
- 40FT2iiygqek2jj0+oK5jKUXZXtZd18redjeaGPANmEwW2YqE5IK32/fQXLyxC15Vi63
- SOnFXm1IuwkB9JHq8kNlJwAsWpu4q8EDwKo4qe6lLWzI+bOGURLqsUmuPU9xld3BiGX9
- zB2jLPycZ9zbiYzx15Ai3ovZVNsoguH3UC4TaIQasi88fj6r6Hd2LdMglPoou7LIT1KE
- JDhw==
-X-Gm-Message-State: APjAAAUkP08HTvYHV18LIEQJDTiupxxoyDBg4IquCd5yl5VYDa+lk3Ls
- FSK/E+bYftbisJLtugTzM50=
-X-Google-Smtp-Source: APXvYqxkGTdbx6xWI5leTDK/zEYEp87e9rAKfD3TiMJqqDUHviXKINTfVKjgwwNkolNE103wGSdsHA==
-X-Received: by 2002:a1c:f918:: with SMTP id x24mr451668wmh.132.1565831758550; 
- Wed, 14 Aug 2019 18:15:58 -0700 (PDT)
-Received: from localhost ([92.59.185.54])
- by smtp.gmail.com with ESMTPSA id z7sm1005714wrh.67.2019.08.14.18.15.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 14 Aug 2019 18:15:57 -0700 (PDT)
-From: Vicente Bergas <vicencb@gmail.com>
-To: Robin Murphy <robin.murphy@arm.com>,
- Felipe Balbi <balbi@kernel.org>
-Subject: Re: kexec on rk3399
-Date: Thu, 15 Aug 2019 03:15:55 +0200
+ id 1hy4kv-0005ji-Vm; Thu, 15 Aug 2019 01:40:47 +0000
+X-UUID: 3739b3d729f640b2acb36718f539402f-20190814
+X-UUID: 3739b3d729f640b2acb36718f539402f-20190814
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1106257968; Wed, 14 Aug 2019 17:40:39 -0800
+Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 14 Aug 2019 18:40:37 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 15 Aug 2019 09:40:36 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 15 Aug 2019 09:40:36 +0800
+Message-ID: <1565833236.24305.2.camel@mtksdaap41>
+Subject: Re: [PATCH v2 0/2] drm/mediatek: make imported PRIME buffers
+ contiguous
+From: CK Hu <ck.hu@mediatek.com>
+To: Alexandre Courbot <acourbot@chromium.org>
+Date: Thu, 15 Aug 2019 09:40:36 +0800
+In-Reply-To: <20190729053335.251379-1-acourbot@chromium.org>
+References: <20190729053335.251379-1-acourbot@chromium.org>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Message-ID: <59055782-7fc2-4b16-af8b-a56fb845a43f@gmail.com>
-In-Reply-To: <0408cb6c-1b16-eacb-d47e-17f4ff89e2b8@arm.com>
-References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
- <c6993a1e-6fc2-44ab-b59e-152142e2ff4d@gmail.com>
- <0408cb6c-1b16-eacb-d47e-17f4ff89e2b8@arm.com>
-User-Agent: Trojita
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_181600_508848_64399D00 
-X-CRM114-Status: UNSURE (   8.86  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_184046_028686_A03494EA 
+X-CRM114-Status: GOOD (  11.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:330 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,34 +73,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Tomasz Figa <tfiga@chromium.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wednesday, August 14, 2019 3:12:26 PM CEST, Robin Murphy wrote:
-> On 14/08/2019 13:53, Vicente Bergas wrote:
->> On Monday, July 22, 2019 4:31:27 PM CEST, Vicente Bergas wrote: ...
->
-> This particular change looks like it's implicitly specific to 
-> RK3399, which wouldn't be ideal. Presumably if the core dwc3 
-> driver implemented shutdown correctly (echoing parts of 
-> dwc3_remove(), I guess) then the glue layers shouldn't need 
-> anything special anyway.
->
-> Robin.
+Hi, Alexandre:
 
-I just checked simple->resets from dwc3-of-simple.c and it is an array
-with multiple resets whereas dwc->reset from core.c is NULL.
-So the reset seems specific to the glue layers.
-Is there another way than resetting the thing that is
-generic enough to go to core.c and allows kexec?
+On Mon, 2019-07-29 at 14:33 +0900, Alexandre Courbot wrote:
+> The default DMA segment size was used when importing PRIME buffers,
+> which resulted in a chance of them not being contiguous in the virtual
+> IO space of the device and mtk_gem_prime_import_sg_table() complaining
+> that the SG table was not contiguous as it expects.
+> 
+> This series fixes this issue by
+> 
+> 1) Using the correct DMA device when importing PRIME buffers,
+> 2) Setting a more suitable DMA segment size on the DMA device than the
+> default 64KB.
+
+For the series, applied to mediatek-drm-fixes-5.3 [1], thanks.
+
+[1]
+https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-fixes-5.3
+
+> 
+> Changes since v1:
+> - Split into two patches,
+> - Fixed an error path that would have returned 0.
+> 
+> Alexandre Courbot (2):
+>   drm/mediatek: use correct device to import PRIME buffers
+>   drm/mediatek: set DMA max segment size
+> 
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c | 49 ++++++++++++++++++++++++--
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.h |  2 ++
+>  2 files changed, 48 insertions(+), 3 deletions(-)
+> 
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
