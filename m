@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71A988E22C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:52:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 062E48E22E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:52:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g6FRhWoBjWHaz2W4CW0s31jPbpE5TZ5fUslOwu6ycL4=; b=bw4Obgd4pRl4KR
-	xV5mp9zDhXpU/CFVMfX90tOiCt8j8q19rHzLHZix98GfnXbxTpyaKTBr6eHf1jC8dYwJU3GAihO8J
-	kHsw3gAjJsTJynvKYK+OJ/HodjuU9Ij7QwWbytv6zKEGX88ZT2zXbmzh1WDzqFf//6yKeI34HGy9T
-	yuzJrlamdKgnpzTtFvFd/yjyfraJspZeY9DeL/YRsd5f0bZvGM7ejdMaTv4WizHmPM6NTq2XAzsTE
-	E3HqsMuiaUZvbcjpQAXWeiYpXU4hWqkUGMma0plOb0z1zqo+k6GKN6MJQtiT02QQwR7xqScT8Z6FF
-	yKE9yqq5a8Kr4WmgIUAQ==;
+	List-Owner; bh=s9v2YeJTSlaOofsnVPNb/ZxaxH6jRJU4cLDBo0g7rY8=; b=DiQxFXT7rJWNPY
+	MFfJ+W1qVXc5NBLQzRKBoyWNfPWvZnZdidDLiAkl5KEyvG3eIk7xlwvSGTKo7uUnCJN15f7EgMWtl
+	EtraEEoNPcFeq7LpIpLsw73x023pPnCfgrwyuv0UiqaxkIldLgjUet2SFKA9BA6wtfs98uNZ1e+cT
+	ZZOVt/A1dzgTZVnfzX8+nGqGzpBF0XMrqXG9L5DOYe3wW0pd/yqaK5V6VjwN9rShiVTNEMvex2z8P
+	6OvxX8mT/5HKM/k+lXGVyXE1rgyhCjfltUTR2lINVnm9U2C7enBe2Rxw8vH3v7VJOdtiBcNdKpvta
+	EN7hwaSz/OBJxAHMScaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy403-0007eR-MY; Thu, 15 Aug 2019 00:52:19 +0000
+	id 1hy40L-0007sA-US; Thu, 15 Aug 2019 00:52:38 +0000
 Received: from onstation.org ([52.200.56.107])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy3x7-0004cT-Ag
+ id 1hy3x8-0004dD-63
  for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 00:49:19 +0000
 Received: from localhost.localdomain (c-98-239-145-235.hsd1.wv.comcast.net
  [98.239.145.235])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id 26AB63EA22;
+ by onstation.org (Postfix) with ESMTPSA id C34763EE60;
  Thu, 15 Aug 2019 00:49:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
- s=default; t=1565830156;
- bh=d3q75pXkjIXM1QryEInKZPabWpuCo5QQR2U68bge2+A=;
+ s=default; t=1565830157;
+ bh=MgVVYz3IFOaEWkO0SUurG8P6fyggfR5oXu1sG6fhpmg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=NJdtoh3/ImfhdTmSEd85mj5KPu2ZKI0+UpUzJUTokWtV70S3liqeW3s4dbfky+wr4
- LolisNgSRIh+ji/BEC/+LNt4IZWePqwWkQ0lf99WfPMtT+plnIZnwpj94J+7JjQ06J
- WoLNwQj3TpHlok1OzDecQd2NzU7BUwa+XkPAjiD8=
+ b=Bp3wTiAHR/MmK4BZ7UH9Kofa1DoQnFfUoY1BKE1p7bS2jKvwMZ7NtUQ5SBR5Yj8oM
+ zZ7+UhUUD4ei3UIylr8qmYdCQjodCRWJM/JTShTg5Zfsl89p5BwGyP2ttJlRD5qKXe
+ N+p9CACHiMQ9R+jKZjKW/Z3Ee5GDeUksSCLoV/uE=
 From: Brian Masney <masneyb@onstation.org>
 To: bjorn.andersson@linaro.org, robh+dt@kernel.org, agross@kernel.org,
  a.hajda@samsung.com, narmstrong@baylibre.com, robdclark@gmail.com,
  sean@poorly.run
-Subject: [PATCH 08/11] drm/msm/hdmi: silence -EPROBE_DEFER warning
-Date: Wed, 14 Aug 2019 20:48:51 -0400
-Message-Id: <20190815004854.19860-9-masneyb@onstation.org>
+Subject: [PATCH 09/11] ARM: dts: qcom: pm8941: add 5vs2 regulator node
+Date: Wed, 14 Aug 2019 20:48:52 -0400
+Message-Id: <20190815004854.19860-10-masneyb@onstation.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190815004854.19860-1-masneyb@onstation.org>
 References: <20190815004854.19860-1-masneyb@onstation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_174917_450041_E36492C7 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20190814_174918_321879_5D68B4F6 
+X-CRM114-Status: GOOD (  10.78  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -88,33 +88,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Silence a warning message due to an -EPROBE_DEFER error to help cleanup
-the system boot log.
+pm8941 is missing the 5vs2 regulator node so let's add it since its
+needed to get the external display working. This regulator was already
+configured in the interrupts property on the parent node.
+
+Note that this regulator is referred to as mvs2 in the downstream MSM
+kernel sources.
 
 Signed-off-by: Brian Masney <masneyb@onstation.org>
 ---
- drivers/gpu/drm/msm/hdmi/hdmi_phy.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/qcom-pm8941.dtsi | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_phy.c b/drivers/gpu/drm/msm/hdmi/hdmi_phy.c
-index 1697e61f9c2f..8a38d4b95102 100644
---- a/drivers/gpu/drm/msm/hdmi/hdmi_phy.c
-+++ b/drivers/gpu/drm/msm/hdmi/hdmi_phy.c
-@@ -29,8 +29,12 @@ static int msm_hdmi_phy_resource_init(struct hdmi_phy *phy)
- 		reg = devm_regulator_get(dev, cfg->reg_names[i]);
- 		if (IS_ERR(reg)) {
- 			ret = PTR_ERR(reg);
--			DRM_DEV_ERROR(dev, "failed to get phy regulator: %s (%d)\n",
--				cfg->reg_names[i], ret);
-+			if (ret != -EPROBE_DEFER) {
-+				DRM_DEV_ERROR(dev,
-+					      "failed to get phy regulator: %s (%d)\n",
-+					      cfg->reg_names[i], ret);
-+			}
+diff --git a/arch/arm/boot/dts/qcom-pm8941.dtsi b/arch/arm/boot/dts/qcom-pm8941.dtsi
+index f198480c8ef4..c1f2012d1c8b 100644
+--- a/arch/arm/boot/dts/qcom-pm8941.dtsi
++++ b/arch/arm/boot/dts/qcom-pm8941.dtsi
+@@ -178,6 +178,16 @@
+ 				qcom,vs-soft-start-strength = <0>;
+ 				regulator-initial-mode = <1>;
+ 			};
 +
- 			return ret;
- 		}
- 
++			pm8941_5vs2: 5vs2 {
++				regulator-enable-ramp-delay = <1000>;
++				regulator-pull-down;
++				regulator-over-current-protection;
++				qcom,ocp-max-retries = <10>;
++				qcom,ocp-retry-delay = <30>;
++				qcom,vs-soft-start-strength = <0>;
++				regulator-initial-mode = <1>;
++			};
+ 		};
+ 	};
+ };
 -- 
 2.21.0
 
