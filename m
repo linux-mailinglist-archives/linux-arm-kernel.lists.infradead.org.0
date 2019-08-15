@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 710A38F39B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 20:38:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F1498F3A1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 20:38:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fhSFvPLznP7zJLvWozPb+cgh6CqeNp8tqXjwtAJhaUY=; b=lJFjrIqeEVZaXs
-	YuQqUOAwuZPdLfzk0rblhGo1pF3O1Ll4n2wYnLLOKIbwR47zQPElgree6OC50fr5kt2O7bBc0HbgO
-	Amc4B+2A+arJODHI16sraSi/u1YadwCJvPECCK4pH9O/0zYQRa97lCdGpzvR61GP7OBw72PfhjY1l
-	I/DcUwpF20aeOG4efG1zktI0TSwmmK4MwA696vJTEEQwZ+opsjKPcLZrFUEczflsO5156HHoWXUk2
-	dHBmV1BuIWEPFhfAE0sLMhMgYsOdSIx3XkcWFYxpYc+9CrYxTySehKOoq9sHMMNcuV5G8nnPkCIA7
-	SqBiCUZSCtLetYJd5srg==;
+	List-Owner; bh=eUM9dXppk2fbHIkv2z1Y0/yB0iY5p8EjSl7xkr1QsSY=; b=gxS4X3ew+PkQWB
+	e7x0UBjFUcxevR0u0+wrZP83U8bYH1nIXR4qlOgx3SmWt+gJnLB2TfeTJe1RkG4+tXJiVXYn0eTl1
+	pZFrTkLgDKTNOlrYMPVbCrVQuwkvBTbOSnj4lWDnH3HnnUaM6GG7nCCsF7gnT12csuhYmW1Gmnok+
+	yM9XI0Q544rYOR7vj/C88oBbLj8vK+QjyU2M3d+Co/tLyoLZjygnQLzQPmBo73HSfumhPLR3ZUd4R
+	BqsbeySpAkO4gVRZ6hdTFN10rHyDQ8NhwbRUmioVWdtnUGA1Zwf5dSvrYqZU6ACTCTjWXvSoNq5k8
+	qxvAg3P11zNt9zoaWjBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyKdc-00050e-Te; Thu, 15 Aug 2019 18:38:16 +0000
+	id 1hyKds-0005I5-S7; Thu, 15 Aug 2019 18:38:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hyKd6-0004mY-Ce
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 18:37:46 +0000
+ id 1hyKd8-0004mt-7L
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 18:37:48 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DE427360;
- Thu, 15 Aug 2019 11:37:43 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7D9151570;
+ Thu, 15 Aug 2019 11:37:45 -0700 (PDT)
 Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
  [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 80D893F694;
- Thu, 15 Aug 2019 11:37:42 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2138B3F694;
+ Thu, 15 Aug 2019 11:37:44 -0700 (PDT)
 From: Robin Murphy <robin.murphy@arm.com>
 To: will@kernel.org
-Subject: [PATCH v2 01/17] iommu/arm-smmu: Mask TLBI address correctly
-Date: Thu, 15 Aug 2019 19:37:21 +0100
-Message-Id: <33c764762c8e5baa961d92648c293dd5590559e7.1565892337.git.robin.murphy@arm.com>
+Subject: [PATCH v2 02/17] iommu/qcom: Mask TLBI addresses correctly
+Date: Thu, 15 Aug 2019 19:37:22 +0100
+Message-Id: <3353ab6006c49cb8821f298523f38c5f7dc1d00d.1565892337.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.21.0.dirty
 In-Reply-To: <cover.1565892337.git.robin.murphy@arm.com>
 References: <cover.1565892337.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_113744_471214_16BE84EB 
-X-CRM114-Status: GOOD (  14.26  )
+X-CRM114-CacheID: sfid-20190815_113746_303825_59F51A7A 
+X-CRM114-Status: GOOD (  14.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,29 +69,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The less said about "~12UL" the better. Oh dear.
-
-We get away with it due to calling constraints that mean IOVAs are
-implicitly at least page-aligned to begin with, but still; oh dear.
+As with arm-smmu from whence this code was borrowed, the IOVAs passed in
+here happen to be at least page-aligned anyway, but still; oh dear.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- drivers/iommu/arm-smmu.c | 2 +-
+ drivers/iommu/qcom_iommu.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index 64977c131ee6..d60ee292ecee 100644
---- a/drivers/iommu/arm-smmu.c
-+++ b/drivers/iommu/arm-smmu.c
-@@ -504,7 +504,7 @@ static void arm_smmu_tlb_inv_range_nosync(unsigned long iova, size_t size,
- 		reg += leaf ? ARM_SMMU_CB_S1_TLBIVAL : ARM_SMMU_CB_S1_TLBIVA;
+diff --git a/drivers/iommu/qcom_iommu.c b/drivers/iommu/qcom_iommu.c
+index 34d0b9783b3e..bed948c3058a 100644
+--- a/drivers/iommu/qcom_iommu.c
++++ b/drivers/iommu/qcom_iommu.c
+@@ -155,7 +155,7 @@ static void qcom_iommu_tlb_inv_range_nosync(unsigned long iova, size_t size,
+ 		struct qcom_iommu_ctx *ctx = to_ctx(fwspec, fwspec->ids[i]);
+ 		size_t s = size;
  
- 		if (cfg->fmt != ARM_SMMU_CTX_FMT_AARCH64) {
--			iova &= ~12UL;
-+			iova = (iova >> 12) << 12;
- 			iova |= cfg->asid;
- 			do {
- 				writel_relaxed(iova, reg);
+-		iova &= ~12UL;
++		iova = (iova >> 12) << 12;
+ 		iova |= ctx->asid;
+ 		do {
+ 			iommu_writel(ctx, reg, iova);
 -- 
 2.21.0.dirty
 
