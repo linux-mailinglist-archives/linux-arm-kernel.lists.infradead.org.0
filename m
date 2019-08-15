@@ -2,49 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E8BB8E495
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 07:46:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB9558E491
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 07:45:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rRs5sbw1ZzX7PZkfbXvP8aVHZJ2aKZuTImE+acB/47k=; b=tul43aNPu3l4WK
-	mzakb3NUFThSS2CB5tkmr3OG+T/czi2b7CG07TQ4Dut8YmWoIUX4LTzlIthBYLZFS4+kvYFceZPPf
-	bYf0Pcd1Wngct7yvHAZh+ou2ikJDN9Ri8KsnunJesvN5vem/Jz74QUYI5+bpW4EiycnWfwfu112I5
-	dz5Q03RkehG3bL/C80zAf9xq+qqP/GO6Z/DZ1+lTelJQsdfjo2tCIzGp2CqOucId1YH2ZUC+sYlQo
-	gkYprK3SJdTJy8XL38VYgOJuyhJnlACmq35vMXKWdkqPSzJ52XKdqOedZnMpT36VpkYYPkphx1Qpp
-	PdhC0+mOP+yPPp1/McsQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IIgr1JM80fjriuobQ2QoS5Gd/xDWdqqc1YXvNnMWdCE=; b=WvPCkvqJcZecUn
+	xBOIEQuBRAMsYKIidKly+dpPIJd+aADqB0pC5jcLld9iWJbl8YSuSO7mt5kvNHPtCHcE21Kv4Oklg
+	fYID3eNKDpbmSJrjJTInvf/Ws4CMxOZ6O+7gHuhEUy5Tm4LrkO1VZsSF1MZcxOO9SurfFItB4cLeP
+	bb/ZGm2W69jP81F0hDFCyPu7sGAHt+n1Nxl9yZW9qIjMzG1kAbHHHNTuWUXbmdmRzKMkpi4AB4dJD
+	/jBmPWn3zQ/ujLo+SZJ2zsv7SB1jX8ftQ/nbQ7VmckQxyaUc/yLewMSCe8/LgRV//Bt9hiygRV1ZI
+	qQ5Qnlf3ceBVjVUFNvjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy8ab-0008U9-GY; Thu, 15 Aug 2019 05:46:21 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy8aJ-0008Sy-Th
- for linux-arm-kernel@bombadil.infradead.org; Thu, 15 Aug 2019 05:46:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:Content-Transfer-Encoding:
- MIME-Version:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=A6pYuT4l1bnfrqQfspgQo+WHkOoA1W5fDsNVVderSO0=; b=vg7WvK4LAqogHi/PtiVl16y3Im
- wvKH/JLPS+CyuQatx67DS051r1kflIfpR9J5RApcnMtlZJvLLF1ln2ju4Jcx0iSmjyzYW0mb2GFQg
- 9UCrLvvsrPtAd8lO/OvjdXelepXQ3mAFSFRMpkEOcFZEZo13LQ/gtFLQi8xZ0MUhOtgBBcEIOEau9
- LvdEN2TvO/xQCf42pbUBbL16zPbXU1n0T6sqsGjbGgcwZsYaPIt7zEg+e7dXWezTS+rWAQcvM26QF
- nRqoWBdhwb7CV7/ljgMGigjI8VmSQWZGhRZLgfawlb7UYSvp1MOT2VqCFlb/MvBd+aq++ma37KZvb
- 99HIixQw==;
+	id 1hy8Zu-0007yI-SZ; Thu, 15 Aug 2019 05:45:38 +0000
 Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy8aG-0007qo-Vm
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 05:46:02 +0000
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hy8Zf-0007wR-P0
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 05:45:25 +0000
 Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id DCF73649FA0FCEA333F3;
+ by Forcepoint Email with ESMTP id E2B252335EBECA1A4F1E;
  Thu, 15 Aug 2019 13:45:10 +0800 (CST)
 Received: from HGHY4L002753561.china.huawei.com (10.133.215.186) by
  DGGEMS410-HUB.china.huawei.com (10.3.19.210) with Microsoft SMTP Server id
- 14.3.439.0; Thu, 15 Aug 2019 13:45:03 +0800
+ 14.3.439.0; Thu, 15 Aug 2019 13:45:04 +0800
 From: Zhen Lei <thunder.leizhen@huawei.com>
 To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>, "Jean-Philippe
  Brucker" <jean-philippe@linaro.org>, John Garry <john.garry@huawei.com>,
@@ -52,23 +36,28 @@ To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>, "Jean-Philippe
  Roedel <joro@8bytes.org>, iommu <iommu@lists.linux-foundation.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, linux-kernel
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH v2 0/2] add nr_ats_masters for quickly check
-Date: Thu, 15 Aug 2019 13:44:37 +0800
-Message-ID: <20190815054439.30652-1-thunder.leizhen@huawei.com>
+Subject: [PATCH v2 1/2] iommu/arm-smmu-v3: don't add a master into smmu_domain
+ before it's ready
+Date: Thu, 15 Aug 2019 13:44:38 +0800
+Message-ID: <20190815054439.30652-2-thunder.leizhen@huawei.com>
 X-Mailer: git-send-email 2.21.0.windows.1
+In-Reply-To: <20190815054439.30652-1-thunder.leizhen@huawei.com>
+References: <20190815054439.30652-1-thunder.leizhen@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.133.215.186]
 X-CFilter-Loop: Reflected
-X-Spam-Note: CRM114 invocation failed
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190814_224523_975286_A94F7B77 
+X-CRM114-Status: GOOD (  10.33  )
 X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,20 +75,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-v1 --> v2:
-1. change the type of nr_ats_masters from atomic_t to int, and move its
-   ind/dec operation from arm_smmu_enable_ats()/arm_smmu_disable_ats() to
-   arm_smmu_attach_dev()/arm_smmu_detach_dev(), and protected by
-   "spin_lock_irqsave(&smmu_domain->devices_lock, flags);"
+Once a master has been added into smmu_domain->devices, it may immediately
+be scaned in arm_smmu_unmap()-->arm_smmu_atc_inv_domain(). From a logical
+point of view, the master should be added into smmu_domain after it has
+been completely initialized.
 
-Zhen Lei (2):
-  iommu/arm-smmu-v3: don't add a master into smmu_domain before it's
-    ready
-  iommu/arm-smmu-v3: add nr_ats_masters for quickly check
+Signed-off-by: Zhen Lei <thunder.leizhen@huawei.com>
+---
+ drivers/iommu/arm-smmu-v3.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
- drivers/iommu/arm-smmu-v3.c | 22 +++++++++++++++++-----
- 1 file changed, 17 insertions(+), 5 deletions(-)
-
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index a9a9fabd396804a..29056d9bb12aa01 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -1958,10 +1958,6 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
+ 
+ 	master->domain = smmu_domain;
+ 
+-	spin_lock_irqsave(&smmu_domain->devices_lock, flags);
+-	list_add(&master->domain_head, &smmu_domain->devices);
+-	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
+-
+ 	if (smmu_domain->stage != ARM_SMMU_DOMAIN_BYPASS)
+ 		arm_smmu_enable_ats(master);
+ 
+@@ -1969,6 +1965,10 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
+ 		arm_smmu_write_ctx_desc(smmu, &smmu_domain->s1_cfg);
+ 
+ 	arm_smmu_install_ste_for_dev(master);
++
++	spin_lock_irqsave(&smmu_domain->devices_lock, flags);
++	list_add(&master->domain_head, &smmu_domain->devices);
++	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
+ out_unlock:
+ 	mutex_unlock(&smmu_domain->init_mutex);
+ 	return ret;
 -- 
 1.8.3
 
