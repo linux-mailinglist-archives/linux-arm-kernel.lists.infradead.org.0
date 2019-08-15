@@ -2,76 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C7728E665
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:31:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F8AA8E675
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:34:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IjRI+OgPEBWkJfQlkv84aayu3fUNFHhNr/ftmeqo9Wk=; b=mk3sdk3/moBIsf
-	uOwngJUeZQd9nWqUA9P5e26uQX2HClrByVOi3bJvuCOT3jLat1Bg1ZmfmF6/zWIQtgvUp0HF99XYv
-	tFlJ7PBhrzeAIKoTmfAy3uEzlno78BCWl+vcQn6K4IGUwDsyf1K/Apr9qsuwQfnrcGLCOaILpKY1l
-	EZ2cfXKBmPqwfCBOLiQGJq2cITla71eEpPGOuanJA3tEbc+RwNikmMjgznYFlr6IbN84CWY5nlX6G
-	cP+xkKHfb/qt1GrjC1/hjQ+Vvmba6R4zPtOyQLEE+KBIy0/CMWc1jkHWIK6sKAeMBFRNmeaObojR6
-	nBT7dp+tL/7Y0hpI659A==;
+	List-Owner; bh=+2eHzTYG6ewjQoOc0xOUMHvbHHvDDedV+QG6uc9yzCo=; b=AG0LyXtcYXaQ0U
+	rTkMkKKsFG3IQny29xNFXHNEWm35MndhWlUYEQmrQ2XnM+86vf4hZbYYjfvtlFMQpJvZdtbkrWGDq
+	ZfAiZfqPimzMOpvwyW63wzmsNa7h1LQCGvee34b7cBWHd3aVFoq347SmiRIrOUWudTRwI1RY1kkQb
+	QX6oFPwZfUDGnNpPErNPRbLuZdr0WtxPvgzVqdyJV/iDJ/s3prYI7FKAQX3lnrvVmS7E70uoPm4jS
+	l1h0oBh8aBWNgeNQmwoVpQsBsvRVE62LBF6IJIvbGgeGacVd+S6bNpayQhag9d8HxAs/BDYnqr65s
+	pmVi3AzNrncKr9YdEJYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyBAb-0000RN-Ms; Thu, 15 Aug 2019 08:31:41 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hyBDX-00017n-4H; Thu, 15 Aug 2019 08:34:43 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyBAN-0000R5-JF
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:31:28 +0000
-Received: by mail-lj1-x242.google.com with SMTP id e27so1548565ljb.7
+ id 1hyBDK-00017U-1d
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:34:31 +0000
+Received: by mail-lf1-x143.google.com with SMTP id c9so1153466lfh.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 01:31:27 -0700 (PDT)
+ Thu, 15 Aug 2019 01:34:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=i/yfx5NeV3piU61gQdhfpnzlq/6GHBCfJ8yX0HleDDU=;
- b=rild4YlbRJU5wL1IgqlE2vanKqYTSRQWlpn+ut7lNDUUlySGDV7+Y8nqmVm+tCwfxP
- fF1pS/jvkhsXhDQfovqqUYoMMEuBrEOoaEvG9VehZ0mOPwEwFthyG/8t4T9NhYyj+9z7
- FzROK9y8F90mbOlCBpBB3Cs0Wsy2z2VXmF2A6AIthCV1UjCJy3cWW4NUevVl6c7gzRFE
- lhuLhtLiW5z6R3PgaVYhzlPmCe/GYpAoE3SKp03R8Th06dkcUEhoaSCZMhVg87OOSPKi
- C2YXbDeXfFo9O6FWqdUSAYbCNXAkpH48L0fivxYoziaZy8TFVo0Sel5vSyvt7y6cgRW6
- L1UA==
+ :cc; bh=7i16DpGe/WrEnWRFWrw6WDyR2YmJ49EsxY0UWyxcbfk=;
+ b=TVUoUOIaS51Agv5l0PMa3o6r7lDWfkGGfAKJhDlNLIl7488xPFjP4Zc62E1GcUW1VV
+ o0tMKL+wXnt1XdSF1KbK0Lt2NPVz37E6SBBibznbqskqTNxpsTEGO/IN8IWSuP8NEn+L
+ YweJ7nuU+lmreFBFY/Jygo7zNIKriXEtK9XOLtxp1wnYaEzcfK6K91ZsV5tKqCLz0pji
+ +j+VLUGXtDrQ6JvziL1YCvfd7+ThtaWoW8fly7i71IZV69lt92FEoue8vUkPf1PR+fIT
+ BuuAkU61fn6Twlw0EMMwqgfTgHrOwgjtkdqRSq+SUTWsfkxUHCcsuL1aUGE1euu6qHxW
+ QxwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=i/yfx5NeV3piU61gQdhfpnzlq/6GHBCfJ8yX0HleDDU=;
- b=Q77wBjL43AzrTf/GIr7g7CJ5bX5zo9xTsFUa/YMZ8gKbZ0Byimq+XiMglxzfQ8z9bh
- hogis/00Z5fAxuPJwHno5Aj5pbw1/K4fX9L+3rpHnQPnAp0FYLNfhOVNKaDXxYVHuyX8
- 55Y9yfUP23DHYfEkhKsT6XTYyobHKzryn1IWrB1BOeyyStMmwlEcsGoX/LGaXjbm/Tdm
- HZtP7XLCQGzdW+1lj5SFbLAVmIGInxOV1jdh93OTjtrspiRTaZzIbqUROAhU+8UTVEXd
- zVVlSTBpr0HBpC68UoY/ANTNlqE8a8WCfKNmEw4ZBvxJv+z+OLaon7nilH7UGnQHS/7j
- 3ftA==
-X-Gm-Message-State: APjAAAXErRAhuYYeHFoaq6q3ADpDrS34IxNPdyh0HDRpio8xu1SJKTDG
- xyoffj8hIyid9sZmCWjxdQDdGH8SP5RANnAoNk8AEA==
-X-Google-Smtp-Source: APXvYqzsrobqE4nMFnjhW6qVN2v/WuS6+a4azs9xd0z0wQrNczcpbiWvts190l19juTT3G+lBBGs1PS8c9qSK1SDMvQ=
-X-Received: by 2002:a2e:3a0e:: with SMTP id h14mr2084652lja.180.1565857886156; 
- Thu, 15 Aug 2019 01:31:26 -0700 (PDT)
+ bh=7i16DpGe/WrEnWRFWrw6WDyR2YmJ49EsxY0UWyxcbfk=;
+ b=aXV+9z723GkCp37XN5ldMUZIj9J8G3EPCGs6R48t/udLv/iPGQEpZ1F0hcUGIWy0q8
+ Ms6W3vZ7jGU3eoVYBsBmMHm0APdnZBO45To39n6TUHi3vIRpIC6JAeBgqUl5BMKfMS8C
+ sKPKqh+kwRTtE/OTx5TOsDm1yRw3RS8Qc/TBymvPR7Pit+v4boEOjLVVgXIPehwiA0jP
+ NZoK94JwQYlO1RHcVjBfcBBYHTy57g1RfMU5GQncWWY++Qx/tMnoGxf4gduiLH4oYFGY
+ uD+PmQZnr6Ay+zaEm2+y5dIH3SI5KZzwP5ACVXBfQyAU6b1g5nbT3pHxUy2DBavrsHK3
+ 36kA==
+X-Gm-Message-State: APjAAAVOidCdGSGVdmbeClimvaZ3vHMepp76VhiO0//jBlJQICJp1ftQ
+ 6n4+e7GLnNrLw8NuRygOhNeshp45OWx8PiF5f9owoA==
+X-Google-Smtp-Source: APXvYqxb0UB6/giI18HHjmcKPLqMYP0VUKp7BEJ9Az/O76XbGpUEV3T+utaGsTe3hzjxU1rcsCu+m7ocZF57FmoUKmk=
+X-Received: by 2002:ac2:4c07:: with SMTP id t7mr1629302lfq.152.1565858068523; 
+ Thu, 15 Aug 2019 01:34:28 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190815004854.19860-1-masneyb@onstation.org>
- <20190815004854.19860-12-masneyb@onstation.org>
-In-Reply-To: <20190815004854.19860-12-masneyb@onstation.org>
+ <20190815004854.19860-10-masneyb@onstation.org>
+In-Reply-To: <20190815004854.19860-10-masneyb@onstation.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 15 Aug 2019 10:31:14 +0200
-Message-ID: <CACRpkdYSHHqY50=3yo0QDinTaXbO9GzHoOFqMS4K3SiNghssGA@mail.gmail.com>
-Subject: Re: [PATCH RFC 11/11] ARM: dts: qcom: msm8974-hammerhead: add support
- for external display
+Date: Thu, 15 Aug 2019 10:34:17 +0200
+Message-ID: <CACRpkdYU-6LvFKRkj0yMMCmAnX0XtGe7rMwbXbhf2GCp77Ciyw@mail.gmail.com>
+Subject: Re: [PATCH 09/11] ARM: dts: qcom: pm8941: add 5vs2 regulator node
 To: Brian Masney <masneyb@onstation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_013127_634594_54E820C0 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190815_013430_090119_C0263A39 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -115,9 +113,21 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, Aug 15, 2019 at 2:49 AM Brian Masney <masneyb@onstation.org> wrote:
 
-> Add HDMI nodes and other supporting infrastructure in order to support
-> the external display. This is based on work from Jonathan Marek.
+> pm8941 is missing the 5vs2 regulator node so let's add it since its
+> needed to get the external display working. This regulator was already
+> configured in the interrupts property on the parent node.
 >
+> Note that this regulator is referred to as mvs2 in the downstream MSM
+> kernel sources.
+
+When I looked at it it seemed like this convention is used for power
+supplies that appear on both the main PMIC and the "extra (boot? basic?
+low power?) PMIC that the main 80xx PMIC has mvs1 and the
+other 89xx PMIC has mvs2.
+
+I suppose it is named "mvs" on both PMICs and this is just a rail
+name so as not to confuse the schematic?
+
 > Signed-off-by: Brian Masney <masneyb@onstation.org>
 
 Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
