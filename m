@@ -2,87 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 686438EFFC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 18:01:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 273408F03C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 18:12:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZtVIWPIB9zIyZ0zefZ8agOQLttGrrQ2r1j2vCf0cRCg=; b=eO8n5ZjJQHP4q1
-	hTsYL8WCejRj5J8Pm8imFBnzbRzN8jeUUZL40Jj5eXGEJRCa7xoxX1uYkDdjdE2M11sViGBDYicEB
-	ESc8eVPOVJbRtf1cJO1ycPAXuhopZertDisVVfoaTg1BGVUJ3XecHcvSUlUQ1ZqYjusEPdKE71grI
-	xZ8KEXD+a/tPzruX4/wqMnwh9AixIOptP/ZKKRHa31wEFsnYEvsdXZYdRc2Gar9SIYMsehwpSM6uJ
-	YPspQVECc+Pd/igNJmsSKwCFcK1ouuy266pjHlEtbfZNKuMHZ5c8rcGaNE6DOMpoO7UoC4RIOOB/W
-	9zWCCr6qovl5Ximdl1/Q==;
+	List-Owner; bh=al/uXl/AR4hveK04oeQ9zjv2hboGt0uqgN5ngVLEX9o=; b=LO9plbvcrbDhaG
+	DvjhIcmvp+Q8S1C6uS1L1yKnOtgy7q5T5/tslGJ+KU/zYA+GtUOxqH4jNrSdTvOkHx5ont3YSIqjL
+	aJ7pwRguiukIO30ZEB7VBcDkRWXzab9t1OhFcEeAc5lL6MLPUKIb59d1RPL3Mj6HfIMb1EN6SPT+/
+	VIJpP7fwz16MD7SAtzvxWwuUk8gXNvfnyOJUIHaMLJ/WuTANJZXZQ+ENox2JgVjiyJK4UiBf2oxEI
+	1d5r2qcnR3n/zyKvOVTr4y8wu8wdLdHQQXmZ7UkC3idj+cmOCdhFg2ZpPT1hsdRdrORdUncMsBnWq
+	92vJKr6a3NivNtaf/U9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyIBN-00026t-E8; Thu, 15 Aug 2019 16:00:57 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hyIMW-0005h8-11; Thu, 15 Aug 2019 16:12:28 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyIB3-000248-5N; Thu, 15 Aug 2019 16:00:41 +0000
-Received: by mail-wm1-x342.google.com with SMTP id g67so1680933wme.1;
- Thu, 15 Aug 2019 09:00:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZZJG6lCCMVKX3Nb+gskZTvgrgZyC1/doiS/TEyozSzo=;
- b=lvmQXN9paIbkjawhVhrZWN0++nHZC6EuwRc5Zig1XTvEtnW0A/v+Vbhh8v3qaIPnV0
- fR358wPCGRymbbk7lwjX0YnbKvTuHXFURvgjeQS+FUPci6sZD+ioWQWNpjGFniKXAwX3
- 7E3k1h0L6mlT5CiqgQavsohG6XZ/8YLHC4vNPbHwEgWoauFMA79rsgMRakYaD9WGGYiq
- ZzIa7t0rLVvKe0aPngaR3iC6e02A8oT73j0rhZOueCcwDK4XsuCy0k1VSycZ48ucF3xa
- QvAxApFbZIGvf5i7ZBqGRnvbgtbs1Pi7EW9414Xvs5JxHLhOT+/MW22szSYRQnhRzCsR
- W1QA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZZJG6lCCMVKX3Nb+gskZTvgrgZyC1/doiS/TEyozSzo=;
- b=fX2RZFzK/SRV1r5jjUtw4dKOoozZg+FwhPYhDwUzQ5ngW0E3BDsIgFaJTzopP9AFDV
- oB+7yHO8snboKTAc6BU4bsJoe3xoc7OqU15LFjxwrAivDjEzu0inZSsPJdiy2RpYl7Q8
- +T7aKQOWybGKmArTwZpj2S4v2knMruOxGJBQviHKiN6dk6Wucsz5V00k/wEbMwbK+QNK
- +Uz9YQriMw5wKkmBoF+BNqeNcLuk80AQyK8DUBW42itwVckKW4uG7t1hFsMRCS6HV8xB
- 6cWBiLvX9hkwG6gS06AIg5xdyPrGuWnusK+uUnK06ybgkLPJ9YV+D5tsqFQ4UBdSHHnv
- BZzA==
-X-Gm-Message-State: APjAAAUEikjCv+9GjQHyS24mAUmF5TzTFq292OZWGwYQakr1crINKek7
- 5hNm3HDM6zrtBqwS7jqPN2us7kLThApBU9VNYhA=
-X-Google-Smtp-Source: APXvYqxN1QML2PFgns8HVcVykSvU44yksGmUXTxZie1mL8bnuS0Pat4Mwpx1Q0aA7AF8MwoYjfps6JixsNk8GNBfbFo=
-X-Received: by 2002:a1c:988a:: with SMTP id a132mr3356098wme.165.1565884834106; 
- Thu, 15 Aug 2019 09:00:34 -0700 (PDT)
+ id 1hyIME-0005gD-FY
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 16:12:17 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id D4C55634C87;
+ Thu, 15 Aug 2019 19:09:32 +0300 (EEST)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1hyIJg-00011n-4w; Thu, 15 Aug 2019 19:09:32 +0300
+Date: Thu, 15 Aug 2019 19:09:32 +0300
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Vishal Sagar <vishal.sagar@xilinx.com>
+Subject: Re: [PATCH v10 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
+ Subsystem driver
+Message-ID: <20190815160932.GB3504@valkosipuli.retiisi.org.uk>
+References: <20190711091612.98175-1-vishal.sagar@xilinx.com>
+ <20190711091612.98175-3-vishal.sagar@xilinx.com>
 MIME-Version: 1.0
-References: <CA+Vb7hpe_USzdCuTBHd8V-t6YeQ0oApiBrvM-D43JuhJda6eyQ@mail.gmail.com>
- <20190815122151.bg7it6ptxwcn2vif@willie-the-truck>
- <8253b02c-0431-6b01-6af4-6132eb992925@arm.com>
- <CA+Vb7hpi=pCC9viiof8y85Kw_vCawWQ0B6kGFALgxtZfCKoaTw@mail.gmail.com>
-In-Reply-To: <CA+Vb7hpi=pCC9viiof8y85Kw_vCawWQ0B6kGFALgxtZfCKoaTw@mail.gmail.com>
-From: Philipp Richter <richterphilipp.pops@gmail.com>
-Date: Thu, 15 Aug 2019 18:00:23 +0200
-Message-ID: <CA+Vb7hqPvDtv0ahjxa_gM68qsws6-dmtiOPmG6-WB+HZEC=4aw@mail.gmail.com>
-Subject: Re: aarch64 Kernel Panic Asynchronous SError Interrupt on large file
- IO
-To: Robin Murphy <robin.murphy@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190711091612.98175-3-vishal.sagar@xilinx.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_090037_230342_11761B76 
-X-CRM114-Status: GOOD (  10.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190815_091211_272502_E1BAE462 
+X-CRM114-Status: GOOD (  29.98  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (richterphilipp.pops[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,189 +68,1430 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, catalin.marinas@arm.com, vicencb@gmail.com,
- linux-rockchip@lists.infradead.org, andre.przywara@arm.com,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Jacopo Mondi <jacopo@jmondi.org>, Dinesh Kumar <dineshk@xilinx.com>,
+ Hyun Kwon <hyun.kwon@xilinx.com>, Hyun Kwon <hyunk@xilinx.com>,
+ Sandip Kothari <sandipk@xilinx.com>, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, Michal Simek <michals@xilinx.com>,
+ laurent.pinchart@ideasonboard.com, Luca Ceresoli <luca@lucaceresoli.net>,
+ hans.verkuil@cisco.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Reading from the raw eMMC block /dev/mmcblkp1 I can also produce a panic :
+Hi Vishal,
 
-sudo dd if=/dev/mmcblk1 of=/dev/null bs=1M status=progress
-2846883840 bytes (2.8 GB, 2.7 GiB) copied, 23 s, 124 MB/s
+Thanks for the update.
 
-============
-[  428.794747] dwmmc_rockchip ff520000.dwmmc: Unexpected command
-timeout, state 3
-[  428.984736] dwmmc_rockchip ff520000.dwmmc: Unexpected command
-timeout, state 3
-[  429.174738] dwmmc_rockchip ff520000.dwmmc: Unexpected command
-timeout, state 3
-[  429.179323] Internal error: synchronous external abort: 96000210
-[#1] SMP
-[  429.179934] Modules linked in: wireguard(O) ip6_udp_tunnel
-udp_tunnel lz4 lz4_compress iptable_filter iptable_raw xt_owner
-iptable_nat xt_connmark iptable_mangle bpfilter rc_cec
-snd_soc_hdmi_codec dw_hdmi_i2s_audio dw_hdmi_cec
-snd_soc_audio_graph_cc
-[  429.186527] CPU: 0 PID: 1079 Comm: bash Tainted: G           O
-5.2.8-1-ARCH #1
-[  429.187193] Hardware name: Pine64 Rock64 (DT)
-[  429.187576] pstate: 20000005 (nzCv daif -PAN -UAO)
-[  429.188007] pc : copy_page_range+0x124/0x3d0
-[  429.188386] lr : dup_mm+0x3fc/0x478
-[  429.188692] sp : ffff00001277bb80
-[  429.188982] x29: ffff00001277bb80 x28: ffff8000dd17e450
-[  429.189446] x27: ffff8000dd17e470 x26: ffff8000dd17e460
-[  429.189912] x25: 0000aaaac4a01000 x24: ffff8000dca92a00
-[  429.190376] x23: ffff8000dd1fdf80 x22: ffff8000dd30c8a0
-[  429.190840] x21: ffff8000dca92a00 x20: ffff8000dd30c8a0
-[  429.191306] x19: ffff8000dd1fdf80 x18: 0000000000000000
-[  429.191771] x17: 0000000000000000 x16: 0000000000000000
-[  429.192236] x15: 0000000000000000 x14: ffff8000dd2b86d0
-[  429.192700] x13: 00000000000000f8 x12: 0000000000000000
-[  429.193165] x11: 0000000000000000 x10: ffff8000e44bde01
-[  429.193630] x9 : 0000000000100871 x8 : 0000000000000000
-[  429.194095] x7 : ffff8000e4481760 x6 : 0000000000000000
-[  429.194560] x5 : 0000aaaac49fc000 x4 : ffff0000102905c0
-[  429.195026] x3 : 0000000000000000 x2 : ffff800009c74aa8
-[  429.195491] x1 : 0000aaaac4a00fff x0 : ffff800009c74aa8
-[  429.195959] Call trace:
-[  429.196178]  copy_page_range+0x124/0x3d0
-[  429.196521]  dup_mm+0x3fc/0x478
-[  429.196801]  copy_process.isra.4.part.5+0x143c/0x1450
-[  429.197244]  _do_fork+0xec/0x410
-[  429.197529]  __arm64_sys_clone+0x2c/0x38
-[  429.197877]  el0_svc_handler+0xa4/0x180
-[  429.198215]  el0_svc+0x8/0xc
-[  429.198474] Code: 360812e0 f9403fe0 b4000ac0 f9403fe0 (f9400000)
-[  429.199008] ---[ end trace 04beba7bac629e3f ]---
-[  429.200049] SError Interrupt on CPU1, code 0xbf000002 -- SError
-[  429.200052] CPU: 1 PID: 669 Comm: systemd-journal Tainted: G      D
-   O      5.2.8-1-ARCH #1
-[  429.200054] Hardware name: Pine64 Rock64 (DT)
-[  429.200055] pstate: 20000005 (nzCv daif -PAN -UAO)
-[  429.200056] pc : allocate_slab+0x1d0/0x570
-[  429.200058] lr : allocate_slab+0x1e0/0x570
-[  429.200059] sp : ffff000011d8baa0
-[  429.200060] x29: ffff000011d8baa0 x28: 0000000000000003
-[  429.200063] x27: ffff7e0000276800 x26: ffff800009da6e00
-[  429.200068] x25: 0000000000000009 x24: 0000000000007bc0
-[  429.200071] x23: 0000000000000003 x22: 0000000000000003
-[  429.200075] x21: ffff800009da0000 x20: 0000000000005280
-[  429.200079] x19: ffff8000b3fa3980 x18: 0000000000000000
-[  429.200082] x17: 0000000000000000 x16: 0000000000000000
-[  429.200086] x15: 0000000000000000 x14: 0000000000000000
-[  429.200090] x13: 0000000000000000 x12: 0000000000000000
-[  429.200094] x11: 0000000000000000 x10: 0000000000000000
-[  429.200098] x9 : 0000000000000000 x8 : 0000000000000000
-[  429.200102] x7 : 00000000fee00000 x6 : 0000000000000018
-[  429.200106] x5 : 0000000000000040 x4 : 0000000000210d00
-[  429.200110] x3 : 0000000000000dc0 x2 : 0000000005a79795
-[  429.200112] x1 : 0000000000000000 x0 : ffff8000f2f35a80
-[  429.200117] Kernel panic - not syncing: Asynchronous SError
-Interrupt
-[  429.200137] SMP: stopping secondary CPUs
-[  429.200139] Kernel Offset: disabled
-[  429.200140] CPU features: 0x0002,20002000
-[  429.200141] Memory Limit: none
-============
+On Thu, Jul 11, 2019 at 02:46:12PM +0530, Vishal Sagar wrote:
+> The Xilinx MIPI CSI-2 Rx Subsystem soft IP is used to capture images
+> from MIPI CSI-2 camera sensors and output AXI4-Stream video data ready
+> for image processing. Please refer to PG232 for details.
+> 
+> The CSI2 Rx controller filters out all packets except for the packets
+> with data type fixed in hardware. RAW8 packets are always allowed to
+> pass through.
+> 
+> It is also used to setup and handle interrupts and enable the core. It
+> logs all the events in respective counters between streaming on and off.
+> 
+> The driver supports only the video format bridge enabled configuration.
+> Some data types like YUV 422 10bpc, RAW16, RAW20 are supported when the
+> CSI v2.0 feature is enabled in design. When the VCX feature is enabled,
+> the maximum number of virtual channels becomes 16 from 4.
+> 
+> Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
+> Reviewed-by: Hyun Kwon <hyun.kwon@xilinx.com>
+> ---
+> v10
+> - Removed all V4L2 controls and events based on Sakari's comments.
+> - Now stop_stream() before toggling rst_gpio
+> - Updated init_mbus() to throw error on array out of bound access
+> - Make events and vcx_events as counters instead of structures
+> - Minor fixes in set_format() enum_mbus_code() as suggested by Sakari
+> 
+> v9
+> - Moved all controls and events to xilinx-csi2rxss.h
+> - Updated name and description of controls and events
+> - Get control base address from v4l2-controls.h (0x10c0)
+> - Fix KConfig for dependency on VIDEO_XILINX
+> - Added enum_mbus_code() support
+> - Added default format to be returned on open()
+> - Mark variables are const
+> - Remove references to short packet in comments
+> - Add check for streaming before setting active lanes control
+> - strlcpy -> strscpy
+> - Fix xcsi2rxss_set_format()
+> 
+> v8
+> - Use clk_bulk* APIs
+> - Add gpio reset for asserting video_aresetn when stream line buffer occurs
+> - Removed short packet related events and irq handling
+>   - V4L2_EVENT_XLNXCSIRX_SPKT and V4L2_EVENT_XLNXCSIRX_SPKT_OVF removed
+> - Removed frame counter control V4L2_CID_XILINX_MIPICSISS_FRAME_COUNTER
+>   and xcsi2rxss_g_volatile_ctrl()
+> - Minor formatting fixes
+> 
+> v7
+> - No change
+> 
+> v6
+> - No change
+> 
+> v5
+> - Removed bayer and updated related parts like set default format based
+>   on Luca Cersoli's comments.
+> - Added correct YUV422 10bpc media bus format
+> 
+> v4
+> - Removed irq member from core structure
+> - Consolidated IP config prints in xcsi2rxss_log_ipconfig()
+> - Return -EINVAL in case of invalid ioctl
+> - Code formatting
+> - Added reviewed by Hyun Kwon
+> 
+> v3
+> - Fixed comments given by Hyun.
+> - Removed DPHY 200 MHz clock. This will be controlled by DPHY driver
+> - Minor code formatting
+> - en_csi_v20 and vfb members removed from struct and made local to dt parsing
+> - lock description updated
+> - changed to ratelimited type for all dev prints in irq handler
+> - Removed YUV 422 10bpc media format
+> 
+> v2
+> - Fixed comments given by Hyun and Sakari.
+> - Made all bitmask using BIT() and GENMASK()
+> - Removed unused definitions
+> - Removed DPHY access. This will be done by separate DPHY PHY driver.
+> - Added support for CSI v2.0 for YUV 422 10bpc, RAW16, RAW20 and extra
+>   virtual channels
+> - Fixed the ports as sink and source
+> - Now use the v4l2fwnode API to get number of data-lanes
+> - Added clock framework support
+> - Removed the close() function
+> - updated the set format function
+> - support only VFB enabled configuration
+>  drivers/media/platform/xilinx/Kconfig         |   11 +
+>  drivers/media/platform/xilinx/Makefile        |    1 +
+>  .../media/platform/xilinx/xilinx-csi2rxss.c   | 1230 +++++++++++++++++
+>  3 files changed, 1242 insertions(+)
+>  create mode 100644 drivers/media/platform/xilinx/xilinx-csi2rxss.c
+> 
+> diff --git a/drivers/media/platform/xilinx/Kconfig b/drivers/media/platform/xilinx/Kconfig
+> index a2773ad7c185..349da877c846 100644
+> --- a/drivers/media/platform/xilinx/Kconfig
+> +++ b/drivers/media/platform/xilinx/Kconfig
+> @@ -10,6 +10,17 @@ config VIDEO_XILINX
+>  
+>  if VIDEO_XILINX
+>  
+> +config VIDEO_XILINX_CSI2RXSS
+> +	tristate "Xilinx CSI2 Rx Subsystem"
+> +	depends on VIDEO_XILINX
 
+You don't need to depend on VIDEO_XILINX here due to the condition above.
+
+> +	help
+> +	  Driver for Xilinx MIPI CSI2 Rx Subsystem. This is a V4L sub-device
+> +	  based driver that takes input from CSI2 Tx source and converts
+> +	  it into an AXI4-Stream. The subsystem comprises of a CSI2 Rx
+> +	  controller, DPHY, an optional I2C controller and a Video Format
+> +	  Bridge. The driver is used to set the number of active lanes and
+> +	  get short packet data.
+> +
+>  config VIDEO_XILINX_TPG
+>  	tristate "Xilinx Video Test Pattern Generator"
+>  	depends on VIDEO_XILINX
+> diff --git a/drivers/media/platform/xilinx/Makefile b/drivers/media/platform/xilinx/Makefile
+> index 4cdc0b1ec7a5..6119a34f3043 100644
+> --- a/drivers/media/platform/xilinx/Makefile
+> +++ b/drivers/media/platform/xilinx/Makefile
+> @@ -3,5 +3,6 @@
+>  xilinx-video-objs += xilinx-dma.o xilinx-vip.o xilinx-vipp.o
+>  
+>  obj-$(CONFIG_VIDEO_XILINX) += xilinx-video.o
+> +obj-$(CONFIG_VIDEO_XILINX_CSI2RXSS) += xilinx-csi2rxss.o
+>  obj-$(CONFIG_VIDEO_XILINX_TPG) += xilinx-tpg.o
+>  obj-$(CONFIG_VIDEO_XILINX_VTC) += xilinx-vtc.o
+> diff --git a/drivers/media/platform/xilinx/xilinx-csi2rxss.c b/drivers/media/platform/xilinx/xilinx-csi2rxss.c
+> new file mode 100644
+> index 000000000000..1a22ca80382e
+> --- /dev/null
+> +++ b/drivers/media/platform/xilinx/xilinx-csi2rxss.c
+> @@ -0,0 +1,1230 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Driver for Xilinx MIPI CSI2 Rx Subsystem
+> + *
+> + * Copyright (C) 2016 - 2019 Xilinx, Inc.
+> + *
+> + * Contacts: Vishal Sagar <vishal.sagar@xilinx.com>
+> + *
+> + */
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/gpio/consumer.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/module.h>
+> +#include <linux/mutex.h>
+> +#include <linux/of.h>
+> +#include <linux/of_irq.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/v4l2-subdev.h>
+> +#include <media/media-entity.h>
+> +#include <media/v4l2-common.h>
+> +#include <media/v4l2-ctrls.h>
+> +#include <media/v4l2-fwnode.h>
+> +#include <media/v4l2-subdev.h>
+> +#include "xilinx-vip.h"
+> +
+> +/* Register register map */
+> +#define XCSI_CCR_OFFSET		0x00
+> +#define XCSI_CCR_SOFTRESET	BIT(1)
+> +#define XCSI_CCR_ENABLE		BIT(0)
+> +
+> +#define XCSI_PCR_OFFSET		0x04
+> +#define XCSI_PCR_MAXLANES_MASK	GENMASK(4, 3)
+> +#define XCSI_PCR_ACTLANES_MASK	GENMASK(1, 0)
+> +
+> +#define XCSI_CSR_OFFSET		0x10
+> +#define XCSI_CSR_PKTCNT		GENMASK(31, 16)
+> +#define XCSI_CSR_SPFIFOFULL	BIT(3)
+> +#define XCSI_CSR_SPFIFONE	BIT(2)
+> +#define XCSI_CSR_SLBF		BIT(1)
+> +#define XCSI_CSR_RIPCD		BIT(0)
+> +
+> +#define XCSI_GIER_OFFSET	0x20
+> +#define XCSI_GIER_GIE		BIT(0)
+> +
+> +#define XCSI_ISR_OFFSET		0x24
+> +#define XCSI_IER_OFFSET		0x28
+> +
+> +#define XCSI_ISR_FR		BIT(31)
+> +#define XCSI_ISR_VCXFE		BIT(30)
+> +#define XCSI_ISR_WCC		BIT(22)
+> +#define XCSI_ISR_ILC		BIT(21)
+> +#define XCSI_ISR_SPFIFOF	BIT(20)
+> +#define XCSI_ISR_SPFIFONE	BIT(19)
+> +#define XCSI_ISR_SLBF		BIT(18)
+> +#define XCSI_ISR_STOP		BIT(17)
+> +#define XCSI_ISR_SOTERR		BIT(13)
+> +#define XCSI_ISR_SOTSYNCERR	BIT(12)
+> +#define XCSI_ISR_ECC2BERR	BIT(11)
+> +#define XCSI_ISR_ECC1BERR	BIT(10)
+> +#define XCSI_ISR_CRCERR		BIT(9)
+> +#define XCSI_ISR_DATAIDERR	BIT(8)
+> +#define XCSI_ISR_VC3FSYNCERR	BIT(7)
+> +#define XCSI_ISR_VC3FLVLERR	BIT(6)
+> +#define XCSI_ISR_VC2FSYNCERR	BIT(5)
+> +#define XCSI_ISR_VC2FLVLERR	BIT(4)
+> +#define XCSI_ISR_VC1FSYNCERR	BIT(3)
+> +#define XCSI_ISR_VC1FLVLERR	BIT(2)
+> +#define XCSI_ISR_VC0FSYNCERR	BIT(1)
+> +#define XCSI_ISR_VC0FLVLERR	BIT(0)
+> +
+> +#define XCSI_INTR_PROT_MASK	(XCSI_ISR_VC3FSYNCERR |	XCSI_ISR_VC3FLVLERR |\
+> +				 XCSI_ISR_VC2FSYNCERR | XCSI_ISR_VC2FLVLERR |\
+> +				 XCSI_ISR_VC1FSYNCERR | XCSI_ISR_VC1FLVLERR |\
+> +				 XCSI_ISR_VC0FSYNCERR |	XCSI_ISR_VC0FLVLERR |\
+> +				 XCSI_ISR_VCXFE)
+> +
+> +#define XCSI_INTR_PKTLVL_MASK	(XCSI_ISR_ECC2BERR | XCSI_ISR_ECC1BERR |\
+> +				 XCSI_ISR_CRCERR | XCSI_ISR_DATAIDERR)
+> +
+> +#define XCSI_INTR_DPHY_MASK	(XCSI_ISR_SOTERR | XCSI_ISR_SOTSYNCERR)
+> +
+> +#define XCSI_INTR_SPKT_MASK	(XCSI_ISR_SPFIFOF | XCSI_ISR_SPFIFONE)
+> +
+> +#define XCSI_INTR_ERR_MASK	(XCSI_ISR_WCC | XCSI_ISR_ILC | XCSI_ISR_SLBF |\
+> +				 XCSI_ISR_STOP)
+> +
+> +#define XCSI_INTR_FRAMERCVD_MASK	(XCSI_ISR_FR)
+> +
+> +#define XCSI_ISR_ALLINTR_MASK	(XCSI_INTR_PROT_MASK | XCSI_INTR_PKTLVL_MASK |\
+> +				 XCSI_INTR_DPHY_MASK | XCSI_INTR_SPKT_MASK |\
+> +				 XCSI_INTR_ERR_MASK | XCSI_INTR_FRAMERCVD_MASK)
+> +
+> +/*
+> + * Removed VCXFE mask as it doesn't exist in IER
+> + * Removed STOP state irq as this will keep driver in irq handler only
+> + */
+> +#define XCSI_IER_INTR_MASK	(XCSI_ISR_ALLINTR_MASK &\
+> +				 ~(XCSI_ISR_STOP | XCSI_ISR_VCXFE))
+> +
+> +#define XCSI_SPKTR_OFFSET	0x30
+> +#define XCSI_SPKTR_DATA		GENMASK(23, 8)
+> +#define XCSI_SPKTR_VC		GENMASK(7, 6)
+> +#define XCSI_SPKTR_DT		GENMASK(5, 0)
+> +
+> +#define XCSI_VCXR_OFFSET	0x34
+> +#define XCSI_VCXR_VCERR		GENMASK(23, 0)
+> +#define XCSI_VCXR_VCSTART	4
+> +#define XCSI_VCXR_VCEND		15
+> +#define XCSI_VCXR_FSYNCERR	BIT(1)
+> +#define XCSI_VCXR_FLVLERR	BIT(0)
+> +
+> +#define XCSI_CLKINFR_OFFSET	0x3C
+> +#define XCSI_CLKINFR_STOP	BIT(1)
+> +
+> +#define XCSI_DLXINFR_OFFSET	0x40
+> +#define XCSI_DLXINFR_STOP	BIT(5)
+> +#define XCSI_DLXINFR_SOTERR	BIT(1)
+> +#define XCSI_DLXINFR_SOTSYNCERR	BIT(0)
+> +#define XCSI_MAXDL_COUNT	0x4
+> +
+> +#define XCSI_VCXINF1R_OFFSET		0x60
+> +#define XCSI_VCXINF1R_LINECOUNT		GENMASK(31, 16)
+> +#define XCSI_VCXINF1R_LINECOUNT_SHIFT	16
+> +#define XCSI_VCXINF1R_BYTECOUNT		GENMASK(15, 0)
+> +
+> +#define XCSI_VCXINF2R_OFFSET	0x64
+> +#define XCSI_VCXINF2R_DT	GENMASK(5, 0)
+> +#define XCSI_MAXVCX_COUNT	16
+> +
+> +/*
+> + * The core takes less than 100 video clock cycles to reset.
+> + * So choosing a timeout value larger than this.
+> + */
+> +#define XCSI_TIMEOUT_VAL	1000 /* us */
+> +
+> +/*
+> + * Sink pad connected to sensor source pad.
+> + * Source pad connected to next module like demosaic.
+> + */
+> +#define XCSI_MEDIA_PADS		2
+> +#define XCSI_DEFAULT_WIDTH	1920
+> +#define XCSI_DEFAULT_HEIGHT	1080
+> +
+> +/* Max media bus formats supported for enumeration */
+> +#define XCSI_MAX_MBUS_FMTS	16
+> +
+> +/* Max string length for CSI Data type string */
+> +#define XCSI_PXLFMT_STRLEN_MAX	16
+> +
+> +/* MIPI CSI2 Data Types from spec */
+> +#define XCSI_DT_YUV4228B	0x1E
+> +#define XCSI_DT_YUV42210B	0x1F
+> +#define XCSI_DT_RGB444		0x20
+> +#define XCSI_DT_RGB555		0x21
+> +#define XCSI_DT_RGB565		0x22
+> +#define XCSI_DT_RGB666		0x23
+> +#define XCSI_DT_RGB888		0x24
+> +#define XCSI_DT_RAW6		0x28
+> +#define XCSI_DT_RAW7		0x29
+> +#define XCSI_DT_RAW8		0x2A
+> +#define XCSI_DT_RAW10		0x2B
+> +#define XCSI_DT_RAW12		0x2C
+> +#define XCSI_DT_RAW14		0x2D
+> +#define XCSI_DT_RAW16		0x2E
+> +#define XCSI_DT_RAW20		0x2F
+> +
+> +#define XCSI_VCX_START		4
+> +#define XCSI_MAX_VC		4
+> +#define XCSI_MAX_VCX		16
+> +
+> +#define XCSI_NEXTREG_OFFSET	4
+> +
+> +/* There are 2 events frame sync and frame level error per VC */
+> +#define XCSI_VCX_NUM_EVENTS	((XCSI_MAX_VCX - XCSI_MAX_VC) * 2)
+> +
+> +/* Macro to return "true" or "false" string if bit is set */
+> +#define XCSI_GET_BITSET_STR(val, mask)	(val) & (mask) ? "true" : "false"
+> +
+> +#define XADD_MBUS(state, mbus_fmt)					\
+> +	do {								\
+> +		if ((state)->mbus_fmts_count < XCSI_MAX_MBUS_FMTS) {	\
+> +			(state)->mbus_fmts[(state)->mbus_fmts_count++] =\
+> +				(mbus_fmt);				\
+> +		} else {						\
+> +			dev_err((state)->core.dev,			\
+> +				"accessing array out of bounds!\n");	\
+> +		}							\
+> +	} while (0)
+> +
+> +/**
+> + * struct xcsi2rxss_event - Event log structure
+> + * @mask: Event mask
+> + * @name: Name of the event
+> + */
+> +struct xcsi2rxss_event {
+> +	u32 mask;
+> +	const char *name;
+> +};
+> +
+> +static const struct xcsi2rxss_event xcsi2rxss_events[] = {
+> +	{ XCSI_ISR_FR, "Frame Received" },
+> +	{ XCSI_ISR_VCXFE, "VCX Frame Errors" },
+> +	{ XCSI_ISR_WCC, "Word Count Errors" },
+> +	{ XCSI_ISR_ILC, "Invalid Lane Count Error" },
+> +	{ XCSI_ISR_SPFIFOF, "Short Packet FIFO OverFlow Error" },
+> +	{ XCSI_ISR_SPFIFONE, "Short Packet FIFO Not Empty" },
+> +	{ XCSI_ISR_SLBF, "Streamline Buffer Full Error" },
+> +	{ XCSI_ISR_STOP, "Lane Stop State" },
+> +	{ XCSI_ISR_SOTERR, "SOT Error" },
+> +	{ XCSI_ISR_SOTSYNCERR, "SOT Sync Error" },
+> +	{ XCSI_ISR_ECC2BERR, "2 Bit ECC Unrecoverable Error" },
+> +	{ XCSI_ISR_ECC1BERR, "1 Bit ECC Recoverable Error" },
+> +	{ XCSI_ISR_CRCERR, "CRC Error" },
+> +	{ XCSI_ISR_DATAIDERR, "Data Id Error" },
+> +	{ XCSI_ISR_VC3FSYNCERR, "Virtual Channel 3 Frame Sync Error" },
+> +	{ XCSI_ISR_VC3FLVLERR, "Virtual Channel 3 Frame Level Error" },
+> +	{ XCSI_ISR_VC2FSYNCERR, "Virtual Channel 2 Frame Sync Error" },
+> +	{ XCSI_ISR_VC2FLVLERR, "Virtual Channel 2 Frame Level Error" },
+> +	{ XCSI_ISR_VC1FSYNCERR, "Virtual Channel 1 Frame Sync Error" },
+> +	{ XCSI_ISR_VC1FLVLERR, "Virtual Channel 1 Frame Level Error" },
+> +	{ XCSI_ISR_VC0FSYNCERR, "Virtual Channel 0 Frame Sync Error" },
+> +	{ XCSI_ISR_VC0FLVLERR, "Virtual Channel 0 Frame Level Error" }
+> +};
+> +
+> +#define XCSI_NUM_EVENTS		ARRAY_SIZE(xcsi2rxss_events)
+> +
+> +/*
+> + * struct xcsi2rxss_core - Core configuration CSI2 Rx Subsystem device structure
+> + * @dev: Platform structure
+> + * @iomem: Base address of subsystem
+> + * @enable_active_lanes: If number of active lanes can be modified
+> + * @max_num_lanes: Maximum number of lanes present
+> + * @datatype: Data type filter
+> + * @events: counter for events
+> + * @vcx_events: counter for vcx_events
+> + * @en_vcx: If more than 4 VC are enabled
+> + * @clks: array of clocks
+> + * @num_clks: number of clocks
+> + * @rst_gpio: reset to video_aresetn
+> + */
+> +struct xcsi2rxss_core {
+> +	struct device *dev;
+> +	void __iomem *iomem;
+> +	bool enable_active_lanes;
+> +	u32 max_num_lanes;
+> +	u32 datatype;
+> +	u32 events[XCSI_NUM_EVENTS];
+> +	u32 vcx_events[XCSI_VCX_NUM_EVENTS];
+> +	bool en_vcx;
+> +	struct clk_bulk_data *clks;
+> +	int num_clks;
+> +	struct gpio_desc *rst_gpio;
+> +};
+> +
+> +/**
+> + * struct xcsi2rxss_state - CSI2 Rx Subsystem device structure
+> + * @core: Core structure for MIPI CSI2 Rx Subsystem
+> + * @subdev: The v4l2 subdev structure
+> + * @format: Active V4L2 formats on each pad
+> + * @default_format: Default V4L2 format
+> + * @lock: mutex for accessing this structure
+> + * @pads: media pads
+> + * @mbus_fmts: List of media bus formats for enum_mbus_code
+> + * @mbus_fmts_count: Number of media bus formats
+> + * @streaming: Flag for storing streaming state
+> + *
+> + * This structure contains the device driver related parameters
+> + */
+> +struct xcsi2rxss_state {
+> +	struct xcsi2rxss_core core;
+> +	struct v4l2_subdev subdev;
+> +	struct v4l2_mbus_framefmt format;
+> +	struct v4l2_mbus_framefmt default_format;
+> +	/* used to protect access to this struct */
+> +	struct mutex lock;
+> +	struct media_pad pads[XCSI_MEDIA_PADS];
+> +	u32 mbus_fmts[XCSI_MAX_MBUS_FMTS];
+> +	u32 mbus_fmts_count;
+> +	bool streaming;
+> +};
+> +
+> +static const struct clk_bulk_data xcsi2rxss_clks[] = {
+> +	{ .id = "lite_aclk" },
+> +	{ .id = "video_aclk" },
+> +};
+> +
+> +static inline struct xcsi2rxss_state *
+> +to_xcsi2rxssstate(struct v4l2_subdev *subdev)
+> +{
+> +	return container_of(subdev, struct xcsi2rxss_state, subdev);
+> +}
+> +
+> +/*
+> + * Register related operations
+> + */
+> +static inline u32 xcsi2rxss_read(struct xcsi2rxss_core *xcsi2rxss, u32 addr)
+> +{
+> +	return ioread32(xcsi2rxss->iomem + addr);
+> +}
+> +
+> +static inline void xcsi2rxss_write(struct xcsi2rxss_core *xcsi2rxss, u32 addr,
+> +				   u32 value)
+> +{
+> +	iowrite32(value, xcsi2rxss->iomem + addr);
+> +}
+> +
+> +static inline void xcsi2rxss_clr(struct xcsi2rxss_core *xcsi2rxss, u32 addr,
+> +				 u32 clr)
+> +{
+> +	xcsi2rxss_write(xcsi2rxss, addr,
+> +			xcsi2rxss_read(xcsi2rxss, addr) & ~clr);
+> +}
+> +
+> +static inline void xcsi2rxss_set(struct xcsi2rxss_core *xcsi2rxss, u32 addr,
+> +				 u32 set)
+> +{
+> +	xcsi2rxss_write(xcsi2rxss, addr,
+> +			xcsi2rxss_read(xcsi2rxss, addr) | set);
+
+Fits on a single line.
+
+> +}
+> +
+> +static void xcsi2rxss_enable(struct xcsi2rxss_core *core)
+> +{
+> +	xcsi2rxss_set(core, XCSI_CCR_OFFSET, XCSI_CCR_ENABLE);
+> +}
+> +
+> +static void xcsi2rxss_disable(struct xcsi2rxss_core *core)
+> +{
+> +	xcsi2rxss_clr(core, XCSI_CCR_OFFSET, XCSI_CCR_ENABLE);
+> +}
+> +
+> +static void xcsi2rxss_intr_enable(struct xcsi2rxss_core *core)
+> +{
+> +	xcsi2rxss_clr(core, XCSI_GIER_OFFSET, XCSI_GIER_GIE);
+> +	xcsi2rxss_write(core, XCSI_IER_OFFSET, XCSI_IER_INTR_MASK);
+> +	xcsi2rxss_set(core, XCSI_GIER_OFFSET, XCSI_GIER_GIE);
+> +}
+> +
+> +static void xcsi2rxss_intr_disable(struct xcsi2rxss_core *core)
+> +{
+> +	xcsi2rxss_clr(core, XCSI_IER_OFFSET, XCSI_IER_INTR_MASK);
+> +	xcsi2rxss_clr(core, XCSI_GIER_OFFSET, XCSI_GIER_GIE);
+> +}
+> +
+> +/**
+> + * xcsi2rxss_reset - Does a soft reset of the MIPI CSI2 Rx Subsystem
+> + * @core: Core Xilinx CSI2 Rx Subsystem structure pointer
+> + *
+> + * Core takes less than 100 video clock cycles to reset.
+> + * So a larger timeout value is chosen for margin.
+> + *
+> + * Return: 0 - on success OR -ETIME if reset times out
+> + */
+> +static int xcsi2rxss_reset(struct xcsi2rxss_core *core)
+> +{
+> +	u32 timeout = XCSI_TIMEOUT_VAL;
+> +
+> +	xcsi2rxss_set(core, XCSI_CCR_OFFSET, XCSI_CCR_SOFTRESET);
+> +
+> +	while (xcsi2rxss_read(core, XCSI_CSR_OFFSET) & XCSI_CSR_RIPCD) {
+> +		if (timeout == 0) {
+> +			dev_err(core->dev, "soft reset timed out!\n");
+> +			return -ETIME;
+> +		}
+> +
+> +		timeout--;
+> +		udelay(1);
+> +	}
+> +
+> +	xcsi2rxss_clr(core, XCSI_CCR_OFFSET, XCSI_CCR_SOFTRESET);
+> +	return 0;
+> +}
+> +
+> +static void xcsi2rxss_reset_event_counters(struct xcsi2rxss_state *state)
+> +{
+> +	unsigned int i;
+> +
+> +	for (i = 0; i < XCSI_NUM_EVENTS; i++)
+> +		state->core.events[i] = 0;
+> +
+> +	for (i = 0; i < XCSI_VCX_NUM_EVENTS; i++)
+> +		state->core.vcx_events[i] = 0;
+> +}
+> +
+> +/* Print event counters */
+> +static void xcsi2rxss_log_counters(struct xcsi2rxss_state *state)
+> +{
+> +	struct xcsi2rxss_core *core = &state->core;
+> +	unsigned int i;
+> +
+> +	for (i = 0; i < XCSI_NUM_EVENTS; i++) {
+> +		if (core->events[i] > 0) {
+> +			dev_info(core->dev, "%s events: %d\n",
+> +				 xcsi2rxss_events[i].name,
+> +				 core->events[i]);
+> +		}
+> +	}
+> +
+> +	if (core->en_vcx) {
+> +		for (i = 0; i < XCSI_VCX_NUM_EVENTS; i++) {
+> +			if (core->vcx_events[i] > 0) {
+> +				dev_info(core->dev,
+> +					 "VC %d Frame %s err vcx events: %d\n",
+> +					 (i / 2) + XCSI_VCX_START,
+> +					 i & 1 ? "Sync" : "Level",
+> +					 core->vcx_events[i]);
+> +			}
+> +		}
+> +	}
+> +}
+> +
+> +static void xcsi2rxss_log_ipconfig(struct xcsi2rxss_state *state)
+> +{
+> +	struct xcsi2rxss_core *core = &state->core;
+> +
+> +	dev_dbg(core->dev, "****** Xilinx MIPI CSI2 Rx SS IP Config ******\n");
+> +	dev_dbg(core->dev, "vcx is %s", core->en_vcx ? "enabled" : "disabled");
+> +	dev_dbg(core->dev, "Enable active lanes property is %s\n",
+> +		core->enable_active_lanes ? "present" : "absent");
+> +	dev_dbg(core->dev, "Max lanes = %d", core->max_num_lanes);
+> +	dev_dbg(core->dev, "Pixel format set as 0x%x\n", core->datatype);
+> +	dev_dbg(core->dev, "**********************************************\n");
+> +}
+> +
+> +/**
+> + * xcsi2rxss_log_status - Logs the status of the CSI-2 Receiver
+> + * @sd: Pointer to V4L2 subdevice structure
+> + *
+> + * This function prints the current status of Xilinx MIPI CSI-2
+> + *
+> + * Return: 0 on success
+> + */
+> +static int xcsi2rxss_log_status(struct v4l2_subdev *sd)
+> +{
+> +	struct xcsi2rxss_state *xcsi2rxss = to_xcsi2rxssstate(sd);
+> +	struct xcsi2rxss_core *core = &xcsi2rxss->core;
+> +	u32 reg, data;
+> +	unsigned int i, max_vc;
+> +
+> +	mutex_lock(&xcsi2rxss->lock);
+> +
+> +	xcsi2rxss_log_ipconfig(xcsi2rxss);
+> +
+> +	xcsi2rxss_log_counters(xcsi2rxss);
+> +
+> +	dev_info(core->dev, "***** Core Status *****\n");
+> +	data = xcsi2rxss_read(core, XCSI_CSR_OFFSET);
+> +	dev_info(core->dev, "Short Packet FIFO Full = %s\n",
+> +		 XCSI_GET_BITSET_STR(data, XCSI_CSR_SPFIFOFULL));
+> +	dev_info(core->dev, "Short Packet FIFO Not Empty = %s\n",
+> +		 XCSI_GET_BITSET_STR(data, XCSI_CSR_SPFIFONE));
+> +	dev_info(core->dev, "Stream line buffer full = %s\n",
+> +		 XCSI_GET_BITSET_STR(data, XCSI_CSR_SLBF));
+> +	dev_info(core->dev, "Soft reset/Core disable in progress = %s\n",
+> +		 XCSI_GET_BITSET_STR(data, XCSI_CSR_RIPCD));
+> +
+> +	/* Clk & Lane Info  */
+> +	dev_info(core->dev, "******** Clock Lane Info *********\n");
+> +	data = xcsi2rxss_read(core, XCSI_CLKINFR_OFFSET);
+> +	dev_info(core->dev, "Clock Lane in Stop State = %s\n",
+> +		 XCSI_GET_BITSET_STR(data, XCSI_CLKINFR_STOP));
+> +
+> +	dev_info(core->dev, "******** Data Lane Info *********\n");
+> +	dev_info(core->dev, "Lane\tSoT Error\tSoT Sync Error\tStop State\n");
+> +	reg = XCSI_DLXINFR_OFFSET;
+> +	for (i = 0; i < XCSI_MAXDL_COUNT; i++) {
+> +		data = xcsi2rxss_read(core, reg);
+> +
+> +		dev_info(core->dev, "%d\t%s\t\t%s\t\t%s\n", i,
+> +			 XCSI_GET_BITSET_STR(data, XCSI_DLXINFR_SOTERR),
+> +			 XCSI_GET_BITSET_STR(data, XCSI_DLXINFR_SOTSYNCERR),
+> +			 XCSI_GET_BITSET_STR(data, XCSI_DLXINFR_STOP));
+> +
+> +		reg += XCSI_NEXTREG_OFFSET;
+> +	}
+> +
+> +	/* Virtual Channel Image Information */
+> +	dev_info(core->dev, "********** Virtual Channel Info ************\n");
+> +	dev_info(core->dev, "VC\tLine Count\tByte Count\tData Type\n");
+> +	if (core->en_vcx)
+> +		max_vc = XCSI_MAX_VCX;
+> +	else
+> +		max_vc = XCSI_MAX_VC;
+> +
+> +	reg = XCSI_VCXINF1R_OFFSET;
+> +	for (i = 0; i < max_vc; i++) {
+> +		u32 line_count, byte_count, data_type;
+> +
+> +		/* Get line and byte count from VCXINFR1 Register */
+> +		data = xcsi2rxss_read(core, reg);
+> +		byte_count = data & XCSI_VCXINF1R_BYTECOUNT;
+> +		line_count = data & XCSI_VCXINF1R_LINECOUNT;
+> +		line_count >>= XCSI_VCXINF1R_LINECOUNT_SHIFT;
+> +
+> +		/* Get data type from VCXINFR2 Register */
+> +		reg += XCSI_NEXTREG_OFFSET;
+> +		data = xcsi2rxss_read(core, reg);
+> +		data_type = data & XCSI_VCXINF2R_DT;
+> +
+> +		dev_info(core->dev, "%d\t%d\t\t%d\t\t0x%x\n", i, line_count,
+> +			 byte_count, data_type);
+> +
+> +		/* Move to next pair of VC Info registers */
+> +		reg += XCSI_NEXTREG_OFFSET;
+> +	}
+> +
+> +	mutex_unlock(&xcsi2rxss->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static int xcsi2rxss_start_stream(struct xcsi2rxss_state *state)
+> +{
+> +	struct xcsi2rxss_core *core = &state->core;
+> +	int ret = 0;
+> +
+> +	xcsi2rxss_enable(core);
+> +
+> +	ret = xcsi2rxss_reset(core);
+> +	if (ret < 0) {
+> +		state->streaming = false;
+> +		return ret;
+> +	}
+
+You'll need to start streaming on the upstream sub-device somewhere in this
+function.
+
+> +
+> +	xcsi2rxss_intr_enable(core);
+> +	state->streaming = true;
+> +
+> +	return ret;
+> +}
+> +
+> +static void xcsi2rxss_stop_stream(struct xcsi2rxss_state *state)
+> +{
+> +	struct xcsi2rxss_core *core = &state->core;
+> +
+> +	xcsi2rxss_intr_disable(core);
+> +	xcsi2rxss_disable(core);
+> +	state->streaming = false;
+
+And stop it here.
+
+> +}
+> +
+> +/**
+> + * xcsi2rxss_irq_handler - Interrupt handler for CSI-2
+> + * @irq: IRQ number
+> + * @dev_id: Pointer to device state
+> + *
+> + * In the interrupt handler, a list of event counters are updated for
+> + * corresponding interrupts. This is useful to get status / debug.
+> + *
+> + * Return: IRQ_HANDLED after handling interrupts
+> + *         IRQ_NONE is no interrupts
+> + */
+> +static irqreturn_t xcsi2rxss_irq_handler(int irq, void *dev_id)
+> +{
+> +	struct xcsi2rxss_state *state = (struct xcsi2rxss_state *)dev_id;
+> +	struct xcsi2rxss_core *core = &state->core;
+> +	u32 status;
+> +
+> +	status = xcsi2rxss_read(core, XCSI_ISR_OFFSET) & XCSI_ISR_ALLINTR_MASK;
+> +	dev_dbg_ratelimited(core->dev, "interrupt status = 0x%08x\n", status);
+> +
+> +	if (!status)
+> +		return IRQ_NONE;
+> +
+> +	/* Received a short packet */
+> +	if (status & XCSI_ISR_SPFIFONE) {
+> +		dev_dbg_ratelimited(core->dev, "Short packet = 0x%08x\n",
+> +				    xcsi2rxss_read(core, XCSI_SPKTR_OFFSET));
+> +	}
+> +
+> +	/* Short packet FIFO overflow */
+> +	if (status & XCSI_ISR_SPFIFOF)
+> +		dev_dbg_ratelimited(core->dev, "Short packet FIFO overflowed\n");
+> +
+> +	/*
+> +	 * Stream line buffer full
+> +	 * This means there is a backpressure from downstream IP
+> +	 */
+> +	if (status & XCSI_ISR_SLBF) {
+> +		dev_alert_ratelimited(core->dev, "Stream Line Buffer Full!\n");
+> +		xcsi2rxss_stop_stream(state);
+> +		if (core->rst_gpio) {
+> +			gpiod_set_value(core->rst_gpio, 1);
+> +			/* minimum 40 dphy_clk_200M cycles */
+> +			ndelay(250);
+> +			gpiod_set_value(core->rst_gpio, 0);
+> +		}
+> +	}
+> +
+> +	/* Increment event counters */
+> +	if (status & XCSI_ISR_ALLINTR_MASK) {
+> +		unsigned int i;
+> +
+> +		for (i = 0; i < XCSI_NUM_EVENTS; i++) {
+> +			if (!(status & xcsi2rxss_events[i].mask))
+> +				continue;
+> +			core->events[i]++;
+> +			dev_dbg_ratelimited(core->dev, "%s: %d\n",
+> +					    xcsi2rxss_events[i].name,
+> +					    core->events[i]);
+> +		}
+> +
+> +		if (status & XCSI_ISR_VCXFE && core->en_vcx) {
+> +			u32 vcxstatus;
+> +
+> +			vcxstatus = xcsi2rxss_read(core, XCSI_VCXR_OFFSET);
+> +			vcxstatus &= XCSI_VCXR_VCERR;
+> +			for (i = 0; i < XCSI_VCX_NUM_EVENTS; i++) {
+> +				if (!(vcxstatus & (1 << i)))
+> +					continue;
+> +				core->vcx_events[i]++;
+> +			}
+> +			xcsi2rxss_write(core, XCSI_VCXR_OFFSET, vcxstatus);
+> +		}
+> +	}
+> +
+> +	xcsi2rxss_write(core, XCSI_ISR_OFFSET, status);
+> +	return IRQ_HANDLED;
+> +}
+> +
+> +/**
+> + * xcsi2rxss_s_stream - It is used to start/stop the streaming.
+> + * @sd: V4L2 Sub device
+> + * @enable: Flag (True / False)
+> + *
+> + * This function controls the start or stop of streaming for the
+> + * Xilinx MIPI CSI-2 Rx Subsystem.
+> + *
+> + * Return: 0 on success, errors otherwise
+> + */
+> +static int xcsi2rxss_s_stream(struct v4l2_subdev *sd, int enable)
+> +{
+> +	struct xcsi2rxss_state *xcsi2rxss = to_xcsi2rxssstate(sd);
+> +	int ret = 0;
+> +
+> +	mutex_lock(&xcsi2rxss->lock);
+> +
+> +	if (enable) {
+> +		if (!xcsi2rxss->streaming) {
+> +			/* reset the event counters */
+> +			xcsi2rxss_reset_event_counters(xcsi2rxss);
+> +			ret = xcsi2rxss_start_stream(xcsi2rxss);
+> +		}
+> +	} else {
+> +		if (xcsi2rxss->streaming) {
+> +			struct gpio_desc *rst = xcsi2rxss->core.rst_gpio;
+> +
+> +			xcsi2rxss_stop_stream(xcsi2rxss);
+> +			if (rst) {
+> +				gpiod_set_value_cansleep(rst, 1);
+> +				usleep_range(1, 2);
+> +				gpiod_set_value_cansleep(rst, 0);
+> +			}
+> +		}
+> +	}
+> +
+> +	mutex_unlock(&xcsi2rxss->lock);
+> +	return ret;
+> +}
+> +
+> +static struct v4l2_mbus_framefmt *
+> +__xcsi2rxss_get_pad_format(struct xcsi2rxss_state *xcsi2rxss,
+> +			   struct v4l2_subdev_pad_config *cfg,
+> +			   unsigned int pad, u32 which)
+> +{
+> +	switch (which) {
+> +	case V4L2_SUBDEV_FORMAT_TRY:
+> +		return v4l2_subdev_get_try_format(&xcsi2rxss->subdev, cfg, pad);
+> +	case V4L2_SUBDEV_FORMAT_ACTIVE:
+> +		return &xcsi2rxss->format;
+> +	default:
+> +		return NULL;
+> +	}
+> +}
+> +
+> +/**
+> + * xcsi2rxss_get_format - Get the pad format
+> + * @sd: Pointer to V4L2 Sub device structure
+> + * @cfg: Pointer to sub device pad information structure
+> + * @fmt: Pointer to pad level media bus format
+> + *
+> + * This function is used to get the pad format information.
+> + *
+> + * Return: 0 on success
+> + */
+> +static int xcsi2rxss_get_format(struct v4l2_subdev *sd,
+> +				struct v4l2_subdev_pad_config *cfg,
+> +				struct v4l2_subdev_format *fmt)
+> +{
+> +	struct xcsi2rxss_state *xcsi2rxss = to_xcsi2rxssstate(sd);
+> +
+> +	mutex_lock(&xcsi2rxss->lock);
+> +	fmt->format = *__xcsi2rxss_get_pad_format(xcsi2rxss, cfg, fmt->pad,
+> +						  fmt->which);
+> +	mutex_unlock(&xcsi2rxss->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +/**
+> + * xcsi2rxss_set_format - This is used to set the pad format
+> + * @sd: Pointer to V4L2 Sub device structure
+> + * @cfg: Pointer to sub device pad information structure
+> + * @fmt: Pointer to pad level media bus format
+> + *
+> + * This function is used to set the pad format. Since the pad format is fixed
+> + * in hardware, it can't be modified on run time. So when a format set is
+> + * requested by application, all parameters except the format type is saved
+> + * for the pad and the original pad format is sent back to the application.
+> + *
+> + * Return: 0 on success
+> + */
+> +static int xcsi2rxss_set_format(struct v4l2_subdev *sd,
+> +				struct v4l2_subdev_pad_config *cfg,
+> +				struct v4l2_subdev_format *fmt)
+> +{
+> +	struct xcsi2rxss_state *xcsi2rxss = to_xcsi2rxssstate(sd);
+> +	struct xcsi2rxss_core *core = &xcsi2rxss->core;
+> +	struct v4l2_mbus_framefmt *__format;
+> +
+> +	/* only sink pad format can be updated */
+> +	mutex_lock(&xcsi2rxss->lock);
+> +
+> +	/*
+> +	 * Only the format->code parameter matters for CSI as the
+> +	 * CSI format cannot be changed at runtime.
+> +	 * Ensure that format to set is copied to over to CSI pad format
+> +	 */
+> +	__format = __xcsi2rxss_get_pad_format(xcsi2rxss, cfg,
+> +					      fmt->pad, fmt->which);
+> +
+> +	if (fmt->pad == XVIP_PAD_SOURCE) {
+> +		fmt->format = *__format;
+> +		mutex_unlock(&xcsi2rxss->lock);
+> +		return 0;
+> +	}
+> +
+> +	/*
+> +	 * RAW8 is supported in all datatypes. So if requested media bus format
+> +	 * is of RAW8 type, then allow to be set. In case core is configured to
+> +	 * other RAW, YUV422 8/10 or RGB888, set appropriate media bus format.
+> +	 */
+> +	if (!((fmt->format.code == MEDIA_BUS_FMT_SBGGR8_1X8 ||
+> +	       fmt->format.code == MEDIA_BUS_FMT_SGBRG8_1X8 ||
+> +	       fmt->format.code == MEDIA_BUS_FMT_SGRBG8_1X8 ||
+> +	       fmt->format.code == MEDIA_BUS_FMT_SRGGB8_1X8) ||
+> +	      (core->datatype == XCSI_DT_RAW10 &&
+> +	       (fmt->format.code == MEDIA_BUS_FMT_SBGGR10_1X10 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SGBRG10_1X10 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SGRBG10_1X10 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SRGGB10_1X10)) ||
+> +	      (core->datatype == XCSI_DT_RAW12 &&
+> +	       (fmt->format.code == MEDIA_BUS_FMT_SBGGR12_1X12 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SGBRG12_1X12 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SGRBG12_1X12 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SRGGB12_1X12)) ||
+> +	      (core->datatype == XCSI_DT_RAW14 &&
+> +	       (fmt->format.code == MEDIA_BUS_FMT_SBGGR14_1X14 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SGBRG14_1X14 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SGRBG14_1X14 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SRGGB14_1X14)) ||
+> +	      (core->datatype == XCSI_DT_RAW16 &&
+> +	       (fmt->format.code == MEDIA_BUS_FMT_SBGGR16_1X16 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SGBRG16_1X16 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SGRBG16_1X16 ||
+> +		fmt->format.code == MEDIA_BUS_FMT_SRGGB16_1X16)) ||
+> +	      (core->datatype == XCSI_DT_YUV4228B &&
+> +	       fmt->format.code == MEDIA_BUS_FMT_UYVY8_1X16) ||
+> +	      (core->datatype == XCSI_DT_YUV42210B &&
+> +	       fmt->format.code == MEDIA_BUS_FMT_UYVY10_1X20) ||
+> +	      (core->datatype == XCSI_DT_RGB888 &&
+> +	       fmt->format.code == MEDIA_BUS_FMT_RBG888_1X24))) {
+> +		/* Restore the original pad format code */
+> +		dev_dbg(core->dev, "Unsupported media bus format");
+> +		fmt->format.code = __format->code;
+> +	}
+> +
+> +	*__format = fmt->format;
+
+Did I already ask whether there are any limits on width or height for this
+device?
+
+> +	mutex_unlock(&xcsi2rxss->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +/*
+> + * xcsi2rxss_enum_mbus_code - Handle pixel format enumeration
+> + * @sd : pointer to v4l2 subdev structure
+> + * @cfg: V4L2 subdev pad configuration
+> + * @code : pointer to v4l2_subdev_mbus_code_enum structure
+> + *
+> + * Return: -EINVAL or zero on success
+> + */
+> +int xcsi2rxss_enum_mbus_code(struct v4l2_subdev *sd,
+> +			     struct v4l2_subdev_pad_config *cfg,
+> +			     struct v4l2_subdev_mbus_code_enum *code)
+> +{
+> +	struct xcsi2rxss_state *state = to_xcsi2rxssstate(sd);
+> +
+> +	if (code->index >= state->mbus_fmts_count)
+> +		return -EINVAL;
+> +
+> +	code->code = state->mbus_fmts[code->index];
+> +
+> +	return 0;
+> +}
+> +
+> +/**
+> + * xcsi2rxss_open - Called on v4l2_open()
+> + * @sd: Pointer to V4L2 sub device structure
+> + * @fh: Pointer to V4L2 File handle
+> + *
+> + * This function is called on v4l2_open(). It sets the default format
+> + * for both pads.
+> + *
+> + * Return: 0 on success
+> + */
+> +static int xcsi2rxss_open(struct v4l2_subdev *sd,
+> +			  struct v4l2_subdev_fh *fh)
+> +{
+> +	struct xcsi2rxss_state *xcsi2rxss = to_xcsi2rxssstate(sd);
+> +	struct v4l2_mbus_framefmt *format;
+> +	unsigned int i;
+> +
+> +	for (i = 0; i < XCSI_MEDIA_PADS; i++) {
+> +		format = v4l2_subdev_get_try_format(sd, fh->pad, i);
+> +		*format = xcsi2rxss->default_format;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +/* -----------------------------------------------------------------------------
+> + * Media Operations
+> + */
+> +
+> +static const struct media_entity_operations xcsi2rxss_media_ops = {
+> +	.link_validate = v4l2_subdev_link_validate
+> +};
+> +
+> +static const struct v4l2_subdev_core_ops xcsi2rxss_core_ops = {
+> +	.log_status = xcsi2rxss_log_status,
+> +};
+> +
+> +static const struct v4l2_subdev_video_ops xcsi2rxss_video_ops = {
+> +	.s_stream = xcsi2rxss_s_stream
+> +};
+> +
+> +static const struct v4l2_subdev_pad_ops xcsi2rxss_pad_ops = {
+> +	.get_fmt = xcsi2rxss_get_format,
+> +	.set_fmt = xcsi2rxss_set_format,
+> +	.enum_mbus_code = xcsi2rxss_enum_mbus_code,
+
+You'll need link_validate set to v4l2_subdev_link_validate_default here.
+
+> +};
+> +
+> +static const struct v4l2_subdev_ops xcsi2rxss_ops = {
+> +	.core = &xcsi2rxss_core_ops,
+> +	.video = &xcsi2rxss_video_ops,
+> +	.pad = &xcsi2rxss_pad_ops
+> +};
+> +
+> +static const struct v4l2_subdev_internal_ops xcsi2rxss_internal_ops = {
+> +	.open = xcsi2rxss_open,
+> +};
+> +
+> +static void xcsi2rxss_set_default_format(struct xcsi2rxss_state *state)
+> +{
+> +	struct xcsi2rxss_core *core = &state->core;
+> +
+> +	memset(&state->default_format, 0, sizeof(state->default_format));
+> +
+> +	switch (core->datatype) {
+> +	case XCSI_DT_YUV4228B:
+> +		state->default_format.code = MEDIA_BUS_FMT_UYVY8_1X16;
+> +		break;
+> +	case XCSI_DT_RGB888:
+> +		state->default_format.code = MEDIA_BUS_FMT_RBG888_1X24;
+> +		break;
+> +	case XCSI_DT_YUV42210B:
+> +		state->default_format.code = MEDIA_BUS_FMT_UYVY10_1X20;
+> +		break;
+> +	case XCSI_DT_RAW10:
+> +		state->default_format.code = MEDIA_BUS_FMT_SRGGB10_1X10;
+> +		break;
+> +	case XCSI_DT_RAW12:
+> +		state->default_format.code = MEDIA_BUS_FMT_SRGGB12_1X12;
+> +		break;
+> +	case XCSI_DT_RAW14:
+> +		state->default_format.code = MEDIA_BUS_FMT_SRGGB14_1X14;
+> +		break;
+> +	case XCSI_DT_RAW16:
+> +		state->default_format.code = MEDIA_BUS_FMT_SRGGB16_1X16;
+> +		break;
+> +	case XCSI_DT_RAW8:
+> +	case XCSI_DT_RGB444:
+> +	case XCSI_DT_RGB555:
+> +	case XCSI_DT_RGB565:
+> +	case XCSI_DT_RGB666:
+> +		state->default_format.code = MEDIA_BUS_FMT_SRGGB8_1X8;
+> +		break;
+> +	}
+> +
+> +	state->default_format.field = V4L2_FIELD_NONE;
+> +	state->default_format.colorspace = V4L2_COLORSPACE_SRGB;
+> +	state->default_format.width = XCSI_DEFAULT_WIDTH;
+> +	state->default_format.height = XCSI_DEFAULT_HEIGHT;
+> +
+> +	dev_dbg(core->dev, "default mediabus format = 0x%x",
+> +		state->default_format.code);
+> +}
+> +
+> +static void xcsi2rxss_init_mbus_fmts(struct xcsi2rxss_state *state)
+> +{
+> +	struct xcsi2rxss_core *core = &state->core;
+> +
+> +	XADD_MBUS(state, MEDIA_BUS_FMT_SRGGB8_1X8);
+> +	XADD_MBUS(state, MEDIA_BUS_FMT_SBGGR8_1X8);
+> +	XADD_MBUS(state, MEDIA_BUS_FMT_SGRBG8_1X8);
+> +	XADD_MBUS(state, MEDIA_BUS_FMT_SGBRG8_1X8);
+> +
+> +	switch (core->datatype) {
+> +	case XCSI_DT_RAW10:
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SRGGB10_1X10);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SBGGR10_1X10);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SGRBG10_1X10);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SGBRG10_1X10);
+> +		break;
+> +	case XCSI_DT_RAW12:
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SRGGB12_1X12);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SBGGR12_1X12);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SGRBG12_1X12);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SGBRG12_1X12);
+> +		break;
+> +	case XCSI_DT_RAW14:
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SRGGB14_1X14);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SBGGR14_1X14);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SGRBG14_1X14);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SGBRG14_1X14);
+> +		break;
+> +	case XCSI_DT_RAW16:
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SRGGB16_1X16);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SBGGR16_1X16);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SGRBG16_1X16);
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_SGBRG16_1X16);
+> +		break;
+> +	case XCSI_DT_YUV4228B:
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_UYVY8_1X16);
+> +		break;
+> +	case XCSI_DT_RGB888:
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_RBG888_1X24);
+> +		break;
+> +	case XCSI_DT_YUV42210B:
+> +		XADD_MBUS(state, MEDIA_BUS_FMT_UYVY10_1X20);
+> +		break;
+> +	default:
+> +		dev_err(core->dev, "Invalid data type!\n");
+> +	}
+> +}
+> +
+> +static int xcsi2rxss_parse_of(struct xcsi2rxss_state *xcsi2rxss)
+> +{
+> +	struct xcsi2rxss_core *core = &xcsi2rxss->core;
+> +	struct device_node *node = xcsi2rxss->core.dev->of_node;
+> +	struct device_node *ports = NULL;
+> +	struct device_node *port = NULL;
+> +	unsigned int nports, irq;
+> +	bool en_csi_v20, vfb;
+> +	int ret;
+> +
+> +	en_csi_v20 = of_property_read_bool(node, "xlnx,en-csi-v2-0");
+> +	if (en_csi_v20)
+> +		core->en_vcx = of_property_read_bool(node, "xlnx,en-vcx");
+> +
+> +	core->enable_active_lanes =
+> +		of_property_read_bool(node, "xlnx,en-active-lanes");
+> +
+> +	ret = of_property_read_u32(node, "xlnx,csi-pxl-format",
+> +				   &core->datatype);
+> +	if (ret < 0) {
+> +		dev_err(core->dev, "missing xlnx,csi-pxl-format property\n");
+> +		return ret;
+> +	}
+> +
+> +	switch (core->datatype) {
+> +	case XCSI_DT_YUV4228B:
+> +	case XCSI_DT_RGB444:
+> +	case XCSI_DT_RGB555:
+> +	case XCSI_DT_RGB565:
+> +	case XCSI_DT_RGB666:
+> +	case XCSI_DT_RGB888:
+> +	case XCSI_DT_RAW6:
+> +	case XCSI_DT_RAW7:
+> +	case XCSI_DT_RAW8:
+> +	case XCSI_DT_RAW10:
+> +	case XCSI_DT_RAW12:
+> +	case XCSI_DT_RAW14:
+> +		break;
+> +	case XCSI_DT_YUV42210B:
+> +	case XCSI_DT_RAW16:
+> +	case XCSI_DT_RAW20:
+> +		if (!en_csi_v20) {
+> +			ret = -EINVAL;
+> +			dev_dbg(core->dev, "enable csi v2 for this pixel format");
+> +		}
+> +		break;
+> +	default:
+> +		ret = -EINVAL;
+> +	}
+> +	if (ret < 0) {
+> +		dev_err(core->dev, "invalid csi-pxl-format property!\n");
+> +		return ret;
+> +	}
+> +
+> +	vfb = of_property_read_bool(node, "xlnx,vfb");
+> +	if (!vfb) {
+> +		dev_err(core->dev, "failed as VFB is disabled!\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	ports = of_get_child_by_name(node, "ports");
+> +	if (!ports)
+> +		ports = node;
+> +
+> +	nports = 0;
+> +	for_each_child_of_node(ports, port) {
+> +		struct device_node *endpoint;
+> +		struct v4l2_fwnode_endpoint v4lendpoint;
+> +		int ret;
+> +
+> +		if (!port->name || of_node_cmp(port->name, "port"))
+> +			continue;
+> +
+> +		endpoint = of_get_next_child(port, NULL);
+> +		if (!endpoint) {
+> +			dev_err(core->dev, "No port at\n");
+> +			return -EINVAL;
+> +		}
+
+You shouldn't parse the graph data structure yourself.
+
+Could you use fwnode_graph_get_endpoint_by_id(), and work it from there
+without using an enumeration? You have two endpoints in there after all in
+two ports.
+
+Please see drivers/media/pci/intel/ipu3/ipu3-cio2.c for an example.
+
+> +
+> +		/*
+> +		 * since first port is sink port and it contains
+> +		 * all info about data-lanes and cfa-pattern,
+> +		 * don't parse second port but only check if exists
+> +		 */
+> +		if (nports == XVIP_PAD_SOURCE) {
+> +			dev_dbg(core->dev, "no need to parse source port");
+> +			nports++;
+> +			of_node_put(endpoint);
+> +			continue;
+> +		}
+> +
+> +		ret = v4l2_fwnode_endpoint_parse(of_fwnode_handle(endpoint),
+> +						 &v4lendpoint);
+
+Please set the bus_type to what you need on that port, e.g.
+V4L2_MBUS_CSI2_DPHY, and set the rest to zero.
+
+> +		of_node_put(endpoint);
+> +		if (ret)
+> +			return ret;
+> +
+> +		dev_dbg(core->dev, "%s : port %d bus type = %d\n",
+> +			__func__, nports, v4lendpoint.bus_type);
+> +
+> +		if (v4lendpoint.bus_type == V4L2_MBUS_CSI2_DPHY) {
+> +			dev_dbg(core->dev, "%s : base.port = %d base.id = %d\n",
+> +				__func__, v4lendpoint.base.port,
+> +				v4lendpoint.base.id);
+> +
+> +			dev_dbg(core->dev, "%s : mipi number lanes = %d\n",
+> +				__func__,
+> +				v4lendpoint.bus.mipi_csi2.num_data_lanes);
+> +
+> +			core->max_num_lanes =
+> +				v4lendpoint.bus.mipi_csi2.num_data_lanes;
+> +		}
+> +
+> +		/* Count the number of ports. */
+> +		nports++;
+> +	}
+> +
+> +	if (nports != XCSI_MEDIA_PADS) {
+> +		dev_err(core->dev, "invalid number of ports %u\n", nports);
+> +		return -EINVAL;
+> +	}
+> +
+> +	/* Register interrupt handler */
+> +	irq = irq_of_parse_and_map(node, 0);
+> +	ret = devm_request_irq(core->dev, irq, xcsi2rxss_irq_handler,
+> +			       IRQF_SHARED, "xilinx-csi2rxss", xcsi2rxss);
+> +	if (ret) {
+> +		dev_err(core->dev, "Err = %d Interrupt handler reg failed!\n",
+> +			ret);
+> +		return ret;
+> +	}
+> +
+> +	xcsi2rxss_log_ipconfig(xcsi2rxss);
+> +
+> +	return 0;
+> +}
+> +
+> +static int xcsi2rxss_probe(struct platform_device *pdev)
+> +{
+> +	struct v4l2_subdev *subdev;
+> +	struct xcsi2rxss_state *xcsi2rxss;
+> +	struct xcsi2rxss_core *core;
+> +	struct resource *res;
+> +	int ret;
+> +
+> +	xcsi2rxss = devm_kzalloc(&pdev->dev, sizeof(*xcsi2rxss), GFP_KERNEL);
+> +	if (!xcsi2rxss)
+> +		return -ENOMEM;
+> +
+> +	core = &xcsi2rxss->core;
+> +	core->dev = &pdev->dev;
+> +
+> +	core->clks = devm_kmemdup(core->dev, xcsi2rxss_clks,
+> +				  sizeof(xcsi2rxss_clks), GFP_KERNEL);
+> +	if (!core->clks)
+> +		return -ENOMEM;
+> +
+> +	/* Reset GPIO */
+> +	core->rst_gpio = devm_gpiod_get_optional(core->dev, "reset",
+> +						 GPIOD_OUT_HIGH);
+> +	if (IS_ERR(core->rst_gpio)) {
+> +		if (PTR_ERR(core->rst_gpio) != -EPROBE_DEFER)
+> +			dev_err(core->dev, "Video Reset GPIO not setup in DT");
+> +		return PTR_ERR(core->rst_gpio);
+> +	}
+> +
+> +	mutex_init(&xcsi2rxss->lock);
+> +
+> +	ret = xcsi2rxss_parse_of(xcsi2rxss);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	core->iomem = devm_ioremap_resource(core->dev, res);
+> +	if (IS_ERR(core->iomem))
+> +		return PTR_ERR(core->iomem);
+> +
+> +	core->num_clks = ARRAY_SIZE(xcsi2rxss_clks);
+
+num_clks never changes, please drop it and  use ARRAY_SIZE(...) instead.
+
+> +
+> +	ret = clk_bulk_get(core->dev, core->num_clks, core->clks);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = clk_bulk_prepare_enable(core->num_clks, core->clks);
+> +	if (ret)
+> +		goto err_clk_put;
+> +
+> +	if (core->rst_gpio) {
+> +		gpiod_set_value_cansleep(core->rst_gpio, 1);
+> +		/* minimum of 40 dphy_clk_200M cycles */
+> +		usleep_range(1, 2);
+> +		gpiod_set_value_cansleep(core->rst_gpio, 0);
+> +	}
+> +
+> +	xcsi2rxss_reset(core);
+> +
+> +	/* Initialize V4L2 subdevice and media entity */
+> +	xcsi2rxss->pads[XVIP_PAD_SINK].flags = MEDIA_PAD_FL_SINK;
+> +	xcsi2rxss->pads[XVIP_PAD_SOURCE].flags = MEDIA_PAD_FL_SOURCE;
+> +
+> +	/* Initialize the default format */
+> +	xcsi2rxss_set_default_format(xcsi2rxss);
+> +
+> +	/* Initialize the mbus formats supported */
+> +	xcsi2rxss_init_mbus_fmts(xcsi2rxss);
+> +
+> +	/* Initialize V4L2 subdevice and media entity */
+> +	subdev = &xcsi2rxss->subdev;
+> +	v4l2_subdev_init(subdev, &xcsi2rxss_ops);
+> +	subdev->dev = &pdev->dev;
+> +	subdev->internal_ops = &xcsi2rxss_internal_ops;
+> +	strscpy(subdev->name, dev_name(&pdev->dev), sizeof(subdev->name));
+> +	subdev->flags |= V4L2_SUBDEV_FL_HAS_EVENTS | V4L2_SUBDEV_FL_HAS_DEVNODE;
+> +	subdev->entity.ops = &xcsi2rxss_media_ops;
+> +	v4l2_set_subdevdata(subdev, xcsi2rxss);
+> +
+> +	ret = media_entity_pads_init(&subdev->entity, XCSI_MEDIA_PADS,
+> +				     xcsi2rxss->pads);
+> +	if (ret < 0)
+> +		goto error;
+> +
+> +	platform_set_drvdata(pdev, xcsi2rxss);
+> +
+> +	ret = v4l2_async_register_subdev(subdev);
+> +	if (ret < 0) {
+> +		dev_err(core->dev, "failed to register subdev\n");
+> +		goto error;
+> +	}
+> +
+> +	dev_info(core->dev, "Xilinx CSI2 Rx Subsystem device found!\n");
+> +
+> +	return 0;
+> +error:
+> +	media_entity_cleanup(&subdev->entity);
+> +	mutex_destroy(&xcsi2rxss->lock);
+> +	clk_bulk_disable_unprepare(core->num_clks, core->clks);
+> +err_clk_put:
+> +	clk_bulk_put(core->num_clks, core->clks);
+> +	return ret;
+> +}
+> +
+> +static int xcsi2rxss_remove(struct platform_device *pdev)
+> +{
+> +	struct xcsi2rxss_state *xcsi2rxss = platform_get_drvdata(pdev);
+> +	struct xcsi2rxss_core *core = &xcsi2rxss->core;
+> +	struct v4l2_subdev *subdev = &xcsi2rxss->subdev;
+> +
+> +	v4l2_async_unregister_subdev(subdev);
+> +	media_entity_cleanup(&subdev->entity);
+> +	mutex_destroy(&xcsi2rxss->lock);
+> +	clk_bulk_disable_unprepare(core->num_clks, core->clks);
+> +	clk_bulk_put(core->num_clks, core->clks);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id xcsi2rxss_of_id_table[] = {
+> +	{ .compatible = "xlnx,mipi-csi2-rx-subsystem-4.0", },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, xcsi2rxss_of_id_table);
+> +
+> +static struct platform_driver xcsi2rxss_driver = {
+> +	.driver = {
+> +		.name		= "xilinx-csi2rxss",
+> +		.of_match_table	= xcsi2rxss_of_id_table,
+> +	},
+> +	.probe			= xcsi2rxss_probe,
+> +	.remove			= xcsi2rxss_remove,
+> +};
+> +
+> +module_platform_driver(xcsi2rxss_driver);
+> +
+> +MODULE_AUTHOR("Vishal Sagar <vsagar@xilinx.com>");
+> +MODULE_DESCRIPTION("Xilinx MIPI CSI2 Rx Subsystem Driver");
+> +MODULE_LICENSE("GPL v2");
+
+This does not align with the SPDX header. v2 or v2+?
+
+-- 
 Regards,
-Philipp Richter
 
-On Thu, 15 Aug 2019 at 17:35, Philipp Richter
-<richterphilipp.pops@gmail.com> wrote:
->
-> Yes, it's connected over the USB 3.0 port. I'll also try over USB 2.0
-> as soon as possible.
->
-> I first noticed the issue when my backup script froze the board, so
-> this is while reading from the eMMC.
->
-> My script that I invoke over ssh :
-> ============
-> #!/usr/bin/env bash
-> IFS=$'\n\t'
-> set -euo pipefail
->
-> schedtool -B -n 8 "${BASHPID}"
-> ionice -c 3 -p "${BASHPID}"
->
-> EXCLUSION_FILE='/etc/tar-system-exclusion.txt'
-> TOTAL_SIZE="$(sudo du --bytes --summarize
-> --exclude-from="${EXCLUSION_FILE}" / | awk '{print $1}')"
-> sudo tar --create --file - --numeric-owner --acls --xattrs
-> --exclude-from="${EXCLUSION_FILE}" / | \
->        pv --progress --timer --eta --fineta --rate --average-rate
-> --bytes --force --size "${TOTAL_SIZE}" | \
->        lz4 -z
-> ============
->
-> So it fails also around 2.8GB pushed and I get this panic on my serial
-> console in "__memcpy" this time though :
->
-> ============
-> [12624.268933] SError Interrupt on CPU0, code 0xbf000002 -- SError
-> [12624.268940] CPU: 0 PID: 14170 Comm: kworker/u8:4 Tainted: G
->   O      5.2.8-1-ARCH #1
-> [12624.268942] Hardware name: Pine64 Rock64 (DT)
-> [12624.268944] Workqueue: btrfs-endio btrfs_endio_helper [btrfs]
-> [12624.268946] pstate: 20000005 (nzCv daif -PAN -UAO)
-> [12624.268948] pc : __memcpy+0x118/0x180
-> [12624.268950] lr : btrfs_decompress_buf2page+0x124/0x228 [btrfs]
-> [12624.268951] sp : ffff00001c28bb40
-> [12624.268952] x29: ffff00001c28bb40 x28: ffff8000f2a2b870
-> [12624.268955] x27: 0000000000001000 x26: ffff7e0000270200
-> [12624.268958] x25: 0000000000001000 x24: 000000000001f000
-> [12624.268961] x23: 0000000000000000 x22: 000000000001f000
-> [12624.268964] x21: ffff8000fde46040 x20: 0000000000140000
-> [12624.268967] x19: 0000000000001000 x18: ffff8000e830aef5
-> [12624.268970] x17: 0000000000000ad3 x16: 0000000000000003
-> [12624.268973] x15: 0000000000000002 x14: a8c37bfd9101e042
-> [12624.268976] x13: a9425bf552800021 x12: a94153f3f0000b62
-> [12624.268979] x11: f9400a80900011a4 x10: aa1603e3d63f0260
-> [12624.268982] x9 : 9101c04252800021 x8 : 910003fda9b97bfd
-> [12624.268985] x7 : d61f0080f9475c84 x6 : ffff800009c08390
-> [12624.268988] x5 : ffff800065005050 x4 : 0000000000000000
-> [12624.268990] x3 : 0000000000140000 x2 : 0000000000000c00
-> [12624.268993] x1 : ffff8000dac023d0 x0 : ffff800009c08000
-> [12624.268997] Kernel panic - not syncing: Asynchronous SError Interrupt
-> [12624.269000] CPU: 0 PID: 14170 Comm: kworker/u8:4 Tainted: G
->   O      5.2.8-1-ARCH #1
-> [12624.269001] Hardware name: Pine64 Rock64 (DT)
-> [12624.269003] Workqueue: btrfs-endio btrfs_endio_helper [btrfs]
-> [12624.269004] Call trace:
-> [12624.269006]  dump_backtrace+0x0/0x168
-> [12624.269007]  show_stack+0x24/0x30
-> [12624.269009]  dump_stack+0xa8/0xcc
-> [12624.269010]  panic+0x150/0x320
-> [12624.269011]  __stack_chk_fail+0x0/0x28
-> [12624.269013]  arm64_serror_panic+0x80/0x8c
-> [12624.269014]  do_serror+0x11c/0x120
-> [12624.269016]  el1_error+0x84/0xf8
-> [12624.269017]  __memcpy+0x118/0x180
-> [12624.269018]  zstd_decompress_bio+0xf8/0x250 [btrfs]
-> [12624.269020]  end_compressed_bio_read+0x2ec/0x3f8 [btrfs]
-> [12624.269021]  bio_endio.part.12+0x10c/0x1a8
-> [12624.269023]  bio_endio+0x20/0x30
-> [12624.269024]  end_workqueue_fn+0x4c/0x58 [btrfs]
-> [12624.269025]  normal_work_helper+0x100/0x250 [btrfs]
-> [12624.269027]  btrfs_endio_helper+0x20/0x30 [btrfs]
-> [12624.269029]  process_one_work+0x1b4/0x408
-> [12624.269030]  worker_thread+0x54/0x4b8
-> [12624.269031]  kthread+0x12c/0x130
-> [12624.269033]  ret_from_fork+0x10/0x1c
-> [12624.269068] SMP: stopping secondary CPUs
-> [12624.269069] Kernel Offset: disabled
-> [12624.269071] CPU features: 0x0002,20002000
-> [12624.269072] Memory Limit: none
-> ============
->
-> Regards,
-> Philipp Richter
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
