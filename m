@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 972178EFAD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 17:45:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82B2F8EFAE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 17:45:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W6QQIalUewqO+m7YOyM54WFsSU9jtJ+d3ZcBicODJog=; b=BphiQhY/E9CzPP
-	yYeHL4zLEFXHtUVC02HERhvj98esYqxdBJduYWumAj7+IV2n/T+4jl8mEUoXWf2jnSEyYHf9YwRVr
-	/FzVSiMgUWWWiNpiMGRFWkW5Be5PXenfH/26oVGS+ahhM9QB6QqH+6n2iVjEnhH05AeGUb6BI0XEy
-	VzT7CGPAaOKU7IH6nPZ1XMy9FArDur9mBKFNEamL1nVkKQFx2bIi9Ruw7N8kKXwLKY/8aaWEu8Kj2
-	np870x4yAxNSNjrVgkeuuQY0ttcrAtmfR6qm0EmKIgI7pMT+ei4dwtP8HJg3SqxJbrR6FVgGfg8uZ
-	kqVpQMQLPXt3Epwl9K9A==;
+	List-Owner; bh=Ej+Yw6UZAoHBB2VqhPT/WMc2zANYG2uMcrz/FiDBHTM=; b=q4S0V7akOBIOY1
+	C7vpNBdhXTvAypLsYyJH69Q4mN/WEBWrU/re8PTMSlQG81bYmzcDLcNqwWJx7RhRC2vROF7nvw7e9
+	vAqwjNZBcdv0RkILjKlNeG/giKcSEVePStZBFdouNbbAMw23Er3UEX3/VBs1uerfAsrjwugPzhrUv
+	cGrnJO3s/k/mLI1TkTKBlFec8k9yI5sOl+VpGtfuTqKwlofdsDoq/rdYhhFB/AX/9tmGUNQLb4pIa
+	NARPjBF9lFts9eXDAUikSDtTMaCGeHznZMZAtGimB5P/+sfQyWABjKtOeCH1jpO37/8DcH2em/8a8
+	BhPFg6RGsy/7QqJY6+1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyHw1-0002vz-QK; Thu, 15 Aug 2019 15:45:05 +0000
+	id 1hyHwH-0003kB-PF; Thu, 15 Aug 2019 15:45:21 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hyHvA-0002Hg-8H
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 15:44:16 +0000
+ id 1hyHvC-0002IS-Jl
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 15:44:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B08A21570;
- Thu, 15 Aug 2019 08:44:11 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 956C81596;
+ Thu, 15 Aug 2019 08:44:13 -0700 (PDT)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 032D33F706;
- Thu, 15 Aug 2019 08:44:09 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E56B43F706;
+ Thu, 15 Aug 2019 08:44:11 -0700 (PDT)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-mm@kvack.org
-Subject: [PATCH v8 2/5] arm64: Tighten the PR_{SET,
- GET}_TAGGED_ADDR_CTRL prctl() unused arguments
-Date: Thu, 15 Aug 2019 16:44:00 +0100
-Message-Id: <20190815154403.16473-3-catalin.marinas@arm.com>
+Subject: [PATCH v8 3/5] arm64: Change the tagged_addr sysctl control semantics
+ to only prevent the opt-in
+Date: Thu, 15 Aug 2019 16:44:01 +0100
+Message-Id: <20190815154403.16473-4-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0.rc0
 In-Reply-To: <20190815154403.16473-1-catalin.marinas@arm.com>
 References: <20190815154403.16473-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_084412_331212_0F714B3B 
-X-CRM114-Status: UNSURE (   8.05  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190815_084414_687714_90AA310D 
+X-CRM114-Status: GOOD (  13.13  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,33 +74,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Require that arg{3,4,5} of the PR_{SET,GET}_TAGGED_ADDR_CTRL prctl and
-arg2 of the PR_GET_TAGGED_ADDR_CTRL prctl() are zero rather than ignored
-for future extensions.
+First rename the sysctl control to abi.tagged_addr_disabled and make it
+default off (zero). When abi.tagged_addr_disabled == 1, only block the
+enabling of the TBI ABI via prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE).
+Getting the status of the ABI or disabling it is still allowed.
 
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- kernel/sys.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/kernel/process.c | 17 ++++++++++-------
+ 1 file changed, 10 insertions(+), 7 deletions(-)
 
-diff --git a/kernel/sys.c b/kernel/sys.c
-index c6c4d5358bd3..ec48396b4943 100644
---- a/kernel/sys.c
-+++ b/kernel/sys.c
-@@ -2499,9 +2499,13 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
- 		error = PAC_RESET_KEYS(me, arg2);
- 		break;
- 	case PR_SET_TAGGED_ADDR_CTRL:
-+		if (arg3 || arg4 || arg5)
-+			return -EINVAL;
- 		error = SET_TAGGED_ADDR_CTRL(arg2);
- 		break;
- 	case PR_GET_TAGGED_ADDR_CTRL:
-+		if (arg2 || arg3 || arg4 || arg5)
-+			return -EINVAL;
- 		error = GET_TAGGED_ADDR_CTRL();
- 		break;
- 	default:
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index 76b7c55026aa..03689c0beb34 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -579,17 +579,22 @@ void arch_setup_new_exec(void)
+ /*
+  * Control the relaxed ABI allowing tagged user addresses into the kernel.
+  */
+-static unsigned int tagged_addr_prctl_allowed = 1;
++static unsigned int tagged_addr_disabled;
+ 
+ long set_tagged_addr_ctrl(unsigned long arg)
+ {
+-	if (!tagged_addr_prctl_allowed)
+-		return -EINVAL;
+ 	if (is_compat_task())
+ 		return -EINVAL;
+ 	if (arg & ~PR_TAGGED_ADDR_ENABLE)
+ 		return -EINVAL;
+ 
++	/*
++	 * Do not allow the enabling of the tagged address ABI if globally
++	 * disabled via sysctl abi.tagged_addr_disabled.
++	 */
++	if (arg & PR_TAGGED_ADDR_ENABLE && tagged_addr_disabled)
++		return -EINVAL;
++
+ 	update_thread_flag(TIF_TAGGED_ADDR, arg & PR_TAGGED_ADDR_ENABLE);
+ 
+ 	return 0;
+@@ -597,8 +602,6 @@ long set_tagged_addr_ctrl(unsigned long arg)
+ 
+ long get_tagged_addr_ctrl(void)
+ {
+-	if (!tagged_addr_prctl_allowed)
+-		return -EINVAL;
+ 	if (is_compat_task())
+ 		return -EINVAL;
+ 
+@@ -618,9 +621,9 @@ static int one = 1;
+ 
+ static struct ctl_table tagged_addr_sysctl_table[] = {
+ 	{
+-		.procname	= "tagged_addr",
++		.procname	= "tagged_addr_disabled",
+ 		.mode		= 0644,
+-		.data		= &tagged_addr_prctl_allowed,
++		.data		= &tagged_addr_disabled,
+ 		.maxlen		= sizeof(int),
+ 		.proc_handler	= proc_dointvec_minmax,
+ 		.extra1		= &zero,
 
 _______________________________________________
 linux-arm-kernel mailing list
