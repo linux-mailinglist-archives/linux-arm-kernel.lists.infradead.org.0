@@ -2,64 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4C6B8EC96
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 15:19:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 710358ECAF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 15:23:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mief5pWrl5zBp36bmm2a/S7gPo/ZykPCx/N6TOI7gy4=; b=JMztl2dW6WO0Yj
-	9zn0dF/LXK2hfbm/C37CS4NwA47Gxo6sBx59zupbdG739ZVKOF/TWqFVO2+V+84SKcfqankfW4q2R
-	w14Da2TF5lcXAylDK/WV4EOo6WpSjGKCyZJDsMO+jkCcRgTNWgw5CIGeapD2o7M3Bipmb7ehtg1jX
-	q2h7kK9ZrP5Y0eDw/TxqXJU3LUt26cX3ltqHdP8kC0BbtUjGbrW+ogkTPzWj7ltx2VhGCucnwyOIW
-	j/kMI7f0bj7ie1t5n0ALGy4DVykvVPvpgST7V/oaZ9InC1MvKcxvaJ7ssz5MZet5VBTMsS/rKd7I7
-	9KwkpvBZCm8AziWs56rA==;
+	List-Owner; bh=k57I5XqC6zD9Ig63ogdGyNvIKRmW1GLVSO5kw7DINgY=; b=DTtMn6YuWQ1cW7
+	Jziba3kwpLB1TS9giSNHqX0pJKrsxXltTQFnXLzJZicoimB9UF3NlVvgEdnD656X4V3rM798NY38h
+	7kI/Gk+ccXzNrDav5j0P40+J7zmUQ+S20Dt06u1LWSoQDe41N3LR+DMBdewlZSRWWJZtQl5Y6YdS7
+	5/0wuzN2/nI/7JUr8L9Pyh5BEG9jbnEXLSFvTbhiy2TVIvX2cxhuJ2oNKbRPv1lSxlgD5GaioApKC
+	XIuwAQfuCPtjUxN4ewMZiN0/F9vwcpvUlQvMd4Ik3b7qd7uHD2ZITpp4LIcaS6VRhGJLHBpclS3Zd
+	OmlMOR9MIIprDH82JRxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyFey-0005kH-WA; Thu, 15 Aug 2019 13:19:21 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1hyFj4-0007oe-OT; Thu, 15 Aug 2019 13:23:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyFeh-0005jE-KH; Thu, 15 Aug 2019 13:19:06 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 15 Aug 2019 06:18:59 -0700
-X-IronPort-AV: E=Sophos;i="5.64,389,1559545200"; d="scan'208";a="171107427"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by orsmga008-auth.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 15 Aug 2019 06:18:53 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id 1B0FC206FD; Thu, 15 Aug 2019 16:17:49 +0300 (EEST)
-Date: Thu, 15 Aug 2019 16:17:49 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH v8 05/14] media: rkisp1: add Rockchip ISP1 subdev driver
-Message-ID: <20190815131748.GS6133@paasikivi.fi.intel.com>
-References: <20190730184256.30338-1-helen.koike@collabora.com>
- <20190730184256.30338-6-helen.koike@collabora.com>
- <20190808091406.GQ21370@paasikivi.fi.intel.com>
- <da6c1d01-e3f6-ad73-db55-145d7832a665@collabora.com>
- <20190815082422.GM6133@paasikivi.fi.intel.com>
+ id 1hyFiq-0007nv-Su
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 13:23:23 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B11572084D;
+ Thu, 15 Aug 2019 13:23:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565875400;
+ bh=v8T3qwF6qiZM++7vAT7AL0JPe0r/NT0kv4QeyOYP/rE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=PIdKCMQ/Lb50XgkTlSzI4dcJJpEBGXjfxY4vMHFbCuhE6F7PCaSzRKr5kWXihgsd6
+ CYq+SBnCJXFALaYcaG3aif6qNMb45WH5wI6jKS8CZyb2VbP+PYmponIEA+124IIRAp
+ rJJ2vhvhUrSSeOp1mohuc3t3W+bL3ZyLQHR5jtR4=
+Date: Thu, 15 Aug 2019 15:23:18 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: next take at setting up a dma mask by default for platform devices
+Message-ID: <20190815132318.GA27208@kroah.com>
+References: <20190811080520.21712-1-hch@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190815082422.GM6133@paasikivi.fi.intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190811080520.21712-1-hch@lst.de>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_061903_680889_4ADD6894 
-X-CRM114-Status: GOOD (  15.08  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190815_062320_958222_11C4E586 
+X-CRM114-Status: GOOD (  15.56  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,59 +73,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
- heiko@sntech.de, jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com,
- zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- linux-rockchip@lists.infradead.org, Allon Huang <allon.huang@rock-chips.com>,
- Jacob Chen <cc@rock-chips.com>, hans.verkuil@cisco.com,
- laurent.pinchart@ideasonboard.com, zhengsq@rock-chips.com, mchehab@kernel.org,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Gavin Li <git@thegavinli.com>, Fabio Estevam <festevam@gmail.com>,
+ linux-arch@vger.kernel.org, Michal Simek <michal.simek@xilinx.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Alan Stern <stern@rowland.harvard.edu>, NXP Linux Team <linux-imx@nxp.com>,
+ Mathias Nyman <mathias.nyman@intel.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Minas Harutyunyan <hminas@synopsys.com>, Olav Kongas <ok@artecdesign.ee>,
+ Bin Liu <b-liu@ti.com>, linux-arm-kernel@lists.infradead.org,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>, Geoff Levand <geoff@infradead.org>,
+ Shawn Guo <shawnguo@kernel.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Tony Prisk <linux@prisktech.co.nz>,
+ iommu@lists.linux-foundation.org,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 11:24:22AM +0300, Sakari Ailus wrote:
-> Hi Helen,
+On Sun, Aug 11, 2019 at 10:05:14AM +0200, Christoph Hellwig wrote:
+> Hi all,
 > 
-> On Wed, Aug 14, 2019 at 09:58:05PM -0300, Helen Koike wrote:
+> this is another attempt to make sure the dma_mask pointer is always
+> initialized for platform devices.  Not doing so lead to lots of
+> boilerplate code, and makes platform devices different from all our
+> major busses like PCI where we always set up a dma_mask.  In the long
+> run this should also help to eventually make dma_mask a scalar value
+> instead of a pointer and remove even more cruft.
 > 
-> ...
-> 
-> > >> +static int rkisp1_isp_sd_set_fmt(struct v4l2_subdev *sd,
-> > >> +				 struct v4l2_subdev_pad_config *cfg,
-> > >> +				 struct v4l2_subdev_format *fmt)
-> > >> +{
-> > >> +	struct rkisp1_device *isp_dev = sd_to_isp_dev(sd);
-> > >> +	struct rkisp1_isp_subdev *isp_sd = &isp_dev->isp_sdev;
-> > >> +	struct v4l2_mbus_framefmt *mf = &fmt->format;
-> > >> +
-> > > 
-> > > Note that for sub-device nodes, the driver is itself responsible for
-> > > serialising the access to its data structures.
-> > 
-> > But looking at subdev_do_ioctl_lock(), it seems that it serializes the
-> > ioctl calls for subdevs, no? Or I'm misunderstanding something (which is
-> > most probably) ?
-> 
-> Good question. I had missed this change --- subdev_do_ioctl_lock() is
-> relatively new. But setting that lock is still not possible as the struct
-> is allocated in the framework and the device is registered before the
-> driver gets hold of it. It's a good idea to provide the same serialisation
-> for subdevs as well.
-> 
-> I'll get back to this later.
+> The bigger blocker for this last time was the fact that the usb
+> subsystem uses the presence or lack of a dma_mask to check if the core
+> should do dma mapping for the driver, which is highly unusual.  So we
+> fix this first.  Note that this has some overlap with the pending
+> desire to use the proper dma_mmap_coherent helper for mapping usb
+> buffers.  The first two patches from this series should probably
+> go into 5.3 and then uses as the basis for the decision to use
+> dma_mmap_coherent.
 
-The main reason is actually that these ops are also called through the
-sub-device kAPI, not only through the uAPI, and the locks are only taken
-through the calls via uAPI.
+I've taken the first 2 patches for 5.3-final.  Given that patch 3 needs
+to be fixed, I'll wait for a respin of these before considering them.
 
-So adding the locks to uAPI calls alone would not address the issue.
+thanks,
 
--- 
-Sakari Ailus
-sakari.ailus@linux.intel.com
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
