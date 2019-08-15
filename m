@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2A218F74A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 00:57:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D5268F74E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 00:57:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+sCgmTSbZjmc1rz7+mLbRByWZd7eDcJhKE+yUme8E4s=; b=PXXAZTFvf1zkK/
-	5oc009gFKFhhGpIazoFtVwwZO0/TZPsj52qBExwfI+ossHZbSHcUsA8U+gwuu5cJRJjvUiF3C8gdo
-	kgZn8e69OkbuJYBbAiUfNuZQahVrMAXbl8LYEkYbr6oMQ7DMmsYWBttKyZn7xjC80kM0MDaXCQeFK
-	Yr7RQpZ50VB2ejPsNDdoJA4cFq2q3159P8vUbotQUxa0O+jhENpHrHqOtKxq/+RO4IJ9882jYYf3l
-	jOZhstN7xFlQgfOp9rIY7qKB5RzN+FZ+ptReT1YqI/1ujnPxRKEyuMH+wNoIyILWgN3DIh1zZX7GS
-	/XKDQGQe3OfO/UoHj5+w==;
+	List-Owner; bh=8qkRmq7OfT6Jx7g5tevOwu5sbqre/PPaAei9lX5gLrI=; b=Fy1x3rVTLno1VF
+	/2YvjO6YSoMpVsPsxLZ64OSU8PNly6DeD6ab5IiztmOG6N59NRiY1esDaNDWwJG3QMxMMttjXDtX9
+	FJxyfRf5JFce/Zxox6Ltg8U83I6HaDmwgtF2hdFy8bC/fR4QqpqclvYnWhEjeFlmAMmGCURzALYcj
+	/8vo66GTQ5odxi5RNF5tZ1I90Dv1x7cI6gGio3SyfM0+EI8J3+LqESHsjBljlLlrxAgLe0Qfbu/5P
+	msmqMjq3kb5hoCZm+nuz0Zx7I9TPJtW3/kFslditVWLXE2IQdN6SkdiDVUB0+qljc1rdQabVa9FPo
+	tvSGcHkfLE2Rx8qN4Xdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyOfr-0005bT-LW; Thu, 15 Aug 2019 22:56:51 +0000
-Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
+	id 1hyOgD-0005p3-76; Thu, 15 Aug 2019 22:57:13 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyOfe-0005aX-Lc; Thu, 15 Aug 2019 22:56:39 +0000
-Received: by mail-pf1-x432.google.com with SMTP id q139so2044844pfc.13;
- Thu, 15 Aug 2019 15:56:37 -0700 (PDT)
+ id 1hyOft-0005lp-1F; Thu, 15 Aug 2019 22:56:54 +0000
+Received: by mail-pl1-x641.google.com with SMTP id a93so1630113pla.7;
+ Thu, 15 Aug 2019 15:56:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=lBeHl2jtMwHYakZpvAoVtLhYASWZoTSHQbP+zFH2IpU=;
- b=Rz9tzWZNIWtHh5dDDmJJ9uqk02zg0ISisfoTcVI+9NlsfHjqyiVzim/MQsmW9j8/zX
- JpDm2M1O7op7BCRivCODP6c5q/iwwiBBpgMK/0f4pmBKRdCnI2ZOPrqM6ZTdYYBTq+9s
- EBTfN0j+0LlqCy0BbWfUqARjGKcxqBu6uua+WMD0jUhXLLuABwOVKBTDgEXOEBaDmbDw
- aLefR5SbnA5hqshrZj5SbubNC9O8WQMWoiZpCI2+zAovWb8qpUu4KcF9mgGakj/Tpkz1
- VNwQauYB0skjQI67catRxPDk9qhvBE5I43ZLOFHj7c1YWnM36exWUU2n6CyyXtOiLiD7
- q7kw==
+ bh=k1idU8Xq6hhWx14UIqaY9Rq9ig+3aprjuOtZjiDONKE=;
+ b=YkhZBqbfCk1Ko7vJ6WDQM8L6chno+V86bJn+cnF8X7aSW6hBVDObZiN5WJ17hMRBKq
+ /Btn3/Z+yobLcycXO7YDY8uOPheeKM2jnrRK58W9Hxa85OSA1km0kovKpiPNULEQrLL6
+ ERjX4nU3Tlu9zmJNagcwlPcA5jy9S8saT2fjdxzK7b2fJ5k8wfrvhotlaho8EYg+bLcL
+ mumDpLjOLg1jefHHdMufOAHruXyjSSC/2b6st6+DlPM1Neg/Bd1oUiTc11wC7FXvMRm/
+ 3CSiIecms0QmlJ+yqZHOk490dBjRAVL7p/SYKh76vXMQ1W99w3g1lzZMW5MBzAvhDo4F
+ sE/w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=lBeHl2jtMwHYakZpvAoVtLhYASWZoTSHQbP+zFH2IpU=;
- b=LBVkFFdC0W0Yw6H7XMXqUnGLWwh753XfK9AWbBHeaBTGUi+txuyTXcEpRjQrp3sNOb
- MvdowqhFdZnAWA60UH2+4YoiSKKyUIHeAjIhI4yBtjGj+rLgTvRFjdkX8+3HV/GtNzYT
- no4rzata2Jnt/kaijzIjqDjvrN0gaMAMojTL7Z65nR8t9D4b9u4cPyWoLDu0ZGJ2Rd2h
- bnEdc4UfSVK/ACGlLdfWsYEpnqwJ0wEgn3LDUIA1cWKczt3bDDTbU4kN+5yH4qMqMy8Q
- EXffglXnCnED05O3yUZDhJQzh7mNC6A2tsnnnvUuZq8r00OX/J0o5ugrv60mAGZLrsKI
- xreA==
-X-Gm-Message-State: APjAAAUSOpbzgRFX9Jojox44e1G0BxouN63MdQ49eXv1rWVPTdlPP6Mr
- I0ESs0On5WBGwWwI99JPvHSNT+Di
-X-Google-Smtp-Source: APXvYqx7sVhpG6oS7KQ+yWoCPDx4SjEN9PEXJcjd2EjXFAQ9xkOF5MTpRHV5E6uD1KYXwsMJVVVraQ==
-X-Received: by 2002:a65:68d9:: with SMTP id k25mr5258933pgt.337.1565909796347; 
- Thu, 15 Aug 2019 15:56:36 -0700 (PDT)
+ bh=k1idU8Xq6hhWx14UIqaY9Rq9ig+3aprjuOtZjiDONKE=;
+ b=TomBM2gr5Qw8SkWshaR9s9hQLZ9Llkys59vJeJrOoREXEgNJlU4zDbD3Litr4VLWjx
+ HFHRNclAiP1uJZ4KXxpz6J9sl5QGbll855GCKYB0QoFG6Vd1gpw9T+/OglRqchcIs+5Q
+ dYnzpOjzRwEBFKl8A3uIXnFqueih727a5XxP7BQV2nI5ijvEmnAkAk9dGawoLG8sOfhw
+ 25eId7oyQq2bBx2ephyEL97ytV86Z3G1wwBeoYfzVOV+bO++kk18Dddyp1Oj70ApFhbc
+ IF6XtN+parJvzfNuCjlWAgVWpVtF2aJlmD4qXZ/8GpIsdGSXvIijclOrplJHTKCEbMOP
+ iigg==
+X-Gm-Message-State: APjAAAXhK8LnOTZkn/N6D971XM82ym4pzhy6SyBB4fJQBNR1qfGbdRj+
+ lyJZDqooDZqKD4UjLU2j/91j+3iy
+X-Google-Smtp-Source: APXvYqxMJGBNcPTBZ0h+q6UAEVcmOWZ7emWkOre2m+YQ8Eso5wBsO8bhqKZfmAm2pB+ov8ym5Suhlw==
+X-Received: by 2002:a17:902:1107:: with SMTP id
+ d7mr6292166pla.184.1565909811833; 
+ Thu, 15 Aug 2019 15:56:51 -0700 (PDT)
 Received: from [10.67.49.31] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id b24sm3785618pfd.91.2019.08.15.15.56.34
+ by smtp.googlemail.com with ESMTPSA id f10sm292037pjw.14.2019.08.15.15.56.50
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 15 Aug 2019 15:56:35 -0700 (PDT)
-Subject: Re: [GIT PULL 1/3] bcm2835-dt-next-2019-08-15
+ Thu, 15 Aug 2019 15:56:51 -0700 (PDT)
+Subject: Re: [GIT PULL 2/3] bcm2835-defconfig-next-2019-08-15
 To: Stefan Wahren <wahrenst@gmx.net>, Florian Fainelli <f.fainelli@gmail.com>
 References: <1565894043-5249-1-git-send-email-wahrenst@gmx.net>
+ <1565894043-5249-2-git-send-email-wahrenst@gmx.net>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
@@ -115,23 +117,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
  M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <6a6d1526-7184-f520-c944-0c268eeec79e@gmail.com>
-Date: Thu, 15 Aug 2019 15:56:34 -0700
+Message-ID: <398abe33-b556-bb89-7148-7f059e9cfe2a@gmail.com>
+Date: Thu, 15 Aug 2019 15:56:50 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <1565894043-5249-1-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <1565894043-5249-2-git-send-email-wahrenst@gmx.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_155638_730881_94CB03B3 
-X-CRM114-Status: GOOD (  17.04  )
+X-CRM114-CacheID: sfid-20190815_155653_213847_FA2741A9 
+X-CRM114-Status: GOOD (  15.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:432 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -172,24 +174,19 @@ On 8/15/19 11:34 AM, Stefan Wahren wrote:
 > 
 > are available in the git repository at:
 > 
->   git://github.com/anholt/linux tags/bcm2835-dt-next-2019-08-15
+>   git://github.com/anholt/linux tags/bcm2835-defconfig-next-2019-08-15
 > 
-> for you to fetch changes up to 60c833d5664e1b3f71c4471233469790adf505ca:
+> for you to fetch changes up to 4c6f5d4038af2c7332630bdd75cfdc0309e97242:
 > 
->   ARM: dts: bcm283x: Enable HDMI at board level (2019-08-15 19:35:15 +0200)
-> 
-> ----------------------------------------------------------------
-> This pull request prepares the BCM2835 DTS files for the introduction
-> of the new SoC BCM2711.
+>   ARM: defconfig: enable cpufreq driver for RPi (2019-07-23 22:53:35 +0200)
 > 
 > ----------------------------------------------------------------
-> Stefan Wahren (4):
->       ARM: bcm283x: Reduce register ranges for UART, SPI and I2C
->       ARM: dts: bcm283x: Define MMC interfaces at board level
->       ARM: dts: bcm283x: Define memory at board level
->       ARM: dts: bcm283x: Enable HDMI at board level
+> This pull request enables the new RPi cpufreq driver in the 32-bit
+> defconfigs.
+> 
+> ----------------------------------------------------------------
 
-Merged into devicetree/next, thanks Stefan!
+Merged into defconfig/next, thanks Stefan!
 -- 
 Florian
 
