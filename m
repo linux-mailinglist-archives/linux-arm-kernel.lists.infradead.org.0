@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AD5B8F72C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 00:44:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F4EB8F73D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 00:51:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LIwSk9W143gr12gl4YojvI1emLe2l0QImTgVvEDkeYY=; b=W79tJjy8S72JQk
-	IMtzwZv6YqBzVRKkofTTFxrY/PN1jlWuCszgZ19apkM0hjJZqyOx1UirbGYTf2C46WSkEC5t+d8FF
-	44dH4q31Z4dwRoVFnDvPtrYMa89qZYnftrEv+vPXvbfATyHnAuxIWN1a31T400kSrT6BFbdyWJpyr
-	dyfh/7Mb1L+NqH4EDv3dKlKPDJuC26s/NV/8KmGIAvuc9cg3tQntggpI6igz6R+qAMl8gpTdnlvfs
-	Kxe6rcC+c8/qic0H7FL0tyMJAb6BQD2oS3PctdsFj2aODkKCxVyj0hvgA8wqoCAp0ZEa9DR8d1S2i
-	fvRmPGCUAe8J208Tmi/A==;
+	List-Owner; bh=A5b2u8uslBkYDu/U6j1UXzoYVAQ9+DTEj+qgpY9dct8=; b=PElDzWa0r0NzAv
+	dL9vuou+GirgBv9WUCkr+XMpt1iedYjRInsFTPipMLnUiQOfHVoi0oWte7j25hmEVN4m9GwJp/t/0
+	HTM/QDfyqz6T26WoSKxMdEUbGflDFMKTHwZ2BHxeZyoe1XKw8ywZIl9TLQDmLpC9Ilh+fEXy3pYMr
+	FVbReV1Uwn7nl7r8kAqwgRq1MuHfFwFuUe8QU/fFNRjLoPmqf3ABjlZhAQastASZ9DDmyQbknWUna
+	xpJdGzvoYUU6tguvsS/FswbqutS5kC6ssIYKP7NsGQVKnBGIWmBYDiuv664TMkkrMD87TMQidq9eF
+	+Az1Y54s/d7gh+e80XzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyOTw-0000d4-Ef; Thu, 15 Aug 2019 22:44:32 +0000
+	id 1hyOaX-0003j9-Bt; Thu, 15 Aug 2019 22:51:21 +0000
 Received: from onstation.org ([52.200.56.107])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyOTl-0000cJ-1S
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 22:44:22 +0000
+ id 1hyOaJ-0003iS-Tr
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 22:51:09 +0000
 Received: from localhost (c-98-239-145-235.hsd1.wv.comcast.net
  [98.239.145.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id B4B0B3E998;
- Thu, 15 Aug 2019 22:44:17 +0000 (UTC)
+ by onstation.org (Postfix) with ESMTPSA id D89F23E998;
+ Thu, 15 Aug 2019 22:51:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
- s=default; t=1565909059;
- bh=czM1Vfno+UFHpzvoNlZgvzbIsi/W/guZt8ysTusqBg8=;
+ s=default; t=1565909466;
+ bh=GlErRnlbnhtp3xOCD8QDuEBNzdpIzm/CEjl/t+YePi4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Z707lNUjzuIsbtPXSccR8bANmWJFP6d0utJUK+yc8rOPnV4fltz0acMoPYc0Gth9O
- 9UmsjR4gMyWahWR+mUwz0JP9vIZHWTzezy6ZO8awAhHdaSSFZsP5nzvVceVqRxtZ6G
- FF0g1ay6/KWQatmMJPp2UFMvfQyb5QJEn8UXok28=
-Date: Thu, 15 Aug 2019 18:44:17 -0400
+ b=kbBRmB2Ag3E2vXFKqyIe3P3JBKnDCf2Gw4yfO4jcxecQTEdBlDWG3wDJ+vxPQ+XQN
+ a1BNwFsIm8w50ApVariWEfK20tN4ggz3LwN3Ya5I93TAxtpu1h1nThdsONxNN6uX7o
+ QkSapavjafeT34+PmnZN/YYXcO0hocqwBz5MLwfA=
+Date: Thu, 15 Aug 2019 18:51:04 -0400
 From: Brian Masney <masneyb@onstation.org>
 To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH 09/11] ARM: dts: qcom: pm8941: add 5vs2 regulator node
-Message-ID: <20190815224417.GA32072@onstation.org>
+Subject: Re: [PATCH RFC 06/11] drm/bridge: analogix-anx78xx: add support for
+ avdd33 regulator
+Message-ID: <20190815225104.GB32072@onstation.org>
 References: <20190815004854.19860-1-masneyb@onstation.org>
- <20190815004854.19860-10-masneyb@onstation.org>
- <CACRpkdYU-6LvFKRkj0yMMCmAnX0XtGe7rMwbXbhf2GCp77Ciyw@mail.gmail.com>
+ <20190815004854.19860-7-masneyb@onstation.org>
+ <CACRpkdYdQa+FVfpSjLi0SsBMDT4QC667z1P1dnapz7PXgRoB5Q@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CACRpkdYU-6LvFKRkj0yMMCmAnX0XtGe7rMwbXbhf2GCp77Ciyw@mail.gmail.com>
+In-Reply-To: <CACRpkdYdQa+FVfpSjLi0SsBMDT4QC667z1P1dnapz7PXgRoB5Q@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_154421_147996_DCF6CA71 
-X-CRM114-Status: GOOD (  16.31  )
+X-CRM114-CacheID: sfid-20190815_155108_029783_148529BE 
+X-CRM114-Status: GOOD (  18.02  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -97,36 +98,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 10:34:17AM +0200, Linus Walleij wrote:
+On Thu, Aug 15, 2019 at 10:22:45AM +0200, Linus Walleij wrote:
 > On Thu, Aug 15, 2019 at 2:49 AM Brian Masney <masneyb@onstation.org> wrote:
 > 
-> > pm8941 is missing the 5vs2 regulator node so let's add it since its
-> > needed to get the external display working. This regulator was already
-> > configured in the interrupts property on the parent node.
+> > Add support for the avdd33 regulator to the analogix-anx78xx driver.
+> > Note that the regulator is currently enabled during driver probe and
+> > disabled when the driver is removed. This is currently how the
+> > downstream MSM kernel sources do this.
 > >
-> > Note that this regulator is referred to as mvs2 in the downstream MSM
-> > kernel sources.
-> 
-> When I looked at it it seemed like this convention is used for power
-> supplies that appear on both the main PMIC and the "extra (boot? basic?
-> low power?) PMIC that the main 80xx PMIC has mvs1 and the
-> other 89xx PMIC has mvs2.
-
-According to the downstream MSM sources, the 5vs1 and 5vs2 rails are
-both on the second pm8941 PMIC:
-
-https://github.com/AICP/kernel_lge_hammerhead/blob/n7.1/arch/arm/boot/dts/msm8974-regulator.dtsi#L18
-
-> I suppose it is named "mvs" on both PMICs and this is just a rail
-> name so as not to confuse the schematic?
-
-That sounds reasonable.
-
+> > Let's not merge this upstream for the mean time until I get the external
+> > display fully working on the Nexus 5 and then I can submit proper
+> > support then that powers down this regulator in the power off function.
+> >
 > > Signed-off-by: Brian Masney <masneyb@onstation.org>
 > 
+> > +static void anx78xx_disable_regulator_action(void *_data)
+> > +{
+> > +       struct anx78xx_platform_data *pdata = _data;
+> > +
+> > +       regulator_disable(pdata->avdd33);
+> > +}
+> (...)
+> > +       err = devm_add_action(dev, anx78xx_disable_regulator_action,
+> > +                             pdata);
+> 
+> Clever idea. Good for initial support, probably later on it would
+> need to be reworked using runtime PM so it's not constantly
+> powered up.
+
+Yes, that's my plan. I suspect that I may have a regulator disabled
+somewhere so I was planning to leave this on all the time for the time
+being to match the downstream behavior until I get the hot plug detect
+GPIO working.
+
 > Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-Thank you!
+Thanks,
 
 Brian
 
