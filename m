@@ -2,51 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A313D8E506
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 08:52:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CBDE8E519
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 08:57:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iwXU1dHrmkVwcVlR11cGRwIkhsulQQxL6Zqq68kGkzc=; b=Hd7sEjebV0FbAn
-	tY5MLV9lVJqH6gS6rjg07ZDPqjZWGF5VV9Ii8Brwwk7Oqlip2UTDZIBbHWFKNettP+Rc/CKH0WeL+
-	4EtmX3DLFTRb24bHrIadvIazvoId81yxEN3UVjOd9hBAZ1pdlTRD0ZbqBpI+rsvM01Gahp7Fn9nEh
-	UPdqGtoomrdDPYmSFd0qgzdOVlD6H8rhjW9Tpe4MLruAiVKK+WPjqxqjH9ZBPe2whKiAM9Dovfacz
-	CWx/LpvZPz5Sr4si96Poro/6FcfcMIX5V09zVVfsMw7g7iWrOlcJGiGxa6sgkpbEtmoEvAiAFMIlM
-	PlIw43FxaZ4mlTZ3BnAg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cGIB4PAFFMTZjuSXuIDkqS4XRIqzlv5BuFRMUlD6UI0=; b=eZvT3TQn70ZRLk
+	wc7nsoflt15pNadKdgjyie3i8fHC02iCdmuzDJT1fjX3cAn/KUOHnuyIanDm9kIMRma4ROrolJyXc
+	C8KU+Jecb6WjNnAUVTXdEivXCf7xxxxB+uMWnDhSdVVmrd6F2KsB1Jhc/mjCQa0rvBPLDmPOQbtY3
+	nQtL8oLv79b6GcDU28ct35r1nJ0jiQwLKhUsE0ppoVyWpjAroTMMDGQtF/U7LLfSkdtewrHKZXTTv
+	mivfdxn/ItUFm40wFi3hNXO+GqyBBXRQ9HHnfx3ULik/PchD7RN6EM4EwccShoYH7h1K1DVkNEvqO
+	XxuLXaamEisgis+OViyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy9c1-0004ng-J4; Thu, 15 Aug 2019 06:51:54 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1hy9hH-0006p8-9Y; Thu, 15 Aug 2019 06:57:19 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy9bY-0004mk-Qd
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 06:51:26 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id CCA2068B02; Thu, 15 Aug 2019 08:51:17 +0200 (CEST)
-Date: Thu, 15 Aug 2019 08:51:17 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Rob Clark <robdclark@gmail.com>
-Subject: Re: [PATCH 0/6] drm+dma: cache support for arm, etc
-Message-ID: <20190815065117.GA23761@lst.de>
-References: <20190814220011.26934-1-robdclark@gmail.com>
+ id 1hy9h2-0006oL-Ov
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 06:57:06 +0000
+Received: by mail-lf1-x144.google.com with SMTP id 62so992574lfa.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 14 Aug 2019 23:57:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=hgJrNRBNHtDq7sAYiX+DZ8YnHpU34hU1rQmq3ot6dZw=;
+ b=j1AnsEePN/KW0HMmaePlAW+4s11k/qV+uDHpT6ndW/2EcKgcI+1xAwgnAGE+sGMsi0
+ PYS0ALOF7iV7uqeiZjb3x1be7nTY9RBZ97TC7N5123EIoK0ckxfYcXV5vKd4B47jzDHq
+ ra0el1qXOaVWgxtWxtAVJLH5T7cUjpbgvaecqcP/oRpdMAmDDKu0kK+8faTx47F7E50d
+ ZL2gybENJ+Zi037ynuCYC4g6uo/QNwDg4+8fByK31BEc+Uux0pO0NHrezjRDjvob8zvS
+ s5r1mhvB0xQgT/Aww9Q60RZHy98c4UxiXYrFuRG5k2KUE+u8e3V/4pBtBjU9LsMbOZor
+ SIuw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=hgJrNRBNHtDq7sAYiX+DZ8YnHpU34hU1rQmq3ot6dZw=;
+ b=nN9OUsTWISs0O14zPsDF/+Voac4nIVv69c7WqNfEoHADZ2YqmdcMaMkaxPO+kX6LYX
+ WptElf1z8dkAKFhOPgafGFEcnNTx5+J4Pucse9jSxnFSSxNL0T+qecpKp9iYC/zI1QuU
+ iuA3fAaq9XvBaJsKU7VK6fhU27oWGQmMdcN9tt1eSIhHqMZy/ewWAJNC5UTH3WZ3vJJ4
+ HkS+VKU659bl2gmkdJHHwsH3rYSk+84EUpJawfjX9vptCf59r5YR6dHZvooCTyViLDqp
+ H5eYTmhwKlTvOFtwCGp84HA+t4gLsDHgUdVLtrcxvcmjHHVo7fzBETzqUTTKXXc9J6BH
+ l2iA==
+X-Gm-Message-State: APjAAAVxdwhYEQNZ+/dDfaU67Mhv5vX3TijPZMYw8u+6tsVQf1NeW8jf
+ SSj4elgT+vOFGT8SA3XcdZtpjQ==
+X-Google-Smtp-Source: APXvYqzfCzhF11z2F4XsMUzO2mumPQq0sKbZSqSSnFlIg89QB+a7wZox9HdKZUoyffMFbn6H6j1c3A==
+X-Received: by 2002:ac2:44ce:: with SMTP id d14mr1626809lfm.143.1565852222061; 
+ Wed, 14 Aug 2019 23:57:02 -0700 (PDT)
+Received: from jax (h-84-105.A175.priv.bahnhof.se. [79.136.84.105])
+ by smtp.gmail.com with ESMTPSA id i17sm303452lfp.94.2019.08.14.23.57.01
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 14 Aug 2019 23:57:01 -0700 (PDT)
+Date: Thu, 15 Aug 2019 08:56:59 +0200
+From: Jens Wiklander <jens.wiklander@linaro.org>
+To: arm-soc <arm@kernel.org>, soc@kernel.org
+Subject: [GIT PULL] tee subsys for v5.4
+Message-ID: <20190815065659.GA13498@jax>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190814220011.26934-1-robdclark@gmail.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_235125_013139_4EEFDDA4 
-X-CRM114-Status: GOOD (  11.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190814_235704_844853_8ABD3109 
+X-CRM114-Status: GOOD (  11.26  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,57 +94,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
- "Maciej W. Rozycki" <macro@linux-mips.org>, Eric Biggers <ebiggers@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Imre Deak <imre.deak@intel.com>,
- dri-devel@lists.freedesktop.org, Chris Wilson <chris@chris-wilson.co.uk>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Will Deacon <will@kernel.org>, Christoph Hellwig <hch@lst.de>,
- Emil Velikov <emil.velikov@collabora.com>, Rob Clark <robdclark@chromium.org>,
- Michael Ellerman <mpe@ellerman.id.au>, Mike Rapoport <rppt@linux.ibm.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- "moderated list:ARM64 PORT \(AARCH64 ARCHITECTURE\)"
- <linux-arm-kernel@lists.infradead.org>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- "open list:MIPS" <linux-mips@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, Robin Murphy <robin.murphy@arm.com>,
- "open list:DRM DRIVER FOR MSM ADRENO GPU" <linux-arm-msm@vger.kernel.org>,
- Deepak Sharma <deepak.sharma@amd.com>, Joerg Roedel <jroedel@suse.de>,
- Arnd Bergmann <arnd@arndb.de>, Anshuman Khandual <anshuman.khandual@arm.com>,
- Hauke Mehrtens <hauke@hauke-m.de>, Jesper Dangaard Brouer <brouer@redhat.com>,
- "Wolfram Sang \(Renesas\)" <wsa+renesas@sang-engineering.com>,
- "open list:LINUX FOR POWERPC \(32-BIT AND 64-BIT\)"
- <linuxppc-dev@lists.ozlabs.org>, Alexios Zavras <alexios.zavras@intel.com>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Doug Anderson <armlinux@m.disordat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Sean Paul <sean@poorly.run>, Allison Randal <allison@lohutok.net>,
- Christophe Leroy <christophe.leroy@c-s.fr>, Enrico Weigelt <info@metux.net>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- open list <linux-kernel@vger.kernel.org>, Paul Burton <paul.burton@mips.com>,
- Souptick Joarder <jrdr.linux@gmail.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- "open list:DRM DRIVER FOR MSM ADRENO GPU" <freedreno@lists.freedesktop.org>
+Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As said before I don't think these low-level helpers are the
-right API to export, but even if they did you'd just cover a tiny
-subset of the architectures.
+Hello arm-soc maintainers,
 
-Also to distil the previous thread - if you remap memory to uncached
-the helper to use is arch_dma_prep_coherent, which does a writeback+
-invalidate everywhere, and there is no need to clean up after a
-long-term uncached mapping.  We might still get speculations into
-that area, if we don't remap the direct mapping, but it isn't like
-invalidting that just before freeing the memory is going to help
-anyone.
+Please pull this OP-TEE driver patch. It adds a call to might_sleep()
+during RPC in the OP-TEE driver in order to be more friendly with
+CONFIG_PREEMPT_VOLUNTARY.
 
-Also it seems like patches 5 and 6 are missing in my inbox.
+Thanks,
+Jens
+
+The following changes since commit 0ecfebd2b52404ae0c54a878c872bb93363ada36:
+
+  Linux 5.2 (2019-07-07 15:41:56 -0700)
+
+are available in the Git repository at:
+
+  git://git.linaro.org/people/jens.wiklander/linux-tee.git tags/tee-optee-for-5.4
+
+for you to fetch changes up to 9f02b8f61f29f4518581770d57bfffe99b1ea599:
+
+  tee: optee: add might_sleep for RPC requests (2019-07-08 22:38:56 +0200)
+
+----------------------------------------------------------------
+Add might_sleep() in OP-TEE RPC requests
+
+----------------------------------------------------------------
+Rouven Czerwinski (1):
+      tee: optee: add might_sleep for RPC requests
+
+ drivers/tee/optee/call.c | 1 +
+ 1 file changed, 1 insertion(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
