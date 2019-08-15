@@ -2,85 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E0398E7DF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 11:12:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 642DF8E833
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 11:26:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h4YFTQ2H4hGg5nkj/O3ZAwmYlw3h/Y18PEbrtCRxOKs=; b=lKau4sKUy6zUiy
-	YWV3jCasqy6oI4y/MC0SPU5l869giDJ7mmU+xQUClbVt7G86VzjDqiyCrTBCYVJP0Zn5qN6s0Z/hF
-	hxyJn2crlSikKZTPqexGFOYJ1+0CWWkHvJlQcgPHleMb5jWts8p8ijjSEbPFN8bk6rg1kd2LRHdLR
-	xhGA+sMXa+GOk0p/pZFl9nP+Vx8LNYTk4qLhx0zkRu9eG9Kb6W2ByCFWXYnTBbSf1pJO2J57FWHtf
-	yzaxWGWXck0RSTaZEiG1/+ieSNeMUesyU3hvtLJFSMzMkgSFr4OS/uCgVJ4wo/2K7fFTKVInWxQiK
-	ijUmGPoEkFF+Ysp+nhhg==;
+	List-Owner; bh=f3PQVwBPGjFvZNOOdY7ukTjxNbQd4cBfMoEgmimFQ2M=; b=IUSJ3c3tEI3pmT
+	4eu3VA0GobttHQWT6gZkVy0TF8+t7VIxLtL0yaYEJMI952o7l/js3yHiasPTyraXagGPnXVrOoEUn
+	H+lAUVLQ8A4tNU1Zbgv+UgrNmOFOSoBDo7b6+WlL2xV1lCIJB8EIQ9hdaF1mvTKIiPe/77avqAJWD
+	ZkYN3YhBzVHvaWrcn04E9gYxmhS52A522xs90a/SPPKfapMi0xQHOHZ+GmWzrD2YwvyGOHZWV5IW7
+	FRZ7Ee5hwtFcQahzTov8lMAIMABanfxJWcrh/A9G1YkDqoFyhgpY814RvQGRIS3gE11CQSvXCrzvF
+	52xCLe6i+dCIPEq7rH0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyBoI-0000Fp-OV; Thu, 15 Aug 2019 09:12:42 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hyC1j-0006Ef-8R; Thu, 15 Aug 2019 09:26:35 +0000
+Received: from bedivere.hansenpartnership.com ([66.63.167.143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyBo3-0000FU-Ix
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 09:12:29 +0000
-Received: by mail-lj1-x243.google.com with SMTP id e27so1635180ljb.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 02:12:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/iZpzZ2apqtPNAYN3rBQkZr4GG5AMuxH/SW/Plc3ffA=;
- b=QElReFqQP1GK1jybq9AdaL5hGB8HmAAs0wfsjh6CmTuxeo6TEfpfCDoP/+HHCVw2A1
- 3i3+mnn+llz0xTIikJA14Xpr1gVhFAfaTwJmRt5SqcsiF1KeM0jPzS5lvDKb8OMOh+GY
- i1vgJaEZIKCh8lSCkUui0aAgkjIg4L206m/sGzk9t6O6QQvrLU8yWFknvH19qAjVW4Fd
- nF9QzblURTEbZ/R1/afeTL+rln+KXYM3Ne/zhEr90OEO3jzL4Ikq8WJTHukdGQn/wyhN
- adWSLc2bj5U6uGjvYIJzNFyX46OWUcpQmn4mMK+8HUZ346uWMznEAPX5nqG0MRJz032l
- rD3g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/iZpzZ2apqtPNAYN3rBQkZr4GG5AMuxH/SW/Plc3ffA=;
- b=PBkJWljYjfPwm8DEoSa8yk5+c8XO7ff+b8nNuwtzOoQYVL+x6AAvB1BlMpggb8zQ7f
- QwrVzB6wAKocU+yTibxJr8S5TpUU7xVS5rYdxDSbod1Pb7RRu6pqxGLl95RGaFIcEMkt
- tVfgUKQykGMXKm1NlZBS7O6C+4NhOzG9j/J50GBuxw1vg6F2MJLW1acaXzx84ODGpWq6
- rQyjJ8MjZf+r9aojTRcNdBl0N+fBc79SFDriOIzP4WnOPWaUM8fX2bY5CbGsvVZ0scJg
- xrvDqBsJdmpedoQUw9edv+hnTjqSEEX81qmJP3MGsrceNur1shVooXWAz6l9hh7/LzrP
- VYSw==
-X-Gm-Message-State: APjAAAU+SfPzlvVdPmjayD+EDeHNS0eLUw7NBGMWHQp9PvaZV6q1wZfi
- 1YwjQDi6jkEnYjDmemsp395W1LfhyJBVtJ8q+So=
-X-Google-Smtp-Source: APXvYqyGUoGw9duO+xloOL4EihgDXFOKCU7bXBE4DDDHi6q2U92avBXabuArt3Vzj00ddjUnjW901Y7mAjAa9KYeXcg=
-X-Received: by 2002:a05:651c:ca:: with SMTP id
- 10mr2132619ljr.144.1565860346166; 
- Thu, 15 Aug 2019 02:12:26 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190812215052.71840-1-ndesaulniers@google.com>
- <20190812215052.71840-12-ndesaulniers@google.com>
- <20190813082744.xmzmm4j675rqiz47@willie-the-truck>
- <CANiq72mAfJ23PyWzZAELgbKQDCX2nvY0z+dmOMe14qz=wa6eFg@mail.gmail.com>
- <20190813170829.c3lryb6va3eopxd7@willie-the-truck>
- <CAKwvOdk4hca8WzWzhcPEvxXnJVLbXGnhBdDZbeL_W_H91Ttjqw@mail.gmail.com>
- <CANiq72mGoGpx7EAVUPcGuhVkLit8sB3bR-k1XBDyeM8HBUaDZw@mail.gmail.com>
-In-Reply-To: <CANiq72mGoGpx7EAVUPcGuhVkLit8sB3bR-k1XBDyeM8HBUaDZw@mail.gmail.com>
-From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-Date: Thu, 15 Aug 2019 11:12:15 +0200
-Message-ID: <CANiq72nUyT-q3A9mTrYzPZ+J9Ya7Lns5MyTK7W7-7yXgFWc2xA@mail.gmail.com>
-Subject: Re: [PATCH 12/16] arm64: prefer __section from compiler_attributes.h
-To: Nick Desaulniers <ndesaulniers@google.com>
+ id 1hyC1P-0006DS-Do
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 09:26:16 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by bedivere.hansenpartnership.com (Postfix) with ESMTP id 8AEBC8EE1FB;
+ Thu, 15 Aug 2019 02:26:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=hansenpartnership.com;
+ s=20151216; t=1565861165;
+ bh=ChiJO460CwqJr6bCz/k4RtKNXSI3O1ZZt8g3+Id8X0Q=;
+ h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
+ b=txS1ipMiR7CUHSlUoHY7Yr340RD45sludbWwlFZbAST/wJTgB93X+NH4hXMHmM+sf
+ fNgzpuZSnLQC7esRTxpsajyQxQCp08OzyfabL7vdCWupMwcui8U+xdDnveqEPNhWv9
+ Z8o5cDslbreqbUwKWCvykOv3uCBIKZbKtc9/CFHc=
+Received: from bedivere.hansenpartnership.com ([127.0.0.1])
+ by localhost (bedivere.hansenpartnership.com [127.0.0.1]) (amavisd-new,
+ port 10024)
+ with ESMTP id xdeaREgeheqG; Thu, 15 Aug 2019 02:26:04 -0700 (PDT)
+Received: from [192.168.1.74] (host31-48-63-146.range31-48.btcentralplus.com
+ [31.48.63.146])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by bedivere.hansenpartnership.com (Postfix) with ESMTPSA id 68D8F8EE0BF;
+ Thu, 15 Aug 2019 02:25:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=hansenpartnership.com;
+ s=20151216; t=1565861164;
+ bh=ChiJO460CwqJr6bCz/k4RtKNXSI3O1ZZt8g3+Id8X0Q=;
+ h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
+ b=OlWfXIG7zOd1sAz8WOHgBIsq+CjD6O6sa7mniwoVsb5xfY6YsyfecX180meWmNBEE
+ AScnlELkp6geKt+seKwyCwqWGyxc9X+k5anMN1Vuga1ATt8Sq1gJxaFt33pFzZ4vBU
+ rFECwrGGAhoFxx6qCn0IkP2mtfuU8za0Eta3XNl4=
+Message-ID: <1565861152.2963.7.camel@HansenPartnership.com>
+Subject: Re: [PATCH 7/8] parisc: don't set ARCH_NO_COHERENT_DMA_MMAP
+From: James Bottomley <James.Bottomley@HansenPartnership.com>
+To: Christoph Hellwig <hch@lst.de>, iommu@lists.linux-foundation.org, Marek
+ Szyprowski <m.szyprowski@samsung.com>
+Date: Thu, 15 Aug 2019 10:25:52 +0100
+In-Reply-To: <20190808160005.10325-8-hch@lst.de>
+References: <20190808160005.10325-1-hch@lst.de>
+ <20190808160005.10325-8-hch@lst.de>
+X-Mailer: Evolution 3.26.6 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_021227_627470_086C9EFA 
-X-CRM114-Status: GOOD (  12.31  )
+X-CRM114-CacheID: sfid-20190815_022615_479184_82B6DCA5 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (miguel.ojeda.sandonis[at]gmail.com)
+ no trust [66.63.167.143 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,48 +91,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Alexei Starovoitov <ast@kernel.org>, Will Deacon <will@kernel.org>,
- Daniel Borkmann <daniel@iogearbox.net>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Allison Randal <allison@lohutok.net>, Yonghong Song <yhs@fb.com>,
- Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
- Josh Poimboeuf <jpoimboe@redhat.com>, Sedat Dilek <sedat.dilek@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, bpf@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Network Development <netdev@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, Enrico Weigelt <info@metux.net>,
- Martin KaFai Lau <kafai@fb.com>
+Cc: linux-xtensa@linux-xtensa.org, Michal Simek <monstr@monstr.eu>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, linux-parisc@vger.kernel.org,
+ linux-sh@vger.kernel.org, Takashi Iwai <tiwai@suse.de>,
+ linuxppc-dev@lists.ozlabs.org, Helge Deller <deller@gmx.de>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 11:08 AM Miguel Ojeda
-<miguel.ojeda.sandonis@gmail.com> wrote:
->
-> On Thu, Aug 15, 2019 at 12:20 AM Nick Desaulniers
-> <ndesaulniers@google.com> wrote:
-> >
-> > This lone patch of the series is just cosmetic, but patch 14/16 fixes
-> > a real boot issue:
-> > https://github.com/ClangBuiltLinux/linux/issues/619
-> > Miguel, I'd like to get that one landed ASAP; the rest are just for consistency.
->
-> Ah, interesting. It would be best to have sent that one independently
-> to the others, plus adding a commit message mentioning this in
-> particular. Let's talk about that in the thread.
+On Thu, 2019-08-08 at 19:00 +0300, Christoph Hellwig wrote:
+> parisc is the only architecture that sets ARCH_NO_COHERENT_DMA_MMAP
+> when an MMU is enabled.  AFAIK this is because parisc CPUs use VIVT
+> caches,
 
-Btw, I guess that is the Oops you were mentioning in the cover letter?
+We're actually VIPT but the same principle applies.
 
-Cheers,
-Miguel
+>  which means exporting normally cachable memory to userspace is
+> relatively dangrous due to cache aliasing.
+> 
+> But normally cachable memory is only allocated by dma_alloc_coherent
+> on parisc when using the sba_iommu or ccio_iommu drivers, so just
+> remove the .mmap implementation for them so that we don't have to set
+> ARCH_NO_COHERENT_DMA_MMAP, which I plan to get rid of.
+
+So I don't think this is quite right.  We have three architectural
+variants essentially (hidden behind about 12 cpu types):
+
+   1. pa70xx: These can't turn off page caching, so they were the non
+      coherent problem case
+   2. pa71xx: These can manufacture coherent memory simply by turning off
+      the cache on a per page basis
+   3. pa8xxx: these have a full cache flush coherence mechanism.
+
+(I might have this slightly wrong: I vaguely remember the pa71xxlc
+variants have some weird cache quirks for DMA as well)
+
+So I think pa70xx we can't mmap.  pa71xx we can provided we mark the
+page as uncached ... which should already have happened in the allocate
+and pa8xxx which can always mmap dma memory without any special tricks.
+
+James
+
 
 _______________________________________________
 linux-arm-kernel mailing list
