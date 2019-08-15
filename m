@@ -2,67 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0CEE8F2FC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 20:14:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0E3F8F315
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 20:19:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/f12VlziNDRHFxrvhTUV+qCu6ia0zvIleXsg1KvMZ4s=; b=a5POxP2Khv/fV/
-	egxkqhr/hrRsT9mTKwP7iAbUlm67hmvZkdaqaO+/7ZRD+7UMQUnzp59DQLiKg+AcV2mfLCqIoxdip
-	NFv5qEsBj4vZVRfgOCT+VaMdEmz4yFzTrqErjblLY+SCemR/nWJgHBlWTiK0/lsnYhtlgJVqmy4m9
-	Gy+mNapmwDwuhpL6+8TqYiYQo0TyJh7YDqbriE/WqdgOEWuwt1yhotIxpqLcsY86oDjq+bsoHYQ5w
-	JOMqCMezPYrBvKvOFLuwuArK6Z5XfAwAsdHPCznC/9hCkN+tFhNj2Q3g93Jqinf4Zqtp7BueQIvGI
-	nxwUo38tmZiFfy7frkjQ==;
+	List-Owner; bh=Oont1M/1xXRGM2czizFlluNUH6ziBTzsl6X2yW1mwsI=; b=OX3xYRcrY4AqTG
+	Gde8PZiZLVaZkyVguvSLMoLwGgq/KqSWNJqclwDshQUV8Bs+4fMOjXOSnFhUyZsyAcN9gZpsFoonF
+	p1GrH3FgExLm1VL/mUu3tLunFSnlVyN3TAS+Hp3qhN7qOAeHx8nWi63lv7sawGbbf0TSszd2Y4Zq3
+	TfDjAToTAcuKSm6V+D61BMx2NR5hHjltNFgVCWGYjafGaLH+EMcdHU0sOegO63StQNXE5DkY130mv
+	PZ9jKMvYRx7W9sjPF9wZ4syzTFo1AFpaP8qskaDGBSKKE9yaL60TBrjBX9xARQJrDyUe/gamwhXYM
+	3xicwm3IklZO+ewEVSEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyKGe-0002gK-PC; Thu, 15 Aug 2019 18:14:32 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1hyKL3-0004Ra-3G; Thu, 15 Aug 2019 18:19:05 +0000
+Received: from mail-wm1-f68.google.com ([209.85.128.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyKGR-0002fe-Aq; Thu, 15 Aug 2019 18:14:20 +0000
-Received: from pendragon.ideasonboard.com
- (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
- [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 71DDB2AF;
- Thu, 15 Aug 2019 20:14:17 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1565892857;
- bh=PywuWClfJh3Sq1lkgyHqHLet8t64SevKcOFacHlNbNo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XSaAqhgyTXoRy4Ne5hd+JH48p6twbV+RWWuhcrrGbHEAPxB+p+arrDgJtFnpRyOVj
- gQclbHy+09zseRLnoNSglCm9r3Yr6Fme88FQ5wyPhMC/97JikIbdngJR7t1rVgFhTG
- 65N0VxzrsTWu9FqSH/6LxlqNaDE/M/edOovgxdqs=
-Date: Thu, 15 Aug 2019 21:14:13 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH v8 11/14] dt-bindings: Document the Rockchip MIPI RX
- D-PHY bindings
-Message-ID: <20190815181413.GZ5011@pendragon.ideasonboard.com>
-References: <20190730184256.30338-1-helen.koike@collabora.com>
- <20190730184256.30338-12-helen.koike@collabora.com>
+ id 1hyKKr-0004RB-2l
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 18:18:54 +0000
+Received: by mail-wm1-f68.google.com with SMTP id m125so2011414wmm.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 15 Aug 2019 11:18:51 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=5leAgXssmuJq/e90a7MyYuV3K+kXUHUhhkOK+kGTeCI=;
+ b=BYxKey9F4ZkYHHRxCCC8uoUJwRiObqiFfulDmluqKuE6xR0h9aceJVESzSNN+0Cq/e
+ +KETzIZCPyRsxM/hU0zXkEnbp5XDqRwQRvmwWfI3KQdDTK7Tmg8V/I42l43LWgpDI12m
+ bIG3TnRgwqaj8wtCXCN/LoI1KiDrtdydnEM8m4bNYTOXOGgYf6DQUuYio5+IUGBhT78C
+ CGlyVLbuTvxuBW7sgx4ueIMTvySbOuFe9oNoYfrjcG0828jFHbcKBNN5dKh9+t3LIr8R
+ t2vyvfqE5jE9snj8L3IFC4OMVzLSTQOhsVUw9vnoPR/htS1HHDiZ3UzmovMigh2lARUG
+ VgLg==
+X-Gm-Message-State: APjAAAVUP6PsoACyI3HIPl9rzPutTkwj/54P31l4qu/nC+4+k4n6Sold
+ 5za99PJk0asSgmRoGTRwusc=
+X-Google-Smtp-Source: APXvYqzE6ItclCocP3PgZPG+mo57YgFsf9InExOzUcHhgjzT41/UMFtc8ufAeRAqH3HuEm/VsIuTiA==
+X-Received: by 2002:a1c:7e85:: with SMTP id z127mr4016971wmc.95.1565893130728; 
+ Thu, 15 Aug 2019 11:18:50 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.124])
+ by smtp.googlemail.com with ESMTPSA id v65sm2874829wme.31.2019.08.15.11.18.49
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 15 Aug 2019 11:18:50 -0700 (PDT)
+Date: Thu, 15 Aug 2019 20:18:48 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Subject: Re: [PATCH v3 1/9] soc: samsung: Add exynos chipid driver support
+Message-ID: <20190815181848.GB14360@kozik-lap>
+References: <20190813150827.31972-1-s.nawrocki@samsung.com>
+ <CGME20190813150850eucas1p2aff64b5edb49ffb6626433de1c9e58ec@eucas1p2.samsung.com>
+ <20190813150827.31972-2-s.nawrocki@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190730184256.30338-12-helen.koike@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190813150827.31972-2-s.nawrocki@samsung.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_111419_677699_8FDB47C4 
-X-CRM114-Status: GOOD (  18.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190815_111853_126569_12DA72EE 
+X-CRM114-Status: GOOD (  10.83  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.68 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,100 +89,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
- heiko@sntech.de, Rob Herring <robh@kernel.org>, jacob2.chen@rock-chips.com,
- jeffy.chen@rock-chips.com, zyc@rock-chips.com, linux-kernel@vger.kernel.org,
- tfiga@chromium.org, linux-rockchip@lists.infradead.org, hans.verkuil@cisco.com,
- sakari.ailus@linux.intel.com, zhengsq@rock-chips.com, mchehab@kernel.org,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, pankaj.dubey@samsung.com, b.zolnierkie@samsung.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, kgene@kernel.org,
+ vireshk@kernel.org, linux-arm-kernel@lists.infradead.org,
+ m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Helen,
-
-Thank you for the patch.
-
-On Tue, Jul 30, 2019 at 03:42:53PM -0300, Helen Koike wrote:
-> From: Jacob Chen <jacob2.chen@rock-chips.com>
+On Tue, Aug 13, 2019 at 05:08:19PM +0200, Sylwester Nawrocki wrote:
+> From: Pankaj Dubey <pankaj.dubey@samsung.com>
 > 
-> Add DT bindings documentation for Rockchip MIPI D-PHY RX
+> Exynos SoCs have Chipid, for identification of product IDs and SoC
+> revisions. This patch intends to provide initialization code for all
+> these functionalities, at the same time it provides some sysfs entries
+> for accessing these information to user-space.
 > 
-> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> [update for upstream]
-> Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> 
-> ---
-> 
-> Changes in v8: None
-> Changes in v7:
-> - updated doc with new design and tested example
-> 
->  .../bindings/media/rockchip-mipi-dphy.txt     | 38 +++++++++++++++++++
 
-Shouldn't this go to bindings/phy/ ?
+Thanks, applied.
 
->  1 file changed, 38 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt b/Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
-> new file mode 100644
-> index 000000000000..2305d44d92db
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
-> @@ -0,0 +1,38 @@
-> +Rockchip SoC MIPI RX D-PHY
-> +-------------------------------------------------------------
+Best regards,
+Krzysztof
 
-How about already converting the bindings to yaml ? There's one example
-in bindings/phy/ that looks quite similar to what you need here. Make
-sure to have a look at Documentation/devicetree/writing-schema.md, and
-in particular to run make dt_binding_check.
-
-> +
-> +Required properties:
-> +- compatible: value should be one of the following
-> +	"rockchip,rk3288-mipi-dphy"
-> +	"rockchip,rk3399-mipi-dphy"
-> +- clocks : list of clock specifiers, corresponding to entries in
-> +	clock-names property;
-> +- clock-names: required clock name.
-> +- #phy-cells: Number of cells in a PHY specifier; Should be 0.
-> +
-> +MIPI RX D-PHY use registers in "general register files", it
-> +should be a child of the GRF.
-> +
-> +Optional properties:
-> +- reg: offset and length of the register set for the device.
-> +- rockchip,grf: MIPI TX1RX1 D-PHY not only has its own register but also
-> +		the GRF, so it is only necessary for MIPI TX1RX1 D-PHY.
-> +
-> +Device node example
-> +-------------------
-> +
-> +grf: syscon@ff770000 {
-> +	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
-> +
-> +...
-> +
-> +	dphy: mipi-dphy {
-> +		compatible = "rockchip,rk3399-mipi-dphy";
-> +		clocks = <&cru SCLK_MIPIDPHY_REF>,
-> +			<&cru SCLK_DPHY_RX0_CFG>,
-> +			<&cru PCLK_VIO_GRF>;
-> +		clock-names = "dphy-ref", "dphy-cfg", "grf";
-> +		power-domains = <&power RK3399_PD_VIO>;
-> +		#phy-cells = <0>;
-> +	};
-> +};
-
--- 
-Regards,
-
-Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
