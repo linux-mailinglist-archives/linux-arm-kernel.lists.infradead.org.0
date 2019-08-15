@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C08AC8E227
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:51:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0B0E8E225
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 02:50:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IrUvFDALWXiWYXvQxXzDyKHnq+rC2TlpQnCEJDlgGPg=; b=YWRYwAj88mcDRS
-	TPwU3PSS8DRVgIJOzRL3MgG8TSHb1xDTT/XjsGdhAh7J6nyXV9TI8DOe2eDKQ6809k69fRHTGpGeO
-	WWG6EK0JDIaN6pILDFrZMJ7HSQzfNpG1I7Ux2exbIXs26XaBpuYfinjhhppx8H+DS2GSC5gyyN0I3
-	iroC11dCtvVocn1XYhP+wMZkKoLcBc9t1yEe2yHVES0U3j3L/PZMvTfGdbrigYNgY2KSIaVDBHnJC
-	/YgmS4GwmFDSRcH+wsIVgj+TYn9QPew24wFSTJc/KqFLan1ixuyiidBNNYQLmpTYXlGJkiaG9JC9t
-	1IUALbvW8ztYZFrCDGbw==;
+	List-Owner; bh=qskBcZHgrThlAanuU0vLIyk1BcAuEr9TXHnh6pzZxsM=; b=q6PBo0u3ixWpIK
+	N/FOqfxNbZ3odpcd0CIdzyUN1vnRVzffmZGAJTMYS1RjrgqQ+70EGGt1gc/lXIL1jH0rk1367YYHO
+	DzwkokfPpkmp2EPZ7ClNysNJQ7JWqwAqMfh3uoB5/+/SRY+Q0xwW4DNOyRGLW/kw1eOY8sd3oahMV
+	+9fbEoGQVNCERIcJWAPNHBArdmSVQqRi8AHhl/4ZsNso3oiehlI2PyYXedEzRa6o89Fhr6tt9Cz0b
+	T/BUmbMvxA5PWwBDpcZpq86SPW422s1zn00Ux56957gn7Se3A9isUQa8J32DEMRlI8zvduCxHNBut
+	F5yJp2Rs3tOjdJaxoC8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy3z0-0006lM-3d; Thu, 15 Aug 2019 00:51:14 +0000
+	id 1hy3yN-0006Jf-72; Thu, 15 Aug 2019 00:50:35 +0000
 Received: from onstation.org ([52.200.56.107])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy3x4-0004a1-IQ
+ id 1hy3x4-0004a3-JI
  for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 00:49:17 +0000
 Received: from localhost.localdomain (c-98-239-145-235.hsd1.wv.comcast.net
  [98.239.145.235])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id C38293E9FE;
- Thu, 15 Aug 2019 00:49:12 +0000 (UTC)
+ by onstation.org (Postfix) with ESMTPSA id 70E1D3EA0B;
+ Thu, 15 Aug 2019 00:49:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
- s=default; t=1565830153;
- bh=/u093//GuW+I8IlmY+WRCvVNrqq+VDjUh+Bgmnmobek=;
+ s=default; t=1565830154;
+ bh=W1RhsccQye1UHlHsDlLQw0ZtaFOCOLeutTy9qm6UT1g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Bqv5pd5wHBDbuxEIqdIG5yqTDwYaEs7MCLTc2m+N7XbdRn96M67iNmvPN4XnTAqe+
- wtnRTd35inHX16HBeJ21FVF60fw4jVzFBWifiu6UmZR9syaAJ+MQuJb61osn1HP+oE
- Sb65LGh/6wLVPdheFrqbS83MUA8QakXd3ebzpk9Q=
+ b=ljOjdnDfnnO2M7fWsgp2VIsd/s4cfZhi8GnD7ImjQsf55GctyEVH8TzpHZ8SwEnj1
+ piyfyWPRBQc1ONqs1OLJW5qnMgQpws6bAUpZoNDjhkkurHtZT38o0szI4uBi6mLZot
+ vCbWhMGGKK0OEEe6YtmwXnHvWIQUdgoHluIGXRso=
 From: Brian Masney <masneyb@onstation.org>
 To: bjorn.andersson@linaro.org, robh+dt@kernel.org, agross@kernel.org,
  a.hajda@samsung.com, narmstrong@baylibre.com, robdclark@gmail.com,
  sean@poorly.run
-Subject: [PATCH 03/11] drm/bridge: analogix-anx78xx: silence -EPROBE_DEFER
- warnings
-Date: Wed, 14 Aug 2019 20:48:46 -0400
-Message-Id: <20190815004854.19860-4-masneyb@onstation.org>
+Subject: [PATCH 04/11] drm/bridge: analogix-anx78xx: convert to
+ i2c_new_dummy_device
+Date: Wed, 14 Aug 2019 20:48:47 -0400
+Message-Id: <20190815004854.19860-5-masneyb@onstation.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190815004854.19860-1-masneyb@onstation.org>
 References: <20190815004854.19860-1-masneyb@onstation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_174914_669579_70B3D687 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20190814_174914_694472_F76A4B46 
+X-CRM114-Status: GOOD (  10.75  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -89,40 +89,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Silence two warning messages that occur due to -EPROBE_DEFER errors to
-help cleanup the system boot log.
+The i2c_new_dummy() function is deprecated since it returns NULL on
+error. Change this to use the recommended replacement
+i2c_new_dummy_device() that returns an error code that can be read with
+PTR_ERR() and friends.
 
 Signed-off-by: Brian Masney <masneyb@onstation.org>
 ---
- drivers/gpu/drm/bridge/analogix-anx78xx.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ drivers/gpu/drm/bridge/analogix-anx78xx.c | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/gpu/drm/bridge/analogix-anx78xx.c b/drivers/gpu/drm/bridge/analogix-anx78xx.c
-index 9acdbedf1245..62dfced91384 100644
+index 62dfced91384..8daee6b1fa88 100644
 --- a/drivers/gpu/drm/bridge/analogix-anx78xx.c
 +++ b/drivers/gpu/drm/bridge/analogix-anx78xx.c
-@@ -715,7 +715,9 @@ static int anx78xx_init_pdata(struct anx78xx *anx78xx)
- 	/* 1.0V digital core power regulator  */
- 	pdata->dvdd10 = devm_regulator_get(dev, "dvdd10");
- 	if (IS_ERR(pdata->dvdd10)) {
--		DRM_ERROR("DVDD10 regulator not found\n");
-+		if (PTR_ERR(pdata->dvdd10) != -EPROBE_DEFER)
-+			DRM_ERROR("DVDD10 regulator not found\n");
+@@ -1355,15 +1355,18 @@ static int anx78xx_i2c_probe(struct i2c_client *client,
+ 
+ 	/* Map slave addresses of ANX7814 */
+ 	for (i = 0; i < I2C_NUM_ADDRESSES; i++) {
+-		anx78xx->i2c_dummy[i] = i2c_new_dummy(client->adapter,
+-						anx78xx_i2c_addresses[i] >> 1);
+-		if (!anx78xx->i2c_dummy[i]) {
+-			err = -ENOMEM;
+-			DRM_ERROR("Failed to reserve I2C bus %02x\n",
+-				  anx78xx_i2c_addresses[i]);
++		struct i2c_client *i2c_dummy;
 +
- 		return PTR_ERR(pdata->dvdd10);
- 	}
++		i2c_dummy = i2c_new_dummy_device(client->adapter,
++						 anx78xx_i2c_addresses[i] >> 1);
++		if (IS_ERR(i2c_dummy)) {
++			err = PTR_ERR(i2c_dummy);
++			DRM_ERROR("Failed to reserve I2C bus %02x: %d\n",
++				  anx78xx_i2c_addresses[i], err);
+ 			goto err_unregister_i2c;
+ 		}
  
-@@ -1333,7 +1335,9 @@ static int anx78xx_i2c_probe(struct i2c_client *client,
- 
- 	err = anx78xx_init_pdata(anx78xx);
- 	if (err) {
--		DRM_ERROR("Failed to initialize pdata: %d\n", err);
-+		if (err != -EPROBE_DEFER)
-+			DRM_ERROR("Failed to initialize pdata: %d\n", err);
-+
- 		return err;
- 	}
- 
++		anx78xx->i2c_dummy[i] = i2c_dummy;
+ 		anx78xx->map[i] = devm_regmap_init_i2c(anx78xx->i2c_dummy[i],
+ 						       &anx78xx_regmap_config);
+ 		if (IS_ERR(anx78xx->map[i])) {
 -- 
 2.21.0
 
