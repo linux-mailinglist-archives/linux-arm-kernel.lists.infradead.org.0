@@ -2,69 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AE598EBD9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 14:48:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 158E58EBE9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 14:51:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sTlPLOHYo3PG0YPPPf5sJ7MJO0HWjkyZrsYr5pPekmI=; b=kaH2/fXmu5UcFI
-	puK106qHLPwynjC4dpghATVroPjpQoUkOfCPWFo3It602Y4HLh4iTf/V7GCcyaxRuV0j5Y+loRt0g
-	yWaExpiDNliL9UdsiuLPTIW80swaGjhRrL6tx/TCi9uSh2QLQPokxVmLk4ACTLz0lH25VxCc7736u
-	AGnH84CDLdgwllKzMPNzSq/lHRQzSknXLYSjRD9q61n/J/Sb0H5hSvWgxSX3X/Bc84DpbtH7Uqzf9
-	u6DXVWz1sMrMMDXfppPC0h28YpJjRUKiFde8cbM65B8ykMhb26hiUwkE+UwUadUJyXWF+Mvbj6akr
-	GpGiNXrekkDBJlrucizQ==;
+	List-Owner; bh=F/W3ijKwqHRQvsFjsiNumfQUzsjp6HnjsldPU2uzgVc=; b=ReNeOglgcXkVU2
+	9RgOB30WJBJXv9NscmxSSFkAjWW66TjZIRn0Grb7r8h8CTdHyschzs4mRKrb5rsWWcsA1IemCMWc/
+	3j8LClEZ9jDr9P/xxCCkFJPN3UfDWdjzQtJQXwE6406+FeV3Q3HTXylzRntrRBcs5n+qJ1cPoyxYN
+	YzLI5MSqFNvHx1taD8ZUeqZObUbfroW3zPwaC84DQDLRXXLFIbCwbOkjaoOtWmvr4M2x09Sgh1XCY
+	ZOSZvk7xHIJDsst5//M9/2OYv8iMp2+vYxPWhM1/XUA6l+uDNU4CLYH8QUHvCpGSBKZUFW/7VZJBM
+	Gi3K1AucNDmzPROTnddw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyFAy-0002ZS-1a; Thu, 15 Aug 2019 12:48:20 +0000
-Received: from mail-qt1-f195.google.com ([209.85.160.195])
+	id 1hyFDr-0004Fl-Qo; Thu, 15 Aug 2019 12:51:19 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyFAh-0002Yy-P5; Thu, 15 Aug 2019 12:48:05 +0000
-Received: by mail-qt1-f195.google.com with SMTP id u34so2186882qte.2;
- Thu, 15 Aug 2019 05:48:03 -0700 (PDT)
+ id 1hyFDe-0004Ez-PB
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 12:51:08 +0000
+Received: by mail-qt1-f196.google.com with SMTP id j15so2116742qtl.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 15 Aug 2019 05:51:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=dVSvjWJCsDHACl/PwNeLVWRIpo2I8RdbKwBGK3OphV4=;
- b=fzfJKwbmeEvGuWhsI5m7VbDQCL7cfHU0BAGupBda7VmpwtCrV3cfcnigG+1RAC8rQv
- uq72KXQqGJGebp2Dhjtv5TP+v/PKivIQCt+jmcSBAvfgQS2AvPAlEhJe2DOb2QAgL6pD
- A88uGATUjHWxt9TIVkVARrCg5nnbNTVkxPYe1ZjZCxgl5zPagUzuJJVrQffBo6VoPIAS
- lPZEi5wkfnn6JoXy+fFURw+eGY4CjQIeTg0zz9UB/tuzjWPKM/9nkey6sqzglmZc6v68
- 5oJv4UzcF61MethyEQnFXa9hvXOwAMZV7qL/+3MJtaovPBSWkJOJ/SXRcZM+2cgQV9S2
- gEGA==
-X-Gm-Message-State: APjAAAXIEUtvsA6eXVcE+9XVGYRDnRW83IEEsDXgrUbIf2ca1C65mjvM
- 3cL1wafE5WuqRtfA41N4Zv9I/V3fOkz1ml6BHW/KCDQq
-X-Google-Smtp-Source: APXvYqzKa7qrCV31ODoWGaG4F2FhE0u4jULeIkabqSDyV+Ec/D4h61uiX5sg1HWGlstdnz+UpvDxZGLWlAZzjBT0E08=
-X-Received: by 2002:aed:3363:: with SMTP id u90mr3734597qtd.7.1565873282445;
- Thu, 15 Aug 2019 05:48:02 -0700 (PDT)
+ bh=B1lEp5PyZBdDBHiupkP9bKsHo4K0FiqVKGpFRU1M0Xg=;
+ b=nqxoFNB6HrLK8zoBbY9D7nqfAntkSRcO2FU/CNwEGVIEnl1YpodstjGAeiU4hCtN3q
+ VH7OlRj7kbdADSyHaHp9AawxkTYHQ1Qez6FTV0PetQE02qDTanb6hkvT0DhEQTIs2mjk
+ TxJutCa5nzrDVbtIZ121ddU1tfMls6tjfGPX+oEtnO0pRhdCUL/EOaznzAKFnUFm1Q4W
+ DlAzhV1Tn0O5w8YTmPbiY1iGNQ2/6gD48QkWBoVMjKvhR+M2lAojCFpOEbrbw/Cuire7
+ jRQrN71a+hdiTh7g6bPnZHZl3wd7w0SuPdn3LXbV3nDKiTp3WDhmUZ0X0mgmjfh2kQxV
+ cqUQ==
+X-Gm-Message-State: APjAAAXcijwgopSf90qyZ8c/Y2CRxrcaxIbWv4xUmIL4AWtdmqKYEUn4
+ dknJAhy5NhTQUNhhTYwNQyQsDEy7TTS8A+lirkIXBweP
+X-Google-Smtp-Source: APXvYqwkQBKp3R1Yg7oTxWFJzWFaQqWuK8Viazq1y/ALVI0IBmojXa+4NngsiUBUwVrkjaAm3MqnvjzxBjTjR+lmfsc=
+X-Received: by 2002:aed:3363:: with SMTP id u90mr3744274qtd.7.1565873462689;
+ Thu, 15 Aug 2019 05:51:02 -0700 (PDT)
 MIME-Version: 1.0
-References: <7h1rxq0ws9.fsf@baylibre.com>
-In-Reply-To: <7h1rxq0ws9.fsf@baylibre.com>
+References: <20190809162956.488941-1-arnd@arndb.de>
+In-Reply-To: <20190809162956.488941-1-arnd@arndb.de>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 15 Aug 2019 14:47:46 +0200
-Message-ID: <CAK8P3a2dep_fbAVJ000e4dvC2k30GBR9BtPyc63hJTnMAQ=hzw@mail.gmail.com>
-Subject: Re: [GIT PULL] arm64: dts: Amlogic fixes for v5.3-rc
-To: Kevin Hilman <khilman@baylibre.com>
+Date: Thu, 15 Aug 2019 14:50:46 +0200
+Message-ID: <CAK8P3a1TiPyopF9N40TOEDX+Ud7UrMknWS5ObZD_B3LULLtDXQ@mail.gmail.com>
+Subject: Re: [PATCH 0/7] ARM: preparation for multiplatform iop32x
+To: SoC Team <soc@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_054803_814404_29AAC3F5 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190815_055106_821928_019A8C69 
+X-CRM114-Status: GOOD (  16.01  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.196 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (arndbergmann[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.196 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,33 +82,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Amlogic Meson SoC support"
- <linux-amlogic@lists.infradead.org>, SoC Team <soc@kernel.org>,
- arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Dave Jiang <dave.jiang@intel.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Dan Williams <dan.j.williams@intel.com>, Imre Kaloz <kaloz@openwrt.org>,
+ Martin Michlmayr <tbm@cyrius.com>, Lennert Buytenhek <buytenh@wantstofly.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 1:49 AM Kevin Hilman <khilman@baylibre.com> wrote:
+On Fri, Aug 9, 2019 at 6:30 PM Arnd Bergmann <arnd@arndb.de> wrote:
 >
-> The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+> I'm looking into converting some of the remaining ARMv5
+> platforms in arch/arm/ to work together in a single kernel
+> binary.
 >
->   Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+> IOP32x seems to be a fairly easy target for multiplatform
+> by itself, but the way the plat-iop code interacts with
+> three generations of the code, and how the dma-adma driver
+> is configured at compile-time for each version gets in the
+> way.
 >
-> are available in the Git repository at:
+> I considered adding more indirection layers for those two,
+> but removing iop33x and iop13xx is much easier in comparison,
+> so this is the first approach I'm posting.
 >
->   https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git tags/amlogic-fixes
+> If we conclude that iop33x and iop13xx are indeed not used
+> any more, the remaining patches in this series are
+> straightforward. The actual multiplatform conversion also
+> requires changes to the irqchip driver that are not completely
+> mechanic, and we can discuss those after deciding what to do
+> with the first set.
 >
-> for you to fetch changes up to dc7f2cb218b5ef65ab3d455a0e62d27e44075203:
->
->   arm64: dts: amlogic: odroid-n2: keep SD card regulator always on (2019-08-05 14:06:55 -0700)
->
-> ----------------------------------------------------------------
-> arm64: dts: Amlogic fixes for v5.3-rc
-> - a few small DT fixes for g12a/g12b platforms
+> Adding a few people to Cc that historically worked on IOP.
 
-Pulled into arm/fixes, thanks!
+I applied the IOP series to to the arm/soc branch now,
+thanks for the reviews!
 
       Arnd
 
