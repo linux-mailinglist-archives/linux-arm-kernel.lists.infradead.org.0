@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 787748E62A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:24:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 301FF8E631
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:24:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yx3iBe8i2Xilexk76u+cagoCYo4/m/+sJE7j+Rv9EHo=; b=lfZQJxNHrtOxyH
-	z56MO776EORKHVoX1Eo74IFwPZmDZfMpeynNoY0Whq697OcKPHbD2PfXNJRlZG92BvSRKxqv5F5Y5
-	FdKeoTM6XU89Cvk7WHuI3LG7qCK8Sf8wzkyPHlngsgvSUtNHZMaCRjuQ2W9SMAMey5aU++VOtqqlH
-	I4+wvqiwgrnP5jCAbMhnD4NDAaEVkak3tW+kkz69/9ICrIyTghnKGXma0BT2iM7u2XH04JKL4jAx7
-	SxapcbiIaeUDOnUaawB3Xk3zXDIoVwIbtMdLLCV08mRSNxTbNn/kCrfVktcaRab2/V1W07/zs1E9H
-	MdGfX/sz9QLY0p8rEOuQ==;
+	List-Owner; bh=aKN/nb1AxEAGSzy2VAXektOSqwmDhGLMPoyOa7kBX1c=; b=p5FFsL3NL58ygD
+	/vVczappKOnNk2TsLMgoJ9tMPNqNtZ7d3ZkEimfbq0HA5uh11++fjer7xWM87Atqe8FfQY+xtkrVP
+	U4BH69W4dfA5gOvfwY5gYQmkBiQ6fB97XdtHYAWXk5kR4rhyI/Xc1IAN1t1tjMGVXAE4ImJer3sTi
+	oS1iM4w8kqMZ1qqwuabYeGzwMP6rXltAUfeXHSuMOXXClvQgnldSXu8ly/Q5CHJ+NSzlouD8yBr/P
+	9uTXYgYXs4ay+cMlIgLSRs66Voownl3KxHQfUuVnVyILTfmmfzL+7NGEpmv3uqe9Y5wLPjVgfh5bz
+	/3mWrnp34GAzheg+LjhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyB3B-0003Zl-2m; Thu, 15 Aug 2019 08:24:01 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hyB3i-0003p4-KU; Thu, 15 Aug 2019 08:24:34 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyB2t-0003ZO-HI
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:23:44 +0000
-Received: by mail-lj1-x244.google.com with SMTP id l14so1529617ljj.9
+ id 1hyB3T-0003of-Kc
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:24:21 +0000
+Received: by mail-lf1-x144.google.com with SMTP id x3so1131960lfn.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 01:23:43 -0700 (PDT)
+ Thu, 15 Aug 2019 01:24:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=t0NopUkqBTLA90SLW4pHyzSS/xf0ZSXYWDKGwtJAIsY=;
- b=XfZzDLa/pb4I6O618ihMETOAk22ZCfhPAN12JvjQDq86genpOOd9UIrjs1jDPfXHKv
- C4XbzbKfduo6gxH7+9d535juc4lDa3KVomsptlT5IuBLZAjjZa9RDW+DaFQ5jw+Hd6qz
- mvNDo2UoQAGTnFAb/z0MOQcgu+YNlE2gKQ/YaLvbGyKa55lgeWkOqmclOig+Qaw/vlFe
- cNlUE6ev+m2Z4fhHUkF3Fc5Qp0FShH4ZtRp0bE3Vz4mlR/Xl4QSWA+RxNjkVmDlNnU3c
- M9PVoAFWM/0SAqsGo/gmz/i8D6JE8b5LUjHeOHZCBhzPxG4uQmcxIyE7hoOUmdnT/gLF
- SnCg==
+ :cc; bh=OQ0EE8KBKUB2wnGR7WI4DHIvan4LQMsfKVjPNCbJp30=;
+ b=BtMASVRwCxEESb39swhUi6eKRj6LJ+hlNA4zpwGR2CrCnj90lLF4XUtzeSbcFnkIeH
+ Rua8own1u82bzcCfXFA2g1OhlZ09we6lALghTOQaf28IZJU+IPkngEhprVhE11a/ALd/
+ FuPpbfhwYsCQ3+XtIUgBR2+NG0zT8OR8sq4KMqI6xllCpkCgmH+NjXOfcYu1jRvB5m2t
+ zy7HTL11dzTNin51nsoF+SKMm9VCxW4mlbsGJqLxFdi4VqZNclku0cU3xi/43cIPB0u2
+ BjqKpwqDoRkDO4NFdAkrngy7sLiHI2K27UgsJ3yGyv+9WI/hB4kP+K7lDNZOSCG/kSyb
+ jKbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=t0NopUkqBTLA90SLW4pHyzSS/xf0ZSXYWDKGwtJAIsY=;
- b=SM8D8vnaQ9or/+/Sf1FeCg1E4/N3RiToQvUkfcf7DZJKTEVjEvX+uV8vs2eNZTjWWx
- 6TvG7JgqwBgS6H+qeUx633pD428vKu2Yj8QT4BHil/+Nrau6asJJ0eyc3W8396lQmxQT
- /UrGEzbDiEHYT0YuTOWevyjODNSscsBP2renZZ8NGeWWkKcTFrnI/Gf/VbvwYbHtCSYQ
- PxLf6VKafYK+AVZKAJ0TzKLuW972WJZn9ULuBSYfodcQMW+zW7Gju2ZG6lu5e2Dpex9u
- vHnTvBuBc1bN/HWf5FOEXRW0J+4p1cuMfGlu64j1Ne3WDBykNmAfP1ELW+ENqMAPQYTr
- TCXg==
-X-Gm-Message-State: APjAAAUUiw0sjGN93CgipbrS/4e8/wGFw1CJuVZ1WP1Zr8sC8vYM1dBy
- 2a1RZNSjHvLQNv2kH84rGH853T6Rs4mDSj1zkbWk/Q==
-X-Google-Smtp-Source: APXvYqzE4/aMh5whMI0MclqVZfrD6ndHr/RkELyc9WknR09MC3TLKaJoB0cexdnz/NmuFUXRKZuieK+MZxg1NivzFuo=
-X-Received: by 2002:a2e:80da:: with SMTP id r26mr200669ljg.62.1565857421866;
- Thu, 15 Aug 2019 01:23:41 -0700 (PDT)
+ bh=OQ0EE8KBKUB2wnGR7WI4DHIvan4LQMsfKVjPNCbJp30=;
+ b=BrtbaZ5XeIqc7XHHbsYFz+B0C0IJ22HZK+W5crU0NDeKpxpYjIeFMwTKOxT2rNOnmE
+ b4E88llb2ubyzJoRbJ21rJXy2DJQ7eXhnCDwEAVt0L4QIgRc0VI50OHKKrNrvaPPIKHn
+ DfUYcStv0KXNCHGl4fYXLfU9NNCgyf1iLiWY42CDwAxwPBdBv0/dNPfX0n/e/50bXzmA
+ tyDZ1bmhAU8yo8jortMcpT10NgSSTvPmEdQs45sIpRoyNFHNoV0QE/1zWukFZ2GzOJ5Y
+ EY5VcFPx4nlPJ1cPaHiQDmXkAuBAm8a90MI0LN5Vx9eaD7FZzCuG70scv8lsyExdAuOF
+ hjzA==
+X-Gm-Message-State: APjAAAXK+NfYwFPwapxnIMiEBU58wY4X659/timqw0oal9hmJ9Lh16WU
+ RvEfd1/OPTf8MDFEtOzY4IJpY3OT/KrbrZazwFWGdA==
+X-Google-Smtp-Source: APXvYqwLnc3C4Y4Uj9ggAwakGzpIWkkpLBmK9Z2FcyUqoiL21SA+0DNibnPbsKNQqp+zQbxvlbBPxLQn3oxhDsqLDWY=
+X-Received: by 2002:ac2:59d0:: with SMTP id x16mr1894686lfn.60.1565857457973; 
+ Thu, 15 Aug 2019 01:24:17 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190815004854.19860-1-masneyb@onstation.org>
- <20190815004854.19860-8-masneyb@onstation.org>
-In-Reply-To: <20190815004854.19860-8-masneyb@onstation.org>
+ <20190815004854.19860-6-masneyb@onstation.org>
+In-Reply-To: <20190815004854.19860-6-masneyb@onstation.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 15 Aug 2019 10:23:30 +0200
-Message-ID: <CACRpkda3uCk05FNfeesa6ZgL4MPcQPwjv506jMNmvMkvwCnLdg@mail.gmail.com>
-Subject: Re: [PATCH 07/11] ARM: qcom_defconfig: add CONFIG_DRM_ANALOGIX_ANX78XX
+Date: Thu, 15 Aug 2019 10:24:05 +0200
+Message-ID: <CACRpkdbZ09+pS+AchWLcxyA9MHgQ2ytL2qN77V3_gKmtw9yFog@mail.gmail.com>
+Subject: Re: [PATCH 05/11] drm/bridge: analogix-anx78xx: correct value of TX_P0
 To: Brian Masney <masneyb@onstation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_012343_579188_B5CF86F1 
-X-CRM114-Status: UNSURE (   9.20  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190815_012419_676243_52CA45F5 
+X-CRM114-Status: GOOD (  10.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,8 +113,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, Aug 15, 2019 at 2:49 AM Brian Masney <masneyb@onstation.org> wrote:
 
-> Add CONFIG_DRM_ANALOGIX_ANX78XX as a module so that the external display
-> can be used on the Nexus 5 phones.
+> When attempting to configure this driver on a Nexus 5 phone (msm8974),
+> setting up the dummy i2c bus for TX_P0 would fail due to an -EBUSY
+> error. The downstream MSM kernel sources [1] shows that the proper value
+> for TX_P0 is 0x78, not 0x70, so correct the value to allow device
+> probing to succeed.
+>
+> [1] https://github.com/AICP/kernel_lge_hammerhead/blob/n7.1/drivers/video/slimport/slimport_tx_reg.h
 >
 > Signed-off-by: Brian Masney <masneyb@onstation.org>
 
