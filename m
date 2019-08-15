@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 070A58E963
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 12:57:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 646308E964
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 12:57:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OmKpJClVPAoTYpXvBVnwOshfEymv7XvxDZXrfmvU37M=; b=RTIy5QdP++p0mc
-	nMEM5YD9FH52A/Fqnk8OtPbR91Iy/bwGkRqEdJAOUNnara4VezhBv4NjLhgyFOiRtlImVSkWBBBCG
-	L0NkcXTwbPN1Y0Ccm5t6YEEmZ3MPRcezrQzuGLFicfGWSHP92SrbzvB7EEDqtD6tWWvT5YKnH3pZV
-	+xeVTKuNeytGD+eD9q8YQZSfS3UcL/snxG6K+vZCOyXv0Je5PIRBmUKoOlApxRDEk4lLY8yZnJ7XQ
-	1KYNHBOJm0cwIlUZ2locLn7wvHCxTRW7rGwhWr/cRUjT7DBHYK2Tpms3SpcuBm2k9FvrgKXESc6WL
-	ZLN2SNBwqjD8qDrOPYHA==;
+	List-Owner; bh=OMpAw1XEFBREXY30R2zKe+cQ3qYB/O3o4Rs53V/ogY8=; b=QjveYVLPoNrevv
+	ZJLxwpP3LJn1dcwb0CV+QFZzca4Fd5BJFem73VDDu8q+bVEXkOP02Zsp6Qym4QPdl6n3s4sk0WBXG
+	tni8p4bJv6i0+lyrJrBxkro9nppsikTO/hsxJdpbMl2sUM/uN1q/fyOik2QaJycqaninSpM0xbhGY
+	aAz44d83lLL4nqoBVY0klH7myao1Y9Vw6jm8JICRFptm8fOTh/aQ7aLz5Y1KNKiakO2aQcW/J0t7s
+	PkeNWA0zt4ds7ZiuuhGn++mVJSiTla++UB3ehOC0Oul6H09sMKOwrQ/XTWy4sDmkZjAo23sSf3C0w
+	v2S953J7CE8v+7GSO2zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyDRJ-0006t7-MK; Thu, 15 Aug 2019 10:57:06 +0000
+	id 1hyDRb-00077n-54; Thu, 15 Aug 2019 10:57:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyDQX-0006R3-3p
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 10:56:18 +0000
+ id 1hyDQg-0006ZT-7F
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 10:56:27 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3C0F221744;
- Thu, 15 Aug 2019 10:56:15 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4B96F21744;
+ Thu, 15 Aug 2019 10:56:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565866576;
- bh=YGphF6s1f7WGZAHyAoOJ8BaEHYQUybLPmN2u5ZcFyG0=;
+ s=default; t=1565866585;
+ bh=8D6OrleAFj04JQA9ZH9MMZ7u4sfwPhB2JbKNxPQaMkk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=qlJkbahbOxQVjzQkiPuzqRtrSuWYLG0wo5xsf0E2js6ROgaRd1sRZX//bjFCdKnqX
- MKgh1aGejgFvxBJTcP4/uIGqbhcLrR8ZcVvaKB46tsKMLmCufDF7Kb9D1VcQRA1RR6
- cUYzIETeAEIBaPI2WoQonGMbyBB1ED9OD/eN/Mbo=
-Date: Thu, 15 Aug 2019 11:56:12 +0100
+ b=HncehK0VFOGw8d9ng8b57iR+mqmK/droVfq+Lcy/EJBNIWS8/XDpjPfrb6wX4ceRZ
+ nuRKC7mNTfc/2JKnWTeaFychC81E8jozEyGvpyBLC0OoujIsVXV6caBN/9JJdafENd
+ 98tosuR75Agsla3Ms5ATjaIhl142Mxw3cXyfcrd4=
+Date: Thu, 15 Aug 2019 11:56:21 +0100
 From: Will Deacon <will@kernel.org>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 08/15] iommu/arm-smmu: Abstract context bank accesses
-Message-ID: <20190815105611.fk7ouis2cs3uzvew@willie-the-truck>
+Subject: Re: [PATCH 15/15] iommu/arm-smmu: Add context init implementation hook
+Message-ID: <20190815105621.vt2gsuppjqgesrho@willie-the-truck>
 References: <cover.1565369764.git.robin.murphy@arm.com>
- <1051d7568c96142ff90b004a2ec61e3b5dbe770e.1565369764.git.robin.murphy@arm.com>
+ <6adbec8e4757f3b6c9f47135544a0302f8e7c55c.1565369764.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1051d7568c96142ff90b004a2ec61e3b5dbe770e.1565369764.git.robin.murphy@arm.com>
+In-Reply-To: <6adbec8e4757f3b6c9f47135544a0302f8e7c55c.1565369764.git.robin.murphy@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_035617_240605_EBFD2F4C 
-X-CRM114-Status: GOOD (  18.20  )
+X-CRM114-CacheID: sfid-20190815_035626_343598_76E88003 
+X-CRM114-Status: GOOD (  18.93  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,97 +85,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 06:07:45PM +0100, Robin Murphy wrote:
-> Context bank accesses are fiddly enough to deserve a number of extra
-> helpers to keep the callsites looking sane, even though there are only
-> one or two of each.
+On Fri, Aug 09, 2019 at 06:07:52PM +0100, Robin Murphy wrote:
+> Allocating and initialising a context for a domain is another point
+> where certain implementations are known to want special behaviour.
+> Currently the other half of the Cavium workaround comes into play here,
+> so let's finish the job to get the whole thing right out of the way.
 > 
 > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 > ---
->  drivers/iommu/arm-smmu.c | 137 ++++++++++++++++++++-------------------
->  1 file changed, 72 insertions(+), 65 deletions(-)
+>  drivers/iommu/arm-smmu-impl.c | 39 +++++++++++++++++++++++++--
+>  drivers/iommu/arm-smmu.c      | 51 +++++++----------------------------
+>  drivers/iommu/arm-smmu.h      | 42 +++++++++++++++++++++++++++--
+>  3 files changed, 86 insertions(+), 46 deletions(-)
 > 
-> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> index 72505647b77d..abdcc3f52e2e 100644
-> --- a/drivers/iommu/arm-smmu.c
-> +++ b/drivers/iommu/arm-smmu.c
-> @@ -82,9 +82,6 @@
->  		((smmu->options & ARM_SMMU_OPT_SECURE_CFG_ACCESS)	\
->  			? 0x400 : 0))
+> diff --git a/drivers/iommu/arm-smmu-impl.c b/drivers/iommu/arm-smmu-impl.c
+> index c8904da08354..7a657d47b6ec 100644
+> --- a/drivers/iommu/arm-smmu-impl.c
+> +++ b/drivers/iommu/arm-smmu-impl.c
+> @@ -48,6 +48,12 @@ const struct arm_smmu_impl calxeda_impl = {
+>  };
 >  
-> -/* Translation context bank */
-> -#define ARM_SMMU_CB(smmu, n)	((smmu)->base + (((smmu)->cb_base + (n)) << (smmu)->pgshift))
-> -
->  #define MSI_IOVA_BASE			0x8000000
->  #define MSI_IOVA_LENGTH			0x100000
 >  
-> @@ -265,9 +262,29 @@ static void arm_smmu_writel(struct arm_smmu_device *smmu, int page, int offset,
->  	writel_relaxed(val, arm_smmu_page(smmu, page) + offset);
+> +struct cavium_smmu {
+> +	struct arm_smmu_device smmu;
+> +	u32 id_base;
+> +};
+> +#define to_csmmu(s)	container_of(s, struct cavium_smmu, smmu)
+
+To be honest with you, I'd just use container_of directly for the two
+callsites that need it. "to_csmmu" isn't a great name when we're also got
+the calxeda thing in here.
+
+>  static int cavium_cfg_probe(struct arm_smmu_device *smmu)
+>  {
+>  	static atomic_t context_count = ATOMIC_INIT(0);
+> @@ -56,17 +62,46 @@ static int cavium_cfg_probe(struct arm_smmu_device *smmu)
+>  	 * Ensure ASID and VMID allocation is unique across all SMMUs in
+>  	 * the system.
+>  	 */
+> -	smmu->cavium_id_base = atomic_fetch_add(smmu->num_context_banks,
+> +	to_csmmu(smmu)->id_base = atomic_fetch_add(smmu->num_context_banks,
+>  						   &context_count);
+>  	dev_notice(smmu->dev, "\tenabling workaround for Cavium erratum 27704\n");
+>  
+>  	return 0;
 >  }
 >  
-> +static u64 arm_smmu_readq(struct arm_smmu_device *smmu, int page, int offset)
+> +int cavium_init_context(struct arm_smmu_domain *smmu_domain)
 > +{
-> +	return readq_relaxed(arm_smmu_page(smmu, page) + offset);
+> +	u32 id_base = to_csmmu(smmu_domain->smmu)->id_base;
+> +
+> +	if (smmu_domain->stage == ARM_SMMU_DOMAIN_S2)
+> +		smmu_domain->cfg.vmid += id_base;
+> +	else
+> +		smmu_domain->cfg.asid += id_base;
+> +
+> +	return 0;
 > +}
 > +
-> +static void arm_smmu_writeq(struct arm_smmu_device *smmu, int page, int offset,
-> +			    u64 val)
+>  const struct arm_smmu_impl cavium_impl = {
+>  	.cfg_probe = cavium_cfg_probe,
+> +	.init_context = cavium_init_context,
+>  };
+>  
+> +struct arm_smmu_device *cavium_smmu_impl_init(struct arm_smmu_device *smmu)
 > +{
-> +	writeq_relaxed(val, arm_smmu_page(smmu, page) + offset);
+> +	struct cavium_smmu *csmmu;
+> +
+> +	csmmu = devm_kzalloc(smmu->dev, sizeof(*csmmu), GFP_KERNEL);
+> +	if (!csmmu)
+> +		return ERR_PTR(-ENOMEM);
+> +
+> +	csmmu->smmu = *smmu;
+> +	csmmu->smmu.impl = &cavium_impl;
+> +
+> +	devm_kfree(smmu->dev, smmu);
+> +
+> +	return &csmmu->smmu;
 > +}
 > +
->  #define arm_smmu_read_gr1(s, r)		arm_smmu_readl((s), 1, (r))
->  #define arm_smmu_write_gr1(s, r, v)	arm_smmu_writel((s), 1, (r), (v))
 >  
-> +#define arm_smmu_read_cb(s, n, r)				\
-> +	arm_smmu_readl((s), (s)->cb_base + (n), (r))
-> +#define arm_smmu_write_cb(s, n, r, v)				\
-> +	arm_smmu_writel((s), (s)->cb_base + (n), (r), (v))
-> +#define arm_smmu_read_cb_q(s, n, r)				\
-> +	arm_smmu_readq((s), (s)->cb_base + (n), (r))
-> +#define arm_smmu_write_cb_q(s, n, r, v)				\
-> +	arm_smmu_writeq((s), (s)->cb_base + (n), (r), (v))
+>  #define ARM_MMU500_ACTLR_CPRE		(1 << 1)
+>  
+> @@ -121,7 +156,7 @@ struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
+>  		smmu->impl = &calxeda_impl;
+>  
+>  	if (smmu->model == CAVIUM_SMMUV2)
+> -		smmu->impl = &cavium_impl;
+> +		return cavium_smmu_impl_init(smmu);
+>  
+>  	if (smmu->model == ARM_MMU500)
+>  		smmu->impl = &arm_mmu500_impl;
 
-'r' for 'offset'? (maybe just rename offset => register in the helpers).
-
->  struct arm_smmu_option_prop {
->  	u32 opt;
->  	const char *prop;
-> @@ -423,15 +440,17 @@ static void __arm_smmu_free_bitmap(unsigned long *map, int idx)
->  }
->  
->  /* Wait for any pending TLB invalidations to complete */
-> -static void __arm_smmu_tlb_sync(struct arm_smmu_device *smmu,
-> -				void __iomem *sync, void __iomem *status)
-> +static void __arm_smmu_tlb_sync(struct arm_smmu_device *smmu, int page,
-> +				int sync, int status)
->  {
->  	unsigned int spin_cnt, delay;
-> +	u32 reg;
->  
-> -	writel_relaxed(QCOM_DUMMY_VAL, sync);
-> +	arm_smmu_writel(smmu, page, sync, QCOM_DUMMY_VAL);
->  	for (delay = 1; delay < TLB_LOOP_TIMEOUT; delay *= 2) {
->  		for (spin_cnt = TLB_SPIN_COUNT; spin_cnt > 0; spin_cnt--) {
-> -			if (!(readl_relaxed(status) & sTLBGSTATUS_GSACTIVE))
-> +			reg = arm_smmu_readl(smmu, page, status);
-> +			if (!(reg & sTLBGSTATUS_GSACTIVE))
->  				return;
->  			cpu_relax();
->  		}
-> @@ -443,12 +462,11 @@ static void __arm_smmu_tlb_sync(struct arm_smmu_device *smmu,
->  
->  static void arm_smmu_tlb_sync_global(struct arm_smmu_device *smmu)
->  {
-> -	void __iomem *base = ARM_SMMU_GR0(smmu);
->  	unsigned long flags;
->  
->  	spin_lock_irqsave(&smmu->global_sync_lock, flags);
-> -	__arm_smmu_tlb_sync(smmu, base + ARM_SMMU_GR0_sTLBGSYNC,
-> -			    base + ARM_SMMU_GR0_sTLBGSTATUS);
-> +	__arm_smmu_tlb_sync(smmu, 0, ARM_SMMU_GR0_sTLBGSYNC,
-
-Can we have a #define for page zero, please?
+Maybe rework this so we do the calxeda detection first (and return if we
+match), followed by a switch on smmu->model to make it crystal clear that
+we match only one?
 
 Will
 
