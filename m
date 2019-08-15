@@ -2,81 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 558598F1CF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 19:15:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D4DE8F1D5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 19:16:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=KDCQ4KnpgQLBpRis7vr6RS4v3PrX8H1mLmndyOxH7z8=; b=U+8
-	TiTMqVmjHl1M+wySE35toZUq3XwZmz2HllbAKwGL5EsqNKxG7AsAn7n2bmgZq25GxGZfxeurhjytj
-	M02txY8JBLH/94Dx/6aJuz1Ty/JOGVhoff55HqysG72u1wm2A1myV4iJcaL58K6k152jQ4l8VM/ga
-	ACH0J0a1x4iPBPXk3xXxo/1Yq6pJU3AYYtroZ0ZT23EdtU11EiIN46W1rxwfWVL1VqjOK4x+dk0cp
-	ApQdoPGPrlASrR8vykbhf6U5V2msfHTZ0GT6m4DwIX+K3/gqzdnfK7deFLP4NOT//Er0ZVNv8hEDf
-	U87AChDXtxRYZAwT+Nc9OCbBKYYKglQ==;
+	References:List-Owner; bh=xSe6ydVplK84XvT5Oc+SSIOvhc+LD9eFCTKAyxU/c4g=; b=YD5
+	Vi2DpYiauU+r0+cGBzqBDftkYGbsa3laqOfMifbLxYree+jnuGKP8stI7L/vgQzg7RxeKndiVf3qx
+	EBAcBKmAsnue6hwghEQpn7nBk0dTP3/yLnA7SEZk2TP+6aAHCNSHp0oAXkJCE8QejAuheeyFzaiHI
+	igDPA9tFLfoakZKiSxq1//L4UYxrAFMlb5hR2XbuIry+y4gGbwOW/m/wR37cpyMN+k8gLyqKBtrrO
+	/1dR1j9tOLdAHgtyvK+iu0HzPtfb43vLFxa6SXVFSm5+tsifEtax2BaPOz3Y1Xbqrg4WT06wAmcYV
+	nnXKowCw4wwQ4c3fA79pQgmQgnExemg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyJLH-00069l-TH; Thu, 15 Aug 2019 17:15:16 +0000
-Received: from mail-ed1-f98.google.com ([209.85.208.98])
+	id 1hyJLv-0007ub-PH; Thu, 15 Aug 2019 17:15:56 +0000
+Received: from mail-wr1-f99.google.com ([209.85.221.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyJKW-0005s9-9B
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 17:14:35 +0000
-Received: by mail-ed1-f98.google.com with SMTP id s49so2735252edb.1
+ id 1hyJKX-0005sE-2M
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 17:14:40 +0000
+Received: by mail-wr1-f99.google.com with SMTP id b16so2848089wrq.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 10:14:27 -0700 (PDT)
+ Thu, 15 Aug 2019 10:14:28 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:message-id:date;
- bh=j3Q6C7993gw6V8zvZYR0NFmKhWxVJbQ4l/W0JiwHC9Q=;
- b=q4H5UQywyypZwEDjB7y7Ah+B/Q6eTdc81+qZthDI9yRek5vE7s9Mz0Wzt3F9Wihfxq
- plQoivBKPWFhP3DjRmT/EuV4egiV0zgU5Zg2qg090dYOu2U0Li9Ud45rXk6u3CIpGjMl
- U9kAvNyTgyvw5XUvXgG97GznHr1//3L3iJSxJF93i/u1GtCuj+0fsK1llBb5EPksC18+
- /kshihqq1X9xLOwU7Smh+ob2IUEsgs082JpWS2DiNGc64D2+FV6K1LVae35uVMw2E8Ry
- gRf34NueemxT9Xfiw/9jiPLqMWsnvedoCEWEvDXSRnxKme1RiimZ5XslAY1JaRs3DjmT
- 4g4g==
-X-Gm-Message-State: APjAAAWqF2vxspfESFsGgb+UaZy69Qd2MdUQljXdp0xGDfvH/pVf0J6f
- F+U9fdUV61ngfxeYFEXXgLj6sgNDQEjzt+hp/q7HEko9J3mh/AncxeqoUR9t7HlTug==
-X-Google-Smtp-Source: APXvYqxYCczx8aCgUzMwXHJLZGCZ8Smxka+++sWR3i8SWs5jr4tlRb4aLr4f8DeZ9fgCmju0gYCNJk8tYRvS
-X-Received: by 2002:a17:906:8409:: with SMTP id
- n9mr5377393ejx.128.1565889266284; 
- Thu, 15 Aug 2019 10:14:26 -0700 (PDT)
+ bh=YPeSnlp85BSgqZ8FUqvf/b5hI6uRVke7m+e+NVbbr4w=;
+ b=GhD+lOrw5+tV6+XKHOX8LBY+AQI5zJhSQRCabxqdJKf3CPVKPkJL54FQs2YExDu3gv
+ 7auAKWVHEmvQLOtkCZMDYRYs8l3mv4xsU80CPT3rDR0Q084s+9Rtu+x/j8aOxtpXFLT6
+ ay43ALBNa2i9FrM725u6lCyUL2lYUgJ5yz2Ez77Y/jkZRL3c6xPGvM2b0uGIpdD6Avyk
+ hXZ6dv4+kxKg4nyzLNGYfmepTJAT2hWS3/Onb+Xuv27Bl3MVj00mGoXikeceJlKugzD5
+ U6wLXZlSyyMpBXLb32jD+6IrZVveRkoybyGCVr84tBsCJjREWYVsnv2PldkqNXnqQ0p6
+ 6Dpw==
+X-Gm-Message-State: APjAAAVzRTxOtTQYTgG40kyz4q8GB8cuu8t8siZk/n4PCVbL7P3nEm4W
+ sW8woKdvvqVmTOqeKqdpjVlIjpuPg34Ves6iMj8H/17strWp8vWc1pkyzMjESbWa6A==
+X-Google-Smtp-Source: APXvYqwzCFxnd7Tnrw+VcKoRu5IrfLOdJxhmvb9tC1g2WmdJI+J7y+97oDUNU/8wBnVKOLWS0o9WgLgcpwBa
+X-Received: by 2002:adf:f5c5:: with SMTP id k5mr6963937wrp.42.1565889267066;
+ Thu, 15 Aug 2019 10:14:27 -0700 (PDT)
 Received: from heliosphere.sirena.org.uk (heliosphere.sirena.org.uk.
  [2a01:7e01::f03c:91ff:fed4:a3b6])
- by smtp-relay.gmail.com with ESMTPS id ha1sm11470ejb.8.2019.08.15.10.14.26
+ by smtp-relay.gmail.com with ESMTPS id o9sm58910wrg.25.2019.08.15.10.14.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 15 Aug 2019 10:14:26 -0700 (PDT)
+ Thu, 15 Aug 2019 10:14:27 -0700 (PDT)
 X-Relaying-Domain: sirena.org.uk
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1hyJKU-00051z-0r; Thu, 15 Aug 2019 17:14:26 +0000
+ id 1hyJKU-00052B-Ld; Thu, 15 Aug 2019 17:14:26 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 8EDFE2742BD6; Thu, 15 Aug 2019 18:14:25 +0100 (BST)
+ id 173082742BC7; Thu, 15 Aug 2019 18:14:26 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: YueHaibing <yuehaibing@huawei.com>
-Subject: Applied "ASoC: mediatek: mt8183-mt6358-ts3a227-max98357: remove
- unused variables" to the asoc tree
-In-Reply-To: <20190813144122.67676-1-yuehaibing@huawei.com>
+Subject: Applied "ASoC: mt2701: remove unused variables" to the asoc tree
+In-Reply-To: <20190813143811.31456-1-yuehaibing@huawei.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190815171425.8EDFE2742BD6@ypsilon.sirena.org.uk>
-Date: Thu, 15 Aug 2019 18:14:25 +0100 (BST)
+Message-Id: <20190815171426.173082742BC7@ypsilon.sirena.org.uk>
+Date: Thu, 15 Aug 2019 18:14:26 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_101428_331954_E7743C62 
-X-CRM114-Status: GOOD (  14.83  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190815_101429_105333_47AADEFD 
+X-CRM114-Status: GOOD (  13.81  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.98 listed in list.dnswl.org]
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.98 listed in wl.mailspike.net]
+ no trust [209.85.221.99 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -105,7 +100,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: mediatek: mt8183-mt6358-ts3a227-max98357: remove unused variables
+   ASoC: mt2701: remove unused variables
 
 has been applied to the asoc tree at
 
@@ -130,48 +125,59 @@ to this mail.
 Thanks,
 Mark
 
-From d59170b42610c7cbc6e96431ca8357a8bdbf592b Mon Sep 17 00:00:00 2001
+From a9e792d006edbd33724f2eb858887d3b591d82c5 Mon Sep 17 00:00:00 2001
 From: YueHaibing <yuehaibing@huawei.com>
-Date: Tue, 13 Aug 2019 22:41:22 +0800
-Subject: [PATCH] ASoC: mediatek: mt8183-mt6358-ts3a227-max98357: remove unused
- variables
+Date: Tue, 13 Aug 2019 22:38:11 +0800
+Subject: [PATCH] ASoC: mt2701: remove unused variables
 
-sound/soc/mediatek/mt8183/mt8183-mt6358-ts3a227-max98357.c:50:1: warning:
- mt8183_mt6358_ts3a227_max98357_dapm_widgets defined but not used [-Wunused-const-variable=]
-sound/soc/mediatek/mt8183/mt8183-mt6358-ts3a227-max98357.c:55:1: warning:
- mt8183_mt6358_ts3a227_max98357_dapm_routes defined but not used [-Wunused-const-variable=]
+sound/soc/mediatek/mt2701/mt2701-afe-pcm.c:799:38: warning:
+ mt2701_afe_o23_mix defined but not used [-Wunused-const-variable=]
+sound/soc/mediatek/mt2701/mt2701-afe-pcm.c:803:38: warning:
+ mt2701_afe_o24_mix defined but not used [-Wunused-const-variable=]
+sound/soc/mediatek/mt2701/mt2701-afe-pcm.c:835:38: warning:
+ mt2701_afe_multi_ch_out_i2s4 defined but not used [-Wunused-const-variable=]
 
 They are never used, so can be removed.
 
 Reported-by: Hulk Robot <hulkci@huawei.com>
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-Link: https://lore.kernel.org/r/20190813144122.67676-1-yuehaibing@huawei.com
+Link: https://lore.kernel.org/r/20190813143811.31456-1-yuehaibing@huawei.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- .../mediatek/mt8183/mt8183-mt6358-ts3a227-max98357.c   | 10 ----------
- 1 file changed, 10 deletions(-)
+ sound/soc/mediatek/mt2701/mt2701-afe-pcm.c | 13 -------------
+ 1 file changed, 13 deletions(-)
 
-diff --git a/sound/soc/mediatek/mt8183/mt8183-mt6358-ts3a227-max98357.c b/sound/soc/mediatek/mt8183/mt8183-mt6358-ts3a227-max98357.c
-index 53f54078f78c..272766c1b859 100644
---- a/sound/soc/mediatek/mt8183/mt8183-mt6358-ts3a227-max98357.c
-+++ b/sound/soc/mediatek/mt8183/mt8183-mt6358-ts3a227-max98357.c
-@@ -46,16 +46,6 @@ static int mt8183_i2s_hw_params_fixup(struct snd_soc_pcm_runtime *rtd,
- 	return 0;
- }
+diff --git a/sound/soc/mediatek/mt2701/mt2701-afe-pcm.c b/sound/soc/mediatek/mt2701/mt2701-afe-pcm.c
+index 9af76ae315a5..d7f5defa50c2 100644
+--- a/sound/soc/mediatek/mt2701/mt2701-afe-pcm.c
++++ b/sound/soc/mediatek/mt2701/mt2701-afe-pcm.c
+@@ -796,14 +796,6 @@ static const struct snd_kcontrol_new mt2701_afe_o22_mix[] = {
+ 	SOC_DAPM_SINGLE_AUTODISABLE("I19 Switch", AFE_CONN22, 19, 1, 0),
+ };
  
--static const struct snd_soc_dapm_widget
--mt8183_mt6358_ts3a227_max98357_dapm_widgets[] = {
--	SND_SOC_DAPM_OUTPUT("IT6505_8CH"),
+-static const struct snd_kcontrol_new mt2701_afe_o23_mix[] = {
+-	SOC_DAPM_SINGLE_AUTODISABLE("I20 Switch", AFE_CONN23, 20, 1, 0),
 -};
 -
--static const struct snd_soc_dapm_route
--mt8183_mt6358_ts3a227_max98357_dapm_routes[] = {
--	{"IT6505_8CH", NULL, "TDM"},
+-static const struct snd_kcontrol_new mt2701_afe_o24_mix[] = {
+-	SOC_DAPM_SINGLE_AUTODISABLE("I21 Switch", AFE_CONN24, 21, 1, 0),
 -};
 -
- static int
- mt8183_mt6358_ts3a227_max98357_bt_sco_startup(
- 	struct snd_pcm_substream *substream)
+ static const struct snd_kcontrol_new mt2701_afe_o31_mix[] = {
+ 	SOC_DAPM_SINGLE_AUTODISABLE("I35 Switch", AFE_CONN41, 9, 1, 0),
+ };
+@@ -832,11 +824,6 @@ static const struct snd_kcontrol_new mt2701_afe_multi_ch_out_i2s3[] = {
+ 				    PWR2_TOP_CON, 18, 1, 0),
+ };
+ 
+-static const struct snd_kcontrol_new mt2701_afe_multi_ch_out_i2s4[] = {
+-	SOC_DAPM_SINGLE_AUTODISABLE("Multich I2S4 Out Switch",
+-				    PWR2_TOP_CON, 19, 1, 0),
+-};
+-
+ static const struct snd_soc_dapm_widget mt2701_afe_pcm_widgets[] = {
+ 	/* inter-connections */
+ 	SND_SOC_DAPM_MIXER("I00", SND_SOC_NOPM, 0, 0, NULL, 0),
 -- 
 2.20.1
 
