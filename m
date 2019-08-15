@@ -2,58 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6A388E4BF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 08:06:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3BB08E4C2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 08:06:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1rp6NBCDAA4xZaBjP0JfXNEaFfi1x9XZqKRnV/KrVvw=; b=DsDsoTHCavAGrR
-	34b+Ty2O3XhO2B7QRkUJzC7X+6ACjOSxxF0MCtI6W5n2A7QnS9tUuFaOX6rly8l5+kcyb2/CJ5v7d
-	Akdw/3aVnFuL1GOr+jA+mxz0OPIBJl3QTqWK+VrV+8izBW9i62bX0hQqnw2ttVxklDMYx5Fs50QsT
-	EF7VYjSQxHWsdLK/6SzLF+QtAwcHfFbWljRhcUfzRNmMNmGRXrySl5BZLP/pK1iJMpYKW+kiC4TdI
-	ehFwtoGbJXGIhhW9vRU9RA8ns3FU8Owrnj2m3NedCILzjBo0VWbdQ8BwO6K4bCmMb3iXEt9KKAzuM
-	SjXlbciqhDmV5GO5z0iw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Fc+gFdUDNnPbw+uvyrFleK5KlHAerFJjFklGc5Ub8e8=; b=moT1SWdQBtri1s
+	xfbgcgVjGTdDbEK2gW3VacK6Xh482sM1iHDIZSKKjqUq4GVUCp67pN5o2SCvbeWpZnTnqWVRPBPTP
+	xr0N8x9lO5PuCXFcu5v8AUfCJGnjxuIUNoEgNi5H4JkoaqLuG7yzUs836pL2EBEK8wleDVFIqby3X
+	gvM6sJninpbHQbCZZ4O98ZBgkRyqxfajh0+n1+9xhgcCMw4akdpC3ZDuhpMaKk1KBEYIYDgz7I1f5
+	WMY+Q7OWle1FIu0zLOUGAC9gle2cXTSyHf1lZZXCg5wJRINOeJXaOiDPfQwXYjhtsyHyUv3M53glY
+	YY9VnUxsavvEMUELnrHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy8tz-0006sN-6m; Thu, 15 Aug 2019 06:06:23 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1hy8uI-00076H-Vt; Thu, 15 Aug 2019 06:06:43 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy8tj-0006qv-41; Thu, 15 Aug 2019 06:06:08 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga006.jf.intel.com ([10.7.209.51])
- by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 14 Aug 2019 23:06:06 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,388,1559545200"; d="scan'208";a="181785528"
-Received: from pipin.fi.intel.com (HELO pipin) ([10.237.72.175])
- by orsmga006.jf.intel.com with ESMTP; 14 Aug 2019 23:06:03 -0700
-From: Felipe Balbi <balbi@kernel.org>
-To: Vicente Bergas <vicencb@gmail.com>, Robin Murphy <robin.murphy@arm.com>
-Subject: Re: kexec on rk3399
-In-Reply-To: <59055782-7fc2-4b16-af8b-a56fb845a43f@gmail.com>
-References: <ebcb52be-2063-4e2c-9a09-fdcacb94f855@gmail.com>
- <c6993a1e-6fc2-44ab-b59e-152142e2ff4d@gmail.com>
- <0408cb6c-1b16-eacb-d47e-17f4ff89e2b8@arm.com>
- <59055782-7fc2-4b16-af8b-a56fb845a43f@gmail.com>
-Date: Thu, 15 Aug 2019 09:06:02 +0300
-Message-ID: <87pnl7t12t.fsf@gmail.com>
+ id 1hy8u0-00074c-VV
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 06:06:26 +0000
+Received: by mail-pg1-x544.google.com with SMTP id x15so865157pgg.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 14 Aug 2019 23:06:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IWP/C/XpjQhJDAx2QHm1UDwbKPSNG33jAiOfZIHArMw=;
+ b=ta+mnThUrSgw4PJu9B1bI/erSr+RFYpPGO/FcdAk2Y1C87+F1jr+hjOb37wXGBB5I4
+ QG2PirON/lA1Fi1LUXZFmmzgJZftvnEkWDWyv6SsuI9m53Lt8PY268xzIZ0uQD1Q/Okf
+ Y14nXreXD1kJQ3ICkN4HmTPIYCbiwEA0OnaUN9etLN9HMaHrTQ/W5UNWOpOwNEdJc8vV
+ Qo8Rn+d0cH1XngoVUCY33JcKNpGfSN9/A8MCJjJ82SrmftLMLjkFAzu8SV1dUvUVRj6V
+ bPyX8f+e8YB3C4f8EThbKazbR4InCuGL6DHhYTdG6AfAuYaWLlOcGu20hn+PsH4eZyND
+ Ro2g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IWP/C/XpjQhJDAx2QHm1UDwbKPSNG33jAiOfZIHArMw=;
+ b=er4DXtWiPf87bEd9Bevu4/x9iZBYO/P7QQaxErMmciPpj8hn9BHZSjFpKdid8/XLJQ
+ RfvnSBX/97KYPHo8LlRB5f03fEfYGRqSGYaMzMpjJKWAa1+BRN2CuTaK41Uk7RsOMvD/
+ ijHzVCV7D6EnF8Q1/lwuQCpIl8MVgNu6oiQ9Z9wkqddG0YcBvlv0MP4jV8EyEjt/gFgN
+ yQ9kwgS6Sf9duRWVtpQGl26nHZUo9oY/4wD9IbVKZ+MPo8PMywkLGMcIHqMEGBHbgHks
+ R5wnPGIMhrv+Glu+MXCCAQXOTeRciPPtKiWoJp/JFd/3dLQRpSnXSvvJ5Ab2j8/BfTmr
+ sjCA==
+X-Gm-Message-State: APjAAAWC03Nd+g3ORhpak6zIW1sVhxOT3Y5UPztjmaHqgIoGlrJbpGpE
+ 6K+7QbUyQlKv+ctah8OAfoc=
+X-Google-Smtp-Source: APXvYqxTYYMswK13ErwYCDDOlLX/KNuxx4uj1nuebSYRyIorlOmqQpwOmMfKl+Go7/pr6OEwiqq+FQ==
+X-Received: by 2002:a17:90a:3aaf:: with SMTP id
+ b44mr808587pjc.87.1565849184305; 
+ Wed, 14 Aug 2019 23:06:24 -0700 (PDT)
+Received: from localhost.localdomain ([110.225.3.176])
+ by smtp.gmail.com with ESMTPSA id i9sm411521pjj.2.2019.08.14.23.06.21
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 14 Aug 2019 23:06:23 -0700 (PDT)
+From: Nishka Dasgupta <nishkadg.linux@gmail.com>
+To: patrice.chotard@st.com, linus.walleij@linaro.org,
+ linux-arm-kernel@lists.infradead.org, linux-gpio@vger.kernel.org
+Subject: [PATCH] pinctrl: st: Add of_node_put() before return
+Date: Thu, 15 Aug 2019 11:36:09 +0530
+Message-Id: <20190815060609.3056-1-nishkadg.linux@gmail.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_230607_205369_5331AC29 
-X-CRM114-Status: GOOD (  15.56  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190814_230625_149714_3D6FC2E3 
+X-CRM114-Status: GOOD (  11.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (nishkadg.linux[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,97 +98,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Each iteration of for_each_child_of_node puts the previous node, but in
+the case of a return from the middle of the loop, there is no put, thus
+causing a memory leak. Hence add an of_node_put before the return in
+three places.
+Issue found with Coccinelle.
 
-Hi,
+Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+---
+ drivers/pinctrl/pinctrl-st.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
 
-Vicente Bergas <vicencb@gmail.com> writes:
-
-> On Wednesday, August 14, 2019 3:12:26 PM CEST, Robin Murphy wrote:
->> On 14/08/2019 13:53, Vicente Bergas wrote:
->>> On Monday, July 22, 2019 4:31:27 PM CEST, Vicente Bergas wrote: ...
->>
->> This particular change looks like it's implicitly specific to 
->> RK3399, which wouldn't be ideal. Presumably if the core dwc3 
->> driver implemented shutdown correctly (echoing parts of 
->> dwc3_remove(), I guess) then the glue layers shouldn't need 
->> anything special anyway.
->>
->> Robin.
->
-> I just checked simple->resets from dwc3-of-simple.c and it is an array
-> with multiple resets whereas dwc->reset from core.c is NULL.
-> So the reset seems specific to the glue layers.
-> Is there another way than resetting the thing that is
-> generic enough to go to core.c and allows kexec?
-
-This is a really odd 'failure'. We do full soft reset during driver
-initialization on dwc3. We shouldn't need to assert reset on shutdown,
-really.
-
-I think the problem is here:
-
-	if (simple->pulse_resets) {
-		ret = reset_control_reset(simple->resets);
-		if (ret)
-			goto err_resetc_put;
-	} else {
-		ret = reset_control_deassert(simple->resets);
-		if (ret)
-			goto err_resetc_put;
-	}
-
-Note that if pulse_resets is set, we will run a reset. But if
-pulse_resets is false and need_reset is true, we deassert the reset.
-
-I think below patch is enough:
-
-diff --git a/drivers/usb/dwc3/dwc3-of-simple.c b/drivers/usb/dwc3/dwc3-of-simple.c
-index bdac3e7d7b18..9a2f3e09aa2e 100644
---- a/drivers/usb/dwc3/dwc3-of-simple.c
-+++ b/drivers/usb/dwc3/dwc3-of-simple.c
-@@ -72,7 +72,15 @@ static int dwc3_of_simple_probe(struct platform_device *pdev)
- 		ret = reset_control_reset(simple->resets);
- 		if (ret)
- 			goto err_resetc_put;
--	} else {
-+	}
-+
-+	if (simple->need_reset) {
-+		ret = reset_control_assert(simple->resets);
-+		if (ret)
-+			goto err_resetc_put;
-+
-+		usleep_range(1000, 2000);
-+
- 		ret = reset_control_deassert(simple->resets);
- 		if (ret)
- 			goto err_resetc_put;
-@@ -121,9 +129,6 @@ static int dwc3_of_simple_remove(struct platform_device *pdev)
- 	clk_bulk_put_all(simple->num_clocks, simple->clks);
- 	simple->num_clocks = 0;
+diff --git a/drivers/pinctrl/pinctrl-st.c b/drivers/pinctrl/pinctrl-st.c
+index b9688ea548da..e788c7495ec7 100644
+--- a/drivers/pinctrl/pinctrl-st.c
++++ b/drivers/pinctrl/pinctrl-st.c
+@@ -1262,8 +1262,10 @@ static int st_pctl_parse_functions(struct device_node *np,
+ 		grp = &info->groups[*grp_index];
+ 		*grp_index += 1;
+ 		ret = st_pctl_dt_parse_groups(child, grp, info, i++);
+-		if (ret)
++		if (ret) {
++			of_node_put(child);
+ 			return ret;
++		}
+ 	}
+ 	dev_info(info->dev, "Function[%d\t name:%s,\tgroups:%d]\n",
+ 				index, func->name, func->ngroups);
+@@ -1623,8 +1625,10 @@ static int st_pctl_probe_dt(struct platform_device *pdev,
+ 		if (of_property_read_bool(child, "gpio-controller")) {
+ 			const char *bank_name = NULL;
+ 			ret = st_gpiolib_register_bank(info, bank, child);
+-			if (ret)
++			if (ret) {
++				of_node_put(child);
+ 				return ret;
++			}
  
--	if (!simple->pulse_resets)
--		reset_control_assert(simple->resets);
--
- 	reset_control_put(simple->resets);
- 
- 	pm_runtime_disable(dev);
-
-Can you test?
-
+ 			k = info->banks[bank].range.pin_base;
+ 			bank_name = info->banks[bank].range.name;
+@@ -1641,6 +1645,7 @@ static int st_pctl_probe_dt(struct platform_device *pdev,
+ 							i++, &grp_index);
+ 			if (ret) {
+ 				dev_err(&pdev->dev, "No functions found.\n");
++				of_node_put(child);
+ 				return ret;
+ 			}
+ 		}
 -- 
-balbi
+2.19.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
