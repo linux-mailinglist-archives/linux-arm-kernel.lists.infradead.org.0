@@ -2,83 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B77A8F262
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 19:38:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFF448F299
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 19:54:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y3f2fqv2F8Dea2LECB+ZHSavR0yGbiccpNYeGUvD38o=; b=EcbuTEDpbCUeaN
-	BUXaQF4DfmOf7uvrytih6NiMn95zSTdHUCzK/fp/EfTjDoYMUBrgl2vXysfwZEcBC9r4nCbK4DsR+
-	YDB7zF7nW3HIBS6erU0H/X0kkPFE2NFloNZWXFF0/1LfdQPN1/pUrkEs0R6vajB8lAL9pkC4qDwVD
-	FxHmq4CUj4unzG1KGu1HsOfO7mzufH8OY5zgADeoxPwPUYTNJvjVnSfGIp7NiFHHLNiOpfF46qbgJ
-	2AY2qVsl03f/IkG8Q+1dWJcBHE0MmginXwY1vghsHyeWnoMZ9jjq4oiOBlKsyxpcROPH7vSY1JJlE
-	sLkSHYpN6FtFhgbcQIpg==;
+	List-Owner; bh=gllr+TGtLgNLQ47iNeutzwgg862Rgn2WGXfkjoxtdeg=; b=J489TKXsuyRGOY
+	rOx4d9r9sQGp7If5GzaEvx8Hs3/De5pL0OzNtnoskvKiQ4SBJS87kP8CbhqqC9c0bIhwq8JfTUy3l
+	DG53doS5zo/avb/gffn8164A/i3l132M8as//o+Fpbvi5C8LCOUpL60mMWpgfFlLvnN5wFwrZTMEr
+	DNNzOShqetQ+pTm1918SgqoyF30RgIJHFgR0f8o9IhUI5v4LJNLIUDLlIaU/jSoTnjrLZ63EwCD9z
+	BBjokXqW3QDJQr1uz48P4EuyEXdIThtyAzBsnu7mYbQjiC2MK25Ki/F95oDmQtkMtmNTNTP+JqtYW
+	34ae8FuIFJ5IoRYAU5Iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyJhc-000749-Ac; Thu, 15 Aug 2019 17:38:20 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hyJwt-0003bd-GY; Thu, 15 Aug 2019 17:54:07 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyJhH-00073R-SF
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 17:38:03 +0000
-Received: by mail-io1-xd41.google.com with SMTP id t3so750023ioj.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 10:37:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=W/qaXV9S7EqSXjJ9HVVNAqMBd3/53HT0f+nyTBIWkjQ=;
- b=wUeoX1uPuGsbMGnSpUBVS62MFU9GgL7ic0/36SPnwOTAguBfWA5Gak5iU8UcYL+6Dq
- eGzLlIckv3K1bz2qreTGE3JfD/5nCYhPO/tTJhCS/6LuqmPYxQj6ZwKSdD2VrjUKqbA9
- cF2gjQykZblgqUg090nE4cyIWH4OSJX1WMpYqrhjWe1o4KMHHqH1EHezZg37KrkJo5BF
- cL27sbU6YsXo3SELPEd7nMTo41502vReAZTx1EIqEBrmtKQi0wmLGx2pZ35M1iUIds9p
- 9/NT5Q+9z7VMWJiJdQBCojS5ovGK4mfJLU7cI8ikaLIhf8fn56Ap8BsjZj11gMu94O9S
- 2pAA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=W/qaXV9S7EqSXjJ9HVVNAqMBd3/53HT0f+nyTBIWkjQ=;
- b=QqZefdQrtDS3KrNlWcwvDoCfiEOLgEmBbbJjTsMKINLEt/iItek/hJ2sSbQQ+UDc23
- 2rymitiIL90yo+vY70RV4F1Sut5c+YvWzGTnliztvMQHH6Co+xIcoNrpgMfBWTDwA5iv
- LerbAYSgcKjSi3ZHhMK9jbyVuxMN9d/+gp1B9pPNSSk7kdOpYNuOIcjNNyg0cwTAiXld
- cEC7NdlNIlYBJiL660g4hm10+KrP3VgOscTTL3OopySoG285QStwDSXh36T+3+BBcMw6
- 1cceO2DnA6gn9x3693eLyqTdEXdBklN2AE7TiwPOG3LHz5WttvqirPssyEaYDao+upF6
- t6uQ==
-X-Gm-Message-State: APjAAAXseDYGkYK0KARUclc6yBWkIj1118avTQQBtAZI7YFAaDbus6/t
- 5QPNGILqWNjKCC+cfdG8wx3u62LDjg/mGufYKtsgI86tEEw=
-X-Google-Smtp-Source: APXvYqzXDH761xotArU4aND1o5POeE8CAePCGs7xEh0u4TRFQawyaT1FFjR38e/5ItDgOAYVLnQdcE3hNtMTm5//Ma8=
-X-Received: by 2002:a6b:7d49:: with SMTP id d9mr6742403ioq.50.1565890677021;
- Thu, 15 Aug 2019 10:37:57 -0700 (PDT)
+ id 1hyJwg-0003b6-QR
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 17:53:58 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id E3BED68AFE; Thu, 15 Aug 2019 19:53:46 +0200 (CEST)
+Date: Thu, 15 Aug 2019 19:53:46 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Rob Clark <robdclark@chromium.org>
+Subject: Re: [PATCH 0/6] drm+dma: cache support for arm, etc
+Message-ID: <20190815175346.GA19839@lst.de>
+References: <20190814220011.26934-1-robdclark@gmail.com>
+ <20190815065117.GA23761@lst.de>
+ <CAJs_Fx4bS64s7+xQqsead3N80ZQpofqegFQu+tT=b3wcGd_2pA@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190812190320.209988-1-yabinc@google.com>
-In-Reply-To: <20190812190320.209988-1-yabinc@google.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Thu, 15 Aug 2019 11:37:46 -0600
-Message-ID: <CANLsYkxRVvWUxEAmRQ7nCuS-NaOogN4sYOipxBW5zsozyu+y2g@mail.gmail.com>
-Subject: Re: [PATCH v2] coresight: tmc-etr: Fix perf_data check.
-To: Yabin Cui <yabinc@google.com>
+Content-Disposition: inline
+In-Reply-To: <CAJs_Fx4bS64s7+xQqsead3N80ZQpofqegFQu+tT=b3wcGd_2pA@mail.gmail.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_103759_919393_54CA9807 
-X-CRM114-Status: GOOD (  18.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190815_105355_160591_D733D074 
+X-CRM114-Status: GOOD (  25.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [213.95.11.211 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,102 +60,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ "Maciej W. Rozycki" <macro@linux-mips.org>, Eric Biggers <ebiggers@google.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Imre Deak <imre.deak@intel.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Chris Wilson <chris@chris-wilson.co.uk>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Will Deacon <will@kernel.org>, Christoph Hellwig <hch@lst.de>,
+ Emil Velikov <emil.velikov@collabora.com>,
+ Deepak Sharma <deepak.sharma@amd.com>, Michael Ellerman <mpe@ellerman.id.au>,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.ibm.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ "moderated list:ARM64 PORT \(AARCH64 ARCHITECTURE\)"
+ <linux-arm-kernel@lists.infradead.org>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ "open list:MIPS" <linux-mips@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Robin Murphy <robin.murphy@arm.com>,
+ "open list:DRM DRIVER FOR MSM ADRENO GPU" <linux-arm-msm@vger.kernel.org>,
+ Joerg Roedel <jroedel@suse.de>, Arnd Bergmann <arnd@arndb.de>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Jesper Dangaard Brouer <brouer@redhat.com>,
+ "Wolfram Sang \(Renesas\)" <wsa+renesas@sang-engineering.com>,
+ "open list:LINUX FOR POWERPC \(32-BIT AND 64-BIT\)"
+ <linuxppc-dev@lists.ozlabs.org>, Alexios Zavras <alexios.zavras@intel.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Doug Anderson <armlinux@m.disordat.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Sean Paul <sean@poorly.run>, Allison Randal <allison@lohutok.net>,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Enrico Weigelt <info@metux.net>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ open list <linux-kernel@vger.kernel.org>, Rob Clark <robdclark@gmail.com>,
+ Souptick Joarder <jrdr.linux@gmail.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "open list:DRM DRIVER FOR MSM ADRENO GPU" <freedreno@lists.freedesktop.org>,
+ christian.koenig@amd.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 12 Aug 2019 at 13:03, Yabin Cui <yabinc@google.com> wrote:
->
-> When tracing etm data of multiple threads on multiple cpus through
-> perf interface, each cpu has a unique etr_perf_buffer while sharing
-> the same etr device. There is no guarantee that the last cpu starts
-> etm tracing also stops last. This makes perf_data check fail.
->
-> Fix it by checking etr_buf instead of etr_perf_buffer.
->
-> Fixes: 3147da92a8a8 ("coresight: tmc-etr: Allocate and free ETR memory buffers for CPU-wide scenarios")
-> Signed-off-by: Yabin Cui <yabinc@google.com>
-> ---
->
-> v1 -> v2: rename perf_data to perf_buf. Add fixes tag.
->
-> ---
->  drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 +++---
->  drivers/hwtracing/coresight/coresight-tmc.h     | 6 +++---
->  2 files changed, 6 insertions(+), 6 deletions(-)
->
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> index 17006705287a..90d1548ad268 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> @@ -1484,7 +1484,7 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
->                 goto out;
->         }
->
-> -       if (WARN_ON(drvdata->perf_data != etr_perf)) {
-> +       if (WARN_ON(drvdata->perf_buf != etr_buf)) {
->                 lost = true;
->                 spin_unlock_irqrestore(&drvdata->spinlock, flags);
->                 goto out;
-> @@ -1497,7 +1497,7 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
->
->         CS_LOCK(drvdata->base);
->         /* Reset perf specific data */
-> -       drvdata->perf_data = NULL;
-> +       drvdata->perf_buf = NULL;
->         spin_unlock_irqrestore(&drvdata->spinlock, flags);
->
->         size = etr_buf->len;
-> @@ -1556,7 +1556,7 @@ static int tmc_enable_etr_sink_perf(struct coresight_device *csdev, void *data)
->         }
->
->         etr_perf->head = PERF_IDX2OFF(handle->head, etr_perf);
-> -       drvdata->perf_data = etr_perf;
-> +       drvdata->perf_buf = etr_perf->etr_buf;
+On Thu, Aug 15, 2019 at 06:54:39AM -0700, Rob Clark wrote:
+> On Wed, Aug 14, 2019 at 11:51 PM Christoph Hellwig <hch@lst.de> wrote:
+> >
+> > As said before I don't think these low-level helpers are the
+> > right API to export, but even if they did you'd just cover a tiny
+> > subset of the architectures.
+> 
+> Are you thinking instead something like:
+> 
+> void dma_sync_sg_for_{cpu,device}(struct device *dev, struct scatterlist *sgl,
+>                                   int nents, enum dma_data_direction dir)
+> {
+>     for_each_sg(sgl, sg, nents, i) {
+>         arch_sync_dma_for_..(dev, sg_phys(sg), sg->length, dir);
+>     }
+> }
+> EXPORT_SYMBOL_GPL(dma_sync_sg_for_..)
+> 
+> or did you have something else in mind?
 
-Ok for the fix.  Looking a things again I don't see a need to do the
-assignment for each event - this needs to be done only when the device
-is assocated with a monitored process.  Please move it here [1].
+No.  We really need an interface thay says please give me uncached
+memory (for some definition of uncached that includes that grapics
+drivers call write combine), and then let the architecture do the right
+thing.  Basically dma_alloc_coherent with DMA_ATTR_NO_KERNEL_MAPPING
+is superficially close to what you want, except that the way the drm
+drivers work you can't actually use it.
 
-Thanks,
-Mathieu
+The reason for that is if we can we really need to not create another
+uncachable alias, but instead change the page attributes in place.
+On x86 we can and must do that for example, and based on the
+conversation with Will arm64 could do that fairly easily.  arm32 can
+right now only do that for CMA, though.
 
-[1]. https://elixir.bootlin.com/linux/v5.3-rc4/source/drivers/hwtracing/coresight/coresight-tmc-etr.c#L1572
->
->         /*
->          * No HW configuration is needed if the sink is already in
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc.h b/drivers/hwtracing/coresight/coresight-tmc.h
-> index 1ed50411cc3c..f9a0c95e9ba2 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc.h
-> +++ b/drivers/hwtracing/coresight/coresight-tmc.h
-> @@ -178,8 +178,8 @@ struct etr_buf {
->   *             device configuration register (DEVID)
->   * @idr:       Holds etr_bufs allocated for this ETR.
->   * @idr_mutex: Access serialisation for idr.
-> - * @perf_data: PERF buffer for ETR.
-> - * @sysfs_data:        SYSFS buffer for ETR.
-> + * @sysfs_buf: SYSFS buffer for ETR.
-> + * @perf_buf:  PERF buffer for ETR.
->   */
->  struct tmc_drvdata {
->         void __iomem            *base;
-> @@ -202,7 +202,7 @@ struct tmc_drvdata {
->         struct idr              idr;
->         struct mutex            idr_mutex;
->         struct etr_buf          *sysfs_buf;
-> -       void                    *perf_data;
-> +       struct etr_buf          *perf_buf;
->  };
->
->  struct etr_buf_operations {
-> --
-> 2.23.0.rc1.153.gdeed80330f-goog
->
+The big question is what API do we want.  I had a pretty similar
+discussion with Christian on doing such an allocation for amdgpu,
+where the device normally is cache coherent, but they actually want
+to turn it into non-coherent by using PCIe unsnooped transactions.
+
+Here is my high level plan, which still has a few lose end:
+
+ (1) provide a new API:
+
+	struct page *dma_alloc_pages(struct device *dev, unsigned nr_pages,
+			gfp_t gfp, unsigned long flags);
+	void dma_free_pages(struct device *dev, unsigned nr_pages,
+			unsigned long flags);
+
+     These give you back page backed memory that is guaranteed to be
+     addressable by the device (no swiotlb or similar).  The memory can
+     then be mapped using dma_map*, including unmap and dma_sync to
+     bounce ownership around.  This is the replacement for the current
+     dma_alloc_attrs with DMA_ATTR_NON_CONSISTENT API, that is rather
+     badly defined.
+
+ (2) Add support for DMA_ATTR_NO_KERNEL_MAPPING to this new API instead
+     of dma_alloc_attrs.  The initial difference with that flag is just
+     that we allow highmem, but in the future we could also unmap this
+     memory from the kernel linear mapping entirely on architectures
+     where we can easily do that.
+
+ (3) Add a dma_pages_map/dma_pages_unmap or similar API that allows you
+     to get a kernel mapping for parts or all of a
+     DMA_ATTR_NO_KERNEL_MAPPING allocation.  This is to replace things
+     like your open-coded vmap in msm (or similarly elsewhere in dma-buf
+     providers).
+
+ (4) Add support for a DMA_ATTR_UNCACHABLE flags (or similar) to the new
+     API, that maps the pages as uncachable iff they have a kernel
+     mapping, including invalidating the caches at time of this page
+     attribute change (or creation of a new mapping).  This API will fail
+     if the architecture does not allow in-place remapping.  Note that for
+     arm32 we could always dip into the CMA pool if one is present to not
+     fail.  We'll also need some helper to map from the DMA_ATTR_* flags
+     to a pgprot for mapping the page to userspace.  There is also a few
+     other weird bits here, e.g. on architectures like mips that use an
+     uncached segment we'll have to fail use with the plain
+     DMA_ATTR_UNCACHABLE flag, but it could be supported with
+     DMA_ATTR_UNCACHABLE | DMA_ATTR_NO_KERNEL_MAPPING.
+
+I was hoping to get most of this done for this merge window, but I'm
+probably lucky if I get at least parts done.  Too much distraction.
+
+> Hmm, not entirely sure why.. you should be on the cc list for each
+> individual patch.
+
+They finally made it, although even with the delay they only ended up
+in the spam mailbox.  I still can't see them on the various mailing
+lists.
 
 _______________________________________________
 linux-arm-kernel mailing list
