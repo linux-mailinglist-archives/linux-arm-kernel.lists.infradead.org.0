@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40B148EBB1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 14:40:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 229328EBB2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 14:40:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dDDZdxdW8Cm/po4y29Qbx3T5bc/vYdD3i0ckpbhTpJQ=; b=YCR+9afrwc53d/
-	xgDyGToNvYCiKeu5ICQ0FI0ODlHPgHYYEcxZMiRZv7EsmKTd8zF9nZKqQBG2qglGmsPZzv458LJlV
-	bwfln71Aau9D93UJq0qOyZOW332koN2oFPpvxDL1DTQ8gHRP1UgqehZCvM+p+0AkUXDupzA+qt175
-	QWW5MuPE0zztuapTj9yuxIsqa8x4zAJBYujSVa6qvAoguJkxjhrjqql4ApbF03YMY3Qawv/Tw2T6l
-	IyqDbaEX7+cTDqlhryQvGIRQ+89crwByefvm43Av473noI1rGzatnGGZAV6CxPQAXye/yx/qPh/sA
-	3bqQ1AvJDjt5xWsb5ftg==;
+	List-Owner; bh=zb5FNRr9pRfRLc0BjK0Qz7CvcwJFWyjH2vvrmU1ml5A=; b=OYlXVmm591XHMa
+	1foaV1es8GDvOd4pchOF3J8HUaOc9haz1+AlzcwJc6G7HrqIWqg81bLzQIsydSD9PnLoFAQwRoUR+
+	sY0ryHrRRPQatNVjNLpL2tnKX33tm7HdYfEyuTVNvk4gTwmNG9lz3waiWAZipodRbXWmH0T6Kl8R0
+	MyuJudUKGsJs0w5dlxf4kR2XxEJ+6hJ6IxmmNZ9id8hOgbTtJcwopvEKgb7GpRsDcLy691sMBOQJe
+	NHZSlzFjZSg3HYhA+fnuWxR0oV5lfyspVjCIMAbjsp464R8tG1Eo3rah0a6LCiCvPrzEHuXgUWFpP
+	ppiNRkhvB3F/cmKd7CnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyF36-0006B3-6p; Thu, 15 Aug 2019 12:40:13 +0000
-Received: from mail-qk1-f173.google.com ([209.85.222.173])
+	id 1hyF3c-0007cB-Ex; Thu, 15 Aug 2019 12:40:44 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyF2i-0006AM-Fg
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 12:39:49 +0000
-Received: by mail-qk1-f173.google.com with SMTP id d23so1730822qko.3
+ id 1hyF37-0007Uw-5B
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 12:40:16 +0000
+Received: by mail-qt1-f193.google.com with SMTP id l9so2133466qtu.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 05:39:47 -0700 (PDT)
+ Thu, 15 Aug 2019 05:40:12 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=+sz8iMwRtA16rKBM+y1xtqsr2FT3ggqC7wXEVqNU80Y=;
- b=nDz7qHh/9WG799TMUYzoeCYh1gcXYqNROlzNBf+jr4+O9Llz2z4yYZlL5CzuHLpXjl
- WG8Ehoju/zBs1euKTiG9C0+3tiXf2otr7GEwZ1hVLnQwTQRB/CNAMwkIS8E6XeO35KgH
- /hXsNIKcmlKPBXXLSkrbeW3093KvUpN7Uts3xWaL/N/GC6U6ntQfk/+diproa9XJZwKx
- a11idw5i5VwLN/WnH7yz382lKzlHoAs1QdcHQkcqXy2zXbAH19uPCADhvpeHSIOVSMhs
- BNzKldcRogBSd30yvnYAhH/2aGRKyqQHInUPxDtP++/O5Wodd5F4E0aMkCdF7FTMjSyr
- blxg==
-X-Gm-Message-State: APjAAAW1l0M9zufFE2S+lKdwRsipG+AWcqqac5zjlv2HKfvIOqOcU02a
- VT71KlqhADkMCRhvWDJEMm6u48ZM+dIAdIQH0vM=
-X-Google-Smtp-Source: APXvYqyLvIyU6AnKUG0hHT8aa7Za+z6fbHp4ioldVGfk9TXm4wyKocAOhU2KdR8M1elDp43RaX0KruXrHyHMX8Jtyjk=
-X-Received: by 2002:a37:bd44:: with SMTP id n65mr1261997qkf.286.1565872786986; 
- Thu, 15 Aug 2019 05:39:46 -0700 (PDT)
+ bh=8N/eZnpVtVGXNfEPij+EtmJf4Wqq8E7G+Ac9dKa5ORg=;
+ b=CuNUI+HSMy+QsROZP/BzpSQRt+gOu3Lnd9dbrVO7104+cJ2sHy/E2nNEwxDug4i1Io
+ I8qYQzItnRDqawuPz+7b396z+0GqYht6M/P+GFr3+nLwILe+Oww02jMJt/Z4al+/iwZs
+ tq5n9keRbYx/awdbtt+vaGlzh/swNff5fp8OQ/w+qhY+R7ClBzBVHI/rcUBDbWjvXwrF
+ toc+K3yh2uZfxChJ2KVvEeSJFOnIrxJQAOHeAsenfu75yBtqSijWdEq817VVgnFqA7NR
+ r0v98bexy3/gV1I01qIobfaE5Ok/t8ysktXkoNfeoCoHmBZLwDjAR7keeX9UxobGcW2i
+ iU6g==
+X-Gm-Message-State: APjAAAVY13q8NHI8oxXrzt1KkhEnnoJXdKn+IlPUpbKizY8Jb+HEpkTz
+ Z/lk598nxrUCnumvleobSvHcDUlVVDJ6xAd0pQ0=
+X-Google-Smtp-Source: APXvYqwb4zQ8FF0KzdVSpE5ZInOoO4R9nOdgsHtEhyR9Jym3zQ3ggtHiQguCw7If8eUlxix/ZQJVW96l8ka0oYGrtsE=
+X-Received: by 2002:ac8:239d:: with SMTP id q29mr3688037qtq.304.1565872812114; 
+ Thu, 15 Aug 2019 05:40:12 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190815065659.GA13498@jax>
-In-Reply-To: <20190815065659.GA13498@jax>
+References: <pull-1565844391-332885@atomide.com>
+In-Reply-To: <pull-1565844391-332885@atomide.com>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 15 Aug 2019 14:39:30 +0200
-Message-ID: <CAK8P3a09pJ+ZHHEDoc6=znB5Ycsy1nPMf2QS=dssktN3mv591w@mail.gmail.com>
-Subject: Re: [GIT PULL] tee subsys for v5.4
-To: Jens Wiklander <jens.wiklander@linaro.org>
+Date: Thu, 15 Aug 2019 14:39:56 +0200
+Message-ID: <CAK8P3a0Ynmu1X+Y6Ba6UP9gfyJddhFj3ZfF5vA45nZgOdfn8fQ@mail.gmail.com>
+Subject: Re: [GIT PULL] fixes for omap variants for v5.3-rc cycle
+To: Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_053948_524865_F9475292 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190815_054014_021983_EDEC6352 
+X-CRM114-Status: GOOD (  18.64  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.173 listed in list.dnswl.org]
+ no trust [209.85.160.193 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,26 +83,58 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-omap <linux-omap@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 8:57 AM Jens Wiklander
-<jens.wiklander@linaro.org> wrote:
+On Thu, Aug 15, 2019 at 6:49 AM Tony Lindgren <tony@atomide.com> wrote:
 >
-> Hello arm-soc maintainers,
+> From: "Tony Lindgren" <tony@atomide.com>
 >
-> Please pull this OP-TEE driver patch. It adds a call to might_sleep()
-> during RPC in the OP-TEE driver in order to be more friendly with
-> CONFIG_PREEMPT_VOLUNTARY.
+> The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 >
+>   Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+>
+> are available in the Git repository at:
+>
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.3/fixes-rc4
+>
+> for you to fetch changes up to 4a65bbb9109ed7edd4b6ed7168ced48abb8561a2:
+>
+>   soc: ti: pm33xx: Make two symbols static (2019-08-13 05:05:38 -0700)
+>
+> ----------------------------------------------------------------
+> Fixes for omap variants for v5.3-rc cycle
+>
+> We have another fix to disable voltage switching for am57xx SDIO as
+> the bootrom cannot handle all the voltages after a reset that thought
+> I had already sent a pull request for earlier but forgot. And we also
+> update dra74x iodelay configuration for mmc3 to use the recommended
+> values.
+>
+> Then I noticed we had introduced few new boot warnings with the various
+> recent ti-sysc changes and wanted to fix those. I also noticed we still
+> have too many warnings to be able to spot the real ones easily and fixed
+> up few of those. Sure some of the warnings have been around for a long
+> time and few of the fixes could have waited for the merge window, but
+> having more usable dmesg log level output is a valuable.
+>
+> Other fixes are IO size correction for am335x UARTs that cause issues
+> for at least FreeBSD using the same device tree file that checks that
+> the child IO range is not larger than the parent has.
+>
+> For omap1 ams-delta keyboard we need to fix a irq ack that broke with
+> all the recent gpio changes.
+>
+> And there are also few static checker warning fixes for recent am335x
+> PM changes and ti-sysc driver and one switch fall-though update.
 
-Pulled into arm/drivers, thanks!
+Pulled into fixes, thanks!
 
-      Arnd
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
