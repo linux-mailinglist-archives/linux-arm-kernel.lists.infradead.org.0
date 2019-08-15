@@ -2,62 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 646308E964
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 12:57:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5BF08E965
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 12:57:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OMpAw1XEFBREXY30R2zKe+cQ3qYB/O3o4Rs53V/ogY8=; b=QjveYVLPoNrevv
-	ZJLxwpP3LJn1dcwb0CV+QFZzca4Fd5BJFem73VDDu8q+bVEXkOP02Zsp6Qym4QPdl6n3s4sk0WBXG
-	tni8p4bJv6i0+lyrJrBxkro9nppsikTO/hsxJdpbMl2sUM/uN1q/fyOik2QaJycqaninSpM0xbhGY
-	aAz44d83lLL4nqoBVY0klH7myao1Y9Vw6jm8JICRFptm8fOTh/aQ7aLz5Y1KNKiakO2aQcW/J0t7s
-	PkeNWA0zt4ds7ZiuuhGn++mVJSiTla++UB3ehOC0Oul6H09sMKOwrQ/XTWy4sDmkZjAo23sSf3C0w
-	v2S953J7CE8v+7GSO2zg==;
+	List-Owner; bh=vA9r6gUyJHLLHgP2nvMjcIEJ51WYpsOXX8EM32jDmeA=; b=Ds8Xq1dMSJJNwF
+	aFAmAj7SSqC1zzYbL3Er/sXusS+FZ2dPoHM9yqRfhJ+faSU/OHx/nO6Y84+0z3fdtTRwUMDEZqBlL
+	FLdH1qVPsjlPgyCi8KNFQAC5XkSn6qSJULEWSsspfDhaPAFxUyDUGdCLaQtO4tY6DIKbyg1b63UKa
+	NltJ6xOYYpRKVPpX3fHytbDSaGiP8WcojR7lo/TQcMQrojCcE52tKDXaTH165Gk00LAHb8BvPatik
+	BwNE+UN3sTwBpnTF6tospSxU1aNfbFnc32tSxiNdyhqA1BI5gDByzYs2gXZeFe8RfCXlL6FJW/wnb
+	+p/iJBlus51aDjLTeDCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyDRb-00077n-54; Thu, 15 Aug 2019 10:57:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hyDS2-0007Ru-F6; Thu, 15 Aug 2019 10:57:50 +0000
+Received: from mail-eopbgr20090.outbound.protection.outlook.com ([40.107.2.90]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyDQg-0006ZT-7F
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 10:56:27 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4B96F21744;
- Thu, 15 Aug 2019 10:56:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565866585;
- bh=8D6OrleAFj04JQA9ZH9MMZ7u4sfwPhB2JbKNxPQaMkk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=HncehK0VFOGw8d9ng8b57iR+mqmK/droVfq+Lcy/EJBNIWS8/XDpjPfrb6wX4ceRZ
- nuRKC7mNTfc/2JKnWTeaFychC81E8jozEyGvpyBLC0OoujIsVXV6caBN/9JJdafENd
- 98tosuR75Agsla3Ms5ATjaIhl142Mxw3cXyfcrd4=
-Date: Thu, 15 Aug 2019 11:56:21 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 15/15] iommu/arm-smmu: Add context init implementation hook
-Message-ID: <20190815105621.vt2gsuppjqgesrho@willie-the-truck>
-References: <cover.1565369764.git.robin.murphy@arm.com>
- <6adbec8e4757f3b6c9f47135544a0302f8e7c55c.1565369764.git.robin.murphy@arm.com>
+ id 1hyDRj-0007Ph-UU
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 10:57:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=W7QbosQWUwO+p8aOuitkSLAP0D2yM2g/pIwoDUixUxJT61GqrP7i5k3q6WKYNx/mHwR8808cr4Teq1R48+g2AvUJ8zbbYxjyPvJWWTRezJLRYifPWj1fDwjOAT1TSbilBeuEfscUrD4w3I4V5wqt9dKBfEhd8sWtAfU2X74QUKvk8NsQCzQ/a4PQzf7VgahNvOwOwV80SijBeHHfUsB7yZZtgv48KalsVN5xl+pNl3mF96B/cQG58A8e7QuUsIb3W/pOQRtKlwekxEj45djDZnD+5ygBZpBC7jnJy1J1eqKkgfoNB8Fsh7yjVMb4MD7z/8AdnC/CfxaJ2R3HumNxfA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tR4drwO2pECVlXf8muLob/2LjTtGlI5oD3W5a5diY9w=;
+ b=XefhU8G5acRYjaaNRvvqQNmarxRGUEo03LB8sjRAW2TIxD9Kqj7pDiJtoFEYMlvaVBCpD9eVHSqBNUHIAElaw8xgnZBKEGvP3yxm0Re2FjTLUEYJQPz55h8iXsXIhZRJIpsOV8/Gthk5Fdr6yBBlUIKXk5Qw4OrXKlc86S/Jty7QveX1g87L9eXe29hv0dry4RFCfGH+18u7VKRAkCdBjJ3lJovoThEo9V0WBNsogJ/3NxLADWJX5RylFYwSrFaUDaOM9z19b44acfoilLhcwfwFxIxs/czyEP+sD/Q3IYX3Mnrtr7DQST+Enc4l6qcpl/PYPZp6GIEbIkCLq7558A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tR4drwO2pECVlXf8muLob/2LjTtGlI5oD3W5a5diY9w=;
+ b=bOpxY1/x3txaECvJ+96f2Q8RrV4G5zbgU1CdGnboHLD6Vun26r1tdakzyT4j0dYtHjLSW4KQt2t+Nhlqi8wr9HS1sAzgtAxlCYERRumcEbcwXU4iWsApLYn6/3FA+ga3rfcU8a1tHYLcUANmRK6c2DfgOij1tdu0789tiBv29Ks=
+Received: from VI1PR05MB6544.eurprd05.prod.outlook.com (20.179.27.210) by
+ VI1PR05MB6302.eurprd05.prod.outlook.com (20.179.24.150) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.20; Thu, 15 Aug 2019 10:57:29 +0000
+Received: from VI1PR05MB6544.eurprd05.prod.outlook.com
+ ([fe80::4810:d157:267a:83b9]) by VI1PR05MB6544.eurprd05.prod.outlook.com
+ ([fe80::4810:d157:267a:83b9%4]) with mapi id 15.20.2157.022; Thu, 15 Aug 2019
+ 10:57:30 +0000
+From: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+To: Philippe Schenker <philippe.schenker@toradex.com>
+Subject: Re: [PATCH v4 12/21] ARM: dts: imx6-apalis: Add touchscreens used on
+ Toradex eval boards
+Thread-Topic: [PATCH v4 12/21] ARM: dts: imx6-apalis: Add touchscreens used on
+ Toradex eval boards
+Thread-Index: AQHVU1gyaZDzHRHaaUC3Kzkn91ZI5g==
+Date: Thu, 15 Aug 2019 10:57:28 +0000
+Message-ID: <CAGgjyvF+53CdYUB4QNJWfDqUigDyTi9G06i9wXW_3tmWM8ra=A@mail.gmail.com>
+References: <20190812142105.1995-1-philippe.schenker@toradex.com>
+ <20190812142105.1995-13-philippe.schenker@toradex.com>
+In-Reply-To: <20190812142105.1995-13-philippe.schenker@toradex.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM3PR04CA0135.eurprd04.prod.outlook.com (2603:10a6:207::19)
+ To VI1PR05MB6544.eurprd05.prod.outlook.com
+ (2603:10a6:803:ff::18)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=oleksandr.suvorov@toradex.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-gm-message-state: APjAAAX2EqgDjh0wPpPP+msmQe1Cw/WmVLN4MFgcUp9PA150221fMv7W
+ 3xCjatSRkFKvVa3OWsJdss4ejE+lkxlrDcHIokI=
+x-google-smtp-source: APXvYqwqbYpSrZiP6BavBDffmbiAwf4lC+LyJxAotmzskoITlnYMw+W2c1ESatK3aEs5YsWi9t9jhtrgCnQR2MR6Xag=
+x-received: by 2002:a17:906:9453:: with SMTP id
+ z19mr3816701ejx.287.1565866646371; Thu, 15 Aug 2019 03:57:26 -0700 (PDT)
+x-gmail-original-message-id: <CAGgjyvF+53CdYUB4QNJWfDqUigDyTi9G06i9wXW_3tmWM8ra=A@mail.gmail.com>
+x-originating-ip: [209.85.208.41]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 6bff1f34-9128-4fc4-4216-08d7216f5d18
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:VI1PR05MB6302; 
+x-ms-traffictypediagnostic: VI1PR05MB6302:
+x-microsoft-antispam-prvs: <VI1PR05MB6302188B441F577B0F93FF05F9AC0@VI1PR05MB6302.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1227;
+x-forefront-prvs: 01304918F3
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(396003)(346002)(39840400004)(376002)(136003)(366004)(199004)(189003)(7736002)(61266001)(14444005)(8676002)(6436002)(55446002)(53546011)(81166006)(446003)(256004)(53936002)(386003)(61726006)(476003)(107886003)(54906003)(81156014)(486006)(102836004)(9686003)(5660300002)(6512007)(6486002)(186003)(11346002)(498394004)(26005)(76176011)(52116002)(2906002)(229853002)(305945005)(6246003)(66476007)(478600001)(316002)(6862004)(66946007)(3846002)(6506007)(66446008)(66556008)(86362001)(8936002)(6116002)(64756008)(4326008)(14454004)(44832011)(99286004)(71200400001)(66066001)(71190400001)(95326003)(6636002)(25786009);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB6302;
+ H:VI1PR05MB6544.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: toradex.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: ey1QF/1zYteE4lUHixZPgxN38XXTtnvSQUocYQnpEJNIPqhlf2Otss1/UfDMdNjzVvinS2X7H4FEHgBAu0wZE/7Iy2hF67RkDIcgkml5x3Y6UibWSIbf2Msd/mOGjd5kQtCDWreToqwiPxK5MLtHPzJPSVCaJHhnzIu+tKmoToqOHTiR26X86IEbj0BC+x3GRl5HQhgc1xjyAYNv+TyxUznZDVTXM7ke2P6jL3FgmKYbsanfIlzwcrgemjVWhcuOgDg11V+CisOTjMp3B7XK4mEIemCTixXFNP4KPjwtU+k4arxW9U9EicjIMENZpWecC0HlKCZDIr9khjV+visKOqdNcEif7A2kEyg5WjPFy0EjF3h0JKZMg/nMzXrTs4bvJPn8WtsqZGLXKBgyMxjvifEQRH0vG59b4iXBEk1iu+Y=
+x-ms-exchange-transport-forked: True
+Content-ID: <AD923A0843BFDF43AE34C7C81C95479F@eurprd05.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6adbec8e4757f3b6c9f47135544a0302f8e7c55c.1565369764.git.robin.murphy@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6bff1f34-9128-4fc4-4216-08d7216f5d18
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Aug 2019 10:57:28.5080 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 7ll6ZvcPD2CpQSbqZ5fiV6q7OiZhe/77wQRkg0C+Us8xnwqpH8RtHV5I+Djbm5P+9XJlMmbqkoNFexK8L6bA4tbcq6JAEgZI9l2qZ4RxXgo=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB6302
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_035626_343598_76E88003 
-X-CRM114-Status: GOOD (  18.93  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190815_035731_983159_4BF9F6D8 
+X-CRM114-Status: GOOD (  18.99  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.2.90 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -65,7 +124,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,112 +135,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robdclark@gmail.com, joro@8bytes.org, bjorn.andersson@linaro.org,
- iommu@lists.linux-foundation.org, vivek.gautam@codeaurora.org,
- gregory.clement@bootlin.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ =?utf-8?B?TWljaGFsIFZva8OhxI0=?= <michal.vokac@ysoft.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stefan@agner.ch" <stefan@agner.ch>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Max Krummenacher <max.krummenacher@toradex.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 06:07:52PM +0100, Robin Murphy wrote:
-> Allocating and initialising a context for a domain is another point
-> where certain implementations are known to want special behaviour.
-> Currently the other half of the Cavium workaround comes into play here,
-> so let's finish the job to get the whole thing right out of the way.
-> 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+On Mon, Aug 12, 2019 at 5:23 PM Philippe Schenker
+<philippe.schenker@toradex.com> wrote:
+>
+> This commit adds the touchscreens from Toradex so one can enable it.
+>
+> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
+> Acked-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+
+Reviewed-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+
+>
 > ---
->  drivers/iommu/arm-smmu-impl.c | 39 +++++++++++++++++++++++++--
->  drivers/iommu/arm-smmu.c      | 51 +++++++----------------------------
->  drivers/iommu/arm-smmu.h      | 42 +++++++++++++++++++++++++++--
->  3 files changed, 86 insertions(+), 46 deletions(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu-impl.c b/drivers/iommu/arm-smmu-impl.c
-> index c8904da08354..7a657d47b6ec 100644
-> --- a/drivers/iommu/arm-smmu-impl.c
-> +++ b/drivers/iommu/arm-smmu-impl.c
-> @@ -48,6 +48,12 @@ const struct arm_smmu_impl calxeda_impl = {
+>
+> Changes in v4:
+> - Add Marcel Ziswiler's Ack
+>
+> Changes in v3:
+> - Fix commit title to "...imx6-apalis:..."
+>
+> Changes in v2:
+> - Deleted touchrevolution downstream stuff
+> - Use generic node name
+> - Put a better comment in there
+>
+>  arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts  | 31 +++++++++++++++++++
+>  arch/arm/boot/dts/imx6q-apalis-eval.dts       | 13 ++++++++
+>  arch/arm/boot/dts/imx6q-apalis-ixora-v1.1.dts | 13 ++++++++
+>  arch/arm/boot/dts/imx6q-apalis-ixora.dts      | 13 ++++++++
+>  4 files changed, 70 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts b/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
+> index 9a5d6c94cca4..763fb5e90bd3 100644
+> --- a/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
+> +++ b/arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts
+> @@ -168,6 +168,21 @@
+>  &i2c3 {
+>         status = "okay";
+>
+> +       /*
+> +        * Touchscreen is using SODIMM 28/30, also used for PWM<B>, PWM<C>,
+> +        * aka pwm2, pwm3. so if you enable touchscreen, disable the pwms
+> +        */
+> +       touchscreen@4a {
+> +               compatible = "atmel,maxtouch";
+> +               pinctrl-names = "default";
+> +               pinctrl-0 = <&pinctrl_pcap_1>;
+> +               reg = <0x4a>;
+> +               interrupt-parent = <&gpio1>;
+> +               interrupts = <9 IRQ_TYPE_EDGE_FALLING>;         /* SODIMM 28 */
+> +               reset-gpios = <&gpio2 10 GPIO_ACTIVE_HIGH>;     /* SODIMM 30 */
+> +               status = "disabled";
+> +       };
+> +
+>         /* M41T0M6 real time clock on carrier board */
+>         rtc_i2c: rtc@68 {
+>                 compatible = "st,m41t0";
+> @@ -175,6 +190,22 @@
+>         };
 >  };
->  
->  
-> +struct cavium_smmu {
-> +	struct arm_smmu_device smmu;
-> +	u32 id_base;
+>
+> +&iomuxc {
+> +       pinctrl_pcap_1: pcap-1 {
+> +               fsl,pins = <
+> +                       MX6QDL_PAD_GPIO_9__GPIO1_IO09   0x1b0b0 /* SODIMM 28 */
+> +                       MX6QDL_PAD_SD4_DAT2__GPIO2_IO10 0x1b0b0 /* SODIMM 30 */
+> +               >;
+> +       };
+> +
+> +       pinctrl_mxt_ts: mxt-ts {
+> +               fsl,pins = <
+> +                       MX6QDL_PAD_EIM_CS1__GPIO2_IO24  0x130b0 /* SODIMM 107 */
+> +                       MX6QDL_PAD_SD2_DAT1__GPIO1_IO14 0x130b0 /* SODIMM 106 */
+> +               >;
+> +       };
 > +};
-> +#define to_csmmu(s)	container_of(s, struct cavium_smmu, smmu)
-
-To be honest with you, I'd just use container_of directly for the two
-callsites that need it. "to_csmmu" isn't a great name when we're also got
-the calxeda thing in here.
-
->  static int cavium_cfg_probe(struct arm_smmu_device *smmu)
->  {
->  	static atomic_t context_count = ATOMIC_INIT(0);
-> @@ -56,17 +62,46 @@ static int cavium_cfg_probe(struct arm_smmu_device *smmu)
->  	 * Ensure ASID and VMID allocation is unique across all SMMUs in
->  	 * the system.
->  	 */
-> -	smmu->cavium_id_base = atomic_fetch_add(smmu->num_context_banks,
-> +	to_csmmu(smmu)->id_base = atomic_fetch_add(smmu->num_context_banks,
->  						   &context_count);
->  	dev_notice(smmu->dev, "\tenabling workaround for Cavium erratum 27704\n");
->  
->  	return 0;
->  }
->  
-> +int cavium_init_context(struct arm_smmu_domain *smmu_domain)
-> +{
-> +	u32 id_base = to_csmmu(smmu_domain->smmu)->id_base;
 > +
-> +	if (smmu_domain->stage == ARM_SMMU_DOMAIN_S2)
-> +		smmu_domain->cfg.vmid += id_base;
-> +	else
-> +		smmu_domain->cfg.asid += id_base;
-> +
-> +	return 0;
-> +}
-> +
->  const struct arm_smmu_impl cavium_impl = {
->  	.cfg_probe = cavium_cfg_probe,
-> +	.init_context = cavium_init_context,
+>  &ipu1_di0_disp0 {
+>         remote-endpoint = <&lcd_display_in>;
 >  };
->  
-> +struct arm_smmu_device *cavium_smmu_impl_init(struct arm_smmu_device *smmu)
-> +{
-> +	struct cavium_smmu *csmmu;
+> diff --git a/arch/arm/boot/dts/imx6q-apalis-eval.dts b/arch/arm/boot/dts/imx6q-apalis-eval.dts
+> index 0edd3043d9c1..4665e15b196d 100644
+> --- a/arch/arm/boot/dts/imx6q-apalis-eval.dts
+> +++ b/arch/arm/boot/dts/imx6q-apalis-eval.dts
+> @@ -167,6 +167,19 @@
+>  &i2c1 {
+>         status = "okay";
+>
+> +       /*
+> +        * Touchscreen is using SODIMM 28/30, also used for PWM<B>, PWM<C>,
+> +        * aka pwm2, pwm3. so if you enable touchscreen, disable the pwms
+> +        */
+> +       touchscreen@4a {
+> +               compatible = "atmel,maxtouch";
+> +               reg = <0x4a>;
+> +               interrupt-parent = <&gpio6>;
+> +               interrupts = <10 IRQ_TYPE_EDGE_FALLING>;
+> +               reset-gpios = <&gpio6 9 GPIO_ACTIVE_HIGH>; /* SODIMM 13 */
+> +               status = "disabled";
+> +       };
 > +
-> +	csmmu = devm_kzalloc(smmu->dev, sizeof(*csmmu), GFP_KERNEL);
-> +	if (!csmmu)
-> +		return ERR_PTR(-ENOMEM);
+>         pcie-switch@58 {
+>                 compatible = "plx,pex8605";
+>                 reg = <0x58>;
+> diff --git a/arch/arm/boot/dts/imx6q-apalis-ixora-v1.1.dts b/arch/arm/boot/dts/imx6q-apalis-ixora-v1.1.dts
+> index b94bb687be6b..a3fa04a97d81 100644
+> --- a/arch/arm/boot/dts/imx6q-apalis-ixora-v1.1.dts
+> +++ b/arch/arm/boot/dts/imx6q-apalis-ixora-v1.1.dts
+> @@ -172,6 +172,19 @@
+>  &i2c1 {
+>         status = "okay";
+>
+> +       /*
+> +        * Touchscreen is using SODIMM 28/30, also used for PWM<B>, PWM<C>,
+> +        * aka pwm2, pwm3. so if you enable touchscreen, disable the pwms
+> +        */
+> +       touchscreen@4a {
+> +               compatible = "atmel,maxtouch";
+> +               reg = <0x4a>;
+> +               interrupt-parent = <&gpio6>;
+> +               interrupts = <10 IRQ_TYPE_EDGE_FALLING>;
+> +               reset-gpios = <&gpio6 9 GPIO_ACTIVE_HIGH>; /* SODIMM 13 */
+> +               status = "disabled";
+> +       };
 > +
-> +	csmmu->smmu = *smmu;
-> +	csmmu->smmu.impl = &cavium_impl;
+>         /* M41T0M6 real time clock on carrier board */
+>         rtc_i2c: rtc@68 {
+>                 compatible = "st,m41t0";
+> diff --git a/arch/arm/boot/dts/imx6q-apalis-ixora.dts b/arch/arm/boot/dts/imx6q-apalis-ixora.dts
+> index 302fd6adc8a7..5ba49d0f4880 100644
+> --- a/arch/arm/boot/dts/imx6q-apalis-ixora.dts
+> +++ b/arch/arm/boot/dts/imx6q-apalis-ixora.dts
+> @@ -171,6 +171,19 @@
+>  &i2c1 {
+>         status = "okay";
+>
+> +       /*
+> +        * Touchscreen is using SODIMM 28/30, also used for PWM<B>, PWM<C>,
+> +        * aka pwm2, pwm3. so if you enable touchscreen, disable the pwms
+> +        */
+> +       touchscreen@4a {
+> +               compatible = "atmel,maxtouch";
+> +               reg = <0x4a>;
+> +               interrupt-parent = <&gpio6>;
+> +               interrupts = <10 IRQ_TYPE_EDGE_FALLING>;
+> +               reset-gpios = <&gpio6 9 GPIO_ACTIVE_HIGH>; /* SODIMM 13 */
+> +               status = "disabled";
+> +       };
 > +
-> +	devm_kfree(smmu->dev, smmu);
-> +
-> +	return &csmmu->smmu;
-> +}
-> +
->  
->  #define ARM_MMU500_ACTLR_CPRE		(1 << 1)
->  
-> @@ -121,7 +156,7 @@ struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
->  		smmu->impl = &calxeda_impl;
->  
->  	if (smmu->model == CAVIUM_SMMUV2)
-> -		smmu->impl = &cavium_impl;
-> +		return cavium_smmu_impl_init(smmu);
->  
->  	if (smmu->model == ARM_MMU500)
->  		smmu->impl = &arm_mmu500_impl;
+>         eeprom@50 {
+>                 compatible = "atmel,24c02";
+>                 reg = <0x50>;
+> --
+> 2.22.0
+>
 
-Maybe rework this so we do the calxeda detection first (and return if we
-match), followed by a switch on smmu->model to make it crystal clear that
-we match only one?
 
-Will
+-- 
+Best regards
+Oleksandr Suvorov
 
+Toradex AG
+Altsagenstrasse 5 | 6048 Horw/Luzern | Switzerland | T: +41 41 500
+4800 (main line)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
