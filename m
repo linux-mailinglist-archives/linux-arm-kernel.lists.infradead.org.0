@@ -2,120 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 337E18E5BE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 09:49:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5ADA18E5DE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:00:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GCU0toTXgET/TAfgn9KDUcik4ZuJt8W8UaQJW+RmFHs=; b=OaBkJT+64MdGx2
-	oNMnCsrauXvXQTGeZC9hJvJ/+rn2HUwP6Si5usd/DMh3qgGXWdIEbiV+JrmUspfC7Mj+/Cm/gX5Mi
-	CwISo5mrS8eAsu+AQZFwZWdKKsoSZBZsZR6MZ+te6wFHRDE878LeAlqFrwi/ZOWEV+Xo8VB/Q37w5
-	ZVhzvG9PXdueN5vrBP43bEsMLAEpN9Maoz1TX55g/dXPU3qzXG1KaHalyvSrNdKO2N2VqTry3JZvA
-	CkBZwUfNm8tdkV6uCwrCk8m0amKUp959KWt7rGmzWVxhKBV2AeJBJGYhbJ0isvevPKkeA1hCc9lO1
-	JDjXxMA+/KTydE9Wj6tQ==;
+	List-Owner; bh=++/r/TXkUS/ZKT4bJ4dPj9J7Qq0gePHZm/MdarTFos4=; b=VH65kVGa28ipVO
+	gm6zwLg5aSfgPb8zCEIB5WVu/wnpOKbuIlXGq97wTW3Z8mKzxbULBQyWlO2TI9qg8VxwXvSk0CoN0
+	xrXD6fY3RFtFYFszVgtKs1piPA/wIc1axJqhz9cO6AZcyeLhWLzVVd5vPEy45vWFrR+t0CSQDDV55
+	ktN6VvY1RqMBdMiGZRV+z+4cSjTiojvyAj3UPh6Eq3PRtRGvaPeqe9uAJrhku/4IsVmCbnhvZU0g/
+	pZyNpaTfQq+9MzNcM4yW9Oe4J9x7QEENWYEdhOmASOLXB+Cwvl9Mrbyrm9xTb7PXzCp6bnsk7bbV1
+	rSjzWlqsaSWJ4spt41qA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyAVT-0008E1-LD; Thu, 15 Aug 2019 07:49:11 +0000
-Received: from mail-eopbgr00120.outbound.protection.outlook.com
- ([40.107.0.120] helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1hyAgF-00031c-96; Thu, 15 Aug 2019 08:00:19 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyAVF-0008DU-Ic
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 07:48:58 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WAxsGIhLwqOBqFQaQBX1ZXuk/4mCBsjitcGKEP7hYfN+2VALG7Jim2hUnErXR8AYN0WSW3+7irhDLEIOYzNjuXKb4jlEGe208n8ynqrOZx6/WlGxjGWYT2YPRi03hEzNMWHJp2fgC4opYb5PP10NFVgQb8kXHO4A0gZlrZcdm31Utdwu3QCEr+HWmdn06cZGx0TwWBAsVz5AA4mkrZNJLuzoA2IiSQRQqOO6Za5LhvTYY1MIvod5bf/tgtzceB6ITz83UkRmsxJzH10bQUd9NOvSisgSzQ/58nhKXY9KkMJGhBV6lAePV1UcY6u00aZECUHR60tH0p8sgeYLkdHaXw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=svE1OLS8Z8Pte5T/2AGHzl5MKhKZonv/bSRijTuT4qk=;
- b=KNplypICbK85TyvkZU9TIljSdZnPhaZ7XelBFPrLxaMjjlNTle/xES7C3+/anucqWTyHTLv0Bk20oVygIf2DbIKUs0BXZw8pttPtCIrp5hes6T8iLJ+tmsWb5UJwgGAXOQuQj1qNtXhkT1mqy5T7gZbIoeztg2E6eaD+PbO0rq2eretxRn5Vt6rQDd8vqaFxCLJNAQFKAN76euoLcbActc6v113kZ8+Rgvax8DI47PMQKsXR23SXXsI7aNEjXIpIrMPIXKFpJBAgM+nOln7mdn3vWiL4+jgAaoSUH1j2w8hxNNn62gQ/2BZNALOiMcZKOrJwTrirqkgfvGAven6ufQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
- dkim=pass header.d=toradex.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=svE1OLS8Z8Pte5T/2AGHzl5MKhKZonv/bSRijTuT4qk=;
- b=SZ88vVIuUfcVpJn6M20zdApT8rbfWz5FrSyWjZHEXAQcmsPueIzBRzlUuLz2CeV87Tpavb85acMGSR/igqwPalDX/mfsjFsUCitoiTWTrDc6EBOcwMFHwmYi9rqZlDo8ulxWQGRkCMTIvwbDNnaJ3fcJ8XkOpuHF0Inr11AI0tQ=
-Received: from VI1PR05MB6544.eurprd05.prod.outlook.com (20.179.27.210) by
- VI1PR05MB6253.eurprd05.prod.outlook.com (20.178.205.91) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.16; Thu, 15 Aug 2019 07:48:54 +0000
-Received: from VI1PR05MB6544.eurprd05.prod.outlook.com
- ([fe80::4810:d157:267a:83b9]) by VI1PR05MB6544.eurprd05.prod.outlook.com
- ([fe80::4810:d157:267a:83b9%4]) with mapi id 15.20.2157.022; Thu, 15 Aug 2019
- 07:48:54 +0000
-From: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
-To: Philippe Schenker <philippe.schenker@toradex.com>
-Subject: Re: [PATCH v4 15/21] ARM: dts: imx6ull-colibri: reduce v_batt current
- in power off
-Thread-Topic: [PATCH v4 15/21] ARM: dts: imx6ull-colibri: reduce v_batt
- current in power off
-Thread-Index: AQHVUz3b4dDICZhooUyFMTSvItqHdg==
-Date: Thu, 15 Aug 2019 07:48:54 +0000
-Message-ID: <CAGgjyvHSdFCZOsc+QRFwDRn2w1+oxwXgoAM3fF-Wcqgt6spKFA@mail.gmail.com>
-References: <20190812142105.1995-1-philippe.schenker@toradex.com>
- <20190812142105.1995-16-philippe.schenker@toradex.com>
-In-Reply-To: <20190812142105.1995-16-philippe.schenker@toradex.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM4PR0501CA0044.eurprd05.prod.outlook.com
- (2603:10a6:200:68::12) To VI1PR05MB6544.eurprd05.prod.outlook.com
- (2603:10a6:803:ff::18)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=oleksandr.suvorov@toradex.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-gm-message-state: APjAAAV5PP0Y821iZi/jB7httV+IwKdspdLinevi4OMvZRWvyiJbWo5m
- ZtukEOPhrra4jQ6rupJdEpeK22kngpb6Cy+eBEI=
-x-google-smtp-source: APXvYqw6uTKq7qbmt+Jco9TYFKCTCkllA65ZHuwMsE1yhT6eOr/bX5jDAoOgO6ejXDGoQaXVccdbts3/o9KLMBZHfUw=
-x-received: by 2002:aa7:c899:: with SMTP id p25mr3904868eds.41.1565855333367; 
- Thu, 15 Aug 2019 00:48:53 -0700 (PDT)
-x-gmail-original-message-id: <CAGgjyvHSdFCZOsc+QRFwDRn2w1+oxwXgoAM3fF-Wcqgt6spKFA@mail.gmail.com>
-x-originating-ip: [209.85.208.53]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c392eb83-d1d9-4ac6-eebc-08d72155052e
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:VI1PR05MB6253; 
-x-ms-traffictypediagnostic: VI1PR05MB6253:
-x-microsoft-antispam-prvs: <VI1PR05MB625397A8352B705A647395F6F9AC0@VI1PR05MB6253.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 01304918F3
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(39840400004)(136003)(396003)(376002)(366004)(346002)(189003)(199004)(53546011)(55446002)(386003)(81166006)(81156014)(6506007)(186003)(102836004)(26005)(229853002)(14454004)(86362001)(61726006)(99286004)(6862004)(6486002)(76176011)(52116002)(4326008)(5660300002)(6636002)(107886003)(6246003)(8676002)(478600001)(498394004)(9686003)(6512007)(316002)(6436002)(66066001)(61266001)(95326003)(2906002)(25786009)(54906003)(8936002)(3846002)(6116002)(71200400001)(71190400001)(256004)(44832011)(486006)(53936002)(11346002)(446003)(66476007)(66556008)(66446008)(66946007)(64756008)(7736002)(305945005)(476003)(32563001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB6253;
- H:VI1PR05MB6544.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: toradex.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 7LAbY+1qgr670g0PK27obKXV2fVf+VHOvt398fRvrtlglV6BxhyAlTmRwzO8DqJNAmkeGDKWKghkIq1nXai4e9oUfVM0iDT/cLLgFYPmD9BKpH9aRt66JyxPGocYvc8kRo+jk2Aiv21Ko6HIQcY49w1FNKL6xnKdAxXTrQZySuuhFHjIHfSKHsz4iRpJCZl76kA/YFiapmCAWNjuccH0utR9mhzlQqfV2hLnXVHrO1lRAy0B35gNJ+RHgJ4DP7V0q9Y7Ga6Y2NuQaYrbLOytJv9NxdGDEfDqNOSCE1TRUFd4KxHEZYedc6DlsmOe09QqQLs8n0peKI6FGHrc9UpH4N+IaY1TIJHre39BNp9T+JlfuVjSyUyCz//R1uBEuslmU4/ptgK1g9hb3QxOaK1E+oDVfc7NORdGbLgrWsUda48=
-x-ms-exchange-transport-forked: True
-Content-ID: <8CB5BD0E77A5184FB595F02EBA907202@eurprd05.prod.outlook.com>
+ id 1hyAfv-0002zF-Ag
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:00:01 +0000
+Received: by mail-wm1-x341.google.com with SMTP id f72so539888wmf.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 15 Aug 2019 00:59:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=LV+82vFyg5z4e0teXoGTrMA+EjOg7t6iT9Oj6uw7yPM=;
+ b=tfiL+28tRTegf7fQ7sw0mV4Q7P8lfpj9JtTYtDiukQnb9y9ne3Dulj9KdIlK22ZAse
+ gDt8h/2J05cT9QkpVdi1ow/cuCaEj+8xchRXqxGgxFgjjcqlMgFEBst0g0ctnEKpr0Ir
+ FZpmKJ67PEc+JUsTKgim6NKr8d5S5kAy50YXK6oZE6MhmU0c96bcvJ76Eg7mltpfW42l
+ cavPZ9TxiOZfTdQ+noIZIlQkFFHkb6WyunatIqDRxlJYKhmIvBUOZ9QzY7F3fevEc/gO
+ 9LgACL3Rc2585SCCBxkbC2Q+B0xoIYQF2YrDkVI6uUg/Wr5AISvnu8bfCB+4esQgHkmB
+ dhQQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=LV+82vFyg5z4e0teXoGTrMA+EjOg7t6iT9Oj6uw7yPM=;
+ b=YVewYi10RVJ6FqpGsy780mCeXkTwjjCM7xhS5wqGGPE/xGx+ccCvLPUvFQHz+ygTVJ
+ E4TwzJPSXiFhjsegDT7QWIEvV5A12811FTcxYkbLMWEvqR0psaLkC4zYgS4J9HEhhXKj
+ ZXn7AOXFkW/qaMgdgTA8aD0NgXSTnYzpX/L/5bhuDhFSGEmGNGmyinkBn1q6sNoS6nU9
+ FkuyNQfQ+8dsKKQzb7cunbS/a5xeK36eJ+zpuOsviv0wOTseM20OgmB37NDR0LPaMzHz
+ oBdFXNbOsy2gljMKvb0xvukf97GvmLNbQh2s7UWFoI6JJDefZKhydK2HbybmyNv/pKbx
+ tfHg==
+X-Gm-Message-State: APjAAAUohkQJf7KTlYy+E8Or23HkGsBAI9AZ7ZHbK+zSmOsQIdQ8f/6o
+ tmnSjfdMW9F7kcjj1TEx+xr8ggQeYucIth095TQSyw==
+X-Google-Smtp-Source: APXvYqzLBo2ZOv7jKXJbwzGfJsuorr2WgUfx00oSBYoGRBY8/25lsdYDc63+RPT0JXJUAv73T+AXPvsi+IkUVg6LoYQ=
+X-Received: by 2002:a1c:4b15:: with SMTP id y21mr1429804wma.53.1565855995011; 
+ Thu, 15 Aug 2019 00:59:55 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c392eb83-d1d9-4ac6-eebc-08d72155052e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Aug 2019 07:48:54.0852 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jO9svwoaz6er1g37yimmUI2yyPvOAxlvEQNYexSGdBaORQy8J0cliwJsq59kCRfHW9O7Ga+3In5io2jN/ie1KjhiQ6Bp//fANmBUVbbsARU=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB6253
+References: <20190802053744.5519-1-clin@suse.com>
+ <CAKv+Gu-yaNYsLQOOcr8srW91-nt-w0e+RBqxXGOagiGGT69n1Q@mail.gmail.com>
+In-Reply-To: <CAKv+Gu-yaNYsLQOOcr8srW91-nt-w0e+RBqxXGOagiGGT69n1Q@mail.gmail.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Thu, 15 Aug 2019 10:59:43 +0300
+Message-ID: <CAKv+Gu8uwbY-JtjNbgoyY230X_M6xLchVM3OUg_oNWOJrF=iCg@mail.gmail.com>
+Subject: Re: [PATCH] efi/arm: fix allocation failure when reserving the kernel
+ base
+To: Chester Lin <clin@suse.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_004857_622208_9B1ED027 
-X-CRM114-Status: GOOD (  18.91  )
+X-CRM114-CacheID: sfid-20190815_005959_381890_F8CB9FAE 
+X-CRM114-Status: GOOD (  36.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.120 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -135,92 +93,223 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- =?utf-8?B?TWljaGFsIFZva8OhxI0=?= <michal.vokac@ysoft.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+Cc: Juergen Gross <JGross@suse.com>,
+ "linux-efi@vger.kernel.org" <linux-efi@vger.kernel.org>,
+ "guillaume.gardet@arm.com" <guillaume.gardet@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "stefan@agner.ch" <stefan@agner.ch>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Max Krummenacher <max.krummenacher@toradex.com>,
- Shawn Guo <shawnguo@kernel.org>,
+ "rppt@linux.ibm.com" <rppt@linux.ibm.com>, Joey Lee <JLee@suse.com>,
+ "geert@linux-m68k.org" <geert@linux-m68k.org>,
+ "ren_guo@c-sky.com" <ren_guo@c-sky.com>, Gary Lin <GLin@suse.com>,
+ "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
+ "mingo@kernel.org" <mingo@kernel.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 5:24 PM Philippe Schenker
-<philippe.schenker@toradex.com> wrote:
+On Sun, 4 Aug 2019 at 10:57, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
 >
-> From: Max Krummenacher <max.krummenacher@toradex.com>
+> Hello Chester,
 >
-> Reduce the current drawn from VCC_BATT when the main power on the 3V3
-> pins to the module are switched off.
+> On Fri, 2 Aug 2019 at 08:40, Chester Lin <clin@suse.com> wrote:
+> >
+> > In some cases the arm32 efistub could fail to allocate memory for
+> > uncompressed kernel. For example, we got the following error message when
+> > verifying EFI stub on Raspberry Pi-2 [kernel-5.2.1 + grub-2.04] :
+> >
+> >   EFI stub: Booting Linux Kernel...
+> >   EFI stub: ERROR: Unable to allocate memory for uncompressed kernel.
+> >   EFI stub: ERROR: Failed to relocate kernel
+> >
+> > After checking the EFI memory map we found that the first page [0 - 0xfff]
+> > had been reserved by Raspberry Pi-2's firmware, and the efistub tried to
+> > set the dram base at 0, which was actually in a reserved region.
+> >
 >
-> This switches off SoC internal pull resistors which are provided on the
-> module for TAMPER7 and TAMPER9 SoC pin and switches on a pull down
-> instead of a pullup for the USBC_DET module pin (TAMPER2).
+> This by itself is a violation of the Linux boot protocol for 32-bit
+> ARM when using the decompressor. The decompressor rounds down its own
+> base address to a multiple of 128 MB, and assumes the whole area is
+> available for the decompressed kernel and related data structures.
+> (The first TEXT_OFFSET bytes are no longer used in practice, which is
+> why putting a reserved region of 4 KB bytes works at the moment, but
+> this is fragile). Note that the decompressor does not look at any DT
+> or EFI provided memory maps *at all*.
 >
-> Signed-off-by: Max Krummenacher <max.krummenacher@toradex.com>
-> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
-> Acked-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-
-Reviewed-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
-
->
-> ---
->
-> Changes in v4:
-> - Add Marcel Ziswiler's Ack
->
-> Changes in v3: None
-> Changes in v2: None
->
->  arch/arm/boot/dts/imx6ull-colibri.dtsi | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
->
-> diff --git a/arch/arm/boot/dts/imx6ull-colibri.dtsi b/arch/arm/boot/dts/imx6ull-colibri.dtsi
-> index 1019ce69a242..1f112ec55e5c 100644
-> --- a/arch/arm/boot/dts/imx6ull-colibri.dtsi
-> +++ b/arch/arm/boot/dts/imx6ull-colibri.dtsi
-> @@ -533,19 +533,19 @@
->
->         pinctrl_snvs_ad7879_int: snvs-ad7879-int-grp { /* TOUCH Interrupt */
->                 fsl,pins = <
-> -                       MX6ULL_PAD_SNVS_TAMPER7__GPIO5_IO07     0x1b0b0
-> +                       MX6ULL_PAD_SNVS_TAMPER7__GPIO5_IO07     0x100b0
->                 >;
->         };
->
->         pinctrl_snvs_reg_sd: snvs-reg-sd-grp {
->                 fsl,pins = <
-> -                       MX6ULL_PAD_SNVS_TAMPER9__GPIO5_IO09     0x4001b8b0
-> +                       MX6ULL_PAD_SNVS_TAMPER9__GPIO5_IO09     0x400100b0
->                 >;
->         };
->
->         pinctrl_snvs_usbc_det: snvs-usbc-det-grp {
->                 fsl,pins = <
-> -                       MX6ULL_PAD_SNVS_TAMPER2__GPIO5_IO02     0x1b0b0
-> +                       MX6ULL_PAD_SNVS_TAMPER2__GPIO5_IO02     0x130b0
->                 >;
->         };
->
-> --
-> 2.22.0
+> So unfortunately, this is not something we can fix in the kernel, but
+> we should fix it in the bootloader or in GRUB, so it does not put any
+> reserved regions in the first 128 MB of memory,
 >
 
+OK, perhaps we can fix this by taking TEXT_OFFSET into account. The
+ARM boot protocol docs are unclear about whether this memory should be
+used or not, but it is no longer used for its original purpose (page
+tables), and the RPi loader already keeps data there.
 
---
-Best regards
-Oleksandr Suvorov
+Can you check whether the following patch works for you?
 
-Toradex AG
-Altsagenstrasse 5 | 6048 Horw/Luzern | Switzerland | T: +41 41 500
-4800 (main line)
+diff --git a/drivers/firmware/efi/libstub/Makefile
+b/drivers/firmware/efi/libstub/Makefile
+index 0460c7581220..ee0661ddb25b 100644
+--- a/drivers/firmware/efi/libstub/Makefile
++++ b/drivers/firmware/efi/libstub/Makefile
+@@ -52,6 +52,7 @@ lib-$(CONFIG_EFI_ARMSTUB)     += arm-stub.o fdt.o
+string.o random.o \
+
+ lib-$(CONFIG_ARM)              += arm32-stub.o
+ lib-$(CONFIG_ARM64)            += arm64-stub.o
++CFLAGS_arm32-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
+ CFLAGS_arm64-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
+
+ #
+diff --git a/drivers/firmware/efi/libstub/arm32-stub.c
+b/drivers/firmware/efi/libstub/arm32-stub.c
+index e8f7aefb6813..66ff0c8ec269 100644
+--- a/drivers/firmware/efi/libstub/arm32-stub.c
++++ b/drivers/firmware/efi/libstub/arm32-stub.c
+@@ -204,7 +204,7 @@ efi_status_t
+handle_kernel_image(efi_system_table_t *sys_table,
+         * loaded. These assumptions are made by the decompressor,
+         * before any memory map is available.
+         */
+-       dram_base = round_up(dram_base, SZ_128M);
++       dram_base = round_up(dram_base, SZ_128M) + TEXT_OFFSET;
+
+        status = reserve_kernel_base(sys_table, dram_base, reserve_addr,
+                                     reserve_size);
+
+>
+> >   grub> lsefimmap
+> >   Type      Physical start  - end             #Pages        Size Attributes
+> >   reserved  0000000000000000-0000000000000fff 00000001      4KiB WB
+> >   conv-mem  0000000000001000-0000000007ef5fff 00007ef5 130004KiB WB
+> >   RT-data   0000000007ef6000-0000000007f09fff 00000014     80KiB RT WB
+> >   conv-mem  0000000007f0a000-000000002d871fff 00025968 615840KiB WB
+> >   .....
+> >
+> > To avoid a reserved address, we have to ignore the memory regions which are
+> > marked as EFI_RESERVED_TYPE, and only conventional memory regions can be
+> > chosen. If the region before the kernel base is unaligned, it will be
+> > marked as EFI_RESERVED_TYPE and let kernel ignore it so that memblock_limit
+> > will not be sticked with a very low address such as 0x1000.
+> >
+
+This is a separate issue, so it should be handled in a separate patch.
+
+> > Signed-off-by: Chester Lin <clin@suse.com>
+> > ---
+> >  arch/arm/mm/mmu.c                         |  3 ++
+> >  drivers/firmware/efi/libstub/arm32-stub.c | 43 ++++++++++++++++++-----
+> >  2 files changed, 37 insertions(+), 9 deletions(-)
+> >
+> > diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
+> > index f3ce34113f89..909b11ba48d8 100644
+> > --- a/arch/arm/mm/mmu.c
+> > +++ b/arch/arm/mm/mmu.c
+> > @@ -1184,6 +1184,9 @@ void __init adjust_lowmem_bounds(void)
+> >                 phys_addr_t block_start = reg->base;
+> >                 phys_addr_t block_end = reg->base + reg->size;
+> >
+> > +               if (memblock_is_nomap(reg))
+> > +                       continue;
+> > +
+> >                 if (reg->base < vmalloc_limit) {
+> >                         if (block_end > lowmem_limit)
+> >                                 /*
+> > diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
+> > index e8f7aefb6813..10d33d36df00 100644
+> > --- a/drivers/firmware/efi/libstub/arm32-stub.c
+> > +++ b/drivers/firmware/efi/libstub/arm32-stub.c
+> > @@ -128,7 +128,7 @@ static efi_status_t reserve_kernel_base(efi_system_table_t *sys_table_arg,
+> >
+> >         for (l = 0; l < map_size; l += desc_size) {
+> >                 efi_memory_desc_t *desc;
+> > -               u64 start, end;
+> > +               u64 start, end, spare, kernel_base;
+> >
+> >                 desc = (void *)memory_map + l;
+> >                 start = desc->phys_addr;
+> > @@ -144,27 +144,52 @@ static efi_status_t reserve_kernel_base(efi_system_table_t *sys_table_arg,
+> >                 case EFI_BOOT_SERVICES_DATA:
+> >                         /* Ignore types that are released to the OS anyway */
+> >                         continue;
+> > -
+> > +               case EFI_RESERVED_TYPE:
+> > +                       /* Ignore reserved regions */
+> > +                       continue;
+> >                 case EFI_CONVENTIONAL_MEMORY:
+> >                         /*
+> >                          * Reserve the intersection between this entry and the
+> >                          * region.
+> >                          */
+> >                         start = max(start, (u64)dram_base);
+> > -                       end = min(end, (u64)dram_base + MAX_UNCOMP_KERNEL_SIZE);
+> > +                       kernel_base = round_up(start, PMD_SIZE);
+> > +                       spare = kernel_base - start;
+> > +                       end = min(end, kernel_base + MAX_UNCOMP_KERNEL_SIZE);
+> > +
+> > +                       status = efi_call_early(allocate_pages,
+> > +                                       EFI_ALLOCATE_ADDRESS,
+> > +                                       EFI_LOADER_DATA,
+> > +                                       MAX_UNCOMP_KERNEL_SIZE / EFI_PAGE_SIZE,
+> > +                                       &kernel_base);
+> > +                       if (status != EFI_SUCCESS) {
+> > +                               pr_efi_err(sys_table_arg,
+> > +                                       "reserve_kernel_base: alloc failed.\n");
+> > +                               goto out;
+> > +                       }
+> > +                       *reserve_addr = kernel_base;
+> >
+> > +                       if (!spare)
+> > +                               break;
+> > +                       /*
+> > +                        * If there's a gap between start and kernel_base,
+> > +                        * it needs be reserved so that the memblock_limit
+> > +                        * will not fall on a very low address when running
+> > +                        * adjust_lowmem_bounds(), wchich could eventually
+> > +                        * cause CMA reservation issue.
+> > +                        */
+> >                         status = efi_call_early(allocate_pages,
+> >                                                 EFI_ALLOCATE_ADDRESS,
+> > -                                               EFI_LOADER_DATA,
+> > -                                               (end - start) / EFI_PAGE_SIZE,
+> > +                                               EFI_RESERVED_TYPE,
+> > +                                               spare / EFI_PAGE_SIZE,
+> >                                                 &start);
+> >                         if (status != EFI_SUCCESS) {
+> >                                 pr_efi_err(sys_table_arg,
+> > -                                       "reserve_kernel_base(): alloc failed.\n");
+> > +                                       "reserve spare-region failed\n");
+> >                                 goto out;
+> >                         }
+> > -                       break;
+> >
+> > +                       break;
+> >                 case EFI_LOADER_CODE:
+> >                 case EFI_LOADER_DATA:
+> >                         /*
+> > @@ -220,7 +245,7 @@ efi_status_t handle_kernel_image(efi_system_table_t *sys_table,
+> >         *image_size = image->image_size;
+> >         status = efi_relocate_kernel(sys_table, image_addr, *image_size,
+> >                                      *image_size,
+> > -                                    dram_base + MAX_UNCOMP_KERNEL_SIZE, 0);
+> > +                                    *reserve_addr + MAX_UNCOMP_KERNEL_SIZE, 0);
+> >         if (status != EFI_SUCCESS) {
+> >                 pr_efi_err(sys_table, "Failed to relocate kernel.\n");
+> >                 efi_free(sys_table, *reserve_size, *reserve_addr);
+> > @@ -233,7 +258,7 @@ efi_status_t handle_kernel_image(efi_system_table_t *sys_table,
+> >          * in memory. The kernel determines the base of DRAM from the
+> >          * address at which the zImage is loaded.
+> >          */
+> > -       if (*image_addr + *image_size > dram_base + ZIMAGE_OFFSET_LIMIT) {
+> > +       if (*image_addr + *image_size > *reserve_addr + ZIMAGE_OFFSET_LIMIT) {
+> >                 pr_efi_err(sys_table, "Failed to relocate kernel, no low memory available.\n");
+> >                 efi_free(sys_table, *reserve_size, *reserve_addr);
+> >                 *reserve_size = 0;
+> > --
+> > 2.22.0
+> >
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
