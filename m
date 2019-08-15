@@ -2,87 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CBDE8E519
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 08:57:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89F618E540
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 09:11:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cGIB4PAFFMTZjuSXuIDkqS4XRIqzlv5BuFRMUlD6UI0=; b=eZvT3TQn70ZRLk
-	wc7nsoflt15pNadKdgjyie3i8fHC02iCdmuzDJT1fjX3cAn/KUOHnuyIanDm9kIMRma4ROrolJyXc
-	C8KU+Jecb6WjNnAUVTXdEivXCf7xxxxB+uMWnDhSdVVmrd6F2KsB1Jhc/mjCQa0rvBPLDmPOQbtY3
-	nQtL8oLv79b6GcDU28ct35r1nJ0jiQwLKhUsE0ppoVyWpjAroTMMDGQtF/U7LLfSkdtewrHKZXTTv
-	mivfdxn/ItUFm40wFi3hNXO+GqyBBXRQ9HHnfx3ULik/PchD7RN6EM4EwccShoYH7h1K1DVkNEvqO
-	XxuLXaamEisgis+OViyw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zKevTdbj0OB1bk2h0N47tWXM+Sz5dlXRMk4PektSR6U=; b=W/yNyLWfTrUzxz
+	XonLc2/DEPRh+RwqE5iZVEfJdRb3Rg64HAwJZuylLvx5mIqUyNX20wreQhbRdUtUNiengIX6waUAN
+	S9Sxy2V0yxTUa+Dzm6yr3Wcm4FGoc0YR6nAObdlu6nr7U3n4Lo94TUKDmCb+N8C4BmwxK57ETh3Eq
+	QirV8yBkFY+oo9H4YSHMMd0wJdB2Vbq6Df6aXAwZolc+zKamnpOVxls41I6jgmkzGTTLeX0YLtbt3
+	RIDPEBClSy53yOgog6nlvI7bGRiXX8Yg7awM9WT5xQxWxiSXCRV/RzyD5E435XG3aYyz3/QhoQlZq
+	3IQ5+PZrr5exy9iEJpvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy9hH-0006p8-9Y; Thu, 15 Aug 2019 06:57:19 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hy9v3-0002mw-Q0; Thu, 15 Aug 2019 07:11:33 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy9h2-0006oL-Ov
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 06:57:06 +0000
-Received: by mail-lf1-x144.google.com with SMTP id 62so992574lfa.8
+ id 1hy9uL-0002m7-EL
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 07:10:51 +0000
+Received: by mail-qt1-f193.google.com with SMTP id j15so1376704qtl.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 23:57:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=hgJrNRBNHtDq7sAYiX+DZ8YnHpU34hU1rQmq3ot6dZw=;
- b=j1AnsEePN/KW0HMmaePlAW+4s11k/qV+uDHpT6ndW/2EcKgcI+1xAwgnAGE+sGMsi0
- PYS0ALOF7iV7uqeiZjb3x1be7nTY9RBZ97TC7N5123EIoK0ckxfYcXV5vKd4B47jzDHq
- ra0el1qXOaVWgxtWxtAVJLH5T7cUjpbgvaecqcP/oRpdMAmDDKu0kK+8faTx47F7E50d
- ZL2gybENJ+Zi037ynuCYC4g6uo/QNwDg4+8fByK31BEc+Uux0pO0NHrezjRDjvob8zvS
- s5r1mhvB0xQgT/Aww9Q60RZHy98c4UxiXYrFuRG5k2KUE+u8e3V/4pBtBjU9LsMbOZor
- SIuw==
+ Thu, 15 Aug 2019 00:10:48 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=hgJrNRBNHtDq7sAYiX+DZ8YnHpU34hU1rQmq3ot6dZw=;
- b=nN9OUsTWISs0O14zPsDF/+Voac4nIVv69c7WqNfEoHADZ2YqmdcMaMkaxPO+kX6LYX
- WptElf1z8dkAKFhOPgafGFEcnNTx5+J4Pucse9jSxnFSSxNL0T+qecpKp9iYC/zI1QuU
- iuA3fAaq9XvBaJsKU7VK6fhU27oWGQmMdcN9tt1eSIhHqMZy/ewWAJNC5UTH3WZ3vJJ4
- HkS+VKU659bl2gmkdJHHwsH3rYSk+84EUpJawfjX9vptCf59r5YR6dHZvooCTyViLDqp
- H5eYTmhwKlTvOFtwCGp84HA+t4gLsDHgUdVLtrcxvcmjHHVo7fzBETzqUTTKXXc9J6BH
- l2iA==
-X-Gm-Message-State: APjAAAVxdwhYEQNZ+/dDfaU67Mhv5vX3TijPZMYw8u+6tsVQf1NeW8jf
- SSj4elgT+vOFGT8SA3XcdZtpjQ==
-X-Google-Smtp-Source: APXvYqzfCzhF11z2F4XsMUzO2mumPQq0sKbZSqSSnFlIg89QB+a7wZox9HdKZUoyffMFbn6H6j1c3A==
-X-Received: by 2002:ac2:44ce:: with SMTP id d14mr1626809lfm.143.1565852222061; 
- Wed, 14 Aug 2019 23:57:02 -0700 (PDT)
-Received: from jax (h-84-105.A175.priv.bahnhof.se. [79.136.84.105])
- by smtp.gmail.com with ESMTPSA id i17sm303452lfp.94.2019.08.14.23.57.01
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 14 Aug 2019 23:57:01 -0700 (PDT)
-Date: Thu, 15 Aug 2019 08:56:59 +0200
-From: Jens Wiklander <jens.wiklander@linaro.org>
-To: arm-soc <arm@kernel.org>, soc@kernel.org
-Subject: [GIT PULL] tee subsys for v5.4
-Message-ID: <20190815065659.GA13498@jax>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+XZYmbsnbr0sSwIKTeFZGEhcqBxG1btN9f5DRyi29Vc=;
+ b=c5p4xhjMUtJxQa3RMlqt7LlLg3aG1oDH6ANNn8UErLUevuuASRP3Y3vUykC5j0oWvd
+ iWx3o6w7oBT4PqmSXVKFVOmE1atUu3LoWLj5CR5+QQoHAO/D0ANUU/0ywrd/MCFhkf4L
+ rlSWOT3EbvCEYF+EreOsmnDDL2DXKkvWI+bTf0p/IZ0NrRWYrNcBLrdivkhZQcV9o0wY
+ gVYwOvKUn/c/NYBjB7VzC/kBJVTdOq7TCMnViJ0sqep7OK4u8KmNsEw+wDyjGpuZSv2l
+ eqzFLKrJARAghlzelOUtvoFQh2OM7E03RdLsk45g1+VXdlyddFa0I/QgtBQJkYvPVWPR
+ O+ew==
+X-Gm-Message-State: APjAAAVnsoUng+9BGrjRVr7w2NPHq3rpJSnzhgYqQm0R7Y+5/abwwYud
+ pZOnlSpIIjMrxxxt142w2eBjGrhRfbz1kKkUoYw=
+X-Google-Smtp-Source: APXvYqzes2xrmqdbClCROX/Q+PfszKVeI1DW0ZX+TIylT9deTu0v9IMyny/8McBlEj0PozeCVXwlC25l9yO+FLH9dOM=
+X-Received: by 2002:ac8:117:: with SMTP id e23mr2752639qtg.18.1565853047353;
+ Thu, 15 Aug 2019 00:10:47 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20190808212234.2213262-1-arnd@arndb.de>
+ <20190808214347.2865294-1-arnd@arndb.de>
+ <20190808214347.2865294-2-arnd@arndb.de>
+ <20190814211002.GA1952@darkstar.musicnaut.iki.fi>
+In-Reply-To: <20190814211002.GA1952@darkstar.musicnaut.iki.fi>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 15 Aug 2019 09:10:31 +0200
+Message-ID: <CAK8P3a36dztkctUD2jZND9gR7zo2joZu4PPzVozDJCi9gLcmkg@mail.gmail.com>
+Subject: Re: [PATCH 21/22] ARM: omap1: use common clk framework
+To: Aaro Koskinen <aaro.koskinen@iki.fi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_235704_844853_8ABD3109 
-X-CRM114-Status: GOOD (  11.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190815_001049_529090_6276F6C0 
+X-CRM114-Status: GOOD (  24.09  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ no trust [209.85.160.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,43 +85,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+Cc: Paul Walmsley <paul@pwsan.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Tony Lindgren <tony@atomide.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ linux-omap <linux-omap@vger.kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello arm-soc maintainers,
+On Wed, Aug 14, 2019 at 11:10 PM Aaro Koskinen <aaro.koskinen@iki.fi> wrote:
+>
+> Hi,
+>
+> On Thu, Aug 08, 2019 at 11:43:39PM +0200, Arnd Bergmann wrote:
+> > The omap1 clock driver now uses types and calling conventions
+> > that are compatible with the common clk core.
+> >
+> > Turn on CONFIG_COMMON_CLK and remove all the code that is
+> > now duplicated.
+> >
+> > Note: if this previous steps didn't already break it, this one
+> > most likely will, because the interfaces are very likely to
+> > have different semantics.
+>
+> QEMU SX1 board works up to this patch (the I/O virtual address change
+> included). With this patch, it seems to fail to allocate memory during
+> omap1_init_early() (the log is a bit messy as I extracted it using QEMU
+> memory dumping):
 
-Please pull this OP-TEE driver patch. It adds a call to might_sleep()
-during RPC in the OP-TEE driver in order to be more friendly with
-CONFIG_PREEMPT_VOLUNTARY.
+That sounds pretty good, I definitely did not expect this patch
+to work without first dealing with a few bugs, and it it did not break
+earlier, I'm willing to call that success ;-)
 
-Thanks,
-Jens
+Unfortunately, doing it in qemu does not guarantee that the clocks
+are set up right at this point: if any of the clocks are disabled when
+they should not be, qemu won't care as much as real hardware  would.
 
-The following changes since commit 0ecfebd2b52404ae0c54a878c872bb93363ada36:
+> swapper: page allocation failure: order:0, mode:0x0(), nodemask=(null)
+> CPU: 0 PID: 0 Comm: swapper Not tainted 5.3.0-rc4-sx1-los_80efa++ #1
+> Hardware name: OMAP310 based Siemens SX1
+> [<c000dc44>] (unwind_backtrace) from [<c000cb00>] (show_stack+0x10/0x18)
+> [<c000cb00>] (show_stack) from [<c0172ba8>] (dump_stack+0x18/0x24)
+> [<c0172ba8>] (dump_stack) from [<c00844e8>] (warn_alloc+0x90/0x140)
+> [<c00844e8>] (warn_alloc) from [<c0084dcc>] (__alloc_pages_nodemask+0x7a4/0x9cc)
+> [<c0084dcc>] (__alloc_pages_nodemask) from [<c008df24>] (slob_new_pages.constpro
+> p.2+0x10/0x3c)
+> [<c008df24>] (slob_new_pages.constprop.2) from [<c008e208>] (slob_alloc.constprop.1+0xe4/0x1e8)
+> [<c008e208>] (slob_alloc.constprop.1) from [<c008e344>] (__kmalloc+0x38/0xb0)
+> [<c008e344>] (__kmalloc) from [<c0126514>] (__clk_register+0x20/0x62c)
+> [<c0126514>] (__clk_register) from [<c01f6614>] (omap1_clk_init+0x88/0x220)
+> [<c01f6614>] (omap1_clk_init) from [<c01f5820>] (omap1_init_early+0x20/0x30)
+> [<c01f5820>] (omap1_init_early) from [<c01f09e8>] (start_kernel+0x48/0x408)
+> [<c01f09e8>] (start_kernel) from [<00000000>] (0x0)
+> Clocks: ARM_SYSST: 0x003a DPLL_CTL: 0x2002 ARM_CKCTL: 0x3000
+> Clocking rate (xtal/DPLL1/MPU): 12.0/12.0/0.0 MHz
 
-  Linux 5.2 (2019-07-07 15:41:56 -0700)
+Ok, so here the problem is that we call the omap1_clk_init() function from
+setup_arch(), which is before we can even allocate memory with kmalloc.
 
-are available in the Git repository at:
+Most other machines do it from init_time(), which comes after the initialization
+of the memory allocator.
 
-  git://git.linaro.org/people/jens.wiklander/linux-tee.git tags/tee-optee-for-5.4
+Something like this would be needed:
 
-for you to fetch changes up to 9f02b8f61f29f4518581770d57bfffe99b1ea599:
+diff --git a/arch/arm/mach-omap1/io.c b/arch/arm/mach-omap1/io.c
+index b0465a956ea8..17ba8dfd8e19 100644
+--- a/arch/arm/mach-omap1/io.c
++++ b/arch/arm/mach-omap1/io.c
+@@ -125,9 +125,6 @@ void __init omap1_init_early(void)
+        omap_writew(0x0, MPU_PUBLIC_TIPB_CNTL);
+        omap_writew(0x0, MPU_PRIVATE_TIPB_CNTL);
 
-  tee: optee: add might_sleep for RPC requests (2019-07-08 22:38:56 +0200)
+-       /* Must init clocks early to assure that timer interrupt works
+-        */
+-       omap1_clk_init();
+        omap1_mux_init();
+ }
 
-----------------------------------------------------------------
-Add might_sleep() in OP-TEE RPC requests
+diff --git a/arch/arm/mach-omap1/time.c b/arch/arm/mach-omap1/time.c
+index 7cc1a968230e..4e5ddd1db429 100644
+--- a/arch/arm/mach-omap1/time.c
++++ b/arch/arm/mach-omap1/time.c
+@@ -228,6 +228,8 @@ static inline void omap_mpu_timer_init(void)
+  */
+ void __init omap1_timer_init(void)
+ {
++       omap1_clk_init();
++
+        if (omap_32k_timer_init() != 0)
+                omap_mpu_timer_init();
+ }
 
-----------------------------------------------------------------
-Rouven Czerwinski (1):
-      tee: optee: add might_sleep for RPC requests
+but the removed comment up there makes me suspect that it introduces
+a different issue.
 
- drivers/tee/optee/call.c | 1 +
- 1 file changed, 1 insertion(+)
+> "8<--- cut here ---
+> "Unable to handle kernel NULL pointer dereference at virtual address 00000018
+> "pgd = (ptrval)
+> "[00000018] *pgd=00000000
+> Internal error: Oops: 5 [#1] ARM
+> CPU: 0 PID: 0 Comm: swapper Not tainted 5.3.0-rc4-sx1-los_80efa++ #1
+> Hardware name: OMAP310 based Siemens SX1
+> PC is at clk_hw_get_parent+0x4/0x14
+> LR is at omap1_clk_enable+0xc/0xcc
+> OMAP310 based Siemens SX1
+> [    0.000000]  free:0 free_pcp:0 free_cma:0
+> pc : [<c0126cd0>]    lr : [<c00128d4>]    psr: 600001d3
+> sp : c03aff88  ip : 00000000  fp : 00000000
+> r10: 00000001  r9 : 54029252  r8 : 10000100
+> r7 : c03b1000  r6 : 00002002  r5 : 0000003a  r4 : c03b5444
+> r3 : 00000000  r2 : c03b9818  r1 : ff03ce08  r0 : c03b5444
+> Flags: nZCv  IRQs off  FIQs off  Mode SVC_32  ISA ARM  Segment user
+> Control: 0000317f  Table: 10004000  DAC: 00000055
+> Process swapper (pid: 0, stack limit = 0x(ptrval))
+> Stack: (0xc03aff88 to 0xc03b0000)
+> ff80:                   c03b5438 0000003a 00002002 c01f6734 00000000 00000057
+> ffa0: 0000313d c01f5820 00000000 c01f09e8 00000000 00000000 00000000 00000000
+> ffc0: 00000000 00000000 00000000 c0201a38 00000000 c01f0330 00000057 0000313d
+> ffe0: 00000265 10000100 54029252 0000317f 00000000 00000000 00000000 00000000
+> [<c0126cd0>] (clk_hw_get_parent) from [<c00128d4>] (omap1_clk_enable+0xc/0xcc)
+> [<c00128d4>] (omap1_clk_enable) from [<c01f6734>] (omap1_clk_init+0x1a8/0x220)
+> [<c01f6734>] (omap1_clk_init) from [<c01f5820>] (omap1_init_early+0x20/0x30)
+> [<c01f5820>] (omap1_init_early) from [<c01f09e8>] (start_kernel+0x48/0x408)
+> [<c01f09e8>] (start_kernel) from [<00000000>] (0x0)
+
+clk_hw->core is NULL here, presumably as a result of the first issue.
+
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
