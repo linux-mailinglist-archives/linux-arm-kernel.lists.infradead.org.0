@@ -2,47 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82E698EFAC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 17:44:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 972178EFAD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 17:45:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3i7//P+lEAuG58hkuFj5dC0Gz6fnyI2q0lkaFmYtXI8=; b=T7W0uU/EslJREy
-	2pusoj1lefbpOprqcV2zqUopTavHPUQPZ1zmRm3sA80+zF7iHAkh09kHt236z8GKnntrTtQCk8DMR
-	cafm0qOjfrQKYz6nI7xNMux61gzHA9WQO3KOCTUTH6/BqyaV56BcRr41NtY8pypwSPNnmITq7D0Xu
-	x+Mv+/VZuaJfYgAYTv8hoWw6JCkSapiQaqhDWc3Di4kGl6MAako6WxIw+l2prz18lwyy21OAtV2As
-	rY43j/8pI3eWfR//4OMd1yBDe2MZv0Y+h//1av/LAi5h93va/Dylq4JQy+Bl0SzM2CJb8AO4WLG+b
-	d7fpIZiknl+ySaP4TPMg==;
+	List-Owner; bh=W6QQIalUewqO+m7YOyM54WFsSU9jtJ+d3ZcBicODJog=; b=BphiQhY/E9CzPP
+	yYeHL4zLEFXHtUVC02HERhvj98esYqxdBJduYWumAj7+IV2n/T+4jl8mEUoXWf2jnSEyYHf9YwRVr
+	/FzVSiMgUWWWiNpiMGRFWkW5Be5PXenfH/26oVGS+ahhM9QB6QqH+6n2iVjEnhH05AeGUb6BI0XEy
+	VzT7CGPAaOKU7IH6nPZ1XMy9FArDur9mBKFNEamL1nVkKQFx2bIi9Ruw7N8kKXwLKY/8aaWEu8Kj2
+	np870x4yAxNSNjrVgkeuuQY0ttcrAtmfR6qm0EmKIgI7pMT+ei4dwtP8HJg3SqxJbrR6FVgGfg8uZ
+	kqVpQMQLPXt3Epwl9K9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyHvi-0002Wr-Uv; Thu, 15 Aug 2019 15:44:47 +0000
+	id 1hyHw1-0002vz-QK; Thu, 15 Aug 2019 15:45:05 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hyHv9-0002HQ-IJ
+ id 1hyHvA-0002Hg-8H
  for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 15:44:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C2835360;
- Thu, 15 Aug 2019 08:44:09 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B08A21570;
+ Thu, 15 Aug 2019 08:44:11 -0700 (PDT)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1A9763F706;
- Thu, 15 Aug 2019 08:44:07 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 032D33F706;
+ Thu, 15 Aug 2019 08:44:09 -0700 (PDT)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-mm@kvack.org
-Subject: [PATCH v8 1/5] mm: untag user pointers in mmap/munmap/mremap/brk
-Date: Thu, 15 Aug 2019 16:43:59 +0100
-Message-Id: <20190815154403.16473-2-catalin.marinas@arm.com>
+Subject: [PATCH v8 2/5] arm64: Tighten the PR_{SET,
+ GET}_TAGGED_ADDR_CTRL prctl() unused arguments
+Date: Thu, 15 Aug 2019 16:44:00 +0100
+Message-Id: <20190815154403.16473-3-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0.rc0
 In-Reply-To: <20190815154403.16473-1-catalin.marinas@arm.com>
 References: <20190815154403.16473-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_084411_647741_720151A7 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20190815_084412_331212_0F714B3B 
+X-CRM114-Status: UNSURE (   8.05  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,65 +75,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There isn't a good reason to differentiate between the user address
-space layout modification syscalls and the other memory
-permission/attributes ones (e.g. mprotect, madvise) w.r.t. the tagged
-address ABI. Untag the user addresses on entry to these functions.
+Require that arg{3,4,5} of the PR_{SET,GET}_TAGGED_ADDR_CTRL prctl and
+arg2 of the PR_GET_TAGGED_ADDR_CTRL prctl() are zero rather than ignored
+for future extensions.
 
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- mm/mmap.c   | 5 +++++
- mm/mremap.c | 6 +-----
- 2 files changed, 6 insertions(+), 5 deletions(-)
+ kernel/sys.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/mm/mmap.c b/mm/mmap.c
-index 7e8c3e8ae75f..b766b633b7ae 100644
---- a/mm/mmap.c
-+++ b/mm/mmap.c
-@@ -201,6 +201,8 @@ SYSCALL_DEFINE1(brk, unsigned long, brk)
- 	bool downgraded = false;
- 	LIST_HEAD(uf);
- 
-+	brk = untagged_addr(brk);
-+
- 	if (down_write_killable(&mm->mmap_sem))
- 		return -EINTR;
- 
-@@ -1573,6 +1575,8 @@ unsigned long ksys_mmap_pgoff(unsigned long addr, unsigned long len,
- 	struct file *file = NULL;
- 	unsigned long retval;
- 
-+	addr = untagged_addr(addr);
-+
- 	if (!(flags & MAP_ANONYMOUS)) {
- 		audit_mmap_fd(fd, flags);
- 		file = fget(fd);
-@@ -2874,6 +2878,7 @@ EXPORT_SYMBOL(vm_munmap);
- 
- SYSCALL_DEFINE2(munmap, unsigned long, addr, size_t, len)
- {
-+	addr = untagged_addr(addr);
- 	profile_munmap(addr);
- 	return __vm_munmap(addr, len, true);
- }
-diff --git a/mm/mremap.c b/mm/mremap.c
-index 64c9a3b8be0a..1fc8a29fbe3f 100644
---- a/mm/mremap.c
-+++ b/mm/mremap.c
-@@ -606,12 +606,8 @@ SYSCALL_DEFINE5(mremap, unsigned long, addr, unsigned long, old_len,
- 	LIST_HEAD(uf_unmap_early);
- 	LIST_HEAD(uf_unmap);
- 
--	/*
--	 * Architectures may interpret the tag passed to mmap as a background
--	 * colour for the corresponding vma. For mremap we don't allow tagged
--	 * new_addr to preserve similar behaviour to mmap.
--	 */
- 	addr = untagged_addr(addr);
-+	new_addr = untagged_addr(new_addr);
- 
- 	if (flags & ~(MREMAP_FIXED | MREMAP_MAYMOVE))
- 		return ret;
+diff --git a/kernel/sys.c b/kernel/sys.c
+index c6c4d5358bd3..ec48396b4943 100644
+--- a/kernel/sys.c
++++ b/kernel/sys.c
+@@ -2499,9 +2499,13 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
+ 		error = PAC_RESET_KEYS(me, arg2);
+ 		break;
+ 	case PR_SET_TAGGED_ADDR_CTRL:
++		if (arg3 || arg4 || arg5)
++			return -EINVAL;
+ 		error = SET_TAGGED_ADDR_CTRL(arg2);
+ 		break;
+ 	case PR_GET_TAGGED_ADDR_CTRL:
++		if (arg2 || arg3 || arg4 || arg5)
++			return -EINVAL;
+ 		error = GET_TAGGED_ADDR_CTRL();
+ 		break;
+ 	default:
 
 _______________________________________________
 linux-arm-kernel mailing list
