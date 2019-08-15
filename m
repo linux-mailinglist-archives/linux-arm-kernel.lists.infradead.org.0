@@ -2,72 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26BF68E89C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 11:52:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82E8F8E8AA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 11:57:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c4/0fIPUJRP9UISyTbbRLbVMTblDjMTIJILBVBX7Rew=; b=J1Q1mtLATTmi5l
-	8qK3Qc/PeVG4/SAybFkNKWYY3UY1Yn8cXpFqsr8F3RsOmDHg09s+DrmYmhXh/j90ANhennr/23p7B
-	6nl6EgnqUM8zS3DP/6TGAsvtvG8WBnRRRI2C6lwsC9a7Oj9BU9FjlwQIfDJQFSUyhnyW80iJ5g731
-	1Bw3b9HZGsmdEmAgOkzlXCxPSqfsxrDU7iyIZeGeKxFfHS4vAxkHN8nAjnWteqsGcP5qapx55YaQA
-	4oxmIuHEmtSNHso4iAm0koaa5djvwDdYpmH01G16KyzVPCH6yQ1GuJ/9ZXAAuz9YNYKiRTKHdr3nV
-	BcgvKkkR7o7CgeX9ZAJg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=6nm3x/kEE0ywJzJbRwxxEAO8up0+4fvOO2rVc59jZzs=; b=rEk
+	s/EX1tVPLHTimAYJuxcp570V6L1c7NNjvGy253P2QgJIdY4PEA4cs8TlFmLsmelmI8c8hsmkTcqyI
+	PkjoZPEV0oeNxdhbE8F9nAd3p24u0tZfUy+t+FZwlhnk3TvQqWx3vp9uM8RzqDuEmdP2kSew6X0C9
+	ii725uUQD34U4yqs7TZr/wpsxIrRjR0PF+ntSfEc6GerDj+6MWR1j417TLpMOrtoWXZBPbxikvDmb
+	O/UsKZRG3qhLOigzlbsi/he7xuTy7GB/wl7Yj3e76BVgvq+BPWsKYg7FIK6m02/mmp9EAHaloEmVk
+	ACFxJG/1ZMawA6ImeCswX1rJPEPzqiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyCQB-0000A6-Fd; Thu, 15 Aug 2019 09:51:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyCPv-00008p-Oq; Thu, 15 Aug 2019 09:51:37 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6AD79206C1;
- Thu, 15 Aug 2019 09:51:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565862691;
- bh=a1hqZBHdq1hu1xUpLskbyQKgoPJV36S4RRERlFP5ysc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XiXltRI2jc9WC/RckSTqTgumGsudQCuUvuAzQGuVxcu3CzTMInr6pbBJWo21250U/
- /f5wg7TLzsV31LzRoaI17ge5Q22WeYksihXQd3IrqkRPRUqqnHvk7Q5QMDnMC4+1Ny
- 4Xac+mCJhBX5nO3/MAPTN6llyO4DShnxedjl7Ee4=
-Date: Thu, 15 Aug 2019 10:51:24 +0100
-From: Will Deacon <will@kernel.org>
-To: Yong Wu <yong.wu@mediatek.com>
-Subject: Re: [PATCH v9 08/21] iommu/io-pgtable-arm-v7s: Extend MediaTek 4GB
- Mode
-Message-ID: <20190815095123.rzgtpklvhtjlqir4@willie-the-truck>
-References: <1565423901-17008-1-git-send-email-yong.wu@mediatek.com>
- <1565423901-17008-9-git-send-email-yong.wu@mediatek.com>
- <20190814144059.ruyc45yoqkwpbuga@willie-the-truck>
- <1565858869.12818.51.camel@mhfsdcap03>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1565858869.12818.51.camel@mhfsdcap03>
-User-Agent: NeoMutt/20170113 (1.7.2)
+	id 1hyCV5-00026G-Qc; Thu, 15 Aug 2019 09:56:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hyCUq-00025N-57
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 09:56:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B5B4F28;
+ Thu, 15 Aug 2019 02:56:35 -0700 (PDT)
+Received: from e121566-lin.cambridge.arm.com (e121566-lin.cambridge.arm.com
+ [10.1.196.217])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5F25D3F706;
+ Thu, 15 Aug 2019 02:56:34 -0700 (PDT)
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+Subject: [PATCH] KVM: arm/arm64: vgic: Make function comments match function
+ declarations
+Date: Thu, 15 Aug 2019 10:56:22 +0100
+Message-Id: <1565862982-9787-1-git-send-email-alexandru.elisei@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_025135_851302_0E80AE54 
-X-CRM114-Status: GOOD (  40.90  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190815_025640_245792_BD1E86E5 
+X-CRM114-Status: GOOD (  10.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,186 +59,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream@mediatek.com, chao.hao@mediatek.com,
- Joerg Roedel <joro@8bytes.org>, linux-kernel@vger.kernel.org,
- Evan Green <evgreen@chromium.org>, Tomasz Figa <tfiga@google.com>,
- iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- ming-fan.chen@mediatek.com, anan.sun@mediatek.com,
- Robin Murphy <robin.murphy@arm.com>, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: suzuki.poulose@arm.com, maz@kernel.org, eric.auger@redhat.com,
+ julien.grall@arm.com, james.morse@arm.com, andre.przywara@arm.com,
+ julien.thierry.kdev@gmail.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 04:47:49PM +0800, Yong Wu wrote:
-> On Wed, 2019-08-14 at 15:41 +0100, Will Deacon wrote:
-> > On Sat, Aug 10, 2019 at 03:58:08PM +0800, Yong Wu wrote:
-> > > MediaTek extend the arm v7s descriptor to support the dram over 4GB.
-> > > 
-> > > In the mt2712 and mt8173, it's called "4GB mode", the physical address
-> > > is from 0x4000_0000 to 0x1_3fff_ffff, but from EMI point of view, it
-> > > is remapped to high address from 0x1_0000_0000 to 0x1_ffff_ffff, the
-> > > bit32 is always enabled. thus, in the M4U, we always enable the bit9
-> > > for all PTEs which means to enable bit32 of physical address. Here is
-> > > the detailed remap relationship in the "4GB mode":
-> > > CPU PA         ->    HW PA
-> > > 0x4000_0000          0x1_4000_0000 (Add bit32)
-> > > 0x8000_0000          0x1_8000_0000 ...
-> > > 0xc000_0000          0x1_c000_0000 ...
-> > > 0x1_0000_0000        0x1_0000_0000 (No change)
-> > 
-> > So in this example, there are no PAs below 0x4000_0000 yet you later
-> > add code to deal with that:
-> > 
-> > > +	/* Workaround for MTK 4GB Mode: Add BIT32 only when PA < 0x4000_0000.*/
-> > > +	if (cfg->oas == ARM_V7S_MTK_4GB_OAS && paddr < 0x40000000UL)
-> > > +		paddr |= BIT_ULL(32);
-> > 
-> > Why? Mainline currently doesn't do anything like this for the "4gb mode"
-> > support as far as I can tell. In fact, we currently unconditionally set
-> > bit 32 in the physical address returned by iova_to_phys() which wouldn't
-> > match your CPU PAs listed above, so I'm confused about how this is supposed
-> > to work.
-> 
-> Actually current mainline have a bug for this. So I tried to use another
-> special patch[1] for it in v8.
+Since commit 503a62862e8f ("KVM: arm/arm64: vgic: Rely on the GIC driver to
+parse the firmware tables"), the vgic_v{2,3}_probe functions stopped using
+a DT node. Commit 909777324588 ("KVM: arm/arm64: vgic-new: vgic_init:
+implement kvm_vgic_hyp_init") changed the functions again, and now they
+require exactly one argument, a struct gic_kvm_info populated by the GIC
+driver. Unfortunately the comments regressed and state that a DT node is
+used instead. Change the function comments to reflect the current
+prototypes.
 
-If you're fixing a bug in mainline, I'd prefer to see that as a separate
-patch.
+Signed-off-by: Alexandru Elisei <alexandru.elisei@arm.com>
+---
+ virt/kvm/arm/vgic/vgic-v2.c | 7 ++++---
+ virt/kvm/arm/vgic/vgic-v3.c | 7 ++++---
+ 2 files changed, 8 insertions(+), 6 deletions(-)
 
-> But the issue is not critical since MediaTek multimedia consumer(v4l2
-> and drm) don't call iommu_iova_to_phys currently.
-> 
-> > 
-> > The way I would like this quirk to work is that the io-pgtable code
-> > basically sets bit 9 in the pte when bit 32 is set in the physical address,
-> > and sets bit 4 in the pte when bit 33 is set in the physical address. It
-> > would then do the opposite when converting a pte to a physical address.
-> > 
-> > That way, your driver can call the page table code directly with the high
-> > addresses and we don't have to do any manual offsetting or range checking
-> > in the page table code.
-> 
-> In this case, the mt8183 can work successfully while the "4gb
-> mode"(mt8173/mt2712) can not.
-> 
-> In the "4gb mode", As the remap relationship above, we should always add
-> bit32 in pte as we did in [2]. and need add bit32 in the
-> "iova_to_phys"(Not always add.). That means the "4gb mode" has a special
-> flow:
-> a. Always add bit32 in paddr_to_iopte.
-> b. Add bit32 only when PA < 0x40000000 in iopte_to_paddr.
+diff --git a/virt/kvm/arm/vgic/vgic-v2.c b/virt/kvm/arm/vgic/vgic-v2.c
+index 96aab77d0471..27b1ddf71aa0 100644
+--- a/virt/kvm/arm/vgic/vgic-v2.c
++++ b/virt/kvm/arm/vgic/vgic-v2.c
+@@ -354,10 +354,11 @@ int vgic_v2_map_resources(struct kvm *kvm)
+ DEFINE_STATIC_KEY_FALSE(vgic_v2_cpuif_trap);
+ 
+ /**
+- * vgic_v2_probe - probe for a GICv2 compatible interrupt controller in DT
+- * @node:	pointer to the DT node
++ * vgic_v2_probe - probe for a VGICv2 compatible interrupt controller
++ * @info:	pointer to the GIC description
+  *
+- * Returns 0 if a GICv2 has been found, returns an error code otherwise
++ * Returns 0 if the VGICv2 has been probed successfully, returns an error code
++ * otherwise
+  */
+ int vgic_v2_probe(const struct gic_kvm_info *info)
+ {
+diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
+index 0c653a1e5215..4874f3266bea 100644
+--- a/virt/kvm/arm/vgic/vgic-v3.c
++++ b/virt/kvm/arm/vgic/vgic-v3.c
+@@ -570,10 +570,11 @@ static int __init early_gicv4_enable(char *buf)
+ early_param("kvm-arm.vgic_v4_enable", early_gicv4_enable);
+ 
+ /**
+- * vgic_v3_probe - probe for a GICv3 compatible interrupt controller in DT
+- * @node:	pointer to the DT node
++ * vgic_v3_probe - probe for a VGICv3 compatible interrupt controller
++ * @info:	pointer to the GIC description
+  *
+- * Returns 0 if a GICv3 has been found, returns an error code otherwise
++ * Returns 0 if the VGICv3 has been probed successfully, returns an error code
++ * otherwise
+  */
+ int vgic_v3_probe(const struct gic_kvm_info *info)
+ {
+-- 
+2.7.4
 
-I think this is probably at the heart of my misunderstanding. What is so
-special about PAs (is this HW PA or CPU PA?) below 0x40000000? Is this RAM
-or something else?
-
-> > Please can you explain to me why the diff below doesn't work on top of
-> > this series?
-> 
-> The diff below is just I did in v8[3]. The different is that I move the
-> "4gb mode" special flow in the mtk_iommu.c in v8, the code is like
-> [4]below. When I sent v9, I found that I can distinguish the "4gb mode"
-> with "oas == 33" in v7s. then I can "simply" add the 4gb special flow[5]
-> based on your diff.
-> 
-> 
-> >  I'm happy to chat on IRC if you think it would be easier,
-> > because I have a horrible feeling that we've been talking past each other
-> > and I'd like to see this support merged for 5.4.
-> 
-> Thanks very much for your view, I'm sorry that I don't have IRC. I will
-> send the next version quickly if we have a conclusion here. Then Which
-> way is better? If you'd like keep the pagetable code clean, I will add
-> the "4gb mode" special flow into mtk_iommu.c.
-
-I mean, we could even talk on the phone if necessary because I can't accept
-this code unless I understand how it works!
-
-To be blunt, I'd like to avoid the io-pgtable changes looking different to
-what I suggested:
-
-> > diff --git a/drivers/iommu/io-pgtable-arm-v7s.c b/drivers/iommu/io-pgtable-arm-v7s.c
-> > index ab12ef5f8b03..d8d84617c822 100644
-> > --- a/drivers/iommu/io-pgtable-arm-v7s.c
-> > +++ b/drivers/iommu/io-pgtable-arm-v7s.c
-> > @@ -184,7 +184,7 @@ static arm_v7s_iopte paddr_to_iopte(phys_addr_t paddr, int lvl,
-> >  	arm_v7s_iopte pte = paddr & ARM_V7S_LVL_MASK(lvl);
-> >  
-> >  	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT) {
-> > -		if ((paddr & BIT_ULL(32)) || cfg->oas == ARM_V7S_MTK_4GB_OAS)
-> > +		if (paddr & BIT_ULL(32))
-> >  			pte |= ARM_V7S_ATTR_MTK_PA_BIT32;
-> >  		if (paddr & BIT_ULL(33))
-> >  			pte |= ARM_V7S_ATTR_MTK_PA_BIT33;
-> > @@ -206,17 +206,14 @@ static phys_addr_t iopte_to_paddr(arm_v7s_iopte pte, int lvl,
-> >  		mask = ARM_V7S_LVL_MASK(lvl);
-> >  
-> >  	paddr = pte & mask;
-> > -	if (cfg->oas == 32 || !(cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT))
-> > -		return paddr;
-> >  
-> > -	if (pte & ARM_V7S_ATTR_MTK_PA_BIT33)
-> > -		paddr |= BIT_ULL(33);
-> > +	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT) {
-> > +		if (pte & ARM_V7S_ATTR_MTK_PA_BIT32)
-> > +			paddr |= BIT_ULL(32);
-> > +		if (pte & ARM_V7S_ATTR_MTK_PA_BIT33)
-> > +			paddr |= BIT_ULL(33);
-> > +	}
-> >  
-> > -	/* Workaround for MTK 4GB Mode: Add BIT32 only when PA < 0x4000_0000.*/
-> > -	if (cfg->oas == ARM_V7S_MTK_4GB_OAS && paddr < 0x40000000UL)
-> > -		paddr |= BIT_ULL(32);
-> > -	else if (pte & ARM_V7S_ATTR_MTK_PA_BIT32)
-> > -		paddr |= BIT_ULL(32);
-> >  	return paddr;
-> >  }
-
-so anything else should ideally go in the driver. The change above gives
-the driver control over bits 4 and 9 in the pte, which I hope should be
-sufficient. That said, yet another thing I don't understand is how the
-IOMMU page table walker views physical addresses :/
-
-Anyway, in your diff here...
-
-> [5]:
-> =========================================================
-> diff --git a/drivers/iommu/io-pgtable-arm-v7s.c
-> b/drivers/iommu/io-pgtable-arm-v7s.c
-> index 78fd11e..8e974a5 100644
-> --- a/drivers/iommu/io-pgtable-arm-v7s.c
-> +++ b/drivers/iommu/io-pgtable-arm-v7s.c
-> @@ -184,7 +184,7 @@ static arm_v7s_iopte paddr_to_iopte(phys_addr_t
-> paddr, int lvl,
->  	arm_v7s_iopte pte = paddr & ARM_V7S_LVL_MASK(lvl);
->  
->  	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB) {
-> -		if (paddr & BIT_ULL(32))
-> +		if (paddr & BIT_ULL(32) || cfg->oas == 33)
->  			pte |= ARM_V7S_ATTR_MTK_PA_BIT32;
-
-... I'd like to drop the oas check, because the driver should be passing
-in physical addresses with bit 32 set in this case, and...
-
->  		if (paddr & BIT_ULL(33))
->  			pte |= ARM_V7S_ATTR_MTK_PA_BIT33;
-> @@ -207,7 +207,9 @@ static phys_addr_t iopte_to_paddr(arm_v7s_iopte pte,
-> int lvl,
->  
->  	paddr = pte & mask;
->  	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB) {
-> -		if (pte & ARM_V7S_ATTR_MTK_PA_BIT32)
-> +		if (cfg->oas == 33 && paddr < 0x40000000UL)
-> +			paddr |= BIT_ULL(32);
-
-... here I simply don't understand the significance of 0x40000000.
-
-Will
 
 _______________________________________________
 linux-arm-kernel mailing list
