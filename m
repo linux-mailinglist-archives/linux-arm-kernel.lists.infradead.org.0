@@ -2,86 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F40B8E5F3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:11:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B9018E5FE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 10:13:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QFFXidAAt+kx1ovzEkeS3O9eEa6jtzA3xwvBdoit2Pw=; b=A+PzALIFUf0loH
-	TqS/FvTs980+AueO05rkp1NINWIIMDCfYObmiGtyAZowsSSfQR4XJd2KbAPGYr7zGQWB72S5ptr+3
-	BrFtVVLrts7uAaUF258vzBC7/XWvvGTwO53UndApjZ91fli0Vj1i62MkR3Hq24y50dHrZWnNOVt1k
-	QJk1A4YHnM2x4A42vGKXAY3X/d5Bwuu8DDW8KjB+bLp+LbP8vlWpU0UVA2Qd8Qih0sMO2/C2Bk0js
-	kDhk4OWDg+c7sEcpevlyyJYZnna3C8waNU6EqzU9NzGIBLPGdoz4r2VdA0d0DnvYT792r+C8eFwDB
-	sfviEve4epFKB/U6dGCA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=tmjt4Y3FZuY85C4Ot4t0mTUCzRfAOt1JStPz9L8WiQU=; b=H/I
+	Q372ISfWugxQ8b9IwcyBFM/TtxUWfhM/IHbTd1EGVr2M7kSW/N5/Y4jB5dPg9VuUoAImCBqkrPNiV
+	Tl2cZVlDQ2zX0bzbvRBmYXXKgI0iLhL0i5sVbwrljZozALy3wHzy/5aXv6WQPMbqVev5Xj1bYHSba
+	I3aU3iERpN8+Pg3NAExxPe0vlJTOqp7KBbGiPB6EiJiC1zvZmZzQ3uSzoVvEbT39lGJTiT0htZE2x
+	cSE8rDfOOe9kS53aRkVvCU6dnph/audStmQXXTzT07MfvIFU7PTTMLvbLvSYaTLeKse7Q1MXgvTj1
+	0m+xWdXnk7AIPibEnE82peuR686egmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyAqo-0007Nd-K5; Thu, 15 Aug 2019 08:11:14 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hyAt5-00081Y-F6; Thu, 15 Aug 2019 08:13:35 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyAqa-0007ND-VT
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 08:11:02 +0000
-Received: by mail-lj1-x241.google.com with SMTP id x4so1517109ljj.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 15 Aug 2019 01:10:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=8ebZA4/36rTxk/8zZnnGDTrAggtxlqN1B3xHCFNWBeg=;
- b=Lhpl/4CEOGdOAaUNVwfrFhEAvqDwbWuwmeCdhVlfhEZ4/EggH2nWpO8VyBdh8S3QLQ
- OXSjlscVTA0qX+4UtPYPdHZjLezQc1CMoaTTVEu/eEyI/1PY5ti4rNjbAsJDxz0U6m7Y
- rjkKnJ6lf4g2Q3tSWZxq3+ho22XDefURjkSV/EoglAd+kIXMVbqLGLj5VifjQ7udmyD/
- 3lGQdWxU4oagagD4Sia2hN4cadPANHBfSlqe61KnNKLr97BDHpR9kBE1zDPYM2593NWe
- 9/gq0LzoU/SBXdrT+TCXSCGU756D2pyjwdjOPkwqWBlcqHAAOQK1KCn8eunhI1124UQJ
- XUVg==
+ id 1hyAso-00080U-V9; Thu, 15 Aug 2019 08:13:20 +0000
+Received: by mail-pf1-x444.google.com with SMTP id g2so1016821pfq.0;
+ Thu, 15 Aug 2019 01:13:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:from:to:cc:subject:date:message-id;
+ bh=wLap0Zy+ci+CJDpmUhxVRnZnzzmq1nqEQXj4qyza1yk=;
+ b=Um9fSX9fZr03aGVR9n/2L2BbbywQnKhRAh4QrS5sagL2hVLXlD30pHM3LuzL1BoIn5
+ YCrlu6fk5e5H6Lheqo7PNWlDFf6NLgVhZdsYutua0Ut3l68Z79njZbJFc2JHVVZYWGBy
+ /t6FZeHHUFhkK6e4+44v6dEliHtgZoLYzWfsa1bmGMaO42B62KyF5R5+eYRQpGPJyjJJ
+ jRSkPUvCfTYGWCkW/P1N/xf4Nq+cHCVXScD+coc2PtThtU+itgJWTF/Yf1AhDDzyF4j5
+ tdaLxbEzEeohf1Fx+5bxzYU0kl/WD0nk04iUR3HxlzL0b6SDcpY0IFuCcJ2ddLqvD5l3
+ cOFg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8ebZA4/36rTxk/8zZnnGDTrAggtxlqN1B3xHCFNWBeg=;
- b=Yl255wX4j60S3FY5qbzj36IcaQ5g2yUu+kCisNqpArEleXr6pre1uWO+E8cbfKRzaR
- PxvgK6XIba8SQGDIUimbq40r+CzJx6Lyf+rNOwUihViHjc6kI6EyAf9mAkq27jFZm1xh
- KngZGuLXBF8ROceWnI8vhFhdLbDPoQQbTy5sTiZYnlxhOB2p2BqPCSioJGtYTd01rUQO
- wbGExPcVvDQZbiFpF+ewFDgMXV79R25UVuMajSlLTuwiK1d315T3IU+vmsqA6inf3yLe
- tY4nhM7UXxs8eFyEkdimhK1ltbCnBLdt+f+28g+ewX7OLFaoBcGwASH3MhPQtshtgIce
- UNJQ==
-X-Gm-Message-State: APjAAAXdReWWbCXilb33MQet/YMGYuJz6uOo6Blrn70gk9ZTD6YqS7vj
- WG3k9hm+EODy3ihiD6aiD5+Ut50va5YqTKk+AcI9dA==
-X-Google-Smtp-Source: APXvYqw6nViHWAm98n06wtqmOkZygSxdicck4ta/i4U+OsaEfdC8l5tbW8rAx23zMzUJLlAWup0/GRhMtmPLdCvoD50=
-X-Received: by 2002:a2e:9f0f:: with SMTP id u15mr2017156ljk.54.1565856658315; 
- Thu, 15 Aug 2019 01:10:58 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190805101607.29811-1-miquel.raynal@bootlin.com>
- <CACRpkdar5jE116CcywYxLR9JKWunRusJjNw7f3C0SFK4-4+dNQ@mail.gmail.com>
- <CACRpkdbEw5eCKb=nTCK4wuMsPEadEQdGx62cGRhk7F78p5X2CA@mail.gmail.com>
- <20190814143457.664b04c8@windsurf.home>
-In-Reply-To: <20190814143457.664b04c8@windsurf.home>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 15 Aug 2019 10:10:46 +0200
-Message-ID: <CACRpkdY-AtaS67u4s58PifFtP5C7xp4P15J+hW_Dba=Gb4rhSQ@mail.gmail.com>
-Subject: Re: [PATCH 0/3] CP115 pinctrl support
-To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id;
+ bh=wLap0Zy+ci+CJDpmUhxVRnZnzzmq1nqEQXj4qyza1yk=;
+ b=hU8ZQEV78/z2LaZBXWgCQzZIxJMC682ytxbD9K1hFdgzxJyLAIeLtlrJoeKRQg7lwv
+ F/2o7ryrktWU7176Ua6D1AnMH8W1UtpbULrIEOk5auDBGY3NOm1HTn6jBzmm7zGAiXew
+ IEfcxYkV257zVgWh6DYgIvGAa0ciJv3cXgxdISD0WOGNZZvgaNUGbWs9V1T6mMCZCXbi
+ 8RnLFa94c4SozRtJSjmO90QANXDwXgvrZ2Ip2MUn4qV5iNRK1fTbuu/PUwQG+fcn81l5
+ W2SkMQ3ZJnUjZ/hRCJ3UJGTRK+mXEkPhlIrdSMdq0+1sJgL+QVcNGavDDUGngUgXRD4K
+ wQ7Q==
+X-Gm-Message-State: APjAAAX/X+Mn0IY2PLQCcGjEno0+ZUkaIWu7pzL3LkUT4dz0jatgQ/tN
+ IbegcHD4XYSAbz7m2d+fSz0=
+X-Google-Smtp-Source: APXvYqxhSkqTwo55kHvwOxePBRXqzxO0xgOzn16baZ6D28WYL4ASlLZ/C50ueZXOn/sduDjLE5annQ==
+X-Received: by 2002:a17:90a:35e3:: with SMTP id
+ r90mr1195041pjb.34.1565856798082; 
+ Thu, 15 Aug 2019 01:13:18 -0700 (PDT)
+Received: from localhost.localdomain ([103.29.142.67])
+ by smtp.gmail.com with ESMTPSA id h17sm2084786pfo.24.2019.08.15.01.13.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 15 Aug 2019 01:13:17 -0700 (PDT)
+From: Kever Yang <kever.yang@rock-chips.com>
+To: heiko@sntech.de
+Subject: [PATCH v2] arm: dts: rockchip: fix vcc_host_5v regulator for usb3 host
+Date: Thu, 15 Aug 2019 16:12:52 +0800
+Message-Id: <20190815081252.27405-1-kever.yang@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_011101_044720_F82DBB50 
-X-CRM114-Status: GOOD (  18.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190815_011319_030144_34ECC551 
+X-CRM114-Status: GOOD (  10.48  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (kever.yang[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,55 +94,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Yan Markman <ymarkman@marvell.com>,
- Antoine Tenart <antoine.tenart@bootlin.com>,
- Grzegorz Jaszczyk <jaz@semihalf.com>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Miquel Raynal <miquel.raynal@bootlin.com>,
- Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jonas Karlman <jonas@kwiboo.se>, Katsuhiro Suzuki <katsuhiro@katsuster.net>,
+ Kever Yang <kever.yang@rock-chips.com>, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Tomohiro Mayama <parly-gh@iris.mystia.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 2:35 PM Thomas Petazzoni
-<thomas.petazzoni@bootlin.com> wrote:
-> On Wed, 14 Aug 2019 10:12:36 +0200
-> Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> > On Wed, Aug 7, 2019 at 2:47 PM Linus Walleij <linus.walleij@linaro.org> wrote:
-> > > On Mon, Aug 5, 2019 at 12:16 PM Miquel Raynal <miquel.raynal@bootlin.com> wrote:
-> > >
-> > > > This is the second batch of changes (out of three) to support the brand
-> > > > new Marvell CN9130 SoCs which are made of one AP807 and one CP115.
-> > > >
-> > > > We add a new compatible (and the relevant support in the pinctrl
-> > > > driver) before the addition in batch 3/3 of CN9130 SoCs DT using it.
-> > >
-> > > Waiting for review from the Mvebu maintainers.
-> > >
-> > > If it takes too long just nudge me, it looks good to me.
-> >
-> > So if the other MVEBU maintainers don't really look much at MVEBU
-> > patches anymore while Miquel is working a lot on the platform,
-> > what about listing Miquel as maintainer under the SoC entry, hm?
->
-> Miquel sent his series on August 5, i.e 9 days ago. We're in August, in
-> the middle of the summer vacations for many people. While it is nice to
-> see subsystem maintainers who want to get code merged in a timely
-> fashion, I think it is probably wise to give it some more time for
-> review in this period of the year.
+According to rock64 schemetic V2 and V3, the VCC_HOST_5V output is
+controlled by USB_20_HOST_DRV, which is the same as VCC_HOST1_5V.
 
-OK then maybe I am a bit impatient.
+Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
+---
 
-Yours,
-Linus Walleij
+Changes in v2:
+- remove enable-active-high property
+
+ arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 11 ++---------
+ 1 file changed, 2 insertions(+), 9 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+index 7cfd5ca6cc85..62936b432f9a 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+@@ -34,10 +34,9 @@
+ 
+ 	vcc_host_5v: vcc-host-5v-regulator {
+ 		compatible = "regulator-fixed";
+-		enable-active-high;
+-		gpio = <&gpio0 RK_PA0 GPIO_ACTIVE_HIGH>;
++		gpio = <&gpio0 RK_PA2 GPIO_ACTIVE_LOW>;
+ 		pinctrl-names = "default";
+-		pinctrl-0 = <&usb30_host_drv>;
++		pinctrl-0 = <&usb20_host_drv>;
+ 		regulator-name = "vcc_host_5v";
+ 		regulator-always-on;
+ 		regulator-boot-on;
+@@ -320,12 +319,6 @@
+ 			rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
+ 		};
+ 	};
+-
+-	usb3 {
+-		usb30_host_drv: usb30-host-drv {
+-			rockchip,pins = <0 RK_PA0 RK_FUNC_GPIO &pcfg_pull_none>;
+-		};
+-	};
+ };
+ 
+ &sdmmc {
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
