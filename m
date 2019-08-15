@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3BB08E4C2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 08:06:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C79738E4C4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 08:07:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Fc+gFdUDNnPbw+uvyrFleK5KlHAerFJjFklGc5Ub8e8=; b=moT1SWdQBtri1s
-	xfbgcgVjGTdDbEK2gW3VacK6Xh482sM1iHDIZSKKjqUq4GVUCp67pN5o2SCvbeWpZnTnqWVRPBPTP
-	xr0N8x9lO5PuCXFcu5v8AUfCJGnjxuIUNoEgNi5H4JkoaqLuG7yzUs836pL2EBEK8wleDVFIqby3X
-	gvM6sJninpbHQbCZZ4O98ZBgkRyqxfajh0+n1+9xhgcCMw4akdpC3ZDuhpMaKk1KBEYIYDgz7I1f5
-	WMY+Q7OWle1FIu0zLOUGAC9gle2cXTSyHf1lZZXCg5wJRINOeJXaOiDPfQwXYjhtsyHyUv3M53glY
-	YY9VnUxsavvEMUELnrHQ==;
+	List-Owner; bh=aGeMHNSREJ4oWm1xLHZjw5whxpfEYeEeI/focfH0j3M=; b=Zwb3bglehBVAy5
+	vzT8BzLmhPqf9cZLSe8eITcECEUYSQ4ak6bM4GMKYIDapw2xAFI0v4EfokENEg6qsy/5JWJ9kxxMW
+	IoBNv/Nvv7mkdJpD3B3odqn93m43vNjWzVgM+iHlN21+eyzLlLecJu+b8tqxjvU5qXGibNB02T568
+	ybWyNDSuVoibsbkGWOJUUVEqD5MiVH7Kcy/MltWaqDKc8JGKdR3n1QQGci/Mli2Zi8eFLNKi5uinc
+	KBQM75iFYohjylhU+QLdvHa0g6WHWnj7oHwvwVWkbyLUO/x3iYPcpXX8H34f8EbCFk3Me3CeeVVw+
+	14x5mG3ocR273jVUYVdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy8uI-00076H-Vt; Thu, 15 Aug 2019 06:06:43 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hy8vK-0007Nd-V1; Thu, 15 Aug 2019 06:07:47 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy8u0-00074c-VV
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 06:06:26 +0000
-Received: by mail-pg1-x544.google.com with SMTP id x15so865157pgg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 14 Aug 2019 23:06:24 -0700 (PDT)
+ id 1hy8v6-0007NF-Rb; Thu, 15 Aug 2019 06:07:34 +0000
+Received: by mail-pf1-x441.google.com with SMTP id d85so868553pfd.2;
+ Wed, 14 Aug 2019 23:07:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=IWP/C/XpjQhJDAx2QHm1UDwbKPSNG33jAiOfZIHArMw=;
- b=ta+mnThUrSgw4PJu9B1bI/erSr+RFYpPGO/FcdAk2Y1C87+F1jr+hjOb37wXGBB5I4
- QG2PirON/lA1Fi1LUXZFmmzgJZftvnEkWDWyv6SsuI9m53Lt8PY268xzIZ0uQD1Q/Okf
- Y14nXreXD1kJQ3ICkN4HmTPIYCbiwEA0OnaUN9etLN9HMaHrTQ/W5UNWOpOwNEdJc8vV
- Qo8Rn+d0cH1XngoVUCY33JcKNpGfSN9/A8MCJjJ82SrmftLMLjkFAzu8SV1dUvUVRj6V
- bPyX8f+e8YB3C4f8EThbKazbR4InCuGL6DHhYTdG6AfAuYaWLlOcGu20hn+PsH4eZyND
- Ro2g==
+ bh=nbRwOXKFE5eNws370RDclsbMmRDAT//9YPbiestE4wY=;
+ b=fHZf9rFi4VtCsvNnlPfpJU5CPwx0kwigmDhl8xEjJO35UUyrzL2YW/yFsJQM0gWBh0
+ ZDfNDOGR7gBPz3s55URjfWVMpWU4LW4qtnw8bUPowVARninQAoZAXbNXUoj1oYWqFqZc
+ wmmveYzzU9+iuM/AoH0XjYrO+leCe/5+Bfx0Eh2ux5iMCr+18bvc7SSxDPxYYAF2rTuc
+ 2AntRLN7LnRJlXz1etFemwFZr+CyHAp8PUNDPuXoEgd1bXhOHcyFkW7RRoGdOTV7Ne1M
+ rY7jUeq2MZt18TDWJqbiz724gQuK2d4TCZKGQqqGWeSS0y9KGEqOGTgB2pnzcs8ssv5B
+ DUVg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=IWP/C/XpjQhJDAx2QHm1UDwbKPSNG33jAiOfZIHArMw=;
- b=er4DXtWiPf87bEd9Bevu4/x9iZBYO/P7QQaxErMmciPpj8hn9BHZSjFpKdid8/XLJQ
- RfvnSBX/97KYPHo8LlRB5f03fEfYGRqSGYaMzMpjJKWAa1+BRN2CuTaK41Uk7RsOMvD/
- ijHzVCV7D6EnF8Q1/lwuQCpIl8MVgNu6oiQ9Z9wkqddG0YcBvlv0MP4jV8EyEjt/gFgN
- yQ9kwgS6Sf9duRWVtpQGl26nHZUo9oY/4wD9IbVKZ+MPo8PMywkLGMcIHqMEGBHbgHks
- R5wnPGIMhrv+Glu+MXCCAQXOTeRciPPtKiWoJp/JFd/3dLQRpSnXSvvJ5Ab2j8/BfTmr
- sjCA==
-X-Gm-Message-State: APjAAAWC03Nd+g3ORhpak6zIW1sVhxOT3Y5UPztjmaHqgIoGlrJbpGpE
- 6K+7QbUyQlKv+ctah8OAfoc=
-X-Google-Smtp-Source: APXvYqxTYYMswK13ErwYCDDOlLX/KNuxx4uj1nuebSYRyIorlOmqQpwOmMfKl+Go7/pr6OEwiqq+FQ==
-X-Received: by 2002:a17:90a:3aaf:: with SMTP id
- b44mr808587pjc.87.1565849184305; 
- Wed, 14 Aug 2019 23:06:24 -0700 (PDT)
+ bh=nbRwOXKFE5eNws370RDclsbMmRDAT//9YPbiestE4wY=;
+ b=heXdVsiTbrr4wpnxyWMCBM+uEhbygazOQuc8FUgfNBPJ6zkkZ2+HG8Znk48L8ARgQ7
+ bcTGhUE6Gqir+65Pfmq7xO7ep5bTMAAW5KKEFuWqTSmJ2bm+B58GJLaG6Yck8Bxtq40/
+ LUP9spAAr3GA3fT4UO76oC8ZsSdwlp7DIU/pD2sjIB6HDZs1xGdtVpjmGnjuNidk+tvc
+ DKLVT5BeWPmScnq0Y4ZAr0Gx29e3L9G8Elgze1XlPuHOr07JIHlhUy6aIaUCA5JzQhwT
+ tacr0MsRT9iuZx80t1DYAnbni6dyMPVIEBMP1HA8vKnBJIbQQCQejb4BTM6F8Z2amzha
+ njRA==
+X-Gm-Message-State: APjAAAXMBQ3sUm5tDvBIIIg9BTFIxiyX2s12gx/HNE/HYhJoJvmkS2n5
+ l0vcWgb+LCDWVDw1z0dz0sWNTZoZ
+X-Google-Smtp-Source: APXvYqwLBY2ssKw0AGZ1KHz50LA6yvlcIAp8rgJGJ4bXPVBr6cKJvtCFsO3ksoIC+G2zfvbfYXb+CA==
+X-Received: by 2002:a63:5945:: with SMTP id j5mr2276566pgm.452.1565849252354; 
+ Wed, 14 Aug 2019 23:07:32 -0700 (PDT)
 Received: from localhost.localdomain ([110.225.3.176])
- by smtp.gmail.com with ESMTPSA id i9sm411521pjj.2.2019.08.14.23.06.21
+ by smtp.gmail.com with ESMTPSA id p4sm92648pjr.14.2019.08.14.23.07.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 14 Aug 2019 23:06:23 -0700 (PDT)
+ Wed, 14 Aug 2019 23:07:31 -0700 (PDT)
 From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: patrice.chotard@st.com, linus.walleij@linaro.org,
- linux-arm-kernel@lists.infradead.org, linux-gpio@vger.kernel.org
-Subject: [PATCH] pinctrl: st: Add of_node_put() before return
-Date: Thu, 15 Aug 2019 11:36:09 +0530
-Message-Id: <20190815060609.3056-1-nishkadg.linux@gmail.com>
+To: khilman@baylibre.com, linus.walleij@linaro.org,
+ linux-arm-kernel@lists.infradead.org, linux-gpio@vger.kernel.org,
+ linux-amlogic@lists.infradead.org
+Subject: [PATCH] pinctrl: meson: meson: Add of_node_put() before return
+Date: Thu, 15 Aug 2019 11:37:18 +0530
+Message-Id: <20190815060718.3286-1-nishkadg.linux@gmail.com>
 X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_230625_149714_3D6FC2E3 
-X-CRM114-Status: GOOD (  11.29  )
+X-CRM114-CacheID: sfid-20190814_230733_035174_E130221F 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (nishkadg.linux[at]gmail.com)
@@ -106,51 +105,26 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Each iteration of for_each_child_of_node puts the previous node, but in
 the case of a return from the middle of the loop, there is no put, thus
-causing a memory leak. Hence add an of_node_put before the return in
-three places.
+causing a memory leak. Hence add an of_node_put before the return.
 Issue found with Coccinelle.
 
 Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- drivers/pinctrl/pinctrl-st.c | 9 +++++++--
- 1 file changed, 7 insertions(+), 2 deletions(-)
+ drivers/pinctrl/meson/pinctrl-meson.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/pinctrl/pinctrl-st.c b/drivers/pinctrl/pinctrl-st.c
-index b9688ea548da..e788c7495ec7 100644
---- a/drivers/pinctrl/pinctrl-st.c
-+++ b/drivers/pinctrl/pinctrl-st.c
-@@ -1262,8 +1262,10 @@ static int st_pctl_parse_functions(struct device_node *np,
- 		grp = &info->groups[*grp_index];
- 		*grp_index += 1;
- 		ret = st_pctl_dt_parse_groups(child, grp, info, i++);
--		if (ret)
-+		if (ret) {
-+			of_node_put(child);
- 			return ret;
-+		}
- 	}
- 	dev_info(info->dev, "Function[%d\t name:%s,\tgroups:%d]\n",
- 				index, func->name, func->ngroups);
-@@ -1623,8 +1625,10 @@ static int st_pctl_probe_dt(struct platform_device *pdev,
- 		if (of_property_read_bool(child, "gpio-controller")) {
- 			const char *bank_name = NULL;
- 			ret = st_gpiolib_register_bank(info, bank, child);
--			if (ret)
-+			if (ret) {
-+				of_node_put(child);
- 				return ret;
-+			}
- 
- 			k = info->banks[bank].range.pin_base;
- 			bank_name = info->banks[bank].range.name;
-@@ -1641,6 +1645,7 @@ static int st_pctl_probe_dt(struct platform_device *pdev,
- 							i++, &grp_index);
- 			if (ret) {
- 				dev_err(&pdev->dev, "No functions found.\n");
-+				of_node_put(child);
- 				return ret;
- 			}
+diff --git a/drivers/pinctrl/meson/pinctrl-meson.c b/drivers/pinctrl/meson/pinctrl-meson.c
+index 596786926209..8bba9d053d9f 100644
+--- a/drivers/pinctrl/meson/pinctrl-meson.c
++++ b/drivers/pinctrl/meson/pinctrl-meson.c
+@@ -651,6 +651,7 @@ static int meson_pinctrl_parse_dt(struct meson_pinctrl *pc,
+ 			continue;
+ 		if (gpio_np) {
+ 			dev_err(pc->dev, "multiple gpio nodes\n");
++			of_node_put(np);
+ 			return -EINVAL;
  		}
+ 		gpio_np = np;
 -- 
 2.19.1
 
