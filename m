@@ -2,65 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CA2D8EB72
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 14:22:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 540AB8EB83
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 14:26:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rT3HoW9oXJhXfvTWaLvziLa6unQU3fqxVz9U1atjwnE=; b=MYwco816QOfYOx
-	3OfJoUDj4vQX/TVDQcRlwJuHcVNkUebaJ+N0s/91p/uJdQv3XOdjNkvR6FfBft9o4q+twLMHarGDa
-	azdNPcPcOczSBx17kYfdXIam0aaH36mUPfPYuHkNkpEw/5oRJf+XQWLyJ49qXKPm6ss9U6Ii4ps/8
-	SjXEYv3aCO1r0fIZAjIer5wdrDK4tQ5wdf/nbp/tuys/q48DFdQM+3+dEFmp9cVV+xyD9wVi0QCuI
-	YuLkF+7F2j7nHy2Kjh/CiXdm4dT+5cEbbEZ9uemHswUtOMy7mrJS3Bpt7fSgnsD9qVjD77LDV1Qlg
-	inM5TDa2AxG1++wwH5rQ==;
+	List-Owner; bh=CYLlyYpH8unY9iohYRfcfylas08x6stCQT/hn1jcdyw=; b=NH7lf5E7UHGIHY
+	3EjjtgHEJnSEwGWNHksK+XBpjrJA1A2oTqsLwSQYWSulmC65zLzL+DFrwRC3jIwDG7PDzhVQfUT44
+	g1MdRchJKXDPYCB72FScetgcuO9e9VssWJRLScPu1RVz+SsbvWJZ0aQDwMXOEzrUh8OwPQVWhjAry
+	uvl9xQ6ajAdHcWcsJpFZrX5lBTXR73EhAj18+eDDvczTU+OSV24vF6xC2uqxxaGFTtizshy0d3RGm
+	9jce+Sdaw26zBMgqH2ShJod3GnCPqtvytOYd7wWNd0ZbHWYU0FVinFEK6/B9tm83w7ndWVB8q0iYf
+	QQRAXcb3E0BtEy0cUgMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyEmM-0001Kd-W3; Thu, 15 Aug 2019 12:22:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hyEpp-0002tJ-Nu; Thu, 15 Aug 2019 12:26:29 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyEm7-0001KI-K0
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 12:22:40 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 52CCD208C2;
- Thu, 15 Aug 2019 12:22:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565871759;
- bh=sjfyxgSAh2xRAFRcD4+vQdQo/IuvYsYDk5W3KXVcgew=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=D3RznPyjUyDFJNEyo96UZx7x+me8fuhm2GJNBnhgSDP7TkvUSJUEOk4z3PBuIjgSL
- VySq1A8PjjHzUE2ofcQSI5YKKNr6XuMJdy+w9nivSQ9O+reG9bTkvoYZEaVZjfXGdd
- x8VTB1VR4Z3mN5hNH5m0FzdEhXPWyK1SGLrq5Ua0=
-Date: Thu, 15 Aug 2019 13:22:34 +0100
-From: Will Deacon <will@kernel.org>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Subject: Re: [PATCH] arm64: fix CONFIG_KASAN_SW_TAGS && CONFIG_KASAN_INLINE
-Message-ID: <20190815122234.44rcthx657atqdbe@willie-the-truck>
-References: <20190807155524.5112-1-steve.capper@arm.com>
- <20190807155524.5112-4-steve.capper@arm.com>
- <20190814152017.GD51963@lakrids.cambridge.arm.com>
- <20190814155711.ldwot7ezrrqjlswc@willie-the-truck>
- <20190814160324.GE51963@lakrids.cambridge.arm.com>
- <20190815120908.kboyqfnr2fivuva4@willie-the-truck>
- <8e472cf5-21d1-be9e-9e47-ec40e35b3192@virtuozzo.com>
+ id 1hyEpX-0002sp-5Y
+ for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 12:26:13 +0000
+Received: by mail-wm1-x341.google.com with SMTP id p74so1130327wme.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 15 Aug 2019 05:26:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=YGuK4VEzOn7RVy70U3QPgT0o0DMkyzyLKKCZ6dGONLI=;
+ b=fZDuTjWb0T3Sir4+qsYfiw71zeXwsyACH0x2YKnePm2iexxpKfkCWfUzGVrx+H1VL/
+ NQHCTrd89H5B3bottPt9kbYB7To/xZyXZXo/RUBNkg9RtG6UQfzJdJbR98NSD0A8raDJ
+ NikisaEpg9c2uW3pJsDDXPG8AqEfzxolEOA8E=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=YGuK4VEzOn7RVy70U3QPgT0o0DMkyzyLKKCZ6dGONLI=;
+ b=mctxpP9MSYD7hbyLOWSRRSBVqqsemKutamCKrA3t3shp8dvSbsfh1RbBDR4XID1Lhi
+ uKTMDzAl5HF6D+oopiP5131xZdxXCWWS1GTCkOJyqLe2FBvHxH3m15DTIBUsHF8hX36t
+ 4791DAYRMI772s8ef9AkGI2p0Cfaxh9LSnYXeTpz+HLf2nwvYpSD7p9+pvmL4ebd+fag
+ RoC+TMc2Gym2GavD9dDX81ePvkr+TeLcWVx28ImhmS81my32qKwlhU79X73aoCHaYN+I
+ YvG9sTC4ehkaqiExo/n+fcaXajDUZTj87LEkZJCFyfLgNzrjKM3BbHbV0YkyHA4XSpjG
+ /pqg==
+X-Gm-Message-State: APjAAAUq4f/+z+M1BAuVtjgFEdXU9lIVz4RQFfBKs8EPs+n1lEruwQEd
+ ZRKPH3KjoF9RcoXpZpTeNhnSbiA23hINmx7PU1krCw==
+X-Google-Smtp-Source: APXvYqw+NO9h3GLLVM5FCgA8092Iiix0AL1JgyjvL7yup9kh6IvbtN89iOP5WNUppRmu3zsJXlJAePWOyperb3qX848=
+X-Received: by 2002:a1c:f90f:: with SMTP id x15mr2463636wmh.69.1565871968857; 
+ Thu, 15 Aug 2019 05:26:08 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8e472cf5-21d1-be9e-9e47-ec40e35b3192@virtuozzo.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20190703114933.u3x4ej3v7ocewvif@flea>
+ <CAOf5uw=ZEvMV1hFQE986rNG_ctpReGbjbZzv0m=OzKPdBh57uQ@mail.gmail.com>
+ <20190711100100.cty3s6rs3w27low6@flea>
+ <CAOf5uw=3fiMuhcj3kDtCaGNTsxHKRrYb79MXZ+yUZtmf0jU10A@mail.gmail.com>
+ <20190720065830.zn3txpyduakywcva@flea>
+ <CAMty3ZDE1xiNgHVLihH378dY5szzkr14V-fwLZdvPs12tY+G1A@mail.gmail.com>
+ <20190720093202.6fn6xmhvsgawscnu@flea>
+ <CAMty3ZDpOA1mD77t3RB6hEG7o3+ws8y64m1DU8=3HdZ4zy4AUw@mail.gmail.com>
+ <20190724090513.vqnlmya3nqkl6pmu@flea>
+ <CAOf5uwkvCs62zHcUoFuJwau_ZZFdnVf8ua6JY_wzUb9m8rLTTw@mail.gmail.com>
+ <20190813060502.teeevudz6cjn35tl@flea>
+In-Reply-To: <20190813060502.teeevudz6cjn35tl@flea>
+From: Michael Nazzareno Trimarchi <michael@amarulasolutions.com>
+Date: Thu, 15 Aug 2019 14:25:57 +0200
+Message-ID: <CAOf5uw=RcBHibiq735NiX452Jde4ZL7PpfwH+Pkc=hARJBudUw@mail.gmail.com>
+Subject: Re: [PATCH v6 11/22] clk: sunxi-ng: a64: Add minimum rate for PLL_MIPI
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_052239_681356_1DCE5D09 
-X-CRM114-Status: GOOD (  15.64  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190815_052611_642285_712453CE 
+X-CRM114-Status: GOOD (  54.04  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -70,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,63 +98,324 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, crecklin@redhat.com,
- ard.biesheuvel@linaro.org, catalin.marinas@arm.com, bhsharma@redhat.com,
- Steve Capper <steve.capper@arm.com>, kasan-dev@googlegroups.com,
- glider@google.com, dvyukov@google.com, maz@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ Michael Turquette <mturquette@baylibre.com>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 03:21:48PM +0300, Andrey Ryabinin wrote:
-> On 8/15/19 3:09 PM, Will Deacon wrote:
-> 
-> > On Wed, Aug 14, 2019 at 05:03:24PM +0100, Mark Rutland wrote:
-> >> From ecdf60051a850f817d98f84ae9011afa2311b8f1 Mon Sep 17 00:00:00 2001
-> >> From: Mark Rutland <mark.rutland@arm.com>
-> >> Date: Wed, 14 Aug 2019 15:31:57 +0100
-> >> Subject: [PATCH] kasan/arm64: fix CONFIG_KASAN_SW_TAGS && KASAN_INLINE
-> >>
-> >> The generic Makefile.kasan propagates CONFIG_KASAN_SHADOW_OFFSET into
-> >> KASAN_SHADOW_OFFSET, but only does so for CONFIG_KASAN_GENERIC.
-> >>
-> >> Since commit:
-> >>
-> >>   6bd1d0be0e97936d ("arm64: kasan: Switch to using KASAN_SHADOW_OFFSET")
-> >>
-> >> ... arm64 defines CONFIG_KASAN_SHADOW_OFFSET in Kconfig rather than
-> >> defining KASAN_SHADOW_OFFSET in a Makefile. Thus, if
-> >> CONFIG_KASAN_SW_TAGS && KASAN_INLINE are selected, we get build time
-> >> splats due to KASAN_SHADOW_OFFSET not being set:
-> >>
-> >> | [mark@lakrids:~/src/linux]% usellvm 8.0.1 usekorg 8.1.0  make ARCH=arm64 CROSS_COMPILE=aarch64-linux- CC=clang
-> >> | scripts/kconfig/conf  --syncconfig Kconfig
-> >> |   CC      scripts/mod/empty.o
-> >> | clang (LLVM option parsing): for the -hwasan-mapping-offset option: '' value invalid for uint argument!
-> >> | scripts/Makefile.build:273: recipe for target 'scripts/mod/empty.o' failed
-> >> | make[1]: *** [scripts/mod/empty.o] Error 1
-> >> | Makefile:1123: recipe for target 'prepare0' failed
-> >> | make: *** [prepare0] Error 2
-> >>
-> >> Let's fix this by always propagating CONFIG_KASAN_SHADOW_OFFSET into
-> >> KASAN_SHADOW_OFFSET if CONFIG_KASAN is selected, moving the existing
-> >> common definition of +CFLAGS_KASAN_NOSANITIZE to the top of
-> >> Makefile.kasan.
-> >>
-> >> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> >> Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>>> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> >> Cc: Steve Capper <steve.capper@arm.com>
-> >> Cc: Will Deacon <will@kernel.org>
-> >> ---
-> 
-> 
-> Acked-by: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Hi Maxime
 
-Thanks, Andrey!
+On Tue, Aug 13, 2019 at 8:05 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+>
+> On Mon, Jul 29, 2019 at 08:59:04AM +0200, Michael Nazzareno Trimarchi wrote:
+> > Hi
+> >
+> > On Wed, Jul 24, 2019 at 11:05 AM Maxime Ripard
+> > <maxime.ripard@bootlin.com> wrote:
+> > >
+> > > On Mon, Jul 22, 2019 at 03:51:04PM +0530, Jagan Teki wrote:
+> > > > Hi Maxime,
+> > > >
+> > > > On Sat, Jul 20, 2019 at 3:02 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > > >
+> > > > > On Sat, Jul 20, 2019 at 12:46:27PM +0530, Jagan Teki wrote:
+> > > > > > On Sat, Jul 20, 2019 at 12:28 PM Maxime Ripard
+> > > > > > <maxime.ripard@bootlin.com> wrote:
+> > > > > > >
+> > > > > > > On Thu, Jul 11, 2019 at 07:43:16PM +0200, Michael Nazzareno Trimarchi wrote:
+> > > > > > > > > > tcon-pixel clock is the rate that you want to achive on display side
+> > > > > > > > > > and if you have 4 lanes 32bit or lanes and different bit number that
+> > > > > > > > > > you need to have a clock that is able to put outside bits and speed
+> > > > > > > > > > equal to pixel-clock * bits / lanes. so If you want a pixel-clock of
+> > > > > > > > > > 40 mhz and you have 32bits and 4 lanes you need to have a clock of
+> > > > > > > > > > 40 * 32 / 4 in no-burst mode. I think that this is done but most of
+> > > > > > > > > > the display.
+> > > > > > > > >
+> > > > > > > > > So this is what the issue is then?
+> > > > > > > > >
+> > > > > > > > > This one does make sense, and you should just change the rate in the
+> > > > > > > > > call to clk_set_rate in sun4i_tcon0_mode_set_cpu.
+> > > > > > > > >
+> > > > > > > > > I'm still wondering why that hasn't been brought up in either the
+> > > > > > > > > discussion or the commit log before though.
+> > > > > > > > >
+> > > > > > > > Something like this?
+> > > > > > > >
+> > > > > > > > drivers/gpu/drm/sun4i/sun4i_tcon.c     | 20 +++++++++++---------
+> > > > > > > >  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h |  2 --
+> > > > > > > >  2 files changed, 11 insertions(+), 11 deletions(-)
+> > > > > > > >
+> > > > > > > > diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > > > b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > > > index 64c43ee6bd92..42560d5c327c 100644
+> > > > > > > > --- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > > > +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+> > > > > > > > @@ -263,10 +263,11 @@ static int sun4i_tcon_get_clk_delay(const struct
+> > > > > > > > drm_display_mode *mode,
+> > > > > > > >  }
+> > > > > > > >
+> > > > > > > >  static void sun4i_tcon0_mode_set_common(struct sun4i_tcon *tcon,
+> > > > > > > > -                                       const struct drm_display_mode *mode)
+> > > > > > > > +                                       const struct drm_display_mode *mode,
+> > > > > > > > +                                       u32 tcon_mul)
+> > > > > > > >  {
+> > > > > > > >         /* Configure the dot clock */
+> > > > > > > > -       clk_set_rate(tcon->dclk, mode->crtc_clock * 1000);
+> > > > > > > > +       clk_set_rate(tcon->dclk, mode->crtc_clock * tcon_mul * 1000);
+> > > > > > > >
+> > > > > > > >         /* Set the resolution */
+> > > > > > > >         regmap_write(tcon->regs, SUN4I_TCON0_BASIC0_REG,
+> > > > > > > > @@ -335,12 +336,13 @@ static void sun4i_tcon0_mode_set_cpu(struct
+> > > > > > > > sun4i_tcon *tcon,
+> > > > > > > >         u8 bpp = mipi_dsi_pixel_format_to_bpp(device->format);
+> > > > > > > >         u8 lanes = device->lanes;
+> > > > > > > >         u32 block_space, start_delay;
+> > > > > > > > -       u32 tcon_div;
+> > > > > > > > +       u32 tcon_div, tcon_mul;
+> > > > > > > >
+> > > > > > > > -       tcon->dclk_min_div = SUN6I_DSI_TCON_DIV;
+> > > > > > > > -       tcon->dclk_max_div = SUN6I_DSI_TCON_DIV;
+> > > > > > > > +       tcon->dclk_min_div = 4;
+> > > > > > > > +       tcon->dclk_max_div = 127;
+> > > > > > > >
+> > > > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
+> > > > > > > > +       tcon_mul = bpp / lanes;
+> > > > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, tcon_mul);
+> > > > > > > >
+> > > > > > > >         /* Set dithering if needed */
+> > > > > > > >         sun4i_tcon0_mode_set_dithering(tcon, sun4i_tcon_get_connector(encoder));
+> > > > > > > > @@ -366,7 +368,7 @@ static void sun4i_tcon0_mode_set_cpu(struct
+> > > > > > > > sun4i_tcon *tcon,
+> > > > > > > >          */
+> > > > > > > >         regmap_read(tcon->regs, SUN4I_TCON0_DCLK_REG, &tcon_div);
+> > > > > > > >         tcon_div &= GENMASK(6, 0);
+> > > > > > > > -       block_space = mode->htotal * bpp / (tcon_div * lanes);
+> > > > > > > > +       block_space = mode->htotal * tcon_div * tcon_mul;
+> > > > > > > >         block_space -= mode->hdisplay + 40;
+> > > > > > > >
+> > > > > > > >         regmap_write(tcon->regs, SUN4I_TCON0_CPU_TRI0_REG,
+> > > > > > > > @@ -408,7 +410,7 @@ static void sun4i_tcon0_mode_set_lvds(struct
+> > > > > > > > sun4i_tcon *tcon,
+> > > > > > > >
+> > > > > > > >         tcon->dclk_min_div = 7;
+> > > > > > > >         tcon->dclk_max_div = 7;
+> > > > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
+> > > > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, 1);
+> > > > > > > >
+> > > > > > > >         /* Set dithering if needed */
+> > > > > > > >         sun4i_tcon0_mode_set_dithering(tcon, sun4i_tcon_get_connector(encoder));
+> > > > > > > > @@ -487,7 +489,7 @@ static void sun4i_tcon0_mode_set_rgb(struct
+> > > > > > > > sun4i_tcon *tcon,
+> > > > > > > >
+> > > > > > > >         tcon->dclk_min_div = 6;
+> > > > > > > >         tcon->dclk_max_div = 127;
+> > > > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
+> > > > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, 1);
+> > > > > > > >
+> > > > > > > >         /* Set dithering if needed */
+> > > > > > > >         sun4i_tcon0_mode_set_dithering(tcon, connector);
+> > > > > > > > diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > > > b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > > > index 5c3ad5be0690..a07090579f84 100644
+> > > > > > > > --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > > > +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
+> > > > > > > > @@ -13,8 +13,6 @@
+> > > > > > > >  #include <drm/drm_encoder.h>
+> > > > > > > >  #include <drm/drm_mipi_dsi.h>
+> > > > > > > >
+> > > > > > > > -#define SUN6I_DSI_TCON_DIV     4
+> > > > > > > > -
+> > > > > > > >  struct sun6i_dsi {
+> > > > > > > >         struct drm_connector    connector;
+> > > > > > > >         struct drm_encoder      encoder;
+> > > > > > >
+> > > > > > > I had more something like this in mind:
+> > > > > > > http://code.bulix.org/nlp5a4-803511
+> > > > > >
+> > > > > > Worth to look at it. was it working on your panel? meanwhile I will check it.
+> > > > >
+> > > > > I haven't tested it.
+> > > > >
+> > > > > > We have updated with below change [1], seems working on but is
+> > > > > > actually checking the each divider as before start with 4... till 127.
+> > > > > >
+> > > > > > This new approach, is start looking the best divider from 4.. based on
+> > > > > > the idea vs rounded it will ended up best divider like [2]
+> > > > >
+> > > > > But why?
+> > > > >
+> > > > > I mean, it's not like it's the first time I'm asking this...
+> > > > >
+> > > > > If the issue is what Micheal described, then the divider has nothing
+> > > > > to do with it. We've had that discussion over and over again.
+> > > >
+> > > > This is what Michael is mentioned in above mail "tcon-pixel clock is
+> > > > the rate that you want to achive on display side and if you have 4
+> > > > lanes 32bit or lanes and different bit number that you need to have
+> > > > a clock that is able to put outside bits and speed equal to
+> > > > pixel-clock * bits / lanes. so If you want a pixel-clock of 40 mhz
+> > > > and you have 32bits and 4 lanes you need to have a clock of 40 * 32
+> > > > / 4 in no-burst mode. "
+> > >
+> > > Yeah, so we need to change the clock rate.
+> > >
+> > > > He is trying to manage the bpp/lanes into dclk_mul (in last mail)
+> > > > and it can multiply with pixel clock which is rate argument in
+> > > > sun4i_dclk_round_rate.
+> > > >
+> > > > The solution I have mentioned in dclk_min, max is bpp/lanes also
+> > > > multiple rate in dotclock sun4i_dclk_round_rate.
+> > > >
+> > > > In both cases the overall pll_rate depends on dividers, the one that I
+> > > > have on this patch is based on BSP and the Michael one is more generic
+> > > > way so-that it can not to touch other functionalities and looping
+> > > > dividers to find the best one.
+> > > >
+> > > > If dclk_min/max is bpp/lanes then dotclock directly using divider 6
+> > > > (assuming 24-bit and 4 lanes) and return the pll_rate and divider 6
+> > > > associated.
+> > > >
+> > > > if dclk_mul is bpp/lanes, on Michael new change, the dividers start
+> > > > with 4 and end with 127 but the constant ideal rate which rate *
+> > > > bpp/lanes but the loop from sun4i_dclk_round_rate computed the divider
+> > > > as 6 only, ie what I'm mentioned on the above mail.
+> > >
+> > > We've been over this a couple of times already.
+> > >
+> > > The clock is generated like this:
+> > >
+> > > PLL -> TCON Module Clock -> TCON DCLK
+> > >
+> > > You want the TCON DCLK to be at the pixel clock rate * bpp /
+> > > lanes. Fine, that makes sense.
+> > >
+> > > Except that the patch you've sent, instead of changing the rate
+> > > itself, changes the ratio between the module clock and DCLK.
+> > >
+> > > And this is where the issue lies. First, from a logical viewpoint, it
+> > > doesn't make sense. If you want to change the clock rate, then just do
+> > > it. Don't hack around the multipliers trying to fall back to something
+> > > that works for you.
+> > >
+> > > Then, the ratio itself needs to be set to 4. This is the part that
+> > > we've discussed way too many times already, but in the Allwinner BSP,
+> > > that ratio is hardcoded to 4, and we've had panels that need it at
+> > > that value.
+> > >
+> > > So, what you want to do is to have:
+> > >
+> > > TCON DCLK = pixel clock * bpp / lanes
+> > > TCON Module Clock = DCLK * 4
+> > > PLL = Module Clock * Module Clock Divider (which I believe is 1 in most cases)
+> >
+> >   pll-mipi                       1        1        1   178200000
+> >    0     0  50000
+> >           tcon0                       2        2        1   178200000
+> >         0     0  50000
+> >              tcon-pixel-clock         1        1        1    29700000
+> >         0     0  50000
+>
+> Is this before or after your patches?
+>
 
-Will
+This is just an example of clock tree to be clear to everyone how they
+are connected
+
+> > This is an english problem from my side:
+> > tcon-pixel-clock is DCLK
+> > tcon0 must be tcon-pixel-clock * bpp / lanes, because the logic need to
+> > put a bit every cycle.
+>
+> Again, I'm not saying this is wrong, but each time I've looked at it
+> the BSP was using a 4 divider between the tcon module clock and the
+> dotclock.
+>
+
+We have tested on 4-5 displays. Well I don't care on bsp but I care
+about if it works
+and if other SoC has similar approach on clock calculation.
+
+> So, please prove me wrong here.
+>
+
+Having only 10 pages of documentation is a bit difficult.
+
+> > One solution can be:
+> > - set_rate_exclusive to tcon0 and calculate as display pixel clock *
+> > bpp  / lanes
+>
+> I'm not sure what set_rate_exclusive has to do with it. I mean, it's a
+> good idea to use it, but it shouldn't really change anything to the
+> discussion.
+
+Well, this will just do a minimal change on source code and put the constrains
+to the tcon0
+
+>
+> > - calculate the tcon-pixel-clock using all divider
+>
+> I'm not sure what you mean by that.
+>
+> > Problem is that the function that calculate tcon-pixel-clock does not
+> > have any constrain on the ideal value.
+>
+> It does have constraints, but you're right that it will not try to
+> find an exact match and bail out if it can't do it, but will find the
+> closest match.
+>
+
+We need to find the closest divider that match the pixel clock and be close
+to the ideal tcon0 rate.
+
+
+> > What you are suggesting is not correct in my opinion or I'm not
+> > following your suggesstion.
+>
+> Then prove me wrong.
+>
+> > What I know is that if we have a pixel-clock of dvi display of 50Mhz
+> > and we have 4 lanes 32bit we need a clock in the logic of 400Mhz
+> > (this is the ideal throughtput).
+> > So tcon-pixel-clock is 50mhz and tcon0 is 400Mhz.
+>
+> There's one thing to keep in mind though. The TCON dotclock in the
+> MIPI-DSI case isn't directly tied to the Bit Clock, it's simply an
+> internal clock in the pipeline to feed the FIFO of the MIPI-DSI
+> controller. The MIPI-DSI controller itself will generate that clock,
+> and only that one will have those constraints.
+>
+
+I have done the same thinking but because it works for us seems that
+somehow is used
+to internal logic too
+
+Michael
+
+> Maxime
+>
+> --
+> Maxime Ripard, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
+
+
+
+-- 
+| Michael Nazzareno Trimarchi                     Amarula Solutions BV |
+| COO  -  Founder                                      Cruquiuskade 47 |
+| +31(0)851119172                                 Amsterdam 1018 AM NL |
+|                  [`as] http://www.amarulasolutions.com               |
 
 _______________________________________________
 linux-arm-kernel mailing list
