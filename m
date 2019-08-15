@@ -2,53 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B72C98ECBE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 15:26:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 255BF8ECDE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 15 Aug 2019 15:31:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IFpF/XEss2jppgMFQYfp2RFHe5+Zeclcm7zEg9x/ybA=; b=B3U0c+khwWe0vz
-	CZfHRWkEiKc+J7XQpnnB8hkaHZ2IeTnopSi5zD4eoshighZiDMxfRHVDzYcMW/djTEYvi1pfT4GG+
-	5uRdTjX7w0P2XqGs2CPzf5WpG8934bmOz6xJ5hdMhyxKJ3CsMdNqlH9aG3Oy7yDW3MzcHfgpX9AN/
-	h6ZxURHAIKi3tgUmcVir96Tnwn4Rz0ouz7b/wotWm/FuiZpHNONssDNxndgKt1DDUaYxMNfyOnmDP
-	UODBSgYvF17qECVl6Ldj0qiS+5bsD6Geu0HQur0aaSbUM/TYC9ICpcpjjjUNHVPOc1bs4s8Z/nVuM
-	6rW0qmWdgq+9OYig+oCA==;
+	List-Owner; bh=4feoiNtKO37OoJWTNlOZRQjfdnrOzNhp/XBDbjL3k88=; b=q7+y2cYFJa3VCi
+	XaP4nf0bxFnBPbtGpIRpwM1GelcJGGfPHAD2BE/XGhglSGYyRLrXt0qKuhw2Qv0qGi/FF/goLW4M/
+	nu8YX+3w2Xz3wnE95oecWRnQXNn3kIqlhJRQmCRL7icOYV2zzl0Pq+5vfhTcQcEgS1esfMaohDmrV
+	T+4dk/2W902VeiHk9gN/vY2Eilxo1v5f7iL9BShloQFyrgkFQAH1nl+oTU6BMYsbvs59hIS7TI982
+	2DvvQWM2gbSZ2SyimFjfXMcL3ty8P+hOXEHDPlYrc0azGRnosLJW7o+zbXkpkuTw2QJSki/37N3LX
+	uN96YYiOxk4S+yo4s8sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyFlU-0001RF-4a; Thu, 15 Aug 2019 13:26:04 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1hyFqb-00055J-4f; Thu, 15 Aug 2019 13:31:21 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyFl2-0001Le-4H
- for linux-arm-kernel@lists.infradead.org; Thu, 15 Aug 2019 13:25:39 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 5010F68AFE; Thu, 15 Aug 2019 15:25:31 +0200 (CEST)
-Date: Thu, 15 Aug 2019 15:25:31 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: Re: next take at setting up a dma mask by default for platform devices
-Message-ID: <20190815132531.GA12036@lst.de>
-References: <20190811080520.21712-1-hch@lst.de>
- <20190815132318.GA27208@kroah.com>
+ id 1hyFqM-000544-6U; Thu, 15 Aug 2019 13:31:10 +0000
+Received: from pendragon.ideasonboard.com
+ (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
+ [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 098F92AF;
+ Thu, 15 Aug 2019 15:30:54 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1565875855;
+ bh=oEGS/F9TsobJYhQR4dkRtTsgMLOO7VkPub64ct7EeRk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=RUm+7Lhtsj+xA8IzGITIPGzI7HFNL822Vn8HFMW7I2T1V6Qc5Xl6v/zy3GzftG+Br
+ qCjEYmiCfeUK6WEKpaQNtx+52/EUAoSPHngiKB7afFhHF/bwhW5qTZvxdvbIM+UBRA
+ IJx81qsyDluQ1Resw+3axW8H7RNs6bTQ/BpYGfsc=
+Date: Thu, 15 Aug 2019 16:30:51 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Helen Koike <helen.koike@collabora.com>
+Subject: Re: [PATCH v8 01/14] media: videodev2.h, v4l2-ioctl: add rkisp1 meta
+ buffer format
+Message-ID: <20190815133051.GT5011@pendragon.ideasonboard.com>
+References: <20190730184256.30338-1-helen.koike@collabora.com>
+ <20190730184256.30338-2-helen.koike@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190815132318.GA27208@kroah.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+In-Reply-To: <20190730184256.30338-2-helen.koike@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_062536_929173_FEB1DBB7 
-X-CRM114-Status: UNSURE (   9.15  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190815_063106_538382_0126FBDF 
+X-CRM114-Status: GOOD (  15.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,31 +75,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Gavin Li <git@thegavinli.com>, Fabio Estevam <festevam@gmail.com>,
- Christoph Hellwig <hch@lst.de>, linux-arch@vger.kernel.org,
- Michal Simek <michal.simek@xilinx.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Alan Stern <stern@rowland.harvard.edu>, NXP Linux Team <linux-imx@nxp.com>,
- Mathias Nyman <mathias.nyman@intel.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Minas Harutyunyan <hminas@synopsys.com>, Olav Kongas <ok@artecdesign.ee>,
- Bin Liu <b-liu@ti.com>, linux-arm-kernel@lists.infradead.org,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>, Geoff Levand <geoff@infradead.org>,
- Shawn Guo <shawnguo@kernel.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Tony Prisk <linux@prisktech.co.nz>,
- iommu@lists.linux-foundation.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>, linuxppc-dev@lists.ozlabs.org
+Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
+ heiko@sntech.de, jacob2.chen@rock-chips.com, jeffy.chen@rock-chips.com,
+ zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ linux-rockchip@lists.infradead.org, hans.verkuil@cisco.com,
+ sakari.ailus@linux.intel.com, zhengsq@rock-chips.com, mchehab@kernel.org,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 03:23:18PM +0200, Greg Kroah-Hartman wrote:
-> I've taken the first 2 patches for 5.3-final.  Given that patch 3 needs
-> to be fixed, I'll wait for a respin of these before considering them.
+Hi Helen,
 
-I have a respun version ready, but I'd really like to hear some
-comments from usb developers about the approach before spamming
-everyone again..
+Thank you for the patch.
+
+On Tue, Jul 30, 2019 at 03:42:43PM -0300, Helen Koike wrote:
+> From: Shunqian Zheng <zhengsq@rock-chips.com>
+> 
+> Add the Rockchip ISP1 specific processing parameter format
+> V4L2_META_FMT_RK_ISP1_PARAMS and metadata format
+> V4L2_META_FMT_RK_ISP1_STAT_3A for 3A.
+
+I don't like V4L2_META_FMT_RK_ISP1_PARAMS much, as the parameters are
+not passed to the hardware through a buffer, but instead written to
+registers by the kernel driver. This is an area where V4L2 controls are
+traditionally used. I do however understand that it's easier for driver
+authors to pass a large set of controls this way when they have to be
+applied atomically, but it's clearly a hack in my opinion. I won't
+oppose to it though, as I know there's no way we can support this kind
+of feature in V4L2 at the moment without an extensive amount of work, so
+
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+
+> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
+> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
+> Acked-by: Hans Verkuil <hans.verkuil@cisco.com>
+> [update for upstream]
+> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> 
+> ---
+> 
+> Changes in v8: None
+> Changes in v7:
+> - s/IPU3/RK_ISP1
+> 
+>  drivers/media/v4l2-core/v4l2-ioctl.c | 2 ++
+>  include/uapi/linux/videodev2.h       | 4 ++++
+>  2 files changed, 6 insertions(+)
+> 
+> diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-core/v4l2-ioctl.c
+> index bb5b4926538a..2df20801a299 100644
+> --- a/drivers/media/v4l2-core/v4l2-ioctl.c
+> +++ b/drivers/media/v4l2-core/v4l2-ioctl.c
+> @@ -1330,6 +1330,8 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *fmt)
+>  	case V4L2_META_FMT_VSP1_HGT:	descr = "R-Car VSP1 2-D Histogram"; break;
+>  	case V4L2_META_FMT_UVC:		descr = "UVC Payload Header Metadata"; break;
+>  	case V4L2_META_FMT_D4XX:	descr = "Intel D4xx UVC Metadata"; break;
+> +	case V4L2_META_FMT_RK_ISP1_PARAMS:	descr = "Rockchip ISP1 3A params"; break;
+> +	case V4L2_META_FMT_RK_ISP1_STAT_3A:	descr = "Rockchip ISP1 3A statistics"; break;
+>  
+>  	default:
+>  		/* Compressed formats */
+> diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
+> index 2427bc4d8eba..ae1e375a10d7 100644
+> --- a/include/uapi/linux/videodev2.h
+> +++ b/include/uapi/linux/videodev2.h
+> @@ -756,6 +756,10 @@ struct v4l2_pix_format {
+>  #define V4L2_META_FMT_UVC         v4l2_fourcc('U', 'V', 'C', 'H') /* UVC Payload Header metadata */
+>  #define V4L2_META_FMT_D4XX        v4l2_fourcc('D', '4', 'X', 'X') /* D4XX Payload Header metadata */
+>  
+> +/* Vendor specific - used for RK_ISP1 camera sub-system */
+> +#define V4L2_META_FMT_RK_ISP1_PARAMS	v4l2_fourcc('R', 'K', '1', 'P') /* Rockchip ISP1 params */
+> +#define V4L2_META_FMT_RK_ISP1_STAT_3A	v4l2_fourcc('R', 'K', '1', 'S') /* Rockchip ISP1 3A statistics */
+> +
+>  /* priv field value to indicates that subsequent fields are valid. */
+>  #define V4L2_PIX_FMT_PRIV_MAGIC		0xfeedcafe
+>  
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
