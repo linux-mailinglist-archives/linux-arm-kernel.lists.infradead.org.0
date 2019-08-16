@@ -2,97 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F19F590391
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 16:00:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09BB190442
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 16:56:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gJ+7auhKWIHXrGFbODStUPGWnzISdIDWJynwjjSbpX8=; b=oo3/Ijprmo24ug
-	E5ksf52Ctbuii7IzvKsnQeRU2YV2iKZPWaTEmbRrbW2fJ9RezrFVMpn5NxiDWQUK8lLcw0Vvs41oL
-	l+t0kh0KKqef2IiwkR8PoJshqarXL0RYGDyG5rJo0AaoqpazBO9Es1cYyvKFMDlJLHqBNqs7TMG4j
-	MY6U+OwWca2f+J2iSSqgS9RhnC9R1691Ky2+09r9F+8n6BFi1V4VVq1Vhibh2VO7wvSyRAIl+Dn89
-	reuC0hJvPFkkCI5AF7IG0gRe8JC8d9p5hML/Q9IilV/jWgy9/QnlWUBL9iJRswm1Cy9+Od6NR+j8/
-	Jld48/tpwT8OO30Z58Tg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4F1Azbq7QFIZXfTW9BgKxGn2L0ll0szxDQmDASwnWAA=; b=GWucuzJnHCdbWVSiopz9gM3Ca
+	ZXD2c+P6yrq9VDr36oO+Wbcy6inCf9/bFnQNtsLrRkt/F2zi88t+qOVSA1K0rYxdjM5/tv6YZSbyM
+	EBqPutm/4UPWXttrfJoZJFEFk1E4k8o0IB8AOtz6ATLx9ndiJEY/nwnnG1Rxvuh+Q7LrNz1RtAzL0
+	gdtuatAJXbliab5PXU4JlzG/RiRcVKlhV9lolHfqrozgf3E9SBiua63C2pZz7ve9gms+7/uFe+/cO
+	yoT/IIrXM7NmbCCfD1RGEY2RmhZDIIHvRTfBNZylx5V63Y8U/8cyOy2uHMtZC8ALzCTKSGoxEO3QJ
+	7mbGexK1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hycmS-000667-Ok; Fri, 16 Aug 2019 14:00:36 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hycmE-00065j-NM
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 14:00:24 +0000
-Received: by mail-wr1-x441.google.com with SMTP id q12so1632924wrj.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 16 Aug 2019 07:00:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=DrJ7gCAK6Th5zBxxKayy7enXiUTo1ZEKcmR+4YN2Rw4=;
- b=VDnmgj+6StJGZ+K5QyAby+MNXEojjAj0I0IufNcfA6R19fyc/aMJaNxHntHu+WS4Rv
- e1p01bO8GNFtJgNc9ujxYszMA7YOvObenjE2IeF035Vntcx+M9vVmep6ruiz4GhbvZtK
- o1CVumwevwOW/073/HmhEKOIlBHl14iiC8KwQQ7Ap3V8MIooeKB1TpSIP/v3G5nSvnYT
- +9h1TwHZHk2KEeES3WQim4LDDLKLdGEH2bIYJE7hrkxshmRO6yVzsxFdPWjYyeiJPCoP
- 0FuTeVT9HzdYEfFGyKMY7ItbjdyXQa7oXm7qFWDebGDB2cYY96unduoALB+KxnLfcVp3
- P8+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=DrJ7gCAK6Th5zBxxKayy7enXiUTo1ZEKcmR+4YN2Rw4=;
- b=TH2kvGjH44XhfmiE6xLYNAuepOW3ym/RPm9iRxtHmsif0FbzA5E0Atksy6IjdAWO04
- YTL68QI6I7M0L2bbWPNW4utOgFVXESjfsbxsbIjlnQmoNKsyL79OU6M4HXgB64FOddga
- Np6SdXjFFAXHoWd0c68OMQhHJdM0NW1YZfT77bPDNTu0HGbRlxbgqFAUzQAwfAqLSo79
- rAv/mR+STGvNzHg1fhrS66EreqL5u/LnsQBue9fjP1mHyHV6BWflt/4zSYNuE7RnwhS+
- CESr9+n1JF5pqTTWIFzXqbFUh2uZAtdpsu9BHhfy18s05SDstw+GNwUPPWyxccGxmaMA
- 2r4g==
-X-Gm-Message-State: APjAAAX9L3yQSMhp53bgS45y7b/ZuwOsCSCdNTfiRG0dHyl333488PIR
- pbQz4/uVw154C1ymeWpEhkA=
-X-Google-Smtp-Source: APXvYqxtoexV2Br8jSmaU/4tJP8Iab6bCo6mvjsg1ikV6I6du8nGqI0JCuRNkeVLpM+W3vlwGWeyVw==
-X-Received: by 2002:a5d:6383:: with SMTP id p3mr11873239wru.34.1565964019972; 
- Fri, 16 Aug 2019 07:00:19 -0700 (PDT)
-Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id z6sm17459434wre.76.2019.08.16.07.00.18
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 16 Aug 2019 07:00:19 -0700 (PDT)
-Date: Fri, 16 Aug 2019 16:00:16 +0200
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH] ARM64: dts: allwinner: Add devicetree for pine H64
- modelA evaluation board
-Message-ID: <20190816140016.GA30445@Red>
-References: <20190808084253.10573-1-clabbe.montjoie@gmail.com>
- <20190812094000.ebdmhyxx7xzbevef@flea> <20190814131741.GB24324@Red>
- <20190814133322.dawzv3ityakxtqs4@flea> <20190816093513.GA25042@Red>
- <20190816113650.hstbi5ntstx3wh4a@flea> <20190816115750.GA24545@Red>
- <20190816135206.pnf3iperzyhcbg4h@flea>
+	id 1hyde3-00056v-Cq; Fri, 16 Aug 2019 14:55:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hydds-00056U-It
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 14:55:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 10321344;
+ Fri, 16 Aug 2019 07:55:44 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ACB7B3F694;
+ Fri, 16 Aug 2019 07:55:42 -0700 (PDT)
+Subject: Re: [PATCH] arm64: do_csum: implement accelerated scalar version
+To: Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ Will Deacon <will.deacon@arm.com>
+References: <20190218230842.11448-1-ard.biesheuvel@linaro.org>
+ <d7a16ebd-073f-f50e-9651-68606d10b01c@hisilicon.com>
+ <20190412095243.GA27193@fuggles.cambridge.arm.com>
+ <41b30c72-c1c5-14b2-b2e1-3507d552830d@arm.com>
+ <20190515094704.GC24357@fuggles.cambridge.arm.com>
+ <440eb674-0e59-a97e-4a90-0026e2327069@hisilicon.com>
+ <20190815164609.GI2015@fuggles.cambridge.arm.com>
+ <37fbc2a3-069d-9f75-f3d0-3eda2efa5c9b@hisilicon.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <c14781ce-0fa5-bfc1-c019-bcfc07c42cc9@arm.com>
+Date: Fri, 16 Aug 2019 15:55:41 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190816135206.pnf3iperzyhcbg4h@flea>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <37fbc2a3-069d-9f75-f3d0-3eda2efa5c9b@hisilicon.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_070022_785263_C120A2DF 
-X-CRM114-Status: GOOD (  33.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190816_075548_669140_01A2987F 
+X-CRM114-Status: GOOD (  17.80  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,134 +69,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, wens@csie.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, steve.capper@arm.com,
+ netdev@vger.kernel.org, ilias.apalodimas@linaro.org,
+ "huanglingyan \(A\)" <huanglingyan2@huawei.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 16, 2019 at 03:52:06PM +0200, Maxime Ripard wrote:
-> On Fri, Aug 16, 2019 at 01:57:50PM +0200, Corentin Labbe wrote:
-> > On Fri, Aug 16, 2019 at 01:36:50PM +0200, Maxime Ripard wrote:
-> > > On Fri, Aug 16, 2019 at 11:35:13AM +0200, Corentin Labbe wrote:
-> > > > On Wed, Aug 14, 2019 at 03:33:22PM +0200, Maxime Ripard wrote:
-> > > > > On Wed, Aug 14, 2019 at 03:17:41PM +0200, Corentin Labbe wrote:
-> > > > > > On Mon, Aug 12, 2019 at 11:40:00AM +0200, Maxime Ripard wrote:
-> > > > > > > On Thu, Aug 08, 2019 at 10:42:53AM +0200, Corentin Labbe wrote:
-> > > > > > > > This patch adds the evaluation variant of the model A of the PineH64.
-> > > > > > > > The model A has the same size of the pine64 and has a PCIE slot.
-> > > > > > > >
-> > > > > > > > The only devicetree difference with current pineH64, is the PHY
-> > > > > > > > regulator.
-> > > > > > > >
-> > > > > > > > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
-> > > > > > > > ---
-> > > > > > > >  arch/arm64/boot/dts/allwinner/Makefile        |  1 +
-> > > > > > > >  .../sun50i-h6-pine-h64-modelA-eval.dts        | 26 +++++++++++++++++++
-> > > > > > > >  2 files changed, 27 insertions(+)
-> > > > > > > >  create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts
-> > > > > > > >
-> > > > > > > > diff --git a/arch/arm64/boot/dts/allwinner/Makefile b/arch/arm64/boot/dts/allwinner/Makefile
-> > > > > > > > index f6db0611cb85..9a02166cbf72 100644
-> > > > > > > > --- a/arch/arm64/boot/dts/allwinner/Makefile
-> > > > > > > > +++ b/arch/arm64/boot/dts/allwinner/Makefile
-> > > > > > > > @@ -25,3 +25,4 @@ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-3.dtb
-> > > > > > > >  dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-lite2.dtb
-> > > > > > > >  dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-one-plus.dtb
-> > > > > > > >  dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-pine-h64.dtb
-> > > > > > > > +dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-pine-h64-modelA-eval.dtb
-> > > > > > > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts
-> > > > > > > > new file mode 100644
-> > > > > > > > index 000000000000..d8ff02747efe
-> > > > > > > > --- /dev/null
-> > > > > > > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-modelA-eval.dts
-> > > > > > > > @@ -0,0 +1,26 @@
-> > > > > > > > +// SPDX-License-Identifier: (GPL-2.0+ or MIT)
-> > > > > > > > +/*
-> > > > > > > > + * Copyright (C) 2019 Corentin Labbe <clabbe.montjoie@gmail.com>
-> > > > > > > > + */
-> > > > > > > > +
-> > > > > > > > +#include "sun50i-h6-pine-h64.dts"
-> > > > > > > > +
-> > > > > > > > +/ {
-> > > > > > > > +	model = "Pine H64 model A evaluation board";
-> > > > > > > > +	compatible = "pine64,pine-h64-modelA-eval", "allwinner,sun50i-h6";
-> > > > > > > > +
-> > > > > > > > +	reg_gmac_3v3: gmac-3v3 {
-> > > > > > > > +		compatible = "regulator-fixed";
-> > > > > > > > +		regulator-name = "vcc-gmac-3v3";
-> > > > > > > > +		regulator-min-microvolt = <3300000>;
-> > > > > > > > +		regulator-max-microvolt = <3300000>;
-> > > > > > > > +		startup-delay-us = <100000>;
-> > > > > > > > +		gpio = <&pio 2 16 GPIO_ACTIVE_HIGH>;
-> > > > > > > > +		enable-active-high;
-> > > > > > > > +	};
-> > > > > > > > +
-> > > > > > > > +};
-> > > > > > > > +
-> > > > > > > > +&emac {
-> > > > > > > > +	phy-supply = <&reg_gmac_3v3>;
-> > > > > > > > +};
-> > > > > > >
-> > > > > > > I might be missing some context here, but I'm pretty sure that the
-> > > > > > > initial intent of the pine h64 DTS was to support the model A all
-> > > > > > > along.
-> > > > > > >
-> > > > > >
-> > > > > > The regulator changed between modelA and B.
-> > > > > > See this old patchset (supporting modelA) https://patchwork.kernel.org/patch/10539149/ for example.
-> > > > >
-> > > > > I'm not sure what your point is, but mine is that everything about the
-> > > > > model A should be in sun50i-h6-pine-h64.dts.
-> > > > >
-> > > >
-> > > > model A and B are different enough for distinct dtb, (see sub-thread
-> > > > on HDMI difference for an other difference than PHY regulator)
-> > >
-> > > I don't mind having separate DTBs for model A and model B.
-> > >
-> > > > And clearly, the current dtb is for model B.
-> > >
-> > > That DTS was added almost a year before the model B was announced, and
-> > > no commit to that file mention the model B, so it's definitely not
-> > > clear.
-> >
-> > Normal it was added for model A (without any ethernet/HDMI support,
-> > so nothing distinct from model B), and the modelB ethernet/HDMI
-> > support cames after.
+On 16/08/2019 09:15, Shaokun Zhang wrote:
+> Hi Will,
 > 
-> Changing the board a DT is meant to halfway through the development is
-> definitely not ok.
+> On 2019/8/16 0:46, Will Deacon wrote:
+>> On Thu, May 16, 2019 at 11:14:35AM +0800, Zhangshaokun wrote:
+>>> On 2019/5/15 17:47, Will Deacon wrote:
+>>>> On Mon, Apr 15, 2019 at 07:18:22PM +0100, Robin Murphy wrote:
+>>>>> On 12/04/2019 10:52, Will Deacon wrote:
+>>>>>> I'm waiting for Robin to come back with numbers for a C implementation.
+>>>>>>
+>>>>>> Robin -- did you get anywhere with that?
+>>>>>
+>>>>> Still not what I would call finished, but where I've got so far (besides an
+>>>>> increasingly elaborate test rig) is as below - it still wants some unrolling
+>>>>> in the middle to really fly (and actual testing on BE), but the worst-case
+>>>>> performance already equals or just beats this asm version on Cortex-A53 with
+>>>>> GCC 7 (by virtue of being alignment-insensitive and branchless except for
+>>>>> the loop). Unfortunately, the advantage of C code being instrumentable does
+>>>>> also come around to bite me...
+>>>>
+>>>> Is there any interest from anybody in spinning a proper patch out of this?
+>>>> Shaokun?
+>>>
+>>> HiSilicon's Kunpeng920(Hi1620) benefits from do_csum optimization, if Ard and
+>>> Robin are ok, Lingyan or I can try to do it.
+>>> Of course, if any guy posts the patch, we are happy to test it.
+>>> Any will be ok.
+>>
+>> I don't mind who posts it, but Robin is super busy with SMMU stuff at the
+>> moment so it probably makes more sense for you or Lingyan to do it.
 > 
-> > > > So do you mean that we need to create a new dtb for model B ? (and
-> > > > hack the current back to model A ?)
-> > >
-> > > I'd prefer not to hack anything, but yes
-> > >
-> >
-> > Since model A is not public (only evaluations boards exists), the
-> > probability of a production model A is low and the current dtb is
-> > perfect for model B , could you reconsider this ?
-> 
-> I mean, you could buy it, so it's definitely public.
+> Thanks for restarting this topic, I or Lingyan will do it soon.
 
-Where ? official pineh64 site speaks only of modelB.
+FWIW, I've rolled up what I had so far and dumped it up into a quick 
+semi-realistic patch here:
 
-> 
-> Model A also had HDMI, and it doesn't look like there's anything
-> particularly specific with that board.
+http://linux-arm.org/git?p=linux-rm.git;a=commitdiff;h=859c5566510c32ae72039aa5072e932a771a3596
 
-A subthread just say the opposite, modelA need something more for HDMI
-https://lkml.org/lkml/2019/8/12/394
+So far I'd put most of the effort into the aforementioned benchmarking 
+harness to compare performance and correctness for all the proposed 
+implementations over all reasonable alignment/length combinations - I 
+think that got pretty much finished, but as Will says I'm unlikely to 
+find time to properly look at this again for several weeks.
 
-> 
-> On the Ethernet side, the only thing that changes is the regulator /
-> GPIO being used to enable the PHY?
-> 
-
-Yes
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
