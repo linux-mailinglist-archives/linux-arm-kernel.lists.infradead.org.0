@@ -2,33 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77B1F8FBC2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 09:10:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CF678FBD0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 09:12:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QhuQNpi4rvEr9peqBjBtqC3oYd1WHf/zZwefbHzmdok=; b=hJgXczY3qMsSjz
-	Wsn/2aCDHBdBrbTl5lKWsKIaqRaBAJwExsG8Y72z/RhV03Pd4Wpn8INotbXLXK3DhjoGnJmBImqEV
-	rZ5Ilc1e4uwJO8BWiJsbOzTHALZ99611rspWCOUcNHJUL29BMAFOy8zO4EB1yeHrXpt3/5jUEXqvT
-	yVc0Jf9sTnObrjGoiUGhcmfxO3M4NiYVtIfuNAuyTGrELKHmB1Bun26+bnjDT+ye5jasf+mzGRejt
-	lKy5uvp9iTUAgzy0e4JXZuawX4kP21MYZgdmZlAit9TAhcFuiJmFq49YPKrCy8zZ1qKG/5Vga3GxP
-	lXfPs1dY8c5AviQPWTkw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TQv9mS2DH/jyusGxnrRNkhmY24fqEfn1mChBZjx7x1U=; b=IRVVGFsAHZkVN9
+	BGcb6qxdoIrNfLGe0r5/mDuKR7EwIwXyTBJdBHp4hDvKGk63/37GZGUtqJthbgfWSgTyHWHatYWr/
+	QEn5rDRAcnTk4KstzGavNGVgAGQ7rt5FgOQgHpk6u4D9FxDXH+FDGzDGkxESN68qjjXy/2G4s+CeA
+	JNSUB/kM5dnPHkTF1JDV2s2JxHzgI+oQgdIKWsQ7d8VmxRRKW4ZBAobhi4TSa/mN8esKAuueLDOII
+	vaKIvUiJsxS/esxV/863cbF3a87/ABGsElCKg9AlC73YqK315YTwMQ9Xvp0yi+KqVONs30xBJ8zEU
+	HO0HYTe1ub/T7FIctjiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyWNg-0006QO-Go; Fri, 16 Aug 2019 07:10:38 +0000
+	id 1hyWPd-0006vj-Q3; Fri, 16 Aug 2019 07:12:37 +0000
 Received: from 089144199030.atnat0008.highway.a1.net ([89.144.199.30]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hyWND-000653-C4; Fri, 16 Aug 2019 07:10:09 +0000
+ id 1hyWPO-0006sq-Qm; Fri, 16 Aug 2019 07:12:23 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: iommu@lists.linux-foundation.org
-Subject: cleanup the dma_pgprot handling
-Date: Fri, 16 Aug 2019 09:07:48 +0200
-Message-Id: <20190816070754.15653-1-hch@lst.de>
+Subject: [PATCH 1/6] MIPS: remove support for DMA_ATTR_WRITE_COMBINE
+Date: Fri, 16 Aug 2019 09:07:49 +0200
+Message-Id: <20190816070754.15653-2-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190816070754.15653-1-hch@lst.de>
+References: <20190816070754.15653-1-hch@lst.de>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -53,15 +55,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+Mips uses the KSEG1 kernel memory segment do map dma coherent
+allocations for non-coherent devices as uncachable, and does not have
+any kind of special support for DMA_ATTR_WRITE_COMBINE in the allocation
+path.  Thus supporting DMA_ATTR_WRITE_COMBINE in dma_mmap_attrs will
+lead to multiple mappings with different caching attributes.
 
-this series replaced the arch_dma_mmap_pgprot hooks with the
-simpler pgprot_dmacoherent as used by the arm code already and
-cleans up various bits around that area.
+Fixes: 8c172467be36 ("MIPS: Add implementation of dma_map_ops.mmap()")
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ arch/mips/Kconfig              | 1 -
+ arch/mips/mm/dma-noncoherent.c | 8 --------
+ 2 files changed, 9 deletions(-)
 
-I'd still like to hear a confirmation from the mips folks how
-the write combibe attribute can or can't work with the KSEG1
-uncached segment.
+diff --git a/arch/mips/Kconfig b/arch/mips/Kconfig
+index d50fafd7bf3a..86e6760ef0d0 100644
+--- a/arch/mips/Kconfig
++++ b/arch/mips/Kconfig
+@@ -1119,7 +1119,6 @@ config DMA_PERDEV_COHERENT
+ 
+ config DMA_NONCOHERENT
+ 	bool
+-	select ARCH_HAS_DMA_MMAP_PGPROT
+ 	select ARCH_HAS_SYNC_DMA_FOR_DEVICE
+ 	select ARCH_HAS_UNCACHED_SEGMENT
+ 	select NEED_DMA_MAP_STATE
+diff --git a/arch/mips/mm/dma-noncoherent.c b/arch/mips/mm/dma-noncoherent.c
+index ed56c6fa7be2..1d4d57dd9acf 100644
+--- a/arch/mips/mm/dma-noncoherent.c
++++ b/arch/mips/mm/dma-noncoherent.c
+@@ -65,14 +65,6 @@ long arch_dma_coherent_to_pfn(struct device *dev, void *cpu_addr,
+ 	return page_to_pfn(virt_to_page(cached_kernel_address(cpu_addr)));
+ }
+ 
+-pgprot_t arch_dma_mmap_pgprot(struct device *dev, pgprot_t prot,
+-		unsigned long attrs)
+-{
+-	if (attrs & DMA_ATTR_WRITE_COMBINE)
+-		return pgprot_writecombine(prot);
+-	return pgprot_noncached(prot);
+-}
+-
+ static inline void dma_sync_virt(void *addr, size_t size,
+ 		enum dma_data_direction dir)
+ {
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
