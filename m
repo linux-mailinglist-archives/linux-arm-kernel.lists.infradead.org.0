@@ -2,73 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F8008FF69
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 11:48:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC5F28FF73
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 11:51:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HOtfwpP6ZQ+eKH0pfBhC4KNSDIfTY6FsKUfz5wWC48I=; b=Keaffp0WXNo+jpCUdHTorddkE
-	S5d1T5YtUIq9xWxrNnw/l2RUTBgtjAblAshk35d1RDopfemMLITpZy+6j3WDZs8LcOTHr63j3s7le
-	Nt2Ynmj6Rw5XMPsZqpQsxqIuPZ5JsfL7bJC0LPTqdeUj9c9sjvGK7Jg0b+CsRGL1TB8OojkHazKqH
-	Rru6QqPSqLKlenI9y0dI6788JLctw8S1wkp88tFJg91RFnVq++4GvHdDUJm/cqXm19/d6jXe17RRa
-	2NvDXoLx0EXncGSxX2DNZww3PPasI5pz/PXJYmJI0fWpgg5qo2D7ivRGCF/AIUzjInjIVRHJAs8t/
-	4ZTlwzavw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+BYk1rC4eXdre/EsAmk5qm7Wo+TwCtiUwOebWCMM5mo=; b=c+xz7Ucq+jphV1
+	h8YDSHuD9F6IFFAbO70A8YdYIMNE0BFPKdRbKG9xTGq3cv+dgtx1zFp73ZVuUNC8LS/XKVqzpmfy1
+	YhW391y8MqwFg3r7CXIdE8RyD/VNQzKF8sJlt+NiukGnlu36JaQ9LKg7jduH/eouf9Uwq4HdSot0f
+	HVaIeKh1bi4RckXsqI0wW2EStakAbO60NN1QaXXBC0uvzpo0wb7vO8O0H4nKD0VmfKVy2RmQy0Hs+
+	/TGEczQQgklr5rGadd9RiMUAMTIUVMJUOFhM6YSkZNel51nvidLvDS8H9qeG0jKBqIgg/6UeS/y/E
+	hVfPj+T0BUPxCpcAMvZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyYqX-0007gI-Je; Fri, 16 Aug 2019 09:48:33 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hyYsn-0001Lo-L1; Fri, 16 Aug 2019 09:50:54 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyYqJ-0007gA-Q4
- for linux-arm-kernel@bombadil.infradead.org; Fri, 16 Aug 2019 09:48:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=mD9ClRBue1XFA4KcgMq3vDk+RqrW0ppD8k04D80FnEM=; b=VsKGOtqvSR5jGndo96dxoFlNN
- 3cDBKv7Gco5fBKsSKujsiVs0dcK39WT/zTbt/T7fmkhe8y5C45WpPWYR+OJfvi5VAeNlAI3obwwwm
- T6/nMLKMJsosACKPzBYkTIYbgkUMB1E4iMannJYhxSPrMPX8qTTzSdR2xMaiiXkOBS1Kx+Dv+OQQ5
- WluexYOPVhEIZd4BFfSOa2WSJP7PNHFemp+K40ml9p+9EzOVZ8hmXEAJobxHAwSKGjxeE96zFobrq
- b8XvhzbO5fQ2N2wbJCQozmoPWjH7lJsR14j802qf2P7DLeJmzVNSmzG6zBN1BzKjXl5LuaRvXa3fO
- m1GfodaEg==;
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyYqF-0005wL-Uu
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 09:48:18 +0000
-X-Originating-IP: 86.250.200.211
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 1026C60005;
- Fri, 16 Aug 2019 09:47:36 +0000 (UTC)
-Date: Fri, 16 Aug 2019 11:47:36 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Frank Lee <tiny.windzz@gmail.com>
-Subject: Re: [PATCH v5 02/18] dt-bindings: thermal: add binding document for
- h6 thermal controller
-Message-ID: <20190816094736.cbxkqk7q2jvvp7c7@flea>
-References: <20190810052829.6032-1-tiny.windzz@gmail.com>
- <20190810052829.6032-3-tiny.windzz@gmail.com>
- <20190812085604.ozhl35wwm3ehlvqn@flea>
- <CAEExFWswLiFknVpBEKF9c5yoFvvA4np-ivWYkQLcteYoM8qjfg@mail.gmail.com>
+ id 1hyYsa-0001LN-S2
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 09:50:42 +0000
+Received: by mail-wm1-x342.google.com with SMTP id o4so3550295wmh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 16 Aug 2019 02:50:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=b/HQvzLuPAQzjKYNQcL4AudsvSLCJBYrtDqCfaQEVXs=;
+ b=XfDCPmmDvgMEo9nSZCmOTkdIcYwbI4SSP722mwKE9xlgtpOudXrDNTFX6AnvRaQ5mc
+ ULRJKcs+rhNt1YMZrquluQMOQdw4FfRxSuYz/L+LPRJd5jtYAqwMYKujzVCWg8XiYSIg
+ sZqjv/HBTRVciGEmbL9sKRDTtS4ccaBPBmOJZeV3FqdPuKtBfZOSkWFYEZvBKFW1L5fA
+ GyCFloxyiD1v7YjVrUQLEylEw65+cCp7vc1v1/ePjOhz0LigqqgpoIAX1yaBTGCxPmNd
+ 7hvHEDyTfcbaUm+tUwnjgsVZL5oHgJtEGIyiwMwfaov7HlrsWqQ+hqPMaoZFN5i4tJmU
+ LYOw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=b/HQvzLuPAQzjKYNQcL4AudsvSLCJBYrtDqCfaQEVXs=;
+ b=IGDxJ7Yfz7tOemYNRB4Qui1GaXoVpNYIe40X7H25REutZdrx+5o3z586PyvPsNr6ci
+ 3NbHoPprRz5Pozw6w9IZbFKwrw9lHITdTXBbaiNIiwICTDAgua1SRpBQ4vZxk+0ggeje
+ gv2oLl+uwfJdkQs/L3GAPjrp/fiVuSFMfzP8Nhq65mSMCZF7cW+BCmo/oyDPxxKmYkIs
+ NLHo5UU3Yq91hgy7UJqwiDQsGJs0LzX+MhwYQnPGnYkauS6Da+D3WKc5Tt3VcTbp5VHj
+ iEPXtJEQT2+yD+cU8yuff0kBb9dG87L8YSQPXhBHZuUMcGRPXdEPxMsRy+uZJWN1eARu
+ pAhg==
+X-Gm-Message-State: APjAAAVi+6mwy4fqks2Dot0kcJqPCtjR5o7Y0RuGGTO8lSqyC1verVTf
+ U+f0YkFqF8gNeogZjDHrF1k=
+X-Google-Smtp-Source: APXvYqwout1PTGybrAk1uFRmU1LEyuvD8f9+M7j9OpOBrAG0FWKgRTuABVYoIjQHW3/bgSyt+ktSjw==
+X-Received: by 2002:a05:600c:2111:: with SMTP id
+ u17mr6781103wml.64.1565949038988; 
+ Fri, 16 Aug 2019 02:50:38 -0700 (PDT)
+Received: from jernej-laptop.localnet (89-212-178-211.dynamic.t-2.net.
+ [89.212.178.211])
+ by smtp.gmail.com with ESMTPSA id h23sm4076063wml.43.2019.08.16.02.50.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 16 Aug 2019 02:50:37 -0700 (PDT)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
+To: linux-sunxi@googlegroups.com, peron.clem@gmail.com
+Subject: Re: [linux-sunxi] [PATCH] ARM64: dts: allwinner: Add devicetree for
+ pine H64 modelA evaluation board
+Date: Fri, 16 Aug 2019 11:50:35 +0200
+Message-ID: <2361666.6tDiKGV9WF@jernej-laptop>
+In-Reply-To: <CAJiuCcfASQriPLMuwuDCn9bU=_8q4jL+KkPo8NmMrrYpOqy2qA@mail.gmail.com>
+References: <20190808084253.10573-1-clabbe.montjoie@gmail.com>
+ <20190814132001.GC24324@Red>
+ <CAJiuCcfASQriPLMuwuDCn9bU=_8q4jL+KkPo8NmMrrYpOqy2qA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CAEExFWswLiFknVpBEKF9c5yoFvvA4np-ivWYkQLcteYoM8qjfg@mail.gmail.com>
-User-Agent: NeoMutt/20180716
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -1.0 (-)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-1.0 points)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190816_025041_394048_51B0BAAD 
+X-CRM114-Status: GOOD (  22.57  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jernej.skrabec[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,177 +104,49 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Linux PM <linux-pm@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Eduardo Valentin <edubezval@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Jonathan.Cameron@huawei.com,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, rui.zhang@intel.com,
- David Miller <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============0140245405236451464=="
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, clabbe.montjoie@gmail.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============0140245405236451464==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="e3oyg4ksww5uov3y"
-Content-Disposition: inline
-
-
---e3oyg4ksww5uov3y
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Aug 13, 2019 at 07:40:44AM +0800, Frank Lee wrote:
-> On Mon, Aug 12, 2019 at 4:56 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> >
-> > On Sat, Aug 10, 2019 at 05:28:13AM +0000, Yangtao Li wrote:
-> > > This patch adds binding document for allwinner h6 thermal controller.
-> > >
-> > > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> > > ---
-> > >  .../bindings/thermal/sun8i-thermal.yaml       | 79 +++++++++++++++++++
-> > >  1 file changed, 79 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-> > > new file mode 100644
-> > > index 000000000000..e0973199ba3c
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-> >
-> > We've used so far for the schemas the first compatible to introduce
-> > that controller as the filename, we should be consistent here. In that
-> > case that would be allwinner,sun8i-a23-ths.yaml
-> >
-> > > @@ -0,0 +1,79 @@
-> > > +# SPDX-License-Identifier: GPL-2.0
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/thermal/sun8i-thermal.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Allwinner SUN8I Thermal Controller Device Tree Bindings
-> > > +
-> > > +maintainers:
-> > > +  - Yangtao Li <tiny.windzz@gmail.com>
-> > > +
-> > > +description: |-
-> > > +  This describes the device tree binding for the Allwinner thermal
-> > > +  controller which measures the on-SoC temperatures.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    enum:
-> > > +      - allwinner,sun50i-h6-ths
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  interrupts:
-> > > +    maxItems: 1
-> > > +
-> > > +  resets:
-> > > +    maxItems: 1
-> > > +
-> > > +  clocks:
-> > > +    maxItems: 1
-> > > +
-> > > +  clock-names:
-> > > +    const: bus
-> > > +
-> > > +  "#thermal-sensor-cells":
-> > > +    const: 1
-> > > +
-> > > +  nvmem-cells:
-> >
-> > You need a maxItems here too
-> >
-> > > +    description: ths calibrate data
-> >
-> > What about something like this:
-> >
-> > Calibration data for the thermal sensor
-> >
-> > > +
-> > > +  nvmem-cell-names:
-> > > +    const: calib
-> >
-> > I'm not sure we need a abbreviation here, calibration would be more
-> > explicit
-> >
-> > > +
-> > > +required:
-> > > +  - compatible
-> > > +  - reg
-> > > +  - reset
-> > > +  - clocks
-> > > +  - clock-names
-> > > +  - interrupts
-> > > +  - "#thermal-sensor-cells"
-> > > +
-> > > +additionalProperties: false
-> > > +
-> > > +examples:
-> > > +  - |
-> > > +    ths: ths@5070400 {
-> > > +        compatible = "allwinner,sun50i-h6-ths";
-> > > +        reg = <0x05070400 0x100>;
-> > > +        clocks = <&ccu CLK_BUS_THS>;
-> > > +        clock-names = "bus";
-> > > +        resets = <&ccu RST_BUS_THS>;
-> > > +        interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
-> >
-> > Those examples won't compile.
->
-> Emmm, I have some questions about this.
-> I added this information and it can be compiled.
-
-With your patch applied,
-
-$ ARCH=arm DT_SCHEMA_FILES=Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml make -j4 dt_binding_check
-  CHKDT   Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-  DTC     Documentation/devicetree/bindings/thermal/sun8i-thermal.example.dt.yaml
-Error: Documentation/devicetree/bindings/thermal/sun8i-thermal.example.dts:20.28-29 syntax error
-FATAL ERROR: Unable to parse input tree
-make[2]: *** [scripts/Makefile.lib:299: Documentation/devicetree/bindings/thermal/sun8i-thermal.example.dt.yaml] Error 1
-make[1]: *** [/home/max/Work/src/linux/Makefile:1286: dt_binding_check] Error 2
-make: *** [/home/max/Work/src/linux/Makefile:179: sub-make] Error 2
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---e3oyg4ksww5uov3y
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVZ7uAAKCRDj7w1vZxhR
-xWTKAQDfLyzi2ALbODyX2kPcPMmaLcp2tRh8IqLRMr6zqYgqDgD/dgWM62HXzihe
-5V5fiOFI853nEXxoNxr4cglIprifmAw=
-=nc3f
------END PGP SIGNATURE-----
-
---e3oyg4ksww5uov3y--
-
-
---===============0140245405236451464==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0140245405236451464==--
-
+RG5lIHNyZWRhLCAxNC4gYXZndXN0IDIwMTkgb2IgMTU6Mjg6NTMgQ0VTVCBqZSBDbMOpbWVudCBQ
+w6lyb24gbmFwaXNhbChhKToKPiBIaSwKPiAKPiBPbiBXZWQsIDE0IEF1ZyAyMDE5IGF0IDE1OjIw
+LCBDb3JlbnRpbiBMYWJiZSA8Y2xhYmJlLm1vbnRqb2llQGdtYWlsLmNvbT4gCndyb3RlOgo+ID4g
+T24gTW9uLCBBdWcgMTIsIDIwMTkgYXQgMTI6NTY6NTZQTSArMDIwMCwgSmVybmVqIMWga3JhYmVj
+IHdyb3RlOgo+ID4gPiBEbmUgxI1ldHJ0ZWssIDA4LiBhdmd1c3QgMjAxOSBvYiAxMDo0Mjo1MyBD
+RVNUIGplIENvcmVudGluIExhYmJlIApuYXBpc2FsKGEpOgo+ID4gPiA+IFRoaXMgcGF0Y2ggYWRk
+cyB0aGUgZXZhbHVhdGlvbiB2YXJpYW50IG9mIHRoZSBtb2RlbCBBIG9mIHRoZSBQaW5lSDY0Lgo+
+ID4gPiA+IFRoZSBtb2RlbCBBIGhhcyB0aGUgc2FtZSBzaXplIG9mIHRoZSBwaW5lNjQgYW5kIGhh
+cyBhIFBDSUUgc2xvdC4KPiA+ID4gPiAKPiA+ID4gPiBUaGUgb25seSBkZXZpY2V0cmVlIGRpZmZl
+cmVuY2Ugd2l0aCBjdXJyZW50IHBpbmVINjQsIGlzIHRoZSBQSFkKPiA+ID4gPiByZWd1bGF0b3Iu
+Cj4gPiA+IAo+ID4gPiBJIGhhdmUgTW9kZWwgQSBib2FyZCB3aGljaCBhbHNvIG5lZWRzIGRkYy1l
+bi1ncGlvcyBwcm9wZXJ0eSBmb3IgSERNSQo+ID4gPiBjb25uZWN0b3IgaW4gb3JkZXIgZm9yIEhE
+TUkgdG8gd29yayBjb3JyZWN0bHkuIE90aGVyd2lzZSBpdCB3aWxsIGp1c3QKPiA+ID4gdXNlIDEw
+MjR4NzY4IHJlc29sdXRpb24uIENhbiB5b3UgY29uZmlybSB0aGF0Pwo+IAo+IFNjaGVtYXRpY3Mg
+UmV2IEE6Cj4gaHR0cDovL2ZpbGVzLnBpbmU2NC5vcmcvZG9jL1BpbmUlMjBINjQvUGluZSUyMEg2
+NCUyMFZlcjEuMS0yMDE4MDEwNC5wZGYKPiAKPiBSZXYgQjoKPiBodHRwOi8vZmlsZXMucGluZTY0
+Lm9yZy9kb2MvUGluZSUyMEg2NC9QSU5FLUg2LW1vZGVsLUItMjAxODEyMTItc2NoZW1hdGljLnBk
+Cj4gZgo+IAo+IFRoZXJlIGlzIGEgRERDX0VOIG9uIFJFViBBIG5vdCBvbiBSRVYgQgo+IAo+IFJl
+Z2FyZHMsCj4gQ2zDqW1lbnQKPiAKPiA+ID4gQmVzdCByZWdhcmRzLAo+ID4gPiBKZXJuZWoKPiA+
+IAo+ID4gU29ycnkgSSBkaWRudCB1c2UgYXQgYWxsIHZpZGVvIHN0dWZmIChsaWtlIEhETUkpLCBz
+byBJIGNhbm5vdCBhbnN3ZXIgbm93Lgo+ID4gCj4gPiBDb3VsZCB5b3Ugc2VuZCBtZSBhIHBhdGNo
+IGFnYWluc3QgbXkgZnV0dXJlIHYyIGFuZCBJIGNvdWxkIHRlc3QKPiA+IHdpdGgvd2l0aG91dC4K
+CkkgZG9uJ3QgaGF2ZSBhY2Nlc3MgdG8gbXkgTW9kZWwgQSBib2FyZCBjdXJyZW50bHksIGJ1dCB0
+aGlzIHNob3VsZCBzdWZmaWNlOgoKJmNvbm5lY3RvciB7CglkZGMtZW4tZ3Bpb3MgPSA8JnBpbyA3
+IDIgR1BJT19BQ1RJVkVfSElHSD47IC8qIFBIMiAqLwp9OwoKQmVzdCByZWdhcmRzLApKZXJuZWoK
+Cj4gPiAKPiA+IFJlZ2FyZHMKPiA+IAo+ID4gLS0KPiA+IFlvdSByZWNlaXZlZCB0aGlzIG1lc3Nh
+Z2UgYmVjYXVzZSB5b3UgYXJlIHN1YnNjcmliZWQgdG8gdGhlIEdvb2dsZSBHcm91cHMKPiA+ICJs
+aW51eC1zdW54aSIgZ3JvdXAuIFRvIHVuc3Vic2NyaWJlIGZyb20gdGhpcyBncm91cCBhbmQgc3Rv
+cCByZWNlaXZpbmcKPiA+IGVtYWlscyBmcm9tIGl0LCBzZW5kIGFuIGVtYWlsIHRvCj4gPiBsaW51
+eC1zdW54aSt1bnN1YnNjcmliZUBnb29nbGVncm91cHMuY29tLiBUbyB2aWV3IHRoaXMgZGlzY3Vz
+c2lvbiBvbiB0aGUKPiA+IHdlYiwgdmlzaXQKPiA+IGh0dHBzOi8vZ3JvdXBzLmdvb2dsZS5jb20v
+ZC9tc2dpZC9saW51eC1zdW54aS8yMDE5MDgxNDEzMjAwMS5HQzI0MzI0JTQwUmUKPiA+IGQuCgoK
+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
