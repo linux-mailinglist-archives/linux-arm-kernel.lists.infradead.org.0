@@ -2,57 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CD1790705
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 19:36:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E751290718
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 19:40:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A8qzEmx7Jov6iVqaBqul6G/1iOHr0LSdPsQ9dA3vVAQ=; b=qk5rSBfg6YcnAb
-	TGGOw4ye3gLjiaPelnhW7F3drVBUf99M4Qmh2bIPjzc4bzpnWStT4tYQrLvTye2OgP5JfEHbIc/bx
-	A1X+nWIVR4lrStX2liaQFbaYG+IwU8/MkYOu8nG1hHLQVJeEavkfWNKuTmAyIeJHBqqkSvU28CdqO
-	kByiiG8xUAiamySgC4+MFyld3lFq+AvJytE+z8E01FDccyF3dqRK9zr/KJbtseaEbtyLUUdn0UhhC
-	pLNjqK4/7y2PukVms0ImVKp7H9j0mcXtRCZIVpNI0vTzbygPxq9nstY+7InVdCYN44lKeMY3Xs5NC
-	AWD8w6U2AAJolCWKIQsQ==;
+	List-Owner; bh=Wc1DB3k4oKOM7KSH4OuCs+eIdDOtUFB5jm4SoTcLBBY=; b=cyQhvXHe7tbATw
+	QmvA9A+wTJTMGsuPP/dAYmoYeRGabYqIgE1hKuA5BNEm+ArTW3Q4/WjS2GUalK60oEM6mB396ikNg
+	LJ9DPSoUwoxv7ISD3LkaHApXF2+i51NzxAH9A3CiRxcpZfqAkxJkfRXJolJ73+kZcMKGM2qmZCrUV
+	S6OWL4OkIyilDd3khAN+TUEqzA9xzVhPGgALnw+4RXcX7HhzuPl4NUAs6+eGsiySNtjCGkIBbT0HT
+	yHyEXCnybh4Pl1becCY+M1XIhQkNqfz8E6EK0Jbj6dn+tU005C5KSt/5ZF+O43prrEi8kJnyRzJkw
+	4HkGjQAGTCSLRUlkU/TQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyg9D-0002MX-1s; Fri, 16 Aug 2019 17:36:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hyg90-0002Lq-QX
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 17:36:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1FB0928;
- Fri, 16 Aug 2019 10:36:04 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1BA173F694;
- Fri, 16 Aug 2019 10:36:02 -0700 (PDT)
-Date: Fri, 16 Aug 2019 18:36:00 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 6/6] arm64: document the choice of page attributes for
- pgprot_dmacoherent
-Message-ID: <20190816173559.GB7417@lakrids.cambridge.arm.com>
-References: <20190816070754.15653-1-hch@lst.de>
- <20190816070754.15653-7-hch@lst.de>
- <20190816173118.4rbbzuogfamfa554@willie-the-truck>
+	id 1hygD1-0002qn-Q0; Fri, 16 Aug 2019 17:40:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hygCM-0002qK-Uc; Fri, 16 Aug 2019 17:39:36 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 60509205F4;
+ Fri, 16 Aug 2019 17:39:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1565977174;
+ bh=Hkql629r7jMcpDCSxxQyeYY9VUfj+ahusqlu9yDMvrc=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=VEUKX1woF1+HKNWJy9m1xpe3/2wVZkOVt6mzeKpwGagd4EEyDFFQ5aIFPPYudf/u9
+ WI2YjhZvHidzvy2iHc7gwEzPwnYeshMTHPpS6vQTqDNKa9bvgvUbXaZ201A9ru/0LT
+ SnNpM1nc4HKDqE1dego2rca6fTLJ1bh6niL07Rho=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190816173118.4rbbzuogfamfa554@willie-the-truck>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <1565713248-4906-7-git-send-email-wahrenst@gmx.net>
+References: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
+ <1565713248-4906-7-git-send-email-wahrenst@gmx.net>
+Subject: Re: [PATCH V2 06/13] clk: bcm2835: Mark PLLD_PER as CRITICAL
+From: Stephen Boyd <sboyd@kernel.org>
+To: Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>, Ray Jui <rjui@broadcom.com>,
+ Rob Herring <robh+dt@kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Stefan Wahren <wahrenst@gmx.net>, Wolfram Sang <wsa@the-dreams.de>
+User-Agent: alot/0.8.1
+Date: Fri, 16 Aug 2019 10:39:33 -0700
+Message-Id: <20190816173934.60509205F4@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_103606_905553_D065CF57 
-X-CRM114-Status: GOOD (  22.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190816_103935_008565_F935B4C0 
+X-CRM114-Status: GOOD (  15.82  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,66 +79,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Anastasio <shawn@anastas.io>, linux-m68k@lists.linux-m68k.org,
- Catalin Marinas <catalin.marinas@arm.com>, linuxppc-dev@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- linux-mips@vger.kernel.org, iommu@lists.linux-foundation.org,
- Geert Uytterhoeven <geert@linux-m68k.org>, Paul Burton <paul.burton@mips.com>,
- James Hogan <jhogan@kernel.org>, Guan Xuetao <gxt@pku.edu.cn>,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- Robin Murphy <robin.murphy@arm.com>
+Cc: devicetree@vger.kernel.org, Stefan Wahren <wahrenst@gmx.net>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 16, 2019 at 06:31:18PM +0100, Will Deacon wrote:
-> Hi Christoph,
+Quoting Stefan Wahren (2019-08-13 09:20:41)
+> The VPU firmware assume that the PLLD_PER isn't modified by the ARM core.
+> Otherwise this could cause firmware lookups. So mark the clock as critical
+> to avoid this.
 > 
-> Thanks for spinning this into a patch.
+> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+> ---
+>  drivers/clk/bcm/clk-bcm2835.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> On Fri, Aug 16, 2019 at 09:07:54AM +0200, Christoph Hellwig wrote:
-> > Based on an email from Will Deacon.
-> > 
-> > Signed-off-by: Christoph Hellwig <hch@lst.de>
-> > ---
-> >  arch/arm64/include/asm/pgtable.h | 8 ++++++++
-> >  1 file changed, 8 insertions(+)
-> > 
-> > diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-> > index 6700371227d1..6ff221d9a631 100644
-> > --- a/arch/arm64/include/asm/pgtable.h
-> > +++ b/arch/arm64/include/asm/pgtable.h
-> > @@ -435,6 +435,14 @@ static inline pmd_t pmd_mkdevmap(pmd_t pmd)
-> >  	__pgprot_modify(prot, PTE_ATTRINDX_MASK, PTE_ATTRINDX(MT_NORMAL_NC) | PTE_PXN | PTE_UXN)
-> >  #define pgprot_device(prot) \
-> >  	__pgprot_modify(prot, PTE_ATTRINDX_MASK, PTE_ATTRINDX(MT_DEVICE_nGnRE) | PTE_PXN | PTE_UXN)
-> > +/*
-> > + * DMA allocations for non-coherent devices use what the Arm architecture calls
-> > + * "Normal non-cacheable" memory, which permits speculation, unaligned accesses
-> > + * and merging of writes.  This is different from "Strongly Ordered" memory
-> > + * which is intended for MMIO and thus forbids speculation, preserves access
-> > + * size, requires strict alignment and also forces write responses to come from
-> > + * the endpoint.
-> > + */
-> 
-> Mind if I tweak the second sentence to be:
-> 
->   This is different from "Device-nGnR[nE]" memory which is intended for MMIO
->   and thus forbids speculation, preserves access size, requires strict
->   alignment and can also force write responses to come from the endpoint.
-> 
-> ? It's a small change, but it better fits with the arm64 terminology
-> ("strongly ordered" is no longer used in the architecture).
-> 
-> If you're happy with that, I can make the change and queue this patch
-> for 5.4.
+> diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
+> index fdf672a..b62052e 100644
+> --- a/drivers/clk/bcm/clk-bcm2835.c
+> +++ b/drivers/clk/bcm/clk-bcm2835.c
+> @@ -1785,7 +1785,7 @@ static const struct bcm2835_clk_desc clk_desc_array[] = {
+>                 .load_mask = CM_PLLD_LOADPER,
+>                 .hold_mask = CM_PLLD_HOLDPER,
+>                 .fixed_divider = 1,
+> -               .flags = CLK_SET_RATE_PARENT),
+> +               .flags = CLK_IS_CRITICAL | CLK_SET_RATE_PARENT),
 
-FWIW, with that wording:
+Please add a comment in the code to the effect that is in the commit
+text so we don't have to dig through commits to figure out why this
+special CLK_IS_CRITICAL flag is here.
 
-Acked-by: Mark Rutland <mark.rutland@arm.com>
-
-Mark.
+>         [BCM2835_PLLD_DSI0]     = REGISTER_PLL_DIV(
+>                 SOC_ALL,
+>                 .name = "plld_dsi0",
 
 _______________________________________________
 linux-arm-kernel mailing list
