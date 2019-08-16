@@ -2,56 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3846090774
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 20:05:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 730D390778
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 20:06:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OxQEyOOhpVUvamieuS0M4/PUmX46B3fc0l8ik48CLPg=; b=kKBwrY+4GlZUcf
-	nP8g8Q3nCI28yYn37Z/b3n3dUNtrCAktZGhGcO95+FZ516ljWyl1vvdCBruhiNf74JRf/oPaISmiH
-	hxtrJ0fcyqY1awCwCNclBjlusyQ8R607KLEIYsZjQyuFXS9qZ9SVZzt814OA1Q9iv01oQsE2ikQfK
-	sMK/MPPRI+KGZkLL04HckqpWXVV4of1GdwMRJEj37LYVWG+yA/n25h+xKds8JI4fSY0ne1bR5/pTm
-	c61XZY/VwxyDBIhC5j+h6sCiwc+/We4Vl+lOfYL8B1gZc0Kq2G1mOuedBlbSXIU9sNgeqau6TVq7j
-	Yl17qyOfHv7HCfl0LFRA==;
+	List-Owner; bh=G9Qs/oiwKPVSEl5IicgGiSiPhxJJSemzLZq27pIj+D4=; b=AwhikGEuhBj23V
+	Cwtf1eCA7P9q/O6uEYaFj45cNkzfLLt4G7WHHdKcKVxTX1cBs6bpfhD4WZKDV7KV+AZSiDqd/wvPJ
+	gGrP0I5LLgo/waNYzUSDkcye5OeqtGLAv+mYqb877gqEuX/rnIGjDCkg90w42f1OZgVCqrfBao/B4
+	gCynsl0rTtyvYx388+UyzqAZeMq42E1iwFPnGWm/fmxoViqRY/4j8F7m5qiwAgtEb1DDHn2PT9PH3
+	KWqzSg2yIyGEZsL9OR7CcVfbBdtUL8P979xb+vBg6b3uA0lYEnTDbJtI69WU/QTre4/BTAaHyO4K+
+	xg+WHbzmf8nRicc2FIqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hygbd-0003zS-BX; Fri, 16 Aug 2019 18:05:41 +0000
+	id 1hygcI-0004EY-Dn; Fri, 16 Aug 2019 18:06:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hygbQ-0003z7-BM
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 18:05:29 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7830C20665;
- Fri, 16 Aug 2019 18:05:25 +0000 (UTC)
+ id 1hygbx-0004EG-MK
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 18:06:02 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 427BC20665;
+ Fri, 16 Aug 2019 18:06:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565978727;
- bh=ATa8fe0CxhAbQASCjl6IYhzQjKdSYeQNhdmBcA2ZRlU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=yclaVWCYpQyvh9OaGQPrYfiMYsvcW/o5PkOIV7eQUmhstIzpx2ZZ0sSjiKcxqnMgv
- 7z+Jikxzq4/ZIHpHnEO2nuFXbcvpn1v46HdwXjYNwayNZxp8x1aicBOflxg1CSeLTk
- vayH5O/ix+LVeWKI9G785+H8RXwq5z7rEAqzMsfo=
-Date: Fri, 16 Aug 2019 19:05:22 +0100
-From: Will Deacon <will@kernel.org>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 6/6] arm64: document the choice of page attributes for
- pgprot_dmacoherent
-Message-ID: <20190816180522.gocqeayajlbu4gzp@willie-the-truck>
-References: <20190816070754.15653-1-hch@lst.de>
- <20190816070754.15653-7-hch@lst.de>
- <20190816173118.4rbbzuogfamfa554@willie-the-truck>
- <20190816175942.GA4879@lst.de>
+ s=default; t=1565978761;
+ bh=QASmlY4ON4/9px2oPd+HIdAz8Fff0k2LsKxJXsxM21Q=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=oKyvzPF6SEO2Hyb1P31lHqJQ0RCDAW+ExZE524oWyY0eKm+1NEzXvsO+IJEtgKxKX
+ WEcmUyALJDXuQ0z+TucDNe0xcEUxTtoeHBDp4YFE+GX+Jed3ElDBZrWaA2ID+Ha8vo
+ MZSAC6QdFQSS5l8finFeul3EEp5TdM3Zawk10oxY=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190816175942.GA4879@lst.de>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190809093158.7969-15-lkundrak@v3.sk>
+References: <20190809093158.7969-1-lkundrak@v3.sk>
+ <20190809093158.7969-15-lkundrak@v3.sk>
+Subject: Re: [PATCH 14/19] ARM: mmp: add support for MMP3 SoC
+From: Stephen Boyd <sboyd@kernel.org>
+To: Lubomir Rintel <lkundrak@v3.sk>, Olof Johansson <olof@lixom.net>
+User-Agent: alot/0.8.1
+Date: Fri, 16 Aug 2019 11:06:00 -0700
+Message-Id: <20190816180601.427BC20665@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_110528_413342_539DF6AF 
-X-CRM114-Status: GOOD (  18.77  )
+X-CRM114-CacheID: sfid-20190816_110601_749191_64FA4466 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,47 +77,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Anastasio <shawn@anastas.io>, linux-m68k@lists.linux-m68k.org,
- Guan Xuetao <gxt@pku.edu.cn>, linuxppc-dev@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- linux-mips@vger.kernel.org, iommu@lists.linux-foundation.org,
- Geert Uytterhoeven <geert@linux-m68k.org>, Paul Burton <paul.burton@mips.com>,
- Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
+ linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 16, 2019 at 07:59:42PM +0200, Christoph Hellwig wrote:
-> On Fri, Aug 16, 2019 at 06:31:18PM +0100, Will Deacon wrote:
-> > Mind if I tweak the second sentence to be:
-> > 
-> >   This is different from "Device-nGnR[nE]" memory which is intended for MMIO
-> >   and thus forbids speculation, preserves access size, requires strict
-> >   alignment and can also force write responses to come from the endpoint.
-> > 
-> > ? It's a small change, but it better fits with the arm64 terminology
-> > ("strongly ordered" is no longer used in the architecture).
-> > 
-> > If you're happy with that, I can make the change and queue this patch
-> > for 5.4.
-> 
-> I'm fine with the change, but you really need this series as base,
-> as there is no pgprot_dmacoherent before the series.  So I think I'll
-> have to queue it up if we want it for 5.4, and I'll need a few more
-> reviews for the other patches in this series first.
+Quoting Lubomir Rintel (2019-08-09 02:31:53)
+> diff --git a/drivers/clk/mmp/Makefile b/drivers/clk/mmp/Makefile
+> index 7bc7ac69391e3..deb069a4e4215 100644
+> --- a/drivers/clk/mmp/Makefile
+> +++ b/drivers/clk/mmp/Makefile
+> @@ -9,6 +9,7 @@ obj-$(CONFIG_RESET_CONTROLLER) += reset.o
+>  
+>  obj-$(CONFIG_MACH_MMP_DT) += clk-of-pxa168.o clk-of-pxa910.o
+>  obj-$(CONFIG_MACH_MMP2_DT) += clk-of-mmp2.o
+> +obj-$(CONFIG_MACH_MMP3_DT) += clk-of-mmp2.o
+>  
 
-Ah, I didn't think about the contextual stuff. In which case, with my
-change in wording:
+Maybe make a Kconfig variable in drivers/clk/mmp/Kconfig that builds
+clk-of-mmp2.c and is selected by MACH_MMP*_DT?
 
-Acked-by: Will Deacon <will@kernel.org>
-
-and feel free to route it with the rest.
-
-Thanks,
-
-Will
+>  obj-$(CONFIG_CPU_PXA168) += clk-pxa168.o
+>  obj-$(CONFIG_CPU_PXA910) += clk-pxa910.o
 
 _______________________________________________
 linux-arm-kernel mailing list
