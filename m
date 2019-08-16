@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BE2090184
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 14:28:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41A8490186
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 14:28:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=LqIF3whFTOJcAbhOpETXB8QgFdy9SlQ9UuCYDjupZ9M=; b=Jh8+1oHl7KJ+LXFTwo1Es7rTXQ
-	3Evu1DezugcGLM/6Hcg0mTTHim6Myy+tkcvGHhhHTSbPPgdub7GKcOp5LgY8rUZjg0NufquRrgT2Y
-	ezq+UCR+FopBAlA4Z/NmH30YxTXYoG+9Zjg3u+/fu1K7h1PEWDbIck43hYB41E7qLnEPR1nGvUVgI
-	PSAdlzp/Z5d3F8Aq2i1AxEtdP5d+kjB2uRZeaUVaqmwh7gKRvGdqJUCLSUaVEZuRS9yhemABCityA
-	myRuepBxNFVOZiK+Xrj/3IeEy19g+G6XgpSsef+0m4L0YEI8IA15AF1I5CcPJWSMBY2HtzhTeHTki
-	uEjCLrDw==;
+	bh=7rpS6MYXrAtKFSB0Esx3MK61wtQfdWJsEoHSDH+60b8=; b=iJaDh9rrDHAAN09Pn7gJIMR9R1
+	D4jGmZAC72muE23NaaeKXBeeJPhO6m1WQnZBwzxM4pQmHGEA8jHEISUyu1wTpGTp9EzVYI4xZp007
+	PaXrCIi49iaFtTgcerN6V+xLRd6Dl/1lbD5s8qd21XxZmGrMsgvn4Tsivd++kLarZUMoryH0hVWft
+	kmoXnuC6/WCjb71orjJsH8phQeZo1w9FNgqAqt7/7Nv8Ji6sQboiQi4szethvLODJNUgOjmPHw+vt
+	UzGDqxeNrJM4qrBkFbp7g2BK0CUmldB4OXrCVhUdex91IeV61V2wJ3hVy2AYhTG9l7JGezyWEUTcU
+	d6stWVZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hybL1-0008Do-OM; Fri, 16 Aug 2019 12:28:11 +0000
+	id 1hybLd-0000aZ-En; Fri, 16 Aug 2019 12:28:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hybHr-0004Np-To
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 12:24:57 +0000
+ id 1hybHt-0004U6-SQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 12:24:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C592C344;
- Fri, 16 Aug 2019 05:24:55 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3E38B360;
+ Fri, 16 Aug 2019 05:24:57 -0700 (PDT)
 Received: from e121650-lin.cambridge.arm.com (e121650-lin.cambridge.arm.com
  [10.1.196.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8C2B63F706;
- Fri, 16 Aug 2019 05:24:54 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 051553F706;
+ Fri, 16 Aug 2019 05:24:55 -0700 (PDT)
 From: Raphael Gault <raphael.gault@arm.com>
 To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  jpoimboe@redhat.com
-Subject: [RFC v4 11/18] arm64: alternative: Mark .altinstr_replacement as
- containing executable instructions
-Date: Fri, 16 Aug 2019 13:23:56 +0100
-Message-Id: <20190816122403.14994-12-raphael.gault@arm.com>
+Subject: [RFC v4 12/18] arm64: assembler: Add macro to annotate asm function
+ having non standard stack-frame.
+Date: Fri, 16 Aug 2019 13:23:57 +0100
+Message-Id: <20190816122403.14994-13-raphael.gault@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190816122403.14994-1-raphael.gault@arm.com>
 References: <20190816122403.14994-1-raphael.gault@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_052456_155360_0469E0DC 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20190816_052458_001338_7A874F9B 
+X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,28 +72,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Until now, the section .altinstr_replacement wasn't marked as containing
-executable instructions on arm64. This patch changes that so that it is
-coherent with what is done on x86.
+Some functions don't have standard stack-frames but are intended
+this way. In order for objtool to ignore those particular cases
+we add a macro that enables us to annotate the cases we chose
+to mark as particular.
 
 Signed-off-by: Raphael Gault <raphael.gault@arm.com>
 ---
- arch/arm64/include/asm/alternative.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ include/linux/frame.h | 19 ++++++++++++++++++-
+ 1 file changed, 18 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/alternative.h b/arch/arm64/include/asm/alternative.h
-index b9f8d787eea9..e9e6b81e3eb4 100644
---- a/arch/arm64/include/asm/alternative.h
-+++ b/arch/arm64/include/asm/alternative.h
-@@ -71,7 +71,7 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
- 	ALTINSTR_ENTRY(feature,cb)					\
- 	".popsection\n"							\
- 	" .if " __stringify(cb) " == 0\n"				\
--	".pushsection .altinstr_replacement, \"a\"\n"			\
-+	".pushsection .altinstr_replacement, \"ax\"\n"			\
- 	"663:\n\t"							\
- 	newinstr "\n"							\
- 	"664:\n\t"							\
+diff --git a/include/linux/frame.h b/include/linux/frame.h
+index 02d3ca2d9598..1e35e58ab259 100644
+--- a/include/linux/frame.h
++++ b/include/linux/frame.h
+@@ -11,14 +11,31 @@
+  *
+  * For more information, see tools/objtool/Documentation/stack-validation.txt.
+  */
++#ifndef __ASSEMBLY__
+ #define STACK_FRAME_NON_STANDARD(func) \
+ 	static void __used __section(.discard.func_stack_frame_non_standard) \
+ 		*__func_stack_frame_non_standard_##func = func
++#else
++	/*
++	 * This macro is the arm64 assembler equivalent of the
++	 * macro STACK_FRAME_NON_STANDARD define at
++	 * ~/include/linux/frame.h
++	 */
++	.macro	asm_stack_frame_non_standard	func
++	.pushsection ".discard.func_stack_frame_non_standard"
++	.quad	\func
++	.popsection
++	.endm
+ 
++#endif /* __ASSEMBLY__ */
+ #else /* !CONFIG_STACK_VALIDATION */
+ 
++#ifndef __ASSEMBLY__
+ #define STACK_FRAME_NON_STANDARD(func)
+-
++#else
++	.macro	asm_stack_frame_non_standard	func
++	.endm
++#endif /* __ASSEMBLY__ */
+ #endif /* CONFIG_STACK_VALIDATION */
+ 
+ #endif /* _LINUX_FRAME_H */
 -- 
 2.17.1
 
