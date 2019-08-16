@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C979390235
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 15:00:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14F559023C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 15:01:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=binvr5EovrjMjjov0TjAKEtpse7htCyuSG9nIlctTDk=; b=AhFMy7K9wJnVFpCUyL9yJ2DfwR
-	wa/S/mujemxYMuWxQhlOv1XHrO1shU/lxaoaLUGCLm2LO8KTnWSsPoT6cCn9hbDc/Pj1Aa+XctJVQ
-	YZagBtRGNaeI0OUoGaUOSu6CiBQwjKsVByRJdC4A3+GTFP9xE9Yv6csFd9WwoNOckTQ+6cMYErZVg
-	5qaCJY8/FpB5TktZQ9yjNYSSoBRYTku0CreQwc0J6m3DM6Pa2wu4JimtarJWTKJ8U/gKXNG8v+Tyl
-	Q0Ro7L+tA5O7G5xM5FK9Y6NLZy8sxH1CK6S81OIQsmJ04bHoC/Uhtr2N8weAwjPuv7EXEwr53jEUK
-	e3Sq+uaw==;
+	bh=JKGXtusODbZUz1KIFqd4qrDoBCIiYeHP+FXO0qvoMbU=; b=uWLusLwcxowzWIpwy5BUshY18E
+	faO6nT9zb/dWkMY4ofCp3RCnaTryZRmir56GxaWkVFCrRvtyO8Y3tN/K5/gbP6Ke3H0u0H4uERgcG
+	mWTCgj/cawi2/Ct2lBwnidZd/SC9r7rdFB2hUNdNWCW9Oorg/cyHv+AM7EP3/QlkQ4wHTz5W26/Gj
+	x4NJqf3NlAYfYJa+q/qAWmjZC//JHTqamzOxt0azTj7YZ6DjcqWUQtvhaZXkd91TsGLT8TQf7ICSD
+	8RoGrHLWAEjQQqj76gCfmU3UqtU7vdQbq7/J5+E0hh0fP+RxzWhKUdjGvUhZ+cw8OPtalvTs7mt+h
+	ZmPzfC5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hybqb-0006P1-4A; Fri, 16 Aug 2019 13:00:49 +0000
+	id 1hybqt-0006gI-4C; Fri, 16 Aug 2019 13:01:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hybpc-0004j8-Kb
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 12:59:50 +0000
+ id 1hybpe-0004kb-5y
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 12:59:51 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 58A5B344;
- Fri, 16 Aug 2019 05:59:48 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E1B23360;
+ Fri, 16 Aug 2019 05:59:49 -0700 (PDT)
 Received: from e121650-lin.cambridge.arm.com (e121650-lin.cambridge.arm.com
  [10.1.196.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 059F73F706;
- Fri, 16 Aug 2019 05:59:46 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8C4BF3F706;
+ Fri, 16 Aug 2019 05:59:48 -0700 (PDT)
 From: Raphael Gault <raphael.gault@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v3 2/5] arm64: cpufeature: Add feature to detect heterogeneous
- systems
-Date: Fri, 16 Aug 2019 13:59:31 +0100
-Message-Id: <20190816125934.18509-3-raphael.gault@arm.com>
+Subject: [PATCH v3 3/5] arm64: pmu: Add function implementation to update
+ event index in userpage.
+Date: Fri, 16 Aug 2019 13:59:32 +0100
+Message-Id: <20190816125934.18509-4-raphael.gault@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190816125934.18509-1-raphael.gault@arm.com>
 References: <20190816125934.18509-1-raphael.gault@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_055948_723628_E773376F 
-X-CRM114-Status: GOOD (  15.32  )
+X-CRM114-CacheID: sfid-20190816_055950_353406_C5076E4E 
+X-CRM114-Status: GOOD (  15.78  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,89 +71,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This feature is required in order to enable PMU counters direct
-access from userspace only when the system is homogeneous.
-This feature checks the model of each CPU brought online and compares it
-to the boot CPU. If it differs then it is heterogeneous.
+In order to be able to access the counter directly for userspace,
+we need to provide the index of the counter using the userpage.
+We thus need to override the event_idx function to retrieve and
+convert the perf_event index to armv8 hardware index.
+
+Since the arm_pmu driver can be used by any implementation, even
+if not armv8, two components play a role into making sure the
+behaviour is correct and consistent with the PMU capabilities:
+
+* the ARMPMU_EL0_RD_CNTR flag which denotes the capability to access
+counter from userspace.
+* the event_idx call back, which is implemented and initialized by
+the PMU implementation: if no callback is provided, the default
+behaviour applies, returning 0 as index value.
 
 Signed-off-by: Raphael Gault <raphael.gault@arm.com>
 ---
- arch/arm64/include/asm/cpucaps.h |  3 ++-
- arch/arm64/kernel/cpufeature.c   | 20 ++++++++++++++++++++
- arch/arm64/kernel/perf_event.c   |  1 +
- 3 files changed, 23 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/perf_event.c | 22 ++++++++++++++++++++++
+ include/linux/perf/arm_pmu.h   |  2 ++
+ 2 files changed, 24 insertions(+)
 
-diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-index f19fe4b9acc4..040370af38ad 100644
---- a/arch/arm64/include/asm/cpucaps.h
-+++ b/arch/arm64/include/asm/cpucaps.h
-@@ -52,7 +52,8 @@
- #define ARM64_HAS_IRQ_PRIO_MASKING		42
- #define ARM64_HAS_DCPODP			43
- #define ARM64_WORKAROUND_1463225		44
-+#define ARM64_HAS_HETEROGENEOUS_PMU		45
- 
--#define ARM64_NCAPS				45
-+#define ARM64_NCAPS				46
- 
- #endif /* __ASM_CPUCAPS_H */
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 9323bcc40a58..bbdd809f12a6 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -1260,6 +1260,15 @@ static bool can_use_gic_priorities(const struct arm64_cpu_capabilities *entry,
- }
- #endif
- 
-+static bool has_heterogeneous_pmu(const struct arm64_cpu_capabilities *entry,
-+				     int scope)
-+{
-+	u32 model = read_cpuid_id() & MIDR_CPU_MODEL_MASK;
-+	struct cpuinfo_arm64 *boot = &per_cpu(cpu_data, 0);
-+
-+	return  (boot->reg_midr & MIDR_CPU_MODEL_MASK) != model;
-+}
-+
- static const struct arm64_cpu_capabilities arm64_features[] = {
- 	{
- 		.desc = "GIC system register CPU interface",
-@@ -1560,6 +1569,16 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.min_field_value = 1,
- 	},
- #endif
-+	{
-+		/*
-+		 * Detect whether the system is heterogeneous or
-+		 * homogeneous
-+		 */
-+		.desc = "Detect whether we have heterogeneous CPUs",
-+		.capability = ARM64_HAS_HETEROGENEOUS_PMU,
-+		.type = ARM64_CPUCAP_SCOPE_LOCAL_CPU | ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU,
-+		.matches = has_heterogeneous_pmu,
-+	},
- 	{},
- };
- 
-@@ -1727,6 +1746,7 @@ static void __init setup_elf_hwcaps(const struct arm64_cpu_capabilities *hwcaps)
- 			cap_set_elf_hwcap(hwcaps);
- }
- 
-+
- static void update_cpu_capabilities(u16 scope_mask)
- {
- 	int i;
 diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-index 2d3bdebdf6df..a0b4f1bca491 100644
+index a0b4f1bca491..9fe3f6909513 100644
 --- a/arch/arm64/kernel/perf_event.c
 +++ b/arch/arm64/kernel/perf_event.c
-@@ -19,6 +19,7 @@
- #include <linux/of.h>
- #include <linux/perf/arm_pmu.h>
- #include <linux/platform_device.h>
-+#include <linux/smp.h>
+@@ -818,6 +818,22 @@ static void armv8pmu_clear_event_idx(struct pmu_hw_events *cpuc,
+ 		clear_bit(idx - 1, cpuc->used_mask);
+ }
  
- /* ARMv8 Cortex-A53 specific event types. */
- #define ARMV8_A53_PERFCTR_PREF_LINEFILL				0xC2
++static int armv8pmu_access_event_idx(struct perf_event *event)
++{
++	if (!(event->hw.flags & ARMPMU_EL0_RD_CNTR))
++		return 0;
++
++	/*
++	 * We remap the cycle counter index to 32 to
++	 * match the offset applied to the rest of
++	 * the counter indeces.
++	 */
++	if (event->hw.idx == ARMV8_IDX_CYCLE_COUNTER)
++		return 32;
++
++	return event->hw.idx;
++}
++
+ /*
+  * Add an event filter to a given event.
+  */
+@@ -911,6 +927,9 @@ static int __armv8_pmuv3_map_event(struct perf_event *event,
+ 	if (armv8pmu_event_is_64bit(event))
+ 		event->hw.flags |= ARMPMU_EVT_64BIT;
+ 
++	if (!cpus_have_const_cap(ARM64_HAS_HETEROGENEOUS_PMU))
++		event->hw.flags |= ARMPMU_EL0_RD_CNTR;
++
+ 	/* Only expose micro/arch events supported by this PMU */
+ 	if ((hw_event_id > 0) && (hw_event_id < ARMV8_PMUV3_MAX_COMMON_EVENTS)
+ 	    && test_bit(hw_event_id, armpmu->pmceid_bitmap)) {
+@@ -1031,6 +1050,8 @@ static int armv8_pmu_init(struct arm_pmu *cpu_pmu)
+ 	cpu_pmu->set_event_filter	= armv8pmu_set_event_filter;
+ 	cpu_pmu->filter_match		= armv8pmu_filter_match;
+ 
++	cpu_pmu->pmu.event_idx		= armv8pmu_access_event_idx;
++
+ 	return 0;
+ }
+ 
+@@ -1209,6 +1230,7 @@ void arch_perf_update_userpage(struct perf_event *event,
+ 	 */
+ 	freq = arch_timer_get_rate();
+ 	userpg->cap_user_time = 1;
++	userpg->cap_user_rdpmc = !!(event->hw.flags & ARMPMU_EL0_RD_CNTR);
+ 
+ 	clocks_calc_mult_shift(&userpg->time_mult, &shift, freq,
+ 			NSEC_PER_SEC, 0);
+diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
+index 71f525a35ac2..1106a9ac00fd 100644
+--- a/include/linux/perf/arm_pmu.h
++++ b/include/linux/perf/arm_pmu.h
+@@ -26,6 +26,8 @@
+  */
+ /* Event uses a 64bit counter */
+ #define ARMPMU_EVT_64BIT		1
++/* Allow access to hardware counter from userspace */
++#define ARMPMU_EL0_RD_CNTR		2
+ 
+ #define HW_OP_UNSUPPORTED		0xFFFF
+ #define C(_x)				PERF_COUNT_HW_CACHE_##_x
 -- 
 2.17.1
 
