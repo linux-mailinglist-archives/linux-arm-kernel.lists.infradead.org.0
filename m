@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9D148F838
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 02:58:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BE638F839
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 02:58:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=AV0LIq1IcfqGQEb9JSjtr5cmoaW9qG0a1CELaLAE/Vo=; b=FhsCwu8szGLzkJ1huyJPOPqfQc
-	m23bCZz3RLMc67kgDvMl/MO0Heyt+i2OZnVQLEGqHl0ZNxN0IgULo8n4C3RvDBEWCcJf9j2lMiwVe
-	9CShDYPzOK++PBk+I5lkh1PgeqIqjKjeDOwtP9wrLbweBwP8mZHm9brf4m74iwqIyGsBCeOlHRv4H
-	Nk+tme0TUO0DYQ+j+FBW9yCNaQHsTXJqqYy36LBCGrVpzHHapUXddd2fpgOVcvu+B1OBz4xktxwuK
-	0fdXPQt07tesFZ3IIMcTmRI3muLFD8AG/AJ0skbIXci/YdutCGP/4kWiwZPQtq0UCY+Ihgo3djEIz
-	q8+9KMPg==;
+	bh=BK6pqkYvq8m1PgwK+iOQgXgRqHmottM4tN3PprDRdD4=; b=lq+m8B0rgE4OXd6oawC8naCxMG
+	rGkRvYgudrWdyuLds0+xKNNxNCB9bAghfwMqlhSCpG+9MzeaWbJkZYPRwljyTaHXRL7w2KVNus+PY
+	P5pZ93yslHcyARsMGGmez0IUjE58DDKDCm1mq+EcLCHFQ+NXzahVqKFXGtCvk3+o623WsIFR94Aa+
+	PjreIiXmN+wsEmBXwzDBvoSupMXzjashbARxI7qiUBw2073Mw9lUuLHC+3rJWAypq/ESjpZnYvZM6
+	KJJVoENpaLi9GyA3wrK8lqfyQUTjhQP+lCKArsosHCfHO37X1jDvBaSiC+aq3VtFhWTIoYBlmGsEk
+	7ezfmtDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyQZJ-0007s8-NS; Fri, 16 Aug 2019 00:58:14 +0000
+	id 1hyQZh-000892-W2; Fri, 16 Aug 2019 00:58:38 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyQYU-0007eP-O8
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 00:57:24 +0000
+ id 1hyQYW-0007fs-1q
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 00:57:25 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0256D1A0077;
- Fri, 16 Aug 2019 02:57:21 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id DAD071A00DD;
+ Fri, 16 Aug 2019 02:57:22 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 799321A00DD;
- Fri, 16 Aug 2019 02:57:11 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 615E91A0056;
+ Fri, 16 Aug 2019 02:57:13 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id BFA4C40281;
- Fri, 16 Aug 2019 08:56:59 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A9ACF402EC;
+ Fri, 16 Aug 2019 08:57:01 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -44,16 +44,16 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  andrew.smirnov@gmail.com, angus@akkea.ca, agx@sigxcpu.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH V6 2/4] arm64: dts: imx8mm: Add system counter node
-Date: Thu, 15 Aug 2019 20:38:43 -0400
-Message-Id: <1565915925-21009-2-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V6 3/4] arm64: dts: imx8mq: Add system counter node
+Date: Thu, 15 Aug 2019 20:38:44 -0400
+Message-Id: <1565915925-21009-3-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1565915925-21009-1-git-send-email-Anson.Huang@nxp.com>
 References: <1565915925-21009-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_175723_057468_6A88C4CC 
-X-CRM114-Status: UNSURE (   6.62  )
+X-CRM114-CacheID: sfid-20190815_175724_383239_7BE29166 
+X-CRM114-Status: UNSURE (   6.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -82,21 +82,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add i.MX8MM system counter node to enable timer-imx-sysctr
+Add i.MX8MQ system counter node to enable timer-imx-sysctr
 broadcast timer driver.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No changes.
 ---
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 8 ++++++++
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi | 8 ++++++++
  1 file changed, 8 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index ef66bb5..94433c53 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -572,6 +572,14 @@
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+index 7c68df6..4fdd60f 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+@@ -644,6 +644,14 @@
  				#pwm-cells = <2>;
  				status = "disabled";
  			};
@@ -105,12 +105,12 @@ index ef66bb5..94433c53 100644
 +				compatible = "nxp,sysctr-timer";
 +				reg = <0x306a0000 0x20000>;
 +				interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&osc_24m>;
++				clocks = <&osc_25m>;
 +				clock-names = "per";
 +			};
  		};
  
- 		aips3: bus@30800000 {
+ 		bus@30800000 { /* AIPS3 */
 -- 
 2.7.4
 
