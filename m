@@ -2,73 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C1C48FDB7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 10:23:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CF978FDE3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 10:34:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QGJhzeE3EFzv472aIlDERzIqEVG7u2mQQCQhIWqE8nY=; b=ouWE10NwilbFThvVZEhstbLhm
-	RvgeyLvqRWwEmXv2Z4Lf0NcU3z8Tg5OvibLpJRvEfxyFSazUI/m4Y+on9h0UUD8Rsa2po26xakN7N
-	bA10w5GG+saw8gJYJphj8XG1CV5kKjI7gDnItgRL7S3p3Y9KcArZmTNvCD6247OFOrxndcvB3vfyH
-	3ikzAUDM7/SDvJU+gh1Z3ueoXW0Lqt+p2oOkWedyC4XD/Kdq6HSg8a88xri1Y0B+7+JDZH6TM3aJK
-	Ix/3t2lsL0yvGo8b9a7w2KcrpczCRilWkV1pz3z4Jz+ywwASAe9s9TKVw0uERwZMQj1JtqzIgZQYS
-	5o7X/ra6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2S6TzORqND7qB0fV0pn7zcIen11ph8nN83EIg7anydk=; b=HYsRKA8wgQCkVO
+	frsVY1J03Zhlrwss367XAQk5xcdqk4+Dtx9RLf5YNoruXEk6u1R4VgylwVM0AU9q7OJNyozh8q1dS
+	R2pud/uFy3lbRb0hQvaD6NpLWv61X7M6HtP6yjYfIYRD7j9gUbHD5Jg3p1l0+d+c8sp+yU01vHP/K
+	WcXT6PXb+HelUrwTLuab4xNP5iKc9bfjoA7F4qnvtYEDfCheBidnoM0FRGuPzDr5mGXWbhSpOg8zR
+	xJJnhvIo1rTKMLkTuXmgUscd2OB2jA55IEQcYN5J1/n9I4F5TbrfTo1j5ZkymdUy6rFEiVC9Z2kOi
+	y67JQ8IWrpxSQMlc7kCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyXWF-0002Wb-97; Fri, 16 Aug 2019 08:23:31 +0000
-Received: from letterbox.kde.org ([2001:41c9:1:41e::242])
+	id 1hyXgu-0006Wz-Qp; Fri, 16 Aug 2019 08:34:33 +0000
+Received: from emh01.mail.saunalahti.fi ([62.142.5.107])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyXW0-0002WA-6I
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 08:23:18 +0000
-Received: from archbox.localdomain (unknown [203.187.238.17])
- (Authenticated sender: bshah)
- by letterbox.kde.org (Postfix) with ESMTPSA id B6752288870;
- Fri, 16 Aug 2019 09:23:13 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kde.org; s=users;
- t=1565943794; bh=R+mo2BGavCwf8Mztq2UzfRe5LGcuCVb+205qaTnZVtI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=kr98yFWLu1zfwT7VtWyOw/fahFFRPdXW+MlNuqGfbct+aMHVojSxkWWHfh3DF2HiU
- g94g6LL8JSox9npC0r6JkcyJTVd2XZTHyAdswwXfYEJucEFRpZdWK0TRz/mnMAhalH
- BLFZCkfgIINs6VdaIeYsettvt1ZPkRlpo0TLF8MlDchMDswqf4nHC92bmpj2g1chao
- q2lc3VjQhjiFAKLqzW+OMUD/3P29ossSwxjJvEos1S5dv/wdCvUT/0WAAr57UMt26i
- Ki5vyKJ8tIc+vPDGypIkbdwCYJTuo8F6KQ4m6CgzfP8r8XsjwiZFkSoAbvKcz/BbL4
- eafiysNJHUpBQ==
-Date: Fri, 16 Aug 2019 13:53:11 +0530
-From: Bhushan Shah <bshah@kde.org>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH v2 2/3] arm64: allwinner: h6: add I2C nodes
-Message-ID: <20190816082311.GB18236@pyxis>
-References: <20190811090503.32396-1-bshah@kde.org>
- <20190816064710.18280-1-bshah@kde.org>
- <20190816064710.18280-3-bshah@kde.org>
- <20190816075031.zw4bjunn4hfoaq3e@flea>
+ id 1hyXgc-0006VU-6w
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 08:34:16 +0000
+Received: from darkstar.musicnaut.iki.fi (85-76-65-201-nat.elisa-mobile.fi
+ [85.76.65.201])
+ by emh01.mail.saunalahti.fi (Postfix) with ESMTP id 4776820418;
+ Fri, 16 Aug 2019 11:34:04 +0300 (EEST)
+Date: Fri, 16 Aug 2019 11:34:03 +0300
+From: Aaro Koskinen <aaro.koskinen@iki.fi>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 14/22] ARM: omap1: use pci_ioremap_io() for omap_cf
+Message-ID: <20190816083403.GB1952@darkstar.musicnaut.iki.fi>
+References: <20190808212234.2213262-1-arnd@arndb.de>
+ <20190808212234.2213262-15-arnd@arndb.de>
+ <20190813103605.GL52127@atomide.com>
+ <CAK8P3a0E+QUn9wcP5Obv-FitWyXCFwcp+oPConeO2p-NV1rqsw@mail.gmail.com>
+ <20190813181158.GA26798@darkstar.musicnaut.iki.fi>
+ <CAK8P3a0LjKrc+7c5Ht9OL7LfYyLnG9=y7u+w24ujA1xAid_yCQ@mail.gmail.com>
+ <20190814074918.GA52127@atomide.com>
+ <CAK8P3a3k_HOGqzMGjtc+7NSaK0Bsa_vxxRFLzY8aP6ev4wa9iA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190816075031.zw4bjunn4hfoaq3e@flea>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a3k_HOGqzMGjtc+7NSaK0Bsa_vxxRFLzY8aP6ev4wa9iA@mail.gmail.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_012316_509295_4A251EDA 
-X-CRM114-Status: GOOD (  18.53  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190816_013414_423746_CED2BDE6 
+X-CRM114-Status: GOOD (  12.60  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:41c9:1:41e:0:0:0:242 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [62.142.5.107 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,125 +67,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Wolfram Sang <wsa@the-dreams.de>,
- Gregory CLEMENT <gregory.clement@bootlin.com>, Bhushan Shah <bshah@kde.org>,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============4585306363587898165=="
+Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Tony Lindgren <tony@atomide.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Dominik Brodowski <linux@dominikbrodowski.net>,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ linux-omap <linux-omap@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============4585306363587898165==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Pd0ReVV5GZGQvF3a"
-Content-Disposition: inline
-
-
---Pd0ReVV5GZGQvF3a
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Aug 16, 2019 at 09:50:31AM +0200, Maxime Ripard wrote:
-> On Fri, Aug 16, 2019 at 12:17:09PM +0530, Bhushan Shah wrote:
-> > Add device-tree nodes for i2c0 to i2c2, and also add relevant pinctrl
-> > nodes.
+On Wed, Aug 14, 2019 at 12:36:40PM +0200, Arnd Bergmann wrote:
+> On Wed, Aug 14, 2019 at 9:49 AM Tony Lindgren <tony@atomide.com> wrote:
+> > * Arnd Bergmann <arnd@arndb.de> [190813 19:34]:
+> > > -#define OMAP1_IO_OFFSET                0x01000000      /* Virtual IO
+> > > = 0xfefb0000 */
+> > > +#define OMAP1_IO_OFFSET                0x00fb0000      /* Virtual IO
+> > > = 0xff000000 */
+> > >  #define OMAP1_IO_ADDRESS(pa)   IOMEM((pa) - OMAP1_IO_OFFSET)
 > >
-> > Suggested-by: Icenowy Zheng <icenowy@aosc.io>
-> > Signed-off-by: Bhushan Shah <bshah@kde.org>
-> > ---
-> > Changes in v2:
-> >   - Add the SoC specific compatible string instead of re-using a31 one.
+> > Oh OK yeah sounds like that's the issue.
 > >
-> >  arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 56 +++++++++++++++++++-
-> >  1 file changed, 55 insertions(+), 1 deletion(-)
+> > > There may be additional locations that hardcode the virtual address.
 > >
-> > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/=
-boot/dts/allwinner/sun50i-h6.dtsi
-> > index bcecca17d61d..a1a329926540 100644
-> > --- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> > +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> > @@ -329,6 +329,21 @@
-> >  				function =3D "hdmi";
-> >  			};
-> >
-> > +			i2c0_pins: i2c0-pins {
-> > +				pins =3D "PD25", "PD26";
-> > +				function =3D "i2c0";
-> > +			};
-> > +
-> > +			i2c1_pins: i2c1-pins {
-> > +				pins =3D "PH5", "PH6";
-> > +				function =3D "i2c1";
-> > +			};
-> > +
-> > +			i2c2_pins: i2c2-pins {
-> > +				pins =3D "PD23", "PD24";
-> > +				function =3D "i2c2";
-> > +			};
-> > +
-> >  			mmc0_pins: mmc0-pins {
-> >  				pins =3D "PF0", "PF1", "PF2", "PF3",
-> >  				       "PF4", "PF5";
-> > @@ -464,6 +479,45 @@
-> >  			status =3D "disabled";
-> >  		};
-> >
-> > +		i2c0: i2c@5002000 {
-> > +			compatible =3D "allwinner,sun50i-h6-i2c";
->=20
-> This isn't going to work if you don't patch the driver to add the
-> compatible. And this isn't what you described in the binding patch.
+> > Those should be in mach-omap1/io.c, and I recall innovator had some
+> > hardcoded fpga address that should also be checked.
+> 
+> I see four boards with hardcoded I/O addresses, but they are all below
+> the PCI I/O virtual address range, and are not affected by that change.
+> 
+> For the innovator FPGA access, this was ok, it uses the correct address
+> in the OMAP1_IO_OFFSET range.
 
-oops, I will correct this in next patch series. Sorry.
+I tried testing this on OSK board. If I boot with earlyprintk disabled,
+it boots OK and everything works (also CF card) with your playground
+commit 5723b6686943.
 
->=20
-> Maxime
->=20
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
+However with earlyprintk it seems to hang as soon as kernel tries to print
+something. So something goes wrong with early DEBUG_LL mapping code when
+CONFIG_DEBUG_UART_VIRT=0xff000000 is used?
 
-
-
---=20
-Bhushan Shah
-http://blog.bshah.in
-IRC Nick : bshah on Freenode
-GPG key fingerprint : 0AAC 775B B643 7A8D 9AF7 A3AC FE07 8411 7FBC E11D
-
---Pd0ReVV5GZGQvF3a
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEs8s2ZVJUC+Bu6a2XEZaMRJKMrvwFAl1WZ+4ACgkQEZaMRJKM
-rvxqAQgAjTTOPqp4IbGW4/nDm8BBmNiePwfg57R8R49Uy4uEW2aWag5VAObJy66F
-cWkU8CtYUYXWPvnke18zDyH+EqqgJgraUnNyU1Slj3e6kylEvREKRsM4W9u8m4ti
-r88PZiTtWmPLmAYOrzIUVckEwDau21Apeqjf1+Tqq2Q3xCGx2vRPBsm59972SGVY
-yT8k1SWABM5m42rko8rQh+XZ9u0niBliD1u4+KY8zQ9Uu/g8T/t7JcCu+ysy8U+W
-esnMrLdwMChMpjDzAX1vdkAexCAo5E6/NeDbcQWJqxjqCDX5oy/vIXlydKl1Sczx
-DrysSQzkyw8rbwv9OGMC+YtpVHjAYA==
-=gJ/S
------END PGP SIGNATURE-----
-
---Pd0ReVV5GZGQvF3a--
-
-
---===============4585306363587898165==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+A.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4585306363587898165==--
-
