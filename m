@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 534628FB54
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 08:48:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5955C8FB62
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 08:48:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,32 +11,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=VZjEUzk9ACfXBpmQUgr0DYoTNCJdLB4EEA6MYGQM8Wk=; b=BEHA/G+yFuvzy4Dr7Bj9AVV9E1
-	W+nlMMQ/tw3NfR1gayALRoOnhWV3bif3/Cj7qpKdyvMKHsby6FRlif7X7pUd0nJhJjN4JCVy27T5d
-	IXlP1VxaUnDnKe4o1uzmcSltMh5QSwZkDWbCMn/KhYls0uA7ayCX3q9Bj/Eux9CSQ9HblVIPiHK4E
-	IT66xtRWGAmKVKYCB8INJ+0yWEHISsdfkfOF6gdXo1XJLOd3vyvyvidEaSu0u/4/OnKYe4NxLEa6I
-	BLVV5pwjfejwFkw+jOKRTuurGvVa+F7oSd/CdJpbcoB2nDP6tkksujGLwLUXfg7lGNg7Xmryj6GQ0
-	I3NrytiA==;
+	bh=uOTz05O/Fq9qlQb+cxHn0FWNSHhDwfi2R18ZyvhUQtU=; b=B8f14Yn/gVQfH6rQyc2ZzNVX2R
+	Iu8fHox/vmaq7S2Qi4dkDtjojj0ohWF+31mwuP8nel1Lsawc7GIjtOh0+xSZX+iqCaCapss/1OI1+
+	iMIafbETTczXTiHoWBcjD9fbMk8C/8auqZY7tLvreKSwnbrgA9IxDXHXw1TnDac6trf2Gsh2/gUII
+	ugTVbqrwhYN/SYVovLcfSC9Ck5TFb6eodmSHEKbcmKvPCwhEZhWmbGEeV/2mYMyTo9m3Q58L1qjwu
+	R6AKp4SKALyc6vciLGMNtld7MgD5NzHcFtIo66yIvVlZCXHZolvpgWxxD6n3LB0v1D5JA637uF108
+	7zhnkeiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyW1r-0005J9-D0; Fri, 16 Aug 2019 06:48:03 +0000
+	id 1hyW2Q-0005jy-S6; Fri, 16 Aug 2019 06:48:38 +0000
 Received: from letterbox.kde.org ([2001:41c9:1:41e::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyW1b-0005I3-TO
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 06:47:49 +0000
+ id 1hyW1d-0005IF-7W
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 06:47:50 +0000
 Received: from archbox.localdomain (unknown [123.201.155.129])
  (Authenticated sender: bshah)
- by letterbox.kde.org (Postfix) with ESMTPSA id 27E8328ACED;
- Fri, 16 Aug 2019 07:47:34 +0100 (BST)
+ by letterbox.kde.org (Postfix) with ESMTPSA id EF95728AB08;
+ Fri, 16 Aug 2019 07:47:40 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kde.org; s=users;
- t=1565938058; bh=WFc0UZ1hs7LdUGdmu8qpw3+FtS1REZ6c7sIEozRjejM=;
+ t=1565938061; bh=+KZNkFmTsqn+l4u0Fc+nIo6LZ5lfXPcfahH2Jdhx5FM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=m4NnzmEd45cZgPnuyqw+E6Xm8fBtuceixldmLQ160P9XhQ1dRsm+MeH3SNozLdrfQ
- 7A5skpytPKRusQXFBhklSnwEI9cGrGbfnmRdKDU32i8PE9JgCuCx27DTqxtNowsrGi
- wjjVcvLkWG1bGlwO6X8d8so3dwld4unxrHv1sbxjFLw7IppuxLvE7yyRLgnhw3QKMq
- fJYdX3qv0ewyF3VDfQPIiH8Qf/8cbteZJUN953yNvPARjkKXuUGVRrI+u80WwwL7rX
- Y9FBHxMYFuH9wa3cjwGf6C5hfNLZq5tMGNRnIzwKqDnJyYmqwnUnyeqt4nFAZeY+5B
- Q+f3uE7CWblpw==
+ b=ivFNdZWovpDuJwjgy3lvrhtJwogU7xZ7Khokimt/BJ34wMRZDIqKPg4UPzySyjysd
+ tBLwqPnJII0n6SRoFKN3wTQkIvRW/3qcVns7pZh0x5D3DGyY3zxc5nFSpvXzkJQjRn
+ fpZ7Dnnj7iTBqpuL7ArunIiRWEM6YPFKS2bHiO4HE4z5ygndwJp4nUq90kRtU4iGTi
+ mhdDSmRXEo+GFwVF/pGF7PqDtfKyXRxbgC75ngV47hfKJX4P6xFMdsHR9R5w88MX9B
+ 6TMjH1+7N1laHg/oapxqzmPB0qxXG5FISSecSiLmu2DCd7Lnny6yvt2NfFVbAAg7/N
+ eTNhMT7DkFsVg==
 From: Bhushan Shah <bshah@kde.org>
 To: Icenowy Zheng <icenowy@aosc.io>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>,
@@ -45,15 +45,17 @@ To: Icenowy Zheng <icenowy@aosc.io>, Rob Herring <robh+dt@kernel.org>,
  Gregory CLEMENT <gregory.clement@bootlin.com>, linux-i2c@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 0/3] Enable the I2C nodes for Allwinner H6 CPU
-Date: Fri, 16 Aug 2019 12:17:07 +0530
-Message-Id: <20190816064710.18280-1-bshah@kde.org>
+Subject: [PATCH v2 1/3] dt-bindings: i2c: mv64xxx: Add compatible for the H6
+ i2c node.
+Date: Fri, 16 Aug 2019 12:17:08 +0530
+Message-Id: <20190816064710.18280-2-bshah@kde.org>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190811090503.32396-1-bshah@kde.org>
+In-Reply-To: <20190816064710.18280-1-bshah@kde.org>
 References: <20190811090503.32396-1-bshah@kde.org>
+ <20190816064710.18280-1-bshah@kde.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_234748_225136_986828FF 
-X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-CacheID: sfid-20190815_234749_402053_9DBFC5AA 
+X-CRM114-Status: UNSURE (   8.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -91,23 +93,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series adds device-tree nodes for i2c nodes in the H6 dtsi,
-and enables it for the Pine H64.
+Allwinner H6 have a mv64xxx i2c interface available to be used.
 
-Changes in v2:
-  - Add the SoC specific compatible string instead of re-using a31 one.
-  - Don't enable the i2c0 node in PineH64 by default
+Signed-off-by: Bhushan Shah <bshah@kde.org>
+---
+ Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-Bhushan Shah (3):
-  dt-bindings: i2c: mv64xxx: Add compatible for the H6 i2c node.
-  arm64: allwinner: h6: add I2C nodes
-  arm64: allwinner: h6: add i2c0 node in PineH64
-
- .../bindings/i2c/marvell,mv64xxx-i2c.yaml     |  3 +
- .../boot/dts/allwinner/sun50i-h6-pine-h64.dts |  9 +++
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  | 56 ++++++++++++++++++-
- 3 files changed, 67 insertions(+), 1 deletion(-)
-
+diff --git a/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml b/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
+index 001f2b7abad0..c779000515d6 100644
+--- a/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
++++ b/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
+@@ -26,6 +26,9 @@ properties:
+       - items:
+           - const: allwinner,sun50i-a64-i2c
+           - const: allwinner,sun6i-a31-i2c
++      - items:
++          - const: allwinner,sun50i-h6-i2c
++          - const: allwinner,sun6i-a31-i2c
+ 
+       - const: marvell,mv64xxx-i2c
+       - const: marvell,mv78230-i2c
 -- 
 2.17.1
 
