@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 082D8905CB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 18:31:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 831F9905CC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 18:31:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZjC8yCGwKBCldkKqL212j56NimPSTsWVhztP7vvTYm0=; b=Y6zOlldi7HtV8cXSHMu+dPH5ir
-	ylZ0GAniKlfjjhhwam+uWOE3Ej+gl9ZVJte28XDsSooyq6ato2xrr4gwdTq/Epbl7cChDRmVgY/Ph
-	6feBKPQTuNHEXXY9NZfR4ojLYOmIIQnPwfIMtfKkxntCaMYY+2DmljA9ZfjmD0ralovstSZrexuPb
-	Ab7y4D8TVSGs4Orwyx7A9kWoTjbw+LRas+gql5hpwnqWq1anpCF9v3BmUg2K8a/aJcvVxU0vW3BsP
-	uFSft012n28mDt0yHVSwsOm7IdfBGXZB1b1H5iOk5k/PWk0TwvrtUfq8SstaEqzN/7/kBL3SlQbYs
-	jHQR1XGQ==;
+	bh=Lipa3jvK96QbGQEbTi4O6xQKezVzTJExcmX5aQGTNQs=; b=a8pGj73rwroQq9u9xdyRhpCOMy
+	mDTcwErEYlJW1ePQz+jaZnjaYL44d+a1a7gZVi/F/2UXzdwKLAc1DlIeHcuixeB8bgUD9UnJcVe0M
+	fEZQYxyjU4x0IugvAdYfJtz+IdFs+kWv7ZyqnNpyLEWrDmRSFMMjZu9Y2iF4XZpjhItAceFCh95xu
+	zsKm3ByZEsw6rDbPI/+RdbmZbbzcXSvOFIsjZ9AejH/uRGRNXjZ+w3wZCS8J1nywb55UZO1ih2u3p
+	ZWL6ScMpOOismAyt/fFhVMUqre+wnTy/sXFte25yhgZzEwtqxvpvvw1emnr89qbf8nNZnf2C1Djmq
+	t/0kewcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyf8N-0005o4-Ll; Fri, 16 Aug 2019 16:31:23 +0000
+	id 1hyf8f-00062U-62; Fri, 16 Aug 2019 16:31:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyf7t-0005ba-Go
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 16:30:54 +0000
+ id 1hyf7w-0005dq-7U
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 16:30:57 +0000
 Received: from localhost.localdomain (unknown [194.230.155.124])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 44C2621726;
- Fri, 16 Aug 2019 16:30:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CF3CB2173E;
+ Fri, 16 Aug 2019 16:30:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565973053;
- bh=aO/6758MN7/RW1bNMET+Zow/5HJauuEWmahCmyZ+QO0=;
+ s=default; t=1565973055;
+ bh=0drG/IaIH9vyth4PWqswXAkHuJ4rjWgU6KRc7PlP06M=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=lGLBtl1MvgfiOIQ9n9p62C0/WjBydOJcjSi7nrhH8bMQIHIFinDSx2XfNjQEii5nF
- FN+asI5NHNtZmyJ8oedWDkTSyarlI+ocDqEuqVjRQMCwDGw9+xCN/u2eufUsd+4qte
- bMajju6KZRyva59zekAaQqvmQSGUbrchx1hft1EM=
+ b=U3IsXHEagErS2Pqmk7IVQ+yWuczqq5Eu2FUZ50hCL/9u0KAK0n3npjus+ABKYhOLc
+ YqGuT0ITWXOQ+axriPm47UZSMm4TNBgYhSQC6oH099jyZucvBZIEbfWqkj7ZceR0af
+ +ztGrafANd+4RS/szdY3QcXHW5tdl8lYR9oIPo0E=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
  arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL 3/3] ARM: dts: exynos: DT for v5.4
-Date: Fri, 16 Aug 2019 18:30:41 +0200
-Message-Id: <20190816163042.6604-2-krzk@kernel.org>
+Subject: [GIT PULL 2/3] ARM: samsung: mach for v5.4
+Date: Fri, 16 Aug 2019 18:30:42 +0200
+Message-Id: <20190816163042.6604-3-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190816163042.6604-1-krzk@kernel.org>
 References: <20190816163042.6604-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_093053_572919_C2F93B42 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20190816_093056_322252_EE4E0502 
+X-CRM114-Status: GOOD (  11.38  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,34 +91,28 @@ The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 
 are available in the Git repository at:
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt-5.4
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-soc-5.4
 
-for you to fetch changes up to bfb77169306d5d560a8b62eebaf6d69d02e8d152:
+for you to fetch changes up to 1fa70c7f49132513fb0da4afa7643395eedc7d35:
 
-  ARM: dts: exynos: Add CAM power domain to Exynos5422/5800 (2019-08-12 19:02:59 +0200)
-
-----------------------------------------------------------------
-Samsung DTS ARM changes for v5.4
-
-1. Add AHCI to Exynos5250,
-2. Add camera and GPU power domains to Exynos5422,
-3. Minor cleanup.
+  ARM: exynos: Enable exynos-chipid driver (2019-08-15 20:29:58 +0200)
 
 ----------------------------------------------------------------
-Krzysztof Kozlowski (1):
-      ARM: dts: exynos: Use space after '=' in exynos4412-itop-scp-core
+Samsung mach/soc changes for v5.4
 
-Marek Szyprowski (4):
-      ARM: dts: exynos: Add port map to Exynos5250 AHCI node
-      ARM: dts: exynos: Move MSC power domain to the right (sorted) place
-      ARM: dts: exynos: Add G3D power domain to Exynos542x
-      ARM: dts: exynos: Add CAM power domain to Exynos5422/5800
+1. Minor fixup in plat code (S3C platforms),
+2. Enable exynos-chipid driver to provide SoC related information.
 
- arch/arm/boot/dts/exynos4412-itop-scp-core.dtsi | 18 +++++++++---------
- arch/arm/boot/dts/exynos5250.dtsi               |  1 +
- arch/arm/boot/dts/exynos5420.dtsi               | 13 ++++++++++---
- arch/arm/boot/dts/exynos5800.dtsi               |  9 +++++++++
- 4 files changed, 29 insertions(+), 12 deletions(-)
+----------------------------------------------------------------
+Linus Walleij (1):
+      ARM: samsung: Include GPIO driver header
+
+Pankaj Dubey (1):
+      ARM: exynos: Enable exynos-chipid driver
+
+ arch/arm/mach-exynos/Kconfig                   | 1 +
+ arch/arm/plat-samsung/include/plat/gpio-core.h | 1 +
+ 2 files changed, 2 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
