@@ -2,57 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33B3290796
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 20:16:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 337809079A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 20:18:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sn/EV6t5SK/l/hOukczh/zVkiv7xyOA+uCn4Zg5d090=; b=HB5BE/YEIo1hIZ
-	tWGGAWvPD/sxnfhdP8DmYyBC4yrN3Tf6ZxH3MjpUztQrn+fwEN35w8w1gtgsS7UsAaEUqABhx3g77
-	N7nVCCCLxDt3q6bihuplOmeFwmcERTbsOkJRYmj2jq+wKc1bJr2n32mT8zD5JtU2OWgikBKqQu0vH
-	DOVtO53eyn+v+Wkll5ArZM73IwYi7f0Y6NDJen0MjAGzOuFC4kj9IIsKFPudZ3axqmRRqNdtsBqBx
-	MwLFOazgNDAmbVvRDRq7srQ3hE9xuFycGElMf5RE0jWgOGmchPbHOjlBzDHZV5gM5WFML996FXfqC
-	hUnCY+axRFxy4YKzEYOA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tME80DckOuofxXBolTyykiKKjGLgGi5QbQCVLy5RLbI=; b=P9WDwNM///AcGk
+	Dl/R6YfgXn7a3ELH79d7bcUjb0RmRc6Em2X5yr734SRnhkHX+rUZbSBXjeQ+ipDtT0VIwTFqHmIC5
+	J+dA7RHSUXk2GLgMLMTbpMvMKgGvX5K4OmZ8aZPINgCI/W79yfkHpOwkCgGL4IYJ55SE+7eVLduLK
+	mg6Po5l4fIaoC0mXfqI7KYIjgh4IPG+7xpFetduneGoK4DoogLfnm5raEw8kkzxzuPNFdEkNkEmlL
+	490P417TatdaaQqlIkB2/mqW5vQzfSzr7daUc6wYMGywvSOD/xvcBiZnxvr7naQbWWkMJvYYC69cd
+	lY0XJBo+NYsqbHJyz5Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyglv-0007ZC-Nr; Fri, 16 Aug 2019 18:16:19 +0000
-Received: from shell.v3.sk ([90.176.6.54])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyglf-0007Yn-JB
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 18:16:06 +0000
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 019F2D6DCD;
- Fri, 16 Aug 2019 20:15:57 +0200 (CEST)
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id lcjr_n3cdX7b; Fri, 16 Aug 2019 20:15:50 +0200 (CEST)
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 1AF27D6DCE;
- Fri, 16 Aug 2019 20:15:50 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at zimbra.v3.sk
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id xJOvBvIactQL; Fri, 16 Aug 2019 20:15:49 +0200 (CEST)
-Received: from belphegor (nat-pool-brq-t.redhat.com [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id A8F80D6DCD;
- Fri, 16 Aug 2019 20:15:48 +0200 (CEST)
-Message-ID: <4aa480578d4711645f6a1617d9218812f0af4cac.camel@v3.sk>
-Subject: Re: [PATCH 07/19] irqchip/mmp: mask off interrupts from other cores
-From: Lubomir Rintel <lkundrak@v3.sk>
-To: Marc Zyngier <maz@kernel.org>, Olof Johansson <olof@lixom.net>
-Date: Fri, 16 Aug 2019 20:15:47 +0200
-In-Reply-To: <19a21c54-93ac-19dc-d679-8d376d44e68c@kernel.org>
-References: <20190809093158.7969-1-lkundrak@v3.sk>
- <20190809093158.7969-8-lkundrak@v3.sk>
- <19a21c54-93ac-19dc-d679-8d376d44e68c@kernel.org>
-User-Agent: Evolution 3.32.4 (3.32.4-1.fc30) 
+	id 1hygnb-0007zU-Qr; Fri, 16 Aug 2019 18:18:03 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hygn1-0007uq-JN; Fri, 16 Aug 2019 18:17:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D6F5B28;
+ Fri, 16 Aug 2019 11:17:23 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0F0C23F706;
+ Fri, 16 Aug 2019 11:17:21 -0700 (PDT)
+Subject: Re: [PATCH v1 0/8] arm64: MMU enabled kexec relocation
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
+References: <20190801152439.11363-1-pasha.tatashin@soleen.com>
+ <CA+CK2bADiBMEx9cJuXT5fQkBYFZAtxUtc7ZzjrNfEjijPZkPtw@mail.gmail.com>
+ <ba8a2519-ed95-2518-d0e8-66e8e0c14ff5@arm.com>
+ <CA+CK2bAqBi43Cchr=md7EPRuEWH-iuToK0PxN3ysSBQ42Hd0-g@mail.gmail.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <746ceee3-43a7-231d-b2f6-0991a4148a28@arm.com>
+Date: Fri, 16 Aug 2019 19:17:20 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
+In-Reply-To: <CA+CK2bAqBi43Cchr=md7EPRuEWH-iuToK0PxN3ysSBQ42Hd0-g@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_111603_940311_E52ABA86 
-X-CRM114-Status: GOOD (  22.71  )
+X-CRM114-CacheID: sfid-20190816_111727_729483_BA7F957F 
+X-CRM114-Status: GOOD (  24.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,183 +63,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Andres Salomon <dilinger@queued.net>,
- Thomas Gleixner <tglx@linutronix.de>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Vladimir Murzin <vladimir.murzin@arm.com>,
+ Jonathan Corbet <corbet@lwn.net>, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
+ linux-mm <linux-mm@kvack.org>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, will@kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-08-09 at 13:18 +0100, Marc Zyngier wrote:
-> On 09/08/2019 10:31, Lubomir Rintel wrote:
-> > From: Andres Salomon <dilinger@queued.net>
-> > 
-> > On mmp3, there's an extra set of ICU registers (ICU2) that handle
-> > interrupts on the extra cores.  When masking off interrupts on MP1,
-> > these should be masked as well.
-> > 
-> > We add a new interrupt controller via device tree to identify when we're
-> > looking at an mmp3 machine via compatible field of "marvell,mmp3-intc".
-> > 
-> > [lkundrak@v3.sk: Changed "mrvl,mmp3-intc" compatible strings to
-> > "marvell,mmp3-intc". Tidied up the subject line a bit.]
-> > 
-> > Signed-off-by: Andres Salomon <dilinger@queued.net>
-> > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
-> > 
-> > ---
-> >  arch/arm/mach-mmp/regs-icu.h |  3 +++
-> >  drivers/irqchip/irq-mmp.c    | 51 ++++++++++++++++++++++++++++++++++++
-> >  2 files changed, 54 insertions(+)
-> > 
-> > diff --git a/arch/arm/mach-mmp/regs-icu.h b/arch/arm/mach-mmp/regs-icu.h
-> > index 0375d5a7fcb2b..410743d2b4020 100644
-> > --- a/arch/arm/mach-mmp/regs-icu.h
-> > +++ b/arch/arm/mach-mmp/regs-icu.h
-> > @@ -11,6 +11,9 @@
-> >  #define ICU_VIRT_BASE	(AXI_VIRT_BASE + 0x82000)
-> >  #define ICU_REG(x)	(ICU_VIRT_BASE + (x))
-> >  
-> > +#define ICU2_VIRT_BASE	(AXI_VIRT_BASE + 0x84000)
-> > +#define ICU2_REG(x)	(ICU2_VIRT_BASE + (x))
-> > +
-> >  #define ICU_INT_CONF(n)		ICU_REG((n) << 2)
-> >  #define ICU_INT_CONF_MASK	(0xf)
-> >  
-> > diff --git a/drivers/irqchip/irq-mmp.c b/drivers/irqchip/irq-mmp.c
-> > index cd8d2253f56d1..25497c75cc861 100644
-> > --- a/drivers/irqchip/irq-mmp.c
-> > +++ b/drivers/irqchip/irq-mmp.c
-> > @@ -44,6 +44,7 @@ struct icu_chip_data {
-> >  	unsigned int		conf_enable;
-> >  	unsigned int		conf_disable;
-> >  	unsigned int		conf_mask;
-> > +	unsigned int		conf2_mask;
-> >  	unsigned int		clr_mfp_irq_base;
-> >  	unsigned int		clr_mfp_hwirq;
-> >  	struct irq_domain	*domain;
-> > @@ -53,9 +54,11 @@ struct mmp_intc_conf {
-> >  	unsigned int	conf_enable;
-> >  	unsigned int	conf_disable;
-> >  	unsigned int	conf_mask;
-> > +	unsigned int	conf2_mask;
-> >  };
-> >  
-> >  static void __iomem *mmp_icu_base;
-> > +static void __iomem *mmp_icu2_base;
-> >  static struct icu_chip_data icu_data[MAX_ICU_NR];
-> >  static int max_icu_nr;
-> >  
-> > @@ -98,6 +101,16 @@ static void icu_mask_irq(struct irq_data *d)
-> >  		r &= ~data->conf_mask;
-> >  		r |= data->conf_disable;
-> >  		writel_relaxed(r, mmp_icu_base + (hwirq << 2));
-> > +
-> > +		if (data->conf2_mask) {
-> > +			/*
-> > +			 * ICU1 (above) only controls PJ4 MP1; if using SMP,
-> > +			 * we need to also mask the MP2 and MM cores via ICU2.
-> > +			 */
-> > +			r = readl_relaxed(mmp_icu2_base + (hwirq << 2));
-> > +			r &= ~data->conf2_mask;
-> > +			writel_relaxed(r, mmp_icu2_base + (hwirq << 2));
-> > +		}
-> >  	} else {
-> >  		r = readl_relaxed(data->reg_mask) | (1 << hwirq);
-> >  		writel_relaxed(r, data->reg_mask);
-> > @@ -201,6 +214,14 @@ static const struct mmp_intc_conf mmp2_conf = {
-> >  			  MMP2_ICU_INT_ROUTE_PJ4_FIQ,
-> >  };
-> >  
-> > +static struct mmp_intc_conf mmp3_conf = {
-> > +	.conf_enable	= 0x20,
-> > +	.conf_disable	= 0x0,
-> > +	.conf_mask	= MMP2_ICU_INT_ROUTE_PJ4_IRQ |
-> > +			  MMP2_ICU_INT_ROUTE_PJ4_FIQ,
-> > +	.conf2_mask	= 0xf0,
-> > +};
-> > +
-> >  static void __exception_irq_entry mmp_handle_irq(struct pt_regs *regs)
-> >  {
-> >  	int hwirq;
-> > @@ -364,6 +385,14 @@ static int __init mmp_init_bases(struct device_node *node)
-> >  		pr_err("Failed to get interrupt controller register\n");
-> >  		return -ENOMEM;
-> >  	}
-> > +	if (of_device_is_compatible(node, "marvell,mmp3-intc")) {
+Hi Pavel,
+
+On 15/08/2019 21:09, Pavel Tatashin wrote:
+>>> Also, I'd appreciate if anyone could test this series on vhe hardware
+>>> with vhe kernel, it does not look like QEMU can emulate it yet
+>>
+>> This locks up during resume from hibernate on my AMD Seattle, a regular v8.0 machine.
 > 
-> Instead of harcoding the compatible property once more, why don't you
-> simply pass a flag from mmpx_of_init()?
+> Thanks for reporting a bug I will root cause and fix it.
 
-Will do so in next version.
-
-> > +		mmp_icu2_base = of_iomap(node, 1);
-> > +		if (!mmp_icu2_base) {
-> > +			pr_err("Failed to get interrupt controller register #2\n");
-> > +			iounmap(mmp_icu_base);
-> > +			return -ENOMEM;
-> > +		}
-> > +	}
-> >  
-> >  	icu_data[0].virq_base = 0;
-> >  	icu_data[0].domain = irq_domain_add_linear(node, nr_irqs,
-> > @@ -386,6 +415,8 @@ static int __init mmp_init_bases(struct device_node *node)
-> >  			irq_dispose_mapping(icu_data[0].virq_base + i);
-> >  	}
-> >  	irq_domain_remove(icu_data[0].domain);
-> > +	if (of_device_is_compatible(node, "marvell,mmp3-intc"))
-> > +		iounmap(mmp_icu2_base);
-> >  	iounmap(mmp_icu_base);
-> >  	return -EINVAL;
-> >  }
-> > @@ -428,6 +459,26 @@ static int __init mmp2_of_init(struct device_node *node,
-> >  }
-> >  IRQCHIP_DECLARE(mmp2_intc, "mrvl,mmp2-intc", mmp2_of_init);
-> >  
-> > +static int __init mmp3_of_init(struct device_node *node,
-> > +			       struct device_node *parent)
-> > +{
-> > +	int ret;
-> > +
-> > +	ret = mmp_init_bases(node);
-> > +	if (ret < 0)
-> > +		return ret;
-> > +
-> > +	icu_data[0].conf_enable = mmp3_conf.conf_enable;
-> > +	icu_data[0].conf_disable = mmp3_conf.conf_disable;
-> > +	icu_data[0].conf_mask = mmp3_conf.conf_mask;
-> > +	icu_data[0].conf2_mask = mmp3_conf.conf2_mask;
-> > +	irq_set_default_host(icu_data[0].domain);
+>> Please try and build the series to reduce review time. What you have here is an all-new
+>> page-table generation API, which you switch hibernate and kexec too. This is effectively a
+>> new implementation of hibernate and kexec. There are three things here that need review.
+>>
+>> You have a regression in your all-new implementation of hibernate. It took six months (and
+>> lots of review) to get the existing code right, please don't rip it out if there is
+>> nothing wrong with it.
 > 
-> Why do you need this? On a fully DT-ified platform, there should be no
-> notion of a default domain.
+>> Instead, please just move the hibernate copy_page_tables() code, and then wire kexec up.
+>> You shouldn't need to change anything in the copy_page_tables() code as the linear map is
+>> the same in both cases.
 
-I didn't know. Pretty sure this was cargo-culted, because it's done
-elsewhere too and also unnecessary. Will remove those cases too.
+> It is not really an all-new implementation of hibernate (for kexec it
+> is true though). I used the current implementation of hibernate as
+> bases, and simply generalized the functions by providing a flexible
+> interface. So what you are asking is actually exactly what I am doing.
 
-> > +	set_handle_irq(mmp2_handle_irq);
-> > +	max_icu_nr = 1;
-> > +	return 0;
-> > +}
-> > +IRQCHIP_DECLARE(mmp3_intc, "marvell,mmp3-intc", mmp3_of_init);
-> > +
-> >  static int __init mmp2_mux_of_init(struct device_node *node,
-> >  				   struct device_node *parent)
-> >  {
-> > 
+I disagree. The resume page-table code is the bulk of the complexity in hibernate.c. Your
+first patch dumps ~200 lines of differently-complex code, and your second switches
+hibernate over to it.
+
+Instead, please move that code, keeping it as it is. git will spot the move, and the
+generated diffstat should only reflect the build-system changes. You don't need to 'switch
+hibernate to transitional page tables.'
+
+Adding kexec will then show-up what needs changing, each change comes with a commit
+message explaining why. Having these as 'generalisations' in the first patch is a mess.
+
+There is existing code that we don't want to break. Any changes need to be done as a
+sequence of small incremental changes. It can't be reviewed any other way.
+
+
+> I realize, that I introduced a bug that I will fix.
+
+Done as a sequence of small incremental changes, I could bisect it to the patch that
+introduces the bug, and probably fix it from the description in the commit message.
+
+
+>> It looks like you are creating the page tables just after the kexec:segments have been
+>> loaded. This will go horribly wrong if anything changes between then and kexec time. (e.g.
+>> memory you've got mapped gets hot-removed).
+>> This needs to be done as late as possible, so we don't waste memory, and the world can't
+>> change around us. Reboot notifiers run before kexec, can't we do the memory-allocation there?
+
+> Kexec by design does not allow allocate during kexec time. This is
+> because we cannot fail during kexec syscall.
+
+This problem needs solving.
+
+| Reboot notifiers run before kexec, can't we do the memory-allocation there?
+
+
+> All allocations must be done during kexec load time.
+
+This increases the memory footprint. I don't think we should waste ~2MB per GB of kernel
+memory on this feature. (Assuming 4K pages and rodata_full)
+
+Another option is to allocate this memory at load time, but then free it so it can be used
+in the meantime. You can keep the list of allocated pfn, as we know they aren't in use by
+the running kernel, kexec metadata, loaded images etc.
+
+Memory hotplug would need handling carefully, as would anything that 'donates' memory to
+another agent. (I suspect the TEE stuff does this, I don't know how it interacts with kexec)
+
+
+> Kernel memory cannot be hot-removed, as
+> it is not part of ZONE_MOVABLE, and cannot be migrated.
+
+Today, yes. Tomorrow?, "arm64/mm: Enable memory hot remove":
+https://lore.kernel.org/r/1563171470-3117-1-git-send-email-anshuman.khandual@arm.com
+
+
+>>>> Previously:
+>>>> kernel shutdown 0.022131328s
+>>>> relocation      0.440510736s
+>>>> kernel startup  0.294706768s
+>>>>
+>>>> Relocation was taking: 58.2% of reboot time
+>>>>
+>>>> Now:
+>>>> kernel shutdown 0.032066576s
+>>>> relocation      0.022158152s
+>>>> kernel startup  0.296055880s
+>>>>
+>>>> Now: Relocation takes 6.3% of reboot time
+>>>>
+>>>> Total reboot is x2.16 times faster.
+>>
+>> When I first saw these numbers they were ~'0.29s', which I wrongly assumed was 29 seconds.
+>> Savings in milliseconds, for _reboot_ is a hard sell. I'm hoping that on the machines that
+>> take minutes to kexec we'll get numbers that make this change more convincing.
+
+> Sure, this userland is very small kernel+userland is only 47M. Here is
+> another data point: fitImage: 380M, it contains a larger userland.
+> The numbers for kernel shutdown and startup are the same as this is
+> the same kernel, but relocation takes: 3.58s
+> shutdown: 0.02s
+> relocation: 3.58s
+> startup:  0.30s
 > 
-> Thanks,
-> 
-> 	M.
+> Relocation take 88% of reboot time. And, we must have it under one second.
 
-Thanks
-Lubo
+Where does this one second number come from? (was it ever a reasonable starting point?)
 
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
