@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E00EA8FBE2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 09:14:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA87F8FBF2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 09:17:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A5nh5eiMPOY4eG0i7+K5HzDF9bQNykK4mfUfc7K5NcQ=; b=hfCB3djXJA0tZf
-	qERwbSBEZ1FTbe9RiPlV4N2Z3U3z8xaCUmelECBWZeFR3gkdbk/+2R78oNQK6xQ2UIWuNKDrXFGfZ
-	Ai2q6q5Tj05FgUR6IMUzm9V3ByN0ZQqdwIaYPAvWzmzUnhK+ApSM2bBqD0+SXyuBeWoy9uqPzYKIz
-	NLBuAgM+mMZxb1tgv9Bt6isd6gjOErkKrwIj2FhsG/F/plE2xC5P1KSg9v4tEghgOAyI3U1hE1DLi
-	g6m2cCjdaXDF+8mYahR4nrIH4B3ogyGhKdpQQPpwoAiSEPsqGaAU0q9yE17i3SDP9tLL+g6davG4g
-	T9wX4S20UVSHX5u9YkNA==;
+	List-Owner; bh=0tkwhm80a3/neSBQ2GJ+/lwswxnCDouiMzs8YQxL4HA=; b=ct2rb7kiL/1Jgj
+	FkFb+6hBYFGL9dOyuQmbcKc+Xdx62R1sHuTKUzngFKfxZ/90TpBVRp5OKO6wf3VeQQ6YKooV43xtF
+	RUkOd8LUQJdRVlRSi84kaJEv0DlWsV6iiZmLY6wbE8MrY/eJcpDzZV4nEjZ0hTTdW8bFISlO3w3J5
+	IxSD1UQ2QLwWhIlYCyV39+inPco3GnMQnlC+iNYHmFcOCaglz7NaHACsemicbsoNyi2JcLEtAalka
+	rfl4z814n9AZdHsyvy+JmHsEc3iDjJ5fHrm3wOEFrfZ1YsnfSI5TOtg+y1LgZjfcOW1sQOR7jHGUr
+	It/qB2mGMFAlI2UG1BDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyWRl-0007Ei-Lf; Fri, 16 Aug 2019 07:14:50 +0000
+	id 1hyWTx-0000aH-0w; Fri, 16 Aug 2019 07:17:05 +0000
 Received: from 089144199030.atnat0008.highway.a1.net ([89.144.199.30]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hyWRY-0007Ea-2x; Fri, 16 Aug 2019 07:14:36 +0000
+ id 1hyWTh-0000Zn-6C; Fri, 16 Aug 2019 07:16:50 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: iommu@lists.linux-foundation.org
-Subject: [PATCH 2/6] unicore32: remove the unused pgprot_dmacoherent define
-Date: Fri, 16 Aug 2019 09:07:50 +0200
-Message-Id: <20190816070754.15653-3-hch@lst.de>
+Subject: [PATCH 3/6] arm-nommu: remove the unused pgprot_dmacoherent define
+Date: Fri, 16 Aug 2019 09:07:51 +0200
+Message-Id: <20190816070754.15653-4-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190816070754.15653-1-hch@lst.de>
 References: <20190816070754.15653-1-hch@lst.de>
@@ -57,22 +57,21 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/unicore32/include/asm/pgtable.h | 2 --
- 1 file changed, 2 deletions(-)
+ arch/arm/include/asm/pgtable-nommu.h | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/arch/unicore32/include/asm/pgtable.h b/arch/unicore32/include/asm/pgtable.h
-index 9492aa304f03..126e961a8cb0 100644
---- a/arch/unicore32/include/asm/pgtable.h
-+++ b/arch/unicore32/include/asm/pgtable.h
-@@ -198,8 +198,6 @@ static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
- 	__pgprot(pgprot_val(prot) & ~PTE_CACHEABLE)
- #define pgprot_writecombine(prot)	\
- 	__pgprot(pgprot_val(prot) & ~PTE_CACHEABLE)
--#define pgprot_dmacoherent(prot)	\
--	__pgprot(pgprot_val(prot) & ~PTE_CACHEABLE)
+diff --git a/arch/arm/include/asm/pgtable-nommu.h b/arch/arm/include/asm/pgtable-nommu.h
+index 0b1f6799a32e..d0de24f06724 100644
+--- a/arch/arm/include/asm/pgtable-nommu.h
++++ b/arch/arm/include/asm/pgtable-nommu.h
+@@ -62,7 +62,6 @@ typedef pte_t *pte_addr_t;
+  */
+ #define pgprot_noncached(prot)	(prot)
+ #define pgprot_writecombine(prot) (prot)
+-#define pgprot_dmacoherent(prot) (prot)
+ #define pgprot_device(prot)	(prot)
  
- #define pmd_none(pmd)		(!pmd_val(pmd))
- #define pmd_present(pmd)	(pmd_val(pmd) & PMD_PRESENT)
+ 
 -- 
 2.20.1
 
