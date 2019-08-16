@@ -2,52 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93D9290ADB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 00:22:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 846A190B1B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 00:41:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=alpun+x4a2UPKRQamiGavrw7IrF7AYwSYxF28R8tIB4=; b=JohDcX6tqmSxkx
-	pZ3BS8ANC0WLoq1GxFEkBOxsrqcai60snQkEfjn3n+yi0gm+YX6GPkBcNSVxKK/rMXZctJDDpqEr5
-	8/dJLl7wS5viLeGYRUIv7gpoh+1H0rhw2JkXk9pnojqwuwruxCFy1OWZdIGXHvijwDGqUZBAZYCze
-	KKlvyHdOSrnSSPpOBEwHZL4wUi8aN+lZ3LSCT1Dbyy74avlpij9gHma1HUEIXnu9PzGkezzmDJlFg
-	7ctdeAKwQu0pc2ei34n022MgbZuOsKbMWNXWgkersNOmO8LQpKzGpQ+eww1owRlEHTqROPb6XdYKZ
-	AUIAjfQMwngtuuGg+bxA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=flIYRzGmJ5pmQVBeNUwMrKXQfwmFYi6fsFblK/59rIw=; b=cJncHrTm3qs1fMOuBDS6C2Yra
+	bVhRDzDDsOsuwLSsTgWgx9sgl86Ctz6D1ZT3ipfZxEd9ZCz92SNVLM0jzvT7eymt4QAgrialm99l/
+	cggtfxixb/9oSCC/g05uZ0muDdZmJHEDz+lgIQw05X1pDymiz2a9Eaa6m1w7v8fj2pPy8AT6KwZkK
+	oTg8ONNjK6VRLtFe3YD4BCXn52q5VK0J7uIUF5aopMXks/STqdSb+cTy0X14TKgbXCNh7kOUxgpMl
+	K+V8CO34IspEdedlg5wkz/9t1aQGGuG0t6TOSby7ypASF+0rzS+YRYO5pM7VBvy8KubgIidbeLQMY
+	M6o7XLjKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hykbp-0004zm-59; Fri, 16 Aug 2019 22:22:09 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hykbd-0004yf-VY
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 22:21:59 +0000
-Received: from 1.general.cking.uk.vpn ([10.172.193.212] helo=localhost)
- by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_256_CBC_SHA1:32)
- (Exim 4.76) (envelope-from <colin.king@canonical.com>)
- id 1hykbY-0002Yt-Bx; Fri, 16 Aug 2019 22:21:52 +0000
-From: Colin King <colin.king@canonical.com>
-To: Pankaj Dubey <pankaj.dubey@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Subject: [PATCH][next] soc: samsung: exynos-chipid: fix memory leak
-Date: Fri, 16 Aug 2019 23:21:51 +0100
-Message-Id: <20190816222151.11098-1-colin.king@canonical.com>
-X-Mailer: git-send-email 2.20.1
+	id 1hyku5-0002df-Kc; Fri, 16 Aug 2019 22:41:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hyktt-0002cx-UI
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 22:40:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 028F6344;
+ Fri, 16 Aug 2019 15:40:46 -0700 (PDT)
+Received: from [10.37.12.84] (unknown [10.37.12.84])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A8B533F718;
+ Fri, 16 Aug 2019 15:40:44 -0700 (PDT)
+Subject: Re: [Xen-devel] [PATCH 07/11] swiotlb-xen: provide a single
+ page-coherent.h header
+To: Christoph Hellwig <hch@lst.de>,
+ Stefano Stabellini <sstabellini@kernel.org>,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>
+References: <20190816130013.31154-1-hch@lst.de>
+ <20190816130013.31154-8-hch@lst.de>
+From: Julien Grall <julien.grall@arm.com>
+Message-ID: <9a3261c6-5d92-cf6b-1ae8-3a8e8b5ef0d4@arm.com>
+Date: Fri, 16 Aug 2019 23:40:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190816130013.31154-8-hch@lst.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_152158_151855_67D8215A 
-X-CRM114-Status: GOOD (  10.93  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190816_154050_019783_849D5723 
+X-CRM114-Status: GOOD (  15.65  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,66 +65,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: xen-devel@lists.xenproject.org, iommu@lists.linux-foundation.org,
+ x86@kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Colin Ian King <colin.king@canonical.com>
+Hi,
 
-Currently when the call to product_id_to_soc_id fails there
-is a memory leak of soc_dev_attr->revision and soc_dev_attr
-on the error return path.  Fix this by adding a common error
-return path that frees there obects and use this for two
-error return paths.
+On 8/16/19 2:00 PM, Christoph Hellwig wrote:
+> Merge the various page-coherent.h files into a single one that either
+> provides prototypes or stubs depending on the need for cache
+> maintainance.
+> 
+> For extra benefits alo include <xen/page-coherent.h> in the file
+> actually implementing the interfaces provided.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>   arch/arm/include/asm/xen/page-coherent.h   |  2 --
+>   arch/arm/xen/mm.c                          |  1 +
+>   arch/arm64/include/asm/xen/page-coherent.h |  2 --
+>   arch/x86/include/asm/xen/page-coherent.h   | 22 ------------------
+>   drivers/xen/swiotlb-xen.c                  |  4 +---
+>   include/Kbuild                             |  2 +-
+>   include/xen/{arm => }/page-coherent.h      | 27 +++++++++++++++++++---
 
-Addresses-Coverity: ("Resource leak")
-Fixes: 3253b7b7cd44 ("soc: samsung: Add exynos chipid driver support")
-Signed-off-by: Colin Ian King <colin.king@canonical.com>
----
- drivers/soc/samsung/exynos-chipid.c | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
+I am not sure I agree with this rename. The implementation of the 
+helpers are very Arm specific as this is assuming Dom0 is 1:1 mapped.
 
-diff --git a/drivers/soc/samsung/exynos-chipid.c b/drivers/soc/samsung/exynos-chipid.c
-index 006a95feb618..4e194a97c0fa 100644
---- a/drivers/soc/samsung/exynos-chipid.c
-+++ b/drivers/soc/samsung/exynos-chipid.c
-@@ -81,15 +81,15 @@ int __init exynos_chipid_early_init(void)
- 	soc_dev_attr->soc_id = product_id_to_soc_id(product_id);
- 	if (!soc_dev_attr->soc_id) {
- 		pr_err("Unknown SoC\n");
--		return -ENODEV;
-+		ret = -ENODEV;
-+		goto err;
- 	}
- 
- 	/* please note that the actual registration will be deferred */
- 	soc_dev = soc_device_register(soc_dev_attr);
- 	if (IS_ERR(soc_dev)) {
--		kfree(soc_dev_attr->revision);
--		kfree(soc_dev_attr);
--		return PTR_ERR(soc_dev);
-+		ret = PTR_ERR(soc_dev);
-+		goto err;
- 	}
- 
- 	/* it is too early to use dev_info() here (soc_dev is NULL) */
-@@ -97,5 +97,11 @@ int __init exynos_chipid_early_init(void)
- 		soc_dev_attr->soc_id, product_id, revision);
- 
- 	return 0;
-+
-+err:
-+	kfree(soc_dev_attr->revision);
-+	kfree(soc_dev_attr);
-+	return ret;
- }
-+
- early_initcall(exynos_chipid_early_init);
+This was necessary due to the lack of IOMMU on Arm platforms back then.
+But this is now a pain to get rid of it on newer platform...
+
+Cheers,
+
 -- 
-2.20.1
-
+Julien Grall
 
 _______________________________________________
 linux-arm-kernel mailing list
