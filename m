@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B04FE8F974
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 05:30:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D11A78F97E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 05:39:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=WDuux1aMqJOwpZkzMI5PCGl2Y0rmfFuNgAF1JMBLijs=; b=sMTj4uGJpIf25+/uJo2pbxIhua
-	duZRzzca5nbgEr0YqUJi/RzIrh0ESX9OswDgdsZvmM+roZu2HQkj4x2pq+iarlRRYDOaM0BxtHoyl
-	psUiYvcm1GisQjGOubidPCWFVvBA/jnERNNBZTdtAk6FE4EGtpgpTI/qaegVFcpOdlpA++nyWw293
-	AhlV+lL5yoft4Qnx2jk0Wr0tX4b/DOAQ1EaEirod7rc7gCeqfZygDWW60sh0WCP6rlFFDNIzbzVDv
-	RAxOwuUP/KeG38Rkfg4U9zZ1NC6YLyi9hk/TvXNaoFLdv6g4gbC0z0zQQ2burYYXPCnExYRWIcm1f
-	9oRRMcrg==;
+	bh=PbASoP6LwuJcDj1toQeOdw6GpxfxL5DB6ShUgdTnB3A=; b=JSgrY7xpvqN7urwqcFqdLMgQyJ
+	3JeLqEvEPWFQ486od3ptYPdWvdb2JQbR/bm93z3rFaYOzQ05WM1WUCkOdSEN5P1HScEEoGyZMjdPP
+	lgBzvlwMrTgwpAqrgPRXTpR3B/y1AZqGmm6WXWr/RikkddsaIW+F19vIRTyV7Z2nmv5ry0y96iH7z
+	WodT7lcEdkiZ8I8sN1KOwlUgZVQNPMd3U6ViFaiHcb0IKG7aLBZw7eBfFwo3mgqJhHaENczGyPLvy
+	qpadZy627TKvcuBe0f3sAVZ3h9dQnWboEZikihYYwL7wYepbZpyA8cb8uwW/aaDmph+oo2QLcBIHr
+	l8rSvkYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hySwf-0004N2-Es; Fri, 16 Aug 2019 03:30:29 +0000
+	id 1hyT5j-00067n-Qj; Fri, 16 Aug 2019 03:39:51 +0000
 Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hySwT-0004M8-Et
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 03:30:19 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id A2D90E5A7ACA03E00971;
- Fri, 16 Aug 2019 11:30:09 +0800 (CST)
-Received: from [127.0.0.1] (10.57.101.250) by DGGEMS409-HUB.china.huawei.com
- (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0; Fri, 16 Aug 2019
- 11:29:59 +0800
-From: Wei Xu <xuwei5@hisilicon.com>
-Subject: [GIT PULL] Hisilicon fixes for v5.3
+ id 1hyT5Y-00067P-Hw
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 03:39:41 +0000
+Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 33E58A74B2D687516248;
+ Fri, 16 Aug 2019 11:39:39 +0800 (CST)
+Received: from [127.0.0.1] (10.57.101.250) by DGGEMS403-HUB.china.huawei.com
+ (10.3.19.203) with Microsoft SMTP Server id 14.3.439.0; Fri, 16 Aug 2019
+ 11:39:31 +0800
 To: <soc@kernel.org>, "arm@kernel.org" <arm@kernel.org>,
  "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>, Olof Johansson <olof@lixom.net>,
  "Arnd Bergmann" <arnd@arndb.de>
-Message-ID: <5D562335.7000902@hisilicon.com>
-Date: Fri, 16 Aug 2019 11:29:57 +0800
+From: Wei Xu <xuwei5@hisilicon.com>
+Subject: [GIT PULL] arm64: defconfig: hisilicon config updates for v5.4
+Message-ID: <5D562573.5030604@hisilicon.com>
+Date: Fri, 16 Aug 2019 11:39:31 +0800
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
  Thunderbird/38.2.0
 MIME-Version: 1.0
 X-Originating-IP: [10.57.101.250]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_203017_670986_B409F890 
-X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-CacheID: sfid-20190815_203940_770916_EBADBA11 
+X-CRM114-Status: UNSURE (   8.00  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,16 +68,13 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sashal@kernel.org, Salil Mehta <salil.mehta@huawei.com>,
- jinying@hisilicon.com, Tangkunshan <tangkunshan@huawei.com>,
- linux-pci@vger.kernel.org, John
- Garry <john.garry@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+Cc: Salil Mehta <salil.mehta@huawei.com>, jinying@hisilicon.com,
+ Tangkunshan <tangkunshan@huawei.com>, John Garry <john.garry@huawei.com>,
  Linuxarm <linuxarm@huawei.com>,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>, Linux
- Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ "Wangzhou \(B\)" <wangzhou1@hisilicon.com>,
  huangdaode <huangdaode@hisilicon.com>, "xuwei \(O\)" <xuwei5@huawei.com>,
  Jonathan Cameron <jonathan.cameron@huawei.com>,
- Bjorn Helgaas <bhelgaas@google.com>, stable@vger.kernel.org,
  "Liguozhu \(Kenneth\)" <liguozhu@hisilicon.com>,
  Zhangyi ac <zhangyi.ac@huawei.com>, Shiju Jose <shiju.jose@huawei.com>
 Content-Transfer-Encoding: 7bit
@@ -87,7 +84,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi ARM-SoC team,
 
-Please consider to pull the following fixes.
+Please consider to pull the following changes.
 Thanks!
 
 Best Regards,
@@ -101,37 +98,26 @@ The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 
 are available in the Git repository at:
 
-   git://github.com/hisilicon/linux-hisi.git tags/hisi-fixes-for-5.3
+   git://github.com/hisilicon/linux-hisi.git 
+tags/hisi-arm64-defconfig-for-5.4
 
-for you to fetch changes up to 10e62b47973b0b0ceda076255bcb147b83e20517:
+for you to fetch changes up to 0c26a3345b4f402b87d9be00df4d3054cd8ba46f:
 
-   bus: hisi_lpc: Add .remove method to avoid driver unbind crash 
-(2019-08-13 14:54:34 +0800)
-
-----------------------------------------------------------------
-Hisilicon fixes for v5.3-rc
-
-- Fixed RCU usage in logical PIO
-- Added a function to unregister a logical PIO range in logical PIO
-   to support the fixes in the hisi-lpc driver
-- Fixed and optimized hisi-lpc driver to avoid potential use-after-free
-   and driver unbind crash
+   arm64: defconfig: Enable CONFIG_ACPI_APEI_PCIEAER (2019-08-16 
+09:36:07 +0800)
 
 ----------------------------------------------------------------
-John Garry (5):
-       lib: logic_pio: Fix RCU usage
-       lib: logic_pio: Avoid possible overlap for unregistering regions
-       lib: logic_pio: Add logic_pio_unregister_range()
-       bus: hisi_lpc: Unregister logical PIO range to avoid potential 
-use-after-free
-       bus: hisi_lpc: Add .remove method to avoid driver unbind crash
+ARM64: hisilicon: defconfig updates for v5.4
 
-  drivers/bus/hisi_lpc.c    | 47 ++++++++++++++++++++++++++----
-  include/linux/logic_pio.h |  1 +
-  lib/logic_pio.c           | 73 
-+++++++++++++++++++++++++++++++++++------------
-  3 files changed, 96 insertions(+), 25 deletions(-)
+- Enable ACPI_APEI_PCIEAER for the hisilicon D06 board to
+   support PCIe AER error report
 
+----------------------------------------------------------------
+Zhou Wang (1):
+       arm64: defconfig: Enable CONFIG_ACPI_APEI_PCIEAER
+
+  arch/arm64/configs/defconfig | 1 +
+  1 file changed, 1 insertion(+)
 
 
 
