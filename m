@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CF678FBD0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 09:12:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E00EA8FBE2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 09:14:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TQv9mS2DH/jyusGxnrRNkhmY24fqEfn1mChBZjx7x1U=; b=IRVVGFsAHZkVN9
-	BGcb6qxdoIrNfLGe0r5/mDuKR7EwIwXyTBJdBHp4hDvKGk63/37GZGUtqJthbgfWSgTyHWHatYWr/
-	QEn5rDRAcnTk4KstzGavNGVgAGQ7rt5FgOQgHpk6u4D9FxDXH+FDGzDGkxESN68qjjXy/2G4s+CeA
-	JNSUB/kM5dnPHkTF1JDV2s2JxHzgI+oQgdIKWsQ7d8VmxRRKW4ZBAobhi4TSa/mN8esKAuueLDOII
-	vaKIvUiJsxS/esxV/863cbF3a87/ABGsElCKg9AlC73YqK315YTwMQ9Xvp0yi+KqVONs30xBJ8zEU
-	HO0HYTe1ub/T7FIctjiA==;
+	List-Owner; bh=A5nh5eiMPOY4eG0i7+K5HzDF9bQNykK4mfUfc7K5NcQ=; b=hfCB3djXJA0tZf
+	qERwbSBEZ1FTbe9RiPlV4N2Z3U3z8xaCUmelECBWZeFR3gkdbk/+2R78oNQK6xQ2UIWuNKDrXFGfZ
+	Ai2q6q5Tj05FgUR6IMUzm9V3ByN0ZQqdwIaYPAvWzmzUnhK+ApSM2bBqD0+SXyuBeWoy9uqPzYKIz
+	NLBuAgM+mMZxb1tgv9Bt6isd6gjOErkKrwIj2FhsG/F/plE2xC5P1KSg9v4tEghgOAyI3U1hE1DLi
+	g6m2cCjdaXDF+8mYahR4nrIH4B3ogyGhKdpQQPpwoAiSEPsqGaAU0q9yE17i3SDP9tLL+g6davG4g
+	T9wX4S20UVSHX5u9YkNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyWPd-0006vj-Q3; Fri, 16 Aug 2019 07:12:37 +0000
+	id 1hyWRl-0007Ei-Lf; Fri, 16 Aug 2019 07:14:50 +0000
 Received: from 089144199030.atnat0008.highway.a1.net ([89.144.199.30]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hyWPO-0006sq-Qm; Fri, 16 Aug 2019 07:12:23 +0000
+ id 1hyWRY-0007Ea-2x; Fri, 16 Aug 2019 07:14:36 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: iommu@lists.linux-foundation.org
-Subject: [PATCH 1/6] MIPS: remove support for DMA_ATTR_WRITE_COMBINE
-Date: Fri, 16 Aug 2019 09:07:49 +0200
-Message-Id: <20190816070754.15653-2-hch@lst.de>
+Subject: [PATCH 2/6] unicore32: remove the unused pgprot_dmacoherent define
+Date: Fri, 16 Aug 2019 09:07:50 +0200
+Message-Id: <20190816070754.15653-3-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190816070754.15653-1-hch@lst.de>
 References: <20190816070754.15653-1-hch@lst.de>
@@ -55,50 +55,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Mips uses the KSEG1 kernel memory segment do map dma coherent
-allocations for non-coherent devices as uncachable, and does not have
-any kind of special support for DMA_ATTR_WRITE_COMBINE in the allocation
-path.  Thus supporting DMA_ATTR_WRITE_COMBINE in dma_mmap_attrs will
-lead to multiple mappings with different caching attributes.
-
-Fixes: 8c172467be36 ("MIPS: Add implementation of dma_map_ops.mmap()")
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/mips/Kconfig              | 1 -
- arch/mips/mm/dma-noncoherent.c | 8 --------
- 2 files changed, 9 deletions(-)
+ arch/unicore32/include/asm/pgtable.h | 2 --
+ 1 file changed, 2 deletions(-)
 
-diff --git a/arch/mips/Kconfig b/arch/mips/Kconfig
-index d50fafd7bf3a..86e6760ef0d0 100644
---- a/arch/mips/Kconfig
-+++ b/arch/mips/Kconfig
-@@ -1119,7 +1119,6 @@ config DMA_PERDEV_COHERENT
+diff --git a/arch/unicore32/include/asm/pgtable.h b/arch/unicore32/include/asm/pgtable.h
+index 9492aa304f03..126e961a8cb0 100644
+--- a/arch/unicore32/include/asm/pgtable.h
++++ b/arch/unicore32/include/asm/pgtable.h
+@@ -198,8 +198,6 @@ static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
+ 	__pgprot(pgprot_val(prot) & ~PTE_CACHEABLE)
+ #define pgprot_writecombine(prot)	\
+ 	__pgprot(pgprot_val(prot) & ~PTE_CACHEABLE)
+-#define pgprot_dmacoherent(prot)	\
+-	__pgprot(pgprot_val(prot) & ~PTE_CACHEABLE)
  
- config DMA_NONCOHERENT
- 	bool
--	select ARCH_HAS_DMA_MMAP_PGPROT
- 	select ARCH_HAS_SYNC_DMA_FOR_DEVICE
- 	select ARCH_HAS_UNCACHED_SEGMENT
- 	select NEED_DMA_MAP_STATE
-diff --git a/arch/mips/mm/dma-noncoherent.c b/arch/mips/mm/dma-noncoherent.c
-index ed56c6fa7be2..1d4d57dd9acf 100644
---- a/arch/mips/mm/dma-noncoherent.c
-+++ b/arch/mips/mm/dma-noncoherent.c
-@@ -65,14 +65,6 @@ long arch_dma_coherent_to_pfn(struct device *dev, void *cpu_addr,
- 	return page_to_pfn(virt_to_page(cached_kernel_address(cpu_addr)));
- }
- 
--pgprot_t arch_dma_mmap_pgprot(struct device *dev, pgprot_t prot,
--		unsigned long attrs)
--{
--	if (attrs & DMA_ATTR_WRITE_COMBINE)
--		return pgprot_writecombine(prot);
--	return pgprot_noncached(prot);
--}
--
- static inline void dma_sync_virt(void *addr, size_t size,
- 		enum dma_data_direction dir)
- {
+ #define pmd_none(pmd)		(!pmd_val(pmd))
+ #define pmd_present(pmd)	(pmd_val(pmd) & PMD_PRESENT)
 -- 
 2.20.1
 
