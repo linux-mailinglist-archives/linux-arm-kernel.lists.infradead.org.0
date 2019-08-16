@@ -2,85 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93B809012D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 14:16:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0045190164
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 14:25:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=m9CPhou0ct8EVBpTQt2mw0UPE5kBDGANI77G7f3BDxs=; b=dz5VvqDobhtC+RplX69bl9yPz
-	0y/TjI4npl3nR3YL7rVJIEHu7chuI3Idx/bFgpdGvaw0GyXM9NCjb3Jhjw78heLz8n5hEVxXtFtR9
-	nlO6Keu/DaT2McR7zoEq3Fz+dCuwY/17KsP894L1Ak3julz6OM6MIYV4oMDb/yROGwvCCAjYEjF3F
-	0IzuytUKZ91P18hZkxRyC5F/9PUlCHYb/7T/hEf6m3Z1yUHORyjgYeh0OH+wLh/n93K9vR4hWiK6E
-	4unDpNbnU82jMR09auUD6xmO8KuL3nqrdVrh0u3Ful//Pm3gFVTSIeM7GBGtsN1doxZI8oRSzPLsL
-	7uTNpM/Qw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=0mqpibIRiGMC2GZKAInBqJoey/MUPaq/uOkn2aSOgnA=; b=d1s
+	egUYQCtH/CUpmD3wgm9YWqCu0kg6AjdpaOdScI1yUX1WLAojU2/bWfIcC983fgKjW7icrws3PUChj
+	cp0U1fjardP5rhqw43Pi8KpqlfszsENf295ehvKRcmZUzsqAq1DVC6QaPv9SwmVWaDO218VdfiXCy
+	opWJzNIAIM+GgjV29/d4QXrihjHuncbYfktdxSjGIUIBx8COc5OemcDPAfFD/yDX9hQue/QfTIHjO
+	5R6zJYcl8qlsDmVFW9rjrm9pUl1glnYIaU89n6314I7O+xEHnvceqbFCXZuUiLEr7RH4olpGNM4CH
+	9YICgDDEsW81urgbs79/PSN7m1ys64w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyb9y-0001zt-0u; Fri, 16 Aug 2019 12:16:46 +0000
-Received: from mail-wr1-f97.google.com ([209.85.221.97])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyb9f-0001xg-SZ
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 12:16:29 +0000
-Received: by mail-wr1-f97.google.com with SMTP id p17so1338557wrf.11
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 16 Aug 2019 05:16:27 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=dn2KIuS3Wg8ZAV1Rn4EmhRNXAghPOAWFXahs2NO+P7I=;
- b=mypLM958OjRgXPIerLq+yngD+vGGukKrFyqakxTvmc6/hTFA0UDM4eAyHfD3R4/VQ+
- DC5PNxC9fWgm4cok9PFrnUIQIZuxg0L8VSG2mPyEhTj05x8HxaPt58Wf6VWHXe7QgyAh
- JjK/xjJeeRpaGXMOV//+12DdjCog+fLdpsIjkDG4b/sSbRKxoasex7LoOaMhHLIf/eSG
- 8lfSBYD1zBNNSabAHLxHYKTouVIUCZDjPN+jxnQXnq1RlPYDOdq/bxGSr/jdSoolZug/
- fC23cJ/ETEXULCuIoAe6DFt8DgaTAjqM6ojIhD8iJJ9LMSYjSLefN7QnzMOhnkucooPe
- ZJFA==
-X-Gm-Message-State: APjAAAXv8SulqE2lUQ55otmhB9DOvj1xqzxZxuVUrEzm0OdslsKObXvT
- lNEMRQHV+hxvl6cvnwlfbJhdKKzXN1EEZIdZbVAe6nHURMn5vBTPLx2sUE6KRGd5vg==
-X-Google-Smtp-Source: APXvYqxzvi1VoIOoRXJFajCnQ/dE3fzFo5N+5Qat7cLvuByHbL41fsf69MyjqXOpnK7z54RKl4/zDq8J3tpC
-X-Received: by 2002:adf:f287:: with SMTP id k7mr10732366wro.183.1565957786460; 
- Fri, 16 Aug 2019 05:16:26 -0700 (PDT)
-Received: from heliosphere.sirena.org.uk (heliosphere.sirena.org.uk.
- [2a01:7e01::f03c:91ff:fed4:a3b6])
- by smtp-relay.gmail.com with ESMTPS id k67sm34897wma.53.2019.08.16.05.16.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 16 Aug 2019 05:16:26 -0700 (PDT)
-X-Relaying-Domain: sirena.org.uk
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1hyb9d-0003MM-Ul; Fri, 16 Aug 2019 12:16:26 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 2556927430D6; Fri, 16 Aug 2019 13:16:25 +0100 (BST)
-Date: Fri, 16 Aug 2019 13:16:25 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Shengjiu Wang <shengjiu.wang@nxp.com>
-Subject: Re: [PATCH] ASoC: imx-audmux: Add driver suspend and resume to
- support MEGA Fast
-Message-ID: <20190816121625.GC4039@sirena.co.uk>
-References: <1565931794-7218-1-git-send-email-shengjiu.wang@nxp.com>
-MIME-Version: 1.0
-In-Reply-To: <1565931794-7218-1-git-send-email-shengjiu.wang@nxp.com>
-X-Cookie: My life is a patio of fun!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1hybIF-0004XY-1e; Fri, 16 Aug 2019 12:25:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hybHd-0004EJ-Ll
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 12:24:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 57693344;
+ Fri, 16 Aug 2019 05:24:39 -0700 (PDT)
+Received: from e121650-lin.cambridge.arm.com (e121650-lin.cambridge.arm.com
+ [10.1.196.120])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1A3EA3F706;
+ Fri, 16 Aug 2019 05:24:37 -0700 (PDT)
+From: Raphael Gault <raphael.gault@arm.com>
+To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ jpoimboe@redhat.com
+Subject: [RFC v4 00/18] objtool: Add support for arm64
+Date: Fri, 16 Aug 2019 13:23:45 +0100
+Message-Id: <20190816122403.14994-1-raphael.gault@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_051628_027933_7ABA5B19 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190816_052441_808177_DE615FB2 
+X-CRM114-Status: GOOD (  12.27  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.97 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -93,61 +58,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, alsa-devel@alsa-project.org,
- linuxppc-dev@lists.ozlabs.org, timur@kernel.org, Xiubo.Lee@gmail.com,
- shawnguo@kernel.org, s.hauer@pengutronix.de, tiwai@suse.com,
- lgirdwood@gmail.com, perex@perex.cz, nicoleotsuka@gmail.com, linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com, linux-kernel@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============0190366672357400263=="
+Cc: raph.gault+kdev@gmail.com, peterz@infradead.org, catalin.marinas@arm.com,
+ will.deacon@arm.com, Raphael Gault <raphael.gault@arm.com>,
+ julien.thierry.kdev@gmail.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============0190366672357400263==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Bu8it7iiRSEf40bY"
-Content-Disposition: inline
+Changes since RFC V3:
+* Rebased on tip/master: Switch/jump table had been refactored
+* Take Catalin Marinas comments into account regarding the asm macro for
+  marking exceptions.
 
+As of now, objtool only supports the x86_64 architecture but the
+groundwork has already been done in order to add support for other
+architectures without too much effort.
 
---Bu8it7iiRSEf40bY
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+This series of patches adds support for the arm64 architecture
+based on the Armv8.5 Architecture Reference Manual.
 
-On Fri, Aug 16, 2019 at 01:03:14AM -0400, Shengjiu Wang wrote:
+Objtool will be a valuable tool to progress and provide more guarentees
+on live patching which is a work in progress for arm64.
 
-> +	for (i = 0; i < reg_max; i++)
-> +		regcache[i] = readl(audmux_base + i * 4);
-
-If only there were some framework which provided a register cache!  :P
-
---Bu8it7iiRSEf40bY
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1WnpgACgkQJNaLcl1U
-h9AuxQf/SUokJSA9quJeah9hsT6jJhQKPr9uQwbuhnIcx6+bhKouXbtrmPWZsHF8
-zLUHwY1cvcQm2qitQxsYCZm1a65PWSIAX9P4s+GUfNVz9p2dL0q3TYDH8mDJBjWv
-CK1KDEfko6PsY4AHrSa13aNy7IImcOn2J5+/CUOonmPlKPS7CezGbfACaQMG5Zdf
-Ln4T/JnCQ6IZzFeJMwzD/RzXiwXOLc7SZ5mIADxbP+4rL9ByOG1BJy/rXIV9YbJe
-IQqO5Zu7uen0NjPDOQP/Uy8RF4HItglOTrO8Cjr/95gQ4QJKxLzQyq5NzEGJu1h8
-BgQWgH1vDAKWp04BZb2jzQtLMtmwiA==
-=hQwi
------END PGP SIGNATURE-----
-
---Bu8it7iiRSEf40bY--
+Once we have the base of objtool working the next steps will be to
+port Peter Z's uaccess validation for arm64.
 
 
---===============0190366672357400263==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Raphael Gault (18):
+  objtool: Add abstraction for computation of symbols offsets
+  objtool: orc: Refactor ORC API for other architectures to implement.
+  objtool: Move registers and control flow to arch-dependent code
+  objtool: arm64: Add required implementation for supporting the aarch64
+    architecture in objtool.
+  objtool: special: Adapt special section handling
+  objtool: arm64: Adapt the stack frame checks for arm architecture
+  objtool: Introduce INSN_UNKNOWN type
+  objtool: Refactor switch-tables code to support other architectures
+  gcc-plugins: objtool: Add plugin to detect switch table on arm64
+  objtool: arm64: Implement functions to add switch tables alternatives
+  arm64: alternative: Mark .altinstr_replacement as containing
+    executable instructions
+  arm64: assembler: Add macro to annotate asm function having non
+    standard stack-frame.
+  arm64: sleep: Prevent stack frame warnings from objtool
+  arm64: kvm: Annotate non-standard stack frame functions
+  arm64: kernel: Add exception on kuser32 to prevent stack analysis
+  arm64: crypto: Add exceptions for crypto object to prevent stack
+    analysis
+  arm64: kernel: Annotate non-standard stack frame functions
+  objtool: arm64: Enable stack validation for arm64
+
+ arch/arm64/Kconfig                            |    1 +
+ arch/arm64/crypto/Makefile                    |    3 +
+ arch/arm64/include/asm/alternative.h          |    2 +-
+ arch/arm64/kernel/Makefile                    |    3 +
+ arch/arm64/kernel/hyp-stub.S                  |    3 +
+ arch/arm64/kernel/sleep.S                     |    5 +
+ arch/arm64/kvm/hyp-init.S                     |    3 +
+ arch/arm64/kvm/hyp/entry.S                    |    3 +
+ include/linux/frame.h                         |   19 +-
+ scripts/Makefile.gcc-plugins                  |    2 +
+ scripts/gcc-plugins/Kconfig                   |    9 +
+ .../arm64_switch_table_detection_plugin.c     |   58 +
+ tools/objtool/Build                           |    2 -
+ tools/objtool/arch.h                          |   19 +
+ tools/objtool/arch/arm64/Build                |    8 +
+ tools/objtool/arch/arm64/arch_special.c       |  165 +
+ tools/objtool/arch/arm64/bit_operations.c     |   67 +
+ tools/objtool/arch/arm64/decode.c             | 2815 +++++++++++++++++
+ .../objtool/arch/arm64/include/arch_special.h |   52 +
+ .../arch/arm64/include/asm/orc_types.h        |   96 +
+ .../arch/arm64/include/bit_operations.h       |   24 +
+ tools/objtool/arch/arm64/include/cfi.h        |   74 +
+ .../objtool/arch/arm64/include/insn_decode.h  |  210 ++
+ tools/objtool/arch/arm64/orc_dump.c           |   26 +
+ tools/objtool/arch/arm64/orc_gen.c            |   40 +
+ tools/objtool/arch/x86/Build                  |    3 +
+ tools/objtool/arch/x86/arch_special.c         |  107 +
+ tools/objtool/arch/x86/decode.c               |   16 +
+ tools/objtool/arch/x86/include/arch_special.h |   45 +
+ tools/objtool/{ => arch/x86/include}/cfi.h    |    0
+ tools/objtool/{ => arch/x86}/orc_dump.c       |    4 +-
+ tools/objtool/{ => arch/x86}/orc_gen.c        |  104 +-
+ tools/objtool/check.c                         |  309 +-
+ tools/objtool/check.h                         |   10 +
+ tools/objtool/elf.c                           |    3 +-
+ tools/objtool/orc.h                           |    4 +-
+ tools/objtool/special.c                       |   28 +-
+ tools/objtool/special.h                       |   13 +-
+ 38 files changed, 4129 insertions(+), 226 deletions(-)
+ create mode 100644 scripts/gcc-plugins/arm64_switch_table_detection_plugin.c
+ create mode 100644 tools/objtool/arch/arm64/Build
+ create mode 100644 tools/objtool/arch/arm64/arch_special.c
+ create mode 100644 tools/objtool/arch/arm64/bit_operations.c
+ create mode 100644 tools/objtool/arch/arm64/decode.c
+ create mode 100644 tools/objtool/arch/arm64/include/arch_special.h
+ create mode 100644 tools/objtool/arch/arm64/include/asm/orc_types.h
+ create mode 100644 tools/objtool/arch/arm64/include/bit_operations.h
+ create mode 100644 tools/objtool/arch/arm64/include/cfi.h
+ create mode 100644 tools/objtool/arch/arm64/include/insn_decode.h
+ create mode 100644 tools/objtool/arch/arm64/orc_dump.c
+ create mode 100644 tools/objtool/arch/arm64/orc_gen.c
+ create mode 100644 tools/objtool/arch/x86/arch_special.c
+ create mode 100644 tools/objtool/arch/x86/include/arch_special.h
+ rename tools/objtool/{ => arch/x86/include}/cfi.h (100%)
+ rename tools/objtool/{ => arch/x86}/orc_dump.c (98%)
+ rename tools/objtool/{ => arch/x86}/orc_gen.c (66%)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0190366672357400263==--
-
