@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFCD390166
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 14:25:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68E5A90167
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 14:25:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=KGNiZ8fssAbk2gm2hNZeJVZpUZMEiXSBGCQwy3UckFQ=; b=d2wG7cbRUHEp01aRAsIeJOmG9x
-	N8eRIjYPQIs93ShUNYBNAYiaGJOPHO9iIzq8n9k4UW8/JWdcOo1jVftuK3rJUT84gVgf5yDNR1J7L
-	e9WMNICI08W9Op9cZPr0eyuBCI6YiKuOkMrRcMobqX8EPXNhSknb7nmI8sQiulhj/2Kl7rBarB//+
-	hAJa43CIPSwDSDbFKFZCIZ9APBuExq15U1N3uVC9hqCr6HbysNzExqa6kqTQQqCqWM6FqbAL9IUgP
-	QQz+XutnvOtfSqiLuzlima9j+0KldHUKw2rSeIKmn+TLwoS916Xb7Ncl0MMQrpgkAKp390r8DL60z
-	PPrqK5Lg==;
+	bh=bHn4zksCkHp3iJ4DdY0uU1l5u1fBECG05Ex3Su86RkY=; b=kYS6t161H/sMfa3x4FkHGo3HIw
+	h4nX6wRgQ2+JEwnB7DLD7iYjgpaGGPTPnLA16TdJvgqsmnMtkK5JydHoqlBb77mnXdeIlUlKa/ZvJ
+	d88ZIJvtGU/RXKKmzF5qOs26RX4aTbvrwc1RWbFtpT19ni2zmMahTg/EJLZT+Wp56/Dh+p4vb3Rtr
+	7+xPKGg5Dja/uyWcJv3Bs+d8zQ1GXTr60/voY2Z2KmMoOWChv8HGksswOeeeLAhwl7JIgu2mx+5w8
+	1KYynzGIBTO4PIwm0TAU2/As4kjkQqRFB6ykzCRPmdgfg/ykEK5L9/zOmKoUAPOV34OD7jIZXo+5L
+	GjslD7wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hybIY-00062b-SJ; Fri, 16 Aug 2019 12:25:38 +0000
+	id 1hybIq-0006Ha-Pj; Fri, 16 Aug 2019 12:25:56 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hybHf-0004Ep-6Z
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 12:24:44 +0000
+ id 1hybHe-0004Gh-SF
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 12:24:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C5F4A360;
- Fri, 16 Aug 2019 05:24:40 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5C0CA1570;
+ Fri, 16 Aug 2019 05:24:42 -0700 (PDT)
 Received: from e121650-lin.cambridge.arm.com (e121650-lin.cambridge.arm.com
  [10.1.196.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8C3BE3F706;
- Fri, 16 Aug 2019 05:24:39 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 077193F706;
+ Fri, 16 Aug 2019 05:24:40 -0700 (PDT)
 From: Raphael Gault <raphael.gault@arm.com>
 To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  jpoimboe@redhat.com
-Subject: [RFC v4 01/18] objtool: Add abstraction for computation of symbols
- offsets
-Date: Fri, 16 Aug 2019 13:23:46 +0100
-Message-Id: <20190816122403.14994-2-raphael.gault@arm.com>
+Subject: [RFC v4 02/18] objtool: orc: Refactor ORC API for other architectures
+ to implement.
+Date: Fri, 16 Aug 2019 13:23:47 +0100
+Message-Id: <20190816122403.14994-3-raphael.gault@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190816122403.14994-1-raphael.gault@arm.com>
 References: <20190816122403.14994-1-raphael.gault@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_052443_362884_4BDCA968 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20190816_052443_315606_5F25F168 
+X-CRM114-Status: GOOD (  15.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -51,8 +51,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,117 +71,360 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The jump destination and relocation offset used previously are only
-reliable on x86_64 architecture. We abstract these computations by calling
-arch-dependent implementations.
+The ORC unwinder is only supported on x86 at the moment and should thus be
+in the x86 architecture code. In order not to break the whole structure in
+case another architecture decides to support the ORC unwinder via objtool
+we choose to let the implementation be done in the architecture dependent
+code.
 
 Signed-off-by: Raphael Gault <raphael.gault@arm.com>
 ---
- tools/objtool/arch.h            |  6 ++++++
- tools/objtool/arch/x86/decode.c | 11 +++++++++++
- tools/objtool/check.c           | 15 ++++++++++-----
- 3 files changed, 27 insertions(+), 5 deletions(-)
+ tools/objtool/Build                     |   2 -
+ tools/objtool/arch.h                    |   3 +
+ tools/objtool/arch/x86/Build            |   2 +
+ tools/objtool/{ => arch/x86}/orc_dump.c |   4 +-
+ tools/objtool/{ => arch/x86}/orc_gen.c  | 104 ++++++++++++++++++++++--
+ tools/objtool/check.c                   |  99 +---------------------
+ tools/objtool/orc.h                     |   4 +-
+ 7 files changed, 111 insertions(+), 107 deletions(-)
+ rename tools/objtool/{ => arch/x86}/orc_dump.c (98%)
+ rename tools/objtool/{ => arch/x86}/orc_gen.c (66%)
 
+diff --git a/tools/objtool/Build b/tools/objtool/Build
+index 8dc4f0848362..d069d26d97fa 100644
+--- a/tools/objtool/Build
++++ b/tools/objtool/Build
+@@ -2,8 +2,6 @@ objtool-y += arch/$(SRCARCH)/
+ objtool-y += builtin-check.o
+ objtool-y += builtin-orc.o
+ objtool-y += check.o
+-objtool-y += orc_gen.o
+-objtool-y += orc_dump.o
+ objtool-y += elf.o
+ objtool-y += special.o
+ objtool-y += objtool.o
 diff --git a/tools/objtool/arch.h b/tools/objtool/arch.h
-index ced3765c4f44..a9a50a25ca66 100644
+index a9a50a25ca66..e91e12807678 100644
 --- a/tools/objtool/arch.h
 +++ b/tools/objtool/arch.h
-@@ -66,6 +66,8 @@ struct stack_op {
- 	struct op_src src;
- };
+@@ -10,6 +10,7 @@
+ #include <linux/list.h>
+ #include "elf.h"
+ #include "cfi.h"
++#include "orc.h"
  
-+struct instruction;
-+
- void arch_initial_func_cfi_state(struct cfi_state *state);
- 
- int arch_decode_instruction(struct elf *elf, struct section *sec,
-@@ -75,4 +77,8 @@ int arch_decode_instruction(struct elf *elf, struct section *sec,
+ enum insn_type {
+ 	INSN_JUMP_CONDITIONAL,
+@@ -77,6 +78,8 @@ int arch_decode_instruction(struct elf *elf, struct section *sec,
  
  bool arch_callee_saved_reg(unsigned char reg);
  
-+unsigned long arch_jump_destination(struct instruction *insn);
++int arch_orc_read_unwind_hints(struct objtool_file *file);
 +
-+unsigned long arch_dest_rela_offset(int addend);
-+
- #endif /* _ARCH_H */
-diff --git a/tools/objtool/arch/x86/decode.c b/tools/objtool/arch/x86/decode.c
-index 0567c47a91b1..fa33b3465722 100644
---- a/tools/objtool/arch/x86/decode.c
-+++ b/tools/objtool/arch/x86/decode.c
-@@ -11,6 +11,7 @@
- #include "lib/inat.c"
- #include "lib/insn.c"
+ unsigned long arch_jump_destination(struct instruction *insn);
  
+ unsigned long arch_dest_rela_offset(int addend);
+diff --git a/tools/objtool/arch/x86/Build b/tools/objtool/arch/x86/Build
+index b998412c017d..1f11b45999d0 100644
+--- a/tools/objtool/arch/x86/Build
++++ b/tools/objtool/arch/x86/Build
+@@ -1,4 +1,6 @@
+ objtool-y += decode.o
++objtool-y += orc_dump.o
++objtool-y += orc_gen.o
+ 
+ inat_tables_script = arch/x86/tools/gen-insn-attr-x86.awk
+ inat_tables_maps = arch/x86/lib/x86-opcode-map.txt
+diff --git a/tools/objtool/orc_dump.c b/tools/objtool/arch/x86/orc_dump.c
+similarity index 98%
+rename from tools/objtool/orc_dump.c
+rename to tools/objtool/arch/x86/orc_dump.c
+index 13ccf775a83a..cfe8f96bdd68 100644
+--- a/tools/objtool/orc_dump.c
++++ b/tools/objtool/arch/x86/orc_dump.c
+@@ -4,8 +4,8 @@
+  */
+ 
+ #include <unistd.h>
+-#include "orc.h"
+-#include "warn.h"
++#include "../../orc.h"
++#include "../../warn.h"
+ 
+ static const char *reg_name(unsigned int reg)
+ {
+diff --git a/tools/objtool/orc_gen.c b/tools/objtool/arch/x86/orc_gen.c
+similarity index 66%
+rename from tools/objtool/orc_gen.c
+rename to tools/objtool/arch/x86/orc_gen.c
+index 27a4112848c2..b4f285bf5271 100644
+--- a/tools/objtool/orc_gen.c
++++ b/tools/objtool/arch/x86/orc_gen.c
+@@ -6,11 +6,11 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-#include "orc.h"
+-#include "check.h"
+-#include "warn.h"
++#include "../../orc.h"
 +#include "../../check.h"
- #include "../../elf.h"
- #include "../../arch.h"
- #include "../../warn.h"
-@@ -66,6 +67,11 @@ bool arch_callee_saved_reg(unsigned char reg)
- 	}
++#include "../../warn.h"
+ 
+-int create_orc(struct objtool_file *file)
++int arch_create_orc(struct objtool_file *file)
+ {
+ 	struct instruction *insn;
+ 
+@@ -116,7 +116,7 @@ static int create_orc_entry(struct section *u_sec, struct section *ip_relasec,
+ 	return 0;
  }
  
-+unsigned long arch_dest_rela_offset(int addend)
-+{
-+	return addend + 4;
-+}
-+
- int arch_decode_instruction(struct elf *elf, struct section *sec,
- 			    unsigned long offset, unsigned int maxlen,
- 			    unsigned int *len, enum insn_type *type,
-@@ -497,3 +503,8 @@ void arch_initial_func_cfi_state(struct cfi_state *state)
- 	state->regs[16].base = CFI_CFA;
- 	state->regs[16].offset = -8;
+-int create_orc_sections(struct objtool_file *file)
++int arch_create_orc_sections(struct objtool_file *file)
+ {
+ 	struct instruction *insn, *prev_insn;
+ 	struct section *sec, *u_sec, *ip_relasec;
+@@ -209,3 +209,97 @@ int create_orc_sections(struct objtool_file *file)
+ 
+ 	return 0;
  }
 +
-+unsigned long arch_jump_destination(struct instruction *insn)
++int arch_orc_read_unwind_hints(struct objtool_file *file)
 +{
-+	return insn->offset + insn->len + insn->immediate;
++	struct section *sec, *relasec;
++	struct rela *rela;
++	struct unwind_hint *hint;
++	struct instruction *insn;
++	struct cfi_reg *cfa;
++	int i;
++
++	sec = find_section_by_name(file->elf, ".discard.unwind_hints");
++	if (!sec)
++		return 0;
++
++	relasec = sec->rela;
++	if (!relasec) {
++		WARN("missing .rela.discard.unwind_hints section");
++		return -1;
++	}
++
++	if (sec->len % sizeof(struct unwind_hint)) {
++		WARN("struct unwind_hint size mismatch");
++		return -1;
++	}
++
++	file->hints = true;
++
++	for (i = 0; i < sec->len / sizeof(struct unwind_hint); i++) {
++		hint = (struct unwind_hint *)sec->data->d_buf + i;
++
++		rela = find_rela_by_dest(sec, i * sizeof(*hint));
++		if (!rela) {
++			WARN("can't find rela for unwind_hints[%d]", i);
++			return -1;
++		}
++
++		insn = find_insn(file, rela->sym->sec, rela->addend);
++		if (!insn) {
++			WARN("can't find insn for unwind_hints[%d]", i);
++			return -1;
++		}
++
++		cfa = &insn->state.cfa;
++
++		if (hint->type == UNWIND_HINT_TYPE_SAVE) {
++			insn->save = true;
++			continue;
++
++		} else if (hint->type == UNWIND_HINT_TYPE_RESTORE) {
++			insn->restore = true;
++			insn->hint = true;
++			continue;
++		}
++
++		insn->hint = true;
++
++		switch (hint->sp_reg) {
++		case ORC_REG_UNDEFINED:
++			cfa->base = CFI_UNDEFINED;
++			break;
++		case ORC_REG_SP:
++			cfa->base = CFI_SP;
++			break;
++		case ORC_REG_BP:
++			cfa->base = CFI_BP;
++			break;
++		case ORC_REG_SP_INDIRECT:
++			cfa->base = CFI_SP_INDIRECT;
++			break;
++		case ORC_REG_R10:
++			cfa->base = CFI_R10;
++			break;
++		case ORC_REG_R13:
++			cfa->base = CFI_R13;
++			break;
++		case ORC_REG_DI:
++			cfa->base = CFI_DI;
++			break;
++		case ORC_REG_DX:
++			cfa->base = CFI_DX;
++			break;
++		default:
++			WARN_FUNC("unsupported unwind_hint sp base reg %d",
++				  insn->sec, insn->offset, hint->sp_reg);
++			return -1;
++		}
++
++		cfa->offset = hint->sp_offset;
++		insn->state.type = hint->type;
++		insn->state.end = hint->end;
++	}
++
++	return 0;
 +}
 diff --git a/tools/objtool/check.c b/tools/objtool/check.c
-index 176f2f084060..479fab46b656 100644
+index 479fab46b656..30e147391dcb 100644
 --- a/tools/objtool/check.c
 +++ b/tools/objtool/check.c
-@@ -563,7 +563,7 @@ static int add_jump_destinations(struct objtool_file *file)
- 					       insn->len);
- 		if (!rela) {
- 			dest_sec = insn->sec;
--			dest_off = insn->offset + insn->len + insn->immediate;
-+			dest_off = arch_jump_destination(insn);
- 		} else if (rela->sym->type == STT_SECTION) {
- 			dest_sec = rela->sym->sec;
- 			dest_off = rela->addend + 4;
-@@ -659,7 +659,7 @@ static int add_call_destinations(struct objtool_file *file)
- 		rela = find_rela_by_dest_range(insn->sec, insn->offset,
- 					       insn->len);
- 		if (!rela) {
--			dest_off = insn->offset + insn->len + insn->immediate;
-+			dest_off = arch_jump_destination(insn);
- 			insn->call_dest = find_symbol_by_offset(insn->sec,
- 								dest_off);
+@@ -1162,99 +1162,6 @@ static int add_jump_table_alts(struct objtool_file *file)
+ 	return 0;
+ }
  
-@@ -672,14 +672,19 @@ static int add_call_destinations(struct objtool_file *file)
- 			}
+-static int read_unwind_hints(struct objtool_file *file)
+-{
+-	struct section *sec, *relasec;
+-	struct rela *rela;
+-	struct unwind_hint *hint;
+-	struct instruction *insn;
+-	struct cfi_reg *cfa;
+-	int i;
+-
+-	sec = find_section_by_name(file->elf, ".discard.unwind_hints");
+-	if (!sec)
+-		return 0;
+-
+-	relasec = sec->rela;
+-	if (!relasec) {
+-		WARN("missing .rela.discard.unwind_hints section");
+-		return -1;
+-	}
+-
+-	if (sec->len % sizeof(struct unwind_hint)) {
+-		WARN("struct unwind_hint size mismatch");
+-		return -1;
+-	}
+-
+-	file->hints = true;
+-
+-	for (i = 0; i < sec->len / sizeof(struct unwind_hint); i++) {
+-		hint = (struct unwind_hint *)sec->data->d_buf + i;
+-
+-		rela = find_rela_by_dest(sec, i * sizeof(*hint));
+-		if (!rela) {
+-			WARN("can't find rela for unwind_hints[%d]", i);
+-			return -1;
+-		}
+-
+-		insn = find_insn(file, rela->sym->sec, rela->addend);
+-		if (!insn) {
+-			WARN("can't find insn for unwind_hints[%d]", i);
+-			return -1;
+-		}
+-
+-		cfa = &insn->state.cfa;
+-
+-		if (hint->type == UNWIND_HINT_TYPE_SAVE) {
+-			insn->save = true;
+-			continue;
+-
+-		} else if (hint->type == UNWIND_HINT_TYPE_RESTORE) {
+-			insn->restore = true;
+-			insn->hint = true;
+-			continue;
+-		}
+-
+-		insn->hint = true;
+-
+-		switch (hint->sp_reg) {
+-		case ORC_REG_UNDEFINED:
+-			cfa->base = CFI_UNDEFINED;
+-			break;
+-		case ORC_REG_SP:
+-			cfa->base = CFI_SP;
+-			break;
+-		case ORC_REG_BP:
+-			cfa->base = CFI_BP;
+-			break;
+-		case ORC_REG_SP_INDIRECT:
+-			cfa->base = CFI_SP_INDIRECT;
+-			break;
+-		case ORC_REG_R10:
+-			cfa->base = CFI_R10;
+-			break;
+-		case ORC_REG_R13:
+-			cfa->base = CFI_R13;
+-			break;
+-		case ORC_REG_DI:
+-			cfa->base = CFI_DI;
+-			break;
+-		case ORC_REG_DX:
+-			cfa->base = CFI_DX;
+-			break;
+-		default:
+-			WARN_FUNC("unsupported unwind_hint sp base reg %d",
+-				  insn->sec, insn->offset, hint->sp_reg);
+-			return -1;
+-		}
+-
+-		cfa->offset = hint->sp_offset;
+-		insn->state.type = hint->type;
+-		insn->state.end = hint->end;
+-	}
+-
+-	return 0;
+-}
  
- 		} else if (rela->sym->type == STT_SECTION) {
-+			/*
-+			 * the original x86_64 code adds 4 to the rela->addend
-+			 * which is not needed on arm64 architecture.
-+			 */
-+			dest_off = arch_dest_rela_offset(rela->addend);
- 			insn->call_dest = find_symbol_by_offset(rela->sym->sec,
--								rela->addend+4);
-+								dest_off);
- 			if (!insn->call_dest ||
- 			    insn->call_dest->type != STT_FUNC) {
--				WARN_FUNC("can't find call dest symbol at %s+0x%x",
-+				WARN_FUNC("can't find call dest symbol at %s+0x%lx",
- 					  insn->sec, insn->offset,
- 					  rela->sym->sec->name,
--					  rela->addend + 4);
-+					  dest_off);
- 				return -1;
- 			}
- 		} else
+ static int read_retpoline_hints(struct objtool_file *file)
+ {
+@@ -1354,7 +1261,7 @@ static int decode_sections(struct objtool_file *file)
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = read_unwind_hints(file);
++	ret = arch_orc_read_unwind_hints(file);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -2479,11 +2386,11 @@ int check(const char *_objname, bool orc)
+ 	}
+ 
+ 	if (orc) {
+-		ret = create_orc(&file);
++		ret = arch_create_orc(&file);
+ 		if (ret < 0)
+ 			goto out;
+ 
+-		ret = create_orc_sections(&file);
++		ret = arch_create_orc_sections(&file);
+ 		if (ret < 0)
+ 			goto out;
+ 
+diff --git a/tools/objtool/orc.h b/tools/objtool/orc.h
+index ee2832221e62..fd7fa1d34a81 100644
+--- a/tools/objtool/orc.h
++++ b/tools/objtool/orc.h
+@@ -10,8 +10,8 @@
+ 
+ struct objtool_file;
+ 
+-int create_orc(struct objtool_file *file);
+-int create_orc_sections(struct objtool_file *file);
++int arch_create_orc(struct objtool_file *file);
++int arch_create_orc_sections(struct objtool_file *file);
+ 
+ int orc_dump(const char *objname);
+ 
 -- 
 2.17.1
 
