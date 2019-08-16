@@ -2,61 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2AD38FFCD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 12:12:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5FA08FFE9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 12:20:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7RlUc0R4Th8gQT9iicFmysPX2wabvljvblijbGNtAko=; b=ZaTHjPME2OlGEx
-	xQyjBGBaooLA25mHLyizIY5IAR7rsE6/EsrWwfH+ANsPVIgIs4+v2niqEPbbxdby/G2ZzPZlXRe/B
-	lLX0+aD9/5zrFDuFbUhDL6ewQ7x1puxhBoPJwv10+W7h5Ox5SCV9UC6ARqEbQkGPF76WBbxzQ3qMl
-	g4YPaP70XUxYBNQI08bwUWRHADga5gipYus/Ie27LEUFPg5M9ejQyebbrfjuFDznuorIkM0BAEfbA
-	H5PF84M+h0quXJ8Cz6anhYFMuD+I7jgFx5Get4o8mO7ZhO8XfWKnzF4dsNTC+Ss7LKDaLXcHBcC02
-	n9tX3/oVe2qAspcOTcwQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UUxe7zH6wN9sKnzt7frwUJ24iXeLOAYjhWRsP9zolg8=; b=tKB1GqmjlekEbI
+	/7jy7WH4wIH4vVdkQSv6as8VzeN+aHmza4Ow2L/XHtRPRhKbvS3x2heTVuZmPE4tP60TJIXlEdmJg
+	V+t11RUW2h68/2zA9jnT4GG/ZrLUHyqObYhX9ik5v1MHCJYmNSIuRkB51GlXK+d3hFYa6lEM9Cbkc
+	UseEcnoqruQyclUF4Mpkf02p0ieqDPvdk+MVPJRJUYODuxmeePntkST3+MMwLIIkF4tOPhKCKXLMO
+	/fXGLcih7ziX97GdlH4ZkWOG3GQtkg53LKFZb6yNGJXfVNUHWlzXK1YqDqEX6U5BJ+wRtvdcFy4D4
+	MsZSmhmsuumT1kU8cI2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyZDy-0007pt-Ni; Fri, 16 Aug 2019 10:12:47 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyZDh-0007lD-VJ
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 10:12:31 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 051C3F27E7A2CC767AAE;
- Fri, 16 Aug 2019 18:12:25 +0800 (CST)
-Received: from [127.0.0.1] (10.133.215.186) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0;
- Fri, 16 Aug 2019 18:12:17 +0800
-Subject: Re: [PATCH v2 2/2] iommu/arm-smmu-v3: add nr_ats_masters for quickly
- check
-To: Will Deacon <will@kernel.org>
-References: <20190815054439.30652-1-thunder.leizhen@huawei.com>
- <20190815054439.30652-3-thunder.leizhen@huawei.com>
- <20190815152313.apa2d5rzhqa34l7l@willie-the-truck>
-From: "Leizhen (ThunderTown)" <thunder.leizhen@huawei.com>
-Message-ID: <d8fdc516-3aed-b4ab-9cbc-81179d4e20d8@huawei.com>
-Date: Fri, 16 Aug 2019 18:12:15 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hyZLc-0002QX-5D; Fri, 16 Aug 2019 10:20:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hyZLQ-0002Pz-QX
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 10:20:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A615828;
+ Fri, 16 Aug 2019 03:20:27 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 00EA33F706;
+ Fri, 16 Aug 2019 03:20:27 -0700 (PDT)
+Date: Fri, 16 Aug 2019 11:20:25 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Xiaowei Bao <xiaowei.bao@nxp.com>
+Subject: Re: [PATCH 02/10] PCI: designware-ep: Add the doorbell mode of MSI-X
+ in EP mode
+Message-ID: <20190816102025.GB14111@e119886-lin.cambridge.arm.com>
+References: <20190815083716.4715-1-xiaowei.bao@nxp.com>
+ <20190815083716.4715-2-xiaowei.bao@nxp.com>
+ <20190815115340.GG43882@e119886-lin.cambridge.arm.com>
+ <AM5PR04MB329973845D6396624AFDE547F5AF0@AM5PR04MB3299.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20190815152313.apa2d5rzhqa34l7l@willie-the-truck>
-Content-Language: en-US
-X-Originating-IP: [10.133.215.186]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <AM5PR04MB329973845D6396624AFDE547F5AF0@AM5PR04MB3299.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_031230_164167_E02A9533 
-X-CRM114-Status: GOOD (  25.67  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190816_032028_951997_EEA105B5 
+X-CRM114-Status: GOOD (  26.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,115 +64,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
- Joerg Roedel <joro@8bytes.org>, John Garry <john.garry@huawei.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- iommu <iommu@lists.linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "jingoohan1@gmail.com" <jingoohan1@gmail.com>,
+ "Z.q. Hou" <zhiqiang.hou@nxp.com>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "gustavo.pimentel@synopsys.com" <gustavo.pimentel@synopsys.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>, "kishon@ti.com" <kishon@ti.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 2019/8/15 23:23, Will Deacon wrote:
-> On Thu, Aug 15, 2019 at 01:44:39PM +0800, Zhen Lei wrote:
->> When (smmu_domain->smmu->features & ARM_SMMU_FEAT_ATS) is true, even if a
->> smmu domain does not contain any ats master, the operations of
->> arm_smmu_atc_inv_to_cmd() and lock protection in arm_smmu_atc_inv_domain()
->> are always executed. This will impact performance, especially in
->> multi-core and stress scenarios. For my FIO test scenario, about 8%
->> performance reduced.
->>
->> In fact, we can use a struct member to record how many ats masters that
->> the smmu contains. And check that without traverse the list and check all
->> masters one by one in the lock protection.
->>
->> Fixes: 9ce27afc0830 ("iommu/arm-smmu-v3: Add support for PCI ATS")
->> Signed-off-by: Zhen Lei <thunder.leizhen@huawei.com>
->> ---
->>  drivers/iommu/arm-smmu-v3.c | 14 +++++++++++++-
->>  1 file changed, 13 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
->> index 29056d9bb12aa01..154334d3310c9b8 100644
->> --- a/drivers/iommu/arm-smmu-v3.c
->> +++ b/drivers/iommu/arm-smmu-v3.c
->> @@ -631,6 +631,7 @@ struct arm_smmu_domain {
->>  
->>  	struct io_pgtable_ops		*pgtbl_ops;
->>  	bool				non_strict;
->> +	int				nr_ats_masters;
->>  
->>  	enum arm_smmu_domain_stage	stage;
->>  	union {
->> @@ -1531,7 +1532,16 @@ static int arm_smmu_atc_inv_domain(struct arm_smmu_domain *smmu_domain,
->>  	struct arm_smmu_cmdq_ent cmd;
->>  	struct arm_smmu_master *master;
->>  
->> -	if (!(smmu_domain->smmu->features & ARM_SMMU_FEAT_ATS))
->> +	/*
->> +	 * The protectiom of spinlock(&iommu_domain->devices_lock) is omitted.
->> +	 * Because for a given master, its map/unmap operations should only be
->> +	 * happened after it has been attached and before it has been detached.
->> +	 * So that, if at least one master need to be atc invalidated, the
->> +	 * value of smmu_domain->nr_ats_masters can not be zero.
->> +	 *
->> +	 * This can alleviate performance loss in multi-core scenarios.
->> +	 */
-> 
-> I find this reasoning pretty dubious, since I think you're assuming that
-> an endpoint cannot issue speculative ATS translation requests once its
-> ATS capability is enabled. That said, I think it also means we should enable
-> ATS in the STE *before* enabling it in the endpoint -- the current logic
-> looks like it's the wrong way round to me (including in detach()).
-> 
-> Anyway, these speculative translations could race with a concurrent unmap()
-> call and end up with the ATC containing translations for unmapped pages,
-> which I think we should try to avoid.
-> 
-> Did the RCU approach not work out? You could use an rwlock instead as a
-> temporary bodge if the performance doesn't hurt too much.
-OK, I will try rwlock first, this does not change the original code logic.
-
-> 
-> Alternatively... maybe we could change the attach flow to do something
-> like:
-> 
-> 	enable_ats_in_ste(master);
-> 	enable_ats_at_pcie_endpoint(master);
-> 	spin_lock(devices_lock)
-> 	add_to_device_list(master);
-> 	nr_ats_masters++;
-> 	spin_unlock(devices_lock);
-> 	invalidate_atc(master);
-> 
-> in which case, the concurrent unmapper will be doing something like:
-> 
-> 	issue_tlbi();
-> 	smp_mb();
-> 	if (READ_ONCE(nr_ats_masters)) {
-> 		...
-> 	}
-> 
-> and I *think* that means that either the unmapper will see the
-> nr_ats_masters update and perform the invalidation, or they'll miss
-> the update but the attach will invalidate the ATC /after/ the TLBI
-> in the command queue.
-> 
-> Also, John's idea of converting this stuff over to my command batching
-> mechanism should help a lot if we can defer this to sync time using the
-> gather structure. Maybe an rwlock would be alright for that. Dunno.
-> 
-> Will
-> 
-> .
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCBBdWcgMTYsIDIwMTkgYXQgMDI6NTg6MzFBTSArMDAwMCwgWGlhb3dlaSBCYW8gd3Jv
+dGU6Cj4gCj4gCj4gPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+ID4gRnJvbTogQW5kcmV3
+IE11cnJheSA8YW5kcmV3Lm11cnJheUBhcm0uY29tPgo+ID4gU2VudDogMjAxOeW5tDjmnIgxNeaX
+pSAxOTo1NAo+ID4gVG86IFhpYW93ZWkgQmFvIDx4aWFvd2VpLmJhb0BueHAuY29tPgo+ID4gQ2M6
+IGppbmdvb2hhbjFAZ21haWwuY29tOyBndXN0YXZvLnBpbWVudGVsQHN5bm9wc3lzLmNvbTsKPiA+
+IGJoZWxnYWFzQGdvb2dsZS5jb207IHJvYmgrZHRAa2VybmVsLm9yZzsgbWFyay5ydXRsYW5kQGFy
+bS5jb207Cj4gPiBzaGF3bmd1b0BrZXJuZWwub3JnOyBMZW8gTGkgPGxlb3lhbmcubGlAbnhwLmNv
+bT47IGtpc2hvbkB0aS5jb207Cj4gPiBsb3JlbnpvLnBpZXJhbGlzaUBhcm0uY29tOyBhcm5kQGFy
+bmRiLmRlOyBncmVna2hAbGludXhmb3VuZGF0aW9uLm9yZzsKPiA+IE0uaC4gTGlhbiA8bWluZ2h1
+YW4ubGlhbkBueHAuY29tPjsgTWluZ2thaSBIdSA8bWluZ2thaS5odUBueHAuY29tPjsKPiA+IFJv
+eSBaYW5nIDxyb3kuemFuZ0BueHAuY29tPjsgbGludXgtcGNpQHZnZXIua2VybmVsLm9yZzsKPiA+
+IGRldmljZXRyZWVAdmdlci5rZXJuZWwub3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3Jn
+Owo+ID4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOyBsaW51eHBwYy1kZXZA
+bGlzdHMub3psYWJzLm9yZwo+ID4gU3ViamVjdDogUmU6IFtQQVRDSCAwMi8xMF0gUENJOiBkZXNp
+Z253YXJlLWVwOiBBZGQgdGhlIGRvb3JiZWxsIG1vZGUgb2YKPiA+IE1TSS1YIGluIEVQIG1vZGUK
+PiA+IAo+ID4gT24gVGh1LCBBdWcgMTUsIDIwMTkgYXQgMDQ6Mzc6MDhQTSArMDgwMCwgWGlhb3dl
+aSBCYW8gd3JvdGU6Cj4gPiA+IEFkZCB0aGUgZG9vcmJlbGwgbW9kZSBvZiBNU0ktWCBpbiBFUCBt
+b2RlLgo+ID4gPgo+ID4gPiBTaWduZWQtb2ZmLWJ5OiBYaWFvd2VpIEJhbyA8eGlhb3dlaS5iYW9A
+bnhwLmNvbT4KPiA+ID4gLS0tCj4gPiA+ICBkcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9wY2ll
+LWRlc2lnbndhcmUtZXAuYyB8IDE0ICsrKysrKysrKysrKysrCj4gPiA+ICBkcml2ZXJzL3BjaS9j
+b250cm9sbGVyL2R3Yy9wY2llLWRlc2lnbndhcmUuaCAgICB8IDE0ICsrKysrKysrKysrKysrCj4g
+PiA+ICAyIGZpbGVzIGNoYW5nZWQsIDI4IGluc2VydGlvbnMoKykKPiA+ID4KPiA+ID4gZGlmZiAt
+LWdpdCBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUtZGVzaWdud2FyZS1lcC5jCj4g
+PiA+IGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJlLWVwLmMKPiA+
+ID4gaW5kZXggNzVlMjk1NS4uZTNhN2NkZiAxMDA2NDQKPiA+ID4gLS0tIGEvZHJpdmVycy9wY2kv
+Y29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJlLWVwLmMKPiA+ID4gKysrIGIvZHJpdmVycy9w
+Y2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJlLWVwLmMKPiA+ID4gQEAgLTQ1NCw2ICs0
+NTQsMjAgQEAgaW50IGR3X3BjaWVfZXBfcmFpc2VfbXNpX2lycShzdHJ1Y3QgZHdfcGNpZV9lcAo+
+ID4gKmVwLCB1OCBmdW5jX25vLAo+ID4gPiAgCXJldHVybiAwOwo+ID4gPiAgfQo+ID4gPgo+ID4g
+PiAraW50IGR3X3BjaWVfZXBfcmFpc2VfbXNpeF9pcnFfZG9vcmJlbGwoc3RydWN0IGR3X3BjaWVf
+ZXAgKmVwLCB1OAo+ID4gZnVuY19ubywKPiA+ID4gKwkJCQkgICAgICAgdTE2IGludGVycnVwdF9u
+dW0pCj4gPiA+ICt7Cj4gPiA+ICsJc3RydWN0IGR3X3BjaWUgKnBjaSA9IHRvX2R3X3BjaWVfZnJv
+bV9lcChlcCk7Cj4gPiA+ICsJdTMyIG1zZ19kYXRhOwo+ID4gPiArCj4gPiA+ICsJbXNnX2RhdGEg
+PSAoZnVuY19ubyA8PCBQQ0lFX01TSVhfRE9PUkJFTExfUEZfU0hJRlQpIHwKPiA+ID4gKwkJICAg
+KGludGVycnVwdF9udW0gLSAxKTsKPiA+ID4gKwo+ID4gPiArCWR3X3BjaWVfd3JpdGVsX2RiaShw
+Y2ksIFBDSUVfTVNJWF9ET09SQkVMTCwgbXNnX2RhdGEpOwo+ID4gPiArCj4gPiA+ICsJcmV0dXJu
+IDA7Cj4gPiA+ICt9Cj4gPiA+ICsKPiA+ID4gIGludCBkd19wY2llX2VwX3JhaXNlX21zaXhfaXJx
+KHN0cnVjdCBkd19wY2llX2VwICplcCwgdTggZnVuY19ubywKPiA+ID4gIAkJCSAgICAgIHUxNiBp
+bnRlcnJ1cHRfbnVtKQo+ID4gCj4gPiBIYXZlIEkgdW5kZXJzdG9vZCBjb3JyZWN0bHkgdGhhdCB0
+aGUgaGFyZHdhcmUgcHJvdmlkZXMgYW4gYWx0ZXJuYXRpdmUKPiA+IG1lY2hhbmlzbSB0aGF0IGFs
+bG93cyBmb3IgcmFpc2luZyBNU0ktWCBpbnRlcnJ1cHRzIHdpdGhvdXQgdGhlIGJvdGhlciBvZgo+
+ID4gcmVhZGluZyB0aGUgY2FwYWJpbGl0aWVzIHJlZ2lzdGVycz8KPiBZZXMsIHRoZSBoYXJkd2Fy
+ZSBwcm92aWRlIHR3byB3YXkgdG8gTVNJLVgsIHBsZWFzZSBjaGVjayB0aGUgcGFnZSA0OTIgb2Yg
+Cj4gRFdDX3BjaWVfZG1fcmVnaXN0ZXJzXzQuMzAgTWVudS4KPiBNU0lYX0RPT1JCRUxMX09GRiBv
+biBwYWdlIDQ5MiAweDk0OCBEZXNjcmlwdGlvbjogTVNJLVggRG9vcmJlbGwgUmVnaXN0ZXIuLi4u
+PgoKVGhhbmtzIGZvciB0aGUgcmVmZXJlbmNlLgoKPiA+IAo+ID4gSWYgc28gaXMgdGhlcmUgYW55
+IGdvb2QgcmVhc29uIHRvIGtlZXAgZHdfcGNpZV9lcF9yYWlzZV9tc2l4X2lycT8gKEFuZCB0aHVz
+Cj4gPiB1c2UgaXQgaW4gZHdfcGxhdF9wY2llX2VwX3JhaXNlX2lycSBhbHNvKT8KPiBJIGFtIG5v
+dCBzdXJlLCBidXQgSSB0aGluayB0aGUgZHdfcGNpZV9lcF9yYWlzZV9tc2l4X2lycSBmdW5jdGlv
+biBpcyBub3QgY29ycmVjdCwgCj4gYmVjYXVzZSBJIHRoaW5rIHdlIGNhbid0IGdldCB0aGUgTVNJ
+WCB0YWJsZSBmcm9tIHRoZSBhZGRyZXNzIGVwLT5waHlzX2Jhc2UgKyB0YmxfYWRkciwgCj4gYnV0
+IEkgYWxzbyBkb24ndCBrbm93IHdoZXJlIEkgY2FuIGdldCB0aGUgY29ycmVjdCBNU0lYIHRhYmxl
+LgoKV2VsbCBpdCBsb29rcyBsaWtlIHRoaXMgZnVuY3Rpb24gaXMgdXNlZCBieSBzbnBzLGR3LXBj
+aWUtZXAgYW5kIHNucHMsZHctcGNpZSwKcGVyaGFwcyB0aGUgZG9vcmJlbGwgbW9kZSBpc24ndCBh
+dmFpbGFibGUgb24gdGhhdCBoYXJkd2FyZS4KCj4gPiAKPiA+IAo+ID4gPiAgewo+ID4gPiBkaWZm
+IC0tZ2l0IGEvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJlLmgKPiA+
+ID4gYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9wY2llLWRlc2lnbndhcmUuaAo+ID4gPiBp
+bmRleCAyYjI5MWU4Li5jZDkwM2U5IDEwMDY0NAo+ID4gPiAtLS0gYS9kcml2ZXJzL3BjaS9jb250
+cm9sbGVyL2R3Yy9wY2llLWRlc2lnbndhcmUuaAo+ID4gPiArKysgYi9kcml2ZXJzL3BjaS9jb250
+cm9sbGVyL2R3Yy9wY2llLWRlc2lnbndhcmUuaAo+ID4gPiBAQCAtODgsNiArODgsMTEgQEAKPiA+
+ID4gICNkZWZpbmUgUENJRV9NSVNDX0NPTlRST0xfMV9PRkYJCTB4OEJDCj4gPiA+ICAjZGVmaW5l
+IFBDSUVfREJJX1JPX1dSX0VOCQlCSVQoMCkKPiA+ID4KPiA+ID4gKyNkZWZpbmUgUENJRV9NU0lY
+X0RPT1JCRUxMCQkweDk0OAo+ID4gPiArI2RlZmluZSBQQ0lFX01TSVhfRE9PUkJFTExfUEZfU0hJ
+RlQJMjQKPiA+ID4gKyNkZWZpbmUgUENJRV9NU0lYX0RPT1JCRUxMX1ZGX1NISUZUCTE2Cj4gPiA+
+ICsjZGVmaW5lIFBDSUVfTVNJWF9ET09SQkVMTF9WRl9BQ1RJVkUJQklUKDE1KQo+ID4gCj4gPiBU
+aGUgX1ZGIGRlZmluZXMgYXJlIG5vdCB1c2VkLCBJJ2Qgc3VnZ2VzdCByZW1vdmluZyB0aGVtLgo+
+IEluIGZhY3QsIEkgd2lsbCBhZGQgdGhlIFNSSU9WIHN1cHBvcnQgaW4gdGhpcyBmaWxlLCB0aGUg
+U1JJT1YgZmVhdHVyZSBoYXZlIHZlcmlmaWVkIAo+IEluIG15IGJvYXJkLCBidXQgSSBuZWVkIHdh
+aXQgdGhlIEVQIGZyYW1ld29yayBTUklPViBwYXRjaCBtZXJnZSwgCj4gc28gSSBkZWZpbmVkIHRo
+ZXNlIHR3byBtYWNyb3MuCgpJJ2Qgc3VnZ2VzdCBhZGRpbmcgdGhlIFZGIG1hY3JvcyBhbG9uZyB3
+aXRoIHRoZSBTUklPViBmZWF0dXJlLgoKVGhhbmtzLAoKQW5kcmV3IE11cnJheQoKPiA+IAo+ID4g
+VGhhbmtzLAo+ID4gCj4gPiBBbmRyZXcgTXVycmF5Cj4gPiAKPiA+ID4gKwo+ID4gPiAgLyoKPiA+
+ID4gICAqIGlBVFUgVW5yb2xsLXNwZWNpZmljIHJlZ2lzdGVyIGRlZmluaXRpb25zCj4gPiA+ICAg
+KiBGcm9tIDQuODAgY29yZSB2ZXJzaW9uIHRoZSBhZGRyZXNzIHRyYW5zbGF0aW9uIHdpbGwgYmUg
+bWFkZSBieQo+ID4gPiB1bnJvbGwgQEAgLTM5OSw2ICs0MDQsOCBAQCBpbnQgZHdfcGNpZV9lcF9y
+YWlzZV9tc2lfaXJxKHN0cnVjdAo+ID4gZHdfcGNpZV9lcCAqZXAsIHU4IGZ1bmNfbm8sCj4gPiA+
+ICAJCQkgICAgIHU4IGludGVycnVwdF9udW0pOwo+ID4gPiAgaW50IGR3X3BjaWVfZXBfcmFpc2Vf
+bXNpeF9pcnEoc3RydWN0IGR3X3BjaWVfZXAgKmVwLCB1OCBmdW5jX25vLAo+ID4gPiAgCQkJICAg
+ICB1MTYgaW50ZXJydXB0X251bSk7Cj4gPiA+ICtpbnQgZHdfcGNpZV9lcF9yYWlzZV9tc2l4X2ly
+cV9kb29yYmVsbChzdHJ1Y3QgZHdfcGNpZV9lcCAqZXAsIHU4Cj4gPiBmdW5jX25vLAo+ID4gPiAr
+CQkJCSAgICAgICB1MTYgaW50ZXJydXB0X251bSk7Cj4gPiA+ICB2b2lkIGR3X3BjaWVfZXBfcmVz
+ZXRfYmFyKHN0cnVjdCBkd19wY2llICpwY2ksIGVudW0gcGNpX2Jhcm5vIGJhcik7Cj4gPiA+ICNl
+bHNlICBzdGF0aWMgaW5saW5lIHZvaWQgZHdfcGNpZV9lcF9saW5rdXAoc3RydWN0IGR3X3BjaWVf
+ZXAgKmVwKSBAQAo+ID4gPiAtNDMxLDYgKzQzOCwxMyBAQCBzdGF0aWMgaW5saW5lIGludCBkd19w
+Y2llX2VwX3JhaXNlX21zaXhfaXJxKHN0cnVjdAo+ID4gZHdfcGNpZV9lcCAqZXAsIHU4IGZ1bmNf
+bm8sCj4gPiA+ICAJcmV0dXJuIDA7Cj4gPiA+ICB9Cj4gPiA+Cj4gPiA+ICtzdGF0aWMgaW5saW5l
+IGludCBkd19wY2llX2VwX3JhaXNlX21zaXhfaXJxX2Rvb3JiZWxsKHN0cnVjdCBkd19wY2llX2Vw
+Cj4gPiAqZXAsCj4gPiA+ICsJCQkJCQkgICAgIHU4IGZ1bmNfbm8sCj4gPiA+ICsJCQkJCQkgICAg
+IHUxNiBpbnRlcnJ1cHRfbnVtKQo+ID4gPiArewo+ID4gPiArCXJldHVybiAwOwo+ID4gPiArfQo+
+ID4gPiArCj4gPiA+ICBzdGF0aWMgaW5saW5lIHZvaWQgZHdfcGNpZV9lcF9yZXNldF9iYXIoc3Ry
+dWN0IGR3X3BjaWUgKnBjaSwgZW51bQo+ID4gPiBwY2lfYmFybm8gYmFyKSAgeyAgfQo+ID4gPiAt
+LQo+ID4gPiAyLjkuNQo+ID4gPgo+ID4gPgo+ID4gPiBfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwo+ID4gPiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dAo+ID4gPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKPiA+ID4gaHR0cHM6
+Ly9ldXIwMS5zYWZlbGlua3MucHJvdGVjdGlvbi5vdXRsb29rLmNvbS8/dXJsPWh0dHAlM0ElMkYl
+MkZsaXN0cwo+ID4gPiAuaW5mcmFkZWFkLm9yZyUyRm1haWxtYW4lMkZsaXN0aW5mbyUyRmxpbnV4
+LWFybS1rZXJuZWwmYW1wO2RhdGE9MDIlCj4gPiA3QzAKPiA+ID4KPiA+IDElN0N4aWFvd2VpLmJh
+byU0MG54cC5jb20lN0M4NDg5NDkzMDAzYmI0OGEwMTM5ZDA4ZDcyMTc3Mzk3MiUKPiA+IDdDNjg2
+ZWExZAo+ID4gPgo+ID4gM2JjMmI0YzZmYTkyY2Q5OWM1YzMwMTYzNSU3QzAlN0MwJTdDNjM3MDE0
+NjY4MzY5NDk5Mjk4JmFtcDtzZAo+ID4gYXRhPWR5clhCCj4gPiA+Cj4gPiBhdmxqSkJGVVNOWFc3
+SyUyRlJvWHZ3ZldURSUyRm9VMktNZDFiWmtKb3clM0QmYW1wO3Jlc2VydmVkPTAKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
