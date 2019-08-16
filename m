@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4339090560
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 18:04:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5792990564
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 18:04:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qFJIMQ4xW4AxHVW3x3mSi6lQiGO3XfBsdDKyEPHFpY4=; b=YC1XyPdamAmcLZ
-	VpG22P1AnqnKznzwwBnQJXrc4Fs1QhnrDSSOxUMzgwTwWbdhF6TJQLg+zzd85fnRPFaTNXzL3P5EM
-	wumLrPgWlVqdczBhECVSBtklirLKDxiGn+mQb+cTowQ7xByAMonkgcIS0ijvA4SUlbc4RmAFfwgAY
-	b2XUt5S4KVMtaCdC3Yh3iWTN9kYmTtkFkd1thHwqUaiA+m2IsV6CUQ14wQXoltpNPCGYm0Hnlex3C
-	Nuz9wRtU1El3NYlDS/pHBVxsSE5SDg0iphLWVuEKo/abOKUkZZY+L/M3xK3m2nrRSaVpAUUnqZQap
-	xBXANpfquUr0Cqvt7rpQ==;
+	List-Owner; bh=APP/oP5MSFAyCN+Q2vTzaFGYu9UAbOyjRrJ78f6AwjU=; b=n4VkZO3pJ8YIdx
+	Kt6l0iugvMgchXi/UgRx4mBhAYyf+Jf8NSzL9w/+LsjwiYFfg0H673IRPGsQV+s99pIooyRbWJJ28
+	0vCz8Q5v73CY7yyZaV2CJHWysXWJ/UN2N0y0nXNnUTCRngUNfh1SJt6TIVKfds36goDok98kStSSx
+	++CpGCM2oq7E+966enQdtpwKIp9NrgemSR4mzYEUP8LuTB0OZ7IarueoCZBJ2JOR5DXVzP255ehhA
+	yLb5jYmO7l3voFsvWrIEdhqQmwf2Q9ZS1e60xgz7spr3HuGKdYUKXOogq3V52N5RqWJjshh2E3Qz5
+	uqeuBWgT3285KDni+96w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyeiJ-0003Rq-GN; Fri, 16 Aug 2019 16:04:27 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hyeiZ-0003he-IP; Fri, 16 Aug 2019 16:04:43 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyehu-0003ID-B9
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 16:04:03 +0000
-Received: by mail-pf1-x441.google.com with SMTP id b24so3361286pfp.1
+ id 1hyehy-0003MB-Cr
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 16:04:07 +0000
+Received: by mail-pl1-x643.google.com with SMTP id bj8so2625359plb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 16 Aug 2019 09:04:02 -0700 (PDT)
+ Fri, 16 Aug 2019 09:04:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=r15xV+pSvUz93fe9Op05lhHjyimxUmk5oIduSMlRE+A=;
- b=JdM3jUtPBbQDkLzajaWD6jVE6fQj4gee8v8Eq83IBHgZcKjyPv/AZVq0VfWEMLpYUQ
- ZU6Owvo1J9S2pYWi4Hj7r0IRGchjhlkbrAcRycGcOqE2tSCO2VJDafQFkENFH3S+hr4R
- NaP2/zKhUKJvM0EeoFAuqjvaI7HIkkF261RUkshtsqjDssYHnChk2sytsyKbouE9BDBO
- /IquPJrMBxpMKbqkED5JgbyKa/wIpC3upkER+sd60LpJM16bVxUQx/gvg6t7t5jPTtcE
- NGvPmyicV1wOycLhIfo8UiOvZ2sWmluaFGSD3IVmgPW08p2RJrAOpSsmvKEcFJuDxrHC
- Py5A==
+ bh=BrRMkjc2qGWCZLIX9694c7JW7Gvf0FMcBkwT0dY+kis=;
+ b=hcp099JLXcAtr20hVTLWgVQYFXbhVo4XXLQW1gdi3X8wRO/iMDfVRxkZdA5NU7sAQh
+ voXm3CvwWdBYwGJz329n7nQ8rE8+eLKw/vWJpi8Vovk6mb3R8BEURRIiFAo9gYUrP5OU
+ bPQkYgp6sSWijbk+aWW8MqL9P2yCokXbfiOzbpgVJ/T3OaYnbYTg3JrwH0ELewheo8Op
+ ArXIuD2xkn+/ugivUTwZGh4XmqUo89Feh6zy5EIJ6BvpS3OQ80lWi/FFPmDleMc4gu0g
+ jBkFdbXQFne1ffs23n8Yt6XafDq894mNsogG9+FL7rU0hfCNzuDO2ClfSF8v/MYWG5/e
+ AV1Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=r15xV+pSvUz93fe9Op05lhHjyimxUmk5oIduSMlRE+A=;
- b=Dqm4cr0CAsVuioSIb6SDovEQCPi1+lmUmgaEMTQdtut4kwmhY75Y60eprHdsWVJ44q
- U4OQ2ho2S2bQoaU1n/NEEZE0YK2YW5iufMpDgNNjWVAmP+1b2kxegalXb9O9AwnzLGnC
- NBLojwijhyESDy/XcKECWIAvpX2lgxHpIzR9TEwG7MZOifIOEvRDBgTk5ZMA1I4sKOFY
- cpG0062q7riaRCtZma33d958F4dZeo0cmZgs+kpEiG2PybEGj+gX/YPMoPyTXgTZWwNV
- xjPXtemS/cbYgJrVnLVCY2q8/5G/XDOdfVI1B96T5oTY4mCryRj2iHdT3s5FpKIIPnN4
- UclQ==
-X-Gm-Message-State: APjAAAVc0EX9f/sEimvRFKrCI4hSUxD5bVDQnLCooTrSRZX1SHRzhLEe
- C7RpZimnUWr6Z57FhzHklIBaxPX7
-X-Google-Smtp-Source: APXvYqw434z92KZltolLhjc/SLek9lgPRJMm0aZV+vDRBoG/RmT4CDXtcqHryvIT64ugBYXHYnqTuQ==
-X-Received: by 2002:a65:64c6:: with SMTP id t6mr8608739pgv.323.1565971441742; 
- Fri, 16 Aug 2019 09:04:01 -0700 (PDT)
+ bh=BrRMkjc2qGWCZLIX9694c7JW7Gvf0FMcBkwT0dY+kis=;
+ b=fDOCyw8K5FqRdzPaOy9PKBDw4e4aXaW7iyEVuwe4EqsMOaTxT3ELo4XyggKxXiDRid
+ 2t5WfWwAJwin/0dgokarjJJV1saBzVynkDXTmFGt9mU8SezQrGDYJ/5SCzjxV1H2Vfp7
+ 035bD+fP4tpLiTencX5I/VB7RQH+W0qaiIs0IILf77FYixVfFApi2QabNrs8SMW7Cfj/
+ uOjPOO8tgBiGHtoCvdbQ+m8j8WnFl8bobXSaQIOrfzhtLuGh8FIe6rvYLrsBGIJ/D2sa
+ c6+8Kb6pvuObHGn8dpsG8wvmCNgC+6HugL/s5YQsRUqidvJQ7DrOUfCfUBG0aWa8paWw
+ 4G9A==
+X-Gm-Message-State: APjAAAWyC/ynwtaWFxw8jil0ewnfd79b5tfEbNnA53vy94HGfQ+MHxOr
+ eX2yvpvVW+re9yHvobW7SNI=
+X-Google-Smtp-Source: APXvYqxiGn8dbBBUwz6+A3QeDJEhGVLcHKlXkwSQ70P6UKBPE5EgJgZ0TGRQnwNFfsCB+8cciHU9ng==
+X-Received: by 2002:a17:902:a01:: with SMTP id
+ 1mr10269948plo.278.1565971445900; 
+ Fri, 16 Aug 2019 09:04:05 -0700 (PDT)
 Received: from localhost.localdomain ([45.124.203.19])
- by smtp.gmail.com with ESMTPSA id m20sm7578607pff.79.2019.08.16.09.03.58
+ by smtp.gmail.com with ESMTPSA id m20sm7578607pff.79.2019.08.16.09.04.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 16 Aug 2019 09:04:01 -0700 (PDT)
+ Fri, 16 Aug 2019 09:04:05 -0700 (PDT)
 From: Joel Stanley <joel@jms.id.au>
 To: Wim Van Sebroeck <wim@linux-watchdog.org>,
  Guenter Roeck <linux@roeck-us.net>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 1/2] dt-bindings: watchdog: Add ast2600 compatible
-Date: Sat, 17 Aug 2019 01:33:46 +0930
-Message-Id: <20190816160347.23393-2-joel@jms.id.au>
+Subject: [PATCH 2/2] watchdog: aspeed: Add support for AST2600
+Date: Sat, 17 Aug 2019 01:33:47 +0930
+Message-Id: <20190816160347.23393-3-joel@jms.id.au>
 X-Mailer: git-send-email 2.23.0.rc1
 In-Reply-To: <20190816160347.23393-1-joel@jms.id.au>
 References: <20190816160347.23393-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_090402_671178_BF1FFC7B 
-X-CRM114-Status: UNSURE (   9.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190816_090406_605063_8E1DBD2A 
+X-CRM114-Status: GOOD (  11.94  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (joel.stan[at]gmail.com)
@@ -110,25 +110,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds a compatible for the ast2600, a new ASPEED SoC.
+From: Ryan Chen <ryan_chen@aspeedtech.com>
 
+The ast2600 can be supported by the same code as the ast2500.
+
+Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
 Signed-off-by: Joel Stanley <joel@jms.id.au>
 ---
- Documentation/devicetree/bindings/watchdog/aspeed-wdt.txt | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/watchdog/aspeed_wdt.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/watchdog/aspeed-wdt.txt b/Documentation/devicetree/bindings/watchdog/aspeed-wdt.txt
-index c5077a1f5cb3..d78d4a8fb868 100644
---- a/Documentation/devicetree/bindings/watchdog/aspeed-wdt.txt
-+++ b/Documentation/devicetree/bindings/watchdog/aspeed-wdt.txt
-@@ -4,6 +4,7 @@ Required properties:
-  - compatible: must be one of:
- 	- "aspeed,ast2400-wdt"
- 	- "aspeed,ast2500-wdt"
-+	- "aspeed,ast2600-wdt"
+diff --git a/drivers/watchdog/aspeed_wdt.c b/drivers/watchdog/aspeed_wdt.c
+index cc71861e033a..94f73796ba9d 100644
+--- a/drivers/watchdog/aspeed_wdt.c
++++ b/drivers/watchdog/aspeed_wdt.c
+@@ -31,9 +31,14 @@ static const struct aspeed_wdt_config ast2500_config = {
+ 	.ext_pulse_width_mask = 0xfffff,
+ };
  
-  - reg: physical base address of the controller and length of memory mapped
-    region
++static const struct aspeed_wdt_config ast2600_config = {
++	.ext_pulse_width_mask = 0xfffff,
++};
++
+ static const struct of_device_id aspeed_wdt_of_table[] = {
+ 	{ .compatible = "aspeed,ast2400-wdt", .data = &ast2400_config },
+ 	{ .compatible = "aspeed,ast2500-wdt", .data = &ast2500_config },
++	{ .compatible = "aspeed,ast2600-wdt", .data = &ast2600_config },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, aspeed_wdt_of_table);
+@@ -259,7 +264,8 @@ static int aspeed_wdt_probe(struct platform_device *pdev)
+ 		set_bit(WDOG_HW_RUNNING, &wdt->wdd.status);
+ 	}
+ 
+-	if (of_device_is_compatible(np, "aspeed,ast2500-wdt")) {
++	if ((of_device_is_compatible(np, "aspeed,ast2500-wdt")) ||
++		(of_device_is_compatible(np, "aspeed,ast2600-wdt"))) {
+ 		u32 reg = readl(wdt->base + WDT_RESET_WIDTH);
+ 
+ 		reg &= config->ext_pulse_width_mask;
 -- 
 2.23.0.rc1
 
