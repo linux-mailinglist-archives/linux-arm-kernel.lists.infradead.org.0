@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BA4F9075E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 20:00:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1AD69076B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 20:03:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jeYTF052PnAQxuHoOxT5bam1DTWC6GB7A5p/LDqVMR8=; b=iHABJ2cHitIVFv
-	51vcCaeHR88TdhWsXikgeTE6BfGVfE/ItHWh7Ho5Za/2t7kHm9N0qVCbciZO3hRi76RqRaHc8/jaT
-	9p7fK72u1uXL9OBsoyurib4ImdYNgIxOy60evPYc79rf+O4exSYIPa5BTtCETMd031HEl1GCre4l/
-	XIRR0+3rL6+ZM33LWFs5kkMzr571yFBfFB+d4lyRovWKWwyqnAicxdm05EZi7alOtjcR2M9P8guPP
-	tBvzlKma/Sfoj3xBp9+V0wVjvuAZmWFdFaGWb/b1tp44obmy67Ksu/OUNbStv0nx/gsPC09WdPvLy
-	0cEgArAwqpCAwLxYiXKw==;
+	List-Owner; bh=+UzScx5I/QALqbSK3cOsprwQKKCGItDCEdUZwnDghVY=; b=IZIQ/hBECBOBYv
+	DcHp+bc0RuyYp716wTzkjCiLrr8bTXzW3d8rcTa56KIKiCqumgQ0bVa/OqRVviQ7I23+JKEgI0gUx
+	v7nUDpApmKWBTlB3mlkr82lCm4tX5iw44aIEJcXqXUJuDzCe6ICvpm1VeHrnQeVclGyRQ1hr21tbG
+	VmUufjNEXqK2LgbXmlvVpe8mnsrGhTJqp02PSMSQ7B3toJLR7w0Oj4qPRVMPYG8BcscD9MUFUD8U0
+	nVK6nuTFgYYGtZ5iu88Xs3Zd7FsQx0Olg+v+GCfCchQTdOJxGxDjIKsryPdKwqVSbNf8YByaYXh1U
+	mKu/icgvOBZDuQQvkeuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hygWa-0001ps-Fj; Fri, 16 Aug 2019 18:00:28 +0000
+	id 1hygZ1-0002Oc-V6; Fri, 16 Aug 2019 18:03:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hygWE-0001Nl-UC
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 18:00:08 +0000
-Subject: Re: [GIT PULL] arm64 fixes for 5.3-rc5
+ id 1hygYp-0002OH-9y
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 18:02:48 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D37BD20665;
+ Fri, 16 Aug 2019 18:02:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565978406;
- bh=dW5YFHRW8xSZ9ngplk7KwCK0vlp2/MMykcr/x8hk9xE=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=pEKhVKy6rw7zfO0pMPjmx0UgKYMqaxYg/IblUm5ytPMQ8DRpJfsaneDUiV60CT/yq
- tV6TmrGbcGitjI7Wg292TtnXvrtzfQ8Uw3VaGE4U6lbwpRyKu8PVFzIASROboUeMqw
- cH/00iqsKK6OwTMw0EmfIO0SOVKMTuq9r6aXhcws=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <20190816172411.GA36979@arrakis.emea.arm.com>
-References: <20190816172411.GA36979@arrakis.emea.arm.com>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <20190816172411.GA36979@arrakis.emea.arm.com>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux tags/arm64-fixes
-X-PR-Tracked-Commit-Id: b6143d10d23ebb4a77af311e8b8b7f019d0163e6
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: b7e7c85dc7b0ea5ff821756c331489e3b151eed1
-Message-Id: <156597840617.938.7117793658442703288.pr-tracker-bot@kernel.org>
-Date: Fri, 16 Aug 2019 18:00:06 +0000
-To: Catalin Marinas <catalin.marinas@arm.com>
+ s=default; t=1565978566;
+ bh=I+9AYbqHJGWDLUYrQuzL4EoZcCetSaXNK4owyhlQZyI=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=al7+pTCRa1ysK9PYtoeNNO/kgnxQq76VFbXGIcGL7rJbTbm+rtwoWg4jMBmmr59E7
+ 6BTdiXQk7yhZjY554CMS2cLiigd+VfAc1Rc8VeNgv32zG1XNJbovvwACH6gMzNB/VJ
+ yBRATionK4lB9NVFtZ3qqhAN8KmPXf1T2TaXWTTI=
+MIME-Version: 1.0
+In-Reply-To: <20190814015312.11711-1-peng.fan@nxp.com>
+References: <20190814015312.11711-1-peng.fan@nxp.com>
+Subject: Re: [PATCH] clk: imx8mn: fix int pll clk gate
+From: Stephen Boyd <sboyd@kernel.org>
+To: mturquette@baylibre.com, peng.fan@nxp.com, s.hauer@pengutronix.de,
+ shawnguo@kernel.org
+User-Agent: alot/0.8.1
+Date: Fri, 16 Aug 2019 11:02:46 -0700
+Message-Id: <20190816180246.D37BD20665@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_110007_140674_BC496765 
-X-CRM114-Status: UNSURE (   1.84  )
+X-CRM114-CacheID: sfid-20190816_110247_364912_596086B9 
+X-CRM114-Status: UNSURE (   7.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,26 +77,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: will@kernel.org, Linus Torvalds <torvalds@linux-foundation.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: peng.fan@nxp.com, ping.bai@nxp.com, Anson.Huang@nxp.com,
+ linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ festevam@gmail.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, abel.vesa@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pull request you sent on Fri, 16 Aug 2019 18:24:13 +0100:
+Quoting peng.fan@nxp.com (2019-08-13 18:53:12)
+> From: Peng Fan <peng.fan@nxp.com>
+> 
+> To Frac pll, the gate shift is 13, however to Int PLL the gate shift
+> is 11.
+> 
+> Cc: <stable@vger.kernel.org>
+> Fixes: 96d6392b54db ("clk: imx: Add support for i.MX8MN clock driver")
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> Reviewed-by: Jacky Bai <ping.bai@nxp.com>
+> ---
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux tags/arm64-fixes
+This is a fix for a change in -next. Why is stable Cced?
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/b7e7c85dc7b0ea5ff821756c331489e3b151eed1
-
-Thank you!
-
--- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
 
 _______________________________________________
 linux-arm-kernel mailing list
