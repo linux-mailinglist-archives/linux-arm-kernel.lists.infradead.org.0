@@ -2,61 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BCAC8FA58
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 07:22:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F2D88FADA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 08:22:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=W5m+ET1TCbawNfvhoBgvMxDmjzFLvWo8iJH6jd5mGig=; b=JlD
-	4uNEMA7GFTep7snk9Dd4Pr+0H3XzbM0n4w7LBXMuHy+QDrn2a03Z6yk11EQFrW8CMHxBlaAf6JFuD
-	JmJYdZqhyC0QShUY4okVHJCqt/+92Fp7jY3qQWjZk0gu7oIoLIqJcsgIjLmNRAkfGjhEUxQPcrKeu
-	k2K4jLHUy71jLNT9rFQeJjbbSmAL3+Sf5urloS1DXXoFtiBHoHsK6jRc+Lu9r4i+QLVV2DEGzcOXo
-	Xjl5x/z+OidWw9ZaTydkKue2PsRfgs4N8X7PRQt2NdpdQ6nUKfJsYRWYtL1aO8UcKEp8hDbxqeZVi
-	IEoYut/SFw8Bgw6k0yx8n3yK+Jv8Dtw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Yty3PcSI1ENICheD3+STQrc+MctGXUxcr48OMnwXlJo=; b=BNJfukjo/ibodk
+	UbjExZXLEq2OhhGrwlbzHTpHP9vgmw3qDaHhE0IOySPw5tzHZNFZjFFRe3jPeKbi70/llwuKp0Uha
+	mNvxPaxLqMzomgsCRu4iDpQLT1YxWf5d+UoMVPl2Q0kE6Ye040KGThMEY7kNLSGA+woeCUIlGeA7z
+	OnTg5v+Y91SRUfdio0gZWlCgDykdGP86pzHQmefrg/0j4DMuRv0jHZb8hrtFsZawEeVpqTeR0e3IT
+	rT0lyAbCmgq0LxcmUtOtIS6bJ4QjugnfXtdAs2Y/OgICax7CiBZbkRJ76y5/AXfeEuPCW56cBGy5j
+	DyELnOuli7p6LgR8MX7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyUgj-0001Ms-Md; Fri, 16 Aug 2019 05:22:09 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hyVdO-0003PE-T1; Fri, 16 Aug 2019 06:22:46 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyUgZ-0001Lz-CA
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 05:22:01 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0D4C9200078;
- Fri, 16 Aug 2019 07:21:55 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E9C6C2000A6;
- Fri, 16 Aug 2019 07:21:47 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1D839402EC;
- Fri, 16 Aug 2019 13:21:39 +0800 (SGT)
-From: Shengjiu Wang <shengjiu.wang@nxp.com>
-To: timur@kernel.org, nicoleotsuka@gmail.com, Xiubo.Lee@gmail.com,
- festevam@gmail.com, broonie@kernel.org, lgirdwood@gmail.com,
- perex@perex.cz, tiwai@suse.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, alsa-devel@alsa-project.org
-Subject: [PATCH] ASoC: imx-audmux: Add driver suspend and resume to support
- MEGA Fast
-Date: Fri, 16 Aug 2019 01:03:14 -0400
-Message-Id: <1565931794-7218-1-git-send-email-shengjiu.wang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hyVdC-0003OK-57
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 06:22:35 +0000
+Received: by mail-lj1-x244.google.com with SMTP id t3so4279337ljj.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 15 Aug 2019 23:22:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=v14OzUMjNE/HZfmgpIMBDvJqOK1CswJ2VwtCDJGNi9A=;
+ b=d2YLXXBOzD77vCmyMvNMNkLFQOk7NUI1qpgaDcil7EdRabwka633i5xOEC3ejL7pYY
+ Wh44in0bgl21+YBTpijwOL92QY34JVSDRu48ytxYYkABfv4odbonMAnA3Nxe2cRjAWVA
+ yl16HvY4gjb4mXLnUmMC5DWAnMQEtvU8s9mub2TsrRAslQfWbxFfvTEo4byXrIT7U/BU
+ ddujW/xmZ1w5/dXspnNrvQFag4c+3/qm7lAw7hQVJr0nkWCCYYr6CSFfwB4KV5OX4KOi
+ P0UmbrAsOQtYPm2DQ1mzBdxRoOL8UWH79mJ2rHUYPJphWQifjjlUBMBHOd0c/75WvAdQ
+ Ithg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=v14OzUMjNE/HZfmgpIMBDvJqOK1CswJ2VwtCDJGNi9A=;
+ b=KRSJxiNi6/INSO1UbFWB+hAscAytgDaltNMXIvvc9V5T8hZY28WR7n4b9TKfgfHvSk
+ m7MlLpmWqby8aDjCg7QrFVuDd8tUPvM9KLHBCVka3pMEVzTTE5y52B2TIfN4u5gmZamG
+ OfaeYjfx7WB/a0dEM20m7lCdSsN66YV9K+c0rznMD3nvPCXPx4n3c62BJ34xy4EDlTYw
+ LkwesxoeJV7qd9x46GxQZcW4ZmjijlFaOgO5/hmUQ+l8kaFKEoYJw+/sk8bj0Tl04JK4
+ iKMI79P7LT2w99KdkVR9HRWEl3QngpfOPlTdMlFgvIxmHs1Es6QYiTHMG5AINajshyGH
+ kA9A==
+X-Gm-Message-State: APjAAAUQg8NwQK72rL34wPQBMVr6nDH2ajoyLmS5ZMJ04HaljPpjMVFP
+ 13JarZolPxdhkAXqNWt0bzzuwSUG7yf/1FhLzho=
+X-Google-Smtp-Source: APXvYqwhioniLpZMMBXNvBmmi5v2yWJBAdLohCrRL1i0nxn3uIqNq01gaFdnIoMaSgfpTsi8KzDMhjIp1PuPqIbAlHw=
+X-Received: by 2002:a2e:978e:: with SMTP id y14mr4692405lji.10.1565936551522; 
+ Thu, 15 Aug 2019 23:22:31 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190814060854.26345-1-codekipper@gmail.com>
+ <20190814060854.26345-3-codekipper@gmail.com>
+ <20190814093011.GD4640@sirena.co.uk>
+In-Reply-To: <20190814093011.GD4640@sirena.co.uk>
+From: Code Kipper <codekipper@gmail.com>
+Date: Fri, 16 Aug 2019 08:22:20 +0200
+Message-ID: <CAEKpxBkbuQZ9-XLCOcWxV5gzyXPbASmBgYVJ6fL5yj98GE0f9w@mail.gmail.com>
+Subject: Re: [PATCH v5 02/15] ASoC: sun4i-i2s: Add set_tdm_slot functionality
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_222159_557996_840706AF 
-X-CRM114-Status: GOOD (  10.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190815_232234_200395_D4595699 
+X-CRM114-Status: GOOD (  13.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (codekipper[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,113 +94,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linuxppc-dev@lists.ozlabs.org, linux-imx@nxp.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ Maxime Ripard <maxime.ripard@free-electrons.com>, Chen-Yu Tsai <wens@csie.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For i.MX6 SoloX, there is a mode of the SoC to shutdown all power
-source of modules during system suspend and resume procedure.
-Thus, AUDMUX needs to save all the values of registers before the
-system suspend and restore them after the system resume.
+On Wed, 14 Aug 2019 at 11:30, Mark Brown <broonie@kernel.org> wrote:
+>
+> On Wed, Aug 14, 2019 at 08:08:41AM +0200, codekipper@gmail.com wrote:
+> > From: Marcus Cooper <codekipper@gmail.com>
+> >
+> > Codecs without a control connection such as i2s based HDMI audio and
+> > the Pine64 DAC require a different amount of bit clocks per frame than
+>
+> This isn't a universal property of CODECs without a control, and it's
+> something that CODECs with control can require too.
 
-Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
----
- sound/soc/fsl/imx-audmux.c | 54 +++++++++++++++++++++++++++++++++++++-
- 1 file changed, 53 insertions(+), 1 deletion(-)
-
-diff --git a/sound/soc/fsl/imx-audmux.c b/sound/soc/fsl/imx-audmux.c
-index 7595f24a006e..3ce85a43e08f 100644
---- a/sound/soc/fsl/imx-audmux.c
-+++ b/sound/soc/fsl/imx-audmux.c
-@@ -23,6 +23,8 @@
- 
- static struct clk *audmux_clk;
- static void __iomem *audmux_base;
-+static u32 *regcache;
-+static u32 reg_max;
- 
- #define IMX_AUDMUX_V2_PTCR(x)		((x) * 8)
- #define IMX_AUDMUX_V2_PDCR(x)		((x) * 8 + 4)
-@@ -315,8 +317,23 @@ static int imx_audmux_probe(struct platform_device *pdev)
- 	if (of_id)
- 		pdev->id_entry = of_id->data;
- 	audmux_type = pdev->id_entry->driver_data;
--	if (audmux_type == IMX31_AUDMUX)
-+
-+	switch (audmux_type) {
-+	case IMX31_AUDMUX:
- 		audmux_debugfs_init();
-+		reg_max = 14;
-+		break;
-+	case IMX21_AUDMUX:
-+		reg_max = 6;
-+		break;
-+	default:
-+		dev_err(&pdev->dev, "unsupported version!\n");
-+		return -EINVAL;
-+	}
-+
-+	regcache = devm_kzalloc(&pdev->dev, sizeof(u32) * reg_max, GFP_KERNEL);
-+	if (!regcache)
-+		return -ENOMEM;
- 
- 	if (of_id)
- 		imx_audmux_parse_dt_defaults(pdev, pdev->dev.of_node);
-@@ -332,12 +349,47 @@ static int imx_audmux_remove(struct platform_device *pdev)
- 	return 0;
- }
- 
-+#ifdef CONFIG_PM_SLEEP
-+static int imx_audmux_suspend(struct device *dev)
-+{
-+	int i;
-+
-+	clk_prepare_enable(audmux_clk);
-+
-+	for (i = 0; i < reg_max; i++)
-+		regcache[i] = readl(audmux_base + i * 4);
-+
-+	clk_disable_unprepare(audmux_clk);
-+
-+	return 0;
-+}
-+
-+static int imx_audmux_resume(struct device *dev)
-+{
-+	int i;
-+
-+	clk_prepare_enable(audmux_clk);
-+
-+	for (i = 0; i < reg_max; i++)
-+		writel(regcache[i], audmux_base + i * 4);
-+
-+	clk_disable_unprepare(audmux_clk);
-+
-+	return 0;
-+}
-+#endif /* CONFIG_PM_SLEEP */
-+
-+static const struct dev_pm_ops imx_audmux_pm = {
-+	SET_SYSTEM_SLEEP_PM_OPS(imx_audmux_suspend, imx_audmux_resume)
-+};
-+
- static struct platform_driver imx_audmux_driver = {
- 	.probe		= imx_audmux_probe,
- 	.remove		= imx_audmux_remove,
- 	.id_table	= imx_audmux_ids,
- 	.driver	= {
- 		.name	= DRIVER_NAME,
-+		.pm = &imx_audmux_pm,
- 		.of_match_table = imx_audmux_dt_ids,
- 	}
- };
--- 
-2.21.0
-
+ACK
+>
+> >       return sun4i_i2s_set_clk_rate(dai, params_rate(params),
+> > -                                   params_width(params));
+> > +                                   i2s->tdm_slots ?
+> > +                                   i2s->slot_width : params_width(params));
+>
+> Please write normal conditional statements unless there's a strong
+> reason to do otherwise, it makes things more legible.
+ACK
+>
+> > +static int sun4i_i2s_set_dai_tdm_slot(struct snd_soc_dai *dai,
+> > +                                   unsigned int tx_mask,
+> > +                                   unsigned int rx_mask,
+> > +                                   int slots, int width)
+> > +{
+> > +     struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
+> > +
+> > +     i2s->tdm_slots = slots;
+> > +
+> > +     i2s->slot_width = width;
+> > +
+> > +     return 0;
+> > +}
+>
+> No validation of the parameters here?
+ACK
+Thanks,
+CK
 
 _______________________________________________
 linux-arm-kernel mailing list
