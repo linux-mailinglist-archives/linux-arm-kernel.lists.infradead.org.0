@@ -2,33 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B17B8FAFC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 08:30:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80EB88FB12
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 08:30:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5roDoOcfRt3kDCmNm1vU1fd7O/FA8Cmz0Bm23mjJ2W8=; b=ac+ScHmreH6wHT
-	yjkq5okbtmqSHsbzqPl+JOX4DkaRQ0JhxHslBeNAjewsF2E9Y70PMHvO7A6uUOYqq8HNmvYnxC5PK
-	9+YQaPz7NW2wHTBxdPPwakMMTPD8r4qKc2MRasEyv/64urnrRZK7MHCkHJdWxoeQIZfXkH9+L2Y53
-	bgqMi/4SqP0FMCIm7OWvAxemOlB96tV25VL+GHAHvFUMcbCZxxzYp9mD/U2BwVxUIcbBmsYK4s5xa
-	IiFhKBC+VdV4mhZ7drkHD1PxnHQXIPokHwPxK1ccm51nVRegtfhHjMh4hKBISW0pOeNPpEJRAVvOl
-	S7DsI2oZSdVspxWuJffw==;
+	List-Owner; bh=uoX5bJxrTWZ6UlLfMxrO4xsWy0KCejSHfrsJKHuO+9s=; b=NMUku5l8K7zpDI
+	h2qubOU10v6xDKnwfSMFAsTvtM1LSPDwAu1MIcvmhlwbnw+STHlLKBYSUcF3KogAhJgzFQ5qSJNzB
+	ZgX26ELZu1bL85g0wCUXKTBsbggW4uyed4Pjz75faxBM5dso9XeXoSQc7H2Wwi/5xu+U9dq49+ugy
+	L6cjkz13Kmq+yZ79BXSZMZGHc3EvBQVcYdEDoZq2NW8tbT5piUDHQOt5mrU0xyYW6jaKI3/dgXcQv
+	0lsjkhwVqmyL1Yb/4cmWN22eQCf97ejZiBbrdqekP4RXg7r6GtLSdy3xtyML/3B24H7z4Ybf86x/r
+	8ujkx12EL9e9fmQZ6m1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyVkr-00089U-F8; Fri, 16 Aug 2019 06:30:29 +0000
+	id 1hyVl8-0008Pe-EN; Fri, 16 Aug 2019 06:30:46 +0000
 Received: from [2001:4bb8:18c:28b5:44f9:d544:957f:32cb] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hyVjX-0006C9-Ld; Fri, 16 Aug 2019 06:29:08 +0000
+ id 1hyVja-0006Eb-UE; Fri, 16 Aug 2019 06:29:11 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Maxime Chevallier <maxime.chevallier@bootlin.com>
-Subject: [PATCH 4/6] usb/max3421: remove the dummy {un,
- }map_urb_for_dma methods
-Date: Fri, 16 Aug 2019 08:24:33 +0200
-Message-Id: <20190816062435.881-5-hch@lst.de>
+Subject: [PATCH 5/6] dma-mapping: remove is_device_dma_capable
+Date: Fri, 16 Aug 2019 08:24:34 +0200
+Message-Id: <20190816062435.881-6-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190816062435.881-1-hch@lst.de>
 References: <20190816062435.881-1-hch@lst.de>
@@ -60,49 +59,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we have an explicit HCD_DMA flag, there is not need to override
-these methods.
+No users left.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/usb/host/max3421-hcd.c | 17 -----------------
- 1 file changed, 17 deletions(-)
+ include/linux/dma-mapping.h | 5 -----
+ 1 file changed, 5 deletions(-)
 
-diff --git a/drivers/usb/host/max3421-hcd.c b/drivers/usb/host/max3421-hcd.c
-index afa321ab55fc..8819f502b6a6 100644
---- a/drivers/usb/host/max3421-hcd.c
-+++ b/drivers/usb/host/max3421-hcd.c
-@@ -1800,21 +1800,6 @@ max3421_bus_resume(struct usb_hcd *hcd)
- 	return -1;
+diff --git a/include/linux/dma-mapping.h b/include/linux/dma-mapping.h
+index f7d1eea32c78..14702e2d6fa8 100644
+--- a/include/linux/dma-mapping.h
++++ b/include/linux/dma-mapping.h
+@@ -149,11 +149,6 @@ static inline int valid_dma_direction(int dma_direction)
+ 		(dma_direction == DMA_FROM_DEVICE));
  }
  
--/*
-- * The SPI driver already takes care of DMA-mapping/unmapping, so no
-- * reason to do it twice.
-- */
--static int
--max3421_map_urb_for_dma(struct usb_hcd *hcd, struct urb *urb, gfp_t mem_flags)
+-static inline int is_device_dma_capable(struct device *dev)
 -{
--	return 0;
+-	return dev->dma_mask != NULL && *dev->dma_mask != DMA_MASK_NONE;
 -}
 -
--static void
--max3421_unmap_urb_for_dma(struct usb_hcd *hcd, struct urb *urb)
--{
--}
--
- static const struct hc_driver max3421_hcd_desc = {
- 	.description =		"max3421",
- 	.product_desc =		DRIVER_DESC,
-@@ -1826,8 +1811,6 @@ static const struct hc_driver max3421_hcd_desc = {
- 	.get_frame_number =	max3421_get_frame_number,
- 	.urb_enqueue =		max3421_urb_enqueue,
- 	.urb_dequeue =		max3421_urb_dequeue,
--	.map_urb_for_dma =	max3421_map_urb_for_dma,
--	.unmap_urb_for_dma =	max3421_unmap_urb_for_dma,
- 	.endpoint_disable =	max3421_endpoint_disable,
- 	.hub_status_data =	max3421_hub_status_data,
- 	.hub_control =		max3421_hub_control,
+ #ifdef CONFIG_DMA_DECLARE_COHERENT
+ /*
+  * These three functions are only for dma allocator.
 -- 
 2.20.1
 
