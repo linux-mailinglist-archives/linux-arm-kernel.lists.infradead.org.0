@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F9D08FD8B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 10:17:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CD138FD7F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 10:16:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mS9kif/tirZRLwqq7F+pEoytbxU91dVUCq1tQY1jiNY=; b=b2569drHoqUbme
-	Lys2LcwoSTmdmmY3rRk2BNp2ezEjVmraAaAcdiZIdh9e9Vw/0zkiIg75gulmIvX3pHQgXWIue+5yK
-	apU52ifnz1LpPYe0gyJBU8laj4GizSvEFzWQ/xfmLlqloUfo1J9fCctjrwQHkuPItD6bWKq99gGq9
-	8rcHEchXPVaCxNgK/zpI4wecYBc+dQ6haiOVDlm05KnxVJSuBq7KNV7sG0lCHHVga1U1HK1u4KNXi
-	7uh6nWHwYXf62OjFwI6EjQCCRYwWJvdpvEoohK+wCDs2lNW7r+E9HTFK/FUmCfmODc91RyNO4YU8l
-	VWpUVXykRvQYAzvkVtAQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MP52UrhAZy169W+Zb/eUa1GXvv1F8DYQniDHKvNpmU8=; b=jdkylnBJo2YqZ1
+	I6oOx+k0aBxzZjQgz8VrOpv6u6/+DdGr+8o429cWJZ0AAJC1Abme5ebM2QsowLIuUMOdfzyxoMJsd
+	bQcs9XhXBv46NCq0nYiTAVlag6H4S2Az4yPg+nO0JHATxYBmVQuzcPJ9OS/Mo3djP+Upq5tMlUvSp
+	9Mi1GmSyNAo3DYaaYa7gars7Q1R/W2W3gJp8ikKgfHuZm4bmiDxzJv56XXnuYQfUZLjpr6Aer1Ss9
+	8xjDr+ZSs28xqOTSkVz4J617/fDzDgQb9z5L/xnJAAc2ll0YrT5GjdNr8hQy+P/6e/g+dgTsuWPQi
+	cRocWKd+m8ZMhoNNDAJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyXPy-0000Jr-0v; Fri, 16 Aug 2019 08:17:02 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1hyXOt-0007wM-Gu; Fri, 16 Aug 2019 08:15:55 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyXPK-0008V7-U9
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 08:16:24 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 16 Aug 2019 01:16:22 -0700
-X-IronPort-AV: E=Sophos;i="5.64,391,1559545200"; d="scan'208";a="167990821"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by orsmga007-auth.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 16 Aug 2019 01:16:19 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id 7606820ABC; Fri, 16 Aug 2019 11:15:14 +0300 (EEST)
-Date: Fri, 16 Aug 2019 11:15:14 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Hugues Fruchet <hugues.fruchet@st.com>
-Subject: Re: [PATCH v6 2/4] media: stm32-dcmi: trace the supported
- fourcc/mbus_code
-Message-ID: <20190816081514.GU6133@paasikivi.fi.intel.com>
-References: <1565790533-10043-1-git-send-email-hugues.fruchet@st.com>
- <1565790533-10043-3-git-send-email-hugues.fruchet@st.com>
+ id 1hyXOe-0007vy-1C
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 08:15:41 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id E5605258566DB8E4E9ED;
+ Fri, 16 Aug 2019 16:15:33 +0800 (CST)
+Received: from [127.0.0.1] (10.74.221.148) by DGGEMS402-HUB.china.huawei.com
+ (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Fri, 16 Aug 2019
+ 16:15:25 +0800
+Subject: Re: [PATCH] arm64: do_csum: implement accelerated scalar version
+To: Will Deacon <will.deacon@arm.com>
+References: <20190218230842.11448-1-ard.biesheuvel@linaro.org>
+ <d7a16ebd-073f-f50e-9651-68606d10b01c@hisilicon.com>
+ <20190412095243.GA27193@fuggles.cambridge.arm.com>
+ <41b30c72-c1c5-14b2-b2e1-3507d552830d@arm.com>
+ <20190515094704.GC24357@fuggles.cambridge.arm.com>
+ <440eb674-0e59-a97e-4a90-0026e2327069@hisilicon.com>
+ <20190815164609.GI2015@fuggles.cambridge.arm.com>
+From: Shaokun Zhang <zhangshaokun@hisilicon.com>
+Message-ID: <37fbc2a3-069d-9f75-f3d0-3eda2efa5c9b@hisilicon.com>
+Date: Fri, 16 Aug 2019 16:15:25 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.1.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1565790533-10043-3-git-send-email-hugues.fruchet@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190815164609.GI2015@fuggles.cambridge.arm.com>
+X-Originating-IP: [10.74.221.148]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_011622_994741_A630CBAD 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20190816_011540_288508_5BFC2238 
+X-CRM114-Status: GOOD (  10.70  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,66 +70,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yannick Fertre <yannick.fertre@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Mickael GUENE <mickael.guene@st.com>, linux-kernel@vger.kernel.org,
- Philippe CORNU <philippe.cornu@st.com>, Hans Verkuil <hverkuil@xs4all.nl>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, netdev@vger.kernel.org,
+ ilias.apalodimas@linaro.org, "huanglingyan \(A\)" <huanglingyan2@huawei.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org,
+ steve.capper@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Hugues,
+Hi Will,
 
-On Wed, Aug 14, 2019 at 03:48:51PM +0200, Hugues Fruchet wrote:
-> Add a trace of the set of supported fourcc/mbus_code which
-> intersect between DCMI and source sub-device.
+On 2019/8/16 0:46, Will Deacon wrote:
+> On Thu, May 16, 2019 at 11:14:35AM +0800, Zhangshaokun wrote:
+>> On 2019/5/15 17:47, Will Deacon wrote:
+>>> On Mon, Apr 15, 2019 at 07:18:22PM +0100, Robin Murphy wrote:
+>>>> On 12/04/2019 10:52, Will Deacon wrote:
+>>>>> I'm waiting for Robin to come back with numbers for a C implementation.
+>>>>>
+>>>>> Robin -- did you get anywhere with that?
+>>>>
+>>>> Still not what I would call finished, but where I've got so far (besides an
+>>>> increasingly elaborate test rig) is as below - it still wants some unrolling
+>>>> in the middle to really fly (and actual testing on BE), but the worst-case
+>>>> performance already equals or just beats this asm version on Cortex-A53 with
+>>>> GCC 7 (by virtue of being alignment-insensitive and branchless except for
+>>>> the loop). Unfortunately, the advantage of C code being instrumentable does
+>>>> also come around to bite me...
+>>>
+>>> Is there any interest from anybody in spinning a proper patch out of this?
+>>> Shaokun?
+>>
+>> HiSilicon's Kunpeng920(Hi1620) benefits from do_csum optimization, if Ard and
+>> Robin are ok, Lingyan or I can try to do it.
+>> Of course, if any guy posts the patch, we are happy to test it.
+>> Any will be ok.
 > 
-> Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
-> ---
->  drivers/media/platform/stm32/stm32-dcmi.c | 12 ++++++++++--
->  1 file changed, 10 insertions(+), 2 deletions(-)
+> I don't mind who posts it, but Robin is super busy with SMMU stuff at the
+> moment so it probably makes more sense for you or Lingyan to do it.
+
+Thanks for restarting this topic, I or Lingyan will do it soon.
+
+Thanks,
+Shaokun
+
 > 
-> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-> index b462f71..18acecf 100644
-> --- a/drivers/media/platform/stm32/stm32-dcmi.c
-> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
-> @@ -1447,12 +1447,20 @@ static int dcmi_formats_init(struct stm32_dcmi *dcmi)
->  			/* Code supported, have we got this fourcc yet? */
->  			for (j = 0; j < num_fmts; j++)
->  				if (sd_fmts[j]->fourcc ==
-> -						dcmi_formats[i].fourcc)
-> +						dcmi_formats[i].fourcc) {
->  					/* Already available */
-> +					dev_dbg(dcmi->dev, "Skipping fourcc/code: %4.4s/0x%x\n",
-> +						(char *)&sd_fmts[j]->fourcc,
-> +						mbus_code.code);
->  					break;
-> -			if (j == num_fmts)
-> +				}
-> +			if (j == num_fmts) {
->  				/* New */
->  				sd_fmts[num_fmts++] = dcmi_formats + i;
-> +				dev_dbg(dcmi->dev, "Supported fourcc/code: %4.4s/0x%x\n",
+> Will
+> 
+> .
+> 
 
-Over 80 characters per line.
-
-> +					(char *)&sd_fmts[num_fmts - 1]->fourcc,
-> +					sd_fmts[num_fmts - 1]->mbus_code);
-> +			}
->  		}
->  		mbus_code.index++;
->  	}
-
--- 
-Regards,
-
-Sakari Ailus
-sakari.ailus@linux.intel.com
 
 _______________________________________________
 linux-arm-kernel mailing list
