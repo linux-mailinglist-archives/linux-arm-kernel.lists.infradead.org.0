@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F65F8FB63
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 08:49:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 733B18FB61
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 16 Aug 2019 08:48:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,32 +11,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=VHa4un9yIMQZIA88MFpkhN1G3lPbhIZnUcleSw4D1pU=; b=jglbfyS9+IFcJ6vpQmRZWVN824
-	AB6iKbHwsxbGZ7gqu6Z13J+8CC2P0bc8NKEoWZTIvAJdWCYcW+XHmREPUwLQ8YqHe7pL35HXL/7t8
-	jt/Mycc18JCXwUYMHOY0UKmbXgnFn4VZMueTsdHihlT0Ibj8hnFkwk30v6Ch7K75es7963KsQ1oJL
-	V7mRNP6GDJJb+L7PO+pxEmf+2RpPSSu7RnrvKTLw6MwRqVPIGPWM60Up5Pr0ECRD//S6DPIrFOIjW
-	Lx4Ra9gk9B9rNo9gA7AnbmDhuV16q+/0mnJWK/9bEUzgLc8peFjxvhWxy4Nuhzf6dncsWGV19gbYo
-	Brurflqg==;
+	bh=YyQwY+wW0vCbFNyV+j7JvFarIBoL6W10YlnYR/6HiLU=; b=AyqlcfNAEe7LEAxj/Pa7WMSmsj
+	DWvWWccxAIg8lGIac0h/RHgEEqrYS+jzYNcEatii5clOLE8XMP7g0AGwrAgYtePDiQIciQnLH0rqG
+	r/QY58nMWzrSMkoA6dF+g81n4pxBj1O8+sv6h86BkCTuWb9vEW0+KGTcBDTWA/h7ZKFsoMKu6KV9r
+	5+PYIKpSmXHZUshF0l2KR9YT5oGNjPabDYTlK26Y14ak/MzxH/Fi414/X8Z14dHLwsZkIW1M4zRi0
+	deCqqkvqtsxEz5Mpvku816Wkg7zdjEfd5T65VZYPgzjDuV4DFCqPTEjJq0ujfWl14reJ/APw5Kjlb
+	VdzhYXPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyW2f-0005y8-En; Fri, 16 Aug 2019 06:48:53 +0000
-Received: from letterbox.kde.org ([46.43.1.242])
+	id 1hyW2A-0005UY-Hk; Fri, 16 Aug 2019 06:48:22 +0000
+Received: from letterbox.kde.org ([2001:41c9:1:41e::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyW1g-0005IJ-Vc
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 06:47:55 +0000
+ id 1hyW1c-0005IK-Ef
+ for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 06:47:49 +0000
 Received: from archbox.localdomain (unknown [123.201.155.129])
  (Authenticated sender: bshah)
- by letterbox.kde.org (Postfix) with ESMTPSA id C95EB28ACD4;
- Fri, 16 Aug 2019 07:47:43 +0100 (BST)
+ by letterbox.kde.org (Postfix) with ESMTPSA id AED5128ACF1;
+ Fri, 16 Aug 2019 07:47:46 +0100 (BST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kde.org; s=users;
- t=1565938064; bh=py1ztBn1XdaocFAZ/o0HlkGN6xIaCjB2FLD7M888Jkk=;
+ t=1565938067; bh=ePjvQ8ajgrtxUHMFSOWhNNhVxI+y1Eg4fcjki3juWZg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=JaQk3ITDsZkYq2OpOByS+hSpWW9YsIUsCPTu4TYHzjHOhWoEEOJROZ5IK1qRXqon2
- 6B9Ry20VIHjpEiVvf+X06/0NulBmv++Ff+Rw3hL/qZXXbdmDf048smKlpi4yxmT/KL
- /qOGkGFgiHkZVgHRysRt0UwC20jMTxgjgw5XAXwCjxTCI7axv3Xrza9HzLqpaShVv8
- pNgUENFIlRb1bTmLOXfreflwxDh9L1XJSEIq1wn2AYkA5g+F7zgWe6Q3UFoUVe21aE
- gTSgu/CcHgAILH+2LW6a7f0WZo/+NggvPjgkQ7KwX/Sacp7RMDg8I4AFyY1OjAlf6W
- RABa+edqPLCTg==
+ b=nQqTnRjC/rPiFnACpoHJbEsxdIP3/KJtCoYYqAVhn1JemXcnRWlJ5Db2qrdvCIR6d
+ ABYLnRY7ayDaAe/ygo5IgrK/xmlpnBZyN3FKBDbThd7YhdwLKmLNQaAXBFEPBKF6Dv
+ k8CXqC8vwQkwfp+7qRsgWqGR8YVYs8EGK22AIUWEWv6P4X05euOSriRv8M2aPcVXzn
+ M0ZHpO2Jjn6IoSDVW1ciEedk1IW0/Hvk24V/p91BUwsYtBmTjeq2GadQt80lkkCqxm
+ JzUBeMVZRXLS1+7xdkTjf0YFrreE5njql+/30QxR68nNTCE9rHNwrxfpxjz4z1G7CA
+ gzw/SXslRGUSg==
 From: Bhushan Shah <bshah@kde.org>
 To: Icenowy Zheng <icenowy@aosc.io>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>,
@@ -45,23 +45,25 @@ To: Icenowy Zheng <icenowy@aosc.io>, Rob Herring <robh+dt@kernel.org>,
  Gregory CLEMENT <gregory.clement@bootlin.com>, linux-i2c@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 2/3] arm64: allwinner: h6: add I2C nodes
-Date: Fri, 16 Aug 2019 12:17:09 +0530
-Message-Id: <20190816064710.18280-3-bshah@kde.org>
+Subject: [PATCH v2 3/3] arm64: allwinner: h6: add i2c0 node in PineH64
+Date: Fri, 16 Aug 2019 12:17:10 +0530
+Message-Id: <20190816064710.18280-4-bshah@kde.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190816064710.18280-1-bshah@kde.org>
 References: <20190811090503.32396-1-bshah@kde.org>
  <20190816064710.18280-1-bshah@kde.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_234753_469031_16930964 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20190815_234748_624669_B962343D 
+X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [46.43.1.242 listed in list.dnswl.org]
+ medium trust [2001:41c9:1:41e:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,99 +92,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add device-tree nodes for i2c0 to i2c2, and also add relevant pinctrl
-nodes.
+i2c0 bus is exposed by PI-2 BUS in the PineH64, model B.
 
-Suggested-by: Icenowy Zheng <icenowy@aosc.io>
 Signed-off-by: Bhushan Shah <bshah@kde.org>
 ---
 Changes in v2:
-  - Add the SoC specific compatible string instead of re-using a31 one.
+  - Don't enable the i2c0 node in PineH64 by default
 
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 56 +++++++++++++++++++-
- 1 file changed, 55 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-index bcecca17d61d..a1a329926540 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-@@ -329,6 +329,21 @@
- 				function = "hdmi";
- 			};
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
+index 684d1daa3081..97d9b7c63fb3 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
+@@ -160,6 +160,15 @@
+ 	vcc-pg-supply = <&reg_aldo1>;
+ };
  
-+			i2c0_pins: i2c0-pins {
-+				pins = "PD25", "PD26";
-+				function = "i2c0";
-+			};
++/* This i2c interface is exposed on PI-2 BUS, Pin 3 (I2C_SDA) and 5 (I2C_SCL) */
++&i2c0 {
++	status = "disabled";
++};
 +
-+			i2c1_pins: i2c1-pins {
-+				pins = "PH5", "PH6";
-+				function = "i2c1";
-+			};
++&i2c0_pins {
++	bias-pull-up;
++};
 +
-+			i2c2_pins: i2c2-pins {
-+				pins = "PD23", "PD24";
-+				function = "i2c2";
-+			};
-+
- 			mmc0_pins: mmc0-pins {
- 				pins = "PF0", "PF1", "PF2", "PF3",
- 				       "PF4", "PF5";
-@@ -464,6 +479,45 @@
- 			status = "disabled";
- 		};
+ &r_i2c {
+ 	status = "okay";
  
-+		i2c0: i2c@5002000 {
-+			compatible = "allwinner,sun50i-h6-i2c";
-+			reg = <0x05002000 0x400>;
-+			interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_I2C0>;
-+			resets = <&ccu RST_BUS_I2C0>;
-+			pinctrl-names = "default";
-+			pinctrl-0 = <&i2c0_pins>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
-+		i2c1: i2c@5002400 {
-+			compatible = "allwinner,sun50i-h6-i2c";
-+			reg = <0x05002400 0x400>;
-+			interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_I2C1>;
-+			resets = <&ccu RST_BUS_I2C1>;
-+			pinctrl-names = "default";
-+			pinctrl-0 = <&i2c1_pins>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
-+		i2c2: i2c@5002800 {
-+			compatible = "allwinner,sun50i-h6-i2c";
-+			reg = <0x05002800 0x400>;
-+			interrupts = <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_I2C2>;
-+			resets = <&ccu RST_BUS_I2C2>;
-+			pinctrl-names = "default";
-+			pinctrl-0 = <&i2c2_pins>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
- 		emac: ethernet@5020000 {
- 			compatible = "allwinner,sun50i-h6-emac",
- 				     "allwinner,sun50i-a64-emac";
-@@ -795,7 +849,7 @@
- 		};
- 
- 		r_i2c: i2c@7081400 {
--			compatible = "allwinner,sun6i-a31-i2c";
-+			compatible = "allwinner,sun50i-h6-i2c";
- 			reg = <0x07081400 0x400>;
- 			interrupts = <GIC_SPI 107 IRQ_TYPE_LEVEL_HIGH>;
- 			clocks = <&r_ccu CLK_R_APB2_I2C>;
 -- 
 2.17.1
 
