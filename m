@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 737EB9132B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 23:22:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB05B91341
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 23:27:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3c85m9ojBPlszqsi11n8gkaZch1qz0xuM2zMjxdevS4=; b=uTsl1ZeTlrwnwI
-	kbOCdH6Ot+ZCWtAAfobJ0F+/kQiiukD04JOSxXSyd2CXKvt2t0DWz+5MumnLyuHILdKrB4GT2K8LX
-	mt+rUZdWjuGtuza7c82+Cz/lySJFFzDobWTi1dc+xXqqA+DbfUB4cDhE0KLYn9haabq1VXyypsyxS
-	Ao2NKjT010eHlWC677Yd5HUz3EYRv5go4W3mbPz8WOSMf4SHqvcGf/4gAXk5lCIRxVaGZoIEZ0ysS
-	gVviMh9zcaW9CjbqBXaBVo8lpE+MGttXw6VT2AJd6UWufUQwb3yjk5OFNRj+H6lstBICEWSTamPWp
-	ng3yWzuYKeHjx0JwD7+g==;
+	List-Owner; bh=2FS1Bt8ftXrYROzN+U4/Ecu65oqG40OE2hjgsDpDXo8=; b=ejizTSx+KiQVRr
+	tQwvHN4usmmUlZcPqGRtyuNZ/+k9gE6MmMB6Ye4th+8K3Sye7w+edia7RSXvZlKMM+PFK3Ss/SsqU
+	mXkykv/b4nO6P1/K0DNi9n1pYtm+V6gq34VWBjqbkQn6Fa3QuTHkkHu6TDgzyAHNZ45nvN4DbbA+8
+	4ZDQmfl9eC/r6MK7aYwQ85rzxw4JhrYE7PBJrsozZwwAO0pFltswzcWzSa+ZJCRu/dxYMltYatGak
+	mtdPIvXyXRWV2EfFyYk1oSgv0wQpoJsv3v+4J0L9wo0hKNEuH7whyr0+oxbLehRoiJUSVcLC6ig20
+	suNdPnGB+OdAzxR8ez0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hz69u-0007v3-0n; Sat, 17 Aug 2019 21:22:46 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hz6ER-0001SU-5n; Sat, 17 Aug 2019 21:27:27 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hz69Q-0007gE-PB
- for linux-arm-kernel@lists.infradead.org; Sat, 17 Aug 2019 21:22:19 +0000
-Received: by mail-io1-xd44.google.com with SMTP id i22so13245478ioh.2
+ id 1hz6E4-0001H8-H8
+ for linux-arm-kernel@lists.infradead.org; Sat, 17 Aug 2019 21:27:05 +0000
+Received: by mail-io1-xd41.google.com with SMTP id t6so13270753ios.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 17 Aug 2019 14:22:16 -0700 (PDT)
+ Sat, 17 Aug 2019 14:27:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
  h=date:from:to:cc:subject:in-reply-to:message-id:references
  :user-agent:mime-version;
- bh=TIwIXh9oi1rBMxLrZ6m/eqcO3acs/QprBotrm1MYtgU=;
- b=CJVuNDGu30vfZIQhNtyqH+dgEouyhowB/pqTopdU55GkSITlHL0uKSvYQI8xfwB4KF
- b/uCqqA3AXKBIdWSBL/bm8atFw/BTbw6zCCCzTTokg/rSqwXa1cCfQMW6iusHpscU8Il
- 0ZqX+tec6msmO1pwyfGqBVymy0nWOHfws7CGDoh79Fg0fctZqQK8Mql9QboplE1l26jI
- c7lYq5mvTGfbdlGkY9/A+2cUa+UcDH5vprCBHPJps3g09zIR/90rJ1p5sEuvA/RhvAOH
- Ua8oYgLyyo0AHKEUE5W/NGenZReiOCrCvLJt/QdP2CD/U0d1u2yrDe5h1Bhkwwdzihi3
- +qPQ==
+ bh=RWNnky4tg4pNafhn5H03aH8PwpXjgmBSavfJgIeX0Ak=;
+ b=hov3AcxQ6M0mcpBwyir6wMfwuFoM/2pj4MlCmv+T09knj2Mmqt8UJz4bLEelDU0dEY
+ q35RSput0GqdXzjDl39iW6e96fi6ZvYG7hVSedcruoQ/r2si3vSEQf+S3NbKo/JWKMFz
+ l1Pncvs1WA7x9utXPIZU7hNH8C4hBPXAZA2OymhT4WgZagRVCnEht474gNpFzrJa6Xjg
+ FvMhl4KIMbZ3FFtCmeGSVrAzUl96LhDRs8lD2zGj/KFGyr4hodIlFUOwRQsA6Da7S+zZ
+ ouRU8O2CZBVhaSm1B4pGrx6QOwfw1b8VOQgHVh5JaC0Jm1cxHTFnZdggwnO1D5Ig+YJ1
+ Lkvg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
  :references:user-agent:mime-version;
- bh=TIwIXh9oi1rBMxLrZ6m/eqcO3acs/QprBotrm1MYtgU=;
- b=Lbr2YinKjrb2W7iE5EvKlb3xZXJ4byaI8RzJNodav75xp3DG32AqAy9psk/gWKUt4x
- sqblCwTD4+gp7OQTc4JMPVlGgpfQVHTKrx4kCi699RDX/IuRCwzF4hQoP4wFWo1pinEq
- CCEupbLpP/wk3Eeg4uZqv0Ne6KD1Z2auurckkB4TDccVKVctk5QM5yFNuZG6r1FlGeCq
- N6dHD129iH0CctnlIKh9bYtFL55XG1jv+FSQuQqklPNE54shjOqE2WMuv/a+dOirZoou
- GBFXaImL/IdYquWkTLbic+Ch87H9vVsxm1hvvODgvRYibcEEfdSv3+zNZA8rFXpMJwnm
- 94jg==
-X-Gm-Message-State: APjAAAV/7J3wYAnlBz0t3rcsd/1MBNSwVYFAgVPSHxM2ikg7Go/AUwd4
- WDoLerGToQXKQ/2ySDSKGxSnvw==
-X-Google-Smtp-Source: APXvYqyWkWAJ5sPsUpqbWAy71qmGXtDWPCrfasxRd8m0NdlFhlF6iU5nZ24EPromxMFk1aH65Eky+w==
-X-Received: by 2002:a5d:8e16:: with SMTP id e22mr18276290iod.171.1566076936091; 
- Sat, 17 Aug 2019 14:22:16 -0700 (PDT)
+ bh=RWNnky4tg4pNafhn5H03aH8PwpXjgmBSavfJgIeX0Ak=;
+ b=dwv+dRQ+WzsN2ra7PCUmEOI2VrwYfahjIIffYohNfY9rr/FVPtOwh6D2s3EOCC0//t
+ RkhtnjUVFHPHVjEzdFdrQAwv+LRg6wKCOPZcPl7+oyly1n3fIog/uvNiL80E8t2oOlFP
+ HbYzEDuycI/9EI2dezCxLdUF6SetV+w3JSz3okhRjE2qiKgTgjWSkELnqR6rrqlVV9zx
+ iOZETZVZjo2rNW605ljq42PfVYf339EfU6p+NHguZZUuHLzXORXN9c4Nvqnl4FstoCpT
+ EHewuYxfO5NiTwIAkwrQmZHU5G3MNxUJqp5zPeGZnxO+wWKovJTRadeLffzdGh5caFtP
+ 76aQ==
+X-Gm-Message-State: APjAAAXvA8ka9rQuEfA7smJeAZeDuZAsM9iYn2gau6lhcQFk/4pyWANj
+ qvaHzGs8vTljifkduDstnFnBAA==
+X-Google-Smtp-Source: APXvYqwKE/3SM/rVpl4teujkfN9+UilDZaKhxrZT/14FwdMPovoCNf3aYcPot40i7G8y5JQK54ukCg==
+X-Received: by 2002:a6b:b9c2:: with SMTP id
+ j185mr15509819iof.148.1566077223658; 
+ Sat, 17 Aug 2019 14:27:03 -0700 (PDT)
 Received: from localhost (c-73-95-159-87.hsd1.co.comcast.net. [73.95.159.87])
  by smtp.gmail.com with ESMTPSA id
- j25sm13091311ioj.67.2019.08.17.14.22.15
+ v23sm11488293ioh.58.2019.08.17.14.27.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 17 Aug 2019 14:22:15 -0700 (PDT)
-Date: Sat, 17 Aug 2019 14:22:15 -0700 (PDT)
+ Sat, 17 Aug 2019 14:27:03 -0700 (PDT)
+Date: Sat, 17 Aug 2019 14:27:02 -0700 (PDT)
 From: Paul Walmsley <paul.walmsley@sifive.com>
 X-X-Sender: paulw@viisi.sifive.com
 To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 24/26] riscv: use the generic ioremap code
-In-Reply-To: <20190817073253.27819-25-hch@lst.de>
-Message-ID: <alpine.DEB.2.21.9999.1908171421560.4130@viisi.sifive.com>
+Subject: Re: [PATCH 14/26] asm-generic: don't provide __ioremap
+In-Reply-To: <alpine.DEB.2.21.9999.1908171357180.4130@viisi.sifive.com>
+Message-ID: <alpine.DEB.2.21.9999.1908171426390.4130@viisi.sifive.com>
 References: <20190817073253.27819-1-hch@lst.de>
- <20190817073253.27819-25-hch@lst.de>
+ <20190817073253.27819-15-hch@lst.de>
+ <alpine.DEB.2.21.9999.1908171357180.4130@viisi.sifive.com>
 User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190817_142216_818147_7B95B9D7 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20190817_142704_567136_89C7B634 
+X-CRM114-Status: UNSURE (   6.46  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -116,25 +119,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 17 Aug 2019, Christoph Hellwig wrote:
+On Sat, 17 Aug 2019, Paul Walmsley wrote:
 
-> Use the generic ioremap code instead of providing a local version.
-> Note that this relies on the asm-generic no-op definition of
-> pgprot_noncached.
-> 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->  arch/riscv/Kconfig               |  1 +
->  arch/riscv/include/asm/io.h      |  3 --
->  arch/riscv/include/asm/pgtable.h |  6 +++
->  arch/riscv/mm/Makefile           |  1 -
->  arch/riscv/mm/ioremap.c          | 84 --------------------------------
->  5 files changed, 7 insertions(+), 88 deletions(-)
->  delete mode 100644 arch/riscv/mm/ioremap.c
+> Acked-by: Paul Walmsley <paul.walmsley@sifive.com> # arch/riscv
 
-Reviewed-by: Paul Walmsley <paul.walmsley@sifive.com>
-Tested-by: Paul Walmsley <paul.walmsley@sifive.com> # rv32, rv64 boot
-Acked-by: Paul Walmsley <paul.walmsley@sifive.com> # arch/riscv
+This ack is superfluous since the patch doesn't touch arch/riscv; feel 
+free to drop it
 
 
 - Paul
