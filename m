@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4988B9139B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 00:47:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6ECEB9139C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 00:48:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=JvxvkGEuJcOWmmtJSpRi4arC9Syu/hTWqBfQMMrYlqg=; b=Ndg
-	k7m36q2o7VkS/BraD0h5jzWtjM85Vrus0knn/4JPxenVmanDjkJn8t3LB+SOHuecFJX5kRsim5u7K
-	qmZqO6+PAR072H/vzZ4nstZrQwhdZLO+SI7Ee4FTeFUeV5h4ddu6LHlSJglvSr3TvHJP6bcKeMzLP
-	Ex3igLIFBxEeTh4GUWZ0dmRghkUnwAQd4YYtFNOHBzf0p+GilVJh7ee5+vl9BNWUesGodGh6f5MNs
-	G3OLilKf/Es5PNXSdUJi+BVaywdITUKxV6f79Wbo+bsCgWI5cJlj1Z628l6R0UTlAnhKp47UNGdZH
-	RhDUsibgZVYfcoEMoOTY2U6D/s4OoCg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=tJvjXVMYDiWJh3dw3z7/xGgwMejykeG3xuSTIP7KA+E=; b=ZBDgKDYtaRgvyxNhGbdoLZ51Uv
+	daXD40Zi2uDtgu326tJwHflLKS8cKLlnRGeIHHODoCv1oW4lt5rjRmw76Smlx+6QJJIWWvudF34zN
+	hRHDK4eSvQYI22tQ4aambGxBn/SbE0t+VkgZ8OdpDID4FKzGZQxkefoyn2rROGz8DLKU4A9huwE3e
+	EYR/5wu2k7FM8+DyTjyRvp+TYcdDlNAyAJDEM0KsFtOXpHBrIm3nv5IuZ0HfidtI1CZYuaeJprbSq
+	iG93cvatGb8OyoCJv8Deh8CM0XgiGadNfOkCYz3PwPyjBwmVUp5Sv/lbzO5UyJ4nxlk4suylY3GQK
+	VUwGPZGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hz7Ts-0007wG-K9; Sat, 17 Aug 2019 22:47:28 +0000
+	id 1hz7UR-00088j-J0; Sat, 17 Aug 2019 22:48:04 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hz7TU-0007u6-Rp
+ id 1hz7TU-0007u7-II
  for linux-arm-kernel@lists.infradead.org; Sat, 17 Aug 2019 22:47:06 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5278D1A0680;
- Sun, 18 Aug 2019 00:46:57 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2B2981A066F;
+ Sun, 18 Aug 2019 00:46:59 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6E8301A066F;
- Sun, 18 Aug 2019 00:46:49 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0C6011A026D;
+ Sun, 18 Aug 2019 00:46:51 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 9E95F40281;
- Sun, 18 Aug 2019 06:46:39 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4264E402B7;
+ Sun, 18 Aug 2019 06:46:41 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -42,14 +43,17 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
  linux-pm@vger.kernel.org
-Subject: [PATCH V2 1/6] arm64: dts: imx8mn-ddr4-evk: Add i2c1 support
-Date: Sat, 17 Aug 2019 18:28:15 -0400
-Message-Id: <1566080900-2539-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 2/6] arm64: dts: imx8mn-ddr4-evk: Add rohm,
+ bd71847 PMIC support
+Date: Sat, 17 Aug 2019 18:28:16 -0400
+Message-Id: <1566080900-2539-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1566080900-2539-1-git-send-email-Anson.Huang@nxp.com>
+References: <1566080900-2539-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190817_154705_034839_D3FDF856 
-X-CRM114-Status: UNSURE (   6.74  )
+X-CRM114-CacheID: sfid-20190817_154704_884304_E2C19F7C 
+X-CRM114-Status: UNSURE (   8.02  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,47 +82,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable i2c1 on i.MX8MN DDR4 EVK board.
+On i.MX8MN DDR4 EVK board, there is a rohm,bd71847 PMIC
+on i2c1 bus, enable it.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No changes.
 ---
- arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts | 109 ++++++++++++++++++++++
+ 1 file changed, 109 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-index 9b2c172..5fce5b1 100644
+index 5fce5b1..10ebf77 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-@@ -50,6 +50,13 @@
+@@ -57,6 +57,12 @@
  		>;
  	};
  
-+	pinctrl_i2c1: i2c1grp {
++	pinctrl_pmic: pmicirq {
 +		fsl,pins = <
-+			MX8MN_IOMUXC_I2C1_SCL_I2C1_SCL		0x400001c3
-+			MX8MN_IOMUXC_I2C1_SDA_I2C1_SDA		0x400001c3
++			MX8MN_IOMUXC_GPIO1_IO03_GPIO1_IO3	0x41
 +		>;
 +	};
 +
  	pinctrl_reg_usdhc2_vmmc: regusdhc2vmmc {
  		fsl,pins = <
  			MX8MN_IOMUXC_SD2_RESET_B_GPIO2_IO19	0x41
-@@ -182,6 +189,13 @@
- 	};
+@@ -194,6 +200,109 @@
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_i2c1>;
+ 	status = "okay";
++
++	pmic@4b {
++		compatible = "rohm,bd71847";
++		reg = <0x4b>;
++		pinctrl-0 = <&pinctrl_pmic>;
++		interrupt-parent = <&gpio1>;
++		interrupts = <3 GPIO_ACTIVE_LOW>;
++		rohm,reset-snvs-powered;
++
++		regulators {
++			buck1_reg: BUCK1 {
++				regulator-name = "BUCK1";
++				regulator-min-microvolt = <700000>;
++				regulator-max-microvolt = <1300000>;
++				regulator-boot-on;
++				regulator-always-on;
++				regulator-ramp-delay = <1250>;
++			};
++
++			buck2_reg: BUCK2 {
++				regulator-name = "BUCK2";
++				regulator-min-microvolt = <700000>;
++				regulator-max-microvolt = <1300000>;
++				regulator-boot-on;
++				regulator-always-on;
++				regulator-ramp-delay = <1250>;
++			};
++
++			buck3_reg: BUCK3 {
++				// BUCK5 in datasheet
++				regulator-name = "BUCK3";
++				regulator-min-microvolt = <700000>;
++				regulator-max-microvolt = <1350000>;
++			};
++
++			buck4_reg: BUCK4 {
++				// BUCK6 in datasheet
++				regulator-name = "BUCK4";
++				regulator-min-microvolt = <3000000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-boot-on;
++				regulator-always-on;
++			};
++
++			buck5_reg: BUCK5 {
++				// BUCK7 in datasheet
++				regulator-name = "BUCK5";
++				regulator-min-microvolt = <1605000>;
++				regulator-max-microvolt = <1995000>;
++				regulator-boot-on;
++				regulator-always-on;
++			};
++
++			buck6_reg: BUCK6 {
++				// BUCK8 in datasheet
++				regulator-name = "BUCK6";
++				regulator-min-microvolt = <800000>;
++				regulator-max-microvolt = <1400000>;
++				regulator-boot-on;
++				regulator-always-on;
++			};
++
++			ldo1_reg: LDO1 {
++				regulator-name = "LDO1";
++				regulator-min-microvolt = <3000000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-boot-on;
++				regulator-always-on;
++			};
++
++			ldo2_reg: LDO2 {
++				regulator-name = "LDO2";
++				regulator-min-microvolt = <900000>;
++				regulator-max-microvolt = <900000>;
++				regulator-boot-on;
++				regulator-always-on;
++			};
++
++			ldo3_reg: LDO3 {
++				regulator-name = "LDO3";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-boot-on;
++				regulator-always-on;
++			};
++
++			ldo4_reg: LDO4 {
++				regulator-name = "LDO4";
++				regulator-min-microvolt = <900000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-boot-on;
++				regulator-always-on;
++			};
++
++			ldo6_reg: LDO6 {
++				regulator-name = "LDO6";
++				regulator-min-microvolt = <900000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-boot-on;
++				regulator-always-on;
++			};
++		};
++	};
  };
  
-+&i2c1 {
-+	clock-frequency = <400000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c1>;
-+	status = "okay";
-+};
-+
  &snvs_pwrkey {
- 	status = "okay";
- };
 -- 
 2.7.4
 
