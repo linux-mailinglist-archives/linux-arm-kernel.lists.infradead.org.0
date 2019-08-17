@@ -2,90 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4548D91213
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 19:43:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E45059122F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 20:17:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fOK8CHlLiCMJZzZ5lauMB/VaXDq07O+Luwm7YlhnXP4=; b=eq/CzcJfNFCb/z
-	GN35hijumwOyTlA+657OJfrBiaz5S4BIVhsJPuShtw69YEG37XBxkeDsAjLaS3sh8+KYkri4fcTwJ
-	vyJL2YBk9Fn34J5J3nDH/FJGdhFUJ0ZT9+B/zt3L7ucHedXF/LrmivwZMASG4T12vSYFumSgpwCQb
-	moZz07/GL9X8FdQT4WG/61PVR3Uw4FNjvdRQkfAkeBOs77F0F0Hlet8jkchK8nXUeGRMEi3d9d69L
-	wREviPDYSCk2y1IMiEEc3IBBYnQCI980SM4ktJk7/5sTO6X+7aB/0qv6w9xplRzkSrjMpgzrZQQdA
-	Nu3EOZe0HCwNjwnwYG6w==;
+	List-Owner; bh=WO0W736luZNPmLhucZBgrYVZUDKYWQ2ZtJ+cvgkwPyE=; b=dWLAihSi4bVoDg
+	3BzuD1gZlDjAiP0KF9Geh0u1mE7y52cUX9v86B8RjuvF3lx5QavL0pHIUMsX54qK85zjFJn+KiLxE
+	jRtgaJ2hAP/e0JsMH09KAoTVYEBqdbw5F459aFVjG1vA248nQ7irSenZPKptJNJ0wOEkxls8VCPpc
+	EZbo3FDVU1Kv6aLGOfAZWvrbuG1Ds13+JHbk1mHTdGeMTzAMC4xGpX2EeIB3i06L6y6Ulmeygenn2
+	AOKDWpu8D9zOIZQZszgpNZpoGNK3/tdpdCJ7Nsap9xWs+y99FkP9mBqV2rD+Cf6GTYZyz8r2UBvz9
+	scZ0S8+Rh1tHlQ692m8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hz2jA-0001Ps-Cg; Sat, 17 Aug 2019 17:42:57 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hz3Gt-0003xm-NO; Sat, 17 Aug 2019 18:17:48 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hz2ih-0001PQ-Bp; Sat, 17 Aug 2019 17:42:29 +0000
-Received: by mail-wm1-x344.google.com with SMTP id i63so6560303wmg.4;
- Sat, 17 Aug 2019 10:42:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=8BvRZzNwicLE/z69UjSGTGXsbcr/fKjBl5Vh3tEDe5E=;
- b=j0hYbZ96LX4H5j/7zgd5rcfxEfejgdQ/b3Z3lITb1rDiOz+pmpdDHibAGDilR0flpI
- 0WqNSoZUHOM0zp94G6hvFGixz/r8qegZ8eMUsT+WoXpcJiqi3P/HYMZbec391bcLLqM9
- bvMHWcpEqu0+0B70ai/uKjLUnWIFNSIhPWSrM0arLx60w4/gS5VQTufbP721yWk1cEI7
- 3cQGfYIGFlwYld047aS3/5YgQ0HJXE/9xMaieEq8o8XWUq/6cJlFfDodQ49jDZ2OCNsX
- C58m58eoOHH5BDA7qJxepz2d+pWPrxIWG4UrUG+Ue/3DtZLfyVGoKFvWZm4ooYzwr8zA
- dEzQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=8BvRZzNwicLE/z69UjSGTGXsbcr/fKjBl5Vh3tEDe5E=;
- b=N59T7wkdQASUytejeB062Iyr+rMkrkc4IfskuwiRldcCzq1dSrPwHpGXTX8Z/CvRAe
- FLh+E4p8PoyMvLRFxpNZT7fZF1lF4cFNpjgbm1xgnPtrksVmJd5IxpkJP26bal0Bus8q
- bse7mCpmEiUEW6HhT/qznMIqqm8beq2fmVeH4SxhTF7vGK88yYoHb2XKlSI7KKjfoLj8
- C3CU+ZVq7+x3D6lXOJy5YApFs/P1CfMaW0gn3MNl6e2rTpCOj0mqcxOH73SRCXGmXrIP
- z/ccahcqXmonLzNowYUFukg1SP0PGRtVXjLYY74igY7dJGoUqT0+JhTunWjNJNvociiY
- MHnQ==
-X-Gm-Message-State: APjAAAVZC+qkMxrRXkmY+ktG5Jq64dh490fhz0/GCCFpexv1d0z9OvTa
- OTvLdAANUU+rW691dD/Aqlo=
-X-Google-Smtp-Source: APXvYqxv2eAKy6wC5/B6NqHIhQmJQf/sbwr5KaaeCSiu5f34DWh1zJuYU6TFxW662W79bfdW9CZ7MQ==
-X-Received: by 2002:a1c:a957:: with SMTP id s84mr12487811wme.65.1566063744693; 
- Sat, 17 Aug 2019 10:42:24 -0700 (PDT)
-Received: from localhost.localdomain ([92.59.185.54])
- by smtp.gmail.com with ESMTPSA id t8sm23681659wra.73.2019.08.17.10.42.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 17 Aug 2019 10:42:23 -0700 (PDT)
-From: Vicente Bergas <vicencb@gmail.com>
-To: Felipe Balbi <balbi@kernel.org>,
-	Robin Murphy <robin.murphy@arm.com>
-Subject: [PATCH] usb: dwc3: Add shutdown to platform_driver
-Date: Sat, 17 Aug 2019 19:41:40 +0200
-Message-Id: <20190817174140.6394-1-vicencb@gmail.com>
-X-Mailer: git-send-email 2.22.1
-In-Reply-To: <4d18d4f7-a00e-bd60-6361-51054eba3bca@arm.com>
-References: <4d18d4f7-a00e-bd60-6361-51054eba3bca@arm.com>
+ id 1hz3Ga-0003xM-RH
+ for linux-arm-kernel@lists.infradead.org; Sat, 17 Aug 2019 18:17:30 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1hz3GL-0002bG-LD; Sat, 17 Aug 2019 20:17:13 +0200
+Date: Sat, 17 Aug 2019 19:17:10 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Lubomir Rintel <lkundrak@v3.sk>
+Subject: Re: [PATCH 05/19] irqchip/mmp: do not use of_address_to_resource()
+ to get mux regs
+Message-ID: <20190817191710.539daa01@why>
+In-Reply-To: <e0c0cf62a1f087fd6c1d7307e5e2a65603148341.camel@v3.sk>
+References: <20190809093158.7969-1-lkundrak@v3.sk>
+ <20190809093158.7969-6-lkundrak@v3.sk>
+ <16d77ca3-7ad1-3af2-650e-722cf6a931ed@kernel.org>
+ <e0c0cf62a1f087fd6c1d7307e5e2a65603148341.camel@v3.sk>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: lkundrak@v3.sk, olof@lixom.net, robh+dt@kernel.org,
+ mark.rutland@arm.com, tglx@linutronix.de, jason@lakedaemon.net, kishon@ti.com,
+ linux@armlinux.org.uk, mturquette@baylibre.com, sboyd@kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, pavel@ucw.cz
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190817_104227_599581_0EA1FDA8 
-X-CRM114-Status: GOOD (  12.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190817_111729_029399_34836305 
+X-CRM114-Status: GOOD (  26.18  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vicencb[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,43 +72,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <mbrugger@suse.com>, Heiko Stuebner <heiko@sntech.de>,
- MarcZyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-usb@vger.kernel.org, Will Deacon <will.deacon@arm.com>,
- Vicente Bergas <vicencb@gmail.com>, linux-rockchip@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
+ linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Pavel Machek <pavel@ucw.cz>,
+ Olof Johansson <olof@lixom.net>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T3RoZXJ3aXNlIHRoZSBkZXZpY2Uga2VlcHMgd3JpdGluZyB0byBtZW1vcnkgYWZ0ZXIga2V4ZWMg
-YW5kIGRpc3R1cmJzCnRoZSBuZXh0IGtlcm5lbC4KClNpZ25lZC1vZmYtYnk6IFZpY2VudGUgQmVy
-Z2FzIDx2aWNlbmNiQGdtYWlsLmNvbT4KLS0tCiBkcml2ZXJzL3VzYi9kd2MzL2R3YzMtb2Ytc2lt
-cGxlLmMgfCA2ICsrKysrKwogMSBmaWxlIGNoYW5nZWQsIDYgaW5zZXJ0aW9ucygrKQoKSGkgRmVs
-aXBlLCBSb2JpbiwKdGhpcyB2ZXJzaW9uIGNhbGxzICdyZW1vdmUnIGZyb20gJ3NodXRkb3duJyBp
-bnN0ZWFkIG9mIGp1c3QgYXNzZXJ0aW5nCmEgcmVzZXQgYmVjYXVzZSBpdCBsb29rcyBsaWtlIGEg
-Y2xlYW5lciB3YXkgdG8gc3RvcCB0aGUgZGV2aWNlLgoKQ2FsbGluZyByZW1vdmUgZnJvbSBzaHV0
-ZG93biBpbiBjb3JlLmMgaW5zdGVhZCBvZiBkd2MzLW9mLXNpbXBsZS5jIGRvZXMgbm90CmZpeCB0
-aGUgaXNzdWUgZWl0aGVyLgoKSXQgaGFzIGJlZW4gdGVzdGVkIG9uIHRoZSBzYXBwaGlyZSBib2Fy
-ZCwgYSBSSzMzOTkgcGxhdGZvcm0uCgpSZWdhcmRzLAogIFZpY2Vuw6cuCgpkaWZmIC0tZ2l0IGEv
-ZHJpdmVycy91c2IvZHdjMy9kd2MzLW9mLXNpbXBsZS5jIGIvZHJpdmVycy91c2IvZHdjMy9kd2Mz
-LW9mLXNpbXBsZS5jCmluZGV4IGJkYWMzZTdkN2IxOC4uZDVmZDQ1YzY0OTAxIDEwMDY0NAotLS0g
-YS9kcml2ZXJzL3VzYi9kd2MzL2R3YzMtb2Ytc2ltcGxlLmMKKysrIGIvZHJpdmVycy91c2IvZHdj
-My9kd2MzLW9mLXNpbXBsZS5jCkBAIC0xMzMsNiArMTMzLDExIEBAIHN0YXRpYyBpbnQgZHdjM19v
-Zl9zaW1wbGVfcmVtb3ZlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCiAJcmV0dXJuIDA7
-CiB9CiAKK3N0YXRpYyB2b2lkIGR3YzNfb2Zfc2ltcGxlX3NodXRkb3duKHN0cnVjdCBwbGF0Zm9y
-bV9kZXZpY2UgKnBkZXYpCit7CisJZHdjM19vZl9zaW1wbGVfcmVtb3ZlKHBkZXYpOworfQorCiBz
-dGF0aWMgaW50IF9fbWF5YmVfdW51c2VkIGR3YzNfb2Zfc2ltcGxlX3J1bnRpbWVfc3VzcGVuZChz
-dHJ1Y3QgZGV2aWNlICpkZXYpCiB7CiAJc3RydWN0IGR3YzNfb2Zfc2ltcGxlCSpzaW1wbGUgPSBk
-ZXZfZ2V0X2RydmRhdGEoZGV2KTsKQEAgLTE5MCw2ICsxOTUsNyBAQCBNT0RVTEVfREVWSUNFX1RB
-QkxFKG9mLCBvZl9kd2MzX3NpbXBsZV9tYXRjaCk7CiBzdGF0aWMgc3RydWN0IHBsYXRmb3JtX2Ry
-aXZlciBkd2MzX29mX3NpbXBsZV9kcml2ZXIgPSB7CiAJLnByb2JlCQk9IGR3YzNfb2Zfc2ltcGxl
-X3Byb2JlLAogCS5yZW1vdmUJCT0gZHdjM19vZl9zaW1wbGVfcmVtb3ZlLAorCS5zaHV0ZG93bgk9
-IGR3YzNfb2Zfc2ltcGxlX3NodXRkb3duLAogCS5kcml2ZXIJCT0gewogCQkubmFtZQk9ICJkd2Mz
-LW9mLXNpbXBsZSIsCiAJCS5vZl9tYXRjaF90YWJsZSA9IG9mX2R3YzNfc2ltcGxlX21hdGNoLAot
-LSAKMi4yMi4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+On Fri, 16 Aug 2019 20:41:22 +0200
+Lubomir Rintel <lkundrak@v3.sk> wrote:
+
+> On Fri, 2019-08-09 at 13:12 +0100, Marc Zyngier wrote:
+> > On 09/08/2019 10:31, Lubomir Rintel wrote:  
+> > > The "regs" property of the "mrvl,mmp2-mux-intc" devices are silly. They
+> > > are offsets from intc's base, not addresses on the parent bus. At this
+> > > point it probably can't be fixed.
+> > > 
+> > > On an OLPC XO-1.75 machine, the muxes are children of the intc, not the
+> > > axi bus, and thus of_address_to_resource() won't work. We should treat
+> > > the values as mere integers as opposed to bus addresses.
+> > > 
+> > > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
+> > > Acked-by: Pavel Machek <pavel@ucw.cz>
+> > > 
+> > > ---
+> > >  drivers/irqchip/irq-mmp.c | 20 +++++++++++---------
+> > >  1 file changed, 11 insertions(+), 9 deletions(-)
+> > > 
+> > > diff --git a/drivers/irqchip/irq-mmp.c b/drivers/irqchip/irq-mmp.c
+> > > index 14618dc0bd396..af9cba4a51c2e 100644
+> > > --- a/drivers/irqchip/irq-mmp.c
+> > > +++ b/drivers/irqchip/irq-mmp.c
+> > > @@ -424,9 +424,9 @@ IRQCHIP_DECLARE(mmp2_intc, "mrvl,mmp2-intc", mmp2_of_init);
+> > >  static int __init mmp2_mux_of_init(struct device_node *node,
+> > >  				   struct device_node *parent)
+> > >  {
+> > > -	struct resource res;
+> > >  	int i, ret, irq, j = 0;
+> > >  	u32 nr_irqs, mfp_irq;
+> > > +	u32 reg[4];
+> > >  
+> > >  	if (!parent)
+> > >  		return -ENODEV;
+> > > @@ -438,18 +438,20 @@ static int __init mmp2_mux_of_init(struct device_node *node,
+> > >  		pr_err("Not found mrvl,intc-nr-irqs property\n");
+> > >  		return -EINVAL;
+> > >  	}
+> > > -	ret = of_address_to_resource(node, 0, &res);
+> > > +
+> > > +	/*
+> > > +	 * For historical reasonsm, the "regs" property of the
+> > > +	 * mrvl,mmp2-mux-intc is not a regular * "regs" property containing
+> > > +	 * addresses on the parent bus, but offsets from the intc's base.
+> > > +	 * That is why we can't use of_address_to_resource() here.
+> > > +	 */
+> > > +	ret = of_property_read_u32_array(node, "reg", reg, ARRAY_SIZE(reg));  
+> > 
+> > This will return 0 even if you've read less than your expected 4 u32s.
+> > You may want to try of_property_read_variable_u32_array instead.  
+> 
+> Will it? Unless I'm reading the of_property_read_u32_array()
+> documentation wrong, it suggests that would return -EOVERFLOW in that
+> case.
+
+You're appear to be right, and I read it wrong.
+
+> 
+> It ignores the extra values it the property is larger. I guess that is
+> not a good thing and we still want to use
+> of_property_read_variable_u32_array() though.
+
+It doesn't hurt to check for all possible problems, specially given
+that this machine doesn't appear to have a mainline DT (and its OF
+implementation looks a bit buggy).
+
+Thanks,
+
+	M.
+-- 
+Without deviation from the norm, progress is not possible.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
