@@ -2,54 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 188F690F7D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 10:30:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B129E9100F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 12:34:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KZ5jZ2tSdKjxWlM33x2pJK9rkkmBv++sQhkOwJ39h4w=; b=YfgoHx8/7WOw9g8bUHu7aalGj
-	DnD05Bq5e6bCBjublGKRlAiufMs/F5d5/R2wCziXLB60tOUYQuGN54r8IvCUkQgLP2ufa/1YmH9Bc
-	kuDvFvZqa49RwONZ+GxZaAI8vWUx0mInSURgZsIrFjwigLmEo/esiUz965TdLrrTZasS9Wd99nI7Y
-	TjENpYSIZLwxYMc991ViyuCOUymGDGp9P0vKQP93R4+4nL4zhqLyQq+7OtzkG3dUUQmlXlOxCGciy
-	62JFTor9GxR056m54JIdwwVTmXCL6BzWnuu44TafvM3ELuvLtigLfhK7WSJtFQ9+riyBGWPlo+DJU
-	6FyGNUqQw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=F2u0AtyO5I4nGC5NSKi2QjViuQYTtwFgyIXftQNlBuY=; b=dqcBf/PYnSUIwE
+	MljD3GBPCA9g03aD7rIVerSmh4ud2Vh0nMlaYy67TGq+IrKAphLlsrAqyXBrEIiFX6XaovKbRokhQ
+	v6Z59brPmKt/1KSDjtBLiuP8aRdZbDqUfxXrTPS24EQHbi40kun/D8Ev6qDryI6drtaxPb0GSGSPR
+	1ztytW7/Q+KLVPQKbvux/EVdzgb3KI0owDgspiJmkI62b/aoPVOdrEp4VENIJ0HsFcUi6nXHrGDDf
+	2BQ163+WdnCfcYCU+nuk3l72fC4q+wrVXvrAkvK6WxcbXsMsj6Tv3pRBDmr8JYRVtDTZbaZgzGbsB
+	kQV+38KLbtUm0IC838Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyu6h-0003gY-PJ; Sat, 17 Aug 2019 08:30:39 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hyu6O-0003fy-Oh; Sat, 17 Aug 2019 08:30:22 +0000
-Received: from localhost (p5486C5A7.dip0.t-ipconnect.de [84.134.197.167])
- by pokefinder.org (Postfix) with ESMTPSA id E68562C290E;
- Sat, 17 Aug 2019 10:30:16 +0200 (CEST)
-Date: Sat, 17 Aug 2019 10:30:16 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Stefan Wahren <wahrenst@gmx.net>
-Subject: Re: [PATCH V2 08/13] i2c: bcm2835: Avoid clk stretch quirk for BCM2711
-Message-ID: <20190817083016.GA1315@kunai>
-References: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
- <1565713248-4906-9-git-send-email-wahrenst@gmx.net>
- <20190814193628.GA9756@kunai>
- <bb924d04-b4a9-56c7-c7d5-31f3cc8c1da3@gmx.net>
+	id 1hyw2e-00045k-1L; Sat, 17 Aug 2019 10:34:36 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hyw2C-00044w-2m; Sat, 17 Aug 2019 10:34:09 +0000
+Received: by mail-wm1-x343.google.com with SMTP id g67so6023118wme.1;
+ Sat, 17 Aug 2019 03:34:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=39YvwnXSLPYPPS8HyY6xQ0pEYqQsaSVOcIZxY6QaSy0=;
+ b=HaU5j73Xl18SPfWIKR/l5s1id63iaB7lpk2eLE9Cv93RaSr0QygCeb8VtdrjK/DFoH
+ BzanBzeDzwH/CfWIayA254C8bK/pzQhAr1B+Cx1TRlWNSkT4XCzZLK+D58uxuJj/Z6c8
+ 1+jn+z+dU7Ewi0li9IwJ7jmFgqXABsf3p+TxQXzA7fHIgWlPmx739auC7j/bqLC+8NoU
+ C3XDYz8eetWLerWT9nDLSd3eyiPofE72zfZEgyCEmcNmd7KEx0oxertXb8lLCukZQpFv
+ 6wFercfLlPzs2ZP2Iysl6A4A+S9cPkEPkEAEiZMttS1pDBUiq7OyBBL/XEMk2UGfKSWg
+ tAUQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=39YvwnXSLPYPPS8HyY6xQ0pEYqQsaSVOcIZxY6QaSy0=;
+ b=q3yKc+hIhVMyfqrYr+CGNCCBqEUbiubZTi+XTypqrhTtXyeybVirp0Jn8lnBWCJBzq
+ QMc+zVbsXbJpkWZM3O8jWJHklbyJT78c5ewbwqjBtSpYmM6/CqYEiOY8x8HDFdIPEcgt
+ XQIid6s/BXQ8zMy9SQVV4y0IbC78avwKMCSZZotaxwVi6KOZ8WkHRgArI99IxTZ8EKFH
+ oYWL/n4LT9eHgB27/yihM/QdxWy5ge95lVX7kH1yTEBp9AT8Hdg/tv0endBQ8XZ162Rr
+ rdXfzPeOxWtO0/p41i7dnke/qHxKDz184u8Y+yUxOMZXEnDF5jcFL9QC8wTdOXR43W6G
+ Cu4w==
+X-Gm-Message-State: APjAAAU2/7iAXZCALd9CRxiDWOVHdkFoWwx9MBq/0s4+gxElEiVWqcfo
+ MNLJL/3x/GkDo1TB2A/8msA=
+X-Google-Smtp-Source: APXvYqx+skxBDSiX8lI2gwUVvrx6yD5s1jqeJ+6VF/JmtojW+ENXyX4cQUxihmaZEwvtXGQA8HaHqg==
+X-Received: by 2002:a1c:b342:: with SMTP id c63mr11130163wmf.84.1566038046300; 
+ Sat, 17 Aug 2019 03:34:06 -0700 (PDT)
+Received: from gmail.com (2E8B0CD5.catv.pool.telekom.hu. [46.139.12.213])
+ by smtp.gmail.com with ESMTPSA id 4sm14396946wro.78.2019.08.17.03.34.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 17 Aug 2019 03:34:05 -0700 (PDT)
+Date: Sat, 17 Aug 2019 12:34:02 +0200
+From: Ingo Molnar <mingo@kernel.org>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 12/26] x86: clean up ioremap
+Message-ID: <20190817103402.GA7602@gmail.com>
+References: <20190817073253.27819-1-hch@lst.de>
+ <20190817073253.27819-13-hch@lst.de>
 MIME-Version: 1.0
-In-Reply-To: <bb924d04-b4a9-56c7-c7d5-31f3cc8c1da3@gmx.net>
+Content-Disposition: inline
+In-Reply-To: <20190817073253.27819-13-hch@lst.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190817_013020_953215_33569F06 
-X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-CacheID: sfid-20190817_033408_151043_72E6345F 
+X-CRM114-Status: UNSURE (   8.12  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 3.5 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (3.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 3.1 FSL_HELO_FAKE          No description available.
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (mingo.kernel.org[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,73 +102,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Stephen Boyd <sboyd@kernel.org>, Ray Jui <rjui@broadcom.com>,
- Michael Turquette <mturquette@baylibre.com>, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-i2c@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2202619432611804165=="
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Guo Ren <guoren@kernel.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Vincent Chen <deanbo422@gmail.com>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
+ linux-mtd@lists.infradead.org, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
+ linux-parisc@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-alpha@vger.kernel.org, nios2-dev@lists.rocketboards.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2202619432611804165==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="SUOF0GtieIMvvwua"
-Content-Disposition: inline
+* Christoph Hellwig <hch@lst.de> wrote:
 
+> Use ioremap as the main implemented function, and defined
+> ioremap_nocache to it as a deprecated alias.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/x86/include/asm/io.h | 8 ++------
+>  arch/x86/mm/ioremap.c     | 8 ++++----
+>  arch/x86/mm/pageattr.c    | 4 ++--
+>  3 files changed, 8 insertions(+), 12 deletions(-)
 
---SUOF0GtieIMvvwua
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Acked-by: Ingo Molnar <mingo@kernel.org>
 
+Thanks,
 
-> quirks =3D (const struct i2c_adapter_quirks *)of_device_get_match_data(de=
-v);
->=20
-> would hit the line limit. Do you insists on the cast, because it's
-> actually not required?
-
-Not at all, I mixed sth up and forgot that of_device_get_match_data
-returns void*.
-
-
---SUOF0GtieIMvvwua
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1XuxQACgkQFA3kzBSg
-KbZqww/8Caf0okFY7IK0Ft6q6YcN2wNLlAFl3EYp1noT/64s7GDZE/wIPPL/xf2K
-wP3EXxEIlAqnI2b9dw+L5uF4UIKOJlMnH6xQC5mtm+xNWgyTzFG/10gb6vPMdVdY
-8PsXASQzotqQW6BZUVMFwyTusvu7X6JXrMJm+fO8VPMjfyd+RPIV7IWiKddz+jo2
-XV7FJWnnfWG2LU+EMpIyu2g3TzQAlZxEa6LZb4pkG1SG7Vi38g6Ne1vKxvHwRSFS
-MeyW9G81d3nidCBlif+xpHG28hSv9hkK013M5JD4guTaOUMAgDUdVn5ds7zkKw1x
-KsUeYmpH/UcCqrZ3vRFh5Fw4CqRZB+VydC5QOo7bDjUuWy+PgufGgNOe3pLYoH8f
-ztWK9Il+DEUnT73OV6r+55MiRHXm7NaecC36v1lNsZUT/aCZqnUS29vt/u28Etvz
-ESJxRIDLjoGSg8CGyW1/zqgHe0lCjZEZCpx0ou6VtjsDGLHrSfdqWHb5Nz5nQLg8
-osUepGUo4rZ8ucapKZrYA6LJ7TkwaIRdHLUQQzJLceTOaZXeXGvrGaTX8r1Tg8bA
-69FjU2hlqro5RNCJ9ECTsF8jXpQQ1EwXEJ8w7ck2OuZlkMSFq5TLIFcdLrNe31Xd
-ampw0Qtlja1zafuXEgRsiemWsfXoy+7kxW7tK7QNtPmitWp2Ruw=
-=Ip2v
------END PGP SIGNATURE-----
-
---SUOF0GtieIMvvwua--
-
-
---===============2202619432611804165==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+	Ingo
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2202619432611804165==--
-
