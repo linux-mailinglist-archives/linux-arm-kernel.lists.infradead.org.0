@@ -2,58 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 846A190B1B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 00:41:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A26090C3F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 04:47:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=flIYRzGmJ5pmQVBeNUwMrKXQfwmFYi6fsFblK/59rIw=; b=cJncHrTm3qs1fMOuBDS6C2Yra
-	bVhRDzDDsOsuwLSsTgWgx9sgl86Ctz6D1ZT3ipfZxEd9ZCz92SNVLM0jzvT7eymt4QAgrialm99l/
-	cggtfxixb/9oSCC/g05uZ0muDdZmJHEDz+lgIQw05X1pDymiz2a9Eaa6m1w7v8fj2pPy8AT6KwZkK
-	oTg8ONNjK6VRLtFe3YD4BCXn52q5VK0J7uIUF5aopMXks/STqdSb+cTy0X14TKgbXCNh7kOUxgpMl
-	K+V8CO34IspEdedlg5wkz/9t1aQGGuG0t6TOSby7ypASF+0rzS+YRYO5pM7VBvy8KubgIidbeLQMY
-	M6o7XLjKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EqOSPKkFVYD60AsMkV5AP+ARbAnyT2ugitMV4Rx1rH0=; b=W80iIOfnBaK915
+	WWKjeuXmdjdovUV8io4eD4XCsNJ4PPU033NnltFbcYrnueY5Gh8LeV0k0gIQkH/RGTVhhg22Geumu
+	W9UrBqq1aaiifD+QAdnPuDBhwLdxn29lrwHuVzrife54um2o6JN5I0i2sfEbOnMq7yhlZOl7kCL0B
+	6/AZuX5UZC64jlLjiIx1OGBlN4UBrrO0xcDl6nv8qEGvevDAc5pIhGVDMGaGxEFLLtBx3pGZcev4a
+	P/w6uwrFkxmPWEmqWBo5SrWN/xi2p4PHegGmjFmK8RLt9Tgdekt8iV+ko+uHIkA/kDtCFRtwcmqSY
+	OYjy/5mOl3tNHiGe2n2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyku5-0002df-Kc; Fri, 16 Aug 2019 22:41:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hyktt-0002cx-UI
- for linux-arm-kernel@lists.infradead.org; Fri, 16 Aug 2019 22:40:51 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 028F6344;
- Fri, 16 Aug 2019 15:40:46 -0700 (PDT)
-Received: from [10.37.12.84] (unknown [10.37.12.84])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A8B533F718;
- Fri, 16 Aug 2019 15:40:44 -0700 (PDT)
-Subject: Re: [Xen-devel] [PATCH 07/11] swiotlb-xen: provide a single
- page-coherent.h header
-To: Christoph Hellwig <hch@lst.de>,
- Stefano Stabellini <sstabellini@kernel.org>,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>
-References: <20190816130013.31154-1-hch@lst.de>
- <20190816130013.31154-8-hch@lst.de>
-From: Julien Grall <julien.grall@arm.com>
-Message-ID: <9a3261c6-5d92-cf6b-1ae8-3a8e8b5ef0d4@arm.com>
-Date: Fri, 16 Aug 2019 23:40:43 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hyok4-0002SR-Qd; Sat, 17 Aug 2019 02:46:56 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hyoji-0002PN-6I
+ for linux-arm-kernel@lists.infradead.org; Sat, 17 Aug 2019 02:46:36 +0000
+Received: by mail-qk1-x742.google.com with SMTP id r21so6395607qke.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 16 Aug 2019 19:46:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=p98dmgBDeDcssd4yKsWE/iQqs5p9wP/9+OXRV1ENewU=;
+ b=JDS9LlpV2ta9byDzMY6b9v39r4r4effVrLjzxfOMxfazK25Y7wTPyhsbXZ66QpIJUP
+ HcGNwuH3KpQVzNhgJ2NNBfm5jg8IhCzp+ffvV+Tc9K2hEPOrg0Kp0/28WE0CWLNhifxT
+ yoJeW3JhBjArtLdX6XkSvzvEyxm8fdUp9hiaD4zeWviKaDpetWIY4AdemrlQA3Z97re2
+ i/qBSDGjjETysQY9urMcD0rH1/EVNndFeiorcfXvA+yr7Dy6VTA65yXhPAXHqX6ip7iz
+ LKOgTkMRtHG5FVjALunMYIuDqiBZBonlVu3APly7gtxaYleUcH+TGcvRZwHxAAu/abCa
+ VPiA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=p98dmgBDeDcssd4yKsWE/iQqs5p9wP/9+OXRV1ENewU=;
+ b=sVluMrUnXd/t63RnhB+m6Y/CeQb2UqDwp71QMHnsK9omFVn5QJiuuvgFsNinoP8+w4
+ 8+HGNs7AiepNxSdDiCy9ZCiW/jTML/ABTmuDM8sw2vs3bZikaNy3K6gMUMBkq4PEuJCI
+ tXARNX/MNiP9rg5L6oWT1UgiTtL4tzIxCMEly1FEbh04brqgrAQoO25kmpOXyasT/aj3
+ QKlocaEHPJziJhkXl46G09lBM7dCGmDJ/1bQje+VzCDMrZzr4sQEzShIDC/dgggbj4rk
+ Npxbd0d+qIqf5CkF/x8qy7joZpsXY4U3ntQUKPzW8Xc/58VtG0Tpd85qIkrN3ROaQ/Bf
+ VUvw==
+X-Gm-Message-State: APjAAAXcGmYVrr41F3PzpDOQQj+ugXgP22Ijbg+ztpXhjKVEiF8HXE2i
+ mnjf2kv3WgW+swXdb71IWSqTWA==
+X-Google-Smtp-Source: APXvYqxk6U1QbP7pDBIw3UpMgdwmknnD6IQo5oeUJswdhs4UX5w4SKba4s8Bv/AQr8d6aSCLhUMxoA==
+X-Received: by 2002:ae9:e707:: with SMTP id m7mr11883927qka.50.1566009991502; 
+ Fri, 16 Aug 2019 19:46:31 -0700 (PDT)
+Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id o9sm3454657qtr.71.2019.08.16.19.46.30
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 16 Aug 2019 19:46:30 -0700 (PDT)
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ ebiederm@xmission.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org,
+ marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
+ matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org
+Subject: [PATCH v2 00/14] arm64: MMU enabled kexec relocation
+Date: Fri, 16 Aug 2019 22:46:15 -0400
+Message-Id: <20190817024629.26611-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.22.1
 MIME-Version: 1.0
-In-Reply-To: <20190816130013.31154-8-hch@lst.de>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_154050_019783_849D5723 
-X-CRM114-Status: GOOD (  15.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190816_194634_301785_54692976 
+X-CRM114-Status: GOOD (  10.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,44 +100,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: xen-devel@lists.xenproject.org, iommu@lists.linux-foundation.org,
- x86@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Changelog:
+v2:
+	- Fixed hibernate bug reported by James Morse
+	- Addressed comments from James Morse:
+	  * More incremental changes to trans_table
+	  * Removed TRANS_FORCEMAP
+	  * Added kexec reboot data for image with 380M in size.
 
-On 8/16/19 2:00 PM, Christoph Hellwig wrote:
-> Merge the various page-coherent.h files into a single one that either
-> provides prototypes or stubs depending on the need for cache
-> maintainance.
-> 
-> For extra benefits alo include <xen/page-coherent.h> in the file
-> actually implementing the interfaces provided.
-> 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->   arch/arm/include/asm/xen/page-coherent.h   |  2 --
->   arch/arm/xen/mm.c                          |  1 +
->   arch/arm64/include/asm/xen/page-coherent.h |  2 --
->   arch/x86/include/asm/xen/page-coherent.h   | 22 ------------------
->   drivers/xen/swiotlb-xen.c                  |  4 +---
->   include/Kbuild                             |  2 +-
->   include/xen/{arm => }/page-coherent.h      | 27 +++++++++++++++++++---
+Enable MMU during kexec relocation in order to improve reboot performance.
 
-I am not sure I agree with this rename. The implementation of the 
-helpers are very Arm specific as this is assuming Dom0 is 1:1 mapped.
+If kexec functionality is used for a fast system update, with a minimal
+downtime, the relocation of kernel + initramfs takes a significant portion
+of reboot.
 
-This was necessary due to the lack of IOMMU on Arm platforms back then.
-But this is now a pain to get rid of it on newer platform...
+The reason for slow relocation is because it is done without MMU, and thus
+not benefiting from D-Cache.
 
-Cheers,
+Performance data
+----------------
+For this experiment, the size of kernel plus initramfs is small, only 25M.
+If initramfs was larger, than the improvements would be greater, as time
+spent in relocation is proportional to the size of relocation.
+
+Previously:
+kernel shutdown	0.022131328s
+relocation	0.440510736s
+kernel startup	0.294706768s
+
+Relocation was taking: 58.2% of reboot time
+
+Now:
+kernel shutdown	0.032066576s
+relocation	0.022158152s
+kernel startup	0.296055880s
+
+Now: Relocation takes 6.3% of reboot time
+
+Total reboot is x2.16 times faster.
+
+With bigger userland (fitImage 380M), the reboot time is improved by 3.57s,
+and is reduced from 3.9s down to 0.33s
+
+Previous approaches and discussions
+-----------------------------------
+https://lore.kernel.org/lkml/20190801152439.11363-1-pasha.tatashin@soleen.com/
+version 1 of this series
+
+https://lore.kernel.org/lkml/20190709182014.16052-1-pasha.tatashin@soleen.com
+reserve space for kexec to avoid relocation, involves changes to generic code
+to optimize a problem that exists on arm64 only:
+
+https://lore.kernel.org/lkml/20190716165641.6990-1-pasha.tatashin@soleen.com
+The first attempt to enable MMU, some bugs that prevented performance
+improvement. The page tables unnecessary configured idmap for the whole
+physical space.
+
+https://lore.kernel.org/lkml/20190731153857.4045-1-pasha.tatashin@soleen.com
+No linear copy, bug with EL2 reboots.
+
+Pavel Tatashin (14):
+  kexec: quiet down kexec reboot
+  arm64, hibernate: create_safe_exec_page cleanup
+  arm64, hibernate: add trans_table public functions
+  arm64, hibernate: move page handling function to new trans_table.c
+  arm64, trans_table: make trans_table_map_page generic
+  arm64, trans_table: add trans_table_create_empty
+  arm64, trans_table: adjust trans_table_create_copy interface
+  arm64, trans_table: add PUD_SECT_RDONLY
+  arm64, trans_table: complete generalization of trans_tables
+  kexec: add machine_kexec_post_load()
+  arm64, kexec: move relocation function setup and clean up
+  arm64, kexec: add expandable argument to relocation function
+  arm64, kexec: configure transitional page table for kexec
+  arm64, kexec: enable MMU during kexec relocation
+
+ arch/arm64/Kconfig                     |   4 +
+ arch/arm64/include/asm/kexec.h         |  51 ++++-
+ arch/arm64/include/asm/pgtable-hwdef.h |   1 +
+ arch/arm64/include/asm/trans_table.h   |  64 ++++++
+ arch/arm64/kernel/asm-offsets.c        |  14 ++
+ arch/arm64/kernel/cpu-reset.S          |   4 +-
+ arch/arm64/kernel/cpu-reset.h          |   8 +-
+ arch/arm64/kernel/hibernate.c          | 261 ++++++-----------------
+ arch/arm64/kernel/machine_kexec.c      | 199 ++++++++++++++----
+ arch/arm64/kernel/relocate_kernel.S    | 196 +++++++++---------
+ arch/arm64/mm/Makefile                 |   1 +
+ arch/arm64/mm/trans_table.c            | 274 +++++++++++++++++++++++++
+ kernel/kexec.c                         |   4 +
+ kernel/kexec_core.c                    |   8 +-
+ kernel/kexec_file.c                    |   4 +
+ kernel/kexec_internal.h                |   2 +
+ 16 files changed, 755 insertions(+), 340 deletions(-)
+ create mode 100644 arch/arm64/include/asm/trans_table.h
+ create mode 100644 arch/arm64/mm/trans_table.c
 
 -- 
-Julien Grall
+2.22.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
