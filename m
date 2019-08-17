@@ -2,36 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 605FF90DC8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 09:35:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E38090DD8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 17 Aug 2019 09:37:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6l+6PeBnMgbbJC75t7A2nRGD1CwssB28y8yAvM3npZw=; b=TO7JVUlh4NiSAW
-	BqMD1bhJqQdyPh6UO2n/7CUgxiUfuMZ3kcG0i3mQqs700kQMnmdnOYFqyWk7OH/Z/qSWVFebKMyfo
-	UGYzg+UP6Tz5t8GmOXcg6xJrikJxHwfY+uQgCplYmW75Q88KQ5CdL5cGtKS2RsZ0g0NNNpBX5pB5t
-	QedmGdmJotCLy/n0R69KpqVdtMzZR9Jo+5UjROeo9xPbZA/mrjW8YK+k7ZXRYq71vKtFmFDbSSWT0
-	RwlF6uSJiVrlXqAo6N67BDe82UREysuVn/Siv2Y2Q8Sz+qFRNcnDezn1cv81StkACqWWFruMdnmy+
-	EF5FEsLojM4pMbYwT9RQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y0pJMWPj2C4j8T0NuMk1Qm036uPRt2wTKUaX5yoqN/E=; b=VAn71qeNdGku4C
+	OBAUQiBBJMIAnoAP5ZYcTI/dhGiGJGvR9nXJXVgHh0fBpjGkOsBz6XFigjnJ35b4lBfU8iEVFm5jc
+	CWoaNDOult4S0kCFxc7iMfjislbOTFYgC6cGvGO6iu2P2kXYbE6zTFu8rimNHfxTWuxOK+GuUF1vC
+	PMoCqUDW4PiubVvSBMYVsxOO5OGfE1UIDdsfDcWxU0anYq+RcdHzG11/Xp08dz7RKXwfnSihkJ+NM
+	oRrAZKOYB9WvZlb2OTOnuAISrlGbOGsWuSkd0fUAYRaYYFNEkHx2wuBQQYVwneD2n8HQdZqOOnzUD
+	uN00ZLKYJOPZ3PW2zFQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hytFG-0006CE-GN; Sat, 17 Aug 2019 07:35:26 +0000
+	id 1hytHL-0006vQ-JW; Sat, 17 Aug 2019 07:37:35 +0000
 Received: from 089144199030.atnat0008.highway.a1.net ([89.144.199.30]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hytEw-0005B4-6B; Sat, 17 Aug 2019 07:35:06 +0000
+ id 1hytH6-0006ut-0w; Sat, 17 Aug 2019 07:37:20 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Arnd Bergmann <arnd@arndb.de>, Guo Ren <guoren@kernel.org>,
  Michal Simek <monstr@monstr.eu>, Greentime Hu <green.hu@gmail.com>,
  Vincent Chen <deanbo422@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
  x86@kernel.org
-Subject: generic ioremap (and lots of cleanups)
-Date: Sat, 17 Aug 2019 09:32:27 +0200
-Message-Id: <20190817073253.27819-1-hch@lst.de>
+Subject: [PATCH 01/26] mtd/maps/pxa2xx: use ioremap_cache insted of
+ ioremap_cached
+Date: Sat, 17 Aug 2019 09:32:28 +0200
+Message-Id: <20190817073253.27819-2-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190817073253.27819-1-hch@lst.de>
+References: <20190817073253.27819-1-hch@lst.de>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -58,24 +61,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+pxa2xx-flash is the only user of ioremap_cached, which is an alias
+for ioremap_cache anyway.
 
-the last patches in this series add a generic ioremap implementation,
-and switch our 3 most recent and thus most tidy architeture ports over
-to use it.  With a little work and an additional arch hook or two the
-implementation should be able to eventually cover more than half of
-our ports.
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ drivers/mtd/maps/pxa2xx-flash.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-The patches before that clean up various lose ends in the ioremap
-and iounmap implementations.
+diff --git a/drivers/mtd/maps/pxa2xx-flash.c b/drivers/mtd/maps/pxa2xx-flash.c
+index cebb346877a9..7d96758a8f04 100644
+--- a/drivers/mtd/maps/pxa2xx-flash.c
++++ b/drivers/mtd/maps/pxa2xx-flash.c
+@@ -68,8 +68,7 @@ static int pxa2xx_flash_probe(struct platform_device *pdev)
+ 		       info->map.name);
+ 		return -ENOMEM;
+ 	}
+-	info->map.cached =
+-		ioremap_cached(info->map.phys, info->map.size);
++	info->map.cached = ioremap_cache(info->map.phys, info->map.size);
+ 	if (!info->map.cached)
+ 		printk(KERN_WARNING "Failed to ioremap cached %s\n",
+ 		       info->map.name);
+-- 
+2.20.1
 
-A git tree is also available here:
-
-    git://git.infradead.org/users/hch/misc.git generic-ioremap
-
-Gitweb:
-
-    http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/generic-ioremap
 
 _______________________________________________
 linux-arm-kernel mailing list
