@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D64F9139F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 00:49:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 720329139D
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 00:48:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=bJc/GklamKtfbIVbRsJoTMrLa2l4EMLQzxHbsSW6wSA=; b=c8pleI1PsUyc2mdBX91RWkHqi+
-	XkLQ5ThBATQKGjTJ0WHyfvPJAKlUw5EJQGDbd7jIEGegzvXrMmxiYXethAMl9qNWRmREJipxdQeBF
-	Vyn0kiDEWd4evw7ybKMv4jjInnpcQ27sao4NqxV20+Ye6oFW2DYyi4BIl6DPCgBQtY2n0kjhSLIaI
-	kxValH93skjkQodR4GyMo4C3xXohU49a7wxBDmnXIAw4MqXI4rqH2qDQkqorsc1Xb9yY2X8e8kQ7I
-	e4E7/fsMQPOsmLArpHgqNQecgQo+tdjv//BdldM5QHVQbHluJLMyOKMoUd7NQSit7ipjFXH74DqCx
-	i3CUbDnA==;
+	bh=bEUEyW/VuItfp8HitpoZscCdcq0rUpJWQquQJDHahi4=; b=hlekfCd5VGQD+EQirPVsB0CRgX
+	URQoIRs2650tcLJLZn44ps2JDFLOZFaP5GBFQb6y3CJ1k9Y6VLNsKeN8H/76IhoPRfLpLpLItghJB
+	tBsnkztkrcqkjptKxCJiOX4vsm+jA93cTfwCwZcBinM0gP0UEAf1uww4O6hSp5GmhTFHf92T918tS
+	dQ9HjkWkdJg2U/JOTw877zFkW8CbLFtvWQCV9DGmry0ZHL35lDsVCEdOzcGWCsPHOiT+M14kcq7lj
+	OUovI+P7tVshvzHHQTMolRbdp6EU8iJgCbi1qCQc8PIN0XfowR2uAkZ3yeHWUvZKZ8XVDvuUOzv8s
+	FFUcgbdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hz7VT-0000Tb-D3; Sat, 17 Aug 2019 22:49:07 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hz7Ut-0008Sg-TS; Sat, 17 Aug 2019 22:48:31 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hz7TV-0007uC-LL
+ id 1hz7TV-0007uf-0x
  for linux-arm-kernel@lists.infradead.org; Sat, 17 Aug 2019 22:47:07 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B6DB82000C7;
- Sun, 18 Aug 2019 00:47:01 +0200 (CEST)
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B7B131A026D;
+ Sun, 18 Aug 2019 00:47:03 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D02ED20010A;
- Sun, 18 Aug 2019 00:46:53 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D36DE1A067F;
+ Sun, 18 Aug 2019 00:46:55 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 75280402E5;
- Sun, 18 Aug 2019 06:46:44 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 0F1D140318;
+ Sun, 18 Aug 2019 06:46:45 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -43,16 +43,17 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
  linux-pm@vger.kernel.org
-Subject: [PATCH V2 4/6] cpufreq: imx-cpufreq-dt: Add i.MX8MN support
-Date: Sat, 17 Aug 2019 18:28:18 -0400
-Message-Id: <1566080900-2539-4-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 5/6] clk: imx8mn: Improve ARM PLL table to support CPU
+ frequency scaling
+Date: Sat, 17 Aug 2019 18:28:19 -0400
+Message-Id: <1566080900-2539-5-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1566080900-2539-1-git-send-email-Anson.Huang@nxp.com>
 References: <1566080900-2539-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190817_154705_835314_9B325BD6 
-X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-CacheID: sfid-20190817_154705_201043_4CB27C28 
+X-CRM114-Status: UNSURE (   7.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -60,7 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,60 +82,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX8MN has different speed grading definition as below, it has 4 bits
-to define speed grading, add support for it.
-
- SPEED_GRADE[3:0]    MHz
-    0000            2300
-    0001            2200
-    0010            2100
-    0011            2000
-    0100            1900
-    0101            1800
-    0110            1700
-    0111            1600
-    1000            1500
-    1001            1400
-    1010            1300
-    1011            1200
-    1100            1100
-    1101            1000
-    1110             900
-    1111             800
+i.MX8MN supports CPU running at 1.5GHz/1.4GHz/1.2GHz, add missing
+frequency for ARM PLL table, also add .rate_count assignment which
+is necessary for searching required PLL rate from the table.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-No changes.
+Changes since V1:
+	- Improve commit log, no code change.
 ---
- drivers/cpufreq/imx-cpufreq-dt.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ drivers/clk/imx/clk-imx8mn.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
-index 4f85f31..35db14c 100644
---- a/drivers/cpufreq/imx-cpufreq-dt.c
-+++ b/drivers/cpufreq/imx-cpufreq-dt.c
-@@ -16,6 +16,7 @@
+diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
+index ecd1062..3f1239a 100644
+--- a/drivers/clk/imx/clk-imx8mn.c
++++ b/drivers/clk/imx/clk-imx8mn.c
+@@ -42,6 +42,8 @@ enum {
+ static const struct imx_pll14xx_rate_table imx8mn_pll1416x_tbl[] = {
+ 	PLL_1416X_RATE(1800000000U, 225, 3, 0),
+ 	PLL_1416X_RATE(1600000000U, 200, 3, 0),
++	PLL_1416X_RATE(1500000000U, 375, 3, 1),
++	PLL_1416X_RATE(1400000000U, 350, 3, 1),
+ 	PLL_1416X_RATE(1200000000U, 300, 3, 1),
+ 	PLL_1416X_RATE(1000000000U, 250, 3, 1),
+ 	PLL_1416X_RATE(800000000U,  200, 3, 1),
+@@ -82,6 +84,7 @@ static struct imx_pll14xx_clk imx8mn_dram_pll = {
+ static struct imx_pll14xx_clk imx8mn_arm_pll = {
+ 		.type = PLL_1416X,
+ 		.rate_table = imx8mn_pll1416x_tbl,
++		.rate_count = ARRAY_SIZE(imx8mn_pll1416x_tbl),
+ };
  
- #define OCOTP_CFG3_SPEED_GRADE_SHIFT	8
- #define OCOTP_CFG3_SPEED_GRADE_MASK	(0x3 << 8)
-+#define IMX8MN_OCOTP_CFG3_SPEED_GRADE_MASK	(0xf << 8)
- #define OCOTP_CFG3_MKT_SEGMENT_SHIFT    6
- #define OCOTP_CFG3_MKT_SEGMENT_MASK     (0x3 << 6)
- 
-@@ -34,7 +35,12 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
--	speed_grade = (cell_value & OCOTP_CFG3_SPEED_GRADE_MASK) >> OCOTP_CFG3_SPEED_GRADE_SHIFT;
-+	if (of_machine_is_compatible("fsl,imx8mn"))
-+		speed_grade = (cell_value & IMX8MN_OCOTP_CFG3_SPEED_GRADE_MASK)
-+			      >> OCOTP_CFG3_SPEED_GRADE_SHIFT;
-+	else
-+		speed_grade = (cell_value & OCOTP_CFG3_SPEED_GRADE_MASK)
-+			      >> OCOTP_CFG3_SPEED_GRADE_SHIFT;
- 	mkt_segment = (cell_value & OCOTP_CFG3_MKT_SEGMENT_MASK) >> OCOTP_CFG3_MKT_SEGMENT_SHIFT;
- 
- 	/*
+ static struct imx_pll14xx_clk imx8mn_gpu_pll = {
 -- 
 2.7.4
 
