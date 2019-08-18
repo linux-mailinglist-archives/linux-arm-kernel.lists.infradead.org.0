@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4DC191542
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 08:53:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5966891544
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 08:53:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DtjYwK+aZQdoXBZLHle5Xcy3hanV4Os+Yu0On0okHVs=; b=t4pB/zfH8C57w89yNoY5CBsPPc
-	s2X8Oh96Ae37rku+S/rF9t4Gf4p/DDFFivvb6REaXBvZ55YnrH/eGki1ClDH8EU5svDTf993CtZxE
-	Pdrmkk6lYdCqik8awY1xY+eaq9/I2fXCxwSHWziLsA/x461BVEyfJzynPg3u7dHxib8Php3z4Z8ZT
-	7Jn8vVQiLBp4v2p/VhNUoOut8pLeLR47HBvALFB6N19CAtDglCAVYs1wmvCneetsiM6qWmNIOmJ04
-	3vs3+cTwFYsz7nLGxziijRXgE8JUSmXdm+a9s+TiPNbpkOXeWvB3t15QrIUsS43v7LomHyod7Sb61
-	d787lWDA==;
+	bh=jbf2JP6dwN5UywjV507wkzMRRnrLs7TTDu41oUhRqmw=; b=oINDlkGiW/XLkpPKdmNHVFyQyQ
+	YcHDGCdrPgHzCY05WvvtPoQYZs3rEzESmkVtDYWEOxEtuhIuAUtZ0McCOA7QtpoRVu9LDsdoZYlOJ
+	F1zzGl4zEVf81v+j1/lbUmoTuccfjGEQKvwupIBUUzDSgO03dU2ekkUWaMK1bu0YDHnekL4THlzvV
+	MaOzqjdxPpE8L5nBrIw7OCne+FIxKGt7LuAM0gL+vmsY6qeKykHuPPPjJpDOhaxm3xSMOlygsSs8/
+	+4zCQORXIxXlhtb8pozzj9RgwXDjji8n+pH68KtkTN3tNQMZW99W2ebBQQjDhTx1wzeQe18rAeGD6
+	3/5JKGYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzF3s-0003E4-GY; Sun, 18 Aug 2019 06:53:08 +0000
+	id 1hzF49-0003SJ-Sh; Sun, 18 Aug 2019 06:53:26 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzF1y-0001ka-Kl
- for linux-arm-kernel@lists.infradead.org; Sun, 18 Aug 2019 06:51:11 +0000
+ id 1hzF20-0001lp-L2
+ for linux-arm-kernel@lists.infradead.org; Sun, 18 Aug 2019 06:51:14 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 69795200003;
- Sun, 18 Aug 2019 08:51:09 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6666D20070E;
+ Sun, 18 Aug 2019 08:51:11 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 84A28200710;
- Sun, 18 Aug 2019 08:51:01 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8132B200133;
+ Sun, 18 Aug 2019 08:51:03 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 222064031E;
- Sun, 18 Aug 2019 14:50:52 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B921040314;
+ Sun, 18 Aug 2019 14:50:53 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -43,17 +43,16 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
  linux-pm@vger.kernel.org
-Subject: [PATCH RESEND V2 6/7] clk: imx8mn: Add necessary frequency support
- for ARM PLL table
-Date: Sun, 18 Aug 2019 02:32:24 -0400
-Message-Id: <1566109945-11149-6-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH RESEND V2 7/7] arm64: dts: imx8mn: Add cpu-freq support
+Date: Sun, 18 Aug 2019 02:32:25 -0400
+Message-Id: <1566109945-11149-7-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1566109945-11149-1-git-send-email-Anson.Huang@nxp.com>
 References: <1566109945-11149-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190817_235110_819930_40616A31 
-X-CRM114-Status: UNSURE (   7.75  )
+X-CRM114-CacheID: sfid-20190817_235113_097807_26EB74C3 
+X-CRM114-Status: UNSURE (   8.03  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -82,31 +81,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX8MN supports CPU running at 1.5GHz/1.4GHz/1.2GHz, add missing
-frequency for ARM PLL table.
+Add A53 OPP table, cpu regulator and speed grading node to
+support cpu-freq driver.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-Changes since V1:
-         - split the patch into 2 patches, #1 fixed those missing .rate_count assignment,
-           #2 add missing frequency points.
+No changes.
 ---
- drivers/clk/imx/clk-imx8mn.c | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts |  4 +++
+ arch/arm64/boot/dts/freescale/imx8mn.dtsi         | 41 +++++++++++++++++++++++
+ 2 files changed, 45 insertions(+)
 
-diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-index b5a027c..48884f9 100644
---- a/drivers/clk/imx/clk-imx8mn.c
-+++ b/drivers/clk/imx/clk-imx8mn.c
-@@ -42,6 +42,8 @@ enum {
- static const struct imx_pll14xx_rate_table imx8mn_pll1416x_tbl[] = {
- 	PLL_1416X_RATE(1800000000U, 225, 3, 0),
- 	PLL_1416X_RATE(1600000000U, 200, 3, 0),
-+	PLL_1416X_RATE(1500000000U, 375, 3, 1),
-+	PLL_1416X_RATE(1400000000U, 350, 3, 1),
- 	PLL_1416X_RATE(1200000000U, 300, 3, 1),
- 	PLL_1416X_RATE(1000000000U, 250, 3, 1),
- 	PLL_1416X_RATE(800000000U,  200, 3, 1),
+diff --git a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
+index 10ebf77..11c705d 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
+@@ -27,6 +27,10 @@
+ 	};
+ };
+ 
++&A53_0 {
++	cpu-supply = <&buck2_reg>;
++};
++
+ &iomuxc {
+ 	pinctrl-names = "default";
+ 
+diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+index 1d8899b..785f4c4 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+@@ -51,6 +51,9 @@
+ 			clocks = <&clk IMX8MN_CLK_ARM>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&A53_L2>;
++			operating-points-v2 = <&a53_opp_table>;
++			nvmem-cells = <&cpu_speed_grade>;
++			nvmem-cell-names = "speed_grade";
+ 		};
+ 
+ 		A53_1: cpu@1 {
+@@ -61,6 +64,7 @@
+ 			clocks = <&clk IMX8MN_CLK_ARM>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&A53_L2>;
++			operating-points-v2 = <&a53_opp_table>;
+ 		};
+ 
+ 		A53_2: cpu@2 {
+@@ -71,6 +75,7 @@
+ 			clocks = <&clk IMX8MN_CLK_ARM>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&A53_L2>;
++			operating-points-v2 = <&a53_opp_table>;
+ 		};
+ 
+ 		A53_3: cpu@3 {
+@@ -81,6 +86,7 @@
+ 			clocks = <&clk IMX8MN_CLK_ARM>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&A53_L2>;
++			operating-points-v2 = <&a53_opp_table>;
+ 		};
+ 
+ 		A53_L2: l2-cache0 {
+@@ -88,6 +94,35 @@
+ 		};
+ 	};
+ 
++	a53_opp_table: opp-table {
++		compatible = "operating-points-v2";
++		opp-shared;
++
++		opp-1200000000 {
++			opp-hz = /bits/ 64 <1200000000>;
++			opp-microvolt = <850000>;
++			opp-supported-hw = <0xb00>, <0x7>;
++			clock-latency-ns = <150000>;
++			opp-suspend;
++		};
++
++		opp-1400000000 {
++			opp-hz = /bits/ 64 <1400000000>;
++			opp-microvolt = <950000>;
++			opp-supported-hw = <0x300>, <0x7>;
++			clock-latency-ns = <150000>;
++			opp-suspend;
++		};
++
++		opp-1500000000 {
++			opp-hz = /bits/ 64 <1500000000>;
++			opp-microvolt = <1000000>;
++			opp-supported-hw = <0x100>, <0x3>;
++			clock-latency-ns = <150000>;
++			opp-suspend;
++		};
++	};
++
+ 	memory@40000000 {
+ 		device_type = "memory";
+ 		reg = <0x0 0x40000000 0 0x80000000>;
+@@ -288,6 +323,12 @@
+ 				compatible = "fsl,imx8mn-ocotp", "fsl,imx7d-ocotp", "syscon";
+ 				reg = <0x30350000 0x10000>;
+ 				clocks = <&clk IMX8MN_CLK_OCOTP_ROOT>;
++				#address-cells = <1>;
++				#size-cells = <1>;
++
++				cpu_speed_grade: speed-grade@10 {
++					reg = <0x10 4>;
++				};
+ 			};
+ 
+ 			anatop: anatop@30360000 {
 -- 
 2.7.4
 
