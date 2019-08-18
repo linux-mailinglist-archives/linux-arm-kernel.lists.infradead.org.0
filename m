@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D719B917A6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 18:08:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0C28917A8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 18:09:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,49 +11,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=jpD4/GOwNhTFKH87ydt5QYW3Oscn9QamNMA5A8BRdIc=; b=siv4sXZj+LVxjdK64lZJfpUo0O
-	QU1rAazG+63uXwxF20J+TgUzRwnqVbnvJ796LkO1LF8hywTetI71IHpemv0tr7I8Sa78KzXYaMudI
-	p0hTQnBxOc0rZCU4voNTyZnFMw2hXebVknET278aQL/XbqnoTOWgNYKC1knCNJBDIuQIyOHPhoy1l
-	D8chtR/wTqfazViJA/ypCkOdD11uf9V7oo+SolvORg4mwA7ulP/TLuk0YQw0wrfHdk2wHYwKGGauR
-	VhtcKAMF8XDugji618DiAO3hbkDUEHn6zJyHhIa8MNS+W6fXUCnTzChzPa1ivmgd4qGIlrJ1XG+KK
-	sbQPiL7g==;
+	bh=URLIK/n3eSsulGyaz3dpcBf0HrPHXv42Qzr9pyaEbeQ=; b=R13zR51Nbdao5PI+6HWqVKJ8uU
+	jUYRUL60hOhzcZWVu2Ju+rbCnOXVemcciR7Fmf8ldzfdHdV/RQFmfPaDDYfBFATbct5or1iDKGTHu
+	8rVqG5hUclviV7mfppY/QrRu5iYgVaIkX56CbKImo2VFSH095GzwgDXffEqfS28RvwfsNbxoj6/zJ
+	jWbfMngqg0E205blKCYaB9qYmjTPOD9bRb8rGHzw6pTF9tDbII4kfeknbX5n9hNIpGFOQwYmmNfwN
+	uPG1BBCtsJVDjL53DcEdK2AdDys8DJOCJfv31HrpCTVeeM33Bm8W4o3mfEPv68VYiFszyedTNztJ/
+	wEvyjq9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzNjD-0006cu-Ju; Sun, 18 Aug 2019 16:08:23 +0000
-Received: from mxwww.masterlogin.de ([2a03:2900:1:1::b])
+	id 1hzNjm-00073h-BH; Sun, 18 Aug 2019 16:08:58 +0000
+Received: from mxwww.masterlogin.de ([95.129.51.220])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzNj1-0006bU-Ko
+ id 1hzNj1-0006bV-Q8
  for linux-arm-kernel@lists.infradead.org; Sun, 18 Aug 2019 16:08:13 +0000
 Received: from mxout1.routing.net (unknown [192.168.10.81])
- by new.mxwww.masterlogin.de (Postfix) with ESMTPS id 865FA96DC6;
- Sun, 18 Aug 2019 16:08:09 +0000 (UTC)
+ by new.mxwww.masterlogin.de (Postfix) with ESMTPS id 1D01E96DF3;
+ Sun, 18 Aug 2019 16:08:10 +0000 (UTC)
 Received: from mxbox2.masterlogin.de (unknown [192.168.10.253])
- by mxout1.routing.net (Postfix) with ESMTP id E187940992;
- Sun, 18 Aug 2019 16:08:09 +0000 (UTC)
+ by mxout1.routing.net (Postfix) with ESMTP id 7CB3440992;
+ Sun, 18 Aug 2019 16:08:10 +0000 (UTC)
 Received: from localhost.localdomain (fttx-pool-185.53.43.183.bambit.de
  [185.53.43.183])
- by mxbox2.masterlogin.de (Postfix) with ESMTPSA id 41B151002F9;
- Sun, 18 Aug 2019 18:08:07 +0200 (CEST)
+ by mxbox2.masterlogin.de (Postfix) with ESMTPSA id EAF65100CB0;
+ Sun, 18 Aug 2019 18:08:09 +0200 (CEST)
 From: Frank Wunderlich <frank-w@public-files.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v6 01/13] dt-bindings: mfd: mediatek: mt6397: change to
- relative paths
-Date: Sun, 18 Aug 2019 18:07:45 +0200
-Message-Id: <20190818160757.8206-2-frank-w@public-files.de>
+Subject: [PATCH v6 02/13] dt-bindings: mfd: mediatek: update rtc to include
+ mt6323
+Date: Sun, 18 Aug 2019 18:07:46 +0200
+Message-Id: <20190818160757.8206-3-frank-w@public-files.de>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190818160757.8206-1-frank-w@public-files.de>
 References: <20190818160757.8206-1-frank-w@public-files.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190818_090811_826831_DC3FDAFC 
-X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-CacheID: sfid-20190818_090811_993374_2D767709 
+X-CRM114-Status: UNSURE (   7.07  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.0 (--)
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.0 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a03:2900:1:1:0:0:0:b listed in] [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [95.129.51.220 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -69,63 +69,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Frank Wunderlich <frank-w@public-files.de>
+Cc: Josef Friedl <josef.friedl@speed.at>,
+ Frank Wunderlich <frank-w@public-files.de>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-paths in dt-bindings should be relative as suggested by Lee Johnes
+From: Josef Friedl <josef.friedl@speed.at>
 
-Suggested-By: Lee Jones <lee.jones@linaro.org>
+add mt6323 to rtc-bindings
+
+Signed-off-by: Josef Friedl <josef.friedl@speed.at>
 Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
 ---
-changes since v5: splitted from dt-bindings: add powercontroller
+changes since v5: splitted from "dt-bindings: add powercontroller"
 ---
- Documentation/devicetree/bindings/mfd/mt6397.txt | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ Documentation/devicetree/bindings/mfd/mt6397.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/Documentation/devicetree/bindings/mfd/mt6397.txt b/Documentation/devicetree/bindings/mfd/mt6397.txt
-index 0ebd08af777d..ab3163a60929 100644
+index ab3163a60929..5fccf987865b 100644
 --- a/Documentation/devicetree/bindings/mfd/mt6397.txt
 +++ b/Documentation/devicetree/bindings/mfd/mt6397.txt
-@@ -12,7 +12,7 @@ MT6397/MT6323 is a multifunction device with the following sub modules:
- It is interfaced to host controller using SPI interface by a proprietary hardware
- called PMIC wrapper or pwrap. MT6397/MT6323 MFD is a child device of pwrap.
- See the following for pwarp node definitions:
--Documentation/devicetree/bindings/soc/mediatek/pwrap.txt
-+../soc/mediatek/pwrap.txt
+@@ -22,8 +22,10 @@ compatible: "mediatek,mt6397" or "mediatek,mt6323"
+ Optional subnodes:
  
- This document describes the binding for MFD device and its sub module.
- 
-@@ -27,9 +27,9 @@ Optional subnodes:
+ - rtc
+-	Required properties:
++	Required properties: Should be one of follows
++		- compatible: "mediatek,mt6323-rtc"
+ 		- compatible: "mediatek,mt6397-rtc"
++	For details, see ../rtc/rtc-mt6397.txt
  - regulators
  	Required properties:
  		- compatible: "mediatek,mt6397-regulator"
--	see Documentation/devicetree/bindings/regulator/mt6397-regulator.txt
-+	see ../regulator/mt6397-regulator.txt
- 		- compatible: "mediatek,mt6323-regulator"
--	see Documentation/devicetree/bindings/regulator/mt6323-regulator.txt
-+	see ../regulator/mt6323-regulator.txt
- - codec
- 	Required properties:
- 		- compatible: "mediatek,mt6397-codec"
-@@ -39,12 +39,12 @@ Optional subnodes:
- - led
- 	Required properties:
- 		- compatible: "mediatek,mt6323-led"
--	see Documentation/devicetree/bindings/leds/leds-mt6323.txt
-+	see ../leds/leds-mt6323.txt
- 
- - keys
- 	Required properties:
- 		- compatible: "mediatek,mt6397-keys" or "mediatek,mt6323-keys"
--	see Documentation/devicetree/bindings/input/mtk-pmic-keys.txt
-+	see ../input/mtk-pmic-keys.txt
- 
- Example:
- 	pwrap: pwrap@1000f000 {
 -- 
 2.17.1
 
