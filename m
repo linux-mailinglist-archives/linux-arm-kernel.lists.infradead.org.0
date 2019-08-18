@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F885916E2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 15:57:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9FF9916E4
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 15:58:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,47 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=D9xa7YXdUxg/IAka3BWAfUd0bf5FZ8SaaAbs6AVs30c=; b=llylCkoebjd0r2aj8w+9WAHMR0
-	dNBQ1kq0p+YddNiuCiiYjOMctIpFlV+03XmH5lKQxp/Pqxx3rgXBMUsJLOLHFLWXdV9+SlDSwsbjY
-	hbsGjSjOxk3UziGBxY/Nyrsw0LHv5RhBYBENnGUIlmbt2XUnfoBp49pA5PPQdYFD8KA4k+wy82EC7
-	Ry5y54OrqJgYHz8Z/51sjxTF+dELI2Lata1kA31Ne2PUI6OD68KwbTz8r9ww6SOBO5FHz+eP8VcWG
-	awsibmaym3a3gkUgtwX4QiroHGmYlBgRBem0xI8CZoucnBKuT12aW4ydvUm8N76t2TAv7Yhn4jElZ
-	pfS7SOTw==;
+	bh=e79gargIzZP4sCtduOkRlZri82D9uAe61pZIMvsNw5g=; b=QOAN1hc0Enpd5n+3PW2x96DoOY
+	Kg5PX3bNljpOsfawzTnocjUfqMhuc1NWrI6cxVwvY+H0BrYD9k42WQMOoM8Wasz+nZqtt/NnXzXTH
+	rqeaRX0aWq94Ctj1zaCUCVChF6P0K5Rz/wg4yJ+3zZJzqNcabezuOxFQOeaC3wu6LnhePU0HcChKI
+	7wKBKn0PrxudwzSdoR87QNd3VEdh2KmhgYWgEth7oD3Kl1goEAMhM+e/Mh89kE5hqvv8aef0IcEQH
+	DzN3vtcGkGNxmLDUVSAPj0oJR+bfTLCzVOSwecv0enKQyE7qcBHdJvJoG1oxRkSqsMLY1lNktT4ax
+	Q7O/WwpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzLgX-0006Te-P8; Sun, 18 Aug 2019 13:57:29 +0000
-Received: from mxwww.masterlogin.de ([2a03:2900:1:1::b])
+	id 1hzLh8-0006ye-86; Sun, 18 Aug 2019 13:58:06 +0000
+Received: from mxwww.masterlogin.de ([95.129.51.220])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzLfb-0005wN-TN; Sun, 18 Aug 2019 13:56:33 +0000
+ id 1hzLfa-0005wO-Q4; Sun, 18 Aug 2019 13:56:33 +0000
 Received: from mxout2.routing.net (unknown [192.168.10.82])
- by new.mxwww.masterlogin.de (Postfix) with ESMTPS id 2897096DF2;
+ by new.mxwww.masterlogin.de (Postfix) with ESMTPS id D27A496DF7;
  Sun, 18 Aug 2019 13:56:25 +0000 (UTC)
 Received: from mxbox3.masterlogin.de (unknown [192.168.10.253])
- by mxout2.routing.net (Postfix) with ESMTP id 738156207B;
- Sun, 18 Aug 2019 13:56:25 +0000 (UTC)
+ by mxout2.routing.net (Postfix) with ESMTP id 333C96207B;
+ Sun, 18 Aug 2019 13:56:26 +0000 (UTC)
 Received: from localhost.localdomain (fttx-pool-185.53.43.183.bambit.de
  [185.53.43.183])
- by mxbox3.masterlogin.de (Postfix) with ESMTPSA id AA8F336008B;
- Sun, 18 Aug 2019 15:56:24 +0200 (CEST)
+ by mxbox3.masterlogin.de (Postfix) with ESMTPSA id 6C84136043A;
+ Sun, 18 Aug 2019 15:56:25 +0200 (CEST)
 From: Frank Wunderlich <frank-w@public-files.de>
 To: linux-mediatek@lists.infradead.org
-Subject: [PATCH v6 03/13] dt-bindings: mfd: mediatek: add mt6323
- power-controller
-Date: Sun, 18 Aug 2019 15:56:01 +0200
-Message-Id: <20190818135611.7776-4-frank-w@public-files.de>
+Subject: [PATCH v6 04/13] dt-bindings: rtc: mediatek: add missing mt6397 rtc
+Date: Sun, 18 Aug 2019 15:56:02 +0200
+Message-Id: <20190818135611.7776-5-frank-w@public-files.de>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190818135611.7776-1-frank-w@public-files.de>
 References: <20190818135611.7776-1-frank-w@public-files.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190818_065632_254308_BEAF820D 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: -2.0 (--)
+X-CRM114-CacheID: sfid-20190818_065630_992738_A25401F1 
+X-CRM114-Status: GOOD (  10.93  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.0 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a03:2900:1:1:0:0:0:b listed in] [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [95.129.51.220 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -86,62 +85,45 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Josef Friedl <josef.friedl@speed.at>
 
-- add powercontroller-section to existing binding-document
-- add mt6323-pwrc bindings-document with example
+add missing devicetree-binding document for mt6397 rtc
+in later patch driver is extended with mt6323 chip
 
-Suggested-by: Frank Wunderlich <frank-w@public-files.de>
+Suggested-By: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Signed-off-by: Josef Friedl <josef.friedl@speed.at>
 Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-Acked-for-MFD-by: Lee Jones <lee.jones@linaro.org>
 ---
-changes since v5: split out non-pwrc related changes
-changes since v4: none
-changes since v3: none
-changes since v2: none (=v2 part 7)
+changes since v5: none
+changes since v4: use relative path
+changes since v3: moved SOB
+changes since v2: splitted rtc-mt6397.txt from first patch
 ---
- .../devicetree/bindings/mfd/mt6397.txt        |  6 ++++++
- .../bindings/power/reset/mt6323-poweroff.txt  | 20 +++++++++++++++++++
- 2 files changed, 26 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/power/reset/mt6323-poweroff.txt
+ .../devicetree/bindings/rtc/rtc-mt6397.txt    | 29 +++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
 
-diff --git a/Documentation/devicetree/bindings/mfd/mt6397.txt b/Documentation/devicetree/bindings/mfd/mt6397.txt
-index 5fccf987865b..a9b105ac00a8 100644
---- a/Documentation/devicetree/bindings/mfd/mt6397.txt
-+++ b/Documentation/devicetree/bindings/mfd/mt6397.txt
-@@ -8,6 +8,7 @@ MT6397/MT6323 is a multifunction device with the following sub modules:
- - Clock
- - LED
- - Keys
-+- Power controller
- 
- It is interfaced to host controller using SPI interface by a proprietary hardware
- called PMIC wrapper or pwrap. MT6397/MT6323 MFD is a child device of pwrap.
-@@ -48,6 +49,11 @@ Optional subnodes:
- 		- compatible: "mediatek,mt6397-keys" or "mediatek,mt6323-keys"
- 	see ../input/mtk-pmic-keys.txt
- 
-+- power-controller
-+	Required properties:
-+		- compatible: "mediatek,mt6323-pwrc"
-+	For details, see ../power/reset/mt6323-poweroff.txt
-+
- Example:
- 	pwrap: pwrap@1000f000 {
- 		compatible = "mediatek,mt8135-pwrap";
-diff --git a/Documentation/devicetree/bindings/power/reset/mt6323-poweroff.txt b/Documentation/devicetree/bindings/power/reset/mt6323-poweroff.txt
+diff --git a/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt b/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
 new file mode 100644
-index 000000000000..933f0c48e887
+index 000000000000..55a0c8874c03
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/power/reset/mt6323-poweroff.txt
-@@ -0,0 +1,20 @@
-+Device Tree Bindings for Power Controller on MediaTek PMIC
++++ b/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
+@@ -0,0 +1,29 @@
++Device-Tree bindings for MediaTek PMIC based RTC
 +
-+The power controller which could be found on PMIC is responsible for externally
-+powering off or on the remote MediaTek SoC through the circuit BBPU.
++MediaTek PMIC based RTC is an independent function of MediaTek PMIC that works
++as a type of multi-function device (MFD). The RTC can be configured and set up
++with PMIC wrapper bus which is a common resource shared with the other
++functions found on the same PMIC.
++
++For MediaTek PMIC MFD bindings, see:
++../mfd/mt6397.txt
++
++For MediaTek PMIC wrapper bus bindings, see:
++../soc/mediatek/pwrap.txt
 +
 +Required properties:
 +- compatible: Should be one of follows
-+       "mediatek,mt6323-pwrc": for MT6323 PMIC
++       "mediatek,mt6323-rtc": for MT6323 PMIC
++       "mediatek,mt6397-rtc": for MT6397 PMIC
 +
 +Example:
 +
@@ -150,10 +132,10 @@ index 000000000000..933f0c48e887
 +
 +               ...
 +
-+               power-controller {
-+                       compatible = "mediatek,mt6323-pwrc";
++               rtc {
++                       compatible = "mediatek,mt6323-rtc";
 +               };
-+       }
++       };
 -- 
 2.17.1
 
