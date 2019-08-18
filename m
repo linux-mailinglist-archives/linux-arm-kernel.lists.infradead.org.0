@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30F93915B9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 11:09:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B2B3915F2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 11:35:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AtoUqArSE06WpUQXj5g+qhVJ4IQQprWp62rBdBQ7phw=; b=PfF2D3GWrTN62hXRNYdRauQRB
-	iQud0QSyfYbPX5Lx4b+zCeF7XOUGHDJrk68UjXEEepHjCMtgQIj/QKMMRGT3ha8etJTgOYZ8sKby3
-	9BoH+LFUrgKuf3nnildMJav0xenrpczozwVrtUspyzPymUCNdhO8LGcJL8e5bTGFYXBoCktcE5QvA
-	fr6lo2tyEIsB52um4ZxfDyC4nXodS6vM2dyfx76eN8iJOcpSrqCWgL+z+vKluJayk7Kq1MkrAyJep
-	ed8QBGU2HHUPKCjAfJXz1rL2fPvBBvl+PQOvOJA/5KtBg/3G0Ca4lUrHSPEmDjwXiEXE7829dlZdV
-	/+js0zhow==;
+	 bh=vtLL4DSyf2UbIZKtupr+87y0hsYqirA7BmqFC5GG5tU=; b=eZw5FpO8+Q7v/ZV8coHlQZT9g
+	aWkEJkCyt4Bp4u8SxCji8xDJaZ6FxeLVQAfcioVGN1TZfPPASdZNbSbEZTMlfpk+D+B1iMZtbgt2a
+	sYGrrXlm0RQl3PT+PXd7KQcDN+rHqRELnxOU5bONF5LZUjYrAKbfgdaTC3O9w2t9/XGa1w5YtHnH+
+	kyrKyJW6c3FDB1j219ZHvM45Obt2Ih/mG7qm9nSH9mB2HhtM42eaU1lNw7RMrLvDJl/Iz9X83I4Lt
+	chiB7PpytpRowCxekJTrShpavyUhvjU8gcpVFEWSKBTvNsD4e3Os2eKOZda+2S+uxmgDV+n9RIy0G
+	I8iIB9x7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzHBx-0005N6-8z; Sun, 18 Aug 2019 09:09:37 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hzHae-0000ll-7T; Sun, 18 Aug 2019 09:35:08 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzHBM-0005Bk-4c
- for linux-arm-kernel@lists.infradead.org; Sun, 18 Aug 2019 09:09:01 +0000
-Received: by mail-wm1-x342.google.com with SMTP id p77so531155wme.0
+ id 1hzHaK-0000ki-AO
+ for linux-arm-kernel@lists.infradead.org; Sun, 18 Aug 2019 09:34:49 +0000
+Received: by mail-wr1-x443.google.com with SMTP id t16so5627302wra.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 18 Aug 2019 02:08:56 -0700 (PDT)
+ Sun, 18 Aug 2019 02:34:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=MXsOHISmCpUILyy9WHiVYPcKhs15OcsHvOVCutfJVTQ=;
- b=VnCEES/UltGfTFiTg/85Nqzwi5/ac6wr6TakwWpR7pOAZlH9NoN4dI+SNQbrTNye8+
- ArfSICQSVhQyfo4G9syzmU00C8Hzn3dUwkMMDfGVws4EIQ9zr8dOp+X4LukKiXZ7VmIC
- zkCyy6Ev4yGgywH69ioOaqXxOm6xPvV++me6ZhKHs1QgOJLY/yZXl2jmnC8D29sYRLHE
- +xhAWaS66VDRWtmazSF3gUeFaQbfC6etJ2lvgmeCxo4zelZjtIr4YLN7c2oAkVfFRrdm
- rcvS7tr74BBsCyDHTylY/ZLZi3wxoAiTuq9hNnxjIYU4HcX0z1vwatZ7a9PZRBbpdSfg
- ktkA==
+ bh=+t3LQMBsSqNtOgurGKhZ9wHHLkH0/0oqZfvSxZFI7Kc=;
+ b=uttML3RCJoDZnRkarpGajlROiOjlCgdBRarQ0F5FMFCaZ0D2ZSDeoe6m89e45/9Cd3
+ M3wPcFpgIvwV3Y/fuC9wfjXctxXie2swARrs+EXYcJhI8rcpY4H0QlqaTdzkwf4KnHP+
+ eQ0AFmJLrnT3WXl4twdhFDNubbJfvJVg/vY0WASgHxqLAmtPtB4xbBqQHJmHYsWXg8nU
+ 3jghdnYoY1SziexIR5V4wckMT+1Fzc1PLKt4KiNQd3h5Yf14I+Ta6fUWk3DumKdZ8nIr
+ WHM32qDx5MQzVr6Ewizcv+SAO9qRdlt3EDZNUo2gWYZyC1odC3LXL1D0TVmPHA6Trv77
+ tuSg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=MXsOHISmCpUILyy9WHiVYPcKhs15OcsHvOVCutfJVTQ=;
- b=catNH901nTL52Q+SOWhfho8bjcVpJ0wzIPmnAf1W+/mQ0yqOvTu9YdXDWRBqEO7k6q
- 1w1bL/p/Foscg6md+wQ6gPtorvswFW5ybGCM4U1nkHF5cXfvcRmug9ADo7BTkj3Hw+ax
- jWB0M4uT199N58xE9nQUamLW9G/2/p85LDDVgwCMh+CJzDL44BenIWERtxXTOqSNU8tz
- +xh5v2xAQagd1lq+MnERCkHzqxjQ9UJpNiNJocJGIRL6ndmAgyJHDjs1/j7JkbCQ0hf6
- /eZeaxpEElpFmjdeSXa21sh3p61dBFdLFEf75qpUZKUo/OnZb86wRnE6BT4amnToex34
- U26g==
-X-Gm-Message-State: APjAAAXY8y4+IH/ZpBcRU1vheYb/r5fLQcPBWtKMk8Bc6BkwdLUs5mmS
- R6W3/R28bUQ0aYnA05qJYKtqWA==
-X-Google-Smtp-Source: APXvYqyHX+LW9YR2h2Sapt+smYzR6FMkFbhNfzF9MEfgizCxuJ1WxMrjeaOYDF1/XkV6nlK+MuPFTQ==
-X-Received: by 2002:a1c:2314:: with SMTP id j20mr14813865wmj.152.1566119334824; 
- Sun, 18 Aug 2019 02:08:54 -0700 (PDT)
+ bh=+t3LQMBsSqNtOgurGKhZ9wHHLkH0/0oqZfvSxZFI7Kc=;
+ b=WM5vvT9Fdko/5kZyofnZW+IK/7shs7SwE06XQZz/vSybcEL/6CBptoviCnJNPjlaDh
+ OB9KHve970zLVJbBhvarD/0XDdV0/BERIFg5po5j5vjOelfZmWzLuGDYqw2BwwAtr6zJ
+ 7XMLD2YqkEZhwbpeigk1rYSH+6BxKySTukriTDETqDlN5z1ieAwwT/1r8lXIrJ8H8uXG
+ KtvPxDzdDJJC+c0OsUc4UQn6ij2nuxJjWuyf+BTyol5iWn5Jwc1QHKALixt0rtPDbPHP
+ +siSIK9HtmtKN8Ho27lfJNJzD+Pc8UfpuTtUy4tx4gB0CgpUpUxNVvyc4cTtq+uVIJHW
+ +BkA==
+X-Gm-Message-State: APjAAAULqyhoVOnSCNTtCJB5ndBaF2xzE/Woxn7Xmxw2midYtc4/FpUS
+ Gee33sIL+DY7DcQSNUR3CnoepR01E9s=
+X-Google-Smtp-Source: APXvYqyDJPoBROgH3mSWPPQRVi3n6qSDQYx/A8Z/krsdoVGn3+rKHtb0XvRz2rf/n5uAvUz1nVx4NQ==
+X-Received: by 2002:a05:6000:12c3:: with SMTP id
+ l3mr20161009wrx.100.1566120885734; 
+ Sun, 18 Aug 2019 02:34:45 -0700 (PDT)
 Received: from [192.168.86.34]
  (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
- by smtp.googlemail.com with ESMTPSA id p7sm8422702wmh.38.2019.08.18.02.08.52
+ by smtp.googlemail.com with ESMTPSA id g26sm8352268wmh.32.2019.08.18.02.34.44
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 18 Aug 2019 02:08:54 -0700 (PDT)
-Subject: Re: [PATCH 1/3] nvmem: mxs-ocotp: update MODULE_AUTHOR() email address
-To: Stefan Wahren <wahrenst@gmx.net>, Jean Delvare <jdelvare@suse.com>,
- Guenter Roeck <linux@roeck-us.net>, "David S. Miller" <davem@davemloft.net>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>
-References: <1565720249-6549-1-git-send-email-wahrenst@gmx.net>
+ Sun, 18 Aug 2019 02:34:45 -0700 (PDT)
+Subject: Re: [PATCH nvmem v2 0/2] nvmem: imx: add i.MX8QM platform support
+To: fugang.duan@nxp.com
+References: <20190807040320.1760-1-fugang.duan@nxp.com>
 From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Message-ID: <5883944e-efef-ed3d-fdfb-19d9964762f9@linaro.org>
-Date: Sun, 18 Aug 2019 10:08:51 +0100
+Message-ID: <5c7e5ff3-f453-c765-8795-c392434c7663@linaro.org>
+Date: Sun, 18 Aug 2019 10:34:44 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1565720249-6549-1-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <20190807040320.1760-1-fugang.duan@nxp.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190818_020900_196467_09072354 
-X-CRM114-Status: GOOD (  14.40  )
+X-CRM114-CacheID: sfid-20190818_023448_365708_C14DD491 
+X-CRM114-Status: GOOD (  14.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,8 +101,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hwmon@vger.kernel.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, robh@kernel.org, festevam@gmail.com,
+ devicetree@vger.kernel.org, gregkh@linuxfoundation.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, kernel@pengutronix.de, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -113,19 +112,28 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 13/08/2019 19:17, Stefan Wahren wrote:
-> The email address listed in MODULE_AUTHOR() will be disabled in the
-> near future. Replace it with my private one.
+On 07/08/2019 05:03, fugang.duan@nxp.com wrote:
+> From: Fugang Duan <fugang.duan@nxp.com>
 > 
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-> =2D--
->   drivers/nvmem/mxs-ocotp.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
+> The patch set is to add i.MX8QM platform support for i.MX8 SCU
+> OCOTP driver due to i.MX8QM efuse table has some difference with
+> i.MX8QXP platform.
+> 
+> V2:
+> - Add dt-bindings for the new compatible string support.
+> 
+> Fugang Duan (2):
+>    nvmem: imx: add i.MX8QM platform support
+>    dt-bindings: fsl: scu: add new compatible string for ocotp
 > 
 
 Applied thanks.
 
 --srini
+>   Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt | 4 +++-
+>   drivers/nvmem/imx-ocotp-scu.c                               | 7 +++++++
+>   2 files changed, 10 insertions(+), 1 deletion(-)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
