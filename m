@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5ED19153F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 08:52:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F90F91540
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 18 Aug 2019 08:52:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=hVAgIMO+StfrkMvjk4GUMILFDYKgEEhyAup5M30wQCI=; b=TIbW4OOuYUFErSxkwZFHON7iGN
-	HWlcSHxnUknSDdkgCq9pAFHZ/idO9nWQeulko/4CqZziaG7s5A5svdAGSBoBFIFdtRPb8MUsU6zc6
-	Qyj1L9v8JgfpSmhUqNCyjdCuQnAuuCoUHEFFI4pzLx16Yp+N9nUSqiGAbqbPupDUWGhYOfvTX/uc9
-	VuGxLT5AOodsAlaNB8E+inX5MEuk4LZa0ijvNdhWKcHdjUKWvJZvbzBF7buuMNliR2cw60O6JOpw8
-	7vAlm+qy1sz/j8+XVLVfzrtH8jONRY0Ld2HygH4ANrtBEdz9S3ipr6xi57liJ4h8XsmaDtjIosksC
-	7RnYvxlw==;
+	bh=bJc/GklamKtfbIVbRsJoTMrLa2l4EMLQzxHbsSW6wSA=; b=axkZoUZJqCGEWL/KUDAgwnv7PJ
+	Ka5TShC4wJvc/OtJ9xWg/Jvz9G+sDLTulRcPRYxJRk1AL9ncd00ezcaEg7rzhRqYY4rrIRi8SVa3q
+	DVOI7uwbWkgYrkYjHDlSDetimWPgIkvBCvX/iczy/ibQsweBveEWeQZRmaHtmXoKYJvUCoL526yrO
+	oyDh2TPSSfE/ctGXW+vGXWELE4faqTuJIm3YwYOeBaM3wDNSE2lJFjWVWt70NeyCSg/A4HBVMOQL5
+	1rt5NiC4/BgVrNOaDFs4PWHSGmiyDOzevMZv8xawkketU7MoOc94fMhsmQwZIrDqN7EaDnobPC7Tp
+	SY/9f8mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzF34-0002O3-QS; Sun, 18 Aug 2019 06:52:19 +0000
+	id 1hzF3L-0002n7-3l; Sun, 18 Aug 2019 06:52:35 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzF1t-0001j4-PO
- for linux-arm-kernel@lists.infradead.org; Sun, 18 Aug 2019 06:51:07 +0000
+ id 1hzF1v-0001jk-R1
+ for linux-arm-kernel@lists.infradead.org; Sun, 18 Aug 2019 06:51:09 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9EF0E1A0004;
- Sun, 18 Aug 2019 08:51:04 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9BD741A02EC;
+ Sun, 18 Aug 2019 08:51:06 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id BAE101A02EC;
- Sun, 18 Aug 2019 08:50:56 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B78771A00D1;
+ Sun, 18 Aug 2019 08:50:58 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 56AC0402E5;
- Sun, 18 Aug 2019 14:50:47 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id EDF3C40318;
+ Sun, 18 Aug 2019 14:50:48 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -43,17 +43,16 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
  linux-pm@vger.kernel.org
-Subject: [PATCH RESEND V2 3/7] cpufreq: Use imx-cpufreq-dt for i.MX8MN's speed
- grading
-Date: Sun, 18 Aug 2019 02:32:21 -0400
-Message-Id: <1566109945-11149-3-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH RESEND V2 4/7] cpufreq: imx-cpufreq-dt: Add i.MX8MN support
+Date: Sun, 18 Aug 2019 02:32:22 -0400
+Message-Id: <1566109945-11149-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1566109945-11149-1-git-send-email-Anson.Huang@nxp.com>
 References: <1566109945-11149-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190817_235105_957201_7565DB45 
-X-CRM114-Status: UNSURE (   7.24  )
+X-CRM114-CacheID: sfid-20190817_235108_010437_5979A54B 
+X-CRM114-Status: UNSURE (   8.60  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -82,28 +81,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add i.MX8MN to blacklist, so that imx-cpufreq-dt driver can handle
-speed grading bits just like other i.MX8M SoCs.
+i.MX8MN has different speed grading definition as below, it has 4 bits
+to define speed grading, add support for it.
+
+ SPEED_GRADE[3:0]    MHz
+    0000            2300
+    0001            2200
+    0010            2100
+    0011            2000
+    0100            1900
+    0101            1800
+    0110            1700
+    0111            1600
+    1000            1500
+    1001            1400
+    1010            1300
+    1011            1200
+    1100            1100
+    1101            1000
+    1110             900
+    1111             800
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No changes.
 ---
- drivers/cpufreq/cpufreq-dt-platdev.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/cpufreq/imx-cpufreq-dt.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/cpufreq/cpufreq-dt-platdev.c b/drivers/cpufreq/cpufreq-dt-platdev.c
-index ec2057d..febcec8 100644
---- a/drivers/cpufreq/cpufreq-dt-platdev.c
-+++ b/drivers/cpufreq/cpufreq-dt-platdev.c
-@@ -109,6 +109,7 @@ static const struct of_device_id blacklist[] __initconst = {
- 	{ .compatible = "fsl,imx7d", },
- 	{ .compatible = "fsl,imx8mq", },
- 	{ .compatible = "fsl,imx8mm", },
-+	{ .compatible = "fsl,imx8mn", },
+diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
+index 4f85f31..35db14c 100644
+--- a/drivers/cpufreq/imx-cpufreq-dt.c
++++ b/drivers/cpufreq/imx-cpufreq-dt.c
+@@ -16,6 +16,7 @@
  
- 	{ .compatible = "marvell,armadaxp", },
+ #define OCOTP_CFG3_SPEED_GRADE_SHIFT	8
+ #define OCOTP_CFG3_SPEED_GRADE_MASK	(0x3 << 8)
++#define IMX8MN_OCOTP_CFG3_SPEED_GRADE_MASK	(0xf << 8)
+ #define OCOTP_CFG3_MKT_SEGMENT_SHIFT    6
+ #define OCOTP_CFG3_MKT_SEGMENT_MASK     (0x3 << 6)
  
+@@ -34,7 +35,12 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		return ret;
+ 
+-	speed_grade = (cell_value & OCOTP_CFG3_SPEED_GRADE_MASK) >> OCOTP_CFG3_SPEED_GRADE_SHIFT;
++	if (of_machine_is_compatible("fsl,imx8mn"))
++		speed_grade = (cell_value & IMX8MN_OCOTP_CFG3_SPEED_GRADE_MASK)
++			      >> OCOTP_CFG3_SPEED_GRADE_SHIFT;
++	else
++		speed_grade = (cell_value & OCOTP_CFG3_SPEED_GRADE_MASK)
++			      >> OCOTP_CFG3_SPEED_GRADE_SHIFT;
+ 	mkt_segment = (cell_value & OCOTP_CFG3_MKT_SEGMENT_MASK) >> OCOTP_CFG3_MKT_SEGMENT_SHIFT;
+ 
+ 	/*
 -- 
 2.7.4
 
