@@ -2,71 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB8C4922EE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 13:59:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF202922F6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 14:01:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zxKzVeLY6KNQcbNG6GZhWENAndiStjQeZXGl9pXw/jE=; b=G9vW4qKIsgpR7k
-	/jN9TSU9tHByW93Muh26a/JaiRBoGbLmiU/M1EVZcLwMDYMGnPzmHWESnfEtM0e8+LjPgbymGSHv8
-	4j3DbMLCtHrrSeEyCERxgBfF0dxCrd5evvk7rY6qKHKBl9haYX5gB8joidMmi35JNSXcLTJIZq/K7
-	u3bSipcxr852yJHmXHxLkGzFO4H26SHfWZlLhGXJb2FgH/zvHQkxQ6vdbdXiCkASVhRyEYauI6tUq
-	vM1Gek9LSFtJCMDfqTuU7YwzvMVoVvjPcOs/5wG6qOI4nF1OXv6cJEM5yxJh+x+Jgj6Iogc59PRQk
-	JtSesu20+mZmm80PO+tw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jSYtCkdetSWVF2I0H6OOG5cnQRBHvP0li2aj33/o9os=; b=XHwtsNiZmF6yDy
+	wOaJmiNVPCG4Ks9+yex1OolId2YCsCCu0t+ZA1cop3fIajMchCM4vaQJNbWRs96Q1PqnwkFmjXMfj
+	ScL8w66Pac8/d/PhwznCUveQIGZMGvdOSF4HEQ0JIOoWzaKilAdT6P++C42i2llWeR1/lF8fMDh0K
+	0V15gd6GCgFExTb47Z6RmTnXMcRMIJZPyb9jOEbn/rg1dxP78qd4857JzaOB4hHfwsdclgixzw0BZ
+	vu9L46RtspmHTTJ+nzeaMFA8dBJxsoh2I4i8exiVzk/gEf1RbMIK/1Qnf3WDvv8rDzhvzPIxNH+xs
+	/NcWNdj8oIvOZGz6Zypw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzgJs-0005zD-Kh; Mon, 19 Aug 2019 11:59:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hzgLi-0007hq-0N; Mon, 19 Aug 2019 12:01:22 +0000
+Received: from lb3-smtp-cloud7.xs4all.net ([194.109.24.31])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzgJl-0005yu-7d
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 11:59:22 +0000
-Received: from X250 (37.80-203-192.nextgentel.com [80.203.192.37])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DEDF12085A;
- Mon, 19 Aug 2019 11:59:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566215960;
- bh=BlF5eyN8+BYQuNaKgdgBAcb8evFPpg8cxRjy3CPmiRE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=N/S1qpYiSKTHfHFnyA5YvjHA45F9f9gS2wu4MxcxIXVBMokQT2MskhpPwU0eBohhZ
- k2iJWiPJx/Rr9D4SsqUjBQwwGBgE/kU+WIFNI9kOWvU46yG9z+N2PbbwhnGUDzICzK
- TB+W5XK0hC8wxg01tmpoCqFv6au/KqzISkPbUiBM=
-Date: Mon, 19 Aug 2019 13:59:09 +0200
-From: Shawn Guo <shawnguo@kernel.org>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH] clk: imx8mn: fix int pll clk gate
-Message-ID: <20190819115907.GB5999@X250>
-References: <20190814015312.11711-1-peng.fan@nxp.com>
- <20190816180246.D37BD20665@mail.kernel.org>
- <AM0PR04MB4481D73817CFCB7491DE89CB88A80@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ id 1hzgLa-0007h2-IX
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 12:01:16 +0000
+Received: from [192.168.2.10] ([46.9.232.237])
+ by smtp-cloud7.xs4all.net with ESMTPA
+ id zgLGhBcThThuuzgLKhW3k2; Mon, 19 Aug 2019 14:01:09 +0200
+Subject: Re: [PATCH v7 0/9] drm: cec: convert DRM drivers to the new notifier
+ API
+To: Dariusz Marcinkiewicz <darekm@google.com>
+References: <20190814104520.6001-1-darekm@google.com>
+ <42c7ef3c-b7e5-8c63-c7c2-bfc6c56100c6@xs4all.nl>
+ <CALFZZQHu1C_8idxkwjBdxpW=y9gKmDnLOeTHZ9iAkNo7YubZHg@mail.gmail.com>
+From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Message-ID: <04c7dcb9-d5b1-804f-959e-d953dec9f937@xs4all.nl>
+Date: Mon, 19 Aug 2019 14:00:54 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <AM0PR04MB4481D73817CFCB7491DE89CB88A80@AM0PR04MB4481.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <CALFZZQHu1C_8idxkwjBdxpW=y9gKmDnLOeTHZ9iAkNo7YubZHg@mail.gmail.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfFV3jVCXFwOEmTkQx82eRsQbIhJkR81Nq+PQ7+JIxD7SfeDf16QIlfyskYXOROnMUb1Xtz63nmAd+iRuAvv3lI+kSlWyeIEhZqUxAxunUBgSNPsIh0RS
+ mjy/qEor/1jPIWCs++cE11cKIMSmJG6MIRet1GEXPjDRkJmQp+a35H+MmUUZQwTTR1+nKE21+e8g8uyyOC+brrm8l7IGJzM2xkjZnb2phy+jJaFPjeDphiq2
+ wJGwcAxVj3hzR83+NKHB9G1k+vXw4aQ/MzI9QM2Rfexrr6SfKwhQNC+fwINRnkI5GRv/KsnG7Cp4puXP7DO5yBdGoVSWgH5CmENYnS/eKuSiU5EKfP9JydOZ
+ 0TeBKSmPe/yG2uEbKvOEhTbYTbxGExNNS3gikvrlFuX507yqvyqZgFfwXyscLCN6ETQlF3KcmsvXjIEPG2ihAzWWYLVIBTio1TyMSJGFEmpBY+moeHhgCKd5
+ QCLNKE3tEPzrfY+D5ZHPBjzAXkNtyO8+jlsRa+grS9TcaYqHwmBRDX2sgu0n8SZpiRaKUQ8CUNelmd1dDTk5FXZ7tHD5MJDPHi0zvxN/SpPt23kTbWgKE5gU
+ aHY/WwWjcm4lJ0BmDIdybu6YMud1jvX5At1xRAcdF5JQLSwQhzz5AnH7cbrjV+1SzM7/DENC5sFV2ym2htRgqEjwdJM7u7CUJiwVR94R62DkJg6QWcOJHjBj
+ uj7LoLdwv94P1jm8zrEIn7g9nvYCZ4fPudE4xn05aUnlExieWaDmbS/aVLlYRiO3bkOp2FM2h+aMgsglzWIlUPh8/AZedUNJMF/tXdaiya9WyxwwUd0C/0s4
+ RXKALAxZpKpCHYKLuvsjLjpNepoDePmgax++EIwE0VSgQkiULQDut+CklRWpNuVjs7K3YW7QhaV5TJs7hbD+zcHGBx9U78V8DDOrC94VW5aZ28ZEfOZ0uzgP
+ 8OQfTYKMg0Nl1M+kmnceE4SHiS/votNR2zN+llnit1yPqD/1wvVTcJn27TGpY7LISvFLMAUQAscfevNJq/YrgAg/YmxNJ5d4U5TH2TEQp2j6XqjB3e9Qv7oJ
+ 0UATqeHOZxCLGn6HGA3HDZ2pf1HIPj7fEDp02kgtojum+Qn3UuBmxKGnRQMJwwdYeIW0SvKuLMbKexAZHG2NCcawo8nAu7IqARHW7s0L/zTRIfNsao7ZFqyj
+ i0dvT/P6zEDeItI9/vwF0nf9pPt0uzcREtdYflMFe+g1eRvv3+mCICN6r+bpv9SpijR9E13MwmlLVWnwDZNrTnqAOTC59SJBNJbLXkod0WXHvsxMxlJsiNS/
+ NfACYT3H/B23rUIEn6UEcxP8Ddn00V3hDKUI1JC79+04/vTSsf4xZJKfVa3/jcHwzPkXnn8XxBuHr+xznAKCVi/mo5fXLuU8O8Z3XpZ1daQ0o3df/YsgVwHH
+ lOIZa4FuohIX5ifk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_045921_290231_33612857 
-X-CRM114-Status: GOOD (  13.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190819_050114_771880_F18B1C78 
+X-CRM114-Status: GOOD (  14.17  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.31 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,47 +76,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jacky Bai <ping.bai@nxp.com>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>, dri-devel@lists.freedesktop.org,
+ open list <linux-kernel@vger.kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>,
+ Dhinakaran Pandiyan <dhinakaran.pandiyan@intel.com>,
+ Sam Ravnborg <sam@ravnborg.org>, linux-samsung-soc@vger.kernel.org,
+ David Francis <David.Francis@amd.com>, amd-gfx@lists.freedesktop.org,
+ Leo Li <sunpeng.li@amd.com>, "Jerry \(Fangzhi\) Zuo" <Jerry.Zuo@amd.com>,
+ Allison Randal <allison@lohutok.net>, nouveau@lists.freedesktop.org,
+ linux-media@vger.kernel.org, Jonas Karlman <jonas@kwiboo.se>,
+ Jani Nikula <jani.nikula@intel.com>, intel-gfx@lists.freedesktop.org,
+ Russell King <rmk+kernel@armlinux.org.uk>, Sean Paul <seanpaul@chromium.org>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, linux-tegra@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Thomas Lim <Thomas.Lim@amd.com>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Douglas Anderson <dianders@chromium.org>,
+ Manasi Navare <manasi.d.navare@intel.com>,
+ Alex Deucher <alexander.deucher@amd.com>,
+ Colin Ian King <colin.king@canonical.com>, Enrico Weigelt <info@metux.net>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 01:05:42AM +0000, Peng Fan wrote:
-> Hi Stephen,
+On 8/19/19 1:28 PM, Dariusz Marcinkiewicz wrote:
+> On Mon, Aug 19, 2019 at 11:38 AM Hans Verkuil <hverkuil-cisco@xs4all.nl> wrote:
+>>
+>> Hi all,
+>>
+> Hi Hans.
+>> The patches in this series can be applied independently from each other.
+>>
+>> If you maintain one of these drivers and you want to merge it for v5.4
+>> yourself, then please do so and let me know. If you prefer I commit it
+>> to drm-misc, then please review and (hopefully) Ack the patch.
+>>
+>> I would really like to get this in for v5.4 so I can get the userspace
+>> bits in for v5.4 as well through the media subsystem.
+>>
+>> Dariusz, can you post a v7.1 for patch 5/9 fixing the typo?
+>>
+> Done.
 > 
-> > Subject: Re: [PATCH] clk: imx8mn: fix int pll clk gate
-> > 
-> > Quoting peng.fan@nxp.com (2019-08-13 18:53:12)
-> > > From: Peng Fan <peng.fan@nxp.com>
-> > >
-> > > To Frac pll, the gate shift is 13, however to Int PLL the gate shift
-> > > is 11.
-> > >
-> > > Cc: <stable@vger.kernel.org>
-> > > Fixes: 96d6392b54db ("clk: imx: Add support for i.MX8MN clock driver")
-> > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > > Reviewed-by: Jacky Bai <ping.bai@nxp.com>
-> > > ---
-> > 
-> > This is a fix for a change in -next. Why is stable Cced?
+> I think it would be good to test v7 changes to dw-hdmi and tda998x on
+> a real hardware. Hans, do you think you would be able to test those?
 > 
-> Sorry, that was added by mistaken. Should I resend v2 to drop it?
+> Thank you.
+> 
 
-Applied with both stable and Fixes tag dropped, as the commit ID is
-unstable before it lands on mainline.
+I'll try to do this for dw-hdmi today, but the tda998x testing will have to wait
+until next week.
 
-Shawn
+Regards,
+
+	Hans
 
 _______________________________________________
 linux-arm-kernel mailing list
