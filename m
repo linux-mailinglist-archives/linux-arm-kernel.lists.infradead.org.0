@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77EA894E71
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:37:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BFE194E73
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:38:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9iU2Lk6WScmm1M7zO34GWU9EMgZ9EedwZlqAFnPmrnE=; b=aCnWx+ZMDcQAWF
-	GWy3V5uVEdBCCBllc2WQQVdZIdzKkEFx0VxmiKuaSgp6mhw0XYDs8g0lGVw7Kt93j9/2LXS6HnQPc
-	m+2KAwTXQ2iS0O8plnfcjWdUUwExOyXnn2DMzmATnJnDWFacDPL1ULnSRMctf7u4gRFfdG+iFJTsg
-	lm/ZDtKb287nO7Zc6npNf1TRvJGj76FfuIimVO8FR7jRDqdgpzA0uYs0ugHjqrfbCJgdg/SSoRqEZ
-	tPSxVsDn65O71jBOcbme/LUHv8s0BC0ltaZYhrbn5c0JWiD2cSCrg7XbC9TFI3d/Os8M+A5YpuZOf
-	PZ8MeRSBGmAY+0AzyICA==;
+	List-Owner; bh=Ohp/Um1wm31FUIL73EWRrQnANJI7wuVOlviDPUpMp/E=; b=QNhuT1wuiTcLYi
+	yzMVMGwwDydWDrfs8UZP0qtr1upCAMvJm9R3fvM6cQ2fnP6/ShgH5VGlKgsQuepDvbXmOp/zPj/TS
+	XKpi3BhYvqsxmQrpRwvlWRMMNctwy1RzcKal/54bRcVPj9xLD/1yNeXzcSTGiWOzsmZy+4iG2gZ9N
+	QvcCI10fBjYnA7dT/Pwbn3rw09Oir0Yv19U4xysVfXEGKey0GKDfpV7Bf4C2fqv/9NXiNlAbgvySw
+	Hrfo2Tg4d+0gGiPOK0L3T3GnNBu5Dy+K3etYH/YdQZBC8mGV55W1XVVSYJQZUV0NjiGxpGOFDVkuk
+	z6pY+7PHFLFAqIK435aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hznT3-0002cP-Lr; Mon, 19 Aug 2019 19:37:25 +0000
+	id 1hznTb-00034R-5M; Mon, 19 Aug 2019 19:37:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hznIN-0000Xg-Up
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:26:25 +0000
+ id 1hznIQ-0000Zt-Oo
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:26:28 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DE96622CEC;
- Mon, 19 Aug 2019 19:26:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D71CE22CF4;
+ Mon, 19 Aug 2019 19:26:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566242783;
- bh=NkCMmkVl3T6WU19pJkM1jw+KUsL+tEDiyFAFpO+j2ro=;
+ s=default; t=1566242786;
+ bh=lxoSThi24SXgg6Bi+ISpQJ6IhICcstHztsngc91tupU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=vLf3uhfaAW/j21Hpmt7Z4rI1p3G2MD971VXopOvLQ3RyEMnR/J/+fpBuHHt6Ii0+R
- yq3OmiXkeFXd6eRbZCHGIdbtemv0HnmMEFhOuMs0OWeX82QEAltgGAFJi6fTMNNRRQ
- ZozEEp5vmxeElaekxd8dtFjtnAVEFyLDzF6/4eCg=
+ b=jX5YpjCR6Cy5taU2uu95MCXzwXruGWw5Fg3YRi8pLtYNw8bHv3htNZ+8dlD3NSYZ/
+ 8mVF3pTOnIEeSdHhUy6ijh4GvuTjyCyzEWz8AcBevmuSWJ8LbjFW9HBO5FAjJs+9/b
+ YTCaAM6cXrVVF1XIcSDWMwsKaXhav19FUncboFss=
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
  lgirdwood@gmail.com, broonie@kernel.org
-Subject: [PATCH 17/21] ASoC: sun4i-i2s: Remove duplicated quirks structure
-Date: Mon, 19 Aug 2019 21:25:24 +0200
-Message-Id: <5ade5de27d23918c5ef30387c23aead951d5ad64.1566242458.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH 18/21] ASoC: sun4i-i2s: Pass the channels number as an argument
+Date: Mon, 19 Aug 2019 21:25:25 +0200
+Message-Id: <48887cf7abfaab6597db233b24d7a088a913e48a.1566242458.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_122624_192976_E3023C57 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20190819_122627_096501_ACF32C0D 
+X-CRM114-Status: GOOD (  14.78  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,53 +85,61 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-The A83t and H3 have the same quirks, so it doesn't make sense to duplicate
-the quirks structure.
+The channels number have been hardcoded to 2 so far, while the controller
+supports more than that.
+
+Remove the instance where it has been hardcoded to compute the BCLK
+divider, and pass it through as an argument to ease further support of more
+channels.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
- sound/soc/sunxi/sun4i-i2s.c | 21 +--------------------
- 1 file changed, 1 insertion(+), 20 deletions(-)
+ sound/soc/sunxi/sun4i-i2s.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
 diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index 65bc296abb37..5dcbab0b4bcb 100644
+index 5dcbab0b4bcb..905e9bd16024 100644
 --- a/sound/soc/sunxi/sun4i-i2s.c
 +++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -1062,25 +1062,6 @@ static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
- 	.set_fmt		= sun8i_i2s_set_soc_fmt,
- };
+@@ -238,10 +238,11 @@ static unsigned long sun8i_i2s_get_bclk_parent_rate(const struct sun4i_i2s *i2s)
+ static int sun4i_i2s_get_bclk_div(struct sun4i_i2s *i2s,
+ 				  unsigned long parent_rate,
+ 				  unsigned int sampling_rate,
++				  unsigned int channels,
+ 				  unsigned int word_size)
+ {
+ 	const struct sun4i_i2s_clk_div *dividers = i2s->variant->bclk_dividers;
+-	int div = parent_rate / sampling_rate / word_size / 2;
++	int div = parent_rate / sampling_rate / word_size / channels;
+ 	int i;
  
--static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
--	.has_reset		= true,
--	.reg_offset_txdata	= SUN8I_I2S_FIFO_TX_REG,
--	.sun4i_i2s_regmap	= &sun8i_i2s_regmap_config,
--	.has_fmt_set_lrck_period = true,
--	.field_clkdiv_mclk_en	= REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 8, 8),
--	.field_fmt_wss		= REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 2),
--	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
--	.bclk_dividers		= sun8i_i2s_clk_div,
--	.num_bclk_dividers	= ARRAY_SIZE(sun8i_i2s_clk_div),
--	.mclk_dividers		= sun8i_i2s_clk_div,
--	.num_mclk_dividers	= ARRAY_SIZE(sun8i_i2s_clk_div),
--	.get_bclk_parent_rate	= sun8i_i2s_get_bclk_parent_rate,
--	.get_sr			= sun8i_i2s_get_sr_wss,
--	.get_wss		= sun8i_i2s_get_sr_wss,
--	.set_chan_cfg		= sun8i_i2s_set_chan_cfg,
--	.set_fmt		= sun8i_i2s_set_soc_fmt,
--};
--
- static const struct sun4i_i2s_quirks sun50i_a64_codec_i2s_quirks = {
- 	.has_reset		= true,
- 	.reg_offset_txdata	= SUN8I_I2S_FIFO_TX_REG,
-@@ -1264,7 +1245,7 @@ static const struct of_device_id sun4i_i2s_match[] = {
- 	},
- 	{
- 		.compatible = "allwinner,sun8i-h3-i2s",
--		.data = &sun8i_h3_i2s_quirks,
-+		.data = &sun8i_a83t_i2s_quirks,
- 	},
- 	{
- 		.compatible = "allwinner,sun50i-a64-codec-i2s",
+ 	for (i = 0; i < i2s->variant->num_bclk_dividers; i++) {
+@@ -286,6 +287,7 @@ static bool sun4i_i2s_oversample_is_valid(unsigned int oversample)
+ 
+ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+ 				  unsigned int rate,
++				  unsigned int channels,
+ 				  unsigned int word_size)
+ {
+ 	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
+@@ -333,7 +335,7 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+ 
+ 	bclk_parent_rate = i2s->variant->get_bclk_parent_rate(i2s);
+ 	bclk_div = sun4i_i2s_get_bclk_div(i2s, bclk_parent_rate,
+-					  rate, word_size);
++					  rate, channels, word_size);
+ 	if (bclk_div < 0) {
+ 		dev_err(dai->dev, "Unsupported BCLK divider: %d\n", bclk_div);
+ 		return -EINVAL;
+@@ -488,7 +490,7 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
+ 	regmap_field_write(i2s->field_fmt_sr, sr);
+ 
+ 	return sun4i_i2s_set_clk_rate(dai, params_rate(params),
+-				      params_width(params));
++				      2, params_width(params));
+ }
+ 
+ static int sun4i_i2s_set_soc_fmt(const struct sun4i_i2s *i2s,
 -- 
 git-series 0.9.1
 
