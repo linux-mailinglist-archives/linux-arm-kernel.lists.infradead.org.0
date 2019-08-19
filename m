@@ -2,81 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C7F0920DD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 12:01:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8707920EB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 12:07:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H47N5VavoYPVdbOwC8LW4fGrQWDqqoJvxvo2DhIdwkQ=; b=dizCiJqYK/bVcx
-	ioYoOd3MfF92QRl8err9MFULa+GvTQ1Tk8wKT39AICcANyRO5ET5h4JhLRzTvTgMfISD02WS/yUbt
-	6FlQIwdxVWnJdhrdWGx/DjSUNXX6WDuOOSJjhJWs00jQUqRvrtRj5o23pmFdljggipx9UfUfmLRnO
-	eZJSLtdaNDz+pLUc9lX2Q84S/NFgJ0GtHPie3ny4gRQWfFvELT30ARc+y6LFs4zsoI4pUwAliIssj
-	84eb0x/zN8IPOuzX1o5GFmopDE8YhS7WaOvoULnCm5pABmuBs5p42tjDwc4d0coPuU1dy9knxvBol
-	NBPWhXxZhFQIp809Veuw==;
+	List-Owner; bh=kXTAlKG372n6ujOvJgjNrye5AYoDVInnUUQ7BDgBhVw=; b=eeZ+qFjZdea6xW
+	dFvVI6SEctZkwa2kAJvI2SRyG014O1Or5zB/+MSC9uh4FfIST0QC0EvAr0nOHvZV8e8FLRNHgnFEc
+	cScGF6h0H7klA9EzCVKN1quDqGNGq90bAE0Q774v7OReMUJoi8zPwGrRxadHYC/pJd1Hqxn2DptAd
+	HZp3apnygU3HEBPJ3QQkAKj/laXQT/zwFsvgJOMws4cIJ8Pxl6TRbDB1wXbefRgRzktUfZfABjuL2
+	a2MhgVQ4HvK5ViiKmxrvJ5CzZuDJOPNhr6JmFWaN/VunhgmBw+WDQ1HdQu2YBxlrBcaq4v4npmfzZ
+	DNFG0cSllP90c4GqAf2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzeTB-0006Q0-92; Mon, 19 Aug 2019 10:00:57 +0000
-Received: from mail-pg1-x52e.google.com ([2607:f8b0:4864:20::52e])
+	id 1hzeZD-0001A3-Ae; Mon, 19 Aug 2019 10:07:11 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzeRg-0006N5-Vm
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 09:59:37 +0000
-Received: by mail-pg1-x52e.google.com with SMTP id d1so926578pgp.4
+ id 1hzeYs-000198-7y
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 10:06:51 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 196so892932pfz.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 02:59:24 -0700 (PDT)
+ Mon, 19 Aug 2019 03:06:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=olmkP9Ue0IYi0nIG9Jgk3ly+FXYntmyDpFNEtwV9Avw=;
- b=jVMofs4s+gnCUAI79Ip6xg3i2RYI+g/WOdXI6cIBBoHeRXdYRK95YSl51r2dCRiGoS
- CiCQd8CQXBbUOr6+gF8VweGsgKMLsOcgsbdzsM35hExJDC8SuJ+8KO9GOiLG6J3lAZlM
- JBekdQXJuGo3w80gSIoEBzWdp7/nrsEpbTVMw6PIzssbWVHlxegW8W6TKqil4zjQUMKw
- UBZZopGFveiUcMuqZ4lF43p0BGxD8HqGxseLqoRLQeEuLwzYDRVodbbJ32/p2h9mj5ji
- UoP5hP0x0uBcNzonEoOq3XHWSVYrDeNst784sV+x8X5/hR0xw+fivaQ/8nmLW6eRtpKb
- L4vw==
+ bh=6YMARnBm7B+MKOmk57BApjS/es/AZIVLPWfQBAL1uiI=;
+ b=Ltly77eya2ZHkenw1lFaLukEhxN4gMQEVwOD4aajtliH0GlevR+LzfnfINIbGZldt+
+ mHPxjruDnwwIvRd6gq3XnLiTHK2LImnTWnSIb+B+aFkBTnq8MHl0pNBcZ+Ce4FM09cp8
+ ihEUSX6luQqwhsFviNrt8LTKObfhBe1Fqpm7Q0yewHvewovh+4DdcK4oiobEUB0hMsML
+ outXNkNvFunIK0jD+hq47Kz/r9r5meCFBIVov84gs4XdwKhVA2VAaMJ1K+TI4nmQ5eeR
+ cJY3Y7yo4U5sR4IZh3Ke1gn/JiYPrlO3KVT3L2UYghXy89dV2GnwoLwzYP3VtM1O9ltK
+ 1eNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=olmkP9Ue0IYi0nIG9Jgk3ly+FXYntmyDpFNEtwV9Avw=;
- b=FY00maKcDLvhm6i5uWDjiHhTvxF/mTZ9viepAD9E5Z2ZsjqL/nWZla6CGMp43OhooU
- iJugM0tANdR5zpssiHw90PDnWGzOxpRk630bEH/K0DwPpdzEP4azaEK5QIPNyLEfQL2R
- 24VUqHeoUnGEhqd4tnjq91sbA/VgYnDZm863A9lQ/lbG62zb3+0oZouXMOmz0w5fO0c0
- QKYxPfg01dekriK25TGouAza9AQf6ZbGoGdOQY4oizrwwBVnb/nFi3b5JHyTItzHesam
- S98P+dKbu4VZdDDHQB0v+XBLaAa5SvUBmIIeqZbRqKEkutDW2LsWvkPdJepJVdGfEbDT
- R5zg==
-X-Gm-Message-State: APjAAAXuqNJl2RsEVbBW7u+NnQCMcFZS5odPgkfvpjUiwtoY0zpOoA2K
- NBSuJiSxSWtwWPvvxckhWBVUzA==
-X-Google-Smtp-Source: APXvYqzxIL7FNkeVE+u8/wl10luXKQYJ2XZM5P9oxQ0cMb5m0opTFk66svqyoJdFdPJeYTRamxtKbA==
-X-Received: by 2002:a65:5584:: with SMTP id j4mr18996392pgs.258.1566208763608; 
- Mon, 19 Aug 2019 02:59:23 -0700 (PDT)
+ bh=6YMARnBm7B+MKOmk57BApjS/es/AZIVLPWfQBAL1uiI=;
+ b=CT4pj8hlAWrNGI7BKcfOWtBClN/r+AnXRCxmbtZlCwsFrj0EhIdWJh9ZVxA0rSdn3D
+ ffohQg4ZQLn94DNcrFVBvtC6H2JBCb0xFkNr1gLJnKCZwj9kkyiggWoVN6C5CLdhYFw2
+ VpypBMR8LWbeukasEueBW7/71KaC7yeapq+cQsZKikSebda3CVb0hmhCVTGWQdiWYpqG
+ zPwNMk/52iGNs6m26wwQGBgMQGHMQGW96vTQRWw7R+HSpl3441q3n+zdfFTYdUPoU8DU
+ caTeGigzx1tU9vHpbsqyLdonhFPs1tIIZTEMN4STipoP/MIMDvAvozw6pZBgIBtrmoEQ
+ VwCA==
+X-Gm-Message-State: APjAAAXHHMGKTlCpeLz61ZiYPgLLOYHAAvecTmbo5opjSMIoiw5ZORiR
+ eub3dAQaHL10CnHpstAW3hn1ww==
+X-Google-Smtp-Source: APXvYqzreJijvk3uX+BNwXXnkkyRrE/6662mwuSEGeb1CmdC9G2lWBgGtyuYEOtScyn90y57Rn3mlQ==
+X-Received: by 2002:a62:26c4:: with SMTP id m187mr23960820pfm.49.1566209205119; 
+ Mon, 19 Aug 2019 03:06:45 -0700 (PDT)
 Received: from localhost ([122.172.76.219])
- by smtp.gmail.com with ESMTPSA id r4sm18937523pfl.127.2019.08.19.02.59.22
+ by smtp.gmail.com with ESMTPSA id 11sm21266551pgo.43.2019.08.19.03.06.43
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 19 Aug 2019 02:59:22 -0700 (PDT)
-Date: Mon, 19 Aug 2019 15:29:21 +0530
+ Mon, 19 Aug 2019 03:06:44 -0700 (PDT)
+Date: Mon, 19 Aug 2019 15:36:42 +0530
 From: Viresh Kumar <viresh.kumar@linaro.org>
-To: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
-Subject: Re: [v4, 3/8] cpufreq: mediatek: Add support for mt8183
-Message-ID: <20190819095921.sk2pltuylfaxklnx@vireshk-i7>
-References: <1565703113-31479-1-git-send-email-andrew-sh.cheng@mediatek.com>
- <1565703113-31479-4-git-send-email-andrew-sh.cheng@mediatek.com>
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Subject: Re: [PATCH v2 0/9] Exynos Adaptive Supply Voltage support
+Message-ID: <20190819100642.tvnzt6d5rikugycr@vireshk-i7>
+References: <CGME20190718143117eucas1p1e534b9075d10fbbbe427c66192205eb1@eucas1p1.samsung.com>
+ <20190718143044.25066-1-s.nawrocki@samsung.com>
+ <20190723020450.z2pqwetkn2tfhacq@vireshk-i7>
+ <5ef302a4-5bbf-483d-dfdf-cf76f6f69cee@samsung.com>
+ <20190725022343.p7lqalrh5svxvtu2@vireshk-i7>
+ <562dd2e7-2b24-8492-d1c1-2dc4973f07be@samsung.com>
+ <20190819090928.pke6cov52n4exlbp@vireshk-i7>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1565703113-31479-4-git-send-email-andrew-sh.cheng@mediatek.com>
+In-Reply-To: <20190819090928.pke6cov52n4exlbp@vireshk-i7>
 User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_025927_260537_1A6E51B0 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20190819_030650_288182_C550747C 
+X-CRM114-Status: GOOD (  21.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:52e listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -98,58 +103,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
- srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, linux-mediatek@lists.infradead.org,
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, vireshk@kernel.org, b.zolnierkie@samsung.com,
+ linux-kernel@vger.kernel.org, krzk@kernel.org, robh+dt@kernel.org,
+ kgene@kernel.org, pankaj.dubey@samsung.com,
  linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, fan.chen@mediatek.com,
- devicetree@vger.kernel.org
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13-08-19, 21:31, Andrew-sh.Cheng wrote:
-> From: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
+On 19-08-19, 14:39, Viresh Kumar wrote:
+> On 09-08-19, 17:58, Sylwester Nawrocki wrote:
+> > Thank you for your suggestions.
+> > 
+> > For some Exynos SoC variants the algorithm of selecting CPU voltage supply
+> > is a bit more complex than just selecting a column in the frequency/voltage 
+> > matrix, i.e. selecting a set of voltage values for whole frequency range.
+> > 
+> > Frequency range could be divided into sub-ranges and to each such a sub-range 
+> > part of different column could be assigned, depending on data fused in 
+> > the CHIPID block registers.
+> > 
+> > We could create OPP node for each frequency and specify all needed voltages 
+> > as a list of "opp-microvolt-<name>" properties but apart from the fact that 
+> > it would have been quite many properties, e.g. 42 (3 tables * 14 columns), 
+> > only for some SoC types the dev_pm_opp_set_prop_name() approach could be 
+> > used. We would need to be able to set opp-microvolt-* property name 
+> > separately for each frequency (OPP).
+> > 
+> > Probably most future proof would be a DT binding where we could still 
+> > re-create those Exynos-specific ASV tables from DT. For example add named 
+> > opp-microvolt-* properties or something similar to hold rows of each ASV 
+> > table. But that conflicts with "operating-points-v2" binding, where 
+> > multiple OPP voltage values are described by just named properties and 
+> > multiple entries correspond to min/target/max.
+> > 
+> > opp_table0 {
+> > 	compatible = "...", "operating-points-v2";
+> > 	opp-shared;
+> > 	opp-2100000000 {
+> > 		opp-hz = /bits/ 64 <1800000000>;
+> > 		opp-microvolt = <...>;
+> > 		opp-microvolt-t1 = <1362500>, <1350000>, ....;
+> > 		opp-microvolt-t2 = <1362500>, <1360000>, ....;
+> > 		opp-microvolt-t3 = <1362500>, <1340000>, ....;
+> > 	};
+> > 	...
+> > 	opp-200000000 {
+> > 		opp-hz = /bits/ 64 <200000000>;
+> > 		opp-microvolt = <...>;
+> > 		opp-microvolt-t1 = <900000>, <900000>, ....;
+> > 		opp-microvolt-t2 = <900000>, <900000>, ....;
+> > 		opp-microvolt-t3 = <900000>, <900000>, ....;
+> > 	};
+> > };
+> > 
+> > I might be missing some information now on how those Exynos ASV tables 
+> > are used on other SoCs that would need to be supported.
+> > 
+> > There will be even more data to include when adding support for the Body
+> > Bias voltage, for each CPU supply voltage we could possibly have 
+> > corresponding Body Bias voltage.
 > 
-> Add compatible string for mediatek mt8183
+> Will something like this help ?
 > 
-> Signed-off-by: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
-> ---
->  drivers/cpufreq/cpufreq-dt-platdev.c | 1 +
->  drivers/cpufreq/mediatek-cpufreq.c   | 1 +
->  2 files changed, 2 insertions(+)
+> https://lore.kernel.org/lkml/1442623929-4507-3-git-send-email-sboyd@codeaurora.org/
 > 
-> diff --git a/drivers/cpufreq/cpufreq-dt-platdev.c b/drivers/cpufreq/cpufreq-dt-platdev.c
-> index 03dc4244ab00..0f7e837a264e 100644
-> --- a/drivers/cpufreq/cpufreq-dt-platdev.c
-> +++ b/drivers/cpufreq/cpufreq-dt-platdev.c
-> @@ -117,6 +117,7 @@ static const struct of_device_id blacklist[] __initconst = {
->  	{ .compatible = "mediatek,mt817x", },
->  	{ .compatible = "mediatek,mt8173", },
->  	{ .compatible = "mediatek,mt8176", },
-> +	{ .compatible = "mediatek,mt8183", },
->  
->  	{ .compatible = "nvidia,tegra124", },
->  	{ .compatible = "nvidia,tegra210", },
-> diff --git a/drivers/cpufreq/mediatek-cpufreq.c b/drivers/cpufreq/mediatek-cpufreq.c
-> index acd9539e95de..4dce41b18369 100644
-> --- a/drivers/cpufreq/mediatek-cpufreq.c
-> +++ b/drivers/cpufreq/mediatek-cpufreq.c
-> @@ -546,6 +546,7 @@ static const struct of_device_id mtk_cpufreq_machines[] __initconst = {
->  	{ .compatible = "mediatek,mt817x", },
->  	{ .compatible = "mediatek,mt8173", },
->  	{ .compatible = "mediatek,mt8176", },
-> +	{ .compatible = "mediatek,mt8183", },
+> This never got merged but the idea was AVS only.
 
-Had to fix rebase conflict manually for this. Please always rebase on latest
-linux-next.
+Here is a recent version under review.
 
-Applied. Thanks.
+https://lore.kernel.org/lkml/1565703113-31479-1-git-send-email-andrew-sh.cheng@mediatek.com
 
 -- 
 viresh
