@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A555B94E7B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:39:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4ECFF94E7C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:39:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -18,15 +18,15 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	uRhoxtr6ux5a13ISBEvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hznUg-00041B-So; Mon, 19 Aug 2019 19:39:07 +0000
+	id 1hznUw-0004FU-29; Mon, 19 Aug 2019 19:39:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hznIW-0000dw-Q5
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:26:35 +0000
+ id 1hznIX-0000e2-7s
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:26:36 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E0E92206C1;
+ by mail.kernel.org (Postfix) with ESMTPSA id 1FB3722CF4;
  Mon, 19 Aug 2019 19:26:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1566242792;
@@ -46,7 +46,7 @@ In-Reply-To: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-seri
 References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_122632_989923_02FF51F6 
+X-CRM114-CacheID: sfid-20190819_122633_514823_83C1D4DC 
 X-CRM114-Status: GOOD (  15.43  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
