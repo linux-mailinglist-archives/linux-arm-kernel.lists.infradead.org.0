@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3052E94CC5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 20:26:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E73294CC7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 20:27:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GUBnkBbrigoQUJHYLtcf7Z0PTs1G+/e+PhwkL4Ipajc=; b=STDXq7aWtueKF7
-	uPbmGyfEPC1w4zzkRVpI+U2hRSKxiSBgfnVA1Dge3AEhanVbcpIvCDHMZ28dQ2iZnDiGmrSPyvaji
-	S+4gtdgA7J3tMU/eIz5CKOV0kZOM9wWKHXj4FTJX+RxpQmjPStXhBmRpnsDooVTV4EPzq4riDeTRU
-	DuhnidjnPK99oT/oCtlpWX9jEWk7LV/B0FqBKFeqr9e7zemx2+rTzPN1RJOuvts9ADXG8KK/QPgIG
-	5KkaakCrDuSVAjpiArsuVuq4dfOa0Tb/Kw8xKnV+5rkF41wOrlOFEyGx0ph5FrBWVfv8XvMK51U7t
-	THapg8IgvRz8nFoZRGXw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EsHsx9nK4ieTqf23atmNp/BBzNRU2RL6ZIbtad4QO3k=; b=fGmGfL31kzwNtP
+	AL1sAVSuVDXEAdKRdINwXeJU8STN/mvm7ZcnNsrXZtMZGBA1Ao7spjH4w/LvdKafpOVVCto34LZmK
+	2Njn5gWFZrOefOMy8kSH8fU415i+Iwyh1qKWFjMycmdvtd9VfYPvo1PZdPia2NEz1RhTfHVdgtYPX
+	E8UtDjV7ZkUNhjAJgDnVrPZU8qZMD0DUpcgEnx9Kpm1Ywu4Jmb7A4+EcgcvF4VI1r5/+qL29BjmIz
+	OW1ZK80XJI/YKEDsgVOGRROs3WI/8cHvPdK9FltOkg5XThf3LXZOaoS8o4tM9z6rVrcSpOyipRbTB
+	fhmwY1SUCbSdvc8fb8SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzmMo-0001Jq-Gl; Mon, 19 Aug 2019 18:26:54 +0000
+	id 1hzmN6-0001Xk-K6; Mon, 19 Aug 2019 18:27:12 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzmMJ-00018S-L9
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 18:26:25 +0000
+ id 1hzmMN-0001Bp-D7
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 18:26:29 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9B1D422CF4;
- Mon, 19 Aug 2019 18:26:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 66F6022CF7;
+ Mon, 19 Aug 2019 18:26:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566239183;
- bh=mozUcucGGwNgrbVi8JK9nVIb5jRxn/xNJi2ONZFCZ2Y=;
- h=From:To:Cc:Subject:Date:From;
- b=ntPMtuI91Gm+vd+WT9IwTrwb/hc5EiZdpBpAV1rgdo9Fx3zA2xSneo4AKT3kqclFi
- ltJQpT13dP0js7xm87Yf2G0bwcZXXAcB/nJyuTiT72xs5ELWBFRDPLyVZl9w8bqSZw
- Uf+MMQrCoKDmeEH3dnk9qEJLuBIKn+suO233lLNw=
+ s=default; t=1566239187;
+ bh=ADme5Wo3JeD5c8RZL82Aoo/RC8TvZRLkDiLpQHUrIZ0=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=Y351sX1nqzokzUqSkoy5thHOF2QwhY4pA4hb0wnSLbuDx+BXZ3kUpoqexM3YgTcbK
+ qDL7NpTJNF4HbQpHivU3RI7JNJhSDj1XEX3tdxtZ9IXi+8tIlCLIbuB4In3bHATic4
+ HwVLBXcqhTgfgJ11oEFOJ+bL9PVd6UdEEN0MCNsc=
 From: Maxime Ripard <mripard@kernel.org>
 To: mchehab@kernel.org,
 	sean@mess.org
-Subject: [PATCH v2 1/2] dt-bindings: media: Add YAML schemas for the generic
- RC bindings
-Date: Mon, 19 Aug 2019 20:26:18 +0200
-Message-Id: <20190819182619.29065-1-mripard@kernel.org>
+Subject: [PATCH v2 2/2] dt-bindings: media: Convert Allwinner A10 IR to a
+ schema
+Date: Mon, 19 Aug 2019 20:26:19 +0200
+Message-Id: <20190819182619.29065-2-mripard@kernel.org>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190819182619.29065-1-mripard@kernel.org>
+References: <20190819182619.29065-1-mripard@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_112623_762815_D3FC08D5 
-X-CRM114-Status: GOOD (  13.40  )
+X-CRM114-CacheID: sfid-20190819_112627_577621_5A66D3AB 
+X-CRM114-Status: GOOD (  15.40  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,296 +90,148 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-The RC controllers have a bunch of generic properties that are needed in a
-device tree. Add a YAML schemas for those.
+The older Allwinner SoCs have a IR receiver supported in Linux, with a
+matching Device Tree binding.
+
+Now that we have the DT validation in place, let's convert the device tree
+bindings for that controller over to a YAML schemas.
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-
 ---
+ .../media/allwinner,sun4i-a10-ir.yaml         | 80 +++++++++++++++++++
+ .../devicetree/bindings/media/sunxi-ir.txt    | 35 --------
+ 2 files changed, 80 insertions(+), 35 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun4i-a10-ir.yaml
+ delete mode 100644 Documentation/devicetree/bindings/media/sunxi-ir.txt
 
-Changes from v1:
-  - Update the list of valid RC map name
----
- .../devicetree/bindings/media/rc.txt          | 118 +-------------
- .../devicetree/bindings/media/rc.yaml         | 145 ++++++++++++++++++
- 2 files changed, 146 insertions(+), 117 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/media/rc.yaml
-
-diff --git a/Documentation/devicetree/bindings/media/rc.txt b/Documentation/devicetree/bindings/media/rc.txt
-index d3e7a012bfda..be629f7fa77e 100644
---- a/Documentation/devicetree/bindings/media/rc.txt
-+++ b/Documentation/devicetree/bindings/media/rc.txt
-@@ -1,117 +1 @@
--The following properties are common to the infrared remote controllers:
--
--- linux,rc-map-name: string, specifies the scancode/key mapping table
--  defined in-kernel for the remote controller. Support values are:
--  * "rc-adstech-dvb-t-pci"
--  * "rc-alink-dtu-m"
--  * "rc-anysee"
--  * "rc-apac-viewcomp"
--  * "rc-asus-pc39"
--  * "rc-asus-ps3-100"
--  * "rc-ati-tv-wonder-hd-600"
--  * "rc-ati-x10"
--  * "rc-avermedia-a16d"
--  * "rc-avermedia-cardbus"
--  * "rc-avermedia-dvbt"
--  * "rc-avermedia-m135a"
--  * "rc-avermedia-m733a-rm-k6"
--  * "rc-avermedia-rm-ks"
--  * "rc-avermedia"
--  * "rc-avertv-303"
--  * "rc-azurewave-ad-tu700"
--  * "rc-behold-columbus"
--  * "rc-behold"
--  * "rc-budget-ci-old"
--  * "rc-cec"
--  * "rc-cinergy-1400"
--  * "rc-cinergy"
--  * "rc-delock-61959"
--  * "rc-dib0700-nec"
--  * "rc-dib0700-rc5"
--  * "rc-digitalnow-tinytwin"
--  * "rc-digittrade"
--  * "rc-dm1105-nec"
--  * "rc-dntv-live-dvbt-pro"
--  * "rc-dntv-live-dvb-t"
--  * "rc-dtt200u"
--  * "rc-dvbsky"
--  * "rc-empty"
--  * "rc-em-terratec"
--  * "rc-encore-enltv2"
--  * "rc-encore-enltv-fm53"
--  * "rc-encore-enltv"
--  * "rc-evga-indtube"
--  * "rc-eztv"
--  * "rc-flydvb"
--  * "rc-flyvideo"
--  * "rc-fusionhdtv-mce"
--  * "rc-gadmei-rm008z"
--  * "rc-geekbox"
--  * "rc-genius-tvgo-a11mce"
--  * "rc-gotview7135"
--  * "rc-hauppauge"
--  * "rc-imon-mce"
--  * "rc-imon-pad"
--  * "rc-iodata-bctv7e"
--  * "rc-it913x-v1"
--  * "rc-it913x-v2"
--  * "rc-kaiomy"
--  * "rc-kworld-315u"
--  * "rc-kworld-pc150u"
--  * "rc-kworld-plus-tv-analog"
--  * "rc-leadtek-y04g0051"
--  * "rc-lirc"
--  * "rc-lme2510"
--  * "rc-manli"
--  * "rc-medion-x10"
--  * "rc-medion-x10-digitainer"
--  * "rc-medion-x10-or2x"
--  * "rc-msi-digivox-ii"
--  * "rc-msi-digivox-iii"
--  * "rc-msi-tvanywhere-plus"
--  * "rc-msi-tvanywhere"
--  * "rc-nebula"
--  * "rc-nec-terratec-cinergy-xs"
--  * "rc-norwood"
--  * "rc-npgtech"
--  * "rc-pctv-sedna"
--  * "rc-pinnacle-color"
--  * "rc-pinnacle-grey"
--  * "rc-pinnacle-pctv-hd"
--  * "rc-pixelview-new"
--  * "rc-pixelview"
--  * "rc-pixelview-002t"
--  * "rc-pixelview-mk12"
--  * "rc-powercolor-real-angel"
--  * "rc-proteus-2309"
--  * "rc-purpletv"
--  * "rc-pv951"
--  * "rc-hauppauge"
--  * "rc-rc5-tv"
--  * "rc-rc6-mce"
--  * "rc-real-audio-220-32-keys"
--  * "rc-reddo"
--  * "rc-snapstream-firefly"
--  * "rc-streamzap"
--  * "rc-tbs-nec"
--  * "rc-technisat-ts35"
--  * "rc-technisat-usb2"
--  * "rc-terratec-cinergy-c-pci"
--  * "rc-terratec-cinergy-s2-hd"
--  * "rc-terratec-cinergy-xs"
--  * "rc-terratec-slim"
--  * "rc-terratec-slim-2"
--  * "rc-tevii-nec"
--  * "rc-tivo"
--  * "rc-total-media-in-hand"
--  * "rc-total-media-in-hand-02"
--  * "rc-trekstor"
--  * "rc-tt-1500"
--  * "rc-twinhan-dtv-cab-ci"
--  * "rc-twinhan1027"
--  * "rc-videomate-k100"
--  * "rc-videomate-s350"
--  * "rc-videomate-tv-pvr"
--  * "rc-winfast"
--  * "rc-winfast-usbii-deluxe"
--  * "rc-su3000"
-+This file has been moved to rc.yaml.
-diff --git a/Documentation/devicetree/bindings/media/rc.yaml b/Documentation/devicetree/bindings/media/rc.yaml
+diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-ir.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-ir.yaml
 new file mode 100644
-index 000000000000..3d5c154fd230
+index 000000000000..98c1bdde9a86
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/media/rc.yaml
-@@ -0,0 +1,145 @@
++++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-ir.yaml
+@@ -0,0 +1,80 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/media/rc.yaml#
++$id: http://devicetree.org/schemas/media/allwinner,sun4i-a10-ir.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Generic Infrared Remote Controller Device Tree Bindings
++title: Allwinner A10 Infrared Controller Device Tree Bindings
 +
 +maintainers:
-+  - Mauro Carvalho Chehab <mchehab@kernel.org>
-+  - Sean Young <sean@mess.org>
++  - Chen-Yu Tsai <wens@csie.org>
++  - Maxime Ripard <maxime.ripard@bootlin.com>
++
++allOf:
++  - $ref: "rc.yaml#"
 +
 +properties:
-+  $nodename:
-+    pattern: "^ir(@[a-f0-9]+)?$"
++  compatible:
++    oneOf:
++      - const: allwinner,sun4i-a10-ir
++      - const: allwinner,sun5i-a13-ir
++      - items:
++          - const: allwinner,sun8i-a83t-ir
++          - const: allwinner,sun6i-a31-ir
++      - const: allwinner,sun6i-a31-ir
++      - items:
++          - const: allwinner,sun50i-a64-ir
++          - const: allwinner,sun6i-a31-ir
++      - items:
++          - const: allwinner,sun50i-h6-ir
++          - const: allwinner,sun6i-a31-ir
 +
-+  linux,rc-map-name:
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: Bus Clock
++      - description: Module Clock
++
++  clock-names:
++    items:
++      - const: apb
++      - const: ir
++
++  resets:
++    maxItems: 1
++
++  clock-frequency:
++    default: 8000000
 +    description:
-+      Specifies the scancode/key mapping table defined in-kernel for
-+      the remote controller.
-+    allOf:
-+      - $ref: '/schemas/types.yaml#/definitions/string'
-+      - enum:
-+          - rc-adstech-dvb-t-pci
-+          - rc-alink-dtu-m
-+          - rc-anysee
-+          - rc-apac-viewcomp
-+          - rc-astrometa-t2hybrid
-+          - rc-asus-pc39
-+          - rc-asus-ps3-100
-+          - rc-ati-tv-wonder-hd-600
-+          - rc-ati-x10
-+          - rc-avermedia
-+          - rc-avermedia-a16d
-+          - rc-avermedia-cardbus
-+          - rc-avermedia-dvbt
-+          - rc-avermedia-m135a
-+          - rc-avermedia-m733a-rm-k6
-+          - rc-avermedia-rm-ks
-+          - rc-avertv-303
-+          - rc-azurewave-ad-tu700
-+          - rc-behold
-+          - rc-behold-columbus
-+          - rc-budget-ci-old
-+          - rc-cec
-+          - rc-cinergy
-+          - rc-cinergy-1400
-+          - rc-d680-dmb
-+          - rc-delock-61959
-+          - rc-dib0700-nec
-+          - rc-dib0700-rc5
-+          - rc-digitalnow-tinytwin
-+          - rc-digittrade
-+          - rc-dm1105-nec
-+          - rc-dntv-live-dvb-t
-+          - rc-dntv-live-dvbt-pro
-+          - rc-dtt200u
-+          - rc-dvbsky
-+          - rc-dvico-mce
-+          - rc-dvico-portable
-+          - rc-em-terratec
-+          - rc-empty
-+          - rc-encore-enltv
-+          - rc-encore-enltv-fm53
-+          - rc-encore-enltv2
-+          - rc-evga-indtube
-+          - rc-eztv
-+          - rc-flydvb
-+          - rc-flyvideo
-+          - rc-fusionhdtv-mce
-+          - rc-gadmei-rm008z
-+          - rc-geekbox
-+          - rc-genius-tvgo-a11mce
-+          - rc-gotview7135
-+          - rc-hauppauge
-+          - rc-hauppauge
-+          - rc-hisi-poplar
-+          - rc-hisi-tv-demo
-+          - rc-imon-mce
-+          - rc-imon-pad
-+          - rc-imon-rsc
-+          - rc-iodata-bctv7e
-+          - rc-it913x-v1
-+          - rc-it913x-v2
-+          - rc-kaiomy
-+          - rc-kworld-315u
-+          - rc-kworld-pc150u
-+          - rc-kworld-plus-tv-analog
-+          - rc-leadtek-y04g0051
-+          - rc-lme2510
-+          - rc-manli
-+          - rc-medion-x10
-+          - rc-medion-x10-digitainer
-+          - rc-medion-x10-or2x
-+          - rc-msi-digivox-ii
-+          - rc-msi-digivox-iii
-+          - rc-msi-tvanywhere
-+          - rc-msi-tvanywhere-plus
-+          - rc-nebula
-+          - rc-nec-terratec-cinergy-xs
-+          - rc-norwood
-+          - rc-npgtech
-+          - rc-pctv-sedna
-+          - rc-pinnacle-color
-+          - rc-pinnacle-grey
-+          - rc-pinnacle-pctv-hd
-+          - rc-pixelview
-+          - rc-pixelview-002t
-+          - rc-pixelview-mk12
-+          - rc-pixelview-new
-+          - rc-powercolor-real-angel
-+          - rc-proteus-2309
-+          - rc-purpletv
-+          - rc-pv951
-+          - rc-rc5-tv
-+          - rc-rc6-mce
-+          - rc-real-audio-220-32-keys
-+          - rc-reddo
-+          - rc-snapstream-firefly
-+          - rc-streamzap
-+          - rc-su3000
-+          - rc-tango
-+          - rc-tbs-nec
-+          - rc-technisat-ts35
-+          - rc-technisat-usb2
-+          - rc-terratec-cinergy-c-pci
-+          - rc-terratec-cinergy-s2-hd
-+          - rc-terratec-cinergy-xs
-+          - rc-terratec-slim
-+          - rc-terratec-slim-2
-+          - rc-tevii-nec
-+          - rc-tivo
-+          - rc-total-media-in-hand
-+          - rc-total-media-in-hand-02
-+          - rc-trekstor
-+          - rc-tt-1500
-+          - rc-twinhan-dtv-cab-ci
-+          - rc-twinhan1027
-+          - rc-videomate-k100
-+          - rc-videomate-s350
-+          - rc-videomate-tv-pvr
-+          - rc-winfast
-+          - rc-winfast-usbii-deluxe
-+          - rc-xbox-dvd
-+          - rc-zx-irdec
++      IR Receiver clock frequency, in Hertz.
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++
++# FIXME: We should set it, but it would report all the generic
++# properties as additional properties.
++# additionalProperties: false
++
++examples:
++  - |
++      ir0: ir@1c21800 {
++          compatible = "allwinner,sun4i-a10-ir";
++          clocks = <&apb0_gates 6>, <&ir0_clk>;
++          clock-names = "apb", "ir";
++          clock-frequency = <3000000>;
++          resets = <&apb0_rst 1>;
++          interrupts = <0 5 1>;
++          reg = <0x01C21800 0x40>;
++          linux,rc-map-name = "rc-rc6-mce";
++      };
++
++...
+diff --git a/Documentation/devicetree/bindings/media/sunxi-ir.txt b/Documentation/devicetree/bindings/media/sunxi-ir.txt
+deleted file mode 100644
+index 81eaf95fb764..000000000000
+--- a/Documentation/devicetree/bindings/media/sunxi-ir.txt
++++ /dev/null
+@@ -1,35 +0,0 @@
+-Device-Tree bindings for SUNXI IR controller found in sunXi SoC family
+-
+-Required properties:
+-- compatible	    :
+-	"allwinner,sun4i-a10-ir"
+-	"allwinner,sun5i-a13-ir"
+-	"allwinner,sun6i-a31-ir"
+-	"allwinner,sun50i-a64-ir", "allwinner,sun6i-a31-ir"
+-	"allwinner,sun50i-h6-ir", "allwinner,sun6i-a31-ir"
+-- clocks	    : list of clock specifiers, corresponding to
+-		      entries in clock-names property;
+-- clock-names	    : should contain "apb" and "ir" entries;
+-- interrupts	    : should contain IR IRQ number;
+-- reg		    : should contain IO map address for IR.
+-
+-Required properties since A31:
+-- resets	    : phandle + reset specifier pair
+-
+-Optional properties:
+-- linux,rc-map-name: see rc.txt file in the same directory.
+-- clock-frequency  : IR Receiver clock frequency, in Hertz. Defaults to 8 MHz
+-		     if missing.
+-
+-Example:
+-
+-ir0: ir@1c21800 {
+-	compatible = "allwinner,sun4i-a10-ir";
+-	clocks = <&apb0_gates 6>, <&ir0_clk>;
+-	clock-names = "apb", "ir";
+-	clock-frequency = <3000000>;
+-	resets = <&apb0_rst 1>;
+-	interrupts = <0 5 1>;
+-	reg = <0x01C21800 0x40>;
+-	linux,rc-map-name = "rc-rc6-mce";
+-};
 -- 
 2.21.0
 
