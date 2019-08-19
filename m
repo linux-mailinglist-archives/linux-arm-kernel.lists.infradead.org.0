@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50E5092466
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 15:10:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8ECF492468
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 15:11:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=10OCPMOA2o3W2wx/b1xYZ5pzCJdf4EMIB3d/n0E+9oM=; b=UNrAJdf+BMz8Qp
-	asHnONvoqDWNJodLRX/+Xvte6xDG6tZAgAwrMCuzVq3h0f4fJkZ5R8fjsXTVTUvSqagic2PlTK1hU
-	g84NMGLVeNkNipAzD6DF8pRV+hzVU8dDiysq1tZYxDJpqmLUBcZ3mqpCu0S7HHKGVrK26/dhXRyEW
-	W9LCiaXZBWtolS4NM9MVxo3VQEm8uiRgKn0QDc2rjcCy8TsmpY74P9oFxvcNqKZU/FoRcZlVz+qUp
-	WYdIy6wMgEWSIVLTNut3xJ9q3lX5Rr7AQYqKeI+OzVbXiLiXxTFJ8tOVL6UN8FvjOM3UVY85SXcs5
-	ftQAJhXrW98axRmUbntg==;
+	List-Owner; bh=0XyIYnorpfgtUYOJ6ZzKC4iFdck4DYYf/n1VkQ9+/5U=; b=NjlZVzTyS0LomS
+	EuanbxIRfTTz47WNmKG0FjYsXC6cnDE47Fm7YVe0aYwwBjlG7dvzdmgMl6qkeiLpX2+H4H+KfARLk
+	ocIQPUXaYTc2lj/mai99lbomQPekzuvp7BrJaCIH3nAv72XrdaGIQVnpFfJHK1Gof5HmfAvFpFZV3
+	ShT8zHTvxnQvwjNd/EPRkr3T/vvOR8FS+Zlsiealjhe9X22ezsG1yf+5+tokF5miKCl6OQ3qK87YI
+	TJ+523O3KSzEbHlXXnmReKsziDupAHqywGb1G1utgiEGVA0atHUUUfC/Q0I626vhuG6J3gZTuIg6u
+	ojs5kbI74gQA3rA0+FqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzhQn-0006HN-HH; Mon, 19 Aug 2019 13:10:41 +0000
+	id 1hzhR4-0006YH-KC; Mon, 19 Aug 2019 13:10:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzhQg-0006H0-0y
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 13:10:35 +0000
-Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hzhQt-0006Wd-NN
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 13:10:48 +0000
+Received: from X250 (37.80-203-192.nextgentel.com [80.203.192.37])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E4C0720843;
- Mon, 19 Aug 2019 13:10:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0416C2086C;
+ Mon, 19 Aug 2019 13:10:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566220233;
- bh=PJHIGkjFrjMv2g1mzBGACXVcW/F4cLU5JiDCgRCUXCo=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=UkQSMChYpShwjEp4bEaTD1kbTW5hoXNhrQj46VtSTrE5YdDfAGS3Km6LZy/tDZ5B1
- jRBpK6HghPF9YU0BlKsLvr7a3SNfeKNsGQuQB6GNzQsvivc7NmifG3PIcTPmJKgHFe
- 7xsR0jUALLR9fLOBFycO7K9i5zn5dFCsGiclYMZg=
-Date: Mon, 19 Aug 2019 22:10:27 +0900
-From: Masami Hiramatsu <mhiramat@kernel.org>
-To: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-Subject: Re: [PATCH 0/4] arm64: KPROBES_ON_FTRACE
-Message-Id: <20190819221027.80cb13a596c5c21fdbee79ff@kernel.org>
-In-Reply-To: <20190819192422.5ed79702@xhacker.debian>
-References: <20190819192422.5ed79702@xhacker.debian>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ s=default; t=1566220247;
+ bh=efgMIFqbDub5AwYwoCwk6l2PFpmusRxRiQTqU1CB5XE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=GZyi85pST9l8iaCgZUCUoS2J5F5RXdWTLtK/ebZtddL0C53Hgr9mw0Fjh8fXHOweN
+ mJlCAxk706p3+QtP8GMgHJ2IQmu+JHVI6WT/FZPxADhkQJLQpJkXqjEm62Tt7J9cPj
+ AM5eeH0z1Fni93ZYLW4fXEeARzf9ZMmuLcdJXCU8=
+Date: Mon, 19 Aug 2019 15:10:35 +0200
+From: Shawn Guo <shawnguo@kernel.org>
+To: Yinbo Zhu <yinbo.zhu@nxp.com>
+Subject: Re: [PATCH v5] arm64: dts: ls1028a: Add esdhc node in dts
+Message-ID: <20190819131033.GH5999@X250>
+References: <20190815033901.18696-1-yinbo.zhu@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190815033901.18696-1-yinbo.zhu@nxp.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_061034_083590_BD66AD56 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20190819_061047_785651_DC1ADE6C 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,58 +76,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- "x86@kernel.org" <x86@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Steven Rostedt <rostedt@goodmis.org>, "H. Peter Anvin" <hpa@zytor.com>,
- "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ashish Kumar <Ashish.Kumar@nxp.com>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ yangbo.lu@nxp.com, jiafei.pan@nxp.com, xiaobo.xie@nxp.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jisheng,
-
-On Mon, 19 Aug 2019 11:35:27 +0000
-Jisheng Zhang <Jisheng.Zhang@synaptics.com> wrote:
-
-> Implement KPROBES_ON_FTRACE for arm64.
+On Thu, Aug 15, 2019 at 11:39:01AM +0800, Yinbo Zhu wrote:
+> From: Ashish Kumar <Ashish.Kumar@nxp.com>
 > 
-> Applied after FTRACE_WITH_REGS:
-> http://lists.infradead.org/pipermail/linux-arm-kernel/2019-August/674404.html
-
-Looks interesting! thanks for working on it.
-I'll check it.
-
-Thanks,
-
+> This patch is to add esdhc node and enable SD UHS-I,
+> eMMC HS200 for ls1028ardb/ls1028aqds board.
 > 
-> Jisheng Zhang (4):
->   kprobes: adjust kprobe addr for KPROBES_ON_FTRACE
->   kprobes/x86: use instruction_pointer and instruction_pointer_set
->   kprobes: move kprobe_ftrace_handler() from x86 and make it weak
->   arm64: implement KPROBES_ON_FTRACE
-> 
->  arch/arm64/Kconfig                |  1 +
->  arch/arm64/kernel/probes/Makefile |  1 +
->  arch/arm64/kernel/probes/ftrace.c | 16 +++++++++++
->  arch/x86/kernel/kprobes/ftrace.c  | 43 ----------------------------
->  kernel/kprobes.c                  | 47 +++++++++++++++++++++++++++++++
->  5 files changed, 65 insertions(+), 43 deletions(-)
->  create mode 100644 arch/arm64/kernel/probes/ftrace.c
-> 
-> -- 
-> 2.23.0.rc1
-> 
+> Signed-off-by: Ashish Kumar <Ashish.Kumar@nxp.com>
+> Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
+> Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
 
-
--- 
-Masami Hiramatsu <mhiramat@kernel.org>
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
