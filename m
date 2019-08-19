@@ -2,75 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A59B94D7C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:06:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CC2794D7F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:06:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=T63pyeVEOi62fIgu/bFy/zmu/cbyDars+Scf53tWiCE=; b=PBb
-	m3ZDFyOJtcuNwyyg6DLeZw8g7z+aE/O+u9UqQU1F9m5Vto77gphQHlehkt0YtUZsYV9N4clYQcg+P
-	nnKAmTUCiNyq6yMFt0ZaUJC9aBPjlmC/vdHfOFpgFpb1/KxDZpTrIDMYo88I9mLx3xenxJr3lhJJu
-	jF9akE23ms1E65+jU6Y0VGUi8rAmEZNbMUM7YRGn2p9YTFPg/oI+ODaT2IwmMvxqK+PJCSQoL7jVd
-	ypDASUI5nqgZETJEzoWXHQvqdu1N1ntJjSqUG4aDBT9u0kMYwUFt1boybAgx8c4+gUs96jbVmaj7v
-	F7wF5p4Re4kB62GYM5SF9FAM5fGe2AQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=7zCBDUc2AAnN4HLBSQtVjC+okGCwNk4t6L4f/zmSjNc=; b=qKG+VvPUQ4qbL+mYXLXnlljb3r
+	lHRhOJQOOb0gCwYYTXKO8ARfSmnD5CF59UO6/LdC0yR4Ejl/5MQsi6lryEriny5gWfEA7QZniScR7
+	vc4a4V6p1g3zlJl1WBFyXuItoDJLQd8RvqrdcZFxq7FJlOIOolhFYGU4ind4b/yd1lcJA4EXGfTKN
+	JXLNs/byecQaUXWulzzJRiWMGKyjARuKLaZ8aLBlVMvj86wiDZxE1/kRydQH7EZ5gfk+B+mXelra8
+	zx275ogidLrrRXnxcfV2zLB2BCwno86J2r+R9xcoJBuDazkEdRz+5X4sPPaMYkZ/Nl8xsOE+xwopH
+	G0O+syjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzmyv-0007SG-0s; Mon, 19 Aug 2019 19:06:17 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hzmzF-0007eA-Gr; Mon, 19 Aug 2019 19:06:37 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzmyd-0007RG-PQ
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:06:01 +0000
-Received: by mail-pf1-x444.google.com with SMTP id w16so1713649pfn.7
+ id 1hzmye-0007RZ-QV
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:06:02 +0000
+Received: by mail-pl1-x644.google.com with SMTP id go14so1413210plb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 12:05:59 -0700 (PDT)
+ Mon, 19 Aug 2019 12:06:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=5FnYnywvpn5tPMkvseEFZUHyDqH06Ol8rEO6F3xb4yk=;
- b=LBGu4rF/zCyJAA4PeyUgBcE0nuwGa0VKTrzhYpi960cM7Faf38UyvhjieJ9ZtGci0p
- GZlu6DXX9wd9KiHB+9LyURLt4dq+qEDPPf0rloqECTH7FD/bIG3u8YAj0iuwFx6fKDXl
- SRjvchDQfvWep2kyqwLLvZ9jwI3EszgS9j94lmUgfecrH0SorkYNKT+ZNthRYrPeskyT
- Ls6MNUjgkj/ZkZJryiXjP06f3aoh1aT7X6ieUO3JaufTAkbo3W61c88UvhczAMkyZ2BV
- HfqQ2zZ9SvkFm+zkvJUJHK6Em7NSRlTwyRGdnF1aVIpkRv4JOGSXW91UvZOrDhZK9dZg
- rybw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=fYuzOL1IgGLo9fVS2sHsuYZrLb7Du5IAZMvtihsOq3M=;
+ b=c//w3LBQM1mTo+Zl9XhJ4L/Zb2osvSzAIBgCYmdRJ3dJh+MXsLMUymn7vRmUiyXSij
+ deAEfGmB8V/xT2zLkRaH9gdvYms6VA3FIwteL8u5+AOuCiEbqYs/ypJK9EnpXoSHToeF
+ BgLlwIwnWPydi5788WmIZ/I8t9vD9zyVIAANhF/2QntX6WqMwcsANfBvOe1M3/xTgLUK
+ lDJI7nvR4MrIZPsSVc7DERZsnE1UIuqqxoW6NWx7fJQdaDHbi8tO9GZ1go4c5zAR0Ly4
+ Pgcvg1RNpYhjv8+szJ83HN/XS4R3/bDhjIPvADZ2wgnISol5BMQdcE3Jnw4qfeBpeObJ
+ cAeA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=5FnYnywvpn5tPMkvseEFZUHyDqH06Ol8rEO6F3xb4yk=;
- b=l7eCuDpMiZcb73ZE2Ufj/a5bLwUWPIT6uoy42CqDSkmeJdT8s6HXiQzc6lqPQXpPiF
- cANmqUU0ebED9JNYak9fkOJn0n7mi7Jm/UMMTTQ0Trwxi0VhPE1TLXdYTYHsyqRoenwh
- WTJ6eYn9Ngmlw8P8j+rF/kMEd6N56/dM8APCrCNuvzuVl3Kn909XW5RZvJRcW83JxVJB
- 5fYx1yx4Gf1oVUYYnGMRUUpiDvZpLfqlX9kVGkCjhrXrhH1qXy6nAVJZ/T+Zv1MFNIKI
- p017pgVQ3MMu07OPZC0FD3nMbSmN8bttQDXkGqlsYdL6tI5c4tKylxQu9UuWZF+OpFco
- i4eA==
-X-Gm-Message-State: APjAAAVfbWBv/6mF/X02o8f639gCT8k9Zk2cFc/z+48EgnYh4rbQD1IW
- BMVpOfFC/VZfvfu/f857kck=
-X-Google-Smtp-Source: APXvYqzv9eWGwMXLY9DIhciuJEfFXBjocGpJ9P54qFZ8GgLegQqK0CfDptRbAyAQoq63TU0qO2tHWg==
-X-Received: by 2002:a63:1749:: with SMTP id 9mr21835583pgx.0.1566241558573;
- Mon, 19 Aug 2019 12:05:58 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=fYuzOL1IgGLo9fVS2sHsuYZrLb7Du5IAZMvtihsOq3M=;
+ b=JbQezRWcUtLnMtdVGFSVOA7IyDNqCGfoPw35nyT7/J/1iHNoZQ+xNQBhzXBGfjRXog
+ 4sXLRzmaIuh+HNgd7cZxGeWeAtWwv7P8wXnVh85VXs2nfJcDWQvYYDK94+H/h+IkOkZ5
+ 9DEHBCyp2LRds3eiQVLGWeg8nTuOqDxThrbR2x+Am0KCF19aM3ZGVCCeDiBGsjUhtO80
+ dsm88SiuueQABu2UjtJpn/8fG/PZrQDCaDdmv8AlTIH07mdx3T/jBpX78XNawQ45BuxW
+ ByF+VrUuJ0WBT5D8KksH+9Uzz9UaHI3XPKvWc32wTCcOnQM4A1hGs+m08VdpJXWkVi9Q
+ WSjQ==
+X-Gm-Message-State: APjAAAVtDhzh/uecHzkVzKkdCF8lo6qljNiUyuLnVTh09pHVKNRSpbk7
+ CLassDtFnfX/bplyNOsP84k=
+X-Google-Smtp-Source: APXvYqxY5XqakkUaHBCMo0u+PuLCWHqg+498IxvDmWYTGMumIcAE9Rf8K1KgXjSpDsCHnq/Nj80OHA==
+X-Received: by 2002:a17:902:8f85:: with SMTP id
+ z5mr7753652plo.328.1566241560250; 
+ Mon, 19 Aug 2019 12:06:00 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id o3sm27879pje.1.2019.08.19.12.05.57
+ by smtp.gmail.com with ESMTPSA id o3sm27879pje.1.2019.08.19.12.05.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 19 Aug 2019 12:05:57 -0700 (PDT)
+ Mon, 19 Aug 2019 12:05:59 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: arm@kernel.org
-Subject: [GIT PULL 1/3] Broadcom defconfig changes for 5.4
-Date: Mon, 19 Aug 2019 12:05:50 -0700
-Message-Id: <20190819190552.11254-1-f.fainelli@gmail.com>
+Subject: [GIT PULL 2/3] Broadcom defconfig-arm64 changes for 5.4
+Date: Mon, 19 Aug 2019 12:05:51 -0700
+Message-Id: <20190819190552.11254-2-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190819190552.11254-1-f.fainelli@gmail.com>
+References: <20190819190552.11254-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_120559_849360_36BB4ECF 
-X-CRM114-Status: UNSURE (   9.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190819_120600_856330_3894D506 
+X-CRM114-Status: GOOD (  10.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -111,29 +115,27 @@ The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 
 are available in the Git repository at:
 
-  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.4/defconfig
+  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.4/defconfig-arm64
 
-for you to fetch changes up to c474106e1e8a8f335b1bd3e79e868943689ae74d:
+for you to fetch changes up to d6cc9ddd23f8b113797152896462b27e2b213ece:
 
-  Merge tag 'tags/bcm2835-defconfig-next-2019-08-15' into defconfig/next (2019-08-15 11:37:54 -0700)
+  Merge tag 'tags/bcm2835-defconfig-64-next-2019-08-15' into defconfig-arm64/next (2019-08-15 11:38:29 -0700)
 
 ----------------------------------------------------------------
-This pull request contains Broadcom ARM-based SoCs defconfig updates for
-5.4, please pull the following:
+This pull request contains Broadcom ARM64-based SoCs defconfig updates
+for 5.4, please pull the following:
 
-- Nicolas enables the Raspberry Pi CPUFREQ driver in both
-  bcm2835_defconfig and multi_v7_defconfig
+- Nicolas enables the Raspberry Pi CPUFREQ driver in the ARM64 defconfig file
 
 ----------------------------------------------------------------
 Florian Fainelli (1):
-      Merge tag 'tags/bcm2835-defconfig-next-2019-08-15' into defconfig/next
+      Merge tag 'tags/bcm2835-defconfig-64-next-2019-08-15' into defconfig-arm64/next
 
 Nicolas Saenz Julienne (1):
-      ARM: defconfig: enable cpufreq driver for RPi
+      arm64: defconfig: enable cpufreq support for RPi3
 
- arch/arm/configs/bcm2835_defconfig  | 9 +++++++++
- arch/arm/configs/multi_v7_defconfig | 2 ++
- 2 files changed, 11 insertions(+)
+ arch/arm64/configs/defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
