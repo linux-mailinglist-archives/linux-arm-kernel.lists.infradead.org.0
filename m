@@ -2,96 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8707920EB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 12:07:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89E93920EC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 12:07:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kXTAlKG372n6ujOvJgjNrye5AYoDVInnUUQ7BDgBhVw=; b=eeZ+qFjZdea6xW
-	dFvVI6SEctZkwa2kAJvI2SRyG014O1Or5zB/+MSC9uh4FfIST0QC0EvAr0nOHvZV8e8FLRNHgnFEc
-	cScGF6h0H7klA9EzCVKN1quDqGNGq90bAE0Q774v7OReMUJoi8zPwGrRxadHYC/pJd1Hqxn2DptAd
-	HZp3apnygU3HEBPJ3QQkAKj/laXQT/zwFsvgJOMws4cIJ8Pxl6TRbDB1wXbefRgRzktUfZfABjuL2
-	a2MhgVQ4HvK5ViiKmxrvJ5CzZuDJOPNhr6JmFWaN/VunhgmBw+WDQ1HdQu2YBxlrBcaq4v4npmfzZ
-	DNFG0cSllP90c4GqAf2w==;
+	List-Owner; bh=7GIHGX1C90vyIA6E7un+Mk0yYHmqm9AvId3X/nUY1uk=; b=DmMCKl2NdNkVeH
+	eRIwzNYJCdlr9SQyFMamSAaHo1IJmwL5zCcmkJ6OkpReGpaoX+Z76ieNlqB2ZwgSs/rtMiLd0M1li
+	XiGjCobS0NZDbudrvNZaN21QcOtPnyyXFl57G+ElLKJtzlKVUMQdDLwhSnDlkhTz9OIXQBEYh3aAG
+	3A+hk8fCsDAI2BYvdNgEL92D0B2TCVU0h0akNzNtbJRwW2U2D/LljsN0Pja3vIH3PVFSCZofDAazV
+	p1Qy7ISID3iR2LNJCDl/TTM3NGVWZo/oblW2Ad1bY6A32PEPO0ErAusn1uR8h06mqUKgb11j22p2T
+	8Npldg2A4feEcLFUaMXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzeZD-0001A3-Ae; Mon, 19 Aug 2019 10:07:11 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzeYs-000198-7y
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 10:06:51 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 196so892932pfz.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 03:06:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=6YMARnBm7B+MKOmk57BApjS/es/AZIVLPWfQBAL1uiI=;
- b=Ltly77eya2ZHkenw1lFaLukEhxN4gMQEVwOD4aajtliH0GlevR+LzfnfINIbGZldt+
- mHPxjruDnwwIvRd6gq3XnLiTHK2LImnTWnSIb+B+aFkBTnq8MHl0pNBcZ+Ce4FM09cp8
- ihEUSX6luQqwhsFviNrt8LTKObfhBe1Fqpm7Q0yewHvewovh+4DdcK4oiobEUB0hMsML
- outXNkNvFunIK0jD+hq47Kz/r9r5meCFBIVov84gs4XdwKhVA2VAaMJ1K+TI4nmQ5eeR
- cJY3Y7yo4U5sR4IZh3Ke1gn/JiYPrlO3KVT3L2UYghXy89dV2GnwoLwzYP3VtM1O9ltK
- 1eNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=6YMARnBm7B+MKOmk57BApjS/es/AZIVLPWfQBAL1uiI=;
- b=CT4pj8hlAWrNGI7BKcfOWtBClN/r+AnXRCxmbtZlCwsFrj0EhIdWJh9ZVxA0rSdn3D
- ffohQg4ZQLn94DNcrFVBvtC6H2JBCb0xFkNr1gLJnKCZwj9kkyiggWoVN6C5CLdhYFw2
- VpypBMR8LWbeukasEueBW7/71KaC7yeapq+cQsZKikSebda3CVb0hmhCVTGWQdiWYpqG
- zPwNMk/52iGNs6m26wwQGBgMQGHMQGW96vTQRWw7R+HSpl3441q3n+zdfFTYdUPoU8DU
- caTeGigzx1tU9vHpbsqyLdonhFPs1tIIZTEMN4STipoP/MIMDvAvozw6pZBgIBtrmoEQ
- VwCA==
-X-Gm-Message-State: APjAAAXHHMGKTlCpeLz61ZiYPgLLOYHAAvecTmbo5opjSMIoiw5ZORiR
- eub3dAQaHL10CnHpstAW3hn1ww==
-X-Google-Smtp-Source: APXvYqzreJijvk3uX+BNwXXnkkyRrE/6662mwuSEGeb1CmdC9G2lWBgGtyuYEOtScyn90y57Rn3mlQ==
-X-Received: by 2002:a62:26c4:: with SMTP id m187mr23960820pfm.49.1566209205119; 
- Mon, 19 Aug 2019 03:06:45 -0700 (PDT)
-Received: from localhost ([122.172.76.219])
- by smtp.gmail.com with ESMTPSA id 11sm21266551pgo.43.2019.08.19.03.06.43
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 19 Aug 2019 03:06:44 -0700 (PDT)
-Date: Mon, 19 Aug 2019 15:36:42 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Re: [PATCH v2 0/9] Exynos Adaptive Supply Voltage support
-Message-ID: <20190819100642.tvnzt6d5rikugycr@vireshk-i7>
-References: <CGME20190718143117eucas1p1e534b9075d10fbbbe427c66192205eb1@eucas1p1.samsung.com>
- <20190718143044.25066-1-s.nawrocki@samsung.com>
- <20190723020450.z2pqwetkn2tfhacq@vireshk-i7>
- <5ef302a4-5bbf-483d-dfdf-cf76f6f69cee@samsung.com>
- <20190725022343.p7lqalrh5svxvtu2@vireshk-i7>
- <562dd2e7-2b24-8492-d1c1-2dc4973f07be@samsung.com>
- <20190819090928.pke6cov52n4exlbp@vireshk-i7>
+	id 1hzeZg-0001OK-2t; Mon, 19 Aug 2019 10:07:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hzeZN-0001NB-0b; Mon, 19 Aug 2019 10:07:23 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 94060344;
+ Mon, 19 Aug 2019 03:07:17 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 75E183F706; Mon, 19 Aug 2019 03:07:16 -0700 (PDT)
+Date: Mon, 19 Aug 2019 11:07:14 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Philipp Richter <richterphilipp.pops@gmail.com>
+Subject: Re: aarch64 Kernel Panic Asynchronous SError Interrupt on large file
+ IO
+Message-ID: <20190819100713.GA6117@arrakis.emea.arm.com>
+References: <CA+Vb7hpe_USzdCuTBHd8V-t6YeQ0oApiBrvM-D43JuhJda6eyQ@mail.gmail.com>
+ <20190815122151.bg7it6ptxwcn2vif@willie-the-truck>
+ <8253b02c-0431-6b01-6af4-6132eb992925@arm.com>
+ <CA+Vb7hpi=pCC9viiof8y85Kw_vCawWQ0B6kGFALgxtZfCKoaTw@mail.gmail.com>
+ <CA+Vb7hqPvDtv0ahjxa_gM68qsws6-dmtiOPmG6-WB+HZEC=4aw@mail.gmail.com>
+ <2facb3cb-388a-87ee-4d87-717dd65825ae@arm.com>
+ <CA+Vb7hpjX=yzVJj+BguvzwtyASCGUTwx_OXWfBuEoLO_RicMBQ@mail.gmail.com>
+ <CA+Vb7hpXfavS0k47Z0o=SkswO_jMmv3HN7RsUMdx=AHjvrD7LA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190819090928.pke6cov52n4exlbp@vireshk-i7>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <CA+Vb7hpXfavS0k47Z0o=SkswO_jMmv3HN7RsUMdx=AHjvrD7LA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_030650_288182_C550747C 
-X-CRM114-Status: GOOD (  21.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190819_030721_289059_888EE765 
+X-CRM114-Status: GOOD (  17.19  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,82 +67,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-pm@vger.kernel.org, vireshk@kernel.org, b.zolnierkie@samsung.com,
- linux-kernel@vger.kernel.org, krzk@kernel.org, robh+dt@kernel.org,
- kgene@kernel.org, pankaj.dubey@samsung.com,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: heiko@sntech.de, andre.przywara@arm.com,
+ Robin Murphy <robin.murphy@arm.com>, vicencb@gmail.com,
+ linux-rockchip@lists.infradead.org, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-08-19, 14:39, Viresh Kumar wrote:
-> On 09-08-19, 17:58, Sylwester Nawrocki wrote:
-> > Thank you for your suggestions.
-> > 
-> > For some Exynos SoC variants the algorithm of selecting CPU voltage supply
-> > is a bit more complex than just selecting a column in the frequency/voltage 
-> > matrix, i.e. selecting a set of voltage values for whole frequency range.
-> > 
-> > Frequency range could be divided into sub-ranges and to each such a sub-range 
-> > part of different column could be assigned, depending on data fused in 
-> > the CHIPID block registers.
-> > 
-> > We could create OPP node for each frequency and specify all needed voltages 
-> > as a list of "opp-microvolt-<name>" properties but apart from the fact that 
-> > it would have been quite many properties, e.g. 42 (3 tables * 14 columns), 
-> > only for some SoC types the dev_pm_opp_set_prop_name() approach could be 
-> > used. We would need to be able to set opp-microvolt-* property name 
-> > separately for each frequency (OPP).
-> > 
-> > Probably most future proof would be a DT binding where we could still 
-> > re-create those Exynos-specific ASV tables from DT. For example add named 
-> > opp-microvolt-* properties or something similar to hold rows of each ASV 
-> > table. But that conflicts with "operating-points-v2" binding, where 
-> > multiple OPP voltage values are described by just named properties and 
-> > multiple entries correspond to min/target/max.
-> > 
-> > opp_table0 {
-> > 	compatible = "...", "operating-points-v2";
-> > 	opp-shared;
-> > 	opp-2100000000 {
-> > 		opp-hz = /bits/ 64 <1800000000>;
-> > 		opp-microvolt = <...>;
-> > 		opp-microvolt-t1 = <1362500>, <1350000>, ....;
-> > 		opp-microvolt-t2 = <1362500>, <1360000>, ....;
-> > 		opp-microvolt-t3 = <1362500>, <1340000>, ....;
-> > 	};
-> > 	...
-> > 	opp-200000000 {
-> > 		opp-hz = /bits/ 64 <200000000>;
-> > 		opp-microvolt = <...>;
-> > 		opp-microvolt-t1 = <900000>, <900000>, ....;
-> > 		opp-microvolt-t2 = <900000>, <900000>, ....;
-> > 		opp-microvolt-t3 = <900000>, <900000>, ....;
-> > 	};
-> > };
-> > 
-> > I might be missing some information now on how those Exynos ASV tables 
-> > are used on other SoCs that would need to be supported.
-> > 
-> > There will be even more data to include when adding support for the Body
-> > Bias voltage, for each CPU supply voltage we could possibly have 
-> > corresponding Body Bias voltage.
-> 
-> Will something like this help ?
-> 
-> https://lore.kernel.org/lkml/1442623929-4507-3-git-send-email-sboyd@codeaurora.org/
-> 
-> This never got merged but the idea was AVS only.
+On Sat, Aug 17, 2019 at 03:12:41PM +0200, Philipp Richter wrote:
+> I added "memtest=4" to the kernel cmdline and I'm getting very quicky
+> a "Internal error: synchronous external abort" panic.
+[...]
+> [    0.000000] early_memtest: # of tests: 4
+> [    0.000000]   0x0000000000200000 - 0x0000000002080000 pattern aaaaaaaaaaaaaaaa
+> [    0.000000]   0x0000000003a95000 - 0x00000000f8400000 pattern aaaaaaaaaaaaaaaa
+> [    0.000000] Internal error: synchronous external abort: 96000210 [#1] SMP
 
-Here is a recent version under review.
+At least it's a synchronous error ;).
 
-https://lore.kernel.org/lkml/1565703113-31479-1-git-send-email-andrew-sh.cheng@mediatek.com
+> [    0.000000] pc : early_memtest+0x16c/0x23c
+[...]
+> [    0.000000] Code: d2800002 d2800001 eb0400bf 54000309 (f9400080)
 
--- 
-viresh
+decodecode says:
+
+   0:   d2800002        mov     x2, #0x0                        // #0
+   4:   d2800001        mov     x1, #0x0                        // #0
+   8:   eb0400bf        cmp     x5, x4
+   c:   54000309        b.ls    0x6c  // b.plast
+  10:*  f9400080        ldr     x0, [x4]                <-- trapping instruction
+
+I guess that's the read of *p in memtest(). Writing *p probably
+generates asynchronous errors it you haven't seen it yet.
+
+> Is my board completely broken ? :(
+
+One possibility is that you don't have any memory where you think there
+is, so the mapping just doesn't translate to any valid physical
+location.
+
+Can you add some printk(addr) in do_sea() to see if it always faults on
+the same address?
+
+Another hack to hopefully track this down is to try to cope with such
+synchronous aborts and hopefully you won't hit an asynchronous one
+(SError). Quick hack below, only tested under kvm/qemu for booting and
+passing memtest:
+
+-----------8<-------------------------
+diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+index 2e6f42dc5a15..47efeedeccba 100644
+--- a/arch/arm64/mm/fault.c
++++ b/arch/arm64/mm/fault.c
+@@ -606,6 +606,9 @@ static int do_sea(unsigned long addr, unsigned int esr, struct pt_regs *regs)
+ 	const struct fault_info *inf;
+ 	void __user *siaddr;
+ 
++	if (!user_mode(regs) && fixup_exception(regs))
++		return 0;
++
+ 	inf = esr_to_fault_info(esr);
+ 
+ 	/*
+diff --git a/mm/memtest.c b/mm/memtest.c
+index f53ace709ccd..e878aa6bd1aa 100644
+--- a/mm/memtest.c
++++ b/mm/memtest.c
+@@ -3,6 +3,7 @@
+ #include <linux/types.h>
+ #include <linux/init.h>
+ #include <linux/memblock.h>
++#include <linux/uaccess.h>
+ 
+ static u64 patterns[] __initdata = {
+ 	/* The first entry has to be 0 to leave memtest with zeroed memory */
+@@ -38,6 +39,7 @@ static void __init memtest(u64 pattern, phys_addr_t start_phys, phys_addr_t size
+ 	phys_addr_t start_bad, last_bad;
+ 	phys_addr_t start_phys_aligned;
+ 	const size_t incr = sizeof(pattern);
++	mm_segment_t old_fs;
+ 
+ 	start_phys_aligned = ALIGN(start_phys, incr);
+ 	start = __va(start_phys_aligned);
+@@ -45,12 +47,20 @@ static void __init memtest(u64 pattern, phys_addr_t start_phys, phys_addr_t size
+ 	start_bad = 0;
+ 	last_bad = 0;
+ 
+-	for (p = start; p < end; p++)
+-		*p = pattern;
++	old_fs = get_fs();
++	set_fs(KERNEL_DS);
++	for (p = start; p < end; p++) {
++		u64 val;
++		if (!get_user(val, p))
++			*p = pattern;
++	}
+ 
+ 	for (p = start; p < end; p++, start_phys_aligned += incr) {
+-		if (*p == pattern)
+-			continue;
++		u64 val;
++		if (!get_user(val, p)) {
++			if (val == pattern)
++				continue;
++		}
+ 		if (start_phys_aligned == last_bad + incr) {
+ 			last_bad += incr;
+ 			continue;
+@@ -61,6 +71,7 @@ static void __init memtest(u64 pattern, phys_addr_t start_phys, phys_addr_t size
+ 	}
+ 	if (start_bad)
+ 		reserve_bad_mem(pattern, start_bad, last_bad + incr);
++	set_fs(old_fs);
+ }
+ 
+ static void __init do_one_pass(u64 pattern, phys_addr_t start, phys_addr_t end)
 
 _______________________________________________
 linux-arm-kernel mailing list
