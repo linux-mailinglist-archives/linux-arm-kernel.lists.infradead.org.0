@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 475B09252D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 15:36:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B1D192535
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 15:36:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ykkqn8cPY0euno1Z/5NFphhBAJGgm7Ly4F0fi5FhB5w=; b=A2zCcArl7cwYS/
-	yv3PRv5NbstSCWmlSF2vUMmNN+IEZ3bUx9C/5RTap9ErN9NcfCtz47Y666TbWUIE6S49NCEHJ2uxE
-	5NBAs91ZCkZ3rU55BMxNTSUyjkx/h5j8DEPhFSwfIDFCaTEtu+hpCN9SOcmvYlfIAJi7c3pRaPoc5
-	8qOFn3lxoRPhUB/7NFY6HId8qeCT+vNN47RPitdCxx8B5IHi9RXIx1jzhHWkD5wqfcA0vGdM95xIO
-	mqNpgsKQUSfkxbet53O+bt/0Foo54/6mIjOpntdOpb3XoqWCQGNjsBIXEdLNOSwTx9CrpMAxoli+k
-	Af4k/P4B3yOXuG3BMvzw==;
+	List-Owner; bh=td3vn5WxjGoqgHwFgm2WVVP43ic8nrvYjEyl8OQyOzI=; b=tIeDNu8tROpADB
+	JJtDCt4BFX24UPgGywlvD548AwPvvIznc7D6JMAE5ZIAYKr6vUS2vWmUa8J1D58a6BYqSV/4Dhkuz
+	QX4BTQD4pOh5+2cE/TOstt63S3wS59IhDjGyyHa/GZ3XrcjjG756x2Nf1KTIdKbwXAQnXWv6uQItH
+	6twl0Y09T00DJ0fwkO6ftr66ecomBe6Hjg9LIZf37XBsEgpghyXO3/hPU4NnEx9H5qagBJgocp2Nu
+	mga105GmS9QLgsPRN+Ls6cxp4IPcTrv7TJIi5FWAsyG/X0IEGRiDziUSZbbHaDipE4gTfsqMR7xsd
+	UFP0iNd8++PgS2VPA5oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzhpZ-0001Mi-Gd; Mon, 19 Aug 2019 13:36:17 +0000
+	id 1hzhpu-0001cr-8U; Mon, 19 Aug 2019 13:36:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzhpR-0001M5-JU
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 13:36:10 +0000
+ id 1hzhpl-0001cP-Py
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 13:36:31 +0000
 Received: from X250 (37.80-203-192.nextgentel.com [80.203.192.37])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A02592085A;
- Mon, 19 Aug 2019 13:36:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D235D2085A;
+ Mon, 19 Aug 2019 13:36:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566221769;
- bh=fGNcLacIFF8EGFDm3k5zKrSPKgE76dI3XOtZmuEy/QI=;
+ s=default; t=1566221789;
+ bh=Bqv26nTV/Ia2eL7crmeJCMH7ixSvJr/6wY1pgK5NU6w=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dYJ6hXLWwVcQGEbZZ57oeotSATtP4tNQO9J0d0PJYG9OURjR6HlV7kGut4IetqlXh
- c+IDxJejCRxqqPpmsTD4jASWB7sqriZFnPYKJurqR+IyPOxia6LgvSpFeYa+8Dn1dH
- FBn4hJt05jXpnCvUkRAWbS9oAEgRcz8kLyzZwbu4=
-Date: Mon, 19 Aug 2019 15:35:56 +0200
+ b=jfMOD0gJ1BDNi7cWr6vtW7uI3ReDUj17kpzemGGFLbuWizjiA+S3en8/EP6Mt9HhT
+ v5mEneUnRAyEwjYPrM27h9uGFXyRRy0usqrZq9H1cMLHOAEYOxll+OvH54XBhRo64j
+ n0o5fNDQSTAaAXz8ILB4MplbFZZabUkfSo4V9dvg=
+Date: Mon, 19 Aug 2019 15:36:17 +0200
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH RESEND V2 1/7] arm64: dts: imx8mn-ddr4-evk: Add i2c1
- support
-Message-ID: <20190819133553.GL5999@X250>
+Subject: Re: [PATCH RESEND V2 2/7] arm64: dts: imx8mn-ddr4-evk: Add
+ rohm,bd71847 PMIC support
+Message-ID: <20190819133614.GM5999@X250>
 References: <1566109945-11149-1-git-send-email-Anson.Huang@nxp.com>
+ <1566109945-11149-2-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1566109945-11149-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1566109945-11149-2-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_063609_658703_2C2150C8 
-X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-CacheID: sfid-20190819_063629_861053_9A45021B 
+X-CRM114-Status: UNSURE (   8.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -89,8 +90,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 18, 2019 at 02:32:19AM -0400, Anson Huang wrote:
-> Enable i2c1 on i.MX8MN DDR4 EVK board.
+On Sun, Aug 18, 2019 at 02:32:20AM -0400, Anson Huang wrote:
+> On i.MX8MN DDR4 EVK board, there is a rohm,bd71847 PMIC
+> on i2c1 bus, enable it.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
