@@ -2,66 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2D5194B22
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 19:00:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B279094B50
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 19:09:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=meE1wPVIaeu9JbM/4pbPq5AXc602Y8ULPsenfSLla50=; b=R5g553u788M/I7
-	vkOcy88QLZQ3PEistbe8iNydaYKbZcDVqIBL7/VN/G0RiDaN8UPhWYcL35cvT+mkNGi/l8ZFZ+9IP
-	hJHoCllt3KvJEVFpXc+5OZDLLg1UcJF1E55/khz/D+5mgBshhImmmzhc2EVWDdlzlzOlXmO2y1LhF
-	X4SDfEVLXijPGhcNcP0OUzJIu5QRRFdqois5B1bFRFBp24xKS/jvJHbORHKqRww8uhso9Sccu1z1v
-	Z2jyH+AgxfVw0oJNCdZ6RLY7DACQMsFRblR5EQ4W3iWQjB5rfQ/vHm19PdFJFAdlRK3QATisyNlWT
-	fZNGxknK86W/bsY6+gTA==;
+	List-Owner; bh=jvFQzk2hAzpg4PWVGBJWYOSpdrYxzbM1QXJ5anlwvE8=; b=bnd9tbVsGI0F2v
+	7U0BArLUHvzNyHi4yU7GtB7bTvXh/exnJhSS9t1Md6iOD1WyrPoZEp56BXo745CJ61IBvLhuB0xiZ
+	31z1nnUTdBzhlmaZSuVTY4K4GOHCwzPJ10Gc7bpTvpITji7keDF0P/NbKW6+K8qOnML3tt4ptTf7x
+	hjSUUdXiT8DbUf5MUmAeesJbJ2x8F+F6E6X+JmUpMQWR0qhZvsMZjuM+gIogS+x3UmFp2DoSFBybF
+	oR8xWqT319/l+UTcI3p0lroBru1nkBei+4ChDyjsfC2Fct2g/2c/rhdVkM+sPoprEZH6Rv5/jysWA
+	0IYtIcNaA7m/0mWrC3OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzl1T-0000qE-Ax; Mon, 19 Aug 2019 17:00:47 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hzl9h-0003Be-0S; Mon, 19 Aug 2019 17:09:17 +0000
+Received: from mail-wm1-f51.google.com ([209.85.128.51])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzl1L-0000pg-8m; Mon, 19 Aug 2019 17:00:41 +0000
-X-UUID: c2efde12faa5468aa1da452dad8c08e6-20190819
-X-UUID: c2efde12faa5468aa1da452dad8c08e6-20190819
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <houlong.wei@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2013183766; Mon, 19 Aug 2019 09:00:31 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 19 Aug 2019 10:00:30 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 20 Aug 2019 01:00:25 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 20 Aug 2019 01:00:24 +0800
-Message-ID: <1566234025.24117.8.camel@mhfsdcap03>
-Subject: Re: [PATCH v12 09/12] soc: mediatek: cmdq: define the instruction
- struct
-From: houlong wei <houlong.wei@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Tue, 20 Aug 2019 01:00:25 +0800
-In-Reply-To: <20190819025359.11381-10-bibby.hsieh@mediatek.com>
-References: <20190819025359.11381-1-bibby.hsieh@mediatek.com>
- <20190819025359.11381-10-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hzl9b-0003BI-2y
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 17:09:12 +0000
+Received: by mail-wm1-f51.google.com with SMTP id o4so228829wmh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 19 Aug 2019 10:09:10 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=g1MHFcAEeER5KLs/4Du+ela2X0EQKeCWPmFOo3YeKyo=;
+ b=UhjpW+Dyt614sIAfMRUdK63dM7Uh+l8IF4Yog9GK1W5URD6EhvUOOxRgDsabBlUTVT
+ 0lPHz7i0GGjOmCKk8dzO+k+cOx5SqVWujQxhSFO79nQm+Ds3XAPtg0XcWBw610121K5e
+ kc9RfmeEfDtm3Tix1PMf2pI9nu9K9Nc2Pj6Qi5iCFgsDy6zHQg3qENb+8yYGbYs2emZf
+ u222kjpmFyBJ4KGd7yBiUI08P93f4+InWdbKPDLoWC+szQkLyCFviWrNyrJLBCEbrGtf
+ rqCqSA+vno6Bfjk8bjtZIE+aKQyIbsiR0QhqU5j9kYUTiKJ3WPXwcvfsYeDnpLQbaxbN
+ LnBg==
+X-Gm-Message-State: APjAAAVu1mE4IA+vUZw5Gp5v+Vm2cWqpEj+403IaphCHAxgub+yfVLuH
+ aaewIgUodU0u4yKRMCmdUVg=
+X-Google-Smtp-Source: APXvYqwjx7lb30hV3qt+dISr8DlDOdPErhTY7P/d1MD9Xm70SbdSRskPqJKpsDwrGHHDM+nWra5RzQ==
+X-Received: by 2002:a1c:b6d4:: with SMTP id
+ g203mr21503482wmf.100.1566234548932; 
+ Mon, 19 Aug 2019 10:09:08 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.124])
+ by smtp.googlemail.com with ESMTPSA id b3sm28668292wrm.72.2019.08.19.10.09.07
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 19 Aug 2019 10:09:08 -0700 (PDT)
+Date: Mon, 19 Aug 2019 19:09:05 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Colin King <colin.king@canonical.com>
+Subject: Re: [PATCH][next] soc: samsung: exynos-chipid: fix memory leak
+Message-ID: <20190819170905.GA14115@kozik-lap>
+References: <20190816222151.11098-1-colin.king@canonical.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 258710A0EB612FDE3EDB318BEE14C518E07821506A9585C60AFDAABBCA46D99F2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20190816222151.11098-1-colin.king@canonical.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_100039_316029_4F292BD6 
-X-CRM114-Status: GOOD (  18.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190819_100911_130906_7A41D197 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.51 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,245 +86,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Nicolas Boichat <drinkcat@chromium.org>, Philipp
- Zabel <p.zabel@pengutronix.de>, srv_heupstream <srv_heupstream@mediatek.com>,
- Daoyuan Huang =?UTF-8?Q?=28=E9=BB=83=E9=81=93=E5=8E=9F=29?=
- <Daoyuan.Huang@mediatek.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Jassi Brar <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Daniel
- Kurtz <djkurtz@chromium.org>, houlong.wei@mediatek.com, YT
- Shen =?UTF-8?Q?=28=E6=B2=88=E5=B2=B3=E9=9C=86=29?= <Yt.Shen@mediatek.com>,
- CK Hu =?UTF-8?Q?=28=E8=83=A1=E4=BF=8A=E5=85=89=29?= <ck.hu@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Ginny Chen =?UTF-8?Q?=28=E9=99=B3=E6=B2=BB=E5=82=91=29?=
- <ginny.chen@mediatek.com>, Sascha Hauer <kernel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Jiaguang Zhang =?UTF-8?Q?=28=E5=BC=A0=E5=8A=A0=E5=B9=BF=29?=
- <Jiaguang.Zhang@mediatek.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Dennis-YC Hsieh =?UTF-8?Q?=28=E8=AC=9D=E5=AE=87=E5=93=B2=29?=
- <Dennis-YC.Hsieh@mediatek.com>
+Cc: linux-samsung-soc@vger.kernel.org, Pankaj Dubey <pankaj.dubey@samsung.com>,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-08-19 at 10:53 +0800, Bibby Hsieh wrote:
-> Define an instruction structure for gce driver to append command.
-> This structure can make the client's code more readability.
+On Fri, Aug 16, 2019 at 11:21:51PM +0100, Colin King wrote:
+> From: Colin Ian King <colin.king@canonical.com>
 > 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> Currently when the call to product_id_to_soc_id fails there
+> is a memory leak of soc_dev_attr->revision and soc_dev_attr
+> on the error return path.  Fix this by adding a common error
+> return path that frees there obects and use this for two
+> error return paths.
+> 
+> Addresses-Coverity: ("Resource leak")
+> Fixes: 3253b7b7cd44 ("soc: samsung: Add exynos chipid driver support")
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
 > ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c   | 105 +++++++++++++++--------
->  include/linux/mailbox/mtk-cmdq-mailbox.h |   2 +
->  2 files changed, 73 insertions(+), 34 deletions(-)
-> 
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index 7aa0517ff2f3..e1e41914ed7a 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -9,12 +9,24 @@
->  #include <linux/mailbox_controller.h>
->  #include <linux/soc/mediatek/mtk-cmdq.h>
->  
-> -#define CMDQ_ARG_A_WRITE_MASK	0xffff
->  #define CMDQ_WRITE_ENABLE_MASK	BIT(0)
->  #define CMDQ_EOC_IRQ_EN		BIT(0)
->  #define CMDQ_EOC_CMD		((u64)((CMDQ_CODE_EOC << CMDQ_OP_CODE_SHIFT)) \
->  				<< 32 | CMDQ_EOC_IRQ_EN)
->  
-> +struct cmdq_instruction {
-> +	union {
-> +		u32 value;
-> +		u32 mask;
-> +	};
-> +	union {
-> +		u16 offset;
-> +		u16 event;
-> +	};
-> +	u8 subsys;
-> +	u8 op;
-> +};
-> +
->  static void cmdq_client_timeout(struct timer_list *t)
->  {
->  	struct cmdq_client *client = from_timer(client, t, timer);
-> @@ -110,10 +122,8 @@ void cmdq_pkt_destroy(struct cmdq_pkt *pkt)
->  }
->  EXPORT_SYMBOL(cmdq_pkt_destroy);
->  
-> -static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
-> -				   u32 arg_a, u32 arg_b)
-> +static struct cmdq_instruction *cmdq_pkt_append_command(struct cmdq_pkt *pkt)
->  {
-> -	u64 *cmd_ptr;
->  
->  	if (unlikely(pkt->cmd_buf_size + CMDQ_INST_SIZE > pkt->buf_size)) {
->  		/*
-> @@ -127,81 +137,108 @@ static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
->  		pkt->cmd_buf_size += CMDQ_INST_SIZE;
->  		WARN_ONCE(1, "%s: buffer size %u is too small !\n",
->  			__func__, (u32)pkt->buf_size);
-> -		return -ENOMEM;
-> +		return NULL;
->  	}
-> -	cmd_ptr = pkt->va_base + pkt->cmd_buf_size;
-> -	(*cmd_ptr) = (u64)((code << CMDQ_OP_CODE_SHIFT) | arg_a) << 32 | arg_b;
-> +
->  	pkt->cmd_buf_size += CMDQ_INST_SIZE;
->  
-> -	return 0;
-> +	return pkt->va_base + pkt->cmd_buf_size - CMDQ_INST_SIZE;
->  }
->  
->  int cmdq_pkt_write(struct cmdq_pkt *pkt, u8 subsys, u16 offset, u32 value)
->  {
-> -	u32 arg_a = (offset & CMDQ_ARG_A_WRITE_MASK) |
-> -		    (subsys << CMDQ_SUBSYS_SHIFT);
-> +	struct cmdq_instruction *inst;
-> +
-> +	inst = cmdq_pkt_append_command(pkt);
-> +	if (!inst)
-> +		return -ENOMEM;
-> +
-> +	inst->op = CMDQ_CODE_WRITE;
-> +	inst->value = value;
-> +	inst->offset = offset;
-> +	inst->subsys = subsys;
->  
-> -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WRITE, arg_a, value);
-> +	return 0;
->  }
->  EXPORT_SYMBOL(cmdq_pkt_write);
->  
->  int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
->  			u16 offset, u32 value, u32 mask)
->  {
-> -	u32 offset_mask = offset;
-> -	int err = 0;
-> +	struct cmdq_instruction *inst;
-> +	u16 offset_mask = offset;
->  
->  	if (mask != 0xffffffff) {
-> -		err = cmdq_pkt_append_command(pkt, CMDQ_CODE_MASK, 0, ~mask);
-> +		inst = cmdq_pkt_append_command(pkt);
-> +		if (!inst)
-> +			return -ENOMEM;
-> +
-> +		inst->op = CMDQ_CODE_MASK;
-> +		inst->mask = ~mask;
->  		offset_mask |= CMDQ_WRITE_ENABLE_MASK;
+>  drivers/soc/samsung/exynos-chipid.c | 14 ++++++++++----
 
-I think we should consider the reusing command packet case, I commented
-via link below and there were discussion before.
-http://lists.infradead.org/pipermail/linux-mediatek/2019-August/022052.html
-Before this patch, each 64-bit of an instruction is set. But now some
-bits may be ignored and keep the original values. That may make us
-confused when we analyze the instruction for debugging.
+Thanks, applied.
 
->  	}
-> -	err |= cmdq_pkt_write(pkt, value, subsys, offset_mask);
->  
-> -	return err;
-> +	return cmdq_pkt_write(pkt, subsys, offset_mask, value);
->  }
->  EXPORT_SYMBOL(cmdq_pkt_write_mask);
->  
->  int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
->  {
-> -	u32 arg_b;
-> +	struct cmdq_instruction *inst;
->  
->  	if (event >= CMDQ_MAX_EVENT)
->  		return -EINVAL;
->  
-> -	/*
-> -	 * WFE arg_b
-> -	 * bit 0-11: wait value
-> -	 * bit 15: 1 - wait, 0 - no wait
-> -	 * bit 16-27: update value
-> -	 * bit 31: 1 - update, 0 - no update
-> -	 */
-> -	arg_b = CMDQ_WFE_UPDATE | CMDQ_WFE_WAIT | CMDQ_WFE_WAIT_VALUE;
-> +	inst = cmdq_pkt_append_command(pkt);
-> +	if (!inst)
-> +		return -ENOMEM;
-> +
-> +	inst->op = CMDQ_CODE_WFE;
-> +	inst->value = CMDQ_WFE_OPTION;
-> +	inst->event = event;
->  
-> -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WFE, event, arg_b);
-> +	return 0;
->  }
->  EXPORT_SYMBOL(cmdq_pkt_wfe);
->  
->  int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u16 event)
->  {
-> +	struct cmdq_instruction *inst;
-> +
->  	if (event >= CMDQ_MAX_EVENT)
->  		return -EINVAL;
->  
-> -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WFE, event,
-> -				       CMDQ_WFE_UPDATE);
-> +	inst = cmdq_pkt_append_command(pkt);
-> +	if (!inst)
-> +		return -ENOMEM;
-> +
-> +	inst->op = CMDQ_CODE_WFE;
-> +	inst->value = CMDQ_WFE_UPDATE;
-> +	inst->event = event;
-> +
-> +	return 0;
->  }
->  EXPORT_SYMBOL(cmdq_pkt_clear_event);
->  
->  static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
->  {
-> -	int err;
-> +	struct cmdq_instruction *inst;
-> +
-> +	inst = cmdq_pkt_append_command(pkt);
-> +	if (!inst)
-> +		return -ENOMEM;
->  
-> -	/* insert EOC and generate IRQ for each command iteration */
-> -	err = cmdq_pkt_append_command(pkt, CMDQ_CODE_EOC, 0, CMDQ_EOC_IRQ_EN);
-> +	inst->op = CMDQ_CODE_EOC;
-> +	inst->value = CMDQ_EOC_IRQ_EN;
->  
-> -	/* JUMP to end */
-> -	err |= cmdq_pkt_append_command(pkt, CMDQ_CODE_JUMP, 0, CMDQ_JUMP_PASS);
-> +	inst = cmdq_pkt_append_command(pkt);
-> +	if (!inst)
-> +		return -ENOMEM;
-> +
-> +	inst->op = CMDQ_CODE_JUMP;
-> +	inst->value = CMDQ_JUMP_PASS;
->  
-> -	return err;
-> +	return 0;
->  }
->  
->  static void cmdq_pkt_flush_async_cb(struct cmdq_cb_data data)
-> diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> index 911475da7a53..c8adedefaf42 100644
-> --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
-> +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> @@ -19,6 +19,8 @@
->  #define CMDQ_WFE_UPDATE			BIT(31)
->  #define CMDQ_WFE_WAIT			BIT(15)
->  #define CMDQ_WFE_WAIT_VALUE		0x1
-> +#define CMDQ_WFE_OPTION			(CMDQ_WFE_UPDATE | CMDQ_WFE_WAIT | \
-> +					CMDQ_WFE_WAIT_VALUE)
->  /** cmdq event maximum */
->  #define CMDQ_MAX_EVENT			0x3ff
->  
-
+Best regards,
+Krzysztof
 
 
 _______________________________________________
