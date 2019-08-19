@@ -2,90 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CD3391F35
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 10:43:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FDE391F3C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 10:43:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gAb+zzPmxhuFA9UbFY0M/7fEvzeNSBfxE0vIUDhh/c4=; b=nL6z6xCz/LMxkQ
-	SO/zkgKhcvnXrARy1EUlSY5Vv3Bupjpp8kYaHR3HNU8dYfE3Lbx645UDJ62Zcv4g4PROj2IfZctSF
-	k6JsxTOLBid7nAFyVErhXAr/gNBJtFnFMvUrebM15u5VaMVCkGYORl5JDPBTIHL7MUSORhHB58pjc
-	r0bbU24iBLfLe6aN91MTdTrTzzFJrZlGSlBJPYttv0H9HUDcp79zNhwsqcz7bf5klDd6A4isHGpjF
-	qcxt0vcs/T+xm6vSintKSDufPvKA/8Jbg75eoKa0ssLoJFFiw3kMFp6ffV0M/jpsgHs73RNfKF/fL
-	zt7Jsi3rW81tUH3SoLAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=g8ohhyqvUD+GH4UvUDC3cUGtATTGdxfhdASbv0Bme7o=; b=sjJLj5ZYULFPuNvba8RU7ZWoM
+	rUUK/F5i2cE51P2NTkeOyaX5r0EBlkvv0uZRb+AXv5ZwV4Lt2orErcHAociTtCJwnIpCO8d/kbErJ
+	rJiPb9Ss2vQZvaLZ571Ia9jW2WjbMGIWI017n4lmJAhA4gZE0+dp87vVTEHnNbg17vd5sNZDKAecO
+	mqhMYaH+WFgnnMZZHPg1xN35qoB9HFM3cl6n0S5/sq3s9s0hX39gyMbvKu6fSfzeX7LFtowfthl+9
+	9C4JEL3t+PmuL8pA6T8h4LEkwDu+rXptFuVFEH6qcDANR3v1QZirPvl9xFQ0y+9XjCGIPWSGkk7UN
+	wsDbncSGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzdFl-0003za-C4; Mon, 19 Aug 2019 08:43:01 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hzdGR-0004Zj-Cf; Mon, 19 Aug 2019 08:43:43 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzdEO-0003EW-16
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 08:41:38 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7J8f19t017025; Mon, 19 Aug 2019 10:41:30 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=of0s5odw8CC2mKThAIPU/+SSRgcjIVT1A5YF57okv08=;
- b=JdQHlWVoyHicV+5qd5uBMMR5ZuFSIRX9h5qQ+2QkKfYRO7cOCpMPGOGVlJCbjbhk3Cka
- QykKLlAaoZhitIcAxTUPvAWNAKpzofleoBRCZllqGkGONI81+PJVV9b0QkdVIGmRWFxj
- IIpjcyR+4lzIdUtdw627j7tYZf/1SHB0Rsjhvt2U6DjBSLlY+XbRQichCRKJhsv+5hWb
- m/6b6XNhy+osEHt7DMp0hpeiIkFXWdX+RPxYXqGwUzmJJpCNMAtwR4mlaJDn9xVZMVDT
- MjqMa3mF0IltRQ0W6e+5NPomC8TJoLZzm1KBPUbovDx5Qladr0HiAOyqV2Y/NTPAbIgT IQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2ue6q8j4mc-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 19 Aug 2019 10:41:30 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id F36E738;
- Mon, 19 Aug 2019 08:41:29 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E86BA2BF4F2;
- Mon, 19 Aug 2019 10:41:29 +0200 (CEST)
-Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 19 Aug
- 2019 10:41:29 +0200
-Received: from localhost (10.201.23.19) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 19 Aug 2019 10:41:29
- +0200
-From: Hugues Fruchet <hugues.fruchet@st.com>
-To: Alexandre Torgue <alexandre.torgue@st.com>, Mauro Carvalho Chehab
- <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Sakari Ailus
- <sakari.ailus@linux.intel.com>
-Subject: [PATCH v7 4/4] media: stm32-dcmi: add support of several sub-devices
-Date: Mon, 19 Aug 2019 10:41:21 +0200
-Message-ID: <1566204081-19051-5-git-send-email-hugues.fruchet@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1566204081-19051-1-git-send-email-hugues.fruchet@st.com>
-References: <1566204081-19051-1-git-send-email-hugues.fruchet@st.com>
+ id 1hzdEY-0003Jw-8g
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 08:41:48 +0000
+Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 5242A240004;
+ Mon, 19 Aug 2019 08:41:42 +0000 (UTC)
+Date: Mon, 19 Aug 2019 10:41:41 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: Best representation for TDM devices
+Message-ID: <20190819084141.otpbos2fgxav7rco@flea>
+References: <CAMTEBE0mPY=44txPC2G+Cb=NqeH6Cqesar9Vkq0afXBv4dUWHQ@mail.gmail.com>
+ <20190801114807.GB5488@sirena.org.uk>
+ <CAMTEBE2L6KXH6JW2Z_6RSKdtFJc9ncFvfakwW_Vm88BCGC6aeQ@mail.gmail.com>
+ <20190814160234.GG4640@sirena.co.uk>
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.19]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-19_02:, , signatures=0
+In-Reply-To: <20190814160234.GG4640@sirena.co.uk>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_014136_363857_30F2EF66 
-X-CRM114-Status: GOOD (  25.49  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190819_014146_738377_899F07CC 
+X-CRM114-Status: GOOD (  18.60  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [217.70.178.230 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,330 +62,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mickael GUENE <mickael.guene@st.com>, linux-kernel@vger.kernel.org,
- Philippe CORNU <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>, Hugues
- Fruchet <hugues.fruchet@st.com>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ali Burak =?utf-8?B?UGFyxLFt?= <aliburakparim@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5798455825696388967=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support of several sub-devices within pipeline instead
-of a single one.
-This allows to support a CSI-2 camera sensor connected
-through a CSI-2 to parallel bridge.
 
-Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
----
- drivers/media/platform/stm32/stm32-dcmi.c | 217 +++++++++++++++++++++++++++---
- 1 file changed, 198 insertions(+), 19 deletions(-)
+--===============5798455825696388967==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="dcfpx62fqgv2jqjo"
+Content-Disposition: inline
 
-diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-index 9293949..5bfbc07 100644
---- a/drivers/media/platform/stm32/stm32-dcmi.c
-+++ b/drivers/media/platform/stm32/stm32-dcmi.c
-@@ -172,6 +172,7 @@ struct stm32_dcmi {
- 
- 	struct media_device		mdev;
- 	struct media_pad		vid_cap_pad;
-+	struct media_pipeline		pipeline;
- };
- 
- static inline struct stm32_dcmi *notifier_to_dcmi(struct v4l2_async_notifier *n)
-@@ -583,6 +584,144 @@ static void dcmi_buf_queue(struct vb2_buffer *vb)
- 	spin_unlock_irq(&dcmi->irqlock);
- }
- 
-+static struct media_entity *dcmi_find_source(struct stm32_dcmi *dcmi)
-+{
-+	struct media_entity *entity = &dcmi->vdev->entity;
-+	struct media_pad *pad;
-+
-+	/* Walk searching for entity having no sink */
-+	while (1) {
-+		pad = &entity->pads[0];
-+		if (!(pad->flags & MEDIA_PAD_FL_SINK))
-+			break;
-+
-+		pad = media_entity_remote_pad(pad);
-+		if (!pad || !is_media_entity_v4l2_subdev(pad->entity))
-+			break;
-+
-+		entity = pad->entity;
-+	}
-+
-+	return entity;
-+}
-+
-+static int dcmi_pipeline_s_fmt(struct stm32_dcmi *dcmi,
-+			       struct v4l2_subdev_pad_config *pad_cfg,
-+			       struct v4l2_subdev_format *format)
-+{
-+	struct media_entity *entity = &dcmi->entity.source->entity;
-+	struct v4l2_subdev *subdev;
-+	struct media_pad *sink_pad = NULL;
-+	struct media_pad *src_pad = NULL;
-+	struct media_pad *pad = NULL;
-+	struct v4l2_subdev_format fmt = *format;
-+	bool found = false;
-+	int ret;
-+
-+	/*
-+	 * Starting from sensor subdevice, walk within
-+	 * pipeline and set format on each subdevice
-+	 */
-+	while (1) {
-+		unsigned int i;
-+
-+		/* Search if current entity has a source pad */
-+		for (i = 0; i < entity->num_pads; i++) {
-+			pad = &entity->pads[i];
-+			if (pad->flags & MEDIA_PAD_FL_SOURCE) {
-+				src_pad = pad;
-+				found = true;
-+				break;
-+			}
-+		}
-+		if (!found)
-+			break;
-+
-+		subdev = media_entity_to_v4l2_subdev(entity);
-+
-+		/* Propagate format on sink pad if any, otherwise source pad */
-+		if (sink_pad)
-+			pad = sink_pad;
-+
-+		dev_dbg(dcmi->dev, "\"%s\":%d pad format set to 0x%x %ux%u\n",
-+			subdev->name, pad->index, format->format.code,
-+			format->format.width, format->format.height);
-+
-+		fmt.pad = pad->index;
-+		ret = v4l2_subdev_call(subdev, pad, set_fmt, pad_cfg, &fmt);
-+		if (ret < 0) {
-+			dev_err(dcmi->dev, "%s: Failed to set format 0x%x %ux%u on \"%s\":%d pad (%d)\n",
-+				__func__, format->format.code,
-+				format->format.width, format->format.height,
-+				subdev->name, pad->index, ret);
-+			return ret;
-+		}
-+
-+		if (fmt.format.code != format->format.code ||
-+		    fmt.format.width != format->format.width ||
-+		    fmt.format.height != format->format.height) {
-+			dev_dbg(dcmi->dev, "\"%s\":%d pad format has been changed to 0x%x %ux%u\n",
-+				subdev->name, pad->index, fmt.format.code,
-+				fmt.format.width, fmt.format.height);
-+		}
-+
-+		/* Walk to next entity */
-+		sink_pad = media_entity_remote_pad(src_pad);
-+		if (!sink_pad || !is_media_entity_v4l2_subdev(sink_pad->entity))
-+			break;
-+
-+		entity = sink_pad->entity;
-+	}
-+	*format = fmt;
-+
-+	return 0;
-+}
-+
-+static int dcmi_pipeline_s_stream(struct stm32_dcmi *dcmi, int state)
-+{
-+	struct media_entity *entity = &dcmi->vdev->entity;
-+	struct v4l2_subdev *subdev;
-+	struct media_pad *pad;
-+	int ret;
-+
-+	/* Start/stop all entities within pipeline */
-+	while (1) {
-+		pad = &entity->pads[0];
-+		if (!(pad->flags & MEDIA_PAD_FL_SINK))
-+			break;
-+
-+		pad = media_entity_remote_pad(pad);
-+		if (!pad || !is_media_entity_v4l2_subdev(pad->entity))
-+			break;
-+
-+		entity = pad->entity;
-+		subdev = media_entity_to_v4l2_subdev(entity);
-+
-+		ret = v4l2_subdev_call(subdev, video, s_stream, state);
-+		if (ret < 0 && ret != -ENOIOCTLCMD) {
-+			dev_err(dcmi->dev, "%s: \"%s\" failed to %s streaming (%d)\n",
-+				__func__, subdev->name,
-+				state ? "start" : "stop", ret);
-+			return ret;
-+		}
-+
-+		dev_dbg(dcmi->dev, "\"%s\" is %s\n",
-+			subdev->name, state ? "started" : "stopped");
-+	}
-+
-+	return 0;
-+}
-+
-+static int dcmi_pipeline_start(struct stm32_dcmi *dcmi)
-+{
-+	return dcmi_pipeline_s_stream(dcmi, 1);
-+}
-+
-+static void dcmi_pipeline_stop(struct stm32_dcmi *dcmi)
-+{
-+	dcmi_pipeline_s_stream(dcmi, 0);
-+}
-+
- static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- {
- 	struct stm32_dcmi *dcmi = vb2_get_drv_priv(vq);
-@@ -597,14 +736,17 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- 		goto err_release_buffers;
- 	}
- 
--	/* Enable stream on the sub device */
--	ret = v4l2_subdev_call(dcmi->entity.source, video, s_stream, 1);
--	if (ret && ret != -ENOIOCTLCMD) {
--		dev_err(dcmi->dev, "%s: Failed to start streaming, subdev streamon error",
--			__func__);
-+	ret = media_pipeline_start(&dcmi->vdev->entity, &dcmi->pipeline);
-+	if (ret < 0) {
-+		dev_err(dcmi->dev, "%s: Failed to start streaming, media pipeline start error (%d)\n",
-+			__func__, ret);
- 		goto err_pm_put;
- 	}
- 
-+	ret = dcmi_pipeline_start(dcmi);
-+	if (ret)
-+		goto err_media_pipeline_stop;
-+
- 	spin_lock_irq(&dcmi->irqlock);
- 
- 	/* Set bus width */
-@@ -676,7 +818,7 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- 	if (ret) {
- 		dev_err(dcmi->dev, "%s: Start streaming failed, cannot start capture\n",
- 			__func__);
--		goto err_subdev_streamoff;
-+		goto err_pipeline_stop;
- 	}
- 
- 	/* Enable interruptions */
-@@ -687,8 +829,11 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- 
- 	return 0;
- 
--err_subdev_streamoff:
--	v4l2_subdev_call(dcmi->entity.source, video, s_stream, 0);
-+err_pipeline_stop:
-+	dcmi_pipeline_stop(dcmi);
-+
-+err_media_pipeline_stop:
-+	media_pipeline_stop(&dcmi->vdev->entity);
- 
- err_pm_put:
- 	pm_runtime_put(dcmi->dev);
-@@ -713,13 +858,10 @@ static void dcmi_stop_streaming(struct vb2_queue *vq)
- {
- 	struct stm32_dcmi *dcmi = vb2_get_drv_priv(vq);
- 	struct dcmi_buf *buf, *node;
--	int ret;
- 
--	/* Disable stream on the sub device */
--	ret = v4l2_subdev_call(dcmi->entity.source, video, s_stream, 0);
--	if (ret && ret != -ENOIOCTLCMD)
--		dev_err(dcmi->dev, "%s: Failed to stop streaming, subdev streamoff error (%d)\n",
--			__func__, ret);
-+	dcmi_pipeline_stop(dcmi);
-+
-+	media_pipeline_stop(&dcmi->vdev->entity);
- 
- 	spin_lock_irq(&dcmi->irqlock);
- 
-@@ -937,8 +1079,7 @@ static int dcmi_set_fmt(struct stm32_dcmi *dcmi, struct v4l2_format *f)
- 	mf->width = sd_framesize.width;
- 	mf->height = sd_framesize.height;
- 
--	ret = v4l2_subdev_call(dcmi->entity.source, pad,
--			       set_fmt, NULL, &format);
-+	ret = dcmi_pipeline_s_fmt(dcmi, NULL, &format);
- 	if (ret < 0)
- 		return ret;
- 
-@@ -1412,6 +1553,12 @@ static int dcmi_set_default_fmt(struct stm32_dcmi *dcmi)
- 	return 0;
- }
- 
-+/*
-+ * FIXME: For the time being we only support subdevices
-+ * which expose RGB & YUV "parallel form" mbus code (_2X8).
-+ * Nevertheless, this allows to support serial source subdevices
-+ * and serial to parallel bridges which conform to this.
-+ */
- static const struct dcmi_format dcmi_formats[] = {
- 	{
- 		.fourcc = V4L2_PIX_FMT_RGB565,
-@@ -1538,7 +1685,20 @@ static int dcmi_graph_notify_complete(struct v4l2_async_notifier *notifier)
- 	struct stm32_dcmi *dcmi = notifier_to_dcmi(notifier);
- 	int ret;
- 
-+	/*
-+	 * Now that the graph is complete,
-+	 * we search for the source subdevice
-+	 * in order to expose it through V4L2 interface
-+	 */
-+	dcmi->entity.source =
-+		media_entity_to_v4l2_subdev(dcmi_find_source(dcmi));
-+	if (!dcmi->entity.source) {
-+		dev_err(dcmi->dev, "Source subdevice not found\n");
-+		return -ENODEV;
-+	}
-+
- 	dcmi->vdev->ctrl_handler = dcmi->entity.source->ctrl_handler;
-+
- 	ret = dcmi_formats_init(dcmi);
- 	if (ret) {
- 		dev_err(dcmi->dev, "No supported mediabus format found\n");
-@@ -1583,12 +1743,31 @@ static int dcmi_graph_notify_bound(struct v4l2_async_notifier *notifier,
- 				   struct v4l2_async_subdev *asd)
- {
- 	struct stm32_dcmi *dcmi = notifier_to_dcmi(notifier);
-+	unsigned int ret;
-+	int src_pad;
- 
--	dev_dbg(dcmi->dev, "Subdev %s bound\n", subdev->name);
-+	dev_dbg(dcmi->dev, "Subdev \"%s\" bound\n", subdev->name);
- 
--	dcmi->entity.source = subdev;
-+	/*
-+	 * Link this sub-device to DCMI, it could be
-+	 * a parallel camera sensor or a bridge
-+	 */
-+	src_pad = media_entity_get_fwnode_pad(&subdev->entity,
-+					      subdev->fwnode,
-+					      MEDIA_PAD_FL_SOURCE);
-+
-+	ret = media_create_pad_link(&subdev->entity, src_pad,
-+				    &dcmi->vdev->entity, 0,
-+				    MEDIA_LNK_FL_IMMUTABLE |
-+				    MEDIA_LNK_FL_ENABLED);
-+	if (ret)
-+		dev_err(dcmi->dev, "Failed to create media pad link with subdev \"%s\"\n",
-+			subdev->name);
-+	else
-+		dev_dbg(dcmi->dev, "DCMI is now linked to \"%s\"\n",
-+			subdev->name);
- 
--	return 0;
-+	return ret;
- }
- 
- static const struct v4l2_async_notifier_operations dcmi_graph_notify_ops = {
--- 
-2.7.4
 
+--dcfpx62fqgv2jqjo
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Mark,
+
+On Wed, Aug 14, 2019 at 05:02:34PM +0100, Mark Brown wrote:
+> On Wed, Aug 14, 2019 at 12:53:24PM +0200, Ali Burak Par=C4=B1m wrote:
+> > On Thu, 1 Aug 2019 at 13:48, Mark Brown <broonie@kernel.org> wrote:
+> > > On Thu, Aug 01, 2019 at 01:43:06PM +0200, Ali Burak Par=C4=B1m wrote:
+> > > > On Thu, Jul 25, 2019 at 03:01:12PM +0200, Maxime Ripard wrote:
+>
+> > > > Hardware is a custom board I designed with 4 PDM output microphones
+> > > > and 2 adau7002 devices as the codec for PDM-to-PCM. We want to do
+> > > > signal processing with this board. Therefore having separate stream=
+s for
+> > > > each microphone is crucial to the application though I am not sure =
+where
+> > > > we should implement this exactly.
+>
+> > > What is this processing - are the streams from these microphones
+> > > logically related in any way (eg, is this a microphone array)?  There=
+'s
+>
+> > Yes, it is a microphone array application for speech enhancement. Thus,
+> > signal levels and physical time delays are important.
+>
+> > > probably going to be some overlap in the input signals at least.  If =
+you
+> > > need to for example correlate different microphones then that's
+> > > relevant.
+>
+> > Yes, we correlate different microphone signals in some of our algorithm=
+s.
+>
+> OK, in that case I'd recommend providing them to userspace as a single
+> four channel stream - keeping everything bundled together as long as
+> possible to make it easier to keep the processing synced up.
+
+Ok, that's what I had in mind as well :)
+
+However, it looks like we can only capture as many channels as the max
+being exposed by the codec on the link?
+
+Any attempt at capturing something with 4 channels here using arecord
+was either reduced to two channels (the amount of channels provided by
+the adau7002 driver), or just refused by the ALSA core.
+
+Is there anything that we need to configure / work on to enable this?
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--dcfpx62fqgv2jqjo
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVpgwQAKCRDj7w1vZxhR
+xY+TAP95lE8eBN7vztzKTn7/ox2b2yOAY/R+9IZAr6MhozTa7wEAtkB0vztpaSDp
+ETZvJkHOTQVRvG5/rW07h2wsZXLT6gQ=
+=GcTW
+-----END PGP SIGNATURE-----
+
+--dcfpx62fqgv2jqjo--
+
+
+--===============5798455825696388967==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5798455825696388967==--
+
