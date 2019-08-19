@@ -2,68 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5BC3948CE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 17:46:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8CFB948E9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 17:47:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vHiLNma+WVOew2/afEzcwgU1z/X15uku53gmWGoZmFs=; b=LekYFHZgr0HLCR
-	GxEqNSMpo8sMmq+4RCDPFTt/HaEd+BQmg84nl+fwWTjeoQ3vklMyoBtxoS+8MzPkogtgaTJt3UJDd
-	My0c/vPR7D26GfrlDh777v+vkrPD0uxLneN5TB1P1yBA+bhHXC5QGfBvOHa0ixJnAj6b15G3hAU9u
-	YKmNhfVUzr9ZgtVRkoMLXITBcv1hvWCvmw0DHPftaE0HHh5IIaIlNRzE/QLTkp74FNN8626LA0S20
-	Bhg4R1pd68Unm1zaZ04RoiXye7d/O2Gca2oy0A2PKuDX3jdrOVRFysO7FK2F51jazaW9gfEU/1zJA
-	2Q7RajO8WfpWVRrjP8pA==;
+	List-Owner; bh=l86qKZy4INDex2eeDUy23zkf4N/l36NGRgdmfToOTqg=; b=lRHbSALIldpWI5
+	1yvFkWSb9MAeU/cd2o5mQ6q4IOu9H8mR4ezBHIpdIqgSLAG8cV80iI1fhcsTHeI5D2Tfe2akaszSZ
+	rHHFmlRw5ikqIwvCBcVNNltZgsnAx9mn3WLQFySER//KWULnHzUNcWXeSe/YeSvVoUGDLZQhJyQU7
+	n5KkN5tPg7CTTDwUwwy9cSnGkR7UUswhvwSppwVzXVTKj0WbS5zm3x8yYkiiwAHkt3JTNZsvEQBQm
+	2adfaYhKmYgHFeJ0PpvQwhOAcbayC1acCZ91NWwaldbXkv2Gnn7iDQ7V0UITtT8PcLyA+RaccYRzP
+	G9F4sG7EMEOXbz2LLocQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzjrb-0003F1-QF; Mon, 19 Aug 2019 15:46:31 +0000
+	id 1hzjsa-0003fC-Vo; Mon, 19 Aug 2019 15:47:33 +0000
 Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzjrU-0003Dv-Rl
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 15:46:26 +0000
-Received: by mail-pf1-x442.google.com with SMTP id q139so1377235pfc.13
+ id 1hzjsU-0003ek-Ae
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 15:47:27 +0000
+Received: by mail-pf1-x442.google.com with SMTP id w16so1389487pfn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 08:46:24 -0700 (PDT)
+ Mon, 19 Aug 2019 08:47:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yBo5l6Hb3i4HlgUMt0iRUlNpHTn17B/raGae53BLtlo=;
- b=g1nXlHoCW7Y2bR1cRffuS4BNOtNrOe4CRBULxbwa13Z2T1F/a5TXCs/ygYuh3oJpQ6
- iP9w/DB2iE5KseeaCoduO9chHspnlj7HeAyriaYqmf10ipcW7mCi/0Eo8NM8dvhRD/Hx
- Os8in9EMk2OfaRBYl2cEpm5IXC3V7vGcD33PouZWEjieE1Pj+je2Nn7CaFF5BZvonZEg
- u/VzJS+Hh/sdPpYsAqxeVCaiJsfiwPNG/PICBeFKxv0wfCAXdG6WShSIhktx1rp96BE0
- +xWyt40ufdMRvdwQUi3opN+XtIpHJ8cXudqQeN1u2+KGLLvmxDa1RGlF7itwhCQRAOWu
- FM6g==
+ :cc; bh=GVKhbnPbpjWbhz5xDYatb5Jf0xezOaFTSU5iPuDRTeo=;
+ b=hb156RXeMFMq/ZFBxV79hUwsJ33TBPwNChB7tz9IM49HqYq3bFTECBQ0jWs93GlT2G
+ SEOQohdK8Qpvg992CDM37AZOCtspic82CV7MxeJ16y4n+GAIARuDtkAqM0Vpcs5ugO59
+ 3sRkxC82ZNpPiJFiSjHCE8xFRcNyFvlrnKXcUERASk/OU7gh9oUuKntlcF8+9VOgRdQO
+ XwzHDLp8GeaF9DmG79eL+xmRZIDuOI163umv7VF+AUJ3CNUJ8QSO3555UzdSqQRzm98/
+ M6E4uyzHKgmn+l3ROAiDQuvOoBKPpaBx3AvAN7T4WwNWZXw8eHWQZ7MH/qOuEtyRVpnD
+ 8p+A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=yBo5l6Hb3i4HlgUMt0iRUlNpHTn17B/raGae53BLtlo=;
- b=UJtLPkzfpzPQPTx7aNYA6UlquBb3LACi/0rehl8RS6Ln71KZ4T6+0Q2bt5s1vRM20q
- hsCP+gWgdZK7R0/aGdRSyU6Z8UUFrPZsSL3i7kRflbemG1s2IoUL+qOn4GVh4XJahyEj
- gutqi0g4FF+P5ukXEt3O4JZbpDDN9GXvW33bWPhI5He7ydB8vr5fMauCNv3KUihAVOCr
- 7AApJWrsB3EIGfoR5tOr9xq3j6o29uyDOXeFDf2yp9kC5BcOmZPeJQnD6qhX5+PyGIAX
- L+P3wlNQrWzPeXaCz/v/+9W9rQ4MQnZCQ57/sfdB8IFH6jS1Fy4vkZy6A9lNQA5lVkOh
- 8SBQ==
-X-Gm-Message-State: APjAAAV/oYOG64io0BjyNTtQe6vDJUIVvNAQIUrPo4yhKNH4ijvv1/6O
- CutofNsA5TIy7g/MCK18OAqHKWRZQNWDdL90uH/kbttJM8+vmw==
-X-Google-Smtp-Source: APXvYqwspcK95c1b7EzpNDYbzikjHPsqF9/mQX2RFrao6OHlpeBL0OGlH5Hg7JHZ2diW7v8MOGMj1LGIgGpYj/VFqkM=
-X-Received: by 2002:a63:c442:: with SMTP id m2mr62735pgg.286.1566229583644;
- Mon, 19 Aug 2019 08:46:23 -0700 (PDT)
+ bh=GVKhbnPbpjWbhz5xDYatb5Jf0xezOaFTSU5iPuDRTeo=;
+ b=d4/4NyehhRgm1hccE1CBpJ4vmT4MWqQ3l2hbVfKSYQPeft5U3DioD7n0NjV9msaDfr
+ RHNmDTpaMf2WHrmNR9MiyWi5IMdIJMBdeUz4kmajEwYsENl03aVjXOxMt8imeIF5Hrp0
+ XbbqeJ4nGO0c1d/I6AejIakmQz6IQc7N92Md/qr/DQbdiWZQ16sPwZhZfFDQ3Tmy/dE1
+ K3wqhlmpJONduNTb6TBhUYxtT6jSbGlQzJ5Kbno9B0TD7MzCuEYmyVhwKfHrGGe2UE6a
+ jRxaObHdN4HjBG8gZ2OTY1CELMtRWXzYYPobVdjoV6kzOosMWGeIPGR4RGNh90OoOMqI
+ mjHQ==
+X-Gm-Message-State: APjAAAWvNRv9M1VM8nR1WEUO8RV1l6S4iRT9D38pWZdEIXtAEBLxbUHt
+ PAqtKN8Ab9680093H5aTPOYW4E3P4TAFNjZ2AeeHkA==
+X-Google-Smtp-Source: APXvYqxLTHM5LEFPfn7KCCEc2GvHDBYCQbwS1b0CfA10FVE2b1wMY/bojyivxbvU4UFTnmGkD/DFGafc0BRQouvpbVg=
+X-Received: by 2002:a17:90a:858c:: with SMTP id
+ m12mr21540803pjn.129.1566229645488; 
+ Mon, 19 Aug 2019 08:47:25 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190815154403.16473-1-catalin.marinas@arm.com>
- <20190815154403.16473-3-catalin.marinas@arm.com>
-In-Reply-To: <20190815154403.16473-3-catalin.marinas@arm.com>
+ <20190815154403.16473-4-catalin.marinas@arm.com>
+In-Reply-To: <20190815154403.16473-4-catalin.marinas@arm.com>
 From: Andrey Konovalov <andreyknvl@google.com>
-Date: Mon, 19 Aug 2019 17:46:12 +0200
-Message-ID: <CAAeHK+w7Y=UgwTyjyVt6bBSi=DZROkMaz1B6-0BefK3AjSPpYw@mail.gmail.com>
-Subject: Re: [PATCH v8 2/5] arm64: Tighten the PR_{SET,GET}_TAGGED_ADDR_CTRL
- prctl() unused arguments
+Date: Mon, 19 Aug 2019 17:47:14 +0200
+Message-ID: <CAAeHK+wSw6x8EpPc5-7tBnxEjKfYGfH6mUEh013YjKBCy40AZA@mail.gmail.com>
+Subject: Re: [PATCH v8 3/5] arm64: Change the tagged_addr sysctl control
+ semantics to only prevent the opt-in
 To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_084624_920344_D1C6A14F 
-X-CRM114-Status: GOOD (  13.36  )
+X-CRM114-CacheID: sfid-20190819_084726_390836_025EF8B6 
+X-CRM114-Status: GOOD (  20.53  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
@@ -114,36 +115,70 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, Aug 15, 2019 at 5:44 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
 >
-> Require that arg{3,4,5} of the PR_{SET,GET}_TAGGED_ADDR_CTRL prctl and
-> arg2 of the PR_GET_TAGGED_ADDR_CTRL prctl() are zero rather than ignored
-> for future extensions.
+> First rename the sysctl control to abi.tagged_addr_disabled and make it
+> default off (zero). When abi.tagged_addr_disabled == 1, only block the
+> enabling of the TBI ABI via prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE).
+> Getting the status of the ABI or disabling it is still allowed.
 >
 > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 
 Acked-by: Andrey Konovalov <andreyknvl@google.com>
 
 > ---
->  kernel/sys.c | 4 ++++
->  1 file changed, 4 insertions(+)
+>  arch/arm64/kernel/process.c | 17 ++++++++++-------
+>  1 file changed, 10 insertions(+), 7 deletions(-)
 >
-> diff --git a/kernel/sys.c b/kernel/sys.c
-> index c6c4d5358bd3..ec48396b4943 100644
-> --- a/kernel/sys.c
-> +++ b/kernel/sys.c
-> @@ -2499,9 +2499,13 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
->                 error = PAC_RESET_KEYS(me, arg2);
->                 break;
->         case PR_SET_TAGGED_ADDR_CTRL:
-> +               if (arg3 || arg4 || arg5)
-> +                       return -EINVAL;
->                 error = SET_TAGGED_ADDR_CTRL(arg2);
->                 break;
->         case PR_GET_TAGGED_ADDR_CTRL:
-> +               if (arg2 || arg3 || arg4 || arg5)
-> +                       return -EINVAL;
->                 error = GET_TAGGED_ADDR_CTRL();
->                 break;
->         default:
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index 76b7c55026aa..03689c0beb34 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -579,17 +579,22 @@ void arch_setup_new_exec(void)
+>  /*
+>   * Control the relaxed ABI allowing tagged user addresses into the kernel.
+>   */
+> -static unsigned int tagged_addr_prctl_allowed = 1;
+> +static unsigned int tagged_addr_disabled;
+>
+>  long set_tagged_addr_ctrl(unsigned long arg)
+>  {
+> -       if (!tagged_addr_prctl_allowed)
+> -               return -EINVAL;
+>         if (is_compat_task())
+>                 return -EINVAL;
+>         if (arg & ~PR_TAGGED_ADDR_ENABLE)
+>                 return -EINVAL;
+>
+> +       /*
+> +        * Do not allow the enabling of the tagged address ABI if globally
+> +        * disabled via sysctl abi.tagged_addr_disabled.
+> +        */
+> +       if (arg & PR_TAGGED_ADDR_ENABLE && tagged_addr_disabled)
+> +               return -EINVAL;
+> +
+>         update_thread_flag(TIF_TAGGED_ADDR, arg & PR_TAGGED_ADDR_ENABLE);
+>
+>         return 0;
+> @@ -597,8 +602,6 @@ long set_tagged_addr_ctrl(unsigned long arg)
+>
+>  long get_tagged_addr_ctrl(void)
+>  {
+> -       if (!tagged_addr_prctl_allowed)
+> -               return -EINVAL;
+>         if (is_compat_task())
+>                 return -EINVAL;
+>
+> @@ -618,9 +621,9 @@ static int one = 1;
+>
+>  static struct ctl_table tagged_addr_sysctl_table[] = {
+>         {
+> -               .procname       = "tagged_addr",
+> +               .procname       = "tagged_addr_disabled",
+>                 .mode           = 0644,
+> -               .data           = &tagged_addr_prctl_allowed,
+> +               .data           = &tagged_addr_disabled,
+>                 .maxlen         = sizeof(int),
+>                 .proc_handler   = proc_dointvec_minmax,
+>                 .extra1         = &zero,
 
 _______________________________________________
 linux-arm-kernel mailing list
