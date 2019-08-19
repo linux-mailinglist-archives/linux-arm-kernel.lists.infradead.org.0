@@ -2,94 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD08C91C10
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 06:34:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB95291C57
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 07:18:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z7KShr+H+/dwSGYeZdo51UHi5Kg0Bf7XybEEybRZzkI=; b=YPGLci40hiCUU+
-	eL4z4WSlXKmukmlkaBZ8YMh4ggW+j5823rIsTd1Iwx7OIAcLCJ71P0rmSLOH1j6Iv2g1NeLejtYHY
-	Tzs/3xcMg9jstkf4C2uDPosxoiJugwfXQg1UJE93mymWjEhvS6ukq/CeRpoEmRruTR1RyXxYwVgCO
-	5LkH4jCasom1GtnaDhY19kT9nbWQejZ1fcBoZS4xCGk/RAnJIqDcaN2yM1u7ZWQGvaxl5g0GLwDaV
-	OQhnVM+esopKicCQG3qkaeXlA0cfKXlTn1hbYXikhFYLzJondCzE0vvHdxuqHXTigEHk/sNPMcQxb
-	7A2fyNlr9V+I7ux+PzsQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Z3hek+nihhEvuhf/49n3eYvylf6voD16g3ySbXiZgps=; b=ohjd7TEcknhJSf
+	63lPnMqRdMsNK2GldKxlBxXclQe3KMrF68O0myv/KzxDmaOGFgm61jNHJ0qZL7kFbcdZtAno5KtTC
+	2FYw/L/Ji0JF4EmwvzInkUijVcmPsoKhx+lPDpmv+RvDIK0KCvkBB3NvrHCf3qJtdFixvAb+V19tc
+	wgZN6qs0OHZzGQYSivSRYhqjSUEmyRpRc9WGE/V6rodVvt3fpUGYPsoAAqdw/+e4Nvj4x+yRtRcOk
+	Cy10x/8dZQ58S8p6ZzwZ32P9hSWlpGZR7uD0Tz0LZslBbr6kFUZqsUFw2cX3OSnyaWoHHWueS12oJ
+	3aVi18M8jo8SH+rlsbsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzZMd-0007s7-AN; Mon, 19 Aug 2019 04:33:51 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hza3d-0002hc-B8; Mon, 19 Aug 2019 05:18:17 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzZMG-0007ri-Ew
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 04:33:30 +0000
-Received: by mail-pg1-x544.google.com with SMTP id x15so413513pgg.8
+ id 1hza3B-0002h9-3b
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 05:17:50 +0000
+Received: by mail-pf1-x441.google.com with SMTP id d85so469258pfd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 18 Aug 2019 21:33:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=72ELnDTzM6YoNYA5xuMcBDOagLAJM+myxC5fFXnFV48=;
- b=Z9vuTLauhILmFT4izzT0W9vrtgqP/Xr0XOa45NfzQa5oXQEh15wihhLl9XXLTBEyfS
- PGuiI5f1/qyvjSDjE7/U3rMq8VEh/8Z3XlXNAPid/v+5T/L1dckkH4m68hOzakwYsmiS
- DR4jU7yr8VWRNYqwux35MvR3ALybBBLxvrJ29v88gCnILUTZNjv07FH4zuXQZiOE4Bek
- z3AjR4vwfq3poqp2dvl0cnpg6DLBxxeI+YURikqDXfQMxaIYf4C6aFRwebA4kkbqBXYg
- K4S2rOTLfy9dpAB3cPRCdHq8mO5StS09+MNiM/OJkPQrgAKaNxuLijm3Cni0/J+X5E0K
- mUrA==
+ Sun, 18 Aug 2019 22:17:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TGwG/YSLZYRVL+vJAKs5Bcm3MpdJbEenYZGdWxEpLBk=;
+ b=nvB93+LIMhdoi2CaaDpCzS7o1dOMNM+3A21WKpAKWBnuWmftjA+IkGp1UzjUoGvPt2
+ +j2EkS5G6ZY46CUxngO27FKFUsqU8w3ReyRRX3UkR+1drtyCLepHPwcN5KW09jab+Zhb
+ GScQZ2FStl1PJZ2tDHm4H4BfYEB0YVkzx5LUaREW/9sLMPuMubqY+IalqiR/AXhQrMKp
+ 0432fj4jPoYILRdkyfhjSr0lR0ICE1fNNzAfcNzye9ffj+BHbqpe9901MBV2oVN3VOC2
+ Cfjpn+91AGskyGX4QGYBSsI3t/aGs34xkui9kVhCZQ9SWmY/yoCefRSpaDeVNXe00XKq
+ LmHQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=72ELnDTzM6YoNYA5xuMcBDOagLAJM+myxC5fFXnFV48=;
- b=mUq4Z9QRutOmsGlo0+5aNT/C0wU/cHgRtuYKtvkz0Drh+/pafbSdI/IkFroMYVf3Hc
- NEbla2D4h5juKti1SV9IQtFoDEVataT40iePJvi/eUE3wE8KVLBn+xzxTQ6fV+K9Ml2p
- F5zm2p4Zj7s5MEKDu2vywMLLzOQ/6zwIPn8DP+FMpjeUCBWVlZ5t6KEvBLI6wIAquJ1w
- t/v8C3CkIHx6RWkfeMda8f8m0mkaJLvc1Os6xgWwKvcKf8PaakMQ9WPskmeq0joHKVXI
- ssgjEKtpVNcAmy4zoLektgvytcrwm9JKYuVZc8ya+zE1Vnajuu9PjELtgMLyl1dnv0Np
- VjYw==
-X-Gm-Message-State: APjAAAULwcPQV/cz3O09iKDFBQY8c9N8w4XmpDd1E1uIksX9+9QjFsIx
- hpw/LqaVNdIjrTRgZSNX10ELwSwUO18=
-X-Google-Smtp-Source: APXvYqx0GITYVJU0+6/P8ffsNYIHIW1krQG1LL8IcUsIyyFWccg1orw3OU3X7LPPaX0vGUeYIUGxjA==
-X-Received: by 2002:a63:62c6:: with SMTP id
- w189mr18101877pgb.312.1566189206207; 
- Sun, 18 Aug 2019 21:33:26 -0700 (PDT)
-Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id f14sm15192021pfn.53.2019.08.18.21.33.24
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
+ :mime-version:content-transfer-encoding;
+ bh=TGwG/YSLZYRVL+vJAKs5Bcm3MpdJbEenYZGdWxEpLBk=;
+ b=Ln/qiYZxEKd23NIOlH9zav+49z29e1gneMrqJ0gIS5KTzqZKkmzvJKPnTCa0vFfdvc
+ wMCzte1yBGOOLciXZIhk6ZPWEBXHbzmv+QOrW1NGuJoIyqtMyiGjMcxpC9DJLJhkU+Ly
+ I+zcacn4xuKYSyWFa6jA6PqCWoh8C96rAELCOAmEqtR8izDDHMQBDQBcYJmTcz1m7cvt
+ ZedJXRm28D2G1+93CJdAUNKDgmXQAAyaFaTS6tVRQw1HkWoGUg/+jXGa5Xt9p4q5U5GA
+ XaKuNdoYKluqqcuON21ONyCa2jn8CSIsVQ4os0y0PWlKZvFlzPoeLXHMFqhAjEf01+pP
+ +mgQ==
+X-Gm-Message-State: APjAAAWNv7jhvnYg/Bdw9Y5PxIKaZUpkjrbN2+N039lAGqR8bhGKYK3W
+ /7mwBNhAK/rbV60HupsRvkY=
+X-Google-Smtp-Source: APXvYqxEgQ3FMUcGf8WGHJW4wXZcDWRMRgUVb9y2dWwhkvXh49b+GxwAQ3nXnVqyKo2MlegRrqcf2A==
+X-Received: by 2002:a63:ec03:: with SMTP id j3mr18981805pgh.325.1566191867962; 
+ Sun, 18 Aug 2019 22:17:47 -0700 (PDT)
+Received: from voyager.ibm.com ([36.255.48.244])
+ by smtp.gmail.com with ESMTPSA id o3sm19010087pje.1.2019.08.18.22.17.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 18 Aug 2019 21:33:25 -0700 (PDT)
-Date: Sun, 18 Aug 2019 21:35:08 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: next/master boot: 254 boots: 16 failed, 231 passed with 4
- offline, 1 untried/unknown, 2 conflicts (next-20190726)
-Message-ID: <20190819043508.GY26807@tuxbook-pro>
-References: <5d3aef79.1c69fb81.111b9.a701@mx.google.com>
- <20190726134843.GC55803@sirena.org.uk>
+ Sun, 18 Aug 2019 22:17:47 -0700 (PDT)
+From: Joel Stanley <joel@jms.id.au>
+To: Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Guenter Roeck <linux@roeck-us.net>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v2 0/2] watchdog: aspeed: Add support for ast2600
+Date: Mon, 19 Aug 2019 14:47:36 +0930
+Message-Id: <20190819051738.17370-1-joel@jms.id.au>
+X-Mailer: git-send-email 2.23.0.rc1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190726134843.GC55803@sirena.org.uk>
-User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190818_213328_532129_4DF2AECB 
-X-CRM114-Status: GOOD (  12.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190818_221749_151732_D65DF1F4 
+X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,58 +100,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Andy Gross <agross@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- kernel-build-reports@lists.linaro.org
+Cc: devicetree@vger.kernel.org, Ryan Chen <ryan_chen@aspeedtech.com>,
+ linux-watchdog@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri 26 Jul 06:48 PDT 2019, Mark Brown wrote:
+Hello,
 
-> On Fri, Jul 26, 2019 at 05:18:01AM -0700, kernelci.org bot wrote:
-> 
-> The past few versions of -next failed to boot on apq8096-db820c:
-> 
-> >     defconfig:
-> >         gcc-8:
-> >             apq8096-db820c: 1 failed lab
-> 
-> with an RCU stall towards the end of boot:
-> 
-> 00:03:40.521336  [   18.487538] qcom_q6v5_pas adsp-pil: adsp-pil supply px not found, using dummy regulator
-> 00:04:01.523104  [   39.499613] rcu: INFO: rcu_preempt detected stalls on CPUs/tasks:
-> 00:04:01.533371  [   39.499657] rcu: 	2-...!: (0 ticks this GP) idle=9ca/1/0x4000000000000000 softirq=1450/1450 fqs=50
-> 00:04:01.537544  [   39.504689] 	(detected by 0, t=5252 jiffies, g=2425, q=619)
-> 00:04:01.541727  [   39.513539] Task dump for CPU 2:
-> 00:04:01.547929  [   39.519096] seq             R  running task        0   199    198 0x00000000
-> 
-> Full details and logs at:
-> 
-> 	https://kernelci.org/boot/id/5d3aa7ea59b5142ba868890f/
-> 
-> The last version that worked was from the 15th and there seem to be
-> similar issues in mainline since -rc1.
+Here's a small patch series to enable the ast2600 watchdog.
 
-As you might have seen this problem has come and gone on the
-apq8096-db820c and I've finally managed to narrow it down a little bit.
+v2 addresses Guenter's review.
 
-The problem first appears on next-20190701, with the introduction of
-CONFIG_RANDOMIZE_BASE in the defconfig, but after further efforts I've
-concluded that disabling kpti removes or hides the problem.
+Joel Stanley (1):
+  dt-bindings: watchdog: Add ast2600 compatible
 
-With kpti=no on the command line I've now successfully booted the db820c
-100+ times without problems (a clear improvement from the 75% failure
-rate with kpti=yes).
+Ryan Chen (1):
+  watchdog: aspeed: Add support for AST2600
 
+ Documentation/devicetree/bindings/watchdog/aspeed-wdt.txt | 1 +
+ drivers/watchdog/aspeed_wdt.c                             | 4 +++-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
 
-Unfortunately I'm not yet certain why this is causing issues and I'm
-also seeing the same rcu stall on SDA845 under certain (erroneous?)
-conditions (where I don't expect them). 
+-- 
+2.23.0.rc1
 
-Regards,
-Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
