@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2901924A1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 15:19:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95C0C924AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 15:20:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lyEi1MziWqCZWa3U0jytmx4qofY6h40lxxGPcEo4CKA=; b=KRlO+oJgZhgTAI
-	BRHc3P6g4BI+YJDl1ly9fF7Q+ZUZveoctMu31PYvryLWmcm0YYlGRxssz+44uKgKWXQxJyC+1+AA/
-	CY8TCi8F5MMKyeAOJOkavYnWg7lgwpaKgI8XamK+q05cPLtYdp+KT809pDZMC8EhIrvrOteBM/vbG
-	RrVkqgfvgBTyf/S6N6cpLr4DdewF8R6Wh46iQWKndRS6Ep6VNoodmuTLZdczUQo0AhPNXBTsrNMN0
-	YyM2wPPf47c367ART9DOup/q6bNCXZHZqdEk/FsPMxHynnOK4V4gJRvIhf/ZffbWEwQKzkWkWErP6
-	I8RNGGb5mO2cFc1yRavA==;
+	List-Owner; bh=SLUkyim8eH2jhLKPsJbZFAMA9/2/F+Op281zDU06HTc=; b=uYtvJVGZBRWDmG
+	6bI4BysNiA5RaIxgGRi8WI5cOOzb6j60xE2nyJ7AEdcK2/aYt/FkRg7lgkRuwFpCe5n/L5zUTfyoR
+	5eYty6yCpgGmnoHVionolhPMwv8SYi/l2qVpq3Jmnkyl/37ASbkpLbEpuUlilkCWfNXlESKhy6Bij
+	B+14swO5mEnVyd04zCflmPkv/8FmtM3RCUxhdzO0iHzBabS8yP5DITLcD53uTdICEbXS6LLnXhF0a
+	0WWIkz2RprJ2BxkEA/ud5urfrGyk6sGE75MT7XKXUunFGlowtccRgSGuZybA3ZPAdadn78SQ/qHJ2
+	2fJnADI/tr6yXec4Pr2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzhZ6-0000kV-4Z; Mon, 19 Aug 2019 13:19:16 +0000
+	id 1hzhaL-0002Cs-4g; Mon, 19 Aug 2019 13:20:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzhYz-0000k5-9D
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 13:19:10 +0000
+ id 1hzhaB-0002C7-DF
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 13:20:24 +0000
 Received: from X250 (37.80-203-192.nextgentel.com [80.203.192.37])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D8CEB20843;
- Mon, 19 Aug 2019 13:19:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2F98E20843;
+ Mon, 19 Aug 2019 13:20:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566220748;
- bh=8TTzp+tZN5RuUVBzoIrpfSJN79i1Vr6tzgGxPMsL4Fk=;
+ s=default; t=1566220823;
+ bh=dE+SiJQE1Ga//QTRSzldLGnM5m2eIprsqb2ueqc8n1U=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=wQEddTicyf/YOArp1KmESJ9ELJxt+uWGJkWyU7dhIk3BZBKtS1gLwxlUhoMlB8qip
- sloB7FJuzUdkNLqiA/V/iu4Jf2s9dpeYkVHh7aWTP9gurGuoqRyAz3msXMwmdvbGlQ
- sK8B76xe2H7nDJSfLN1FiQgTkuDSRaVcFAfPdXq0=
-Date: Mon, 19 Aug 2019 15:18:56 +0200
+ b=rBFMxF2Ck/Pj5wW+m4oFvA7SQKUmPliDghwewPJ6v5mVfIfd57IcjJcjOFI8FIH3b
+ djdP4zDExqFoiBtoogN29KbJA6/bRo0XbGW/ZeNdMJsSHwHNoQrtTnF2mrwsE3apI3
+ PWIpqyd0NPFHpl7Eqc25ZUo0PF8aCF/EPH2Eh/FQ=
+Date: Mon, 19 Aug 2019 15:20:06 +0200
 From: Shawn Guo <shawnguo@kernel.org>
 To: Hui Song <hui.song_1@nxp.com>
-Subject: Re: [PATCH v2] arm64: dts: ls1088a: fix gpio node
-Message-ID: <20190819131854.GI5999@X250>
-References: <20190813020457.45370-1-hui.song_1@nxp.com>
- <20190819114358.GX5999@X250>
+Subject: Re: [PATCH v3] arm64: dts: ls1088a: fix gpio node
+Message-ID: <20190819132004.GJ5999@X250>
+References: <20190815103016.23125-1-hui.song_1@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190819114358.GX5999@X250>
+In-Reply-To: <20190815103016.23125-1-hui.song_1@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_061909_337649_99E11C05 
-X-CRM114-Status: GOOD (  11.77  )
+X-CRM114-CacheID: sfid-20190819_062023_804789_A9E219D8 
+X-CRM114-Status: GOOD (  16.10  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,30 +77,80 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
  Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Li Yang <leoyang.li@nxp.com>, linux-gpio@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 01:43:59PM +0200, Shawn Guo wrote:
-> On Tue, Aug 13, 2019 at 10:04:57AM +0800, Hui Song wrote:
-> > From: Song Hui <hui.song_1@nxp.com>
-> > 
-> > Update the nodes to include little-endian
-> > property to be consistent with the hardware
-> > and add ls1088a gpio specify compatible.
-> > 
-> > Signed-off-by: Song Hui <hui.song_1@nxp.com>
+On Thu, Aug 15, 2019 at 06:30:16PM +0800, Hui Song wrote:
+> From: Song Hui <hui.song_1@nxp.com>
 > 
-> Applied, thanks.
+> Update the nodes to include little-endian
 
-Just noticed there is a new version, so dropped this one.
+So the commit log needs an update as well?
 
 Shawn
+
+> property to be consistent with the hardware
+> and add ls1088a gpio specify compatible.
+> 
+> Signed-off-by: Song Hui <hui.song_1@nxp.com>
+> ---
+> Changes in v3:
+> 	- delete the attribute of little-endian.
+> Changes in v2:
+> 	- update the subject.
+> 	
+>  arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> index dfbead4..ff669c8 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> @@ -269,7 +269,7 @@
+>  		};
+>  
+>  		gpio0: gpio@2300000 {
+> -			compatible = "fsl,qoriq-gpio";
+> +			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+>  			reg = <0x0 0x2300000 0x0 0x10000>;
+>  			interrupts = <0 36 IRQ_TYPE_LEVEL_HIGH>;
+>  			little-endian;
+> @@ -280,7 +280,7 @@
+>  		};
+>  
+>  		gpio1: gpio@2310000 {
+> -			compatible = "fsl,qoriq-gpio";
+> +			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+>  			reg = <0x0 0x2310000 0x0 0x10000>;
+>  			interrupts = <0 36 IRQ_TYPE_LEVEL_HIGH>;
+>  			little-endian;
+> @@ -291,7 +291,7 @@
+>  		};
+>  
+>  		gpio2: gpio@2320000 {
+> -			compatible = "fsl,qoriq-gpio";
+> +			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+>  			reg = <0x0 0x2320000 0x0 0x10000>;
+>  			interrupts = <0 37 IRQ_TYPE_LEVEL_HIGH>;
+>  			little-endian;
+> @@ -302,7 +302,7 @@
+>  		};
+>  
+>  		gpio3: gpio@2330000 {
+> -			compatible = "fsl,qoriq-gpio";
+> +			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+>  			reg = <0x0 0x2330000 0x0 0x10000>;
+>  			interrupts = <0 37 IRQ_TYPE_LEVEL_HIGH>;
+>  			little-endian;
+> -- 
+> 2.9.5
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
