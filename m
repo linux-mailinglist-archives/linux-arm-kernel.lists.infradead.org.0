@@ -2,88 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFC349281A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 17:12:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 342AD9282A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 17:16:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=i5vE67TzfPwPUv30OiFad8oBw6yDdWjjrBs7ss1IQRE=; b=DG7HRSZFebCyxC
-	LFGy7cayalL8fhKIPFkmVRoQrUOGXFJKmtJ455RveBgDh1Ywy5Hw/jDKRrTyV3T9EcPw1pnBXm0cz
-	ts1DW9Sb8knpFmLUltMCPHloVyEJvocxquJX1qcRzHEpp4mQG65VO32Ytp6IH18/fWxRoXyVx61ig
-	hOMtV8+22D+hJpFhOvUO77/MyS44cxSOPrx0uXDPb/IH+Oomz4N469CzqdM06w9ZJ3OqdfKOwGFnP
-	SjFHhBKVyu46e0Jaw/+ULw7nY69j6QgQb8eMBKpAqYD66LSfw1PwJMlN4WuOIVCeUfTxrqeM0dMft
-	PZ9ihXaqeiRzJ/2+1zFw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bFpgX4DCQVhazQcQSc8yVyzMDnXCV3BerKgKDN1BLgY=; b=il4I1rvIRFjw2u
+	6hniMdxwz4wnf4zfEvQQTESIPMLqL69LI0Goz1uCnOchD1PkmuKlZl67gpoC/fxr1fG+fCiaG2sc9
+	8Cs0PCNfCTbiraal1ZWU+oGbxQfVEPKqNekUyLbAyaAY6wgOnnPOK/TGlfCOQr8wNK29q3FpjMv54
+	dgPnFiqNmK6IJqkjmMLR4HSUNMHFMjU55qrdobY57xKT9e/JbPpV9BekCxmvhn5ml8F11JSGldgHm
+	33zn3MedF70Rcq4PMCwbAxllKDmiHOhGH+skRD+SwVNAdytHSEmX8BlRVks79C8Mf+RNOMrePSF2W
+	EgqcXnr6UwPvDP2po9ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzjKy-0002mE-Ml; Mon, 19 Aug 2019 15:12:48 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1hzjOz-0005oh-FV; Mon, 19 Aug 2019 15:16:57 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzjKp-0002c3-I8
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 15:12:41 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
- Nicolas.Ferre@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Nicolas.Ferre@microchip.com";
- x-sender="Nicolas.Ferre@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Nicolas.Ferre@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: LskeFIuBJfQIV6SbtnS6wmiuNQdoou851pxXLKX2NXlNpMoBRy1upUib4nRpPgje/8ruc7/A4u
- ghD2vhmz7Q4RYCdWPmC7Aie/xy7fBeRnLwvtNuW9tZuLPNitpFSYsyeuZg2r9hHYWAaMxRA1mt
- 5k2++8rZ3WJ3gFGJ8vHjh2VJHyLNl06bsDSlcqX7lxVIKgpkwpvwUa7S+nHYPhtQtXAP4g/yC9
- hEmI3skbCwd+ks07bpp4SG2w8RObxhAXlUEXuruCvD5yyJCqEVIOLnBCOL6y7Je1jhIu4dfUpF
- VX0=
-X-IronPort-AV: E=Sophos;i="5.64,405,1559545200"; d="scan'208";a="45684137"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 19 Aug 2019 08:12:37 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 19 Aug 2019 08:12:36 -0700
-Received: from tenerife.corp.atmel.com (10.10.85.251) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Mon, 19 Aug 2019 08:12:35 -0700
-From: Nicolas Ferre <nicolas.ferre@microchip.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Ludovic Desroches
- <ludovic.desroches@microchip.com>
-Subject: [PATCH] ARM: at91: Documentation: update the sama5d3 and armv7m
- datasheets
-Date: Mon, 19 Aug 2019 17:12:19 +0200
-Message-ID: <20190819151219.19727-1-nicolas.ferre@microchip.com>
-X-Mailer: git-send-email 2.17.1
+ id 1hzjOs-0005oF-D0
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 15:16:51 +0000
+Received: by mail-pl1-x641.google.com with SMTP id y1so1105255plp.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 19 Aug 2019 08:16:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=GlFmsxpfwLpG5XFQZcDJGrUJIAXAnOONymKIPYeVWy4=;
+ b=GASLs+yZnKXgCHGknNLNo71e6UtRt515EbzdpWYm/Hpg75x/UubNKrVS4Ph4uPK+8D
+ Ti+bZvb7RwZ8Rgn5diZiCZOC7bC9H+dTrKcVTPMW/pFv9U1AucjO/hRKCCkTBhzRIaU3
+ D9sPMjOcAkw+sn0WiouQhRmANU/HoJXNnBPivxMzU2mCd+1bqEU622XIt7CtOkyBUScf
+ CddY5regO8tRNMImraZP3DECenQ45DhILnBAxk2TuQ3iyHoyjpEbXWuF3zSR6z/Z8e3z
+ D8kAaqFBdLd66b1BOwiK9p1SMntN4cI0JAUQgHjwyJ5ye9BNp3phuuPzg6paxdjmOKUJ
+ Bduw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=GlFmsxpfwLpG5XFQZcDJGrUJIAXAnOONymKIPYeVWy4=;
+ b=XPiWGss9jMqQPYBFe89LxhXgPeflnwHQvRl4r2gkJfgdVgk7dBeRwpHJcvMQbRLrN7
+ N+nezMij2McIpoy2HhXQgFsay9lDPpQnNnoFj/75AvSESdZMw7erQRd6nPB5AuQQe1GO
+ F0QHkHe2AEyFIVcZXtJG00wa6cUcxVeRamLkh4J+DYopPlrP9VPyn1Wo0qr1EhIda19T
+ BSOdw6R48QSFV0h+l8TK3L0e/Io9Zrjg1aPY9KSTAliuv6WPSfjyox0Eh3Q631WXO7H0
+ fFQOsg5fKteda78xJ+UCjAeSOD0ncn4cJ3TT3Y/xJ3N2LBgL2Xoz5H1iA7RcgXtcxRBL
+ mdtg==
+X-Gm-Message-State: APjAAAULIJksmVUhND1m+UV0gTW238ZWBi2IEL9QnDLII/WeIukTB9CF
+ iZp8DU9oDyoLWhUSW5DAmaNhFPb6nTLNbJ5SG54lZQ==
+X-Google-Smtp-Source: APXvYqxAVYv/X47htv2GfhrYLw10pOmVgC147AdMR4amTTESkgYjtOO9fvfN54mImyUI3YtolKb0GRqZDtWypE7Vt8Q=
+X-Received: by 2002:a17:902:ab96:: with SMTP id
+ f22mr23622721plr.147.1566227808825; 
+ Mon, 19 Aug 2019 08:16:48 -0700 (PDT)
 MIME-Version: 1.0
+References: <00eb8ba84205c59cac01b1b47615116a461c302c.1566220355.git.andreyknvl@google.com>
+ <20190819150342.sxk3zzxvrxhkpp6j@willie-the-truck>
+In-Reply-To: <20190819150342.sxk3zzxvrxhkpp6j@willie-the-truck>
+From: Andrey Konovalov <andreyknvl@google.com>
+Date: Mon, 19 Aug 2019 17:16:37 +0200
+Message-ID: <CAAeHK+xP6HnLJt_RKW67x8nbJLJp5A=av57BfwiFrA88eFn60w@mail.gmail.com>
+Subject: Re: [PATCH ARM] selftests,
+ arm64: fix uninitialized symbol in tags_test.c
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_081239_634409_09DDEFD6 
-X-CRM114-Status: UNSURE (   7.54  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190819_081650_468235_8C8A2B49 
+X-CRM114-Status: GOOD (  11.29  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,45 +99,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
+ Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update SAMA5D3 and SAM E70/S70/V70/V71 Family SoC Datasheets. URL are
-updated in Microchip documentation.
+On Mon, Aug 19, 2019 at 5:03 PM Will Deacon <will@kernel.org> wrote:
+>
+> On Mon, Aug 19, 2019 at 03:14:42PM +0200, Andrey Konovalov wrote:
+> > Fix tagged_ptr not being initialized when TBI is not enabled.
+> >
+> > Dan Carpenter <dan.carpenter@oracle.com>
+>
+> Guessing this was Reported-by, or has Dan introduced his own tag now? ;)
 
-Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
----
- Documentation/arm/microchip.rst | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Oops, yes, Reported-by :)
 
-diff --git a/Documentation/arm/microchip.rst b/Documentation/arm/microchip.rst
-index c9a44c98e868..1adf53dfc494 100644
---- a/Documentation/arm/microchip.rst
-+++ b/Documentation/arm/microchip.rst
-@@ -103,7 +103,7 @@ the Microchip website: http://www.microchip.com.
- 
-           * Datasheet
- 
--          http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11121-32-bit-Cortex-A5-Microcontroller-SAMA5D3_Datasheet.pdf
-+          http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11121-32-bit-Cortex-A5-Microcontroller-SAMA5D3_Datasheet_B.pdf
- 
-     * ARM Cortex-A5 + NEON based SoCs
-       - sama5d4 family
-@@ -167,7 +167,7 @@ the Microchip website: http://www.microchip.com.
- 
-           * Datasheet
- 
--          http://ww1.microchip.com/downloads/en/DeviceDoc/60001527A.pdf
-+          http://ww1.microchip.com/downloads/en/DeviceDoc/SAM-E70-S70-V70-V71-Family-Data-Sheet-DS60001527D.pdf
- 
- 
- Linux kernel information
--- 
-2.17.1
+>
+> Got a link to the report?
 
+https://www.spinics.net/lists/linux-kselftest/msg09446.html
+
+>
+> Will
 
 _______________________________________________
 linux-arm-kernel mailing list
