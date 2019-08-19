@@ -2,54 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9884594D26
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 20:40:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3977694D3B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 20:51:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Y7d96mw96tUXjbAlmojAiklNt+BHmRdApvMCI7eHMlg=; b=qLsMzW7IXoqOCYpOge/t9rKM/
-	XT2iWvpYMiUEHrIXvqKFlDlK/T0RQl4oX0sjOLZcODNuQeV5oF8+JZ7vGmKAJP2IJv0NXuxAgnIvM
-	/5d6Qdw2b/Lesb3JG2ZNUUkDz+NCuJ6RYJ6TIAhmWocaAcPmFUInCalDUM/kDhlHZfnlcGEvYKbZZ
-	CBLXn1gJhV9y1KNvYXnZ3oAm015sSXmauIgr+ghHV9pzyrsw6x4Ha0QBiTIGUPtP/6P78z1KfKef7
-	vH/0FrqnOEr/Zpy7+USNbMxkZbZsWDADw1CuHSDs6q8Xpojdv/ufnfqP1YOAliS7xaM2Pi8dUmxcA
-	8l6cYbGTg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YX0qASrbuxONCnypns1/uJ0LM3pi+iZQLN+oaIDTZ6c=; b=ETT/hZAgZIWSXT
+	LZgm+0kzdy7fiICWba/v+BSNDMC5R2KOUq+vJxWNmLf0PJ6q4X2Y7B2PBSO9DYUhIiv1GCgPQBZlp
+	G2b2s9s5cvy+JgU+lLDDg2NYX9tp42P03s+nXOoWR52OXGgOSVWb2dClBkoqs3eP6nGvy7l4++m5T
+	FBgIbczph9OCHrtEXRlxW9vHzELUNznd8KM78FSpv1ncQ5suDYkYU8QRO1ADCCuyszZFkHq2U1UCW
+	rJg84z+RtWqAbr7YPUehX5odRzXhHkGib4aD3BYOZV0vjm1rqkfx2KBEY4pN9NawNUQtGvKOX0nke
+	rsD7OwTGZ8WYJSQoR5HA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzmZX-000693-Kx; Mon, 19 Aug 2019 18:40:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hzmYy-00068Y-LN; Mon, 19 Aug 2019 18:39:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F1408360;
- Mon, 19 Aug 2019 11:39:27 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 963663F246;
- Mon, 19 Aug 2019 11:39:24 -0700 (PDT)
-Subject: Re: [PATCH V5 4/5] iommu/dma-iommu: Use the dev->coherent_dma_mask
-To: Tom Murphy <murphyt7@tcd.ie>, iommu@lists.linux-foundation.org
-References: <20190815110944.3579-1-murphyt7@tcd.ie>
- <20190815110944.3579-5-murphyt7@tcd.ie>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <d3c8d4ce-8ffb-bf69-a8f3-d64108f5987a@arm.com>
-Date: Mon, 19 Aug 2019 19:39:23 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hzmkm-0000VG-49; Mon, 19 Aug 2019 18:51:40 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hzmkI-0000S8-2e
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 19 Aug 2019 18:51:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=fXNOphaX+y8oyFeRNQ0wqgARKD5Ut7+H76ilztOg7So=; b=E2D+Md5C8+sCXxyKTRH2pa0fh
+ pTvlHigOaxxjbKoO0a7nnLV2lddr7uaJ4ZxHu7h2bY+H7vqDUFxUuv6O+zKHb7miLoEAWsaHohXP1
+ hAQJYjrPZfU6LgoAl4MqnwYl8m1VgOH6cCm/RGb4DMOC3w4yzlD4zxmf6a8H0KBkr06SpxiqbVmy+
+ NAU5DboHFcWVMs3r7Af7KmhrghPrVumUTbmygNNA66qeLCOiyl+dXposS4J4Lr7/d4aWjUCJ8MKKa
+ Fqhr2YRVhZGJGG/B5CHh83JejGADtnLo0K5qFSE2NCWYCqggSAoMwBAoPQz6471oHfrPHvgQEDBLy
+ RSvzUCj1A==;
+Received: from [177.206.236.100] (helo=quaco.ghostprotocols.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hzmkF-0003Vp-Tc
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 18:51:08 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id C8D2B40340; Mon, 19 Aug 2019 15:50:54 -0300 (-03)
+Date: Mon, 19 Aug 2019 15:50:54 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH 1/2] perf cs-etm: Support sample flags 'insn' and 'insnlen'
+Message-ID: <20190819185054.GB3929@kernel.org>
+References: <20190815082854.18191-1-leo.yan@linaro.org>
+ <CANLsYkx5TanDyztpceZvwf4pZSgoqRMOBgiHcdJxxpnGA9-h-Q@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190815110944.3579-5-murphyt7@tcd.ie>
-Content-Language: en-GB
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_113929_029407_995CEE89 
-X-CRM114-Status: GOOD (  20.90  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Content-Disposition: inline
+In-Reply-To: <CANLsYkx5TanDyztpceZvwf4pZSgoqRMOBgiHcdJxxpnGA9-h-Q@mail.gmail.com>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,90 +64,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, virtualization@lists.linux-foundation.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-samsung-soc@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- linux-rockchip@lists.infradead.org, Andy Gross <agross@kernel.org>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>, linux-s390@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
- Kukjin Kim <kgene@kernel.org>, David Woodhouse <dwmw2@infradead.org>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Coresight ML <coresight@lists.linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
+ Robert Walker <robert.walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/08/2019 12:09, Tom Murphy wrote:
-> Use the dev->coherent_dma_mask when allocating in the dma-iommu ops api.
+Em Mon, Aug 19, 2019 at 12:08:26PM -0600, Mathieu Poirier escreveu:
+> On Thu, 15 Aug 2019 at 02:30, Leo Yan <leo.yan@linaro.org> wrote:
+> >
+> > The synthetic branch and instruction samples are missed to set
+> > instruction related info, thus perf tool fails to display samples with
+> > flags '-F,+insn,+insnlen'.
+> >
+> > CoreSight trace decoder has provided sufficient information to decide
+> > the instruction size based on the isa type: A64/A32 instruction are
+> > 32-bit size, but one exception is the T32 instruction size, which might
+> > be 32-bit or 16-bit.
+> >
+> > This patch handles for these cases and it reads the instruction values
+> > from DSO file; thus can support flags '-F,+insn,+insnlen'.
+ 
+> The code seems to be correct.  I have also tested this patch.
+ 
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-Oops... I suppose technically that's my latent bug, but since we've all 
-missed it so far, I doubt arm64 systems ever see any devices which 
-actually have different masks.
+Thanks, applied.
 
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
-
-> Signed-off-by: Tom Murphy <murphyt7@tcd.ie>
-> ---
->   drivers/iommu/dma-iommu.c | 12 +++++++-----
->   1 file changed, 7 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
-> index 906b7fa14d3c..b9a3ab02434b 100644
-> --- a/drivers/iommu/dma-iommu.c
-> +++ b/drivers/iommu/dma-iommu.c
-> @@ -471,7 +471,7 @@ static void __iommu_dma_unmap(struct device *dev, dma_addr_t dma_addr,
->   }
->   
->   static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
-> -		size_t size, int prot)
-> +		size_t size, int prot, dma_addr_t dma_mask)
->   {
->   	struct iommu_domain *domain = iommu_get_dma_domain(dev);
->   	struct iommu_dma_cookie *cookie = domain->iova_cookie;
-> @@ -484,7 +484,7 @@ static dma_addr_t __iommu_dma_map(struct device *dev, phys_addr_t phys,
->   
->   	size = iova_align(iovad, size + iova_off);
->   
-> -	iova = iommu_dma_alloc_iova(domain, size, dma_get_mask(dev), dev);
-> +	iova = iommu_dma_alloc_iova(domain, size, dma_mask, dev);
->   	if (!iova)
->   		return DMA_MAPPING_ERROR;
->   
-> @@ -735,7 +735,7 @@ static dma_addr_t iommu_dma_map_page(struct device *dev, struct page *page,
->   	int prot = dma_info_to_prot(dir, coherent, attrs);
->   	dma_addr_t dma_handle;
->   
-> -	dma_handle = __iommu_dma_map(dev, phys, size, prot);
-> +	dma_handle = __iommu_dma_map(dev, phys, size, prot, dma_get_mask(dev));
->   	if (!coherent && !(attrs & DMA_ATTR_SKIP_CPU_SYNC) &&
->   	    dma_handle != DMA_MAPPING_ERROR)
->   		arch_sync_dma_for_device(dev, phys, size, dir);
-> @@ -938,7 +938,8 @@ static dma_addr_t iommu_dma_map_resource(struct device *dev, phys_addr_t phys,
->   		size_t size, enum dma_data_direction dir, unsigned long attrs)
->   {
->   	return __iommu_dma_map(dev, phys, size,
-> -			dma_info_to_prot(dir, false, attrs) | IOMMU_MMIO);
-> +			dma_info_to_prot(dir, false, attrs) | IOMMU_MMIO,
-> +			dma_get_mask(dev));
->   }
->   
->   static void iommu_dma_unmap_resource(struct device *dev, dma_addr_t handle,
-> @@ -1041,7 +1042,8 @@ static void *iommu_dma_alloc(struct device *dev, size_t size,
->   	if (!cpu_addr)
->   		return NULL;
->   
-> -	*handle = __iommu_dma_map(dev, page_to_phys(page), size, ioprot);
-> +	*handle = __iommu_dma_map(dev, page_to_phys(page), size, ioprot,
-> +			dev->coherent_dma_mask);
->   	if (*handle == DMA_MAPPING_ERROR) {
->   		__iommu_dma_free(dev, size, cpu_addr);
->   		return NULL;
-> 
+- Arnaldo
 
 _______________________________________________
 linux-arm-kernel mailing list
