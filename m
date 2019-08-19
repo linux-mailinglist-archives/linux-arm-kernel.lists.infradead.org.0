@@ -2,78 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EAE691DAE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 09:17:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A50B091DB6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 09:23:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6pBPxktlsW/2uvkneBDvFpaC7YINwMR7OcEW5q7R0AQ=; b=RE6VtAgze3il7u
-	0KLSdqq32dj6Ph09hZf5VEqUe1By7aaKEx9ev/BuRcZNhukggmjj/ZD/r/NfOEoevADWkHV0k8Gbe
-	uAxxd6RN1Q3dCWI6euL0nzMJUhcurLGyA/RkEPnErV/79BXozTienFYd57c7aGmcb4KVpt/XMBmSU
-	rAAEMNcxwR2TA98n33LoQsrWauxEjJhF/ZTm8s1Dzr7RkToVzXAHMYnFSWSt267x1SIC1lP5+xxcC
-	k1xAtWvLA7urPSUnTbjC0ggyjzSt8348f4JaJozirAFFqIpCrc5la8IRAYQAqzCgY9fsXJAkENW4k
-	OhuozApQGxcOOiNmIhsQ==;
+	List-Owner; bh=geni7XjAKi6wYItwPKZFdvYtxk3iCiNPnPPLZTAFKnw=; b=Lk3wVgDRjl12DD
+	tOIgTe5LY01Hl03eCQltoNdaKbYH13///g5z0vHgcsj8te9xGDvYzbXRl3oFVSjfzXFvKzpihiGHi
+	ec5yknnbPBO+J5vacoHYrl+SA+V8VOACsLmRqQ/o6qRoL70CWe7Z+gGNKD75xnYn/b3nQ8wA+5+A9
+	vJMv9Or9EDCXO27qdoTMkEQq42FTX5h2oAfSHW5vSJqg2wir+QHPdO8r7t4HK2wV+6ZclQHOyXWVi
+	jh3AwYqb5Sq8bhUqDj+z56HZm3Pg6VCrd7lTWkrtxMT7v8246Nj5b5LDqPsfOhg/O6+WLognSzXyg
+	Hn63SyKIErr6loTWilKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzbvR-0000nz-IO; Mon, 19 Aug 2019 07:17:57 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hzc18-0003C9-9m; Mon, 19 Aug 2019 07:23:50 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzbuh-0000QJ-RH
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 07:17:13 +0000
-Received: by mail-pf1-x441.google.com with SMTP id o70so641895pfg.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 00:17:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=tR696xAAXNPhHQHWLfe5SFLSbtEnSL98XLrp0/RNG7k=;
- b=XUWbUOUNVffLbuYbKroAviugg0hNCu6c0LsB1p5k0zj3Qdmtftgjzhs502Kv30r2r5
- yKf5sQ0E0iFOPrxkWs0+CwLLLDrZaV3Y1j53slHNVQMXFTeHNDxlwhv1OSEt7gAXqvmi
- wtSm2YchTL7KT4XHT8HMfe9UN3zBGQL0sJ+EY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=tR696xAAXNPhHQHWLfe5SFLSbtEnSL98XLrp0/RNG7k=;
- b=Bsaj+9k+eBINY1L/vSjDKXgBHyV1ZayZ/3hwpUXiyuhXOyMYe5bgF7P8TGmb4+h14h
- u7I6NmWU5vVWtN2A7zLh7jjJDMRbZFwfThyL0Ea9cuUiTQYnfYA9cvIVl7AoFsJHgo57
- ns3PCzdOOmgqOguAep8QH2ucWA5EBFrD8phexCuskec2vWICQy8MTJxeIil74Tp8443D
- 9/aJTw3VktlsFQsjRtblz6lJtazD8gWTC07Bo9rTE/bp4jjhkiq8T9R5uN4O19oByBf7
- lI0Rio6cS1ygpaLrM3AeeD5KwsJpSiRnlcbBa2+mtd2s+4N41VsITe+4YBWMuhq1CyW5
- QOIg==
-X-Gm-Message-State: APjAAAUKMQ5/hMZR02KYoNDvLVUEWtnGmYRbhoQiP5OnEAKhba0rDok8
- SHy6RMYUwlAKPwkK6XSjjC7N2pqyGp0=
-X-Google-Smtp-Source: APXvYqxbjy8xxbqjY1yDYLo3dzifZ+5rEbkil94KZlbs277/axZ6oTlZhe0X2TtcA6D0EKfdo7cQ0g==
-X-Received: by 2002:aa7:83c7:: with SMTP id j7mr23330584pfn.59.1566199030844; 
- Mon, 19 Aug 2019 00:17:10 -0700 (PDT)
-Received: from hsinyi-z840.tpe.corp.google.com
- ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id y9sm14691341pfn.152.2019.08.19.00.17.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 19 Aug 2019 00:17:10 -0700 (PDT)
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v8 3/3] arm64: kexec_file: add rng-seed support
-Date: Mon, 19 Aug 2019 15:16:06 +0800
-Message-Id: <20190819071602.139014-4-hsinyi@chromium.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190819071602.139014-1-hsinyi@chromium.org>
-References: <20190819071602.139014-1-hsinyi@chromium.org>
+ id 1hzc0p-0003BS-Uk
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 07:23:33 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x7J7MCgC019108; Mon, 19 Aug 2019 09:23:19 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=IBOE9ThChyn3HPj0nzP6E2WkbMPsLIygBXtx/PEdxeI=;
+ b=Hw7ZH9mSgKeNlQZ++PZMRAcJg0Ay5xqKI6dS4w26o6q6xSodd/H1RzRpm+G5v20+i7/l
+ uDLQXL3Xm/+TUG1n7nUkTFr/xzLvc/rGgti5Ivc6j4HERgOf4dMlWK2libUk6qQ4RIHH
+ ULz5qgZZRN5zL9npWhkSLJM2oxGwFylxvV4BJYy+0j5Nc9VJYiHHFRljKdGbjJhlx4nW
+ DVBY4LYF9LN7yvxsNZu827tW/rDZwqEgfmue01Wz8VzSRkUSYeOsq68EGnSvUmk63nHQ
+ O8wmuAEauv1UI0pAj3l+5+1/IT9uOCxGwJqLGo8P808opk8HgUQBsewE2YgDrPkvuSED tw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2ue7buhv3h-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 19 Aug 2019 09:23:19 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 100F331;
+ Mon, 19 Aug 2019 07:23:18 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EF6932BF9FA;
+ Mon, 19 Aug 2019 09:23:17 +0200 (CEST)
+Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG6NODE3.st.com
+ (10.75.127.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 19 Aug
+ 2019 09:23:17 +0200
+Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
+ SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
+ 15.00.1473.003; Mon, 19 Aug 2019 09:23:17 +0200
+From: Hugues FRUCHET <hugues.fruchet@st.com>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+Subject: Re: [PATCH v6 2/4] media: stm32-dcmi: trace the supported
+ fourcc/mbus_code
+Thread-Topic: [PATCH v6 2/4] media: stm32-dcmi: trace the supported
+ fourcc/mbus_code
+Thread-Index: AQHVVAq68UiFQiNcNkmXdD8YMRgfcacB9FUA
+Date: Mon, 19 Aug 2019 07:23:17 +0000
+Message-ID: <fb02573f-991a-18c5-b780-b5fc100da6a8@st.com>
+References: <1565790533-10043-1-git-send-email-hugues.fruchet@st.com>
+ <1565790533-10043-3-git-send-email-hugues.fruchet@st.com>
+ <20190816081514.GU6133@paasikivi.fi.intel.com>
+In-Reply-To: <20190816081514.GU6133@paasikivi.fi.intel.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.50]
+Content-ID: <02FB72ACF9496F4298AB952A072DDEA0@st.com>
 MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-08-19_02:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_001711_906228_70ADEE4B 
-X-CRM114-Status: GOOD (  14.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190819_002332_285588_0418E5D1 
+X-CRM114-Status: GOOD (  20.29  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,7 +97,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,81 +108,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yu Zhao <yuzhao@google.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Stephen Boyd <swboyd@chromium.org>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Mike Rapoport <rppt@linux.ibm.com>, Jun Yao <yaojun8558363@gmail.com>,
- Miles Chen <miles.chen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- James Morse <james.morse@arm.com>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
- Frank Rowand <frowand.list@gmail.com>, Robin Murphy <robin.murphy@arm.com>
+Cc: Yannick FERTRE <yannick.fertre@st.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ Mickael GUENE <mickael.guene@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Philippe CORNU <philippe.cornu@st.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adding "rng-seed" to dtb. It's fine to add this property if original
-fdt doesn't contain it. Since original seed will be wiped after
-read, so use a default size 128 bytes here.
+Hi Sakari,
 
-Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-Reviewed-by: Stephen Boyd <swboyd@chromium.org>
----
-No change after v7.
----
- arch/arm64/kernel/machine_kexec_file.c | 18 +++++++++++++++++-
- 1 file changed, 17 insertions(+), 1 deletion(-)
+On 8/16/19 10:15 AM, Sakari Ailus wrote:
+> Hi Hugues,
+> 
+> On Wed, Aug 14, 2019 at 03:48:51PM +0200, Hugues Fruchet wrote:
+>> Add a trace of the set of supported fourcc/mbus_code which
+>> intersect between DCMI and source sub-device.
+>>
+>> Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
+>> ---
+>>   drivers/media/platform/stm32/stm32-dcmi.c | 12 ++++++++++--
+>>   1 file changed, 10 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
+>> index b462f71..18acecf 100644
+>> --- a/drivers/media/platform/stm32/stm32-dcmi.c
+>> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
+>> @@ -1447,12 +1447,20 @@ static int dcmi_formats_init(struct stm32_dcmi *dcmi)
+>>   			/* Code supported, have we got this fourcc yet? */
+>>   			for (j = 0; j < num_fmts; j++)
+>>   				if (sd_fmts[j]->fourcc ==
+>> -						dcmi_formats[i].fourcc)
+>> +						dcmi_formats[i].fourcc) {
+>>   					/* Already available */
+>> +					dev_dbg(dcmi->dev, "Skipping fourcc/code: %4.4s/0x%x\n",
+>> +						(char *)&sd_fmts[j]->fourcc,
+>> +						mbus_code.code);
+>>   					break;
+>> -			if (j == num_fmts)
+>> +				}
+>> +			if (j == num_fmts) {
+>>   				/* New */
+>>   				sd_fmts[num_fmts++] = dcmi_formats + i;
+>> +				dev_dbg(dcmi->dev, "Supported fourcc/code: %4.4s/0x%x\n",
+> 
+> Over 80 characters per line.
+> 
 
-diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
-index ba78ee7ca990..7b08bf9499b6 100644
---- a/arch/arm64/kernel/machine_kexec_file.c
-+++ b/arch/arm64/kernel/machine_kexec_file.c
-@@ -27,6 +27,8 @@
- #define FDT_PROP_INITRD_END	"linux,initrd-end"
- #define FDT_PROP_BOOTARGS	"bootargs"
- #define FDT_PROP_KASLR_SEED	"kaslr-seed"
-+#define FDT_PROP_RNG_SEED	"rng-seed"
-+#define RNG_SEED_SIZE		128
- 
- const struct kexec_file_ops * const kexec_file_loaders[] = {
- 	&kexec_image_ops,
-@@ -102,6 +104,19 @@ static int setup_dtb(struct kimage *image,
- 				FDT_PROP_KASLR_SEED);
- 	}
- 
-+	/* add rng-seed */
-+	if (rng_is_initialized()) {
-+		u8 rng_seed[RNG_SEED_SIZE];
-+		get_random_bytes(rng_seed, RNG_SEED_SIZE);
-+		ret = fdt_setprop(dtb, off, FDT_PROP_RNG_SEED, rng_seed,
-+				RNG_SEED_SIZE);
-+		if (ret)
-+			goto out;
-+	} else {
-+		pr_notice("RNG is not initialised: omitting \"%s\" property\n",
-+				FDT_PROP_RNG_SEED);
-+	}
-+
- out:
- 	if (ret)
- 		return (ret == -FDT_ERR_NOSPACE) ? -ENOMEM : -EINVAL;
-@@ -110,7 +125,8 @@ static int setup_dtb(struct kimage *image,
- }
- 
- /*
-- * More space needed so that we can add initrd, bootargs and kaslr-seed.
-+ * More space needed so that we can add initrd, bootargs, kaslr-seed, and
-+ * rng-seed.
-  */
- #define DTB_EXTRA_SPACE 0x1000
- 
--- 
-2.20.1
+This an exception of the "80 chars" in order to be able to grep in 
+kernel messages:
+https://www.kernel.org/doc/html/v4.10/process/coding-style.html
+"However, never break user-visible strings such as printk messages, 
+because that breaks the ability to grep for them."
 
+This exception is managed in checkpatch.pl (--strict).
 
+>> +					(char *)&sd_fmts[num_fmts - 1]->fourcc,
+>> +					sd_fmts[num_fmts - 1]->mbus_code);
+>> +			}
+>>   		}
+>>   		mbus_code.index++;
+>>   	}
+> 
+
+BR,
+Hugues.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
