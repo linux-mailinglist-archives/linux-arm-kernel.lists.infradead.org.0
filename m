@@ -2,49 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5B2194B94
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 19:26:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE6C394B95
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 19:26:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mTwTDDqo7aFT+KrKfmJYkaq0KGvI5E9zABRijup5O24=; b=nHndfwoNuDykpQ
-	0HA67kjj/HpvJxwuNjndaQaa0As+sAAjR5lOQRrP6DYDG69g+ctd1II8DXHdzl/Ke31DTY1R/PVJ1
-	ygyQlGFZDzVr7EzicLRh6W/fPg3DR8ff2AoGxvt6MT/ZD9NT5o5ZYgwaC4H0YTQbJX0fd5a0RSWOT
-	xtONrWZJl56mTLNTgvPWf1pqjOUVLUEpP3yeKy+I6nn8xt1zzIK1NGrykqirXsNtinc7Wra8dYqmh
-	+hB1ofunGcIjJmNkDDu71irDLZC/fdfYhUZZ73vyUIpQbLew1vaMxB3BRlqHK+OMB7muPthSZMUVt
-	tSN7/Q640t8ikOQiJ9Bw==;
+	List-Owner; bh=2q03i1iaxFSeM0Ay2+89FoJQSKQyj9xJzXYiK2sfbWg=; b=fu1Drz5zuUVCHz
+	XTSCxsMSZTUwzd7Q/b6SnKFFv1wU6HQQS8aa+tLxvorhfI/laCXs9KzwCnZkHF+nqtQyz+JAv82Mo
+	/yF61ZatVB6huzyE5EwZYcbh3/BwvcmaKiVcWrVHgzTWMAyjcRxzamgajY1p9yu4993oxVqkTa8PK
+	5lGtzn4KWYtumbF6+vnoLdh8FxQY4amW+pakPwAejowIX1vvFrjY/VrZt2E2gkKNDVX3j0UlBsD5c
+	ZEzb3INWPNoIeFtZCIuAWy0Q8T4Ag6yTvvUWE8Ti064Mrd3P326dyeHF+DkJddapQSXfbeCv+2c+h
+	eWGxDq7iOCF49yUzwN8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzlQT-0001AI-H4; Mon, 19 Aug 2019 17:26:37 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hzlQe-0001Pz-Rg; Mon, 19 Aug 2019 17:26:48 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzlQ7-000113-Mq
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 17:26:17 +0000
+ id 1hzlQ8-000114-4u
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 17:26:18 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: dafna) with ESMTPSA id 2E4ED28B123
+ (Authenticated sender: dafna) with ESMTPSA id D84AF28B12D
 From: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
 To: dafna.hirschfeld@collabora.com
-Subject: [PATCH v4 1/2] dt-bindings: arm: imx: add imx8mq nitrogen support
-Date: Mon, 19 Aug 2019 19:26:05 +0200
-Message-Id: <20190819172606.6410-2-dafna.hirschfeld@collabora.com>
+Subject: [PATCH v4 2/2] arm64: dts: imx: Add i.mx8mq nitrogen8m basic dts
+ support
+Date: Mon, 19 Aug 2019 19:26:06 +0200
+Message-Id: <20190819172606.6410-3-dafna.hirschfeld@collabora.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190819172606.6410-1-dafna.hirschfeld@collabora.com>
 References: <20190819172606.6410-1-dafna.hirschfeld@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_102615_874549_3EC23663 
-X-CRM114-Status: UNSURE (   8.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190819_102616_450354_5DFF53B6 
+X-CRM114-Status: GOOD (  13.20  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -66,32 +64,453 @@ Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ezequiel@collabora.com,
  Gary Bisson <gary.bisson@boundarydevices.com>, robh+dt@kernel.org,
  kernel@pengutronix.de, kernel@collabora.com, shawnguo@kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogR2FyeSBCaXNzb24gPGdhcnkuYmlzc29uQGJvdW5kYXJ5ZGV2aWNlcy5jb20+CgpUaGUg
-Tml0cm9nZW44TSBpcyBhbiBBUk0gYmFzZWQgc2luZ2xlIGJvYXJkIGNvbXB1dGVyIChTQkMpCmRl
-c2lnbmVkIHRvIGxldmVyYWdlIHRoZSBmdWxsIGNhcGFiaWxpdGllcyBvZiBOWFDigJlzIGkuTVg4
-TQpRdWFkIHByb2Nlc3Nvci4KClNpZ25lZC1vZmYtYnk6IEdhcnkgQmlzc29uIDxnYXJ5LmJpc3Nv
-bkBib3VuZGFyeWRldmljZXMuY29tPgpTaWduZWQtb2ZmLWJ5OiBUcm95IEtpc2t5IDx0cm95Lmtp
-c2t5QGJvdW5kYXJ5ZGV2aWNlcy5jb20+CltEYWZuYTogcG9ydGluZyB2ZW5kb3IncyBjb2RlIHRv
-IG1haW5saW5lXQpTaWduZWQtb2ZmLWJ5OiBEYWZuYSBIaXJzY2hmZWxkIDxkYWZuYS5oaXJzY2hm
-ZWxkQGNvbGxhYm9yYS5jb20+Ci0tLQogRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdz
-L2FybS9mc2wueWFtbCB8IDEgKwogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspCgpkaWZm
-IC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9mc2wueWFtbCBi
-L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vZnNsLnlhbWwKaW5kZXggMzYy
-YmY4MjdjYWQxLi4xNmRiMWM2OTliYTcgMTAwNjQ0Ci0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNl
-dHJlZS9iaW5kaW5ncy9hcm0vZnNsLnlhbWwKKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
-L2JpbmRpbmdzL2FybS9mc2wueWFtbApAQCAtMjI0LDYgKzIyNCw3IEBAIHByb3BlcnRpZXM6CiAg
-ICAgICAtIGRlc2NyaXB0aW9uOiBpLk1YOE1RIGJhc2VkIEJvYXJkcwogICAgICAgICBpdGVtczoK
-ICAgICAgICAgICAtIGVudW06CisgICAgICAgICAgICAgIC0gYm91bmRhcnksaW14OG1xLW5pdHJv
-Z2VuOG0gIyBpLk1YOE1RIE5JVFJPR0VOIEJvYXJkCiAgICAgICAgICAgICAgIC0gZnNsLGlteDht
-cS1ldmsgICAgICAgICAgICAjIGkuTVg4TVEgRVZLIEJvYXJkCiAgICAgICAgICAgICAgIC0gcHVy
-aXNtLGxpYnJlbTUtZGV2a2l0ICAgICAjIFB1cmlzbSBMaWJyZW01IGRldmtpdAogICAgICAgICAg
-ICAgICAtIHRlY2huZXhpb24scGljby1waS1pbXg4bSAgIyBUZWNoTmV4aW9uIFBJQ08tUEktOE0g
-ZXZrCi0tIAoyLjIwLjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+From: Gary Bisson <gary.bisson@boundarydevices.com>
+
+Add basic dts support for i.MX8MQ NITROGEN8M.
+
+Signed-off-by: Gary Bisson <gary.bisson@boundarydevices.com>
+Signed-off-by: Troy Kisky <troy.kisky@boundarydevices.com>
+[Dafna: porting vendor's code to mainline]
+Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+---
+ arch/arm64/boot/dts/freescale/Makefile        |   1 +
+ .../boot/dts/freescale/imx8mq-nitrogen.dts    | 405 ++++++++++++++++++
+ 2 files changed, 406 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8mq-nitrogen.dts
+
+diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
+index 8c0c4343e586..e2c6c93f47b6 100644
+--- a/arch/arm64/boot/dts/freescale/Makefile
++++ b/arch/arm64/boot/dts/freescale/Makefile
+@@ -25,6 +25,7 @@ dtb-$(CONFIG_ARCH_MXC) += imx8mm-evk.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mn-ddr4-evk.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-evk.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-librem5-devkit.dtb
++dtb-$(CONFIG_ARCH_MXC) += imx8mq-nitrogen.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-pico-pi.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-rmb3.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-zest.dtb
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-nitrogen.dts b/arch/arm64/boot/dts/freescale/imx8mq-nitrogen.dts
+new file mode 100644
+index 000000000000..c832bf0fcc60
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/imx8mq-nitrogen.dts
+@@ -0,0 +1,405 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright 2018 Boundary Devices
++ */
++
++/dts-v1/;
++
++#include <dt-bindings/input/input.h>
++#include "imx8mq.dtsi"
++
++/ {
++	model = "Boundary Devices i.MX8MQ Nitrogen8M";
++	compatible = "boundary,imx8mq-nitrogen8m", "fsl,imx8mq";
++
++	chosen {
++		stdout-path = "serial0:115200n8";
++	};
++
++	memory@40000000 {
++		device_type = "memory";
++		reg = <0x00000000 0x40000000 0 0x80000000>;
++	};
++
++	gpio-keys {
++		compatible = "gpio-keys";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_gpio_keys>;
++
++		power {
++			label = "Power Button";
++			gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_POWER>;
++			wakeup-source;
++		};
++	};
++
++	reg_vref_0v9: regulator-vref-0v9 {
++		compatible = "regulator-fixed";
++		regulator-name = "vref-0v9";
++		regulator-min-microvolt = <900000>;
++		regulator-max-microvolt = <900000>;
++	};
++
++	reg_vref_1v8: regulator-vref-1v8 {
++		compatible = "regulator-fixed";
++		regulator-name = "vref-1v8";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++	};
++
++	reg_vref_2v5: regulator-vref-2v5 {
++		compatible = "regulator-fixed";
++		regulator-name = "vref-2v5";
++		regulator-min-microvolt = <2500000>;
++		regulator-max-microvolt = <2500000>;
++	};
++
++	reg_vref_3v3: regulator-vref-3v3 {
++		compatible = "regulator-fixed";
++		regulator-name = "vref-3v3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++	};
++
++	reg_vref_5v: regulator-vref-5v {
++		compatible = "regulator-fixed";
++		regulator-name = "vref-5v";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++	};
++};
++
++
++&fec1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_fec1>;
++	phy-mode = "rgmii-id";
++	phy-handle = <&ethphy0>;
++	fsl,magic-packet;
++	status = "okay";
++
++	mdio {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		ethphy0: ethernet-phy@4 {
++			compatible = "ethernet-phy-ieee802.3-c22";
++			reg = <4>;
++			interrupts-extended = <&gpio1 11 IRQ_TYPE_LEVEL_LOW>;
++		};
++	};
++};
++
++&i2c1 {
++	clock-frequency = <400000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c1>;
++	status = "okay";
++
++	i2cmux@70 {
++		compatible = "nxp,pca9546";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_i2c1_pca9546>;
++		reg = <0x70>;
++		reset-gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		i2c1a: i2c1@0 {
++			reg = <0>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			reg_arm_dram: regulator@60 {
++				compatible = "fcs,fan53555";
++				pinctrl-names = "default";
++				pinctrl-0 = <&pinctrl_reg_arm_dram>;
++				reg = <0x60>;
++				regulator-min-microvolt =  <900000>;
++				regulator-max-microvolt = <1000000>;
++				regulator-always-on;
++				vsel-gpios = <&gpio3 24 GPIO_ACTIVE_HIGH>;
++			};
++		};
++
++		i2c1b: i2c1@1 {
++			reg = <1>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			reg_dram_1p1v: regulator@60 {
++				compatible = "fcs,fan53555";
++				pinctrl-names = "default";
++				pinctrl-0 = <&pinctrl_reg_dram_1p1v>;
++				reg = <0x60>;
++				regulator-min-microvolt = <1100000>;
++				regulator-max-microvolt = <1100000>;
++				regulator-always-on;
++				vsel-gpios = <&gpio2 11 GPIO_ACTIVE_HIGH>;
++			};
++		};
++
++		i2c1c: i2c1@2 {
++			reg = <2>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			reg_soc_gpu_vpu: regulator@60 {
++				compatible = "fcs,fan53555";
++				pinctrl-names = "default";
++				pinctrl-0 = <&pinctrl_reg_soc_gpu_vpu>;
++				reg = <0x60>;
++				regulator-min-microvolt =  <900000>;
++				regulator-max-microvolt = <1000000>;
++				regulator-always-on;
++				vsel-gpios = <&gpio2 20 GPIO_ACTIVE_HIGH>;
++			};
++		};
++
++		i2c1d: i2c1@3 {
++			reg = <3>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			rtc@68 {
++				compatible = "microcrystal,rv4162";
++				pinctrl-names = "default";
++				pinctrl-0 = <&pinctrl_i2c1d_rv4162>;
++				reg = <0x68>;
++				interrupts-extended = <&gpio1 6 IRQ_TYPE_LEVEL_LOW>;
++				wakeup-source;
++			};
++		};
++	};
++};
++
++&uart1 { /* console */
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart1>;
++	assigned-clocks = <&clk IMX8MQ_CLK_UART1>;
++	assigned-clock-parents = <&clk IMX8MQ_CLK_25M>;
++	status = "okay";
++};
++
++&uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart2>;
++	assigned-clocks = <&clk IMX8MQ_CLK_UART2>;
++	assigned-clock-parents = <&clk IMX8MQ_CLK_25M>;
++	status = "okay";
++};
++
++&usdhc1 {
++	bus-width = <8>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_usdhc1>;
++	non-removable;
++	vmmc-supply = <&reg_vref_1v8>;
++	status = "okay";
++};
++
++&wdog1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_wdog>;
++	fsl,ext-reset-output;
++	status = "okay";
++};
++
++&iomuxc {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_hog>;
++
++	pinctrl_hog: hoggrp {
++		fsl,pins = <
++			/* J17 connector, odd */
++			MX8MQ_IOMUXC_SAI1_RXFS_GPIO4_IO0		0x19	/* Pin 19 */
++			MX8MQ_IOMUXC_SAI1_RXC_GPIO4_IO1			0x19	/* Pin 21 */
++			MX8MQ_IOMUXC_SAI1_RXD1_GPIO4_IO3		0x19	/* Pin 23 */
++			MX8MQ_IOMUXC_SAI1_RXD2_GPIO4_IO4		0x19	/* Pin 25 */
++			MX8MQ_IOMUXC_SAI1_RXD3_GPIO4_IO5		0x19	/* Pin 27 */
++			MX8MQ_IOMUXC_SAI1_RXD4_GPIO4_IO6		0x19	/* Pin 29 */
++			MX8MQ_IOMUXC_SAI1_RXD5_GPIO4_IO7		0x19	/* Pin 31 */
++			MX8MQ_IOMUXC_SAI1_RXD6_GPIO4_IO8		0x19	/* Pin 33 */
++			MX8MQ_IOMUXC_SAI1_RXD7_GPIO4_IO9		0x19	/* Pin 35 */
++			MX8MQ_IOMUXC_SAI1_TXD1_GPIO4_IO13		0x19	/* Pin 39 */
++			MX8MQ_IOMUXC_SAI1_TXD2_GPIO4_IO14		0x19	/* Pin 41 */
++			MX8MQ_IOMUXC_SAI1_TXD3_GPIO4_IO15		0x19	/* Pin 43 */
++			MX8MQ_IOMUXC_SAI1_TXD4_GPIO4_IO16		0x19	/* Pin 45 */
++			MX8MQ_IOMUXC_SAI1_TXD5_GPIO4_IO17		0x19	/* Pin 47 */
++			MX8MQ_IOMUXC_SAI1_TXD6_GPIO4_IO18		0x19	/* Pin 49 */
++			MX8MQ_IOMUXC_SAI1_TXD7_GPIO4_IO19		0x19	/* Pin 51 */
++
++			/* J17 connector, even */
++			MX8MQ_IOMUXC_SAI3_RXFS_GPIO4_IO28		0x19	/* Pin 44 */
++			MX8MQ_IOMUXC_SAI3_RXC_GPIO4_IO29		0x19	/* Pin 48 */
++			MX8MQ_IOMUXC_GPIO1_IO10_GPIO1_IO10		0x19	/* Pin 50 */
++			MX8MQ_IOMUXC_GPIO1_IO03_GPIO1_IO3		0x19	/* Pin 54 */
++			MX8MQ_IOMUXC_GPIO1_IO05_GPIO1_IO5		0x19	/* Pin 56 */
++
++			/* J18 connector, odd */
++			MX8MQ_IOMUXC_NAND_CE3_B_GPIO3_IO4		0x19	/* Pin 41 */
++			MX8MQ_IOMUXC_NAND_CLE_GPIO3_IO5			0x19	/* Pin 43 */
++			MX8MQ_IOMUXC_NAND_READY_B_GPIO3_IO16		0x19	/* Pin 45 */
++			MX8MQ_IOMUXC_NAND_DATA05_GPIO3_IO11		0x19	/* Pin 47 */
++			MX8MQ_IOMUXC_NAND_WP_B_GPIO3_IO18		0x19	/* Pin 49 */
++			MX8MQ_IOMUXC_NAND_DQS_GPIO3_IO14		0x19	/* Pin 53 */
++
++			/* J18 connector, even */
++			MX8MQ_IOMUXC_NAND_ALE_GPIO3_IO0			0x19	/* Pin 32 */
++			MX8MQ_IOMUXC_NAND_CE0_B_GPIO3_IO1		0x19	/* Pin 36 */
++			MX8MQ_IOMUXC_NAND_DATA00_GPIO3_IO6		0x19	/* Pin 38 */
++			MX8MQ_IOMUXC_NAND_DATA01_GPIO3_IO7		0x19	/* Pin 40 */
++			MX8MQ_IOMUXC_NAND_DATA02_GPIO3_IO8		0x19	/* Pin 42 */
++			MX8MQ_IOMUXC_NAND_DATA03_GPIO3_IO9		0x19	/* Pin 44 */
++			MX8MQ_IOMUXC_NAND_DATA04_GPIO3_IO10		0x19	/* Pin 46 */
++
++			/* J13 Pin 2, WL_WAKE */
++			MX8MQ_IOMUXC_SAI5_RXD2_GPIO3_IO23		0xd6
++			/* J13 Pin 4, WL_IRQ, not needed for Silex */
++			MX8MQ_IOMUXC_SAI5_RXD0_GPIO3_IO21		0xd6
++			/* J13 pin 9, unused */
++			MX8MQ_IOMUXC_SD2_CD_B_GPIO2_IO12		0x19
++			/* J13 Pin 41, BT_CLK_REQ */
++			MX8MQ_IOMUXC_SAI5_RXD1_GPIO3_IO22		0xd6
++			/* J13 Pin 42, BT_HOST_WAKE */
++			MX8MQ_IOMUXC_SAI5_MCLK_GPIO3_IO25		0xd6
++
++			/* Clock for both CSI1 and CSI2 */
++			MX8MQ_IOMUXC_GPIO1_IO15_CCMSRCGPCMIX_CLKO2	0x07
++			/* test points */
++			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4		0xc1	/* TP87 */
++		>;
++	};
++
++	pinctrl_fec1: fec1grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_ENET_MDC_ENET1_MDC			0x3
++			MX8MQ_IOMUXC_ENET_MDIO_ENET1_MDIO		0x23
++			MX8MQ_IOMUXC_ENET_TX_CTL_ENET1_RGMII_TX_CTL	0x1f
++			MX8MQ_IOMUXC_ENET_TXC_ENET1_RGMII_TXC		0x1f
++			MX8MQ_IOMUXC_ENET_TD0_ENET1_RGMII_TD0		0x1f
++			MX8MQ_IOMUXC_ENET_TD1_ENET1_RGMII_TD1		0x1f
++			MX8MQ_IOMUXC_ENET_TD2_ENET1_RGMII_TD2		0x1f
++			MX8MQ_IOMUXC_ENET_TD3_ENET1_RGMII_TD3		0x1f
++			MX8MQ_IOMUXC_ENET_RX_CTL_ENET1_RGMII_RX_CTL	0x91
++			MX8MQ_IOMUXC_ENET_RXC_ENET1_RGMII_RXC		0x91
++			MX8MQ_IOMUXC_ENET_RD0_ENET1_RGMII_RD0		0x91
++			MX8MQ_IOMUXC_ENET_RD1_ENET1_RGMII_RD1		0x91
++			MX8MQ_IOMUXC_ENET_RD2_ENET1_RGMII_RD2		0x91
++			MX8MQ_IOMUXC_ENET_RD3_ENET1_RGMII_RD3		0x91
++			MX8MQ_IOMUXC_GPIO1_IO09_GPIO1_IO9		0x19
++			MX8MQ_IOMUXC_GPIO1_IO11_GPIO1_IO11		0x59
++		>;
++	};
++
++	pinctrl_gpio_keys: gpio-keysgrp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_GPIO1_IO07_GPIO1_IO7		0x19
++		>;
++	};
++
++
++	pinctrl_i2c1: i2c1grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_I2C1_SCL_I2C1_SCL			0x4000007f
++			MX8MQ_IOMUXC_I2C1_SDA_I2C1_SDA			0x4000007f
++		>;
++	};
++
++	pinctrl_i2c1_pca9546: i2c1-pca9546grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_GPIO1_IO08_GPIO1_IO8		0x49
++		>;
++	};
++
++	pinctrl_i2c1d_rv4162: i2c1d-rv4162grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_GPIO1_IO06_GPIO1_IO6		0x49
++		>;
++	};
++
++	pinctrl_reg_arm_dram: reg-arm-dramgrp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SAI5_RXD3_GPIO3_IO24	0x16
++		>;
++	};
++
++	pinctrl_reg_dram_1p1v: reg-dram-1p1vgrp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SD1_STROBE_GPIO2_IO11	0x16
++		>;
++	};
++
++	pinctrl_reg_soc_gpu_vpu: reg-soc-gpu-vpugrp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SD2_WP_GPIO2_IO20		0x16
++		>;
++	};
++
++	pinctrl_uart1: uart1grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_UART1_RXD_UART1_DCE_RX		0x45
++			MX8MQ_IOMUXC_UART1_TXD_UART1_DCE_TX		0x45
++		>;
++	};
++
++	pinctrl_uart2: uart2grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_UART2_RXD_UART2_DCE_RX		0x45
++			MX8MQ_IOMUXC_UART2_TXD_UART2_DCE_TX		0x45
++		>;
++	};
++
++	pinctrl_usdhc1: usdhc1grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x83
++			MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xc3
++			MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xc3
++			MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xc3
++			MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xc3
++			MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xc3
++			MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xc3
++			MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xc3
++			MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xc3
++			MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xc3
++			MX8MQ_IOMUXC_SD1_RESET_B_GPIO2_IO10		0x41
++		>;
++	};
++
++	pinctrl_usdhc1_100mhz: usdhc1-100mhzgrp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x8d
++			MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xcd
++			MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xcd
++			MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xcd
++			MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xcd
++			MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xcd
++			MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xcd
++			MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xcd
++			MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xcd
++			MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xcd
++		>;
++	};
++
++	pinctrl_usdhc1_200mhz: usdhc1-200mhzgrp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_SD1_CLK_USDHC1_CLK			0x9f
++			MX8MQ_IOMUXC_SD1_CMD_USDHC1_CMD			0xdf
++			MX8MQ_IOMUXC_SD1_DATA0_USDHC1_DATA0		0xdf
++			MX8MQ_IOMUXC_SD1_DATA1_USDHC1_DATA1		0xdf
++			MX8MQ_IOMUXC_SD1_DATA2_USDHC1_DATA2		0xdf
++			MX8MQ_IOMUXC_SD1_DATA3_USDHC1_DATA3		0xdf
++			MX8MQ_IOMUXC_SD1_DATA4_USDHC1_DATA4		0xdf
++			MX8MQ_IOMUXC_SD1_DATA5_USDHC1_DATA5		0xdf
++			MX8MQ_IOMUXC_SD1_DATA6_USDHC1_DATA6		0xdf
++			MX8MQ_IOMUXC_SD1_DATA7_USDHC1_DATA7		0xdf
++		>;
++	};
++
++	pinctrl_wdog: wdoggrp {
++		fsl,pins = <
++		MX8MQ_IOMUXC_GPIO1_IO02_WDOG1_WDOG_B	0xc6
++		>;
++	};
++};
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
