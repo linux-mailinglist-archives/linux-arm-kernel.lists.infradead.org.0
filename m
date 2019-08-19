@@ -2,94 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94BEE91C5F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 07:19:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76EE391C69
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 07:24:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NIZDhiChHLtru+FhIqBGc/BddiNej1/p7HAlLmvf100=; b=nCt3m5MylQvYnv
-	N552377LR63ZaAIINF+HWKWu2rcVbetAoDvcFeZOXC0+ddur9vRVh8QBVKd7ndcoeEI7TJObYYdbN
-	qRVMBX0gPoTJb48PgPgqb6JGtlE3CgnNyk4Sr1Jxhu1S0Ye+iMI1vabeKc3NAS50OCp4N9PcUjEcC
-	c30AAiG6UFTWUtkMZY50tCp49W8OS3SSlg8+fwpf2dqIzNc4dKLl1F/OihlA1ZlJLGsaICU4M4osQ
-	hQUvdrD83hQw4boVDq+zH3vhoXRyx3l28WIRdsS3mHlW6XEnGygYSa2AVbhXGRzZdYs9a5KYJzEw4
-	nQtMcmDTiyGVy530d8Jg==;
+	List-Owner; bh=TQd5l4yQO/LSB2dI7T1twLqtgx+j9VfVWTtu9SAqWu8=; b=YRbcA2xKM2C5JJ
+	rLfU08zX+Od/3Nu6KlC/18Nmwh2s07ZojCJY7ZutyzF/H5hCNImutTI5PopksAAClg5qa2r3vOmBN
+	aS4UgQQtbZUF0D9wjYPVioq0fm6eAH4Rsf88wnYyQO0dWDqv8PsT2IodQAf59v3aGdTDUnc8m7mGd
+	IScMCHi/YsQtqFh5tbSNUFt3KwWdaSu/SXtLTG3sKm4k34VP1bsqFYQMwA9bgQwihoLuReqoAqKoL
+	WIL2dxVFkkvMauK/KILEOTI6pk8QeyHjTc2uyjwIyU0TjDTtZ0PxO9nXZcbFjUV9TwGXkHtoAIuMY
+	R/ac01Musqf6A5HVWJbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hza4I-00037V-H1; Mon, 19 Aug 2019 05:18:58 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hza9E-00052M-AZ; Mon, 19 Aug 2019 05:24:04 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hza3J-0002j3-8l
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 05:17:58 +0000
-Received: by mail-pg1-x543.google.com with SMTP id n9so488142pgc.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 18 Aug 2019 22:17:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=DyOkWXbip/sFDtzCMcgt9fKortz6cn0pIstBPgx8f+A=;
- b=Wa4gXkppzwM0+r04OH6+s7lLvWAhrUF/5j+fyU8uox4gov+ZJgzHhjmS2Crg475wh6
- 68fYVRmc09jA4Dt4DUHcmv7z3UY5O0jDLHnoffxGIO6RMhray7o9zzx1tC4XSJmKckfV
- Hjj53K0p3SiK5nJUfmDDzsy7egJ4dIKXoRs+7XyUHgv4bXyygwYHd+uclWOlihp7j/3B
- wnxMbOPM/xDiv41AqwKcsgUcvD4hq+BbLf1dpSixl9G9UNA+A0kXpREoWFiFqgqA7KJ8
- GNCYMEn88qAvZMIXVBKT4CK/y8vH+tgaLYq77mLsLH4VULjISsY0i6qEQaHEJ3KA3Q5G
- MiHw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=DyOkWXbip/sFDtzCMcgt9fKortz6cn0pIstBPgx8f+A=;
- b=uDM7+dZzhW85msKxQU3M5VYQXaps2NoCwCVloFvasN4LeXb+TvRv1UQh8ms/5BbCiB
- Cymm7+DSQFKkcPlUmrkBU7RRyE6VcozpRibCxNWKnzAO6uBHeozjGNLKpcJC3/ECL0r6
- fLN/Cd/ahMb7VJekuMGSuSAyAkAp9smBeYGfWhluENL5KUmzlWNjdHtk+veYlymAfms7
- U+BiYFENIRhnGJyh81/5/qUMF0oBiO7gGqZ3Vxl1sRezrJD8DZ392WADs4ZISQ5y/ZLn
- pRfIBrfv9EFSfhxufDYlmXuCMPwdFwO6saCgj22YhGnMN+1+Vi/l7skNVZc2W7xrSoBA
- k9og==
-X-Gm-Message-State: APjAAAXbvU3jT3Q35xW3cPp7PAlGvfxUl1pSNyqmYMUondpevFvF3E50
- Y6+LzgXbg69pIXwWpDIAlj8=
-X-Google-Smtp-Source: APXvYqxmKIFDHCNwPUL7Pa2AYZQ57N6+X/NXdnMruTHlp+98Fjja2C1q0M4BwqahIM1AvA03PmrVSw==
-X-Received: by 2002:a65:528d:: with SMTP id y13mr18906968pgp.120.1566191876456; 
- Sun, 18 Aug 2019 22:17:56 -0700 (PDT)
-Received: from voyager.ibm.com ([36.255.48.244])
- by smtp.gmail.com with ESMTPSA id o3sm19010087pje.1.2019.08.18.22.17.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 18 Aug 2019 22:17:55 -0700 (PDT)
-From: Joel Stanley <joel@jms.id.au>
-To: Wim Van Sebroeck <wim@linux-watchdog.org>,
- Guenter Roeck <linux@roeck-us.net>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v2 2/2] watchdog: aspeed: Add support for AST2600
-Date: Mon, 19 Aug 2019 14:47:38 +0930
-Message-Id: <20190819051738.17370-3-joel@jms.id.au>
-X-Mailer: git-send-email 2.23.0.rc1
-In-Reply-To: <20190819051738.17370-1-joel@jms.id.au>
-References: <20190819051738.17370-1-joel@jms.id.au>
+ id 1hza8x-00051w-4X
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 05:23:48 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 736F768B02; Mon, 19 Aug 2019 07:23:37 +0200 (CEST)
+Date: Mon, 19 Aug 2019 07:23:37 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Rob Clark <robdclark@chromium.org>
+Subject: Re: [PATCH 0/6] drm+dma: cache support for arm, etc
+Message-ID: <20190819052337.GA16622@lst.de>
+References: <20190814220011.26934-1-robdclark@gmail.com>
+ <20190815065117.GA23761@lst.de>
+ <CAJs_Fx4bS64s7+xQqsead3N80ZQpofqegFQu+tT=b3wcGd_2pA@mail.gmail.com>
+ <20190815175346.GA19839@lst.de>
+ <CAJs_Fx6am7TeDFSG=CcTT=4KwhqrZX_jnn56NaWcDkGVizuakg@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAJs_Fx6am7TeDFSG=CcTT=4KwhqrZX_jnn56NaWcDkGVizuakg@mail.gmail.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190818_221757_422724_2B088873 
-X-CRM114-Status: GOOD (  12.04  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190818_222347_331192_B40C4C4B 
+X-CRM114-Status: GOOD (  14.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,52 +62,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Ryan Chen <ryan_chen@aspeedtech.com>,
- linux-watchdog@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, linux-arm-kernel@lists.infradead.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ "Maciej W. Rozycki" <macro@linux-mips.org>, Eric Biggers <ebiggers@google.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Imre Deak <imre.deak@intel.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Chris Wilson <chris@chris-wilson.co.uk>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Will Deacon <will@kernel.org>, Christoph Hellwig <hch@lst.de>,
+ Emil Velikov <emil.velikov@collabora.com>,
+ Deepak Sharma <deepak.sharma@amd.com>, Michael Ellerman <mpe@ellerman.id.au>,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.ibm.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ "moderated list:ARM64 PORT \(AARCH64 ARCHITECTURE\)"
+ <linux-arm-kernel@lists.infradead.org>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ "open list:MIPS" <linux-mips@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Robin Murphy <robin.murphy@arm.com>,
+ "open list:DRM DRIVER FOR MSM ADRENO GPU" <linux-arm-msm@vger.kernel.org>,
+ Joerg Roedel <jroedel@suse.de>, Arnd Bergmann <arnd@arndb.de>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Jesper Dangaard Brouer <brouer@redhat.com>,
+ "Wolfram Sang \(Renesas\)" <wsa+renesas@sang-engineering.com>,
+ "open list:LINUX FOR POWERPC \(32-BIT AND 64-BIT\)"
+ <linuxppc-dev@lists.ozlabs.org>, Alexios Zavras <alexios.zavras@intel.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Doug Anderson <armlinux@m.disordat.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Sean Paul <sean@poorly.run>, Allison Randal <allison@lohutok.net>,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Enrico Weigelt <info@metux.net>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ open list <linux-kernel@vger.kernel.org>, Rob Clark <robdclark@gmail.com>,
+ Souptick Joarder <jrdr.linux@gmail.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "open list:DRM DRIVER FOR MSM ADRENO GPU" <freedreno@lists.freedesktop.org>,
+ christian.koenig@amd.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ryan Chen <ryan_chen@aspeedtech.com>
+On Fri, Aug 16, 2019 at 02:04:35PM -0700, Rob Clark wrote:
+> I don't disagree about needing an API to get uncached memory (or
+> ideally just something outside of the linear map).  But I think this
+> is a separate problem.
+> 
+> What I was hoping for, for v5.4, is a way to stop abusing dma_map/sync
+> for cache ops to get rid of the hack I had to make for v5.3.  And also
+> to fix vgem on non-x86.  (Unfortunately changing vgem to used cached
+> mappings breaks x86 CI, but fixes CI on arm/arm64..)  We can do that
+> without any changes in allocation.  There is still the possibility for
+> problems due to cached alias, but that has been a problem this whole
+> time, it isn't something new.
 
-The ast2600 can be supported by the same code as the ast2500.
-
-Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
-Signed-off-by: Joel Stanley <joel@jms.id.au>
----
-v2:
- Reuse ast2500 config structure
----
- drivers/watchdog/aspeed_wdt.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/watchdog/aspeed_wdt.c b/drivers/watchdog/aspeed_wdt.c
-index cc71861e033a..5b64bc2e8788 100644
---- a/drivers/watchdog/aspeed_wdt.c
-+++ b/drivers/watchdog/aspeed_wdt.c
-@@ -34,6 +34,7 @@ static const struct aspeed_wdt_config ast2500_config = {
- static const struct of_device_id aspeed_wdt_of_table[] = {
- 	{ .compatible = "aspeed,ast2400-wdt", .data = &ast2400_config },
- 	{ .compatible = "aspeed,ast2500-wdt", .data = &ast2500_config },
-+	{ .compatible = "aspeed,ast2600-wdt", .data = &ast2500_config },
- 	{ },
- };
- MODULE_DEVICE_TABLE(of, aspeed_wdt_of_table);
-@@ -259,7 +260,8 @@ static int aspeed_wdt_probe(struct platform_device *pdev)
- 		set_bit(WDOG_HW_RUNNING, &wdt->wdd.status);
- 	}
- 
--	if (of_device_is_compatible(np, "aspeed,ast2500-wdt")) {
-+	if ((of_device_is_compatible(np, "aspeed,ast2500-wdt")) ||
-+		(of_device_is_compatible(np, "aspeed,ast2600-wdt"))) {
- 		u32 reg = readl(wdt->base + WDT_RESET_WIDTH);
- 
- 		reg &= config->ext_pulse_width_mask;
--- 
-2.23.0.rc1
-
+But that just means we start exposing random low-level APIs that
+people will quickly abuse..  In fact even your simple plan to some
+extent already is an abuse of the intent of these functions, and
+it also requires a lot of knowledge in the driver that in the normal
+cases drivers can't know (e.g. is the device dma coherent or not).
 
 _______________________________________________
 linux-arm-kernel mailing list
