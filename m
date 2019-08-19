@@ -2,93 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A67C948BB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 17:45:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F5BE948BD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 17:45:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V0cdxllTH0zuq+Xu8AV0NmEsN+9/rmFbcJRjTLEI1Ng=; b=F5/WaZ5kzpAnul
-	Ao3/nCyga6C4mrte87N2i98sG3ZAsdbN3GrluAKcrMXK0h2nSjabPH5onKMFBbC/NweucAl/Hmty8
-	Apq6dHvv944Ro/it9hD70F3aZ7+GhX2rVp0jTYnjLv1xfDxPP9bXd8ZzecaWcdtnbTc8EgrxKIKfx
-	t3HBnpMqCGaexkIglPz0iq0aTWMsJonPGZyf/8cf/6AIdHuBNcK8Foybi5MMs1fXin/1is5acdlpH
-	I6vVLrYX3Xf5k3ml/EJIVaHqe4EW84/GPGNwsYzWENR0T7K7RoGx6U9vG//anvnBeKBKvGG8I3cte
-	PsHteXVoGjTPpvykTAdw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AdmjT/1a8WwZ/xFmLu3lcaXR801qw7C1Z3ss1SYk5Gk=; b=CADBEDbWUL9to5JRVSLYw2yje
+	BOT/1KLqXjmlBD8R343uAbtmX8RGaKlT1mxn/L+A6BwZ3CnNlLv2r4/WIDaqKvPDhmsAa8Yp0AoRe
+	pLF7n/OMu6O0LQBaOtD+p+/U0yS/krj23YEHJ6Op/MZjln84ZQ2a0MjpH0rXccvfZ5x75N6DMsO1c
+	HuAXyxT/Jq1pv9EmyNtRo6GIiR/cYuf/3LNiTxqSLeqmk0X8+uKB8oi4jYvOEdCk9ApjL6RTl7flU
+	fpwBH4o2uK55I14jFk92Gztwz/pKL1ou09kiRiIj475UIelLTJJSfzOcGY53bDmUrMQ9gdJ/tUEge
+	Cata+3/9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzjqP-0002L1-Kp; Mon, 19 Aug 2019 15:45:17 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hzjqb-0002V0-OH; Mon, 19 Aug 2019 15:45:29 +0000
+Received: from mail-wr1-f99.google.com ([209.85.221.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzjqI-0002Jy-Em
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 15:45:11 +0000
-Received: by mail-pf1-x443.google.com with SMTP id v12so1380094pfn.10
+ id 1hzjqQ-0002Q5-3p
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 15:45:19 +0000
+Received: by mail-wr1-f99.google.com with SMTP id s18so9239213wrn.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 08:45:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zMGg7ZRNK7NfpqI/Qet9Dxr9rbclh2xtbR4hUTFM6IY=;
- b=GJoHV9QE4xGJAUCqD7zOGEihP3UiAZjpj3bmVElnV3mGgDu9+IBupxqZo5crTOTBSn
- 9E4KUL6HMvh/OBYUcO8Tpulqz8WiyGQenGKjsASlkTFv2dXi8Y/niM3/Z+P7vnlKNIaZ
- MtFd0UdR9JYH1Lcgtiq3NMGR7NeTcmBx3BytYCkuY0+Mh6In/PjXGCT7JB+YD1Ki2rnw
- M/YU/3ABnIwEbCJlH3DAt0qAYIkuPOryLlR92BarOXnc/HJERVegrVcC8hFgAU/vJ7Go
- FvSFH9zA3QmxP0Me+8WMdbNNwakaShO+N+03UzcmCf/+VKatv8Kx3ZtIc9UnmtYKv3wf
- 5kAg==
+ Mon, 19 Aug 2019 08:45:17 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zMGg7ZRNK7NfpqI/Qet9Dxr9rbclh2xtbR4hUTFM6IY=;
- b=sGrK9YVo+qhMWnDeOnsrPxPwZyP9bi8s4za7KzkUsc7TPKunlS080bX2/TEUtTjauB
- tWsx+1X1uVXpiimttCqNqzgfZYMHJRVI7UaRZEHOAFj3bpISiXpDzjTCHjjZMqJu3nDR
- FFd852uasZ8vI1igMQIOaXBPigzViCTeOU7uf+G0Jh2EatOSKgNXzuvOyayMc9nbdcoP
- rrHEkuLFTnIRcT1Kz6tf/Q4Z9Xs7v5ubIjlA4SEng1NuruMgTFGf27zGbAdUg9C6AVt6
- 7jWmHt2SeJAJ+A2GlrY3t1qz5BBV5ziqAEC5xOYF/2N2JmM8X6jFGkHFybGRcuMInORs
- C83g==
-X-Gm-Message-State: APjAAAU7/0csl/kDHaq/xOAIV/0JUO7lF+Jw6lrE4pp6DxHr4+56mebb
- p2jCfBGAZN9raQSw1lTcf9yDBkXmlZUZJVtVESjlnQ==
-X-Google-Smtp-Source: APXvYqyflWC4oeyk4cX94v5k6CQJ/8FEDGgMF+Kmp2ZaCbPDE8MBxb9njXOAWHJ8AnGwbz7Ioq7XIseAIciXEoaHYEw=
-X-Received: by 2002:a63:3006:: with SMTP id w6mr20727946pgw.440.1566229508161; 
- Mon, 19 Aug 2019 08:45:08 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=frPx+DEXQow8Q4wZ79pmfjyY/fKbbaPvJfV6xcb9azk=;
+ b=YIJ9GEjGh0xEXvgncist0zywOAWQJgT+hhhUqapkdh0J0ON66dS5HcZwQPyxmnS4NC
+ 3L+4u2iIzsrKHTlorRC27pwQ80X+n/gUQsGXI6OKm+1n2JWzlPD4NVJ+aQnvC8a1wuFA
+ fOwJ0RCWcYZb2vNGWWJxdXUaO0H8IVh2pcDq+hesyr37byDosKVJv+QY4hydUOKUPrhV
+ zeX3rWW6wqN3UUejBEnra9sFWAj7l+C29vhcvJZNPnIFzNRAuxbRoUkPjixtmVcTs4M8
+ /LmtwTgkJd7EVS3O3z9GnpNjoDtYyiNekj+oqf4ScTaBl3crMX2MvyWm5iERUr6MQhV4
+ T3Vw==
+X-Gm-Message-State: APjAAAUmnupRnvxLUvgc1uvePuC3ao3MfQXbbDg8GWqC9npxrcT2G3E3
+ Ybc8u8CcMeNo8Sewu1UOpcHdfOUwLQO8/UWiL3HO20/abtMbeG3f+X12ESsBDh10TQ==
+X-Google-Smtp-Source: APXvYqyir9zeQbK0O0tZunqUM0QDR4ANomwRugmoV+Zb88IPswb5aSAUGKjr9stnW40FR7q2xIfekorgFfnG
+X-Received: by 2002:adf:e5c4:: with SMTP id a4mr29929379wrn.87.1566229516094; 
+ Mon, 19 Aug 2019 08:45:16 -0700 (PDT)
+Received: from heliosphere.sirena.org.uk (heliosphere.sirena.org.uk.
+ [2a01:7e01::f03c:91ff:fed4:a3b6])
+ by smtp-relay.gmail.com with ESMTPS id z7sm237809wrl.24.2019.08.19.08.45.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 19 Aug 2019 08:45:16 -0700 (PDT)
+X-Relaying-Domain: sirena.org.uk
+Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1hzjqN-0005dS-HF; Mon, 19 Aug 2019 15:45:15 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 7364D274314C; Mon, 19 Aug 2019 16:45:14 +0100 (BST)
+Date: Mon, 19 Aug 2019 16:45:14 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Re: Best representation for TDM devices
+Message-ID: <20190819154514.GB5563@sirena.co.uk>
+References: <CAMTEBE0mPY=44txPC2G+Cb=NqeH6Cqesar9Vkq0afXBv4dUWHQ@mail.gmail.com>
+ <20190801114807.GB5488@sirena.org.uk>
+ <CAMTEBE2L6KXH6JW2Z_6RSKdtFJc9ncFvfakwW_Vm88BCGC6aeQ@mail.gmail.com>
+ <20190814160234.GG4640@sirena.co.uk>
+ <20190819084141.otpbos2fgxav7rco@flea>
 MIME-Version: 1.0
-References: <00eb8ba84205c59cac01b1b47615116a461c302c.1566220355.git.andreyknvl@google.com>
- <20190819150342.sxk3zzxvrxhkpp6j@willie-the-truck>
- <CAAeHK+xP6HnLJt_RKW67x8nbJLJp5A=av57BfwiFrA88eFn60w@mail.gmail.com>
- <20190819153856.odtneqxfxva2wjgu@willie-the-truck>
-In-Reply-To: <20190819153856.odtneqxfxva2wjgu@willie-the-truck>
-From: Andrey Konovalov <andreyknvl@google.com>
-Date: Mon, 19 Aug 2019 17:44:56 +0200
-Message-ID: <CAAeHK+zf_VKOttBVfZUdp-ra=uNTx_faCmJkrM81BzgEaOZjSQ@mail.gmail.com>
-Subject: Re: [PATCH ARM] selftests,
- arm64: fix uninitialized symbol in tags_test.c
-To: Will Deacon <will@kernel.org>
+In-Reply-To: <20190819084141.otpbos2fgxav7rco@flea>
+X-Cookie: QOTD:
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_084510_524522_5E5DFC24 
-X-CRM114-Status: GOOD (  13.47  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190819_084518_168948_ED6A083A 
+X-CRM114-Status: GOOD (  15.82  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ no trust [209.85.221.99 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,70 +94,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
- Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Dan Carpenter <dan.carpenter@oracle.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ali Burak =?utf-8?B?UGFyxLFt?= <aliburakparim@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3055841277104800447=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 5:39 PM Will Deacon <will@kernel.org> wrote:
->
-> On Mon, Aug 19, 2019 at 05:16:37PM +0200, Andrey Konovalov wrote:
-> > On Mon, Aug 19, 2019 at 5:03 PM Will Deacon <will@kernel.org> wrote:
-> > >
-> > > On Mon, Aug 19, 2019 at 03:14:42PM +0200, Andrey Konovalov wrote:
-> > > > Fix tagged_ptr not being initialized when TBI is not enabled.
-> > > >
-> > > > Dan Carpenter <dan.carpenter@oracle.com>
-> > >
-> > > Guessing this was Reported-by, or has Dan introduced his own tag now? ;)
-> >
-> > Oops, yes, Reported-by :)
-> >
-> > >
-> > > Got a link to the report?
-> >
-> > https://www.spinics.net/lists/linux-kselftest/msg09446.html
->
-> Thanks, I'll fix up the commit message and push this out later on. If you
-> get a chance, would you be able to look at the pending changes from
-> Catalin[1], please?
->
-> Will
->
-> [1] https://lkml.kernel.org/r/20190815154403.16473-1-catalin.marinas@arm.com
 
-Sure! I didn't realize some actioned is required from me on those.
-I'll add my Acked-by's. Thanks!
+--===============3055841277104800447==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="V0207lvV8h4k8FAm"
+Content-Disposition: inline
+
+
+--V0207lvV8h4k8FAm
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Mon, Aug 19, 2019 at 10:41:41AM +0200, Maxime Ripard wrote:
+> On Wed, Aug 14, 2019 at 05:02:34PM +0100, Mark Brown wrote:
+
+> > OK, in that case I'd recommend providing them to userspace as a single
+> > four channel stream - keeping everything bundled together as long as
+> > possible to make it easier to keep the processing synced up.
+
+> Ok, that's what I had in mind as well :)
+
+> However, it looks like we can only capture as many channels as the max
+> being exposed by the codec on the link?
+
+> Any attempt at capturing something with 4 channels here using arecord
+> was either reduced to two channels (the amount of channels provided by
+> the adau7002 driver), or just refused by the ALSA core.
+
+> Is there anything that we need to configure / work on to enable this?
+
+I'd expect there's some issue in the capability/constraint matching code
+that needs fixing - that should work but I can totally see it not
+working unless someone goes in and does something to fix it.
+
+--V0207lvV8h4k8FAm
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1axAkACgkQJNaLcl1U
+h9DN2gf7Bf++v8q3GlhushNkXwJA3cRBBZMFxGk3jmZyz59uOpue2Q0OhqMbcmy7
+9D5Tm2Z7NOpRc99tevcVQepB5ZtXkZZcUUUZ0mZfcuYPECbrqWwYwVtnsDZXQldw
+DPZYSWKR4mYJM7WyduIUxgB5WB+CrkFzkkOmiuEbLH3vC4tnTi/2N+oT+boDOnUU
+jkA4PTJEstBIOfiZPyVek7IS/r4kfvTuFaxYQPmk/+VMcn6UYO97V9VA/EkSEney
+hTfEzz9J1IP5lYwKcF8r4HcE2tPH6ftjUzKzZXsnAOOvOFJbjizbcPeJr0rgIvft
+jR1kwhYl5qwkQA4DwLSLDDYKwwJShQ==
+=t1rn
+-----END PGP SIGNATURE-----
+
+--V0207lvV8h4k8FAm--
+
+
+--===============3055841277104800447==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3055841277104800447==--
+
