@@ -2,92 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E365191DC5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 09:26:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6978E91DD1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 09:30:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BoVWLKFa8tmNLpU/tnXk2MZtFr9vg1b05w2l02RWqGg=; b=Uo98LqWcxAWEyk
-	tsGmVF32xmkQqxlla9HlwJ0T8ldgjVLXATpHqV5gU+Efntv3//3uBLS9bT57qlceeVCUGgnPGwv6f
-	fPHjj1A5sIi1xC78A1LFGbOL9qz7iXEcNJ+9LciKH9WiYSPZBqO3alpYgEloylX9QinFZK6Aj7FHr
-	tivXRGmd2LdAgOLPMms8QeDFaXF6bReo2dPw/mEy3ibFzUA55drYjv3lw0MoRA/lHrUIsCiUkDNsS
-	P+Y5qi8wZpfkyG5Y6/xVXf/hPq7M9qeU1rJ+emyFpOPvtlIPNzKClk7XRvBtcAsfIX6WPPGIEZeml
-	r6ne62T9MYXdC4KrQ4ug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZnIJNU5EVRtUUShxH0vuC2kVGEOm0DFPqq6wrMdpu1g=; b=cj8AMI6Z9Z32+/
+	nsso+TiUC1q9Q5znavtykgqcoE5rSz1ciWdIv1z/aCZorJU7ubKos5KnS9hBKC5yzenA3ZxsrXMTN
+	4n3giEAIvVKDZORRaahvzt46T4SSBgl25pi9Yhbl3uipqwMeOIyEbuwhdf4hzEI/rRK0yBnfQTQfk
+	0GqGZ2eZ5nZznqmmvefepo4VLpNZchQ8jkIi56P+8GZi1uqCfPx/tlB5KQ+j3cNuBv6HTpkELg+4Q
+	+b5wvut003jUo2joJHhroJbh/e6O73e/eUg4S/2h5yPaBeY+a1KXVHg2Srd5E2fa/b9odorOxkcN8
+	7kKFJb9fiicSQNmHQVEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzc3Z-0005vP-6o; Mon, 19 Aug 2019 07:26:21 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hzc6z-0007Ka-0o; Mon, 19 Aug 2019 07:29:53 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzc3L-0005v2-Cx
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 07:26:08 +0000
-Received: by mail-pl1-x644.google.com with SMTP id y1so537917plp.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 00:26:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ASzfI5O2O0aWIzLNo8xD65QuwOFz+BCrJzy7+F0X8Ww=;
- b=ci9rammUMjyOze+UXBOsKzZwtnQCYe4FoN8pe6vwjr40IWJ9pIV9m3XXtK8v1hhbGH
- 69cv6JyKSj8cvqso3/yQdy+HatDG6s24gEbMTZBYUuUcjuUAJlxlCwe7PbRs1tp/gf9t
- 6MK1FL8RLYFc/r9LJ+AI27peSPcGGKa9JlZBMQ+NFCA9rRKBrV5aymABGl3JjNuvqlvx
- f6aHj3iXexDx3lXvJjK7+O8Tpb1yLHybtVvr5ksF4xfhfXRURyHa5iFeLvvDpW/MZkln
- YZFiWL/sxh5vjsckWRs3hHwFDtrwF9zKuEI5weF3feC3HlbftI68fxlSwp1ODIxEN7dw
- Zg4w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ASzfI5O2O0aWIzLNo8xD65QuwOFz+BCrJzy7+F0X8Ww=;
- b=MfNy4cJogAkEBmGB/RadRyk2h+WLXgb2qqyhRLvHiqIH33FL/5NY9vMb1U6zpEPwC7
- sFB1crJL3q15dROHXdAMoI2+nphvYsfRB28VMR1XbmDfKdVtvG50+ibCrcjqWCN2Zpux
- ptnIYjijQZd7zLa1rcfpipwwCv9ISy4sQm58J9YEWGWk7cBf18ulJgEyjZ2hT/7SQhN/
- mJDZhBNWuQY66xpASs5QYan1YmQG/LwlfwkO8nNhs2S5fNd8kdVApmcnuSPPIYb/OJXB
- YhzEdvyZ8fQWSlA89wiJYZfCMBhy4QW4F9RM2rDDUD7cbGDjqwTVCaR1p5BPhtI2K1Hv
- pVdA==
-X-Gm-Message-State: APjAAAXN2wJ5IhvcbLyjQtzw5T+pLPuID1eQFXZHlMeXOQCXluE6SQI/
- 7o0KhqSLxsA/1j4MCUO+LJ0=
-X-Google-Smtp-Source: APXvYqwy7mYs6DlMVHYPVsq+Q6t3f4vuDfDFsrMTgxwx051CaK+bm48qy/KOljcXfPe2nLVkJ8o6SQ==
-X-Received: by 2002:a17:902:8e8b:: with SMTP id
- bg11mr19754178plb.93.1566199567038; 
- Mon, 19 Aug 2019 00:26:07 -0700 (PDT)
-Received: from localhost.localdomain ([110.225.16.165])
- by smtp.gmail.com with ESMTPSA id q33sm11395493pja.29.2019.08.19.00.26.04
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 19 Aug 2019 00:26:06 -0700 (PDT)
-From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: agross@kernel.org, balbi@kernel.org, gregkh@linuxfoundation.org,
- linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: [PATCH] usb: dwc3: qcom: Add of_node_put() before return in register
- function
-Date: Mon, 19 Aug 2019 12:55:55 +0530
-Message-Id: <20190819072555.31568-1-nishkadg.linux@gmail.com>
-X-Mailer: git-send-email 2.19.1
+ id 1hzc6g-0007Jz-9G
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 07:29:35 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 19 Aug 2019 00:27:59 -0700
+X-IronPort-AV: E=Sophos;i="5.64,403,1559545200"; d="scan'208";a="177797511"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by fmsmga008-auth.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 19 Aug 2019 00:27:52 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id 09D1F202FC; Mon, 19 Aug 2019 10:26:22 +0300 (EEST)
+Date: Mon, 19 Aug 2019 10:26:21 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Hugues FRUCHET <hugues.fruchet@st.com>
+Subject: Re: [PATCH v6 2/4] media: stm32-dcmi: trace the supported
+ fourcc/mbus_code
+Message-ID: <20190819072621.GZ6133@paasikivi.fi.intel.com>
+References: <1565790533-10043-1-git-send-email-hugues.fruchet@st.com>
+ <1565790533-10043-3-git-send-email-hugues.fruchet@st.com>
+ <20190816081514.GU6133@paasikivi.fi.intel.com>
+ <fb02573f-991a-18c5-b780-b5fc100da6a8@st.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <fb02573f-991a-18c5-b780-b5fc100da6a8@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_002607_442681_558A281D 
-X-CRM114-Status: GOOD (  12.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190819_002934_360617_18E26435 
+X-CRM114-Status: GOOD (  19.22  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (nishkadg.linux[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,55 +72,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
+Cc: Yannick FERTRE <yannick.fertre@st.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ Mickael GUENE <mickael.guene@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Philippe CORNU <philippe.cornu@st.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The variable dwc3_np in the function dwc3_qcom_of_register_core takes the
-value returned by of_get_child_by_name, which gets a node but does not
-put it. This may cause a memory leak. Hence create a new label,
-err_node_put, that puts dwc3_np and returns the required value, and
-modify two return statements to instead save the required return value
-in existing variable ret and then point to this label.
-Issue found with Coccinelle.
+Hi Hugues,
 
-Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
----
- drivers/usb/dwc3/dwc3-qcom.c | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
+On Mon, Aug 19, 2019 at 07:23:17AM +0000, Hugues FRUCHET wrote:
+> Hi Sakari,
+> 
+> On 8/16/19 10:15 AM, Sakari Ailus wrote:
+> > Hi Hugues,
+> > 
+> > On Wed, Aug 14, 2019 at 03:48:51PM +0200, Hugues Fruchet wrote:
+> >> Add a trace of the set of supported fourcc/mbus_code which
+> >> intersect between DCMI and source sub-device.
+> >>
+> >> Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
+> >> ---
+> >>   drivers/media/platform/stm32/stm32-dcmi.c | 12 ++++++++++--
+> >>   1 file changed, 10 insertions(+), 2 deletions(-)
+> >>
+> >> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
+> >> index b462f71..18acecf 100644
+> >> --- a/drivers/media/platform/stm32/stm32-dcmi.c
+> >> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
+> >> @@ -1447,12 +1447,20 @@ static int dcmi_formats_init(struct stm32_dcmi *dcmi)
+> >>   			/* Code supported, have we got this fourcc yet? */
+> >>   			for (j = 0; j < num_fmts; j++)
+> >>   				if (sd_fmts[j]->fourcc ==
+> >> -						dcmi_formats[i].fourcc)
+> >> +						dcmi_formats[i].fourcc) {
+> >>   					/* Already available */
+> >> +					dev_dbg(dcmi->dev, "Skipping fourcc/code: %4.4s/0x%x\n",
+> >> +						(char *)&sd_fmts[j]->fourcc,
+> >> +						mbus_code.code);
+> >>   					break;
+> >> -			if (j == num_fmts)
+> >> +				}
+> >> +			if (j == num_fmts) {
+> >>   				/* New */
+> >>   				sd_fmts[num_fmts++] = dcmi_formats + i;
+> >> +				dev_dbg(dcmi->dev, "Supported fourcc/code: %4.4s/0x%x\n",
+> > 
+> > Over 80 characters per line.
+> > 
+> 
+> This an exception of the "80 chars" in order to be able to grep in 
+> kernel messages:
+> https://www.kernel.org/doc/html/v4.10/process/coding-style.html
+> "However, never break user-visible strings such as printk messages, 
+> because that breaks the ability to grep for them."
+> 
+> This exception is managed in checkpatch.pl (--strict).
 
-diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
-index 261af9e38ddd..227f4fee184a 100644
---- a/drivers/usb/dwc3/dwc3-qcom.c
-+++ b/drivers/usb/dwc3/dwc3-qcom.c
-@@ -528,16 +528,19 @@ static int dwc3_qcom_of_register_core(struct platform_device *pdev)
- 	ret = of_platform_populate(np, NULL, NULL, dev);
- 	if (ret) {
- 		dev_err(dev, "failed to register dwc3 core - %d\n", ret);
--		return ret;
-+		goto err_node_put;
- 	}
- 
- 	qcom->dwc3 = of_find_device_by_node(dwc3_np);
- 	if (!qcom->dwc3) {
- 		dev_err(dev, "failed to get dwc3 platform device\n");
--		return -ENODEV;
-+		ret = -ENODEV;
-+		goto err_node_put;
- 	}
- 
--	return 0;
-+err_node_put:
-+	of_node_put(dwc3_np);
-+	return ret;
- }
- 
- static const struct dwc3_acpi_pdata sdm845_acpi_pdata = {
+This exception is for cases where wrapping the line in the usual way, e.g.
+at argument boundaries, does not prevent it exceeding 80 characters. But it is
+not the case here.
+
 -- 
-2.19.1
-
+Sakari Ailus
+sakari.ailus@linux.intel.com
 
 _______________________________________________
 linux-arm-kernel mailing list
