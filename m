@@ -2,93 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A50B091DB6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 09:23:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB42B91DBE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 09:25:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=geni7XjAKi6wYItwPKZFdvYtxk3iCiNPnPPLZTAFKnw=; b=Lk3wVgDRjl12DD
-	tOIgTe5LY01Hl03eCQltoNdaKbYH13///g5z0vHgcsj8te9xGDvYzbXRl3oFVSjfzXFvKzpihiGHi
-	ec5yknnbPBO+J5vacoHYrl+SA+V8VOACsLmRqQ/o6qRoL70CWe7Z+gGNKD75xnYn/b3nQ8wA+5+A9
-	vJMv9Or9EDCXO27qdoTMkEQq42FTX5h2oAfSHW5vSJqg2wir+QHPdO8r7t4HK2wV+6ZclQHOyXWVi
-	jh3AwYqb5Sq8bhUqDj+z56HZm3Pg6VCrd7lTWkrtxMT7v8246Nj5b5LDqPsfOhg/O6+WLognSzXyg
-	Hn63SyKIErr6loTWilKQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kKq05Mz77+Xlst3b3JSzYOb7F38gBv3YnEuPuj+Os74=; b=RAzQtxxUCqhLbr
+	f4J+Lm6EV7AVjl0F7Ij1PqPBe/a1xu0FmYvLc+RUkz5PJ0dAZQPjzlypMLDo5aV1KuYf6FVhGfa9d
+	2F40QJjHafpHJL4LlgtxzuRRQognIRNJuNfGUvkAyv/dmEzBgBn5dhwqJlaYv1BV+LX3vu3q0oXpA
+	VAepwC16Kq+/tYTmLOKFoRpRP4Ufu1fP9tonfUcfJ16ftV4u6qek+KJiViHTJFyWKd19eeUCEZWz7
+	oOODZLRW2v8nWUbdWk2v4ovbDPbl/yEhIV52bvufqx6W/X6ZkqMmQF3VYtASOnq7MdfMqgSVY0Glu
+	PQV09VVZuOJyMf9kA0Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzc18-0003C9-9m; Mon, 19 Aug 2019 07:23:50 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hzc2I-0003Tu-Hy; Mon, 19 Aug 2019 07:25:02 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzc0p-0003BS-Uk
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 07:23:33 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7J7MCgC019108; Mon, 19 Aug 2019 09:23:19 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=IBOE9ThChyn3HPj0nzP6E2WkbMPsLIygBXtx/PEdxeI=;
- b=Hw7ZH9mSgKeNlQZ++PZMRAcJg0Ay5xqKI6dS4w26o6q6xSodd/H1RzRpm+G5v20+i7/l
- uDLQXL3Xm/+TUG1n7nUkTFr/xzLvc/rGgti5Ivc6j4HERgOf4dMlWK2libUk6qQ4RIHH
- ULz5qgZZRN5zL9npWhkSLJM2oxGwFylxvV4BJYy+0j5Nc9VJYiHHFRljKdGbjJhlx4nW
- DVBY4LYF9LN7yvxsNZu827tW/rDZwqEgfmue01Wz8VzSRkUSYeOsq68EGnSvUmk63nHQ
- O8wmuAEauv1UI0pAj3l+5+1/IT9uOCxGwJqLGo8P808opk8HgUQBsewE2YgDrPkvuSED tw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2ue7buhv3h-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 19 Aug 2019 09:23:19 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 100F331;
- Mon, 19 Aug 2019 07:23:18 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EF6932BF9FA;
- Mon, 19 Aug 2019 09:23:17 +0200 (CEST)
-Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG6NODE3.st.com
- (10.75.127.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 19 Aug
- 2019 09:23:17 +0200
-Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
- SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
- 15.00.1473.003; Mon, 19 Aug 2019 09:23:17 +0200
-From: Hugues FRUCHET <hugues.fruchet@st.com>
-To: Sakari Ailus <sakari.ailus@linux.intel.com>
-Subject: Re: [PATCH v6 2/4] media: stm32-dcmi: trace the supported
- fourcc/mbus_code
-Thread-Topic: [PATCH v6 2/4] media: stm32-dcmi: trace the supported
- fourcc/mbus_code
-Thread-Index: AQHVVAq68UiFQiNcNkmXdD8YMRgfcacB9FUA
-Date: Mon, 19 Aug 2019 07:23:17 +0000
-Message-ID: <fb02573f-991a-18c5-b780-b5fc100da6a8@st.com>
-References: <1565790533-10043-1-git-send-email-hugues.fruchet@st.com>
- <1565790533-10043-3-git-send-email-hugues.fruchet@st.com>
- <20190816081514.GU6133@paasikivi.fi.intel.com>
-In-Reply-To: <20190816081514.GU6133@paasikivi.fi.intel.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.50]
-Content-ID: <02FB72ACF9496F4298AB952A072DDEA0@st.com>
+ id 1hzc25-0003TT-F4
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 07:24:50 +0000
+Received: by mail-pf1-x441.google.com with SMTP id i30so647335pfk.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 19 Aug 2019 00:24:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8sEiIl57BH1UnpigrfcmtcS/+u7ss59hzQTNXNLQX8k=;
+ b=ebNrBQTm89VrGyszHKb0JXq4atLLs2dVkzh284BbuHTOS6x539wBM0oFTauKN80T5K
+ 6Dvd22LJ9BaGdROHkLWhXwgsVl/gZXL+4F/869QVCdSnng7W0WAXktMDUQlmCT+TPUx7
+ IO/4QNdZe8PJslVc3xCy/DNY9dLCZz9AIBI6s6lelsAmuLC9yeDt8KShhkvI6Qic0Q4h
+ TnotgpExho7SKRtl2cflg9LXG/IE31mrSQQXMmWfbfPyRp9vymiuoT9C/at/F40qPTrB
+ QRzeQRA0D12TjSobRVRuw6EXbXJdF/Fk1fI33vRxJX0bciQ/0iv43UfcUz3/PAXeLq0M
+ hPFg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8sEiIl57BH1UnpigrfcmtcS/+u7ss59hzQTNXNLQX8k=;
+ b=I8OdP5xnvLPWwNs6T9JQgURDMznO2cQmfzOyq4fLp1f9qkzW4ESVBX0G4zGlCYd5tl
+ EpQn8XwicSxPLJ7HP1zpZAoNB+CDagaXK4ONCevlvD2nPgGOFC3XACn8c1cdBCSNfV8h
+ xIXA7pQfNwFO/Ku5T6PacWY+ZvtgCtC9jJUNScbFefpoxc2QlW1TroITjNEbrrCWIiWx
+ K0hq4MLRP5C9D22B/9sJ2FmPI0Q/7yzUGYZMxm351AZBXabmlJmf5PRl48yeluwBH8t0
+ 06o8tNh3eD1/uj8LXHX0U835G2Lp59wYJFHltrUdEFHvx7/WuXEqU5fhO7yG+CRutWsp
+ hI6g==
+X-Gm-Message-State: APjAAAUiwQLRC9uEmCbz8aHvbGJ++3yP1DxSIgDgPfEYufi8lrks1qiF
+ JMaGD2EaUeWYEce19+ngn0Rp18pf
+X-Google-Smtp-Source: APXvYqwdNNKfTGcPy3tFR86j9Kv69o3x6r+CjS+JP9c9oRwhwoUTd+0ke6YkZ7cfR8UGQOQ+gm/94Q==
+X-Received: by 2002:a62:db86:: with SMTP id
+ f128mr22257886pfg.159.1566199488833; 
+ Mon, 19 Aug 2019 00:24:48 -0700 (PDT)
+Received: from localhost.localdomain ([110.225.16.165])
+ by smtp.gmail.com with ESMTPSA id u3sm11064496pjn.5.2019.08.19.00.24.46
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 19 Aug 2019 00:24:48 -0700 (PDT)
+From: Nishka Dasgupta <nishkadg.linux@gmail.com>
+To: patrice.chotard@st.com, balbi@kernel.org, gregkh@linuxfoundation.org,
+ linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: [PATCH 1/2] usb: dwc3: st: Add of_node_put() before return in probe
+ function
+Date: Mon, 19 Aug 2019 12:54:35 +0530
+Message-Id: <20190819072436.31402-1-nishkadg.linux@gmail.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-19_02:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_002332_285588_0418E5D1 
-X-CRM114-Status: GOOD (  20.29  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190819_002449_508100_F69EE22B 
+X-CRM114-Status: GOOD (  13.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (nishkadg.linux[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -108,79 +99,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yannick FERTRE <yannick.fertre@st.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- Mickael GUENE <mickael.guene@st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Philippe CORNU <philippe.cornu@st.com>, Hans Verkuil <hverkuil@xs4all.nl>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sakari,
+The local variable child in the function st_dwc3_probe takes the return
+value of of_get_child_by_name, which gets a node and does not put it. If
+the function returns without releasing child, this could cause a memory
+error. Hence put child as soon as there is no more use for it. Also
+create a new label, err_node_put, just before label undo_softreset; so
+that err_node_put puts child. In between initialisation of child and its
+first put, modify all statements that go to undo_softreset to now go to
+err_node_put instead, from where they can fall through to
+undo_softreset.
+Issue found with Coccinelle.
 
-On 8/16/19 10:15 AM, Sakari Ailus wrote:
-> Hi Hugues,
-> 
-> On Wed, Aug 14, 2019 at 03:48:51PM +0200, Hugues Fruchet wrote:
->> Add a trace of the set of supported fourcc/mbus_code which
->> intersect between DCMI and source sub-device.
->>
->> Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
->> ---
->>   drivers/media/platform/stm32/stm32-dcmi.c | 12 ++++++++++--
->>   1 file changed, 10 insertions(+), 2 deletions(-)
->>
->> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
->> index b462f71..18acecf 100644
->> --- a/drivers/media/platform/stm32/stm32-dcmi.c
->> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
->> @@ -1447,12 +1447,20 @@ static int dcmi_formats_init(struct stm32_dcmi *dcmi)
->>   			/* Code supported, have we got this fourcc yet? */
->>   			for (j = 0; j < num_fmts; j++)
->>   				if (sd_fmts[j]->fourcc ==
->> -						dcmi_formats[i].fourcc)
->> +						dcmi_formats[i].fourcc) {
->>   					/* Already available */
->> +					dev_dbg(dcmi->dev, "Skipping fourcc/code: %4.4s/0x%x\n",
->> +						(char *)&sd_fmts[j]->fourcc,
->> +						mbus_code.code);
->>   					break;
->> -			if (j == num_fmts)
->> +				}
->> +			if (j == num_fmts) {
->>   				/* New */
->>   				sd_fmts[num_fmts++] = dcmi_formats + i;
->> +				dev_dbg(dcmi->dev, "Supported fourcc/code: %4.4s/0x%x\n",
-> 
-> Over 80 characters per line.
-> 
+Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+---
+ drivers/usb/dwc3/dwc3-st.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
-This an exception of the "80 chars" in order to be able to grep in 
-kernel messages:
-https://www.kernel.org/doc/html/v4.10/process/coding-style.html
-"However, never break user-visible strings such as printk messages, 
-because that breaks the ability to grep for them."
+diff --git a/drivers/usb/dwc3/dwc3-st.c b/drivers/usb/dwc3/dwc3-st.c
+index 16081383c401..6f52c749cd58 100644
+--- a/drivers/usb/dwc3/dwc3-st.c
++++ b/drivers/usb/dwc3/dwc3-st.c
+@@ -255,24 +255,25 @@ static int st_dwc3_probe(struct platform_device *pdev)
+ 	if (!child) {
+ 		dev_err(&pdev->dev, "failed to find dwc3 core node\n");
+ 		ret = -ENODEV;
+-		goto undo_softreset;
++		goto err_node_put;
+ 	}
+ 
+ 	/* Allocate and initialize the core */
+ 	ret = of_platform_populate(node, NULL, NULL, dev);
+ 	if (ret) {
+ 		dev_err(dev, "failed to add dwc3 core\n");
+-		goto undo_softreset;
++		goto err_node_put;
+ 	}
+ 
+ 	child_pdev = of_find_device_by_node(child);
+ 	if (!child_pdev) {
+ 		dev_err(dev, "failed to find dwc3 core device\n");
+ 		ret = -ENODEV;
+-		goto undo_softreset;
++		goto err_node_put;
+ 	}
+ 
+ 	dwc3_data->dr_mode = usb_get_dr_mode(&child_pdev->dev);
++	of_node_put(child);
+ 
+ 	/*
+ 	 * Configure the USB port as device or host according to the static
+@@ -292,6 +293,8 @@ static int st_dwc3_probe(struct platform_device *pdev)
+ 	platform_set_drvdata(pdev, dwc3_data);
+ 	return 0;
+ 
++err_node_put:
++	of_node_put(child);
+ undo_softreset:
+ 	reset_control_assert(dwc3_data->rstc_rst);
+ undo_powerdown:
+-- 
+2.19.1
 
-This exception is managed in checkpatch.pl (--strict).
 
->> +					(char *)&sd_fmts[num_fmts - 1]->fourcc,
->> +					sd_fmts[num_fmts - 1]->mbus_code);
->> +			}
->>   		}
->>   		mbus_code.index++;
->>   	}
-> 
-
-BR,
-Hugues.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
