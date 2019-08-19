@@ -2,81 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE56E94F13
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 22:33:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EB3094F73
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 22:58:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IFejyRxcW54n46qBMKX2ttAvVcsbOnzp+TVrdhxag2M=; b=avECrMT48F4yD9
-	ixqjfAIJr1sNoVlCV04ypupCPovmTpYG0VR2f9zt2odZusoRcPuaByKp82Omzf8Cg2/ttxVFhcWsy
-	dLR8rqNBOrVKBLGBCJ6JswQz7uHgX3NqbudRTZdlamF/dng9+k7KPmFrTpPT+lu+UF0HLGIDCuuRI
-	xJM9ZXCNKrxSKTiKUydddiCeboE9H64pC2tB2iVuwqPrYEJ3LDAnO9BKoSwixb3HxebKtG1jJv2+4
-	DIn5ojtHs5wweMIwLMjeBAvZtBWOMacPnVucFxN9evkQj6LxLAsiXN9OqTvgox8MaoHXZ1N1iytvj
-	wWJpB2SDOb87PICqOcKw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Tkzj94yEi8XUKhGKeMfrVZkoe3gVQkKmVuVzDPtILSw=; b=MzK
+	heCU0XZWgZcvPS/41dCBJOawUyeyzgYrXDtX+tCEVEtQkPUzSRWdF2GPDpM5KgBUbWxC6KSOe9nUU
+	blZYf+ZNq8EGceJsGClHPNQ+ioiAPbE3a7OWxt0EuXB3W75OBGRWc9gan7Z/2r5U/ZwkTMtQnh4XR
+	zGXeqnFLIiLGnhaAfvhCK9XjKGto5Gcd8RsnYOiaApWmj+4QHa7MzPNQP1FTnxM0wt+/oSImTYN+5
+	qFb2WPc7+Rul6x3CgInr9ICXT00+MKRDUfAYH9J22XmnDU5UkhQukW+ozqmpwNP3UFTOlX27+A/0x
+	7falxeKs6Qu9k2SptLWPccx1GxOBeig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzoLV-0005rG-Q0; Mon, 19 Aug 2019 20:33:41 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hzojV-0005kY-N5; Mon, 19 Aug 2019 20:58:29 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzoLK-0005qp-17
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 20:33:31 +0000
-Received: by mail-pl1-x641.google.com with SMTP id f19so1106609plr.3
+ id 1hzoij-0005GR-8c
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 20:57:44 +0000
+Received: by mail-wr1-x442.google.com with SMTP id y8so10103304wrn.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 13:33:28 -0700 (PDT)
+ Mon, 19 Aug 2019 13:57:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=C0YdE7WLdR5eShoGfGzaTJbbzQCql5KdO1zzWvfao/I=;
- b=uKxM19xm2s7/cFwYcRITgshuU5SM6FPO78IQuoXe3YJJ2FoPRFyK+9UwydxmEwTzz0
- aMjktkxdi6yTQR2//FZBqty3r88nNwi039t9rDaAtBq7l3Wm24dAqe29F+xcwY1fG1D3
- 34F/z9GimHbQTFjF/W/A1hA6dXjCyb++iaeYtBpabSwyBjcBmGN+VX2HollYI3DooMyU
- MG4d6fP2IIy0KsSYDcnEtDduKWOk9J1vu0v88ithmAacP6Gbqk2L7X4xZ7+/ZWnBx4OQ
- NC6+OtAyYV2WJV3xgtmNTPM468RDTHDTUkCaKCvrAY5cbYt2SH/Hra4ek62jbmL6uMsm
- iWCA==
+ h=from:to:cc:subject:date:message-id;
+ bh=XjZALN5ZxOMq51Km/q6wKAo29aol3+Lfl2pvPVUUYDA=;
+ b=caF+HLO+gD0O8dot0Rc/h5HI7ZCaW+pFdlXAGtKNOQxH8RNdEod3cLclsOpc/EOQuW
+ 5WhyNvUHk3cIBpZcmuJPMPcwZUMTzVkhgRFbXA9wnsJczBIADsbUOmiBZz48asG4Rb4a
+ qlsnP8x/1roA3e+9Ev84iV92Nc4Sx2XlCgm6bvBF60MJrc6fs/wW3aBSQOsZ50lBONgR
+ Q17PcCtJ9O4JU84dpU+aUDETpwQRqWV3ywl3pXtbXaQIK94M/SS8uJG9lpw4MwEME1e+
+ d5JnrkO0kdrQBvZvTgeIFhjmnjt8+64bSwYKXQlacVhQb2XOGGu00fDXo5x3ySsMW2Jo
+ 96oA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=C0YdE7WLdR5eShoGfGzaTJbbzQCql5KdO1zzWvfao/I=;
- b=GA7fLEcvS1/YgQbOu8lsJRjih3iF9Ynz5JVrbCO0WhZJ/cRb+4oYAQdJMbMATay2g4
- s8+Gn56HE7Xl6Ttok0MOM4I8A3113+/d2oAWFs5GawODypSrjxzCavHJ4LYU9YT03UPd
- mubLoCbWketma0fxSnYJhOV05LXY8UOm5DMftDaktsJQCVaYEFTwFCqCx0BIcwpsNVYe
- Yh3XrtQ93o40jdJwoKYRP7MomocJBSK2qjLbiEAJmunP0R7MSnWN/m1QAWPe537F3Pm9
- 0zVDv1MbhIA58B0zkBUY4nPdUiMtgCO6qbKinxWQALQuszEXCNz+pCj01nRs+k0Ed63E
- HDNw==
-X-Gm-Message-State: APjAAAWAFiULoaSEshEdQiTkc9e1tEflTMak6vSJ+vUl2BS8c2v4oeQ4
- 8gJUGVVuSX1jfaxwHTj01dHkAQ==
-X-Google-Smtp-Source: APXvYqzm51FMfY0i8xpqcKW5PlL/Gu2LoqQLJ+6mU4zb/yf7lXfYTguv7N7bV/JNozv1azQ7wUodJg==
-X-Received: by 2002:a17:902:684f:: with SMTP id
- f15mr24810884pln.332.1566246807635; 
- Mon, 19 Aug 2019 13:33:27 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id h11sm16844370pfn.120.2019.08.19.13.33.26
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 19 Aug 2019 13:33:27 -0700 (PDT)
-Date: Mon, 19 Aug 2019 14:33:25 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Tanmay Vilas Kumar Jagdale <tanmay@marvell.com>
-Subject: Re: coresight: Add ETM4.1 support for ThunderX2
-Message-ID: <20190819203325.GB8268@xps15>
-References: <1565877215-1331-1-git-send-email-tanmay@marvell.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1565877215-1331-1-git-send-email-tanmay@marvell.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=XjZALN5ZxOMq51Km/q6wKAo29aol3+Lfl2pvPVUUYDA=;
+ b=hz+mD4Bq65M1rFhHgoijY4MoWTx340Fb6EYOBQPLkdGJ9nYYMjLuyhryaeJrmLg0fs
+ Y637Xk6BvXNoDi9xIhPzcJXwCJCZne5NC3sbD2EIcGxoFsnIHhrrGL1T5FxvW0uwr4cZ
+ bnVoGgPwRW9hId2RsbS0Xd29t/8lwZzvpmFNHam05umZ6iNzInCeIxlZJ0DzStzJnSFd
+ YDUSkrqxslePBECDZDLsgopvFo4LSEexcKMWrbd0Hp44vpiSTAQ+/bHL/nZtMUXI/XuV
+ YdOP4ev6MF6w8poCXt0AwHmLhB+2Ja0kJkZZs/z2SIe3RKy2glN41QWA/L2nCTZSUtaO
+ asBQ==
+X-Gm-Message-State: APjAAAXoHjBnW3GC1lNL3okR1pftae3DwoyQeDdxMHZDsayndysiCD58
+ 1ZUFWwlD1diWfJXtqkAQyv1G8A==
+X-Google-Smtp-Source: APXvYqz9WZxaA6Akttb0nW+/OyASsAQVAGMAqMZ2ByUCoLVhazpd5JEnDftjQNSnntVsZhun2UQB6Q==
+X-Received: by 2002:adf:9484:: with SMTP id 4mr28519190wrr.14.1566248258013;
+ Mon, 19 Aug 2019 13:57:38 -0700 (PDT)
+Received: from linaro.org ([2a00:23c5:6815:3901:247e:6e55:2413:b21c])
+ by smtp.gmail.com with ESMTPSA id n9sm6698423wrx.76.2019.08.19.13.57.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 19 Aug 2019 13:57:37 -0700 (PDT)
+From: Mike Leach <mike.leach@linaro.org>
+To: mathieu.poirier@linaro.org, linux-arm-kernel@lists.infradead.org,
+ coresight@lists.linaro.org
+Subject: [PATCH 0/8] coresight: etm4x: Fixes and updates for sysfs API
+Date: Mon, 19 Aug 2019 21:57:12 +0100
+Message-Id: <20190819205720.24457-1-mike.leach@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_133330_213743_71B94466 
-X-CRM114-Status: GOOD (  17.69  )
+X-CRM114-CacheID: sfid-20190819_135741_349363_6C55E430 
+X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -98,79 +93,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomasz Nowicki <tnowicki@marvell.com>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- Ganapatrao Kulkarni <gkulkarni@marvell.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>
+Cc: suzuki.poulose@arm.com, mike.leach@linaro.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Same comment as the previous patch along with the following...
+Review of ETMV4 sysfs code resulted in a number of minor issues being
+discovered.
 
-On Thu, Aug 15, 2019 at 01:53:46PM +0000, Tanmay Vilas Kumar Jagdale wrote:
-> Add ETM4.1 periperhal ID for Marvell's ThunderX2 chip.
-> 
-> Signed-off-by: Tanmay Jagdale <tanmay@marvell.com>
-> ---
->  drivers/hwtracing/coresight/coresight-etm4x.c | 2 ++
->  drivers/hwtracing/coresight/coresight-etm4x.h | 1 +
->  2 files changed, 3 insertions(+)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> index 7bcac8896fc1..ac3bd617907b 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-> @@ -58,6 +58,7 @@ static bool etm4_arch_supported(u8 arch)
->  	/* Mask out the minor version number */
->  	switch (arch & 0xf0) {
->  	case ETM_ARCH_V4:
-> +	case ETM_ARCH_V4_1:
+Patch set fixes these issues:-
+1) Update for ETM v4.4 archtecture.
+2) Add missing single shot comparator API.
+3) Misc fixes and improvements to sysfs API
+4) Updated programmers documentation and reference.
 
-Why add ETM_ARCH_V4_1 when the switch statement strips off the first byte?
+Mike Leach (8):
+  coresight: etm4x: Fixes for ETM v4.4 architecture updates.
+  coresight: etm4x: Fix input validation for sysfs.
+  coresight: etm4x: Add missing API to set EL match on address filters
+  coresight: etm4x: Fix issues with start-stop logic.
+  coresight: etm4x: Improve usability of sysfs API.
+  coresight: etm4x: Add view comparator settings API to sysfs.
+  coresight: etm4x: Add missing single-shot control API to sysfs
+  coresight: etm4x: docs: Additional documentation for ETM4x.
 
-Look at[1], someone already added support for 4.2.
+ .../testing/sysfs-bus-coresight-devices-etm4x | 183 ++++---
+ .../{ => coresight}/coresight-cpu-debug.txt   |   0
+ .../coresight/coresight-etm4x-reference.txt   | 459 ++++++++++++++++++
+ .../trace/{ => coresight}/coresight.txt       |   0
+ MAINTAINERS                                   |   3 +-
+ .../coresight/coresight-etm4x-sysfs.c         | 308 +++++++++++-
+ drivers/hwtracing/coresight/coresight-etm4x.c |  32 +-
+ drivers/hwtracing/coresight/coresight-etm4x.h |  18 +-
+ 8 files changed, 902 insertions(+), 101 deletions(-)
+ rename Documentation/trace/{ => coresight}/coresight-cpu-debug.txt (100%)
+ create mode 100644 Documentation/trace/coresight/coresight-etm4x-reference.txt
+ rename Documentation/trace/{ => coresight}/coresight.txt (100%)
 
-[1]. 5666dfd1d8a4 coresight: etm4x: Add support to enable ETMv4.2
+-- 
+2.17.1
 
-
->  		break;
->  	default:
->  		return false;
-> @@ -1196,6 +1197,7 @@ static const struct amba_id etm4_ids[] = {
->  	CS_AMBA_ID(0x000bb95e),		/* Cortex-A57 */
->  	CS_AMBA_ID(0x000bb95a),		/* Cortex-A72 */
->  	CS_AMBA_ID(0x000bb959),		/* Cortex-A73 */
-> +	CS_AMBA_ID(0x000cc0af),		/* Marvell ThunderX2 */
-
-I suspect this processor also has "coresight-cpu-debug" IPs.  If that is the
-case it is very possible they both have the same CID and a UCI (see next line)
-is required.
-
->  	CS_AMBA_UCI_ID(0x000bb9da, uci_id_etm4),	/* Cortex-A35 */
->  	{},
->  };
-
-Thanks,
-Mathieu
-
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
-> index 4523f10ddd0f..03369e56b2eb 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.h
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.h
-> @@ -137,6 +137,7 @@
->  #define ETM_MAX_SS_CMP			8
->  
->  #define ETM_ARCH_V4			0x40
-> +#define ETM_ARCH_V4_1			0x41
->  #define ETMv4_SYNC_MASK			0x1F
->  #define ETM_CYC_THRESHOLD_MASK		0xFFF
->  #define ETM_CYC_THRESHOLD_DEFAULT       0x100
-> -- 
-> 2.17.1
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
