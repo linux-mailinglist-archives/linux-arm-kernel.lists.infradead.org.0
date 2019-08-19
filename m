@@ -2,157 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E573992371
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 14:29:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A658D92395
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 14:37:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0yKt/VsUbGFW3GTy17/zQMbQy26jThF4HEu84kAPcJA=; b=bDEtWgfR6B3uYF
-	Hwiabn8NdbBLrEFqtFnEX/IhcL6fKWc6pNwYruBM6161lRQI67VCvkM1hqAJZ6DguSDUkPg0rLGmG
-	PRraxrRPB+QXp0QT4Iu81NSv9KO85lXndvWfpW4M9Ne3+e6+GC+mmoia4ApD2+S4pKksTRgVXMniF
-	ses+rOpCjUansEkBOHj9fPUddUDUbf8aMdvN2ko2rm2+1/bfwpBu99kv1OvCEzdyzBKs5aDqAy7yI
-	nwJYMSVxxtbEW4tKEBTAUhrhI4WptbGjx2XGceao5UFXsuYwaFSSUVy9XW9hxPOw4F5gDHaQDysYO
-	81gEHonGNl2qRrvLmf1g==;
+	List-Owner; bh=S3xMhAGR2B0gVSPL1rdoKntEp1DqBMGOarXCoOupU0Y=; b=Gux5M9a6Dryo7x
+	zVrzS0wjjoczBoi2UrpR4KLg3Kmp/ga6ZPCSs27B+WBXNhWlQE/mz5pICjnMkooe/j8blYFT739Qk
+	gUvjyIq9YZ8M1oS2yvUzu7gf1zF/kB6tgYcPKvw03tacLpv2QsWbxPqwTueMYsPB3LFWpXFS4kBu3
+	JTY5jB19fb5eqU87zf1hFiRlpfXf6Y3JkxuS7t+XbSnwSpZxTRHuEfVSZlofSbszjqA0ISP1xlQKB
+	vsYI11K4MPA4223CzFSC4CrLK0vjY8QDSMbuX87kkMfe1w5LJyRAFcJRDZjgySELUXrDg90Mfjsn5
+	IeLfspgr3fGPRwfbwipg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzgmj-0000Jy-MS; Mon, 19 Aug 2019 12:29:17 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1hzgu4-0003X0-KT; Mon, 19 Aug 2019 12:36:52 +0000
+Received: from mail-eopbgr40066.outbound.protection.outlook.com ([40.107.4.66]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzgmY-0000Ig-EL
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 12:29:10 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 8YDOLV9RSQRwmJfyhnaFS7XBMZes+xMj/gtCJYLFG4ls9Vvhynuyb/zfNtITf1eWjDss/lBs2n
- /a06nBa4T2N87dbqujqHSW0OkUjrf1BGjQi7PU8j8rtzi9UGcDLUKAQanLnWCz65xeDRvG5D68
- uAJIoR+j4UOgp/WAliZ7G+01eBX+AcP9Xe5uxc0AtfNTv7QEeHX5jvT9nuYFz1Oj30ONc6Q7hP
- bCpy/E0eslhnI8dn4CVihXMHOFVPcnNinZ3uSQlreRsQo+NZNc2n8WA5p6+JWbqpqHHI24wpG1
- izY=
-X-IronPort-AV: E=Sophos;i="5.64,403,1559545200"; d="scan'208";a="44090717"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 19 Aug 2019 05:29:03 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 19 Aug 2019 05:29:02 -0700
-Received: from NAM03-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5
- via Frontend Transport; Mon, 19 Aug 2019 05:29:02 -0700
+ id 1hzgtv-0003Cs-Kw
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 12:36:45 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XTW2uNzTJXvgjLOnml3mAAN3LrfcPma1sM6pVGPEikk7/xFwzxtRQMZKWuw8Ldgd/fVPYhhqz0AgkfA0ej/19TLFJB653n1KGUMR4ZvKH99iM8ZkHhzC+GGH5BFCNhGRG6MdAOLb0hK9OkD/8rL5TXAGTkWdbcmFe9zW6oCUXsW1NQzj2C4M+a3BpkW+jGe9DdqhOAvn3mvvV+I/p1Ozs1B184Av5mjdFU3X+cg35Jc8rBEG4aDoeQlvNFa99k8oXp4iYkilp1otgOb9KWxAbUE+yE+zGTIWGtRGz0O9mpuQOpnjDSEMsUtlK1hKxbJWZIc/J+MBrTsXUzfB8HMgaA==
+ b=WzFQ5Pb2nOQHPMWeknqsLhr5Yo2NppRJDOXTZ/DAh7hlzntywacdL6elLKeHyO4ysJzTIHKoLRrYZVd2p00l7IqXrEI2W1wHLJZsQxexjlolQBAM9waQEHiJC5mGaA7jSw11GNRNocAwOFrD/3Qu9TxknmRgYhWNVF3u4Vgqxj0B+zyQUnPHXcCe0FKeWXmruXPjahXxV33KqqvRrVxRxjSPlnVDaRgSP3zcHj+BJvxvYGnbord5btwOlXyHUtbinWTRN32v5qv66mH5/ptsl+I36yXiz94h3I+Z2IEzPDFqYWWI+7M9WKq98e1m7qhys4UL+lEeFbRzeC0dDaO5WA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HPb6+G70LRfX20bu/fi2CUxGJXjiXqPqgs29pu70Sao=;
- b=fNNa00Gy4jjcNgzFdviPzM8hJeHNGuJnsgWJ/h45g1TrdqhgH3mPYTH0Hwx3KzxTU3qopYSfiQdKlVtXJ9p1VnXnHI4bZXO5B9NsIgmIU1d6BceovYw3sok9frJQOmSmyupKKvXAPWhIIAs2f7ww9rYfwZ12rVzstqOT9vdWDAKEdc/pXXXcSSc6jJEl5Oltn7FXoyGtmde0HdDYiRo2QBcIx3QiEKJRrND+cYk+TikGIYTNNrQPCS/hNHwcZh28Lb5vYEeJpvvtOxAlPrHr/cMRagDBb0R62xleJDVQqm5X9O4WIA7TBOrUZTFt9q3wK6ZwFa6kEsC8gMgou1D5rg==
+ bh=cz7RX9V2sBdhCfDyY5gs57smM8zshXCi+OyC0efeQsY=;
+ b=oe/v/6POHDp3TUzV6zbKOVy/bTjspxP6c83oVsOAOTsjBYmlO8c/yxnDaSNSAL7ipxDf6sabr6Y/zqzHDOVKtUHYkvHovmQ+GR7j0Nzmw+APmyrbdfOkZfCojIPqj71PagpthDnJEAWWoOrnbEt2BlZJD0wpmrOs5zKGXBSNKBL72MCJKlLQJiknMAV4LFJGHoy9NvaOHg/ESpxz9Q5Tu3W8E+HFgBVLPvYodQyCfE0vvEdKG2DiVN5JyoeVOnsOgoD5cDpEl+jze7nmhFwQfTHzdEQojhNkTamwvtbmQ6w/ijvfQvoFmiiwYZLwgzyKtzJGkYLfAvE4xyGkzIQXUA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HPb6+G70LRfX20bu/fi2CUxGJXjiXqPqgs29pu70Sao=;
- b=ZJMNVWVtE7i6PV3aPrsNM4dhDcTf1YvV6F90L4LUfjrQHQzkF5dU6Xr69VgmmdWJFs2leHDy6/FSNNmZ7aEI/PtZt1/CjGXPbqIbsgiKVG+wLj9L4KnSEeOH8O1YA6NycgZs8hqQSDYnNV4rqUNuJzmqGEf3ytmjMbjlCW3oyfI=
-Received: from MWHPR11MB1549.namprd11.prod.outlook.com (10.172.54.17) by
- MWHPR11MB1887.namprd11.prod.outlook.com (10.175.50.143) with Microsoft SMTP
+ bh=cz7RX9V2sBdhCfDyY5gs57smM8zshXCi+OyC0efeQsY=;
+ b=AacVxzDcCl4Jz0Vo+aLwIsCU5fJASxlzRyaZVZDTx8FSspEMKJ32HSje7yW0EiMI/71ohwPjuyEhY9asRg0d5/dedTC9lDWqMzWuAubdTdDMXEn3NZUmfgO5mQjwuTcDccJzCm4BiQduPVgeshOMDZUNFP1ywD7986pyYCTn3XU=
+Received: from VI1PR04MB4094.eurprd04.prod.outlook.com (52.133.13.160) by
+ VI1PR04MB6142.eurprd04.prod.outlook.com (20.179.27.15) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.18; Mon, 19 Aug 2019 12:29:00 +0000
-Received: from MWHPR11MB1549.namprd11.prod.outlook.com
- ([fe80::512b:adf0:597f:3dec]) by MWHPR11MB1549.namprd11.prod.outlook.com
- ([fe80::512b:adf0:597f:3dec%11]) with mapi id 15.20.2178.018; Mon, 19 Aug
- 2019 12:29:00 +0000
-From: <Claudiu.Beznea@microchip.com>
-To: <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH 4/3] pwm: atmel: document known weaknesses of both
- hardware and software
-Thread-Topic: [PATCH 4/3] pwm: atmel: document known weaknesses of both
- hardware and software
-Thread-Index: AQHVVBZQeReo2YDDMkewE2K7XK4HfacCOAWAgAAWdoCAABynAA==
-Date: Mon, 19 Aug 2019 12:28:59 +0000
-Message-ID: <3029467b-be14-d78b-5580-8bd3842d86e2@microchip.com>
-References: <20190815214133.11134-1-uwe@kleine-koenig.org>
- <20190816093748.11769-1-uwe@kleine-koenig.org>
- <0a389abe-15ef-0e63-109f-2db4cb36f4b9@microchip.com>
- <20190819104617.kujgwthxtjy6cssa@pengutronix.de>
-In-Reply-To: <20190819104617.kujgwthxtjy6cssa@pengutronix.de>
+ 15.20.2178.18; Mon, 19 Aug 2019 12:36:36 +0000
+Received: from VI1PR04MB4094.eurprd04.prod.outlook.com
+ ([fe80::c85e:7409:9270:3c3c]) by VI1PR04MB4094.eurprd04.prod.outlook.com
+ ([fe80::c85e:7409:9270:3c3c%7]) with mapi id 15.20.2178.018; Mon, 19 Aug 2019
+ 12:36:36 +0000
+From: Daniel Baluta <daniel.baluta@nxp.com>
+To: "dongas86@gmail.com" <dongas86@gmail.com>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>
+Subject: Re: [PATCH v3 01/11] dt-bindings: firmware: imx-scu: new binding to
+ parse clocks from device tree
+Thread-Topic: [PATCH v3 01/11] dt-bindings: firmware: imx-scu: new binding to
+ parse clocks from device tree
+Thread-Index: AQHVO+pjpMhm5od2jUWUpLbDWVCffqbpm56AgAJt1oCAFpQwgA==
+Date: Mon, 19 Aug 2019 12:36:36 +0000
+Message-ID: <caab750569dc246c99e88bbe6d9ca137ae7f198f.camel@nxp.com>
+References: <1563289265-10977-1-git-send-email-aisheng.dong@nxp.com>
+ <1563289265-10977-2-git-send-email-aisheng.dong@nxp.com>
+ <20190803144246.GM8870@X250.getinternet.no>
+ <CAA+hA=Sm0MAHNwH1sZQfK8cO+3jLkue97u=ceFiUv34+qGos1Q@mail.gmail.com>
+In-Reply-To: <CAA+hA=Sm0MAHNwH1sZQfK8cO+3jLkue97u=ceFiUv34+qGos1Q@mail.gmail.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: VI1PR0701CA0041.eurprd07.prod.outlook.com
- (2603:10a6:800:90::27) To MWHPR11MB1549.namprd11.prod.outlook.com
- (2603:10b6:301:c::17)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tagtoolbar-keys: D20190819152850369
-x-originating-ip: [94.177.32.156]
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=daniel.baluta@nxp.com; 
+x-originating-ip: [89.37.124.34]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 9f01ef5b-275a-4756-b81d-08d724a0cfd4
+x-ms-office365-filtering-correlation-id: 1a60cf5c-7366-49c4-23e8-08d724a1e02c
+x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:MWHPR11MB1887; 
-x-ms-traffictypediagnostic: MWHPR11MB1887:
-x-ms-exchange-purlcount: 1
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB6142; 
+x-ms-traffictypediagnostic: VI1PR04MB6142:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MWHPR11MB18878606DEFD31B90194E4BC87A80@MWHPR11MB1887.namprd11.prod.outlook.com>
+x-microsoft-antispam-prvs: <VI1PR04MB61420C36210341CA3BE7AE73F9A80@VI1PR04MB6142.eurprd04.prod.outlook.com>
 x-ms-oob-tlc-oobclassifiers: OLM:9508;
 x-forefront-prvs: 0134AD334F
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(366004)(39850400004)(396003)(376002)(346002)(189003)(199004)(53546011)(14454004)(11346002)(476003)(446003)(31686004)(4326008)(5660300002)(966005)(6116002)(3846002)(102836004)(486006)(26005)(305945005)(66066001)(76176011)(52116002)(81166006)(86362001)(81156014)(2616005)(316002)(99286004)(7736002)(8936002)(36756003)(54906003)(186003)(31696002)(8676002)(2906002)(66946007)(386003)(6506007)(66446008)(64756008)(66556008)(66476007)(25786009)(6436002)(229853002)(478600001)(66574012)(256004)(14444005)(6246003)(71190400001)(71200400001)(6916009)(6512007)(6306002)(53936002)(6486002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1887;
- H:MWHPR11MB1549.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
+ SFS:(10009020)(4636009)(346002)(366004)(376002)(396003)(136003)(39860400002)(54534003)(199004)(189003)(53546011)(6506007)(66446008)(64756008)(8676002)(91956017)(76116006)(102836004)(66556008)(25786009)(66476007)(81166006)(8936002)(186003)(6486002)(99286004)(26005)(118296001)(4326008)(53936002)(476003)(2616005)(81156014)(66946007)(316002)(11346002)(446003)(54906003)(486006)(44832011)(3846002)(110136005)(6246003)(6116002)(14444005)(71200400001)(36756003)(6436002)(50226002)(229853002)(76176011)(5660300002)(305945005)(2906002)(478600001)(2501003)(71190400001)(6512007)(86362001)(14454004)(66066001)(7736002)(256004)(99106002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6142;
+ H:VI1PR04MB4094.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: JGRCc6IS6/yXkp23AoCJRWn0RlYhAk8tPYv37e7txDErVM3OjDkUxE+o7veqEzbltptmzq7czNRnpS/TllnwJ2VxTrK2W2Mamsv+OyD0s2vy2VHHLM81QArbyA3wCwtd+37I6fv5o9cd6h+q5kaX5khvSEb4lCcDWK6IuYpjpzEz7Mk3ESrKuk7q7gKMA4cxYmgxQ8L7YMAygknY8CtFYpb/o0cd196jNaBuBUyo3QMN3nS3K43BH0XbIgAMqlq+DcwraqmbsPNFvwzNvioMdG00Yv6V2h5C6bJBUlqIhMtGSoIRB25b1psEnnSE93fG/qJLuVsxNcYezSZuiCGCcrNn/nMANz6fWDKhDQPEAbSYpddm4f3z6sNBjekiZqpo8rhxfGIgKe4IaJQHnBpHtEXm331iUh+RDFlhC7NV9mg=
-Content-ID: <997F723013EEA34FAF558F7B04A29869@namprd11.prod.outlook.com>
+x-microsoft-antispam-message-info: oYXytbRuxbTVRjB5A+IzUgc8hBhqo6Uax04MTYYiI5JbMt5/KG266/S7uTH8hlcFJuKijHGrYSObzipEdEkb390BGzx2lWOuNsZm5fowrNjJyEU729FHMes5ZxPhRYiArplwjHTWaxW5o3TkPY5bI0o5sAHVSAMW9E3lIeorDEZsVE1JoV2Oiv8UIrHTWqbGbKRXMuaH8KwJ72v6Hnyg0eoCev/J4IP4VmEan5iss1FFbRbEBsU7u9bPdXd6SWG1H6nJmLGp/1k7VSN+Wc0iXea4GDpCjeRI3dlgRc2kwgpUheG3xR1vcNLCwV5XLZPwW4j9DVB+nHfbWdenwt5/CB106ilCe2nbU8LQDyUgtpr80urY09WQKOL3L+0omFcslVzReacHlCp+1PemF4E1U1HTTXLcOBdDWmCKnYv30cE=
+Content-ID: <00FD0AD8D6909240B0D78742C00FF69A@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9f01ef5b-275a-4756-b81d-08d724a0cfd4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Aug 2019 12:28:59.9135 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1a60cf5c-7366-49c4-23e8-08d724a1e02c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Aug 2019 12:36:36.4358 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: DWqp5Eu+NPpKeN/BE0zD+KQ78yxClwO6EytDFY4URxjM1Y7J2HxuafUvWK/TBZR8iv8lNKQV1em54wuXLCApI6uDEQK1Z4+ulA/P8ykgNAs=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1887
+X-MS-Exchange-CrossTenant-userprincipalname: wmn1VLLqzAcx4/dI+FPikS6d9C61tfp7+nRTzA2WEFPjiZc789fZvBGplvvJCJmbHhWb6AWKd4Y0A20UcO+avw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_052906_662278_2A204E40 
-X-CRM114-Status: GOOD (  24.16  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190819_053643_832555_C998A6A3 
+X-CRM114-Status: GOOD (  35.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.4.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -166,75 +129,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, alexandre.belloni@bootlin.com,
- Ludovic.Desroches@microchip.com, thierry.reding@gmail.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCk9uIDE5LjA4LjIwMTkgMTM6NDYsIFV3ZSBLbGVpbmUtS8O2bmlnIHdyb3RlOg0KPiBFeHRl
-cm5hbCBFLU1haWwNCj4gDQo+IA0KPiBPbiBNb24sIEF1ZyAxOSwgMjAxOSBhdCAwOToyNjowNEFN
-ICswMDAwLCBDbGF1ZGl1LkJlem5lYUBtaWNyb2NoaXAuY29tIHdyb3RlOg0KPj4NCj4+DQo+PiBP
-biAxNi4wOC4yMDE5IDEyOjM3LCBVd2UgS2xlaW5lLUvDtm5pZyB3cm90ZToNCj4+PiBFeHRlcm5h
-bCBFLU1haWwNCj4+Pg0KPj4+DQo+Pj4gU2lnbmVkLW9mZi1ieTogVXdlIEtsZWluZS1Lw7ZuaWcg
-PHV3ZUBrbGVpbmUta29lbmlnLm9yZz4NCj4+PiAtLS0NCj4+PiAgZHJpdmVycy9wd20vcHdtLWF0
-bWVsLmMgfCAxMCArKysrKysrKysrDQo+Pj4gIDEgZmlsZSBjaGFuZ2VkLCAxMCBpbnNlcnRpb25z
-KCspDQo+Pj4NCj4+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9wd20vcHdtLWF0bWVsLmMgYi9kcml2
-ZXJzL3B3bS9wd20tYXRtZWwuYw0KPj4+IGluZGV4IDQyZmU3YmMwNDNhOC4uMWRkYjkzZGI5NjI3
-IDEwMDY0NA0KPj4+IC0tLSBhL2RyaXZlcnMvcHdtL3B3bS1hdG1lbC5jDQo+Pj4gKysrIGIvZHJp
-dmVycy9wd20vcHdtLWF0bWVsLmMNCj4+PiBAQCAtNyw2ICs3LDE2IEBADQo+Pj4gICAqDQo+Pj4g
-ICAqIFJlZmVyZW5jZSBtYW51YWwgZm9yICJhdG1lbCxhdDkxc2FtOXJsLXB3bSI6DQo+Pj4gICAq
-ICAgaHR0cDovL3d3MS5taWNyb2NoaXAuY29tL2Rvd25sb2Fkcy9lbi9EZXZpY2VEb2MvQXRtZWwt
-MTEwMzItMzItYml0LUFSTTkyNkVKLVMtTWljcm9jb250cm9sbGVyLVNBTTlHMjVfRGF0YXNoZWV0
-LnBkZg0KPj4+ICsgKg0KPj4+ICsgKiBMaW1pdGF0aW9uczoNCj4+PiArICogLSBQZXJpb2RzIHN0
-YXJ0IHdpdGggdGhlIGluYWN0aXZlIGxldmVsLg0KPj4NCj4+IEFyZSB5b3UgdGFsa2luZyBoZXJl
-IGFib3V0IHRoZSBub3JtYWwgcG9sYXJpdHkgKGZyb20gZG9jdW1lbnRhdGlvbjogQnkNCj4+IGRl
-ZmluaXRpb24sIG5vcm1hbCBwb2xhcml0eSBjaGFyYWN0ZXJpemVzIGEgc2lnbmFsIHN0YXJ0cyBo
-aWdoIGZvciB0aGUNCj4+IGR1cmF0aW9uIG9mIHRoZSBkdXR5IGN5Y2xlIGFuZCBnb2VzIGxvdyBm
-b3IgdGhlIHJlbWFpbmRlciBvZiB0aGUgcGVyaW9kLikNCj4gDQo+IFdoZW4gLnBvbGFyaXR5ID0g
-UFdNX1BPTEFSSVRZX05PUk1BTCBpcyBwYXNzZWQgdG8gYXRtZWxfcHdtX2FwcGx5KCkgdGhlDQo+
-IGRyaXZlcnMgc2V0cyBQV01fQ01SX0NQT0w9MCB3aGljaCBhY2NvcmRpbmcgdG8gdGhlIGRhdGFz
-aGVldCAobGlua2VkDQo+IGFib3ZlKSBtZWFuczogIlRoZSBvdXRwdXQgd2F2ZWZvcm0gc3RhcnRz
-IGF0IGEgbG93IGxldmVsLiINCj4gDQo+IFNvIG1heWJlIGp1c3QgdGhlIGxvZ2ljIGhhcyB0byBi
-ZSBpbnZlcnRlZCB0aGVyZSwNCg0KQWdyZWUuDQoNCj4gYnV0IHRoZW4gbWF5YmUgdGhlDQo+IG91
-dHB1dCBnZXRzIGFjdGl2ZSBpbnN0ZWFkIG9mIGluYWN0aXZlIHdoZW4gdGhlIFBXTSBpcyBkaXNh
-YmxlZC4NCg0KWWVzLCB0aGlzIHdvdWxkIGhhcHBlbi4gUGxheWluZyBhZ2FpbiB3aXRoIENQT0wg
-d2hlbiBkaXNhYmxpbmcgbWF5IGJlIGENCnNvbHV0aW9uLg0KDQo+IChXaGljaCBpbiBteSBib29r
-IGlzIG9rLCBidXQgaXQncyBUaGllcnJ5J3Mgb3BpbmlvbiB0aGF0IGNvdW50cyBoZXJlLikNCj4g
-DQo+PiBJZiB5ZXMsIHRoaXMgc2hvdWxkIGJlIHNvbHZlZCBieSBwbGF5aW5nIHdpdGggQ1BPTCBi
-aXQgb2YgQ01SLg0KPj4NCj4+PiArICogLSBIYXJkd2FyZSBoYXMgdG8gYmUgc3RvcHBlZCBpbiBn
-ZW5lcmFsIHRvIHVwZGF0ZSBzZXR0aW5ncy4NCj4+DQo+PiBTYW1hNWQyIGhhcyBkdXR5IGN5Y2xl
-IHRoYXQgY291bGQgYmUgdXBkYXRlZCBvbiB0aGUgZmx5Lg0KPiANCj4gVGhlcmUgaXMgc29tZSBm
-dW5jdGlvbmFsaXR5IGluIHRoZSA5RzI1LCB0b28uIEkgZGlkbid0IHVuZGVyc3RhbmQgaXQNCj4g
-Y29tcGxldGVseSBidXQgbWF5YmUgaXQgb25seSBoZWxwcyB1cGRhdGluZyBvbmUgb2YgcGVyaW9k
-IG9yIGR1dHkgY3ljbGUuDQo+ICANCj4+PiArICoNCj4+PiArICogU29mdHdhcmUgYnVncy9wb3Nz
-aWJsZSBpbXByb3ZlbWVudHM6DQo+Pj4gKyAqIC0gV2hlbiBhdG1lbF9wd21fYXBwbHkoKSBpcyBj
-YWxsZWQgd2l0aCBzdGF0ZS0+ZW5hYmxlZD1mYWxzZSBhIGNoYW5nZSBpbg0KPj4+ICsgKiAgIHN0
-YXRlLT5wb2xhcml0eSBpc24ndCBob25vcmVkLg0KPj4NCj4+IEkga25vdyB0aGF0IHdoZW4gY29u
-ZmlndXJpbmcgYSBQV00gb25lIHNob3VsZCBnZXQgdGhlIGN1cnJlbnQgc3RhdGUgb2YgdGhlDQo+
-PiBQV00sIGNoYW5nZSBpdCwgdGhlbiBwYXNzIGl0IHRvIHRoZSBkcml2ZXIgdmlhIHB3bV9hcHBs
-eV9zdGF0ZSgpLg0KPiANCj4gVGhhdCBzZWVtcyB0byBiZSBhIGNvbW1vbiBwYXR0ZXJuIGF0IGxl
-YXN0LiBJTUhPIGxldHRpbmcgdGhlIGNvbnN1bWVyDQo+IGp1c3QgY29uZmlndXJlIHRoZSBzdGF0
-ZSB0aGF0IHNob3VsZCBiZSB1c2VkIHNob3VsZCBiZSBmaW5lLCB0b28uPg0KPj4gSW4gY2FzZSBv
-bmUgd291bGQgY2FsbCB0aGUgcHdtX2FwcGx5X3N0YXRlKCkgd2l0aCBzdGF0ZS0+ZW5hYmxlZCA9
-DQo+PiBmYWxzZSB0aGUgc3RhdGUgd291bGQgYmUgc3RvcmVkIGluIFBXTSBzcGVjaWZpYyBvYmpl
-Y3QgKG9mIHR5cGUgc3RydWN0DQo+PiBwd21fZGV2aWNlKS4gT24gdGhlIG5leHQgYXBwbHksIHdp
-dGggZW5hYmxlZCA9IHRydWUsIGFsbCB0aGUgUFdNDQo+PiBwYXJhbWV0ZXJzIHdvdWxkIGJlIGFj
-dHVhbGx5IGFwcGxpZWQgdG8gaGFyZHdhcmUuIFNvLCB1bnRpbA0KPj4gZW5hYmxlPXRydWUgdGhl
-IFBXTSBzdGF0ZSB3b3VsZCBvbmx5IGJlIGNhY2hlZCBieSBQV00gY29yZSBzcGVjaWZpYw0KPj4g
-b2JqZWN0cyAoaW4gcHdtX2FwcGx5X3N0YXRlKCkpLg0KPiANCj4gSSBmYWlsIHRvIGZvbGxvdyB3
-aGF0IHlvdSBtZWFuIGhlcmUuIElmIGEgUFdNIHJ1bnMgd2l0aCAoc2F5KSBub3JtYWwNCj4gcG9s
-YXJpdHkgYW5kIHlvdSBjYWxsIHB3bV9hcHBseV9zdGF0ZShteXB3bSwgeyAucG9sYXJpdHkgPQ0K
-PiBQV01fUE9MQVJJVFlfSU5WRVJTRUQsIC5lbmFibGVkID0gZmFsc2UsIH0pOyB0aGUgYXBwbHkg
-Y2FsbGJhY2sgb2YgdGhlDQo+IGxvd2xldmVsIGRyaXZlciBpcyBjYWxsZWQgYW5kIHN1cHBvc2Vk
-IHRvIGNvbmZpZ3VyZSB0aGUgb3V0cHV0IHRvIHlpZWxkDQo+IGEgY29uc3RhbnQgaGlnaC4NCg0K
-T2ssIEkgc2VlIGl0IG5vdy4gSSdsbCBwdXQgaXQgb24gbXkgcXVldWUuDQoNClRoYW5rIHlvdSwN
-CkNsYXVkaXUgQmV6bmVhDQoNCj4gDQo+Pj4gKyAqIC0gSW5zdGVhZCBvZiBzbGVlcGluZyB0byB3
-YWl0IGZvciBhIGNvbXBsZXRlZCBwZXJpb2QsIHRoZSBpbnRlcnJ1cHQNCj4+PiArICogICBmdW5j
-dGlvbmFsaXR5IGNvdWxkIGJlIHVzZWQuDQo+Pj4gICAqLw0KPj4+ICANCj4+PiAgI2luY2x1ZGUg
-PGxpbnV4L2Nsay5oPg0KPj4+DQo+IA0KPiBCZXN0IHJlZ2FyZHMNCj4gVXdlDQo+IA0KX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Mon, 2019-08-05 at 11:48 +0800, Dong Aisheng wrote:
+> On Sun, Aug 4, 2019 at 11:49 AM Shawn Guo <shawnguo@kernel.org>
+> wrote:
+> > 
+> > On Tue, Jul 16, 2019 at 11:00:55PM +0800, Dong Aisheng wrote:
+> > > There's a few limitations on the original one cell clock binding
+> > > (#clock-cells = <1>) that we have to define some SW clock IDs for
+> > > device
+> > > tree to reference. This may cause troubles if we want to use
+> > > common
+> > > clock IDs for multi platforms support when the clock of those
+> > > platforms
+> > > are mostly the same.
+> > > e.g. Current clock IDs name are defined with SS prefix.
+> > > 
+> > > However the device may reside in different SS across CPUs, that
+> > > means the
+> > > SS prefix may not valid anymore for a new SoC. Furthermore, the
+> > > device
+> > > availability of those clocks may also vary a bit.
+> > > 
+> > > For such situation, we want to eliminate the using of SW Clock
+> > > IDs and
+> > > change to use a more close to HW one instead.
+> > > For SCU clocks usage, only two params required: Resource id +
+> > > Clock Type.
+> > 
+> > If this is how SCU firmware addresses the clock, I agree that it's
+> > worth
+> > witching to this new bindings, which describes the hardware (SCU
+> > firmware in this case) better, IMO.
+> > 
+> > > Both parameters are platform independent. So we could use two
+> > > cells binding
+> > > to pass those parameters,
+> > > 
+> > > Cc: Rob Herring <robh+dt@kernel.org>
+> > > Cc: Stephen Boyd <sboyd@kernel.org>
+> > > Cc: Shawn Guo <shawnguo@kernel.org>
+> > > Cc: Sascha Hauer <kernel@pengutronix.de>
+> > > Cc: Michael Turquette <mturquette@baylibre.com>
+> > > Cc: devicetree@vger.kernel.org
+> > > Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
+> > > ---
+> > > ChangeLog:
+> > > v2->v3:
+> > >  * Changed to two cells binding and register all clocks in driver
+> > >    instead of parse from device tree.
+> > > v1->v2:
+> > >  * changed to one cell binding inspired by arm,scpi.txt
+> > >    Documentation/devicetree/bindings/arm/arm,scpi.txt
+> > >    Resource ID is encoded in 'reg' property.
+> > >    Clock type is encoded in generic clock-indices property.
+> > >    Then we don't have to search all the DT nodes to fetch
+> > >    those two value to construct clocks which is relatively
+> > >    low efficiency.
+> > >  * Add required power-domain property as well.
+> > > ---
+> > >  .../devicetree/bindings/arm/freescale/fsl,scu.txt       | 12
+> > > +++++++-----
+> > >  include/dt-bindings/firmware/imx/rsrc.h                 | 17
+> > > +++++++++++++++++
+> > >  2 files changed, 24 insertions(+), 5 deletions(-)
+> > > 
+> > > diff --git
+> > > a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > > b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > > index 5d7dbab..351d335 100644
+> > > --- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > > +++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > > @@ -89,7 +89,10 @@ Required properties:
+> > >                         "fsl,imx8qm-clock"
+> > >                         "fsl,imx8qxp-clock"
+> > >                       followed by "fsl,scu-clk"
+> > > -- #clock-cells:              Should be 1. Contains the Clock ID
+> > > value.
+> > > +- #clock-cells:              Should be either
+> > > +                     2: Contains the Resource and Clock ID
+> > > value.
+> > > +                     or
+> > > +                     1: Contains the Clock ID value.
+> > > (DEPRECATED)
+> > >  - clocks:            List of clock specifiers, must contain an
+> > > entry for
+> > >                       each required entry in clock-names
+> > >  - clock-names:               Should include entries
+> > > "xtal_32KHz", "xtal_24MHz"
+> > > @@ -162,7 +165,7 @@ firmware {
+> > > 
+> > >               clk: clk {
+> > >                       compatible = "fsl,imx8qxp-clk", "fsl,scu-
+> > > clk";
+> > > -                     #clock-cells = <1>;
+> > > +                     #clock-cells = <2>;
+> > >               };
+> > > 
+> > >               iomuxc {
+> > > @@ -192,8 +195,7 @@ serial@5a060000 {
+> > >       ...
+> > >       pinctrl-names = "default";
+> > >       pinctrl-0 = <&pinctrl_lpuart0>;
+> > > -     clocks = <&clk IMX8QXP_UART0_CLK>,
+> > > -              <&clk IMX8QXP_UART0_IPG_CLK>;
+> > > -     clock-names = "per", "ipg";
+> > > +     clocks = <&uart0_clk IMX_SC_R_UART_0 IMX_SC_PM_CLK_PER>;
+> > > +     clock-names = "ipg";
+> > >       power-domains = <&pd IMX_SC_R_UART_0>;
+> > >  };
+> > > diff --git a/include/dt-bindings/firmware/imx/rsrc.h
+> > > b/include/dt-bindings/firmware/imx/rsrc.h
+> > > index 4e61f64..fbeaca7 100644
+> > > --- a/include/dt-bindings/firmware/imx/rsrc.h
+> > > +++ b/include/dt-bindings/firmware/imx/rsrc.h
+> > > @@ -547,4 +547,21 @@
+> > >  #define IMX_SC_R_ATTESTATION         545
+> > >  #define IMX_SC_R_LAST                        546
+> > > 
+> > > +/*
+> > > + * Defines for SC PM CLK
+> > > + */
+> > > +#define IMX_SC_PM_CLK_SLV_BUS                0       /* Slave
+> > > bus clock */
+> > > +#define IMX_SC_PM_CLK_MST_BUS                1       /* Master
+> > > bus clock */
+> > > +#define IMX_SC_PM_CLK_PER            2       /* Peripheral clock
+> > > */
+> > > +#define IMX_SC_PM_CLK_PHY            3       /* Phy clock */
+> > > +#define IMX_SC_PM_CLK_MISC           4       /* Misc clock */
+> 
+> This is for typical device resource.
+> 
+> > > +#define IMX_SC_PM_CLK_MISC0          0       /* Misc 0 clock */
+> > > +#define IMX_SC_PM_CLK_MISC1          1       /* Misc 1 clock */
+> > > +#define IMX_SC_PM_CLK_MISC2          2       /* Misc 2 clock */
+> > > +#define IMX_SC_PM_CLK_MISC3          3       /* Misc 3 clock */
+> > > +#define IMX_SC_PM_CLK_MISC4          4       /* Misc 4 clock */
+> 
+> This is for some special clock types which do not belong to above
+> normal clock types.
+> Used very rare in SCU firmware.
+> e.g.
+> enet0_mac0_rxclk SC_R_ENE T_0 / SC_PM_CL K_MISC0
+> 
+> > > +#define IMX_SC_PM_CLK_CPU            2       /* CPU clock */
+> > > +#define IMX_SC_PM_CLK_PLL            4       /* PLL */
+> > > +#define IMX_SC_PM_CLK_BYPASS         4       /* Bypass clock */
+> 
+> They're for specific clock types for CPU/PLL/BYPASS only.
+
+Hi Aisheng,
+
+Yes, please separate this types of clocks in their own sections with
+proper description.
+
+> 
+> > 
+> > It seems that there are several sets of clock type which apply to
+> > different resources/devices?  If so, can you separate them a bit
+> > with
+> > some comments to make the list easier for readers?
+> > 
+> 
+> 
+So, please send v4 with all comments fixed. I can help with testing.
+I am also intrested in seeing this get in!
+
+thanks,
+Daniel.
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
