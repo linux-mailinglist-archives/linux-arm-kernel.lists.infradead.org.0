@@ -2,73 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 137B99268A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 16:22:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E06E19268F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 16:23:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yQwBxdznlRd37gXAhwdfQWjLkN5cAKnSNnymxXCaKwc=; b=S+gQqzXKaHjLuI
-	3J7jBzH8oUr2vcDlV2Qbl7di+9obQkADYzsgmaCTQwwsh+8HY6pgcr3tmdK5nU21JxzaajTiboHXc
-	+HiXuS9U2n66e8gUslH8XJv0w/sDWsNTf/Izgq2o+zkT+feafJLmSq1TOYCjxj6ifhwU8xzmir+tL
-	jQcmR0HMCrVy7JPGTrA/kcB/VMUEoUwwOqcYeB678cxXwNvVDbzuBwzVL0K8l3IrieHHskHZCMsYD
-	hBeIKBOkZRvo8vG2rJTyFm4uxS1NLqnAfNmZTW9ZwrU4RFe+kjUW9xIuLrGFGEIr/DsovXXY2u6nm
-	F2ouBySZKsvKHah167kg==;
+	List-Owner; bh=0jX6MgkD96kibxaPwhJ83XckNKEBdWVZ1Gfu3zlx+Mo=; b=Z8MBvYVWxvmX3F
+	hQoUakisOYzdLuCvUZJlvuHdBfnSH/BUHSqBFC47tUTe/7g1ANtQUVOElmpfqZZCNRSqDx9ovJnXs
+	N0rVzZBxg3jt8uKGtZpTLR/ayGpzSA9SA8W0yjIgZH1CrBtqIbwoLNixgZEpn2a28zE92ZfzuaCuE
+	nhT6rHYF1p7pXqklLvHrz9MawW8poYais239Zr4UzgpSszIxTnLK+CF+JZGjWK9gQO/WfORFiC6Uv
+	7TOZFt7fj5JcqWuEqTDMDKMj462qOZ7sYs7tsKCxHbcNTl+n02tHbcnVPlF0dsFe27ijKAh0hhX2A
+	72qxpg6ciS4zbbD/B4Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hziYe-0006Ic-Dq; Mon, 19 Aug 2019 14:22:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hziZL-0006a6-EA; Mon, 19 Aug 2019 14:23:35 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hziYW-0006IA-Mc; Mon, 19 Aug 2019 14:22:46 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EAEF820651;
- Mon, 19 Aug 2019 14:22:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566224564;
- bh=cQXXO22L6aHmPQhctizouu0v/8jQD8BerBclLIhADhs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Pj+ZW3B1FvjYhBjkZZBmU0f1b6I51bzFAMFcoEmWoik8acU4kDoOBV4WtaSoNXFr/
- viuJWq+U36J79SqIdGqkoCzb+RUy+oubwzyqse6PheLOSyyFfGgUk2vTopm22yf2I5
- 2nGgjhBlftpHJ3OdpLVVE12DvYw94wsuIuQUFdHY=
-Date: Mon, 19 Aug 2019 15:22:38 +0100
-From: Will Deacon <will@kernel.org>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH] arm64: kasan: fix phys_to_virt() false positive on
- tag-based kasan
-Message-ID: <20190819142238.2jobs6vabkp2isg2@willie-the-truck>
-References: <20190819114420.2535-1-walter-zh.wu@mediatek.com>
- <20190819125625.bu3nbrldg7te5kwc@willie-the-truck>
- <20190819132347.GB9927@lakrids.cambridge.arm.com>
- <20190819133441.ejomv6cprdcz7hh6@willie-the-truck>
- <CAAeHK+w7cTGN8SgWQs0bPjPOrizqfUoMnJWTvUkCqv17Qt=3oQ@mail.gmail.com>
+ id 1hziZC-0006a0-Ez
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 19 Aug 2019 14:23:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=NoobpusK4yG5cX6tMUa8vsNXDOHEAtCqla6w11qGBeg=; b=JnPppkqUjMqM/zzoFHnGkePNH
+ oF3V3Im2/IdcNdYVSpJ6mPmwAFm3PSomhmmfTyMsscKRHXsNtPSRjVLGFwpiPE0GtzQ40cX2+EeIV
+ HCSI9o/gtwm8FHzHeI/Vj22QvgB7yqmCFL6V78QQRhFGQuaQ1xrC4K44pjzlA848jwM6obbvOV8hG
+ SD5DOu0wbGkec4gzhJBW8rre0vMPnUh2e6PYFcwziTYiiIez8aZkfqlN2Y+JTO/QuFMM8k0T544Bh
+ QZq0CptGAX6eehNteK6O3tm4BpaIJ8b747DbhwIrhQHgqd4H8DlklDVoK6JkNZ7C5o7asrhPuks+P
+ AmX9PeiVw==;
+Received: from [179.97.35.50] (helo=quaco.ghostprotocols.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hziZA-0008Ib-FG
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 14:23:24 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id 732DB40340; Mon, 19 Aug 2019 11:23:21 -0300 (-03)
+Date: Mon, 19 Aug 2019 11:23:21 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>, Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH 1/2] perf cs-etm: Support sample flags 'insn' and 'insnlen'
+Message-ID: <20190819142321.GB29674@kernel.org>
+References: <20190815082854.18191-1-leo.yan@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAAeHK+w7cTGN8SgWQs0bPjPOrizqfUoMnJWTvUkCqv17Qt=3oQ@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_072244_780363_B154B8D3 
-X-CRM114-Status: GOOD (  23.51  )
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+In-Reply-To: <20190815082854.18191-1-leo.yan@linaro.org>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,71 +63,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Walter Wu <walter-zh.wu@mediatek.com>,
- wsd_upstream@mediatek.com, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, LKML <linux-kernel@vger.kernel.org>,
- kasan-dev <kasan-dev@googlegroups.com>, linux-mediatek@lists.infradead.org,
- Alexander Potapenko <glider@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
+ Namhyung Kim <namhyung@kernel.org>, Robert Walker <robert.walker@arm.com>,
+ Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 04:05:22PM +0200, Andrey Konovalov wrote:
-> On Mon, Aug 19, 2019 at 3:34 PM Will Deacon <will@kernel.org> wrote:
-> >
-> > On Mon, Aug 19, 2019 at 02:23:48PM +0100, Mark Rutland wrote:
-> > > On Mon, Aug 19, 2019 at 01:56:26PM +0100, Will Deacon wrote:
-> > > > On Mon, Aug 19, 2019 at 07:44:20PM +0800, Walter Wu wrote:
-> > > > > __arm_v7s_unmap() call iopte_deref() to translate pyh_to_virt address,
-> > > > > but it will modify pointer tag into 0xff, so there is a false positive.
-> > > > >
-> > > > > When enable tag-based kasan, phys_to_virt() function need to rewrite
-> > > > > its original pointer tag in order to avoid kasan report an incorrect
-> > > > > memory corruption.
-> > > >
-> > > > Hmm. Which tree did you see this on? We've recently queued a load of fixes
-> > > > in this area, but I /thought/ they were only needed after the support for
-> > > > 52-bit virtual addressing in the kernel.
-> > >
-> > > I'm seeing similar issues in the virtio blk code (splat below), atop of
-> > > the arm64 for-next/core branch. I think this is a latent issue, and
-> > > people are only just starting to test with KASAN_SW_TAGS.
-> > >
-> > > It looks like the virtio blk code will round-trip a SLUB-allocated pointer from
-> > > virt->page->virt, losing the per-object tag in the process.
-> > >
-> > > Our page_to_virt() seems to get a per-page tag, but this only makes
-> > > sense if you're dealing with the page allocator, rather than something
-> > > like SLUB which carves a page into smaller objects giving each object a
-> > > distinct tag.
-> > >
-> > > Any round-trip of a pointer from SLUB is going to lose the per-object
-> > > tag.
-> >
-> > Urgh, I wonder how this is supposed to work?
-> >
-> > If we end up having to check the KASAN shadow for *_to_virt(), then why
-> > do we need to store anything in the page flags at all? Andrey?
+Em Thu, Aug 15, 2019 at 04:28:54PM +0800, Leo Yan escreveu:
+> The synthetic branch and instruction samples are missed to set
+> instruction related info, thus perf tool fails to display samples with
+> flags '-F,+insn,+insnlen'.
 > 
-> As per 2813b9c0 ("kasan, mm, arm64: tag non slab memory allocated via
-> pagealloc") we should only save a non-0xff tag in page flags for non
-> slab pages.
+> CoreSight trace decoder has provided sufficient information to decide
+> the instruction size based on the isa type: A64/A32 instruction are
+> 32-bit size, but one exception is the T32 instruction size, which might
+> be 32-bit or 16-bit.
+> 
+> This patch handles for these cases and it reads the instruction values
+> from DSO file; thus can support flags '-F,+insn,+insnlen'.
 
-Thanks, that makes sense. Hopefully the patch from Andrey R will solve
-both of the reported splats, since I'd not realised they were both on the
-kfree() path.
+Mathieu, can I have your Acked-by/Reviewed-by?
 
-> Could you share your .config so I can reproduce this?
+- Arnaldo
+ 
+> Before:
+> 
+>   # perf script -F,insn,insnlen,ip,sym
+>                 0 [unknown] ilen: 0
+>      ffff97174044 _start ilen: 0
+>      ffff97174938 _dl_start ilen: 0
+>      ffff97174938 _dl_start ilen: 0
+>      ffff97174938 _dl_start ilen: 0
+>      ffff97174938 _dl_start ilen: 0
+>      ffff97174938 _dl_start ilen: 0
+>      ffff97174938 _dl_start ilen: 0
+>      ffff97174938 _dl_start ilen: 0
+>      ffff97174938 _dl_start ilen: 0
+> 
+>   [...]
+> 
+> After:
+> 
+>   # perf script -F,insn,insnlen,ip,sym
+>                 0 [unknown] ilen: 0
+>      ffff97174044 _start ilen: 4 insn: 2f 02 00 94
+>      ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+>      ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+>      ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+>      ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+>      ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+>      ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+>      ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+>      ffff97174938 _dl_start ilen: 4 insn: c1 ff ff 54
+> 
+>   [...]
+> 
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+> Cc: Mike Leach <mike.leach@linaro.org>
+> Cc: Robert Walker <robert.walker@arm.com>
+> Cc: coresight@lists.linaro.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> ---
+>  tools/perf/util/cs-etm.c | 35 ++++++++++++++++++++++++++++++++++-
+>  1 file changed, 34 insertions(+), 1 deletion(-)
+> 
+> diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+> index ed6f7fd5b90b..b3a5daaf1a8f 100644
+> --- a/tools/perf/util/cs-etm.c
+> +++ b/tools/perf/util/cs-etm.c
+> @@ -1076,6 +1076,35 @@ bool cs_etm__etmq_is_timeless(struct cs_etm_queue *etmq)
+>  	return !!etmq->etm->timeless_decoding;
+>  }
+>  
+> +static void cs_etm__copy_insn(struct cs_etm_queue *etmq,
+> +			      u64 trace_chan_id,
+> +			      const struct cs_etm_packet *packet,
+> +			      struct perf_sample *sample)
+> +{
+> +	/*
+> +	 * It's pointless to read instructions for the CS_ETM_DISCONTINUITY
+> +	 * packet, so directly bail out with 'insn_len' = 0.
+> +	 */
+> +	if (packet->sample_type == CS_ETM_DISCONTINUITY) {
+> +		sample->insn_len = 0;
+> +		return;
+> +	}
+> +
+> +	/*
+> +	 * T32 instruction size might be 32-bit or 16-bit, decide by calling
+> +	 * cs_etm__t32_instr_size().
+> +	 */
+> +	if (packet->isa == CS_ETM_ISA_T32)
+> +		sample->insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id,
+> +							  sample->ip);
+> +	/* Otherwise, A64 and A32 instruction size are always 32-bit. */
+> +	else
+> +		sample->insn_len = 4;
+> +
+> +	cs_etm__mem_access(etmq, trace_chan_id, sample->ip,
+> +			   sample->insn_len, (void *)sample->insn);
+> +}
+> +
+>  static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+>  					    struct cs_etm_traceid_queue *tidq,
+>  					    u64 addr, u64 period)
+> @@ -1097,9 +1126,10 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+>  	sample.period = period;
+>  	sample.cpu = tidq->packet->cpu;
+>  	sample.flags = tidq->prev_packet->flags;
+> -	sample.insn_len = 1;
+>  	sample.cpumode = event->sample.header.misc;
+>  
+> +	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->packet, &sample);
+> +
+>  	if (etm->synth_opts.last_branch) {
+>  		cs_etm__copy_last_branch_rb(etmq, tidq);
+>  		sample.branch_stack = tidq->last_branch;
+> @@ -1159,6 +1189,9 @@ static int cs_etm__synth_branch_sample(struct cs_etm_queue *etmq,
+>  	sample.flags = tidq->prev_packet->flags;
+>  	sample.cpumode = event->sample.header.misc;
+>  
+> +	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->prev_packet,
+> +			  &sample);
+> +
+>  	/*
+>  	 * perf report cannot handle events without a branch stack
+>  	 */
+> -- 
+> 2.17.1
 
-This is in the iopgtable code, so it's probably pretty tricky to trigger
-at runtime unless you have the write IOMMU hardware, unfortunately.
+-- 
 
-Will
+- Arnaldo
 
 _______________________________________________
 linux-arm-kernel mailing list
