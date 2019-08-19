@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B775094E5B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:35:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFEE094E5C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:35:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -18,23 +18,23 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	GS+SS7QAD87Q42KVBqOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hznQb-0007Kk-D9; Mon, 19 Aug 2019 19:34:53 +0000
+	id 1hznR0-0007ZC-48; Mon, 19 Aug 2019 19:35:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hznIA-0000OJ-Jj
+ id 1hznIA-0000OV-Rv
  for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:26:14 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4761322CF6;
+ by mail.kernel.org (Postfix) with ESMTPSA id 78E1422DA7;
  Mon, 19 Aug 2019 19:26:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566242769;
+ s=default; t=1566242770;
  bh=kgJgyL0lhyr3mxrc8eG/4G2XdFkqx4XD8pY1GUjQG9g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=S4iSbwGRhGzQJ8Zk83WPR0s0008xKvHCSPCcZtVxbJKXYiFhrKuT9QIId1NVWbTA+
- YHJpTk0mqChaF3k2jDCxSGCqVtDKOkmRKfsxGrzxU080wnW5wsK2JOt0w7PhydX21V
- iLd8PXPAfKvMNeqYJTQzsugX0wmiOifR0pgROXw4=
+ b=C2LeFBWTv6Pckb/PSGyFmp2oMoNmofGbD62Wo4o01QzNz+iYcWZW1TjTmtmp5lDsB
+ aVqKFmO80+ZFAF3mdt4joTrbQpiI0wE1FVa13Jk6pAWcyUCo/vxovtSCVgLHKzTSmi
+ vT2x3jGrWMIKN9VK/4bb5WHmnm4mu43Fp1PPs/l0=
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
  lgirdwood@gmail.com, broonie@kernel.org
@@ -47,7 +47,7 @@ In-Reply-To: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-seri
 References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_122610_987205_F63E6F50 
+X-CRM114-CacheID: sfid-20190819_122611_055405_8DA04AF0 
 X-CRM114-Status: GOOD (  17.96  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
