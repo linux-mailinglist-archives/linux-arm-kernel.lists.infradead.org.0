@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F37794E49
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:33:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73EED94E58
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:34:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MMpATkbvCVdMGwaIBGAtoYA+l7czUQia4J/2AM7riQ8=; b=NblQKlXVWc46XQ
-	++QQAp/k1fzHnhw7V6P4CetSo1YLwlE6up4dT3xmj6wJiZFVtx8P3YCRqSXNGGpjy8fNQMDfZKMFa
-	TwHbz2x5Z06JrqlOfjnfV3n7yMidp16V8MLBo4KE93E1344iBKBBXSCiXo/ZIBKpK3X6suNi8CqtW
-	dIsT631zUXw6GV+sUcocpwCXyXgTOvxWFjJHI73/fK2zG4XDcx6cwop7wQxLymUSJd37ko8fv5JI/
-	ttpfg63sNn0y0DHZ946Kt3nqKiduVnfNJuFk8KMZn7Mu9pMIzOW7pw6NMbVMF3ZlVy/FaAnm7xGbB
-	QkQnD+ZZT+uNaZ0PcGtQ==;
+	List-Owner; bh=nA14e/0UqX3eFmLkus+hIw8IGdBbkKZeI2EpDeBwW84=; b=EsYAOouI8MgD6U
+	iJUF8Na36linNiGiRYxIBQ6SCL//97qrYy3KFqgCmk2wMD5d437g+DdCCEJcDk05vi9QrdbyG86tj
+	P+WJTQqeLM/p1/jTaA7YgEPX7DWMmrGUahntDy2W9WfpuNz9vSw7PIBYrjEkNCNuqkGvmNttFOfUX
+	AiTy+ekbpsM5G8SKP8Qo2TQb7hnqcaz0L7hw0aI9w/7G+bOv1BwGyNzd7zXOPluIONPhMNzantnyt
+	rNegJ2I3aiR+12el5fgNty9VBlxfdE1ArhZdzmp1YwINOXWtKnYOaMJXfdKmCDAhDmYfEkaAk+Ng6
+	BlDdGVoBKwa1NtC9Jd4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hznPX-0006LD-Vm; Mon, 19 Aug 2019 19:33:48 +0000
+	id 1hznQJ-00072t-SX; Mon, 19 Aug 2019 19:34:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hznI4-0000K3-17
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:26:07 +0000
+ id 1hznI8-0000M0-63
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:26:09 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 240B022CF6;
- Mon, 19 Aug 2019 19:26:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4E66022CF4;
+ Mon, 19 Aug 2019 19:26:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566242763;
- bh=ZcwqNyfFoQkpLOtyAx1vkzpHL07l3AQIIP2/dU2W0Js=;
+ s=default; t=1566242766;
+ bh=9kEw9cHE+bCs68Xy5PuK1OYo4Sh8sJwkLQ3Okm4GVxk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Ro3TjRL988ozIKOXKkjU8yUL5lQAUbfUycGSTVVTf6h5MBF8TsYAQpFBx0UMDzR2y
- YyDwjxBoXzoBstxyYuvd/KBRyMTqwEtO9eXMp6hKEuuVwXLcZ0tp8E/34FcsM39wfM
- GEqz6ItuxnPTl7j5UngkpL24XANC1cNkP6ifHI2s=
+ b=pIf3gPHHYMaY1X3Db+4FwyD5v4DkbTmTrTcaCASUnizc0O/PJZV9rMlwHntNAu7Pa
+ xIN5Oyk1OW0q8zHwOMTnWxVi7VivC7Kv6J1OD4A/9AV3eVEke95aML5iPiTj8qmrZS
+ f4cqst6iaO3dl0Py/rD4HX+bm0uUONFPDwTzx6Y0=
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
  lgirdwood@gmail.com, broonie@kernel.org
-Subject: [PATCH 10/21] ASoC: sun4i-i2s: RX and TX counter registers are swapped
-Date: Mon, 19 Aug 2019 21:25:17 +0200
-Message-Id: <8b26477560ad5fd8f69e037b167c5e61de5c26a3.1566242458.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH 11/21] ASoC: sun4i-i2s: Use the actual format width instead of
+ an hardcoded one
+Date: Mon, 19 Aug 2019 21:25:18 +0200
+Message-Id: <fcf77b3bee47b54d81d1a3f4f107312f44388f5a.1566242458.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_122604_645237_CB71162B 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20190819_122608_474024_B1A7E294 
+X-CRM114-Status: GOOD (  13.50  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,29 +86,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-The RX and TX counters registers offset have been swapped, fix that.
+The LRCK period field in the FMT0 register holds the number of LRCK period
+for one channel in I2S mode.
 
-Fixes: fa7c0d13cb26 ("ASoC: sunxi: Add Allwinner A10 Digital Audio driver")
+This has been hardcoded to 32, while it really should be the physical width
+of the format, which creates an improper clock when using a 16bit format,
+with the i2s controller as LRCK master.
+
+Fixes: 7d2993811a1e ("ASoC: sun4i-i2s: Add support for H3")
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
- sound/soc/sunxi/sun4i-i2s.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ sound/soc/sunxi/sun4i-i2s.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index 8d49ee7d2a95..08fc04ad3585 100644
+index 08fc04ad3585..2996beb4f092 100644
 --- a/sound/soc/sunxi/sun4i-i2s.c
 +++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -76,8 +76,8 @@
- #define SUN4I_I2S_CLK_DIV_MCLK_MASK		GENMASK(3, 0)
- #define SUN4I_I2S_CLK_DIV_MCLK(mclk)			((mclk) << 0)
+@@ -357,7 +357,7 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+ 	if (i2s->variant->has_fmt_set_lrck_period)
+ 		regmap_update_bits(i2s->regmap, SUN4I_I2S_FMT0_REG,
+ 				   SUN8I_I2S_FMT0_LRCK_PERIOD_MASK,
+-				   SUN8I_I2S_FMT0_LRCK_PERIOD(32));
++				   SUN8I_I2S_FMT0_LRCK_PERIOD(params_physical_width(params)));
  
--#define SUN4I_I2S_RX_CNT_REG		0x28
--#define SUN4I_I2S_TX_CNT_REG		0x2c
-+#define SUN4I_I2S_TX_CNT_REG		0x28
-+#define SUN4I_I2S_RX_CNT_REG		0x2c
- 
- #define SUN4I_I2S_TX_CHAN_SEL_REG	0x30
- #define SUN4I_I2S_CHAN_SEL_MASK			GENMASK(2, 0)
+ 	return 0;
+ }
 -- 
 git-series 0.9.1
 
