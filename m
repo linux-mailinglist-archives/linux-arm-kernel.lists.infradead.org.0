@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B510A92655
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 16:17:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 202B992658
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 16:17:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Y+UyuqptbLg4b5ESEK4+RMiAf9H1ObF605zjhQKuaLI=; b=pGIVY1lFSkeICA
-	BGL5+0bN4846+loKnIw6jvcOo34vgT7SqWYik+e53tS20OMSLOO455tcZPV1pv0fcOuqyLJmN3JCx
-	3DXfX7JCFFJTfvqtKSEpiJKcfVH15P7NpgViLASg0cBw5Di79iPCsq50IQlEnXYjgDO5K1ER2vAmA
-	g84bR3iwAMeTWbEaxnfMHKiWqCbcq0mxQdkjj0pPt4eo8j24uwffOEEw5jhoNdlWMHHG/4pE/lOBc
-	u0LYFd6SsnC9Y6P4vJUu4V71kfF23MxiESqgzWMk1QDrQsUxaANE6fJ/tW/86pk1KuBAG3vp73qRU
-	neuHzMirV1UuNifzeH6Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dzxsjDNLmR6upAbyUKnGFxcfms8LxK3XtwI5CUGbVLU=; b=ikHEFzsawK9wxU
+	Fm/2kOTPDY4pbnvg1jy2SwtXxBgL3EiS1mm56dejvjlgwqINl9OzbWbHNYP/pBOTwf0XsPlySPdrs
+	8FIP4oeP0TuXPjUw49laa7BCmFjH3omPW9aKd5BuaqqRMMBKSp826g94jGhqFWadRSnH0NNljCxfq
+	LuB2k21PTise9Bvho7ePfcoejZqOWgWBzqTxvqIq0X8U7KlNHjPZjwSKdFNLixZEjxoMuWtggSI0u
+	4SY3UKNqfHgMrF4W60gnnMo5lNIPPwy+wXJ3OJQEs12aRzig8TLIjqTXpubBkjYQ1e/4ntRoanvtm
+	a8c2IKVmlaqYHOCnIpfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hziTL-0004JB-Ef; Mon, 19 Aug 2019 14:17:23 +0000
+	id 1hziTC-0004DQ-Lw; Mon, 19 Aug 2019 14:17:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hziT4-0004Co-IJ
+ id 1hziT5-0004D2-0m
  for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 14:17:08 +0000
 Received: from localhost.localdomain (cpe-70-114-128-244.austin.res.rr.com
  [70.114.128.244])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9CBC6206BB;
- Mon, 19 Aug 2019 14:17:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5286D20844;
+ Mon, 19 Aug 2019 14:17:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1566224226;
- bh=mPy5kEkLZQBhxEYoTw6Su++3T5FhQmPawdvmqZzoXWI=;
- h=From:To:Cc:Subject:Date:From;
- b=tPMYFKQ+rcY7BO0k61082YjtkVn2CDlTC8oKuABQfHr5sqWYaiCMg19OrqUzj46lH
- wVeJUsrCFlEC5hDMgPnXtlKH9U4LXlDS2D3oTsIOZ1G4t7GuIJ550m2HUnrj8MKLer
- tNDBeA/Py1pDczr0CAvBzIKdOXCezM+qy+br3+nw=
+ bh=YGv8NCDxgrRNEOQTGy8d87Ig69oC5UZuXThzYc8tcII=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=g9mMKw8Q9wZq8fQAqlACmMulywOxcAOwHS79ok4mIERcRGEhJsr5ZWs2N/QNOKKKK
+ W1oAbYWivhF794JmhXMuhdts8lGVwNVVDq51ZWPsTJkmbPMfjJMUinJW9WFyMKjHrA
+ yhk/pvD16MZdzzf9kqZpF9CHm8req5ErG2eHgfgQ=
 From: Dinh Nguyen <dinguyen@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [GIT PULL 1/2] SoCFPGA DTS updates for v5.4
-Date: Mon, 19 Aug 2019 09:16:58 -0500
-Message-Id: <20190819141659.26414-1-dinguyen@kernel.org>
+Subject: [GIT PULL 2/2] arm64: defconfig: updates for v5.4
+Date: Mon, 19 Aug 2019 09:16:59 -0500
+Message-Id: <20190819141659.26414-2-dinguyen@kernel.org>
 X-Mailer: git-send-email 2.20.0
+In-Reply-To: <20190819141659.26414-1-dinguyen@kernel.org>
+References: <20190819141659.26414-1-dinguyen@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_071706_627677_EBBCD7A4 
-X-CRM114-Status: GOOD (  12.30  )
+X-CRM114-CacheID: sfid-20190819_071707_077499_ABE8E1E8 
+X-CRM114-Status: GOOD (  10.74  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,10 +84,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Arnd, Kevin, and Olof:
 
-Please pull in these SoCFPGA DTS updates for v5.4.
+Please pull in this arm64 defconfig for v5.4.
 
 Thanks,
 Dinh
+
 
 The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 
@@ -93,46 +96,22 @@ The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/dinguyen/linux.git tags/socfpga_dts_updates_for_v5.4
+  git://git.kernel.org/pub/scm/linux/kernel/git/dinguyen/linux.git tags/arm64_defconfig_watchdog_for_v5.4
 
-for you to fetch changes up to d8c1ccac448fd21a3753517a34ee0164c28ac786:
+for you to fetch changes up to 1da708985a3922055e4e55c6488014247b11824d:
 
-  ARM: dts: socfpga: add missing reset-names for dma (2019-07-30 09:09:31 -0500)
-
-----------------------------------------------------------------
-SoCFPGA DTS updates for v5.4
-- Add reset properties for various peripherals
-	- QSPI OCP and DMA on Arria10
-	- DMA on Agilex/Stratix10
-- Update NAND controller bindings to match driver update
-- Add NAND controller to Stratix10
-- VINING FPGA board fixups
-	- Update button mapping
-	- Adjust GMAC1 clock and TXD skew settings
-- Add missing reset-names for dma controller
+  arm64: defconfig: Enable the DesignWare watchdog (2019-08-15 18:13:06 -0500)
 
 ----------------------------------------------------------------
-Dinh Nguyen (5):
-      ARM: dts: socfpga: add the QSPI OCP reset property on arria10
-      ARM: dts: socfpga: add reset properties for DMA
-      arm64: dts: agilex/stratix10: Add reset properties for DMA
-      arm64: dts: stratix10: Add NAND device node
-      ARM: dts: socfpga: add missing reset-names for dma
+arm64 defconfig for v5.4
+- Add CONFIG_DW_WATCHDOG to support the Designware watchdog driver
 
-Marek Vasut (2):
-      ARM: dts: socfpga: Fix up button mapping on VINING FPGA
-      ARM: dts: socfpga: Adjust GMAC1 clock and TXD lines skew on VINING FPGA
+----------------------------------------------------------------
+Dinh Nguyen (1):
+      arm64: defconfig: Enable the DesignWare watchdog
 
-Masahiro Yamada (1):
-      ARM: dts: socfpga: update to new Denali NAND binding
-
- arch/arm/boot/dts/socfpga.dtsi                     |  3 ++-
- arch/arm/boot/dts/socfpga_arria10.dtsi             |  7 +++--
- arch/arm/boot/dts/socfpga_arria10_socdk_nand.dts   | 20 ++++++++++-----
- arch/arm/boot/dts/socfpga_cyclone5_vining_fpga.dts | 30 +++++++++++++++++-----
- arch/arm64/boot/dts/altera/socfpga_stratix10.dtsi  | 18 +++++++++++++
- arch/arm64/boot/dts/intel/socfpga_agilex.dtsi      |  2 ++
- 6 files changed, 63 insertions(+), 17 deletions(-)
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
