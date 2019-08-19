@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 395CD92542
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 15:39:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5F849254F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 15:40:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ikIwOb+Xf36vVJNbEsDDY4u/GW8PUfPLMREVS/mxFWI=; b=sC4OMYwEfkRPw9
-	WRIiC0qKbssc6ult+zpTCrzZ9NsDMG2HTVrtBSm+AI/VULO0+5/UT9thMp1jhcVg6zE69LJwtcHaD
-	B5uZT6v/OvbGTEMh9+UBV2hPN8YBOm6d8RuUXYkSM5P2rZHJO0jLt5o2qYlAOm+YzT44we8tGCH+H
-	o2prX4KDgsp5orjCoM0FP/XbKwK5bM73s06wNwwk9vJgpTJBZa6exgBLDqkckeD4t3PNZpa0VVD8B
-	xzytJQ8cjv4IW6NLNZSM88Y2xS1UaFIMXDmL5gvsV5TtFXRnkZEeDjFMj1znwRY45ryxg3VqRU9X1
-	XKBvJwLL5/LsvkXtjwsw==;
+	List-Owner; bh=Dkd3r0xxy9T6uOyWOnUs4sNOebQTR9FYhDllon2jFsg=; b=pyHNz6j+lAkELt
+	tOVetEvJsc6phwKYGQ04q+7qxy11pZ9r9U2nol86lnaVC3ABABrtkNDlf/9o+UB/O7au6uO1GeHWu
+	b4cHEqbWiQv0Wk/0TkNLdktpzAzxFpdCvPKfvXEQIrKeDANGd251ZihDEtZ7gA5+iYCNHDNcHEBZw
+	aPZayT4yVH8cwPIvr2v/ovOEUn7+tWuHUNjhHKy2CH2qLjC4kYn+AxxbampQn1OecOgwqRlM+4EMi
+	mnw6QMPr//PD0vBA8h7KJDHSqSkkVgPjttrQdP8+CmermTxOccyXW+y1DUTck7qE/KX+Jvvrqp9om
+	chmesCACtmnBXxPpWlIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzhs2-00026G-I4; Mon, 19 Aug 2019 13:38:50 +0000
+	id 1hzhtO-0003WE-Qm; Mon, 19 Aug 2019 13:40:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzhrt-00025o-Ny
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 13:38:43 +0000
+ id 1hzhsl-00038q-K4
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 13:39:37 +0000
 Received: from X250 (37.80-203-192.nextgentel.com [80.203.192.37])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3448120644;
- Mon, 19 Aug 2019 13:38:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7EBA620644;
+ Mon, 19 Aug 2019 13:39:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566221921;
- bh=47ZKROnn84RKEvkEyiFYQznmN0p3z6+yXmQR9SMFTMo=;
+ s=default; t=1566221975;
+ bh=lFBTbfxwQ3ahDdxV2/8NFxtVWweNk5mXIyOhPXcXizw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=yOVGtXx9Ke+ACtLOruQ8xvXQWXqBmbRxFvzbqQIVQ7iOm+klS13QjFZZ7uIgcxIo3
- pFofrGRRBoWyHpTzR75z6Aduga1/zuvMatrTJM/DpzX/qYB7A8W+1FkOvb2Z2m86AZ
- JUvuGYvXp7sVRAkT8pD70BHw7ks9dAPiwQg/HDI8=
-Date: Mon, 19 Aug 2019 15:38:28 +0200
+ b=p+cNdQz7XRMqQHyZvz2FzrZFclj9OX3QW86mFpRlmhLADyV3CC+KUo4vIBvYJjP8F
+ 6hD3eqFy9gz9ebMlGNbsDrFhTuOf9kywmohQBdmnLTTJ/X7KkDDfPJYKWbXXBeUxNo
+ rv5kcDvfvqBy5RRKGD7sx44d8WG2qLe026tNN9lM=
+Date: Mon, 19 Aug 2019 15:39:22 +0200
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH RESEND V2 5/7] clk: imx8mn: Add missing rate_count
- assignment for each PLL structure
-Message-ID: <20190819133827.GN5999@X250>
+Subject: Re: [PATCH RESEND V2 6/7] clk: imx8mn: Add necessary frequency
+ support for ARM PLL table
+Message-ID: <20190819133921.GO5999@X250>
 References: <1566109945-11149-1-git-send-email-Anson.Huang@nxp.com>
- <1566109945-11149-5-git-send-email-Anson.Huang@nxp.com>
+ <1566109945-11149-6-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1566109945-11149-5-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1566109945-11149-6-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_063841_802009_3F7E30FF 
-X-CRM114-Status: GOOD (  16.25  )
+X-CRM114-CacheID: sfid-20190819_063935_682360_F0EDB965 
+X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,77 +90,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 18, 2019 at 02:32:23AM -0400, Anson Huang wrote:
-> Add .rate_count assignment which is necessary for searching required
-> PLL rate from the each PLL table.
+On Sun, Aug 18, 2019 at 02:32:24AM -0400, Anson Huang wrote:
+> i.MX8MN supports CPU running at 1.5GHz/1.4GHz/1.2GHz, add missing
+> frequency for ARM PLL table.
 > 
-> Fixes: 96d6392b54db ("clk: imx: Add support for i.MX8MN clock driver")
-
-The commit ID is not stable before the commit lands on mainline, so I
-dropped it and applied the patch.
-
-Shawn
-
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> Changes since V1:
-> 	- split the patch into 2 patches, #1 fixed those missing .rate_count assignment,
-> 	  #2 add missing frequency points.
-> ---
->  drivers/clk/imx/clk-imx8mn.c | 7 +++++++
->  1 file changed, 7 insertions(+)
-> 
-> diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-> index ecd1062..b5a027c 100644
-> --- a/drivers/clk/imx/clk-imx8mn.c
-> +++ b/drivers/clk/imx/clk-imx8mn.c
-> @@ -67,36 +67,43 @@ static const struct imx_pll14xx_rate_table imx8mn_drampll_tbl[] = {
->  static struct imx_pll14xx_clk imx8mn_audio_pll = {
->  		.type = PLL_1443X,
->  		.rate_table = imx8mn_audiopll_tbl,
-> +		.rate_count = ARRAY_SIZE(imx8mn_audiopll_tbl),
->  };
->  
->  static struct imx_pll14xx_clk imx8mn_video_pll = {
->  		.type = PLL_1443X,
->  		.rate_table = imx8mn_videopll_tbl,
-> +		.rate_count = ARRAY_SIZE(imx8mn_videopll_tbl),
->  };
->  
->  static struct imx_pll14xx_clk imx8mn_dram_pll = {
->  		.type = PLL_1443X,
->  		.rate_table = imx8mn_drampll_tbl,
-> +		.rate_count = ARRAY_SIZE(imx8mn_drampll_tbl),
->  };
->  
->  static struct imx_pll14xx_clk imx8mn_arm_pll = {
->  		.type = PLL_1416X,
->  		.rate_table = imx8mn_pll1416x_tbl,
-> +		.rate_count = ARRAY_SIZE(imx8mn_pll1416x_tbl),
->  };
->  
->  static struct imx_pll14xx_clk imx8mn_gpu_pll = {
->  		.type = PLL_1416X,
->  		.rate_table = imx8mn_pll1416x_tbl,
-> +		.rate_count = ARRAY_SIZE(imx8mn_pll1416x_tbl),
->  };
->  
->  static struct imx_pll14xx_clk imx8mn_vpu_pll = {
->  		.type = PLL_1416X,
->  		.rate_table = imx8mn_pll1416x_tbl,
-> +		.rate_count = ARRAY_SIZE(imx8mn_pll1416x_tbl),
->  };
->  
->  static struct imx_pll14xx_clk imx8mn_sys_pll = {
->  		.type = PLL_1416X,
->  		.rate_table = imx8mn_pll1416x_tbl,
-> +		.rate_count = ARRAY_SIZE(imx8mn_pll1416x_tbl),
->  };
->  
->  static const char * const pll_ref_sels[] = { "osc_24m", "dummy", "dummy", "dummy", };
-> -- 
-> 2.7.4
-> 
+
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
