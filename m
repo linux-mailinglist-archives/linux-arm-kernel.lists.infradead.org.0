@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BBF391E06
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 09:39:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E74C991E13
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 09:40:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ohju4l04A5knodF8A9HQt52k3227qExd00HcLscFggc=; b=UAfVOq3rmNIjzU
-	g0bGkInI1SUn7EyZWyArAh3FqMOBrAix1jFAB/VKmb4Sqd+BaIzTKeqLYVNt8szbHKW3sGQZosQyG
-	qmv+KKshOLQEC63oosp8WB+tXJA5I30tsgu2ntKjqamputyISfPnKNlM5l8jBVAuMFPbGyJWZfuPq
-	oB76YLGx0j8LOCCuLtPdtTTKXAreehuWstXS6nmaJLuuXg+DVsu7igghA/6uTQUCODH11x5ShMe+H
-	x39eAP2okg8mDQq0UHbkD5kGtGgGQo29n2N+woSQzrBfYGDUUjXR8X1CmVB60DExCnr+CZSxnBz6V
-	sNIL9VfIkHzIfdySL+Gg==;
+	List-Owner; bh=Mw8QGrrlFV3uO/RiWV+4UGQm4CBGn/dksSb4MdcxLxw=; b=nLgQmo3P0YluGf
+	EiNPBsTSqtpDalERKZaoz17xZYEarv654ZY5STFZscjDV6X2p2GPnmkqSACGPxpFEo8yxKcUtzsD3
+	5KdA0R+UEAyZRVOKUfUzOWs6+qRFHSgIXL9CaC5yCY3FX7oQnUaPI/MGaFo70voNLYzR4urmT069P
+	5x60bmA1ScdVjd0HijtzEXelrRIKyPntNDXcSp1PSbAPkH/ofMA1rUIQg477trgMjbSQb+5kYSXzG
+	/VTfa4/ej5y39FMDLVE40nfNm34WUlzPllrCpGgLorvAu2elQVSFWMRcvRtE/0N+sTX5QVdRcHVQ0
+	TIF6zOq9wDCYkwPnRWUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzcG6-0002ug-Ki; Mon, 19 Aug 2019 07:39:18 +0000
+	id 1hzcHL-0004NY-7A; Mon, 19 Aug 2019 07:40:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzcFp-0002uB-Vi
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 07:39:03 +0000
+ id 1hzcH4-0004Mw-TR
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 07:40:20 +0000
 Received: from X250 (37.80-203-192.nextgentel.com [80.203.192.37])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CFC272184D;
- Mon, 19 Aug 2019 07:38:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D72A52186A;
+ Mon, 19 Aug 2019 07:40:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566200341;
- bh=rrlGxLwD24pbPAWMAYLMfKb9jCofaz3kzP33VDcGfuM=;
+ s=default; t=1566200418;
+ bh=SSwGoyQjtxQyIG+L12Fa79RfIeakkTxJQkrFw8MwzFo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Rowz5XfLc4FWdlA1ScNEAQYEWicKr270PcCqlq5wC3pxj56lmuLvfcttVw99iMImK
- b6zASiu/SyveubCvzvsLjFohvgzTevGQdrArGZSYiRdDIw6C7AooZYmSr6MRMKmtlQ
- 8GeRfgdZjfmlWKCSe+F5nronj/AHQM/ZLiSDLWso=
-Date: Mon, 19 Aug 2019 09:38:48 +0200
+ b=0fxXKqzZ27SPO5MQzxrckPFMQvlzrVgisB9+HTtPvm8PaVOSNkPuzDRurwscI4s1Z
+ 7upOTcs8GamBB1WmW34ZnG17cylcGhhGOMhvSCadorBrnmXrTYAHbj/Sw+30sE0c+C
+ +OOfuwbRv2Gz5lUfZkk34G5rQwVDgGZVAc+F34kE=
+Date: Mon, 19 Aug 2019 09:40:06 +0200
 From: Shawn Guo <shawnguo@kernel.org>
-To: =?iso-8859-1?Q?S=E9bastien?= Szymanski <sebastien.szymanski@armadeus.com>
-Subject: Re: [PATCH v3 1/3] ARM: dts: imx6ul: Add csi node
-Message-ID: <20190819073847.GB5999@X250>
-References: <20190731163257.32448-1-sebastien.szymanski@armadeus.com>
+To: Hui Song <hui.song_1@nxp.com>
+Subject: Re: [PATCH] arm64: dts: ls1028a: fix gpio nodes
+Message-ID: <20190819074005.GC5999@X250>
+References: <20190805065700.7601-1-hui.song_1@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190731163257.32448-1-sebastien.szymanski@armadeus.com>
+In-Reply-To: <20190805065700.7601-1-hui.song_1@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_003902_053004_B90F6F39 
-X-CRM114-Status: UNSURE (   9.58  )
+X-CRM114-CacheID: sfid-20190819_004018_976107_9AEEF8D4 
+X-CRM114-Status: UNSURE (   9.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,26 +77,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devel@driverdev.osuosl.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>, devicetree@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Rui Miguel Silva <rmfrfs@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Steve Longerbeam <slongerbeam@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 06:32:57PM +0200, S=E9bastien Szymanski wrote:
-> Add csi node for i.MX6UL SoC.
-> =
-
-> Reviewed-by: Fabio Estevam <festevam@gmail.com>
-> Signed-off-by: S=E9bastien Szymanski <sebastien.szymanski@armadeus.com>
+On Mon, Aug 05, 2019 at 02:57:00PM +0800, Hui Song wrote:
+> From: Song Hui <hui.song_1@nxp.com>
+> 
+> Update the nodes to include little-endian
+> property to be consistent with the hardware.
+> 
+> Signed-off-by: Song Hui <hui.song_1@nxp.com>
 
 Applied, thanks.
 
