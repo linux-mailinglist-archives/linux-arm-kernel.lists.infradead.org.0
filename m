@@ -2,92 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 342AD9282A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 17:16:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 738E392842
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 17:20:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bFpgX4DCQVhazQcQSc8yVyzMDnXCV3BerKgKDN1BLgY=; b=il4I1rvIRFjw2u
-	6hniMdxwz4wnf4zfEvQQTESIPMLqL69LI0Goz1uCnOchD1PkmuKlZl67gpoC/fxr1fG+fCiaG2sc9
-	8Cs0PCNfCTbiraal1ZWU+oGbxQfVEPKqNekUyLbAyaAY6wgOnnPOK/TGlfCOQr8wNK29q3FpjMv54
-	dgPnFiqNmK6IJqkjmMLR4HSUNMHFMjU55qrdobY57xKT9e/JbPpV9BekCxmvhn5ml8F11JSGldgHm
-	33zn3MedF70Rcq4PMCwbAxllKDmiHOhGH+skRD+SwVNAdytHSEmX8BlRVks79C8Mf+RNOMrePSF2W
-	EgqcXnr6UwPvDP2po9ag==;
+	List-Owner; bh=7Zp1dAPzO3XDzxnDXojJ+TbdQbqpu9MZ6e7y7Y3xHZY=; b=gtNyToIVarSKjZ
+	GR1o2Kfrn56k1DL8hcdd8YlWeaNOrr6LBZ57MAr0MfAq5vriwEoDGu0LSm6DG+ZIL/pp3uagPP3wE
+	4Iwg+p8AlmOfbJmAr4eU4X9UfYcq+N4GepIN7tGzI9RzZoUKqkq1ofQQx85TMkXvk+tBlMUPhGEP5
+	Fm34ekrHrjqvWOn4D9FfZx1OA/0GHWfETGH/tu1Qp+cvuP/NpgeCrwX3UMfMrAcZVjrvUE6dqttwn
+	Bh39chb4TITsg5d1lKGuNY+i8YKKkM/00AMi3m5BQ6g6fnrduLpmBRLVUq5qbydBjDoPzuFoSR/oS
+	2n9PmqN+Cc37+B0oxIIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzjOz-0005oh-FV; Mon, 19 Aug 2019 15:16:57 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hzjSn-0000XG-9m; Mon, 19 Aug 2019 15:20:53 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzjOs-0005oF-D0
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 15:16:51 +0000
-Received: by mail-pl1-x641.google.com with SMTP id y1so1105255plp.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 08:16:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GlFmsxpfwLpG5XFQZcDJGrUJIAXAnOONymKIPYeVWy4=;
- b=GASLs+yZnKXgCHGknNLNo71e6UtRt515EbzdpWYm/Hpg75x/UubNKrVS4Ph4uPK+8D
- Ti+bZvb7RwZ8Rgn5diZiCZOC7bC9H+dTrKcVTPMW/pFv9U1AucjO/hRKCCkTBhzRIaU3
- D9sPMjOcAkw+sn0WiouQhRmANU/HoJXNnBPivxMzU2mCd+1bqEU622XIt7CtOkyBUScf
- CddY5regO8tRNMImraZP3DECenQ45DhILnBAxk2TuQ3iyHoyjpEbXWuF3zSR6z/Z8e3z
- D8kAaqFBdLd66b1BOwiK9p1SMntN4cI0JAUQgHjwyJ5ye9BNp3phuuPzg6paxdjmOKUJ
- Bduw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GlFmsxpfwLpG5XFQZcDJGrUJIAXAnOONymKIPYeVWy4=;
- b=XPiWGss9jMqQPYBFe89LxhXgPeflnwHQvRl4r2gkJfgdVgk7dBeRwpHJcvMQbRLrN7
- N+nezMij2McIpoy2HhXQgFsay9lDPpQnNnoFj/75AvSESdZMw7erQRd6nPB5AuQQe1GO
- F0QHkHe2AEyFIVcZXtJG00wa6cUcxVeRamLkh4J+DYopPlrP9VPyn1Wo0qr1EhIda19T
- BSOdw6R48QSFV0h+l8TK3L0e/Io9Zrjg1aPY9KSTAliuv6WPSfjyox0Eh3Q631WXO7H0
- fFQOsg5fKteda78xJ+UCjAeSOD0ncn4cJ3TT3Y/xJ3N2LBgL2Xoz5H1iA7RcgXtcxRBL
- mdtg==
-X-Gm-Message-State: APjAAAULIJksmVUhND1m+UV0gTW238ZWBi2IEL9QnDLII/WeIukTB9CF
- iZp8DU9oDyoLWhUSW5DAmaNhFPb6nTLNbJ5SG54lZQ==
-X-Google-Smtp-Source: APXvYqxAVYv/X47htv2GfhrYLw10pOmVgC147AdMR4amTTESkgYjtOO9fvfN54mImyUI3YtolKb0GRqZDtWypE7Vt8Q=
-X-Received: by 2002:a17:902:ab96:: with SMTP id
- f22mr23622721plr.147.1566227808825; 
- Mon, 19 Aug 2019 08:16:48 -0700 (PDT)
+ id 1hzjSg-0000Od-HX
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 15:20:48 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hzjSX-0006NW-1z; Mon, 19 Aug 2019 17:20:37 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hzjSV-0003tf-To; Mon, 19 Aug 2019 17:20:35 +0200
+Date: Mon, 19 Aug 2019 17:20:35 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Claudiu.Beznea@microchip.com
+Subject: Re: [PATCH 4/3] pwm: atmel: document known weaknesses of both
+ hardware and software
+Message-ID: <20190819152035.lkemndmypcehb2a2@pengutronix.de>
+References: <20190815214133.11134-1-uwe@kleine-koenig.org>
+ <20190816093748.11769-1-uwe@kleine-koenig.org>
+ <0a389abe-15ef-0e63-109f-2db4cb36f4b9@microchip.com>
+ <20190819104617.kujgwthxtjy6cssa@pengutronix.de>
+ <3029467b-be14-d78b-5580-8bd3842d86e2@microchip.com>
 MIME-Version: 1.0
-References: <00eb8ba84205c59cac01b1b47615116a461c302c.1566220355.git.andreyknvl@google.com>
- <20190819150342.sxk3zzxvrxhkpp6j@willie-the-truck>
-In-Reply-To: <20190819150342.sxk3zzxvrxhkpp6j@willie-the-truck>
-From: Andrey Konovalov <andreyknvl@google.com>
-Date: Mon, 19 Aug 2019 17:16:37 +0200
-Message-ID: <CAAeHK+xP6HnLJt_RKW67x8nbJLJp5A=av57BfwiFrA88eFn60w@mail.gmail.com>
-Subject: Re: [PATCH ARM] selftests,
- arm64: fix uninitialized symbol in tags_test.c
-To: Will Deacon <will@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <3029467b-be14-d78b-5580-8bd3842d86e2@microchip.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_081650_468235_8C8A2B49 
-X-CRM114-Status: GOOD (  11.29  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190819_082046_588751_C5AEFFAE 
+X-CRM114-Status: GOOD (  30.39  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,57 +72,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
- Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Dan Carpenter <dan.carpenter@oracle.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, alexandre.belloni@bootlin.com,
+ Ludovic.Desroches@microchip.com, thierry.reding@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 5:03 PM Will Deacon <will@kernel.org> wrote:
->
-> On Mon, Aug 19, 2019 at 03:14:42PM +0200, Andrey Konovalov wrote:
-> > Fix tagged_ptr not being initialized when TBI is not enabled.
-> >
-> > Dan Carpenter <dan.carpenter@oracle.com>
->
-> Guessing this was Reported-by, or has Dan introduced his own tag now? ;)
+Hello Claudiu,
 
-Oops, yes, Reported-by :)
+On Mon, Aug 19, 2019 at 12:28:59PM +0000, Claudiu.Beznea@microchip.com wrot=
+e:
+> On 19.08.2019 13:46, Uwe Kleine-K=F6nig wrote:
+> > On Mon, Aug 19, 2019 at 09:26:04AM +0000, Claudiu.Beznea@microchip.com =
+wrote:
+> >> On 16.08.2019 12:37, Uwe Kleine-K=F6nig wrote:
+> >>> Signed-off-by: Uwe Kleine-K=F6nig <uwe@kleine-koenig.org>
+> >>> ---
+> >>>  drivers/pwm/pwm-atmel.c | 10 ++++++++++
+> >>>  1 file changed, 10 insertions(+)
+> >>>
+> >>> diff --git a/drivers/pwm/pwm-atmel.c b/drivers/pwm/pwm-atmel.c
+> >>> index 42fe7bc043a8..1ddb93db9627 100644
+> >>> --- a/drivers/pwm/pwm-atmel.c
+> >>> +++ b/drivers/pwm/pwm-atmel.c
+> >>> @@ -7,6 +7,16 @@
+> >>>   *
+> >>>   * Reference manual for "atmel,at91sam9rl-pwm":
+> >>>   *   http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-11032-32-=
+bit-ARM926EJ-S-Microcontroller-SAM9G25_Datasheet.pdf
+> >>> + *
+> >>> + * Limitations:
+> >>> + * - Periods start with the inactive level.
+> >>
+> >> Are you talking here about the normal polarity (from documentation: By
+> >> definition, normal polarity characterizes a signal starts high for the
+> >> duration of the duty cycle and goes low for the remainder of the perio=
+d.)
+> > =
 
->
-> Got a link to the report?
+> > When .polarity =3D PWM_POLARITY_NORMAL is passed to atmel_pwm_apply() t=
+he
+> > drivers sets PWM_CMR_CPOL=3D0 which according to the datasheet (linked
+> > above) means: "The output waveform starts at a low level."
+> > =
 
-https://www.spinics.net/lists/linux-kselftest/msg09446.html
+> > So maybe just the logic has to be inverted there,
+> =
 
->
-> Will
+> Agree.
+> =
+
+> > but then maybe the
+> > output gets active instead of inactive when the PWM is disabled.
+> =
+
+> Yes, this would happen. Playing again with CPOL when disabling may be a
+> solution.
+
+Alternatively you could argue that it would be more sensible to drop the
+requirement for a certain output level on disable. You would have my
+support here.
+
+> > (Which in my book is ok, but it's Thierry's opinion that counts here.)
+> > =
+
+> >> If yes, this should be solved by playing with CPOL bit of CMR.
+> >>
+> >>> + * - Hardware has to be stopped in general to update settings.
+> >>
+> >> Sama5d2 has duty cycle that could be updated on the fly.
+> > =
+
+> > There is some functionality in the 9G25, too. I didn't understand it
+> > completely but maybe it only helps updating one of period or duty cycle.
+> >  =
+
+> >>> + *
+> >>> + * Software bugs/possible improvements:
+> >>> + * - When atmel_pwm_apply() is called with state->enabled=3Dfalse a =
+change in
+> >>> + *   state->polarity isn't honored.
+> >>
+> >> I know that when configuring a PWM one should get the current state of=
+ the
+> >> PWM, change it, then pass it to the driver via pwm_apply_state().
+> > =
+
+> > That seems to be a common pattern at least. IMHO letting the consumer
+> > just configure the state that should be used should be fine, too.>
+> >> In case one would call the pwm_apply_state() with state->enabled =3D
+> >> false the state would be stored in PWM specific object (of type struct
+> >> pwm_device). On the next apply, with enabled =3D true, all the PWM
+> >> parameters would be actually applied to hardware. So, until
+> >> enable=3Dtrue the PWM state would only be cached by PWM core specific
+> >> objects (in pwm_apply_state()).
+> > =
+
+> > I fail to follow what you mean here. If a PWM runs with (say) normal
+> > polarity and you call pwm_apply_state(mypwm, { .polarity =3D
+> > PWM_POLARITY_INVERSED, .enabled =3D false, }); the apply callback of the
+> > lowlevel driver is called and supposed to configure the output to yield
+> > a constant high.
+> =
+
+> Ok, I see it now. I'll put it on my queue.
+
+See above. The atmel driver is just part of my quest to get a general
+picture what the common PWM implementation does. Thierry argued that it
+is natural that a PWM drives the inactive level on disable.
+
+I'd say that it would be more natural to not demand a certain level
+because a) IMHO there are enough implementations that differ here and b)
+consumers could just configure for duty_cycle=3D0 if they care.
+
+In the case of the imx driver we could just put aside the discussions
+about how we atomically switch the output to a GPIO to provide the
+needed level. In case of the atmel driver you'd just invert polarity and
+be done.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
