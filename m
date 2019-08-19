@@ -2,89 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 669E5927B9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 16:57:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB91C927DE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 17:04:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HKvCluMYk5Z9xRd+CS7dc4jO4Hu14MohPo20nnP3YRU=; b=KUQ4219Pzmz3m6
-	O9vA3XgdxSVViDYf2PQwrobALC06BHOTKimkdPiSjX8LP+Flnw0oany8/QK9+Fz23uKgDl1qywXYM
-	fjCgX3eLJHw81BZ8E/x5xqXnqS/eDXprwRqKqw2YQoON3lV1WKZyA+lcy+p1xZPFLRlySWC9uHtQT
-	zQKJ3PX9omlVwIJkFofNC52NyLQm6vIUX/nDucporLpLyDS4JA4ekhUboVxHvItzab8omMDkiETBS
-	en2tB9jO2wSa+XEBa1tj/ymdVzciO/s75iRXgCyXFo7bBA+PNLdYAnoRBrLFZMfHJPya88oPHBzbu
-	B9wLfCp7HD7Xnak2AjUA==;
+	List-Owner; bh=l1z28e7Zq/TEHgEa8j92yccRUHUTSzR+2fO41Ke8XBI=; b=je89UhkSKOGKoB
+	fWmdntHGU2XTDEYnBA3acq6mGt1nvloj2VXi+q8heCikUZETQjFPjAek/z8kQ6NS7p+oj6SdE5fTm
+	h7v43QL2Zv0N5MQWNV7UKdS2NBPM3ucuxS5cTOGPR0hqDkzxMu8pDW/YlqcanIMu6c3wfjyFnfM19
+	+yXcM4kMFIuYsGV9GW+ECvSbqMwaoj+MPGK9Dx79yBorPBXnrcVSRNglj+nJOVQefUVhpLS/ii0gG
+	lisSk5OwOdwQJTct34POxXS1gZ1csDTKmqtlF8NULp8BzYEbg2UScWfJG/ZFILQ06V6+rn2/DPzb/
+	PCu1V/JvSbtzd3+MzxxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzj5v-00050L-V8; Mon, 19 Aug 2019 14:57:16 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzj5p-0004zw-5K
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 14:57:10 +0000
-Received: by mail-wr1-x442.google.com with SMTP id g17so9066819wrr.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 07:57:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GAjO3kDCKw737mzKsCDzc5iC6QhFGKmfyjzceHvXKsU=;
- b=eHXy/LiFZh4gTgutePEYj72vYa3eraTi+gVzKrpM8z0zscSoc9UJpBuMortwZBA+yH
- b/qr6lPvJg2FbAmYXEVoaweL9a2Ast4QPjhwkO402tiAnBchwSQYMqsc3Ga4Xrk2Ng3W
- m4AS4QVgcC6tckNHGvaiyRI2W53BSLkm3JKL81fodAmYKV6ENKScDhJTmgEfalb1KuWk
- YnD5iWbCqtLHviBfoPgj73No1xc7M8ZMn7xj+wS23J9X6JjXWSjswI4RBuBE0WVsPtPz
- 7p7rA+Vacwl2wrcih/m1v58ny92ZlbO1wetTpUk7e1iDNlvUDxUuzTODDlaF4IOC+ssV
- 66SQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GAjO3kDCKw737mzKsCDzc5iC6QhFGKmfyjzceHvXKsU=;
- b=PkU4wzipE9Vb4lVwxaRWtEiMnd8sIeV0aCgNvo6jISHAra/F6cJNGFxnT497s+wGMv
- dkfl0Mpn8NBDMO/X5a+SbT3D0FIFkcI5uTsA5dfrPEK211GklKth42uw92SrlrLGCzBr
- JpBCfrpqhZ9sys0j6sZ3MnOmBu5NKi5ktJq7OAqLRyoez4Rz8b7Xvf49N/I37LILF3Ql
- Pun5XRnwgsfrsBIxw5rMJ/pashANQVjs9TCwy/j58yNtl+tNjlQnpC7XiNw9Ck3tezTG
- PJuxf4L5trlBydvG/JXYnuS4Vgv/s+yk3v9h0YavGd1lEq7+69W2k8YJizg7KiA9nGFt
- 2f6Q==
-X-Gm-Message-State: APjAAAUPyu4N7lMPa0fO9K6JpHgL19Sx3pCg+ho7oAT0fMI371zNRaHN
- LG+u0Xcy3i+Bts1yEH2XX9X1L9GrQCMeORtAjrRN1Q==
-X-Google-Smtp-Source: APXvYqzb23vvVNc5UUcj/kt8thoSOcUzIyc0Kl1oqCEx0FA3r9Qd6OKc7JK2zme0EV4PzSteaAxAPvPWNVNZBuMyHWk=
-X-Received: by 2002:a5d:5450:: with SMTP id w16mr15166999wrv.174.1566226625378; 
- Mon, 19 Aug 2019 07:57:05 -0700 (PDT)
+	id 1hzjCO-00074b-2Y; Mon, 19 Aug 2019 15:03:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hzjCF-00074C-Tb; Mon, 19 Aug 2019 15:03:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DD2E428;
+ Mon, 19 Aug 2019 08:03:45 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 009D53F718;
+ Mon, 19 Aug 2019 08:03:43 -0700 (PDT)
+Date: Mon, 19 Aug 2019 16:03:41 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: kasan: fix phys_to_virt() false positive on
+ tag-based kasan
+Message-ID: <20190819150341.GC9927@lakrids.cambridge.arm.com>
+References: <20190819114420.2535-1-walter-zh.wu@mediatek.com>
+ <20190819125625.bu3nbrldg7te5kwc@willie-the-truck>
+ <20190819132347.GB9927@lakrids.cambridge.arm.com>
+ <20190819133441.ejomv6cprdcz7hh6@willie-the-truck>
+ <CAAeHK+w7cTGN8SgWQs0bPjPOrizqfUoMnJWTvUkCqv17Qt=3oQ@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190802053744.5519-1-clin@suse.com>
- <CAKv+Gu-yaNYsLQOOcr8srW91-nt-w0e+RBqxXGOagiGGT69n1Q@mail.gmail.com>
- <CAKv+Gu8uwbY-JtjNbgoyY230X_M6xLchVM3OUg_oNWOJrF=iCg@mail.gmail.com>
- <20190815111543.GA4728@linux-8mug>
- <CAKv+Gu-5M-4=SbOzbqbLUYnfFw29vhfcrVD=N9j_APYpKjq2wQ@mail.gmail.com>
- <20190815133738.GA2483@rapoport-lnx> <20190819075621.GA20595@linux-8mug>
-In-Reply-To: <20190819075621.GA20595@linux-8mug>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Mon, 19 Aug 2019 17:56:51 +0300
-Message-ID: <CAKv+Gu-sdhNbhfD24Fn93mj-h6=vGi82Ghjy7AzaRSqcpXCx-g@mail.gmail.com>
-Subject: Re: [PATCH] efi/arm: fix allocation failure when reserving the kernel
- base
-To: Chester Lin <clin@suse.com>
+Content-Disposition: inline
+In-Reply-To: <CAAeHK+w7cTGN8SgWQs0bPjPOrizqfUoMnJWTvUkCqv17Qt=3oQ@mail.gmail.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_075709_269472_25B56297 
-X-CRM114-Status: GOOD (  38.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190819_080348_046214_F7E8AF3B 
+X-CRM114-Status: GOOD (  29.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,170 +66,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Juergen Gross <JGross@suse.com>,
- "linux-efi@vger.kernel.org" <linux-efi@vger.kernel.org>,
- "guillaume.gardet@arm.com" <guillaume.gardet@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Joey Lee <JLee@suse.com>,
- "geert@linux-m68k.org" <geert@linux-m68k.org>,
- "ren_guo@c-sky.com" <ren_guo@c-sky.com>, Gary Lin <GLin@suse.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "mingo@kernel.org" <mingo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Walter Wu <walter-zh.wu@mediatek.com>, wsd_upstream@mediatek.com,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ Alexander Potapenko <glider@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 19 Aug 2019 at 11:01, Chester Lin <clin@suse.com> wrote:
->
-> Hi Mike and Ard,
->
-> On Thu, Aug 15, 2019 at 04:37:39PM +0300, Mike Rapoport wrote:
-> > On Thu, Aug 15, 2019 at 02:32:50PM +0300, Ard Biesheuvel wrote:
-> > > (adding Mike)
-> > >
-> > > On Thu, 15 Aug 2019 at 14:28, Chester Lin <clin@suse.com> wrote:
+On Mon, Aug 19, 2019 at 04:05:22PM +0200, Andrey Konovalov wrote:
+> On Mon, Aug 19, 2019 at 3:34 PM Will Deacon <will@kernel.org> wrote:
+> >
+> > On Mon, Aug 19, 2019 at 02:23:48PM +0100, Mark Rutland wrote:
+> > > On Mon, Aug 19, 2019 at 01:56:26PM +0100, Will Deacon wrote:
+> > > > On Mon, Aug 19, 2019 at 07:44:20PM +0800, Walter Wu wrote:
+> > > > > __arm_v7s_unmap() call iopte_deref() to translate pyh_to_virt address,
+> > > > > but it will modify pointer tag into 0xff, so there is a false positive.
+> > > > >
+> > > > > When enable tag-based kasan, phys_to_virt() function need to rewrite
+> > > > > its original pointer tag in order to avoid kasan report an incorrect
+> > > > > memory corruption.
 > > > >
-> > > > Hi Ard,
-> > > >
-> > > > On Thu, Aug 15, 2019 at 10:59:43AM +0300, Ard Biesheuvel wrote:
-> > > > > On Sun, 4 Aug 2019 at 10:57, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
-> > > > > >
-> > > > > > Hello Chester,
-> > > > > >
-> > > > > > On Fri, 2 Aug 2019 at 08:40, Chester Lin <clin@suse.com> wrote:
-> > > > > > >
-> > > > > > > In some cases the arm32 efistub could fail to allocate memory for
-> > > > > > > uncompressed kernel. For example, we got the following error message when
-> > > > > > > verifying EFI stub on Raspberry Pi-2 [kernel-5.2.1 + grub-2.04] :
-> > > > > > >
-> > > > > > >   EFI stub: Booting Linux Kernel...
-> > > > > > >   EFI stub: ERROR: Unable to allocate memory for uncompressed kernel.
-> > > > > > >   EFI stub: ERROR: Failed to relocate kernel
-> > > > > > >
-> > > > > > > After checking the EFI memory map we found that the first page [0 - 0xfff]
-> > > > > > > had been reserved by Raspberry Pi-2's firmware, and the efistub tried to
-> > > > > > > set the dram base at 0, which was actually in a reserved region.
-> > > > > > >
-> > > > > >
-> > > > > > This by itself is a violation of the Linux boot protocol for 32-bit
-> > > > > > ARM when using the decompressor. The decompressor rounds down its own
-> > > > > > base address to a multiple of 128 MB, and assumes the whole area is
-> > > > > > available for the decompressed kernel and related data structures.
-> > > > > > (The first TEXT_OFFSET bytes are no longer used in practice, which is
-> > > > > > why putting a reserved region of 4 KB bytes works at the moment, but
-> > > > > > this is fragile). Note that the decompressor does not look at any DT
-> > > > > > or EFI provided memory maps *at all*.
-> > > > > >
-> > > > > > So unfortunately, this is not something we can fix in the kernel, but
-> > > > > > we should fix it in the bootloader or in GRUB, so it does not put any
-> > > > > > reserved regions in the first 128 MB of memory,
-> > > > > >
-> > > > >
-> > > > > OK, perhaps we can fix this by taking TEXT_OFFSET into account. The
-> > > > > ARM boot protocol docs are unclear about whether this memory should be
-> > > > > used or not, but it is no longer used for its original purpose (page
-> > > > > tables), and the RPi loader already keeps data there.
-> > > > >
-> > > > > Can you check whether the following patch works for you?
-> > > > >
-> > > > > diff --git a/drivers/firmware/efi/libstub/Makefile
-> > > > > b/drivers/firmware/efi/libstub/Makefile
-> > > > > index 0460c7581220..ee0661ddb25b 100644
-> > > > > --- a/drivers/firmware/efi/libstub/Makefile
-> > > > > +++ b/drivers/firmware/efi/libstub/Makefile
-> > > > > @@ -52,6 +52,7 @@ lib-$(CONFIG_EFI_ARMSTUB)     += arm-stub.o fdt.o
-> > > > > string.o random.o \
-> > > > >
-> > > > >  lib-$(CONFIG_ARM)              += arm32-stub.o
-> > > > >  lib-$(CONFIG_ARM64)            += arm64-stub.o
-> > > > > +CFLAGS_arm32-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
-> > > > >  CFLAGS_arm64-stub.o            := -DTEXT_OFFSET=$(TEXT_OFFSET)
-> > > > >
-> > > > >  #
-> > > > > diff --git a/drivers/firmware/efi/libstub/arm32-stub.c
-> > > > > b/drivers/firmware/efi/libstub/arm32-stub.c
-> > > > > index e8f7aefb6813..66ff0c8ec269 100644
-> > > > > --- a/drivers/firmware/efi/libstub/arm32-stub.c
-> > > > > +++ b/drivers/firmware/efi/libstub/arm32-stub.c
-> > > > > @@ -204,7 +204,7 @@ efi_status_t
-> > > > > handle_kernel_image(efi_system_table_t *sys_table,
-> > > > >          * loaded. These assumptions are made by the decompressor,
-> > > > >          * before any memory map is available.
-> > > > >          */
-> > > > > -       dram_base = round_up(dram_base, SZ_128M);
-> > > > > +       dram_base = round_up(dram_base, SZ_128M) + TEXT_OFFSET;
-> > > > >
-> > > > >         status = reserve_kernel_base(sys_table, dram_base, reserve_addr,
-> > > > >                                      reserve_size);
-> > > > >
-> > > >
-> > > > I tried your patch on rpi2 and got the following panic. Just a reminder that I
-> > > > have replaced some log messages with "......" since it might be too long to
-> > > > post all.
-> > > >
+> > > > Hmm. Which tree did you see this on? We've recently queued a load of fixes
+> > > > in this area, but I /thought/ they were only needed after the support for
+> > > > 52-bit virtual addressing in the kernel.
 > > >
-> > > OK. Good to know that this change helps you to get past the EFI stub boot issue.
+> > > I'm seeing similar issues in the virtio blk code (splat below), atop of
+> > > the arm64 for-next/core branch. I think this is a latent issue, and
+> > > people are only just starting to test with KASAN_SW_TAGS.
 > > >
-> > > > In this case the kernel failed to reserve cma, which should hit the issue of
-> > > > memblock_limit=0x1000 as I had mentioned in my patch description. The first
-> > > > block [0-0xfff] was scanned in adjust_lowmem_bounds(), but it did not align
-> > > > with PMD_SIZE so the cma reservation failed because the memblock.current_limit
-> > > > was extremely low. That's why I expand the first reservation from 1 PAGESIZE to
-> > > > 1 PMD_SIZE in my patch in order to avoid this issue. Please kindly let me know
-> > > > if any suggestion, thank you.
-> >
-> >
-> > > This looks like it is a separate issue. The memblock/cma code should
-> > > not choke on a reserved page of memory at 0x0.
+> > > It looks like the virtio blk code will round-trip a SLUB-allocated pointer from
+> > > virt->page->virt, losing the per-object tag in the process.
 > > >
-> > > Perhaps Russell or Mike (cc'ed) have an idea how to address this?
+> > > Our page_to_virt() seems to get a per-page tag, but this only makes
+> > > sense if you're dealing with the page allocator, rather than something
+> > > like SLUB which carves a page into smaller objects giving each object a
+> > > distinct tag.
+> > >
+> > > Any round-trip of a pointer from SLUB is going to lose the per-object
+> > > tag.
 > >
-> > Presuming that the last memblock dump comes from the end of
-> > arm_memblock_init() with the this memory map
+> > Urgh, I wonder how this is supposed to work?
 > >
-> > memory[0x0] [0x0000000000000000-0x0000000000000fff], 0x0000000000001000 bytes flags: 0x4
-> > memory[0x1] [0x0000000000001000-0x0000000007ef5fff], 0x0000000007ef5000 bytes flags: 0x0
-> > memory[0x2] [0x0000000007ef6000-0x0000000007f09fff], 0x0000000000014000 bytes flags: 0x4
-> > memory[0x3] [0x0000000007f0a000-0x000000003cb3efff], 0x0000000034c35000 bytes flags: 0x0
-> >
-> > adjust_lowmem_bounds() will set the memblock_limit (and respectively global
-> > memblock.current_limit) to 0x1000 and any further memblock_alloc*() will
-> > happily fail.
-> >
-> > I believe that the assumption for memblock_limit calculations was that the
-> > first bank has several megs at least.
-> >
-> > I wonder if this hack would help:
-> >
-> > diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
-> > index d9a0038..948e5b9 100644
-> > --- a/arch/arm/mm/mmu.c
-> > +++ b/arch/arm/mm/mmu.c
-> > @@ -1206,7 +1206,7 @@ void __init adjust_lowmem_bounds(void)
-> >                        * allocated when mapping the start of bank 0, which
-> >                        * occurs before any free memory is mapped.
-> >                        */
-> > -                     if (!memblock_limit) {
-> > +                     if (memblock_limit < PMD_SIZE) {
-> >                               if (!IS_ALIGNED(block_start, PMD_SIZE))
-> >                                       memblock_limit = block_start;
-> >                               else if (!IS_ALIGNED(block_end, PMD_SIZE))
-> >
->
-> I applied this patch as well and it works well on rpi-2 model B.
->
+> > If we end up having to check the KASAN shadow for *_to_virt(), then why
+> > do we need to store anything in the page flags at all? Andrey?
+> 
+> As per 2813b9c0 ("kasan, mm, arm64: tag non slab memory allocated via
+> pagealloc") we should only save a non-0xff tag in page flags for non
+> slab pages.
+> 
+> Could you share your .config so I can reproduce this?
 
-Thanks, Chester, that is good to know.
+I wrote a test (below) to do so. :)
 
-However, afaict, this only affects systems where physical memory
-starts at address 0x0, so I think we need a better fix.
+It fires with arm64 defconfig, + CONFIG_TEST_KASAN=m.
 
-I know Mike has been looking into the NOMAP stuff lately, and your
-original patch contains a hunk that makes this code (?) disregard
-nomap memblocks. That might be a better approach.
+With Andrey Ryabinin's patch it works as expected with no KASAN splats
+for the two new test cases.
+
+Thanks,
+Mark.
+
+---->8----
+From 7e8569b558fca21ad4e80fddae659591bc84ce1f Mon Sep 17 00:00:00 2001
+From: Mark Rutland <mark.rutland@arm.com>
+Date: Mon, 19 Aug 2019 15:39:32 +0100
+Subject: [PATCH] lib/test_kasan: add roundtrip tests
+
+In several places we needs to be able to operate on pointers which have
+gone via a roundtrip:
+
+	virt -> {phys,page} -> virt
+
+With KASAN_SW_TAGS, we can't preserve the tag for SLUB objects, and the
+{phys,page} -> virt conversion will use KASAN_TAG_KERNEL.
+
+This patch adds tests to ensure that this works as expected, without
+false positives.
+
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Cc: Andrey Konovalov <andreyknvl@google.com>
+Cc: Will Deacon <will.deacon@arm.com>
+---
+ lib/test_kasan.c | 40 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+
+diff --git a/lib/test_kasan.c b/lib/test_kasan.c
+index b63b367a94e8..cf7b93f0d90c 100644
+--- a/lib/test_kasan.c
++++ b/lib/test_kasan.c
+@@ -19,6 +19,8 @@
+ #include <linux/string.h>
+ #include <linux/uaccess.h>
+ 
++#include <asm/page.h>
++
+ /*
+  * Note: test functions are marked noinline so that their names appear in
+  * reports.
+@@ -337,6 +339,42 @@ static noinline void __init kmalloc_uaf2(void)
+ 	kfree(ptr2);
+ }
+ 
++static noinline void __init kfree_via_page(void)
++{
++	char *ptr;
++	size_t size = 8;
++	struct page *page;
++	unsigned long offset;
++
++	pr_info("invalid-free false positive (via page)\n");
++	ptr = kmalloc(size, GFP_KERNEL);
++	if (!ptr) {
++		pr_err("Allocation failed\n");
++		return;
++	}
++
++	page = virt_to_page(ptr);
++	offset = offset_in_page(ptr);
++	kfree(page_address(page) + offset);
++}
++
++static noinline void __init kfree_via_phys(void)
++{
++	char *ptr;
++	size_t size = 8;
++	phys_addr_t phys;
++
++	pr_info("invalid-free false positive (via phys)\n");
++	ptr = kmalloc(size, GFP_KERNEL);
++	if (!ptr) {
++		pr_err("Allocation failed\n");
++		return;
++	}
++
++	phys = virt_to_phys(ptr);
++	kfree(phys_to_virt(phys));
++}
++
+ static noinline void __init kmem_cache_oob(void)
+ {
+ 	char *p;
+@@ -737,6 +775,8 @@ static int __init kmalloc_tests_init(void)
+ 	kmalloc_uaf();
+ 	kmalloc_uaf_memset();
+ 	kmalloc_uaf2();
++	kfree_via_page();
++	kfree_via_phys();
+ 	kmem_cache_oob();
+ 	memcg_accounted_kmem_cache();
+ 	kasan_stack_oob();
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
