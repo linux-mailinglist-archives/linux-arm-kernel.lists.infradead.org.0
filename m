@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28BB892418
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 15:02:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED8CD9241C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 15:02:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=GzcP66efJhZfoMphK3p+IkaCcUpjhVnsuJxSVVyfI4I=; b=stqJhxlKpLhJf9p6HR24NzgVED
-	kRCWlkpjI4p/GidkmjxzdqZ1/HKthP4TgVRA3r5WQLqfygZxsMrMVRjcCGtnXitPUvQH9fvmiaCtE
-	g7tXUIL4iRBSk6Bw2MFUuW4NXpR5K2YNkGsL/QU8Om3aQBiB0iwggtz1chY4oOZeaPAUzFk+xOL8J
-	eZ7wXCBDX7De+9FhEDm+8eusQkn/YFZtvqOz26YWy1lf95vdmzHXdztmQEdV17emhmyzpDy/mOwwa
-	arph1B461v2myMOS6VM8/gyNg79ojf44ThNyvGdOp/0NvhoYx08QnxmyVOJMFEXlaGWPTO3YrqdDe
-	Lx+MXBIQ==;
+	bh=eZYXm80IJTsuJNvvgEh9TkT96zv/i4k+guvkU1KpMIY=; b=llvzChFAYD4RrxFxLNzbDjX+MW
+	3O+GH5VG+uwgIpflO6yhipylN+F47SJorQAo5Q0u94UXsI7hOXdT/VfKxykHGS4JTxDzXWTLX9+ba
+	NraErN4aovbYtwB+VxkpXdstx+xWgiFZYtttrVAjELqHrvm+mZtu95D77j9ZUFfKk+Oq9PGAVQQDd
+	uD2fjc/+fo/wJEEB+TxG26Jctl7c/1rCwrbdQWKPB+jasN1w7uhKI9a1F+0YF+Ywgh+VJtU1Un+r5
+	bXN+zF2UGuH+PBNCqnpW26U35qYvrK5XLTObiIea2+1izWpBkl2RaBaAwO7sqQgWa2iOKC+9SKqhq
+	qm7sqYVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzhIg-0000zh-P3; Mon, 19 Aug 2019 13:02:18 +0000
+	id 1hzhIu-0001GJ-TY; Mon, 19 Aug 2019 13:02:32 +0000
 Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzhIR-0000r9-Uq
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 13:02:05 +0000
-Received: by mail-pl1-x641.google.com with SMTP id t14so936650plr.11
+ id 1hzhIU-0000wQ-GV
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 13:02:07 +0000
+Received: by mail-pl1-x641.google.com with SMTP id z3so949039pln.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 06:02:02 -0700 (PDT)
+ Mon, 19 Aug 2019 06:02:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=70nxwZafCYlFjcUnZixCqBC0Lk3FuIHCQ+uw4WwvqpE=;
- b=kRbdUQecsr5QHKl+P1TtO20EsX7vl6bofQEVYRamOy0xxhn52UCo7x6pVlYA+v5drN
- JR7JzqrTUlQ24hee8AyQWh17A1leKgseAR8xY1wCUm0aZtEJcXA5L7R69e6JRyJyBsJg
- FbEJ1SZvSA/WAFK5CU3kNaZDiR2OzlY/DW9cXB5Ko81ryQCR4yhGUxKz2eHR1OJJYZ/U
- y5gcc5hXtrBpVRE158eZCRBL49iepq+au58cuvL7eA45tUJ57r5y7RIRS/7X+3ZDVQ8V
- y7eLpNQD6QX/WqLB/jVeRO3d6hy4cXRX/avlYmDdAB+ySxi77djSiDnPrd1LeAXyvzFy
- xRCw==
+ bh=a/DBFL5pnFxmW7r8pfJ654oUFkPKTYmOJJb8EXbuSt0=;
+ b=dySa7ATxoTasTk05EATgNFRHNdWVLW6HZbVnRpJiMJgFbp1vdwTgL8L915UDlkqLUL
+ RJx55z77meqhw4zi2L6edCi5tvTlDU/1T37Pma4SawsNezG5zR4aH0jCw8QO0h/1Gyb9
+ AZHdkiYXBxRxul1+lONCQw8sYFvcb+e8eq6uUVdCb0msdXlx+biD8xMQ/5R7n8vwHtDg
+ rB2yI0MM3m17q/uhCjS5dVl8O5ZZh98AhElapo4Cu0+QfLx7hWyFZZW9exoMrAuTeRhF
+ s+r7uH0cvYdxdwtcYgsX1+WneDulTI4mDOWCJ5QiK+zTubLeaiB7AHun6Ogpbk0DYW53
+ +xTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=70nxwZafCYlFjcUnZixCqBC0Lk3FuIHCQ+uw4WwvqpE=;
- b=OI1Dq3KPYtcSI82IGuhozHjNN83oZnFlqlY5yOu3XEHuidoeLqpYAoI4d6j4ObAQXo
- qXODH3EScv4SwmbSHOks2D82fBuCeTPBQdaFvI2ovX2u3g9Zd0l1kg8ryneuPFcBmR2g
- H1FvKrlhJP9fD5RhHBNmgLLUVMYygcR57OkAL2/Teiofv5hD165ibv5fi4cghylGuIP1
- Zug+1Vd0MeoOkA3xpqaoRffZrsACxQ4fAWy65WExXR5Vi/RoG0w6ykGCJTQNjLlb2QNp
- vitNZE+lLvY8KoKGT6ie4Ta6R5ttpPrX76T9S8NsBR/7qk9Vs9hyWJz0+A6Elr2JUVkI
- KUKA==
-X-Gm-Message-State: APjAAAWiW60xuomeBlm00vrsfGc2avQzYA5KI0Oz0YF85tsdFrNQJvpT
- NY9igQOU/GXwkjofKN7oogVq
-X-Google-Smtp-Source: APXvYqzIJeKTT2sTPwuWm/ZOaSwja3rS2vyAc3OwiPxIxqONpU/2Nq1Q0YRO6tWZsc9Der/3EdjrvQ==
-X-Received: by 2002:a17:902:a40d:: with SMTP id
- p13mr7460089plq.92.1566219722377; 
- Mon, 19 Aug 2019 06:02:02 -0700 (PDT)
+ bh=a/DBFL5pnFxmW7r8pfJ654oUFkPKTYmOJJb8EXbuSt0=;
+ b=Huave44oPgoWis5jOhZN+9CHO4mQrYuqcmNGLXuRNIXCRcpvqk+9qTzCY7nOE4Otor
+ JFVPk7bcsTiriOtASaA4jvMt6l367wbVgdjiEojDBw/mFQ25ZhXMfVkhItT+izcdn5E0
+ roQwqXR57ciBbAwVdBZRcrPYPcSTZNfoey1zj86YBwG21GcDn0YJEvykFBdXYkdEew19
+ eJab3dNb0oO556zJaeKE92DJzGnpdF2skSiO/R4wYLRKDfDRIPRl0oHN573Z/JaUFYsa
+ DiWcEjaTSzoE9vEflL0iBF/Jc80ZEhGjC4s8dKe0/6g/r7UGRgDhaZNYpBZSyUC+humn
+ zTAg==
+X-Gm-Message-State: APjAAAU6LU2KnGEm1lshoTbKseJUK/Ud9Wr76nnwC5pTwx7y0z+IMpAv
+ PY/DKsKwbaUUohwIY2GYP1gt
+X-Google-Smtp-Source: APXvYqwfeUSVY+I+BE91ywKdosPDIWZNOPP+2KWQYwaDjVu4qL2UF2abRKSgkBQ77/hFHxq1DzSvDg==
+X-Received: by 2002:a17:902:860b:: with SMTP id
+ f11mr2458432plo.48.1566219726008; 
+ Mon, 19 Aug 2019 06:02:06 -0700 (PDT)
 Received: from localhost.localdomain ([103.59.133.81])
- by smtp.googlemail.com with ESMTPSA id l123sm20626464pfl.9.2019.08.19.06.01.58
+ by smtp.googlemail.com with ESMTPSA id l123sm20626464pfl.9.2019.08.19.06.02.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 19 Aug 2019 06:02:01 -0700 (PDT)
+ Mon, 19 Aug 2019 06:02:05 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: sboyd@kernel.org,
 	mturquette@baylibre.com,
 	robh+dt@kernel.org
-Subject: [PATCH v3 1/8] clk: Zero init clk_init_data in helpers
-Date: Mon, 19 Aug 2019 18:31:36 +0530
-Message-Id: <20190819130143.18778-2-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v3 2/8] clk: Warn if clk_init_data is not zero initialized
+Date: Mon, 19 Aug 2019 18:31:37 +0530
+Message-Id: <20190819130143.18778-3-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190819130143.18778-1-manivannan.sadhasivam@linaro.org>
 References: <20190819130143.18778-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_060204_021501_4CF2BC9C 
-X-CRM114-Status: GOOD (  13.10  )
+X-CRM114-CacheID: sfid-20190819_060206_618165_7973209A 
+X-CRM114-Status: GOOD (  12.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,84 +109,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The clk_init_data struct needs to be initialized to zero for the new
-parent_map implementation to work correctly. Otherwise, the member which
-is available first will get processed.
+The new implementation for determining parent map uses multiple ways
+to pass parent info. The order in which it gets processed depends on
+the first available member. Hence, it is necessary to zero init the
+clk_init_data struct so that the expected member gets processed correctly.
+So, add a warning if multiple clk_init_data members are available during
+clk registration.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/clk/clk-composite.c  | 2 +-
- drivers/clk/clk-divider.c    | 2 +-
- drivers/clk/clk-fixed-rate.c | 2 +-
- drivers/clk/clk-gate.c       | 2 +-
- drivers/clk/clk-mux.c        | 2 +-
- 5 files changed, 5 insertions(+), 5 deletions(-)
+ drivers/clk/clk.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/clk/clk-composite.c b/drivers/clk/clk-composite.c
-index b06038b8f658..4d579f9d20f6 100644
---- a/drivers/clk/clk-composite.c
-+++ b/drivers/clk/clk-composite.c
-@@ -208,7 +208,7 @@ struct clk_hw *clk_hw_register_composite(struct device *dev, const char *name,
- 			unsigned long flags)
- {
- 	struct clk_hw *hw;
--	struct clk_init_data init;
-+	struct clk_init_data init = { NULL };
- 	struct clk_composite *composite;
- 	struct clk_ops *clk_composite_ops;
- 	int ret;
-diff --git a/drivers/clk/clk-divider.c b/drivers/clk/clk-divider.c
-index 3f9ff78c4a2a..65dd8137f9ec 100644
---- a/drivers/clk/clk-divider.c
-+++ b/drivers/clk/clk-divider.c
-@@ -471,7 +471,7 @@ static struct clk_hw *_register_divider(struct device *dev, const char *name,
- {
- 	struct clk_divider *div;
- 	struct clk_hw *hw;
--	struct clk_init_data init;
-+	struct clk_init_data init = { NULL };
- 	int ret;
+diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+index c0990703ce54..7d6d6984c979 100644
+--- a/drivers/clk/clk.c
++++ b/drivers/clk/clk.c
+@@ -3497,6 +3497,14 @@ static int clk_core_populate_parent_map(struct clk_core *core)
+ 	if (!num_parents)
+ 		return 0;
  
- 	if (clk_divider_flags & CLK_DIVIDER_HIWORD_MASK) {
-diff --git a/drivers/clk/clk-fixed-rate.c b/drivers/clk/clk-fixed-rate.c
-index a7e4aef7a376..746c3ecdc5b3 100644
---- a/drivers/clk/clk-fixed-rate.c
-+++ b/drivers/clk/clk-fixed-rate.c
-@@ -58,7 +58,7 @@ struct clk_hw *clk_hw_register_fixed_rate_with_accuracy(struct device *dev,
- {
- 	struct clk_fixed_rate *fixed;
- 	struct clk_hw *hw;
--	struct clk_init_data init;
-+	struct clk_init_data init = { NULL };
- 	int ret;
- 
- 	/* allocate fixed-rate clock */
-diff --git a/drivers/clk/clk-gate.c b/drivers/clk/clk-gate.c
-index 1b99fc962745..8ed83ec730cb 100644
---- a/drivers/clk/clk-gate.c
-+++ b/drivers/clk/clk-gate.c
-@@ -141,7 +141,7 @@ struct clk_hw *clk_hw_register_gate(struct device *dev, const char *name,
- {
- 	struct clk_gate *gate;
- 	struct clk_hw *hw;
--	struct clk_init_data init;
-+	struct clk_init_data init = { NULL };
- 	int ret;
- 
- 	if (clk_gate_flags & CLK_GATE_HIWORD_MASK) {
-diff --git a/drivers/clk/clk-mux.c b/drivers/clk/clk-mux.c
-index 66e91f740508..2caa6b2a9ee5 100644
---- a/drivers/clk/clk-mux.c
-+++ b/drivers/clk/clk-mux.c
-@@ -153,7 +153,7 @@ struct clk_hw *clk_hw_register_mux_table(struct device *dev, const char *name,
- {
- 	struct clk_mux *mux;
- 	struct clk_hw *hw;
--	struct clk_init_data init;
-+	struct clk_init_data init = { NULL };
- 	u8 width = 0;
- 	int ret;
- 
++	/*
++	 * Check for non-zero initialized clk_init_data struct. This is
++	 * required because, we only require one of the (parent_names/
++	 * parent_data/parent_hws) to be set at a time. Otherwise, the
++	 * current code would use first available member.
++	 */
++	WARN_ON((parent_names && parent_data) || (parent_names && parent_hws));
++
+ 	/*
+ 	 * Avoid unnecessary string look-ups of clk_core's possible parents by
+ 	 * having a cache of names/clk_hw pointers to clk_core pointers.
 -- 
 2.17.1
 
