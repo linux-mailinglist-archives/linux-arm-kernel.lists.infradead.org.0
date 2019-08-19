@@ -2,65 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6978E91DD1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 09:30:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D43191DC7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 09:27:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZnIJNU5EVRtUUShxH0vuC2kVGEOm0DFPqq6wrMdpu1g=; b=cj8AMI6Z9Z32+/
-	nsso+TiUC1q9Q5znavtykgqcoE5rSz1ciWdIv1z/aCZorJU7ubKos5KnS9hBKC5yzenA3ZxsrXMTN
-	4n3giEAIvVKDZORRaahvzt46T4SSBgl25pi9Yhbl3uipqwMeOIyEbuwhdf4hzEI/rRK0yBnfQTQfk
-	0GqGZ2eZ5nZznqmmvefepo4VLpNZchQ8jkIi56P+8GZi1uqCfPx/tlB5KQ+j3cNuBv6HTpkELg+4Q
-	+b5wvut003jUo2joJHhroJbh/e6O73e/eUg4S/2h5yPaBeY+a1KXVHg2Srd5E2fa/b9odorOxkcN8
-	7kKFJb9fiicSQNmHQVEQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zqyMng4S8arwDv+R4Qxt4yJdiLItS2vip0jFw6dssD0=; b=tMZ7e7WlrIhBCN
+	Mudvwc9+xeyjsuYrHVaEh8F9nDcHUYS4tsQfdq3TqHoXUqVtwl2oSD8ItdIhGZolHENQ3bAcatvxp
+	J1RDY59UWHOH8G1QTKUB4w+AoJW8hmv8xjmnNbNmo7NiZvhfoJ4oySEDlz13L/tPxORCCAmNXhUpA
+	ZY7U9ylCt161sNavynKbRwvjmc5IDRgEyMX5GgcK8IiHyeQlmvCrud7U0fsF06PBdPRsdzAkf/WY4
+	iWyYOopSG19zd+C9D2bTV7/+Jzx0ouvsuO4cK/BDsTK3Pi/tHTs0CcgDfRG16t19E4ENQ9H+MsPuG
+	DK3Phnp5j1kZMEqaB33w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzc6z-0007Ka-0o; Mon, 19 Aug 2019 07:29:53 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1hzc4k-0006NA-Kb; Mon, 19 Aug 2019 07:27:34 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzc6g-0007Jz-9G
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 07:29:35 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 19 Aug 2019 00:27:59 -0700
-X-IronPort-AV: E=Sophos;i="5.64,403,1559545200"; d="scan'208";a="177797511"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by fmsmga008-auth.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 19 Aug 2019 00:27:52 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id 09D1F202FC; Mon, 19 Aug 2019 10:26:22 +0300 (EEST)
-Date: Mon, 19 Aug 2019 10:26:21 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Hugues FRUCHET <hugues.fruchet@st.com>
-Subject: Re: [PATCH v6 2/4] media: stm32-dcmi: trace the supported
- fourcc/mbus_code
-Message-ID: <20190819072621.GZ6133@paasikivi.fi.intel.com>
-References: <1565790533-10043-1-git-send-email-hugues.fruchet@st.com>
- <1565790533-10043-3-git-send-email-hugues.fruchet@st.com>
- <20190816081514.GU6133@paasikivi.fi.intel.com>
- <fb02573f-991a-18c5-b780-b5fc100da6a8@st.com>
+ id 1hzc4T-0006Mc-Vu; Mon, 19 Aug 2019 07:27:19 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 129so657825pfa.4;
+ Mon, 19 Aug 2019 00:27:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VQRIe3TChFRyXdxRGe3aSOX8NvTgeh2sO+MrQdRfJfQ=;
+ b=X41GCFmjZE+53yWhhAhv+BG9ETVRpdLMB39GhtJePpASGXI66HFO3qalN7vAdwxzKo
+ 2qIDZUakhTxlNhyUSrZy4vY+ZERhEDtdlalGYfSgVdB0cQYxB4WZZVk85Vm6njBK8AR5
+ HkD6qPu9LaZkVeFLX1sJyIEgU4BdywADTfKNfFLvYvIYtuuVLq+MrVj7zegdoO4t3ESX
+ 7kb5rJ0IiNbeQelLmXzpV31uhBCkkRixcU9zV2E+3bgY8piX9LKc8+bNc2H5ondH86+s
+ O588PvL8t7wv4gAd3Z84plQCoW3/WEAAewpHGOFYMRmdmmUh9R239zobJGGU07jYi5Yb
+ TwJA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VQRIe3TChFRyXdxRGe3aSOX8NvTgeh2sO+MrQdRfJfQ=;
+ b=DlQHLgciV88AlAOw8hiBdOlkJ2QonK4QptFYSRWJZyxpB5ZBkT9/PqL6cdPXIDbK/J
+ o/ihU8AR8TzLQGrep3VLC4uaDb/hugrKW+DDdPJmUVhzV8yhyDwdTsgcmVM0g3cdhAhs
+ fcSLOLcwiH5MHW+c4h+lKAzcDCQ8joOjiaGZTkWlqjXUjTdjtI1UEofjsKtfvlA5sLaA
+ dawrbQ8u2pstEyEA7vLddY795p17Wizgy2fprutYNKk0Z6uet2SvMyp6c/5hXMIoz3L1
+ ddNFJetksImWajH8XtCCWImeOFfdBN5LhsoAgDQoOoepq8QcEvuiGHndMygLPmZrNHnx
+ lZog==
+X-Gm-Message-State: APjAAAVsODm1ELoZJ7toaFZYy36g+Tgi6kxEIbct33wSLWW9/FDww1f2
+ EUmadVNPTjHxV98fggNlbIBvt2s4
+X-Google-Smtp-Source: APXvYqzhl7TSi883y2yAyMZn4MZoHhDOoBmIbs55kK1oFVR+R13YRJoVT+8P0NhIlGTWusuc4QduiA==
+X-Received: by 2002:a17:90a:17ab:: with SMTP id
+ q40mr19679774pja.106.1566199637529; 
+ Mon, 19 Aug 2019 00:27:17 -0700 (PDT)
+Received: from localhost.localdomain ([110.225.16.165])
+ by smtp.gmail.com with ESMTPSA id p1sm14994814pfn.83.2019.08.19.00.27.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 19 Aug 2019 00:27:17 -0700 (PDT)
+From: Nishka Dasgupta <nishkadg.linux@gmail.com>
+To: khilman@baylibre.com, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org
+Subject: [PATCH] soc: amlogic: meson-gx-socinfo: Add of_node_put() before
+ return
+Date: Mon, 19 Aug 2019 12:57:06 +0530
+Message-Id: <20190819072706.31732-1-nishkadg.linux@gmail.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <fb02573f-991a-18c5-b780-b5fc100da6a8@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_002934_360617_18E26435 
-X-CRM114-Status: GOOD (  19.22  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190819_002718_029708_D1D5ED8E 
+X-CRM114-Status: GOOD (  10.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (nishkadg.linux[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,79 +97,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yannick FERTRE <yannick.fertre@st.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- Mickael GUENE <mickael.guene@st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Philippe CORNU <philippe.cornu@st.com>, Hans Verkuil <hverkuil@xs4all.nl>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Hugues,
+The variable np in function meson_gx_socinfo_init takes the return value
+of of_find_compatible_node, which gets a node but does not put it. If
+this node is not put it may cause a memory leak. Hence put np after its
+usefulness has been exhausted.
+Issue found with Coccinelle.
 
-On Mon, Aug 19, 2019 at 07:23:17AM +0000, Hugues FRUCHET wrote:
-> Hi Sakari,
-> 
-> On 8/16/19 10:15 AM, Sakari Ailus wrote:
-> > Hi Hugues,
-> > 
-> > On Wed, Aug 14, 2019 at 03:48:51PM +0200, Hugues Fruchet wrote:
-> >> Add a trace of the set of supported fourcc/mbus_code which
-> >> intersect between DCMI and source sub-device.
-> >>
-> >> Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
-> >> ---
-> >>   drivers/media/platform/stm32/stm32-dcmi.c | 12 ++++++++++--
-> >>   1 file changed, 10 insertions(+), 2 deletions(-)
-> >>
-> >> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-> >> index b462f71..18acecf 100644
-> >> --- a/drivers/media/platform/stm32/stm32-dcmi.c
-> >> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
-> >> @@ -1447,12 +1447,20 @@ static int dcmi_formats_init(struct stm32_dcmi *dcmi)
-> >>   			/* Code supported, have we got this fourcc yet? */
-> >>   			for (j = 0; j < num_fmts; j++)
-> >>   				if (sd_fmts[j]->fourcc ==
-> >> -						dcmi_formats[i].fourcc)
-> >> +						dcmi_formats[i].fourcc) {
-> >>   					/* Already available */
-> >> +					dev_dbg(dcmi->dev, "Skipping fourcc/code: %4.4s/0x%x\n",
-> >> +						(char *)&sd_fmts[j]->fourcc,
-> >> +						mbus_code.code);
-> >>   					break;
-> >> -			if (j == num_fmts)
-> >> +				}
-> >> +			if (j == num_fmts) {
-> >>   				/* New */
-> >>   				sd_fmts[num_fmts++] = dcmi_formats + i;
-> >> +				dev_dbg(dcmi->dev, "Supported fourcc/code: %4.4s/0x%x\n",
-> > 
-> > Over 80 characters per line.
-> > 
-> 
-> This an exception of the "80 chars" in order to be able to grep in 
-> kernel messages:
-> https://www.kernel.org/doc/html/v4.10/process/coding-style.html
-> "However, never break user-visible strings such as printk messages, 
-> because that breaks the ability to grep for them."
-> 
-> This exception is managed in checkpatch.pl (--strict).
+Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+---
+ drivers/soc/amlogic/meson-gx-socinfo.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-This exception is for cases where wrapping the line in the usual way, e.g.
-at argument boundaries, does not prevent it exceeding 80 characters. But it is
-not the case here.
-
+diff --git a/drivers/soc/amlogic/meson-gx-socinfo.c b/drivers/soc/amlogic/meson-gx-socinfo.c
+index bca34954518e..13695a72c695 100644
+--- a/drivers/soc/amlogic/meson-gx-socinfo.c
++++ b/drivers/soc/amlogic/meson-gx-socinfo.c
+@@ -138,8 +138,10 @@ static int __init meson_gx_socinfo_init(void)
+ 	}
+ 
+ 	/* check if chip-id is available */
+-	if (!of_property_read_bool(np, "amlogic,has-chip-id"))
++	if (!of_property_read_bool(np, "amlogic,has-chip-id")) {
++		of_node_put(np);
+ 		return -ENODEV;
++	}
+ 
+ 	/* node should be a syscon */
+ 	regmap = syscon_node_to_regmap(np);
 -- 
-Sakari Ailus
-sakari.ailus@linux.intel.com
+2.19.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
