@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54D6194E04
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:27:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D3DC94E1D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:29:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nvg9sMmwFu3sE4lnH6Zt6V1OxGMAT0O3yQPUrboU71U=; b=ccqLMqorqX5Ttq
-	5Asz0SSRxjEEyd1lWDmdsu0SO28g+kcFRMXxvR4g4GS5S4TKvywirWlOPQJC/7SrleWQ5snh+nuak
-	wBdkYjEK9glx+dtdrO1mGzMyL4xpLsrqJJi30cToo6Om2RZfPmGv8Vd+qpqxox2c9b0mym+vTajCe
-	PM8i1iJq9nMfcIS0agryGZIJxzFscBDJDJdRByif4I4ssx3n0Jtt03QT/7E9AOu8y6G9zwWl7ihnM
-	5Rq6r8u4PLCrI+3+7s4biqk1mZ+6q1mbWnkHR5ZhSeT/GJUZblNVvpvJDuL/BNnZ7de3otW/dpkH7
-	nk4u0EllZbIJbp7IXVlg==;
+	List-Owner; bh=sLo5yUNLP0NB4pRsZCg41hg3Z8om/oPZVU024GCkUM8=; b=KQ03mYKhToIWE5
+	zMan5DX4NBK+6D2Z0aJgYS080S55ndl4aXS2VemyPFf4Z3yRaa3SgiRmLw/JoF9F2REvHuYMAJHmb
+	UhHgXATXrHsNHwzpYs90CntwZhnKxkRF44jalffUfEHiAfGTcIRMjrZXIWQiuulBL06bpsYjftroj
+	y86skWDX9oOAYOUdsbph0LkLRud1OMTjUNR5oCJ8OamXJbdWhOa8jXMUsLqsMamQwA+nn7kfmkBgy
+	v92kFoTB5Va2cRfkKYpVFhVyRxkyYFGkuuXhVgcWCRY87hdLdDo9gREmlonAqy6a2A/F0TeClZqwZ
+	iw1RgBATBcYHtf8VRoqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hznJj-000128-Fw; Mon, 19 Aug 2019 19:27:47 +0000
+	id 1hznL5-0001wd-Ex; Mon, 19 Aug 2019 19:29:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hznHf-0008U6-8c
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:25:40 +0000
+ id 1hznHi-0008WV-7f
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:25:43 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 19BD2206C1;
- Mon, 19 Aug 2019 19:25:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2009922CF5;
+ Mon, 19 Aug 2019 19:25:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566242738;
- bh=KWvMAVh8158Vfot7bGOe/TZP6z7v55KtdLwvGs8+fyY=;
+ s=default; t=1566242741;
+ bh=yQu3KA9uqkzoaxptkeyVKeN20q0tJpYXRmR37E58l3E=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Rl8cyP+EOopS1H4rho1U/AiNRXHlyHm53mEiFLDzajk2B8TlmRoa1ogWcWL/12kro
- YOby6qvoM/VYXrXOe8an/y9R59mtvrUvlM5y9AfycmsJahHL7kWkYNeZnGmyt/6UW/
- RsWACt/0oxJL+R6W7/DSKGwDFhJKItIy4lgpLFdY=
+ b=puQPRqod9ydcPwLIv4SHOwPmIEjObuVGpVdDPed2UhUb8ESnQCtHpKGwr6g/LNbup
+ 2ysPweAL8ia8DX9Ew0T6NA73fd78Zo7cWCJXlHZt0N+xlV4EC4DiBz0cnsqLCEDBBF
+ c1hu5ZrZsRV8VO7GSp4STN6dONOxi00YHEJPoslQ=
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
  lgirdwood@gmail.com, broonie@kernel.org
-Subject: [PATCH 02/21] ASoC: sun4i-i2s: Switch to devm for PCM register
-Date: Mon, 19 Aug 2019 21:25:09 +0200
-Message-Id: <606d271187091e858e8c15e20555af0b79798fe1.1566242458.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH 03/21] ASoC: sun4i-i2s: Replace call to params_channels by
+ local variable
+Date: Mon, 19 Aug 2019 21:25:10 +0200
+Message-Id: <c0faaac69ad40248f24eed3c3b2fa1ccc4a85b70.1566242458.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_122539_399395_B595602A 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20190819_122542_483877_52CFBD10 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,37 +86,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-Since the introduction of the driver, a new managed helper for the
-dmaengine PCM registration has been created. Let's use it to simplify a bit
-our probe and remove functions.
+The sun4i_i2s_hw_params already has a variable holding the value returned
+by params_channels, so let's just use that variable instead of calling
+params_channels multiple times.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
- sound/soc/sunxi/sun4i-i2s.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ sound/soc/sunxi/sun4i-i2s.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
 diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index 85c3b2c8cd77..1ed7670eae9c 100644
+index 1ed7670eae9c..ac84c29224eb 100644
 --- a/sound/soc/sunxi/sun4i-i2s.c
 +++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -1154,7 +1154,7 @@ static int sun4i_i2s_probe(struct platform_device *pdev)
- 		goto err_suspend;
- 	}
+@@ -411,10 +411,9 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
  
--	ret = snd_dmaengine_pcm_register(&pdev->dev, NULL, 0);
-+	ret = devm_snd_dmaengine_pcm_register(&pdev->dev, NULL, 0);
- 	if (ret) {
- 		dev_err(&pdev->dev, "Could not register PCM\n");
- 		goto err_suspend;
-@@ -1185,8 +1185,6 @@ static int sun4i_i2s_remove(struct platform_device *pdev)
- {
- 	struct sun4i_i2s *i2s = dev_get_drvdata(&pdev->dev);
- 
--	snd_dmaengine_pcm_unregister(&pdev->dev);
+ 	/* Configure the channels */
+ 	regmap_field_write(i2s->field_txchansel,
+-			   SUN4I_I2S_CHAN_SEL(params_channels(params)));
 -
- 	pm_runtime_disable(&pdev->dev);
- 	if (!pm_runtime_status_suspended(&pdev->dev))
- 		sun4i_i2s_runtime_suspend(&pdev->dev);
++			   SUN4I_I2S_CHAN_SEL(channels));
+ 	regmap_field_write(i2s->field_rxchansel,
+-			   SUN4I_I2S_CHAN_SEL(params_channels(params)));
++			   SUN4I_I2S_CHAN_SEL(channels));
+ 
+ 	if (i2s->variant->has_chsel_tx_chen)
+ 		regmap_update_bits(i2s->regmap, SUN8I_I2S_TX_CHAN_SEL_REG,
 -- 
 git-series 0.9.1
 
