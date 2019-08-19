@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03C6F923F2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 14:56:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA67E923F5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 14:56:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=JKlTh/7viIGKmY0G235PgzZ+iRnmkwVAQZbol2Oh9ts=; b=TQe
-	IClNP2gHTr3+bvWT4ShhrCpI6U+YRI2t+z26FDOZ9cwz/FnzVYt3mcqzxYmZGaNAc77W/QIsmWZdp
-	pGVaxw+QMaUXxh0BHodmnnFVLuMUUTWdeRsGab1sWT7SLeoSX93V9g+ejuFzEOgdMx483VxbW/t0e
-	agsJPIjsuo2W9DLRkpzxeHiOEOa9R4WwOeUdldSCgyjSGKoymS/opS7gTYT36IqPoMX61R8WkmFLs
-	zlJ7Q30dP4oRbDWotqAj5Nj6doHsqIzh6XwZCDnPWX1Uj6BnGTE14f3pbuZtUjq7A9D7S62gGfZnZ
-	5xAtMvwLL47adsmzTPbc4n/lYwhvfQA==;
+	References:List-Owner; bh=do5EEQSoA054yU4bUB2TGTIf0HCPEkQJyRj7liSc71Y=; b=kSg
+	/rh1CH1hf5zp4cZZnCJIpopH+iR3LNs+jdg/HKns6qfZYqI/AZk2ZMyRoKk5Gr2KrMuCx0Jyt7qm5
+	c494kbCpNg93mSdjoGC0GkHYxzCAH0lD6nyB24pL86KkG3RyfjqQiUangJvBttMczxID0T29ONglN
+	t0BLUprWtDlN8z/Ar9r0DTnB5Vk5+P+I31fMca+KO4YH8CP4PDha3rU3OUN2rmHmjh5eZIPsmAe3I
+	seFWaO6snUDC0Jyo1RsWJABF17sOfa6aInQ29SQlj7uCLl8ITU8NnaXod8BxNLxT2cH6hmO3DHk9A
+	DvdbYOWUKEH7e3ISmlCAwSekHB1VHHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzhCa-00061K-4s; Mon, 19 Aug 2019 12:56:00 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hzhCu-0006KB-VZ; Mon, 19 Aug 2019 12:56:20 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzhCR-00060Y-SH
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 12:55:53 +0000
-Received: by mail-pf1-x443.google.com with SMTP id w16so1132637pfn.7
+ id 1hzhCk-0006Is-21
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 12:56:12 +0000
+Received: by mail-pg1-x542.google.com with SMTP id k3so1176333pgb.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 05:55:51 -0700 (PDT)
+ Mon, 19 Aug 2019 05:56:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=v5qVhsj1Sh0huonK/swWihX+DCDDmRO1aGyC58oJV4s=;
- b=Ic5eSyZyZrVLzC/MLRQ83pEC+DBw04beNBU7MbyhOl4si0cNUiosvpb2Bedm62EKdq
- yxCSNGsTNI3CWUGDrUMVTsvjEe0hnhg6deXIURViDKnaCW98sG1DvE1SFUsD1Zby6sEV
- MYbFYTVm1+G53k/BJ8WdTyNyY2fwUGuzz6YwYNQwUhlga0C+YqfNHymHPIM8xoIgPo4Z
- xATeGD7jSnvwB/8fwz++/fy7ZeaSaRqhsGcWvDPldJSlHr677Olta1LZRHB3oJnV2IQL
- gOjiRhzKHW1aSiZb/ZlG9sFYTCA4EPYTwKTcwEW9u4gIgNb3a1JenRYQEGI2VqwtxjNr
- fOwg==
+ bh=1kPpq697KE4I4yTusDLL7kboeTs5chvAdrFun387Jig=;
+ b=b3L2uHkONuGXDGC5PLbTt27tgkTdwhspafLb7YHiU0YjK67gzft+AmjfL6mvmXWfCM
+ 52SdPnCgOOYzjKuYPOLsHhvs94SI7kfrdsmYFQLAXor0ApQp9pHQnkKIQkoZSgppy55O
+ Hre7nEX0vczfsXyQ6oTIEHGetwAHSx8oDKNlMzOdke22kgpTjSRCZR91TRebPsMAvAec
+ NF2S6JKh6OxOLrTSdah6rWTskw+ysdFcuKYBViCz0pa7UxlhWPb3x9K/ITQ/eEVpgcTy
+ fWYMlK7N7zk5Rg0NYjZ0jnllJtURvZmt/Fl+8lOMCGStL2JKYNpV3+RaPzkKtGWkyaNI
+ v58A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=v5qVhsj1Sh0huonK/swWihX+DCDDmRO1aGyC58oJV4s=;
- b=RIqODZLq4YGGuoRwzynuQG9wKpcD2X9q7z6g4s0qhjHjr/dZ0wuwHNPuxmBrK7K/Un
- UA40w/DTLRLN60IAGo6wzey+6HJl14aY9Ff2MQgJ6Cv9FSvdQ/U35XKYYwz5T4QJYw/o
- feMnplaMw/jw031FBVCFmvYVqlLFvteVLO84+owHzHcSkklQU/mVDk0/YwHxyd0HiyIm
- E+KaSNdDgaaBmUhkaJqzqK70AI8RA33YMWbJeTtHEvziXiKbFhKroTHwJ3FZERaKDQFW
- Gx0tRISVsTymyCBcyBYmLhHJ3Ex3X20KcCFc0Aex0Uccxx7ALM3gZtlP8licbiKXMPNR
- Gfeg==
-X-Gm-Message-State: APjAAAWbf5rQgFfmEZ6jJjBP03f8nUOyvA2Hk/vWQK2OiAcoFM5eIz+i
- 802ebeVvydGmm3DItWUlwYc=
-X-Google-Smtp-Source: APXvYqzjZ55GlzrZenjUQbO/L8WqYRgNiYv2ZUlFlqICGOE+HpVHDfzLW0WkM0hfQGIjsQKapBL9ew==
-X-Received: by 2002:a63:101b:: with SMTP id f27mr19040919pgl.291.1566219351382; 
- Mon, 19 Aug 2019 05:55:51 -0700 (PDT)
+ bh=1kPpq697KE4I4yTusDLL7kboeTs5chvAdrFun387Jig=;
+ b=PLMvc4ApzfKrPEWnvmUmLVU4Ly834H/x/1fAJ5ty4OATXEBi4s/+xFC3uQ0Rjh/LXS
+ YVfYEl7gLD24Lw0Q9XvYZJdiliL33cH2jRLoaLPu02iQjmMlH8boN2BvWNscwTGaq2td
+ Tj66L48B1LyiPsFQtLeXUt8Ah3nxrd1TZHXLPwlYtrz34mlfS3aaPlunX5e6dlWFOCUe
+ 9waIj6sudxLkwOJ6fZhKIiZuKIz55nOyULGe2ggeQ3it0KooggxxpKzxu4Ppf5JYPIqK
+ DbjSCeHkrpnZd9vxH1lSBHcIX0JJKu5qkUyEgxL0QxFKVJZ6KVnq2ZwGyr8nAGwrEGIU
+ lq2A==
+X-Gm-Message-State: APjAAAWzhcGw3ei7Ph+5aNrWtDO4eh3hmK6q5NntV4hDZWCNUwTplRKY
+ v/h0SVFcPSeXGL46A10QMHQ=
+X-Google-Smtp-Source: APXvYqzKHxoT5zJ9NhwlAyYxbQGvvg/Tsw5V1OH4uzg5aeRYBcen6npeHWV1ieTAmdkb6dXS45+S5Q==
+X-Received: by 2002:a65:64c6:: with SMTP id t6mr20204842pgv.323.1566219369615; 
+ Mon, 19 Aug 2019 05:56:09 -0700 (PDT)
 Received: from localhost.localdomain
  (p6796086-ipngn28101marunouchi.tokyo.ocn.ne.jp. [114.165.92.86])
- by smtp.gmail.com with ESMTPSA id t9sm13215113pji.18.2019.08.19.05.55.49
+ by smtp.gmail.com with ESMTPSA id 14sm17421178pfy.40.2019.08.19.05.56.07
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 19 Aug 2019 05:55:50 -0700 (PDT)
+ Mon, 19 Aug 2019 05:56:09 -0700 (PDT)
 From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH] arm64: dts: renesas: r8a774c0-cat874: sort nodes
-Date: Mon, 19 Aug 2019 21:55:41 +0900
-Message-Id: <1566219341-23048-1-git-send-email-ykaneko0929@gmail.com>
+Subject: [PATCH] arm64: dts: renesas: r8a774c0: sort nodes
+Date: Mon, 19 Aug 2019 21:56:01 +0900
+Message-Id: <1566219361-23088-1-git-send-email-ykaneko0929@gmail.com>
 X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_055551_917061_7C6A2FDE 
-X-CRM114-Status: GOOD (  12.18  )
+X-CRM114-CacheID: sfid-20190819_055610_115318_1956A363 
+X-CRM114-Status: GOOD (  13.58  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -121,53 +121,162 @@ Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 This patch is based on the master branch of Geert Uytterhoeven's renesas-devel
 tree.
 
- arch/arm64/boot/dts/renesas/r8a774c0-cat874.dts | 18 +++++++++---------
- 1 file changed, 9 insertions(+), 9 deletions(-)
+ arch/arm64/boot/dts/renesas/r8a774c0.dtsi | 90 +++++++++++++++----------------
+ 1 file changed, 45 insertions(+), 45 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a774c0-cat874.dts b/arch/arm64/boot/dts/renesas/r8a774c0-cat874.dts
-index 651383c..aaa37158 100644
---- a/arch/arm64/boot/dts/renesas/r8a774c0-cat874.dts
-+++ b/arch/arm64/boot/dts/renesas/r8a774c0-cat874.dts
-@@ -82,13 +82,13 @@
- 		simple-audio-card,bitclock-master = <&sndcpu>;
- 		simple-audio-card,frame-master = <&sndcpu>;
+diff --git a/arch/arm64/boot/dts/renesas/r8a774c0.dtsi b/arch/arm64/boot/dts/renesas/r8a774c0.dtsi
+index 746775f..dc80c1a 100644
+--- a/arch/arm64/boot/dts/renesas/r8a774c0.dtsi
++++ b/arch/arm64/boot/dts/renesas/r8a774c0.dtsi
+@@ -1371,6 +1371,17 @@
+ 				      "ssi.1", "ssi.0";
+ 			status = "disabled";
  
--		sndcpu: simple-audio-card,cpu {
--			sound-dai = <&rcar_sound>;
++			rcar_sound,ctu {
++				ctu00: ctu-0 { };
++				ctu01: ctu-1 { };
++				ctu02: ctu-2 { };
++				ctu03: ctu-3 { };
++				ctu10: ctu-4 { };
++				ctu11: ctu-5 { };
++				ctu12: ctu-6 { };
++				ctu13: ctu-7 { };
++			};
++
+ 			rcar_sound,dvc {
+ 				dvc0: dvc-0 {
+ 					dmas = <&audma0 0xbc>;
+@@ -1387,17 +1398,6 @@
+ 				mix1: mix-1 { };
+ 			};
+ 
+-			rcar_sound,ctu {
+-				ctu00: ctu-0 { };
+-				ctu01: ctu-1 { };
+-				ctu02: ctu-2 { };
+-				ctu03: ctu-3 { };
+-				ctu10: ctu-4 { };
+-				ctu11: ctu-5 { };
+-				ctu12: ctu-6 { };
+-				ctu13: ctu-7 { };
+-			};
+-
+ 			rcar_sound,src {
+ 				src0: src-0 {
+ 					interrupts = <GIC_SPI 352 IRQ_TYPE_LEVEL_HIGH>;
+@@ -1706,13 +1706,24 @@
+ 			renesas,fcp = <&fcpvb0>;
+ 		};
+ 
+-		fcpvb0: fcp@fe96f000 {
+-			compatible = "renesas,fcpv";
+-			reg = <0 0xfe96f000 0 0x200>;
+-			clocks = <&cpg CPG_MOD 607>;
++		vspd0: vsp@fea20000 {
++			compatible = "renesas,vsp2";
++			reg = <0 0xfea20000 0 0x7000>;
++			interrupts = <GIC_SPI 466 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cpg CPG_MOD 623>;
+ 			power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
+-			resets = <&cpg 607>;
+-			iommus = <&ipmmu_vp0 5>;
++			resets = <&cpg 623>;
++			renesas,fcp = <&fcpvd0>;
++		};
++
++		vspd1: vsp@fea28000 {
++			compatible = "renesas,vsp2";
++			reg = <0 0xfea28000 0 0x7000>;
++			interrupts = <GIC_SPI 467 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cpg CPG_MOD 622>;
++			power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
++			resets = <&cpg 622>;
++			renesas,fcp = <&fcpvd1>;
+ 		};
+ 
+ 		vspi0: vsp@fe9a0000 {
+@@ -1725,23 +1736,13 @@
+ 			renesas,fcp = <&fcpvi0>;
+ 		};
+ 
+-		fcpvi0: fcp@fe9af000 {
++		fcpvb0: fcp@fe96f000 {
+ 			compatible = "renesas,fcpv";
+-			reg = <0 0xfe9af000 0 0x200>;
+-			clocks = <&cpg CPG_MOD 611>;
+-			power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
+-			resets = <&cpg 611>;
+-			iommus = <&ipmmu_vp0 8>;
 -		};
 -
- 		sndcodec: simple-audio-card,codec {
- 			sound-dai = <&tda19988>;
+-		vspd0: vsp@fea20000 {
+-			compatible = "renesas,vsp2";
+-			reg = <0 0xfea20000 0 0x7000>;
+-			interrupts = <GIC_SPI 466 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&cpg CPG_MOD 623>;
++			reg = <0 0xfe96f000 0 0x200>;
++			clocks = <&cpg CPG_MOD 607>;
+ 			power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
+-			resets = <&cpg 623>;
+-			renesas,fcp = <&fcpvd0>;
++			resets = <&cpg 607>;
++			iommus = <&ipmmu_vp0 5>;
  		};
-+
-+		sndcpu: simple-audio-card,cpu {
-+			sound-dai = <&rcar_sound>;
-+		};
- 	};
  
- 	vcc_sdhi0: regulator-vcc-sdhi0 {
-@@ -313,16 +313,16 @@
- 		power-source = <1800>;
- 	};
+ 		fcpvd0: fcp@fea27000 {
+@@ -1753,16 +1754,6 @@
+ 			iommus = <&ipmmu_vi0 8>;
+ 		};
  
--	sound_pins: sound {
--		groups = "ssi01239_ctrl", "ssi0_data";
--		function = "ssi";
--	};
+-		vspd1: vsp@fea28000 {
+-			compatible = "renesas,vsp2";
+-			reg = <0 0xfea28000 0 0x7000>;
+-			interrupts = <GIC_SPI 467 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&cpg CPG_MOD 622>;
+-			power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
+-			resets = <&cpg 622>;
+-			renesas,fcp = <&fcpvd1>;
+-		};
 -
- 	sound_clk_pins: sound_clk {
- 		groups = "audio_clkout1_a";
- 		function = "audio_clk";
+ 		fcpvd1: fcp@fea2f000 {
+ 			compatible = "renesas,fcpv";
+ 			reg = <0 0xfea2f000 0 0x200>;
+@@ -1772,6 +1763,15 @@
+ 			iommus = <&ipmmu_vi0 9>;
+ 		};
+ 
++		fcpvi0: fcp@fe9af000 {
++			compatible = "renesas,fcpv";
++			reg = <0 0xfe9af000 0 0x200>;
++			clocks = <&cpg CPG_MOD 611>;
++			power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
++			resets = <&cpg 611>;
++			iommus = <&ipmmu_vp0 8>;
++		};
++
+ 		csi40: csi2@feaa0000 {
+ 			compatible = "renesas,r8a774c0-csi2";
+ 			reg = <0 0xfeaa0000 0 0x10000>;
+@@ -1908,6 +1908,9 @@
+ 			polling-delay = <1000>;
+ 			thermal-sensors = <&thermal>;
+ 
++			cooling-maps {
++			};
++
+ 			trips {
+ 				cpu-crit {
+ 					temperature = <120000>;
+@@ -1915,9 +1918,6 @@
+ 					type = "critical";
+ 				};
+ 			};
+-
+-			cooling-maps {
+-			};
+ 		};
  	};
  
-+	sound_pins: sound {
-+		groups = "ssi01239_ctrl", "ssi0_data";
-+		function = "ssi";
-+	};
-+
- 	usb30_pins: usb30 {
- 		groups = "usb30", "usb30_id";
- 		function = "usb30";
 -- 
 1.9.1
 
