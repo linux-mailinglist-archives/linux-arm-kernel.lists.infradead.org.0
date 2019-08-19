@@ -2,99 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4293494AF6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 18:52:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E96794B1D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 19:00:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:References:To:
-	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ARDBFW7KGSMGx4NsWgUFwnJ8M/hmpgSDaGQdQi8RY2g=; b=Qm1J1+urntXg8hHeWTShdMnvh
-	hIoXX+55Vn2pZtQGlKIiChl456NuEO8MN4njwpDzj51EeyXhRsPKxnBFQ4TsY0Z9ElHz797e1LUPP
-	S6YvWLamfp91XMeiA3ewz60rlVkIVXD+MQZOLgGVZiZkD+vaGir9vH57z/vvWhrs0VMr95kK8NLUT
-	xkBatfqo58wjvuiER1BmIFCHgkYxtWE1fBKica2YJKaDrYZPQUXwD8dM/hm7425eH4bem3GQnjBIX
-	QcRvYMZMeqsZYJb8ruq8nEgjlNLT7YpVWN36sLjZrv8237WbhJffk4LYGPo4YKYnshbG8C7ijynoe
-	/TSxe27gw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zjq9W9ambvzj4mWG6okYxNzsQ1aKAH/fWjI005rEzHw=; b=BOTi64TEFK4/3C
+	kFF4L9xA2MvchW6zAr2MjpTkM6NnyYMOWpDmw3nK2q8pdU1G8Hps+yqDnb+tIEJDdsfdJ3rZTt9gj
+	R1IEFlumN8lafCpQ6ffUPTO1KvVlLdIOKajX3yAlCEz857X8jRVEllkiFiooANjbonWelJCY0thYq
+	fQdeP+N2vChZoQHZTyVQwDjDBTClpVydV60jvyFzJ/M3dIkzLkC01nKUIFoeDYH9EYqIohO8eLNtH
+	e1cxbqtAgbGsIUvTkc3vpuOdD0rxf0J96RJqvMAkiO4c03Bf/bJ6jTFAdeaNZAYwYqtmC63zha/yh
+	eIOK0GRvO90EvrgO3MsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzktR-0005su-Qo; Mon, 19 Aug 2019 16:52:29 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzktL-0005sb-DV
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 16:52:24 +0000
-Received: from pps.filterd (m0098417.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7JGqKTR009604
- for <linux-arm-kernel@lists.infradead.org>; Mon, 19 Aug 2019 12:52:22 -0400
-Received: from e06smtp01.uk.ibm.com (e06smtp01.uk.ibm.com [195.75.94.97])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2ufwdy69dc-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Mon, 19 Aug 2019 12:52:22 -0400
-Received: from localhost
- by e06smtp01.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <naveen.n.rao@linux.ibm.com>; 
- Mon, 19 Aug 2019 17:52:20 +0100
-Received: from b06cxnps3074.portsmouth.uk.ibm.com (9.149.109.194)
- by e06smtp01.uk.ibm.com (192.168.101.131) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Mon, 19 Aug 2019 17:52:15 +0100
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com
- (b06wcsmtp001.portsmouth.uk.ibm.com [9.149.105.160])
- by b06cxnps3074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x7JGqEim56557794
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 19 Aug 2019 16:52:14 GMT
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id A8B8AA405F;
- Mon, 19 Aug 2019 16:52:14 +0000 (GMT)
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 4A728A4054;
- Mon, 19 Aug 2019 16:52:14 +0000 (GMT)
-Received: from localhost (unknown [9.85.69.174])
- by b06wcsmtp001.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Mon, 19 Aug 2019 16:52:14 +0000 (GMT)
-Date: Mon, 19 Aug 2019 22:22:12 +0530
-From: "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>
-Subject: Re: [PATCH 4/4] arm64: implement KPROBES_ON_FTRACE
-To: Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>, Borislav Petkov
- <bp@alien8.de>, Catalin Marinas <catalin.marinas@arm.com>,
- "David S. Miller" <davem@davemloft.net>, "H. Peter Anvin" <hpa@zytor.com>,
- Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
- =?iso-8859-1?q?Masami=0A?= Hiramatsu <mhiramat@kernel.org>,
- Ingo Molnar <mingo@redhat.com>, Steven Rostedt <rostedt@goodmis.org>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>
-References: <20190819192422.5ed79702@xhacker.debian>
- <20190819192706.46ce2c1d@xhacker.debian>
-In-Reply-To: <20190819192706.46ce2c1d@xhacker.debian>
+	id 1hzl0s-0007lY-JS; Mon, 19 Aug 2019 17:00:10 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hzl0f-0007kr-U6
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 16:59:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 14C1F360;
+ Mon, 19 Aug 2019 09:59:54 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 472E53F718;
+ Mon, 19 Aug 2019 09:59:53 -0700 (PDT)
+Date: Mon, 19 Aug 2019 17:59:48 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ clang-built-linux@googlegroups.com
+Subject: Enabling UBSAN breaks KCOV in clang (8.0.*) on arm64
+Message-ID: <20190819165947.GA30292@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-User-Agent: astroid/0.15.0 (https://github.com/astroidmail/astroid)
-X-TM-AS-GCONF: 00
-x-cbid: 19081916-4275-0000-0000-0000035ACDDB
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19081916-4276-0000-0000-0000386CEB6B
-Message-Id: <1566232996.v8nlwmnjqa.naveen@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-19_03:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=585 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1908190178
+Content-Disposition: inline
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_095223_577458_C660534D 
-X-CRM114-Status: GOOD (  19.53  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190819_095958_062164_14E23F82 
+X-CRM114-Status: UNSURE (   8.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -108,32 +61,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "x86@kernel.org" <x86@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Nathan Chancellor <natechancellor@gmail.com>,
+ Nick Desaulniers <ndesaulniers@google.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Jisheng Zhang wrote:
-> This patch implements KPROBES_ON_FTRACE for arm64.
-> 
-> ~ # mount -t debugfs debugfs /sys/kernel/debug/
-> ~ # cd /sys/kernel/debug/
-> /sys/kernel/debug # echo 'p _do_fork' > tracing/kprobe_events
-> 
-> before the patch:
-> 
-> /sys/kernel/debug # cat kprobes/list
-> ffffff801009ff7c  k  _do_fork+0x4    [DISABLED]
+Hi,
 
-This looks wrong -- we should not be allowing kprobe to be registered on 
-ftrace address without KPROBES_ON_FTRACE. Is _do_fork+0x4 the location 
-of ftrace entry on arm64?
+I found that when I enable both KCOV and UBSAN on arm64, clang fails to
+emit any __sanitizer_cov_trace_*() calls in the resulting binary,
+rendering KCOV useless.
 
-- Naveen
+For example, when building v5.3-rc3's arch/arm64/kernel/setup.o:
 
+* With defconfig + CONFIG KCOV:
+
+  clang -Wp,-MD,arch/arm64/kernel/.setup.o.d  -nostdinc -isystem
+  /mnt/data/opt/toolchain/llvm/8.0.0/clang+llvm-8.0.0-x86_64-linux-sles11.3/lib/clang/8.0.0/include
+  -I./arch/arm64/include -I./arch/arm64/include/generated  -I./include
+  -I./arch/arm64/include/uapi -I./arch/arm64/include/generated/uapi
+  -I./include/uapi -I./include/generated/uapi -include
+  ./include/linux/kconfig.h -include ./include/linux/compiler_types.h
+  -D__KERNEL__ -mlittle-endian -DKASAN_SHADOW_SCALE_SHIFT=3
+  -Qunused-arguments -Wall -Wundef -Werror=strict-prototypes
+  -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE
+  -Werror=implicit-function-declaration -Werror=implicit-int
+  -Wno-format-security -std=gnu89 --target=aarch64-linux
+  --prefix=/mnt/data/opt/toolchain/kernel-org-crosstool/gcc-8.1.0-nolibc/aarch64-linux/bin/
+  --gcc-toolchain=/mnt/data/opt/toolchain/kernel-org-crosstool/gcc-8.1.0-nolibc/aarch64-linux
+  -no-integrated-as -Werror=unknown-warning-option -mgeneral-regs-only
+  -DCONFIG_AS_LSE=1 -fno-asynchronous-unwind-tables
+  -DKASAN_SHADOW_SCALE_SHIFT=3 -fno-delete-null-pointer-checks
+  -Wno-address-of-packed-member -O2 -Wframe-larger-than=2048
+  -fstack-protector-strong -Wno-format-invalid-specifier -Wno-gnu
+  -Wno-tautological-compare -mno-global-merge -Wno-unused-const-variable
+  -fno-omit-frame-pointer -fno-optimize-sibling-calls -g
+  -Wdeclaration-after-statement -Wvla -Wno-pointer-sign
+  -fno-strict-overflow -fno-merge-all-constants -fno-stack-check
+  -Werror=date-time -Werror=incompatible-pointer-types
+  -Wno-initializer-overrides -Wno-format -Wno-sign-compare
+  -Wno-format-zero-length  -fsanitize-coverage=trace-pc
+  -DKBUILD_BASENAME='"setup"' -DKBUILD_MODNAME='"setup"' -c -o
+  arch/arm64/kernel/setup.o arch/arm64/kernel/setup.c
+
+  ... and there are 44 calls to __sanitizer_cov_trace_pc in the
+  resulting setup.o
+
+* with defconfig + CONFIG_KCOV + CONFIG_UBSAN:
+
+  clang -Wp,-MD,arch/arm64/kernel/.setup.o.d  -nostdinc -isystem
+  /mnt/data/opt/toolchain/llvm/8.0.0/clang+llvm-8.0.0-x86_64-linux-sles11.3/lib/clang/8.0.0/include
+  -I./arch/arm64/include -I./arch/arm64/include/generated  -I./include
+  -I./arch/arm64/include/uapi -I./arch/arm64/include/generated/uapi
+  -I./include/uapi -I./include/generated/uapi -include
+  ./include/linux/kconfig.h -include ./include/linux/compiler_types.h
+  -D__KERNEL__ -mlittle-endian -DKASAN_SHADOW_SCALE_SHIFT=3
+  -Qunused-arguments -Wall -Wundef -Werror=strict-prototypes
+  -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE
+  -Werror=implicit-function-declaration -Werror=implicit-int
+  -Wno-format-security -std=gnu89 --target=aarch64-linux
+  --prefix=/mnt/data/opt/toolchain/kernel-org-crosstool/gcc-8.1.0-nolibc/aarch64-linux/bin/
+  --gcc-toolchain=/mnt/data/opt/toolchain/kernel-org-crosstool/gcc-8.1.0-nolibc/aarch64-linux
+  -no-integrated-as -Werror=unknown-warning-option -mgeneral-regs-only
+  -DCONFIG_AS_LSE=1 -fno-asynchronous-unwind-tables
+  -DKASAN_SHADOW_SCALE_SHIFT=3 -fno-delete-null-pointer-checks
+  -Wno-address-of-packed-member -O2 -Wframe-larger-than=2048
+  -fstack-protector-strong -Wno-format-invalid-specifier -Wno-gnu
+  -Wno-tautological-compare -mno-global-merge -Wno-unused-const-variable
+  -fno-omit-frame-pointer -fno-optimize-sibling-calls -g
+  -Wdeclaration-after-statement -Wvla -Wno-pointer-sign
+  -fno-strict-overflow -fno-merge-all-constants -fno-stack-check
+  -Werror=date-time -Werror=incompatible-pointer-types
+  -Wno-initializer-overrides -Wno-format -Wno-sign-compare
+  -Wno-format-zero-length    -fsanitize=shift
+  -fsanitize=integer-divide-by-zero  -fsanitize=unreachable
+  -fsanitize=signed-integer-overflow  -fsanitize=bounds
+  -fsanitize=object-size  -fsanitize=bool  -fsanitize=enum
+  -fsanitize-coverage=trace-pc    -DKBUILD_BASENAME='"setup"'
+  -DKBUILD_MODNAME='"setup"' -c -o arch/arm64/kernel/setup.o
+  arch/arm64/kernel/setup.c
+
+  ... and there are 0 calls to __sanitizer_cov_trace_pc in the resulting
+  setup.o, even though -fsanitize-coverage=trace-pc was passed to clang.
+
+If I remove -fsanitize=bounds, there are 121 calls to
+__sanitizer_cov_trace_pc in setup.o. Removing the other options enabled
+by UBSAN didn't have any effect on setup.o.
+
+I'm using the llvm.org 8.0.{0,1} binaries [1,2], along with the
+kernel.org crosstool 8.1.0 binaries [3].
+
+Any ideas as to what's going on?
+
+Thanks,
+Mark.
+
+[1] http://releases.llvm.org/download.html#8.0.0
+[2] http://releases.llvm.org/download.html#8.0.1
+[3] https://mirrors.edge.kernel.org/pub/tools/crosstool/
 
 _______________________________________________
 linux-arm-kernel mailing list
