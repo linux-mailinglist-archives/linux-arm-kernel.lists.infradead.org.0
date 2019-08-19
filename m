@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E27FE94E43
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:32:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4708794E46
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:32:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wzDVF9DNWF5mafVTy3IV4vA/XpedSGxu4hXWRwkgsIo=; b=S74cgrc6oCsKPO
-	T3oo0f5FhmTZQ0yvqA7H8bykVgJhhfW3FvFDoEXFhz62garl6zQCX1n3LDpcO7ooPXy2bsHQC5SOn
-	6wta/0WCQcziCcu8c/lxkn9GU4rDgKouDWdLZYpzAmiAWLOefOv3zYjYDPVBl2KDEnRhl8wVudeB1
-	onbUCemfoPNEAo7WVwoavSAY0GAlPtcINXZ0lJBc3Ez7Gsaf8M0hkqS8Yu1RXNtzLItxXmNOfflQ5
-	GgVcHTDaZH4WPNmj5Kai67/mfxw2s6EWtIR8ak+Mz0WKalqcXiivCxVLyYtA3CCBGTKV4Qwll27/D
-	IxLEKbp3jQH9ML4ZCfNA==;
+	List-Owner; bh=vRA2MfUJ5C5sWsZLAWvXv4Y8YZcmhuCJ76kDu8XtY1g=; b=TYnAAOjTvhvLR+
+	WIvgU+SmgOQdygWGmEqfnbxh8VteeAqMNxerEqDU/cuEcg3B3R89QpWXA2hpsDuPp7jkAxZuvl+ft
+	kHfo37PxxEKw/n9+4HeiSNVjE2ypFkqxAceWbx6g98BdoQVMpm6MF/QSzRND0NRnUNgGjZjWXGLSf
+	U6XmkQKcwCvysMiatZxYG9+pfwtVnGsuG87DLp56itl7jLiaHwzOr7LAcC6MpFUPsLD6pvvHgoFSf
+	O5XdBHle+etsxM2Kn0lz4Rsg9ql/50IovuIh9f9Pl/+Rhf19x9Xq7u6aPGQeV3G5ktkNVtuYkpHpj
+	E5ltT1qdtfHNNw0Ew1Fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hznNj-0004yF-Hz; Mon, 19 Aug 2019 19:31:55 +0000
+	id 1hznOg-0005fw-Es; Mon, 19 Aug 2019 19:32:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hznHv-0000Ds-MZ
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:25:58 +0000
+ id 1hznHy-0000G8-FB
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:26:02 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 666FE206C1;
- Mon, 19 Aug 2019 19:25:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 90AD622CEC;
+ Mon, 19 Aug 2019 19:25:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566242754;
- bh=r26mVi/Xdz/Vu/rKWGSR3w39MsxTxz5AOjIuGgJ5SLY=;
+ s=default; t=1566242757;
+ bh=a4OAPQC7QBlpR77vZpXRRlHgkluk9x/qSx4mXQiMJE4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=HXlVqazDIZhHBBlltb4Jwzhz6SGlPlP/HEN4yzDx9tKCrabyvbpl0jOYfffarJXwl
- jki4+zExNPQv0mEVS9u4h9FWhAfRbkvRxU4MwLKa1o2PJm4R20vp3XkP6pRe/Syd0d
- oX9NxON9J+EnGOJXga/AHQiTFJH8VIxEogrCoJrk=
+ b=EL6DlqP+LE2dqslfP6Yd6cUgnNQJ+1zvCC5wFIjj2XWiSBy+It2CGvRnNgB3zIcCS
+ Gy1WcRGCLPYyhl6J2dhvpXPjN6sW4DrW7uNl3PD99yUr7Gj73W3uh0lBIZQCkJC8yf
+ Tj6Fv7Tqy6fxdnxYGrt0PfMtV+ujo2wgH63CC5/E=
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
  lgirdwood@gmail.com, broonie@kernel.org
-Subject: [PATCH 07/21] ASoC: sun4i-i2s: Don't use the oversample to calculate
- BCLK
-Date: Mon, 19 Aug 2019 21:25:14 +0200
-Message-Id: <c3595e3a9788c2ef2dcc30aa3c8c4953bb5cc249.1566242458.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH 08/21] ASoC: sun4i-i2s: Use module clock as BCLK parent on
+ newer SoCs
+Date: Mon, 19 Aug 2019 21:25:15 +0200
+Message-Id: <0b6665be216b3bd0e7bc43724818f05f3f8ee881.1566242458.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_122555_828187_C3479520 
-X-CRM114-Status: GOOD (  15.57  )
+X-CRM114-CacheID: sfid-20190819_122559_256471_19C14211 
+X-CRM114-Status: GOOD (  13.68  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,63 +86,108 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-The BCLK divider should be calculated using the parameters that actually
-make the BCLK rate: the number of channels, the sampling rate and the
-sample width.
+On the first generation of Allwinner SoCs (A10-A31), the i2s controller was
+using the MCLK as BCLK parent. However, this changed since the introduction
+of the A83t and BCLK now uses the module clock as its parent.
 
-We've been using the oversample_rate previously because in the former SoCs,
-the BCLK's parent is MCLK, which in turn is being used to generate the
-oversample rate, so we end up with something like this:
-
-oversample = mclk_rate / sampling_rate
-bclk_div = oversample / word_size / channels
-
-So, bclk_div = mclk_rate / sampling_rate / word_size / channels.
-
-And this is actually better, since the oversampling ratio only plays a role
-because the MCLK is its parent, not because of what BCLK is supposed to be.
-
-Furthermore, that assumption of MCLK being the parent has been broken on
-newer SoCs, so let's use the proper formula, and have the parent rate as an
-argument.
+Let's introduce a hook to get the parent rate and use that in our divider
+calculations.
 
 Fixes: 7d2993811a1e ("ASoC: sun4i-i2s: Add support for H3")
 Fixes: 21faaea1343f ("ASoC: sun4i-i2s: Add support for A83T")
-Fixes: 66ecce332538 ("ASoC: sun4i-i2s: Add compatibility with A64 codec I2S")
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
- sound/soc/sunxi/sun4i-i2s.c |  9 +++++----
- 1 file changed, 5 insertions(+), 4 deletions(-)
+ sound/soc/sunxi/sun4i-i2s.c | 21 +++++++++++++++++++--
+ 1 file changed, 19 insertions(+), 2 deletions(-)
 
 diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index 3d7f4a97e0ba..ee8ee3eb2087 100644
+index ee8ee3eb2087..51be395102b2 100644
 --- a/sound/soc/sunxi/sun4i-i2s.c
 +++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -208,10 +208,11 @@ static const struct sun4i_i2s_clk_div sun4i_i2s_mclk_div[] = {
+@@ -152,6 +152,7 @@ struct sun4i_i2s_quirks {
+ 	struct reg_field		field_fmt_bclk;
+ 	struct reg_field		field_fmt_lrclk;
+ 
++	unsigned long (*get_bclk_parent_rate)(const struct sun4i_i2s *);
+ 	s8	(*get_sr)(const struct sun4i_i2s *, int);
+ 	s8	(*get_wss)(const struct sun4i_i2s *, int);
+ 	int	(*set_chan_cfg)(const struct sun4i_i2s *,
+@@ -207,6 +208,16 @@ static const struct sun4i_i2s_clk_div sun4i_i2s_mclk_div[] = {
+ 	/* TODO - extend divide ratio supported by newer SoCs */
  };
  
++static unsigned long sun4i_i2s_get_bclk_parent_rate(const struct sun4i_i2s *i2s)
++{
++	return i2s->mclk_freq;
++}
++
++static unsigned long sun8i_i2s_get_bclk_parent_rate(const struct sun4i_i2s *i2s)
++{
++	return clk_get_rate(i2s->mod_clk);
++}
++
  static int sun4i_i2s_get_bclk_div(struct sun4i_i2s *i2s,
--				  unsigned int oversample_rate,
-+				  unsigned long parent_rate,
-+				  unsigned int sampling_rate,
+ 				  unsigned long parent_rate,
+ 				  unsigned int sampling_rate,
+@@ -259,7 +270,7 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
  				  unsigned int word_size)
  {
--	int div = oversample_rate / word_size / 2;
-+	int div = parent_rate / sampling_rate / word_size / 2;
- 	int i;
+ 	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
+-	unsigned int oversample_rate, clk_rate;
++	unsigned int oversample_rate, clk_rate, bclk_parent_rate;
+ 	int bclk_div, mclk_div;
+ 	int ret;
  
- 	for (i = 0; i < ARRAY_SIZE(sun4i_i2s_bclk_div); i++) {
-@@ -300,8 +301,8 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+@@ -301,7 +312,8 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
  		return -EINVAL;
  	}
  
--	bclk_div = sun4i_i2s_get_bclk_div(i2s, oversample_rate,
--					  word_size);
-+	bclk_div = sun4i_i2s_get_bclk_div(i2s, i2s->mclk_freq,
-+					  rate, word_size);
+-	bclk_div = sun4i_i2s_get_bclk_div(i2s, i2s->mclk_freq,
++	bclk_parent_rate = i2s->variant->get_bclk_parent_rate(i2s);
++	bclk_div = sun4i_i2s_get_bclk_div(i2s, bclk_parent_rate,
+ 					  rate, word_size);
  	if (bclk_div < 0) {
  		dev_err(dai->dev, "Unsupported BCLK divider: %d\n", bclk_div);
- 		return -EINVAL;
+@@ -957,6 +969,7 @@ static const struct sun4i_i2s_quirks sun4i_a10_i2s_quirks = {
+ 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
+ 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 6, 6),
+ 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
++	.get_bclk_parent_rate	= sun4i_i2s_get_bclk_parent_rate,
+ 	.get_sr			= sun4i_i2s_get_sr,
+ 	.get_wss		= sun4i_i2s_get_wss,
+ 	.set_chan_cfg		= sun4i_i2s_set_chan_cfg,
+@@ -972,6 +985,7 @@ static const struct sun4i_i2s_quirks sun6i_a31_i2s_quirks = {
+ 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
+ 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 6, 6),
+ 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
++	.get_bclk_parent_rate	= sun4i_i2s_get_bclk_parent_rate,
+ 	.get_sr			= sun4i_i2s_get_sr,
+ 	.get_wss		= sun4i_i2s_get_wss,
+ 	.set_chan_cfg		= sun4i_i2s_set_chan_cfg,
+@@ -987,6 +1001,7 @@ static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
+ 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
+ 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 6, 6),
+ 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
++	.get_bclk_parent_rate	= sun8i_i2s_get_bclk_parent_rate,
+ 	.get_sr			= sun8i_i2s_get_sr_wss,
+ 	.get_wss		= sun8i_i2s_get_sr_wss,
+ 	.set_chan_cfg		= sun8i_i2s_set_chan_cfg,
+@@ -1005,6 +1020,7 @@ static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
+ 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
+ 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
+ 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 19, 19),
++	.get_bclk_parent_rate	= sun8i_i2s_get_bclk_parent_rate,
+ 	.get_sr			= sun8i_i2s_get_sr_wss,
+ 	.get_wss		= sun8i_i2s_get_sr_wss,
+ 	.set_chan_cfg		= sun8i_i2s_set_chan_cfg,
+@@ -1020,6 +1036,7 @@ static const struct sun4i_i2s_quirks sun50i_a64_codec_i2s_quirks = {
+ 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
+ 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 6, 6),
+ 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
++	.get_bclk_parent_rate	= sun4i_i2s_get_bclk_parent_rate,
+ 	.get_sr			= sun4i_i2s_get_sr,
+ 	.get_wss		= sun4i_i2s_get_wss,
+ 	.set_chan_cfg		= sun4i_i2s_set_chan_cfg,
 -- 
 git-series 0.9.1
 
