@@ -2,97 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D930F9225F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 13:29:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D7D692260
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 13:29:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tduLsU18Yh03CqwiFSuuhOsI3BICLLaDv+nFKNyFGc0=; b=SRIFn8dFSNqa8JbU5rtmcJvnH
-	uu9qr9Sr4VoLEgdoIEpYglugnfyjWh5ScJQxpc6Lb6PUZBO1oPx1G8upktDwjyKaQ1AqCmE+XAO9W
-	S0OtOmvYwkE/UGBcYpdEtFetWuNsq5l6e1UoIRqZP4+ZGEYONcXIEzOq4gxa3uLPgHwKaQcYRNPoR
-	kic8O25DiNmU4pHl0WNT3/JrYJTsiuB/fc1nGHGT+36uMHr9YQaFQJR/kremlUp9Gw5rQQaBHRPIH
-	IbEB4frsPBhnfvXjVBbhW1JQ3KfFFMjEjtrMQwh+sj3b/C+4x50RdmF+DYmGyUgR0Ik3WgCGVcFSR
-	Dnsmzyf2w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VsZr8XhdFI+ZZq8yb7SomErbB+ACEhJ+hvvSSwTutX8=; b=XiYEEijHxwuAgm
+	x77mdUSPQ4qDhDuzTSLu5/ukekCLhYgqruGukVphdrxbLUWqPogpSM0V9n7l7iuUHFm8j1Toe2XXZ
+	TYlbNQ/GMZrqjK3JoDG31gUQzaE5RbAH4025Q15d6t4XSMV8qGoWt1Fsym5OQPevcqmpuPckeQc6+
+	6//0yKUrMETul4N3maoiwf1IKZqzqbBVRykhKSkP30d+Vl+AdexXgxW0o+AttVjh7AMcVxWC19+3L
+	JWbCYW5rLsi0VUQ5VNZnVj/QDbEI5kncfveAcWDoTyT/rXOVMtmXICWpgCxbFY8nNt6hR76g4YGA7
+	9gajXM5z6RNq4pN+PElQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzfqd-0000Of-Kh; Mon, 19 Aug 2019 11:29:15 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hzfqk-0000ZC-LO; Mon, 19 Aug 2019 11:29:22 +0000
+Received: from mail-eopbgr740083.outbound.protection.outlook.com
+ ([40.107.74.83] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzfqP-0000Lh-PR
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 11:29:03 +0000
-Received: by mail-wm1-x343.google.com with SMTP id p77so2494237wme.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 04:29:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=BwCkwVnYdLsdqLjxQ0pfBOiD1gbMLbLHE2ZYXngi7M0=;
- b=jIA4XAKNMgKdsKoqB+LJ3F2e/Hwt+Hv02sxXOM4WkVsfELkQUlNPvA6/TbY3Ehb2Io
- pdmlpZ8464RtIbgm/LF+wzj3sVtMBtzWefDvIm1pFqvLYQyQwBsLl0kVBkl5HUXgtl9F
- BNNVxAUSty+ibZLfbsRpxFbjgWD4xLwHiDA3m3Br/QgdLom/RttHLAFdE/VJJRvXCKUz
- uD6IUr0H9SMEx6znF09ggqH1SHDqU/yIeeQHtNztpepTrARfe1guYCYIX+c53ZBZ00Qr
- +0aUTuezyywu+1ofYQDAkEALd1HvAghD7ldo0N3hBmlts96rPvwIpfsaUzQc9oMrkLMS
- ymvA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=BwCkwVnYdLsdqLjxQ0pfBOiD1gbMLbLHE2ZYXngi7M0=;
- b=PmhEzQf9eja7siZEVG7Lgp3ZpIkJqLigKzxmMnG8CrD4OrtrY3GC37uMAKi6IVebAi
- IglThX9hSmxEVyzVNg/Xu67PCQLlisZVA8wm0iQFKoc9KM1zAU1mqsEj0SVxmX4U7vzD
- 9yWq+qO3ikG3LcX6JtVqdzcvFW7GzjzB4EOiNdaqp2oJmlH68kSfK3CpeJlopRy4oI0n
- eEQTK/h9PWl1sXeJqkf0vaaQFetU7UohBvHogqZGGMtcecmMT4cd1pQexpva0YnGfNvm
- 3v83SFRtIMmsAthUfpfeHub8U2f+ByKXgDI64tlplKSNjzFuMPMDCBpTa87VMp4NXJTi
- gwnA==
-X-Gm-Message-State: APjAAAVJWwRuaosx9g7GusrIIMlZGI8y2j2WiKT2K0cUy3ddkzgiN7kr
- 4xGv8SodI2FW2J8zhcGN0VY=
-X-Google-Smtp-Source: APXvYqxhItfDA8At3OVhpCbf9NaQcO4FAw75/K+npVZcmqYypAuJxk4pooztnjczy0xw/l0UCyJ8oA==
-X-Received: by 2002:a1c:80d0:: with SMTP id b199mr19585589wmd.31.1566214139534; 
- Mon, 19 Aug 2019 04:28:59 -0700 (PDT)
-Received: from localhost (pD9E51890.dip0.t-ipconnect.de. [217.229.24.144])
- by smtp.gmail.com with ESMTPSA id x20sm32028449wrg.10.2019.08.19.04.28.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 19 Aug 2019 04:28:57 -0700 (PDT)
-Date: Mon, 19 Aug 2019 13:28:56 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2] iommu/arm-smmu: Break insecure users by disabling
- bypass by default
-Message-ID: <20190819112856.GA28102@ulmo>
-References: <20190301192017.39770-1-dianders@chromium.org>
- <20190404145957.GA25912@fuggles.cambridge.arm.com>
- <4754bcf1-6423-f1fe-64d4-da4a35b164ad@free.fr>
- <20190424115231.GA14829@fuggles.cambridge.arm.com>
- <20190502105912.GA943@ulmo>
- <20190502110821.GD30966@fuggles.cambridge.arm.com>
- <20190502124525.GA3579@ulmo>
- <94cf6d56-5dcb-051a-06da-5edfacde1655@arm.com>
+ id 1hzfqS-0000NZ-7k
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 11:29:05 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=I52F4x8cVaSnG56F1vOeMJvU1z0+VUpXWk+OOoFL8p5BIBcYDEPBVxj3Ohkt7viWAJAyttyMBCJrbPr3p2/fxOc8DO2eTFukgH6DmciLPEatSi9BN7UkX4gnKx+rQCP4uQv2CpPfrbCFoI/0ka9VxGWRmiVV9TIs2uHJIkViAJQ9eVGT1RPsWTj1kMN/QXZ6t08AzLqID7FSI0/o62EswNQ7s1ZxgTdlsI3Ci+O2lhq21TSPjo+xgs8UYWfCpFHjqpGMx3QmXujv9rmvK5Y1pIKK+osjX8xXfmqKoW+7YoiuAtKPvlf2GjHNQ5uFhrgRboecDLk1+tNq6ohwGDtz5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PC2c3L5LPZhLtLOAjlnlg4PWalUTa000Vi2cQQ8LN+0=;
+ b=mUkQzW0TKJr6EF9DK6oMeiEbIup9xXUXoer1vyw6UfDB7X/X03K0aSEQqS+oEYK5UFi3j3UTnPywx7NVAeJ0ZnCHxv003APT6aHCMvf3U77usCRT4huACyHxNzuQeiSmY1N2mqJfZDAsoyLvyLWqi4Syy3DR4ooddaxfp/tPgXX6CuEz4TlXdFs7ExIy+FGwq0AAUoQl1edU0ypl9P9nGNIJb/5kz2bpVp04vgBok0TC/Vf8Xf1YtkBycN/Rpu5WrNWa+qzfBPz9JSgChe4S0lwG/sqhjrWzCAtizN+cm5jvXNVVQcoD9lFJWd/BRIN1Y0xHq56J0zJE6YiHM4BtRw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synaptics.com; dmarc=pass action=none
+ header.from=synaptics.com; dkim=pass header.d=synaptics.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=Synaptics.onmicrosoft.com; s=selector2-Synaptics-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PC2c3L5LPZhLtLOAjlnlg4PWalUTa000Vi2cQQ8LN+0=;
+ b=NWm6ZfmsNEP4b4xv2y0JLqnXQeI+UzFHYv2hTAY7gdp2dDSS1sZBN6HWMn1KLdoEIQp3rn+dTChAYBGYqCFjmsIHI8qb0svRQ8KL2gSiqOUmSRZ0tiYg6fCl94bA1w0yVwEjiQbKrhUihM1PJhRZL3/Z34h3KtlV8ELIgM80qHY=
+Received: from BYAPR03MB4773.namprd03.prod.outlook.com (20.179.92.152) by
+ BYAPR03MB3528.namprd03.prod.outlook.com (52.135.213.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2178.18; Mon, 19 Aug 2019 11:29:02 +0000
+Received: from BYAPR03MB4773.namprd03.prod.outlook.com
+ ([fe80::a517:3578:67bf:6c88]) by BYAPR03MB4773.namprd03.prod.outlook.com
+ ([fe80::a517:3578:67bf:6c88%7]) with mapi id 15.20.2157.022; Mon, 19 Aug 2019
+ 11:29:02 +0000
+From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, 
+ Steven Rostedt <rostedt@goodmis.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH 3/3] arm64: use -fpatchable-function-entry if available
+Thread-Topic: [PATCH 3/3] arm64: use -fpatchable-function-entry if available
+Thread-Index: AQHVVoFN2Lv6AB17aEmGqsR7fljPbg==
+Date: Mon, 19 Aug 2019 11:29:02 +0000
+Message-ID: <20190819191759.04bf63d7@xhacker.debian>
+References: <20190819191530.0f47b9b1@xhacker.debian>
+In-Reply-To: <20190819191530.0f47b9b1@xhacker.debian>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [124.74.246.114]
+x-clientproxiedby: TY2PR01CA0061.jpnprd01.prod.outlook.com
+ (2603:1096:404:10a::25) To BYAPR03MB4773.namprd03.prod.outlook.com
+ (2603:10b6:a03:134::24)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 49ad5a23-9a7e-44a8-b7f7-08d724986f82
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BYAPR03MB3528; 
+x-ms-traffictypediagnostic: BYAPR03MB3528:
+x-microsoft-antispam-prvs: <BYAPR03MB3528774C8B183882CF23796CEDA80@BYAPR03MB3528.namprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3173;
+x-forefront-prvs: 0134AD334F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(39860400002)(346002)(136003)(376002)(366004)(189003)(199004)(5660300002)(8936002)(50226002)(86362001)(81156014)(81166006)(71200400001)(71190400001)(25786009)(486006)(476003)(8676002)(11346002)(14444005)(446003)(66446008)(64756008)(66556008)(66476007)(66946007)(1076003)(6512007)(66066001)(9686003)(26005)(6486002)(305945005)(99286004)(186003)(102836004)(2906002)(52116002)(54906003)(53936002)(3846002)(6116002)(316002)(256004)(4326008)(76176011)(14454004)(6506007)(386003)(6436002)(7736002)(478600001)(110136005)(39210200001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB3528;
+ H:BYAPR03MB4773.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:0; 
+received-spf: None (protection.outlook.com: synaptics.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: X5+ScyQM29NkaeV6MUAuUsvbrHo77/hpyURwoFhQ96I88p4Dhj7ScUfCMo53TWW7dX+rbFpGt4KdtDsLAuEIiOZ5jJsjlwhLZaaNctMLjO3FjOVlMVGMdR7OzTWzYfPVhBtLGEMTA0ABMxW3BnevJP1Xfuk/++kV4MyL7EGpKqh9jaFxG5N+0Su/UkaHsifp4gBT0Cdt6ksJC0bkLRTWre9HGBQ8N7Sr1o/pUFZk7NwA7uCRMaSxOy5ufMQB2c59INldu0FvV7S2hfZGHHJDxROLet88IZrygWRMJfsmeCrWXU2YvpJn8RwTXHp40JLgnmcdh99AJAWHxacgauz7fhs8/QOk3g4RZmb8ESG+VmV1l852+5d44ZgoUecH5UXFWvs1EjGHhjvSEMqtPKiXLRgZAE0iieHTPHjXLMA/GWg=
+x-ms-exchange-transport-forked: True
+Content-ID: <F564ED1F300CF54C8A10B682A5790DA0@namprd03.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <94cf6d56-5dcb-051a-06da-5edfacde1655@arm.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-OriginatorOrg: synaptics.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 49ad5a23-9a7e-44a8-b7f7-08d724986f82
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Aug 2019 11:29:02.2729 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Bi20ZOJlBolHMJwL1632eUyaT0dc6YPGZWZAcfQ2TgKi2h81qFZZKwdgILn4uxRZBDYssz6dGf+owjlnR5Yo7w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB3528
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_042901_830685_8D7C9148 
-X-CRM114-Status: GOOD (  51.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190819_042904_282730_827C45F0 
+X-CRM114-Status: GOOD (  12.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [40.107.74.83 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -106,278 +124,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Gonzalez <marc.w.gonzalez@free.fr>, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>, Douglas Anderson <dianders@chromium.org>,
- Jon Hunter <jonathanh@nvidia.com>, linux-tegra@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============8547114963364862584=="
+Cc: Torsten Duwe <duwe@suse.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Torsten Duwe <duwe@suse.de>
 
---===============8547114963364862584==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="45Z9DzgjV8m4Oswq"
-Content-Disposition: inline
+Test whether gcc supports -fpatchable-function-entry and use it to promote
+DYNAMIC_FTRACE to DYNAMIC_FTRACE_WITH_REGS. Amend support for the new
+object section that holds the locations (__patchable_function_entries) and
+define a proper "notrace" attribute to switch it off.
 
+Signed-off-by: Torsten Duwe <duwe@suse.de>
+---
+ arch/arm64/Kconfig  | 2 ++
+ arch/arm64/Makefile | 5 +++++
+ kernel/module.c     | 7 ++++++-
+ 3 files changed, 13 insertions(+), 1 deletion(-)
 
---45Z9DzgjV8m4Oswq
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 3adcec05b1f6..663392d1eae2 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -144,6 +144,8 @@ config ARM64
+ 	select HAVE_DEBUG_KMEMLEAK
+ 	select HAVE_DMA_CONTIGUOUS
+ 	select HAVE_DYNAMIC_FTRACE
++	select HAVE_DYNAMIC_FTRACE_WITH_REGS \
++		if $(cc-option,-fpatchable-function-entry=2)
+ 	select HAVE_EFFICIENT_UNALIGNED_ACCESS
+ 	select HAVE_FAST_GUP
+ 	select HAVE_FTRACE_MCOUNT_RECORD
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 61de992bbea3..e827ad0298ab 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -104,6 +104,11 @@ ifeq ($(CONFIG_ARM64_MODULE_PLTS),y)
+ KBUILD_LDFLAGS_MODULE	+= -T $(srctree)/arch/arm64/kernel/module.lds
+ endif
+ 
++ifeq ($(CONFIG_DYNAMIC_FTRACE_WITH_REGS),y)
++  KBUILD_CPPFLAGS += -DCC_USING_PATCHABLE_FUNCTION_ENTRY
++  CC_FLAGS_FTRACE := -fpatchable-function-entry=2
++endif
++
+ # Default value
+ head-y		:= arch/arm64/kernel/head.o
+ 
+diff --git a/kernel/module.c b/kernel/module.c
+index 5933395af9a0..0759f89adbd3 100644
+--- a/kernel/module.c
++++ b/kernel/module.c
+@@ -3136,7 +3136,12 @@ static int find_module_sections(struct module *mod, struct load_info *info)
+ #endif
+ #ifdef CONFIG_FTRACE_MCOUNT_RECORD
+ 	/* sechdrs[0].sh_size is always zero */
+-	mod->ftrace_callsites = section_objs(info, "__mcount_loc",
++	mod->ftrace_callsites = section_objs(info,
++#ifdef CC_USING_PATCHABLE_FUNCTION_ENTRY
++					     "__patchable_function_entries",
++#else
++					     "__mcount_loc",
++#endif
+ 					     sizeof(*mod->ftrace_callsites),
+ 					     &mod->num_ftrace_callsites);
+ #endif
+-- 
+2.23.0.rc1
 
-On Thu, May 02, 2019 at 03:27:55PM +0100, Robin Murphy wrote:
-> On 02/05/2019 13:45, Thierry Reding wrote:
-> > On Thu, May 02, 2019 at 12:08:21PM +0100, Will Deacon wrote:
-> > > On Thu, May 02, 2019 at 12:59:12PM +0200, Thierry Reding wrote:
-> > > > On Wed, Apr 24, 2019 at 12:52:31PM +0100, Will Deacon wrote:
-> > > > > On Wed, Apr 24, 2019 at 01:36:58PM +0200, Marc Gonzalez wrote:
-> > > > > > On 04/04/2019 17:00, Will Deacon wrote:
-> > > > > >=20
-> > > > > > > On Fri, Mar 01, 2019 at 11:20:17AM -0800, Douglas Anderson wr=
-ote:
-> > > > > > >=20
-> > > > > > > > If you're bisecting why your peripherals stopped working, i=
-t's
-> > > > > > > > probably this CL.  Specifically if you see this in your dme=
-sg:
-> > > > > > > >    Unexpected global fault, this could be serious
-> > > > > > > > ...then it's almost certainly this CL.
-> > > > > > > >=20
-> > > > > > > > Running your IOMMU-enabled peripherals with the IOMMU in by=
-pass mode
-> > > > > > > > is insecure and effectively disables the protection they pr=
-ovide.
-> > > > > > > > There are few reasons to allow unmatched stream bypass, and=
- even fewer
-> > > > > > > > good ones.
-> > > > > > > >=20
-> > > > > > > > This patch starts the transition over to make it much harde=
-r to run
-> > > > > > > > your system insecurely.  Expected steps:
-> > > > > > > >=20
-> > > > > > > > 1. By default disable bypass (so anyone insecure will notic=
-e) but make
-> > > > > > > >     it easy for someone to re-enable bypass with just a KCo=
-nfig change.
-> > > > > > > >     That's this patch.
-> > > > > > > >=20
-> > > > > > > > 2. After people have had a little time to come to grips wit=
-h the fact
-> > > > > > > >     that they need to set their IOMMUs properly and have ha=
-d time to
-> > > > > > > >     dig into how to do this, the KConfig will be eliminated=
- and bypass
-> > > > > > > >     will simply be disabled.  Folks who are truly upset and=
- still
-> > > > > > > >     haven't fixed their system can either figure out how to=
- add
-> > > > > > > >     'arm-smmu.disable_bypass=3Dn' to their command line or =
-revert the
-> > > > > > > >     patch in their own private kernel.  Of course these fol=
-ks will be
-> > > > > > > >     less secure.
-> > > > > > > >=20
-> > > > > > > > Suggested-by: Robin Murphy <robin.murphy@arm.com>
-> > > > > > > > Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> > > > > > > > ---
-> > > > > > > >=20
-> > > > > > > > Changes in v2:
-> > > > > > > > - Flipped default to 'yes' and changed comments a lot.
-> > > > > > > >=20
-> > > > > > > >   drivers/iommu/Kconfig    | 25 +++++++++++++++++++++++++
-> > > > > > > >   drivers/iommu/arm-smmu.c |  3 ++-
-> > > > > > > >   2 files changed, 27 insertions(+), 1 deletion(-)
-> > > > > > >=20
-> > > > > > > Cheers, I'll pick this one up for 5.2.
-> > > > > >=20
-> > > > > > Hello Will,
-> > > > > >=20
-> > > > > > You haven't pushed this patch out to linux-next AFAICT.
-> > > > > >=20
-> > > > > > Is that expected?
-> > > > >=20
-> > > > > It's on my branch for Joerg:
-> > > > >=20
-> > > > > https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/lo=
-g/?h=3Dfor-joerg/arm-smmu/updates
-> > > > >=20
-> > > > > which I'll send to him today. My SMMU stuff doesn't go directly i=
-nto -next.
-> > > >=20
-> > > > This made it to linux-next yesterday (less than a week before the m=
-erge
-> > > > window opens) and deliberately breaks existing configurations. That=
-'s a
-> > > > little rude.
-> > > >=20
-> > > > At least give people a fair heads-up and a chance to fix things bef=
-ore
-> > > > you start break things.
-> > >=20
-> > > Sorry about the inconvenience here.
-> > >=20
-> > > This patch has been floating around for a while (albeit not in -next,=
- since
-> > > I send my stuff via Joerg)
-> >=20
-> > You can't expect people to test random patches from the list if they're
-> > not on Cc. I don't think it's safe to claim that patches have been well
-> > tested until they've been in linux-next for at least a couple of days.
-> >=20
-> > >                             and is heading for 5.3, so you have ages =
-to fix
-> > > up your config!
-> >=20
-> > Last I checked, Joerg applied this for 5.2 because you sent it as part
-> > of your "Updates for 5.2" pull request.
-> >=20
-> > >                  It would, of course, be better to configure the IOMM=
-U to
-> > > provide mappings for your DMA peripherals, but the trivial config cha=
-nge
-> > > will be enough to keep things working. We won't remove that as long as
-> > > people are relying on it.
-> >=20
-> > I don't think the Kconfig option is really useful. People nowadays want
-> > to run standard distribution kernels on their devices, and distribution
-> > maintainers will often rely on kernel developers' guidance on what good
-> > defaults are. This patch suggests that the default should be to disable
-> > bypass, so if this hits 5.2 final and distributions create their kernel
-> > packages, they're likely going to go with this default and potentially
-> > break things for many of their users.
-> >=20
-> > Luckily this seems like it's fairly easy to fix, but given that we're
-> > past v5.1-rc6, fixes for this now need to get special treatment. That
-> > would've been okay if this was a pressing issues, but this is changing
-> > something that's worked this way for ages, so it's hardly urgent.
-> >=20
-> > > I don't expect most people to run into problems with this change (the=
- new
-> > > behaviour matches what SMMUv3 does already).
-> >=20
-> > I see the ARM SMMU v2 used in quite a few DTS files. Not all of these
-> > may be problematic, but I'd be somewhat surprised if Tegra was the only
-> > one impacted.
->=20
-> If people have real technical reasons for needing unmatched stream bypass,
-> then we'll probably need to consider some sort of per-SMMU override anywa=
-y,
-> since well-meaning users rendering the system unusable by enabling a
-> security option isn't ideal. I'm in the middle of a big rework to
-> accommodate platform-specific extensions more easily, so that's certainly=
- an
-> angle I can try to plan for.
->=20
-> On the other hand, if it's merely that nobody's yet got round to filling =
-out
-> the DT properly, then AIUI that's pretty much exactly what Doug wanted to
-> motivate, so that the option *can* be used more widely by users who might
-> want it. Hence the provocative title :)
-
-I was just rebasing a set of patches that I've been working on for some
-time that will eventually allow seamlessly transitioning display from a
-firmware-controlled framebuffer to a DRM/KMS framebuffer.
-
-The idea is to mark firmware-allocated buffers as reserved via the
-standard reserved-memory DT bindings and hook them up in device tree to
-the display controller nodes via memory-region properties. I've got this
-working from a firmware/bootloader point of view, but I'm running into a
-couple of issues during early boot.
-
-I should mention that as part of this work I've also been meaning to
-transition the Tegra SMMU driver that we use on Tegra210 and earlier to
-register DMA IOMMU domains and then transition over the display driver
-to use that instead of explicit IOMMU usage. One of the issues that I
-ran into early on was that the Tegra SMMU would start faulting as soon
-as the display controllers had been attached to the DMA IOMMU domain.
-This is because the display hardware is still scanning out the frame-
-buffer that firmware had set up when the DMA API hooks up to the IOMMU
-domain. Currently we don't run into that because we explicitly only
-attach to the IOMMU after the display hardware has been reinitialized.
-
-This particular problem was fairly easy to fix by implementing the
-IOMMU's ->get_resv_regions() and ->put_resv_regions() callbacks that
-parse the memory-region properties for a device and create 1:1 mappings
-for each region before "enabling" the domain.
-
-I have patches to implement the same mechanism on Tegra186 where an ARM
-SMMU is used. Unfortunately, with this patch to disable bypass by
-default, this approach no longer works. The problem is that the ARM SMMU
-starts faulting immediately after it's bound to the driver because all
-stream IDs will now fault by default (and like I mentioned, the display
-controller is still busy scanning out the framebuffer set up by the
-firmware). The faults cause a massive amount of interrupt, slowing down
-the boot process significantly, and cause the display hardware to read
-the framebuffer as all-ones, so the display goes to complete white early
-during boot.
-
-Now, I realize that this is precisely what this patch intended. It's
-quite nasty for the display hardware to just keep scanning stuff out
-=66rom where it may not be allowed to. On the other hand, if we're careful
-about marking the firmware framebuffer region reserved, Linux won't be
-touching it and it'd be fine for the hardware to keep reading from it.
-We do need to make sure to establish that 1:1 mapping, though, to fix
-these faults.
-
-So, since you mentioned "real technical reasons", I'm wondering if you
-have any ideas how to fix this. I understand that, strictly speaking, we
-do violate the Linux boot requirements here (display hardware is not
-quiesced), but surely seamless transition from a firmware boot splash to
-the kernel display driver is a feature that we want to support.
-
-I suppose an easy way would be to let the firmware add a command-line
-argument to enable bypass, but that seems a little coarse and it would
-enable bypass in general, again opening up the security issues that you
-wanted to close with this.
-
-Perhaps an alternative would be to add a property to the SMMU node that
-lists a set of stream IDs for which to enable bypass by default. We
-could let the firmware set that when the display hardware has been set
-up. That way when the kernel boots we can keep scanning from the
-reserved memory and the ARM SMMU driver would not disable bypass for the
-display hardware. Only when the display hardware is actually attached to
-the IOMMU domain, and the 1:1 mappings have been created would bypass be
-disabled, and at that point there should be no SMMU faults anymore, so
-we have cleanly transitioned to the kernel.
-
-Any thoughts?
-
-Thierry
-
---45Z9DzgjV8m4Oswq
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl1ah/MACgkQ3SOs138+
-s6G7bRAApPrCz8qAHK9aKwhVH0dVahij0CFk8n0D1+ynw9xFI95qeHn+EO9IZ9+J
-1J+5Pvk/jS+zfXvRoz+FNM7VsKBjeAd6hdAH43Ci7TuksgYVxh4sHS4xfu20hTn3
-uZF6Q4xzLP7VAP1lYtgUulCV9YApqs/JRlEJYf+u0VwlQgaKr4QBPpgr+L3QF9/C
-0qkUMJS8sWXLV/i8eiy46IPOwuQMFzExzsScwdU+irpgP07qTcKha7SZZltDB3pP
-vC/C13+ttlzz1ID2S2J+rl8+KhIk38yEJPPzBzxDQ3jEzo13VMnu42wrV1vbcI2F
-nz244YlCTiGbVGFVDKS/A0xFliSXQthCAxQzXlL5inQKYdSsOLiwOshaCw5OrRWT
-/18J2flHotTud2MuJSxpUJR9c9yJfa75FgCm9kxpGY0KCa5T0X1P4FHTtPmAiR4H
-vBgYjDxYyX5D7RbIE1V6XMOV3s90OD93lRqnVw2BQaBcTzaN9VtIy2gcgIazTS7d
-GeIVLyc08s5L2HisP1atmPp3Z4KcZ62QZntK8+PDAtnFKuGuI5TVSJ963ItGi6dz
-zebe1+4huD4nC2WMkHuywdG4wo/itDm51IDZAPS4CEv6d5RaSyEuniRsY2/1kEU4
-rYoGCybx2lUfVUhcASI+rV4ZwE0Gjs/nsuoUP5sivygtCsuaSWg=
-=N5PZ
------END PGP SIGNATURE-----
-
---45Z9DzgjV8m4Oswq--
-
-
---===============8547114963364862584==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8547114963364862584==--
-
