@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 276809220E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 13:19:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7001F92216
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 13:21:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ko+M6dkSEeOzkBLtNpxH4hzcZ0FfIzRxkEAJ66MfJjc=; b=tj6YbTSgwAQqeu
-	yI2wnJKhzr3jHRDeiFy9eKOiyO9vzHlfsURdeGbvG51zc1eXOz+95v7Sz7x9gGTzQ+AJxkmOcclbv
-	9OCrn3xPsySL4jRZYUDULh4PQ1dS5qt/imA8s4/9w9VbA649pNQvv0g0mxinIdZmsqSAnTpwpi7M3
-	OIkP3F+mX4JYavx82R/X0VRIRLLmhigwQeswdy8SWmCWAx1lWfYVm35AY5L28b5Vi+x/pfls8bT9d
-	ic/hBpOwwOfZdhOV3aeeIBGtiE7e1KDL/OURfUDfvfRVrz28eHSMzGyFx19yYeXZvyw37B9Np+NTE
-	IkXO68fDPJys+fo1be2g==;
+	List-Owner; bh=ZOqq4MZg7biDlqvdqqDsyfvcBbdtbT2o+mROUvun5so=; b=lFdOGU/Tqb4Esv
+	Odi4ht+PNBS4DEEzlk9icjvVMV7FY7IJ1PHk/GOdLm5e9H3P4Tr3RdGyM1DrB5FzGOexxeD1SZJGR
+	KqdD/vINothNiQ8cSE+q+UDuwDX1YjXUo76QMr4o5I+1YZAzfVLco08SQhvL0ar3s3ddXkhY1epGe
+	eal+xL9Ye0Pmi5Q1ohsJFFaMfZ4A9BBWXP3w++mA9xCFzwyZA8C1tMJr+/WLPcg5auoLrP5KAEN5n
+	dJfpWf4rz9KfmJ2jv1i8Jqx4XdTYsTsOTlr3myZU7Alkol6zYbrM68Jn367TTWZt+UN67O9JXZor3
+	6Vj16A88t2sPYLgPLndw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzfgv-0003CE-3H; Mon, 19 Aug 2019 11:19:13 +0000
+	id 1hzfjP-0004kj-Fi; Mon, 19 Aug 2019 11:21:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzfgj-0003BZ-JM
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 11:19:03 +0000
+ id 1hzfjH-0004k2-Fe
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 11:21:40 +0000
 Received: from X250 (37.80-203-192.nextgentel.com [80.203.192.37])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CC9F42085A;
- Mon, 19 Aug 2019 11:18:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 97E352085A;
+ Mon, 19 Aug 2019 11:21:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566213541;
- bh=wUOaCEaWH+zGwPwJEP4cQs1+4O414saVr5gYOrQZAfY=;
+ s=default; t=1566213699;
+ bh=rbe0ZJX0S7ZC9cn7XqBdlwI52Gljn2EhY1w3k/I2IDU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=DmQrUeLXoNKvO5IHeTW93qHddpzI3CploHgntA27j1EmqglqU89plun/se6FkVdhZ
- By2Fc3Fi1Ikpw6Ms5sSgpdpgJIbzDXCY7mFQUj3ZTfIx0FFWMyEmt90V5pQT6LHQ2A
- oxx5y4i8eocRaYyhM1YcTL0HnBTqZDzfUtuvgdPU=
-Date: Mon, 19 Aug 2019 13:18:48 +0200
+ b=hLRQkbiZ6pcBq+kZyNNrEKS3av5RqmLttMJtMZVdRGpaNFrOIMT1o2Q2FfN8/sI4W
+ xbVKqXeVVwkMJhH6UzXEztEsfJhpkyuOqep68cq4GUIGdkpVbi2eOB0N5X4Z6eqj+k
+ ELUJui8xxI0izBklsJizC1ulI2wtWENH8qNb9CFI=
+Date: Mon, 19 Aug 2019 13:21:26 +0200
 From: Shawn Guo <shawnguo@kernel.org>
 To: Philippe Schenker <philippe.schenker@toradex.com>
-Subject: Re: [PATCH v4 07/21] ARM: dts: imx7-colibri: fix 1.8V/UHS support
-Message-ID: <20190819111847.GQ5999@X250>
+Subject: Re: [PATCH v4 08/21] ARM: dts: imx7-colibri: Add touch controllers
+Message-ID: <20190819112124.GR5999@X250>
 References: <20190812142105.1995-1-philippe.schenker@toradex.com>
- <20190812142105.1995-8-philippe.schenker@toradex.com>
+ <20190812142105.1995-9-philippe.schenker@toradex.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190812142105.1995-8-philippe.schenker@toradex.com>
+In-Reply-To: <20190812142105.1995-9-philippe.schenker@toradex.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_041901_653395_4F9A6943 
-X-CRM114-Status: GOOD (  18.74  )
+X-CRM114-CacheID: sfid-20190819_042139_545904_6472F08A 
+X-CRM114-Status: GOOD (  17.42  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,7 +81,6 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
  Michal =?utf-8?B?Vm9rw6HEjQ==?= <michal.vokac@ysoft.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
- Stefan Agner <stefan.agner@toradex.com>,
  Marcel Ziswiler <marcel.ziswiler@toradex.com>,
  Sascha Hauer <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
@@ -95,14 +94,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 02:21:25PM +0000, Philippe Schenker wrote:
-> From: Stefan Agner <stefan.agner@toradex.com>
+On Mon, Aug 12, 2019 at 02:21:26PM +0000, Philippe Schenker wrote:
+> Add touch controller that is connected over an I2C bus.
 > 
-> Add pinmuxing and do not specify voltage restrictions for the usdhc
-> instance available on the modules edge connector. This allows to use
-> SD-cards with higher transfer modes if supported by the carrier board.
-> 
-> Signed-off-by: Stefan Agner <stefan.agner@toradex.com>
 > Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
 > Acked-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 > 
@@ -112,59 +106,60 @@ On Mon, Aug 12, 2019 at 02:21:25PM +0000, Philippe Schenker wrote:
 > - Add Marcel Ziswiler's Ack
 > 
 > Changes in v3:
-> - Add new commit message from Stefan's proposal on ML
+> - Fix commit message
 > 
-> Changes in v2: None
+> Changes in v2:
+> - Deleted touchrevolution downstream stuff
+> - Use generic node name
+> - Better comment
 > 
->  arch/arm/boot/dts/imx7-colibri.dtsi | 23 ++++++++++++++++++++++-
->  1 file changed, 22 insertions(+), 1 deletion(-)
+>  arch/arm/boot/dts/imx7-colibri-eval-v3.dtsi | 24 +++++++++++++++++++++
+>  1 file changed, 24 insertions(+)
 > 
-> diff --git a/arch/arm/boot/dts/imx7-colibri.dtsi b/arch/arm/boot/dts/imx7-colibri.dtsi
-> index 5347ed38acb2..c563bb821b5e 100644
-> --- a/arch/arm/boot/dts/imx7-colibri.dtsi
-> +++ b/arch/arm/boot/dts/imx7-colibri.dtsi
-> @@ -326,7 +326,6 @@
->  &usdhc1 {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_usdhc1 &pinctrl_cd_usdhc1>;
-> -	no-1-8-v;
->  	cd-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
->  	disable-wp;
->  	vqmmc-supply = <&reg_LDO2>;
-> @@ -671,6 +670,28 @@
->  		>;
->  	};
+> diff --git a/arch/arm/boot/dts/imx7-colibri-eval-v3.dtsi b/arch/arm/boot/dts/imx7-colibri-eval-v3.dtsi
+> index d4dbc4fc1adf..576dec9ff81c 100644
+> --- a/arch/arm/boot/dts/imx7-colibri-eval-v3.dtsi
+> +++ b/arch/arm/boot/dts/imx7-colibri-eval-v3.dtsi
+> @@ -145,6 +145,21 @@
+>  &i2c4 {
+>  	status = "okay";
 >  
-> +	pinctrl_usdhc1_100mhz: usdhc1grp_100mhz {
-> +		fsl,pins = <
-> +			MX7D_PAD_SD1_CMD__SD1_CMD	0x5a
-> +			MX7D_PAD_SD1_CLK__SD1_CLK	0x1a
-> +			MX7D_PAD_SD1_DATA0__SD1_DATA0	0x5a
-> +			MX7D_PAD_SD1_DATA1__SD1_DATA1	0x5a
-> +			MX7D_PAD_SD1_DATA2__SD1_DATA2	0x5a
-> +			MX7D_PAD_SD1_DATA3__SD1_DATA3	0x5a
-> +		>;
-> +	};
-> +
-> +	pinctrl_usdhc1_200mhz: usdhc1grp_200mhz {
+> +	/*
+> +	 * Touchscreen is using SODIMM 28/30, also used for PWM<B>, PWM<C>,
+> +	 * aka pwm2, pwm3. so if you enable touchscreen, disable the pwms
+> +	 */
+> +	touchscreen@4a {
+> +		compatible = "atmel,maxtouch";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pinctrl_gpiotouch>;
+> +		reg = <0x4a>;
+> +		interrupt-parent = <&gpio1>;
+> +		interrupts = <9 IRQ_TYPE_EDGE_FALLING>;		/* SODIMM 28 */
+> +		reset-gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;	/* SODIMM 30 */
+> +		status = "disabled";
 
-No reference to them from usdhc1 node?
+Why disabled?
 
 Shawn
 
-> +		fsl,pins = <
-> +			MX7D_PAD_SD1_CMD__SD1_CMD	0x5b
-> +			MX7D_PAD_SD1_CLK__SD1_CLK	0x1b
-> +			MX7D_PAD_SD1_DATA0__SD1_DATA0	0x5b
-> +			MX7D_PAD_SD1_DATA1__SD1_DATA1	0x5b
-> +			MX7D_PAD_SD1_DATA2__SD1_DATA2	0x5b
-> +			MX7D_PAD_SD1_DATA3__SD1_DATA3	0x5b
-> +		>;
 > +	};
 > +
->  	pinctrl_usdhc3: usdhc3grp {
->  		fsl,pins = <
->  			MX7D_PAD_SD3_CMD__SD3_CMD		0x59
+>  	/* M41T0M6 real time clock on carrier board */
+>  	rtc: m41t0m6@68 {
+>  		compatible = "st,m41t0";
+> @@ -200,3 +215,12 @@
+>  	vmmc-supply = <&reg_3v3>;
+>  	status = "okay";
+>  };
+> +
+> +&iomuxc {
+> +	pinctrl_gpiotouch: touchgpios {
+> +		fsl,pins = <
+> +			MX7D_PAD_GPIO1_IO09__GPIO1_IO9		0x74
+> +			MX7D_PAD_GPIO1_IO10__GPIO1_IO10		0x14
+> +		>;
+> +	};
+> +};
 > -- 
 > 2.22.0
 > 
