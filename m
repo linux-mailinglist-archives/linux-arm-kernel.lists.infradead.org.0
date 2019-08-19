@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 668BE94E2F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:31:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B631394E44
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 21:32:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t9Xt8jAVFHfxOJIZgGTOfPoEp1pt1I1S1HunD5C73DI=; b=Q9rZxAn6ZfnsH4
-	RtsJq5dh0BBEWS/3dH1xnWQ5S4/WS0ybt8L6JeGAWw1XLI+Ma//WZU0tdDeYCNPsjQv2ePZFYIxll
-	VyrYsnTCNvaTHsW1ko+0QpgDCbVczhtiILhGD0JzR9QaGeQr5dFhEY5pn1zijcS7w2t5IDMDDCsHC
-	8eRRZDUaea8HjySAILdgb6tztQpHIbMfEYZUtAMkkbVr5q+t77IcUbSW/P80K7yPKAMhKVEjtUW7y
-	L3o5vQ4gwNBLrCvtYInJ5h9mBkVmRYHFN5Av8pjS6IBsBf+0A4SFDLyyF+hQgVNtWwFpCXzWqDm3f
-	HG0lBJMH/CzQFPE5gYmA==;
+	List-Owner; bh=wzDVF9DNWF5mafVTy3IV4vA/XpedSGxu4hXWRwkgsIo=; b=S74cgrc6oCsKPO
+	T3oo0f5FhmTZQ0yvqA7H8bykVgJhhfW3FvFDoEXFhz62garl6zQCX1n3LDpcO7ooPXy2bsHQC5SOn
+	6wta/0WCQcziCcu8c/lxkn9GU4rDgKouDWdLZYpzAmiAWLOefOv3zYjYDPVBl2KDEnRhl8wVudeB1
+	onbUCemfoPNEAo7WVwoavSAY0GAlPtcINXZ0lJBc3Ez7Gsaf8M0hkqS8Yu1RXNtzLItxXmNOfflQ5
+	GgVcHTDaZH4WPNmj5Kai67/mfxw2s6EWtIR8ak+Mz0WKalqcXiivCxVLyYtA3CCBGTKV4Qwll27/D
+	IxLEKbp3jQH9ML4ZCfNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hznNB-0004V6-5B; Mon, 19 Aug 2019 19:31:21 +0000
+	id 1hznO0-0005CL-VD; Mon, 19 Aug 2019 19:32:12 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hznHs-0000Bu-2I
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:25:54 +0000
+ id 1hznHv-0000Dz-Pl
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 19:26:01 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3BD6522CEC;
- Mon, 19 Aug 2019 19:25:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9807622CF6;
+ Mon, 19 Aug 2019 19:25:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566242750;
- bh=/JNyZbS922uUvEBM9yhHQYNhX5F4WMOEyf2ebWw0n0E=;
+ s=default; t=1566242754;
+ bh=r26mVi/Xdz/Vu/rKWGSR3w39MsxTxz5AOjIuGgJ5SLY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=1LbNMr5xpgWNAtAk+jIYVhSn/QVEWR04aE/ujIe61LZ48mKXoZnt3f2z8QpLC0guh
- n2GO1CN9eLbNbixs6pf+GJaG2N2y2dz41Gy3cti79uvzlRnpVr30wwyLpOiw/7JPBm
- M7SJABxkzlp5G9azY1JgppTsQ7Z7Ohk+y1yLXHkc=
+ b=HXlVqazDIZhHBBlltb4Jwzhz6SGlPlP/HEN4yzDx9tKCrabyvbpl0jOYfffarJXwl
+ jki4+zExNPQv0mEVS9u4h9FWhAfRbkvRxU4MwLKa1o2PJm4R20vp3XkP6pRe/Syd0d
+ oX9NxON9J+EnGOJXga/AHQiTFJH8VIxEogrCoJrk=
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
  lgirdwood@gmail.com, broonie@kernel.org
-Subject: [PATCH 06/21] ASoC: sun4i-i2s: Rework MCLK divider calculation
-Date: Mon, 19 Aug 2019 21:25:13 +0200
-Message-Id: <dcc5deb2eb650758d268bddd20f60ba58856d024.1566242458.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH 07/21] ASoC: sun4i-i2s: Don't use the oversample to calculate
+ BCLK
+Date: Mon, 19 Aug 2019 21:25:14 +0200
+Message-Id: <c3595e3a9788c2ef2dcc30aa3c8c4953bb5cc249.1566242458.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_122552_271167_2EBF8019 
-X-CRM114-Status: GOOD (  14.05  )
+X-CRM114-CacheID: sfid-20190819_122555_998257_E06E8F4F 
+X-CRM114-Status: GOOD (  15.57  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,47 +86,62 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-The MCLK divider calculation is currently computing the ideal divider using
-the oversample rate, the sample rate and the parent rate.
+The BCLK divider should be calculated using the parameters that actually
+make the BCLK rate: the number of channels, the sampling rate and the
+sample width.
 
-However, since we have access to the frequency is supposed to be running at
-already, and as it turns out we're using it to compute the oversample rate,
-we can just use the ratio between the parent rate and the MCLK rate to
-simplify a bit the formula.
+We've been using the oversample_rate previously because in the former SoCs,
+the BCLK's parent is MCLK, which in turn is being used to generate the
+oversample rate, so we end up with something like this:
 
+oversample = mclk_rate / sampling_rate
+bclk_div = oversample / word_size / channels
+
+So, bclk_div = mclk_rate / sampling_rate / word_size / channels.
+
+And this is actually better, since the oversampling ratio only plays a role
+because the MCLK is its parent, not because of what BCLK is supposed to be.
+
+Furthermore, that assumption of MCLK being the parent has been broken on
+newer SoCs, so let's use the proper formula, and have the parent rate as an
+argument.
+
+Fixes: 7d2993811a1e ("ASoC: sun4i-i2s: Add support for H3")
+Fixes: 21faaea1343f ("ASoC: sun4i-i2s: Add support for A83T")
+Fixes: 66ecce332538 ("ASoC: sun4i-i2s: Add compatibility with A64 codec I2S")
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
- sound/soc/sunxi/sun4i-i2s.c | 10 ++++------
- 1 file changed, 4 insertions(+), 6 deletions(-)
+ sound/soc/sunxi/sun4i-i2s.c |  9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
 diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index fbbedb660cc6..3d7f4a97e0ba 100644
+index 3d7f4a97e0ba..ee8ee3eb2087 100644
 --- a/sound/soc/sunxi/sun4i-i2s.c
 +++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -225,11 +225,10 @@ static int sun4i_i2s_get_bclk_div(struct sun4i_i2s *i2s,
- }
+@@ -208,10 +208,11 @@ static const struct sun4i_i2s_clk_div sun4i_i2s_mclk_div[] = {
+ };
  
- static int sun4i_i2s_get_mclk_div(struct sun4i_i2s *i2s,
+ static int sun4i_i2s_get_bclk_div(struct sun4i_i2s *i2s,
 -				  unsigned int oversample_rate,
--				  unsigned int module_rate,
--				  unsigned int sampling_rate)
 +				  unsigned long parent_rate,
-+				  unsigned long mclk_rate)
++				  unsigned int sampling_rate,
+ 				  unsigned int word_size)
  {
--	int div = module_rate / sampling_rate / oversample_rate;
-+	int div = parent_rate / mclk_rate;
+-	int div = oversample_rate / word_size / 2;
++	int div = parent_rate / sampling_rate / word_size / 2;
  	int i;
  
- 	for (i = 0; i < ARRAY_SIZE(sun4i_i2s_mclk_div); i++) {
-@@ -308,8 +307,7 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+ 	for (i = 0; i < ARRAY_SIZE(sun4i_i2s_bclk_div); i++) {
+@@ -300,8 +301,8 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
  		return -EINVAL;
  	}
  
--	mclk_div = sun4i_i2s_get_mclk_div(i2s, oversample_rate,
--					  clk_rate, rate);
-+	mclk_div = sun4i_i2s_get_mclk_div(i2s, clk_rate, i2s->mclk_freq);
- 	if (mclk_div < 0) {
- 		dev_err(dai->dev, "Unsupported MCLK divider: %d\n", mclk_div);
+-	bclk_div = sun4i_i2s_get_bclk_div(i2s, oversample_rate,
+-					  word_size);
++	bclk_div = sun4i_i2s_get_bclk_div(i2s, i2s->mclk_freq,
++					  rate, word_size);
+ 	if (bclk_div < 0) {
+ 		dev_err(dai->dev, "Unsupported BCLK divider: %d\n", bclk_div);
  		return -EINVAL;
 -- 
 git-series 0.9.1
