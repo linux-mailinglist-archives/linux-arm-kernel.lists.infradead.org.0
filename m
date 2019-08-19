@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3892A94EB3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 22:07:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE56E94F13
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 19 Aug 2019 22:33:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HSlMbKgya/Xev1kV3sjKNcsJ+sdW2FOKWm4hMYgocIE=; b=moAi6Mq7y5dqFw
-	gDOS7UO5nTefyijy5mVlaOxTdFjpS7SRcDQFjiglM4jIhgOAVLI61+q5mTM9EBq6zwt/qjVu4vRmZ
-	ICf9pC3wDY1qDhaxyBMVuEdJiOcra63ed56t1RZG6G09XtysZ5X0xhYQE45JuyS5jBpbxsYc4tN9o
-	VPQ+G3jdkc/qAi2+7gTvwoIX7BfC3v+zO0wuaaSD+pZ+/a+fSuxmiRjyMK0IZ07Xs9hJMljWsVjek
-	6B7Tem3nRhlEMKGJT78MeQ8m4xpmV18Mi+6mMGCwZ4f15tmapTkR0leGeGEPB7XJr7k+1gmUp8/JR
-	2VFWtBjeBsXyI62DCPbQ==;
+	List-Owner; bh=IFejyRxcW54n46qBMKX2ttAvVcsbOnzp+TVrdhxag2M=; b=avECrMT48F4yD9
+	ixqjfAIJr1sNoVlCV04ypupCPovmTpYG0VR2f9zt2odZusoRcPuaByKp82Omzf8Cg2/ttxVFhcWsy
+	dLR8rqNBOrVKBLGBCJ6JswQz7uHgX3NqbudRTZdlamF/dng9+k7KPmFrTpPT+lu+UF0HLGIDCuuRI
+	xJM9ZXCNKrxSKTiKUydddiCeboE9H64pC2tB2iVuwqPrYEJ3LDAnO9BKoSwixb3HxebKtG1jJv2+4
+	DIn5ojtHs5wweMIwLMjeBAvZtBWOMacPnVucFxN9evkQj6LxLAsiXN9OqTvgox8MaoHXZ1N1iytvj
+	wWJpB2SDOb87PICqOcKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hznvc-0006PT-HZ; Mon, 19 Aug 2019 20:06:56 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hzoLV-0005rG-Q0; Mon, 19 Aug 2019 20:33:41 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hznvQ-0006P5-Ol
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 20:06:46 +0000
-Received: by mail-pg1-x544.google.com with SMTP id l21so1819973pgm.3
+ id 1hzoLK-0005qp-17
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 20:33:31 +0000
+Received: by mail-pl1-x641.google.com with SMTP id f19so1106609plr.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 19 Aug 2019 13:06:44 -0700 (PDT)
+ Mon, 19 Aug 2019 13:33:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=YrBGd6BNAnyFpL18Qa9ZsHsIfGfM4A6+UQCW+vih99U=;
- b=pVpVTgo6/oRCkrRRZg6VIxCtNItwJJre+qf1/+V2U/2WtPs6+BqibE0LI5GNRB70O7
- R9A+DoT47Wlvku7ocGeUrcByoPxViGhNmeClekna2d5PnA0UizWQdPVbO3YcZRkDyenR
- IMzPVgjMc/IXeVoTCr7jsXnnhr3fQcfpjAaCpWfSmK8ByyFTz2EqRpKJf2WBfuxlJU7d
- ntPlrLwc8rcc1FEJjnNcgmhyWiC6RehNN6ZkggjVVcHSdoD8tMJAvQm0+BhfkGojK5ko
- ertq4vv5mfZ4aMsqdBUFMJHrPIzzzlSgm6oM8IxJ5t7TT/kJuoJaeMQGJh9oN93UomYA
- VeDw==
+ bh=C0YdE7WLdR5eShoGfGzaTJbbzQCql5KdO1zzWvfao/I=;
+ b=uKxM19xm2s7/cFwYcRITgshuU5SM6FPO78IQuoXe3YJJ2FoPRFyK+9UwydxmEwTzz0
+ aMjktkxdi6yTQR2//FZBqty3r88nNwi039t9rDaAtBq7l3Wm24dAqe29F+xcwY1fG1D3
+ 34F/z9GimHbQTFjF/W/A1hA6dXjCyb++iaeYtBpabSwyBjcBmGN+VX2HollYI3DooMyU
+ MG4d6fP2IIy0KsSYDcnEtDduKWOk9J1vu0v88ithmAacP6Gbqk2L7X4xZ7+/ZWnBx4OQ
+ NC6+OtAyYV2WJV3xgtmNTPM468RDTHDTUkCaKCvrAY5cbYt2SH/Hra4ek62jbmL6uMsm
+ iWCA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=YrBGd6BNAnyFpL18Qa9ZsHsIfGfM4A6+UQCW+vih99U=;
- b=HlD1ecu4ySYDyoNfW9yKcOsrQI3rjmq8cgaOb3lzDjz5UuKh6cFwHOYjt9qt4OC7uf
- ZXt4+QjugvLuK0kAUKxf7uBxu1tXggDneMZeT0sCntxEQFcEnC3glaa0Z6SjgikoRw15
- CNXDV/AXW75b80VQDv9E4ERW+n+J3JyDpVGnwtKqNvVSu58yjI2abt+csFqyDV3C1hzc
- hiVz10Zds+BHwfoh6oi2kJfidhMZk3vsClU6beuvvuI4hyiCaeKkQExNX0KuzarUrXOi
- GCxf+FNcFHMvglWstYdmgSOCkH3CeEZZ2MMbRslqA9zzS82vjFt0RdAwiDGeiO4VVmxP
- a0vw==
-X-Gm-Message-State: APjAAAXf9JMX0KG12V9if5kWlxFPmt/TlZignCn9NpDv9v29oZx+vIzO
- CrLQSKKm/UbzWJsynE0cE7azNw==
-X-Google-Smtp-Source: APXvYqwtNIIQW7C5wHvjaIv5kbjzzXA+VlgHEYBTl1rmIPKC01oj1TlCohgBP7CHCS/jXwOxbC/21w==
-X-Received: by 2002:a17:90a:374a:: with SMTP id
- u68mr22539788pjb.4.1566245203441; 
- Mon, 19 Aug 2019 13:06:43 -0700 (PDT)
+ bh=C0YdE7WLdR5eShoGfGzaTJbbzQCql5KdO1zzWvfao/I=;
+ b=GA7fLEcvS1/YgQbOu8lsJRjih3iF9Ynz5JVrbCO0WhZJ/cRb+4oYAQdJMbMATay2g4
+ s8+Gn56HE7Xl6Ttok0MOM4I8A3113+/d2oAWFs5GawODypSrjxzCavHJ4LYU9YT03UPd
+ mubLoCbWketma0fxSnYJhOV05LXY8UOm5DMftDaktsJQCVaYEFTwFCqCx0BIcwpsNVYe
+ Yh3XrtQ93o40jdJwoKYRP7MomocJBSK2qjLbiEAJmunP0R7MSnWN/m1QAWPe537F3Pm9
+ 0zVDv1MbhIA58B0zkBUY4nPdUiMtgCO6qbKinxWQALQuszEXCNz+pCj01nRs+k0Ed63E
+ HDNw==
+X-Gm-Message-State: APjAAAWAFiULoaSEshEdQiTkc9e1tEflTMak6vSJ+vUl2BS8c2v4oeQ4
+ 8gJUGVVuSX1jfaxwHTj01dHkAQ==
+X-Google-Smtp-Source: APXvYqzm51FMfY0i8xpqcKW5PlL/Gu2LoqQLJ+6mU4zb/yf7lXfYTguv7N7bV/JNozv1azQ7wUodJg==
+X-Received: by 2002:a17:902:684f:: with SMTP id
+ f15mr24810884pln.332.1566246807635; 
+ Mon, 19 Aug 2019 13:33:27 -0700 (PDT)
 Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id r75sm18241262pfc.18.2019.08.19.13.06.41
+ by smtp.gmail.com with ESMTPSA id h11sm16844370pfn.120.2019.08.19.13.33.26
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 19 Aug 2019 13:06:42 -0700 (PDT)
-Date: Mon, 19 Aug 2019 14:06:40 -0600
+ Mon, 19 Aug 2019 13:33:27 -0700 (PDT)
+Date: Mon, 19 Aug 2019 14:33:25 -0600
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: Tanmay Vilas Kumar Jagdale <tanmay@marvell.com>
-Subject: Re: coresight: ACPI hook for funnel on ThunderX2
-Message-ID: <20190819200640.GA8268@xps15>
-References: <1565877479-1583-1-git-send-email-tanmay@marvell.com>
+Subject: Re: coresight: Add ETM4.1 support for ThunderX2
+Message-ID: <20190819203325.GB8268@xps15>
+References: <1565877215-1331-1-git-send-email-tanmay@marvell.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1565877479-1583-1-git-send-email-tanmay@marvell.com>
+In-Reply-To: <1565877215-1331-1-git-send-email-tanmay@marvell.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_130644_814281_BBF2DBA4 
-X-CRM114-Status: GOOD (  19.07  )
+X-CRM114-CacheID: sfid-20190819_133330_213743_71B94466 
+X-CRM114-Status: GOOD (  17.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,82 +108,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tanmay,
+Same comment as the previous patch along with the following...
 
-On Thu, Aug 15, 2019 at 01:58:21PM +0000, Tanmay Vilas Kumar Jagdale wrote:
-> Coresight topology on Marvell's ThunderX2 Processor is as follows:
-> 
->  ETM0 _                                                   _ TPIU
->  ...   \    Static      Dynamic                          /
->  ...    --> FUNNEL0 --> FUNNEL1 --> ETF --> REPLICATOR --
-> ETM127_/            |                                    \_ ETR
->                     |
->             ETM128--|
->                     /
->            Others--/
-> 
-> To support this topology add ACPI hook for Static Funnel0.
+On Thu, Aug 15, 2019 at 01:53:46PM +0000, Tanmay Vilas Kumar Jagdale wrote:
+> Add ETM4.1 periperhal ID for Marvell's ThunderX2 chip.
 > 
 > Signed-off-by: Tanmay Jagdale <tanmay@marvell.com>
-
-There are a few things that aren't working with your patch.  First it doesn't
-clear checkpatch.pl - a lot of maintainers will not even look at a patch when
-it is the case.  Second it doesn't apply to my coresight next branch[1] and
-third there are formatting issue with the subject line.
-
-I suggest you peruse through the Documentation/process directory with a special
-interest toward files submitting-patches.rst and submit-checklist.rst.  Your
-life (and mine) will be greatly improved in the process. 
-
-More comments below...
-
 > ---
->  drivers/hwtracing/coresight/coresight-funnel.c | 7 +++++++
->  1 file changed, 7 insertions(+)
+>  drivers/hwtracing/coresight/coresight-etm4x.c | 2 ++
+>  drivers/hwtracing/coresight/coresight-etm4x.h | 1 +
+>  2 files changed, 3 insertions(+)
 > 
-> diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
-> index fa97cb9ab4f9..315691fd6f4b 100644
-> --- a/drivers/hwtracing/coresight/coresight-funnel.c
-> +++ b/drivers/hwtracing/coresight/coresight-funnel.c
-> @@ -5,6 +5,7 @@
->   * Description: CoreSight Funnel driver
->   */
->  
-> +#include <linux/acpi.h>
->  #include <linux/kernel.h>
->  #include <linux/init.h>
->  #include <linux/types.h>
-> @@ -297,6 +298,11 @@ static int static_funnel_probe(struct platform_device *pdev)
->  	return ret;
->  }
->  
-> +static const struct acpi_device_id static_funnel_acpi_ids[] = {
-> +	{ "CAV901A" },
-> +	{},
-> +};
-> +
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> index 7bcac8896fc1..ac3bd617907b 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> @@ -58,6 +58,7 @@ static bool etm4_arch_supported(u8 arch)
+>  	/* Mask out the minor version number */
+>  	switch (arch & 0xf0) {
+>  	case ETM_ARCH_V4:
+> +	case ETM_ARCH_V4_1:
 
-Is there anything different between this static funnel and ARM's static funnel?
-An ACPI device for static funnels has already been added[2] - this is probably
-what you should be using.
+Why add ETM_ARCH_V4_1 when the switch statement strips off the first byte?
+
+Look at[1], someone already added support for 4.2.
+
+[1]. 5666dfd1d8a4 coresight: etm4x: Add support to enable ETMv4.2
+
+
+>  		break;
+>  	default:
+>  		return false;
+> @@ -1196,6 +1197,7 @@ static const struct amba_id etm4_ids[] = {
+>  	CS_AMBA_ID(0x000bb95e),		/* Cortex-A57 */
+>  	CS_AMBA_ID(0x000bb95a),		/* Cortex-A72 */
+>  	CS_AMBA_ID(0x000bb959),		/* Cortex-A73 */
+> +	CS_AMBA_ID(0x000cc0af),		/* Marvell ThunderX2 */
+
+I suspect this processor also has "coresight-cpu-debug" IPs.  If that is the
+case it is very possible they both have the same CID and a UCI (see next line)
+is required.
+
+>  	CS_AMBA_UCI_ID(0x000bb9da, uci_id_etm4),	/* Cortex-A35 */
+>  	{},
+>  };
 
 Thanks,
 Mathieu
 
-[1]. https://git.linaro.org/kernel/coresight.git/log/?h=next
-[2]. 991de72831b3 coresight: acpi: Static funnel support
-
->  static const struct of_device_id static_funnel_match[] = {
->  	{.compatible = "arm,coresight-static-funnel"},
->  	{}
-> @@ -306,6 +312,7 @@ static struct platform_driver static_funnel_driver = {
->  	.probe          = static_funnel_probe,
->  	.driver         = {
->  		.name   = "coresight-static-funnel",
-> +		.acpi_match_table = ACPI_PTR(static_funnel_acpi_ids),
->  		.of_match_table = static_funnel_match,
->  		.pm	= &funnel_dev_pm_ops,
->  		.suppress_bind_attrs = true,
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
+> index 4523f10ddd0f..03369e56b2eb 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.h
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.h
+> @@ -137,6 +137,7 @@
+>  #define ETM_MAX_SS_CMP			8
+>  
+>  #define ETM_ARCH_V4			0x40
+> +#define ETM_ARCH_V4_1			0x41
+>  #define ETMv4_SYNC_MASK			0x1F
+>  #define ETM_CYC_THRESHOLD_MASK		0xFFF
+>  #define ETM_CYC_THRESHOLD_DEFAULT       0x100
 > -- 
 > 2.17.1
 > 
