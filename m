@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93FB795190
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 01:16:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCD499519D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 01:21:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kBzS7u56F3r7JAnhzerPK+XEHPsYRaL4VG1tH5kiMNo=; b=ucATUn7jIQSl5A
-	mP+UyEyifEMs+xhMgk+OIYWgtdTrxIu3Fiw1RK5chlVZtqWc0GzwMhAue70wotjICVr3/BRPj2P6Z
-	khwg99Y7SIPVlm1LCEPDgQTaZxUq6h+7FYrE13cqKv700AAGltwwgzQaiFStqRKLWZKum9lHvYvHa
-	dyjkpBFyyzk3lWz08O7444WdCTL6gyQV1Pi2CqyFvETAaelYBMSRBzrfeMcT3D/ERYvCWulx3dh8q
-	GgNm96ik3Q/XW3W7/AChwQJZLo5vD6D6nF/HUY7fbtMuQIagWULXWzJ/0O882qlMAMF5eeajt9OTy
-	j0YgXb6ZAB/r5L0ABv6Q==;
+	List-Owner; bh=3XXE92dj8TDsim+Bdp8HnyJ17DfmloeJTXs5jpS9GkA=; b=Nqx/xO0k7O/d0c
+	42jPcSdngoWULUjSoApG/lcVJkcxfmpU4FueY/6k72s7jAtzmkbn+D4ZYsjs3DFMU7rVZ09qOMUT+
+	jJfceAo739/ob48OHlNW7j0Zrk3GwwCZPGNlIQ/RkzimPAdV/mjE/hfWL8I6+AUQ00ZtnQsYheOnd
+	yy2MtsqN5ityHjllYggoB4RhfZZQoenhnUQylXvAjOe/Ci95goHtz3HE4Hjjm+vO3IJ2RldgFZFMw
+	rts7y6Kxc2PW6R9C5UHsxITkmhdw2zkh/zIu1tjZMHuBIRc4cUiactPFycGSywcEr9gkmk92Y5rxT
+	DLUs8XkbBGYL+zwLRGvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzqtS-0002XL-JW; Mon, 19 Aug 2019 23:16:54 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1hzqxw-00054g-Cm; Mon, 19 Aug 2019 23:21:32 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzqsu-0002Wm-Jz
- for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 23:16:22 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7JNGFBw087770;
- Mon, 19 Aug 2019 18:16:15 -0500
+ id 1hzqwo-00054A-GX
+ for linux-arm-kernel@lists.infradead.org; Mon, 19 Aug 2019 23:20:24 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7JNKJpb000863;
+ Mon, 19 Aug 2019 18:20:19 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1566256575;
- bh=UDwHtVmIr6hlcbbOhoh1y1DJCtxZJXwP5T4cfzzgA58=;
+ s=ti-com-17Q1; t=1566256819;
+ bh=tyfJkNHq2EgWFBMlbBdi4Iejj9XMXwAnbWKf48D+V+o=;
  h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=m9O3WueLcnBINR5FMm2ys/ERTo4z0uTrNRsaILRHdZjB493nbkv+wPpj7x7LTw5Xp
- +uMwnpWCPU/6XvNYl2rzs4ANCkhOd+CLqLW04KfbieDmWZFAGbQu5lvp0VS1wY5Nmx
- sQO19SgJRrMafc9GHbZDx71OpDJRRLR1MrLBwcng=
+ b=Cbh9+OTQ3s9PsG8tp/r4Zlfp/ZIh5/bSwoQU0OtozakeWlGir8Wc/XtcSfIaXA/AA
+ M40fly1jYvRML+drcNTw+xuGQYhtcpDb9+sVpNogCBBTlVunxyPxvqXT9UuG1G9G94
+ ecAEoXzn64IzTUDdaYB0yI6UVAbOPPTTJy2hCdFA=
 Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7JNGFmc004915
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7JNKJOj002841
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 19 Aug 2019 18:16:15 -0500
-Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE105.ent.ti.com
+ Mon, 19 Aug 2019 18:20:19 -0500
+Received: from DLEE114.ent.ti.com (157.170.170.25) by DLEE105.ent.ti.com
  (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 19
- Aug 2019 18:16:15 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ Aug 2019 18:20:19 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE114.ent.ti.com
+ (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 19 Aug 2019 18:16:15 -0500
+ Frontend Transport; Mon, 19 Aug 2019 18:20:19 -0500
 Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7JNGFaj100994;
- Mon, 19 Aug 2019 18:16:15 -0500
-Subject: Re: [PATCH 4/8] soc: ti: omap-prm: add support for denying idle for
- reset clockdomain
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7JNKI6l051111;
+ Mon, 19 Aug 2019 18:20:18 -0500
+Subject: Re: [PATCH 0/8] soc: ti: Add OMAP PRM driver
 To: Tero Kristo <t-kristo@ti.com>, <ssantosh@kernel.org>,
  <linux-arm-kernel@lists.infradead.org>, <linux-omap@vger.kernel.org>,
  <robh+dt@kernel.org>
 References: <1565164139-21886-1-git-send-email-t-kristo@ti.com>
- <1565164139-21886-5-git-send-email-t-kristo@ti.com>
 From: Suman Anna <s-anna@ti.com>
-Message-ID: <81cda31a-b321-f9b4-2df7-2b6c084b2ec5@ti.com>
-Date: Mon, 19 Aug 2019 18:16:15 -0500
+Message-ID: <432a70fc-2683-42ca-3ac7-9775efa3ca41@ti.com>
+Date: Mon, 19 Aug 2019 18:20:18 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1565164139-21886-5-git-send-email-t-kristo@ti.com>
+In-Reply-To: <1565164139-21886-1-git-send-email-t-kristo@ti.com>
 Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_161620_881022_40888508 
-X-CRM114-Status: GOOD (  25.22  )
+X-CRM114-CacheID: sfid-20190819_162022_658779_356F6C69 
+X-CRM114-Status: GOOD (  14.40  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -104,162 +102,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Tero,
 
 On 8/7/19 2:48 AM, Tero Kristo wrote:
-> TI SoCs hardware reset signals require the parent clockdomain to be
-> in force wakeup mode while de-asserting the reset, otherwise it may
-> never complete. To support this, add pdata hooks to control the
-> clockdomain directly.
+> Hi,
 > 
-> Signed-off-by: Tero Kristo <t-kristo@ti.com>
-> ---
->  drivers/soc/ti/omap_prm.c            | 32 ++++++++++++++++++++++++++++----
->  include/linux/platform_data/ti-prm.h | 21 +++++++++++++++++++++
->  2 files changed, 49 insertions(+), 4 deletions(-)
->  create mode 100644 include/linux/platform_data/ti-prm.h
-> 
-> diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
-> index d412af3..870515e3 100644
-> --- a/drivers/soc/ti/omap_prm.c
-> +++ b/drivers/soc/ti/omap_prm.c
-> @@ -16,6 +16,8 @@
->  #include <linux/reset-controller.h>
->  #include <linux/delay.h>
->  
-> +#include <linux/platform_data/ti-prm.h>
-> +
->  struct omap_rst_map {
->  	s8 rst;
->  	s8 st;
-> @@ -24,6 +26,7 @@ struct omap_rst_map {
->  struct omap_prm_data {
->  	u32 base;
->  	const char *name;
-> +	const char *clkdm_name;
->  	u16 pwstctrl;
->  	u16 pwstst;
->  	u16 rstctl;
-> @@ -40,6 +43,8 @@ struct omap_prm {
->  struct omap_reset_data {
->  	struct reset_controller_dev rcdev;
->  	struct omap_prm *prm;
-> +	struct clockdomain *clkdm;
-> +	struct device *dev;
->  };
->  
->  #define to_omap_reset_data(p) container_of((p), struct omap_reset_data, rcdev)
-> @@ -108,6 +113,8 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
->  	int st_bit = id;
->  	bool has_rstst;
->  	int timeout = 0;
-> +	struct ti_prm_platform_data *pdata = dev_get_platdata(reset->dev);
-> +	int ret = 0;
->  
->  	/* check the current status to avoid de-asserting the line twice */
->  	v = readl_relaxed(reset->prm->base + reset->prm->data->rstctl);
-> @@ -125,13 +132,16 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
->  		writel_relaxed(v, reset->prm->base + reset->prm->data->rstst);
->  	}
->  
-> +	if (pdata->clkdm_deny_idle && reset->clkdm)
-> +		pdata->clkdm_deny_idle(reset->clkdm);
-> +
->  	/* de-assert the reset control line */
->  	v = readl_relaxed(reset->prm->base + reset->prm->data->rstctl);
->  	v &= ~(1 << id);
->  	writel_relaxed(v, reset->prm->base + reset->prm->data->rstctl);
->  
->  	if (!has_rstst)
-> -		return 0;
-> +		goto exit;
->  
->  	/* wait for the status to be set */
->  	while (1) {
-> @@ -140,13 +150,19 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
->  		if (v)
->  			break;
->  		timeout++;
-> -		if (timeout > OMAP_RESET_MAX_WAIT)
-> -			return -EBUSY;
-> +		if (timeout > OMAP_RESET_MAX_WAIT) {
-> +			ret = -EBUSY;
-> +			goto exit;
-> +		}
->  
->  		udelay(1);
->  	}
->  
-> -	return 0;
-> +exit:
-> +	if (pdata->clkdm_allow_idle && reset->clkdm)
-> +		pdata->clkdm_allow_idle(reset->clkdm);
-> +
-> +	return ret;
->  }
->  
->  static const struct reset_control_ops omap_reset_ops = {
-> @@ -159,6 +175,8 @@ static int omap_prm_reset_probe(struct platform_device *pdev,
->  				struct omap_prm *prm)
->  {
->  	struct omap_reset_data *reset;
-> +	struct ti_prm_platform_data *pdata = dev_get_platdata(&pdev->dev);
+> This series adds OMAP PRM driver which initially supports only reset
+> handling. Later on, power domain support can be added to this to get
+> rid of the current OMAP power domain handling code which resides
+> under the mach-omap2 platform directory. Initially, reset data is
+> added for AM3, OMAP4 and DRA7 SoCs.
 
-Please add checks for NULL callbacks. I don't think these are optional
-right, so better to check in init rather than during runtime. Granted
-you will probably not run into this after patch 8, but would be good to
-check and print an error in case pdata quirks is missed out.
+Wakeup M3 remoteproc driver is fully upstream, so we should be able to
+test that driver as well if you can add the AM4 data. That will also
+unblock my PRUSS.
 
-> +	char buf[32];
->  
->  	/*
->  	 * Check if we have resets. If either rstctl or rstst is
-> @@ -177,9 +195,15 @@ static int omap_prm_reset_probe(struct platform_device *pdev,
->  	reset->rcdev.ops = &omap_reset_ops;
->  	reset->rcdev.of_node = pdev->dev.of_node;
->  	reset->rcdev.nr_resets = OMAP_MAX_RESETS;
-> +	reset->dev = &pdev->dev;
->  
->  	reset->prm = prm;
->  
-> +	sprintf(buf, "%s_clkdm", prm->data->clkdm_name ? prm->data->clkdm_name :
-> +		prm->data->name);
-> +
-> +	reset->clkdm = pdata->clkdm_lookup(buf);
-
-Not checking return status?
+If you can add the data to others as well, it will help in easier
+migration of the individual drivers, otherwise the ti-sysc interconnect,
+hwmod, and hwmod reset data combinations will all have to be supported
+in code.
 
 regards
 Suman
 
-> +
->  	return devm_reset_controller_register(&pdev->dev, &reset->rcdev);
->  }
->  
-> diff --git a/include/linux/platform_data/ti-prm.h b/include/linux/platform_data/ti-prm.h
-> new file mode 100644
-> index 0000000..28154c3
-> --- /dev/null
-> +++ b/include/linux/platform_data/ti-prm.h
-> @@ -0,0 +1,21 @@
-> +/* SPDX-License-Identifier: GPL-2.0-only */
-> +/*
-> + * TI PRM (Power & Reset Manager) platform data
-> + *
-> + * Copyright (C) 2019 Texas Instruments, Inc.
-> + *
-> + * Tero Kristo <t-kristo@ti.com>
-> + */
-> +
-> +#ifndef _LINUX_PLATFORM_DATA_TI_PRM_H
-> +#define _LINUX_PLATFORM_DATA_TI_PRM_H
-> +
-> +struct clockdomain;
-> +
-> +struct ti_prm_platform_data {
-> +	void (*clkdm_deny_idle)(struct clockdomain *clkdm);
-> +	void (*clkdm_allow_idle)(struct clockdomain *clkdm);
-> +	struct clockdomain * (*clkdm_lookup)(const char *name);
-> +};
-> +
-> +#endif /* _LINUX_PLATFORM_DATA_TI_PRM_H */
+> 
+> I've been testing the reset handling logic with OMAP remoteproc
+> driver which has been converted to use generic reset framework. This
+> part is a work in progress, so will be posting patches from that part
+> later on.
+> 
+> -Tero
+> 
+> --
+> Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 > 
 
 
