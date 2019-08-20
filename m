@@ -2,52 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 212FD9678E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 19:28:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93AE4967B0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 19:39:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cqaEBtFlId0SfPfcDJowfYMUh8omij+0We3rrE3b6e4=; b=fZ/GvukQ4cDgtbpyGBt1tYn48
-	51V6JovpwHFq3jRvxqsOvzIhzbdVHUVs21XqeoawUMsp+tbzB5bQjfQiT6ebPp8UxemFLxjN1VqDA
-	eo4kwvmoA3VzpiFtwCI8T7klUfCIORhjH0KbEtBWjIlA18ro7fWpOQP5knzMdIoJaX7biI0vH5vz+
-	Skyn4vUabuMfJtBELurtwYy7bcIRVnN9jk3u86hacEY964h9XJA9j8DEyeYep70hp6w2dHOur2dhs
-	5EkaVLK8E+J4vpVD6gsDHEP2fU3VCTTHyt678MXALHBwHsL/5jTJUPfxSJN5J12Gh+lKZgPfQxJlP
-	7h4l9lQYw==;
+	 bh=yzPO4LeSDF5a8dRgrThxyhNWy/S1iTbO8Bt+d0Zhpss=; b=lKYdE/bN/UQdV7TFmcdjZpepr
+	fZrL+4hE65BT5t2iBEQ/ZFnQYHCnpQ5RV5Y3qKpQKItqPAGC0/sfsPB+cjFx5TRxbL2xzgTWscIAX
+	MobCkEhRuR7gHtaAxiSXT64/GMZI3zlpi+R17AisjCfhfj1EJW+Bk551dbccRsS3IK4JmMMOajhUM
+	rqPncGnr9HaqQ3Wl8aSAMowXC5irph/6f49LJHLlvVmObg4yh0425Nrgcs6RT+IOy0zB5Mewbizkl
+	vbiNuBmc2cbIj3jW07xqohxb/bNeanm7zupKf0hPqdz/UkxCE60uCBPPNR4I1iQ3MtkgAhtObLVvI
+	bgRPMa6tA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i07vR-0005Rw-Ns; Tue, 20 Aug 2019 17:28:05 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1i086G-0000Rt-U6; Tue, 20 Aug 2019 17:39:16 +0000
+Received: from mail-wr1-f100.google.com ([209.85.221.100])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i07vJ-0005R5-2G; Tue, 20 Aug 2019 17:27:58 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 1272AABBE;
- Tue, 20 Aug 2019 17:27:53 +0000 (UTC)
-Message-ID: <ef3eaf8ea03ae8dc86a1a2f293087ff5c2f56b7a.camel@suse.de>
-Subject: Re: [PATCH v2 03/11] of/fdt: add of_fdt_machine_is_compatible function
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 20 Aug 2019 19:27:50 +0200
-In-Reply-To: <CAL_JsqJT3UNVKpAt+3g-tosy=uCZTosUxD4RfVYjMJ-gpGmPiA@mail.gmail.com>
-References: <20190820145821.27214-1-nsaenzjulienne@suse.de>
- <20190820145821.27214-4-nsaenzjulienne@suse.de>
- <CAL_JsqJT3UNVKpAt+3g-tosy=uCZTosUxD4RfVYjMJ-gpGmPiA@mail.gmail.com>
-User-Agent: Evolution 3.32.4 
+ id 1i0868-0000Qx-1r
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 17:39:09 +0000
+Received: by mail-wr1-f100.google.com with SMTP id b16so13259277wrq.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 10:39:05 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=m7ao7ORH60h0tFo771t8XxOyJrM0P+fZjWuoPCMruUU=;
+ b=Gr4fHe8SXBrONcZl7AiLvfZ7xn5ZfOifqZJqPSpRmaw/ZTb+ui12KGy7xnfsXCfG+a
+ GJXZVNUZxAHN3xZe5kReMB1UnagiTZryJaOpMNlxAi9lp63hOcMPhGEPHE3k4AxIT8L7
+ NXPcOZBTavtWiodPvnZmS5FNezBuJqRAjA6p58VcCjA7OPnylOg26RVfo8NVfSLefRFW
+ 8aFJW1CEJBAGAPerBftUidVE3bxpz8Q9JixxtnQx7NRkXkWP3gbtsA6Y9ATj5JliCS7V
+ 1k5FGm0F3kKJzzz68ZIbZTMNXSzYYe8gQKVg2shgCrhEfIdZKmN5P15H8sY4pBkHCuKl
+ wlRw==
+X-Gm-Message-State: APjAAAVkqBF75wUHAZLAfCU8bq9+RVaf27g4+F1Cz1GiKGYOMvZch9y5
+ kwrioFyYRr7VTzuhibRP64UuBGcDxu45RBo0WIiTRmYRyuiRP5BdQHFLTrAPBVGzNA==
+X-Google-Smtp-Source: APXvYqzLzv/aLlzn2NHdKvwVs2INSBhJKvCzoIitnolVH0fpSkwLd7iHz1QYiEa9AY9Z0BuWcUR9HGgkrZ69
+X-Received: by 2002:a5d:6307:: with SMTP id i7mr36464585wru.144.1566322744775; 
+ Tue, 20 Aug 2019 10:39:04 -0700 (PDT)
+Received: from heliosphere.sirena.org.uk (heliosphere.sirena.org.uk.
+ [2a01:7e01::f03c:91ff:fed4:a3b6])
+ by smtp-relay.gmail.com with ESMTPS id f9sm2448wmj.34.2019.08.20.10.39.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 20 Aug 2019 10:39:04 -0700 (PDT)
+X-Relaying-Domain: sirena.org.uk
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1i0864-00031g-Cu; Tue, 20 Aug 2019 17:39:04 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 593B12742B4A; Tue, 20 Aug 2019 18:39:03 +0100 (BST)
+Date: Tue, 20 Aug 2019 18:39:03 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH 11/21] ASoC: sun4i-i2s: Use the actual format width
+ instead of an hardcoded one
+Message-ID: <20190820173903.GA5702@sirena.co.uk>
+References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
+ <fcf77b3bee47b54d81d1a3f4f107312f44388f5a.1566242458.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
+In-Reply-To: <fcf77b3bee47b54d81d1a3f4f107312f44388f5a.1566242458.git-series.maxime.ripard@bootlin.com>
+X-Cookie: When in doubt, lead trump.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_102757_258892_C61D9F51 
-X-CRM114-Status: GOOD (  14.93  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190820_103908_098659_557506E6 
+X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.221.100 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -60,97 +94,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:GENERIC INCLUDE/ASM HEADER FILES" <linux-arch@vger.kernel.org>,
- devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- phill@raspberryi.org, Will Deacon <will@kernel.org>, linux-mm@kvack.org,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Christoph Hellwig <hch@lst.de>, Eric Anholt <eric@anholt.net>,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- Matthias Brugger <mbrugger@suse.com>, "moderated
- list:BROADCOM BCM2835 ARM ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Frank Rowand <frowand.list@gmail.com>, linux-riscv@lists.infradead.org,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Stefan Wahren <wahrenst@gmx.net>
-Content-Type: multipart/mixed; boundary="===============4632932072236158542=="
+Cc: alsa-devel@alsa-project.org, lgirdwood@gmail.com,
+ linux-kernel@vger.kernel.org, codekipper@gmail.com,
+ Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7468363814926829415=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4632932072236158542==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-Cm+dM0aB2YImXVa0ovlW"
+--===============7468363814926829415==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Dxnq1zWXvFF0Q93v"
+Content-Disposition: inline
 
 
---=-Cm+dM0aB2YImXVa0ovlW
-Content-Type: text/plain; charset="UTF-8"
+--Dxnq1zWXvFF0Q93v
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-Hi Rob,
-thanks for the rewiew.
+On Mon, Aug 19, 2019 at 09:25:18PM +0200, Maxime Ripard wrote:
 
-On Tue, 2019-08-20 at 12:16 -0500, Rob Herring wrote:
-> On Tue, Aug 20, 2019 at 9:58 AM Nicolas Saenz Julienne
-> <nsaenzjulienne@suse.de> wrote:
-> > Provides the same functionality as of_machine_is_compatible.
-> >=20
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > ---
-> >=20
-> > Changes in v2: None
-> >=20
-> >  drivers/of/fdt.c | 7 +++++++
-> >  1 file changed, 7 insertions(+)
-> >=20
-> > diff --git a/drivers/of/fdt.c b/drivers/of/fdt.c
-> > index 9cdf14b9aaab..06ffbd39d9af 100644
-> > --- a/drivers/of/fdt.c
-> > +++ b/drivers/of/fdt.c
-> > @@ -802,6 +802,13 @@ const char * __init of_flat_dt_get_machine_name(vo=
-id)
-> >         return name;
-> >  }
-> >=20
-> > +static const int __init of_fdt_machine_is_compatible(char *name)
->=20
-> No point in const return (though name could possibly be const), and
-> the return could be bool instead.
+>  		regmap_update_bits(i2s->regmap, SUN4I_I2S_FMT0_REG,
+>  				   SUN8I_I2S_FMT0_LRCK_PERIOD_MASK,
+> -				   SUN8I_I2S_FMT0_LRCK_PERIOD(32));
+> +				   SUN8I_I2S_FMT0_LRCK_PERIOD(params_physical_width(params)));
 
-Sorry, I completely missed that const, shouldn't have been there to begin w=
-ith.
+This doesn't build for me:
 
-I'll add a const to the name argument and return a bool on the next version=
-.
+In file included from sound/soc/sunxi/sun4i-i2s.c:16:
+sound/soc/sunxi/sun4i-i2s.c: In function =E2=80=98sun4i_i2s_set_clk_rate=E2=
+=80=99:
+sound/soc/sunxi/sun4i-i2s.c:360:57: error: =E2=80=98params=E2=80=99 undecla=
+red (first use in this function); did you mean =E2=80=98parameq=E2=80=99?
+        SUN8I_I2S_FMT0_LRCK_PERIOD(params_physical_width(params)));
+                                                         ^~~~~~
+=2E/include/linux/regmap.h:75:42: note: in definition of macro =E2=80=98reg=
+map_update_bits=E2=80=99
+  regmap_update_bits_base(map, reg, mask, val, NULL, false, false)
+                                          ^~~
+sound/soc/sunxi/sun4i-i2s.c:360:8: note: in expansion of macro =E2=80=98SUN=
+8I_I2S_FMT0_LRCK_PERIOD=E2=80=99
+        SUN8I_I2S_FMT0_LRCK_PERIOD(params_physical_width(params)));
 
-Regards,
-Nicolas
-
-
-
---=-Cm+dM0aB2YImXVa0ovlW
+--Dxnq1zWXvFF0Q93v
 Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl1cLZYACgkQlfZmHno8
-x/4DowgAjoLUq0qUOWOtkTx0OcxyQrKy++gIvChR7IajK1yXJKyT8kA/QNZrERqj
-nvLlebXPhJG0y4uUTzEVmzsgUFS4vopZAzL+H7TGfXsL8pQbGjnO+l62gc1oqTVd
-U+IrQWs0BPZ/MeCxUXUtKlYdMMuf9Ld8z16siDZPj5pYY6IHq8HtS1WseTvTti6S
-pHpXyK+XiPpxzupgUjNm6Lzsm8FO0P2tw5IKD3vRLS+4vLaYUPieCLdMvkf1lMU6
-DkQ71pEENpt35eBer1lLK/meYuisvK4V+tnwrWSDGZCuywbhi1fpvAyh3CRicE3t
-rvLGmR2JEXsldgQeodOoEyKoeWSAgQ==
-=hgaN
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1cMDYACgkQJNaLcl1U
+h9A5+wf/R8kszzb6oMjGJWYnQJj4y8zrub+Ef7frMS3FakQtrfpNijxNi57HOXai
+jJvL1rK1E89FeYJlt5rPq9DJGlWe8dS9dMvhuz7JhsYl5cn+8m4o1LoUbH6Inv5k
+95bWW3IC9IBXhd6MiQwBZZpZ79T1UjHu9UfOF5dOEQ059wu8JCYvA0y/PzyH6kq8
+w1MO/wGVaEHT/DMsAs66Mp5/3Ju8DAn9ZaE7ZhrgIsBphf/P+/BZHPU/pQjFEVag
+f0ayDyQwRU1t26KvNeIRQpnUXV/N7ZF7j/uQ2mUQDTPjViBLS0uzUw/5bklcAT24
+w+0X+AVImMFg+yfuBP7oOP25UCjzbQ==
+=C0WO
 -----END PGP SIGNATURE-----
 
---=-Cm+dM0aB2YImXVa0ovlW--
+--Dxnq1zWXvFF0Q93v--
 
 
-
---===============4632932072236158542==
+--===============7468363814926829415==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -161,6 +166,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4632932072236158542==--
-
+--===============7468363814926829415==--
 
