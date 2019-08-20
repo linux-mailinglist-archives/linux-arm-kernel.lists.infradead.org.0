@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 998689641E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:20:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C24C96420
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:20:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bT/VIYzDgLqq6OtWxjXNp5a//EYMq5hXd9GspXCL//o=; b=OieTz+IIHYNlut
-	zf/16JhXN18VvhoxdZcJpmMYCUfmBNsD9lmcBI6yFvKVYOGge0eVFvNGb8YjlzUlKeEP4IhZapatS
-	x/oQQLjHhVPIxufIsjfuEwaF5I1dkLi29sRDSgIF7lsRtm+2jWoAruMGvl/6UA+hH7wzervuEfFDw
-	Yc1xIuZJe71wnql6cMB97xgclQmW9ZXNHKMoQRAW5KdZPmB8O6NAOIZzx91OZHvZCJ3mOWYgxOmEU
-	P2hRYjB2qSSMA8ODZDr4cHq80qtSdDemEgS/BDBysg60+1O0eDttqd82DHXggRCuLS9nZhbwZyy4m
-	iNvS30NBBxP2W/3F3jQQ==;
+	List-Owner; bh=/EEb4sVveedeoiw9TDFRUvAG//d97MGKtk+LpFf4hWw=; b=T0L5yo+ZI0bk07
+	rDUNWpTSj03ZQ965py0E32Ke1KBHHFeS5VrC6ZhIQT/uP5/h78XASIoL0Y9pEpPrVI0Ww2QC72ILK
+	UPs2aniza1sVt/KS3xTV6gE2eSH0HhBgYnrA8KC07ib6b+o36qFHsrUq0mRvb1FrHV8tSZuYNWUYU
+	BxjSJqrJUbzKeHfRzeOwA9cUe4WqkRmrzvDFmzu62zt81Lm3ggmTXSCL2jUU3gkbx8TOUB2Zgy6w3
+	aaCCTTuK3TP63hLav31TJ7BH/tFhzYFBD+aW+Jct4hgoDf+ICLxF4lcVGAC/31iLp8s+Qc42G4xUA
+	C8FwVsxRvDZbjXtcsQLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i05vs-0000eH-4N; Tue, 20 Aug 2019 15:20:24 +0000
+	id 1i05w5-0001JX-Sg; Tue, 20 Aug 2019 15:20:38 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i05v7-0007sp-Jz
+ id 1i05v7-0007sr-Sh
  for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:19:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1566314376; bh=9Bu3I/MHKVFLzcyKmY5PFKEAWplV+hj5AiRwPhNXy18=;
+ t=1566314376; bh=P46Ks+pSwFh8evjNR4bT2iq74D9QpPdX+LOP4bcJrNU=;
  h=From:To:Cc:Subject:Date:References:From;
- b=SMGaAyxpdu5QWmCjcwcx+YRShBYwGguwWZyv0b5+jRl38S939zdFmrCJfNAAbQ2iY
- w70t8bzvUTGXqwYtteDbcgznmlvCO771ChE8QbXY5tWN8iouEgWUtKsRP1YH0TwqS3
- K16IWoRvv79fGJlAznCCKUsHIvnnJhOgq/x4xuLk=
+ b=S0zEwvsraRLL0ynpgWwffXnzhAvK37c2ssuZ1jfScVV5/W/7DvdbJ9nEYAiW5Fpbe
+ yNcm7wJWYtw9eK2ZU69+TU6nxJ6YCFBmeEEJuBU03A2Kx2uWma0OiQ0ib2NGHf6YwM
+ PkDZleYTPeFKpkCHOkfBo3lLRsf/s/t7kmrQyt6w=
 From: megous@megous.com
 To: Alessandro Zummo <a.zummo@towertech.it>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH v2 2/3] rtc: sun6i: Add support for H6 RTC
-Date: Tue, 20 Aug 2019 17:19:33 +0200
-Message-Id: <20190820151934.3860-3-megous@megous.com>
+Subject: [PATCH v2 3/3] arm64: dts: sun50i-h6: Add support for RTC and fix the
+ clock tree
+Date: Tue, 20 Aug 2019 17:19:34 +0200
+Message-Id: <20190820151934.3860-4-megous@megous.com>
 In-Reply-To: <20190820151934.3860-1-megous@megous.com>
 References: <20190820151934.3860-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_081937_989318_8088112A 
-X-CRM114-Status: GOOD (  16.86  )
+X-CRM114-CacheID: sfid-20190820_081938_257281_C8F332BC 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -78,129 +79,100 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-RTC on H6 is mostly the same as on H5 and H3. It has slight differences
-mostly in features that are not yet supported by this driver.
+This patch adds RTC node and fixes the clock properties and nodes
+to reflect the real clock tree.
 
-Some differences are already stated in the comments in existing code.
-One other difference is that H6 has extra bit in LOSC_CTRL_REG, called
-EXT_LOSC_EN to enable/disable external low speed crystal oscillator.
-
-It also has bit EXT_LOSC_STA in LOSC_AUTO_SWT_STA_REG, to check whether
-external low speed oscillator is working correctly.
-
-This patch adds support for enabling LOSC when necessary:
-
-- during reparenting
-- when probing the clock
-
-H6 also has capacbility to automatically reparent RTC clock from
-external crystal oscillator, to internal RC oscillator, if external
-oscillator fails. This is enabled by default. Disable it during
-probe.
+The device nodes for the internal oscillator and osc32k are removed,
+as these clocks are now provided by the RTC device. Clock references
+are fixed accordingly, too.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
-Reviewed-by: Chen-Yu Tsai <wens@csie.org>
 ---
- drivers/rtc/rtc-sun6i.c | 40 ++++++++++++++++++++++++++++++++++++++--
- 1 file changed, 38 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 30 +++++++++++---------
+ 1 file changed, 16 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/rtc/rtc-sun6i.c b/drivers/rtc/rtc-sun6i.c
-index d50ee023b559..b0c3752bed3f 100644
---- a/drivers/rtc/rtc-sun6i.c
-+++ b/drivers/rtc/rtc-sun6i.c
-@@ -32,9 +32,11 @@
- /* Control register */
- #define SUN6I_LOSC_CTRL				0x0000
- #define SUN6I_LOSC_CTRL_KEY			(0x16aa << 16)
-+#define SUN6I_LOSC_CTRL_AUTO_SWT_BYPASS		BIT(15)
- #define SUN6I_LOSC_CTRL_ALM_DHMS_ACC		BIT(9)
- #define SUN6I_LOSC_CTRL_RTC_HMS_ACC		BIT(8)
- #define SUN6I_LOSC_CTRL_RTC_YMD_ACC		BIT(7)
-+#define SUN6I_LOSC_CTRL_EXT_LOSC_EN		BIT(4)
- #define SUN6I_LOSC_CTRL_EXT_OSC			BIT(0)
- #define SUN6I_LOSC_CTRL_ACC_MASK		GENMASK(9, 7)
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+index 67b732e34091..67f920e0fc33 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+@@ -56,14 +56,6 @@
+ 		status = "disabled";
+ 	};
  
-@@ -128,6 +130,8 @@ struct sun6i_rtc_clk_data {
- 	unsigned int has_prescaler : 1;
- 	unsigned int has_out_clk : 1;
- 	unsigned int export_iosc : 1;
-+	unsigned int has_losc_en : 1;
-+	unsigned int has_auto_swt : 1;
- };
+-	iosc: internal-osc-clk {
+-		#clock-cells = <0>;
+-		compatible = "fixed-clock";
+-		clock-frequency = <16000000>;
+-		clock-accuracy = <300000000>;
+-		clock-output-names = "iosc";
+-	};
+-
+ 	osc24M: osc24M_clk {
+ 		#clock-cells = <0>;
+ 		compatible = "fixed-clock";
+@@ -71,11 +63,11 @@
+ 		clock-output-names = "osc24M";
+ 	};
  
- struct sun6i_rtc_dev {
-@@ -190,6 +194,10 @@ static int sun6i_rtc_osc_set_parent(struct clk_hw *hw, u8 index)
- 	val &= ~SUN6I_LOSC_CTRL_EXT_OSC;
- 	val |= SUN6I_LOSC_CTRL_KEY;
- 	val |= index ? SUN6I_LOSC_CTRL_EXT_OSC : 0;
-+	if (rtc->data->has_losc_en) {
-+		val &= ~SUN6I_LOSC_CTRL_EXT_LOSC_EN;
-+		val |= index ? SUN6I_LOSC_CTRL_EXT_LOSC_EN : 0;
-+	}
- 	writel(val, rtc->base + SUN6I_LOSC_CTRL);
- 	spin_unlock_irqrestore(&rtc->lock, flags);
+-	osc32k: osc32k_clk {
++	ext_osc32k: ext_osc32k_clk {
+ 		#clock-cells = <0>;
+ 		compatible = "fixed-clock";
+ 		clock-frequency = <32768>;
+-		clock-output-names = "osc32k";
++		clock-output-names = "ext_osc32k";
+ 	};
  
-@@ -215,6 +223,7 @@ static void __init sun6i_rtc_clk_init(struct device_node *node,
- 	const char *iosc_name = "rtc-int-osc";
- 	const char *clkout_name = "osc32k-out";
- 	const char *parents[2];
-+	u32 reg;
+ 	psci {
+@@ -197,7 +189,7 @@
+ 		ccu: clock@3001000 {
+ 			compatible = "allwinner,sun50i-h6-ccu";
+ 			reg = <0x03001000 0x1000>;
+-			clocks = <&osc24M>, <&osc32k>, <&iosc>;
++			clocks = <&osc24M>, <&rtc 0>, <&rtc 2>;
+ 			clock-names = "hosc", "losc", "iosc";
+ 			#clock-cells = <1>;
+ 			#reset-cells = <1>;
+@@ -236,7 +228,7 @@
+ 				     <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>,
+ 				     <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>,
+ 				     <GIC_SPI 59 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&ccu CLK_APB1>, <&osc24M>, <&osc32k>;
++			clocks = <&ccu CLK_APB1>, <&osc24M>, <&rtc 0>;
+ 			clock-names = "apb", "hosc", "losc";
+ 			gpio-controller;
+ 			#gpio-cells = <3>;
+@@ -710,10 +702,20 @@
+ 			};
+ 		};
  
- 	rtc = kzalloc(sizeof(*rtc), GFP_KERNEL);
- 	if (!rtc)
-@@ -235,9 +244,18 @@ static void __init sun6i_rtc_clk_init(struct device_node *node,
- 		goto err;
- 	}
- 
-+	reg = SUN6I_LOSC_CTRL_KEY;
-+	if (rtc->data->has_auto_swt) {
-+		/* Bypass auto-switch to int osc, on ext losc failure */
-+		reg |= SUN6I_LOSC_CTRL_AUTO_SWT_BYPASS;
-+		writel(reg, rtc->base + SUN6I_LOSC_CTRL);
-+	}
++		rtc: rtc@7000000 {
++			compatible = "allwinner,sun50i-h6-rtc";
++			reg = <0x07000000 0x400>;
++			interrupts = <GIC_SPI 101 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 102 IRQ_TYPE_LEVEL_HIGH>;
++			clock-output-names = "osc32k", "osc32k-out", "iosc";
++			clocks = <&ext_osc32k>;
++			#clock-cells = <1>;
++		};
 +
- 	/* Switch to the external, more precise, oscillator */
--	writel(SUN6I_LOSC_CTRL_KEY | SUN6I_LOSC_CTRL_EXT_OSC,
--	       rtc->base + SUN6I_LOSC_CTRL);
-+	reg |= SUN6I_LOSC_CTRL_EXT_OSC;
-+	if (rtc->data->has_losc_en)
-+		reg |= SUN6I_LOSC_CTRL_EXT_LOSC_EN;
-+	writel(reg, rtc->base + SUN6I_LOSC_CTRL);
- 
- 	/* Yes, I know, this is ugly. */
- 	sun6i_rtc = rtc;
-@@ -345,6 +363,23 @@ CLK_OF_DECLARE_DRIVER(sun8i_h3_rtc_clk, "allwinner,sun8i-h3-rtc",
- CLK_OF_DECLARE_DRIVER(sun50i_h5_rtc_clk, "allwinner,sun50i-h5-rtc",
- 		      sun8i_h3_rtc_clk_init);
- 
-+static const struct sun6i_rtc_clk_data sun50i_h6_rtc_data = {
-+	.rc_osc_rate = 16000000,
-+	.fixed_prescaler = 32,
-+	.has_prescaler = 1,
-+	.has_out_clk = 1,
-+	.export_iosc = 1,
-+	.has_losc_en = 1,
-+	.has_auto_swt = 1,
-+};
-+
-+static void __init sun50i_h6_rtc_clk_init(struct device_node *node)
-+{
-+	sun6i_rtc_clk_init(node, &sun50i_h6_rtc_data);
-+}
-+CLK_OF_DECLARE_DRIVER(sun50i_h6_rtc_clk, "allwinner,sun50i-h6-rtc",
-+		      sun50i_h6_rtc_clk_init);
-+
- static const struct sun6i_rtc_clk_data sun8i_v3_rtc_data = {
- 	.rc_osc_rate = 32000,
- 	.has_out_clk = 1,
-@@ -675,6 +710,7 @@ static const struct of_device_id sun6i_rtc_dt_ids[] = {
- 	{ .compatible = "allwinner,sun8i-r40-rtc" },
- 	{ .compatible = "allwinner,sun8i-v3-rtc" },
- 	{ .compatible = "allwinner,sun50i-h5-rtc" },
-+	{ .compatible = "allwinner,sun50i-h6-rtc" },
- 	{ /* sentinel */ },
- };
- MODULE_DEVICE_TABLE(of, sun6i_rtc_dt_ids);
+ 		r_ccu: clock@7010000 {
+ 			compatible = "allwinner,sun50i-h6-r-ccu";
+ 			reg = <0x07010000 0x400>;
+-			clocks = <&osc24M>, <&osc32k>, <&iosc>,
++			clocks = <&osc24M>, <&rtc 0>, <&rtc 2>,
+ 				 <&ccu CLK_PLL_PERIPH0>;
+ 			clock-names = "hosc", "losc", "iosc", "pll-periph";
+ 			#clock-cells = <1>;
+@@ -741,7 +743,7 @@
+ 			reg = <0x07022000 0x400>;
+ 			interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH>,
+ 				     <GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&r_ccu CLK_R_APB1>, <&osc24M>, <&osc32k>;
++			clocks = <&r_ccu CLK_R_APB1>, <&osc24M>, <&rtc 0>;
+ 			clock-names = "apb", "hosc", "losc";
+ 			gpio-controller;
+ 			#gpio-cells = <3>;
 -- 
 2.22.1
 
