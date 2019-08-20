@@ -2,102 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BFD495C12
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 12:16:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D025395C1A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 12:19:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:References:To:
-	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cYykImWB63ueDOY9hYGdyBwsYFtGpB6Ii4P8RcjEAEs=; b=FXKsydsAVHRxqrmBQ75NCfTiy
-	mY5Tt4tLkWsR4rkMZ1dwbK1gNgPcGUbhK7DaAUy2p8KFbx/fk4i74COJgPbE3RU+9wj9uuDzy/dAT
-	UP67NHqAaXSWl59213sMHoJFo+oIIwD+DryRGifeKWAnjEJk5S39YytAmjfk5/D8H/DSJ+OyukyUt
-	25tkslWapT2ZUTd/VFwJc3lQuq8dqVyl/uNh2TSTtk4LLqiiEWVJeUIvHJT05TJihr55wDgQv/e7p
-	YvWhVc2U65WOs6qdn7hUSrn51cyiKOi2tNpvqqh1JR2qPgm/8Ak2kx395EOFvOTnY/9LhIHL09Kj5
-	bGKOLgSrg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sYYLb0BIHMCmbS+dJJhKqRK9Qn9jR6h5CGYcM75F3Ys=; b=SgvJMfTfc3thpt
+	RJo5RYXYSgbsB6zu4e8x5ZuB1eeP9SoY2GweH/HEg5fpkjHIy5oXgroqiaED2tDlEAd70yWTnPjaG
+	3Whui9sOCDd40tqqvKvCvkohfUTPMi6AOOs6+xQw3u4BqJjx5xQddYjNfTBmbzAMe+EShNP249paH
+	+3n7TnHACTzXXSD6/+XUKshKadUd6NNKqnb4QLMWYo2Dr1IruqlUtGhaabxiANm47CVQhFfmiXvdd
+	9Ze1VhozeJrss6h7/PNOt3TypMNom+THcDdAW3ME8htVkmiFzcc5yg4plxmwcR2rCwXudXruW3rwZ
+	lXgnPPEjtppeLM2UZiJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i01BR-0006I6-RO; Tue, 20 Aug 2019 10:16:09 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1i01Eg-0006z9-ON; Tue, 20 Aug 2019 10:19:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i01Av-00064f-8v
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 10:15:39 +0000
-Received: from pps.filterd (m0098416.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7KABce7195956
- for <linux-arm-kernel@lists.infradead.org>; Tue, 20 Aug 2019 06:15:35 -0400
-Received: from e06smtp02.uk.ibm.com (e06smtp02.uk.ibm.com [195.75.94.98])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2ugd9emt0f-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Tue, 20 Aug 2019 06:15:35 -0400
-Received: from localhost
- by e06smtp02.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <naveen.n.rao@linux.ibm.com>; 
- Tue, 20 Aug 2019 11:15:32 +0100
-Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
- by e06smtp02.uk.ibm.com (192.168.101.132) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Tue, 20 Aug 2019 11:15:28 +0100
-Received: from d06av22.portsmouth.uk.ibm.com (d06av22.portsmouth.uk.ibm.com
- [9.149.105.58])
- by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x7KAFRgd61145098
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 20 Aug 2019 10:15:27 GMT
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 03FDA4C062;
- Tue, 20 Aug 2019 10:15:27 +0000 (GMT)
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 6B3C64C04A;
- Tue, 20 Aug 2019 10:15:26 +0000 (GMT)
-Received: from localhost (unknown [9.199.61.204])
- by d06av22.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Tue, 20 Aug 2019 10:15:26 +0000 (GMT)
-Date: Tue, 20 Aug 2019 15:45:24 +0530
-From: "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>
-Subject: Re: [PATCH v2 2/3] kprobes: adjust kprobe addr for KPROBES_ON_FTRACE
-To: Anil =?iso-8859-1?q?S=0A?= Keshavamurthy <anil.s.keshavamurthy@intel.com>, 
- Borislav Petkov <bp@alien8.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Jonathan Corbet <corbet@lwn.net>, "David S. Miller" <davem@davemloft.net>,
- "H. Peter Anvin" <hpa@zytor.com>, Jisheng Zhang
- <Jisheng.Zhang@synaptics.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- "x86@kernel.org" <x86@kernel.org>
-References: <20190820113928.1971900c@xhacker.debian>
- <20190820114224.0c8963c4@xhacker.debian>
-In-Reply-To: <20190820114224.0c8963c4@xhacker.debian>
+ id 1i01ET-0006yZ-CH
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 10:19:18 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7647A20C01;
+ Tue, 20 Aug 2019 10:19:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566296356;
+ bh=P/AkiFjoa+ZXD65ahVrE1D56kGITx+qPBb6Af5bjtQk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=df9fx7q7d85HjJ0eJrMEUzl7Xo/pDZGT6gPXVq+3UgRaFIzHWMRZGsKtPuNW6YOkw
+ 8dNVvpZtxwkb7MMDzHfUYuxt2J8LVNnyiXqcygZbjEX69VwpaiOd/FrJ2nBfiPSJEO
+ /8gd7hS4wd4ox5h0uL19vKbUjj10lmYVX2XxLdsU=
+Date: Tue, 20 Aug 2019 11:19:12 +0100
+From: Will Deacon <will@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 2/4] iommu/io-pgtable-arm: Rationalise TTBRn handling
+Message-ID: <20190820101911.ndwtaf76kn3zplk2@willie-the-truck>
+References: <cover.1566238530.git.robin.murphy@arm.com>
+ <dbb942070c2ef812e379414c236734931613d860.1566238530.git.robin.murphy@arm.com>
 MIME-Version: 1.0
-User-Agent: astroid/0.15.0 (https://github.com/astroidmail/astroid)
-X-TM-AS-GCONF: 00
-x-cbid: 19082010-0008-0000-0000-0000030B00B9
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19082010-0009-0000-0000-00004A29275C
-Message-Id: <1566295437.yqnot2qd2e.naveen@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-20_03:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1908200108
+Content-Disposition: inline
+In-Reply-To: <dbb942070c2ef812e379414c236734931613d860.1566238530.git.robin.murphy@arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_031537_501320_DE6744D7 
-X-CRM114-Status: GOOD (  25.25  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190820_031917_461060_818E2396 
+X-CRM114-Status: GOOD (  20.70  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,57 +77,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>
+Cc: robdclark@gmail.com, joro@8bytes.org, jcrouse@codeaurora.org,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Jisheng Zhang wrote:
-> For KPROBES_ON_FTRACE case, we need to adjust the kprobe's addr
-> correspondingly.
+On Mon, Aug 19, 2019 at 07:19:29PM +0100, Robin Murphy wrote:
+> TTBR1 values have so far been redundant since no users implement any
+> support for split address spaces. Crucially, though, one of the main
+> reasons for wanting to do so is to be able to manage each half entirely
+> independently, e.g. context-switching one set of mappings without
+> disturbing the other. Thus it seems unlikely that tying two tables
+> together in a single io_pgtable_cfg would ever be particularly desirable
+> or useful.
 > 
-> Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+> Streamline the configs to just a single conceptual TTBR value
+> representing the allocated table. This paves the way for future users to
+> support split address spaces by simply allocating a table and dealing
+> with the detailed TTBRn logistics themselves.
+> 
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 > ---
->  kernel/kprobes.c | 10 +++++++---
->  1 file changed, 7 insertions(+), 3 deletions(-)
+>  drivers/iommu/arm-smmu-v3.c        |  2 +-
+>  drivers/iommu/arm-smmu.c           |  9 ++++-----
+>  drivers/iommu/io-pgtable-arm-v7s.c | 16 +++++++---------
+>  drivers/iommu/io-pgtable-arm.c     |  7 +++----
+>  drivers/iommu/ipmmu-vmsa.c         |  2 +-
+>  drivers/iommu/msm_iommu.c          |  4 ++--
+>  drivers/iommu/mtk_iommu.c          |  4 ++--
+>  drivers/iommu/qcom_iommu.c         |  3 +--
+>  include/linux/io-pgtable.h         |  4 ++--
+>  9 files changed, 23 insertions(+), 28 deletions(-)
 > 
-> diff --git a/kernel/kprobes.c b/kernel/kprobes.c
-> index 9873fc627d61..3fd2f68644da 100644
-> --- a/kernel/kprobes.c
-> +++ b/kernel/kprobes.c
-> @@ -1484,15 +1484,19 @@ static inline int check_kprobe_rereg(struct kprobe *p)
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 2a8db896d698..2e50cf49c3c4 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -1722,7 +1722,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
+>  	}
 >  
->  int __weak arch_check_ftrace_location(struct kprobe *p)
->  {
-> -	unsigned long ftrace_addr;
-> +	unsigned long ftrace_addr, addr = (unsigned long)p->addr;
+>  	cfg->cd.asid	= (u16)asid;
+> -	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
+> +	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
+>  	cfg->cd.tcr	= pgtbl_cfg->arm_lpae_s1_cfg.tcr;
+>  	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair;
+>  	return 0;
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index 184ca41e9de7..19030c4b5904 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -473,13 +473,12 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
+>  	/* TTBRs */
+>  	if (stage1) {
+>  		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_S) {
+> -			cb->ttbr[0] = pgtbl_cfg->arm_v7s_cfg.ttbr[0];
+> -			cb->ttbr[1] = pgtbl_cfg->arm_v7s_cfg.ttbr[1];
+> +			cb->ttbr[0] = pgtbl_cfg->arm_v7s_cfg.ttbr;
+> +			cb->ttbr[1] = 0;
+>  		} else {
+> -			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
+> +			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
+>  			cb->ttbr[0] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
+> -			cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[1];
+> -			cb->ttbr[1] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
+> +			cb->ttbr[1] = FIELD_PREP(TTBRn_ASID, cfg->asid);
+
+Why do you continue to put the ASID in here?
+
+> diff --git a/drivers/iommu/qcom_iommu.c b/drivers/iommu/qcom_iommu.c
+> index 34bb357b3cfa..de55b6d82ef1 100644
+> --- a/drivers/iommu/qcom_iommu.c
+> +++ b/drivers/iommu/qcom_iommu.c
+> @@ -247,10 +247,9 @@ static int qcom_iommu_init_domain(struct iommu_domain *domain,
 >  
-> -	ftrace_addr = ftrace_location((unsigned long)p->addr);
-> +#ifdef CONFIG_KPROBES_ON_FTRACE
-> +	addr = ftrace_call_adjust(addr);
-> +#endif
+>  		/* TTBRs */
+>  		iommu_writeq(ctx, ARM_SMMU_CB_TTBR0,
+> -				pgtbl_cfg.arm_lpae_s1_cfg.ttbr[0] |
+> +				pgtbl_cfg.arm_lpae_s1_cfg.ttbr |
+>  				FIELD_PREP(TTBRn_ASID, ctx->asid));
+>  		iommu_writeq(ctx, ARM_SMMU_CB_TTBR1,
+> -				pgtbl_cfg.arm_lpae_s1_cfg.ttbr[1] |
+>  				FIELD_PREP(TTBRn_ASID, ctx->asid));
 
-Looking at the commit message for patch 3/3, it looks like you want the 
-probe to be placed on ftrace entry by default, and this patch seems to 
-be aimed at that.
+Same here.
 
-If so, this is not the right approach. As I mentioned previously, you 
-would want to over-ride kprobe_lookup_name(). This ensures that the 
-address is changed only if the user provided a symbol, and not if the 
-user wanted to probe at a very specific address. See commit 
-24bd909e94776 ("powerpc/kprobes: Prefer ftrace when probing function 
-entry").
+> diff --git a/include/linux/io-pgtable.h b/include/linux/io-pgtable.h
+> index a6c8aa204733..7a0905d7a006 100644
+> --- a/include/linux/io-pgtable.h
+> +++ b/include/linux/io-pgtable.h
+> @@ -90,7 +90,7 @@ struct io_pgtable_cfg {
+>  	/* Low-level data specific to the table format */
+>  	union {
+>  		struct {
+> -			u64	ttbr[2];
+> +			u64	ttbr;
+>  			u64	tcr;
+>  			u64	mair;
+>  		} arm_lpae_s1_cfg;
+> @@ -101,7 +101,7 @@ struct io_pgtable_cfg {
+>  		} arm_lpae_s2_cfg;
+>  
+>  		struct {
+> -			u32	ttbr[2];
+> +			u32	ttbr;
 
-If this patch is for some other purpose, then it isn't clear from the 
-commit log. Please provide a better explanation.
+We could probably do with a comment for these 'ttbr' field now saying that
+they refer to ttbr0 (since the tcr will have EPD1 set).
 
-
-- Naveen
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
