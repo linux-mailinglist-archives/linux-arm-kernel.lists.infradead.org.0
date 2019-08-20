@@ -2,102 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DA3995FCD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 15:18:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92F8695FE6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 15:22:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BE50N13sosFuSHfDW+IGpNzt+BM1d8Q0RAbTl1UZLAU=; b=TY5KD6m84gsXWA
-	W1go8zvLJvWlX8myyW5SB/VDdpthN1mYv9FYpkVWssZKXKzsS3YQpXChpURq35btL71ECV4IKUQGu
-	78lVG4hdzMbYF/2iVMskkfZKOvMYI8rmKA2FFePNxt+WfxDsYxUYDdf7HjV+DBfXO+Vuk9h6GV7xh
-	UOO6kR2RrCuZUEPhcfpxNYXL8X5Zb6EQHCkBF48eTJm/ZaxGmrbZdD5IspP1u7/eETBDUjoqNxIx3
-	+glj6q7LeGqjsfwyxDXqDVfAMx+bQ3RuaQk6CpPbH1CQTHG792MC0m5+rnaYaB3EP+hE+MhCyKmLY
-	fsWhCk6D1ZDrWltqCOXA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xwIXlC8ErTnCiTlKPDr8oQ0ULOgvj4tLNe8hIQAoeBM=; b=FetyoJu52zY3Yq
+	IMoPg74V6GW20neethse7ptVzlY9QY7tkIRehm/4LbAD2+V9ysj9+0cV1tXUSzFQzGjXMGJPVZ5JL
+	tnq0s37vU7OggIMr+CruBzm3XIrjIXS4bq7hiHDV3jV3ZNDz1M/scqSwRzAqDTWWl6cYS81KAR8QZ
+	pVpyqlKFdxBDN3L0PGuWxmbYNMo6/pZcfsbP6yeK35sD3RCRUJ5Aye3N07waTIUYyEjOJhryoO8NS
+	U5p+kWPD4XkKCufROJvwXstx04FkyPIV6R8qn6IZ+aSRZIOQ8XBcIqip+A5XM5iTduZLtmV4EGsLh
+	K9o/4LORfAreHumUwfdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i041r-0000KG-G0; Tue, 20 Aug 2019 13:18:27 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i041I-0000Jl-UO
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 13:17:54 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id E18FC19FC;
- Tue, 20 Aug 2019 09:17:51 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute5.internal (MEProxy); Tue, 20 Aug 2019 09:17:51 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- subject:to:cc:references:from:message-id:date:mime-version
- :in-reply-to:content-type:content-transfer-encoding; s=fm3; bh=q
- 1zMCHP9N5dVVFnUfRVs/+hK9HwHAxsq2830Gk8Otsg=; b=TKnHxb30U2xLo5RnR
- KlEyBBAb+ChXyncMtNVmDnLF3EhbIBW6zwW4BUbMpJA8iBZ5R1EfCY5gtOhqtvbN
- 7cnfPLR/vxNLffoxJrjRxpkon7yCCkCPK1pyhjplXtX4I8Jq9HA/+rIQid+SIh7i
- A2/n3pj7quWpytyiSvRWasKIAPB7/7sKnGG203xhTbkOOJX1TpVTkt+ZujqmlSTl
- nBi7/kKyP/ed8hP6NA8Fq9NDTD9LNEKmMtyO1TYWA3HAyvoJrISpLW+qEAnF8K7T
- Lcf8nAneMs1AF5g4iPiM1R7CnwgYbAJI3F4Dg/nhGenlRm1Y9bROVXSxH7pYqxyD
- 3F0rg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:content-type
- :date:from:in-reply-to:message-id:mime-version:references
- :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm3; bh=q1zMCHP9N5dVVFnUfRVs/+hK9HwHAxsq2830Gk8Ot
- sg=; b=P566rOuk25uZ8kvW2Qcy7xPqQAvYpqGna+vaACB0COl254I6sG+rJM8tV
- og8Fq/f/OM9udD0D3TzgO1xxeOc+GBLa8IUnAYiezLITXVA+SNtOZdbZqX6qYxlp
- TMLh9jNmz9Mam7DExzTC6n5C4l6ZSOQelzMDaKVrhPu2F4VwIoG5yXX1c5w1u7Pt
- nX/UC/VAeN3bT0vm31KpIlpZw/o7H/EJ+EcJ+nvNiMKQyBx1SoplMIWhKq+m7rw6
- gr3qOWX7lGJQXGRyA7AudPZcBGSWp0IfNAuSd8CcUf9nPJ24P9hQqER06VOWXLu0
- sBNel/sEsBdSWzh3uZrhNZM+IMagg==
-X-ME-Sender: <xms:_vJbXQ5RO5O9O1Rczy5smOCcSkohwcFzrAUqNdmYYmKfsUWO1G3zkA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudeguddgieduucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- goufhprghmkfhpqdhouhhtucdlhedttddmnecujfgurhepuffvfhfhkffffgggjggtgfes
- thejredttdefjeenucfhrhhomhepufgrmhhuvghlucfjohhllhgrnhguuceoshgrmhhuvg
- hlsehshhholhhlrghnugdrohhrgheqnecukfhppeejtddrudefhedrudegkedrudehuden
- ucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
- enucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:_vJbXQLP4-G8J52XBWp3Oa34_OhDPDoTAN1cAfUR217WjvVuk-9gJw>
- <xmx:_vJbXclwYk_iWxKdsVVnmGdYi1LS2aMU48Q4RjV-T4EW3k6R1X5sXQ>
- <xmx:_vJbXX_maJBFjW-7ggTBO5hZDoiWM227wr87IFn7VVbempcryJfYRg>
- <xmx:__JbXWfxxQEm5aSfIkZCk4bK5_ro-AT2199PORzHo8kYpsHUbVPJ2q1jzw4>
-Received: from [192.168.50.162]
- (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id C09B1380075;
- Tue, 20 Aug 2019 09:17:49 -0400 (EDT)
-Subject: Re: [PATCH v4 05/10] ARM: dts: sunxi: a80: Add msgbox node
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-References: <20190820032311.6506-1-samuel@sholland.org>
- <20190820032311.6506-6-samuel@sholland.org>
- <20190820081528.7g2lo4njkut5lanu@flea>
-From: Samuel Holland <samuel@sholland.org>
-Message-ID: <f3e3420e-450a-7d41-edf8-776c0cd5a320@sholland.org>
-Date: Tue, 20 Aug 2019 08:17:49 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1i045K-00025N-BW; Tue, 20 Aug 2019 13:22:02 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1i044X-00024h-5t; Tue, 20 Aug 2019 13:21:13 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id D62A43075FF;
+ Tue, 20 Aug 2019 15:20:38 +0200 (CEST)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 244AB20A99A00; Tue, 20 Aug 2019 15:21:10 +0200 (CEST)
+Date: Tue, 20 Aug 2019 15:21:10 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+Subject: Re: [PATCH v2 1/3] kprobes/x86: use instruction_pointer and
+ instruction_pointer_set
+Message-ID: <20190820132110.GP2332@hirez.programming.kicks-ass.net>
+References: <20190820113928.1971900c@xhacker.debian>
+ <20190820114109.4624d56b@xhacker.debian>
+ <alpine.DEB.2.21.1908201050370.2223@nanos.tec.linutronix.de>
+ <20190820165152.20275268@xhacker.debian>
 MIME-Version: 1.0
-In-Reply-To: <20190820081528.7g2lo4njkut5lanu@flea>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_061753_253903_16E8CA68 
-X-CRM114-Status: GOOD (  15.74  )
-X-Spam-Score: -0.9 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+Content-Disposition: inline
+In-Reply-To: <20190820165152.20275268@xhacker.debian>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,45 +56,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Corentin Labbe <clabbe.montjoie@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ "x86@kernel.org" <x86@kernel.org>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Masami Hiramatsu <mhiramat@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 8/20/19 3:15 AM, Maxime Ripard wrote:
-> On Mon, Aug 19, 2019 at 10:23:06PM -0500, Samuel Holland wrote:
->> The A80 SoC contains a message box that can be used to send messages and
->> interrupts back and forth between the ARM application CPUs and the ARISC
->> coprocessor. Add a device tree node for it.
->>
->> Signed-off-by: Samuel Holland <samuel@sholland.org>
+On Tue, Aug 20, 2019 at 09:02:59AM +0000, Jisheng Zhang wrote:
+> In v2, actually, the arm64 version's kprobe_ftrace_handler() is the same
+> as x86's, the only difference is comment, e.g
 > 
-> I think you mentionned that crust has been tested only on the A64 and
-> the H3/H5, did you test the mailbox on those other SoCs as well?
+> /* Kprobe handler expects regs->ip = ip + 1 as breakpoint hit */
+> 
+> while in arm64
+> 
+> /* Kprobe handler expects regs->pc = ip + 1 as breakpoint hit */
 
-No, I only have A64/H3/H5, and recently H6, hardware to test. I've looked
-through the manuals to verify that the registers are all the same, but I haven't
-run the driver on earlier SoCs.
-
-On 32-bit SoCs, where there's no other user of SRAM A2, it should be easy to get
-the toy firmware running. All you should need to do is:
-  1) Update the MMIO base/clock addresses in drivers/msgbox/sunxi-msgbox.c
-  2) Update the load address in platform/sun50i/include/platform/memory.h
-  3) Load the firmware to SRAM A2 (can be done from a U-Boot shell)
-  4) Initialize the reset vector (algorithm is in tools/test.c:109)
-  5) Deassert AR100 reset (again, these last two steps can be done from U-Boot)
-
-Thanks,
-Samuel
+What's weird; I thought ARM has fixed sized instructions and they are
+all 4 bytes? So how does a single byte offset make sense for ARM?
 
 _______________________________________________
 linux-arm-kernel mailing list
