@@ -2,74 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0709961E5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 16:07:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 891FD961FB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 16:08:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=94jxTfdCRfZd9GZGSnx9xiu0EAq+ravcYcGLpx349nM=; b=HS7dieEKjsnE5PfzSa84mSqet
-	sqVxdlDT1MqrSmPQqsw11T5AH7i5lYHnsjEyciRmI0DyyKbqiO0MngZwTZZ96iIUXD73co1MMsvJd
-	75lPZBwxQ0fJ3wHqlxoeWhFbjhTDhH1Y30mSsYjk9bJsO/iQwdxKX7/vijzD+8lqv0wiPITq2vsJx
-	4Qp8h0ZldCBPDTDeSjQmgNpLgnf6C8+uppxV7NDedPbjQHSS9VjSRIznOJ2EgflyqGB0o6DOotyAA
-	xpMTvnCxqeVNotHZF+7Ir/pnrRJ/Pj8i3oL3yEs5f5zn9KhPff+PSxhzWIREPFjWHuBLBxB0PjELE
-	ei1C9Tl5g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3OeWozfPpdlcR5WeFtDBTVWSYL2K4dH8BtEs+4IHo/0=; b=P5DwN+ZloxBw0Q
+	iizywLHaEsRTff6oeyyukCR2daKl+KSkvdwIMci2cSTZCZm5e4gggMvX8LtjsRVAI6BJ52cRGNWFS
+	rkAXXz7/t0RJph7KTkILG2W8VYEUqjIlPjplkRwjf99pEo8AyyCUTjZLW578bLW9z+1Oxjcbd4MmT
+	BSGcfp/1LGmDeTjnS2rH6ceS8dqsMnQIblbiNkf0NChEcpEkWE+PtL3GHBh+7b08Kfcv6z3dx3jZx
+	63CIa2djdOj3C4Pyw42pvFVp/rszesw5udwd37XT6aNj3T15WWt3cLTFv92kQGJ8Y7IS4wFO+H59U
+	HQr+HWtIRYUil1KLKtpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i04nA-000889-0W; Tue, 20 Aug 2019 14:07:20 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1i04oO-0008Tt-RP; Tue, 20 Aug 2019 14:08:37 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i04ms-000882-NZ
- for linux-arm-kernel@bombadil.infradead.org; Tue, 20 Aug 2019 14:07:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=PMCD9ZFxUEeJiZD0NRAeMA7SEaymCLDp+Dv8KTHGH2M=; b=uPd27dN6l/Q+Nr5srdti2CIgJ
- 7c/aRI5OEvmVNNnbu45THflFsLHBh+nyBG2A9J74yMEBPuNbctlQRwO2sH9G9f+1aS22JsCW/d5Od
- 0mkS2IseonH535aGmqlQoVCkmt4clP4vcAjXUle/r6cNhx2WMq1zDN0G6aHHFL4fwlu/ZtAmH2XkR
- JhEhZagCIW1sX9LW6A+/J0qrdXe0I08KpzM0y2UzsZHncE3OfQzCrXwADPZE4n97Q4mH4jii6fxaw
- CmLiwRnAkfp6lXjXbOpblG+Wlz1JlDvzCctswghskeNjhfq8qyDluruuK942hJ3EWNrUFNSjshqB+
- z+WFzzaAg==;
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i04n9-0006zI-6O
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 14:07:21 +0000
-X-Originating-IP: 86.250.200.211
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 1A36340004;
- Tue, 20 Aug 2019 14:06:29 +0000 (UTC)
-Date: Tue, 20 Aug 2019 16:06:29 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: Best representation for TDM devices
-Message-ID: <20190820140629.qxhjlhcwvdphpimv@flea>
-References: <CAMTEBE0mPY=44txPC2G+Cb=NqeH6Cqesar9Vkq0afXBv4dUWHQ@mail.gmail.com>
- <20190801114807.GB5488@sirena.org.uk>
- <CAMTEBE2L6KXH6JW2Z_6RSKdtFJc9ncFvfakwW_Vm88BCGC6aeQ@mail.gmail.com>
- <20190814160234.GG4640@sirena.co.uk>
- <20190819084141.otpbos2fgxav7rco@flea>
- <20190819154514.GB5563@sirena.co.uk>
+ id 1i04oC-0008Sy-5D
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 14:08:25 +0000
+Received: by mail-io1-xd41.google.com with SMTP id l7so11679039ioj.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 07:08:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=fpwbVMYwxUnibszpYPVBni4D9LBJrSdVRZvq8XMF3dc=;
+ b=S34JO61XhS+u1GLjLFoTUKed6GVRRSgkk3Arpgx8OBkwxsoKRtiCnQQXdc09+4DtHY
+ mbX+nvQfIMniKtrO+zL9vNlQ3VrCRvbep47ibmsFcv52bzUWXaJkCH08iw0XyLM/xehS
+ uupRlRmIVwXIJsfpP4zE2GykQqXmDmBX33GLxBd/STXzc0pGgRlakZSOnM53B1xxkIoe
+ LZ3jV11bWoW9IGZNgh2e+u1eSPggfJ1bH0cPltjml8wFIhvcWhXETP6ZCQphzaboTXmN
+ Oh6VpLXyicoyLZjoSpvg5hE7IjJyflldFgYrxVeRgvcK+0oKeVbXjCcWSxVvPEql4j8b
+ 8XAQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fpwbVMYwxUnibszpYPVBni4D9LBJrSdVRZvq8XMF3dc=;
+ b=A00bLNGCgfD7ReSV+wXNPIAYVWNboZ4IUFhvg5eLImVJw7VRyJq4rYYfmpgAjc6MvT
+ 1Kis+qUhouQgBewblt21ilEKmPLf9R0v3LHFunmESlMLfD52BgD2nDPweI9qacld2/0h
+ 9wR9b2jkLY6CNtgH1oLYlESzt6zAM8nydGMqMTEJ+I5HKNGAmczar6WmyY6JGOX3O8v7
+ peDOO93v7GWqoXSin9tB9n+b8nJG0MOAZ0iYXtMR8L9F49otgPRutHRENubifD97orI6
+ H7eed6AhpQZ3bzh7nreQC8ImfkOU5bCmGrcR9fysG100RMnLOD8H4e/hB8qyBMdo5GSE
+ u8kA==
+X-Gm-Message-State: APjAAAV7DzzuL8BP1Pk0tom/thXx6Xl4ecmtM4lt8XjFTtkgxIK6okSA
+ 0GWvRANFSfAq2UsiBACFbO2EG7ytRSQgC2JYy3I=
+X-Google-Smtp-Source: APXvYqzqt6CWsnAUJZOQaWzeo+IS+I+nQxOIPR7m7CFVURAU5XmkaYUTy/8+9wGOBLp/m+OjVQgL/nYA7Z+kXtbaGko=
+X-Received: by 2002:a02:8481:: with SMTP id f1mr3948058jai.112.1566310100786; 
+ Tue, 20 Aug 2019 07:08:20 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190819154514.GB5563@sirena.co.uk>
-User-Agent: NeoMutt/20180716
+References: <20190820030804.8892-1-andrew.smirnov@gmail.com>
+In-Reply-To: <20190820030804.8892-1-andrew.smirnov@gmail.com>
+From: Chris Healy <cphealy@gmail.com>
+Date: Tue, 20 Aug 2019 07:08:09 -0700
+Message-ID: <CAFXsbZoaZoM=1ue9vDpHhVgCaoymP=y8qza4U9Hsrh2wzsH_bQ@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: vf610-zii-cfu1: Slow I2C0 down to 100kHz
+To: Andrey Smirnov <andrew.smirnov@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_150719_271373_D3432E01 
-X-CRM114-Status: GOOD (  21.26  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190820_070824_200856_BC342DBD 
+X-CRM114-Status: GOOD (  14.59  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (cphealy[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,79 +92,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ali Burak =?utf-8?B?UGFyxLFt?= <aliburakparim@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8302806195797070738=="
+Cc: Fabio Estevam <festevam@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============8302806195797070738==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="g4wssaeu7tfooa4y"
-Content-Disposition: inline
-
-
---g4wssaeu7tfooa4y
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, Aug 19, 2019 at 04:45:14PM +0100, Mark Brown wrote:
-> On Mon, Aug 19, 2019 at 10:41:41AM +0200, Maxime Ripard wrote:
-> > On Wed, Aug 14, 2019 at 05:02:34PM +0100, Mark Brown wrote:
+On Mon, Aug 19, 2019 at 8:08 PM Andrey Smirnov <andrew.smirnov@gmail.com> wrote:
 >
-> > > OK, in that case I'd recommend providing them to userspace as a single
-> > > four channel stream - keeping everything bundled together as long as
-> > > possible to make it easier to keep the processing synced up.
+> Fiber-optic module attached to the bus is only rated to work at
+> 100kHz, so drop the bus frequncy to accomodate that.
 >
-> > Ok, that's what I had in mind as well :)
+> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: Chris Healy <cphealy@gmail.com>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> ---
+>  arch/arm/boot/dts/vf610-zii-cfu1.dts | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 >
-> > However, it looks like we can only capture as many channels as the max
-> > being exposed by the codec on the link?
+> diff --git a/arch/arm/boot/dts/vf610-zii-cfu1.dts b/arch/arm/boot/dts/vf610-zii-cfu1.dts
+> index ff460a1de85a..28732249cfc0 100644
+> --- a/arch/arm/boot/dts/vf610-zii-cfu1.dts
+> +++ b/arch/arm/boot/dts/vf610-zii-cfu1.dts
+> @@ -207,7 +207,7 @@
+>  };
 >
-> > Any attempt at capturing something with 4 channels here using arecord
-> > was either reduced to two channels (the amount of channels provided by
-> > the adau7002 driver), or just refused by the ALSA core.
+>  &i2c0 {
+> -       clock-frequency = <400000>;
+> +       clock-frequency = <100000>;
+>         pinctrl-names = "default";
+>         pinctrl-0 = <&pinctrl_i2c0>;
+>         status = "okay";
+> --
+> 2.21.0
 >
-> > Is there anything that we need to configure / work on to enable this?
->
-> I'd expect there's some issue in the capability/constraint matching code
-> that needs fixing - that should work but I can totally see it not
-> working unless someone goes in and does something to fix it.
 
-Ok, I'll have a look, thanks!
-Maxime
-
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---g4wssaeu7tfooa4y
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVv+ZQAKCRDj7w1vZxhR
-xXVFAP46R8G3YfCMc3AL3HMp6M8ibBWNVhILkDT3D506zedV9QD9FgkHZwYNDuPR
-wB4ytgX2kUV9uypIj0glURJAbQNQuAc=
-=T2F0
------END PGP SIGNATURE-----
-
---g4wssaeu7tfooa4y--
-
-
---===============8302806195797070738==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Reviewed-by: Chris Healy <cphealy@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8302806195797070738==--
-
