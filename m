@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76C189632F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 16:54:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF2819632A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 16:54:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0j5+NvGdR4nTDvCsqt2hued5J2qxnWiA7+LFw/avQmA=; b=VyGECk/dHKu6Oq
-	1KPQcvN98Znsvm1BCtri3mh5lQ4X3lTReEo1FMcA8G8DuHnQYYVIe7Jz7gCkPJet1dpTg4IsTB/ua
-	LswTA+cu6PRwWxpjvSQTbEzCm/Fwsd6iRIzHNpKjhKnFtW4I9+m35019wzboym6LcsLBF/xA2lOze
-	NUPFivNo7VNYlKUtLGCpyK8FdV0Q51A8TEAG4pU36aPylFAIhuyUeL/LioT+GCUJPf6/XC6f5sJX7
-	NMzK19SfsDwqec2XuPtklCZEZysCXCLiozgA0ZneuSXc+Ed7TPIZumlelVQjwevNItD79RA/VOm3k
-	YedYQFIewLgD9yrW954w==;
+	List-Owner; bh=qlRnvUCyU/OCmc3ceM7sIi2iGjeDRtVysncAZtquJL0=; b=sfzFHbYXDPLpHP
+	OAQO0HI83hNR5ZRe8U4s25s7jkv9elIB/LmA9DMUf4DqO6bFqni/bWgHROqHE5euFq9IhXoKvJOp8
+	bWAhpe/bS9ZnGRUviUlX2zCXCvdjAkNygAo7uyjE80xdN5A5ZceN6UTR+sl2MCDCDv2cZgye7eUmL
+	22jD/BiAo35hpxafOoQ0pJulog87r4Peq4r5SWyssaehXoX/nQ4K+ulurvYfe6dhrNtNcRqCRAXUW
+	LOB7Kux6tfG7nJcwhJ1WTZxadowZoKSI81g5bW29+UG05UfEHINs4brbh/suwOovgtFmEW2c4YNjn
+	c6GGm4QZr3sK4qIdfC0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i05Wt-0001Xv-VU; Tue, 20 Aug 2019 14:54:35 +0000
+	id 1i05Wd-0001HE-P0; Tue, 20 Aug 2019 14:54:20 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i05W7-00013Q-Bb
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 14:53:50 +0000
+ id 1i05W7-00013R-Bc
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 14:53:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1566312825; bh=pjJHOWO7nxttAsWYJkOKvdkuaULnN0PZZ0RAx5PpN9o=;
+ t=1566312825; bh=wIAxljKfYwADgH+42GDkJIwLygOIg7HG/xvcRvcY98U=;
  h=From:To:Cc:Subject:Date:References:From;
- b=qluk3iBQwrjiEBjSIXnZAafxX6k9lhkgFCeddtDvIAl7JMO+Qt0ZDOCav+zNhQtUW
- 4i/wOMDdMxpBqkyqrB67GP86/7lpBKTY0FbsdQVpLRS/nayXCeyRz+0IjEubxfNo2q
- JljrlnPu7zifGmGGs1Y4aDWbZA/PkOP+uwRrjCRI=
+ b=JQloAJ9JgxomMDFTbsLxbkyZJgYGUbjBaehlsq8CDjjsR5kp8P2V0WYdgIg7+puj6
+ AFMc4kQ/MwZPB+37mMTvujOxThMU3fqh605btYUrm9Kj8JtaQRpcl2rhfqL4tJ35CM
+ I13XbUfgxDkjIsR5LBRq5X2HaxW5C+MsAGAiCREI=
 From: megous@megous.com
 To: "David S. Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, Maxime Ripard <mripard@kernel.org>,
@@ -36,15 +36,16 @@ To: "David S. Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>,
  Alexandre Torgue <alexandre.torgue@st.com>,
  Jose Abreu <joabreu@synopsys.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Subject: [PATCH 1/6] dt-bindings: net: sun8i-a83t-emac: Add phy-supply property
-Date: Tue, 20 Aug 2019 16:53:38 +0200
-Message-Id: <20190820145343.29108-2-megous@megous.com>
+Subject: [PATCH 2/6] dt-bindings: net: sun8i-a83t-emac: Add phy-io-supply
+ property
+Date: Tue, 20 Aug 2019 16:53:39 +0200
+Message-Id: <20190820145343.29108-3-megous@megous.com>
 In-Reply-To: <20190820145343.29108-1-megous@megous.com>
 References: <20190820145343.29108-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_075347_738030_BC72B072 
-X-CRM114-Status: UNSURE (   7.14  )
+X-CRM114-CacheID: sfid-20190820_075347_738030_8E84F7B8 
+X-CRM114-Status: UNSURE (   6.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,8 +82,9 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-This is already supported by the driver, but is missing from the
-bindings.
+Some PHYs require separate power supply for I/O pins in some modes
+of operation. Add phy-io-supply property, to allow enabling this
+power supply.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
@@ -90,16 +92,16 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  1 file changed, 4 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml b/Documentation/devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml
-index 3fb0714e761e..304f244e9ab5 100644
+index 304f244e9ab5..782e202aa124 100644
 --- a/Documentation/devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml
 +++ b/Documentation/devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml
-@@ -43,6 +43,10 @@ properties:
-       Phandle to the device containing the EMAC or GMAC clock
-       register
+@@ -47,6 +47,10 @@ properties:
+     description:
+       PHY regulator
  
-+  phy-supply:
++  phy-io-supply:
 +    description:
-+      PHY regulator
++      PHY I/O pins regulator
 +
  required:
    - compatible
