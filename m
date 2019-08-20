@@ -2,57 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1659E9656E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:50:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 464DC96578
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:50:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3P93OgOODIPh5upr56B9xVZRxX3VC7VvxeFjn8BGd1M=; b=At3HslpvOmvNSO
-	YEgcVEc/dI7ELUllc9MZDsvIqRsErxhhOKB8/4ZQaoqn6OBykAx4AK5y6WM4DUriQ405hyn5Hk4l2
-	udkqpR4F74fUr5TVfJq9tTmBTEke76k8T27LUFk0n+yfBMUkbLsC6g198hu3ZbUsQrbz45Nuql75/
-	qDr/Ocb1KDIUalGV2Ie9rrRv3hzT6JWmc9gOQc8iSrpGY8zE677+8wzavc7/qf/4X5uXxNVvN4u0T
-	AlhqipNnnU2inn/ErvuxSDvWQHCyvMOyNR9a3O9MojqVEUGZKla+3m77wvZuUtQ7ExL/RS7wVW3T8
-	JPQFX99/C2fWYuSGDGbA==;
+	List-Owner; bh=yuRHvgJS1PWbtxkIgOcabb59PL5urvAbLJHU4fTVQfw=; b=TDBsYwEo/EuqMi
+	VoskFywKwlV/dgmGWRhUcbqlSWUTv40HtpwXjUuL+LPvI4jVO0jO0wcRAUMqo6mTlXO/DrkRrUx/u
+	mV+BlcAIiVV4GzZ03ajkSo8WKk3xQsAaKnnXHm5S/LDypLpKWFHblM5pDmFAM+JQQajDCF0i9D7hH
+	4vp38t9N1cQM7ZejCeiCwj6nskFGDqJyC/fdvEZuADbikQp5ZWObCAxH+5TpncfjBi5ZXhmXAeJzS
+	Q1fcuSIiSVRiUpy5uBySG5OYWcD7AL/01+EvQ3Z1zvjRNihtn6rHbgTrmaQhxRpz3lW8sY0xW0xh7
+	oMVeLs3I3PGcaOQEbZqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i06Or-0002A3-RM; Tue, 20 Aug 2019 15:50:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i06OV-00022C-Iw
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:50:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CE53928;
- Tue, 20 Aug 2019 08:49:58 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 94A0E3F246;
- Tue, 20 Aug 2019 08:49:57 -0700 (PDT)
-Date: Tue, 20 Aug 2019 16:49:55 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Raphael Gault <raphael.gault@arm.com>
-Subject: Re: [PATCH v3 2/5] arm64: cpufeature: Add feature to detect
- heterogeneous systems
-Message-ID: <20190820154955.GB43412@lakrids.cambridge.arm.com>
-References: <20190816125934.18509-1-raphael.gault@arm.com>
- <20190816125934.18509-3-raphael.gault@arm.com>
- <20190820152316.GA38082@lakrids.cambridge.arm.com>
+	id 1i06PB-0003e1-Cu; Tue, 20 Aug 2019 15:50:41 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i06Oj-0003I7-2D
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:50:15 +0000
+Received: by mail-pf1-x441.google.com with SMTP id b24so3640682pfp.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 08:50:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=lYiV05ocruj81X/Vth9fboH+MCkm6RCCkzLgC1xVrmw=;
+ b=fNasBHccmJLzP/62U4MV9sBWbQm7OW+UP4o3L47p/QOfrEwB12oFGN1SUeDNxTesTG
+ oFVXAGPB/0yKLhB93KvtK39OGt91m5yjXxqiOI+Ne/g4PgiHtP6CnP+emNtm0S5AvRms
+ wgLB3LlUTYNcu+oBWwl0mANSxbB8JPDz87T+ueLDw0vAvDTOpKYRKCXog9R0fmkLFIPi
+ xzQou+UdcpRw5UdaAiachGeHx8UiMO5DSO/+NrOHHqD3BqcTTUABMqZt3SgFTXKwTSba
+ S8dz/yisSiv/DmwTMJJoBD3YdQ0WsmL+fLh8i0MgTfW7wG4rpT5ju3QIDkhGNtSNHAG1
+ 7vmg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=lYiV05ocruj81X/Vth9fboH+MCkm6RCCkzLgC1xVrmw=;
+ b=I0wqNDRmBH4rJuqo5GYYQv3INXF1lQCAYBfdlQ5mj6hAts9Oc7pucTEmyEoD2nxtAW
+ s0mNfkIR9Tl7tQ0CaJjtUDSh7fccptL1AosnAfmPjKK4IixRK5kfvo0hIi+FApsOx4+l
+ tit9MYdt3ZLIqjghWaMej6LXMwHU/SAe9weWsBSExswvvgMtJ+QtX9eSSbbZfKziHdRN
+ nwSoF3o68sn3+S+JFy2qPHDfeFLSTpO3P5zUmWCWVBDj8qy5wq/PVb1La9bq8zlYhGjl
+ WgDmeCCyyU1lQDwV3nhzOgfC5D8brVTreX12A6bXbS4btivykIwbsxw72DREDdFh/PV0
+ u/uQ==
+X-Gm-Message-State: APjAAAVM/7Cvs9MVY4dHNigHY8WmVt3rQLUIlCwuJaWMRahp/m55+CVr
+ g8frne48ASKAG/jvxhzppSM=
+X-Google-Smtp-Source: APXvYqzcVZHhyB9DOXrMXzkr2BAV66JOb9oS1kaW6MbhIGd5s+OPyrNHhQiJmgISgBG2USF+eV4rvg==
+X-Received: by 2002:a62:f204:: with SMTP id m4mr31653953pfh.7.1566316212404;
+ Tue, 20 Aug 2019 08:50:12 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id a6sm399723pjv.30.2019.08.20.08.50.11
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 20 Aug 2019 08:50:11 -0700 (PDT)
+Date: Tue, 20 Aug 2019 08:50:10 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Joel Stanley <joel@jms.id.au>
+Subject: Re: [PATCH v2 2/2] watchdog: aspeed: Add support for AST2600
+Message-ID: <20190820155010.GA20408@roeck-us.net>
+References: <20190819051738.17370-1-joel@jms.id.au>
+ <20190819051738.17370-3-joel@jms.id.au>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190820152316.GA38082@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190819051738.17370-3-joel@jms.id.au>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_084959_666700_1D708B39 
-X-CRM114-Status: GOOD (  17.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190820_085013_386364_334ACBF1 
+X-CRM114-Status: GOOD (  16.65  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,56 +104,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: raph.gault+kdev@gmail.com, peterz@infradead.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, acme@kernel.org,
- mingo@redhat.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Ryan Chen <ryan_chen@aspeedtech.com>,
+ linux-watchdog@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, Rob Herring <robh+dt@kernel.org>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 20, 2019 at 04:23:17PM +0100, Mark Rutland wrote:
-> Hi Raphael,
+On Mon, Aug 19, 2019 at 02:47:38PM +0930, Joel Stanley wrote:
+> From: Ryan Chen <ryan_chen@aspeedtech.com>
 > 
-> On Fri, Aug 16, 2019 at 01:59:31PM +0100, Raphael Gault wrote:
-> > This feature is required in order to enable PMU counters direct
-> > access from userspace only when the system is homogeneous.
-> > This feature checks the model of each CPU brought online and compares it
-> > to the boot CPU. If it differs then it is heterogeneous.
+> The ast2600 can be supported by the same code as the ast2500.
 > 
-> It would be worth noting that this patch prevents heterogeneous CPUs
-> being brought online late if the system was uniform at boot time.
+> Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
+> Signed-off-by: Joel Stanley <joel@jms.id.au>
 
-Looking again, I think I'd misunderstood how
-ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU was dealt with, but we do have a
-problem in this area.
+Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 
-[...]
-
+> ---
+> v2:
+>  Reuse ast2500 config structure
+> ---
+>  drivers/watchdog/aspeed_wdt.c | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
-> > +		.capability = ARM64_HAS_HETEROGENEOUS_PMU,
-> > +		.type = ARM64_CPUCAP_SCOPE_LOCAL_CPU | ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU,
-> > +		.matches = has_heterogeneous_pmu,
-> > +	},
-
-I had a quick chat with Will, and we concluded that we must permit late
-onlining of heterogeneous CPUs here as people are likely to rely on
-late CPU onlining on some heterogeneous systems.
-
-I think the above permits that, but that also means that we need some
-support code to fail gracefully in that case (e.g. without sending
-a SIGILL to unaware userspace code).
-
-That means that we'll need the counter emulation code that you had in
-previous versions of this patch (e.g. to handle potential UNDEFs when a
-new CPU has fewer counters than the previously online CPUs).
-
-Further, I think the context switch (and event index) code needs to take
-this cap into account, and disable direct access once the system becomes
-heterogeneous.
-
-Thanks,
-Mark.
+> diff --git a/drivers/watchdog/aspeed_wdt.c b/drivers/watchdog/aspeed_wdt.c
+> index cc71861e033a..5b64bc2e8788 100644
+> --- a/drivers/watchdog/aspeed_wdt.c
+> +++ b/drivers/watchdog/aspeed_wdt.c
+> @@ -34,6 +34,7 @@ static const struct aspeed_wdt_config ast2500_config = {
+>  static const struct of_device_id aspeed_wdt_of_table[] = {
+>  	{ .compatible = "aspeed,ast2400-wdt", .data = &ast2400_config },
+>  	{ .compatible = "aspeed,ast2500-wdt", .data = &ast2500_config },
+> +	{ .compatible = "aspeed,ast2600-wdt", .data = &ast2500_config },
+>  	{ },
+>  };
+>  MODULE_DEVICE_TABLE(of, aspeed_wdt_of_table);
+> @@ -259,7 +260,8 @@ static int aspeed_wdt_probe(struct platform_device *pdev)
+>  		set_bit(WDOG_HW_RUNNING, &wdt->wdd.status);
+>  	}
+>  
+> -	if (of_device_is_compatible(np, "aspeed,ast2500-wdt")) {
+> +	if ((of_device_is_compatible(np, "aspeed,ast2500-wdt")) ||
+> +		(of_device_is_compatible(np, "aspeed,ast2600-wdt"))) {
+>  		u32 reg = readl(wdt->base + WDT_RESET_WIDTH);
+>  
+>  		reg &= config->ext_pulse_width_mask;
 
 _______________________________________________
 linux-arm-kernel mailing list
