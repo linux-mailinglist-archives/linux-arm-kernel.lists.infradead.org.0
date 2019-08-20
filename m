@@ -2,45 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D2469641C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:20:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 226DC9641A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:19:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xBHB6hpHBg5OLyJhZcSZh7F7EIFRZ2ioF7Bzd24StzU=; b=i90lD/Bi/rVZD8
-	MXj46VTuPOr0tx1adhWgS5oOeMMkONTqzQP5zbPHcnazbcf44whFnKdkIb9/7BiUvSkyLF4njjpDz
-	E/tJ8zLfCUpI3WLOBV1mW446FVKeuHAxLgHTv3mndTFaMqYBapTYaA9iXX2HaB5bH58NVZcs3fHRi
-	UJJb2X4U+yJ6RURYquKOxkcNZHotPrLxBIaTRq0zL4UykSWqAbThS796wvkQIqIQGEaGVVuoSetqZ
-	j1E8FcE5fs5teOtgywvpx0PkB1PBeJ2ql+8vn+RGUm2sygHnblLpK/ZON3kwEoH/PBm6Nt4osWnk/
-	L0T1fm5wHUZG3+sJrdMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ieyKjl1DTbe/EKaKJ9mOe+FbVeDvxK6tETqEDvfqHDA=; b=fBAAYJKWVueORX
+	Xnr66HglNXdjFhh/1AgL9Z6zjE7UgQlWKvDE2xkHWUaoEZNobTXId8qUd6f/EQAH+Gjf96FIGJkv1
+	KOZYXJxnBTynrcISvDn8a/MSBvv6bDbFGx2Ed/VtvVL0ubm8fdC0YIpIZxtxTQS3wRPeIs3tXu/hI
+	ViHZAJYy44wvIGC3iD36WA/i2sQ4dEDwUsgpwXQ08v2aE4lUGNo2X3K7O6FJqk3/fkHOKV2Bycxzo
+	dRYEERAe/uASrVyuThOvut1CelTlV0bzhdau0AClI5YF1zIRaqfFhLN8wpjZXzEb1ze0P89AaBQ+L
+	PMOKfF4Omk4425/yttcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i05vc-00084b-7p; Tue, 20 Aug 2019 15:20:08 +0000
+	id 1i05vJ-0007uT-Se; Tue, 20 Aug 2019 15:19:49 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i05v7-0007sm-BP
+ id 1i05v7-0007so-Cg
  for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:19:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1566314375; bh=3n0q7CBc9P4bQG/G0hfq9MsM1NWknDFFdma8+IRC/cg=;
- h=From:To:Cc:Subject:Date:From;
- b=RqPDvgDPVzlnaRwp8M3IghFK1wQglwVFc5+QYKZLLecgLDG5Wil2dozlnMco/EYls
- /tTRCmZRHy22lpoHwy9E9Fr/ySqpCuyc55Qs9fnt0P+1UVmbOrWTAtsc86mOFmndqh
- t3CYfwOjHBGp7SjGsGvlX8D7XF7SfRw54iJgeEMc=
+ t=1566314375; bh=ceJ7uYMyGuXnT+8w0JVBGUx4Cp8f10wjRMxOExNSRQo=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=BF2RGwVaIWjpS8lPMXdkn8hgNaIQ+mrzt5UHgcpqPhS+djX9Bx/ysx64+K0Ob3/vI
+ xYCMBm6u47YOW9gP05BTXewRC6oYEGY23xF0r9+uNmlX9O5SyMIo7l7LTPrvkUeQKd
+ sAsJBmMPvjAc8BkNp1fvwLL+6zW7c1Iy4j4cAyyA=
 From: megous@megous.com
 To: Alessandro Zummo <a.zummo@towertech.it>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH v2 0/3] Add basic support for RTC on Allwinner H6 SoC
-Date: Tue, 20 Aug 2019 17:19:31 +0200
-Message-Id: <20190820151934.3860-1-megous@megous.com>
+Subject: [PATCH v2 1/3] dt-bindings: Add compatible for H6 RTC
+Date: Tue, 20 Aug 2019 17:19:32 +0200
+Message-Id: <20190820151934.3860-2-megous@megous.com>
+In-Reply-To: <20190820151934.3860-1-megous@megous.com>
+References: <20190820151934.3860-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_081937_566430_21A2F474 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20190820_081937_594887_57F01A00 
+X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -76,43 +79,47 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-I went through the datasheets for H6 and H5, and compared the differences.
-RTCs are largely similar, but not entirely compatible. Incompatibilities
-are in details not yet implemented by the rtc driver though.
+RTC on H6 is similar to the one on H5 SoC, but incompatible in small
+details. See the driver for description of differences. For example
+H6 RTC needs to enable the external low speed oscillator. Add new
+compatible for this RTC.
 
-I also corrected the clock tree in H6 DTSI.
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ .../bindings/rtc/allwinner,sun6i-a31-rtc.yaml       | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-This patchset is necessary for implementing the WiFi/Bluetooth support
-on boards using H6 SoC.
-
-There was some discussion previously of describing HOSC, DCXO and XO
-oscillators and clocks as part of RTC in DT, but I decided against it
-because it's not necessary, becuse information that would be provided
-as a part of DT can already be determined at runtime from RTC registers,
-so this woudn't add any value and would only introduce complications
-to the driver. See: https://patchwork.kernel.org/cover/10898083/
-
-Please take a look.
-
-
-Thank you and regards,
-  Ondrej Jirman
-
-
-Changes in v2:
-- bindings converted to yaml
-- added reviewed by tags
-
-Ondrej Jirman (3):
-  dt-bindings: Add compatible for H6 RTC
-  rtc: sun6i: Add support for H6 RTC
-  arm64: dts: sun50i-h6: Add support for RTC and fix the clock tree
-
- .../bindings/rtc/allwinner,sun6i-a31-rtc.yaml | 13 ++++++
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  | 30 +++++++-------
- drivers/rtc/rtc-sun6i.c                       | 40 ++++++++++++++++++-
- 3 files changed, 67 insertions(+), 16 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/rtc/allwinner,sun6i-a31-rtc.yaml b/Documentation/devicetree/bindings/rtc/allwinner,sun6i-a31-rtc.yaml
+index 924622f39c44..d7a57ec4a640 100644
+--- a/Documentation/devicetree/bindings/rtc/allwinner,sun6i-a31-rtc.yaml
++++ b/Documentation/devicetree/bindings/rtc/allwinner,sun6i-a31-rtc.yaml
+@@ -25,6 +25,7 @@ properties:
+       - items:
+           - const: allwinner,sun50i-a64-rtc
+           - const: allwinner,sun8i-h3-rtc
++      - const: allwinner,sun50i-h6-rtc
+ 
+   reg:
+     maxItems: 1
+@@ -92,6 +93,18 @@ allOf:
+           minItems: 3
+           maxItems: 3
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: allwinner,sun50i-h6-rtc
++
++    then:
++      properties:
++        clock-output-names:
++          minItems: 3
++          maxItems: 3
++
+   - if:
+       properties:
+         compatible:
 -- 
 2.22.1
 
