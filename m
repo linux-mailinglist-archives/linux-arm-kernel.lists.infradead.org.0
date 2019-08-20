@@ -2,60 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D025395C1A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 12:19:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E691895C3D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 12:27:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sYYLb0BIHMCmbS+dJJhKqRK9Qn9jR6h5CGYcM75F3Ys=; b=SgvJMfTfc3thpt
-	RJo5RYXYSgbsB6zu4e8x5ZuB1eeP9SoY2GweH/HEg5fpkjHIy5oXgroqiaED2tDlEAd70yWTnPjaG
-	3Whui9sOCDd40tqqvKvCvkohfUTPMi6AOOs6+xQw3u4BqJjx5xQddYjNfTBmbzAMe+EShNP249paH
-	+3n7TnHACTzXXSD6/+XUKshKadUd6NNKqnb4QLMWYo2Dr1IruqlUtGhaabxiANm47CVQhFfmiXvdd
-	9Ze1VhozeJrss6h7/PNOt3TypMNom+THcDdAW3ME8htVkmiFzcc5yg4plxmwcR2rCwXudXruW3rwZ
-	lXgnPPEjtppeLM2UZiJw==;
+	List-Owner; bh=pU1j3oo8UyXiLmN9u7sj8y0SaiMuNjGavhZIeh6LWTY=; b=llT5sTgNnqmoqA
+	SVGLi+eLtGuM1Qw7sD9TJIPLzZSgnsD8+tEYGklmzan2F03jWNBqV5K/REZDr9+UM3HeJ5eEBJH3l
+	HUIPHLNTXZnsojG+XV8u/Dzw12ApCZGHGgwEz7s7bDiPVCBrt/IkXju8q2/25W/Fwx8b4F0KgdTDa
+	hQp09wCYMKB2pR6HnRqqeWDRxDHULSJzMY45e4vDlLHcGQ6Q6bO+FHhmWINyuOvBi2Ed1mHKxbcIP
+	MPpbLAPGq80Mi1/HVa4y4F6n/YNetd+TSUkyuLG5EE+0tsOdX0FgtF32mY9nFnZzkmSoeevjcwbdU
+	Q1toF9ejI8Au8dzjNV5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i01Eg-0006z9-ON; Tue, 20 Aug 2019 10:19:30 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i01MH-00020k-Qh; Tue, 20 Aug 2019 10:27:21 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i01ET-0006yZ-CH
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 10:19:18 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7647A20C01;
- Tue, 20 Aug 2019 10:19:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566296356;
- bh=P/AkiFjoa+ZXD65ahVrE1D56kGITx+qPBb6Af5bjtQk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=df9fx7q7d85HjJ0eJrMEUzl7Xo/pDZGT6gPXVq+3UgRaFIzHWMRZGsKtPuNW6YOkw
- 8dNVvpZtxwkb7MMDzHfUYuxt2J8LVNnyiXqcygZbjEX69VwpaiOd/FrJ2nBfiPSJEO
- /8gd7hS4wd4ox5h0uL19vKbUjj10lmYVX2XxLdsU=
-Date: Tue, 20 Aug 2019 11:19:12 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 2/4] iommu/io-pgtable-arm: Rationalise TTBRn handling
-Message-ID: <20190820101911.ndwtaf76kn3zplk2@willie-the-truck>
-References: <cover.1566238530.git.robin.murphy@arm.com>
- <dbb942070c2ef812e379414c236734931613d860.1566238530.git.robin.murphy@arm.com>
+ id 1i01M2-000201-KI
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 10:27:08 +0000
+Received: by mail-lj1-x242.google.com with SMTP id f9so4591764ljc.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 03:27:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=e/WL7mt//GAgzwpdMZbthxuFg+kLsllf6TCIqq5cm4k=;
+ b=WRmbYOSuUZTNI+VHX1CcRM/fsEMSBDx0RvKKzmF0CBEnfGFQy4jwdRNLy7jlnI71Jx
+ vpVfv1RUwcWCx6BY0Ww4yUiLIZW59Ks6mcyBJ/34UhiYcaCJMg0H2VxEQ4C77ZKH7OwI
+ e1SvT7JJBct7l227/+DWqKgkSjG2K/bPFJGXSqOqyc5Z/GHZs7xizq/yrtYTa6vdpiBw
+ vA3CPiGHNyD/M6Mx1CZtmQUaQ76xIgOYo2G5FmdW5bYPaMkF86DVU+QXZY26Hjj5yoKb
+ 077WUHbNXzbP2drPoIpP83IgyXznGU7ZNCatF/K1XShzcm8Cfj2hr5QISGBqHSCZt91P
+ xkYA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=e/WL7mt//GAgzwpdMZbthxuFg+kLsllf6TCIqq5cm4k=;
+ b=dWxbI03d7yqM2MvFW06dbWaYG0f3nGZPCfzq6k4dqRPgh98iwKG3/TNJjtmN1XyHN9
+ yWb2z8/KQejJN1K8j1FOTqPUPLvJbaEpdf0/1QUS4q/KCxsC1YBdid0w0ktb185d2YDy
+ xw16vhSrK8TFyWu42AQBQr5KWOsu07Q9lAPPxzTdDtk9MX5ynHcxL1EHe30HDWuGvb3i
+ Jync6JJHWidKUhwvTGgdgPf+A6oXc0B3IQ0s2GjR0HxvnUsQdeGWM5m645UPttwV97QC
+ EWfY1H5t9KU3gObnm393UHiOQehf1zxR8mdLhrTx3aiU0S76aBHnTgv0Olrt0l+D3y/o
+ 8/Qw==
+X-Gm-Message-State: APjAAAVmod47gu+ysmys5PCVwDjIZ7AAF0rLbS9MkQMwVKKv+rx6HpwC
+ Wkkklas1ZXVwgXkl6C2SjCrod+epThlTaU7y2hp6Fg==
+X-Google-Smtp-Source: APXvYqy9d7CgQvy0ZM0/DSmtHyrZ+R2wFU3tRkdCwr+9kjsIgtuwE4FW7X7VWI/cj5Incxd0Z4l1OHqEHETZ6NI0BN8=
+X-Received: by 2002:a2e:781a:: with SMTP id t26mr10426093ljc.28.1566296822942; 
+ Tue, 20 Aug 2019 03:27:02 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <dbb942070c2ef812e379414c236734931613d860.1566238530.git.robin.murphy@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <1566221225-5170-1-git-send-email-xuwei5@hisilicon.com>
+ <CAHp75Vct3qtR5bDF6iALmduKEEq+gNL-btmzQVuWq_hYsmxKhw@mail.gmail.com>
+ <CACRpkdbRZ=88+ooW5jb5vu4Dwsaj7Ce+V5Ked2-bGn0JWpTHfQ@mail.gmail.com>
+ <CAHp75VcwDZdOwFsT4Gf-1a4tNGQdowK-RKRvSif2m7oTsVQNbw@mail.gmail.com>
+In-Reply-To: <CAHp75VcwDZdOwFsT4Gf-1a4tNGQdowK-RKRvSif2m7oTsVQNbw@mail.gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 20 Aug 2019 12:26:51 +0200
+Message-ID: <CACRpkdZMHqppyzVQCLSR8yv1owZ71eDAduL9JGkCawjFvZ2U+A@mail.gmail.com>
+Subject: Re: [PATCH v3] gpio: pl061: Fix the issue failed to register the ACPI
+ interrtupion
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_031917_461060_818E2396 
-X-CRM114-Status: GOOD (  20.70  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190820_032706_698141_A3C9AC64 
+X-CRM114-Status: GOOD (  18.26  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -65,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,116 +94,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robdclark@gmail.com, joro@8bytes.org, jcrouse@codeaurora.org,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+Cc: Salil Mehta <salil.mehta@huawei.com>, jinying@hisilicon.com,
+ Tangkunshan <tangkunshan@huawei.com>,
+ "Liguozhu \(Kenneth\)" <liguozhu@hisilicon.com>,
+ John Garry <john.garry@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Wei Xu <xuwei5@hisilicon.com>, Linuxarm <linuxarm@huawei.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Shiju Jose <shiju.jose@huawei.com>,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ huangdaode <huangdaode@hisilicon.com>,
+ Jonathan Cameron <jonathan.cameron@huawei.com>,
+ Thierry Reding <treding@nvidia.com>,
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ Zhangyi ac <zhangyi.ac@huawei.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 07:19:29PM +0100, Robin Murphy wrote:
-> TTBR1 values have so far been redundant since no users implement any
-> support for split address spaces. Crucially, though, one of the main
-> reasons for wanting to do so is to be able to manage each half entirely
-> independently, e.g. context-switching one set of mappings without
-> disturbing the other. Thus it seems unlikely that tying two tables
-> together in a single io_pgtable_cfg would ever be particularly desirable
-> or useful.
-> 
-> Streamline the configs to just a single conceptual TTBR value
-> representing the allocated table. This paves the way for future users to
-> support split address spaces by simply allocating a table and dealing
-> with the detailed TTBRn logistics themselves.
-> 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
->  drivers/iommu/arm-smmu-v3.c        |  2 +-
->  drivers/iommu/arm-smmu.c           |  9 ++++-----
->  drivers/iommu/io-pgtable-arm-v7s.c | 16 +++++++---------
->  drivers/iommu/io-pgtable-arm.c     |  7 +++----
->  drivers/iommu/ipmmu-vmsa.c         |  2 +-
->  drivers/iommu/msm_iommu.c          |  4 ++--
->  drivers/iommu/mtk_iommu.c          |  4 ++--
->  drivers/iommu/qcom_iommu.c         |  3 +--
->  include/linux/io-pgtable.h         |  4 ++--
->  9 files changed, 23 insertions(+), 28 deletions(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> index 2a8db896d698..2e50cf49c3c4 100644
-> --- a/drivers/iommu/arm-smmu-v3.c
-> +++ b/drivers/iommu/arm-smmu-v3.c
-> @@ -1722,7 +1722,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
->  	}
->  
->  	cfg->cd.asid	= (u16)asid;
-> -	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
-> +	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
->  	cfg->cd.tcr	= pgtbl_cfg->arm_lpae_s1_cfg.tcr;
->  	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair;
->  	return 0;
-> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> index 184ca41e9de7..19030c4b5904 100644
-> --- a/drivers/iommu/arm-smmu.c
-> +++ b/drivers/iommu/arm-smmu.c
-> @@ -473,13 +473,12 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
->  	/* TTBRs */
->  	if (stage1) {
->  		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_S) {
-> -			cb->ttbr[0] = pgtbl_cfg->arm_v7s_cfg.ttbr[0];
-> -			cb->ttbr[1] = pgtbl_cfg->arm_v7s_cfg.ttbr[1];
-> +			cb->ttbr[0] = pgtbl_cfg->arm_v7s_cfg.ttbr;
-> +			cb->ttbr[1] = 0;
->  		} else {
-> -			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
-> +			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
->  			cb->ttbr[0] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
-> -			cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[1];
-> -			cb->ttbr[1] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
-> +			cb->ttbr[1] = FIELD_PREP(TTBRn_ASID, cfg->asid);
+On Tue, Aug 20, 2019 at 10:51 AM Andy Shevchenko
+<andy.shevchenko@gmail.com> wrote:
+> On Tue, Aug 20, 2019 at 10:12 AM Linus Walleij <linus.walleij@linaro.org> wrote:
+> > On Mon, Aug 19, 2019 at 5:07 PM Andy Shevchenko
+> > <andy.shevchenko@gmail.com> wrote:
 
-Why do you continue to put the ASID in here?
+> > Exactly what do you refer to when you want me to
+> > "re-do the approach for IRQ handling"? Do you mean
+> > this driver or are you referring to:
+> >
+> > commit e0d89728981393b7d694bd3419b7794b9882c92d
+> > Author: Thierry Reding <treding@nvidia.com>
+> > Date:   Tue Nov 7 19:15:54 2017 +0100
+> >
+> >     gpio: Implement tighter IRQ chip integration
+> >
+> >     Currently GPIO drivers are required to add the GPIO chip and its
+> >     corresponding IRQ chip separately, which can result in a lot of
+> >     boilerplate. Use the newly introduced struct gpio_irq_chip, embedded in
+> >     struct gpio_chip, that drivers can fill in if they want the GPIO core
+> >     to automatically register the IRQ chip associated with a GPIO chip.
+> >
+> >     Signed-off-by: Thierry Reding <treding@nvidia.com>
+> >     Acked-by: Grygorii Strashko <grygorii.strashko@ti.com>
+> >     Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+>
+> Yes.
 
-> diff --git a/drivers/iommu/qcom_iommu.c b/drivers/iommu/qcom_iommu.c
-> index 34bb357b3cfa..de55b6d82ef1 100644
-> --- a/drivers/iommu/qcom_iommu.c
-> +++ b/drivers/iommu/qcom_iommu.c
-> @@ -247,10 +247,9 @@ static int qcom_iommu_init_domain(struct iommu_domain *domain,
->  
->  		/* TTBRs */
->  		iommu_writeq(ctx, ARM_SMMU_CB_TTBR0,
-> -				pgtbl_cfg.arm_lpae_s1_cfg.ttbr[0] |
-> +				pgtbl_cfg.arm_lpae_s1_cfg.ttbr |
->  				FIELD_PREP(TTBRn_ASID, ctx->asid));
->  		iommu_writeq(ctx, ARM_SMMU_CB_TTBR1,
-> -				pgtbl_cfg.arm_lpae_s1_cfg.ttbr[1] |
->  				FIELD_PREP(TTBRn_ASID, ctx->asid));
+OK let's fix this mess, it shouldn't be too hard, I've sent a first
+few patches.
 
-Same here.
+> > The problem comes from the problem/mess I am trying to
+> > clean up in the first place. So if the new way of registering GPIO
+> > irqchips is not working for ACPI, then we have to fix that instead
+> > of reverting all attempts to use the new API IMO.
+>
+> Sorry for me being impatient and asking for a groundless requests.
+> I'll help you with cleaning this.
 
-> diff --git a/include/linux/io-pgtable.h b/include/linux/io-pgtable.h
-> index a6c8aa204733..7a0905d7a006 100644
-> --- a/include/linux/io-pgtable.h
-> +++ b/include/linux/io-pgtable.h
-> @@ -90,7 +90,7 @@ struct io_pgtable_cfg {
->  	/* Low-level data specific to the table format */
->  	union {
->  		struct {
-> -			u64	ttbr[2];
-> +			u64	ttbr;
->  			u64	tcr;
->  			u64	mair;
->  		} arm_lpae_s1_cfg;
-> @@ -101,7 +101,7 @@ struct io_pgtable_cfg {
->  		} arm_lpae_s2_cfg;
->  
->  		struct {
-> -			u32	ttbr[2];
-> +			u32	ttbr;
+Sorry if I sounded harsh :( I just have a bit of panic.
 
-We could probably do with a comment for these 'ttbr' field now saying that
-they refer to ttbr0 (since the tcr will have EPD1 set).
+I am sure we can fix this, I only recently realized what a headache
+the new API is going to be if I can't straighten it out and have to
+keep the old stuff around forever in parallel.
 
-Will
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
