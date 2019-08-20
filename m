@@ -2,49 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92F8695FE6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 15:22:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE62996005
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 15:28:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xwIXlC8ErTnCiTlKPDr8oQ0ULOgvj4tLNe8hIQAoeBM=; b=FetyoJu52zY3Yq
-	IMoPg74V6GW20neethse7ptVzlY9QY7tkIRehm/4LbAD2+V9ysj9+0cV1tXUSzFQzGjXMGJPVZ5JL
-	tnq0s37vU7OggIMr+CruBzm3XIrjIXS4bq7hiHDV3jV3ZNDz1M/scqSwRzAqDTWWl6cYS81KAR8QZ
-	pVpyqlKFdxBDN3L0PGuWxmbYNMo6/pZcfsbP6yeK35sD3RCRUJ5Aye3N07waTIUYyEjOJhryoO8NS
-	U5p+kWPD4XkKCufROJvwXstx04FkyPIV6R8qn6IZ+aSRZIOQ8XBcIqip+A5XM5iTduZLtmV4EGsLh
-	K9o/4LORfAreHumUwfdw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=sV1KAN2ajrHp9YTfn/xVCeZq703WTMelzTom+Wg52yI=; b=RGz+M0rSSERzwGSb1dN749zDyO
+	cVMiNavqwzg3LxXACIOeHKamCO4eHP8+z+aJcrbVQpiGQJ5W6intRHC6us+J2/GkXzIJ9kqYeYL2O
+	Hdi4bUfPwPfwkguUdmhJXe9ZjlWPNyvRuP94XBHWXlbM8zvV1hDOXNGc0VQylXYMvoDSJPs3rfdXG
+	qk+rlcAKjoRzShwlZaI7pcc3v6Ty9KR3WSRM0Xx3KEcTSH0i58oz90ISM+Rh0kh+5tCPh8MbkDeWz
+	jnE4fi1BKqSB6AQuVttpU2hD0nOqqzJb9L2YQn4hxchnhavxZvy5EM4+fyLZTBGMinHyppXUgcRM+
+	RpFzgReQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i045K-00025N-BW; Tue, 20 Aug 2019 13:22:02 +0000
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1i044X-00024h-5t; Tue, 20 Aug 2019 13:21:13 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id D62A43075FF;
- Tue, 20 Aug 2019 15:20:38 +0200 (CEST)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 244AB20A99A00; Tue, 20 Aug 2019 15:21:10 +0200 (CEST)
-Date: Tue, 20 Aug 2019 15:21:10 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-Subject: Re: [PATCH v2 1/3] kprobes/x86: use instruction_pointer and
- instruction_pointer_set
-Message-ID: <20190820132110.GP2332@hirez.programming.kicks-ass.net>
-References: <20190820113928.1971900c@xhacker.debian>
- <20190820114109.4624d56b@xhacker.debian>
- <alpine.DEB.2.21.1908201050370.2223@nanos.tec.linutronix.de>
- <20190820165152.20275268@xhacker.debian>
+	id 1i04BH-00060F-Jl; Tue, 20 Aug 2019 13:28:11 +0000
+Received: from mx-rz-2.rrze.uni-erlangen.de ([2001:638:a000:1025::15])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i04B1-0005SR-LV
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 13:27:57 +0000
+Received: from mx-rz-smart.rrze.uni-erlangen.de
+ (mx-rz-smart.rrze.uni-erlangen.de [IPv6:2001:638:a000:1025::1e])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx-rz-2.rrze.uni-erlangen.de (Postfix) with ESMTPS id 46CWn06MnBzPk8g;
+ Tue, 20 Aug 2019 15:27:32 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fau.de; s=fau-2013;
+ t=1566307652; bh=RRTtHjXBxTVQh7do1YcOe264VD6+MXJr+xqV5RKHI8I=;
+ h=From:Subject:To:Cc:Date:From:To:CC:Subject;
+ b=FRauvwOoLCS8bzBBigiDmnT9hEaHmyVg48UQbuZEYaTymk3hq9n1MdM5qhHOwK2PO
+ h023wKb9xzOLkNNR9r+2oUN+LWlLFW870hYJz8uHLQ7h44U6z6Tc46cgQCaHCfJ6CR
+ 7K2U4bjI9FW4dMBkvDkas/8XpkUe5a154hxfOzOfcl/spBVGgU9FCSSSySR3fESvFH
+ Dx6Pv/u6yss37sENF3xdxrHthXf2Le5W/2WFtsewRW0zlRSy2GJxQUnUoRJoUwfF69
+ 6K9VGNjxIFERUsBoyKFmaBjCKXmWZQMxeeLBBz35pawD/Hkz+p2lbRTAOPT7JuWOLa
+ 5Z46RiK+ntEOg==
+X-Virus-Scanned: amavisd-new at boeck4.rrze.uni-erlangen.de (RRZE)
+X-RRZE-Flag: Not-Spam
+X-RRZE-Submit-IP: 109.41.192.99
+Received: from [192.168.43.238] (ip-109-41-192-99.web.vodafone.de
+ [109.41.192.99])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: U2FsdGVkX18k1zGhCfJiNFmXL4fjORVG2nesGGst0Vg=)
+ by smtp-auth.uni-erlangen.de (Postfix) with ESMTPSA id 46CWmy1k4mzPjgS;
+ Tue, 20 Aug 2019 15:27:30 +0200 (CEST)
+From: Sebastian Duda <sebastian.duda@fau.de>
+Subject: Status of Subsystems - MICROCHIP SAMA5D2-COMPATIBLE PIOBU GPIO
+To: Andrei Stefanescu <andrei.stefanescu@microchip.com>
+Message-ID: <d2bdb45a-3571-5989-8278-6f5c7d9839f2@fau.de>
+Date: Tue, 20 Aug 2019 15:27:29 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190820165152.20275268@xhacker.debian>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190820_062755_860202_8C6D223B 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.5 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:638:a000:1025:0:0:0:15 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,34 +89,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- "x86@kernel.org" <x86@kernel.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Masami Hiramatsu <mhiramat@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, lukas.bulwahn@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 20, 2019 at 09:02:59AM +0000, Jisheng Zhang wrote:
-> In v2, actually, the arm64 version's kprobe_ftrace_handler() is the same
-> as x86's, the only difference is comment, e.g
-> 
-> /* Kprobe handler expects regs->ip = ip + 1 as breakpoint hit */
-> 
-> while in arm64
-> 
-> /* Kprobe handler expects regs->pc = ip + 1 as breakpoint hit */
+Hello Andrei,
 
-What's weird; I thought ARM has fixed sized instructions and they are
-all 4 bytes? So how does a single byte offset make sense for ARM?
+in my master thesis, I'm using the association of subsystems to 
+maintainers/reviewers and its status given in the MAINTAINERS file.
+During the research I noticed that there are several subsystems without 
+a status in the maintainers file. One of them is the subsystem 
+`MICROCHIP SAMA5D2-COMPATIBLE PIOBU GPIO` where you're mentioned as 
+maintainer.
+
+Is it intended not to mention a status for your subsystems?
+What is the current status of your subsystem?
+
+Kind regards
+Sebastian Duda
 
 _______________________________________________
 linux-arm-kernel mailing list
