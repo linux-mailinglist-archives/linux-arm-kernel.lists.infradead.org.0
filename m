@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 348129619C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 15:51:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 094A2961AA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 15:55:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FseEZiN2Qoa8+0fzfQOPQnYMGgPkM+6dntsfQe3747E=; b=c8vK+t3rV6+FZb2QgZr8duubz
-	we+hNfhC6Mj8pjzNwEgsIRVeA2AlfVduAE22Wsqjv8nxaGClI0UBrgjy3KLJ8wOAcwOR3Xesjp3bQ
-	8PSDzNIiP9MGoaaJTqSlH0Gdo/z0Htf+7usw32WuWAvt7in4MwWEKzNnWSv52GGq+cTECw0mj7Snf
-	aX0MgUvRO5JwXAA9LHJYtPaOYv9Ap5U7RnU9tzqIhA0Cmh5uPwgBLoFazr+MfVad05ZBU8VLmJBl5
-	mzWTISS5dawFSnAYjBdpEI+8uoT0VuQ9T27GridzphbHIvS65G65mTN5yRTQ+4Pu7HbDtdxvsXtuJ
-	y2GLSIkjg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/pt8Y47tDxYyKoanGSWXsKp75soeY1rd8G3vSG7G3jw=; b=r5ERpeUiiEVO3+
+	sK3ZlaqKn1uvdv95e+8I5T07hZKJHPOJEe6AyPYNuC0AMOiMSVghLAkgKg1vtGSKBxt+PEMEGDBQ7
+	l4gH8C7nJKg31g/S6OxPxINM49V3pS+BNsdztnMeKx08eFPIj9XU++6KjrycjRIecljeqgVrGOaD6
+	AYPrUQRKo+AaWHQj3hF9PJSEY/IdevpbhHRq7e5NrZneeX20jev5R8/k1u646oFkT4qx7Dc1OZlxg
+	XO6s2Nak+DtIL/qAF9nzG1wnMb+vxG3mpVIH+B6XOQdPgZ5z6gGHHWePwuEEbQIZv0tROEBJiN3bO
+	1FXSRjW5c95BLcuH8Q1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i04Y7-0000Te-HQ; Tue, 20 Aug 2019 13:51:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i04Xw-0000TI-6r
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 13:51:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C37B528;
- Tue, 20 Aug 2019 06:51:33 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1582E3F246;
- Tue, 20 Aug 2019 06:51:32 -0700 (PDT)
-Subject: Re: [PATCH 4/4] iommu/io-pgtable-arm: Prepare for TTBR1 usage
-To: will@kernel.org, joro@8bytes.org, iommu@lists.linux-foundation.org,
- linux-arm-kernel@lists.infradead.org, robdclark@gmail.com
-References: <cover.1566238530.git.robin.murphy@arm.com>
- <6596469d5fa1e918145fdd4e6b1a3ad67f7cde2e.1566238530.git.robin.murphy@arm.com>
- <20190819223439.GG28465@jcrouse1-lnx.qualcomm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <de67f3d6-2c95-293a-9fae-ba594df21660@arm.com>
-Date: Tue, 20 Aug 2019 14:51:31 +0100
+	id 1i04bk-0002EW-CL; Tue, 20 Aug 2019 13:55:32 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i04bX-0002E7-6p
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 13:55:20 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id D45DE21491;
+ Tue, 20 Aug 2019 15:55:11 +0200 (CEST)
+Received: from [192.168.108.37] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 3AABD213EC;
+ Tue, 20 Aug 2019 15:55:11 +0200 (CEST)
+Subject: Re: [PATCH v2] iommu/arm-smmu: Break insecure users by disabling
+ bypass by default
+To: Will Deacon <will@kernel.org>,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ "Michael S. Tsirkin" <mst@redhat.com>
+References: <20190404145957.GA25912@fuggles.cambridge.arm.com>
+ <4754bcf1-6423-f1fe-64d4-da4a35b164ad@free.fr>
+ <20190424115231.GA14829@fuggles.cambridge.arm.com>
+ <20190502105912.GA943@ulmo>
+ <20190502110821.GD30966@fuggles.cambridge.arm.com>
+ <20190502124525.GA3579@ulmo> <94cf6d56-5dcb-051a-06da-5edfacde1655@arm.com>
+ <20190819112856.GA28102@ulmo>
+ <20190819120917.hysyc6l3ckkwcx25@willie-the-truck>
+ <20190819133327.GA23089@ulmo>
+ <20190819144827.6h4hm2gytogwepi7@willie-the-truck>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <ada29112-87c1-e223-aa66-b7871e20a49a@free.fr>
+Date: Tue, 20 Aug 2019 15:55:11 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190819223439.GG28465@jcrouse1-lnx.qualcomm.com>
-Content-Language: en-GB
+In-Reply-To: <20190819144827.6h4hm2gytogwepi7@willie-the-truck>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Tue Aug 20 15:55:11 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_065136_290047_1F86EBC7 
-X-CRM114-Status: GOOD (  18.83  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190820_065519_401942_621413E0 
+X-CRM114-Status: GOOD (  10.33  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,76 +79,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ Douglas Anderson <dianders@chromium.org>, Jon Hunter <jonathanh@nvidia.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Robin Murphy <robin.murphy@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19/08/2019 23:34, Jordan Crouse wrote:
-> On Mon, Aug 19, 2019 at 07:19:31PM +0100, Robin Murphy wrote:
->> Now that callers are free to use a given table for TTBR1 if they wish
->> (all they need do is shift the provided attributes when constructing
->> their final TCR value), the only remaining impediment is the address
->> validation on map/unmap. The fact that the LPAE address space split is
->> symmetric makes this easy to accommodate - by simplifying the current
->> range checks into explicit tests that address bits above IAS are all
->> zero, it then follows straightforwardly to add the inverse test to
->> allow the all-ones case as well.
->>
->> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
->> ---
->>   drivers/iommu/io-pgtable-arm.c | 7 ++++---
->>   1 file changed, 4 insertions(+), 3 deletions(-)
->>
->> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
->> index 09cb20671fbb..f39c50356351 100644
->> --- a/drivers/iommu/io-pgtable-arm.c
->> +++ b/drivers/iommu/io-pgtable-arm.c
->> @@ -475,13 +475,13 @@ static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
->>   	arm_lpae_iopte *ptep = data->pgd;
->>   	int ret, lvl = ARM_LPAE_START_LVL(data);
->>   	arm_lpae_iopte prot;
->> +	long iaext = (long)iova >> data->iop.cfg.ias;
->>   
->>   	/* If no access, then nothing to do */
->>   	if (!(iommu_prot & (IOMMU_READ | IOMMU_WRITE)))
->>   		return 0;
->>   
->> -	if (WARN_ON(iova >= (1ULL << data->iop.cfg.ias) ||
->> -		    paddr >= (1ULL << data->iop.cfg.oas)))
->> +	if (WARN_ON((iaext && ~iaext) || paddr >> data->iop.cfg.oas))
->>   		return -ERANGE;
->>   
->>   	prot = arm_lpae_prot_to_pte(data, iommu_prot);
-> 
-> We'll want to cast away the sign extended bits before mapping the iova, this
-> might be a good patch for that too as long as we are calculating the iaext.
+On 19/08/2019 16:48, Will Deacon wrote:
 
-Ah good point, I'd forgotten that ARM_LPAE_LVL_IDX() doesn't actually 
-cap to IAS if the top level is smaller than bits_per_level (I suppose we 
-*could* make it do so for purity, but that's bound to hurt efficiency 
-far more than just zeroing out the offending bits here).
+> If we can get by with extending the iommu-map entries for the masters,
+> that would certainly be the neatest imo. Sounds like it's worth a quick
+> hack, if nothing else.
 
-Thanks,
-Robin.
+Tangent: I've been meaning to ask about some iommu-map shenanigan.
 
-> 
->> @@ -647,8 +647,9 @@ static size_t arm_lpae_unmap(struct io_pgtable_ops *ops, unsigned long iova,
->>   	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
->>   	arm_lpae_iopte *ptep = data->pgd;
->>   	int lvl = ARM_LPAE_START_LVL(data);
->> +	long iaext = (long)iova >> data->iop.cfg.ias;
->>   
->> -	if (WARN_ON(iova >= (1ULL << data->iop.cfg.ias)))
->> +	if (WARN_ON(iaext && ~iaext))
->>   		return 0;
->>   
->>   	return __arm_lpae_unmap(data, iova, size, lvl, ptep);
-> 
-> And here too.
-> 
-> Jordan
-> 
+My kernel reports:
+
+	OF: /soc/pci@1c00000: no iommu-map translation for rid 0x0 on (null)
+
+Errr... "Is that a problem, doctor?"
+
+It's a pr_info() message from of_map_rid() in drivers/of/base.c
+I note that it used to be an error before fb709b5e1cca5
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
