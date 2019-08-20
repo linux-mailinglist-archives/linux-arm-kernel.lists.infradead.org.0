@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BC8C95521
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 05:24:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 486F295525
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 05:25:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nB6l4dh1MMgrYMuX4DDet9ciDYcBoEUshyBjJbU3gqc=; b=DxQoMuMA89txT4
-	TunkXNAd1I90glzjMJklfjetlupkEUYAao901lt7bsXxhXQk6HbXCpmeX3p4Bq6Jxx7b1+9qzY6bg
-	8MFzFX/XFK9LXkZW5T3r5IlpYUtx4/gm9RDeib7bgECiM9mcBtCPaAsz7T41IjHZ5RxV82FJIGGHv
-	tBGaJ2qXdj3SAvuBONZIVXCilAOo2kUs5nH0JyMnJnJ/wL1PeS8DB2ctuREFAv1V1/7PnlV4gq2nR
-	XcSArlUKSWIqpB34YyDacFWXrZIGcCjhGOu7PtKsd6cbyBfrAVdG7wPcTLQYtuEqZHvBmJIHp2dZK
-	J9woCXDCB8azdjh0lMaA==;
+	List-Owner; bh=d9X3ztE+9emM43fGKx0g3IWxiLXWnthDxOhGF34tFXc=; b=NcPk7yPDYTUBgs
+	ywiDk0WezcbyLZO2In9FqHWvcDgURgRKRlzZ5tDmE6gOmPtkHh5eq7YwDq2AGNB9gNVyMyd0HhOq1
+	rtr7q2CFSPCl1ySv52YERQ4Vo4HCjDPpezqgxNUDd0XX+VHPyIx/Nl+ko6uA9eoHcwyLc/s6mjGJQ
+	G2z+2JpK9chzREOgrziVVjeUSyplXEpPR++EhW7JpBcL1XjvX8psm7pFJGUFeyx4qFp3s62dTJ6/1
+	KGvv8X1Obu+/ztZnRHQARXLt6JX+LgF7jf5B8nAlsC8cugtkVlOZqIlGxdfwqwOJ14aGYK8TlxKhd
+	MTe0w93GgnSGhcjPL+Wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzulC-00040s-O6; Tue, 20 Aug 2019 03:24:38 +0000
+	id 1hzum1-0005uD-QF; Tue, 20 Aug 2019 03:25:29 +0000
 Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzuju-00033o-3q
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 03:23:19 +0000
+ id 1hzuju-00033u-9O
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 03:23:20 +0000
 Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id 69B4A3548;
- Mon, 19 Aug 2019 23:23:16 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 21154353B;
+ Mon, 19 Aug 2019 23:23:17 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute5.internal (MEProxy); Mon, 19 Aug 2019 23:23:16 -0400
+ by compute5.internal (MEProxy); Mon, 19 Aug 2019 23:23:17 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=da/HA5aDX/4ws
- o/bGdIpUQMMjVTdDBI9MxYlR95dyfU=; b=o1Xys5ozKYozQOOKg3kxuH3Bo2Kph
- YBJQayYXzdJK1upxZzcXlbxsPU87i1k/BiMPS98DuV8lcfudZKYGuWrS8rmwdRde
- j0dqN7oZBssq/3H2SHIXgBuw++fO+46m2cRLGSSAYHDQJ4kwCLbUHQkXSW1tMVtE
- ct3MmUDMK9FytRE+fyBh6mpzcSrxqfrgocJKSYhaBKyJIwRRASCyY6NBuWlTvZ/G
- W5YRj5Yjk2YdxnfBsMVP36L3LbXBX38ty1tY8E9s5+XuFxPLjb8hidBj7g1KXiDD
- 6lXVhhYxO8fWaWBS0PUGg+2ALQKKQ+mZweDk1ut6Ni8S9WLsQ8uEYPhQQ==
+ :mime-version:content-transfer-encoding; s=fm3; bh=tuQrtgFJDi3rt
+ CNY0leoagNnY3nRZhaV8CR1RVhP8Us=; b=Z8aZcK0SJgG/NtWJbKYt+qm7Qv678
+ 1Eeyx5gaERmKy5h2LBrjUvrupf0bei0vU8QWrG5zCuPbUa3nn7JlfPkOq32/RRXC
+ yN15Rax5hzLPPUJR1TghNvQTY2UnvhSXrPdBRnYyk1e1nNUYxCof3qIV5ymbv10D
+ yWjCdBMWbr0HuLIowuPcMLX1Kfw9Epc2vC7swwnifLziKx+lw2YY/s3b51YmfAw3
+ LdJuX/6dh//3G3S7sXOvGEXc7STmMUu+7HMuOG94QazJXg/yumvGscPpaHrPXaaQ
+ dpbOH3kPVNz4hL892rS0oZXTlXIDDxVugkIOGP0pIe7ykjA4khDgAV4Sw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=da/HA5aDX/4wso/bGdIpUQMMjVTdDBI9MxYlR95dyfU=; b=S7uByfs5
- nhUVI3FGD62ykjkHVYDg7Xxjcw/JXsdr5kKFQqZTUSJIOxqajYEHtiQe2i3+iRNP
- mQpi8GG2RmVbq2i/2k1BgMzx2DXy/GEXwA5i9+2yeoJggzYcrLMDlt7AWrYDCn5g
- CksamdLIPOTo80tgzyXRuUtfP/+HV97iCNx9m5OgQMiB0p8t1Eh5yf7wzdgaiu05
- kAKasSWMWxy5XNHYC82hYzcR5TDM+mM1XCpmmv3LnBz1zdOZkM6TxmXqf2Aobz1j
- fVfuvWVwsXIRbLIpqLXDUnQnh+ftyQrIUthcShiV+lefO8YfCVSduUqx0BxturzU
- xDWglcr32/Yqfg==
-X-ME-Sender: <xms:pGdbXZG1-mphexTWcWq3wpAP9yGWJO55qSipX8KK_nTicflmIiVtnA>
+ fm3; bh=tuQrtgFJDi3rtCNY0leoagNnY3nRZhaV8CR1RVhP8Us=; b=QDO+YqPO
+ Sfx49dsLnLF5BjC+D1DX+hEnKlJrTlj+s4FH5v3nnwGKPpuiVt5tPRRFq7pbE1gL
+ E9LlYqvwr02+niw6y6xBA0Xcyt1yuwLvAK4hRaRHCnScCYUOMU66AUXsmT9E+C+h
+ fkzV8iHdcDkbBOLMcKdrHz0kkwnwEHCCvpr/WbzZDL1LKCx6hBxBHpJABXWgbf03
+ zgfh7hqRzDed2mQe1aZHnqzmDEzp07y9NBO8xSz89WCHJsUnKxI/FSRo0514unH4
+ vPQMfBjPzoa8pi6+L/JMZ5vKbPZ7DLwW56LYYl2hdQwa2oYIDUTibKoG8B7Z32UC
+ 0B3JJCwesajCFg==
+X-ME-Sender: <xms:pGdbXQclp1vZhL71xEx3Rv8xlY-iOmPixbEJyyxX0VPOaG110QciTQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudegtddgjeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,14 +56,14 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudegtddgjeegucetufdoteggod
  lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
  epjedtrddufeehrddugeekrdduhedunecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghm
  uhgvlhesshhhohhllhgrnhgurdhorhhgnecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:pGdbXUS2e2j9rm3R6_7vg8mxSdeDA6gEb4Dc2q-fhfRSQGurFbnKRQ>
- <xmx:pGdbXYRSiwY5CHefTTspo9Hj5ikhh1Zna6w4LUUuJz24V7a4mxQ9Tg>
- <xmx:pGdbXf3EDhjO4uDCPKInKNu6bVkrlAvCVIsiT1xv59F9f8iERWXMfQ>
- <xmx:pGdbXRHtmD82LjaYZMV_N9yFl0TsRQIicDmiBXBRYDdo35YHjrV98Q>
+X-ME-Proxy: <xmx:pGdbXapopq4fR-pX4tTT1yzDNsniU2EDfEG1E__v0zztSCFob9I-Mg>
+ <xmx:pGdbXR-8iKtlhjBaerDfuZ_ldQvsQlZF-IB1u8ZJ8rkTJOeQuQ9VPg>
+ <xmx:pGdbXWfCRZdnqvPIWNppYQROL6BcVmVEGq2cGGN5_EuKqz29HLNjsw>
+ <xmx:pWdbXbPQgCL-orUsTGZIMFS-9pV-uQAjXQfegQs1lE9p8fXftCx6qA>
 Received: from titanium.stl.sholland.net
  (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 523EF80059;
- Mon, 19 Aug 2019 23:23:15 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 1F0098005B;
+ Mon, 19 Aug 2019 23:23:16 -0400 (EDT)
 From: Samuel Holland <samuel@sholland.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  Jassi Brar <jassisinghbrar@gmail.com>,
@@ -72,16 +72,16 @@ To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  Mark Rutland <mark.rutland@arm.com>,
  Corentin Labbe <clabbe.montjoie@gmail.com>,
  Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: [PATCH v4 06/10] ARM: dts: sunxi: a83t: Add msgbox node
-Date: Mon, 19 Aug 2019 22:23:07 -0500
-Message-Id: <20190820032311.6506-7-samuel@sholland.org>
+Subject: [PATCH v4 07/10] ARM: dts: sunxi: h3/h5: Add msgbox node
+Date: Mon, 19 Aug 2019 22:23:08 -0500
+Message-Id: <20190820032311.6506-8-samuel@sholland.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190820032311.6506-1-samuel@sholland.org>
 References: <20190820032311.6506-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_202318_291918_64A55661 
-X-CRM114-Status: GOOD (  10.44  )
+X-CRM114-CacheID: sfid-20190819_202318_464881_9D5988C7 
+X-CRM114-Status: GOOD (  10.31  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -117,25 +117,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The A83T SoC contains a message box that can be used to send messages
-and interrupts back and forth between the ARM application CPUs and the
-ARISC coprocessor. Add a device tree node for it.
+The H3 and H5 SoCs contain a message box that can be used to send
+messages and interrupts back and forth between the ARM application CPUs
+and the ARISC coprocessor. Add a device tree node for it.
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
- arch/arm/boot/dts/sun8i-a83t.dtsi | 10 ++++++++++
+ arch/arm/boot/dts/sunxi-h3-h5.dtsi | 10 ++++++++++
  1 file changed, 10 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sun8i-a83t.dtsi b/arch/arm/boot/dts/sun8i-a83t.dtsi
-index 523be6611c50..8871d1aaf7f5 100644
---- a/arch/arm/boot/dts/sun8i-a83t.dtsi
-+++ b/arch/arm/boot/dts/sun8i-a83t.dtsi
-@@ -583,6 +583,16 @@
+diff --git a/arch/arm/boot/dts/sunxi-h3-h5.dtsi b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
+index 224e105a994a..f25876a8021a 100644
+--- a/arch/arm/boot/dts/sunxi-h3-h5.dtsi
++++ b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
+@@ -232,6 +232,16 @@
  			reg = <0x1c14000 0x400>;
  		};
  
 +		msgbox: mailbox@1c17000 {
-+			compatible = "allwinner,sun8i-a83t-msgbox",
++			compatible = "allwinner,sun8i-h3-msgbox",
 +				     "allwinner,sun6i-a31-msgbox";
 +			reg = <0x01c17000 0x1000>;
 +			clocks = <&ccu CLK_BUS_MSGBOX>;
@@ -145,8 +145,8 @@ index 523be6611c50..8871d1aaf7f5 100644
 +		};
 +
  		usb_otg: usb@1c19000 {
- 			compatible = "allwinner,sun8i-a83t-musb",
- 				     "allwinner,sun8i-a33-musb";
+ 			compatible = "allwinner,sun8i-h3-musb";
+ 			reg = <0x01c19000 0x400>;
 -- 
 2.21.0
 
