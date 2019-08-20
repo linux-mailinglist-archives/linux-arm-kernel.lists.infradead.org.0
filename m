@@ -2,67 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C657956D2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 07:47:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16AF895706
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 07:57:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cRj+aw6+P17iC2X+1YcTr9hPVGl0wBwh2HDSb1qDZec=; b=PfsZMabmDHtWYYBclQbKpnvn0
-	MmDOWbjq6M6iNslvi+bS6jMDcYZbAIqz5uhCqG2sZg8buKBOeYaHKsZjtGXOCjX7Y2p2/J9+rSFdi
-	Q94/uikmofK32WvL4NiyGTiDM2po7xdbvE7c4c8FQZRMYG5f5XDi4imI2jBc9KZLoiJKGubc6QU9a
-	O2SuGd2hd0xHhgvAEMqMqmTQbD3FMpLT0EgY88YLl4zaS4rG52ShQw7IUKH73u5ugwNDnfx3SsdeC
-	5pS+sjWEmND+q6BZKqRTNpwAw7g3OFQlWlCliE5jc08v2TlTpVrLkkxROyKksTjOoJgGgI1yOA1JZ
-	E3ReUkNlA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wyMEzM7clpZnveGsfcii32AQE+0mQpWN8ajWPtgAJ4w=; b=u11OwDGWDNkVtZ
+	L+Qt3AkCV8u3E7h3q9Pc3Z7w2k0LBq33kWf6YUK2SPP956rNNF/NqQLuIfqDg5RvFyGbZJ41Vd9Sa
+	Y7/K+ZPZQC+hzRRIqubXN2B/penzbQkfJ9rTkGdlMAsDaJPyBOz+Hipkwnaw478jilT3ku4ZtPwK0
+	00SdqEDOViCOtj0VGsxkxWL5bkousWBBeFwbS5ayU9LLnC8suICBdhTqJ5pCJMU66/zxoDADKZmDm
+	vt3Gr71IqVOQJySXs+brzAEW0dmS/HJyye9rfMXU2URdeeXnTP4N2Xu7BBnhS6UUeIQF7GFA+mM03
+	M/z5ctVoQ9HR5ZhDySig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzwyy-0004Fv-1H; Tue, 20 Aug 2019 05:47:00 +0000
-Received: from smtpng3.m.smailru.net ([94.100.177.149])
+	id 1hzx8g-0007g0-BR; Tue, 20 Aug 2019 05:57:02 +0000
+Received: from mail-eopbgr150042.outbound.protection.outlook.com
+ ([40.107.15.42] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzwyb-0004Aa-5a
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 05:46:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=orpaltech.com; s=mailru; 
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject;
- bh=NDcqlUkB255+we0mmPQVQ21uehWPUdr9FWH8KdeYuoM=; 
- b=GJIUC5OKNcyonl3A2r+FSh531xnZVzo/hZ4HsL9qMx68Wa+teksDzZtw6MQaO2zlY/etW+aS4RhLxqHIkEzVXvS1AzUIsreroLveRXGTBZTXH3ImUPVR03SszOiVRvsgRvi7+zfnFtw7n6BalCS4rp9D6E79hc5jw5uSNvlBIGc=;
-Received: by smtpng3.m.smailru.net with esmtpa (envelope-from
- <ssuloev@orpaltech.com>)
- id 1hzwyW-0000Gs-3h; Tue, 20 Aug 2019 08:46:32 +0300
-Subject: Re: [PATCH 20/21] ASoC: sun4i-i2s: Add support for TDM slots
-To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- lgirdwood@gmail.com, broonie@kernel.org
-References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
- <26392af30b3e7b31ee48d5b867d45be8675db046.1566242458.git-series.maxime.ripard@bootlin.com>
-From: Sergey Suloev <ssuloev@orpaltech.com>
-Message-ID: <c311e88a-fdd2-8a01-275e-675d98dc90ba@orpaltech.com>
-Date: Tue, 20 Aug 2019 08:46:30 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <26392af30b3e7b31ee48d5b867d45be8675db046.1566242458.git-series.maxime.ripard@bootlin.com>
+ id 1hzx8R-0007eB-Ny
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 05:56:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=aUwEY7tb/RbfNk6/646no1pIpFlTmY1u67I08zdfjBziu4qmZaEnLGEmEDcKNu82HBoItOUk9A3biVREE4efsYEHSiTfCAd0ICvSUj2oOzz7AVquw3F5XUT3DDPMqISC+sZZ768g7ZkmFvJm7uwunob8ynuwKegJHRTpWE//sC58Hpyu2wJsuPdGL828IKjVIbUAihjXyzqE1SHbE2iHWHlYxwhvaWJeKHqT6Sw6KzhCyLvOldhXkp+uLGwxJgdC8lABvgdyv/Be3vDAPnmwJ8BIXs3jQYOFIOuSH5amyksU8B/OcCaxlHvlv/T1tflQ89U8tVeCG+A9Q2xcZjUa2Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vuTTLkQWm+BW7NTa3WJWdm9fMGHe5C2RQzAhXSUjuJ8=;
+ b=fNrOXGYcrI4pgGhV01aREIEs8YDmkwYhHlmNmPZ7zWyK9YmGvp5e9xIFvQT/ybhbhzbyuvmBEjohiw9GZ63lBwDPmc4ugD9M+1gBsOhmU2SRSxQ0noMfB1SLa0U3ybXvZcuExF9FGV/ZM+9LTBqYdbxTELx3/TwNiA7lqlFeVRyF9oeVs1I154AntjE/ToDrPhTD0AscADAFIR3IMKPUbB9XSmBqb5tJQFgRo9CPoySmw2EREVWIqfcoa/lzPRThv2L+yd5OvqukmddDiwL25gDIHqb3a963+eYvTv8ziHnBAtU2HLmcUeMK1xJIShVWkYRRVKDpg54Bo/rd8Lyb5Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vuTTLkQWm+BW7NTa3WJWdm9fMGHe5C2RQzAhXSUjuJ8=;
+ b=J+7GVeLEkhNWktV0vcP3JgTV52mmFQx08xZdvI1IwAWHerAvauhBuEfe/FazDRExHyPVcIpf7ditKLBvoWzy4VTzohrlG0n+fNPcDyNL3k9ctSv2ozIrtCFrF6VQAug3rSEi74iQh58CVml0bZU4g4CfSpt4dZ74smftfRn8K5M=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3836.eurprd04.prod.outlook.com (52.134.71.139) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2178.16; Tue, 20 Aug 2019 05:56:40 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::7cdf:bddc:212c:f77e]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::7cdf:bddc:212c:f77e%4]) with mapi id 15.20.2178.018; Tue, 20 Aug 2019
+ 05:56:40 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Aisheng Dong <aisheng.dong@nxp.com>, "thierry.reding@gmail.com"
+ <thierry.reding@gmail.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-pwm@vger.kernel.org" <linux-pwm@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH] pwm: mxs: use devm_platform_ioremap_resource() to
+ simplify code
+Thread-Topic: [PATCH] pwm: mxs: use devm_platform_ioremap_resource() to
+ simplify code
+Thread-Index: AQHVPQnp3vOphZGlaUm/vNIIqkC+RKbPuYMAgDQEZAA=
+Date: Tue, 20 Aug 2019 05:56:40 +0000
+Message-ID: <DB3PR0402MB3916423A6E334EDD4C06B884F5AB0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190718013205.24919-1-Anson.Huang@nxp.com>
+ <AM0PR04MB42116F0753C9C6A619A2D8EC80C80@AM0PR04MB4211.eurprd04.prod.outlook.com>
+In-Reply-To: <AM0PR04MB42116F0753C9C6A619A2D8EC80C80@AM0PR04MB4211.eurprd04.prod.outlook.com>
+Accept-Language: en-US
 Content-Language: en-US
-Authentication-Results: smtpng3.m.smailru.net;
- auth=pass smtp.auth=ssuloev@orpaltech.com
- smtp.mailfrom=ssuloev@orpaltech.com
-X-77F55803: BBE463BEF7A60BD05A78504BD2AC2941C0825F4D866972283A121E2816E2D315B2A76064F0759C6C8577FA5B86FB3C7C
-X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE7D4A169723F56FEDEEA1F7E6F0F101C67BD4B6F7A4D31EC0BCC500DACC3FED6E28638F802B75D45FF8AA50765F7900637861E0AC852D5F5A18638F802B75D45FF5571747095F342E8C7A0BC55FA0FE5FC81DE712020495B8EBE0BA17992DA9D5BBBB102B42771252F389733CBF5DBD5E913377AFFFEAFD269A417C69337E82CC2CC7F00164DA146DAFE8445B8C89999725571747095F342E8C26CFBAC0749D213D2E47CDBA5A9658359CC434672EE6371117882F4460429728AD0CFFFB425014E40A5AABA2AD3711975ECD9A6C639B01B78DA827A17800CE77FBF75EC45431A369FB946E88D3D303475ECD9A6C639B01B4E70A05D1297E1BBC6867C52282FAC85D9B7C4F32B44FF5797B92FCB1594A39500306258E7E6ABB4E4A6367B16DE6309
-X-Mailru-Sender: 689FA8AB762F739359CD701D0F70D3B1857278A1594B1D92F9FE63088107E8F2778B5FB1219D8779F6BCD4B1DE95BF653AE5922765F965CDF1D7D1B96E5495AE10FCEA6DFE3E0A150D4ABDE8C577C2ED
-X-Mras: OK
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 24ae674c-b55e-436e-6ef9-08d725332c18
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3836; 
+x-ms-traffictypediagnostic: DB3PR0402MB3836:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB383666A63D8A14708B5B761BF5AB0@DB3PR0402MB3836.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:446;
+x-forefront-prvs: 013568035E
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(376002)(366004)(346002)(39860400002)(136003)(199004)(189003)(52536014)(44832011)(229853002)(9686003)(486006)(26005)(446003)(25786009)(11346002)(305945005)(55016002)(186003)(33656002)(74316002)(6436002)(7736002)(86362001)(256004)(2201001)(6116002)(3846002)(53936002)(478600001)(4744005)(476003)(76176011)(316002)(110136005)(81156014)(99286004)(8676002)(81166006)(71190400001)(71200400001)(2906002)(102836004)(4326008)(8936002)(66446008)(14454004)(66946007)(66476007)(66556008)(64756008)(76116006)(66066001)(5660300002)(2501003)(6246003)(6506007)(7696005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3836;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: sFRvB4KPU/Zzbs2AAX+CsemkWtHdhjjSk6rtYcDawN9H/YabBwHqDbl36vjMFzYoVVNPvZnA7nBz6Wk/l2GAhaqYpBd/WpGI61p3dSSqNQvzg4/FAzvyV7FvjSyc10tL+mcILxRBiyOy2GpayeyA5jXMqp9lM2MsXCrr+PR+bvN0UTrNwA24az3TQLbxkrzCjQbbdsUAgIrr/yog6XYzRRXWyjIwV+eAyfL00HxwEPRcNHumMnyWbMTKlvB2PoFXD5o4iWZAQZD0lJqbu7ioJzxMsQJ8YdI8xG41TTS+8+JqU4V7kl1tUXMr7P6dxC9Ugg8Foe/vuMnPGaFdJWFOur4j1o5hd4ZfMFl8BEwbuDjWcshI3wdzBVf1ESIQ7ms3QRE9YF3LoTNwMxxWr9AxqI3xfhnvLxwzTodD/+imEbo=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 24ae674c-b55e-436e-6ef9-08d725332c18
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Aug 2019 05:56:40.8353 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: JIKu1LigEsV1VdNxZ+ULPEQ+th0/u2zVolUQKhKFEc0SggLA7WqoGtFUF2RGVWeh6j74kORaBrHONXD+4SYNlg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3836
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_224637_494550_8CB87999 
-X-CRM114-Status: GOOD (  17.74  )
+X-CRM114-CacheID: sfid-20190819_225647_865375_3CC224B8 
+X-CRM114-Status: UNSURE (   8.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [94.100.177.149 listed in list.dnswl.org]
+ no trust [40.107.15.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -81,152 +132,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: codekipper@gmail.com, alsa-devel@alsa-project.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Maxime,
+Gentle ping...
 
-On 8/19/19 10:25 PM, Maxime Ripard wrote:
-> From: Maxime Ripard <maxime.ripard@bootlin.com>
->
-> The i2s controller supports TDM, for up to 8 slots. Let's support the TDM
-> API.
->
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> ---
->   sound/soc/sunxi/sun4i-i2s.c | 40 ++++++++++++++++++++++++++++++++------
->   1 file changed, 34 insertions(+), 6 deletions(-)
->
-> diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-> index 0dac09814b65..4f76daeaaed7 100644
-> --- a/sound/soc/sunxi/sun4i-i2s.c
-> +++ b/sound/soc/sunxi/sun4i-i2s.c
-> @@ -168,6 +168,8 @@ struct sun4i_i2s {
->   	struct reset_control *rst;
->   
->   	unsigned int	mclk_freq;
-> +	unsigned int	slots;
-> +	unsigned int	slot_width;
->   
->   	struct snd_dmaengine_dai_dma_data	capture_dma_data;
->   	struct snd_dmaengine_dai_dma_data	playback_dma_data;
-> @@ -287,7 +289,7 @@ static bool sun4i_i2s_oversample_is_valid(unsigned int oversample)
->   
->   static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
->   				  unsigned int rate,
-> -				  unsigned int channels,
-> +				  unsigned int slots,
->   				  unsigned int word_size)
->   {
->   	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
-> @@ -335,7 +337,7 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
->   
->   	bclk_parent_rate = i2s->variant->get_bclk_parent_rate(i2s);
->   	bclk_div = sun4i_i2s_get_bclk_div(i2s, bclk_parent_rate,
-> -					  rate, channels, word_size);
-> +					  rate, slots, word_size);
->   	if (bclk_div < 0) {
->   		dev_err(dai->dev, "Unsupported BCLK divider: %d\n", bclk_div);
->   		return -EINVAL;
-> @@ -419,6 +421,10 @@ static int sun8i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
->   				  const struct snd_pcm_hw_params *params)
->   {
->   	unsigned int channels = params_channels(params);
-> +	unsigned int slots = channels;
-> +
-> +	if (i2s->slots)
-> +		slots = i2s->slots;
->   
->   	/* Map the channels for playback and capture */
->   	regmap_write(i2s->regmap, SUN8I_I2S_TX_CHAN_MAP_REG, 0x76543210);
-> @@ -428,7 +434,6 @@ static int sun8i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
->   	regmap_update_bits(i2s->regmap, SUN8I_I2S_TX_CHAN_SEL_REG,
->   			   SUN4I_I2S_CHAN_SEL_MASK,
->   			   SUN4I_I2S_CHAN_SEL(channels));
-> -
->   	regmap_update_bits(i2s->regmap, SUN8I_I2S_RX_CHAN_SEL_REG,
->   			   SUN4I_I2S_CHAN_SEL_MASK,
->   			   SUN4I_I2S_CHAN_SEL(channels));
-> @@ -452,10 +457,18 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
->   			       struct snd_soc_dai *dai)
->   {
->   	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
-> +	unsigned int word_size = params_width(params);
->   	unsigned int channels = params_channels(params);
-> +	unsigned int slots = channels;
->   	int ret, sr, wss;
->   	u32 width;
->   
-> +	if (i2s->slots)
-> +		slots = i2s->slots;
-> +
-> +	if (i2s->slot_width)
-> +		word_size = i2s->slot_width;
-> +
->   	ret = i2s->variant->set_chan_cfg(i2s, params);
->   	if (ret < 0) {
->   		dev_err(dai->dev, "Invalid channel configuration\n");
-> @@ -477,15 +490,14 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
->   	if (sr < 0)
->   		return -EINVAL;
->   
-> -	wss = i2s->variant->get_wss(i2s, params_width(params));
-> +	wss = i2s->variant->get_wss(i2s, word_size);
->   	if (wss < 0)
->   		return -EINVAL;
->   
->   	regmap_field_write(i2s->field_fmt_wss, wss);
->   	regmap_field_write(i2s->field_fmt_sr, sr);
->   
-> -	return sun4i_i2s_set_clk_rate(dai, params_rate(params),
-> -				      channels, params_width(params));
-> +	return sun4i_i2s_set_clk_rate(dai, params_rate(params), slots, word_size);
->   }
->   
->   static int sun4i_i2s_set_soc_fmt(const struct sun4i_i2s *i2s,
-> @@ -785,10 +797,26 @@ static int sun4i_i2s_set_sysclk(struct snd_soc_dai *dai, int clk_id,
->   	return 0;
->   }
->   
-> +static int sun4i_i2s_set_tdm_slot(struct snd_soc_dai *dai,
-> +				  unsigned int tx_mask, unsigned int rx_mask,
-> +				  int slots, int slot_width)
-> +{
-> +	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
-> +
-> +	if (slots > 8)
-> +		return -EINVAL;
-> +
-> +	i2s->slots = slots;
-> +	i2s->slot_width = slot_width;
-> +
-> +	return 0;
-> +}
-> +
->   static const struct snd_soc_dai_ops sun4i_i2s_dai_ops = {
->   	.hw_params	= sun4i_i2s_hw_params,
->   	.set_fmt	= sun4i_i2s_set_fmt,
->   	.set_sysclk	= sun4i_i2s_set_sysclk,
-> +	.set_tdm_slot	= sun4i_i2s_set_tdm_slot,
->   	.trigger	= sun4i_i2s_trigger,
->   };
->   
-
-
-it seems like you forgot to implement sun4i_i2s_dai_ops.set_bclk_ratio 
-because, as I far as I understand, it should alter tdm slots 
-functionality indirectly.
-
-
-Thank you,
-SS
-
-
-
+> > From: Anson.Huang@nxp.com <Anson.Huang@nxp.com>
+> > Sent: Thursday, July 18, 2019 9:32 AM
+> >
+> > Use the new helper devm_platform_ioremap_resource() which wraps the
+> > platform_get_resource() and devm_ioremap_resource() together, to
+> > simplify the code.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> 
+> Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+> 
+> Regards
+> Aisheng
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
