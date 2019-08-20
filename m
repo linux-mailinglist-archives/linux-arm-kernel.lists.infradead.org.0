@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FA91964A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:36:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00051964A7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:36:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,31 +11,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5pV+WIuzz1tmZekWh6b46y7ymJ2iF9RlNKFToBV5xH8=; b=a8ru4ar9qLWsdF9KnfGAWNmN1W
-	8Xps1ugY2SLRyuY7EzQtafYUUxrqGLYzxVhdyN+qAc7dTXLz9CO79yIv2TLhYabDsJFKcxgvu8TTC
-	UCdHlyabOv+Q9b9q8Ezn3BQ3igtQ041MkPXzteyihxS2IIGwDis8M5McibQgsbbODcHxgL/XDX4pR
-	+6Wo/d+zXpb3V5JFjuH3HTTrOfK6zoIt9pjbGQI3CpCX4TGBb9jJRU3eNaK4IMPwuaDlBDz5eDiot
-	/i7jo3XFglU4TSe6GWqh103RV9+kMkVVRt1VIta+Ec/QeEh8O7ukfdgnqgzmCaimZl7B9Iog87wLz
-	qFLuuhag==;
+	bh=rOwVjwTwYkgR3q4k420RadFuHqYyThIfLwoSYTjZRq8=; b=LKiBmderE0j+aM+CvnuPVtK1y1
+	G6SVDLNzd99lCuk3fJnTNQmPhIA+0Q92nF93Ia8Rlg1uVdKBK/kWLNhgM9kdM6dcRLqbD+G7mY1ae
+	kjQAu9wdKXFMKRqFh+UmVNHIX4ulqKFZKDA4l3tpt6CEh7diPvKURK4G5wPZf3JLWshtZOOtxPYtx
+	uQSyoD4JqhMnLhOIb85e2EJGPkxBN1VYDR+BOzOZrCS8C5HRLXafuRnWVHJtzpwKArzwGH8ohJzgx
+	f0rlvgyptzr4rToQOfScx7eNTwwBFHkh7iPNpdf/4YvzwJamD/KAX+ou6YiGwNGt9bS/OUKm2vq8S
+	bmb+yD3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i06At-0002e5-Gj; Tue, 20 Aug 2019 15:35:55 +0000
+	id 1i06B4-0002rk-As; Tue, 20 Aug 2019 15:36:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i06AT-0002Qq-6t
+ id 1i06AV-0002TZ-Mg
  for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:35:32 +0000
 Received: from PC-kkoz.proceq.com (unknown [213.160.61.66])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C64AD22DBF;
- Tue, 20 Aug 2019 15:35:26 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4B425205C9;
+ Tue, 20 Aug 2019 15:35:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566315328;
- bh=IITaosdUtip46i/tGR7J7JYGDU+TS4TGSAhcJ3raD2c=;
+ s=default; t=1566315331;
+ bh=O5BJM36vV0I5T579jUJLWV9wMi+teCTJ4h8AkHVrK/A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=z9tXkHjnPTTVz7Fo5NjOXrNaM3AjpRLDhi1k07DLYGOmTR5+VZWez+GD9ViSwAUgm
- ovhOLa+POiqbyOZQ/KEXmsZF6pNuVffQ+a3cpJlKVZSZbdUEj8PiNdyndJkevTT0up
- jGaMb8gYC2DDTR4eUjOg2fDQ8QKAZIwGL09MMICI=
+ b=WRNbjOygskgqdM9MCsLJPCgiV0cXhXO2R+G9sEn/jBWhoops4lucba3+JiFowTGn6
+ fDG7rY1247jpG4EGIUI7TiOUBKxZNrFtLcyKoeXzpO21B3dSzOZVYW568294GwiZnF
+ 4u/UqpdCmmstYhskTQnM0o7vtWDMmgmRORvpT14M=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Schrempf Frieder <frieder.schrempf@kontron.de>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -44,15 +44,16 @@ To: Schrempf Frieder <frieder.schrempf@kontron.de>,
  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v6 2/4] dt-bindings: eeprom: at25: Add Anvo ANV32E61W
-Date: Tue, 20 Aug 2019 17:35:16 +0200
-Message-Id: <1566315318-30320-2-git-send-email-krzk@kernel.org>
+Subject: [PATCH v6 3/4] dt-bindings: arm: fsl: Add Kontron i.MX6UL N6310
+ compatibles
+Date: Tue, 20 Aug 2019 17:35:17 +0200
+Message-Id: <1566315318-30320-3-git-send-email-krzk@kernel.org>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1566315318-30320-1-git-send-email-krzk@kernel.org>
 References: <1566315318-30320-1-git-send-email-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_083529_327571_B1F1B69C 
-X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-CacheID: sfid-20190820_083531_813360_6DD031B5 
+X-CRM114-Status: UNSURE (   8.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -89,34 +90,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Document the compatible for ANV32E61W 64kb Serial SPI non-volatile SRAM.
-Although it is a SRAM device, it can be accessed through EEPROM
-interface. At least until there is no proper SRAM driver support for
-it.
+Add the compatibles for Kontron i.MX6UL N6310 SoM and boards.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 ---
 
-Changes since v4:
-1. Update commit msg.
+Changes since v5:
+New patch
 ---
- Documentation/devicetree/bindings/eeprom/at25.txt | 1 +
- 1 file changed, 1 insertion(+)
+ Documentation/devicetree/bindings/arm/fsl.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/eeprom/at25.txt b/Documentation/devicetree/bindings/eeprom/at25.txt
-index b3bde97dc199..42577dd113dd 100644
---- a/Documentation/devicetree/bindings/eeprom/at25.txt
-+++ b/Documentation/devicetree/bindings/eeprom/at25.txt
-@@ -3,6 +3,7 @@ EEPROMs (SPI) compatible with Atmel at25.
- Required properties:
- - compatible : Should be "<vendor>,<type>", and generic value "atmel,at25".
-   Example "<vendor>,<type>" values:
-+    "anvo,anv32e61w"
-     "microchip,25lc040"
-     "st,m95m02"
-     "st,m95256"
+diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+index 7294ac36f4c0..d07b3c06d7cf 100644
+--- a/Documentation/devicetree/bindings/arm/fsl.yaml
++++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+@@ -161,6 +161,9 @@ properties:
+         items:
+           - enum:
+               - fsl,imx6ul-14x14-evk      # i.MX6 UltraLite 14x14 EVK Board
++              - kontron,imx6ul-n6310-som  # Kontron N6310 SOM
++              - kontron,imx6ul-n6310-s    # Kontron N6310 S Board
++              - kontron,imx6ul-n6310-s-43 # Kontron N6310 S 43 Board
+           - const: fsl,imx6ul
+ 
+       - description: i.MX6ULL based Boards
 -- 
 2.7.4
 
