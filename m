@@ -2,48 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0922D96723
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 19:14:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBB6296735
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 19:14:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8a+CoqOXbXaL5KSbF0/JeoR6ospXBx6zz+V+BxUNbGk=; b=mhtQaAdBzQk7rN
-	Da9d1zmPsx+45JizPT5rtLBLnhGsDErbFIbChNIN+b09/VcUfA7EyvBYgNxCdSsNzp5N5qyuuELkH
-	WhPdR83CY0b9sfvR0fRMnx/nb9xrzSpaQdEzAM8CFRRw0AgMn/SjWQGHD3UER0Jtd7HR9nnXf/GYM
-	m/OFE7asZqN92Vmz/Baown2HoRcrqipsepaV4f0B8taFm3jI3oNVCZhQXgGV48WXZgGt9D9i0AZkf
-	Ku5nX7wytjJSQni8GqlyZhnkgllk/ZnOi/LtnMp6mygnYyLqSPzmrFlgZubojguCfRZf9tJRP7eXH
-	N0dRICsn6ffJYZC0LxCg==;
+	List-Owner; bh=WWX6oxpAYpTC6p5n/Qr30tvbFmLK+3Z2Mca6yWtLgiU=; b=Bi3AEGaoPRF0zZ
+	qkiuWY0KUF0PfrmrUMoQQ+onXWsklV+p/FdLZytoyJIwyf7Dbe6WpLXdlrXB+5K6kIH1rx8+6SRZa
+	Kfk41d0aMXzCM2wp6gpejAPnpHDriQb6GlP/OW/6Nle0+uXZPMZSBRUNtSPuy86VWlDcI3VicZcv4
+	XLpKmg6/g1fiuKpKov6crUU5uEOg//ObLWpcWJDFvdnuBiQBNMx0yJzEptKEIWx3VqyoQumNbxPdy
+	2G8rGwfMAIGWavJS+kFmmBBPLHCGs3i08YvRtpVYfmXKWqKUBdj6R0BcvRfNLlAV5Z2Ts9UjULIwh
+	rDUZOIR9zqXruL4llx/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i07hl-0007nw-Ao; Tue, 20 Aug 2019 17:13:57 +0000
-Received: from [177.195.212.43] (helo=quaco.ghostprotocols.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1i07hb-0007nP-OY; Tue, 20 Aug 2019 17:13:48 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 3E59A40340; Tue, 20 Aug 2019 14:13:42 -0300 (-03)
-Date: Tue, 20 Aug 2019 14:13:42 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: "Lubashev, Igor" <ilubashe@akamai.com>
-Subject: Re: [PATCH v3 3/4] perf: Use CAP_SYSLOG with kptr_restrict checks
-Message-ID: <20190820171342.GD3929@kernel.org>
-References: <cover.1565188228.git.ilubashe@akamai.com>
- <291d2cda6ee75b4cd4c9ce717c177db18bf03a31.1565188228.git.ilubashe@akamai.com>
- <CANLsYkxZE0CQJKQ-bFi=zFV5vTCbL2v76+x1fmCpqNruqWiFXg@mail.gmail.com>
- <20190814184814.GM9280@kernel.org>
- <20190814185213.GN9280@kernel.org>
- <23f7b8c7616a467c93ee2c77e8ffd3cf@usma1ex-dag1mb6.msg.corp.akamai.com>
- <CANLsYkxqBcJq8QJq+aLZXQas1VBg_wGh_p5WTUuRVFCYEQWiQw@mail.gmail.com>
- <20190815214236.GA3929@kernel.org>
- <CANLsYkyPkcJWmBZzyjGj3vJRgEtuaun7HQjN1=5wcOyTPnfhmQ@mail.gmail.com>
- <3f70f6be3a464ca5b4cf563433933245@usma1ex-dag1mb6.msg.corp.akamai.com>
+	id 1i07iU-000840-AF; Tue, 20 Aug 2019 17:14:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i07iJ-000831-9i; Tue, 20 Aug 2019 17:14:32 +0000
+Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
+ [209.85.160.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 591E0233A1;
+ Tue, 20 Aug 2019 17:14:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566321269;
+ bh=WGX3Gxv4dvM3DO7D4Aw57VijAg2RzIOgDn+ZtwXtLuA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=1yXHm0Cw2txK8FKtm1lYL+ceKrY7DkUGFh280BlxT1m8fd1yJvGoIVx0XuwOhxQFl
+ 3vnSgFW8lKZ5tU+8Sczz4E2yLgkfj7rC+uZiW9anhIz5JhqNZ2QuOhbB3Db0e6C+Ey
+ r3/UkDEl7xBODkwZSZVqMzmvS/NH9009SEaBt8yY=
+Received: by mail-qt1-f169.google.com with SMTP id z4so6905837qtc.3;
+ Tue, 20 Aug 2019 10:14:29 -0700 (PDT)
+X-Gm-Message-State: APjAAAWBiRUr8ZE4Mm8CwCRh6T+Y4aR+bocmKGd9TWG/B42en08XJJvW
+ lhRfbT/jVXh/9E0M6U/4Kd81sFbLj3y5N1FaRw==
+X-Google-Smtp-Source: APXvYqyY9ZsBecGQ3Xs5y7LG3j9BHwHgJiDVJDcbMsgosFCxqVWpdQe5Z5wA8XSvdYEItWSHAFvEDYIGvIF5NjfBNsQ=
+X-Received: by 2002:ac8:44c4:: with SMTP id b4mr26942067qto.224.1566321268306; 
+ Tue, 20 Aug 2019 10:14:28 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3f70f6be3a464ca5b4cf563433933245@usma1ex-dag1mb6.msg.corp.akamai.com>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.12.0 (2019-05-25)
+References: <20190820145821.27214-1-nsaenzjulienne@suse.de>
+ <20190820145821.27214-5-nsaenzjulienne@suse.de>
+In-Reply-To: <20190820145821.27214-5-nsaenzjulienne@suse.de>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 20 Aug 2019 12:14:16 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+Nr88Nvd_ZA8eJGm4xLwssv7CnDJLsnZyFqiM=EQWYxg@mail.gmail.com>
+Message-ID: <CAL_Jsq+Nr88Nvd_ZA8eJGm4xLwssv7CnDJLsnZyFqiM=EQWYxg@mail.gmail.com>
+Subject: Re: [PATCH v2 04/11] of/fdt: add early_init_dt_get_dma_zone_size()
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190820_101431_388602_4105DD11 
+X-CRM114-Status: GOOD (  17.91  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -55,79 +83,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Alexey Budankov <alexey.budankov@linux.intel.com>,
- Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, James Morris <jmorris@namei.org>,
- Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "open list:GENERIC INCLUDE/ASM HEADER FILES" <linux-arch@vger.kernel.org>,
+ devicetree@vger.kernel.org,
+ "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Frank Rowand <frowand.list@gmail.com>, Eric Anholt <eric@anholt.net>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-mm@kvack.org, Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Matthias Brugger <mbrugger@suse.com>, Stefan Wahren <wahrenst@gmx.net>,
+ linux-riscv@lists.infradead.org, Marek Szyprowski <m.szyprowski@samsung.com>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, phill@raspberryi.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Mon, Aug 19, 2019 at 10:22:07PM +0000, Lubashev, Igor escreveu:
-> On Mon, August 19, 2019 at 12:51 PM Mathieu Poirier <mathieu.poirier@linaro.org> wrote:
-> > On Thu, 15 Aug 2019 at 15:42, Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com> wrote:
-> > Things are working properly on your perf/cap branch.  I tested with on both
-> > x86 and ARM.
- 
-> Mathieu, you are probably testing with euid==0.  If you were to test
-> with euid!=0 but with CAP_SYSLOG and no libcap (and kptr_restrict=0,
-> perf_event_paranoid=2), you would likely hit the bug that you
-> identified in __perf_event__synthesize_kermel_mmap().
- 
-> See https://lkml.kernel.org/lkml/930a59730c0d495f8c5acf4f99048e8d@usma1ex-dag1mb6.msg.corp.akamai.com for the fix (Option 1 only or Options 1+2).
-> 
-> Arnaldo, once we decide what the right fix is, I am happy to post the update (options 1, 1+2) as a patch series.
+On Tue, Aug 20, 2019 at 9:58 AM Nicolas Saenz Julienne
+<nsaenzjulienne@suse.de> wrote:
+>
+> Some devices might have weird DMA addressing limitations that only apply
+> to a subset of the available peripherals. For example the Raspberry Pi 4
+> has two interconnects, one able to address the whole lower 4G memory
+> area and another one limited to the lower 1G.
+>
+> Being an uncommon situation we simply hardcode the device wide DMA
+> addressable memory size conditionally to the machine compatible name and
+> set 'dma_zone_size' accordingly.
+>
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+>
+> ---
+>
+> Changes in v2:
+> - New approach to getting dma_zone_size, instead of parsing the dts we
+>   hardcode it conditionally to the machine compatible name.
+>
+>  drivers/of/fdt.c | 8 ++++++++
+>  1 file changed, 8 insertions(+)
+>
+> diff --git a/drivers/of/fdt.c b/drivers/of/fdt.c
+> index 06ffbd39d9af..f756e8c05a77 100644
+> --- a/drivers/of/fdt.c
+> +++ b/drivers/of/fdt.c
+> @@ -27,6 +27,7 @@
+>
+>  #include <asm/setup.h>  /* for COMMAND_LINE_SIZE */
+>  #include <asm/page.h>
+> +#include <asm/dma.h>   /* for dma_zone_size */
+>
+>  #include "of_private.h"
+>
+> @@ -1195,6 +1196,12 @@ void __init early_init_dt_scan_nodes(void)
+>         of_scan_flat_dt(early_init_dt_scan_memory, NULL);
+>  }
+>
+> +void __init early_init_dt_get_dma_zone_size(void)
 
-I think you should get the checks for ref_reloc_sym in place so as to
-make the code overall more robust, and also go on continuing to make the
-checks in tools/perf/ to match what is checked on the other side of the
-mirror, i.e. by the kernel, so from a quick read, please put first the
-robustness patches (check ref_reloc_sym) do your other suggestions and
-update the warnings, then refresh the two patches that still are not in
-my perf/core branch:
+static
 
-[acme@quaco perf]$ git rebase perf/core
-First, rewinding head to replay your work on top of it...
-Applying: perf tools: Use CAP_SYS_ADMIN with perf_event_paranoid checks
-Applying: perf symbols: Use CAP_SYSLOG with kptr_restrict checks
-[acme@quaco perf]$ 
+With that,
 
-I've pushed out perf/cap, so you can go from there as it is rebased on
-my current perf/core.
+Reviewed-by: Rob Herring <robh@kernel.org>
 
-Then test all these cases: with/without libcap, with euid==0 and
-different than zero, with capabilities, etc, patch by patch so that we
-don't break bisection nor regress,
-
-Thanks and keep up the good work!
-
-- Arnaldo
- 
-> - Igor
-> 
-> 
-> > > > I am not sure how this can be fixed.  I counted a total of 19
-> > > > instances where kmap->ref_reloc_sym->XYZ is called, only 2 of wich
-> > > > care to check if kmap->ref_reloc_sym is valid before proceeding.  As
-> > > > such I must hope that in the 17 other cases, kmap->ref_reloc_sym is
-> > > > guaranteed to be valid.  If I am correct then all we need is to
-> > > > check for a valid pointer in _perf_event__synthesize_kernel_mmap().
-> > > > Otherwise it will be a little harder.
-> > > >
-> > > > Mathieu
-> 
-
--- 
-
-- Arnaldo
+> +{
+> +       if (of_fdt_machine_is_compatible("brcm,bcm2711"))
+> +               dma_zone_size = 0x3c000000;
+> +}
+> +
+>  bool __init early_init_dt_scan(void *params)
+>  {
+>         bool status;
+> @@ -1204,6 +1211,7 @@ bool __init early_init_dt_scan(void *params)
+>                 return false;
+>
+>         early_init_dt_scan_nodes();
+> +       early_init_dt_get_dma_zone_size();
+>         return true;
+>  }
+>
+> --
+> 2.22.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
