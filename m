@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 254BB9661C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 18:18:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90AB19662D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 18:21:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M44WPl/qiS8yjQACG12QyVt24sFy5i2oar4aFsU34uQ=; b=TH310Axe4TwkS9
-	Nid/5rM4LW2Vxwn4JepJsuSo7beyua/p7C7R1yhXZcxY/NlzKXP0fUhC5FcBn9D/vLyt3t9sfNiJL
-	rD/ZyV8FOkosWrKyr0ZInIhY3ogMvRCqbsJBoPAf8g/n/YSAX+VecArncqRK2a+4pw28hHUEFmPl0
-	USIpF6yvKk0QRcWBea7szBBzwmn9wdDcPwoFaW9OonSX8TAMnkP+k+JCtDP8vXMYnZuOE/NGYgGHe
-	rJRCIPm2T4Y/7+n2yjd3hYpFrQWQSUcK9O3nius1KVkqZZPQuV5ih6YwGOeh5QfB33Z+E8GlDPXs8
-	WMpgC7p5NQYPfJyoAAEA==;
+	List-Owner; bh=WarnOkvW3AiilkAkqWdxgIgafqaSbZkILC7aT7YZtRY=; b=TATyxTjaIqkRb4
+	ycB3hWre1ZoP0t8YX9NscdSej5wACijBfrBQw1BLFTOlSrODO0f+BGPwuIkpOHauAmnENAcH8q7FO
+	DqiSoXE8aamx+wfzPinKAvm67o8kFHs9SC9RSPK6uJDhg7rn1WxIAUopOTmep8sMnHy2wwTl27uV1
+	WcZuHiS/TR04LrvmrxIbuaMNblE6UEhNA/YckQQAnRwfuEFfL1Rb46A2Z98Klv3RjH/BXBJm24Dna
+	buVPhNknT+P8rfwyOBJ8UH7UyTSjGrxvBk4hlsIyAi2nrjSYSADZp8cfzBYsHNbrAxwRc/C8rVM9c
+	eDrUmXm3xkNfnaQyRAFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i06qD-0001Fd-5i; Tue, 20 Aug 2019 16:18:37 +0000
+	id 1i06sP-0002tP-Jw; Tue, 20 Aug 2019 16:20:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i06q1-0001Et-AR
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 16:18:26 +0000
-Received: from mail-qt1-f180.google.com (mail-qt1-f180.google.com
- [209.85.160.180])
+ id 1i06s7-0002kN-0e
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 16:20:36 +0000
+Received: from mail-qt1-f177.google.com (mail-qt1-f177.google.com
+ [209.85.160.177])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CAC68230F2
+ by mail.kernel.org (Postfix) with ESMTPSA id 8E72623400
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 16:18:24 +0000 (UTC)
+ Tue, 20 Aug 2019 16:20:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566317904;
- bh=vSKsKdK9IvnILRtQlA/Vlb4e7VL6KyuijFf6Qr77Vyo=;
+ s=default; t=1566318034;
+ bh=MhrM+wnpo98DgCvfrw9p71rUiiQM/sQQEu+zF5hCEp8=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=P8B1UyAjjQcRVTw4CZkWfoT3CVeiiSN+krnpT0XNAUC5xZZyDdaz1GnUiGG8t91wq
- g/Tt2ARlyZku7kDE4IH6F4nPPD67lIT32044zY8ETRAoFimCAvNHIWwm8YE3yLwwbu
- JmxlX44VlwYGODQVsf+f9OAssEmXFY+Y3LG8+oKQ=
-Received: by mail-qt1-f180.google.com with SMTP id b11so6660050qtp.10
+ b=tbPSe22P0yz80TXNq+TmiToY5Gbdd0QxeDFmQRKu5Ab/jv0rBQmWVmx5VHcyohU9E
+ hqStg44RSY2kOyVylH5IMtvL8hTYXAs6XgqvTgi7+HXsdEoe5B9ToOJwko/jiNU7ul
+ Wvz6OTpFY1A7xSXjAko24tJBv7z2fLHTP8z84w20=
+Received: by mail-qt1-f177.google.com with SMTP id l9so6685062qtu.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 09:18:24 -0700 (PDT)
-X-Gm-Message-State: APjAAAUVIY28ZcSUwv1fgg7qDP70z7JSkjlmK/uLEaPHd3+/ioZDkz9k
- e0s2DUpz6YefuZT21xEl02OjlZHHJRxqA0TbWw==
-X-Google-Smtp-Source: APXvYqycMaa214ptNayJBYSEm7y6VToBsSlNqtP2In+5+f5juo9lDSmILxM4UZrWQJSIt7mf+ihWQZGtHJECipi/vbw=
-X-Received: by 2002:a0c:9782:: with SMTP id l2mr15058937qvd.72.1566317903978; 
- Tue, 20 Aug 2019 09:18:23 -0700 (PDT)
+ Tue, 20 Aug 2019 09:20:34 -0700 (PDT)
+X-Gm-Message-State: APjAAAXQYn1IFvHKdY+tQInG1Qax8Unmhvw4b25HkQyOArGSwkRi1k6K
+ DUm0yoqG5MsVPx9FNCEnX/+X+cfjmmcL/UHytA==
+X-Google-Smtp-Source: APXvYqxQulqOuuzJ0nzppEZjKqYQUJ1LWIXaKSrDPdDKV1V49e8+VUYVdf8eB0g9VTWSMt7oK6gWHJ7swc+TgOoIpDE=
+X-Received: by 2002:a0c:eb92:: with SMTP id x18mr15088587qvo.39.1566318033661; 
+ Tue, 20 Aug 2019 09:20:33 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190820145343.29108-1-megous@megous.com>
- <20190820145343.29108-2-megous@megous.com>
-In-Reply-To: <20190820145343.29108-2-megous@megous.com>
+ <20190820145343.29108-3-megous@megous.com>
+In-Reply-To: <20190820145343.29108-3-megous@megous.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 20 Aug 2019 11:18:12 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqL-fBA5fV=AwegyGpCKAEHtU1C6MZQX9dNYs0tpL9EbVw@mail.gmail.com>
-Message-ID: <CAL_JsqL-fBA5fV=AwegyGpCKAEHtU1C6MZQX9dNYs0tpL9EbVw@mail.gmail.com>
-Subject: Re: [PATCH 1/6] dt-bindings: net: sun8i-a83t-emac: Add phy-supply
+Date: Tue, 20 Aug 2019 11:20:22 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLHeA6A_+ZgmCzC42Y6yJrEq6+D3vKn8ETh2D7LJ+1_-g@mail.gmail.com>
+Message-ID: <CAL_JsqLHeA6A_+ZgmCzC42Y6yJrEq6+D3vKn8ETh2D7LJ+1_-g@mail.gmail.com>
+Subject: Re: [PATCH 2/6] dt-bindings: net: sun8i-a83t-emac: Add phy-io-supply
  property
 To: Ondrej Jirman <megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_091825_378434_634487D3 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20190820_092035_092695_A3E440C9 
+X-CRM114-Status: GOOD (  11.96  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -106,18 +106,17 @@ On Tue, Aug 20, 2019 at 9:53 AM <megous@megous.com> wrote:
 >
 > From: Ondrej Jirman <megous@megous.com>
 >
-> This is already supported by the driver, but is missing from the
-> bindings.
+> Some PHYs require separate power supply for I/O pins in some modes
+> of operation. Add phy-io-supply property, to allow enabling this
+> power supply.
 
-Really, the supply for the phy should be in the phy's node...
+Perhaps since this is new, such phys should have *-supply in their nodes.
 
 >
 > Signed-off-by: Ondrej Jirman <megous@megous.com>
 > ---
 >  .../devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml    | 4 ++++
 >  1 file changed, 4 insertions(+)
-
-Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
