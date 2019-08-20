@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BA9D967E0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 19:43:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 500BC967E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 19:44:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=Y7dRgJghPQzahsHFrrxS4BQ/PzHevDsNyDA0/kBqD2w=; b=Gf+
-	OeirNQKphIOZRmoCvY0cxD3xiIYNjCV9a/3AqKPWqframJuRnUwkHyBYCzr+o57Ne04Xb797VazDP
-	NxdLd5wMjJLdW+pGM8NJKEHMXQ6dI9nbjtUVH8Zwd43pl786yNRKakPBMZHAbTkj8i5bG3cd/RmSn
-	7oepZtN9vYck9OC2NYui84i6IFjTMU3xmwiS+cuJ01Wuo/zw3SN/Bo3s6hAvMxYu6uvCVriHn2GCa
-	0upLJQ05yK73rX1AWVgoij5o1SsVAfrUeaDP+VUVxBGIIJ8fdf5cSgfi/GUHLw7UiZOni/y6ZbmDb
-	z9rk4x9N0AsrS1oZbYswDXjf0NZf0OQ==;
+	References:List-Owner; bh=Lj9w0vpx0hitUkGG6+t4WenH1qok6W9P7HmOUiHQXiM=; b=ZWA
+	QGJ8iTYHRjL+fHRI7XkBJM7V3rPCC8fc5h19eiqQxJLlmnZBTpmIy5WSZXKBXzRGr5HlOWZ3xRH84
+	PYe2CUeq1e8CZf3ftNAxLpg3brd3LPR0hiTlY1NQcWewTgbDDmY6LLOPEEpkZ3b1vEwarXgq50ity
+	lH4D0eWmyjGWBEIOtZO+q85IHKcY2f8BtWWulvosIqkVE/9Ascn6iDokxudNYE5YNR1Hl8mltWP9n
+	NMnvR4fKgZ+RVHUH0i/yKw8hIXEHGn4bmKDDVc7aCiXPFaPfcz1GqZJpW84BYZ4343JG8AtN4hblA
+	pSoxad62vq5XtNocsWo+o0mErI8MDtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i08AR-0004HO-N7; Tue, 20 Aug 2019 17:43:35 +0000
-Received: from mail-wm1-f100.google.com ([209.85.128.100])
+	id 1i08BE-0005WD-Cb; Tue, 20 Aug 2019 17:44:24 +0000
+Received: from mail-wr1-f97.google.com ([209.85.221.97])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0883-0001y6-TE
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 17:41:14 +0000
-Received: by mail-wm1-f100.google.com with SMTP id g67so3400415wme.1
+ id 1i0884-0001z6-P7
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 17:41:15 +0000
+Received: by mail-wr1-f97.google.com with SMTP id s18so13286936wrn.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 10:41:07 -0700 (PDT)
+ Tue, 20 Aug 2019 10:41:08 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:message-id:date;
- bh=RSHLf/fk8eaNAk0hQQsquTa2DY6x+xoJ3ov9YVjIq/Q=;
- b=fLyRvbOyUhWQifeQxeYPvSiOyi4KPhN/59tdg82oqQsXe4lJdN4ar4gmmpYrlPUhHM
- KObPzGBSVDRyP41RwYXOdlE1rRSXK+5CEvfGaPETsWbuyJU3p/J/tV0vLckMW3WraK3O
- 5WylMZpzyHaxHSvcz8VKBjtoswjqbVYWNXcIiVbIlckigMRcO3egVCDbDdnJslIN2hPC
- mJ2wK4jovic9snKevnbCIaQiWx84A1cMYLcQdclxqJVOiow5T+7E24SbohxzvkAQgA8I
- C1htdq7Ruk9YRZhV3XvL5jZbNkgZkeqROLMdUlFB/rGqcsY57qNnE1SgJU2VxO4diqyk
- tnDA==
-X-Gm-Message-State: APjAAAUNtJv39kchB4QZZn42jY/9KNLdyiZEz80VQhZQBZ8CyzpcMb96
- HOpvE03XNgi1A2h9SMTyWavpEdhMEifL+vwT7tceE9WIbFQD19WFsHOHfXx8Ta+Pow==
-X-Google-Smtp-Source: APXvYqztnyVmdPDzxrUY5iAQAoCgujNpZ+N7WTCnFZWiqy+hQt9r6xjVGCEkruW8NThu5q8NoyncOQMDxu8F
-X-Received: by 2002:a1c:a852:: with SMTP id r79mr1220178wme.36.1566322866794; 
- Tue, 20 Aug 2019 10:41:06 -0700 (PDT)
+ bh=L1Zn2ORD9FSrc1HVb+RScuNQ8y1rYfCN6SkmynQKZbI=;
+ b=eRWw2wi8x9ivAtGrkZyfuwKRv3NDWofSDkD0CCoHspkPIx0IYAe5//jlIIe1eLKuEJ
+ KBP1Ys8rUbjFN7yhn45ApvdtlR8iCh5ddJGN5sPwfQYA/73b3BYvYciW6NtCvN2SoYwG
+ 3IejIYMe1Xsuk8Dszw0SHMYwuQk4kbKOmZvxJmHG3pIKp/mgDWNggD12ZtVSfA3gIPYw
+ davXiiJszRPPUSxPbTuLY557QWom2TM0aP5OXIBppAplXMe2fyOyQQLm3BMUKqgcMkMy
+ HTKojH8BwfVH68EH+g0iiPsdZY/BYs2UpYXWiIKSnlFrruxcLK1G/P7dopTtEvo9DfWZ
+ wPrg==
+X-Gm-Message-State: APjAAAWlVYtaa5zlWbHS46Vkyk687YB0zWJBDk5+btAjEm6gz+WDDNKs
+ G4+XKDvo/D91WhrM5b6ocjFcB4qiY3bpXvvvWoRqDne7/NtNWtG7p1yzaSTMNc5PDQ==
+X-Google-Smtp-Source: APXvYqy5TDi0UH/U2hkLDnHw3HPv5V5xfoaG9/13O8LBHUJJ0XtWYmNWX6MMUl3awmli3v9kooxjXG/VO8dN
+X-Received: by 2002:a5d:4950:: with SMTP id r16mr35050963wrs.347.1566322867715; 
+ Tue, 20 Aug 2019 10:41:07 -0700 (PDT)
 Received: from heliosphere.sirena.org.uk (heliosphere.sirena.org.uk.
  [2a01:7e01::f03c:91ff:fed4:a3b6])
- by smtp-relay.gmail.com with ESMTPS id 61sm291082wra.39.2019.08.20.10.41.06
+ by smtp-relay.gmail.com with ESMTPS id x15sm1831wmj.21.2019.08.20.10.41.07
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 20 Aug 2019 10:41:06 -0700 (PDT)
+ Tue, 20 Aug 2019 10:41:07 -0700 (PDT)
 X-Relaying-Domain: sirena.org.uk
 Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1i0882-00032u-Fd; Tue, 20 Aug 2019 17:41:06 +0000
+ id 1i0883-00033G-FN; Tue, 20 Aug 2019 17:41:07 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id C997E2742B4A; Tue, 20 Aug 2019 18:41:05 +0100 (BST)
+ id D4AE3274314C; Tue, 20 Aug 2019 18:41:06 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Applied "ASoC: sun4i-i2s: Use module clock as BCLK parent on newer
- SoCs" to the asoc tree
-In-Reply-To: <0b6665be216b3bd0e7bc43724818f05f3f8ee881.1566242458.git-series.maxime.ripard@bootlin.com>
+Subject: Applied "ASoC: sun4i-i2s: Replace call to params_channels by local
+ variable" to the asoc tree
+In-Reply-To: <c0faaac69ad40248f24eed3c3b2fa1ccc4a85b70.1566242458.git-series.maxime.ripard@bootlin.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190820174105.C997E2742B4A@ypsilon.sirena.org.uk>
-Date: Tue, 20 Aug 2019 18:41:05 +0100 (BST)
+Message-Id: <20190820174106.D4AE3274314C@ypsilon.sirena.org.uk>
+Date: Tue, 20 Aug 2019 18:41:06 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_104107_965902_3E679222 
-X-CRM114-Status: GOOD (  17.69  )
+X-CRM114-CacheID: sfid-20190820_104108_820537_AE117FB7 
+X-CRM114-Status: GOOD (  15.70  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.100 listed in list.dnswl.org]
+ no trust [209.85.221.97 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -100,7 +100,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: sun4i-i2s: Use module clock as BCLK parent on newer SoCs
+   ASoC: sun4i-i2s: Replace call to params_channels by local variable
 
 has been applied to the asoc tree at
 
@@ -125,116 +125,40 @@ to this mail.
 Thanks,
 Mark
 
-From fb19739d7f688142b61d0fca476188c4fd9e937a Mon Sep 17 00:00:00 2001
+From c7dd0828c088a71f30de8d249f63b2fa9f0d322d Mon Sep 17 00:00:00 2001
 From: Maxime Ripard <maxime.ripard@bootlin.com>
-Date: Mon, 19 Aug 2019 21:25:15 +0200
-Subject: [PATCH] ASoC: sun4i-i2s: Use module clock as BCLK parent on newer
- SoCs
+Date: Mon, 19 Aug 2019 21:25:10 +0200
+Subject: [PATCH] ASoC: sun4i-i2s: Replace call to params_channels by local
+ variable
 
-On the first generation of Allwinner SoCs (A10-A31), the i2s controller was
-using the MCLK as BCLK parent. However, this changed since the introduction
-of the A83t and BCLK now uses the module clock as its parent.
+The sun4i_i2s_hw_params already has a variable holding the value returned
+by params_channels, so let's just use that variable instead of calling
+params_channels multiple times.
 
-Let's introduce a hook to get the parent rate and use that in our divider
-calculations.
-
-Fixes: 7d2993811a1e ("ASoC: sun4i-i2s: Add support for H3")
-Fixes: 21faaea1343f ("ASoC: sun4i-i2s: Add support for A83T")
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-Link: https://lore.kernel.org/r/0b6665be216b3bd0e7bc43724818f05f3f8ee881.1566242458.git-series.maxime.ripard@bootlin.com
+Link: https://lore.kernel.org/r/c0faaac69ad40248f24eed3c3b2fa1ccc4a85b70.1566242458.git-series.maxime.ripard@bootlin.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/sunxi/sun4i-i2s.c | 21 +++++++++++++++++++--
- 1 file changed, 19 insertions(+), 2 deletions(-)
+ sound/soc/sunxi/sun4i-i2s.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
 diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index 93ea627e2f1f..acfcdb26086a 100644
+index d879db581073..77b7b81daf74 100644
 --- a/sound/soc/sunxi/sun4i-i2s.c
 +++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -152,6 +152,7 @@ struct sun4i_i2s_quirks {
- 	struct reg_field		field_fmt_bclk;
- 	struct reg_field		field_fmt_lrclk;
+@@ -412,10 +412,9 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
  
-+	unsigned long (*get_bclk_parent_rate)(const struct sun4i_i2s *);
- 	s8	(*get_sr)(const struct sun4i_i2s *, int);
- 	s8	(*get_wss)(const struct sun4i_i2s *, int);
- 	int	(*set_chan_cfg)(const struct sun4i_i2s *,
-@@ -207,6 +208,16 @@ static const struct sun4i_i2s_clk_div sun4i_i2s_mclk_div[] = {
- 	/* TODO - extend divide ratio supported by newer SoCs */
- };
+ 	/* Configure the channels */
+ 	regmap_field_write(i2s->field_txchansel,
+-			   SUN4I_I2S_CHAN_SEL(params_channels(params)));
+-
++			   SUN4I_I2S_CHAN_SEL(channels));
+ 	regmap_field_write(i2s->field_rxchansel,
+-			   SUN4I_I2S_CHAN_SEL(params_channels(params)));
++			   SUN4I_I2S_CHAN_SEL(channels));
  
-+static unsigned long sun4i_i2s_get_bclk_parent_rate(const struct sun4i_i2s *i2s)
-+{
-+	return i2s->mclk_freq;
-+}
-+
-+static unsigned long sun8i_i2s_get_bclk_parent_rate(const struct sun4i_i2s *i2s)
-+{
-+	return clk_get_rate(i2s->mod_clk);
-+}
-+
- static int sun4i_i2s_get_bclk_div(struct sun4i_i2s *i2s,
- 				  unsigned long parent_rate,
- 				  unsigned int sampling_rate,
-@@ -259,7 +270,7 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
- 				  unsigned int word_size)
- {
- 	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
--	unsigned int oversample_rate, clk_rate;
-+	unsigned int oversample_rate, clk_rate, bclk_parent_rate;
- 	int bclk_div, mclk_div;
- 	int ret;
- 
-@@ -301,7 +312,8 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
- 		return -EINVAL;
- 	}
- 
--	bclk_div = sun4i_i2s_get_bclk_div(i2s, i2s->mclk_freq,
-+	bclk_parent_rate = i2s->variant->get_bclk_parent_rate(i2s);
-+	bclk_div = sun4i_i2s_get_bclk_div(i2s, bclk_parent_rate,
- 					  rate, word_size);
- 	if (bclk_div < 0) {
- 		dev_err(dai->dev, "Unsupported BCLK divider: %d\n", bclk_div);
-@@ -957,6 +969,7 @@ static const struct sun4i_i2s_quirks sun4i_a10_i2s_quirks = {
- 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
- 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 6, 6),
- 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
-+	.get_bclk_parent_rate	= sun4i_i2s_get_bclk_parent_rate,
- 	.get_sr			= sun4i_i2s_get_sr,
- 	.get_wss		= sun4i_i2s_get_wss,
- 	.set_chan_cfg		= sun4i_i2s_set_chan_cfg,
-@@ -972,6 +985,7 @@ static const struct sun4i_i2s_quirks sun6i_a31_i2s_quirks = {
- 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
- 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 6, 6),
- 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
-+	.get_bclk_parent_rate	= sun4i_i2s_get_bclk_parent_rate,
- 	.get_sr			= sun4i_i2s_get_sr,
- 	.get_wss		= sun4i_i2s_get_wss,
- 	.set_chan_cfg		= sun4i_i2s_set_chan_cfg,
-@@ -987,6 +1001,7 @@ static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
- 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
- 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 6, 6),
- 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
-+	.get_bclk_parent_rate	= sun8i_i2s_get_bclk_parent_rate,
- 	.get_sr			= sun8i_i2s_get_sr_wss,
- 	.get_wss		= sun8i_i2s_get_sr_wss,
- 	.set_chan_cfg		= sun8i_i2s_set_chan_cfg,
-@@ -1005,6 +1020,7 @@ static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
- 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
- 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
- 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 19, 19),
-+	.get_bclk_parent_rate	= sun8i_i2s_get_bclk_parent_rate,
- 	.get_sr			= sun8i_i2s_get_sr_wss,
- 	.get_wss		= sun8i_i2s_get_sr_wss,
- 	.set_chan_cfg		= sun8i_i2s_set_chan_cfg,
-@@ -1020,6 +1036,7 @@ static const struct sun4i_i2s_quirks sun50i_a64_codec_i2s_quirks = {
- 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
- 	.field_fmt_bclk		= REG_FIELD(SUN4I_I2S_FMT0_REG, 6, 6),
- 	.field_fmt_lrclk	= REG_FIELD(SUN4I_I2S_FMT0_REG, 7, 7),
-+	.get_bclk_parent_rate	= sun4i_i2s_get_bclk_parent_rate,
- 	.get_sr			= sun4i_i2s_get_sr,
- 	.get_wss		= sun4i_i2s_get_wss,
- 	.set_chan_cfg		= sun4i_i2s_set_chan_cfg,
+ 	if (i2s->variant->has_chsel_tx_chen)
+ 		regmap_update_bits(i2s->regmap, SUN8I_I2S_TX_CHAN_SEL_REG,
 -- 
 2.20.1
 
