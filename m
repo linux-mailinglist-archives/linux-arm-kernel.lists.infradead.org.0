@@ -2,119 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63B62953E8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 03:56:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAA6D953FF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 04:06:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0+1OmYIg9hNYzchHiKfRfLrdxAm7WCLXzhjXny/KxgY=; b=X5lMZgCkVe6g+m
-	PLtttbfYVmy+xqJskeKCStxtxKXQehU2WTLErV2YdjhDY/2af886IsPM8IXck0Cl8OkIFNsXCeKRB
-	Zs8v+aUqQ21UL+fq+lRSv7cz9jD5Q2mlBmQy3Sj6NV/uxqwI12dO9To4GbujQBBD8IOs7QcjXUavF
-	h9m56PnYXmD5u9YYYcbQzLI+WFYf26k/mSzDxfnquCwti2d0H10DjJb717JRkHM7G03BOOQt/QZip
-	TfImeknX+QsEkMJmLMy3S7AWZlQvWBZZ1ilvZiRIlIujNvKalHjWAsqR4+MBHWNgG0fYLfuZEEP9R
-	+tzBgTX3rfT8dPTsznZw==;
+	List-Owner; bh=hFoke3IEfurXowYO1VBupjKuOOuErYX6rX0cP8F9YYY=; b=IkFQcVrxhr/J7G
+	b/SvqS/gD4YOCjIevv6UoD77n54e4lhHbuIwLJkrYlDsfhErbpzBGq32IQFnscghuBcdZ913W5HNW
+	p2SujoLguqd3yKhbkhumEbMCAi9PshmruWkZHcHmryxN8zRXCknA25pSUd1UfauxYIDXoG/k95Yer
+	Lt8ZmCXjpYXa5htMC9/84Qw39eOVv4VOpMMpiNNt5RFy5ejaQAuAJ7YBoT0xW5tcDEd5dCR//zqEd
+	ztx4mK0A4WQU6DyioaiyZuF/psKyCL2BGow6zhyRNkY3BKhaUWySEZ0VAubOCVSVcZdbQASViXoEY
+	2cAuha3ra1L185iuP2rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hztO4-0005lr-Ei; Tue, 20 Aug 2019 01:56:40 +0000
-Received: from mail-by2nam05on060b.outbound.protection.outlook.com
- ([2a01:111:f400:fe52::60b]
- helo=NAM05-BY2-obe.outbound.protection.outlook.com)
+	id 1hztXM-0000ul-Aj; Tue, 20 Aug 2019 02:06:16 +0000
+Received: from mail-eopbgr770080.outbound.protection.outlook.com
+ ([40.107.77.80] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hztNq-0005l6-8k
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 01:56:27 +0000
+ id 1hztX9-0000tP-UY
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 02:06:05 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Vk38Odj5qInHOviNZpK1wBd10zHr/qvIE+Uma6e7w3fUikoEIW0wQP0wEFCKe01Mf8ZvvcfTlP6r037Z/XA5/9XUrP75u4cN5jkcuKUI1Is+vADr+twacpnxp4btx6WV4APcKNEb4aYwJMSOnUH+mptoD1wh1U53FJOzB7La9PPhnTB5q668FzkS+lzh59nWPchNXBMY3bRoqLFwswqSBs8KiK3jl9thEjkc3idZjfq9GPhsC+6E4Kc058IaqxTE29EyDl/KwPFR/ebx8wHi27f0AyWcmMBGuh8BaT/1ZfSIicV3a8Td5NUaf6qCirVcnqP7wysT/6H6t+xRwj79EA==
+ b=At3Hihi0MF7NK+BrzZkWeQHUtS3tNxnG+tfBz9WgXXuEUBVsJy4IANQXljVBpfqpdQyYeEkfT8w5OSgQIVEcIA+gewy7G6ukNcGAu36EEDLQOkfqspvJBOU3T3Le7mi7ZOYE06gBmajmvLHGRnqz3w3ijsl3kRm7xYN+7yCbcK6q4rmJrxY95EHfhWFaDPq/zFLvzjo7x2EPqcfoJ0KSPlNgYKTKINq9UY2koIdPrU9Toai/uEUBMPReNy2XWQY++VMKB54m/w3fki/4LSMuR4flKmCe5kL1VcIGe6Qykgz8lmEwaaTGBjnVgLWtBXtiboidLsw5ODVMpsKH9tspSg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=g2MATPfSP8THj1xuoWNFuGlXfMpsF7oeT1vB4j0bu8s=;
- b=RBFCvC9DdN9vQociXREQKi0kt1t3urItUpXcNHkrWDsXrfFuMAQsB6tJA+wS7cSqLiKkgk0ONr4FSCUTA4CXcTFavgRrGAHLaJTvCL0o2ozWwiBqN9rar1jXsMqJLzcA/xsGcT5fdL38+wyUDvyLErX7dyTxxWRWiB7Mvm8BI0VACZmzAHDds9RTQOveGdisG/5P5KFLtpx6dlqi/MnTgFTPWAUAMC7Wg67xvtTIHZ0P5AO3Ks+M6YxduCoK5PF7ETbIwZ5+RD/UPP9Q9sWcyQlCui1EOAL8iqGe91dAhDFCztm6I/KVR/K/Ea5EqfjOglN9hGcElfIhfG6VxdUrZw==
+ bh=8AK8arP/DcxNR3UkNreRi4ifCIyWHKYCsVbg0nbtEYg=;
+ b=gL0F5yCmH1M5DgKeGdtId4kx4R1SldY1aekF/2fxIxyiK2F4jc5Wl1nIzFoXOg6q9vQ/Skim7G2Du01QEsuzV0bZoQHudREwKVOj0yCO2sCIalsClBnES25J2wqdYfFG3DYyDd2SyWqnWCl6cM0SDKi5eKg8SNa4sihzk9d0IFJJYuUdGrvSqqQq8QhEj6jR36W5vDeP4abLxMvrducF2ZJHPqwzhD9LU5kuWZCelsz2CCt9jLr9agBJ67Rr9GSYeaQIG2BpBXQTAURhTElnKED1Cq2C0aI8S6IMNRe6ZL5d8zYXskjAx1bATTX7a9VmipcXbtYzmXvrhHpzQ8LzWA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=synaptics.com; dmarc=pass action=none
  header.from=synaptics.com; dkim=pass header.d=synaptics.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=Synaptics.onmicrosoft.com; s=selector2-Synaptics-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=g2MATPfSP8THj1xuoWNFuGlXfMpsF7oeT1vB4j0bu8s=;
- b=D+2Z0hiCiCcSAynR/rL64GBN1i12VvhF7KjruZCVzlze6y9LpRhDH9qQak243t2BqWCNReEY1e/XGm08CSS58d9FZBL3dAEJRUy7r6nrpMs2DCOUUxzGU+8SoBtn3SFAenQ9EJJydg9oyeSwm5bPsjVPnAwBBv+6X9llEa+aPCs=
+ bh=8AK8arP/DcxNR3UkNreRi4ifCIyWHKYCsVbg0nbtEYg=;
+ b=nPecqCrbAMr/r4GA1PubYYs5foT0KBxIKPwjHrqHLZNtjPAttUJZRmRzsFC6MauuJ+CcWdzAftPZy8rSAzCs9SOPi0cNUJikorr7jHJI5iav16tssQQ9Giw7BYndq8SXr24fRfx5Bj0ZnxMzsM6ZTDfiEsz9WYf+5vE3XboVMRM=
 Received: from BYAPR03MB4773.namprd03.prod.outlook.com (20.179.92.152) by
- BYAPR03MB4102.namprd03.prod.outlook.com (20.177.184.23) with Microsoft SMTP
+ BYAPR03MB3688.namprd03.prod.outlook.com (52.135.214.10) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.16; Tue, 20 Aug 2019 01:56:23 +0000
+ 15.20.2178.16; Tue, 20 Aug 2019 02:05:58 +0000
 Received: from BYAPR03MB4773.namprd03.prod.outlook.com
  ([fe80::a517:3578:67bf:6c88]) by BYAPR03MB4773.namprd03.prod.outlook.com
  ([fe80::a517:3578:67bf:6c88%7]) with mapi id 15.20.2157.022; Tue, 20 Aug 2019
- 01:56:23 +0000
+ 02:05:58 +0000
 From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
 To: Masami Hiramatsu <mhiramat@kernel.org>
-Subject: Re: [PATCH 3/4] kprobes: move kprobe_ftrace_handler() from x86 and
- make it weak
-Thread-Topic: [PATCH 3/4] kprobes: move kprobe_ftrace_handler() from x86 and
- make it weak
-Thread-Index: AQHVVoJ3Rba7zgg07UOxNWPFwAx1QKcDKYSAgAAbSoA=
-Date: Tue, 20 Aug 2019 01:56:23 +0000
-Message-ID: <20190820094515.323b0c75@xhacker.debian>
+Subject: Re: [PATCH 1/4] kprobes: adjust kprobe addr for KPROBES_ON_FTRACE
+Thread-Topic: [PATCH 1/4] kprobes: adjust kprobe addr for KPROBES_ON_FTRACE
+Thread-Index: AQHVVoJFk8X59Zi3AUirAcI9pTWKbqcDJ9IAgAAfqgA=
+Date: Tue, 20 Aug 2019 02:05:58 +0000
+Message-ID: <20190820095450.3eb3120b@xhacker.debian>
 References: <20190819192422.5ed79702@xhacker.debian>
- <20190819192628.5f550074@xhacker.debian>
- <20190820090735.a55e7d0b685adecf68fdb55b@kernel.org>
-In-Reply-To: <20190820090735.a55e7d0b685adecf68fdb55b@kernel.org>
+ <20190819192505.483c0bf0@xhacker.debian>
+ <20190820090130.844fc064030db67efb05ceb1@kernel.org>
+In-Reply-To: <20190820090130.844fc064030db67efb05ceb1@kernel.org>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 x-originating-ip: [124.74.246.114]
-x-clientproxiedby: TY2PR0101CA0040.apcprd01.prod.exchangelabs.com
- (2603:1096:404:8000::26) To BYAPR03MB4773.namprd03.prod.outlook.com
+x-clientproxiedby: TYCPR01CA0108.jpnprd01.prod.outlook.com
+ (2603:1096:405:4::24) To BYAPR03MB4773.namprd03.prod.outlook.com
  (2603:10b6:a03:134::24)
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
 x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 5636b3a8-187a-4567-5a0d-08d725119aa7
+x-ms-office365-filtering-correlation-id: 254805cc-3c7e-466e-0515-08d72512f129
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BYAPR03MB4102; 
-x-ms-traffictypediagnostic: BYAPR03MB4102:
-x-microsoft-antispam-prvs: <BYAPR03MB41026769236AE81C4D005CF9EDAB0@BYAPR03MB4102.namprd03.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
+ SRVR:BYAPR03MB3688; 
+x-ms-traffictypediagnostic: BYAPR03MB3688:
+x-microsoft-antispam-prvs: <BYAPR03MB3688954779330EC652EE9A64EDAB0@BYAPR03MB3688.namprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
 x-forefront-prvs: 013568035E
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(346002)(136003)(376002)(366004)(39850400004)(189003)(199004)(486006)(8936002)(6486002)(7416002)(66066001)(54906003)(7736002)(316002)(305945005)(8676002)(86362001)(81166006)(81156014)(6116002)(6916009)(11346002)(50226002)(3846002)(71200400001)(71190400001)(4326008)(476003)(446003)(99286004)(256004)(14444005)(14454004)(2906002)(102836004)(52116002)(66946007)(6246003)(26005)(53936002)(1076003)(9686003)(6512007)(64756008)(76176011)(66476007)(66556008)(66446008)(229853002)(478600001)(25786009)(186003)(386003)(6506007)(6436002)(5660300002)(39210200001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB4102;
+ SFS:(10009020)(376002)(136003)(346002)(366004)(396003)(39860400002)(189003)(199004)(6916009)(66946007)(26005)(81166006)(8676002)(6512007)(9686003)(81156014)(66446008)(64756008)(66556008)(66476007)(86362001)(52116002)(99286004)(76176011)(11346002)(386003)(6506007)(102836004)(476003)(446003)(316002)(8936002)(186003)(50226002)(54906003)(486006)(71200400001)(229853002)(6246003)(1076003)(478600001)(6486002)(14454004)(25786009)(66066001)(6116002)(3846002)(4326008)(71190400001)(6436002)(2906002)(14444005)(53936002)(256004)(7736002)(5660300002)(7416002)(305945005)(39210200001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB3688;
  H:BYAPR03MB4773.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:0; 
 received-spf: None (protection.outlook.com: synaptics.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: mJukGuhjplPD9fZInEfs4pUOH8JS/vw8fO1vQnKoi4J2B+2mnhUXW0ZdLpQED9DriG+rwBdnT/XlaEj5JTOeEHoZaDtemAA/uLh3SZZQewrHL9xznX7OI0AwqD1Xk3YE2PbQ8QXAcBbutrvyXMtJkDAr2d1sSwTdF5BjanOUs8r6aSGOs5go5tQCMWh/BVgkqQS9lio/kX0Ej4qV4GJYHHPxwbkFI85EEQ/JRqhduvPiMqTDNSRg7ZztVA5ij5VjcOCR7xzEIBioteHHJQj47G0MzSL5vB2JpMdCQ6SpCuE7QV4wBU61Km28C02DeJShwElppaed9eyzzHnxLBYX++g7DnW3qQpyTE0ZgZB385//MtpbMQylTnQRAjdTMrKIPLUw2swCZ1L2a84xkylJObGtqEvQUQiklCRW3BJU1qc=
+x-microsoft-antispam-message-info: EgP33k2WdBvvZysnxwxCtLMO8rqDDg7XV9iMpx1hpHwrWcZZTsy6ug8HyptNZx9JfL73em5TmY4JC7+anQnwKJBjQbby7CbD+jJC9KRpCj6/f+QXvN5/XSD/M2zL6By0nBZVOWV5QFvo4ayTLHCp00xtrC3q6MnX/gdMojcUI0zRCihExWyq6DO/8OylHl2DtjGnozngtmvOBVekSCrqqGP+Pqua94bpil8uWJI5rviBHpO2v2oMdXBI/P3SfGuH0o/NdlCXlyL+NvD14FmkqoKNtK1q3uLu/UOKh+tn1s997T1Zzsadej+DGhRGaC1NzNQq5tVMAQOlR1xv9UFwzFvQ+VroT19zddqGVcemKBUuBGcAxlnXxioypMHxCGhxUx3IUwGDxB7/8+gFxJgycqUozaAchycjcivX9j9l1LI=
 x-ms-exchange-transport-forked: True
-Content-ID: <4927522ADCDC1F4096E473DF64A16AEE@namprd03.prod.outlook.com>
+Content-ID: <9AE6B2C809ED37448D16241D63F81276@namprd03.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: synaptics.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5636b3a8-187a-4567-5a0d-08d725119aa7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Aug 2019 01:56:23.7234 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 254805cc-3c7e-466e-0515-08d72512f129
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Aug 2019 02:05:58.2720 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: oZPC+fCIAxkc+UJCnArRbpAWg5aJgTSJiACkBZC4prGurvYh1kXMm7+VWFWDP6MsPl+Eh70cGObqcf32pp5rwQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB4102
+X-MS-Exchange-CrossTenant-userprincipalname: bORuSH3Kg/33OmRExcGMEiGh74gYYgpZCCh0TyoT4cdEsYz7pJuKw0ix9WpKeNoQssgEHc/+5/VoASV78kMXQg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB3688
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_185626_312875_7C2548BA 
-X-CRM114-Status: GOOD (  20.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190819_190603_991132_4660CA31 
+X-CRM114-Status: GOOD (  19.84  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.77.80 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ valid -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.77.80 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,160 +141,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 20 Aug 2019 09:07:35 +0900 Masami Hiramatsu  wrote:
+On Tue, 20 Aug 2019 09:01:30 +0900 Masami Hiramatsu wrote:
 
-> 
 > 
 > Hi Jisheng,
 
 Hi,
 
 > 
-> On Mon, 19 Aug 2019 11:37:32 +0000
+> On Mon, 19 Aug 2019 11:36:09 +0000
 > Jisheng Zhang <Jisheng.Zhang@synaptics.com> wrote:
 > 
-> > This code could be reused. So move it from x86 to common code.  
+> > For KPROBES_ON_FTRACE case, we need to adjust the kprobe's addr
+> > correspondingly.  
 > 
-> Yes, it can be among some arch, but at first, please make your
-> architecture implementation. After making sure that is enough
-> stable, we will optimize (consolidate) the code.
+> No, I think you have misunderstood what the ftrace_call_adjust() does.
+> Ftrace's rec->ip is already adjusted when initializing it. Kprobes
+> checks the list after initialized (adjusted). So you don't need to
+> adjust it again.
 
-Got it. I will duplicate the function firstly then make the consolidation
-as a TODO.
+This is not to adjust the ftarce's rec->ip, but to adjust the struct kprobe
+addr member. Because check_kprobe_address_safe()=>arch_check_ftrace_location
+will check the kprobe's addr with ftrace's rec->ip. Since ftrace's rec->ip
+is already adjusted, there will be mismatch if we don't adjust kprobe's addr
+correspondingly.
 
-> 
-> For example,
-> > -             /* Kprobe handler expects regs->ip = ip + 1 as breakpoint hit */
-> > -             instruction_pointer_set(regs, ip + sizeof(kprobe_opcode_t));  
-> 
-> This may depend on arch implementation of kprobes.
-
-Indeed, for arm64, would be as simple as s/ip/pc. 
+However, this patch is wrong. I should not update the kprobe's addr
+for non-ftrace-entry. Will fix this in next version.
 
 Thanks
 
 > 
-> Could you make a copy and update comments on arm64?
+> BTW, this type of hidden adjustment should be avoided by design.
+> If you find user specifies wrong address, return error instead of
+> adjust it silently.
 > 
 > Thank you,
 > 
 > >
 > > Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
 > > ---
-> >  arch/x86/kernel/kprobes/ftrace.c | 44 --------------------------------
-> >  kernel/kprobes.c                 | 44 ++++++++++++++++++++++++++++++++
-> >  2 files changed, 44 insertions(+), 44 deletions(-)
+> >  kernel/kprobes.c | 3 +++
+> >  1 file changed, 3 insertions(+)
 > >
-> > diff --git a/arch/x86/kernel/kprobes/ftrace.c b/arch/x86/kernel/kprobes/ftrace.c
-> > index c2ad0b9259ca..91ae1e3e65f7 100644
-> > --- a/arch/x86/kernel/kprobes/ftrace.c
-> > +++ b/arch/x86/kernel/kprobes/ftrace.c
-> > @@ -12,50 +12,6 @@
-> >
-> >  #include "common.h"
-> >
-> > -/* Ftrace callback handler for kprobes -- called under preepmt disabed */
-> > -void kprobe_ftrace_handler(unsigned long ip, unsigned long parent_ip,
-> > -                        struct ftrace_ops *ops, struct pt_regs *regs)
-> > -{
-> > -     struct kprobe *p;
-> > -     struct kprobe_ctlblk *kcb;
-> > -
-> > -     /* Preempt is disabled by ftrace */
-> > -     p = get_kprobe((kprobe_opcode_t *)ip);
-> > -     if (unlikely(!p) || kprobe_disabled(p))
-> > -             return;
-> > -
-> > -     kcb = get_kprobe_ctlblk();
-> > -     if (kprobe_running()) {
-> > -             kprobes_inc_nmissed_count(p);
-> > -     } else {
-> > -             unsigned long orig_ip = instruction_pointer(regs);
-> > -             /* Kprobe handler expects regs->ip = ip + 1 as breakpoint hit */
-> > -             instruction_pointer_set(regs, ip + sizeof(kprobe_opcode_t));
-> > -
-> > -             __this_cpu_write(current_kprobe, p);
-> > -             kcb->kprobe_status = KPROBE_HIT_ACTIVE;
-> > -             if (!p->pre_handler || !p->pre_handler(p, regs)) {
-> > -                     /*
-> > -                      * Emulate singlestep (and also recover regs->ip)
-> > -                      * as if there is a 5byte nop
-> > -                      */
-> > -                     instruction_pointer_set(regs,
-> > -                             (unsigned long)p->addr + MCOUNT_INSN_SIZE);
-> > -                     if (unlikely(p->post_handler)) {
-> > -                             kcb->kprobe_status = KPROBE_HIT_SSDONE;
-> > -                             p->post_handler(p, regs, 0);
-> > -                     }
-> > -                     instruction_pointer_set(regs, orig_ip);
-> > -             }
-> > -             /*
-> > -              * If pre_handler returns !0, it changes regs->ip. We have to
-> > -              * skip emulating post_handler.
-> > -              */
-> > -             __this_cpu_write(current_kprobe, NULL);
-> > -     }
-> > -}
-> > -NOKPROBE_SYMBOL(kprobe_ftrace_handler);
-> > -
-> >  int arch_prepare_kprobe_ftrace(struct kprobe *p)
-> >  {
-> >       p->ainsn.insn = NULL;
 > > diff --git a/kernel/kprobes.c b/kernel/kprobes.c
-> > index f8400753a8a9..479148ee1822 100644
+> > index 9873fc627d61..f8400753a8a9 100644
 > > --- a/kernel/kprobes.c
 > > +++ b/kernel/kprobes.c
-> > @@ -960,6 +960,50 @@ static struct kprobe *alloc_aggr_kprobe(struct kprobe *p)
-> >  #endif /* CONFIG_OPTPROBES */
+> > @@ -1560,6 +1560,9 @@ int register_kprobe(struct kprobe *p)
+> >       addr = kprobe_addr(p);
+> >       if (IS_ERR(addr))
+> >               return PTR_ERR(addr);
+> > +#ifdef CONFIG_KPROBES_ON_FTRACE
+> > +     addr = (kprobe_opcode_t *)ftrace_call_adjust((unsigned long)addr);
+> > +#endif
+> >       p->addr = addr;
 > >
-> >  #ifdef CONFIG_KPROBES_ON_FTRACE
-> > +/* Ftrace callback handler for kprobes -- called under preepmt disabed */
-> > +void __weak kprobe_ftrace_handler(unsigned long ip, unsigned long parent_ip,
-> > +                               struct ftrace_ops *ops, struct pt_regs *regs)
-> > +{
-> > +     struct kprobe *p;
-> > +     struct kprobe_ctlblk *kcb;
-> > +
-> > +     /* Preempt is disabled by ftrace */
-> > +     p = get_kprobe((kprobe_opcode_t *)ip);
-> > +     if (unlikely(!p) || kprobe_disabled(p))
-> > +             return;
-> > +
-> > +     kcb = get_kprobe_ctlblk();
-> > +     if (kprobe_running()) {
-> > +             kprobes_inc_nmissed_count(p);
-> > +     } else {
-> > +             unsigned long orig_ip = instruction_pointer(regs);
-> > +             /* Kprobe handler expects regs->ip = ip + 1 as breakpoint hit */
-> > +             instruction_pointer_set(regs, ip + sizeof(kprobe_opcode_t));
-> > +
-> > +             __this_cpu_write(current_kprobe, p);
-> > +             kcb->kprobe_status = KPROBE_HIT_ACTIVE;
-> > +             if (!p->pre_handler || !p->pre_handler(p, regs)) {
-> > +                     /*
-> > +                      * Emulate singlestep (and also recover regs->ip)
-> > +                      * as if there is a 5byte nop
-> > +                      */
-> > +                     instruction_pointer_set(regs,
-> > +                             (unsigned long)p->addr + MCOUNT_INSN_SIZE);
-> > +                     if (unlikely(p->post_handler)) {
-> > +                             kcb->kprobe_status = KPROBE_HIT_SSDONE;
-> > +                             p->post_handler(p, regs, 0);
-> > +                     }
-> > +                     instruction_pointer_set(regs, orig_ip);
-> > +             }
-> > +             /*
-> > +              * If pre_handler returns !0, it changes regs->ip. We have to
-> > +              * skip emulating post_handler.
-> > +              */
-> > +             __this_cpu_write(current_kprobe, NULL);
-> > +     }
-> > +}
-> > +NOKPROBE_SYMBOL(kprobe_ftrace_handler);
-> > +
-> >  static struct ftrace_ops kprobe_ftrace_ops __read_mostly = {
-> >       .func = kprobe_ftrace_handler,
-> >       .flags = FTRACE_OPS_FL_SAVE_REGS | FTRACE_OPS_FL_IPMODIFY,
+> >       ret = check_kprobe_rereg(p);
 > > --
 > > 2.23.0.rc1
 > >  
