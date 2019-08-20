@@ -2,69 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD5D09639F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:03:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B4A3963A0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:03:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1zlbfjQLWIHm/sIxVpf8UHiI9MTdzZBxSE5e5hDdftg=; b=MqFcOa3lqyvzjE
-	9ozs0Rf50aZF+bfhe7ivYPTzB8gH1bvdYSirs54VhLcxiXN9xAEk0IRp0Tp/ic8RWQe12FZgOByPv
-	5nHWh0quV57E/GR75jn8rkPVL1p0H//L7YSwpy+rqZvml26v+zi/aJerg56fXW6miySeEK5PJfaAg
-	xwOCZ02rR8R+l/46QHBZGxmIMzk7R4uo+SYAWA0dN7OlrXncNP37bn8EkUlLqkh0tqCFvTBFxP1pf
-	U1tDyrB1DEsSoAIl73yztdalhZRmaz7TFDBL1j8v5dWKiO2yRB5ysm0vFUOJnNyeNyIH1NqE1rLa4
-	FZcjkYFFyw1JkOxMt9Fw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vZtxBi495LDqZc2BgahWaAa7QqIz6I7nRVLGyOBTfRY=; b=QrBIlp7TMueIx8disllABiY5q
+	CtTEvvm8iSkLS+NbNyzfsMrlbJtl5zZEpXafiPkuo+0No7xasmJ0viXRY4jqgYi5qzjagUmz14ZaM
+	5m4crIQg+SdiLaoiJA9mKJVUtg6HbnW9qIQkYFuPyOMXk/g3yeQnsCTdv6LikmM12RDaH2DtzUnMh
+	i2PdPXL2A5MCYUHFGn/u5w+LptB7iyv/jIG2/Ssz5zltanahT6S2l3uP4xy0QkpezpUyVRRV6D3+G
+	oGnJh+2wQaD1QNQCguPTIrpvlIpzg2LrZ4ehYCCflfPht8E+w/QwSmZlxD2n/6QIjNNaLTXwdfDy2
+	e6FJ/HHXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i05eu-0001cF-G3; Tue, 20 Aug 2019 15:02:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i05fI-00022c-0c; Tue, 20 Aug 2019 15:03:16 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i05b6-0005Nf-Hw
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 14:58:58 +0000
-Received: from localhost.localdomain (cpe-70-114-128-244.austin.res.rr.com
- [70.114.128.244])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E6FBC2339E;
- Tue, 20 Aug 2019 14:58:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566313136;
- bh=5au+uySpHKMUgQfB6f0HCtqCGXnnNO/toEwWtCgwQRU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Elx0d63ofvknVaHHM1m3EBtPbefELcg0n3vF+T4OsO7EWe2obiob7hBXk34t8DXgX
- /deiwyMkNRRojaOHdjBUgvAmPYJsQlgR/ggamqiW/EdmVZ/NOiFZPauXKUMKL5VDar
- 337mhbwmYMfLpXYOpuzq/e/sIXYbvJmJvJ9o6yMg=
-From: Dinh Nguyen <dinguyen@kernel.org>
-To: linux-kernel@vger.kernel.org
-Subject: [RESEND PATCHv4 1/1] drivers/amba: add reset control to amba bus probe
-Date: Tue, 20 Aug 2019 09:58:34 -0500
-Message-Id: <20190820145834.7301-2-dinguyen@kernel.org>
-X-Mailer: git-send-email 2.20.0
-In-Reply-To: <20190820145834.7301-1-dinguyen@kernel.org>
-References: <20190820145834.7301-1-dinguyen@kernel.org>
+ id 1i05cW-0007mD-Qi
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:00:27 +0000
+X-Originating-IP: 86.250.200.211
+Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 1FC3140004;
+ Tue, 20 Aug 2019 15:00:19 +0000 (UTC)
+Date: Tue, 20 Aug 2019 17:00:18 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Thomas Graichen <thomas.graichen@googlemail.com>
+Subject: Re: [v5,05/12] drm/modes: Rewrite the command line parser
+Message-ID: <20190820150018.uhiquahda6wuxvjd@flea>
+References: <e32cd4009153b184103554009135c7bf7c9975d7.1560783090.git-series.maxime.ripard@bootlin.com>
+ <5978761.uBj7R84RrF@jernej-laptop>
+ <CAOUEw13CCVhk9kt_z2VkguX0=TCeARkH-8+qSh_nF-J+r0Rscg@mail.gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <CAOUEw13CCVhk9kt_z2VkguX0=TCeARkH-8+qSh_nF-J+r0Rscg@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_075856_691499_7321AC0D 
-X-CRM114-Status: GOOD (  15.47  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190820_080025_303599_B770CE82 
+X-CRM114-Status: GOOD (  19.49  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,89 +62,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, daniel.thompson@linaro.org, tony.luck@intel.com,
- manivannan.sadhasivam@linaro.org, keescook@chromium.org,
- devicetree@vger.kernel.org, linus.walleij@linaro.org, anton@enomsg.org,
- linux@armlinux.org.uk, dinguyen@kernel.org, ccross@android.com,
- frowand.list@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: eben@raspberrypi.org, David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@gmail.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Sean Paul <seanpaul@chromium.org>, dri-devel@lists.freedesktop.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5980536781913830119=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The primecell controller on some SoCs, i.e. SoCFPGA, is held in reset by
-default. Until recently, the DMA controller was brought out of reset by the
-bootloader(i.e. U-Boot). But a recent change in U-Boot, the peripherals
-that are not used are held in reset and are left to Linux to bring them
-out of reset.
 
-Add a mechanism for getting the reset property and de-assert the primecell
-module from reset if found. This is a not a hard fail if the reset properti
-is not present in the device tree node, so the driver will continue to
-probe.
+--===============5980536781913830119==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="upeyyhtq7btyttw2"
+Content-Disposition: inline
 
-Because there are different variants of the controller that may have
-multiple reset signals, the code will find all reset(s) specified and
-de-assert them.
 
-Signed-off-by: Dinh Nguyen <dinguyen@kernel.org>
-Reviewed-by: Rob Herring <robh@kernel.org>
----
-v4: cleaned up indentation in loop
-    fix up a few checkpatch warnings
-    add Reviewed-by:
-v3: add a reset_control_put()
-    add error handling
-v2: move reset control to bus code
-    find all reset properties and de-assert them
----
- drivers/amba/bus.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+--upeyyhtq7btyttw2
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-diff --git a/drivers/amba/bus.c b/drivers/amba/bus.c
-index 100e798a5c82..76a1cd56a1ab 100644
---- a/drivers/amba/bus.c
-+++ b/drivers/amba/bus.c
-@@ -18,6 +18,7 @@
- #include <linux/limits.h>
- #include <linux/clk/clk-conf.h>
- #include <linux/platform_device.h>
-+#include <linux/reset.h>
- 
- #include <asm/irq.h>
- 
-@@ -401,6 +402,26 @@ static int amba_device_try_add(struct amba_device *dev, struct resource *parent)
- 	ret = amba_get_enable_pclk(dev);
- 	if (ret == 0) {
- 		u32 pid, cid;
-+		int count;
-+		struct reset_control *rstc;
-+
-+		/*
-+		 * Find reset control(s) of the amba bus and de-assert them.
-+		 */
-+		count = reset_control_get_count(&dev->dev);
-+		while (count > 0) {
-+			rstc = of_reset_control_get_shared_by_index(dev->dev.of_node, count - 1);
-+			if (IS_ERR(rstc)) {
-+				if (PTR_ERR(rstc) == -EPROBE_DEFER)
-+					ret = -EPROBE_DEFER;
-+				else
-+					dev_err(&dev->dev, "Can't get amba reset!\n");
-+				break;
-+			}
-+			reset_control_deassert(rstc);
-+			reset_control_put(rstc);
-+			count--;
-+		}
- 
- 		/*
- 		 * Read pid and cid based on size of resource
--- 
-2.20.0
+Hi,
 
+On Mon, Aug 19, 2019 at 09:20:00PM +0200, Thomas Graichen wrote:
+> On Mon, Aug 19, 2019 at 8:54 PM Jernej =C5=A0krabec <jernej.skrabec@gmail=
+=2Ecom> wrote:
+> >
+> > +CC: Thomas Graichen
+> >
+> > Dne ponedeljek, 17. junij 2019 ob 16:51:32 CEST je Maxime Ripard napisa=
+l(a):
+> > > From: Maxime Ripard <maxime.ripard@free-electrons.com>
+> > >
+> > > Rewrite the command line parser in order to get away from the state m=
+achine
+> > > parsing the video mode lines.
+> > >
+> > > Hopefully, this will allow to extend it more easily to support named =
+modes
+> > > and / or properties set directly on the command line.
+> > >
+> > > Reviewed-by: Noralf Tr=C3=B8nnes <noralf@tronnes.org>
+> > > Signed-off-by: Maxime Ripard <maxime.ripard@free-electrons.com>
+> >
+> > Thomas reported to me that this patch breaks "video=3DCONNECTOR:e" kern=
+el
+> > parameter which he currently uses as a workaround for H6 HDMI monitor
+> > detection issue on one STB.
+> >
+> > I suppose this is the same issue that Dmitry noticed.
+> >
+> > Thomas Graichen (in CC) can provide more information if needed.
+>
+> as jernej already mentioned i am currently having to use the kernel
+> cmdline option video=3DHDMI-A-1:e to get a working hdmi output on an
+> eachlink h6 mini tv box and was wondering that i did not get any hdmi
+> output even with this option when switching from the
+> https://github.com/megous/linux oprange-pi-5.2 to the orange-pi-5.3
+> branch which seems to contain this patch.
+
+Which kernel version is that based on?
+
+> as i had no idea what might have caused the breakage of the hdmi
+> output and did a full bisect of the kernel between those two
+> versions, which ended reliably at exactly this patch - so i guess
+> there is a regression at least with the video=3DCONNECTOR:e option
+> (maybe others too?) with this patches code which makes it not
+> working anymore.
+
+I'm not sure I'll have the time to look into it this week (or the
+next, unfortunately). However, the e parameter is supposed to be
+parsed by drm_mode_parse_cmdline_extra, which in turn is supposed to
+be called there:
+https://elixir.bootlin.com/linux/v5.3-rc5/source/drivers/gpu/drm/drm_modes.=
+c#L1810
+
+If you can test that, having an idea of if that function is called,
+which return code it returns, and if it isn't if why would be super
+helpful.
+
+Thanks!
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--upeyyhtq7btyttw2
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXVwLAgAKCRDj7w1vZxhR
+xU5jAQCoQQ2yAaOQGsg8OTMgvoNdbtjA4H4nqF4DBTXJ6/8/QQD+L4iC5VrP0gcU
+b989j1Th8EdacGteid9NZ8Y9NPnLzw8=
+=EtCt
+-----END PGP SIGNATURE-----
+
+--upeyyhtq7btyttw2--
+
+
+--===============5980536781913830119==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5980536781913830119==--
+
