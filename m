@@ -2,78 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09FD7966CB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 18:51:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3368C966E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 18:57:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6QHGoapqTdbelf/QYGJ+vY18eY1gGVHkhM6OW3YCYyI=; b=XizxlW+B+j/hOp
-	UNElQweY6V5i0axnjMPc9aZSgZ5s8vwRcH7jgrjhLz3YcA7hH7K/tGOBhQmp2+6AYleoAgQOiOllK
-	5uqLIevsmVUhiZx+MGusnJF+BJVBog9X5J2w5ofW7XNGH8g+5ACNsCDTFW/LM9y9DSzYOoctwlNll
-	wWMQVEXdGrfBFytjBREF5HHCuJHuJzek+SbKNrWOiZVOPZUUW3RA4lsBqnY5j7DOicg/kP4I3DtpT
-	YAS85ypq5vycX68lHqMyN92HrbZTeK8EGc7qKrLeXYntQiWZSRI8tEPY3gMzYlE6Be3XiHS74aKqa
-	QNFlbQp9zCMPx2dHiV7w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=J+05gWov1eMLU+cyDu24540+KXzYWOguuJ7LDABFfDA=; b=ZzwjNAEjBiMX5ilbH5ScL+Yh1g
+	C8cXUd3lRISmHqw9WPGrLaNkfAEa7gdmUP4pLSk3R2Gq2bpLX3lfCEAeCHVtztIuV0Fnvs+iaULGx
+	fhxS6Ho1slNWy85Bun9hHZpzxv5CMq5uRxEE7x0MH7tp9FwIpnP8gO4vCAmqWbZ+ULw8fXG02DF7a
+	KqOjpI4v0M3fOCxFPzn3M4/0jQtVDht81D/hQT+RUvcEZ1O2N1lZle4U0A4HnsJF9HB29KMal8cDM
+	MONnq+TlZ52TsFcoKxrSYC7uq4U7Np0PMbsyhPwgzUOSuq2YDHzG6nWqt64P6FlkXZAJNfRBIqxGB
+	r4Xg1LiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i07Lw-0007aw-E5; Tue, 20 Aug 2019 16:51:24 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1i07Ro-0000rV-NK; Tue, 20 Aug 2019 16:57:28 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i07Ln-0007ac-34
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 16:51:16 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7KGpBgC060459;
- Tue, 20 Aug 2019 11:51:11 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1566319871;
- bh=KcyOfR8Cu+0kW7PJcSG2BYRDkc98ta3TUYno7667hwI=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=CyZdzT6xgsqKqNo5OCdTb3yFz087dFuG+TdNxK7dGMsSaWt99Omk8nnxZOaAx5it+
- wT/8K3vDMhm6g2zO2JphhxYfJCj7sL9j3M+zxuQpj3byTr3PYIhw8B/DYUfRC6KjQM
- Ff6evVTQyaAae2nY3A9aakm53CKcgDS4UU/NBH3U=
-Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7KGpB7h073104
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 20 Aug 2019 11:51:11 -0500
-Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 20
- Aug 2019 11:51:11 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 20 Aug 2019 11:51:11 -0500
-Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7KGpAjf010013;
- Tue, 20 Aug 2019 11:51:10 -0500
-Subject: Re: [PATCH 0/8] soc: ti: Add OMAP PRM driver
-To: Tero Kristo <t-kristo@ti.com>, <ssantosh@kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-omap@vger.kernel.org>,
- <robh+dt@kernel.org>
-References: <1565164139-21886-1-git-send-email-t-kristo@ti.com>
- <432a70fc-2683-42ca-3ac7-9775efa3ca41@ti.com>
- <b991f374-9e2a-5f1d-d48d-5f50a3c41756@ti.com>
-From: Suman Anna <s-anna@ti.com>
-Message-ID: <88446f5f-60ae-1205-33e5-a225a2764c72@ti.com>
-Date: Tue, 20 Aug 2019 11:51:10 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1i07Rf-0000me-2U
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 16:57:20 +0000
+Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
+ [209.85.160.179])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 92119230F2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 16:57:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566320238;
+ bh=XXjiYxQkert7CQKwnQYwS/DJ9k/U3UTDnEKYjjCX/3Q=;
+ h=References:In-Reply-To:From:Date:Subject:To:From;
+ b=2jX2Ag8APIFwCLyU4kAtKBfXXb5lV2endNabWcuWxLvWLoywws5J1NWZ3jhvOolz1
+ 21Gyotmv1EcMF9cr0YZwBagfs2iDSHfxsTScMZfVVdQ13/8sSyk2/8nrJPCz54HUIF
+ Ggt4fV6axtAZrFH7DH3IG0RL35pbuGbZLHiApFbY=
+Received: by mail-qt1-f179.google.com with SMTP id e8so6801619qtp.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 09:57:18 -0700 (PDT)
+X-Gm-Message-State: APjAAAXJKrmkrF3AilcO05YRsfXtsmfynaJfl8gorhBr00QhpqSCMtBB
+ oeIBB/GMKjo8vTMpZGSTqH37XLePGPeKhik4wg==
+X-Google-Smtp-Source: APXvYqyXzp+QqhlPh4ms6hvrPcB1uD6IRBalVujsZrtIEmK/kh6+PbQH7E0GTYlHODGJjOvZfk0fqz3SyXtNfugq1Q4=
+X-Received: by 2002:ac8:386f:: with SMTP id r44mr27730593qtb.300.1566320237772; 
+ Tue, 20 Aug 2019 09:57:17 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <b991f374-9e2a-5f1d-d48d-5f50a3c41756@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20190820145343.29108-1-megous@megous.com>
+ <20190820145343.29108-3-megous@megous.com>
+ <CAL_JsqLHeA6A_+ZgmCzC42Y6yJrEq6+D3vKn8ETh2D7LJ+1_-g@mail.gmail.com>
+ <20190820163433.sr4lvjxmmhjtbtcb@core.my.home>
+In-Reply-To: <20190820163433.sr4lvjxmmhjtbtcb@core.my.home>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 20 Aug 2019 11:57:06 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJHNL91KMAP5ya97eiyTypGniCJ+tbP=NchPJK502i5FQ@mail.gmail.com>
+Message-ID: <CAL_JsqJHNL91KMAP5ya97eiyTypGniCJ+tbP=NchPJK502i5FQ@mail.gmail.com>
+Subject: Re: [PATCH 2/6] dt-bindings: net: sun8i-a83t-emac: Add phy-io-supply
+ property
+To: Rob Herring <robh+dt@kernel.org>, "David S. Miller" <davem@davemloft.net>, 
+ Mark Rutland <mark.rutland@arm.com>, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, 
+ Jose Abreu <joabreu@synopsys.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ netdev <netdev@vger.kernel.org>, devicetree@vger.kernel.org, 
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-stm32@st-md-mailman.stormreply.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_095115_276994_2B6767C6 
-X-CRM114-Status: GOOD (  16.43  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190820_095719_158828_A57AE9F1 
+X-CRM114-Status: GOOD (  17.05  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -95,73 +99,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tony@atomide.com, devicetree@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/20/19 2:54 AM, Tero Kristo wrote:
-> On 20.8.2019 2.20, Suman Anna wrote:
->> Hi Tero,
->>
->> On 8/7/19 2:48 AM, Tero Kristo wrote:
->>> Hi,
->>>
->>> This series adds OMAP PRM driver which initially supports only reset
->>> handling. Later on, power domain support can be added to this to get
->>> rid of the current OMAP power domain handling code which resides
->>> under the mach-omap2 platform directory. Initially, reset data is
->>> added for AM3, OMAP4 and DRA7 SoCs.
->>
->> Wakeup M3 remoteproc driver is fully upstream, so we should be able to
->> test that driver as well if you can add the AM4 data. That will also
->> unblock my PRUSS.
->>
->> If you can add the data to others as well, it will help in easier
->> migration of the individual drivers, otherwise the ti-sysc interconnect,
->> hwmod, and hwmod reset data combinations will all have to be supported
->> in code.
-> 
-> Ok, so you are saying you would need the PRM data for am4 in addition? I
-> can generate that one also.
-
-Yes, if you can include the data for AM4 and OMAP5 as well, then we can
-convert all the SoCs other than OMAP2/OMAP3 at the same time as per your
-comment on bindings. Almost all of the active remoteprocs will be
-covered by these.
-
-OMAP3 ISP driver is also fully upstream, so we would have to manage its
-legacy compatibility.
-
-regards
-Suman
-
-> 
-> -Tero
-> 
->>
->> regards
->> Suman
->>
->>>
->>> I've been testing the reset handling logic with OMAP remoteproc
->>> driver which has been converted to use generic reset framework. This
->>> part is a work in progress, so will be posting patches from that part
->>> later on.
->>>
->>> -Tero
->>>
->>> -- 
->>>
->>
-> 
-> -- 
-> Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-> Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBBdWcgMjAsIDIwMTkgYXQgMTE6MzQgQU0gT25kxZllaiBKaXJtYW4gPG1lZ291c0Bt
+ZWdvdXMuY29tPiB3cm90ZToKPgo+IE9uIFR1ZSwgQXVnIDIwLCAyMDE5IGF0IDExOjIwOjIyQU0g
+LTA1MDAsIFJvYiBIZXJyaW5nIHdyb3RlOgo+ID4gT24gVHVlLCBBdWcgMjAsIDIwMTkgYXQgOTo1
+MyBBTSA8bWVnb3VzQG1lZ291cy5jb20+IHdyb3RlOgo+ID4gPgo+ID4gPiBGcm9tOiBPbmRyZWog
+SmlybWFuIDxtZWdvdXNAbWVnb3VzLmNvbT4KPiA+ID4KPiA+ID4gU29tZSBQSFlzIHJlcXVpcmUg
+c2VwYXJhdGUgcG93ZXIgc3VwcGx5IGZvciBJL08gcGlucyBpbiBzb21lIG1vZGVzCj4gPiA+IG9m
+IG9wZXJhdGlvbi4gQWRkIHBoeS1pby1zdXBwbHkgcHJvcGVydHksIHRvIGFsbG93IGVuYWJsaW5n
+IHRoaXMKPiA+ID4gcG93ZXIgc3VwcGx5Lgo+ID4KPiA+IFBlcmhhcHMgc2luY2UgdGhpcyBpcyBu
+ZXcsIHN1Y2ggcGh5cyBzaG91bGQgaGF2ZSAqLXN1cHBseSBpbiB0aGVpciBub2Rlcy4KPgo+IFll
+cywgSSBqdXN0IGRvbid0IHVuZGVyc3RhbmQsIHNpbmNlIGV4dGVybmFsIGV0aGVybmV0IHBoeXMg
+YXJlIHNvIGNvbW1vbiwKPiBhbmQgdGhleSByZXF1aXJlIHBvd2VyLCBob3cgdGhlcmUncyBubyBm
+YWlybHkgZ2VuZXJpYyBtZWNoYW5pc20gZm9yIHRoaXMKPiBhbHJlYWR5IGluIHRoZSBQSFkgc3Vi
+c3lzdGVtLCBvciBzb21ld2hlcmU/CgpCZWNhdXNlIGdlbmVyaWMgbWVjaGFuaXNtcyBmb3IgdGhp
+cyBkb24ndCB3b3JrLiBGb3IgZXhhbXBsZSwgd2hhdApoYXBwZW5zIHdoZW4gdGhlIDIgc3VwcGxp
+ZXMgbmVlZCB0byBiZSB0dXJuZWQgb24gaW4gYSBjZXJ0YWluIG9yZGVyCmFuZCB3aXRoIGNlcnRh
+aW4gdGltaW5ncz8gQW5kIHRoZW4gYWRkIGluIHJlc2V0IG9yIGNvbnRyb2wgbGluZXMgaW50bwp0
+aGUgbWl4Li4uIFlvdSBjYW4gc2VlIGluIHRoZSBiaW5kaW5ncyB3ZSBhbHJlYWR5IGhhdmUgc29t
+ZSBvZiB0aGF0LgoKPiBJdCBsb29rcyBsaWtlIG90aGVyIGV0aGVybmV0IG1hYyBkcml2ZXJzIGFs
+c28gaW1wbGVtZW50IHN1cHBsaWVzIG9uIHBoeXMKPiBvbiB0aGUgRU1BQyBub2Rlcy4gSnVzdCBn
+cmVwIHBoeS1zdXBwbHkgdGhyb3VnaCBkdC1iaW5kaW5ncy9uZXQuCj4KPiBIaXN0b3JpY2FsIHJl
+YXNvbnMsIG9yIGFtIEkgbWlzc2luZyBzb21ldGhpbmc/IEl0IGFsbW9zdCBzZWVtcyBsaWtlIEkg
+bXVzdAo+IGJlIG1pc3Npbmcgc29tZXRoaW5nLCBzaW5jZSBwdXR0aW5nIHRoZXNlIHByb3BlcnRp
+ZXMgdG8gcGh5IG5vZGVzCj4gc2VlbXMgc28gb2J2aW91cy4KClRoaW5ncyBnZXQgYWRkZWQgb25l
+IGJ5IG9uZSBhbmQgb25lIG5ldyBwcm9wZXJ0eSBpc24ndCB0aGF0CmNvbnRyb3ZlcnNpYWwuIFdl
+J3ZlIGdlbmVyYWxseSBsZWFybmVkIHRoZSBsZXNzb24gYW5kIGF2b2lkIHRoaXMKcGF0dGVybiBu
+b3csIGJ1dCBldGhlcm5ldCBwaHlzIGFyZSBvbmUgb2YgdGhlIG9sZGVyIGJpbmRpbmdzLgoKUm9i
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
