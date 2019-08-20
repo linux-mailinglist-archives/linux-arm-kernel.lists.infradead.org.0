@@ -2,101 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFB0A965A4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:55:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBF82965A6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:55:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fk+jLVRma/6PEUekbO7fB7iJKJ9GpaSJnrKRisA3GPE=; b=vEGahxoZrFT2UIX31CLDrnPFs
-	HiVANJcoEC/GwBzbQLX2ehbdvdcpeHpELfuDtddH4z89F2LFm9vaVC7uDW5o+E44ZGzqYx3zAU8mF
-	X22cUNLXJWmu67yqSapCyjiSsuQMYELBDgvvXXfow5IgH0Mg3kRCQtgoKFWgnOdAtU87AIpcqnQdP
-	wcqXkM13rDVvvewSzTIVdpSbWb0ZX0igRJbnTixxXhukx6LsraiJn5qce5ykxxd4lLsfyIMAS6/Fe
-	GLnOHGk5kMgD/e0JRkL48KvtDKtV3ohXBBThAFghQJaot+EE98spAnMMQklqTRYCmDTGLWU6/21Pa
-	zdekWeQ0g==;
+	 bh=4u/Y3rNBfWIWlKSQMuuJGjh4YCe0NzSI8dFd1Q4/pEs=; b=rOvK1A7GJUElxC3olLosxOUnU
+	VgzsRQm3QQgKurrT6oWduSxLhhi90bpai/0LFSoQnmvA8760L6GMX1ahbPe/iIL24vmiNYu7BBL79
+	p22u+uC7L3oawEz/uZLbkW/KDGDkVDQnQzE9VCjIKQlqqehx8Fz5RsWT77kTkIytvGTcsa69Lgdxz
+	Uz0zLeusZPlH5T0ljjcBYuV5PC69RIYq+BDXp3JtlZDoS33ovyfqOnh5GTvWMAjMkG1cuDsYf06Pw
+	uBmLyhISDXVn6Y+j8h/HNAkUead7fjlZ+v735kg8EPLukptmScpRj9jXM3tdt7GaKb3a/zcJtfp/y
+	X0Pz+f+gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i06Ta-0005RQ-Ip; Tue, 20 Aug 2019 15:55:14 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i06TI-00055y-6g
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:55:02 +0000
-Received: by mail-pf1-x441.google.com with SMTP id b24so3648206pfp.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 08:54:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=oKRxdUPEqx182AGsFYC1FZNnJTIkLhG2zitRB8VXskY=;
- b=EF96vaXIKSJqXkEQ+iKjKVxtUoKoMAu+x4HM+r2PftVEkhJ0IX1sPAboufpFgvzhvZ
- Lx+vxJ3MlNqgsYplkTfIzRKqr0YW321a3A0bPHWCbwPxhqjZ14R6LD2Dlgg3FZ2J9C+G
- 45dyKwseoRQuhJZQSMtqwyCqJJYy7LzKCPsci7rrVprv5SaUNrQ+UXGwHFAFXU0kccLM
- mOX2CuMyDgvMoOrd6bEvJ6U+leMuAbd4VHTc7rXLqx9xa8TmMuH64nxeg8BBtUVO/DIt
- xd+ghgEDijtJYXvCeTA87FYY9I6VjXFELZ1fVrRib1vmJB9IiNbpemnww78rxMPJThMm
- vY8w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=oKRxdUPEqx182AGsFYC1FZNnJTIkLhG2zitRB8VXskY=;
- b=X5yKoHtJX85wahi6QBZeEZWmaMiWrLvofc0rd8V465cnn6AmnTiP1GdPc3gCfV7H1X
- Sm5rPar2Jd/8Sm/aR5fkusFEjLZoKP9bcA3OwahCkCcCFxawTJUYsEdobVM/rrztB++X
- 7JUCrrVN3yfMbf4HTagWQBj1x2FcKKKz1qgaBpTuTbhS4ccXwh6l9HD6sj8YjuYYpe2P
- +7dlOyBqIZ80hyH6QtYIKeMEQXVmjjQF6zmdN5RI0/CqRw0/dIrF9eMxQLmXuwuFwu5K
- 4HifHQs83pg6V85Vpunm29InVpWOIx4Jnnuko7N7iWwEXhGpKplc4kv4VKNizaUEK2Z9
- MFwg==
-X-Gm-Message-State: APjAAAWtkxnFQfVELbkkmvbWaIhg5cN/uii6EI+NtAE1h7RdxKrFIRa2
- yC0e8vRl7FeoYJo2CpSTkMU=
-X-Google-Smtp-Source: APXvYqwT6p/B3nVNF9dkl92avzPLIXO+NgzJ9fT0X+D8I222afrN3om41gfv7AR8PrYHKtWYHCgUwQ==
-X-Received: by 2002:a63:31c1:: with SMTP id
- x184mr26182258pgx.128.1566316495255; 
- Tue, 20 Aug 2019 08:54:55 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- e7sm21147062pfn.72.2019.08.20.08.54.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 20 Aug 2019 08:54:54 -0700 (PDT)
-Subject: Re: [PATCH v2 1/6] dt-bindings: watchdog: Add YAML schemas for the
- generic watchdog bindings
-To: Maxime Ripard <mripard@kernel.org>, wim@linux-watchdog.org
-References: <20190819182039.24892-1-mripard@kernel.org>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <ada53037-898f-7b8c-8a96-b80414563fa7@roeck-us.net>
-Date: Tue, 20 Aug 2019 08:54:53 -0700
+	id 1i06U1-0006Xk-1l; Tue, 20 Aug 2019 15:55:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i06Tp-0006Wy-C5
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:55:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DA0BD28;
+ Tue, 20 Aug 2019 08:55:26 -0700 (PDT)
+Received: from [10.1.196.120] (e121650-lin.cambridge.arm.com [10.1.196.120])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B187E3F246;
+ Tue, 20 Aug 2019 08:55:25 -0700 (PDT)
+Subject: Re: [PATCH v3 2/5] arm64: cpufeature: Add feature to detect
+ heterogeneous systems
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20190816125934.18509-1-raphael.gault@arm.com>
+ <20190816125934.18509-3-raphael.gault@arm.com>
+ <20190820152316.GA38082@lakrids.cambridge.arm.com>
+ <20190820154955.GB43412@lakrids.cambridge.arm.com>
+From: Raphael Gault <raphael.gault@arm.com>
+Message-ID: <8cf12008-cc86-3872-7358-2e837cf2498a@arm.com>
+Date: Tue, 20 Aug 2019 16:55:24 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190819182039.24892-1-mripard@kernel.org>
+In-Reply-To: <20190820154955.GB43412@lakrids.cambridge.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_085501_024951_23978DB6 
-X-CRM114-Status: GOOD (  21.62  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190820_085529_449997_4B27D471 
+X-CRM114-Status: GOOD (  23.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,73 +65,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Maxime Ripard <maxime.ripard@bootlin.com>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: raph.gault+kdev@gmail.com, peterz@infradead.org, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, acme@kernel.org,
+ mingo@redhat.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/19/19 11:20 AM, Maxime Ripard wrote:
-> From: Maxime Ripard <maxime.ripard@bootlin.com>
-> 
-> The watchdogs have a bunch of generic properties that are needed in a
-> device tree. Add a YAML schemas for those.
-> 
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Hi Mark,
 
-What is the target subsystem for this series ? You didn't copy the watchdog
-mailing list, so I assume it won't be the watchdog subsystem.
+Thank you for your comments.
+
+On 8/20/19 4:49 PM, Mark Rutland wrote:
+> On Tue, Aug 20, 2019 at 04:23:17PM +0100, Mark Rutland wrote:
+>> Hi Raphael,
+>>
+>> On Fri, Aug 16, 2019 at 01:59:31PM +0100, Raphael Gault wrote:
+>>> This feature is required in order to enable PMU counters direct
+>>> access from userspace only when the system is homogeneous.
+>>> This feature checks the model of each CPU brought online and compares it
+>>> to the boot CPU. If it differs then it is heterogeneous.
+>>
+>> It would be worth noting that this patch prevents heterogeneous CPUs
+>> being brought online late if the system was uniform at boot time.
+> 
+> Looking again, I think I'd misunderstood how
+> ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU was dealt with, but we do have a
+> problem in this area.
+> 
+> [...]
+> 
+>>
+>>> +		.capability = ARM64_HAS_HETEROGENEOUS_PMU,
+>>> +		.type = ARM64_CPUCAP_SCOPE_LOCAL_CPU | ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU,
+>>> +		.matches = has_heterogeneous_pmu,
+>>> +	},
+> 
+> I had a quick chat with Will, and we concluded that we must permit late
+> onlining of heterogeneous CPUs here as people are likely to rely on
+> late CPU onlining on some heterogeneous systems.
+> 
+> I think the above permits that, but that also means that we need some
+> support code to fail gracefully in that case (e.g. without sending
+> a SIGILL to unaware userspace code).
+
+I understand, however, I understood that 
+ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU did not allow later CPU to be 
+heterogeneous if the capability wasn't already enabled. Thus if as you 
+say we need to allow the system to switch from homogeneous to 
+heterogeneous, then I should change the type of this capability.
+
+> That means that we'll need the counter emulation code that you had in
+> previous versions of this patch (e.g. to handle potential UNDEFs when a
+> new CPU has fewer counters than the previously online CPUs).
+> 
+> Further, I think the context switch (and event index) code needs to take
+> this cap into account, and disable direct access once the system becomes
+> heterogeneous.
+
+That is a good point indeed.
 
 Thanks,
-Guenter
 
-> 
-> ---
-> 
-> Changes from v1:
->    - New patch
-> ---
->   .../bindings/watchdog/watchdog.yaml           | 26 +++++++++++++++++++
->   1 file changed, 26 insertions(+)
->   create mode 100644 Documentation/devicetree/bindings/watchdog/watchdog.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/watchdog/watchdog.yaml b/Documentation/devicetree/bindings/watchdog/watchdog.yaml
-> new file mode 100644
-> index 000000000000..187bf6cb62bf
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/watchdog/watchdog.yaml
-> @@ -0,0 +1,26 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/watchdog/watchdog.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Watchdog Generic Bindings
-> +
-> +maintainers:
-> +  - Guenter Roeck <linux@roeck-us.net>
-> +  - Wim Van Sebroeck <wim@linux-watchdog.org>
-> +
-> +description: |
-> +  This document describes generic bindings which can be used to
-> +  describe watchdog devices in a device tree.
-> +
-> +properties:
-> +  $nodename:
-> +    pattern: "^watchdog(@.*|-[0-9a-f])?$"
-> +
-> +  timeout-sec:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description:
-> +      Contains the watchdog timeout in seconds.
-> +
-> +...
-> 
-
+-- 
+Raphael Gault
 
 _______________________________________________
 linux-arm-kernel mailing list
