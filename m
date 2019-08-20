@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBD4B96A61
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 22:25:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BBC796A71
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 22:26:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1pZRqiwfoP3zx0ekrbOyL2558ZpAdhBJivdtLV8JjZY=; b=oiwUAwbqDuvTTN
-	T1tx5yaaVqXjYzOqgYU+amyptq2H8LkhJ5BhzhZxgHxsgPfi5RbwlMG8QpiwWYdfMiiXVjpPhkHiX
-	rhLsrlPEcD5VJUkLMnJ7RQc7PFFgOFzznYTBSpuJMVV5+eQkkHMfTOIarxR6BA5+aeF84r2L0PNoB
-	dfe7l3rQA0WHs+NiRiOIRczwxVjFQ+lEWmvhkcX8rtA/qV8t79E8QZo9MRtn7H4/lW9VZEwTn+LHe
-	jtIrC8yYq9nMMQkJFFolkaEe5AznMFJQEyt96qG26C8S/69CJCYt3rA2QqJiJBwpnzogmlKUDS2ku
-	JI29a+LFXy5yxSNeSk8Q==;
+	List-Owner; bh=T4CT4oRxMqFNPWEW+/Y3IFjCBMrTUqMhhUI1xkRDxck=; b=dB0YxYJDvdOn5t
+	V9CNN/+ApxtpHzN1B7nqz5OchzrjXvIlN0+qmTjFdunQOVTAprVjDsK3XPlWYA3WWq6DSCdmxDxaR
+	D7DnLUcvX4BT73w4KYF4nqL9mQVGSWk15AIXDi+V5czzes6sZZkwzd9jdr1wIFoLFzqXkJIrleOjg
+	2RmN8NEz1If0rmDetNsa+d2wNGCBDHqwotmbTIjvdhdSafXaNqPtlu3OTDuG3pOAVj0VM6GH97aC/
+	9hwQ7NrqJ2sg2f19+xFYZWNc4Ndzfz5MJYhnBGRfeb/TcJ02tY7zgdK5nK3gkcUcCGvHE2XuAb4Np
+	qNW9Ga/GOrSbkjaZtJiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0AhM-0003jv-5c; Tue, 20 Aug 2019 20:25:44 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1i0Ahx-00044C-Vl; Tue, 20 Aug 2019 20:26:22 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0AhB-0003hz-P6; Tue, 20 Aug 2019 20:25:35 +0000
-Received: by mail-oi1-x241.google.com with SMTP id g7so5169134oia.8;
- Tue, 20 Aug 2019 13:25:33 -0700 (PDT)
+ id 1i0Ahm-00042G-Np; Tue, 20 Aug 2019 20:26:11 +0000
+Received: by mail-ot1-x344.google.com with SMTP id m24so6274509otp.12;
+ Tue, 20 Aug 2019 13:26:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=fc34abKerT0nPG4qWNGEOV2EVuAycG0riw7i2ox9yUk=;
- b=fBkJ88s3Sl7hR+LtD4mnyE9oZ8hFiNp+F82w7KlKpL+WVEQI7PbprE1o1IdqxF20DD
- 9ethXaUt++4J/MSknm0LfoFpFz6ohOgVu5OGErdkm7ebnwY0iiKNiVRaJd+62Xb+4wKw
- h4Vp3dbaJzV61BQ1eyVK7tP8IPCzVBCg/kjrdfmcEj/1wM7wO6syhJFsabY1J7g8MaRY
- ulLhBPFe68b3qtaiGHwDPtd7eAv8ofxLidTnefTEit8njByNJyC2pl5Tgxrk+YobaC9h
- ghA9JjzIJnMpQjLai2jhM0RZK6Tt86viJDXCb4hDOEObm8oW6UpjQ5dJSW/KZ2sk+ZGA
- gBUQ==
+ :cc; bh=twYIezSLU/OVYsbr2IHsXTRqkIzdrg1CxaCIxhHJ0W4=;
+ b=qtPpAFID3Om/7WrfwGpqo+WusqVG/L/xldtmFXjwmBDBEZmr07SFzZG7VMV4hPPY6T
+ AxUYmYp0rbp6n5GApnTmNJegIPzAS061q30gKP+GRDtLijQfhcVO8K+S0nySmiU4tjyl
+ M6wDQKrNRDFX5zV/OV77sPPTnGTk/EKR4uELvVJKK8/ydHprAq88WRHkxwLehgBYHIcK
+ cvUVCbxPC0kwklPJMCtLc51yga3WnVaBWY2AyFu92kffq0ue7XFUU3RHIcJJjxfaVbWo
+ BlLLRxucvDLhYEeU2WIq8WFRiXTLQGcTjjcUpErPK+TJUyMACc9oNF1udZkLzkXBaq7x
+ BU8A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=fc34abKerT0nPG4qWNGEOV2EVuAycG0riw7i2ox9yUk=;
- b=GJH4H3WNTkPNE9xpXRxXN/AIaEWfRQl0wtpGH78QmxoNzi/n7uBIypuz4ns9IXkYRS
- 8H4RfgqnCGexUz2qdI0Tx7F+46XSGqJO1uErR6AL03e928A2Kx4Eh9IRoe3MU9Epn7NO
- 9wgE5hm+srbyBx8ZE5xMifCs0wxynzMfRMbOg6ghXA+QGmn4m7q+W7gLDoHNT5iXTzqi
- F2TkWgcPu2YNzjcTpxAzmDSrlqhoIFuXvc4EBCg+yX1jW6yC8Gt9/JvMNuqjkNvCGhC6
- OYCXNrFxLRtSDaWTsy2mX0FrKR+mgVm+GYd46Hfhgmvsl5VdaBB2k9cc8fIaE9HQ9OqR
- 8rXg==
-X-Gm-Message-State: APjAAAUW0QSlDHCmtyXuLfmGdU8jOicNYhTXo9o48OyaIzzLz/wtHM7a
- pmKHRrkglwNh8h/9s6igvDwiHrPjhxBOU6jSas0=
-X-Google-Smtp-Source: APXvYqxo1sZ3HBbbN4X+uoYcquUBFmZBWM+y+N7/M8IBj5mi9mXhFK+scq1wTO0nilDocSU6lZHQGQnDlc1YSx2p0MI=
-X-Received: by 2002:aca:d650:: with SMTP id n77mr1406061oig.129.1566332732940; 
- Tue, 20 Aug 2019 13:25:32 -0700 (PDT)
+ bh=twYIezSLU/OVYsbr2IHsXTRqkIzdrg1CxaCIxhHJ0W4=;
+ b=uGLBtgpGmn3PtRCbOW2/cyErbtt8JDIuuARg2QyKFYYHd0wM/qPs8LFZxgJJREF8ME
+ 6ZetnX1UYAFVbeqL50O6Y3KuFCikYiIFSR8Eoqv3ZCociMvlSFCk6kvB/gUYl2TbVaFv
+ KX7+7Zep3Mv8O9IsJ93dMBh7iwMeqwSUMm7waMOK+Ri9DqXZ1EB0m5ut1V4HJGFVb5Uc
+ ufjWYmyj9loQNOWcknESeHi9hexToDHV1c4UOpzqVTOjOIQpngvw4rSKNCEJQsjCCROp
+ Q2pKRNFr+4vqKuR0qyh7NmkyboBrybNfKCjc3iqvemQ1m2Pk0wTfRrMusFsyInw5ZRT2
+ kcfw==
+X-Gm-Message-State: APjAAAWmgetBW4FrlLLpNWgNa8usQTTQ/r+DcgJ93bbJaTkzNphrCQKo
+ W7LSbFeD4WQkFuXhiJu3rScvSXGPqU46z0NKWaY=
+X-Google-Smtp-Source: APXvYqyerGVLGtwIyjcFiVjLmf45wgZ9hv1MOkh77AdzGvP0Bvu52F28OTfLpnlxRkTfP6wDOTfvooN+in+Ddu5+EGQ=
+X-Received: by 2002:a9d:6c0e:: with SMTP id f14mr22577236otq.6.1566332769966; 
+ Tue, 20 Aug 2019 13:26:09 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190814142918.11636-1-narmstrong@baylibre.com>
- <20190814142918.11636-13-narmstrong@baylibre.com>
-In-Reply-To: <20190814142918.11636-13-narmstrong@baylibre.com>
+ <20190814142918.11636-8-narmstrong@baylibre.com>
+In-Reply-To: <20190814142918.11636-8-narmstrong@baylibre.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 20 Aug 2019 22:25:22 +0200
-Message-ID: <CAFBinCCJPm+FjMTK+-Qik4x-UtLibH3FTozHG8gMet0e5Rf9bg@mail.gmail.com>
-Subject: Re: [PATCH 12/14] arm64: dts: meson-gxbb-nanopi-k2: add missing model
+Date: Tue, 20 Aug 2019 22:25:59 +0200
+Message-ID: <CAFBinCC9LS+-tM80d8EeyhwUJhV65h11e-M8J6UVy1iE1aD9Kg@mail.gmail.com>
+Subject: Re: [PATCH 07/14] arm64: dts: meson-gx: fix periphs bus node name
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_132533_813633_10130BE3 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20190820_132610_772775_08F4B730 
+X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (martin.blumenstingl[at]googlemail.com)
@@ -100,27 +101,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 14, 2019 at 4:33 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+On Wed, Aug 14, 2019 at 4:32 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
 > This fixes the following DT schemas check errors:
-> meson-gxbb-nanopi-k2.dt.yaml: /: 'model' is a required property
+> meson-gxbb-nanopi-k2.dt.yaml: periphs@c8834000: $nodename:0: 'periphs@c8834000' does not match '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
+> meson-gxl-s805x-libretech-ac.dt.yaml: periphs@c8834000: $nodename:0: 'periphs@c8834000' does not match '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
 >
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> ---
->  arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts | 1 +
->  1 file changed, 1 insertion(+)
->
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
-> index c34c1c90ccb6..1a36d2bd2d21 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
-> @@ -10,6 +10,7 @@
->
->  / {
->         compatible = "friendlyarm,nanopi-k2", "amlogic,meson-gxbb";
-> +       model = "Nanopi K2";
-this should be "FriendlyARM NanoPi K2" to be consistent with other
-boards (for example meson-gxbb-odroidc2.dts)
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
