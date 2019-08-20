@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A76D596332
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 16:55:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C0B196330
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 16:54:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gymjF+Gu94UNYw5ReTDDTxP4rn6mIMlW834W16ayt9Q=; b=A+XRMuUbr7+s2+
-	0RnWhdZ0Ar9ewQdBcDppB3IYHKa3OdBoKAubftZW4akZbBHjGCRKWdWEA4Vqh952b0Tu5zMzN7iEI
-	Ksog6/vV7NfmKZYg7EuAQijsb0FeX0EB2yXOH6zGFrD2/ijYSjJAWPY2M6JXyB84469wJL3Y9KPoD
-	/OF1WvvBpmORTE6/krj1sJRCGt0XNNq98DcQYos+a1Vzwqtwm6+BPGYqGpsobZ7UlgM5q330EprLp
-	gazQBNLzNPyhdqoapHMkjO5UuzpFdU9B6RUuOFENP0iJ2WkltF6PCDqrrupD7x1ozL5SNpbUkqaV3
-	o2h3zeypLObZ2E5dfWDA==;
+	List-Owner; bh=btTTzfSxdZcsC2we6DOZgR3GsDecG3IAY+diYn9hNpM=; b=MaOFkP5AmgwivZ
+	0bs09gf8LSleN09NNceZgS2B1GNyjK67+5Egce3GTmO92/J6DHfYX2+SC2puBdqYKs6uHVDv+wjMc
+	gNwzWGj5sRK8ZjWjOwpuraNc7ih2nlgvMNygIaG2BkLsYiNwvKfylnpDrJpeA/ce3GS/b1DvV1Vkq
+	4HcacLEG7OJEdi0BqfH4M/od1FnxaWTWEbY1w68JrZl00fCQDGYzfnMtuR7j04cM6db3X5/TMOTWA
+	fV5jlOUNGcmaAwIv2GCXZQx+v9OR3IGnrxbhaChAZ8TEPjccDg3YrUvMWrc9CxoXbPAxFrQ6+U+mu
+	nq2iwnnxsHgyJ1JYEyOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i05XS-00020K-9a; Tue, 20 Aug 2019 14:55:11 +0000
+	id 1i05XA-0001lS-9u; Tue, 20 Aug 2019 14:54:52 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i05W7-00013S-J6
+ id 1i05W7-00013T-TK
  for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 14:53:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1566312826; bh=BmUD9BF7ZWHwfIwmCa4uNboL8E51kehruNiRWEgChOs=;
+ t=1566312826; bh=fJp1/iHxqT8rIRrQhM5u30ZJqn3FLJCfRTqKNHdiDpk=;
  h=From:To:Cc:Subject:Date:References:From;
- b=YlHw2Dihm2NXzNp1zXkFKZN/lDdmrVAGr6ZDu+rY6O6dYeqmdgN0A83O/0NDFzmTa
- MwI3Lq5KMIkfmJzFuQPpfM1Q/zoE9oTxK8lsvn+/6iD+bOjPtAe8y5kVFdMvOwXQqw
- +2gulGYP98IVdqI8xiM7wtztu84yRSq4lyKyiv4s=
+ b=OUSQL0xWoyyXiFXG3/LwHN+ZkRJ0/NRPLbNEZ28F4MzGzDOMyvlvwINEM5mFJYNBR
+ be7A368YMVBuW/BTSfCfJpd3WPAJFNcr60QlNdWdrKPxhUsesiBpVmvMoqsy48u2/Q
+ a46vrrjCQAzAMqZWEPxmeFnRIKmjGU0LoyfmSZ0s=
 From: megous@megous.com
 To: "David S. Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, Maxime Ripard <mripard@kernel.org>,
@@ -36,16 +36,16 @@ To: "David S. Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>,
  Alexandre Torgue <alexandre.torgue@st.com>,
  Jose Abreu <joabreu@synopsys.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Subject: [PATCH 3/6] net: stmmac: sun8i: Use devm_regulator_get for PHY
- regulator
-Date: Tue, 20 Aug 2019 16:53:40 +0200
-Message-Id: <20190820145343.29108-4-megous@megous.com>
+Subject: [PATCH 4/6] net: stmmac: sun8i: Rename PHY regulator variable to
+ regulator_phy
+Date: Tue, 20 Aug 2019 16:53:41 +0200
+Message-Id: <20190820145343.29108-5-megous@megous.com>
 In-Reply-To: <20190820145343.29108-1-megous@megous.com>
 References: <20190820145343.29108-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_075347_798340_57B5BC1A 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20190820_075348_274500_BEAA9494 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -81,72 +81,83 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-Use devm_regulator_get instead of devm_regulator_get_optional and rely
-on dummy supply. This avoids NULL checks before regulator_enable/disable
-calls.
-
-This path also improves error reporting, because we now report both
-use of dummy supply and error during registration with more detail,
-instead of generic info level message "No regulator found" that
-was reported previously on errors and lack of regulator property in DT.
-
-Finally, we'll be adding further optional regulators, and the overall
-code will be simpler.
+We'll be adding further optional regulators, and this makes it clearer
+what the regulator is for.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- .../net/ethernet/stmicro/stmmac/dwmac-sun8i.c | 23 ++++++++-----------
- 1 file changed, 10 insertions(+), 13 deletions(-)
+ .../net/ethernet/stmicro/stmmac/dwmac-sun8i.c | 32 ++++++++++---------
+ 1 file changed, 17 insertions(+), 15 deletions(-)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
-index 4083019c547a..3e951a11aec3 100644
+index 3e951a11aec3..e7df30d3cab1 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
-@@ -528,12 +528,10 @@ static int sun8i_dwmac_init(struct platform_device *pdev, void *priv)
+@@ -57,19 +57,21 @@ struct emac_variant {
+ };
+ 
+ /* struct sunxi_priv_data - hold all sunxi private data
+- * @tx_clk:	reference to MAC TX clock
+- * @ephy_clk:	reference to the optional EPHY clock for the internal PHY
+- * @regulator:	reference to the optional regulator
+- * @rst_ephy:	reference to the optional EPHY reset for the internal PHY
+- * @variant:	reference to the current board variant
+- * @regmap:	regmap for using the syscon
+- * @internal_phy_powered: Does the internal PHY is enabled
+- * @mux_handle:	Internal pointer used by mdio-mux lib
++ * @tx_clk:			reference to MAC TX clock
++ * @ephy_clk:			reference to the optional EPHY clock for
++ *				the internal PHY
++ * @regulator_phy:		reference to the optional regulator
++ * @rst_ephy:			reference to the optional EPHY reset for
++ *				the internal PHY
++ * @variant:			reference to the current board variant
++ * @regmap:			regmap for using the syscon
++ * @internal_phy_powered:	Does the internal PHY is enabled
++ * @mux_handle:			Internal pointer used by mdio-mux lib
+  */
+ struct sunxi_priv_data {
+ 	struct clk *tx_clk;
+ 	struct clk *ephy_clk;
+-	struct regulator *regulator;
++	struct regulator *regulator_phy;
+ 	struct reset_control *rst_ephy;
+ 	const struct emac_variant *variant;
+ 	struct regmap_field *regmap_field;
+@@ -528,9 +530,9 @@ static int sun8i_dwmac_init(struct platform_device *pdev, void *priv)
  	struct sunxi_priv_data *gmac = priv;
  	int ret;
  
--	if (gmac->regulator) {
--		ret = regulator_enable(gmac->regulator);
--		if (ret) {
--			dev_err(&pdev->dev, "Fail to enable regulator\n");
--			return ret;
--		}
-+	ret = regulator_enable(gmac->regulator);
-+	if (ret) {
-+		dev_err(&pdev->dev, "Fail to enable regulator\n");
-+		return ret;
+-	ret = regulator_enable(gmac->regulator);
++	ret = regulator_enable(gmac->regulator_phy);
+ 	if (ret) {
+-		dev_err(&pdev->dev, "Fail to enable regulator\n");
++		dev_err(&pdev->dev, "Fail to enable PHY regulator\n");
+ 		return ret;
  	}
  
- 	ret = clk_prepare_enable(gmac->tx_clk);
-@@ -992,8 +990,7 @@ static void sun8i_dwmac_exit(struct platform_device *pdev, void *priv)
+@@ -990,7 +992,7 @@ static void sun8i_dwmac_exit(struct platform_device *pdev, void *priv)
  
  	clk_disable_unprepare(gmac->tx_clk);
  
--	if (gmac->regulator)
--		regulator_disable(gmac->regulator);
-+	regulator_disable(gmac->regulator);
+-	regulator_disable(gmac->regulator);
++	regulator_disable(gmac->regulator_phy);
  }
  
  static void sun8i_dwmac_set_mac_loopback(void __iomem *ioaddr, bool enable)
-@@ -1129,12 +1126,12 @@ static int sun8i_dwmac_probe(struct platform_device *pdev)
+@@ -1126,9 +1128,9 @@ static int sun8i_dwmac_probe(struct platform_device *pdev)
  	}
  
  	/* Optional regulator for PHY */
--	gmac->regulator = devm_regulator_get_optional(dev, "phy");
-+	gmac->regulator = devm_regulator_get(dev, "phy");
- 	if (IS_ERR(gmac->regulator)) {
--		if (PTR_ERR(gmac->regulator) == -EPROBE_DEFER)
--			return -EPROBE_DEFER;
--		dev_info(dev, "No regulator found\n");
--		gmac->regulator = NULL;
-+		ret = PTR_ERR(gmac->regulator);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(dev, "Failed to get PHY regulator (%d)\n", ret);
-+		return ret;
- 	}
- 
- 	/* The "GMAC clock control" register might be located in the
+-	gmac->regulator = devm_regulator_get(dev, "phy");
+-	if (IS_ERR(gmac->regulator)) {
+-		ret = PTR_ERR(gmac->regulator);
++	gmac->regulator_phy = devm_regulator_get(dev, "phy");
++	if (IS_ERR(gmac->regulator_phy)) {
++		ret = PTR_ERR(gmac->regulator_phy);
+ 		if (ret != -EPROBE_DEFER)
+ 			dev_err(dev, "Failed to get PHY regulator (%d)\n", ret);
+ 		return ret;
 -- 
 2.22.1
 
