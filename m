@@ -2,103 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DC2D95528
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 05:26:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 297A795533
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 05:35:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RY0z94zOSvi0fjWL/LRB6hrBSNcZ1X2kqJmq9VpsgJI=; b=mzdKA5nTOu2rOq
-	xvDJmtLVwo9WQzydi6ecpyhl/ov3BPW18BcmMEPH3jkQqTQGYs9Z+7pRiIxKvv5HnmZYe5hmpapuF
-	2kr96hUSwdNHokjKVLTkRL8qGRRiwpBiDe3TJZoLvDrJ/IpCoxxnzaokWr8c07h5Tt2Oel0geR75M
-	apZmKj+y3XW5U6vokorGgN5xoBPsrA0a22Cd/KpjBsivWLppIIy2gJc0dlGyV0WMFLFMMxGvcQogh
-	jYNC/E2FanEv+Vj0D6kyTWd80hRYmYfr3TyPwKPtn8dQa77fqtWM8JcpggdfvIBrmbSGvEZXC1XXu
-	zEljhpVqE6hTdJ9tDq1Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lIYDASzOx3xBPIui9KK+5EsmmsaYinnYo/8ut511d7Y=; b=R5qliULLqImjFn
+	TlFHDcq8mKFB515m7wCBk2CpQLHRJwtf3ZcQLz+M821q0avBSl44wEUOzWg0az4qoSWxfR3qOyX9P
+	aGlit0TUyR9qYOOOHkt9xO9h+8KDKrDqhY63h75rC6AURa317eBQ4PQz2PRIKRSEKuF0pgAQByV2j
+	UBgnZOPnm/EJc5ZTA0xj68rAVvRIiI0/ySAAEzbd9mqBgfhC28utLIpg6fyT/5+0Nq4JHO8IrP6y3
+	CxBtL57Zvdjbvcdrb8/ShNhq8Cv6TEgt/6Z35XzUD8oHStNKHCkHdpqip0v618S2e2PtGFyWcRgxG
+	Iz60VgeGen74hIGfmcrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzumm-0006Zk-Kk; Tue, 20 Aug 2019 03:26:16 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1hzuvJ-0000pe-JC; Tue, 20 Aug 2019 03:35:05 +0000
+Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
+ helo=mx2.mailbox.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzujv-00034u-OM
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 03:23:22 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id 234313536;
- Mon, 19 Aug 2019 23:23:19 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute5.internal (MEProxy); Mon, 19 Aug 2019 23:23:19 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=43b9Z0w2/sueU
- Lbuz+zMR9jc90HTmmnqAVIiMUenoB4=; b=zr/QsYb7GW02BBon48QgyvHZFGFmJ
- AhRSb2wPmN/9eN7aCVTUYiBvaAR/3Jx9mYnSqRD27fiAuy0lHRCArbCRlOepDAmD
- PQV+ML9pdFYfAcpjzB5LFlvdplqUVbUOrKgnmGFF30WmHKOoqkKsbMJ5kwoLCKWM
- eGlspU8+IFA251/p8EfBV3WFZWkhPBhWNThpvzV+5L/C3YsCXKtkk0da5yXBcqrf
- CrTVLAVn4z4pNcTUSBW8FB2jlmuLdlzZsMRr8tD+94T/05i3Yed17AXRQ0q/tQDT
- /ZYuMk+wLgh4b4yEJ7sBX2c3QKBkn3bb9gh3IV/dLNJlriZttipMAB++g==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=43b9Z0w2/sueULbuz+zMR9jc90HTmmnqAVIiMUenoB4=; b=G1/LcdY1
- mepSW5OoCYBnm/dkEwBGJiXGordmGRP8MTUnEcgVSxH6sKdi+g8AxT4Ez2FJ426q
- hGk6/2npLayNMvVpxYEzU4VlGLL/YTyO2TdVcEFCmGg4dwDz09YhMOHuzJ+7Kxth
- +b1DGWbE0+Ami+pLwvpguyRjGEfTUQBUh1XOpRprvjHrCnwHRnpXQ1DfxsJbF5RG
- 7wBlwCjZsJkJ0Ln3Z4FdwavKpdS0ansetqLzY1U9KIFOJdj3RSnEwEJ99kQ+G4SM
- btwcj5VpNMF0WuGMIiwBaIX3c9ue5U0M1vDB2P9Psp3K4gJ8cLnh5pkQ5Qek8/5r
- czR7tt6Wkr/OlA==
-X-ME-Sender: <xms:pmdbXfEexxX7CxiFXxRfSYB9MFWmWf3Z56-3Sgi9ws2buNwjzYhFgQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudegtddgjeegucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgv
- lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucffoh
- hmrghinhepghhithhhuhgsrdgtohhmnecukfhppeejtddrudefhedrudegkedrudehuden
- ucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
- enucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:pmdbXYsyofB8SopFw2iujTzsyMWYY8aZmjHpJ97XfQD72b3TNfA5pA>
- <xmx:pmdbXVn46qxXRojU9qfy_AFoEtDZwbB2zKtqEhykSVcLWCgm0tE-gw>
- <xmx:pmdbXbPIbGJgN-k36-y0iJefwKEjVbybaRCh8FkUqpazxNSSHc5D_Q>
- <xmx:p2dbXUdjDzuGT2yM0xczGpLEH-VQDM1cFJgjuf5C2Y61xa0cM0J5qQ>
-Received: from titanium.stl.sholland.net
- (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 0E8DB80059;
- Mon, 19 Aug 2019 23:23:18 -0400 (EDT)
-From: Samuel Holland <samuel@sholland.org>
-To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Jassi Brar <jassisinghbrar@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Corentin Labbe <clabbe.montjoie@gmail.com>,
- Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: [PATCH v4 10/10] [DO NOT MERGE] drivers: firmware: msgbox demo
-Date: Mon, 19 Aug 2019 22:23:11 -0500
-Message-Id: <20190820032311.6506-11-samuel@sholland.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190820032311.6506-1-samuel@sholland.org>
-References: <20190820032311.6506-1-samuel@sholland.org>
+ id 1hzuv5-0000oI-8y
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 03:34:54 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 48140A1638;
+ Tue, 20 Aug 2019 05:34:43 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
+ [80.241.56.123]) (amavisd-new, port 10030)
+ with ESMTP id N1m8x2icF4On; Tue, 20 Aug 2019 05:34:31 +0200 (CEST)
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Al Viro <viro@zeniv.linux.org.uk>, Jeff Layton <jlayton@kernel.org>,
+ "J. Bruce Fields" <bfields@fieldses.org>, Arnd Bergmann <arnd@arndb.de>,
+ David Howells <dhowells@redhat.com>, Shuah Khan <shuah@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>
+Subject: [PATCH RESEND v11 0/8] openat2(2)
+Date: Tue, 20 Aug 2019 13:33:58 +1000
+Message-Id: <20190820033406.29796-1-cyphar@cyphar.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_202320_010712_B735BF7C 
-X-CRM114-Status: GOOD (  19.45  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190819_203451_620139_31729CF4 
+X-CRM114-Status: GOOD (  18.90  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.229 listed in list.dnswl.org]
+ low trust [2001:67c:2050:104:0:2:25:2 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,449 +67,223 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Samuel Holland <samuel@sholland.org>,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexei Starovoitov <ast@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ linux-kselftest@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ Aleksa Sarai <cyphar@cyphar.com>, Andy Lutomirski <luto@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ linux-parisc@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
+ linux-api@vger.kernel.org, containers@lists.linux-foundation.org,
+ linux-kernel@vger.kernel.org, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Chanho Min <chanho.min@lge.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This driver provides a trivial mailbox client that can be used with the
-mailbox-demo branch of https://github.com/crust-firmware/crust for
-verifying the functionality of the sunxi-msgbox driver.
+This patchset is being developed here:
+    <https://github.com/cyphar/linux/tree/resolveat/master>
 
-This is not a "real" driver, nor a "real" firmware protocol. This driver
-is not intended to be merged. It is provided only as an example that
-won't interfere with any other hardware.
+Patch changelog:
+ v11: [RESEND: <https://lore.kernel.org/lkml/20190728010207.9781-1-cyphar@cyphar.com/>]
+    * Fix checkpatch.pl errors and warnings where reasonable.
+    * Minor cleanup to pr_warn logging for may_open_magiclink().
+    * Drop kselftests patch to handle %m formatting correctly, and send
+      it through the kselftests tree directly. [Shuah Khan]
+ v10: <https://lore.kernel.org/lkml/20190719164225.27083-1-cyphar@cyphar.com/>
+ v09: <https://lore.kernel.org/lkml/20190706145737.5299-1-cyphar@cyphar.com/>
+ v08: <https://lore.kernel.org/lkml/20190520133305.11925-1-cyphar@cyphar.com/>
+ v07: <https://lore.kernel.org/lkml/20190507164317.13562-1-cyphar@cyphar.com/>
+ v06: <https://lore.kernel.org/lkml/20190506165439.9155-1-cyphar@cyphar.com/>
+ v05: <https://lore.kernel.org/lkml/20190320143717.2523-1-cyphar@cyphar.com/>
+ v04: <https://lore.kernel.org/lkml/20181112142654.341-1-cyphar@cyphar.com/>
+ v03: <https://lore.kernel.org/lkml/20181009070230.12884-1-cyphar@cyphar.com/>
+ v02: <https://lore.kernel.org/lkml/20181009065300.11053-1-cyphar@cyphar.com/>
+ v01: <https://lore.kernel.org/lkml/20180929103453.12025-1-cyphar@cyphar.com/>
 
-Signed-off-by: Samuel Holland <samuel@sholland.org>
----
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi |  24 ++
- arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi  |  24 ++
- drivers/firmware/Kconfig                      |   6 +
- drivers/firmware/Makefile                     |   1 +
- drivers/firmware/sunxi_msgbox_demo.c          | 310 ++++++++++++++++++
- 5 files changed, 365 insertions(+)
- create mode 100644 drivers/firmware/sunxi_msgbox_demo.c
+The need for some sort of control over VFS's path resolution (to avoid
+malicious paths resulting in inadvertent breakouts) has been a very
+long-standing desire of many userspace applications. This patchset is a
+revival of Al Viro's old AT_NO_JUMPS[1,2] patchset (which was a variant
+of David Drysdale's O_BENEATH patchset[3] which was a spin-off of the
+Capsicum project[4]) with a few additions and changes made based on the
+previous discussion within [5] as well as others I felt were useful.
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 428f539a091a..78315d5512db 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -121,6 +121,30 @@
- 		};
- 	};
- 
-+	demo_0 {
-+		compatible = "allwinner,sunxi-msgbox-demo";
-+		mboxes = <&msgbox 0>, <&msgbox 1>;
-+		mbox-names = "tx", "rx";
-+	};
-+
-+	demo_1 {
-+		compatible = "allwinner,sunxi-msgbox-demo";
-+		mboxes = <&msgbox 2>, <&msgbox 3>;
-+		mbox-names = "tx", "rx";
-+	};
-+
-+	demo_2 {
-+		compatible = "allwinner,sunxi-msgbox-demo";
-+		mboxes = <&msgbox 4>, <&msgbox 5>;
-+		mbox-names = "tx", "rx";
-+	};
-+
-+	demo_3 {
-+		compatible = "allwinner,sunxi-msgbox-demo";
-+		mboxes = <&msgbox 6>, <&msgbox 7>;
-+		mbox-names = "tx", "rx";
-+	};
-+
- 	de: display-engine {
- 		compatible = "allwinner,sun50i-a64-display-engine";
- 		allwinner,pipelines = <&mixer0>,
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-index f002a496d7cb..5a2d85b7e0a1 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-@@ -76,6 +76,30 @@
- 		};
- 	};
- 
-+	demo_0 {
-+		compatible = "allwinner,sunxi-msgbox-demo";
-+		mboxes = <&msgbox 0>, <&msgbox 1>;
-+		mbox-names = "tx", "rx";
-+	};
-+
-+	demo_1 {
-+		compatible = "allwinner,sunxi-msgbox-demo";
-+		mboxes = <&msgbox 2>, <&msgbox 3>;
-+		mbox-names = "tx", "rx";
-+	};
-+
-+	demo_2 {
-+		compatible = "allwinner,sunxi-msgbox-demo";
-+		mboxes = <&msgbox 4>, <&msgbox 5>;
-+		mbox-names = "tx", "rx";
-+	};
-+
-+	demo_3 {
-+		compatible = "allwinner,sunxi-msgbox-demo";
-+		mboxes = <&msgbox 6>, <&msgbox 7>;
-+		mbox-names = "tx", "rx";
-+	};
-+
- 	psci {
- 		compatible = "arm,psci-0.2";
- 		method = "smc";
-diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
-index ba8d3d0ef32c..e0f8f3c856c1 100644
---- a/drivers/firmware/Kconfig
-+++ b/drivers/firmware/Kconfig
-@@ -240,6 +240,12 @@ config QCOM_SCM_DOWNLOAD_MODE_DEFAULT
- 
- 	  Say Y here to enable "download mode" by default.
- 
-+config SUNXI_MSGBOX_DEMO
-+	tristate "sunxi msgbox demo"
-+	depends on MAILBOX
-+	help
-+	  Demo client for demo firmware to use in mailbox driver validation.
-+
- config TI_SCI_PROTOCOL
- 	tristate "TI System Control Interface (TISCI) Message Protocol"
- 	depends on TI_MESSAGE_MANAGER
-diff --git a/drivers/firmware/Makefile b/drivers/firmware/Makefile
-index 3fa0b34eb72f..6f8e17a854b6 100644
---- a/drivers/firmware/Makefile
-+++ b/drivers/firmware/Makefile
-@@ -20,6 +20,7 @@ obj-$(CONFIG_QCOM_SCM)		+= qcom_scm.o
- obj-$(CONFIG_QCOM_SCM_64)	+= qcom_scm-64.o
- obj-$(CONFIG_QCOM_SCM_32)	+= qcom_scm-32.o
- CFLAGS_qcom_scm-32.o :=$(call as-instr,.arch armv7-a\n.arch_extension sec,-DREQUIRES_SEC=1) -march=armv7-a
-+obj-$(CONFIG_SUNXI_MSGBOX_DEMO)	+= sunxi_msgbox_demo.o
- obj-$(CONFIG_TI_SCI_PROTOCOL)	+= ti_sci.o
- obj-$(CONFIG_TRUSTED_FOUNDATIONS) += trusted_foundations.o
- 
-diff --git a/drivers/firmware/sunxi_msgbox_demo.c b/drivers/firmware/sunxi_msgbox_demo.c
-new file mode 100644
-index 000000000000..9431b1ef1841
---- /dev/null
-+++ b/drivers/firmware/sunxi_msgbox_demo.c
-@@ -0,0 +1,310 @@
-+// SPDX-License-Identifier: GPL-2.0
-+//
-+// Copyright (c) 2018-2019 Samuel Holland <samuel@sholland.org>
-+
-+#include <linux/completion.h>
-+#include <linux/mailbox_client.h>
-+#include <linux/module.h>
-+#include <linux/of_platform.h>
-+#include <linux/random.h>
-+
-+enum {
-+	OP_MAGIC,
-+	OP_VERSION,
-+	OP_LOOPBACK,
-+	OP_LOOPBACK_INVERTED,
-+	OP_TIME_SECONDS,
-+	OP_TIME_TICKS,
-+	OP_DELAY_MICROS,
-+	OP_DELAY_MILLIS,
-+	OP_ADDR_SET_LO,
-+	OP_ADDR_SET_HI,
-+	OP_ADDR_READ,
-+	OP_ADDR_WRITE,
-+	OP_INVALID_1,
-+	OP_INVALID_2,
-+	OP_RESET = 16,
-+};
-+
-+struct msgbox_demo {
-+	struct mbox_chan *rx_chan;
-+	struct mbox_chan *tx_chan;
-+	struct mbox_client cl;
-+	struct completion completion;
-+	uint32_t request;
-+	uint32_t response;
-+	uint32_t address;
-+	uint32_t value;
-+};
-+
-+static void msgbox_demo_rx(struct mbox_client *cl, void *msg)
-+{
-+	struct msgbox_demo *demo = container_of(cl, struct msgbox_demo, cl);
-+
-+	demo->response = *(uint32_t *)msg;
-+	complete(&demo->completion);
-+}
-+
-+static int msgbox_demo_tx(struct msgbox_demo *demo, uint32_t request)
-+{
-+	unsigned long timeout = msecs_to_jiffies(10);
-+	int ret;
-+
-+	demo->request  = request;
-+	demo->response = 0;
-+	reinit_completion(&demo->completion);
-+
-+	ret = mbox_send_message(demo->tx_chan, &demo->request);
-+	if (ret < 0) {
-+		dev_err(demo->cl.dev, "Failed to send request: %d\n", ret);
-+		return ret;
-+	}
-+
-+	if (wait_for_completion_timeout(&demo->completion, timeout))
-+		return 0;
-+
-+	return -ETIMEDOUT;
-+}
-+
-+static void msgbox_demo_do_operation(struct msgbox_demo *demo, uint16_t op)
-+{
-+	struct device *dev = demo->cl.dev;
-+	uint16_t data = 0;
-+	uint32_t resp = 0;
-+	int exp = 0;
-+	int ret;
-+
-+	switch (op) {
-+	case OP_MAGIC:
-+		resp = 0x1a2a3a4a;
-+		break;
-+	case OP_LOOPBACK:
-+		data = get_random_u32();
-+		resp = data;
-+		break;
-+	case OP_LOOPBACK_INVERTED:
-+		data = get_random_u32();
-+		resp = ~data;
-+		break;
-+	case OP_DELAY_MICROS:
-+		data = 25000;
-+		exp  = -ETIMEDOUT;
-+		break;
-+	case OP_DELAY_MILLIS:
-+		data = 500;
-+		exp  = -ETIMEDOUT;
-+		break;
-+	case OP_ADDR_SET_LO:
-+		data = demo->address & 0xffff;
-+		resp = demo->address;
-+		break;
-+	case OP_ADDR_SET_HI:
-+		data = demo->address >> 16;
-+		break;
-+	case OP_ADDR_WRITE:
-+		data = demo->value;
-+		resp = demo->value;
-+		break;
-+	case OP_INVALID_1:
-+	case OP_INVALID_2:
-+		resp = -1U;
-+		break;
-+	case OP_RESET:
-+		exp  = -ETIMEDOUT;
-+		break;
-+	}
-+
-+	dev_info(demo->cl.dev, "Sending opcode %d, data 0x%08x\n", op, data);
-+	ret = msgbox_demo_tx(demo, op << 16 | data);
-+
-+	if (ret) {
-+		/* Nothing was received. */
-+		if (exp)
-+			dev_info(dev, "No response received, as expected\n");
-+		else
-+			dev_err(dev, "Timeout receiving response\n");
-+		return;
-+	}
-+
-+	/* Something was received. */
-+	if (exp)
-+		dev_err(dev, "Unexpected response 0x%08x\n", demo->response);
-+	else if (!resp)
-+		dev_info(dev, "Received response 0x%08x\n", demo->response);
-+	else if (demo->response == resp)
-+		dev_info(dev, "Good response 0x%08x\n", resp);
-+	else
-+		dev_err(dev, "Expected 0x%08x, received 0x%08x\n",
-+			     resp, demo->response);
-+}
-+
-+ssize_t demo_address_show(struct device *dev, struct device_attribute *attr,
-+			  char *buf)
-+{
-+	struct msgbox_demo *demo = dev_get_drvdata(dev);
-+
-+	return sprintf(buf, "%08x\n", demo->address);
-+}
-+
-+static ssize_t demo_address_store(struct device *dev,
-+				  struct device_attribute *attr,
-+				  const char *buf, size_t count)
-+{
-+	struct msgbox_demo *demo = dev_get_drvdata(dev);
-+	uint32_t val;
-+
-+	if (sscanf(buf, "%x", &val)) {
-+		demo->address = val;
-+		msgbox_demo_do_operation(demo, OP_ADDR_SET_HI);
-+		msgbox_demo_do_operation(demo, OP_ADDR_SET_LO);
-+		return count;
-+	}
-+
-+	return 0;
-+}
-+
-+ssize_t demo_value_show(struct device *dev, struct device_attribute *attr,
-+			char *buf)
-+{
-+	struct msgbox_demo *demo = dev_get_drvdata(dev);
-+
-+	msgbox_demo_do_operation(demo, OP_ADDR_READ);
-+	demo->value = demo->response;
-+
-+	return sprintf(buf, "%08x\n", demo->value);
-+}
-+
-+static ssize_t demo_value_store(struct device *dev,
-+				struct device_attribute *attr,
-+				const char *buf, size_t count)
-+{
-+	struct msgbox_demo *demo = dev_get_drvdata(dev);
-+	int16_t val;
-+
-+	if (sscanf(buf, "%hx", &val)) {
-+		demo->value = (int32_t)val;
-+		msgbox_demo_do_operation(demo, OP_ADDR_WRITE);
-+		return count;
-+	}
-+
-+	return 0;
-+}
-+
-+static ssize_t demo_operation_store(struct device *dev,
-+				    struct device_attribute *attr,
-+				    const char *buf, size_t count)
-+{
-+	struct msgbox_demo *demo = dev_get_drvdata(dev);
-+	uint16_t val;
-+
-+	if (sscanf(buf, "%hu", &val)) {
-+		msgbox_demo_do_operation(demo, val);
-+		return count;
-+	}
-+
-+	return 0;
-+}
-+
-+static DEVICE_ATTR(demo_address,   0644, demo_address_show, demo_address_store);
-+static DEVICE_ATTR(demo_value,     0644, demo_value_show,   demo_value_store);
-+static DEVICE_ATTR(demo_operation, 0200, NULL,              demo_operation_store);
-+
-+static int msgbox_demo_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct device_attribute *attr;
-+	struct msgbox_demo *demo;
-+	int ret;
-+
-+	demo = devm_kzalloc(dev, sizeof(*demo), GFP_KERNEL);
-+	if (!demo)
-+		return -ENOMEM;
-+
-+	demo->cl.dev         = dev;
-+	demo->cl.rx_callback = msgbox_demo_rx;
-+
-+	if (of_get_property(dev->of_node, "mbox-names", NULL)) {
-+		demo->rx_chan = mbox_request_channel_byname(&demo->cl, "rx");
-+		if (IS_ERR(demo->rx_chan)) {
-+			ret = PTR_ERR(demo->rx_chan);
-+			dev_err(dev, "Failed to request rx mailbox channel\n");
-+			goto err;
-+		}
-+		demo->tx_chan = mbox_request_channel_byname(&demo->cl, "tx");
-+		if (IS_ERR(demo->tx_chan)) {
-+			ret = PTR_ERR(demo->tx_chan);
-+			dev_err(dev, "Failed to request tx mailbox channel\n");
-+			goto err_free_rx_chan;
-+		}
-+	} else {
-+		demo->rx_chan = mbox_request_channel(&demo->cl, 0);
-+		demo->tx_chan = demo->rx_chan;
-+		if (IS_ERR(demo->tx_chan)) {
-+			ret = PTR_ERR(demo->tx_chan);
-+			dev_err(dev, "Failed to request mailbox channel\n");
-+			goto err;
-+		}
-+	}
-+
-+	attr = &dev_attr_demo_address;
-+	ret = device_create_file(dev, attr);
-+	if (ret)
-+		goto err_creating_files;
-+	attr = &dev_attr_demo_value;
-+	ret = device_create_file(dev, attr);
-+	if (ret)
-+		goto err_creating_files;
-+	attr = &dev_attr_demo_operation;
-+	ret = device_create_file(dev, attr);
-+	if (ret)
-+		goto err_creating_files;
-+
-+	init_completion(&demo->completion);
-+
-+	platform_set_drvdata(pdev, demo);
-+
-+	msgbox_demo_do_operation(demo, OP_VERSION);
-+
-+	return 0;
-+
-+err_creating_files:
-+	dev_err(dev, "Failed to create sysfs attribute %s: %d\n",
-+		attr->attr.name, ret);
-+	if (demo->tx_chan != demo->rx_chan)
-+		mbox_free_channel(demo->tx_chan);
-+err_free_rx_chan:
-+	mbox_free_channel(demo->rx_chan);
-+err:
-+	return ret;
-+}
-+
-+static int msgbox_demo_remove(struct platform_device *pdev)
-+{
-+	struct msgbox_demo *demo = platform_get_drvdata(pdev);
-+
-+	if (demo->tx_chan != demo->rx_chan)
-+		mbox_free_channel(demo->tx_chan);
-+	mbox_free_channel(demo->rx_chan);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id msgbox_demo_of_match[] = {
-+	{ .compatible = "allwinner,sunxi-msgbox-demo" },
-+	{},
-+};
-+MODULE_DEVICE_TABLE(of, msgbox_demo_of_match);
-+
-+static struct platform_driver msgbox_demo_driver = {
-+	.driver = {
-+		.name = KBUILD_MODNAME,
-+		.of_match_table = msgbox_demo_of_match,
-+	},
-+	.probe  = msgbox_demo_probe,
-+	.remove = msgbox_demo_remove,
-+};
-+module_platform_driver(msgbox_demo_driver);
-+
-+MODULE_AUTHOR("Samuel Holland <samuel@sholland.org>");
-+MODULE_DESCRIPTION("sunxi msgbox demo");
-+MODULE_LICENSE("GPL v2");
+In line with the conclusions of the original discussion of AT_NO_JUMPS,
+the flag has been split up into separate flags. However, instead of
+being an openat(2) flag it is provided through a new syscall openat2(2)
+which provides several other improvements to the openat(2) interface (see the
+patch description for more details). The following new LOOKUP_* flags are
+added:
+
+  * LOOKUP_NO_XDEV blocks all mountpoint crossings (upwards, downwards,
+    or through absolute links). Absolute pathnames alone in openat(2) do
+    not trigger this.
+
+  * LOOKUP_NO_MAGICLINKS blocks resolution through /proc/$pid/fd-style
+    links. This is done by blocking the usage of nd_jump_link() during
+    resolution in a filesystem. The term "magic-links" is used to match
+    with the only reference to these links in Documentation/, but I'm
+    happy to change the name.
+
+    It should be noted that this is different to the scope of
+    ~LOOKUP_FOLLOW in that it applies to all path components. However,
+    you can do openat2(NO_FOLLOW|NO_MAGICLINKS) on a magic-link and it
+    will *not* fail (assuming that no parent component was a
+    magic-link), and you will have an fd for the magic-link.
+
+  * LOOKUP_BENEATH disallows escapes to outside the starting dirfd's
+    tree, using techniques such as ".." or absolute links. Absolute
+    paths in openat(2) are also disallowed. Conceptually this flag is to
+    ensure you "stay below" a certain point in the filesystem tree --
+    but this requires some additional to protect against various races
+    that would allow escape using "..".
+
+    Currently LOOKUP_BENEATH implies LOOKUP_NO_MAGICLINKS, because it
+    can trivially beam you around the filesystem (breaking the
+    protection). In future, there might be similar safety checks done as
+    in LOOKUP_IN_ROOT, but that requires more discussion.
+
+In addition, two new flags are added that expand on the above ideas:
+
+  * LOOKUP_NO_SYMLINKS does what it says on the tin. No symlink
+    resolution is allowed at all, including magic-links. Just as with
+    LOOKUP_NO_MAGICLINKS this can still be used with NOFOLLOW to open an
+    fd for the symlink as long as no parent path had a symlink
+    component.
+
+  * LOOKUP_IN_ROOT is an extension of LOOKUP_BENEATH that, rather than
+    blocking attempts to move past the root, forces all such movements
+    to be scoped to the starting point. This provides chroot(2)-like
+    protection but without the cost of a chroot(2) for each filesystem
+    operation, as well as being safe against race attacks that chroot(2)
+    is not.
+
+    If a race is detected (as with LOOKUP_BENEATH) then an error is
+    generated, and similar to LOOKUP_BENEATH it is not permitted to cross
+    magic-links with LOOKUP_IN_ROOT.
+
+    The primary need for this is from container runtimes, which
+    currently need to do symlink scoping in userspace[6] when opening
+    paths in a potentially malicious container. There is a long list of
+    CVEs that could have bene mitigated by having RESOLVE_THIS_ROOT
+    (such as CVE-2017-1002101, CVE-2017-1002102, CVE-2018-15664, and
+    CVE-2019-5736, just to name a few).
+
+And further, several semantics of file descriptor "re-opening" are now
+changed to prevent attacks like CVE-2019-5736 by restricting how
+magic-links can be resolved (based on their mode). This required some
+other changes to the semantics of the modes of O_PATH file descriptor's
+associated /proc/self/fd magic-links. openat2(2) has the ability to
+further restrict re-opening of its own O_PATH fds, so that users can
+make even better use of this feature.
+
+Finally, O_EMPTYPATH was added so that users can do /proc/self/fd-style
+re-opening without depending on procfs. The new restricted semantics for
+magic-links are applied here too.
+
+In order to make all of the above more usable, I'm working on
+libpathrs[7] which is a C-friendly library for safe path resolution. It
+features a userspace-emulated backend if the kernel doesn't support
+openat2(2). Hopefully we can get userspace to switch to using it, and
+thus get openat2(2) support for free once it's ready.
+
+Cc: Al Viro <viro@zeniv.linux.org.uk>
+Cc: Eric Biederman <ebiederm@xmission.com>
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: David Howells <dhowells@redhat.com>
+Cc: Jann Horn <jannh@google.com>
+Cc: Christian Brauner <christian@brauner.io>
+Cc: David Drysdale <drysdale@google.com>
+Cc: Tycho Andersen <tycho@tycho.ws>
+Cc: Kees Cook <keescook@chromium.org>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: <containers@lists.linux-foundation.org>
+Cc: <linux-fsdevel@vger.kernel.org>
+Cc: <linux-api@vger.kernel.org>
+
+[1]: https://lwn.net/Articles/721443/
+[2]: https://lore.kernel.org/patchwork/patch/784221/
+[3]: https://lwn.net/Articles/619151/
+[4]: https://lwn.net/Articles/603929/
+[5]: https://lwn.net/Articles/723057/
+[6]: https://github.com/cyphar/filepath-securejoin
+[7]: https://github.com/openSUSE/libpathrs
+
+Aleksa Sarai (8):
+  namei: obey trailing magic-link DAC permissions
+  procfs: switch magic-link modes to be more sane
+  open: O_EMPTYPATH: procfs-less file descriptor re-opening
+  namei: O_BENEATH-style path resolution flags
+  namei: LOOKUP_IN_ROOT: chroot-like path resolution
+  namei: aggressively check for nd->root escape on ".." resolution
+  open: openat2(2) syscall
+  selftests: add openat2(2) selftests
+
+ Documentation/filesystems/path-lookup.rst     |  12 +-
+ arch/alpha/include/uapi/asm/fcntl.h           |   1 +
+ arch/alpha/kernel/syscalls/syscall.tbl        |   1 +
+ arch/arm/tools/syscall.tbl                    |   1 +
+ arch/arm64/include/asm/unistd.h               |   2 +-
+ arch/arm64/include/asm/unistd32.h             |   2 +
+ arch/ia64/kernel/syscalls/syscall.tbl         |   1 +
+ arch/m68k/kernel/syscalls/syscall.tbl         |   1 +
+ arch/microblaze/kernel/syscalls/syscall.tbl   |   1 +
+ arch/mips/kernel/syscalls/syscall_n32.tbl     |   1 +
+ arch/mips/kernel/syscalls/syscall_n64.tbl     |   1 +
+ arch/mips/kernel/syscalls/syscall_o32.tbl     |   1 +
+ arch/parisc/include/uapi/asm/fcntl.h          |  39 +-
+ arch/parisc/kernel/syscalls/syscall.tbl       |   1 +
+ arch/powerpc/kernel/syscalls/syscall.tbl      |   1 +
+ arch/s390/kernel/syscalls/syscall.tbl         |   1 +
+ arch/sh/kernel/syscalls/syscall.tbl           |   1 +
+ arch/sparc/include/uapi/asm/fcntl.h           |   1 +
+ arch/sparc/kernel/syscalls/syscall.tbl        |   1 +
+ arch/x86/entry/syscalls/syscall_32.tbl        |   1 +
+ arch/x86/entry/syscalls/syscall_64.tbl        |   1 +
+ arch/xtensa/kernel/syscalls/syscall.tbl       |   1 +
+ fs/fcntl.c                                    |   2 +-
+ fs/internal.h                                 |   1 +
+ fs/namei.c                                    | 270 ++++++++++--
+ fs/open.c                                     | 112 ++++-
+ fs/proc/base.c                                |  20 +-
+ fs/proc/fd.c                                  |  23 +-
+ fs/proc/namespaces.c                          |   2 +-
+ include/linux/fcntl.h                         |  17 +-
+ include/linux/fs.h                            |   8 +-
+ include/linux/namei.h                         |   9 +
+ include/linux/syscalls.h                      |  17 +-
+ include/uapi/asm-generic/fcntl.h              |   4 +
+ include/uapi/asm-generic/unistd.h             |   5 +-
+ include/uapi/linux/fcntl.h                    |  42 ++
+ tools/testing/selftests/Makefile              |   1 +
+ tools/testing/selftests/memfd/memfd_test.c    |   7 +-
+ tools/testing/selftests/openat2/.gitignore    |   1 +
+ tools/testing/selftests/openat2/Makefile      |   8 +
+ tools/testing/selftests/openat2/helpers.c     | 162 +++++++
+ tools/testing/selftests/openat2/helpers.h     | 116 +++++
+ .../testing/selftests/openat2/linkmode_test.c | 333 +++++++++++++++
+ .../selftests/openat2/rename_attack_test.c    | 127 ++++++
+ .../testing/selftests/openat2/resolve_test.c  | 402 ++++++++++++++++++
+ 45 files changed, 1655 insertions(+), 107 deletions(-)
+ create mode 100644 tools/testing/selftests/openat2/.gitignore
+ create mode 100644 tools/testing/selftests/openat2/Makefile
+ create mode 100644 tools/testing/selftests/openat2/helpers.c
+ create mode 100644 tools/testing/selftests/openat2/helpers.h
+ create mode 100644 tools/testing/selftests/openat2/linkmode_test.c
+ create mode 100644 tools/testing/selftests/openat2/rename_attack_test.c
+ create mode 100644 tools/testing/selftests/openat2/resolve_test.c
+
 -- 
-2.21.0
+2.22.0
 
 
 _______________________________________________
