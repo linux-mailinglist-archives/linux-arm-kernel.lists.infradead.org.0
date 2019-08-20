@@ -2,55 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41D5596583
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:51:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C10596597
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:53:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gJ8fosLWtuApPhvw69z7gs/HlF5J3OmEA/sMhRjHGZU=; b=FWqk2MuD02jPQ/
-	DT1khaZuOBwDkD9tBisTA++dD34Fs+LD0Te2kaCoFD9oLv8sFAf0b7Fkz+iK/3Z6w3EvEKiXDIFLz
-	yC9IAMo8GXPqiUQ8Fax/WLLhZOZkmQIoj+PBARLic5TwfLo3kkPtGMCHWde0FfOmMJ3fEzgXgXhDl
-	q3fJd/LdzQxZ+iQ2jX7f29Bs3Bdfd1KRJyF6e/isJ61ERW67773iCUKWLj0SuMx2ECTC3/KYsiijB
-	lmXZ/M0Ih0+Z8SlzqUv8IFsbv82b9Y38zpmSrlioCGzp543nhf2XytTWupyC53uHbSWSgkouruNCj
-	2GHpZ5j/gafkPIDwCihA==;
+	List-Owner; bh=bIrhBJOwyczeXZUFGEgFuw3McpWgTi2ppFaa0JgtLgs=; b=YaX3Uk8iQwlWfZ
+	2sTWRlZ8Z+wO0mXm9Y5/W9rkaPM243l8r3qp4GBsQoTFt4cGuyiouGdEss2gfT/k1zxJmbWceg+sX
+	KlpDFFIR3cwXasQhPwueOhJy09TReezPOsDtr5dwXHVhzarmsTzuzONZ850QiyyzJKUeRk6aSdHZh
+	+U58+6Has5d9bNuO0l/3bt9xUuNIlOLKMYHXqRxzw8ypuW1+6l+ZyqfaXqVio2P2P0OcQVzKZIY6I
+	CLV9PfLYt7ZPHWBYvxUAzOaUG5Q4E+1JvG/Sof6BMrgjHUV+kVgUVu7S0t/AGBVhCShm/swOAMDTU
+	wruiFVebzNnExm8z3qDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i06Pd-0004Ci-Lt; Tue, 20 Aug 2019 15:51:09 +0000
+	id 1i06RJ-0004n5-M2; Tue, 20 Aug 2019 15:52:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i06PI-0003xn-Bc
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:50:51 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A2DCB22CE3;
- Tue, 20 Aug 2019 15:50:46 +0000 (UTC)
+ id 1i06R8-0004mf-I7
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:52:43 +0000
+Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
+ [209.85.160.170])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1E9FB2332B
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 15:52:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566316247;
- bh=ANVTtr5Xsou0jrnOGs4/B/GU+B2WDK+TAYrfLomhjio=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=fTQS3qDiX8U9XJEr4PxCXNlFxiDFBAS0nBEFkMdUxA8fn8j7Cm837FD7d4JmjcD1I
- tUCaZ92tiWPS7nJQVToZx3mwggI6hk62RIMxNJ+yP0IgNi0kLC1CXYoWBkSfymA/Kd
- e7OM4Itc9lTjZdoZYaRahocomAdfDh4af8+nErWY=
-Date: Tue, 20 Aug 2019 16:50:43 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 2/4] iommu/io-pgtable-arm: Rationalise TTBRn handling
-Message-ID: <20190820155042.t4a67qhzlglevo5a@willie-the-truck>
-References: <cover.1566238530.git.robin.murphy@arm.com>
- <dbb942070c2ef812e379414c236734931613d860.1566238530.git.robin.murphy@arm.com>
- <20190820101911.ndwtaf76kn3zplk2@willie-the-truck>
- <e644e0f6-4588-56eb-a6e9-7b482e3d228d@arm.com>
+ s=default; t=1566316362;
+ bh=zPFkoWhazwcOswQIN11F8cssHIWjMjC+C4+Eu5Mdx+0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=ORMIJlxQPFacuquMw7UB2DxzpaaTlObm4ySkNhhB/hNiv5/0fvois8SDaC4TfL/uN
+ WL+ih+nxz4DVDaqLRHtNoT57fb+la/+wSGO/Pch8t+HRK08tGpL/+bGSggDTFRfAka
+ KNrnzjF1pNUwWnI/quOFditGLxfVIBDIkedLKuHs=
+Received: by mail-qt1-f170.google.com with SMTP id y26so6582235qto.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 08:52:42 -0700 (PDT)
+X-Gm-Message-State: APjAAAVLr1Jzjh+Mxbl4Q4WFCHRrOO7BTwm9vzeU1f/xyT97bblr4IPP
+ tA0dNgZeDmIxXBPshVCtYIkrbpx5UOnqMWTSqw==
+X-Google-Smtp-Source: APXvYqwtJUmVtro6jUEBE02WMEyBqqIruc8G65ghUIvXNND3CcohL1oCB2ITHWFckP8WQC8dUJVX22usvAwBDybS4VY=
+X-Received: by 2002:ac8:7593:: with SMTP id s19mr26870702qtq.136.1566316361289; 
+ Tue, 20 Aug 2019 08:52:41 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e644e0f6-4588-56eb-a6e9-7b482e3d228d@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20190819182619.29065-1-mripard@kernel.org>
+ <20190820081525.celdosrgcvwoq6e7@gofer.mess.org>
+ <20190820095028.l74sfvipwjjla6kq@flea>
+In-Reply-To: <20190820095028.l74sfvipwjjla6kq@flea>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 20 Aug 2019 10:52:29 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJaH5wWCHScNZwN4jxqY5Q_UDZLnq+fghecBgYY752Lnw@mail.gmail.com>
+Message-ID: <CAL_JsqJaH5wWCHScNZwN4jxqY5Q_UDZLnq+fghecBgYY752Lnw@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: media: Add YAML schemas for the
+ generic RC bindings
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_085048_556889_CD415606 
-X-CRM114-Status: GOOD (  22.41  )
+X-CRM114-CacheID: sfid-20190820_085242_621580_5324C430 
+X-CRM114-Status: GOOD (  16.50  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,85 +88,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robdclark@gmail.com, joro@8bytes.org, jcrouse@codeaurora.org,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Sean Young <sean@mess.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 20, 2019 at 03:17:19PM +0100, Robin Murphy wrote:
-> On 20/08/2019 11:19, Will Deacon wrote:
-> > On Mon, Aug 19, 2019 at 07:19:29PM +0100, Robin Murphy wrote:
-> > > TTBR1 values have so far been redundant since no users implement any
-> > > support for split address spaces. Crucially, though, one of the main
-> > > reasons for wanting to do so is to be able to manage each half entirely
-> > > independently, e.g. context-switching one set of mappings without
-> > > disturbing the other. Thus it seems unlikely that tying two tables
-> > > together in a single io_pgtable_cfg would ever be particularly desirable
-> > > or useful.
-> > > 
-> > > Streamline the configs to just a single conceptual TTBR value
-> > > representing the allocated table. This paves the way for future users to
-> > > support split address spaces by simply allocating a table and dealing
-> > > with the detailed TTBRn logistics themselves.
-> > > 
-> > > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> > > ---
-> > >   drivers/iommu/arm-smmu-v3.c        |  2 +-
-> > >   drivers/iommu/arm-smmu.c           |  9 ++++-----
-> > >   drivers/iommu/io-pgtable-arm-v7s.c | 16 +++++++---------
-> > >   drivers/iommu/io-pgtable-arm.c     |  7 +++----
-> > >   drivers/iommu/ipmmu-vmsa.c         |  2 +-
-> > >   drivers/iommu/msm_iommu.c          |  4 ++--
-> > >   drivers/iommu/mtk_iommu.c          |  4 ++--
-> > >   drivers/iommu/qcom_iommu.c         |  3 +--
-> > >   include/linux/io-pgtable.h         |  4 ++--
-> > >   9 files changed, 23 insertions(+), 28 deletions(-)
-> > > 
-> > > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > > index 2a8db896d698..2e50cf49c3c4 100644
-> > > --- a/drivers/iommu/arm-smmu-v3.c
-> > > +++ b/drivers/iommu/arm-smmu-v3.c
-> > > @@ -1722,7 +1722,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
-> > >   	}
-> > >   	cfg->cd.asid	= (u16)asid;
-> > > -	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
-> > > +	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> > >   	cfg->cd.tcr	= pgtbl_cfg->arm_lpae_s1_cfg.tcr;
-> > >   	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair;
-> > >   	return 0;
-> > > diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> > > index 184ca41e9de7..19030c4b5904 100644
-> > > --- a/drivers/iommu/arm-smmu.c
-> > > +++ b/drivers/iommu/arm-smmu.c
-> > > @@ -473,13 +473,12 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
-> > >   	/* TTBRs */
-> > >   	if (stage1) {
-> > >   		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_S) {
-> > > -			cb->ttbr[0] = pgtbl_cfg->arm_v7s_cfg.ttbr[0];
-> > > -			cb->ttbr[1] = pgtbl_cfg->arm_v7s_cfg.ttbr[1];
-> > > +			cb->ttbr[0] = pgtbl_cfg->arm_v7s_cfg.ttbr;
-> > > +			cb->ttbr[1] = 0;
-> > >   		} else {
-> > > -			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
-> > > +			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> > >   			cb->ttbr[0] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
-> > > -			cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr[1];
-> > > -			cb->ttbr[1] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
-> > > +			cb->ttbr[1] = FIELD_PREP(TTBRn_ASID, cfg->asid);
-> > 
-> > Why do you continue to put the ASID in here?
-> 
-> For the same reason we put it there before ;)
-> 
-> Although I guess if TCR.A1 were ever to get flipped accidentally then we're
-> still cool.
+On Tue, Aug 20, 2019 at 4:50 AM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> Hi Sean,
+>
+> On Tue, Aug 20, 2019 at 09:15:26AM +0100, Sean Young wrote:
+> > On Mon, Aug 19, 2019 at 08:26:18PM +0200, Maxime Ripard wrote:
+> > > From: Maxime Ripard <maxime.ripard@bootlin.com>
+> > >
+> > > The RC controllers have a bunch of generic properties that are needed in a
+> > > device tree. Add a YAML schemas for those.
+> > >
+> > > Reviewed-by: Rob Herring <robh@kernel.org>
+> > > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> >
+> > For the series (both 1/2 and 2.2):
+> >
+> > Reviewed-by: Sean Young <sean@mess.org>
+> >
+> > How's tree should this go through?
+>
+> Either yours or Rob's, I guess?
 
-Hmm, but we don't do this for other drivers, so I'd be inclined to zap it
-with 0 for consistency.
+Sean's because there are other changes to
+Documentation/devicetree/bindings/media/sunxi-ir.txt in -next.
 
-Will
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
