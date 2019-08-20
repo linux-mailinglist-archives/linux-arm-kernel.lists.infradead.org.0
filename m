@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9260696B5C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 23:23:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CD3E96B88
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 23:36:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dciKZvQRhmeUBjcSS23A/goUyt5kpYQSAOf/Nn8d9MA=; b=KvmTyexivN8bdu
-	8viPc2E3qm0JZ/nRbi62Cirxn8jYIDgjKusLdFSO9ejkNp3KzTAjNGYqy8eqX10Mrul5bZFHoCg7m
-	AgNvCqi3cAkuNqj9ODSt37vAFjS+TnygCHM2j69mgxqkkIKqx4GDKOyLoM1zsNKGMqto//kawKNMy
-	W10e+IGstGkZkhH34bRvLqQbMvEv1fQEC35GNE6jfmugDO3qSLNgu2VIxTVAs4DR9UsvSf0y2xtVg
-	jkYNFc8bhdHWbdY89YgyYiqSat/iSHcoP9Mw5zHNl/ZDwXyfN37GiIxr/MBy/DonmhtCySdqpA1oI
-	9b+zVyQRI/w9ikge0HRg==;
+	List-Owner; bh=+HsWtAmZjRJRz6O0l58Et/9i2WsTTkjSswjbuNhiGzI=; b=jZ1GwzBwQrj3bJ
+	0Kq0rs1kDYApOm7+EbnAwCaN41bz5lWbjd7Q8efnT0fnt85a7fRjgcIRYKNDDJRrK+lGxDNxfWwbr
+	nRMbwLIbuHN8pGpj/7doCWMzIO135yVbroIDs5BsM/PNnaPYOYpO4WY0vm1d3Km4GxfYhoL6pLAI3
+	A4Hk4qViax6I2jDaZ6O52B9QrS6i5FpxKdVtKb2HO8x6ypJKRLzBufd1uWF5xCGryUGJ+jkm1bdyi
+	lKfbEztJE5SDpDUfNhzsTY2fPJFXm4+3CMoosLzUxOyYwh15c30S8eenf08NabCbNKTs8kyWgfW4j
+	siGeMz5gxbS1uDFsuIGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Bb7-0004iN-UJ; Tue, 20 Aug 2019 21:23:21 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1i0Bnv-0000v9-U2; Tue, 20 Aug 2019 21:36:36 +0000
+Received: from atlmailgw2.ami.com ([63.147.10.42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Baz-0004hy-NI
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 21:23:15 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1i0Bap-0003EB-OR; Tue, 20 Aug 2019 23:23:03 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1i0Bap-0001UJ-3l; Tue, 20 Aug 2019 23:23:03 +0200
-Date: Tue, 20 Aug 2019 23:23:03 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH RFC] dt-bindings: regulator: define a mux regulator
-Message-ID: <20190820212303.dhdo7g7kvisgeb3h@pengutronix.de>
-References: <20190820152511.15307-1-u.kleine-koenig@pengutronix.de>
- <CAL_JsqLg19883syn66P6zUkLPpQ8FYpeFj2QYvSp1UsWOhVKyQ@mail.gmail.com>
+ id 1i0Bnl-0000uK-LO
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 21:36:28 +0000
+X-AuditID: ac10606f-d11ff70000003324-7f-5d5c67d8e1ba
+Received: from atlms1.us.megatrends.com (atlms1.us.megatrends.com
+ [172.16.96.144])
+ (using TLS with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by atlmailgw2.ami.com (Symantec Messaging Gateway) with SMTP id
+ 51.10.13092.8D76C5D5; Tue, 20 Aug 2019 17:36:24 -0400 (EDT)
+Received: from hongweiz-Ubuntu-AMI.us.megatrends.com (172.16.98.93) by
+ atlms1.us.megatrends.com (172.16.96.144) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Tue, 20 Aug 2019 17:36:23 -0400
+From: Hongwei Zhang <hongweiz@ami.com>
+To: Andrew Jeffery <andrew@aj.id.au>, Linus Walleij
+ <linus.walleij@linaro.org>, <linux-gpio@vger.kernel.org>
+Subject: [v7 2/2] gpio: aspeed: Add SGPIO driver
+Date: Tue, 20 Aug 2019 17:35:55 -0400
+Message-ID: <1566336955-31808-1-git-send-email-hongweiz@ami.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1564603297-1391-1-git-send-email-hongweiz@ami.com>
+References: <1564603297-1391-1-git-send-email-hongweiz@ami.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAL_JsqLg19883syn66P6zUkLPpQ8FYpeFj2QYvSp1UsWOhVKyQ@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-Originating-IP: [172.16.98.93]
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrFLMWRmVeSWpSXmKPExsWyRiBhgu6N9JhYg9PXNC12Xeaw+DL3FIvF
+ 7/N/mS2m/FnOZLHp8TVWi+bV55gtNs//w2hxedccNgcOj6vtu9g93t9oZfe4+PEYs8eda3vY
+ PDYvqfc4P2Mho8fnTXIB7FFcNimpOZllqUX6dglcGS8Wr2UqWC5ace54SAPjLIEuRk4OCQET
+ iW/tLcxdjFwcQgK7mCSe991ggnAOM0q8ftjIClLFJqAmsXfzHCYQW0QgT+Lw+resIEXMAo8Z
+ JXa/2sDWxcjBISxgIHFshR5IDYuAqsTtC//ZQGxeAQeJqwefMUNsk5O4ea4TzOYEiv/6tY4J
+ pFVIwF5i6vdqiHJBiZMzn7CA2MwCEhIHX7wAKxcSkJW4degxE8QYBaA7H7NMYBSYhaRlFpKW
+ BYxMqxiFEktychMzc9LLjfQSczP1kvNzNzFCwjt/B+PHj+aHGJk4GA8xSnAwK4nwVsyJihXi
+ TUmsrEotyo8vKs1JLT7EKM3BoiTOu2rNtxghgfTEktTs1NSC1CKYLBMHp1QDoz/nZY7d3c8E
+ 8nStLkcrd8rdc2+/PrVxTXfHnzUH3vhWeZzeenvfqS839a0+Jkq08Oud9Ui7J6wuY7H5ivDm
+ 5/pbLqlOL7iqyNh1Uz288Y9UxirmJj1t0Z9LWkuSmyvsNht8Pnov9PiGXOHi/Yd+bhT9pRQh
+ FfHrX5Eb+9cJ8y8qB/zOLAy5oMRSnJFoqMVcVJwIAEQvkZ9dAgAA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_142313_760626_7B1C7101 
-X-CRM114-Status: GOOD (  28.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190820_143625_768463_76EEB4F0 
+X-CRM114-Status: GOOD (  19.70  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [63.147.10.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,140 +78,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Liam Girdwood <lgirdwood@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Joel Stanley <joel@jms.id.au>,
+ Hongwei Zhang <hongweiz@ami.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Rob,
+Hello Linus,
 
-On Tue, Aug 20, 2019 at 11:39:27AM -0500, Rob Herring wrote:
-> On Tue, Aug 20, 2019 at 10:25 AM Uwe Kleine-K=F6nig
-> <u.kleine-koenig@pengutronix.de> wrote:
-> >
-> > A mux regulator is used to provide current on one of several outputs. It
-> > might look as follows:
-> >
-> >       ,------------.
-> >     --<OUT0     A0 <--
-> >     --<OUT1     A1 <--
-> >     --<OUT2     A2 <--
-> >     --<OUT3        |
-> >     --<OUT4     EN <--
-> >     --<OUT5        |
-> >     --<OUT6     IN <--
-> >     --<OUT7        |
-> >       `------------'
-> >
-> > Depending on which address is encoded on the three address inputs A0, A1
-> > and A2 the current provided on IN is provided on one of the eight
-> > outputs.
-> >
-> > What is new here is that the binding makes use of a #regulator-cells
-> > property. This uses the approach known from other bindings (e.g. gpio)
-> > to allow referencing all eight outputs with phandle arguments. This
-> > requires an extention in of_get_regulator to use a new variant of
-> > of_parse_phandle_with_args that has a cell_count_default parameter that
-> > is used in absence of a $cell_name property. Even if we'd choose to
-> > update all regulator-bindings to add #regulator-cells =3D <0>; we still
-> > needed something to implement compatibility to the currently defined
-> > bindings.
-> >
-> > Signed-off-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-> > ---
-> > Hello,
-> >
-> > the obvious alternative is to add (here) eight subnodes to represent the
-> > eight outputs. This is IMHO less pretty, but wouldn't need to introduce
-> > #regulator-cells.
-> =
+Thanks for your review! I just submitted v8 to the list, please help to review it again.
 
-> I'm okay with #regulator-cells approach.
+Since you have already merged the dt-binding document [v7 1/2], and I don't have your
+update to this file, so to avoid confusion, I only include the driver code in v8.
 
-OK, then I will look into that in more detail; unless the regulator guys
-don't agree with this approach of course.
+Regards,
+--Hongwei 
 
-> > Apart from reg =3D <..> and a phandle there is (I think) nothing that
-> > needs to be specified in the subnodes because all properties of an
-> > output (apart from the address) apply to all outputs.
+> From:	Linus Walleij <linus.walleij@linaro.org>
+> Sent:	Wednesday, August 14, 2019 4:09 AM
+> To:	Hongwei Zhang
+> Cc:	Andrew Jeffery; open list:GPIO SUBSYSTEM; Joel Stanley; linux-aspeed; Bartosz Golaszewski; 
+> linux-kernel@vger.kernel.org; Linux ARM
+> Subject:	Re: [v7 2/2] gpio: aspeed: Add SGPIO driver
+> 
+> Hi Hongwei,
+> 
+> thanks for your patch!
+> 
+> I have now merged the bindings so you only need to respin this patch.
+> 
+> On Wed, Jul 31, 2019 at 10:02 PM Hongwei Zhang <hongweiz@ami.com> wrote:
+> 
+> > Add SGPIO driver support for Aspeed AST2500 SoC.
 > >
-> > What do you think?
-> >
-> > Best regards
-> > Uwe
-> >
-> >  .../bindings/regulator/mux-regulator.yaml     | 52 +++++++++++++++++++
-> >  1 file changed, 52 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/regulator/mux-reg=
-ulator.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/regulator/mux-regulator.=
-yaml b/Documentation/devicetree/bindings/regulator/mux-regulator.yaml
-> > new file mode 100644
-> > index 000000000000..f06dbb969090
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/regulator/mux-regulator.yaml
-> > @@ -0,0 +1,52 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> =
+> > Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
+> > Reviewed-by:   Andrew Jeffery <andrew@aj.id.au>
+> 
+> I guess I need to go with this, there are some minor things I still want to be fixed:
+> 
+> > +static void __aspeed_sgpio_set(struct gpio_chip *gc, unsigned int 
+> > +offset, int val)
+> 
+> I don't like __underscore_functions because their semantic is ambiguous.
+> 
 
-> (GPL-2.0-only OR BSD-2-Clause) is preferred.
+done, please see v8.
 
-OK.
+> Rename this something like aspeed_sgpio_commit() or whatever best fits the actual use.
+> 
+> > +static int aspeed_sgpio_setup_irqs(struct aspeed_sgpio *gpio,
+> > +                                  struct platform_device *pdev) {
+> (...)
+> > +       rc = gpiochip_irqchip_add(&gpio->chip, &aspeed_sgpio_irqchip,
+> > +                                 0, handle_bad_irq, IRQ_TYPE_NONE);
+> (...)
+> > +       gpiochip_set_chained_irqchip(&gpio->chip, &aspeed_sgpio_irqchip,
+> > +                                    gpio->irq, 
+> > + aspeed_sgpio_irq_handler);
+> 
+> We do not set up chained irqchips like this anymore, sorry.
+> 
+> I am currently rewriting all existing chained drivers to pass an initialized irqchip when registering the 
+> whole gpio chip.
+> See drivers/gpio/TODO.
+> 
+> Here are examples:
+> https://lore.kernel.org/linux-gpio/20190811080539.15647-1-linus.walleij@linaro.org/
+> https://lore.kernel.org/linux-gpio/20190812132554.18313-1-linus.walleij@linaro.org/
+> 
 
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/regulator/mux-regulator.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+done, please see v8.
+
+> > +       /* set all SGPIO pins as input (1). */
+> > +       memset(gpio->dir_in, 0xff, sizeof(gpio->dir_in));
+> 
+> Do the irqchip set-up here, before adding the gpio_chip.
+> 
+> > +       rc = devm_gpiochip_add_data(&pdev->dev, &gpio->chip, gpio);
+> > +       if (rc < 0)
+> > +               return rc;
 > > +
-> > +title: MUX regulators
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: XXX,adb708
-> =
-
-> ? I assume you will split this into a common and specific schemas. I
-> suppose there could be differing ways to control the mux just like all
-> other muxes.
-
-Not sure if a specific schema is necessary. I wrote XXX because I was
-offline while I authored the binding and so couldn't determine the right
-vendor to use.
-
-> > +  enable-gpios:
-> > +    maxItems: 1
-> > +
-> > +  address-gpios:
-> > +    description: Array of typically three GPIO pins used to select the
-> > +      regulator's output. The least significant address GPIO must be l=
-isted
-> > +      first. The others follow in order of significance.
-> > +    minItems: 1
-> > +
-> > +  "#regulator-cells":
-> =
-
-> How is this not required?
-
-It should. For the RFC patch I didn't took the time to iron all the
-details. My main concern was/is how the binding should look like and if
-an #regulator-cells with a default would be acceptable.
- =
-
-Best regards and thanks for your feedback,
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+> > +       return aspeed_sgpio_setup_irqs(gpio, pdev);
+> 
+> Yours,
+> Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
