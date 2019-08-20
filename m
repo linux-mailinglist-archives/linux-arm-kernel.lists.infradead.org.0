@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FC5B96BD1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 23:55:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C09296BD3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 23:56:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Boij+mWHOTjh4DUE58WFOXxJLTJaxgyEoz8Wc3rtiCs=; b=WHNJNqsk+ZgJh3
-	4JQhzwFbkGR8Ll4jSEnRec7e5OUGMW7JIWOV2/hhc8Dxol6BQIyh5R2SSbS/qO6xNa5Fjww9qUURH
-	ycl23XA2nY0u2pj6UneSlXRqZAYXslnUzB9ynNXL7H09qdAOKc0YRZPWdzjv7jXF2WuuQJEcm8B96
-	DTwbmGRRhp2gYwh21uwim4qJ7tCaeZeBdA8XSY7DAX94fQdwG5RLSphze0k3HV2wq4EJTfsmG45nI
-	cO3w7x861ufuPIyxT8st3lWxfTJ42QKCd3LypghJmEft5cPZIusVKHbnuN26KQVQZtAMguP9VRaTc
-	o3Fne0oQK/Hsm6x2MWzw==;
+	List-Owner; bh=uw6mJKzjWb0XmUsJmeDKGyvmCSI/PU2fI0vNI6203GA=; b=dNMp9ZeVnrPkgp
+	U78FTWWER0fFTweiU95dKMQvGUwxNz3xmjE9+2G/1jygFVKn4srdh5eeeeSqtK9o45JyO7if3fRtH
+	tz1XOnkQdXFe5EDAQ4lfkI3odXWgxLg9feCeX8Q5aAHcNMu/e4IizGiRUJtd2GHQKGVVntXPnu3+Z
+	RPEnDRHBOLRgh1bqhGqBjl4o+X7A8eu6eb7yf03n8LOQ4cc5GG4WJm2c/r51dxZrVYWe7zwMIDcaO
+	2RUuvNiuRjoQiaOT/KfcU/Wcs7elGNoRBp5SeNz6qMxjAN+Mt2717q1vWTdDgcYSpO40tFtNMUsj4
+	3vLW4XcZi7g34vpfsMUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0C69-0007Y2-B8; Tue, 20 Aug 2019 21:55:25 +0000
+	id 1i0C6Z-0007sy-DK; Tue, 20 Aug 2019 21:55:51 +0000
 Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0C61-0007XM-1Y
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 21:55:18 +0000
-Received: by mail-pg1-x541.google.com with SMTP id d1so73971pgp.4
+ id 1i0C6P-0007sP-CV
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 21:55:43 +0000
+Received: by mail-pg1-x541.google.com with SMTP id x15so63848pgg.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 14:55:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:subject:in-reply-to:references:date:message-id:mime-version;
- bh=8VU1pHmXBevt3/YEG9ZrgZrwZThbu5eNyC/wqF7k5PY=;
- b=oCBGLwepBGVAKrTRjodfusyt/uXKIPk4Eti2L19Mr34lKF3lq3FC2ivBG++x6G3xcR
- 6dGjXas05CA7uBxliafQ1EE5aZ7QyctGbqCyconhuu2ttfzL4Dgpz7sPOVIhsx1j+kYA
- DzPyffKCCufumwhNm5gxoN4qKPYIo/Lr2KQIXKoZmOR7VYDwGOhXrVMHNAibAoZbvVmL
- 5823zw0BUKZO2BOqPyz+Inhiigzqpc879qrVltX90vfETeZpFu7NXCsltF+Iwdx3H7H1
- 6kysoFBvZ+FZZJaww/TznF3QOdjYqc+kRBgD1PpglA3xhtUr0ZRssLlJx44CN+bNk8Y4
- UjSg==
+ Tue, 20 Aug 2019 14:55:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=8O69hqjYiOVYdACnNKVcEc06i51uGn8XhHy637XSp78=;
+ b=uvGcevqhg8bD2gsQsdECHcYIqfpWirMV2otBBOEMLP+TZurXfCSi8eeznV8P8RM/b1
+ /QVCdkkEHuhtFnQoZ5SuM/CG1hMxHprn4Kk48FC0X0C/J09qBsjg9VG4v2T2cKOLIT8z
+ eLDI/jwrtX1pptP7E4nTFyUMevBxy4WuoGCE01SP2givAokxPSl8PAr2KD6O54HE58hy
+ Q8V455++yKSjXSISUCNGtDdA6kLRFFTN83k9Kcx9lVdpHbWVDd1qI8u0a5K8mi8tQUMu
+ 776wT+5M0ydL/2lctzZLO50lhVyjztQCe0Q0Wz7ECEJOyPWkjQvGO6aHOj/qICLvS35L
+ D2Mw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=8VU1pHmXBevt3/YEG9ZrgZrwZThbu5eNyC/wqF7k5PY=;
- b=puQ9cAM9BqffTjyXq8tFOYB+WLltcQHQFhLRwJiovq6haJQZzS4XY/HDfznwbE1UD+
- hqrLN7ZtQYEVjj+Idv+eH+A/SC0IwfLeh4u1KRz+LVT8IRkWNWu9AbrOBattauInAFru
- C0pgRQWe2pAmvFMsFN2IcWA4u9uHwxToYLt4xPZqzkidPAkUJKMuzf2LDsE+5hYV8LE7
- zdLhFb0Z5R+4JO0scXlHPnOcns2m+iRtR+mbCpPYaUkLAPT3ofcXfcQoWGuUHpj2Anxu
- bN6A/d47dvKP8bH+htqQs/LzzDdMjZkEGtTpZ+W2SDp41xGS44lNX7Y9eYoLYjIW7c1s
- kZoA==
-X-Gm-Message-State: APjAAAXU3q9aJoxT3z06qlcpiP1H6NdpsOcMpmze5I7ivtw+SmixSwNg
- 8KCzfyz5nxNLH0St9A7OZ+8wbA==
-X-Google-Smtp-Source: APXvYqxytPtQ5YqOUnI1C63fu9JCZ/udi8nroU0IjFcXGWsLQft64HS9+cBSGO5Hh26fbBpADPbnvA==
-X-Received: by 2002:a63:6f81:: with SMTP id k123mr27148015pgc.12.1566338115500; 
- Tue, 20 Aug 2019 14:55:15 -0700 (PDT)
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
- [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id e24sm22844749pgk.21.2019.08.20.14.55.14
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=8O69hqjYiOVYdACnNKVcEc06i51uGn8XhHy637XSp78=;
+ b=AH1OyMeG0NV3TDWA8ijBsqgxmTcH23jFzC/+j3/B3qAscf2cLyAlVat18ptB8crAd7
+ uqLZBuDeyh52ENW2CWBnql3gZoJ+fBuWYug1aGov0n2RihVldrtGGsLWk6L35qG35epS
+ n+2fZB+o+yXLsT/C7hfmTlTIQH76FUhfonNu+H/oz1/7MOGxoqoTZUHZhn0Poji58ByC
+ MS6PCNxpHa0HgYXWezGa2ZC0My7VB7OFNIkF1WiDB6a3lnqM8QP1esXSGYTVw7PZUuhi
+ S3jYJ94VDmsQTws0zVk5SiDk3zgu4tExc+4xWifQfYuuxkvRiGRvItT7SbpgwZLk2p9l
+ rC0Q==
+X-Gm-Message-State: APjAAAVY7FKHPZFoKDq/OElKBSTD4EWiElEEDaK36R+L6DAe0VM1lUyt
+ nyDntr7cCe1unpGuT9Pd1iOKcQ==
+X-Google-Smtp-Source: APXvYqzrU8BrbmnME9mit+RcS6e3e4Sj6IHjlsmqIzlqVlANJtLtxDJ5Sl8eihTqLBEm3f8my/7oGA==
+X-Received: by 2002:a17:90a:a105:: with SMTP id
+ s5mr2073453pjp.51.1566338140667; 
+ Tue, 20 Aug 2019 14:55:40 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id w2sm1198482pjr.27.2019.08.20.14.55.39
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 20 Aug 2019 14:55:14 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>,
- Nishka Dasgupta <nishkadg.linux@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org
-Subject: Re: [PATCH] soc: amlogic: meson-gx-socinfo: Add of_node_put() before
- return
-In-Reply-To: <c30d200e-1bee-f61a-8721-ec58a8b5f93a@baylibre.com>
-References: <20190819072706.31732-1-nishkadg.linux@gmail.com>
- <c30d200e-1bee-f61a-8721-ec58a8b5f93a@baylibre.com>
-Date: Tue, 20 Aug 2019 14:55:14 -0700
-Message-ID: <7hh86bcxj1.fsf@baylibre.com>
+ Tue, 20 Aug 2019 14:55:40 -0700 (PDT)
+Date: Tue, 20 Aug 2019 15:55:37 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v5 1/3] coresight: etm4x: save/restore state across CPU
+ low power states
+Message-ID: <20190820215537.GA12159@xps15>
+References: <20190816154615.39854-1-andrew.murray@arm.com>
+ <20190816154615.39854-2-andrew.murray@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190816154615.39854-2-andrew.murray@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_145517_225691_454D249F 
-X-CRM114-Status: GOOD (  13.63  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190820_145541_494126_A3D99F3D 
+X-CRM114-Status: GOOD (  28.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
@@ -84,7 +84,11 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,55 +100,576 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Al.Grant@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ coresight@lists.linaro.org, Sudeep Holla <sudeep.holla@arm.com>,
+ Leo Yan <leo.yan@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Neil Armstrong <narmstrong@baylibre.com> writes:
+Hi Andrew,
 
-> On 19/08/2019 09:27, Nishka Dasgupta wrote:
->> The variable np in function meson_gx_socinfo_init takes the return value
->> of of_find_compatible_node, which gets a node but does not put it. If
->> this node is not put it may cause a memory leak. Hence put np after its
->> usefulness has been exhausted.
->> Issue found with Coccinelle.
->> 
->> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
->> ---
->>  drivers/soc/amlogic/meson-gx-socinfo.c | 4 +++-
->>  1 file changed, 3 insertions(+), 1 deletion(-)
->> 
->> diff --git a/drivers/soc/amlogic/meson-gx-socinfo.c b/drivers/soc/amlogic/meson-gx-socinfo.c
->> index bca34954518e..13695a72c695 100644
->> --- a/drivers/soc/amlogic/meson-gx-socinfo.c
->> +++ b/drivers/soc/amlogic/meson-gx-socinfo.c
->> @@ -138,8 +138,10 @@ static int __init meson_gx_socinfo_init(void)
->>  	}
->>  
->>  	/* check if chip-id is available */
->> -	if (!of_property_read_bool(np, "amlogic,has-chip-id"))
->> +	if (!of_property_read_bool(np, "amlogic,has-chip-id")) {
->> +		of_node_put(np);
->>  		return -ENODEV;
->> +	}
->>  
->>  	/* node should be a syscon */
->>  	regmap = syscon_node_to_regmap(np);
->> 
->
-> Thanks !
->
-> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
->
-> Would need :
-> Fixes: a9daaba2965e ("soc: Add Amlogic SoC Information driver")
+On Fri, Aug 16, 2019 at 04:46:13PM +0100, Andrew Murray wrote:
+> Some hardware will ignore bit TRCPDCR.PU which is used to signal
+> to hardware that power should not be removed from the trace unit.
+> Let's mitigate against this by conditionally saving and restoring
+> the trace unit state when the CPU enters low power states.
+> 
+> This patchset introduces a firmware property named
+> 'arm,coresight-loses-context-with-cpu' - when this is present the
+> hardware state will be conditionally saved and restored.
+> 
+> A module parameter 'pm_save_enable' is also introduced which can
+> be configured to override the firmware property. This can be set
+> to never allow save/restore or to conditionally allow it (only for
+> self-hosted). The default value is determined by firmware.
+> 
+> We avoid saving the hardware state when self-hosted coresight isn't
+> in use to reduce PM latency - we can't determine this by reading the
+> claim tags (TRCCLAIMCLR) as these are 'trace' registers which need
+> power and clocking, something we can't easily provide in the PM
+> context. Therefore we rely on the existing drvdata->mode internal
+> state that is set when self-hosted coresight is used (and powered).
+> 
+> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> ---
+>  drivers/hwtracing/coresight/coresight-etm4x.c | 318 ++++++++++++++++++
+>  drivers/hwtracing/coresight/coresight-etm4x.h |  64 ++++
+>  drivers/hwtracing/coresight/coresight.c       |   6 +
+>  include/linux/coresight.h                     |   6 +
+>  4 files changed, 394 insertions(+)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> index a128b5063f46..35a524eec36d 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> @@ -18,6 +18,7 @@
+>  #include <linux/stat.h>
+>  #include <linux/clk.h>
+>  #include <linux/cpu.h>
+> +#include <linux/cpu_pm.h>
+>  #include <linux/coresight.h>
+>  #include <linux/coresight-pmu.h>
+>  #include <linux/pm_wakeup.h>
+> @@ -26,6 +27,7 @@
+>  #include <linux/uaccess.h>
+>  #include <linux/perf_event.h>
+>  #include <linux/pm_runtime.h>
+> +#include <linux/property.h>
+>  #include <asm/sections.h>
+>  #include <asm/local.h>
+>  #include <asm/virt.h>
+> @@ -37,6 +39,15 @@ static int boot_enable;
+>  module_param(boot_enable, int, 0444);
+>  MODULE_PARM_DESC(boot_enable, "Enable tracing on boot");
+>  
+> +#define PARAM_PM_SAVE_FIRMWARE	  0 /* save self-hosted state as per firmware */
+> +#define PARAM_PM_SAVE_NEVER	  1 /* never save any state */
+> +#define PARAM_PM_SAVE_SELF_HOSTED 2 /* save self-hosted state only */
+> +
+> +static int pm_save_enable = PARAM_PM_SAVE_FIRMWARE;
+> +module_param(pm_save_enable, int, 0444);
+> +MODULE_PARM_DESC(pm_save_enable,
+> +	"Save/restore state on power down: 1 = never, 2 = self-hosted");
+> +
+>  /* The number of ETMv4 currently registered */
+>  static int etm4_count;
+>  static struct etmv4_drvdata *etmdrvdata[NR_CPUS];
+> @@ -54,6 +65,14 @@ static void etm4_os_unlock(struct etmv4_drvdata *drvdata)
+>  	isb();
+>  }
+>  
+> +static void etm4_os_lock(struct etmv4_drvdata *drvdata)
+> +{
+> +	/* Writing 0x1 to TRCOSLAR locks the trace registers */
+> +	writel_relaxed(0x1, drvdata->base + TRCOSLAR);
+> +	drvdata->os_unlock = false;
+> +	isb();
+> +}
+> +
+>  static bool etm4_arch_supported(u8 arch)
+>  {
+>  	/* Mask out the minor version number */
+> @@ -1085,6 +1104,288 @@ static void etm4_init_trace_id(struct etmv4_drvdata *drvdata)
+>  	drvdata->trcid = coresight_get_trace_id(drvdata->cpu);
+>  }
+>  
+> +#ifdef CONFIG_CPU_PM
+> +static int etm4_cpu_save(struct etmv4_drvdata *drvdata)
+> +{
+> +	int i, ret = 0;
+> +	struct etmv4_save_state *state;
+> +	struct device *etm_dev = &drvdata->csdev->dev;
+> +
+> +	/*
+> +	 * As recommended by 3.4.1 ("The procedure when powering down the PE")
+> +	 * of ARM IHI 0064D
+> +	 */
+> +	dsb(sy);
+> +	isb();
+> +
+> +	CS_UNLOCK(drvdata->base);
+> +
+> +	/* Lock the OS lock to disable trace and external debugger access */
+> +	etm4_os_lock(drvdata);
+> +
+> +	/* wait for TRCSTATR.PMSTABLE to go up */
+> +	if (coresight_timeout(drvdata->base, TRCSTATR,
+> +					TRCSTATR_PMSTABLE_BIT, 1)) {
 
-Thanks.
+Indentation problems
 
-Queued for v5.4 with Neil's tag and the Fixes tag.
+> +		dev_err(etm_dev,
+> +			"timeout while waiting for PM Stable Status\n");
+> +		etm4_os_unlock(drvdata);
+> +		ret = -EBUSY;
+> +		goto out;
+> +	}
+> +
+> +	state = drvdata->save_state;
+> +
+> +	state->trcprgctlr = readl(drvdata->base + TRCPRGCTLR);
+> +	state->trcprocselr = readl(drvdata->base + TRCPROCSELR);
+> +	state->trcconfigr = readl(drvdata->base + TRCCONFIGR);
+> +	state->trcauxctlr = readl(drvdata->base + TRCAUXCTLR);
+> +	state->trceventctl0r = readl(drvdata->base + TRCEVENTCTL0R);
+> +	state->trceventctl1r = readl(drvdata->base + TRCEVENTCTL1R);
+> +	state->trcstallctlr = readl(drvdata->base + TRCSTALLCTLR);
+> +	state->trctsctlr = readl(drvdata->base + TRCTSCTLR);
+> +	state->trcsyncpr = readl(drvdata->base + TRCSYNCPR);
+> +	state->trcccctlr = readl(drvdata->base + TRCCCCTLR);
+> +	state->trcbbctlr = readl(drvdata->base + TRCBBCTLR);
+> +	state->trctraceidr = readl(drvdata->base + TRCTRACEIDR);
+> +	state->trcqctlr = readl(drvdata->base + TRCQCTLR);
+> +
+> +	state->trcvictlr = readl(drvdata->base + TRCVICTLR);
+> +	state->trcviiectlr = readl(drvdata->base + TRCVIIECTLR);
+> +	state->trcvissctlr = readl(drvdata->base + TRCVISSCTLR);
+> +	state->trcvipcssctlr = readl(drvdata->base + TRCVIPCSSCTLR);
+> +	state->trcvdctlr = readl(drvdata->base + TRCVDCTLR);
+> +	state->trcvdsacctlr = readl(drvdata->base + TRCVDSACCTLR);
+> +	state->trcvdarcctlr = readl(drvdata->base + TRCVDARCCTLR);
+> +
+> +	for (i = 0; i < drvdata->nrseqstate; i++)
+> +		state->trcseqevr[i] = readl(drvdata->base + TRCSEQEVRn(i));
+> +
+> +	state->trcseqrstevr = readl(drvdata->base + TRCSEQRSTEVR);
+> +	state->trcseqstr = readl(drvdata->base + TRCSEQSTR);
+> +	state->trcextinselr = readl(drvdata->base + TRCEXTINSELR);
+> +
+> +	for (i = 0; i < drvdata->nr_cntr; i++) {
+> +		state->trccntrldvr[i] = readl(drvdata->base + TRCCNTRLDVRn(i));
+> +		state->trccntctlr[i] = readl(drvdata->base + TRCCNTCTLRn(i));
+> +		state->trccntvr[i] = readl(drvdata->base + TRCCNTVRn(i));
+> +	}
+> +
+> +	for (i = 0; i < drvdata->nr_resource * 2; i++)
+> +		state->trcrsctlr[i] = readl(drvdata->base + TRCRSCTLRn(i));
+> +
+> +	for (i = 0; i < drvdata->nr_ss_cmp; i++) {
+> +		state->trcssccr[i] = readl(drvdata->base + TRCSSCCRn(i));
+> +		state->trcsscsr[i] = readl(drvdata->base + TRCSSCSRn(i));
+> +		state->trcsspcicr[i] = readl(drvdata->base + TRCSSPCICRn(i));
+> +	}
+> +
+> +	for (i = 0; i < drvdata->nr_addr_cmp * 2; i++) {
+> +		state->trcacvr[i] = readl(drvdata->base + TRCACVRn(i));
+> +		state->trcacatr[i] = readl(drvdata->base + TRCACATRn(i));
+> +	}
+> +
+> +	/*
+> +	 * Data trace stream is architecturally prohibited for A profile cores
+> +	 * so we don't save (or later restore) trcdvcvr and trcdvcmr - As per
+> +	 * section 1.3.4 ("Possible functional configurations of an ETMv4 trace
+> +	 * unit") of ARM IHI 0064D.
+> +	 */
+> +
+> +	for (i = 0; i < drvdata->numcidc; i++)
+> +		state->trccidcvr[i] = readl(drvdata->base + TRCCIDCVRn(i));
+> +
+> +	for (i = 0; i < drvdata->numvmidc; i++)
+> +		state->trcvmidcvr[i] = readl(drvdata->base + TRCVMIDCVRn(i));
+> +
+> +	state->trccidcctlr0 = readl(drvdata->base + TRCCIDCCTLR0);
+> +	state->trccidcctlr1 = readl(drvdata->base + TRCCIDCCTLR1);
+> +
+> +	state->trcvmidcctlr0 = readl(drvdata->base + TRCVMIDCCTLR0);
+> +	state->trcvmidcctlr0 = readl(drvdata->base + TRCVMIDCCTLR1);
+> +
+> +	state->trcclaimset = readl(drvdata->base + TRCCLAIMCLR);
+> +
+> +	state->trcpdcr = readl(drvdata->base + TRCPDCR);
+> +
+> +	/* wait for TRCSTATR.IDLE to go up */
+> +	if (coresight_timeout(drvdata->base, TRCSTATR, TRCSTATR_IDLE_BIT, 1)) {
+> +		dev_err(etm_dev,
+> +			"timeout while waiting for Idle Trace Status\n");
+> +		etm4_os_unlock(drvdata);
+> +		ret = -EBUSY;
+> +		goto out;
+> +	}
+> +
+> +	drvdata->state_needs_restore = true;
+> +
+> +	/*
+> +	 * Power can be removed from the trace unit now. We do this to
+> +	 * potentially save power on systems that respect the TRCPDCR_PU
+> +	 * despite requesting software to save/restore state.
+> +	 */
+> +	writel_relaxed((state->trcpdcr & ~TRCPDCR_PU),
+> +			drvdata->base + TRCPDCR);
+> +
+> +out:
+> +	CS_LOCK(drvdata->base);
+> +	return ret;
+> +}
+> +
+> +static void etm4_cpu_restore(struct etmv4_drvdata *drvdata)
+> +{
+> +	int i;
+> +	struct etmv4_save_state *state = drvdata->save_state;
+> +
+> +	CS_UNLOCK(drvdata->base);
+> +
+> +	writel_relaxed(state->trcclaimset, drvdata->base + TRCCLAIMSET);
+> +
+> +	writel_relaxed(state->trcprgctlr, drvdata->base + TRCPRGCTLR);
+> +	writel_relaxed(state->trcprocselr, drvdata->base + TRCPROCSELR);
+> +	writel_relaxed(state->trcconfigr, drvdata->base + TRCCONFIGR);
+> +	writel_relaxed(state->trcauxctlr, drvdata->base + TRCAUXCTLR);
+> +	writel_relaxed(state->trceventctl0r, drvdata->base + TRCEVENTCTL0R);
+> +	writel_relaxed(state->trceventctl1r, drvdata->base + TRCEVENTCTL1R);
+> +	writel_relaxed(state->trcstallctlr, drvdata->base + TRCSTALLCTLR);
+> +	writel_relaxed(state->trctsctlr, drvdata->base + TRCTSCTLR);
+> +	writel_relaxed(state->trcsyncpr, drvdata->base + TRCSYNCPR);
+> +	writel_relaxed(state->trcccctlr, drvdata->base + TRCCCCTLR);
+> +	writel_relaxed(state->trcbbctlr, drvdata->base + TRCBBCTLR);
+> +	writel_relaxed(state->trctraceidr, drvdata->base + TRCTRACEIDR);
+> +	writel_relaxed(state->trcqctlr, drvdata->base + TRCQCTLR);
+> +
+> +	writel_relaxed(state->trcvictlr, drvdata->base + TRCVICTLR);
+> +	writel_relaxed(state->trcviiectlr, drvdata->base + TRCVIIECTLR);
+> +	writel_relaxed(state->trcvissctlr, drvdata->base + TRCVISSCTLR);
+> +	writel_relaxed(state->trcvipcssctlr, drvdata->base + TRCVIPCSSCTLR);
+> +	writel_relaxed(state->trcvdctlr, drvdata->base + TRCVDCTLR);
+> +	writel_relaxed(state->trcvdsacctlr, drvdata->base + TRCVDSACCTLR);
+> +	writel_relaxed(state->trcvdarcctlr, drvdata->base + TRCVDARCCTLR);
+> +
+> +	for (i = 0; i < drvdata->nrseqstate; i++)
+> +		writel_relaxed(state->trcseqevr[i],
+> +					drvdata->base + TRCSEQEVRn(i));
+> +
+> +	writel_relaxed(state->trcseqrstevr, drvdata->base + TRCSEQRSTEVR);
+> +	writel_relaxed(state->trcseqstr, drvdata->base + TRCSEQSTR);
+> +	writel_relaxed(state->trcextinselr, drvdata->base + TRCEXTINSELR);
+> +
+> +	for (i = 0; i < drvdata->nr_cntr; i++) {
+> +		writel_relaxed(state->trccntrldvr[i],
+> +					drvdata->base + TRCCNTRLDVRn(i));
+> +		writel_relaxed(state->trccntctlr[i],
+> +					drvdata->base + TRCCNTCTLRn(i));
+> +		writel_relaxed(state->trccntvr[i],
+> +					drvdata->base + TRCCNTVRn(i));
+> +	}
+> +
+> +	for (i = 0; i < drvdata->nr_resource * 2; i++)
+> +		writel_relaxed(state->trcrsctlr[i],
+> +					drvdata->base + TRCRSCTLRn(i));
+> +
+> +	for (i = 0; i < drvdata->nr_ss_cmp; i++) {
+> +		writel_relaxed(state->trcssccr[i],
+> +					drvdata->base + TRCSSCCRn(i));
+> +		writel_relaxed(state->trcsscsr[i],
+> +					drvdata->base + TRCSSCSRn(i));
+> +		writel_relaxed(state->trcsspcicr[i],
+> +					drvdata->base + TRCSSPCICRn(i));
+> +	}
+> +
+> +	for (i = 0; i < drvdata->nr_addr_cmp * 2; i++) {
+> +		writel_relaxed(state->trcacvr[i],
+> +					drvdata->base + TRCACVRn(i));
+> +		writel_relaxed(state->trcacatr[i],
+> +					drvdata->base + TRCACATRn(i));
+> +	}
+> +
+> +	for (i = 0; i < drvdata->numcidc; i++)
+> +		writel_relaxed(state->trccidcvr[i],
+> +					drvdata->base + TRCCIDCVRn(i));
+> +
+> +	for (i = 0; i < drvdata->numvmidc; i++)
+> +		writel_relaxed(state->trcvmidcvr[i],
+> +					drvdata->base + TRCVMIDCVRn(i));
+> +
+> +	writel_relaxed(state->trccidcctlr0, drvdata->base + TRCCIDCCTLR0);
+> +	writel_relaxed(state->trccidcctlr1, drvdata->base + TRCCIDCCTLR1);
+> +
+> +	writel_relaxed(state->trcvmidcctlr0, drvdata->base + TRCVMIDCCTLR0);
+> +	writel_relaxed(state->trcvmidcctlr0, drvdata->base + TRCVMIDCCTLR1);
+> +
+> +	writel_relaxed(state->trcclaimset, drvdata->base + TRCCLAIMSET);
+> +
+> +	writel_relaxed(state->trcpdcr, drvdata->base + TRCPDCR);
+> +
+> +	drvdata->state_needs_restore = false;
+> +
+> +	/*
+> +	 * As recommended by section 4.3.7 ("Synchronization when using the
+> +	 * memory-mapped interface") of ARM IHI 0064D
+> +	 */
+> +	dsb(sy);
+> +	isb();
+> +
+> +	/* Unlock the OS lock to re-enable trace and external debug access */
+> +	etm4_os_unlock(drvdata);
+> +	CS_LOCK(drvdata->base);
+> +}
+> +
+> +static int etm4_cpu_pm_notify(struct notifier_block *nb, unsigned long cmd,
+> +			      void *v)
+> +{
+> +	struct etmv4_drvdata *drvdata;
+> +	unsigned int cpu = smp_processor_id();
+> +
+> +	if (!etmdrvdata[cpu])
+> +		return 0;
+> +
+> +	drvdata = etmdrvdata[cpu];
+> +
+> +	if (!drvdata->save_state)
+> +		return NOTIFY_OK;
+> +
+> +	if (WARN_ON_ONCE(drvdata->cpu != cpu))
+> +		return NOTIFY_BAD;
+> +
+> +	switch (cmd) {
+> +	case CPU_PM_ENTER:
+> +		/* save the state if self-hosted coresight is in use */
+> +		if (local_read(&drvdata->mode))
+> +			if (etm4_cpu_save(drvdata))
+> +				return NOTIFY_BAD;
+> +		break;
+> +	case CPU_PM_EXIT:
 
-Kevin
+Implicit fallthroughs are coming to an end.  Please add a 
+        /* fallthrough */ 
+
+> +	case CPU_PM_ENTER_FAILED:
+> +		/* trcclaimset is set when there is state to restore */
+
+As far as I can tell the above comment doesn't apply anymore.
+
+> +		if (drvdata->state_needs_restore)
+> +			etm4_cpu_restore(drvdata);
+> +		break;
+> +	default:
+> +		return NOTIFY_DONE;
+> +	}
+> +
+> +	return NOTIFY_OK;
+> +}
+> +
+> +static struct notifier_block etm4_cpu_pm_nb = {
+> +	.notifier_call = etm4_cpu_pm_notify,
+> +};
+> +
+> +static int etm4_cpu_pm_register(void)
+> +{
+> +	return cpu_pm_register_notifier(&etm4_cpu_pm_nb);
+> +}
+> +
+> +static void etm4_cpu_pm_unregister(void)
+> +{
+> +	cpu_pm_unregister_notifier(&etm4_cpu_pm_nb);
+> +}
+> +#else
+> +static int etm4_cpu_pm_register(void) { return 0; }
+> +static void etm4_cpu_pm_unregister(void) { }
+> +#endif
+> +
+>  static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+>  {
+>  	int ret;
+> @@ -1101,6 +1402,17 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+>  
+>  	dev_set_drvdata(dev, drvdata);
+>  
+> +	if (pm_save_enable == PARAM_PM_SAVE_FIRMWARE)
+> +		pm_save_enable = coresight_loses_context_with_cpu(dev) ?
+> +			       PARAM_PM_SAVE_SELF_HOSTED : PARAM_PM_SAVE_NEVER;
+> +
+> +	if (pm_save_enable != PARAM_PM_SAVE_NEVER) {
+> +		drvdata->save_state = devm_kmalloc(dev,
+> +				sizeof(struct etmv4_save_state), GFP_KERNEL);
+> +		if (!drvdata->save_state)
+> +			return -ENOMEM;
+> +	}
+> +
+>  	/* Validity for the resource is already checked by the AMBA core */
+>  	base = devm_ioremap_resource(dev, res);
+>  	if (IS_ERR(base))
+> @@ -1135,6 +1447,10 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+>  		if (ret < 0)
+>  			goto err_arch_supported;
+>  		hp_online = ret;
+> +
+> +		ret = etm4_cpu_pm_register();
+> +		if (ret)
+> +			goto err_arch_supported;
+>  	}
+>  
+>  	cpus_read_unlock();
+> @@ -1185,6 +1501,8 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+>  
+>  err_arch_supported:
+>  	if (--etm4_count == 0) {
+> +		etm4_cpu_pm_unregister();
+> +
+>  		cpuhp_remove_state_nocalls(CPUHP_AP_ARM_CORESIGHT_STARTING);
+>  		if (hp_online)
+>  			cpuhp_remove_state_nocalls(hp_online);
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
+> index 4523f10ddd0f..546d790cb01b 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.h
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.h
+> @@ -175,6 +175,7 @@
+>  					 ETM_MODE_EXCL_USER)
+>  
+>  #define TRCSTATR_IDLE_BIT		0
+> +#define TRCSTATR_PMSTABLE_BIT		1
+>  #define ETM_DEFAULT_ADDR_COMP		0
+>  
+>  /* PowerDown Control Register bits */
+> @@ -281,6 +282,65 @@ struct etmv4_config {
+>  	u32				ext_inp;
+>  };
+>  
+> +/**
+> + * struct etm4_save_state - state to be preserved when ETM is without power
+> + */
+> +struct etmv4_save_state {
+> +	u32	trcprgctlr;
+> +	u32	trcprocselr;
+> +	u32	trcconfigr;
+> +	u32	trcauxctlr;
+> +	u32	trceventctl0r;
+> +	u32	trceventctl1r;
+> +	u32	trcstallctlr;
+> +	u32	trctsctlr;
+> +	u32	trcsyncpr;
+> +	u32	trcccctlr;
+> +	u32	trcbbctlr;
+> +	u32	trctraceidr;
+> +	u32	trcqctlr;
+> +
+> +	u32	trcvictlr;
+> +	u32	trcviiectlr;
+> +	u32	trcvissctlr;
+> +	u32	trcvipcssctlr;
+> +	u32	trcvdctlr;
+> +	u32	trcvdsacctlr;
+> +	u32	trcvdarcctlr;
+> +
+> +	u32	trcseqevr[ETM_MAX_SEQ_STATES];
+> +	u32	trcseqrstevr;
+> +	u32	trcseqstr;
+> +	u32	trcextinselr;
+> +	u32	trccntrldvr[ETMv4_MAX_CNTR];
+> +	u32	trccntctlr[ETMv4_MAX_CNTR];
+> +	u32	trccntvr[ETMv4_MAX_CNTR];
+> +
+> +	u32	trcrsctlr[ETM_MAX_RES_SEL * 2];
+> +
+> +	u32	trcssccr[ETM_MAX_SS_CMP];
+> +	u32	trcsscsr[ETM_MAX_SS_CMP];
+> +	u32	trcsspcicr[ETM_MAX_SS_CMP];
+> +
+> +	u64	trcacvr[ETM_MAX_SINGLE_ADDR_CMP];
+> +	u64	trcacatr[ETM_MAX_SINGLE_ADDR_CMP];
+> +	u64	trccidcvr[ETMv4_MAX_CTXID_CMP];
+> +	u32	trcvmidcvr[ETM_MAX_VMID_CMP];
+> +	u32	trccidcctlr0;
+> +	u32	trccidcctlr1;
+> +	u32	trcvmidcctlr0;
+> +	u32	trcvmidcctlr1;
+> +
+> +	u32	trcclaimset;
+> +
+> +	u32	cntr_val[ETMv4_MAX_CNTR];
+> +	u32	seq_state;
+> +	u32	vinst_ctrl;
+> +	u32	ss_status[ETM_MAX_SS_CMP];
+> +
+> +	u32	trcpdcr;
+> +};
+> +
+>  /**
+>   * struct etm4_drvdata - specifics associated to an ETM component
+>   * @base:       Memory mapped base address for this component.
+> @@ -336,6 +396,8 @@ struct etmv4_config {
+>   * @atbtrig:	If the implementation can support ATB triggers
+>   * @lpoverride:	If the implementation can support low-power state over.
+>   * @config:	structure holding configuration parameters.
+> + * @save_state:	State to be preserved across power loss
+> + * @state_needs_restore: True when there is context to restore after PM exit
+>   */
+>  struct etmv4_drvdata {
+>  	void __iomem			*base;
+> @@ -381,6 +443,8 @@ struct etmv4_drvdata {
+>  	bool				atbtrig;
+>  	bool				lpoverride;
+>  	struct etmv4_config		config;
+> +	struct etmv4_save_state		*save_state;
+> +	bool				state_needs_restore;
+>  };
+>  
+>  /* Address comparator access types */
+> diff --git a/drivers/hwtracing/coresight/coresight.c b/drivers/hwtracing/coresight/coresight.c
+> index 6453c67a4d01..e6ca899fea4e 100644
+> --- a/drivers/hwtracing/coresight/coresight.c
+> +++ b/drivers/hwtracing/coresight/coresight.c
+> @@ -1308,6 +1308,12 @@ static inline int coresight_search_device_idx(struct coresight_dev_list *dict,
+>  	return -ENOENT;
+>  }
+>  
+> +bool coresight_loses_context_with_cpu(struct device *dev)
+> +{
+> +	return fwnode_property_present(dev_fwnode(dev),
+> +				       "arm,coresight-loses-context-with-cpu");
+> +}
+> +
+>  /*
+>   * coresight_alloc_device_name - Get an index for a given device in the
+>   * device index list specific to a driver. An index is allocated for a
+> diff --git a/include/linux/coresight.h b/include/linux/coresight.h
+> index a2b68823717b..44e552de419c 100644
+> --- a/include/linux/coresight.h
+> +++ b/include/linux/coresight.h
+> @@ -285,6 +285,8 @@ extern void coresight_disclaim_device(void __iomem *base);
+>  extern void coresight_disclaim_device_unlocked(void __iomem *base);
+>  extern char *coresight_alloc_device_name(struct coresight_dev_list *devs,
+>  					 struct device *dev);
+> +
+> +extern bool coresight_loses_context_with_cpu(struct device *dev);
+>  #else
+>  static inline struct coresight_device *
+>  coresight_register(struct coresight_desc *desc) { return NULL; }
+> @@ -307,6 +309,10 @@ static inline int coresight_claim_device(void __iomem *base)
+>  static inline void coresight_disclaim_device(void __iomem *base) {}
+>  static inline void coresight_disclaim_device_unlocked(void __iomem *base) {}
+>  
+> +static inline bool coresight_loses_context_with_cpu(struct device *dev)
+> +{
+> +	return false;
+> +}
+>  #endif
+>  
+>  extern int coresight_get_cpu(struct device *dev);
+> -- 
+> 2.21.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
