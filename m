@@ -2,56 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 762DA9649A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:35:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46FC6964A4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:35:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fkGIrn54b9Bl1MMJXO5Vee48xZSerL1ui19IARypzAI=; b=aY71wTFzba4boM
-	JRGWYPjlYFlxzaBA1MbSS+vTnvsSeAfvIz+WCpZFNwwqIneYh4GpMcHEVlJOrrtVibYxJ06SE1Z8y
-	H+fuOwVOt+gzLl3uPKAYsnAhNJFeqYIrlQXOPT88vfqJJzG8mu9IGSsh3R8CwcnqDDLcFIBoeCJcx
-	POMviCpZgOy/tCIsOAMKn/2RF4owY8EIcvOvQUPGsHiQQndvVp8haTngEbl4LjDaG0ky3jnpkbn0y
-	Lg9YBe70sggvNjMO7JY2iUwudw1CizBPS0qWiajPs9qbojQh7WKNiQ77+9ynW9r8YCuvOetYCw5Ap
-	o/s2qpfhjceoECtd9kEA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=G+zhOXgZZUMaoSlyi1eR4hCN7aNUPMg6+41zt8go56w=; b=kT3
+	zQ5mdsW1MHLGTl17A1BA4+9/Amx5vAz4cw3SoxbSTDW2mq+B6SMpt9977HXUnIlc9nutknWevOxLb
+	PnDxx91zJ5HPu16oBNoff3wh9uf3rOJqlAcLhPOzOumqyzI5d9WNgUvxwYfprr21HmQnRH4dkaXac
+	xFiWchyBe38a7ua1NKn7RkdBXf8fJF/NNfcFq6AyWWF161UQjjEgiSvSsH1zl9vBhRM9vpiN0gru3
+	q5dXYFD08L9DP1eEw5xpafLiNqWF/1YaA3PHi4qsMBn4UVTX67gHuuArV2qJFiU/Kr/cQp4a50mJ3
+	azkJjkrxdwr6H1VG8uRCa00RXGfL48g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i06AI-0001lG-4z; Tue, 20 Aug 2019 15:35:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i06A3-00016w-5y
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:35:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6E9B928;
- Tue, 20 Aug 2019 08:35:02 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 34F753F246;
- Tue, 20 Aug 2019 08:35:01 -0700 (PDT)
-Date: Tue, 20 Aug 2019 16:34:51 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Raphael Gault <raphael.gault@arm.com>
-Subject: Re: [PATCH v3 3/5] arm64: pmu: Add function implementation to update
- event index in userpage.
-Message-ID: <20190820153450.GA43412@lakrids.cambridge.arm.com>
-References: <20190816125934.18509-1-raphael.gault@arm.com>
- <20190816125934.18509-4-raphael.gault@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190816125934.18509-4-raphael.gault@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+	id 1i06Ae-0002QI-W0; Tue, 20 Aug 2019 15:35:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i06AR-0002Pg-2e
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:35:28 +0000
+Received: from PC-kkoz.proceq.com (unknown [213.160.61.66])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4862F2054F;
+ Tue, 20 Aug 2019 15:35:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566315326;
+ bh=vDZYy9MTuzLGK/2LPbkV8unZtsGhbw0xmmDGyROJ4HA=;
+ h=From:To:Cc:Subject:Date:From;
+ b=i1A3gY46/kM/M3DgofdWIxOe8Ic5riOHcLAVTEIcpEtj7svZrseHllPrYik69XMi9
+ hWvVact5Xn6Rxa1RoYH179PEP50dlMFjb3wWGQWyhlZbMPv6hadYOsgyikwNivaB10
+ IkslOwRyXsJ962oGYcqyEZ7VVymgr9jD1JbaLz8A=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Schrempf Frieder <frieder.schrempf@kontron.de>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v6 1/4] dt-bindings: vendor-prefixes: Add Anvo-Systems
+Date: Tue, 20 Aug 2019 17:35:15 +0200
+Message-Id: <1566315318-30320-1-git-send-email-krzk@kernel.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_083503_321002_1E12961F 
-X-CRM114-Status: GOOD (  25.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190820_083527_140199_707098E0 
+X-CRM114-Status: UNSURE (   8.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,118 +79,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: raph.gault+kdev@gmail.com, peterz@infradead.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, acme@kernel.org,
- mingo@redhat.com, linux-arm-kernel@lists.infradead.org
+Cc: Krzysztof Kozlowski <krzk@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 16, 2019 at 01:59:32PM +0100, Raphael Gault wrote:
-> In order to be able to access the counter directly for userspace,
-> we need to provide the index of the counter using the userpage.
-> We thus need to override the event_idx function to retrieve and
-> convert the perf_event index to armv8 hardware index.
-> 
-> Since the arm_pmu driver can be used by any implementation, even
-> if not armv8, two components play a role into making sure the
-> behaviour is correct and consistent with the PMU capabilities:
-> 
-> * the ARMPMU_EL0_RD_CNTR flag which denotes the capability to access
-> counter from userspace.
-> * the event_idx call back, which is implemented and initialized by
-> the PMU implementation: if no callback is provided, the default
-> behaviour applies, returning 0 as index value.
-> 
-> Signed-off-by: Raphael Gault <raphael.gault@arm.com>
-> ---
->  arch/arm64/kernel/perf_event.c | 22 ++++++++++++++++++++++
->  include/linux/perf/arm_pmu.h   |  2 ++
->  2 files changed, 24 insertions(+)
-> 
-> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-> index a0b4f1bca491..9fe3f6909513 100644
-> --- a/arch/arm64/kernel/perf_event.c
-> +++ b/arch/arm64/kernel/perf_event.c
-> @@ -818,6 +818,22 @@ static void armv8pmu_clear_event_idx(struct pmu_hw_events *cpuc,
->  		clear_bit(idx - 1, cpuc->used_mask);
->  }
->  
-> +static int armv8pmu_access_event_idx(struct perf_event *event)
-> +{
-> +	if (!(event->hw.flags & ARMPMU_EL0_RD_CNTR))
-> +		return 0;
-> +
-> +	/*
-> +	 * We remap the cycle counter index to 32 to
-> +	 * match the offset applied to the rest of
-> +	 * the counter indeces.
+Add vendor prefix for Anvo-Systems Dresden GmbH.
 
-Typo: s/indeces/indices/
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
-> +	 */
-> +	if (event->hw.idx == ARMV8_IDX_CYCLE_COUNTER)
-> +		return 32;
-> +
-> +	return event->hw.idx;
-> +}
-> +
->  /*
->   * Add an event filter to a given event.
->   */
-> @@ -911,6 +927,9 @@ static int __armv8_pmuv3_map_event(struct perf_event *event,
->  	if (armv8pmu_event_is_64bit(event))
->  		event->hw.flags |= ARMPMU_EVT_64BIT;
->  
-> +	if (!cpus_have_const_cap(ARM64_HAS_HETEROGENEOUS_PMU))
-> +		event->hw.flags |= ARMPMU_EL0_RD_CNTR;
-> +
->  	/* Only expose micro/arch events supported by this PMU */
->  	if ((hw_event_id > 0) && (hw_event_id < ARMV8_PMUV3_MAX_COMMON_EVENTS)
->  	    && test_bit(hw_event_id, armpmu->pmceid_bitmap)) {
-> @@ -1031,6 +1050,8 @@ static int armv8_pmu_init(struct arm_pmu *cpu_pmu)
->  	cpu_pmu->set_event_filter	= armv8pmu_set_event_filter;
->  	cpu_pmu->filter_match		= armv8pmu_filter_match;
->  
-> +	cpu_pmu->pmu.event_idx		= armv8pmu_access_event_idx;
-> +
->  	return 0;
->  }
->  
-> @@ -1209,6 +1230,7 @@ void arch_perf_update_userpage(struct perf_event *event,
->  	 */
->  	freq = arch_timer_get_rate();
->  	userpg->cap_user_time = 1;
-> +	userpg->cap_user_rdpmc = !!(event->hw.flags & ARMPMU_EL0_RD_CNTR);
+---
 
-For bisectability, we should only expose this to userspace once we have
-the code to enable/disable it, so the code exposing the index and
-setting up the user page cap needs to be added after the context switch
-code.
+Changes since v4:
+None
 
-Thanks,
-Mark.
+Changes since v3:
+1. Add Rob's tag,
+2. Remove Admatec (not needed anymore).
 
->  
->  	clocks_calc_mult_shift(&userpg->time_mult, &shift, freq,
->  			NSEC_PER_SEC, 0);
-> diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
-> index 71f525a35ac2..1106a9ac00fd 100644
-> --- a/include/linux/perf/arm_pmu.h
-> +++ b/include/linux/perf/arm_pmu.h
-> @@ -26,6 +26,8 @@
->   */
->  /* Event uses a 64bit counter */
->  #define ARMPMU_EVT_64BIT		1
-> +/* Allow access to hardware counter from userspace */
-> +#define ARMPMU_EL0_RD_CNTR		2
->  
->  #define HW_OP_UNSUPPORTED		0xFFFF
->  #define C(_x)				PERF_COUNT_HW_CACHE_##_x
-> -- 
-> 2.17.1
-> 
+Changes since v2:
+1. Use admatecde vendor prefix.
+2. Add Anvo-Systems Dresden GmbH.
+
+Changes since v1:
+New patch
+---
+ Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+index 6992bbbbffab..519889f5aec8 100644
+--- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
++++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+@@ -81,6 +81,8 @@ patternProperties:
+     description: Analogix Semiconductor, Inc.
+   "^andestech,.*":
+     description: Andes Technology Corporation
++  "^anvo,.*":
++    description: Anvo-Systems Dresden GmbH
+   "^apm,.*":
+     description: Applied Micro Circuits Corporation (APM)
+   "^aptina,.*":
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
