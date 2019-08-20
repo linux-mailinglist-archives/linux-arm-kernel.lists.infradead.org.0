@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDD2695C46
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 12:31:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D06295C4A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 12:31:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mq82p0shtEWTGsLu9xO7mDqmo1Ddp28wT/p7Ipj6mrA=; b=nkxiazojr4GYjQ
-	cD5v0eXfj8C8EXVC0qWf1MFTgVUWb8MPdrLA++tREXQZtAhivS9v8uDCTEknmdjvrnt5C52UTMRRc
-	oGNtXRVfIeU3rHxk2NpmkJYji7FH1i1wghHWiJJWwNvQ+sZtFMvNXpflSAiqnHw+WVoG08ApQZElM
-	PJ6hcCwK/7FErvWKtf8G8hCLNUhqSex0sw9jOxAg5VWoMg+k20MTITxCGMBY3CmpiH4KDaAKaMlrI
-	GE9X6jV72OZtP29gV7izaLnIsFD9Uc8Mf67yFbjTn0Ou9RzQ6ePl+e4Y9mz88D9zRu+Exf2f7Pybs
-	F42NpieuRAWlb5x+849g==;
+	List-Owner; bh=A8nOINIcO+1K418FA0RaQmOwFVWnivT77QFRL3VDlh8=; b=E4fDwmPfRjxJW/
+	xmIM5N94TqruCYDVrCroW8CqwcfuHItxr/k60I4gtKBea6Rw2DujNL73RU3Fg+nAKQOP5oMQ3vQMP
+	L4xF2ilcq4XhVK9j3NMq0LEEBI7WFxc0WdgtepIfpOBWaoRFgJ+UNBio9k3+nxNphtyCGcBfc6wrq
+	KOHTm06dR1ExP/875Pw8YgFc6A2szm0qLamuG8475Lapd+S8HuDNX+Aa2rqXgfHbry+K14CdSFW4U
+	YRI6wLuzyl5rcfjAnfi1ExK2BoN/iWGS1Y0di84SAxmo3SI1pWs+Q2Ws3cRDDqoBtL/BoeKzdd3ug
+	p/PuRE3/UP36pHt8YxFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i01Q5-0003nr-16; Tue, 20 Aug 2019 10:31:17 +0000
+	id 1i01QQ-00041Z-Uu; Tue, 20 Aug 2019 10:31:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i01Ph-0003nQ-6K
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 10:30:54 +0000
+ id 1i01Q8-0003zP-CD
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 10:31:21 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 91D2C22CF4;
- Tue, 20 Aug 2019 10:30:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id ADDD422CF4;
+ Tue, 20 Aug 2019 10:31:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566297052;
- bh=QX6X9ApCRnaZQJs+459lUXGpL+CPfmZcq+MysQfUQl4=;
+ s=default; t=1566297079;
+ bh=4BGIRfpdxn+C4hWqH87mAKMqnUtkkvEwwMwmi3ha0Yo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=m1mH2rd6XYodYNmUQgNUW1rB1/NWbtjp6uBe4QvCwjawlLf/x5NCS7x9h4VioQGER
- AA9lYfuOfhqRcYQPxfEogwInO7X8ga1CPbGo7+xMeaTDLvn+rQsKnxJHjj7gKfFSxy
- Bhmp23scHmc35dY4bfAtRba2DVAojTUUqN5vo93g=
-Date: Tue, 20 Aug 2019 11:30:48 +0100
+ b=JIoIm7Dblia20ly5df5KEgLyPX9cMYqKbtR+dcf8m13dvUFZd+rD2XNAI9PF0uISf
+ tNgmIHr/tUheptTGLanF0PONmSDlW3lN/bUkaHdR1wcQf5f5ib2LE1OPAFGAITycQM
+ EonGx+kruT5WbB6IbRA+dD+UXF+t2syBwXuuuhhs=
+Date: Tue, 20 Aug 2019 11:31:16 +0100
 From: Will Deacon <will@kernel.org>
 To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 4/4] iommu/io-pgtable-arm: Prepare for TTBR1 usage
-Message-ID: <20190820103048.xacfbtn5o4wermhi@willie-the-truck>
+Subject: Re: [PATCH 3/4] iommu/io-pgtable-arm: Rationalise TCR handling
+Message-ID: <20190820103115.o7neehdethf7sbqi@willie-the-truck>
 References: <cover.1566238530.git.robin.murphy@arm.com>
- <6596469d5fa1e918145fdd4e6b1a3ad67f7cde2e.1566238530.git.robin.murphy@arm.com>
+ <78df4f8e2510e88f3ded59eb385f79b4442ed4f2.1566238530.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <6596469d5fa1e918145fdd4e6b1a3ad67f7cde2e.1566238530.git.robin.murphy@arm.com>
+In-Reply-To: <78df4f8e2510e88f3ded59eb385f79b4442ed4f2.1566238530.git.robin.murphy@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_033053_259929_17BACE0B 
-X-CRM114-Status: GOOD (  17.34  )
+X-CRM114-CacheID: sfid-20190820_033120_471168_587D8435 
+X-CRM114-Status: GOOD (  13.30  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,46 +84,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 07:19:31PM +0100, Robin Murphy wrote:
-> Now that callers are free to use a given table for TTBR1 if they wish
-> (all they need do is shift the provided attributes when constructing
-> their final TCR value), the only remaining impediment is the address
-> validation on map/unmap. The fact that the LPAE address space split is
-> symmetric makes this easy to accommodate - by simplifying the current
-> range checks into explicit tests that address bits above IAS are all
-> zero, it then follows straightforwardly to add the inverse test to
-> allow the all-ones case as well.
+On Mon, Aug 19, 2019 at 07:19:30PM +0100, Robin Murphy wrote:
+> Although it's conceptually nice for the io_pgtable_cfg to provide a
+> standard VMSA TCR value, the reality is that no VMSA-compliant IOMMU
+> looks exactly like an Arm CPU, and they all have various other TCR
+> controls which io-pgtable can't be expected to understand. Thus since
+> there is an expectation that drivers will have to add to the given TCR
+> value anyway, let's strip it down to just the essentials that are
+> directly relevant to io-pgatble's inner workings - namely the address
+> sizes, walk attributes, and where appropriate, format selection.
 > 
 > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 > ---
->  drivers/iommu/io-pgtable-arm.c | 7 ++++---
->  1 file changed, 4 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-> index 09cb20671fbb..f39c50356351 100644
-> --- a/drivers/iommu/io-pgtable-arm.c
-> +++ b/drivers/iommu/io-pgtable-arm.c
-> @@ -475,13 +475,13 @@ static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
->  	arm_lpae_iopte *ptep = data->pgd;
->  	int ret, lvl = ARM_LPAE_START_LVL(data);
->  	arm_lpae_iopte prot;
-> +	long iaext = (long)iova >> data->iop.cfg.ias;
->  
->  	/* If no access, then nothing to do */
->  	if (!(iommu_prot & (IOMMU_READ | IOMMU_WRITE)))
->  		return 0;
->  
-> -	if (WARN_ON(iova >= (1ULL << data->iop.cfg.ias) ||
-> -		    paddr >= (1ULL << data->iop.cfg.oas)))
-> +	if (WARN_ON((iaext && ~iaext) || paddr >> data->iop.cfg.oas))
+>  drivers/iommu/arm-smmu-v3.c        | 7 +------
+>  drivers/iommu/arm-smmu.c           | 1 +
+>  drivers/iommu/arm-smmu.h           | 2 ++
+>  drivers/iommu/io-pgtable-arm-v7s.c | 6 ++----
+>  drivers/iommu/io-pgtable-arm.c     | 4 ----
+>  drivers/iommu/qcom_iommu.c         | 2 +-
+>  6 files changed, 7 insertions(+), 15 deletions(-)
 
-I had to read that '&&' twice, but I see what you're doing now :)
-
->  		return -ERANGE;
-
-This doesn't seem sufficient to prevent a mixture of TTBR1 and TTBR0
-addresses from being mapped in the same TTBR. Perhaps we need a quirk for
-TTBR1, which could then take care of setting EPDx appropriately?
+Hmm, so I'm a bit nervous about this one since I think we really should
+be providing a TCR with EPD1 set if we're only giving you TTBR0. Relying
+on the driver to do this worries me. See my comments on the next patch.
 
 Will
 
