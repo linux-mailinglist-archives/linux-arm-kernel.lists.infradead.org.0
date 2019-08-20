@@ -2,120 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B42A095A94
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 11:03:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A832695A95
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 11:03:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DZ/08v6lZIiARPkfZxO4NK/QH6yZNp9sUaqD0FY/G6o=; b=PrsAX0tDWOWnTc
-	gfpFXJkv2htViMuHiYaVYl6okfoQ3a3nXK+Crhjlmj3YKtsGLxWiIlDqZSm/ZMx07qXSEzEV+lF30
-	e1gIl+X9a3hCFmYgvsF7aVE6xexpkIbo3dFi63+K7hItKoh4doXSSvz1bXW+fpWqoeF9sZ+ga7t0c
-	rA96bWfhs78cplnAX1RjF4kIbctZLBH3UwpyVMS4ok7BOkJtEVVmncinzKX8ivWlSrM1PDOa6CprZ
-	+VGAUEjTv+WKqxtLrAPqQEreLxf6ewRh+Z01QZS2hT2nSwyIdAH6zIRr5jNzyi7QW0HOxU8GfBYF2
-	MJwO1KQMfA6ObmS2oTqg==;
+	List-Owner; bh=b8sDhmyU/Mwy/LjuToW4exZNVMPelTKzTeqG9khhiXY=; b=IriOUr9nm8qnP3
+	TStwugj4jacbRNwG1uRMl6nAOCquTX7AE0rX+kjVORWZf3h8oza1uuWmdNoLfH0zfJdlfDme5YQyz
+	Cj9TFU1YQ14a+/seHQY70d1iIr3Ecp7jSFG48bvosN4B6C65MzV5PEjpAi62BEPXFyrVX8h8BKOSB
+	LLrBomlSIp0ApBiQ0MSSh8X4FlscSNW+jxJdx/Ji12Imn6lZUGRbdcZ4QpOK2rUMaLBBNEssWi+nf
+	fuCHYVsjtwzb72CU93Ro5mP/IR6mOs1rovekZdnPS8CTMI120g+63v5eMMxcA6vRI7/Qqh0oYeAe/
+	y83Prx6rX87kUSoJPCgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i002w-0000SR-44; Tue, 20 Aug 2019 09:03:18 +0000
-Received: from mail-cys01nam02on062f.outbound.protection.outlook.com
- ([2a01:111:f400:fe45::62f]
- helo=NAM02-CY1-obe.outbound.protection.outlook.com)
+	id 1i003G-0000fv-PX; Tue, 20 Aug 2019 09:03:38 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i002f-0000RV-Iu
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 09:03:03 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=bizSn/devj0O0fmZwTN2I+TdCUywqvQ2x6lNVadwNOMJIflLQm1VFOZ7CiVU+CxYJVvx4owH6sCF8587n0oOxcUAQ5sJmSpQi9p8unH4PCR7fAzc3omAM/M/JUQGjFK12ep+7xT/SBol5yDFXMLDCSqUVSQCWNjDQmGQJbzTb96qYzIUSNhhEaMjDc4AviiIe/72tGi8QX99uPtLzZ6a0gF/lQB+6t1/YdzTGjkoFzXXt/rv4qjHzwm6HEgNwskTq6KTgvVn9fhEsq3QAkBxLlUc/aZFSI7B6854njBnrXLsru1nGqOBzzRWJ60Yt/5lw8bPEHiot8VDpXozRC5dRg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=U+D7ZhHnjuXRLwjkMuWC2NGMD1CqSLlncAZyzAx47J8=;
- b=QkQOiMmfx/O8bRHRmzk6bhG6IT2gQRpEc9By10bfjRXj9Lp62hPQRzJpdKYzYRp7U2NUnvRpINPQhBRz+He484csbQioygURXF/I6wkzGbpWLmUqP5vjpCFqKlZuyfiMvyTxbwEHldqies8fbz6mKpbGvJx9qZ+yO2VUDVu6obftmEPy6gf7ZcP1iXTkAbHD6+jxDrhungboBROBWYFUfvqUFZIKmpB6MZiaiX+QbL361CrO+RTsnikMH7MLfLA8yNi8y3SLyhE86Eu0bUSmRYM2t3WR7u+xNNK+np9ZCSA2SfwfvSOI7WPZgCQZ8h8b1rdLL8KavjAGptFo8KjpLw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synaptics.com; dmarc=pass action=none
- header.from=synaptics.com; dkim=pass header.d=synaptics.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=Synaptics.onmicrosoft.com; s=selector2-Synaptics-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=U+D7ZhHnjuXRLwjkMuWC2NGMD1CqSLlncAZyzAx47J8=;
- b=R+FHqRRhQe5wHvuiPMXO+Cz6Nud7DTYo3qCfG3JhoXJzCa19KkMJHYxykUsx+T678iM0Ub14r7SVkapZiBj1qNsLw3eXB2lVlT14MKKcexJc4fGroGKux7/7XW+GV6nze+uNBs7B12t/3H8q4I4UQP8OwC1/3IexVbkvxTm6q9E=
-Received: from BYAPR03MB4773.namprd03.prod.outlook.com (20.179.92.152) by
- BYAPR03MB3413.namprd03.prod.outlook.com (52.135.212.138) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.16; Tue, 20 Aug 2019 09:02:59 +0000
-Received: from BYAPR03MB4773.namprd03.prod.outlook.com
- ([fe80::a517:3578:67bf:6c88]) by BYAPR03MB4773.namprd03.prod.outlook.com
- ([fe80::a517:3578:67bf:6c88%7]) with mapi id 15.20.2157.022; Tue, 20 Aug 2019
- 09:02:59 +0000
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-To: Thomas Gleixner <tglx@linutronix.de>
-Subject: Re: [PATCH v2 1/3] kprobes/x86: use instruction_pointer and
- instruction_pointer_set
-Thread-Topic: [PATCH v2 1/3] kprobes/x86: use instruction_pointer and
- instruction_pointer_set
-Thread-Index: AQHVVwqiEXrXfYjUc0SG3b0/wT6us6cDu4YA////agA=
-Date: Tue, 20 Aug 2019 09:02:59 +0000
-Message-ID: <20190820165152.20275268@xhacker.debian>
-References: <20190820113928.1971900c@xhacker.debian>
- <20190820114109.4624d56b@xhacker.debian>
- <alpine.DEB.2.21.1908201050370.2223@nanos.tec.linutronix.de>
-In-Reply-To: <alpine.DEB.2.21.1908201050370.2223@nanos.tec.linutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [124.74.246.114]
-x-clientproxiedby: TY2PR01CA0057.jpnprd01.prod.outlook.com
- (2603:1096:404:10a::21) To BYAPR03MB4773.namprd03.prod.outlook.com
- (2603:10b6:a03:134::24)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 53ce8562-1499-42e5-80a0-08d7254d32ad
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BYAPR03MB3413; 
-x-ms-traffictypediagnostic: BYAPR03MB3413:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <BYAPR03MB3413BE64A06642A7AD4A0283EDAB0@BYAPR03MB3413.namprd03.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 013568035E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(136003)(376002)(346002)(39850400004)(396003)(54534003)(199004)(189003)(1076003)(6116002)(8676002)(70486001)(53936002)(229853002)(64756008)(7736002)(66446008)(66556008)(117636001)(386003)(6506007)(66476007)(7416002)(5660300002)(71200400001)(71190400001)(476003)(256004)(11346002)(446003)(81156014)(81166006)(6916009)(486006)(86362001)(6486002)(6436002)(102836004)(99286004)(2906002)(4326008)(52116002)(8936002)(66946007)(305945005)(966005)(54906003)(76176011)(4744005)(26005)(6246003)(316002)(478600001)(6306002)(8266002)(6512007)(9686003)(97876018)(3846002)(50226002)(25786009)(186003)(66066001)(14454004)(533714002)(39210200001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB3413;
- H:BYAPR03MB4773.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:0; MX:1; 
-received-spf: None (protection.outlook.com: synaptics.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: B8/IttSITC+KXhssqD10UctryDtyeEc+imaG3LSBPFYtHdQLk4S5q56+ZqkQ5fVSNmpfcpBTa/PVynH8bjkwP+t1A9LHWs9hmyFX1UbSGkFOGe+8wpiOFdC+jtydamNQduIqkB+4wk4ImWtQa1YYEA+kUADufNkCa06TrG2sPVVFzsUpq8ZeEGRjxKcy6CHOsPQWwNIA9n+MwqpouIO3OkKr9W0VZ1/1ZCHtXfk8w2VZpp+lVbrZJShteCYnOxC2RLSJRrTlCZz6Scy/QbBnSeC1aB+3cEvDs2h3KpNWMCVCln2Rg/QDzfg6yXxNxCz376N23jxhv08yMYFMjL9k6eQAPjoDUAvhJhNGCa//ENBACvBNhu+kL3QjxcIRLtqyxuJgFiqrbyLD4838s6TO1+eMhIPp2ZN00Ga+i/Bv5Ec=
-x-ms-exchange-transport-forked: True
-Content-ID: <1A7F59BFB2BC2E43A06AAF5B7145A9FA@namprd03.prod.outlook.com>
+ id 1i002v-0000bt-Jv
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 09:03:19 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190820090313euoutp02eeb52bb32e4b10d1bc82b52b69f7d983~8lhZgkbiz1639016390euoutp02F
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 09:03:13 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190820090313euoutp02eeb52bb32e4b10d1bc82b52b69f7d983~8lhZgkbiz1639016390euoutp02F
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1566291793;
+ bh=3zMMcEr18biqTPjjpGx/QXtGczLZJ59EMRIX8XVsp4M=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=Pis5QM29mpMBkwcjn2ppAKZVNzPam7ynnHaVKm4SUCh8i9GB6w+OSFsFlCl+PiUbU
+ rneorXSWb2zDUJH5gkp28CDFG+b3/sHP2vPIvXzvZgVyvai2fuOyQxkWorMFTjl46N
+ QfYFT1mCv0YMZF3zd97khieu5lHslpAeYTlbx5eU=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190820090312eucas1p10400f7e3ec45efcd30f6d11d5926aab7~8lhY_mQr11704817048eucas1p1F;
+ Tue, 20 Aug 2019 09:03:12 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id BA.89.04374.057BB5D5; Tue, 20
+ Aug 2019 10:03:12 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190820090311eucas1p251e3f45bb9db6bcdd97ad07b691e1b5f~8lhYF39JE1805518055eucas1p2I;
+ Tue, 20 Aug 2019 09:03:11 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20190820090311eusmtrp2e6d78b6cd4d260a29af70d3e9975f26e~8lhX3qCW02503525035eusmtrp2g;
+ Tue, 20 Aug 2019 09:03:11 +0000 (GMT)
+X-AuditID: cbfec7f5-92d689c000001116-cb-5d5bb75019d2
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id FC.53.04117.F47BB5D5; Tue, 20
+ Aug 2019 10:03:11 +0100 (BST)
+Received: from [106.120.51.75] (unknown [106.120.51.75]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190820090310eusmtip19a3c0a5f088ec510d5056c4d4f58e0cd~8lhW7CjcM0896908969eusmtip1g;
+ Tue, 20 Aug 2019 09:03:10 +0000 (GMT)
+Subject: Re: [PATCH v2 0/9] Exynos Adaptive Supply Voltage support
+To: Viresh Kumar <viresh.kumar@linaro.org>
+From: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Message-ID: <06ccff05-2152-4bcc-7537-8f24da75f163@samsung.com>
+Date: Tue, 20 Aug 2019 11:03:09 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: synaptics.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 53ce8562-1499-42e5-80a0-08d7254d32ad
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Aug 2019 09:02:59.3213 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: CLOlSxjPh+/htCwtY1doK/9+D+mBtLeY0wBc3tnW0Zqi6UoNd7l6L07iX+RGGPbD8PaAVCV/yZsKo49uSD2rUQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB3413
+In-Reply-To: <20190820030114.6flnn2omeys3lih3@vireshk-i7>
+Content-Language: en-GB
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0gUURjFvTs7O6M0dl0NP1YpWJJQUPMRTfjILHSgAsE/DEXcTQeV3NV2
+ fRaUVEpZmhalLZJaarlR6vp+4mN1kSILH6WWSgqSIUm6Qlia6yj53+8795x7vwOXJqQDpIxO
+ VKfyGrUySS6xETcP/h52D2uJij668E3G1pfUkmyZ8T3J3p/7QbDDw3UUa5gbJ9mR9lIJu5Jv
+ RGzJcLeIfW38SrHPmlYpNqfLSLH1Zo5tmB2UBDGcQX9Hwn0Z75RwDZXXuYJGPeJWDAfDyEgb
+ /zg+KTGd13gGKmwSWqf9U3px5kSbfzbKYfKQNQ3YF7qWG1EesqGl+CWCkp+bhDCsImj9VC0W
+ hhUE89OV5G5kclC/E3mBoKp3ZCeyhGBxbVRkcdnjYOhcN0vyEE07YDf4PsFbZAKPiaDdvM0S
+ 7AX5AwXIwgwOhFuTOZSFxdgFCsf7tvkAvgC/ZvtJwWMHQ0/mxRa2xifg4eQCEu50hBurNaTA
+ h6BlqXR7H8CTFHyoqNvZ+gzkmccIge1h0dRICewMm21lIiFwE8G9jilKGAoRzJjKkeDyg37T
+ R9LShsCuUNvuKcinoGDUKLLIgG3h85KdsIQtPGguJgSZgdu5UsF9GNb1xSKBZXB3flNciOS6
+ PdV0e+ro9tTR/X+3HIn1yJFP06riea2Pms/w0CpV2jR1vEdsssqAtj7X2w2TuRV1/7nYhzCN
+ 5PsY7nFktJRUpmuzVH0IaELuwGSWbklMnDLrCq9JjtGkJfHaPuREi+WOzFWr2Sgpjlem8pd4
+ PoXX7J6KaGtZNnLseN4jO+kSMmh1bgL2Y3WI6chGaVUEXUG/UszUJBiz1jaRrytXdM2r2uyc
+ PEXrMt60+TBBlFLRXSlZ5iYue3Puj8yGY6GFT6s8k9wbA7jgs06Rq+erW/w0IadDwzdi/rq8
+ SyHaihTHm4YSI+Zl5SOqnvAOb0VZamxuAHaTi7UJSi83QqNV/gN63SfcWAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrOIsWRmVeSWpSXmKPExsVy+t/xu7r+26NjDR6slrbYOGM9q8X8I+dY
+ Lfofv2a2OH9+A7vFpsfXWC0u75rDZvG59wijxYzz+5gs1h65y26xaOsXdovWvUfYLTZ+9bDY
+ /OAYmwOvx6ZVnWwed67tYfPYvKTeo2/LKkaPz5vkAlij9GyK8ktLUhUy8otLbJWiDS2M9Awt
+ LfSMTCz1DI3NY62MTJX07WxSUnMyy1KL9O0S9DJ23LMpOChQcXOnTQNjK28XIyeHhICJxK1j
+ qxi7GLk4hASWMkq0fnzA1sXIAZSQkpjfogRRIyzx51oXG0TNa0aJ9m0bGEESwgJOEnt+fwWr
+ FxHQknh5MxWkhlngKpPE4j2XWCAazrFILFzZxA7SwCZgKNF7tA+smVfATqLlVitYnEVAVWLC
+ tUNgtqhAhMThHbOgagQlTs58wgJicwpYSky+9RwsziygLvFn3iVmCFtcounLSlYIW15i+9s5
+ zBMYhWYhaZ+FpGUWkpZZSFoWMLKsYhRJLS3OTc8tNtIrTswtLs1L10vOz93ECIzUbcd+btnB
+ 2PUu+BCjAAejEg+vx7SoWCHWxLLiytxDjBIczEoivBVzgEK8KYmVValF+fFFpTmpxYcYTYGe
+ m8gsJZqcD0wieSXxhqaG5haWhubG5sZmFkrivB0CB2OEBNITS1KzU1MLUotg+pg4OKUaGK8e
+ c8h6tHljj/HthzJrP9/vk/g7gderrZOr7Xr/R2XnA+Uah/Y8Spc8ttRvc+3/BMf4twVBOy8W
+ sXpx8zJPsvV7dc5l9fQjm2ZmKm58+8hnreAPib/7f9192j5nr5BmkrpbtGq2xnzBujnHz6tG
+ n7dY+lHOImFxRtksx7vmH28eZdgnd/CM+iElluKMREMt5qLiRADUDE7C6gIAAA==
+X-CMS-MailID: 20190820090311eucas1p251e3f45bb9db6bcdd97ad07b691e1b5f
+X-Msg-Generator: CA
+X-RootMTR: 20190718143117eucas1p1e534b9075d10fbbbe427c66192205eb1
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190718143117eucas1p1e534b9075d10fbbbe427c66192205eb1
+References: <CGME20190718143117eucas1p1e534b9075d10fbbbe427c66192205eb1@eucas1p1.samsung.com>
+ <20190718143044.25066-1-s.nawrocki@samsung.com>
+ <20190723020450.z2pqwetkn2tfhacq@vireshk-i7>
+ <5ef302a4-5bbf-483d-dfdf-cf76f6f69cee@samsung.com>
+ <20190725022343.p7lqalrh5svxvtu2@vireshk-i7>
+ <562dd2e7-2b24-8492-d1c1-2dc4973f07be@samsung.com>
+ <20190819090928.pke6cov52n4exlbp@vireshk-i7>
+ <b831d7c5-c830-fd65-20cf-02e209889c28@samsung.com>
+ <20190819112533.bvfyinw7fsebkufr@vireshk-i7>
+ <b7093aaf-ea56-c390-781f-6f9d0780bd8e@samsung.com>
+ <20190820030114.6flnn2omeys3lih3@vireshk-i7>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_020301_678556_C99A9A0C 
-X-CRM114-Status: GOOD (  12.77  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190820_020318_181822_AF130E5E 
+X-CRM114-Status: GOOD (  20.10  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,55 +145,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- "x86@kernel.org" <x86@kernel.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Masami Hiramatsu <mhiramat@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>, Will Deacon <will@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, vireshk@kernel.org, b.zolnierkie@samsung.com,
+ linux-kernel@vger.kernel.org, krzk@kernel.org, robh+dt@kernel.org,
+ kgene@kernel.org, pankaj.dubey@samsung.com,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Thomas,
-
-On Tue, 20 Aug 2019 10:53:58 +0200 (CEST) Thomas Gleixner wrote:
-
+On 8/20/19 05:01, Viresh Kumar wrote:
+> On 19-08-19, 15:39, Sylwester Nawrocki wrote:
+>> Unfortunately not, the patch set as I see it is another way of updating 
+>> an OPP after it was parsed from DT.  OPP remove/add could work equally 
+>> well in our use case.
 > 
+> Adding OPPs dynamically has limitations, you can't set many values which are
+> otherwise possible with DT. And removing/adding is not the right thing to do
+> technically.
+
+Thanks for explanation, I was not aware of that.
+
+>> The problem is that we have the information on how to translate the 
+>> common OPP voltage to a voltage specific to given silicon encoded jointly 
+>> in the ASV tables and the CHIPID registers (efuse/OTP memory). 
+>> Additionally, algorithm of selecting ASV data (OPP voltage) based on 
+>> the "key" data from registers is not generic, it is usually different 
+>> per each SoC type.
+>>
+>> I tried to identify some patterns in those tables in order to simplify 
+>> possible DT binding, but that was not really successful. I ended up just 
+>> keeping whole tables.
 > 
-> On Tue, 20 Aug 2019, Jisheng Zhang wrote:
+> Sorry but I am unable to understand the difficulty you are facing now. So what I
+> suggest is something like this.
+
+The difficulty was about representing data from tables asv_{arm,kfc}_table[][]
+added in patch 3/9 of the series in devicetree.  If you have no objections
+about keeping those tables in the driver then I can't see any difficulties. 
+ 
+> - Use DT to get a frequency and voltage for each frequency.
+
+Yes, this is what happens now, we have common OPPs in DT that work for each SoC
+revision. 
+
+> - At runtime, based on SoC, registers, efuses, etc, update the voltage of the
+>   OPPs.
+> - This algo can be different for each SoC, no one is stopping you from doing
+>   that.
 > 
-> > This is to make the x86 kprobe_ftrace_handler() more common so that
-> > the code could be reused in future.  
-> 
-> While I agree with the change in general, I can't find anything which
-> reuses that code. So the change log is pretty useless and I have no idea
-> how this is related to the rest of the series.
+> Am I missing something ?
 
-In v1, this code is moved from x86 to common kprobes.c [1]
-But I agree with Masami, consolidation could be done when arm64 kprobes
-on ftrace is stable.
+Not really, this is basically what happens in the $subject patch series. 
 
-In v2, actually, the arm64 version's kprobe_ftrace_handler() is the same
-as x86's, the only difference is comment, e.g
+Then IIUC what I would need to change is to modify exynos_asv_update_cpu_opps() 
+function in patch 3/9 to use dev_pm_opp_adjust_voltage() rather than 
+dev_pm_opp_remove(), dev_pm_opp_add().
 
-/* Kprobe handler expects regs->ip = ip + 1 as breakpoint hit */
-
-while in arm64
-
-/* Kprobe handler expects regs->pc = ip + 1 as breakpoint hit */
-
-
-W/ above, any suggestion about the suitable change log?
-
-Thanks
-
-[1] http://lists.infradead.org/pipermail/linux-arm-kernel/2019-August/674417.html
+-- 
+Thanks,
+Sylwester
 
 _______________________________________________
 linux-arm-kernel mailing list
