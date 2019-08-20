@@ -2,39 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6361C95A71
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 10:55:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 718E895A6F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 10:54:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M2KHzm0lr4QdWMSBQjO6FZJb4sxPHYUr43ZaFArJm0Q=; b=rK3l/xrg+VTb4k
-	nHQwsm1nuUIL/mCUXjLmyIJ1IGewduY1Gjw/wDUAbJkK5QHOH6hE5TivldrCn5cNpzY41jBmmOxiR
-	t0HKAcOTxk3QFvWl4l14hjJPdCkLIvr6reW4o6/XUpEcw61FbedvJd5tkt8ewZ0FQ93BQDy/jhUK1
-	N3MxIn1cibjsiaEiOdtTJwi4jvXnV5Xm5lGW+I/jl0lh6d72+QGZlo25RagXAQGe8D3weSfgSXb8y
-	d8b8IAHZHman2vlu2XPpXKP2XTWtOoadxlQ2TuDiUKAI//xaFsCCLVpqTTMTm1qM29fYFcRW1mzRy
-	YGX4fK4XZKhnDaHoXZdQ==;
+	List-Owner; bh=npj58lVW8BQDtSKrbQBsC965qMlIfTPejbHitAnSalw=; b=JNukjDUhfJAZ4k
+	ayDCV70j47LJdxvaNmEcTirbAfnt/vZO/3U/W+waM5xDcSe64ZBJ1YYnLiBR7jSJmQjJlCXT8XVKB
+	XK3au4rkRubLbssLVXGvl9CnEpLWc32C0dPMBdOao2Jyy1DkE+z9p8/JmcbBV9dTBRYNUyvYLo9Wl
+	mNCz8Nh+wnoYRJRDfkM6+Ofd01E/HfP0c3zNthgs8w+hzGlmKRdAc1BJQctGTmUojoyjicvPiCpiR
+	wOpzfVQiMp4AeNex501HRzuIrHy0CHH3d4qTVtS1+W4Phi/FnptdRzo22PRxHw5Oi6Nu9XifH1dRZ
+	q4l6d94P7qJLFVDtTrng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzzv4-0004Xc-SB; Tue, 20 Aug 2019 08:55:10 +0000
+	id 1hzzua-0004Ex-16; Tue, 20 Aug 2019 08:54:40 +0000
 Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzzu8-0004Cz-AY
+ id 1hzzu8-0004DA-GA
  for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 08:54:14 +0000
 Received: from p5de0b6c5.dip0.t-ipconnect.de ([93.224.182.197] helo=nanos)
  by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
  (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1hzzth-0007eD-0p; Tue, 20 Aug 2019 10:53:45 +0200
-Date: Tue, 20 Aug 2019 10:53:43 +0200 (CEST)
+ id 1hzztv-0007fA-Do; Tue, 20 Aug 2019 10:53:59 +0200
+Date: Tue, 20 Aug 2019 10:53:58 +0200 (CEST)
 From: Thomas Gleixner <tglx@linutronix.de>
 To: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-Subject: Re: [PATCH v2 3/3] arm64: implement KPROBES_ON_FTRACE
-In-Reply-To: <20190820114314.685a3239@xhacker.debian>
-Message-ID: <alpine.DEB.2.21.1908201052570.2223@nanos.tec.linutronix.de>
+Subject: Re: [PATCH v2 1/3] kprobes/x86: use instruction_pointer and
+ instruction_pointer_set
+In-Reply-To: <20190820114109.4624d56b@xhacker.debian>
+Message-ID: <alpine.DEB.2.21.1908201050370.2223@nanos.tec.linutronix.de>
 References: <20190820113928.1971900c@xhacker.debian>
- <20190820114314.685a3239@xhacker.debian>
+ <20190820114109.4624d56b@xhacker.debian>
 User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
 X-Linutronix-Spam-Score: -1.0
@@ -42,8 +43,8 @@ X-Linutronix-Spam-Level: -
 X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
  SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_015412_591895_D1AA8857 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20190820_015412_755020_8473A3BD 
+X-CRM114-Status: GOOD (  11.91  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -82,14 +83,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Tue, 20 Aug 2019, Jisheng Zhang wrote:
 
-> KPROBES_ON_FTRACE avoids much of the overhead with regular kprobes as it
-> eliminates the need for a trap, as well as the need to emulate or
-> single-step instructions.
-> 
-> This patch implements KPROBES_ON_FTRACE for arm64.
+> This is to make the x86 kprobe_ftrace_handler() more common so that
+> the code could be reused in future.
 
- git grep 'This patch' Documentation/process/submitting-patches.rst
- 
+While I agree with the change in general, I can't find anything which
+reuses that code. So the change log is pretty useless and I have no idea
+how this is related to the rest of the series.
+
 Thanks,
 
 	tglx
