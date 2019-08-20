@@ -2,55 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 477B8965F5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 18:11:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FD4C9660B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 18:16:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ael3nEGovz9E40hCXIs6H6KZ63KQ+tfaGD+cw41HvNY=; b=ZUiOiJkd2aifse
-	z4AA0dzVhlCtfpI2OafpBTzpqrfo+q0n9XAqPl0DE+aG8cpE58ezs2/ZqE7Grhn7GaEgBhZ0J4UHU
-	Ups45Ew1RtsVFpwkTJnpCM1Osl5IHE1l87fnTH4AE3nArRSegMz/Ie2m8LmKigB/qZLiqlSwcGVKk
-	Qs+u2BXNkWnA9Bm7yocasz+G/WELu6qUHvgvp0x3ZqgDevu+ntYhqaDTXfPNlDjysUsrRXlmcS1k9
-	aTPXv2TdX8WuoNRkx+ksjMeHXd3N4xxNfq+UZIlxd6Yn4ddFgfxu7mjwihqexqtee4ZDkgtT4v8tF
-	nSz5UKGTn/2dQgPx+y9w==;
+	List-Owner; bh=3pzajPYwIyb0xwrsxnYx6C2Q4BapGp7Ntm+eLFn/bUM=; b=S1j/6qPfgiUiuN
+	OHsh8ui286M8g1Ogx9OSuVUJf2WF2R8HtOPY04DLRq683abWQ01wdSPH2kzYprlJ7Xq4uimXeLJP9
+	NEnEcrJc6oZLURzIscs524TPxZmejA6jPijP1HFQNtp4k9Do9UkkHSKWZbiyClhcRvAK5BuyQlB2A
+	q+QjA5mSfHDyukZXk+7v6vyM1OxRXLE1ugLO+YkUTT3cZthoZFcl5YLZatEyBOJdixTmKZb6XnJ3i
+	ClYx2Z0NGIWd6FPMQqa6dvaymeajSECO4yQKB/sO+PW3POufHMv/GZayI2PEytlA1Rsl23Ronbrqk
+	whfLt7WM3moclv41XaJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i06jh-0006c1-W2; Tue, 20 Aug 2019 16:11:54 +0000
+	id 1i06nz-0000Uv-CD; Tue, 20 Aug 2019 16:16:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i06jY-0006bj-IL
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 16:11:45 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 89E0F2087E;
- Tue, 20 Aug 2019 16:11:42 +0000 (UTC)
+ id 1i06nn-0000Sm-0G; Tue, 20 Aug 2019 16:16:08 +0000
+Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
+ [209.85.160.170])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0514D22DD6;
+ Tue, 20 Aug 2019 16:16:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566317504;
- bh=f2XP5Rom/M/LRlxMiW6d/h0nQTI1cIy/myOvGg1QlW8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=tfYzVVKeU57Kj0re5ESECR2Dr+GY9nCaFU4yIYJePzHxKVZwsT7ZUEduC/ojmItKa
- 2I6yPHKvw64qmSuMPA9kLdXetQOaBeYWxln2B5h/qPHL8J0VxiWjrEUbox4AJ1YPQz
- ONfCTHlOFNhMXZJA/6/vJgNbZbSbeXDmLAIhLqVM=
-Date: Tue, 20 Aug 2019 17:11:39 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH] arm64: perf_event: Add missing header needed for
- smp_processor_id()
-Message-ID: <20190820161139.c64thty545i6xa2c@willie-the-truck>
-References: <20190820155745.20593-1-raphael.gault@arm.com>
- <20190820160629.GD43412@lakrids.cambridge.arm.com>
+ s=default; t=1566317766;
+ bh=o+9Y1S8EJeybPB3/XiGd1VecFWcI3U1F/7ifdtRoKzQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=Hq3LvZjFfnrBR33GHefdlaXFKqMqUujeYNw2kRo6h4AY/lH46aepgIsEYj17NJaEY
+ d6B/fUXh/S7aVrOkFzKwupvPvyW+mRANSNf29yG8OQCAjwpbZOw7mN5hwHQTr5v2Gn
+ FTSZ+jbiwvHthFu3wAs1dOgwtWnkrmiBHqzFL7Ps=
+Received: by mail-qt1-f170.google.com with SMTP id e8so6644354qtp.7;
+ Tue, 20 Aug 2019 09:16:05 -0700 (PDT)
+X-Gm-Message-State: APjAAAXRjbn4FZlk9ccLGR9GXZ/7+f8aO5Tg8NZsMVM9xOKgtowFhamJ
+ UfocKVgB/hws2mnpY1GUil6awH/a9Y5FpnoaiQ==
+X-Google-Smtp-Source: APXvYqz7/XDtwS8pKWW3WNm/atXtEdgaMroF8d1FCSG5RqKVSlW11FfeZTvwkmlYEEwGR9WC60bpQDx079FVVKGuyUQ=
+X-Received: by 2002:ac8:44c4:: with SMTP id b4mr26685231qto.224.1566317765244; 
+ Tue, 20 Aug 2019 09:16:05 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190820160629.GD43412@lakrids.cambridge.arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20190820144052.18269-1-narmstrong@baylibre.com>
+ <20190820144052.18269-5-narmstrong@baylibre.com>
+In-Reply-To: <20190820144052.18269-5-narmstrong@baylibre.com>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 20 Aug 2019 11:15:53 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqKFBcstWfaG-n6k9169bF0o7DDq1Uy6EcTF4p-Ta_DOBA@mail.gmail.com>
+Message-ID: <CAL_JsqKFBcstWfaG-n6k9169bF0o7DDq1Uy6EcTF4p-Ta_DOBA@mail.gmail.com>
+Subject: Re: [PATCH 4/6] dt-bindings: arm: amlogic: add SM1 bindings
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_091144_621564_09F8D4CA 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190820_091607_069034_93B89549 
+X-CRM114-Status: GOOD (  11.77  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,30 +83,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: raph.gault+kdev@gmail.com, peterz@infradead.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, acme@kernel.org,
- Raphael Gault <raphael.gault@arm.com>, mingo@redhat.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 20, 2019 at 05:06:29PM +0100, Mark Rutland wrote:
-> On Tue, Aug 20, 2019 at 04:57:45PM +0100, Raphael Gault wrote:
-> 
-> It would be worth having a body for the commit message like:
-> 
-> | in perf_event.c we use smp_processor_id(), but we haven't included 
-> | <linux/smp.h> where it is defined, and rely on this being pulled in 
-> | via a transitive include. Let's make this more robust by including
-> | <linux.smp.h> explciitly.
-> 
-> ... and with that, my Acked-by stands.
+On Tue, Aug 20, 2019 at 9:41 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> Add bindings for the new Amlogic SM1 SoC Family.
+>
+> It a derivative of the G12A SoC Family with :
+> - Cortex-A55 core instead of A53
+> - more power domains
+> - a neural network co-processor
+> - a CSI input and image processor
+>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> ---
+>  Documentation/devicetree/bindings/arm/amlogic.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
 
-Queued for 5.4. with typo fixed above.
-
-Will
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
