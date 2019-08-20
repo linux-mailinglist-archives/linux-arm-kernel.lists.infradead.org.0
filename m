@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF2819632A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 16:54:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A76D596332
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 16:55:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qlRnvUCyU/OCmc3ceM7sIi2iGjeDRtVysncAZtquJL0=; b=sfzFHbYXDPLpHP
-	OAQO0HI83hNR5ZRe8U4s25s7jkv9elIB/LmA9DMUf4DqO6bFqni/bWgHROqHE5euFq9IhXoKvJOp8
-	bWAhpe/bS9ZnGRUviUlX2zCXCvdjAkNygAo7uyjE80xdN5A5ZceN6UTR+sl2MCDCDv2cZgye7eUmL
-	22jD/BiAo35hpxafOoQ0pJulog87r4Peq4r5SWyssaehXoX/nQ4K+ulurvYfe6dhrNtNcRqCRAXUW
-	LOB7Kux6tfG7nJcwhJ1WTZxadowZoKSI81g5bW29+UG05UfEHINs4brbh/suwOovgtFmEW2c4YNjn
-	c6GGm4QZr3sK4qIdfC0g==;
+	List-Owner; bh=gymjF+Gu94UNYw5ReTDDTxP4rn6mIMlW834W16ayt9Q=; b=A+XRMuUbr7+s2+
+	0RnWhdZ0Ar9ewQdBcDppB3IYHKa3OdBoKAubftZW4akZbBHjGCRKWdWEA4Vqh952b0Tu5zMzN7iEI
+	Ksog6/vV7NfmKZYg7EuAQijsb0FeX0EB2yXOH6zGFrD2/ijYSjJAWPY2M6JXyB84469wJL3Y9KPoD
+	/OF1WvvBpmORTE6/krj1sJRCGt0XNNq98DcQYos+a1Vzwqtwm6+BPGYqGpsobZ7UlgM5q330EprLp
+	gazQBNLzNPyhdqoapHMkjO5UuzpFdU9B6RUuOFENP0iJ2WkltF6PCDqrrupD7x1ozL5SNpbUkqaV3
+	o2h3zeypLObZ2E5dfWDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i05Wd-0001HE-P0; Tue, 20 Aug 2019 14:54:20 +0000
+	id 1i05XS-00020K-9a; Tue, 20 Aug 2019 14:55:11 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i05W7-00013R-Bc
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 14:53:49 +0000
+ id 1i05W7-00013S-J6
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 14:53:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1566312825; bh=wIAxljKfYwADgH+42GDkJIwLygOIg7HG/xvcRvcY98U=;
+ t=1566312826; bh=BmUD9BF7ZWHwfIwmCa4uNboL8E51kehruNiRWEgChOs=;
  h=From:To:Cc:Subject:Date:References:From;
- b=JQloAJ9JgxomMDFTbsLxbkyZJgYGUbjBaehlsq8CDjjsR5kp8P2V0WYdgIg7+puj6
- AFMc4kQ/MwZPB+37mMTvujOxThMU3fqh605btYUrm9Kj8JtaQRpcl2rhfqL4tJ35CM
- I13XbUfgxDkjIsR5LBRq5X2HaxW5C+MsAGAiCREI=
+ b=YlHw2Dihm2NXzNp1zXkFKZN/lDdmrVAGr6ZDu+rY6O6dYeqmdgN0A83O/0NDFzmTa
+ MwI3Lq5KMIkfmJzFuQPpfM1Q/zoE9oTxK8lsvn+/6iD+bOjPtAe8y5kVFdMvOwXQqw
+ +2gulGYP98IVdqI8xiM7wtztu84yRSq4lyKyiv4s=
 From: megous@megous.com
 To: "David S. Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, Maxime Ripard <mripard@kernel.org>,
@@ -36,17 +36,16 @@ To: "David S. Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>,
  Alexandre Torgue <alexandre.torgue@st.com>,
  Jose Abreu <joabreu@synopsys.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Subject: [PATCH 2/6] dt-bindings: net: sun8i-a83t-emac: Add phy-io-supply
- property
-Date: Tue, 20 Aug 2019 16:53:39 +0200
-Message-Id: <20190820145343.29108-3-megous@megous.com>
+Subject: [PATCH 3/6] net: stmmac: sun8i: Use devm_regulator_get for PHY
+ regulator
+Date: Tue, 20 Aug 2019 16:53:40 +0200
+Message-Id: <20190820145343.29108-4-megous@megous.com>
 In-Reply-To: <20190820145343.29108-1-megous@megous.com>
 References: <20190820145343.29108-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_075347_738030_8E84F7B8 
-X-CRM114-Status: UNSURE (   6.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190820_075347_798340_57B5BC1A 
+X-CRM114-Status: GOOD (  13.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -82,30 +81,72 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-Some PHYs require separate power supply for I/O pins in some modes
-of operation. Add phy-io-supply property, to allow enabling this
-power supply.
+Use devm_regulator_get instead of devm_regulator_get_optional and rely
+on dummy supply. This avoids NULL checks before regulator_enable/disable
+calls.
+
+This path also improves error reporting, because we now report both
+use of dummy supply and error during registration with more detail,
+instead of generic info level message "No regulator found" that
+was reported previously on errors and lack of regulator property in DT.
+
+Finally, we'll be adding further optional regulators, and the overall
+code will be simpler.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- .../devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml    | 4 ++++
- 1 file changed, 4 insertions(+)
+ .../net/ethernet/stmicro/stmmac/dwmac-sun8i.c | 23 ++++++++-----------
+ 1 file changed, 10 insertions(+), 13 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml b/Documentation/devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml
-index 304f244e9ab5..782e202aa124 100644
---- a/Documentation/devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml
-+++ b/Documentation/devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml
-@@ -47,6 +47,10 @@ properties:
-     description:
-       PHY regulator
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
+index 4083019c547a..3e951a11aec3 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
+@@ -528,12 +528,10 @@ static int sun8i_dwmac_init(struct platform_device *pdev, void *priv)
+ 	struct sunxi_priv_data *gmac = priv;
+ 	int ret;
  
-+  phy-io-supply:
-+    description:
-+      PHY I/O pins regulator
-+
- required:
-   - compatible
-   - reg
+-	if (gmac->regulator) {
+-		ret = regulator_enable(gmac->regulator);
+-		if (ret) {
+-			dev_err(&pdev->dev, "Fail to enable regulator\n");
+-			return ret;
+-		}
++	ret = regulator_enable(gmac->regulator);
++	if (ret) {
++		dev_err(&pdev->dev, "Fail to enable regulator\n");
++		return ret;
+ 	}
+ 
+ 	ret = clk_prepare_enable(gmac->tx_clk);
+@@ -992,8 +990,7 @@ static void sun8i_dwmac_exit(struct platform_device *pdev, void *priv)
+ 
+ 	clk_disable_unprepare(gmac->tx_clk);
+ 
+-	if (gmac->regulator)
+-		regulator_disable(gmac->regulator);
++	regulator_disable(gmac->regulator);
+ }
+ 
+ static void sun8i_dwmac_set_mac_loopback(void __iomem *ioaddr, bool enable)
+@@ -1129,12 +1126,12 @@ static int sun8i_dwmac_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	/* Optional regulator for PHY */
+-	gmac->regulator = devm_regulator_get_optional(dev, "phy");
++	gmac->regulator = devm_regulator_get(dev, "phy");
+ 	if (IS_ERR(gmac->regulator)) {
+-		if (PTR_ERR(gmac->regulator) == -EPROBE_DEFER)
+-			return -EPROBE_DEFER;
+-		dev_info(dev, "No regulator found\n");
+-		gmac->regulator = NULL;
++		ret = PTR_ERR(gmac->regulator);
++		if (ret != -EPROBE_DEFER)
++			dev_err(dev, "Failed to get PHY regulator (%d)\n", ret);
++		return ret;
+ 	}
+ 
+ 	/* The "GMAC clock control" register might be located in the
 -- 
 2.22.1
 
