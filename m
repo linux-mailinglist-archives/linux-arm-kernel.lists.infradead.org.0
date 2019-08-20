@@ -2,98 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4789196478
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:32:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 762DA9649A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:35:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xhOFsZ4yKpMtuRo85uoh7jlw5/YrCkj46m5UKW1FdMs=; b=KLejG2Qj0TmyWG
-	8NOS0DFbpmkV1CjpMxyfmg5xA6BWgCQcVDNGA8PJJjz2YH/47AWJ8HZCA284oKqGxuIPtOTlN0FC6
-	zQSI7zzqgTdjkrU3j3Ek/YaCxgPTLR8wlWPaukHAqTYdUIMpt08J7RTNij/74wheH0v5YGNOppbHS
-	/5VHSY75ZG2SHJxna8VEE/Zq+I3rpW60cGQFpI0d76s0l9OJOCOSCMJ3AaO6SHXoVwH6VbVmBjcw+
-	DfZn+au1vu/ca1CMGdIMhcuSv9W15tTPN9PppvakZfxmSyVHA7RvqeKh5M0tsWyB5veXpiTuZYaL2
-	jn5RP6NNAy7YxabbWcqw==;
+	List-Owner; bh=fkGIrn54b9Bl1MMJXO5Vee48xZSerL1ui19IARypzAI=; b=aY71wTFzba4boM
+	JRGWYPjlYFlxzaBA1MbSS+vTnvsSeAfvIz+WCpZFNwwqIneYh4GpMcHEVlJOrrtVibYxJ06SE1Z8y
+	H+fuOwVOt+gzLl3uPKAYsnAhNJFeqYIrlQXOPT88vfqJJzG8mu9IGSsh3R8CwcnqDDLcFIBoeCJcx
+	POMviCpZgOy/tCIsOAMKn/2RF4owY8EIcvOvQUPGsHiQQndvVp8haTngEbl4LjDaG0ky3jnpkbn0y
+	Lg9YBe70sggvNjMO7JY2iUwudw1CizBPS0qWiajPs9qbojQh7WKNiQ77+9ynW9r8YCuvOetYCw5Ap
+	o/s2qpfhjceoECtd9kEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i067G-0008Dz-VX; Tue, 20 Aug 2019 15:32:11 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0675-0008DF-Pe
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:32:01 +0000
-Received: by mail-pl1-x642.google.com with SMTP id h3so2934878pls.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 08:31:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=D6+2chH1jPenkzoFyFJpnnlmhn9Oyxi8leBbEQDUJi4=;
- b=f+JQdCcOALfBVDicyuEPacuY4a3w2W5y6cYew+kGfxntbauISafYu8eqZYmz/HR1de
- PEXGGcrt2spJ1wYZWmfGYM7oVDqAT97zqmwgEHZRzN77bag2VR2bZpxCzoWBjbslIpDC
- On7RDm87BULnNIyH7Kqc2JBLwwEEoP7sEW1MrsnTIw0M9/uNAVu4U2qC2KXV7Ny8XjaJ
- pX0ErHMgkI7zFb/BVgJylvk5Ty7NwB+E5sOe5Sroh/TTEqERJNcjTUn+WGSvkDoqDQB7
- /lrwTTUB+KCNFBDYDDOqUh7C2WvU8PyETStyqMjF0XiXxq/wgb6TH40ynZOUr2JRM2sR
- thSA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=D6+2chH1jPenkzoFyFJpnnlmhn9Oyxi8leBbEQDUJi4=;
- b=A2aBnTaUwa5rlFN7dpmTTzNezmf4qI7GZCQCfhrdnxcIkzlKVj6T/09KKqTRGzpLG/
- OwT+OnRVH8B0KA1H/rK2tfeNOGcmrfGF5R8FRxWWqJ/G572tKK/C5jwfXwMi9NMkg6/2
- YEWT3dEJl3DVPiwSLnfF1TslIY2ZBZ55VkJEV4datVdHUz8gbV3Q4xQVrHfWmdYDCl7C
- dagwaHuOYmUFc/zP20JoSNSsQasm/J9Ji1E+ATYcB3HQrJNT9K/lxp3HsoeCEwafSnix
- JwI5vlE8JhywPmV2cB2TxRYJJYD4jry/j16B+Q5kaZH1r4Z8/x/5+euLKQCnCxUc0b6O
- X//g==
-X-Gm-Message-State: APjAAAUhfbVrStx8LapvAoaPzFOYbC8ZklW8KroN5dWTV65z7lvpSSyv
- dsOj3Q47BBIkZiR3XEcpwVM=
-X-Google-Smtp-Source: APXvYqzR2DAWZmxyGOUGcHJl9ueIVwADR3s07THdP2sgCbxMXUlS2IRdOEU2YnjX+hwsxzVaNTMoyw==
-X-Received: by 2002:a17:902:b70a:: with SMTP id
- d10mr2815914pls.281.1566315116939; 
- Tue, 20 Aug 2019 08:31:56 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id m20sm21479078pff.79.2019.08.20.08.31.56
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 20 Aug 2019 08:31:56 -0700 (PDT)
-Date: Tue, 20 Aug 2019 08:31:55 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH V2 2/4] watchdog: Add i.MX7ULP watchdog support
-Message-ID: <20190820153155.GA19394@roeck-us.net>
-References: <20190812085321.13823-1-Anson.Huang@nxp.com>
- <20190812085321.13823-2-Anson.Huang@nxp.com>
+	id 1i06AI-0001lG-4z; Tue, 20 Aug 2019 15:35:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i06A3-00016w-5y
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:35:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6E9B928;
+ Tue, 20 Aug 2019 08:35:02 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 34F753F246;
+ Tue, 20 Aug 2019 08:35:01 -0700 (PDT)
+Date: Tue, 20 Aug 2019 16:34:51 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Raphael Gault <raphael.gault@arm.com>
+Subject: Re: [PATCH v3 3/5] arm64: pmu: Add function implementation to update
+ event index in userpage.
+Message-ID: <20190820153450.GA43412@lakrids.cambridge.arm.com>
+References: <20190816125934.18509-1-raphael.gault@arm.com>
+ <20190816125934.18509-4-raphael.gault@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190812085321.13823-2-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20190816125934.18509-4-raphael.gault@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_083159_869711_A56A7039 
-X-CRM114-Status: GOOD (  28.53  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190820_083503_321002_1E12961F 
+X-CRM114-Status: GOOD (  25.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,332 +63,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, leonard.crestez@nxp.com,
- schnitzeltony@gmail.com, linux-watchdog@vger.kernel.org,
- otavio@ossystems.com.br, festevam@gmail.com, s.hauer@pengutronix.de,
- jan.tuerk@emtrion.com, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- u.kleine-koenig@pengutronix.de, wim@linux-watchdog.org, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: raph.gault+kdev@gmail.com, peterz@infradead.org, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, acme@kernel.org,
+ mingo@redhat.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 04:53:19PM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On Fri, Aug 16, 2019 at 01:59:32PM +0100, Raphael Gault wrote:
+> In order to be able to access the counter directly for userspace,
+> we need to provide the index of the counter using the userpage.
+> We thus need to override the event_idx function to retrieve and
+> convert the perf_event index to armv8 hardware index.
 > 
-> The i.MX7ULP Watchdog Timer (WDOG) module is an independent timer
-> that is available for system use.
-> It provides a safety feature to ensure that software is executing
-> as planned and that the CPU is not stuck in an infinite loop or
-> executing unintended code. If the WDOG module is not serviced
-> (refreshed) within a certain period, it resets the MCU.
+> Since the arm_pmu driver can be used by any implementation, even
+> if not armv8, two components play a role into making sure the
+> behaviour is correct and consistent with the PMU capabilities:
 > 
-> Add driver support for i.MX7ULP watchdog.
+> * the ARMPMU_EL0_RD_CNTR flag which denotes the capability to access
+> counter from userspace.
+> * the event_idx call back, which is implemented and initialized by
+> the PMU implementation: if no callback is provided, the default
+> behaviour applies, returning 0 as index value.
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-
-Reviewed-by: Guenter Roeck <linux@roeck-us.net>
-
+> Signed-off-by: Raphael Gault <raphael.gault@arm.com>
 > ---
-> Changes since V1:
-> 	- Add clock operation;
-> 	- Remove unneccsary error message when registering watchdog device failed;
-> 	- Use BIT() instead of hard code;
-> ---
->  drivers/watchdog/Kconfig       |  13 +++
->  drivers/watchdog/Makefile      |   1 +
->  drivers/watchdog/imx7ulp_wdt.c | 244 +++++++++++++++++++++++++++++++++++++++++
->  3 files changed, 258 insertions(+)
->  create mode 100644 drivers/watchdog/imx7ulp_wdt.c
+>  arch/arm64/kernel/perf_event.c | 22 ++++++++++++++++++++++
+>  include/linux/perf/arm_pmu.h   |  2 ++
+>  2 files changed, 24 insertions(+)
 > 
-> diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-> index 8188963..0884e53 100644
-> --- a/drivers/watchdog/Kconfig
-> +++ b/drivers/watchdog/Kconfig
-> @@ -740,6 +740,19 @@ config IMX_SC_WDT
->  	  To compile this driver as a module, choose M here: the
->  	  module will be called imx_sc_wdt.
+> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+> index a0b4f1bca491..9fe3f6909513 100644
+> --- a/arch/arm64/kernel/perf_event.c
+> +++ b/arch/arm64/kernel/perf_event.c
+> @@ -818,6 +818,22 @@ static void armv8pmu_clear_event_idx(struct pmu_hw_events *cpuc,
+>  		clear_bit(idx - 1, cpuc->used_mask);
+>  }
 >  
-> +config IMX7ULP_WDT
-> +	tristate "IMX7ULP Watchdog"
-> +	depends on ARCH_MXC || COMPILE_TEST
-> +	select WATCHDOG_CORE
-> +	help
-> +	  This is the driver for the hardware watchdog on the Freescale
-> +	  IMX7ULP and later processors. If you have one of these
-> +	  processors and wish to have watchdog support enabled,
-> +	  say Y, otherwise say N.
-> +
-> +	  To compile this driver as a module, choose M here: the
-> +	  module will be called imx7ulp_wdt.
-> +
->  config UX500_WATCHDOG
->  	tristate "ST-Ericsson Ux500 watchdog"
->  	depends on MFD_DB8500_PRCMU
-> diff --git a/drivers/watchdog/Makefile b/drivers/watchdog/Makefile
-> index 7caa920..7d32537 100644
-> --- a/drivers/watchdog/Makefile
-> +++ b/drivers/watchdog/Makefile
-> @@ -69,6 +69,7 @@ obj-$(CONFIG_TS4800_WATCHDOG) += ts4800_wdt.o
->  obj-$(CONFIG_TS72XX_WATCHDOG) += ts72xx_wdt.o
->  obj-$(CONFIG_IMX2_WDT) += imx2_wdt.o
->  obj-$(CONFIG_IMX_SC_WDT) += imx_sc_wdt.o
-> +obj-$(CONFIG_IMX7ULP_WDT) += imx7ulp_wdt.o
->  obj-$(CONFIG_UX500_WATCHDOG) += ux500_wdt.o
->  obj-$(CONFIG_RETU_WATCHDOG) += retu_wdt.o
->  obj-$(CONFIG_BCM2835_WDT) += bcm2835_wdt.o
-> diff --git a/drivers/watchdog/imx7ulp_wdt.c b/drivers/watchdog/imx7ulp_wdt.c
-> new file mode 100644
-> index 0000000..c20fba4
-> --- /dev/null
-> +++ b/drivers/watchdog/imx7ulp_wdt.c
-> @@ -0,0 +1,244 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2019 NXP.
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/init.h>
-> +#include <linux/io.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/reboot.h>
-> +#include <linux/watchdog.h>
-> +
-> +#define WDOG_CS			0x0
-> +#define WDOG_CS_CMD32EN		BIT(13)
-> +#define WDOG_CS_ULK		BIT(11)
-> +#define WDOG_CS_RCS		BIT(10)
-> +#define WDOG_CS_EN		BIT(7)
-> +#define WDOG_CS_UPDATE		BIT(5)
-> +
-> +#define WDOG_CNT	0x4
-> +#define WDOG_TOVAL	0x8
-> +
-> +#define REFRESH_SEQ0	0xA602
-> +#define REFRESH_SEQ1	0xB480
-> +#define REFRESH		((REFRESH_SEQ1 << 16) | REFRESH_SEQ0)
-> +
-> +#define UNLOCK_SEQ0	0xC520
-> +#define UNLOCK_SEQ1	0xD928
-> +#define UNLOCK		((UNLOCK_SEQ1 << 16) | UNLOCK_SEQ0)
-> +
-> +#define DEFAULT_TIMEOUT	60
-> +#define MAX_TIMEOUT	128
-> +
-> +static bool nowayout = WATCHDOG_NOWAYOUT;
-> +module_param(nowayout, bool, 0000);
-> +MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started (default="
-> +		 __MODULE_STRING(WATCHDOG_NOWAYOUT) ")");
-> +
-> +struct imx7ulp_wdt_device {
-> +	struct notifier_block restart_handler;
-> +	struct watchdog_device wdd;
-> +	void __iomem *base;
-> +	struct clk *clk;
-> +	int rate;
-> +};
-> +
-> +static inline void imx7ulp_wdt_enable(void __iomem *base, bool enable)
+> +static int armv8pmu_access_event_idx(struct perf_event *event)
 > +{
-> +	u32 val = readl(base + WDOG_CS);
+> +	if (!(event->hw.flags & ARMPMU_EL0_RD_CNTR))
+> +		return 0;
 > +
-> +	writel(UNLOCK, base + WDOG_CNT);
-> +	if (enable)
-> +		writel(val | WDOG_CS_EN, base + WDOG_CS);
-> +	else
-> +		writel(val & ~WDOG_CS_EN, base + WDOG_CS);
+> +	/*
+> +	 * We remap the cycle counter index to 32 to
+> +	 * match the offset applied to the rest of
+> +	 * the counter indeces.
+
+Typo: s/indeces/indices/
+
+> +	 */
+> +	if (event->hw.idx == ARMV8_IDX_CYCLE_COUNTER)
+> +		return 32;
+> +
+> +	return event->hw.idx;
 > +}
 > +
-> +static inline bool imx7ulp_wdt_is_enabled(void __iomem *base)
-> +{
-> +	u32 val = readl(base + WDOG_CS);
+>  /*
+>   * Add an event filter to a given event.
+>   */
+> @@ -911,6 +927,9 @@ static int __armv8_pmuv3_map_event(struct perf_event *event,
+>  	if (armv8pmu_event_is_64bit(event))
+>  		event->hw.flags |= ARMPMU_EVT_64BIT;
+>  
+> +	if (!cpus_have_const_cap(ARM64_HAS_HETEROGENEOUS_PMU))
+> +		event->hw.flags |= ARMPMU_EL0_RD_CNTR;
 > +
-> +	return val & WDOG_CS_EN;
-> +}
+>  	/* Only expose micro/arch events supported by this PMU */
+>  	if ((hw_event_id > 0) && (hw_event_id < ARMV8_PMUV3_MAX_COMMON_EVENTS)
+>  	    && test_bit(hw_event_id, armpmu->pmceid_bitmap)) {
+> @@ -1031,6 +1050,8 @@ static int armv8_pmu_init(struct arm_pmu *cpu_pmu)
+>  	cpu_pmu->set_event_filter	= armv8pmu_set_event_filter;
+>  	cpu_pmu->filter_match		= armv8pmu_filter_match;
+>  
+> +	cpu_pmu->pmu.event_idx		= armv8pmu_access_event_idx;
 > +
-> +static int imx7ulp_wdt_ping(struct watchdog_device *wdog)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +
-> +	writel(REFRESH, wdt->base + WDOG_CNT);
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx7ulp_wdt_start(struct watchdog_device *wdog)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +
-> +	imx7ulp_wdt_enable(wdt->base, true);
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx7ulp_wdt_stop(struct watchdog_device *wdog)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +
-> +	imx7ulp_wdt_enable(wdt->base, false);
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx7ulp_wdt_set_timeout(struct watchdog_device *wdog,
-> +				   unsigned int timeout)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +	u32 val = wdt->rate * timeout;
-> +
-> +	writel(UNLOCK, wdt->base + WDOG_CNT);
-> +	writel(val, wdt->base + WDOG_TOVAL);
-> +
-> +	wdog->timeout = timeout;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct watchdog_ops imx7ulp_wdt_ops = {
-> +	.owner = THIS_MODULE,
-> +	.start = imx7ulp_wdt_start,
-> +	.stop  = imx7ulp_wdt_stop,
-> +	.ping  = imx7ulp_wdt_ping,
-> +	.set_timeout = imx7ulp_wdt_set_timeout,
-> +};
-> +
-> +static const struct watchdog_info imx7ulp_wdt_info = {
-> +	.identity = "i.MX7ULP watchdog timer",
-> +	.options  = WDIOF_SETTIMEOUT | WDIOF_KEEPALIVEPING |
-> +		    WDIOF_MAGICCLOSE,
-> +};
-> +
-> +static inline void imx7ulp_wdt_init(void __iomem *base, unsigned int timeout)
-> +{
-> +	u32 val;
-> +
-> +	/* unlock the wdog for reconfiguration */
-> +	writel_relaxed(UNLOCK_SEQ0, base + WDOG_CNT);
-> +	writel_relaxed(UNLOCK_SEQ1, base + WDOG_CNT);
-> +
-> +	/* set an initial timeout value in TOVAL */
-> +	writel(timeout, base + WDOG_TOVAL);
-> +	/* enable 32bit command sequence and reconfigure */
-> +	val = BIT(13) | BIT(8) | BIT(5);
-> +	writel(val, base + WDOG_CS);
-> +}
-> +
-> +static int imx7ulp_wdt_probe(struct platform_device *pdev)
-> +{
-> +	struct imx7ulp_wdt_device *imx7ulp_wdt;
-> +	struct device *dev = &pdev->dev;
-> +	struct watchdog_device *wdog;
-> +	int ret;
-> +
-> +	imx7ulp_wdt = devm_kzalloc(dev, sizeof(*imx7ulp_wdt), GFP_KERNEL);
-> +	if (!imx7ulp_wdt)
-> +		return -ENOMEM;
-> +
-> +	platform_set_drvdata(pdev, imx7ulp_wdt);
-> +
-> +	imx7ulp_wdt->base = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(imx7ulp_wdt->base))
-> +		return PTR_ERR(imx7ulp_wdt->base);
-> +
-> +	imx7ulp_wdt->clk = devm_clk_get(dev, NULL);
-> +	if (IS_ERR(imx7ulp_wdt->clk)) {
-> +		dev_err(dev, "Failed to get watchdog clock\n");
-> +		return PTR_ERR(imx7ulp_wdt->clk);
-> +	}
-> +
-> +	ret = clk_prepare_enable(imx7ulp_wdt->clk);
-> +	if (ret)
-> +		return ret;
-> +
-> +	imx7ulp_wdt->rate = 1000;
-> +	wdog = &imx7ulp_wdt->wdd;
-> +	wdog->info = &imx7ulp_wdt_info;
-> +	wdog->ops = &imx7ulp_wdt_ops;
-> +	wdog->min_timeout = 1;
-> +	wdog->max_timeout = MAX_TIMEOUT;
-> +	wdog->parent = dev;
-> +	wdog->timeout = DEFAULT_TIMEOUT;
-> +
-> +	watchdog_init_timeout(wdog, 0, dev);
-> +	watchdog_stop_on_reboot(wdog);
-> +	watchdog_stop_on_unregister(wdog);
-> +	watchdog_set_drvdata(wdog, imx7ulp_wdt);
-> +	imx7ulp_wdt_init(imx7ulp_wdt->base, wdog->timeout * imx7ulp_wdt->rate);
-> +
-> +	ret = devm_watchdog_register_device(dev, wdog);
-> +	if (ret)
-> +		goto disable_clk;
-> +
-> +	return 0;
-> +
-> +disable_clk:
-> +	clk_disable_unprepare(imx7ulp_wdt->clk);
-> +
-> +	return ret;
-> +}
-> +
-> +static int __maybe_unused imx7ulp_wdt_suspend(struct device *dev)
-> +{
-> +	struct imx7ulp_wdt_device *imx7ulp_wdt = dev_get_drvdata(dev);
-> +
-> +	if (watchdog_active(&imx7ulp_wdt->wdd))
-> +		imx7ulp_wdt_stop(&imx7ulp_wdt->wdd);
-> +
-> +	clk_disable_unprepare(imx7ulp_wdt->clk);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused imx7ulp_wdt_resume(struct device *dev)
-> +{
-> +	struct imx7ulp_wdt_device *imx7ulp_wdt = dev_get_drvdata(dev);
-> +	u32 timeout = imx7ulp_wdt->wdd.timeout * imx7ulp_wdt->rate;
-> +	int ret;
-> +
-> +	ret = clk_prepare_enable(imx7ulp_wdt->clk);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (imx7ulp_wdt_is_enabled(imx7ulp_wdt->base))
-> +		imx7ulp_wdt_init(imx7ulp_wdt->base, timeout);
-> +
-> +	if (watchdog_active(&imx7ulp_wdt->wdd))
-> +		imx7ulp_wdt_start(&imx7ulp_wdt->wdd);
-> +
-> +	return 0;
-> +}
-> +
-> +static SIMPLE_DEV_PM_OPS(imx7ulp_wdt_pm_ops, imx7ulp_wdt_suspend,
-> +			 imx7ulp_wdt_resume);
-> +
-> +static const struct of_device_id imx7ulp_wdt_dt_ids[] = {
-> +	{ .compatible = "fsl,imx7ulp-wdt", },
-> +	{ /* sentinel */ }
-> +};
-> +MODULE_DEVICE_TABLE(of, imx7ulp_wdt_dt_ids);
-> +
-> +static struct platform_driver imx7ulp_wdt_driver = {
-> +	.probe		= imx7ulp_wdt_probe,
-> +	.driver		= {
-> +		.name	= "imx7ulp-wdt",
-> +		.pm	= &imx7ulp_wdt_pm_ops,
-> +		.of_match_table = imx7ulp_wdt_dt_ids,
-> +	},
-> +};
-> +module_platform_driver(imx7ulp_wdt_driver);
-> +
-> +MODULE_AUTHOR("Anson Huang <Anson.Huang@nxp.com>");
-> +MODULE_DESCRIPTION("Freescale i.MX7ULP watchdog driver");
-> +MODULE_LICENSE("GPL v2");
+>  	return 0;
+>  }
+>  
+> @@ -1209,6 +1230,7 @@ void arch_perf_update_userpage(struct perf_event *event,
+>  	 */
+>  	freq = arch_timer_get_rate();
+>  	userpg->cap_user_time = 1;
+> +	userpg->cap_user_rdpmc = !!(event->hw.flags & ARMPMU_EL0_RD_CNTR);
+
+For bisectability, we should only expose this to userspace once we have
+the code to enable/disable it, so the code exposing the index and
+setting up the user page cap needs to be added after the context switch
+code.
+
+Thanks,
+Mark.
+
+>  
+>  	clocks_calc_mult_shift(&userpg->time_mult, &shift, freq,
+>  			NSEC_PER_SEC, 0);
+> diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
+> index 71f525a35ac2..1106a9ac00fd 100644
+> --- a/include/linux/perf/arm_pmu.h
+> +++ b/include/linux/perf/arm_pmu.h
+> @@ -26,6 +26,8 @@
+>   */
+>  /* Event uses a 64bit counter */
+>  #define ARMPMU_EVT_64BIT		1
+> +/* Allow access to hardware counter from userspace */
+> +#define ARMPMU_EL0_RD_CNTR		2
+>  
+>  #define HW_OP_UNSUPPORTED		0xFFFF
+>  #define C(_x)				PERF_COUNT_HW_CACHE_##_x
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
