@@ -2,51 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F078796447
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:25:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FD739644C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 17:26:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LIlRKq+TduvnIHxXpNe8+iuwxC+lL4jgE/9Q+OCM7WA=; b=KcpYBcXzdl1DQD
-	e+DclvYgzPrs4zWc330o8BXDM//p4b5GYdL3pgdTdADL/U3gtl8Oezf8PqZBZGunXXyNAT1iKpWg9
-	3Ri0hvsVzo8GcPDMyxcJNH8+hwo73OWpowemWJuGz9BdknymNwLCYgjvloubLCnMYJd8og6I2Posr
-	phAXMHOk06sWfUNdoYIC6J+chrCt3lRs8EeMJM+Jgek9aGa+BZgMXVGrJqakorWkj7z+Vz31dafFW
-	mT1iHLebsvJrdc8kw9Pcfyo4NWsr+ib4GgNyWxYGdZCEilRu1SJBU/OG1KSGL9jHHlbMus/GOd8dz
-	rCidbwl0cpasZz7Tasmw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=mVBFSGA+Dr2zDYgOs/s24zMi9qHeGih8DVBaoxaOF/I=; b=CbHFe3EMvGyycGVKNB2R/5niO
+	OGB/61T/AJp7rODONoWi6qgtOrXh/89TMfZK/cE6f0KB/MLAXDvCzWDldPGVyZePHRrIt3VcqH/VI
+	KcygY37uY2pdUYYysjQ0Fh2G804wY/ORp735D9x0FIlrZGPJdBmztjhzv5/r3Pc3VlT/B5676tLgx
+	wenUvgK9bxq4fLprwpLbge669GMzEZkPAwhz+tolMaAvz/nRP8boqIzZqIRhblGwcytrBoMRLvO+B
+	zBn+cK6zgls5HtLsyb5nyyWjzdQtjreyC37xxYCpTPVV4l1EwlsCu0uXxpIzbZCOlZTZ/PLagRpx7
+	BquzTi4iA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0612-0004xw-Ss; Tue, 20 Aug 2019 15:25:45 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i060q-0004wx-T0
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:25:34 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1i060j-00088F-U1; Tue, 20 Aug 2019 17:25:25 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1i060b-0000UV-79; Tue, 20 Aug 2019 17:25:17 +0200
-From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH RFC] dt-bindings: regulator: define a mux regulator
-Date: Tue, 20 Aug 2019 17:25:11 +0200
-Message-Id: <20190820152511.15307-1-u.kleine-koenig@pengutronix.de>
-X-Mailer: git-send-email 2.20.1
+	id 1i061S-0005Cn-VH; Tue, 20 Aug 2019 15:26:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i061G-0005CH-Tk
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 15:26:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4DB32360;
+ Tue, 20 Aug 2019 08:25:58 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 807463F246;
+ Tue, 20 Aug 2019 08:25:57 -0700 (PDT)
+Subject: Re: [PATCH 3/4] iommu/io-pgtable-arm: Rationalise TCR handling
+To: Will Deacon <will@kernel.org>
+References: <cover.1566238530.git.robin.murphy@arm.com>
+ <78df4f8e2510e88f3ded59eb385f79b4442ed4f2.1566238530.git.robin.murphy@arm.com>
+ <20190820103115.o7neehdethf7sbqi@willie-the-truck>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <48ca6945-de73-116a-3230-84862ca9e60b@arm.com>
+Date: Tue, 20 Aug 2019 16:25:56 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20190820103115.o7neehdethf7sbqi@willie-the-truck>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_082532_930927_2D8C2DF4 
-X-CRM114-Status: GOOD (  14.55  )
+X-CRM114-CacheID: sfid-20190820_082558_997920_28F41516 
+X-CRM114-Status: GOOD (  19.58  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,70 +63,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, kernel@pengutronix.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: robdclark@gmail.com, joro@8bytes.org, jcrouse@codeaurora.org,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QSBtdXggcmVndWxhdG9yIGlzIHVzZWQgdG8gcHJvdmlkZSBjdXJyZW50IG9uIG9uZSBvZiBzZXZl
-cmFsIG91dHB1dHMuIEl0Cm1pZ2h0IGxvb2sgYXMgZm9sbG93czoKCiAgICAgICwtLS0tLS0tLS0t
-LS0uCiAgICAtLTxPVVQwICAgICBBMCA8LS0KICAgIC0tPE9VVDEgICAgIEExIDwtLQogICAgLS08
-T1VUMiAgICAgQTIgPC0tCiAgICAtLTxPVVQzICAgICAgICB8CiAgICAtLTxPVVQ0ICAgICBFTiA8
-LS0KICAgIC0tPE9VVDUgICAgICAgIHwKICAgIC0tPE9VVDYgICAgIElOIDwtLQogICAgLS08T1VU
-NyAgICAgICAgfAogICAgICBgLS0tLS0tLS0tLS0tJwoKRGVwZW5kaW5nIG9uIHdoaWNoIGFkZHJl
-c3MgaXMgZW5jb2RlZCBvbiB0aGUgdGhyZWUgYWRkcmVzcyBpbnB1dHMgQTAsIEExCmFuZCBBMiB0
-aGUgY3VycmVudCBwcm92aWRlZCBvbiBJTiBpcyBwcm92aWRlZCBvbiBvbmUgb2YgdGhlIGVpZ2h0
-Cm91dHB1dHMuCgpXaGF0IGlzIG5ldyBoZXJlIGlzIHRoYXQgdGhlIGJpbmRpbmcgbWFrZXMgdXNl
-IG9mIGEgI3JlZ3VsYXRvci1jZWxscwpwcm9wZXJ0eS4gVGhpcyB1c2VzIHRoZSBhcHByb2FjaCBr
-bm93biBmcm9tIG90aGVyIGJpbmRpbmdzIChlLmcuIGdwaW8pCnRvIGFsbG93IHJlZmVyZW5jaW5n
-IGFsbCBlaWdodCBvdXRwdXRzIHdpdGggcGhhbmRsZSBhcmd1bWVudHMuIFRoaXMKcmVxdWlyZXMg
-YW4gZXh0ZW50aW9uIGluIG9mX2dldF9yZWd1bGF0b3IgdG8gdXNlIGEgbmV3IHZhcmlhbnQgb2YK
-b2ZfcGFyc2VfcGhhbmRsZV93aXRoX2FyZ3MgdGhhdCBoYXMgYSBjZWxsX2NvdW50X2RlZmF1bHQg
-cGFyYW1ldGVyIHRoYXQKaXMgdXNlZCBpbiBhYnNlbmNlIG9mIGEgJGNlbGxfbmFtZSBwcm9wZXJ0
-eS4gRXZlbiBpZiB3ZSdkIGNob29zZSB0bwp1cGRhdGUgYWxsIHJlZ3VsYXRvci1iaW5kaW5ncyB0
-byBhZGQgI3JlZ3VsYXRvci1jZWxscyA9IDwwPjsgd2Ugc3RpbGwKbmVlZGVkIHNvbWV0aGluZyB0
-byBpbXBsZW1lbnQgY29tcGF0aWJpbGl0eSB0byB0aGUgY3VycmVudGx5IGRlZmluZWQKYmluZGlu
-Z3MuCgpTaWduZWQtb2ZmLWJ5OiBVd2UgS2xlaW5lLUvDtm5pZyA8dS5rbGVpbmUta29lbmlnQHBl
-bmd1dHJvbml4LmRlPgotLS0KSGVsbG8sCgp0aGUgb2J2aW91cyBhbHRlcm5hdGl2ZSBpcyB0byBh
-ZGQgKGhlcmUpIGVpZ2h0IHN1Ym5vZGVzIHRvIHJlcHJlc2VudCB0aGUKZWlnaHQgb3V0cHV0cy4g
-VGhpcyBpcyBJTUhPIGxlc3MgcHJldHR5LCBidXQgd291bGRuJ3QgbmVlZCB0byBpbnRyb2R1Y2UK
-I3JlZ3VsYXRvci1jZWxscy4KCkFwYXJ0IGZyb20gcmVnID0gPC4uPiBhbmQgYSBwaGFuZGxlIHRo
-ZXJlIGlzIChJIHRoaW5rKSBub3RoaW5nIHRoYXQKbmVlZHMgdG8gYmUgc3BlY2lmaWVkIGluIHRo
-ZSBzdWJub2RlcyBiZWNhdXNlIGFsbCBwcm9wZXJ0aWVzIG9mIGFuCm91dHB1dCAoYXBhcnQgZnJv
-bSB0aGUgYWRkcmVzcykgYXBwbHkgdG8gYWxsIG91dHB1dHMuCgpXaGF0IGRvIHlvdSB0aGluaz8K
-CkJlc3QgcmVnYXJkcwpVd2UKCiAuLi4vYmluZGluZ3MvcmVndWxhdG9yL211eC1yZWd1bGF0b3Iu
-eWFtbCAgICAgfCA1MiArKysrKysrKysrKysrKysrKysrCiAxIGZpbGUgY2hhbmdlZCwgNTIgaW5z
-ZXJ0aW9ucygrKQogY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
-aW5kaW5ncy9yZWd1bGF0b3IvbXV4LXJlZ3VsYXRvci55YW1sCgpkaWZmIC0tZ2l0IGEvRG9jdW1l
-bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3JlZ3VsYXRvci9tdXgtcmVndWxhdG9yLnlhbWwg
-Yi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcmVndWxhdG9yL211eC1yZWd1bGF0
-b3IueWFtbApuZXcgZmlsZSBtb2RlIDEwMDY0NAppbmRleCAwMDAwMDAwMDAwMDAuLmYwNmRiYjk2
-OTA5MAotLS0gL2Rldi9udWxsCisrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy9yZWd1bGF0b3IvbXV4LXJlZ3VsYXRvci55YW1sCkBAIC0wLDAgKzEsNTIgQEAKKyMgU1BEWC1M
-aWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAKKyVZQU1MIDEuMgorLS0tCiskaWQ6IGh0dHA6Ly9k
-ZXZpY2V0cmVlLm9yZy9zY2hlbWFzL3JlZ3VsYXRvci9tdXgtcmVndWxhdG9yLnlhbWwjCiskc2No
-ZW1hOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwordGl0
-bGU6IE1VWCByZWd1bGF0b3JzCisKK3Byb3BlcnRpZXM6CisgIGNvbXBhdGlibGU6CisgICAgY29u
-c3Q6IFhYWCxhZGI3MDgKKworICBlbmFibGUtZ3Bpb3M6CisgICAgbWF4SXRlbXM6IDEKKworICBh
-ZGRyZXNzLWdwaW9zOgorICAgIGRlc2NyaXB0aW9uOiBBcnJheSBvZiB0eXBpY2FsbHkgdGhyZWUg
-R1BJTyBwaW5zIHVzZWQgdG8gc2VsZWN0IHRoZQorICAgICAgcmVndWxhdG9yJ3Mgb3V0cHV0LiBU
-aGUgbGVhc3Qgc2lnbmlmaWNhbnQgYWRkcmVzcyBHUElPIG11c3QgYmUgbGlzdGVkCisgICAgICBm
-aXJzdC4gVGhlIG90aGVycyBmb2xsb3cgaW4gb3JkZXIgb2Ygc2lnbmlmaWNhbmNlLgorICAgIG1p
-bkl0ZW1zOiAxCisKKyAgIiNyZWd1bGF0b3ItY2VsbHMiOgorICAgIGNvbnN0OiAxCisKKyAgcmVn
-dWxhdG9yLW5hbWU6CisgICAgZGVzY3JpcHRpb246IEEgc3RyaW5nIHVzZWQgdG8gY29uc3RydWN0
-IHRoZSBzdWIgcmVndWxhdG9yJ3MgbmFtZXMKKyAgICAkcmVmOiAiL3NjaGVtYXMvdHlwZXMueWFt
-bCMvZGVmaW5pdGlvbnMvc3RyaW5nIgorCisgIHN1cHBseToKKyAgICBkZXNjcmlwdGlvbjogaW5w
-dXQgc3VwcGx5CisKK3JlcXVpcmVkOgorICAtIGNvbXBhdGlibGUKKyAgLSByZWd1bGF0b3ItbmFt
-ZQorICAtIHN1cHBseQorICAKKworZXhhbXBsZXM6CisgIC0gfAorICAgIG11eC1yZWd1bGF0b3Ig
-eworICAgICAgY29tcGF0aWJsZSA9ICJyZWd1bGF0b3ItbXV4IjsKKworICAgICAgcmVndWxhdG9y
-LW5hbWUgPSAiYmxhZmFzZWwiOworCisgICAgICBzdXBwbHkgPSA8Jm11eGluX3JlZ3VsYXRvcj47
-CisKKyAgICAgIGVuYWJsZS1ncGlvcyA9IDwmZ3BpbzIgNSBHUElPX0FDVElWRV9ISUdIPjsKKyAg
-ICAgIGFkZHJlc3MtZ3Bpb3MgPSA8JmdwaW8yIDIgR1BJT19BQ1RJVkVfSElHSD4sCisgICAgICAg
-ICAgICAgICAgICAgICAgICA8JmdwaW8yIDMgR1BJT19BQ1RJVkVfSElHSD4sCisgICAgICAgICAg
-ICAgICAgICAgICAgICA8JmdwaW8yIDQgR1BJT19BQ1RJVkVfSElHSD4sCisgICAgfTsKKy4uLgot
-LSAKMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+On 20/08/2019 11:31, Will Deacon wrote:
+> On Mon, Aug 19, 2019 at 07:19:30PM +0100, Robin Murphy wrote:
+>> Although it's conceptually nice for the io_pgtable_cfg to provide a
+>> standard VMSA TCR value, the reality is that no VMSA-compliant IOMMU
+>> looks exactly like an Arm CPU, and they all have various other TCR
+>> controls which io-pgtable can't be expected to understand. Thus since
+>> there is an expectation that drivers will have to add to the given TCR
+>> value anyway, let's strip it down to just the essentials that are
+>> directly relevant to io-pgatble's inner workings - namely the address
+>> sizes, walk attributes, and where appropriate, format selection.
+>>
+>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+>> ---
+>>   drivers/iommu/arm-smmu-v3.c        | 7 +------
+>>   drivers/iommu/arm-smmu.c           | 1 +
+>>   drivers/iommu/arm-smmu.h           | 2 ++
+>>   drivers/iommu/io-pgtable-arm-v7s.c | 6 ++----
+>>   drivers/iommu/io-pgtable-arm.c     | 4 ----
+>>   drivers/iommu/qcom_iommu.c         | 2 +-
+>>   6 files changed, 7 insertions(+), 15 deletions(-)
+> 
+> Hmm, so I'm a bit nervous about this one since I think we really should
+> be providing a TCR with EPD1 set if we're only giving you TTBR0. Relying
+> on the driver to do this worries me. See my comments on the next patch.
+
+The whole idea is that we already know we can't provide a *complete* TCR 
+value (not least because anything above bit 31 is the wild west), thus 
+there's really no point in io-pgtable trying to provide anything other 
+than the parts it definitely controls. It makes sense to provide this 
+partial TCR value "as if" for TTBR0, since that's the most common case, 
+but ultimately io-pgatble doesn't know (or need to) which TTBR the 
+caller intends to actually use for this table. Even if the caller *is* 
+allocating it for TTBR0, io-pgtable doesn't know that they haven't got 
+something live in TTBR1 already, so it still wouldn't be in a position 
+to make the EPD1 call either way.
+
+Ultimately, it's the IOMMU drivers who decide what they put in which 
+TTBR, so it's the IOMMU drivers which have to take responsibility for 
+EPD*. Sure you can worry about it, but you can equally worry about them 
+them misprogramming the ASID or anything else...
+
+Robin.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
