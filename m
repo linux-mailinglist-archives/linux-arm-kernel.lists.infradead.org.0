@@ -2,77 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2813695E7F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 14:28:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7E9D95E87
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 14:29:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bqOBZLBnV30pSVHjJmTQpoD7F3DkY0LhH6SeuekJbq4=; b=gtzddu3A1sCIJf
-	Rd774IFhmjQnMjWe3DLGFHbART1w3eH+Cn7gWIO0xiklFsq7gj/dOLASih8TSswKYyOJ2wZnWoS/b
-	QUlDzFKVU4lp9eM1nFVc/QOTLbIb4zGK4NbgTxxWkrm2crwHBr2A4685Xpzw23ioJilFG1dzMOlMQ
-	5mWVMlTVHsScumxZhYTW5aiFWNShBx66zXL4WFHhvBp798azXov53EmuWZgyL9CVZxdeaX7LKreno
-	nY7BWYawJWu+g0OaowqXOdmvxlqy/J3inDYD0Y0S5YTjAMN7YdPgjhO3Wh9Gu+/LxsBBFRE4hMUEI
-	/Takv4aYyeIjyeC9mx5A==;
+	List-Owner; bh=JFsnF60GuXNj8rOj0sk9mRTEVektyk63VN8MUHiBOBs=; b=bUL6knDtcH+ngA
+	I6PwsMlWtHlrBB3JkWK/i7vS+WcpkRXfCdFR29L+mw3h8UA/Hmjjj5CsAUOfto89WRy23XnGTlvs8
+	LdgJ9HIfoUWE6UVjgIn26BnmBYoiXMpUlz90/+2GMeewQc/Bkkw48KFRnlNqMYQvBJfjm6FTxWoIC
+	qN/T5ey6dCtqMgGo/rGMdOzBP2yBgRFhgZbIdH7vUE0UhDMdTTVkb9JiuxIJ1L5qUf2qen+sk8y7l
+	L7pvxB24WtawBpNDD7gxUx6I54o2lE6ZT7b4xsT9csNxxaqgvQG7Ewuju1aAHCYcs6ANIlMJBocbP
+	xWdm5b5r8Muq4x7QkJhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i03FR-00041q-N1; Tue, 20 Aug 2019 12:28:25 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1i03GL-0004Ro-QD; Tue, 20 Aug 2019 12:29:21 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i03Ed-0003yI-Mq
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 12:27:37 +0000
-Received: by mail-wm1-x341.google.com with SMTP id i63so2470331wmg.4
+ id 1i03Fe-0004NK-42
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 12:28:39 +0000
+Received: by mail-wm1-x344.google.com with SMTP id e8so2296919wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 05:27:35 -0700 (PDT)
+ Tue, 20 Aug 2019 05:28:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Fc9kgafPA2gUOPbQU1W3ajBr+1WrHB60fZSaC4Wi+Sg=;
- b=NlUKtmn9iGLGYzl/EGuxT5/QFDiWGwqT+SyseUqGQ8qv1eVKlAZutSafi0AbgwxVya
- 6dqyEnKyli5cUAbyM+8YbVFbhOu1g4+mjswnShlQVVmHQ74gvUa5wUgoJq+rcOUOCvp2
- /U6ehhgch2rOD/YINXpXSo6Gl1MDVdnWaODFMbh+HsJrCi//AnlfQ1VitYLR3Vcqnujk
- 4euj7syu8yOnXtSIDBrNYa44gL/mcHfIA5JvOAiTKPyRh/RjIEdyPBCtYMxXb3hmso6F
- dm3NpN8gr1s4exi5lvCCKYMLdjzcAo+jvdxcx8iU45Rf227pWO1z6xbvBMFCIZ1djaO5
- mSWQ==
+ :cc; bh=dD0Co8FG/hJyJAYUqVEMglsK3T7bNz9NWAIKm1yXSok=;
+ b=IAB/CxVy5OTM+bm1P/vwQO5e1zYJhw5W+8ZMfEr0TwRT2EHai9xEb7z0JLGvQL+AEM
+ noesBxet+SdZXcyD+TDMiDedkuNJmvs0pynLhCizA0UKehvY/U9nfrqf3O3c50RdYmHc
+ EgXw+nNiCh+Jqg7tX3pehf5oIkz3QOguhxAmmqUBwDTwZURbQrU1MliR4D+sVI/Dws45
+ /wPIeJtLO2Bq1hSk5IZ6nNWF4wkRDFhE2tHy/FDvCFmeq3K+tWEMzX5g+jIp+xLZV1MA
+ bPVJnH/qV91SbwdsFTlvnaGFPw3OEGc2X0UvXAcuGwYmdjhJpONCMhMRLJlRJAWxww/3
+ gCKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Fc9kgafPA2gUOPbQU1W3ajBr+1WrHB60fZSaC4Wi+Sg=;
- b=SGViToJXAbnMUAXUnEwQPZAJQe6pxWW1LgamTACBSoQJ5uHdY+Be37J9IHVOmpGQmF
- QAiiJxOMXc7dw2DaJRkvJL224v4FyYbW+QrcaVXHGoDAmcmS67HtSfWhjR0FoQxj3r+N
- HznJJ+OooTWSDmwGK1WTWNjC3ZGn5coZ35dcg4qTqeNFxgonghsh2FbAP3wZ850ZDhXv
- zbSYnzfsNOZWy6zY7IgIj362CsW1FBneIeQzgRMBvKPQhXSGCCWe2zoI/rfsRjoaORnk
- 6UXtT8CGOB3OEdwBo29sEDo7DGAijxlWJZAPqqXChZ8j7sgRRNDM5WHD6GkhJGZGZUKW
- 5ZGg==
-X-Gm-Message-State: APjAAAXPCm+IQASN55aiSN0F4bYBWK95H82ZHg2j2oO1l37PoSDOuGai
- BV5KRbTak9XC4iRyF4ozfsy/E571Y0z2hNrjwpPWcw==
-X-Google-Smtp-Source: APXvYqzZ8/F9f0NciEUL0j31UKBINg5KnpUK5KcUIV+VxonHUHvdyeOCmoqDvaTzkRhT6wtLRbUezdw96auKzQMDFR0=
-X-Received: by 2002:a05:600c:231a:: with SMTP id
- 26mr17871560wmo.136.1566304054078; 
- Tue, 20 Aug 2019 05:27:34 -0700 (PDT)
+ bh=dD0Co8FG/hJyJAYUqVEMglsK3T7bNz9NWAIKm1yXSok=;
+ b=S3qYDYkZkJTl8i6GoBrTJG9CotTMpzwwlhtOKM+qa2zI5MNP5xJpwSn1HWG/Bd8ueB
+ UcccrFGjgGXVVlCQcq6E3UJ+olzyEvH2FDGxgzK6Fn7IEZ/myeHMBXVJwuxK2faLYoah
+ b3c4383/4rJAmpew9GyJOk5yWbv4rbiQfgYREtJRIP/nP+OV1Q+snJqg+9KFkN2aeZGj
+ cUWU4650z7Xy+FKuh4kHCke5GKkykU7YW7ZeNzUnURHwtraZ+oxZBwWl/ItEJf9owt0q
+ 6K3CKaq0jDGwYPOD/aGyqMBW2jj4lG8feFz+A9u2FDYiZV9R3CPpJhJp+GgwfL658rl7
+ WPVg==
+X-Gm-Message-State: APjAAAX8oSDxMb4agKuNCuez8zdyk57PesNU3KUkq57VEvia8WisM8n/
+ wE3C7B5bqHHzg2bbA2M7vTYglUMrTKq+Z92Bs1qjBg==
+X-Google-Smtp-Source: APXvYqwSKf9shWqXFfBH3UvF0PUWc/5bjTYYsXrXLzFdNVsyC2m1uK+Ysr6+BUjAuYl3vNvngGtA/b2r1ypTsOqz4Ps=
+X-Received: by 2002:a05:600c:2255:: with SMTP id
+ a21mr25055919wmm.119.1566304116782; 
+ Tue, 20 Aug 2019 05:28:36 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190802053744.5519-1-clin@suse.com>
- <CAKv+Gu-yaNYsLQOOcr8srW91-nt-w0e+RBqxXGOagiGGT69n1Q@mail.gmail.com>
- <20190820115409.GO13294@shell.armlinux.org.uk>
-In-Reply-To: <20190820115409.GO13294@shell.armlinux.org.uk>
+ <20190820115645.GP13294@shell.armlinux.org.uk>
+In-Reply-To: <20190820115645.GP13294@shell.armlinux.org.uk>
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Tue, 20 Aug 2019 15:27:23 +0300
-Message-ID: <CAKv+Gu8DBA8SoJ49dMeYjXHchGZpAiLgxLEQF7jQGtdQ6camdw@mail.gmail.com>
+Date: Tue, 20 Aug 2019 15:28:25 +0300
+Message-ID: <CAKv+Gu_0wFw5Mjpdw7BEY7ewgetNgU=Ff1uvAsn0iHmJouyKqw@mail.gmail.com>
 Subject: Re: [PATCH] efi/arm: fix allocation failure when reserving the kernel
  base
 To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_052735_766298_2FD0BEC0 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20190820_052838_601497_2EE82652 
+X-CRM114-Status: GOOD (  15.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,23 +108,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 20 Aug 2019 at 14:54, Russell King - ARM Linux admin
+On Tue, 20 Aug 2019 at 14:56, Russell King - ARM Linux admin
 <linux@armlinux.org.uk> wrote:
 >
-> On Sun, Aug 04, 2019 at 10:57:00AM +0300, Ard Biesheuvel wrote:
-> > (The first TEXT_OFFSET bytes are no longer used in practice, which is
-> > why putting a reserved region of 4 KB bytes works at the moment, but
-> > this is fragile).
+> On Fri, Aug 02, 2019 at 05:38:54AM +0000, Chester Lin wrote:
+> > diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
+> > index f3ce34113f89..909b11ba48d8 100644
+> > --- a/arch/arm/mm/mmu.c
+> > +++ b/arch/arm/mm/mmu.c
+> > @@ -1184,6 +1184,9 @@ void __init adjust_lowmem_bounds(void)
+> >               phys_addr_t block_start = reg->base;
+> >               phys_addr_t block_end = reg->base + reg->size;
+> >
+> > +             if (memblock_is_nomap(reg))
+> > +                     continue;
+> > +
+> >               if (reg->base < vmalloc_limit) {
+> >                       if (block_end > lowmem_limit)
+> >                               /*
 >
-> That is not correct for 32-bit ARM.  The swapper page table is still
-> located 16kiB below the kernel.
+> I think this hunk is sane - if the memory is marked nomap, then it isn't
+> available for the kernel's use, so as far as calculating where the
+> lowmem/highmem boundary is, it effectively doesn't exist and should be
+> skipped.
 >
 
-Right. So that means we can only permit reserved regions in the first
-(TEXT_OFFSET - 16 kiB) bytes starting at the first 128 MiB aligned
-address covered by system RAM, if we want to ensure that the
-decompressor or the early kernel don't trample on it. (or TEXT_OFFSET
-- 20 kiB for LPAE kernels)
+I agree.
+
+Chester, could you explain what you need beyond this change (and my
+EFI stub change involving TEXT_OFFSET) to make things work on the
+RPi2?
 
 _______________________________________________
 linux-arm-kernel mailing list
