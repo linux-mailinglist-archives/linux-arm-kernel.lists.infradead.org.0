@@ -2,87 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6D54958F7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 09:54:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5765958FD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 20 Aug 2019 09:58:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=x3fh8ZiKlbpXAumDwzO1SktDR0ASlhFin3JDrxArFWM=; b=R3umIN9xZLrKhg9/uvNQj1D0z
-	ED5bF7od+6Mc/MvcTFhs6GcRrdQA38zKu1EcAxItUbQrud5KN01lb/Orf2aJjHSbwS1qBAOzae+Kn
-	UZAflpAG750Ik6xPK4rruMn/VlKaNuktP4yLlfNxWWHmMhLglLw2eZt0p1bnLTYzm3hQG1TRD4qg7
-	pkLra/0HBJ3QXaG6y4v4jQTaRCoBQ2aggpvFX7sp4I4eOr1Jxgq7PVaGcuvE09rowl2nvUWQL2EDN
-	1rU1uOvkk+rXb9e3vlzeDwg2SZPBI05Kyq3wvPz7g908UnZ+LFclljBn8ncpvk75RhOy/wTHZxZHp
-	4juoMZaSA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8HzREPo3rh14QacOm3U2QIXCTgGbzXPJ3FR3hpO2tKs=; b=EBWG9zeRcsbFsM
+	A2hjQlBNFBSf6Uzsu5kN3uAtvQnm0+UOsvcKhkJEmJ98kxj+FCwAKgdXz7QobZr5/vDFk15WxxLi/
+	aPc3zNC6f/4SSyzqIqTNUaBrl65gx/imL1Ewxko9z3nR4Sq6ynQ63apaxSpk4KDRAzYCpnI5mc4qT
+	/RIp6aiMrzbjA/dXOdzYXqtOk4xVtPxmuFxL95RAqujdjaU8+upL/kBkONdKhtP0mbUeZM917KsCm
+	sbsBRB9wphK+xEzPDOOncauXPZxDCgtxO9LqsjQJf26kBmrlsgwwfCacDYYB5GfeM1Q3/YQlmp0B7
+	+qGe7jv8GTDfMOkSgAFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzyyf-0007Bu-3q; Tue, 20 Aug 2019 07:54:49 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hzz1o-0000IN-IE; Tue, 20 Aug 2019 07:58:04 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzyyS-0007Ba-KF
- for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 07:54:38 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7K7sWTY010494;
- Tue, 20 Aug 2019 02:54:32 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1566287672;
- bh=LLKSwXu5VhPkmzRL+pt5vGy/EZsLOlV9BLQ3mc2dnBM=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=jLsin4fD+U2kmE3VebIddL9F6b9L30cHVJ/XsEvHmAc0GlzviDhLNamCntD6XZh+I
- 5N5pnYOvoXGSKmdLmvydLUmroFErWj8u84dch1Jk5iYZTxypfNui/qSK63sVO53+YE
- qLijh3qa3aBaM40lS5Ja42DSIV685s8pdTpwJLH8=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7K7sWta073072
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 20 Aug 2019 02:54:32 -0500
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 20
- Aug 2019 02:54:31 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 20 Aug 2019 02:54:31 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7K7sTff005351;
- Tue, 20 Aug 2019 02:54:30 -0500
-Subject: Re: [PATCH 0/8] soc: ti: Add OMAP PRM driver
-To: Suman Anna <s-anna@ti.com>, <ssantosh@kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-omap@vger.kernel.org>,
- <robh+dt@kernel.org>
-References: <1565164139-21886-1-git-send-email-t-kristo@ti.com>
- <432a70fc-2683-42ca-3ac7-9775efa3ca41@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <b991f374-9e2a-5f1d-d48d-5f50a3c41756@ti.com>
-Date: Tue, 20 Aug 2019 10:54:28 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hzz1b-0000Go-4x
+ for linux-arm-kernel@lists.infradead.org; Tue, 20 Aug 2019 07:57:52 +0000
+Received: by mail-wr1-x443.google.com with SMTP id c3so11334957wrd.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 00:57:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Tchdtmk5F7h2SP8mzdRtJmsq+fYnHuGWtMSSIw89WGE=;
+ b=QBVD7UH61GHuPXpXQft/phCUoJkwNJ8e6e3nCTfc/1NqFxhFr4j7SeAnWxYD0GG1eH
+ FxbH5XW57kDWs3fnFMongqoQ1DlvaP2HEF+QwPAVQ/lQo5GFUKwp/SVwc4BFQeTPD30K
+ o0Miqmc2rj+PSNaKUrMIA2jxslfSsGPhlViWXng4HVm9przmpP98RN6ezcruNCRjDdFs
+ FIoIFAwbfyjYsS9y6w/9wA7wyz/s/Rtmx2PuomRK8+nMZRr9Ege32OHBeVjZ7cegbc/z
+ vKkrszkEVli6JHEU2P4bj0/hG/Ov8R38U/z0nQYeqal47JFkGa9XWbk9pl/x0gSf+6B/
+ IsrQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Tchdtmk5F7h2SP8mzdRtJmsq+fYnHuGWtMSSIw89WGE=;
+ b=tZ4iq1b88A0mdjm8sphPTgoh2QXMNABmiuERHCmp5SBe8K34grNLCBlJ1L5aClEhZQ
+ PGKx/BocoL/xI5QvEyfFOEcihOxQL1mgsuCQLgH1KZxmSyV0Ql+133vhBLKDKz4dxWxA
+ kk9J4WBty321KOYQ/wo4FDjeajAFqZRijFK+C+dEMa0MluirmzANl1jzwnpbnwmNcs+B
+ oQvElMl0Qpdn1gqYRzQn8jV2B8Csl1+U9F88ZZoNRmyy1fLV13FDyb/GS2b0HIOWMyMG
+ qasLZJZ783bUlYyov1Ab0PihBnw+fEpVdhjGTK1Qx0WTEANc2ZnUQnbR7ehPHP0gpi/K
+ PHKQ==
+X-Gm-Message-State: APjAAAU/tnOTqaism+OSvgXXJA5g4V+JqgvCgWpqZGVtkg6fYFMm2qW3
+ 83L08sktx+eVIL5WvICoTm5DFA==
+X-Google-Smtp-Source: APXvYqz35DSpTf0iX8quJPKfw+8fSiZAcN4YJ2/eier/D7uQL2HGvfnfx43BsLej8/27j+Tkzhst0Q==
+X-Received: by 2002:adf:dfc5:: with SMTP id q5mr33919384wrn.142.1566287869291; 
+ Tue, 20 Aug 2019 00:57:49 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id q24sm1506467wmc.3.2019.08.20.00.57.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 20 Aug 2019 00:57:48 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: davem@davemloft.net,
+	robh+dt@kernel.org
+Subject: [PATCH net-next v4 0/2] dt-bindings: net: meson-dwmac: convert to yaml
+Date: Tue, 20 Aug 2019 09:57:40 +0200
+Message-Id: <20190820075742.14857-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <432a70fc-2683-42ca-3ac7-9775efa3ca41@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_005437_017609_EE74C0E6 
-X-CRM114-Status: GOOD (  16.31  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190820_005751_196857_7BFB2695 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,56 +94,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tony@atomide.com, devicetree@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
+ martin.blumenstingl@googlemail.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20.8.2019 2.20, Suman Anna wrote:
-> Hi Tero,
-> 
-> On 8/7/19 2:48 AM, Tero Kristo wrote:
->> Hi,
->>
->> This series adds OMAP PRM driver which initially supports only reset
->> handling. Later on, power domain support can be added to this to get
->> rid of the current OMAP power domain handling code which resides
->> under the mach-omap2 platform directory. Initially, reset data is
->> added for AM3, OMAP4 and DRA7 SoCs.
-> 
-> Wakeup M3 remoteproc driver is fully upstream, so we should be able to
-> test that driver as well if you can add the AM4 data. That will also
-> unblock my PRUSS.
-> 
-> If you can add the data to others as well, it will help in easier
-> migration of the individual drivers, otherwise the ti-sysc interconnect,
-> hwmod, and hwmod reset data combinations will all have to be supported
-> in code.
+This patchsets converts the Amlogic Meson DWMAC glue bindings over to
+YAML schemas using the already converted dwmac bindings.
 
-Ok, so you are saying you would need the PRM data for am4 in addition? I 
-can generate that one also.
+The first patch is needed because the Amlogic glue needs a supplementary
+reg cell to access the DWMAC glue registers.
 
--Tero
+Changes since v3:
+- Specified net-next target tree
 
-> 
-> regards
-> Suman
-> 
->>
->> I've been testing the reset handling logic with OMAP remoteproc
->> driver which has been converted to use generic reset framework. This
->> part is a work in progress, so will be posting patches from that part
->> later on.
->>
->> -Tero
->>
->> --
->>
-> 
+Changes since v2:
+- Added review tags
+- Updated allwinner,sun7i-a20-gmac.yaml reg maxItems
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Neil Armstrong (2):
+  dt-bindings: net: snps,dwmac: update reg minItems maxItems
+  dt-bindings: net: meson-dwmac: convert to yaml
+
+ .../net/allwinner,sun7i-a20-gmac.yaml         |   3 +
+ .../bindings/net/amlogic,meson-dwmac.yaml     | 113 ++++++++++++++++++
+ .../devicetree/bindings/net/meson-dwmac.txt   |  71 -----------
+ .../devicetree/bindings/net/snps,dwmac.yaml   |   8 +-
+ 4 files changed, 123 insertions(+), 72 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/amlogic,meson-dwmac.yaml
+ delete mode 100644 Documentation/devicetree/bindings/net/meson-dwmac.txt
+
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
