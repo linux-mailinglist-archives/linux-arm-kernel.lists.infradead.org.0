@@ -2,126 +2,126 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F00E397402
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:54:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F07AB9741D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:58:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
 	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=he6PDjdnHadib0rP/G4Bpwp1cI/V2VDAzrIuGGvEKtQ=; b=XCZCrXsCndugAW
-	md8Dc0WbiMHZSsjeAn0KSfxN087PPWPGGII95/6FHtJrUUoIkTBNmeqkd4ZS9r2ElwisCv5pB65i0
-	8Gf23N/ygv1QMnw0Q2Gc5G09XidyBI4DaDDpnixH7/PGL1V8YW19v10PBwkEE4zfwlik5927qfAHq
-	NRQL/dIUzTqHAXd0/ZYqSSNOfWBgltzRM5mTrrcnFWAiNasSfFor2IDLdJKEjrw7MUKnakmTSM/KL
-	EUvNE73XgSkSw5AoFU7+2/2VyRYGilePGWd3ULKn3rSwZfeqdxgrY8Gp/eVPelqvEktLMrAiCS/Zj
-	3/sk99X1QUjGcAzznmpQ==;
+	List-Owner; bh=QQId1MQWC0CLgx0HL+9OCGahBoZ9yCrg77pZiN53XZc=; b=aKhXWg9gXgs79u
+	wp2XzYdF3lmUNypnokH83CVJoZmTDX7lfkrldHa2N+30EgWGLVRto54yCH5IVa9/yu3J56PDOtLPH
+	KoqCfx4WC34hM/oJjdwFgVrT52XXBgSb/NNgYFX2QhDgBjcWSKeS8L7Sa4I7KVtW+1hjbRyknK5Sl
+	XQF2YfHphsOkaicl1asU5hoc/GCN+urvVWmjDxjn5pfX6mR2BnfA/gSBzXN4BN/8tv8lUaogLhBOs
+	RBC+0+AOGBuh33f3XHefAzrnaS0chgwQfQZagPFX9qvMMLwjwOR9f6qlsOEXBQiJnZ4u394VENy86
+	0gwo1qq7J0AwjJHn95fA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0LSG-0003Jw-6Z; Wed, 21 Aug 2019 07:54:52 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1i0LVM-0005Vt-CY; Wed, 21 Aug 2019 07:58:04 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0LS3-0003JK-5S
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:54:40 +0000
-Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20190821075436epoutp037560c7092bc0360e465dd207a33be7fd~84OxajDCW2419424194epoutp03h
+ id 1i0LV9-0005UK-BZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:57:53 +0000
+Received: from epcas2p4.samsung.com (unknown [182.195.41.56])
+ by mailout1.samsung.com (KnoxPortal) with ESMTP id
+ 20190821075746epoutp01eb39195e5a9393d1c0a4def9b5293cd6~84RiufXjq2241922419epoutp01M
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 07:54:36 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20190821075436epoutp037560c7092bc0360e465dd207a33be7fd~84OxajDCW2419424194epoutp03h
+ Wed, 21 Aug 2019 07:57:46 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
+ 20190821075746epoutp01eb39195e5a9393d1c0a4def9b5293cd6~84RiufXjq2241922419epoutp01M
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1566374076;
- bh=HTqJmzQb78c+WqBPB/TdiHvNXR8CCp1GserLHPcAGAM=;
+ s=mail20170921; t=1566374266;
+ bh=ozhdgcpKWdJ9STHx0/l4UukvGXSFa8gUQOw9uROJorw=;
  h=From:To:Cc:Subject:Date:References:From;
- b=B5jxDUEk9/Wv2ZsXCfJ0XkAJm9DIHY27cqGo72ZywbwCE+aVOvTsvyScwL4p6sybM
- owql64lYHWS43PFd/HInQdLPv83SRaGXip0WkjESDr2vLz6mjff1A3/7j7+O7TOWyK
- 7NAk6jkpVH93RiwuqnuxfGH0LViWO/nOoUaD+g4w=
+ b=Te7AorPt/qgkuEhu7rtZoJJ/4J2N3dZgeKLWGsbDPOWoh6Pd9U47Q+WaQqJ7H44k4
+ Z51RruAKWu+b+jize4UCFr2NATWriMVJhGDms/0EnUmnOnpOW8JELIj4/XTJYrj/66
+ lIJT/Lu2kn95Mo304e74T9fzUwCtTtD4EGZh+/iM=
 Received: from epsnrtp5.localdomain (unknown [182.195.42.166]) by
  epcas2p2.samsung.com (KnoxPortal) with ESMTP id
- 20190821075435epcas2p2329ac0d31488e7667c632810cc878449~84Ow2IQSF1069310693epcas2p2D;
- Wed, 21 Aug 2019 07:54:35 +0000 (GMT)
-Received: from epsmges2p4.samsung.com (unknown [182.195.40.182]) by
- epsnrtp5.localdomain (Postfix) with ESMTP id 46D0LK1qCszMqYkr; Wed, 21 Aug
- 2019 07:54:33 +0000 (GMT)
-Received: from epcas2p4.samsung.com ( [182.195.41.56]) by
- epsmges2p4.samsung.com (Symantec Messaging Gateway) with SMTP id
- D2.06.04112.9B8FC5D5; Wed, 21 Aug 2019 16:54:33 +0900 (KST)
+ 20190821075745epcas2p23a902d93d70a249b07900f5ff2742fad~84RhyryS60392603926epcas2p2K;
+ Wed, 21 Aug 2019 07:57:45 +0000 (GMT)
+Received: from epsmges2p1.samsung.com (unknown [182.195.40.183]) by
+ epsnrtp5.localdomain (Postfix) with ESMTP id 46D0Pz1WwGzMqYkj; Wed, 21 Aug
+ 2019 07:57:43 +0000 (GMT)
+Received: from epcas2p1.samsung.com ( [182.195.41.53]) by
+ epsmges2p1.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 80.76.04156.779FC5D5; Wed, 21 Aug 2019 16:57:43 +0900 (KST)
 Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas2p3.samsung.com (KnoxPortal) with ESMTPA id
- 20190821075432epcas2p3758bf7b07f209fb4094d79bf46c8f4e9~84OuTKtNR3087030870epcas2p3N;
- Wed, 21 Aug 2019 07:54:32 +0000 (GMT)
+ epcas2p4.samsung.com (KnoxPortal) with ESMTPA id
+ 20190821075742epcas2p4b9104e8249067c048d4050f2888da0a9~84RfNOmwq0945209452epcas2p4w;
+ Wed, 21 Aug 2019 07:57:42 +0000 (GMT)
 Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
  epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190821075432epsmtrp11638c73e7bcdf5c06195a2218aa9d41f~84OuR59zE2895328953epsmtrp1D;
- Wed, 21 Aug 2019 07:54:32 +0000 (GMT)
-X-AuditID: b6c32a48-f37ff70000001010-86-5d5cf8b9dcde
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ 20190821075742epsmtrp1c0bda618eef3e376a7e2738bb69573b3~84RfMAFUf3112831128epsmtrp1X;
+ Wed, 21 Aug 2019 07:57:42 +0000 (GMT)
+X-AuditID: b6c32a45-ddfff7000000103c-b1-5d5cf977fb70
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
  epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- D3.79.03706.8B8FC5D5; Wed, 21 Aug 2019 16:54:32 +0900 (KST)
-Received: from KORDO035251 (unknown [12.36.165.204]) by epsmtip2.samsung.com
+ 8D.C9.03706.679FC5D5; Wed, 21 Aug 2019 16:57:42 +0900 (KST)
+Received: from KORDO035251 (unknown [12.36.165.204]) by epsmtip1.samsung.com
  (KnoxPortal) with ESMTPA id
- 20190821075432epsmtip253f2d9c05d500f90970ebcdc57e310bc~84Ot-od_T3239432394epsmtip2r;
- Wed, 21 Aug 2019 07:54:32 +0000 (GMT)
+ 20190821075742epsmtip1a675fb73939b515803f3ca44f0e6b4ec~84Re0K2Zg1561515615epsmtip1q;
+ Wed, 21 Aug 2019 07:57:42 +0000 (GMT)
 From: "boojin.kim" <boojin.kim@samsung.com>
-To: "'Mike Snitzer'" <snitzer@redhat.com>
+To: "'Herbert Xu'" <herbert@gondor.apana.org.au>
 Subject: Re: [PATCH 6/9] dm crypt: support diskcipher
-Date: Wed, 21 Aug 2019 16:54:32 +0900
-Message-ID: <001a01d557f5$ab0a4a40$011edec0$@samsung.com>
+Date: Wed, 21 Aug 2019 16:57:41 +0900
+Message-ID: <001b01d557f6$1c49fd40$54ddf7c0$@samsung.com>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 14.0
 Content-Language: ko
-Thread-Index: AdVX9QyEG4+5qw7KRk2/gqnMxtuMUA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Tf0xTVxT29r2+9wBLrhXntZrZvWkWJGCLll0WmVt0+jJNrNkSo4LdC7wA
- WX+tr3WwZJNtWBGadZopUruGuWm0C0ELCigYRzs7hl11qJOquEXiIvhrKAR/jbV9mPHfOd/5
- vnvOd08OQyjraRVTbrYLNjNvZKlU8kQwE2d3jBcWaRqHUvHooxoSN/96lsA/XndTuHdPRIa9
- 0WoSd93bL8dNnc8IXDc0Dw82ewh85YlTjt03hwkcjR6lceDmZTnuimXhGwOPZbjBd43Cvx9Y
- jYd8YyTu7Oohcd9JL4VDE26A90VPy7Dz2CjA212PaRxu2vDWHK71SL+Mq275mDtxZiHXF3Fw
- Af9Oirt2uZPiWn7Yxp1qfCjjvjj3M8HdP32J4r5q9QPuYeBl/fRNxmVlAl8i2NSCudhSUm4u
- LWDXvGdYYdDlabTZ2nz8Oqs28yahgF25Vp+9qtwY986qt/JGRxzS86LILn5zmc3isAvqMoto
- L2AFa4nRqtVac0TeJDrMpTnFFtMbWo0mVxdnfmAsi9XVU9Z9TIXzSoCoAiGqFqQwCC5F4RsB
- UAtSGSVsB8gd9E8mIwBVj18nEywlHAMoun12LWCSir0PUiVOF0C7XbspKbkN0K3zz5ICCmah
- lnDipRQmA2aiX65+I0+QCPgvjQZHupOkmVCHBkJ1yTlIuBAd/Pt+PKYZBcxHA4YEqoAzUE/D
- YJJNwPmo7a6XkKZWo/bIMJDwDLR/p5OQWuWgCx2PyEQrBD9n0E/hKloSrESH97pkUjwTDYVb
- J3EVuu12Tsbb0KVD39OS2AXQuScvCkuQ59YOkHBPxM00n1wsfcSrKBSbnC0d1QSf0xKsQDVO
- pSRcgL4d6ZNJsAo9cH0mwRy62DtOfg1e8Uwx6Zli0jPFmOf/to2A9IOXBKtoKhXEXOvSqZsO
- gORRLOLawZnf1nYDyAB2uqK9f3ORUs5vFStN3QAxBJuhqPBuKlIqSvjKTwSbxWBzGAWxG+ji
- G9hFqGYVW+InZrYbtLrcvDxNvg7r8nIxO1sRSOsvVMJS3i58KAhWwfZCJ2NSVFXg+LyNF1t7
- vcsVc97u2LyhPgidT6/Oivas2LOmAjR9dzyYJYxX3gG+daubjvlnLFHb/3QMn/0y8sdcIT1t
- 7N77Wy483XX+VKT5n/mFfemv8b627Mwdbe8uyPRNlK9/Z9rdjZ+G//poeb0exg6v00+7g7wT
- oVhaAxyDwVDWKLeq4kAnzZJiGa9dRNhE/j+QRa7/KgQAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrBIsWRmVeSWpSXmKPExsWy7bCSvO6OHzGxBjNXaFh8/dLBYrH+1DFm
- i9V3+9ksTk89y2Qx53wLi8Xed7NZLdbu+cNs0f1KxuLJ+lnMFjd+tbFa9D9+zWxx/vwGdotN
- j6+xWuy9pW1x/95PJouZ8+6wWVxa5G7xat43Fos9e0+yWFzeNYfN4sj/fkaLGef3MVm0bfzK
- aNHa85Pd4vjacAdJjy0rbzJ5tGwu99h2QNXj8tlSj02rOtk87lzbw+axeUm9x+4Fn5k8ms4c
- ZfZ4v+8qm0ffllWMHp83yQXwRHHZpKTmZJalFunbJXBl3OqezlYwg6Oi7cYm5gbGI2xdjBwc
- EgImEtM+cHUxcnEICexmlFg16QZjFyMnUFxKYmv7HmYIW1jifssRVoii54wSD39eBUuwCWhL
- bD6+CqxBREBT4sTtKawgNrPANA6JXR/EQWxhAVOJe0e62UBsFgFViaXP3wPZ7By8ApYS9+JB
- orwCghInZz5hATmHWUBPom0jI8QQeYntb+dAXaAgsePsa6i4iMTszjZmiKV6Ehd3fmGZwCg4
- C8mkWQiTZiGZNAtJ9wJGllWMkqkFxbnpucWGBYZ5qeV6xYm5xaV56XrJ+bmbGMHxr6W5g/Hy
- kvhDjAIcjEo8vDtuRscKsSaWFVfmHmKU4GBWEuGtmBMVK8SbklhZlVqUH19UmpNafIhRmoNF
- SZz3ad6xSCGB9MSS1OzU1ILUIpgsEwenVANjcVNZnlGXxD0pT0sbo+QV7PNEp90NOvP9wOXl
- ubMDp85MW/HfyaitQ3zr5d+zitTdAy4m308+t/jIDR2XdxHl6Z+vt8UuT9421zd+h6Nl/q0M
- kb2LZ/13SKt+cPrVkmu7X2bIhQV+j9rfcVJoQtHaO/kTVjnKxt+va+/TC6x/3Pk19WTu8yNT
- lFiKMxINtZiLihMBBGnmbfsCAAA=
-X-CMS-MailID: 20190821075432epcas2p3758bf7b07f209fb4094d79bf46c8f4e9
+Thread-Index: AdVX9gnaDYeXFhMoSci3o9XSTfBUaA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Tf0xbZRTN1/f6XrdR89Yx/WyM1KfEbQzWVls+DBgjqE+3GJLNzBCa7oW+
+ ALG/7GvHpsnGcHZlNC0zMULXTdItJnYio7CV8WObhUpAkLgK2XBjU/BHQZ0Cw3VuatsHkf/O
+ PfeenHtycyWYzEfKJdVmO2czs0aaWIuf79+sya1JlOuUM0MkurPowlHb8JcYOnPDS6CvPhwV
+ If/YYRz1/X5cjFp772OoYfYxNNPmw9DVe04x8k7PYWhs7CyJQtMTYtQ3mYNuTiVEqPnkdQJd
+ CbyCZk8u4ai3bwhHsW4/gQb+9QLUNHZRhJztdwB6350g0WDr7hceZTo/vSZiDnfUMOcvZzOx
+ UQcTCtYTzPWJXoLpOH2Q6WlZEDF1I1GMuX1xnGA8nUHALIQeL80oMxZWcayBsyk4c4XFUG2u
+ LKK379QX6zVapSpXVYDyaYWZNXFFdMmO0tyXq43J7LRiL2t0JKlSlufpbc8X2iwOO6eosvD2
+ IpqzGoxWlcqax7Mm3mGuzKuwmJ5TKZVqTXJyj7Hqwt2Y2Poetq83OkHUgm7RUbBGAqlnYbT/
+ Y3AUrJXIqC4Aw8fuY0IxD6A37MaFYgnAc79cEq9I5hbqyBSWUX0ANn5hFobiAC56mtJDBJUD
+ OwaDIIUzKSUMh/5Oe2DUPyScmY/gqcYGSgOnBhqIFMapbBhzB9ICKVUA464psYDXw6HmmfQ8
+ RmXB8G9+TNhCAbtG54DAZ8Lj9U5MMMuDN0ai4pQZpB6QcLz/DCkISuCfk4PL4g1wdrBzmZfD
+ uNe5jA/C8U9OkYLYDeDIvZXGM9D305GkmyTpthm2dW9LQUg9CQcml3d7CLr6H5ACLYUup0wQ
+ PgVPzMdEAi2Hf7gPCDQDb9cdwhrBE75VIX2rQvpWBfP9b9sC8CB4mLPypkqOV1tVq48dAum/
+ 2PJSF2j6ekcEUBJAZ0gT5eU6mZjdy+83RQCUYHSmdJ+/TCeTGtj973A2i97mMHJ8BGiSNziG
+ yTdWWJJfZrbrVRq1Vqss0CCNVo3oR6Qd666Vy6hK1s69xXFWzraiE0nWyGvBgWm1pdblS/x6
+ pLh+djLn9e28/9tg/uUr45tCb7TtvHrztVvZLecWnlZEPvjhm4jB4zldF4993p6/6cfG1u+z
+ 9BeK49/1GP+6FQgfyuqpKbm7GKh5sf1EA7ZbO/x22XDhq5cUgXd/tnwm+ehNT6dcEV03iumW
+ dMpdwz1bMzaKGl1S2EzjfBWr2oLZePY/dew/Ay0EAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrNIsWRmVeSWpSXmKPExsWy7bCSnG7Zz5hYg1edmhZfv3SwWKw/dYzZ
+ YvXdfjaL01PPMlnMOd/CYrH33WxWi7V7/jBbdL+SsXiyfhazxY1fbawW/Y9fM1ucP7+B3WLT
+ 42usFntvaVvcv/eTyWLmvDtsFpcWuVu8mveNxWLP3pMsFpd3zWGzOPK/n9Fixvl9TBZtG78y
+ WrT2/GS3OL423EHSY8vKm0weLZvLPbYdUPW4fLbUY9OqTjaPO9f2sHlsXlLvsXvBZyaPpjNH
+ mT3e77vK5tG3ZRWjx+dNcgE8UVw2Kak5mWWpRfp2CVwZO39cZi1oZq7Yc/QaWwPjLqYuRk4O
+ CQETidefm9i7GLk4hAR2M0qsvbyLBSIhJbG1fQ8zhC0scb/lCCtE0XNGifPrD4F1swloS2w+
+ vooRxBYRMJDYvuk3mM0sMI1DYtcHcRBbWMBU4t6RbjYQm0VAVeJyzyKwGl4BS4mXHfdYIWxB
+ iZMznwAt5gDq1ZNo2wg1Rl5i+9s5UDcoSOw4+xoqLiIxu7ONGWKtnsTdM0dZJzAKzkIyaRbC
+ pFlIJs1C0r2AkWUVo2RqQXFuem6xYYFhXmq5XnFibnFpXrpecn7uJkZwEtDS3MF4eUn8IUYB
+ DkYlHt4dN6NjhVgTy4orcw8xSnAwK4nwVsyJihXiTUmsrEotyo8vKs1JLT7EKM3BoiTO+zTv
+ WKSQQHpiSWp2ampBahFMlomDU6qBsbrk4svrTNERm2+ttP3R+VVg/8oXjwW/e6o+W62+5Nun
+ Cp2guesvXr+QdiuAM+zKUw69JmlLjbWFzOIbHOOf9SrkP1i2xm/F6o1PfgkfqvCbv0Cs+Mjd
+ 5/Pnznw488rq9maZA3925rPqSzDMem3n4Phz0pOmPZqLD23W1/JRnvpqjv8aTvbrrDOVWIoz
+ Eg21mIuKEwH4Sucq/gIAAA==
+X-CMS-MailID: 20190821075742epcas2p4b9104e8249067c048d4050f2888da0a9
 X-Msg-Generator: CA
 X-Sendblock-Type: AUTO_CONFIDENTIAL
 CMS-TYPE: 102P
 DLP-Filter: Pass
 X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20190821075432epcas2p3758bf7b07f209fb4094d79bf46c8f4e9
-References: <CGME20190821075432epcas2p3758bf7b07f209fb4094d79bf46c8f4e9@epcas2p3.samsung.com>
+X-CMS-RootMailID: 20190821075742epcas2p4b9104e8249067c048d4050f2888da0a9
+References: <CGME20190821075742epcas2p4b9104e8249067c048d4050f2888da0a9@epcas2p4.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_005439_612583_C391EABF 
-X-CRM114-Status: GOOD (  14.54  )
+X-CRM114-CacheID: sfid-20190821_005751_937023_83E2C35E 
+X-CRM114-Status: GOOD (  13.85  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.33 listed in list.dnswl.org]
+ high trust [203.254.224.24 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -162,34 +162,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 09:13:36AM +0200, Milan Broz wrote: 
+On Wed, Aug 21, 2019 at 09:35:36AM +0200, Herbert Xu Herbert wrote:
+
+> I agree.  Please take a look at the recent ESSIV patches on
+> linux-crypto and build multi-block operations on top of them
+> which can then be implemented by the hardware.
 >
-> NACK.
-> 
-> The whole principle of dm-crypt target is that it NEVER EVER submits
-> plaintext data down the stack in bio.
-> 
-> If you want to do some lower/higher layer encryption, use key management
-> on a different layer.
-> So here, just setup encryption for fs, do not stack it with dm-crypt.
-> 
-> Also, dm-crypt is software-independent solution
-> (software-based full disk encryption), it must not depend on
-> any underlying hardware.
-> Hardware can be of course used used for acceleration, but then
-> just implement proper crypto API module that accelerates particular
-cipher.
+> Cheers,
 
-I'm sorry for breaking the basic rules of dm-crypt. 
-But, if I want to use the H/W crypto accelerator running in storage
-controller,
-I have to drop plaintext to bio.
-I think the "proper crypto API module" that you mentioned is diskcipher
-because diskcipher isn't only for FMP.
-Diskcipher is a crypto API that supports encryption on storage controllers.
-
-Thanks
-Boojin Kim
+Can you tell me which patch you mentioned? Is this?
+https://patches.linaro.org/project/linux-crypto/list/?series=22762
 
 
 _______________________________________________
