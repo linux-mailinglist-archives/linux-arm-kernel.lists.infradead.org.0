@@ -2,60 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AA0197D51
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 16:40:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B85F97D5E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 16:44:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=94clRnZ40wqMHKZXIoOddvm8pgc6BNmsE4mwh+2tkfY=; b=jYWRoZUAGMB/aJ
-	AExvjT5cqcrNlnR0VC1RwfanQbPaMDgUEaQFpWquk21sLoQa5oKbv5yRaCmLXLdH9iGAGspvJqYEt
-	EvQFYc0R9D754VYx6qiPpOYQmR4Oc3mMkOGgn0dUguIjwYrF6Z2V2vsqZHHg2nJIbn7Ub1J+xPRlT
-	yxS6oem0krq1TP69FaaqzyISWx2eoZOtef8faY6XArTGiu3+4hBYq7f0XXPSkEIZROuYXS/6h8R6b
-	uHw0s32CKxKH2NlXFxQzwe2gudcJqVOBXY3pEopzQSwV8d9CmjFWCLvLjRogYaRSXwOR1aSGdlaOR
-	7pfkyPM9yCpvO2BX5OZA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oiVXuABZpTvS8vDeWApXHEZV/sQA/K7+hsD8T9qQuOo=; b=ke7U8QBWt1dm5i
+	p37tFXrURGQdGVqVGDsRTIE8Xin/SDy4r13eh2ctBmcQSD+0myAcaMynTMazclXroS8KZigj3DtLm
+	jxSRwW2iBFV+3FiUpHJ1sgmHmhfnkhIShTVokthozQkafUhH2iuB5xLQktwYAm704xEb+TqN7jZIl
+	0H9wRQCwmWwnTNktol2XB7l8NoJmIWjCdMX4s6hzryjPf5aKw+1SNwqyVXzl4zYZMWy+0s+fuTlcD
+	fuZ1t8zHLYcXY2ySb8IKPMvHzDEocGmf8q4kOKveJZEFRYLMt4fYpi16wTuLp0iCy/1vh2LOOlv7a
+	oYQ7Fk8pDNvrN17fLE8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0RmL-0002UY-3s; Wed, 21 Aug 2019 14:40:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0RlD-0001UI-3N
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 14:38:52 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
+	id 1i0Rqv-0004zP-Ac; Wed, 21 Aug 2019 14:44:45 +0000
+Received: from mx.0dd.nl ([2a04:52c0:101:921::25])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0Rqg-0004ua-E7; Wed, 21 Aug 2019 14:44:34 +0000
+Received: from mail.vdorst.com (mail.vdorst.com [IPv6:fd01::250])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4FAA923403;
- Wed, 21 Aug 2019 14:38:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566398330;
- bh=pn/uJER7PFGwozA06AW0T66hI7CzN2YyTKZKxVMBqDI=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=tfqHRJ8r0kVu25YN0mX/BohJ7zvMI4cZvdjhVn3triarWc6pdhCQS5fOh7RLu+I6Y
- GiGb02oaRiAK/0qGHoFOS7duS5c6K3jHWTMapuQPuFs5w4NuW9nRxqtsit3esz8W2H
- iWTIyEy+zShd4uG9YVw8fAOrS5LI6xIN5//WFap0=
-From: Maxime Ripard <mripard@kernel.org>
-To: linux@roeck-us.net,
-	wim@linux-watchdog.org
-Subject: [PATCH RESEND v2 6/6] ARM: dts: sunxi: Add missing watchdog clocks
-Date: Wed, 21 Aug 2019 16:38:35 +0200
-Message-Id: <20190821143835.7294-6-mripard@kernel.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190821143835.7294-1-mripard@kernel.org>
-References: <20190821143835.7294-1-mripard@kernel.org>
+ by mx.0dd.nl (Postfix) with ESMTPS id 5885D5FB50;
+ Wed, 21 Aug 2019 16:44:16 +0200 (CEST)
+Authentication-Results: mx.0dd.nl; dkim=pass (2048-bit key;
+ secure) header.d=vdorst.com header.i=@vdorst.com header.b="gwaS1ymk"; 
+ dkim-atps=neutral
+Received: from pc-rene.vdorst.com (pc-rene.vdorst.com [192.168.2.125])
+ by mail.vdorst.com (Postfix) with ESMTPA id 16CB11D828BD;
+ Wed, 21 Aug 2019 16:44:16 +0200 (CEST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.vdorst.com 16CB11D828BD
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vdorst.com;
+ s=default; t=1566398656;
+ bh=A8P/+l59ZXg3ee4n+RpUENIPGvXU46CDYZ5yozGyZy0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=gwaS1ymkIdme9YJvl/6PZwGw22V6g/BtecvFvF89RjKxqbiBRBvchBwvU5IzMHzXJ
+ GBCXBEZY7vMi8Q0q8PDSjEqvK42qQ5P+T8Y0IbwSaYFxXo9Z5Taj9TGNViZ8Rymw2q
+ iS1iAlxOtEZ/7YqMXPkSG/XJ/9hWqvz5A0H6e2Yp3MVq3gkceYbMbiH4cegZkzMKep
+ gQ8JooKnECU6GyBpMsPMVeF9KOjoNfaL3nTkyUykxkNkHS8gEFTIFq9FZI4eV86N0E
+ nJdpuG5LVwzbI65n0xYZb7rXMRaTYCHiwqU8ZA2jf42PnWsRSrP83awgNDZ5M5NxB8
+ 7ADYJDllTVhoQ==
+From: =?UTF-8?q?Ren=C3=A9=20van=20Dorst?= <opensource@vdorst.com>
+To: John Crispin <john@phrozen.org>, Sean Wang <sean.wang@mediatek.com>,
+ Nelson Chang <nelson.chang@mediatek.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH net-next v2 0/3] net: ethernet: mediatek: convert to PHYLINK
+Date: Wed, 21 Aug 2019 16:43:33 +0200
+Message-Id: <20190821144336.9259-1-opensource@vdorst.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_073851_237975_BF531AE5 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190821_074433_426045_4989C4E7 
+X-CRM114-Status: UNSURE (   8.23  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -65,7 +72,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,173 +83,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-kernel@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
+Cc: Frank Wunderlich <frank-w@public-files.de>, netdev@vger.kernel.org,
+ linux-mips@vger.kernel.org,
+ =?UTF-8?q?Ren=C3=A9=20van=20Dorst?= <opensource@vdorst.com>,
+ linux-mediatek@lists.infradead.org, Stefan Roese <sr@denx.de>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-
-The watchdog has a clock on all our SoCs, but it wasn't always listed.
-Add it to the devicetree where it's missing.
-
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-
----
-
-Changes from v1:
-  - New patch
----
- arch/arm/boot/dts/sun4i-a10.dtsi              | 1 +
- arch/arm/boot/dts/sun5i.dtsi                  | 1 +
- arch/arm/boot/dts/sun6i-a31.dtsi              | 1 +
- arch/arm/boot/dts/sun7i-a20.dtsi              | 1 +
- arch/arm/boot/dts/sun8i-a23-a33.dtsi          | 1 +
- arch/arm/boot/dts/sun8i-r40.dtsi              | 1 +
- arch/arm/boot/dts/sun8i-v3s.dtsi              | 1 +
- arch/arm/boot/dts/sunxi-h3-h5.dtsi            | 1 +
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 1 +
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  | 2 ++
- 10 files changed, 11 insertions(+)
-
-diff --git a/arch/arm/boot/dts/sun4i-a10.dtsi b/arch/arm/boot/dts/sun4i-a10.dtsi
-index eed9fcb46185..ce823c44e98a 100644
---- a/arch/arm/boot/dts/sun4i-a10.dtsi
-+++ b/arch/arm/boot/dts/sun4i-a10.dtsi
-@@ -816,6 +816,7 @@
- 			compatible = "allwinner,sun4i-a10-wdt";
- 			reg = <0x01c20c90 0x10>;
- 			interrupts = <24>;
-+			clocks = <&osc24M>;
- 		};
- 
- 		rtc: rtc@1c20d00 {
-diff --git a/arch/arm/boot/dts/sun5i.dtsi b/arch/arm/boot/dts/sun5i.dtsi
-index 29a825f7afd1..cfb1efc8828c 100644
---- a/arch/arm/boot/dts/sun5i.dtsi
-+++ b/arch/arm/boot/dts/sun5i.dtsi
-@@ -601,6 +601,7 @@
- 			compatible = "allwinner,sun4i-a10-wdt";
- 			reg = <0x01c20c90 0x10>;
- 			interrupts = <24>;
-+			clocks = <&osc24M>;
- 		};
- 
- 		ir0: ir@1c21800 {
-diff --git a/arch/arm/boot/dts/sun6i-a31.dtsi b/arch/arm/boot/dts/sun6i-a31.dtsi
-index cba8864bb8f9..bbeb743633c6 100644
---- a/arch/arm/boot/dts/sun6i-a31.dtsi
-+++ b/arch/arm/boot/dts/sun6i-a31.dtsi
-@@ -745,6 +745,7 @@
- 			compatible = "allwinner,sun6i-a31-wdt";
- 			reg = <0x01c20ca0 0x20>;
- 			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&osc24M>;
- 		};
- 
- 		spdif: spdif@1c21000 {
-diff --git a/arch/arm/boot/dts/sun7i-a20.dtsi b/arch/arm/boot/dts/sun7i-a20.dtsi
-index 8e31ed4a297c..ddaafde0e2d6 100644
---- a/arch/arm/boot/dts/sun7i-a20.dtsi
-+++ b/arch/arm/boot/dts/sun7i-a20.dtsi
-@@ -1116,6 +1116,7 @@
- 			compatible = "allwinner,sun4i-a10-wdt";
- 			reg = <0x01c20c90 0x10>;
- 			interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&osc24M>;
- 		};
- 
- 		rtc: rtc@1c20d00 {
-diff --git a/arch/arm/boot/dts/sun8i-a23-a33.dtsi b/arch/arm/boot/dts/sun8i-a23-a33.dtsi
-index 954489b4ec66..52eed0ae3607 100644
---- a/arch/arm/boot/dts/sun8i-a23-a33.dtsi
-+++ b/arch/arm/boot/dts/sun8i-a23-a33.dtsi
-@@ -452,6 +452,7 @@
- 			compatible = "allwinner,sun6i-a31-wdt";
- 			reg = <0x01c20ca0 0x20>;
- 			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&osc24M>;
- 		};
- 
- 		pwm: pwm@1c21400 {
-diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
-index f1be554b5894..bde068111b85 100644
---- a/arch/arm/boot/dts/sun8i-r40.dtsi
-+++ b/arch/arm/boot/dts/sun8i-r40.dtsi
-@@ -405,6 +405,7 @@
- 			compatible = "allwinner,sun4i-a10-wdt";
- 			reg = <0x01c20c90 0x10>;
- 			interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&osc24M>;
- 		};
- 
- 		uart0: serial@1c28000 {
-diff --git a/arch/arm/boot/dts/sun8i-v3s.dtsi b/arch/arm/boot/dts/sun8i-v3s.dtsi
-index ddbcc28dc541..23ba56df38f7 100644
---- a/arch/arm/boot/dts/sun8i-v3s.dtsi
-+++ b/arch/arm/boot/dts/sun8i-v3s.dtsi
-@@ -339,6 +339,7 @@
- 			compatible = "allwinner,sun6i-a31-wdt";
- 			reg = <0x01c20ca0 0x20>;
- 			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&osc24M>;
- 		};
- 
- 		lradc: lradc@1c22800 {
-diff --git a/arch/arm/boot/dts/sunxi-h3-h5.dtsi b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
-index 224e105a994a..eba190b3f9de 100644
---- a/arch/arm/boot/dts/sunxi-h3-h5.dtsi
-+++ b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
-@@ -574,6 +574,7 @@
- 			compatible = "allwinner,sun6i-a31-wdt";
- 			reg = <0x01c20ca0 0x20>;
- 			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&osc24M>;
- 		};
- 
- 		spdif: spdif@1c21000 {
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index ddb6f11e89df..69128a6dfc46 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -1169,6 +1169,7 @@
- 				     "allwinner,sun6i-a31-wdt";
- 			reg = <0x01c20ca0 0x20>;
- 			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&osc24M>;
- 		};
- 	};
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-index 67b732e34091..e304b110e7a3 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-@@ -225,6 +225,7 @@
- 				     "allwinner,sun6i-a31-wdt";
- 			reg = <0x030090a0 0x20>;
- 			interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&osc24M>;
- 			/* Broken on some H6 boards */
- 			status = "disabled";
- 		};
-@@ -725,6 +726,7 @@
- 				     "allwinner,sun6i-a31-wdt";
- 			reg = <0x07020400 0x20>;
- 			interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&osc24M>;
- 		};
- 
- 		r_intc: interrupt-controller@7021000 {
--- 
-2.21.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlc2UgcGF0Y2hlcyBjb252ZXJ0cyBtZWRpYXRlayBkcml2ZXIgdG8gUEhZTElOSyBBUEkuCgp2
+MS0+djI6CiogUmViYXNlIGZvciBtdDc2eDggY2hhbmdlcwoqIFBoeWxpbmsgaW1wcm92ZW1lbnRz
+IGFuZCBjbGVhbi11cHMgYWZ0ZXIgcmV2aWV3CiogU0dNSUkgcG9ydCBkb2Vzbid0IHN1cHBvcnQg
+Mi41R2JpdCBpbiBTR01JSSBtb2RlIG9ubHkgaW4gQkFTRS1YIG1vZGUuCiAgUmVmYWN0b3IgdGhl
+IGNvZGUuCgpSZW7DqSB2YW4gRG9yc3QgKDMpOgogIG5ldDogZXRoZXJuZXQ6IG1lZGlhdGVrOiBB
+ZGQgYmFzaWMgUEhZTElOSyBzdXBwb3J0CiAgbmV0OiBldGhlcm5ldDogbWVkaWF0ZWs6IFJlLWFk
+ZCBzdXBwb3J0IFNHTUlJCiAgZHQtYmluZGluZ3M6IG5ldDogZXRoZXJuZXQ6IFVwZGF0ZSBtdDc2
+MjIgZG9jcyBhbmQgZHRzIHRvIHJlZmxlY3QgdGhlCiAgICBuZXcgcGh5bGluayBBUEkKCiAuLi4v
+YXJtL21lZGlhdGVrL21lZGlhdGVrLHNnbWlpc3lzLnR4dCAgICAgICAgfCAgIDIgLQogLi4uL2R0
+cy9tZWRpYXRlay9tdDc2MjItYmFuYW5hcGktYnBpLXI2NC5kdHMgIHwgIDI4ICstCiBhcmNoL2Fy
+bTY0L2Jvb3QvZHRzL21lZGlhdGVrL210NzYyMi5kdHNpICAgICAgfCAgIDEgLQogZHJpdmVycy9u
+ZXQvZXRoZXJuZXQvbWVkaWF0ZWsvS2NvbmZpZyAgICAgICAgIHwgICAyICstCiBkcml2ZXJzL25l
+dC9ldGhlcm5ldC9tZWRpYXRlay9tdGtfZXRoX3BhdGguYyAgfCAgNzUgKy0tCiBkcml2ZXJzL25l
+dC9ldGhlcm5ldC9tZWRpYXRlay9tdGtfZXRoX3NvYy5jICAgfCA1MDIgKysrKysrKysrKysrLS0t
+LS0tCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9tZWRpYXRlay9tdGtfZXRoX3NvYy5oICAgfCAgNjgg
+KystCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9tZWRpYXRlay9tdGtfc2dtaWkuYyAgICAgfCAgNjUg
+KystCiA4IGZpbGVzIGNoYW5nZWQsIDQ0NyBpbnNlcnRpb25zKCspLCAyOTYgZGVsZXRpb25zKC0p
+CgotLS4KMi4yMC4xCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
