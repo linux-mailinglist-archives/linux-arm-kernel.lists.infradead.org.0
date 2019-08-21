@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E36659845C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 21:27:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0841598460
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 21:29:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uaKF3pqGorNiZaxWlAM5qXaygcbRMHD77u8ERVwJdbU=; b=O5CjVtTRG3AesH
-	J6HLw4kJ8GllefZ78X8x/34GBhc7vsxVbPK7nncIzBIonrAiCmc1n0AUgzDZakMDNIqv7y+lsBtrM
-	SAwlvL6RvRsqILU/0DwN1egcctOUhxYaMZuc9Atviw4IMkj1HrrLm+fjTf9H0CO/xCKf7rQg8pbz2
-	/aMOBF2/c35AIBjucltoE6AitD0HccXKlGTatxG5pcFXiMWM1HeyIZq/McNbyl0ZB4grGeKTeOssd
-	p/w1fq/DaWfONFhJWbKI4Pcr2+/Wp5h/z0gdx6vcTGSkcq8A39XxqdFuhdgZWgpbEqmdg+e3uWT4g
-	rjs9P0TYvyeCTtBHBdzg==;
+	List-Owner; bh=atRUmT7yNlxYoVYoJrHwwVvBotmIxoUJPrTbrLnYBAo=; b=AQIFdXjgV4AyxM
+	4q0qNHwnAylTAjq8xa+SWKqYvBg5L5BDQaTSmHQM7TXvd/pWJEDv4LYx03B5ddsvp+S9U80qu0ZJV
+	fTdkDLUD5IdPBGAY0xsXONLnvCht21JmPBXvnqTsEPuB0iiEL/c6MW87E6bxFDaEd6Auxm3AX+njZ
+	TQUhvoP6PtyNN5LTOXlrgtCi7A7QYA5M93U526xfcpm9PYhgRJsuUthdevWDDVIy92UCK6ZrXX+Wn
+	FqgxSgLDqgmImZ7HxU5ltObvmERpyeDVSRZYPAMcgKTBivXoYXsMjwTd6PTxDDnOnoHF+C3ik1aHn
+	cumD3GlL3sqD6EwcBeAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0WG0-0005Ku-P6; Wed, 21 Aug 2019 19:26:56 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1i0WI3-0005tD-Gg; Wed, 21 Aug 2019 19:29:03 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0WFs-0005K8-MH
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 19:26:49 +0000
-Received: by mail-ot1-f67.google.com with SMTP id q20so3185627otl.0
+ id 1i0WHv-0005sr-Rm
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 19:28:57 +0000
+Received: by mail-io1-xd43.google.com with SMTP id i22so6986406ioh.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 12:26:47 -0700 (PDT)
+ Wed, 21 Aug 2019 12:28:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=jfec0mvVC9M+nXvWP6tW40j27cDmVyaV4qDP3OCdODc=;
+ b=VXW4CIYFyycAtYCCu9hGMa02XdPi7rZJs/JFT55LNFaP6QYf0t6hOEYYYUshiHiags
+ 4vsOKgRuDZ0Yx+OIaCqIJLv1n0Vm4PcfOOdpCfcHfKmTZCxxkRY9xIppavO+8en0t+f1
+ ghX8RN+LrekyDPKsxxShGtglR9YbBiVyHD56EkW5xpD1ufeyjgcHn51S7l0GeOtWpv8y
+ DS62JABG11fZtGYDMQz+5AWSt7P2x509JnZDQPLccp09NUx3EW+giqmH4eQsZowCBObQ
+ Q4hcCLHndCcY7kei5idB/T7lAE+a4w7VJk8Qnz8jNb8OXXlgbwgwrQnGigz3FQGpn75h
+ EqbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=10waZ0/ZkKGq42Av7UyfIsQLjaV5XyZlPq4+UDb3efY=;
- b=BA0joRYRBcrZoa5QZWKW/9D3eY6z1VmzynXlspbQoCLhTT6+hXEJG9DNtsJmrdgoNR
- mniNqTy6dq6sAAA2+26TjrCUukuyVwjQ4pcYcHU3mmkS/8/iAxW05a3WTm2kSmEgjPFH
- kAFxKnO80CC725Rh2syPyGYip6huyjYp59YuulFCPbpyXgPGznrznj+CM9gO5RDB215T
- K6SixUrqKFHWNVNJdRIkfZTNuSVg+3TQIXDCVAzCjL2ip9pBUCuI108Hb7aL15eeNNHp
- HAZ5KWcOb2a0xjgMZZXYxlbA/B893EK4RwvCQQizBjrQ9596emoPQ2UJ4CPnSa8wkvDs
- 8u9g==
-X-Gm-Message-State: APjAAAXHaOL/kshPBilsCJTMzNAkE/sAnym4Qmbgh6Fjg2izduc8cxgi
- EiUCS+dZaYkUeqcD9nDd7g==
-X-Google-Smtp-Source: APXvYqxLs6MFhoQAEH6ogwkzbZqevbuPU9pesTaxbtwOpkRdDuv+cpoUh2/qMzsEYRLg7/dteh3tjg==
-X-Received: by 2002:a9d:7b4e:: with SMTP id f14mr1554439oto.193.1566415606656; 
- Wed, 21 Aug 2019 12:26:46 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id z16sm3139424oic.10.2019.08.21.12.26.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Aug 2019 12:26:46 -0700 (PDT)
-Date: Wed, 21 Aug 2019 14:26:45 -0500
-From: Rob Herring <robh@kernel.org>
-To: Xiaowei Bao <xiaowei.bao@nxp.com>
-Subject: Re: [PATCHv3 1/3] dt-bindings: pci: layerscape-pci: add compatible
- strings "fsl,ls1028a-pcie"
-Message-ID: <20190821192645.GA22618@bogus>
-References: <20190806061553.19934-1-xiaowei.bao@nxp.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jfec0mvVC9M+nXvWP6tW40j27cDmVyaV4qDP3OCdODc=;
+ b=aWr2Os196VDzknJ6qL8PY5er6K8LWIp3EGfzR+f/b6KbvLNjLVkabiQk61fSZSpfLJ
+ D/mDGM+e9Y7lWyT5PEzkXfA9j2gLxhREdEfwh8/xcNUCSYsIHd2YAXczcFjZ5y+a7ukO
+ 26zpWQy2ja4ZHHqbO9K+1fZowsxI0v19kf/rPRedb6lQIgMU8nJesFmUk/SsL5TYLJHo
+ QrnZ8mTcGdouzQtpLdAOTmHzvDh9/28BaDjone/xjeGzb19rdg0hs5EOmkT1AaNkvRI4
+ VA3PQd6Z3JKPStxHTgi5Ukw8fwg5ihLP7yyQrRJXdMEwU0UW8ye122C6Igs/TsPEpgaZ
+ jrcQ==
+X-Gm-Message-State: APjAAAWDToLSLT1oiLMmD07jV/NPBANNzLueB807g/2PyPCqKFihJY7e
+ ZVV9+SXl6z0dE/aaU/5e9d+TtKinAApQ8Xal+qdHe5PJ
+X-Google-Smtp-Source: APXvYqy9w37/XJasm19/nhl++e/TQ6eHM1jV2Dyy4nJi5Ixw79vqtoRL1Dlpe38nZTfS47OJp41vk8IwZd6Jnx6kH1I=
+X-Received: by 2002:a5d:8908:: with SMTP id b8mr17319011ion.237.1566415734583; 
+ Wed, 21 Aug 2019 12:28:54 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190806061553.19934-1-xiaowei.bao@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190820194155.28992-1-mathieu.poirier@linaro.org>
+In-Reply-To: <20190820194155.28992-1-mathieu.poirier@linaro.org>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Wed, 21 Aug 2019 13:28:43 -0600
+Message-ID: <CANLsYkyrJTDeNNXrmNLgwRD7W00aj=YMtAx-DeezZk_xiVw05g@mail.gmail.com>
+Subject: Re: [PATCH 0/2] Coresight: Fix for v5.3-rc5
+To: Greg KH <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_122648_732166_6F0CFFAA 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190821_122855_956962_330F641D 
+X-CRM114-Status: GOOD (  12.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,36 +90,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, kstewart@linuxfoundation.org,
- linux-pci@vger.kernel.org, shawn.lin@rock-chips.com, minghuan.Lian@nxp.com,
- shawnguo@kernel.org, lorenzo.pieralisi@arm.com, kishon@ti.com,
- mingkai.hu@nxp.com, devicetree@vger.kernel.org, arnd@arndb.de,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, robh+dt@kernel.org, bhelgaas@google.com,
- linux-arm-kernel@lists.infradead.org, roy.zang@nxp.com,
- Xiaowei Bao <xiaowei.bao@nxp.com>, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com, pombredanne@nexb.com,
- linuxppc-dev@lists.ozlabs.org
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  6 Aug 2019 14:15:51 +0800, Xiaowei Bao wrote:
-> Add the PCIe compatible string for LS1028A
-> 
-> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> ---
-> v2:
->  - no change.
-> v3:
->  - no change.
-> 
->  Documentation/devicetree/bindings/pci/layerscape-pci.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
+On Tue, 20 Aug 2019 at 13:41, Mathieu Poirier
+<mathieu.poirier@linaro.org> wrote:
+>
+> Good day,
+>
+> Please see if you can add the following fix to the current cycle.  If
+> you think it is a little late I'll simply lump them with the set I
+> have for v5.4.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+I found an issue with a corner case - please ignore this request.
+
+>
+> Applies cleanly to your char-misc-linus (d1abaeb3be7b) branch.
+>
+> Thanks,
+> Mathieu
+>
+>
+> Yabin Cui (2):
+>   coresight: tmc-etr: Fix updating buffer in not-snapshot mode
+>   coresight: tmc-etr: Fix perf_data check
+>
+>  .../hwtracing/coresight/coresight-tmc-etr.c   | 26 +++++++++++--------
+>  drivers/hwtracing/coresight/coresight-tmc.h   |  6 ++---
+>  2 files changed, 18 insertions(+), 14 deletions(-)
+>
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
