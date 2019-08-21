@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5610C973F0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:52:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D6D7973F3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:53:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2BI0ctnmBoj65s4a18x/DJfqfNKAW6F8J2dqZh21Rnw=; b=jTI6T4JIFrzqpW
-	AMoGgdBmH5w19YCyhjAKHks0rwN4zbkDv6SOu4fwEWo1pCZCQ4gKpIPspDdAaUJgWXGa4FQPJvt1L
-	xm4z2rs2xgIqX+eGFMzIqfmkqMEcyqSWgh4NvytjP1hjzEmOWnWcwvTd6+jm6tnGaP3zv0mc4dBgh
-	yJbd0f8VUUnaDJe5dlB4qUt3OgtNTyMrszCzdy5vq/RbGPjOK4EJQ6qu9IqeTSy2rbGjziLWDVyJW
-	CmXzTc1J4Q1/1P4dFGBwhXWcQ53bXotkeAivHrmstTOM/CCvIDQcJtJ612IOXjkI4J8EQ3Ve7FjX2
-	r5bxdkxCnXyTHq0ZGpZA==;
+	List-Owner; bh=l/rEbkz/7vLBYReG+YLlBLGoUHzW9NfaYbkyzCca7+M=; b=qISd4u1FOjaSO2
+	tooFbOv+MEEUBEPFGJvjZfgM2ZU8PAohhe4C/lDz0rziq+wpZ7AFb4YWGrNhkQDN9fhGmbkOasCwU
+	epufZOSrRmGL82mxO2oboCNenmxsRlBp1dR1MGXbYyCaaLAEAuZWL9IxBxOFdrbQ8AVJNwhiJRvT8
+	jo6xYMrEFQ5bXilWtRLBXuMqTTWNO3vtMdy50RVF2IEmXazfrtxxRbJEGAfG4LS0fgq5nwn1MKe7B
+	ag8mnKiAJPefguxCJ0u22fykCbKMw7B2Wnkd8Z1kU9NOP8OKWS4vcwsnDWxhiC6hvbKrfRnGr8jVt
+	6yvZ2i2xrdj8/sD5P7iA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0LPu-0002na-II; Wed, 21 Aug 2019 07:52:26 +0000
+	id 1i0LQb-00032h-HD; Wed, 21 Aug 2019 07:53:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0LPV-0002nC-Ul
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:52:03 +0000
-Received: from mail-lf1-f49.google.com (mail-lf1-f49.google.com
- [209.85.167.49])
+ id 1i0LQ9-00032K-Dg
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:52:42 +0000
+Received: from mail-lf1-f53.google.com (mail-lf1-f53.google.com
+ [209.85.167.53])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 495A5233A0
+ by mail.kernel.org (Postfix) with ESMTPSA id BC69D2332A
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 07:52:01 +0000 (UTC)
+ Wed, 21 Aug 2019 07:52:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566373921;
- bh=hYDZnnUxNBQiUc/M9Pvh8xThL1YtQ/WPA7NOwsHlITE=;
+ s=default; t=1566373961;
+ bh=5nteA5+zrmgipnO474yy0n0FecWH31sdGUTtNAhVCSk=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=WUQ/LHgT2B5j4w+5OIgISRHWMlOId1Plh5PF+yyld4DLRCWhDGdBFy98S84g4rwkU
- yd1FaasgyAOh6kmA3WI1SyuCvztPaZPTJfibQx7K98zdhp0RfSj620yfPEWhiIYaDi
- sHiqASWsDCpPbx31l++/fEZLMX80+4OGOuXYuYNE=
-Received: by mail-lf1-f49.google.com with SMTP id x3so1104302lfc.0
+ b=wRvhpXgKSWITJklv09moe+PnqURa1UxxUJsPW/u0u3+nvywwPXpKcmNEDe9jKS2ro
+ j1GHKu4zAcdFlYl0V55fHxrVytszz/tttZ4MvNOkLi49m4UX1l7mL7HFAcZTJDVryz
+ 4eOsmgr1/VUr5co1rhk8I9tpjNEtaUGN69Wk0UuI=
+Received: by mail-lf1-f53.google.com with SMTP id x3so1081914lfn.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 00:52:01 -0700 (PDT)
-X-Gm-Message-State: APjAAAV67JNCkBhnK2G5aEo0poCVNux5zQdJrUEm5lG+QXmCt/sUUlVw
- 8IE8kdWrLCehJLQHfRQPstyrV7ouwbnEcEsXDFw=
-X-Google-Smtp-Source: APXvYqwWaFdHuhOKUxPiJxtuqDQh+4v8//hbQwO0UA4d7WrCmayyCIO3i8cEO8kbHX7hahgrTKu9nn1yGPlDiwCKLi0=
-X-Received: by 2002:a19:f512:: with SMTP id j18mr17081375lfb.159.1566373919501; 
- Wed, 21 Aug 2019 00:51:59 -0700 (PDT)
+ Wed, 21 Aug 2019 00:52:40 -0700 (PDT)
+X-Gm-Message-State: APjAAAVHb9v03GpzAhJA+wrGlgG2vf71kCZF85gVI1sOeWzyQ/0ub4a2
+ co81V0BY+C5Ca0f58K/tccinWoPNnfANc8heNV4=
+X-Google-Smtp-Source: APXvYqyAP1YOkm4D4f2V9WUC7znA2zZ/37GCGmDoDp9GcPyr7juX3RDYpPhUNtI6GfUQhYUiYVaD26GcNbEHnr5PNB4=
+X-Received: by 2002:a19:c20b:: with SMTP id l11mr17713344lfc.106.1566373958980; 
+ Wed, 21 Aug 2019 00:52:38 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190816163042.6604-1-krzk@kernel.org>
- <20190816163042.6604-2-krzk@kernel.org>
-In-Reply-To: <20190816163042.6604-2-krzk@kernel.org>
+ <20190816163042.6604-3-krzk@kernel.org>
+In-Reply-To: <20190816163042.6604-3-krzk@kernel.org>
 From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 21 Aug 2019 09:51:48 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPf6qpGDNxKpUJ+Eby8NS+BhrypA4xy_m1s4GHFA55Q9PQ@mail.gmail.com>
-Message-ID: <CAJKOXPf6qpGDNxKpUJ+Eby8NS+BhrypA4xy_m1s4GHFA55Q9PQ@mail.gmail.com>
-Subject: Re: [GIT PULL 3/3] ARM: dts: exynos: DT for v5.4
+Date: Wed, 21 Aug 2019 09:52:27 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfdvzvomUfmxhGf0qjEQH3K8TADCneo9SM6m50k4b=Gyw@mail.gmail.com>
+Message-ID: <CAJKOXPfdvzvomUfmxhGf0qjEQH3K8TADCneo9SM6m50k4b=Gyw@mail.gmail.com>
+Subject: Re: [GIT PULL 2/3] ARM: samsung: mach for v5.4
 To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
  arm@kernel.org, soc@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_005202_011194_D4C02B11 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20190821_005241_512338_5980FBB6 
+X-CRM114-Status: GOOD (  13.05  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,20 +104,27 @@ On Fri, 16 Aug 2019 at 18:30, Krzysztof Kozlowski <krzk@kernel.org> wrote:
 >
 > are available in the Git repository at:
 >
->   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt-5.4
+>   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-soc-5.4
 >
-> for you to fetch changes up to bfb77169306d5d560a8b62eebaf6d69d02e8d152:
+> for you to fetch changes up to 1fa70c7f49132513fb0da4afa7643395eedc7d35:
 >
->   ARM: dts: exynos: Add CAM power domain to Exynos5422/5800 (2019-08-12 19:02:59 +0200)
+>   ARM: exynos: Enable exynos-chipid driver (2019-08-15 20:29:58 +0200)
 >
 > ----------------------------------------------------------------
-> Samsung DTS ARM changes for v5.4
+> Samsung mach/soc changes for v5.4
 >
-> 1. Add AHCI to Exynos5250,
-> 2. Add camera and GPU power domains to Exynos5422,
-> 3. Minor cleanup.
+> 1. Minor fixup in plat code (S3C platforms),
+> 2. Enable exynos-chipid driver to provide SoC related information.
+>
+> ----------------------------------------------------------------
+> Linus Walleij (1):
+>       ARM: samsung: Include GPIO driver header
+>
+> Pankaj Dubey (1):
+>       ARM: exynos: Enable exynos-chipid driver
 
-Just a reminder - this one pull request is good to go. No changes needed.
+This last patch should be dropped so I will rework the pull request
+and send later v2. Please ignore it for now.
 
 Best regards,
 Krzysztof
