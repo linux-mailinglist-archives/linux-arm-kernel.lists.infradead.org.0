@@ -2,96 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EEEB97E32
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 17:10:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 065A997E34
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 17:11:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-Id:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3Hmif00GvKExzpI0NSLWzet2dEz2BVbaPzDleitSzag=; b=FJwPogacFAUjpP7G3ulDOVExw
-	/PzBlTUeV/jrrc+gd1ZMUM4g4p1PaxYpkx9+81LgdIsrbKdm7Nvazu/ZYufPl5lzc/6nmp+rHpyEQ
-	fDdVJIOwD7SOxuB41ZucyId0h6bomN+hUJhPu1tF2yyCaLM0avD18H+iy4cpFnQ3zKxwnVlPFW4As
-	BEhqj8r1V/HdIKWrglrqLCo+kfuJmiHBDXi6UcehKLnSIZTi5CzsWY1jajxUwbwtu3lunoKn+CI7I
-	nmgwUmlWFHnXpHJga5ZR2QvvG8rVFF/CEiLHg3md7RnAtC774xnFBv+JFaAK63JzYncKNq4L/TX0g
-	+5Gp6vk/Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FEmzNs8GgPxt50bRPtR8tdY51iz+9lWr8EcCSYZunOM=; b=nYNSdYp/et2tVA
+	eIa4n+n8R1DutcDjkc2yEPbhhwGSRkXbRSckBFyo7RUPybdqD7giqK9r9DhQaPZmBP2XWpAaz+kLo
+	08XVXOab3+WDQ4C5o7Ofq2AqP4boxXVX15DpPfduYnoRjx2c2+bmDP7YhDvnD6r3LJ9LcrrI1ODq9
+	GzO9b8U+CSRDn/bWjJM5/lyjmc8bO33ey8Qw0u9Cud4gIPdOFl5YZo3qrKY1g8JGI+zCRs9uHuehV
+	gFlBkYv3UrgmPpO3F3Q+aL2FKSwBNktj9YgbjKd6CylRnPdKPRTNV2IFfu2qSv5keeT2DvrF+HJrJ
+	C+MAVTsDXAVOcptm+mjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0SFM-0002un-Ih; Wed, 21 Aug 2019 15:10:00 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1i0SGL-0004P9-T9; Wed, 21 Aug 2019 15:11:02 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0SFC-0002uG-Qw
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 15:09:52 +0000
-Received: from pps.filterd (m0098404.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7LF2TiT107211
- for <linux-arm-kernel@lists.infradead.org>; Wed, 21 Aug 2019 11:09:48 -0400
-Received: from e31.co.us.ibm.com (e31.co.us.ibm.com [32.97.110.149])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2uh64q6txf-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 21 Aug 2019 11:09:48 -0400
-Received: from localhost
- by e31.co.us.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <anoo@linux.ibm.com>;
- Wed, 21 Aug 2019 16:09:47 +0100
-Received: from b03cxnp08026.gho.boulder.ibm.com (9.17.130.18)
- by e31.co.us.ibm.com (192.168.1.131) with IBM ESMTP SMTP Gateway: Authorized
- Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 21 Aug 2019 16:09:43 +0100
-Received: from b03ledav002.gho.boulder.ibm.com
- (b03ledav002.gho.boulder.ibm.com [9.17.130.233])
- by b03cxnp08026.gho.boulder.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x7LF9gOY61014402
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 21 Aug 2019 15:09:42 GMT
-Received: from b03ledav002.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 10780136053;
- Wed, 21 Aug 2019 15:09:42 +0000 (GMT)
-Received: from b03ledav002.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id C743513604F;
- Wed, 21 Aug 2019 15:09:41 +0000 (GMT)
-Received: from ltc.linux.ibm.com (unknown [9.16.170.189])
- by b03ledav002.gho.boulder.ibm.com (Postfix) with ESMTP;
- Wed, 21 Aug 2019 15:09:41 +0000 (GMT)
-MIME-Version: 1.0
-Date: Wed, 21 Aug 2019 10:10:06 -0500
-From: Adriana Kobylak <anoo@linux.ibm.com>
-To: Joel Stanley <joel@jms.id.au>
-Subject: Re: [PATCH] ARM: dts: aspeed: swift: Add eMMC device
-In-Reply-To: <20190821045655.21752-1-joel@jms.id.au>
-References: <20190821045655.21752-1-joel@jms.id.au>
-X-Sender: anoo@linux.ibm.com
-User-Agent: Roundcube Webmail/1.0.1
-X-TM-AS-GCONF: 00
-x-cbid: 19082115-8235-0000-0000-00000EC8D701
-X-IBM-SpamModules-Scores: 
-X-IBM-SpamModules-Versions: BY=3.00011629; HX=3.00000242; KW=3.00000007;
- PH=3.00000004; SC=3.00000287; SDB=6.01250037; UDB=6.00659943; IPR=6.01031592; 
- MB=3.00028261; MTD=3.00000008; XFM=3.00000015; UTC=2019-08-21 15:09:45
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19082115-8236-0000-0000-000046E6A6BD
-Message-Id: <202dcd112f41044162465d8a724b66d0@linux.vnet.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-21_05:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1908210160
+ id 1i0SG5-0004Ok-2S
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 15:10:46 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1i0SFy-0001Rj-L8; Wed, 21 Aug 2019 17:10:38 +0200
+Message-ID: <1566400237.4193.15.camel@pengutronix.de>
+Subject: Re: [PATCH 2/8] soc: ti: add initial PRM driver with reset control
+ support
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Suman Anna <s-anna@ti.com>, Tero Kristo <t-kristo@ti.com>, Keerthy
+ <j-keerthy@ti.com>, ssantosh@kernel.org,
+ linux-arm-kernel@lists.infradead.org,  linux-omap@vger.kernel.org,
+ robh+dt@kernel.org
+Date: Wed, 21 Aug 2019 17:10:37 +0200
+In-Reply-To: <a4196b73-63a0-f9d8-1c43-e6c4d1c1d6a4@ti.com>
+References: <1565164139-21886-1-git-send-email-t-kristo@ti.com>
+ <1565164139-21886-3-git-send-email-t-kristo@ti.com>
+ <3b76f0e0-7530-e7b5-09df-2de9956f30ee@ti.com>
+ <59709a2d-f13a-bd55-8aba-864c1cf2f19e@ti.com>
+ <9372957c-9ab9-b0dd-fe07-815eb2cb2f16@ti.com>
+ <0f335aec-bfdf-345a-8dfb-dad70aef1af6@ti.com>
+ <a4196b73-63a0-f9d8-1c43-e6c4d1c1d6a4@ti.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_080950_873667_A3F29298 
-X-CRM114-Status: GOOD (  25.04  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190821_081045_118174_C0C439ED 
+X-CRM114-Status: GOOD (  19.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -105,50 +73,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, Adriana Kobylak <anoo@us.ibm.com>,
- Linux-aspeed <linux-aspeed-bounces+anoo=linux.ibm.com@lists.ozlabs.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: tony@atomide.com, devicetree@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-08-20 23:56, Joel Stanley wrote:
-> Swift contains an eMMC device attached to the second SDHCI controller.
-> 
-> Signed-off-by: Joel Stanley <joel@jms.id.au>
-
-Reviewed-by: Adriana Kobylak <anoo@us.ibm.com>
-
-> ---
->  arch/arm/boot/dts/aspeed-bmc-opp-swift.dts | 11 +++++++++++
->  1 file changed, 11 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
-> b/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
-> index f14f745b34ca..25bc0e1bbced 100644
-> --- a/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
-> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
-> @@ -963,4 +963,15 @@
->  	status = "okay";
->  };
-> 
-> +&sdmmc {
-> +       status = "okay";
-> +};
-> +
-> +&sdhci1 {
-> +       status = "okay";
-> +
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&pinctrl_sd2_default>;
-> +};
-> +
->  #include "ibm-power9-dual.dtsi"
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCAyMDE5LTA4LTIwIGF0IDExOjQ3IC0wNTAwLCBTdW1hbiBBbm5hIHdyb3RlOgo+IE9u
+IDgvMjAvMTkgMjozNyBBTSwgVGVybyBLcmlzdG8gd3JvdGU6Cj4gPiBPbiAyMC44LjIwMTkgMi4w
+MSwgU3VtYW4gQW5uYSB3cm90ZToKPiA+ID4gSGkgVGVybywKPiA+ID4gCj4gPiA+IE9uIDgvMTkv
+MTkgNDozMiBBTSwgVGVybyBLcmlzdG8gd3JvdGU6ClsuLi5dCj4gPiA+ID4gPiA+ICt7Cj4gPiA+
+ID4gPiA+ICvCoMKgwqAgc3RydWN0IG9tYXBfcmVzZXRfZGF0YSAqcmVzZXQ7Cj4gPiA+ID4gPiA+
+ICsKPiA+ID4gPiA+ID4gK8KgwqDCoCAvKgo+ID4gPiA+ID4gPiArwqDCoMKgwqAgKiBDaGVjayBp
+ZiB3ZSBoYXZlIHJlc2V0cy4gSWYgZWl0aGVyIHJzdGN0bCBvciByc3RzdCBpcwo+ID4gPiA+ID4g
+PiArwqDCoMKgwqAgKiBub24temVybywgd2UgaGF2ZSByZXNldCByZWdpc3RlcnMgaW4gcGxhY2Uu
+IEFkZGl0aW9uYWxseQo+ID4gPiA+ID4gPiArwqDCoMKgwqAgKiB0aGUgZmxhZyBPTUFQX1BSTV9O
+T19SU1RTVCBpbXBsaWVzIHRoYXQgd2UgaGF2ZSByZXNldHMuCj4gPiA+ID4gPiA+ICvCoMKgwqDC
+oCAqLwo+ID4gPiA+ID4gPiArwqDCoMKgIGlmICghcHJtLT5kYXRhLT5yc3RjdGwgJiYgIXBybS0+
+ZGF0YS0+cnN0c3QgJiYKPiA+ID4gPiA+ID4gK8KgwqDCoMKgwqDCoMKgICEocHJtLT5kYXRhLT5m
+bGFncyAmIE9NQVBfUFJNX05PX1JTVFNUKSkKPiA+ID4gPiA+ID4gK8KgwqDCoMKgwqDCoMKgIHJl
+dHVybiAwOwo+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+ICvCoMKgwqAgcmVzZXQgPSBkZXZtX2t6
+YWxsb2MoJnBkZXYtPmRldiwgc2l6ZW9mKCpyZXNldCksIEdGUF9LRVJORUwpOwo+ID4gPiA+ID4g
+PiArwqDCoMKgIGlmICghcmVzZXQpCj4gPiA+ID4gPiA+ICvCoMKgwqDCoMKgwqDCoCByZXR1cm4g
+LUVOT01FTTsKPiA+ID4gPiA+ID4gKwo+ID4gPiA+ID4gPiArwqDCoMKgIHJlc2V0LT5yY2Rldi5v
+d25lciA9IFRISVNfTU9EVUxFOwo+ID4gPiA+ID4gPiArwqDCoMKgIHJlc2V0LT5yY2Rldi5vcHMg
+PSAmb21hcF9yZXNldF9vcHM7Cj4gPiA+ID4gPiA+ICvCoMKgwqAgcmVzZXQtPnJjZGV2Lm9mX25v
+ZGUgPSBwZGV2LT5kZXYub2Zfbm9kZTsKPiA+ID4gPiA+ID4gK8KgwqDCoCByZXNldC0+cmNkZXYu
+bnJfcmVzZXRzID0gT01BUF9NQVhfUkVTRVRTOwo+ID4gPiAKPiA+ID4gU3VnZ2VzdCBhZGRpbmcg
+YSBudW1iZXIgb2YgcmVzZXRzIHRvIHBybS0+ZGF0YSwgYW5kIHVzaW5nIGl0IHNvIHRoYXQgd2UK
+PiA+ID4gZG9uJ3QgZXZlbiBlbnRlcnRhaW4gYW55IHJlc2V0cyBiZXlvbmQgdGhlIGFjdHVhbCBu
+dW1iZXIgb2YgcmVzZXRzLgo+ID4gCj4gPiBIbW0gd2h5IGJvdGhlcj8gQWNjZXNzaW5nIGEgc3Rh
+bGUgcmVzZXQgYml0IHdpbGwganVzdCBjYXVzZSBhY2Nlc3MgdG8gYQo+ID4gcmVzZXJ2ZWQgYml0
+IGluIHRoZSByZXNldCByZWdpc3RlciwgZG9pbmcgYmFzaWNhbGx5IG5vdGhpbmcuIEFsc28sIHRo
+aXMKPiA+IHdvdWxkIG5vdCB3b3JrIGZvciBhbTMvYW00IHdrdXAsIGFzIHRoZXJlIGlzIGEgc2lu
+Z2xlIHJlc2V0IGJpdCBhdCBhbgo+ID4gYXJiaXRyYXJ5IHBvc2l0aW9uLgo+IAo+IFRoZSBnZW5l
+cmljIGNvbnZlbnRpb24gc2VlbXMgdG8gYmUgZGVmaW5pbmcgYSByZXNldCBpZCB2YWx1ZSBkZWZp
+bmVkCj4gZnJvbSBpbmNsdWRlL2R0LWJpbmRpbmdzL3Jlc2V0LyB0aGF0IGNhbiBiZSB1c2VkIHRv
+IG1hdGNoIGJldHdlZW4gdGhlCj4gZHQtbm9kZXMgYW5kIHRoZSByZXNldC1jb250cm9sbGVyIGRy
+aXZlci4KPiAKPiBQaGlsaXBwLAo+IEFueSBjb21tZW50cz8KCkFyZSB0aGVyZSBvbmx5IHJlc2V0
+IGJpdHMgYW5kIHJlc2VydmVkIGJpdHMgaW4gdGhlIHJhbmdlIGFjY2Vzc2libGUgYnkKWzAuLk9N
+QVBfTUFYX1JFU0VUU10gb3IgYXJlIHRoZXIgYml0cyB3aXRoIGFub3RoZXIgZnVuY3Rpb24gYXMg
+d2VsbD8KSWYgdGhlIGxhdHRlciBpcyB0aGUgY2FzZSwgSSB3b3VsZCBwcmVmZXIgZW51bWVyYXRp
+bmcgdGhlIHJlc2V0cyBpbiBhCmR0LWJpbmRpbmdzIGhlYWRlciwgd2l0aCB0aGUgZHJpdmVyIGNv
+bnRhaW5pbmcgYW4gZW51bSAtPiByZWcvYml0CnBvc2l0aW9uIGxvb2t1cCB0YWJsZS4KCkluIGdl
+bmVyYWwsIGFzc3VtaW5nIHRoZSBkZXZpY2UgdHJlZSBjb250YWlucyBubyBlcnJvcnMsIHRoaXMg
+c2hvdWxkIG5vdAptYXR0ZXIgbXVjaCwgYnV0IEkgdGhpbmsgaXQgaXMgbmljZSBpZiB0aGUgcmVz
+ZXQgZHJpdmVyLCBldmVuIHdpdGggYQptaXNjb25maWd1cmVkIGRldmljZSB0cmVlLCBjYW4ndCB3
+cml0ZSBpbnRvIGFyYml0cmFyeSBiaXQgZmllbGRzLgoKcmVnYXJkcwpQaGlsaXBwCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
