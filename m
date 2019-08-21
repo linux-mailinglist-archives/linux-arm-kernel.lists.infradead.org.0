@@ -2,87 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0942298679
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 23:18:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C74498680
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 23:19:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GbsPRULHsWonWG4CgVnZYABjcWOa9NEJHZ254oXAYjk=; b=oUbCpk1Wr/vZhA
-	NIliW0JiFvCQP7DZ7sDEo1cwfSJlWG0DyUbjBS43psRqXIh3NS+DZ+5XtelnvzDqj+yslNrkbJ1db
-	6RfwPg8YDa7V0dZpEsfqSVcJ1U85nVlbXJLud9kOFWQmy3J9bdovr1ceW1bDm1rt8SMnpfg+TLQjv
-	ONJNoYLCG3IW+9lixvmji289KMloOVZuetYdYMVjvbWaNXyktezi4f+ISoRAYC5ijsmV/yIgGcbzb
-	ow2vdJiFgtqVQue+xZuCSgL8I/N1vYWjtf5GdEMqaHTfMmYUtwS7q8AFTIS4mnmLXtjXmEoUfb2xY
-	y5BzEoaL/bPmWyfEpRqQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=i6ztnm4ARRv65AA6WAynO9cceHRKOGMXAJhxaU29fN4=; b=a5vdlFsDHKPZQ2
+	uy+cUkakq1UzZGRZ0Ao63MqURrmF2RImZSUXnVNsus7BV172ywb8sbjr+1//OyIDOFZekHUdnagIM
+	B8miKDCNwzXhJ2CMBSZmIRiqpixi5NVgXptoABw+26X4kcx7dCaetXd23oSJfKdKo7e6FX0c0+RDH
+	IkNQ5MJ3n1LiVTOBFgViIb+KAdDHTaO1dOB2BZyf6DGAi1/BjeZvW3GD7x8GvB480IrEOeNs9h/N/
+	iTg90FVokjK3eRWxSnzwb4CUtpzez/Lkw7PPVXimdZom6r3cUyjBSMRGX0o3eJ3I4jOFOtG6sBeEZ
+	eSN2fGn/NROpVuNA+CrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Y0J-0000ZJ-BH; Wed, 21 Aug 2019 21:18:51 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1i0Y1E-0000pv-Rt; Wed, 21 Aug 2019 21:19:48 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Y0B-0000Yz-Nh
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 21:18:45 +0000
-Received: by mail-ot1-f66.google.com with SMTP id z17so3416933otk.13
+ id 1i0Y16-0000p7-Tj
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 21:19:42 +0000
+Received: by mail-wm1-x344.google.com with SMTP id d16so3573907wme.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 14:18:43 -0700 (PDT)
+ Wed, 21 Aug 2019 14:19:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=dbzkg0dehYA9XxXBy/tRWEwtyB89ujck03vcqauhtxk=;
+ b=M41c94fBiRx04YN/D9LqPjJsO6altoSy7hmpL7ol/za2grZjkRDhSLO5v0GE4oqFcr
+ sB1NADhpZQEX8bu+8z3ngPuXvDNMCnvmraEJ3pjT7pO4D7RFtsLKvpACV3d+wRTcbYS3
+ kXiyqcUDbRVLfqAFOu1aQWi9KhSGOs/D7bXZH5FbeWTIBEsiE3Gq6Uasu8AoiGFjkegK
+ gGauvlV6DC3y9og3jEJhbnL9tuYDdQ6Cj/qw58OVHgjo81rXZQTbiI8lu/htArVrxzmf
+ go8bSDnidovR7Jy0DAm4NoDj/6PEdoI+wObbt2hwoh0VjwVbN95CdgNGGKyfL19/k8sP
+ KHbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0BysGlcLSnXeBZ1pv0mPCj6ITlGQ3QNXjoyF2Ap0RJY=;
- b=iSo0IF5Cqw3Km/RyCGzkdj95AKOKRRnqgVqPmqFOOnD4I0fvHLVELbjtet7uWmlWY5
- NCZQ/u5s6y7896MExtgabOclr+MClCZhT7W15sc8J+haOPwkIU9oAxQuIXy5xJg7cTQu
- 4yahJHgSW22Ceway2zeefVUtoZCL6C/hUahb4llxNRCZHpXnIQfMl9LlgnYfi3rOXmzB
- 5n/BmbyO0XK8RKl6VErqB6x+DUOpW7JeNyWpcsdo23W7EVFmWuTjmdOPH2FXyphP9lak
- yGRY+PKmz7SOrbefaRCn3JjJmSsENnOJNn2e75I73kmiX2IoyK3ZoTYzf4E7E8cKiH8+
- Ci7g==
-X-Gm-Message-State: APjAAAW+anjTGcsuvS38T0rCH8aTdJU+8GkHnsR/gPsaWXDSr9LiZL2W
- yQ1jF9pSnBEwQIiqzVXSjQ==
-X-Google-Smtp-Source: APXvYqwyCdp9o8YTLQuqlTyT5OIepCOx0aazVgW8orqSC0e9+vmRZf4pQjus03+ay0tw1yhN7gQitQ==
-X-Received: by 2002:a05:6830:54:: with SMTP id
- d20mr25800639otp.225.1566422322638; 
- Wed, 21 Aug 2019 14:18:42 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id o26sm7711687otl.34.2019.08.21.14.18.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Aug 2019 14:18:42 -0700 (PDT)
-Date: Wed, 21 Aug 2019 16:18:41 -0500
-From: Rob Herring <robh@kernel.org>
-To: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
-Subject: Re: [PATCH v2 4/6] dt-bindings: serial: Document Freescale LINFlex
- UART
-Message-ID: <20190821211841.GA16627@bogus>
-References: <20190809112853.15846-1-stefan-gabriel.mirea@nxp.com>
- <20190809112853.15846-5-stefan-gabriel.mirea@nxp.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=dbzkg0dehYA9XxXBy/tRWEwtyB89ujck03vcqauhtxk=;
+ b=S6L71R18vLranI1VkJ+Tj9gt5fStHEVjw7jAjP7A29mZp/DeVnhWlvUwMKqwjM3E6Z
+ HsJf/kPyiRdw7E1MVdjktA9d7s+PxGUge13TnccsJHPgbznRmM2RkcHYBkgBL/zRKrWr
+ kMP99hZGqW14P4I8UpmxG4+CSkbzaMoZLXSwDtTKB7aFNDmu3J5FqkltWlGrqSxdlZVu
+ cgZGybT81P2pG+hS4DT9dGAEd8ddUMHDxL7LdjPb/wma9jmLM8jL519uCRVSGusB+TxA
+ 2qfLWqtLyf5XCUcDkBkBz2bm+V+EsvAc1xiHvrPsyyZR+oySTJzCUhOGfa6nzwa10t4Q
+ Ft8w==
+X-Gm-Message-State: APjAAAX7Kyynx+zSq5b5Upf3d0I04wgy41AXl/T2AziZBcFP5xACR6tE
+ zUArfaJ02WnMLpUGiCH34E0ExA==
+X-Google-Smtp-Source: APXvYqz8RJbRsGB3Mt8HsUVbL8cKiur8eRibcotSAhwTRu5jFrKEfBVKTcGp7K5dPJ2MRLuU5YWVug==
+X-Received: by 2002:a7b:c649:: with SMTP id q9mr2156413wmk.108.1566422379282; 
+ Wed, 21 Aug 2019 14:19:39 -0700 (PDT)
+Received: from ?IPv6:2a01:cb1d:6e7:d500:82a9:347a:43f3:d2ca?
+ ([2a01:cb1d:6e7:d500:82a9:347a:43f3:d2ca])
+ by smtp.gmail.com with ESMTPSA id c11sm19183554wrs.86.2019.08.21.14.19.37
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 21 Aug 2019 14:19:38 -0700 (PDT)
+Subject: Re: [PATCH v3 0/6] Add support of New Amlogic temperature sensor for
+ G12 SoCs
+To: Christian Hewitt <christianshewitt@gmail.com>
+References: <20190806130506.8753-1-glaroque@baylibre.com>
+ <357FACA6-6EAC-4E9D-B6F7-4D8D0D59A20A@gmail.com>
+From: guillaume La Roque <glaroque@baylibre.com>
+Message-ID: <9a63d585-69b1-c9b2-8092-51361ff41991@baylibre.com>
+Date: Wed, 21 Aug 2019 23:19:37 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190809112853.15846-5-stefan-gabriel.mirea@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <357FACA6-6EAC-4E9D-B6F7-4D8D0D59A20A@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_141843_769032_BFF428E6 
-X-CRM114-Status: GOOD (  16.70  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190821_141941_005858_5C9B80ED 
+X-CRM114-Status: GOOD (  15.68  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,92 +99,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "will@kernel.org" <will@kernel.org>, "corbet@lwn.net" <corbet@lwn.net>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "jslaby@suse.com" <jslaby@suse.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, Cosmin Stefan Stoica <cosmin.stoica@nxp.com>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Larisa Ileana Grigore <larisa.grigore@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org, khilman@baylibre.com,
+ daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 11:29:14AM +0000, Stefan-gabriel Mirea wrote:
-> From: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
-> 
-> Add documentation for the serial communication interface module (LINFlex),
-> found in two instances on S32V234.
-> 
-> Signed-off-by: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
-> Signed-off-by: Larisa Grigore <Larisa.Grigore@nxp.com>
-> Signed-off-by: Stefan-Gabriel Mirea <stefan-gabriel.mirea@nxp.com>
-> ---
->  .../bindings/serial/fsl,s32-linflexuart.txt   | 24 +++++++++++++++++++
->  1 file changed, 24 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt b/Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt
-> new file mode 100644
-> index 000000000000..957ffeaca9f1
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt
-> @@ -0,0 +1,24 @@
-> +* Freescale Linflex UART
-
-Be consistent with the name: LINFlexD?
-
-> +
-> +The LINFlexD controller implements several LIN protocol versions, as well as
-> +support for full-duplex UART communication through 8-bit and 9-bit frames. The
-> +Linflex UART driver enables operation only in UART mode.
-
-What the driver supports or not is independent of the binding.
-
-> +
-> +See chapter 47 ("LINFlexD") in the reference manual[1].
-> +
-> +Required properties:
-> +- compatible :
-> +  - "fsl,s32-linflexuart" for linflex configured in uart mode which
-
-LINFlexD?
-
-> +  is compatible with the one integrated on S32V234 SoC
-
-Compatibles should be SoC specific. Is 's32' specific enough to account 
-for any differences or future bugs found?
-
-> +- reg : Address and length of the register set for the device
-> +- interrupts : Should contain uart interrupt
-> +
-> +Example:
-> +uart0:serial@40053000 {
-
-space    ^
-
-> +	compatible = "fsl,s32-linflexuart";
-> +	reg = <0x0 0x40053000 0x0 0x1000>;
-> +	interrupts = <0 59 4>;
-> +	status = "disabled";
-
-Don't show status in examples.
-
-> +};
-> +
-> +[1] https://www.nxp.com/webapp/Download?colCode=S32V234RM
-> -- 
-> 2.22.0
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQ2hyaXN0aWFuLAoKCnRoYW5rcyBmb3IgdGVzdGluZyBvbiB0aGlzIDMgYm9hcmRzLgoKCmd1
+aWxsYXVtZQoKT24gOC8xNC8xOSAyOjI0IFBNLCBDaHJpc3RpYW4gSGV3aXR0IHdyb3RlOgo+IE9u
+IDYgQXVnIDIwMTksIGF0IDU6MDUgcG0sIEd1aWxsYXVtZSBMYSBSb3F1ZSA8Z2xhcm9xdWVAYmF5
+bGlicmUuY29tPiB3cm90ZToKPj4gVGhpcyBwYXRjaHMgc2VyaWVzIGFkZCBzdXBwb3J0IG9mIE5l
+dyBBbWxvZ2ljIHRlbXBlcmF0dXJlIHNlbnNvciBhbmQgbWluaW1hbAo+PiB0aGVybWFsIHpvbmUg
+Zm9yIFNFSTUxMCBhbmQgT0RST0lELU4yIGJvYXJkcy4KPj4KPj4gRmlyc3QgaW1wbGVtZW50YXRp
+b24gd2FzIGRvaW5nIG9uIElJT1sxXSBidXQgYWZ0ZXIgY29tbWVudHMgaSBtb3ZlIG9uIHRoZXJt
+YWwgZnJhbWV3b3JrLgo+PiBGb3JtdWxhcyBhbmQgY2FsaWJyYXRpb24gdmFsdWVzIGNvbWUgZnJv
+bSBhbWxvZ2ljLgo+Pgo+PiBDaGFuZ2VzIHNpbmNlIHYyOgo+PiAgLSBmaXggeWFtbCBkb2N1bWVu
+dGlvbiAKPj4gIC0gcmVtb3ZlIHVubmVlZGVkIHN0YXR1cyB2YXJpYWJsZSBmb3IgdGVtcGVyYXR1
+cmUtc2Vuc29yIG5vZGUKPj4gIC0gcmV3b3JrIGRyaXZlciBhZnRlciBNYXJ0aW4gcmV2aWV3Cj4+
+ICAtIGFkZCBzb21lIGluZm9ybWF0aW9uIGluIGNvbW1pdCBtZXNzYWdlCj4+Cj4+IENoYW5nZXMg
+c2luY2UgdjE6Cj4+ICAtIGZpeCBlbnVtIHZzIGNvbnN0IGluIGRvY3VtZW50YXRpb24KPj4gIC0g
+Zml4IGVycm9yIHdpdGggdGhlcm1hbC1zZW5zb3ItY2VsbHMgdmFsdWUgc2V0IHRvIDEgaW5zdGVh
+ZCBvZiAwCj4+ICAtIGFkZCBzb21lIGRlcGVuZGVuY2llcyBuZWVkZWQgdG8gYWRkIGNvb2xpbmct
+bWFwcwo+Pgo+PiBEZXBlbmRlbmNpZXMgOgo+PiAtIHBhdGNoIDMsNCAmIDU6IGRlcGVuZHMgb24g
+TmVpbCdzIHBhdGNoIGFuZCBzZXJpZXMgOgo+PiAgICAgICAgICAgICAgLSBtaXNzaW5nIGR3YzIg
+cGh5LW5hbWVzWzJdCj4+ICAgICAgICAgICAgICAtIHBhdGNoc2V0cyB0byBhZGQgRFZGUyBvbiBH
+MTJhWzNdIHdoaWNoIGhhdmUgZGVwcyBvbiBbNF0gYW5kIFs1XQo+Pgo+PiBbMV0gaHR0cHM6Ly9s
+b3JlLmtlcm5lbC5vcmcvbGludXgtYW1sb2dpYy8yMDE5MDYwNDE0NDcxNC4yMDA5LTEtZ2xhcm9x
+dWVAYmF5bGlicmUuY29tLwo+PiBbMl0gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtYW1s
+b2dpYy8yMDE5MDYyNTEyMzY0Ny4yNjExNy0xLW5hcm1zdHJvbmdAYmF5bGlicmUuY29tLwo+PiBb
+M10gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtYW1sb2dpYy8yMDE5MDcyOTEzMjYyMi43
+NTY2LTEtbmFybXN0cm9uZ0BiYXlsaWJyZS5jb20vCj4+IFs0XSBodHRwczovL2xvcmUua2VybmVs
+Lm9yZy9saW51eC1hbWxvZ2ljLzIwMTkwNzMxMDg0MDE5Ljg0NTEtNS1uYXJtc3Ryb25nQGJheWxp
+YnJlLmNvbS8KPj4gWzVdIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LWFtbG9naWMvMjAx
+OTA3MjkxMzI2MjIuNzU2Ni0zLW5hcm1zdHJvbmdAYmF5bGlicmUuY29tLwo+Pgo+PiBHdWlsbGF1
+bWUgTGEgUm9xdWUgKDYpOgo+PiAgZHQtYmluZGluZ3M6IHRoZXJtYWw6IEFkZCBEVCBiaW5kaW5n
+cyBkb2N1bWVudGF0aW9uIGZvciBBbWxvZ2ljCj4+ICAgIFRoZXJtYWwKPj4gIHRoZXJtYWw6IGFt
+bG9naWM6IEFkZCB0aGVybWFsIGRyaXZlciB0byBzdXBwb3J0IEcxMiBTb0NzCj4+ICBhcm02NDog
+ZHRzOiBhbWxvZ2ljOiBnMTI6IGFkZCB0ZW1wZXJhdHVyZSBzZW5zb3IKPj4gIGFybTY0OiBkdHM6
+IG1lc29uOiBzZWk1MTA6IEFkZCBtaW5pbWFsIHRoZXJtYWwgem9uZQo+PiAgYXJtNjQ6IGR0czog
+YW1sb2dpYzogb2Ryb2lkLW4yOiBhZGQgbWluaW1hbCB0aGVybWFsIHpvbmUKPj4gIE1BSU5UQUlO
+RVJTOiBhZGQgZW50cnkgZm9yIEFtbG9naWMgVGhlcm1hbCBkcml2ZXIKPiBUZXN0ZWQtYnk6IENo
+cmlzdGlhbiBIZXdpdHQgPGNocmlzdGlhbnNoZXdpdHRAZ21haWwuY29tPgo+Cj4gSeKAmXZlIHRl
+c3RlZCB0aGlzIHNlcmllcyB3aXRoIE9kcm9pZCBOMiBhbmQgS2hhZGFzIFZJTTMsIFg5Ni1NYXgu
+IFBhdGNoZXMgdG8gYWRkCj4gc3VwcG9ydCBmb3IgVklNMy9YOTYtbWF4IHdpbGwgYmUgc3VibWl0
+dGVkIG9uY2UgdGhlIGRyaXZlciBpcyBtZXJnZWQuCj4KPiBWSU0zOn4gIyBkbWVzZyB8IGdyZXAg
+dGhlcm1hbAo+IFsgICAgMC4wNDYzNzVdIHRoZXJtYWxfc3lzOiBSZWdpc3RlcmVkIHRoZXJtYWwg
+Z292ZXJub3IgJ3N0ZXBfd2lzZScKPgo+IFZJTTM6fiAjIGNhdCAvc3lzL2RldmljZXMvdmlydHVh
+bC90aGVybWFsL3RoZXJtYWxfem9uZTAvdGVtcAo+IDUxMzAwCj4KPiBWSU0zOn4gIyBjYXQgL3N5
+cy9kZXZpY2VzL3ZpcnR1YWwvdGhlcm1hbC90aGVybWFsX3pvbmUxL3RlbXAKPiA1MjgwMAo+Cj4g
+Q2hyaXN0aWFuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
