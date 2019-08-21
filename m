@@ -2,92 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A626978DF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 14:10:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EF62978EF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 14:11:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PbFb2hHeggOhAMonxMOVm8/7xYQxRJuHCBq2niRt2I0=; b=ufwEe6b9yKe9gV
-	Qe2XTEYETO5OEZJPLiYfCWI3KT7I6Ymuz+woNbDiO3gfg6MxYCVAHMelNCysJn2JQR52CFifOV0qK
-	1pWszfQ0gKbTgE/EmNxSUVX/FveGqeKPBXu0JVDZdXlG84GT5LZtZg2TH2rZN6/Hbh289/jYffrNs
-	E6LyAqL64f8LfF/2n7SydYYnpZ9ZJ5nYKVKSVCn/3sSDr2zp9woY3KgcsWtW9SPDlT/JFq8fU+1gC
-	cjiJmglrm9zgrdd1j/An8Y6gVHfCVUrBeGeq/FnqIGsK2T5zNsqWYlbZ3BehQmAwGSvDjeILm564T
-	SVbunlytkzagqdzYOJvw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ybZu69XpYR+5LAcL4iaWYJqVQzwJZekD4Gn8mMDyED4=; b=hkOhNIjwD9ENk+
+	A88pvkwinSZWZnCS2OJS0O4ENzJtbTDlZ20lWdqS3gE0WcMI1Z1k4oDSnt1pWyhccJ4Ojt6RvSuS8
+	Vk5lA8KzEmHKcM1L7tyO8D0mhPWCMH2oI5lMk39mzEATPf1XrwszmMjk5ek9g5WUTle+6a4fNpjKp
+	q4VKIhkGq7/bdWC8CfQpj+2vIEZEza3pvhqhR/0dpl5nXFs2rwvGcBL1MaWhAMgbgw5Y2f7whf132
+	fnk6fSItfrp9JM3tqtbRQEKVpeFkKBTGDZtZMsSucXaQ+igQONPvQSkRUun+UsO3cHc0k2EluFw6q
+	zMFJHGfo/b7iAY8EsOsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0PRP-0006Iu-MN; Wed, 21 Aug 2019 12:10:15 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1i0PSn-0007qi-6B; Wed, 21 Aug 2019 12:11:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0PR6-0006Hi-NK
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 12:09:58 +0000
-Received: by mail-pl1-x641.google.com with SMTP id bj8so1242395plb.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 05:09:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernel-dk.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=UT6yE/roxwyyBSRfLOwrFlilraLjBXjoNWJQAsldDVo=;
- b=1mTbly5hNN6suDS+BwBXn5tZNQRoJv3U+6eGIZWkxOpX8gp4MfK0srbyshCamPl8cE
- oynbwAZaUVd3iYuDw/fFqllqnUyyMdhGmWDFTWD0+uRBHO1RABomqwNTPTloesNaBCP/
- OF0wNlT1X2HUApuEYt9hqsB3ukfCOmKOxQ9VlFGyTVla9DArrhzV46cf0e1hqSL0Em1S
- kMKT+OUOB39Lc9u+MllIcA6W2VixaWAmIOOCqIPym//+KF+bJLzrXd5uXWfD6RF+tn8O
- fEItbmLNgpz+3xyfCw5xuoCb8BCqv/jPsevOVEPakCBbt5mOdjvlnK19JQHJXISJTFII
- +AuQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=UT6yE/roxwyyBSRfLOwrFlilraLjBXjoNWJQAsldDVo=;
- b=hbq8Lxo49KH25YIL+hlKu9hBBNUxCfxhdUPLmhyt7dXu5qxp6+8lQ95xpDkgZR6mSU
- mTDDbeePEv9Bs1UHRppj6t1kIdAmuK8wIqvk8gNulv0BGmQpk6PZ5Gg5cjQ6+5dCFFAu
- IhJ5eojQRQOmvfpTUojgvoFHDaLfF+ykca5QaZZhIgjrGKNKfF8z23eEX8v6GO4kd+/5
- mHLBjbvnXPSFC2vg+8fpNvBf6+lu3fPOWRXvnURNIJwHMcPDovLTTYyoK1N6zKfvAZcx
- aXPrujsR0Auh0FEoL5Z8dqeLzIR5L065OnQyH0NPGb7VAekPDCzGt6inCCLd0ze8GVIU
- Y3Cg==
-X-Gm-Message-State: APjAAAXfNKnbW7IPA8yoB+3E9IE1gDo4HlWqoxlK+u7D8j5P+b1Se6ec
- I5VqSMEz9aMPg/LXwjcOdJ6+EQ==
-X-Google-Smtp-Source: APXvYqxsoe31YiWALXWqRLHXasZTZR3nM8GXNUHwTUUu4EkoxYDPJeCxhjU4HkYSZ/HpLNbIJ9AOOg==
-X-Received: by 2002:a17:902:a410:: with SMTP id
- p16mr17723995plq.150.1566389394293; 
- Wed, 21 Aug 2019 05:09:54 -0700 (PDT)
-Received: from [192.168.1.188] (66.29.164.166.static.utbb.net. [66.29.164.166])
- by smtp.gmail.com with ESMTPSA id z4sm22521476pfg.166.2019.08.21.05.09.51
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 21 Aug 2019 05:09:53 -0700 (PDT)
-Subject: Re: [PATCH 5/9] block: support diskcipher
-To: "boojin.kim" <boojin.kim@samsung.com>, linux-block@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <CGME20190821064226epcas2p2835b8a9084988b79107e54abfc5e7dab@epcas2p2.samsung.com>
- <004101d557eb$98b00060$ca100120$@samsung.com>
-From: Jens Axboe <axboe@kernel.dk>
-Message-ID: <6ea5e5db-4dd4-719f-3b3e-b89099636ea6@kernel.dk>
-Date: Wed, 21 Aug 2019 06:09:50 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i0PSY-0007qI-Kf
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 12:11:28 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 02B5622CE3;
+ Wed, 21 Aug 2019 12:11:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566389485;
+ bh=6SAn36luX8nPLgIwmWDCVqjtygPua5k4vP92Y24z3nU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=TBmSJWU3G9o+VpZGtPTikOGmGHCJs/v0i06RHPyUaX5D0czOu78+XNTT6qaGIhWGn
+ PKWRjhez5JQq7HW/yBx3EDz9xzQxralL2FjahCjEjKg3EgwMtIHQSYmiiWpzvhkFCD
+ U1/eCGxk9zMaSZz9ovGsC7/Ir0Mw0MYXdBZFH4zQ=
+Date: Wed, 21 Aug 2019 13:11:21 +0100
+From: Will Deacon <will@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 3/4] iommu/io-pgtable-arm: Rationalise TCR handling
+Message-ID: <20190821121120.34wqo7vj56pqk57c@willie-the-truck>
+References: <cover.1566238530.git.robin.murphy@arm.com>
+ <78df4f8e2510e88f3ded59eb385f79b4442ed4f2.1566238530.git.robin.murphy@arm.com>
+ <20190820103115.o7neehdethf7sbqi@willie-the-truck>
+ <48ca6945-de73-116a-3230-84862ca9e60b@arm.com>
+ <20190820160700.6ircxomwuo5bksqz@willie-the-truck>
+ <8cc47f43-ad74-b4e2-e977-6c78780abc91@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <004101d557eb$98b00060$ca100120$@samsung.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <8cc47f43-ad74-b4e2-e977-6c78780abc91@arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_050956_811956_63423E5C 
-X-CRM114-Status: GOOD (  12.88  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190821_051126_721683_CD78F7CC 
+X-CRM114-Status: GOOD (  27.69  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,51 +81,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: 'Ulf Hansson' <ulf.hansson@linaro.org>, 'Mike Snitzer' <snitzer@redhat.com>,
- dm-devel@redhat.com, 'Andreas Dilger' <adilger.kernel@dilger.ca>,
- 'Alasdair Kergon' <agk@redhat.com>, 'Eric Biggers' <ebiggers@kernel.org>,
- linux-samsung-soc@vger.kernel.org, 'Herbert Xu' <herbert@gondor.apana.org.au>,
- 'Krzysztof Kozlowski' <krzk@kernel.org>,
- 'Jaehoon Chung' <jh80.chung@samsung.com>, 'Kukjin Kim' <kgene@kernel.org>,
- linux-ext4@vger.kernel.org, 'Chao Yu' <chao@kernel.org>,
- linux-fscrypt@vger.kernel.org, 'Jaegeuk Kim' <jaegeuk@kernel.org>,
- linux-arm-kernel@lists.infradead.org, "'Theodore Y. Ts'o'" <tytso@mit.edu>,
- linux-mmc@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
- linux-crypto@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- "'David S. Miller'" <davem@davemloft.net>
+Cc: robdclark@gmail.com, joro@8bytes.org, jcrouse@codeaurora.org,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/21/19 12:42 AM, boojin.kim wrote:
-> This patch supports crypto information to be maintained via BIO
-> and passed to the storage driver.
+On Tue, Aug 20, 2019 at 07:41:52PM +0100, Robin Murphy wrote:
+> On 20/08/2019 17:07, Will Deacon wrote:
+> > On Tue, Aug 20, 2019 at 04:25:56PM +0100, Robin Murphy wrote:
+> > > On 20/08/2019 11:31, Will Deacon wrote:
+> > > > On Mon, Aug 19, 2019 at 07:19:30PM +0100, Robin Murphy wrote:
+> > > > > Although it's conceptually nice for the io_pgtable_cfg to provide a
+> > > > > standard VMSA TCR value, the reality is that no VMSA-compliant IOMMU
+> > > > > looks exactly like an Arm CPU, and they all have various other TCR
+> > > > > controls which io-pgtable can't be expected to understand. Thus since
+> > > > > there is an expectation that drivers will have to add to the given TCR
+> > > > > value anyway, let's strip it down to just the essentials that are
+> > > > > directly relevant to io-pgatble's inner workings - namely the address
+> > > > > sizes, walk attributes, and where appropriate, format selection.
+> > > > > 
+> > > > > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> > > > > ---
+> > > > >    drivers/iommu/arm-smmu-v3.c        | 7 +------
+> > > > >    drivers/iommu/arm-smmu.c           | 1 +
+> > > > >    drivers/iommu/arm-smmu.h           | 2 ++
+> > > > >    drivers/iommu/io-pgtable-arm-v7s.c | 6 ++----
+> > > > >    drivers/iommu/io-pgtable-arm.c     | 4 ----
+> > > > >    drivers/iommu/qcom_iommu.c         | 2 +-
+> > > > >    6 files changed, 7 insertions(+), 15 deletions(-)
+> > > > 
+> > > > Hmm, so I'm a bit nervous about this one since I think we really should
+> > > > be providing a TCR with EPD1 set if we're only giving you TTBR0. Relying
+> > > > on the driver to do this worries me. See my comments on the next patch.
+> > > 
+> > > The whole idea is that we already know we can't provide a *complete* TCR
+> > > value (not least because anything above bit 31 is the wild west), thus
+> > > there's really no point in io-pgtable trying to provide anything other than
+> > > the parts it definitely controls. It makes sense to provide this partial TCR
+> > > value "as if" for TTBR0, since that's the most common case, but ultimately
+> > > io-pgatble doesn't know (or need to) which TTBR the caller intends to
+> > > actually use for this table. Even if the caller *is* allocating it for
+> > > TTBR0, io-pgtable doesn't know that they haven't got something live in TTBR1
+> > > already, so it still wouldn't be in a position to make the EPD1 call either
+> > > way.
+> > 
+> > Ok, but the driver can happily rewrite/ignore what it gets back. I suppose
+> > an alternative would be scrapped the 'u64 tcr' and instead having a bunch
+> > of named bitfields for the stuff we're actually providing, although I'd
+> > still like EPDx to be in there.
 > 
-> To do this, 'bi_aux_private', 'REQ_CYPTE' and 'bi_dun' are added
-> to the block layer.
-> 
-> 'bi_aux_private' is added for loading additional private information into
-> BIO.
-> 'REQ_CRYPT' is added to distinguish that bi_aux_private is being used
-> for diskcipher.
-> F2FS among encryption users uses DUN(device unit number) as
-> the IV(initial vector) for cryptographic operations.
-> DUN is stored in 'bi_dun' of bi_iter as a specific value for each BIO.
-> 
-> Before attempting to merge the two BIOs, the operation is also added to
-> verify that the crypto information contained in two BIOs is consistent.
+> I like the bitfield idea; it would certainly emphasise the "you have to do
+> something more with this" angle that I'm pushing towards here, but still
+> leave things framed in TCR terms without having to go to some more general
+> abstraction. It really doesn't play into your EPD argument though - such a
+> config would be providing TxSZ/TGx/IRGNx/ORGNx/SHx, but EPDy, for y = !x.
+> For a driver to understand that and do the right thing with it is even more
+> involved than for the driver to just set EPD1 by itself anyway.
 
-This isn't going to happen. With this, and the inline encryption
-proposed by Google, we'll bloat the bio even more. At least the Google
-approach didn't include bio iter changes as well.
+Having considered the bitfield idea some more, I'm less attached to EPDx
+because we simply wouldn't be making a statement about them, rather than a
+(dangerous) zero value and expecting it to be ignored. So I think we're in
+agreement on that.
 
-Please work it out between yourselves so we can have a single, clean
-abstraction that works for both.
+The only part I'm still stuck to is that I think io-pgtable should know
+whether it's targetting TTBR0 or TTBR1 so that it can sanitise input
+addresses correctly. Doing this in the driver code is possible, but I'd
+rather not start from that position, particularly as it would require things
+like sign-extension in the TLBI callbacks.
 
--- 
-Jens Axboe
+> If only LPAE had created these bits as enables rather than disables then
+> things would be logical and we could all be happy, but here we are...
 
+I'm happy! :D:D:D
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
