@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64742976CC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 12:17:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D12B976CD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 12:18:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yfKAnQdgyx0MObK+ft/DOtuRdfk8MjJw/bDALrgWJEE=; b=tejsqezzV2WaVn4Rr4qg+HQ40f
-	rqFC0/DyEqEUeKwOjh/rCWIAV1NKgTa78g6SZIA85lSXZ5edP+/MPErC9VSYgUvehDOiQAa+nXhl5
-	YKMjg2Cz8fa+i33BCtEJA7Zyou0Ve61+pZ9X5ZkFnCAdUgI9JkHxOoAD5g8apgzNBz9oaDkz2ojxm
-	/RVYqcb2RJt+fLezJP/kfslf/BtmttF3tC8UY4LOoGGaZOpQpveIbETWqAJ/QYpoUpNjeY1Sj6S4e
-	cuuTtVaqrnR4aVTh82hr9zb8WB7z/UVVB93nsvTgdQ0NG5xVKeRpZtEq9fxqajjd6MRDOCbXWr49y
-	ot2m4ZOg==;
+	bh=eOj1VhA3DMWoV+wjHaH3UUf+jekuEvAwGkDKuUCHAdU=; b=oos+BVTt4AXo1C9qylqDf9wv6U
+	idiSzDoog7fcsUQ0hKBHVDs0Q/aA+IswSba1azfPI//Xermmi03I3ITToR4ZMPR20+57gJA7WWa+h
+	x2mXyGcfx+sua1X8/yZ+SuRqJAcJmCwPiMMQJspSjBwCtmBdlE4MzEjtvpaRSVKb6h+8iP4es0EM7
+	hS0XMB551ElW5E9CafVwWXzGwahxz2wm3may+W3ra3rNs3foqMur8b0z3RVE7JZ/d66GfLHvaGwdJ
+	P6qJBrthLQJCheL2/kpjOPMu1gGjfSd3UlWQNqNsIectpJAec4u43BHGlfsIbvWPQNJSo0HzcW123
+	lTiTyZhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0NgZ-0002hJ-Ny; Wed, 21 Aug 2019 10:17:47 +0000
+	id 1i0Ngu-0002vz-FM; Wed, 21 Aug 2019 10:18:08 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0NfB-00024n-8Y
+ id 1i0NfB-00024o-8X
  for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 10:16:23 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5BF3D1A00C1;
- Wed, 21 Aug 2019 12:16:18 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 15C6D1A02E7;
+ Wed, 21 Aug 2019 12:16:19 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4D2A01A01DF;
- Wed, 21 Aug 2019 12:16:18 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0888E1A01DF;
+ Wed, 21 Aug 2019 12:16:19 +0200 (CEST)
 Received: from fsr-ub1664-120.ea.freescale.net
  (fsr-ub1664-120.ea.freescale.net [10.171.82.81])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 9B200205D3;
- Wed, 21 Aug 2019 12:16:17 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 595C220612;
+ Wed, 21 Aug 2019 12:16:18 +0200 (CEST)
 From: Robert Chiras <robert.chiras@nxp.com>
 To: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
  Marek Vasut <marex@denx.de>, Stefan Agner <stefan@agner.ch>,
@@ -42,17 +42,17 @@ To: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>
-Subject: [PATCH v3 03/15] drm/mxsfb: Add defines for the rest of registers
-Date: Wed, 21 Aug 2019 13:15:43 +0300
-Message-Id: <1566382555-12102-4-git-send-email-robert.chiras@nxp.com>
+Subject: [PATCH v3 04/15] drm/mxsfb: Reset vital registers for a proper
+ initialization
+Date: Wed, 21 Aug 2019 13:15:44 +0300
+Message-Id: <1566382555-12102-5-git-send-email-robert.chiras@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1566382555-12102-1-git-send-email-robert.chiras@nxp.com>
 References: <1566382555-12102-1-git-send-email-robert.chiras@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_031621_435860_911F46AB 
-X-CRM114-Status: UNSURE (   8.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190821_031621_436906_019F0EDB 
+X-CRM114-Status: GOOD (  10.12  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,67 +83,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some of the existing registers in this controller are not defined, but
-also not used. Add them to the register definitions, so that they can be
-easily used in future improvements or fixes.
+Some of the registers, like LCDC_CTRL, CTRL2_OUTSTANDING_REQS and
+CTRL1_RECOVERY_ON_UNDERFLOW needs to be properly cleared/initialized
+for a better start and stop routine.
 
 Signed-off-by: Robert Chiras <robert.chiras@nxp.com>
 ---
- drivers/gpu/drm/mxsfb/mxsfb_regs.h | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ drivers/gpu/drm/mxsfb/mxsfb_crtc.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-diff --git a/drivers/gpu/drm/mxsfb/mxsfb_regs.h b/drivers/gpu/drm/mxsfb/mxsfb_regs.h
-index 932d7ea..71426aa 100644
---- a/drivers/gpu/drm/mxsfb/mxsfb_regs.h
-+++ b/drivers/gpu/drm/mxsfb/mxsfb_regs.h
-@@ -14,19 +14,31 @@
+diff --git a/drivers/gpu/drm/mxsfb/mxsfb_crtc.c b/drivers/gpu/drm/mxsfb/mxsfb_crtc.c
+index b69ace8..5e44f57 100644
+--- a/drivers/gpu/drm/mxsfb/mxsfb_crtc.c
++++ b/drivers/gpu/drm/mxsfb/mxsfb_crtc.c
+@@ -127,6 +127,10 @@ static void mxsfb_enable_controller(struct mxsfb_drm_private *mxsfb)
+ 		clk_prepare_enable(mxsfb->clk_disp_axi);
+ 	clk_prepare_enable(mxsfb->clk);
  
- #define LCDC_CTRL			0x00
- #define LCDC_CTRL1			0x10
-+#define LCDC_V4_CTRL2			0x20
- #define LCDC_V3_TRANSFER_COUNT		0x20
- #define LCDC_V4_TRANSFER_COUNT		0x30
- #define LCDC_V4_CUR_BUF			0x40
- #define LCDC_V4_NEXT_BUF		0x50
- #define LCDC_V3_CUR_BUF			0x30
- #define LCDC_V3_NEXT_BUF		0x40
-+#define LCDC_TIMING			0x60
- #define LCDC_VDCTRL0			0x70
- #define LCDC_VDCTRL1			0x80
- #define LCDC_VDCTRL2			0x90
- #define LCDC_VDCTRL3			0xa0
- #define LCDC_VDCTRL4			0xb0
-+#define LCDC_DVICTRL0			0xc0
-+#define LCDC_DVICTRL1			0xd0
-+#define LCDC_DVICTRL2			0xe0
-+#define LCDC_DVICTRL3			0xf0
-+#define LCDC_DVICTRL4			0x100
-+#define LCDC_V4_DATA			0x180
-+#define LCDC_V3_DATA			0x1b0
- #define LCDC_V4_DEBUG0			0x1d0
- #define LCDC_V3_DEBUG0			0x1f0
-+#define LCDC_AS_CTRL			0x210
-+#define LCDC_AS_BUF			0x220
-+#define LCDC_AS_NEXT_BUF		0x230
- 
- #define CTRL_SFTRST			(1 << 31)
- #define CTRL_CLKGATE			(1 << 30)
-@@ -45,12 +57,15 @@
- #define CTRL_DF24			(1 << 1)
- #define CTRL_RUN			(1 << 0)
- 
-+#define CTRL1_RECOVERY_ON_UNDERFLOW	(1 << 24)
- #define CTRL1_FIFO_CLEAR		(1 << 21)
- #define CTRL1_SET_BYTE_PACKAGING(x)	(((x) & 0xf) << 16)
- #define CTRL1_GET_BYTE_PACKAGING(x)	(((x) >> 16) & 0xf)
- #define CTRL1_CUR_FRAME_DONE_IRQ_EN	(1 << 13)
- #define CTRL1_CUR_FRAME_DONE_IRQ	(1 << 9)
- 
-+#define CTRL2_OUTSTANDING_REQS__REQ_16		(4 << 21)
++	if (mxsfb->devdata->ipversion >= 4)
++		writel(CTRL2_OUTSTANDING_REQS(REQ_16),
++		       mxsfb->base + LCDC_V4_CTRL2 + REG_SET);
 +
- #define TRANSFER_COUNT_SET_VCOUNT(x)	(((x) & 0xffff) << 16)
- #define TRANSFER_COUNT_GET_VCOUNT(x)	(((x) >> 16) & 0xffff)
- #define TRANSFER_COUNT_SET_HCOUNT(x)	((x) & 0xffff)
+ 	/* If it was disabled, re-enable the mode again */
+ 	writel(CTRL_DOTCLK_MODE, mxsfb->base + LCDC_CTRL + REG_SET);
+ 
+@@ -136,12 +140,19 @@ static void mxsfb_enable_controller(struct mxsfb_drm_private *mxsfb)
+ 	writel(reg, mxsfb->base + LCDC_VDCTRL4);
+ 
+ 	writel(CTRL_RUN, mxsfb->base + LCDC_CTRL + REG_SET);
++	writel(CTRL1_RECOVERY_ON_UNDERFLOW, mxsfb->base + LCDC_CTRL1 + REG_SET);
+ }
+ 
+ static void mxsfb_disable_controller(struct mxsfb_drm_private *mxsfb)
+ {
+ 	u32 reg;
+ 
++	if (mxsfb->devdata->ipversion >= 4)
++		writel(CTRL2_OUTSTANDING_REQS(0x7),
++		       mxsfb->base + LCDC_V4_CTRL2 + REG_CLR);
++
++	writel(CTRL_RUN, mxsfb->base + LCDC_CTRL + REG_CLR);
++
+ 	/*
+ 	 * Even if we disable the controller here, it will still continue
+ 	 * until its FIFOs are running out of data
+@@ -295,6 +306,7 @@ void mxsfb_crtc_enable(struct mxsfb_drm_private *mxsfb)
+ 	dma_addr_t paddr;
+ 
+ 	mxsfb_enable_axi_clk(mxsfb);
++	writel(0, mxsfb->base + LCDC_CTRL);
+ 	mxsfb_crtc_mode_set_nofb(mxsfb);
+ 
+ 	/* Write cur_buf as well to avoid an initial corrupt frame */
 -- 
 2.7.4
 
