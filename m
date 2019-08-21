@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0726997DA9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 16:53:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C06D97DB3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 16:54:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/++peK0GcEU88svU2z+hbi0JtMhg2WZrLogjcxiF774=; b=oWdQn+6ZRMl2E2
-	y/uEDY9qxbf8qb/OsoqMYqfChgk8dj1BEF0eOAr/Xr5JQDp+6qdBKLySijBsflkqUWzM7pk2tWVwK
-	4VEXS2cFcMk6E40lMbz7bK3IUXkHeQsflokEs6zHwuOl2RxqSUE7t6QepRZ9+dzo5Fj9tGh0x8B/R
-	rC/nJcOI1oA8C6io+P667MaSN0oW3zwWoleJFuVRk7HVyJ8eMesPEgPHelttRsNo5my4Vm8CqfRqq
-	5fktEEkRlR8RWfcQSV7IeqxIW1BAD7cOeCG6FmfSqmpo8PdlRtAfmDPHlioETEEiCPsWdLUDP/Kkb
-	Qaw8tVwcHTgO5VR43Ysg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vx9AabGqdRJZtclK6nYYOzb5LgnHhAEIwrUUVMfaiJc=; b=mDfYk4mr+UNh2/
+	S7AohHtufd3JZyq/9XVWJnIkxOxHJy2HsW04KCR7j8sQx9kmGbwDKykdx6DoWf7avnN31EidxI55j
+	WCaCEowtNm3DV9RriJMN6HkcjJexrLBCxiSFwGsIvMvlqkKNDaezdWrKkJdR/U8lc+aeXOTrPB9S4
+	ssOmfEKiQ4ucOyNtlEy5VRsB4zt8b6rnQWG2FkEQx/jjtA1ZG799foy1hxrTlBsNgZ5CWWucJtdpd
+	Hr/WjhhWUoQUBArJuEax4FLSu0mg+gXESJ1C7mJ4NteUG8YgxTS35nvEdpykkowypBwI+w2WX3YoJ
+	Tbc1hPvNcWTjAqHodaQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0RzH-0002ol-63; Wed, 21 Aug 2019 14:53:23 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1i0Rzl-0003H8-2D; Wed, 21 Aug 2019 14:53:53 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Rz7-0002nY-1u
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 14:53:15 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id C3CF06E4B87B7D1AE8DE;
- Wed, 21 Aug 2019 22:53:06 +0800 (CST)
+ id 1i0RzA-0002oB-H0
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 14:53:18 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id A73F3D22D9709479EC69;
+ Wed, 21 Aug 2019 22:53:11 +0800 (CST)
 Received: from lhrphicprd00229.huawei.com (10.123.41.22) by
  DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
- 14.3.439.0; Wed, 21 Aug 2019 22:52:58 +0800
+ 14.3.439.0; Wed, 21 Aug 2019 22:53:01 +0800
 From: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 To: <linux-mm@kvack.org>, <linux-acpi@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH 0/4 V4] ACPI: Support generic initiator proximity domains
-Date: Wed, 21 Aug 2019 22:52:38 +0800
-Message-ID: <20190821145242.2330-1-Jonathan.Cameron@huawei.com>
+Subject: [PATCH 1/4] ACPI: Support Generic Initiator only domains
+Date: Wed, 21 Aug 2019 22:52:39 +0800
+Message-ID: <20190821145242.2330-2-Jonathan.Cameron@huawei.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190821145242.2330-1-Jonathan.Cameron@huawei.com>
+References: <20190821145242.2330-1-Jonathan.Cameron@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.123.41.22]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_075313_759137_6688E1DA 
-X-CRM114-Status: GOOD (  17.72  )
+X-CRM114-CacheID: sfid-20190821_075317_231889_7E8094D4 
+X-CRM114-Status: GOOD (  17.20  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,106 +74,183 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch set has been sitting around for a long time without significant
-review.  I would appreciate it very much if anyone has time to take a look.
+Generic Initiators are a new ACPI concept that allows for the
+description of proximity domains that contain a device which
+performs memory access (such as a network card) but neither
+host CPU nor Memory.
 
-One outstanding question to highlight in this series is whether
-we should assume all ACPI supporting architectures support Generic
-Initiator domains, or whether to introduce an
-ARCH_HAS_GENERIC_INITIATOR_DOMAINS entry in Kconfig.
+This patch has the parsing code and provides the infrastructure
+for an architecture to associate these new domains with their
+nearest memory processing node.
 
-Change since V3.
-* Rebase.
-
-Changes since RFC V2.
-* RFC dropped as now we have x86 support, so the lack of guards in in the
-  ACPI code etc should now be fine.
-* Added x86 support.  Note this has only been tested on QEMU as I don't have
-  a convenient x86 NUMA machine to play with.  Note that this fitted together
-  rather differently form arm64 so I'm particularly interested in feedback
-  on the two solutions.
-
-Since RFC V1.
-* Fix incorrect interpretation of the ACPI entry noted by Keith Busch
-* Use the acpica headers definitions that are now in mmotm.
-
-It's worth noting that, to safely put a given device in a GI node, may
-require changes to the existing drivers as it's not unusual to assume
-you have local memory or processor core. There may be further constraints
-not yet covered by this patch.
-
-Original cover letter...
-
-ACPI 6.3 introduced a new entity that can be part of a NUMA proximity domain.
-It may share such a domain with the existing options (memory, CPU etc) but it
-may also exist on it's own.
-
-The intent is to allow the description of the NUMA properties (particularly
-via HMAT) of accelerators and other initiators of memory activity that are not
-the host processor running the operating system.
-
-This patch set introduces 'just enough' to make them work for arm64 and x86.
-It should be trivial to support other architectures, I just don't suitable
-NUMA systems readily available to test.
-
-There are a few quirks that need to be considered.
-
-1. Fall back nodes
-******************
-
-As pre ACPI 6.3 supporting operating systems do not have Generic Initiator
-Proximity Domains it is possible to specify, via _PXM in DSDT that another
-device is part of such a GI only node.  This currently blows up spectacularly.
-
-Whilst we can obviously 'now' protect against such a situation (see the related
-thread on PCI _PXM support and the  threadripper board identified there as
-also falling into the  problem of using non existent nodes
-https://patchwork.kernel.org/patch/10723311/ ), there is no way to  be sure
-we will never have legacy OSes that are not protected  against this.  It would
-also be 'non ideal' to fallback to  a default node as there may be a better
-(non GI) node to pick  if GI nodes aren't available.
-
-The work around is that we also have a new system wide OSC bit that allows
-an operating system to 'announce' that it supports Generic Initiators.  This
-allows, the firmware to us DSDT magic to 'move' devices between the nodes
-dependent on whether our new nodes are there or not.
-
-2. New ways of assigning a proximity domain for devices
-*******************************************************
-
-Until now, the only way firmware could indicate that a particular device
-(outside the 'special' set of cpus etc) was to be found in a particular
-Proximity Domain by the use of _PXM in DSDT.
-
-That is equally valid with GI domains, but we have new options. The SRAT
-affinity structure includes a handle (ACPI or PCI) to identify devices
-with the system and specify their proximity domain that way.  If both _PXM
-and this are provided, they should give the same answer.
-
-For now this patch set completely ignores that feature as we don't need
-it to start the discussion.  It will form a follow up set at some point
-(if no one else fancies doing it).
- 
-
-Jonathan Cameron (4):
-  ACPI: Support Generic Initiator only domains
-  arm64: Support Generic Initiator only domains
-  x86: Support Generic Initiator only proximity domains
-  ACPI: Let ACPI know we support Generic Initiator Affinity Structures
-
- arch/arm64/kernel/smp.c        |  8 +++++
- arch/x86/include/asm/numa.h    |  2 ++
- arch/x86/kernel/setup.c        |  1 +
- arch/x86/mm/numa.c             | 14 ++++++++
- drivers/acpi/bus.c             |  1 +
+Signed-off-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+---
  drivers/acpi/numa.c            | 62 +++++++++++++++++++++++++++++++++-
  drivers/base/node.c            |  3 ++
  include/asm-generic/topology.h |  3 ++
- include/linux/acpi.h           |  1 +
  include/linux/nodemask.h       |  1 +
  include/linux/topology.h       |  7 ++++
- 11 files changed, 102 insertions(+), 1 deletion(-)
+ 5 files changed, 75 insertions(+), 1 deletion(-)
 
+diff --git a/drivers/acpi/numa.c b/drivers/acpi/numa.c
+index eadbf90e65d1..fe34315a9234 100644
+--- a/drivers/acpi/numa.c
++++ b/drivers/acpi/numa.c
+@@ -170,6 +170,38 @@ acpi_table_print_srat_entry(struct acpi_subtable_header *header)
+ 		}
+ 		break;
+ 
++	case ACPI_SRAT_TYPE_GENERIC_AFFINITY:
++	{
++		struct acpi_srat_generic_affinity *p =
++			(struct acpi_srat_generic_affinity *)header;
++		char name[9] = {};
++
++		if (p->device_handle_type == 0) {
++			/*
++			 * For pci devices this may be the only place they
++			 * are assigned a proximity domain
++			 */
++			pr_debug("SRAT Generic Initiator(Seg:%u BDF:%u) in proximity domain %d %s\n",
++				 *(u16 *)(&p->device_handle[0]),
++				 *(u16 *)(&p->device_handle[2]),
++				 p->proximity_domain,
++				 (p->flags & ACPI_SRAT_GENERIC_AFFINITY_ENABLED) ?
++				"enabled" : "disabled");
++		} else {
++			/*
++			 * In this case we can rely on the device having a
++			 * proximity domain reference
++			 */
++			memcpy(name, p->device_handle, 8);
++			pr_info("SRAT Generic Initiator(HID=%.8s UID=%.4s) in proximity domain %d %s\n",
++				(char *)(&p->device_handle[0]),
++				(char *)(&p->device_handle[8]),
++				p->proximity_domain,
++				(p->flags & ACPI_SRAT_GENERIC_AFFINITY_ENABLED) ?
++				"enabled" : "disabled");
++		}
++	}
++	break;
+ 	default:
+ 		pr_warn("Found unsupported SRAT entry (type = 0x%x)\n",
+ 			header->type);
+@@ -378,6 +410,32 @@ acpi_parse_gicc_affinity(union acpi_subtable_headers *header,
+ 	return 0;
+ }
+ 
++static int __init
++acpi_parse_gi_affinity(union acpi_subtable_headers *header,
++		       const unsigned long end)
++{
++	struct acpi_srat_generic_affinity *gi_affinity;
++	int node;
++
++	gi_affinity = (struct acpi_srat_generic_affinity *)header;
++	if (!gi_affinity)
++		return -EINVAL;
++	acpi_table_print_srat_entry(&header->common);
++
++	if (!(gi_affinity->flags & ACPI_SRAT_GENERIC_AFFINITY_ENABLED))
++		return -EINVAL;
++
++	node = acpi_map_pxm_to_node(gi_affinity->proximity_domain);
++	if (node == NUMA_NO_NODE || node >= MAX_NUMNODES) {
++		pr_err("SRAT: Too many proximity domains.\n");
++		return -EINVAL;
++	}
++	node_set(node, numa_nodes_parsed);
++	node_set_state(node, N_GENERIC_INITIATOR);
++
++	return 0;
++}
++
+ static int __initdata parsed_numa_memblks;
+ 
+ static int __init
+@@ -433,7 +491,7 @@ int __init acpi_numa_init(void)
+ 
+ 	/* SRAT: System Resource Affinity Table */
+ 	if (!acpi_table_parse(ACPI_SIG_SRAT, acpi_parse_srat)) {
+-		struct acpi_subtable_proc srat_proc[3];
++		struct acpi_subtable_proc srat_proc[4];
+ 
+ 		memset(srat_proc, 0, sizeof(srat_proc));
+ 		srat_proc[0].id = ACPI_SRAT_TYPE_CPU_AFFINITY;
+@@ -442,6 +500,8 @@ int __init acpi_numa_init(void)
+ 		srat_proc[1].handler = acpi_parse_x2apic_affinity;
+ 		srat_proc[2].id = ACPI_SRAT_TYPE_GICC_AFFINITY;
+ 		srat_proc[2].handler = acpi_parse_gicc_affinity;
++		srat_proc[3].id = ACPI_SRAT_TYPE_GENERIC_AFFINITY;
++		srat_proc[3].handler = acpi_parse_gi_affinity;
+ 
+ 		acpi_table_parse_entries_array(ACPI_SIG_SRAT,
+ 					sizeof(struct acpi_table_srat),
+diff --git a/drivers/base/node.c b/drivers/base/node.c
+index 75b7e6f6535b..6f60689af5f8 100644
+--- a/drivers/base/node.c
++++ b/drivers/base/node.c
+@@ -980,6 +980,8 @@ static struct node_attr node_state_attr[] = {
+ #endif
+ 	[N_MEMORY] = _NODE_ATTR(has_memory, N_MEMORY),
+ 	[N_CPU] = _NODE_ATTR(has_cpu, N_CPU),
++	[N_GENERIC_INITIATOR] = _NODE_ATTR(has_generic_initiator,
++					   N_GENERIC_INITIATOR),
+ };
+ 
+ static struct attribute *node_state_attrs[] = {
+@@ -991,6 +993,7 @@ static struct attribute *node_state_attrs[] = {
+ #endif
+ 	&node_state_attr[N_MEMORY].attr.attr,
+ 	&node_state_attr[N_CPU].attr.attr,
++	&node_state_attr[N_GENERIC_INITIATOR].attr.attr,
+ 	NULL
+ };
+ 
+diff --git a/include/asm-generic/topology.h b/include/asm-generic/topology.h
+index 238873739550..54d0b4176a45 100644
+--- a/include/asm-generic/topology.h
++++ b/include/asm-generic/topology.h
+@@ -71,6 +71,9 @@
+ #ifndef set_cpu_numa_mem
+ #define set_cpu_numa_mem(cpu, node)
+ #endif
++#ifndef set_gi_numa_mem
++#define set_gi_numa_mem(gi, node)
++#endif
+ 
+ #endif	/* !CONFIG_NUMA || !CONFIG_HAVE_MEMORYLESS_NODES */
+ 
+diff --git a/include/linux/nodemask.h b/include/linux/nodemask.h
+index 27e7fa36f707..1aebf766fb52 100644
+--- a/include/linux/nodemask.h
++++ b/include/linux/nodemask.h
+@@ -399,6 +399,7 @@ enum node_states {
+ #endif
+ 	N_MEMORY,		/* The node has memory(regular, high, movable) */
+ 	N_CPU,		/* The node has one or more cpus */
++	N_GENERIC_INITIATOR,	/* The node is a GI only node */
+ 	NR_NODE_STATES
+ };
+ 
+diff --git a/include/linux/topology.h b/include/linux/topology.h
+index 47a3e3c08036..2f97754e0508 100644
+--- a/include/linux/topology.h
++++ b/include/linux/topology.h
+@@ -125,6 +125,13 @@ static inline void set_numa_mem(int node)
+ }
+ #endif
+ 
++#ifndef set_gi_numa_mem
++static inline void set_gi_numa_mem(int gi, int node)
++{
++	_node_numa_mem_[gi] = node;
++}
++#endif
++
+ #ifndef node_to_mem_node
+ static inline int node_to_mem_node(int node)
+ {
 -- 
 2.20.1
 
