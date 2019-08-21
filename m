@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C209974A3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 10:22:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 091AF974AD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 10:23:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vfc7A/XGLt6j/ncxer1gStiutf9ufOKaqkksPmxTGXA=; b=s9oupgGg39kAcO
-	1cr2iEXD3iZWrMENx1Pz1JH2LRG3vJSusRTY7tExoAZN/TzRIvSMVseZkhAzSCzYDP+JvreiA5oLj
-	zulwOda0zEyowcl8YoUhoBYtMhnZuCbpnVqWZRUjkjXHraA6/24WFdrVo3NNHjJAGSidTY8GLaTR0
-	uinMtLTzJnYijuoEDI+Wusf0WQC0VkEWyDZZzOjoRhJg2fMEGTDeQDNor2sG8ueXMO+jPrCRTfkvd
-	32yTSy5jVO+5Gt/yndOoUW0BJYpAKVnrDmcdGObtJzFyc5K3wD6mtXJi3n+oI/3ejv/iLQDN46kdM
-	tZ9EjijmXaK2Fdz0NOIA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hv18g1bMzAmPkLWn47cTqcc8uTRjYXi/vG49Npjy1sI=; b=TcvV6PkJFVJBcK
+	rKrHSB6njGbV+aeJ+x8WPBwffVB1yRPJwgAKMu2a2JBrIBZo0779h8irTteemsfblUtz2kN9pRn/B
+	1rUOecK2YdNii3I+029wceBHZ1a4VUNhSw8bi7KM2w8ldU2JUpEleB8IKUSBxsgJkJODoetYa7I6r
+	5RN07v6Woaxm+7B/Kt0wwBpQpj9pOBQjnrtZk71PlQFbZ3V84STJ966dV18IvL3m+EAMOaSmL/odm
+	sQbJMHJbCEvH2B7CMiFxl1Iva++4mJxn+C88aOED5EjXUeAd1+i9Jvd1NH+PbwWE8tcUHvd9MTglk
+	C+JvVjDZ42CBJpXRluTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0LtB-0002SB-8Y; Wed, 21 Aug 2019 08:22:41 +0000
+	id 1i0LtT-0002l0-3Q; Wed, 21 Aug 2019 08:22:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0LsG-00023J-9s
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 08:21:46 +0000
+ id 1i0LsI-00025x-Qe
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 08:21:49 +0000
 Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7A3792339E;
- Wed, 21 Aug 2019 08:21:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0FCE72332A;
+ Wed, 21 Aug 2019 08:21:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566375703;
- bh=LOhB69dIe9oA37I5L0XwPEM++IcwFc8nRsjX+Z8kArU=;
- h=From:To:Cc:Subject:Date:From;
- b=ey17y3EjS1WfjQAWDsfcI3Me8Xh6HMT8RdCQMA9v3OEs7BcGAbQkitY0xEY6dB4Mz
- L2Dmoi7/e+euFQXzK3MlEBJH9PCl4yXXK4GEd2L+H84JgES4fi7cxCNSLrlLXNBa23
- PkxyS4/1OUHILOrrDrQWBhA7jO0eRfvAFCZLQMWA=
+ s=default; t=1566375706;
+ bh=s6khMTMNTud2ZUJcSd/QD0CjoKrkbB6sXe6+ENqMLpQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=NYQThxDg3Xw5qjeOKJ99D5Y7m/pLFASeQyI4wOaAm/7U5FGVRbdm2vhKvIJZfbcoq
+ YkAvBDljPrTv+cK1bBBNoOhrkm9CrNATLoacKnVVvGB3Gep+2Nkvb1FHCadRzVVupc
+ PQILgKVL9i30Qz3Di3+BSziqHtg9GUZdlxcyKpxs=
 From: Maxime Ripard <mripard@kernel.org>
 To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>, tglx@linutronix.de,
  jason@lakedaemon.net, maz@kernel.org
-Subject: [PATCH v2 1/2] dt-bindings: irq: Convert Allwinner IRQ Controller to
+Subject: [PATCH v2 2/2] dt-bindings: irq: Convert Allwinner NMI Controller to
  a schema
-Date: Wed, 21 Aug 2019 10:21:37 +0200
-Message-Id: <20190821082138.11049-1-mripard@kernel.org>
+Date: Wed, 21 Aug 2019 10:21:38 +0200
+Message-Id: <20190821082138.11049-2-mripard@kernel.org>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190821082138.11049-1-mripard@kernel.org>
+References: <20190821082138.11049-1-mripard@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_012144_574573_71B8AB06 
-X-CRM114-Status: GOOD (  13.89  )
+X-CRM114-CacheID: sfid-20190821_012147_926587_0DDBE490 
+X-CRM114-Status: GOOD (  17.09  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,8 +89,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-The Allwinner SoCs have an interrupt controller supported in Linux, with a
-matching Device Tree binding.
+The Allwinner SoCs have an interrupt controller called NMI supported in
+Linux, with a matching Device Tree binding.
 
 Now that we have the DT validation in place, let's convert the device tree
 bindings for that controller over to a YAML schemas.
@@ -98,28 +100,27 @@ Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
 
 Changes from v1:
-  - Remove Fixme and add additionalProperties to false
-  - Add unit address for the example
+  - Remove the custom select and rely on the deprecated property instead
 ---
- .../allwinner,sun4i-a10-ic.yaml               | 47 +++++++++++++++++++
- .../allwinner,sun4i-ic.txt                    | 20 --------
- 2 files changed, 47 insertions(+), 20 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/interrupt-controller/allwinner,sun4i-a10-ic.yaml
- delete mode 100644 Documentation/devicetree/bindings/interrupt-controller/allwinner,sun4i-ic.txt
+ .../allwinner,sun7i-a20-sc-nmi.yaml           | 70 +++++++++++++++++++
+ .../allwinner,sunxi-nmi.txt                   | 29 --------
+ 2 files changed, 70 insertions(+), 29 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
+ delete mode 100644 Documentation/devicetree/bindings/interrupt-controller/allwinner,sunxi-nmi.txt
 
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun4i-a10-ic.yaml b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun4i-a10-ic.yaml
+diff --git a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
 new file mode 100644
-index 000000000000..23a202d24e43
+index 000000000000..0eccf5551786
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun4i-a10-ic.yaml
-@@ -0,0 +1,47 @@
++++ b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
+@@ -0,0 +1,70 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/interrupt-controller/allwinner,sun4i-a10-ic.yaml#
++$id: http://devicetree.org/schemas/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Allwinner A10 Interrupt Controller Device Tree Bindings
++title: Allwinner A20 Non-Maskable Interrupt Controller Device Tree Bindings
 +
 +maintainers:
 +  - Chen-Yu Tsai <wens@csie.org>
@@ -130,14 +131,32 @@ index 000000000000..23a202d24e43
 +
 +properties:
 +  "#interrupt-cells":
-+    const: 1
++    const: 2
++    description:
++      The first cell is the IRQ number, the second cell the trigger
++      type as defined in interrupt.txt in this directory.
 +
 +  compatible:
-+    enum:
-+      - allwinner,sun4i-a10-ic
-+      - allwinner,suniv-f1c100s-ic
++    oneOf:
++      - const: allwinner,sun6i-a31-r-intc
++      - const: allwinner,sun6i-a31-sc-nmi
++        deprecated: true
++      - const: allwinner,sun7i-a20-sc-nmi
++      - items:
++        - const: allwinner,sun8i-a83t-r-intc
++        - const: allwinner,sun6i-a31-r-intc
++      - const: allwinner,sun9i-a80-sc-nmi
++      - items:
++        - const: allwinner,sun50i-a64-r-intc
++        - const: allwinner,sun6i-a31-r-intc
++      - items:
++        - const: allwinner,sun50i-h6-r-intc
++        - const: allwinner,sun6i-a31-r-intc
 +
 +  reg:
++    maxItems: 1
++
++  interrupts:
 +    maxItems: 1
 +
 +  interrupt-controller: true
@@ -146,45 +165,59 @@ index 000000000000..23a202d24e43
 +  - "#interrupt-cells"
 +  - compatible
 +  - reg
++  - interrupts
 +  - interrupt-controller
 +
-+additionalProperties: false
++# FIXME: We should set it, but it would report all the generic
++# properties as additional properties.
++# additionalProperties: false
 +
 +examples:
 +  - |
-+    intc: interrupt-controller@1c20400 {
-+        compatible = "allwinner,sun4i-a10-ic";
-+        reg = <0x01c20400 0x400>;
++    interrupt-controller@1c00030 {
++        compatible = "allwinner,sun7i-a20-sc-nmi";
 +        interrupt-controller;
-+        #interrupt-cells = <1>;
++        #interrupt-cells = <2>;
++        reg = <0x01c00030 0x0c>;
++        interrupt-parent = <&gic>;
++        interrupts = <0 0 4>;
 +    };
 +
 +...
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun4i-ic.txt b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun4i-ic.txt
+diff --git a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sunxi-nmi.txt b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sunxi-nmi.txt
 deleted file mode 100644
-index 404352524c3a..000000000000
---- a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun4i-ic.txt
+index 24beadf7ba83..000000000000
+--- a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sunxi-nmi.txt
 +++ /dev/null
-@@ -1,20 +0,0 @@
--Allwinner Sunxi Interrupt Controller
+@@ -1,29 +0,0 @@
+-Allwinner Sunxi NMI Controller
+-==============================
 -
 -Required properties:
 -
 -- compatible : should be one of the following:
--              "allwinner,sun4i-a10-ic"
--              "allwinner,suniv-f1c100s-ic"
+-  - "allwinner,sun7i-a20-sc-nmi"
+-  - "allwinner,sun6i-a31-sc-nmi" (deprecated)
+-  - "allwinner,sun6i-a31-r-intc"
+-  - "allwinner,sun9i-a80-nmi"
 -- reg : Specifies base physical address and size of the registers.
 -- interrupt-controller : Identifies the node as an interrupt controller
 -- #interrupt-cells : Specifies the number of cells needed to encode an
--  interrupt source. The value shall be 1.
+-  interrupt source. The value shall be 2. The first cell is the IRQ number, the
+-  second cell the trigger type as defined in interrupt.txt in this directory.
+-- interrupts: Specifies the interrupt line (NMI) which is handled by
+-  the interrupt controller in the parent controller's notation. This value
+-  shall be the NMI.
 -
 -Example:
 -
--intc: interrupt-controller {
--	compatible = "allwinner,sun4i-a10-ic";
--	reg = <0x01c20400 0x400>;
+-sc-nmi-intc@1c00030 {
+-	compatible = "allwinner,sun7i-a20-sc-nmi";
 -	interrupt-controller;
--	#interrupt-cells = <1>;
+-	#interrupt-cells = <2>;
+-	reg = <0x01c00030 0x0c>;
+-	interrupt-parent = <&gic>;
+-	interrupts = <0 0 4>;
 -};
 -- 
 2.21.0
