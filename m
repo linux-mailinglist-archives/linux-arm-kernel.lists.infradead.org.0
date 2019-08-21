@@ -2,82 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF78F983BF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 20:55:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A818B983CC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 20:59:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=os3U7MQTUt58/iWYOvFNpfLkKfj60+Qh9Yux4TkDais=; b=uSj4yKuKV6uNFm
-	AzinvKxc5D77PCPlrm2lpmad8hfNqLfjbeEs5RmYOuZ4AZjnuM9xAMIOoGrZqTeBWOn35tnlg7Lhc
-	zqnr6HaAGjXJHVkixLWyxQvQLVuGCdAJFxwui3BYHR0WkhKaFY9Y6b0+5P/b9xKjjPNk33v8qs4LM
-	RwXMj8n6QD9hMC1mfVEUixWZeIAy42PD5I9OXoxNWyMecNTVP1PGVS5W/w5zyTKBY/XfOvJolai1M
-	srk5YF8lV4oHwyGR3ozsqxw1MUTCD7PcV9HIGhpYFtUG8MCrb4EVkbWK2n2MzcWYopdsuLXfaqL43
-	gkko3WNQ69mYPZncZMlQ==;
+	List-Owner; bh=jL2XKDSa+s+hOeIYwzz9Jdwm5OZQVUCw845y2D6r9eM=; b=DQgPQ1NY3sDi8D
+	9O/SkPE8Vxcdn4A3KKguLJCwlgKKmZlz8fqfkTSnrhLHUBY8f2cAPqc1lkVZP1PyYH15qAsA/36yK
+	QFF/epeovoh85sYP8l0zEvSUIEroASnXn3aDOFj5pwEnEKsU73VNa1Ul8MKslXd6vegdpXiaZra7V
+	EttB8QsUkiEBRXyFcvXSLO+ZrUOv/SMeRrkpiedHSFPSCnJRWZta0F8AeoZ2i9Ho0XlfrSa01uv6d
+	cAEpFt1IjG21O2tijlClqCAqsbGjJVKjCLVJ4EJTKRmkFg0QrDvCjuUP6n5pMRu5kjDfqqyTFmivA
+	KSTxyxZG4Ak41mD+3xag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0VlX-0002un-KP; Wed, 21 Aug 2019 18:55:27 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1i0Vpi-0003js-PU; Wed, 21 Aug 2019 18:59:46 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0VlP-0002uQ-U9; Wed, 21 Aug 2019 18:55:21 +0000
-Received: by mail-oi1-f193.google.com with SMTP id l2so2439739oil.0;
- Wed, 21 Aug 2019 11:55:19 -0700 (PDT)
+ id 1i0VpY-0003ie-Oh
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 18:59:39 +0000
+Received: by mail-pf1-x443.google.com with SMTP id i30so2015412pfk.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 21 Aug 2019 11:59:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=mK1H0BvZsgTtsN1s5a6lp4IM3J/uRRiK2PoPe1e2FBo=;
+ b=QgfpK50JA0eIc4O+SUBfw4lElixOn+KQxHu2zfLfPhj1We5aBoVJjf+8aaw4BE4d1W
+ +M3acVRkCaqLRcIEUW2Rr6upzYiZxPEG0bVknYlce2/PENpcsrEJhAbNOFSB4yNdHBTN
+ BmS7j86s5IqAIeqDC+qAbiYArBLkywVcJUdq83mzbQcACZWrTpf5d5pzOFDqXhOTDbZj
+ pXTrohVPu7jw/EXdjP6FhIEEO6J+4mqp+MXL9W0TBaMFPkV4sOha6DygB5FUFRrrL8MH
+ DN16kfcAfTjim7UKGaoaLogOVKmTnyO2C4ksm/EhLR7bzYIqJoB0/Y+eNyguZXbnN98o
+ +4Jw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=rERMOO22DxL02BmdSf/5QgCf7VKhnIC3ZuuGwFUZfRU=;
- b=GY4auHkAYrRALLebavxE0q/Ss0I2fJCMte+jwlVu/cybac8Ljy/17/qx+qil8gUAdq
- 9gkGfQQ14k3I1RBPZjUJ9FBY8ytfXM5oba3RP2WOQcXyjd1u/VD5IJwfC/w1Myil1TTV
- mnvtpJ9q2GAG8xg3hW9u6Whtekx3acbfck3lez0GUY61OgaY//HsGWUl1OJwvDvoUNZW
- QoYQIzyJZl2Q2StR5PJSh7lRbZlkjop1dWLCMo/Ae0IWXe4MvtJFBRlaDrGkDt66UxKf
- L+dmsoU8NWVysldEVgh8fobR/HiMnMeCl+Abho5ogsTtv5jBTJSXeuC4a/6gnC8dJMYc
- kIRQ==
-X-Gm-Message-State: APjAAAXyrK3wKC5WObW6L/7fVDcn5YV9nOOT48FbTq9hCvrHX2C8gHZl
- k3i7OHTnEpK6vO4dtpQUyg==
-X-Google-Smtp-Source: APXvYqz3JEcVbf68CAFziNoluNLQIdlZjFRfx0/mCbuwzLOzZfuB14oQi8LCeZrqjqzIB3eeM0xdWQ==
-X-Received: by 2002:aca:dbc3:: with SMTP id s186mr1125505oig.179.1566413719162; 
- Wed, 21 Aug 2019 11:55:19 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id h33sm8044610otb.55.2019.08.21.11.55.18
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Aug 2019 11:55:18 -0700 (PDT)
-Date: Wed, 21 Aug 2019 13:55:18 -0500
-From: Rob Herring <robh@kernel.org>
-To: Fabien Parent <fparent@baylibre.com>
-Subject: Re: [PATCH] dt-bindings: rng: mtk-rng: Add documentation for MT8516
-Message-ID: <20190821185518.GA32228@bogus>
-References: <20190805130215.20499-1-fparent@baylibre.com>
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=mK1H0BvZsgTtsN1s5a6lp4IM3J/uRRiK2PoPe1e2FBo=;
+ b=L2C4eRD4FSScoWdnn4IuNKYsRjb/CDKWCN1WwEecpJOi8L8qPK3R5ic3oSTlGdiLSW
+ OT0kWzOJXKoLK7wX6+YBUVh9vDcF476I4+WUr6l1HcrTPhaTs4Rp8Quxj+gVxT4NtUao
+ WW8DZDvS5wbfRi3D5KveFqd8BL4Zvl86R6asqgTdqGZA27SaDIphkUyX11W0kfHnEh4k
+ J+2Fcx8OY/9yRMbZ4BeaE15Fg8mUeKna2ofmbn/naTmVSUjJV2jg1CPQkFO9BvMbUCaQ
+ XYjkW9OQadEebZaCMbQZ9cgcTyZnavaLip/2sFUr1FTy0Xow+WoLlfOb7LJ6i3llOIzu
+ wpdg==
+X-Gm-Message-State: APjAAAXRiovwB25MDxpdeTOMTbG4DgiC17kzACpQj5Vxw65Kha4iyDTF
+ 8HXnE0twm1F28B8dDMau7OmbPHQH9pyGkw==
+X-Google-Smtp-Source: APXvYqzmd1DBEeem+J6VymgZcgptitZGRrRZZYDED2sT/w52SP7MXWbGr5otGq7GgjxXnnaMfcHksA==
+X-Received: by 2002:a17:90b:f12:: with SMTP id
+ br18mr1368456pjb.127.1566413974806; 
+ Wed, 21 Aug 2019 11:59:34 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id a10sm34416479pfl.159.2019.08.21.11.59.33
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 21 Aug 2019 11:59:34 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: CPUfreq fail on rk3399-firefly (was: next/master boot: 285 boots:
+ 16 failed, 264 passed with 3 offline, 1 untried/unknown,
+ 1 conflict (next-20190718))
+In-Reply-To: <2314814.WbdfqDVNqK@phil>
+References: <5d3057c8.1c69fb81.c6489.8ad2@mx.google.com>
+ <20190718162005.GF5761@sirena.org.uk> <7hmugdynmk.fsf@baylibre.com>
+ <2314814.WbdfqDVNqK@phil>
+Date: Wed, 21 Aug 2019 11:59:33 -0700
+Message-ID: <7hv9uq9wfe.fsf@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190805130215.20499-1-fparent@baylibre.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_115519_974731_D858BA92 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190821_115936_800420_0AA80D79 
+X-CRM114-Status: GOOD (  25.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,28 +97,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Fabien Parent <fparent@baylibre.com>, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, linux-crypto@vger.kernel.org,
- matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ linux-next@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kernel-build-reports@lists.linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon,  5 Aug 2019 15:02:15 +0200, Fabien Parent wrote:
-> This commit adds the device-tree documentation for the RNG IP on the
-> MediaTek MT8516 SoC.
-> 
-> Signed-off-by: Fabien Parent <fparent@baylibre.com>
-> ---
->  Documentation/devicetree/bindings/rng/mtk-rng.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
+Hi Heiko,
 
-Applied, thanks.
+Heiko Stuebner <heiko@sntech.de> writes:
 
-Rob
+> Am Dienstag, 13. August 2019, 19:35:31 CEST schrieb Kevin Hilman:
+>> [ resent with correct addr for linux-rockchip list ]
+>> 
+>> Mark Brown <broonie@kernel.org> writes:
+>> 
+>> > On Thu, Jul 18, 2019 at 04:28:08AM -0700, kernelci.org bot wrote:
+>> >
+>> > Today's -next started failing to boot defconfig on rk3399-firefly:
+>> >
+>> >> arm64:
+>> >
+>> >>     defconfig:
+>> >>         gcc-8:
+>> >>             rk3399-firefly: 1 failed lab
+>> >
+>> > It hits a BUG() trying to set up cpufreq:
+>> >
+>> > [   87.381606] cpufreq: cpufreq_online: CPU0: Running at unlisted freq: 200000 KHz
+>> > [   87.393244] cpufreq: cpufreq_online: CPU0: Unlisted initial frequency changed to: 408000 KHz
+>> > [   87.469777] cpufreq: cpufreq_online: CPU4: Running at unlisted freq: 12000 KHz
+>> > [   87.488595] cpu cpu4: _generic_set_opp_clk_only: failed to set clock rate: -22
+>> > [   87.491881] cpufreq: __target_index: Failed to change cpu frequency: -22
+>> > [   87.495335] ------------[ cut here ]------------
+>> > [   87.496821] kernel BUG at drivers/cpufreq/cpufreq.c:1438!
+>> > [   87.498462] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
+>> >
+>> > I'm struggling to see anything relevant in the diff from yesterday, the
+>> > unlisted frequency warnings were there in the logs yesterday but no oops
+>> > and I'm not seeing any changes in cpufreq, clk or anything relevant
+>> > looking.
+>> >
+>> > Full bootlog and other info can be found here:
+>> >
+>> > 	https://kernelci.org/boot/id/5d302d8359b51498d049e983/
+>> 
+>> I confirm that disabling CPUfreq in the defconfig (CONFIG_CPU_FREQ=n)
+>> makes the firefly board start working again.
+>> 
+>> Note that the default defconfig enables the "performance" CPUfreq
+>> governor as the default governor, so during kernel boot, it will always
+>> switch to the max frequency.
+>> 
+>> For fun, I set the default governor to "userspace" so the kernel
+>> wouldn't make any OPP changes, and that leads to a slightly more
+>> informative splat[1]
+>> 
+>> There is still an OPP change happening because the detected OPP is not
+>> one that's listed in the table, so it tries to change to a listed OPP
+>> and fails in the bowels of clk_set_rate()
+>
+> Though I think that might only be a symptom as well.
+> Both the PLL setting code as well as the actual cpu-clock implementation
+> is unchanged since 2017 (and runs just fine on all boards in my farm).
+>
+> One source for these issues is often the regulator supplying the cpu
+> going haywire - aka the voltage not matching the opp.
+>
+> As in this error-case it's CPU4 being set, this would mean it might
+> be the big cluster supplied by the external syr825 (fan5355 clone)
+> that might act up. In the Firefly-rk3399 case this is even stranger.
+>
+> There is a discrepancy between the "fcs,suspend-voltage-selector"
+> between different bootloader versions (how the selection-pin is set up),
+> so the kernel might actually write his requested voltage to the wrong
+> register (not the one for actual voltage, but the second set used for
+> the suspend voltage).
+>
+> Did you by chance swap bootloaders at some point in recent past?
+
+No, haven't touched bootloader since I initially setup the board.
+
+> I'd assume [2] might actually be the same issue last year, though
+> the CI-logs are not available anymore it seems.
+>
+> Could you try to set the vdd_cpu_b regulator to disabled, so that
+> cpufreq for this cluster defers and see what happens?
+
+Yes, this change[1] definitely makes things boot reliably again, so
+there's defintiely something a bit unstable with this regulator, at
+least on this firefly.
+
+Kevin
+
+[1]
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+index c706db0ee9ec..6b70bdcc3328 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+@@ -454,6 +454,7 @@
+ 
+ 	vdd_cpu_b: regulator@40 {
+ 		compatible = "silergy,syr827";
++		status = "disabled";
+ 		reg = <0x40>;
+ 		fcs,suspend-voltage-selector = <0>;
+ 		regulator-name = "vdd_cpu_b";
 
 _______________________________________________
 linux-arm-kernel mailing list
