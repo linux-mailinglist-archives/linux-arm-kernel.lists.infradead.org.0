@@ -2,95 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88E8897F98
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 18:02:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 790BD97FA7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 18:05:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YvKSfV7RR15B0ekcXu5fiJQFbBocdenRs+qdhno92xw=; b=Qd2Fuilrnre8JW
-	wc4X2l66DPnOoBrdKVmSVfa3jIZDNc5M7THsYfjKVs+MWm3vWu9drODQw1qwnrN9pcUS72HVP/5jA
-	ERzRrp1EhwF1L0HKxNNXEzq3ksDzRWO5Y0l8AiaoYjopRMB5AC0ApGd0dbRRVna3zPi38WX/1fwK8
-	6T9eHELNAyrEvOe6xm4YNGBhOrF0XxSK07F4WPXanoVHOZqNOKS6ZP0M81s2gtUTLvY45tbH1hYfx
-	sy8uW1jeFjifFfuoJ5IRetNrp6VE7vdPlsyf82kqxl4kJ48+q+rgqd8nIdCpcld0V6DrAGMkDu748
-	O2cHh/D4/K8JCLQiDf2Q==;
+	List-Owner; bh=tYiwlcT1hQKD8Z8noE5yxlBn4DHi71nixmT0UlMcl3Q=; b=sPCRY9vjn06O9i
+	bGk1Qw99WCq5936FpGxT2+m+6+OdOa0gZIOd/sNG+y11BQ7XBI+PZZJOB9r0WDFIJ/bJ3XX50uXkL
+	P5H9R4vYPXk5VYMOVUEO9kk6w+Doi2056gCxjbz8RnNgv8lKntBvDRHS4CPBvqU4qcKan8J4+Jgnv
+	2qSuTjm1FYTiy3Zuye/AsBNkK9e+ncBFwufogvv6K6vpFrUUjIN/6uCtyzIbqqhfbw4HneESiGYWZ
+	dBX01P+UwxB1+lvAwK7/gqEsV42Y0kAlzm4b683JCMWc++tHxsK6gxybmxrwzX5Ym1r7S/7P8FwYn
+	lrGvaQ488UKAP/yKFUYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0T3y-00068d-PJ; Wed, 21 Aug 2019 16:02:18 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1i0T6W-0006T3-54; Wed, 21 Aug 2019 16:04:56 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0T3q-000685-V8
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 16:02:12 +0000
-Received: from pps.filterd (m0098410.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7LFvbK2088968
- for <linux-arm-kernel@lists.infradead.org>; Wed, 21 Aug 2019 12:02:10 -0400
-Received: from e06smtp04.uk.ibm.com (e06smtp04.uk.ibm.com [195.75.94.100])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2uh87kjtq6-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 21 Aug 2019 12:02:10 -0400
-Received: from localhost
- by e06smtp04.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Wed, 21 Aug 2019 17:02:07 +0100
-Received: from b06cxnps4075.portsmouth.uk.ibm.com (9.149.109.197)
- by e06smtp04.uk.ibm.com (192.168.101.134) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 21 Aug 2019 17:02:03 +0100
-Received: from d06av26.portsmouth.uk.ibm.com (d06av26.portsmouth.uk.ibm.com
- [9.149.105.62])
- by b06cxnps4075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x7LG22In48693276
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 21 Aug 2019 16:02:02 GMT
-Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 1ABF0AE053;
- Wed, 21 Aug 2019 16:02:02 +0000 (GMT)
-Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 4C708AE04D;
- Wed, 21 Aug 2019 16:02:01 +0000 (GMT)
-Received: from rapoport-lnx (unknown [9.148.8.59])
- by d06av26.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Wed, 21 Aug 2019 16:02:01 +0000 (GMT)
-Date: Wed, 21 Aug 2019 19:01:59 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] mm: consolidate pgtable_cache_init() and pgd_cache_init()
-References: <1566400018-15607-1-git-send-email-rppt@linux.ibm.com>
- <20190821154942.js4u466rolnekwmq@willie-the-truck>
+ id 1i0T6N-0006Si-D1
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 16:04:49 +0000
+Received: by mail-oi1-f194.google.com with SMTP id g128so2008072oib.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 21 Aug 2019 09:04:46 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=RynLZSvey/kZnxVVVLyjk8KwWQHiCOLQUV51xUwB0Yk=;
+ b=IhtQp64H9nlioEKF0Qmo6OfK9b0rWtUtLaj/JsYtc/lLBxqRzywkJ4cUaNd2v3RKaG
+ IhobN6AcvemtmEZAo7l7oTB4IITXyK7OX71gtkqwiTFZojq4cVBxCtpjLZ2Ghwu8WezO
+ /02oFHQxmPq2Ovs/ke2ZILk3H+U5yhW1tcI/A+hCns/PPrAnVy4NtZsuNgftEZZwqxXk
+ c+QYFvVYuJHQQ0qhYAtgQU58vo6DJ4J8bVKJL5A5fZChyJRpthUTRWeq1uxkQSpCC79y
+ ZZ2DEZNsKKpRg7lyG2MJYN7sPxBbQIZMNg0hvpweDxOKZZGEhY0EFH/I60//1CDoQBfO
+ qFhQ==
+X-Gm-Message-State: APjAAAUzjg2ojYbEhmABBHPeInMcbSblpCPqxbl+2I0BZ0MzNoLjASru
+ S++5HKSm7erwRo4VrNh2bxDQ0JXrBgTdK9OOmZk=
+X-Google-Smtp-Source: APXvYqyCyYAXkVjRaQGsnU23tWjV9XaQliV6h6E6vgonh7EnvSf18y72SQkeo8O2ThkeTII/zk4tfeUibNzePnGmHQk=
+X-Received: by 2002:aca:ea82:: with SMTP id i124mr538173oih.153.1566403485948; 
+ Wed, 21 Aug 2019 09:04:45 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190821154942.js4u466rolnekwmq@willie-the-truck>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-TM-AS-GCONF: 00
-x-cbid: 19082116-0016-0000-0000-000002A129E4
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19082116-0017-0000-0000-000033015F04
-Message-Id: <20190821160159.GG26713@rapoport-lnx>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-21_05:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1908210166
+References: <20190814092757.13726-1-geert+renesas@glider.be>
+ <20190814092924.13857-1-geert+renesas@glider.be>
+ <20190814092924.13857-2-geert+renesas@glider.be>
+ <20190814093558.xlx5ck54dw2dgb6k@pengutronix.de>
+ <CAMuHMdWNj-H9B8E9=NeCgLracBuJODfPyBYJERh=vt4oNFUkGw@mail.gmail.com>
+ <20190814110804.2ceo2upc3su7muup@pengutronix.de>
+ <95a9b7ed-71a5-f58c-92dd-913893535f3a@gmail.com>
+ <352d8f55-afe2-9f76-ad92-f15a9faa16a8@gmail.com>
+In-Reply-To: <352d8f55-afe2-9f76-ad92-f15a9faa16a8@gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 21 Aug 2019 18:04:34 +0200
+Message-ID: <CAMuHMdU0c_QRFm8Y=mJmuX9HHXGugcmLVwyQRZKqnTj+C5r6RQ@mail.gmail.com>
+Subject: Re: [PATCH 1/3] serial: atmel: Don't check for mctrl_gpio_to_gpiod()
+ returning error
+To: Richard Genoud <richard.genoud@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_090211_015922_EECEDC69 
-X-CRM114-Status: GOOD (  28.41  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190821_090447_443338_F58486E2 
+X-CRM114-Status: GOOD (  26.30  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,90 +87,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andrew Morton <akpm@linux-foundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Frieder Schrempf <frieder.schrempf@kontron.de>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ Jiri Slaby <jslaby@suse.com>, Shawn Guo <shawnguo@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 04:49:42PM +0100, Will Deacon wrote:
-> On Wed, Aug 21, 2019 at 06:06:58PM +0300, Mike Rapoport wrote:
-> > Both pgtable_cache_init() and pgd_cache_init() are used to initialize kmem
-> > cache for page table allocations on several architectures that do not use
-> > PAGE_SIZE tables for one or more levels of the page table hierarchy.
-> > 
-> > Most architectures do not implement these functions and use __week default
-> > NOP implementation of pgd_cache_init(). Since there is no such default for
-> > pgtable_cache_init(), its empty stub is duplicated among most
-> > architectures.
-> > 
-> > Rename the definitions of pgd_cache_init() to pgtable_cache_init() and drop
-> > empty stubs of pgtable_cache_init().
-> > 
-> > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-> > ---
-> 
-> [...]
-> 
-> > diff --git a/arch/arm64/mm/pgd.c b/arch/arm64/mm/pgd.c
-> > index 7548f9c..4a64089 100644
-> > --- a/arch/arm64/mm/pgd.c
-> > +++ b/arch/arm64/mm/pgd.c
-> > @@ -35,7 +35,7 @@ void pgd_free(struct mm_struct *mm, pgd_t *pgd)
-> >  		kmem_cache_free(pgd_cache, pgd);
-> >  }
-> >  
-> > -void __init pgd_cache_init(void)
-> > +void __init pgtable_cache_init(void)
-> >  {
-> >  	if (PGD_SIZE == PAGE_SIZE)
-> >  		return;
-> 
-> [...]
-> 
-> > diff --git a/init/main.c b/init/main.c
-> > index b90cb5f..2fa8038 100644
-> > --- a/init/main.c
-> > +++ b/init/main.c
-> > @@ -507,7 +507,7 @@ void __init __weak mem_encrypt_init(void) { }
-> >  
-> >  void __init __weak poking_init(void) { }
-> >  
-> > -void __init __weak pgd_cache_init(void) { }
-> > +void __init __weak pgtable_cache_init(void) { }
-> >  
-> >  bool initcall_debug;
-> >  core_param(initcall_debug, initcall_debug, bool, 0644);
-> > @@ -565,7 +565,6 @@ static void __init mm_init(void)
-> >  	init_espfix_bsp();
-> >  	/* Should be run after espfix64 is set up. */
-> >  	pti_init();
-> > -	pgd_cache_init();
-> >  }
-> 
-> AFAICT, this change means we now initialise our pgd cache before
-> debug_objects_mem_init() has run.
-
-Right.
-
-> Is that going to cause fireworks with CONFIG_DEBUG_OBJECTS when we later
-> free a pgd?
-
-We don't allocate a pgd at that time, we only create the kmem cache for the
-future allocations. And that cache is never destroyed anyway.
-
-> Will
-
--- 
-Sincerely yours,
-Mike.
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUmljaGFyZCwKCk9uIFdlZCwgQXVnIDIxLCAyMDE5IGF0IDU6MjcgUE0gUmljaGFyZCBHZW5v
+dWQgPHJpY2hhcmQuZ2Vub3VkQGdtYWlsLmNvbT4gd3JvdGU6Cj4gTGUgMjAvMDgvMjAxOSDDoCAx
+Nzo0NywgUmljaGFyZCBHZW5vdWQgYSDDqWNyaXQgOgo+ID4gTGUgMTQvMDgvMjAxOSDDoCAxMzow
+OCwgVXdlIEtsZWluZS1Lw7ZuaWcgYSDDqWNyaXQgOgo+ID4+IE9uIFdlZCwgQXVnIDE0LCAyMDE5
+IGF0IDEyOjIwOjMzUE0gKzAyMDAsIEdlZXJ0IFV5dHRlcmhvZXZlbiB3cm90ZToKPiA+Pj4gSGkg
+VXdlLAo+ID4+Pgo+ID4+PiBPbiBXZWQsIEF1ZyAxNCwgMjAxOSBhdCAxMTozNiBBTSBVd2UgS2xl
+aW5lLUvDtm5pZwo+ID4+PiA8dS5rbGVpbmUta29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToK
+PiA+Pj4+IE9uIFdlZCwgQXVnIDE0LCAyMDE5IGF0IDExOjI5OjIyQU0gKzAyMDAsIEdlZXJ0IFV5
+dHRlcmhvZXZlbiB3cm90ZToKPiA+Pj4+PiBTaW5jZSBjb21taXQgMWQyNjdlYTY1MzlmMjY2MyAo
+InNlcmlhbDogbWN0cmwtZ3Bpbzogc2ltcGxpZnkgaW5pdAo+ID4+Pj4+IHJvdXRpbmUiKSwgbWN0
+cmxfZ3Bpb19pbml0KCkgcmV0dXJucyBmYWlsdXJlIGlmIHRoZSBhc3NpZ25tZW50IHRvIGFueQo+
+ID4+Pj4+IG1lbWJlciBvZiB0aGUgZ3BpbyBhcnJheSByZXN1bHRzIGluIGFuIGVycm9yIHBvaW50
+ZXIuCj4gPj4+Pj4gU2luY2UgY29tbWl0IGMzNTk1MjIxOTQ1OTM4MTUgKCJzZXJpYWw6IG1jdHJs
+X2dwaW86IEF2b2lkIHByb2JlIGZhaWx1cmVzCj4gPj4+Pj4gaW4gY2FzZSBvZiBtaXNzaW5nIGdw
+aW9saWIiKSwgbWN0cmxfZ3Bpb190b19ncGlvZCgpIHJldHVybnMgTlVMTCBpbiB0aGUKPiA+Pj4+
+PiAhQ09ORklHX0dQSU9MSUIgY2FzZS4KPiA+Pj4+PiBIZW5jZSB0aGVyZSBpcyBubyBsb25nZXIg
+YSBuZWVkIHRvIGNoZWNrIGZvciBtY3RybF9ncGlvX3RvX2dwaW9kKCkKPiA+Pj4+PiByZXR1cm5p
+bmcgYW4gZXJyb3IgdmFsdWUuICBBIHNpbXBsZSBOVUxMIGNoZWNrIGlzIHN1ZmZpY2llbnQuCj4g
+Pj4+Pj4KPiA+Pj4+PiBUaGlzIGZvbGxvd3MgdGhlIHNwaXJpdCBvZiBjb21taXQgNDQ1ZGY3ZmYz
+ZmQxYTBhOSAoInNlcmlhbDogbWN0cmwtZ3BpbzoKPiA+Pj4+PiBkcm9wIHVzYWdlcyBvZiBJU19F
+UlJfT1JfTlVMTCIpIGluIHRoZSBtY3RybC1ncGlvIGNvcmUuCj4gPj4+Pj4KPiA+Pj4+PiBTaWdu
+ZWQtb2ZmLWJ5OiBHZWVydCBVeXR0ZXJob2V2ZW4gPGdlZXJ0K3JlbmVzYXNAZ2xpZGVyLmJlPgo+
+ID4+Pj4+IC0tLQo+ID4+Pj4+ICBkcml2ZXJzL3R0eS9zZXJpYWwvYXRtZWxfc2VyaWFsLmMgfCAx
+MiArKysrLS0tLS0tLS0KPiA+Pj4+PiAgMSBmaWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygrKSwg
+OCBkZWxldGlvbnMoLSkKPiA+Pj4+Pgo+ID4+Pj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3R0eS9z
+ZXJpYWwvYXRtZWxfc2VyaWFsLmMgYi9kcml2ZXJzL3R0eS9zZXJpYWwvYXRtZWxfc2VyaWFsLmMK
+PiA+Pj4+PiBpbmRleCAxOWE4NWQ2ZmUzZDIwNTQxLi5lOTYyMGE4MTE2NmI3ZGMxIDEwMDY0NAo+
+ID4+Pj4+IC0tLSBhL2RyaXZlcnMvdHR5L3NlcmlhbC9hdG1lbF9zZXJpYWwuYwo+ID4+Pj4+ICsr
+KyBiL2RyaXZlcnMvdHR5L3NlcmlhbC9hdG1lbF9zZXJpYWwuYwo+ID4+Pj4+IEBAIC0zMDMsMzIg
+KzMwMywyOCBAQCBzdGF0aWMgdW5zaWduZWQgaW50IGF0bWVsX2dldF9saW5lc19zdGF0dXMoc3Ry
+dWN0IHVhcnRfcG9ydCAqcG9ydCkKPiA+Pj4+Pgo+ID4+Pj4+ICAgICAgIG1jdHJsX2dwaW9fZ2V0
+KGF0bWVsX3BvcnQtPmdwaW9zLCAmcmV0KTsKPiA+Pj4+Pgo+ID4+Pj4+IC0gICAgIGlmICghSVNf
+RVJSX09SX05VTEwobWN0cmxfZ3Bpb190b19ncGlvZChhdG1lbF9wb3J0LT5ncGlvcywKPiA+Pj4+
+PiAtICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVUFSVF9HUElP
+X0NUUykpKSB7Cj4gPj4+Pj4gKyAgICAgaWYgKG1jdHJsX2dwaW9fdG9fZ3Bpb2QoYXRtZWxfcG9y
+dC0+Z3Bpb3MsIFVBUlRfR1BJT19DVFMpKSB7Cj4gPj4+Pj4gICAgICAgICAgICAgICBpZiAocmV0
+ICYgVElPQ01fQ1RTKQo+ID4+Pj4+ICAgICAgICAgICAgICAgICAgICAgICBzdGF0dXMgJj0gfkFU
+TUVMX1VTX0NUUzsKPiA+Pj4+PiAgICAgICAgICAgICAgIGVsc2UKPiA+Pj4+PiAgICAgICAgICAg
+ICAgICAgICAgICAgc3RhdHVzIHw9IEFUTUVMX1VTX0NUUzsKPiA+Pj4+PiAgICAgICB9Cj4gPj4+
+Pgo+ID4+Pj4gVGhlIGNoYW5nZSBpcyBmaW5lLCBidXQgaXQgc2VlbXMgdGhlIGF0bWVsIGRyaXZl
+ciBkb2Vzbid0IHVzZSBtY3RybF9ncGlvCj4gPj4+PiBhcyBleHBlY3RlZCAoYXQgbGVhc3QgYXMg
+ZXhwZWN0ZWQgYnkgbWUpLiBJTUhPIGRyaXZpbmcgdGhlIGhhcmR3YXJlCj4gPj4+PiBmdW5jdGlv
+biBvZiB0aGUgQ1RTIHBpbiBzaG91bGRuJ3QgYmUgY29uZGl0aW9uYWwgb24gdGhlIHByZXNlbmNl
+IG9mIGEKPiA+Pj4+IGN0cy1ncGlvLiBJcyB0aGVyZSBhIHJlYXNvbiBub3QgdG8ganVzdCBkcm9w
+IHRoZSBpZiBjb21wbGV0ZWx5Pwo+ID4+Pgo+ID4+PiBUaGUgYWJvdmUgY29kZSByZXR1cm5zIHRo
+ZSBoYXJkd2FyZSBzdGF0dXMgaWYgQ1RTIGlzIG5vdCBhIEdQSU8sIGFuZAo+ID4+PiByZXR1cm5z
+IChvdmVycmlkZXMgd2l0aCkgdGhlIEdQSU8gc3RhdHVzIGlmIENUUyBpcyBhIEdQSU8uCj4gPj4+
+IElzbid0IHRoYXQgY29ycmVjdCwgb3IgYW0gSSBtaXNzaW5nIHNvbWV0aGluZz8KPiA+Pgo+ID4+
+IEkgdG9vayBhIGRlZXBlciBsb29rIGludG8gdGhpcyBkcml2ZXIgbm93LiBUaGUgdGFzayBmb3IK
+PiA+PiBhdG1lbF9nZXRfbGluZXNfc3RhdHVzKCkgaXNuJ3QgdG8gaW1wbGVtZW50IHRoZSBnZXRf
+bWN0cmwoKSBjYWxsYmFjay4KPiA+Pgo+ID4+IEluc3RlYWQgdGhpcyBpcyBjYWxsZWQgaW4gdGhl
+IGlycWhhbmRsZXIgdG8gc2V0IEFUTUVMX1VTX1JJIGluIGEKPiA+PiAicGVuZGluZyIgdmFsdWUg
+dGhhdCB0aGVuIGxhdGVyIGluIGF0bWVsX2hhbmRsZV9zdGF0dXMoKSBpcyB0cmFuc2xhdGVkCj4g
+Pj4gdG8gYSAicmluZyIgZXZlbnQgdGhhdCBpcyBoYW5kbGVkIHRoZXJlLgo+ID4+Cj4gPj4gU28g
+dGhlIHJpZ2h0IGNsZWFudXAgd291bGQgYmUgdG8gbGV0IGF0bWVsX2dldF9saW5lc19zdGF0dXMo
+KSBqdXN0IGJlCj4gPj4KPiA+PiAgICAgIHJldHVybiBhdG1lbF91YXJ0X3JlYWRsKHBvcnQsIEFU
+TUVMX1VTX0NTUik7Cj4gPj4KPiA+PiAuIElmIHNvbWV0aGluZyBoYXBwZW5kIG9uIHRoZSBsaW5l
+cyBpbXBsZW1lbnRlZCBhcyBncGlvIHRoZSBkcml2ZXIncyBpcnEKPiA+PiBmdW5jdGlvbiBpc24n
+dCBjYWxsZWQgYW55aG93Lgo+ID4KPiA+IEknZCBsaWtlIHRvIGdpdmUgaXQgYSBnb29kIHRlc3Qg
+dG8gYmUgc3VyZSwgYW5kIEknbGwgZ2V0IGJhY2sgdG8geW91Lgo+Cj4gU28sIFV3ZSBpcyByaWdo
+dC4KPiBTaW5jZSBjb21taXQgY2U1OWU0OGZkYmFkICgic2VyaWFsOiBtY3RybF9ncGlvOiBpbXBs
+ZW1lbnQgaW50ZXJydXB0IGhhbmRsaW5nIiksCj4gYXRtZWxfZ2V0X2xpbmVzX3N0YXR1cygpIGNh
+biBiZSBjb21wbGV0bHkga2lsbGVkIGFuZCByZXBsYWNlZCBieSA6Cj4gYXRtZWxfdWFydF9yZWFk
+bChwb3J0LCBBVE1FTF9VU19DU1IpOwo+Cj4gR2VlcnQsIGRvIHlvdSB3YW50IHRvIHNlbmQgYSBw
+YXRjaCBmb3IgdGhhdCwgb3Igc2hvdWxkIEkgZG8gaXQgPwoKRmVlbCBmcmVlIHRvIHNlbmQgYSAg
+cGF0Y2guCkkgZG9uJ3QgaGF2ZSB0aGUgQXRtZWwgaGFyZHdhcmUgIGFueXdheS4KVGhhbmtzIQoK
+R3J7b2V0amUsZWV0aW5nfXMsCgogICAgICAgICAgICAgICAgICAgICAgICBHZWVydAoKLS0gCkdl
+ZXJ0IFV5dHRlcmhvZXZlbiAtLSBUaGVyZSdzIGxvdHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0g
+Z2VlcnRAbGludXgtbTY4ay5vcmcKCkluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNo
+bmljYWwgcGVvcGxlLCBJIGNhbGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKd2hlbiBJJ20gdGFsa2lu
+ZyB0byBqb3VybmFsaXN0cyBJIGp1c3Qgc2F5ICJwcm9ncmFtbWVyIiBvciBzb21ldGhpbmcgbGlr
+ZSB0aGF0LgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRz
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
