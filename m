@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8120397D1B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 16:33:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14DD197D3D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 16:38:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+A+QLd/rdjV61guA2lr6LEZt/59LVpkpcrDCvsHa7ME=; b=o+xGJIwnSxC3RsvU2gDlwJsb6
-	zE829Thzf4PBIHbcYZxF9sketXfKoNzZ7TVOS8D9x5wfgUyeIE2BwIxSd7RSYR2l//vhEdWrZzzW0
-	q2j4EpwJKoMLQKIAM0Z6b1a+vKi4jX5sMn4KisCuKq8HsutzTMV0hFI+agwAfZhIn5kpF3ZNQycLj
-	PZVCPmxgjmMzW/w4OwlsZr11jhQKqDpCzvILVO9MVYOxQSzdxti+TEk3agTggvM70tnwpsfOc4gdl
-	EdZkSy11MndG3/Jv9jA0f4T+7MpQ7aq6TmjJOvOjJlmTwWQI3PAhMkRb0qTnme5VtdRFygv7jKW6V
-	qL+5sMZGA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=S2KHbtU2EU5mlsOwxraknl+E7HZbAcZEVxRePBroN+I=; b=L8grsodoK6aMZ1
+	0g1bxmkhYKjNnHgdmbAzLjaGPQFmuZCJO7ffFvjqa9tEQI1ODNhjLhl2RpMhPasbD13tBLpq1JyxH
+	+2vp9pZ/UZJmb3N3qAl7Uv+kzEWXeWqDPuU2twEhiByKUuQlD/mqO6YD16iPtukrhFxzYqGmJo6pF
+	0FGSkPoS4/Q8SwWrymKl8jLz7J6pHPUH6NZ0luZ3IhCC5wyGab86/tyscSUfZvKvuQMyob1MDB433
+	sv6JlrvXtjnR63Va3NC1Szkq5WDedMFupm2yEJ8qQmS1DzoEH6N/LERT6z7jCvdg6mZoodNH6ZmD3
+	oeecFQ5GKbuths8JInFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Rg4-000874-8W; Wed, 21 Aug 2019 14:33:32 +0000
+	id 1i0RlB-0001J7-L1; Wed, 21 Aug 2019 14:38:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Rfu-00085m-FD
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 14:33:23 +0000
+ id 1i0Rl0-0001I9-5Y
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 14:38:39 +0000
 Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B31EB21655;
- Wed, 21 Aug 2019 14:33:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4E833206BA;
+ Wed, 21 Aug 2019 14:38:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566398000;
- bh=QO+p1/85LdqTXyI9zUBJ/aIY/wCtPQIJief+RWd2UrY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PHZnmkn9zAYlpVwUC319SBmftvtX2tizMVRp2zk2k3EriOA8NLI+X3BAJWW30wuza
- sSunp5GHpstIb3ekTNyky5M7w8XNsyYD4r0idsCwXcCOqD1EtGNerIFaGgZdsNdnjP
- w/ON98/gqARUdfEixQZj25NBbsXVSOG8Tm4VOaUw=
-Date: Wed, 21 Aug 2019 16:33:17 +0200
+ s=default; t=1566398317;
+ bh=bpvKrS4xjqV8MEvCfqz1VDqPz4Adz4s3wbNsncnxpkY=;
+ h=From:To:Cc:Subject:Date:From;
+ b=wj3piKtzc7YjEGap2/eQeyeo2oaQNmjEcEc+Rvvy5t+402fgWQLymblGmGp/Hc8Wf
+ Le9aKUL5EYLmOOYojmaWn4mUa9XdHH0VQHiOXyo8FgcOu0vSRn/RpplR3x7sSy8Oka
+ /hK9V/wqVzoIB7eXn4cb+dB7XNiwxZpM13yiIcXY=
 From: Maxime Ripard <mripard@kernel.org>
-To: Guenter Roeck <linux@roeck-us.net>
-Subject: Re: [PATCH v2 1/6] dt-bindings: watchdog: Add YAML schemas for the
+To: linux@roeck-us.net,
+	wim@linux-watchdog.org
+Subject: [PATCH RESEND v2 1/6] dt-bindings: watchdog: Add YAML schemas for the
  generic watchdog bindings
-Message-ID: <20190821143317.dkahpwjvgrtqtx4d@flea>
-References: <20190819182039.24892-1-mripard@kernel.org>
- <ada53037-898f-7b8c-8a96-b80414563fa7@roeck-us.net>
+Date: Wed, 21 Aug 2019 16:38:30 +0200
+Message-Id: <20190821143835.7294-1-mripard@kernel.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <ada53037-898f-7b8c-8a96-b80414563fa7@roeck-us.net>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_073322_530885_4D3CD879 
-X-CRM114-Status: GOOD (  14.12  )
+X-CRM114-CacheID: sfid-20190821_073838_237852_91A447B8 
+X-CRM114-Status: GOOD (  12.13  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,74 +77,69 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, wim@linux-watchdog.org,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1925887047370954551=="
+ linux-watchdog@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Maxime Ripard <maxime.ripard@bootlin.com>
 
---===============1925887047370954551==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="3o66cqpsjmmmmqh3"
-Content-Disposition: inline
+The watchdogs have a bunch of generic properties that are needed in a
+device tree. Add a YAML schemas for those.
 
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
---3o66cqpsjmmmmqh3
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+---
 
-Hi Guenter,
+Changes from v1:
+  - New patch
+---
+ .../bindings/watchdog/watchdog.yaml           | 26 +++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/watchdog/watchdog.yaml
 
-On Tue, Aug 20, 2019 at 08:54:53AM -0700, Guenter Roeck wrote:
-> On 8/19/19 11:20 AM, Maxime Ripard wrote:
-> > From: Maxime Ripard <maxime.ripard@bootlin.com>
-> >
-> > The watchdogs have a bunch of generic properties that are needed in a
-> > device tree. Add a YAML schemas for those.
-> >
-> > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
->
-> What is the target subsystem for this series ? You didn't copy the watchdog
-> mailing list, so I assume it won't be the watchdog subsystem.
+diff --git a/Documentation/devicetree/bindings/watchdog/watchdog.yaml b/Documentation/devicetree/bindings/watchdog/watchdog.yaml
+new file mode 100644
+index 000000000000..187bf6cb62bf
+--- /dev/null
++++ b/Documentation/devicetree/bindings/watchdog/watchdog.yaml
+@@ -0,0 +1,26 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/watchdog/watchdog.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Watchdog Generic Bindings
++
++maintainers:
++  - Guenter Roeck <linux@roeck-us.net>
++  - Wim Van Sebroeck <wim@linux-watchdog.org>
++
++description: |
++  This document describes generic bindings which can be used to
++  describe watchdog devices in a device tree.
++
++properties:
++  $nodename:
++    pattern: "^watchdog(@.*|-[0-9a-f])?$"
++
++  timeout-sec:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      Contains the watchdog timeout in seconds.
++
++...
+-- 
+2.21.0
 
-Sorry for that :/
-
-It can either go through the DT or watchdog tree. I'll resend it and
-let you and Rob figure it out :)
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---3o66cqpsjmmmmqh3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXV1WLQAKCRDj7w1vZxhR
-xV7MAP9eNJQeheprjz1a/+LmmPM8s1A06SHcgrdDWaIdjrnr9AEA3opx310odS8e
-IIcinBLkTGCtVyqZQn99Bq1LeOvEPgA=
-=W2rw
------END PGP SIGNATURE-----
-
---3o66cqpsjmmmmqh3--
-
-
---===============1925887047370954551==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1925887047370954551==--
-
