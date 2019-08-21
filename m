@@ -2,63 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDAE997B9E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 15:57:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92C4197BC6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 15:59:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NVpMReVoeJ1FuIGBrzzsC/wCOXyYStk1kIAJn8hWMDI=; b=it2AItL7uTCnyR
-	jG+rlw04MArJMfdo4MwF1A/ZsxBR3uPm+1pFD3KnEmdfUUgo7t6bQ8mojTP9AE1Gmky+USkYa16kv
-	7V77PaIALw87Cay2Y/9dtW5qiFt5ydYw/O9X1bvtWMXJy/6bbevVWfaSk3EKNuiq9+zMqVj8TIF16
-	y3uLqrgWwkucGVSQGSo5lTYnTTwtQEH6+bsvMoX0df1F3yYGkDkXAmt/2uj08dbdy8UP5VpKaAmf5
-	bzIi2B7gKdICn+WxSUe4K2gQvPlz/1tn2KUMO0m2mhydyEYjTkcXh2secCxkPzOor0LjTF3kg23LN
-	w32AHdYe266fL6wBLecQ==;
+	List-Owner; bh=a2xCZ6lqm5gQXK0jX9/a13NPTB6LskAHaHFby8Fzp1M=; b=XeYvwrxzdGgkre
+	oXFoSPzoRkJ0gegBFFi5qZODr29vnOVeclvc4yeYtA7tSWZQuZvZ2QEa/sFsVW2tHFVExfW/rRI2U
+	6va8kcmfl0mpqCurAGt5/hkOMI/+ta0oNSB3gtz3yKV6b2YhmCLB7fPS3/JGaLxsLcGZdqe8hxlNz
+	LULeApWHGs8W8k0jaTIhs6aEwPSy9rPM613i2ByI/wqKrgmpRZWIFoUYAchSpzdQQQNFTGBefSFHO
+	LP5s5/KkI9YDAEkSrnESe6rxdxM4jHfi3YvMnRTuZr3WkJIGrJOkqqB+IF+5d39+ZpFkCnexQxa54
+	+BIs7txWkNp+2DuNjOdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0R6b-0006rN-9y; Wed, 21 Aug 2019 13:56:53 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i0R9R-0001jG-7G; Wed, 21 Aug 2019 13:59:49 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0R5E-0005SO-AY; Wed, 21 Aug 2019 13:55:29 +0000
-X-UUID: d37dc32a67364597ac18fd19ad6708f6-20190821
-X-UUID: d37dc32a67364597ac18fd19ad6708f6-20190821
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ id 1i0R6J-0006lf-0y; Wed, 21 Aug 2019 13:56:37 +0000
+X-UUID: b1c8cf2bf2284418a4da4fdc56e23c13-20190821
+X-UUID: b1c8cf2bf2284418a4da4fdc56e23c13-20190821
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2073107273; Wed, 21 Aug 2019 05:55:11 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ with ESMTP id 1015391499; Wed, 21 Aug 2019 05:55:23 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 21 Aug 2019 06:55:08 -0700
+ 15.0.1395.4; Wed, 21 Aug 2019 06:55:20 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 21 Aug 2019 21:55:08 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 21 Aug 2019 21:55:20 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 21 Aug 2019 21:55:07 +0800
+ Transport; Wed, 21 Aug 2019 21:55:19 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
  Robin Murphy <robin.murphy@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH v10 07/23] iommu/io-pgtable-arm-v7s: Use ias/oas to check the
- valid iova/pa
-Date: Wed, 21 Aug 2019 21:53:10 +0800
-Message-ID: <1566395606-7975-8-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v10 08/23] iommu/io-pgtable-arm-v7s: Rename the quirk from
+ MTK_4GB to MTK_EXT
+Date: Wed, 21 Aug 2019 21:53:11 +0800
+Message-ID: <1566395606-7975-9-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1566395606-7975-1-git-send-email-yong.wu@mediatek.com>
 References: <1566395606-7975-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_065528_415371_C14FC398 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20190821_065635_217657_319E43D4 
+X-CRM114-Status: GOOD (  14.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -87,28 +85,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use ias/oas to check the valid iova/pa. Synchronize this checking with
-io-pgtable-arm.c.
+In previous mt2712/mt8173, MediaTek extend the v7s to support 4GB dram.
+But in the latest mt8183, We extend it to support the PA up to 34bit.
+Then the "MTK_4GB" name is not so fit, This patch only change the quirk
+name to "MTK_EXT".
 
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
 ---
- drivers/iommu/io-pgtable-arm-v7s.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/iommu/io-pgtable-arm-v7s.c | 6 +++---
+ drivers/iommu/mtk_iommu.c          | 2 +-
+ include/linux/io-pgtable.h         | 4 ++--
+ 3 files changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/iommu/io-pgtable-arm-v7s.c b/drivers/iommu/io-pgtable-arm-v7s.c
-index 72f1880..fa1b38f 100644
+index fa1b38f..77cc1eb 100644
 --- a/drivers/iommu/io-pgtable-arm-v7s.c
 +++ b/drivers/iommu/io-pgtable-arm-v7s.c
-@@ -504,7 +504,8 @@ static int arm_v7s_map(struct io_pgtable_ops *ops, unsigned long iova,
- 	if (!(prot & (IOMMU_READ | IOMMU_WRITE)))
- 		return 0;
+@@ -315,7 +315,7 @@ static arm_v7s_iopte arm_v7s_prot_to_pte(int prot, int lvl,
+ 	if (lvl == 1 && (cfg->quirks & IO_PGTABLE_QUIRK_ARM_NS))
+ 		pte |= ARM_V7S_ATTR_NS_SECTION;
  
--	if (WARN_ON(upper_32_bits(iova) || upper_32_bits(paddr)))
-+	if (WARN_ON(iova >= (1ULL << data->iop.cfg.ias) ||
-+		    paddr >= (1ULL << data->iop.cfg.oas)))
- 		return -ERANGE;
+-	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB)
++	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT)
+ 		pte |= ARM_V7S_ATTR_MTK_4GB;
  
- 	ret = __arm_v7s_map(data, iova, paddr, size, prot, 1, data->pgd);
+ 	return pte;
+@@ -737,12 +737,12 @@ static struct io_pgtable *arm_v7s_alloc_pgtable(struct io_pgtable_cfg *cfg,
+ 	if (cfg->quirks & ~(IO_PGTABLE_QUIRK_ARM_NS |
+ 			    IO_PGTABLE_QUIRK_NO_PERMS |
+ 			    IO_PGTABLE_QUIRK_TLBI_ON_MAP |
+-			    IO_PGTABLE_QUIRK_ARM_MTK_4GB |
++			    IO_PGTABLE_QUIRK_ARM_MTK_EXT |
+ 			    IO_PGTABLE_QUIRK_NON_STRICT))
+ 		return NULL;
+ 
+ 	/* If ARM_MTK_4GB is enabled, the NO_PERMS is also expected. */
+-	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB &&
++	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT &&
+ 	    !(cfg->quirks & IO_PGTABLE_QUIRK_NO_PERMS))
+ 			return NULL;
+ 
+diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+index 9ba2706..62edce7 100644
+--- a/drivers/iommu/mtk_iommu.c
++++ b/drivers/iommu/mtk_iommu.c
+@@ -296,7 +296,7 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
+ 	};
+ 
+ 	if (data->enable_4GB)
+-		dom->cfg.quirks |= IO_PGTABLE_QUIRK_ARM_MTK_4GB;
++		dom->cfg.quirks |= IO_PGTABLE_QUIRK_ARM_MTK_EXT;
+ 
+ 	dom->iop = alloc_io_pgtable_ops(ARM_V7S, &dom->cfg, data);
+ 	if (!dom->iop) {
+diff --git a/include/linux/io-pgtable.h b/include/linux/io-pgtable.h
+index b5a450a..915fb73 100644
+--- a/include/linux/io-pgtable.h
++++ b/include/linux/io-pgtable.h
+@@ -65,7 +65,7 @@ struct io_pgtable_cfg {
+ 	 *	(unmapped) entries but the hardware might do so anyway, perform
+ 	 *	TLB maintenance when mapping as well as when unmapping.
+ 	 *
+-	 * IO_PGTABLE_QUIRK_ARM_MTK_4GB: (ARM v7s format) Set bit 9 in all
++	 * IO_PGTABLE_QUIRK_ARM_MTK_EXT: (ARM v7s format) Set bit 9 in all
+ 	 *	PTEs, for Mediatek IOMMUs which treat it as a 33rd address bit
+ 	 *	when the SoC is in "4GB mode" and they can only access the high
+ 	 *	remap of DRAM (0x1_00000000 to 0x1_ffffffff).
+@@ -77,7 +77,7 @@ struct io_pgtable_cfg {
+ 	#define IO_PGTABLE_QUIRK_ARM_NS		BIT(0)
+ 	#define IO_PGTABLE_QUIRK_NO_PERMS	BIT(1)
+ 	#define IO_PGTABLE_QUIRK_TLBI_ON_MAP	BIT(2)
+-	#define IO_PGTABLE_QUIRK_ARM_MTK_4GB	BIT(3)
++	#define IO_PGTABLE_QUIRK_ARM_MTK_EXT	BIT(3)
+ 	#define IO_PGTABLE_QUIRK_NON_STRICT	BIT(4)
+ 	unsigned long			quirks;
+ 	unsigned long			pgsize_bitmap;
 -- 
 1.9.1
 
