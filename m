@@ -2,120 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B45989819B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 19:42:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BB3D981A7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 19:44:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=J7lAq94x4/q9rfMlljoxgVgnHgnC9QjyaNYdmjw5p4k=; b=UvzCdrySHpHQFki4+VqeczhXe
-	m5Fowi7q59CQzvZuCCXJSQHKiVJZd/Lxs7Y8OFd2AhpTMq2k4h6gWC+cRl9gNEoUb57HLudICtO8R
-	K6965Vg3paN6+O3Y4fq+Wnr50SKMM+doiSzdm7I90OB6ydxpaan1UQMCVoBvzLVWfAygwgFiBxXcg
-	4T+VJL20yI5pjwqprWGwgblUy02iZexhq1ZwOLANzIQZmxtDDn0PJcLVG2k6oxOZDp6s7M2N6O9hm
-	okqA4FY3+Dp1k+v0HWFHa/3g3E1X2xMFo0r37ThKAbvC1AUxjRcFNv0Y3q3vxoQERFeTGgYrT1xHA
-	hBMW6Is+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nEljrFi6qpOKKOYtzHBQDOGoXhqs+hg9tEZrztkd9IU=; b=RX8vcx25MmFzX2
+	Y4ACf47EwBbUQ7VsuuGtrzzyt3sPPYWksQYTtDb3Wt+AUPYxRl9DCyFr3gmmvQEXBZX6xeLK8ntLT
+	0xDjS/UHJUb/E0eveJZzatMCiszYKjxO3MX/xdQ75n+r+7gehDaFt06jeS3HgkONDbIGWkt9HSAlD
+	SMmjt6BMk1PfVDkWgWF05o5+OFMWlE7Q8z33yboXzgKbz1u9j3VtOekmGMaxe9DtMonq7VwliPDjF
+	m06p7w3f6zVj5MTW+2q8yujgmtLccEC8jpLrScEcDYl0bvYQDdh9ZJ0CiLrRbK+AZr02kCpJOzke4
+	xuZo7XdEQfIWfJSTcU5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0UdJ-0005ye-7E; Wed, 21 Aug 2019 17:42:53 +0000
-Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
+	id 1i0UeY-0006q1-HL; Wed, 21 Aug 2019 17:44:10 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Ucy-0005tK-L2
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 17:42:34 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mta-01.yadro.com (Postfix) with ESMTP id AFE4542ED1;
- Wed, 21 Aug 2019 17:42:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
- content-type:content-type:in-reply-to:mime-version:user-agent
- :date:date:message-id:organization:from:from:references:subject
- :subject:received:received:received; s=mta-01; t=1566409346; x=
- 1568223747; bh=xIeCTG9Uz22zsCzXQQcRPKCuWiLSlzzny3Ofg3KMqrM=; b=C
- ygUZYzxeNDDZsAd1Y8pjbWQRuQYz7lWpGDfdk66k25LEeLA9Z6B59XCjoyCbypzj
- 0Dl+3fdP7w9iUNu+K5GUe/HrWfQY6spO1RBB7C8Ub2lL1bBtJgO73I2V3GNUAkTE
- nfRXgPfhuAMOv5bj/z7bIed7+oeYPxafC3Lj6Y3GFk=
-X-Virus-Scanned: amavisd-new at yadro.com
-Received: from mta-01.yadro.com ([127.0.0.1])
- by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id a46nstZX5FLF; Wed, 21 Aug 2019 20:42:26 +0300 (MSK)
-Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
- [172.17.10.102])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mta-01.yadro.com (Postfix) with ESMTPS id AFA2D404CB;
- Wed, 21 Aug 2019 20:42:25 +0300 (MSK)
-Received: from [172.17.14.197] (172.17.14.197) by T-EXCH-02.corp.yadro.com
- (172.17.10.102) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id 15.1.669.32; Wed, 21
- Aug 2019 20:42:25 +0300
-Subject: Re: [PATCH 3/3] watchdog/aspeed: add support for dual boot
-To: Guenter Roeck <linux@roeck-us.net>, Ivan Mikhaylov <i.mikhaylov@yadro.com>
-References: <1f2cd155057e5ab0cdb20a9a11614bbb09bb49ad.camel@yadro.com>
- <20190821163220.GA11547@roeck-us.net>
-From: Alexander Amelkin <a.amelkin@yadro.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=a.amelkin@yadro.com; prefer-encrypt=mutual; keydata=
- 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
- dTYsE5wSxM06T2l/MILupCNZ7A==
-Organization: YADRO
-Message-ID: <9e7fe5cc-ba1b-b8b6-69c5-c3c6cf508a36@yadro.com>
-Date: Wed, 21 Aug 2019 20:42:24 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1i0UeP-0006ox-Uc
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 17:44:04 +0000
+Received: by mail-qt1-x844.google.com with SMTP id 44so4021075qtg.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 21 Aug 2019 10:43:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=P7oJ/OCmlk0Qs0pfRpZmkhAcu01BAL6U4WS47xIOsJo=;
+ b=SPCa6SjcPxDoaAGyDJQrUXVo8eHayzWjjb7AwwcGDfVN4yzfCj6z42kaX3n9bdQC30
+ HsV5lZ4NxME6ZkF7gyIV6LdUccFv0vNjdVIAYCyFi4sZRRdMrp1uqndl/kwbvxx6idsS
+ mWpC8jirLQYtONEK+ZuummyxBr8DnSQXJ4BZokgtaBgVt7In/dUvj86BjFSOxdqAynAq
+ YlZIXwfb+UiI0z2OJ0YBto3BC+Q2dnmC9zGZi8PDRJGW0NtapLeYvCI6BSAGEq1cm8kZ
+ g1qwMweNkzLtW4sR5Qa9ae0rVHjFbdby2GljlxxGkVgw36KiWz6lKKL/NlMWQASLLhKu
+ bc/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=P7oJ/OCmlk0Qs0pfRpZmkhAcu01BAL6U4WS47xIOsJo=;
+ b=XL125X+K/GwzMHsJYkQT3aKiSvRaCr/WI2lRFQ2DhLBIVWHfGv7KT5Jc8tQ5I0ANRc
+ KQCzP5IfbcKSYQfN48LtRcprAyJ4o8OKINUhK93kGof/9tcwzjC8qVZsljgRvQv6kEDl
+ 7XC3N4sn/ZTKIRPtRAOHts1KYOo7nPjNelU/UQFxldXIJJjcJghyCFC7xN1KuVSRFpxN
+ Zr7ae+qscW9sfem1yAITpzPNG5mSPCGj5TGVfkdxNbSoesyFseR3o4NMKqloG7fVpXtn
+ v67nFJLpPjC89MpxWGDBN8mrHBxbduO47Y0rdStK0E4AMD6P28/9E+fnY84ftBkgqlS2
+ RHWg==
+X-Gm-Message-State: APjAAAW6MnuXXKvLbMqmrftvYH06aiDYYfP6+qh4M1386XL5UdSDU0wS
+ YbmYPwhWwTA4ZtCsuhVGW6b3O84EN0JVBfI0TsuZOA==
+X-Google-Smtp-Source: APXvYqyYr/8HxwPuJgfd9/gpA1tuXbCV5gxP2MdkmTD4Qew8BU73om7YNYHiMKjVsMyHQgGaz/5dtQFB6yUE++r+9R8=
+X-Received: by 2002:ac8:23d6:: with SMTP id r22mr2178545qtr.76.1566409437921; 
+ Wed, 21 Aug 2019 10:43:57 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190821163220.GA11547@roeck-us.net>
-X-Originating-IP: [172.17.14.197]
-X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
- T-EXCH-02.corp.yadro.com (172.17.10.102)
+References: <20190820194351.107486-1-nhuck@google.com>
+ <CAKwvOdm+sGyKfAMNbL10ME=DrG5=4d5kvzdMxjNC22JLLr1h=g@mail.gmail.com>
+In-Reply-To: <CAKwvOdm+sGyKfAMNbL10ME=DrG5=4d5kvzdMxjNC22JLLr1h=g@mail.gmail.com>
+From: Nathan Huckleberry <nhuck@google.com>
+Date: Wed, 21 Aug 2019 10:43:47 -0700
+Message-ID: <CAJkfWY4cHz+i8kYg2i1Krs-32nh7-WQU+psT=DRGYnTje6yj4Q@mail.gmail.com>
+Subject: Re: [PATCH] ARM: UNWINDER_FRAME_POINTER implementation for Clang
+To: Nick Desaulniers <ndesaulniers@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_104233_098418_8646DD72 
-X-CRM114-Status: GOOD (  33.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190821_104402_021860_02FEC955 
+X-CRM114-Status: GOOD (  47.43  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -124,6 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -135,198 +97,412 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-watchdog@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
- Joel Stanley <joel@jms.id.au>, Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4961521215813657861=="
+Cc: Tri Vo <trong@google.com>, Russell King <linux@armlinux.org.uk>,
+ LKML <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ =?UTF-8?B?TWlsZXMgQ2hlbiAo6Zmz5rCR5qi6KQ==?= <miles.chen@mediatek.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============4961521215813657861==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="Zcz065VrMDkDOXBxE02mg9C55JMy5xq8G"
-
---Zcz065VrMDkDOXBxE02mg9C55JMy5xq8G
-Content-Type: multipart/mixed; boundary="SnUXFFWAI4JAXfpsQj9YgvBg6Fs71xEPL";
- protected-headers="v1"
-From: Alexander Amelkin <a.amelkin@yadro.com>
-To: Guenter Roeck <linux@roeck-us.net>, Ivan Mikhaylov <i.mikhaylov@yadro.com>
-Cc: Wim Van Sebroeck <wim@linux-watchdog.org>, Joel Stanley <joel@jms.id.au>,
- Andrew Jeffery <andrew@aj.id.au>, linux-watchdog@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- linux-kernel@vger.kernel.org
-Message-ID: <9e7fe5cc-ba1b-b8b6-69c5-c3c6cf508a36@yadro.com>
-Subject: Re: [PATCH 3/3] watchdog/aspeed: add support for dual boot
-References: <1f2cd155057e5ab0cdb20a9a11614bbb09bb49ad.camel@yadro.com>
- <20190821163220.GA11547@roeck-us.net>
-In-Reply-To: <20190821163220.GA11547@roeck-us.net>
-
---SnUXFFWAI4JAXfpsQj9YgvBg6Fs71xEPL
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
-Content-Language: en-US
-
-21.08.2019 19:32, Guenter Roeck wrote:
-> On Wed, Aug 21, 2019 at 06:57:43PM +0300, Ivan Mikhaylov wrote:
->> Set WDT_CLEAR_TIMEOUT_AND_BOOT_CODE_SELECTION into WDT_CLEAR_TIMEOUT_S=
-TATUS
->> to clear out boot code source and re-enable access to the primary SPI =
-flash
->> chip while booted via wdt2 from the alternate chip.
->>
->> AST2400 datasheet says:
->> "In the 2nd flash booting mode, all the address mapping to CS0# would =
-be
->> re-directed to CS1#. And CS0# is not accessable under this mode. To ac=
-cess
->> CS0#, firmware should clear the 2nd boot mode register in the WDT2 sta=
-tus
->> register WDT30.bit[1]."
-> Is there reason to not do this automatically when loading the module
-> in alt-boot mode ? What means does userspace have to determine if CS0
-> or CS1 is active at any given time ? If there is reason to ever have CS=
-1
-> active instead of CS0, what means would userspace have to enable it ?
-
-Yes, there is. The driver is loaded long before the filesystems are mount=
-ed. The filesystems, in the event of alternate/recovery boot, need to be =
-mounted from the same chip that the kernel was booted. For one reason bec=
-ause the main chip at CS0 is most probably corrupt. If you clear that bit=
- when driver is loaded, your software will not know that and will try to =
-mount the wrong filesystems. The whole idea of ASPEED's switching chipsel=
-ects is to have identical firmware in both chips, without the need to pro=
-cess the alternate boot state in any way except for indicating a successf=
-ul boot and restoring access to CS0 when needed.
-
-The userspace can read bootstatus sysfs node to determine if an alternate=
- boot has occured.
-
-With ASPEED, CS1 is activated automatically by wdt2 when system fails to =
-boot from the primary flash chip (at CS0) and disable the watchdog to ind=
-icate a successful boot. When that happens, both CS0 and CS1 controls=C2=A0=
- get routed in hardware to CS1 line, making the primary flash chip inacce=
-ssible. Depending on the architecture of the user-space software, it may =
-choose to re-enable access to the primary chip via CS0 at different times=
-=2E There must be a way to do so.
-
-> If userspace can not really determine if CS1 or CS0 is active, all it c=
-ould
-> ever do was to enable CS0 to be in a deterministic state. If so, it doe=
-sn't
-> make sense to ever have CS1 active, and re-enabling CS0 could be automa=
-tic.
+On Tue, Aug 20, 2019 at 2:39 PM Nick Desaulniers
+<ndesaulniers@google.com> wrote:
 >
-> Similar, if CS1 can ever be enabled, there is no means for userspace to=
- ensure
-> that some other application did not re-enable CS0 while it believes tha=
-t CS1
-> is enabled. If there is no means for userspace to enable CS1, it can ne=
-ver be
-> sure what is enabled (because some other entity may have enabled CS0 wh=
-ile
-> userspace just thought that CS1 is still enabled). Again, the only mean=
-s
-> to guarantee a well defined state would be to explicitly enable CS0 and=
- provive
-> no means to enable CS1. Again, this could be done during boot, not requ=
-iring
-> an explicit request from userspace.
-
-Please understand that activation of CS1 in place of CS0 is NOT a softwar=
-e choice!
-
-
->> +	if (unlikely(!wdt))
->> +		return -ENODEV;
->> +
-> How would this ever happen, and how / where is drvdata set to NULL ?
-
-This is purely for robustness. Seeing a pointer obtained via a function a=
-ccessed without first checking it for validity makes me nervous.
-
-This code most probably adds nothing at the assembly level.
-
+> On Tue, Aug 20, 2019 at 12:44 PM Nathan Huckleberry <nhuck@google.com> wrote:
+> >
+> > The stackframe setup when compiled with clang is different.
+> > Since the stack unwinder expects the gcc stackframe setup it
+> > fails to print backtraces. This patch adds support for the
+> > clang stackframe setup.
+> >
+> > Link: https://github.com/ClangBuiltLinux/linux/issues/35
+> > Cc: clang-built-linux@googlegroups.com
+> > Suggested-by: Tri Vo <trong@google.com>
+> > Signed-off-by: Nathan Huckleberry <nhuck@google.com>
+> > ---
+> > Changes from RFC
+> > * Push extra register to satisfy 8 byte alignment requirement
+> > * Add clarifying comments
+> > * Separate code into its own file
 >
->> +	writel(WDT_CLEAR_TIMEOUT_AND_BOOT_CODE_SELECTION,
->> +			wdt->base + WDT_CLEAR_TIMEOUT_STATUS);
->> +	wdt->wdd.bootstatus |=3D WDIOF_EXTERN1;
-> The variable reflects the _boot status_. It should not change after boo=
-ting.
-Is there any documentation that dictates that? All I could find is
-
-"bootstatus: status of the device after booting". That doesn't look to me=
- like it absolutely can not change to reflect the updated status (that is=
-, to reflect that the originally set up alternate CS routing has been res=
-et to normal).
-
-If you absolutely disallow that, I think we could make 'access_cs0' reada=
-ble instead, so it could report the current state of the boot code select=
-ion bit. Reverted, I suppose. That way 'access_cs0' would report 1 after =
-1 has been written to it (it wouldn't be possible to write a zero).
-
-> @@ -223,6 +248,9 @@ static int aspeed_wdt_probe(struct platform_device =
-*pdev)
-> =20
->  	wdt->ctrl =3D WDT_CTRL_1MHZ_CLK;
-> =20
-> +	if (of_property_read_bool(np, "aspeed,alt-boot"))
-> +		wdt->wdd.groups =3D bswitch_groups;
-> +
-> Why does this have to be separate to the existing evaluation of
-> aspeed,alt-boot, and why does the existing code not work ?
+> Thanks for the patch! The added comments and moving the implementation
+> to its own file make it easier to review.
 >
-> Also, is it guaranteed that this does not interfer with existing
-> support for alt-boot ?
-
-I think Ivan will comment on this.
-
-With best regards,
-Alexander Amelkin,
-BIOS/BMC Team Lead, YADRO
-https://yadro.com
-
-
-
---SnUXFFWAI4JAXfpsQj9YgvBg6Fs71xEPL--
-
---Zcz065VrMDkDOXBxE02mg9C55JMy5xq8G
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v2
-
-iQIcBAEBCAAGBQJdXYKAAAoJEOiTWHtbdBeNwLsP/0FvGr6UXRAiPRCYZ3wthrpT
-PH3OT/GLRq1M/EFC13osP39HpoI2Vbk5jOeGBm1iw49bYTokTI14jgHrKJmXAlGB
-A9XAw/KSnctu4JnLRkmx1xrPpjNjRTtzf1Ta5YZ6mzsnou0Qogcb2u9J1NnRqWsF
-qWEo7GkIi4JHLRdgAVu4cm5RGaznUTyo2NiDqQQ/HAjnUx0CYhIGiR6Gv5QPYI+S
-vGAnCLCu7XQQP1RUzO7CF+5nwQg0OL2SSKqTlkPTw2L5ZUhPAS73jX8xu+jPIRb8
-ZCj8ccx0ErRsg/fodWBwVm3nVcCTHZ4Mo/JnmWIGZBotw8/+nA9jTMhOfoiUjbPP
-tDEGQ+U1a+gQw4iTJl8d/OejCCXWXhlaolRd4vnhyVSNhVtKabJcLMROoI9/q530
-W7md3BueFfdBcE0J3fWxbs5slfgoS0Jp36tG8hFphzjlXN82mAhjv9CSLVx5vONi
-j7lJnHnpX1Z/XB4Dsd64UqoxHAOlGstfE3FkizZPGwq/WxDzYyJ6GBIfnmwqawX4
-5SWuHwtID4SqSzMMBm66ypoy3t002sgX0EMIEvM8g2D9I7BKvufGjPtxCBr74+ux
-ZlFdecol9jQodn56fSiTUCg00SIEo/UQ5MALUxKWXtqtBRMRRITwI8D4mNAS1sNB
-TqGRTLoE/uBRq+aOGmla
-=yA26
------END PGP SIGNATURE-----
-
---Zcz065VrMDkDOXBxE02mg9C55JMy5xq8G--
-
-
---===============4961521215813657861==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> >
+> >  arch/arm/Kconfig.debug         |   4 +-
+> >  arch/arm/Makefile              |   5 +-
+> >  arch/arm/lib/Makefile          |   8 +-
+> >  arch/arm/lib/backtrace-clang.S | 224 +++++++++++++++++++++++++++++++++
+> >  4 files changed, 237 insertions(+), 4 deletions(-)
+> >  create mode 100644 arch/arm/lib/backtrace-clang.S
+> >
+> > diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
+> > index 85710e078afb..92fca7463e21 100644
+> > --- a/arch/arm/Kconfig.debug
+> > +++ b/arch/arm/Kconfig.debug
+> > @@ -56,7 +56,7 @@ choice
+> >
+> >  config UNWINDER_FRAME_POINTER
+> >         bool "Frame pointer unwinder"
+> > -       depends on !THUMB2_KERNEL && !CC_IS_CLANG
+> > +       depends on !THUMB2_KERNEL
+> >         select ARCH_WANT_FRAME_POINTERS
+> >         select FRAME_POINTER
+> >         help
+> > @@ -1872,7 +1872,7 @@ config DEBUG_UNCOMPRESS
+> >           When this option is set, the selected DEBUG_LL output method
+> >           will be re-used for normal decompressor output on multiplatform
+> >           kernels.
+> > -
+> > +
+>
+> Probably can drop the added newline?
+>
+> >
+> >  config UNCOMPRESS_INCLUDE
+> >         string
+> > diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+> > index c3624ca6c0bc..729e223b83fe 100644
+> > --- a/arch/arm/Makefile
+> > +++ b/arch/arm/Makefile
+> > @@ -36,7 +36,10 @@ KBUILD_CFLAGS        += $(call cc-option,-mno-unaligned-access)
+> >  endif
+> >
+> >  ifeq ($(CONFIG_FRAME_POINTER),y)
+> > -KBUILD_CFLAGS  +=-fno-omit-frame-pointer -mapcs -mno-sched-prolog
+> > +KBUILD_CFLAGS  +=-fno-omit-frame-pointer
+> > +  ifeq ($(CONFIG_CC_IS_GCC),y)
+> > +  KBUILD_CFLAGS += -mapcs -mno-sched-prolog
+> > +  endif
+>
+> While I can appreciate the indentation, it's unusual to indent
+> additional depths of kernel Makefiles.  At least the rest of this file
+> does not do so.  Of course, the other Makefile you touch below does
+> two spaces.  At least try to keep the file internally consistent, even
+> if the kernel itself is inconsistent.
+>
+> >  endif
+> >
+> >  ifeq ($(CONFIG_CPU_BIG_ENDIAN),y)
+> > diff --git a/arch/arm/lib/Makefile b/arch/arm/lib/Makefile
+> > index b25c54585048..e10a769c72ec 100644
+> > --- a/arch/arm/lib/Makefile
+> > +++ b/arch/arm/lib/Makefile
+> > @@ -5,7 +5,7 @@
+> >  # Copyright (C) 1995-2000 Russell King
+> >  #
+> >
+> > -lib-y          := backtrace.o changebit.o csumipv6.o csumpartial.o   \
+> > +lib-y          := changebit.o csumipv6.o csumpartial.o               \
+> >                    csumpartialcopy.o csumpartialcopyuser.o clearbit.o \
+> >                    delay.o delay-loop.o findbit.o memchr.o memcpy.o   \
+> >                    memmove.o memset.o setbit.o                        \
+> > @@ -19,6 +19,12 @@ lib-y                := backtrace.o changebit.o csumipv6.o csumpartial.o   \
+> >  mmu-y          := clear_user.o copy_page.o getuser.o putuser.o       \
+> >                    copy_from_user.o copy_to_user.o
+> >
+> > +ifdef CONFIG_CC_IS_CLANG
+> > +  lib-y += backtrace-clang.o
+> > +else
+> > +  lib-y += backtrace.o
+> > +endif
+>
+> The indentation should match the above (from this file).  Looks like 1
+> tab after lib-y.  See L34(CONFIG_CPU_32v3) for what I would have
+> expected.
+>
+> > +
+> >  # using lib_ here won't override already available weak symbols
+> >  obj-$(CONFIG_UACCESS_WITH_MEMCPY) += uaccess_with_memcpy.o
+> >
+> > diff --git a/arch/arm/lib/backtrace-clang.S b/arch/arm/lib/backtrace-clang.S
+> > new file mode 100644
+> > index 000000000000..2b02014dbdd1
+> > --- /dev/null
+> > +++ b/arch/arm/lib/backtrace-clang.S
+> > @@ -0,0 +1,224 @@
+> > +/* SPDX-License-Identifier: GPL-2.0-only */
+> > +/*
+> > + *  linux/arch/arm/lib/backtrace-clang.S
+> > + *
+> > + *  Copyright (C) 2019 Nathan Huckleberry
+> > + *
+> > + */
+> > +#include <linux/kern_levels.h>
+> > +#include <linux/linkage.h>
+> > +#include <asm/assembler.h>
+> > +               .text
+> > +
+> > +/* fp is 0 or stack frame */
+>
+> ah, I see that the reference implementation uses an assembly comment
+> here. Ok (sorry for the noise).
+>
+> > +
+> > +#define frame  r4
+> > +#define sv_fp  r5
+> > +#define sv_pc  r6
+> > +#define mask   r7
+> > +#define sv_lr   r8
+> > +
+> > +ENTRY(c_backtrace)
+> > +
+> > +#if !defined(CONFIG_FRAME_POINTER) || !defined(CONFIG_PRINTK)
+> > +               ret     lr
+> > +ENDPROC(c_backtrace)
+> > +#else
+> > +
+> > +
+> > +/*
+> > + * Clang does not store pc or sp in function prologues
+> > + *             so we don't know exactly where the function
+> > + *             starts.
+> > + * We can treat the current frame's lr as the saved pc and the
+> > + *             preceding frame's lr as the lr, but we can't
+>
+> preceding frame's lr as the current frame's lr, ...
+>
+> > + *             trace the most recent call.
+> > + * Inserting a false stack frame allows us to reference the
+> > + *             function called last in the stacktrace.
+> > + * If the call instruction was a bl we can look at the callers
+> > + *             branch instruction to calculate the saved pc.
+> > + * We can recover the pc in most cases, but in cases such as
+> > + *             calling function pointers we cannot. In this
+> > + *             case, default to using the lr. This will be
+> > + *             some address in the function, but will not
+> > + *             be the function start.
+> > + * Unfortunately due to the stack frame layout we can't dump
+> > + *              r0 - r3, but these are less frequently saved.
+>
+> The use of tabs vs spaces in these comments is inconsistent.  Not that
+> I can see whitespace, but:
+> https://github.com/nickdesaulniers/dotfiles/blob/37359525f5a403b4ed2d3f9d1bbbee2da8ec8115/.vimrc#L35-L41
+> Also, I don't think you need to tab indent every line after the first.
+> Where did that format come from?
+>
+> > + *
+> > + * Stack frame layout:
+> > + *             <larger addresses>
+> > + *             saved lr
+> > + *    frame => saved fp
+> > + *             optionally saved caller registers (r4 - r10)
+> > + *             optionally saved arguments (r0 - r3)
+> > + *             <top of stack frame>
+> > + *             <smaller addresses>
+> > + *
+> > + * Functions start with the following code sequence:
+> > + * corrected pc =>  stmfd sp!, {..., fp, lr}
+> > + *                 add fp, sp, #x
+> > + *                 stmfd sp!, {r0 - r3} (optional)
+> > + *
+> > + *
+> > + *
+> > + *
+> > + *
+> > + *
+> > + * The diagram below shows an example stack setup
+> > + *     for dump_stack.
+> > + *
+> > + * The frame for c_backtrace has pointers to the
+> > + *     code of dump_stack. This is why the frame of
+> > + *     c_backtrace is used to for the pc calculation
+> > + *     of dump_stack. This is why we must move back
+> > + *     a frame to print dump_stack.
+> > + *
+> > + * The stored locals for dump_stack are in dump_stack's
+> > + *     frame. This means that to fully print dump_stack's frame
+> > + *     we need the both the frame for dump_stack (for locals) and the
+>
+> we need both the ...
+> (There's an extra `the` in the sentence).
+>
+> > + *     frame that was called by dump_stack (for pc).
+> > + *
+> > + * To print locals we must know where the function start is. If
+> > + *     we read the function prologue opcodes we can determine
+> > + *     which variables are stored in the stack frame.
+> > + *
+> > + * To find the function start of dump_stack we can look at the
+> > + *     stored LR of show_stack. It points at the instruction
+> > + *     directly after the bl dump_stack. We can then read the
+> > + *     offset from the bl opcode to determine where the branch takes us.
+> > + *     The address calculated must be the start of dump_stack.
+> > + *
+> > + * c_backtrace frame           dump_stack:
+> > + * {[LR]    }  ============|   ...
+> > + * {[FP]    }  =======|    |   bl c_backtrace
+> > + *                    |    |=> ...
+> > + * {[R4-R10]}         |
+> > + * {[R0-R3] }         |        show_stack:
+> > + * dump_stack frame   |        ...
+> > + * {[LR]    } =============|   bl dump_stack
+> > + * {[FP]    } <=======|    |=> ...
+> > + * {[R4-R10]}
+> > + * {[R0-R3] }
+> > + */
+> > +
+> > +stmfd   sp!, {r4 - r9, fp, lr} @ Save an extra register
+> > +                               @ to ensure 8 byte alignment
+> > +movs   frame, r0               @ if frame pointer is zero
+> > +beq    no_frame                @ we have no stack frames
+> > +
+> > +tst    r1, #0x10               @ 26 or 32-bit mode?
+> > +moveq  mask, #0xfc000003
+>
+> Should we be using different masks for ARM vs THUMB as per the
+> reference implementation?
+The change that introduces the arm/thumb code looked like a script
+that was run over all arm in the kernel. Neither this code nor the
+reference solution is compatible with arm, so there's no need for the
+change.
+>
+> > +movne  mask, #0                @ mask for 32-bit
+> > +
+> > +/*
+> > + * Switches the current frame to be the frame for dump_stack.
+> > + */
+> > +               add     frame, sp, #24          @ switch to false frame
+> > +for_each_frame:        tst     frame, mask             @ Check for address exceptions
+> > +               bne     no_frame
+> > +
+> > +/*
+> > + * sv_fp is the stack frame with the locals for the current considered
+> > + *     function.
+> > + * sv_pc is the saved lr frame the frame above. This is a pointer to a
+> > + *     code address within the current considered function, but
+> > + *     it is not the function start. This value gets updated to be
+> > + *     the function start later if it is possible.
+> > + */
+> > +1001:          ldr     sv_pc, [frame, #4]      @ get saved 'pc'
+> > +1002:          ldr     sv_fp, [frame, #0]      @ get saved fp
+>
+> The reference implementation applies the mask to sv_pc and sv_fp.  I
+> assume we want to, too?
+The mask is already applied to both. See for_each_frame:
+>
+> > +
+> > +               teq     sv_fp, #0               @ make sure next frame exists
+> > +               beq     no_frame
+> > +
+> > +/*
+> > + * sv_lr is the lr from the function that called the current function. This
+> > + *     is a pointer to a code address in the current function's caller.
+> > + *     sv_lr-4 is the instruction used to call the current function.
+> > + * This sv_lr can be used to calculate the function start if the function
+> > + *     was called using a bl instruction. If the function start
+> > + *     can be recovered sv_pc is overwritten with the function start.
+> > + * If the current function was called using a function pointer we cannot
+> > + *     recover the function start and instead continue with sv_pc as
+> > + *     an arbitrary value within the current function. If this is the case
+> > + *     we cannot print registers for the current function, but the stacktrace
+> > + *     is still printed properly.
+> > + */
+> > +1003:          ldr     sv_lr, [sv_fp, #4]      @ get saved lr from next frame
+> > +
+> > +               ldr     r0, [sv_lr, #-4]        @ get call instruction
+> > +               ldr     r3, .Ldsi+8
+>
+> I wonder what `dsi` stands for, it could use a better name.  Maybe put
+> that mask in a more descriptively named section and use that instead
+> of `.Ldsi+8`?
+>
+> > +               and     r2, r3, r0              @ is this a bl call
+> > +               teq     r2, r3
+> > +               bne     finished_setup          @ give up if it's not
+> > +               and     r0, #0xffffff           @ get call offset 24-bit int
+> > +               lsl     r0, r0, #8              @ sign extend offset
+> > +               asr     r0, r0, #8
+>
+> It's too bad this should work for older ARM versions, v6 added
+> dedicated instructions for this:
+> http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0489c/Cihfifdd.html
+>
+> > +               ldr     sv_pc, [sv_fp, #4]      @ get lr address
+> > +               add     sv_pc, sv_pc, #-4       @ get call instruction address
+> > +               add     sv_pc, sv_pc, #8        @ take care of prefetch
+> > +               add     sv_pc, sv_pc, r0, lsl #2 @ find function start
+> > +
+> > +finished_setup:
+> > +
+> > +               bic     sv_pc, sv_pc, mask      @ mask PC/LR for the mode
+> > +
+> > +/*
+> > + * Print the function (sv_pc) and where it was called
+> > + *     from (sv_lr).
+> > + */
+> > +1004:          mov     r0, sv_pc
+> > +
+> > +               mov     r1, sv_lr
+> > +               mov     r2, frame
+> > +               bic     r1, r1, mask            @ mask PC/LR for the mode
+> > +               bl      dump_backtrace_entry
+> > +
+> > +/*
+> > + * Test if the function start is a stmfd instruction
+> > + *     to determine which registers were stored in the function
+> > + *     prologue.
+> > + * If we could not recover the sv_pc because we were called through
+> > + *     a function pointer the comparison will fail and no registers
+> > + *     will print.
+> > + */
+> > +1005:          ldr     r1, [sv_pc, #0]         @ if stmfd sp!, {..., fp, lr}
+> > +               ldr     r3, .Ldsi               @ instruction exists,
+> > +               teq     r3, r1, lsr #11
+> > +               ldr     r0, [frame]             @ locals are stored in
+> > +                                               @ the preceding frame
+> > +               subeq   r0, r0, #4
+> > +               bleq    dump_backtrace_stm      @ dump saved registers
+>
+> Do we need to do anything to test .Ldsi+4? Otherwise looks like we
+> define it but don't use it?
+>
+> > +
+> > +/*
+> > + * If we are out of frames or if the next frame
+> > + *     is invalid.
+> > + */
+> > +               teq     sv_fp, #0               @ zero saved fp means
+> > +               beq     no_frame                @ no further frames
+> > +
+> > +               cmp     sv_fp, frame            @ next frame must be
+> > +               mov     frame, sv_fp            @ above the current frame
+> > +               bhi     for_each_frame
+> > +
+> > +1006:          adr     r0, .Lbad
+> > +               mov     r1, frame
+> > +               bl      printk
+> > +no_frame:      ldmfd   sp!, {r4 - r9, fp, pc}
+> > +ENDPROC(c_backtrace)
+> > +               .pushsection __ex_table,"a"
+> > +               .align  3
+> > +               .long   1001b, 1006b
+> > +               .long   1002b, 1006b
+> > +               .long   1003b, 1006b
+> > +               .long   1004b, 1006b
+> > +               .long   1005b, 1006b
+> > +               .popsection
+> > +
+> > +.Lbad:         .asciz  "Backtrace aborted due to bad frame pointer <%p>\n"
+> > +               .align
+> > +.Ldsi:         .word   0xe92d4800 >> 11        @ stmfd sp!, {... fp, lr}
+> > +               .word   0xe92d0000 >> 11        @ stmfd sp!, {}
+> > +               .word   0x0b000000              @ bl if these bits are set
+> > +
+> > +#endif
+> > --
+> > 2.23.0.rc1.153.gdeed80330f-goog
+> >
+>
+>
+> --
+> Thanks,
+> ~Nick Desaulniers
+Thanks for the review, will send a v2 with your suggestions.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4961521215813657861==--
-
