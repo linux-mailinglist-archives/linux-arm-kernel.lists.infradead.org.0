@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C5389864E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 23:11:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28CBA98654
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 23:13:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p9c9rSuRoMdG+swc3OQabHMGvpJ0/0FkGu+0g0U1J5s=; b=b2i3f42vZk39FY
-	IVtXc54uFU/ifbVg7xPb2A6LATMJGRjJamo23XJGU58+GR0ih/N0Qr3viE51CQqMPLIExtBJzHrNR
-	6KwOfVVSpW7sRkj/qg1n6mIa07xrgzHmWpdLeGAHFYm1e95TLrfyb5y8tT+wuXt8nU0nAyuMNAQP8
-	LQamLyTG8aBQnHbU8xJxD97MjAos8m1suPTp2o4zDVYLhe7TmhCvQSpRo8bZzxX5gckAd1RsU9z26
-	S+mp+C1dzvzOSUJICHA2wBbdGaUW+gbTwV2GU64dYmP8N0T2fyMbBE9ji/8oQBQ8Qw6SSgF8aPS5z
-	NvMOywEmXmmfFWdWpunQ==;
+	List-Owner; bh=rwIPYmLQanEfgaJe0KxG/OirTk12v9Vjw4xMfWmY+IM=; b=PxNNXNjx2NpSM3
+	VnuacD2eCOwjXY8gB+dB5DgK0mlsjkm/SOvwROSI0o5PYK0nIn7gF1rS7+tGD/HIj6f+Vl51N1+oS
+	iXCLzCMP3IhFzbUJ1WDZrQ/G5/OLMi/COnTvfkQU5k+pC8/I6bfBq2/vGIF1SSOiNVRUnoDEdSR08
+	Z+S3OlwZKgjQ7lymnTZiRseSjUzoIDT49khm5xEkS41CxW5duT8FTmH6nf3ictVXXFX4toVymfi1s
+	PzshN/gqCMxTfPpb0nSkdoxeeSw/QkU78j9WrRdTg/Lw+5lEgH3RLyKmNahnv31RsN+NK61EU3bqQ
+	Me44qI0T4ZobkZpefZZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Xsv-0005F2-RX; Wed, 21 Aug 2019 21:11:13 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1i0XvC-0006C1-T2; Wed, 21 Aug 2019 21:13:34 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Xsn-0005Ef-Dt
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 21:11:06 +0000
-Received: by mail-oi1-f194.google.com with SMTP id o6so2717376oic.9
+ id 1i0Xv2-0006BU-Fb
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 21:13:26 +0000
+Received: by mail-ot1-f68.google.com with SMTP id b1so3447739otp.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 14:11:05 -0700 (PDT)
+ Wed, 21 Aug 2019 14:13:24 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=WRsSuAZz6QfRjgNZ8P6+tSp6lptZDI8kWZHn7cMGurw=;
- b=PzKKQm38+M7ODNDZTzBl0FbpVywaF6+yVWf6czqBnVrDMjxPPiED5ivqOhsVAkjkMJ
- dhMCFrEzZi7NTQ7XzwenAzbJ+HarAA2NspTVuGKgdV4wEzmu1XOqj+iWtT/0C0bypCD8
- 1i1YxYiqNPAV9a9d9Q+LWz6cQp3JhMOIFkSmFPyitP6KpgfRLwqizDA/rju7C9UW7x+3
- VBmja9aaZxahtbdSv51VBy/h4hhv7NsFXZGYFF4zmGN1cxs99U3ezSeeStWdHaOWkaq6
- 1FgwETsZQMIB8CmhJUS1Zhx55SB18wTLmHgxIJmm47yH175qYHKabZpnhV82DPA8Rb8N
- 4K6A==
-X-Gm-Message-State: APjAAAUsTNN8RdZbJ1E3JUmAtw/nC439aeYSTNq7wvqu4W4iiHS33yUq
- 4iguj4uYcA7kVWEoINS+HA==
-X-Google-Smtp-Source: APXvYqxSDZHs4c1PVvP+wjeXiVw6s6Xa1KEl627aBD7it4c2vHLG2m+iz6Z0UmTJ9EmpncnD8q2VwA==
-X-Received: by 2002:aca:4950:: with SMTP id w77mr1468364oia.28.1566421864593; 
- Wed, 21 Aug 2019 14:11:04 -0700 (PDT)
+ bh=DlphJMx4PV9qLWiQ86VK3TgLQxXCfQ+knFHYAIuA5Ik=;
+ b=hZa9/RRfKqNkg5mndjWwMi5JPamXzcuk3tyyBKksfBNH33+8OOgqsderTfgGXPIvec
+ IfGcDKFy2FbW1awDWa8YnA+T2SQ6upU0X1HWW9Y+PtjLb9GeEUUTj6B2c7LfnsI6gNB3
+ EUMcYFl4i4BR9eh4P9Zk6TsIdf/30u/qDvF0OErfBBCnnx261MAR/qqQz6uKBPMIY4nm
+ FdPucd0A18ZRZynrHgFEKNAYFrf1GKOkHupcAv67OyYws27v8btMYx2gvx4Ho4CIdFWJ
+ BQ6bRdH+ms9Br4AC7N42o2O2dmgPLW21R3GbbBbdL8Gr+LBD3HirOaUZQTNYmXdH6Me2
+ h0bA==
+X-Gm-Message-State: APjAAAUMC4GPw8uiz01987VoURKpT65vuZxXtfGGqUL0I/dVqpSq3iTm
+ oJs8Gii7DvtV0W7pqqHGTRA0HoM=
+X-Google-Smtp-Source: APXvYqxe6j0dbYUWNdi9Juyx9Aja0v51eVfa9yGrlfykgD7zu1GxDpXPwvZ2wbOONxfzCfKKid12kA==
+X-Received: by 2002:a05:6830:1018:: with SMTP id
+ a24mr1654419otp.191.1566422003778; 
+ Wed, 21 Aug 2019 14:13:23 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id v5sm8184684otk.64.2019.08.21.14.11.03
+ by smtp.gmail.com with ESMTPSA id t10sm8052271otb.13.2019.08.21.14.13.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Aug 2019 14:11:04 -0700 (PDT)
-Date: Wed, 21 Aug 2019 16:11:03 -0500
+ Wed, 21 Aug 2019 14:13:23 -0700 (PDT)
+Date: Wed, 21 Aug 2019 16:13:22 -0500
 From: Rob Herring <robh@kernel.org>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Subject: Re: [PATCH 03/19] dt-bindings: mrvl,intc: Add a MMP3 interrupt
- controller
-Message-ID: <20190821211103.GA32263@bogus>
+Subject: Re: [PATCH 04/19] dt-bindings: phy-mmp3-usb: Add bindings
+Message-ID: <20190821211322.GA12457@bogus>
 References: <20190809093158.7969-1-lkundrak@v3.sk>
- <20190809093158.7969-4-lkundrak@v3.sk>
+ <20190809093158.7969-5-lkundrak@v3.sk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190809093158.7969-4-lkundrak@v3.sk>
+In-Reply-To: <20190809093158.7969-5-lkundrak@v3.sk>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_141105_471686_358B8CD1 
-X-CRM114-Status: GOOD (  20.98  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190821_141324_875454_0F0C09E1 
+X-CRM114-Status: GOOD (  16.59  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -77,6 +77,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -102,72 +105,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 11:31:42AM +0200, Lubomir Rintel wrote:
-> Similar to MMP2 one, but has an extra range for the other core. The
-> muxes stay the same.
+On Fri, Aug 09, 2019 at 11:31:43AM +0200, Lubomir Rintel wrote:
+> This is the PHY chip for USB OTG on MMP3 platform.
 > 
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 > ---
->  .../interrupt-controller/mrvl,intc.txt        | 23 ++++++++++++++-----
->  1 file changed, 17 insertions(+), 6 deletions(-)
+>  .../devicetree/bindings/phy/phy-mmp3-usb.txt     | 16 ++++++++++++++++
+>  1 file changed, 16 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/phy-mmp3-usb.txt
 > 
-> diff --git a/Documentation/devicetree/bindings/interrupt-controller/mrvl,intc.txt b/Documentation/devicetree/bindings/interrupt-controller/mrvl,intc.txt
-> index 608fee15a4cfc..41c131d026f94 100644
-> --- a/Documentation/devicetree/bindings/interrupt-controller/mrvl,intc.txt
-> +++ b/Documentation/devicetree/bindings/interrupt-controller/mrvl,intc.txt
-> @@ -1,13 +1,15 @@
->  * Marvell MMP Interrupt controller
->  
->  Required properties:
-> -- compatible : Should be "mrvl,mmp-intc", "mrvl,mmp2-intc" or
-> -  "mrvl,mmp2-mux-intc"
-> +- compatible : Should be "mrvl,mmp-intc", "mrvl,mmp2-intc",
-> +  "marvell,mmp3-intc", "mrvl,mmp2-mux-intc"
+> diff --git a/Documentation/devicetree/bindings/phy/phy-mmp3-usb.txt b/Documentation/devicetree/bindings/phy/phy-mmp3-usb.txt
+> new file mode 100644
+> index 0000000000000..b9623b98151bc
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/phy-mmp3-usb.txt
+> @@ -0,0 +1,16 @@
+> +Marvell MMP3 USB PHY
+> +--------------------
+> +
+> +Required properties:
+> +- compatible: must be "marvell,mmp3-usb-phy"
+> +- #phy-cells: must be 0
+> +
+> +Example:
+> +	usb-phy: usbphy@d4207000 {
 
-Reformat to 1 valid combination per line.
+usb-phy@...
 
->  - reg : Address and length of the register set of the interrupt controller.
->    If the interrupt controller is intc, address and length means the range
-> -  of the whole interrupt controller. If the interrupt controller is mux-intc,
-> -  address and length means one register. Since address of mux-intc is in the
-> -  range of intc. mux-intc is secondary interrupt controller.
-> +  of the whole interrupt controller. The "marvell,mmp3-intc" controller
-> +  also has a secondary range for the second CPU core.  If the interrupt
-> +  controller is mux-intc, address and length means one register. Since
-> +  address of mux-intc is in the range of intc. mux-intc is secondary
-> +  interrupt controller.
->  - reg-names : Name of the register set of the interrupt controller. It's
->    only required in mux-intc interrupt controller.
->  - interrupts : Should be the port interrupt shared by mux interrupts. It's
-> @@ -20,7 +22,7 @@ Required properties:
->  - mrvl,clr-mfp-irq : Specifies the interrupt that needs to clear MFP edge
->    detection first.
->  
-> -Example:
-> +Examples:
->  	intc: interrupt-controller@d4282000 {
->  		compatible = "mrvl,mmp2-intc";
->  		interrupt-controller;
-> @@ -29,6 +31,15 @@ Example:
->  		mrvl,intc-nr-irqs = <64>;
->  	};
->  
-> +	intc: interrupt-controller@d4282000 {
-
-What's special about this to warrant another example. Examples aren't 
-supposed to be an enumeration of all possible dts entries.
-
-> +		compatible = "marvell,mmp3-intc";
-> +		interrupt-controller;
-> +		#interrupt-cells = <1>;
-> +		reg = <0xd4282000 0x1000>,
-> +		      <0xd4284000 0x100>;
-> +		mrvl,intc-nr-irqs = <64>;
+> +		compatible = "marvell,mmp3-usb-phy";
+> +		reg = <0xd4207000 0x40>;
+> +		#phy-cells = <0>;
 > +	};
 > +
->  	intcmux4@d4282150 {
->  		compatible = "mrvl,mmp2-mux-intc";
->  		interrupts = <4>;
+> +This document explains the device tree binding. For general information
+> +about PHY subsystem refer to Documentation/phy.txt
+
+Drop this statement.
+
+
 > -- 
 > 2.21.0
 > 
