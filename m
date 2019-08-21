@@ -2,62 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 320729819A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 19:42:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B45989819B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 19:42:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rDI7k6rr7hp9DWPLMzMeXV50ehMo7ptmPNOw5MU8+4o=; b=rkjGtG9NXRK+zt
-	O/tgBD7oqs42taK2YaEhmuDY2RHNIZtDC6nzSTLEyBhhUou9qER8pbTz6iJ4qsMcAzrhjvmcnoRbE
-	oWdvCiWJ37Yhh8JDsMpFgcRl51k6ecgBmtkiFLCmtd8sbdq8UffOnTVF11Ho7yQjVrbTEts1E61wN
-	eoUv5iWtwxSeuhYncpSnPWT2tB5DxtwjYVOhtKWYwqz50kxWybGo77jf+f/COLKWDV3FnmMOAuotX
-	sm0wMVJzKJkEuitArcuLMSLtcZzdkkRh613oZKtb+/6+q5onqlOgDZ+3am29RjYBL0n+R2dSX2/2t
-	DxytzxNDAuKiXCWafP8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=J7lAq94x4/q9rfMlljoxgVgnHgnC9QjyaNYdmjw5p4k=; b=UvzCdrySHpHQFki4+VqeczhXe
+	m5Fowi7q59CQzvZuCCXJSQHKiVJZd/Lxs7Y8OFd2AhpTMq2k4h6gWC+cRl9gNEoUb57HLudICtO8R
+	K6965Vg3paN6+O3Y4fq+Wnr50SKMM+doiSzdm7I90OB6ydxpaan1UQMCVoBvzLVWfAygwgFiBxXcg
+	4T+VJL20yI5pjwqprWGwgblUy02iZexhq1ZwOLANzIQZmxtDDn0PJcLVG2k6oxOZDp6s7M2N6O9hm
+	okqA4FY3+Dp1k+v0HWFHa/3g3E1X2xMFo0r37ThKAbvC1AUxjRcFNv0Y3q3vxoQERFeTGgYrT1xHA
+	hBMW6Is+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Ucr-0005fS-Lt; Wed, 21 Aug 2019 17:42:25 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1i0UdJ-0005ye-7E; Wed, 21 Aug 2019 17:42:53 +0000
+Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Ucg-0005eg-Ja
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 17:42:16 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 65FA6FB03;
- Wed, 21 Aug 2019 19:42:10 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id h-xhcMPhWSrc; Wed, 21 Aug 2019 19:42:08 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id 50A8642A70; Wed, 21 Aug 2019 19:42:08 +0200 (CEST)
-Date: Wed, 21 Aug 2019 19:42:08 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH v2 1/3] arm64: imx8mq: add imx8mq iomux-gpr field defines
-Message-ID: <20190821174208.GA9486@bogon.m.sigxcpu.org>
-References: <cover.1565367567.git.agx@sigxcpu.org>
- <e0562d8bb4098dc4cdb4023b41fb75b312be22a5.1565367567.git.agx@sigxcpu.org>
- <CAK8P3a3Vrd+sttJrQwD-jA9p_egG4x-hc41eGK8H-_aVm-uoYw@mail.gmail.com>
- <20190813101057.GB10751@bogon.m.sigxcpu.org>
- <CAK8P3a1q9G8VKgNKh+6khzoW3bFTVR_Zorygy=Qqsq-PYzM4=g@mail.gmail.com>
+ id 1i0Ucy-0005tK-L2
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 17:42:34 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mta-01.yadro.com (Postfix) with ESMTP id AFE4542ED1;
+ Wed, 21 Aug 2019 17:42:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
+ content-type:content-type:in-reply-to:mime-version:user-agent
+ :date:date:message-id:organization:from:from:references:subject
+ :subject:received:received:received; s=mta-01; t=1566409346; x=
+ 1568223747; bh=xIeCTG9Uz22zsCzXQQcRPKCuWiLSlzzny3Ofg3KMqrM=; b=C
+ ygUZYzxeNDDZsAd1Y8pjbWQRuQYz7lWpGDfdk66k25LEeLA9Z6B59XCjoyCbypzj
+ 0Dl+3fdP7w9iUNu+K5GUe/HrWfQY6spO1RBB7C8Ub2lL1bBtJgO73I2V3GNUAkTE
+ nfRXgPfhuAMOv5bj/z7bIed7+oeYPxafC3Lj6Y3GFk=
+X-Virus-Scanned: amavisd-new at yadro.com
+Received: from mta-01.yadro.com ([127.0.0.1])
+ by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id a46nstZX5FLF; Wed, 21 Aug 2019 20:42:26 +0300 (MSK)
+Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
+ [172.17.10.102])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mta-01.yadro.com (Postfix) with ESMTPS id AFA2D404CB;
+ Wed, 21 Aug 2019 20:42:25 +0300 (MSK)
+Received: from [172.17.14.197] (172.17.14.197) by T-EXCH-02.corp.yadro.com
+ (172.17.10.102) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id 15.1.669.32; Wed, 21
+ Aug 2019 20:42:25 +0300
+Subject: Re: [PATCH 3/3] watchdog/aspeed: add support for dual boot
+To: Guenter Roeck <linux@roeck-us.net>, Ivan Mikhaylov <i.mikhaylov@yadro.com>
+References: <1f2cd155057e5ab0cdb20a9a11614bbb09bb49ad.camel@yadro.com>
+ <20190821163220.GA11547@roeck-us.net>
+From: Alexander Amelkin <a.amelkin@yadro.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=a.amelkin@yadro.com; prefer-encrypt=mutual; keydata=
+ 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
+ dTYsE5wSxM06T2l/MILupCNZ7A==
+Organization: YADRO
+Message-ID: <9e7fe5cc-ba1b-b8b6-69c5-c3c6cf508a36@yadro.com>
+Date: Wed, 21 Aug 2019 20:42:24 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a1q9G8VKgNKh+6khzoW3bFTVR_Zorygy=Qqsq-PYzM4=g@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190821163220.GA11547@roeck-us.net>
+X-Originating-IP: [172.17.14.197]
+X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
+ T-EXCH-02.corp.yadro.com (172.17.10.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_104214_965818_DC8179FC 
-X-CRM114-Status: GOOD (  21.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190821_104233_098418_8646DD72 
+X-CRM114-Status: GOOD (  33.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,97 +135,198 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Daniel Vetter <daniel@ffwll.ch>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Jonas Karlman <jonas@kwiboo.se>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Andrzej Hajda <a.hajda@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Robert Chiras <robert.chiras@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Lee Jones <lee.jones@linaro.org>, Sam Ravnborg <sam@ravnborg.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-watchdog@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
+ Joel Stanley <joel@jms.id.au>, Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4961521215813657861=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On Tue, Aug 13, 2019 at 01:07:52PM +0200, Arnd Bergmann wrote:
-> On Tue, Aug 13, 2019 at 12:10 PM Guido G=FCnther <agx@sigxcpu.org> wrote:
-> > On Tue, Aug 13, 2019 at 10:08:44AM +0200, Arnd Bergmann wrote:
-> > > On Fri, Aug 9, 2019 at 6:24 PM Guido G=FCnther <agx@sigxcpu.org> wrot=
-e:
-> > > >
-> > > > This adds all the gpr registers and the define needed for selecting
-> > > > the input source in the imx-nwl drm bridge.
-> > > >
-> > > > Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
-> > > > +
-> > > > +#define IOMUXC_GPR0    0x00
-> > > > +#define IOMUXC_GPR1    0x04
-> > > > +#define IOMUXC_GPR2    0x08
-> > > > +#define IOMUXC_GPR3    0x0c
-> > > > +#define IOMUXC_GPR4    0x10
-> > > > +#define IOMUXC_GPR5    0x14
-> > > > +#define IOMUXC_GPR6    0x18
-> > > > +#define IOMUXC_GPR7    0x1c
-> > > (more of the same)
-> > >
-> > > huh?
-> >
-> > These are the names from the imx8MQ reference manual (general purpose
-> > registers, they lump together all sorts of things), it's the same on
-> > imx6/imx7):
-> >
-> >     https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/=
-tree/include/linux/mfd/syscon/imx6q-iomuxc-gpr.h
-> >     https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/=
-tree/include/linux/mfd/syscon/imx7-iomuxc-gpr.h
-> >
-> > > > +/* i.MX8Mq iomux gpr register field defines */
-> > > > +#define IMX8MQ_GPR13_MIPI_MUX_SEL              BIT(2)
-> > >
-> > > I think this define should probably be local to the pinctrl driver, to
-> > > ensure that no other drivers fiddle with the registers manually.
-> >
-> > The purpose of these bits is for a driver to fiddle with them to select
-> > the input source. Similar on imx7 it's already used for e.g. the phy
-> > refclk in the pci controller:
-> >
-> >     https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/=
-tree/drivers/pci/controller/dwc/pci-imx6.c#n638
-> =
+--===============4961521215813657861==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="Zcz065VrMDkDOXBxE02mg9C55JMy5xq8G"
 
-> That one should likely use either the clk interface or the phy
-> interface instead.
-> =
+--Zcz065VrMDkDOXBxE02mg9C55JMy5xq8G
+Content-Type: multipart/mixed; boundary="SnUXFFWAI4JAXfpsQj9YgvBg6Fs71xEPL";
+ protected-headers="v1"
+From: Alexander Amelkin <a.amelkin@yadro.com>
+To: Guenter Roeck <linux@roeck-us.net>, Ivan Mikhaylov <i.mikhaylov@yadro.com>
+Cc: Wim Van Sebroeck <wim@linux-watchdog.org>, Joel Stanley <joel@jms.id.au>,
+ Andrew Jeffery <andrew@aj.id.au>, linux-watchdog@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org
+Message-ID: <9e7fe5cc-ba1b-b8b6-69c5-c3c6cf508a36@yadro.com>
+Subject: Re: [PATCH 3/3] watchdog/aspeed: add support for dual boot
+References: <1f2cd155057e5ab0cdb20a9a11614bbb09bb49ad.camel@yadro.com>
+ <20190821163220.GA11547@roeck-us.net>
+In-Reply-To: <20190821163220.GA11547@roeck-us.net>
 
-> > The GPRs are not about pad configuration but gather all sorts of things
-> > (section 8.2.4 of the imx8mq reference manual): pcie setup, dsi related
-> > bits so I don't think this should be done via a pinctrl
-> > driver. Should we handle that differently than on imx6/7?
-> =
+--SnUXFFWAI4JAXfpsQj9YgvBg6Fs71xEPL
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Content-Language: en-US
 
-> It would be nice to fix the existing code as well, but for the moment,
-> I only think we should not add more of that.
-> =
+21.08.2019 19:32, Guenter Roeck wrote:
+> On Wed, Aug 21, 2019 at 06:57:43PM +0300, Ivan Mikhaylov wrote:
+>> Set WDT_CLEAR_TIMEOUT_AND_BOOT_CODE_SELECTION into WDT_CLEAR_TIMEOUT_S=
+TATUS
+>> to clear out boot code source and re-enable access to the primary SPI =
+flash
+>> chip while booted via wdt2 from the alternate chip.
+>>
+>> AST2400 datasheet says:
+>> "In the 2nd flash booting mode, all the address mapping to CS0# would =
+be
+>> re-directed to CS1#. And CS0# is not accessable under this mode. To ac=
+cess
+>> CS0#, firmware should clear the 2nd boot mode register in the WDT2 sta=
+tus
+>> register WDT30.bit[1]."
+> Is there reason to not do this automatically when loading the module
+> in alt-boot mode ? What means does userspace have to determine if CS0
+> or CS1 is active at any given time ? If there is reason to ever have CS=
+1
+> active instead of CS0, what means would userspace have to enable it ?
 
-> Generally speaking, we can use syscon to do random things that don't
-> have a subsystem of their own, but we should not use it to do things
-> that have an existing driver framework like pinctrl, clock, reset, phy
-> etc.
+Yes, there is. The driver is loaded long before the filesystems are mount=
+ed. The filesystems, in the event of alternate/recovery boot, need to be =
+mounted from the same chip that the kernel was booted. For one reason bec=
+ause the main chip at CS0 is most probably corrupt. If you clear that bit=
+ when driver is loaded, your software will not know that and will try to =
+mount the wrong filesystems. The whole idea of ASPEED's switching chipsel=
+ects is to have identical firmware in both chips, without the need to pro=
+cess the alternate boot state in any way except for indicating a successf=
+ul boot and restoring access to CS0 when needed.
 
-Since it's not an external pin i opted to use MUX_MMIO instead which
-seems like a good fit here. Does that make sense?
-Cheers,
- -- Guido
+The userspace can read bootstatus sysfs node to determine if an alternate=
+ boot has occured.
+
+With ASPEED, CS1 is activated automatically by wdt2 when system fails to =
+boot from the primary flash chip (at CS0) and disable the watchdog to ind=
+icate a successful boot. When that happens, both CS0 and CS1 controls=C2=A0=
+ get routed in hardware to CS1 line, making the primary flash chip inacce=
+ssible. Depending on the architecture of the user-space software, it may =
+choose to re-enable access to the primary chip via CS0 at different times=
+=2E There must be a way to do so.
+
+> If userspace can not really determine if CS1 or CS0 is active, all it c=
+ould
+> ever do was to enable CS0 to be in a deterministic state. If so, it doe=
+sn't
+> make sense to ever have CS1 active, and re-enabling CS0 could be automa=
+tic.
+>
+> Similar, if CS1 can ever be enabled, there is no means for userspace to=
+ ensure
+> that some other application did not re-enable CS0 while it believes tha=
+t CS1
+> is enabled. If there is no means for userspace to enable CS1, it can ne=
+ver be
+> sure what is enabled (because some other entity may have enabled CS0 wh=
+ile
+> userspace just thought that CS1 is still enabled). Again, the only mean=
+s
+> to guarantee a well defined state would be to explicitly enable CS0 and=
+ provive
+> no means to enable CS1. Again, this could be done during boot, not requ=
+iring
+> an explicit request from userspace.
+
+Please understand that activation of CS1 in place of CS0 is NOT a softwar=
+e choice!
+
+
+>> +	if (unlikely(!wdt))
+>> +		return -ENODEV;
+>> +
+> How would this ever happen, and how / where is drvdata set to NULL ?
+
+This is purely for robustness. Seeing a pointer obtained via a function a=
+ccessed without first checking it for validity makes me nervous.
+
+This code most probably adds nothing at the assembly level.
+
+>
+>> +	writel(WDT_CLEAR_TIMEOUT_AND_BOOT_CODE_SELECTION,
+>> +			wdt->base + WDT_CLEAR_TIMEOUT_STATUS);
+>> +	wdt->wdd.bootstatus |=3D WDIOF_EXTERN1;
+> The variable reflects the _boot status_. It should not change after boo=
+ting.
+Is there any documentation that dictates that? All I could find is
+
+"bootstatus: status of the device after booting". That doesn't look to me=
+ like it absolutely can not change to reflect the updated status (that is=
+, to reflect that the originally set up alternate CS routing has been res=
+et to normal).
+
+If you absolutely disallow that, I think we could make 'access_cs0' reada=
+ble instead, so it could report the current state of the boot code select=
+ion bit. Reverted, I suppose. That way 'access_cs0' would report 1 after =
+1 has been written to it (it wouldn't be possible to write a zero).
+
+> @@ -223,6 +248,9 @@ static int aspeed_wdt_probe(struct platform_device =
+*pdev)
+> =20
+>  	wdt->ctrl =3D WDT_CTRL_1MHZ_CLK;
+> =20
+> +	if (of_property_read_bool(np, "aspeed,alt-boot"))
+> +		wdt->wdd.groups =3D bswitch_groups;
+> +
+> Why does this have to be separate to the existing evaluation of
+> aspeed,alt-boot, and why does the existing code not work ?
+>
+> Also, is it guaranteed that this does not interfer with existing
+> support for alt-boot ?
+
+I think Ivan will comment on this.
+
+With best regards,
+Alexander Amelkin,
+BIOS/BMC Team Lead, YADRO
+https://yadro.com
+
+
+
+--SnUXFFWAI4JAXfpsQj9YgvBg6Fs71xEPL--
+
+--Zcz065VrMDkDOXBxE02mg9C55JMy5xq8G
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQIcBAEBCAAGBQJdXYKAAAoJEOiTWHtbdBeNwLsP/0FvGr6UXRAiPRCYZ3wthrpT
+PH3OT/GLRq1M/EFC13osP39HpoI2Vbk5jOeGBm1iw49bYTokTI14jgHrKJmXAlGB
+A9XAw/KSnctu4JnLRkmx1xrPpjNjRTtzf1Ta5YZ6mzsnou0Qogcb2u9J1NnRqWsF
+qWEo7GkIi4JHLRdgAVu4cm5RGaznUTyo2NiDqQQ/HAjnUx0CYhIGiR6Gv5QPYI+S
+vGAnCLCu7XQQP1RUzO7CF+5nwQg0OL2SSKqTlkPTw2L5ZUhPAS73jX8xu+jPIRb8
+ZCj8ccx0ErRsg/fodWBwVm3nVcCTHZ4Mo/JnmWIGZBotw8/+nA9jTMhOfoiUjbPP
+tDEGQ+U1a+gQw4iTJl8d/OejCCXWXhlaolRd4vnhyVSNhVtKabJcLMROoI9/q530
+W7md3BueFfdBcE0J3fWxbs5slfgoS0Jp36tG8hFphzjlXN82mAhjv9CSLVx5vONi
+j7lJnHnpX1Z/XB4Dsd64UqoxHAOlGstfE3FkizZPGwq/WxDzYyJ6GBIfnmwqawX4
+5SWuHwtID4SqSzMMBm66ypoy3t002sgX0EMIEvM8g2D9I7BKvufGjPtxCBr74+ux
+ZlFdecol9jQodn56fSiTUCg00SIEo/UQ5MALUxKWXtqtBRMRRITwI8D4mNAS1sNB
+TqGRTLoE/uBRq+aOGmla
+=yA26
+-----END PGP SIGNATURE-----
+
+--Zcz065VrMDkDOXBxE02mg9C55JMy5xq8G--
+
+
+--===============4961521215813657861==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4961521215813657861==--
+
