@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9188497B81
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 15:56:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CA8397B90
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 15:56:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=832nKmZ4Teb00SkqhYt83Cm47J6FTtLFNuB1lalRWg8=; b=VqF31QPQDddhI2
-	6ajYr8wTyn88Dc81+MhXFaEmXhYsijSS09TquZfumyKyjdf8vB33rKcuuBk/aOn5CTi7mytVNI9Kn
-	08EO8qectqAMLqvDwFiB1DWUtDq0cqBIlhFMasxZVS+iaguY58W6v8d1zf+ksS9KQjtC6GQObfvTD
-	VcIB/DcrRURhTEfFtld0Bz377+9f4sRPBdtIeb00DCl57MZAjd8KefmVjBPpbqLbMy7h2WJ0LdJ30
-	A1lIaNrJO5hXfipSGrMgZXYPNAqzPBg/x7zSUzgmoQ5WYu9nidDr4sAiGPjMakC92GiLwwfUBzUVt
-	cU/f4btKhz+DbsC02Pyw==;
+	List-Owner; bh=ztu5KpXs35IAZhWsor4OpJsdCn6LGgypTV6POw4i7F4=; b=JYGNdWl5EE0VpU
+	TYHkuDn3dF+eGIxsUII2hExPhO9uKRk9Y9+D6bseYygJWjMqWvXL6tmtJSfVgn9NSWJiLX3ZpbokH
+	IcExfVSEyTWFN3aGKUwLCzuKN1/q/d/jlCECRdj74ScQ3FpUwPNQYHtyqJx3nsTuAz6Wjk+wQoICF
+	V+02EBhZl8YW5au/vZ+QIXT1w81Z8JCAi4bfx3Vc3wYlYyFMbYEZbKkqsjwSn1tDhZr4PPJ7BQUlJ
+	q3lv3DHUkbgM1hE79C0G+gJCTy6zESzXguwQIynpwKTJ3Kzktzrz0Nsx3CKyI7fBeCrTJLBywt6vg
+	VEWoM7YEKBhmjrclXZQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0R5w-0006Fa-Fj; Wed, 21 Aug 2019 13:56:12 +0000
+	id 1i0R6H-0006X8-Iq; Wed, 21 Aug 2019 13:56:33 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0R4x-0004jX-92; Wed, 21 Aug 2019 13:55:13 +0000
-X-UUID: 78231c2f250e446185ce9a7c670e4400-20190821
-X-UUID: 78231c2f250e446185ce9a7c670e4400-20190821
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ id 1i0R4y-0004rW-85; Wed, 21 Aug 2019 13:55:15 +0000
+X-UUID: 5e26184faf7c4e479c6327c1aac5d9c2-20190821
+X-UUID: 5e26184faf7c4e479c6327c1aac5d9c2-20190821
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1832139270; Wed, 21 Aug 2019 05:54:52 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ with ESMTP id 866141546; Wed, 21 Aug 2019 05:54:59 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 21 Aug 2019 06:54:51 -0700
+ 15.0.1395.4; Wed, 21 Aug 2019 06:54:57 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 21 Aug 2019 21:54:50 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 21 Aug 2019 21:54:56 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 21 Aug 2019 21:54:48 +0800
+ Transport; Wed, 21 Aug 2019 21:54:55 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
  Robin Murphy <robin.murphy@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH v10 05/23] iommu/mediatek: Fix iova_to_phys PA start for 4GB
- mode
-Date: Wed, 21 Aug 2019 21:53:08 +0800
-Message-ID: <1566395606-7975-6-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v10 06/23] iommu/io-pgtable-arm-v7s: Add paddr_to_iopte and
+ iopte_to_paddr helpers
+Date: Wed, 21 Aug 2019 21:53:09 +0800
+Message-ID: <1566395606-7975-7-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1566395606-7975-1-git-send-email-yong.wu@mediatek.com>
 References: <1566395606-7975-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_065511_794860_EF9E493D 
-X-CRM114-Status: GOOD (  12.21  )
+X-CRM114-CacheID: sfid-20190821_065512_326129_5C79C44F 
+X-CRM114-Status: GOOD (  13.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -85,87 +85,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In M4U 4GB mode, the physical address is remapped as below:
+Add two helper functions: paddr_to_iopte and iopte_to_paddr.
 
-CPU Physical address:
-====================
-
-0      1G       2G     3G       4G     5G
-|---A---|---B---|---C---|---D---|---E---|
-+--I/O--+------------Memory-------------+
-
-IOMMU output physical address:
- =============================
-
-                                4G      5G     6G      7G      8G
-                                |---E---|---B---|---C---|---D---|
-                                +------------Memory-------------+
-
-The Region 'A'(I/O) can not be mapped by M4U; For Region 'B'/'C'/'D', the
-bit32 of the CPU physical address always is needed to set, and for Region
-'E', the CPU physical address keep as is. something looks like this:
-CPU PA         ->    M4U OUTPUT PA
-0x4000_0000          0x1_4000_0000 (Add bit32)
-0x8000_0000          0x1_8000_0000 ...
-0xc000_0000          0x1_c000_0000 ...
-0x1_0000_0000        0x1_0000_0000 (No change)
-
-Additionally, the iommu consumers always use the CPU phyiscal address.
-
-The PA in the iova_to_phys that is got from v7s always is u32, But
-from the CPU point of view, PA only need add BIT(32) when PA < 0x4000_0000.
-
-Fixes: 30e2fccf9512 ("iommu/mediatek: Enlarge the validate PA range
-for 4GB mode")
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+Reviewed-by: Evan Green <evgreen@chromium.org>
 ---
- drivers/iommu/mtk_iommu.c | 26 +++++++++++++++++++++++++-
- 1 file changed, 25 insertions(+), 1 deletion(-)
+ drivers/iommu/io-pgtable-arm-v7s.c | 45 ++++++++++++++++++++++++++++----------
+ 1 file changed, 33 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index c6e6dc3..9ba2706 100644
---- a/drivers/iommu/mtk_iommu.c
-+++ b/drivers/iommu/mtk_iommu.c
-@@ -107,6 +107,30 @@ struct mtk_iommu_domain {
+diff --git a/drivers/iommu/io-pgtable-arm-v7s.c b/drivers/iommu/io-pgtable-arm-v7s.c
+index 0fc8dfa..72f1880 100644
+--- a/drivers/iommu/io-pgtable-arm-v7s.c
++++ b/drivers/iommu/io-pgtable-arm-v7s.c
+@@ -169,18 +169,38 @@ struct arm_v7s_io_pgtable {
+ 	spinlock_t		split_lock;
+ };
  
- static const struct iommu_ops mtk_iommu_ops;
- 
-+/*
-+ * In M4U 4GB mode, the physical address is remapped as below:
-+ *
-+ * CPU Physical address:
-+ * ====================
-+ *
-+ * 0      1G       2G     3G       4G     5G
-+ * |---A---|---B---|---C---|---D---|---E---|
-+ * +--I/O--+------------Memory-------------+
-+ *
-+ * IOMMU output physical address:
-+ *  =============================
-+ *
-+ *                                 4G      5G     6G      7G      8G
-+ *                                 |---E---|---B---|---C---|---D---|
-+ *                                 +------------Memory-------------+
-+ *
-+ * The Region 'A'(I/O) can NOT be mapped by M4U; For Region 'B'/'C'/'D', the
-+ * bit32 of the CPU physical address always is needed to set, and for Region
-+ * 'E', the CPU physical address keep as is.
-+ * Additionally, The iommu consumers always use the CPU phyiscal address.
-+ */
-+#define MTK_IOMMU_4GB_MODE_REMAP_BASE	 0x40000000
++static bool arm_v7s_pte_is_cont(arm_v7s_iopte pte, int lvl);
 +
- static LIST_HEAD(m4ulist);	/* List all the M4U HWs */
+ static dma_addr_t __arm_v7s_dma_addr(void *pages)
+ {
+ 	return (dma_addr_t)virt_to_phys(pages);
+ }
  
- #define for_each_m4u(data)	list_for_each_entry(data, &m4ulist, list)
-@@ -401,7 +425,7 @@ static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
- 	pa = dom->iop->iova_to_phys(dom->iop, iova);
- 	spin_unlock_irqrestore(&dom->pgtlock, flags);
+-static arm_v7s_iopte *iopte_deref(arm_v7s_iopte pte, int lvl)
++static arm_v7s_iopte paddr_to_iopte(phys_addr_t paddr, int lvl,
++				    struct io_pgtable_cfg *cfg)
+ {
++	return paddr & ARM_V7S_LVL_MASK(lvl);
++}
++
++static phys_addr_t iopte_to_paddr(arm_v7s_iopte pte, int lvl,
++				  struct io_pgtable_cfg *cfg)
++{
++	arm_v7s_iopte mask;
++
+ 	if (ARM_V7S_PTE_IS_TABLE(pte, lvl))
+-		pte &= ARM_V7S_TABLE_MASK;
++		mask = ARM_V7S_TABLE_MASK;
++	else if (arm_v7s_pte_is_cont(pte, lvl))
++		mask = ARM_V7S_LVL_MASK(lvl) * ARM_V7S_CONT_PAGES;
+ 	else
+-		pte &= ARM_V7S_LVL_MASK(lvl);
+-	return phys_to_virt(pte);
++		mask = ARM_V7S_LVL_MASK(lvl);
++
++	return pte & mask;
++}
++
++static arm_v7s_iopte *iopte_deref(arm_v7s_iopte pte, int lvl,
++				  struct arm_v7s_io_pgtable *data)
++{
++	return phys_to_virt(iopte_to_paddr(pte, lvl, &data->iop.cfg));
+ }
  
--	if (data->enable_4GB)
-+	if (data->enable_4GB && pa < MTK_IOMMU_4GB_MODE_REMAP_BASE)
- 		pa |= BIT_ULL(32);
+ static void *__arm_v7s_alloc_table(int lvl, gfp_t gfp,
+@@ -396,7 +416,7 @@ static int arm_v7s_init_pte(struct arm_v7s_io_pgtable *data,
+ 	if (num_entries > 1)
+ 		pte = arm_v7s_pte_to_cont(pte, lvl);
  
- 	return pa;
+-	pte |= paddr & ARM_V7S_LVL_MASK(lvl);
++	pte |= paddr_to_iopte(paddr, lvl, cfg);
+ 
+ 	__arm_v7s_set_pte(ptep, pte, num_entries, cfg);
+ 	return 0;
+@@ -462,7 +482,7 @@ static int __arm_v7s_map(struct arm_v7s_io_pgtable *data, unsigned long iova,
+ 	}
+ 
+ 	if (ARM_V7S_PTE_IS_TABLE(pte, lvl)) {
+-		cptep = iopte_deref(pte, lvl);
++		cptep = iopte_deref(pte, lvl, data);
+ 	} else if (pte) {
+ 		/* We require an unmap first */
+ 		WARN_ON(!selftest_running);
+@@ -512,7 +532,8 @@ static void arm_v7s_free_pgtable(struct io_pgtable *iop)
+ 		arm_v7s_iopte pte = data->pgd[i];
+ 
+ 		if (ARM_V7S_PTE_IS_TABLE(pte, 1))
+-			__arm_v7s_free_table(iopte_deref(pte, 1), 2, data);
++			__arm_v7s_free_table(iopte_deref(pte, 1, data),
++					     2, data);
+ 	}
+ 	__arm_v7s_free_table(data->pgd, 1, data);
+ 	kmem_cache_destroy(data->l2_tables);
+@@ -582,7 +603,7 @@ static size_t arm_v7s_split_blk_unmap(struct arm_v7s_io_pgtable *data,
+ 		if (!ARM_V7S_PTE_IS_TABLE(pte, 1))
+ 			return 0;
+ 
+-		tablep = iopte_deref(pte, 1);
++		tablep = iopte_deref(pte, 1, data);
+ 		return __arm_v7s_unmap(data, iova, size, 2, tablep);
+ 	}
+ 
+@@ -641,7 +662,7 @@ static size_t __arm_v7s_unmap(struct arm_v7s_io_pgtable *data,
+ 				io_pgtable_tlb_add_flush(iop, iova, blk_size,
+ 					ARM_V7S_BLOCK_SIZE(lvl + 1), false);
+ 				io_pgtable_tlb_sync(iop);
+-				ptep = iopte_deref(pte[i], lvl);
++				ptep = iopte_deref(pte[i], lvl, data);
+ 				__arm_v7s_free_table(ptep, lvl + 1, data);
+ 			} else if (iop->cfg.quirks & IO_PGTABLE_QUIRK_NON_STRICT) {
+ 				/*
+@@ -666,7 +687,7 @@ static size_t __arm_v7s_unmap(struct arm_v7s_io_pgtable *data,
+ 	}
+ 
+ 	/* Keep on walkin' */
+-	ptep = iopte_deref(pte[0], lvl);
++	ptep = iopte_deref(pte[0], lvl, data);
+ 	return __arm_v7s_unmap(data, iova, size, lvl + 1, ptep);
+ }
+ 
+@@ -692,7 +713,7 @@ static phys_addr_t arm_v7s_iova_to_phys(struct io_pgtable_ops *ops,
+ 	do {
+ 		ptep += ARM_V7S_LVL_IDX(iova, ++lvl);
+ 		pte = READ_ONCE(*ptep);
+-		ptep = iopte_deref(pte, lvl);
++		ptep = iopte_deref(pte, lvl, data);
+ 	} while (ARM_V7S_PTE_IS_TABLE(pte, lvl));
+ 
+ 	if (!ARM_V7S_PTE_IS_VALID(pte))
+@@ -701,7 +722,7 @@ static phys_addr_t arm_v7s_iova_to_phys(struct io_pgtable_ops *ops,
+ 	mask = ARM_V7S_LVL_MASK(lvl);
+ 	if (arm_v7s_pte_is_cont(pte, lvl))
+ 		mask *= ARM_V7S_CONT_PAGES;
+-	return (pte & mask) | (iova & ~mask);
++	return iopte_to_paddr(pte, lvl, &data->iop.cfg) | (iova & ~mask);
+ }
+ 
+ static struct io_pgtable *arm_v7s_alloc_pgtable(struct io_pgtable_cfg *cfg,
 -- 
 1.9.1
 
