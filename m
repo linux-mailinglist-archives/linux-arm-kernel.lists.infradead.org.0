@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05CE49875A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 00:25:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53A2398755
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 00:25:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,73 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=EDlckrYApqGXV7iAF7ANAb+nvYgONqtqqe0xQ4v6sHU=; b=lCOsXcxd/LHiv1Bqh0RILBqW9m
-	l7hEqqwcB+giPw5FWnL5jnHhsoXCa6Icdd/aQPUuUSvu7gnKW4ZdIAH+auBRj/C8lcZ4kde6Qf5Y1
-	bJ8kdUFNzHPfa2eyisxdgkQ0j0uNqZ0EfL3ibYP67tqpkpbcviNhYLmiUBDiIBIChSJLOuxaMiM96
-	oZhUk0IFLg867j7nqcNlqRvb2V0VhqeQbjeIDJEfPxkqzZpx7xeoa2EOMpPaoVDivrXv3wGK1sEis
-	Esnu7XXv1a6J/ms4DVGGCUAywoEQik3+t2FkovH/2stK4Tj0V2KclkIgyvuqrpB5s2x3eICOCRXhu
-	bY0oM1Vg==;
+	bh=Bre8A3yKYQKBwTGYpf7Ec7KKLXQdWmBe2a4cafxxiPg=; b=gV7v/EsZFC83WiTbEV3nC2NHow
+	voHW8bwWfmK+jrG1XYydii70UzVWnN8kpEReEJ6xsVwnKAiD2DvLEzz+GGl8TWi1gn1lVhCSyn+mk
+	g+6SuAkuoiTSOkQmKlU3ltM8PF6KIyVYVl/OfkCmH0wjBWyce1ionSO6oA2YudfLpXv4Wv5D18Rz5
+	KuUN6A5wazzAw3tEz2PQiS4GoMDJHq7buzieo8mGzyAF+GYZRVMt811V9tPnEvVKAoFlwKNfpIegZ
+	AH4eD6IuiZcXB24rOd6mhpoVX2Mbon6l9exbii+/ph1eQZPFLs9JMPSfuuvcLeBy9pbI6nCjw1spI
+	cCWYSejw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Z2v-0004W9-47; Wed, 21 Aug 2019 22:25:37 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1i0Z2j-0004EE-77; Wed, 21 Aug 2019 22:25:25 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Z1o-0002Ao-TP
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 22:24:33 +0000
-Received: by mail-wm1-x342.google.com with SMTP id k1so3678583wmi.1
+ id 1i0Z1p-0002Bq-Eu
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 22:24:34 +0000
+Received: by mail-wr1-x442.google.com with SMTP id j16so3476407wrr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 15:24:28 -0700 (PDT)
+ Wed, 21 Aug 2019 15:24:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=VNEVJNmyyHrsV6A+ZpoAhZq6Wlxyq2Rn2IfeLizyW5M=;
- b=RmAQt0yrk4yeu8kHxu/ofDAzx+2cZEAdXYgfQpVRpzX8n+bKfVdHMRgTXXwQI5Vsp+
- z7/jDTXj1cY7aS1BFV3pDZPhCEB6zBkXuYpZXMq0P3/+WyAI6ypnOPtrOXb+1CvyLAz3
- 6dyE7riK+GIKQijiJ3Rz+VM1K+xOhtwHY/xDnrMckeDGRbBLfWKZB2vR4ezsaxmNgKfo
- zM6I2ZzMRxgRGDbRcsquifk7qo/iHXbusGPEj2IcD0H8/+Hno7lVvO6koZCH/cE/bVj0
- BND/kPghyoQwXYDSp9XXs3BcfVeXnMUZb3hY2HW9SyC7tLmsItkw6pOLSLACjpOqq5mA
- qbvw==
+ bh=LEBx2vHRiP3hDZBSXgO5N6WbayFm3N+ToBekBZ2ae80=;
+ b=mlNmHTuJUeaodKjc91t3wg+4JlBjT/LH+VA758Zj6nkiE7hXrsWI/mSxhdJF3LlIfN
+ KGTZ59i6+y2dJ/rTaDixhBoJB3jwQWQ6Qk1P9wL8pX3ki70kmJQA6PaumDOSdqxM1sJw
+ RBX29FFspJP8EmIp98jni0A8vu8/y3PXcfWROn+QcuL44TG6kAnFtk89g890x2IWr9As
+ stZpX47MV0NOEajpdVd7wmyFvRp7rKyf7xnXNRwoAgoVrisjSFgKOSSdF16OERnyjwHV
+ to4DG4Odnat6/NCIvXuA24WV4w6iWwdkokI9KY2AprKRkD+NAWfrO2kkQuXkmHbfNtKJ
+ oaKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=VNEVJNmyyHrsV6A+ZpoAhZq6Wlxyq2Rn2IfeLizyW5M=;
- b=TkuSRvAf724UfaFQC2M+4Y9jD5SzMp4oUGho4dnCQQmevIZdh8m3LAXRscqFFljVVZ
- p4fjra16Ls6eLj936y+UqqyN+ApNLCXc1WlFAfv3tXKVYLGdQvEPFTehtW1UQTYOQv/E
- 5TeInU6GR1IBYm4Niw9+x1ZFGkQ6OcvzSIwFy4jFwTozaQ5OdZ7oX3JwA7qy1BP3rZ+1
- Ce+/vqWWnibQKilw3RTlAhKh9VDAmWhrzCa9AHBVm7WNf8WS8R/jp4JOBi4RxtS5Rwnp
- jSPZO3bRA+pjy2+wLUG58I9swmpVjqtwlj+VkegUtR5fMNChdiEtxd4n/L8fg1v6kynx
- /HGg==
-X-Gm-Message-State: APjAAAX9doCzUgFiFeiNuR3T55VwwA+lkwtOCm6BFVcvIb8nQvU2aZJ4
- nBxq41aXLs3qUQ6MIsV7bHMWMA==
-X-Google-Smtp-Source: APXvYqzutcbJ1b6zo56rETKZr1zpTfUALmnpdpQJw6EUBhIgUTQ10movHoix6xnpijh+pYUNRfaXDw==
-X-Received: by 2002:a1c:c747:: with SMTP id x68mr2507957wmf.14.1566426267351; 
- Wed, 21 Aug 2019 15:24:27 -0700 (PDT)
+ bh=LEBx2vHRiP3hDZBSXgO5N6WbayFm3N+ToBekBZ2ae80=;
+ b=mepeQkohkRXUiSgEL8pGJWd8ZcvWJ62ixpOCakFMs6NYg0B7ZP1qTIbnF8oSz0Nfrn
+ Roq5sBpeYm6iMOwyATEHEBhG7N3EYihEJkBHiZFKejjbIA1WsVszl3PWNeCyOyzqPLHa
+ nEXGATUHgU+OO8c0eIBCNJ5HmiPJUtOzS8f8EHhzv+Sm0YoNNj9ZmPdZKUnv7WBVg8Qw
+ qX/Dm5Ix46gtYRoq/mu8kqEMVuEqqUUD5u88TByouaYl04lsMci+hF7qe2ItPBPdJspT
+ mDwWWwbu9ECI6fXcfgpSdJcb0AKyZ0UWVBAqB+N6vaRWg7jZ/rbH13tQVMClZznBa7il
+ nFLw==
+X-Gm-Message-State: APjAAAVa+TnCAG7IWdtsjo/AGeTSAukleaIzjE+5WHKCiuNqa2fUJ8Nh
+ AEu2yngRovSHgu9RuCy2f+y0Ng==
+X-Google-Smtp-Source: APXvYqw01wEmbQ6VScaWNUUHN/sT9b2JnBtntU+d7a3SpWfg23SXzSKw7uEKuW+VufQEHQl/yQQFog==
+X-Received: by 2002:adf:e787:: with SMTP id n7mr19204372wrm.57.1566426268223; 
+ Wed, 21 Aug 2019 15:24:28 -0700 (PDT)
 Received: from localhost.localdomain ([2a01:cb1d:6e7:d500:82a9:347a:43f3:d2ca])
- by smtp.gmail.com with ESMTPSA id f197sm3548549wme.22.2019.08.21.15.24.26
+ by smtp.gmail.com with ESMTPSA id f197sm3548549wme.22.2019.08.21.15.24.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Aug 2019 15:24:26 -0700 (PDT)
+ Wed, 21 Aug 2019 15:24:27 -0700 (PDT)
 From: Guillaume La Roque <glaroque@baylibre.com>
 To: rui.zhang@intel.com,
 	edubezval@gmail.com,
 	daniel.lezcano@linaro.org
-Subject: [PATCH v4 3/6] arm64: dts: amlogic: g12: add temperature sensor
-Date: Thu, 22 Aug 2019 00:24:18 +0200
-Message-Id: <20190821222421.30242-4-glaroque@baylibre.com>
+Subject: [PATCH v4 4/6] arm64: dts: meson: sei510: Add minimal thermal zone
+Date: Thu, 22 Aug 2019 00:24:19 +0200
+Message-Id: <20190821222421.30242-5-glaroque@baylibre.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190821222421.30242-1-glaroque@baylibre.com>
 References: <20190821222421.30242-1-glaroque@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_152428_944965_08C69577 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190821_152429_497684_50690AF0 
+X-CRM114-Status: GOOD (  11.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,45 +103,139 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add cpu and ddr temperature sensors for G12 Socs
+Add minimal thermal zone for two temperature sensor
+One is located close to the DDR and the other one is
+located close to the PLLs (between the CPU and GPU)
 
 Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Acked-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- .../boot/dts/amlogic/meson-g12-common.dtsi    | 20 +++++++++++++++++++
- 1 file changed, 20 insertions(+)
+ .../boot/dts/amlogic/meson-g12a-sei510.dts    | 70 +++++++++++++++++++
+ 1 file changed, 70 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-index 06e186ca41e3..ce13c7c2e454 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-@@ -1353,6 +1353,26 @@
- 				};
- 			};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
+index c9fa23a56562..35d2ebbd6d4e 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
+@@ -10,6 +10,7 @@
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/gpio/meson-g12a-gpio.h>
+ #include <dt-bindings/sound/meson-g12a-tohdmitx.h>
++#include <dt-bindings/thermal/thermal.h>
  
-+			cpu_temp: temperature-sensor@34800 {
-+				compatible = "amlogic,g12a-cpu-thermal",
-+					     "amlogic,g12a-thermal";
-+				reg = <0x0 0x34800 0x0 0x50>;
-+				interrupts = <GIC_SPI 35 IRQ_TYPE_EDGE_RISING>;
-+				clocks = <&clkc CLKID_TS>;
-+				#thermal-sensor-cells = <0>;
-+				amlogic,ao-secure = <&sec_AO>;
+ / {
+ 	compatible = "seirobotics,sei510", "amlogic,g12a";
+@@ -33,6 +34,67 @@
+ 		ethernet0 = &ethmac;
+ 	};
+ 
++	thermal-zones {
++		cpu-thermal {
++			polling-delay = <1000>;
++			polling-delay-passive = <100>;
++			thermal-sensors = <&cpu_temp>;
++
++			trips {
++				cpu_hot: cpu-hot {
++					temperature = <85000>; /* millicelsius */
++					hysteresis = <2000>; /* millicelsius */
++					type = "hot";
++				};
++
++				cpu_critical: cpu-critical {
++					temperature = <110000>; /* millicelsius */
++					hysteresis = <2000>; /* millicelsius */
++					type = "critical";
++				};
 +			};
 +
-+			ddr_temp: temperature-sensor@34c00 {
-+				compatible = "amlogic,g12a-ddr-thermal",
-+					     "amlogic,g12a-thermal";
-+				reg = <0x0 0x34c00 0x0 0x50>;
-+				interrupts = <GIC_SPI 36 IRQ_TYPE_EDGE_RISING>;
-+				clocks = <&clkc CLKID_TS>;
-+				#thermal-sensor-cells = <0>;
-+				amlogic,ao-secure = <&sec_AO>;
++			cooling-maps {
++				map0 {
++					trip = <&cpu_hot>;
++					cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++							 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++							 <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++							 <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++				};
++
++				map1 {
++					trip = <&cpu_critical>;
++					cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++							 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++							 <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++							 <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++				};
++			};
++		};
++
++		ddr-thermal {
++			polling-delay = <1000>;
++			polling-delay-passive = <100>;
++			thermal-sensors = <&ddr_temp>;
++
++			trips {
++				ddr_critical: ddr-critical {
++					temperature = <110000>; /* millicelsius */
++					hysteresis = <2000>; /* millicelsius */
++					type = "critical";
++				};
 +			};
 +
- 			usb2_phy0: phy@36000 {
- 				compatible = "amlogic,g12a-usb2-phy";
- 				reg = <0x0 0x36000 0x0 0x2000>;
++			cooling-maps {
++				map {
++					trip = <&ddr_critical>;
++					cooling-device = <&mali THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++				};
++			};
++		};
++	};
++
+ 	mono_dac: audio-codec-0 {
+ 		compatible = "maxim,max98357a";
+ 		#sound-dai-cells = <0>;
+@@ -321,6 +383,7 @@
+ 	operating-points-v2 = <&cpu_opp_table>;
+ 	clocks = <&clkc CLKID_CPU_CLK>;
+ 	clock-latency = <50000>;
++	#cooling-cells = <2>;
+ };
+ 
+ &cpu1 {
+@@ -328,6 +391,7 @@
+ 	operating-points-v2 = <&cpu_opp_table>;
+ 	clocks = <&clkc CLKID_CPU_CLK>;
+ 	clock-latency = <50000>;
++	#cooling-cells = <2>;
+ };
+ 
+ &cpu2 {
+@@ -335,6 +399,7 @@
+ 	operating-points-v2 = <&cpu_opp_table>;
+ 	clocks = <&clkc CLKID_CPU_CLK>;
+ 	clock-latency = <50000>;
++	#cooling-cells = <2>;
+ };
+ 
+ &cpu3 {
+@@ -342,6 +407,7 @@
+ 	operating-points-v2 = <&cpu_opp_table>;
+ 	clocks = <&clkc CLKID_CPU_CLK>;
+ 	clock-latency = <50000>;
++	#cooling-cells = <2>;
+ };
+ 
+ &cvbs_vdac_port {
+@@ -368,6 +434,10 @@
+ 	status = "okay";
+ };
+ 
++&mali {
++	#cooling-cells = <2>;
++};
++
+ &hdmi_tx {
+ 	status = "okay";
+ 	pinctrl-0 = <&hdmitx_hpd_pins>, <&hdmitx_ddc_pins>;
 -- 
 2.17.1
 
