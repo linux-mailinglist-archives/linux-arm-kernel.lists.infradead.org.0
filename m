@@ -2,118 +2,144 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFF3497CD6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 16:25:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C220997CDB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 16:26:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=aByHzMoMi3UeOQ8J2S9PZNP+HQAYWzBvB95D/3qbL0U=; b=iob9uvz/g2wLzB
-	sm3tLtlb8hxadX10CXA+b/NwWRgZom2yYqHOZ9/xg4kxnVrCxFCsvJmjTM585gK2EOQkbkb9zHQUL
-	AfxREEYwO9s2Yuu4c8CGqBZu0neo50gFucBd+owXpAamhAe5LeBXmX8rzSGlmOFvaJ3kxWmgG86kS
-	4W1yB/qINq0cXlWHlsG/+dRnsmfhNaSSy7SpnJXqmstJ3Md7FLgZbmscZKSGJ+3kommasIj/7DqID
-	OryrClftNzj8v0yORmIQpt8OS6CDrW86ZBRowCJ8PQF7SEcI+SU3GdGCP2aGYZamxFeeb5FCb8swR
-	ALF8r0sEhF0Iypn8AQoQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=yW2h6/XT1OVFTErmdOGw37ZFfVBVDttv1udRotzi/+8=; b=qCGr44zPbdTgQy52NN/a3MYvLH
+	iElSiVA2ddSwDg7bzj0+BpWFnLiHsfWxBWyODzfz+Fcll3U8PYE8EIiscSvLgzXay6ssbp5NBY8QB
+	0FxnDBKPTxBm54c69YriBAAcLuh3PTVze52GDKlNqQK9P0Pfz/oD1wN44hyKR8QXTMzP4e+0X3GSr
+	UDRtf9epeR0bu5NCd6JpyliYSHxN3IZ6DvInXMLwAbWzhXnxd5JUhz0pk+da9WwVWabaQWWvzWNv0
+	xYdlS+wQyMtvFxAuim2PMUa0lx2ayOT4BfngybENAoq+QOIM1EUDlM9LEjQv0hHAFG8yb/JN9MB3Z
+	XJzrjw6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0RYg-0004JW-P3; Wed, 21 Aug 2019 14:25:54 +0000
-Received: from mail-ve1eur03on0610.outbound.protection.outlook.com
- ([2a01:111:f400:fe09::610]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1i0RZQ-00054p-7V; Wed, 21 Aug 2019 14:26:40 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0RUZ-0007RH-QZ
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 14:21:42 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=h1S7q5ePngZUV/W4Qv46NZUElPhsD7EuLeDC5d75fuGer4X9qCeyZKlfNHFiMvYu+NMutw6qXGTJon35qCZ4z3yEzTlQTZB8ySoxDxy6oze80Ct6ZKAWYCm8QTiHwkmzZgesfwGr28d9ywuDXbthgv46vrm5ZZvVniGQnWAeftejrECm7MN5IJsavHPzYb7E7XH7wIWNc1MrpDY0QFVOcyXfanH/rmHM2n8ppuEAANJWEPy5obrWpPCzHURK5cXRAiCrcXDvsUCHZfbeiyodunSkiMmvqKfmYe5VcQHOoLnEsO4PErDE3MRpHhreJPOdMPrKQRTzf3tHjJ4YaKM1dA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lUgh1gxEi6hlJCpGBTs/Cn1pMZHKoLhVVoKNMR1/LKw=;
- b=P6rU4iPAZufvH5XMpA2zHl43Hzfotz2vUPIaUigHaMnKz+Wy+gczMYNHNK21jgCJ9JZfD4q4arcVKcCDf2NgxdGARuxYTRSjLxtjdLIwgtK6LG3C9RwQNMgxfPIMvaPBhuhBd6o4l7/Fe/I9CmWQtT+oRibRMAxT5dfvYDdIRvMADAR5s6XtnQWiWFcj4VlRq4klaat01bHvQwCcCRvPQg4j0kYyM7YT4LDqidTaALLVqVo7U9IDRmgpPvhs9UG+Vq8nxCP/saqSzukx5BL9ClbA+lQwnDXQmq3d9dpC2+Mu34r9RtR7yfl8F50jtnASjedab5HCAALZcPrCVUVBzA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lUgh1gxEi6hlJCpGBTs/Cn1pMZHKoLhVVoKNMR1/LKw=;
- b=aUAMqZhdMEIFCarGBvhrdV6gbkx5Ck47+ovQsWkckm+5NqC+7GyeIXfJGPvZRQWoAtEthmp5PpgKWB3KowCl+iCfYYt2NdnC730EJW77REyrWXCxh8HugNjnmaDDEs3/nXNxZgGgyEf7PtNt0BSJyh7Eld9M9QrVPi+i6bUnz9c=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB6285.eurprd04.prod.outlook.com (20.179.27.23) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.19; Wed, 21 Aug 2019 14:21:36 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::c5e8:90f8:da97:947e]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::c5e8:90f8:da97:947e%3]) with mapi id 15.20.2178.020; Wed, 21 Aug 2019
- 14:21:36 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Martin Kepplinger <martink@posteo.de>
-Subject: Re: [RFCv3 3/3] interconnect: imx: Add platform driver for imx8mm
-Thread-Topic: [RFCv3 3/3] interconnect: imx: Add platform driver for imx8mm
-Thread-Index: AQHVTEWKNFF2Yqu6YU66bS83yX49og==
-Date: Wed, 21 Aug 2019 14:21:36 +0000
-Message-ID: <VI1PR04MB7023E441FEE0D9288CAC0F44EEAA0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <cover.1565088423.git.leonard.crestez@nxp.com>
- <cf265add1502a75c4d6e6261ab1570c665e82c83.1565088423.git.leonard.crestez@nxp.com>
- <a2e09a9b-574f-8410-423e-0b0d8ea5c2ab@posteo.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 97d71ead-b2cf-47f4-9294-08d72642e004
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:VI1PR04MB6285; 
-x-ms-traffictypediagnostic: VI1PR04MB6285:
-x-ms-exchange-purlcount: 2
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB628544B532DFFF6943C82997EEAA0@VI1PR04MB6285.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 0136C1DDA4
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(396003)(39860400002)(346002)(376002)(136003)(199004)(189003)(76116006)(486006)(476003)(44832011)(54906003)(5660300002)(7416002)(52536014)(25786009)(446003)(53936002)(66066001)(4326008)(6246003)(229853002)(2906002)(14454004)(8936002)(74316002)(81166006)(305945005)(8676002)(81156014)(7736002)(316002)(66946007)(478600001)(55016002)(76176011)(26005)(6916009)(6506007)(102836004)(33656002)(6116002)(3846002)(7696005)(66556008)(99286004)(91956017)(186003)(71200400001)(71190400001)(9686003)(53546011)(64756008)(66476007)(66446008)(6436002)(966005)(86362001)(256004)(6306002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6285;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: /7yWEx21AP9z4cw0B5oaoDMJ9jfp/PzqIUwzn5+bUToKiDNCD7A+NKvq6xDJ4TYJUrCIriBWFGVGm6rfZiWMk6MEz4KXsynz8lQhvAMa9MRX6Lu5Tm01OIZk1V4FBDfQLv4lsDQnPqwZNjVmMdJq3PNm0dmCGrRYYVrmRu1PQyXUHL90ZBT0pHqGRmHZN/fOznnEcS2xHmLx6yf7nw3IYZOia1hqOlYxvhhdzxXKZ7GqzhtQRCJDmmpIrNNED7G73auTmaWqdpY0Tqa8svxT9GEjB6pcGFZJOHaahrhUDnWxhYObUs0rfRXJuFMfHp6ff8UmEX0CAFwlAk5ILEoJUd4hwsCduoPJoygRDq67PNNxpovS4DXZGL8y4PEE+If2wBsQYBvgN2/qpuCM6UxeXijafyE9bAGdP9eH+0gqN2s=
+ id 1i0RXg-0002ON-Qw
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 14:24:54 +0000
+Received: by mail-wr1-x443.google.com with SMTP id y8so2223552wrn.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 21 Aug 2019 07:24:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=W5+/W4IMwenH9+jUkOE5LQ7PP8ivOy1CbYnSa+rx73A=;
+ b=icerQtOyQSEaykZo7wW/hX6V2dufduJxDvM6MlvIbdgt7JrmE4RE5vd4UTBcwmgeEi
+ JytXpu17TLMOb/q9LFjjbLKjA7jggwFiIweGV5vVp9/Ig2uRsfd7y5MFebHzgFmI77UW
+ UVYcrb0hgEKRO7QYa4JnzAm1UnNzGyfAaJK7EjRUFEXCW8nfcSCWlPuo2fyVexk/mlmf
+ koSQGB08ckShi0wZodRPUErgDO9uSOAa8DW4ckfautZ17fglsEcNyL2gNQGnGeI+Dys1
+ x27615IvjtxGLahAINP5uluv36exCgrA+8GV19r4GnJBczkk59q955ZdBvyUl++JzA4m
+ 3Kzg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=W5+/W4IMwenH9+jUkOE5LQ7PP8ivOy1CbYnSa+rx73A=;
+ b=Cxha/kwKHFlWTCHasX2c8BC5MNqIXwsYkmWuPVaPq1muIdkr9BFXcvENo8g/hdg95x
+ phRJJEq3X3xDktqqOLalnJMHuUfpU6icIwov231n/rSFPNRRKBWy8ofjF8btfmkw80n9
+ ndIF3zdLK6zWWKy6X+OfM9GKjI59azWhu+wFo7cDXG+nVp9AtSQdlIfmaxFrZ1LECpLp
+ C1wuqyCBWpCkgyYtUotqf+8ofpQRKSYV1jH7QGa8xVFoFYEctCH2XjEqPSdeKTcilCNa
+ W1sBKQ+G+2ephjpSFGVLHaL3d5GQ750ngoMEZeN/9E+axwhMPN1ptnzVsjqsd5a3HQ/Q
+ V6Ng==
+X-Gm-Message-State: APjAAAU9HrtBkTCBfqYdT37/iq0oK1FWpT/0F9UmU5YDhtHTGi16EBiT
+ JTH/dQ1K4JoTfG3Spv3XF50Ep0yyCHgcrg==
+X-Google-Smtp-Source: APXvYqxy2iYJ0FZ+PqRpg+lQwy8ZnJTYFnSlT1Ebx5eo/jGaN/DT42xsJ4KWoRj4nb3DNjlyVzZ+0A==
+X-Received: by 2002:adf:9050:: with SMTP id h74mr13553115wrh.191.1566397491379; 
+ Wed, 21 Aug 2019 07:24:51 -0700 (PDT)
+Received: from [192.168.1.62] (wal59-h01-176-150-251-154.dsl.sta.abo.bbox.fr.
+ [176.150.251.154])
+ by smtp.gmail.com with ESMTPSA id a26sm71576wmg.45.2019.08.21.07.24.50
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 21 Aug 2019 07:24:50 -0700 (PDT)
+Subject: Re: [PATCH] pinctrl: meson: meson: Add of_node_put() before return
+To: Nishka Dasgupta <nishkadg.linux@gmail.com>, khilman@baylibre.com,
+ linus.walleij@linaro.org, linux-arm-kernel@lists.infradead.org,
+ linux-gpio@vger.kernel.org, linux-amlogic@lists.infradead.org
+References: <20190815060718.3286-1-nishkadg.linux@gmail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <b9f39c19-fe9c-47bd-e785-e7252d8be5bf@baylibre.com>
+Date: Wed, 21 Aug 2019 16:24:50 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 97d71ead-b2cf-47f4-9294-08d72642e004
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Aug 2019 14:21:36.2916 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: FrZ7Xx7TBNYiq9bwOG+znQ2VR+79bsLxqoeMr2v3jSdGzt1dUllkxUOuCZiI9P4sfTtoeyuKatdbWIJ5oL8JQg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6285
+In-Reply-To: <20190815060718.3286-1-nishkadg.linux@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_072139_945658_290863E0 
-X-CRM114-Status: UNSURE (   8.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190821_072452_907864_4AEFF1BF 
+X-CRM114-Status: GOOD (  17.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe09:0:0:0:610 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -126,61 +152,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- Saravana Kannan <saravanak@google.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Kyungmin Park <kyungmin.park@samsung.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21.08.2019 17:03, Martin Kepplinger wrote:
-> On 06.08.19 12:55, Leonard Crestez wrote:
->> This adds a platform driver for the i.MX8MM SoC.
->>
->> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
->> Signed-off-by: Alexandre Bailon <abailon@baylibre.com>
->> ---
->>   drivers/interconnect/imx/Kconfig          |   4 +
->>   drivers/interconnect/imx/Makefile         |   1 +
->>   drivers/interconnect/imx/imx8mm.c         | 114 ++++++++++++++++++++++
->>   include/dt-bindings/interconnect/imx8mm.h |  49 ++++++++++
->>   4 files changed, 168 insertions(+)
->>   create mode 100644 drivers/interconnect/imx/imx8mm.c
->>   create mode 100644 include/dt-bindings/interconnect/imx8mm.h
+On 15/08/2019 08:07, Nishka Dasgupta wrote:
+> Each iteration of for_each_child_of_node puts the previous node, but in
+> the case of a return from the middle of the loop, there is no put, thus
+> causing a memory leak. Hence add an of_node_put before the return.
+> Issue found with Coccinelle.
 > 
-> Do you plan to add such a driver for imx8mq too?
+> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+> ---
+>  drivers/pinctrl/meson/pinctrl-meson.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/pinctrl/meson/pinctrl-meson.c b/drivers/pinctrl/meson/pinctrl-meson.c
+> index 596786926209..8bba9d053d9f 100644
+> --- a/drivers/pinctrl/meson/pinctrl-meson.c
+> +++ b/drivers/pinctrl/meson/pinctrl-meson.c
+> @@ -651,6 +651,7 @@ static int meson_pinctrl_parse_dt(struct meson_pinctrl *pc,
+>  			continue;
+>  		if (gpio_np) {
+>  			dev_err(pc->dev, "multiple gpio nodes\n");
+> +			of_node_put(np);
+>  			return -EINVAL;
+>  		}
+>  		gpio_np = np;
+> 
 
-Yes! The topology is different (serving different IP blocks) but no 
-functional code changes are required between 8mm 8mn 8mq.
-
-I already wrote the code and tested it but didn't post because I want to 
-get the core parts in first. I periodically push my "full" 
-work-in-progress to github:
-
-https://github.com/cdleonard/linux/commits/next_imx8mm_busfreq
-
-You need out-of-tree ATF changes or devfreq probe will fail:
-
-https://github.com/cdleonard/arm-trusted-firmware/commits/imx_2.0.y_busfreq
-
---
-Regards,
-Leonard
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
