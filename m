@@ -2,67 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 715A9973D8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:50:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 425A2973DF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:51:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=obtT0MkdOMBIZ9rRh1puWFLag1ALNv9gDQ8VMQCVa/o=; b=I+5dE1som461oP
-	pWyvho25zUe5LmO5mkoCQvTbkNnu20r6P0DmnaFwAXaEUw6YCPd0HzXanrCOiNdadZ4O0/a3u6Nug
-	F0Y7jx86kvy79g4u0mZ/SM7hVl64WGYbOMr6YvS16P3JWDgxNT9MDjmf6FR7f+9K0r4/5Kv3e9bw+
-	QjURgxBs7+TbkmlCLZVhOk/BB9RrE85VN5Ul36yM9sz9ndwWd9U4lj2CVPsqvVxPipUshFlarEmcq
-	2qfXsGq0m6c+2oDOlc3Bwx7xgtfKyi6g9KXQ4UAuOdpHpx/Bdj7eoAm7s9p6XzxZ91MpqmTyn/n+u
-	gfdyfQW61u1oRO9Z00Rw==;
+	List-Owner; bh=tOwyrixoKJPG6xcyMano0WFm6uYw9OHS+rtBHPepljs=; b=R2CQdgdjog2NFb
+	TyzcDgqhESUFTY7CeKi8ajd+K4iUmap+wyuAIUheXdMI3HPR64UWgzH0fRWlwYpM7HhpKB3Sf+O3p
+	GDD5P5mAvI+dZxt6tW+/H3NtK2MrTafaQgRSRnYtLgyN03ycLxfx3Pb4exU2ndQm91o6oneGOcwGe
+	aDMy/+5xUduCb98beQdhzgjNAfSFjJx1VeNbcHJ9idsWlxyU/gZvag8erW750y+4QgEY/5VWtEEEt
+	V6YmnomzN51KvS8YtOdVlApts+oE1lkIVQ2ayKFlXpL7PD8aK++FExwtfK/Cot0icoZXlzhcb/o1E
+	Ci099V6bfDgu4HKPxztA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0LNg-0000Li-9c; Wed, 21 Aug 2019 07:50:08 +0000
+	id 1i0LP6-0002Fv-Rg; Wed, 21 Aug 2019 07:51:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0LNP-0000KR-Rn
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:49:53 +0000
-Received: from mail-lj1-f182.google.com (mail-lj1-f182.google.com
- [209.85.208.182])
+ id 1i0LOt-0002By-1J
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:51:24 +0000
+Received: from mail-lj1-f171.google.com (mail-lj1-f171.google.com
+ [209.85.208.171])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C17F2233FC
+ by mail.kernel.org (Postfix) with ESMTPSA id 4505923400
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 07:49:49 +0000 (UTC)
+ Wed, 21 Aug 2019 07:51:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566373790;
- bh=48hZbPJtzSxx3b/A53I4PAXECxqgXTQufB/rcB8xTZM=;
+ s=default; t=1566373882;
+ bh=UwB5meX7vznGepPgdAytPL5pzFFhozjObnM5Emeu3Rc=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=P7/gmtEOu+07urJK1FBTX+Ba4qDgS5ToQMx4eze7JbceXNNUR4u4m49iHD74LH3cp
- ZheENFVTNDmU4heunGKuD/ax/z6UiPmx6Al6Q1gc9brqPjwPysWKUVE5GyeFPUNyvH
- dXNfVYg87CsT9axD9YizhBrmwa4WId7PNziUkEjU=
-Received: by mail-lj1-f182.google.com with SMTP id e27so1219214ljb.7
+ b=ZcC2iBocY8Bq2caYhsOh9nB+bjqi61sGfQLMGW90vuMUZdyPCDLoDooBI7QohuyoX
+ zhcIqqbJqgYjjVH+1appGwsH73Hco46tlKuvhKJoAvC0Mv0EPNjrKurs5HMygnKLd2
+ MmaG/Rz8PqJ9tj8Thc8GQGUyR4sfJNiQ4qQH9mq4=
+Received: by mail-lj1-f171.google.com with SMTP id e27so1223076ljb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 00:49:49 -0700 (PDT)
-X-Gm-Message-State: APjAAAUfbvpTOQ3IuyYtm3YG0krwgWoTgrxBdTp7Bddz0Eppr6Mq2rAD
- e10i1GEyXRGZTPVOb/eUp3PLt6kxmpxILVwVfmU=
-X-Google-Smtp-Source: APXvYqyKZ6hp0isd++pSIdiygMNPAboh6ydC5w3pg7nv0BqAltG/55Aw8qIwfJ3UWnul58T3CByp6jMBOZQDlen5WuM=
-X-Received: by 2002:a2e:9acf:: with SMTP id p15mr18348273ljj.13.1566373787954; 
- Wed, 21 Aug 2019 00:49:47 -0700 (PDT)
+ Wed, 21 Aug 2019 00:51:22 -0700 (PDT)
+X-Gm-Message-State: APjAAAU70U6stpCqrdgwMZ6JS5VWP4/+t1zeqCmQ5x3TsYTMoIoGddoT
+ URUWE6sPSrX9dOuaqabPxIYb+BZUAxalRmqLTvA=
+X-Google-Smtp-Source: APXvYqyr3SjkA9GUYgeOfJkgxOJK4q881xniyq1fC4O0Cj/XRVNHydTVuF3his48XC6s8Vs0/qhvB6HW5gQzVguV0e4=
+X-Received: by 2002:a2e:b4d4:: with SMTP id r20mr18143652ljm.5.1566373880466; 
+ Wed, 21 Aug 2019 00:51:20 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190813150827.31972-1-s.nawrocki@samsung.com>
- <CGME20190813150852eucas1p2be4c0ab5ec2c079e3daf1af24283b27c@eucas1p2.samsung.com>
- <20190813150827.31972-3-s.nawrocki@samsung.com>
- <b5359603-b337-dcd8-b025-ca7dff5f4a06@nvidia.com>
- <CAJKOXPf597CMx=M2JmSTWe2GzBfcHFefgzSJbJ+njZGp-WfR1A@mail.gmail.com>
- <1e428c8e-f4b5-0810-77f9-2c899c040fc7@kernel.org>
-In-Reply-To: <1e428c8e-f4b5-0810-77f9-2c899c040fc7@kernel.org>
+References: <20190816163042.6604-1-krzk@kernel.org>
+In-Reply-To: <20190816163042.6604-1-krzk@kernel.org>
 From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 21 Aug 2019 09:49:36 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPcdeb08-2Xsmjpw_CsJCTah03GJaLUjQYw6n7=Xhiwoow@mail.gmail.com>
-Message-ID: <CAJKOXPcdeb08-2Xsmjpw_CsJCTah03GJaLUjQYw6n7=Xhiwoow@mail.gmail.com>
-Subject: Re: [PATCH v3 2/9] soc: samsung: Convert exynos-chipid driver to use
- the regmap API
-To: Sylwester Nawrocki <snawrocki@kernel.org>
+Date: Wed, 21 Aug 2019 09:51:09 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPcgZ2_ofZyAeTSxALkALaP-SFNfvNmNPYSPyLzuhpGZ0w@mail.gmail.com>
+Message-ID: <CAJKOXPcgZ2_ofZyAeTSxALkALaP-SFNfvNmNPYSPyLzuhpGZ0w@mail.gmail.com>
+Subject: Re: [GIT PULL 1/3] soc: samsung: Exynos for v5.4
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ arm@kernel.org, soc@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_004951_943007_50A20256 
-X-CRM114-Status: GOOD (  19.55  )
+X-CRM114-CacheID: sfid-20190821_005123_102669_9CCE29E4 
+X-CRM114-Status: GOOD (  14.67  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,74 +86,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org, vireshk@kernel.org,
- =?UTF-8?B?QmFydMWCb21pZWogxbtvxYJuaWVya2lld2ljeg==?=
- <b.zolnierkie@samsung.com>,
+Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ Kukjin Kim <kgene@kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jon Hunter <jonathanh@nvidia.com>, robh+dt@kernel.org, kgene@kernel.org,
- Sylwester Nawrocki <s.nawrocki@samsung.com>, pankaj.dubey@samsung.com,
- linux-tegra <linux-tegra@vger.kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 20 Aug 2019 at 23:38, Sylwester Nawrocki <snawrocki@kernel.org> wrote:
+On Fri, 16 Aug 2019 at 18:30, Krzysztof Kozlowski <krzk@kernel.org> wrote:
 >
-> On 8/20/19 21:37, Krzysztof Kozlowski wrote:
-> >>> diff --git a/drivers/soc/samsung/exynos-chipid.c b/drivers/soc/samsung/exynos-chipid.c
+> The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 >
-> >>> @@ -51,29 +48,24 @@ static const char * __init product_id_to_soc_id(unsigned int product_id)
-> >>>   int __init exynos_chipid_early_init(void)
-> >>>   {
-> >>>        struct soc_device_attribute *soc_dev_attr;
-> >>> -     void __iomem *exynos_chipid_base;
-> >>>        struct soc_device *soc_dev;
-> >>>        struct device_node *root;
-> >>> -     struct device_node *np;
-> >>> +     struct regmap *regmap;
-> >>>        u32 product_id;
-> >>>        u32 revision;
-> >>> +     int ret;
-> >>>
-> >>> -     /* look up for chipid node */
-> >>> -     np = of_find_compatible_node(NULL, NULL, "samsung,exynos4210-chipid");
-> >>> -     if (!np)
-> >>> -             return -ENODEV;
-> >>> -
-> >>> -     exynos_chipid_base = of_iomap(np, 0);
-> >>> -     of_node_put(np);
-> >>> -
-> >>> -     if (!exynos_chipid_base) {
-> >>> -             pr_err("Failed to map SoC chipid\n");
-> >>> -             return -ENXIO;
-> >>> +     regmap = syscon_regmap_lookup_by_compatible("samsung,exynos4210-chipid");
-> >>> +     if (IS_ERR(regmap)) {
-> >>> +             pr_err("Failed to get CHIPID regmap\n");
-> >>> +             return PTR_ERR(regmap);
-> >>>        }
-> >> Following this change, I am now seeing the above error on our Tegra
-> >> boards where this driver is enabled. This is triggering a kernel
-> >> warnings test we have to fail. Hence, I don't think that you can remove
-> >> the compatible node test here, unless you have a better way to determine
-> >> if this is a samsung device.
-> >
-> > Right, this is really wrong... I missed that it is not a probe but
-> > early init. And this init will be called on every board... Probably it
-> > should be converted to a regular driver.
+>   Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
 >
-> I'm also inclined to have it converted to a regular driver.  We already
-> have "exynos-asv" driver matching on the chipid node (patch 3/9).
-> The ASV patches will not be merged soon anyway, all this needs some more
-> thought. Krzysztof, can we abandon the chipid patches for now? Your
-> pull request doesn't appear to be merged to arm-soc yet. Sorry about
-> that.
+> are available in the Git repository at:
+>
+>   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-drivers-5.4
+>
+> for you to fetch changes up to 40d8aff614f71ab3cab20785b4f213e3802d4e87:
+>
+>   soc: samsung: chipid: Convert exynos-chipid driver to use the regmap API (2019-08-15 20:25:25 +0200)
+>
+> ----------------------------------------------------------------
+> Samsung soc drivers changes for v5.4
+>
+> Add Exynos Chipid driver for identification of product IDs and SoC
+> revisions.  The driver also exposes chipid regmap, later to be used by
+> Exynos Adaptive Supply Voltage driver (adjusting voltages to different
+> revisions of same SoC).
 
-Yes, let's abandon the pull request and rework the concept.
+It turns out that it brings troubles (code is executed on every
+platform polluting logs because it is an initcall, not a driver) so
+Sylwester (submitter) asked to skip the submission.
+
+Please ignore the pull request.
 
 Best regards,
 Krzysztof
