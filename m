@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D949097D4A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 16:39:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B999D97D4C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 16:39:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=++4BjpPPV9DTnG62Mm7N5V78BPUjat5tataW+X3xo8c=; b=go+2qX1QmYaJ4m
-	0tNDPK6DFcc2L33ggexPagPg+Z+FEFNpQiMpHttAQYiebk/zIcwDMUEyND9zfhK6vpfh510P+TtHP
-	j1vLQTg6yLfkNox62lBep5vt0LbLK3z2/KuHU+E7yrqP6RwBUOtBYtBEooL1NzG2okV5ksSXJHqRC
-	ioaswNk3oUL1V735fLUgy+FH+4uzNLTlvTv586NN0fORyeqTZe316IPzlinCT610fFmKTN4qE3aJM
-	hgemcLW5AlLfDeY/yvDU+KtV3AU/7sTlUy0L2KcAj9Jns6N8LZp9Qv5fCJqa++C+syRaaXK1hp6Hs
-	/EDAf50AEoyozWY8uUqA==;
+	List-Owner; bh=ZdbEBU1mcmjKmx+SYIKgagLS7c52hUkjOqwG5FghDSg=; b=p1pOO95kytfXg7
+	Hm5FXH+vchq59SudBVzxJLwvEA1+2UyGUcANQHgh1+pE7tHokmDsCrNn/by588eEFqB+ltw0ifsIC
+	OielMXyOSsOc3SDOlJitztdCdJ9QqajOwQWvPdByAQIEEEfCZ6ST9lh5o5twMlq5ZcFTltUUvIc+C
+	wj5rIxJaMW33klR5gnM25DRbKqKyZOpvneLcjgyHXdcDngf0fEo923wXTxaoVh2ElDFtzd/x7oRIj
+	k7Fg1gxCBwVqOcm5/6UZyfcqgqCFXUFDaqflXJT9HKGGpGE88n6Noub5ufDWJnmIYQSKyga+6OHH/
+	0WTwUsMDZLO5sDMGGbPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Rlf-0001ln-Cq; Wed, 21 Aug 2019 14:39:19 +0000
+	id 1i0Rls-0001zc-9D; Wed, 21 Aug 2019 14:39:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Rl5-0001LJ-GF
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 14:38:45 +0000
+ id 1i0Rl8-0001OB-1O
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 14:38:47 +0000
 Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D3F3C22DA7;
- Wed, 21 Aug 2019 14:38:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3A01F233A0;
+ Wed, 21 Aug 2019 14:38:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566398323;
- bh=oJGr4uBf27t1EnvM3eWCwbVoz4PVt3i7Qe7GuzWbUyg=;
+ s=default; t=1566398325;
+ bh=kWS1IJNtZwpR6Tu1rPoZ6ol1cRQDzAO9uYXRVmzqlQs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zCvaTN1k+hCPKmYi5wTT7n1rFaoExQIjF9NVU/6IMfbpbFQlyqxkRo8mW/VovoSea
- UDqby8tqZNWVAzobAdGBf3xgQXExRChW+cF3SeA2lS2UwYuaQfgTf8pRXuA6akTydk
- 8WcQsa59mah6+eDl9zVVvEtDCmKcV0ml3aERhpiA=
+ b=Scm4h2kZA2DV7qqzZeUzEy6U5YK50q64Cs4lszRV8MqbZOL2O/gIDU39DwmzHyCB9
+ Ethfk7PgtPyQorD65o+TcL9f2oK47Dv0dg+uDlphMgLSgfST3eRUnRA1IEBsEVAdvg
+ wkMg/LJBzPyvNFKZ8qW6udd6Wcxd4TaGg/4eCOHE=
 From: Maxime Ripard <mripard@kernel.org>
 To: linux@roeck-us.net,
 	wim@linux-watchdog.org
-Subject: [PATCH RESEND v2 3/6] dt-bindings: watchdog: sun4i: Add the watchdog
- interrupts
-Date: Wed, 21 Aug 2019 16:38:32 +0200
-Message-Id: <20190821143835.7294-3-mripard@kernel.org>
+Subject: [PATCH RESEND v2 4/6] dt-bindings: watchdog: sun4i: Add the watchdog
+ clock
+Date: Wed, 21 Aug 2019 16:38:33 +0200
+Message-Id: <20190821143835.7294-4-mripard@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190821143835.7294-1-mripard@kernel.org>
 References: <20190821143835.7294-1-mripard@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_073843_619438_4CA167E0 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20190821_073846_181297_72FD2631 
+X-CRM114-Status: GOOD (  11.06  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,42 +90,49 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-The Allwinner watchdog has an interrupt, either shared or dedicated
-depending on the SoC, that has been described in some DT, but not all of
-them.
+The Allwinner watchdog has a clock that has been described in some DT, but
+not all of them.
 
 The binding is also completely missing that description. Let's add that
 property to be consistent.
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+
+---
+
+Changes from v1:
+  - New patch
 ---
  .../bindings/watchdog/allwinner,sun4i-a10-wdt.yaml           | 5 +++++
  1 file changed, 5 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/watchdog/allwinner,sun4i-a10-wdt.yaml b/Documentation/devicetree/bindings/watchdog/allwinner,sun4i-a10-wdt.yaml
-index dc7553f57708..31c95c404619 100644
+index 31c95c404619..3a54f58683a0 100644
 --- a/Documentation/devicetree/bindings/watchdog/allwinner,sun4i-a10-wdt.yaml
 +++ b/Documentation/devicetree/bindings/watchdog/allwinner,sun4i-a10-wdt.yaml
-@@ -31,9 +31,13 @@ properties:
+@@ -31,12 +31,16 @@ properties:
    reg:
      maxItems: 1
  
-+  interrupts:
++  clocks:
 +    maxItems: 1
 +
+   interrupts:
+     maxItems: 1
+ 
  required:
    - compatible
    - reg
-+  - interrupts
++  - clocks
+   - interrupts
  
  unevaluatedProperties: false
- 
-@@ -42,6 +46,7 @@ examples:
-     wdt: watchdog@1c20c90 {
+@@ -47,6 +51,7 @@ examples:
          compatible = "allwinner,sun4i-a10-wdt";
          reg = <0x01c20c90 0x10>;
-+        interrupts = <24>;
+         interrupts = <24>;
++        clocks = <&osc24M>;
          timeout-sec = <10>;
      };
  
