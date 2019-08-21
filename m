@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89FBC9724A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 08:35:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C33C397255
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 08:38:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+gMogVHBu8DAMXcAJVNgAzfmYCc8fexFK5gGl8k6hUc=; b=BQdjTdQ5ZODGd8
-	KQRi0wJwRfRMQmvBEEvz4kSa/QVNZ7UekuaoEHGUQZ1PxAzTvGu5SgmtxrfBiPdMzK40+Q91Kz44/
-	sl3+pfiWfrK+siCsLYj1StlGH1NQ1rtXIJH0yEP5+y5J2EOQPp1I6BVRNHBjj9ttRUqNahxGE4wKc
-	8wA5dDqpz3SndmFehBYBFfGea0IiF5X8O+uXnzsXRSAjbD+Ug5ORghLPfnDAz+2u1Mru+2WadYZHq
-	NQDbHtajOMCmsN/Hcbd0vx2/ckQ56nHplCuhxIe9lziGJmZsIWvPu++pX2SBYF6OpyRqhD3t665eA
-	uWFw7Y3H/i8FJGtQO85w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8PL6DeSPquEA5ei3TdPOPthNoYHk+gYB2cUu65oKDD8=; b=tDaOGT5Rg2gDH05j8iTrOUU8w
+	kqYISOrT7cpgxFpUHs2h/Td1XJ92XghQdlX3IeKqtNYYwQjN+ZMh17UkiuimjTrPTnDQPDPr5+WkT
+	WLSmLm1o8YwiocVaaugHQIy99JRAXaC/pqTizI0BBXJBtvplCqHAwdaoZ9uoYmbQIBbA4xMZw9RQf
+	AcYrUZ4VC29PmqBJqyVtm86XED3Sp1s+iwgI+6ZLZgXDqJgL3DU7pg59hBn4RpHYHUVE6/TZ3lJFI
+	av5OR7ZF4sbvONj2wUQbSr4Lhd+vnw9CBiijkZKJAF/UeJryzx6/QSalDIN1OC6mjvd3hV7MM1Ox6
+	06ZjnOqHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0KDb-0004UF-JP; Wed, 21 Aug 2019 06:35:39 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1i0KGP-0004nA-0e; Wed, 21 Aug 2019 06:38:33 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0KDQ-0004TS-Or
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 06:35:30 +0000
-Received: by mail-wm1-x341.google.com with SMTP id k1so891709wmi.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 23:35:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wwWUHZYts+drKn/xffO1pjxZ/7naUbutbTGCAceSvTc=;
- b=VgGxw/btw738XPHhp/L0bKvSoT3qPerWAMK1NEHDGjQsBH1c+GvVxVdG+ELKg0a7qw
- Ud1ki2X8s1J6JjgxwBIEYV2QWmXlco5HDzzUcTS82y8EuC7jpBFTPQJ69lu0+gGPnNkg
- NQGo/pF0YwogR6K3YpQamy/tl3ggi/3YpFwf4xcg+jBAIHK0O0Ytt1vcRZYAEWzeD4LS
- E9qAOrvqm7wTxiX1At6+lIRbZTjLB4kwXrBEejCnH6cscYesK60qJGwX1eo5d5LF1TYN
- 23j+25p71iaRWc+oXZRpxrAA91j1sesOitH46KYLRalw6iyg8neOC42NukwlFkMe1Y25
- BV1Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=wwWUHZYts+drKn/xffO1pjxZ/7naUbutbTGCAceSvTc=;
- b=HDe5kOam8JyDpKTZ7PntkkcU1liEVm/+26SM3yYbkXAdk0fVtkFVubEWlFAdO4Tr+9
- VAJOf64CSu3LR0xYHNpFq7yv3EzqCseWZHMbqkCpndM7ndKkzu8j8L8qjK1bB1M2a7P5
- pg8YlP27/4czGwCKPTScn8Q+dReam6U5CdMVd0KD4/AW6PBUwc+5FzzFZBoog4PkT718
- 0OASB2w3lQ2XJWzdQrLj98fo0VinHOKkhyxo8kGrkMY2qGmpi3GJPcS/OullajuhU22K
- j+XgXJKrIUw9h136SJ3OcsQw6vlyw5cg2nZcf7DkBvKGPA8ulUbrDBeQrZ8dxNfNjDX2
- rCFg==
-X-Gm-Message-State: APjAAAWjpD/kJjPxSFHa4PE1aq413AbihZ8I0JvSsMM1uLEAwALEPfx2
- Q6KSKKVKRXWEJZgMSDJFn79+iBx04U5xsLERvj47UA==
-X-Google-Smtp-Source: APXvYqxZ9x1njh2u7SKpOiYXOMgCfQHg0eDluyY/KqYAWC54RNdsCDYER6fXRouO6u+k0xWxMeAI98fN8jZY2TrtyN4=
-X-Received: by 2002:a7b:c21a:: with SMTP id x26mr3651362wmi.61.1566369324021; 
- Tue, 20 Aug 2019 23:35:24 -0700 (PDT)
+ id 1i0KGD-0004mj-HQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 06:38:23 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7L6cFWE111177;
+ Wed, 21 Aug 2019 01:38:15 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1566369495;
+ bh=LhmYRBIhziyX3futN1EoMHuPXLhN+yAMM7NrqT9pGwc=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=jHqWTjgJioaugtacV0kEZr8DvG43f6qKtDoIE96CpxPkvB0nELSiiEj1BrMNhhG3G
+ MUu+khp1Tn1jxXLrmuYVx0PCh598XzwXRgWt624YNwzUTK/uSzPZ7dt8RBmUQZduQz
+ /h3dyXhTnr2vyp97tqsCP1ufc943HML2Hz7ipb0E=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7L6cFlq068867
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 21 Aug 2019 01:38:15 -0500
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 21
+ Aug 2019 01:38:14 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 21 Aug 2019 01:38:14 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7L6cCw6029530;
+ Wed, 21 Aug 2019 01:38:13 -0500
+Subject: Re: [PATCH 5/8] soc: ti: omap-prm: add omap4 PRM data
+To: Suman Anna <s-anna@ti.com>, <ssantosh@kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-omap@vger.kernel.org>,
+ <robh+dt@kernel.org>
+References: <1565164139-21886-1-git-send-email-t-kristo@ti.com>
+ <1565164139-21886-6-git-send-email-t-kristo@ti.com>
+ <04bc6773-dbd4-e1ab-ce31-d93e99dafb33@ti.com>
+ <9d684bdc-28b8-0772-2957-93e01c55aae4@ti.com>
+ <ed0ec707-ddea-cbfa-ecdf-99faeb770f3f@ti.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <6bb038b8-6bfc-196a-d1fc-b97931be9849@ti.com>
+Date: Wed, 21 Aug 2019 09:38:12 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190802053744.5519-1-clin@suse.com>
- <20190820115645.GP13294@shell.armlinux.org.uk>
- <CAKv+Gu_0wFw5Mjpdw7BEY7ewgetNgU=Ff1uvAsn0iHmJouyKqw@mail.gmail.com>
- <20190821061027.GA2828@linux-8mug>
-In-Reply-To: <20190821061027.GA2828@linux-8mug>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 21 Aug 2019 09:35:16 +0300
-Message-ID: <CAKv+Gu8Yny8cVPck3rPwCPvJBvcZKMHti_9bkCTM4H4cZ_43fg@mail.gmail.com>
-Subject: Re: [PATCH] efi/arm: fix allocation failure when reserving the kernel
- base
-To: Chester Lin <clin@suse.com>
+In-Reply-To: <ed0ec707-ddea-cbfa-ecdf-99faeb770f3f@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_233528_838566_1DAA2D49 
-X-CRM114-Status: GOOD (  22.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190820_233821_706784_28EB0186 
+X-CRM114-Status: GOOD (  15.90  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,6 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,85 +97,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Juergen Gross <JGross@suse.com>,
- "linux-efi@vger.kernel.org" <linux-efi@vger.kernel.org>,
- "guillaume.gardet@arm.com" <guillaume.gardet@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Joey Lee <JLee@suse.com>, "geert@linux-m68k.org" <geert@linux-m68k.org>,
- "ren_guo@c-sky.com" <ren_guo@c-sky.com>, Gary Lin <GLin@suse.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "rppt@linux.ibm.com" <rppt@linux.ibm.com>,
- "mingo@kernel.org" <mingo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: tony@atomide.com, devicetree@vger.kernel.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 21 Aug 2019 at 09:11, Chester Lin <clin@suse.com> wrote:
->
-> On Tue, Aug 20, 2019 at 03:28:25PM +0300, Ard Biesheuvel wrote:
-> > On Tue, 20 Aug 2019 at 14:56, Russell King - ARM Linux admin
-> > <linux@armlinux.org.uk> wrote:
-> > >
-> > > On Fri, Aug 02, 2019 at 05:38:54AM +0000, Chester Lin wrote:
-> > > > diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
-> > > > index f3ce34113f89..909b11ba48d8 100644
-> > > > --- a/arch/arm/mm/mmu.c
-> > > > +++ b/arch/arm/mm/mmu.c
-> > > > @@ -1184,6 +1184,9 @@ void __init adjust_lowmem_bounds(void)
-> > > >               phys_addr_t block_start = reg->base;
-> > > >               phys_addr_t block_end = reg->base + reg->size;
-> > > >
-> > > > +             if (memblock_is_nomap(reg))
-> > > > +                     continue;
-> > > > +
-> > > >               if (reg->base < vmalloc_limit) {
-> > > >                       if (block_end > lowmem_limit)
-> > > >                               /*
-> > >
-> > > I think this hunk is sane - if the memory is marked nomap, then it isn't
-> > > available for the kernel's use, so as far as calculating where the
-> > > lowmem/highmem boundary is, it effectively doesn't exist and should be
-> > > skipped.
-> > >
-> >
-> > I agree.
-> >
-> > Chester, could you explain what you need beyond this change (and my
-> > EFI stub change involving TEXT_OFFSET) to make things work on the
-> > RPi2?
-> >
->
-> Hi Ard,
->
-> In fact I am working with Guillaume to try booting zImage kernel and openSUSE
-> from grub2.04 + arm32-efistub so that's why we get this issue on RPi2, which is
-> one of the test machines we have. However we want a better solution for all
-> cases but not just RPi2 since we don't want to affect other platforms as well.
->
-
-Thanks Chester, but that doesn't answer my question.
-
-Your fix is a single patch that changes various things that are only
-vaguely related. We have already identified that we need to take
-TEXT_OFFSET (minus some space used by the swapper page tables) into
-account into the EFI stub if we want to ensure compatibility with many
-different platforms, and as it turns out, this applies not only to
-RPi2 but to other platforms as well, most notably the ones that
-require a TEXT_OFFSET of 0x208000, since they also have reserved
-regions at the base of RAM.
-
-My question was what else we need beyond:
-- the EFI stub TEXT_OFFSET fix [0]
-- the change to disregard NOMAP memblocks in adjust_lowmem_bounds()
-- what else???
-
-
-[0] https://git.kernel.org/pub/scm/linux/kernel/git/efi/efi.git/commit/?h=next&id=0eb7bad595e52666b642a02862ad996a0f9bfcc0
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAuOC4yMDE5IDIwLjIzLCBTdW1hbiBBbm5hIHdyb3RlOgo+IE9uIDgvMjAvMTkgMjo1MiBB
+TSwgVGVybyBLcmlzdG8gd3JvdGU6Cj4+IE9uIDIwLjguMjAxOSAyLjA4LCBTdW1hbiBBbm5hIHdy
+b3RlOgo+Pj4gT24gOC83LzE5IDI6NDggQU0sIFRlcm8gS3Jpc3RvIHdyb3RlOgo+Pj4+IEFkZCBQ
+Uk0gZGF0YSBmb3Igb21hcDQgZmFtaWx5IG9mIFNvQ3MuCj4+Pj4KPj4+PiBTaWduZWQtb2ZmLWJ5
+OiBUZXJvIEtyaXN0byA8dC1rcmlzdG9AdGkuY29tPgo+Pj4+IC0tLQo+Pj4+ICDCoCBkcml2ZXJz
+L3NvYy90aS9vbWFwX3BybS5jIHwgMjAgKysrKysrKysrKysrKysrKysrKysKPj4+PiAgwqAgMSBm
+aWxlIGNoYW5nZWQsIDIwIGluc2VydGlvbnMoKykKPj4+Pgo+Pj4+IGRpZmYgLS1naXQgYS9kcml2
+ZXJzL3NvYy90aS9vbWFwX3BybS5jIGIvZHJpdmVycy9zb2MvdGkvb21hcF9wcm0uYwo+Pj4+IGlu
+ZGV4IDg3MDUxNWUzLi45YjhkNTk0NSAxMDA2NDQKPj4+PiAtLS0gYS9kcml2ZXJzL3NvYy90aS9v
+bWFwX3BybS5jCj4+Pj4gKysrIGIvZHJpdmVycy9zb2MvdGkvb21hcF9wcm0uYwo+Pj4+IEBAIC01
+NCw3ICs1NCwyNyBAQCBzdHJ1Y3Qgb21hcF9yZXNldF9kYXRhIHsKPj4+PiAgwqAgwqAgI2RlZmlu
+ZSBPTUFQX1BSTV9OT19SU1RTVMKgwqDCoCBCSVQoMCkKPj4+PiAgwqAgK3N0cnVjdCBvbWFwX3By
+bV9kYXRhIG9tYXA0X3BybV9kYXRhW10gPSB7Cj4+Pgo+Pj4gc3RhdGljIGNvbnN0Cj4+Cj4+IFdp
+bGwgZml4IHRoaXMgYW5kIHJlc3Qgb2YgdGhlIHNpbWlsYXIgY29tbWVudHMuCj4+Cj4+IC1UZXJv
+Cj4+Cj4+Pgo+Pj4gcmVnYXJkcwo+Pj4gU3VtYW4KPj4+Cj4+Pj4gK8KgwqDCoCB7IC5uYW1lID0g
+Im1wdSIsIC5iYXNlID0gMHg0YTMwNjMwMCwgLnB3c3RzdCA9IDB4NCB9LAo+Pj4+ICvCoMKgwqAg
+eyAubmFtZSA9ICJ0ZXNsYSIsIC5iYXNlID0gMHg0YTMwNjQwMCwgLnB3c3RzdCA9IDB4NCwgLnJz
+dGN0bCA9Cj4+Pj4gMHgxMCwgLnJzdHN0ID0gMHgxNCB9LAo+Pj4+ICvCoMKgwqAgeyAubmFtZSA9
+ICJhYmUiLCAuYmFzZSA9IDB4NGEzMDY1MDAsIC5wd3N0c3QgPSAweDQgfSwKPj4+PiArwqDCoMKg
+IHsgLm5hbWUgPSAiYWx3YXlzX29uX2NvcmUiLCAuYmFzZSA9IDB4NGEzMDY2MDAsIC5wd3N0c3Qg
+PSAweDQgfSwKPj4+PiArwqDCoMKgIHsgLm5hbWUgPSAiY29yZSIsIC5iYXNlID0gMHg0YTMwNjcw
+MCwgLnB3c3RzdCA9IDB4NCwgLnJzdGN0bCA9Cj4+Pj4gMHgyMTAsIC5yc3RzdCA9IDB4MjE0IH0s
+Cj4+Pj4gK8KgwqDCoCB7IC5uYW1lID0gIml2YWhkIiwgLmJhc2UgPSAweDRhMzA2ZjAwLCAucHdz
+dHN0ID0gMHg0LCAucnN0Y3RsID0KPj4+PiAweDEwLCAucnN0c3QgPSAweDE0IH0sCj4+Pj4gK8Kg
+wqDCoCB7IC5uYW1lID0gImNhbSIsIC5iYXNlID0gMHg0YTMwNzAwMCwgLnB3c3RzdCA9IDB4NCB9
+LAo+Pj4+ICvCoMKgwqAgeyAubmFtZSA9ICJkc3MiLCAuYmFzZSA9IDB4NGEzMDcxMDAsIC5wd3N0
+c3QgPSAweDQgfSwKPj4+PiArwqDCoMKgIHsgLm5hbWUgPSAiZ2Z4IiwgLmJhc2UgPSAweDRhMzA3
+MjAwLCAucHdzdHN0ID0gMHg0IH0sCj4+Pj4gK8KgwqDCoCB7IC5uYW1lID0gImwzaW5pdCIsIC5i
+YXNlID0gMHg0YTMwNzMwMCwgLnB3c3RzdCA9IDB4NCB9LAo+Pj4+ICvCoMKgwqAgeyAubmFtZSA9
+ICJsNHBlciIsIC5iYXNlID0gMHg0YTMwNzQwMCwgLnB3c3RzdCA9IDB4NCB9LAo+Pj4+ICvCoMKg
+wqAgeyAubmFtZSA9ICJjZWZ1c2UiLCAuYmFzZSA9IDB4NGEzMDc2MDAsIC5wd3N0c3QgPSAweDQg
+fSwKPj4+PiArwqDCoMKgIHsgLm5hbWUgPSAid2t1cCIsIC5iYXNlID0gMHg0YTMwNzcwMCwgLnB3
+c3RzdCA9IDB4NCB9LAo+Pj4+ICvCoMKgwqAgeyAubmFtZSA9ICJlbXUiLCAuYmFzZSA9IDB4NGEz
+MDc5MDAsIC5wd3N0c3QgPSAweDQgfSwKPj4+PiArwqDCoMKgIHsgLm5hbWUgPSAiZGV2aWNlIiwg
+LmJhc2UgPSAweDRhMzA3YjAwLCAucnN0Y3RsID0gMHgwLCAucnN0c3QgPQo+Pj4+IDB4NCB9LAo+
+IAo+IFNvLCBsb29rcyBsaWtlIHlvdSBhcmUgdXNpbmcgcHdzdGN0cmwgYXMgMCBieSBkZWZhdWx0
+LCBidXQgc29tZSBvZiB0aGVtCj4gd2lsbCBuZWl0aGVyIGhhdmUgcHdzdGN0cmwgb3IgcHdzdHN0
+IGxpa2UgImRldmljZSIgUFJNIGhlcmUuIElzIHRoZSBwbGFuCj4gdG8gdXNlIC0xIGZvciB0aGUg
+ZmllbGRzLCBvciBhIGZsYWdzIGZpZWxkPwoKTXVsdGlwbGUgcGF0aHMgYXJlIHBvc3NpYmxlLCBJ
+IHdpbGwgc2VlIHdoYXQgbWFrZXMgbW9zdCBzZW5zZSBvbmNlIEkgCmltcGxlbWVudCBpdC4KCi1U
+ZXJvCgo+IAo+IHJlZ2FyZHMKPiBTdW1hbgo+IAo+Pj4+ICvCoMKgwqAgeyB9LAo+Pj4+ICt9Owo+
+Pj4+ICsKPj4+PiAgwqAgc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgb21hcF9wcm1f
+aWRfdGFibGVbXSA9IHsKPj4+PiArwqDCoMKgIHsgLmNvbXBhdGlibGUgPSAidGksb21hcDQtcHJt
+LWluc3QiLCAuZGF0YSA9IG9tYXA0X3BybV9kYXRhIH0sCj4+Pj4gIMKgwqDCoMKgwqAgeyB9LAo+
+Pj4+ICDCoCB9Owo+Pj4+ICAgCj4+Pgo+Pgo+PiAtLSAKPiAKCi0tClRleGFzIEluc3RydW1lbnRz
+IEZpbmxhbmQgT3ksIFBvcmtrYWxhbmthdHUgMjIsIDAwMTgwIEhlbHNpbmtpLiBZLXR1bm51cy9C
+dXNpbmVzcyBJRDogMDYxNTUyMS00LiBLb3RpcGFpa2thL0RvbWljaWxlOiBIZWxzaW5raQoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
+cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
+bAo=
