@@ -2,93 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AB839700E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 05:12:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4683A97020
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 05:14:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=YpH/WNjBmJJoOLtUU+Ft7cRtNwzT4MsPHm8o2++xh70=; b=uGUByuIwkWrySPG0VxNt/5jO5N
-	bfzXUJDfstN3ALB/GYTBUc0e60kHn++9GpSZvNnkD60NMi22742ySS0wRbfPlsUOFSgCPDKxH9LIZ
-	dU/H+YZEuSn1W9CTeMGbtaOT+3R3p89sWDYJovfC3t/7vHqh5FIiZIwCKOzWcEMpTvF4rTuqYObLk
-	ITTXpM4wGhu9WR/MrDj8XwuQFapbn6BUtI4Ry3Px8kQUGCLLbbEcxLUJBYJ+ENL5FRdAIAUpArinQ
-	KfnF8lrv1r20P9n5QigbRJ3LhTefXeTj3kgMAjAzJUVHFNPtgLpdBnrQDf6VqeWhxvFSVS/uGpsbg
-	qQE2RANw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=j3q+cJnxKvOkbH6rM4IPnT+UP+yYFEpBptcvW7xDBKw=; b=SU5
+	CT5/2zKS0crVBTmQaCsGMcpKnhgIKPFGi5NiwC3ExgjbLt/2Rfjn3OUksiPAfP0C0f0Xe2d5fVIy5
+	wNpgYPTH10OufkZiexH8aiadzwqdU5TBViF7kgot4vtUJg1kyGgHR2k7yTLEbTpvJyFhk3iG3Utyh
+	yuF9FT61D/oDlEJY4b/9LX74RtaDBA6slNg2nktW6LD4Kou7z3nvqA1UkKdXKBeQL7EevQIdZbC75
+	E35hagAgQe8HpwHPIdPC8kDhBvYEy/yfrBAU6yRS4TELbBY/Hd5MGiBdJe0seDUNr34PuisFrEdx4
+	2CbdRuvhO8gpNfeQTjh4BDPj5VwbGyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0H2j-0000ej-DS; Wed, 21 Aug 2019 03:12:13 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1i0H4g-0001wX-DF; Wed, 21 Aug 2019 03:14:14 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0H2J-0000Kk-Fe; Wed, 21 Aug 2019 03:11:48 +0000
-Received: by mail-pl1-x641.google.com with SMTP id gn20so521279plb.2;
- Tue, 20 Aug 2019 20:11:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=tfmgm4LIxxx9FZ0lj1a+BI18xaGv0RsnyVSEcXhiXYo=;
- b=pDy9bJxnBGKM1sKpIALE7tC8FeAmFQuMtZ1Bu4n2nDyhrPran3Ta7FiFeQQlQExPcj
- KHDchay8h9+7yByAof4eZ5E6HyepC035XGKBUhzGOsVtn6UCQXE8bugxFBJM2Jz6dj0u
- HeBCd/xxoFIYUbenH5WCe2vxFMlxAkpAFAd1Jl5ouinHaQTwsuCA4iNylUacmTinj0lf
- VVqxVwpF7L17EJSgJiPydsfetUrf88v3qNwFIO5y1wlCN7QJvemJ0e+WhIZencU8L2/O
- EZcidgGpdgytWToe7bwLRzaTRD6UKWzXWUJ8EDJqaBcbZVheT9wRiR2I3fgXOg7IYqCm
- FQ6w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :in-reply-to:references;
- bh=tfmgm4LIxxx9FZ0lj1a+BI18xaGv0RsnyVSEcXhiXYo=;
- b=ecEo7wKzCCpqh+eO6ltfSYFWsi5N5z2Ki1qsFZmPXwbAFn6ljZcs+2uhkD9zqu5Uue
- nRMxLU1/7BHapN2SVaPo175aUsZqHmIqe4Wsl+RKMDjMNPSscJlAQFyx2wEukv/OpJ2r
- M4+vQZXO7CFg6Lq22mUXQ+9jHcJaf1oTRAQdA9qSFrziUx/9AscLnsb2Nt6sjuMwcfGk
- Oe3GfbIv/Ul5YA4SdScoUW/w/JWcDhQHbqZBTfudV2kwAAciI050hwHwhCblyKQITj7U
- 84jW1KnOQWd8Id0f6x1cMFKByNi+kntshBCuRimcbsz+HaZn4H4xR7CUqAVtkC4pDHaF
- Ck4A==
-X-Gm-Message-State: APjAAAW0Kc/XYF8b87gdSqljOVgLGmeal25sRnqBQ2cXzJIBDgZKd94J
- AEgJX9OIjVt8VkB2Mpjas8XQL/AT
-X-Google-Smtp-Source: APXvYqywbluDozgwfegRgr7JEenjh7blVGNMTCIZBGNYicQyVNkH/LJvp5txNVm0x2yEXo8FlfHXtQ==
-X-Received: by 2002:a17:902:29e6:: with SMTP id
- h93mr10098249plb.39.1566357107026; 
- Tue, 20 Aug 2019 20:11:47 -0700 (PDT)
-Received: from localhost.localdomain ([103.29.142.67])
- by smtp.gmail.com with ESMTPSA id j15sm21540009pfe.3.2019.08.20.20.11.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 20 Aug 2019 20:11:46 -0700 (PDT)
-From: Kever Yang <kever.yang@rock-chips.com>
-To: heiko@sntech.de
-Subject: [PATCH v2 2/2] dt-bindings: arm: rockchip: remove reference to fennec
- board
-Date: Wed, 21 Aug 2019 11:11:24 +0800
-Message-Id: <20190821031124.17806-2-kever.yang@rock-chips.com>
+ id 1i0H4L-0001Ot-EY
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 03:13:55 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1E7501A04CA;
+ Wed, 21 Aug 2019 05:13:50 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 925D91A004C;
+ Wed, 21 Aug 2019 05:13:43 +0200 (CEST)
+Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8AD3F402FF;
+ Wed, 21 Aug 2019 11:13:35 +0800 (SGT)
+From: Ran Wang <ran.wang_1@nxp.com>
+To: Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Pavel Machek <pavel@ucw.cz>
+Subject: [PATCH v6 1/3] PM: wakeup: Add routine to help fetch wakeup source
+ object.
+Date: Wed, 21 Aug 2019 11:15:35 +0800
+Message-Id: <20190821031537.46824-1-ran.wang_1@nxp.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190821031124.17806-1-kever.yang@rock-chips.com>
-References: <20190821031124.17806-1-kever.yang@rock-chips.com>
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_201147_527709_CF2D3FF4 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190820_201353_790973_454492DB 
+X-CRM114-Status: GOOD (  11.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kever.yang[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,47 +65,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, linux-kernel@vger.kernel.org,
- Akash Gajjar <Akash_Gajjar@mentor.com>, Kever Yang <kever.yang@rock-chips.com>,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Li Biwen <biwen.li@nxp.com>, Len Brown <len.brown@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-pm@vger.kernel.org,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, Ran Wang <ran.wang_1@nxp.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The rk3288 fennec board has been removed, remove the binding document at
-the same time.
+Some user might want to go through all registered wakeup sources
+and doing things accordingly. For example, SoC PM driver might need to
+do HW programming to prevent powering down specific IP which wakeup
+source depending on. So add this API to help walk through all registered
+wakeup source objects on that list and return them one by one.
 
-Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
+Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
 ---
+Change in v6:
+	- Add wakeup_source_get_star() and wakeup_source_get_stop() to aligned 
+	with wakeup_sources_stats_seq_start/nex/stop.
 
-Changes in v2: None
+Change in v5:
+	- Update commit message, add decription of walk through all wakeup
+	source objects.
+	- Add SCU protection in function wakeup_source_get_next().
+	- Rename wakeup_source member 'attached_dev' to 'dev' and move it up
+	(before wakeirq).
 
- Documentation/devicetree/bindings/arm/rockchip.yaml | 5 -----
- 1 file changed, 5 deletions(-)
+Change in v4:
+	- None.
 
-diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-index 34865042f4e4..cc2f1c2d0cd0 100644
---- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-+++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-@@ -424,11 +424,6 @@ properties:
-               - rockchip,rk3288-evb-rk808
-           - const: rockchip,rk3288
+Change in v3:
+	- Adjust indentation of *attached_dev;.
+
+Change in v2:
+	- None.
+
+ drivers/base/power/wakeup.c | 39 +++++++++++++++++++++++++++++++++++++++
+ include/linux/pm_wakeup.h   |  5 +++++
+ 2 files changed, 44 insertions(+)
+
+diff --git a/drivers/base/power/wakeup.c b/drivers/base/power/wakeup.c
+index ee31d4f..61bc16b 100644
+--- a/drivers/base/power/wakeup.c
++++ b/drivers/base/power/wakeup.c
+@@ -14,6 +14,7 @@
+ #include <linux/suspend.h>
+ #include <linux/seq_file.h>
+ #include <linux/debugfs.h>
++#include <linux/of_device.h>
+ #include <linux/pm_wakeirq.h>
+ #include <trace/events/power.h>
  
--      - description: Rockchip RK3288 Fennec
--        items:
--          - const: rockchip,rk3288-fennec
--          - const: rockchip,rk3288
--
-       - description: Rockchip RK3328 Evaluation board
-         items:
-           - const: rockchip,rk3328-evb
+@@ -228,6 +229,43 @@ void wakeup_source_unregister(struct wakeup_source *ws)
+ EXPORT_SYMBOL_GPL(wakeup_source_unregister);
+ 
+ /**
++ * wakeup_source_get_star - Begin a walk on wakeup source list
++ * @srcuidx: Lock index allocated for this caller.
++ */
++struct wakeup_source *wakeup_source_get_start(int *srcuidx)
++{
++	struct list_head *ws_head = &wakeup_sources;
++
++	*srcuidx = srcu_read_lock(&wakeup_srcu);
++
++	return list_entry_rcu(ws_head->next, struct wakeup_source, entry);
++}
++EXPORT_SYMBOL_GPL(wakeup_source_get_start);
++
++/**
++ * wakeup_source_get_next - Get next wakeup source from the list
++ * @ws: Previous wakeup source object
++ */
++struct wakeup_source *wakeup_source_get_next(struct wakeup_source *ws)
++{
++	struct list_head *ws_head = &wakeup_sources;
++
++	return list_next_or_null_rcu(ws_head, &ws->entry,
++				struct wakeup_source, entry);
++}
++EXPORT_SYMBOL_GPL(wakeup_source_get_next);
++
++/**
++ * wakeup_source_get_stop - Stop a walk on wakeup source list
++ * @idx: Dedicated lock index of this caller.
++ */
++void wakeup_source_get_stop(int idx)
++{
++	srcu_read_unlock(&wakeup_srcu, idx);
++}
++EXPORT_SYMBOL_GPL(wakeup_source_get_stop);
++
++/**
+  * device_wakeup_attach - Attach a wakeup source object to a device object.
+  * @dev: Device to handle.
+  * @ws: Wakeup source object to attach to @dev.
+@@ -242,6 +280,7 @@ static int device_wakeup_attach(struct device *dev, struct wakeup_source *ws)
+ 		return -EEXIST;
+ 	}
+ 	dev->power.wakeup = ws;
++	ws->dev = dev;
+ 	if (dev->power.wakeirq)
+ 		device_wakeup_attach_irq(dev, dev->power.wakeirq);
+ 	spin_unlock_irq(&dev->power.lock);
+diff --git a/include/linux/pm_wakeup.h b/include/linux/pm_wakeup.h
+index 9102760..e6b47b6 100644
+--- a/include/linux/pm_wakeup.h
++++ b/include/linux/pm_wakeup.h
+@@ -23,6 +23,7 @@ struct wake_irq;
+  * @name: Name of the wakeup source
+  * @entry: Wakeup source list entry
+  * @lock: Wakeup source lock
++ * @dev: The device it attached to
+  * @wakeirq: Optional device specific wakeirq
+  * @timer: Wakeup timer list
+  * @timer_expires: Wakeup timer expiration
+@@ -42,6 +43,7 @@ struct wakeup_source {
+ 	const char 		*name;
+ 	struct list_head	entry;
+ 	spinlock_t		lock;
++	struct device		*dev;
+ 	struct wake_irq		*wakeirq;
+ 	struct timer_list	timer;
+ 	unsigned long		timer_expires;
+@@ -88,6 +90,9 @@ extern void wakeup_source_add(struct wakeup_source *ws);
+ extern void wakeup_source_remove(struct wakeup_source *ws);
+ extern struct wakeup_source *wakeup_source_register(const char *name);
+ extern void wakeup_source_unregister(struct wakeup_source *ws);
++extern struct wakeup_source *wakeup_source_get_start(int *srcuidx);
++extern struct wakeup_source *wakeup_source_get_next(struct wakeup_source *ws);
++extern void wakeup_source_get_stop(int idx);
+ extern int device_wakeup_enable(struct device *dev);
+ extern int device_wakeup_disable(struct device *dev);
+ extern void device_set_wakeup_capable(struct device *dev, bool capable);
 -- 
-2.17.1
+2.7.4
 
 
 _______________________________________________
