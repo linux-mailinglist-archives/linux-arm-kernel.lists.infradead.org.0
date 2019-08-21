@@ -2,86 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 177C3971D7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 07:59:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 928EF971DD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 08:01:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AZcI95meimrf+0hbOvjAHpBuSSiwM9mOs4HUtFVxyE8=; b=q1gU6GnDQcHU+j
-	syZsriPJfaIvKAjPLpdsx3jVP65PBJvA//iyBv0a1+cApp0x7Ub4iIwg7+oK22l41+zY7qYs+JvgW
-	TtQQRNemElbZ9yqDLlE5qwdrxZKpEb6mut/yUodcV46+S9xsIHrGKXM5PH+klX5XBQbBQj0xHG83a
-	W6MbRxdd8BYO4sGYQQEQcUBV/Ba8sGj0v5Y7o0sIhDafmDC7B8t22kBV+tFDjtvoCgrFOIMxEYLWR
-	dppk3XU9W/kw+CVtjDlPoNaAi+Zk0HpA4ddqfWHq9LfcNGzuZhMXFsU9Ao8Zqwkanzm6tUysYu40k
-	FPXlKhVwPeCbwkuvmg0w==;
+	List-Owner; bh=FGDLrNhPklYlK1RqZ7zLXnu2bd7nqNbBQxyKAsdkkAc=; b=KJCElRKl1cu4By
+	uoH7GP7tvJOugiWD0axXp6TrGgj5pHEuoDo75hGg1IhtRR/4EKGxFf9OT3VrJeTpfeIO21uIHfkOZ
+	iox7mQy683jP7Uyw+MMwZ15wF/4/ctQ6LjRQ+kiNiuBlGH+s3m5VLjv63La3uQqt+MvUxMSntB0oP
+	40d5zv5O3YMMtMsTYUM8sSL+Nr5lKG/aMNmgCqd4qTuJ6VPB2FS3rYEVnTeLUek9ul9D+y6vteAQB
+	ajAi7EKhso4kVyzPStRuQmjI/8a7SzSRRJg1Jg8GbjmfpZqkpvVMTG4NbPMSJSUGUcbO6tsV76IHm
+	La0/5bdvtsxSshgKQcNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Je5-0001oe-U4; Wed, 21 Aug 2019 05:58:58 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1i0Jgq-0004i9-8v; Wed, 21 Aug 2019 06:01:48 +0000
+Received: from mail-ed1-f41.google.com ([209.85.208.41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Jcj-0000KX-FI
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 05:57:35 +0000
-Received: by mail-qk1-x744.google.com with SMTP id 201so826712qkm.9
+ id 1i0JgZ-0004gs-HV
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 06:01:33 +0000
+Received: by mail-ed1-f41.google.com with SMTP id h8so1515044edv.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 22:57:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=t6gYotOZasUlghj+5miHn6itbPw1Xxo5qoWX2c4AJZ0=;
- b=fRkSaGl8rcNZIMIyKlWAiXym9k7PM2Njj2vuF5xfVsWAvvzvhYS7QuzqjU8iNsynLW
- xjKCE0oaS2TZzsErSCZ+bXBoJshE2B6JY9ANXMpLIOzFkshoyNCGPE5lODc42z3c8AYn
- 6EA+e6LSO18ss01/caCZqVLCqS5xyEzO+wHRw=
+ Tue, 20 Aug 2019 23:01:31 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=t6gYotOZasUlghj+5miHn6itbPw1Xxo5qoWX2c4AJZ0=;
- b=Xoj+Bwl7/S5wuO6vRIy4mFHGjBsz9Lm3kANgJC14xCa0EeV/8w5AaiSPGh2+XknEgf
- kDkPwSmcGkFZbeUYIO60Zr+48BKQs2VASut9MNDpi7JKvcbaxzGOZpRZUN70BivAZM0k
- V8zr+A/nXfPkIEEjxjmZCQKzVMgArvf9WpZJi0kZfeVexbOS7zML2P8dr5/yyhj8GcSp
- N+MchakijQICyxk2yUZ5+hayD4KifCkSwydPV9HxZBr++m3XaFWppqVXUPEdXFRY/W7p
- e9gGQwyEv0ZtuyURLN9Mdu+QoHrmJp+RO7nj/b0qPftgmTdfY3GCm/9O7kclw30b2KZK
- zI3A==
-X-Gm-Message-State: APjAAAXs1ORkcv2CD3kWjxGKlmbJZ6iC8kQku79UlhTGDEonhWjQsPDk
- raUYrqNOVUDMWPrgK6Mk9A31I+MAmggPfvSfGEEVpQ==
-X-Google-Smtp-Source: APXvYqxC6HcxP1uepjmB3Azy4g3yRYVzUlDR2q/OUNQULPHyMxoFB38jRqS6lWI2lvQ0KTTrE5fN1aakFroOXkZTJWc=
-X-Received: by 2002:a05:620a:16c3:: with SMTP id
- a3mr28335159qkn.315.1566367052074; 
- Tue, 20 Aug 2019 22:57:32 -0700 (PDT)
+ bh=hs9Q4JQ4sAzVdPQmb3HqoJDxpZfogEn9LhSdqe880xI=;
+ b=i62tLd2TF9p9zw/Wx+NWFMCAqtbdAJCccx4yAzMxbNm9Apy5jd8Mc9aSI/Ff0LBgNi
+ FyAAN+v9NKwUhE1SQ85i5hmb2zM565CurMvKFcvVUiyxbgFv8dRn+ncYhH4jEiaFtW2k
+ uyNJ3Oro/lQCHMrwmFXH9oE1iqa7e0ZUl2Q4WH9Y3Dl9EfF8xb93rBP57lGQUsy5ADte
+ tm7+vsThxTUiD/FV1DtWn6vlObKozFZnvrk4fdBPX51O3nbHnzWjnPj8A17QvH1kmnpF
+ mcuo+mkeeYNQgu84V/0rifzAMn+ZfHEIRdKxQ5JKmcaZPJh/vKcHF4GXbYaxhV0fQgKK
+ ckzg==
+X-Gm-Message-State: APjAAAURJnPVNnEXgG/kuLa24sSMlDQQyG3qHbhshCbCJJRuL0gJTe4g
+ yEuOHjYYDP516rNXQHicAYDC9v6qrp4=
+X-Google-Smtp-Source: APXvYqwAVEk0KD5aDcEm0ogwUewfOxgNqPpr/G6RKGXE2MZJDF+pvf57WWuJbP0KDUmIDbW8G6KkyA==
+X-Received: by 2002:a17:906:2ac3:: with SMTP id
+ m3mr26649667eje.212.1566367289271; 
+ Tue, 20 Aug 2019 23:01:29 -0700 (PDT)
+Received: from mail-wm1-f46.google.com (mail-wm1-f46.google.com.
+ [209.85.128.46])
+ by smtp.gmail.com with ESMTPSA id h15sm3925335edb.57.2019.08.20.23.01.28
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 20 Aug 2019 23:01:28 -0700 (PDT)
+Received: by mail-wm1-f46.google.com with SMTP id c5so610158wmb.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 20 Aug 2019 23:01:28 -0700 (PDT)
+X-Received: by 2002:a1c:4c06:: with SMTP id z6mr3726750wmf.47.1566367288272;
+ Tue, 20 Aug 2019 23:01:28 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190819071602.139014-1-hsinyi@chromium.org>
- <20190819071602.139014-3-hsinyi@chromium.org>
- <20190819181349.GE10349@mit.edu>
- <CAJMQK-ghQ8weMerXW7t0DFZTAg_c5M80Yp5DTAtyY2LA7YpS1A@mail.gmail.com>
- <CAKv+Gu_qJUU2hRujjv6e5yPqPQXRXokBU_2mSGD3civ2d2+xhw@mail.gmail.com>
-In-Reply-To: <CAKv+Gu_qJUU2hRujjv6e5yPqPQXRXokBU_2mSGD3civ2d2+xhw@mail.gmail.com>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Wed, 21 Aug 2019 13:57:05 +0800
-Message-ID: <CAJMQK-hdYz+pW5QL41nXkZAX1qiRynaWg7cne48qCaQsuPrSCg@mail.gmail.com>
-Subject: Re: [PATCH v8 2/3] fdt: add support for rng-seed
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+References: <20190814060854.26345-1-codekipper@gmail.com>
+ <20190814060854.26345-10-codekipper@gmail.com>
+ <CAGb2v65+-OB4zEyW8f7hcWHkL7DtfEB1YK2B1nOKdgNdNqC0kQ@mail.gmail.com>
+ <CAEKpxBnxf=iejk887A7qFkzt3BXVxiRS1PeA45aZYR9DsBAU4Q@mail.gmail.com>
+In-Reply-To: <CAEKpxBnxf=iejk887A7qFkzt3BXVxiRS1PeA45aZYR9DsBAU4Q@mail.gmail.com>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Wed, 21 Aug 2019 14:01:15 +0800
+X-Gmail-Original-Message-ID: <CAGb2v65CueHKeZMCsMFjwWA1vo7ne3K8uVu2_yGOsXChY371ew@mail.gmail.com>
+Message-ID: <CAGb2v65CueHKeZMCsMFjwWA1vo7ne3K8uVu2_yGOsXChY371ew@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH v5 09/15] clk: sunxi-ng: h6: Allow I2S to
+ change parent rate
+To: Code Kipper <codekipper@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_225733_615293_2BA2CE6D 
-X-CRM114-Status: GOOD (  21.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190820_230131_582200_2AA4CE68 
+X-CRM114-Status: GOOD (  19.14  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.41 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,66 +98,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- "Theodore Y. Ts'o" <tytso@mit.edu>, Yu Zhao <yuzhao@google.com>,
- Kees Cook <keescook@chromium.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Stephen Boyd <swboyd@chromium.org>, Will Deacon <will.deacon@arm.com>,
- lkml <linux-kernel@vger.kernel.org>, Mike Rapoport <rppt@linux.ibm.com>,
- Jun Yao <yaojun8558363@gmail.com>, Miles Chen <miles.chen@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>,
+ Linux-ALSA <alsa-devel@alsa-project.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Mark Brown <broonie@kernel.org>,
+ Maxime Ripard <maxime.ripard@free-electrons.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Then we'd still use add_device_randomness() in case that bootloader
-provides weak entropy.
+On Wed, Aug 21, 2019 at 1:52 PM Code Kipper <codekipper@gmail.com> wrote:
+>
+> Thanks....I've added to my next patch series but if you could add it
+> when applying that would be great.
 
-On Tue, Aug 20, 2019 at 7:14 PM Ard Biesheuvel
-<ard.biesheuvel@linaro.org> wrote:
+Please reply with an explicit SoB to put it on the record.
+
+ChenYu
+
+> BR,
+> CK
 >
-> On Tue, 20 Aug 2019 at 10:43, Hsin-Yi Wang <hsinyi@chromium.org> wrote:
+> On Wed, 21 Aug 2019 at 06:07, Chen-Yu Tsai <wens@csie.org> wrote:
 > >
-> > Hi Ted,
+> > On Wed, Aug 14, 2019 at 2:09 PM <codekipper@gmail.com> wrote:
+> > >
+> > > From: Jernej Skrabec <jernej.skrabec@siol.net>
+> > >
+> > > I2S doesn't work if parent rate couldn't be change. Difference between
+> > > wanted and actual rate is too big.
+> > >
+> > > Fix this by adding CLK_SET_RATE_PARENT flag to I2S clocks.
+> > >
+> > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 > >
-> > Thanks for raising this question.
+> > This lacks your SoB. Please reply and I can add it when applying.
 > >
-> > For UEFI based system, they have a config table that carries rng seed
-> > and can be passed to device randomness. However, they also use
-> > add_device_randomness (not sure if it's the same reason that they
-> > can't guarantee _all_ bootloader can be trusted)
+> > ChenYu
 >
-> The config table is actually a Linux invention: it is populated by the
-> EFI stub code (which is part of the kernel) based on the output of a
-> call into the EFI_RNG_PROTOCOL, which is defined in the UEFI spec, but
-> optional and not widely available.
->
-> I have opted for add_device_randomness() since there is no way to
-> establish the quality level of the output of EFI_RNG_PROTOCOL, and so
-> it is currently only used to prevent the bootup state of the entropy
-> pool to be too predictable, and the output does not contribute to the
-> entropy estimate kept by the RNG core.
->
->
-> > This patch is to let DT based system also have similar features, which
-> > can make initial random number stronger. (We only care initial
-> > situation here, since more entropy would be added to kernel as time
-> > goes on )
-> >
-> > Conservatively, we can use add_device_randomness() as well, which
-> > would pass buffer to crng_slow_load() instead of crng_fast_load().
-> > But I think we should trust bootloader here. Whoever wants to use this
-> > feature should make sure their bootloader can pass valid (random
-> > enough) seeds. If they are not sure, they can just don't add the
-> > property to DT.
->
-> It is the firmware that adds the property to the DT, not the user.
+> --
+> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/CAEKpxBnxf%3Diejk887A7qFkzt3BXVxiRS1PeA45aZYR9DsBAU4Q%40mail.gmail.com.
 
 _______________________________________________
 linux-arm-kernel mailing list
