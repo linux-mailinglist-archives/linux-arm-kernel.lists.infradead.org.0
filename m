@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DC8B98316
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 20:35:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F4FB9831B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 20:35:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zFGtMEU9484wEIXsiEYGaemFoiEUSi0IAlVtJPYFpPA=; b=FwsrFr1c6YAd9N
-	Jo+3tBV2DpdIWInBdO9aIZiRhKV7/LHMrUPjvyyCGO6CC77c3eCGJ0L28dDGeMvN2XxkKDbuoHSgB
-	mZDNgHWNAYp8nWNdwqxddtrNOitYf9p/buD7WRxq9xcv1W8fDjyZ3zZmhlvv0LjQDtlyET9sMAqe0
-	nWdd+R055e4bkZGzCyJG8diIBCaaoGIcVQcj/EPcV4uz9Mp0xbXwKLmfi1cJ1UcmmRbzgc33s/Wz9
-	gkpIb7yfDzuHY+tqTssSRX0iWWKaNyEByBlucig8AFmkOtE6LB5HsNy37Cha8rM0Wb6JgNgc7NTzf
-	Q2ePX/bbG0a5UnvU6QeQ==;
+	List-Owner; bh=Qas6SQxYkVbiycrOwmGOHknncMpPXvrWNKdytolk7BE=; b=OWfzRzrV3r6iWv
+	1TGFKvihGTYRBAPIxSPfRrgY4hjrjqwXvssKL/vQ9U2/x+AL1Ntf71K4YNOMnzyitaaI5fBxl+c3c
+	cWVo3YkQIh7DpEyyrm0dhqDpPUA93h4T2MDg2bK8WmR+l73BjUXdD1pTaTL13N8Il5fC2OpmfEnd0
+	lhrxUJM2kkdtMLDKF1ONC9ftU/8wpHuh91ybAmnibEVm1I8oKiaP6er2JrDDrY6xDuMy9UaYfaYu+
+	XGXq+V/1aPV4ibRw3p/fJ7ElHrYyN6Dx+S5SqNQFMJasDMV1NbSfkXm6BoX/0XQb4RhWHR/ctf1U6
+	A8Ydzbj22EztSZHki5ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0VS8-0008OC-Mq; Wed, 21 Aug 2019 18:35:24 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1i0VSP-0000Fv-Oi; Wed, 21 Aug 2019 18:35:41 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0VPB-0004Cb-Jy
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 18:32:23 +0000
-Received: by mail-qt1-x841.google.com with SMTP id q4so4284971qtp.1
+ id 1i0VPC-0004EM-Us
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 18:32:24 +0000
+Received: by mail-qk1-x741.google.com with SMTP id g17so2707726qkk.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 11:32:21 -0700 (PDT)
+ Wed, 21 Aug 2019 11:32:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=zx3wi4rxE69hFoeINMbvlrOQdd3v0rMCcWlwgMe+7ro=;
- b=Z9XdTfPQsqrX+ihCr/4v6ItjEm2fTEBbeWz31i5BDIZiOLzaaHMtsuH2gtjkTF6ELA
- 7yXqP1MI/fSXDCZ14zn/alA5HSSTPmUHomhmG+JDDkx1iLsTl7o/Iqcn9rPRE3VmTc/X
- /ox8ZTwPDgqdEsBMlW32tnbBoHwMhgBeTxLUP0uouGygQ/O3Fa5pNUVp9reQpI62FyCX
- R3eJo+7FXskAW2/gAKFmeWDiSo7F5wlSMNy8J29CwUOFu7Obx7iEVrbyGTfDJ4oC7JZx
- oOnvCDR8AxKmVTLp02PdeBuOzlYNu4WasPK9T7Aj8+N3bmKh30clQWsDfamV/Ov+aWlZ
- y0Ow==
+ bh=Yf2fYsGWmgnnQqiDNWCmPXM/COSxiztPqOnwojagYFM=;
+ b=AV9pCfKUsiawZGUWx3hjjiRiURb24lZoFSDXVLZDUm4ii8r2zEff9xP3F8HWOaVnz9
+ 7549slyFfkoTf49vracJw6NGvjRE2I54NYncbRXZcR1oT4pt/TZPRNeLfWLPTbmVwO8F
+ n7ch3vRDnihAKBNzxR+zskyPitFluivKs5ODI9V9heJTCJPtTK4/QtWPi4+3DwLKUNRT
+ Ddl0fN20/xgUuhQ9ptEy7RCSMz9vHuZdIP44a9kJkCkXj62MP15VWMrI7KKNnj77vDxt
+ e7amT1uwjq8BKEy8vADVY2I1/fKnJ/He5LBqUadvT2iXTqPPl1M5nCnRd3cBKM8veD0g
+ FnZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=zx3wi4rxE69hFoeINMbvlrOQdd3v0rMCcWlwgMe+7ro=;
- b=DdaUJXw3fenmjsQYtOArTNRpMTCIGhdIaex0vI6OXKBaHq225ntIaTi8rM7/QGnYAH
- 4Jit+XLq+v9Yo98KVnbCTrJGGA3wFzVlodmJIQcriZKJjIrfkbrtdI1gh06k+Y3eGJ6e
- 9AvPhSvNUQ8pC7w2HWDlWjt2DLA8vjCJ0u1h2Sbwfdrhxw+9zwnUXN7ZCxNOHVKm1riH
- b84BWbWAQ04Ohnt2PL0FRhqpQ8II6DNESUL/Y+0Fphj49wPPc5splSy6JWVHX9h5AIbH
- Bcy1gSSQN74Bw61ws9iHGMf4sxlxO0pE4QFdxpWCFjoI+f7g5c8KCYyspmQacl1dNLE9
- gKww==
-X-Gm-Message-State: APjAAAVH28i4ekQFXezYbga79jEV/DJvYUUREGuN6pQPar+bpURrvyzO
- +RITa8rN8iEofdDEdt769Wd9Rw==
-X-Google-Smtp-Source: APXvYqwWbwptxQVbDLDq/ThfodFBbNa157DjIxH5pnCxaJLPGWLsptjdu2SMPi7VujUE6fDJ2uoQLg==
-X-Received: by 2002:ad4:45e3:: with SMTP id q3mr19092758qvu.140.1566412340641; 
- Wed, 21 Aug 2019 11:32:20 -0700 (PDT)
+ bh=Yf2fYsGWmgnnQqiDNWCmPXM/COSxiztPqOnwojagYFM=;
+ b=EHF1DTv9tC6JRgNBGrK+oaOyzoYE192n3dFv03vbiBHSMZJyrtCD/m0N5/rA0A/mrF
+ SA+KcbQyKhyYmYivqkzPSvzgKRdt8Pz60h8AyUrMDCZGAnfoJpMyDDargAtRCMKH6psf
+ KUzGrbvBfS6Xp8LjoKxkYxbpuO7j8geH1A+vpVlGdIv+HEleuS5qXigBgsYxWp37TPNY
+ gv7ZosH0GQfUqpU/hrzU0BUgYLRPk4x62eMzoJiT2DF3hEl97qgkvQh/1Z+oCMdwjM4u
+ vxHRpD/PvhVuOq3OKjlUpCnNCEfvKVbu5ZIRKOAZOkMYNqsR35BqISwGsa7cTPo0powu
+ vKEw==
+X-Gm-Message-State: APjAAAVH1PUUvtxbk/UGRYlQVp3NLdyRJXfm3m5ivceprXaIapXYFCs1
+ lFeyBPJkaV5Q2tL4TJCZwVDnsA==
+X-Google-Smtp-Source: APXvYqyonOE9Pa9E8IpTB2dIML7UFPRfxTQ79CX7u/hfje5VCjkBAXfDiMf191JorFAgip6FOT91+Q==
+X-Received: by 2002:a37:395:: with SMTP id 143mr33533257qkd.317.1566412342049; 
+ Wed, 21 Aug 2019 11:32:22 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id q13sm10443332qkm.120.2019.08.21.11.32.19
+ by smtp.gmail.com with ESMTPSA id q13sm10443332qkm.120.2019.08.21.11.32.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Aug 2019 11:32:20 -0700 (PDT)
+ Wed, 21 Aug 2019 11:32:21 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -65,24 +65,23 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com
-Subject: [PATCH v3 10/17] arm64,
- trans_pgd: adjust trans_pgd_create_copy interface
-Date: Wed, 21 Aug 2019 14:31:57 -0400
-Message-Id: <20190821183204.23576-11-pasha.tatashin@soleen.com>
+Subject: [PATCH v3 11/17] arm64, trans_pgd: add PUD_SECT_RDONLY
+Date: Wed, 21 Aug 2019 14:31:58 -0400
+Message-Id: <20190821183204.23576-12-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190821183204.23576-1-pasha.tatashin@soleen.com>
 References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_113221_740525_1B684000 
-X-CRM114-Status: GOOD (  16.89  )
+X-CRM114-CacheID: sfid-20190821_113223_012718_B7A297E3 
+X-CRM114-Status: GOOD (  10.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,122 +108,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make trans_pgd_create_copy inline with the other functions in
-trans_pgd: use the trans_pgd_info argument, and also use the
-trans_pgd_create_empty.
-
-Note, that the functions that are called by trans_pgd_create_copy are
-not yet adjusted to be compliant with trans_pgd: they do not yet use
-the provided allocator, do not check for generic errors, and do not yet
-use the flags in info argument.
+Thre is PMD_SECT_RDONLY that is used in pud_* function which is confusing.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/include/asm/trans_pgd.h |  7 ++++++-
- arch/arm64/kernel/hibernate.c      | 31 ++++++++++++++++++++++++++++--
- arch/arm64/mm/trans_pgd.c          | 17 ++++++----------
- 3 files changed, 41 insertions(+), 14 deletions(-)
+ arch/arm64/include/asm/pgtable-hwdef.h | 1 +
+ arch/arm64/mm/trans_pgd.c              | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/trans_pgd.h b/arch/arm64/include/asm/trans_pgd.h
-index 26e5a63676b5..f4a5f255d4a7 100644
---- a/arch/arm64/include/asm/trans_pgd.h
-+++ b/arch/arm64/include/asm/trans_pgd.h
-@@ -43,7 +43,12 @@ struct trans_pgd_info {
- /* Create and empty trans_pgd page table */
- int trans_pgd_create_empty(struct trans_pgd_info *info, pgd_t **trans_pgd);
- 
--int trans_pgd_create_copy(pgd_t **dst_pgdp, unsigned long start,
-+/*
-+ * Create trans_pgd and copy entries from from_table to trans_pgd in range
-+ * [start, end)
-+ */
-+int trans_pgd_create_copy(struct trans_pgd_info *info, pgd_t **trans_pgd,
-+			  pgd_t *from_table, unsigned long start,
- 			  unsigned long end);
+diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
+index db92950bb1a0..dcb4f13c7888 100644
+--- a/arch/arm64/include/asm/pgtable-hwdef.h
++++ b/arch/arm64/include/asm/pgtable-hwdef.h
+@@ -110,6 +110,7 @@
+ #define PUD_TABLE_BIT		(_AT(pudval_t, 1) << 1)
+ #define PUD_TYPE_MASK		(_AT(pudval_t, 3) << 0)
+ #define PUD_TYPE_SECT		(_AT(pudval_t, 1) << 0)
++#define PUD_SECT_RDONLY		(_AT(pudval_t, 1) << 7)		/* AP[2] */
  
  /*
-diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-index 8c2641a9bb09..8bb602e91065 100644
---- a/arch/arm64/kernel/hibernate.c
-+++ b/arch/arm64/kernel/hibernate.c
-@@ -323,15 +323,42 @@ int swsusp_arch_resume(void)
- 	phys_addr_t phys_hibernate_exit;
- 	void __noreturn (*hibernate_exit)(phys_addr_t, phys_addr_t, void *,
- 					  void *, phys_addr_t, phys_addr_t);
-+	struct trans_pgd_info trans_info = {
-+		.trans_alloc_page	= hibernate_page_alloc,
-+		.trans_alloc_arg	= (void *)GFP_ATOMIC,
-+		/*
-+		 * Resume will overwrite areas that may be marked read only
-+		 * (code, rodata). Clear the RDONLY bit from the temporary
-+		 * mappings we use during restore.
-+		 */
-+		.trans_flags		= TRANS_MKWRITE,
-+	};
-+
-+	/*
-+	 * debug_pagealloc will removed the PTE_VALID bit if the page isn't in
-+	 * use by the resume kernel. It may have been in use by the original
-+	 * kernel, in which case we need to put it back in our copy to do the
-+	 * restore.
-+	 *
-+	 * Before marking this entry valid, check the pfn should be mapped.
-+	 */
-+	if (debug_pagealloc_enabled())
-+		trans_info.trans_flags |= (TRANS_MKVALID | TRANS_CHECKPFN);
- 
- 	/*
- 	 * Restoring the memory image will overwrite the ttbr1 page tables.
- 	 * Create a second copy of just the linear map, and use this when
- 	 * restoring.
- 	 */
--	rc = trans_pgd_create_copy(&tmp_pg_dir, PAGE_OFFSET, 0);
--	if (rc)
-+	rc = trans_pgd_create_copy(&trans_info, &tmp_pg_dir, init_mm.pgd,
-+				   PAGE_OFFSET, 0);
-+	if (rc) {
-+		if (rc == -ENOMEM)
-+			pr_err("Failed to allocate memory for temporary page tables.\n");
-+		else if (rc == -ENXIO)
-+			pr_err("Tried to set PTE for PFN that does not exist\n");
- 		goto out;
-+	}
- 
- 	/*
- 	 * We need a zero page that is zero before & after resume in order to
+  * Level 2 descriptor (PMD).
 diff --git a/arch/arm64/mm/trans_pgd.c b/arch/arm64/mm/trans_pgd.c
-index ece797aa1841..7d8734709b61 100644
+index 7d8734709b61..efd42509d069 100644
 --- a/arch/arm64/mm/trans_pgd.c
 +++ b/arch/arm64/mm/trans_pgd.c
-@@ -176,22 +176,17 @@ int trans_pgd_create_empty(struct trans_pgd_info *info, pgd_t **trans_pgd)
- 	return 0;
- }
+@@ -138,7 +138,7 @@ static int copy_pud(pgd_t *dst_pgdp, pgd_t *src_pgdp, unsigned long start,
+ 				return -ENOMEM;
+ 		} else {
+ 			set_pud(dst_pudp,
+-				__pud(pud_val(pud) & ~PMD_SECT_RDONLY));
++				__pud(pud_val(pud) & ~PUD_SECT_RDONLY));
+ 		}
+ 	} while (dst_pudp++, src_pudp++, addr = next, addr != end);
  
--int trans_pgd_create_copy(pgd_t **dst_pgdp, unsigned long start,
-+int trans_pgd_create_copy(struct trans_pgd_info *info, pgd_t **trans_pgd,
-+			  pgd_t *from_table, unsigned long start,
- 			  unsigned long end)
- {
- 	int rc;
--	pgd_t *trans_pgd = (pgd_t *)get_safe_page(GFP_ATOMIC);
- 
--	if (!trans_pgd) {
--		pr_err("Failed to allocate memory for temporary page tables.\n");
--		return -ENOMEM;
--	}
--
--	rc = copy_page_tables(trans_pgd, start, end);
--	if (!rc)
--		*dst_pgdp = trans_pgd;
-+	rc = trans_pgd_create_empty(info, trans_pgd);
-+	if (rc)
-+		return rc;
- 
--	return rc;
-+	return copy_page_tables(*trans_pgd, start, end);
- }
- 
- int trans_pgd_map_page(struct trans_pgd_info *info, pgd_t *trans_pgd,
 -- 
 2.23.0
 
