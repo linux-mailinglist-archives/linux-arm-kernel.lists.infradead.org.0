@@ -2,81 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6303E97367
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:30:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71506973AC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:36:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ewtnZ8e9MxCKnSK1tCLefS4lVn3MmRpV2ZeUHaQpTiA=; b=aVh43BvzlRAotK
-	SsdXQ6HmBCtgIqDl308oX4iQMrphf0iBXvdpSo9TC/Q3kv7CplXWsDHbMqK5FYg2ZoTkBbeWRW7yC
-	pS+0SYnn2kzopswSjsSjnSLCrpmB2w96ACdL4WT00N1mPI3SHayMTubx0JaHrT242Ne9qIxYUWvR+
-	Qk8IfYZYoX3GxTgn2IyrUc/uZl7Z+bamWUAUyWLyW47TGUf2Px/9aZrdH8+QhUdf7A2uZycnYxjLX
-	tGiArj5ZQT2J0FmXtAk0dJLnlhb2rjCs7Pjv/Hm7pPTU4/nakT0ABVAdpDpM1fytfQE/PSjBDSvL6
-	qYgGaz/3euu/fNuG2Owg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MMJ3pjRkSDyuD5k62w68T9E+Fb9e8r+5ncPQP6FCP3Q=; b=R+pCp7tXixGtozry5YP3ud8cC
+	B5w3j32KFyFolXUHeudET1EoMzTP8S6Wp+HzcYW6PFCQKg70brKtRhKU4VDnqtVe0vfjf36KHu6hz
+	j6CAod+ncqW6IXcZrK44/kMlPTtOHH5N9O3bFkt7PbciMrtpNUbIPjaR7UsLaNTzY+ojUc9i1a/3+
+	CfSoNTTkffMFT4A26buiHfO7dUo53EgTSwRYdOUQOa0JlL+TcOH6+kiYsnXl+yt5JcjbgjIDf13Zo
+	kPXGvuSOhAQggbyPW5uICy1xDJtSBRlpsipHREJkTM2kVFnEXvFCZdj9xi/mzAQoIm6VShG8B9Xie
+	wsCMCogsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0L4U-0004Wu-MP; Wed, 21 Aug 2019 07:30:18 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1i0LAV-0007dq-Qs; Wed, 21 Aug 2019 07:36:31 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0L3z-0004Pl-H8
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:29:49 +0000
-Received: by mail-wm1-x343.google.com with SMTP id e8so4114664wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 00:29:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=nKOeCy3Qcia3Pbgp+4T8KWWXoItnNEc3EaF4utxPSx4=;
- b=kK904OuKS3Z8eMv0x8Na8g7IPPgNprXCORczmb6V/kXExPgWnxBAxCQbxF+TAphd8J
- nwjdYXpn0F7I+V4GIiKpnFEVTDThLbQ+OBnq3QrtTlGHq273IzR3HTTp2aO9cNm4qn4E
- Vx6HjcgcZj3/l9DKUp7U69jiCwDJQ5J8Cq2gY/u+HwExBsYQx9jmguM8rg+5fMMRa58C
- SGWtuI44qH0puyTaWmBrYyzulee73OvRhuNGjLxSZ/cxc1NO56LLMhvIPCdhr2Ba3aBT
- J8aytWr9dUsMKirAYbKOBij174iq/ssCpyrAybzZGPiB7Gps00VjkACWNSO2a6jE4iUe
- pfFw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=nKOeCy3Qcia3Pbgp+4T8KWWXoItnNEc3EaF4utxPSx4=;
- b=oktPY5sFPhe5+Vandh9r21j4XQEe6ZLBoalxGA00wR+FeX422UbuirhCVSm1KNMG11
- E9jf6x2Mbk7P1/5P4tNARC6TXjOMJLODzUkWawrcxx6wm4OLDmExat/yQX5YQbAUw7Ov
- 3qBhMCxuQUHeIL+Idrr/Be00fiDagF0CncrReAFqmVsRaz4oRIkoK39S+TM0SWDgHkuF
- Nj06L0eSkxDr/NOv23UZSYpahFCVpz1nmUH2YaM6IJBmZH6oinkPUiTC3VI9ULTAEcvK
- fgKI7oUCL5jAXkaJ90zVtjS9qrzToqYQpOZNaJ8t1102+UY24gU1o8KZMogWYW8MAaDr
- lARw==
-X-Gm-Message-State: APjAAAWkSF/PcoZfRgUq+sIdW9vYZeSOsWa5F3vMaG09UhADUX9b9+rX
- LuIzf7SlHTpA7A6Qv1ftCVzKwzkAhQX2ur4LnQq3qA==
-X-Google-Smtp-Source: APXvYqwr0nEjmLtPxp9jPzcCElAX7fest218vtFNqRK9Hh8HPkq4tF2BdQkHv6NmMu6fNQdhJczPGiJW0nzPMwhbGtg=
-X-Received: by 2002:a05:600c:231a:: with SMTP id
- 26mr4057110wmo.136.1566372585757; 
- Wed, 21 Aug 2019 00:29:45 -0700 (PDT)
+ id 1i0LAI-0007dO-7A
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:36:19 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7L7aEgv094718;
+ Wed, 21 Aug 2019 02:36:14 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1566372974;
+ bh=t9ppVPq7IC2TVAGLlqMcOquzMEQC6ajE6CYvZHvX3Vw=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=XuxHz71emVTmDAoK4lUezNKGhzbIt/mHV1V2ilZUZnGhmzoYABWU+5lcZ93OBH1Oe
+ nVwlgh4JEiX/fDH3mMkrZOgDNotSlVEz3HzkVxAGGroqA1E2YWSVzT7w8f4LaU5Gfm
+ QCPUi0AYYSXXkb5tudY3cyUuI3ZZkD3i4JDiDXwo=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7L7aESb104418
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 21 Aug 2019 02:36:14 -0500
+Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 21
+ Aug 2019 02:36:14 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE107.ent.ti.com
+ (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 21 Aug 2019 02:36:14 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7L7aCOA058793;
+ Wed, 21 Aug 2019 02:36:12 -0500
+Subject: Re: [PATCH 7/8] soc: ti: omap-prm: add dra7 PRM data
+To: Suman Anna <s-anna@ti.com>, <ssantosh@kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-omap@vger.kernel.org>,
+ <robh+dt@kernel.org>
+References: <1565164139-21886-1-git-send-email-t-kristo@ti.com>
+ <1565164139-21886-8-git-send-email-t-kristo@ti.com>
+ <0e8aa351-4c58-ab6c-890f-094118b812ac@ti.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <67a06e0c-f85d-bdc4-aedf-9a3c0e80fc6a@ti.com>
+Date: Wed, 21 Aug 2019 10:36:11 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190802053744.5519-1-clin@suse.com>
- <20190820115645.GP13294@shell.armlinux.org.uk>
- <CAKv+Gu_0wFw5Mjpdw7BEY7ewgetNgU=Ff1uvAsn0iHmJouyKqw@mail.gmail.com>
- <20190821061027.GA2828@linux-8mug>
- <CAKv+Gu8Yny8cVPck3rPwCPvJBvcZKMHti_9bkCTM4H4cZ_43fg@mail.gmail.com>
- <20190821071100.GA26713@rapoport-lnx>
-In-Reply-To: <20190821071100.GA26713@rapoport-lnx>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 21 Aug 2019 10:29:37 +0300
-Message-ID: <CAKv+Gu99z3V1B68CU8qhNwwffqDxNBOM6t3Q8-V7qpbDkf-Cwg@mail.gmail.com>
-Subject: Re: [PATCH] efi/arm: fix allocation failure when reserving the kernel
- base
-To: Mike Rapoport <rppt@linux.ibm.com>
+In-Reply-To: <0e8aa351-4c58-ab6c-890f-094118b812ac@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_002947_617293_3486C2DB 
-X-CRM114-Status: GOOD (  31.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190821_003618_345208_65FFEA16 
+X-CRM114-Status: GOOD (  15.94  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,97 +95,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Juergen Gross <JGross@suse.com>, Joey Lee <JLee@suse.com>,
- "linux-efi@vger.kernel.org" <linux-efi@vger.kernel.org>,
- "guillaume.gardet@arm.com" <guillaume.gardet@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Chester Lin <clin@suse.com>, "geert@linux-m68k.org" <geert@linux-m68k.org>,
- "ren_guo@c-sky.com" <ren_guo@c-sky.com>, Gary Lin <GLin@suse.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "mingo@kernel.org" <mingo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: tony@atomide.com, devicetree@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 21 Aug 2019 at 10:11, Mike Rapoport <rppt@linux.ibm.com> wrote:
->
-> On Wed, Aug 21, 2019 at 09:35:16AM +0300, Ard Biesheuvel wrote:
-> > On Wed, 21 Aug 2019 at 09:11, Chester Lin <clin@suse.com> wrote:
-> > >
-> > > On Tue, Aug 20, 2019 at 03:28:25PM +0300, Ard Biesheuvel wrote:
-> > > > On Tue, 20 Aug 2019 at 14:56, Russell King - ARM Linux admin
-> > > > <linux@armlinux.org.uk> wrote:
-> > > > >
-> > > > > On Fri, Aug 02, 2019 at 05:38:54AM +0000, Chester Lin wrote:
-> > > > > > diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
-> > > > > > index f3ce34113f89..909b11ba48d8 100644
-> > > > > > --- a/arch/arm/mm/mmu.c
-> > > > > > +++ b/arch/arm/mm/mmu.c
-> > > > > > @@ -1184,6 +1184,9 @@ void __init adjust_lowmem_bounds(void)
-> > > > > >               phys_addr_t block_start = reg->base;
-> > > > > >               phys_addr_t block_end = reg->base + reg->size;
-> > > > > >
-> > > > > > +             if (memblock_is_nomap(reg))
-> > > > > > +                     continue;
-> > > > > > +
-> > > > > >               if (reg->base < vmalloc_limit) {
-> > > > > >                       if (block_end > lowmem_limit)
-> > > > > >                               /*
-> > > > >
-> > > > > I think this hunk is sane - if the memory is marked nomap, then it isn't
-> > > > > available for the kernel's use, so as far as calculating where the
-> > > > > lowmem/highmem boundary is, it effectively doesn't exist and should be
-> > > > > skipped.
-> > > > >
-> > > >
-> > > > I agree.
-> > > >
-> > > > Chester, could you explain what you need beyond this change (and my
-> > > > EFI stub change involving TEXT_OFFSET) to make things work on the
-> > > > RPi2?
-> > > >
-> > >
-> > > Hi Ard,
-> > >
-> > > In fact I am working with Guillaume to try booting zImage kernel and openSUSE
-> > > from grub2.04 + arm32-efistub so that's why we get this issue on RPi2, which is
-> > > one of the test machines we have. However we want a better solution for all
-> > > cases but not just RPi2 since we don't want to affect other platforms as well.
-> > >
-> >
-> > Thanks Chester, but that doesn't answer my question.
-> >
-> > Your fix is a single patch that changes various things that are only
-> > vaguely related. We have already identified that we need to take
-> > TEXT_OFFSET (minus some space used by the swapper page tables) into
-> > account into the EFI stub if we want to ensure compatibility with many
-> > different platforms, and as it turns out, this applies not only to
-> > RPi2 but to other platforms as well, most notably the ones that
-> > require a TEXT_OFFSET of 0x208000, since they also have reserved
-> > regions at the base of RAM.
-> >
-> > My question was what else we need beyond:
-> > - the EFI stub TEXT_OFFSET fix [0]
-> > - the change to disregard NOMAP memblocks in adjust_lowmem_bounds()
-> > - what else???
->
-> I think the only missing part here is to ensure that non-reserved memory in
-> bank 0 starts from a PMD-aligned address. I believe this could be done if
-> EFI stub, but I'm not really familiar with it so this just a semi-educated
-> guess :)
->
+On 20.8.2019 22.03, Suman Anna wrote:
+> Hi Tero,
+> 
+> On 8/7/19 2:48 AM, Tero Kristo wrote:
+>> Add PRM data for dra7 family of SoCs.
+>>
+>> Signed-off-by: Tero Kristo <t-kristo@ti.com>
+>> ---
+>>   drivers/soc/ti/omap_prm.c | 26 ++++++++++++++++++++++++++
+>>   1 file changed, 26 insertions(+)
+>>
+>> diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
+>> index fadfc7f..05b7749 100644
+>> --- a/drivers/soc/ti/omap_prm.c
+>> +++ b/drivers/soc/ti/omap_prm.c
+>> @@ -73,6 +73,31 @@ struct omap_prm_data omap4_prm_data[] = {
+>>   	{ },
+>>   };
+>>   
+>> +static struct omap_prm_data dra7_prm_data[] = {
+>> +	{ .name = "mpu", .base = 0x4ae06300, .pwstst = 0x4 },
+>> +	{ .name = "dsp1", .base = 0x4ae06400, .pwstst = 0x4, .rstctl = 0x10, .rstst = 0x14 },
+>> +	{ .name = "ipu", .base = 0x4ae06500, .pwstst = 0x4, .rstctl = 0x10, .rstst = 0x14, .clkdm_name = "ipu1" },
+>> +	{ .name = "coreaon", .base = 0x4ae06628, .pwstst = 0x4 },
+> 
+> Public TRM marks this region Reserved. Do you need it for anything?
+This is copied from existing PRM data from kernel. However, I'll ditch 
+these for now and only retain the reset enabled domains.
 
-Given that it is the ARM arch code that imposes this requirement, how
-about adding something like this to adjust_lowmem_bounds():
+> 
+>> +	{ .name = "core", .base = 0x4ae06700, .pwstst = 0x4, .rstctl = 0x210, .rstst = 0x214, .clkdm_name = "ipu2" },
+>> +	{ .name = "iva", .base = 0x4ae06f00, .pwstst = 0x4 },
+> 
+> Missing rstctrl and rstst offsets.
 
-if (memblock_start_of_DRAM() % PMD_SIZE)
-    memblock_mark_nomap(memblock_start_of_DRAM(),
-        PMD_SIZE - (memblock_start_of_DRAM() % PMD_SIZE));
+Will add.
 
-(and introduce the nomap check into the loop)
+> 
+>> +	{ .name = "cam", .base = 0x4ae07000, .pwstst = 0x4 },
+>> +	{ .name = "dss", .base = 0x4ae07100, .pwstst = 0x4 },
+>> +	{ .name = "gpu", .base = 0x4ae07200, .pwstst = 0x4 },
+>> +	{ .name = "l3init", .base = 0x4ae07300, .pwstst = 0x4, .rstctl = 0x10, .rstst = 0x14 },
+>> +	{ .name = "l4per", .base = 0x4ae07400, .pwstst = 0x4 },
+>> +	{ .name = "custefuse", .base = 0x4ae07600, .pwstst = 0x4 },
+>> +	{ .name = "wkupaon", .base = 0x4ae07724, .pwstst = 0x4 },
+> 
+> No pwstctrl and pwstst bits documented in TRM or are marked reserved.
+
+Same as coreaon.
+
+> 
+>> +	{ .name = "emu", .base = 0x4ae07900, .pwstst = 0x4 },
+>> +	{ .name = "dsp2", .base = 0x4ae07b00, .pwstst = 0x4, .rstctl = 0x10, .rstst = 0x14 },
+>> +	{ .name = "eve1", .base = 0x4ae07b40, .pwstst = 0x4 },
+>> +	{ .name = "eve2", .base = 0x4ae07b80, .pwstst = 0x4 },
+>> +	{ .name = "eve3", .base = 0x4ae07bc0, .pwstst = 0x4 },
+>> +	{ .name = "eve4", .base = 0x4ae07c00, .pwstst = 0x4 },
+> 
+> All EVEs are missing rstctrl and rstst fields.
+
+Will add.
+
+> 
+>> +	{ .name = "rtc", .base = 0x4ae07c60, .pwstst = 0x4 },
+> 
+> Undocumented pwstctrl and pwstst registers.
+> 
+>> +	{ .name = "vpe", .base = 0x4ae07c80, .pwstst = 0x4 },
+> 
+> Missing "device" and "instr" PRM. The latter doesn't have any pwrstctl
+> and pwrstst though.
+
+Will ditch those.
+
+-Tero
+
+> 
+> regards
+> Suman
+> 
+>> +	{ },
+>> +};
+>> +
+>>   struct omap_rst_map am3_wkup_rst_map[] = {
+>>   	{ .rst = 3, .st = 5 },
+>>   	{ .rst = -1 },
+>> @@ -91,6 +116,7 @@ struct omap_prm_data am3_prm_data[] = {
+>>   
+>>   static const struct of_device_id omap_prm_id_table[] = {
+>>   	{ .compatible = "ti,omap4-prm-inst", .data = omap4_prm_data },
+>> +	{ .compatible = "ti,dra7-prm-inst", .data = dra7_prm_data },
+>>   	{ .compatible = "ti,am3-prm-inst", .data = am3_prm_data },
+>>   	{ },
+>>   };
+>>
+> 
+
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
