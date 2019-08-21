@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09E279809E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 18:48:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FEC89809F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 18:48:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sbMrWzsSWcNeeTiQaTQbKaOR4+V1Sv/sNStkKtpZg5A=; b=bmd7LIKfEPo7R3
-	gZMyo7GRTTW6W9G049SZYickNtAgebTTSdPQ6Zr4IS7fQvE8ykcqYgCwqKJixuFxR81TBnNRjWBxx
-	XZB5JNGOICbUdSt7zclT1pXQkbaAacgKNDYQzo9SVqnThySD+enjvHwLA++kNacl6fswZg3gn07pv
-	td9e7gFm5DnpbAIDZD9rtBKFlKf2VmXA4+DSIOKWRBfp9r3gPXEUCQf43KYw2jW9hhByyrc3iSyT7
-	HA7JvqtcKF2U44WkadC5cM9H3v/8tI0vLvv8nZXmB0EsoqGUi4BRLLGcAKfFfINgm0ir8KVWay3CY
-	uMNS1mXRFWL4+/ldjhVQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=asDsBmwrs9vfaWcZMMNm01oqzt9QwdeSd6lzxc+xioQ=; b=M/9LgvUCjcrjz/
+	B2lwapauSj5mkJuzfBbAa7+bgrxREyQ8CDA8ki4nBq1mhft7fLv64Ny9y0zXnbhKS8MmYRMb5i9Jp
+	aaW0RuxA/SoUMCmY3yg5XfSjHxW4+3GHkjQe/GKS5LOPwwvqypnMTfheKkWGxXxtvMQ6GXUr24cLF
+	bU1w7YsEfFANH7enre2a2oI6YdIPzx7gFHPJg8AWxBykkjaHfyk2qzf86pmZ/DZHflzevFS0okSYn
+	8ACRxAgOHgLTGVrzkOuBIMFIaVwFFJPa9q5/hisIlZ4JI0EDu1EuW6I8zU1uLyui2ymiQU3v+p3Hi
+	JCUL1wC2HLkLsPP2XABQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0TmK-0000c2-CK; Wed, 21 Aug 2019 16:48:08 +0000
+	id 1i0TmZ-0000o3-E4; Wed, 21 Aug 2019 16:48:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Tly-0000Kp-Lw
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 16:47:48 +0000
+ id 1i0Tly-0000Kx-TI
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 16:47:49 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B85EA360;
- Wed, 21 Aug 2019 09:47:42 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CAA91576;
+ Wed, 21 Aug 2019 09:47:44 -0700 (PDT)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 09F003F718;
- Wed, 21 Aug 2019 09:47:40 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id ECACE3F718;
+ Wed, 21 Aug 2019 09:47:42 -0700 (PDT)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-mm@kvack.org
-Subject: [PATCH v9 0/3] arm64 tagged address ABI
-Date: Wed, 21 Aug 2019 17:47:27 +0100
-Message-Id: <20190821164730.47450-1-catalin.marinas@arm.com>
+Subject: [PATCH v9 1/3] mm: untag user pointers in mmap/munmap/mremap/brk
+Date: Wed, 21 Aug 2019 17:47:28 +0100
+Message-Id: <20190821164730.47450-2-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0.rc0
+In-Reply-To: <20190821164730.47450-1-catalin.marinas@arm.com>
+References: <20190821164730.47450-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_094746_770407_E23B1CB4 
-X-CRM114-Status: UNSURE (   8.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190821_094747_075402_3A907D23 
+X-CRM114-Status: GOOD (  11.25  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,45 +73,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+There isn't a good reason to differentiate between the user address
+space layout modification syscalls and the other memory
+permission/attributes ones (e.g. mprotect, madvise) w.r.t. the tagged
+address ABI. Untag the user addresses on entry to these functions.
 
-This series is an update to the arm64 tagged address ABI documentation
-patches v8, posted here:
+Acked-by: Will Deacon <will@kernel.org>
+Acked-by: Andrey Konovalov <andreyknvl@google.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+---
+ mm/mmap.c   | 5 +++++
+ mm/mremap.c | 6 +-----
+ 2 files changed, 6 insertions(+), 5 deletions(-)
 
-http://lkml.kernel.org/r/20190815154403.16473-1-catalin.marinas@arm.com
-
-From v8, I dropped patches 2 and 3 as they've been queued by Will via
-the arm64 tree. Reposting patch 1 (unmodified) as it should be merged
-via the mm tree.
-
-Changes in v9:
-
-- Replaced the emphasized/bold font with a typewriter one for
-  function/constant names
-
-- Simplified the mmap/brk bullet points when describing the tagged
-  pointer origin
-
-- Reworded expected syscall behaviour with valid tagged pointers
-
-- Reworded the prctl/ioctl restrictions to clarify the allowed tagged
-  pointers w.r.t. user data access by the kernel
-
-
-Catalin Marinas (1):
-  mm: untag user pointers in mmap/munmap/mremap/brk
-
-Vincenzo Frascino (2):
-  arm64: Define Documentation/arm64/tagged-address-abi.rst
-  arm64: Relax Documentation/arm64/tagged-pointers.rst
-
- Documentation/arm64/tagged-address-abi.rst | 156 +++++++++++++++++++++
- Documentation/arm64/tagged-pointers.rst    |  23 ++-
- mm/mmap.c                                  |   5 +
- mm/mremap.c                                |   6 +-
- 4 files changed, 178 insertions(+), 12 deletions(-)
- create mode 100644 Documentation/arm64/tagged-address-abi.rst
-
+diff --git a/mm/mmap.c b/mm/mmap.c
+index 7e8c3e8ae75f..b766b633b7ae 100644
+--- a/mm/mmap.c
++++ b/mm/mmap.c
+@@ -201,6 +201,8 @@ SYSCALL_DEFINE1(brk, unsigned long, brk)
+ 	bool downgraded = false;
+ 	LIST_HEAD(uf);
+ 
++	brk = untagged_addr(brk);
++
+ 	if (down_write_killable(&mm->mmap_sem))
+ 		return -EINTR;
+ 
+@@ -1573,6 +1575,8 @@ unsigned long ksys_mmap_pgoff(unsigned long addr, unsigned long len,
+ 	struct file *file = NULL;
+ 	unsigned long retval;
+ 
++	addr = untagged_addr(addr);
++
+ 	if (!(flags & MAP_ANONYMOUS)) {
+ 		audit_mmap_fd(fd, flags);
+ 		file = fget(fd);
+@@ -2874,6 +2878,7 @@ EXPORT_SYMBOL(vm_munmap);
+ 
+ SYSCALL_DEFINE2(munmap, unsigned long, addr, size_t, len)
+ {
++	addr = untagged_addr(addr);
+ 	profile_munmap(addr);
+ 	return __vm_munmap(addr, len, true);
+ }
+diff --git a/mm/mremap.c b/mm/mremap.c
+index 64c9a3b8be0a..1fc8a29fbe3f 100644
+--- a/mm/mremap.c
++++ b/mm/mremap.c
+@@ -606,12 +606,8 @@ SYSCALL_DEFINE5(mremap, unsigned long, addr, unsigned long, old_len,
+ 	LIST_HEAD(uf_unmap_early);
+ 	LIST_HEAD(uf_unmap);
+ 
+-	/*
+-	 * Architectures may interpret the tag passed to mmap as a background
+-	 * colour for the corresponding vma. For mremap we don't allow tagged
+-	 * new_addr to preserve similar behaviour to mmap.
+-	 */
+ 	addr = untagged_addr(addr);
++	new_addr = untagged_addr(new_addr);
+ 
+ 	if (flags & ~(MREMAP_FIXED | MREMAP_MAYMOVE))
+ 		return ret;
 
 _______________________________________________
 linux-arm-kernel mailing list
