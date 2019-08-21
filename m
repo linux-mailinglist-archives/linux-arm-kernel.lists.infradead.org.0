@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6939E979D9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 14:47:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A04E979DA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 14:47:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,47 +11,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zqhyJU59LPBEJuZoOH71PdeTp9bGdEyHW607jiuZwBA=; b=ieSe3NGdwBLR9Htcq/leYZaagj
-	lTJQ0Ey7ss7HsSYCHBT/aPaXgp6qKKjUIRVLJH6HQFLHKYF05+7bfBlgGokxP+w3T2pMHXqHLvGP6
-	cFXB6QTT+WgiydtCeIPUV1NOMmufa7RRsew2jSh6aUgRkToX6OcoE+AYM3iOhE2fyBoV2FqvMBztY
-	uCiGTdljTuLMjM5gXCDeP/L/Xdhl3dkYuS13eI9QlCoM8XtdWqWiYFKQOj9WO7weg4Z6ZBhf29mfk
-	9Yxlv6G0+Ym3cH1P80rz4hkQ2sDoNHSFcA/9pOujr56diqQifuDv0oQY6O+G5APiPW/h0x0Rtcm9k
-	dp8U1r5w==;
+	bh=cDpBsaUxP5BUz+b+3QGtN/pFrqm+c7XSFcZkiwdCTNY=; b=EOqcZMtCxu47e4JDb0c8EofeMh
+	SQRhbDRkcRgcjz594mVtfOd6Clo4AvJV6BOP/9lTsZIab6iMmctde9ILHeSEPXSTEC2IuVxUA957W
+	6H1d6eLJwzHx0k6XHBNUfFYDNqkWJKUOuzkibOUC8ugKR93SBIssL2dPNgCs3mbNyxIhW/kfis6G/
+	7Z6wLcnnRNTBuq4iuI+5RqhsewXVsTSbkfi9sSgpJXHoF4HFbfP4XXHkHMR/KGMFHKcUSNKIziDL7
+	vGO/SnAhW4XymLm9bZjTXTZrP6RYzkQSduNCVpe8h1bC4LZ0So4NhxxXxs/h3aISAj1/14aSgtsTX
+	2TUlsZGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Q14-0000mZ-Of; Wed, 21 Aug 2019 12:47:06 +0000
-Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
+	id 1i0Q1K-00011E-Or; Wed, 21 Aug 2019 12:47:23 +0000
+Received: from michel.telenet-ops.be ([2a02:1800:110:4::f00:18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Q0G-0000MN-BC
+ id 1i0Q0G-0000MY-CJ
  for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 12:46:19 +0000
-Received: from ramsan ([84.194.98.4]) by laurent.telenet-ops.be with bizsmtp
- id rom32000h05gfCL01om3xP; Wed, 21 Aug 2019 14:46:05 +0200
+Received: from ramsan ([84.194.98.4]) by michel.telenet-ops.be with bizsmtp
+ id rom32000i05gfCL06om3cp; Wed, 21 Aug 2019 14:46:07 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1i0Q03-0003e0-Lx; Wed, 21 Aug 2019 14:46:03 +0200
+ id 1i0Q03-0003e4-Mg; Wed, 21 Aug 2019 14:46:03 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1i0Q03-0007dh-L3; Wed, 21 Aug 2019 14:46:03 +0200
+ id 1i0Q03-0007dl-Lf; Wed, 21 Aug 2019 14:46:03 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Simon Horman <horms@verge.net.au>,
 	Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH 2/3] soc: renesas: Enable ARM_ERRATA_754322 for affected
- Cortex-A9
-Date: Wed, 21 Aug 2019 14:46:01 +0200
-Message-Id: <20190821124602.29317-3-geert+renesas@glider.be>
+Subject: [PATCH 3/3] [RFC] ARM: shmobile: defconfig: Disable
+ PL310_ERRATA_588369
+Date: Wed, 21 Aug 2019 14:46:02 +0200
+Message-Id: <20190821124602.29317-4-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190821124602.29317-1-geert+renesas@glider.be>
 References: <20190821124602.29317-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_054616_533768_4BEC8BD7 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20190821_054616_583003_2A32C8B7 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:110:4:0:0:f00:19 listed in]
+ low trust [2a02:1800:110:4:0:0:f00:18 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -77,81 +77,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ARM Erratum 754322 affects Cortex-A9 revisions r2p* and r3p*.
+PL310 Erratum 588369 affects PL310 cache controller revisions older than
+r2p0.
 
-Enable support code to mitigate the erratum when compiling a kernel for
-any of the affected Renesas SoCs:
-  - RZ/A1: r3p0,
-  - R-Mobile A1: r2p4,
-  - R-Car M1A: r2p2-00rel0,
-  - R-Car H1: r3p0,
-  - SH-Mobile AG5: r2p2,
-and drop the corresponding config symbol from shmobile_defconfig.
+As Renesas ARM SoCs contain the following revisions:
+  - SH-Mobile AG5: r3p1,
+  - R-Mobile A1: r3p1-50rel0,
+  - R-Car H1: r3p2,
+  - RZ/A1: r3p2,
+  - RZ/A2: r3p3,
+none of them are affected, and support for the errata can be disabled
+safely.
 
-EMMA Mobile EV2 (r1p3) and RZ/A2 (r4p1) are not affected.
+The EMMA Mobile EV2 documentation doesn't mention the revision of its
+PL310 cache controller, so this SoC might be affected.  However, the L2
+cache controller is not enabled by Linux.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
-Looks like my R-Mobile A1 is actually r2p3, and the R-Car M1A in Magnus'
-farm is r2p4?
-
  arch/arm/configs/shmobile_defconfig | 1 -
- drivers/soc/renesas/Kconfig         | 5 +++++
- 2 files changed, 5 insertions(+), 1 deletion(-)
+ 1 file changed, 1 deletion(-)
 
 diff --git a/arch/arm/configs/shmobile_defconfig b/arch/arm/configs/shmobile_defconfig
-index c6c70355141c38fa..123821e63873dafa 100644
+index 123821e63873dafa..95a127cbe8e6fcd7 100644
 --- a/arch/arm/configs/shmobile_defconfig
 +++ b/arch/arm/configs/shmobile_defconfig
-@@ -9,7 +9,6 @@ CONFIG_PERF_EVENTS=y
+@@ -8,7 +8,6 @@ CONFIG_CC_OPTIMIZE_FOR_SIZE=y
+ CONFIG_PERF_EVENTS=y
  CONFIG_SLAB=y
  CONFIG_ARCH_RENESAS=y
- CONFIG_PL310_ERRATA_588369=y
--CONFIG_ARM_ERRATA_754322=y
+-CONFIG_PL310_ERRATA_588369=y
  CONFIG_SMP=y
  CONFIG_SCHED_MC=y
  CONFIG_NR_CPUS=8
-diff --git a/drivers/soc/renesas/Kconfig b/drivers/soc/renesas/Kconfig
-index a72d014ea37cc788..3c5e017bacbaca11 100644
---- a/drivers/soc/renesas/Kconfig
-+++ b/drivers/soc/renesas/Kconfig
-@@ -55,6 +55,7 @@ config ARCH_EMEV2
- 
- config ARCH_R7S72100
- 	bool "RZ/A1H (R7S72100)"
-+	select ARM_ERRATA_754322
- 	select PM
- 	select PM_GENERIC_DOMAINS
- 	select RENESAS_OSTM
-@@ -79,6 +80,7 @@ config ARCH_R8A73A4
- config ARCH_R8A7740
- 	bool "R-Mobile A1 (R8A77400)"
- 	select ARCH_RMOBILE
-+	select ARM_ERRATA_754322
- 	select RENESAS_INTC_IRQPIN
- 
- config ARCH_R8A7743
-@@ -108,10 +110,12 @@ config ARCH_R8A77470
- config ARCH_R8A7778
- 	bool "R-Car M1A (R8A77781)"
- 	select ARCH_RCAR_GEN1
-+	select ARM_ERRATA_754322
- 
- config ARCH_R8A7779
- 	bool "R-Car H1 (R8A77790)"
- 	select ARCH_RCAR_GEN1
-+	select ARM_ERRATA_754322
- 	select HAVE_ARM_SCU if SMP
- 	select HAVE_ARM_TWD if SMP
- 	select SYSC_R8A7779
-@@ -158,6 +162,7 @@ config ARCH_R9A06G032
- config ARCH_SH73A0
- 	bool "SH-Mobile AG5 (R8A73A00)"
- 	select ARCH_RMOBILE
-+	select ARM_ERRATA_754322
- 	select HAVE_ARM_SCU if SMP
- 	select HAVE_ARM_TWD if SMP
- 	select RENESAS_INTC_IRQPIN
 -- 
 2.17.1
 
