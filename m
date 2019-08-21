@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95CE59731C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:13:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 732A89732F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:16:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=81VkD2LEYYogCeaRTBqf/jCrbin7m5ZLduzv8pmv1k0=; b=g+sn37vYY7+QND
-	SC6XrDUrMy21JKRT8kWUVLQfBcLhxycNeNihWO2sUfI4Z+xiC0uX3nmOVI8vS3B19KWE25MyrKcBF
-	vjRZw0STlBFNh9rgwKGntSK3xvTY9DrDOkt+4Gde4Z7S0JXllNNRXdlAs8pp4LfOnp9f0B8Wl1w8/
-	LVBAbtHKxDhNJBunKHr1o5z+K4bgonM3GLFRViGODBBg/KXmfIKJNgluyTpRmgHG4czkGt4owrwDW
-	xksJnUct9B+isvhs6/s2JnB+rcDKk8dqzKVpvFm98WXYbPXD1mA+ev6g5tNWTzKG1UfyDggK8GSQq
-	ogy1QWEQKH8g0msI2x/w==;
+	List-Owner; bh=bb37z9dDhRFay41UUwNGxGxW0p8cBgejrCUeaqwV+SE=; b=AVDzQ+uB1qa3/A
+	GqtXZ7/TeRQqMIcLDsJOwJaD8D1Yt5cNpsHfAcIrNvzeVzyzWH8Ue3VEtXYfTe6WiT/eayK642iMP
+	pIFzsuq6rhRS+flE3JqbFrxaNL4jR722QGAKbERAbcfy9crslId+/ZqzyanU7TT4Iv6RPEy3HoIub
+	1hzpHVbvAqL1sbacJimC7oDaY/WBYeXT8QnrsP4b3x4wXHSLeHgSNW14qTwNdKa/INP19BmPKma85
+	uvgakibV6E6eg4rkSiwv+sIIFhpzJlFwcP+TJEcVEUuaCMBY7hHmvgb+Ilw00q0OXE08cEPT+7piV
+	nS1sadbJj/Iz0fxZB/gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Knu-0005wb-1u; Wed, 21 Aug 2019 07:13:10 +0000
+	id 1i0KrS-00080Z-1h; Wed, 21 Aug 2019 07:16:50 +0000
 Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0KnM-0005ts-2Z
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:12:38 +0000
+ id 1i0Kr4-00080E-R2
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:16:29 +0000
 Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7L791mB069845;
- Wed, 21 Aug 2019 07:12:35 GMT
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7L7DmTj074532;
+ Wed, 21 Aug 2019 07:16:26 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
  h=date : from : to : cc
  : subject : message-id : mime-version : content-type; s=corp-2019-08-05;
- bh=UkzdarFDrfhRuiq/OBQbkRXp5JILT+bkLXzw0BylluI=;
- b=VQNuLRZovAi4VjZYkq3VxG6OgsbFoVCTY2ym+hN+ftuMpC6Ru0Hs+tTdrSSOGk2+QViR
- dazEUcCaZslBPvIVZK7jVGJTISuTmmC26cpL/s/CTdD/aIDXsFcoBxl2AmMBUFSMh4Cq
- OtUKy7Fr33zIvLT6kBKRmzdHpf9AICoRgXJG75FPKfGBKanl9WiFLbDTq2q9IoaCtkBy
- FGNE5ZWKwh+tZ8ouuuiyEO5lFMDxXzOdIFWLWinWzVdQVlDqfhPXQHRx9cqZZe9Un3rU
- cRMeS/SQMUf7gh40etFVERoQDs58HblzCxjDL/YoU3exEzwYHvyqpVgahC64d7XWLZES og== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 2uea7qucb1-1
+ bh=R2YjQrMk6Ryk0i57o5acO6QYBqF7UKwLyz/MeMPJfkA=;
+ b=ruk7AMrsSTCDyXc/96XVVIt+7wKiBLwvdQHchknoUxb8B7UePTmJ+9fMYt8iGtyjxBT0
+ EEkx+6J7PzB89j3BoBwCvAhYm49DLXF2x4XsP4C1OzmN9GIphc2qcOfzROHG+jbJzNvF
+ i78bqKJiwGEoZa98q4FUDWVOxl4atksZQMBkbH8af9VQdalkmjjncqcKXdK8Y8v390Pv
+ jU6l9eivPTLG+mPlW65d7wBzhvQhm4VRbJGm3gIebxQAH+tWI0m3c1mUBI3XQ7vpnVzh
+ PneF/lfRS/rYKtx9FCZgwTLk4YsoT2xtecmctQo4Kz6sL1pkzr1oAGPpb+OlTK8a97Pk Og== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2120.oracle.com with ESMTP id 2uea7qud3g-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 21 Aug 2019 07:12:35 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7L78Mv6051025;
- Wed, 21 Aug 2019 07:12:34 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by aserp3030.oracle.com with ESMTP id 2ugj7q418m-1
+ Wed, 21 Aug 2019 07:16:25 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7L7DbGg129142;
+ Wed, 21 Aug 2019 07:14:25 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by userp3020.oracle.com with ESMTP id 2ug269nkf7-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 21 Aug 2019 07:12:34 +0000
-Received: from abhmp0008.oracle.com (abhmp0008.oracle.com [141.146.116.14])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x7L7CXQw020590;
- Wed, 21 Aug 2019 07:12:33 GMT
+ Wed, 21 Aug 2019 07:14:25 +0000
+Received: from abhmp0016.oracle.com (abhmp0016.oracle.com [141.146.116.22])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x7L7D8A1016294;
+ Wed, 21 Aug 2019 07:13:08 GMT
 Received: from mwanda (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 21 Aug 2019 00:12:33 -0700
-Date: Wed, 21 Aug 2019 10:12:28 +0300
+ with ESMTP ; Wed, 21 Aug 2019 00:13:08 -0700
+Date: Wed, 21 Aug 2019 10:13:02 +0300
 From: Dan Carpenter <dan.carpenter@oracle.com>
 To: dragan.cvetic@xilinx.com
 Subject: [bug report] misc: xilinx_sdfec: Add ability to configure LDPC
-Message-ID: <20190821071228.GE26957@mwanda>
+Message-ID: <20190821071302.GF26957@mwanda>
 MIME-Version: 1.0
 Content-Disposition: inline
 User-Agent: Mutt/1.10.1 (2018-07-13)
@@ -63,20 +63,20 @@ X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9355
  signatures=668684
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=1
  malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ phishscore=0 bulkscore=1 spamscore=0 mlxscore=0 mlxlogscore=999
  adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1906280000 definitions=main-1908210077
+ engine=8.0.1-1906280000 definitions=main-1908210078
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9355
  signatures=668684
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
  priorityscore=1501 malwarescore=0
- suspectscore=1 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ suspectscore=1 phishscore=0 bulkscore=1 spamscore=0 clxscore=1015
+ lowpriorityscore=1 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1906280000
- definitions=main-1908210077
+ definitions=main-1908210078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_001236_720727_F48A34B4 
-X-CRM114-Status: GOOD (  16.87  )
+X-CRM114-CacheID: sfid-20190821_001627_015162_22DD7E92 
+X-CRM114-Status: GOOD (  12.51  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
@@ -119,102 +119,63 @@ The patch 20ec628e8007: "misc: xilinx_sdfec: Add ability to configure
 LDPC" from Jul 27, 2019, leads to the following static checker
 warning:
 
-	drivers/misc/xilinx_sdfec.c:727 xsdfec_add_ldpc()
-	warn: pointer comes from user 'ldpc->la_table'
+	drivers/misc/xilinx_sdfec.c:504 xsdfec_reg1_write()
+	warn: potential integer overflow from user 'no_packing << (10)'
 
 drivers/misc/xilinx_sdfec.c
-   647  static int xsdfec_add_ldpc(struct xsdfec_dev *xsdfec, void __user *arg)
-   648  {
-   649          struct xsdfec_ldpc_params *ldpc;
-   650          int ret, n;
-   651  
-   652          ldpc = kzalloc(sizeof(*ldpc), GFP_KERNEL);
-   653          if (!ldpc)
-   654                  return -ENOMEM;
-   655  
-   656          if (copy_from_user(ldpc, arg, sizeof(*ldpc))) {
-                                   ^^^^
-ldpc comes from the user.
+   492  static int xsdfec_reg1_write(struct xsdfec_dev *xsdfec, u32 psize,
+   493                               u32 no_packing, u32 nm, u32 offset)
+   494  {
+   495          u32 wdata;
+   496  
+   497          if (psize < XSDFEC_REG1_PSIZE_MIN || psize > XSDFEC_REG1_PSIZE_MAX) {
+   498                  dev_dbg(xsdfec->dev, "Psize is not in range");
+   499                  return -EINVAL;
+   500          }
+   501  
+   502          if (no_packing != 0 && no_packing != 1)
+   503                  dev_dbg(xsdfec->dev, "No-packing bit register invalid");
 
-   657                  ret = -EFAULT;
-   658                  goto err_out;
-   659          }
-   660  
-   661          if (xsdfec->config.code == XSDFEC_TURBO_CODE) {
-   662                  ret = -EIO;
-   663                  goto err_out;
-   664          }
-   665  
-   666          /* Verify Device has not started */
-   667          if (xsdfec->state == XSDFEC_STARTED) {
-   668                  ret = -EIO;
-   669                  goto err_out;
-   670          }
-   671  
-   672          if (xsdfec->config.code_wr_protect) {
-   673                  ret = -EIO;
-   674                  goto err_out;
-   675          }
-   676  
-   677          /* Write Reg 0 */
-   678          ret = xsdfec_reg0_write(xsdfec, ldpc->n, ldpc->k, ldpc->psize,
-   679                                  ldpc->code_id);
-   680          if (ret)
-   681                  goto err_out;
-   682  
-   683          /* Write Reg 1 */
-   684          ret = xsdfec_reg1_write(xsdfec, ldpc->psize, ldpc->no_packing, ldpc->nm,
-   685                                  ldpc->code_id);
-   686          if (ret)
-   687                  goto err_out;
-   688  
-   689          /* Write Reg 2 */
-   690          ret = xsdfec_reg2_write(xsdfec, ldpc->nlayers, ldpc->nmqc,
-   691                                  ldpc->norm_type, ldpc->special_qc,
-   692                                  ldpc->no_final_parity, ldpc->max_schedule,
-   693                                  ldpc->code_id);
-   694          if (ret)
-   695                  goto err_out;
-   696  
-   697          /* Write Reg 3 */
-   698          ret = xsdfec_reg3_write(xsdfec, ldpc->sc_off, ldpc->la_off,
-   699                                  ldpc->qc_off, ldpc->code_id);
-   700          if (ret)
-   701                  goto err_out;
-   702  
-   703          /* Write Shared Codes */
-   704          n = ldpc->nlayers / 4;
-   705          if (ldpc->nlayers % 4)
-   706                  n++;
-   707  
-   708          ret = xsdfec_table_write(xsdfec, ldpc->sc_off, ldpc->sc_table, n,
-                                                               ^^^^^^^^^^^^^^
-This is not a bug, but it's more like an aesthetic thing.  I feel like
-->sc_table should be tagged as a __user pointer, but I'm not sure of
-the rules exactly.  Also the comments say it has to be page aligned but
-it will I don't think anyone checks and it should work fine either way
-because it just gets rounded down.
+Instead of writing invalid data, why not just return -EINVAL?
 
-   709                                   XSDFEC_LDPC_SC_TABLE_ADDR_BASE,
-   710                                   XSDFEC_SC_TABLE_DEPTH);
-   711          if (ret < 0)
-   712                  goto err_out;
-   713  
-   714          ret = xsdfec_table_write(xsdfec, 4 * ldpc->la_off, ldpc->la_table,
-   715                                   ldpc->nlayers, XSDFEC_LDPC_LA_TABLE_ADDR_BASE,
-   716                                   XSDFEC_LA_TABLE_DEPTH);
-   717          if (ret < 0)
-   718                  goto err_out;
-   719  
-   720          ret = xsdfec_table_write(xsdfec, 4 * ldpc->qc_off, ldpc->qc_table,
-   721                                   ldpc->nqc, XSDFEC_LDPC_QC_TABLE_ADDR_BASE,
-   722                                   XSDFEC_QC_TABLE_DEPTH);
-   723          if (ret > 0)
-   724                  ret = 0;
-   725  err_out:
-   726          kfree(ldpc);
-   727          return ret;
-   728  }
+   504          no_packing = ((no_packing << XSDFEC_REG1_NO_PACKING_LSB) &
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Otherwise we have an integer overflow.
+
+   505                        XSDFEC_REG1_NO_PACKING_MASK);
+   506  
+   507          if (nm & ~(XSDFEC_REG1_NM_MASK >> XSDFEC_REG1_NM_LSB))
+   508                  dev_dbg(xsdfec->dev, "NM is beyond 10 bits");
+   509          nm = (nm << XSDFEC_REG1_NM_LSB) & XSDFEC_REG1_NM_MASK;
+   510  
+   511          wdata = nm | no_packing | psize;
+                             ^^^^^^^^^^
+When I'm reviewing integer overflow warnings, I look to see if the
+variable is re-used after the overflow, and this one is re-used here.
+It's probably harmless but it's sort of a pain to review.
+
+   512          if (XSDFEC_LDPC_CODE_REG1_ADDR_BASE + (offset * XSDFEC_LDPC_REG_JUMP) >
+   513              XSDFEC_LDPC_CODE_REG1_ADDR_HIGH) {
+   514                  dev_dbg(xsdfec->dev, "Writing outside of LDPC reg1 space 0x%x",
+   515                          XSDFEC_LDPC_CODE_REG1_ADDR_BASE +
+   516                                  (offset * XSDFEC_LDPC_REG_JUMP));
+   517                  return -EINVAL;
+   518          }
+   519          xsdfec_regwrite(xsdfec,
+   520                          XSDFEC_LDPC_CODE_REG1_ADDR_BASE +
+   521                                  (offset * XSDFEC_LDPC_REG_JUMP),
+   522                          wdata);
+   523          return 0;
+   524  }
+
+See also:
+drivers/misc/xilinx_sdfec.c:504 xsdfec_reg1_write() warn: potential integer overflow from user 'no_packing << (10)'
+drivers/misc/xilinx_sdfec.c:509 xsdfec_reg1_write() warn: potential integer overflow from user 'nm << (11)'
+drivers/misc/xilinx_sdfec.c:540 xsdfec_reg2_write() warn: potential integer overflow from user 'nmqc << (9)'
+drivers/misc/xilinx_sdfec.c:544 xsdfec_reg2_write() warn: potential integer overflow from user 'norm_type << (20)'
+drivers/misc/xilinx_sdfec.c:548 xsdfec_reg2_write() warn: potential integer overflow from user 'special_qc << (21)'
+drivers/misc/xilinx_sdfec.c:554 xsdfec_reg2_write() warn: potential integer overflow from user 'no_final_parity << (22)'
+drivers/misc/xilinx_sdfec.c:559 xsdfec_reg2_write() warn: potential integer overflow from user 'max_schedule << (23)'
 
 regards,
 dan carpenter
