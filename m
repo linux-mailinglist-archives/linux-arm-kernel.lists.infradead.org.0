@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23EE7982F0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 20:33:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CE90982DE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 20:32:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=79kx5OL9zHWFUjvlwUWitiJGgu/X/0W00K3jqCWLGfU=; b=fQY58hmSbn8Nkl
-	hUpxeeRx/bOWIe+tQKRUPb9kkB+n9nhfnb7n5zJZu3W2F3e5jtIhhfF0PIEji+LBW3pLIs+pGLf/y
-	domE3oDvkYnQCaM2RoBve0livw7JXvpKc7OcC9UPnFg0MM7QaviR/9+q5/4ulgTos3qiAhli/zMeT
-	oefL4YBHU5u07BqL6P6IMeaggr5xISIhcgnZMOGnPB/KVS2IuL9HtbJD9bMj3a0hRewTdJqrKMlg6
-	mVjE4uQ7SmL8hqCaDoXy57C2CqhY9HFushRC0kP75/ViCpNkeSXedAMCu65X7Cs0Yve69zKp+SCId
-	D6rDdgUcw7rANv16ly+A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6A0SD/5QBOe0BjG+avL/iXzdPANqEI1KO1svsvQDzfM=; b=U4DILin2x3lFk8
+	Eq7okkp87wMtp97hVgBn+9v7PJrDOVJhdbs0HVHyQ8XUbsVIiCXI6/k1LtjJNV6egsMWdiTLQ63d+
+	KjwND/Q90Uwe5SxfltTJiQ9N9pPRa3KMVHY3nhplxYqkmQKob8QhSqwxUq6V2rSZtY129w32XTcOq
+	4eGdpbyKgLQVh4lVPt1vq3DetIE5mUXF/Ctk9rJAG8RiqbSG1aGHJjXq3nFClbq5wUMrkN6sDiV/L
+	Ogz659US4jn0JXkZZATf/7RYLNm3cdE3kTxyaEa9S+UmfwnJ9wlSF2+yZo2+CfR/K+IDlL/lvWJFb
+	vAaSGjjrVP4Nvt/GMfrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0VPp-0004kY-7K; Wed, 21 Aug 2019 18:33:01 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1i0VPD-00041K-JA; Wed, 21 Aug 2019 18:32:23 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0VOz-0003xb-HM
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 18:32:12 +0000
-Received: by mail-qk1-x743.google.com with SMTP id s145so2714854qke.7
+ id 1i0VOz-0003xf-5f
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 18:32:10 +0000
+Received: by mail-qk1-x741.google.com with SMTP id r21so2745095qke.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 11:32:07 -0700 (PDT)
+ Wed, 21 Aug 2019 11:32:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:mime-version
+ h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=3VISVZWuGNTiVd6JKqfbutJFN34lrqN05fvYPH9Kreg=;
- b=HHJukI5cKFcu78i/O1Yn8iw05mYEjKQotNnDCY7uW/VDROaso248Cz4QQVCEUqJcRv
- EBzDUyZOfUDX0OqfFfNYvmLzaOIniVyftuF2AgycrkM0czlodTpOiI5hsWSB3EmJ2IOF
- Sdf0QIF5vjVVnt5v/fb4faCNkExE0O0J9E/u7OrVqBv3KwAkDQY25mF4NF6uZGiJmJaq
- V5rSY+0126UdxSnVxgCpzdNP9IOeLPAdBIaRSaDqEYxUJRdmoxnf7zCcQdaMR1gPUppS
- eit1DPkEzoQPfq6qmFm0NeeZa9yVUmAjXHBjiWUl8i01GTKsv8qd8JE2lN5bdfa1Jkf4
- TRIg==
+ bh=KZlSM1+HYlx5AabYJySSHWoh4S6JQNg+E/eloF1WuIo=;
+ b=EAK9aWCollpH9xmdUtaiVBS6Ul8Grpce2v4a96pxnxYp2IBX8da/99b/wGOvABGtwu
+ YGsbf5Rf/sZVH8SNTtDy0XpnvFV5C9IC9WYVDSpYpMbwVzm7ArMz9PW52kFErZTTXCsL
+ WTyBvzhkpiiRAQw8xhZCkbesGdEv3+KaY8OAZ6E7bzieO3RZcGtLLT0Pz48c7wl8J3Zh
+ tOImm/Vrp/7Gj+QIPxNlt0oaaMZyfLcgYRPH40jynE+MITM4+xI0XYdvt3v88kfQeRO6
+ 7KdjAnbtkEeJP3UjA9HD358p6hLYn9PO5svHWmEYjnXYtYqKE97d1nQSshP1W53Wo27L
+ IM5g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=3VISVZWuGNTiVd6JKqfbutJFN34lrqN05fvYPH9Kreg=;
- b=Fv2gpPy/0MRqSeIieSkTD4mtqxX43ebJRBOnt1ehYdGslHlCqQLZoO/gDNIZWegZLN
- swCbQimfbUAyrCk5fNxibYsk4NvVesW8nO6KdlFqmlCnyIH3ALPmoKumk2iJhDPk+LFu
- ZlWRDGkzejaKrXAhxSaXd1fRJZAIEiCAnf97NUorfW+/+B/W5S/kJBEqVm7x4GsIHTTJ
- o/ABl8YfSXTQo4glu0iQZrDXLU9tSwHVT6DupZMUc6wRY0SQOcCuiauAZ1tqG05vqg5n
- ejyv8KDLL0QuU/jbVd/vnKOfzk1v+tTxoA+AqYdY6qoVWz/MOHtRbnklysmshvqKZzdi
- 1npw==
-X-Gm-Message-State: APjAAAXXiGAOAce45T1p3YmjBTf7BpJpl+GmZTmbe22f2jnmsjGE7koO
- VrtfG5JSBCNxEPXtgbyd3/3NbQ==
-X-Google-Smtp-Source: APXvYqxQXpDqPyZwJQWEPUkusjd/UilDz4Mpzt+wUtcrvVVsDPsRqQ1Np6P1GcXQU3ssA/+pWMdUqw==
-X-Received: by 2002:a37:a9c6:: with SMTP id
- s189mr32305161qke.191.1566412326277; 
- Wed, 21 Aug 2019 11:32:06 -0700 (PDT)
+ h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=KZlSM1+HYlx5AabYJySSHWoh4S6JQNg+E/eloF1WuIo=;
+ b=TUDWP+ZkCmzZsmDI2kRohM7nlWzhD3F/B1C/5zqd3SesMchXZFcCG1pYP2qm1KsQvu
+ Z2Ib845O0U1OeAi2cvBPp+xuZ9IPmklKjHzGtRRjH+T558I97781M0wNYLwIXi+Hkara
+ A8usq9Q/mtsTK8mI5OzHVjnQGhn/6v4+jT+oCEdRBTSBqV5Sl3dDYHPwi2j6uMvknxBb
+ dcy1+HhL9keNO1AvGANeqGQzpVWfb9/QJTSBNyqKdGIzn0L4VPyWEE0/EzNCJy2GBLT0
+ g9N4xE1CYg13qBRklA+82Ak+g3sy/L1+yxAeG7nCzcGx3GUHBlw0s/hvCCun4nVIkl7e
+ gKBw==
+X-Gm-Message-State: APjAAAXR6nE2qg50mEgQAV4PXAo7JAEZTa7wRH1u+0Ic4dWNv3K2kvll
+ ClrXGs2b+i86SmSsdvTA80wLQQ==
+X-Google-Smtp-Source: APXvYqxa+1nBillHVTD1wUyey0q2i0nGT/ot1gRBODj0C6eDdzfP5MOz2GYbi9GTD87ibQ+3R7pbkA==
+X-Received: by 2002:a05:620a:4d4:: with SMTP id
+ 20mr30837041qks.95.1566412327681; 
+ Wed, 21 Aug 2019 11:32:07 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id q13sm10443332qkm.120.2019.08.21.11.32.04
+ by smtp.gmail.com with ESMTPSA id q13sm10443332qkm.120.2019.08.21.11.32.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Aug 2019 11:32:05 -0700 (PDT)
+ Wed, 21 Aug 2019 11:32:07 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -66,21 +66,23 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com
-Subject: [PATCH v3 00/17] arm64: MMU enabled kexec relocation
-Date: Wed, 21 Aug 2019 14:31:47 -0400
-Message-Id: <20190821183204.23576-1-pasha.tatashin@soleen.com>
+Subject: [PATCH v3 01/17] kexec: quiet down kexec reboot
+Date: Wed, 21 Aug 2019 14:31:48 -0400
+Message-Id: <20190821183204.23576-2-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20190821183204.23576-1-pasha.tatashin@soleen.com>
+References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_113209_580190_F762A540 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20190821_113209_395997_938CFCC1 
+X-CRM114-Status: GOOD (  10.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,115 +109,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Changelog:
-v3:
-	- Split changes to create_safe_exec_page() into several patches for
-	  easier review as request by Mark Rutland. This is why this series
-	  has 3 more patches.
-	- Renamed trans_table to tans_pgd as agreed with Mark. The header
-	  comment in trans_pgd.c explains that trans stands for
-	  transitional page tables. Meaning they are used in transition
-	  between two kernels.
-v2:
-	- Fixed hibernate bug reported by James Morse
-	- Addressed comments from James Morse:
-	  * More incremental changes to trans_table
-	  * Removed TRANS_FORCEMAP
-	  * Added kexec reboot data for image with 380M in size.
+Here is a regular kexec command sequence and output:
+=====
+$ kexec --reuse-cmdline -i --load Image
+$ kexec -e
+[  161.342002] kexec_core: Starting new kernel
 
-Enable MMU during kexec relocation in order to improve reboot performance.
+Welcome to Buildroot
+buildroot login:
+=====
 
-If kexec functionality is used for a fast system update, with a minimal
-downtime, the relocation of kernel + initramfs takes a significant portion
-of reboot.
+Even when "quiet" kernel parameter is specified, "kexec_core: Starting
+new kernel" is printed.
 
-The reason for slow relocation is because it is done without MMU, and thus
-not benefiting from D-Cache.
+This message has  KERN_EMERG level, but there is no emergency, it is a
+normal kexec operation, so quiet it down to appropriate KERN_NOTICE.
 
-Performance data
-----------------
-For this experiment, the size of kernel plus initramfs is small, only 25M.
-If initramfs was larger, than the improvements would be greater, as time
-spent in relocation is proportional to the size of relocation.
+Machines that have slow console baud rate benefit from less output.
 
-Previously:
-kernel shutdown	0.022131328s
-relocation	0.440510736s
-kernel startup	0.294706768s
+Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+Reviewed-by: Simon Horman <horms@verge.net.au>
+---
+ kernel/kexec_core.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Relocation was taking: 58.2% of reboot time
-
-Now:
-kernel shutdown	0.032066576s
-relocation	0.022158152s
-kernel startup	0.296055880s
-
-Now: Relocation takes 6.3% of reboot time
-
-Total reboot is x2.16 times faster.
-
-With bigger userland (fitImage 380M), the reboot time is improved by 3.57s,
-and is reduced from 3.9s down to 0.33s
-
-Previous approaches and discussions
------------------------------------
-https://lore.kernel.org/lkml/20190817024629.26611-1-pasha.tatashin@soleen.com
-version 2 of this series
-
-https://lore.kernel.org/lkml/20190801152439.11363-1-pasha.tatashin@soleen.com
-version 1 of this series
-
-https://lore.kernel.org/lkml/20190709182014.16052-1-pasha.tatashin@soleen.com
-reserve space for kexec to avoid relocation, involves changes to generic code
-to optimize a problem that exists on arm64 only:
-
-https://lore.kernel.org/lkml/20190716165641.6990-1-pasha.tatashin@soleen.com
-The first attempt to enable MMU, some bugs that prevented performance
-improvement. The page tables unnecessary configured idmap for the whole
-physical space.
-
-https://lore.kernel.org/lkml/20190731153857.4045-1-pasha.tatashin@soleen.com
-No linear copy, bug with EL2 reboots.
-
-Pavel Tatashin (17):
-  kexec: quiet down kexec reboot
-  arm64, hibernate: use get_safe_page directly
-  arm64, hibernate: remove gotos in create_safe_exec_page
-  arm64, hibernate: rename dst to page in create_safe_exec_page
-  arm64, hibernate: check pgd table allocation
-  arm64, hibernate: add trans_pgd public functions
-  arm64, hibernate: move page handling function to new trans_pgd.c
-  arm64, trans_pgd: make trans_pgd_map_page generic
-  arm64, trans_pgd: add trans_pgd_create_empty
-  arm64, trans_pgd: adjust trans_pgd_create_copy interface
-  arm64, trans_pgd: add PUD_SECT_RDONLY
-  arm64, trans_pgd: complete generalization of trans_pgds
-  kexec: add machine_kexec_post_load()
-  arm64, kexec: move relocation function setup and clean up
-  arm64, kexec: add expandable argument to relocation function
-  arm64, kexec: configure trans_pgd page table for kexec
-  arm64, kexec: enable MMU during kexec relocation
-
- arch/arm64/Kconfig                     |   4 +
- arch/arm64/include/asm/kexec.h         |  51 ++++-
- arch/arm64/include/asm/pgtable-hwdef.h |   1 +
- arch/arm64/include/asm/trans_pgd.h     |  63 ++++++
- arch/arm64/kernel/asm-offsets.c        |  14 ++
- arch/arm64/kernel/cpu-reset.S          |   4 +-
- arch/arm64/kernel/cpu-reset.h          |   8 +-
- arch/arm64/kernel/hibernate.c          | 261 ++++++------------------
- arch/arm64/kernel/machine_kexec.c      | 199 ++++++++++++++----
- arch/arm64/kernel/relocate_kernel.S    | 196 +++++++++---------
- arch/arm64/mm/Makefile                 |   1 +
- arch/arm64/mm/trans_pgd.c              | 270 +++++++++++++++++++++++++
- kernel/kexec.c                         |   4 +
- kernel/kexec_core.c                    |   8 +-
- kernel/kexec_file.c                    |   4 +
- kernel/kexec_internal.h                |   2 +
- 16 files changed, 750 insertions(+), 340 deletions(-)
- create mode 100644 arch/arm64/include/asm/trans_pgd.h
- create mode 100644 arch/arm64/mm/trans_pgd.c
-
+diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+index d5870723b8ad..2c5b72863b7b 100644
+--- a/kernel/kexec_core.c
++++ b/kernel/kexec_core.c
+@@ -1169,7 +1169,7 @@ int kernel_kexec(void)
+ 		 * CPU hotplug again; so re-enable it here.
+ 		 */
+ 		cpu_hotplug_enable();
+-		pr_emerg("Starting new kernel\n");
++		pr_notice("Starting new kernel\n");
+ 		machine_shutdown();
+ 	}
+ 
 -- 
 2.23.0
 
