@@ -2,93 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CC109714F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 06:57:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19C7F971B2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 07:53:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+yMpYpD4MCYX7qiwZyuUgS7aYfnqj2vYsVjWDSGWyow=; b=cuHEOW1vRUQlRD
-	Bw7C9pRRw22VhH2QNI/JMa/Yg0BUKWJSaWgWMnlRQAV/BopvQCAJD9YQlX/QFxSfqB+EeusQGSTzc
-	jrKQ77oflO84HmEFh7DOqspZ1rrrj1i7pzPwuEWXevHGNpXrSJGMTVrV+y519EZQwt2niSJPDl8vp
-	klg0siHKgmxiZ4zrP9pcv4+myV4U22BVVe09pcCspsORFlSeeScwxv/PTPQMrbDL+D2I+S4e0T5zO
-	9YMoDF5vE9DW78+AdoSRPtMUyRGByQ/PxXA5Iula/dtv5/Eg64Ai6ZPOvKCqMNoaVT311LXWWHHb8
-	B7ZGBv78Sgl9tuBF/5uQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NGEjMSo5hpEmtNvJpg1xID8mPuW/PB4/K4+w1fVfKmg=; b=UBwKhV9x56aJR3
+	2jc2iDH8zTtbx50+i51aMku2dSGCwXdR118eDi7Gk0NY65RpV0a5YoUTmJYbISTLOiYizEIgBPAqK
+	Rgi18SrPYRK04TlvYZDvMLomlYaJUSb1itBbg2Kjy2OJg4v6hte07iGi1SUm0fTdKImRH2u8UznKd
+	Xk9iwtI2BduGEP1F6sJONtDgQhjZSxXimwqepkR/48WNJz2d/UteTtVL1OKfFb59s8Du3cKsoOoYn
+	Qp98EwDuD8sMaBCsC0mhWWLImL2dSsTbsU2xdF/IwzjjnPm3pA6I7Db+TKvHfPZWS9ZbGvbiYxVm2
+	SmgeRX1jJhyZ53tbpNcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0IgP-0005ei-1b; Wed, 21 Aug 2019 04:57:17 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1i0JYA-0005ZZ-Ug; Wed, 21 Aug 2019 05:52:51 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0IgE-0005e7-VJ
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 04:57:08 +0000
-Received: by mail-pg1-x544.google.com with SMTP id w10so587552pgj.7
+ id 1i0JXy-0005ZF-4E
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 05:52:39 +0000
+Received: by mail-lf1-x144.google.com with SMTP id c19so829623lfm.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 21:57:04 -0700 (PDT)
+ Tue, 20 Aug 2019 22:52:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=F3L4II85eG5+Ju0PiHDYgaOg83dmrN2U4zsjrFTvtVk=;
- b=kML78E9Z1HY+LqS0ocE+R+cMN1dL8FMwBoo6lyCPnO9Z8D3Vqpq3umvLjFElQSBX1v
- AYAwJhVbDwa25PuCimdjnsdS5F1lmRkJXeCxFei+Xxhz/TrP2PJR9uqmL5b4Gb4ZTmCk
- Muxur/MJCO3cRCQuZBH8aZvAZ4n65gNk2uXUTfGFWIBHISVH5fsXguZMxuiFzI6m75+F
- ogQ/QXu9tj0aFF4lIxy8tvIF7r4r5OzIXgUtUTbc3nP0wd9PWeod4szuBj/Une4ahb2J
- M4gxvM0CweUIKFRiG3yr3pg837YWTKOCxx6zasTO7tcd0b8xXnKfqTZ7NFp92IqMbflB
- nc3w==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2TIxCfXD2eyh6zMqJFg2GtypILTlpE+TvhurqKYvOlo=;
+ b=h571lOuE9rlh6jokPyR7zPtOUmcT0wb5cZZZavJmW/PBnp3LZfPhHObeuyTdEe2dk0
+ +SLiwrZFafrspkXS1P35VzI8s1XqPU4YgJOGJ84d7cOsBPlHLhVIrpBJHnYHuad4tnR9
+ LC9W2mth3VpWn5RAy56inC04YRNfLAsAYR9E5dzK0xOfdKYvmgM0cOSSZVIGSc7cNb7Q
+ iUC8Ic/r2Gqw5H92RKoLhMsjYdRT0oSSI74UyH6Jg6gfMKeBpAo+DYhFw3aWoSVjNQoM
+ mYxRyV89+I3hQ0Vl/CZBaKw6KFpw/fmpwyezY9AWSe4VTQ/F19fwdVuhfH+nETxh5Rv4
+ 8bqg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=F3L4II85eG5+Ju0PiHDYgaOg83dmrN2U4zsjrFTvtVk=;
- b=Iz689lEf22aR4kqH01PozmKfRalogyFFht0Kl4LTtz4ZVWyBufp09JGbcudaeREhPT
- tspf9xvmTdF5hQRGnhhxLwRZXxcjaRMHw7BhUBos1TD0CYzNEk8qokelCqWdK6RQ7m6K
- /7el1oDq19ggWbGKOE3bl5bo9/ugkVyTTwS/rpZR+fmASYMkUWOcZhv5sHp+7+d+fc/M
- Ng3QBz8TBN+nSd62P3XkWdBxJacSB/4ZFLmInA5/cz4VD0uYLiXEBN5cH+aw08aCmP5d
- 13EmvXK2eNfnQbmIwatp/acC+H5xmBMdHWM/RUDKG9F2HKht8gSdE533rn7cRb1aBece
- 1mgw==
-X-Gm-Message-State: APjAAAWNyoGMIcLAt9PJRJ7ML6dUXZUXrpWqUd/MMjBMab1GfUctgCwl
- WJNypB6GaEwwnum/z49I1qA=
-X-Google-Smtp-Source: APXvYqzSOY46Y5UrW2/vAhHHp3XzP2p/mtKr9xpqX2YfPZx41r5z1RlkJxKGMekNLx4bEdSyXmD22w==
-X-Received: by 2002:aa7:9477:: with SMTP id t23mr34247104pfq.29.1566363423580; 
- Tue, 20 Aug 2019 21:57:03 -0700 (PDT)
-Received: from voyager.ibm.com ([36.255.48.244])
- by smtp.gmail.com with ESMTPSA id x16sm12279629pff.99.2019.08.20.21.57.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 20 Aug 2019 21:57:03 -0700 (PDT)
-From: Joel Stanley <joel@jms.id.au>
-To: Andrew Jeffery <andrew@aj.id.au>,
-	Adriana Kobylak <anoo@us.ibm.com>
-Subject: [PATCH] ARM: dts: aspeed: swift: Add eMMC device
-Date: Wed, 21 Aug 2019 14:26:55 +0930
-Message-Id: <20190821045655.21752-1-joel@jms.id.au>
-X-Mailer: git-send-email 2.23.0.rc1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2TIxCfXD2eyh6zMqJFg2GtypILTlpE+TvhurqKYvOlo=;
+ b=a8To6K9yBXFLKNz32L+A2sjrHlRKxq7ISrg/yDzU3qXkoQAUSak0zV49dHp59L/pyF
+ 71jxLB7/Sr2b33j8E/zj2mYLnv2lLU21OG+CC+e+gf5Bdbi8Y45SJ/eSPZoTarJrxAec
+ vuIbGQ4g64Obqhdtd3w0L4gpUP2eIum6eAS30YlQzwlIXzsnm5g4MqJyEHVP7pXmMXV7
+ JBu4hiM4dGqCr0G8lyaP/Ygfj5Pc3cNcSJFzhnWYJEwk9Q84O4sru9A5jiTa5JjpMv7O
+ 7PbvmUQq/wwldET0YGlFqyfB0tskFcKpVFozf3lj0jPgVs0ZJvqEpU/23TeGSUaDEXqR
+ hgKA==
+X-Gm-Message-State: APjAAAUhKw9mtCjxLw6dDDIqwxosmJ+NFzv+ir7ImEeNs0QhA4itsGU+
+ Ru1ljtgoegSd5+T3WOeW87ta85Nhj0nsGg8dOc4=
+X-Google-Smtp-Source: APXvYqyD9sge8d6nZp1df6LdnHet72hp2VogL583tm9cg6fYFMjjAZbyS0l7gUXxlDHmk9VAXZ4ToWq94s9ugar1QmM=
+X-Received: by 2002:ac2:4644:: with SMTP id s4mr17334296lfo.158.1566366755409; 
+ Tue, 20 Aug 2019 22:52:35 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190814060854.26345-1-codekipper@gmail.com>
+ <20190814060854.26345-10-codekipper@gmail.com>
+ <CAGb2v65+-OB4zEyW8f7hcWHkL7DtfEB1YK2B1nOKdgNdNqC0kQ@mail.gmail.com>
+In-Reply-To: <CAGb2v65+-OB4zEyW8f7hcWHkL7DtfEB1YK2B1nOKdgNdNqC0kQ@mail.gmail.com>
+From: Code Kipper <codekipper@gmail.com>
+Date: Wed, 21 Aug 2019 07:52:24 +0200
+Message-ID: <CAEKpxBnxf=iejk887A7qFkzt3BXVxiRS1PeA45aZYR9DsBAU4Q@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH v5 09/15] clk: sunxi-ng: h6: Allow I2S to
+ change parent rate
+To: Chen-Yu Tsai <wens@csie.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_215707_012214_C3F5BF05 
-X-CRM114-Status: UNSURE (   8.65  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190820_225238_196061_63F3E2C5 
+X-CRM114-Status: GOOD (  11.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
+ provider (codekipper[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,43 +95,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>,
+ Linux-ALSA <alsa-devel@alsa-project.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Mark Brown <broonie@kernel.org>,
+ Maxime Ripard <maxime.ripard@free-electrons.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Swift contains an eMMC device attached to the second SDHCI controller.
+Thanks....I've added to my next patch series but if you could add it
+when applying that would be great.
+BR,
+CK
 
-Signed-off-by: Joel Stanley <joel@jms.id.au>
----
- arch/arm/boot/dts/aspeed-bmc-opp-swift.dts | 11 +++++++++++
- 1 file changed, 11 insertions(+)
-
-diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts b/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
-index f14f745b34ca..25bc0e1bbced 100644
---- a/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
-@@ -963,4 +963,15 @@
- 	status = "okay";
- };
- 
-+&sdmmc {
-+       status = "okay";
-+};
-+
-+&sdhci1 {
-+       status = "okay";
-+
-+       pinctrl-names = "default";
-+       pinctrl-0 = <&pinctrl_sd2_default>;
-+};
-+
- #include "ibm-power9-dual.dtsi"
--- 
-2.23.0.rc1
-
+On Wed, 21 Aug 2019 at 06:07, Chen-Yu Tsai <wens@csie.org> wrote:
+>
+> On Wed, Aug 14, 2019 at 2:09 PM <codekipper@gmail.com> wrote:
+> >
+> > From: Jernej Skrabec <jernej.skrabec@siol.net>
+> >
+> > I2S doesn't work if parent rate couldn't be change. Difference between
+> > wanted and actual rate is too big.
+> >
+> > Fix this by adding CLK_SET_RATE_PARENT flag to I2S clocks.
+> >
+> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+>
+> This lacks your SoB. Please reply and I can add it when applying.
+>
+> ChenYu
 
 _______________________________________________
 linux-arm-kernel mailing list
