@@ -2,70 +2,122 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8405796F34
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 04:08:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A90C96F3B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 04:09:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VLKwwGg5kgPra8s8KeBTpXAvbul5ybD+UwIZZ/EVSSY=; b=cv1a5YCY53yjXe
-	ByXvZzz5hJKbuiXxvbIgUhUN4H87HN88UiDlHNXcb9g9CNOwQRao8LAlCpm4EmBka5IpeMXmLMmUV
-	kgjhQKwTgPkvcarfOtHI8xqjJQPScrIYlneVV9dcpCCSzmY57thlDDw4p4K5Qi+PJkNIskAt8Xha6
-	XeFL9G5/Si2pLanRNcx9nABXIygiNYZYbju8FHAs0Ae+niOB5aTrSw3S74zru/9rrWG/QnrYqkkJy
-	7T/JQNfU3eJxoVHpgohTDxvphbQay7ujfmwD2NM9pO6HNAhsiVKNmTN1EQcbIh71i5dQ4h6vCh/B1
-	J75hZzZmdHW1N8ROKzXQ==;
+	List-Owner; bh=UVZu0TXWd2214mZv7HncEbufbi6ElEQ/YRqU+drzUnA=; b=tbYUt4ABprnW8u
+	qxOXBFWmk9jW7GG50K2Nhnr/yko4WZLoS6sAQ/XUDPR1uJCQwJISiWAPIrnPWuV2mHtbHpBZSzWfl
+	Ao5MxyLW9ULHjNIEryP8Yzd3BxPQOop3Phpu6iWARRr+x7xfQQcbUGLMRW8Jd34dIhPaCU/Gc5phs
+	Du2sUWbb7F0RnfpnSKd4IGP/7fxZr8jI7SVUDDEEs/sLQa1L+3b6JReVvlf7FUfFQbBE8neISNtoO
+	Ph3MFXf/YDIdI0+6/g+oUAqptkaHSzIDoYJsSSW0FeTStT/EwemCn/4nduDz5877rMTcM3X+SArdJ
+	H5vEuDZ128LwK91RDuPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0G2U-0002Ur-Mf; Wed, 21 Aug 2019 02:07:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i0G3v-0002ql-Jf; Wed, 21 Aug 2019 02:09:23 +0000
+Received: from mail-eopbgr750071.outbound.protection.outlook.com
+ ([40.107.75.71] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0G2M-0002Tr-38
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 02:07:47 +0000
-Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E84E422DA7;
- Wed, 21 Aug 2019 02:07:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566353265;
- bh=Zqudwk65vUNNG7cwLAF4ZWtWBzan/Kk8MUshf8f8kpk=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Ahk39hs1grZsNJL1+z7+Stu7VoJZ6O9TIOL6aijYhsOVJd9K6tq6DKj/KQriJd21r
- svftHv/8MJx99tArPBUKMT+U7s4YdKHNLSSKQpMISNCjo/gzLMrZLMkqHq+Ug/srgk
- ncfFglDJPhJxDZGJ/AK4fNUdUy2nxumdQ2pKTRsQ=
-Date: Wed, 21 Aug 2019 11:07:39 +0900
-From: Masami Hiramatsu <mhiramat@kernel.org>
-To: Jisheng Zhang <Jisheng.Zhang@synaptics.com>, Steven Rostedt
- <rostedt@goodmis.org>
-Subject: Re: [PATCH v2 2/3] kprobes: adjust kprobe addr for KPROBES_ON_FTRACE
-Message-Id: <20190821110739.fb3ab6b69423dff64a3b4a29@kernel.org>
-In-Reply-To: <20190820114224.0c8963c4@xhacker.debian>
+ id 1i0G3m-0002qS-Ph
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 02:09:16 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=EkJf9SJjTeFdjKCd8yRtxLX/lUBs63l5SYrDfkQZG4cDcFKpq8aillHgPxVyxfjtTrTuJEFmeYwbizG2hOYOyatCZ7TByI3xntt7jzIpYVyqlHtnandfw3JAqozB7RQk9Z7rh+BWQAV2GDhRWc4WbbUallQiTy7HnyX4Quh+48+KNtJVmQX/SA004wIdSQEvcd2ArceCYeejMDk1uVEH26ksHugN88rr7ocj2GR++9NTKDKnBhfCQlQANfhzGGuqPqzygcvwSQeNUAM8JDjYhVZrYjcBGrRM+K/ZVNmBOIppriGNK+X4SnC+ngEFnYio3AhrCSOQbPxdYYgXklW4WA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Rg5V4KIiFC4h1rp2jN9bS9pv2shUGDwX3sNbL4AKjTI=;
+ b=fQhn+7BJBTO0zTn4zQVvHVfPyFgGnLs0robF1w6xQGXR72zaokXuIF4NJKhlqxo6IWIvbZqdcimcivyw5arNqmkddbU1616VTZcmSqzwb90/mA5CZlwdPYY+RqxpEEyQ6jztmEuXb4vnUd9aXy3CA2UPSBaS/AYVfAJLqXbUsUtczRXVuaijfU10KwfY69cktexG80yLHkShuP6tuzvpV7mpZa2nyOp5z3xuSiN6HIs9GXp3tvM0n7unXIdhtvIPcPvnGl0LceBlMKlOB9IWd68bYMOG5wnZbZQf73EGsCaQDMKM8d1YJpxOnEK4uKomIMOEa1evQ7cHfA+WsLpehA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synaptics.com; dmarc=pass action=none
+ header.from=synaptics.com; dkim=pass header.d=synaptics.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=Synaptics.onmicrosoft.com; s=selector2-Synaptics-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Rg5V4KIiFC4h1rp2jN9bS9pv2shUGDwX3sNbL4AKjTI=;
+ b=euKxpOo8JV3NKIFZJwokdEIuCg7qrVQMY9Rka9B6eaqFaxrDxLizH2NIuKs3x3QFI3GdkAPmMlGw/HkYlB7/BGI3fGTgGIuRiMod/mBUZta+rlOxOLJGu0fUEJ5K+fEVoP7yL0fTFJLPXaF57JtxzaJVskB0fJSO3NHcxfviPJA=
+Received: from BYAPR03MB4773.namprd03.prod.outlook.com (20.179.92.152) by
+ BYAPR03MB3574.namprd03.prod.outlook.com (52.135.213.27) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2178.16; Wed, 21 Aug 2019 02:09:11 +0000
+Received: from BYAPR03MB4773.namprd03.prod.outlook.com
+ ([fe80::a517:3578:67bf:6c88]) by BYAPR03MB4773.namprd03.prod.outlook.com
+ ([fe80::a517:3578:67bf:6c88%7]) with mapi id 15.20.2157.022; Wed, 21 Aug 2019
+ 02:09:10 +0000
+From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+To: Masami Hiramatsu <mhiramat@kernel.org>
+Subject: Re: [PATCH v2 1/3] kprobes/x86: use instruction_pointer and
+ instruction_pointer_set
+Thread-Topic: [PATCH v2 1/3] kprobes/x86: use instruction_pointer and
+ instruction_pointer_set
+Thread-Index: AQHVVwqiEXrXfYjUc0SG3b0/wT6us6cDu4YAgACFhgCAAJchgIAAAL+A
+Date: Wed, 21 Aug 2019 02:09:10 +0000
+Message-ID: <20190821095527.729b2b0d@xhacker.debian>
 References: <20190820113928.1971900c@xhacker.debian>
- <20190820114224.0c8963c4@xhacker.debian>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ <20190820114109.4624d56b@xhacker.debian>
+ <alpine.DEB.2.21.1908201050370.2223@nanos.tec.linutronix.de>
+ <20190820165152.20275268@xhacker.debian>
+ <20190821105247.f0236d2c04b2c0c4d4e1847e@kernel.org>
+In-Reply-To: <20190821105247.f0236d2c04b2c0c4d4e1847e@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [124.74.246.114]
+x-clientproxiedby: TYAPR01CA0210.jpnprd01.prod.outlook.com
+ (2603:1096:404:29::30) To BYAPR03MB4773.namprd03.prod.outlook.com
+ (2603:10b6:a03:134::24)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 67fd10f7-a471-4cc1-3f3c-08d725dc8e3d
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:BYAPR03MB3574; 
+x-ms-traffictypediagnostic: BYAPR03MB3574:
+x-microsoft-antispam-prvs: <BYAPR03MB3574972D034A5BEBA292D3CEEDAA0@BYAPR03MB3574.namprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0136C1DDA4
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(346002)(376002)(366004)(396003)(39860400002)(54534003)(189003)(199004)(478600001)(76176011)(102836004)(14454004)(53936002)(316002)(7736002)(7416002)(1076003)(25786009)(446003)(11346002)(2906002)(476003)(4326008)(486006)(26005)(54906003)(52116002)(6246003)(99286004)(86362001)(386003)(6506007)(305945005)(186003)(6916009)(66946007)(8936002)(8676002)(66446008)(5660300002)(64756008)(71200400001)(256004)(14444005)(66556008)(66476007)(71190400001)(6116002)(66066001)(3846002)(6486002)(229853002)(50226002)(6512007)(9686003)(6436002)(81156014)(81166006)(39210200001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB3574;
+ H:BYAPR03MB4773.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:0; 
+received-spf: None (protection.outlook.com: synaptics.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: iETVAJMaw8V7kKA66OhWKk8NhTg4JHz/JgWRLQP10VQnzgDquJ17BaZjXmfS6XQg45n98dh2nz2W6cg3X/qCJXzqxJx3dqDJsGtqwwis58NtFRh3pjFhCKXDwHqLJF4tfGvVWsuNn8sltyTLH7OKmk/9zMw4Aj10CyT0/7JEQq2Rm6nMIYqDq4izlvv0fqMoFPeCdcDEZnv+MgcGoYXpr51D4eb/+kFm71UUfuDGMa7c9EslyOYZVDhO+qTZNDzYcnLs5j1CoyKgLguQkTo7jH8tvRNBZI0ffZBUC6qipiEAVRH8c7bwlvWRQB2RiVFXVTMerO2ueEvPLWCegwWHr70ybGGOy1UvLm+T3MFW4L/rKDwcgISJU/FLS3K78VHLb5d/V12Rc9tAALTC+WMmsPVucc/oo9nyPdOrBbkeY/I=
+x-ms-exchange-transport-forked: True
+Content-ID: <0201144BB45AB64793AC6F3ED43EFCDF@namprd03.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: synaptics.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 67fd10f7-a471-4cc1-3f3c-08d725dc8e3d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Aug 2019 02:09:10.6615 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: zJPNmnEX7RMFUaDOm9sVUWc+KcP7rYY1TYtLSvq9K18I1NviyHWMfGhH5OIWoqvro026lLNg60bKKVkafc1nng==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB3574
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_190746_158577_1379E2EF 
-X-CRM114-Status: GOOD (  18.78  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190820_190914_834847_C4BBE31F 
+X-CRM114-Status: GOOD (  19.60  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.75.71 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,71 +144,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jisheng,
+Hi,
 
-On Tue, 20 Aug 2019 03:53:31 +0000
-Jisheng Zhang <Jisheng.Zhang@synaptics.com> wrote:
+On Wed, 21 Aug 2019 10:52:47 +0900 Masami Hiramatsu wrote:
+> 
+> 
+> Hi Jisheng,
+> 
+> On Tue, 20 Aug 2019 09:02:59 +0000
+> Jisheng Zhang <Jisheng.Zhang@synaptics.com> wrote:
+> 
+> > Hi Thomas,
+> >
+> > On Tue, 20 Aug 2019 10:53:58 +0200 (CEST) Thomas Gleixner wrote:
+> >  
+> > >
+> > >
+> > > On Tue, 20 Aug 2019, Jisheng Zhang wrote:
+> > >  
+> > > > This is to make the x86 kprobe_ftrace_handler() more common so that
+> > > > the code could be reused in future.  
+> > >
+> > > While I agree with the change in general, I can't find anything which
+> > > reuses that code. So the change log is pretty useless and I have no idea
+> > > how this is related to the rest of the series.  
+> >
+> > In v1, this code is moved from x86 to common kprobes.c [1]
+> > But I agree with Masami, consolidation could be done when arm64 kprobes
+> > on ftrace is stable.  
+> 
+> We'll revisit to consolidate the code after we got 3rd or 4th clones.
+> 
+> >
+> > In v2, actually, the arm64 version's kprobe_ftrace_handler() is the same
+> > as x86's, the only difference is comment, e.g
+> >
+> > /* Kprobe handler expects regs->ip = ip + 1 as breakpoint hit */
+> >
+> > while in arm64
+> >
+> > /* Kprobe handler expects regs->pc = ip + 1 as breakpoint hit */  
+> 
+> As Peter pointed, on arm64, is that really 1 or 4 bytes?
+> This part is heavily depends on the processor software-breakpoint
+> implementation.
 
-> For KPROBES_ON_FTRACE case, we need to adjust the kprobe's addr
-> correspondingly.
-
-Either KPROBES_ON_FTRACE=y or not, ftrace_location() check must be
-done correctly. If it failed, kprobes can modify the instruction
-which can be modified by ftrace.
+Per my understanding, the "+1" here means "+ one kprobe_opcode_t".
 
 > 
-> Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-> ---
->  kernel/kprobes.c | 10 +++++++---
->  1 file changed, 7 insertions(+), 3 deletions(-)
+> >
+> >
+> > W/ above, any suggestion about the suitable change log?  
 > 
-> diff --git a/kernel/kprobes.c b/kernel/kprobes.c
-> index 9873fc627d61..3fd2f68644da 100644
-> --- a/kernel/kprobes.c
-> +++ b/kernel/kprobes.c
-> @@ -1484,15 +1484,19 @@ static inline int check_kprobe_rereg(struct kprobe *p)
->  
->  int __weak arch_check_ftrace_location(struct kprobe *p)
->  {
-> -	unsigned long ftrace_addr;
-> +	unsigned long ftrace_addr, addr = (unsigned long)p->addr;
->  
-> -	ftrace_addr = ftrace_location((unsigned long)p->addr);
-> +#ifdef CONFIG_KPROBES_ON_FTRACE
-> +	addr = ftrace_call_adjust(addr);
-> +#endif
-> +	ftrace_addr = ftrace_location(addr);
-
-No, this is not right way to do. If we always need to adjust address
-before calling ftrace_location(), something wrong with ftrace_location()
-interface.
-ftrace_location(addr) must check the address is within the range which
-can be changed by ftrace. (dyn->ip <= addr <= dyn->ip+MCOUNT_INSN_SIZE)
-
-
->  	if (ftrace_addr) {
->  #ifdef CONFIG_KPROBES_ON_FTRACE
->  		/* Given address is not on the instruction boundary */
-> -		if ((unsigned long)p->addr != ftrace_addr)
-> +		if (addr != ftrace_addr)
->  			return -EILSEQ;
->  		p->flags |= KPROBE_FLAG_FTRACE;
-> +		p->addr = (kprobe_opcode_t *)addr;
-
-And again, please don't change the p->addr silently.
-
-Thank you,
-
->  #else	/* !CONFIG_KPROBES_ON_FTRACE */
->  		return -EINVAL;
->  #endif
-> -- 
-> 2.23.0.rc1
+> I think you just need to keep the first half of the description.
+> Since this patch itself is not related to the series, could you update
+> the description and resend it as a single cleanup patch out of the series?
 > 
 
+Got it. Will do today.
 
--- 
-Masami Hiramatsu <mhiramat@kernel.org>
+Thanks a lot
 
 _______________________________________________
 linux-arm-kernel mailing list
