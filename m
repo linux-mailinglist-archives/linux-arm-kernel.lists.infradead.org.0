@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21B4E971CE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 07:57:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFBF2971CF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 07:57:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6OqgDaBpm1YkG9XP7CmZcoLhgmaftC6IihYWd/cKwKQ=; b=iPIea/nBcC7kJg
-	SY5f5tbhQVRL3Zg/jMrr3LSU5kd6SSavNsGuSfOnCq/ec4qJvqiibYc7zrGbW36vFJPQbzyH7AfX0
-	cZSnca5l00ALUWz+CT2g9J/5MpevRZzTSSh7Y0kBje/N4ruy3myjsX+g68j8x2YoHhc3DCo5ZmNjF
-	2AgsOl9d50ATxL3VPBJN9nOUC75OKCqSb71HcOsSW0EmN//dNUOoLIm6pWBBf+jtml3OB7NwTnNj/
-	Eled+YBEYe7QlGdsQ1SmnGTFSpEiS+/0whiWty3W4Hqk1C0lXBOFcr65nHHVayWpe7dabkRBw29Mc
-	YGZoUpBc36LtiPSC71/w==;
+	List-Owner; bh=n3Mns72xzU3HBdBjmDoVYVdCEAV2RG16JuD783PoMag=; b=XnF2XVZdaLI3Zv
+	9ed5LIDTfJrD2Cr0mFNRnMP7KaQ/EKjiA64ndxUSKSA+Kf9EVzCuHYjJMRj05KPwq6s1pnRTCcEJU
+	DUkm7M6Y7KDBxiwvJk1PPmps1Gu63tLBXU+1di2vw+AYl5IsbgtT6Am4tg6llRihPt+yZNVIN5owS
+	8FsnIXJX+aXE87buVh8XnRO6fiq8pPj1Nw3wr91Clcbk661h7At8vaKGUSYWaz0byEZsHa3y6lOjJ
+	rZzmxHhkxW8lkgFN4PBm5F/wTLaMi3Y25duJTZazApsPZbamCAEB9iLN/3m162ylY/v/BqfIVkQZz
+	6cKeM+nPDh7R0h+QN8TQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Jc8-0007sW-Qc; Wed, 21 Aug 2019 05:56:56 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1i0JcO-0008Cp-8j; Wed, 21 Aug 2019 05:57:13 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0JbF-0007Ml-FQ
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 05:56:02 +0000
-Received: by mail-pf1-x443.google.com with SMTP id c81so671786pfc.11
+ id 1i0JbK-0007RA-30
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 05:56:07 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q139so667456pfc.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 20 Aug 2019 22:56:01 -0700 (PDT)
+ Tue, 20 Aug 2019 22:56:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=LRbutwMNPGCcUP4XySCkZI7pdAkUQ3GbmpQv+hp9+4c=;
- b=N+G/+Kd48L+jZ6o/fh73xp/mvKfke7JJ7JPGZJsuzEWn3YO92SpGNDtMZtXQd1yk7t
- /TcD60fht7i0+XwrmcNWyPf8WjO/Lv9z9BIzsTbucr5CKKzgIhEgylC2A2JYU/Su6VWi
- POYuMnJIX+9gfsnoyO5Pdw+hqhI9GTSybTlMGSH4kPlTPUvztTFE/BgZavxTmEjTYoR5
- cQpolg/xXw8hm79XwpuSMp435mSrUQoqLq4lYD5Fpitd8fLzl/QdtZp+huD4s+QHoBbU
- br0eaXacICeU2eSRhyj6TvMghpemugnptuEla8w9XZ2jqeeDp2m4AkV0bHBqxUVxbMZs
- sKLw==
+ bh=CGzXZK4zikEN4TxWRvQDpen5CEPMtDK0toXHnI7EWGQ=;
+ b=lIuoBZCRnm33wF3mp82iFhcZCsLLsq4fMk40MMbfdJnsjqOLDVP53jXHSSyq3ZQazA
+ bno688xMHYc2s1CVzoPSqMvi8sKN9g/hjFLuFeuHOAuJnQVwhBWMTkaQObYOc36G77ud
+ 4zd/yF+VIX3F5ZZbihbJ+dGFnlmLxYCqdTSyK/JyM8j1afqJKBfSycymSCMCB8cgl1yj
+ qxorMRS5duqLnExx9vo9Tjnxm4dO4qKF3zj+9dRnCcdvLfeBMN4b7GlufLafuSAwRoQf
+ SDdMNdAqObcuEA7qC6yXGz1ueGzZNtEmYfFXLbMyxkhXBVyx8jHl5G25dAohLOgL2V9t
+ V67w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=LRbutwMNPGCcUP4XySCkZI7pdAkUQ3GbmpQv+hp9+4c=;
- b=rqYcaxSg0P9nsp1Ssu1xSVoDG9Bs72CokI5WzYVVPABKPUyfP4AmYreSqCS5zjUoNt
- P7PFXXa1jfjgHcenejnlZXOFsxJvKRn2z2eKbmYkDBdRjWOFwqQbq3TU0OlsRZ++JHlp
- ycZ7ijLrSNjEBzngy1E1ovGffQ82czrjH89cEPlktk6yuuM0VQf9q1CgSvCedB548E44
- RZPOIBsLSx98gt51iP69qdWnd9eFvNyX48Tuz7cp6OIntQsQUEoeNSSChm97pUZ23nCz
- yieb/XyEaBKkGQ+LuoDudM0qGf8cKv9DdO+xTsPVcnARej3DzQqlTesY196FtFPFjdgA
- 2FbA==
-X-Gm-Message-State: APjAAAVSlYOu7FICjjjz8nbqPFRWe752n2My11X01eSA4EY8WK0RP1Sr
- HA8Cp81X5MF1BNRMwM43Kd8=
-X-Google-Smtp-Source: APXvYqzr/PrY+iSpy/Ko5UjPD7BNJVFwxG0vGqhgQJH5ScpnxINdgIEcUBhvY2O7dE7gdnnQxlcFfw==
-X-Received: by 2002:a17:90a:342d:: with SMTP id
- o42mr3727142pjb.27.1566366960863; 
- Tue, 20 Aug 2019 22:56:00 -0700 (PDT)
+ bh=CGzXZK4zikEN4TxWRvQDpen5CEPMtDK0toXHnI7EWGQ=;
+ b=nf9lQKUHgjC4TbX/Nnx2Ufg0zUqeIveUzpxgtLP14vJSr4aNipT9qv1eMkYtdJ+wA0
+ JxHPO8Q6HqERQONI+ELW8QCFZp8mouYfconBZyfvIdJMdLl2CrYCNzwQ+x1lwYJPpVlu
+ usDmAKn0i+qgPulnyZ/GUEPDNH/AmsxOqmw+znl7FGB3m9jxzK+JdkDaRtAXWIzawfw8
+ VRcDoTkICjShnIdS3BuDDr1B4fxf8Z5uIxIWZ8Qs72mrV8IQoexlZ/JMlqGgLmHQjAmd
+ SuExi+kCnEFFvxGaznHTmqUlrL1rLjGIAnY8bwREEfsxmY7I52luVYWsuD4PrXlwct9k
+ c3Ww==
+X-Gm-Message-State: APjAAAX4R4rgWq4JhcZnTgd351YY/MixJ5LzMm+zwcL6S67phtO3OAfT
+ KLCbgnZH6GUohMzaNJJZwoU=
+X-Google-Smtp-Source: APXvYqzYQ0JMPmykoZ2pidi+Eu/vt3Wt6Pi8aoiHcXBeHnBsKVP3bx5fquxF8TzvRcAZsV6OsETtuA==
+X-Received: by 2002:a63:5945:: with SMTP id j5mr27559844pgm.452.1566366965125; 
+ Tue, 20 Aug 2019 22:56:05 -0700 (PDT)
 Received: from voyager.ibm.com ([36.255.48.244])
- by smtp.gmail.com with ESMTPSA id m9sm26568254pfh.84.2019.08.20.22.55.56
+ by smtp.gmail.com with ESMTPSA id m9sm26568254pfh.84.2019.08.20.22.56.01
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 20 Aug 2019 22:56:00 -0700 (PDT)
+ Tue, 20 Aug 2019 22:56:04 -0700 (PDT)
 From: Joel Stanley <joel@jms.id.au>
 To: Rob Herring <robh+dt@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
  Olof Johansson <olof@lixom.net>
-Subject: [PATCH 2/7] ARM: aspeed: Select timer in each SoC
-Date: Wed, 21 Aug 2019 15:25:25 +0930
-Message-Id: <20190821055530.8720-3-joel@jms.id.au>
+Subject: [PATCH 3/7] ARM: aspeed: Add ASPEED AST2600 architecture
+Date: Wed, 21 Aug 2019 15:25:26 +0930
+Message-Id: <20190821055530.8720-4-joel@jms.id.au>
 X-Mailer: git-send-email 2.23.0.rc1
 In-Reply-To: <20190821055530.8720-1-joel@jms.id.au>
 References: <20190821055530.8720-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_225601_701294_70AF2BE1 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20190820_225606_676129_BDF3ED6A 
+X-CRM114-Status: GOOD (  10.38  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -112,41 +111,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for adding the ast2600 which does not use this timer.
+The AST2600 is a Cortex A7 dual core CPU that uses the ARM GIC for
+interrupts and ARM timer as a clocksource.
 
 Signed-off-by: Joel Stanley <joel@jms.id.au>
 ---
- arch/arm/mach-aspeed/Kconfig | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm/mach-aspeed/Kconfig | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm/mach-aspeed/Kconfig b/arch/arm/mach-aspeed/Kconfig
-index a15c3a291386..2979aa4daeea 100644
+index 2979aa4daeea..56007b0b6120 100644
 --- a/arch/arm/mach-aspeed/Kconfig
 +++ b/arch/arm/mach-aspeed/Kconfig
-@@ -5,7 +5,6 @@ menuconfig ARCH_ASPEED
+@@ -1,7 +1,7 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ menuconfig ARCH_ASPEED
+ 	bool "Aspeed BMC architectures"
+-	depends on ARCH_MULTI_V5 || ARCH_MULTI_V6
++	depends on ARCH_MULTI_V5 || ARCH_MULTI_V6 || ARCH_MULTI_V7
  	select SRAM
  	select WATCHDOG
  	select ASPEED_WATCHDOG
--	select FTTMR010_TIMER
- 	select MFD_SYSCON
- 	select PINCTRL
- 	help
-@@ -18,6 +17,7 @@ config MACH_ASPEED_G4
- 	depends on ARCH_MULTI_V5
- 	select CPU_ARM926T
- 	select PINCTRL_ASPEED_G4
-+	select FTTMR010_TIMER
- 	help
- 	 Say yes if you intend to run on an Aspeed ast2400 or similar
- 	 fourth generation BMCs, such as those used by OpenPower Power8
-@@ -28,6 +28,7 @@ config MACH_ASPEED_G5
- 	depends on ARCH_MULTI_V6
- 	select CPU_V6
- 	select PINCTRL_ASPEED_G5
-+	select FTTMR010_TIMER
- 	help
+@@ -33,4 +33,16 @@ config MACH_ASPEED_G5
  	 Say yes if you intend to run on an Aspeed ast2500 or similar
  	 fifth generation Aspeed BMCs.
+ 
++config MACH_ASPEED_G6
++	bool "Aspeed SoC 6th Generation"
++	depends on ARCH_MULTI_V7
++	select CPU_V7
++	select PINCTRL_ASPEED_G6
++	select ARM_GIC
++	select HAVE_ARM_ARCH_TIMER
++	select HAVE_SMP
++	help
++	 Say yes if you intend to run on an Aspeed ast2600 or similar
++	 sixth generation Aspeed BMCs.
++
+ endif
 -- 
 2.23.0.rc1
 
