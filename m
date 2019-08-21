@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B0EF98032
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 18:34:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 182F49803F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 18:36:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZdEPETRgbo2p3kYKLttZrKQfrWVL8/yaQnQND231OH4=; b=HySSAHsbBJWW9Z
-	yWVPbmwYD4Ipq8dPe3nCCuPB1FuiZx5vX8oMLsfUITxE2VfKsYH8DmnilIbrhhWVrq9Rt6JJXi44a
-	XkR/pWBm7R12zWrx8UWe0Ry/6rdZcgd0EWmhDoGrZ1khEXZ8ESZTmB3SStPedrzBrXMtBUXxmw0ea
-	2EPfAvIKzH/pOSj1mz/39gDG4W9MbtmYX+yEbHISX2Gnv8LRX/27/DS4egDP5ImLyuhrWlweH5ret
-	slETgOkd8EE6LcppXpq+9Y6k4ey3Exn1nqFsW/LmOlyXnyff5duVXKI9l2FMXKi+FIZmvbXQ4gvwc
-	6o64/Y2LX9m0+TX52HZw==;
+	List-Owner; bh=SXEFro14hihMRld+gQygY8WiD554diQaiabcTjHMay8=; b=SOjasMZ3PV3DKf
+	ai3ZOsKhdJpNFaNUrFmhqg+v1EpeT7awWt4HZs31a1DQf952I2BLIdq+eFTDTGRvVDvYsKEoMd+QI
+	t24gX3U7RwI7+Uqgowfk3vmHmiqylCAvojjXp5hPu0eiTCGbzw/AfunPOQKmWWfaUqj8mlfeoGcf8
+	JGLD/sImutlEYNC1/8ZdUNG71ilnu9geMMk66KahQd8cyFYEjuStbWNZQ5K2rRhHQirdCYvIrQSU5
+	g54NBTlB5CVl8YCjYcT7ZXFsIuYNvyrbJdzHJd4beBK6MrMVvZzBhhOqVE40HNRO4ZtjAdl5BjNNF
+	XZJKYb3x/SiS+t8QvBeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0TZG-0001r4-KQ; Wed, 21 Aug 2019 16:34:38 +0000
+	id 1i0Tai-0003LT-Eh; Wed, 21 Aug 2019 16:36:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0TZ9-0001qj-Am
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 16:34:32 +0000
+ id 1i0Taa-0003Kz-Ch; Wed, 21 Aug 2019 16:36:01 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 341A4216F4;
- Wed, 21 Aug 2019 16:34:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E3D2D216F4;
+ Wed, 21 Aug 2019 16:35:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566405270;
- bh=5Wgi6CnBitr8ACVrtl4JVmT0TPh0c47DtZIL3lbp9vU=;
+ s=default; t=1566405360;
+ bh=523UKRpEYgVnK4n6qoJT/UA2T1eyXvRGlZiSMko8S2I=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PrkJUu0etYaUGZS+v8/uAltPsgcPd9gxnCWBiNdyLS5S1qhXPBBVz3rpEtQM+aBsC
- Vi8RarU3iehaMSrpbMB4Bhl9++Ge014SO+azWllZkJaMBTpMG62XQp2xWyZbjNL4LX
- DLh5DKpl+roNAw2AHV6bYv4FTlRnhyu1T9ymt9+k=
-Date: Wed, 21 Aug 2019 17:34:26 +0100
+ b=THQSoGVckn9loJO2YK6n0hW8Zr+qYViNc6L7hieM8yM6BUPTRpUCVjjlXy5iJ/abQ
+ /8sxz9km+kjRuL5G/1sDfv+VWpOPpsABw8SxC1NN+XfRv9hH04pSbCObu9foGya4yP
+ 3u+NJzArrkquuRd6l3iLVqK/x7qHKusaX9b/v5io=
+Date: Wed, 21 Aug 2019 17:35:54 +0100
 From: Will Deacon <will@kernel.org>
-To: Mike Rapoport <rppt@linux.ibm.com>
-Subject: Re: [PATCH] mm: consolidate pgtable_cache_init() and pgd_cache_init()
-Message-ID: <20190821163425.6jwxbvspjzqxysxc@willie-the-truck>
-References: <1566400018-15607-1-git-send-email-rppt@linux.ibm.com>
- <20190821154942.js4u466rolnekwmq@willie-the-truck>
- <20190821160159.GG26713@rapoport-lnx>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH v10 09/23] iommu/io-pgtable-arm-v7s: Extend to support
+ PA[33:32] for MediaTek
+Message-ID: <20190821163553.ymlk5fcgd6ntnpss@willie-the-truck>
+References: <1566395606-7975-1-git-send-email-yong.wu@mediatek.com>
+ <1566395606-7975-10-git-send-email-yong.wu@mediatek.com>
+ <20190821152448.qmoqjh5zznfpdi6n@willie-the-truck>
+ <22a79977-5074-7af1-97b8-8a3e549b23c1@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190821160159.GG26713@rapoport-lnx>
+In-Reply-To: <22a79977-5074-7af1-97b8-8a3e549b23c1@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_093431_388222_DAFEDF69 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20190821_093600_451622_595902ED 
+X-CRM114-Status: GOOD (  18.71  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,53 +79,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andrew Morton <akpm@linux-foundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
+ srv_heupstream@mediatek.com, chao.hao@mediatek.com,
+ Joerg Roedel <joro@8bytes.org>, linux-kernel@vger.kernel.org,
+ Evan Green <evgreen@chromium.org>, Tomasz Figa <tfiga@google.com>,
+ iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, ming-fan.chen@mediatek.com,
+ anan.sun@mediatek.com, Matthias Kaehlcke <mka@chromium.org>,
+ Yong Wu <yong.wu@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 07:01:59PM +0300, Mike Rapoport wrote:
-> On Wed, Aug 21, 2019 at 04:49:42PM +0100, Will Deacon wrote:
-> > On Wed, Aug 21, 2019 at 06:06:58PM +0300, Mike Rapoport wrote:
-> > > diff --git a/init/main.c b/init/main.c
-> > > index b90cb5f..2fa8038 100644
-> > > --- a/init/main.c
-> > > +++ b/init/main.c
-> > > @@ -507,7 +507,7 @@ void __init __weak mem_encrypt_init(void) { }
-> > >  
-> > >  void __init __weak poking_init(void) { }
-> > >  
-> > > -void __init __weak pgd_cache_init(void) { }
-> > > +void __init __weak pgtable_cache_init(void) { }
-> > >  
-> > >  bool initcall_debug;
-> > >  core_param(initcall_debug, initcall_debug, bool, 0644);
-> > > @@ -565,7 +565,6 @@ static void __init mm_init(void)
-> > >  	init_espfix_bsp();
-> > >  	/* Should be run after espfix64 is set up. */
-> > >  	pti_init();
-> > > -	pgd_cache_init();
-> > >  }
+On Wed, Aug 21, 2019 at 04:34:27PM +0100, Robin Murphy wrote:
+> On 21/08/2019 16:24, Will Deacon wrote:
+> > On Wed, Aug 21, 2019 at 09:53:12PM +0800, Yong Wu wrote:
+> > > MediaTek extend the arm v7s descriptor to support up to 34 bits PA where
+> > > the bit32 and bit33 are encoded in the bit9 and bit4 of the PTE
+> > > respectively. Meanwhile the iova still is 32bits.
+> > > 
+> > > Regarding whether the pagetable address could be over 4GB, the mt8183
+> > > support it while the previous mt8173 don't, thus keep it as is.
+> > > 
+> > > Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+> > > ---
+> > >   drivers/iommu/io-pgtable-arm-v7s.c | 32 +++++++++++++++++++++++++-------
+> > >   include/linux/io-pgtable.h         |  7 +++----
+> > >   2 files changed, 28 insertions(+), 11 deletions(-)
 > > 
-> > AFAICT, this change means we now initialise our pgd cache before
-> > debug_objects_mem_init() has run.
+> > [...]
+> > 
+> > > @@ -731,7 +747,9 @@ static struct io_pgtable *arm_v7s_alloc_pgtable(struct io_pgtable_cfg *cfg,
+> > >   {
+> > >   	struct arm_v7s_io_pgtable *data;
+> > > -	if (cfg->ias > ARM_V7S_ADDR_BITS || cfg->oas > ARM_V7S_ADDR_BITS)
+> > > +	if (cfg->ias > ARM_V7S_ADDR_BITS ||
+> > > +	    (cfg->oas > ARM_V7S_ADDR_BITS &&
+> > > +	     !(cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_EXT)))
+> > 
+> > Please can you instead change arm_v7s_alloc_pgtable() so that it allows an
+> > ias of up to 34 when the IO_PGTABLE_QUIRK_ARM_MTK_EXT is set?
 > 
-> Right.
-> 
-> > Is that going to cause fireworks with CONFIG_DEBUG_OBJECTS when we later
-> > free a pgd?
-> 
-> We don't allocate a pgd at that time, we only create the kmem cache for the
-> future allocations. And that cache is never destroyed anyway.
+> You mean oas, right? I believe the hardware *does* actually support a 32-bit
+> ias as well, but we shouldn't pretend to support that while
+> __arm_v7s_alloc_table() still only knows how to allocate normal-sized
+> tables.
 
-Thanks for the explanation. In which case, for arm64:
-
-Acked-by: Will Deacon <will@kernel.org>
+Sorry, yes, oas.
 
 Will
 
