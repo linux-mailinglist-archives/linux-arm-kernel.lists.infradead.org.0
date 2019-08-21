@@ -2,45 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C729979D7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 14:46:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18762979D8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 14:46:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=coQ9tws4N7Apl07nGlb37eYmdPmk7km42/s3pfpQkwU=; b=EQ5
-	+gfk51wmCwHx6TJzORwSrC00Ixs2w9OTSnIErqg3hIXHTV+4oaKN4aKM6XuzVbWYy+tK5mr8trm6n
-	0+jKK9vZeKG6Rdb9XK3+F18n6yFGB0Bh2Q8AdG01B7W0b1beLUP2fibcKhR0Mk+gHn7Qz4XqgP8ik
-	KpLdBpG61MixESnROZznf8xEjZ/ubQbpcze+aemnsqtJIxfAnA53qRqEy+F5sEs3jB9NXoBvBzdvF
-	+k31aBnxXskkihPDc+oOlpoTBHAHNfPziObD+hYGBYF4nMsmWiP8zKu8vOlg4KaXfMfkjF/xCln95
-	9jpQ/cNu6KMcqzYKgjJWWg/AT3ynjaw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=nFMLzt0eL8+wtogqD6Wesw7nPm5RjwXesP9+Bi170n4=; b=gyX4uhB3kXNIYxJapqNGLlQ7iU
+	AGxRDUiaWeqkCpUXprnP7PdDXf+XZwUZ33zwcrV5cetlkmFCLF+jDG35oaNnbnO6flaByO2aDM2bL
+	f8KAMzzYVpaAzgoyDNVMlVPN8zCY2B8IzzLjnUBWYCDjTn3Hr5UKXlvH0cakkUVzUi4iSKiY+c96v
+	wgOCKxk6rkbhVQQPJdR7yThdAEN1Eqd70s+Xkp5cgVJV3P+uuDYiuB2NcH6s4MNkE/RY0yYsDDRFR
+	TxAONiEw563ZM/lHtKin0Cp/U/Yg3fPNaBwFhCG5lbRgKE1SPmW2W6tCeXDUcdqMS23ikLoBbWJHn
+	8838Wu0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Q0U-0000O6-01; Wed, 21 Aug 2019 12:46:30 +0000
+	id 1i0Q0l-0000YN-Au; Wed, 21 Aug 2019 12:46:47 +0000
 Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Q0F-0000MP-Ol
+ id 1i0Q0G-0000MO-9l
  for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 12:46:18 +0000
 Received: from ramsan ([84.194.98.4]) by albert.telenet-ops.be with bizsmtp
- id rom32000M05gfCL06om3Do; Wed, 21 Aug 2019 14:46:06 +0200
+ id rom32000L05gfCL06om3Dn; Wed, 21 Aug 2019 14:46:06 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1i0Q03-0003dy-LB; Wed, 21 Aug 2019 14:46:03 +0200
+ id 1i0Q03-0003dz-LK; Wed, 21 Aug 2019 14:46:03 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1i0Q03-0007dd-JR; Wed, 21 Aug 2019 14:46:03 +0200
+ id 1i0Q03-0007df-KC; Wed, 21 Aug 2019 14:46:03 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Simon Horman <horms@verge.net.au>,
 	Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH 0/3] soc: renesas: ARM errata updates
-Date: Wed, 21 Aug 2019 14:45:59 +0200
-Message-Id: <20190821124602.29317-1-geert+renesas@glider.be>
+Subject: [PATCH 1/3] soc: renesas: Enable ARM_ERRATA_814220 for affected
+ Cortex-A7
+Date: Wed, 21 Aug 2019 14:46:00 +0200
+Message-Id: <20190821124602.29317-2-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190821124602.29317-1-geert+renesas@glider.be>
+References: <20190821124602.29317-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_054615_960895_4F21F89F 
-X-CRM114-Status: GOOD (  10.83  )
+X-CRM114-CacheID: sfid-20190821_054616_491847_2397B094 
+X-CRM114-Status: UNSURE (   7.04  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
@@ -73,46 +78,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-	Hi all,
+ARM Erratum 814220 affects Cortex-A7 revisions r0p2-r0p5.
 
-This patch series updates the handling of ARM errata for affected
-Renesas SoCs.
+Enable automatically support to mitigate the erratum when compiling a
+kernel for any of the affected Renesas SoCs:
+  - R-Mobile APE6: r0p2,
+  - RZ/G1E: r0p5,
+  - RZ/G1C: r0p5,
+  - R-Car H2: r0p3,
+  - R-Car E2: r0p5,
+  - RZ/N1: r0p5.
 
-The first patch enables the new ARM_ERRATA_814220 for Cortex-A7, using
-Kconfig logic.
-The second patch moves enablement of ARM_ERRATA_754322 for Cortex-A9
-from shmobile_defconfig to Kconfig logic, to make sure it's always
-enabled when needed.
-The third patch disables PL310_ERRATA_588369, as it doesn't affect any
-Renesas SoCs.
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+ drivers/soc/renesas/Kconfig | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-The last patch is marked RFC, as I don't know the revision of PL310 on
-EMMA Mobile EV2, and cannot test it on EMEV2.
-
-Thanks for your comments!
-
-Geert Uytterhoeven (3):
-  soc: renesas: Enable ARM_ERRATA_814220 for affected Cortex-A7
-  soc: renesas: Enable ARM_ERRATA_754322 for affected Cortex-A9
-  [RFC] ARM: shmobile: defconfig: Disable PL310_ERRATA_588369
-
- arch/arm/configs/shmobile_defconfig |  2 --
- drivers/soc/renesas/Kconfig         | 11 +++++++++++
- 2 files changed, 11 insertions(+), 2 deletions(-)
-
+diff --git a/drivers/soc/renesas/Kconfig b/drivers/soc/renesas/Kconfig
+index 2bbf49e5d441808b..a72d014ea37cc788 100644
+--- a/drivers/soc/renesas/Kconfig
++++ b/drivers/soc/renesas/Kconfig
+@@ -72,6 +72,7 @@ config ARCH_R8A73A4
+ 	bool "R-Mobile APE6 (R8A73A40)"
+ 	select ARCH_RMOBILE
+ 	select ARM_ERRATA_798181 if SMP
++	select ARM_ERRATA_814220
+ 	select HAVE_ARM_ARCH_TIMER
+ 	select RENESAS_IRQC
+ 
+@@ -95,11 +96,13 @@ config ARCH_R8A7744
+ config ARCH_R8A7745
+ 	bool "RZ/G1E (R8A77450)"
+ 	select ARCH_RCAR_GEN2
++	select ARM_ERRATA_814220
+ 	select SYSC_R8A7745
+ 
+ config ARCH_R8A77470
+ 	bool "RZ/G1C (R8A77470)"
+ 	select ARCH_RCAR_GEN2
++	select ARM_ERRATA_814220
+ 	select SYSC_R8A77470
+ 
+ config ARCH_R8A7778
+@@ -117,6 +120,7 @@ config ARCH_R8A7790
+ 	bool "R-Car H2 (R8A77900)"
+ 	select ARCH_RCAR_GEN2
+ 	select ARM_ERRATA_798181 if SMP
++	select ARM_ERRATA_814220
+ 	select I2C
+ 	select SYSC_R8A7790
+ 
+@@ -143,11 +147,13 @@ config ARCH_R8A7793
+ config ARCH_R8A7794
+ 	bool "R-Car E2 (R8A77940)"
+ 	select ARCH_RCAR_GEN2
++	select ARM_ERRATA_814220
+ 	select SYSC_R8A7794
+ 
+ config ARCH_R9A06G032
+ 	bool "RZ/N1D (R9A06G032)"
+ 	select ARCH_RZN1
++	select ARM_ERRATA_814220
+ 
+ config ARCH_SH73A0
+ 	bool "SH-Mobile AG5 (R8A73A00)"
 -- 
 2.17.1
 
-Gr{oetje,eeting}s,
-
-						Geert
-
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-							    -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
