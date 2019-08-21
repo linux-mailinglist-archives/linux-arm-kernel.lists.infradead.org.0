@@ -2,74 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EF62978EF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 14:11:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DAD7978F1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 14:12:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ybZu69XpYR+5LAcL4iaWYJqVQzwJZekD4Gn8mMDyED4=; b=hkOhNIjwD9ENk+
-	A88pvkwinSZWZnCS2OJS0O4ENzJtbTDlZ20lWdqS3gE0WcMI1Z1k4oDSnt1pWyhccJ4Ojt6RvSuS8
-	Vk5lA8KzEmHKcM1L7tyO8D0mhPWCMH2oI5lMk39mzEATPf1XrwszmMjk5ek9g5WUTle+6a4fNpjKp
-	q4VKIhkGq7/bdWC8CfQpj+2vIEZEza3pvhqhR/0dpl5nXFs2rwvGcBL1MaWhAMgbgw5Y2f7whf132
-	fnk6fSItfrp9JM3tqtbRQEKVpeFkKBTGDZtZMsSucXaQ+igQONPvQSkRUun+UsO3cHc0k2EluFw6q
-	zMFJHGfo/b7iAY8EsOsg==;
+	List-Owner; bh=A16jhphAPTToArkG1rxz+d/KGUdODkwlCjMCRovux8I=; b=BaDgEndiJRA0D4
+	7N2icctSevq+Q3nCuCSC9a+rMFych2gFIAnu+nb9y/INVRR4SF4KWmYdl6j0SyaoKszcBeLOtaYoX
+	U3MuUnivdT60CEsQbk0Vx5it7ikjBs4vnxPANUhVhUTnYvn0XNYaHdzAZWeE5CE02KkRecveGNmEF
+	6GOXQoveAsTiY0cUy2zEJPOtaKVedAKf1OY0oaOZ9U6fUewb/AWXlFF+AKSSRWEOIxCCRH/gyigIF
+	YQoPqAh2FzTZn3uiGYpNbG/9e8YOV8gPaS32QMwB2EdCjJgtWYiCancwmTKWo0c8+t92ybU2zvCur
+	khW7uV60HM/bwd8FFlDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0PSn-0007qi-6B; Wed, 21 Aug 2019 12:11:41 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i0PTM-00089S-NC; Wed, 21 Aug 2019 12:12:17 +0000
+Received: from mail1.bemta24.messagelabs.com ([67.219.250.209])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0PSY-0007qI-Kf
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 12:11:28 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 02B5622CE3;
- Wed, 21 Aug 2019 12:11:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566389485;
- bh=6SAn36luX8nPLgIwmWDCVqjtygPua5k4vP92Y24z3nU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=TBmSJWU3G9o+VpZGtPTikOGmGHCJs/v0i06RHPyUaX5D0czOu78+XNTT6qaGIhWGn
- PKWRjhez5JQq7HW/yBx3EDz9xzQxralL2FjahCjEjKg3EgwMtIHQSYmiiWpzvhkFCD
- U1/eCGxk9zMaSZz9ovGsC7/Ir0Mw0MYXdBZFH4zQ=
-Date: Wed, 21 Aug 2019 13:11:21 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 3/4] iommu/io-pgtable-arm: Rationalise TCR handling
-Message-ID: <20190821121120.34wqo7vj56pqk57c@willie-the-truck>
-References: <cover.1566238530.git.robin.murphy@arm.com>
- <78df4f8e2510e88f3ded59eb385f79b4442ed4f2.1566238530.git.robin.murphy@arm.com>
- <20190820103115.o7neehdethf7sbqi@willie-the-truck>
- <48ca6945-de73-116a-3230-84862ca9e60b@arm.com>
- <20190820160700.6ircxomwuo5bksqz@willie-the-truck>
- <8cc47f43-ad74-b4e2-e977-6c78780abc91@arm.com>
+ id 1i0PT1-00088l-3R
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 12:11:56 +0000
+Received: from [67.219.251.53] (using TLSv1.2 with cipher
+ DHE-RSA-AES256-GCM-SHA384 (256 bits))
+ by server-2.bemta.az-c.us-west-2.aws.symcld.net id F6/2C-30481-FF43D5D5;
+ Wed, 21 Aug 2019 12:11:43 +0000
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrDKsWRWlGSWpSXmKPExsXi5LtOQPefSWy
+ sQe8ac4uHV/0tVk3dyWKx6fE1VouuXyuZLS7vmsNm8Xf7JhaLF1vELdqOHWN14PDYOesuu8em
+ VZ1sHneu7WHz2Lyk3mPjux1MHv1/DTw+b5ILYI9izcxLyq9IYM042LiTrWAec8XVCwfZGhhnM
+ HcxcnEICaxilJi+6SY7hLOXUeLMimUsXYycHGwC5hLTDh8Es0UELCT+TZgL1sEs8ItJ4tOOA0
+ wgCWGBMInXc1ayQhSFS7xe8psNwraSuHVsGyOIzSKgKjH35HtmEJtXwFfixuxPYDVCAjUSkyf
+ 9ZAexOQXsJE6fmgQ2h1FAVmLl+dNgvcwC4hK3nswH2yUhICCxZM95ZghbVOLl43+sELaCxIIL
+ X4EO5QCq15RYv0sfolVRYkr3Q3aItYISJ2c+YYFYqybRNmcC8wRG0VlINsxC6J6FpHsWku4Fj
+ CyrGM2TijLTM0pyEzNzdA0NDHQNDY10DY3Ndc0s9RKrdJP1Sot1y1OLS3SN9BLLi/WKK3OTc1
+ L08lJLNjECoziloNN1B+P+WW/0DjFKcjApifKeUYmNFeJLyk+pzEgszogvKs1JLT7EKMPBoST
+ Ba2IMlBMsSk1PrUjLzAEmFJi0BAePkgjvXSOgNG9xQWJucWY6ROoUozHHhJdzFzFzHJm7dBGz
+ EEtefl6qlDjvH5BSAZDSjNI8uEGwRHeJUVZKmJeRgYFBiKcgtSg3swRV/hWjOAejkjDvHZB7e
+ DLzSuD2vQI6hQnolN2HI0FOKUlESEk1MNV1bzmx+TDj7m9vk86tefZYfvaaV281E4S98pdbm3
+ P8MhHnaLnnte98xJmfE81v8mjcmLXOnaXEyervw/kfvLtiiyIk5VdNfP2zLG1P9beX39m/b/Z
+ +vqNFbYdFzbR150KtvC6eZ8x19ftRGWiy4tCNgFVPWBS4uFZbtT1mcDr6THCRTu/8leEsv47v
+ 2b2MoWB59C2NiOXSyn4HXP9dXZgb3/BOL93bcIXN+6qF3jOSeib1+ficFsx/sbbw0213D6Egk
+ RNKbnc3TXya816Kv/Ds67z7akwvDr7W3rq4JtF8inWgtMjq22bcFVMTTXcxfKj3TD6grFEsaR
+ z6IH8W66/FlWzSDA2nZgRvn2h/Y7kSS3FGoqEWc1FxIgB4MB1D7wMAAA==
+X-Env-Sender: Jose.DiazdeGrenu@digi.com
+X-Msg-Ref: server-19.tower-365.messagelabs.com!1566389501!14255!1
+X-Originating-IP: [66.77.174.16]
+X-SYMC-ESS-Client-Auth: outbound-route-from=pass
+X-StarScan-Received: 
+X-StarScan-Version: 9.43.9; banners=-,-,-
+X-VirusChecked: Checked
+Received: (qmail 22255 invoked from network); 21 Aug 2019 12:11:42 -0000
+Received: from owa.digi.com (HELO MCL-VMS-XCH01.digi.com) (66.77.174.16)
+ by server-19.tower-365.messagelabs.com with ECDHE-RSA-AES256-SHA384 encrypted
+ SMTP; 21 Aug 2019 12:11:42 -0000
+Received: from DOR-VMS-XCH01.digi.com (10.49.8.98) by MCL-VMS-XCH01.digi.com
+ (10.5.8.49) with Microsoft SMTP Server (TLS) id 14.3.468.0; Wed, 21 Aug 2019
+ 07:11:41 -0500
+Received: from DOR-SMS-XCH01.digi.com ([fe80::894b:3bdc:74ae:6efc]) by
+ DOR-VMS-XCH01.digi.com ([fe80::c47f:be41:1dc7:5ab8%11]) with mapi id
+ 14.03.0468.000; Wed, 21 Aug 2019 14:11:39 +0200
+From: "Diaz de Grenu, Jose" <Jose.DiazdeGrenu@digi.com>
+To: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Subject: RE: [PATCH 0/2] nvmem: imx-ocotp: allow reads with arbitrary size
+ and offset
+Thread-Topic: [PATCH 0/2] nvmem: imx-ocotp: allow reads with arbitrary size
+ and offset
+Thread-Index: AQHVQWvhEud7zccX5U+rMC/CtlWS8Kbt2KgAgBfWu0A=
+Date: Wed, 21 Aug 2019 12:11:38 +0000
+Message-ID: <0B2EBCD48D33654381E736352034C70C025D80A9@dor-sms-xch01.digi.com>
+References: <1563895963-19526-1-git-send-email-Jose.DiazdeGrenu@digi.com>
+ <771a6f0a-3cc2-da20-2439-9a91dd2bf9d2@linaro.org>
+In-Reply-To: <771a6f0a-3cc2-da20-2439-9a91dd2bf9d2@linaro.org>
+Accept-Language: es-ES, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.101.2.178]
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8cc47f43-ad74-b4e2-e977-6c78780abc91@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_051126_721683_CD78F7CC 
-X-CRM114-Status: GOOD (  27.69  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190821_051155_190791_7E5DAD8C 
+X-CRM114-Status: UNSURE (   6.46  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [67.219.250.209 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,83 +103,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robdclark@gmail.com, joro@8bytes.org, jcrouse@codeaurora.org,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+Cc: "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 20, 2019 at 07:41:52PM +0100, Robin Murphy wrote:
-> On 20/08/2019 17:07, Will Deacon wrote:
-> > On Tue, Aug 20, 2019 at 04:25:56PM +0100, Robin Murphy wrote:
-> > > On 20/08/2019 11:31, Will Deacon wrote:
-> > > > On Mon, Aug 19, 2019 at 07:19:30PM +0100, Robin Murphy wrote:
-> > > > > Although it's conceptually nice for the io_pgtable_cfg to provide a
-> > > > > standard VMSA TCR value, the reality is that no VMSA-compliant IOMMU
-> > > > > looks exactly like an Arm CPU, and they all have various other TCR
-> > > > > controls which io-pgtable can't be expected to understand. Thus since
-> > > > > there is an expectation that drivers will have to add to the given TCR
-> > > > > value anyway, let's strip it down to just the essentials that are
-> > > > > directly relevant to io-pgatble's inner workings - namely the address
-> > > > > sizes, walk attributes, and where appropriate, format selection.
-> > > > > 
-> > > > > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> > > > > ---
-> > > > >    drivers/iommu/arm-smmu-v3.c        | 7 +------
-> > > > >    drivers/iommu/arm-smmu.c           | 1 +
-> > > > >    drivers/iommu/arm-smmu.h           | 2 ++
-> > > > >    drivers/iommu/io-pgtable-arm-v7s.c | 6 ++----
-> > > > >    drivers/iommu/io-pgtable-arm.c     | 4 ----
-> > > > >    drivers/iommu/qcom_iommu.c         | 2 +-
-> > > > >    6 files changed, 7 insertions(+), 15 deletions(-)
-> > > > 
-> > > > Hmm, so I'm a bit nervous about this one since I think we really should
-> > > > be providing a TCR with EPD1 set if we're only giving you TTBR0. Relying
-> > > > on the driver to do this worries me. See my comments on the next patch.
-> > > 
-> > > The whole idea is that we already know we can't provide a *complete* TCR
-> > > value (not least because anything above bit 31 is the wild west), thus
-> > > there's really no point in io-pgtable trying to provide anything other than
-> > > the parts it definitely controls. It makes sense to provide this partial TCR
-> > > value "as if" for TTBR0, since that's the most common case, but ultimately
-> > > io-pgatble doesn't know (or need to) which TTBR the caller intends to
-> > > actually use for this table. Even if the caller *is* allocating it for
-> > > TTBR0, io-pgtable doesn't know that they haven't got something live in TTBR1
-> > > already, so it still wouldn't be in a position to make the EPD1 call either
-> > > way.
-> > 
-> > Ok, but the driver can happily rewrite/ignore what it gets back. I suppose
-> > an alternative would be scrapped the 'u64 tcr' and instead having a bunch
-> > of named bitfields for the stuff we're actually providing, although I'd
-> > still like EPDx to be in there.
-> 
-> I like the bitfield idea; it would certainly emphasise the "you have to do
-> something more with this" angle that I'm pushing towards here, but still
-> leave things framed in TCR terms without having to go to some more general
-> abstraction. It really doesn't play into your EPD argument though - such a
-> config would be providing TxSZ/TGx/IRGNx/ORGNx/SHx, but EPDy, for y = !x.
-> For a driver to understand that and do the right thing with it is even more
-> involved than for the driver to just set EPD1 by itself anyway.
+On 06/08/2019 12:06 Srinivas Kandagatla wrote:
+> Anyone form IMX can test this patchset before I push this out?
+>
+> Thanks,
+> srini
 
-Having considered the bitfield idea some more, I'm less attached to EPDx
-because we simply wouldn't be making a statement about them, rather than a
-(dangerous) zero value and expecting it to be ignored. So I think we're in
-agreement on that.
+Just for the record, I tested this on an i.MX6UL based board.
 
-The only part I'm still stuck to is that I think io-pgtable should know
-whether it's targetting TTBR0 or TTBR1 so that it can sanitise input
-addresses correctly. Doing this in the driver code is possible, but I'd
-rather not start from that position, particularly as it would require things
-like sign-extension in the TLBI callbacks.
+Let me know if there is something I can do to facilitate the testing to anyone from IMX.
 
-> If only LPAE had created these bits as enables rather than disables then
-> things would be logical and we could all be happy, but here we are...
-
-I'm happy! :D:D:D
-
-Will
-
+Thanks.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
