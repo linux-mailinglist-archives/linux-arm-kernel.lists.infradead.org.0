@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66E7497BC0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 15:59:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E27F97BC3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 15:59:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SI/Q/QWQcbfjOS3tMKqVq0L5obMA2uu0vsknfDeqeSU=; b=ZcJZq8QJHwI2O+
-	K2QOhtEpr/YEKijuq/7j5D9O+FmWKKfPJWiBPfX+nS1nJuT+T62Mkx7qhXPMnPoxCnlabRFL18s12
-	qqqvYvLLkHI7hD3cpTOyqj/1wBc0p0rr7cbXFtDjrjhPd0L47+pwCoy1UC1qz2FjNKx2FJ4v4iBHz
-	QnuzY3+RFRjSHdGY0ADM952qjpfV7YTkV2ln8zjAoriUVuq6ZyO1OP15MIYq/XCbUntXB/j4p2yxS
-	Ok7Kv8WVT74xZWFtt3vBwfmFsuj3yPob3EiKO/H+8nPwh2pvnFbv57EXt6oaOrFSdZxlykPT05NzQ
-	+aSvk9GY6LPRxYDJbevg==;
+	List-Owner; bh=5apc/68SRWQshRpTgHHfYQfi/GyI6tNANSJZcmX2E50=; b=hJ5pIBcq6K7uIq
+	ThZwVPZ8qia8OziJbAMP8GVwfI9FsuEFItkVQzC/AKmdZoVkxs1ExRFGY1B71oP8spTM+W4yPUuLn
+	ynycJx/UnbAZYCsodCEZFxLaKU+L+GJ3+0quibtgMy3T3PD0V1jwPKRvJWcvhdrSRJy7w4tmnF1re
+	MIe9V7PoybXPoccj8ZZnQaiWoDPzY4ar65dCCunoGK9uxW2RwxcAeieDCAruS4PI1zkXHZKIa8RCP
+	uWBvldwRgh7+JVvxzI+w0lPzaEmz/vrMDrCEScLoTVLHwFlTAwNAsEjO/0m0vlSXdsdYr5RDH4DJY
+	Mx812b+R9WKm/6OnfTmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0R8Z-0000sP-GF; Wed, 21 Aug 2019 13:58:55 +0000
+	id 1i0R8u-0001EP-Jf; Wed, 21 Aug 2019 13:59:16 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0R6F-0006kO-BQ; Wed, 21 Aug 2019 13:56:32 +0000
-X-UUID: 14c61ba4c99c43c0891314b743ada037-20190821
-X-UUID: 14c61ba4c99c43c0891314b743ada037-20190821
+ id 1i0R6G-0006lf-6Q; Wed, 21 Aug 2019 13:56:34 +0000
+X-UUID: 534fa04da05c4a04a8b0f576573f1079-20190821
+X-UUID: 534fa04da05c4a04a8b0f576573f1079-20190821
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1019055203; Wed, 21 Aug 2019 05:56:15 -0800
+ with ESMTP id 166507411; Wed, 21 Aug 2019 05:56:22 -0800
 Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 21 Aug 2019 06:56:13 -0700
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 21 Aug 2019 06:56:20 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
  mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 21 Aug 2019 21:56:12 +0800
+ 15.0.1395.4; Wed, 21 Aug 2019 21:56:20 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 21 Aug 2019 21:56:11 +0800
+ Transport; Wed, 21 Aug 2019 21:56:19 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
  Robin Murphy <robin.murphy@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH v10 13/23] iommu/mediatek: Refine protect memory definition
-Date: Wed, 21 Aug 2019 21:53:16 +0800
-Message-ID: <1566395606-7975-14-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v10 14/23] iommu/mediatek: Move reset_axi into plat_data
+Date: Wed, 21 Aug 2019 21:53:17 +0800
+Message-ID: <1566395606-7975-15-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1566395606-7975-1-git-send-email-yong.wu@mediatek.com>
 References: <1566395606-7975-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_065631_461197_D0F7436E 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20190821_065632_359046_7E76AF7E 
+X-CRM114-Status: GOOD (  13.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -84,52 +84,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The protect memory setting is a little different in the different SoCs.
-In the register REG_MMU_CTRL_REG(0x110), the TF_PROT(translation fault
-protect) shift bit is normally 4 while it shift 5 bits only in the
-mt8173. This patch delete the complex MACRO and use a common if-else
-instead.
+In mt8173 and mt8183, 0x48 is REG_MMU_STANDARD_AXI_MODE while it is
+REG_MMU_CTRL in the other SoCs, and the bits meaning is completely
+different with the REG_MMU_STANDARD_AXI_MODE.
+
+This patch moves this property to plat_data, it's also a preparing
+patch for mt8183.
 
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
 Reviewed-by: Evan Green <evgreen@chromium.org>
 Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 ---
- drivers/iommu/mtk_iommu.c | 13 ++++++-------
- 1 file changed, 6 insertions(+), 7 deletions(-)
+ drivers/iommu/mtk_iommu.c | 4 ++--
+ drivers/iommu/mtk_iommu.h | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 34f0203..947a8c6b8 100644
+index 947a8c6b8..b43f36a 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -44,12 +44,9 @@
- #define REG_MMU_DCM_DIS				0x050
- 
- #define REG_MMU_CTRL_REG			0x110
-+#define F_MMU_TF_PROT_TO_PROGRAM_ADDR		(2 << 4)
- #define F_MMU_PREFETCH_RT_REPLACE_MOD		BIT(4)
--#define F_MMU_TF_PROTECT_SEL_SHIFT(data) \
--	((data)->plat_data->m4u_plat == M4U_MT2712 ? 4 : 5)
--/* It's named by F_MMU_TF_PROT_SEL in mt2712. */
--#define F_MMU_TF_PROTECT_SEL(prot, data) \
--	(((prot) & 0x3) << F_MMU_TF_PROTECT_SEL_SHIFT(data))
-+#define F_MMU_TF_PROT_TO_PROGRAM_ADDR_MT8173	(2 << 5)
- 
- #define REG_MMU_IVRP_PADDR			0x114
- 
-@@ -539,9 +536,11 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
- 		return ret;
+@@ -577,8 +577,7 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
  	}
+ 	writel_relaxed(0, data->base + REG_MMU_DCM_DIS);
  
--	regval = F_MMU_TF_PROTECT_SEL(2, data);
- 	if (data->plat_data->m4u_plat == M4U_MT8173)
--		regval |= F_MMU_PREFETCH_RT_REPLACE_MOD;
-+		regval = F_MMU_PREFETCH_RT_REPLACE_MOD |
-+			 F_MMU_TF_PROT_TO_PROGRAM_ADDR_MT8173;
-+	else
-+		regval = F_MMU_TF_PROT_TO_PROGRAM_ADDR;
- 	writel_relaxed(regval, data->base + REG_MMU_CTRL_REG);
+-	/* It's MISC control register whose default value is ok except mt8173.*/
+-	if (data->plat_data->m4u_plat == M4U_MT8173)
++	if (data->plat_data->reset_axi)
+ 		writel_relaxed(0, data->base + REG_MMU_STANDARD_AXI_MODE);
  
- 	regval = F_L2_MULIT_HIT_EN |
+ 	if (devm_request_irq(data->dev, data->irq, mtk_iommu_isr, 0,
+@@ -774,6 +773,7 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
+ 	.m4u_plat     = M4U_MT8173,
+ 	.has_4gb_mode = true,
+ 	.has_bclk     = true,
++	.reset_axi    = true,
+ 	.larbid_remap = {0, 1, 2, 3, 4, 5}, /* Linear mapping. */
+ };
+ 
+diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+index d1a1d88..8d3b525 100644
+--- a/drivers/iommu/mtk_iommu.h
++++ b/drivers/iommu/mtk_iommu.h
+@@ -38,7 +38,7 @@ struct mtk_iommu_plat_data {
+ 
+ 	/* HW will use the EMI clock if there isn't the "bclk". */
+ 	bool                has_bclk;
+-
++	bool                reset_axi;
+ 	unsigned char       larbid_remap[MTK_LARB_NR_MAX];
+ };
+ 
 -- 
 1.9.1
 
