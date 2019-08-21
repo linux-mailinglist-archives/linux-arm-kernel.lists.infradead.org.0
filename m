@@ -2,86 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28CBA98654
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 23:13:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 623119865C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 23:14:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rwIPYmLQanEfgaJe0KxG/OirTk12v9Vjw4xMfWmY+IM=; b=PxNNXNjx2NpSM3
-	VnuacD2eCOwjXY8gB+dB5DgK0mlsjkm/SOvwROSI0o5PYK0nIn7gF1rS7+tGD/HIj6f+Vl51N1+oS
-	iXCLzCMP3IhFzbUJ1WDZrQ/G5/OLMi/COnTvfkQU5k+pC8/I6bfBq2/vGIF1SSOiNVRUnoDEdSR08
-	Z+S3OlwZKgjQ7lymnTZiRseSjUzoIDT49khm5xEkS41CxW5duT8FTmH6nf3ictVXXFX4toVymfi1s
-	PzshN/gqCMxTfPpb0nSkdoxeeSw/QkU78j9WrRdTg/Lw+5lEgH3RLyKmNahnv31RsN+NK61EU3bqQ
-	Me44qI0T4ZobkZpefZZQ==;
+	List-Owner; bh=1g7SAvKfNU150dJaRa6wFDgodVEUeAfkR7ue69swR40=; b=T0uGg83sJXSBKD
+	t7uY8yyqcghJx957e8SAhFDYOR1Sl42Od/8LGAJMoV5GGuZarO3iKUjHpyXZzBR/KX9GHbc1TuYgV
+	AAjawWo4s9xRNdZJfRO4PbIVKA2Qclj1K0s82tZBb3+CS5y+d54xqu2hE46BIommBKsFvPAb3JMf6
+	09zTDgyDWmY43t0h8LvhWHBuheWE1mSIJ1ddJa+bWgsqtIdQCKa6bl3M5FjumZm43ssH9nlaREHoH
+	voGM88zVwTFl6b0PS/mAS+qE6meo1nqnpRcrXfj8RZ4ISXfyWURVp7oe7QDh65KQjhzULeLJSRa49
+	WCCcdjseBWjDeAHVvp5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0XvC-0006C1-T2; Wed, 21 Aug 2019 21:13:34 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1i0XwS-0006XD-LV; Wed, 21 Aug 2019 21:14:52 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0Xv2-0006BU-Fb
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 21:13:26 +0000
-Received: by mail-ot1-f68.google.com with SMTP id b1so3447739otp.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 14:13:24 -0700 (PDT)
+ id 1i0XwI-0006Vb-Bz; Wed, 21 Aug 2019 21:14:43 +0000
+Received: by mail-ot1-x341.google.com with SMTP id b1so3450817otp.6;
+ Wed, 21 Aug 2019 14:14:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=U/CYOAn9G51LhCL1PhYQHp67jOIFH7vLUlRMO7QJaME=;
+ b=SqW7TKKnloEFxez2Iyvmd4w/a7Y1adWbSx7RV30lZ9QtnzxIFk3zddDYToTa9D3rn1
+ YHZ7Fb8elG41k+TyBbQzC5uWRRAqsgILS3hVLeUoBKBODAiNYKUg2e1m7EfArGWALEYT
+ OcD6LO1lQeVN0mEbUzHVL5czM/P4FtAyA0tLc2nsUh2gn6hLvFEr2atcwT/7fKrzgMOb
+ t1dsEoHmzZ3VTlShRNIuYy5nPJjBn+vhxAEXAji8AtjdLQKICBNvQRKdZ2fA47cShxJb
+ fKFBmzmirV14n8BFUjYH4PNzXRcnaY3sO9BOzlEBXpP6sMkf8zZ8OYQIatbpBxrpVj47
+ IJcA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=DlphJMx4PV9qLWiQ86VK3TgLQxXCfQ+knFHYAIuA5Ik=;
- b=hZa9/RRfKqNkg5mndjWwMi5JPamXzcuk3tyyBKksfBNH33+8OOgqsderTfgGXPIvec
- IfGcDKFy2FbW1awDWa8YnA+T2SQ6upU0X1HWW9Y+PtjLb9GeEUUTj6B2c7LfnsI6gNB3
- EUMcYFl4i4BR9eh4P9Zk6TsIdf/30u/qDvF0OErfBBCnnx261MAR/qqQz6uKBPMIY4nm
- FdPucd0A18ZRZynrHgFEKNAYFrf1GKOkHupcAv67OyYws27v8btMYx2gvx4Ho4CIdFWJ
- BQ6bRdH+ms9Br4AC7N42o2O2dmgPLW21R3GbbBbdL8Gr+LBD3HirOaUZQTNYmXdH6Me2
- h0bA==
-X-Gm-Message-State: APjAAAUMC4GPw8uiz01987VoURKpT65vuZxXtfGGqUL0I/dVqpSq3iTm
- oJs8Gii7DvtV0W7pqqHGTRA0HoM=
-X-Google-Smtp-Source: APXvYqxe6j0dbYUWNdi9Juyx9Aja0v51eVfa9yGrlfykgD7zu1GxDpXPwvZ2wbOONxfzCfKKid12kA==
-X-Received: by 2002:a05:6830:1018:: with SMTP id
- a24mr1654419otp.191.1566422003778; 
- Wed, 21 Aug 2019 14:13:23 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id t10sm8052271otb.13.2019.08.21.14.13.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Aug 2019 14:13:23 -0700 (PDT)
-Date: Wed, 21 Aug 2019 16:13:22 -0500
-From: Rob Herring <robh@kernel.org>
-To: Lubomir Rintel <lkundrak@v3.sk>
-Subject: Re: [PATCH 04/19] dt-bindings: phy-mmp3-usb: Add bindings
-Message-ID: <20190821211322.GA12457@bogus>
-References: <20190809093158.7969-1-lkundrak@v3.sk>
- <20190809093158.7969-5-lkundrak@v3.sk>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=U/CYOAn9G51LhCL1PhYQHp67jOIFH7vLUlRMO7QJaME=;
+ b=RDyrtS4t6e5nEBuVGhrzdo+svwIzofYCZst3KanyXJMGcNiT7CYBsS0oaz1564zLj/
+ gwTCAGhmdr1+wbVp01TJza2OhjCH6+M1dvCCkbYPYWF5mhoxDieEi5dF1aU1g2tcIgqa
+ 6QElvSj8WmYcLHcvDDiqx8MLmvh3Fxi1honOJt6LGl4juQbTD7LhRx/TVNGVi+gJeFpP
+ tmYS3XZ9TWp3agN3oGuxzVqGF0z3Un9m5gcxqjRcenlfoNmiQsdH0oA83xOGCYSR8vw7
+ eOYtjmdOdwZ2z2I7/lvkufJ5d7mJlZUi93nO8A3jWwS2jce49HcneFpxteJVhp/f5v31
+ BgUA==
+X-Gm-Message-State: APjAAAWRVWR1ZPrRoeQGOPgH1RnlYeiO+fIxBwn0vN+NoRiQibKUB7LG
+ MoEytiNmASBccPlAxBCPnnaMf1NxPsyTyUNhLNQIhjPP
+X-Google-Smtp-Source: APXvYqyxg0+N2/pLhRdumFyevmwn3wQ++3ZOwx454FFxlyPdkbDOBklS4drA2Ee7P2E9hixQzAAgdoM0Yupd614a3TE=
+X-Received: by 2002:a9d:6c0e:: with SMTP id f14mr26763602otq.6.1566422079559; 
+ Wed, 21 Aug 2019 14:14:39 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190809093158.7969-5-lkundrak@v3.sk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190814142918.11636-1-narmstrong@baylibre.com>
+ <20190814142918.11636-12-narmstrong@baylibre.com>
+ <CAFBinCBWFNJNAWdeZ2LfEJA-MVpSf-A5SrLZEx+0z_P+-iBFDg@mail.gmail.com>
+ <c2d78c7c-d9a8-e486-d3b1-c1447e24284b@baylibre.com>
+In-Reply-To: <c2d78c7c-d9a8-e486-d3b1-c1447e24284b@baylibre.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Wed, 21 Aug 2019 23:14:28 +0200
+Message-ID: <CAFBinCA13xJHRmTrOHxSkoy2rMv3=+BBwZsLBmZn=cQ0pyE_Aw@mail.gmail.com>
+Subject: Re: [PATCH 11/14] arm64: dts: meson-g12a-x96-max: fix compatible
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_141324_875454_0F0C09E1 
-X-CRM114-Status: GOOD (  16.59  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190821_141442_430013_E979A758 
+X-CRM114-Status: GOOD (  13.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,59 +94,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
- Marc Zyngier <maz@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-arm-kernel@lists.infradead.org, Olof Johansson <olof@lixom.net>,
- Thomas Gleixner <tglx@linutronix.de>, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org
+Cc: khilman@baylibre.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 09, 2019 at 11:31:43AM +0200, Lubomir Rintel wrote:
-> This is the PHY chip for USB OTG on MMP3 platform.
-> 
-> Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
-> ---
->  .../devicetree/bindings/phy/phy-mmp3-usb.txt     | 16 ++++++++++++++++
->  1 file changed, 16 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/phy-mmp3-usb.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/phy-mmp3-usb.txt b/Documentation/devicetree/bindings/phy/phy-mmp3-usb.txt
-> new file mode 100644
-> index 0000000000000..b9623b98151bc
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/phy-mmp3-usb.txt
-> @@ -0,0 +1,16 @@
-> +Marvell MMP3 USB PHY
-> +--------------------
-> +
-> +Required properties:
-> +- compatible: must be "marvell,mmp3-usb-phy"
-> +- #phy-cells: must be 0
-> +
-> +Example:
-> +	usb-phy: usbphy@d4207000 {
-
-usb-phy@...
-
-> +		compatible = "marvell,mmp3-usb-phy";
-> +		reg = <0xd4207000 0x40>;
-> +		#phy-cells = <0>;
-> +	};
-> +
-> +This document explains the device tree binding. For general information
-> +about PHY subsystem refer to Documentation/phy.txt
-
-Drop this statement.
-
-
-> -- 
-> 2.21.0
-> 
+On Wed, Aug 21, 2019 at 4:08 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> On 20/08/2019 22:32, Martin Blumenstingl wrote:
+> > On Wed, Aug 14, 2019 at 4:33 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+> >>
+> >> This fixes the following DT schemas check errors:
+> >> meson-g12a-x96-max.dt.yaml: /: compatible: ['amediatech,x96-max', 'amlogic,u200', 'amlogic,g12a'] is not valid under any of the given schemas
+> >>
+> >> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> > Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> >
+> > [...]
+> >> -       compatible = "amediatech,x96-max", "amlogic,u200", "amlogic,g12a";
+> >> +       compatible = "amediatech,x96-max", "amlogic,g12a";
+> > only partially related: I wonder if we should add a s905x2 compatible
+> > string here and to the .dts filename (just like we separate the GXL
+> > variants s905x, s905d, s905w, ...)
+> >
+>
+> We could, but AFAIK no variants of G12A are planned yet...
+we already support two variants: S905X2 and S905D2 (I'm assuming that
+these are similar to S905X and S905D meaning both are almost
+identical)
+but I guess we can stay with what we have until there's a reason to
+have separate compatible strings (for example if we discover that
+there is a difference that matters - like the OPP table on S922X vs
+A311D)
 
 _______________________________________________
 linux-arm-kernel mailing list
