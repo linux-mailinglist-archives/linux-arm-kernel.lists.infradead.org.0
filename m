@@ -2,53 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA0C297A5A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 15:08:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49A1C97A6A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 15:11:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pf/v+Rl1eJadST/XV1Z0Yw70cxXdBEuxbfFxBdK8BfM=; b=jCAl6q0rUj2v4O
-	JL3hgk3YX5sUWOqanSwYJ4xAsFIftEvMKMJR2x6AZzbxul5k2yoT5F3YjPCiufDx2mr8dzHjoS4V3
-	D1DgMjjsTZrxZNwEmmpwT9nuSmjOx3FBPaqtATCti8l8vNWfutezLci+ESFgGKZR7mjLf343dHiWY
-	CjthzHMRueipUJJDGxbUowRnCWiG1qivQMpAoQCCsFBdcWP7F7b09KAug4rSMDiXym0P6MOksff+g
-	l0rqkfuai4NyD+C0Rwf+Ns4M9LM/OLjXvKjs9BB3HR1t8BV58XAqx5ypRPlvmq9iGvSeEMRMOwXIN
-	/gQkyK5g3KIZ1t2p+ZAA==;
+	List-Owner; bh=W485G7ZOVoRsQd6Kh7e7ZiA3RgnNschncVzTwl11rU4=; b=S8ZfUO/0Yk9PyL
+	RM+TbBP3I1YHt8SzCrBukVFszCnDa9N17Oec5VYTKPQaj1VRy3jJ3E/g6p1R4e/cnqjFxeYq+FbO8
+	ynTb3eXVVdoctyK7XQIwgrOaFcT7OkK55RcDuKCNBXvRbUVsJr4k100IV/R1LFQvZPUvpiCmsU3LZ
+	JCCEzLbOCj+OAgmw8mUxdPpYpZXIyuwMZdif8FEMVgoBgGeZusVoI5/3ysyE5nIdgFARi/SKeL6dR
+	gcTnKP6OggeC0OtFr9x+LLJYD6KgdI0n4g0BrMiucF6gtocymiE1n7U2PUuwH6wDOYZwJTOtSmrcf
+	lpx/IG3sAMd8WAm5lTLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0QM7-0001QK-Sq; Wed, 21 Aug 2019 13:08:52 +0000
+	id 1i0QOb-0002vj-Gp; Wed, 21 Aug 2019 13:11:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0QKU-0000Wl-3r
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 13:07:11 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1i0QOI-0002vP-UT
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 13:11:08 +0000
+Received: from mail-lj1-f170.google.com (mail-lj1-f170.google.com
+ [209.85.208.170])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ED79E2082F;
- Wed, 21 Aug 2019 13:07:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 413212082F
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 21 Aug 2019 13:11:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566392829;
- bh=eSW5sonthn00aXlq3sEz9PnmYO5sWVMvXRhzux/NTmk=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=xYjCEIIz20TVKTI18/ajVvJxgxHNChwRE7yKBWVpf5MHfJ9f3EAMKFZTnz4fasKUk
- cc43jyfFrW8MNh0F5QOtpJYM8ZPFe5rhSHzd11FMrQdbIr9DcuxDZcJ10M8oRTXyNn
- FL6OgoDD464E3SYzBW7K3323MmRq06j2PGLgL5rw=
-From: Maxime Ripard <mripard@kernel.org>
-To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
- lgirdwood@gmail.com, broonie@kernel.org
-Subject: [PATCH v2 4/4] ASoC: sun4i-i2s: Add support for DSP formats
-Date: Wed, 21 Aug 2019 15:06:56 +0200
-Message-Id: <5562db1ac8759f12b1b87c3258223eed629ef771.1566392800.git-series.maxime.ripard@bootlin.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <cover.6022d5fe61fb8a11565a71bee24d5280b0259c63.1566392800.git-series.maxime.ripard@bootlin.com>
-References: <cover.6022d5fe61fb8a11565a71bee24d5280b0259c63.1566392800.git-series.maxime.ripard@bootlin.com>
+ s=default; t=1566393066;
+ bh=kuKd4LaZeJI6UGgTswgE+Gt02Df19t8oQt48CusPTXY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=LZFoEmTZLW5/11AEGlzftmogTOLB8RKrREafKC4J4TPMec/ltqnY6dYL47sKyzaTV
+ BDDe2ejhf4HF6SyRH2VGUPgr+1B9W6Mo9sLVcvQ/eUWq1YnwzXSrCvx9Iyg+iqkOaN
+ ap4gxStwa04LH392BnFNBZzl7QWh6o4noa3gC7+A=
+Received: by mail-lj1-f170.google.com with SMTP id e24so2062189ljg.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 21 Aug 2019 06:11:06 -0700 (PDT)
+X-Gm-Message-State: APjAAAUbbbNgEVFQ8nhYDZ1l8AzdlTdQaDz3t2PfGKiMQJDXJLw/GX7o
+ JVrUpGxiewpYIVSQzX8Wr7Lw7aLzcnkfpgRI334=
+X-Google-Smtp-Source: APXvYqzNzg748L/o/0qZKaYe00jb2xN8DKKsSLoVgu+VFsvbF9k9puSj21ekEvwwAX73N4YmYdngdgwk12tAWSFHzKA=
+X-Received: by 2002:a2e:7818:: with SMTP id t24mr2602513ljc.210.1566393064499; 
+ Wed, 21 Aug 2019 06:11:04 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190813150827.31972-1-s.nawrocki@samsung.com>
+ <CGME20190813150852eucas1p2be4c0ab5ec2c079e3daf1af24283b27c@eucas1p2.samsung.com>
+ <20190813150827.31972-3-s.nawrocki@samsung.com>
+ <b5359603-b337-dcd8-b025-ca7dff5f4a06@nvidia.com>
+ <CAJKOXPf597CMx=M2JmSTWe2GzBfcHFefgzSJbJ+njZGp-WfR1A@mail.gmail.com>
+ <1e428c8e-f4b5-0810-77f9-2c899c040fc7@kernel.org>
+ <72eea1ea-2433-2f76-6265-5851554e845d@samsung.com>
+ <CAJKOXPdh9eHrAuCxHkQBvJMqEnUCeU2xwkK=9yyiJ6BuTLJ+_A@mail.gmail.com>
+ <537999b7-b0e8-33a7-4bdc-c6952a0a5d06@samsung.com>
+In-Reply-To: <537999b7-b0e8-33a7-4bdc-c6952a0a5d06@samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 21 Aug 2019 15:10:53 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPdbPg-O6zh6LXrvSRSMG8psxW6_eREe+UEH=UZNhAT=rQ@mail.gmail.com>
+Message-ID: <CAJKOXPdbPg-O6zh6LXrvSRSMG8psxW6_eREe+UEH=UZNhAT=rQ@mail.gmail.com>
+Subject: Re: [PATCH v3 2/9] soc: samsung: Convert exynos-chipid driver to use
+ the regmap API
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_060710_242566_F173B440 
-X-CRM114-Status: GOOD (  16.41  )
+X-CRM114-CacheID: sfid-20190821_061107_026906_FB4E73B3 
+X-CRM114-Status: GOOD (  19.15  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,143 +94,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: codekipper@gmail.com, alsa-devel@alsa-project.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Sylwester Nawrocki <snawrocki@kernel.org>, vireshk@kernel.org,
+ linux-pm@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jon Hunter <jonathanh@nvidia.com>, robh+dt@kernel.org, kgene@kernel.org,
+ pankaj.dubey@samsung.com, linux-tegra <linux-tegra@vger.kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Maxime Ripard <maxime.ripard@bootlin.com>
+On Wed, 21 Aug 2019 at 14:41, Sylwester Nawrocki <s.nawrocki@samsung.com> wrote:
+>
+> On 8/21/19 14:16, Krzysztof Kozlowski wrote:
+> >>> I'm also inclined to have it converted to a regular driver.  We already
+> >>> have "exynos-asv" driver matching on the chipid node (patch 3/9).
+> >>> The ASV patches will not be merged soon anyway, all this needs some more
+> >>> thought. Krzysztof, can we abandon the chipid patches for now? Your
+> >>
+> >> chipid driver is good and useful on its own. The preferred solution
+> >> IMHO would be to just revert "soc: samsung: Convert exynos-chipid
+> >> driver to use the regmap API" commit.
+> >
+> > I queued the chipid as a dependency for ASV but ASV requires the
+> > regmap. What would be left after reverting the regmap part? Simple
+> > unused printk driver? No need for such. If reverting, then let's drop
+> > entire driver and rework it offline.
+>
+> In fact there is now no dependency between the chipid and the ASV
+> driver (patch 3/9), the regmap is provided by the syscon driver/API.
+> I should have added "depends on REGMAP && MFD_SYSCON" to Kconfig.
+> Both drivers (chipid, ASV) share the registers region so the regmap
+> API seemed appropriate here.
 
-In addition to the I2S format, the controller also supports the DSP_*
-formats.
+Indeed, ASV needs only the header + DT change... Then actually we do
+not need chipid driver at all. Just to print the SoC and provide sysfs
+entry? If this is the only purpose, then it should be a driver.
 
-This requires some extra care on the LRCK period calculation, since the
-controller, with the PCM formats, require that the value set is no longer
-the periods of LRCK for a single channel, but for all of them.
+> Converting the chipid code to platform driver wouldn't make sense as
+> it wouldn't be useful early in arch/arm/mach-exynos and we can't have
+> two drivers for same device (the ASV driver matches on the chipid
+> compatible now).
 
-Let's add the code to deal with this, and support the DSP_A and DSP_B
-formats.
+There is no use case for arm/mach-exynos. This code was not
+resubmitted and I doubt it will be (unless now someone wants to prove
+I am wrong and sends it again :) ). The two-device case is indeed a
+problem but it is possible. Clocks are doing it with PMU driver. See
+CLK_OF_DECLARE_DRIVER(), although I do not remember whether it is
+maybe obsolete pattern (discouraged).
 
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
----
- sound/soc/sunxi/sun4i-i2s.c | 44 ++++++++++++++++++++++++++++++--------
- 1 file changed, 35 insertions(+), 9 deletions(-)
-
-diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index 69162af9fd65..57bf2a33753e 100644
---- a/sound/soc/sunxi/sun4i-i2s.c
-+++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -130,7 +130,6 @@ struct sun4i_i2s;
-  * struct sun4i_i2s_quirks - Differences between SoC variants.
-  *
-  * @has_reset: SoC needs reset deasserted.
-- * @has_fmt_set_lrck_period: SoC requires lrclk period to be set.
-  * @reg_offset_txdata: offset of the tx fifo.
-  * @sun4i_i2s_regmap: regmap config to use.
-  * @field_clkdiv_mclk_en: regmap field to enable mclk output.
-@@ -139,7 +138,6 @@ struct sun4i_i2s;
-  */
- struct sun4i_i2s_quirks {
- 	bool				has_reset;
--	bool				has_fmt_set_lrck_period;
- 	unsigned int			reg_offset_txdata;	/* TX FIFO */
- 	const struct regmap_config	*sun4i_i2s_regmap;
- 
-@@ -167,6 +165,7 @@ struct sun4i_i2s {
- 	struct regmap	*regmap;
- 	struct reset_control *rst;
- 
-+	unsigned int	format;
- 	unsigned int	mclk_freq;
- 	unsigned int	slots;
- 	unsigned int	slot_width;
-@@ -355,12 +354,6 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
- 
- 	regmap_field_write(i2s->field_clkdiv_mclk_en, 1);
- 
--	/* Set sync period */
--	if (i2s->variant->has_fmt_set_lrck_period)
--		regmap_update_bits(i2s->regmap, SUN4I_I2S_FMT0_REG,
--				   SUN8I_I2S_FMT0_LRCK_PERIOD_MASK,
--				   SUN8I_I2S_FMT0_LRCK_PERIOD(slot_width));
--
- 	return 0;
- }
- 
-@@ -422,6 +415,7 @@ static int sun8i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
- {
- 	unsigned int channels = params_channels(params);
- 	unsigned int slots = channels;
-+	unsigned int lrck_period;
- 
- 	if (i2s->slots)
- 		slots = i2s->slots;
-@@ -445,6 +439,26 @@ static int sun8i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
- 			   SUN8I_I2S_CHAN_CFG_RX_SLOT_NUM_MASK,
- 			   SUN8I_I2S_CHAN_CFG_RX_SLOT_NUM(channels));
- 
-+	switch (i2s->format & SND_SOC_DAIFMT_FORMAT_MASK) {
-+	case SND_SOC_DAIFMT_DSP_A:
-+	case SND_SOC_DAIFMT_DSP_B:
-+	case SND_SOC_DAIFMT_LEFT_J:
-+	case SND_SOC_DAIFMT_RIGHT_J:
-+		lrck_period = params_physical_width(params) * slots;
-+		break;
-+
-+	case SND_SOC_DAIFMT_I2S:
-+		lrck_period = params_physical_width(params);
-+		break;
-+
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	regmap_update_bits(i2s->regmap, SUN4I_I2S_FMT0_REG,
-+			   SUN8I_I2S_FMT0_LRCK_PERIOD_MASK,
-+			   SUN8I_I2S_FMT0_LRCK_PERIOD(lrck_period));
-+
- 	regmap_update_bits(i2s->regmap, SUN8I_I2S_TX_CHAN_SEL_REG,
- 			   SUN8I_I2S_TX_CHAN_EN_MASK,
- 			   SUN8I_I2S_TX_CHAN_EN(channels));
-@@ -616,6 +630,16 @@ static int sun8i_i2s_set_soc_fmt(const struct sun4i_i2s *i2s,
- 
- 	/* DAI Mode */
- 	switch (fmt & SND_SOC_DAIFMT_FORMAT_MASK) {
-+	case SND_SOC_DAIFMT_DSP_A:
-+		mode = SUN8I_I2S_CTRL_MODE_PCM;
-+		offset = 1;
-+		break;
-+
-+	case SND_SOC_DAIFMT_DSP_B:
-+		mode = SUN8I_I2S_CTRL_MODE_PCM;
-+		offset = 0;
-+		break;
-+
- 	case SND_SOC_DAIFMT_I2S:
- 		mode = SUN8I_I2S_CTRL_MODE_LEFT;
- 		offset = 1;
-@@ -684,6 +708,9 @@ static int sun4i_i2s_set_fmt(struct snd_soc_dai *dai, unsigned int fmt)
- 			   SUN4I_I2S_FIFO_CTRL_RX_MODE_MASK,
- 			   SUN4I_I2S_FIFO_CTRL_TX_MODE(1) |
- 			   SUN4I_I2S_FIFO_CTRL_RX_MODE(1));
-+
-+	i2s->format = fmt;
-+
- 	return 0;
- }
- 
-@@ -1074,7 +1101,6 @@ static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
- 	.has_reset		= true,
- 	.reg_offset_txdata	= SUN8I_I2S_FIFO_TX_REG,
- 	.sun4i_i2s_regmap	= &sun4i_i2s_regmap_config,
--	.has_fmt_set_lrck_period = true,
- 	.field_clkdiv_mclk_en	= REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 8, 8),
- 	.field_fmt_wss		= REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 2),
- 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
--- 
-git-series 0.9.1
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
