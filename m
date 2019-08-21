@@ -2,71 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D6349815E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 19:35:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 320729819A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 19:42:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CZRMqwI4+pEYAoqjGJxEs0ac5dr5XPy4i7WXbTDTLbI=; b=pM0Lcsf2dI/Liz
-	zwByretsZaA+KT1twjeheTVlGtn9IRLTLtB7k8PzgCHwZG3HmEn+A6LpxOQmcAWEj3Irv0FFT8hyE
-	/xNQET3uB6QAK8SOrq19Wy1ylGRTv6qFz4JNHuolmzu+T4HQ+8B/D2rFApVZmJnal6XLYGf0pKYZv
-	zZp96Xm418NEoFU1eLHldKluCvYEG/fBePo0VKDMLBGeGyxPBJSCt8EjWd76iGwIZGmvlHswpYp5g
-	rsyNinn/H6s+jHhyngzSb+GGpn60XWd5Z8t0e5F5bjIkBynQlXaF9PW/cdaG1wXGIkKW3/ss+vebH
-	rgOELvEsRRJTSayVy/Dg==;
+	List-Owner; bh=rDI7k6rr7hp9DWPLMzMeXV50ehMo7ptmPNOw5MU8+4o=; b=rkjGtG9NXRK+zt
+	O/tgBD7oqs42taK2YaEhmuDY2RHNIZtDC6nzSTLEyBhhUou9qER8pbTz6iJ4qsMcAzrhjvmcnoRbE
+	oWdvCiWJ37Yhh8JDsMpFgcRl51k6ecgBmtkiFLCmtd8sbdq8UffOnTVF11Ho7yQjVrbTEts1E61wN
+	eoUv5iWtwxSeuhYncpSnPWT2tB5DxtwjYVOhtKWYwqz50kxWybGo77jf+f/COLKWDV3FnmMOAuotX
+	sm0wMVJzKJkEuitArcuLMSLtcZzdkkRh613oZKtb+/6+q5onqlOgDZ+3am29RjYBL0n+R2dSX2/2t
+	DxytzxNDAuKiXCWafP8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0UW1-0003Ek-SC; Wed, 21 Aug 2019 17:35:21 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i0Ucr-0005fS-Lt; Wed, 21 Aug 2019 17:42:25 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0UVm-0002xa-W1
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 17:35:08 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 809FC22D6D;
- Wed, 21 Aug 2019 17:35:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566408906;
- bh=oft2b/XAnOccaMbScogNYg5GBmBHqqVhsI2dgxn3frk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=FDrCB6hTk4MgsFW5L7cH0WWv1uq0GK+uo0eFZhYt9jal412Ps88auo95YKLoSijfw
- HgXtwtGGfReUWAThdTALJejBZ+lacbpBcnlBxqFlBEMEGabf9izZNNuhKMhIsGOvzd
- P1qQJpo7fn1vTibgT7BoACw5MlbTwJ5/UqLgXc4M=
-Date: Wed, 21 Aug 2019 18:35:01 +0100
-From: Will Deacon <will@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v9 2/3] arm64: Define
- Documentation/arm64/tagged-address-abi.rst
-Message-ID: <20190821173501.brvyn5mm5oh6m2s7@willie-the-truck>
-References: <20190821164730.47450-1-catalin.marinas@arm.com>
- <20190821164730.47450-3-catalin.marinas@arm.com>
+ id 1i0Ucg-0005eg-Ja
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 17:42:16 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id 65FA6FB03;
+ Wed, 21 Aug 2019 19:42:10 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id h-xhcMPhWSrc; Wed, 21 Aug 2019 19:42:08 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id 50A8642A70; Wed, 21 Aug 2019 19:42:08 +0200 (CEST)
+Date: Wed, 21 Aug 2019 19:42:08 +0200
+From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v2 1/3] arm64: imx8mq: add imx8mq iomux-gpr field defines
+Message-ID: <20190821174208.GA9486@bogon.m.sigxcpu.org>
+References: <cover.1565367567.git.agx@sigxcpu.org>
+ <e0562d8bb4098dc4cdb4023b41fb75b312be22a5.1565367567.git.agx@sigxcpu.org>
+ <CAK8P3a3Vrd+sttJrQwD-jA9p_egG4x-hc41eGK8H-_aVm-uoYw@mail.gmail.com>
+ <20190813101057.GB10751@bogon.m.sigxcpu.org>
+ <CAK8P3a1q9G8VKgNKh+6khzoW3bFTVR_Zorygy=Qqsq-PYzM4=g@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190821164730.47450-3-catalin.marinas@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <CAK8P3a1q9G8VKgNKh+6khzoW3bFTVR_Zorygy=Qqsq-PYzM4=g@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_103507_115197_BA94B7D5 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190821_104214_965818_DC8179FC 
+X-CRM114-Status: GOOD (  21.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [24.134.29.49 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,43 +69,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Dave Hansen <dave.hansen@intel.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, linux-doc@vger.kernel.org,
- Will Deacon <will.deacon@arm.com>, linux-mm@kvack.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Dave P Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, Daniel Vetter <daniel@ffwll.ch>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Robert Chiras <robert.chiras@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Lee Jones <lee.jones@linaro.org>, Sam Ravnborg <sam@ravnborg.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 05:47:29PM +0100, Catalin Marinas wrote:
-> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> 
-> On AArch64 the TCR_EL1.TBI0 bit is set by default, allowing userspace
-> (EL0) to perform memory accesses through 64-bit pointers with a non-zero
-> top byte. Introduce the document describing the relaxation of the
-> syscall ABI that allows userspace to pass certain tagged pointers to
-> kernel syscalls.
-> 
-> Cc: Will Deacon <will.deacon@arm.com>
-> Cc: Andrey Konovalov <andreyknvl@google.com>
-> Cc: Szabolcs Nagy <szabolcs.nagy@arm.com>
-> Cc: Kevin Brodsky <kevin.brodsky@arm.com>
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> Co-developed-by: Catalin Marinas <catalin.marinas@arm.com>
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> ---
->  Documentation/arm64/tagged-address-abi.rst | 156 +++++++++++++++++++++
->  1 file changed, 156 insertions(+)
->  create mode 100644 Documentation/arm64/tagged-address-abi.rst
+Hi,
+On Tue, Aug 13, 2019 at 01:07:52PM +0200, Arnd Bergmann wrote:
+> On Tue, Aug 13, 2019 at 12:10 PM Guido G=FCnther <agx@sigxcpu.org> wrote:
+> > On Tue, Aug 13, 2019 at 10:08:44AM +0200, Arnd Bergmann wrote:
+> > > On Fri, Aug 9, 2019 at 6:24 PM Guido G=FCnther <agx@sigxcpu.org> wrot=
+e:
+> > > >
+> > > > This adds all the gpr registers and the define needed for selecting
+> > > > the input source in the imx-nwl drm bridge.
+> > > >
+> > > > Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
+> > > > +
+> > > > +#define IOMUXC_GPR0    0x00
+> > > > +#define IOMUXC_GPR1    0x04
+> > > > +#define IOMUXC_GPR2    0x08
+> > > > +#define IOMUXC_GPR3    0x0c
+> > > > +#define IOMUXC_GPR4    0x10
+> > > > +#define IOMUXC_GPR5    0x14
+> > > > +#define IOMUXC_GPR6    0x18
+> > > > +#define IOMUXC_GPR7    0x1c
+> > > (more of the same)
+> > >
+> > > huh?
+> >
+> > These are the names from the imx8MQ reference manual (general purpose
+> > registers, they lump together all sorts of things), it's the same on
+> > imx6/imx7):
+> >
+> >     https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/=
+tree/include/linux/mfd/syscon/imx6q-iomuxc-gpr.h
+> >     https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/=
+tree/include/linux/mfd/syscon/imx7-iomuxc-gpr.h
+> >
+> > > > +/* i.MX8Mq iomux gpr register field defines */
+> > > > +#define IMX8MQ_GPR13_MIPI_MUX_SEL              BIT(2)
+> > >
+> > > I think this define should probably be local to the pinctrl driver, to
+> > > ensure that no other drivers fiddle with the registers manually.
+> >
+> > The purpose of these bits is for a driver to fiddle with them to select
+> > the input source. Similar on imx7 it's already used for e.g. the phy
+> > refclk in the pci controller:
+> >
+> >     https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/=
+tree/drivers/pci/controller/dwc/pci-imx6.c#n638
+> =
 
-Thanks, I'll pick this on up.
+> That one should likely use either the clk interface or the phy
+> interface instead.
+> =
 
-Will
+> > The GPRs are not about pad configuration but gather all sorts of things
+> > (section 8.2.4 of the imx8mq reference manual): pcie setup, dsi related
+> > bits so I don't think this should be done via a pinctrl
+> > driver. Should we handle that differently than on imx6/7?
+> =
+
+> It would be nice to fix the existing code as well, but for the moment,
+> I only think we should not add more of that.
+> =
+
+> Generally speaking, we can use syscon to do random things that don't
+> have a subsystem of their own, but we should not use it to do things
+> that have an existing driver framework like pinctrl, clock, reset, phy
+> etc.
+
+Since it's not an external pin i opted to use MUX_MMIO instead which
+seems like a good fit here. Does that make sense?
+Cheers,
+ -- Guido
 
 _______________________________________________
 linux-arm-kernel mailing list
