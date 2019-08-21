@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 707F497300
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:07:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A46AD97305
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 09:07:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uGqMoZ0NCgDfx3LkTgwjv6RP/oseSuIAYxl/TUKg9qQ=; b=VZoxRFuakeLPBQ
-	U++fQQ9ObhzrreQE0cDwlGAlxRndY+Wpb00Ju7oHoF0LgEEIdEILoREdqjNxx4Uy6wQWLeUErXZR2
-	G9OCOwgrfJ1835BvkIZdpONlUiUcCvcHe/VZviT7Y3YwN4mk/ldtOdG2OhgPoxaY5xJnUWUs0R1wX
-	GxksnnbdRL7og8Pe2A4PYgAGUX93M434CeIkQs02yfAO1kECYDfIHYPEV59KdnHNq+NJ3Y4NkCNQH
-	uDOolbyfTA2bb5Z4uZMRtCL1kQmOQJ5CtAoJm8/1hYuordntx2qbsbR326xnp+Lb+T2+/FQCmXPuQ
-	fLbkciuMNJfArd8P+NEw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=9ifgFrTMPfzXScguSFlRmQAcBVP5zmXTYBcbPLbqiOI=; b=ZS7kjvRJW6Swcn
+	67JPbESv8sRnn/6f2n/2/W1Kykp+iwUsMfqb+pys4sqE1esOcM/MhnHKZXThCaSv42+MNXDm2a4CX
+	FMEHO24p7jspcsLn606gSHXCPMSNWpWklAEsWjSJMhptl9IOm4LUw9OS7ZpnT5bWeCteXu/chzOeR
+	hwbYDrDvpXlKO5qo5qCtqN9Dp6Hlz3CSscpqP5rixssh59mvf2WhyEtCH9gJx3d/mlPioXrfhB3t2
+	J7zdKb/yKv2LxRMgYmgWi8FqOkCgYlCkWj7R6Mg1+4ppPqhP48FzB/CZ1xfYNT7JGkNGeQbGSTTpF
+	vvSROesCXp35qZ5249WQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0Khv-0003Eb-Tu; Wed, 21 Aug 2019 07:06:59 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1i0KiR-0003Vv-0T; Wed, 21 Aug 2019 07:07:31 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0KhS-0003Dk-Cj
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:06:34 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7L748MM065586;
- Wed, 21 Aug 2019 07:06:19 GMT
+ id 1i0KiB-0003V5-Pr
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 07:07:17 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7L74Ful078588;
+ Wed, 21 Aug 2019 07:07:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
  h=date : from : to : cc
- : subject : message-id : mime-version : content-type; s=corp-2019-08-05;
- bh=eIL56nE/v5J5wgXacoh7ataFYepKi+JaBEV1KC2ZerA=;
- b=CoombSlkWRADBJyfkyxQBnjIcic1m+R7g146uZbOzI5Q2NCK2rJzbjHQNv0ecVzlZw5z
- 3khmhUaX4o6ZEbwcYeA1/feSavEBpI/0kn0Vu+sHmhK018+cY832m7IWFK6YhxkjTMF5
- aWnxcrh6mEFD0c+RJE50t6x+8FP4P7nIgY08ZwUyxIE/nLCQX8+16Vr5wPJ7zM2sr9Vk
- Ubz0U0VWcp64OI9alL7ADWBOrTzaQNvOxkKwraUWooIdLhcy8t7EdW4rmJQEkyXL0aO0
- 4ibBxr+d9fJypHqNLTTK8wPVCdrbWWGmfe5454WTIoaSg1wpAEc+AnTJxXRFtzZp2HfR pQ== 
+ : subject : message-id : mime-version : content-type : in-reply-to;
+ s=corp-2019-08-05; bh=cE9s0Cp1ViW4krpgGQjjfgAOVUXuBLNUghjKIjDQfmY=;
+ b=C3xv6rQIuzVnjMkkBCEdmoeUR3Yl2ix2bcPFGozJURC5uoX8SeduUvSr8UQQgaHuzbEK
+ NjXZ4G8mu9m/BQr0E6l4j27bPK0Yse1fc6qs0qV0C1UffivLx5T+a2yMSROj2caDa6oA
+ KhmYTfVGldZPq8Jgulk+CPx/2b6CL2AZ9TuHOWVFlfoJ9FFXF3FKJRsO/bwi5nteCxJM
+ frW4eQP3bmg+Uhn5/ik5fOO9h6ZuuGtbC+mYmtcELedYK7wzlnv67DXxD92eidxLZ8gM
+ Q0L8zN77Sa1cxCbeSG+ttu+5k//M3ezUH3cnZBjn9Bc5FIX0RVaZ75oE5ej2D6n2GISE mQ== 
 Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by userp2120.oracle.com with ESMTP id 2uea7qub3v-1
+ by aserp2120.oracle.com with ESMTP id 2ue9hpka6r-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 21 Aug 2019 07:06:19 +0000
+ Wed, 21 Aug 2019 07:07:11 +0000
 Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7L74ELt174828;
- Wed, 21 Aug 2019 07:06:18 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by userp3030.oracle.com with ESMTP id 2ug1ga8hpy-1
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7L74EkP174834;
+ Wed, 21 Aug 2019 07:07:11 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by userp3030.oracle.com with ESMTP id 2ug1ga8jgu-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 21 Aug 2019 07:06:18 +0000
-Received: from abhmp0007.oracle.com (abhmp0007.oracle.com [141.146.116.13])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x7L76EMS021546;
- Wed, 21 Aug 2019 07:06:14 GMT
+ Wed, 21 Aug 2019 07:07:11 +0000
+Received: from abhmp0002.oracle.com (abhmp0002.oracle.com [141.146.116.8])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x7L77AjQ023628;
+ Wed, 21 Aug 2019 07:07:10 GMT
 Received: from mwanda (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 21 Aug 2019 00:06:13 -0700
-Date: Wed, 21 Aug 2019 10:06:06 +0300
+ with ESMTP ; Wed, 21 Aug 2019 00:07:09 -0700
+Date: Wed, 21 Aug 2019 10:07:02 +0300
 From: Dan Carpenter <dan.carpenter@oracle.com>
 To: Derek Kiernan <derek.kiernan@xilinx.com>,
  Dragan Cvetic <dragan.cvetic@xilinx.com>
-Subject: [PATCH 1/4] misc: xilinx_sdfec: Fix a couple small information leaks
-Message-ID: <20190821070606.GA26957@mwanda>
+Subject: [PATCH 2/4] misc: xilinx_sdfec: Return -EFAULT if copy_from_user()
+ fails
+Message-ID: <20190821070702.GB26957@mwanda>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20190821070606.GA26957@mwanda>
 X-Mailer: git-send-email haha only kidding
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9355
@@ -72,20 +74,20 @@ X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9355
  signatures=668684
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
  priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
  lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1906280000
  definitions=main-1908210076
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_000631_143875_4C43839E 
-X-CRM114-Status: GOOD (  15.69  )
+X-CRM114-CacheID: sfid-20190821_000715_925152_513F5468 
+X-CRM114-Status: GOOD (  16.82  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ medium trust [141.146.126.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -118,40 +120,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These structs have holes in them so we end up disclosing a few bytes of
-uninitialized stack data.
+The copy_from_user() funciton returns the number of bytes remaining to
+be copied but we want to return -EFAULT to the user.
 
-drivers/misc/xilinx_sdfec.c:305 xsdfec_get_status() warn: check that 'status' doesn't leak information (struct has a hole after 'activity')
-drivers/misc/xilinx_sdfec.c:449 xsdfec_get_turbo() warn: check that 'turbo_params' doesn't leak information (struct has a hole after 'scale')
-
-We need to zero out the holes with memset().
-
-Fixes: 6bd6a690c2e7 ("misc: xilinx_sdfec: Add stats & status ioctls")
+Fixes: 20ec628e8007 ("misc: xilinx_sdfec: Add ability to configure LDPC")
 Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
 ---
- drivers/misc/xilinx_sdfec.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/misc/xilinx_sdfec.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
-index 912e939dec62..dc1b8b412712 100644
+index dc1b8b412712..813b82c59360 100644
 --- a/drivers/misc/xilinx_sdfec.c
 +++ b/drivers/misc/xilinx_sdfec.c
-@@ -295,6 +295,7 @@ static int xsdfec_get_status(struct xsdfec_dev *xsdfec, void __user *arg)
- 	struct xsdfec_status status;
- 	int err;
+@@ -651,9 +651,10 @@ static int xsdfec_add_ldpc(struct xsdfec_dev *xsdfec, void __user *arg)
+ 	if (!ldpc)
+ 		return -ENOMEM;
  
-+	memset(&status, 0, sizeof(status));
- 	spin_lock_irqsave(&xsdfec->error_data_lock, xsdfec->flags);
- 	status.state = xsdfec->state;
- 	xsdfec->state_updated = false;
-@@ -440,6 +441,7 @@ static int xsdfec_get_turbo(struct xsdfec_dev *xsdfec, void __user *arg)
- 	if (xsdfec->config.code == XSDFEC_LDPC_CODE)
- 		return -EIO;
+-	ret = copy_from_user(ldpc, arg, sizeof(*ldpc));
+-	if (ret)
++	if (copy_from_user(ldpc, arg, sizeof(*ldpc))) {
++		ret = -EFAULT;
+ 		goto err_out;
++	}
  
-+	memset(&turbo_params, 0, sizeof(turbo_params));
- 	reg_value = xsdfec_regread(xsdfec, XSDFEC_TURBO_ADDR);
- 
- 	turbo_params.scale = (reg_value & XSDFEC_TURBO_SCALE_MASK) >>
+ 	if (xsdfec->config.code == XSDFEC_TURBO_CODE) {
+ 		ret = -EIO;
 -- 
 2.20.1
 
