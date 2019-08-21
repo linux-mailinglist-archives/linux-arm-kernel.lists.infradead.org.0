@@ -2,57 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E424E98332
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 20:38:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AC379834C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 20:44:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tVotPJlJ7VqVlH4wrJ9NDSiqz2otCrrm2tNHsxlVGXQ=; b=cjYhNrFtmQqbpk
-	TxvivdeufEK2Z115iCEzv1r36juWajeniIEByEnDQsQDpXmPbTczf2K2N6OOk6NfFSACNPwAK2GxM
-	Fdx/3VzgglwxhIctI/lZIC0F82Yq7mihpbHM9UKPeZCVzNugf8U6OTh+peLLeN2gW1YVz2x/KjBzr
-	2fYpXrsgDbM2OWOep7Ji3CYtKOGi1VWY79oDvSR9RuhG9jQhkRDJH34b8nZTh4GNF80JZmNJWcdGp
-	4ZYF8BvUlQvnE/7+0VqaNbvtMoK7b+uXP/eYoA/GwQ2b4BpGlh048j1R+MHFdHkS/Pty1UujO16/c
-	YDnd2CqTg+8t1/HqgtSg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=VAc6V9bxd2WluB4ZCTdw3TTvZJCV69djL7L1dJgW178=; b=DFxyNlWcXXMhwbbApMuvR6wlD
+	nMsUqRqjR18jVKEmIWSII57hoHED+gO5yijuYY7oUVAI4ESwUnvFfB1A6NRxzAQhLS1gM/sKx4Xez
+	5adFifKBDb63xAImdBCJV2gEtoe+xlHsewgD9ysdEpLtgcoAkB+SvalqZugUiCqmyjSXGfMx8zNK6
+	B8npbuQv3qOWVui4Vz0RYwW3qCKRe2LxkFhb25aDgZamIlqLkVKJum1nrhZ6MEVc0t6bx6BIEbaE9
+	bXuryeJxi8wbuRAgYe+IE0kpDQzDpoTPB71jy/Uax/Du1dQW8KU8xphqbO9bT5o/V+1sKrGh5EnTN
+	sqARTR7hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0VUy-0003Ec-Rj; Wed, 21 Aug 2019 18:38:20 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1i0VaV-0006FC-Sk; Wed, 21 Aug 2019 18:44:03 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0VTA-0001A0-MD
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 18:36:30 +0000
-Received: from p5de0b6c5.dip0.t-ipconnect.de ([93.224.182.197] helo=nanos)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1i0VSx-0003HL-QR; Wed, 21 Aug 2019 20:36:15 +0200
-Date: Wed, 21 Aug 2019 20:36:14 +0200 (CEST)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: Mike Rapoport <rppt@linux.ibm.com>
-Subject: Re: [PATCH] mm: consolidate pgtable_cache_init() and pgd_cache_init()
-In-Reply-To: <1566400018-15607-1-git-send-email-rppt@linux.ibm.com>
-Message-ID: <alpine.DEB.2.21.1908212035200.1983@nanos.tec.linutronix.de>
-References: <1566400018-15607-1-git-send-email-rppt@linux.ibm.com>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+ id 1i0VaK-0006E6-7a
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 18:43:53 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 5CF5123C61D29CF5A623;
+ Thu, 22 Aug 2019 02:43:47 +0800 (CST)
+Received: from [127.0.0.1] (10.184.12.158) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Thu, 22 Aug 2019
+ 02:43:40 +0800
+Subject: Re: [PATCH v2 05/12] irqchip/gic: Prepare for more than 16 PPIs
+To: Marc Zyngier <maz@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ "Jason Cooper" <jason@lakedaemon.net>, Julien Thierry
+ <julien.thierry.kdev@gmail.com>, Rob Herring <robh+dt@kernel.org>
+References: <20190806100121.240767-1-maz@kernel.org>
+ <20190806100121.240767-6-maz@kernel.org>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <c1033d74-2f92-49c4-02df-54121f904384@huawei.com>
+Date: Thu, 22 Aug 2019 02:40:18 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101
+ Thunderbird/64.0
 MIME-Version: 1.0
-X-Linutronix-Spam-Score: -1.0
-X-Linutronix-Spam-Level: -
-X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
- SHORTCIRCUIT=-0.0001
+In-Reply-To: <20190806100121.240767-6-maz@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.184.12.158]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_113628_893189_6B7D12B0 
-X-CRM114-Status: GOOD (  14.15  )
+X-CRM114-CacheID: sfid-20190821_114352_450343_71EE6600 
+X-CRM114-Status: UNSURE (   8.65  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,64 +69,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+Cc: Lokesh Vutla <lokeshvutla@ti.com>, John Garry <john.garry@huawei.com>,
+ linux-kernel@vger.kernel.org,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 21 Aug 2019, Mike Rapoport wrote:
-> diff --git a/arch/x86/include/asm/pgtable_32.h b/arch/x86/include/asm/pgtable_32.h
-> index b9b9f8a..0dca7f7 100644
-> --- a/arch/x86/include/asm/pgtable_32.h
-> +++ b/arch/x86/include/asm/pgtable_32.h
-> @@ -29,7 +29,6 @@ extern pgd_t swapper_pg_dir[1024];
->  extern pgd_t initial_page_table[1024];
->  extern pmd_t initial_pg_pmd[];
->  
-> -static inline void pgtable_cache_init(void) { }
->  void paging_init(void);
->  void sync_initial_page_table(void);
->  
-> diff --git a/arch/x86/include/asm/pgtable_64.h b/arch/x86/include/asm/pgtable_64.h
-> index a26d2d5..0b6c4042 100644
-> --- a/arch/x86/include/asm/pgtable_64.h
-> +++ b/arch/x86/include/asm/pgtable_64.h
-> @@ -241,8 +241,6 @@ extern void cleanup_highmap(void);
->  #define HAVE_ARCH_UNMAPPED_AREA
->  #define HAVE_ARCH_UNMAPPED_AREA_TOPDOWN
->  
-> -#define pgtable_cache_init()   do { } while (0)
-> -
->  #define PAGE_AGP    PAGE_KERNEL_NOCACHE
->  #define HAVE_PAGE_AGP 1
->  
-> diff --git a/arch/x86/mm/pgtable.c b/arch/x86/mm/pgtable.c
-> index 73757bc..3e4b903 100644
-> --- a/arch/x86/mm/pgtable.c
-> +++ b/arch/x86/mm/pgtable.c
-> @@ -357,7 +357,7 @@ static void pgd_prepopulate_user_pmd(struct mm_struct *mm,
->  
->  static struct kmem_cache *pgd_cache;
->  
-> -void __init pgd_cache_init(void)
-> +void __init pgtable_cache_init(void)
->  {
->  	/*
->  	 * When PAE kernel is running as a Xen domain, it does not use
-> @@ -402,10 +402,6 @@ static inline void _pgd_free(pgd_t *pgd)
->  }
->  #else
->  
-> -void __init pgd_cache_init(void)
-> -{
-> -}
+On 2019/8/6 18:01, Marc Zyngier wrote:
+> GICv3.1 allows up to 80 PPIs (16 legaci PPIs and 64 Extended PPIs),
+                                   ^^^^^^
+legacy?
 
-Acked-by: Thomas Gleixner <tglx@linutronix.de>
+
+Zenghui
+
+> meaning we can't just leave the old 16 hardcoded everywhere.
+> 
+> We also need to add the infrastructure to discover the number of PPIs
+> on a per redistributor basis, although we still pretend there is only
+> 16 of them for now.
+> 
+> No functional change.
+> 
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
