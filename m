@@ -2,75 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1091497599
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 11:06:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B39B39759B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 11:07:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IAtooUwovEeKSXxr46ks9SYxUiWkVjL3lXVUt5sAdIM=; b=pw8GBHSexCbBYC
-	XJeNGy1vAv4QxFL2ez7coR6PyN7ygi4GX/WPSyPUkvl/Kv4WiBfzLRa9D6DWnnHVah+768roFbraf
-	WTof5M/9UiWfDTPivDwka0+JWxV6wo1uFMLcpY2en5Q02OUsiLSfW1Mi3hgdFvgqV6X3eE2JcCJjM
-	6lrDNKaRW0TddBtUoVqROUc5ZkupqIyeUuG0qfLSfPW5Ug+OGnQRy2zhsd47Pqik17VPwPymdHbiz
-	BnyvduzEc4FUQvESxlq0viaFG1aNLl98HL3pysgyZVqwZzJ62sVhJjlxqHBgSALpmK8zzxlDTpGxA
-	tuAMJm5qoGRcNoaAircw==;
+	List-Owner; bh=08Ioa3svPMFiLzxvY5LxFnYiKHMEf4CLxOUgD9bD8mA=; b=AWTUF1ePPSzfwA
+	LgplUov537DBSNaQYv8BnYdMJsBLORiyNtJ8xtlmwetm89iDCCJLzBX8zadrW4FOd92XKnjiV30zC
+	1SvuuRrD96FIJ+j+J0WJ/AC+TpVyH2FKVHQuUOCYsv8suw28FDsFuHyNkKJq5pOgTO8hlg3JmL5Zi
+	mYiOpLPdkbdkuQaYpfpxHQUW3EzdTVG1c+yE9XgOMY6GKX0x5n75j8iNf8Wl1fHlS9acVhT1RpaxF
+	Zl8AvFeZDw+5q7AbBRq1CDEosbbtdFT22egH7YtrbzeoAbuqrfFGvWtArExG3RUMezNtoNciPYx0m
+	ZiSSxLLoJS4+NyQGehUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0MZS-0001AG-Rc; Wed, 21 Aug 2019 09:06:22 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0MYQ-00019r-IP
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 09:05:19 +0000
-Received: by mail-ot1-f66.google.com with SMTP id e12so1347623otp.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 02:05:17 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BcgOugiEfu/sl/GJ2HeNJnHlOVsMexHqTjarEG68Ugc=;
- b=WbmQYZf62jq3D8H4xwKcjCviVucMi5qi3LslL9j2O01tF4eJSpQtneQ+LzliZ7hdmf
- pr3oGm1R5AsueTGyHcEzLY1mG/ul2GljJNuXKji5oizIctBPKOhaMKKrblMFPdeDVSk3
- n2sPWodj+2zgZ2baaH8kzGboqjlmarmsWaRt14j+8U7zgeTOh5P9lMcZQq+ZVFM/2mZS
- NUaSao6VUPiJsLP34oTL1oZ7oT9Ltx74Mvff6KfjSyguVAgMgvtpxEq6QorY6LNlh1g0
- Wp3plMOLMSK0z+qECmkmvKtQfykqVOn1hz0RFoWs369OfmX1H9H3T977Z/W0V0nEpSo0
- IMVg==
-X-Gm-Message-State: APjAAAXYT/v0SXcBwm4Ts1xfXFT+1SMGuPtXeGCrnKftcExw7UdeVwW0
- GlTI8e2UXtBIT4DuYxe2kLl/YOtU3Dom5rl/3rU=
-X-Google-Smtp-Source: APXvYqwEABXn/5Y7xZ1yMJQ5jtcZAzzIPZrRHhAN9UIfIM30szjKc85rvBFGGhyNChxWiqjaQDvn93tBXtOgNhBnBvE=
-X-Received: by 2002:a9d:68c5:: with SMTP id i5mr2623806oto.250.1566378317253; 
- Wed, 21 Aug 2019 02:05:17 -0700 (PDT)
+	id 1i0MaU-0001YW-Gp; Wed, 21 Aug 2019 09:07:26 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0Ma9-0001Xa-6f
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 09:07:08 +0000
+Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id D528825B7C3;
+ Wed, 21 Aug 2019 19:06:59 +1000 (AEST)
+Received: by reginn.horms.nl (Postfix, from userid 7100)
+ id BDAD29405AE; Wed, 21 Aug 2019 11:06:57 +0200 (CEST)
+Date: Wed, 21 Aug 2019 11:06:57 +0200
+From: Simon Horman <horms@verge.net.au>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: Re: [PATCH] ARM: debug-ll: Add support for r7s9210
+Message-ID: <20190821090657.shogjxxe5kdwfgut@verge.net.au>
+References: <20190807085415.24854-1-geert+renesas@glider.be>
 MIME-Version: 1.0
-References: <1566219393-23169-1-git-send-email-ykaneko0929@gmail.com>
-In-Reply-To: <1566219393-23169-1-git-send-email-ykaneko0929@gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 21 Aug 2019 11:05:06 +0200
-Message-ID: <CAMuHMdU7QFNhfgy8Ow_Y3iJOJRgrAad7tSGgOKRvgMC_ZwmdCA@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: renesas: r8a77970: sort nodes
-To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20190807085415.24854-1-geert+renesas@glider.be>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_020518_684538_FCDBD605 
-X-CRM114-Status: GOOD (  10.48  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190821_020706_835507_26E62B42 
+X-CRM114-Status: GOOD (  17.93  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,40 +62,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-renesas-soc@vger.kernel.org, Chris Brandt <chris.brandt@renesas.com>,
+ Magnus Damm <magnus.damm@gmail.com>, Russell King <linux@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 2:56 PM Yoshihiro Kaneko <ykaneko0929@gmail.com> wrote:
-> Sort nodes.
->
-> If node address is present
->    * Sort by node address, grouping all nodes with the same compat string
->      and sorting the group alphabetically.
-> Else
->    * Sort alphabetically
->
-> This should not have any run-time effect.
->
-> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+On Wed, Aug 07, 2019 at 10:54:15AM +0200, Geert Uytterhoeven wrote:
+> Enable low-level debugging support for RZ/A2M (r7s9210).
+> 
+> The RZA2MEVB board uses either SCIF2 (SDRAM enabled) or SCIF4 (HyperRAM
+> only) for the serial console.
+> 
+> Note that "SCIFA" serial ports on RZ/A2 SoCs use a compressed register
+> layout, hence add support for that to renesas-scif.S.
+> 
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-i.e. will queue in renesas-devel for v5.4.
+Reviewed-by: Simon Horman <horms+renesas@verge.net.au>
 
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+> ---
+>  arch/arm/Kconfig.debug                | 20 +++++++++++++++++++-
+>  arch/arm/include/debug/renesas-scif.S |  6 +++++-
+>  2 files changed, 24 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
+> index 85710e078afb4878..9fe038aecc553deb 100644
+> --- a/arch/arm/Kconfig.debug
+> +++ b/arch/arm/Kconfig.debug
+> @@ -924,6 +924,20 @@ choice
+>  		  Say Y here if you want kernel low-level debugging support
+>  		  via SCIF2 on Renesas RZ/A1H (R7S72100).
+>  
+> +	config DEBUG_R7S9210_SCIF2
+> +		bool "Kernel low-level debugging messages via SCIF2 on R7S9210"
+> +		depends on ARCH_R7S9210
+> +		help
+> +		  Say Y here if you want kernel low-level debugging support
+> +		  via SCIF2 on Renesas RZ/A2M (R7S9210).
+> +
+> +	config DEBUG_R7S9210_SCIF4
+> +		bool "Kernel low-level debugging messages via SCIF4 on R7S9210"
+> +		depends on ARCH_R7S9210
+> +		help
+> +		  Say Y here if you want kernel low-level debugging support
+> +		  via SCIF4 on Renesas RZ/A2M (R7S9210).
+> +
+>  	config DEBUG_RCAR_GEN1_SCIF0
+>  		bool "Kernel low-level debugging messages via SCIF0 on R8A7778"
+>  		depends on ARCH_R8A7778
+> @@ -1537,6 +1551,8 @@ config DEBUG_LL_INCLUDE
+>  	default "debug/msm.S" if DEBUG_QCOM_UARTDM
+>  	default "debug/omap2plus.S" if DEBUG_OMAP2PLUS_UART
+>  	default "debug/renesas-scif.S" if DEBUG_R7S72100_SCIF2
+> +	default "debug/renesas-scif.S" if DEBUG_R7S9210_SCIF2
+> +	default "debug/renesas-scif.S" if DEBUG_R7S9210_SCIF4
+>  	default "debug/renesas-scif.S" if DEBUG_RCAR_GEN1_SCIF0
+>  	default "debug/renesas-scif.S" if DEBUG_RCAR_GEN1_SCIF2
+>  	default "debug/renesas-scif.S" if DEBUG_RCAR_GEN2_SCIF0
+> @@ -1666,7 +1682,8 @@ config DEBUG_UART_PHYS
+>  	default 0xe6e60000 if DEBUG_RCAR_GEN2_SCIF0
+>  	default 0xe6e68000 if DEBUG_RCAR_GEN2_SCIF1
+>  	default 0xe6ee0000 if DEBUG_RCAR_GEN2_SCIF4
+> -	default 0xe8008000 if DEBUG_R7S72100_SCIF2
+> +	default 0xe8008000 if DEBUG_R7S72100_SCIF2 || DEBUG_R7S9210_SCIF2
+> +	default 0xe8009000 if DEBUG_R7S9210_SCIF4
+>  	default 0xf0000000 if DEBUG_DIGICOLOR_UA0
+>  	default 0xf0000be0 if ARCH_EBSA110
+>  	default 0xf1012000 if DEBUG_MVEBU_UART0_ALTERNATE
+> @@ -1699,6 +1716,7 @@ config DEBUG_UART_PHYS
+>  		DEBUG_LL_UART_EFM32 || \
+>  		DEBUG_UART_8250 || DEBUG_UART_PL01X || DEBUG_MESON_UARTAO || \
+>  		DEBUG_QCOM_UARTDM || DEBUG_R7S72100_SCIF2 || \
+> +		DEBUG_R7S9210_SCIF2 || DEBUG_R7S9210_SCIF4 || \
+>  		DEBUG_RCAR_GEN1_SCIF0 || DEBUG_RCAR_GEN1_SCIF2 || \
+>  		DEBUG_RCAR_GEN2_SCIF0 || DEBUG_RCAR_GEN2_SCIF1 || \
+>  		DEBUG_RCAR_GEN2_SCIF2 || DEBUG_RCAR_GEN2_SCIF4 || \
+> diff --git a/arch/arm/include/debug/renesas-scif.S b/arch/arm/include/debug/renesas-scif.S
+> index 1c5f795587fc5681..25f06663a9a4e2c1 100644
+> --- a/arch/arm/include/debug/renesas-scif.S
+> +++ b/arch/arm/include/debug/renesas-scif.S
+> @@ -11,7 +11,11 @@
+>  #define SCIF_PHYS	CONFIG_DEBUG_UART_PHYS
+>  #define SCIF_VIRT	((SCIF_PHYS & 0x00ffffff) | 0xfd000000)
+>  
+> -#if CONFIG_DEBUG_UART_PHYS < 0xe6e00000
+> +#if defined(CONFIG_DEBUG_R7S9210_SCIF2) || defined(CONFIG_DEBUG_R7S9210_SCIF4)
+> +/* RZ/A2 SCIFA */
+> +#define FTDR		0x06
+> +#define FSR		0x08
+> +#elif CONFIG_DEBUG_UART_PHYS < 0xe6e00000
+>  /* SCIFA */
+>  #define FTDR		0x20
+>  #define FSR		0x14
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
