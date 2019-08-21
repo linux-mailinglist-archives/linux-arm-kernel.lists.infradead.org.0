@@ -2,72 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 091AF974AD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 10:23:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BC719751E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 10:37:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hv18g1bMzAmPkLWn47cTqcc8uTRjYXi/vG49Npjy1sI=; b=TcvV6PkJFVJBcK
-	rKrHSB6njGbV+aeJ+x8WPBwffVB1yRPJwgAKMu2a2JBrIBZo0779h8irTteemsfblUtz2kN9pRn/B
-	1rUOecK2YdNii3I+029wceBHZ1a4VUNhSw8bi7KM2w8ldU2JUpEleB8IKUSBxsgJkJODoetYa7I6r
-	5RN07v6Woaxm+7B/Kt0wwBpQpj9pOBQjnrtZk71PlQFbZ3V84STJ966dV18IvL3m+EAMOaSmL/odm
-	sQbJMHJbCEvH2B7CMiFxl1Iva++4mJxn+C88aOED5EjXUeAd1+i9Jvd1NH+PbwWE8tcUHvd9MTglk
-	C+JvVjDZ42CBJpXRluTA==;
+	List-Owner; bh=v0Jq6G7DHMAkfFkgQSBQmsUuM30Kc4PDdDmG7Q0Y5Ac=; b=ARg4vFKc3qrlpg
+	SSUfp6rhJq5mOIKNO6Ann43K4golpWcfAz7qONUTJoSMMIbc0pHshj8lgsQJcD+KKqCjPpkSyKsET
+	/GuvAQpzOoGlfPhVOhoHQCQf24MoyN/NXIevhVlDqnIPPMTTmXVNSAIH5ACmMT8B6OapRV9BlUrfV
+	U5ExNzkeJzcit4QsQatai/n8joHhD36SA83JkPQgtYpKgRFzZG5/xLKMyx09btA01Z1PZmsG2nQqi
+	8g8Uc3nygrJzvj4zFcFpL6wtTzxRIR5qL0sOcfUX0nHLzL2OefamV+G3CZdJFSpBxSFAscLA/k5nW
+	nSUW+17kJ//BuFZrtxAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0LtT-0002l0-3Q; Wed, 21 Aug 2019 08:22:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i0M7e-0000Tu-Jg; Wed, 21 Aug 2019 08:37:38 +0000
+Received: from helcar.hmeau.com ([216.24.177.18] helo=fornost.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0LsI-00025x-Qe
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 08:21:49 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0FCE72332A;
- Wed, 21 Aug 2019 08:21:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566375706;
- bh=s6khMTMNTud2ZUJcSd/QD0CjoKrkbB6sXe6+ENqMLpQ=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=NYQThxDg3Xw5qjeOKJ99D5Y7m/pLFASeQyI4wOaAm/7U5FGVRbdm2vhKvIJZfbcoq
- YkAvBDljPrTv+cK1bBBNoOhrkm9CrNATLoacKnVVvGB3Gep+2Nkvb1FHCadRzVVupc
- PQILgKVL9i30Qz3Di3+BSziqHtg9GUZdlxcyKpxs=
-From: Maxime Ripard <mripard@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>, tglx@linutronix.de,
- jason@lakedaemon.net, maz@kernel.org
-Subject: [PATCH v2 2/2] dt-bindings: irq: Convert Allwinner NMI Controller to
- a schema
-Date: Wed, 21 Aug 2019 10:21:38 +0200
-Message-Id: <20190821082138.11049-2-mripard@kernel.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190821082138.11049-1-mripard@kernel.org>
-References: <20190821082138.11049-1-mripard@kernel.org>
+ id 1i0M7R-0000Td-Rq
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 08:37:28 +0000
+Received: from gondolin.me.apana.org.au ([192.168.0.6]
+ helo=gondolin.hengli.com.au)
+ by fornost.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
+ id 1i0Lnm-0003cr-QG; Wed, 21 Aug 2019 18:17:07 +1000
+Received: from herbert by gondolin.hengli.com.au with local (Exim 4.80)
+ (envelope-from <herbert@gondor.apana.org.au>)
+ id 1i0Lng-00061p-Pw; Wed, 21 Aug 2019 18:17:00 +1000
+Date: Wed, 21 Aug 2019 18:17:00 +1000
+From: Herbert Xu <herbert@gondor.apana.org.au>
+To: "boojin.kim" <boojin.kim@samsung.com>
+Subject: Re: [PATCH 6/9] dm crypt: support diskcipher
+Message-ID: <20190821081700.GA23138@gondor.apana.org.au>
+References: <CGME20190821075742epcas2p4b9104e8249067c048d4050f2888da0a9@epcas2p4.samsung.com>
+ <001b01d557f6$1c49fd40$54ddf7c0$@samsung.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <001b01d557f6$1c49fd40$54ddf7c0$@samsung.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_012147_926587_0DDBE490 
-X-CRM114-Status: GOOD (  17.09  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190821_013726_646394_9B5D44D6 
+X-CRM114-Status: UNSURE (   7.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.0 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 2.0 PDS_TONAME_EQ_TOLOCAL_SHORT Short body with To: name matches
+ everything in local email
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,149 +65,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>, devicetree@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: 'Ulf Hansson' <ulf.hansson@linaro.org>, 'Mike Snitzer' <snitzer@redhat.com>,
+ dm-devel@redhat.com, 'Andreas Dilger' <adilger.kernel@dilger.ca>,
+ 'Alasdair Kergon' <agk@redhat.com>, 'Eric Biggers' <ebiggers@kernel.org>,
+ linux-samsung-soc@vger.kernel.org, 'Krzysztof Kozlowski' <krzk@kernel.org>,
+ 'Jaehoon Chung' <jh80.chung@samsung.com>, 'Kukjin Kim' <kgene@kernel.org>,
+ linux-ext4@vger.kernel.org, 'Chao Yu' <chao@kernel.org>,
+ linux-block@vger.kernel.org, linux-fscrypt@vger.kernel.org,
+ 'Jaegeuk Kim' <jaegeuk@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ 'Jens Axboe' <axboe@kernel.dk>, "'Theodore Y. Ts'o'" <tytso@mit.edu>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-f2fs-devel@lists.sourceforge.net, linux-crypto@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, "'David S. Miller'" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Maxime Ripard <maxime.ripard@bootlin.com>
+On Wed, Aug 21, 2019 at 04:57:41PM +0900, boojin.kim wrote:
+>
+> Can you tell me which patch you mentioned? Is this?
+> https://patches.linaro.org/project/linux-crypto/list/?series=22762
 
-The Allwinner SoCs have an interrupt controller called NMI supported in
-Linux, with a matching Device Tree binding.
+Yes this is the one.
 
-Now that we have the DT validation in place, let's convert the device tree
-bindings for that controller over to a YAML schemas.
-
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-
----
-
-Changes from v1:
-  - Remove the custom select and rely on the deprecated property instead
----
- .../allwinner,sun7i-a20-sc-nmi.yaml           | 70 +++++++++++++++++++
- .../allwinner,sunxi-nmi.txt                   | 29 --------
- 2 files changed, 70 insertions(+), 29 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
- delete mode 100644 Documentation/devicetree/bindings/interrupt-controller/allwinner,sunxi-nmi.txt
-
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
-new file mode 100644
-index 000000000000..0eccf5551786
---- /dev/null
-+++ b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
-@@ -0,0 +1,70 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Allwinner A20 Non-Maskable Interrupt Controller Device Tree Bindings
-+
-+maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Maxime Ripard <maxime.ripard@bootlin.com>
-+
-+allOf:
-+  - $ref: /schemas/interrupt-controller.yaml#
-+
-+properties:
-+  "#interrupt-cells":
-+    const: 2
-+    description:
-+      The first cell is the IRQ number, the second cell the trigger
-+      type as defined in interrupt.txt in this directory.
-+
-+  compatible:
-+    oneOf:
-+      - const: allwinner,sun6i-a31-r-intc
-+      - const: allwinner,sun6i-a31-sc-nmi
-+        deprecated: true
-+      - const: allwinner,sun7i-a20-sc-nmi
-+      - items:
-+        - const: allwinner,sun8i-a83t-r-intc
-+        - const: allwinner,sun6i-a31-r-intc
-+      - const: allwinner,sun9i-a80-sc-nmi
-+      - items:
-+        - const: allwinner,sun50i-a64-r-intc
-+        - const: allwinner,sun6i-a31-r-intc
-+      - items:
-+        - const: allwinner,sun50i-h6-r-intc
-+        - const: allwinner,sun6i-a31-r-intc
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  interrupt-controller: true
-+
-+required:
-+  - "#interrupt-cells"
-+  - compatible
-+  - reg
-+  - interrupts
-+  - interrupt-controller
-+
-+# FIXME: We should set it, but it would report all the generic
-+# properties as additional properties.
-+# additionalProperties: false
-+
-+examples:
-+  - |
-+    interrupt-controller@1c00030 {
-+        compatible = "allwinner,sun7i-a20-sc-nmi";
-+        interrupt-controller;
-+        #interrupt-cells = <2>;
-+        reg = <0x01c00030 0x0c>;
-+        interrupt-parent = <&gic>;
-+        interrupts = <0 0 4>;
-+    };
-+
-+...
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sunxi-nmi.txt b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sunxi-nmi.txt
-deleted file mode 100644
-index 24beadf7ba83..000000000000
---- a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sunxi-nmi.txt
-+++ /dev/null
-@@ -1,29 +0,0 @@
--Allwinner Sunxi NMI Controller
--==============================
--
--Required properties:
--
--- compatible : should be one of the following:
--  - "allwinner,sun7i-a20-sc-nmi"
--  - "allwinner,sun6i-a31-sc-nmi" (deprecated)
--  - "allwinner,sun6i-a31-r-intc"
--  - "allwinner,sun9i-a80-nmi"
--- reg : Specifies base physical address and size of the registers.
--- interrupt-controller : Identifies the node as an interrupt controller
--- #interrupt-cells : Specifies the number of cells needed to encode an
--  interrupt source. The value shall be 2. The first cell is the IRQ number, the
--  second cell the trigger type as defined in interrupt.txt in this directory.
--- interrupts: Specifies the interrupt line (NMI) which is handled by
--  the interrupt controller in the parent controller's notation. This value
--  shall be the NMI.
--
--Example:
--
--sc-nmi-intc@1c00030 {
--	compatible = "allwinner,sun7i-a20-sc-nmi";
--	interrupt-controller;
--	#interrupt-cells = <2>;
--	reg = <0x01c00030 0x0c>;
--	interrupt-parent = <&gic>;
--	interrupts = <0 0 4>;
--};
+Cheers,
 -- 
-2.21.0
-
+Email: Herbert Xu <herbert@gondor.apana.org.au>
+Home Page: http://gondor.apana.org.au/~herbert/
+PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
 
 _______________________________________________
 linux-arm-kernel mailing list
