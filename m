@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91BBA982FC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 20:33:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D220698303
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 20:33:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jipfjPx743UTdMct/ILJYBVoQAMjVqmepJRG6XieiiE=; b=T9hlj83K3vI5mB
-	vEhgkzTX4VWN6E5w+sx5CO7dl5AHi3WsZ7jtYHpKzQSNBQ0drhtxV3gbbDIN1c/cSaA2ADnEGXHr+
-	IAa3y7hvdtkyck4aQCmA/xmiHWv1o19u9hgg5uRpb2q71awYH+liMgIQilHJa1R6qK4JZexeTmj2j
-	gt2S5BuUt8rBbkIDyAdL1xb79LKTGrZpmLA2BI9byiL07OLXqEV1IZ/v850NkVyZU3jHXNPkfIdMB
-	QVG2cYGbdPkJkwBKprhaOb6c5cwjlTee0V335ubmcMrz44PlaEDOy7EKRXlOGk8Oq352CcPgbBAKn
-	LqjgRQQ3pFz4K9hhYhNg==;
+	List-Owner; bh=op/hmlaWaQjBVvewjI+y+07OxREwfYctf6shd6h5jtQ=; b=YMrZRl2Feh6Sdg
+	GDRLLdO771ZxfJZzi+siD2QYCVwYXtAdMontZaSvMqPlFo0XszgzaoFJhug0KX8HfFeSZcX3+4EaN
+	dFmJx6yfw3+jpNABKA63fntdlggtZOiPye+EhVdjz5uLFH0FHvUsd2GErkyPKF4tZUxWZNfcH0axQ
+	ZcinmlgHhcLplKAlANGFMCwkj3R3iOp3O/iFQLNyFaAFjH/HaewgGdq7MaLlNy166QyxBBEC4R3T7
+	uA5TNo7cQxFGXzZRAGxQLIxhNfDd/YJdaulwMfPnaBSrqabXShiE5MpzjEK9laJsjT+FRkToyJ66K
+	F4t9ZO8WOAMyxrnNeFGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0VQB-00056d-2r; Wed, 21 Aug 2019 18:33:23 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1i0VQT-0005RT-2d; Wed, 21 Aug 2019 18:33:41 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0VP1-0003zc-Hu
+ id 1i0VP2-00040I-J4
  for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 18:32:14 +0000
-Received: by mail-qt1-x841.google.com with SMTP id 44so4217104qtg.11
+Received: by mail-qk1-x743.google.com with SMTP id d79so2695435qke.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 21 Aug 2019 11:32:11 -0700 (PDT)
+ Wed, 21 Aug 2019 11:32:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=eQcqgkViU39lFjlil3M8Svf5iGtzpDKWpUSwhlO3OFw=;
- b=VGVxsXxZVLgXe5xWt0w3J/cqZt4mPm3JCoyIMlx5/qCn3/rV+mpLZawysJ4O+rAw6f
- rcWCltuXomYefOmYS9boAk8MlSKZLFLpez1T2eU5UAOqBtCk+eYnrncQN08lpCSdkGyf
- PIsqybRE87/1zUPakM9BVxyUVwgSzcG8e5BR8hciBGCYtpef1hxwksC/bkTpUh63Nu1z
- r0dkWmNaCt6fZ3R/kbEqGqQMcBBJJlmFx2gVi5g4eCZFia+JeGbvB2BJNqBqglpwB9Jf
- fmNp4wajHEt1++t2qwnHfsKFYrMhCXmXUTxxMoR3CJGBHUqEsKoJ+KSJJuoJouAB+CBk
- jgnw==
+ bh=bQvsgscqpy4gJx0RSAZHmPdNixt0ATCDS0WU9XTwyb8=;
+ b=ILjJA4n/giE8JmPiexv7Bw1nwvbRl2Z+YSLoE4FuqVk0Cy9Y8l0Z/Oi043el4txkPI
+ biHES+QyYLZFcNUoZPuckwwgZ/ZXoRyQ8rxMSMLPx468ECFak95S7bHRA5hE7sgYwLo1
+ ERLOIgzIGS0X8aQ1hin4TNUKMPvt4jZ8F71XOY2yF9JNx+98bKfh5WdXq2GAL7Nq6Uo3
+ KfLn8Kp0O5dqjYZeCaQSMuaUmJE3xMJ+Hjjv8je7GShbQFFNY8YKqG+42V9uOpm21DqX
+ 2cavH9DsopJFxHmz518GX7AOejraE2dw00Ly+gcqnjNxEU861osit10n9wkODkePQq2J
+ VOJQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=eQcqgkViU39lFjlil3M8Svf5iGtzpDKWpUSwhlO3OFw=;
- b=UZCjZhLd3lna9cD6mTw6xyAgK1Ej7RvHCj/CuChBE23C4lzwyd3KmywUVBNUxeNQ7v
- fC4H34y35o9BmUVn1AQ+mSshEWlsLJHI5WFHOKJsCxdzGYLL/BPpMNNg2CQ0jSQBs3Qg
- H5HO/I5xgnr9kfVlwRay6+SZqQp6GNt0xuEqNKvLS8oGomqRVvZXDoP1JSn881ZDqh71
- 3PB72nS6SRi2FjDHDGdx5T1xdbCp25peBPjmNnBBz+ySlLn6Swd+4hxC5aAXGGaHoWn0
- 6mZ5vOsxR/9QL2JWW39kwXPq/SIcX3fi8XpM8mdyg+kaXTQsoXP7r++fRShnAjyVM+Pp
- Um5g==
-X-Gm-Message-State: APjAAAVuAs/HNwsowD4++OnhsL7S+KjGm4LjqnTZokJnGrn0PMTqKmCz
- PGJXZO/pWJmMajGNhsYiqC8Ypg==
-X-Google-Smtp-Source: APXvYqyiSUshBCv3Qv8uDRoW17fIP4H2R6mRVwcxyZZdx7O0GxR1GLWG+PqB5n8Xzz5Ldks8Zgr+lA==
-X-Received: by 2002:a0c:8910:: with SMTP id 16mr19279920qvp.55.1566412330418; 
- Wed, 21 Aug 2019 11:32:10 -0700 (PDT)
+ bh=bQvsgscqpy4gJx0RSAZHmPdNixt0ATCDS0WU9XTwyb8=;
+ b=JLAxb5NYDLIczaFT6FL0WENwA+0Vuqt6gdjh7F0eEU7IdLF8JGh+6yvbXHnprmuUlo
+ 80/XZ2W1sNJN90+Qt00rpFCXpLPL1LdAhaAC3VMhs6mx2soofixED+CaaEs6SHI0jBlb
+ xnD6IQXX+iZDifW+63IXVO8LIrr3DEsV0GvOI9liDnaOV1vZdOzbb8hKYrlciL82+uWc
+ WeJdhoPkGDGfrKxACGt833T780ta9QghYUOfH96QetEYaCwFlcbse3f60QebY6JjwXix
+ lb6PCATMTBOzPynFREzP+g61R5+YI56y61mNMSNFxnydBYrvuraelvHtJevAks0zII01
+ kH9g==
+X-Gm-Message-State: APjAAAU4/ZWbcJ45guus18bkm0ufBQpJJQjwUELptGFSUbf8qhKtvbwZ
+ uGiVauOAkJDzGJFmn58fqD5DMg==
+X-Google-Smtp-Source: APXvYqzfJ8BXdrEH0K8CKkw4fBwWFDafodl10SDkUCPN4bBIEhI2MWQI353Halx8ux+skSlbJLzXYQ==
+X-Received: by 2002:ae9:ec1a:: with SMTP id h26mr17120619qkg.80.1566412331857; 
+ Wed, 21 Aug 2019 11:32:11 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id q13sm10443332qkm.120.2019.08.21.11.32.09
+ by smtp.gmail.com with ESMTPSA id q13sm10443332qkm.120.2019.08.21.11.32.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Aug 2019 11:32:09 -0700 (PDT)
+ Wed, 21 Aug 2019 11:32:11 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -65,24 +65,24 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com
-Subject: [PATCH v3 03/17] arm64,
- hibernate: remove gotos in create_safe_exec_page
-Date: Wed, 21 Aug 2019 14:31:50 -0400
-Message-Id: <20190821183204.23576-4-pasha.tatashin@soleen.com>
+Subject: [PATCH v3 04/17] arm64,
+ hibernate: rename dst to page in create_safe_exec_page
+Date: Wed, 21 Aug 2019 14:31:51 -0400
+Message-Id: <20190821183204.23576-5-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190821183204.23576-1-pasha.tatashin@soleen.com>
 References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_113211_588999_8E84540C 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20190821_113212_651491_DD3F1494 
+X-CRM114-Status: GOOD (  10.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,86 +109,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Usually, gotos are used to handle cleanup after exception, but
-in case of create_safe_exec_page there are no clean-ups. So,
-simply return the errors directly.
+create_safe_exec_page() allocates a safe page and maps it at a
+specific location, also this function returns the physical address
+of newly allocated page.
+
+The destination VA, and PA are specified in arguments: dst_addr,
+phys_dst_addr
+
+However, within the function it uses "dst" which has unsigned long
+type, but is actually a pointers in the current virtual space. This
+is confusing to read.
+
+Rename dst to more appropriate page (page that is created), and also
+change its time to "void *"
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/kernel/hibernate.c | 28 +++++++++-------------------
- 1 file changed, 9 insertions(+), 19 deletions(-)
+ arch/arm64/kernel/hibernate.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-index 4bb4d17a6a7c..c8211108ec11 100644
+index c8211108ec11..ee34a06d8a35 100644
 --- a/arch/arm64/kernel/hibernate.c
 +++ b/arch/arm64/kernel/hibernate.c
-@@ -198,17 +198,14 @@ static int create_safe_exec_page(void *src_start, size_t length,
+@@ -198,17 +198,17 @@ static int create_safe_exec_page(void *src_start, size_t length,
  				 unsigned long dst_addr,
  				 phys_addr_t *phys_dst_addr)
  {
--	int rc = 0;
++	void *page = (void *)get_safe_page(GFP_ATOMIC);
  	pgd_t *pgdp;
  	pud_t *pudp;
  	pmd_t *pmdp;
  	pte_t *ptep;
- 	unsigned long dst = get_safe_page(GFP_ATOMIC);
+-	unsigned long dst = get_safe_page(GFP_ATOMIC);
  
--	if (!dst) {
--		rc = -ENOMEM;
--		goto out;
--	}
-+	if (!dst)
-+		return -ENOMEM;
+-	if (!dst)
++	if (!page)
+ 		return -ENOMEM;
  
- 	memcpy((void *)dst, src_start, length);
- 	__flush_icache_range(dst, dst + length);
-@@ -216,30 +213,24 @@ static int create_safe_exec_page(void *src_start, size_t length,
+-	memcpy((void *)dst, src_start, length);
+-	__flush_icache_range(dst, dst + length);
++	memcpy(page, src_start, length);
++	__flush_icache_range((unsigned long)page, (unsigned long)page + length);
+ 
  	pgdp = pgd_offset_raw((void *)get_safe_page(GFP_ATOMIC), dst_addr);
  	if (pgd_none(READ_ONCE(*pgdp))) {
- 		pudp = (void *)get_safe_page(GFP_ATOMIC);
--		if (!pudp) {
--			rc = -ENOMEM;
--			goto out;
--		}
-+		if (!pudp)
-+			return -ENOMEM;
- 		pgd_populate(&init_mm, pgdp, pudp);
+@@ -235,7 +235,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
  	}
  
- 	pudp = pud_offset(pgdp, dst_addr);
- 	if (pud_none(READ_ONCE(*pudp))) {
- 		pmdp = (void *)get_safe_page(GFP_ATOMIC);
--		if (!pmdp) {
--			rc = -ENOMEM;
--			goto out;
--		}
-+		if (!pmdp)
-+			return -ENOMEM;
- 		pud_populate(&init_mm, pudp, pmdp);
- 	}
+ 	ptep = pte_offset_kernel(pmdp, dst_addr);
+-	set_pte(ptep, pfn_pte(virt_to_pfn(dst), PAGE_KERNEL_EXEC));
++	set_pte(ptep, pfn_pte(virt_to_pfn(page), PAGE_KERNEL_EXEC));
  
- 	pmdp = pmd_offset(pudp, dst_addr);
- 	if (pmd_none(READ_ONCE(*pmdp))) {
- 		ptep = (void *)get_safe_page(GFP_ATOMIC);
--		if (!ptep) {
--			rc = -ENOMEM;
--			goto out;
--		}
-+		if (!ptep)
-+			return -ENOMEM;
- 		pmd_populate_kernel(&init_mm, pmdp, ptep);
- 	}
+ 	/*
+ 	 * Load our new page tables. A strict BBM approach requires that we
+@@ -254,7 +254,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+ 	write_sysreg(phys_to_ttbr(virt_to_phys(pgdp)), ttbr0_el1);
+ 	isb();
  
-@@ -265,8 +256,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+-	*phys_dst_addr = virt_to_phys((void *)dst);
++	*phys_dst_addr = virt_to_phys(page);
  
- 	*phys_dst_addr = virt_to_phys((void *)dst);
- 
--out:
--	return rc;
-+	return 0;
+ 	return 0;
  }
- 
- #define dcache_clean_range(start, end)	__flush_dcache_area(start, (end - start))
 -- 
 2.23.0
 
