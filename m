@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA6D797A4E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 15:07:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DDC697A50
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 21 Aug 2019 15:07:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2sUcLjJiT72YWASXV1adS7coXwu6LKUzjLiBRxbYxew=; b=lLazkRV81XDLM2
-	XefMN2VcZF2pw6kpgq6/u8pr7PzdVeoPizOLmAUO24YDYua+gN8k7EJF5+eOb6tHJrVDOnzAg6ef+
-	Dk6osbwlJli5GrIlBfhizTsei+npXK95/zGTX7F02XaHV+yYgdySGOB+XjNilOjXl6068YCR47TQo
-	SUWpfExjhOTgOlqjojpZAPMVHFFGnSWGFch8zVvTiUuHp1em1U0KjaZd3iM61PVnEfezPDn4VpycK
-	iGFbrInfIrq8Z9e0r8Fg2TMvhqgtgIdDTbnTv3oiMaRxySh0B+Sr1uxRLWXdUHbqWJypcILjKmPgP
-	GHKeXaOOcubfBFjOM/Qg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kiZq6E2d9GyrgegSEna/nvxTNAG2Ily6aVroPzVnHII=; b=Svu9uF4Gy8CuAJ
+	Q1CcBODav4jfuq+R5BcFBzxp19FElioSAjUzWF0JysS1sqzUPXDHhYEejEW4F7l1L8kjXNHBUgHSP
+	s/5VXnjKFizQ0W9H1JHCTOnLtPRmbu1laNuVq5IUTl3uI31MWmXCAQmhXmKF3QmgOPc0ro56V45AR
+	HOyywqw4s39yQNPn60MyUOcGMxMN/oFMFouQFyB39Cf7XWR03oudFCwobMxIUD22x1jS0OTyX5hmp
+	pcSIIzmB7017bMhaVJF6pZFnlorTV0ImM7lvElqUEM0CC6ALwOlGaiL17qBAO/BwWCQJPosaMlkln
+	qGWlhACvgshpiy2l2h+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0QKa-0000Rt-Oy; Wed, 21 Aug 2019 13:07:17 +0000
+	id 1i0QKy-0000fV-5D; Wed, 21 Aug 2019 13:07:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0QKK-0000Qp-4D
- for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 13:07:02 +0000
+ id 1i0QKM-0000R8-79
+ for linux-arm-kernel@lists.infradead.org; Wed, 21 Aug 2019 13:07:03 +0000
 Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AB8BA22DD3;
- Wed, 21 Aug 2019 13:06:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 71B30233A1;
+ Wed, 21 Aug 2019 13:07:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566392819;
- bh=t4sdagesTl8eI/FplVlttPAz6pa/0/Zv52KvZADKVvc=;
- h=From:To:Cc:Subject:Date:From;
- b=TfrPw7cU6UddY+1gMqkIU1J+dedALQUjwxGne7BGpISJ1DiuQTlB9ACfEsbMhDcWs
- PunVHG7n6bItBbEHz2lhJga/FeQTKyyI3X0uDyVQXZXfxYug0QVM6DttgevLa98PGr
- Rkb//EZSOWoOq6CJPCaCc+Lg+GZReyh+8brGc8z4=
+ s=default; t=1566392821;
+ bh=BBzaWBopHO0dXbT/Y5GDnPjB6CfdvBFxbOeeyx6S4ZQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=GGA0PFtgjnfGGkKB0QnGIWKutIGHg+UW6n7Vpy7rybyGge9TyUJLVB1C5MJtMvxNc
+ 1qx/u+NBFt6FzGOLWRVYI5CMxt0kXOlmc0Uf0iEeI7dhY08FJu82fEekiiwoJ8hhWV
+ B+Nlxkgtsz4JHwE4tdXDl3Reob+rWtS/l3ibNxzw=
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
  lgirdwood@gmail.com, broonie@kernel.org
-Subject: [PATCH v2 0/4] ASoC: sun4i-i2s: Number of fixes and TDM Support
-Date: Wed, 21 Aug 2019 15:06:52 +0200
-Message-Id: <cover.6022d5fe61fb8a11565a71bee24d5280b0259c63.1566392800.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH v2 1/4] ASoC: sun4i-i2s: Use the physical / slot width for the
+ clocks
+Date: Wed, 21 Aug 2019 15:06:53 +0200
+Message-Id: <41a359d9885f397e066816961e5e3236afcbe0a1.1566392800.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <cover.6022d5fe61fb8a11565a71bee24d5280b0259c63.1566392800.git-series.maxime.ripard@bootlin.com>
+References: <cover.6022d5fe61fb8a11565a71bee24d5280b0259c63.1566392800.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_060700_192199_EE4A3811 
-X-CRM114-Status: GOOD (  10.21  )
+X-CRM114-CacheID: sfid-20190821_060702_311542_4EE0DA5B 
+X-CRM114-Status: GOOD (  15.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,32 +87,77 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-Hi,
+The clock dividers function has been using the word size to compute the
+clock rate at which it's supposed to be running, but the proper formula
+would be to use the physical width and / or slot width in TDM.
 
-This series aims at fixing a number of issues in the current i2s driver,
-mostly related to the i2s master support and the A83t support. It also uses
-that occasion to cleanup a few things and simplify the driver. Finally, it
-builds on those fixes and cleanups to introduce TDM and DSP formats support.
+It doesn't make any difference at the moment since all the formats
+supported have the same sample width and physical width, but it's not going
+to last forever.
 
-Let me know what you think,
-Maxime
+Fixes: 7d2993811a1e ("ASoC: sun4i-i2s: Add support for H3")
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+---
+ sound/soc/sunxi/sun4i-i2s.c | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
 
-Changes from v1:
-  - Removed patches applied
-  - Refactor a bit the call to sun4i_i2s_set_clk_rate
-  - Fix build issue
-  - Add an extra patch to cleanup sun4i_i2s_hw_params
-
-Maxime Ripard (4):
-  ASoC: sun4i-i2s: Use the physical / slot width for the clocks
-  ASoC: sun4i-i2s: Use the actual format width instead of an hardcoded one
-  ASoC: sun4i-i2s: Replace call to params_width by local variable
-  ASoC: sun4i-i2s: Add support for DSP formats
-
- sound/soc/sunxi/sun4i-i2s.c | 58 ++++++++++++++++++++++++++++----------
- 1 file changed, 43 insertions(+), 15 deletions(-)
-
-base-commit: 137befe19f310400a8b20fd8a4ce8c4141aafde0
+diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+index 8326b8cfa569..cdc3fa60ff33 100644
+--- a/sound/soc/sunxi/sun4i-i2s.c
++++ b/sound/soc/sunxi/sun4i-i2s.c
+@@ -290,7 +290,7 @@ static bool sun4i_i2s_oversample_is_valid(unsigned int oversample)
+ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+ 				  unsigned int rate,
+ 				  unsigned int slots,
+-				  unsigned int word_size)
++				  unsigned int slot_width)
+ {
+ 	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
+ 	unsigned int oversample_rate, clk_rate, bclk_parent_rate;
+@@ -337,7 +337,7 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+ 
+ 	bclk_parent_rate = i2s->variant->get_bclk_parent_rate(i2s);
+ 	bclk_div = sun4i_i2s_get_bclk_div(i2s, bclk_parent_rate,
+-					  rate, slots, word_size);
++					  rate, slots, slot_width);
+ 	if (bclk_div < 0) {
+ 		dev_err(dai->dev, "Unsupported BCLK divider: %d\n", bclk_div);
+ 		return -EINVAL;
+@@ -458,6 +458,7 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
+ {
+ 	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
+ 	unsigned int word_size = params_width(params);
++	unsigned int slot_width = params_physical_width(params);
+ 	unsigned int channels = params_channels(params);
+ 	unsigned int slots = channels;
+ 	int ret, sr, wss;
+@@ -467,7 +468,7 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
+ 		slots = i2s->slots;
+ 
+ 	if (i2s->slot_width)
+-		word_size = i2s->slot_width;
++		slot_width = i2s->slot_width;
+ 
+ 	ret = i2s->variant->set_chan_cfg(i2s, params);
+ 	if (ret < 0) {
+@@ -490,14 +491,15 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
+ 	if (sr < 0)
+ 		return -EINVAL;
+ 
+-	wss = i2s->variant->get_wss(i2s, word_size);
++	wss = i2s->variant->get_wss(i2s, slot_width);
+ 	if (wss < 0)
+ 		return -EINVAL;
+ 
+ 	regmap_field_write(i2s->field_fmt_wss, wss);
+ 	regmap_field_write(i2s->field_fmt_sr, sr);
+ 
+-	return sun4i_i2s_set_clk_rate(dai, params_rate(params), slots, word_size);
++	return sun4i_i2s_set_clk_rate(dai, params_rate(params),
++				      slots, slot_width);
+ }
+ 
+ static int sun4i_i2s_set_soc_fmt(const struct sun4i_i2s *i2s,
 -- 
 git-series 0.9.1
 
