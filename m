@@ -2,58 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 225E8990D7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 12:30:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBAD1990DD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 12:32:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tfdks3tidNviXaC00ydgoVJ7bq2B2mXmf/EAw4uOQZI=; b=c0MQ5l/DETdWcu
-	el7EglFQbnW34TRbQ7IjqCsMRULXT42tnHPHDcqi4PMVKA9vFIf9oZhrr9F3pI/vKOy8To5qAQJGP
-	NVHnicgFyAEr2lj3UFLb5u0LKDkyBypTCOXygj64J8VpW9ElIYiqe0HJyJlV2jlSjYH0fCvsvAP5v
-	VIFe+hTzvYuRbPQ0GlHvF305RbUPpYxKzl0vePaEFLFJMEAuvt9QLOZKlct6g2J1QrHqW2aNcRWvl
-	kX55Eyir2fqAZsx+Xwj8cXP3iCgaPbDNLH7OD4t9xU1GoQI6h99yLw4mWRHg7Ek+ECLo3RVMk8g4e
-	84W2hUZ+uCYqq6gOwQ8g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ap4G7Z1V+VtWy2WLgm5uj4HODmPfK+eg9j/S5DFUpoU=; b=SKPfE5QqSvAJm6
+	gPJwWrR7ZtLoglCMcmqS9XHjMb6e72NC/Ujd6kzI3thBfebpKYXSGHhDEtLj3QrBTGkdqE6nOUPfC
+	HpUwstjvisVNMg3Q0vR7M05kgC7NODm7Khj+cRai70Nl/ZGU+ARu6M60oo4F6GTzIgXMArrpYORPF
+	7W+oiMRVmdvcLoZN6jBKPDOgFfY6bRG1wYTBQiJN5VJd6naU8z5FU7rfFheqqMMfCPuVeF7yYMBxc
+	R47/GahvDPmlULRBieVjmQVPLrIpY2bODl4uR6TO3+piHJNJ3ZPD/JxNQIfPUHhxmYOZOCMO3JFAH
+	OX1QjOuwoYNiKBAcoLlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0kMM-0000wE-Pf; Thu, 22 Aug 2019 10:30:27 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0kLr-0000vP-4T
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 10:29:57 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id B334BCD1D3E5D29EB50F;
- Thu, 22 Aug 2019 18:29:50 +0800 (CST)
-Received: from localhost (10.202.226.61) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Thu, 22 Aug 2019
- 18:29:44 +0800
-Date: Thu, 22 Aug 2019 11:29:30 +0100
-From: Jonathan Cameron <jonathan.cameron@huawei.com>
-To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH v3 04/10] KVM: Implement kvm_put_guest()
-Message-ID: <20190822112930.000052db@huawei.com>
-In-Reply-To: <20190821153656.33429-5-steven.price@arm.com>
-References: <20190821153656.33429-1-steven.price@arm.com>
- <20190821153656.33429-5-steven.price@arm.com>
-Organization: Huawei
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-w64-mingw32)
+	id 1i0kO9-0002Za-Ox; Thu, 22 Aug 2019 10:32:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0kNu-0002YR-UY
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 10:32:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AEE8915AD;
+ Thu, 22 Aug 2019 03:32:01 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 188B93F246; Thu, 22 Aug 2019 03:31:58 -0700 (PDT)
+Subject: Re: [PATCH v2 00/20] Initial support for Marvell MMP3 SoC
+To: Lubomir Rintel <lkundrak@v3.sk>, Olof Johansson <olof@lixom.net>
+References: <20190822092643.593488-1-lkundrak@v3.sk>
+From: Marc Zyngier <maz@kernel.org>
+Organization: Approximate
+Message-ID: <244fdc87-0fe5-be79-d9cd-2395d0ac3f57@kernel.org>
+Date: Thu, 22 Aug 2019 11:31:57 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Originating-IP: [10.202.226.61]
-X-CFilter-Loop: Reflected
+In-Reply-To: <20190822092643.593488-1-lkundrak@v3.sk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_032955_334690_3ABE3F58 
-X-CRM114-Status: GOOD (  12.18  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190822_033203_031936_501F80EB 
+X-CRM114-Status: GOOD (  17.97  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,73 +62,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Radim =?UTF-8?Q?Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
- Marc Zyngier <maz@kernel.org>, Suzuki K
- Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Russell
- King <linux@armlinux.org.uk>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Paolo
- Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
+ linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 21 Aug 2019 16:36:50 +0100
-Steven Price <steven.price@arm.com> wrote:
-
-> kvm_put_guest() is analogous to put_user() - it writes a single value to
-> the guest physical address. The implementation is built upon put_user()
-> and so it has the same single copy atomic properties.
+On 22/08/2019 10:26, Lubomir Rintel wrote:
+> Hi, 
 > 
-> Signed-off-by: Steven Price <steven.price@arm.com>
-> ---
->  include/linux/kvm_host.h | 24 ++++++++++++++++++++++++
->  1 file changed, 24 insertions(+)
+> this is a second spin of a patch set that adds support for the Marvell
+> MMP3 processor. MMP3 is used in OLPC XO-4 laptops, Panasonic Toughpad
+> FZ-A1 tablet and Dell Wyse 3020 Tx0D thin clients. 
 > 
-> diff --git a/include/linux/kvm_host.h b/include/linux/kvm_host.h
-> index fcb46b3374c6..e154a1897e20 100644
-> --- a/include/linux/kvm_host.h
-> +++ b/include/linux/kvm_host.h
-> @@ -746,6 +746,30 @@ int kvm_write_guest_offset_cached(struct kvm *kvm, struct gfn_to_hva_cache *ghc,
->  				  unsigned long len);
->  int kvm_gfn_to_hva_cache_init(struct kvm *kvm, struct gfn_to_hva_cache *ghc,
->  			      gpa_t gpa, unsigned long len);
-> +
-> +#define __kvm_put_guest(kvm, gfn, offset, value, type)			\
-> +({									\
-> +	unsigned long __addr = gfn_to_hva(kvm, gfn);			\
-> +	type __user *__uaddr = (type __user *)(__addr + offset);	\
-> +	int __ret = 0;							\
+> Compared to v1, there's a handful of fixes in response to reviews. Patch
+> 02/20 is new. Details in individual patches.
+>  
+> Apart from the adjustments in mach-mmp/, the patch makes necessary 
+> changes to the irqchip driver and adds an USB2 PHY driver. The latter 
+> has a dependency on the mach-mmp/ changes, so it can't be submitted 
+> separately.
+>  
+> The patch set has been tested to work on Wyse Tx0D and not ruin MMP2 
+> support on XO-1.75. 
 
-Why initialize __ret?
+How do you want this series to be merged? I'm happy to take the irqchip
+related patches as well as the corresponding DT change (once reviewed)
+through my tree.
 
-> +									\
-> +	if (kvm_is_error_hva(__addr))					\
-> +		__ret = -EFAULT;					\
-> +	else								\
-> +		__ret = put_user(value, __uaddr);			\
-> +	if (!__ret)							\
-> +		mark_page_dirty(kvm, gfn);				\
-> +	__ret;								\
-> +})
-> +
-> +#define kvm_put_guest(kvm, gpa, value, type)				\
-> +({									\
-> +	gpa_t __gpa = gpa;						\
-> +	struct kvm *__kvm = kvm;					\
-> +	__kvm_put_guest(__kvm, __gpa >> PAGE_SHIFT,			\
-> +			offset_in_page(__gpa), (value), type);		\
-> +})
-> +
->  int kvm_clear_guest_page(struct kvm *kvm, gfn_t gfn, int offset, int len);
->  int kvm_clear_guest(struct kvm *kvm, gpa_t gpa, unsigned long len);
->  struct kvm_memory_slot *gfn_to_memslot(struct kvm *kvm, gfn_t gfn);
+Thanks,
 
-
+	M.
+-- 
+Jazz is not dead, it just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
