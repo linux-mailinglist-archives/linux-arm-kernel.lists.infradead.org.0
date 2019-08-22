@@ -2,137 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80C90988C4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 02:55:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDAEE988EA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 03:22:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=IqmWr6hIdGHXhaRWrykWDHcQit7VU03DhqxZ94kPvVA=; b=ajB8tRSbyOTuPR
-	NvOgcQcNexlnZnZXqg9v4IAzCNCPckvn8cZbUbfKQfQVtgEWWULaN32QXlImrIG+1K/G48ureSE6i
-	FrsqcZV3zxvr7pqtST8Q57l++hrLSlFRUpUiSghkiW4yPrZRc7b5igjBtgGEUQQoUZrNKYucAXTzW
-	Q8ATmTtlldT0BHc9IoV5Du3Woa6is30gxbszhD5zU3t2bW008PQHmfR5IojcJf+Nh2hFq6g0wLHvi
-	DqCcBSrxwXYP3DuVaZaS2Iq1y+PUJo/FfgMBSm398pkA96P2+d8noja9yD3QOp9mWzmDDnyLlCExv
-	WIPocRxP6yjxeZMwZI2Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UP+wttbe8n0gttRpSvM9JjD4JiwonwshIJ7mjBF0gpo=; b=aG5CM7ZVF6A145
+	fZxEeAxmb5fdg3W/t8uZBH32J/gyt/FV2oRj2IO8EQgFeqzp4jOUcYtruBAgzK6uEhrH4dD2lb+5Y
+	nxMRCuGdth2OSF7y9vgJiDRBx/7uVvP4MYsrau9ylrzypTiqNCtHsNHzE5pVQGfjC9dgkJgueym0U
+	vrDdkKhgzEzXsRl1oi825/P+HMa9g5RmhYvwKAu5xfTH/J84tSlM2c3fwWzCkMMxPlEjdhMPbip3p
+	QWk2xCaanjDDjuvgpRsNVsCUPOvMV2yQvq4M34LdhnFwotTrTndNoAbowT2qRhtgPaQ4ReF/516iF
+	K/sbCoDV1Caphzokrffg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0bNV-0004xr-AW; Thu, 22 Aug 2019 00:55:01 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1i0bnt-00007K-Ue; Thu, 22 Aug 2019 01:22:17 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0bNM-0004vv-BF
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 00:54:54 +0000
-Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20190822005444epoutp0407c47647f55d542303894bda5a7ef7e2~9GJdyMSKQ0305703057epoutp043
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 00:54:44 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20190822005444epoutp0407c47647f55d542303894bda5a7ef7e2~9GJdyMSKQ0305703057epoutp043
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1566435284;
- bh=zkZXU4UgR2xVWaur+CPkoWa/h3dr00YRZlhWS9MWMAc=;
- h=From:To:Cc:Subject:Date:References:From;
- b=LgsqbT+hYIIBvCF5mcNpSLjX71VwNOW3ECNKiy2AW9M3uUPWM77Adx70KiCIl9S6g
- 8BCo8Y4qWPQ92CXApOiUFoMXdJsXwcahI1N312DIPZXn1iuJDjZsyN95Wn0XJ9GJwM
- pcZJtA6x5sXzKBtI4w7edPjs3L/3X5MzcmqT9uaY=
-Received: from epsnrtp5.localdomain (unknown [182.195.42.166]) by
- epcas2p1.samsung.com (KnoxPortal) with ESMTP id
- 20190822005443epcas2p12f0b23d4dfaf0bb9b991b29ddfea4ff8~9GJdH1To80306303063epcas2p1A;
- Thu, 22 Aug 2019 00:54:43 +0000 (GMT)
-Received: from epsmges2p1.samsung.com (unknown [182.195.40.186]) by
- epsnrtp5.localdomain (Postfix) with ESMTP id 46DQzP0PDKzMqYkc; Thu, 22 Aug
- 2019 00:54:41 +0000 (GMT)
-Received: from epcas2p4.samsung.com ( [182.195.41.56]) by
- epsmges2p1.samsung.com (Symantec Messaging Gateway) with SMTP id
- 20.1F.04156.FC7ED5D5; Thu, 22 Aug 2019 09:54:39 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas2p3.samsung.com (KnoxPortal) with ESMTPA id
- 20190822005438epcas2p337aba06b328cdcdd1549395f0bbcfdbc~9GJY5qmwx3233232332epcas2p3f;
- Thu, 22 Aug 2019 00:54:38 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190822005438epsmtrp223bcbfc1f01624cd3dc41a63517cface~9GJY4itJ50123901239epsmtrp2Q;
- Thu, 22 Aug 2019 00:54:38 +0000 (GMT)
-X-AuditID: b6c32a45-df7ff7000000103c-ab-5d5de7cf581d
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 69.D2.03706.EC7ED5D5; Thu, 22 Aug 2019 09:54:38 +0900 (KST)
-Received: from KORDO035251 (unknown [12.36.165.204]) by epsmtip2.samsung.com
- (KnoxPortal) with ESMTPA id
- 20190822005438epsmtip27b8ec42598e05dbe2605a805a7b78b25~9GJYp2w_l0938509385epsmtip2B;
- Thu, 22 Aug 2019 00:54:38 +0000 (GMT)
-From: "boojin.kim" <boojin.kim@samsung.com>
-To: <axboe@kernel.dk>, <linux-block@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH 5/9] block: support diskcipher
-Date: Thu, 22 Aug 2019 09:54:38 +0900
-Message-ID: <017901d55884$2cbc8f60$8635ae20$@samsung.com>
+ id 1i0bnk-00005v-JB; Thu, 22 Aug 2019 01:22:10 +0000
+X-UUID: 648c6a03e0f140aeb2d83a04ceaf26f6-20190821
+X-UUID: 648c6a03e0f140aeb2d83a04ceaf26f6-20190821
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 316571614; Wed, 21 Aug 2019 17:22:01 -0800
+Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 21 Aug 2019 18:21:58 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 22 Aug 2019 09:22:02 +0800
+Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 22 Aug 2019 09:21:58 +0800
+Message-ID: <1566436922.27117.0.camel@mtksdccf07>
+Subject: Re: [PATCH v4] kasan: add memory corruption identification for
+ software tag-based mode
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Date: Thu, 22 Aug 2019 09:22:02 +0800
+In-Reply-To: <3318f9d7-a760-3cc8-b700-f06108ae745f@virtuozzo.com>
+References: <20190806054340.16305-1-walter-zh.wu@mediatek.com>
+ <1566279478.9993.21.camel@mtksdccf07>
+ <3318f9d7-a760-3cc8-b700-f06108ae745f@virtuozzo.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 14.0
-Content-Language: ko
-Thread-Index: AdVYhCtkBjnnAwgAQWGl61cO3+ZKhw==
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Tf0wTdxTf9+56V5TOszL9rllcvQ0TNdS2W9kXIsuS6bxE/sCZjcRZ8QKX
- QmyvTa9F3JIpTiogEd3iIi06f7KVTrtRqIiUOUA7N1nNWHEyx2KAbZappJ0E2BxrOcz47/M+
- 733e5728PDmu9FAqeZng4O0CZ2bIBUSwZxXKivxuNGp9NTR69Fc1gfzfXsOR75d6En13tA9D
- jZH9BAo98MjQ+c5/cHQw9hwa8btx9NO0S4bqh8dwFIl8QaGW4QEZCg2uQb8OTWGo4cQdEv1w
- eiOKnZggUGfoOoH6OxpJ1DtTD9CxSBeGXF8+AqiqbopC4fOFrz3LtnpvY+z+wC42eCWT7e9z
- si3NNSR7Z6CTZANn97CXTyYwdt+Nqzj7sCtKsodamwGbaFlekL7VvK6U50p4u5oXiq0lZYIp
- j9m0pej1IkO2Vpely0GvMGqBs/B5zPr8gqw3yszJ3Rl1OWd2JqkCThSZta+us1udDl5dahUd
- eQxvKzHbdDqbRuQsolMwaYqtllydVqs3JCt3mEsHPmigbKNkxf3pSXIvuCSrBWlySL8M6891
- 4LVggVxJtwPYuS9OSkEcwMdBPyUFEwCOzNzFn0guBD1ziRCAp9p6ZVJwD8Daq0dmG5P0GhgI
- N4MUzqDfhp/cmiFSRTgdouChtsrZxBJaD6tqD2IpTNCZ8MdgYtZCQedAX6xKJuHF8HrDCJHC
- OP08vHi/cW4MNWzvGwMSnwE9NS5cMtPA/s+HQMoM0pVy6ImOAkmwHp76rAmT8BIYC7dSElbB
- xIMQKeE9MNp0hpLEdQDemHbNFb0E3b8dSDaSJ91WQX/H2hSE9Auwd3Butqdhdc9jSqIVsNql
- lIQvwuPxfkyiVXC87n2JZuHPg23gMFjhnreke96S7nmLuf+3PQmIZrCUt4kWEy/qbbr5124B
- s4+xekM7OPZ9fjeg5YBJVxzOMhqVMq5c3G3pBlCOMxmKisatRqWihNv9Lm+3FtmdZl7sBobk
- DY7gqmeKrck3ExxFOoM+O1ubY0CGbD1ilikCC29vU9ImzsHv5Hkbb3+iw+Rpqr3AEz/rzf3j
- 4/GxycJtkYEP0y487Ap/0+QNe24lKkSDb/zmgZ18+cjCtMylny7fBePvLK56j5q4sjL3zS1O
- IXN0yiv4e/5Fmrei3uHqXj93eVNg0VddlT4m8Hd+eqyQuftUlNbcO527aMi+wnTGcnTDyo1f
- T577c3Ng+7Kyyc03M659xBBiKadbjdtF7j9ZtnA9LgQAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrDIsWRmVeSWpSXmKPExsWy7bCSvO6557GxBj+36Ft8/dLBYrH+1DFm
- i9V3+9ksTk89y2Qx53wLi8Xed7NZLdbu+cNs0f1KxuLJ+lnMFjd+tbFa9D9+zWxx/vwGdotN
- j6+xWuy9pW1x/95PJouZ8+6wWVxa5G7xat43Fos9e0+yWFzeNYfN4sj/fkaLGef3MVm0bfzK
- aNHa85Pd4vjacAdJjy0rbzJ5tGwu99h2QNXj8tlSj02rOtk87lzbw+axeUm9x+4Fn5k8ms4c
- ZfZ4v+8qm0ffllWMHp83yQXwRHHZpKTmZJalFunbJXBlXGueyV7wlK3i7a8fbA2MO1m7GDk5
- JARMJNZtm83excjFISSwm1HicesPqISUxNb2PcwQtrDE/ZYjrBBFzxklWi89YgdJsAloS2w+
- vooRxBYRiJD4vKmZDaSIWeAyu8Svvg9sIAlhASOJ1q5uJhCbRUBV4sq2z2BTeQUsJVa/amWF
- sAUlTs58wtLFyAHUrCfRthFsJrOAvMT2t3OgjlCQ2HH2NVRcRGJ2ZxszxF49ictr7jFOYBSc
- hWTSLIRJs5BMmoWkewEjyypGydSC4tz03GLDAsO81HK94sTc4tK8dL3k/NxNjOA0oKW5g/Hy
- kvhDjAIcjEo8vBN0Y2OFWBPLiitzDzFKcDArifBWzImKFeJNSaysSi3Kjy8qzUktPsQozcGi
- JM77NO9YpJBAemJJanZqakFqEUyWiYNTqoHR/3xjomm+UuNza36XT/syBRcuDdj2pvvHHj7v
- Co5+z/JqscvTsoNWmN98Ul6ye8f1Q09rHkpuep167iuXgXjuERnen0//OhpvrD5pwGOoorWs
- Qv6H8ONV3yZvv3Rx9qGtTFMtWAWc9u6duYqxsO17cllw0/bX93kWxe++rFG1xkdnd3HZOi0X
- JZbijERDLeai4kQAbRpSev8CAAA=
-X-CMS-MailID: 20190822005438epcas2p337aba06b328cdcdd1549395f0bbcfdbc
-X-Msg-Generator: CA
-X-Sendblock-Type: AUTO_CONFIDENTIAL
-CMS-TYPE: 102P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20190822005438epcas2p337aba06b328cdcdd1549395f0bbcfdbc
-References: <CGME20190822005438epcas2p337aba06b328cdcdd1549395f0bbcfdbc@epcas2p3.samsung.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_175452_728166_02AFC940 
-X-CRM114-Status: GOOD (  12.17  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190821_182208_639390_FE44CE4A 
+X-CRM114-Status: GOOD (  19.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,45 +73,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: 'Ulf
- Hansson' <ulf.hansson@linaro.org>, 'Mike Snitzer' <snitzer@redhat.com>,
- dm-devel@redhat.com, 'Andreas Dilger' <adilger.kernel@dilger.ca>,
- 'Alasdair Kergon' <agk@redhat.com>, 'Eric Biggers' <ebiggers@kernel.org>,
- linux-samsung-soc@vger.kernel.org, 'Herbert Xu' <herbert@gondor.apana.org.au>,
- 'Krzysztof Kozlowski' <krzk@kernel.org>,
- 'Jaehoon Chung' <jh80.chung@samsung.com>, 'Kukjin Kim' <kgene@kernel.org>,
- linux-ext4@vger.kernel.org, 'Chao Yu' <chao@kernel.org>,
- linux-fscrypt@vger.kernel.org, 'Jaegeuk Kim' <jaegeuk@kernel.org>,
- linux-arm-kernel@lists.infradead.org, 'Jens Axboe' <axboe@kernel.dk>,
- 'Theodore Ts'o' <tytso@mit.edu>, linux-mmc@vger.kernel.org,
- linux-f2fs-devel@lists.sourceforge.net, linux-crypto@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, "'David S. Miller'" <davem@davemloft.net>
+Cc: wsd_upstream@mediatek.com, Vasily Gorbik <gor@linux.ibm.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-mm@kvack.org,
+ Andrey Konovalov <andreyknvl@google.com>, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Miles Chen <miles.chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Andrew
+ Morton <akpm@linux-foundation.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/21/19 21:09 AM, Jens Axboe wrote:
-> This isn't going to happen. With this, and the inline encryption
-> proposed by Google, we'll bloat the bio even more. At least the Google
-> approach didn't include bio iter changes as well.
+On Wed, 2019-08-21 at 20:52 +0300, Andrey Ryabinin wrote:
+> 
+> On 8/20/19 8:37 AM, Walter Wu wrote:
+> > On Tue, 2019-08-06 at 13:43 +0800, Walter Wu wrote:
+> >> This patch adds memory corruption identification at bug report for
+> >> software tag-based mode, the report show whether it is "use-after-free"
+> >> or "out-of-bound" error instead of "invalid-access" error. This will make
+> >> it easier for programmers to see the memory corruption problem.
+> >>
+> >> We extend the slab to store five old free pointer tag and free backtrace,
+> >> we can check if the tagged address is in the slab record and make a
+> >> good guess if the object is more like "use-after-free" or "out-of-bound".
+> >> therefore every slab memory corruption can be identified whether it's
+> >> "use-after-free" or "out-of-bound".
+> >>
+> >> ====== Changes
+> >> Change since v1:
+> >> - add feature option CONFIG_KASAN_SW_TAGS_IDENTIFY.
+> >> - change QUARANTINE_FRACTION to reduce quarantine size.
+> >> - change the qlist order in order to find the newest object in quarantine
+> >> - reduce the number of calling kmalloc() from 2 to 1 time.
+> >> - remove global variable to use argument to pass it.
+> >> - correct the amount of qobject cache->size into the byes of qlist_head.
+> >> - only use kasan_cache_shrink() to shink memory.
+> >>
+> >> Change since v2:
+> >> - remove the shinking memory function kasan_cache_shrink()
+> >> - modify the description of the CONFIG_KASAN_SW_TAGS_IDENTIFY
+> >> - optimize the quarantine_find_object() and qobject_free()
+> >> - fix the duplicating function name 3 times in the header.
+> >> - modify the function name set_track() to kasan_set_track()
+> >>
+> >> Change since v3:
+> >> - change tag-based quarantine to extend slab to identify memory corruption
+> > 
+> > Hi,Andrey,
+> > 
+> > Would you review the patch,please?
+> 
+> 
+> I didn't notice anything fundamentally wrong, but I find there are some
+> questionable implementation choices that makes code look weirder than necessary
+> and harder to understand. So I ended up with cleaning it up, see the diff bellow.
+> I'll send v5 with that diff folded.
+> 
 
-> Please work it out between yourselves so we can have a single, clean
-> abstraction that works for both.
+Thanks your review and suggestion.
 
-I'm looking at inline encryption by Google. 
-I will find compatibility with inline encryption to avoid conflicts
-in BIO/F2FS.
-And changing bio iter has a benefit for diskcipher.
-Without changing bio iter, diskcipher should control(alloc/free) a buffer
-to hold a 'bi_dun' variable for every bio.
-But changing bio iter is difficult to accept for block layer,
-I will modify the diskcipher.
-And, as you mentioned, inline encryption by Google has this control.
-So I might be able to use it.
-
-Thanks.
-Boojin Kim.
+Walter
 
 
 _______________________________________________
