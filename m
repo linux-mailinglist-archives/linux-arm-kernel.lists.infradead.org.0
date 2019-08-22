@@ -2,73 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68D1D997D8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 17:15:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 370BB997E1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 17:17:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cAuv1l4KMqSrFWq8epbJrh0JBzX47AgyfPFd8SKRztg=; b=p4OOPWtLvcAdPO
-	oizW1kEh7O3+VqmcWVzrdJjlMMzt61mjD49CoXsJD+6b8sDFSKd65pLwDJOTJvWU0oHvxmy0Clxhv
-	pr9GGJynUmgbo84B1CthYo0D7mgnbBMRdqTwo59DmLrmvXEtGOvxdXgbkAPORvTkCbxiDupFhcpQv
-	XtW5y+EQy6XmlZDjijJLGEpHoXGLC/adFg01yBGEarsooK0UMZHKCu6azHBxmzUrFgLqhaviTjUKX
-	AyEmmylbcU4M9eImiQmSOIX76rgJ2EiWzWSciZIRw0HV6nsSA1AVfgl3BRJJBOsT+9JVrlTtiH4F1
-	2WM6yn4UBfiSiZDxP+cA==;
+	List-Owner; bh=zMCUED5ZAcbSaLH2c0hh3kzL36WosyfFMXIabPptQYI=; b=BA873Kbq/BOHG3
+	SoHFTQCD9skeJRMJBDOwR2zZQInvfJLUP86DgdfcXdyBBM+X7991zgYi1yZh5U+wN/x1ilkou1bdZ
+	DEl3Qr43UQCqEBjum+XpCq8WzFX5apITiSySrUp5hMoF4J7EMggfxsoSYYxCQx4XoVqUUBV1Yu4Pl
+	TQchvaPk/nI58vLJ/3IgklIxbsqvKabP6GuoKDYp2L4OJ9AcKY59TzP3MYc37fza3QdGKsP92yBRl
+	0HPSysUw7WzNaLkzNTqcXj5C2SciJ37HiGkUEeT6WPcGdvGRSRsIA0nM8uBbgtUYc8jiEuU8Atr6D
+	91x1DKQkHHCzP1ujIuLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0ooG-0006G3-Nj; Thu, 22 Aug 2019 15:15:32 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1i0opl-0006Xd-8E; Thu, 22 Aug 2019 15:17:05 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0oo5-0006FR-3f
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 15:15:22 +0000
-Received: by mail-lj1-x244.google.com with SMTP id x4so5913230ljj.6
+ id 1i0opX-0006Wl-ON
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 15:16:53 +0000
+Received: by mail-lj1-x242.google.com with SMTP id l1so5896972lji.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 08:15:20 -0700 (PDT)
+ Thu, 22 Aug 2019 08:16:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4a8L/ifsv/lZTfpUfBFAkIET01IdPIonks0J31fpcrs=;
- b=kaNukhpRiKzO7wg6+4YwXjw+GBU9aEaxl+aRpkf/TylSbqgfiWU4SvBMz6B2d7rOWZ
- Z1qAW9Qf6758HOrFNtrxIBp2Z43wRatr677G+cW4YbvI4Ti4N1oShBTYqZ2sJMIx5BlY
- CtYm0WzQv6pcm3tO/CclwiTA0ip1w6PXO1CEVFq9fhYcxBMt4IW0En2dpLVTKbqnsJdp
- hl1bsS+GnYNQZytg1fYtQeQIZ4DEba9G4Qpv4Tzlk2PGvuP5CLQ6NCQyiR2QEQnU7SrH
- dHOhXJrfniK7tJQMuA+ME9TlvTJoe3xcWH6Q4YKg+YE3Lc48h2xJRd2pSeIzEfeXlUTr
- b83w==
+ :cc; bh=h3kdfojoMQKGGntVDybNUbhbyEDv93C/OVGCWtcup6Y=;
+ b=zSrUM1vwk/fDaOxllfze3Yd4Et2Atsr5U1tZ4yfsyUJJ6ny8Hm8TCDx4xJGblzxD03
+ +RcaDlbV93M01sZgOdLdXVWj9V5ERQz5gdb2mU1DvCQwhqs/VqoKCjXbee4baKafi/UV
+ t3cv0FBPYYNVPtgT4TnICq2am/G7v94mr/Enc2K2hIZo2PAQ2yoamtqrBsevDM56Jmrg
+ 1PCYxt9W/ajf+8VP/V2pIrmpOwQk/l+txLGx9O/QXKYiF6fDXkHU3E2DKkf9BYFdq/sV
+ UPWkopB4R7f486KjnxcZ5mYfPUO8Ug7Uk/+5EIycG5wtoGTL32txWvewVXviVvb2jV6Q
+ Ea9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=4a8L/ifsv/lZTfpUfBFAkIET01IdPIonks0J31fpcrs=;
- b=iitaJnHfX+nubYQdZUm6dvEJYNnos4vxeRjQoXrsGb3Ly64cNsszcz2dizKF901Aar
- V+5jI/11tYd87RLYFgo7LTSi5dF7IS/sKR22K2s2KhaBSpuF8vizjAz/2Y9Gznv+1HoS
- 9GHMMgdN+6X/dh8rSv9I1r8CFq75oID2l9vNOtX4k7wb4D5HmUSX3BhuI38aJCu0++xe
- K+fQJlA7sMYuSRgMe5a6bNhjP9OZVh4yo5tHob3XOy5OuaaQ//YNTq+a0iFkjmTB0+/V
- 6j1cwfrimIgNJy6oz3HtY2YxFUp3X4OYYSVJ0DuCJcy47oQlHLQ//4ZWbaRySCuC9177
- SNXw==
-X-Gm-Message-State: APjAAAUG2gBcEhQObydx4yvLLLOXByIFEnWdEOwrSwAgko6yYUG6R9y0
- gU7AD0KQAG0Bc3m0THFj55bi/R4VHKsdbBZRXR7mMQ==
-X-Google-Smtp-Source: APXvYqw8H6TI7yoIexQ01YSmkjtsLfwiXufW96szSrkvxjsFx069jHk2VVDMZF+LiT2ojXyCZlvCkfh2Z8ulIljBS/A=
-X-Received: by 2002:a2e:3a0e:: with SMTP id h14mr22635098lja.180.1566486918684; 
- Thu, 22 Aug 2019 08:15:18 -0700 (PDT)
+ bh=h3kdfojoMQKGGntVDybNUbhbyEDv93C/OVGCWtcup6Y=;
+ b=QgwqxZgqJ0oIxW2RBRu++oKwW+YfSB0hwGbjSzmXa6xbhpNbRuDFvgUoUTDTLmYSKk
+ ebhIzVoZYBw1OWxz2Zp5x/uOpmLezo5LHnKiY3xCNmwsPwoWjp+cJovZxT4TobPf9u6n
+ 5cLwY828563HjIJ79fCuC00KNzXGEwxNHbPHEULnabDcmIC+vZGetMiVZ10cu74AWb8h
+ Am+4XXYQ0cmnUGe0iKV2VMgP0DdlqEZ54NrHaS0bpYf/68eRkybuBu0CJ/d6EwvGUGz8
+ WBVG3dwv+EUOUR4M3agj5Q91HO4v7/cQvQytbxm7D4zP3T5GI4J9Cuc+Ja9Zgu2Hwqr5
+ ffjg==
+X-Gm-Message-State: APjAAAW/Awy0qQbksKh0HnYXc4RXqpDRwGiOBaK7A8m3ar96be3YlTZm
+ hX0gYarjTpgdTP0PKbIwcZ2shRzUCv/NkF/C/1aLDQ==
+X-Google-Smtp-Source: APXvYqw4HrCBoq6lNeKflWZiBRnD04sAimjwJfjhUqtyNwENAWSNoa1DE2K7OwX498fj6Zs3ggfDHjyxQoOAY28ENNE=
+X-Received: by 2002:a2e:3a0e:: with SMTP id h14mr22639554lja.180.1566487009806; 
+ Thu, 22 Aug 2019 08:16:49 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190822110720.118828-1-stephan@gerhold.net>
-In-Reply-To: <20190822110720.118828-1-stephan@gerhold.net>
+ <20190822110720.118828-2-stephan@gerhold.net>
+In-Reply-To: <20190822110720.118828-2-stephan@gerhold.net>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 22 Aug 2019 17:15:06 +0200
-Message-ID: <CACRpkdY=XS4RMufBy8GCB1wGU+hwa64sFMprE-94TcT06xAZgg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] ARM: dts: ux500: Move ab8500 nodes to ste-ab8500.dtsi
+Date: Thu, 22 Aug 2019 17:16:38 +0200
+Message-ID: <CACRpkdY49Yz-39gz2V8BwZBJmKQHd975+_Pi5oTrZTRwc+ngQQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] ARM: dts: ux500: Remove ab8500_ldo_usb regulator from
+ device tree
 To: Stephan Gerhold <stephan@gerhold.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_081521_157587_5497A58F 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20190822_081651_854764_58672E14 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,14 +105,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, Aug 22, 2019 at 1:08 PM Stephan Gerhold <stephan@gerhold.net> wrote:
 
-> Some Ux500 devices use the newer AB8505 PMIC instead of AB8500.
-> Although they are very similar, there are subtle differences
-> like the number of regulators or the available GPIO pins.
+> Support for the USB regulator of AB8500 was removed in
+> commit 41a06aa738ad ("regulator: ab8500: Remove USB regulator").
+> However, the configuration was never removed from the device tree.
 >
-> At the moment, ste-dbx5x0.dtsi always configures the AB8500 PMIC.
-> To support devices with AB8505, it is necessary to split the
-> AB8500-specific parts into a separate .dtsi file. Boards can then
-> select the PMIC by including either ste-ab8500.dtsi or ste-ab8505.dtsi.
+> It does no longer have any effect, remove it from the device tree.
 >
 > Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
 
