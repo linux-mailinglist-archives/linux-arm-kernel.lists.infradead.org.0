@@ -2,64 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BBB69A25E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 23:51:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79E479A29A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 00:09:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sU/9EOuY8FoHUQW7IR/t9vxK5+igfDpGAX4/m2ckbl8=; b=DlNwmFqQSbSyfq
-	m+/IrRDQLpx7a3yB9tM8AWRud/EL94vN7KJMdrdIMuHx89pW6OCt32QaBEZRmIlPc9Oa9lyPQT6Fd
-	tdwNq9Sz8gDH/3H2/cOUyn7CYBVvAyPSIvkVcI0r91xC5O+YNzUKr7DtLFhtyRdK9TejjpPBMwwBG
-	dkti+LqqP4aAJVTCBXabDs4gPUZ0wee5lzd+EJWHMfhn7143Yq3vc9NLfMI9D3TsUEULMF/P49Yaj
-	0hLJpXGDjK5YPwfMgYMgBiUyqBMPOngUKQ8lbsNaUYlsXIaIr3keRaULS9LwVxSsvvVZnlzrO7TNd
-	owmvvV1nH33bE04QosOQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=100UxQrFFdWPbVRpfsz/tiE046l5Ie/HYNEhaz7dNN4=; b=KRc
+	vyYWZ522BYQqh9P18HyhwgRvkRMGZF+RndDN9Cnuco3Js9fonn7cpxCa8oJ/7k0xVEFhSfCo/WKE7
+	ByLQHfhiyh8LvwEiwFVbAH+08wlepmHLXyXpN19VRjl+UlMz+nL9qtCHVtoR+0ezhJ0DcPaYXrg2M
+	TdaTHk1Mp88dcfOOQ4yHTCZWbxZcN8/2B7yP8iVD2McMKDDGl3xqgZYelfrF1E2pPfs0dEkvOmHEb
+	6ip743AEoIH6IdXqPhPlX1nDNCvXH4/yWQS0XjPrFKXtJFaBv/VFp0uKJFNkaJz26J5apMNej3GAW
+	bZkhjZAQ2dlJIj6OVUMWKT5fxlVSDxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0uzQ-0004CJ-8y; Thu, 22 Aug 2019 21:51:28 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1i0vH5-0001XN-Ee; Thu, 22 Aug 2019 22:09:43 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0uzF-0004Bx-Uv
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 21:51:19 +0000
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id ED7033175291;
- Thu, 22 Aug 2019 21:51:16 +0000 (UTC)
-Received: from treble (ovpn-121-55.rdu2.redhat.com [10.10.121.55])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 6269A5D713;
- Thu, 22 Aug 2019 21:51:15 +0000 (UTC)
-Date: Thu, 22 Aug 2019 16:51:12 -0500
-From: Josh Poimboeuf <jpoimboe@redhat.com>
-To: Julien <julien.thierry.kdev@gmail.com>
-Subject: Re: [RFC v4 07/18] objtool: Introduce INSN_UNKNOWN type
-Message-ID: <20190822215112.n36slswph64nbzhb@treble>
-References: <20190816122403.14994-1-raphael.gault@arm.com>
- <20190816122403.14994-8-raphael.gault@arm.com>
- <20190822200406.jc3yf77pomxxwep6@treble>
- <3c4e3227-eeb3-371a-d015-a0e0e60e5332@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3c4e3227-eeb3-371a-d015-a0e0e60e5332@gmail.com>
-User-Agent: NeoMutt/20180716
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.49]); Thu, 22 Aug 2019 21:51:17 +0000 (UTC)
+ id 1i0vGh-0001Nf-VL
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 22:09:21 +0000
+Received: by mail-pg1-x543.google.com with SMTP id n4so4490809pgv.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 22 Aug 2019 15:09:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=uYgPzTJBSidHw5rofgv1d7XIJLrP8BBx5dx0dnIxLaU=;
+ b=Eqp/T0lJX6voDeerzbLZz2z62udbQ8JbYtCoxl8fpZ/fehQ1JxGVv2NF6u/4UU6IML
+ jGNNZ8XgkZucbJhi8OK9rSR4FaCOTDhu66iVkp5EVfES9nFIA/ojfqTtmpkgH6+F33a4
+ pEKfXcRnXzxYICeBAr5B7Bnz2LMQvQpmm5kpSRPZEQw05r8SZqaAbw0CpWWXvj+vBNkk
+ P/iLorr+Oxh8THpeNuUwDahCrWTELDopP3a1jdJkYixY2QtkY0W8ttI4/RvmErfhtAaX
+ B7aeQIa0StrASQKuVIBt+Z/035I1APcYvmcrZrUonofpIOeIpgNpRF5OzRESz/6QaRKk
+ qyCg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=uYgPzTJBSidHw5rofgv1d7XIJLrP8BBx5dx0dnIxLaU=;
+ b=jPZtQzpY082uR4sB7j5jDG3kE41d1t8KAVl3LOwUFy1HmOYNLshDN46vcVHPscS2U/
+ asSPeq0cHZT/Ii80li/nMp8Us8MRbcpZdTYNb9L0qMhvEDQH3c7Qx7axZ3kR0iqKLDjH
+ eUd0W4McgUx0KRSTjOk9G3HQavKaVbn09Ul56D5WIOfQTZcvfdIO2oZncbMibo0H9IJy
+ FlTmreWXh6AZgKOv25YbJmNovqQEfV0UDfEkiO1+g1iru/lOTGizqrFtMkJhtG3j5Lo7
+ LeDTot1E82mC31Qs8nEfnj7RvQIzNAmDnBqNhbZ6A9eIrG4R9JJEy67HHx0uZ7t/EdDv
+ WfHQ==
+X-Gm-Message-State: APjAAAV/agVl4QQu88Azb0+Nyy43SD7/B1cIAkqDymKMw29YQpFiPs5T
+ soUJx+colhd7apkEdXmJLGVHGg==
+X-Google-Smtp-Source: APXvYqznJGjtkxMx+LPgYTr2KV51e6oE+5OZSSDWV6Sob4CnwVBizgP0XyiDvzhwRVVxEkrDYljWFA==
+X-Received: by 2002:aa7:934f:: with SMTP id 15mr1555731pfn.22.1566511757674;
+ Thu, 22 Aug 2019 15:09:17 -0700 (PDT)
+Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
+ [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id s7sm377432pfb.138.2019.08.22.15.09.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 22 Aug 2019 15:09:17 -0700 (PDT)
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: yabinc@google.com,
+	suzuki.poulose@arm.com,
+	leo.yan@linaro.org
+Subject: [PATCH 0/2] coresight: Add barrier packet when moving offset forward
+Date: Thu, 22 Aug 2019 16:09:13 -0600
+Message-Id: <20190822220915.8876-1-mathieu.poirier@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_145118_016277_F0EA6AD6 
-X-CRM114-Status: GOOD (  21.49  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190822_150920_011698_D86F264E 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,44 +95,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: raph.gault+kdev@gmail.com, peterz@infradead.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org,
- Raphael Gault <raphael.gault@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: alexander.shishkin@linux.intel.com, linux-arm-kernel@lists.infradead.org,
+ mike.leach@arm.com, linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBBdWcgMjIsIDIwMTkgYXQgMDk6NDU6MDBQTSArMDEwMCwgSnVsaWVuIHdyb3RlOgo+
-IEhpIEpvc2gsCj4gCj4gT24gMjIvMDgvMTkgMjE6MDQsIEpvc2ggUG9pbWJvZXVmIHdyb3RlOgo+
-ID4gT24gRnJpLCBBdWcgMTYsIDIwMTkgYXQgMDE6MjM6NTJQTSArMDEwMCwgUmFwaGFlbCBHYXVs
-dCB3cm90ZToKPiA+ID4gT24gYXJtNjQgc29tZSBvYmplY3QgZmlsZXMgY29udGFpbiBkYXRhIHN0
-b3JlZCBpbiB0aGUgLnRleHQgc2VjdGlvbi4KPiA+ID4gVGhpcyBkYXRhIGlzIGludGVycHJldGVk
-IGJ5IG9ianRvb2wgYXMgaW5zdHJ1Y3Rpb24gYnV0IGNhbid0IGJlCj4gPiA+IGlkZW50aWZpZWQg
-YXMgYSB2YWxpZCBvbmUuIEluIG9yZGVyIHRvIGtlZXAgYW5hbHlzaW5nIHRob3NlIGZpbGVzIHdl
-Cj4gPiA+IGludHJvZHVjZSBJTlNOX1VOS05PV04gdHlwZS4gVGhlICJ1bmtub3duIGluc3RydWN0
-aW9uIiB3YXJuaW5nIHdpbGwgdGh1cwo+ID4gPiBvbmx5IGJlIHJhaXNlZCBpZiBzdWNoIGluc3Ry
-dWN0aW9ucyBhcmUgdW5jb3VudGVyZWQgd2hpbGUgdmFsaWRhdGluZyBhbgo+ID4gPiBleGVjdXRp
-b24gYnJhbmNoLgo+ID4gPiAKPiA+ID4gVGhpcyBjaGFuZ2UgZG9lc24ndCBpbXBhY3QgdGhlIHg4
-NiBkZWNvZGluZyBsb2dpYyBzaW5jZSAwIGlzIHN0aWxsIHVzZWQKPiA+ID4gYXMgYSB3YXkgdG8g
-c3BlY2lmeSBhbiB1bmtub3duIHR5cGUsIHJhaXNpbmcgdGhlICJ1bmtub3duIGluc3RydWN0aW9u
-Igo+ID4gPiB3YXJuaW5nIGR1cmluZyB0aGUgZGVjb2RpbmcgcGhhc2Ugc3RpbGwuCj4gPiA+IAo+
-ID4gPiBTaWduZWQtb2ZmLWJ5OiBSYXBoYWVsIEdhdWx0IDxyYXBoYWVsLmdhdWx0QGFybS5jb20+
-Cj4gPiAKPiA+IElzIHRoZXJlIGEgcmVhc29uIHN1Y2ggZGF0YSBjYW4ndCBiZSBtb3ZlZCB0byAu
-cm9kYXRhPyAgVGhhdCB3b3VsZCBzZWVtCj4gPiBsaWtlIHRoZSBwcm9wZXIgZml4Lgo+ID4gCj4g
-Cj4gUmFwaGHDq2wgY2FuIGNvbmZpcm0sIGlmIEkgcmVtZW1iZXIgY29ycmVjdGx5LCB0aGF0IGlz
-c3VlIHdhcyBlbmNvdW50ZXJlZCBvbgo+IGFzc2VtYmx5IGZpbGVzIGltcGxlbWVudGluZyBjcnlw
-dG8gYWxnb3JpdGhtcyB3ZXJlIHNvbWUgd29yZHMvZG91YmxlLXdvcmRzCj4gb2YgZGF0YSB3ZXJl
-IGluIHRoZSBtaWRkbGUgb2YgdGhlIC50ZXh0LiBJIHRoaW5rIGl0IGlzIGRvbmUgdGhpcyB3YXkg
-dG8gbWFrZQo+IHN1cmUgdGhlIGRhdGEgY2FuIGJlIGxvYWRlZCBpbiBhIHNpbmdsZSBpbnN0cnVj
-dGlvbi4gU28gbW92aW5nIGl0IHRvIGFub3RoZXIKPiBzZWN0aW9uIGNvdWxkIGltcGFjdCB0aGUg
-Y3J5cHRvIHBlcmZvcm1hbmNlIGRlcGVuZGluZyBvbiB0aGUgcmVsb2NhdGlvbnMuCj4gCj4gVGhh
-dCB3YXMgbXkgdW5kZXJzdGFuZGluZyBhdCBsZWFzdC4KClRoYW5rcy4gIElmIHRoYXQncyB0aGUg
-Y2FzZSB0aGVuIHRoYXQgd291bGQgYmUgdXNlZnVsIGluZm9ybWF0aW9uIHRvIHB1dAppbiB0aGUg
-cGF0Y2ggZGVzY3JpcHRpb24uICBBIGNvZGUgZXhjZXJwdCBvZiBhbiBleGFtcGxlIGNvZGUgc2l0
-ZSB3b3VsZApiZSB1c2VmdWwgdG9vLgoKSSdtIG5vdCBzdXJlIElOU05fVU5LTk9XTiBpcyB0aGUg
-cmlnaHQgbmFtZSB0aG91Z2gsIHNpbmNlIHRoZSBkZWNvZGVyCmRvZXMgYWN0dWFsbHkga25vdyBh
-Ym91dCBpdC4gIE1heWJlIElOU05fREFUQSBvciBzb21ldGhpbmc/CgotLSAKSm9zaAoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Yabin,
+
+When doing more tests on your patch that adjust the offset to fit the  
+available space in the perf ring buffer[1], I noticed the decoder wasn't
+able to decode the traces that had been collected.  The issue was observed
+in CPU wide scenarios but I also suspect they would have showed up in
+per-thread mode given the right conditions.
+
+I traced the problem to the moving forward of the offset in the trace
+buffer.  Doing so skips over the barrier packets originally inserted in
+function tmc_sync_etr_buf(), which in turn prevents the decoder from
+properly synchronising with the trace packets.
+
+I fixed the condition by inserting barrier packets once the offset has been
+moved forward, making sure that alignment rules are respected.
+
+I'd be grateful if you could review and test my changes to make sure things
+still work on your side.
+
+Applies cleanly on the coresight next branch.
+
+Best regards,
+Mathieu 
+
+[1]. https://lkml.org/lkml/2019/8/14/1336
+
+
+Mathieu Poirier (2):
+  coresight: tmc: Make memory width mask computation into a function
+  coresight: tmc-etr: Add barrier packet when moving offset forward
+
+ .../hwtracing/coresight/coresight-tmc-etf.c   | 23 +---------
+ .../hwtracing/coresight/coresight-tmc-etr.c   | 43 ++++++++++++++-----
+ drivers/hwtracing/coresight/coresight-tmc.c   | 28 ++++++++++++
+ drivers/hwtracing/coresight/coresight-tmc.h   |  1 +
+ 4 files changed, 64 insertions(+), 31 deletions(-)
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
