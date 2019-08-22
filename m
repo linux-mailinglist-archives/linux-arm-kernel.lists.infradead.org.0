@@ -2,82 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8621099D0D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 19:40:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63E3799D49
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 19:41:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:From:To:Subject:References:
-	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4wpN5SDO/4gaUZ43oe2xG9gY9hTX2XwZIaxRzQh7E+4=; b=IqQBR8ktW/maWw
-	I0JzAInMBjJYuOwpi2Kh+nNb6zLiyxbNsqcqwvL7MtZKd6XqaQr6t1VAXzvRicoiErB6tJWJQo50v
-	JUsccwZKrVs3NxaUyTmL6UAPk9vvSVhlrkJcZRCpU4ogE3tEkFNOaGEfrzbpL2tyYOiMeKG1y1huS
-	rNy1ilOEn8diA+56lvzyIa/idR56akLgN+U3rtMUFTVI/rLtVHklwWC5SvIIuBix4LLYQjgyYgIZX
-	jV6XfHu+vWUcIsNEV5uIhsjJhXkhlrDrRxWDYGXQCRa6vEoZCuU4FGsTLH1AaP5vlMDaBuw35HjMu
-	kReEgdOKGs91TkD6kMFQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=posPS9BIgDPGXzB1zipwTNAjKjAQ32IIMdEkYdrzwOc=; b=bMfvKp8iyMgNNJ
+	KQS3nh5K2tMbaYDI9TG1+uVNqwP6piukXUkxDAWxNzvdrgBNopxr6y1LeMzM9SFisgEmPqNpppliL
+	XOBzqC171V7ONkk4oy9MepMB64uW+okoOy5TCrz+fqHns59SzGh4++nRpU8fIomW9Kjifk/dITW73
+	XOCfbsfr2s7yBOtEuRcN5H87CE75dPUB6UKYp2FzDtzbXFIxFyjiYkCcFO4ii7jD0qJg1iSIPCY45
+	ek8ePxPJHQqA2RiIxY/eacmEQKARvSd2q369KnaEvZn8Y0PUGlh/gGcCzOXSgDGurDBgPn/HiXJQJ
+	FkioeQi89tiHxk7jj8AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0r4E-0004Tx-1M; Thu, 22 Aug 2019 17:40:10 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1i0r5f-00068D-GK; Thu, 22 Aug 2019 17:41:39 +0000
+Received: from mail-eopbgr130078.outbound.protection.outlook.com
+ ([40.107.13.78] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0r3y-0004TA-W9
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 17:39:56 +0000
-Received: by mail-pg1-x543.google.com with SMTP id k3so4055903pgb.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 10:39:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=message-id:mime-version:content-transfer-encoding:in-reply-to
- :references:cc:subject:to:from:user-agent:date;
- bh=/SKCVH1cP34M+EOCz1gwJK67tID4N48JyS6a43d2kiA=;
- b=MQnTqO/P5HLNo2wRx+4ovpS8Tl5NhKqP4yAwsm75fZBx/0HuNqZY6WQPFieLjqgL8Y
- y+7TnZh/GvrBXFZcy/IiflyoVVy1xtikmPc0Pxx8dgdn6LdnEUYZatahrFKCrA33+kgW
- K/BJVdJ8pwOuIsUYEHDW2kDhp2Dhiiku5TfCA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:mime-version
- :content-transfer-encoding:in-reply-to:references:cc:subject:to:from
- :user-agent:date;
- bh=/SKCVH1cP34M+EOCz1gwJK67tID4N48JyS6a43d2kiA=;
- b=ra2S3H6vDcy7JFyaamyZtUMN91k1LgOEWukOZEDYf8xdpu5hY7RrFO9/AX8Oc1D7RR
- 4m1KIUR1YnDCvLlZwndFwA/OViD7AliGJ9WnBhJ3Hu7Y36TbvroJSUF6N37Vk9cserE6
- 2GwEg/3Tq/vO2SXeV9k/6n4ww1gblz9Yk3q4zJ8Fm1knWgCHmP7dHxd7e3DMoemtXcJk
- qYPFxK1Eewy0sgpmsjei4K63idRmoExCEnGVpDP63aXn11FEMCfqhnqlOUH5zIEcF9KY
- UNmCSfOhnoibMpNtUF/D4EwhHBqJFM2IjWnadaIRPXcQ7SM7U0QmR3e+X9tPo2OIS4yI
- LU+w==
-X-Gm-Message-State: APjAAAUrcTgJp1oF8BklLDdYoIK3h6IUZBm+trQcyCygnYjqGOO1W7GL
- aMRQcbG59oewPLmkDjDZU3LEzg==
-X-Google-Smtp-Source: APXvYqyjCv+RfuDuHbk6B4dF6CbusPM8neaAWPdHZqiIQnf8Kr9Fc7sVfGImRfS+T0/lf0D9ZKqxww==
-X-Received: by 2002:a63:1918:: with SMTP id z24mr358999pgl.94.1566495594017;
- Thu, 22 Aug 2019 10:39:54 -0700 (PDT)
-Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id c2sm153607pjs.13.2019.08.22.10.39.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 22 Aug 2019 10:39:52 -0700 (PDT)
-Message-ID: <5d5ed368.1c69fb81.419fc.0803@mx.google.com>
+ id 1i0r5F-0005zY-3b
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 17:41:14 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=RRO13rnjSIjTHGYsKEDMKg3KPFXx3kTR0AUuQMibmM7UTe6FXRJXTjJevRKd0334f4wUns0HETj3wcxCgSrd1Lg2SjSTW8mH1Ew9TLRnCFRsAkio7SmCfmyU5Iz0ap8vZhOBc2LlTv26eXVJl+Ve0ygzurLTL9B3T7fwZvWswfYvkXz4IfuqKFftsTEE4ENsOfqPEibxNppPfa8Lk6mrsCoIqSaEAOrWPgdBnrF/u79NWwhYHImEcAfNN3LwbLvAxNDG/c/2VuuQb9uzfjLFR+2b2RF0eGGYGNIq35t7Qe6U5BakLy5bFNALBv2WROAjgtFKQkneaA89pd++Pr/gfQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/zfdWFxc4tpZG96O621XPEKPsObJSpnKSPyO1MZrjq0=;
+ b=gehJhQIQxY3Rs9rLNb9llDaJWfbDRTQ+S6/F0zhPDkuovcGYfmIi+8ITtIki0df1+Rpfs7joRTHXmZ5XQfEC4zOMaoInp03MgYrBvorjnhxTo8a645bfoJSXhBr+N88VqyB52i96nHzYIuQcFpkZiUxW3l4l4GHA+3SDJKqJzWWBXL8qjUanRoeTvFWe18zMugN+5tsUe7JrqH7ivUfLMfw+U3IQ5Qvsf78Ie990g4IwRemCaaQ5Vb2pN0A3UoUOsCpyKpa1DgUGhqScrBwcJiMbP9GgDbvpzaxraKWm8T73mWEykqN8zf9rHaIiJP0fkaTBEE4VKeW9rydW78k/RQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/zfdWFxc4tpZG96O621XPEKPsObJSpnKSPyO1MZrjq0=;
+ b=phHoiSnJfk4Hz8FzdHvpb4q9gPjrJRWoM5G1CyvgfFHXjHxsRGqMxtU/PoNxG06QdiB7W7pPJfHXSLbxT6a6d2m8U8nysTHo1gmdKGE4yx62KwjaIEmkq+CoinEcuR/217BJgewXQ56P3Nx/i8mgvqingloRKtSnubYgL5Cnhag=
+Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com (10.175.20.18) by
+ VI1PR0402MB2751.eurprd04.prod.outlook.com (10.175.22.149) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2178.16; Thu, 22 Aug 2019 17:41:08 +0000
+Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com
+ ([fe80::7de6:ea4b:9b5d:d023]) by VI1PR0402MB2863.eurprd04.prod.outlook.com
+ ([fe80::7de6:ea4b:9b5d:d023%7]) with mapi id 15.20.2178.020; Thu, 22 Aug 2019
+ 17:41:07 +0000
+From: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2 4/6] dt-bindings: serial: Document Freescale LINFlex
+ UART
+Thread-Topic: [PATCH v2 4/6] dt-bindings: serial: Document Freescale LINFlex
+ UART
+Thread-Index: AQHVWRDHP6fOISb7w0aVGXW7bCPQGg==
+Date: Thu, 22 Aug 2019 17:41:07 +0000
+Message-ID: <VI1PR0402MB28638ABB58605D7D2ADBA852DFA50@VI1PR0402MB2863.eurprd04.prod.outlook.com>
+References: <20190809112853.15846-1-stefan-gabriel.mirea@nxp.com>
+ <20190809112853.15846-5-stefan-gabriel.mirea@nxp.com>
+ <20190821211841.GA16627@bogus>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=stefan-gabriel.mirea@nxp.com; 
+x-originating-ip: [212.146.100.6]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: e0a54dba-d65e-4f29-468b-08d72727ea08
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:VI1PR0402MB2751; 
+x-ms-traffictypediagnostic: VI1PR0402MB2751:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR0402MB27517C66A4C1434073E29715DFA50@VI1PR0402MB2751.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-forefront-prvs: 01371B902F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(366004)(376002)(39860400002)(346002)(396003)(199004)(189003)(6916009)(7736002)(64756008)(74316002)(26005)(305945005)(53936002)(9686003)(446003)(102836004)(53546011)(8936002)(8676002)(81156014)(81166006)(6436002)(6506007)(71190400001)(71200400001)(99286004)(478600001)(55016002)(7696005)(66066001)(33656002)(2906002)(14454004)(486006)(476003)(186003)(229853002)(91956017)(3846002)(25786009)(86362001)(76116006)(52536014)(316002)(4326008)(54906003)(6246003)(7416002)(66476007)(256004)(14444005)(5660300002)(6116002)(76176011)(66556008)(66946007)(66446008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB2751;
+ H:VI1PR0402MB2863.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: Io097fQC7Ehuhlrt/4r6BpzqzQcg+H2ojIFFuV/OBOUM4nOCxRddY2oJs/GUzGlpIq0IfG9OQPVgO3cyH0bpYBj3I3eCU/TD8VhEiSpow8uWNqhX2EC0YdSoDJ5Wl5omRIICNoz1E9Fi44yVXoe/Q4jcbPakb7K2KZyCXvAh6OhtfdGhEBit11uzQHQm/Pv4anXBqksiUaD+rPMkF+TU74SA0rzDtNHbTOfBPQAyRRC48JZV0cCL3Rm3re/ExMrEyyOQKrVU6lbqYiwQsQCz6Ho4/QFgCMH2v75XItDAyTZ+u8v/rPDoaiC/lJ0xvIm1yjkqGdiMsAJxX5fvWBcF/UoanmFDwNYUlnbhRbtr+BJVOJGcguusiFOkkE82BEz96QuZxx1ASahXQl6pNVdP9jeUrhfqFg/UdhsJqz2hPyI=
 MIME-Version: 1.0
-In-Reply-To: <20190822071522.143986-3-hsinyi@chromium.org>
-References: <20190822071522.143986-1-hsinyi@chromium.org>
- <20190822071522.143986-3-hsinyi@chromium.org>
-Subject: Re: [PATCH v9 2/3] fdt: add support for rng-seed
-To: "Theodore Y . Ts'o" <tytso@mit.edu>, Hsin-Yi Wang <hsinyi@chromium.org>,
- linux-arm-kernel@lists.infradead.org
-From: Stephen Boyd <swboyd@chromium.org>
-User-Agent: alot/0.8.1
-Date: Thu, 22 Aug 2019 10:39:51 -0700
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e0a54dba-d65e-4f29-468b-08d72727ea08
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Aug 2019 17:41:07.8693 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: hFneZf9hWykGZqhkuCaYHRVjyOvl1eoNbIVc/ITkpuB1CCHEyX7wV/9odSealHu3HtexqIuBtqUJWdiiiAGPJeJz+vRBJEAJOml/DUbJOpo=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB2751
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_103955_065029_0459887F 
-X-CRM114-Status: GOOD (  24.15  )
+X-CRM114-CacheID: sfid-20190822_104113_146701_9D96A718 
+X-CRM114-Status: GOOD (  11.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.13.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -85,7 +113,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,129 +124,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Mukesh Ojha <mojha@codeaurora.org>,
- Grzegorz Halat <ghalat@redhat.com>, "H . Peter Anvin" <hpa@zytor.com>,
- Guenter Roeck <groeck@chromium.org>, Will Deacon <will@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>, Rob Herring <robh@kernel.org>,
- Daniel Thompson <daniel.thompson@linaro.org>,
- Anders Roxell <anders.roxell@linaro.org>, Yury Norov <ynorov@marvell.com>,
- Marc Zyngier <maz@kernel.org>, Russell King <linux@armlinux.org.uk>,
- Aaro Koskinen <aaro.koskinen@nokia.com>, Ingo Molnar <mingo@redhat.com>,
- Viresh Kumar <viresh.kumar@linaro.org>, Waiman Long <longman@redhat.com>,
- "Paul E . McKenney" <paulmck@linux.vnet.ibm.com>, Wei Li <liwei391@huawei.com>,
- Alexey Dobriyan <adobriyan@gmail.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Len Brown <len.brown@intel.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Rik van Riel <riel@surriel.com>,
- Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Mike Rapoport <rppt@linux.vnet.ibm.com>, Borislav Petkov <bp@alien8.de>,
- Josh Poimboeuf <jpoimboe@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Marcelo Tosatti <mtosatti@redhat.com>, linux-kernel@vger.kernel.org,
- Armijn Hemel <armijn@tjaldur.nl>, Jiri Kosina <jkosina@suse.cz>,
- Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Tim Chen <tim.c.chen@linux.intel.com>,
- "David S . Miller" <davem@davemloft.net>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "will@kernel.org" <will@kernel.org>, "corbet@lwn.net" <corbet@lwn.net>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "jslaby@suse.com" <jslaby@suse.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, Cosmin Stefan Stoica <cosmin.stoica@nxp.com>,
+ "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Larisa Ileana Grigore <larisa.grigore@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Hsin-Yi Wang (2019-08-22 00:15:22)
-> Introducing a chosen node, rng-seed, which is an entropy that can be
-> passed to kernel called very early to increase initial device
-> randomness. Bootloader should provide this entropy and the value is
-> read from /chosen/rng-seed in DT.
+Hello Rob,
+
+Thank you for the review.
+
+On 8/22/2019 12:18 AM, Rob Herring wrote:
+> On Fri, Aug 09, 2019 at 11:29:14AM +0000, Stefan-gabriel Mirea wrote:
+>> +* Freescale Linflex UART
 > 
-> Obtain of_fdt_crc32 for CRC check after early_init_dt_scan_nodes(),
-> since early_init_dt_scan_chosen() would modify fdt to erase rng-seed.
+> Be consistent with the name: LINFlexD?
+
+This was also brought up in our internal review. However, the reference
+manual is also inconsistent, using LINFlexD, LINflexD, LinFlexD,
+LINFlex, LINFLEX, LinFlex and Linflex. I will switch to 'LINFlexD'
+everywhere, though.
+
+>> +The LINFlexD controller implements several LIN protocol versions, as well as
+>> +support for full-duplex UART communication through 8-bit and 9-bit frames. The
+>> +Linflex UART driver enables operation only in UART mode.
 > 
-> Add a new interface add_bootloader_randomness() for rng-seed use case.
-> Depends on whether the seed is trustworthy, rng seed would be passed to
-> add_hwgenerator_randomness(). Otherwise it would be passed to
-> add_device_randomness(). Decision is controlled by kernel config
-> RANDOM_TRUST_BOOTLOADER.
+> What the driver supports or not is independent of the binding.
+
+Ok, I will remove the last sentence ("The Linflex UART driver enables
+operation only in UART mode").
+
+>> +  - "fsl,s32-linflexuart" for linflex configured in uart mode which
 > 
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> Reviewed-by: Stephen Boyd <swboyd@chromium.org>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> ---
-> Change from v8:
-> * Add a new interface add_bootloader_randomness
-> * Add a new kernel config
-> ---
->  drivers/char/Kconfig   | 10 ++++++++++
->  drivers/char/random.c  | 15 +++++++++++++++
->  drivers/of/fdt.c       | 14 ++++++++++++--
->  include/linux/random.h |  1 +
->  4 files changed, 38 insertions(+), 2 deletions(-)
+> LINFlexD?
+
+Will fix; I agree that the all lowercase version has no occurrence in
+the reference manual.
+
+>> +  is compatible with the one integrated on S32V234 SoC
 > 
-> diff --git a/drivers/char/Kconfig b/drivers/char/Kconfig
-> index 96156c729a31..5974a5906fd0 100644
-> --- a/drivers/char/Kconfig
-> +++ b/drivers/char/Kconfig
-> @@ -551,3 +551,13 @@ config RANDOM_TRUST_CPU
->         has not installed a hidden back door to compromise the CPU's
->         random number generation facilities. This can also be configured
->         at boot with "random.trust_cpu=on/off".
-> +
-> +config RANDOM_TRUST_BOOTLOADER
-> +       bool "Trust the bootloader to initialize Linux's CRNG"
-> +       default n
+> Compatibles should be SoC specific. Is 's32' specific enough to account
+> for any differences or future bugs found?
 
-You can drop the default.
+It is probably not. I will change it to "fsl,s32v234-linflexuart" (as
+well as in the device tree and driver).
 
-> +       help
-> +       Bootloader could provide rng-seed set in /chosen/rng-seed in DT to help
-> +       increase initial device randomness. Assume the entropy provided is
-> +       trustworthy, it would be regarded as true hardware RNGs and update the
-> +       entropy estimate. Otherwise it would be regarded as device input that
-> +       could help mix the entropy pool, but won't be added to actual entropy.
+>> +Example:
+>> +uart0:serial@40053000 {
+> 
+> space    ^
+> 
+>> +     compatible = "fsl,s32-linflexuart";
+>> +     reg = <0x0 0x40053000 0x0 0x1000>;
+>> +     interrupts = <0 59 4>;
+>> +     status = "disabled";
+> 
+> Don't show status in examples.
 
-Maybe reword this to something like:
+Will fix these too.
 
-	Some bootloaders can provide entropy to increase the kernel's
-	initial device randomness. Say Y here to assume the entropy
-	provided by the booloader is trustworthy so it will be added to
-	the kernel's entropy pool. Otherwise, say N here so it will be
-	regarded as device input that only mixes the entropy pool.
-
-> \ No newline at end of file
-> diff --git a/drivers/char/random.c b/drivers/char/random.c
-> index 5d5ea4ce1442..29d3ff3de1e1 100644
-> --- a/drivers/char/random.c
-> +++ b/drivers/char/random.c
-> @@ -2445,3 +2445,18 @@ void add_hwgenerator_randomness(const char *buffer, size_t count,
->         credit_entropy_bits(poolp, entropy);
->  }
->  EXPORT_SYMBOL_GPL(add_hwgenerator_randomness);
-> +
-> +/* Handle random seed passed by bootloader.
-> + * If the seed is trustworthy, it would be regarded as hardware RNGs. Otherwise
-> + * it would be regarded as device data.
-> + * The decision is controlled by CONFIG_RANDOM_TRUST_BOOTLOADER.
-> + */
-> +void add_bootloader_randomness(const void *buf, unsigned int size)
-> +{
-> +#ifdef CONFIG_RANDOM_TRUST_BOOTLOADER
-> +       add_hwgenerator_randomness(buf, size, size * 8);
-> +#else
-> +       add_device_randomness(buf, size);
-> +#endif
-
-Maybe use
-
-	if (IS_ENABLED(CONFIG_RANDOM_TRUST_BOOTLOADER))
-		add_hwgenerator_randomness(buf, size, size * 8);
-	else
-		add_device_randomness(buf, size);
-	
-> +}
-> +EXPORT_SYMBOL_GPL(add_bootloader_randomness);
-> \ No newline at end of file
+Regards,
+Stefan
 
 _______________________________________________
 linux-arm-kernel mailing list
