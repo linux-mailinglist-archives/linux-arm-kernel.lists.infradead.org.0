@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC09199840
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 17:35:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FD0299862
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 17:45:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=POnnKXcAdmzIWfx4ru2iAR1JXAMP1YkBO0YFhdL1rAQ=; b=fvAEL8PmF9VUDG
-	FgfDs+8ypeb10tP+r5iHa+j6tqc5NUc6fUe9y8tQ0l2lnFGMbkF43FP336Tw8bAMPV5jDEMRQpwEF
-	yRfnDmBq7Bpxlw1Y1eg/0D/AZp0IHb1ud6a64s5vIPXWHdIxHxM2sBoejZTBFJS11D28GnwRgygN7
-	5DxcNE1IjWwDncgdx+a0BChjdW9XJBxVlSWRun7DPT4fcmvui+nDxO+ZOLYSohK5sixJOejUATXtU
-	lebdOzDfjOuUIgqVFYMZIOMX76jcKjJB+2LKXTQfBGSBDIL8cxgQfjEQmRD8pfi6CYpMs9U+6j2V0
-	dP6AmdjmqspfRyclBBHw==;
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
+	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1qOjnH20Z/PHhk2iZNOGKwAszBo/hZCpk4G9pBP/6F8=; b=gJI+SZT4M9yhEq
+	DKZluVwDP3IuheeKXCgkwzbhidR9ROVAYH74+xDD+SqgSMPbR6IhCW/JsEKbzcUxI3sGxmro8R0XS
+	RNmfAoJx2I1IHB3LICPcZATbN8M5O1G0hmX4sTUvwW5DF+FH713RVleirbxvlW0sfiKXm/zRgdM28
+	PK8BjTt19byi3G4lnDTZiOJQtUwxa58hdSyGY1xwygEp/XShBqTBTlsDMDRk5dvpgNZC8olcWPoL8
+	sTaUUBK49uSXl7cxJA+uGkW3A2yQRO3wnGFacisfuIPS3dUgT17yXvj/aAZfMR6WT6DPVVnJaPWzp
+	gTQGMV+ML0Ya1/SGAbcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0p72-0008BV-Og; Thu, 22 Aug 2019 15:34:56 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1i0pGu-0005fg-DS; Thu, 22 Aug 2019 15:45:08 +0000
+Received: from mout.gmx.net ([212.227.17.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0p6p-0008Aq-2x
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 15:34:44 +0000
-Received: by mail-lj1-x244.google.com with SMTP id l14so6001727lje.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 08:34:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=0hczAZZIbzUwjffaKiBNCgK1tgnVZ7/bDWdIiQAuNjs=;
- b=OCkr/EMzbfx14V1OLNZnHh0duSKEZ7CFHWqRWOVDEflDFAs5SXUW+ABsKBa80iL8q4
- y7zi+vu2NEaslEZ5OTHStrpWHXsQ3P6umf5jmTzJgLsLUUZHcuwaJL3WTHgZbXvdRXjC
- PJ8JR7OdrYWINXDX0WwWBpLHPV6i7biRFgJkXzyZ3oLqZxEQiYAsd9I16N/kHyDC12mg
- KIeSH7dX7cUT9xrjaz2CrjlByUD6IoV4s5s85BnvEydKUgiRgCdywsvH3V0/D2IHIdp5
- fqqMuD9oicbVBER6U6DoqON2fyGFQaimjP/Rr9MQmNzxDeIinjnnl7Kx19jtIZ5hJHaC
- 6b5Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=0hczAZZIbzUwjffaKiBNCgK1tgnVZ7/bDWdIiQAuNjs=;
- b=H3JPaamz/mAU+T68nwDPdw7v3kXBLFvXFiiABjhFhyJgR2S9Wrk8QA1SaHpFIz/ADx
- dtCQF2oUEgjANuKxDSrfuCzspybpz5PASEbxSAldFi4/Run22sFLQGipKFgqcWaaDrGX
- nzMElmNrBWErE2GBkldLuDHX2xBQfWaV6cPK2d9oEb+xZeyXADfUFsc5xyCXuqDxLbuM
- ScNWJ1hbTXWZWKocDeuv+0Iur0rzo6iIGCLefcOoHUbwaVlZoA1TOu2xcvJ012ei/BR6
- ozYcSLyuS+1PstBzjQTWPEShXaVcmxogZuS7e9ZQ+Sc5KY+nIxzstMZOvDMG/GLgobVZ
- 2o2Q==
-X-Gm-Message-State: APjAAAWLiNAb9OqTwe2KTngs4CCIeYMlnDX3ZxUCPlsI0scZkq8fQ2Os
- uEqa5KjRZTgg0MXDPbdmjG6C9EmZE2f0Rd2HhRYaB9n48xWgVQ==
-X-Google-Smtp-Source: APXvYqxrZrjFHjjyiukon8wM1/8XxzQpVziKlHKfK2Hgp5X97e2M42RzCdmVAqBnFmcZ/Ecuci/VCD+0bgClm/xYoTc=
-X-Received: by 2002:a2e:9903:: with SMTP id v3mr3749lji.37.1566488081228; Thu,
- 22 Aug 2019 08:34:41 -0700 (PDT)
+ id 1i0pGe-0005e8-1j; Thu, 22 Aug 2019 15:44:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1566488653;
+ bh=Vy2sL6yIc2Cm33yYziTqAMn0mT4b4EWOI52QiBXdRmc=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=QrOHC6/2NAmFobf5S2YYzs5TWISc4dkEgsm5srJ57fksDPmZB21ItRv9XjzV9cu45
+ 9nYnDIY/F6xa164T9B2M2OOw5hOcwSpgxZJAnlhW002+Z4B1iLgtsZfGSgDtAqqWR8
+ c0/aCfFCDn9ugbR4ouH7YUnV+aie8Hwekw14+hfg=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [217.61.154.89] ([217.61.154.89]) by web-mail.gmx.net
+ (3c-app-gmx-bap07.server.lan [172.19.172.77]) (via HTTP); Thu, 22 Aug 2019
+ 17:44:13 +0200
 MIME-Version: 1.0
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 22 Aug 2019 17:34:29 +0200
-Message-ID: <CACRpkdZvKR1Gn=M=AsHarJ7BxZoDsSx-aB_4RrAN3mdNWngZBg@mail.gmail.com>
-Subject: [GIT PULL] Further Ux500 DTS updates for v5.4
-To: arm-soc <arm@kernel.org>, soc@kernel.org
+Message-ID: <trinity-b1f48e51-af73-466d-9ecf-d560a7d7c1ee-1566488653737@3c-app-gmx-bap07>
+From: "Frank Wunderlich" <frank-w@public-files.de>
+To: =?UTF-8?Q?=22Ren=C3=A9_van_Dorst=22?= <opensource@vdorst.com>
+Subject: Aw: [PATCH net-next v2 0/3] net: dsa: mt7530: Convert to PHYLINK
+ and add support for port 5
+Date: Thu, 22 Aug 2019 17:44:13 +0200
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <20190821144547.15113-1-opensource@vdorst.com>
+References: <20190821144547.15113-1-opensource@vdorst.com>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:OnOmnNjRELKVDhw1WQ00dkVJuIqcBT9mIxsIJFG3y8nB9jk9SoGT1zYS+j7Hrug05uaRc
+ wyfpj5sv6EnDKgPWJT1nDz20RXXwzuhx/jflRFQlLJECmmRxBLZT0IDWBzDceWlqwm05vt1Q30ZB
+ qxHcSPFXQfWgRe6xK7ko3+YGTQsteRpHY6fIjn1gREIrNVmzXUH898hwnFvyxpkJw7gBmpF5JbYX
+ OotJuHOPdSolA/xZdJ4ol64gN4UuJddW0ahxqEcnYXSi4BvaojZNNekB7/0c1Z/6rTCdONIWuqqA
+ FU=
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:A9vU9Oh1LEE=:DFgHGOwKN1RHx6kZQ498pi
+ zX+xC8Drxjpw+G+vUDjrzkxjmEdsaQWF99BUxfFFCB1Lbuxweib2bcOxiDc45mjrxOKULzmBh
+ Tc2QG63jIq3UVmi7GJusiZoTjWppmjHJnLO7rDs3sgR8JItcfzD7Jrpm8MCL0ZgeQek/IL3S5
+ MIlrU9tpcspXV28cUK4mCDjbykLugedrl7F6hjyTULWoG6kiPjLERQ+tK8mD9CKwmRIDNHM5U
+ pj3Iy3MikCcaCxfSaOzM/mFoqXkbr5HjHN1odpnXWmt6OFas74gyG/3zS0YtfbfWmEaUZETvG
+ mtVkJqwC5SmAZO7A/U6QPdQbtz7by7K2q4BuMpLEOG00hcZd728gvTyFy4ijTfLJqvNbf9pLb
+ QvpKS3YZjTkgd6EEk3AnQvLG5DdDJDqP5B8+dKZ5uvrgbDt309vqoAKI1acHb9grNIqcyzsc4
+ 9FsqenYJm99b8XMLxZNWdelX12TmV2HUBZqqzOFxZ8W3vIf9dGoD+qMk8kPnQzLd9Tz7BSLuS
+ d8292YpgCPIH1Plr1UZUan+Csz6krXBBiDhfgA70meddJds6kDD0b5bh7MuDwMC2Dh90kb38D
+ z/9p4y6SR4kUOz/OHWXwi81phfKlOK/oZHIGZVPpSXN3d+rXsqoINiaFv7EBjC7s40cZQQ+yM
+ 0UfGTxouFcI+56UwaoItJWKiDXNeSPvXruKyh7SCBStUFbg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_083443_134385_783F4F70 
-X-CRM114-Status: GOOD (  11.97  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190822_084452_425861_BB2F8382 
+X-CRM114-Status: UNSURE (   5.54  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,69 +90,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephan Gerhold <stephan@gerhold.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ netdev@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ linux-mips@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
+ =?UTF-8?Q?=22Ren=C3=A9_van_Dorst=22?= <opensource@vdorst.com>,
+ linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>, Matthias
+ Brugger <matthias.bgg@gmail.com>, Vivien Didelot <vivien.didelot@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM SoC folks,
+Hi,
 
-here are some more Ux500 DTS changes for v5.4, we now get
-some increased interest from PostmarketOS who have started
-to send patches for the platforms, and some minor fixes.
+tested on BPI-R2 (mt7623) with 2 Problems (already reported to Rene, just to inform everyone)...maybe anybody has an idea
 
-This goes *ON TOP* of the previous changes on branch arm/dt.
+- linux-next (i know it's not part of the series, but a pitfall on testing other devices) seems to break power-regulator somewhere here:
 
-Please pull it in!
+priv->core_pwr = devm_regulator_get(&mdiodev->dev, "core"); returns 517
 
-Yours,
-Linus Walleij
+#define EPROBE_DEFER517/* Driver requests probe retry */
 
-The following changes since commit 07523a6cb6f868dfb3202a7fd5c7db2a43194f24:
+https://elixir.bootlin.com/linux/latest/source/drivers/regulator/core.c#L1726
 
-  ARM: dts: ux500: set pull-up on STUIB STMPE IRQ line (2019-07-23
-09:24:10 +0200)
+without linux-next switch came up including dsa-ports
 
-are available in the Git repository at:
+- RX-traffic (run iperf3 -c x.x.x.x -R) is only 780 Mbits/sec (TX=940 Mbits/sec), same measure with 5.3-rc4 gives 940 MBit/s with same devices,
+maybe caused by changes for mt76x8?
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-stericsson.git
-tags/ux500-dts-v5.4-2
-
-for you to fetch changes up to 547c9983f2fb5240780d1a1d1235e7334d33dc0a:
-
-  ARM: dts: ux500: Remove ab8500_ldo_usb regulator from device tree
-(2019-08-22 17:15:59 +0200)
-
-----------------------------------------------------------------
-More Ux500 device tree updates for the v5.4 kernel:
-- Drop TV-OUT muxgroup from the HREF pin control
-- Fix up BU21013 touchpad from Dmitry
-- Split of AB8500 config in its own DTSI
-- Drop the unused USB regulator config
-
-----------------------------------------------------------------
-Dmitry Torokhov (1):
-      ARM: ux500: improve BU21013 touchpad bindings
-
-Linus Walleij (1):
-      ARM: dts: ux500: Drop TV-out muxgroup on HREFs
-
-Stephan Gerhold (2):
-      ARM: dts: ux500: Move ab8500 nodes to ste-ab8500.dtsi
-      ARM: dts: ux500: Remove ab8500_ldo_usb regulator from device tree
-
- arch/arm/boot/dts/ste-ab8500.dtsi              | 228 +++++++++++++++++++++++++
- arch/arm/boot/dts/ste-dbx5x0.dtsi              | 208 ----------------------
- arch/arm/boot/dts/ste-href-ab8500.dtsi         |   2 +
- arch/arm/boot/dts/ste-href-family-pinctrl.dtsi |   1 -
- arch/arm/boot/dts/ste-href.dtsi                |   4 -
- arch/arm/boot/dts/ste-hrefprev60-stuib.dts     |  14 +-
- arch/arm/boot/dts/ste-hrefv60plus-stuib.dts    |  14 +-
- arch/arm/boot/dts/ste-snowball.dts             |   4 -
- 8 files changed, 250 insertions(+), 225 deletions(-)
- create mode 100644 arch/arm/boot/dts/ste-ab8500.dtsi
+regards Frank
 
 _______________________________________________
 linux-arm-kernel mailing list
