@@ -2,117 +2,126 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA424989EF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 05:46:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58FDC98A28
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 06:06:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pLWF0R0O5UHYouV8AlamTkz97NMuC+5+vNv9oSjh7w4=; b=QAL2mHWlOje28o
-	TZYTyodNO+qTxUQXq+9IwUwL5gcZLC/dPiAkpNKpcQiWXBu50gpStI+8ZVqLnE9CkaahHYHP+ulRG
-	bBih6lP4+IQNFsnBu4RaRrqis3vLaYMzI2pqHAwNJtrc3NUrgg0I3GurY9n6PstjsRbU51HMz5VIU
-	IZBdIKEEjHisOSQ2EdhS8F9bLblOYZPKILEVcSdn5VPnFa3wCg6dh8XdXJlZTrCfyt1Bq7oyIlwpF
-	3YTetCzGafxLKxkNnhjwFRAUUQS8Cu/E+w4InQe6h5XKareLuEiio+YQRyVpqRACdxlWdt6X//QWa
-	9TUbjQxoM4rYkKaqdAgA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aQybwbXriBn0QlWF6AeFBh0rWoCZ+qHWX3TVpI9uq0U=; b=R4B3HzkrXSe5fx
+	8S4U0wTNwhJFnQiglm2it0fxcXHkZbivkluwMc+B24I62y6ZN0FbZVkCDO6Nv9iyrkhnXmAWf58f+
+	8/K6n5ijm2wSQdDXjkAg4x8/Zr6L98b8zWo+Lk4rXW9y35iVErczUyKLcfUB22oAg1ty7uAljrNy+
+	cqxX7LNdG0bd1wzGe4LBr4pbn+FMBZAyshK1ztvkw0V96UlKXB+q09KC9mn4+zBGPJhivzULTIHeV
+	EdJ7AFslqvuhzrjmOHBy+h9NrSHRa0R5hSah+XSHVHHhp56NsFOiMB0fO87D7kXaAbKEdi3PoC8FE
+	+rvzd0ietJbR00ML88Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0e3A-0001Nw-VR; Thu, 22 Aug 2019 03:46:12 +0000
-Received: from mail-eopbgr810075.outbound.protection.outlook.com
- ([40.107.81.75] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
+	id 1i0eMV-0000Y5-9d; Thu, 22 Aug 2019 04:06:11 +0000
+Received: from m9a0001g.houston.softwaregrp.com ([15.124.64.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0e32-0001NV-Ev
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 03:46:06 +0000
+ id 1i0eMN-0000Xh-H5
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 04:06:05 +0000
+Received: FROM m9a0001g.houston.softwaregrp.com (15.121.0.191) BY
+ m9a0001g.houston.softwaregrp.com WITH ESMTP; 
+ Thu, 22 Aug 2019 04:05:20 +0000
+Received: from M9W0067.microfocus.com (2002:f79:be::f79:be) by
+ M9W0068.microfocus.com (2002:f79:bf::f79:bf) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
+ 15.1.1591.10; Thu, 22 Aug 2019 03:59:43 +0000
+Received: from NAM04-SN1-obe.outbound.protection.outlook.com (15.124.72.10) by
+ M9W0067.microfocus.com (15.121.0.190) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
+ 15.1.1591.10 via Frontend Transport; Thu, 22 Aug 2019 03:59:43 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=CABafZ3ghswPVKIaYOzHAi9RMm8b3zVEJF30NtI9ztG7x37SlIHM5JW6/9j3T429l8z7dnPmJ/TC0RarBPyf7a8Z/tQrXYgGwDgoAZXOe+LFtaVsjD1T3dZ6TyjagISMWtXbbp9uRhB53ou1rVxunoUbjHRCW59CUg9qJTFLCUmG5zAtU51kyWbPC2AOKEb/56McHrfoW5asYGInpARDLYo1f441IC+0gkDelN682JwhHOlYBlMEGOdzT5VuLZchkSsM9LMRxKjK+mR3nEai9zq5X7mN5qqmXgZI4Fw9UzaEu9Ip35qeGmamagDbczwJacfWAOaTdpbClCUf3dXddg==
+ b=Sct61Eq1ZDoPUhgRd4NEdhuP+DxK3iNhKluTI3NSNt2eoK02ihMZfa2haFOhBOE5kiqJBYgDng4lKlzDt50G35FlFlRsbZBvUyx8Ft/iVfCdNeLNFh5N13XK6KR7Y1tcSv6JraO73rt6HIEm6jqVuKUyDlLmQQOGeHCiZGKTUX38cdT/zNxbt2St8YT+nGxnth3MSVFwsENOq/V28Fd0s5JQARFX9x6nUmYbLekSe7WCm5kAeQtxBMGvqP0/PHBnbMLsUvDK7f/5tuXqwfhG5Kq6DiqZXYaSKdV8lhGAMIoTQdz1ObDs2BrKEVHA08hyv/qDTWDCWywHG9x551T2Ew==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=usdSeSuhasYXmm3QNXdqKWSUcRnKw2893WrYZKkVG9g=;
- b=mx0XaQBaiCBMuCwsCQvYyhx4t7GKcFLFoYP2GS6/NG55d3PBRqUidt5phpsDckAvttWb2BGrN4mHovmi/4FFWRrwzgnBp0Hq0u2AlTA9q3WJIIiQPTmN0bE1EtQgmTJyfPoTaoqK2SH5REnBsUxeuXDO1YG5XLCkfNAnfGzWs0l8NGE6slFuYVpPnG4C1I4hek913AHP7OfdcN0aBLGLgxEBaH/M0uvbbMGKSx9+1RUaUCZDtLKVc/9SLDvthY4FRN9GBj3VpIWmggPWJKQDy/DE3dwQrQtnMRll9cnoCfEmo8ABgxsMZL2DKrHlR21p7dLfyn52a/kPWlyNu08rLg==
+ bh=tW2RhL7H2LNeHEe6Aan1RmlgL5J2iXm7mi6jOyFKPjo=;
+ b=fhP/q5fduYIw0DiDORwW3ohHuP2nZnsE5od1sRa/2ddp8k91LGryf4gwO0TmNHDmEA1xM0xgrU1kT2851Wn06JflgEI5RtKaPunuT5sexv3A/7gO5UYeuBrtW9Q5czoEPq3QKREbD7XO5aZ30f1q04L7krGxri8cJBsSAdAMQavBCkEmYNFO9fBfqE1S1Q7Sp0rLHmXWpXhV2iuHnZA2He45sFbzVheTIi1Mqhj6fR2n+LnU587VxvlYI7POpvI+b+7lJ+wGSDWrYlo9iIK/XoIPdnHcaSTXdcQfdY/6YXDQ8tOvsHtTFmVOoIrPzpXgF3Rw01SWEA3L5JyVjgErHQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synaptics.com; dmarc=pass action=none
- header.from=synaptics.com; dkim=pass header.d=synaptics.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=Synaptics.onmicrosoft.com; s=selector2-Synaptics-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=usdSeSuhasYXmm3QNXdqKWSUcRnKw2893WrYZKkVG9g=;
- b=geDPjQwaMn6GTEgyvhEGmOltp9TIA7fvAG71r60yaIDtL5VYryY8ILtSDPKPKLVVhiEp4Y89ZUsICZep8GfFHzOvHOHI89q09V/4HTbQIYeAhzXyCxOjkn/AUxHTJFJBPjQ0uTP39/teOUns4D/qc+pHc6dUijweXjgP/Stpv54=
-Received: from DM6PR03MB4778.namprd03.prod.outlook.com (20.179.105.26) by
- DM6PR03MB5036.namprd03.prod.outlook.com (10.141.162.144) with Microsoft SMTP
+ smtp.mailfrom=suse.com; dmarc=pass action=none header.from=suse.com;
+ dkim=pass header.d=suse.com; arc=none
+Received: from BY5PR18MB3283.namprd18.prod.outlook.com (10.255.139.203) by
+ BY5PR18MB3219.namprd18.prod.outlook.com (10.255.137.152) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.16; Thu, 22 Aug 2019 03:45:39 +0000
-Received: from DM6PR03MB4778.namprd03.prod.outlook.com
- ([fe80::16e:7410:d85f:ed8a]) by DM6PR03MB4778.namprd03.prod.outlook.com
- ([fe80::16e:7410:d85f:ed8a%7]) with mapi id 15.20.2157.022; Thu, 22 Aug 2019
- 03:45:39 +0000
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Jonathan Corbet
- <corbet@lwn.net>, Masami Hiramatsu <mhiramat@kernel.org>, Will Deacon
- <will@kernel.org>, "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>
-Subject: [PATCH v4] arm64: implement KPROBES_ON_FTRACE
-Thread-Topic: [PATCH v4] arm64: implement KPROBES_ON_FTRACE
-Thread-Index: AQHVWJwQA6oCa6sgREe9v4FYsERl0w==
-Date: Thu, 22 Aug 2019 03:45:38 +0000
-Message-ID: <20190822113421.52920377@xhacker.debian>
-Accept-Language: en-US
+ 15.20.2178.18; Thu, 22 Aug 2019 03:59:43 +0000
+Received: from BY5PR18MB3283.namprd18.prod.outlook.com
+ ([fe80::847e:511a:8cc2:8fca]) by BY5PR18MB3283.namprd18.prod.outlook.com
+ ([fe80::847e:511a:8cc2:8fca%6]) with mapi id 15.20.2178.020; Thu, 22 Aug 2019
+ 03:59:43 +0000
+From: Chester Lin <clin@suse.com>
+To: "linux@armlinux.org.uk" <linux@armlinux.org.uk>, "rppt@linux.ibm.com"
+ <rppt@linux.ibm.com>, "ard.biesheuvel@linaro.org"
+ <ard.biesheuvel@linaro.org>, "akpm@linux-foundation.org"
+ <akpm@linux-foundation.org>, "geert@linux-m68k.org" <geert@linux-m68k.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>
+Subject: Re: [PATCH] arm: skip nomap memblocks while finding the
+ lowmem/highmem boundary
+Thread-Topic: [PATCH] arm: skip nomap memblocks while finding the
+ lowmem/highmem boundary
+Thread-Index: AQHVWJwNXyBr+dQszki0v7NBI7XKFacGirsA
+Date: Thu, 22 Aug 2019 03:59:42 +0000
+Message-ID: <20190822035920.GA27154@linux-8mug>
+References: <20190822034425.25899-1-clin@suse.com>
+In-Reply-To: <20190822034425.25899-1-clin@suse.com>
+Accept-Language: zh-TW, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-originating-ip: [124.74.246.114]
-x-clientproxiedby: TYAPR01CA0039.jpnprd01.prod.outlook.com
- (2603:1096:404:28::27) To DM6PR03MB4778.namprd03.prod.outlook.com
- (2603:10b6:5:184::26)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
+x-clientproxiedby: DB8PR03CA0014.eurprd03.prod.outlook.com
+ (2603:10a6:10:be::27) To BY5PR18MB3283.namprd18.prod.outlook.com
+ (2603:10b6:a03:196::11)
+authentication-results: spf=none (sender IP is ) smtp.mailfrom=clin@suse.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+x-originating-ip: [202.47.205.198]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a576ac20-4f76-4e9a-468a-08d726b3329e
+x-ms-office365-filtering-correlation-id: 02ef12b8-4396-44c5-322e-08d726b529af
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:DM6PR03MB5036; 
-x-ms-traffictypediagnostic: DM6PR03MB5036:
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:BY5PR18MB3219; 
+x-ms-traffictypediagnostic: BY5PR18MB3219:
 x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <DM6PR03MB50365BC1BA18ADA24BB2B5B9EDA50@DM6PR03MB5036.namprd03.prod.outlook.com>
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BY5PR18MB321930AFDB724C487E15DF2BADA50@BY5PR18MB3219.namprd18.prod.outlook.com>
 x-ms-oob-tlc-oobclassifiers: OLM:8273;
 x-forefront-prvs: 01371B902F
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(136003)(376002)(39850400004)(396003)(346002)(189003)(199004)(54534003)(70486001)(6306002)(6512007)(9686003)(8936002)(66066001)(117636001)(86362001)(478600001)(6436002)(6486002)(7416002)(8266002)(2906002)(6116002)(3846002)(81166006)(50226002)(8676002)(81156014)(316002)(4326008)(1076003)(14444005)(256004)(71200400001)(99286004)(52116002)(476003)(486006)(110136005)(54906003)(7736002)(305945005)(25786009)(66446008)(64756008)(66556008)(97876018)(26005)(386003)(6506007)(186003)(102836004)(66476007)(66946007)(966005)(53936002)(14454004)(71190400001)(5660300002)(39210200001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR03MB5036;
- H:DM6PR03MB4778.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:0; 
-received-spf: None (protection.outlook.com: synaptics.com does not designate
+ SFS:(10019020)(7916004)(4636009)(396003)(346002)(366004)(39860400002)(136003)(376002)(199004)(189003)(102836004)(6116002)(110136005)(8676002)(6436002)(6306002)(7416002)(81156014)(14454004)(3846002)(386003)(6506007)(11346002)(446003)(99286004)(256004)(14444005)(2201001)(9686003)(305945005)(76176011)(25786009)(86362001)(81166006)(2906002)(6512007)(1076003)(6246003)(33656002)(486006)(64756008)(52116002)(66556008)(66946007)(66476007)(66446008)(53936002)(2501003)(6486002)(8936002)(7736002)(229853002)(5660300002)(107886003)(4326008)(478600001)(71200400001)(71190400001)(66066001)(476003)(54906003)(186003)(33716001)(316002)(26005);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BY5PR18MB3219;
+ H:BY5PR18MB3283.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: suse.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: zbkARI8DZa8D+GPXXm/YHcuw6AjlKe0qx5WQGe4OWTHQ+nK31GpqkRGx0vKIFstiLFiMr/oElLZzu0jHrqJPIVXk3nZn9IlY2t4lRpB99hCJz7A9pZ+zB+/rpjf3Au543czNAPMMgfaRGBYcOE6CDkjltZeoSlsUsFs4gERINgRwx0ieEy03sKATobQ9D3Tg7sw0ecw3eMYGnPnKbBhDxaJZVyNDj7CiWB3nNodsOGgrQqRAZDFJTmEWMZ8Ym/RV1HJ+ZzVveKakTUfkLVmFZ39QonoADEAO+kFpP3eyr0VMuzvsCnHF8FgXvpAF6Aiqyow/w9r46NjyWhHUMKwGG20hd1rFVtvpOptNYjtlZFkYBZ2vn4YYaKRAXzONUgnHZ0vLEKnQl7I6grqqtkNMDri4OUofrEQhMCT0WTgTR9Y=
-x-ms-exchange-transport-forked: True
-Content-ID: <3C6EDF32F9D3EE49B3B4F56DC9A91833@namprd03.prod.outlook.com>
+x-microsoft-antispam-message-info: pihe8yK0ze8ASnxoz63m0fmDIDLGoLmFLD9D55ARfvfBV782FUNWq3VheeJOB/urbP/4uq2WnZEE96yvFqgYB3P2Ebj8V4atvHDgKBzVmkW8p5BUVjYnzB29uDrC88mC749ubSLYIWj+HYWhgYP+eKN74/t0K7CNFyiPMtVqaibPW6PruQfcDzyo/i07oAfe49Cz7JaXaKFGC2xEJ0uo62EITHOzlTQ/Tq2D5w9zhf25gux42fFbVCXPDSW5kRNDYOO6rXSmH1/lMAnUhGMBMgX7iUOaS29s4YqHrMe/QVqBGb6nFKIpGub9jtsJZ0Tigd4Ap8gw6ZEE3edYDSZnV5Ol4KGvUahNxxVtpAh0P60Ue8WRIwrYOOnyZXBWe6bp+0klrLccCK37pXeeP3oXIklAtPVTKp9yoWFq2Op34Vs=
+Content-ID: <655EB30C6C68C1439EF38D1F1C4169BB@namprd18.prod.outlook.com>
 MIME-Version: 1.0
-X-OriginatorOrg: synaptics.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a576ac20-4f76-4e9a-468a-08d726b3329e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Aug 2019 03:45:38.9847 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 02ef12b8-4396-44c5-322e-08d726b529af
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Aug 2019 03:59:42.8716 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
+X-MS-Exchange-CrossTenant-id: 856b813c-16e5-49a5-85ec-6f081e13b527
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: hrT4hLLiwrhDf6hugZ02bNMrZJkR84ApAfp25i2dk/ZtTbCrHWgQWP9FJN62Af5sX1vrZqMcyRvZPk1CqiZ/tA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR03MB5036
+X-MS-Exchange-CrossTenant-userprincipalname: AEtHnytHCPRzfmfXtZxVyvYxFJm1RXwZQEsqrXZil/MvFjPUeRcbmLG9Jz+YvEi9
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR18MB3219
+X-OriginatorOrg: suse.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_204604_602520_BE82FC19 
-X-CRM114-Status: GOOD (  20.24  )
+X-CRM114-CacheID: sfid-20190821_210603_664188_412A24F9 
+X-CRM114-Status: GOOD (  15.97  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.81.75 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ no trust [15.124.64.66 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,205 +133,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
+Cc: Joey Lee <JLee@suse.com>, Gary Lin <GLin@suse.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>, Ingo Molnar <mingo@redhat.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "guillaume.gardet@arm.com" <guillaume.gardet@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KPROBES_ON_FTRACE avoids much of the overhead with regular kprobes as it
-eliminates the need for a trap, as well as the need to emulate or
-single-step instructions.
+On Thu, Aug 22, 2019 at 11:45:34AM +0800, Chester Lin wrote:
+> adjust_lowmem_bounds() checks every memblocks in order to find the boundary
+> between lowmem and highmem. However some memblocks could be marked as NOMAP
+> so they are not used by kernel, which should be skipped while calculating
+> the boundary.
+> 
+> Signed-off-by: Chester Lin <clin@suse.com>
+> ---
+>  arch/arm/mm/mmu.c | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
+> index 426d9085396b..b86dba44d828 100644
+> --- a/arch/arm/mm/mmu.c
+> +++ b/arch/arm/mm/mmu.c
+> @@ -1181,6 +1181,9 @@ void __init adjust_lowmem_bounds(void)
+>  		phys_addr_t block_start = reg->base;
+>  		phys_addr_t block_end = reg->base + reg->size;
+>  
+> +		if (memblock_is_nomap(reg))
+> +			continue;
+> +
+>  		if (reg->base < vmalloc_limit) {
+>  			if (block_end > lowmem_limit)
+>  				/*
+> -- 
+> 2.22.0
+>
 
-Tested on berlin arm64 platform.
+Hi Russell, Mike and Ard,
 
-~ # mount -t debugfs debugfs /sys/kernel/debug/
-~ # cd /sys/kernel/debug/
-/sys/kernel/debug # echo 'p _do_fork' > tracing/kprobe_events
+Per the discussion in the thread "[PATH] efi/arm: fix allocation failure ...",
+(https://lkml.org/lkml/2019/8/21/163), I presume that the change to disregard
+NOMAP memblocks in adjust_lowmem_bounds() should be separated as a single patch.
 
-before the patch:
+Please let me know if any suggestion, thank you.
 
-/sys/kernel/debug # cat kprobes/list
-ffffff801009fe28  k  _do_fork+0x0    [DISABLED]
-
-after the patch:
-
-/sys/kernel/debug # cat kprobes/list
-ffffff801009ff54  k  _do_fork+0x4    [DISABLED][FTRACE]
-
-Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
----
-KPROBES_ON_FTRACE avoids much of the overhead with regular kprobes as it
-eliminates the need for a trap, as well as the need to emulate or
-single-step instructions.
-
-Applied after arm64 FTRACE_WITH_REGS:
-http://lists.infradead.org/pipermail/linux-arm-kernel/2019-August/674404.html
-
-Changes since v3:
-  - move kprobe_lookup_name() and arch_kprobe_on_func_entry to ftrace.c since
-    we only want to choose the ftrace entry for KPROBES_ON_FTRACE.
-  - only choose ftrace entry if (addr && !offset)
-
-Changes since v2:
-  - remove patch1, make it a single cleanup patch
-  - remove "This patch" in the change log
-  - implement arm64's kprobe_lookup_name() and arch_kprobe_on_func_entry instead
-    of patching the common kprobes code
-
-Changes since v1:
-  - make the kprobes/x86: use instruction_pointer and instruction_pointer_set
-    as patch1
-  - add Masami's ACK to patch1
-  - add some description about KPROBES_ON_FTRACE and why we need it on
-    arm64
-  - correct the log before the patch
-  - remove the consolidation patch, make it as TODO
-  - only adjust kprobe's addr when KPROBE_FLAG_FTRACE is set
-  - if KPROBES_ON_FTRACE, ftrace_call_adjust() the kprobe's addr before
-    calling ftrace_location()
-  - update the kprobes-on-ftrace/arch-support.txt in doc
-
-
- .../debug/kprobes-on-ftrace/arch-support.txt  |  2 +-
- arch/arm64/Kconfig                            |  1 +
- arch/arm64/kernel/probes/Makefile             |  1 +
- arch/arm64/kernel/probes/ftrace.c             | 84 +++++++++++++++++++
- 4 files changed, 87 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm64/kernel/probes/ftrace.c
-
-diff --git a/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt b/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
-index 68f266944d5f..e8358a38981c 100644
---- a/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
-+++ b/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
-@@ -9,7 +9,7 @@
-     |       alpha: | TODO |
-     |         arc: | TODO |
-     |         arm: | TODO |
--    |       arm64: | TODO |
-+    |       arm64: |  ok  |
-     |         c6x: | TODO |
-     |        csky: | TODO |
-     |       h8300: | TODO |
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 663392d1eae2..928700f15e23 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -167,6 +167,7 @@ config ARM64
- 	select HAVE_STACKPROTECTOR
- 	select HAVE_SYSCALL_TRACEPOINTS
- 	select HAVE_KPROBES
-+	select HAVE_KPROBES_ON_FTRACE
- 	select HAVE_KRETPROBES
- 	select HAVE_GENERIC_VDSO
- 	select IOMMU_DMA if IOMMU_SUPPORT
-diff --git a/arch/arm64/kernel/probes/Makefile b/arch/arm64/kernel/probes/Makefile
-index 8e4be92e25b1..4020cfc66564 100644
---- a/arch/arm64/kernel/probes/Makefile
-+++ b/arch/arm64/kernel/probes/Makefile
-@@ -4,3 +4,4 @@ obj-$(CONFIG_KPROBES)		+= kprobes.o decode-insn.o	\
- 				   simulate-insn.o
- obj-$(CONFIG_UPROBES)		+= uprobes.o decode-insn.o	\
- 				   simulate-insn.o
-+obj-$(CONFIG_KPROBES_ON_FTRACE)	+= ftrace.o
-diff --git a/arch/arm64/kernel/probes/ftrace.c b/arch/arm64/kernel/probes/ftrace.c
-new file mode 100644
-index 000000000000..5989c57660f3
---- /dev/null
-+++ b/arch/arm64/kernel/probes/ftrace.c
-@@ -0,0 +1,84 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Dynamic Ftrace based Kprobes Optimization
-+ *
-+ * Copyright (C) Hitachi Ltd., 2012
-+ * Copyright (C) 2019 Jisheng Zhang <jszhang@kernel.org>
-+ *		      Synaptics Incorporated
-+ */
-+
-+#include <linux/kprobes.h>
-+
-+/* Ftrace callback handler for kprobes -- called under preepmt disabed */
-+void kprobe_ftrace_handler(unsigned long ip, unsigned long parent_ip,
-+			   struct ftrace_ops *ops, struct pt_regs *regs)
-+{
-+	struct kprobe *p;
-+	struct kprobe_ctlblk *kcb;
-+
-+	/* Preempt is disabled by ftrace */
-+	p = get_kprobe((kprobe_opcode_t *)ip);
-+	if (unlikely(!p) || kprobe_disabled(p))
-+		return;
-+
-+	kcb = get_kprobe_ctlblk();
-+	if (kprobe_running()) {
-+		kprobes_inc_nmissed_count(p);
-+	} else {
-+		unsigned long orig_ip = instruction_pointer(regs);
-+		/* Kprobe handler expects regs->pc = pc + 4 as breakpoint hit */
-+		instruction_pointer_set(regs, ip + sizeof(kprobe_opcode_t));
-+
-+		__this_cpu_write(current_kprobe, p);
-+		kcb->kprobe_status = KPROBE_HIT_ACTIVE;
-+		if (!p->pre_handler || !p->pre_handler(p, regs)) {
-+			/*
-+			 * Emulate singlestep (and also recover regs->pc)
-+			 * as if there is a nop
-+			 */
-+			instruction_pointer_set(regs,
-+				(unsigned long)p->addr + MCOUNT_INSN_SIZE);
-+			if (unlikely(p->post_handler)) {
-+				kcb->kprobe_status = KPROBE_HIT_SSDONE;
-+				p->post_handler(p, regs, 0);
-+			}
-+			instruction_pointer_set(regs, orig_ip);
-+		}
-+		/*
-+		 * If pre_handler returns !0, it changes regs->pc. We have to
-+		 * skip emulating post_handler.
-+		 */
-+		__this_cpu_write(current_kprobe, NULL);
-+	}
-+}
-+NOKPROBE_SYMBOL(kprobe_ftrace_handler);
-+
-+kprobe_opcode_t *kprobe_lookup_name(const char *name, unsigned int offset)
-+{
-+	unsigned long addr = kallsyms_lookup_name(name);
-+
-+	if (addr && !offset) {
-+		unsigned long faddr;
-+		/*
-+		 * with -fpatchable-function-entry=2, the first 4 bytes is the
-+		 * LR saver, then the actual call insn. So ftrace location is
-+		 * always on the first 4 bytes offset.
-+		 */
-+		faddr = ftrace_location_range(addr,
-+					      addr + AARCH64_INSN_SIZE);
-+		if (faddr)
-+			return (kprobe_opcode_t *)faddr;
-+	}
-+	return (kprobe_opcode_t *)addr;
-+}
-+
-+bool arch_kprobe_on_func_entry(unsigned long offset)
-+{
-+	return offset <= AARCH64_INSN_SIZE;
-+}
-+
-+int arch_prepare_kprobe_ftrace(struct kprobe *p)
-+{
-+	p->ainsn.api.insn = NULL;
-+	return 0;
-+}
--- 
-2.23.0.rc1
 
 
 _______________________________________________
