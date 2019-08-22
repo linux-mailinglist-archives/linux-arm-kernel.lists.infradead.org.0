@@ -2,57 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9C119989A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 17:55:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F0A2998AF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 18:01:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yB5QHTYoM7O3OfJ4EOQgJk7q0cCk3LkgSixP2Kel6Cs=; b=A0CrJujivJNBKQ
-	l6N0ZYRWtJjDr/J6AlBumLkXg0gCnll/vcjSAiPs5rwrwPI7eS2j0ovSFX0mViAH0zImVbhoKhvtQ
-	WXscml5+PmMdsLmA5g5q91xkdci1KiptNPqTFba+rGemgTolbFVupGEOnAoMHgWkQ0m1eZT9R8ShT
-	Oex0oGTB4w7HOdHpbvocwvhFUtMg9NhMo2t9B0OnZMxwayXvFYBXNo9ZclsfP4HxQyOHWsENtXBmH
-	BejWnW8u43KeIafs3uKA85UZT6hgbUwF90Y3+PQA8oDvpXRmTyQN8dVsDNk1TJr+nEH0q+rEG1bd7
-	24IB6TQjO5xESPVfgzfQ==;
+	List-Owner; bh=hVML0v57jB9XE8iIPRudl1DDab06hACa1ldYdijSHMQ=; b=OtqRm2Cmgl9d1s
+	x0qLwFAoO/O0SXbfE0FYRT/cYULllFpYiYN0mczcHjXpYocUTGBY/3uH8aSJYD884mY3z865ImDp0
+	v/e2EYBB1BBpEUy7tPqFuqr/JZegwDmOulj+euWHI7fisCzZtfNo/yQfDMkV2DrfLkl11NQz2Hmx9
+	/e5ARztkGtH0d3ZDMXEF4+WSfrLlG9DW8VjrVnk4YxIhQ7NZqNDdbbUxnirpmYCbmiDX+hec0CsyK
+	suEy7NfPo5XvdZuhUCIn56vQR4sFySkFCMzLD7ZuVLlrrDjlhr2k2evxNpLtYRoVk7eVpLU9CPWlK
+	/iH8lG2m6Akz9278kmzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0pRH-0004uD-Ez; Thu, 22 Aug 2019 15:55:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i0pR4-0004tI-3z
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 15:55:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BC227337;
- Thu, 22 Aug 2019 08:55:36 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 1721B3F718; Thu, 22 Aug 2019 08:55:34 -0700 (PDT)
-Date: Thu, 22 Aug 2019 16:55:32 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH v9 3/3] arm64: Relax
- Documentation/arm64/tagged-pointers.rst
-Message-ID: <20190822155531.GB55798@arrakis.emea.arm.com>
-References: <20190821164730.47450-1-catalin.marinas@arm.com>
- <20190821164730.47450-4-catalin.marinas@arm.com>
- <20190821173352.yqfgaozi7nfhcofg@willie-the-truck>
- <20190821184649.GD27757@arm.com>
+	id 1i0pWx-0006tb-RM; Thu, 22 Aug 2019 16:01:43 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0pWl-0006r9-Vw
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 16:01:33 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q139so4228169pfc.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 22 Aug 2019 09:01:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=98w2GcKCN663QK9TeclkQTSI7rJh8WNm1jNEnO7e0aQ=;
+ b=VYEQpTruVCXeLl7kVzcZ1GS0qiWbvPwn5x3IbGR6aAqF/r+h4/bU2H+kxGqp2QEyYx
+ EDEALQ0LYuCKOomqkK+UoXAkQWK3ORrCM5ziynJprIxVNXIkonT+npeLOzPJ6aqKLFxf
+ G4Ak8rDlSHi7so5ebuMX5XSq4zOOyPBsJjDT9zf2yAPoIBLDHAj8+t0yUFs5hBLkJNLp
+ 0zzZt8FfC+fl9RMMhgGi53HXi+d669q46yc6gc/sEOiE/Clz4SRK8WkXboz7336TceCD
+ 6zuA/Cs3A7cdDwePnXPdMxqwVnay6j6FPv8RBapsINpKdWQBEymRcxsl/uNmCjccECUj
+ uXkw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition
+ :content-transfer-encoding:in-reply-to:user-agent;
+ bh=98w2GcKCN663QK9TeclkQTSI7rJh8WNm1jNEnO7e0aQ=;
+ b=IwOCTRy7phJ+YS/jXaSzfLzR6LZmXSPR+56WH8Jol9fNeU7awvNpB3lYg3LSojYp4h
+ gWGex6Mf/Jt+HUmZTp/N58STL/iD0ZQ1R6Y03/bSrm9RG1iSQBgXiJkjKte95kA4Cd+Z
+ LfSWn8ALfOaq61V/o+arWUFUSF/E+y2SXYtINIe7onkFHg+cejEWPJNidiN5p+10VxPL
+ 2I+/XTH7NVD4k5doaLJR/lvoP/afrD2H+pyQ791rnpEg3QAJnxtIpUUfcEz45HuAUR6l
+ CuZtdVLW3/ZaV6ahJ8rJJGWEhmcYoXC67xN/wMG/CZj75+o5CzOYwdV3NdtFcgcBERoz
+ Qu3g==
+X-Gm-Message-State: APjAAAVgZAWV8COCkIVoDZY+4IHdWsYzjuVzppykU+7Lgs3eotUoNTMT
+ 53qQ+uEZomGK8Lh1MpgeVps=
+X-Google-Smtp-Source: APXvYqxhzhQQCIJ9upWMd5eHMV/mPBB3qC6EoA0i0AwZ2PrrA62XyDUSenyDovW0vqb1IWGs5baOgA==
+X-Received: by 2002:a62:6c1:: with SMTP id 184mr41294058pfg.230.1566489691040; 
+ Thu, 22 Aug 2019 09:01:31 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id z189sm22267905pfb.137.2019.08.22.09.01.28
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 22 Aug 2019 09:01:29 -0700 (PDT)
+Date: Thu, 22 Aug 2019 09:01:28 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Alexander Amelkin <a.amelkin@yadro.com>
+Subject: Re: [PATCH 3/3] watchdog/aspeed: add support for dual boot
+Message-ID: <20190822160127.GA6992@roeck-us.net>
+References: <1f2cd155057e5ab0cdb20a9a11614bbb09bb49ad.camel@yadro.com>
+ <20190821163220.GA11547@roeck-us.net>
+ <9e7fe5cc-ba1b-b8b6-69c5-c3c6cf508a36@yadro.com>
+ <20190821181008.GB15127@roeck-us.net>
+ <5cb20f52-884a-b921-c904-ebf244092318@yadro.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190821184649.GD27757@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <5cb20f52-884a-b921-c904-ebf244092318@yadro.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_085538_208046_EF82E99D 
-X-CRM114-Status: GOOD (  20.80  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190822_090132_055940_F739C0B6 
+X-CRM114-Status: GOOD (  33.36  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,73 +108,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+Cc: linux-watchdog@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
+ Joel Stanley <joel@jms.id.au>, Ivan Mikhaylov <i.mikhaylov@yadro.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 07:46:51PM +0100, Dave P Martin wrote:
-> On Wed, Aug 21, 2019 at 06:33:53PM +0100, Will Deacon wrote:
-> > On Wed, Aug 21, 2019 at 05:47:30PM +0100, Catalin Marinas wrote:
-> > > @@ -59,6 +63,11 @@ be preserved.
-> > >  The architecture prevents the use of a tagged PC, so the upper byte will
-> > >  be set to a sign-extension of bit 55 on exception return.
-> > >  
-> > > +This behaviour is maintained when the AArch64 Tagged Address ABI is
-> > > +enabled. In addition, with the exceptions above, the kernel will
-> > > +preserve any non-zero tags passed by the user via syscalls and stored in
-> > > +kernel data structures (e.g. ``set_robust_list()``, ``sigaltstack()``).
-> 
-> sigaltstack() is interesting, since we don't support tagged stacks.
+On Thu, Aug 22, 2019 at 05:36:21PM +0300, Alexander Amelkin wrote:
+> 21.08.2019 21:10, Guenter Roeck wrote:
+> > On Wed, Aug 21, 2019 at 08:42:24PM +0300, Alexander Amelkin wrote:
+> >> 21.08.2019 19:32, Guenter Roeck wrote:
+> >>> On Wed, Aug 21, 2019 at 06:57:43PM +0300, Ivan Mikhaylov wrote:
+> >>>> Set WDT_CLEAR_TIMEOUT_AND_BOOT_CODE_SELECTION into WDT_CLEAR_TIMEOUT=
+_STATUS
+> >>>> to clear out boot code source and re-enable access to the primary SP=
+I flash
+> >>>> chip while booted via wdt2 from the alternate chip.
+> >>>>
+> >>>> AST2400 datasheet says:
+> >>>> "In the 2nd flash booting mode, all the address mapping to CS0# woul=
+d be
+> >>>> re-directed to CS1#. And CS0# is not accessable under this mode. To =
+access
+> >>>> CS0#, firmware should clear the 2nd boot mode register in the WDT2 s=
+tatus
+> >>>> register WDT30.bit[1]."
+> >>> Is there reason to not do this automatically when loading the module
+> >>> in alt-boot mode ? What means does userspace have to determine if CS0
+> >>> or CS1 is active at any given time ? If there is reason to ever have =
+CS1
+> >>> active instead of CS0, what means would userspace have to enable it ?
+> >> Yes, there is. The driver is loaded long before the filesystems are mo=
+unted.
+> >> The filesystems, in the event of alternate/recovery boot, need to be m=
+ounted
+> >> from the same chip that the kernel was booted. For one reason because =
+the main
+> >> chip at CS0 is most probably corrupt. If you clear that bit when drive=
+r is
+> >> loaded, your software will not know that and will try to mount the wro=
+ng
+> >> filesystems. The whole idea of ASPEED's switching chipselects is to ha=
+ve
+> >> identical firmware in both chips, without the need to process the alte=
+rnate
+> >> boot state in any way except for indicating a successful boot and rest=
+oring
+> >> access to CS0 when needed.
+> >>
+> >> The userspace can read bootstatus sysfs node to determine if an altern=
+ate
+> >> boot has occured.
+> >>
+> >> With ASPEED, CS1 is activated automatically by wdt2 when system fails =
+to boot
+> >> from the primary flash chip (at CS0) and disable the watchdog to indic=
+ate a
+> >> successful boot. When that happens, both CS0 and CS1 controls=A0 get r=
+outed in
+> >> hardware to CS1 line, making the primary flash chip inaccessible. Depe=
+nding
+> >> on the architecture of the user-space software, it may choose to re-en=
+able
+> >> access to the primary chip via CS0 at different times. There must be a=
+ way to do so.
+> >>
+> > So by activating cs0, userspace would essentially pull its own root fil=
+e system
+> > from underneath itself ?
+> =
 
-We should support tagged SP with the new ABI as they'll be required for
-MTE. sigaltstack() and clone() are the two syscalls that come to mind
-here.
+> Exactly. That's why for alternate boot the firmware would usually copy
+> all filesystems to memory and mount from there. Some embedded systems
+> do that always, regardless of which chip they boot from.
+> =
 
-> Do we keep the ss_sp tag in the kernel, but squash it when delivering
-> a signal to the alternate stack?
+That is different, though, to what you said earlier. Linux would then start
+with a clean file system, and not need access to the file system in cs1 at =
+all.
+Clearing the flag when starting the driver would then be ok.
 
-We don't seem to be doing any untagging, so we just just use whatever
-the caller asked for. We may need a small test to confirm.
+> However, to be able to recover the main flash chip, the system needs CS0
+> to function as such (not as CS1). That's why this control is needed.
+> =
 
-That said, on_sig_stack() probably needs some untagging as it does user
-pointer arithmetics with potentially different tags.
+If what you said is correct, not really. It should be fine and create more
+predictive behavior if the probe function selects cs0 automatically.
 
-> > Hmm. I can see the need to provide this guarantee for things like
-> > set_robust_list(), but the problem is that the statement above is too broad
-> > and isn't strictly true: for example, mmap() doesn't propagate the tag of
-> > its address parameter into the VMA.
-> > 
-> > So I think we need to nail this down a bit more, but I'm having a really
-> > hard time coming up with some wording :(
-> 
-> Time for some creative vagueness?
-> 
-> We can write a statement of our overall intent, along with examples of
-> a few cases where the tag should and should not be expected to emerge
-> intact.
-> 
-> There is no foolproof rule, unless we can rewrite history...
+Guenter
 
-I would expect the norm to be the preservation of tags with a few
-exceptions. The only ones I think where we won't preserve the tags are
-mmap, mremap, brk (apart from the signal stuff already mentioned in the
-current tagged-pointers.rst doc).
+> As Ivan mentioned, for AST2500 and the upcoming AST2600 the behavior
+> is slightly different. They don't just connect both CS controls to CS1 bu=
+t instead
+> swap them so the primary chip becomes secondary from the software point
+> of view. The means to restore the normal wiring may still be needed.
+> =
 
-So I can remove this paragraph altogether and add a note in part 3 of
-the tagged-address-abi.rst document that mmap/mremap/brk do not preserve
-the tag information.
+> >
+> >> This code most probably adds nothing at the assembly level.
+> >>
+> > That seems quite unlikely. Please demonstrate.
+> =
 
--- 
-Catalin
+> Yes, you were right. It adds 7 instructions. We'll drop the check.
+> It's just my DO-178 background, I add 'robustness' checks everywhere.
+> =
+
+> >>>> +	writel(WDT_CLEAR_TIMEOUT_AND_BOOT_CODE_SELECTION,
+> >>>> +			wdt->base + WDT_CLEAR_TIMEOUT_STATUS);
+> >>>> +	wdt->wdd.bootstatus |=3D WDIOF_EXTERN1;
+> >>> The variable reflects the _boot status_. It should not change after b=
+ooting.
+> >> Is there any documentation that dictates that? All I could find is
+> >>
+> >> "bootstatus: status of the device after booting". That doesn't look to=
+ me like it absolutely can not change to reflect the updated status (that i=
+s, to reflect that the originally set up alternate CS routing has been rese=
+t to normal).
+> >>
+> > You choose to interpret "after booting" in a kind of novel way,
+> > which I find a bit disturbing. I am not really sure how else to
+> > describe "boot status" in a way that does not permit such
+> > reinterpratation of the term.
+> =
+
+> How about "Reflects reasons that caused a reboot, remains constant until =
+the next boot" ?
+> =
+
+> > On top of that, how specifically would "WDIOF_EXTERN1" reflect
+> > what you claim it does ? Not only you are hijacking bootstatus9
+> > (which is supposed to describe the reason for a reboot), you
+> > are also hijacking WDIOF_EXTERN1. That seems highly arbitrary
+> > to me, and is not really how an API/ABI should be used.
+> =
+
+> We used WDIOF_EXTERN1 because:
+> =
+
+> 1. We thought that bootstatus _can_ change
+> =
+
+> 2. We thought that adding extra bits wouldn't be appreciated
+> =
+
+> Now as you clarified that assumption 1 was wrong we are going to implemen=
+t status as I proposed earlier:
+> =
+
+> >
+> >> I think we could make 'access_cs0' readable instead, so it could repor=
+t the
+> >> current state of the boot code selection bit. Reverted, I suppose. That
+> >> way 'access_cs0' would report 1 after 1 has been written to it (it wou=
+ldn't
+> >> be possible to write a zero).
+> =
+
+> With best regards,
+> Alexander Amelkin,
+> BIOS/BMC Team Lead, YADRO
+> https://yadro.com
+> =
+
+> =
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
