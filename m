@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFA82996BC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 16:33:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCDBB996C1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 16:34:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dtRPVcFykcKEFemjYBdv9fRg2SRJhSNPDR48ETgo0is=; b=B86Bt0Odld/Jeo
-	rv+pWBgg1eenAjX90fnocra5lwhEvG48tGkwBWTo9bNJb9h7X9zTS6DMuC6pmvFIYxqNtl+zGPdqz
-	9+Qy+KFZoArcr41Rer7Af+ljUtY2zLQnBTNdMS5nTohMXrFS3pBoA8oJIDf1tVODz9JPINqWJLs7v
-	zeXbex+hfNqh69Feh8UPCmSuVadRehaPpQZnjg3ErB3+qLVDygl1JI/Ho8opjQqUi2DHrURonG80c
-	5ReyFdS4mAHYjjXp4KFo3IHrXke2nse3YVE9HdPy3yTCUygJ1Nzs4xl1ejff/BBZHf0gg97dwalsJ
-	GHj35ofN3IIUUkv2JJXA==;
+	List-Owner; bh=WFZPiHTjAc5AGwPAT3vyKNyvaF4trPyO2QZY9QJjULQ=; b=SQISruEnFQtVdf
+	JGI6PmaeWVrUlzwIY3aDMq8I32+IRrOqhZrhOfjgjBVuaqEGD39CRpvGwzn3lmh2hjarqwutMBmSv
+	3cs9qW3ret0ycfTNpyC/nMnA/dymegknuxe8bV94fEpzsgcwe/tKiRNe/XquKRnVedIg09ZsuMXVV
+	dj1wXeshfiTd1qIMVVKs9SvgoYR7b3k6dQQ8TSy35qwkuZebj5zBJlHbitcPGFHe13xTZdXGPzzTn
+	UbfCZWo53ducjHEYaRBhgJ4E/YWNdI3YEtHPFtNM/YsZrGrAtwIaTd8LOPQEwJDksXBMl0rPNcXa6
+	7zfkbaNcnW8IwBKihQ5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0o9j-0007aF-Nm; Thu, 22 Aug 2019 14:33:39 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1i0oAl-0007rg-SU; Thu, 22 Aug 2019 14:34:43 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0o9a-0007Zq-2f; Thu, 22 Aug 2019 14:33:31 +0000
-Received: by mail-ed1-x544.google.com with SMTP id p28so8279061edi.3;
- Thu, 22 Aug 2019 07:33:29 -0700 (PDT)
+ id 1i0oAa-0007rG-EN; Thu, 22 Aug 2019 14:34:33 +0000
+Received: by mail-ed1-x543.google.com with SMTP id w5so8250470edl.8;
+ Thu, 22 Aug 2019 07:34:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=XzY3Dz/EWvptntPjJoBoC8QtEPoxpWBVlYj2OlM/q1Q=;
- b=PEtylWscnS8vGtDzSCFyywrkJGg/5DY/aFFGZz9Clm4aagdpo3bE9V7eOASwGKxqjI
- aoCXMary+xo30rD9KaJyV3IM2tFxGLTBiyFqcWapzQ6hWuTAdSICDlzp/nHrhtW5MkGu
- oFZQdYXrZJFFa8+mhInhKbcdPbHn6UXTwql02x+4uLA70UPzRtrKRBQ/H9cwqWzJdO+6
- U4ar2k4G4f0QXulRQB+wfWqYD+bSpcNpuqy08E1cLH8DP64Oo3RfGspD7KEhg261OGia
- Z4jjVPlMl/S/tsKDV6ynKCATfSHMXRD9H8nRFLOBGdCrWXWjF8apPKsFUSZEQQgKyxwU
- Jqng==
+ bh=Qk5Jv+ZigKQd8hWF7XzKqjwdtpqJangvF7uRKkc4xK8=;
+ b=Rct8fGGRdzQR/XxD0XbtKxVc70VmAtDQ3Ip+bt3D4MPQhQiJzXG7IEQbxwfw7WErJR
+ Skq5e5ACSNuKxDSVpJ5+yrDLBM1DQrgkVyqy3rdlyVwldaj1NZ27Bm3zW/hKFAU5ThEy
+ H9GLWOOBUESmiLzPijldzJ9WddraSfD+zQi03x+gvFqCGiYBSQB4D5QipE3LmC2oIp1w
+ 744x5jm8YMbZRIKrZo6Azhz6A3dYx1uHV2UQFCCYlI9cxQdEx/2BmCO+isS5Mwk1dpju
+ 1VyvrxfkbgxPysTLPVILNWwBQMnAw3IQAIV/2NMbipe1e0qnvHy1CiIDoJJNKIM2Wskk
+ H7Uw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=XzY3Dz/EWvptntPjJoBoC8QtEPoxpWBVlYj2OlM/q1Q=;
- b=UOcgzau3VvwCRRn5DL/JkCHJVimrEpM6TPSeucJ17dlcRxwG6ZrUdMXgaEu3PbL060
- g3H1VDULXr09M2NCLeMhh2gJCCxNvaYEMaa+pxGqMSXtWGzCgG/XB10oQEibmLz82CZ9
- P71vo/D13yExVjDx4m8AIAbP8Zr5fYEJi4hHnKCiP2n68nkO4EsgebBlXlqo8vrdriaJ
- Gza7TFukeKGLWe5QzT5eLE+B9drZiECTcabbXodUKLltmP9EgUufQ5Yqg3/wiUz0fZk8
- Q5qJLt74lojzclXGWRngslqdJCyYbE7ChN8cYufKxnKyeKlh2dmS5V9B56sZ7UdQskYA
- LQlQ==
-X-Gm-Message-State: APjAAAXJczKiS2xAM/VwFSfGBfpjnkTEe27zGibzjbb1kkRFONRAArQP
- qz/s++DZsFwrNIfWR1e9PGRPsZq6g5/v6w==
-X-Google-Smtp-Source: APXvYqwI1B9J6IFuZ0L+pPkf/gbCTYufz4DistM00y1zTmJW9BBruAmiCNvuoUFcVY3hj06eSCC24Q==
-X-Received: by 2002:aa7:c611:: with SMTP id h17mr41973707edq.75.1566484408148; 
- Thu, 22 Aug 2019 07:33:28 -0700 (PDT)
+ bh=Qk5Jv+ZigKQd8hWF7XzKqjwdtpqJangvF7uRKkc4xK8=;
+ b=O5pQn1HeIkpUgkDfCmFjqyxmFtPC2Ky7Wzf80S+iNXXaslczScmYTgQA/kicNwCMcO
+ KWY5vTlZdORYlhuF3vwF1V9nT45CaxecDth3y55mqchPxb+XXhqLpQLnGri0LLB29+7K
+ 76Xjpt27rFKNYr5zL+MF2VTbnDZvrfZg/m+f0j5zpI3/eZ4UyAhEIYbtLKuw+SGExy8z
+ yPFNxRHNMDQPHhsZxQ/xcI9AvddmJ06lE24Q7zaWM2MASZ4mn34k/48o5jGLhj3lfqKx
+ ytSkSx+kegEi2bP2aI5M/idbLdcDpQHuts07vDl2UE1fnNaslwNXJ/FjaorADcKi7Zvc
+ mGpg==
+X-Gm-Message-State: APjAAAWNBFcUXj2doAdZ1DOfYr5XoOj8PWS0YVpNkYyMEdSJMl9NsmTA
+ 3APARlm8SuJ0lmzxRyp67Gw=
+X-Google-Smtp-Source: APXvYqxiG7KGBacNVl+D4X0n/mwdnePS/kGW8KK+ZRVQDECFFLjC2y/j7fXnuvPUJ/4Pp2NREMgoTg==
+X-Received: by 2002:a17:906:811:: with SMTP id
+ e17mr36953182ejd.274.1566484470500; 
+ Thu, 22 Aug 2019 07:34:30 -0700 (PDT)
 Received: from ziggy.stardust ([37.223.137.147])
- by smtp.gmail.com with ESMTPSA id g20sm3931394edp.92.2019.08.22.07.33.26
+ by smtp.gmail.com with ESMTPSA id 59sm4883714edg.44.2019.08.22.07.34.29
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 22 Aug 2019 07:33:27 -0700 (PDT)
+ Thu, 22 Aug 2019 07:34:29 -0700 (PDT)
 Subject: Re: [PATCH 1/2] Include mt8183-reset.h and add reset-cells in
  infracfg in dtsi file.
 To: Yong Liang <yong.liang@mediatek.com>, mturquette@baylibre.com,
@@ -159,23 +160,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlIFZ6fsEKI
  AN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+r2JwH1CJ
  jrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <24e4a0a9-065e-410d-7c3f-403ec859ae07@gmail.com>
-Date: Thu, 22 Aug 2019 16:33:25 +0200
+Message-ID: <722d0ef0-976e-5241-a492-57dc56e3921e@gmail.com>
+Date: Thu, 22 Aug 2019 16:34:28 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
 In-Reply-To: <20190725080957.17333-1-yong.liang@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_073330_126239_43008814 
-X-CRM114-Status: GOOD (  14.60  )
+X-CRM114-CacheID: sfid-20190822_073432_489514_61C9F786 
+X-CRM114-Status: GOOD (  14.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -211,17 +212,12 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On 25/07/2019 10:09, Yong Liang wrote:
 > From: "yong.liang" <yong.liang@mediatek.com>
 > 
-
-Missing commit message.
-Subject could be shorter, something like:
-arm64: dts: add reset-cells for infracfg
-
 > Change-Id: I46e0aca76a206ac86ee0477d9dbd67e1e924b118
-
-Please delete Change-Id it's not meaning full for upstream work.
-
 > Signed-off-by: yong.liang <yong.liang@mediatek.com>
 > ---
+
+Somehow I only have patch 1 of the series in my inbox.
+
 >  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 2 ++
 >  1 file changed, 2 insertions(+)
 > 
