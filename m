@@ -2,74 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D6D8992F6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 14:14:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBC92992F9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 14:15:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WTQyP2DXs0SzpqG6JQzfFq+JIRlbVFrK7ngoF6QUn44=; b=BIrjypEHhcXvSq
-	B7gFUlJhjtFUB1UOkcjFAd6dgHpPEtJiMfMIHj6X3kts+sa4kTy83ginpT2+QA5HTkdLbORpWU+VM
-	IYaIxJrblCU+9AglL6WKKGqUcEavUkEMXK/ilWSah+2NhkGxbLHZeN4pn/Orf0rAdd0Jb0MLzJr31
-	t0VwbgspacVh5tZzA7t75RMSelcQGP/tFUw/IukvmeTrQZ3PPIFjjK29XxROHzzJMF5wpNxOaTZDe
-	OfneGjvIwlaKPyvf6MAO4MvPdQ2w/IZg8CFg0yuroak78V1Wu/OWwdITJvbQCUXmrUP1+9UJ5oqr/
-	VFtAElbvGx7GyQENhOZA==;
+	List-Owner; bh=wCbvVPs42M+va4vmVmevDGUqZnO/Zn/ojze1XlrgEiA=; b=fipju87FRQYcPZ
+	g2AYYJq8zAuQW+70BoqR32OOGA9vIznRzWYYTW7JqEnMvG0ePm/j3tlEQlflNTMUgRYXAIm0iXYjk
+	YYJFejTK0066gWlbTXsvo2mFCngKGmHe/HNTXManFIkDtfD1ZivS4eTwjt4AvDg3defFigtfnionY
+	FvyGz/GywXWoWACZE1k0F/vemvx1PYcCdCDhFK0OF9+eEqJ1uhYIZ6Cd524ZZ27Me1Wp/VLHgBkIR
+	Ujr9O5Dy9ejasAHlwt5uUn+0CapfeV1idMJtLQ324dUo6jDUnHAKrFHcgqvQEEuhKXQu/K1LDwHL0
+	BnVLqAeyEN+dB6wzpPjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0lz6-00023g-3l; Thu, 22 Aug 2019 12:14:32 +0000
-Received: from mail-ua1-x92a.google.com ([2607:f8b0:4864:20::92a])
+	id 1i0lzp-0002Rd-1c; Thu, 22 Aug 2019 12:15:17 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0lya-0001pw-7l
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 12:14:03 +0000
-Received: by mail-ua1-x92a.google.com with SMTP id g11so1917346uak.0
+ id 1i0lzS-0002RF-4r
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 12:14:55 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id h192so1501744vka.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 05:13:58 -0700 (PDT)
+ Thu, 22 Aug 2019 05:14:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=DoBmeUN23M8f6sfbc9hjllfgwqRgBk2+sJFpDr9LHV0=;
- b=fBVXvdd5bwH+sPQ0EwczYi7R6UmwhFeLh0tBrRFjzXX7IFfV2KnWfv8vwWiNuIBB8H
- NGGZv62Zk/qT4ZXkyI0BBvAYEl+xvjQK7SG7Tsj0MijJuSmyal+GioBCqP3LfHzD4+oY
- H4u7Wfgxm/ojS3Txbnuys36cWl+exdG4o4s0mesYIrVTF2ehlmDXzZqXpQFcEd+LatFA
- 1zFeZZ+yHi8H7Dy4+/zq0XzTxf0XkUSK77ho1+CZNnHkMvgw6bTJmR1mvUE0A01KmHn2
- MdqHGzSDf7tD3eCbDAEt80tOupjxhBET+sk/uQ0Xjzk1P95B6OphlIfJrhjJs6r2lq83
- HQIA==
+ :cc; bh=001ZjFQMxb/zCLk3zcyFqNqBIiCvp+5VqdO2trNiRjw=;
+ b=rBGmCN2TSFf+woRq1U6/8fgdOQP55ndxj6XdO2EdMKOeGV2MrzU8rvwexXqn72Xj03
+ 3I8c//L8dMyqiq7nE5jvcTkI4B0Rx7q0EtsmX/2Txly9jCIZd67IEQR3P8FwpE8V6W7z
+ mwvCR8G9OPcGTa1Ajb3KI7CPl5HDZbPsyHblwWWMZlR920QJ1MQiljgf68A6WiMzYKL5
+ ZWH+8SZqMK3Z3Z8weGjBTh1dxKZVJpQB00Y1CPBOii/AhCl4uzkCyBotPMpyvY8X0PJ+
+ uWvN0QpzLt2ack1QdKqeFGY5rKmZfI65PQ16PC1MYg/rHNriK/R+nUSHHC/SbdEksOn1
+ y2Cg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=DoBmeUN23M8f6sfbc9hjllfgwqRgBk2+sJFpDr9LHV0=;
- b=KjlvChVMKdN0ac51zJ+M1DeZ/ij7j60wD9euUMrDnVlR0KygWSJF8qg1KnDPu6a10p
- +q+MUwpkB7Nmo9QQWwIbKyRQBfPqo8rwbBp+bpD5kx1O4P5UPDpYw1tCp9F+LbiwKbqK
- iRnJ99MjvBv2nf98Oui/3/Y35iiq7LJiLF43FCVHSDdXtlMSRL4AJyMoiWldvPKcYwqD
- N/44YwcRkYMVYhHbC/4Q375GzNyKaQ0Wh5XwD5/iRAb+H6RPeiWSG5xQg3mUv2/aONz3
- BSaI7keeTjw+8ytKNIIiRVP09/lH9IF8fs7roHQzciOnexokxDG9lyKGBuTJqHjbfG9c
- U9Nw==
-X-Gm-Message-State: APjAAAU5Rr+ZrWHhIiVOv2V1l6rFdxrq8xMefbmf0slUJQ5PmRe+Z7IY
- aPYT7Re0U+NqXCOIIPILaMoki2sv8Ax6FvZ5NSm6DQ==
-X-Google-Smtp-Source: APXvYqzXVsDy0ze4FRIDwywvutY/B4QAw3R64INVMx+0auCjLO0cktw5lNHc/YQDg6mDs7Vet6xKvfAPTB3hUQaHhXY=
-X-Received: by 2002:ab0:210f:: with SMTP id d15mr5424470ual.129.1566476038016; 
- Thu, 22 Aug 2019 05:13:58 -0700 (PDT)
+ bh=001ZjFQMxb/zCLk3zcyFqNqBIiCvp+5VqdO2trNiRjw=;
+ b=eW6+j5bDb+J6j+6AehPNyfWn7pvnyPpS56uBTcSATNaqwrvhfK/mKwElzKK5ZQBn26
+ Xe/UDJgPWtnr+sbjIjL/QElGoPKP+KgN1yNbbvVEhO/JzNTrZWGvbltdsFSrBjWY36JL
+ eepPuAbEXaXuJiSy9hqmS8YCCKeCpHH3EPs0dgyHsJGkNFQyaBWLABt9Pp0sEpBXJlm9
+ pv8gEPpTXICDM+Vy8adIIz7y1EpUqraO3FnZ2xPAkCUHjNLjiOyymb5bqJWMmujrq1VF
+ viRo3vJl3V1pbjFvyutFJrx89zD71pTVFPUWBkz5sAE8T+OiVT2KdcYRFqRvalLrqYS8
+ +X4w==
+X-Gm-Message-State: APjAAAUkzLHHevms1IEUZiIHvxSl75hQFrJMxJ8moqq6skcC/hTlERif
+ NhtYVpnA8btAcffuxI+LKe0h2SEo1IuToNBxX05XXQ==
+X-Google-Smtp-Source: APXvYqwOUeGGRRhaJGbVZ+SG70B06PdKeEzkxHgHaunrpKDQKwl27GuCbI2yR22beKWFZus69SGWNY0cH93dmwthMeg=
+X-Received: by 2002:a1f:5602:: with SMTP id k2mr9999325vkb.36.1566476093048;
+ Thu, 22 Aug 2019 05:14:53 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190822064741.11196-1-chaotian.jing@mediatek.com>
-In-Reply-To: <20190822064741.11196-1-chaotian.jing@mediatek.com>
+References: <20190807003629.2974-1-andrew@aj.id.au>
+ <20190807003629.2974-2-andrew@aj.id.au>
+ <CACPK8Xe6Zp1uOqEffEc0b6oGa7portEAifGPRqb876HmA+oZeg@mail.gmail.com>
+ <6c94aada-9c4a-4f55-9a43-349282ad12af@www.fastmail.com>
+ <CAPDyKFrDPxFMm710Z25i-euOT2rrgCNXVa4na-fye0xamMXq_A@mail.gmail.com>
+ <c78d4c45-477b-4078-b269-aec72571c8cd@www.fastmail.com>
+In-Reply-To: <c78d4c45-477b-4078-b269-aec72571c8cd@www.fastmail.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 22 Aug 2019 14:13:21 +0200
-Message-ID: <CAPDyKFqEqF_ZHerbkTqqcVBceQvMr_A+-MkbzQJBByhCv9B0fg@mail.gmail.com>
-Subject: Re: fix controller busy issue and add 24bits segment support
-To: Chaotian Jing <chaotian.jing@mediatek.com>
+Date: Thu, 22 Aug 2019 14:14:16 +0200
+Message-ID: <CAPDyKFrWMjaqv8z6HnmDn12c2SsjU6fEzjZesxj=nwbP9YRiPw@mail.gmail.com>
+Subject: Re: [PATCH v5 1/2] dt-bindings: mmc: Document Aspeed SD controller
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_051400_401028_4ADCF4C3 
-X-CRM114-Status: UNSURE (   8.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190822_051454_188823_650AC00C 
+X-CRM114-Status: GOOD (  19.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:92a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,29 +95,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: srv_heupstream <srv_heupstream@mediatek.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ Ryan Chen <ryanchen.aspeed@gmail.com>, linux-mmc <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 22 Aug 2019 at 08:47, Chaotian Jing <chaotian.jing@mediatek.com> wrote:
+On Thu, 22 Aug 2019 at 13:55, Andrew Jeffery <andrew@aj.id.au> wrote:
 >
-> the below 2 patches fix controller busy issue when plug out SD card
-> and add 24bits segment size support.
 >
-> Chaotian Jing (2):
->   mmc: mediatek: fix controller busy when plug out SD
->   mmc: mediatek: support 24bits segment size
 >
->  drivers/mmc/host/mtk-sd.c | 24 ++++++++++++++++++------
->  1 file changed, 18 insertions(+), 6 deletions(-)
+> On Thu, 22 Aug 2019, at 21:15, Ulf Hansson wrote:
+> > On Thu, 15 Aug 2019 at 07:37, Andrew Jeffery <andrew@aj.id.au> wrote:
+> > >
+> > >
+> > >
+> > > On Thu, 15 Aug 2019, at 15:06, Joel Stanley wrote:
+> > > > On Wed, 7 Aug 2019 at 00:38, Andrew Jeffery <andrew@aj.id.au> wrote:
+> > > > >
+> > > > > The ASPEED SD/SDIO/MMC controller exposes two slots implementing the
+> > > > > SDIO Host Specification v2.00, with 1 or 4 bit data buses, or an 8 bit
+> > > > > data bus if only a single slot is enabled.
+> > > > >
+> > > > > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> > > >
+> > > > Reviewed-by: Joel Stanley <joel@jms.id.au>
+> > > >
+> > > > Two minor comments below.
+> > > >
+> > > > > +++ b/Documentation/devicetree/bindings/mmc/aspeed,sdhci.yaml
+> > > > > @@ -0,0 +1,105 @@
+> > > > > +# SPDX-License-Identifier: GPL-2.0-or-later
+> > > >
+> > > > No "Copyright IBM" ?
+> > >
+> > > I'm going rogue.
+> > >
+> > > That reminds me I should chase up where we got to with the binding
+> > > licensing.
+> > >
+> > > >
+> > > > > +%YAML 1.2
+> > > > > +---
+> > > >
+> > > > > +
+> > > > > +examples:
+> > > > > +  - |
+> > > > > +    #include <dt-bindings/clock/aspeed-clock.h>
+> > > > > +    sdc@1e740000 {
+> > > > > +            compatible = "aspeed,ast2500-sd-controller";
+> > > > > +            reg = <0x1e740000 0x100>;
+> > > > > +            #address-cells = <1>;
+> > > > > +            #size-cells = <1>;
+> > > > > +            ranges = <0 0x1e740000 0x10000>;
+> > > >
+> > > > According to the datasheet this could be 0x20000. It does not matter
+> > > > though, as there's nothing in it past 0x300.
+> > >
+> > > Good catch.
+> > >
+> >
+> > Are you planning on sending a v6 or you want me to apply this and you
+> > can post a patch on top?
+>
+> Yeah, sorry, I wasn't very clear there. I was hoping just to do a follow-up
+> patch with the cleanups if you're okay with that?
 
-Applied for next, thanks!
+That's fine. V5 applied for next, thanks!
 
 Kind regards
 Uffe
