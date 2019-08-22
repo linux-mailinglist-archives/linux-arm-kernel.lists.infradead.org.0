@@ -2,51 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D34C995F4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 16:10:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF9809961D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 16:16:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ixBFlOcpUlcQMFwG9JmbwSu9Ylj1nhfHZQENU1d7WR4=; b=r4KZy4sBHMUzh/Fg4O4PrJs2+
-	yaUU9VgGWNKpA2A3yatCiHqBTK36TAkz7NrGU4eiybjFAusrOW/RKipdnn7bLbR0+1q6/fhDvsjgU
-	6KvukzlUf3hF/8s8EXPW6hi2wkTGqKT8leSlCSeA98iAWvGGa4blfMaRvLT4spkrjJFrloCFF0ZBe
-	nhkPJGFoC+n9/PKKRmbNcEAkZfjW5R6Jodt3hUieAVoqZjTFqeZYXeh11jbVQ2o+gJ7N/F9VV1GA0
-	00jH74poMjSjZn1E+LGQxTsNrwnAsUd5A1j7avGn6p6CNwKc5mWBlTxexVum4ezZj+f7aqYkN+83N
-	nBJg2LPOw==;
+	 bh=NCxiQzAWiaNbh/nGF7CaFcj43eo87DTf0AjwOzAFlW4=; b=um3iteNVRNvpVGZ/Kd692SGKQ
+	k8aA3unhLh0xMN6cOv509PBzzVRWIeMaVWz+5fGBrNQMs6wvvf8VKKNiF8hhVI41R0ZjIYHIlGLGq
+	zI3gxmEboYEUmbuBQNuWvy1N64oXlA79s4aGqEk7H7L9iA4RYPb00h5VQTxEKw+aMinRMpC5U6nM7
+	OzPU3HZatklaJUZySB/JWEmkml75D75rSJiHbBZemKETh/EOTcxt822+Y2mcoNUmPFexx23ZxLp74
+	QwnHR3WnYUQrizgwBlJcPbkTV5IALOWbbW2qutt+qOpX1xaCHdmAOwjuK+DTIeL1xmL4QrIsp8pzD
+	vHoB7RL7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0nmp-0002wM-Q6; Thu, 22 Aug 2019 14:09:59 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0nmb-0002sL-PM
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 14:09:47 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 617D0240005;
- Thu, 22 Aug 2019 14:09:35 +0000 (UTC)
-Date: Thu, 22 Aug 2019 16:09:35 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Sunil Mohan Adapa <sunil@medhas.org>
-Subject: Re: [PATCH v3 0/2] arm64: dts: allwinner: a64: Add A64 OlinuXino
- board (with eMMC)
-Message-ID: <20190822140935.pwtpu7pzbd7y2xdg@flea>
-References: <20190821195217.4166-1-sunil@medhas.org>
+	id 1i0ntK-0006hp-9O; Thu, 22 Aug 2019 14:16:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0nt8-0006hT-El
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 14:16:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8ED5F337;
+ Thu, 22 Aug 2019 07:16:29 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 686233F706;
+ Thu, 22 Aug 2019 07:16:27 -0700 (PDT)
+Subject: Re: [PATCH v2 3/4] dt-bindings: iommu/arm, smmu: add compatible string
+ for Marvell
+To: Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Joerg Roedel <joro@8bytes.org>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org
+References: <20190711150242.25290-1-gregory.clement@bootlin.com>
+ <20190711150242.25290-4-gregory.clement@bootlin.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <5208b371-c81a-23a0-0870-2810fce3c7fa@arm.com>
+Date: Thu, 22 Aug 2019 15:16:25 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190821195217.4166-1-sunil@medhas.org>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20190711150242.25290-4-gregory.clement@bootlin.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_070945_983176_64F005E1 
-X-CRM114-Status: GOOD (  10.12  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190822_071630_541956_08154C63 
+X-CRM114-Status: GOOD (  19.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,71 +65,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, wens@csie.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2741552821829658258=="
+Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
+ Andrew Lunn <andrew@lunn.ch>, Antoine Tenart <antoine.tenart@bootlin.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Hanna Hawa <hannah@marvell.com>,
+ Will Deacon <will.deacon@arm.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Nadav Haklai <nadavh@marvell.com>, Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ =?UTF-8?Q?Miqu=c3=a8l_Raynal?= <miquel.raynal@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 11/07/2019 16:02, Gregory CLEMENT wrote:
+> From: Hanna Hawa <hannah@marvell.com>
+> 
+> Add specific compatible string for Marvell usage due errata of
+> accessing 64bits registers of ARM SMMU, in AP806.
+> 
+> AP806 SoC uses the generic ARM-MMU500, and there's no specific
+> implementation of Marvell, this compatible is used for errata only.
 
---===============2741552821829658258==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="o357ly3g6xw34l2g"
-Content-Disposition: inline
+Forgive me for repeating myself[1], but:
 
+"Given that, I think something more specific like:
 
---o357ly3g6xw34l2g
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+	"marvell,ap806-smmu", "arm,mmu-500";
 
-On Wed, Aug 21, 2019 at 12:52:15PM -0700, Sunil Mohan Adapa wrote:
-> A64 OLinuXino board from Olimex has three variants with onboard eMMC:
-> A64-OLinuXino-1Ge16GW, A64-OLinuXino-1Ge4GW and A64-OLinuXino-2Ge8G-IND. In
-> addition, there are two variants without eMMC. One without eMMC and one with SPI
-> flash. This suggests the need for separate device tree for the three eMMC
-> variants.
->
-> Changes:
->
->   v3: Separate dts for eMMC variants
->
->   v2: Fix descriptions for VCC and VCCQ
->
-> Version 2 of this series already committed in linux-sunxi tree as
-> 8d3071f3e85894be35a1b35bcf6fdef970c81018 must be reverted before applying this.
+would be most appropriate. Otherwise, if some future Marvell SoC were to
+ever come out with a *different* MMU-500 integration problem, you'd
+already have painted yourself into a corner."
 
-Applied, thanks!
-Maxime
+Robin.
 
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+[1] 
+https://lore.kernel.org/linux-arm-kernel/3ce1d67a-4e3c-e8d8-f7fc-79649f1def68@arm.com/
 
---o357ly3g6xw34l2g
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXV6iHgAKCRDj7w1vZxhR
-xWLhAQDOkw9X6DlCQETlzeftJrXZtaROlRQI7eMcpSHu1NX55QD9GLwat/8lSR48
-phvN3wKPU67uCQ7L3ceu7WVMPjUoFQY=
-=G4R+
------END PGP SIGNATURE-----
-
---o357ly3g6xw34l2g--
-
-
---===============2741552821829658258==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> Signed-off-by: Hanna Hawa <hannah@marvell.com>
+> Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+> ---
+>   Documentation/devicetree/bindings/iommu/arm,smmu.txt | 1 +
+>   1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/iommu/arm,smmu.txt b/Documentation/devicetree/bindings/iommu/arm,smmu.txt
+> index 3133f3ba7567..7ed58d51846e 100644
+> --- a/Documentation/devicetree/bindings/iommu/arm,smmu.txt
+> +++ b/Documentation/devicetree/bindings/iommu/arm,smmu.txt
+> @@ -16,6 +16,7 @@ conditions.
+>                           "arm,mmu-400"
+>                           "arm,mmu-401"
+>                           "arm,mmu-500"
+> +                        "marvell,mmu-500"
+>                           "cavium,smmu-v2"
+>                           "qcom,smmu-v2"
+>   
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2741552821829658258==--
-
