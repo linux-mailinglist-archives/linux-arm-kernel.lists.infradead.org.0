@@ -2,67 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1687E99A8D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 19:14:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F12D699B30
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 19:25:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g06aWsvjX/OnqL74jYgD3xr4Ygj65kN4NjDLWmDRE2U=; b=IrFDfQiSrEvjaL
-	DB4PuGnyg4NHgclM1c5S0uatgHFp1oNTzx0nRKnJwptCmMQjzJ/7sx8yn3Vc5RTbsa2gci2VBTQUA
-	qOxBy6VNJnQaT6hiQ0Q14stgbqFgHan8aVKIx4CkPW19evwnk3qTEBdVqYjRq2dldSOCgRbYEfR0M
-	5waEx5ak3W07mh4RZF24YuS7B7Gwl3wqIWYbQBFursESSdyp8FJfsGUwzfd1MZLMKAoNiWGuWF4FE
-	6V36n9/mrSK8sAgFNYic3UsDQ3gQCcydrbqTbqwk/zdDkS03/CkCFqpiSXGbhqXtOTsUDeFviAx1r
-	83XfSc7huwJfxKdIbXSQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=fiIV1zEmVOHLoZs7hdd4L6fsVHRYrGiRGSBY94FmcP8=; b=UCh
+	a2FV4sCK86iVSeaxTM0IUzO1oMLc+dKuB7VUOU5MTtja6+Wh+FhwiJ6NkWF+sdbuB6xoObmdi8DH4
+	WzZpJsyNMfZtB4VgQjON29AUB9RQiN6qnE26/Jolq5uopA7LdFClRlqDKmc7ZbiiKOixGnBts+ArV
+	hQQigLT3WXd1THHEqCiIPuoi1nuPcqfAVPJj232bbM5BadPEaEqtql3lCY20MsUgYxLzS2tJcD8su
+	rwOUvz2cxjOdxy0dQKWC8+XNla6KhRJOfBFqSO6Fwqim5CuZYv4Z9QqFaGKSq909c70Qcy7k/QAeY
+	YF3jWV/VVWWfbes/KC7YJ0w2ROZ9+kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0qfU-0000n5-Gt; Thu, 22 Aug 2019 17:14:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i0qpU-0004KN-Ht; Thu, 22 Aug 2019 17:24:56 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0qfH-0000mN-RV; Thu, 22 Aug 2019 17:14:25 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 13B182089E;
- Thu, 22 Aug 2019 17:14:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566494063;
- bh=vqE2N/zi1fzhDJw+o9xdlWk9123wTSi4CKCbyRiWtHc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=gTshqoq99M9s6kEqnvExZ9y43tJZ5RG6H7DJicnyp4xB0EEyG3E8dxsEeD+mtCaSN
- tPOnriBlWjBj6t3b/aXGqSnI7for4nxNhTc101nzXmKDqt5n+5VHe7Jxkot9Q6CAmx
- WfjOx+T5BTnDWixtTIskYdTH9FZDyzwtT6bJ2aG0=
-Date: Thu, 22 Aug 2019 18:14:16 +0100
-From: Will Deacon <will@kernel.org>
-To: Yong Wu <yong.wu@mediatek.com>
-Subject: Re: [PATCH v10 09/23] iommu/io-pgtable-arm-v7s: Extend to support
- PA[33:32] for MediaTek
-Message-ID: <20190822171415.475yg7pmy6gfj35l@willie-the-truck>
-References: <1566395606-7975-1-git-send-email-yong.wu@mediatek.com>
- <1566395606-7975-10-git-send-email-yong.wu@mediatek.com>
- <20190821152448.qmoqjh5zznfpdi6n@willie-the-truck>
- <1566464186.11621.7.camel@mhfsdcap03>
- <10d5122d-3375-161b-9356-2ddfc1c835bd@arm.com>
- <20190822101749.3kwzd5lb7zinsord@willie-the-truck>
- <e6652176-763d-5298-9e10-8c1fbe1b3c0d@arm.com>
- <20190822112836.efodtwu3souq3uwa@willie-the-truck>
- <1566475533.11621.18.camel@mhfsdcap03>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1566475533.11621.18.camel@mhfsdcap03>
-User-Agent: NeoMutt/20170113 (1.7.2)
+ id 1i0qpH-0004JZ-JW
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 17:24:44 +0000
+Received: by mail-pg1-x543.google.com with SMTP id x15so4042834pgg.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 22 Aug 2019 10:24:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=MF3rEeHYTUUv66jVOAxgim3ss6TORCYiUQPquvwjq/w=;
+ b=T9ASLZ5H74R8EU3DNbNPmIhAyCpFblFUW358Ua0N6C7yqOpNGuiNzAsJYkCUeO7nRP
+ rHGVPRqBC44PjSsFCVQnOQXOehBDh4tH5gwlPTBab4mK0uz3FBobBeUH/JAkt5rf9Gdk
+ kcgjpC1QmqDSpll1BIIr+bXpTVQxLwJ+2lOu+jI8kdf4AULzH7GFRIUbQHB9mJQ+VVDP
+ Dl3lwHnVuvseHJlOePUKuh95yuihDeaqoS9QOKCHvXOAm5E1HIxaOH15jKFCj4neDd9c
+ lj64achj6Q3F+xMUqPrkExrblamN3MX4s92m9ky46WzHfGtbfdA9EDVi6kZ1fQsUgbQr
+ fEFw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=MF3rEeHYTUUv66jVOAxgim3ss6TORCYiUQPquvwjq/w=;
+ b=JpkE5ItO+b3ZWJZ4fsYvr9bLNwDfMW5XLyRhDfN3wX3Nkvjb8+Mpfj69BfqExlQlO3
+ 3RORcDPH6e6GVKcpOg0uVd+GFlq4567ccqdfmCBWBRVKzJy4ZbV71xNMG6q8LIzoZzGd
+ IUqDvoORKBcbgje+a1hmlQUYShGJ/KGcRwc2uGwH/RA6jq/cLl0TWSS2cyzHHdPyg7sN
+ Jkcg/Yv34aFhnf2U/V84IBvqosxTc/L7spFmfRjnwRfTilMbWbBoQ6ZCazI1GQQCgq6O
+ CpEcr4y1/EUoocO4aGT1kmTOQsWkL5giizfq2Ala0C3omzTLn1diIJOXV3Mt9ijzIFUX
+ vtnw==
+X-Gm-Message-State: APjAAAWne4jkHUlxUSasOTswaX+ySVpyreNlHJJZfgndnnuVmrzpAOSd
+ q6pzamDUtBQFrCWJYc8gN/Hs
+X-Google-Smtp-Source: APXvYqx7kYtYjdmxnhOrl1gFD7IsOVakbGUR1RKgLNPTbutbHQR9wpV3+h7cJenEiWUeTrvSKOZxWA==
+X-Received: by 2002:a65:6406:: with SMTP id a6mr256662pgv.393.1566494681681;
+ Thu, 22 Aug 2019 10:24:41 -0700 (PDT)
+Received: from localhost.localdomain ([2405:204:71cc:5738:24ad:193e:4b59:8a76])
+ by smtp.gmail.com with ESMTPSA id r12sm31705798pgb.73.2019.08.22.10.24.34
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 22 Aug 2019 10:24:40 -0700 (PDT)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: sboyd@kernel.org,
+	mturquette@baylibre.com,
+	robh+dt@kernel.org
+Subject: [PATCH v4 0/8] Add Bitmain BM1880 clock driver
+Date: Thu, 22 Aug 2019 22:54:18 +0530
+Message-Id: <20190822172426.25879-1-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_101423_915723_CB9FCFE1 
-X-CRM114-Status: GOOD (  10.56  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190822_102443_647853_19CC1119 
+X-CRM114-Status: GOOD (  11.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -72,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,40 +93,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream@mediatek.com, Tomasz Figa <tfiga@google.com>,
- Joerg Roedel <joro@8bytes.org>, linux-kernel@vger.kernel.org,
- Evan Green <evgreen@chromium.org>, chao.hao@mediatek.com,
- iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- ming-fan.chen@mediatek.com, anan.sun@mediatek.com,
- Robin Murphy <robin.murphy@arm.com>, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ darren.tsao@bitmain.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, fisher.cheng@bitmain.com,
+ alec.lin@bitmain.com, linux-clk@vger.kernel.org, haitao.suo@bitmain.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 08:05:33PM +0800, Yong Wu wrote:
-> On Thu, 2019-08-22 at 12:28 +0100, Will Deacon wrote:
-> > Ok, great. Yong Wu -- are you ok respinning with the above + missing
-> > brackets?
-> 
-> Of course I can.
-> 
-> NearlyAll the interface in this file is prefixed with "arm_v7s_", so
-> does the new interface also need it?, like arm_v7s_is_mtk_enabled. And
-> keep the iopte_to_paddr and paddr_to_iopte symmetrical.
-> 
-> 
-> Then the final patch would looks like below, is it ok?
+Hello,
 
-Looks good to me:
+This patchset adds common clock driver for Bitmain BM1880 SoC clock
+controller. The clock controller consists of gate, divider, mux
+and pll clocks with different compositions. Hence, the driver uses
+composite clock structure in place where multiple clocking units are
+combined together.
 
-Acked-by: Will Deacon <will@kernel.org>
+This patchset also removes UART fixed clock and sources clocks from clock
+controller for Sophon Edge board where the driver has been validated.
 
-Will
+Thanks,
+Mani
+
+Changes in v4:
+
+* Fixed devicetree binding issue
+* Added ARCH_BITMAIN as the default for the clk driver
+
+Changes in v3:
+
+* Switched to clk_hw_{register/unregister} APIs
+* Returned clk_hw from the in-driver registration helpers
+
+Changes in v2:
+
+* Converted the dt binding to YAML
+* Incorporated review comments from Stephen (majority of change is switching
+  to new way of specifying clk parents)
+
+Manivannan Sadhasivam (8):
+  clk: Zero init clk_init_data in helpers
+  clk: Warn if clk_init_data is not zero initialized
+  clk: Add clk_hw_unregister_composite helper function definition
+  dt-bindings: clock: Add devicetree binding for BM1880 SoC
+  arm64: dts: bitmain: Add clock controller support for BM1880 SoC
+  arm64: dts: bitmain: Source common clock for UART controllers
+  clk: Add common clock driver for BM1880 SoC
+  MAINTAINERS: Add entry for BM1880 SoC clock driver
+
+ .../bindings/clock/bitmain,bm1880-clk.yaml    |  74 ++
+ MAINTAINERS                                   |   2 +
+ .../boot/dts/bitmain/bm1880-sophon-edge.dts   |   9 -
+ arch/arm64/boot/dts/bitmain/bm1880.dtsi       |  28 +
+ drivers/clk/Kconfig                           |   7 +
+ drivers/clk/Makefile                          |   1 +
+ drivers/clk/clk-bm1880.c                      | 966 ++++++++++++++++++
+ drivers/clk/clk-composite.c                   |  13 +-
+ drivers/clk/clk-divider.c                     |   2 +-
+ drivers/clk/clk-fixed-rate.c                  |   2 +-
+ drivers/clk/clk-gate.c                        |   2 +-
+ drivers/clk/clk-mux.c                         |   2 +-
+ drivers/clk/clk.c                             |   8 +
+ include/dt-bindings/clock/bm1880-clock.h      |  82 ++
+ 14 files changed, 1184 insertions(+), 14 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.yaml
+ create mode 100644 drivers/clk/clk-bm1880.c
+ create mode 100644 include/dt-bindings/clock/bm1880-clock.h
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
