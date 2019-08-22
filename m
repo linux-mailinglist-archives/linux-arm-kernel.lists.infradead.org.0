@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 578CA99E59
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 19:56:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B620E99E89
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 20:17:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2ejlDS5momnGwzkci/ggy9Qm4/ANyKMleu4ViL7qhTY=; b=RU7WQZVZO7xpnW
-	ExNkEAKYt3V7ao5gg2/rkrWr3O3hyFF7fugP9hbob93JdsErI/b0QzPVVkgRpgv7oJzxPqn1akX/h
-	Su+AcANaWUY790WoMs7Mgnilp0BAWJ2Bqia/CWf+2riwlsySTf1EouaPz6UkuiQK6Cco6N9SLZhwk
-	IXXWDDT2k2RaFj++OfSxJBblWUIEmzDrnGXccyIaOkln1Lq5wx1xrtlFv08hMXy5Tfy5WJDxVRI25
-	n2wkYEVPjFe+sODiUnb9aHQxYSG1/KjbIwK93kTLYguR8/ip4FoIjj1O8SR8s8mIliHqgtG1pwhD9
-	5Mvhv0Vo6c9l70K5d5hg==;
+	List-Owner; bh=VfmAKy8srCtAzAeG8jdq1LVU3FAJOmw+baxoHqLK2S0=; b=UhU1UZ6brGESyd
+	Io7ooPuFBIG++384SoJQMXfPrLW0m2lXt2yvsMzXUIf0oDqQtI24HNKGJw2TEgKxdq1O9xsu6ngph
+	cPVj1btSF85AvvTraI0hZFLsbjOZYSsFH7+i6od9/6n3c/kPBlaCTK/CNzYmu+yolBKhJ13H8jmG1
+	I33osZuTUlVZ3eK8it6B/+aI2K6LqB5lW5vzDFgX+XzkuqdB4zAoRlDYKZAma/ANV8aJNUgtsBzA4
+	9KFd587SJbktXjvsfJNz+OPehBtUuN+0fJ8LpqgZ2x5yOodkG0H8cyOoOubw2a5KA5wysTBt0kay2
+	ytkY//3gGeMdKiuRgN2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0rKI-0004U9-3j; Thu, 22 Aug 2019 17:56:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i0reg-0004Ty-QX; Thu, 22 Aug 2019 18:17:50 +0000
+Received: from mail-wm1-f68.google.com ([209.85.128.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0rK5-0004Tm-LV
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 17:56:34 +0000
-Received: from mail-qt1-f172.google.com (mail-qt1-f172.google.com
- [209.85.160.172])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2307B233FC
+ id 1i0reW-0004So-9U
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 18:17:41 +0000
+Received: by mail-wm1-f68.google.com with SMTP id i63so6690441wmg.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 17:56:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566496593;
- bh=L9UMGcdA614fnSHWQ04BSdS4ymvZGTviHvehBqLdubs=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=ZNLjdK+2Tq5C2CzVvNoWBQJCMNgJaYiAZrGB2fXAjonnhn+dzQ3Vx7E63+MqY88+p
- i2vdqvHMZiNOqz5ZBEtZKtOZnRp/mSd9geEiqx2AdkHp4kf7K3VFWyq2Y6CUgYT2xA
- bbT+p1lhoCDgWcMgSTgwRWxpB1Ga+pT/rPA6IQdI=
-Received: by mail-qt1-f172.google.com with SMTP id l9so8718123qtu.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 10:56:33 -0700 (PDT)
-X-Gm-Message-State: APjAAAWJn7NHLGvZ9oqc1ln0MOEOVQP8t/XZNI8mef9a6H9eRUXg20BU
- XY2R2JEm4vOvLRb4tRB4rAGZXDgWL7baGmKSsQ==
-X-Google-Smtp-Source: APXvYqxmpTMuJpoR2hQvI30KNyZXaO90aPAJVNRDaz/KGX8/IUr6Sp01aMXULiLAaSLUCCkn9iQ5zlj6tY+yhexEMPk=
-X-Received: by 2002:ac8:44c4:: with SMTP id b4mr890120qto.224.1566496592345;
- Thu, 22 Aug 2019 10:56:32 -0700 (PDT)
+ Thu, 22 Aug 2019 11:17:38 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Nmm5xSsdg+3DXP0y9SGhbKr0D2Shw9KeHFgV8+AhiWw=;
+ b=mnMeYUK6IaUeeLkOOiI+2Axo4GOkVNvBJ5149vk4oSLYDEDK5nyrcrt2Q30pCVBwZk
+ h1kBAudu6OWID/3v8ikanW3KZMX6sIhG2QIe1kC+UEhRdBxw4gmb71Ft7d8olASDj6yz
+ ItStUzdSct5aCI5f7tRFFTBZZfhuioImGcfT2aLiHeQPHiAInXBY3vgkAF3Zbrwe6v6v
+ 3N6KhC3c5Hv1Vab0y3KsrYqRXUvEia9hKWRwX2tl7fw12bMeStqQ98i6pIO5M5VO6rf1
+ kVorW7lMsIrFFIwaRRST++lrzC9BfYMdK0zUEBHje5CnJuswjX3OAp4Ww3qWA+9auHze
+ 1T+g==
+X-Gm-Message-State: APjAAAW96xzQHEbKDJWtyGG/pX3tjsXekqTc6RqEj9KDWZXNfOWqBSNR
+ h5KOK+yfjtMn0UPbcl21QSY=
+X-Google-Smtp-Source: APXvYqyu9GgxoCnAVdYS6e/5Pmk9monb4AeTFRrT53+dWP0KeFzokynTAzs8v5+CLNpGA1a1MvCqvg==
+X-Received: by 2002:a7b:c0d0:: with SMTP id s16mr387786wmh.65.1566497856962;
+ Thu, 22 Aug 2019 11:17:36 -0700 (PDT)
+Received: from kozik-lap ([194.230.147.11])
+ by smtp.googlemail.com with ESMTPSA id c11sm216987wrs.86.2019.08.22.11.17.35
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 22 Aug 2019 11:17:36 -0700 (PDT)
+Date: Thu, 22 Aug 2019 20:17:33 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Subject: Re: [PATCH v2] soc: samsung: Select missing dependency for
+ EXYNOS_CHIPID
+Message-ID: <20190822181733.GA10900@kozik-lap>
+References: <20190821150711.31398-1-s.nawrocki@samsung.com>
+ <CGME20190821153936eucas1p22cd1a6105806cb5ad7b43252852fec05@eucas1p2.samsung.com>
+ <20190821153926.12297-1-s.nawrocki@samsung.com>
 MIME-Version: 1.0
-References: <20190822060238.3887-1-krzk@kernel.org>
- <20190822060238.3887-3-krzk@kernel.org>
-In-Reply-To: <20190822060238.3887-3-krzk@kernel.org>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 22 Aug 2019 12:56:20 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq++LZ82v9WbyHK8pQg3WVQOxLvWcJ-qM0QAnhzKw033vA@mail.gmail.com>
-Message-ID: <CAL_Jsq++LZ82v9WbyHK8pQg3WVQOxLvWcJ-qM0QAnhzKw033vA@mail.gmail.com>
-Subject: Re: [PATCH v7 3/4] dt-bindings: arm: fsl: Add Kontron i.MX6UL N6310
- compatibles
-To: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20190821153926.12297-1-s.nawrocki@samsung.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_105633_726570_8EC0E55C 
-X-CRM114-Status: GOOD (  11.91  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190822_111740_333032_F93F47E4 
+X-CRM114-Status: GOOD (  10.81  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,38 +90,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Schrempf Frieder <frieder.schrempf@kontron.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-samsung-soc@vger.kernel.org, b.zolnierkie@samsung.com,
+ pankaj.dubey@samsung.com, linux-kernel@vger.kernel.org, kgene@kernel.org,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 1:02 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
->
-> Add the compatibles for Kontron i.MX6UL N6310 SoM and boards.
->
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
->
+On Wed, Aug 21, 2019 at 05:39:26PM +0200, Sylwester Nawrocki wrote:
+> The chipid driver uses the MFD syscon API but it was not covered
+> properly in Kconfig.
+> 
+> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
 > ---
->
-> Changes since v6:
-> 1. Split entries to pass the dtbs_check.
->
-> Changes since v5:
-> New patch
-> ---
->  Documentation/devicetree/bindings/arm/fsl.yaml | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
+>  drivers/soc/samsung/Kconfig | 1 +
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Thanks, applied.
+
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
