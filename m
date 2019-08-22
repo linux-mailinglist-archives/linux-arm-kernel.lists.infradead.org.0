@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D396C9923A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 13:35:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 035259923F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 13:35:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=g05GOn/V2rDzedKKKbDqkbwvEdDAYaD5InHRbzAExY4=; b=eGXSHSWmp/Z2w+I/ijkrOW0yle
-	4/thICMAgLiZlg2jNtdq/9NZUhD0yhwJ12bgZkpEyBzaruXfIH75JrNwXPtmF9E5QG/lfx9A3mUuz
-	9IGVEViRd0jpOVaJg/yOoYRqa+hsKsJ/RS7XgFkQjMmvmIcPlQrlCC3AxxC6cifBAAXGtD1DMKdEs
-	LMSvgSEcW8tpxvz3M1447dLgjoVL3J1b2jFzzy4+zamsa0cE4agcoL+HXLGFNkgVy8Cw4LK/yDopI
-	xsurEhA5uD63GKJEXBHPggo8nCsjWG/7/eQFR2UqJgeIuiGXSz56rhPM8S9266aVNLGrUku3Gfy9r
-	y4fP3Rmw==;
+	bh=8fSwKc6GH0M+pcx1nNj9uEa3tLPsGAkvdOvfjjySMAk=; b=IfPJ3asLUSmy/483zsx4eknY1D
+	ErEq6zrtGWUelawKY41so7VyhZ67aPz1bRabQmn4Pod8IumWjDKHR+EvStlqVLa8kzTPn2B55y64m
+	S6vkvBQNen0TBmiCOnt8dfiIfPgnMyBlW4qqy9t8sw6pQvWbBAKQ61WSANfK+rIPEmmWBk0KhnblW
+	7YFPee6eYl99Wg4DcGWBAVWjK0w0NtrUHPKP5YjIyhYboMrKS7h92XguylaxPQQ+Zw7eKqmsQyS8F
+	H/kgVcEhAAjqKe8yE0PYbeHOL084nq8n659xfOzRGZVzKJcH5AI/WCH8l1WW2sF5mjRpt2hrLWsE/
+	bRFutpnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0lMn-0007il-9g; Thu, 22 Aug 2019 11:34:57 +0000
+	id 1i0lN9-0007zR-Ec; Thu, 22 Aug 2019 11:35:19 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0lKu-0006Yz-Uj
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 11:33:02 +0000
+ id 1i0lKw-0006au-Od
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 11:33:04 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B425D1A02CA;
- Thu, 22 Aug 2019 13:32:59 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8FE941A022F;
+ Thu, 22 Aug 2019 13:33:01 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D37281A022F;
- Thu, 22 Aug 2019 13:32:49 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id AF4BC1A00A2;
+ Thu, 22 Aug 2019 13:32:51 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B98464031D;
- Thu, 22 Aug 2019 19:32:37 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A02954031E;
+ Thu, 22 Aug 2019 19:32:39 +0800 (SGT)
 From: Xiaowei Bao <xiaowei.bao@nxp.com>
 To: bhelgaas@google.com, robh+dt@kernel.org, mark.rutland@arm.com,
  shawnguo@kernel.org, leoyang.li@nxp.com, kishon@ti.com,
@@ -43,16 +43,17 @@ To: bhelgaas@google.com, robh+dt@kernel.org, mark.rutland@arm.com,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linuxppc-dev@lists.ozlabs.org, andrew.murray@arm.com
-Subject: [PATCH v2 05/10] PCI: layerscape: Fix some format issue of the code
-Date: Thu, 22 Aug 2019 19:22:37 +0800
-Message-Id: <20190822112242.16309-5-xiaowei.bao@nxp.com>
+Subject: [PATCH v2 06/10] PCI: layerscape: Modify the way of getting
+ capability with different PEX
+Date: Thu, 22 Aug 2019 19:22:38 +0800
+Message-Id: <20190822112242.16309-6-xiaowei.bao@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20190822112242.16309-1-xiaowei.bao@nxp.com>
 References: <20190822112242.16309-1-xiaowei.bao@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_043301_242743_25D4F55E 
-X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-CacheID: sfid-20190822_043303_098077_A8725908 
+X-CRM114-Status: UNSURE (   9.56  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,38 +82,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix some format issue of the code in EP driver.
+The different PCIe controller in one board may be have different
+capability of MSI or MSIX, so change the way of getting the MSI
+capability, make it more flexible.
 
 Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
 ---
 v2:
- - No change.
+ - Remove the repeated assignment code.
 
- drivers/pci/controller/dwc/pci-layerscape-ep.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/pci/controller/dwc/pci-layerscape-ep.c | 26 +++++++++++++++++++-------
+ 1 file changed, 19 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/pci/controller/dwc/pci-layerscape-ep.c b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-index be61d96..4e92a95 100644
+index 4e92a95..8461f62 100644
 --- a/drivers/pci/controller/dwc/pci-layerscape-ep.c
 +++ b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-@@ -62,7 +62,7 @@ static void ls_pcie_ep_init(struct dw_pcie_ep *ep)
+@@ -22,6 +22,7 @@
+ 
+ struct ls_pcie_ep {
+ 	struct dw_pcie		*pci;
++	struct pci_epc_features	*ls_epc;
+ };
+ 
+ #define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
+@@ -40,25 +41,26 @@ static const struct of_device_id ls_pcie_ep_of_match[] = {
+ 	{ },
+ };
+ 
+-static const struct pci_epc_features ls_pcie_epc_features = {
+-	.linkup_notifier = false,
+-	.msi_capable = true,
+-	.msix_capable = false,
+-};
+-
+ static const struct pci_epc_features*
+ ls_pcie_ep_get_features(struct dw_pcie_ep *ep)
+ {
+-	return &ls_pcie_epc_features;
++	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
++	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
++
++	return pcie->ls_epc;
+ }
+ 
+ static void ls_pcie_ep_init(struct dw_pcie_ep *ep)
+ {
+ 	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
++	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
+ 	enum pci_barno bar;
+ 
+ 	for (bar = BAR_0; bar <= BAR_5; bar++)
+ 		dw_pcie_ep_reset_bar(pci, bar);
++
++	pcie->ls_epc->msi_capable = ep->msi_cap ? true : false;
++	pcie->ls_epc->msix_capable = ep->msix_cap ? true : false;
  }
  
  static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
--				  enum pci_epc_irq_type type, u16 interrupt_num)
-+				enum pci_epc_irq_type type, u16 interrupt_num)
- {
- 	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+@@ -118,6 +120,7 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
+ 	struct device *dev = &pdev->dev;
+ 	struct dw_pcie *pci;
+ 	struct ls_pcie_ep *pcie;
++	struct pci_epc_features *ls_epc;
+ 	struct resource *dbi_base;
+ 	int ret;
  
-@@ -86,7 +86,7 @@ static const struct dw_pcie_ep_ops pcie_ep_ops = {
- };
+@@ -129,6 +132,10 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
+ 	if (!pci)
+ 		return -ENOMEM;
  
- static int __init ls_add_pcie_ep(struct ls_pcie_ep *pcie,
--					struct platform_device *pdev)
-+				 struct platform_device *pdev)
- {
- 	struct dw_pcie *pci = pcie->pci;
- 	struct device *dev = pci->dev;
++	ls_epc = devm_kzalloc(dev, sizeof(*ls_epc), GFP_KERNEL);
++	if (!ls_epc)
++		return -ENOMEM;
++
+ 	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
+ 	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
+ 	if (IS_ERR(pci->dbi_base))
+@@ -139,6 +146,11 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
+ 	pci->ops = &ls_pcie_ep_ops;
+ 	pcie->pci = pci;
+ 
++	ls_epc->linkup_notifier = false,
++	ls_epc->bar_fixed_64bit = (1 << BAR_2) | (1 << BAR_4),
++
++	pcie->ls_epc = ls_epc;
++
+ 	platform_set_drvdata(pdev, pcie);
+ 
+ 	ret = ls_add_pcie_ep(pcie, pdev);
 -- 
 2.9.5
 
