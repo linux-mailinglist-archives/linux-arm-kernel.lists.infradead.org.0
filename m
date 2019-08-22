@@ -2,68 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CE1B99298
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 13:51:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32BCB992A2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 13:53:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v/keWQcooDYpRNL7aZ0Oguj2jCxm7imKkc1+VB7ctjg=; b=IqftD7V6U4aHJF
-	YpQ+m1Opj55sJvgvSyHXQnezxNjZz9SM0H6KYRBJef81Z/MOdTW2WJ/i3AmS2Ag4vqkh/xBjtRk6x
-	3H2fm2NswozDcQOilChcygTTqyQSnxJqLTVi0/UAmDFLS7mRKjvLK4AEe40SLpp/atBjzzBryVGfX
-	/xGKDCKc1izfVrexRUntkbAhxRomcqiv9JNPDMT8rKujWc18QiNMzdPnItFZN5rVTBdPsVZ6no75m
-	P1COgm1pTgvMLAR7r9OnNXD7B95nLMA3qYGhdNM7Ebh66Xx54dDujOYdMyvaO4s3Qx+NI09veYRjN
-	DqjOKYj/cr8nOSDxVpeA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:References:To:
+	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5U+88ovBamrAqIHPSflIGFQTblnWN4SEs+COSewcSp4=; b=ZHTYKA/O5x86UBWNxlW41mFM3
+	1OGtE6ieb6p8q3IkJC+4D7r7ez43tPi3J6HRU5UvHqKNsvyN3/QaAHRVsol5mcPq2CPaujMB38+q/
+	KxkFPYH5TSu5BjP+fUslSKqTH4ITMrQB47q/WiuCJoOGyRq+W7FvflhUzIJkPhnyKzwa6fojSJ37R
+	V8b/ky1RvA/IYz44t4vJ+T2BQKvyXnCQF+ZYgHu6Dj+vQqaj1mQIMBobfJNj+VVm8N+TET4Db2UCo
+	Ij0dw/CPD3QGD4PumZXtmkwHXyr218MJrFT5fQPc+EBJhr6R5Pyrlch1rcRcqpGTsXf5o5jrp7yQ+
+	JrLM69deA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0lcB-00017T-Cn; Thu, 22 Aug 2019 11:50:51 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i0leW-0001SX-GX; Thu, 22 Aug 2019 11:53:17 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0lbe-000174-1m; Thu, 22 Aug 2019 11:50:19 +0000
-X-UUID: 9c0636cb644941f0b6b591f9e3a3184e-20190822
-X-UUID: 9c0636cb644941f0b6b591f9e3a3184e-20190822
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <ran.bi@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 724652295; Thu, 22 Aug 2019 03:50:10 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 22 Aug 2019 04:50:11 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by mtkmbs07n2.mediatek.inc
- (172.21.101.141) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 22 Aug 2019 19:50:08 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 22 Aug 2019 19:50:06 +0800
-Message-ID: <1566474611.12318.9.camel@mhfsdcap03>
-Subject: Re: [PATCH v2 2/4] rtc: Add support for the MediaTek MT2712 RTC
-From: Ran Bi <ran.bi@mediatek.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Date: Thu, 22 Aug 2019 19:50:11 +0800
-In-Reply-To: <20190822092008.GR27031@piout.net>
-References: <20190801110122.26834-1-ran.bi@mediatek.com>
- <20190801110122.26834-3-ran.bi@mediatek.com>
- <c4e8b041-4a35-578e-07a3-2ebc99848ee2@gmail.com>
- <20190822092008.GR27031@piout.net>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1i0le8-0001Ro-G4
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 11:52:53 +0000
+Received: from pps.filterd (m0098417.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x7MBlf5c055513
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 22 Aug 2019 07:52:49 -0400
+Received: from e06smtp01.uk.ibm.com (e06smtp01.uk.ibm.com [195.75.94.97])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2uhrhgw578-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 22 Aug 2019 07:52:49 -0400
+Received: from localhost
+ by e06smtp01.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from
+ <naveen.n.rao@linux.vnet.ibm.com>; Thu, 22 Aug 2019 12:52:47 +0100
+Received: from b06cxnps3074.portsmouth.uk.ibm.com (9.149.109.194)
+ by e06smtp01.uk.ibm.com (192.168.101.131) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Thu, 22 Aug 2019 12:52:44 +0100
+Received: from d06av22.portsmouth.uk.ibm.com (d06av22.portsmouth.uk.ibm.com
+ [9.149.105.58])
+ by b06cxnps3074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x7MBqhY831260730
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 22 Aug 2019 11:52:43 GMT
+Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id EB44D4C052;
+ Thu, 22 Aug 2019 11:52:42 +0000 (GMT)
+Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 8BE844C050;
+ Thu, 22 Aug 2019 11:52:42 +0000 (GMT)
+Received: from localhost (unknown [9.199.32.226])
+ by d06av22.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Thu, 22 Aug 2019 11:52:42 +0000 (GMT)
+Date: Thu, 22 Aug 2019 17:22:42 +0530
+From: "Naveen N. Rao" <naveen.n.rao@linux.vnet.ibm.com>
+Subject: Re: [PATCH v5] arm64: implement KPROBES_ON_FTRACE
+To: Catalin Marinas <catalin.marinas@arm.com>, Jonathan Corbet
+ <corbet@lwn.net>, Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>
+References: <20190822191351.3796aca8@xhacker.debian>
+In-Reply-To: <20190822191351.3796aca8@xhacker.debian>
 MIME-Version: 1.0
-X-MTK: N
+User-Agent: astroid/0.15.0 (https://github.com/astroidmail/astroid)
+X-TM-AS-GCONF: 00
+x-cbid: 19082211-4275-0000-0000-0000035BDF6A
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19082211-4276-0000-0000-0000386E055A
+Message-Id: <1566474733.p35psfjpl2.naveen@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-08-22_07:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=616 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1906280000 definitions=main-1908220129
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_045018_098451_C9B9C416 
-X-CRM114-Status: GOOD (  15.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190822_045252_673492_C9CC0D24 
+X-CRM114-Status: GOOD (  18.81  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,52 +104,43 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>, YT Shen <yt.shen@mediatek.com>, Flora
- Fu <flora.fu@mediatek.com>, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>, Sean Wang <sean.wang@mediatek.com>,
- linux-kernel@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Yingjoe Chen <yingjoe.chen@mediatek.com>,
- Eddie Huang <eddie.huang@mediatek.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- linux-rtc@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>, Thomas Gleixner <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-08-22 at 11:20 +0200, Alexandre Belloni wrote:
-> On 22/08/2019 11:12:29+0200, Matthias Brugger wrote:
-> > 
-> > 
-> > On 01/08/2019 13:01, Ran Bi wrote:
-> > > This add support for the MediaTek MT2712 RTC. It was SoC based RTC, but
-> > > had different architecture compared with MT7622 RTC.
-> > > 
-> > > Signed-off-by: Ran Bi <ran.bi@mediatek.com>
-> > > ---
-> > >  drivers/rtc/Kconfig      |  10 +
-> > >  drivers/rtc/Makefile     |   1 +
-> > >  drivers/rtc/rtc-mt2712.c | 444 +++++++++++++++++++++++++++++++++++++++
-> > 
-> > Can't we just adjust rtc-mt7622.c (and rename it) to unify the source for both
-> > devices. What is the difference that we need to write a driver of our own?
-> > 
+Jisheng Zhang wrote:
+> KPROBES_ON_FTRACE avoids much of the overhead with regular kprobes as it
+> eliminates the need for a trap, as well as the need to emulate or
+> single-step instructions.
 > 
-> If they are compatible, this is the way to go but the file can't be
-> renamed (and that is fine).
+> Tested on berlin arm64 platform.
 > 
+> ~ # mount -t debugfs debugfs /sys/kernel/debug/
+> ~ # cd /sys/kernel/debug/
+> /sys/kernel/debug # echo 'p _do_fork' > tracing/kprobe_events
 > 
+> before the patch:
+> 
+> /sys/kernel/debug # cat kprobes/list
+> ffffff801009fe28  k  _do_fork+0x0    [DISABLED]
+> 
+> after the patch:
+> 
+> /sys/kernel/debug # cat kprobes/list
+> ffffff801009ff54  k  _do_fork+0x4    [DISABLED][FTRACE]
+> 
+> Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
 
-They are not compatible. Both registers and operating methods are
-different.
+Reviewed-by: Naveen N. Rao <naveen.n.rao@linux.vnet.ibm.com>
 
-Best Regards,
-Ran
+
+- Naveen
 
 
 _______________________________________________
