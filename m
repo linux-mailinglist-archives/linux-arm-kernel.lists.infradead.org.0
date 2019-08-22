@@ -2,86 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42C059A0C9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 22:07:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C20C9A0D9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 22:10:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=htT4IPE6cEc/jfuVPzVHvCPYjv5Wp4HNTzFC6mUbT54=; b=QrKfyjOFEvhAOj
-	W1wIp791IrngvBkSfLZ9aZE3dGNkSeyqoYod8OW7Oljr5uBhjUOvgA24KUVc+yPjUq6Bff+iG430Y
-	UzHUc+GKG/N50Bpxyg8SU4q1UVd6rpVyhNkQ0Ex63PkRiKEHjLAPBWRzgwJZt5oLBh2rbkIeqntmk
-	9c7fkF7CUyKwMIaNVXRXtV5yC89aKVgNX7/CXVGnmEULB2DivMF33ygU0WFE/pOQCNorPoGWtcO5J
-	yfY7ppae1TH1d9X7JcY5ucaNCw8T896MXC/SBcVu3lxT2bS3xFNz89kiMDoRU3s1YfBV5ztSa0ITK
-	R7Z9AlpVopne04UpQ2Sg==;
+	List-Owner; bh=D4szfNAjk9ju47Dp1sumb7tlIq1I16h+lktl/Hx5hQA=; b=uEYTJSx8kdRL08
+	OQHZhA4FwhD3m3ozHD8vvy/fzmWaABll0U+KYD9FJqsNRRcQVt62hGvKB6Am9YFufPK2iS9s6VBQ4
+	DfDtS3Jkl301jKF5d8VHs9N1XG1NU1UlzWrxQ+hhu0TpbV5CMMyT8FfcoNIy5UG7xLRL5aLJEOuOs
+	HOMglKj9vZNv17pyRt82795FFlwnU+4iRjs5AZcA4EdjnIM/bSwdHCjRB4waW4ClB3z6vpQtsyq3g
+	VwaubZ7yTYF8VDY9BHNad6ZTDgYSlrTPbFSIhxDFW9fVkmK0Pe2W8vziBywk5qaW7cm2f79F7JPaH
+	Z7R2zMhX6B4RCP37gXig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0tLr-0003mj-W8; Thu, 22 Aug 2019 20:06:32 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1i0tPl-0005aD-Dz; Thu, 22 Aug 2019 20:10:33 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0tLe-0003m2-Ke
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 20:06:19 +0000
-Received: by mail-io1-xd43.google.com with SMTP id j4so6293530iog.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 13:06:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hsSpn9hGEc+4R8e8fM9phFi1Gxa64aABU+4CIuIySwQ=;
- b=e3YefOAIAkPen79sC/z3FeJcEtTSDDxtGIpTx0MKzfxYpWbHAU6YT0jAsEXUNJ9n9K
- zV/02U83jNhXCwxe0cJVWD0qZ2fXSVzjnRNmwU9YaswhphX/c7MT82J+0wB4oYOAfIdf
- o3t/Bqgk97YtBogPYkk+Z6m2DSrKvtLTfjFovUJFPYPZsWR2WlF38PbpsHZuauwRMHck
- km1KO2U9UdcyghSHMH942MHDeSS3GxhiDi1pI/rvWaBejPOT2w5lN+J1nfkROn3k98me
- k3KvTcyKKKYXV72i+mLnPzHu5qCM+l1w8QTs8fro0vJ41lrqh03Y60Y3DadG+GUUGroJ
- GbnA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hsSpn9hGEc+4R8e8fM9phFi1Gxa64aABU+4CIuIySwQ=;
- b=g8gys2921VXYSohqZ0btWJZne5H6gwEIPwCUKvuijxiO+zo7YeSHPc2xyL/Uus6jRe
- yGKFrWH7CBB5Ty7JqytQbiVoTwVJlIh2OAjIaTh1ap9Xzip4nRrjzCsYjtcjnS0yvXIx
- H4zytmr0bMsXXNDsug2qZCPa/56yVJM8w4ms00iUKKpfBZh5zn1dA+P8uAIvXvkuUgJf
- s6tLWThygY7jlbhoCF2haRa1Y2oSCsYYNm+k35KaKzmEgf8E8T923/jmZUD6uc+L3g/+
- MY4drTIUf+JvCQWQlHfFoFz8gpIZVhcNenwHBkGjY8xuH+nwDVVCIXg+4EzZ8wI+7E1/
- qB1A==
-X-Gm-Message-State: APjAAAX0MxaCp4mRO0wcEPPPGaOI7tUXQJkfc/bVFv6KIlZenbYQNi3b
- K/0Jpp2wiEWQJdT3+caDbCx2O6OsAnBw8hIns4E=
-X-Google-Smtp-Source: APXvYqwJwJfQRekS8pIphZHiktR5Z63xT/ocdJ4BcGIsoRN24AEWfNDp/0UbySpNcl8VOzLJtdf2clOAKG5G16UAk1c=
-X-Received: by 2002:a02:bb13:: with SMTP id y19mr1425878jan.86.1566504376856; 
- Thu, 22 Aug 2019 13:06:16 -0700 (PDT)
+ id 1i0tPZ-0005Zd-Dl
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 20:10:22 +0000
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 0138B106BB20;
+ Thu, 22 Aug 2019 20:10:21 +0000 (UTC)
+Received: from treble (ovpn-121-55.rdu2.redhat.com [10.10.121.55])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id C96BC5C221;
+ Thu, 22 Aug 2019 20:10:19 +0000 (UTC)
+Date: Thu, 22 Aug 2019 15:10:17 -0500
+From: Josh Poimboeuf <jpoimboe@redhat.com>
+To: Raphael Gault <raphael.gault@arm.com>
+Subject: Re: [RFC v4 12/18] arm64: assembler: Add macro to annotate asm
+ function having non standard stack-frame.
+Message-ID: <20190822201017.3w77h374qs5uyxso@treble>
+References: <20190816122403.14994-1-raphael.gault@arm.com>
+ <20190816122403.14994-13-raphael.gault@arm.com>
 MIME-Version: 1.0
-References: <20190731180131.8597-1-andrew.smirnov@gmail.com>
- <VI1PR04MB7023AE3910B261877892EEABEEA50@VI1PR04MB7023.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR04MB7023AE3910B261877892EEABEEA50@VI1PR04MB7023.eurprd04.prod.outlook.com>
-From: Andrey Smirnov <andrew.smirnov@gmail.com>
-Date: Thu, 22 Aug 2019 13:06:05 -0700
-Message-ID: <CAHQ1cqHBzFi80ZCa+jgs0Qy=dMP4yP7am1x-hMTxzb-8Zpok0w@mail.gmail.com>
-Subject: Re: [PATCH] ARM: imx: Drop imx_anatop_init()
-To: Leonard Crestez <leonard.crestez@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20190816122403.14994-13-raphael.gault@arm.com>
+User-Agent: NeoMutt/20180716
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.64]); Thu, 22 Aug 2019 20:10:21 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_130618_698802_C6C68FC0 
-X-CRM114-Status: GOOD (  15.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190822_131021_488042_98C61EB6 
+X-CRM114-Status: GOOD (  18.16  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andrew.smirnov[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,81 +70,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Peter Chen <peter.chen@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Chris Healy <cphealy@gmail.com>,
- Fabio Estevam <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: raph.gault+kdev@gmail.com, peterz@infradead.org, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, julien.thierry.kdev@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 10:33 AM Leonard Crestez
-<leonard.crestez@nxp.com> wrote:
->
-> On 31.07.2019 21:01, Andrey Smirnov wrote:
-> > With commit b5bbe2235361 ("usb: phy: mxs: Disable external charger
-> > detect in mxs_phy_hw_init()") in tree all of the necessary charger
-> > setup is done by the USB PHY driver which covers all of the affected
-> > i.MX6 SoCs.
-> >
-> > NOTE: Imx_anatop_init() was also called for i.MX7D, but looking at its
-> > datasheet it appears to have a different USB PHY IP block, so
-> > executing i.MX6 charger disable configuration seems unnecessary.
-> >
-> > -void __init imx_anatop_init(void)
-> > -{
-> > -     anatop = syscon_regmap_lookup_by_compatible("fsl,imx6q-anatop");
-> > -     if (IS_ERR(anatop)) {
-> > -             pr_err("%s: failed to find imx6q-anatop regmap!\n", __func__);
-> > -             return;
-> > -     }
->
-> This patch breaks suspend on imx6 in linux-next because the "anatop"
-> regmap is no longer initialized. This was found via bisect but
-> no_console_suspend prints a helpful stack anyway:
->
-> (regmap_read) from [<c01226e4>] (imx_anatop_enable_weak2p5+0x28/0x70)
-> (imx_anatop_enable_weak2p5) from [<c0122744>]
-> (imx_anatop_pre_suspend+0x18/0x64)
-> (imx_anatop_pre_suspend) from [<c0124434>] (imx6q_pm_enter+0x60/0x16c)
-> (imx6q_pm_enter) from [<c018c8a4>] (suspend_devices_and_enter+0x7d4/0xcbc)
-> (suspend_devices_and_enter) from [<c018d544>] (pm_suspend+0x7b8/0x904)
-> (pm_suspend) from [<c018b1b4>] (state_store+0x68/0xc8)
->
+On Fri, Aug 16, 2019 at 01:23:57PM +0100, Raphael Gault wrote:
+> Some functions don't have standard stack-frames but are intended
+> this way. In order for objtool to ignore those particular cases
+> we add a macro that enables us to annotate the cases we chose
+> to mark as particular.
+> 
+> Signed-off-by: Raphael Gault <raphael.gault@arm.com>
+> ---
+>  include/linux/frame.h | 19 ++++++++++++++++++-
+>  1 file changed, 18 insertions(+), 1 deletion(-)
+> 
+> diff --git a/include/linux/frame.h b/include/linux/frame.h
+> index 02d3ca2d9598..1e35e58ab259 100644
+> --- a/include/linux/frame.h
+> +++ b/include/linux/frame.h
+> @@ -11,14 +11,31 @@
+>   *
+>   * For more information, see tools/objtool/Documentation/stack-validation.txt.
+>   */
+> +#ifndef __ASSEMBLY__
+>  #define STACK_FRAME_NON_STANDARD(func) \
+>  	static void __used __section(.discard.func_stack_frame_non_standard) \
+>  		*__func_stack_frame_non_standard_##func = func
+> +#else
+> +	/*
+> +	 * This macro is the arm64 assembler equivalent of the
+> +	 * macro STACK_FRAME_NON_STANDARD define at
+> +	 * ~/include/linux/frame.h
+> +	 */
 
-My bad, completely missed that fact that anatop was a global variable
-in  imx_anatop_init(). Sorry about that.
+This comment is a bit confusing as it's referring to its own header
+file.  And it's not arm64-specific.  I don't think we really need a
+comment here anyway.
 
-> Minimal fix looks like this:
->
-> --- arch/arm/mach-imx/anatop.c
-> +++ arch/arm/mach-imx/anatop.c
-> @@ -111,6 +111,12 @@ void __init imx_init_revision_from_anatop(void)
->           digprog = readl_relaxed(anatop_base + offset);
->           iounmap(anatop_base);
->
-> +       anatop = syscon_regmap_lookup_by_compatible("fsl,imx6q-anatop");
-> +       if (IS_ERR(anatop)) {
-> +               pr_err("failed to find imx6q-anatop regmap!\n");
-> +               return;
-> +       }
->
-> Since all SOCs that called imx_anatop_init also call
-> imx_init_revision_from_anatop this might be an acceptable solution,
-> unless there is some limitation preventing early regmap lookup.
->
+> +	.macro	asm_stack_frame_non_standard	func
+> +	.pushsection ".discard.func_stack_frame_non_standard"
+> +	.quad	\func
+> +	.popsection
+> +	.endm
 
-Would making every function that uses anatop explicitly request it via
-syscon_regmap_lookup_by_compatible("fsl,imx6q-anatop") be too much of
-a code duplication? This way we won't need to worry if
-imx_init_revision_from_anatop() was called before any of them are
-used.
+Can you call it STACK_FRAME_NON_STANDARD for consistency with the
+non-asm version?
 
-Thanks,
-Andrey Smirnov
+-- 
+Josh
 
 _______________________________________________
 linux-arm-kernel mailing list
