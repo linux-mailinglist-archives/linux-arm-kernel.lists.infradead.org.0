@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8304988F3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 03:27:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0906C988F6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 03:28:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
 	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ROehMSrwPpxizwuek5KQ87lzBhgL7RSinTC294QQyqY=; b=XRJDhsj0kiylMc
-	hQQPaCL6ou2veaCwbw9oGjgEqEM4+G/78KqAJq/WdJ+Y4ODaRZRRdiA1LlmlQWcK4xD682RawByJW
-	Yjv4eWeD52iQY/9rp9xoju/ePtJ2g68qNwsGW0hf4dUbMlHdvDcPXgNzXS4qDnt7J/akFxB/ZwBs6
-	f3wzUZ1pbfk9ZTnvLg8S8jJAo588B+/16Nk7M2CEvIoTKvOKRnX6eQASBZR1O2ywmh6TmKf2aosd2
-	x2+4Xh9WhjAmRQtB15ycF75KEVCEnqsTglrKSu8AWr/aLF/43waxM0KvufdXF9ASEQydMMUwDEIk9
-	n3AGzTDK8vX4yhIBE7Dg==;
+	List-Owner; bh=3BbPTtOoPd3lBj8N+jD8abKT0QTByfp9GcpJBNd1Vd0=; b=CuvnTmJxGRDfoI
+	5NoRjpBhDmW3hD788Vn1uYm4XuBen599p9m8jyTxz5m+gJf1ef5JSiu5ljLrmJNw3w9kbh0qlsCKU
+	nPOUyafb6pNdq7aVKXy8VsUZYbYwPorUIL0D86Mn6x0yWKAl2vke82BIW1oYrrlWDpeIJEfQcgwuA
+	ZrYqqLyr5GRtr48HDj9xQ39+fzHKMDZ6VRKHUzTtE3ll6orO9C7k/n86IUMOs3nByEoV8ZMpQFZYN
+	FzDnWRj9c2qPAFXj0D2Cmkn5TGvYKL5F5HqPCaYqlIPg8zx3ekfgjzN9XS0c9O0Lp2Ptu1Oy8YX6G
+	kFZINNDw5el2/SU+ffrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0btD-0001l0-Cf; Thu, 22 Aug 2019 01:27:47 +0000
+	id 1i0bu8-0002WN-8i; Thu, 22 Aug 2019 01:28:44 +0000
 Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0bsk-0001fG-3W
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 01:27:20 +0000
+ id 1i0btm-0002Vq-J4
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 01:28:25 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id DC9B021AF1;
- Wed, 21 Aug 2019 21:27:09 -0400 (EDT)
+ by mailout.nyi.internal (Postfix) with ESMTP id 2107521B10;
+ Wed, 21 Aug 2019 21:28:20 -0400 (EDT)
 Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 21 Aug 2019 21:27:09 -0400
+ by compute4.internal (MEProxy); Wed, 21 Aug 2019 21:28:20 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
  mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=P6YpUynkrjoqomQxrt5nvLSMmxiMUP5
- C3MbwFz57nIQ=; b=po1bSAxSE0b82sdIWJwchyERgu4XtUIj/I6ox3dd0jkWZmJ
- Hb70Xt27qKswndCfNSbMggxyW4AGy5cPcwk3d6pLvCO2e6RmcY4tn0qbfAue8mUf
- By5HKRe+GLYpqdBuYIMj/TSLMSUzBLim8cetsqYd19B35s0973ajgPF9mVBXlrrW
- OLsEZOUGWPoQIe0ZwGPjIu7rKN6pHXR2n2+pjBacuYfKMHiU1xrmAMvoia1UOD+6
- hjtAaTJ5Cqu8IyX5e2h3J3B+DCG639BtU23hGngsxs4ezG4X+PtFJcTSvHy1Y0lm
- PUp5TKqQsx8G0dCgytjNz3qfYaG47RBGxjJbNrA==
+ :subject:content-type; s=fm3; bh=JffuWZmKIHpAssdWvVAgw68YOG/K4zA
+ LCtps5XoDx6E=; b=GT0VQcuwqjqfOC32GkjkXxhQZgy+D/YsTeMPBVd3l1vET41
+ OPRTPWzvsS3ZiRffKXppIhY6rR9bPJqKh0E6QQeFsW+gQ136lRnMNWWk9mciIgta
+ hDW1MGt27Zc70nDEPn+HBOPpl3/cmBBNJYWcIAdbiNRF0aU1MIanVGoNRRmF54Zk
+ JZMJFbe5Q/qgZuiMvMOp2MiRddqZeBDBIRUl6rk7SpKw1qSIu9ctAYQ+hWpqtZ+C
+ DxNretB5Pb261wAa7XqVTmy2wmnFOMfylLKB3t42xzVzLCRqZhsKgIjI4arNaPH5
+ 8kzJbD+TpsI/ugkaRwj1Oqri4wnHG1rk9D14JTA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=P6YpUy
- nkrjoqomQxrt5nvLSMmxiMUP5C3MbwFz57nIQ=; b=Tucw0xXyRP7T4g/oHMyyRq
- noLw5CMf+TsvwPixt4TAgOeiyUD/6zVrlJWf+eH7QOpnmsHoIk7NYH/w4kgYzunR
- uDo+1+B/kyvGvP5xbAqF+daskCoUZFegQH/cdQ4BN/tdc8vsIOu6zg6VmTHeUGA5
- rjXpBUVvg9imVdkRy/gNEwknI9lguU3xEMVJ2rNV67Cg04FCWRE6C+C5z9ThMg8v
- wdnImsM4Gyu3eps1I4BRzrLtn9oWGyZk7irVcnkN8SyEN2lKELwnhH91W46wRujE
- Ks2BvAyYXmyXFxLLBzh0xi9V+0JPt+SQoNmzi+PPqARO2kuoYnkHwj4wC1QT6Qog
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=JffuWZ
+ mKIHpAssdWvVAgw68YOG/K4zALCtps5XoDx6E=; b=uHRHlDyc4h6wWa4YwSnnrr
+ Db7lIU0M9x8Fob20Y6ZvxM4jaj0lOEq4yhj3n5fJawIvxtKQNQA5gb6wZ4v4h0xs
+ xzFeacwvqhMa6zzbJr+idpYRv8qW2MA3UOBex0dPw7CB2B5HycTr3SKgoUkqfwo6
+ iB7ysZXEHLHHuJmYsSmJCdCWACPbq+nwYZY+a91eJ8yBXbWrfxiwU5Oxn8Ct6UXf
+ 2wYZJsA3uLkQe12I4fT+BdoYV5ngtSLYnLpPxugzLhah16BIE6eYS0NANb0gqhbh
+ lcGewnkyI1faP1/PO00a4Nz5k2/HoLsx5RMwKTDrt8kjGQ6hAoYkK6nauTj5jy8Q
  ==
-X-ME-Sender: <xms:bO9dXRyhlMHkPIyvSyTMCpGjgAKnFwTL1VUyViUdjtfApivW59iycQ>
+X-ME-Sender: <xms:s-9dXdeEUQr19jj29sGcWTzsYgvrLQ66vX_wNEYJEISUfXtDH0KWgw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudeggedggeekucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
  rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
  grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgeptd
-X-ME-Proxy: <xmx:bO9dXT4AzVZ6gxCBZw6KGjfUsezo-hO6vLRqE8ikv5yL0TVj5b5GDg>
- <xmx:bO9dXa18wnpibyM5my2EIwfTaUc6LehUuy7R_D_-dl2tw4CPxKEwyA>
- <xmx:bO9dXU131KUAv9eIHrFR-Q3-zsL96Kb6KqKKNeYS6jgQlKvzTaj7gA>
- <xmx:be9dXf3KDKs3dNnP04ffsk-pquiV3ZkOcC74fBLYiQKY3CkyB92BNA>
+ rhfuihiivgepud
+X-ME-Proxy: <xmx:s-9dXSiKCGyKqVPdoNAz-SbW6YY-4ySNcu0kZ-OdE0ifpz2LZIEaMA>
+ <xmx:s-9dXbN_UpMnyLPg0RXc4lw8anu2OQokCjO7VuEQLTKdDnm5LUeyGw>
+ <xmx:s-9dXf8ff-Eqcn56XzTatMQPYL8YBCukKX8WiLNuqeuKwMQhOCY7Zw>
+ <xmx:tO9dXZHqNj_6CL3r9Pm7FzvMo0Jtl8pdWJPRYdKnm0Y05ObNpNchJg>
 Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 5E11AE00A3; Wed, 21 Aug 2019 21:27:08 -0400 (EDT)
+ id CFF33E00A3; Wed, 21 Aug 2019 21:28:19 -0400 (EDT)
 X-Mailer: MessagingEngine.com Webmail Interface
 User-Agent: Cyrus-JMAP/3.1.6-916-g49fca03-fmstable-20190821v7
 Mime-Version: 1.0
-Message-Id: <0e9c483f-4f12-45a4-8d2c-1aa3ae34fa7a@www.fastmail.com>
-In-Reply-To: <20190821055530.8720-3-joel@jms.id.au>
+Message-Id: <839a0780-e0ab-4615-ad6f-fda1881260b2@www.fastmail.com>
+In-Reply-To: <20190821055530.8720-4-joel@jms.id.au>
 References: <20190821055530.8720-1-joel@jms.id.au>
- <20190821055530.8720-3-joel@jms.id.au>
-Date: Thu, 22 Aug 2019 10:57:22 +0930
+ <20190821055530.8720-4-joel@jms.id.au>
+Date: Thu, 22 Aug 2019 10:58:35 +0930
 From: "Andrew Jeffery" <andrew@aj.id.au>
 To: "Joel Stanley" <joel@jms.id.au>, "Rob Herring" <robh+dt@kernel.org>,
  "Arnd Bergmann" <arnd@arndb.de>, "Olof Johansson" <olof@lixom.net>
-Subject: Re: [PATCH 2/7] ARM: aspeed: Select timer in each SoC
+Subject: Re: [PATCH 3/7] ARM: aspeed: Add ASPEED AST2600 architecture
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_182718_508839_C1AFD3DD 
-X-CRM114-Status: GOOD (  11.84  )
+X-CRM114-CacheID: sfid-20190821_182823_830948_7388DD9C 
+X-CRM114-Status: GOOD (  12.70  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -116,44 +116,47 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On Wed, 21 Aug 2019, at 15:26, Joel Stanley wrote:
-> In preparation for adding the ast2600 which does not use this timer.
+> The AST2600 is a Cortex A7 dual core CPU that uses the ARM GIC for
+> interrupts and ARM timer as a clocksource.
 > 
 > Signed-off-by: Joel Stanley <joel@jms.id.au>
 
 Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
 
 > ---
->  arch/arm/mach-aspeed/Kconfig | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
+>  arch/arm/mach-aspeed/Kconfig | 14 +++++++++++++-
+>  1 file changed, 13 insertions(+), 1 deletion(-)
 > 
 > diff --git a/arch/arm/mach-aspeed/Kconfig b/arch/arm/mach-aspeed/Kconfig
-> index a15c3a291386..2979aa4daeea 100644
+> index 2979aa4daeea..56007b0b6120 100644
 > --- a/arch/arm/mach-aspeed/Kconfig
 > +++ b/arch/arm/mach-aspeed/Kconfig
-> @@ -5,7 +5,6 @@ menuconfig ARCH_ASPEED
+> @@ -1,7 +1,7 @@
+>  # SPDX-License-Identifier: GPL-2.0-only
+>  menuconfig ARCH_ASPEED
+>  	bool "Aspeed BMC architectures"
+> -	depends on ARCH_MULTI_V5 || ARCH_MULTI_V6
+> +	depends on ARCH_MULTI_V5 || ARCH_MULTI_V6 || ARCH_MULTI_V7
 >  	select SRAM
 >  	select WATCHDOG
 >  	select ASPEED_WATCHDOG
-> -	select FTTMR010_TIMER
->  	select MFD_SYSCON
->  	select PINCTRL
->  	help
-> @@ -18,6 +17,7 @@ config MACH_ASPEED_G4
->  	depends on ARCH_MULTI_V5
->  	select CPU_ARM926T
->  	select PINCTRL_ASPEED_G4
-> +	select FTTMR010_TIMER
->  	help
->  	 Say yes if you intend to run on an Aspeed ast2400 or similar
->  	 fourth generation BMCs, such as those used by OpenPower Power8
-> @@ -28,6 +28,7 @@ config MACH_ASPEED_G5
->  	depends on ARCH_MULTI_V6
->  	select CPU_V6
->  	select PINCTRL_ASPEED_G5
-> +	select FTTMR010_TIMER
->  	help
+> @@ -33,4 +33,16 @@ config MACH_ASPEED_G5
 >  	 Say yes if you intend to run on an Aspeed ast2500 or similar
 >  	 fifth generation Aspeed BMCs.
+>  
+> +config MACH_ASPEED_G6
+> +	bool "Aspeed SoC 6th Generation"
+> +	depends on ARCH_MULTI_V7
+> +	select CPU_V7
+> +	select PINCTRL_ASPEED_G6
+> +	select ARM_GIC
+> +	select HAVE_ARM_ARCH_TIMER
+> +	select HAVE_SMP
+> +	help
+> +	 Say yes if you intend to run on an Aspeed ast2600 or similar
+> +	 sixth generation Aspeed BMCs.
+> +
+>  endif
 > -- 
 > 2.23.0.rc1
 > 
