@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0906C988F6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 03:28:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CEE19892A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 03:58:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
 	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3BbPTtOoPd3lBj8N+jD8abKT0QTByfp9GcpJBNd1Vd0=; b=CuvnTmJxGRDfoI
-	5NoRjpBhDmW3hD788Vn1uYm4XuBen599p9m8jyTxz5m+gJf1ef5JSiu5ljLrmJNw3w9kbh0qlsCKU
-	nPOUyafb6pNdq7aVKXy8VsUZYbYwPorUIL0D86Mn6x0yWKAl2vke82BIW1oYrrlWDpeIJEfQcgwuA
-	ZrYqqLyr5GRtr48HDj9xQ39+fzHKMDZ6VRKHUzTtE3ll6orO9C7k/n86IUMOs3nByEoV8ZMpQFZYN
-	FzDnWRj9c2qPAFXj0D2Cmkn5TGvYKL5F5HqPCaYqlIPg8zx3ekfgjzN9XS0c9O0Lp2Ptu1Oy8YX6G
-	kFZINNDw5el2/SU+ffrA==;
+	List-Owner; bh=CEXYcp5s28lkm1GNqf+ejx7s1CKx82UJQWoja7f8g0s=; b=gMrRQgCMs1G0kQ
+	iBwjN8qiJGMtw/rk+C679pX00be5LjhvTT0yMWboc2MAZn5U1LKvG0uHMK6TosnOL7I/kL4aRCe6W
+	esD3c37hbXwxk/cHNUoLQO+jKiWMxTic2o+UVzW6M1mmDhhWC5sRe8dlUcxCKXCeba7oIHd6aGtyT
+	3SSQmjjhwsscuFcVey3VMajsPdtZEZk/KjvuPHkRkZlfyuhJro1zYVsdLi+eIcEb7D9RqCTTk4vhj
+	mKmEVoa1z9Yw0qj5f2n6e27T9Mdlnkw9/Pkxq80dSHLHcmOghOZJuoOUuXGqKRI6Q3KGd9Mkvfnoc
+	REab8Z1KZX3qRY2gspvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0bu8-0002WN-8i; Thu, 22 Aug 2019 01:28:44 +0000
+	id 1i0cMZ-0004gl-R9; Thu, 22 Aug 2019 01:58:07 +0000
 Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0btm-0002Vq-J4
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 01:28:25 +0000
+ id 1i0cMS-0004gS-NN
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 01:58:02 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 2107521B10;
- Wed, 21 Aug 2019 21:28:20 -0400 (EDT)
+ by mailout.nyi.internal (Postfix) with ESMTP id 7C42C21BA9;
+ Wed, 21 Aug 2019 21:57:54 -0400 (EDT)
 Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 21 Aug 2019 21:28:20 -0400
+ by compute4.internal (MEProxy); Wed, 21 Aug 2019 21:57:54 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
  mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=JffuWZmKIHpAssdWvVAgw68YOG/K4zA
- LCtps5XoDx6E=; b=GT0VQcuwqjqfOC32GkjkXxhQZgy+D/YsTeMPBVd3l1vET41
- OPRTPWzvsS3ZiRffKXppIhY6rR9bPJqKh0E6QQeFsW+gQ136lRnMNWWk9mciIgta
- hDW1MGt27Zc70nDEPn+HBOPpl3/cmBBNJYWcIAdbiNRF0aU1MIanVGoNRRmF54Zk
- JZMJFbe5Q/qgZuiMvMOp2MiRddqZeBDBIRUl6rk7SpKw1qSIu9ctAYQ+hWpqtZ+C
- DxNretB5Pb261wAa7XqVTmy2wmnFOMfylLKB3t42xzVzLCRqZhsKgIjI4arNaPH5
- 8kzJbD+TpsI/ugkaRwj1Oqri4wnHG1rk9D14JTA==
+ :subject:content-type; s=fm3; bh=sxUmO+9BmRdcKCJwVcW++c6zGyWjd3/
+ ClO+i8zmwAmk=; b=QKbglID6yBuwKIf82QLttnrZvg1x5rPUAH6qwkBc4Hxpz97
+ +47Sqa2Yev2etTOOVCnM0SnmqMLXn5DNr17DntRc71RRI7VkxOHo1yYiupF4nenE
+ lNEMb7m/1GWTvXBQLopQIorMhR9Y3EnEM8SEaIA3O4S5COzMXq0jkI1/MsPotOQN
+ xnTQ+kP+jXNaQdxz4A2nUoc43wZT9iyS8NNynqkSBjXTSa9zQehyGKG+O3BrYdW7
+ 7QXjoMI9kQjjiLleHd+EJH6K8TYckqzCZ7p9b87399UvgNXTLYBd/vNqD353nNwy
+ MaaiDBYwS9WxVx0+p1iajd7A9ZRKP30QG39C6+A==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=JffuWZ
- mKIHpAssdWvVAgw68YOG/K4zALCtps5XoDx6E=; b=uHRHlDyc4h6wWa4YwSnnrr
- Db7lIU0M9x8Fob20Y6ZvxM4jaj0lOEq4yhj3n5fJawIvxtKQNQA5gb6wZ4v4h0xs
- xzFeacwvqhMa6zzbJr+idpYRv8qW2MA3UOBex0dPw7CB2B5HycTr3SKgoUkqfwo6
- iB7ysZXEHLHHuJmYsSmJCdCWACPbq+nwYZY+a91eJ8yBXbWrfxiwU5Oxn8Ct6UXf
- 2wYZJsA3uLkQe12I4fT+BdoYV5ngtSLYnLpPxugzLhah16BIE6eYS0NANb0gqhbh
- lcGewnkyI1faP1/PO00a4Nz5k2/HoLsx5RMwKTDrt8kjGQ6hAoYkK6nauTj5jy8Q
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=sxUmO+
+ 9BmRdcKCJwVcW++c6zGyWjd3/ClO+i8zmwAmk=; b=dVKAkzukcPQYZuNBYAxqHD
+ 5e06XvAGRoimWx0xpcMH1LIammnfoJ/RU3OqA3r5EqQ0BRfn2WfvrrEO55LoVs/J
+ gN3VLIExXKWVMR+gAQ45BuAWDMB5w4T/yhnNRSP+tAvpEi06+Jr8XdELdMevnqap
+ eo7T+Spe4MtZz3ygn8l+SZckJXNRsZcJ0Lxv53BsKgfQ6mKr9q8GDcR+xumdiXIB
+ bZe+wK2XGeuuqn9o50qeOoZ/lMclhDo3OuFZudBFZlHSzijGgzCKyBv+BBWENtNd
+ Xl+bfH7oCyuA3Ju9RdfQTHCpf1QXinOaOPUVsGhTqTKOaLt8nQynzbBPnTbKQbnQ
  ==
-X-ME-Sender: <xms:s-9dXdeEUQr19jj29sGcWTzsYgvrLQ66vX_wNEYJEISUfXtDH0KWgw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudeggedggeekucetufdoteggodetrfdotf
+X-ME-Sender: <xms:oPZdXdCp336IkMy7EzzdlF_DU7FlXmZ9iOELROYG-ZKbOSza3wmL2Q>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudeggedgheegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
  rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
  grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgepud
-X-ME-Proxy: <xmx:s-9dXSiKCGyKqVPdoNAz-SbW6YY-4ySNcu0kZ-OdE0ifpz2LZIEaMA>
- <xmx:s-9dXbN_UpMnyLPg0RXc4lw8anu2OQokCjO7VuEQLTKdDnm5LUeyGw>
- <xmx:s-9dXf8ff-Eqcn56XzTatMQPYL8YBCukKX8WiLNuqeuKwMQhOCY7Zw>
- <xmx:tO9dXZHqNj_6CL3r9Pm7FzvMo0Jtl8pdWJPRYdKnm0Y05ObNpNchJg>
+ rhfuihiivgeptd
+X-ME-Proxy: <xmx:oPZdXYUtHt9PYagJvlleqysNCEbrG53iPR8WrcF1Knn33_g-TySK9g>
+ <xmx:oPZdXa29XM0TN-qurfmYC_k3Rm4m1QtUcek39WFUQM8Uk3dzWi9eIQ>
+ <xmx:oPZdXX4xtWg8s-v4k0fFxDKzQQz3dq2kubNiP6QsSxLFlOWF-Vd9Yg>
+ <xmx:ovZdXdTiZaExeYoaGvQAFDCnxhXwXl2xTH6KRlOJ0RF-7xm5kckxlg>
 Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id CFF33E00A3; Wed, 21 Aug 2019 21:28:19 -0400 (EDT)
+ id 4C9EBE00A3; Wed, 21 Aug 2019 21:57:52 -0400 (EDT)
 X-Mailer: MessagingEngine.com Webmail Interface
 User-Agent: Cyrus-JMAP/3.1.6-916-g49fca03-fmstable-20190821v7
 Mime-Version: 1.0
-Message-Id: <839a0780-e0ab-4615-ad6f-fda1881260b2@www.fastmail.com>
-In-Reply-To: <20190821055530.8720-4-joel@jms.id.au>
+Message-Id: <b1527d8e-4def-4769-b85a-142aa4d99f03@www.fastmail.com>
+In-Reply-To: <20190821055530.8720-6-joel@jms.id.au>
 References: <20190821055530.8720-1-joel@jms.id.au>
- <20190821055530.8720-4-joel@jms.id.au>
-Date: Thu, 22 Aug 2019 10:58:35 +0930
+ <20190821055530.8720-6-joel@jms.id.au>
+Date: Thu, 22 Aug 2019 11:28:09 +0930
 From: "Andrew Jeffery" <andrew@aj.id.au>
 To: "Joel Stanley" <joel@jms.id.au>, "Rob Herring" <robh+dt@kernel.org>,
  "Arnd Bergmann" <arnd@arndb.de>, "Olof Johansson" <olof@lixom.net>
-Subject: Re: [PATCH 3/7] ARM: aspeed: Add ASPEED AST2600 architecture
+Subject: Re: [PATCH 5/7] ARM: dts: aspeed: Add AST2600 and EVB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_182823_830948_7388DD9C 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20190821_185800_904303_2FCB5FEC 
+X-CRM114-Status: GOOD (  16.42  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -116,51 +116,361 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On Wed, 21 Aug 2019, at 15:26, Joel Stanley wrote:
-> The AST2600 is a Cortex A7 dual core CPU that uses the ARM GIC for
-> interrupts and ARM timer as a clocksource.
+> The AST2600 is a new SoC by ASPEED. It contains a dual core Cortex A7
+> CPU and shares many periperhals with the existing AST2400 and AST2500.
 > 
 > Signed-off-by: Joel Stanley <joel@jms.id.au>
+> ---
+>  arch/arm/boot/dts/Makefile               |   1 +
+>  arch/arm/boot/dts/aspeed-ast2600-evb.dts |  44 ++++
+>  arch/arm/boot/dts/aspeed-g6.dtsi         | 266 +++++++++++++++++++++++
+>  3 files changed, 311 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/aspeed-ast2600-evb.dts
+>  create mode 100644 arch/arm/boot/dts/aspeed-g6.dtsi
+> 
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index 247e556de48e..2d8d29e5686d 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -1276,6 +1276,7 @@ dtb-$(CONFIG_ARCH_MILBEAUT) += 
+> milbeaut-m10v-evb.dtb
+>  dtb-$(CONFIG_ARCH_ZX) += zx296702-ad1.dtb
+>  dtb-$(CONFIG_ARCH_ASPEED) += \
+>  	aspeed-ast2500-evb.dtb \
+> +	aspeed-ast2600-evb.dtb \
+>  	aspeed-bmc-arm-centriq2400-rep.dtb \
+>  	aspeed-bmc-arm-stardragon4800-rep2.dtb \
+>  	aspeed-bmc-facebook-cmm.dtb \
+> diff --git a/arch/arm/boot/dts/aspeed-ast2600-evb.dts 
+> b/arch/arm/boot/dts/aspeed-ast2600-evb.dts
+> new file mode 100644
+> index 000000000000..7f2528e084b5
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/aspeed-ast2600-evb.dts
+> @@ -0,0 +1,44 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +// Copyright 2019 IBM Corp.
+> +
+> +/dts-v1/;
+> +
+> +#include "aspeed-g6.dtsi"
+> +
+> +/ {
+> +	model = "AST2600 EVB";
+> +	compatible = "aspeed,ast2600";
+> +
+> +	aliases {
+> +		serial4 = &uart5;
+> +	};
+> +
+> +	chosen {
+> +		bootargs = "console=ttyS4,115200n8";
+> +	};
+> +
+> +	memory@80000000 {
+> +		device_type = "memory";
+> +		reg = <0x80000000 0x80000000>;
+> +	};
+> +};
+> +
+> +&mdio1 {
+> +	status = "okay";
+> +
+> +	ethphy1: ethernet-phy@0 {
+> +		compatible = "ethernet-phy-ieee802.3-c22";
+> +		reg = <0>;
+> +	};
+> +};
+> +
+> +&mac1 {
+> +	status = "okay";
+> +
+> +	phy-mode = "rgmii";
+> +	phy-handle = <&ethphy1>;
+> +};
+> +
+> +&emmc {
+> +	status = "okay";
+> +};
+> diff --git a/arch/arm/boot/dts/aspeed-g6.dtsi 
+> b/arch/arm/boot/dts/aspeed-g6.dtsi
+> new file mode 100644
+> index 000000000000..9f9931541060
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/aspeed-g6.dtsi
+> @@ -0,0 +1,266 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +// Copyright 2019 IBM Corp.
+> +
+> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+> +#include <dt-bindings/clock/ast2600-clock.h>
+> +
+> +/ {
+> +	model = "Aspeed BMC";
+> +	compatible = "aspeed,ast2600";
+> +	#address-cells = <1>;
+> +	#size-cells = <1>;
+> +	interrupt-parent = <&gic>;
+> +
+> +	aliases {
+> +		serial4 = &uart5;
+> +	};
+> +
+> +
+> +	cpus {
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		enable-method = "aspeed,ast2600-smp";
+> +
+> +		cpu@f00 {
+> +			compatible = "arm,cortex-a7";
+> +			device_type = "cpu";
+> +			reg = <0xf00>;
+> +		};
+> +
+> +		cpu@f01 {
+> +			compatible = "arm,cortex-a7";
+> +			device_type = "cpu";
+> +			reg = <0xf01>;
+> +		};
+> +	};
+> +
+> +	timer {
+> +		compatible = "arm,armv7-timer";
+> +		interrupt-parent = <&gic>;
+> +		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(2) | 
+> IRQ_TYPE_LEVEL_LOW)>,
+> +			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(2) | IRQ_TYPE_LEVEL_LOW)>,
+> +			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(2) | IRQ_TYPE_LEVEL_LOW)>,
+> +			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(2) | IRQ_TYPE_LEVEL_LOW)>;
+> +		clocks = <&syscon ASPEED_CLK_HPLL>;
+> +		arm,cpu-registers-not-fw-configured;
+> +	};
+> +
+> +	ahb {
+> +		compatible = "simple-bus";
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		device_type = "soc";
+> +		ranges;
+> +
+> +		gic: interrupt-controller@40461000 {
+> +			compatible = "arm,cortex-a7-gic";
+> +			interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(2) | 
+> IRQ_TYPE_LEVEL_HIGH)>;
+> +			#interrupt-cells = <3>;
+> +			interrupt-controller;
+> +			interrupt-parent = <&gic>;
+> +			reg = <0x40461000 0x1000>,
+> +			    <0x40462000 0x1000>,
+> +			    <0x40464000 0x2000>,
+> +			    <0x40466000 0x2000>;
+> +			};
+> +
+> +		mdio0: mdio@1e650000 {
+> +			compatible = "aspeed,ast2600-mdio";
+> +			reg = <0x1e650000 0x8>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			status = "disabled";
+> +		};
+> +
+> +		mdio1: mdio@1e650008 {
+> +			compatible = "aspeed,ast2600-mdio";
+> +			reg = <0x1e650008 0x8>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			status = "disabled";
+> +		};
+> +
+> +		mdio2: mdio@1e650010 {
+> +			compatible = "aspeed,ast2600-mdio";
+> +			reg = <0x1e650010 0x8>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			status = "disabled";
+> +		};
+> +
+> +		mdio3: mdio@1e650018 {
+> +			compatible = "aspeed,ast2600-mdio";
+> +			reg = <0x1e650018 0x8>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			status = "disabled";
+> +		};
+> +
+> +		mac0: ftgmac@1e660000 {
+> +			compatible = "aspeed,ast2600-mac", "faraday,ftgmac100";
+> +			reg = <0x1e660000 0x180>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&syscon ASPEED_CLK_GATE_MAC1CLK>;
+> +			status = "disabled";
+> +		};
+> +
+> +		mac1: ftgmac@1e680000 {
+> +			compatible = "aspeed,ast2600-mac", "faraday,ftgmac100";
+> +			reg = <0x1e680000 0x180>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&syscon ASPEED_CLK_GATE_MAC2CLK>;
+> +			status = "disabled";
+> +		};
+> +
+> +		mac2: ftgmac@1e670000 {
+> +			compatible = "aspeed,ast2600-mac", "faraday,ftgmac100";
+> +			reg = <0x1e670000 0x180>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&syscon ASPEED_CLK_GATE_MAC3CLK>;
+> +			status = "disabled";
+> +		};
+> +
+> +		mac3: ftgmac@1e690000 {
+> +			compatible = "aspeed,ast2600-mac", "faraday,ftgmac100";
+> +			reg = <0x1e690000 0x180>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&syscon ASPEED_CLK_GATE_MAC4CLK>;
+> +			status = "disabled";
+> +		};
+> +
+> +		apb {
+> +			compatible = "simple-bus";
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +			ranges;
+> +
+> +			syscon: syscon@1e6e2000 {
+> +				compatible = "aspeed,ast2600-scu", "syscon", "simple-mfd";
+> +				reg = <0x1e6e2000 0x1000>;
+> +				ranges = <0 0x1e6e2000 0x1000>;
+> +				#address-cells = <1>;
+> +				#size-cells = <1>;
+> +				#clock-cells = <1>;
+> +				#reset-cells = <1>;
+> +
+> +				pinctrl: pinctrl {
+> +					compatible = "aspeed,ast2600-pinctrl";
+> +				};
+> +
+> +				smp-memram@180 {
+> +					compatible = "aspeed,ast2600-smpmem";
+> +					reg = <0x180 0x40>;
+> +				};
+> +			};
+> +
+> +			rng: hwrng@1e6e2524 {
+> +				compatible = "timeriomem_rng";
+> +				reg = <0x1e6e2524 0x4>;
+> +				period = <1>;
+> +				quality = <100>;
+> +			};
+> +
+> +			rtc: rtc@1e781000 {
+> +				compatible = "aspeed,ast2600-rtc";
+> +				reg = <0x1e781000 0x18>;
+> +				interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
+> +				status = "disabled";
+> +			};
+> +
+> +			uart5: serial@1e784000 {
+> +				compatible = "ns16550a";
+> +				reg = <0x1e784000 0x1000>;
+> +				reg-shift = <2>;
+> +				interrupts = <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>;
+> +				clocks = <&syscon ASPEED_CLK_GATE_UART5CLK>;
+> +				no-loopback-test;
+> +			};
+> +
+> +			wdt1: watchdog@1e785000 {
+> +				compatible = "aspeed,ast2600-wdt";
+> +				reg = <0x1e785000 0x40>;
+> +			};
+> +
+> +			wdt2: watchdog@1e785040 {
+> +				compatible = "aspeed,ast2600-wdt";
+> +				reg = <0x1e785040 0x40>;
+> +				status = "disabled";
+> +			};
+> +
+> +			wdt3: watchdog@1e785080 {
+> +				compatible = "aspeed,ast2600-wdt";
+> +				reg = <0x1e785080 0x40>;
+> +				status = "disabled";
+> +			};
+> +
+> +			wdt4: watchdog@1e7850C0 {
+> +				compatible = "aspeed,ast2600-wdt";
+> +				reg = <0x1e7850C0 0x40>;
+> +				status = "disabled";
+> +			};
+> +
+> +			sdc: sdc@1e740000 {
+> +				compatible = "aspeed,ast2600-sd-controller";
+> +				reg = <0x1e740000 0x100>;
+> +				#address-cells = <1>;
+> +				#size-cells = <1>;
+> +				ranges = <0 0x1e740000 0x10000>;
+> +				clocks = <&syscon ASPEED_CLK_GATE_SDCLK>;
+> +				status = "disabled";
+> +
+> +				sdhci0: sdhci@1e740100 {
+> +					compatible = "aspeed,ast2600-sdhci", "sdhci";
+> +					reg = <0x100 0x100>;
+> +					interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
+> +					sdhci,auto-cmd12;
+> +					clocks = <&syscon ASPEED_CLK_SDIO>;
+> +					status = "disabled";
+> +				};
+> +
+> +				sdhci1: sdhci@1e740200 {
+> +					compatible = "aspeed,ast2600-sdhci", "sdhci";
+> +					reg = <0x200 0x100>;
+> +					interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
+> +					sdhci,auto-cmd12;
+> +					clocks = <&syscon ASPEED_CLK_SDIO>;
+> +					status = "disabled";
+> +				};
+> +			};
+> +
+> +			emmc: sdc@1e750000 {
+> +				compatible = "aspeed,ast2600-sd-controller";
+> +				reg = <0x1e750000 0x100>;
+> +				#address-cells = <1>;
+> +				#size-cells = <1>;
+> +				ranges = <0 0x1e750000 0x10000>;
+> +				clocks = <&syscon ASPEED_CLK_GATE_EMMCCLK>;
+> +				status = "disabled";
+> +
+> +				sdhci@1e750100 {
+> +					compatible = "aspeed,ast2600-sdhci";
+> +					reg = <0x100 0x100>;
+> +					sdhci,auto-cmd12;
+> +					interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+> +					clocks = <&syscon ASPEED_CLK_EMMC>;
+> +					pinctrl-names = "default";
+> +					pinctrl-0 = <&pinctrl_emmc_default>;
+> +				};
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&pinctrl {
+> +	pinctrl_emmc_default: emmc_default {
+> +		function = "SD3";
+> +		groups = "SD3";
+> +	};
+
+I need to send some fixes for pinmux along with the dt patche, but this
+will do for the moment.
 
 Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
-
-> ---
->  arch/arm/mach-aspeed/Kconfig | 14 +++++++++++++-
->  1 file changed, 13 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/mach-aspeed/Kconfig b/arch/arm/mach-aspeed/Kconfig
-> index 2979aa4daeea..56007b0b6120 100644
-> --- a/arch/arm/mach-aspeed/Kconfig
-> +++ b/arch/arm/mach-aspeed/Kconfig
-> @@ -1,7 +1,7 @@
->  # SPDX-License-Identifier: GPL-2.0-only
->  menuconfig ARCH_ASPEED
->  	bool "Aspeed BMC architectures"
-> -	depends on ARCH_MULTI_V5 || ARCH_MULTI_V6
-> +	depends on ARCH_MULTI_V5 || ARCH_MULTI_V6 || ARCH_MULTI_V7
->  	select SRAM
->  	select WATCHDOG
->  	select ASPEED_WATCHDOG
-> @@ -33,4 +33,16 @@ config MACH_ASPEED_G5
->  	 Say yes if you intend to run on an Aspeed ast2500 or similar
->  	 fifth generation Aspeed BMCs.
->  
-> +config MACH_ASPEED_G6
-> +	bool "Aspeed SoC 6th Generation"
-> +	depends on ARCH_MULTI_V7
-> +	select CPU_V7
-> +	select PINCTRL_ASPEED_G6
-> +	select ARM_GIC
-> +	select HAVE_ARM_ARCH_TIMER
-> +	select HAVE_SMP
-> +	help
-> +	 Say yes if you intend to run on an Aspeed ast2600 or similar
-> +	 sixth generation Aspeed BMCs.
-> +
->  endif
-> -- 
-> 2.23.0.rc1
-> 
->
 
 _______________________________________________
 linux-arm-kernel mailing list
