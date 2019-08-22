@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FB6398C4F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 09:19:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E10BC98C50
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 09:19:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TstLvbFbfFnI7WMTrM+cMA+XcNlb566p9Ng64i4ucc4=; b=LvM9yQgCdbSL3N
-	sjhxPal/SV8c3wTAy236zKHA5rzx2eUNtR/+fDsa/+ZFDxN4u5LmZkqGXGRWs99Af9tLnzkw7qLwP
-	Ui75PbUjNVYch/mUlGiaYtA6dxP+92rA4OoOpwWTJhzSV709wpmcX/qzd7oJFajCCjC5C66ZIElWP
-	mXakIlNYu5QRhE6Y9qSMuLlUTz0Qe2bQJ6EiZIE+VtZvKf7mxcd3B55177YH0pK/YT++hLUy592hl
-	vWVxKkc4ROHaaHZ4PX5nkyNtp3FE1t7F8BE6gGBFpoUQpKP1WCYQH+mJy1o4jltcJusGoxAlW1VGR
-	/rODSMqeg9RXr1IdRgYw==;
+	List-Owner; bh=EBYGNM8qJI7LIjT/2NyvFHCsOKGIMFaf/VkY4Ad7wf4=; b=gLUwEdD24ZJCbr
+	bWGPnr3z89Ld0XbTQ8d+uGOJvyLmcY1mDZb8ezMYH1ab+4LYCDNi6c+DMYeITs+t80/1G0fqh5BQP
+	KBrZKuZPFjf+7PRv9I+1psWkI2kS+xUJnpeC+NfdSe3nUBASxQeLo2dgTHpe9YXPBBo+QYWmY7jrj
+	vtdRnFG7LDmWiG78WJrqJLtfNMUgeOA+tdqOScjW/s1ferSLH99joqNBieZWyD6Yw+fd1eUaTIiry
+	L1ftCJx8shfR6qTCGEKtdjHbeftLkf/JiqMkNdcxNtUa3qq6kkTvRtMNCSOGQV28lr0L/FHz63srJ
+	/IMGMvswSR3uCQmj2QWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0hN2-0001uS-LO; Thu, 22 Aug 2019 07:18:56 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1i0hNW-0002AB-IO; Thu, 22 Aug 2019 07:19:26 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0hKw-0001Qa-1n
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 07:16:48 +0000
-Received: by mail-pf1-x441.google.com with SMTP id o70so3316325pfg.5
+ id 1i0hL4-0001TC-DE
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 07:16:56 +0000
+Received: by mail-pf1-x444.google.com with SMTP id w2so3318712pfi.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 00:16:46 -0700 (PDT)
+ Thu, 22 Aug 2019 00:16:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=u1M0h1fse5fWcD6TExQsXpSrhJTc/UmTdvcIiT+sTi4=;
- b=jyOzhTFhEpT0F8vv04j2INavdeUrerCYnwz08j2DyPbn/ksQ1D/zzsYav4RTqZ3jvh
- met3GnRNZPdjm/iarcVQbwLySgdKIjkUnfqolpTzUJziFzR3D7wTvFDDsydcFGYVPwws
- I6sGoA3MwMa88O6C9ba2arRlSpOy3xm2L2HbA=
+ bh=KDK904pFN7jivNdco2xyrNcDuDX6KrPhUsZA40Vbhtg=;
+ b=eA3CVPHOYL8XiTCU7ukjfFiS+M57k8US/Lwpr50Q4O3lT8by8UYD373rTuAnCa+GjK
+ C52hQnD5tSzHl+YWf5voBAdHnUS6+HTn3s+59Z6+u9rHrSiwZBNbV8NCcBPTdT2Rc12g
+ MngDDmJrh3ew2YkVw93QmvDja6lgsyZgbhf/E=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=u1M0h1fse5fWcD6TExQsXpSrhJTc/UmTdvcIiT+sTi4=;
- b=EMTCkENmSHOLBlSbjfVjSJvBTmmr+8kXEXARHnckKK9rt8AczVxGGHMv0vtEWpf+gw
- d53yHqq6K5qB1/sICSPUy7gOAEVPK8g9U81z11PvJlwY3yhS4VI1W+2DggM3t0gcKQLu
- 1Rj88US0JjT44eN3PJRjtkiLk5OmKaEwBdLtQiVT7bxLqHHV350Xwx/TCHcl4OpDUOQt
- NqTN3t07gbmzIyoMJ71k/WBWuqgpc+Sh826alLpRtfpoM1Jd5S9niYR98+bxm7edqQmW
- 6XVaj7IBUa2e/Ci01YTca90u2j2v87/1a4aAGQwuGWL5gkykDEQ/rT4aHPqbHwist6mE
- 1hhQ==
-X-Gm-Message-State: APjAAAWonYEic5AYZrFk5/4A+OHxvUGnXhlI2Lp2bN403WRG5wBMWDC/
- SjQIl9DOOKI9NW4Bmm5mBdRKTWFUrPc=
-X-Google-Smtp-Source: APXvYqywLFIAaNaYsXu1OfGGVmmvmZGXRzd+bHimaWcDa4BRxGcbhjI6qIAuKVbwffys+v10Uq3gKA==
-X-Received: by 2002:a63:ed55:: with SMTP id m21mr32583711pgk.343.1566458205158; 
- Thu, 22 Aug 2019 00:16:45 -0700 (PDT)
+ bh=KDK904pFN7jivNdco2xyrNcDuDX6KrPhUsZA40Vbhtg=;
+ b=EDfB6Q1W3IimB7QkigKchM4FaE5E4wbb11WQ0pf3o9biVxhnBcYpTa828TlUg5U1Ar
+ ePNnOUaR0GjsyIJtAAGm8igFGpFAmf/DFxu5pWuSz6Xsj4IZqHGWgWBOZbBM3omlxDCz
+ 70TpljjB3tw1EgJs9AveVdxVal6JNvSmR13xWh5ETKZgmg/FrdLztCAxJMgwMqk1OjOj
+ lgSK3V0LIvquoOGGGX3GE0nxSxEz8fdJEuTAoheyNsqPF1NrklB64ntk1LX1V6ClvAeY
+ VOE2ZktXGzpLx7e/iZsu3+6FPnmfys38lX7crI0iif/w1epcGj0AWgrIQ9Tj+P+kSmYZ
+ ZHPA==
+X-Gm-Message-State: APjAAAXX8ChfISOH9KdnvJfuZ32ko9awG5PFHkazkStSKXOJvbGO6dVL
+ qNMP3RV7XiyFQ2ICWGtZi+4OfZBoULA=
+X-Google-Smtp-Source: APXvYqxdasLiYU//BopbU4CHgppxD5KX1YKpYkS67ssYX7XEfeVynJBp2KHO6i85bqDNk9/dEa3BUQ==
+X-Received: by 2002:a17:90a:e983:: with SMTP id
+ v3mr3839574pjy.81.1566458213442; 
+ Thu, 22 Aug 2019 00:16:53 -0700 (PDT)
 Received: from hsinyi-z840.tpe.corp.google.com
  ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id w26sm30233450pfq.100.2019.08.22.00.16.38
+ by smtp.gmail.com with ESMTPSA id w26sm30233450pfq.100.2019.08.22.00.16.47
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 22 Aug 2019 00:16:44 -0700 (PDT)
+ Thu, 22 Aug 2019 00:16:52 -0700 (PDT)
 From: Hsin-Yi Wang <hsinyi@chromium.org>
 To: linux-arm-kernel@lists.infradead.org, "Theodore Y . Ts'o" <tytso@mit.edu>
-Subject: [PATCH v9 2/3] fdt: add support for rng-seed
-Date: Thu, 22 Aug 2019 15:15:22 +0800
-Message-Id: <20190822071522.143986-3-hsinyi@chromium.org>
+Subject: [PATCH v9 3/3] arm64: kexec_file: add rng-seed support
+Date: Thu, 22 Aug 2019 15:15:23 +0800
+Message-Id: <20190822071522.143986-4-hsinyi@chromium.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190822071522.143986-1-hsinyi@chromium.org>
 References: <20190822071522.143986-1-hsinyi@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_001646_356728_EC6FEB0C 
-X-CRM114-Status: GOOD (  21.78  )
+X-CRM114-CacheID: sfid-20190822_001654_854636_9C8A967A 
+X-CRM114-Status: GOOD (  15.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -126,142 +127,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Introducing a chosen node, rng-seed, which is an entropy that can be
-passed to kernel called very early to increase initial device
-randomness. Bootloader should provide this entropy and the value is
-read from /chosen/rng-seed in DT.
-
-Obtain of_fdt_crc32 for CRC check after early_init_dt_scan_nodes(),
-since early_init_dt_scan_chosen() would modify fdt to erase rng-seed.
-
-Add a new interface add_bootloader_randomness() for rng-seed use case.
-Depends on whether the seed is trustworthy, rng seed would be passed to
-add_hwgenerator_randomness(). Otherwise it would be passed to
-add_device_randomness(). Decision is controlled by kernel config
-RANDOM_TRUST_BOOTLOADER.
+Adding "rng-seed" to dtb. It's fine to add this property if original
+fdt doesn't contain it. Since original seed will be wiped after
+read, so use a default size 128 bytes here.
 
 Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
 Reviewed-by: Stephen Boyd <swboyd@chromium.org>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
-Change from v8:
-* Add a new interface add_bootloader_randomness
-* Add a new kernel config
+No change since v7.
 ---
- drivers/char/Kconfig   | 10 ++++++++++
- drivers/char/random.c  | 15 +++++++++++++++
- drivers/of/fdt.c       | 14 ++++++++++++--
- include/linux/random.h |  1 +
- 4 files changed, 38 insertions(+), 2 deletions(-)
+ arch/arm64/kernel/machine_kexec_file.c | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/char/Kconfig b/drivers/char/Kconfig
-index 96156c729a31..5974a5906fd0 100644
---- a/drivers/char/Kconfig
-+++ b/drivers/char/Kconfig
-@@ -551,3 +551,13 @@ config RANDOM_TRUST_CPU
- 	has not installed a hidden back door to compromise the CPU's
- 	random number generation facilities. This can also be configured
- 	at boot with "random.trust_cpu=on/off".
-+
-+config RANDOM_TRUST_BOOTLOADER
-+	bool "Trust the bootloader to initialize Linux's CRNG"
-+	default n
-+	help
-+	Bootloader could provide rng-seed set in /chosen/rng-seed in DT to help
-+	increase initial device randomness. Assume the entropy provided is
-+	trustworthy, it would be regarded as true hardware RNGs and update the
-+	entropy estimate. Otherwise it would be regarded as device input that
-+	could help mix the entropy pool, but won't be added to actual entropy.
-\ No newline at end of file
-diff --git a/drivers/char/random.c b/drivers/char/random.c
-index 5d5ea4ce1442..29d3ff3de1e1 100644
---- a/drivers/char/random.c
-+++ b/drivers/char/random.c
-@@ -2445,3 +2445,18 @@ void add_hwgenerator_randomness(const char *buffer, size_t count,
- 	credit_entropy_bits(poolp, entropy);
- }
- EXPORT_SYMBOL_GPL(add_hwgenerator_randomness);
-+
-+/* Handle random seed passed by bootloader.
-+ * If the seed is trustworthy, it would be regarded as hardware RNGs. Otherwise
-+ * it would be regarded as device data.
-+ * The decision is controlled by CONFIG_RANDOM_TRUST_BOOTLOADER.
-+ */
-+void add_bootloader_randomness(const void *buf, unsigned int size)
-+{
-+#ifdef CONFIG_RANDOM_TRUST_BOOTLOADER
-+	add_hwgenerator_randomness(buf, size, size * 8);
-+#else
-+	add_device_randomness(buf, size);
-+#endif
-+}
-+EXPORT_SYMBOL_GPL(add_bootloader_randomness);
-\ No newline at end of file
-diff --git a/drivers/of/fdt.c b/drivers/of/fdt.c
-index 9cdf14b9aaab..7d97ab6d0e31 100644
---- a/drivers/of/fdt.c
-+++ b/drivers/of/fdt.c
-@@ -24,6 +24,7 @@
- #include <linux/debugfs.h>
- #include <linux/serial_core.h>
- #include <linux/sysfs.h>
-+#include <linux/random.h>
+diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
+index ba78ee7ca990..7b08bf9499b6 100644
+--- a/arch/arm64/kernel/machine_kexec_file.c
++++ b/arch/arm64/kernel/machine_kexec_file.c
+@@ -27,6 +27,8 @@
+ #define FDT_PROP_INITRD_END	"linux,initrd-end"
+ #define FDT_PROP_BOOTARGS	"bootargs"
+ #define FDT_PROP_KASLR_SEED	"kaslr-seed"
++#define FDT_PROP_RNG_SEED	"rng-seed"
++#define RNG_SEED_SIZE		128
  
- #include <asm/setup.h>  /* for COMMAND_LINE_SIZE */
- #include <asm/page.h>
-@@ -1044,6 +1045,7 @@ int __init early_init_dt_scan_chosen(unsigned long node, const char *uname,
- {
- 	int l;
- 	const char *p;
-+	const void *rng_seed;
+ const struct kexec_file_ops * const kexec_file_loaders[] = {
+ 	&kexec_image_ops,
+@@ -102,6 +104,19 @@ static int setup_dtb(struct kimage *image,
+ 				FDT_PROP_KASLR_SEED);
+ 	}
  
- 	pr_debug("search \"chosen\", depth: %d, uname: %s\n", depth, uname);
- 
-@@ -1078,6 +1080,14 @@ int __init early_init_dt_scan_chosen(unsigned long node, const char *uname,
- 
- 	pr_debug("Command line is: %s\n", (char*)data);
- 
-+	rng_seed = of_get_flat_dt_prop(node, "rng-seed", &l);
-+	if (rng_seed && l > 0) {
-+		add_bootloader_randomness(rng_seed, l);
-+
-+		/* try to clear seed so it won't be found. */
-+		fdt_nop_property(initial_boot_params, node, "rng-seed");
++	/* add rng-seed */
++	if (rng_is_initialized()) {
++		u8 rng_seed[RNG_SEED_SIZE];
++		get_random_bytes(rng_seed, RNG_SEED_SIZE);
++		ret = fdt_setprop(dtb, off, FDT_PROP_RNG_SEED, rng_seed,
++				RNG_SEED_SIZE);
++		if (ret)
++			goto out;
++	} else {
++		pr_notice("RNG is not initialised: omitting \"%s\" property\n",
++				FDT_PROP_RNG_SEED);
 +	}
 +
- 	/* break now */
- 	return 1;
- }
-@@ -1166,8 +1176,6 @@ bool __init early_init_dt_verify(void *params)
- 
- 	/* Setup flat device-tree pointer */
- 	initial_boot_params = params;
--	of_fdt_crc32 = crc32_be(~0, initial_boot_params,
--				fdt_totalsize(initial_boot_params));
- 	return true;
+ out:
+ 	if (ret)
+ 		return (ret == -FDT_ERR_NOSPACE) ? -ENOMEM : -EINVAL;
+@@ -110,7 +125,8 @@ static int setup_dtb(struct kimage *image,
  }
  
-@@ -1197,6 +1205,8 @@ bool __init early_init_dt_scan(void *params)
- 		return false;
+ /*
+- * More space needed so that we can add initrd, bootargs and kaslr-seed.
++ * More space needed so that we can add initrd, bootargs, kaslr-seed, and
++ * rng-seed.
+  */
+ #define DTB_EXTRA_SPACE 0x1000
  
- 	early_init_dt_scan_nodes();
-+	of_fdt_crc32 = crc32_be(~0, initial_boot_params,
-+				fdt_totalsize(initial_boot_params));
- 	return true;
- }
- 
-diff --git a/include/linux/random.h b/include/linux/random.h
-index 1f7dced2bba6..f189c927fdea 100644
---- a/include/linux/random.h
-+++ b/include/linux/random.h
-@@ -19,6 +19,7 @@ struct random_ready_callback {
- };
- 
- extern void add_device_randomness(const void *, unsigned int);
-+extern void add_bootloader_randomness(const void *, unsigned int);
- 
- #if defined(LATENT_ENTROPY_PLUGIN) && !defined(__CHECKER__)
- static inline void add_latent_entropy(void)
 -- 
 2.20.1
 
