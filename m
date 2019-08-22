@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75AAA9A0B2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 22:04:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC5AF9A0B9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 22:05:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+UTbVDqcHhaXwogY9eXI7pi9sO35BovfwqqQBDLF4PU=; b=CHg2N/T728YIKc
-	ECK5dpKf7w9+TgmdL4H1h24hHXAkeCG81u7Gg9nOIeBWmpy7E8Ymtv03Q8tlIjvBj2B3fAdRzD4it
-	xKp3Hwt2NudXOIkikrD38qQzkan2kSAHuXSyUUZkF/+ob0mH6Sh5LAa6XyRG5q/rq73Q6nRINKsnJ
-	2HnUs9iG9E+8Mk5hAZ/cCaPug0isGPXE5+sW28ZNRPDqTch+/gq69ZZTbkxyZhZWXhI+6+Wc7PUJf
-	qhf/t02gpGU3TODRq0InK5dP80j6YCz03vYIKn0Cu4cS5h8+IXIVAhPSZYTSVZhQH6BUpYHp0hM8U
-	rhoLnWB2syZ9WE3TLVJg==;
+	List-Owner; bh=Za7NEeXT8a8iMIynNNiRbbNbDM4dqK5Tgid4VdDQ5u8=; b=gzcXHQPenZ6EiW
+	nQnJOV48YjxvK4YaVJDD/LZ+btJm4eKWF0vIQX4PoY//bw49XpU18fW8YM4UT0lA8u6UrqERIXz4s
+	7uiTMunTcRmdphXH40SCOmOrDkAg9FQeMqaCS2W+EJpUOzz5Nj3ZR0gIELpBJHybmvjbzsm/ue2tB
+	cZZ7O60ncpASAKH0C40riTqtO742iI6G3PzlikGL0bYu6bssqMfLG67O11BU9jFkkP6/jlUK9Bjgw
+	o1YCMc0ZJSa57hkDSNDmUrMFlzs4LIcNsDWuzk04HQfBMSp6B0bmMK5Pcg2DTmWzuCEGI2A2zL1II
+	H67OcZaosBZ3zT5AkiIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0tK1-0001wZ-92; Thu, 22 Aug 2019 20:04:37 +0000
+	id 1i0tKl-0003Vs-1w; Thu, 22 Aug 2019 20:05:23 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0tJi-0001q8-9Q
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 20:04:19 +0000
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
+ id 1i0tKW-0003SH-0E
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 20:05:10 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id EBC9181F11;
- Thu, 22 Aug 2019 20:04:17 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id A66DE10C696E;
+ Thu, 22 Aug 2019 20:05:07 +0000 (UTC)
 Received: from treble (ovpn-121-55.rdu2.redhat.com [10.10.121.55])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id F3B3860CDA;
- Thu, 22 Aug 2019 20:04:16 +0000 (UTC)
-Date: Thu, 22 Aug 2019 15:04:15 -0500
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id A737C1001947;
+ Thu, 22 Aug 2019 20:05:06 +0000 (UTC)
+Date: Thu, 22 Aug 2019 15:05:04 -0500
 From: Josh Poimboeuf <jpoimboe@redhat.com>
 To: Raphael Gault <raphael.gault@arm.com>
-Subject: Re: [RFC v4 08/18] objtool: Refactor switch-tables code to support
- other architectures
-Message-ID: <20190822200415.t3hkjxf4m3lg5tgz@treble>
+Subject: Re: [RFC v4 09/18] gcc-plugins: objtool: Add plugin to detect switch
+ table on arm64
+Message-ID: <20190822200504.x4unrhw36buwvdmg@treble>
 References: <20190816122403.14994-1-raphael.gault@arm.com>
- <20190816122403.14994-9-raphael.gault@arm.com>
+ <20190816122403.14994-10-raphael.gault@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190816122403.14994-9-raphael.gault@arm.com>
+In-Reply-To: <20190816122403.14994-10-raphael.gault@arm.com>
 User-Agent: NeoMutt/20180716
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.25]); Thu, 22 Aug 2019 20:04:18 +0000 (UTC)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.65]); Thu, 22 Aug 2019 20:05:07 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_130418_422313_DEC5F106 
-X-CRM114-Status: GOOD (  18.54  )
+X-CRM114-CacheID: sfid-20190822_130508_069757_2114CE51 
+X-CRM114-Status: GOOD (  18.78  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -78,48 +78,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 16, 2019 at 01:23:53PM +0100, Raphael Gault wrote:
-> The way to identify switch-tables and retrieves all the data necessary
-> to handle the different execution branches is not the same on all
-> architecture. In order to be able to add other architecture support,
-> this patch defines arch-dependent functions to process jump-tables.
+On Fri, Aug 16, 2019 at 01:23:54PM +0100, Raphael Gault wrote:
+> This plugins comes into play before the final 2 RTL passes of GCC and
+
+"plugin"
+
+> detects switch-tables that are to be outputed in the ELF and writes
+> information in an "objtool_data" section which will be used by objtool.
+
+The section should probably have a ".discard" prefix
+(.discard.objtool_data) so it gets discarded at link time.
+
+Also, "objtool_data" is a bit generic.  How about
+".discard.switch_tables" or something.
+
 > 
 > Signed-off-by: Raphael Gault <raphael.gault@arm.com>
 > ---
->  tools/objtool/arch/arm64/arch_special.c | 15 ++++
->  tools/objtool/arch/arm64/decode.c       |  4 +-
->  tools/objtool/arch/x86/arch_special.c   | 79 ++++++++++++++++++++
->  tools/objtool/check.c                   | 95 +------------------------
->  tools/objtool/check.h                   |  7 ++
->  tools/objtool/special.h                 | 10 ++-
->  6 files changed, 114 insertions(+), 96 deletions(-)
+>  scripts/Makefile.gcc-plugins                  |  2 +
+>  scripts/gcc-plugins/Kconfig                   |  9 +++
+>  .../arm64_switch_table_detection_plugin.c     | 58 +++++++++++++++++++
+>  3 files changed, 69 insertions(+)
+>  create mode 100644 scripts/gcc-plugins/arm64_switch_table_detection_plugin.c
 > 
-> diff --git a/tools/objtool/arch/arm64/arch_special.c b/tools/objtool/arch/arm64/arch_special.c
-> index a21d28876317..17a8a06aac2a 100644
-> --- a/tools/objtool/arch/arm64/arch_special.c
-> +++ b/tools/objtool/arch/arm64/arch_special.c
-> @@ -20,3 +20,18 @@ void arch_force_alt_path(unsigned short feature,
->  			 struct special_alt *alt)
->  {
->  }
+> diff --git a/scripts/Makefile.gcc-plugins b/scripts/Makefile.gcc-plugins
+> index 5f7df50cfe7a..a56736df9dc2 100644
+> --- a/scripts/Makefile.gcc-plugins
+> +++ b/scripts/Makefile.gcc-plugins
+> @@ -44,6 +44,8 @@ ifdef CONFIG_GCC_PLUGIN_ARM_SSP_PER_TASK
+>  endif
+>  export DISABLE_ARM_SSP_PER_TASK_PLUGIN
+>  
+> +gcc-plugin-$(CONFIG_GCC_PLUGIN_SWITCH_TABLES)	+= arm64_switch_table_detection_plugin.so
 > +
-> +int arch_add_jump_table(struct objtool_file *file, struct instruction *insn,
-> +			struct rela *table, struct rela *next_table)
-> +{
-> +	return 0;
-> +}
-> +
-> +struct rela *arch_find_switch_table(struct objtool_file *file,
-> +				  struct rela *text_rela,
-> +				  struct section *rodata_sec,
-> +				  unsigned long table_offset)
-> +{
-> +	file->ignore_unreachables = true;
-> +	return NULL;
-> +}
+>  # All the plugin CFLAGS are collected here in case a build target needs to
+>  # filter them out of the KBUILD_CFLAGS.
+>  GCC_PLUGINS_CFLAGS := $(strip $(addprefix -fplugin=$(objtree)/scripts/gcc-plugins/, $(gcc-plugin-y)) $(gcc-plugin-cflags-y))
+> diff --git a/scripts/gcc-plugins/Kconfig b/scripts/gcc-plugins/Kconfig
+> index d33de0b9f4f5..1daeffb55dce 100644
+> --- a/scripts/gcc-plugins/Kconfig
+> +++ b/scripts/gcc-plugins/Kconfig
+> @@ -113,4 +113,13 @@ config GCC_PLUGIN_ARM_SSP_PER_TASK
+>  	bool
+>  	depends on GCC_PLUGINS && ARM
+>  
+> +config GCC_PLUGIN_SWITCH_TABLES
+> +	bool "GCC Plugin: Identify switch tables at compile time"
+> +	default y
+> +	depends on STACK_VALIDATION && ARM64
+> +	help
+> +	  Plugin to identify switch tables generated at compile time and store
+> +	  them in a .objtool_data section. Objtool will then use that section
+> +	  to analyse the different execution path of the switch table.
 
-If this refactoring is done before adding arm64 support then you won't
-need intermediate hacks like this.
+This isn't something you want to ask the user about, as objtool for
+arm64 requires it.  For the same reason, instead of
+GCC_PLUGIN_SWITCH_TABLES depending on STACK_VALIDATION, arm64
+HAVE_STACK_VALIDATION should depend on GCC_PLUGIN_SWITCH_TABLES.
 
 -- 
 Josh
