@@ -2,44 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAB4699718
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 16:42:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88B3499728
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 16:43:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=0TikkkwfY2/zS3FgblLutMq/TCgLpDgySz+1vEQpGYg=; b=Xez
-	G0dwkn4gvMj4aCa2DMAgTAmHFAJQHYIjj//GlMVenyU46l6YLdaoKAXRj44MF/uKi6xY7sf/UfLJu
-	Qan3t9U77Fdh5+mXSrU9dAhY/SuJhU+oDszQ3YNi5Gxaen/uFh/4S0HAjES/orluDcTJ++7rfVFuJ
-	+mgz4gyeb2r7IOdVHcpt9nJbea9bp8bnbQHzmTxphb2CFiBe4lMC3iEFiTzFDAg+dLeNHLSsD+Xlc
-	ZnEH/mK735bxqmdEp2tB4YkTk0CMEFzUAMKHVwnM9pKJkY0p+xAfl5esQAe6JcYga6wP2+oJtAAPw
-	B32uhBhcbSUxFVt1vfscq2LBXNYuzCQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=d+w1PtoqXqxu6Z7bjv0xNGwBG9wNS3fg7TMKgew1VPY=; b=Y8rXSEF7HrB/cIA7PGRX1u2TSu
+	MzPyKdfIHj4Jz769Mxr+obfmgIdPmtC+Q8mdySjQahnmC6jLaWV8GlRytP4WmjJj3PeD+iq3B2Jl3
+	MbuvBufqbDkAEHg8ceiYLVtbecLv9hGItkAp18+W0P5V5uAeGVCLEma6IPUwH9CiYkCUNY1Hsq7Q8
+	kBwwj6xtZn61CRhwtdaX6y8n5P7KKckAUpKz2HX6VP7jlzm1gpkUteVus+Jo+v4ggaCWsCdKJrNaI
+	xAGATa4v3yyyjRbZZwq3MaJaZpP5jeZyZAzmXiBrgyUXniDU0NazNwr2mwrTk0Om8qa/8fy5hFUZO
+	EZttWZdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0oIa-0004Pb-Sw; Thu, 22 Aug 2019 14:42:48 +0000
+	id 1i0oJM-0004xe-0S; Thu, 22 Aug 2019 14:43:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i0oIL-0004I9-QH
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 14:42:35 +0000
+ id 1i0oIM-0004OC-Px
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 14:42:37 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E82C8337;
- Thu, 22 Aug 2019 07:42:30 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9903F1570;
+ Thu, 22 Aug 2019 07:42:32 -0700 (PDT)
 Received: from e121650-lin.cambridge.arm.com (e121650-lin.cambridge.arm.com
  [10.1.196.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 917F13F706;
- Thu, 22 Aug 2019 07:42:29 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 286683F706;
+ Thu, 22 Aug 2019 07:42:31 -0700 (PDT)
 From: Raphael Gault <raphael.gault@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v4 0/7] arm64: Enable access to pmu registers by user-space
-Date: Thu, 22 Aug 2019 15:42:13 +0100
-Message-Id: <20190822144220.27860-1-raphael.gault@arm.com>
+Subject: [PATCH v4 1/7] perf: arm64: Add test to check userspace access to
+ hardware counters.
+Date: Thu, 22 Aug 2019 15:42:14 +0100
+Message-Id: <20190822144220.27860-2-raphael.gault@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190822144220.27860-1-raphael.gault@arm.com>
+References: <20190822144220.27860-1-raphael.gault@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_074233_940478_7C6AD50E 
-X-CRM114-Status: GOOD (  13.36  )
+X-CRM114-CacheID: sfid-20190822_074234_939602_0AE01215 
+X-CRM114-Status: GOOD (  19.05  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,82 +71,330 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+This test relies on the fact that the PMU registers are accessible
+from userspace. It then uses the perf_event_mmap_page to retrieve
+the counter index and access the underlying register.
 
-Changes since v3:
-* Rebased on will/for-next/perf in order to include this patch [1]
-* Re-introduce `mrs` hook used in previous versions
-* Invert cpu feature to track homogeneity instead of heterogeneity
-* Introduce accessor for boot_cpu_data (see second commit for more info)
-* Apply Mark Rutland's comments
+This test uses sched_setaffinity(2) in order to run on all CPU and thus
+check the behaviour of the PMU of all cpus in a big.LITTLE environment.
 
-
-The perf user-space tool relies on the PMU to monitor events. It offers an
-abstraction layer over the hardware counters since the underlying
-implementation is cpu-dependent. We want to allow userspace tools to have
-access to the registers storing the hardware counters' values directly.
-This targets specifically self-monitoring tasks in order to reduce the
-overhead by directly accessing the registers without having to go
-through the kernel.
-In order to do this we need to setup the pmu so that it exposes its registers
-to userspace access.
-
-The first patch add a test to the perf tool so that we can test that the
-access to the registers works correctly from userspace.
-
-The second patch introduces an accessor for `boot_cpu_data` which is
-static. Including cpu.h turned out to cause a chain of dependencies so I
-opted for the accessor since it is not much used.
-
-The third patch add a capability in the arm64 cpufeatures framework in
-order to detect when we are running on a homogeneous system.
-
-The fourth patch re introduces the hooks to handling undefined
-instruction for `mrs` instructions on pmu-related registers.
-
-The fifth patch focuses on the armv8 pmuv3 PMU support and makes sure that
-the access to the pmu registers is enable and that the userspace have
-access to the relevent information in order to use them.
-
-The sixth patch put in place callbacks to enable access to the hardware
-counters from userspace when a compatible event is opened using the perf
-API.
-
-The seventh patch adds a short documentation about PMU counters direct
-access from userspace.
-
-[1]: https://lkml.org/lkml/2019/8/20/875
-
-Raphael Gault (7):
-  perf: arm64: Add test to check userspace access to hardware counters.
-  arm64: cpu: Add accessor for boot_cpu_data
-  arm64: cpufeature: Add feature to detect homogeneous systems
-  arm64: pmu: Add hook to handle pmu-related undefined instructions
-  arm64: pmu: Add function implementation to update event index in
-    userpage.
-  arm64: perf: Enable pmu counter direct access for perf event on armv8
-  Documentation: arm64: Document PMU counters access from userspace
-
- .../arm64/pmu_counter_user_access.txt         |  42 +++
- arch/arm64/include/asm/cpu.h                  |   2 +-
- arch/arm64/include/asm/cpucaps.h              |   3 +-
- arch/arm64/include/asm/cpufeature.h           |  10 +
- arch/arm64/include/asm/mmu.h                  |   6 +
- arch/arm64/include/asm/mmu_context.h          |   2 +
- arch/arm64/include/asm/perf_event.h           |  14 +
- arch/arm64/kernel/cpufeature.c                |  32 ++-
- arch/arm64/kernel/cpuinfo.c                   |   7 +-
- arch/arm64/kernel/perf_event.c                |  77 ++++++
- drivers/perf/arm_pmu.c                        |  54 ++++
- include/linux/perf/arm_pmu.h                  |   2 +
- tools/perf/arch/arm64/include/arch-tests.h    |   7 +
- tools/perf/arch/arm64/tests/Build             |   1 +
- tools/perf/arch/arm64/tests/arch-tests.c      |   4 +
- tools/perf/arch/arm64/tests/user-events.c     | 254 ++++++++++++++++++
- 16 files changed, 512 insertions(+), 5 deletions(-)
- create mode 100644 Documentation/arm64/pmu_counter_user_access.txt
+Signed-off-by: Raphael Gault <raphael.gault@arm.com>
+---
+ tools/perf/arch/arm64/include/arch-tests.h |   7 +
+ tools/perf/arch/arm64/tests/Build          |   1 +
+ tools/perf/arch/arm64/tests/arch-tests.c   |   4 +
+ tools/perf/arch/arm64/tests/user-events.c  | 254 +++++++++++++++++++++
+ 4 files changed, 266 insertions(+)
  create mode 100644 tools/perf/arch/arm64/tests/user-events.c
 
+diff --git a/tools/perf/arch/arm64/include/arch-tests.h b/tools/perf/arch/arm64/include/arch-tests.h
+index 90ec4c8cb880..6a8483de1015 100644
+--- a/tools/perf/arch/arm64/include/arch-tests.h
++++ b/tools/perf/arch/arm64/include/arch-tests.h
+@@ -2,11 +2,18 @@
+ #ifndef ARCH_TESTS_H
+ #define ARCH_TESTS_H
+ 
++#include <linux/compiler.h>
++
+ #ifdef HAVE_DWARF_UNWIND_SUPPORT
+ struct thread;
+ struct perf_sample;
++int test__arch_unwind_sample(struct perf_sample *sample,
++			     struct thread *thread);
+ #endif
+ 
+ extern struct test arch_tests[];
++int test__rd_pmevcntr(struct test *test __maybe_unused,
++		      int subtest __maybe_unused);
++
+ 
+ #endif
+diff --git a/tools/perf/arch/arm64/tests/Build b/tools/perf/arch/arm64/tests/Build
+index a61c06bdb757..3f9a20c17fc6 100644
+--- a/tools/perf/arch/arm64/tests/Build
++++ b/tools/perf/arch/arm64/tests/Build
+@@ -1,4 +1,5 @@
+ perf-y += regs_load.o
+ perf-$(CONFIG_DWARF_UNWIND) += dwarf-unwind.o
+ 
++perf-y += user-events.o
+ perf-y += arch-tests.o
+diff --git a/tools/perf/arch/arm64/tests/arch-tests.c b/tools/perf/arch/arm64/tests/arch-tests.c
+index 5b1543c98022..57df9b89dede 100644
+--- a/tools/perf/arch/arm64/tests/arch-tests.c
++++ b/tools/perf/arch/arm64/tests/arch-tests.c
+@@ -10,6 +10,10 @@ struct test arch_tests[] = {
+ 		.func = test__dwarf_unwind,
+ 	},
+ #endif
++	{
++		.desc = "User counter access",
++		.func = test__rd_pmevcntr,
++	},
+ 	{
+ 		.func = NULL,
+ 	},
+diff --git a/tools/perf/arch/arm64/tests/user-events.c b/tools/perf/arch/arm64/tests/user-events.c
+new file mode 100644
+index 000000000000..b048d7e392bc
+--- /dev/null
++++ b/tools/perf/arch/arm64/tests/user-events.c
+@@ -0,0 +1,254 @@
++// SPDX-License-Identifier: GPL-2.0
++#include <asm/bug.h>
++#include <errno.h>
++#include <unistd.h>
++#include <sched.h>
++#include <stdlib.h>
++#include <signal.h>
++#include <sys/mman.h>
++#include <sys/sysinfo.h>
++#include <sys/types.h>
++#include <sys/wait.h>
++#include <linux/types.h>
++#include "perf.h"
++#include "debug.h"
++#include "tests/tests.h"
++#include "cloexec.h"
++#include "util.h"
++#include "arch-tests.h"
++
++/*
++ * ARMv8 ARM reserves the following encoding for system registers:
++ * (Ref: ARMv8 ARM, Section: "System instruction class encoding overview",
++ *  C5.2, version:ARM DDI 0487A.f)
++ *      [20-19] : Op0
++ *      [18-16] : Op1
++ *      [15-12] : CRn
++ *      [11-8]  : CRm
++ *      [7-5]   : Op2
++ */
++#define Op0_shift       19
++#define Op0_mask        0x3
++#define Op1_shift       16
++#define Op1_mask        0x7
++#define CRn_shift       12
++#define CRn_mask        0xf
++#define CRm_shift       8
++#define CRm_mask        0xf
++#define Op2_shift       5
++#define Op2_mask        0x7
++
++#define __stringify(x)	#x
++
++#define read_sysreg(r) ({						\
++	u64 __val;							\
++	asm volatile("mrs %0, " __stringify(r) : "=r" (__val));		\
++	__val;								\
++})
++
++#define PMEVCNTR_READ_CASE(idx)					\
++	case idx:						\
++		return read_sysreg(pmevcntr##idx##_el0)
++
++#define PMEVCNTR_CASES(readwrite)		\
++	PMEVCNTR_READ_CASE(0);			\
++	PMEVCNTR_READ_CASE(1);			\
++	PMEVCNTR_READ_CASE(2);			\
++	PMEVCNTR_READ_CASE(3);			\
++	PMEVCNTR_READ_CASE(4);			\
++	PMEVCNTR_READ_CASE(5);			\
++	PMEVCNTR_READ_CASE(6);			\
++	PMEVCNTR_READ_CASE(7);			\
++	PMEVCNTR_READ_CASE(8);			\
++	PMEVCNTR_READ_CASE(9);			\
++	PMEVCNTR_READ_CASE(10);			\
++	PMEVCNTR_READ_CASE(11);			\
++	PMEVCNTR_READ_CASE(12);			\
++	PMEVCNTR_READ_CASE(13);			\
++	PMEVCNTR_READ_CASE(14);			\
++	PMEVCNTR_READ_CASE(15);			\
++	PMEVCNTR_READ_CASE(16);			\
++	PMEVCNTR_READ_CASE(17);			\
++	PMEVCNTR_READ_CASE(18);			\
++	PMEVCNTR_READ_CASE(19);			\
++	PMEVCNTR_READ_CASE(20);			\
++	PMEVCNTR_READ_CASE(21);			\
++	PMEVCNTR_READ_CASE(22);			\
++	PMEVCNTR_READ_CASE(23);			\
++	PMEVCNTR_READ_CASE(24);			\
++	PMEVCNTR_READ_CASE(25);			\
++	PMEVCNTR_READ_CASE(26);			\
++	PMEVCNTR_READ_CASE(27);			\
++	PMEVCNTR_READ_CASE(28);			\
++	PMEVCNTR_READ_CASE(29);			\
++	PMEVCNTR_READ_CASE(30)
++
++/*
++ * Read a value direct from PMEVCNTR<idx>
++ */
++static u64 read_evcnt_direct(int idx)
++{
++	switch (idx) {
++	PMEVCNTR_CASES(READ);
++	default:
++		WARN_ON(1);
++	}
++
++	return 0;
++}
++
++static u64 mmap_read_self(void *addr)
++{
++	struct perf_event_mmap_page *pc = addr;
++	u32 seq, idx, time_mult = 0, time_shift = 0;
++	u64 count, cyc = 0, time_offset = 0, enabled, running, delta;
++
++	do {
++		seq = READ_ONCE(pc->lock);
++		barrier();
++
++		enabled = READ_ONCE(pc->time_enabled);
++		running = READ_ONCE(pc->time_running);
++
++		if (enabled != running) {
++			cyc = read_sysreg(cntvct_el0);
++			time_mult = READ_ONCE(pc->time_mult);
++			time_shift = READ_ONCE(pc->time_shift);
++			time_offset = READ_ONCE(pc->time_offset);
++		}
++
++		idx = READ_ONCE(pc->index);
++		count = READ_ONCE(pc->offset);
++		if (idx)
++			count += read_evcnt_direct(idx - 1);
++
++		barrier();
++	} while (READ_ONCE(pc->lock) != seq);
++
++	if (enabled != running) {
++		u64 quot, rem;
++
++		quot = (cyc >> time_shift);
++		rem = cyc & (((u64)1 << time_shift) - 1);
++		delta = time_offset + quot * time_mult +
++			((rem * time_mult) >> time_shift);
++
++		enabled += delta;
++		if (idx)
++			running += delta;
++
++		quot = count / running;
++		rem = count % running;
++		count = quot * enabled + (rem * enabled) / running;
++	}
++
++	return count;
++}
++
++static int __test__rd_pmevcntr(void)
++{
++	volatile int tmp = 0;
++	u64 i, loops = 1000;
++	int n;
++	int fd;
++	void *addr;
++	struct perf_event_attr attr = {
++		.type = PERF_TYPE_HARDWARE,
++		.config = PERF_COUNT_HW_INSTRUCTIONS,
++		.exclude_kernel = 1,
++	};
++	u64 delta_sum = 0;
++	char sbuf[STRERR_BUFSIZE];
++
++	fd = sys_perf_event_open(&attr, 0, -1, -1,
++				 perf_event_open_cloexec_flag());
++	if (fd < 0) {
++		pr_err("Error: sys_perf_event_open() syscall returned with %d (%s)\n", fd,
++		       str_error_r(errno, sbuf, sizeof(sbuf)));
++		return -1;
++	}
++
++	addr = mmap(NULL, page_size, PROT_READ, MAP_SHARED, fd, 0);
++	if (addr == (void *)(-1)) {
++		pr_err("Error: mmap() syscall returned with (%s)\n",
++		       str_error_r(errno, sbuf, sizeof(sbuf)));
++		goto out_close;
++	}
++
++	for (n = 0; n < 6; n++) {
++		u64 stamp, now, delta;
++
++		stamp = mmap_read_self(addr);
++
++		for (i = 0; i < loops; i++)
++			tmp++;
++
++		now = mmap_read_self(addr);
++		loops *= 10;
++
++		delta = now - stamp;
++		pr_debug("%14d: %14llu\n", n, (long long)delta);
++
++		delta_sum += delta;
++	}
++
++	munmap(addr, page_size);
++	pr_debug("   ");
++
++out_close:
++	close(fd);
++
++	if (!delta_sum)
++		return -1;
++
++	return 0;
++}
++
++int test__rd_pmevcntr(struct test __maybe_unused *test,
++		      int __maybe_unused subtest)
++{
++	int status = 0;
++	int wret = 0;
++	int ret = 0;
++	int pid;
++	int cpu;
++	cpu_set_t cpu_set;
++
++	pid = fork();
++	if (pid < 0)
++		return -1;
++
++	if (!pid) {
++		for (cpu = 0; cpu < get_nprocs(); cpu++) {
++			pr_info("setting affinity to cpu: %d\n", cpu);
++			CPU_ZERO(&cpu_set);
++			CPU_SET(cpu, &cpu_set);
++			if (sched_setaffinity(getpid(),
++					      sizeof(cpu_set),
++					      &cpu_set) == -1) {
++				pr_err("Error: impossible to set cpu (%d) affinity\n",
++				       cpu);
++				continue;
++			}
++			ret = __test__rd_pmevcntr();
++		}
++		exit(ret);
++	}
++
++	wret = waitpid(pid, &status, 0);
++	if (wret < 0)
++		return -1;
++
++	if (WIFSIGNALED(status)) {
++		pr_err("Error: the child process was interrupted by a signal\n");
++		return -1;
++	}
++
++	if (WIFEXITED(status) && WEXITSTATUS(status)) {
++		pr_err("Error: the child process exited with: %d\n",
++		       WEXITSTATUS(status));
++		return -1;
++	}
++
++	return 0;
++}
 -- 
 2.17.1
 
