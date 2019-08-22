@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFF6B98B1D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 08:03:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02BC198B1E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 08:03:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,31 +11,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=U3Wy18F1otoo/DutLrApiPqK9QiJgaknJwQiljtTtm4=; b=RwvwYMx2UTY8rQygCf0bg7Pi9/
-	SoPE/z3x/HLJmbokg8mHYXe0bPVf603JYDIq9EP4A76N7pBN+aErEjmY+QOZJpWt/DNoNbiaxofgU
-	3xbAN8qL54lG13Oqob1Kf9uBBsqMQXO62BiFVuENAsNVZrd9RbGb5SIJpm2a2AA4I/ZeSdi16LHoN
-	7/0A7pcPeCxpQnj3s160/kDikwRIpF+dX1vN0mQT4BLfF2/v9lTQHucsSox7ikCNIRuMQxuW6HDST
-	7neWVhDmUpxO5oJs52zRc20NNjRqYfN2yD8e/EeIhqzxVuKEXqLwxyYLu0LbRKQ2EaON3y+EWMKE3
-	0vnDPwLw==;
+	bh=MJ7/hoMF1nWe2X1roBjqgyPSWo2egw0GiVC7wV+4uRg=; b=LL6YxaLvYUuqHTPOB82WAKASvA
+	US6QYjNpMiye3qo/Z63bcMu5PwRLDveu3rWLMTBLen1YaujRXLbcQe9QQharqgzsB9lqclAkhCt+6
+	lSKI4AAcHjmzqKlF3M9nj0FBHSWtwvZEKFWX3mOiY3/moVW8AfuzZQdO89FMDIfORtzG3RDh2Ukil
+	Xee504V1fcnfl0rFN2fhOfjGZ75BVjM9EaPiGf6tnRs0aGFwJjiI0Xj4LE5heURnMBRq5QHfbMPiZ
+	yZNNLR3o/a5gsyd3PbHmuBf3+VZJhkUuPKq1s6/PqodowSYC2uRUz7lGvXfQx63Y6EBrCqCFyaK2H
+	Hko+xpPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0gBw-0008Ik-5T; Thu, 22 Aug 2019 06:03:24 +0000
+	id 1i0gCD-00006h-Oq; Thu, 22 Aug 2019 06:03:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0gBP-000823-9N
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 06:02:52 +0000
+ id 1i0gBS-00088O-AM
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 06:02:55 +0000
 Received: from localhost.localdomain (unknown [194.230.147.11])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7B820233A1;
- Thu, 22 Aug 2019 06:02:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7956B233A2;
+ Thu, 22 Aug 2019 06:02:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566453771;
- bh=JIhqcUM9It35GZ1DT2KSNI4eJjJ0/eIEsvqNON5bhB0=;
+ s=default; t=1566453774;
+ bh=s5Qwnruo1Obm/UgGKOuiLFuyxuT50eeJafK3ydS0kLA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=tSB3ndQ/ki6pd/SHSODQv3ct2dT0GlV9ukz7golGQSPZyesnnUpw7+Fa/biCGFvsI
- kWO3K32uYuZKLtXMcJayAc5ohyhMaXUbHwTggzi9joz1ynYR5fKF7FaiX6VBDkoGoV
- 9ua8yR+zZWnl9wRXVNmVXoIc91dMoMOBBTFbrHCY=
+ b=Dv1EXf7GNShiWAoKHVSRufR4r8GMjrh7DcVXpVY9oLGKzt8eVKsuQEMtoEjKUYG4d
+ wSUD1TeckIXuTZTm6PObMjoJG+YCP5dt4b7TQ0KydEXkwhh3f8+Im1At/DCbkLV4D+
+ nllO/9BDx5sutMUZ4she2cdmOqnOA8wy+9jtXWcw=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Schrempf Frieder <frieder.schrempf@kontron.de>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -44,15 +44,17 @@ To: Schrempf Frieder <frieder.schrempf@kontron.de>,
  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v7 2/4] dt-bindings: eeprom: at25: Add Anvo ANV32E61W
-Date: Thu, 22 Aug 2019 08:02:36 +0200
-Message-Id: <20190822060238.3887-2-krzk@kernel.org>
+Subject: [PATCH v7 3/4] dt-bindings: arm: fsl: Add Kontron i.MX6UL N6310
+ compatibles
+Date: Thu, 22 Aug 2019 08:02:37 +0200
+Message-Id: <20190822060238.3887-3-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190822060238.3887-1-krzk@kernel.org>
 References: <20190822060238.3887-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_230251_345189_05ECC0E3 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20190821_230254_396674_ACBE6C3E 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,37 +90,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Document the compatible for ANV32E61W 64kb Serial SPI non-volatile SRAM.
-Although it is a SRAM device, it can be accessed through EEPROM
-interface. At least until there is no proper SRAM driver support for
-it.
+Add the compatibles for Kontron i.MX6UL N6310 SoM and boards.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 ---
+
+Changes since v6:
+1. Split entries to pass the dtbs_check.
 
 Changes since v5:
-1. None
-
-Changes since v4:
-1. Update commit msg.
+New patch
 ---
- Documentation/devicetree/bindings/eeprom/at25.txt | 1 +
- 1 file changed, 1 insertion(+)
+ Documentation/devicetree/bindings/arm/fsl.yaml | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/eeprom/at25.txt b/Documentation/devicetree/bindings/eeprom/at25.txt
-index b3bde97dc199..42577dd113dd 100644
---- a/Documentation/devicetree/bindings/eeprom/at25.txt
-+++ b/Documentation/devicetree/bindings/eeprom/at25.txt
-@@ -3,6 +3,7 @@ EEPROMs (SPI) compatible with Atmel at25.
- Required properties:
- - compatible : Should be "<vendor>,<type>", and generic value "atmel,at25".
-   Example "<vendor>,<type>" values:
-+    "anvo,anv32e61w"
-     "microchip,25lc040"
-     "st,m95m02"
-     "st,m95256"
+diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+index 7294ac36f4c0..1f440817fc03 100644
+--- a/Documentation/devicetree/bindings/arm/fsl.yaml
++++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+@@ -161,6 +161,20 @@ properties:
+         items:
+           - enum:
+               - fsl,imx6ul-14x14-evk      # i.MX6 UltraLite 14x14 EVK Board
++              - kontron,imx6ul-n6310-som  # Kontron N6310 SOM
++          - const: fsl,imx6ul
++
++      - description: Kontron N6310 S Board
++        items:
++          - const: kontron,imx6ul-n6310-s
++          - const: kontron,imx6ul-n6310-som
++          - const: fsl,imx6ul
++
++      - description: Kontron N6310 S 43 Board
++        items:
++          - const: kontron,imx6ul-n6310-s-43
++          - const: kontron,imx6ul-n6310-s
++          - const: kontron,imx6ul-n6310-som
+           - const: fsl,imx6ul
+ 
+       - description: i.MX6ULL based Boards
 -- 
 2.17.1
 
