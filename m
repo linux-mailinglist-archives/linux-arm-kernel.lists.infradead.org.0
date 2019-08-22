@@ -2,119 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21F5399126
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 12:44:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE4979912A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 12:45:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iigFxoh661PJmDbCys69B7nJBrD48mmofBUMfuBoqXY=; b=MIxseXLn7Lh7O1
-	ztQUugD67kRoJRwaPs0rzpNR6N66OTR/HDH+IIg7oLY2T+exqR/QOWVm6SOBcqsFmDxRE34RXluyA
-	JGolJfRwVdJ2q2ynn7pVG5OpVZbPer2VWadT7dWL94BW71961yeuVk+LyQQMdhpFoJzJagJD00e3k
-	em6XwhCs5PaAW6WD9JLEJOyLrJzjaroVUz9LQCJqmEohbv1Zdo1FmNF4kN98RFZ34NLWxy2c45q+b
-	UIXoMoH85k1GSm9s/ea+r7YqodDjZetW+l291supeIhbX39P34x4uVzfB6+IG8Xmbm5qIgGd6bjSx
-	DPBKmiXbHxjRF1TvhySg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TTTy2i2fhsx0AorvvKKqu6Gue882hTPHzXUbBy3+GfQ=; b=r72LP83O2+KVli
+	//L24zMkQdO8EermkT2O5t1m28ZQcXr+5CslCcPw5P+szenjMqNh2u4DXxsRv5UWxG+O6mkY7zjx7
+	UFQFoXFofzWg9APNi65AeIw0TboTexW+NM9yZLYOJqMCffcJsC2ic0v/B8n3lA7TGHqY1DVMDuvX9
+	oDuIoakaeGPY4KQWMlWLu6G9dD5LlPXrnJrsnG6z9TE86CX+3oi5c5/dW0t10B5piPk+AIgfpIvk9
+	Nb17kwCDKEb3GCXN1oNknldMQloKNfvi49DGHIZtH8HMmXTEqkwk6LEzBD4Abrp13NR8dtpKsIgpf
+	RmqAkMaLFETI30mEfYAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0kZo-0006vC-Kd; Thu, 22 Aug 2019 10:44:20 +0000
-Received: from mail-eopbgr740059.outbound.protection.outlook.com
- ([40.107.74.59] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
+	id 1i0kaV-0007WG-L9; Thu, 22 Aug 2019 10:45:03 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0kZb-0006ul-Um
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 10:44:09 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=CLX62PrtxtT6PaGTRH423mSSR9AhtSsmqvvId8xaKFOd8UDrjD0k+8uIUxuaqlNtkWz9f7yOMqILM/hm6/fFJ0aWhX/e2JtJN5KTr6Cw2fYcEmgBCe5JF+pQ3PYAPxB2Y0AS+D/rcP/hY6Y0UjKtaU3t7yzmi0WGWgPGjVYYQCU0UgpZPbL4LhrVFkTQfIFQx/fGuiYqvqhi8PZDcL4lMd/NlspugZuyKR9ZisuSWPJV/XByKFzlV8Sa6bgvZgA5po8M8zhTvOKddhB7Ie246bEYgAmCe1kr3IxPzlIBv/+Dxy+aD4bjcHsECurKPDAY4Je3O4leva/Rr+wRgSJx8g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PBxmssn2OKSXWcr+k/5rrNQfoK8KXpoqd1TaaRKg0PA=;
- b=Tq9TDgMap/Y1tCDzLLDM/VsNd1k/AkN2+xwa8LMLwpDQIoMAzPkJnvDwK0HZKIBxIMxD4fcj4jt1YYUE1OMTGe3zN53YtQrxcdzTHyhiIJCscyRW3gMZgbmpitvtHJKi/2npd0J0klJFmkkaMlIS2FImhgOUj/YpcNqpT34bGfh1vr+dwBcnfXG/388mOMRAAAZCYzRo54qUtWIkclQHMgSYpQySBNwbotsEbnIhanWEYzvNYpmT4zMLt93GOnl1twfeZH04FfQoDA07TW5vqQWgoGQubaJ2ELkiSBQUYqg5+zyiQDk6iUMnSUhnpB1xGaSaK/o9BTwkE6ScIqqDXg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synaptics.com; dmarc=pass action=none
- header.from=synaptics.com; dkim=pass header.d=synaptics.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=Synaptics.onmicrosoft.com; s=selector2-Synaptics-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PBxmssn2OKSXWcr+k/5rrNQfoK8KXpoqd1TaaRKg0PA=;
- b=jd5+8VjUQvDFydKxtvsHvcgdE/4+g7ad97JMx0tlcPt8TFDNVmgCKiKHWDJqOjiTTAI1rvzRbZ72Y3W/tqaY6eG8CjZ9BwAFzM9FygViMP1HBfvibWDAgThKAuddKrKRGJf6aFFXAyzxobwjHaVCir92IkbNwzRoThZs3QcJpkY=
-Received: from BYAPR03MB4773.namprd03.prod.outlook.com (20.179.92.152) by
- BYAPR03MB3624.namprd03.prod.outlook.com (52.135.213.146) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.18; Thu, 22 Aug 2019 10:44:04 +0000
-Received: from BYAPR03MB4773.namprd03.prod.outlook.com
- ([fe80::b050:60f8:d275:e9f4]) by BYAPR03MB4773.namprd03.prod.outlook.com
- ([fe80::b050:60f8:d275:e9f4%7]) with mapi id 15.20.2178.020; Thu, 22 Aug 2019
- 10:44:04 +0000
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-To: "Naveen N. Rao" <naveen.n.rao@linux.vnet.ibm.com>
-Subject: Re: [PATCH v4] arm64: implement KPROBES_ON_FTRACE
-Thread-Topic: [PATCH v4] arm64: implement KPROBES_ON_FTRACE
-Thread-Index: AQHVWJwGDRorz/HiOUajlPa5ER0qaKcGu4YAgACzXwD//4bGgIAAAwYA
-Date: Thu, 22 Aug 2019 10:44:03 +0000
-Message-ID: <20190822183254.1bb5576d@xhacker.debian>
-References: <20190822113421.52920377@xhacker.debian>
- <1566456155.27ojwy97ss.naveen@linux.ibm.com>
- <20190822173558.63de3fc4@xhacker.debian>
- <1566468150.x8u1577wgh.naveen@linux.ibm.com>
-In-Reply-To: <1566468150.x8u1577wgh.naveen@linux.ibm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [124.74.246.114]
-x-clientproxiedby: TY2PR06CA0041.apcprd06.prod.outlook.com
- (2603:1096:404:2e::29) To BYAPR03MB4773.namprd03.prod.outlook.com
- (2603:10b6:a03:134::24)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c3e8b1e9-091b-4078-a527-08d726eda66e
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:BYAPR03MB3624; 
-x-ms-traffictypediagnostic: BYAPR03MB3624:
-x-microsoft-antispam-prvs: <BYAPR03MB3624A58FE647EDC761C42A9BEDA50@BYAPR03MB3624.namprd03.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 01371B902F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(396003)(346002)(39850400004)(136003)(376002)(189003)(199004)(7736002)(26005)(386003)(6506007)(5660300002)(6916009)(86362001)(6436002)(6486002)(478600001)(53936002)(229853002)(4326008)(50226002)(54906003)(8936002)(52116002)(81166006)(8676002)(76176011)(2906002)(99286004)(81156014)(305945005)(25786009)(7416002)(102836004)(316002)(6246003)(476003)(14444005)(6116002)(11346002)(446003)(64756008)(66946007)(66476007)(486006)(256004)(66556008)(186003)(3846002)(66446008)(66066001)(1076003)(14454004)(6512007)(9686003)(71190400001)(71200400001)(39210200001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB3624;
- H:BYAPR03MB4773.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:0; 
-received-spf: None (protection.outlook.com: synaptics.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: cCdIEPXcWL/I/RaCRgBfDcedl/gErQmE8cgbu3UlsSLqd44O2YJAClmSzs6iksqjrw4hjo0LQHg+N1Lc/p8WjGlf2WILgLMqCIP67ggeGAKG57HngLD0PIKiXGpbWUWkHg0jzkM68iE6p09+HUf9Ss3w+FaNS3qp1CyWaM1vYUR8C2OOb0yA7ZCKqsukj5T8Q6xTk1LYvg5WLYXRvlf0g5jKqy2MEH7p9trbOldD6hkgmbJ7q5hwg13M+kwL3CLWlIvbOVatZDHRpZSKaNimtUjyllQVjr7qZFMBPNpQY3m/yEOqaIDaghnCfhFAifQT2VZ7v/Qr0QiE9VjVwYds98+CU/GKN8tSOgkiAlAj0x3JSNzDi4dla69pEyplcXiPjRoVZr3vi2b+sZDz42u5EpM2tjARDgymebfiDCSVOm0=
-x-ms-exchange-transport-forked: True
-Content-ID: <52D37053CF07584DA4A594C3BC219B1F@namprd03.prod.outlook.com>
+ id 1i0kZs-0007C8-NK
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 10:44:28 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id DBD26FB03;
+ Thu, 22 Aug 2019 12:44:21 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 7msndP5EInss; Thu, 22 Aug 2019 12:44:17 +0200 (CEST)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id A14CF4014F; Thu, 22 Aug 2019 12:44:16 +0200 (CEST)
+From: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
+To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Lee Jones <lee.jones@linaro.org>,
+ =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Robert Chiras <robert.chiras@nxp.com>, Sam Ravnborg <sam@ravnborg.org>,
+ Arnd Bergmann <arnd@arndb.de>
+Subject: [PATCH v3 0/2] drm: bridge: Add NWL MIPI DSI host controller support
+Date: Thu, 22 Aug 2019 12:44:14 +0200
+Message-Id: <cover.1566470526.git.agx@sigxcpu.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-OriginatorOrg: synaptics.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c3e8b1e9-091b-4078-a527-08d726eda66e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Aug 2019 10:44:03.9547 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: zQ6hrPj454XE+NovC32VY3InAbwBh1VtPPr9pterPmeuhKdmgLWhpDDFOyPsld4BJITjjUNEDW3xJio9SBpcPA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB3624
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_034407_999411_FE21C791 
-X-CRM114-Status: GOOD (  21.75  )
+X-CRM114-CacheID: sfid-20190822_034425_084695_9E84F27E 
+X-CRM114-Status: GOOD (  21.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.74.59 listed in list.dnswl.org]
+ no trust [24.134.29.49 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,127 +76,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>, Ingo Molnar <mingo@redhat.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 22 Aug 2019 15:52:05 +0530
-"Naveen N. Rao" <naveen.n.rao@linux.vnet.ibm.com> wrote:
-
-> 
-> 
-> Jisheng Zhang wrote:
-> > Hi,
-> >
-> > On Thu, 22 Aug 2019 12:23:58 +0530
-> > "Naveen N. Rao" <naveen.n.rao@linux.vnet.ibm.com> wrote:  
-> >> Jisheng Zhang wrote:  
-> ...
-> >> > +/* Ftrace callback handler for kprobes -- called under preepmt
-> >> > disabed */
-> >> > +void kprobe_ftrace_handler(unsigned long ip, unsigned long parent_ip,
-> >> > +                        struct ftrace_ops *ops, struct pt_regs *regs)
-> >> > +{
-> >> > +     struct kprobe *p;
-> >> > +     struct kprobe_ctlblk *kcb;
-> >> > +
-> >> > +     /* Preempt is disabled by ftrace */
-> >> > +     p = get_kprobe((kprobe_opcode_t *)ip);
-> >> > +     if (unlikely(!p) || kprobe_disabled(p))
-> >> > +             return;
-> >> > +
-> >> > +     kcb = get_kprobe_ctlblk();
-> >> > +     if (kprobe_running()) {
-> >> > +             kprobes_inc_nmissed_count(p);
-> >> > +     } else {
-> >> > +             unsigned long orig_ip = instruction_pointer(regs);
-> >> > +             /* Kprobe handler expects regs->pc = pc + 4 as breakpoint hit */
-> >> > +             instruction_pointer_set(regs, ip + sizeof(kprobe_opcode_t));  
-> >>
-> >> Just want to make sure that you've confirmed that this is what happens
-> >> with a regular trap/brk based kprobe on ARM64. The reason for setting
-> >> the instruction pointer here is to ensure that it is set to the same
-> >> value as would be set if there was a trap/brk instruction at the ftrace
-> >> location. This ensures that the kprobe pre handler sees the same value
-> >> regardless.  
-> >
-> > Due to the arm64's DYNAMIC_FTRACE_WITH_REGS implementation, the code itself
-> > is correct. But this doesn't look like "there was a trap instruction at
-> > the ftrace location".
-> >
-> > W/O KPROBE_ON_FTRACE:
-> >
-> > foo:
-> > 00    insA
-> > 04    insB
-> > 08    insC
-> >
-> > kprobe's pre_handler() will see pc points to 00.  
-> 
-> In this case, the probe will be placed at foo+0x00, so pre_handler()
-> seeing that address in pt_regs is correct behavior - as long as arm64
-> 'brk' instruction causes an exception with the instruction pointer set
-
-Yep, confirmed with regular trap/brk based kprobes, I do see PC set to
-the "brk" instruction.
-
-> *to* the 'brk' instruction. This is similar to how powerpc 'trap' works.
-> However, x86 'int3' causes an exception *after* execution of the
-> instruction.
-
-Got it. I understand where's the comment "expects regs->pc = pc + 1" from.
-
-> 
-> >
-> > W/ KPROBE_ON_FTRACE:
-> >
-> > foo:
-> > 00    lr saver
-> > 04    nop     // will be modified to ftrace call ins when KPROBE is armed
-> > 08    insA
-> > 0c    insB  
-> 
-> In this case, if user asks for a probe to be placed at 'foo', we will
-> choose foo+0x04 and from that point on, the behavior should reflect that
-> a kprobe was placed at foo+0x04. In particular, the pre_handler() should
-> see foo+0x04 in pt_regs. The post_handler() would then see foo+0x08.
-> 
-> >
-> > later, kprobe_ftrace_handler() will see pc points to 04, so pc + 4 will
-> > point to 08 the same as the one w/o KPROBE_ON_FTRACE.  
-> 
-> I didn't mean to compare regular trap/brk based kprobes with
-> KPROBES_ON_FTRACE. The only important aspect is that the handlers see
-> consistent pt_regs in both cases, depending on where the kprobe was
-> placed. Choosing a different address/offset to place a kprobe during its
-> registration is an orthogonal aspect.
-
-Indeed, previously, I want to let the PC point to the same instruction, it
-seems I misunderstood the "consistent" meaning.
-
-> 
-> >
-> > It seems I need to fix the comment.  
-> 
-> Given your explanation above, I think you can simply drop the first
-> adjustment to the instruction pointer before the pre handler invocation.
-> The rest of the code looks fine.
-> 
-> 
-
-Yep, thanks a lot. Will send out a new version soon.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhpcyBhZGRzIGluaXRpYWwgc3VwcG9ydCBmb3IgdGhlIE5XTCBNSVBJIERTSSBIb3N0IGNvbnRy
+b2xsZXIgZm91bmQgb24gaS5NWDgKU29Dcy4KCkl0IGFkZHMgc3VwcG9ydCBmb3IgdGhlIGkuTVg4
+TVEgYnV0IHRoZSBzYW1lIElQIGNvcmUgY2FuIGFsc28gYmUgZm91bmQgb24gZS5nLgppLk1YOFFY
+UC4gSSBhZGRlZCB0aGUgbmVjZXNzYXJ5IGhvb2tzIHRvIHN1cHBvcnQgb3RoZXIgaW14OCB2YXJp
+YW50cyBidXQgc2luY2UKSSBvbmx5IGhhdmUgaW14OG1xIGJvYXJkcyB0byB0ZXN0IEkgb21pdHRl
+ZCB0aGUgcGxhdGZvcm0gZGF0YSBmb3Igb3RoZXIgU29Dcy4KClRoZSBjb2RlIGlzIGJhc2VkIG9u
+IE5YUHMgQlNQIHNvIEkgYWRkZWQgUm9iZXJ0IENoaXJhcyBhcwpDby1hdXRob3JlZC1ieS4gUm9i
+ZXJ0LCBpZiB0aGlzIGxvb2tzIHNhbmUgY291bGQgeW91IGFkZCB5b3VyClNpZ25lZC1vZmYtYnk6
+PwoKVGhlIG1vc3Qgbm90YWJsZSBjaGFuZ2VzIG92ZXIgdGhlIEJTUCBkcml2ZXIgYXJlCiAtIENh
+bGN1bGF0ZSBIUyBtb2RlIHRpbWluZyBmcm9tIHBoeV9jb25maWd1cmVfb3B0c19taXBpX2RwaHkK
+IC0gUGVyZm9ybSBhbGwgY2xvY2sgc2V0dXAgdmlhIERUCiAtIE1lcmdlIG53bC1pbXggYW5kIG53
+bCBkcml2ZXJzCiAtIEFkZCBCMCBzaWxpb24gcmV2aXNpb24gcXVpcmsKIC0gYmVjb21lIGEgYnJp
+ZGdlIGRyaXZlciB0byBob29rIGludG8gbXhzZmIgKGZyb20gd2hhdCBJIHJlYWRbMF0gRENTUywg
+d2hpY2gKICAgYWxzbyBjYW4gZHJpdmUgdGhlIG53bCBvbiB0aGUgaW14OG1xIHdpbGwgbGlrZWx5
+IG5vdCBiZWNvbWUgcGFydCBvZgogICBpbXgtZGlzcGxheS1zdWJzeXN0ZW0gc28gaXQgbWFrZXMg
+c2Vuc2UgdG8gbWFrZSBpdCBkcml2ZSBhIGJyaWRnZSBmb3IgZHNpIGFzCiAgIHdlbGwpLgogLSBV
+c2UgcGFuZWxfYnJpZGdlIHRvIGF0dGFjaCB0aGUgcGFuZWwKIC0gVXNlIG11bHRpcGxleCBmcmFt
+ZXdvcmsgaW5zdGVhZCBvZiBhY2Nlc3Npbmcgc3lzY29uIGRpcmVjdGx5CgpUaGlzIGhhcyBiZWVu
+IHRlc3RlZCBvbiBhIExpYnJlbSA1IGRldmtpdCB1c2luZyBteHNmYiB3aXRoIFJvYmVydCdzIHBh
+dGNoZXNbMV0KYW5kIHRoZSByb2NrdGVjaC1qaDA1N24wMDkwMCBwYW5lbCBkcml2ZXIgb24gbmV4
+dC0yMDE5MDgyMS4gVGhlIERDU1MgY2FuIGxhdGVyCm9uIGFsc28gYWN0IGFzIGlucHV0IHNvdXJj
+ZSB0b28uCgpDaGFuZ2VzIGZyb20gdjI6Ci0gUGVyIHJldmlldyBjb21tZW50cyBieSBSb2IgSGVy
+cmluZwogIGh0dHBzOi8vbGlzdHMuZnJlZWRlc2t0b3Aub3JnL2FyY2hpdmVzL2RyaS1kZXZlbC8y
+MDE5LUF1Z3VzdC8yMzA0NDguaHRtbAogIC0gYmluZGluZ3M6CiAgICAtIFNpbXBsaWZ5IGJ5IHJl
+c3RyaWN0aW5nIHRvIGZzbCxpbXg4bXEtbndsLWRzaQogICAgLSBkb2N1bWVudCByZXNldCBsaW5l
+cwogICAgLSBhZGQgcG9ydEB7MCwxfQogICAgLSB1c2UgYSByZWFsIGNvbXBhdGlibGUgc3RyaW5n
+IGZvciB0aGUgcGFuZWwKICAgIC0gcmVzZXRzIGFyZSByZXF1aXJlZAotIFBlciByZXZpZXcgY29t
+bWVudHMgYnkgQXJuZCBCZXJnbWFubgogIGh0dHBzOi8vbGlzdHMuZnJlZWRlc2t0b3Aub3JnL2Fy
+Y2hpdmVzL2RyaS1kZXZlbC8yMDE5LUF1Z3VzdC8yMzA4NjguaHRtbAogIC0gRG9uJ3QgYWNjZXNz
+IGlvbXV4Y19ncHIgcmVncyBkaXJlY3RseS4gVGhpcyBhbGxvd3MgdXMgdG8gZHJvcCB0aGUKICAg
+IGZpcnN0IHBhdGNoIGluIHRoZSBzZXJpZXMgd2l0aCB0aGUgaW9tdXhjX2dwciBmaWVsZCBkZWZp
+bmVzLgotIFBlciByZXZpZXcgY29tbWVudHMgYnkgTGF1cmVudCBQaW5jaGFydAogICAgLSBGaXgg
+d29yZGluZyBpbiBiaW5kaW5ncwotIEFkZCBtdXgtY29udHJvbHMgdG8gYmluZGluZ3MKLSBEb24n
+dCBwcmludCBlcnJvciBtZXNzYWdlIG9uIGRwaHkgcHJvYmUgZGVmZXJhbAoKQ2hhbmdlcyBmcm9t
+IHYxOgotIFBlciByZXZpZXcgY29tbWVudHMgYnkgU2FtIFJhdm5ib3JnCiAgaHR0cHM6Ly9saXN0
+cy5mcmVlZGVza3RvcC5vcmcvYXJjaGl2ZXMvZHJpLWRldmVsLzIwMTktSnVseS8yMjgxMzAuaHRt
+bAogIC0gQ2hhbmdlIGJpbmRpbmcgZG9jcyB0byBZQU1MCiAgLSBidWlsZDogRG9uJ3QgYWx3YXlz
+IHZpc2l0IGlteC1ud2wvCiAgLSBidWlsZDogQWRkIGhlYWRlci10ZXN0LXkKICAtIFNvcnQgaGVh
+ZGVycyBhY2NvcmRpbmcgdG8gRFJNIGNvbnZlbnRpb24KICAtIFVzZSBkcm1fZGlzcGxheV9tb2Rl
+IGluc3RlYWQgb2YgdmlkZW1vZGUKLSBQZXIgcmV2aWV3IGNvbW1lbnRzIGJ5IEZhYmlvIEVzdGV2
+YW0KICBodHRwczovL2xpc3RzLmZyZWVkZXNrdG9wLm9yZy9hcmNoaXZlcy9kcmktZGV2ZWwvMjAx
+OS1KdWx5LzIyODI5OS5odG1sCiAgLSBEb24ndCByZXN0cmljdCBidWlsZCB0byBBUkNIX01YQwog
+IC0gRHJvcCB1bnVzZWQgaW5jbHVkZXMKICAtIERyb3AgdW5yZWFjaGFibGUgY29kZSBpbiBpbXhf
+bndsX2RzaV9icmlkZ2VfbW9kZV9maXh1cCgpCiAgLSBEcm9wIHJlbWFpbmluZyBjYWxscyBvZiBk
+ZXZfZXJyKCkgYW5kIHVzZSBEUk1fREVWX0VSUigpCiAgICBjb25zaXN0ZW50bHkuCiAgLSBVc2Ug
+ZGV2bV9wbGF0Zm9ybV9pb3JlbWFwX3Jlc291cmNlKCkKICAtIERyb3AgZGV2bV9mcmVlX2lycSgp
+IGluIHByb2JlKCkgZXJyb3IgcGF0aAogIC0gVXNlIHNpbmdsZSBsaW5lIGNvbW1lbnRzIHdoZXJl
+IHN1ZmZpY2llbnQKICAtIFVzZSA8bGludXgvdGltZTY0Lmg+IGluc3RlYWQgb2YgZGVmaW5pbmcg
+VVNFQ19QRVJfU0VDCiAgLSBNYWtlIGlucHV0IHNvdXJjZSBzZWxlY3QgaW14OCBzcGVjaWZpYwog
+IC0gRHJvcCA8YXNtL3VuYWxpZ25lZC5oPiBpbmNsdXNpb24gKGFmdGVyIHJlbW92YWwgb2YgZ2V0
+X3VuYWxpZ25lZF9sZTMyKQogIC0gRHJvcCBhbGwgRVhQT1JUX1NZTUJPTF9HUEwoKSBmb3IgZnVu
+Y3Rpb25zIHVzZWQgaW4gdGhlIHNhbWUgbW9kdWxlCiAgICBidXQgZGlmZmVyZW50IHNvdXJjZSBm
+aWxlcy4KICAtIERyb3AgbndsX2RzaV9lbmFibGVfe3J4LHR4fV9jbG9jaygpIGJ5IGludm9raW5n
+IGNsa19wcmVwYXJlX2VuYWJsZSgpCiAgICBkaXJlY3RseQogIC0gUmVtb3ZlIHBvaW50bGVzcyBj
+b21tZW50Ci0gTGF1cmVudCBQaW5jaGFydAogIGh0dHBzOi8vbGlzdHMuZnJlZWRlc2t0b3Aub3Jn
+L2FyY2hpdmVzL2RyaS1kZXZlbC8yMDE5LUp1bHkvMjI4MzEzLmh0bWwKICBodHRwczovL2xpc3Rz
+LmZyZWVkZXNrdG9wLm9yZy9hcmNoaXZlcy9kcmktZGV2ZWwvMjAxOS1KdWx5LzIyODMwOC5odG1s
+CiAgLSBEcm9wIChvbiBpTVg4TVEpIHVudXNlZCBjc3IgcmVnbWFwCiAgLSBVc2UgTldMX01BWF9Q
+TEFURk9STV9DTE9DS1MgZXZlcnl3aGVyZQogIC0gRHJvcCBnZXRfdW5hbGlnbmVkX2xlMzIoKSB1
+c2FnZQogIC0gcmVtb3ZlIGR1cGxpY2F0ZSAnZm9yIHRoZScgaW4gYmluZGluZyBkb2NzCiAgLSBE
+b24ndCBpbmNsdWRlIHVudXNlZCA8bGludXgvY2xrLXByb3ZpZGVyLmg+CiAgLSBEb24ndCBpbmNs
+dWRlIHVudXNlZCA8bGludXgvY29tcG9uZW50Lmg+CiAgLSBEcm9wIGRwbXNfbW9kZSBmb3IgdHJh
+Y2tpbmcgc3RhdGUsIHRydXN0IHRoZSBkcm0gbGF5ZXIgb24gdGhhdAogIC0gVXNlIHBtX3J1bnRp
+bWVfcHV0KCkgaW5zdGVhZCBvZiBwbV9ydW50aW1lX3B1dF9zeW5jKCkKICAtIERvbid0IG92ZXJ3
+cml0ZSBlbmNvZGVyIHR5cGUKICAtIE1ha2UgaW14X253bF9wbGF0Zm9ybV9kYXRhIGNvbnN0CiAg
+LSBVc2UgdGhlIHJlc2V0IGNvbnRyb2xsZXIgQVBJIGluc3RlYWQgb2Ygb3BlbiBjb2RpbmcgdGhh
+dCBwbGF0Zm9ybSBzcGVjaWZpYwogICAgcGFydAogIC0gVXNlIDxsaW51eC9iaXRmaWVsZC5oPiBp
+bnRlYWQgb2YgbWFraW5nIHVwIG91ciBvd24gZGVmaW5lcwogIC0gbmFtZSBtaXBpX2RzaV90cmFu
+c2ZlciBsZXNzIGdlbmVyaWM6IG53bF9kc2lfdHJhbnNmZXIKICAtIGVuc3VyZSBjbGVhbiBpbiAu
+cmVtb3ZlIGJ5IGNhbGxpbmcgbWlwaV9kc2lfaG9zdF91bnJlZ2lzdGVyLgogIC0gcHJlZml4IGNv
+bnN0YW50cyBieSBOV0xfRFNJXwogIC0gcHJvcGVybHkgZm9ybWF0IHRyYW5zZmVyX2RpcmVjdGlv
+biBlbnVtCiAgLSBzaW1wbGlmeSBwbGF0Zm9ybSBjbG9jayBoYW5kbGluZwogIC0gRG9uJ3QgbW9k
+aWZ5IHN0YXRlIGluIG1vZGVfZml4dXAoKSBhbmQgdXNlIG1vZGVfc2V0KCkgaW5zdGVhZAogIC0g
+RHJvcCBicmlkZ2UgZGV0YWNoKCksIGFscmVhZHkgaGFuZGxlIGJ5IG53bF9kc2lfaG9zdF9kZXRh
+Y2goKQogIC0gRHJvcCBVU0VfKl9RVUlSSygpIG1hY3JvcwotIERyb3AgKGZvciBub3cpIHVudXNl
+ZCBjbG9jayBkZWZuaXRpb25zLiAncGl4ZWwnIGFuZCAnYnlwYXNzJyBjbG9jayB3aWxsIGJlCiAg
+dXNlZCBmb3IgaS5NWDggU29DcyBidXQgc2luY2UgdGhleSdyZSB1bnVzZWQgYXRtIGRyb3AgdGhl
+IGRlZmluaXRpb25zIC0gYnV0CiAga2VlcCB0aGUgbG9naWMgdG8gZW5hYmxlL2Rpc2FibGUgc2V2
+ZXJhbCBjbG9ja3MgaW4gcGxhY2Ugc2luY2Ugd2Uga25vdyB3ZSdsbAogIG5lZWQgaXQgaW4gdGhl
+IGZ1dHVyZS4KCkNoYW5nZXMgZnJvbSB2MDoKLSBBZGQgcXVpcmsgZm9yIElNUThNUSBzaWxpY29u
+IEIwIHJldmlzaW9uIHRvIG5vdCBtZXNzIHdpdGggdGhlCiAgc3lzdGVtIHJlc2V0IGNvbnRyb2xs
+ZXIgb24gcG93ZXIgZG93biBzaW5jZSBlbmFibGUoKSB3b24ndCB3b3JrCiAgb3RoZXJ3aXNlLgot
+IERyb3AgZGV2bV9mcmVlX2lycSgpIGhhbmRsZWQgYnkgdGhlIGRldmljZSBkcml2ZXIgY29yZQot
+IERpc2FibGUgdHggZXNjIGNsb2NrIGFmdGVyIHRoZSBwaHkgcG93ZXIgZG93biB0byB1bmJyZWFr
+CiAgZGlzYWJsZS9lbmFibGUgKHVuYmxhbmsvYmxhbmspCi0gQWRkIHBvcnRzIHRvIGR0IGJpbmRp
+bmcgZG9jcwotIFNlbGVjdCBHRU5FUklDX1BIWV9NSVBJX0RQSFkgaW5zdGVhZCBvZiBHRU5FUklD
+X1BIWSBmb3IKICBwaHlfbWlwaV9kcGh5X2dldF9kZWZhdWx0X2NvbmZpZwotIFNlbGVjdCBEUk1f
+TUlQSV9EU0kKLSBJbmNsdWRlIGRybV9wcmludC5oIHRvIGZpeCBidWlsZCBvbiBuZXh0LTIwMTkw
+NDA4Ci0gRHJvcCBzb21lIGRlYnVnZ2luZyBtZXNzYWdlcwotIE5ld2xpbmUgdGVybWluYXRlIGFs
+bCBEUk1fIHByaW50b3V0cwotIFR1cm4gY29tcG9uZW50IGRyaXZlciBpbnRvIGEgZHJtIGJyaWRn
+ZQoKWzBdOiBodHRwczovL2xpc3RzLmZyZWVkZXNrdG9wLm9yZy9hcmNoaXZlcy9kcmktZGV2ZWwv
+MjAxOS1NYXkvMjE5NDg0Lmh0bWwKWzFdOiBodHRwczovL3BhdGNod29yay5mcmVlZGVza3RvcC5v
+cmcvc2VyaWVzLzYyODIyLwoKVG86IERhdmlkIEFpcmxpZSA8YWlybGllZEBsaW51eC5pZT4sIERh
+bmllbCBWZXR0ZXIgPGRhbmllbEBmZndsbC5jaD4sIFJvYiBIZXJyaW5nIDxyb2JoK2R0QGtlcm5l
+bC5vcmc+LCBNYXJrIFJ1dGxhbmQgPG1hcmsucnV0bGFuZEBhcm0uY29tPiwgU2hhd24gR3VvIDxz
+aGF3bmd1b0BrZXJuZWwub3JnPiwgU2FzY2hhIEhhdWVyIDxzLmhhdWVyQHBlbmd1dHJvbml4LmRl
+PiwgUGVuZ3V0cm9uaXggS2VybmVsIFRlYW0gPGtlcm5lbEBwZW5ndXRyb25peC5kZT4sIEZhYmlv
+IEVzdGV2YW0gPGZlc3RldmFtQGdtYWlsLmNvbT4sIE5YUCBMaW51eCBUZWFtIDxsaW51eC1pbXhA
+bnhwLmNvbT4sIEFuZHJ6ZWogSGFqZGEgPGEuaGFqZGFAc2Ftc3VuZy5jb20+LCBOZWlsIEFybXN0
+cm9uZyA8bmFybXN0cm9uZ0BiYXlsaWJyZS5jb20+LCBMYXVyZW50IFBpbmNoYXJ0IDxMYXVyZW50
+LnBpbmNoYXJ0QGlkZWFzb25ib2FyZC5jb20+LCBKb25hcyBLYXJsbWFuIDxqb25hc0Brd2lib28u
+c2U+LCBKZXJuZWogU2tyYWJlYyA8amVybmVqLnNrcmFiZWNAc2lvbC5uZXQ+LCBMZWUgSm9uZXMg
+PGxlZS5qb25lc0BsaW5hcm8ub3JnPiwgR3VpZG8gR8O8bnRoZXIgPGFneEBzaWd4Y3B1Lm9yZz4s
+IGRyaS1kZXZlbEBsaXN0cy5mcmVlZGVza3RvcC5vcmcsIGRldmljZXRyZWVAdmdlci5rZXJuZWwu
+b3JnLCBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcsIGxpbnV4LWtlcm5lbEB2
+Z2VyLmtlcm5lbC5vcmcsIFJvYmVydCBDaGlyYXMgPHJvYmVydC5jaGlyYXNAbnhwLmNvbT4sIFNh
+bSBSYXZuYm9yZyA8c2FtQHJhdm5ib3JnLm9yZz4sIEZhYmlvIEVzdGV2YW0gPGZlc3RldmFtQGdt
+YWlsLmNvbT4sIEFybmQgQmVyZ21hbm4gPGFybmRAYXJuZGIuZGU+CgoKR3VpZG8gR8O8bnRoZXIg
+KDIpOgogIGR0LWJpbmRpbmdzOiBkaXNwbGF5L2JyaWRnZTogQWRkIGJpbmRpbmcgZm9yIE5XTCBt
+aXBpIGRzaSBob3N0CiAgICBjb250cm9sbGVyCiAgZHJtL2JyaWRnZTogQWRkIE5XTCBNSVBJIERT
+SSBob3N0IGNvbnRyb2xsZXIgc3VwcG9ydAoKIC4uLi9iaW5kaW5ncy9kaXNwbGF5L2JyaWRnZS9u
+d2wtZHNpLnlhbWwgICAgICB8IDE1NSArKysrCiBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL0tjb25m
+aWcgICAgICAgICAgICAgICAgfCAgIDIgKwogZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9NYWtlZmls
+ZSAgICAgICAgICAgICAgIHwgICAxICsKIGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvbndsLWRzaS9L
+Y29uZmlnICAgICAgICB8ICAxNiArCiBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1kc2kvTWFr
+ZWZpbGUgICAgICAgfCAgIDQgKwogZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9ud2wtZHNpL253bC1k
+cnYuYyAgICAgIHwgNTAxICsrKysrKysrKysrKysKIGRyaXZlcnMvZ3B1L2RybS9icmlkZ2Uvbnds
+LWRzaS9ud2wtZHJ2LmggICAgICB8ICA2NSArKwogZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9ud2wt
+ZHNpL253bC1kc2kuYyAgICAgIHwgNzAwICsrKysrKysrKysrKysrKysrKwogZHJpdmVycy9ncHUv
+ZHJtL2JyaWRnZS9ud2wtZHNpL253bC1kc2kuaCAgICAgIHwgMTEyICsrKwogOSBmaWxlcyBjaGFu
+Z2VkLCAxNTU2IGluc2VydGlvbnMoKykKIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9u
+L2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9icmlkZ2UvbndsLWRzaS55YW1sCiBjcmVhdGUg
+bW9kZSAxMDA2NDQgZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9ud2wtZHNpL0tjb25maWcKIGNyZWF0
+ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1kc2kvTWFrZWZpbGUKIGNy
+ZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1kc2kvbndsLWRydi5j
+CiBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9ud2wtZHNpL253bC1k
+cnYuaAogY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvbndsLWRzaS9u
+d2wtZHNpLmMKIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL253bC1k
+c2kvbndsLWRzaS5oCgotLSAKMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
+LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
