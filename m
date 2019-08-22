@@ -2,58 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B479E98B93
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 08:49:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D631598B96
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 08:49:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PyVett9im0HnyIejP1AIV03nB0FUl9etgy6uy5xRdbA=; b=d62Lv89HVCq2bm
-	wCL1GmD6UloHSe15rDT4HWWguytdO6IVjdU/YyHWSH76As8O80yn5VcqsexeDqqQBdCeZ3WupOmin
-	wDvfB5R3gHEJWLW6YCWoj8EO6LEdY5HmdbgXOFzNyILWCP5jM+byaD5Hh4Yv+0KP6KDlHK3Pa2Wzq
-	LM+mvRWNE0tQWoEty3Qbuabg185H0OaRn4xBZ1YxNz3SpPGRMCBWmv1Fmrgzb/nCBKYyv4NODM2Df
-	X0dwgwkzz3oVpNwU3C+3buWWpuTcpxkDKlz+M3PxwdyFJXQdMyO2t0g3L1yLGljS+cIHemMdcf0gL
-	+tzJaMURcVZElSAlIBFQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+DeQFFpY7x4LcqstXG9DnS4SL8dRFxjjecDbzxO/s8c=; b=qho2qVJOzZTncv
+	AztdifesN7Sa6Q/OQrqcN9GZID+SxYmjBhBd6JgIrJ+DKQCdnIipW+VAC5wOVPHavRO1TFWriTzl/
+	i0zuH8Btm0UVJLtNt/Q/LdLgfhFGhRiqzx7rUCl9es8aRIRnNkQe8LPLa6xTiVi8NDOegE6E81hWu
+	bo2K6vyweDMXx9lZcaBdlaoKW7qeZTLxBobMXh6ohHTo0gQIHo/OKgYJVNmaGSWUeD8rUP40H2NHd
+	wxde6xJmtNnhj7GiOnNPtD4Kt7BfmlEitK585Ex6daIGUQjaHvg2GnnLeQJJfOzOrweFP532YZzul
+	RmVpwfeA4+Sx2/hDAJIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0guF-0002B4-Q4; Thu, 22 Aug 2019 06:49:12 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i0guo-0002QX-Q5; Thu, 22 Aug 2019 06:49:47 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0gt1-0001qo-0l; Thu, 22 Aug 2019 06:47:59 +0000
-X-UUID: 7a57448a70734604a56e9049173ce77f-20190821
-X-UUID: 7a57448a70734604a56e9049173ce77f-20190821
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ id 1i0gt1-0001rZ-3c; Thu, 22 Aug 2019 06:47:59 +0000
+X-UUID: 9e38ecc491a842d1b2b2f39734e16aec-20190821
+X-UUID: 9e38ecc491a842d1b2b2f39734e16aec-20190821
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chaotian.jing@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 613000091; Wed, 21 Aug 2019 22:47:43 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 21 Aug 2019 23:47:41 -0700
+ with ESMTP id 728045430; Wed, 21 Aug 2019 22:47:45 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 21 Aug 2019 23:47:44 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 22 Aug 2019 14:47:40 +0800
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 22 Aug 2019 14:47:42 +0800
 Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 22 Aug 2019 14:47:39 +0800
+ Transport; Thu, 22 Aug 2019 14:47:42 +0800
 From: Chaotian Jing <chaotian.jing@mediatek.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: fix controller busy issue and add 24bits segment support 
-Date: Thu, 22 Aug 2019 14:47:39 +0800
-Message-ID: <20190822064741.11196-1-chaotian.jing@mediatek.com>
+Subject: [PATCH 1/2] mmc: mediatek: fix controller busy when plug out SD
+Date: Thu, 22 Aug 2019 14:47:40 +0800
+Message-ID: <20190822064741.11196-2-chaotian.jing@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20190822064741.11196-1-chaotian.jing@mediatek.com>
+References: <20190822064741.11196-1-chaotian.jing@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_234755_638163_3AB170CE 
-X-CRM114-Status: UNSURE (   5.41  )
+X-CRM114-CacheID: sfid-20190821_234755_639572_B088FE88 
+X-CRM114-Status: UNSURE (   9.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -79,19 +83,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-the below 2 patches fix controller busy issue when plug out SD card
-and add 24bits segment size support.
+when plug out SD card, may get data CRC error, the MMC core will issue
+CMD13 to get card status, then CMD13 timeout(due to card plug out) will
+trigger CMD19 tuning, first CMD19 timeout has not call msdc_reset_hw()
+and cause the next CMD19 gets controller busy.
 
-Chaotian Jing (2):
-  mmc: mediatek: fix controller busy when plug out SD
-  mmc: mediatek: support 24bits segment size
+Signed-off-by: Chaotian Jing <chaotian.jing@mediatek.com>
+---
+ drivers/mmc/host/mtk-sd.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
- drivers/mmc/host/mtk-sd.c | 24 ++++++++++++++++++------
- 1 file changed, 18 insertions(+), 6 deletions(-)
-
+diff --git a/drivers/mmc/host/mtk-sd.c b/drivers/mmc/host/mtk-sd.c
+index 33f4b6387ef7..5cc422e5db69 100644
+--- a/drivers/mmc/host/mtk-sd.c
++++ b/drivers/mmc/host/mtk-sd.c
+@@ -1071,11 +1071,13 @@ static bool msdc_cmd_done(struct msdc_host *host, int events,
+ 	}
+ 
+ 	if (!sbc_error && !(events & MSDC_INT_CMDRDY)) {
+-		if (cmd->opcode != MMC_SEND_TUNING_BLOCK &&
+-		    cmd->opcode != MMC_SEND_TUNING_BLOCK_HS200)
++		if (events & MSDC_INT_CMDTMO ||
++		    (cmd->opcode != MMC_SEND_TUNING_BLOCK &&
++		     cmd->opcode != MMC_SEND_TUNING_BLOCK_HS200))
+ 			/*
+ 			 * should not clear fifo/interrupt as the tune data
+-			 * may have alreay come.
++			 * may have alreay come when cmd19/cmd21 gets response
++			 * CRC error.
+ 			 */
+ 			msdc_reset_hw(host);
+ 		if (events & MSDC_INT_RSPCRCERR) {
 -- 
 2.18.0
-
 
 
 _______________________________________________
