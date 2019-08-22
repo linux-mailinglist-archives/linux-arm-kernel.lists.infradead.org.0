@@ -2,57 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA01199F0F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 20:41:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1402C9A00B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 21:30:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ycE9q08vmYUFmFU9dRALhV/OPMxzV0PQf06OfbMLSvM=; b=fOj
-	CewZb7TbKj9ALy0jLiCLj01DpC4SsPsgRBqIk7f1gjsjP+D6oiFey8D2+IMSglJbtSbnqfoMw7+pP
-	1eKRQiZRIbcovBHz+Op95pX3PMJE6gg36R/ow3i5yRFiGonizGMhDTcmm+uuSC9grFZI+jBxS7cmd
-	eXwFrTahDir3u/B4Zhp3jTiUekoS9G/39AeO+IB81+hBNlT0mOB7LIVgeJqrkzjmaaqJZo1XFfKMr
-	3mPDp/dTpxJpl1Ec1DvCn7yCaoZX+g0ZHV2zu+yvZzI4y3sjjzD2YwY6cZyOFbZwQJQ6Zd3IEGScD
-	Yy2THqJYyxUP9DDn/B4xZkHqHhDqaAQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iLro/O9aARvTKD14MjohuVlg6GIq2GqTsSihg+gbLYo=; b=M1nFXOl8IKPnbz
+	ZDIh8JBQwf1EZUsrZiNKKjT0+WTXAtXc+xipm6XAhuDthcbob+FuID5AEUNxodUnfGOYO7qFcH2Ks
+	L2ygv0U+mE1EbMRqUrJdcgxH42ASle7gY4TJXofs9sbRJony2h4VlWw7+3AaHlIiRX3CFjjYr4fa3
+	3WcL6EZFnZjaxk0LwkOc67n/QX/InHEEXJ+kqYg8XcG8s/DKYX4PnKDxz4AUI+W3MpvrWDO0W2yrj
+	uSNVUcFeIgo4FMFz3XALRS8i3eDSpCuxH4sWg23ZRMRVLdOxhbR+wtzJ5/raDeG1eeor8UtWxM7vz
+	Z0faAXL2L5UYv9PvBwVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0s1f-0007jx-Fs; Thu, 22 Aug 2019 18:41:35 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0s1M-0007a1-0R
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 18:41:17 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1DB191A0327;
- Thu, 22 Aug 2019 20:41:13 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 11CDF1A011D;
- Thu, 22 Aug 2019 20:41:13 +0200 (CEST)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id B1FF9205D9;
- Thu, 22 Aug 2019 20:41:12 +0200 (CEST)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Andrey Smirnov <andrew.smirnov@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
- Fabio Estevam <fabio.estevam@nxp.com>
-Subject: [PATCH] ARM: imx: Init anatop regmap in imx_init_revision_from_anatop
-Date: Thu, 22 Aug 2019 21:41:10 +0300
-Message-Id: <948c912b47f8658e52ab3d65d0ac2fa9f9a4241c.1566499152.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1i0smm-0007w0-7A; Thu, 22 Aug 2019 19:30:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0smZ-00071C-2C
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 19:30:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40773337;
+ Thu, 22 Aug 2019 12:29:59 -0700 (PDT)
+Received: from why (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 14A783F706;
+ Thu, 22 Aug 2019 12:29:57 -0700 (PDT)
+Date: Thu, 22 Aug 2019 20:29:54 +0100
+From: Marc Zyngier <marc.zyngier@arm.com>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH v2] KVM: arm: VGIC: properly initialise private IRQ
+ affinity
+Message-ID: <20190822202954.48239e0e@why>
+In-Reply-To: <20190822170510.167076-1-andre.przywara@arm.com>
+References: <20190822170510.167076-1-andre.przywara@arm.com>
+Organization: ARM Ltd
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_114116_320999_2E3406B0 
-X-CRM114-Status: UNSURE (   8.02  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190822_123003_228710_58EE78F7 
+X-CRM114-Status: GOOD (  23.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,66 +61,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Julien Grall <julien.grall@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Christoffer Dall <christoffer.dall@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Dave Martin <dave.martin@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Restore initialization of the global "anatop" regmap because it's used
-from suspend/resume code.
+On Thu, 22 Aug 2019 18:05:10 +0100
+Andre Przywara <andre.przywara@arm.com> wrote:
 
-While we're at it use regmap to read digprog as well
+> At the moment we initialise the target *mask* of a virtual IRQ to the
+> VCPU it belongs to, even though this mask is only defined for GICv2 and
+> quickly runs out of bits for many GICv3 guests.
+> This behaviour triggers an UBSAN complaint for more than 32 VCPUs:
+> ------
+> [ 5659.462377] UBSAN: Undefined behaviour in virt/kvm/arm/vgic/vgic-init.c:223:21
+> [ 5659.471689] shift exponent 32 is too large for 32-bit type 'unsigned int'
+> ------
+> Also for GICv3 guests the reporting of TARGET in the "vgic-state" debugfs
+> dump is wrong, due to this very same problem.
+> 
+> Because there is no requirement to create the VGIC device before the
+> VCPUs (and QEMU actually does it the other way round), we can't safely
+> initialise mpidr or targets in kvm_vgic_vcpu_init(). But since we touch
+> every private IRQ for each VCPU anyway later (in vgic_init()), we can
+> just move the initialisation of those fields into there, where we
+> definitely know the VGIC type.
+> 
+> On the way make sure we really have either a VGICv2 or a VGICv3 device,
+> since the former checks was just checking for "VGICv3 or not", silently
+> ignoring the uninitialised case.
+> 
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> Reported-by: Dave Martin <dave.martin@arm.com>
+> ---
+> Hi,
+> 
+> tested with 4, 8 and 33 VCPUs with kvmtool and QEMU, on a GICv2 and a
+> GICv3 machine.
+> Also briefly tested localhost migration on the GICv3 machine w/ 33
+> VCPUs, although I think all IRQs are group 1.
+> 
+> Cheers,
+> Andre
+> 
+>  virt/kvm/arm/vgic/vgic-init.c | 28 ++++++++++++++++++----------
+>  1 file changed, 18 insertions(+), 10 deletions(-)
+> 
+> diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
+> index 80127ca9269f..413fb6a5525c 100644
+> --- a/virt/kvm/arm/vgic/vgic-init.c
+> +++ b/virt/kvm/arm/vgic/vgic-init.c
+> @@ -8,6 +8,7 @@
+>  #include <linux/cpu.h>
+>  #include <linux/kvm_host.h>
+>  #include <kvm/arm_vgic.h>
+> +#include <asm/kvm_emulate.h>
+>  #include <asm/kvm_mmu.h>
+>  #include "vgic.h"
+>  
+> @@ -165,12 +166,17 @@ static int kvm_vgic_dist_init(struct kvm *kvm, unsigned int nr_spis)
+>  		irq->vcpu = NULL;
+>  		irq->target_vcpu = vcpu0;
+>  		kref_init(&irq->refcount);
+> -		if (dist->vgic_model == KVM_DEV_TYPE_ARM_VGIC_V2) {
+> +		switch (dist->vgic_model) {
+> +		case KVM_DEV_TYPE_ARM_VGIC_V2:
+>  			irq->targets = 0;
+>  			irq->group = 0;
+> -		} else {
+> +			break;
+> +		case KVM_DEV_TYPE_ARM_VGIC_V3:
+>  			irq->mpidr = 0;
+>  			irq->group = 1;
+> +			break;
+> +		default:
+> +			BUG_ON(1);
+>  		}
+>  	}
+>  	return 0;
+> @@ -210,7 +216,6 @@ int kvm_vgic_vcpu_init(struct kvm_vcpu *vcpu)
+>  		irq->intid = i;
+>  		irq->vcpu = NULL;
+>  		irq->target_vcpu = vcpu;
+> -		irq->targets = 1U << vcpu->vcpu_id;
+>  		kref_init(&irq->refcount);
+>  		if (vgic_irq_is_sgi(i)) {
+>  			/* SGIs */
+> @@ -220,11 +225,6 @@ int kvm_vgic_vcpu_init(struct kvm_vcpu *vcpu)
+>  			/* PPIs */
+>  			irq->config = VGIC_CONFIG_LEVEL;
+>  		}
+> -
+> -		if (dist->vgic_model == KVM_DEV_TYPE_ARM_VGIC_V3)
+> -			irq->group = 1;
+> -		else
+> -			irq->group = 0;
+>  	}
+>  
+>  	if (!irqchip_in_kernel(vcpu->kvm))
+> @@ -287,10 +287,18 @@ int vgic_init(struct kvm *kvm)
+>  
+>  		for (i = 0; i < VGIC_NR_PRIVATE_IRQS; i++) {
+>  			struct vgic_irq *irq = &vgic_cpu->private_irqs[i];
+> -			if (dist->vgic_model == KVM_DEV_TYPE_ARM_VGIC_V3)
+> +			switch (dist->vgic_model) {
+> +			case KVM_DEV_TYPE_ARM_VGIC_V3:
+>  				irq->group = 1;
+> -			else
+> +				irq->mpidr = kvm_vcpu_get_mpidr_aff(vcpu);
+> +				break;
+> +			case KVM_DEV_TYPE_ARM_VGIC_V2:
+>  				irq->group = 0;
+> +				irq->targets = 1U << idx;
+> +				break;
+> +			default:
+> +				BUG_ON(1);
+> +			}
+>  		}
+>  	}
+>  
 
-Fixes: c901cfe5ada0 ("ARM: imx: Drop imx_anatop_init()")
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+Please drop the BUG_ON()s. If something is unexpected, just fail to
+init the guest, but don't kill the box.
 
----
-This should be squashed into c901cfe5ada0
+Thanks,
 
- arch/arm/mach-imx/anatop.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+	M.
 
-diff --git a/arch/arm/mach-imx/anatop.c b/arch/arm/mach-imx/anatop.c
-index f2c9fe14198a..7f2246b44c53 100644
---- a/arch/arm/mach-imx/anatop.c
-+++ b/arch/arm/mach-imx/anatop.c
-@@ -93,25 +93,25 @@ void imx_anatop_post_resume(void)
- }
- 
- void __init imx_init_revision_from_anatop(void)
- {
- 	struct device_node *np;
--	void __iomem *anatop_base;
- 	unsigned int revision;
- 	u32 digprog;
- 	u16 offset = ANADIG_DIGPROG;
- 	u8 major_part, minor_part;
- 
- 	np = of_find_compatible_node(NULL, NULL, "fsl,imx6q-anatop");
--	anatop_base = of_iomap(np, 0);
--	WARN_ON(!anatop_base);
-+	WARN_ON(!np);
-+	anatop = syscon_regmap_lookup_by_compatible("fsl,imx6q-anatop");
-+	WARN_ON(!IS_ERR_OR_NULL(anatop));
-+
- 	if (of_device_is_compatible(np, "fsl,imx6sl-anatop"))
- 		offset = ANADIG_DIGPROG_IMX6SL;
- 	if (of_device_is_compatible(np, "fsl,imx7d-anatop"))
- 		offset = ANADIG_DIGPROG_IMX7D;
--	digprog = readl_relaxed(anatop_base + offset);
--	iounmap(anatop_base);
-+	regmap_read(anatop, offset, &digprog);
- 
- 	/*
- 	 * On i.MX7D digprog value match linux version format, so
- 	 * it needn't map again and we can use register value directly.
- 	 */
 -- 
-2.17.1
-
+Without deviation from the norm, progress is not possible.
 
 _______________________________________________
 linux-arm-kernel mailing list
