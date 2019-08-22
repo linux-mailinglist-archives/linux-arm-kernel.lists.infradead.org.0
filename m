@@ -2,66 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B2AD99243
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 13:36:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B7F19924F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 13:39:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=cFn/i0Dmp2E+p/Qsednkm3siksYvFS5EBn7yNp+Km8U=; b=giY9pdFxFMgo5bAGTMjkz/rLtS
-	aMJGTq9pUBDEM3+UJtektzFoM8FUHSpBdkZo478KSi3oUMa1FOk3vnvpK864u+JzjRyfuGk/wHypS
-	rboiji58k00PmJxzFFJDneCd8RUv9UT1/fz5eR+fMsQjAFsPyP6T9wWqqXuk/nRwaxFy2EHV9o9uF
-	Zq4mv7SZ2tJKNA1sqt97eFmHV0uP/O2ikglzOscbje+iPEF/MWY69hQXPJ1oshXQvNjMzhoBcuJbv
-	3yZtPElWuV60bO+RZX0u6+5CUOA4rK+Dcsq00gKasI9rE8eBDfStb+G8Bxa7AKsJNuBh/xhV/yi+M
-	jFy639Bg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yYF/7QkTk/I0MJmzFF3p04ExLmoGH+Zllj/UWRlpJ4Q=; b=W470n4m2LrTRLo
+	uuaRArF/p+QBeH8LVisv2/T6JzToEBimwbG71VhLOiuujxCaptmDVh7yLHHFqhXWOEv0D+uTal9wJ
+	URF8br2Hi4gkbleI/BaQge6y06Vl+NTwnnCG7tJxOjtpkBGr+WbcivZUzKaUuKX/cb3lggkMkNmj/
+	nBDhE703aRzeJZJ8CDlrT8dkMYRQ+8GD50sWp1xS8YW/xuIRU+KVC2nx9NMeP/DVVtbWJvk8ZysyD
+	5avf9eHbXs+KUcR0LgrgYBZnUZI5GOtXnDzkq7z+2CtkU0LKYkxwQ0/AuusSWGudUQss86dX4Qj8u
+	WXrSZvbHESNpX2ZfNBwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0lO9-0001Sv-8g; Thu, 22 Aug 2019 11:36:21 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1i0lQi-0002Ba-6W; Thu, 22 Aug 2019 11:39:00 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0lL8-0006kt-3s
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 11:33:18 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id DE4A41A02DE;
- Thu, 22 Aug 2019 13:33:12 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0D87C1A00A2;
- Thu, 22 Aug 2019 13:33:03 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1EC0640326;
- Thu, 22 Aug 2019 19:32:47 +0800 (SGT)
-From: Xiaowei Bao <xiaowei.bao@nxp.com>
-To: bhelgaas@google.com, robh+dt@kernel.org, mark.rutland@arm.com,
- shawnguo@kernel.org, leoyang.li@nxp.com, kishon@ti.com,
- lorenzo.pieralisi@arm.co, arnd@arndb.de, gregkh@linuxfoundation.org,
- minghuan.Lian@nxp.com, mingkai.hu@nxp.com, roy.zang@nxp.com,
- jingoohan1@gmail.com, gustavo.pimentel@synopsys.com,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, andrew.murray@arm.com
-Subject: [PATCH v2 10/10] misc: pci_endpoint_test: Add LS1088a in
- pci_device_id table
-Date: Thu, 22 Aug 2019 19:22:42 +0800
-Message-Id: <20190822112242.16309-10-xiaowei.bao@nxp.com>
-X-Mailer: git-send-email 2.9.5
-In-Reply-To: <20190822112242.16309-1-xiaowei.bao@nxp.com>
-References: <20190822112242.16309-1-xiaowei.bao@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1i0lQP-00028s-3g
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 11:38:42 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1i0lQB-0006FV-NJ; Thu, 22 Aug 2019 13:38:27 +0200
+Message-ID: <1566473905.3653.10.camel@pengutronix.de>
+Subject: Re: [PATCH 1/1] arm64: dts: imx8mq: Add mux controller to iomuxc_gpr
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Guido =?ISO-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>, Rob Herring
+ <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Shawn Guo
+ <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix
+ Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>,  Lucas Stach <l.stach@pengutronix.de>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,  Carlo
+ Caione <ccaione@baylibre.com>, "Angus Ainslie (Purism)" <angus@akkea.ca>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Date: Thu, 22 Aug 2019 13:38:25 +0200
+In-Reply-To: <fa3b1df7fc5e74f375df5de53061d1a93d154b51.1566471985.git.agx@sigxcpu.org>
+References: <cover.1566471985.git.agx@sigxcpu.org>
+ <fa3b1df7fc5e74f375df5de53061d1a93d154b51.1566471985.git.agx@sigxcpu.org>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_043314_578136_C77F9701 
-X-CRM114-Status: UNSURE (   6.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190822_043841_175179_E0BF2AEF 
+X-CRM114-Status: GOOD (  12.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,41 +72,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Xiaowei Bao <xiaowei.bao@nxp.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add LS1088a in pci_device_id table so that pci-epf-test can be used
-for testing PCIe EP in LS1088a.
-
-Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
----
-v2:
- - No change.
-
- drivers/misc/pci_endpoint_test.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/misc/pci_endpoint_test.c b/drivers/misc/pci_endpoint_test.c
-index 6e208a0..d531951 100644
---- a/drivers/misc/pci_endpoint_test.c
-+++ b/drivers/misc/pci_endpoint_test.c
-@@ -793,6 +793,7 @@ static const struct pci_device_id pci_endpoint_test_tbl[] = {
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_DRA74x) },
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_DRA72x) },
- 	{ PCI_DEVICE(PCI_VENDOR_ID_FREESCALE, 0x81c0) },
-+	{ PCI_DEVICE(PCI_VENDOR_ID_FREESCALE, 0x80c0) },
- 	{ PCI_DEVICE_DATA(SYNOPSYS, EDDA, NULL) },
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_AM654),
- 	  .driver_data = (kernel_ulong_t)&am654_data
--- 
-2.9.5
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCAyMDE5LTA4LTIyIGF0IDEzOjEwICswMjAwLCBHdWlkbyBHw7xudGhlciB3cm90ZToK
+PiBUaGUgb25seSBtdXggY29udHJvbHMgdGhlIE1JUEkgRFNJIGlucHV0IHNlbGVjdGlvbi4KPiAK
+PiBTaWduZWQtb2ZmLWJ5OiBHdWlkbyBHw7xudGhlciA8YWd4QHNpZ3hjcHUub3JnPgoKUmV2aWV3
+ZWQtYnk6IFBoaWxpcHAgWmFiZWwgPHAuemFiZWxAcGVuZ3V0cm9uaXguZGU+CgpyZWdhcmRzClBo
+aWxpcHAKCj4gLS0tCj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lteDhtcS5kdHNp
+IHwgOSArKysrKysrKy0KPiAgMSBmaWxlIGNoYW5nZWQsIDggaW5zZXJ0aW9ucygrKSwgMSBkZWxl
+dGlvbigtKQo+IAo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2ZyZWVzY2FsZS9p
+bXg4bXEuZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lteDhtcS5kdHNpCj4g
+aW5kZXggNGZkZDYwZjJjNTFlLi4zZjM1OTRkOTQ4NWMgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02
+NC9ib290L2R0cy9mcmVlc2NhbGUvaW14OG1xLmR0c2kKPiArKysgYi9hcmNoL2FybTY0L2Jvb3Qv
+ZHRzL2ZyZWVzY2FsZS9pbXg4bXEuZHRzaQo+IEBAIC00NDAsOCArNDQwLDE1IEBACj4gIAkJCX07
+Cj4gIAo+ICAJCQlpb211eGNfZ3ByOiBzeXNjb25AMzAzNDAwMDAgewo+IC0JCQkJY29tcGF0aWJs
+ZSA9ICJmc2wsaW14OG1xLWlvbXV4Yy1ncHIiLCAiZnNsLGlteDZxLWlvbXV4Yy1ncHIiLCAic3lz
+Y29uIjsKPiArCQkJCWNvbXBhdGlibGUgPSAiZnNsLGlteDhtcS1pb211eGMtZ3ByIiwgImZzbCxp
+bXg2cS1pb211eGMtZ3ByIiwKPiArCQkJCQkgICAgICJzeXNjb24iLCAic2ltcGxlLW1mZCI7Cj4g
+IAkJCQlyZWcgPSA8MHgzMDM0MDAwMCAweDEwMDAwPjsKPiArCj4gKwkJCQltdXg6IG11eC1jb250
+cm9sbGVyIHsKPiArCQkJCQljb21wYXRpYmxlID0gIm1taW8tbXV4IjsKPiArCQkJCQkjbXV4LWNv
+bnRyb2wtY2VsbHMgPSA8MT47Cj4gKwkJCQkJbXV4LXJlZy1tYXNrcyA9IDwweDM0IDB4MDAwMDAw
+MDQ+OyAvKiBNSVBJX01VWF9TRUwgKi8KPiArCQkJCX07Cj4gIAkJCX07Cj4gIAo+ICAJCQlvY290
+cDogb2NvdHAtY3RybEAzMDM1MDAwMCB7CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
